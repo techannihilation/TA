@@ -1,0 +1,36 @@
+[tllaap_dead]
+	{
+	world=All Worlds;
+	description=Wreckage;
+	category=tll_corpses;
+	object=tllaap_dead;
+	featuredead=tllaap_heap;
+	footprintx=7;
+	footprintz=7;
+	height=20;
+	blocking=1;
+	hitdensity=100;
+	metal=1768;
+	damage=1680;
+	reclaimable=1;
+	featurereclamate=smudge01;
+	seqnamereclamate=tree1reclamate;
+	}
+[tllaap_heap]
+	{
+	world=All Worlds;
+	description=Wreckage;
+	category=heaps;
+	object=6x6a;
+	footprintx=7;
+	footprintz=7;
+	height=4;
+	blocking=0;
+	hitdensity=100;
+	metal=884;
+	damage=1280;
+	reclaimable=1;
+
+	featurereclamate=smudge01;
+	seqnamereclamate=tree1reclamate;
+	}

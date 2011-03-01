@@ -1,0 +1,51 @@
+[UNITINFO] {
+  unitname=cjuno;
+  name=Core Juno;
+  description=Anti Radar/Jammer/Minefield Weapon;
+  acceleration=0;
+  bmcode=0;
+  brakeRate=0;
+  buildCostEnergy=15124;
+  buildCostMetal=617;
+  builder=0;
+  buildPic=CJUNO.DDS;
+  buildTime=27681;
+  canAttack=1;
+  canstop=1;
+  category=ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR;
+  corpse=CJUNO_DEAD;
+  defaultmissiontype=GUARD_NOMOVE;
+  energyStorage=0;
+  energyUse=0;
+  explodeAs=ESTOR_BUILDINGEX;
+  firestandorders=1;
+  footprintX=4;
+  footprintZ=4;
+  iconType=building;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maxDamage=2250;
+  maxSlope=10;
+  maxVelocity=0;
+  maxWaterDepth=0;
+  metalStorage=0;
+  noAutoFire=0;
+  objectName=CJUNO;
+  seismicSignature=0;
+  selfDestructAs=ATOMIC_BLAST;
+  side=CORE;
+  sightDistance=494;
+  smoothAnim=1;
+  soundcategory=GATE;
+  standingfireorder=2;
+  stealth=1;
+  TEDClass=SPECIAL;
+  turnRate=0;
+  badTargetCategory=MOBILE;
+  workerTime=0;
+  wpri_badtargetcategory=MOBILE;
+  yardMap=oooooooooooooooo;
+
+  weapon1=JUNO_PULSE;
+}
+

@@ -1,0 +1,38 @@
+[tllhplasma_dead]
+	{
+	world=All Worlds;
+	description=Wreckage;
+	category=tll_corpses;
+	object=tllhplasma_dead;
+	featuredead=tllhplasma_heap;
+	footprintx=3;
+	footprintz=3;
+	height=20;
+	blocking=1;
+	hitdensity=100;
+	metal=399;
+	damage=2014;
+	reclaimable=1;
+	featurereclamate=smudge01;
+	seqnamereclamate=tree1reclamate;
+	}
+
+
+[tllhplasma_heap]
+	{
+	world=All Worlds;
+	description=Wreckage;
+	category=heaps;
+	object=3x3d;
+	footprintx=3;
+	footprintz=3;
+	height=4;
+	blocking=0;
+	hitdensity=80;
+	metal=291;
+	damage=750;
+	reclaimable=1;
+	featurereclamate=smudge01;
+	seqnamereclamate=tree1reclamate;
+	}
+

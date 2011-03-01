@@ -1,0 +1,38 @@
+[UNITINFO] // Modified with muzzybear's FBI batch editor
+{
+	ActivateWhenBuilt=1;
+	Builder=1;
+	CanMove=1;
+	CanPatrol=1;
+	CanStop=1;
+	Category=BIG BUILDING;
+	Corpse=CCovertOpsCentre_dead;
+	Description=build T4 Con;
+	Designation=COC-1;
+	EnergyStorage=250;
+	EnergyUse=180;
+	ExplodeAs=SHIPBLAST;
+	Floater=1;
+	FootprintX=13;
+	FootprintZ=12;
+	MaxSlope=10;
+	MaxWaterDepth=255;
+	MetalStorage=250;
+	OnOffable=1;
+	RadarDistance=0;
+	SelfDestructAs=SHIPBLAST;
+	Side=CORE;
+	SightDistance=220;
+	SoundCategory=CORE_STARSHIP_YARD;
+	Stealth=1;
+	TEDClass=PLANT;
+	WorkerTime=160;
+	YardMap=OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO;
+	BuildCostEnergy=1300000;
+	BuildCostMetal=76000;
+	MaxDamage=40000;
+	buildtime=65250.000;
+	name=OPS Centre T4;
+	objectname=CCovertOpsCentre;
+	unitname=CCovertOpsCentre;
+}

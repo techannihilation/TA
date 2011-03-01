@@ -1,0 +1,64 @@
+[UNITINFO]
+	{
+	UnitName=TLLVISITOR;
+	Version=3.1;
+	Side=TLL;
+	Objectname=TLLVISITOR;
+	Designation= ;
+	Name=Visitor;
+	Description=Missile Ship;
+	FootprintX=6;
+	FootprintZ=6;
+	BuildCostEnergy=8054;
+	BuildCostMetal=2485;
+	MaxDamage=1310;
+	BuildTime=22754;
+	BMcode=1;
+	Builder=0;
+	ThreeD=1;
+	ZBuffer=1;
+	NoAutoFire=0;
+	SightDistance=245;
+	SoundCategory=ARM_SHIP;
+	ExplodeAs=BIG_UNITEX;
+	SelfDestructAs=BIG_UNIT;
+	Category=TLL LEVEL2 WEAPON NOTAIR NOTSTRUCTURE CTRL_N CTRL_W;
+	TEDClass=SHIP;
+	Copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
+	Corpse=tllvisitor_dead;
+	UnitNumber=901;
+
+	GermanDescription=Raketenkreuzer;
+	Frenchdescription=Navire lance-missiles;
+	SpanishDescription=Buque Lanzamisiles;
+	ItalianDescription=Nave lanciamissili;
+
+	firestandorders=1;
+	StandingFireOrder=2;
+	mobilestandorders=1;
+	StandingMoveOrder=0;
+	canmove=1;
+	canpatrol=1;
+	canstop=1;
+	canguard=1;
+	MaxVelocity=0.95;
+	BrakeRate=0.02;
+	Acceleration=0.012;
+	TurnRate=142;
+	SteeringMode=1;
+	ShootMe=1;
+	DefaultMissionType=Standby;
+	maneuverleashlength=640;
+	MovementClass=DBOAT6;
+	MinWaterDepth=12;
+	canattack=1;
+	Weapon1=VISITOR_VPULSE;
+	Weapon2=CORSHIP_MISSILE;
+	wpri_BadTargetCategory=NOTSTRUCTURE;
+	wsec_badTargetCategory=NOTAIR;
+	BadTargetCategory=UNDERWATER;
+	NoChaseCategory=UNDERWATER;
+	waterline=1;
+	Floater=1;
+	DamageModifier=0.5;
+	}

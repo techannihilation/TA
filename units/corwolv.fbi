@@ -1,0 +1,71 @@
+[UNITINFO] {
+  unitname=corwolv;
+  name=Wolverine;
+  description=Light Mobile Artillery;
+  acceleration=0.011;
+  bmcode=1;
+  brakeRate=0.0099;
+  buildCostEnergy=2219;
+  buildCostMetal=159;
+  builder=0;
+  buildPic=CORWOLV.DDS;
+  buildTime=3254;
+  canAttack=1;
+  canGuard=1;
+  canMove=1;
+  canPatrol=1;
+  canstop=1;
+  category=ALL TANK WEAPON NOTSUB NOTAIR;
+  corpse=CORWOLV_DEAD;
+  [customParams] {
+    canAreaAttack=1;
+  }
+  defaultmissiontype=Standby;
+  energyMake=0.5;
+  energyStorage=0;
+  energyUse=0.5;
+  explodeAs=BIG_UNITEX;
+  firestandorders=1;
+  footprintX=2;
+  footprintZ=2;
+  highTrajectory=1;
+  idleAutoHeal=5;
+  idleTime=1800;
+  leaveTracks=1;
+  maneuverleashlength=650;
+  maxDamage=550;
+  maxSlope=10;
+  maxVelocity=1.87;
+  maxWaterDepth=8;
+  metalStorage=0;
+  mobilestandorders=1;
+  movementClass=TANK2;
+  noAutoFire=0;
+  noChaseCategory=VTOL;
+  objectName=CORWOLV;
+  seismicSignature=0;
+  selfDestructAs=BIG_UNIT;
+  side=CORE;
+  sightDistance=299;
+  smoothAnim=1;
+  soundcategory=CORE_TANK;
+  standingfireorder=2;
+  standingmoveorder=1;
+  steeringmode=1;
+  TEDClass=TANK;
+  trackOffset=6;
+  trackStrength=5;
+  trackStretch=1;
+  trackType=StdTank;
+  trackWidth=30;
+  turnRate=466;
+  badTargetCategory=VTOL;
+  workerTime=0;
+  wpri_badtargetcategory=VTOL;
+
+  weapon1=CORWOLV_GUN;
+  maxAngleDif1=180;
+  onlyTargetCategory1=NOTAIR;
+  weaponMainDir1=0 0 1;
+}
+

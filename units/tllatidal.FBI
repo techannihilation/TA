@@ -1,0 +1,47 @@
+[UNITINFO]
+	{
+	UnitName=tllatidal;
+	Version=3.1;
+	Side=TLL;
+	Objectname=tllatidal;
+	Designation=TL-atd;
+	Name=Underwater Advanced Tidal Generator;
+	Description=Produces Energy;
+	FootprintX=4;
+	FootprintZ=4;
+	BuildCostEnergy=1287;
+	BuildCostMetal=485;
+	MaxDamage=1631;
+	MaxSlope=10;
+	BuildTime=3255;
+	WorkerTime=0;
+	BMcode=0;
+	Builder=0;
+	ThreeD=1;
+	ZBuffer=1;
+	NoAutoFire=0;
+	SightDistance=110;
+	RadarDistance=0;
+	SoundCategory=CORE_TIDE;
+	ExplodeAs=ESTOR_BUILDINGEX;
+	SelfDestructAs=ESTOR_BUILDING;
+	Category=TLL ENERGY LEVEL2 NOWEAPON NOTAIR NOTSUB;
+	TEDClass=ENERGY;
+	Copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
+	YardMap=oooo oooo oooo oooo;
+	Corpse=tllatidal_dead;
+	UnitNumber=880;
+	GermanName=Verb. Unterwasser Gezeitenkraftwerk;
+	GermanDescription=Liefert Energie;
+	FrenchName=Centrale marémotrice sous-marine;
+	Frenchdescription=Produit de l'énergie;
+	TidalGenerator=1;
+	EnergyUse=-85;
+	buildangle=8192;
+	downloadable=1;
+	ActivateWhenBuilt=1;
+	MinWaterDepth=15;
+	MaxWaterDepth=255;
+	OnOffable=1;
+//	NoShadow=1;
+	}

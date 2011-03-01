@@ -1,0 +1,77 @@
+[UNITINFO] {
+  unitname=coraak;
+  name=Manticore;
+  description=Heavy Amphibious Anti-Air Kbot;
+  acceleration=0.12;
+  bmcode=1;
+  brakeRate=0.188;
+  buildCostEnergy=5814;
+  buildCostMetal=608;
+  buildPic=CORAAK.DDS;
+  buildTime=7581;
+  canMove=1;
+  category=KBOT MOBILE WEAPON ALL NOTSUB NOTSHIP NOTAIR;
+  corpse=CORAAK_DEAD;
+  defaultmissiontype=Standby;
+  explodeAs=BIG_UNITEX;
+  footprintX=2;
+  footprintZ=2;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maneuverleashlength=640;
+  maxDamage=1280;
+  maxVelocity=1.15;
+  movementClass=AKBOT2;
+  noChaseCategory=ALL;
+  objectName=CORAAK;
+  seismicSignature=1;
+  selfDestructAs=BIG_UNIT;
+  side=CORE;
+  sightDistance=390;
+  smoothAnim=1;
+  soundcategory=COR_KBOT;
+  steeringmode=2;
+  TEDClass=KBOT;
+  turnRate=912;
+  upright=1;
+  w10_badtargetcategory=ALL;
+  w1_badtargetcategory=ALL;
+  w2_badtargetcategory=ALL;
+  w3_badtargetcategory=ALL;
+  w4_badtargetcategory=ALL;
+  w5_badtargetcategory=ALL;
+  w6_badtargetcategory=ALL;
+  w7_badtargetcategory=ALL;
+  w8_badtargetcategory=ALL;
+  w9_badtargetcategory=ALL;
+  badTargetCategory=ALL;
+
+  weapon10=AAKFLAK;
+
+  weapon1=BOGUS_MISSILE;
+
+  weapon2=CORAAKBOT_MISSILE3;
+  weaponSlaveTo2=1;
+
+  weapon3=CORAAKBOT_MISSILE1;
+  weaponSlaveTo3=1;
+
+  weapon4=CORAAKBOT_MISSILE2;
+  weaponSlaveTo4=1;
+
+  weapon5=CORAAKBOT_MISSILE1;
+  weaponSlaveTo5=1;
+
+  weapon6=CORAAKBOT_MISSILE2;
+  weaponSlaveTo6=1;
+
+  weapon7=CORAAKBOT_MISSILE3;
+  weaponSlaveTo7=1;
+
+  weapon8=CORAAKBOT_MISSILE4;
+  weaponSlaveTo8=1;
+
+  weapon9=CORAAKBOT_MISSILE4;
+  weaponSlaveTo9=1;
+}
+

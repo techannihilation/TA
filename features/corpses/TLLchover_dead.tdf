@@ -1,0 +1,37 @@
+[TLLchover_dead]
+	{
+	world=All Worlds;
+	description=Wreckage;
+	category=tll_corpses;
+	object=tllchover_dead;
+	featuredead=TLlchover_heap;
+	footprintx=3;
+	footprintz=3;
+	height=20;
+	blocking=1;
+	hitdensity=200;
+	metal=161;
+	damage=511;
+	reclaimable=1;
+	featurereclamate=smudge01;
+	seqnamereclamate=tree1reclamate;
+	}
+
+[TLLchover_heap]
+	{
+	world=All Worlds;
+	description=Wreckage;
+	category=heaps;
+	object=3x3a;
+	footprintx=3;
+	footprintz=3;
+	height=4;
+	blocking=0;
+	hitdensity=80;
+	metal=117;
+	damage=352;
+	reclaimable=1;
+	featurereclamate=smudge01;
+	seqnamereclamate=tree1reclamate;
+	}
+

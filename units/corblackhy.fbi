@@ -1,0 +1,81 @@
+[UNITINFO] {
+  unitname=corblackhy;
+  name=Black Hydra;
+  description=Flagship;
+  acceleration=0.026;
+  activateWhenBuilt=1;
+  bmcode=1;
+  brakeRate=0.019;
+  buildAngle=16384;
+  buildCostEnergy=252321;
+  buildCostMetal=34585;
+  buildPic=CORBLACKHY.DDS;
+  buildTime=309264;
+  canAttack=1;
+  canGuard=1;
+  canMove=1;
+  canPatrol=1;
+  canstop=1;
+  category=ALL WEAPON NOTSUB SHIP NOTAIR;
+  corpse=CORBLACKHY_DEAD;
+  damageModifier=1;
+  defaultmissiontype=Standby;
+  energyMake=175;
+  energyStorage=1000;
+  energyUse=190;
+  explodeAs=ATOMIC_BLAST;
+  firestandorders=1;
+  floater=1;
+  footprintX=8;
+  footprintZ=8;
+  iconType=sea;
+  idleAutoHeal=5;
+  idleTime=1800;
+  immunetoparalyzer=1;
+  maneuverleashlength=1640;
+  maxDamage=77500;
+  maxVelocity=1.96;
+  metalStorage=100;
+  minWaterDepth=15;
+  mobilestandorders=1;
+  movementClass=HDBOAT8;
+  noAutoFire=0;
+  objectName=CORBLACKHY;
+  radarDistance=1510;
+  scale=100;
+  seismicSignature=0;
+  selfDestructAs=ATOMIC_BLAST;
+  side=CORE;
+  sightDistance=650;
+  smoothAnim=1;
+  soundcategory=ARM_SHIP;
+  standingfireorder=2;
+  standingmoveorder=1;
+  steeringmode=1;
+  TEDClass=SHIP;
+  turnRate=260;
+  waterline=5;
+
+  weapon1=HYDRA_PRIME;
+  onlyTargetCategory1=NOTAIR;
+
+  weapon2=HYDRA_GUN;
+  maxAngleDif2=300;
+  onlyTargetCategory2=NOTAIR;
+  weaponMainDir2=0 0 1;
+
+  weapon3=HYDRAMISS;
+
+  weapon4=HYDRA_GUN;
+  maxAngleDif4=300;
+  onlyTargetCategory4=NOTAIR;
+  weaponMainDir4=0 0 1;
+
+  weapon5=HYDRA_GUN;
+  maxAngleDif5=300;
+  onlyTargetCategory5=NOTAIR;
+  weaponMainDir5=0 0 1;
+
+  weapon6=HYDRAMISS;
+}
+

@@ -1,0 +1,63 @@
+[UNITINFO] {
+  unitname=corpyro;
+  name=Pyro;
+  description=Fast Assault Kbot;
+  acceleration=0.45;
+  bmcode=1;
+  brakeRate=0.65;
+  buildCostEnergy=2783;
+  buildCostMetal=189;
+  builder=0;
+  buildPic=CORPYRO.DDS;
+  buildTime=5027;
+  canAttack=1;
+  canGuard=1;
+  canMove=1;
+  canPatrol=1;
+  canstop=1;
+  category=KBOT MOBILE WEAPON ALL ANTIFLAME NOTSUB NOTSHIP NOTAIR;
+  corpse=CORPYRO_HEAP;
+  defaultmissiontype=Standby;
+  energyMake=1.1;
+  energyStorage=0;
+  energyUse=1.1;
+  explodeAs=BIG_UNITEX;
+  firestandorders=1;
+  footprintX=2;
+  footprintZ=2;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maneuverleashlength=640;
+  maxDamage=1000;
+  maxSlope=17;
+  maxVelocity=2.75;
+  maxWaterDepth=25;
+  metalStorage=0;
+  mobilestandorders=1;
+  movementClass=KBOT2;
+  noAutoFire=0;
+  noChaseCategory=VTOL;
+  objectName=CORPYRO;
+  seismicSignature=0;
+  selfDestructAs=CORPYRO_BLAST;
+  selfDestructCountdown=1;
+  [SFXTYPES] {
+    explosionGenerator0=custom:PILOT;
+  }
+  side=CORE;
+  sightDistance=318;
+  smoothAnim=1;
+  soundcategory=COR_KBOT;
+  standingfireorder=2;
+  standingmoveorder=1;
+  steeringmode=2;
+  TEDClass=KBOT;
+  turnRate=1145;
+  upright=1;
+  badTargetCategory=ANTIFLAME;
+  workerTime=0;
+  wpri_badtargetcategory=ANTIFLAME;
+
+  weapon1=FLAMETHROWER;
+}
+

@@ -1,0 +1,51 @@
+[UNITINFO] {
+  unitname=madsam;
+  name=SAM Anticombomb;
+  description=Hardened Missile Battery;
+  acceleration=0;
+  bmcode=0;
+  brakeRate=0;
+  buildAngle=8192;
+  buildCostEnergy=5750;
+  buildCostMetal=295;
+  builder=0;
+  buildPic=MADSAM.DDS;
+  buildTime=5237;
+  canAttack=1;
+  canstop=1;
+  category=ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR;
+  corpse=MADSAM_DEAD;
+  defaultmissiontype=GUARD_NOMOVE;
+  energyStorage=0;
+  energyUse=5;
+  explodeAs=LARGE_BUILDINGEX;
+  firestandorders=1;
+  footprintX=3;
+  footprintZ=3;
+  iconType=building;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maxDamage=2500;
+  maxSlope=10;
+  maxVelocity=0;
+  maxWaterDepth=0;
+  metalStorage=0;
+  noAutoFire=0;
+  objectName=MADSAM;
+  seismicSignature=0;
+  selfDestructAs=LARGE_BUILDING;
+  side=CORE;
+  sightDistance=520;
+  smoothAnim=1;
+  soundcategory=GUARD;
+  standingfireorder=2;
+  TEDClass=FORT;
+  turnRate=0;
+  badTargetCategory=NOTAIR VTOL;
+  wpri_TargetCategory=VTOL1;
+  workerTime=0;
+  yardMap=ooooooooo;
+
+  weapon1=MADSAM_MISSILE;
+}
+

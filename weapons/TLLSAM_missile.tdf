@@ -1,0 +1,46 @@
+[TLLSAM_missile]
+	{
+	ID=177; 
+	name=SAM Missile;
+	rendertype=1;
+	lineofsight=1;
+//	vlaunch=1;
+	model=tllsammissile;
+	toairweapon=1;
+        turret=1;
+	range=880;
+	reloadtime=1.5;
+	weapontimer=6;
+//	flighttime=4;
+	weaponvelocity=900;
+	startvelocity=550;
+	weaponacceleration=200;
+	turnrate=54384;
+	areaofeffect=95;
+	metalpershot=5;
+	energypershot=100;
+	soundstart=Rockhvy3;
+	soundhit=xplomed4;
+	firestarter=70;
+	smokedelay=.5;
+	selfprop=1;
+	smoketrail=1;
+//	twophase=1;
+	guidance=1;
+	tracks=1;
+	tolerance=2000;
+	explosiongaf=fx;
+	explosionart=explode3;
+	waterexplosiongaf=fx;
+	waterexplosionart=h2oboom2;
+	lavaexplosiongaf=fx;
+	lavaexplosionart=lavasplashlg;
+	startsmoke=1;
+
+	[DAMAGE]
+		{
+		default=180;
+		}
+	}
+
+

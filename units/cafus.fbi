@@ -1,0 +1,46 @@
+[UNITINFO] {
+  unitname=cafus;
+  name=Advanced Fusion Reactor;
+  description=Enhanced Energy Output / Storage;
+  acceleration=0;
+  activateWhenBuilt=0;
+  bmcode=0;
+  brakeRate=0;
+  buildAngle=4096;
+  buildCostEnergy=64730;
+  buildCostMetal=10997;
+  builder=0;
+  buildPic=CAFUS.DDS;
+  buildTime=198390;
+  category=ALL NOTSUB NOWEAPON SPECIAL NOTAIR;
+  corpse=CAFUS_DEAD;
+  damageModifier=0.95;
+  energyMake=3000;
+  energyStorage=25000;
+  energyUse=0;
+  explodeAs=NUCLEAR_MISSILE;
+  footprintX=6;
+  footprintZ=6;
+  iconType=building;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maxDamage=10000;
+  maxSlope=13;
+  maxVelocity=0;
+  maxWaterDepth=0;
+  metalStorage=0;
+  noAutoFire=0;
+  objectName=CAFUS;
+  onoffable=0;
+  seismicSignature=0;
+  selfDestructAs=CRBLMSSL;
+  side=CORE;
+  sightDistance=273;
+  smoothAnim=1;
+  soundcategory=CORE_FUS;
+  TEDClass=ENERGY;
+  turnRate=0;
+  workerTime=0;
+  yardMap=oooooooooooooooooooooooooooooooooooo;
+}
+

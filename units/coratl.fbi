@@ -1,0 +1,53 @@
+[UNITINFO] {
+  unitname=coratl;
+  name=Lamprey;
+  description=Advanced Torpedo Launcher;
+  acceleration=0;
+  activateWhenBuilt=1;
+  bmcode=0;
+  brakeRate=0;
+  buildAngle=16384;
+  buildCostEnergy=8638;
+  buildCostMetal=1079;
+  builder=0;
+  buildPic=CORATL.DDS;
+  buildTime=10875;
+  canAttack=1;
+  canstop=1;
+  category=ALL NOTLAND WEAPON NOTSHIP NOTAIR;
+  corpse=CORATL_DEAD;
+  defaultmissiontype=GUARD_NOMOVE;
+  energyMake=0.1;
+  energyStorage=0;
+  energyUse=0.1;
+  explodeAs=BIG_UNITEX;
+  firestandorders=1;
+  footprintX=3;
+  footprintZ=3;
+  iconType=building;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maxDamage=1562;
+  maxVelocity=0;
+  metalStorage=0;
+  minWaterDepth=25;
+  noAutoFire=0;
+  objectName=CORATL;
+  seismicSignature=0;
+  selfDestructAs=BIG_UNIT;
+  side=CORE;
+  sightDistance=585;
+  smoothAnim=1;
+  soundcategory=ADV_TORPLAUNCH;
+  standingfireorder=2;
+  TEDClass=WATER;
+  turnRate=0;
+  waterline=30;
+  badTargetCategory=HOVER NOTSHIP;
+  workerTime=0;
+  wpri_badtargetcategory=HOVER NOTSHIP;
+  yardMap=ooooooooo;
+
+  weapon1=CORATL_TORPEDO;
+}
+

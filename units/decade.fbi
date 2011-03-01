@@ -1,0 +1,61 @@
+[UNITINFO] {
+  unitname=decade;
+  name=Decade;
+  description=Corvette;
+  acceleration=0.084;
+  activateWhenBuilt=1;
+  bmcode=1;
+  brakeRate=0.019;
+  buildAngle=16384;
+  buildCostEnergy=2055;
+  buildCostMetal=378;
+  builder=0;
+  buildPic=DECADE.DDS;
+  buildTime=6525;
+  canAttack=1;
+  canGuard=1;
+  canMove=1;
+  canPatrol=1;
+  canstop=1;
+  category=ALL WEAPON NOTSUB NOTAIR;
+  corpse=DECADE_DEAD;
+  defaultmissiontype=Standby;
+  energyMake=1;
+  energyStorage=0;
+  energyUse=1;
+  explodeAs=BIG_UNITEX;
+  firestandorders=1;
+  floater=1;
+  footprintX=4;
+  footprintZ=4;
+  iconType=sea;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maneuverleashlength=640;
+  maxDamage=1650;
+  maxVelocity=3.25;
+  metalStorage=0;
+  minWaterDepth=12;
+  mobilestandorders=1;
+  movementClass=BOAT4;
+  noAutoFire=0;
+  objectName=DECADE;
+  scale=0.5;
+  seismicSignature=0;
+  selfDestructAs=BIG_UNIT;
+  side=ARM;
+  sightDistance=429;
+  smoothAnim=1;
+  soundcategory=ARM_SHIP;
+  standingfireorder=2;
+  standingmoveorder=1;
+  steeringmode=1;
+  TEDClass=SHIP;
+  turnRate=530;
+  workerTime=0;
+
+  weapon1=CORVETTE_LIGHTLASER;
+
+  weapon2=CORVETTE_LIGHTLASER;
+}
+

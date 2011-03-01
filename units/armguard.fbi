@@ -1,0 +1,59 @@
+[UNITINFO] {
+  unitname=armguard;
+  name=Guardian;
+  description=Medium Range Plasma Battery;
+  acceleration=0;
+  bmcode=0;
+  brakeRate=0;
+  buildAngle=8192;
+  buildCostEnergy=11687;
+  buildCostMetal=1645;
+  builder=0;
+  buildPic=ARMGUARD.DDS;
+  buildTime=21377;
+  canAttack=1;
+  canstop=1;
+  category=ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR;
+  corpse=ARMGUARD_DEAD;
+  defaultmissiontype=GUARD_NOMOVE;
+  energyStorage=200;
+  energyUse=0;
+  explodeAs=MEDIUM_BUILDINGEX;
+  firestandorders=1;
+  footprintX=3;
+  footprintZ=3;
+  highTrajectory=2;
+  iconType=building;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maxDamage=2760;
+  maxSlope=10;
+  maxVelocity=0;
+  maxWaterDepth=0;
+  metalStorage=0;
+  noAutoFire=0;
+  noChaseCategory=MOBILE;
+  objectName=ARMGUARD;
+  seismicSignature=0;
+  selfDestructAs=MEDIUM_BUILDING;
+  side=ARM;
+  sightDistance=455;
+  smoothAnim=1;
+  soundcategory=GUARD;
+  standingfireorder=2;
+  TEDClass=FORT;
+  turnRate=0;
+  badTargetCategory=VTOL;
+  workerTime=0;
+  wpri_badtargetcategory=VTOL;
+  yardMap=ooooooooo;
+
+  weapon1=ARMFIXED_GUN;
+  maxAngleDif1=230;
+  onlyTargetCategory1=NOTAIR;
+  weaponMainDir1=0 1 0;
+
+  weapon2=ARMFIXED_GUN_HIGH;
+  onlyTargetCategory2=NOTAIR;
+}
+

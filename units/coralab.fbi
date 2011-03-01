@@ -1,0 +1,59 @@
+[UNITINFO] // Generated with TAS Modit v2.2 Beta
+{
+	name=Advanced Kbot Lab;
+	unitname=coralab;
+	buildcostenergy=61232;
+	buildcostmetal=2581;
+	buildtime=45519;
+	category=CORE PLANT NOWEAPON NOTAIR NOTSUB NOTSHIP LEVEL2 NOTLAND ALL;
+	description=Produces T2 Kbots;
+	footprintx=7;
+	footprintz=6;
+	maxdamage=4072;
+	objectname=CORALAB;
+	side=CORE;
+	soundcategory=KBOTPLANT;
+	tedclass=PLANT;
+	brakerate=0;
+	acceleration=0;
+	canmove=1;
+	maxvelocity=0;
+	maxslope=15;
+	turnrate=0;
+	yardmap=ooooooooooooooocccccoccccccccccccccccccccc;
+	builder=1;
+	workertime=400;
+	energystorage=200;
+	energyuse=0;
+	metalstorage=200;
+	canstop=1;
+	idletime=1800;
+	idleautoheal=5;
+	radardistance=50;
+	sightdistance=288.6;
+	explodeas=LARGE_BUILDINGEX;
+	selfdestructas=LARGE_BUILDING;
+	maxwaterdepth=0;
+	corpse=CORALAB_DEAD1;
+	smoothanim=1;
+	buildpic=CORALAB.DDS;
+	icontype=building;
+	bmcode=0;
+	noautofire=0;
+	buildangle=1024;
+	seismicsignature=0;
+	firestandorders=1;
+	standingfireorder=2;
+	canpatrol=1;
+	mobilestandorders=1;
+	standingmoveorder=1;
+	usebuildinggrounddecal=1;
+	buildinggrounddecaltype=asphalt512c.dds;
+	buildinggrounddecalsizex=8;
+	buildinggrounddecalsizey=7;
+	buildinggrounddecaldecayspeed=0.01;
+	[SFXTypes]
+	{
+	explosiongenerator0=custom:WhiteLight;
+	}
+}

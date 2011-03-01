@@ -1,0 +1,54 @@
+[UNITINFO] {
+  unitname=corllt;
+  name=LLT;
+  description=Light Laser Tower;
+  acceleration=0;
+  bmcode=0;
+  brakeRate=0;
+  buildAngle=32768;
+  buildCostEnergy=652;
+  buildCostMetal=84;
+  builder=0;
+  buildPic=CORLLT.DDS;
+  buildTime=2724;
+  canAttack=1;
+  canstop=1;
+  category=ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR;
+  corpse=CORLLT_DEAD;
+  defaultmissiontype=GUARD_NOMOVE;
+  energyStorage=100;
+  energyUse=0;
+  explodeAs=MEDIUM_BUILDINGEX;
+  firestandorders=1;
+  footprintX=2;
+  footprintZ=2;
+  healtime=4;
+  iconType=building;
+  idleAutoHeal=5;
+  idleTime=1800;
+  floater=1;
+  maxDamage=585;
+  maxSlope=10;
+  maxVelocity=0;
+  maxWaterDepth=0;
+  metalStorage=0;
+  noAutoFire=0;
+  noChaseCategory=MOBILE;
+  objectName=CORLLT;
+  seismicSignature=0;
+  selfDestructAs=MEDIUM_BUILDING;
+  side=CORE;
+  sightDistance=494;
+  smoothAnim=1;
+  soundcategory=LLT;
+  standingfireorder=2;
+  TEDClass=FORT;
+  turnRate=0;
+  badTargetCategory=ANTILASER;
+  workerTime=0;
+  wpri_badtargetcategory=ANTILASER;
+  yardMap=oooo;
+
+  weapon1=CORE_LIGHTLASER;
+}
+

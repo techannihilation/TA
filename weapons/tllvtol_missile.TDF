@@ -1,0 +1,118 @@
+[TLLVTOL_MISSILE]
+	{
+	ID=134;
+	name=Guided Missiles;
+	rendertype=1;
+	lineofsight=1;
+
+	model=tllvtolmissile;
+
+	range=530;
+	reloadtime=1;
+	weapontimer=5;
+	weaponvelocity=480;
+	startvelocity=420;
+	weaponacceleration=146;
+	turnrate=16384;
+	areaofeffect=48;
+	metalpershot=0;
+	collidefriendly=0;
+
+	soundstart=Rocklit3;
+	soundhit=xplosml2;
+
+	firestarter=70;
+	smokedelay=.1;
+	guidance=1;
+	tracks=1;
+	selfprop=1;
+	smoketrail=1;
+	tolerance=8000;
+
+	explosiongaf=fx;
+	explosionart=explode3;
+
+	waterexplosiongaf=fx;
+	waterexplosionart=h2o;
+
+	lavaexplosiongaf=fx;
+	lavaexplosionart=lavasplash;
+
+	impulsefactor=0.123;
+	impulseboost=0.123;
+	cratermult=0;
+	craterboost=0;
+	noselfdamage=1;
+	texture2=armsmoketrail;
+	[DAMAGE]
+	{
+		default=0.001;
+		COMMANDERS=1;
+		L1FIGHTERS=87;
+		L1BOMBERS=240;
+		L2FIGHTERS=20;
+		L2BOMBERS=160;
+		VTRANS=70;
+		GUNSHIPS=90;
+		HGUNSHIPS=80;
+		VRADAR=50;
+		VTOL=50;
+		L1SUBS=5;
+		L2SUBS=5;
+		L3SUBS=5;
+	}
+}
+[TLLVTOL_MISSILE2]
+	{
+	ID=134;
+	name=Guided Missiles;
+	rendertype=1;
+	lineofsight=1;
+
+	model=tllvtolmissile;
+
+	range=530;
+	reloadtime=1.5;
+	weapontimer=5;
+	weaponvelocity=480;
+	startvelocity=420;
+	weaponacceleration=146;
+	turnrate=16384;
+	areaofeffect=48;
+	metalpershot=0;
+	collidefriendly=0;
+
+	soundstart=Rocklit3;
+	soundhit=xplosml2;
+
+	firestarter=70;
+	smokedelay=.1;
+	guidance=1;
+	tracks=1;
+	selfprop=1;
+	smoketrail=1;
+	tolerance=8000;
+
+	explosiongaf=fx;
+	explosionart=explode3;
+
+	waterexplosiongaf=fx;
+	waterexplosionart=h2o;
+
+	lavaexplosiongaf=fx;
+	lavaexplosionart=lavasplash;
+
+	impulsefactor=0.123;
+	impulseboost=0.123;
+	cratermult=0;
+	craterboost=0;
+	noselfdamage=1;
+	texture2=armsmoketrail;
+	[DAMAGE]
+	{
+		default=60;
+		COMMANDERS=30;
+	}
+}
+
+

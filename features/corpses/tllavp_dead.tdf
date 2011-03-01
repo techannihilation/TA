@@ -1,0 +1,55 @@
+[tllavp_dead]
+	{
+	World=All Worlds;
+	Description=wreckage;
+	Category=tll_corpses;
+	Object=tllavp_dead;
+	FeatureDead=tllavp_heap;
+	FootPrintx=6;
+	FootPrintz=6;
+	Height=21;
+	Blocking=1;
+	HitDensity=105;
+	Metal=1481;
+	Damage=2332;
+	Reclaimable=1;
+	FeatureReclamate=smudge01;
+	SeqNameReclamate=tree1reclamate;
+	}
+
+[tllavp_heap]
+	{
+	World=All Worlds;
+	Description=wreckage;
+	Category=heaps;
+	Object=6x6B;
+	FeatureDead=tllavp_heap2;
+	FootPrintx=6;
+	FootPrintz=6;
+	Height=2;
+	Blocking=0;
+	HitDensity=105;
+	Metal=971;
+	Damage=1102;
+	Reclaimable=1;
+	FeatureReclamate=smudge01;
+	SeqNameReclamate=tree1reclamate;
+	}
+
+[tllavp_heap2]
+	{
+	World=All Worlds;
+	Description=wreckage;
+	Category=heaps;
+	Object=4x4B;
+	FootPrintx=6;
+	FootPrintz=6;
+	Height=2;
+	Blocking=0;
+	HitDensity=105;
+	Metal=519;
+	Damage=798;
+	Reclaimable=1;
+	FeatureReclamate=smudge01;
+	SeqNameReclamate=tree1reclamate;
+	}

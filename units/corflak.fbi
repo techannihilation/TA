@@ -1,0 +1,52 @@
+[UNITINFO] {
+  unitname=corflak;
+  name=Cobra;
+  description=Anti-Air Flak Gun;
+  acceleration=0;
+  bmcode=0;
+  brakeRate=0;
+  buildAngle=8192;
+  buildCostEnergy=38995;
+  buildCostMetal=1992;
+  builder=0;
+  buildPic=CORFLAK.DDS;
+  buildTime=20112;
+  canAttack=1;
+  canstop=1;
+  category=ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR;
+  corpse=CORFLAK_DEAD;
+  defaultmissiontype=GUARD_NOMOVE;
+  energyStorage=0;
+  energyUse=0;
+  explodeAs=MEDIUM_BUILDINGEX;
+  firestandorders=1;
+  footprintX=2;
+  footprintZ=2;
+  iconType=building;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maxDamage=5655;
+  maxSlope=10;
+  maxVelocity=0;
+  maxWaterDepth=0;
+  metalStorage=0;
+  noAutoFire=0;
+  noChaseCategory=ALL;
+  objectName=CORFLAK;
+  seismicSignature=0;
+  selfDestructAs=MEDIUM_BUILDING;
+  side=CORE;
+  sightDistance=525;
+  smoothAnim=1;
+  soundcategory=GUARD;
+  standingfireorder=2;
+  TEDClass=FORT;
+  turnRate=0;
+  badTargetCategory=NOWEAPON;
+  workerTime=0;
+  wpri_badtargetcategory=NOWEAPON;
+  yardMap=oooo;
+
+  weapon1=ARMFLAK_GUN;
+}
+

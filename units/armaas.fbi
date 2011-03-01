@@ -1,0 +1,64 @@
+[UNITINFO] {
+  unitname=armaas;
+  name=Archer;
+  description=Anti-Air Ship;
+  acceleration=0.048;
+  bmcode=1;
+  brakeRate=0.062;
+  buildAngle=16384;
+  buildCostEnergy=7058;
+  buildCostMetal=658;
+  builder=0;
+  buildPic=ARMAAS.DDS;
+  buildTime=8628;
+  canAttack=1;
+  canGuard=1;
+  canMove=1;
+  canPatrol=1;
+  canstop=1;
+  category=ALL SHIP NOTLAND MOBILE WEAPON NOTSUB NOTAIR;
+  corpse=ARMAAS_DEAD;
+  defaultmissiontype=Standby;
+  energyMake=7;
+  energyStorage=0;
+  energyUse=7;
+  explodeAs=BIG_UNITEX;
+  firestandorders=1;
+  floater=1;
+  footprintX=4;
+  footprintZ=4;
+  iconType=sea;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maneuverleashlength=640;
+  maxDamage=2360;
+  maxVelocity=2.88;
+  metalStorage=0;
+  minWaterDepth=30;
+  mobilestandorders=1;
+  movementClass=BOAT4;
+  noAutoFire=0;
+  noChaseCategory=ALL;
+  objectName=ARMAAS;
+  radarDistance=900;
+  scale=0.6;
+  seismicSignature=0;
+  selfDestructAs=BIG_UNIT;
+  side=ARM;
+  sightDistance=475;
+  smoothAnim=1;
+  soundcategory=ARM_SHIP;
+  standingfireorder=2;
+  standingmoveorder=1;
+  steeringmode=1;
+  TEDClass=SHIP;
+  turnRate=416;
+  workerTime=0;
+
+  weapon1=BOGUS_MISSILE;
+
+  weapon2=GA2;
+
+  weapon3=MOBILEFLAK;
+}
+

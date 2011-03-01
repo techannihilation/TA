@@ -1,0 +1,39 @@
+[TLLCOM_LIGHTNING]
+	{
+	ID=217; 
+	Name=Commander Lightning Beam;
+	RenderType=7;
+	LineOfSight=1;
+	Turret=1;
+	Range=330;
+	ReloadTime=0.9;
+	WeaponTimer=1;
+	WeaponVelocity=860;
+	Duration=3;
+	AreaOfEffect=12;
+	SoundStart=Lghthvy1;
+	soundhit=lashit2;
+	FireStarter=85;
+	BeamWeapon=1;
+	color=144;
+	color2=217;
+	Tolerance=600;
+	
+	impulsefactor=0.123;
+	impulseboost=0.123;
+	cratermult=0;
+	craterboost=0;
+	noselfdamage=1;
+	Explosiongaf=fx;
+	Explosionart=explode5;
+
+	WaterExplosiongaf=fx;
+	WaterExplosionart=h2oboom1;
+
+	LavaExplosiongaf=fx;
+	LavaExplosionart=lavasplashsm;
+	[DAMAGE]
+		{
+		Default=200;
+		}
+	}

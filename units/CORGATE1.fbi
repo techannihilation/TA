@@ -1,0 +1,47 @@
+[UNITINFO] // Generated with TAS Modit v2.2 Beta
+{
+	name=Super Shield;
+	unitname=corgate1;
+	buildcostenergy=127666;
+	buildcostmetal=12736;
+	buildtime=377166;
+	category=CORE NOWEAPON NOTAIR NOTSUB NOTSHIP NOTLAND ALL;
+	description=Long Range Plasma Deflector;
+	footprintx=5;
+	footprintz=5;
+	maxdamage=9200;
+	objectname=CORGATE1;
+	script=corgate.cob;
+	side=CORE;
+	soundcategory=GATE;
+	tedclass=SPECIAL;
+	brakerate=0;
+	acceleration=0;
+	maxvelocity=0;
+	maxslope=10;
+	turnrate=0;
+	yardmap=oooooooooooooooo;
+	builder=0;
+	workertime=0;
+	energystorage=1500;
+	energyuse=0;
+	metalstorage=0;
+	onoffable=1;
+	idletime=1800;
+	idleautoheal=5;
+	activatewhenbuilt=1;
+	sightdistance=273;
+	weapon1=REPULSOR1;
+	explodeas=CRAWL_BLAST;
+	selfdestructas=MINE_NUKE;
+	maxwaterdepth=0;
+	corpse=CORGATE1_DEAD;
+	smoothanim=1;
+	buildpic=CORGATE.DDS;
+	icontype=building;
+	bmcode=0;
+	noautofire=0;
+	buildangle=2048;
+	seismicsignature=0;
+	norestrict=1;
+}

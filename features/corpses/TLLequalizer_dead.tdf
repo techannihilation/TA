@@ -1,0 +1,36 @@
+[tllequalizer_dead]
+{
+world=All Worlds;
+description=Wreckage;
+category=tll_corpses;
+object=tllequalizer_dead;
+featuredead=tllequalizer_heap;
+footprintx=5;
+footprintz=5;
+height=20;
+blocking=1;
+hitdensity=100;
+metal=1251;
+damage=3541;
+reclaimable=1;
+featurereclamate=smudge01;
+seqnamereclamate=tree1reclamate;
+}
+
+[tllequalizer_heap]
+{
+world=All Worlds;
+description=Wreckage;
+category=heaps;
+object=4x4c;
+footprintx=5;
+footprintz=5;
+height=4;
+blocking=0;
+hitdensity=100;
+metal=754;
+damage=1110;
+reclaimable=1;
+featurereclamate=smudge01;
+seqnamereclamate=tree1reclamate;
+}

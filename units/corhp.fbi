@@ -1,0 +1,57 @@
+[UNITINFO] {
+  unitname=corhp;
+  name=Hovercraft Platform;
+  description=Builds Hovercraft;
+  acceleration=0;
+  bmcode=0;
+  brakeRate=0;
+  buildCostEnergy=4065;
+  buildCostMetal=1019;
+  builder=1;
+  buildingGroundDecalDecaySpeed=0.01;
+  buildingGroundDecalSizeX=9;
+  buildingGroundDecalSizeY=8;
+  buildingGroundDecalType=asphalt512c.dds;
+  buildPic=CORHP.DDS;
+  buildTime=14253;
+  canMove=1;
+  canPatrol=1;
+  canstop=1;
+  category=ALL PLANT NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR;
+  corpse=CORHP_DEAD;
+  energyStorage=200;
+  energyUse=0;
+  explodeAs=LARGE_BUILDINGEX;
+  firestandorders=1;
+  footprintX=8;
+  footprintZ=7;
+  iconType=building;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maxDamage=3356;
+  maxSlope=15;
+  maxVelocity=0;
+  maxWaterDepth=0;
+  metalStorage=200;
+  mobilestandorders=1;
+  noAutoFire=0;
+  objectName=CORHP;
+  radarDistance=50;
+  seismicSignature=0;
+  selfDestructAs=LARGE_BUILDING;
+  side=CORE;
+  sightDistance=312;
+  smoothAnim=1;
+  soundcategory=CORE_HOVER_PLANT;
+  standingfireorder=2;
+  standingmoveorder=1;
+  TEDClass=PLANT;
+  turnRate=0;
+  useBuildingGroundDecal=1;
+  workerTime=200;
+  yardMap=occccccooccccccooccccccooccccccooccccccooccccccoocccccco;
+  collisionVolumeType=Box;
+  collisionVolumeScales=120 32 106;
+
+}
+

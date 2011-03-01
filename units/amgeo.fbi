@@ -1,0 +1,43 @@
+[UNITINFO] {
+  UnitName=AMGEO;
+  name=Moho Geothermal Powerplant;
+  description=Hazardous Energy Source;
+  acceleration=0;
+  activateWhenBuilt=1;
+  bmcode=0;
+  brakeRate=0;
+  buildAngle=0;
+  buildCostEnergy=94852;
+  buildCostMetal=2520;
+  builder=0;
+  buildPic=AMGEO.DDS;
+  buildTime=70152;
+  category=ALL NOTSUB NOWEAPON NOTAIR;
+  energyMake=2500;
+  energyStorage=2500;
+  energyUse=0;
+  explodeAs=NUCLEAR_MISSILE;
+  footprintX=5;
+  footprintZ=8;
+  iconType=building;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maxDamage=6240;
+  maxSlope=15;
+  maxVelocity=0;
+  maxWaterDepth=0;
+  metalStorage=0;
+  noAutoFire=0;
+  objectName=AMGEO;
+  seismicSignature=0;
+  selfDestructAs=NUCLEAR_MISSILE;
+  Side=ARM;
+  sightDistance=273;
+  smoothAnim=1;
+  SoundCategory=ARM_GEO;
+  TEDClass=ENERGY;
+  turnRate=0;
+  workerTime=0;
+  yardMap=ooooo ooooo ooooo ooooo ooooo oGGGo oGGGo ooooo;
+}
+

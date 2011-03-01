@@ -1,0 +1,142 @@
+//////////////////////////////////////////////////////Argh's GPL Generic Fire Script
+//////////////////////////////////////////////////////You may use this for any purpose, so long as you obey the terms of the Gnu Public License.
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+[KNIGHT_EXPLOSION_FX]
+{
+[particlesystem_KNIGHT_EXPLOSION_FX01]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=-0.01;
+		sizeMod=1.0;
+		pos=0, 1.0, 0;
+		emitVector=0, 1, 0;
+		gravity=0, -0.25, 0;
+		colorMap=1.0 1.0 1.0 0.1     1.0 1.0 0.0 0.1     1.0 0.5 0.0 0.1      0.1 0.03 0.0 0.1;
+		Texture=ConeFragments1;
+		airdrag=1.0;
+		particleLife=60;
+		particleLifeSpread=10;
+		numParticles=15;
+		particleSpeed=3;
+		particleSpeedSpread=1;
+		particleSize=2;
+		particleSizeSpread=1;
+		emitRot=0;
+		emitRotSpread=90;
+		directional=0;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+[delayspawner01_Knight_FireColumn]
+	{
+		class=CExpGenSpawner;
+		[properties]
+		{
+		delay=0 i1;
+		explosionGenerator=custom:KNIGHT_FIRE_COLUMN_01;
+		}
+	water=1;
+	air=1;
+	ground=1;
+	count=120;
+	}
+[delayspawner01_Knight_SmokeColumn]
+	{
+		class=CExpGenSpawner;
+		[properties]
+		{
+		delay=10 i1;
+		explosionGenerator=custom:KNIGHT_SMOKE_COLUMN_01;
+		}
+	water=1;
+	air=1;
+	ground=1;
+	count=120;
+	}
+[groundflash]
+   	{
+      	flashSize = 40;
+      	flashAlpha = 0.9;
+      	circleGrowth = 0.1;
+      	circleAlpha = 0.3;
+      	ttl = 260;
+      	color = 1, 0.5, 0.15;
+	air=1;
+     	ground=1;
+      	water=1;
+	}
+}
+
+
+[KNIGHT_FIRE_COLUMN_01]
+{
+[particlesystem_KNIGHT_FIRE_COLUMN_01_01]
+	{
+	class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=-0.05;
+		sizeMod=1.0;
+		pos=5 r-10, -5, 5 r-10;
+		emitVector=0, 1, 0;
+		gravity=0, 0.01, 0;
+		colorMap=1.0 0.75 0.225 0.01     1.0 1.0 1.0 1.0     1.0 1.0 1.0 1.0      0 0 0 0.01;
+		Texture=Fire1;
+		airdrag=1.0;
+		particleLife=60;
+		particleLifeSpread=10;
+		numParticles=1;
+		particleSpeed=0.000001;
+		particleSpeedSpread=0;
+		particleSize=5;
+		particleSizeSpread=1;
+		emitRot=0;
+		emitRotSpread=0;
+		directional=0;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+}
+
+[KNIGHT_SMOKE_COLUMN_01]
+{
+[particlesystem_KNIGHT_SMOKE_COLUMN_01_01]
+	{
+	class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0.05 r0.1;
+		sizeMod=1.0;
+		pos=5 r-10, 15, 5 r-10;
+		emitVector=0, 1, 0;
+		gravity=0.003 r-0.006, 0.03, 0.003 r-0.006;
+		colorMap=0.5 0.5 0.5 1.0     0.4 0.4 0.4 1.0    0.3 0.3 0.3 1.0    0.2 0.2 0.2 1.0    0 0 0 0.01;
+		Texture=GenericSmokeCloud1;
+		airdrag=1.0;
+		particleLife=120;
+		particleLifeSpread=10;
+		numParticles=1;
+		particleSpeed=0.000001;
+		particleSpeedSpread=0;
+		particleSize=2;
+		particleSizeSpread=0.5;
+		emitRot=0;
+		emitRotSpread=0;
+		directional=0;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+}

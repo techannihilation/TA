@@ -1,0 +1,67 @@
+[UNITINFO]
+	{
+	UnitName=ARMTABI;
+	Version=1;
+	Side=ARM;
+	Objectname=ARMTABI;
+	Designation=ARM-LRNC;
+	Name=Tabitha;
+	Description=Total Annihilation TSAR bomber (ARMS);
+	FootprintX=10;
+	FootprintZ=10;
+	MaxDamage=16500;//2550
+	BuildCostEnergy=1448222;//448222
+	BuildCostMetal=389868;//42168
+	selfdestructcountdown=10;
+	MaxWaterDepth=0;
+	MaxSlope=16;
+	EnergyUse=0;
+	BuildTime=898527;
+	WorkerTime=0;
+	BMcode=0;
+	Builder=0;
+	ThreeD=1;
+	ZBuffer=1;
+	//NoAutoFire=1;
+	SightDistance=275;
+	RadarDistance=0;
+	SoundCategory=ARM_BRTHA;
+	EnergyStorage=0;
+	MetalStorage=0;
+	ExplodeAs=ATOMIC_NUKE1;
+	SelfDestructAs=ATOMIC_NUKE2;
+	Category=ARM NOTAIR NOTSUB NOTSHIP;
+	TEDClass=FORT;
+	Copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
+	YardMap=oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo;
+	//Corpse=ArmTabi_dead;
+	GermanName=Tabitha;
+	GermanDescription=Langstrecken-Nuclear-Plasmakanone;
+	UnitNumber=16;
+	FrenchName=Tabitha;
+	Frenchdescription=Canon à nuclear de longue portée;
+	firestandorders=1;
+	StandingFireOrder=2;
+	canstop=1;
+	ShootMe=1;
+	EnergyMake=0;
+	DefaultMissionType=GUARD_NOMOVE;
+	buildangle=4096;
+	Weapon1=ARM_TABITHACANNON;
+	wpri_badTargetCategory=VTOL;
+	OnlyTargetCategory1=NOTAIR;
+	canattack=1;
+	canguard=1;
+	idletime=2200;
+	idleautoheal=2;
+	iconType=bigstar;
+	CollisionSphereScale=.7;
+
+	// resistant to weapons from above
+	flankingBonusMode=3;
+	flankingBonusDir= 0 1 0 ;
+	flankingBonusMax=1.1;	
+	flankingBonusMin=.8;
+	CollisionSphereScale=.7;
+
+	}

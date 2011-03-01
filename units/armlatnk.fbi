@@ -1,0 +1,66 @@
+[UNITINFO] {
+  unitname=armlatnk;
+  name=Panther;
+  description=Lightning Tank;
+  acceleration=0.125;
+  bmcode=1;
+  brakeRate=0.125;
+  buildCostEnergy=7000;
+  buildCostMetal=307;
+  builder=0;
+  buildPic=ARMLATNK.DDS;
+  buildTime=7534;
+  canAttack=1;
+  canGuard=1;
+  canMove=1;
+  canPatrol=1;
+  canstop=1;
+  category=ALL TANK MOBILE WEAPON NOTSUB NOTSHIP NOTAIR;
+  corpse=ARMLATNK_DEAD;
+  defaultmissiontype=Standby;
+  energyMake=1.5;
+  energyStorage=0;
+  energyUse=1.5;
+  explodeAs=BIG_UNITEX;
+  firestandorders=1;
+  footprintX=2;
+  footprintZ=2;
+  idleAutoHeal=5;
+  idleTime=1800;
+  leaveTracks=1;
+  maneuverleashlength=640;
+  maxDamage=950;
+  maxSlope=10;
+  maxVelocity=3.326;
+  maxWaterDepth=12;
+  metalStorage=0;
+  mobilestandorders=1;
+  movementClass=TANK2;
+  noAutoFire=0;
+  noChaseCategory=VTOL;
+  objectName=ARMLATNK;
+  seismicSignature=0;
+  selfDestructAs=BIG_UNIT;
+  side=ARM;
+  sightDistance=390;
+  smoothAnim=1;
+  soundcategory=ARM_TANK;
+  standingfireorder=2;
+  standingmoveorder=1;
+  steeringmode=1;
+  TEDClass=TANK;
+  trackOffset=6;
+  trackStrength=5;
+  trackStretch=1;
+  trackType=StdTank;
+  trackWidth=30;
+  turnRate=550;
+  workerTime=0;
+
+  weapon1=ARMLATNK_WEAPON;
+  onlyTargetCategory1=NOTAIR;
+
+  weapon3=ARMAMPH_MISSILE;
+  onlyTargetCategory3=VTOL;
+}
+

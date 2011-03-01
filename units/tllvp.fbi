@@ -1,0 +1,55 @@
+[UNITINFO]
+	{
+	UnitName=TLLVP;
+	Version=3.1;
+	Side=TLL;
+	Objectname=TLLVP;
+	Designation= ;
+	Name=Vehicle Plant;
+	Description=Produces Vehicles;
+	FootprintX=8;
+	FootprintZ=6;
+	BuildCostEnergy=1150;
+	BuildCostMetal=675;
+	MaxDamage=2818;
+	MaxWaterDepth=0;
+	MaxSlope=10;
+	EnergyUse=0;
+	BuildTime=5850;
+	WorkerTime=220;
+	BMcode=0;
+	Builder=1;
+	ThreeD=1;
+	ZBuffer=1;
+	NoAutoFire=0;
+	SightDistance=210;
+	SoundCategory=TANKPLANT;
+	EnergyStorage=100;
+	MetalStorage=100;
+	ExplodeAs=LARGE_BUILDINGEX;
+	SelfDestructAs=LARGE_BUILDING;
+	Category=TLL LEVEL1 NOWEAPON NOTAIR NOTSUB PLANT CTRL_F;
+	TEDClass=PLANT;
+	Copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
+	YardMap=ooccccoo ooccccoo ooccccoo ooccccoo ooccccoo ooccccoo;
+	Corpse=tllvp_dead;
+	UnitNumber=825;
+
+	GermanName=Fahrzeugfabrik;
+	GermanDescription=Tech Level 1;
+	FrenchName=Usine de véhicules ;
+	Frenchdescription=Niveau Tech 1;
+	SpanishName=Planta Constr. Vehículos ;
+	SpanishDescription=Produce vehículos;
+	ItalianName=Fabbrica Veicoli;
+	ItalianDescription=Produce veicoli;
+
+	firestandorders=1;
+	StandingFireOrder=2;
+	mobilestandorders=1;
+	StandingMoveOrder=2;
+	canmove=1;
+	canpatrol=1;
+	canstop=1;
+	buildangle=1024;
+	}

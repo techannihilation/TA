@@ -1,0 +1,36 @@
+[TLLCS_dead]
+	{
+	world=All Worlds;
+	description=Wreckage;
+	category=tll_corpses;
+	object=TLLCS_dead;
+	featuredead=TLLCS_heap;
+	footprintx=4;
+	footprintz=4;
+	height=4;
+	blocking=0;
+	hitdensity=100;
+	metal=182;
+	damage=911;
+	reclaimable=1;
+	featurereclamate=smudge01;
+	seqnamereclamate=tree1reclamate;
+	}
+
+[TLLCS_heap]
+	{
+	world=All Worlds;
+	description=Wreckage;
+	category=heaps;
+	object=4x4D;
+	footprintx=4;
+	footprintz=4;
+	height=4;
+	blocking=0;
+	hitdensity=80;
+	metal=102;
+	damage=757;
+	reclaimable=1;
+	featurereclamate=smudge01;
+	seqnamereclamate=tree1reclamate;
+	}

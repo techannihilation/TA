@@ -1,0 +1,59 @@
+[UNITINFO] {
+  unitname=marauder;
+  name=Marauder;
+  description=Amphibious Assault Mech;
+  acceleration=0.22;
+  bmcode=1;
+  brakeRate=0.238;
+  buildCostEnergy=19534;
+  buildCostMetal=910;
+  builder=0;
+  buildPic=MARAUDER.DDS;
+  buildTime=28957;
+  canAttack=1;
+  canGuard=1;
+  canMove=1;
+  canPatrol=1;
+  canstop=1;
+  category=KBOT WEAPON ALL NOTSUB NOTAIR;
+  corpse=MARAUDER_DEAD;
+  defaultmissiontype=Standby;
+  explodeAs=BIG_UNITEX;
+  firestandorders=1;
+  footprintX=3;
+  footprintZ=3;
+  idleAutoHeal=5;
+  idleTime=1800;
+  immunetoparalyzer=1;
+  maneuverleashlength=640;
+  mass=200000;
+  maxDamage=7000;
+  maxSlope=17;
+  maxVelocity=3;
+  maxWaterDepth=32;
+  mobilestandorders=1;
+  movementClass=ATANK3;
+  noAutoFire=0;
+  noChaseCategory=VTOL;
+  objectName=MARAUDER;
+  seismicSignature=0;
+  selfDestructAs=CRAWL_BLASTSML;
+  side=ARM;
+  sightDistance=455;
+  smoothAnim=1;
+  soundcategory=MAVERICK;
+  standingfireorder=2;
+  standingmoveorder=1;
+  steeringmode=2;
+  TEDClass=KBOT;
+  turnRate=1056;
+  upright=1;
+  workerTime=0;
+
+  weapon1=ARMMECH_CANNON;
+  onlyTargetCategory1=NOTAIR;
+
+  weapon3=ARMAMPH_MISSILE;
+  onlyTargetCategory3=VTOL;
+}
+

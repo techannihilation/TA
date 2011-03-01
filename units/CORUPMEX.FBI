@@ -1,0 +1,43 @@
+[UNITINFO]
+	{
+	UnitName=CORUPMEX;
+	Side=CORE;
+	Objectname=CORUPMEX;
+	Designation=TAL-BME1;
+	Name=Intelligence Jump;
+	Description=Enables jumps on large radius;
+	FootprintX=3;
+	FootprintZ=3;
+	buildcostenergy=6033;
+	buildcostmetal=1062;
+	buildtime=16074;
+	MaxDamage=1344;
+	MaxWaterDepth=0;
+	MaxSlope=10;
+	EnergyUse=0;
+	WorkerTime=0;
+	BMcode=0;
+	Builder=0;
+	NoAutoFire=0;
+	SightDistance=273;
+	RadarDistance=0;
+	SoundCategory=ARM_MEX;
+	EnergyStorage=0;
+	MetalStorage=0;
+	ExplodeAs=SMALL_BUILDINGEX;
+	SelfDestructAs=SMALL_BUILDING;
+	Category=CORE NOWEAPON NOTAIR NOTSUB;
+	TEDClass=METAL;
+	YardMap=ooooooooo;
+	icontype=building;
+	Corpse=corupmex_dead;
+	UnitNumber=48;
+	buildangle=8192;
+	ActivateWhenBuilt=1;
+	onoffable=1;
+	[CustomParams]
+	{
+		Providetech=Jumpjet;
+		Providetechrange=2000;
+	}
+	}

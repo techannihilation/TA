@@ -1,0 +1,46 @@
+[UNITINFO] {
+  unitname=cortide;
+  name=Tidal Generator;
+  description=Produces Energy;
+  acceleration=0;
+  activateWhenBuilt=1;
+  bmcode=0;
+  brakeRate=0;
+  buildAngle=4096;
+  buildCostEnergy=417;
+  buildCostMetal=81;
+  builder=0;
+  buildPic=CORTIDE.DDS;
+  buildTime=2094;
+  category=ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR;
+  corpse=CORTIDE_DEAD;
+  energyStorage=50;
+  energyUse=0;
+  explodeAs=SMALL_BUILDINGEX;
+  footprintX=3;
+  footprintZ=3;
+  iconType=building;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maxDamage=253;
+  maxSlope=10;
+  maxVelocity=0;
+  metalStorage=0;
+  minWaterDepth=20;
+  noAutoFire=0;
+  objectName=CORTIDE;
+  onoffable=1;
+  seismicSignature=0;
+  selfDestructAs=SMALL_BUILDING;
+  side=CORE;
+  sightDistance=130;
+  smoothAnim=1;
+  soundcategory=CORE_TIDE;
+  TEDClass=WATER;
+  tidalGenerator=1;
+  turnRate=0;
+  waterline=10;
+  workerTime=0;
+  yardMap=wwwwwwwwwwwwwwww;
+}
+

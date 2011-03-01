@@ -1,0 +1,50 @@
+[UNITINFO] {
+  unitname=armckfus;
+  name=Cloakable Fusion Reactor;
+  description=Produces Energy / Storage;
+  acceleration=0;
+  bmcode=0;
+  brakeRate=0;
+  buildAngle=4096;
+  buildCostEnergy=34646;
+  buildCostMetal=5469;
+  builder=0;
+  buildPic=ARMCKFUS.DDS;
+  buildTime=184389;
+  category=ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR;
+  cloakCost=50;
+  corpse=ARMCKFUS_DEAD;
+  energyMake=1400;
+  energyStorage=2500;
+  energyUse=0;
+  explodeAs=ATOMIC_BLAST;
+  footprintX=5;
+  footprintZ=4;
+  iconType=building;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maxDamage=7000;
+  maxSlope=10;
+  maxVelocity=0;
+  maxWaterDepth=0;
+  metalStorage=0;
+  minCloakDistance=100;
+  noAutoFire=0;
+  objectName=ARMCKFUS;
+  seismicSignature=0;
+  selfDestructAs=MINE_NUKE;
+  side=ARM;
+  sightDistance=273;
+  smoothAnim=1;
+  soundcategory=ARM_FUS;
+  TEDClass=ENERGY;
+  turnRate=0;
+  workerTime=0;
+  yardMap=oooooooooooooooooooo;
+  collisionVolumeType=Box;
+  collisionVolumeScales=98 59 62;
+  collisionVolumeOffsets=0 0 0;
+  collisionVolumeTest = 1;
+
+}
+

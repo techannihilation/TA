@@ -1,0 +1,43 @@
+[UNITINFO] {
+  unitname=armestor;
+  name=Energy Storage;
+  description=Increases Energy Storage (15000);
+  acceleration=0;
+  activateWhenBuilt=1;
+  bmcode=0;
+  brakeRate=0;
+  buildAngle=4096;
+  buildCostEnergy=1592;
+  buildCostMetal=159;
+  builder=0;
+  buildPic=ARMESTOR.DDS;
+  buildTime=4119;
+  category=ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR;
+  corpse=ARMESTOR_DEAD;
+  energyStorage=15000;
+  energyUse=0;
+  explodeAs=ESTOR_BUILDINGEX;
+  footprintX=3;
+  footprintZ=3;
+  iconType=building;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maxDamage=1700;
+  maxSlope=10;
+  maxVelocity=0;
+  maxWaterDepth=0;
+  metalStorage=0;
+  noAutoFire=0;
+  objectName=ARMESTOR;
+  seismicSignature=0;
+  selfDestructAs=ESTOR_BUILDING;
+  side=ARM;
+  sightDistance=273;
+  smoothAnim=1;
+  soundcategory=ARM_ESTOR;
+  TEDClass=ENERGY;
+  turnRate=0;
+  workerTime=0;
+  yardMap=ooooooooo;
+}
+

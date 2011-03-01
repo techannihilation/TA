@@ -1,0 +1,50 @@
+[UNITINFO]
+	{
+	UnitName=TLLUWEStorage;
+	Version=3.1;
+	Side=TLL;
+	Objectname=TLLUWEStorage;
+	Designation=TL-UWES;
+	Name=Underwater Energy Storage;
+	Description=Increases Energy Storage (21000);
+	FootprintX=4;
+	FootprintZ=4;
+	BuildCostEnergy=1050;
+	BuildCostMetal=292;
+	MaxDamage=1551;
+	MaxSlope=20;
+	EnergyUse=0;
+	BuildTime=16202;
+	WorkerTime=0;
+	BMcode=0;
+	Builder=0;
+	ThreeD=1;
+	ZBuffer=1;
+	NoAutoFire=0;
+	SightDistance=140;
+	RadarDistance=0;
+	SoundCategory=ARM_ESTOR;
+	EnergyStorage=21000;
+	MetalStorage=0;
+	ExplodeAs=ESTOR_BUILDINGEX;
+	SelfDestructAs=ESTOR_BUILDING;
+	Category=TLL ENERGY level1 NOWEAPON NOTAIR NOTSUB  ;
+	TEDClass=ENERGY;
+	Copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
+	YardMap=oooooooooooooooo;
+	Corpse=TLLUWEStorage_dead;
+	UnitNumber=857;
+
+	GermanName=U-Energielager;
+	GermanDescription=Größere Energievorräte;
+	FrenchName=Dépôt d'Energie Sous-Marin;
+	Frenchdescription=Augmente Stockage Energie;
+	SpanishName=Almacén Energía Subacuát.;
+	SpanishDescription=Incrementa el almacenaje de energía;
+	ItalianName=Deposito di energia sub;
+	ItalianDescription=Deposito di energia sottomarino;
+
+	buildangle=8192;
+	downloadable=1;
+	MinWaterDepth=30;
+	}

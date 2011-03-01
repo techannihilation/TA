@@ -1,0 +1,37 @@
+[tllmex_dead]
+	{
+	World=All Worlds;
+	Description=wreckage;
+	Category=tll_corpses;
+	Object=tllmex_dead;
+	FeatureDead=tllmex_heap;
+	FootPrintx=3;
+	FootPrintz=3;
+	Height=21;
+	Blocking=1;
+	HitDensity=105;
+	Metal=85;
+	Damage=182;
+	Reclaimable=1;
+	FeatureReclamate=smudge01;
+	SeqNameReclamate=tree1reclamate;
+	}
+
+[tllmex_heap]
+	{
+	World=All Worlds;
+	Description=wreckage;
+	Category=heaps;
+	Object=3x3F;
+	FootPrintx=3;
+	FootPrintz=3;
+	Height=2;
+	Blocking=0;
+	HitDensity=105;
+	Metal=68;
+	Damage=245;
+	Reclaimable=1;
+	FeatureReclamate=smudge01;
+	SeqNameReclamate=tree1reclamate;
+	}
+

@@ -1,0 +1,54 @@
+[UNITINFO] {
+  unitname=cordl;
+  name=Jellyfish;
+  description=Depthcharge Launcher;
+  acceleration=0;
+  activateWhenBuilt=1;
+  bmcode=0;
+  brakeRate=0;
+  buildAngle=16384;
+  buildCostEnergy=2340;
+  buildCostMetal=280;
+  builder=0;
+  buildPic=CORDL.DDS;
+  buildTime=4280;
+  canAttack=1;
+  canstop=1;
+  category=ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR;
+  corpse=CORDL_DEAD;
+  defaultmissiontype=GUARD_NOMOVE;
+  energyMake=0.1;
+  energyStorage=0;
+  energyUse=0.1;
+  explodeAs=SMALL_UNITEX;
+  firestandorders=1;
+  footprintX=2;
+  footprintZ=2;
+  iconType=building;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maxDamage=1075;
+  maxSlope=15;
+  maxVelocity=0;
+  maxWaterDepth=0;
+  metalStorage=0;
+  noAutoFire=0;
+  objectName=CORDL;
+  seismicSignature=0;
+  selfDestructAs=SMALL_UNIT;
+  side=CORE;
+  sightDistance=611;
+  smoothAnim=1;
+  sonarDistance=525;
+  soundcategory=LLT;
+  standingfireorder=2;
+  TEDClass=WATER;
+  turnRate=0;
+  badTargetCategory=NOTSUB;
+  workerTime=0;
+  wpri_badtargetcategory=NOTSUB;
+  yardMap=oooo;
+
+  weapon1=COAX_DEPTHCHARGE;
+}
+

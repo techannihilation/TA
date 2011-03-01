@@ -1,0 +1,45 @@
+[UNITINFO] {
+  unitname=coruwmex;
+  name=Underwater Metal Extractor;
+  description=Extracts Metal;
+  acceleration=0;
+  activateWhenBuilt=1;
+  bmcode=0;
+  brakeRate=0;
+  buildAngle=8192;
+  buildCostEnergy=519;
+  buildCostMetal=56;
+  builder=0;
+  buildPic=CORUWMEX.DDS;
+  buildTime=1887;
+  category=ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR;
+  corpse=CORUWMEX_DEAD;
+  energyStorage=0;
+  energyUse=2;
+  explodeAs=SMALL_BUILDINGEX;
+  extractsMetal=0.001;
+  footprintX=3;
+  footprintZ=3;
+  iconType=building;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maxDamage=185;
+  maxSlope=20;
+  maxVelocity=0;
+  metalStorage=50;
+  minWaterDepth=15;
+  noAutoFire=0;
+  objectName=CORUWMEX;
+  onoffable=1;
+  seismicSignature=0;
+  selfDestructCountdown=1;
+  side=CORE;
+  sightDistance=169;
+  smoothAnim=1;
+  soundcategory=CORE_UWMEX;
+  TEDClass=METAL;
+  turnRate=0;
+  workerTime=0;
+  yardMap=ooooooooo;
+}
+

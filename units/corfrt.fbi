@@ -1,0 +1,52 @@
+[UNITINFO] {
+  unitname=corfrt;
+  name=Stinger;
+  description=Floating Anti-air Tower;
+  acceleration=0;
+  bmcode=0;
+  brakeRate=0;
+  buildAngle=16384;
+  buildCostEnergy=1054;
+  buildCostMetal=72;
+  builder=0;
+  buildPic=CORFRT.DDS;
+  buildTime=2357;
+  canAttack=1;
+  canstop=1;
+  category=ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR;
+  corpse=CORFRT_DEAD;
+  defaultmissiontype=GUARD_NOMOVE;
+  energyStorage=0;
+  energyUse=0.1;
+  explodeAs=BIG_UNITEX;
+  firestandorders=1;
+  footprintX=4;
+  footprintZ=4;
+  iconType=building;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maxDamage=290;
+  maxVelocity=0;
+  metalStorage=0;
+  minWaterDepth=2;
+  noAutoFire=0;
+  noChaseCategory=ALL;
+  objectName=CORFRT;
+  seismicSignature=0;
+  selfDestructAs=BIG_UNIT;
+  side=CORE;
+  sightDistance=468;
+  smoothAnim=1;
+  soundcategory=COR_KBOT;
+  standingfireorder=2;
+  TEDClass=METAL;
+  turnRate=0;
+  waterline=4;
+  badTargetCategory=NOWEAPON;
+  workerTime=0;
+  wpri_badtargetcategory=NOWEAPON;
+  yardMap=wwwwwwwwwwwwwwww;
+
+  weapon1=ARMRL_MISSILE;
+}
+

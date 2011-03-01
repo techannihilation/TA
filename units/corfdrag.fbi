@@ -1,0 +1,43 @@
+[UNITINFO] {
+  unitname=corfdrag;
+  name=Shark's Teeth;
+  description=Perimeter Defense;
+  acceleration=0;
+  bmcode=0;
+  brakeRate=0;
+  buildAngle=8192;
+  buildCostEnergy=630;
+  buildCostMetal=20;
+  builder=0;
+  buildPic=CORFDRAG.DDS;
+  buildTime=1000;
+  category=ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR;
+  corpse=FLOATINGTEETH_CORE;
+  energyMake=0;
+  energyStorage=0;
+  energyUse=0;
+  footprintX=2;
+  footprintZ=2;
+  idleAutoHeal=5;
+  idleTime=1800;
+  isFeature=1;
+  maxDamage=50;
+  maxSlope=32;
+  maxVelocity=0;
+  maxWaterDepth=0;
+  metalStorage=0;
+  minWaterDepth=1;
+  noAutoFire=0;
+  objectName=CORFDRAG;
+  seismicSignature=0;
+  side=CORE;
+  sightDistance=130;
+  smoothAnim=1;
+  soundcategory=NONE;
+  TEDClass=FORT;
+  turnRate=0;
+  waterline=3;
+  workerTime=0;
+  yardMap=wwww;
+}
+

@@ -1,0 +1,67 @@
+[UNITINFO]
+	{
+	UnitName=TLLCSUB;
+	Version=3.1;
+	Side=TLL;
+	Objectname=TLLCSUB;
+	Designation= ;
+	Name=Construction Sub;
+	Description=Tech Level 1;
+	FootprintX=3;
+	FootprintZ=3;
+	BuildCostEnergy=2568;
+	BuildCostMetal=295;
+	MaxDamage=280;
+	EnergyUse=0.1;
+	BuildTime=6247;
+	WorkerTime=130;
+	BMcode=1;
+	Builder=1;
+	ThreeD=1;
+	ZBuffer=1;
+	NoAutoFire=0;
+	SightDistance=100;
+	SoundCategory=ARM_CSUB;
+	EnergyStorage=50;
+	MetalStorage=50;
+	ExplodeAs=SMALL_UNITEX;
+	SelfDestructAs=SMALL_UNIT;
+	Category=TLL UNDERWATER LEVEL1 NOWEAPON NOTAIR NOTSTRUCTURE CONSTR CTRL_B;
+	TEDClass=SHIP;
+	Copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
+	Corpse=tllcsub_dead;
+	UnitNumber=887;
+
+	GermanName=Konstr. U-Boot;
+	GermanDescription=Tech Level 1;
+	FrenchName=Ss-marin de construction;
+	Frenchdescription=Niveau Tech 1;
+	SpanishName=Submarino Constr.;
+	SpanishDescription=Nivel Tecn. 1;
+	ItalianName=Unità Sub di costr.;
+	ItalianDescription=Tecnologia Livello 1;
+
+	mobilestandorders=1;
+	StandingMoveOrder=1;
+	canmove=1;
+	canpatrol=1;
+	canstop=1;
+	canguard=1;
+	MaxVelocity=2.15;
+	BrakeRate=0.2;
+	Acceleration=0.032;
+	TurnRate=256;
+	SteeringMode=1;
+	Builddistance=70;
+	ShootMe=1;
+	CanReclamate=1;
+	EnergyMake=9;
+	DefaultMissionType=Standby;
+	maneuverleashlength=640;
+	MovementClass=dBOAT3;
+	MinWaterDepth=20;
+	SonarDistance=200;
+	WaterLine=20;
+	MetalMake=0.4;
+	Upright=1;
+	}

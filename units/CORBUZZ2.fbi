@@ -1,0 +1,60 @@
+[UNITINFO] // Generated with TAS Modit v2.2 Beta
+{
+	name=Rapid-Buzzsaw;
+	unitname=corbuzz2;
+	buildcostenergy=541404;
+	buildcostmetal=42460;
+	buildtime=880630;
+	category=CORE WEAPON NOTAIR NOTSUB NOTSHIP LEVEL3 NOTLAND ALL;
+	description=Rapid-fire Long-Range Plasma Cannon;
+	footprintx=8;
+	footprintz=8;
+	maxdamage=29960;
+	objectname=CORBUZZ;
+	side=CORE;
+	soundcategory=COR_INT;
+	tedclass=FORT;
+	brakerate=0;
+	acceleration=0;
+	maxvelocity=0;
+	maxslope=13;
+	turnrate=0;
+	yardmap=oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo;
+	builder=0;
+	workertime=0;
+	energymake=0;
+	energystorage=0;
+	energyuse=0;
+	metalstorage=0;
+	canattack=1;
+	canstop=1;
+	idletime=1800;
+	idleautoheal=5;
+	sightdistance=273;
+	weapon1=CORBUZZ_WEAPON3;
+	wpri_badtargetcategory=MOBILE;
+	badtargetcategory=MOBILE;
+	explodeas=ATOMIC_BLAST;
+	selfdestructas=ATOMIC_BLAST;
+	onlytargetcategory1=NOTAIR;
+	maxwaterdepth=0;
+	corpse=CORBUZZ2_DEAD;
+	smoothanim=1;
+	buildpic=CORBUZZ.DDS;
+	icontype=building;
+	bmcode=0;
+	buildangle=29096;
+	seismicsignature=0;
+	firestandorders=3;
+	standingfireorder=3;
+	defaultmissiontype=GUARD_NOMOVE;
+	antiweapons=1;
+	collisionVolumeType=CylY;
+	collisionVolumeScales=65 150 90;
+	collisionVolumeOffsets=0 -19 0;
+	collisionVolumeTest=0;
+		[SFXTypes]
+	{
+	explosiongenerator0=custom:vulcanflare;
+	}
+}

@@ -1,0 +1,47 @@
+[UNITINFO]
+	{
+	unitname=TLLCOLDFUS;
+	version=3.1;
+	side=TLL;
+	objectname=TLLCOLDFUS;
+	designation=TL-CF;
+	name=Cloackable Advanced Fusion Reactor;
+	description=Produces Hightly Energy/ Storage;
+	footprintx=5;
+	footprintz=5;
+	buildcostenergy=38045;
+	buildcostmetal=10575;
+	maxdamage=11380;
+	maxwaterdepth=0;
+	maxslope=10;
+	energyuse=0;
+	buildtime=122321;
+	workertime=0;
+	bmcode=0;
+	builder=0;
+	threed=1;
+	zbuffer=1;
+	noautofire=0;
+	sightdistance=210;
+	radardistance=0;
+	soundcategory=ARM_FUS;
+	energystorage=28000;
+	metalstorage=0;
+	explodeas=CRBLMSSL;
+  selfDestructAs=CRBLMSSL1;
+	category=TLL ENERGY LEVEL3 NOWEAPON NOTAIR NOTSUB;
+	tedclass=ENERGY;
+	copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
+	yardmap=ooooo ooooo ooooo ooooo ooooo;
+	corpse=tllcoldfus_dead;
+	unitnumber=922;
+	frenchdescription=Produit de l'énergie;
+	energymake=3100;
+	buildangle=4096;
+	downloadable=1;
+	cloakcost=850;
+	ActivateWhenBuilt=1;
+ [SFXTypes] {
+    explosionGenerator0=custom:SmallWhiteLight;
+  }
+	}

@@ -1,0 +1,52 @@
+[UNITINFO] {
+  unitname=corsilo;
+  name=Silencer;
+  description=Nuclear ICBM Launcher;
+  acceleration=0;
+  antiweapons=1;
+  bmcode=0;
+  brakeRate=0;
+  buildAngle=8192;
+  buildCostEnergy=77536;
+  buildCostMetal=7187;
+  builder=0;
+  buildPic=CORSILO.DDS;
+  buildTime=181243;
+  canAttack=1;
+  canstop=1;
+  category=ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR;
+  corpse=CORSILO_DEAD;
+  energyStorage=0;
+  energyUse=0;
+  explodeAs=ATOMIC_BLAST;
+  firestandorders=1;
+  footprintX=7;
+  footprintZ=7;
+  iconType=building;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maxDamage=5560;
+  maxSlope=10;
+  maxVelocity=0;
+  maxWaterDepth=0;
+  metalStorage=0;
+  noAutoFire=0;
+  objectName=CORSILO;
+  radarDistance=50;
+  seismicSignature=0;
+  selfDestructAs=NUCLEAR_MISSILE;
+  side=CORE;
+  sightDistance=455;
+  smoothAnim=1;
+  soundcategory=NUC;
+  standingfireorder=0;
+  TEDClass=SPECIAL;
+  turnRate=0;
+  badTargetCategory=MOBILE;
+  workerTime=0;
+  wpri_badtargetcategory=MOBILE;
+  yardMap=ooooooooooooooooooooooooooooooooooooooooooooooooo;
+
+  weapon1=CRBLMSSL;
+}
+

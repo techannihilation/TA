@@ -1,0 +1,46 @@
+[UNITINFO] {
+  unitname=armtide;
+  name=Tidal Generator;
+  description=Produces Energy;
+  acceleration=0;
+  activateWhenBuilt=1;
+  bmcode=0;
+  brakeRate=0;
+  buildAngle=8192;
+  buildCostEnergy=412;
+  buildCostMetal=82;
+  builder=0;
+  buildPic=ARMTIDE.DDS;
+  buildTime=2188;
+  category=ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR;
+  corpse=ARMTIDE_DEAD;
+  energyStorage=50;
+  energyUse=0;
+  explodeAs=SMALL_BUILDINGEX;
+  footprintX=3;
+  footprintZ=3;
+  iconType=building;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maxDamage=256;
+  maxSlope=10;
+  maxVelocity=0;
+  metalStorage=0;
+  minWaterDepth=20;
+  noAutoFire=0;
+  objectName=ARMTIDE;
+  onoffable=1;
+  seismicSignature=0;
+  selfDestructAs=SMALL_BUILDING;
+  side=ARM;
+  sightDistance=130;
+  smoothAnim=1;
+  soundcategory=ARM_TIDE;
+  TEDClass=WATER;
+  tidalGenerator=1;
+  turnRate=0;
+  waterline=8;
+  workerTime=0;
+  yardMap=wwwwwwwww;
+}
+

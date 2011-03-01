@@ -1,0 +1,59 @@
+[UNITINFO] {
+  unitname=armllt;
+  name=LLT;
+  description=Light Laser Tower;
+  acceleration=0;
+  bmcode=0;
+  brakeRate=0;
+  buildAngle=32768;
+  buildCostEnergy=637;
+  buildCostMetal=81;
+  builder=0;
+  buildPic=ARMLLT.DDS;
+  buildTime=2662;
+  canAttack=1;
+  canstop=1;
+  category=ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR;
+  corpse=ARMLLT_DEAD;
+  defaultmissiontype=GUARD_NOMOVE;
+  energyStorage=100;
+  energyUse=0;
+  explodeAs=MEDIUM_BUILDINGEX;
+  firestandorders=1;
+  footprintX=2;
+  footprintZ=2;
+  iconType=building;
+  floater=1;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maxDamage=560;
+  maxSlope=14;
+  maxVelocity=0;
+  maxWaterDepth=0;
+  metalStorage=0;
+  noAutoFire=0;
+  noChaseCategory=MOBILE;
+  objectName=ARMLLT;
+  seismicSignature=0;
+  selfDestructAs=MEDIUM_BUILDING;
+  side=ARM;
+  sightDistance=494;
+  smoothAnim=1;
+  soundcategory=LLT;
+  standingfireorder=2;
+  TEDClass=FORT;
+  turnRate=0;
+  badTargetCategory=ANTILASER;
+  workerTime=0;
+  wpri_badtargetcategory=ANTILASER;
+  yardMap=oooo;
+
+  weapon1=ARM_LIGHTLASER;
+collisionvolumetype=box;
+collisionvolumeoffsets=0 0 0;
+collisionvolumescales=22 75 22;
+
+
+
+}
+

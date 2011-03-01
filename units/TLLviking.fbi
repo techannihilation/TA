@@ -1,0 +1,66 @@
+[UNITINFO]
+	{
+	UnitName=TLLVIKING;
+	Version=3.1;
+	Side=TLL;
+	Objectname=TLLVIKING;
+	Designation= ;
+	Name=Viking;
+	Description=Battleship;
+	FootprintX=6;
+	FootprintZ=9;
+	BuildCostEnergy=25311;
+	BuildCostMetal=4712;
+	MaxDamage=6154;
+	BuildTime=47303;
+	BMcode=1;
+	Builder=0;
+	ThreeD=1;
+	ZBuffer=1;
+	NoAutoFire=0;
+	SightDistance=350;
+	SoundCategory=ARM_SHIP;
+	ExplodeAs=BIG_UNITEX;
+	SelfDestructAs=BIG_UNIT;
+	Category=TLL LEVEL2 WEAPON NOTAIR NOTSTRUCTURE CTRL_N CTRL_W;
+	TEDClass=SHIP;
+	Copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
+	Corpse=tllviking_dead;
+	UnitNumber=902;
+
+	GermanDescription=Schlachtschiff;
+	Frenchdescription=Cuirassé;
+	SpanishDescription=Acorazado;
+	ItalianDescription=Nave da battaglia;
+
+	firestandorders=1;
+	StandingFireOrder=2;
+	mobilestandorders=1;
+	StandingMoveOrder=0;
+	canmove=1;
+	canpatrol=1;
+	canstop=1;
+	canguard=1;
+	MaxVelocity=2.07;
+	BrakeRate=0.018;
+	Acceleration=0.0055;
+	TurnRate=67;
+	SteeringMode=1;
+	ShootMe=1;
+	Scale=0.6;
+	DefaultMissionType=Standby;
+	maneuverleashlength=640;
+	MovementClass=DBOAT6;
+	MinWaterDepth=30;
+	buildangle=16384;
+	canattack=1;
+	Weapon1=COR_CRUS;
+	Weapon2=ARM_CRUS;
+	Weapon3=ARM_BATS;
+	wpri_badTargetCategory=CTRL_V;
+	wsec_badTargetCategory=CTRL_V;
+	BadTargetCategory=NOWEAPON;
+	NoChaseCategory=CTRL_V;
+	waterline=1;
+	Floater=1;
+	}

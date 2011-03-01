@@ -1,0 +1,47 @@
+[UNITINFO] // Generated with TAS Modit v2.2 Beta
+{
+	name=Saint;
+	unitname=armflosh;
+	buildcostenergy=29167;
+	buildcostmetal=3645.5;
+	buildtime=61719;
+	category=ARM NOWEAPON NOTAIR LEVEL3 NOTLAND ALL;
+	description=Floating Plasma Deflector;
+	footprintx=4;
+	footprintz=4;
+	maxdamage=3260.3;
+	objectname=armflosh.s3o;
+	side=ARM;
+	soundcategory=GATE;
+	tedclass=SPECIAL;
+	brakerate=0;
+	acceleration=0;
+	maxvelocity=0.0;
+	maxslope=10;
+	turnrate=0;
+	yardmap=oooooooooooooooo;
+	builder=0;
+	workertime=0;
+	energystorage=0;
+	energyuse=0;
+	metalstorage=0;
+	onoffable=1;
+	idletime=1800;
+	idleautoheal=5;
+	activatewhenbuilt=1;
+	sightdistance=273;
+	weapon1=REPULSOR;
+	explodeas=LARGE_BUILDINGEX;
+	selfdestructas=CRAWL_BLAST;
+	minwaterdepth=5;
+	floater=1;
+	waterline=1;
+	smoothanim=1;
+	buildpic=armflosh.png;
+	icontype=building;
+	bmcode=0;
+	noautofire=0;
+	buildangle=2048;
+	seismicsignature=0;
+	norestrict=1;
+}

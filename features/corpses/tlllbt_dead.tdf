@@ -1,0 +1,36 @@
+[tlllbt_dead]
+	{
+	World=All Worlds;
+	Description=wreckage;
+	Category=tll_corpses;
+	Object=tlllbt_dead;
+	FeatureDead=tlllbt_heap;
+	FootPrintx=3;
+	FootPrintz=3;
+	Height=21;
+	Blocking=1;
+	HitDensity=105;
+	Metal=1891;
+	Damage=3252;
+	Reclaimable=1;
+	FeatureReclamate=smudge01;
+	SeqNameReclamate=tree1reclamate;
+	}
+
+[tlllbt_heap]
+	{
+	World=All Worlds;
+	Description=wreckage;
+	Category=heaps;
+	Object=3x3D;
+	FootPrintx=3;
+	FootPrintz=3;
+	Height=2;
+	Blocking=0;
+	HitDensity=105;
+	Metal=1292;
+	Damage=3583;
+	Reclaimable=1;
+	FeatureReclamate=smudge01;
+	SeqNameReclamate=tree1reclamate;
+	}

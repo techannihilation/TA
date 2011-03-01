@@ -1,0 +1,58 @@
+[UNITINFO] // Generated with TAS Modit v2.2 Beta
+{
+	name=Intimidator;
+	unitname=corint;
+	buildcostenergy=62520;
+	buildcostmetal=4328;
+	buildtime=93237;
+	category=CORE WEAPON NOTAIR NOTSUB NOTSHIP LEVEL3 NOTLAND ALL;
+	description=Long Range Plasma Cannon;
+	footprintx=5;
+	footprintz=5;
+	maxdamage=4600;
+	objectname=CORINT;
+	side=CORE;
+	soundcategory=COR_INT;
+	tedclass=FORT;
+	brakerate=0;
+	acceleration=0;
+	maxvelocity=0;
+	maxslope=13;
+	turnrate=0;
+	yardmap=ooooooooooooooooooooooooo;
+	builder=0;
+	workertime=0;
+	energystorage=0;
+	energyuse=0;
+	metalstorage=0;
+	canattack=1;
+	canstop=1;
+	idletime=1800;
+	idleautoheal=5;
+	sightdistance=273;
+	weapon1=CORE_INTIMIDATOR2;
+	wpri_badtargetcategory=MOBILE;
+	badtargetcategory=MOBILE;
+	explodeas=ATOMIC_BLAST;
+	selfdestructas=ATOMIC_BLAST;
+	onlytargetcategory1=NOTAIR;
+	maxwaterdepth=0;
+	corpse=CORINT_DEAD;
+	smoothanim=1;
+	buildpic=CORINT.DDS;
+	icontype=building;
+	bmcode=0;
+	buildangle=32700;
+	seismicsignature=0;
+	firestandorders=2;
+	standingfireorder=2;
+	defaultmissiontype=GUARD_NOMOVE;
+	antiweapons=1;
+				[SFXTypes]
+	{
+	explosiongenerator0=custom:berthaflare;
+	}
+	[customParams] {
+    canAreaAttack=1;
+  }
+}

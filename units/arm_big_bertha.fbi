@@ -1,0 +1,117 @@
+[UNITINFO]
+{
+	//************************************************************
+	//  Unit Description
+	//********************
+	side=Arm;
+	name=Big Bertha Paralizer;
+	description=- Long Range EMP Paralizer;
+	icontype=building;
+
+	//************************************************************
+	//  Categories
+	//**************
+	category=ARM LEVEL3 WEAPON NOTAIR NOTSUB;
+	tedclass=FORT;
+
+	//************************************************************
+	//  External Specs
+	//******************
+	unitname=arm_big_bertha;
+	unitnumber=16;
+	objectname=arm_big_bertha.3do;
+	corpse=ARMBRTHA_DEAD;
+	buildpic=arm_big_bertha.DDS;
+	soundcategory=ARM_BRTHA;
+
+	//************************************************************
+	//  Health/Cost/Size
+	//********************
+	maxdamage=4950;
+	healtime=11;
+	buildcostmetal=4076;
+	buildcostenergy=45530;
+	buildtime=67926;
+	footprintx=5;
+	footprintz=5;
+
+	//************************************************************
+	//  Resources
+	//*************
+	metalstorage=0;
+	energymake=0;
+	energyuse=0;
+	energystorage=0;
+
+	//************************************************************
+	//  Building
+	//************
+	buildangle=4096;
+	yardmap=oooo oooo oooo oooo;
+
+	//************************************************************
+	//  Constructor
+	//***************
+	builder=0;
+	workertime=0;
+
+	//************************************************************
+	//  Abilities
+	//*************
+	canattack=1;
+	immunetoparalyzer=1;
+	canguard=1;
+	canstop=1;
+
+	//************************************************************
+	//  Movement
+	//************
+	maxslope=10;
+	MaxWaterDepth=33;
+
+	//************************************************************
+	//  Sight/Radar/Sonar
+	//*********************
+	sightdistance=367.5;
+	radardistance=0;
+
+	//************************************************************
+	//  Weapons
+	//***********
+	weapon1=ARM_BERTHACANNONEMP;
+	wpri_badtargetcategory=VTOL;
+	onlytargetcategory1=NOTAIR;
+	explodeas=ATOMIC_BLAST;
+	selfdestructas=ATOMIC_BLAST;
+
+	//************************************************************
+	//  Orders
+	//**********
+	firestandorders=1;
+	standingfireorder=2;
+	defaultmissiontype=GUARD_NOMOVE;
+
+	//************************************************************
+	//  Miscellaneous
+	//*****************
+	bmcode=0;
+	designation=ARM-LRC;
+	downloadable=1;
+	shootme=1;
+	threed=1;
+	version=1.2;
+	zbuffer=1;
+
+	//************************************************************
+	//  To be removed
+	//*****************
+
+	[SFXTypes]
+	{
+	explosiongenerator0=custom:BERTHAFLARE;
+	}
+	[customParams] 
+	{
+    canAreaAttack=1;
+	}
+}

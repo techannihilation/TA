@@ -1,0 +1,56 @@
+[UNITINFO] // Generated with TAS Modit v2.2 Beta
+{
+	name=Rapid-Vulcan;
+	unitname=armvulc2;
+	buildcostenergy=563644;
+	buildcostmetal=42890;
+	buildtime=972961;
+	category=ARM WEAPON NOTAIR NOTSUB NOTSHIP LEVEL2 NOTLAND ALL;
+	description=Rapid-Fire Long-Range Plasma Cannon;
+	footprintx=8;
+	footprintz=8;
+	maxdamage=28440;
+	objectname=ARMVULC;
+	side=ARM;
+	soundcategory=ARM_BRTHA;
+	tedclass=FORT;
+	brakerate=0;
+	acceleration=0;
+	maxvelocity=0;
+	maxslope=13;
+	turnrate=0;
+	yardmap=oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo;
+	builder=0;
+	workertime=0;
+	energymake=0;
+	energystorage=0;
+	energyuse=0;
+	metalstorage=0;
+	canattack=1;
+	canstop=1;
+	idletime=1800;
+	idleautoheal=5;
+	sightdistance=273;
+	weapon1=ARMVULC_WEAPON3;
+	wpri_badtargetcategory=MOBILE;
+	badtargetcategory=MOBILE;
+	explodeas=ATOMIC_BLAST;
+	selfdestructas=ATOMIC_BLAST;
+	onlytargetcategory1=NOTAIR;
+	maxwaterdepth=0;
+	corpse=ARMVULC2_DEAD;
+	smoothanim=1;
+	buildpic=ARMVULC.DDS;
+	icontype=building;
+	bmcode=0;
+	buildangle=29096;
+	seismicsignature=0;
+	firestandorders=1;
+	standingfireorder=1;
+	defaultmissiontype=GUARD_NOMOVE;
+	antiweapons=1;
+		[SFXTypes]
+	{
+	explosiongenerator0=custom:vulcanflare;
+	}
+}

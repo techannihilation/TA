@@ -1,0 +1,36 @@
+[tllack_dead]
+{
+world=All Worlds;
+description=Wreckage;
+category=tll_corpses;
+object=tllack_dead;
+featuredead=tllack_heap;
+footprintx=2;
+footprintz=2;
+height=20;
+blocking=1;
+hitdensity=100;
+metal=221;
+damage=855;
+reclaimable=1;
+featurereclamate=smudge01;
+seqnamereclamate=tree1reclamate;
+}
+
+[tllack_heap]
+{
+world=All Worlds;
+description=Wreckage;
+category=heaps;
+object=2x2b;
+footprintx=2;
+footprintz=2;
+height=4;
+blocking=0;
+hitdensity=100;
+metal=177;
+damage=601;
+reclaimable=1;
+featurereclamate=smudge01;
+seqnamereclamate=tree1reclamate;
+}

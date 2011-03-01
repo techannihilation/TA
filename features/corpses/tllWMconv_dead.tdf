@@ -1,0 +1,17 @@
+[tllWMconv_dead]
+{
+World=all;
+Description=Wreckage;
+Category=tll_corpses;
+Object=tllWMconv_dead;
+Footprintx=3;
+Footprintz=3;
+Height=12;
+Blocking=1;
+HitDensity=102;
+Metal=3;
+Damage=45;
+Reclaimable=1;
+Featurereclamate=smudge01;
+Seqnamereclamate=tree1reclamate;
+}

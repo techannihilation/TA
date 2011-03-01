@@ -1,0 +1,51 @@
+[UNITINFO] {
+  unitname=armfflak;
+  name=Flakker NS;
+  description=Anti-Air Flak Gun - Naval Series;
+  acceleration=0;
+  bmcode=0;
+  brakeRate=0;
+  buildAngle=16384;
+  buildCostEnergy=21781;
+  buildCostMetal=807;
+  builder=0;
+  buildPic=ARMFFLAK.DDS;
+  buildTime=21855;
+  canAttack=1;
+  canstop=1;
+  category=ALL WEAPON NOTSUB SPECIAL NOTAIR;
+  corpse=ARMFFLAK_DEAD;
+  defaultmissiontype=GUARD_NOMOVE;
+  energyStorage=0;
+  energyUse=0;
+  explodeAs=BIG_UNITEX;
+  firestandorders=1;
+  footprintX=3;
+  footprintZ=3;
+  iconType=building;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maxDamage=1730;
+  maxVelocity=0;
+  metalStorage=0;
+  minWaterDepth=5;
+  noAutoFire=0;
+  objectName=ARMFFLAK;
+  seismicSignature=0;
+  selfDestructAs=BIG_UNIT;
+  side=ARM;
+  sightDistance=550;
+  smoothAnim=1;
+  soundcategory=GUARD;
+  standingfireorder=2;
+  TEDClass=WATER;
+  turnRate=0;
+  waterline=0;
+  badTargetCategory=NOTAIR;
+  workerTime=0;
+  wpri_badtargetcategory=NOTAIR;
+  yardMap=wwwwwwwww;
+
+  weapon1=ARMFLAK_GUN;
+}
+

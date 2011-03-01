@@ -1,0 +1,44 @@
+[UNITINFO] {
+  unitname=coruwadvms;
+  name=Hardened Metal Storage;
+  description=Increases Metal Storage (10000);
+  bmcode=0;
+  buildAngle=6093;
+  buildCostEnergy=10400;
+  buildCostMetal=710;
+  builder=0;
+  buildPic=CORUWADVMS.DDS;
+  buildTime=20524;
+  category=ALL NOTSUB NOWEAPON NOTAIR;
+  corpse=CORUWADVMS_DEAD;
+  designation=CP-AUMS;
+  downloadable=1;
+  energyStorage=0;
+  energyUse=0;
+  explodeAs=LARGE_BUILDINGEX;
+  footprintX=4;
+  footprintZ=4;
+  iconType=building;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maxDamage=10050;
+  maxSlope=20;
+  maxWaterDepth=9999;
+  metalStorage=10000;
+  noAutoFire=0;
+  noshadow=1;
+  objectName=CORUWADVMS;
+  seismicSignature=0;
+  selfDestructAs=LARGE_BUILDING;
+  side=CORE;
+  sightDistance=182;
+  smoothAnim=1;
+  soundcategory=CORE_MSTOR;
+  TEDClass=METAL;
+  threed=1;
+  version=1.2;
+  workerTime=0;
+  yardMap=oooooooooooooooo;
+  zbuffer=1;
+}
+

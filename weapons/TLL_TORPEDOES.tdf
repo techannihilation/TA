@@ -1,0 +1,185 @@
+[TLL_ADVTORPEDO]
+	{
+	ID=219; 
+	name=Torpedo Launcher;
+	rendertype=1;
+	lineofsight=1;
+	turret=1;
+
+	model=TLLtorpedo;
+	propeller=1;
+
+	range=601;
+	reloadtime=2.6;
+	weapontimer=6;
+	weaponvelocity=100;
+	startvelocity=100;
+	weaponacceleration=15;
+	turnrate=50000;
+	areaofeffect=32;
+	burst=2;
+	burstrate=.5;
+	sprayangle=5000;
+	
+	soundstart=torpedo1;
+	soundhit=SPLASH;
+	guidance=1;
+	tracks=1;
+	selfprop=1;
+	waterweapon=1;
+	burnblow=1;
+
+	explosiongaf=fx;
+	explosionart=explode3;
+
+	waterexplosiongaf=CAexp3;
+	waterexplosionart=H2oboom2;
+
+	lavaexplosiongaf=fx;
+	lavaexplosionart=lavasplashsm;
+
+	[DAMAGE]
+		{
+		default=285;
+		}
+	}
+
+[TLL_TORPEDO]
+	{
+	ID=182;
+	name=Shore Torpedo Launcher;
+	rendertype=1;
+	lineofsight=1;
+	turret=1;
+
+	model=tlltorpedo; //big torpedo model
+	propeller=1;
+
+	range=480;
+	reloadtime=6;
+	weapontimer=8;
+	weaponvelocity=150;
+	startvelocity=100;
+	weaponacceleration=15;	
+
+	turnrate=15000;
+	areaofeffect=16;
+	soundstart=canlite3;
+	soundhit=SPLSHBIG;
+	guidance=1;
+	tracks=1;
+	selfprop=1;
+	waterweapon=1;
+	burnblow=1;
+	
+	tolerance=6000;
+
+	explosiongaf=fx;
+	explosionart=explode3;
+
+	waterexplosiongaf=CAexp3;
+	waterexplosionart=h2oboom1;
+
+	lavaexplosiongaf=fx;
+	lavaexplosionart=lavasplashsm;
+
+	[DAMAGE]
+		{
+		default=300;
+		}
+	}
+[TLLAIR_TORPEDO]
+	{
+	ID=140;
+	name=Torpedo Launcher;
+	rendertype=1;
+	lineofsight=1;
+	turret=0;
+
+	model=tlltorpedo;
+	propeller=1;
+
+	range=450;
+	reloadtime=10;
+	weapontimer=5.5;
+	weaponvelocity=100;
+	startvelocity=100;
+	weaponacceleration=15;	
+
+	turnrate=15000;
+	areaofeffect=24;
+	soundstart=bombrel;
+	soundhit=splash;
+	guidance=1;
+	tracks=1;
+	selfprop=1;
+	waterweapon=1;
+	burnblow=1;
+	burst=3;
+	burstrate=.2;
+	sprayangle=3250;
+
+	tolerance=6000;
+
+	explosiongaf=fx;
+	explosionart=explode3;
+
+	waterexplosiongaf=CAexp3;
+	waterexplosionart=h2oboom3;
+
+	lavaexplosiongaf=fx;
+	lavaexplosionart=lavasplashsm;
+
+	[DAMAGE]
+		{
+		default=250;
+		}
+	}
+[TLL_ASTORPEDO]
+	{
+	ID=221;
+	name=guided torpedo pack;
+	rendertype=1;
+	lineofsight=1;
+	turret=1;
+
+	model=tlltorpedo2; //small torpedo model
+	propeller=1;
+
+	range=600;
+	reloadtime=6;
+	weapontimer=5;
+	weaponvelocity=135;
+	startvelocity=100;
+	weaponacceleration=15;	
+
+	turnrate=10000;
+	areaofeffect=16;
+	soundstart=canlite3;
+	soundhit=splash;
+	guidance=1;
+	tracks=1;
+	selfprop=1;
+	waterweapon=1;
+	burnblow=1;
+	burst=5;
+	burstrate=.2;
+	sprayangle=10000;
+	soundtrigger=1;
+
+	tolerance=6000;
+
+	explosiongaf=fx;
+	explosionart=explode3;
+
+	waterexplosiongaf=CAexp3;
+	waterexplosionart=h2oboom2;
+
+	lavaexplosiongaf=fx;
+	lavaexplosionart=lavasplashsm;
+
+	[DAMAGE]
+		{
+		default=133;
+		}
+	}

@@ -1,0 +1,545 @@
+[ARGHNUKE_FX1]
+{
+///Used to be Someone Elses's GPL Nuke.  But no more.  Yarr!  I be commendering this FX. STILL GPL PLESASE DON"T SUE CAME FROM ARGH. IT WAS ARGH.  ITS NOT REALLY THE SAME I CHANGED EVERYTHING.  PLEASE DONT BE MAD
+	// INITIAL SPARK EFFECT
+	[flamey]
+	{
+      		class=heatcloud;
+                [properties]
+      		{
+		texture=burn1;
+      		heat = 200;
+      		maxheat = 200;
+      		heatFalloff = 5;
+			alwaysvisible=1;
+      		size = 5;
+      		sizeGrowth = 25;
+      		speed = 0, 0, 0;
+      		pos = 0, 25, 0;
+      		}
+	air=1;
+      	water=1;
+      	ground=1;
+      	count=2;
+	}
+        [center]
+   		{
+      		class=heatcloud;
+                [properties]
+      		{
+		texture=burn1;
+      		heat = 125;
+      		maxheat = 125;
+      		heatFalloff = 5;
+			alwaysvisible=1;
+      		size = 5;
+      		sizeGrowth = 50;
+      		speed = 0, 5, 0;
+      		pos = r-3 r3, 25, r-3 r3;
+      		}
+	air=1;
+      	water=1;
+      	ground=1;
+      	count=2;
+	}
+	[pikes]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-15 r30,-15 r30,-15 r30;
+			width=500;
+			length=1500;
+			alwaysvisible=1;
+			alpha=0.99;
+			alphadecay=0.03;
+			color=1.0,1.0,1.0;
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=20; 
+	}
+	// THE REAL FX DOWN HERE
+
+	[smokey] 
+	{
+		class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 0, 0;  
+		alwaysvisible=1;
+		delay=0 900;				  
+		explosionGenerator=custom:SMOKE_COLUMN_NUKE_FX_01_011;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[smokey2] 
+	{
+		class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 0, 0;
+  		alwaysvisible=1;
+		delay=0 900;				  
+		explosionGenerator=custom:SMOKE_COLUMN_NUKE_FX_02_011;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+
+	[groundflash]
+   	{
+      		flashSize = 7200;
+	      	flashAlpha = 2.5;
+	      	circleGrowth = 4.1;
+	      	circleAlpha = 1.4;
+	      	ttl = 1000;
+	      	color = 1, 0.8, 0.6;
+			alwaysvisible=1;
+		air=1;
+	     	ground=1;
+	     	water=1;
+		count=1;
+	}
+	[glow] 
+	{
+		class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 0, 0; 
+ 		alwaysvisible=1;
+		delay=0 50;				  
+		explosionGenerator=custom:ARGHNUKE_GLOW1;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=5;
+	}
+	/*[oohshiny] 
+	{
+		class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 0, 0;
+  		alwaysvisible=1;
+		delay=0 50;				  
+		explosionGenerator=custom:ARGHNUKE_GROUNDFLASH1;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=3;
+	}*/
+	[firecloud] 
+	{
+		class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 0, 0;
+  		alwaysvisible=1;
+		delay=0 150;				  
+		explosionGenerator=custom:ARGHNUKE_FIRECLOUD1;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=5;
+	}
+	[cap] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=-50 r100, 2400 i20, -50 r100;
+		alwaysvisible=1;
+		delay=2225 i40;				  
+		explosionGenerator=custom:ARGH_CAP1;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=25;
+	}
+}
+///////////////////////////////////////////////////////////////////////////////////////////END MAIN CODE HERE
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+
+[ARGHNUKE_GLOW1]
+{
+	[glow]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=0;
+			sizeMod=1.0;
+			pos=0, 10, 0;
+			emitVector=-0, 1, 0;
+			gravity=0, 0.00, 0;
+			colorMap= 0 0 0 0.01   1 1 0.8 0.9              0 0 0 0.01;
+			Texture=diamondstar1;
+			airdrag=1;
+			particleLife=300;
+			particleLifeSpread=0;
+			numParticles=5;
+			particleSpeed=5;
+			alwaysvisible=1;
+			particleSpeedSpread=0;
+			particleSize=4000;
+			particleSizeSpread=50;
+			emitRot=0;
+			emitRotSpread=900;
+			directional=1;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=3;
+	}
+	[groundflash]
+	{
+		flashsize=4000;
+		flashalpha=1;
+		circlegrowth=0;
+		circlealpha=1;
+		ttl=1000;
+		color=1,0.8,0.7;
+		alwaysvisible=1;
+
+		air=1;
+	     	ground=1;
+	     	water=1;
+		count=1;
+	}
+}
+
+/*[ARGHNUKE_GROUNDFLASH]
+{
+	[groundflash]
+	{
+		flashsize=800;
+		flashalpha=2;
+		circlegrowth=0;
+		circlealpha=1;
+		ttl=150;
+		color=1.7,1.7,1.7;
+	}
+}*/
+
+[ARGHNUKE_FIRECLOUD1]
+{
+	[first]
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=10 r20, i25, -10 r20;   
+ 		alwaysvisible=1;
+		delay=0  i4;				  
+		explosionGenerator=custom:ARGHNUKE_FIREPILLAR1;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=20;
+	}
+	[second]
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=10 r20, 500 i50, -10 r20; 
+   		alwaysvisible=1;
+		delay=400  i8;				  
+		explosionGenerator=custom:ARGHNUKE_FIREPILLARRED1;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=20;
+	}
+	[third]
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=10 r20, 1500 i30, -10 r20; 
+   		alwaysvisible=1;
+		delay=1240  i30;				  
+		explosionGenerator=custom:ARGHNUKE_REDPLOOM21;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=30;
+	}
+}
+
+[ARGHNUKE_FIREPILLAR1]
+{
+	[rocks]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=0.05;
+			sizeMod=1.0;
+			pos=0, 0, 0;
+			emitVector=0, 1, 0;
+			gravity=0.005 r-0.010, 0.05 r-0.10, 0.005 r-0.010;
+			colorMap= 0 0 0  0.01   0.9 0.9 0.9 0.5  0.9 0.9 0.9 0.5  0.9 0.9 0.9 0.5     0.9 0.9 0.9 0.5     0.9 0.9 0.9 0.5       0.8 0.8 0.8 0.5       0.7 0.7 0.7 0.5      0.5 0.5 0.5 0.5   0.5 0.5 0.5 0.5   0.5 0.5 0.5 0.5    0.5 0.5 0.5 0.5   0 0 0 0.01;
+			Texture=flame1;
+			airdrag=0.97;
+			particleLife=1150;
+			particleLifeSpread=500;
+			numParticles=5;
+			particleSpeed=15;
+			particleSpeedSpread=15;
+			alwaysvisible=1;
+			particleSize=250;
+			particleSizeSpread=250;
+			emitRot=650;
+			emitRotSpread=50;
+			directional=1;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=1;
+	}
+}
+
+[ARGHNUKE_FIREPILLARRED1]
+{
+	[rocks]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=0.05;
+			sizeMod=1.0;
+			pos=0, 0, 0;
+			emitVector=0, 1, 0;
+			gravity=0.005 r-0.010, 0.05 r-0.10, 0.005 r-0.010;
+			//colorMap= 0 0 0 0.01   0.9 0.9 .9 0.5     0.9 0.9 .9 0.5    0.9 0.9 .9 0.5   0 0 0 0.01;
+			colorMap= 0 0 0  0.01   0.9 0.9 0 0.5  0.9 0.9 0 0.5  0.9 0.9 0 0.5     0.9 0.9 0 0.5     0.9 0.9 0 0.5       0.8 0.8 0.1 0.5       0.7 0.7 0.2 0.5      0.5 0.35 0. 0.5   0.5 0.35 0. 0.5   0.5 0.35 0. 0.5    0.5 0.35 0. 0.5   0 0 0 0.01;
+			Texture=fireball1;
+			airdrag=0.97;
+			particleLife=1000;
+			particleLifeSpread=200;
+			alwaysvisible=1;
+			numParticles=5;
+			particleSpeed=15;
+			particleSpeedSpread=15;
+			particleSize=250;
+			particleSizeSpread=250;
+			emitRot=650;
+			emitRotSpread=50;
+			directional=1;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=1;
+	}
+	[socks]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=0.05;
+			sizeMod=1.0;
+			pos=0, 0, 0;
+			emitVector=0, 1, 0;
+			gravity=0.005 r-0.010, 0.05 r-0.10, 0.005 r-0.010;
+			colorMap= 0 0 0  0.01   0.9 0.9 0.9 0.5  0.9 0.9 0.9 0.5  0.9 0.9 0.9 0.5     0.9 0.9 0.9 0.5     0.9 0.9 0.9 0.5       0.8 0.8 0.8 0.5       0.7 0.7 0.7 0.5      0.5 0.5 0.5 0.5   0.5 0.5 0.5 0.5   0.5 0.5 0.5 0.5    0.5 0.5 0.5 0.5   0 0 0 0.01;
+			Texture=flame1;
+			airdrag=0.97;
+			particleLife=800;
+			particleLifeSpread=200;
+			alwaysvisible=1;
+			numParticles=5;
+			particleSpeed=15;
+			particleSpeedSpread=15;
+			particleSize=250;
+			particleSizeSpread=250;
+			emitRot=650;
+			emitRotSpread=50;
+			directional=1;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=1;
+	}
+}
+
+[ARGHNUKE_REDPLOOM21]
+{
+	[rocks]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=0.05;
+			sizeMod=1.0;
+			pos=0, 0, 0;
+			emitVector=0, 1, 0;
+			gravity=0.005 r-0.010, 0.05 r-0.10, 0.005 r-0.010;
+			//colorMap= 0 0 0 0.01   0.9 0.9 .9 0.5     0.9 0.9 .9 0.5    0.9 0.9 .9 0.5   0 0 0 0.01;
+			colorMap= 0 0 0  0.01   0.9 0.9 0 0.5  0.9 0.9 0 0.5  0.9 0.9 0 0.5     0.9 0.9 0 0.5     0.9 0.9 0 0.5       0.8 0.8 0.1 0.5       0.7 0.7 0.2 0.5      0.5 0.35 0. 0.5   0.5 0.35 0. 0.5   0.5 0.35 0. 0.5    0.5 0.35 0. 0.5   0 0 0 0.01;
+			Texture=fireball1;
+			airdrag=0.97;
+			particleLife=800;
+			particleLifeSpread=200;
+			alwaysvisible=1;
+			numParticles=5;
+			particleSpeed=15;
+			particleSpeedSpread=15;
+			particleSize=200;
+			particleSizeSpread=200;
+			emitRot=650;
+			emitRotSpread=50;
+			directional=1;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=1;
+	}
+}
+
+[SMOKE_COLUMN_NUKE_FX_01_011]
+{
+	[SMOKIN01]
+	{
+	class=CSphereParticleSpawner;
+	[properties]
+      		{
+		sizeGrowth=0 r0.25;
+		sizeMod=5.0;
+		pos=-35 r74, 50 i-300, -35 r74;
+		emitVector=0, 1, 0;
+		gravity=0.00625 r-0.0125, 0.175 r0.10, 0.00625 r-0.0125;
+		colorMap=1.0 1.0 0.8 1.0   0.75 0.75 0.5 1.0    0.9 0.9 0.9 1.0    0 0 0 0.01;
+		Texture=smokesmall1;
+		airdrag=0.96;
+		particleLife=3510;
+		particleLifeSpread=50;
+		alwaysvisible=1;
+		numParticles=5;
+		particleSpeed=3;
+		particleSpeedSpread=1.5;
+		particleSize=60;
+		particleSizeSpread=75;
+		emitRot=425;
+		emitRotSpread=25;
+		directional=0;
+		useAirLos=1;
+      		}
+	air=1;
+      	water=1;
+      	ground=1;
+      	count=9;
+   	}
+}
+
+[SMOKE_COLUMN_NUKE_FX_02_011]
+{
+	[SMOKIN02]
+	{
+	class=CSphereParticleSpawner;
+	[properties]
+      		{
+		sizeGrowth=0 r-0.01;
+		sizeMod=1.0;
+		pos=-75 r150, 50 i-75, -75 r150;
+		emitVector=0, 1, 0;
+		gravity=0.00625 r-0.0125, 0.175, 0.00625 r-0.0125;
+		colorMap=1.0 1.0 0.8 1.0   0.75 0.75 0.5 1.0    0.9 0.9 0.9 1.0    0 0 0 0.01;
+		Texture=smokesmall1;
+		airdrag=0.96;
+		particleLife=10;
+		alwaysvisible=1;
+		particleLifeSpread=150;
+		numParticles=5;
+		particleSpeed=7.5;
+		particleSpeedSpread=1.5;
+		particleSize=15;
+		particleSizeSpread=75;
+		emitRot=425;
+		emitRotSpread=25;
+		directional=0;
+		useAirLos=1;
+      		}
+	air=1;
+      	water=1;
+      	ground=1;
+      	count=90;
+   	}
+}
+
+
+[ARGH_CAP1]
+{
+	[smoke]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=0.25;
+			sizeMod=1.0;
+			pos=0, 0, 0;
+			emitVector=0, 1, 0;
+			gravity=0.005 r-0.010, 0.00, 0.005 r-0.010;
+			colorMap=  0 0 0  0.01 1 0.8 0.6 .9     0.8 0.8 0.8 .8        0.8 0.8 0.8 .8  0.6 0.6 0.6 .6  0.4 0.4 0.4 .4  0.2 0.2 0.2 .2  0.1 0.1 0.1 .1  0.05 0.05 0.05 .05  0 0 0 0.01;
+			Texture=smokesmall1;
+			airdrag=0.98;
+			particleLife=2530;
+			alwaysvisible=1;
+			particleLifeSpread=70;
+			numParticles=5;
+			particleSpeed=30 i-2;
+			particleSpeedSpread=0;
+			particleSize=250 i12;
+			particleSizeSpread=100;
+			emitRot=450;
+			emitRotSpread=0;
+			directional=0;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=3;
+	}
+}
+
+
+[ARGHNUKE_FX_LOW1]
+{
+	[KABLOOM] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=-0, -125, 0;
+		alwaysvisible=1;
+		delay=0;			
+		explosionGenerator=custom:ARGHNUKE_FX1;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+}

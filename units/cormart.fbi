@@ -1,0 +1,70 @@
+[UNITINFO] {
+  unitname=cormart;
+  name=Pillager;
+  description=Mobile Artillery;
+  acceleration=0.0204;
+  bmcode=1;
+  brakeRate=0.1232;
+  buildCostEnergy=5505;
+  buildCostMetal=263;
+  builder=0;
+  buildPic=CORMART.DDS;
+  buildTime=4270;
+  canAttack=1;
+  canGuard=1;
+  canMove=1;
+  canPatrol=1;
+  canstop=1;
+  category=ALL TANK MOBILE WEAPON NOTSUB NOTSHIP NOTAIR;
+  corpse=CORMART_DEAD;
+  [customParams] {
+    canAreaAttack=1;
+  }
+  defaultmissiontype=Standby;
+  energyMake=0.5;
+  energyStorage=0;
+  energyUse=0.5;
+  explodeAs=BIG_UNITEX;
+  firestandorders=1;
+  footprintX=3;
+  footprintZ=3;
+  idleAutoHeal=5;
+  idleTime=1800;
+  leaveTracks=1;
+  maneuverleashlength=640;
+  maxDamage=560;
+  maxSlope=12;
+  maxVelocity=1.95;
+  maxWaterDepth=0;
+  metalStorage=0;
+  mobilestandorders=1;
+  movementClass=TANK3;
+  noAutoFire=0;
+  noChaseCategory=NOTLAND;
+  objectName=CORMART;
+  seismicSignature=0;
+  selfDestructAs=BIG_UNIT;
+  side=CORE;
+  sightDistance=299;
+  smoothAnim=1;
+  soundcategory=CORE_TANK;
+  standingfireorder=2;
+  standingmoveorder=1;
+  steeringmode=1;
+  TEDClass=TANK;
+  trackOffset=8;
+  trackStrength=8;
+  trackStretch=1;
+  trackType=StdTank;
+  trackWidth=31;
+  turnRate=445;
+  badTargetCategory=NOTLAND;
+  workerTime=0;
+  wpri_badtargetcategory=NOTLAND;
+
+  weapon1=CORE_ARTILLERY;
+  maxAngleDif1=120;
+  onlyTargetCategory1=NOTAIR;
+  weaponMainDir1=0 0 1;
+}
+

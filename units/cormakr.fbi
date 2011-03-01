@@ -1,0 +1,50 @@
+[UNITINFO] // Generated with TAS Modit v2.2 Beta
+{
+	name=Metal Maker;
+	unitname=cormakr;
+	buildcostenergy=1156;
+	buildcostmetal=9;
+	buildtime=1282;
+	category=CORE NOWEAPON NOTAIR NOTSUB NOTSHIP NOTLAND ALL;
+	description=Converts Energy to Metal;
+	footprintx=4;
+	footprintz=3;
+	maxdamage=150;
+	objectname=CORMAKR;
+	side=CORE;
+	soundcategory=CORE_MAKER;
+	tedclass=METAL;
+	brakerate=0;
+	acceleration=0;
+	maxvelocity=0;
+	maxslope=10;
+	turnrate=0;
+	yardmap=oooooooooooo;
+	builder=0;
+	workertime=0;
+	energystorage=0;
+	energyuse=60;
+	makesmetal=0.8;
+	metalstorage=0;
+	onoffable=1;
+	idletime=1800;
+	idleautoheal=5;
+	activatewhenbuilt=1;
+	sightdistance=273;
+	explodeas=ARMESTOR_BUILDINGEX;
+	selfdestructas=ARMESTOR_BUILDING;
+	maxwaterdepth=0;
+	smoothanim=1;
+	buildpic=CORMAKR.DDS;
+	icontype=building;
+	bmcode=0;
+	noautofire=0;
+	buildangle=8192;
+	seismicsignature=0;
+	collisionVolumeType=Box;
+	collisionVolumeScales=46 22 35;
+	collisionVolumeOffsets=0 -1 0;
+	collisionVolumeTest = 1;
+
+
+}

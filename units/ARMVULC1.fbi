@@ -1,0 +1,57 @@
+[UNITINFO] // Generated with TAS Modit v2.2 Beta
+{
+	name=Super Vulcan;
+	unitname=armvulc1;
+	buildcostenergy=1803644;
+	buildcostmetal=273094;
+	buildtime=2772961;
+	category=ARM WEAPON NOTAIR NOTSUB NOTSHIP LEVEL2 NOTLAND ALL;
+	description=T3 Rapid-Fire Long-Range Plasma Cannon;
+	footprintx=16;
+	footprintz=16;
+	maxdamage=104440;
+	objectname=ARMVULC1;
+	script=armvulc.cob;
+	side=ARM;
+	soundcategory=ARM_BRTHA;
+	tedclass=FORT;
+	brakerate=0;
+	acceleration=0;
+	maxvelocity=0;
+	maxslope=13;
+	turnrate=0;
+	yardmap=oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo;
+	builder=0;
+	workertime=0;
+	energymake=0;
+	energystorage=0;
+	energyuse=0;
+	metalstorage=0;
+	canattack=1;
+	canstop=1;
+	idletime=1800;
+	idleautoheal=5;
+	sightdistance=273;
+	weapon1=ARMVULC_WEAPON1;
+	wpri_badtargetcategory=MOBILE;
+	badtargetcategory=MOBILE;
+	explodeas=ATOMIC_BLAST;
+	selfdestructas=ATOMIC_BLAST;
+	onlytargetcategory1=NOTAIR;
+	maxwaterdepth=0;
+	corpse=ARMVULC1_DEAD;
+	smoothanim=1;
+	buildpic=ARMVULC.DDS;
+	icontype=building;
+	bmcode=0;
+	buildangle=29096;
+	seismicsignature=0;
+	firestandorders=1;
+	standingfireorder=1;
+	defaultmissiontype=GUARD_NOMOVE;
+	antiweapons=1;
+		[SFXTypes]
+	{
+	explosiongenerator0=custom:vulcanflare;
+	}
+}

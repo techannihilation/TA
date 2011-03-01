@@ -1,0 +1,36 @@
+[tllotter_dead]
+{
+world=All Worlds;
+description=Wreckage;
+category=tll_corpses;
+object=tllotter_dead;
+featuredead=tllotter_heap;
+footprintx=4;
+footprintz=4;
+height=20;
+blocking=1;
+hitdensity=100;
+metal=67;
+damage=315;
+reclaimable=1;
+featurereclamate=smudge01;
+seqnamereclamate=tree1reclamate;
+}
+
+[tllotter_heap]
+{
+world=All Worlds;
+description=Wreckage;
+category=heaps;
+object=4x4a;
+footprintx=4;
+footprintz=4;
+height=4;
+blocking=0;
+hitdensity=100;
+metal=19;
+damage=101;
+reclaimable=1;
+featurereclamate=smudge01;
+seqnamereclamate=tree1reclamate;
+}

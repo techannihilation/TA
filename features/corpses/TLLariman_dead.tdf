@@ -1,0 +1,36 @@
+[tllariman_dead]
+{
+world=All Worlds;
+description=Wreckage;
+category=tll_corpses;
+object=tllariman_dead;
+featuredead=tllariman_heap;
+footprintx=2;
+footprintz=2;
+height=20;
+blocking=1;
+hitdensity=100;
+metal=145;
+damage=857;
+reclaimable=1;
+featurereclamate=smudge01;
+seqnamereclamate=tree1reclamate;
+}
+
+[tllariman_heap]
+{
+world=All Worlds;
+description=Wreckage;
+category=heaps;
+object=2x2e;
+footprintx=2;
+footprintz=2;
+height=4;
+blocking=0;
+hitdensity=100;
+metal=108;
+damage=638;
+reclaimable=1;
+featurereclamate=smudge01;
+seqnamereclamate=tree1reclamate;
+}

@@ -1,0 +1,47 @@
+[UNITINFO] // Generated with TAS Modit v2.2 Beta
+{
+	name=Metal Extractor;
+	unitname=cormex1;
+	buildcostenergy=5514;
+	buildcostmetal=331;
+	buildtime=1874;
+	category=CORE NOWEAPON NOTAIR NOTSUB NOTSHIP NOTLAND ALL;
+	description=Upg Metal Extractor;
+	footprintx=3;
+	footprintz=3;
+	maxdamage=675;
+	objectname=CORMEX;
+	side=CORE;
+	soundcategory=COR_MEX;
+	tedclass=METAL;
+	brakerate=0;
+	acceleration=0;
+	maxvelocity=0;
+	maxslope=20;
+	turnrate=0;
+	yardmap=ooooooooo;
+	builder=0;
+	workertime=0;
+	energystorage=0;
+	energyuse=40;
+	extractsmetal=0.0035;
+	metalstorage=300;
+	onoffable=1;
+	idletime=1800;
+	idleautoheal=5;
+	activatewhenbuilt=1;
+	sightdistance=273;
+	damagemodifier=0.4;
+	explodeas=SMALL_BUILDINGEX;
+	selfdestructas=TINY_BUILDINGEX;
+	selfdestructcountdown=1;
+	maxwaterdepth=9999;
+	corpse=CORMEX_DEAD;
+	smoothanim=1;
+	buildpic=CORMEX.DDS;
+	icontype=building;
+	bmcode=0;
+	noautofire=0;
+	buildangle=2048;
+	seismicsignature=0;
+}

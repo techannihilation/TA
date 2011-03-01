@@ -1,0 +1,47 @@
+[TLLSNIPE_WEAPON]
+	{
+	ID=253;
+	name=Ultra lightning Weapon;
+	RenderType=7;
+	LineOfSight=1;
+	Turret=1;
+
+	range=600;
+	reloadtime=3.65;
+	energypershot=250;
+	weaponvelocity=1000;
+	areaofeffect=8;
+	
+
+	soundstart=PhoFir00;
+	soundhit=LASERHITB;
+
+	firestarter=90;
+	beamweapon=1;
+	color=124;	/* PURPLE */
+	color2=217;
+
+	
+	explosiongaf=fx;
+	explosionart=explode5;
+
+	waterexplosiongaf=fx;
+	waterexplosionart=h2oboom1;
+
+	lavaexplosiongaf=fx;
+	lavaexplosionart=lavasplashsm;
+
+	[DAMAGE]
+		{
+		default=310;
+		armcom=100;
+		corcom=100;
+		tllcom=100;
+		tllbind=1000;
+		tllblind=1000;
+		corsumo=1000;
+		corcan=1000;
+		corkrog=3000;
+		}
+	}
+

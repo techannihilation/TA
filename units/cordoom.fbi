@@ -1,0 +1,61 @@
+[UNITINFO] {
+  unitname=cordoom;
+  name=Doomsday Machine;
+  description=Energy Weapon;
+  acceleration=0;
+  activateWhenBuilt=1;
+  bmcode=0;
+  brakeRate=0;
+  buildAngle=4096;
+  buildCostEnergy=42599;
+  buildCostMetal=2978;
+  builder=0;
+  buildPic=CORDOOM.DDS;
+  buildTime=55276;
+  canAttack=1;
+  canstop=1;
+  category=ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR;
+  corpse=CORDOOM_DEAD;
+  damageModifier=0.08;
+  energyStorage=2000;
+  energyUse=0;
+  explodeAs=ESTOR_BUILDING;
+  firestandorders=1;
+  footprintX=3;
+  footprintZ=3;
+  iconType=building;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maxDamage=14200;
+  maxSlope=10;
+  maxVelocity=0;
+  maxWaterDepth=0;
+  metalStorage=0;
+  noChaseCategory=VTOL;
+  objectName=CORDOOM;
+  onoffable=1;
+  radarDistance=1200;
+  seismicSignature=0;
+  selfDestructAs=ATOMIC_BLAST;
+  side=CORE;
+  sightDistance=780;
+  smoothAnim=1;
+  soundcategory=COR_DOOM;
+  standingfireorder=2;
+  TEDClass=FORT;
+  turnRate=0;
+  badTargetCategory=ANTILASER;
+  workerTime=0;
+  wpri_badtargetcategory=ANTILASER;
+  wsec_badtargetcategory=ANTILASER;
+  wspe_badtargetcategory=ANTILASER;
+  yardMap=ooooooooo;
+
+  weapon1=ATADR;
+  onlyTargetCategory1=NOTAIR;
+
+  weapon2=CORSUMO_WEAPON;
+
+  weapon3=ADV_DECKLASER;
+}
+

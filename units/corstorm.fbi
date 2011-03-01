@@ -1,0 +1,62 @@
+[UNITINFO] {
+  unitname=corstorm;
+  name=Storm;
+  description=Rocket Kbot;
+  acceleration=0.108;
+  bmcode=1;
+  brakeRate=0.188;
+  buildCostEnergy=853;
+  buildCostMetal=81;
+  builder=0;
+  buildPic=CORSTORM.DDS;
+  buildTime=1722;
+  canAttack=1;
+  canGuard=1;
+  canMove=1;
+  canPatrol=1;
+  canstop=1;
+  category=KBOT MOBILE WEAPON ALL NOTSUB NOTSHIP NOTAIR;
+  corpse=CORSTORM_DEAD;
+  defaultmissiontype=Standby;
+  energyMake=0.6;
+  energyStorage=0;
+  energyUse=0.6;
+  explodeAs=BIG_UNITEX;
+  firestandorders=1;
+  footprintX=2;
+  footprintZ=2;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maneuverleashlength=640;
+  maxDamage=670;
+  maxSlope=14;
+  maxVelocity=1.65;
+  maxWaterDepth=21;
+  metalStorage=0;
+  mobilestandorders=1;
+  movementClass=KBOT2;
+  noAutoFire=0;
+  noChaseCategory=VTOL;
+  objectName=CORSTORM;
+  seismicSignature=0;
+  selfDestructAs=BIG_UNIT;
+  [SFXTypes] {
+    explosionGenerator0=custom:rocketflare;
+  }
+  side=CORE;
+  sightDistance=344.5;
+  smoothAnim=1;
+  soundcategory=COR_KBOT;
+  standingfireorder=2;
+  standingmoveorder=1;
+  steeringmode=2;
+  TEDClass=KBOT;
+  turnRate=1103;
+  upright=1;
+  badTargetCategory=VTOL;
+  workerTime=0;
+  wpri_badtargetcategory=VTOL;
+
+  weapon1=CORE_KBOT_ROCKET;
+}
+

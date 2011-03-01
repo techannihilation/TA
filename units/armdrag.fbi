@@ -1,0 +1,39 @@
+[UNITINFO] {
+  unitname=armdrag;
+  name=Dragon's Teeth;
+  description=Perimeter Defense;
+  acceleration=0;
+  brakeRate=0;
+  buildCostEnergy=150;
+  buildCostMetal=10;
+  builder=0;
+  buildPic=ARMDRAG.DDS;
+  buildTime=255;
+  canAttack=0;
+  category=ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR;
+  corpse=DRAGONSTEETH;
+  energyMake=0;
+  energyStorage=0;
+  energyUse=0;
+  footprintX=2;
+  footprintZ=2;
+  idleAutoHeal=5;
+  idleTime=1800;
+  isFeature=1;
+  levelGround=0;
+  maxDamage=100;
+  maxSlope=64;
+  maxVelocity=0;
+  maxWaterDepth=0;
+  metalStorage=0;
+  objectName=ARMDRAG.3do;
+  seismicSignature=0;
+  side=ARM;
+  sightDistance=1;
+  soundcategory=NONE;
+  turnRate=0;
+  upright=0;
+  workerTime=0;
+  yardMap=ffff;
+}
+

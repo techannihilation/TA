@@ -1,0 +1,37 @@
+[UNITINFO] // Modified with muzzybear's FBI batch editor
+{
+	ActivateWhenBuilt=1;
+	Builder=0;
+	Category=ALL NOTSUB NOWEAPON SPECIAL NOTAIR;
+	floater=1;
+	Corpse=AMetalMakerLvl2_dead;
+	Description=Heavy convertion of energy into metal;
+	Designation=AEM-MEM;
+	EnergyStorage=0;
+	EnergyUse=12000;
+	ExplodeAs=nuclear_missile1;
+	Floater=1;
+	FootprintX=4;
+	FootprintZ=4;
+	MakesMetal=300;
+	MaxSlope=20;
+	MaxWaterDepth=0;
+	MetalStorage=0;
+	OnOffable=1;
+	damagemodifier=0.25;
+	RadarDistance=0;
+	SelfDestructAs=nuclear_missile1;
+	Side=ARM;
+	SightDistance=210;
+	SoundCategory=ARM_MAKER;
+	TEDClass=METAL;
+	WorkerTime=0;
+	YardMap=OOO OOO OOO;
+	buildcostenergy=400215.875;
+	buildcostmetal=13559.845;
+	buildtime=155467.950;
+	maxdamage=5000.0;
+	name=T3 Metal Maker;
+	objectname=AMetalMakerLvl2;
+	unitname=AMetalMakerLvl2;
+}

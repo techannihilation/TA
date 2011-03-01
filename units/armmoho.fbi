@@ -1,0 +1,45 @@
+[UNITINFO] {
+  unitname=armmoho;
+  name=Moho Mine;
+  description=Advanced Metal Extractor / Storage;
+  acceleration=0;
+  activateWhenBuilt=1;
+  bmcode=0;
+  brakeRate=0;
+  buildAngle=2048;
+  buildCostEnergy=7214;
+  buildCostMetal=582;
+  builder=0;
+  buildPic=ARMMOHO.DDS;
+  buildTime=14938;
+  category=ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR;
+  corpse=ARMMOHO_DEAD;
+  energyStorage=0;
+  energyUse=25;
+  explodeAs=SMALL_BUILDINGEX;
+  extractsMetal=0.0060;
+  footprintX=5;
+  footprintZ=5;
+  iconType=building;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maxDamage=2500;
+  maxSlope=20;
+  maxVelocity=0;
+  maxWaterDepth=20;
+  metalStorage=1000;
+  noAutoFire=0;
+  objectName=ARMMOHO;
+  onoffable=1;
+  seismicSignature=0;
+  selfDestructAs=SMALL_BUILDING;
+  side=ARM;
+  sightDistance=273;
+  smoothAnim=1;
+  soundcategory=ARM_MOHO;
+  TEDClass=METAL;
+  turnRate=0;
+  workerTime=0;
+  yardMap=ooooooooooooooooooooooooo;
+}
+

@@ -1,0 +1,57 @@
+[UNITINFO]
+	{
+	UnitName=armarch;
+	Version=3.0;
+	Side=ARM;
+	Objectname=armarch;
+	Designation=ARM-GUARD;
+	Name=Gatling;
+	Description=Fast Gatling Plasma Battery;
+	FootprintX=4;
+	FootprintZ=4;
+	BuildCostEnergy=132143;
+	BuildCostMetal=3874;
+	BuildTime=42190;
+	MaxDamage=8231;
+	MaxWaterDepth=0;
+	MaxSlope=10;
+	EnergyUse=0;
+	HighTrajectory=2;
+	onlytargetcategory1=NOTAIR;
+	WorkerTime=0;
+	BMcode=0;
+	Builder=0;
+	ThreeD=1;
+	ZBuffer=1;
+	NoAutoFire=0;
+	SightDistance=450;
+	RadarDistance=0;
+	SoundCategory=GUARD;
+	EnergyStorage=0;
+	MetalStorage=0;
+	ExplodeAs=lARGE_BUILDINGEX;
+	SelfDestructAs=LARGE_BUILDING;
+	Category=ARM LEVEL3 WEAPON NOTSUB NOTAIR;
+	TEDClass=FORT;
+	Copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
+	// Copyright= Copyright 1998 P-We DivisioN Software for Ac.com . All rights reserved.;
+	YardMap=oooooooooooooooo;
+	Corpse=armarch_dead;
+	UnitNumber=911;
+	firestandorders=1;
+	StandingFireOrder=2;
+	canstop=1;
+	ShootMe=1;
+	DefaultMissionType=GUARD_NOMOVE;
+	downloadable=1;
+	ActivateWhenBuilt=1;
+	buildangle=65536;
+	Weapon1=ARMARCH_GUN;
+	wpri_badTargetCategory=VTOL;
+	BadTargetCategory=VTOL;
+	canattack=1;
+	[SFXTypes]
+	{
+	explosiongenerator0=custom:popupflare;
+	}
+	}

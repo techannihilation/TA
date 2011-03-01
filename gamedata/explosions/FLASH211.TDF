@@ -1,0 +1,14 @@
+[FLASH211]
+{
+	usedefaultexplosions=1;
+	[groundflash]
+	{
+		flashSize = 25;
+		flashAlpha = 1.3;
+		circleGrowth = 2;
+		circleAlpha = 1;
+		ttl = 4;
+		color = 1,0.9,0.85;
+
+	}
+}

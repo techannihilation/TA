@@ -1,0 +1,35 @@
+[PINKBOLT]
+{
+	[heatcloud]
+   		{
+      		[properties]
+      		{
+		texture=PINKBALL1;
+      		heat = 20;
+      		maxheat = 25;
+      		heatFalloff = 1;
+      		size = 10;
+      		sizeGrowth = 0.5;
+      		sizemod = 0;
+      		sizemodmod = 0;
+      		speed = r-0.25 r0.25, r-0.25 r0.25, r-0.25 r0.25;
+      		pos = 0, 0, 0;
+      		}
+	air=1;
+      	water=1;
+      	ground=1;
+      	count=5;
+	}
+[groundflash]
+   	{
+      	flashSize = 15;
+      	flashAlpha = 0.9;
+      	circleGrowth = 6;
+      	circleAlpha = 0.3;
+      	ttl = 10;
+      	color = 1, 0, 0;
+	air=1;
+     	ground=1;
+      	water=1;
+	}
+}

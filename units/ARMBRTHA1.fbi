@@ -1,0 +1,59 @@
+[UNITINFO] // Generated with TAS Modit v2.2 Beta
+{
+	name=Big Bertha TECH 3;
+	unitname=armbrtha1;
+	buildcostenergy=150680;
+	buildcostmetal=18184;
+	buildtime=185185;
+	category=ARM WEAPON NOTAIR NOTSUB NOTSHIP LEVEL3 NOTLAND ALL;
+	description=Heavy Long Range Plasma Cannon;
+	footprintx=8;
+	footprintz=8;
+	maxdamage=16000;
+	objectname=ARMBRTHA1;
+	side=ARM;
+	soundcategory=ARM_BRTHA;
+	tedclass=FORT;
+	brakerate=0;
+	acceleration=0;
+	maxvelocity=0;
+	maxslope=12;
+	turnrate=0;
+	yardmap=oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo;
+	builder=0;
+	workertime=0;
+	energymake=0;
+	energystorage=0;
+	energyuse=0;
+	metalstorage=0;
+	canattack=1;
+	canstop=1;
+	idletime=1800;
+	idleautoheal=5;
+	sightdistance=273;
+	weapon1=ARM_BERTHACANNON1;
+	wpri_badtargetcategory=MOBILE;
+	badtargetcategory=MOBILE;
+	explodeas=ATOMIC_BLAST;
+	selfdestructas=ATOMIC_BLAST;
+	onlytargetcategory1=NOTAIR;
+	maxwaterdepth=0;
+	corpse=ARMBRTHA1_DEAD;
+	smoothanim=1;
+	buildpic=ARMBRTHA.DDS;
+	icontype=building;
+	bmcode=0;
+	buildangle=32700;
+	seismicsignature=0;
+	firestandorders=0;
+	standingfireorder=0;
+	defaultmissiontype=GUARD_NOMOVE;
+	antiweapons=1;
+			[SFXTypes]
+	{
+	explosiongenerator0=custom:berthaflare;
+	}
+	[customParams] {
+    canAreaAttack=1;
+  }
+}

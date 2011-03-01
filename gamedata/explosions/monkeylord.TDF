@@ -1,0 +1,136 @@
+[Monkeylordy]
+{
+	[heatcloud]
+   		{
+      		[properties]
+      		{
+		alwaysvisible=1;
+		texture=monkey;
+      		heat = 20;
+      		maxheat = 25;
+      		heatFalloff = 1;
+      		size = 5;
+      		sizeGrowth = 0.5;
+      		sizemod = 0;
+      		sizemodmod = 0;
+      		speed = r-0.25 r0.25, r-0.25 r0.25, r-0.25 r0.25;
+      		pos = 0, 0, 0;
+      		}
+	air=1;
+      	water=1;
+      	ground=1;
+      	count=5;
+	}
+[groundflash]
+   	{
+      	flashSize = 30;
+      	flashAlpha = 0.9;
+      	circleGrowth = 9;
+      	circleAlpha = 0.3;
+      	ttl = 10;
+      	color = 1.0, 0, 0;
+	air=1;
+     	ground=1;
+      	water=1;
+	}
+}
+[MONKEYLORD_BANG]
+{
+	usedefaultexplosions=1;
+	[tracer]
+	{
+		[properties]
+		{
+ 		length= 10;
+		speed= 0.75, 0.75, 0.75;
+		pos= -30 r60, r30, -30 r60;
+		color = 0.3, 0.3, 0.3;
+		wantedPos=r40, r20, r40;
+		slowdown=1;
+		alphaFalloff = 1;
+		}
+		underwater=1;
+		air=1;
+		water=1;
+		ground=1;
+		count=6;
+	}
+	[dirt]
+	{
+		[properties]
+		{
+		pos= -30 r60, r30, -30 r60;
+		sizeexpansion = 3;
+		slowdown=1;
+		size = 18 r20 r0.01;
+		color = 0.3, 0.3, 0.3;
+		alphaFalloff = 2;
+		}
+		underwater=1;
+		air=1;
+		water=1;
+		ground=1;
+		count=6;
+	}
+	[heatcloud]
+	{
+		[properties]
+		{
+		pos = -30 r60, r30, -30 r60;
+		heat = 10 r10;
+		maxheat=18 r10;
+		heatFalloff=1;
+		size = 30 r35 d0.01;
+		speed = -1 r2,-1 r2,-1 r2;
+		}
+		underwater=1;
+		air=1;
+		water=1;
+		ground=1;
+		count=13;
+	}
+	[smoke]
+	{
+		[properties]
+		{
+			ageSpeed=0.0005;
+			size = 35 d0.01;
+			sizeGrowth = -3;
+			pos = -20 i40, i20, -20 i40;
+			speed=0.75 r-1.5, 1.7 r1.6, 0.75 r-1.5;
+		}
+		underwater=1;
+		air=1;
+		water=1;
+		ground=1;
+		count=6;
+	}
+	[groundflash]
+		{
+		flashSize = 50;
+		flashAlpha = 1;
+		circleGrowth = 15;
+		circleAlpha = 1;
+		ttl = 30;
+		color = 1, 1, 1;
+		}
+		underwater=1;
+		air=1;
+		water=1;
+		ground=1;
+
+}
+[MonkeylordBeamFlash]
+{
+	usedefaultexplosions=1;
+	[groundflash]
+	{
+		flashSize = 40;
+		flashAlpha = 1.6;
+		circleGrowth = 3;
+		circleAlpha = 1;
+		ttl = 5;
+		color = 1,0,0.;
+
+	}
+}

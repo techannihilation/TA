@@ -1,0 +1,53 @@
+[UNITINFO] {
+  unitname=corfhlt;
+  name=Thunderbolt;
+  description=Floating Heavy Laser Tower;
+  acceleration=0;
+  activateWhenBuilt=1;
+  bmcode=0;
+  brakeRate=0;
+  buildAngle=16384;
+  buildCostEnergy=5812;
+  buildCostMetal=558;
+  builder=0;
+  buildPic=CORFHLT.DDS;
+  buildTime=12651;
+  canAttack=1;
+  canstop=1;
+  category=ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR;
+  corpse=CORFHLT_DEAD;
+  defaultmissiontype=GUARD_NOMOVE;
+  energyStorage=200;
+  energyUse=0.1;
+  explodeAs=BIG_UNITEX;
+  firestandorders=1;
+  footprintX=3;
+  footprintZ=3;
+  iconType=building;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maxDamage=3927;
+  maxVelocity=0;
+  metalStorage=0;
+  minWaterDepth=5;
+  noAutoFire=0;
+  noChaseCategory=MOBILE;
+  objectName=CORFHLT;
+  seismicSignature=0;
+  selfDestructAs=BIG_UNIT;
+  side=CORE;
+  sightDistance=598;
+  smoothAnim=1;
+  soundcategory=HLT;
+  standingfireorder=2;
+  TEDClass=WATER;
+  turnRate=0;
+  waterline=3;
+  badTargetCategory=ANTILASER;
+  workerTime=0;
+  wpri_badtargetcategory=ANTILASER;
+  yardMap=wwwwwwwww;
+
+  weapon1=CORFHLT_LASER;
+}
+

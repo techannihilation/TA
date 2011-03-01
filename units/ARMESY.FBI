@@ -1,0 +1,47 @@
+[UNITINFO]
+{
+	UnitName=ARMESY;
+	Side=ARM;
+	Objectname=ARMESY;
+	Designation=ARM-SCF;
+	Name=Experimental Shipyard;
+	Description=Produces Level 3 Ships, water depth 86 or more required;
+	FootprintX=15;
+	FootprintZ=15;
+	BuildCostEnergy=70384;
+	BuildCostMetal=19982;
+	MaxDamage=10829;
+	EnergyUse=0;
+	BuildTime=43930;
+	WorkerTime=400;
+	BMcode=0;
+	Builder=1;
+	NoAutoFire=0;
+	SightDistance=324;
+	RadarDistance=100;
+	SoundCategory=SHIPYARD;
+	EnergyStorage=400;
+	MetalStorage=400;
+	ExplodeAs=ATOMIC_BLASTSML;
+	SelfDestructAs=ATOMIC_BLAST;
+	Category=ARM PLANT NOWEAPON NOTAIR NOTSUB NOTSHIP NOTLAND ALL;
+	TEDClass=PLANT;
+	YardMap=wCCCCCCCCCCCCCw	cCCCCCCCCCCCCCc	cCCCCCCCCCCCCCc	cCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCc;
+	Corpse=armesy_dead;
+	firestandorders=1;
+	StandingFireOrder=2;
+	mobilestandorders=1;
+	StandingMoveOrder=1;
+	canmove=1;
+	canpatrol=1;
+	canstop=1;
+	MetalMake=2;
+	smoothanim=1;
+	icontype=building;
+	MinWaterDepth=86;
+	WaterLine=55;
+	collisionVolumeType=Box;
+	collisionVolumeScales=185 64 227;
+	collisionVolumeOffsets=0 -8 0;
+
+}

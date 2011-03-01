@@ -1,0 +1,46 @@
+[UNITINFO] {
+  unitname=armfmkr;
+  name=Floating Metal Maker;
+  description=Converts Energy to Metal;
+  acceleration=0;
+  activateWhenBuilt=1;
+  bmcode=0;
+  brakeRate=0;
+  buildAngle=8192;
+  buildCostEnergy=2480;
+  buildCostMetal=1;
+  builder=0;
+  buildPic=ARMFMKR.DDS;
+  buildTime=2958;
+  category=ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR;
+  energyStorage=0;
+  energyUse=60;
+  explodeAs=ARMESTOR_BUILDINGEX;
+  footprintX=3;
+  footprintZ=3;
+  iconType=building;
+  idleAutoHeal=5;
+  idleTime=1800;
+  makesMetal=1;
+  maxDamage=110;
+  maxSlope=10;
+  maxVelocity=0;
+  maxWaterDepth=0;
+  metalStorage=0;
+  minWaterDepth=11;
+  noAutoFire=0;
+  objectName=ARMFMKR;
+  onoffable=1;
+  seismicSignature=0;
+  selfDestructAs=ARMESTOR_BUILDING;
+  side=ARM;
+  sightDistance=273;
+  smoothAnim=1;
+  soundcategory=ARM_MAKER;
+  TEDClass=METAL;
+  turnRate=0;
+  waterline=4;
+  workerTime=0;
+  yardMap=wwwwwwwww;
+}
+

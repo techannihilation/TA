@@ -1,0 +1,62 @@
+[UNITINFO] {
+  unitname=cortoast;
+  name=Toaster;
+  description=Heavy Plasma Cannon;
+  acceleration=0;
+  activateWhenBuilt=1;
+  bmcode=0;
+  brakeRate=0;
+  buildAngle=8192;
+  buildCostEnergy=16115;
+  buildCostMetal=2318;
+  builder=0;
+  buildPic=CORTOAST.DDS;
+  buildTime=25717;
+  canAttack=1;
+  canstop=1;
+  category=ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR;
+  corpse=CORTOAST_DEAD;
+  damageModifier=0.25;
+  defaultmissiontype=GUARD_NOMOVE;
+  digger=1;
+  energyStorage=0;
+  energyUse=0;
+  explodeAs=LARGE_BUILDINGEX;
+  firestandorders=1;
+  footprintX=3;
+  footprintZ=3;
+  highTrajectory=2;
+  iconType=building;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maxDamage=3840;
+  maxSlope=10;
+  maxVelocity=0;
+  maxWaterDepth=0;
+  metalStorage=0;
+  noAutoFire=0;
+  noChaseCategory=MOBILE;
+  objectName=CORTOAST;
+  seismicSignature=0;
+  selfDestructAs=LARGE_BUILDING;
+  side=CORE;
+  sightDistance=416;
+  smoothAnim=1;
+  soundcategory=TOAST;
+  standingfireorder=2;
+  TEDClass=FORT;
+  turnRate=0;
+  badTargetCategory=VTOL;
+  workerTime=0;
+  wpri_badtargetcategory=VTOL;
+  yardMap=ooooooooo;
+
+  weapon1=CORTOAST_GUN;
+  maxAngleDif1=230;
+  onlyTargetCategory1=NOTAIR;
+  weaponMainDir1=0 1 0;
+
+  weapon2=CORTOAST_GUN_HIGH;
+  onlyTargetCategory2=NOTAIR;
+}
+

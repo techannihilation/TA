@@ -1,0 +1,66 @@
+[UNITINFO]
+	{
+	UnitName=TLLCS;
+	Version=3.1;
+	Side=TLL;
+	Objectname=TLLCS;
+	Designation= ;
+	Name=Construction Ship;
+	Description=Tech Level 1;
+	FootprintX=2;
+	FootprintZ=4;
+	BuildCostEnergy=2455;
+	BuildCostMetal=275;
+	MaxDamage=1145;
+	EnergyUse=0.1;
+	BuildTime=5818;
+	WorkerTime=300;
+	BMcode=1;
+	Builder=1;
+	ThreeD=1;
+	ZBuffer=1;
+	NoAutoFire=0;
+	SightDistance=225;
+	SoundCategory=ARM_CSHIP;
+	EnergyStorage=50;
+	MetalStorage=50;
+	ExplodeAs=SMALL_UNITEX;
+	SelfDestructAs=SMALL_UNIT;
+	Category=TLL LEVEL1 NOWEAPON NOTAIR NOTSTRUCTURE CONSTR CTRL_B;
+	TEDClass=SHIP;
+	Copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
+	Corpse=tllcs_dead;
+	UnitNumber=852;
+
+	GermanName=Konstr.-Schiff;
+	GermanDescription=Tech Level 1;
+	FrenchName=Navire de construction;
+	Frenchdescription=Niveau Tech 1;
+	SpanishName=Buque de Constr.;
+	SpanishDescription=Nivel Tecn. 1;
+	ItalianName=Nave Costruttrice;
+	ItalianDescription=Tecnologia Livello 1;
+
+	mobilestandorders=1;
+	StandingMoveOrder=1;
+	canmove=1;
+	canpatrol=1;
+	canstop=1;
+	canguard=1;
+	MaxVelocity=2.15;
+	BrakeRate=0.038;
+	Acceleration=0.0085;
+	TurnRate=321;
+	SteeringMode=1;
+	ShootMe=1;
+	Builddistance=65;
+	CanReclamate=1;
+	EnergyMake=8;
+	MetalMake=0.35;
+	DefaultMissionType=Standby;
+	maneuverleashlength=640;
+	MovementClass=BOAT4;
+	waterline=1;
+	MinWaterDepth=20;
+	Floater=1;
+	}

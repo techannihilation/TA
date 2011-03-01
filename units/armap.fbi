@@ -1,0 +1,58 @@
+[UNITINFO] {
+  unitname=armap;
+  name=Aircraft Plant;
+  description=Produces Level 1 Aircraft;
+  acceleration=0;
+  activateWhenBuilt=0;
+  bmcode=0;
+  brakeRate=0;
+  buildCostEnergy=1370;
+  buildCostMetal=850;
+  builder=1;
+  buildingGroundDecalDecaySpeed=0.01;
+  buildingGroundDecalSizeX=9;
+  buildingGroundDecalSizeY=7;
+  buildingGroundDecalType=asphalt512.dds;
+  buildPic=ARMAP.DDS;
+  buildTime=7240;
+  canMove=1;
+  canPatrol=1;
+  canstop=1;
+  category=ALL NOTLAND PLANT NOTSUB NOWEAPON NOTSHIP NOTAIR;
+  corpse=ARMAP_DEAD;
+  energyStorage=100;
+  energyUse=0;
+  explodeAs=LARGE_BUILDINGEX;
+  firestandorders=1;
+  footprintX=8;
+  footprintZ=6;
+  iconType=building;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maxDamage=1850;
+  maxSlope=15;
+  maxVelocity=0;
+  maxWaterDepth=0;
+  metalStorage=100;
+  mobilestandorders=1;
+  noAutoFire=0;
+  objectName=ARMAP;
+  radarDistance=500;
+  seismicSignature=0;
+  selfDestructAs=LARGE_BUILDING;
+  [SFXTypes] {
+    explosionGenerator0=custom:YellowLight;
+  }
+  side=ARM;
+  sightDistance=292;
+  smoothAnim=1;
+  soundcategory=AIRPLANT;
+  standingfireorder=2;
+  standingmoveorder=1;
+  TEDClass=PLANT;
+  turnRate=0;
+  useBuildingGroundDecal=1;
+  workerTime=250;
+  yardMap=oooooooooooooooooooooooooooooooooooooooooooooooo;
+}
+

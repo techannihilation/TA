@@ -1,0 +1,44 @@
+[UNITINFO] {
+  unitname=coruwadves;
+  name=Hardened Energy Storage;
+  description=Increases Energy Storage (75000);
+  bmcode=0;
+  buildAngle=7822;
+  buildCostEnergy=10032;
+  buildCostMetal=790;
+  builder=0;
+  buildPic=CORUWADVES.DDS;
+  buildTime=20416;
+  category=ALL NOTSUB NOWEAPON NOTAIR;
+  corpse=CORUWADVES_DEAD;
+  designation=CP-CAES;
+  downloadable=1;
+  energyStorage=75000;
+  energyUse=0;
+  explodeAs=ATOMIC_BLAST;
+  footprintX=5;
+  footprintZ=5;
+  iconType=building;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maxDamage=11400;
+  maxSlope=20;
+  maxWaterDepth=9999;
+  metalStorage=0;
+  noAutoFire=0;
+  noshadow=1;
+  objectName=CORUWADVES;
+  seismicSignature=0;
+  selfDestructAs=MINE_NUKE;
+  side=CORE;
+  sightDistance=192;
+  smoothAnim=1;
+  soundcategory=CORE_ESTOR;
+  TEDClass=ENERGY;
+  threed=1;
+  version=1.2;
+  workerTime=0;
+  yardMap=ooooooooooooooooooooooooo;
+  zbuffer=1;
+}
+

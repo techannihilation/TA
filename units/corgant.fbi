@@ -1,0 +1,59 @@
+[UNITINFO] {
+  unitname=corgant;
+  name=Experimental Gantry;
+  description=Produces Heavy Level 3 Units;
+  acceleration=0;
+  bmcode=0;
+  brakeRate=0;
+  buildCostEnergy=58524;
+  buildCostMetal=13848;
+  builder=1;
+  buildingGroundDecalDecaySpeed=0.01;
+  buildingGroundDecalSizeX=10;
+  buildingGroundDecalSizeY=10;
+  buildingGroundDecalType=asphalt512c.dds;
+  buildPic=CORGANT.DDS;
+  buildTime=67321;
+  canMove=1;
+  canPatrol=1;
+  canstop=1;
+  category=ALL PLANT NOTLAND NOWEAPON NOTSUB NOTSHIP NOTAIR;
+  corpse=CORGANT_DEAD;
+  energyStorage=1400;
+  energyUse=0;
+  explodeAs=LARGE_BUILDINGEX;
+  firestandorders=1;
+  footprintX=9;
+  footprintZ=9;
+  iconType=building;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maxDamage=16000;
+  maxSlope=18;
+  maxVelocity=0;
+  maxWaterDepth=0;
+  metalStorage=800;
+  mobilestandorders=1;
+  noAutoFire=0;
+  objectName=CORGANT;
+  radarDistance=50;
+  seismicSignature=0;
+  selfDestructAs=LARGE_BUILDING;
+  [SFXTypes] {
+    explosionGenerator0=custom:GantWhiteLight;
+    explosionGenerator1=custom:YellowLight;
+    explosionGenerator2=custom:WhiteLight;
+  }
+  side=CORE;
+  sightDistance=273;
+  smoothAnim=1;
+  soundcategory=CORE_GANTRY;
+  standingfireorder=2;
+  standingmoveorder=1;
+  TEDClass=PLANT;
+  turnRate=0;
+  useBuildingGroundDecal=1;
+  workerTime=600;
+  yardMap=oooooooooooooooooooocccccoooocccccoooocccccoooocccccoooocccccoooocccccoooocccccoo;
+}
+

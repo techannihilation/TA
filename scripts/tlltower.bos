@@ -1,0 +1,10 @@
+piece base,body;
+Activate()
+{
+		sleep 250;
+}
+
+Create()
+	{
+	dont-shade body;
+	}

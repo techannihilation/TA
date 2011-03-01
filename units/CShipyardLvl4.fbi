@@ -1,0 +1,40 @@
+[UNITINFO] // Modified with muzzybear's FBI batch editor
+{
+	Builder=1;
+	CanMove=1;
+	CanPatrol=1;
+	CanStop=1;
+	Category=BIG BUILDING;
+	Corpse=CShipyardLvl4_dead;
+	Description=Build AeroShips;
+	EnergyStorage=1000;
+	EnergyUse=0;
+	ExplodeAs=SUPERBLAST;
+	Floater=1;
+	FootprintX=16;
+	FootprintZ=30;
+	MaxSlope=10;
+	MaxWaterDepth=255;
+	MetalStorage=600;
+	RadarDistance=0;
+	SelfDestructAs=SUPERBLAST;
+	Side=CORE;
+	SightDistance=220;
+	SoundCategory=CORE_STARSHIP_YARD;
+	TEDClass=PLANT;
+	WorkerTime=240;
+	YardMap=OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO;
+	buildcostenergy=94000;
+	buildcostmetal=20000;
+	buildtime=500000.500;
+	maxdamage=60000.0;
+	icontype=building;
+	name=Shipyard;
+	objectname=CShipyardLvl4;
+	unitname=CShipyardLvl4;
+	collisionVolumeType=Ell;
+	collisionVolumeScales=272 168 536;
+	collisionVolumeOffsets=0 0 -5;
+	collisionVolumeTest=0;
+
+}

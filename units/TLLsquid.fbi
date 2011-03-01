@@ -1,0 +1,57 @@
+[UNITINFO]
+	{
+	UnitName=TLLSQUID;
+	Version=3.1;
+	Side=TLL;
+	Objectname=TLLSQUID;
+	Designation= ;
+	Name=Squid;
+	Description=Sonar Jamming Sub;
+	FootprintX=3;
+	FootprintZ=3;
+	BuildCostEnergy=3175;
+	BuildCostMetal=323;
+	MaxDamage=480;
+	BuildTime=13408;
+	BMcode=1;
+	Builder=0;
+	ThreeD=1;
+	ZBuffer=1;
+	NoAutoFire=0;
+	SightDistance=150;
+	SoundCategory=ARM_JAMSUB;
+	ExplodeAs=SMALL_UNITEX;
+	SelfDestructAs=SMALL_UNIT;
+	Category=TLL UNDERWATER LEVEL2 NOWEAPON NOTAIR NOTSTRUCTURE CTRL_R;
+	TEDClass=WATER;
+	Copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
+	Corpse=tllsquid_dead;
+	UnitNumber=912;
+
+	GermanDescription=Sonar-Stör-U-Boot;
+	Frenchdescription=Sous-Marin Brouilleur;
+	SpanishDescription=Sonar de interferencias subacuáticas;
+	ItalianDescription=Disturbo sonar subacqueo;
+
+	mobilestandorders=1;
+	StandingMoveOrder=0;
+	canmove=1;
+	canpatrol=1;
+	canstop=1;
+	canguard=1;
+	MaxVelocity=2.45;
+	BrakeRate=0.33;
+	Acceleration=0.18;
+	TurnRate=580;
+	SteeringMode=1;
+	ShootMe=1;
+	DefaultMissionType=Standby;
+	maneuverleashlength=640;
+	MovementClass=dBOAT3;
+	MinWaterDepth=15;
+	SonarDistanceJam=680;
+	WaterLine=20;
+	onoffable=1;
+	ActivateWhenBuilt=1;
+	Upright=1;
+	}

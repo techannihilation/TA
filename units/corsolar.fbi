@@ -1,0 +1,46 @@
+[UNITINFO] {
+  unitname=corsolar;
+  name=Solar Collector;
+  description=Produces Energy;
+  acceleration=0;
+  activateWhenBuilt=1;
+  bmcode=0;
+  brakeRate=0;
+  buildAngle=32768;
+  buildCostEnergy=0;
+  buildCostMetal=141;
+  builder=0;
+  buildPic=CORSOLAR.DDS;
+  buildTime=2066;
+  category=ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR;
+  corpse=CORSOLAR_DEAD;
+  damageModifier=0.5;
+  energyMake=0;
+  energyStorage=50;
+  energyUse=-20;
+  explodeAs=SMALL_BUILDINGEX;
+  footprintX=5;
+  footprintZ=5;
+  iconType=building;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maxDamage=320;
+  maxSlope=10;
+  maxVelocity=0;
+  maxWaterDepth=0;
+  metalStorage=0;
+  noAutoFire=0;
+  objectName=CORSOLAR;
+  onoffable=1;
+  seismicSignature=0;
+  selfDestructAs=SMALL_BUILDING;
+  side=CORE;
+  sightDistance=273;
+  smoothAnim=1;
+  soundcategory=CORE_SOLAR;
+  TEDClass=ENERGY;
+  turnRate=0;
+  workerTime=0;
+  yardMap=ccccc coooc coooc coooc ccccc;
+}
+

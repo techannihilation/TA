@@ -1,0 +1,34 @@
+[TLL_GAUSS2]
+	{
+	ID=244; 
+	name=Heavy Gauss Cannon;
+	rendertype=4;
+	lineofsight=1;
+	turret=1;
+	minbarrelangle=-15;
+
+	range=950;
+	reloadtime=0.5;
+	weaponvelocity=400;
+	areaofeffect=50;
+	soundstart=cannhvy1;
+	soundhit=xplomed2;
+	impulsefactor=0.6;
+	impulseboost=0.6;
+	cratermult=0;
+	craterboost=0;
+	explosiongaf=fx;
+	explosionart=explode5;
+
+	waterexplosiongaf=fx;
+	waterexplosionart=h2oboom1;
+
+	lavaexplosiongaf=fx;
+	lavaexplosionart=lavasplashsm;
+	startsmoke=1;
+
+	[DAMAGE]
+		{
+		default=300;
+		}
+	}

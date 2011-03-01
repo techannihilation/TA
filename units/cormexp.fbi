@@ -1,0 +1,59 @@
+[UNITINFO] {
+  unitname=cormexp;
+  name=Moho Exploiter;
+  description=Convertible Metal Extractor;
+  acceleration=0;
+  activateWhenBuilt=1;
+  bmcode=0;
+  brakeRate=0;
+  buildAngle=2048;
+  buildCostEnergy=12121;
+  buildCostMetal=2219;
+  builder=0;
+  buildPic=CORMEXP.DDS;
+  buildTime=32500;
+  canAttack=1;
+  canstop=1;
+  category=ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR;
+  corpse=CORMEXP_DEAD;
+  damageModifier=0.3;
+  energyStorage=0;
+  energyUse=12;
+  explodeAs=SMALL_BUILDINGEX;
+  extractsMetal=0.004;
+  firestandorders=1;
+  footprintX=5;
+  footprintZ=5;
+  healtime=16;
+  iconType=building;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maxDamage=2000;
+  maxSlope=20;
+  maxVelocity=0;
+  maxWaterDepth=0;
+  metalStorage=500;
+  noAutoFire=0;
+  noChaseCategory=MOBILE;
+  objectName=CORMEXP;
+  onoffable=1;
+  seismicSignature=0;
+  selfDestructAs=SMALL_BUILDING;
+  side=CORE;
+  sightDistance=676;
+  smoothAnim=1;
+  soundcategory=CORE_MOHO;
+  standingfireorder=2;
+  TEDClass=METAL;
+  turnRate=0;
+  badTargetCategory=ANTILASER;
+  workerTime=0;
+  wpri_badtargetcategory=ANTILASER;
+  wsec_badtargetcategory=VTOL;
+  yardMap=ooooooooooooooooooooooooo;
+
+  weapon1=CORSUMO_WEAPON;
+
+  weapon2=CORMEXP_ROCKET;
+}
+

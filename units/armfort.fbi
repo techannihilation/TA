@@ -1,0 +1,42 @@
+[UNITINFO] {
+  unitname=armfort;
+  name=Fortification Wall;
+  description=Perimeter Defense;
+  acceleration=0;
+  bmcode=0;
+  brakeRate=0;
+  buildAngle=0;
+  buildCostEnergy=675;
+  buildCostMetal=27;
+  builder=0;
+  buildPic=ARMFORT.DDS;
+  buildTime=965;
+  category=ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR;
+  corpse=FORTIFICATION;
+  energyMake=0;
+  energyStorage=0;
+  energyUse=0;
+  footprintX=2;
+  footprintZ=2;
+  idleAutoHeal=5;
+  idleTime=1800;
+  isFeature=1;
+  levelGround=0;
+  maxDamage=100;
+  maxSlope=24;
+  maxVelocity=0;
+  maxWaterDepth=0;
+  metalStorage=0;
+  noAutoFire=0;
+  objectName=ARMFORT;
+  seismicSignature=0;
+  side=ARM;
+  sightDistance=130;
+  smoothAnim=1;
+  soundcategory=NONE;
+  TEDClass=FORT;
+  turnRate=0;
+  workerTime=0;
+  yardMap=ffff;
+}
+

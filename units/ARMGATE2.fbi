@@ -1,0 +1,47 @@
+[UNITINFO] // Generated with TAS Modit v2.2 Beta
+{
+	name=Small Shield;
+	unitname=armgate2;
+	buildcostenergy=8000;
+	buildcostmetal=1400;
+	buildtime=54139;
+	category=ARM NOWEAPON NOTAIR NOTSUB NOTSHIP NOTLAND ALL;
+	description=Small plasma deflector;
+	footprintx=3;
+	footprintz=3;
+	maxdamage=1000;
+	objectname=ARMGATE2;
+	script=armgate.cob;
+	side=ARM;
+	soundcategory=GATE;
+	tedclass=SPECIAL;
+	brakerate=0;
+	acceleration=0;
+	maxvelocity=0;
+	maxslope=10;
+	turnrate=0;
+	yardmap=oooooooooooooooo;
+	builder=0;
+	workertime=0;
+	energystorage=1500;
+	energyuse=0;
+	metalstorage=0;
+	onoffable=1;
+	idletime=1800;
+	idleautoheal=5;
+	activatewhenbuilt=1;
+	sightdistance=273;
+	weapon1=REPULSOR2;
+	explodeas=CRAWL_BLAST;
+	selfdestructas=MINE_NUKE;
+	maxwaterdepth=0;
+	corpse=ARMGATE2_DEAD;
+	smoothanim=1;
+	buildpic=ARMGATE.DDS;
+	icontype=building;
+	bmcode=0;
+	noautofire=0;
+	buildangle=2048;
+	seismicsignature=0;
+	norestrict=1;
+}

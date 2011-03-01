@@ -1,0 +1,50 @@
+[UNITINFO]
+{
+	ActivateWhenBuilt=1;
+	Builder=0;
+	Category=ALL NOTSUB NOWEAPON SPECIAL NOTAIR;
+	floater=1;
+	Corpse=AFusionPlant_dead;
+	Description=Produces 20000 energy;
+	EnergyMake=20000;
+	EnergyStorage=20000;
+	EnergyUse=0;
+	ExplodeAs=SUPERBLAST_BUILDING;
+	FootprintX=11;
+	FootprintZ=8;
+	MaxSlope=10;
+	MaxWaterDepth=0;
+	MetalStorage=0;
+	icontype=building;
+	Name=Mega Fusion Reactor;
+	RadarDistance=0;
+	SelfDestructAs=SUPERBLAST_BUILDING;
+	Side=ARM;
+	SightDistance=300;
+	SmoothAnim=1;
+	SoundCategory=ARM_FUS;
+	TEDClass=ENERGY;
+	ThreeD=1;
+	builder=0;
+	seismicSignature=0;
+	turnRate=0;
+	Version=1;
+	WorkerTime=0;
+	YardMap=oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo;
+	bmcode=0;
+	buildangle=90096;
+	buildcostenergy=955000;
+	buildcostmetal=33835;
+	buildtime=1583000;
+	copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
+	maxdamage=26500.0;
+	noautofire=0;
+	objectname=AFusionPlant;
+	unitname=AFusionPlant;
+	unitnumber=33;
+	collisionVolumeType=Box;
+	collisionVolumeScales=138 99 72;
+	collisionVolumeOffsets=0 0 0;
+	collisionVolumeTest = 1;
+
+}

@@ -1,0 +1,56 @@
+[UNITINFO]
+	{
+	UnitName=TLLSY;
+	Version=3.1;
+	Side=TLL;
+	Objectname=TLLSY;
+	Designation= ;
+	Name=Shipyard;
+	Description=Produces Ships;
+	FootprintX=8;
+	FootprintZ=8;
+	BuildCostEnergy=790;
+	BuildCostMetal=630;
+	MaxDamage=2510;
+	EnergyUse=0;
+	BuildTime=6090;
+	WorkerTime=210;
+	BMcode=0;
+	Builder=1;
+	ThreeD=1;
+	ZBuffer=1;
+	NoAutoFire=0;
+	SightDistance=213;
+	SoundCategory=SHIPYARD;
+	EnergyStorage=100;
+	MetalStorage=100;
+	ExplodeAs=LARGE_BUILDINGEX;
+	SelfDestructAs=LARGE_BUILDING;
+	Category=TLL LEVEL1 NOWEAPON NOTAIR PLANT CTRL_F;
+	TEDClass=PLANT;
+	Copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
+	YardMap=wCCCCCCw CCCCCCCC wCCCCCCC wCCCCCCC wCCCCCCC wCCCCCCC CCCCCCCC wCCCCCCw;
+	Corpse=tllsy_dead;
+	UnitNumber=849;
+
+	GermanName=Werft;
+	GermanDescription=Tech Level 1;
+	FrenchName=Chantier naval  ;
+	Frenchdescription=Niveau Tech 1;
+	SpanishName=Astillero;
+	SpanishDescription=Produce buques;
+	ItalianName=Cantiere Navale;
+	ItalianDescription=Produce navi;
+
+	firestandorders=1;
+	StandingFireOrder=2;
+	mobilestandorders=1;
+	StandingMoveOrder=2;
+	canmove=1;
+	canpatrol=1;
+	canstop=1;
+	MetalMake=0.5;
+	MinWaterDepth=30;
+	WaterLine=22;
+	NoShadow=1;
+	}

@@ -1,0 +1,70 @@
+[UNITINFO] {
+  unitname=corsktl;
+  name=Skuttle;
+  description=Advanced Crawling Bomb;
+  acceleration=0.12;
+  bmcode=1;
+  brakeRate=0.188;
+  buildCostEnergy=24723;
+  buildCostMetal=506;
+  builder=0;
+  buildPic=CORSKTL.DDS;
+  buildTime=16975;
+  canAttack=1;
+  canGuard=1;
+  canMove=1;
+  canPatrol=1;
+  canstop=1;
+  cantBeTransported=1;
+  category=KBOT MOBILE WEAPON ALL NOTSUB NOTSHIP NOTAIR;
+  cloakCost=150;
+  cloakCostMoving=400;
+  defaultmissiontype=Standby;
+  energyMake=0.2;
+  energyStorage=0;
+  energyUse=0.2;
+  explodeAs=CRAWL_BLAST;
+  firestandorders=1;
+  fireState=2;
+  footprintX=2;
+  footprintZ=2;
+  idleAutoHeal=5;
+  idleTime=1800;
+  init_cloaked=0;
+  maneuverleashlength=140;
+  mass=3e+08;
+  maxDamage=320;
+  maxSlope=255;
+  maxVelocity=1.35;
+  maxWaterDepth=30;
+  metalStorage=0;
+  minCloakDistance=60;
+  mobilestandorders=1;
+  movementClass=AKBOT2;
+  noAutoFire=0;
+  noChaseCategory=VTOL;
+  objectName=CORSKTL;
+  seismicSignature=64;
+  selfDestructAs=CORMINE6;
+  selfDestructCountdown=0;
+  side=CORE;
+  sightDistance=260;
+  smoothAnim=1;
+  soundcategory=ROACH;
+  standingfireorder=2;
+  standingmoveorder=1;
+  steeringmode=1;
+  TEDClass=KBOT;
+  turninplace=0;
+  turnRate=1122;
+  upright=1;
+  badTargetCategory=VTOL;
+  workerTime=0;
+  wpri_badtargetcategory=VTOL;
+
+  weapon1=CRAWL_DUMMY; //Causes crawling bomb to fire its weapon.  Range=kamikazedistance
+  onlyTargetCategory1=NOTAIR;
+
+  weapon2=CRAWL_DETONATOR; //Detonates the crawling bomb
+}
+

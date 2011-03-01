@@ -1,0 +1,54 @@
+[UNITINFO] {
+  unitname=hllt;
+  name=HLLT;
+  description=Anti-Swarm Double LLT;
+  acceleration=0;
+  bmcode=0;
+  brakeRate=0;
+  buildAngle=32768;
+  buildCostEnergy=4332;
+  buildCostMetal=185;
+  builder=0;
+  buildPic=HLLT.DDS;
+  buildTime=5448;
+  canAttack=1;
+  canstop=1;
+  category=ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR;
+  corpse=HLLT_DEAD;
+  defaultmissiontype=GUARD_NOMOVE;
+  energyStorage=100;
+  energyUse=0;
+  explodeAs=MEDIUM_BUILDINGEX;
+  firestandorders=1;
+  footprintX=2;
+  footprintZ=2;
+  healtime=4;
+  iconType=building;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maxDamage=1500;
+  maxSlope=10;
+  maxVelocity=0;
+  maxWaterDepth=0;
+  metalStorage=0;
+  noAutoFire=0;
+  objectName=HLLT;
+  seismicSignature=0;
+  selfDestructAs=MEDIUM_BUILDING;
+  side=CORE;
+  sightDistance=455;
+  smoothAnim=1;
+  soundcategory=LLT;
+  standingfireorder=2;
+  TEDClass=FORT;
+  turnRate=0;
+  badTargetCategory=VTOL;
+  workerTime=0;
+  wpri_badtargetcategory=VTOL;
+  yardMap=oooo;
+
+  weapon1=HLLT_BOTTOM;
+
+  weapon2=HLLT_TOP;
+}
+

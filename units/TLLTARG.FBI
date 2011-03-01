@@ -1,0 +1,55 @@
+[UNITINFO]
+	{
+	UnitName=TLLTARG;
+	Version=3.1;
+	Side=TLL;
+	Objectname=TLLTARG;
+	Designation=TL-TG;
+	Name=Center Station;
+	Description=Automatic Targeting, Very Long Range Radar/Sonar;
+	FootprintX=5;
+	FootprintZ=5;
+	BuildCostEnergy=58851;
+	BuildCostMetal=7305;
+	MaxDamage=3455;
+	MaxWaterDepth=0;
+	MaxSlope=10;
+	EnergyUse=1500;
+	BuildTime=78250;
+	WorkerTime=0;
+	BMcode=0;
+	Builder=0;
+	ThreeD=1;
+	ZBuffer=1;
+	NoAutoFire=0;
+	SightDistance=110;
+	RadarDistance=7250;
+	SonarDistance=6000;
+	SoundCategory=ARM_TARG;
+	EnergyStorage=0;
+	MetalStorage=0;
+	ExplodeAs=LARGE_BUILDINGEX;
+	SelfDestructAs=LARGE_BUILDING;
+	Category=TLL SPECIAL LEVEL3 NOWEAPON NOTAIR NOTSUB ;
+	TEDClass=SPECIAL;
+	Copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
+	YardMap=ooooo ooooo ooooo ooooo ooooo ;
+	Corpse=tlltarg_dead;
+	UnitNumber=921;
+
+	GermanName=Peilstation;
+	GermanDescription=Automatische Radar-Zielerfassung;
+	FrenchName=Installation de Ciblage;
+	Frenchdescription=Ciblage Radar Automatique;
+	SpanishName=Complejo Búsqueda Blancos;
+	SpanishDescription=Radar de puntería automático;
+	ItalianName=Dispositivo di puntamento;
+	ItalianDescription=Radar per puntamento automatico;
+
+	buildangle=8192;
+	onoffable=1;
+	downloadable=1;
+	ActivateWhenBuilt=1;
+	istargetingupgrade=1;
+	damagemodifier=.75;
+	}

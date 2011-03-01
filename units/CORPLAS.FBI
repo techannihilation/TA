@@ -1,0 +1,50 @@
+[UNITINFO]
+	{
+	UnitName=CORPLAS;
+	Version=3.0;
+	Side=CORE;
+	Objectname=CORPLAS;
+	Designation=COR-PLAS;
+	Name=Immolator; //c
+	Description=Plasma Tower;
+	FootprintX=3;
+	FootprintZ=3;
+	BuildCostEnergy=1790;  //C llt=2608
+	BuildCostMetal=321;  //C  llt=268
+	MaxDamage=842;  //C  llt=710
+	MaxWaterDepth=0;
+	MaxSlope=10;
+	EnergyUse=0;
+	BuildTime=4094;  //C llt=4724
+	WorkerTime=0;
+	BMcode=0;
+	Builder=0;
+	ThreeD=1;
+	ZBuffer=1;
+	NoAutoFire=0;
+	SightDistance=380;  //C llt=350
+	RadarDistance=0;
+	SoundCategory=COR_KBOT;
+	EnergyStorage=0;  
+	MetalStorage=0;
+	ExplodeAs=MEDIUM_BUILDINGEX;
+	SelfDestructAs=MEDIUM_BUILDING;
+	Category=CORE weapon NOTAIR NOTSUB ;
+	TEDClass=FORT;
+	Copyright=Copyright 1999 Humongous Entertainment. All rights reserved.;
+	YardMap=ooo;
+	Corpse=CORPLAS_dead;
+	UnitNumber=124;
+	firestandorders=1;
+	StandingFireOrder=2;
+	canstop=1;
+	ShootMe=1;
+	DefaultMissionType=GUARD_NOMOVE;
+	buildangle=8192;
+	canattack=1;
+	Weapon1=CORPLAS_WEAPON;
+	wpri_badTargetCategory=VTOL;
+	BadTargetCategory=VTOL;
+	Ovradjust=1;
+	Downloadable=1;
+	}

@@ -1,0 +1,56 @@
+[UNITINFO] {
+  unitname=armraven;
+  name=Catapult;
+  description=Heavy Rocket Kbot;
+  acceleration=0.108;
+  bmcode=1;
+  brakeRate=0.188;
+  buildCostEnergy=75625;
+  buildCostMetal=4551;
+  builder=0;
+  buildPic=ARMRAVEN.DDS;
+  buildTime=126522;
+  canAttack=1;
+  canGuard=1;
+  canMove=1;
+  canPatrol=1;
+  canstop=1;
+  category=WEAPON NOTSUB NOTAIR;
+  corpse=ARMRAVEN_DEAD;
+  defaultmissiontype=Standby;
+  explodeAs=MECH_BLAST;
+  firestandorders=1;
+  footprintX=4;
+  footprintZ=4;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maneuverleashlength=640;
+  mass=200000;
+  maxDamage=5500;
+  maxSlope=20;
+  maxVelocity=1.6;
+  maxWaterDepth=12;
+  mobilestandorders=1;
+  movementClass=HKBOT4;
+  noAutoFire=0;
+  noChaseCategory=VTOL;
+  objectName=ARMRAVEN;
+  seismicSignature=0;
+  selfDestructAs=MECH_BLAST;
+  side=CORE;
+  sightDistance=700;
+  smoothAnim=1;
+  soundcategory=MAVERICK;
+  standingfireorder=2;
+  standingmoveorder=1;
+  steeringmode=2;
+  TEDClass=KBOT;
+  turnRate=979;
+  upright=1;
+  workerTime=0;
+
+  weapon1=EXP_HEAVYROCKET;
+  badTargetCategory1=VTOL;
+  onlyTargetCategory1=NOTAIR;
+}
+

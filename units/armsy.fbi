@@ -1,0 +1,53 @@
+[UNITINFO] {
+  unitname=armsy;
+  name=Shipyard;
+  description=Produces Level 1 Ships;
+  acceleration=0;
+  bmcode=0;
+  brakeRate=0;
+  buildCostEnergy=775;
+  buildCostMetal=615;
+  builder=1;
+  buildPic=ARMSY.DDS;
+  buildTime=6050;
+  canMove=1;
+  canPatrol=1;
+  canstop=1;
+  category=ALL PLANT NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR;
+  corpse=ARMSY_DEAD;
+  energyStorage=100;
+  energyUse=0;
+  explodeAs=LARGE_BUILDINGEX;
+  firestandorders=1;
+  footprintX=8;
+  footprintZ=8;
+  iconType=building;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maxDamage=2990;
+  maxVelocity=0;
+  metalMake=0.5;
+  metalStorage=100;
+  minWaterDepth=30;
+  mobilestandorders=1;
+  noAutoFire=0;
+  objectName=ARMSY;
+  radarDistance=50;
+  seismicSignature=0;
+  selfDestructAs=LARGE_BUILDING;
+  [SFXTypes] {
+    explosionGenerator0=custom:YellowLight;
+  }
+  side=ARM;
+  sightDistance=275.6;
+  smoothAnim=1;
+  soundcategory=SHIPYARD;
+  standingfireorder=2;
+  standingmoveorder=0;
+  TEDClass=PLANT;
+  turnRate=0;
+  waterline=1;
+  workerTime=250;
+  yardMap=wCCCCCCwCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCwCCCCCCw;
+}
+

@@ -1,0 +1,92 @@
+[ARM_BIGBOMB_EXPLOSION]
+{
+
+	[pop1]
+	{
+	class=heatcloud;
+   	
+		[properties]
+      		{
+		    texture=flowexplo;
+      		heat = 10;
+      		maxheat = 15;
+      		heatFalloff = 0.4;
+
+      		size = 25;
+      		sizeGrowth = 0.9;
+
+         	pos = r-2 r2, 3, r-2 r2;
+         	emitRot=50;
+			emitRotSpread=50;
+			directional=1;
+         	speed=0, 1 0, 0;
+      		}
+	    air=1;
+      	water=1;
+      	ground=1;
+      	count=5;
+	} 
+
+	[groundflash]
+   	{
+      	ttl = 17;
+      	flashSize = 40;
+      	flashAlpha = 0.8;
+
+      	circleGrowth = 6;
+      	circleAlpha = 0.5;
+
+      	color = 0.9, 0.82, 0.73;
+
+	air=1;
+     	ground=1;
+      	water=1;
+	}
+
+}
+
+[CORE_BIGBOMB_EXPLOSION]
+{
+	[pop2]
+	{
+	class=heatcloud;
+   	
+		[properties]
+      		{
+		texture=cloudexplo;
+      		heat = 10;
+      		maxheat = 20;
+      		heatFalloff = 0.5;
+
+      		size = 25;
+      		sizeGrowth = 0.9;
+
+         	pos = r-55 r55, 5, r-55 r55;
+         	emitRot=50;
+			emitRotSpread=50;
+			directional=1;
+         	speed=r-2 r2, 1 0, r-2 r2;
+      		}
+		air=1;
+      	water=1;
+      	ground=1;
+      	count=2;
+	} 	
+  
+	[groundflash]
+   	{
+      	ttl = 60;
+      	flashSize = 35;
+      	flashAlpha = 0.6;
+
+      	circleGrowth = 1;
+      	circleAlpha = 0.5;
+
+      	color = 1, 0.6, 0.4;
+
+	air=1;
+     	ground=1;
+      	water=1;
+	}
+
+}

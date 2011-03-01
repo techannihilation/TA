@@ -1,0 +1,57 @@
+[UNITINFO] {
+  unitname=armaak;
+  name=Archangel;
+  description=Advanced Amphibious Anti-Air Kbot;
+  acceleration=0.12;
+  bmcode=1;
+  brakeRate=0.188;
+  buildCostEnergy=5266;
+  buildCostMetal=483;
+  buildPic=ARMAAK.DDS;
+  buildTime=6958;
+  canMove=1;
+  category=KBOT MOBILE WEAPON ALL NOTSUB NOTSHIP NOTAIR;
+  corpse=ARMAAK_DEAD;
+  defaultmissiontype=Standby;
+  explodeAs=BIG_UNITEX;
+  footprintX=2;
+  footprintZ=2;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maneuverleashlength=640;
+  maxDamage=1020;
+  maxSlope=14;
+  maxVelocity=1.58;
+  movementClass=AKBOT2;
+  noChaseCategory=ALL;
+  objectName=ARMAAK;
+  seismicSignature=1;
+  selfDestructAs=BIG_UNIT;
+  side=ARM;
+  sightDistance=400;
+  smoothAnim=1;
+  soundcategory=ARM_KBOT;
+  steeringmode=2;
+  TEDClass=KBOT;
+  turnRate=1021;
+  upright=1;
+  w1_badtargetcategory=ALL;
+  w2_badtargetcategory=ALL;
+  w3_badtargetcategory=ALL;
+  w4_badtargetcategory=ALL;
+  w5_badtargetcategory=ALL;
+  badTargetCategory=ALL;
+
+  weapon1=BOGUS_MISSILE;
+
+  weapon2=ARMAAKBOT_MISSILE1;
+
+  weapon3=ARMAAKBOT_MISSILE2;
+  weaponSlaveTo3=2;
+
+  weapon4=ARMAAKBOT_MISSILE2;
+  weaponSlaveTo4=1;
+
+  weapon5=AAKFLAK;
+}
+

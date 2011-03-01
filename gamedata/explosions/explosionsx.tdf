@@ -1,0 +1,27 @@
+[FLASHNUKEX480]
+{
+	usedefaultexplosions=1;
+	[groundflash]
+	{
+		flashSize=652;
+		flashAlpha=2.1;
+		circleGrowth=14;
+		circleAlpha=3;
+		ttl=24;
+		color=1,0.7,0.7;
+	}
+}
+[FLASHBIGBUILDING]
+{
+	usedefaultexplosions=1;
+	[GROUNDFLASH]
+	{
+		flashsize=192;
+		flashalpha=2.9;
+		circlegrowth=14;
+		circlealpha=3;
+		ttl=14;
+		color=1,0.9,0.8;
+	}
+}
+

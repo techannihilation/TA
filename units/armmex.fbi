@@ -1,0 +1,46 @@
+[UNITINFO] {
+  unitname=armmex;
+  name=Metal Extractor;
+  description=Extracts Metal;
+  acceleration=0;
+  activateWhenBuilt=1;
+  bmcode=0;
+  brakeRate=0;
+  buildAngle=8192;
+  buildCostEnergy=521;
+  buildCostMetal=50;
+  builder=0;
+  buildPic=ARMMEX.DDS;
+  buildTime=1800;
+  category=ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR;
+  corpse=ARMMEX_DEAD;
+  energyStorage=0;
+  energyUse=3;
+  explodeAs=TINY_BUILDINGEX;
+  extractsMetal=0.0010;
+  footprintX=3;
+  footprintZ=3;
+  iconType=building;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maxDamage=170;
+  maxSlope=20;
+  maxVelocity=0;
+  maxWaterDepth=20;
+  metalStorage=50;
+  noAutoFire=0;
+  objectName=ARMMEX;
+  onoffable=1;
+  seismicSignature=0;
+  selfDestructAs=TINY_BUILDINGEX;
+  selfDestructCountdown=1;
+  side=ARM;
+  sightDistance=273;
+  smoothAnim=1;
+  soundcategory=ARM_MEX;
+  TEDClass=METAL;
+  turnRate=0;
+  workerTime=0;
+  yardMap=ooooooooo;
+}
+

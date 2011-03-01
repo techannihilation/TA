@@ -1,0 +1,46 @@
+[UNITINFO] {
+  unitname=coruwmmm;
+  name=Underwater Moho Metal Maker;
+  description=Converts Energy to Metal;
+  acceleration=0;
+  activateWhenBuilt=1;
+  bmcode=0;
+  brakeRate=0;
+  buildAngle=8192;
+  buildCostEnergy=33551;
+  buildCostMetal=773;
+  builder=0;
+  buildPic=CORUWMMM.DDS;
+  buildTime=44623;
+  category=ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR;
+  corpse=CORUWMMM_DEAD;
+  damageModifier=0.275;
+  energyStorage=0;
+  energyUse=600;
+  explodeAs=ATOMIC_BLASTSML;
+  footprintX=5;
+  footprintZ=5;
+  iconType=building;
+  idleAutoHeal=5;
+  idleTime=1800;
+  makesMetal=16;
+  maxDamage=1200;
+  maxSlope=16;
+  maxVelocity=0;
+  metalStorage=0;
+  minWaterDepth=15;
+  noAutoFire=0;
+  objectName=CORUWMMM;
+  onoffable=1;
+  seismicSignature=0;
+  selfDestructAs=ATOMIC_BLAST;
+  side=CORE;
+  sightDistance=143;
+  smoothAnim=1;
+  soundcategory=CORE_MAKER;
+  TEDClass=METAL;
+  turnRate=0;
+  workerTime=0;
+  yardMap=ooooooooooooooooooooooooo;
+}
+

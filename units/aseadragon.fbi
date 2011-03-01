@@ -1,0 +1,90 @@
+[UNITINFO] {
+  unitname=aseadragon;
+  name=Epoch;
+  description=Flagship;
+  acceleration=0.028;
+  activateWhenBuilt=1;
+  bmcode=1;
+  brakeRate=0.021;
+  buildAngle=16384;
+  buildCostEnergy=238406;
+  buildCostMetal=32122;
+  buildPic=ASEADRAGON.DDS;
+  buildTime=299523;
+  canAttack=1;
+  canGuard=1;
+  canMove=1;
+  canPatrol=1;
+  canstop=1;
+  category=ALL WEAPON NOTSUB SHIP NOTAIR;
+  corpse=ASEADRAGON_DEAD;
+  damageModifier=1;
+  defaultmissiontype=Standby;
+  energyMake=150;
+  energyStorage=1000;
+  energyUse=150;
+  explodeAs=ATOMIC_BLAST;
+  firestandorders=1;
+  floater=1;
+  footprintX=8;
+  footprintZ=8;
+  iconType=sea;
+  idleAutoHeal=5;
+  idleTime=1800;
+  immunetoparalyzer=1;
+  maneuverleashlength=640;
+  maxDamage=71250;
+  maxVelocity=2.3;
+  metalStorage=100;
+  minWaterDepth=15;
+  mobilestandorders=1;
+  movementClass=HDBOAT8;
+  noAutoFire=0;
+  objectName=ASEADRAGON;
+  radarDistance=1530;
+  scale=10;
+  seismicSignature=0;
+  selfDestructAs=ATOMIC_BLAST;
+  side=ARM;
+  sightDistance=689;
+  smoothAnim=1;
+  soundcategory=ARM_SHIP;
+  standingfireorder=2;
+  standingmoveorder=1;
+  steeringmode=1;
+  TEDClass=SHIP;
+  turnRate=272;
+  waterline=5;
+
+  weapon1=SEADRAGPRIME;
+  onlyTargetCategory1=NOTAIR;
+
+  weapon2=ARM_BATSAFTX;
+  maxAngleDif2=320;
+  onlyTargetCategory2=NOTAIR;
+  weaponMainDir2=0 0 1;
+
+  weapon3=SEADRAGPRIME;
+  maxAngleDif3=240;
+  onlyTargetCategory3=NOTAIR;
+  weaponMainDir3=0 0 1;
+
+  weapon4=ARM_BATSAFTX;
+  maxAngleDif4=180;
+  onlyTargetCategory4=NOTAIR;
+  weaponMainDir4=-4 0 1;
+
+  weapon5=ARM_BATSAFTX;
+  maxAngleDif5=180;
+  onlyTargetCategory5=NOTAIR;
+  weaponMainDir5=4 0 1;
+
+  weapon6=SEADRAGONFLAK;
+  maxAngleDif6=200;
+  weaponMainDir6=1 0 0;
+
+  weapon7=SEADRAGONFLAK;
+  maxAngleDif7=200;
+  weaponMainDir7=-1 0 0;
+}
+

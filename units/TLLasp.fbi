@@ -1,0 +1,46 @@
+[UNITINFO]
+	{
+	UnitName=TLLASP;
+	Version=1;
+	Side=TLL;
+	Objectname=TLLASP;
+	Designation= ;
+	Name=Air Repair Pad;
+	Description=Automatically repairs aircraft;
+	FootprintX=4;
+	FootprintZ=4;
+	BuildCostEnergy=8953;
+	BuildCostMetal=451;
+	MaxDamage=718;
+	MaxWaterDepth=1;
+	MaxSlope=10;
+	EnergyUse=0;
+	BuildTime=24760;
+	WorkerTime=9000;
+	BMcode=0;
+	Builder=1;
+	ThreeD=1;
+	ZBuffer=1;
+	NoAutoFire=0;
+	SightDistance=193;
+	SoundCategory=AIRPLANT;
+	EnergyStorage=100;
+	ExplodeAs=BIG_UNITEX;
+	SelfDestructAs=BIG_UNIT;
+	Category=TLL LEVEL3 NOWEAPON NOTAIR NOTSUB;
+	TEDClass=SPECIAL;
+	Copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
+	YardMap=oooo oooo oooo oooo;
+	Corpse=tllasp_dead;
+	UnitNumber=805;
+	GermanName=Luftfahrt-Reparaturset;
+	GermanDescription=Repariert Lufteinheiten automatisch;
+	FrenchName=Piste de réparations;
+	Frenchdescription=Répare automatiquement les avions;
+	Builddistance=8;
+	EnergyMake=10;
+	ActivateWhenBuilt=1;
+	onoffable=1;
+	IsAirBase=1;
+	buildangle=4096;
+	}

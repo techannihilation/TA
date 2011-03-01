@@ -1,0 +1,43 @@
+[UNITINFO] {
+  unitname=coruwfus;
+  name=Underwater Fusion Plant;
+  description=Produces Energy / Storage;
+  acceleration=0;
+  activateWhenBuilt=1;
+  bmcode=0;
+  brakeRate=0;
+  buildAngle=8192;
+  buildCostEnergy=35879;
+  buildCostMetal=4568;
+  builder=0;
+  buildPic=CORUWFUS.DDS;
+  buildTime=99870;
+  category=ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR;
+  corpse=CORUWFUS_DEAD;
+  energyMake=1220;
+  energyStorage=2500;
+  explodeAs=ATOMIC_BLAST;
+  footprintX=5;
+  footprintZ=5;
+  iconType=building;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maxDamage=5350;
+  maxSlope=16;
+  maxVelocity=0;
+  metalStorage=0;
+  minWaterDepth=25;
+  noAutoFire=0;
+  objectName=CORUWFUS;
+  seismicSignature=0;
+  selfDestructAs=MINE_NUKE;
+  side=CORE;
+  sightDistance=143;
+  smoothAnim=1;
+  soundcategory=CORE_UWFUSION;
+  TEDClass=ENERGY;
+  turnRate=0;
+  workerTime=0;
+  yardMap=ooooooooooooooooooooooooo;
+}
+

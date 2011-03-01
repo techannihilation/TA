@@ -1,0 +1,56 @@
+[UNITINFO] {
+  unitname=tawf001;
+  name=Beamer;
+  description=Beam Laser Turret;
+  acceleration=0;
+  bmcode=0;
+  brakeRate=0;
+  buildAngle=32768;
+  buildCostEnergy=3345;
+  buildCostMetal=176;
+  builder=0;
+  buildPic=TAWF001.DDS;
+  buildTime=5324;
+  canAttack=1;
+  canstop=1;
+  category=ALL WEAPON NOTSUB NOTAIR;
+  corpse=TAWF001_DEAD;
+  defaultmissiontype=GUARD_NOMOVE;
+  energyStorage=100;
+  energyUse=0;
+  explodeAs=MEDIUM_BUILDINGEX;
+  firestandorders=1;
+  footprintX=2;
+  footprintZ=2;
+  healtime=4;
+  iconType=building;
+  idleAutoHeal=5;
+  idleTime=1800;
+  maxDamage=1290;
+  maxSlope=10;
+  maxVelocity=0;
+  maxWaterDepth=0;
+  metalStorage=0;
+  noAutoFire=0;
+  objectName=TAWF001;
+  seismicSignature=0;
+  selfDestructAs=MEDIUM_BUILDING;
+  side=ARM;
+  sightDistance=475;
+  smoothAnim=1;
+  soundcategory=LLT;
+  standingfireorder=2;
+  TEDClass=FORT;
+  turnRate=0;
+  badTargetCategory=VTOL;
+  workerTime=0;
+  wpri_badtargetcategory=VTOL;
+  yardMap=oooo;
+
+  weapon1=TAWF001_WEAPON;
+  collisionvolumeoffsets=0 -5 0;
+  collisionvolumescales=27 90 27;
+  collisionvolumetype=box;
+
+}
+

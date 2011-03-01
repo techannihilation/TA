@@ -1,0 +1,55 @@
+[UNITINFO]
+	{
+	UnitName=TLLLAB;
+	Version=3;
+	Side=TLL;
+	Objectname=TLLLAB;
+	Designation= ;
+	Name=Kbot Lab;
+	Description=Produces Kbots;
+	FootprintX=6;
+	FootprintZ=6;
+	BuildCostEnergy=850;
+	BuildCostMetal=555;
+	MaxDamage=2107;
+	MaxWaterDepth=0;
+	MaxSlope=10;
+	EnergyUse=0;
+	BuildTime=5160;
+	WorkerTime=210;
+	BMcode=0;
+	Builder=1;
+	ThreeD=1;
+	ZBuffer=1;
+	NoAutoFire=0;
+	SightDistance=223;
+	SoundCategory=KBOTPLANT;
+	EnergyStorage=100;
+	MetalStorage=100;
+	ExplodeAs=LARGE_BUILDINGEX;
+	SelfDestructAs=LARGE_BUILDING;
+	Category=TLL LEVEL1 NOWEAPON NOTAIR NOTSUB PLANT CTRL_F;
+	TEDClass=PLANT;
+	Copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
+	YardMap=occccooccccooccccooccccooccccoocccco;
+	Corpse=tlllab_dead;
+	UnitNumber=811;
+
+	GermanName=Kbot-Labor;
+	GermanDescription=Tech Level 1;
+	FrenchName=Labo de Kbots ;
+	Frenchdescription=Niveau Tech 1;
+	SpanishName=Laboratorio Kbot;
+	SpanishDescription=Produce Kbots;
+	ItalianName=Laboratorio Kbot;
+	ItalianDescription=Produce Kbot;
+
+	firestandorders=1;
+	mobilestandorders=1;
+	StandingMoveOrder=2;
+	canmove=1;
+	canpatrol=1;
+	canstop=1;
+	Scale=0.75;
+	buildangle=2096;
+	}
