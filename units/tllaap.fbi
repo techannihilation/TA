@@ -29,10 +29,10 @@
 	metalstorage=200;
 	explodeas=LARGE_BUILDINGEX;
 	selfdestructas=LARGE_BUILDING;
-category=ARM PLANT CTRL_F NOWEAPON NOTAIR NOTSUB NOTSHIP LEVEL2 NOTLAND ALL;
+	category=ARM PLANT CTRL_F NOWEAPON NOTAIR NOTSUB NOTSHIP LEVEL2 NOTLAND ALL;
 	tedclass=PLANT;
 	copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
-	yardmap=ooooooooooooooooooooooooooooooooooooooooooooooo;
+	yardmap=oooooo occcco occcco occcco occcco occcco oooooo;
 	corpse=tllaap_dead;
 	unitnumber=883;
 	GermanDescription=Verb.Flugzeugfabrik;
