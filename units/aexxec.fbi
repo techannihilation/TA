@@ -11,7 +11,7 @@
 	FootprintZ=2;
 	BuildCostEnergy=5311;
 	BuildCostMetal=675;
-	MaxDamage=4060;
+	MaxDamage=3700;
 	MaxWaterDepth=25;
 	MaxSlope=17;
 	Mass=5000;
