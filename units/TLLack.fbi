@@ -55,6 +55,6 @@
 	MetalMake=0.6;
 	DefaultMissionType=Standby;
 	maneuverleashlength=640;
-	MovementClass=KBOT2;
+	MovementClass=TKBOT3;
 	Upright=1;
 	}
