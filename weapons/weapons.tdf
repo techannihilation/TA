@@ -2535,7 +2535,7 @@
 	turret=1;
 	range=475;
 	reloadtime=0.1;
-	energypershot=6;
+	energypershot=8;
 	weaponvelocity=1000;
 	areaofeffect=8;
 	impactonly=1;
