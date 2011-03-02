@@ -7,7 +7,7 @@
   brakeRate=0.2068;
   buildCostEnergy=1802;
   buildCostMetal=128;
-  buildDistance=70;
+  buildDistance=160;
   builder=1;
   buildPic=ARMCV.DDS;
   buildTime=4066;
