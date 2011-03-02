@@ -7,7 +7,7 @@
   brakeRate=0.1166;
   buildCostEnergy=3216;
   buildCostMetal=161;
-  buildDistance=80;
+  buildDistance=160;
   builder=1;
   buildPic=CORMUSKRAT.DDS;
   buildTime=6864;
@@ -55,6 +55,6 @@
   trackType=StdTank;
   trackWidth=24;
   turnRate=300;
-  workerTime=80;
+  workerTime=120;
 }
 
