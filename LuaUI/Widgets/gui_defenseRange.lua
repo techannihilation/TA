@@ -1,7 +1,7 @@
 include("colors.h.lua")
 include("keysym.h.lua")
 
-local versionNumber = "6.0"
+local versionNumber = "6.2-TechA"
 
 function widget:GetInfo()
 	return {
@@ -15,91 +15,248 @@ function widget:GetInfo()
 	}
 end
 
+--[[
+changelog:
+6.2: speed-up by cpu culling
+6.12: bugfix (BA Ambusher working)
+6.11: added missing water units to BA (torpLauncher/FHLT/FRocketTower)
+6.1: -XTA-support added (thx to manolo_)
+	 -tweak mode and load/save fixed
+	 --]]
+	 
 -- CONFIGURATION
 local debug = false --generates debug message
 
 local modConfig = {}
--- TA
+-- BA
+--to support other mods
+--table initialized and unitList is needed!
+modConfig["BA"] = {}
+modConfig["BA"]["unitList"] = 
+							{ 
+								--Arm
+								armclaw = { weapons = { 1 } },
+								cormaw = { weapons = { 1 } },
+								armllt = { weapons = { 1 } },
+								tawf001 = { weapons = { 1 } },
+								armhlt = { weapons = { 1 } },
+								armguard = { weapons = { 1, 1 } },
+								armrl = { weapons = { 2 } }, --light aa
+								packo = { weapons = { 2 } },
+								armcir = { weapons = { 2 } }, --chainsaw
+								armdl = { weapons = { 1 } }, --depthcharge
+								ajuno = { weapons = { 1 } },
+								armtl = { weapons = { 1 } }, --torp launcher
+								armfhlt = { weapons = { 1 } },  --floating hlt
+								armfrt = { weapons = { 2 } },  --floating rocket laucher
+								
+								armamb = { weapons = { 1,1 } }, --ambusher
+								armpb = { weapons = { 1 } }, --pitbull
+								armanni = { weapons = { 1 } },
+								armflak = { weapons = { 2 } },
+								mercury = { weapons = { 2 } },
+								armemp = { weapons = { 1 } },
+								armamd = { weapons = { 3 } }, --antinuke
+								
+								armbrtha = { weapons = { 1 } },
+								armvulc = { weapons = { 1 } },
+								
+								--CORE
+								corexp = { weapons = { 1 } },
+								cormaw = { weapons = { 1 } },
+								corllt = { weapons = { 1 } },
+								hllt = { weapons = { 1 } },
+								corhlt = { weapons = { 1 } },
+								corpun = { weapons = { 1, 1 } },
+								corrl = { weapons = { 2 } },
+								madsam = { weapons = { 2 } },
+								corerad = { weapons = { 2 } },
+								cordl = { weapons = { 1 } },
+								cjuno = { weapons = { 1 } },
+								
+								corfhlt = { weapons = { 1 } },  --floating hlt
+								cortl = { weapons = { 1 } }, --torp launcher
+								corfrt = { weapons = { 2 } }, --floating rocket laucher
+								
+								cortoast = { weapons = { 1 } },
+								corvipe = { weapons = { 1 } },
+								cordoom = { weapons = { 1 } },
+								corflak = { weapons = { 2 } },
+								screamer = { weapons = { 2 } },
+								cortron = { weapons = { 1 } },
+								corfmd = { weapons = { 3 } },
+								corint = { weapons = { 1 } },
+								corbuzz = { weapons = { 1 } }
+	
+								}
+
+--implement this if you want dps-depending ring-colors
+--colors will be interpolated by dps scores between min and max values. values outside range will be set to nearest value in range -> min or max
+modConfig["BA"]["armorTags"] = {}
+modConfig["BA"]["armorTags"]["air"] = "vtol"
+modConfig["BA"]["armorTags"]["ground"] = "else"
+modConfig["BA"]["dps"] = {}
+modConfig["BA"]["dps"]["ground"] = {}
+modConfig["BA"]["dps"]["air"] = {}
+modConfig["BA"]["dps"]["ground"]["min"] = 50
+modConfig["BA"]["dps"]["ground"]["max"] = 500
+modConfig["BA"]["dps"]["air"]["min"] = 80
+modConfig["BA"]["dps"]["air"]["max"] = 500
+--end of dps-colors
+--implement this if you want custom colors - we dont want it for BA
+
+modConfig["BA"]["color"] = {}
+modConfig["BA"]["color"]["enemy"] = {}
+modConfig["BA"]["color"]["enemy"]["ground"] = {}
+modConfig["BA"]["color"]["enemy"]["air"] = {}
+modConfig["BA"]["color"]["enemy"]["nuke"] = {}									 
+modConfig["BA"]["color"]["enemy"]["ground"]["min"] = { 1.0, 0.0, 0.0 }
+modConfig["BA"]["color"]["enemy"]["ground"]["max"] = { 1.0, 1.0, 0.0 }
+modConfig["BA"]["color"]["enemy"]["air"]["min"] = { 0.0, 1.0, 0.0 }
+modConfig["BA"]["color"]["enemy"]["air"]["max"] = { 0.0, 0.0, 1.0 }
+modConfig["BA"]["color"]["enemy"]["nuke"] =  { 1.0, 1.0, 1.0 }
+modConfig["BA"]["color"]["ally"] = modConfig["BA"]["color"]["enemy"]
+
+--end of custom colors
+--end of BA
+
+
+-- TechA
 --to support other mods
 --table initialized and unitList is needed!
 modConfig["TA"] = {}
 modConfig["TA"]["unitList"] = 
 							{ 
+								--Arm
+									--Ground Weapons--
 								armclaw = { weapons = { 1 } },
-								cormaw = { weapons = { 1 } },
 								armllt = { weapons = { 1 } },
 								armllt1 = { weapons = { 1 } },
 								tawf001 = { weapons = { 1 } },
 								armhlt = { weapons = { 1 } },
-								armhlt1 = { weapons = { 1 } },
 								armguard = { weapons = { 1, 1 } },
 								arm_guardian = { weapons = { 1, 1 } },
-								armarch = { weapons = { 1, 1 } },
-								armrl = { weapons = { 2 } }, --light aa
-								armrl1 = { weapons = { 2 } }, --upg light aa
-								packo = { weapons = { 2 } },
-								armcir = { weapons = { 2 } }, --chainsaw
-								armcir1 = { weapons = { 2 } }, --upg chainsaw
-								armdl = { weapons = { 1 } }, --depthcharge
-								ajuno = { weapons = { 1 } },
-								
-								armamb = { weapons = { 1 } }, --ambusher
+								arm_immolator = { weapons = { 1 } },
+								armamb = { weapons = { 1,1 } }, --ambusher
 								armpb = { weapons = { 1 } }, --pitbull
 								armanni = { weapons = { 1 } },
 								armanni1 = { weapons = { 1 } },
-								armoblit = { weapons = { 1 } },
-								armflak = { weapons = { 2 } },
-								mercury = { weapons = { 2 } },
-								armemp = { weapons = { 1 } },
-								arm_big_bertha = { weapons = { 1 } },
-								armamd = { weapons = { 3 } }, --antinuke
-								armamd1 = { weapons = { 3 } }, --antinuke
-								armscab = { weapons = { 3 } }, --antinuke
-								armscab1 = { weapons = { 3 } }, --antinuke
-								
+								aspdbunk = { weapons = { 1 } },
+								armdl = { weapons = { 1 } }, --depthcharge
+								ajuno = { weapons = { 1 } },
+								armtl = { weapons = { 1 } }, --torp launcher
+								armfhlt = { weapons = { 1 } },  --floating hlt
 								arm_immolator = { weapons = { 1 } },
+								armamb = { weapons = { 1,1 } }, --ambusher
+								armpb = { weapons = { 1 } }, --pitbull
+								armanni = { weapons = { 1 } },
+								armanni1 = { weapons = { 1 } },
+								aspdbunk = { weapons = { 1 } },
+								armemp = { weapons = { 1 } },
+								armarch = { weapons = { 1 } },
+								armbrtha = { weapons = { 1 } },
 								armbrtha1 = { weapons = { 1 } },
+								arm_big_bertha = { weapons = { 1 } },
+								armvulc = { weapons = { 1 } },
 								armvulc1 = { weapons = { 1 } },
 								armvulc2 = { weapons = { 1 } },
-								armbrtha = { weapons = { 1 } },
-								armvulc = { weapons = { 1 } },
 								ARMTABI = { weapons = { 1 } },
-								
-								--CORE
+									--Anti-Air--
+								armrl = { weapons = { 2 } }, --light aa
+								armrl1 = { weapons = { 2 } },
+								packo = { weapons = { 2 } },
+								armcir = { weapons = { 2 } }, --chainsaw
+								armcir1 = { weapons = { 2 } }, --chainsaw
+								armfrt = { weapons = { 2 } },  --floating rocket laucher
+								armflak = { weapons = { 2 } },
+								armfflak = { weapons = { 2 } },
+								mercury = { weapons = { 2 } },
+									--Anti-Nuke--
+								armamd = { weapons = { 3 } }, --antinuke
+								armamd1 = { weapons = { 3 } }, --antinuke
+								armamd2 = { weapons = { 3 } }, --antinuke
+								armscab = { weapons = { 3 } },
+								armscab1 = { weapons = { 3 } },
+
+								--Core
+									--Ground Weapons--
+								cormaw = { weapons = { 1 } },
+								cmortor = { weapons = { 1 } },
 								corexp = { weapons = { 1 } },
 								cormaw = { weapons = { 1 } },
 								corllt = { weapons = { 1 } },
 								corllt1 = { weapons = { 1 } },
 								hllt = { weapons = { 1 } },
 								corhlt = { weapons = { 1 } },
-								corhlt1 = { weapons = { 1 } },
+								corfhlt = { weapons = { 1 } },
 								corpun = { weapons = { 1, 1 } },
+								cordl = { weapons = { 1 } },
+								cjuno = { weapons = { 1 } },
+								coranta = { weapons = { 1 } },
+								corbhmth = { weapons = { 1 } },
+								corbhmth1 = { weapons = { 1 } },
+								corboucher = { weapons = { 1 } },
+								corfhlt = { weapons = { 1 } },  --floating hlt
+								cortl = { weapons = { 1 } }, --torp launcher
+								cortoast = { weapons = { 1 } },
+								corvipe = { weapons = { 1 } },
+								cordoom = { weapons = { 1 } },
+								cordoom1 = { weapons = { 1 } },
+								corint = { weapons = { 1 } },
+								corint1 = { weapons = { 1 } },
+								corbuzz = { weapons = { 1 } },
+								corbuzz1 = { weapons = { 1 } },
+								corbuzz2 = { weapons = { 1 } },
+								core_immolator = { weapons = { 1 } },
+								core_immolator1	 = { weapons = { 1 } },
+								hllt = { weapons = { 1 } },
+								nebraska = { weapons = { 1 } },
+								spit3g = { weapons = { 1 } },
+									--Anti-Air--
+								corfrt = { weapons = { 2 } }, --floating rocket laucher
 								corrl = { weapons = { 2 } },
 								corrl1 = { weapons = { 2 } },
 								madsam = { weapons = { 2 } },
 								corerad = { weapons = { 2 } },
 								corerad1 = { weapons = { 2 } },
-								cordl = { weapons = { 1 } },
-								cjuno = { weapons = { 1 } },
-								
-								cortoast = { weapons = { 1 } },
-								corvipe = { weapons = { 1 } },
-								cordoom = { weapons = { 1 } },
-								cordoom1 = { weapons = { 1 } },
+								corenaa = { weapons = { 2 } },
 								corflak = { weapons = { 2 } },
 								screamer = { weapons = { 2 } },
-								cortron = { weapons = { 1 } },
+								corpre = { weapons = { 2 } },
+									--Anti-Nuke--
 								corfmd = { weapons = { 3 } },
 								corfmd1 = { weapons = { 3 } },
-								cormabm = { weapons = { 3 } },
-								cormabm1 = { weapons = { 3 } },
-								corint = { weapons = { 1 } },
-								core_intimidator = { weapons = { 1 } },
-								corbuzz = { weapons = { 1 } },				
-								corint1 = { weapons = { 1 } },
-								corbuzz1 = { weapons = { 1 } },	
-								corbuzz2 = { weapons = { 1 } },				
-								CORFLU = { weapons = { 1 } }					
+								corfmd2 = { weapons = { 3 } },
+								cortron = { weapons = { 3 } },
+
+								--TLL
+									--Ground Weapons--
+								TLLatorp = { weapons = { 1 } },
+								TLLdcsta = { weapons = { 1 } },
+								TLLEMP = { weapons = { 1 } },
+								TLLatorp = { weapons = { 1 } },
+								TLLSILO = { weapons = { 1 } },
+								TLLhlt = { weapons = { 1 } },
+								TLLhltNS = { weapons = { 1 } },
+								TLLHMT = { weapons = { 1 } },
+								TLLlrpt = { weapons = { 1 } },
+								TLLobliterator = { weapons = { 1 } },
+								tllplasma = { weapons = { 1 } },
+								TLLpulaser = { weapons = { 1 } },
+								tllrlrpc = { weapons = { 1 } },
+								TLLshoretorp = { weapons = { 1 } },
+								tllstuner = { weapons = { 1 } },
+								TLLtorp = { weapons = { 1 } },
+								TLLweb = { weapons = { 1 } },
+									--Anti-Air--
+								TLLlmt = { weapons = { 2 } },
+								TLLlmtNS = { weapons = { 2 } },
+								TllNSsam = { weapons = { 2 } },
+								TLLflak = { weapons = { 2 } },
+								TLLSAM = { weapons = { 2 } },
+									--Anti-Nuke--
+								tllantinuke = { weapons = { 3 } } 
+							
 							}
 
 --implement this if you want dps-depending ring-colors
@@ -116,21 +273,171 @@ modConfig["TA"]["dps"]["air"]["min"] = 80
 modConfig["TA"]["dps"]["air"]["max"] = 500
 --end of dps-colors
 --implement this if you want custom colors - we dont want it for BA
---[[
 modConfig["TA"]["color"] = {}
 modConfig["TA"]["color"]["enemy"] = {}
 modConfig["TA"]["color"]["enemy"]["ground"] = {}
 modConfig["TA"]["color"]["enemy"]["air"] = {}
+
 modConfig["TA"]["color"]["enemy"]["nuke"] = {}									 
 modConfig["TA"]["color"]["enemy"]["ground"]["min"] = { 1.0, 0.0, 0.0 }
 modConfig["TA"]["color"]["enemy"]["ground"]["max"] = { 1.0, 1.0, 0.0 }
 modConfig["TA"]["color"]["enemy"]["air"]["min"] = { 0.0, 1.0, 0.0 }
+
 modConfig["TA"]["color"]["enemy"]["air"]["max"] = { 0.0, 0.0, 1.0 }
 modConfig["TA"]["color"]["enemy"]["nuke"] =  { 1.0, 1.0, 1.0 }
 modConfig["TA"]["color"]["ally"] = modConfig["BA"]["color"]["enemy"]
+--end of custom colors
+--end of TA
+
+
+-- XTA
+--to support other mods
+--table initialized and unitList is needed!
+modConfig["XTA"] = {}
+modConfig["XTA"]["unitList"] = 
+							{ 
+									--ARM
+									arm_light_laser_tower = { weapons = { 1 } },
+									arm_sentinel = { weapons = { 1 } },
+									arm_ambusher = { weapons = { 1 } },
+									arm_defender = { weapons = { 2 } }, 
+									arm_floating_light_laser_tower = { weapons = { 1 } },
+									arm_stingray = { weapons = { 1 } },
+									arm_sentry = { weapons = { 2 } },
+									arm_torpedo_launcher = { weapons = { 1 } }, 
+									arm_repulsor = { weapons = { 3 } }, 
+									arm_advanced_torpedo_launcher = { weapons = { 1 } }, 								armanni = { weapons = { 1 } },
+									arm_naval_flakker = { weapons = { 2 } },
+									arm_protector = { weapons = { 3 } },
+									arm_flakker = { weapons = { 2 } },
+									arm_guardian = { weapons = { 1 } },								
+									arm_annihilator = { weapons = { 1 } },
+									arm_big_bertha = { weapons = { 1 } },
+									arm_vulcan = { weapons = { 1 } },
+									armarch = { weapons = { 2 } },
+
+
+								--CORE
+								core_light_laser_tower = { weapons = { 1 } },
+								core_floating_light_laser_tower = { weapons = { 1 } },
+								core_torpedo_launcher = { weapons = { 1 } },
+								core_gaat_gun = { weapons = { 1 } },
+								core_toaster = { weapons = { 1 } },
+								core_pulverizer = { weapons = { 2 } },
+								core_cobra = { weapons = { 2 } },
+								core_punisher = { weapons = { 1 } },
+								core_fortitude_missile_defense = { weapons = { 3 } },
+								core_viper = { weapons = { 1 } },
+								core_immolator = { weapons = { 1 } },
+								core_doomsday_machine = { weapons = { 1 } },
+								core_intimidator = { weapons = { 1 } },
+								core_buzzsaw = { weapons = { 1 } },
+								screamer = { weapons = { 2 } },
+								core_thunderbolt = { weapons = { 1 } },
+								core_stinger = { weapons = { 2 } },
+								core_naval_cobra = { weapons = { 2 } },
+								core_advanced_torpedo_launcher = { weapons = { 1 } },
+								core_resistor = { weapons = { 3 } }					
+							}
+
+--implement this if you want dps-depending ring-colors
+--colors will be interpolated by dps scores between min and max values. values outside range will be set to nearest value in range -> min or max
+modConfig["XTA"]["armorTags"] = {}
+modConfig["XTA"]["armorTags"]["air"] = "group_landair"
+modConfig["XTA"]["armorTags"]["ground"] = "default"
+modConfig["XTA"]["dps"] = {}
+modConfig["XTA"]["dps"]["ground"] = {}
+modConfig["XTA"]["dps"]["air"] = {}
+modConfig["XTA"]["dps"]["ground"]["min"] = 50
+modConfig["XTA"]["dps"]["ground"]["max"] = 500
+modConfig["XTA"]["dps"]["air"]["min"] = 80
+modConfig["XTA"]["dps"]["air"]["max"] = 500
+--end of dps-colors
+--implement this if you want custom colors - we dont want it for BA
+--[[
+modConfig["XTA"]["color"] = {}
+modConfig["XTA"]["color"]["enemy"] = {}
+modConfig["XTA"]["color"]["enemy"]["ground"] = {}
+modConfig["XTA"]["color"]["enemy"]["air"] = {}
+modConfig["XTA"]["color"]["enemy"]["nuke"] = {}									 
+modConfig["XTA"]["color"]["enemy"]["ground"]["min"] = { 1.0, 0.0, 0.0 }
+modConfig["XTA"]["color"]["enemy"]["ground"]["max"] = { 1.0, 1.0, 0.0 }
+modConfig["XTA"]["color"]["enemy"]["air"]["min"] = { 0.0, 1.0, 0.0 }
+modConfig["XTA"]["color"]["enemy"]["air"]["max"] = { 0.0, 0.0, 1.0 }
+modConfig["XTA"]["color"]["enemy"]["nuke"] =  { 1.0, 1.0, 1.0 }
+modConfig["XTA"]["color"]["ally"] = modConfig["BA"]["color"]["enemy"]
 --]]
 --end of custom colors
---end of BA
+--end of XTA
+
+-- CA
+modConfig["CA"] = {}
+modConfig["CA"]["unitList"] = 
+							{ 
+								--ARM
+								armamd = { weapons = { 3 } },		--antinuke
+								armrl = { weapons = { 4 } },
+								armllt = { weapons = { 4 } },
+								armhlt = { weapons = { 4 } },
+								armartic = { weapons = { 4 } },
+								armdeva = { weapons = { 4 } },
+								armpb = { weapons = { 4 } },
+								mahlazer = { weapons = { 4 } },
+								
+								armemp = { weapons = { 1 } },
+								mercury = { weapons = { 2 } },
+								
+								armanni = { weapons = { 1 } },
+								armbrtha = { weapons = { 1 } },		--bertha
+								
+								armarch = { weapons = { 2 } },		--packo
+								armcir = { weapons = { 2 } },		--chainsaw
+								
+								armdl = { weapons = { 1 } },
+								
+								armtd = { weapons = { 1 } },		--torpedo launcher
+								armatl = { weapons = { 1 } },		--adv torpedo launcher
+								
+								--CORE
+								corrl = { weapons = { 4 } },
+								corllt = { weapons = { 4 } },
+								corhlt = { weapons = { 4 } },
+								corpre = { weapons = { 4 } },
+								corvipe = { weapons = { 4 } },
+								cordoom = { weapons = { 1, 4 } },
+								cordl = { weapons = { 1 } },		--jellyfish
+
+								corrazor = { weapons = { 2 } },
+								corflak = { weapons = { 2 } },
+								screamer = { weapons = { 2 } },
+
+								cortron = { weapons = { 1 } },
+								
+								corint = { weapons = { 1 } },		--bertha
+								corbhmth = { weapons = { 1 } },		--behemoth
+																
+								corpre = { weapons = { 4 } },		--
+								
+								cortl = { weapons = { 1 } },		--torpedo launcher
+								coratl = { weapons = { 1 } },		--adv torpedo launcher
+																
+								corfmd = { weapons = { 3 } }		--antinuke
+							}
+
+--implement this if you want dps-depending ring-colors
+--colors will be interpolated by dps scores between min and max values. values outside range will be set to nearest value in range -> min or max
+modConfig["CA"]["armorTags"] = {}
+modConfig["CA"]["armorTags"]["air"] = "planes"
+modConfig["CA"]["armorTags"]["ground"] = "else"
+modConfig["CA"]["dps"] = {}
+modConfig["CA"]["dps"]["ground"] = {}
+modConfig["CA"]["dps"]["air"] = {}
+modConfig["CA"]["dps"]["ground"]["min"] = 90
+modConfig["CA"]["dps"]["ground"]["max"] = 750 --doomsday does 450 and 750
+modConfig["CA"]["dps"]["air"]["min"] = 90
+modConfig["CA"]["dps"]["air"]["max"] = 400 --core flak
+--end of dps-colors
+--end of CA
 	
 --DEFAULT COLOR CONFIG
 --is used when no game-specfic color config is found in current game-definition
@@ -201,7 +508,7 @@ state["curModID"] = nil
 state["myPlayerID"] = nil
 
 local lineConfig = {}
-lineConfig["lineWidth"] = 1.0 -- calcs dynamic now
+lineConfig["lineWidth"] = 1.5 -- calcs dynamic now
 lineConfig["alphaValue"] = 0.0 --> dynamic behavior can be found in the function "widget:Update"
 lineConfig["circleDivs"] = 40.0 
 --------------------------------------------------------------------------------
@@ -258,6 +565,7 @@ local spIsGUIHidden 		= Spring.IsGUIHidden
 local spGetLocalTeamID	 	= Spring.GetLocalTeamID
 local spGetActiveCommand 	= Spring.GetActiveCommand
 local spGetActiveCmdDesc 	= Spring.GetActiveCmdDesc
+local spIsSphereInView  	= Spring.IsSphereInView
 
 local udefTab				= UnitDefs
 local weapTab				= WeaponDefs
@@ -327,66 +635,66 @@ function UnitDetected( unitID, allyTeam, teamId )
 	for i=1, udef.weapons.n do
 		if ( currentModConfig["unitList"][udef.name] == nil or currentModConfig["unitList"][udef.name]["weapons"][i] == nil ) then
 			printDebug("Weapon skipped! Name: "..  udef.name .. " weaponidx: " .. i )
-			return
-		end
-		--get definition from weapon table
-		weaponDef = weapTab[ udef.weapons[i].weaponDef ]
-
-		range = weaponDef.range --get normal weapon range
-		--printDebug("Weapon #" .. i .. " Range: " .. range .. " Type: " .. weaponDef.type )
-
-		type = currentModConfig["unitList"][udef.name]["weapons"][i]
-							
-		local dam = weaponDef.damages
-		local dps
-		local damage
-			
-		--check if dps-depending colors should be used
-		if ( currentModConfig["armorTags"] ~= nil ) then
-			printDebug("DPS colors!")
-			if ( type == 1 or type == 4 ) then	 -- show combo units with ground-dps-colors
-				tag = currentModConfig["armorTags"] ["ground"]
-			elseif ( type == 2 ) then
-				tag = currentModConfig["armorTags"] ["air"]
-			elseif ( type == 3 ) then -- antinuke
-				range = weaponDef.coverageRange
-				dps = nil
-				tag = nil
-			end			
-					
-			if ( tag ~= nil ) then
-				--printDebug("Salvo: " .. weaponDef.salvoSize 	)
-				damage = dam[Game.armorTypes[tag]]
-				dps = damage * weaponDef.salvoSize / weaponDef.reload		
-				--printDebug("DPS: " .. dps 	)
-			end
-					
-			color1, color2 = GetColorsByTypeAndDps( dps, type, ( allyTeam == false ) )		
 		else
-			printDebug("Default colors!")
-			local team = "ally"
-			if ( allyTeam ) then
-				team = "enemy"
+			--get definition from weapon table
+			weaponDef = weapTab[ udef.weapons[i].weaponDef ]
+
+			range = weaponDef.range --get normal weapon range
+			--printDebug("Weapon #" .. i .. " Range: " .. range .. " Type: " .. weaponDef.type )
+
+			type = currentModConfig["unitList"][udef.name]["weapons"][i]
+								
+			local dam = weaponDef.damages
+			local dps
+			local damage
+				
+			--check if dps-depending colors should be used
+			if ( currentModConfig["armorTags"] ~= nil ) then
+				printDebug("DPS colors!")
+				if ( type == 1 or type == 4 ) then	 -- show combo units with ground-dps-colors
+					tag = currentModConfig["armorTags"] ["ground"]
+				elseif ( type == 2 ) then
+					tag = currentModConfig["armorTags"] ["air"]
+				elseif ( type == 3 ) then -- antinuke
+					range = weaponDef.coverageRange
+					dps = nil
+					tag = nil
+				end			
+						
+				if ( tag ~= nil ) then
+					--printDebug("Salvo: " .. weaponDef.salvoSize 	)
+					damage = dam[Game.armorTypes[tag]]
+					dps = damage * weaponDef.salvoSize / weaponDef.reload		
+					--printDebug("DPS: " .. dps 	)
+				end
+						
+				color1, color2 = GetColorsByTypeAndDps( dps, type, ( allyTeam == false ) )		
+			else
+				printDebug("Default colors!")
+				local team = "ally"
+				if ( allyTeam ) then
+					team = "enemy"
+				end
+				
+				if ( type == 1 or type == 4 ) then	 -- show combo units with ground-dps-colors
+					color1 = colorConfig[team]["ground"]["min"]
+					color2 = colorConfig[team]["air"]["min"]
+				elseif ( type == 2 ) then
+					color1 = colorConfig[team]["air"]["min"]
+				elseif ( type == 3 ) then -- antinuke
+					color1 = colorConfig[team]["nuke"]
+				end			
 			end
 			
-			if ( type == 1 or type == 4 ) then	 -- show combo units with ground-dps-colors
-				color1 = colorConfig[team]["ground"]["min"]
-				color2 = colorConfig[team]["air"]["min"]
-			elseif ( type == 2 ) then
-				color1 = colorConfig[team]["air"]["min"]
-			elseif ( type == 3 ) then -- antinuke
-				color1 = colorConfig[team]["nuke"]
-			end			
+			--add weapon to list
+			local rangeLines = CalcBallisticCircle(x,y,z,range, weaponDef )
+			local rangeLinesEx = CalcBallisticCircle(x,y,z,range + 3, weaponDef ) --calc a little bigger circle to display for combo-weapons (air and ground) to display both circles together (without overlapping)
+			foundWeapons[i] = { type = type, range = range, rangeLines = rangeLines, rangeLinesEx = rangeLinesEx, color1 = color1, color2 = color2 }
+			printDebug("Detected Weapon - Type: " .. type .. " Range: " .. range )
 		end
-		
-		--add weapon to list
-		local rangeLines = CalcBallisticCircle(x,y,z,range, weaponDef )
-		local rangeLinesEx = CalcBallisticCircle(x,y,z,range + 3, weaponDef ) --calc a little bigger circle to display for combo-weapons (air and ground) to display both circles together (without overlapping)
-		foundWeapons[i] = { type = type, range = range, rangeLines = rangeLines, rangeLinesEx = rangeLinesEx, color1 = color1, color2 = color2 }
-		printDebug("Detected Weapon - Type: " .. type .. " Range: " .. range )
 	end
 
-	printDebug("Adding UnitID " .. unitID .. " WeaponCount: " .. #foundWeapons .. "W1: " .. foundWeapons[1]["type"])
+	printDebug("Adding UnitID " .. unitID .. " WeaponCount: " .. #foundWeapons ) --.. "W1: " .. foundWeapons[1]["type"])
 	defences[unitID] = { allyState = ( allyTeam == false ), pos = {x, y, z}, unitId = unitID }
 	defences[unitID]["weapons"] = foundWeapons
 end
@@ -903,9 +1211,14 @@ function DrawRanges()
 	local color
 	local range
 	for _, def in pairs(defences) do
+	
 		for i, weapon in pairs(def["weapons"]) do
-		--	printDebugTable( weapon )
-			local execDraw = CheckDrawTodo( def, i )			
+			local execDraw = false
+			
+			if ( spIsSphereInView( def["pos"][1], def["pos"][2], def["pos"][3], weapon["range"] ) ) then
+				execDraw = CheckDrawTodo( def, i )			
+			end
+			
 			if ( execDraw ) then
 				color = weapon["color1"]
 				range = weapon["range"]
@@ -990,26 +1303,31 @@ end
 
 --SAVE / LOAD CONFIG FILE
 function widget:GetConfigData()
+	printDebug("Saving config. Bottom: " .. buttonConfig["posPercBottom"] )
 	local data = {}
 	data["buttons"] = buttonConfig["enabled"]
-	data["PositionPercentageRight"] = buttonConfig["posPercRight"]
+	data["positionPercentageRight"] = buttonConfig["posPercRight"]
 	data["positionPercentageBottom"] = buttonConfig["posPercBottom"]
   
 	return data
 end
 
 function widget:SetConfigData(data) 
+	printDebug("Loading config...")
 	if (data ~= nil) then
 		if ( data["buttons"] ~= nil ) then
 			buttonConfig["enabled"] = data["buttons"]
+			printDebug("enabled config found...")
 		end
 		
-		if ( data["PositionPercentageRight"] ~= nil ) then
-			buttonConfig["posPercRight"] = data["PositionPercentageRight"]
+		if ( data["positionPercentageRight"] ~= nil ) then
+			buttonConfig["posPercRight"] = data["positionPercentageRight"]
+			printDebug("right pos config found...")
 		end
 		
 		if ( data["positionPercentageBottom"] ~= nil ) then
-			buttonConfig["posPercRightBottom"] = data["positionPercentageBottom"]
+			buttonConfig["posPercBottom"] = data["positionPercentageBottom"]
+			printDebug("bottom config found: " .. buttonConfig["posPercBottom"])
 		end
 	end
 end
@@ -1037,7 +1355,7 @@ function widget:TweakMouseMove(x,y,dx,dy,button)
 	local ySpace = buttonConfig["spacingy"] * scaleFactor
 	--
 	
-	local xMod = dx / state["screeny"] --delta in screen pixels
+	local xMod = dx / state["screenx"] --delta in screen pixels
 	local xPosMin = ((buttonConfig["posPercRight"] + xMod) * state["screenx"]) - buttonConfig["currentWidth"]
 	local xPosMax = xPosMin + 2 * buttonConfig["currentWidth"] + xSpace
 
