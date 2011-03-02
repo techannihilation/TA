@@ -9,7 +9,7 @@
 	manualbombsettings=1;
 	burst=7;
 	burstrate=0.25;
-	areaofeffect=200;
+	areaofeffect=150;
 	edgeeffectiveness=0.25;
 	soundstart=bombrel;
 	soundhit=xplomed2;
