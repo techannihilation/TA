@@ -7,7 +7,7 @@
   brakeRate=0.475;
   buildCostEnergy=1622;
   buildCostMetal=113;
-  buildDistance=100;
+  buildDistance=185;
   builder=1;
   buildPic=CORCK.DDS;
   buildTime=3551;
