@@ -11,7 +11,7 @@
   buildCostMetal=159;
   builder=0;
   buildPic=ARMESTOR.DDS;
-  buildTime=4119;
+  buildTime=3900;
   category=ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR;
   corpse=ARMESTOR_DEAD;
   energyStorage=15000;

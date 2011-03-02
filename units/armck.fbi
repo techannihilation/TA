@@ -7,7 +7,7 @@
   brakeRate=0.5;
   buildCostEnergy=1521;
   buildCostMetal=102;
-  buildDistance=100;
+  buildDistance=185;
   builder=1;
   buildPic=ARMCK.DDS;
   buildTime=3453;

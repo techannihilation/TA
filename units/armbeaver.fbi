@@ -7,7 +7,7 @@
   brakeRate=0.1166;
   buildCostEnergy=2928;
   buildCostMetal=141;
-  buildDistance=80;
+  buildDistance=170;
   builder=1;
   buildPic=ARMBEAVER.DDS;
   buildTime=6708;
@@ -55,6 +55,6 @@
   trackType=StdTank;
   trackWidth=31;
   turnRate=311;
-  workerTime=80;
+  workerTime=120;
 }
 

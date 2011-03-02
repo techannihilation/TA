@@ -7,7 +7,7 @@
   brakeRate=0.075;
   buildCostEnergy=2523;
   buildCostMetal=136;
-  buildDistance=90;
+  buildDistance=130;
   builder=1;
   buildPic=ARMCH.DDS;
   buildTime=4472;
@@ -51,6 +51,6 @@
   TEDClass=CNSTR;
   terraformSpeed=330;
   turnRate=425;
-  workerTime=110;
+  workerTime=150;
 }
 

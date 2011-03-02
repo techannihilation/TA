@@ -66,6 +66,4 @@
 	NoChaseCategory=VTOL;
 	canattack=1;
 	HoverAttack=1;
-	CloakCost=50;
-	CloakCostMoving=200;
 	}

@@ -192,7 +192,7 @@ Commanders=1100;
 	turret=1;
 
                     range=295;
-	reloadtime=0.42;
+	reloadtime=0.50;
                     energypershot=0;
 	weaponvelocity=800;
 	areaofeffect=8;
