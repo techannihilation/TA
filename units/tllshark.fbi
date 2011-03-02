@@ -56,7 +56,7 @@
 	badtargetcategory=VTOL;
 	nochasecategory=VTOL;
 	kamikaze=1;
-	kamikazedistance=100;
+	kamikazedistance=50;
 	selfdestructcountdown=2;
 	MinWaterDepth=20;
 	WaterLine=20;
