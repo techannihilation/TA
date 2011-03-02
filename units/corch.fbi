@@ -7,7 +7,7 @@
   brakeRate=0.062;
   buildCostEnergy=2771;
   buildCostMetal=154;
-  buildDistance=90;
+  buildDistance=130;
   builder=1;
   buildPic=CORCH.DDS;
   buildTime=4576;
@@ -51,6 +51,6 @@
   TEDClass=CNSTR;
   terraformSpeed=330;
   turnRate=410;
-  workerTime=110;
+  workerTime=150;
 }
 
