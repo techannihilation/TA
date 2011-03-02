@@ -11,7 +11,7 @@
   buildCostMetal=166;
   builder=0;
   buildPic=CORESTOR.DDS;
-  buildTime=4257;
+  buildTime=3900;
   category=ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR;
   corpse=CORESTOR_DEAD;
   energyStorage=15000;
