@@ -32,7 +32,7 @@
 	category=TLL PLANT LEVEL1 NOWEAPON NOTAIR NOTSUB CTRL_F;
 	tedclass=PLANT;
 	copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
-	yardmap=ocoooco occccco occccco occccco occccco ccccccc occccco coooooc;
+	yardmap=cccooco	cccccco occccco	occccco	occccco occccco	ocoooco;
 	corpse=tllap_dead;
 	unitnumber=915;
 	GermanName=Flugzeugfabrik;
