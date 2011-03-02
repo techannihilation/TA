@@ -7,7 +7,7 @@
   brakeRate=0.1782;
   buildCostEnergy=1979;
   buildCostMetal=134;
-  buildDistance=70;
+  buildDistance=150;
   builder=1;
   buildPic=CORCV.DDS;
   buildTime=4160;

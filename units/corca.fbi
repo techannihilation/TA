@@ -54,6 +54,6 @@
   TEDClass=CNSTR;
   terraformSpeed=135;
   turnRate=94;
-  workerTime=45;
+  workerTime=55;
 }
 
