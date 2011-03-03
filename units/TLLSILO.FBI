@@ -48,7 +48,7 @@
 	EnergyMake=0;
 	buildangle=8192;
 	canattack=1;
-	Weapon1=NUCLEAR_MISSILE1;
+	Weapon1=CRBLMSSL;
 	wpri_badTargetCategory=VTOL;
 	BadTargetCategory=VTOL;
 	Ovradjust=1;
