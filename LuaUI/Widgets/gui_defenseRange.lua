@@ -1,7 +1,7 @@
 include("colors.h.lua")
 include("keysym.h.lua")
 
-local versionNumber = "6.2-TechA"
+local versionNumber = "6.22-TechA"
 
 function widget:GetInfo()
 	return {
