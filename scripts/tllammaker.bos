@@ -8,6 +8,8 @@ piece base, body, engine, rotor, door1, door2, door3, lights;
 #include "smokeunit.h"
 #include "exptype.h"
 
+static-var statechg_DesiredState, statechg_StateChanging;
+
 Go()
 	{
 	dont-cache engine;
@@ -16,19 +18,19 @@ Go()
 	
 	SET ARMORED to FALSE;
 
-	turn door3 to y-axis <180> speed <300>;
+	turn door3 to y-axis <180> speed <600>;
 	wait-for-turn door3 around y-axis;
 	move door3 to y-axis [-7] speed [15];
 	wait-for-move door3 along y-axis;
 	hide door3;	
 
-	turn door2 to y-axis <-180> speed <300>;
+	turn door2 to y-axis <-180> speed <600>;
 	wait-for-turn door2 around y-axis;
 	move door2 to y-axis [-7] speed [15];
 	wait-for-move door2 along y-axis;
 	hide door2;	
 
-	turn door1 to y-axis <180> speed <300>;
+	turn door1 to y-axis <180> speed <600>;
 	wait-for-turn door1 around y-axis;
 	move door1 to y-axis [-7] speed [15];
 	wait-for-move door1 along y-axis;
@@ -39,7 +41,7 @@ Go()
 	move engine to y-axis [0] speed [5];
 	wait-for-move engine along y-axis;
 
-	spin rotor around y-axis speed <60>;
+	spin rotor around y-axis speed <240>;
 	}
 
 Stop()
@@ -56,19 +58,19 @@ Stop()
 	show door1;
 	move door1 to y-axis [0] speed [15];
 	wait-for-move door1 along y-axis;
-	turn door1 to y-axis <0> speed <300>;
+	turn door1 to y-axis <0> speed <600>;
 	wait-for-turn door1 around y-axis;
 	
 	show door2;
 	move door2 to y-axis [0] speed [15];
 	wait-for-move door2 along y-axis;
-	turn door2 to y-axis <0> speed <300>;
+	turn door2 to y-axis <0> speed <600>;
 	wait-for-turn door2 around y-axis;
 
 	show door3;
 	move door3 to y-axis [0] speed [15];
 	wait-for-move door3 along y-axis;
-	turn door3 to y-axis <0> speed <300>;
+	turn door3 to y-axis <0> speed <600>;
 	wait-for-turn door3 around y-axis;
 
 
@@ -78,6 +80,38 @@ Stop()
 	cache rotor;
 	cache lights;
 	}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
 
 #define ACTIVATECMD call-script Go();
 #define DEACTIVATECMD call-script Stop();
@@ -108,12 +142,12 @@ Create()
 
 Activate()
 	{
-	start-script RequestState( ACTIVE );
+	start-script RequestState(0);
 	}
 
 Deactivate()
 	{
-	start-script RequestState( INACTIVE );
+	start-script RequestState(1);
 	}
 
 SweetSpot(piecenum)
