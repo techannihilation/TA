@@ -71,5 +71,9 @@
   wspe_badtargetcategory=VTOL;
   Weapon1=TLLCOM_LIGHTNING;
   Weapon3=DECOY_DISINTEGRATOR;
+  collisionVolumeType=Ell;
+  collisionVolumeScales=36 44 26;
+  collisionVolumeOffsets=0 -1 0;
+  collisionVolumeTest = 1;
 }
 
