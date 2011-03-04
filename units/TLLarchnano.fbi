@@ -48,7 +48,7 @@
 	TurnRate=1020;
 	SteeringMode=1;
 	ShootMe=1;
-	Builddistance=80;
+	Builddistance=150;
 	canreclamate=1;
 	cainrepair=1;
 	EnergyMake=11;
