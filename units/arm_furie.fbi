@@ -28,8 +28,8 @@
 	SoundCategory=KROGOTH;
 	EnergyStorage=0;
 	MetalStorage=0;
-	selfdestructcountdown=10;
-	ExplodeAs=NUCLEAR_MISSILE1;
+	selfdestructcountdown=20;
+	ExplodeAs=NUCLEAR_MISSILE2;
 	SelfDestructAs=CRBLMSSL1;
 	Category=KBOT WEAPON ALL NOTSUB NOTAIR;
 	TEDClass=KBOT;
