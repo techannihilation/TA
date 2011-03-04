@@ -70,9 +70,11 @@
   workerTime=150;
   wpri_badtargetcategory=ANTILASER;
   wspe_badtargetcategory=VTOL;
-
   weapon1=ARMCOMLASER;
-
   weapon3=DECOY_DISINTEGRATOR;
+  collisionVolumeType=Ell;
+  collisionVolumeScales=36 44 26;
+  collisionVolumeOffsets=0 -1 0;
+  collisionVolumeTest = 1;
 }
 
