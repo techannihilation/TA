@@ -18,6 +18,8 @@
 	BuildTime=9705;
 	BMcode=0;
 	Builder=0;
+	floater=1;
+	minwaterdepth=5;
 	ThreeD=1;
 	ZBuffer=1;
 	NoAutoFire=0;
