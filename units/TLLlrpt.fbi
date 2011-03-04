@@ -46,7 +46,8 @@
 	buildangle=6700;
 	canattack=1;
 	Weapon1=ARM_BERTHACANNON;
-	wpri_badTargetCategory=NOTSTRUCTURE;
+	wpri_badtargetcategory=VTOL;
+	onlytargetcategory=NOTAIR;
 	BadTargetCategory=LEVEL1;
-	NoChaseCategory=NOTSTRUCTURE;
+	NoChaseCategory=VTOL;
 	}
