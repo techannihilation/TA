@@ -5,7 +5,7 @@
 	side=TLL;
 	objectname=TLLCOLDFUS;
 	designation=TL-CF;
-	name=Cloackable Advanced Fusion Reactor;
+	name=Advanced Fusion Reactor;
 	description=Produces Hightly Energy/ Storage;
 	footprintx=5;
 	footprintz=5;
@@ -28,8 +28,8 @@
 	energystorage=28000;
 	metalstorage=0;
 	explodeas=CRBLMSSL;
-  selfDestructAs=CRBLMSSL1;
-	category=TLL ENERGY LEVEL3 NOWEAPON NOTAIR NOTSUB;
+	selfDestructAs=CRBLMSSL1;
+	category=ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR;
 	tedclass=ENERGY;
 	copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
 	yardmap=ooooo ooooo ooooo ooooo ooooo;
@@ -39,9 +39,8 @@
 	energymake=3100;
 	buildangle=4096;
 	downloadable=1;
-	cloakcost=850;
 	ActivateWhenBuilt=1;
- [SFXTypes] {
-    explosionGenerator0=custom:SmallWhiteLight;
-  }
+	[SFXTypes] {
+    	explosionGenerator0=custom:SmallWhiteLight;
+  	}
 	}
