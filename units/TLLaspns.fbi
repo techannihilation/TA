@@ -6,7 +6,7 @@
 	objectname=tllaspns;
 	designation=TL-RPNS;
 	name=Air Repair Pad NS;
-	description=FLoating repair aircraft;
+	description=Floating repair aircraft;
 	footprintx=4;
 	footprintz=4;
 	buildcostenergy=9180;
