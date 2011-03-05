@@ -29,7 +29,7 @@
 	MetalStorage=0;
 	ExplodeAs=BIG_UNITEX;
 	SelfDestructAs=BIG_UNIT;
-	Category=TLL KBOT LEVEL2 WEAPON NOTAIR NOTSUB CTRL_W CTRL_K;
+	Category=KBOT WEAPON ALL NOTSUB NOTAIR;
 	TEDClass=KBOT;
 	Copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
 	Corpse=tllhrk_dead;
