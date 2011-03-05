@@ -57,7 +57,7 @@
 	maneuverleashlength=640;
 	MovementClass=TANKHOVER3;
 	canattack=1;
-	Weapon1=CORAH_WEAPON;
+	Weapon1=COREAH_WEAPON;
 	downloadable=1;
 	wpri_badTargetCategory=VTOL;
 	BadTargetCategory=VTOL;
