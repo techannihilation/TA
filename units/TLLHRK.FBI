@@ -66,4 +66,5 @@
 	wpri_badTargetCategory=VTOL;
 	BadTargetCategory=VTOL;
 	NoChaseCategory=VTOL;
+	onlyTargetCategory1=NOTAIR;
 	}
