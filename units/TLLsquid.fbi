@@ -32,7 +32,8 @@
 	Frenchdescription=Sous-Marin Brouilleur;
 	SpanishDescription=Sonar de interferencias subacuáticas;
 	ItalianDescription=Disturbo sonar subacqueo;
-
+  	radarDistance=0;
+	radarDistanceJam=475;
 	mobilestandorders=1;
 	StandingMoveOrder=0;
 	canmove=1;
