@@ -55,7 +55,7 @@
 	SonarDistance=415;
 	WaterLine=20;
 	canattack=1;
-	Weapon1=CORE_TORPEDO;
+	Weapon1=ARM_TORPEDO;
 	wpri_badTargetCategory=NOTSUB;
 	BadTargetCategory=NOWEAPON;
 	NoChaseCategory=NOTSUB;
