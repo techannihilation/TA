@@ -28,7 +28,7 @@
 	MetalStorage=0;
 	ExplodeAs=BIG_UNITEX;
 	SelfDestructAs=BIG_UNIT;
-	Category=TLL KBOT LEVEL2 WEAPON NOTAIR CTRL_W;
+	category=KBOT MOBILE WEAPON ALL NOTSHIP NOTAIR;
 	TEDClass=KBOT;
 	Copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
 	Corpse=tllamphibot_dead;
@@ -61,9 +61,8 @@
 	MovementClass=AKBOT2;
 	Upright=1;
 	canattack=1;
-  weapon1=CORAMPH_WEAPON2;
-
-  weapon2=CORAMPH_WEAPON1;
+	weapon1=CORAMPH_WEAPON2;
+	weapon2=CORAMPH_WEAPON1;
 	downloadable=1;
 	wpri_badTargetCategory=VTOL;
 	BadTargetCategory=VTOL;
