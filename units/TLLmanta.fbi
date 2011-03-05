@@ -55,7 +55,7 @@
 	SonarDistance=470;
 	WaterLine=20;
 	canattack=1;
-	Weapon1=CORSMART_TORPEDO;
+	Weapon1=ARMSMART_TORPEDO;
 	wpri_badTargetCategory=NOTSUB;
 	BadTargetCategory=NOWEAPON;
 	NoChaseCategory=NOTSUB;

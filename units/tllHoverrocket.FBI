@@ -63,4 +63,5 @@
 	BadTargetCategory=VTOL;
 	NoChaseCategory=VTOL;
 	canhover=1;
+	onlyTargetCategory1=NOTAIR; 
 	}
