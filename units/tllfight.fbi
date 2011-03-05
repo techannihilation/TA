@@ -7,8 +7,8 @@
 	designation=TL-fg;
 	name=Sparrow;
 	description=Fighter;
-	footprintx=2;
-	footprintz=2;
+	footprintx=1;
+	footprintz=1;
 	buildcostenergy=1683;
 	buildcostmetal=154;
 	maxdamage=433;
@@ -25,7 +25,7 @@
 	soundcategory=TLL_LVTOL;
 	explodeas=SMALL_UNITEX;
 	selfdestructas=SMALL_UNIT;
-	category=TLL VTOL CTRL_V LEVEL1 WEAPON NOTSUB CTRL_W CTRL_P;
+	category=TLL VTOL LEVEL1 WEAPON NOTSUB;
 	tedclass=VTOL;
 	copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
 	unitnumber=917;
@@ -39,10 +39,13 @@
 	standingfireorder=2;
 	mobilestandorders=1;
 	standingmoveorder=2;
+  	moverate1=8;
 	canmove=1;
 	canpatrol=1;
 	canstop=1;
 	canguard=1;
+	iconType=air;
+	idleAutoHeal=5;
 	maxvelocity=9.5;
 	brakerate=4;
 	acceleration=0.45;
