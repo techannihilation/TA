@@ -12,7 +12,7 @@
 	buildcostenergy=2161;
 	buildcostmetal=1547;
 	maxdamage=2115;
-	maxwaterdepth=12;
+	maxwaterdepth=25;
 	maxslope=16;
 	energyuse=1.6;
 	buildtime=10171;
