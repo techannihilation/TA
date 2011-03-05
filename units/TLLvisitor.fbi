@@ -61,4 +61,5 @@
 	waterline=1;
 	Floater=1;
 	DamageModifier=0.5;
+	onlyTargetCategory1=NOTAIR;
 	}
