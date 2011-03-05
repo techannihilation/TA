@@ -1,0 +1,37 @@
+[tllmohogeo_dead]
+	{
+	World=All Worlds;
+	Description=wreckage;
+	Category=tll_corpses;
+	Object=tllmex_dead;
+	FeatureDead=tllgeo_heap;
+	FootPrintx=4;
+	FootPrintz=4;
+	Height=21;
+	Blocking=1;
+	HitDensity=105;
+	Metal=924;
+	Damage=1352;
+	Reclaimable=1;
+	FeatureReclamate=smudge01;
+	SeqNameReclamate=tree1reclamate;
+	}
+
+[tllmohogeo_heap]
+	{
+	World=All Worlds;
+	Description=wreckage;
+	Category=heaps;
+	Object=4x4a;
+	FootPrintx=4;
+	FootPrintz=4;
+	Height=2;
+	Blocking=0;
+	HitDensity=105;
+	Metal=502;
+	Damage=1523;
+	Reclaimable=1;
+	FeatureReclamate=smudge01;
+	SeqNameReclamate=tree1reclamate;
+	}
+
