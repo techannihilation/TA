@@ -26,7 +26,7 @@
 	soundcategory=TLL_VVTOL;
 	explodeas=BIG_UNITEX;
 	selfdestructas=BIG_UNIT;
-	category=TLL VTOL CTRL_V LEVEL2 WEAPON  NOTSUB CTRL_W CTRL_P;
+	Category=TLL VTOL WEAPON NOTSUB ALL;
 	tedclass=VTOL;
 	copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
 	unitnumber=890;
