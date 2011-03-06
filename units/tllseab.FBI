@@ -29,7 +29,7 @@
 	MetalStorage=0;
 	ExplodeAs=SMALL_UNITEX;
 	SelfDestructAs=SMALL_UNIT;
-	Category=TLL VTOL CTRL_V LEVEL2 WEAPON  NOTSUB CTRL_W CTRL_P;
+	category=TLL ALL NOTLAND MOBILE WEAPON ANTIGATOR NOTSUB VTOL NOTSHIP;
 	TEDClass=VTOL;
 	Copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
 	UnitNumber=920;
