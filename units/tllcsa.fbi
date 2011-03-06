@@ -28,7 +28,7 @@
 	MetalStorage=50;
 	ExplodeAs=SMALL_UNITEX;
 	SelfDestructAs=SMALL_UNIT;
-	Category=TLL VTOL CTRL_V LEVEL1 CONSTR NOWEAPON  NOTSUB CTRL_B;
+	Category=TLL VTOL ALL NOTLAND MOBILE NOTSUB NOWEAPON NOTSHIP;
 	TEDClass=VTOL;
 	Copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
 	UnitNumber=914;
@@ -66,7 +66,7 @@
 	maneuverleashlength=1280;
 	Ovradjust=1;
 	maxwaterdepth=255;
-  canSubmerge=1;
+	canSubmerge=1;
 	amphibious=1;
 	collide=0;
 	}

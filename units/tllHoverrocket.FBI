@@ -40,12 +40,16 @@
 	StandingFireOrder=2;
 	mobilestandorders=1;
 	StandingMoveOrder=1;
-	canmove=1;
-	canpatrol=1;
+	canAttack=1;
+	canGuard=1;
+	canHover=1;
+	canMove=1;
+	canPatrol=1;
 	canstop=1;
+
 	Spanishdescription=Hovercraft lanzador de torpedos;
 	Italiandescription=Hovercraft lanciarazzi;
-	canguard=1;
+
 	MaxVelocity=2.15;
 	BrakeRate=0.09;
 	Acceleration=0.04;
@@ -56,12 +60,10 @@
 	DefaultMissionType=Standby;
 	maneuverleashlength=640;
 	MovementClass=TANKHOVER3;
-	canattack=1;
 	Weapon1=TLL_Vpulse;
 	downloadable=1;
 	wpri_badTargetCategory=VTOL;
 	BadTargetCategory=VTOL;
 	NoChaseCategory=VTOL;
-	canhover=1;
 	onlyTargetCategory1=NOTAIR; 
 	}
