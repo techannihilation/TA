@@ -28,7 +28,7 @@
 	MetalStorage=0;
 	ExplodeAs=BIG_UNITEX;
 	SelfDestructAs=BIG_UNIT;
-	Category=TLL HOVER WEAPON LEVEL2 NOTAIR NOTSUB CTRL_W;
+	Category=TLL ALL HOVER MOBILE WEAPON NOTSUB NOTSHIP NOTAIR;
 	TEDClass=TANK;
 	Copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
 	Corpse=TLLhplasma_dead;
