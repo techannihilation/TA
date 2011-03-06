@@ -18,6 +18,7 @@
   corpse=PACKO_DEAD;
   damageModifier=0.2;
   defaultmissiontype=GUARD_NOMOVE;
+  digger=1;
   energyStorage=0;
   energyUse=0;
   explodeAs=BIG_UNITEX;
