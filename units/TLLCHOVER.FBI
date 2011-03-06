@@ -28,7 +28,7 @@
 	MetalStorage=50;
 	ExplodeAs=BIG_UNITEX;
 	SelfDestructAs=BIG_UNIT;
-	Category=TLL HOVER LEVEL1 CONSTR NOWEAPON NOTAIR NOTSUB CTRL_B;
+	Category=TLL ALL HOVER MOBILE WEAPON NOTSUB NOTSHIP NOTAIR;
 	TEDClass=CNSTR;
 	Copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
 	Corpse=TLLCHOVER_dead;
@@ -53,7 +53,7 @@
 	TurnRate=110;
 	SteeringMode=1;
 	ShootMe=1;
-	Builddistance=75;
+  	buildDistance=185;
 	CanReclamate=1;
 	EnergyMake=14;
 	MetalMake=0.3;
