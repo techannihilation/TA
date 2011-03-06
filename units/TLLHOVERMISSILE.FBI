@@ -59,8 +59,9 @@
 	canattack=1;
 	Weapon1=COREAH_WEAPON;
 	downloadable=1;
-	wpri_badTargetCategory=VTOL;
-	BadTargetCategory=VTOL;
-	NoChaseCategory=VTOL;
+	wpri_TargetCategory=VTOL;
+	wpri_badTargetCategory=NOTAIR;
+	BadTargetCategory=NOTAIR;
+	nochasecategory=NOTAIR;
 	canhover=1;
 	}
