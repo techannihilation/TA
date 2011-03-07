@@ -25,7 +25,7 @@
 	SoundCategory=GUARD;
 	ExplodeAs=MEDIUM_BUILDINGEX;
 	SelfDestructAs=MEDIUM_BUILDING;
-	Category=TLL LEVEL2 WEAPON NOTAIR NOTSUB CTRL_Q;
+	Category=TLL WEAPON NOTAIR NOTSUB NOTSHIP LEVEL3 NOTLAND ALL;
 	TEDClass=FORT;
 	Copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
 	YardMap=ooooooooo;
@@ -46,7 +46,7 @@
 	canattack=1;
 	canguard=1;
 	Weapon1=ARMFIXED_GUN;
-	wpri_badTargetCategory=CTRL_V;
-	BadTargetCategory=NOWEAPON;
-	NoChaseCategory=NOTSTRUCTURE;
+	wpri_badTargetCategory=VTOL;
+	BadTargetCategory=VTOL;
+	NoChaseCategory=VTOl;
 	}
