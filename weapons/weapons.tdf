@@ -10445,3 +10445,93 @@ L3SUBS=5;
 		L3SUBS=5;
 	}
 }
+[TLLFIXED_GUN]
+{
+	name=PlasmaCannon;
+	rendertype=4;
+	ballistic=1;
+	turret=1;
+	range=1220;
+	reloadtime=3.25;
+	weaponvelocity=450;
+	areaofeffect=128;
+	edgeeffectiveness=0.25;
+	soundstart=cannhvy5;
+	soundhit=xplomed2;
+	accuracy=75;
+	explosiongenerator=custom:FLASH96;
+	targetmoveerror=0.2;
+	startsmoke=1;
+	impulsefactor=0.123;
+	impulseboost=0.123;
+	cratermult=0;
+	craterboost=0;
+	noselfdamage=1;
+	[DAMAGE]
+	{
+		default=263;
+		VTRANS=90;
+		L1FIGHTERS=90;
+		L2FIGHTERS=90;
+		L1BOMBERS=90;
+		L2BOMBERS=90;
+		GUNSHIPS=90;
+		HGUNSHIPS=90;
+		VRADAR=90;
+		VTOL=90;
+		COMMANDERS=526;
+		L1SUBS=5;
+		L2SUBS=5;
+		L3SUBS=5;
+		SEADRAGON=526;
+		BLACKHYDRA=526;
+		FLAKBOATS=526;
+		JAMMERBOATS=526;
+		OTHERBOATS=526;
+	}
+}
+[TLLFIXED_GUN_HIGH]
+{
+	name=PlasmaCannon;
+	rendertype=4;
+	ballistic=1;
+	turret=1;
+	range=1220;
+	reloadtime=7;
+	weaponvelocity=440;
+	areaofeffect=192;
+	edgeeffectiveness=0.5;
+	soundstart=cannhvy5;
+	soundhit=xplomed2;
+	accuracy=75;
+	explosiongenerator=custom:FLASH96;
+	startsmoke=1;
+	impulsefactor=2;
+	impulseboost=0.123;
+	cratermult=0;
+	craterboost=0;
+	noselfdamage=1;
+	proximityPriority=-2;
+	[DAMAGE]
+	{
+		default=461;
+		VTRANS=90;
+		L1FIGHTERS=90;
+		L2FIGHTERS=90;
+		L1BOMBERS=90;
+		L2BOMBERS=90;
+		GUNSHIPS=90;
+		HGUNSHIPS=90;
+		VRADAR=90;
+		VTOL=90;
+		COMMANDERS=922;
+		L1SUBS=5;
+		L2SUBS=5;
+		L3SUBS=5;
+		SEADRAGON=922;
+		BLACKHYDRA=922;
+		FLAKBOATS=922;
+		JAMMERBOATS=922;
+		OTHERBOATS=922;
+	}
+}
