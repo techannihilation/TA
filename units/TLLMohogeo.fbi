@@ -6,7 +6,7 @@
 	Objectname=TLLMOHOGEO;
 	Designation= ;
 	Name=Moho Geothermal Supply Lab;
-	Description=hazardous Geothermal lab Produces Energy/Metal;
+	Description=Hazardous Geothermal Lab Produces Energy/Metal;
 	FootprintX=4;
 	FootprintZ=4;
 	BuildCostEnergy=98068;
