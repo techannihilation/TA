@@ -40,6 +40,7 @@
 	ItalianDescription=Traspoto aereo;
 
 	firestandorders=0;
+	firestate=1;
 	mobilestandorders=0;
 	StandingMoveOrder=1;
 	canmove=1;
@@ -68,8 +69,9 @@
 	Weapon1=TLLVTOL_MISSILE2;
 	wpri_badTargetCategory=NOTAIR;
 	BadTargetCategory=NOTAIR;
-	Onlytargetcategory1=notair;
-	Onlytargetcategory2=notair;
+	Onlytargetcategory1=VTOL;
+	Onlytargetcategory2=VTOL;
+	Nochasecategory=NOTAIR;
 	Weapon2=TLLVTOL_MISSILE2;
 	wsec_badTargetCategory=NOTAIR;
         ImmuneToParalyzer=1;
