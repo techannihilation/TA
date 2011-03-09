@@ -11,7 +11,7 @@
 	Blocking=1;
 	HitDensity=105;
 	Metal=924;
-	Damage=1352;
+	Damage=1952;
 	Reclaimable=1;
 	FeatureReclamate=smudge01;
 	SeqNameReclamate=tree1reclamate;
@@ -28,7 +28,7 @@
 	Height=2;
 	Blocking=0;
 	HitDensity=105;
-	Metal=502;
+	Metal=902;
 	Damage=1523;
 	Reclaimable=1;
 	FeatureReclamate=smudge01;
