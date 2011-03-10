@@ -52,6 +52,7 @@
 	Weapon1=TLLAIR_TORPEDO;
 	Weapon2=ARMDEPTHCHARGE;
 	canattack=1;
+	onlytargetcategory1=UNDERWATER;
 	NoChaseCategory=VTOL;
 	altfromsealevel=10;
 	attackrunlength=250;
