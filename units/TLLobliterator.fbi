@@ -27,7 +27,7 @@
 	SoundCategory=ARM_ANNI;
 	ExplodeAs=ATOMIC_BLAST;
 	SelfDestructAs=CRAWL_BLASTSML;
-	Category=TLL WEAPON LEVEL3 NOTAIR NOTSUB CTRL_R CTRL_L;
+	Category=TLL ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR;
 	TEDClass=FORT;
 	Copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
 	YardMap=ooooo ooooo ooooo ooooo;
@@ -48,8 +48,9 @@
 	canattack=1;
 	canguard=1;
 	Weapon1=ATADR;
-	wpri_badTargetCategory=CTRL_V;
+	wpri_badTargetCategory=VTOL;
 	BadTargetCategory=VTOL;
+	onlyTargetCategory1=NOTAIR;
 	DamageModifier=0.2;
 	ActivateWhenBuilt=1;
 	onoffable=1;
