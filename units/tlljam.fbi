@@ -9,7 +9,7 @@
 	Description=Radar Jammer;
 	FootprintX=2;
 	FootprintZ=2;
-	BuildCostEnergy=2141;
+	BuildCostEnergy=2341;
 	BuildCostMetal=142;
 	MaxDamage=782;
 	MaxWaterDepth=0;
@@ -28,7 +28,7 @@
 	MetalStorage=0;
 	ExplodeAs=BIG_UNITEX;
 	SelfDestructAs=BIG_UNIT;
-	Category=TLL SPECIAL NOWEAPON JAM LEVEL2 NOTAIR NOTSUB CTRL_R;
+	category=TLL ALL TANK MOBILE NOTSUB NOWEAPON NOTSHIP NOTAIR;
 	TEDClass=SPECIAL;
 	Copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
 	Corpse=tlljam_dead;
@@ -39,6 +39,6 @@
 	Frenchdescription=Brouilleur de radar;
 	ActivateWhenBuilt=1;
 	onoffable=1;
-	RadarDistanceJam=820;
+	RadarDistanceJam=800;
 	Buildangle=4899;
 	}
