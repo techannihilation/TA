@@ -22,7 +22,7 @@
 	SoundCategory=ARM_SHIP;
 	ExplodeAs=SMALL_UNITEX;
 	SelfDestructAs=SMALL_UNIT;
-	Category=TLL LEVEL2 WEAPON TORP NOTAIR NOTSTRUCTURE CTRL_N CTRL_W;
+	Category=TLL ALL NOTLAND MOBILE WEAPON NOTSUB SHIP NOTAIR;
 	TEDClass=SHIP;
 	Copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
 	Corpse=tllequalizer_dead;
@@ -58,10 +58,10 @@
 	Weapon1=COR_CRUS;
 	Weapon2=COREDEPTHCHARGE;
 	Weapon3=ARMDEPTHCHARGE;
-	wpri_badTargetCategory=CTRL_V;
+	wpri_badTargetCategory=VTOL;
 	wsec_badTargetCategory=NOTSUB;
 	BadTargetCategory=NOWEAPON;
-	NoChaseCategory=CTRL_V;
+	NoChaseCategory=VTOL;
 	ActivateWhenBuilt=1;
 	Floater=1;
 	waterline=1;
