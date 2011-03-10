@@ -55,8 +55,8 @@
 	model=tlltorpedo; //big torpedo model
 	propeller=1;
 
-	range=480;
-	reloadtime=6;
+	range=615;
+	reloadtime=3.5;
 	weapontimer=8;
 	weaponvelocity=150;
 	startvelocity=100;
@@ -85,7 +85,7 @@
 
 	[DAMAGE]
 		{
-		default=300;
+		default=475;
 		}
 	}
 [TLLAIR_TORPEDO]
