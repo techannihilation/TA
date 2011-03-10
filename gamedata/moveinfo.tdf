@@ -22,6 +22,16 @@
 
 [CLASS2]
 {
+	name=KBOT3;
+	footprintx=3;
+	footprintz=3;
+	maxwaterdepth=22;
+	maxslope=36;
+	crushstrength=10;
+	heatmapping=false;
+}
+[CLASS3]
+{
 	name=AKBOT2;
 	footprintx=2;
 	footprintz=2;
@@ -33,7 +43,7 @@
 	heatmapping=false;
 }
 
-[CLASS3]
+[CLASS4]
 {
 	name=HKBOT4;
 	footprintx=4;
@@ -44,7 +54,7 @@
 	heatmapping=false;
 }
 
-[CLASS4]
+[CLASS5]
 {
 	name=HAKBOT4;
 	footprintx=4;
@@ -57,7 +67,7 @@
 	heatmapping=false;
 }
 
-[CLASS5]
+[CLASS6]
 {
 	name=HTKBOT4;
 	footprintx=4;
@@ -68,7 +78,7 @@
 	heatmapping=false;
 }
 
-[CLASS6]
+[CLASS7]
 {
 	name=VKBOT5;
 	footprintx=5;
@@ -81,7 +91,7 @@
 	heatmapping=false;
 }
 
-[CLASS7]
+[CLASS8]
 {
 	name=TKBOT3;
 	footprintx=3;
@@ -91,7 +101,7 @@
 	heatmapping=false;
 }
 
-[CLASS8]
+[CLASS9]
 {
 	name=TANK2;
 	footprintx=2;
@@ -102,7 +112,7 @@
 	heatmapping=false;
 }
 
-[CLASS9]
+[CLASS10]
 {
 	name=TANK3;
 	footprintx=3;
@@ -113,7 +123,7 @@
 	heatmapping=false;
 }
 
-[CLASS10]
+[CLASS11]
 {
 	name=HTANK3;
 	footprintx=3;
@@ -124,7 +134,7 @@
 	heatmapping=false;
 }
 
-[CLASS11]
+[CLASS12]
 {
 	name=HTANK4;
 	footprintx=4;
@@ -135,7 +145,7 @@
 	heatmapping=false;
 }
 
-[CLASS12]
+[CLASS13]
 {
 	name=ATANK3;
 	footprintx=3;
@@ -148,7 +158,7 @@
 	heatmapping=false;
 }
 
-[CLASS13]
+[CLASS14]
 {
 	name=HOVER3;
 	footprintx=3;
@@ -161,7 +171,7 @@
 	heatmapping=false;
 }
 
-[CLASS14]
+[CLASS15]
 {
 	name=HOVER4;
 	footprintx=4;
@@ -174,7 +184,7 @@
 	heatmapping=false;
 }
 
-[CLASS15]
+[CLASS16]
 {
 	name=BOAT4;
 	footprintx=4;
@@ -184,7 +194,7 @@
 	heatmapping=false;
 }
 
-[CLASS16]
+[CLASS17]
 {
 	name=BOAT5;
 	footprintx=5;
@@ -194,7 +204,7 @@
 	heatmapping=false;
 }
 
-[CLASS17]
+[CLASS18]
 {
 	name=DBOAT3;
 	footprintx=3;
@@ -204,7 +214,7 @@
 	heatmapping=false;
 }
 
-[CLASS18]
+[CLASS19]
 {
 	name=DBOAT6;
 	footprintx=6;
@@ -214,7 +224,7 @@
 	heatmapping=false;
 }
 
-[CLASS19]
+[CLASS20]
 {
 	name=HDBOAT8;
 	footprintx=8;
@@ -223,7 +233,7 @@
 	crushstrength=1400;
 	heatmapping=false;
 }
-[CLASS20]
+[CLASS21]
 {
 	name=VKBOT6;
 	footprintx=9;
@@ -234,7 +244,7 @@
 	crushstrength=12400;
 		heatmapping=false;
 }
-[CLASS21]
+[CLASS22]
 {
 	name=TANKHOVER3;
 	footprintx=3;
@@ -247,7 +257,7 @@
 		heatmapping=false;
 }
 
-[CLASS22]
+[CLASS23]
 {
 	name=TANKHOVER4;
 	footprintx=4;
@@ -259,7 +269,7 @@
 	crushstrength=90;
 		heatmapping=false;
 }
-[CLASS23]
+[CLASS24]
 {
 	name=AMPHKBOT;
 	footprintx=3;
@@ -269,7 +279,7 @@
 	crushstrength=250;
 		heatmapping=false;
 }
-[CLASS24]
+[CLASS25]
 {
 	name=ADT;
 	footprintx=2;
