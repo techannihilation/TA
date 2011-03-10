@@ -22,7 +22,7 @@
 	SoundCategory=ARM_SHIP;
 	ExplodeAs=BIG_UNITEX;
 	SelfDestructAs=MEDIUM_UNIT;
-	Category=TLL NOWEAPON LEVEL2 NOTAIR NOTSTRUCTURE CTRL_R;
+	Category=TLL ALL NOTLAND MOBILE WEAPON NOTSUB SHIP NOTAIR;
 	TEDClass=SHIP;
 	Copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
 	Corpse=tllmixer_dead;
