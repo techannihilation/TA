@@ -2139,6 +2139,7 @@
 		canbuild24=TLLLMTNS;
 		canbuild25=TLLDCSTA;
 		canbuild26=TLLshoretorp;
+		canbuild27=TLLsolarns;
 	}
     [TLLDECOM]
 	{
@@ -2299,6 +2300,7 @@
 		canbuild41=tlltorp;
 		canbuild42=tlljam;
 		canbuild43=TLLshoretorp;
+		canbuild44=TLLsolarns;
 	}
 	[TLLCA]
 	{
@@ -2330,6 +2332,7 @@
 		canbuild28=TLLDCSTA;
 		canbuild29=tlljam;
 		canbuild30=TLLshoretorp;
+		canbuild31=TLLsolarns;
 
 	}
 	[TLLCS]
@@ -2354,6 +2357,7 @@
 		canbuild18=tllhltns;
 		canbuild19=tlltorp;
 		canbuild20=TLLplat;
+		canbuild21=TLLsolarns;
 	}
 	[TLLASY]
 	{
