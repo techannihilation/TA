@@ -22,7 +22,7 @@
 	SoundCategory=ARM_SHIP;
 	ExplodeAs=BIG_UNITEX;
 	SelfDestructAs=BIG_UNIT;
-	Category=TLL LEVEL2 WEAPON NOTAIR NOTSTRUCTURE CTRL_N CTRL_W;
+	Category=TLL ALL NOTLAND MOBILE WEAPON NOTSUB SHIP NOTAIR;
 	TEDClass=SHIP;
 	Copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
 	Corpse=tllviking_dead;
@@ -57,10 +57,10 @@
 	Weapon1=COR_CRUS;
 	Weapon2=ARM_CRUS;
 	Weapon3=ARM_BATS;
-	wpri_badTargetCategory=CTRL_V;
-	wsec_badTargetCategory=CTRL_V;
+	wpri_badTargetCategory=VTOL;
+	wsec_badTargetCategory=VTOL;
 	BadTargetCategory=NOWEAPON;
-	NoChaseCategory=CTRL_V;
+	NoChaseCategory=VTOL;
 	waterline=1;
 	Floater=1;
 	}
