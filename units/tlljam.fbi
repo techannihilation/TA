@@ -28,7 +28,7 @@
 	MetalStorage=0;
 	ExplodeAs=BIG_UNITEX;
 	SelfDestructAs=BIG_UNIT;
-	category=TLL ALL TANK MOBILE NOTSUB NOWEAPON NOTSHIP NOTAIR;
+	category=TLL ALL NOTSUB NOWEAPON SPECIAL NOTAIR;
 	TEDClass=SPECIAL;
 	Copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
 	Corpse=tlljam_dead;
