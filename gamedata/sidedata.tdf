@@ -2297,7 +2297,8 @@
 		canbuild39=tllhltns;
 		canbuild40=TLLLMTNS;
 		canbuild41=tlltorp;
-		canbuild42=TLLshoretorp;
+		canbuild42=tlljam;
+		canbuild43=TLLshoretorp;
 	}
 	[TLLCA]
 	{
@@ -2327,7 +2328,9 @@
 		canbuild26=TLLLMT;
 		canbuild27=tllsam;
 		canbuild28=TLLDCSTA;
-		canbuild29=TLLshoretorp;
+		canbuild29=tlljam;
+		canbuild30=TLLshoretorp;
+
 	}
 	[TLLCS]
 	{
