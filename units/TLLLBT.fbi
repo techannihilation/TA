@@ -31,7 +31,7 @@
 	YardMap=ooooooooo;
 	Corpse=tlllbt_dead;
 	UnitNumber=807;
-
+	highTrajectory=2;
 	GermanDescription=Stationäre Plasmawerfer-Batterie;
 	Frenchdescription=Batterie à plasma stationnaire;
 	SpanishDescription=Cañón de plasma pesado;
