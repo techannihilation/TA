@@ -22,7 +22,7 @@
 	SoundCategory=CORE_SUB;
 	ExplodeAs=BIG_UNITEX;
 	SelfDestructAs=BIG_UNIT;
-	Category=TLL LEVEL2 WEAPON NOTAIR NOTSTRUCTURE CTRL_N CTRL_W;
+	Category=TLL ALL MOBILE WEAPON NOTLAND NOTAIR;
 	TEDClass=SHIP;
 	Copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
 	Corpse=tllwhale_dead;
@@ -49,8 +49,8 @@
 	canattack=1;
 	Weapon1=WHALE_VPULSE;
 	wpri_BadTargetCategory=NOTSTRUCTURE;
-	BadTargetCategory=UNDERWATER;
-	NoChaseCategory=UNDERWATER;
+	BadTargetCategory=VTOL;
+	NoChaseCategory=VTOL;
 	Floater=1;
         waterline=28;
         CloakCost=100;
