@@ -2401,6 +2401,7 @@
 		canbuild27=tllrlrpc;
 		canbuild28=tlllab;
 		canbuild29=tllalab;
+		canbuild30=tllmohogeo;
 	}
 	[TLLALAB]
 	{
@@ -2444,6 +2445,7 @@
 		canbuild27=tllrlrpc;
 		canbuild28=tllvp;
 		canbuild29=tllavp;
+		canbuild30=tllmohogeo;
 	}
 	[TLLAVP]
 	{
@@ -2481,6 +2483,7 @@
 		canbuild27=tllrlrpc;
 		canbuild28=tllap;
 		canbuild29=tllaap;
+		canbuild30=tllmohogeo;
 	}
 	[TLLAAP]
 	{
