@@ -45,7 +45,10 @@
         buildangle=8192;
 	canattack=1;
 	canguard=1;
-	Weapon1=ARMFIXED_GUN;
+	weapon1=TLLFIXED_GUN;
+ 	maxAngleDif1=230;
+ 	weaponMainDir1=0 1 0;
+	weapon2=TLLFIXED_GUN_HIGH;
 	badTargetCategory=VTOL;
   	wpri_badtargetcategory=VTOL;
  	onlyTargetCategory1=NOTAIR;
