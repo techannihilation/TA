@@ -53,7 +53,7 @@
 	Scale=0.8;
 	collide=0;
 	BankScale=1.5;
-	Builddistance=65;
+	Builddistance=185;
 	CanReclamate=1;
 	EnergyMake=25;
 	MetalMake=0.55;
