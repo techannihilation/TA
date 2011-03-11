@@ -52,7 +52,7 @@
 	Acceleration=0.032;
 	TurnRate=256;
 	SteeringMode=1;
-	Builddistance=170;
+	Builddistance=240;
 	ShootMe=1;
 	CanReclamate=1;
 	EnergyMake=9;
