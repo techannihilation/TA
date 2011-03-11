@@ -26,7 +26,7 @@
 	MetalStorage=50;
 	ExplodeAs=SMALL_UNITEX;
 	SelfDestructAs=SMALL_UNIT;
-	Category=TLL UNDERWATER LEVEL1 NOWEAPON NOTAIR NOTSTRUCTURE CONSTR CTRL_B;
+	Category=TLL ALL MOBILE WEAPON NOTLAND NOTAIR;
 	TEDClass=SHIP;
 	Copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
 	Corpse=tllcsub_dead;
@@ -52,7 +52,7 @@
 	Acceleration=0.032;
 	TurnRate=256;
 	SteeringMode=1;
-	Builddistance=70;
+	Builddistance=240;
 	ShootMe=1;
 	CanReclamate=1;
 	EnergyMake=9;

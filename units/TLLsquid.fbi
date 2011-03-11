@@ -22,7 +22,7 @@
 	SoundCategory=ARM_JAMSUB;
 	ExplodeAs=SMALL_UNITEX;
 	SelfDestructAs=SMALL_UNIT;
-	Category=TLL UNDERWATER LEVEL2 NOWEAPON NOTAIR NOTSTRUCTURE CTRL_R;
+	Category=TLL ALL MOBILE WEAPON NOTLAND NOTAIR;
 	TEDClass=WATER;
 	Copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
 	Corpse=tllsquid_dead;

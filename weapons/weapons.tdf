@@ -2533,7 +2533,7 @@
 	rendertype=0;
 	lineofsight=1;
 	turret=1;
-	range=475;
+	range=505;
 	reloadtime=0.1;
 	energypershot=8;
 	weaponvelocity=1000;
@@ -2559,7 +2559,7 @@
 	noselfdamage=1;
 	[DAMAGE]
 	{
-		default=40;
+		default=52;
 		COMMANDERS=80;
 		VTRANS=2;
 		L1FIGHTERS=2;
@@ -5121,8 +5121,8 @@
 	rendertype=4;
 	lineofsight=1;
 	turret=1;
-	range=300;
-	reloadtime=2.1;
+	range=325;
+	reloadtime=2.6;
 	weaponvelocity=550;
 	areaofeffect=160;
 	soundstart=canlite3;
@@ -5138,7 +5138,7 @@
 	craterboost=0;
 	[DAMAGE]
 	{
-		default=200;
+		default=290;
 		COMMANDERS=100;
 		VTRANS=27;
 		L1FIGHTERS=27;
@@ -5177,7 +5177,8 @@
 	craterboost=0;
 	[DAMAGE]
 	{
-		default=300;
+		default=369;
+		commanders=490;
 		VTRANS=27;
 		L1FIGHTERS=27;
 		L2FIGHTERS=27;
@@ -5707,8 +5708,8 @@ rendertype=1;
 lineofsight=1;
 turret=1;
 model=megamisl;
-range=360;
-reloadtime=7.5;
+range=380;
+reloadtime=8.5;
 weapontimer=3;
 weaponvelocity=190;
 startvelocity=190;
@@ -9736,8 +9737,8 @@ L3SUBS=5;
 	rendertype=0;
 	lineofsight=1;
 	turret=1;
-	range=435;
-	reloadtime=0.48;
+	range=527;
+	reloadtime=0.38;
 	weaponvelocity=2250;
 	energypershot=15;
 	areaofeffect=12;
@@ -9785,8 +9786,8 @@ L3SUBS=5;
 	rendertype=0;
 	lineofsight=1;
 	turret=1;
-	range=430;
-	reloadtime=0.48;
+	range=500;
+	reloadtime=0.28;
 	weaponvelocity=2250;
 	energypershot=15;
 	areaofeffect=12;

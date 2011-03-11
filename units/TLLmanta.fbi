@@ -22,7 +22,7 @@
 	SoundCategory=TLL_SUB;
 	ExplodeAs=SMALL_UNITEX;
 	SelfDestructAs=SMALL_UNIT;
-	Category=TLL UNDERWATER LEVEL2 TORP WEAPON NOTAIR NOTSTRUCTURE CTRL_N CTRL_W;
+	Category=TLL ALL MOBILE WEAPON NOTLAND NOTAIR;
 	TEDClass=SHIP;
 	Copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
 	Corpse=tllmanta_dead;
