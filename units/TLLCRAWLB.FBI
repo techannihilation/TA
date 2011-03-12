@@ -47,7 +47,7 @@
 	canpatrol=1;
 	canstop=1;
 	canguard=1;
-	MaxVelocity=2.459;
+	MaxVelocity=2.859;
 	BrakeRate=0.12;
 	Acceleration=0.3;
 	TurnRate=512;
@@ -56,7 +56,7 @@
 	EnergyMake=0.1;
 	DefaultMissionType=Standby;
 	maneuverleashlength=640;
-	MovementClass=kbot2;
+	MovementClass=kbot1;
 	selfdestructcountdown=1;
 	canattack=1;
 	wpri_badTargetCategory=VTOL;
