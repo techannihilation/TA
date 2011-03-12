@@ -17,7 +17,7 @@
 	EnergyUse=450;
         EnergyMake=4220;
 	EnergyStorage=2750;
- 	MakesMetal=30;
+ 	MakesMetal=8;
 	MetalStorage=600;
 	BuildTime=81028;
 	BMcode=0;
