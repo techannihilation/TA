@@ -20,37 +20,37 @@ walk()
 	{
 		if( TRUE )
 		{
-			move belly to y-axis [0.0] now;
+		//	move belly to y-axis [0.0] now;
 			move lthigh to y-axis [0.0] now;
 			move lleg to y-axis [0.6] now;
 			move rleg to y-axis [0.0] now;
-			move torso to y-axis [-0.4] now;
+		//	move torso to y-axis [-0.4] now;
 			move arms to y-axis [-0.0] now;
 			turn pelvis to z-axis <2.8> now;
-			turn belly to x-axis <-6.0> now;
+		//	turn belly to x-axis <-6.0> now;
 			turn rthigh to x-axis <14.4> now;
 			turn lthigh to x-axis <-44.7> now;
 			turn lleg to x-axis <-1.0> now;
 			turn lfoot to x-axis <10.9> now;
 			turn rleg to x-axis <6.3> now;
 			turn rfoot to x-axis <-13.7> now;
-			turn torso to x-axis <-0.3> now;
+		//	turn torso to x-axis <-0.3> now;
 			sleep 130;
 		}
 		if( TRUE )
 		{
 			move lthigh to y-axis [0.6] now;
 			move lleg to y-axis [0.0] now;
-			move torso to y-axis [0.0] now;
+		//	move torso to y-axis [0.0] now;
 			turn pelvis to z-axis <6.7> now;
-			turn belly to x-axis <-4.6> now;
+		//	turn belly to x-axis <-4.6> now;
 			turn rthigh to x-axis <21.5> now;
 			turn lthigh to x-axis <-23.9> now;
 			turn lleg to x-axis <7.4> now;
 			turn lfoot to x-axis <16.5> now;
 			turn rleg to x-axis <12.7> now;
 			turn rfoot to x-axis <-3.5> now;
-			turn torso to x-axis <2.8> now;
+		//	turn torso to x-axis <2.8> now;
 			sleep 130;
 		}
 		if( TRUE )
@@ -60,8 +60,8 @@ walk()
 		}
 		if( TRUE )
 		{
-			turn belly to x-axis <2.1> now;
-			turn torso to x-axis <11.6> now;
+		//	turn belly to x-axis <2.1> now;
+		//	turn torso to x-axis <11.6> now;
 			sleep 130;
 		}
 		if( TRUE )
@@ -69,137 +69,137 @@ walk()
 			move rthigh to y-axis [0.2] now;
 			move lthigh to y-axis [0.3] now;
 			move rleg to y-axis [0.5] now;
-			move torso to y-axis [-0.1] now;
+		//	move torso to y-axis [-0.1] now;
 			turn pelvis to z-axis <5.3> now;
-			turn belly to x-axis <0.0> now;
+		//	turn belly to x-axis <0.0> now;
 			turn rthigh to x-axis <14.1> now;
 			turn lthigh to x-axis <-14.4> now;
 			turn lfoot to x-axis <6.3> now;
 			turn rleg to x-axis <8.1> now;
 			turn rfoot to x-axis <-2.5> now;
-			turn torso to x-axis <5.3> now;
+		//	turn torso to x-axis <5.3> now;
 			sleep 130;
 		}
 		if( TRUE )
 		{
 			move lthigh to y-axis [0.1] now;
 			move rleg to y-axis [0.8] now;
-			move torso to y-axis [-0.2] now;
+		//	move torso to y-axis [-0.2] now;
 			turn pelvis to z-axis <3.5> now;
-			turn belly to x-axis <5.3> now;
+		//	turn belly to x-axis <5.3> now;
 			turn rthigh to x-axis <3.5> now;
 			turn lthigh to x-axis <-1.4> now;
 			turn lfoot to x-axis <-6.0> now;
-			turn torso to x-axis <3.2> now;
+		//	turn torso to x-axis <3.2> now;
 			sleep 120;
 		}
 		if( TRUE )
 		{
 			move lthigh to y-axis [0.0] now;
-			move torso to y-axis [-0.1] now;
+		//	move torso to y-axis [-0.1] now;
 			turn pelvis to z-axis <0.0> now;
-			turn belly to x-axis <2.5> now;
+		//	turn belly to x-axis <2.5> now;
 			turn rthigh to x-axis <-6.7> now;
 			turn lthigh to x-axis <4.2> now;
 			turn lfoot to x-axis <-11.6> now;
-			turn torso to x-axis <8.1> now;
+		//	turn torso to x-axis <8.1> now;
 			sleep 110;
 		}
 		if( TRUE )
 		{
 			move rleg to y-axis [0.8] now;
-			move torso to y-axis [0.0] now;
+		//	move torso to y-axis [0.0] now;
 			turn pelvis to z-axis <-1.4> now;
-			turn belly to x-axis <-3.9> now;
+		//	turn belly to x-axis <-3.9> now;
 			turn rthigh to x-axis <-17.9> now;
 			turn lthigh to x-axis <8.8> now;
-			turn torso to x-axis <7.4> now;
+		//	turn torso to x-axis <7.4> now;
 			sleep 110;
 		}
 		if( TRUE )
 		{
 			move rleg to y-axis [0.1] now;
 			turn pelvis to z-axis <-2.8> now;
-			turn belly to x-axis <-7.4> now;
+		//	turn belly to x-axis <-7.4> now;
 			turn rthigh to x-axis <-36.9> now;
 			turn lthigh to x-axis <15.8> now;
 			turn lfoot to x-axis <-6.3> now;
 			turn rleg to x-axis <-9.8> now;
-			turn torso to x-axis <1.8> now;
+		//	turn torso to x-axis <1.8> now;
 			sleep 110;
 		}
 		if( TRUE )
 		{
 			move rthigh to y-axis [0.6] now;
 			move lleg to y-axis [0.4] now;
-			move torso to y-axis [-0.1] now;
+		//	move torso to y-axis [-0.1] now;
 			turn pelvis to z-axis <-6.7> now;
-			turn belly to x-axis <1.1> now;
+		//	turn belly to x-axis <1.1> now;
 			turn lthigh to x-axis <22.9> now;
 			turn lfoot to x-axis <-2.8> now;
 			turn rleg to x-axis <10.2> now;
 			turn rfoot to x-axis <27.4> now;
-			turn torso to x-axis <-2.5> now;
+		//	turn torso to x-axis <-2.5> now;
 			sleep 130;
 		}
 		if( TRUE )
 		{
-			turn belly to x-axis <13.0> now;
+		//	turn belly to x-axis <13.0> now;
 			sleep 130;
 		}
 		if( TRUE )
 		{
-			turn belly to x-axis <9.1> now;
-			turn torso to x-axis <8.4> now;
+		//	turn belly to x-axis <9.1> now;
+		//	turn torso to x-axis <8.4> now;
 			sleep 130;
 		}
 		if( TRUE )
 		{
 			move rthigh to y-axis [0.3] now;
 			move lleg to y-axis [0.7] now;
-			move torso to y-axis [-0.1] now;
+		//	move torso to y-axis [-0.1] now;
 			turn pelvis to z-axis <-5.3> now;
-			turn belly to x-axis <7.0> now;
+		//	turn belly to x-axis <7.0> now;
 			turn rthigh to x-axis <-22.5> now;
 			turn lthigh to x-axis <16.2> now;
 			turn lfoot to x-axis <0.0> now;
 			turn rfoot to x-axis <12.3> now;
-			turn torso to x-axis <1.8> now;
+		//	turn torso to x-axis <1.8> now;
 			sleep 120;
 		}
 		if( TRUE )
 		{
 			move rthigh to y-axis [0.1] now;
 			move lleg to y-axis [1.0] now;
-			move torso to y-axis [-0.2] now;
+		//	move torso to y-axis [-0.2] now;
 			turn pelvis to z-axis <-3.5> now;
-			turn belly to x-axis <-3.2> now;
+		//	turn belly to x-axis <-3.2> now;
 			turn rthigh to x-axis <-10.5> now;
 			turn lthigh to x-axis <5.3> now;
 			turn lfoot to x-axis <-0.7> now;
 			turn rfoot to x-axis <0.3> now;
-			turn torso to x-axis <-3.9> now;
+		//	turn torso to x-axis <-3.9> now;
 			sleep 130;
 		}
 		if( TRUE )
 		{
 			move rthigh to y-axis [0.0] now;
-			move torso to y-axis [-0.3] now;
+		//	move torso to y-axis [-0.3] now;
 			turn pelvis to z-axis <0.0> now;
-			turn belly to x-axis <-4.2> now;
+		//	turn belly to x-axis <-4.2> now;
 			turn rthigh to x-axis <0.7> now;
 			turn lthigh to x-axis <-12.3> now;
 			turn rfoot to x-axis <-11.6> now;
-			turn torso to x-axis <-0.7> now;
+		//	turn torso to x-axis <-0.7> now;
 			sleep 130;
 		}
 		move lleg to y-axis [0.9] now;
-		move torso to y-axis [-0.4] now;
+	//	move torso to y-axis [-0.4] now;
 		turn pelvis to z-axis <1.4> now;
-		turn belly to x-axis <-5.3> now;
+	//	turn belly to x-axis <-5.3> now;
 		turn rthigh to x-axis <3.5> now;
 		turn lthigh to x-axis <-23.2> now;
-		turn torso to x-axis <0.7> now;
+	//	turn torso to x-axis <0.7> now;
 		sleep 130;
 	}
 }
@@ -235,14 +235,13 @@ flames()
    while (1)
     { t=300+rand(50,1000);
       sleep t;
-      emit-sfx SFXTYPE_THRUST from flare1;
+      show flare1;
       sleep 150;
-      emit-sfx SFXTYPE_THRUST from flare2;
+      hide flare1;
+      show flare2;
       sleep 100;
-      emit-sfx SFXTYPE_THRUST from flare2;
-      sleep 150;
-      emit-sfx SFXTYPE_THRUST from flare1;
-     }
+      hide flare2;
+        }
   }
 
 Create()
