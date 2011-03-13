@@ -2414,7 +2414,7 @@
 		canbuild24=tllsniper;
 		canbuild25=tllartybot;
 		canbuild27=tllaak;
-	//	canbuild28=tllbind;
+		canbuild28=tllbind;
 	//	canbuild29=tllburner;
 		canbuild30=tlldecom;
 		canbuild31=tllturtle;
