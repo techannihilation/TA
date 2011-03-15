@@ -77,8 +77,8 @@
 	amphibious=1;
 	reclaimable=0;
 	collisionVolumeType=Ell;
-	collisionVolumeScales=36 44 26;
-	collisionVolumeOffsets=0 -1 0;
+	collisionVolumeScales=40 48 30;
+	collisionVolumeOffsets=0 -12 -3;
 	collisionVolumeTest = 1;
 
 }
