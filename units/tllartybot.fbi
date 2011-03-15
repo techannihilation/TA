@@ -55,7 +55,7 @@
 	energymake=2.4;
 	defaultmissiontype=Standby;
 	maneuverleashlength=640;
-	movementclass=KBOT2;
+	movementclass=KBOT3;
 	upright=1;
 	canattack=1;
 	weapon2=GAUSS;
