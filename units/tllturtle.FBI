@@ -56,7 +56,7 @@
 	ShootMe=1;
 	maneuverleashlength=640;
 	amphibious=1;
-	MovementClass=kbot2;
+	MovementClass=kbot3;
 	Weapon1=ARMSCAB_WEAPON;
 	downloadable=1;
 	wpri_badTargetCategory=VTOL;
