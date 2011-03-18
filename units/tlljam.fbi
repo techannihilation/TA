@@ -39,6 +39,6 @@
 	Frenchdescription=Brouilleur de radar;
 	ActivateWhenBuilt=1;
 	onoffable=1;
-	RadarDistanceJam=800;
+	RadarDistanceJam=692;
 	Buildangle=4899;
 	}
