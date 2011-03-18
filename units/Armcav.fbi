@@ -71,6 +71,6 @@
 	Downloadable=1;
 	ActivatewhenBuilt=0;
 	onoffable=1;
-                    ai_weight=weight armcav 3.6;
-                    ai_limit=limit armcav 3;
+        ai_weight=weight armcav 3.6;
+        ai_limit=limit armcav 3;
 	}
