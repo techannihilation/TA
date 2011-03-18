@@ -79,4 +79,9 @@
 	transportsize=3;
 	ai_weight=weight cordrag1 5;
 	ai_limit=limit cordrag1 1;
+
+	collisionVolumeType=Ell;
+	collisionVolumeScales=50 80 160;
+	collisionVolumeOffsets=0 -20 0;
+	collisionVolumeTest=0;
 	}
