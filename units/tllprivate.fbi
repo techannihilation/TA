@@ -53,7 +53,7 @@
 	EnergyMake=0.5;
 	DefaultMissionType=Standby;
 	maneuverleashlength=640;
-	MovementClass=KBOT1;
+	MovementClass=KBOT2;
 	Upright=1;
 	canattack=1;
 	Weapon1=EMG;
