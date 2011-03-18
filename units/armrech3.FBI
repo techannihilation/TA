@@ -11,8 +11,8 @@
 	FrenchDescription=Labo de recherche experimentale;
 	GermanName=Experimentelles Forschungslabor;
 	GermanDescription=Experimentelles Forschungslabor;
-	FootprintX=8;
-	FootprintZ=8;
+	FootprintX=5;
+	FootprintZ=7;
 	BuildCostEnergy=6400;
 	BuildCostMetal=600;
 	MaxDamage=3000;
@@ -37,7 +37,7 @@
 	Category=ARM SPECIAL NOTAIR NOTSUB ;
 	TEDClass=SPECIAL;
 	Copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
-	YardMap=oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo;
+	YardMap=ooooooo ooooooo ooooooo ooooooo ooooooo;
 	UnitNumber=7210;
 	EnergyMake=0;
 	ActivateWhenBuilt=1;
