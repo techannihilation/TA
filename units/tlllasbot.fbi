@@ -51,7 +51,7 @@
 	energymake=0.4;
 	defaultmissiontype=Standby;
 	maneuverleashlength=640;
-	movementclass=KBOT1;
+	movementclass=KBOT2;
 	upright=1;
 	canattack=1;
 	weapon1=TLL_LASERH1;
