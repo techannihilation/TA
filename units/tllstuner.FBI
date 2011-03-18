@@ -42,5 +42,6 @@
 	downloadable=1;
 	wpri_badTargetCategory=VTOL;
 	BadTargetCategory=VTOL;
+	onlyTargetCategory1=NOTAIR;
 	DamageModifier=0.125;
 	}
