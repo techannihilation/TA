@@ -9,15 +9,15 @@
 	Description=Hazardous Geothermal Lab Produces Energy/Metal;
 	FootprintX=4;
 	FootprintZ=4;
-	BuildCostEnergy=98068;
-	BuildCostMetal=2892;
-	MaxDamage=7440;
+	BuildCostEnergy=68068;
+	BuildCostMetal=4392;
+	MaxDamage=6220;
 	MaxWaterDepth=0;
 	MaxSlope=10;
-	EnergyUse=450;
-        EnergyMake=4220;
-	EnergyStorage=2750;
- 	MakesMetal=8;
+	EnergyUse=600;
+        EnergyMake=2000;
+	EnergyStorage=2250;
+ 	MakesMetal=7;
 	MetalStorage=600;
 	BuildTime=81028;
 	BMcode=0;
@@ -45,10 +45,12 @@
 	ItalianName=Stabilimento Geotermico;
 	ItalianDescription=Produce energia/Metal;
 
+	onoffable=0;
+	buildangle=8192;
+	ActivateWhenBuilt=1;
+
 	[SFXTYPES] {
 	explosionGenerator0=custom:PILOT;
 	}
 
-	buildangle=8192;
-	ActivateWhenBuilt=1;
 	}
