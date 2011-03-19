@@ -26,7 +26,7 @@
 	SoundCategory=ARM_SEAPLN;
 	ExplodeAs=SMALL_UNITEX;
 	SelfDestructAs=SMALL_UNIT;
-	Category=TLL VTOL CTRL_V LEVEL2 WEAPON  NOTSUB CTRL_W CTRL_P;
+	Category=TLL NOTLAND MOBILE WEAPON ANTIGATOR NOTSUB ANTIFLAME ANTIEMG ANTILASER VTOL NOTSHIP;
 	TEDClass=VTOL;
 	Copyright=Copyright 1997 Humongous Entertainment. All rights reserved.;
 	UnitNumber=919;
