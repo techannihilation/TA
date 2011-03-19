@@ -281,7 +281,7 @@
 }
 [CLASS25]
 {
-	Name=KBOTSS3;
+	Name=KBOT3;
 	FootprintX=3;
 	FootprintZ=3;
 	MaxWaterDepth=12;
