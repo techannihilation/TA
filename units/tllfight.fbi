@@ -68,4 +68,6 @@
 	ovradjust=1;
 	collide=0;
 	maxwaterdepth=0;
+	Upright=1;
+
 	}

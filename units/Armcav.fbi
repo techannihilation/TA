@@ -6,7 +6,7 @@
 	Objectname=ARMCAV;
 	Designation=ARM-K47;
 	Name=Cavalier;
-	Description=Multipurpose Assault K-Bot;
+	Description=All Terrain -- Multipurpose Assault K-Bot;
 	FootprintX=2;
 	FootprintZ=2;
 	BuildCostEnergy=14328;
@@ -35,10 +35,10 @@
 	TEDClass=KBOT;
 	Corpse=armcav_dead;
 	GermanName=Cavalier;
-	GermanDescription= Multipurpose Assault K-Bot;
+	GermanDescription=All Terrain -- Multipurpose Assault K-Bot;
 	UnitNumber=800;
 	FrenchName=Cavalier;
-	Frenchdescription=Multipurpose Assault K-Bot;
+	Frenchdescription=All Terrain -- Multipurpose Assault K-Bot;
 	firestandorders=1;
 	StandingFireOrder=2;
 	mobilestandorders=1;
@@ -47,9 +47,9 @@
 	canpatrol=1;
 	canstop=1;
 	SpanishName=Cavalier;
-	SpanishDescription=Multipurpose Assault K-Bot;
+	SpanishDescription=All Terrain -- Multipurpose Assault K-Bot;
 	ItalianName=Cavalier;
-	ItalianDescription=Multipurpose Assault K-Bot;
+	ItalianDescription=All Terrain -- Multipurpose Assault K-Bot;
 	canguard=1;
 	MaxVelocity=0.75;
 	BrakeRate=0.5;
