@@ -12,6 +12,7 @@
 	armfig=99;
 	corveng=99;
 	tllfight=99;
+	tllseaf=99;
 }
 
 [L2FIGHTERS]
@@ -27,6 +28,7 @@
 	abuilderlvl2=99;
 	cbuilderlvl2=99;
 	tlladvfight=99;
+
 }
 
 [L1BOMBERS]
@@ -40,6 +42,7 @@
 	armblz=99;
 	armcbomb=99;
 	tllbomber=99;
+	tllseab=99;
 }
 
 [L2BOMBERS]
