@@ -30,10 +30,12 @@
 
 	GermanDescription=Sonar-Stör-U-Boot;
 	Frenchdescription=Sous-Marin Brouilleur;
-	SpanishDescription=Sonar de interferencias subacuáticas;
 	ItalianDescription=Disturbo sonar subacqueo;
-  	radarDistance=0;
+	EnergyUse=100;
+  	radarDistance=100;
+	SonarDistance=120;
 	radarDistanceJam=475;
+	SonarDistanceJam=475;
 	mobilestandorders=1;
 	StandingMoveOrder=0;
 	canmove=1;
@@ -50,7 +52,6 @@
 	maneuverleashlength=640;
 	MovementClass=dBOAT3;
 	MinWaterDepth=15;
-	SonarDistanceJam=680;
 	WaterLine=20;
 	onoffable=1;
 	ActivateWhenBuilt=1;
