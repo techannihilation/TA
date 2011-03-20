@@ -2186,7 +2186,7 @@
 	noselfdamage=1;
 	[DAMAGE]
 	{
-		default=0;
+		DEFAULT=0;
 		VTRANS=150;
 		L1FIGHTERS=150;
 		L2FIGHTERS=170;

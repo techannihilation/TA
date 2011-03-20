@@ -55,7 +55,7 @@
 	canattack=1;
 	Weapon1=ARMFLAK_SPIDER;
 	wspe_badTargetCategory=NOTAIR;
-	BadTargetCategory=notair;
-	NoChaseCategory=notair;
+	BadTargetCategory=NOTAIR;
+	NoChaseCategory=NOTAIR;
 	onlytargetcategory1=VTOL;
 	}
