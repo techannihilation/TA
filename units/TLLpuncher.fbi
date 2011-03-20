@@ -41,7 +41,7 @@
 	StandingMoveOrder=0;
 	canmove=1;
 	canpatrol=1;
-	canstop=1;
+	canstop=1;33
 	canguard=1;
 	MaxVelocity=1.48;
 	BrakeRate=0.21;
