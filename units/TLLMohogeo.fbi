@@ -15,7 +15,7 @@
 	MaxWaterDepth=0;
 	MaxSlope=10;
 	EnergyUse=600;
-        EnergyMake=2000;
+        EnergyMake=2500;
 	EnergyStorage=2250;
  	MakesMetal=7;
 	MetalStorage=600;
