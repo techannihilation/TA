@@ -53,7 +53,7 @@
 	maneuverleashlength=300;
 	MovementClass=TANK3;
 	canattack=1;
-	Weapon1=ARMFLAK_SPIDER;
+	Weapon1=TLLFLAK_SPIDER;
 	wspe_badTargetCategory=NOTAIR;
 	BadTargetCategory=NOTAIR;
 	NoChaseCategory=NOTAIR;

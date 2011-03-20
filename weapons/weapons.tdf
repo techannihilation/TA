@@ -10536,3 +10536,46 @@ L3SUBS=5;
 		OTHERBOATS=922;
 	}
 }
+[TLLFLAK_SPIDER]
+{
+	name=FlakCannon;
+	rendertype=4;
+	ballistic=1;
+	turret=1;
+	Size=4;
+	toairweapon=1;
+	canattackground=0;
+	unitsonly=1;
+	range=775;
+	reloadtime=0.7;
+	weapontimer=1;
+	weaponvelocity=1550;
+	areaofeffect=116;
+	edgeeffectiveness=0.85;
+	soundstart=flakfire;
+	soundhit=flakhit;
+	minbarrelangle=-24;
+	accuracy=1000;
+	burnblow=1;
+	explosiongenerator=custom:FLASH3;
+	color=1;
+	startsmoke=1;
+	impulsefactor=0;
+	impulseboost=0;
+	cratermult=0;
+	craterboost=0;
+	noselfdamage=1;
+	[DAMAGE]
+	{
+		DEFAULT=0;
+		VTRANS=150;
+		L1FIGHTERS=150;
+		L2FIGHTERS=170;
+		L1BOMBERS=190;
+		L2BOMBERS=220;
+		GUNSHIPS=150;
+		HGUNSHIPS=150;
+		VRADAR=160;
+		VTOL=35;
+	}
+}
