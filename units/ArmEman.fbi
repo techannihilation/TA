@@ -49,8 +49,8 @@
 	Category=ALL TANK MOBILE WEAPON NOTSUB NOTSHIP NOTAIR;
 	TEDClass=TANK;
 	MovementClass=TANK3;
-	Weapon1=ARM_LASER;
-	Weapon2=GAUSS;
+	Weapon2=ARM_LASER;
+	Weapon1=GAUSS;
 	wpri_badTargetCategory=VTOL;
 	BadTargetCategory=VTOL;
 	NoChaseCategory=VTOL;
