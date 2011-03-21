@@ -1888,7 +1888,7 @@
 	cruisealt=260;
 	weaponacceleration=40;
 	turnrate=32768;
-	areaofeffect=256;
+	areaofeffect=512;
 	edgeeffectiveness=0.5;
 	cruise=1;
 	commandfire=1;
@@ -1911,8 +1911,8 @@
 	explosiongenerator=custom:FLASHSMALLBUILDINGEX;
 	startsmoke=1;
 	noselfdamage=1;
-	impulsefactor=4.5;
-	impulseboost=4.123;
+	impulsefactor=1.75;
+	impulseboost=1.723;
 	cratermult=0;
 	craterboost=0;
 	[DAMAGE]

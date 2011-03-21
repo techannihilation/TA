@@ -72,7 +72,7 @@
 
 	explosiongaf=CAexp2;
 	explosionart=bio1;
-		impulsefactor=0.123;
+	impulsefactor=0.123;
 	impulseboost=0.123;
 	cratermult=0;
 	craterboost=0;
