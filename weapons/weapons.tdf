@@ -1873,8 +1873,8 @@
 {
 	name=PlasmaImplosionDumpRocket;
 	avoidFeature=0;
-    avoidFriendly=0;
-    collideFriendly=0;
+	avoidFriendly=0;
+	collideFriendly=0;
 	rendertype=1;
 	lineofsight=1;
 	model=plasmafire;
@@ -1888,7 +1888,7 @@
 	cruisealt=260;
 	weaponacceleration=40;
 	turnrate=32768;
-	areaofeffect=512;
+	areaofeffect=412;
 	edgeeffectiveness=0.5;
 	cruise=1;
 	commandfire=1;
