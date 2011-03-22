@@ -69,5 +69,5 @@
 	NoChaseCategory=VTOL;
 	noshadow=1;
 	floater=0;
-	waterline=24;
+	waterline=19;
 	}

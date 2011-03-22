@@ -42,7 +42,7 @@
   standingfireorder=2;
   TEDClass=WATER;
   turnRate=0;
-  waterline=18;
+  waterline=13;
   badTargetCategory=ANTILASER;
   workerTime=0;
   wpri_badtargetcategory=ANTILASER;

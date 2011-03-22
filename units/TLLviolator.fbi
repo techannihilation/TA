@@ -62,6 +62,6 @@
 	BadTargetCategory=NOWEAPON;
 	NoChaseCategory=CTRL_V;
 	ActivateWhenBuilt=1;
-	waterline=16;
+	waterline=11;
 	Floater=1;
 	}

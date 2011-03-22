@@ -45,7 +45,7 @@
 	OnOffable=1;
 	ActivateWhenBuilt=1;
 	NoShadow=1;
-	waterline=18;
+	waterline=13;
 	Ovradjust=1;
 	MakesMetal=1.1;
 	}

@@ -59,7 +59,7 @@
 	Floater=1;
 	istargetingupgrade=1;
 	DamageModifier=0.5;
-	waterline=17;
+	waterline=12;
 	immunetoparalyzer=1;
 	collisionVolumeType=Ell;
 	collisionVolumeScales=128 94 206;

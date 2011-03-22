@@ -39,7 +39,7 @@
   soundcategory=CORE_TARG;
   TEDClass=SPECIAL;
   turnRate=0;
-  waterline=18;
+  waterline=13;
   workerTime=0;
   yardMap=wwwwwwwwwwwwwwww;
 }

@@ -54,7 +54,7 @@
 	SonarDistance=720;
 	canattack=1;
 	Upright=1;
-	waterline=40;
+	waterline=35;
 	ActivateWhenBuilt=1;
 	Weapon1=CORSSUB_WEAPON;
 	wpri_badTargetCategory=NOTSUB;

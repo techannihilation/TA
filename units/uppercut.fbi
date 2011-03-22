@@ -60,7 +60,7 @@
 	BadTargetCategory=VTOL;
 	ActivateWhenBuilt=1;
 	MinWaterDepth=50;
-	waterline=65;
+	waterline=60;
 	SonarDistance=750;
 	cantbetransported=1;
 	icontype=sea;

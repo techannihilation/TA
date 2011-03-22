@@ -53,5 +53,5 @@
 	downloadable=1;
                     minwaterdepth=30;
                     noshadow=1;
-                    waterline=20;
+                    waterline=15;
 	}

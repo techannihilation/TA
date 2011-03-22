@@ -64,5 +64,5 @@
 	NoChaseCategory=VTOL;
 	ActivateWhenBuilt=1;
 	Floater=1;
-	waterline=16;
+	waterline=11;
 	}

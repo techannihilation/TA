@@ -58,7 +58,7 @@
 	wsec_badTargetCategory=NOTAIR;
 	BadTargetCategory=UNDERWATER;
 	NoChaseCategory=UNDERWATER;
-	waterline=16;
+	waterline=11;
 	Floater=1;
 	DamageModifier=0.5;
 	onlyTargetCategory1=NOTAIR;

@@ -52,7 +52,7 @@
   TEDClass=SHIP;
   turnRate=289;
   upright=1;
-  waterline=30;
+  waterline=25;
   badTargetCategory=NOTSUB;
   workerTime=0;
   wpri_badtargetcategory=NOTSUB;

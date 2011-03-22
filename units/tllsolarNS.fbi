@@ -41,7 +41,7 @@
 
 	buildangle=8192;
 	Ovradjust=1;
-	waterline=18;
+	waterline=13;
         minwaterdepth=20;
 	NoShadow=1;
 	OnOffable=1;

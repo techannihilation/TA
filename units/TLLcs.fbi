@@ -60,7 +60,7 @@
 	DefaultMissionType=Standby;
 	maneuverleashlength=640;
 	MovementClass=BOAT4;
-	waterline=16;
+	waterline=11;
 	MinWaterDepth=20;
 	Floater=1;
 	}

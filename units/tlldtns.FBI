@@ -45,6 +45,6 @@
 	MinWaterDepth=1;
 	buildangle=8192;
 	downloadable=1;
-	waterline=16;
+	waterline=11;
 	IsFeature=1;
 	}

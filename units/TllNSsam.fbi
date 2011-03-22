@@ -47,5 +47,5 @@
 	buildangle=8192;
         minwaterdepth=20;
 	NoShadow=1;
-	waterline=15;
+	waterline=10;
 	}

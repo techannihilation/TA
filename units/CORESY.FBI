@@ -39,7 +39,7 @@
 	smoothanim=1;
 	icontype=building;
 	MinWaterDepth=89;
-	waterline=70;
+	waterline=65;
 	collisionVolumeType=Box;
 	collisionVolumeScales=227 64 227;
 
