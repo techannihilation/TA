@@ -56,5 +56,5 @@
 	onoffable=1;
 	RadarDistanceJam=715;
 	Floater=1;
-	waterline=11;
+	waterline=4;
 	}
