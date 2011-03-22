@@ -48,7 +48,7 @@
 	DefaultMissionType=GUARD_NOMOVE;
 	MinWaterDepth=1;
 	SonarDistance=450;
-	WaterLine=1;
+	waterline=16;
 	buildangle=16384;
 	canattack=1;
 	Weapon1=COAX_TORPEDO;

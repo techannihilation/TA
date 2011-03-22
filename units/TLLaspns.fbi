@@ -45,6 +45,6 @@
 	isairbase=1;
 	ovradjust=1;
 	MinWaterDepth=15;
-	WaterLine=3;
+	waterline=18;
 	NoShadow=1;
 	}

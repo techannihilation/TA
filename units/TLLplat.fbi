@@ -53,7 +53,7 @@
 	canstop=1;
 	MetalMake=1;
 	MinWaterDepth=30;
-	WaterLine=43;
+	waterline=58;
 	NoShadow=1;
 	Ovradjust=1;
 	downloadable=1;

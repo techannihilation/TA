@@ -45,6 +45,6 @@
 	canstop=1;
 	MetalMake=1;
 	MinWaterDepth=30;
-	WaterLine=22;
+	waterline=37;
 	NoShadow=1;
 	}

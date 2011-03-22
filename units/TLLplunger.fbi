@@ -53,7 +53,7 @@
 	Upright=1;
 	MinWaterDepth=20;
 	SonarDistance=415;
-	WaterLine=20;
+	waterline=35;
 	canattack=1;
 	Weapon1=ARM_TORPEDO;
 	wpri_badTargetCategory=NOTSUB;

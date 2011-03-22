@@ -52,7 +52,7 @@
 	maneuverleashlength=640;
 	MovementClass=dBOAT3;
 	MinWaterDepth=15;
-	WaterLine=20;
+	waterline=35;
 	onoffable=1;
 	ActivateWhenBuilt=1;
 	Upright=1;

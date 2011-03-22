@@ -46,6 +46,6 @@
         EnergyUse=-4200;
         ActivateWhenBuilt=1;
 	onoffable=1;
-        Waterline=10;
+        waterline=25;
 	DamageModifier=0.9;
 	}

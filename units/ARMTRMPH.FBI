@@ -48,7 +48,7 @@
 	buildangle=16384;
 	ActivateWhenBuilt=1;
 	Floater=1;
-	WaterLine=5;
+	waterline=20;
 	Weapon1=CANNON_TRMPH;
 	Weapon2=CANNON_TRMPH;
 	Weapon3=CANNON_BATS_AFT;

@@ -47,7 +47,7 @@
 	ActivateWhenBuilt=1;
 	onoffable=1;
 	NoShadow=1;
-	Waterline=2;
+	waterline=17;
 	TidalGenerator=1;
 	Ovradjust=1;
 	}
