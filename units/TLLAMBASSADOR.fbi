@@ -53,6 +53,6 @@
 	canload=1;
 	transportsize=3;
 	transportcapacity=20;
-	waterline=1;
+	waterline=16;
 	Floater=1;
 	}

@@ -36,7 +36,7 @@
   soundcategory=NONE;
   TEDClass=FORT;
   turnRate=0;
-  waterline=3;
+  waterline=18;
   workerTime=0;
   yardMap=wwww;
 }

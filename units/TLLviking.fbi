@@ -61,6 +61,6 @@
 	wsec_badTargetCategory=VTOL;
 	BadTargetCategory=NOWEAPON;
 	NoChaseCategory=VTOL;
-	waterline=1;
+	waterline=16;
 	Floater=1;
 	}

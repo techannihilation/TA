@@ -57,7 +57,7 @@
   transportmaxunits=8;
   transportSize=3;
   turnRate=370;
-  waterline=4;
+  waterline=19;
   badTargetCategory=ANTILASER;
   workerTime=0;
   wpri_badtargetcategory=ANTILASER;

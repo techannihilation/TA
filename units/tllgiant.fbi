@@ -57,6 +57,6 @@
 	ActivateWhenBuilt=1;
 	onoffable=1;
 	IsAirBase=1;
-	waterline=2;
+	waterline=17;
 	Floater=1;
 	}

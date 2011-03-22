@@ -52,7 +52,7 @@
   TEDClass=SHIP;
   turnRate=246;
   upright=1;
-  waterline=15;
+  waterline=30;
   badTargetCategory=HOVER NOTSHIP;
   workerTime=0;
   wpri_badtargetcategory=HOVER NOTSHIP;

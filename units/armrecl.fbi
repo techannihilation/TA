@@ -49,7 +49,7 @@
   steeringmode=1;
   TEDClass=SHIP;
   turnRate=282;
-  waterline=15;
+  waterline=30;
   workerTime=450;
 }
 

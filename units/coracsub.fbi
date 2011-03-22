@@ -50,7 +50,7 @@
   TEDClass=SHIP;
   terraformSpeed=900;
   turnRate=364;
-  waterline=20;
+  waterline=35;
   workerTime=1300;
 }
 

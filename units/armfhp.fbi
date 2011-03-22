@@ -42,7 +42,7 @@
   standingmoveorder=1;
   TEDClass=PLANT;
   turnRate=0;
-  waterline=1;
+  waterline=16;
   workerTime=200;
   yardMap=wCCCCCCwwCCCCCCwwCCCCCCwwCCCCCCwwCCCCCCwwCCCCCCwwCCCCCCw;
 }

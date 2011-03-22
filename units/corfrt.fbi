@@ -41,7 +41,7 @@
   standingfireorder=2;
   TEDClass=METAL;
   turnRate=0;
-  waterline=4;
+  waterline=19;
   badTargetCategory=NOWEAPON;
   workerTime=0;
   wpri_badtargetcategory=NOWEAPON;

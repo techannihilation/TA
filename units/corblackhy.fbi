@@ -54,7 +54,7 @@
   steeringmode=1;
   TEDClass=SHIP;
   turnRate=260;
-  waterline=5;
+  waterline=20;
 
   weapon1=HYDRA_PRIME;
   onlyTargetCategory1=NOTAIR;

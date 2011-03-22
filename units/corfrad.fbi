@@ -43,7 +43,7 @@
   soundcategory=CORE_RADAR;
   TEDClass=SPECIAL;
   turnRate=0;
-  waterline=4;
+  waterline=19;
   workerTime=0;
   yardMap=wwwwwwwww;
   maxAngleDif1=1;

@@ -52,7 +52,7 @@
 	BadTargetCategory=VTOL;
 	NoChaseCategory=VTOL;
 	Floater=1;
-        waterline=28;
+        waterline=43;
         CloakCost=100;
         init_cloaked=1;
         MinicloakDistance=130;

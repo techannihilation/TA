@@ -42,7 +42,7 @@
   standingfireorder=2;
   TEDClass=WATER;
   turnRate=0;
-  waterline=10;
+  waterline=25;
   badTargetCategory=HOVER NOTSHIP;
   workerTime=0;
   wpri_badtargetcategory=HOVER NOTSHIP;
