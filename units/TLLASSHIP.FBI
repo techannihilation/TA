@@ -57,7 +57,7 @@
 	canattack=1;
 	ActivateWhenBuilt=1;
 	Floater=1;
-	waterline=11;
+	waterline=6;
 	Ovradjust=1;
 	Weapon2=ARMDEPTHCHARGE;
 	Weapon3=ARMDEPTHCHARGE;

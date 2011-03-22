@@ -61,6 +61,6 @@
 	NoChaseCategory=VTOL;
 	Weapon1=CORE_BATSLASER;
 	Floater=1;
-	waterline=11;
+	waterline=9;
 	Ovradjust=1;
 	}

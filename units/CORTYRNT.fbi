@@ -50,7 +50,7 @@
 	buildangle=16384;
 	ActivateWhenBuilt=1;
 	Floater=1;
-	waterline=15;
+	waterline=12;
 	Weapon1=CANNON_TYRNT;
 	Weapon2=ROCKET_KROG;
 	Weapon3=BLOD_DOOM;	
