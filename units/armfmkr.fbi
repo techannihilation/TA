@@ -39,7 +39,7 @@
   soundcategory=ARM_MAKER;
   TEDClass=METAL;
   turnRate=0;
-  waterline=14;
+  waterline=8;
   workerTime=0;
   yardMap=wwwwwwwww;
 }
