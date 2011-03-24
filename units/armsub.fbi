@@ -60,5 +60,9 @@
   weapon1=ARM_TORPEDO;
   maxAngleDif1=90;
   weaponMainDir1=0 0 1;
+  collisionVolumeType=Ell;
+  collisionVolumeScales=42 32 64;
+  collisionVolumeOffsets=0 0 0;
+  collisionVolumeTest=0;
 }
 
