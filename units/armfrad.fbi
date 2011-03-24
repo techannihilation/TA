@@ -42,7 +42,7 @@
   soundcategory=ARM_RADAR;
   TEDClass=SPECIAL;
   turnRate=0;
-  waterline=7;
+  waterline=5;
   workerTime=0;
   yardMap=wwwwwwwww;
   maxAngleDif1=1;
