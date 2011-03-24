@@ -51,7 +51,7 @@
   stealth=1;
   TEDClass=SPECIAL;
   turnRate=0;
-  waterline=11;
+  waterline=0;
   badTargetCategory=VTOL;
   workerTime=0;
   wpri_badtargetcategory=VTOL;

@@ -46,7 +46,7 @@
   tedclass=CNSTR;
   turnrate=1;
   upright=1;
-  waterline=11;
+  waterline=1;
   workertime=300;
   repairspeed=500;
   reclaimspeed=600;

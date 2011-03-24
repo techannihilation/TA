@@ -43,6 +43,6 @@
 	canguard=1;
 	MetalMake=1.2;
 	MinWaterDepth=45;
-        waterline=45;
+        waterline=55;
         noshadow=1;
 	}
