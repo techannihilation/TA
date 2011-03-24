@@ -2553,7 +2553,7 @@
 	{
 		canbuild1=tlluwfusion;
 		canbuild4=tllauwmex;
-		canbuild6=tllemstor;
+		//canbuild6=tllemstor;
 		canbuild8=tllplat;
 		canbuild9=tllsy;
 		canbuild10=tllasy;
