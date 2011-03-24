@@ -51,5 +51,10 @@
   turnRate=282;
   waterline=25;
   workerTime=450;
+  collisionVolumeType=Ell;
+  collisionVolumeScales=54 14 94;
+  collisionVolumeOffsets=0 0 0;
+  collisionVolumeTest=0;
+
 }
 
