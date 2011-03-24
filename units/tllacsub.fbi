@@ -59,4 +59,8 @@
 	waterline=40;
 	downloadable=1;
 	metalmake=0.9;
+	collisionVolumeType=Ell;
+	collisionVolumeScales=36 26 66;
+	collisionVolumeOffsets=0 0 0;
+	collisionVolumeTest=1;
 	}
