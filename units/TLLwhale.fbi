@@ -60,4 +60,8 @@
         RadarDistanceJam=100;
         CloakCostMoving=180;
 	cantbetransported=1;
+	collisionVolumeType=Ell;
+	collisionVolumeScales=57 37 107;
+	collisionVolumeOffsets=0 -20 0;
+	collisionVolumeTest=0;
 	}

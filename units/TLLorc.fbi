@@ -60,4 +60,8 @@
 	wpri_badTargetCategory=NOTSUB;
 	BadTargetCategory=NOWEAPON;
 	NoChaseCategory=NOTSUB;
+	collisionVolumeType=Ell;
+	collisionVolumeScales=44 24 74;
+	collisionVolumeOffsets=0 0 0;
+	collisionVolumeTest=0;
 	}
