@@ -60,4 +60,8 @@
 	BadTargetCategory=NOWEAPON;
 	NoChaseCategory=NOTSUB;
 	ActivateWhenBuilt=1;
+	collisionVolumeType=Ell;
+	collisionVolumeScales=32 22 62;
+	collisionVolumeOffsets=0 0 0;
+	collisionVolumeTest=0;
 	}
