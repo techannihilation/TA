@@ -57,7 +57,7 @@
 	ActivateWhenBuilt=1;
 	Upright=1;
 	collisionVolumeType=Ell;
-	collisionVolumeScales=25 35 65;
+	collisionVolumeScales=35 35 65;
 	collisionVolumeOffsets=0 -3 0;
 	collisionVolumeTest=0;
 	}
