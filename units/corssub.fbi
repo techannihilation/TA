@@ -60,5 +60,9 @@
   weapon1=CORSSUB_WEAPON;
   maxAngleDif1=75;
   weaponMainDir1=0 0 1;
+  collisionVolumeType=Ell;
+  collisionVolumeScales=62 21 72;
+  collisionVolumeOffsets=0 0 0;
+  collisionVolumeTest=0;
 }
 
