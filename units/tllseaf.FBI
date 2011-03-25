@@ -64,4 +64,6 @@
 	amphibious=1;
 	cansubmerge=1;
 	collide=0;
+	nochasecategory=NOTAIR;
+	badtargetcategory=NOTAIR;
 	}
