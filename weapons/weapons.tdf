@@ -1888,7 +1888,7 @@
 	cruisealt=260;
 	weaponacceleration=40;
 	turnrate=32768;
-	areaofeffect=412;
+	areaofeffect=312;
 	edgeeffectiveness=0.5;
 	cruise=1;
 	commandfire=1;
