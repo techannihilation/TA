@@ -2342,7 +2342,7 @@
 		canbuild2=tllgeo;
 		canbuild3=tlluwmex;
 		canbuild4=tllwmconv;
-		canbuild5=tlltower;
+	//	canbuild5=tlltower;
 		canbuild7=TLLUWMSTORAGE;
 		canbuild8=TLLUWESTORAGE;
 		canbuild9=tllsy;
