@@ -15,7 +15,7 @@
 
 function widget:GetInfo()
 	return {
-		name = "Auto Reclaim/Heal/Assist",
+		name = "Auto Reclaim/Heal/Assist-Comless",
 		desc = "Makes idle unselected builders/rez/com/nanos to reclaim metal if metal bar is not full, repair nearby units and assist in building",
 		author = "Pithikos",
 		date = "Nov 21, 2010",
@@ -76,7 +76,7 @@ function widget:UnitIdle(unitID, unitDefID, unitTeam)
 		--don't apply to factories 
 		--don't apply to units with hold position
 		if (UnitDefs[unitDefID]["canReclaim"] or UnitDefs[unitDefID]["canRepair"] or UnitDefs[unitDefID]["canCapture"])
-			and not UnitDefs[unitDefID]["isFactory"] 
+			and not UnitDefs[unitDefID]["isFactory"] and not UnitDefs[unitDefID]["isCommander"]
 			and Spring.GetUnitStates(unitID)["movestate"] ~= 0
 		then     --check if unit can reclaim
 			  --echo("Unit "..UnitDefs[unitDefID]["humanName"].." considered a reclaimer");
