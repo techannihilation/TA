@@ -54,9 +54,9 @@
 	MinWaterDepth=30;
 	buildangle=16384;
 	canattack=1;
-	Weapon1=ARMAAS_WEAPON1;
-	Weapon2=ARMAAS_WEAPON1;
-	Weapon3=CORFLAK_GUN;
+	weapon1=BOGUS_MISSILE;
+	weapon2=GA2;
+	weapon3=MOBILEFLAK;
 	wpri_badTargetCategory=NOTAIR;
 	wspe_badTargetCategory=NOTAIR;
 	BadTargetCategory=NOWEAPON;
