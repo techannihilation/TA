@@ -287,7 +287,15 @@
 	MaxWaterDepth=12;
 	MaxSlope=32;
 }
-
+[CLASS26]
+{
+	name=DBOAT8;
+	footprintx=8;
+	footprintz=8;
+	minwaterdepth=15;
+	crushstrength=70;
+	heatmapping=false;
+}
 
 
 

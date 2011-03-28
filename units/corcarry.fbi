@@ -38,7 +38,7 @@
   metalStorage=1500;
   minWaterDepth=15;
   mobilestandorders=1;
-  movementClass=DBOAT6;
+  movementClass=DBOAT8;
   noAutoFire=0;
   noChaseCategory=ALL;
   objectName=CORCARRY;
