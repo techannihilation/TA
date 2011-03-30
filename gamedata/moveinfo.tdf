@@ -287,7 +287,18 @@
 	MaxWaterDepth=12;
 	MaxSlope=32;
 }
-
+[CLASS26]
+{
+	name=VKBOT3;
+	footprintx=3;
+	footprintz=3;
+	maxwaterdepth=5000;
+	maxwaterslope=30;
+	maxslope=24;
+	crushstrength=1400;
+	depthmod=0;
+	heatmapping=false;
+}
 
 
 

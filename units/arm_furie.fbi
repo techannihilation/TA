@@ -55,7 +55,7 @@
 	Onlytargetcategory2=Notair;
 	DefaultMissionType=Standby;
 	maneuverleashlength=640;
-	MovementClass=VKBOT5;
+	MovementClass=VKBOT3;
 	canattack=1;
 	Weapon1=ARM_FURIE_HEAD;
 	Weapon2=ARM_FURIE_FIRE;
