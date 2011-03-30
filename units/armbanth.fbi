@@ -32,7 +32,7 @@
   maxVelocity=1.80;
   maxWaterDepth=12;
   mobilestandorders=1;
-  movementClass=VKBOT5;
+  movementClass=VKBOT3;
   noAutoFire=0;
   noChaseCategory=VTOL;
   objectName=ARMBANTH;

@@ -61,7 +61,7 @@
 	EnergyMake=1.1;
 	DefaultMissionType=Standby;
 	maneuverleashlength=640;
-	MovementClass=vkbot5;
+	MovementClass=VKBOT3;
 	Upright=1;
 	canattack=1;
 	Weapon1=ARMKRMI_ROCKET;

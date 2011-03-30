@@ -55,7 +55,7 @@
 	EnergyMake=1.1;
 	DefaultMissionType=Standby;
 	maneuverleashlength=640;
-	movementclass=VKBOT5;
+	movementclass=VKBOT3;
 	Upright=1;
 	canattack=1;
 	Weapon1=PRAETORIAN_SPLIT;
