@@ -59,5 +59,9 @@
 	kamikazedistance=50;
 	selfdestructcountdown=2;
 	MinWaterDepth=20;
-	WaterLine=20;
+	waterline=30;
+	collisionVolumeType=Ell;
+	collisionVolumeScales=18 18 28;
+	collisionVolumeOffsets=0 0 0;
+	collisionVolumeTest=0;
 	}

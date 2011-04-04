@@ -53,11 +53,15 @@
 	Upright=1;
 	MinWaterDepth=15;
 	SonarDistance=470;
-	WaterLine=20;
+	waterline=30;
 	canattack=1;
 	Weapon1=ARMSMART_TORPEDO;
 	wpri_badTargetCategory=NOTSUB;
 	BadTargetCategory=NOWEAPON;
 	NoChaseCategory=NOTSUB;
 	ActivateWhenBuilt=1;
+	collisionVolumeType=Ell;
+	collisionVolumeScales=32 22 62;
+	collisionVolumeOffsets=0 0 0;
+	collisionVolumeTest=0;
 	}

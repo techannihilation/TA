@@ -45,8 +45,12 @@
   standingmoveorder=1;
   TEDClass=PLANT;
   turnRate=0;
-  waterline=22;
+  waterline=28;
   workerTime=250;
   yardMap=wCCCCCCwCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCwCCCCCCw;
+  collisionVolumeType=Ell;
+  collisionVolumeScales=159 90 146;
+  collisionVolumeOffsets=0 0 0;
+  collisionVolumeTest=0;
 }
 

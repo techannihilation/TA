@@ -49,7 +49,11 @@
   steeringmode=1;
   TEDClass=SHIP;
   turnRate=282;
-  waterline=15;
+  waterline=25;
   workerTime=450;
+  collisionVolumeType=Ell;
+  collisionVolumeScales=60 20 80;
+  collisionVolumeOffsets=0 0 -5;
+  collisionVolumeTest=0; 
 }
 

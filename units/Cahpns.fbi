@@ -51,7 +51,7 @@
 	ItalianDescription=Costruisce Hovercraft;
 	downloadable=1;
 	RadarDistanceJam=20;
-                    minwaterdepth=30;
-                    noshadow=1;
-                    waterline=5;
+        minwaterdepth=30;
+        noshadow=1;
+        waterline=10;
 	}

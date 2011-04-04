@@ -43,6 +43,10 @@
 	canguard=1;
 	MetalMake=1.2;
 	MinWaterDepth=45;
-        waterline=35;
+        waterline=55;
         noshadow=1;
+	collisionVolumeType=Ell;
+	collisionVolumeScales=129 59 132;
+	collisionVolumeOffsets=0 0 0;
+	collisionVolumeTest=0;
 	}

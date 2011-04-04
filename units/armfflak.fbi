@@ -40,7 +40,7 @@
   standingfireorder=2;
   TEDClass=WATER;
   turnRate=0;
-  waterline=0;
+  waterline=4;
   badTargetCategory=NOTAIR;
   workerTime=0;
   wpri_badtargetcategory=NOTAIR;

@@ -38,7 +38,7 @@
   soundcategory=ARM_UWFUSION;
   TEDClass=ENERGY;
   turnRate=0;
-  Waterline=10;
+  waterline=20;
   workerTime=0;
   yardMap=wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww;
 }

@@ -65,4 +65,8 @@
 	onlytargetcategory2=NOTAIR;
 	onlytargetcategory3=NOTAIR;
 	collide=0;
+	collisionVolumeType=Ell;
+	collisionVolumeScales=80 13 76;
+	collisionVolumeOffsets=0 -13 -3;
+	collisionVolumeTest=0;
 }

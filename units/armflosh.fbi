@@ -35,7 +35,7 @@
 	selfdestructas=CRAWL_BLAST;
 	minwaterdepth=5;
 	floater=1;
-	waterline=1;
+	waterline=2;
 	smoothanim=1;
 	buildpic=armflosh.png;
 	icontype=building;

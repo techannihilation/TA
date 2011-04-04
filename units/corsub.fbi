@@ -52,7 +52,7 @@
   TEDClass=SHIP;
   turnRate=246;
   upright=1;
-  waterline=15;
+  waterline=25;
   badTargetCategory=HOVER NOTSHIP;
   workerTime=0;
   wpri_badtargetcategory=HOVER NOTSHIP;
@@ -60,5 +60,9 @@
   weapon1=ARM_TORPEDO;
   maxAngleDif1=90;
   weaponMainDir1=0 0 1;
+  collisionVolumeType=Ell;
+  collisionVolumeScales=30 10 60;
+  collisionVolumeOffsets=0 0 0;
+  collisionVolumeTest=0;
 }
 

@@ -39,7 +39,7 @@
   TEDClass=WATER;
   tidalGenerator=1;
   turnRate=0;
-  waterline=10;
+  waterline=13;
   workerTime=0;
   yardMap=wwwwwwwwwwwwwwww;
 }

@@ -54,7 +54,7 @@
   steeringmode=1;
   TEDClass=SHIP;
   turnRate=272;
-  waterline=5;
+  waterline=8;
 
   weapon1=SEADRAGPRIME;
   onlyTargetCategory1=NOTAIR;

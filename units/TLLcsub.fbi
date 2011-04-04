@@ -61,7 +61,11 @@
 	MovementClass=dBOAT3;
 	MinWaterDepth=20;
 	SonarDistance=200;
-	WaterLine=20;
+	waterline=30;
 	MetalMake=0.4;
 	Upright=1;
+	collisionVolumeType=Ell;
+	collisionVolumeScales=21 21 51;
+	collisionVolumeOffsets=0 0 0;
+	collisionVolumeTest=0;
 	}

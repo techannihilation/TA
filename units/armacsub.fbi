@@ -50,7 +50,11 @@
   TEDClass=SHIP;
   terraformSpeed=900;
   turnRate=382;
-  waterline=25;
+  waterline=35;
   workerTime=1300;
+  collisionVolumeType=Ell;
+  collisionVolumeScales=49 19 69;
+  collisionVolumeOffsets=0 0 0;
+  collisionVolumeTest=0;
 }
 

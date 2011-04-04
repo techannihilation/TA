@@ -52,7 +52,7 @@
 	BadTargetCategory=VTOL;
 	NoChaseCategory=VTOL;
 	Floater=1;
-        waterline=28;
+        waterline=38;
         CloakCost=100;
         init_cloaked=1;
         MinicloakDistance=130;
@@ -60,4 +60,8 @@
         RadarDistanceJam=100;
         CloakCostMoving=180;
 	cantbetransported=1;
+	collisionVolumeType=Ell;
+	collisionVolumeScales=57 37 107;
+	collisionVolumeOffsets=0 -20 0;
+	collisionVolumeTest=0;
 	}

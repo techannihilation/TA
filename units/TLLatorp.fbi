@@ -47,7 +47,7 @@
 	DefaultMissionType=GUARD_NOMOVE;
 	MinWaterDepth=5;
 	SonarDistance=750;
-	WaterLine=1;
+	waterline=11;
 	buildangle=16384;
 	canattack=1;
 	Weapon1=TLL_ADVTORPEDO;
