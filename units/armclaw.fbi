@@ -59,5 +59,10 @@
 
   weapon1=DCLAW;
   onlyTargetCategory1=NOTAIR;
+  buildingGroundDecalDecaySpeed=30;
+  buildingGroundDecalSizeX=4;
+  buildingGroundDecalSizeY=4;
+  useBuildingGroundDecal=1;
+  buildingGroundDecalType=armclaw_aoplane.dds;
 }
 

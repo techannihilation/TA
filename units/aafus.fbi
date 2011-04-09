@@ -46,7 +46,11 @@
   collisionVolumeScales=118 78 76;
   collisionVolumeOffsets=0 0 0;
   collisionVolumeTest = 1;
-
+  buildingGroundDecalDecaySpeed=30;
+  buildingGroundDecalSizeX=8;
+  buildingGroundDecalSizeY=8;
+  useBuildingGroundDecal=1;
+  buildingGroundDecalType=aafus_aoplane.dds;
 
 }
 

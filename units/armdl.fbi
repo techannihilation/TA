@@ -50,5 +50,11 @@
   yardMap=oooo;
 
   weapon1=COAX_DEPTHCHARGE;
+
+  buildingGroundDecalDecaySpeed=30;
+  buildingGroundDecalSizeX=4;
+  buildingGroundDecalSizeY=4;
+  useBuildingGroundDecal=1;
+  buildingGroundDecalType=armdl_aoplane.dds;
 }
 

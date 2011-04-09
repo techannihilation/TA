@@ -45,11 +45,16 @@
 	canpatrol=1;
 	mobilestandorders=1;
 	standingmoveorder=1;
-	usebuildinggrounddecal=1;
-	buildinggrounddecaltype=asphalt512.dds;
-	buildinggrounddecalsizex=9;
-	buildinggrounddecalsizey=7;
-	buildinggrounddecaldecayspeed=0.01;
+	buildingGroundDecalDecaySpeed=0.01;
+	buildingGroundDecalSizeX=9;
+	buildingGroundDecalSizeY=7;
+	buildingGroundDecalType=asphalt512.dds;
+	useBuildingGroundDecal=1;
+	buildingGroundDecalDecaySpeed=30;
+	buildingGroundDecalSizeX=9;
+	buildingGroundDecalSizeY=7;
+	useBuildingGroundDecal=1;
+	buildingGroundDecalType=armaap_aoplane.dds;
 	[SFXTypes]
 	{
 	explosiongenerator0=custom:YellowLight;
