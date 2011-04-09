@@ -52,7 +52,7 @@
 	metalmake=1.9;
 	defaultmissiontype=Standby;
 	maneuverleashlength=640;
-	movementclass=TANKSH4;	
+	movementclass=TANK3;	
 	upright=1;
 	ovradjust=1;
 }

@@ -55,7 +55,7 @@
 	EnergyMake=0.1;
 	DefaultMissionType=Standby;
 	maneuverleashlength=640;
-	MovementClass=SPID1;
+	MovementClass=ADT;
 	kamikaze=1;
 	kamikazedistance=80;
 	selfdestructcountdown=0;

@@ -42,7 +42,7 @@
 	canattack=1;
 	canguard=1;
 	Weapon1=SPRAY_LIGHTNING;
-	wpri_badTargetCategory=CTRL_V;
+	wpri_badTargetCategory=VTOL;
 	BadTargetCategory=NOWEAPON;
 	ONLYTARGETCATEGORY1=NOTAIR;
 	NoChaseCategory=NOTAIR;

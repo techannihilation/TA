@@ -58,7 +58,7 @@
 	CantBeTransported=1;
 	DefaultMissionType=Standby;
 	ManeuverLeashLength=640;
-	MovementClass=TANKSH2;
+	MovementClass=TANK2;
 	Weapon1=PLUTON_GUN;
 	Weapon2=GATOR_LASER;
 	Weapon3=GATOR_LASER;
