@@ -160,6 +160,13 @@ local moveDatas = {
 		maxwaterslope = 30,
 	},
 	-- Subs
+	UBOAT2 = {
+		footprintx = 2,
+		footprintz = 2,
+		minwaterdepth = 30,
+		crushstrength = 5,
+		subMarine = 1,
+	},
 	UBOAT3 = {
 		footprintx = 3,
 		footprintz = 3,
