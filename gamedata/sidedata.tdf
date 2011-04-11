@@ -1,4 +1,4 @@
-[SIDE0]
+        [SIDE0]
 {
 	name=ARM;
 	commander=ARMCOM;
@@ -2342,7 +2342,7 @@
 		canbuild2=tllgeo;
 		canbuild3=tlluwmex;
 		canbuild4=tllwmconv;
-		canbuild5=tlltower;
+	//	canbuild5=tlltower;
 		canbuild7=TLLUWMSTORAGE;
 		canbuild8=TLLUWESTORAGE;
 		canbuild9=tllsy;
@@ -2563,5 +2563,29 @@
 		canbuild12=TLLLMTNS;
 		canbuild13=tllnssam;
 		canbuild14=tllatorp;
+	}
+[TLLCSUB]
+	{
+		canbuild0=tlltide;
+		canbuild1=tllatidal;
+		canbuild2=tllgeo;
+		canbuild3=tlluwmex;
+		canbuild4=tllwmconv;
+	//	canbuild5=tlltower;
+		canbuild7=TLLUWMSTORAGE;
+		canbuild8=TLLUWESTORAGE;
+		canbuild9=tllsy;
+		canbuild10=tllasy;
+		canbuild11=tllhpns;
+		canbuild12=tllsubpen;
+		canbuild13=tllsonar;
+		canbuild14=tlldtns;
+		canbuild15=TLLDCSTA;
+		canbuild16=TLLLMTNS;
+		canbuild17=tllnssam;
+		canbuild18=tllhltns;
+		canbuild19=tlltorp;
+		canbuild20=TLLplat;
+		canbuild21=TLLsolarns;
 	}
 }
