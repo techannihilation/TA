@@ -55,12 +55,21 @@ local unitDef = {
   yardMap            = [[wwwCCCCC wwwCCCCC wwwCCCCC wwwCCCCC wwwCCCCC wwwCCCCC wwwCCCCC wwwCCCCC]],
   zbuffer            = 1,
   buildoptions = {
+    [[tllcsub]],
+    [[tllplunger]],
+    [[tllmanta]],
+    [[tllorc]],
+    [[tllwhale]],
+    [[tllsquid]],
+    [[tllshark]],
     [[tllarchnano]],
     [[tllamphibot]],
     [[tllsalamander]],
     [[tllfirestarter]],
     [[tllaak]],
-    [[tllplunger]],
+
+
+
   },
   sounds = {
     build              = [[pshpwork]],
