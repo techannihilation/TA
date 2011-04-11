@@ -63,6 +63,7 @@ local unitDef = {
     [[tllhoverrocket]],
     [[tllhovermissile]],
     [[tllhovergauss]],
+    [[tllsalamander]],
   },
   sounds = {
     build              = [[hoverok2]],
