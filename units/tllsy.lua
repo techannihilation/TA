@@ -58,7 +58,6 @@ local unitDef = {
   zbuffer            = 1,
   buildoptions = {
     [[tllcs]],
-    [[tllplunger]],
     [[tllotter]],
     [[tllboat2]],
     [[tllviolator]],
