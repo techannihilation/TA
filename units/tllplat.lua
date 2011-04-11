@@ -66,6 +66,8 @@ local unitDef = {
     [[tllseaf]],
     [[tllsonpl]],
     [[tllseab]],
+    [[tlltorpcop]],
+
   },
   sounds = {
     build              = [[seaplok1]],
