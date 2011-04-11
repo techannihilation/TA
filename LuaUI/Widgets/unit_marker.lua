@@ -89,6 +89,17 @@ unitList["TA"]["armbanth1"] = { markerText = "Holy Shit!" }
 unitList["TA"]["corkrog1"] = { markerText = "Holy Shit!" }
 unitList["TA"]["cdevastator"] = { markerText = "Holy Shit!" }
 unitList["TA"]["abroadside"] = { markerText = "Holy Shit!" }
+
+unitList["TA"]["tllantinuke"] = { markerText = "Anti Nuke" }
+unitList["TA"]["tllrlrpc"] = { markerText = "The Barret" }
+unitList["TA"]["tlllrpt"] = { markerText = "LR Plasma" }
+unitList["TA"]["tllhtlrpc"] = { markerText = "LR Plasma" }
+unitList["TA"]["tllobliterator"] = { markerText = "Obliterator" }
+unitList["TA"]["tllsilo"] = { markerText = "Nuke" }
+
+tllhtlrpc
+
+
 --END OF MARKER LIST---------------------------------------
 
 local markerTimePerId = 0.2 --400ms
