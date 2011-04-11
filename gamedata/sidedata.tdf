@@ -2553,7 +2553,6 @@
 	{
 		canbuild1=tlluwfusion;
 		canbuild4=tllauwmex;
-		canbuild6=tllemstor;
 		canbuild8=tllplat;
 		canbuild9=tllsy;
 		canbuild10=tllasy;
@@ -2587,5 +2586,18 @@
 		canbuild19=tlltorp;
 		canbuild20=TLLplat;
 		canbuild21=TLLsolarns;
+	}
+[tllacs]
+	{
+		canbuild1=tlluwfusion;
+		canbuild4=tllauwmex;
+		canbuild8=tllplat;
+		canbuild9=tllsy;
+		canbuild10=tllasy;
+       		canbuild12=tllasonar;
+		canbuild13=tlluwjam;
+		canbuild12=TLLLMTNS;
+		canbuild13=tllnssam;
+		canbuild14=tllatorp;
 	}
 }
