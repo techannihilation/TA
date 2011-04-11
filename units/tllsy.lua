@@ -63,7 +63,6 @@ local unitDef = {
     [[tllboat2]],
     [[tllviolator]],
     [[tllambassador]],
-    [[tlltorpcop]],
   },
   sounds = {
     build              = [[pshpwork]],
