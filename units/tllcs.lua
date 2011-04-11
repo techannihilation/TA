@@ -69,7 +69,6 @@ local unitDef = {
   buildoptions = {
     [[tlltide]],
     [[tllatidal]],
-    [[tllgeo]],
     [[tlluwmex]],
     [[tllwmconv]],
     [[tlluwmstorage]],
