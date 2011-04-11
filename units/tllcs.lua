@@ -72,7 +72,6 @@ local unitDef = {
     [[tllgeo]],
     [[tlluwmex]],
     [[tllwmconv]],
-    [[tlltower]],
     [[tlluwmstorage]],
     [[tlluwestorage]],
     [[tllsy]],

@@ -62,6 +62,17 @@ local unitDef = {
   waterline          = 2,
   workerTime         = 550,
   zbuffer            = 1,
+   buildoptions = {
+    [[tlluwfusion]],
+    [[tllauwmex]],
+    [[tllplat]],
+    [[tllsy]],
+    [[tllasy]],
+    [[tllsubpen]],
+    [[tlllmtns]],
+    [[tllnssam]],
+    [[tllatorp]],
+  },
   sounds = {
     build              = [[nanlath1]],
     canceldestruct     = [[cancel2]],

@@ -57,6 +57,7 @@ local unitDef = {
   yardMap            = [[wCCCCCCw wCCCCCCw wCCCCCCw wCCCCCCw wCCCCCCw wCCCCCCw wCCCCCCw wCCCCCCw]],
   zbuffer            = 1,
   buildoptions = {
+    [[tllacs]],
     [[tllacsub]],
     [[tllcsub]],
     [[tllmanta]],

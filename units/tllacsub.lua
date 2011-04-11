@@ -71,7 +71,6 @@ local unitDef = {
   buildoptions = {
     [[tlluwfusion]],
     [[tllauwmex]],
-    [[tllemstor]],
     [[tllplat]],
     [[tllsy]],
     [[tllasy]],
