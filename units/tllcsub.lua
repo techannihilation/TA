@@ -67,6 +67,7 @@ local unitDef = {
   unitname           = [[tllcsub]],
   unitnumber         = 887,
   upright            = true,
+  /cheat
   version            = 3.1,
   waterline          = 30,
   workerTime         = 130,
