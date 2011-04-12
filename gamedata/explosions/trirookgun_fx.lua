@@ -1,0 +1,70 @@
+-- trirookgun_fx
+
+return {
+  ["trirookgun_fx"] = {
+    groundflash = {
+      air                = true,
+      circlealpha        = 0.2,
+      circlegrowth       = 3,
+      flashalpha         = 0.9,
+      flashsize          = 20,
+      ground             = true,
+      ttl                = 40,
+      water              = true,
+      color = {
+        [1]  = 0,
+        [2]  = 0.5,
+        [3]  = 1,
+      },
+    },
+    heatcloud_trirookgun_fx_main = {
+      air                = true,
+      class              = [[heatcloud]],
+      count              = 5,
+      ground             = true,
+      water              = true,
+      properties = {
+        heat               = 20,
+        heatfalloff        = 1,
+        maxheat            = 20,
+        pos                = [[7 r-14, 5.5, 7 r-14]],
+        size               = 10,
+        sizegrowth         = -0.5,
+        sizemod            = 0,
+        sizemodmod         = 0,
+        speed              = [[0, -0.275, 0]],
+        texture            = [[LightningStrike]],
+      },
+    },
+    particlesystem_trirookgun_fx01 = {
+      air                = true,
+      class              = [[CSimpleParticleSystem]],
+      count              = 1,
+      ground             = true,
+      water              = true,
+      properties = {
+        airdrag            = 1.0,
+        colormap           = [[1.0 1.0 1.0 0.1      0.5 0.75 1.0 0.1      0.0 0.5 1.0 0.1      0.0 1.0 1.0 0.1      1.0 1.0 0.0 0.1      0.5 0.1 0.0 0.1]],
+        directional        = true,
+        emitrot            = 0,
+        emitrotspread      = 180,
+        emitvector         = [[0, 1, 0]],
+        gravity            = [[0, -0.2, 0]],
+        numparticles       = 45,
+        particlelife       = 60,
+        particlelifespread = 10,
+        particlesize       = 2,
+        particlesizespread = 1,
+        particlespeed      = 3,
+        particlespeedspread = 1,
+        pos                = [[0, 1.0, 0]],
+        sizegrowth         = -0.02,
+        sizemod            = 1.0,
+        texture            = [[LightningStrike_Alpha]],
+        useairlos          = true,
+      },
+    },
+  },
+
+}
+

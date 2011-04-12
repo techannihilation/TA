@@ -1,0 +1,161 @@
+-- UNITDEF -- TLLCS --
+--------------------------------------------------------------------------------
+
+local unitName = "tllcs"
+
+--------------------------------------------------------------------------------
+
+local unitDef = {
+  acceleration       = 0.0085,
+  bmcode             = 1,
+  brakeRate          = 0.038,
+  buildCostEnergy    = 2455,
+  buildCostMetal     = 275,
+  buildDistance      = 265,
+  builder            = true,
+  buildTime          = 5818,
+  canGuard           = true,
+  canMove            = true,
+  canPatrol          = true,
+  canreclamate       = 1,
+  canstop            = 1,
+  category           = [[TLL LEVEL1 NOWEAPON NOTAIR NOTSTRUCTURE CONSTR CTRL_B]],
+  copyright          = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
+  corpse             = [[dead]],
+  defaultmissiontype = [[Standby]],
+  description        = [[Tech Level 1]],
+  designation        = [[]],
+  energyMake         = 8,
+  energyStorage      = 50,
+  energyUse          = 0.1,
+  explodeAs          = [[SMALL_UNITEX]],
+  floater            = true,
+  footprintX         = 4,
+  footprintZ         = 4,
+  frenchdescription  = [[Niveau Tech 1]],
+  frenchname         = [[Navire de construction]],
+  germandescription  = [[Tech Level 1]],
+  germanname         = [[Konstr.-Schiff]],
+  italiandescription = [[Tecnologia Livello 1]],
+  italianname        = [[Nave Costruttrice]],
+  maneuverleashlength = 640,
+  maxDamage          = 1145,
+  maxVelocity        = 2.15,
+  metalMake          = 0.35,
+  metalStorage       = 50,
+  minWaterDepth      = 20,
+  mobilestandorders  = 1,
+  movementClass      = [[BOAT4]],
+  name               = [[Construction Ship]],
+  noAutoFire         = false,
+  objectName         = [[TLLCS]],
+  selfDestructAs     = [[SMALL_UNIT]],
+  shootme            = 1,
+  side               = [[TLL]],
+  sightDistance      = 225,
+  spanishdescription = [[Nivel Tecn. 1]],
+  spanishname        = [[Buque de Constr.]],
+  standingmoveorder  = 1,
+  steeringmode       = 1,
+  TEDClass           = [[SHIP]],
+  threed             = 1,
+  turnRate           = 321,
+  unitname           = [[tllcs]],
+  unitnumber         = 852,
+  version            = 3.1,
+  waterline          = 4,
+  workerTime         = 300,
+  zbuffer            = 1,
+  buildoptions = {
+    [[tlltide]],
+    [[tllatidal]],
+    [[tlluwmex]],
+    [[tllwmconv]],
+    [[tlluwmstorage]],
+    [[tlluwestorage]],
+    [[tllsy]],
+    [[tllasy]],
+    [[tllhpns]],
+    [[tllsubpen]],
+    [[tllsonar]],
+    [[tlldtns]],
+    [[tlldcsta]],
+    [[tlllmtns]],
+    [[tllnssam]],
+    [[tllhltns]],
+    [[tlltorp]],
+    [[tllplat]],
+    [[tllsolarns]],
+  },
+  sounds = {
+    build              = [[nanlath1]],
+    canceldestruct     = [[cancel2]],
+    repair             = [[repair1]],
+    underattack        = [[warning1]],
+    working            = [[reclaim1]],
+    cant = {
+      [[cantdo4]],
+    },
+    count = {
+      [[count6]],
+      [[count5]],
+      [[count4]],
+      [[count3]],
+      [[count2]],
+      [[count1]],
+    },
+    ok = {
+      [[sharmmov]],
+    },
+    select = {
+      [[sharmsel]],
+    },
+  },
+}
+
+
+--------------------------------------------------------------------------------
+
+local featureDefs = {
+  dead = {
+    blocking           = false,
+    category           = [[tll_corpses]],
+    damage             = 911,
+    description        = [[Wreckage]],
+    featureDead        = [[heap]],
+    featurereclamate   = [[smudge01]],
+    footprintX         = 4,
+    footprintZ         = 4,
+    height             = 4,
+    hitdensity         = 100,
+    metal              = 182,
+    object             = [[TLLCS_dead]],
+    reclaimable        = true,
+    seqnamereclamate   = [[tree1reclamate]],
+    world              = [[All Worlds]],
+  },
+  heap = {
+    blocking           = false,
+    category           = [[heaps]],
+    damage             = 757,
+    description        = [[Wreckage]],
+    featurereclamate   = [[smudge01]],
+    footprintX         = 4,
+    footprintZ         = 4,
+    height             = 4,
+    hitdensity         = 80,
+    metal              = 102,
+    object             = [[4x4D]],
+    reclaimable        = true,
+    seqnamereclamate   = [[tree1reclamate]],
+    world              = [[All Worlds]],
+  },
+}
+unitDef.featureDefs = featureDefs
+
+
+--------------------------------------------------------------------------------
+
+return lowerkeys({ [unitName] = unitDef })
+
+--------------------------------------------------------------------------------
