@@ -73,6 +73,7 @@ local unitDef = {
     [[tllwmconv]],
     [[tlluwmstorage]],
     [[tlluwestorage]],
+    [[tllhevsenan]],
     [[tllsy]],
     [[tllasy]],
     [[tllhpns]],

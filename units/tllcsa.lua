@@ -76,6 +76,7 @@ local unitDef = {
     [[tllauwmex]],
     [[tllaspns]],
     [[tllnanotc]],
+    [[tllhevsenan]],
     [[tllap]],
     [[tllaap]],
     [[tllplat]],
