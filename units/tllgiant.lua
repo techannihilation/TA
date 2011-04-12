@@ -23,7 +23,7 @@ local unitDef = {
   copyright          = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
   corpse             = [[dead]],
   defaultmissiontype = [[Standby]],
-  description        = [[Light Carrier]],
+  description        = [[Aircraft Carrier with Anti-Nuke]],
   designation        = [[]],
   energyMake         = 410,
   energyUse          = 42,
@@ -51,7 +51,9 @@ local unitDef = {
   side               = [[TLL]],
   sightDistance      = 350,
   spanishdescription = [[Transporte ligero]],
-  standingmoveorder  = 0,
+  sonarDistance      = 760,
+  standingfireorder  = 2,
+  standingmoveorder  = 1,
   steeringmode       = 1,
   TEDClass           = [[SHIP]],
   threed             = 1,
@@ -83,8 +85,64 @@ local unitDef = {
       [[sharmsel]],
     },
   },
+  weapons = {
+    [1]  = {
+      badTargetCategory  = [[NOTAIR]],
+      def                = [[TLL_ROCKET]],
+    },
+  },
 }
 
+--------------------------------------------------------------------------------
+
+local weaponDefs = {
+  TLL_ROCKET = {
+    areaOfEffect       = 420,
+    avoidFriendly      = false,
+    collideFriendly    = false,
+    coverage           = 2000,
+    craterBoost        = 0,
+    craterMult         = 0,
+    energypershot      = 7500,
+    explosionGenerator = [[custom:FLASH4]],
+    fireStarter        = 100,
+    flightTime         = 120,
+    guidance           = true,
+    impulseBoost       = 0.123,
+    impulseFactor      = 0.123,
+    interceptor        = 1,
+    lineOfSight        = true,
+    metalpershot       = 150,
+    model              = [[amdrocket]],
+    name               = [[Rocket]],
+    noautorange        = 1,
+    noSelfDamage       = true,
+    range              = 72000,
+    reloadtime         = 2,
+    renderType         = 1,
+    selfprop           = true,
+    smokedelay         = 0.1,
+    smokeTrail         = true,
+    soundHit           = [[xplomed4]],
+    soundStart         = [[Rockhvy1]],
+    startsmoke         = 1,
+    stockpile          = true,
+    stockpiletime      = 90,
+    tolerance          = 4000,
+    tracks             = true,
+    turnRate           = 99000,
+    twoPhase           = true,
+    vlaunch            = true,
+    weaponAcceleration = 75,
+    weaponTimer        = 5,
+    weaponType         = [[StarburstLauncher]],
+    weaponVelocity     = 3000,
+    damage = {
+      default            = 1500,
+    },
+  },
+}
+unitDef.weaponDefs = weaponDefs
 
 --------------------------------------------------------------------------------
 

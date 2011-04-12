@@ -2361,6 +2361,7 @@
 	}
 	[TLLASY]
 	{
+		canbuild1=tllacs;
 		canbuild2=tllacsub;
 		canbuild3=tllcsub;
 		canbuild4=tllmanta;

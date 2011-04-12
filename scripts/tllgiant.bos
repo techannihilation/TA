@@ -1,86 +1,160 @@
+#define TA			// This is a TA script
 
-piece base,body,wake1,wake2,wake3,pad1,pad2,radar,nano;
-
-static-var pad;
-
-#define SIG_WAKE 2
-
-#define SMOKEPIECE1 pad1
-#define SMOKEPIECE2 pad2
-#define SMOKEPIECE3 radar
-
-#include "smokeunit.h"
+#include "sfxtype.h"
 #include "exptype.h"
-#include "SFXtype.h"
+
+piece  base, body, wake1, wake2, wake3, pad1, pad2, radar ,anti,
+       nano;
+
+static-var  Static_Var_1;
+
+// Signal definitions
+#define SIG_MOVE			2
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	var Func_Var_4;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			Func_Var_4 = Rand( 1, 3 );
+			if( Func_Var_4 == 1 )
+			{
+				emit-sfx smoketype from pad1;
+			}
+			if( Func_Var_4 == 2 )
+			{
+				emit-sfx smoketype from pad2;
+			}
+			if( Func_Var_4 == 3 )
+			{
+				emit-sfx smoketype from radar;
+			}
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
 
 Create()
-{ pad=0;
-  start-script SmokeUnit();
-   while(get BUILD_PERCENT_LEFT)
-		{
+{
+	Static_Var_1 = 0;
+	start-script SmokeUnit();
+	while( get BUILD_PERCENT_LEFT )
+	{
 		sleep 1000;
-		}
-   spin radar around y-axis speed <60>;
- }
+	}
+	spin radar around y-axis speed <60.000000>;
+}
 
 StartMoving()
-{ signal SIG_WAKE;
-  set-signal-mask SIG_WAKE;
-  while (TRUE)
-   { emit-sfx SFXTYPE_WAKE1 from wake1;
-     emit-sfx SFXTYPE_WAKE1 from wake2;
-     emit-sfx SFXTYPE_WAKE1 from wake3;
-     sleep 300;
-    }
- }
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	while( TRUE )
+	{
+		emit-sfx 2 from wake1;
+		emit-sfx 2 from wake2;
+		emit-sfx 2 from wake3;
+		sleep 300;
+	}
+}
 
 StopMoving()
-{ signal SIG_WAKE;
- }
+{
+	signal SIG_MOVE;
+}
 
 Activate()
-{ spin radar around y-axis speed <60> accelerate <1>;
-   dont-cache pad1;
-   dont-cache pad2;
-   dont-cache radar;
- }
+{
+	spin radar around y-axis speed <60.000000> accelerate <1.000000>;
+	dont-cache pad1;
+	dont-cache pad2;
+	dont-cache radar;
+}
 
 Deactivate()
-{ stop-spin radar around y-axis decelerate <1>;
-   cache pad1;
-   cache pad2;
-   cache radar;
- }
+{
+	stop-spin radar around y-axis decelerate <1.000000>;
+	cache pad1;
+	cache pad2;
+	cache radar;
+}
 
-QueryLandingPad(piece1,piece2)
-{ pad = !pad;
-  if (pad)
-   { 
-	piece1=pad2; 
-	piece2=pad1; 
-	return 0; 
-   }
-  piece1=pad1; 
-  piece2=pad2;
- }
+QueryLandingPad(Func_Var_1, Func_Var_2)
+{
+	Static_Var_1 = !Static_Var_1;
+	if( Static_Var_1 )
+	{
+		Func_Var_1 = 6;
+		Func_Var_2 = 5;
+		return (0);
+	}
+	Func_Var_1 = 5;
+	Func_Var_2 = 6;
+}
 
 SweetSpot(piecenum)
-{ piecenum=base;
- }
+{
+	piecenum = base;
+}
 
-Killed( severity, corpsetype )
-{ explode body type BITMAPONLY | BITMAP5;
-  explode pad1 type BITMAPONLY | BITMAP4;
-  explode radar type BITMAPONLY | BITMAP3;
-  explode wake1 type BITMAPONLY | BITMAP3;
-  explode wake2 type BITMAPONLY | BITMAP3;
-  explode pad1 type BITMAPONLY | BITMAP3;
-  if (severity <= 25)
-   { corpsetype = 1; return( 0 ); }
-  explode radar type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-  explode radar type SHATTER | EXPLODE_ON_HIT | BITMAP1;
-  if (severity <= 50)
-   { corpsetype = 2; return( 0 ); }
-  corpsetype = 3;
-  explode body type SHATTER | EXPLODE_ON_HIT | BITMAP1;
- }
+AimPrimary(heading, pitch)
+{
+	return (1);
+}
+
+FirePrimary()
+{
+	sleep 150;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = anti;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = anti;
+}
+
+Killed(severity, corpsetype)
+{
+	explode body type BITMAPONLY | BITMAP5;
+	explode pad1 type BITMAPONLY | BITMAP4;
+	explode radar type BITMAPONLY | BITMAP3;
+	explode wake1 type BITMAPONLY | BITMAP3;
+	explode wake2 type BITMAPONLY | BITMAP3;
+	explode pad1 type BITMAPONLY | BITMAP3;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		return (0);
+	}
+	explode radar type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
+	explode radar type SHATTER | EXPLODE_ON_HIT | BITMAP1;
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		return (0);
+	}
+	corpsetype = 3;
+	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP1;
+}
