@@ -56,6 +56,7 @@ local unitDef = {
   zbuffer            = 1,
   buildoptions = {
     [[tllcsub]],
+    [[tllacsub]],
     [[tllplunger]],
     [[tllmanta]],
     [[tllorc]],
