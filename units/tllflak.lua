@@ -30,6 +30,7 @@ local unitDef = {
   frenchname         = [[Chandelier]],
   germandescription  = [[Flak]],
   italiandescription = [[Cannone per bersagli aerei]],
+  iconType           = [[building]],
   maxDamage          = 5699,
   maxSlope           = 10,
   maxWaterDepth      = 0,

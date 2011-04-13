@@ -29,6 +29,7 @@ local unitDef = {
   germanname         = [[Energiespeicher]],
   italiandescription = [[Aumenta l'immagazzinamento di energia]],
   italianname        = [[Deposito Energetico]],
+  iconType           = [[building]],
   maxDamage          = 1900,
   maxSlope           = 10,
   maxWaterDepth      = 0,
