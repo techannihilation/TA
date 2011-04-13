@@ -26,6 +26,7 @@ local unitDef = {
   firestandorders    = 1,
   footprintX         = 6,
   footprintZ         = 6,
+  iconType           = [[building]],
   frenchdescription  = [[Niveau Tech 1]],
   frenchname         = [[Labo de Kbots ]],
   germandescription  = [[Tech Level 1]],

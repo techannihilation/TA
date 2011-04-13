@@ -27,6 +27,7 @@ local unitDef = {
   firestandorders    = 1,
   footprintX         = 10,
   footprintZ         = 10,
+  iconType           = [[building]],
   maxDamage          = 12575,
   maxSlope           = 10,
   maxWaterDepth      = 0,

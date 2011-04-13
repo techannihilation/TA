@@ -33,6 +33,7 @@ local unitDef = {
   germanname         = [[Flugzeugfabrik]],
   italiandescription = [[Produce velivoli]],
   italianname        = [[Fabbrica Aerei]],
+  iconType           = [[building]],
   maxDamage          = 1920,
   maxSlope           = 10,
   maxWaterDepth      = 0,

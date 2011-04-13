@@ -26,6 +26,7 @@ local unitDef = {
   firestandorders    = 1,
   footprintX         = 8,
   footprintZ         = 7,
+  iconType           = [[building]],
   frenchdescription  = [[Niveau Tech 2]],
   frenchname         = [[Usine de véhicules évoluée]],
   germandescription  = [[Tech Level 2]],

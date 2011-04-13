@@ -26,6 +26,7 @@ local unitDef = {
   firestandorders    = 1,
   footprintX         = 7,
   footprintZ         = 7,
+  iconType           = [[building]],
   frenchdescription  = [[Usine aéro avancée]],
   germandescription  = [[Verb.Flugzeugfabrik]],
   maxDamage          = 3250,

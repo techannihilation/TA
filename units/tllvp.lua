@@ -32,6 +32,7 @@ local unitDef = {
   germanname         = [[Fahrzeugfabrik]],
   italiandescription = [[Produce veicoli]],
   italianname        = [[Fabbrica Veicoli]],
+  iconType           = [[building]],
   maxDamage          = 2818,
   maxSlope           = 10,
   maxWaterDepth      = 0,
