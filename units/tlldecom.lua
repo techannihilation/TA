@@ -45,6 +45,7 @@ local unitDef = {
   idleAutoHeal       = 5,
   idleTime           = 1800,
   immunetoparalyzer  = 1,
+  iconType           = [[armcommander]],
   maneuverleashlength = 640,
   mass               = 5000,
   maxDamage          = 3000,
