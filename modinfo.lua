@@ -3,11 +3,9 @@ return {
   description='The New Generation Of War',
   shortname='TA',
   version='v2.05-beta',
-  mutator='Official',
-  game='Total Annihilation',
-  shortGame='TA',
+  mutator='',
+  game='',
+  shortGame='',
   modtype=1,
- depend = {
-    'Balanced Annihilation V7.31',
+  depend ='Balanced Annihilation V7.31',
   }
-}
