@@ -14,6 +14,7 @@ local unitDef = {
   buildCostMetal     = 323,
   builder            = false,
   buildTime          = 13408,
+  canAttack          = false,
   canGuard           = true,
   canMove            = true,
   canPatrol          = true,
