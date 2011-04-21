@@ -2,7 +2,7 @@ return {
   name='Tech Annihilation',
   description='The New Generation Of War',
   shortname='TA',
-  version='v2.07',
+  version='v2.05',
   mutator='',
   game='',
   shortGame='',

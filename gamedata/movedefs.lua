@@ -9,6 +9,15 @@ local moveDatas = {
 		maxwaterdepth = 5000,
 		maxwaterslope = 50,
 	},
+	AKBOT3 = {
+		crushstrength = 50,
+		depthmod = 0,
+		footprintx = 3,
+		footprintz = 3,
+		maxslope = 36,
+		maxwaterdepth = 5000,
+		maxwaterslope = 50,
+	},
 	ATANK3 = {
 		crushstrength = 30,
 		depthmod = 0,
