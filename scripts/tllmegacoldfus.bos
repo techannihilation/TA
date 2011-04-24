@@ -1,0 +1,71 @@
+#define TA			// This is a TA script
+
+piece  base, body, ring, globetop, rblink0, rblink1, rblink2;
+#define SMOKEPIECE1 	ring
+#include "smokeunit.h"
+#include "sfxtype.h"
+#include "exptype.h"
+
+
+
+
+Create()
+{	
+
+	dont-cache ring;
+
+	while( get BUILD_PERCENT_LEFT )
+		{
+			sleep 1000;
+		}
+
+
+	START-SCRIPT SmokeUnit();
+
+	while( TRUE )
+	{
+		emit-sfx 1024 + 0 from rblink0;
+		emit-sfx 1024 + 0 from rblink1;
+		emit-sfx 1024 + 0 from rblink2;
+		sleep 7;
+	}
+	
+
+}
+
+Activate()
+{
+
+	Spin ring around y-axis speed <10>;
+	Spin globetop around y-axis speed <-10>;
+	
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode body type BITMAPONLY | BITMAP2;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode body type SHATTER | BITMAP2;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode body type BITMAPONLY | BITMAP2;
+		return (0);
+	}
+	corpsetype = 3;
+	explode body type BITMAPONLY | BITMAP2;
+}

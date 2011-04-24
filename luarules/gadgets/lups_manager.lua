@@ -109,6 +109,7 @@ local cfusionplantdefid = UnitDefNames["cfusionplant"].id
 local cpocketfusiondefid = UnitDefNames["cpocketfusion"].id
 local crnnsdefid = UnitDefNames["crnns"].id
 local tllcoldfusdefid = UnitDefNames["tllcoldfus"].id
+local tllmegacoldfusdefid = UnitDefNames["tllmegacoldfus"].id
 local armuwfus1defid = UnitDefNames["armuwfus1"].id
 
 
@@ -271,6 +272,7 @@ local function UnitCreated(_,unitID,unitDefID)
     (lups_luaui)and(crnnsdefid == unitDefID) or
     (lups_luaui)and(armuwfus1defid == unitDefID) or
     (lups_luaui)and(tllcoldfusdefid == unitDefID) or
+    (lups_luaui)and(tllmegacoldfusdefid == unitDefID) or
     (lups_luaui)and(cpocketfusiondefid == unitDefID) then
     Spring.UnitRendering.SetLODCount(unitID,1)
     Spring.UnitRendering.SetLODLength(unitID,1,1)

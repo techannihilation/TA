@@ -134,6 +134,8 @@
 			diamondstar=diamondstar.tga;
 			whitelight=lightw.bmp;
 			yellowlight=lighty.bmp;
+			redlight=lightr.png;
+
 
 			sporetrail=GPL/sporetrail.tga;
 			blooddrop=PD/blooddrop.tga;

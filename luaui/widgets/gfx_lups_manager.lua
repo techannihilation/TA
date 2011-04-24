@@ -108,6 +108,11 @@ local UnitEffects = {
     {class='ShieldSphere',options=tllcoldfusShieldSphere},
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,54.9,0}, size=15.9, precision=22, repeatEffect=true}},
 },
+ [UnitDefNames["tllmegacoldfus"].id] = {
+    {class='Bursts',options=tllmegacoldfusBursts},
+    {class='ShieldSphere',options=tllmegacoldfusShieldSphere},
+    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,90.9,0}, size=30.9, precision=22, repeatEffect=true}},
+},
  [UnitDefNames["crnns"].id] = {
     {class='Bursts',options=crnnsBursts},
     {class='ShieldSphere',options=crnnsShieldSphere},

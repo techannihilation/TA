@@ -166,6 +166,21 @@ tllcoldfusBursts = {
   repeatEffect = true,
   count      = 50,
 }
+ tllmegacoldfusBursts = {
+  life       = math.huge,
+  pos        = {0,90,0},
+  rotSpeed   = 0.5,
+  rotSpread  = 1,
+  arc        = 90,
+  arcSpread  = 0,
+  size       = 38,
+  sizeSpread = 10,
+  colormap   = { {0.5, 0.0, 0.0, 0.25} },
+  directional= true,
+  repeatEffect = true,
+  count      = 50,
+}
+  
 tllmedfusionBursts = {
   life       = math.huge,
   pos        = {-20,40,24},
@@ -293,6 +308,17 @@ tllcoldfusShieldSphere = {
   size=15,
   colormap1 = { {0.7, 0.7, 1, 0.75},{0.7, 0.7, 1, 1.0},{0.8, 0.7, 1, 1.0},{0.8, 0.7, 1, 0.75} },
   colormap2 = { {0.1, 0.1, 1, 0.7},{0.1, 0.1, 1, 0.75},{0.1, 0.1, 1, 0.75},{0.1, 0.1, 1, 0.7} },
+  repeatEffect=true
+
+}
+
+tllmegacoldfusShieldSphere = {
+  layer=-35,
+  life=20,
+  pos={0,90.9,0},
+  size=30,
+  colormap1 = { {1.0, 0.2, 0.2, 0.75},{1.0, 0.2, 0.3, 1.0},{1.0, 0.2, 0.2, 1.0},{1.0, 0.2, 0.3, 0.75} },
+  colormap2 = { {0.3, 0.0, 0.0, 0.3},{0.3, 0.0, 0.0, 0.45},{0.3, 0.0, 0.0, 0.45},{0.3, 0.0, 0.0, 0.4} },
   repeatEffect=true
 
 }

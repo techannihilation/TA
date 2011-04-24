@@ -595,9 +595,9 @@ flames()
    while (1)
     { t=300+rand(50,1000);
       sleep t;
-      emit-sfx SFXTYPE_VTOL from flare;
+ //    emit-sfx SFXTYPE_VTOL from flare;
       sleep 100;
-      emit-sfx SFXTYPE_VTOL from flare;
+ //     emit-sfx SFXTYPE_VTOL from flare;
      }
   }
 
@@ -623,22 +623,22 @@ StartMoving()
 	{
 		if( Static_Var_6 == 3 )
 		{
-			emit-sfx 256 | 3 from lfoot;
-			emit-sfx 256 | 3 from rfoot;
-			emit-sfx 256 | 3 from body;
+//			emit-sfx 256 | 3 from lfoot;
+//			emit-sfx 256 | 3 from rfoot;
+//			emit-sfx 256 | 3 from body;
 		}
 		if( Static_Var_6 == 2 )
 		{
-			emit-sfx 256 | 3 from lfoot;
-			emit-sfx 256 | 3 from rfoot;
-			emit-sfx 3 from lleg;
-			emit-sfx 3 from rleg;
-			emit-sfx 3 from body;
+//			emit-sfx 256 | 3 from lfoot;
+//			emit-sfx 256 | 3 from rfoot;
+//			emit-sfx 3 from lleg;
+//			emit-sfx 3 from rleg;
+//			emit-sfx 3 from body;
 		}
 		if( Static_Var_6 == 1 )
 		{
-			emit-sfx 3 from lfoot;
-			emit-sfx 3 from rfoot;
+//			emit-sfx 3 from lfoot;
+//			emit-sfx 3 from rfoot;
 		}
 		sleep 250;
 	}
@@ -650,10 +650,10 @@ StopMoving()
 	signal SIG_MOVE;
 }
 
-setSFXoccupy(Func_Var_1)
-{
-	Static_Var_6 = Func_Var_1;
-}
+//setSFXoccupy(Func_Var_1)
+//{
+//	Static_Var_6 = Func_Var_1;
+//}
 
 SetMaxReloadTime(Func_Var_1)
 {
