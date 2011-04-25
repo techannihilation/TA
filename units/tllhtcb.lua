@@ -62,7 +62,7 @@ local unitDef = {
   workerTime         = 320,
   zbuffer            = 1,
   buildoptions = {
-    [[tllmegacoldfusion]],
+    [[tllmegacoldfus]],
     [[tllion]],
      },
   sounds = {
