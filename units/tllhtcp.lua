@@ -51,7 +51,7 @@ local unitDef = {
   zbuffer            = 1,
   buildoptions = {
     [[tllhtml]],
-    [[tllhtcp]],
+    [[tllhtcb]],
 
   },
   sounds = {
