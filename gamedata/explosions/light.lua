@@ -22,7 +22,7 @@ return {
         sizemod            = 0,
         sizemodmod         = 0,
         speed              = [[0.05 r-0.1, 0.05 r-0.1, 0.05 r-0.1]],
-        texture            = [[RedLight]],
+        texture            = [[WhiteLight]],
         useairlos          = false,
       },
     },
