@@ -37,24 +37,22 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		}
 		sleep sleeptime;
 	}
-	return (0);
 }
 
 activatescr()
 {
 	if( TRUE )
 	{
-		turn rdoor to z-axis <-180.> speed <180.>;
-		turn ldoor to z-axis <180.> speed <180.>;
+		turn rdoor to z-axis <-180.043956> speed <180.043956>;
+		turn ldoor to z-axis <180.043956> speed <180.043956>;
 		sleep 500;
 	}
 	if( TRUE )
 	{
-		move p1 to y-axis [1.] speed [2.];
+		move p1 to y-axis [4.000031] speed [8.000061];
 		sleep 250;
 	}
 	sleep 100;
-	return (0);
 }
 
 deactivatescr()
@@ -62,41 +60,37 @@ deactivatescr()
 	if( TRUE )
 	{
 		sleep 500;
-		move p1 to y-axis [0.] speed [2.];
+		move p1 to y-axis [0.000000] speed [8.000061];
 	}
 	if( TRUE )
 	{
-		turn rdoor to z-axis <0.> speed <180.>;
-		turn ldoor to z-axis <0.> speed <180.>;
+		turn rdoor to z-axis <0.000000> speed <180.043956>;
+		turn ldoor to z-axis <0.000000> speed <180.043956>;
 		sleep 500;
 	}
 	sleep 10;
-	return (0);
 }
 
 Go()
 {
 	call-script activatescr();
-	turn nano to y-axis Static_Var_1 speed <190.>;
+	turn nano to y-axis Static_Var_1 speed <190.043956>;
 	wait-for-turn nano around y-axis;
 	set INBUILDSTANCE to 1;
-	return (0);
 }
 
 Stop()
 {
 	set INBUILDSTANCE to 0;
-	turn nano to y-axis <0.> speed <190.>;
+	turn nano to y-axis <0.000000> speed <190.043956>;
 	wait-for-turn nano around y-axis;
 	call-script deactivatescr();
-	return (0);
 }
 
 InitState()
 {
 	statechg_DesiredState = TRUE;
 	statechg_StateChanging = FALSE;
-	return (0);
 }
 
 RequestState(requestedstate, currentstate)
@@ -123,7 +117,6 @@ RequestState(requestedstate, currentstate)
 		}
 	}
 	statechg_StateChanging = FALSE;
-	return (0);
 }
 
 Create()
@@ -132,23 +125,21 @@ Create()
 	spray = base;
 	call-script InitState();
 	start-script SmokeUnit();
-	return (0);
 }
 
 StartMoving()
 {
 	signal SIG_MOVE;
 	set-signal-mask SIG_MOVE;
-	spin wheels1 around x-axis speed <75.>;
-	spin wheels2 around x-axis speed <75.>;
-	spin wheels3 around x-axis speed <75.>;
-	spin wheels4 around x-axis speed <75.>;
+	spin wheels1 around x-axis speed <75.016484>;
+	spin wheels2 around x-axis speed <75.016484>;
+	spin wheels3 around x-axis speed <75.016484>;
+	spin wheels4 around x-axis speed <75.016484>;
 	sleep 300;
-	spin wheels1 around x-axis speed <125.>;
-	spin wheels2 around x-axis speed <125.>;
-	spin wheels3 around x-axis speed <125.>;
-	spin wheels4 around x-axis speed <125.>;
-	return (0);
+	spin wheels1 around x-axis speed <125.027473>;
+	spin wheels2 around x-axis speed <125.027473>;
+	spin wheels3 around x-axis speed <125.027473>;
+	spin wheels4 around x-axis speed <125.027473>;
 }
 
 StopMoving()
@@ -158,28 +149,34 @@ StopMoving()
 	stop-spin wheels2 around x-axis;
 	stop-spin wheels3 around x-axis;
 	stop-spin wheels4 around x-axis;
-	return (0);
 }
 
 Activate()
 {
 	start-script RequestState(0);
-	return (0);
 }
 
 Deactivate()
 {
 	start-script RequestState(1);
-	return (0);
+}
+
+TargetHeading(Func_Var_1)
+{
+	Static_Var_1 = 0 - Func_Var_1;
 }
 
 StartBuilding(Func_Var_1)
 {
+	Static_Var_1 = Func_Var_1;
+	start-script RequestState(0);
 }
 
 StopBuilding()
 {
+	start-script RequestState(1);
 }
+
 
 QueryNanoPiece(piecenum)
 {
@@ -192,19 +189,12 @@ QueryNanoPiece(piecenum)
 		piecenum = spray2;
 	}
 	spray = !spray;
-	return (0);
 }
 
-TargetHeading(Func_Var_1)
-{
-	Static_Var_1 = 0 - Func_Var_1;
-	return (0);
-}
 
 SweetSpot(piecenum)
 {
 	piecenum = body;
-	return (0);
 }
 
 Killed(severity, corpsetype)
@@ -229,5 +219,4 @@ Killed(severity, corpsetype)
 	}
 	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP3;
 	corpsetype = 3;
-	return (0);
 }
