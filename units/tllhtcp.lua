@@ -51,6 +51,8 @@ local unitDef = {
   zbuffer            = 1,
   buildoptions = {
     [[tllhtml]],
+    [[tllhtcp]],
+
   },
   sounds = {
     activate           = [[gantok2]],
