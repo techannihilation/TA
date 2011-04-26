@@ -62,6 +62,7 @@ local unitDef = {
   transportSize      = 4,
   turnRate           = 373,
   unitname           = [[cortship]],
+  waterline          = 2,
   workerTime         = 0,
   wpri_badtargetcategory = [[ANTILASER]],
   sounds = {
