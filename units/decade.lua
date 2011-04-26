@@ -59,6 +59,7 @@ local unitDef = {
   turnRate           = 530,
   unitname           = [[decade]],
   workerTime         = 0,
+  waterline          = 1,
   sounds = {
     canceldestruct     = [[cancel2]],
     underattack        = [[warning1]],

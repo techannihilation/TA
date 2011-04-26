@@ -56,6 +56,7 @@ local unitDef = {
   TEDClass           = [[SHIP]],
   terraformSpeed     = 750,
   turnRate           = 448,
+  waterline          = 1,
   unitname           = [[armcs]],
   workerTime         = 250,
   buildoptions = {

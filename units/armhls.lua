@@ -65,6 +65,7 @@ local unitDef = {
   unitname           = [[armhls]],
   unitnumber         = 5963,
   version            = 1,
+  waterline          = 1,
   workerTime         = 0,
   zbuffer            = 1,
   sounds = {
