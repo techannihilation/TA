@@ -6,7 +6,7 @@ local unitName = "tllburner"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-  acceleration       = 0.1,
+  acceleration       = 0.35,
   badTargetCategory  = [[NOWEAPON]],
   bmcode             = 1,
   brakeRate          = 0.183105469,
@@ -37,7 +37,7 @@ local unitDef = {
   maneuverleashlength = 640,
   maxDamage          = 1235,
   maxSlope           = 17,
-  maxVelocity        = .85,
+  maxVelocity        = 1.85,
   maxWaterDepth      = 25,
   mobilestandorders  = 1,
   movementClass      = [[KBOT2]],
@@ -48,7 +48,7 @@ local unitDef = {
   selfDestructAs     = [[MEDIUM_BUILDING]],
   shootme            = 1,
   side               = [[TLL]],
-  sightDistance      = 245,
+  sightDistance      = 289,
   spanishdescription = [[Kbot lanzallamas]],
   standingfireorder  = 2,
   standingmoveorder  = 1,

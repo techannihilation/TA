@@ -54,6 +54,7 @@ local unitDef = {
   zbuffer            = 1,
   buildoptions = {
     [[tllack]],
+    [[tllburner]],
     [[tllarchnano]],
     [[tllamphibot]],
     [[tllhrk]],
@@ -62,7 +63,6 @@ local unitDef = {
     [[tllsniper]],
     [[tllartybot]],
     [[tllaak]],
-    [[tllbind]],
     [[tlldecom]],
     [[tllturtle]],
     [[tllobserver]],
