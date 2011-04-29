@@ -89,18 +89,18 @@ local unitDef = {
     },
   },
   weapons = {
-    [1]  = {
-      def                = [[PACKO_MISSILE]],
-          },
-    [2]  = {
+    [1]  = {   
       badTargetCategory  = [[VTOL]],
       def                = [[COR_GOL]],
       onlyTargetCategory = [[NOTAIR]],
+          },
+    [2]  = {
+      def                = [[PACKO_MISSILE]],
          },
     [3]  = {
       def                = [[BLIND_LASER]],
       onlyTargetCategory = [[NOTAIR]],
-    },
+     },
   },
 }
 
@@ -134,7 +134,7 @@ local weaponDefs = {
     weaponType         = [[LaserCannon]],
     weaponVelocity     = 1000,
     damage = {
-      default            = 1070,
+      default            = 1005,
     },
   },
   COR_GOL = {
@@ -158,7 +158,7 @@ local weaponDefs = {
     weaponType         = [[Cannon]],
     weaponVelocity     = 310,
     damage = {
-      default            = 1050,
+      default            = 825,
       gunships           = 55,
       hgunships          = 55,
       l1bombers          = 55,
@@ -194,7 +194,7 @@ local weaponDefs = {
     name               = [[AA2Missile]],
     noSelfDamage       = true,
     proximityPriority  = 1,
-    range              = 1000,
+    range              = 600,
     reloadtime         = 1.7,
     renderType         = 1,
     selfprop           = true,
