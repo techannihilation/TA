@@ -51,6 +51,7 @@ local unitDef = {
   zbuffer            = 1,
   buildoptions = {
     [[tllhtml]],
+    [[tllblind]],
     [[tllhtcb]],
 
   },
