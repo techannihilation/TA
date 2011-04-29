@@ -66,7 +66,7 @@ local featureDefs = {
     footprintX         = 5,
     footprintZ         = 5,
     height             = 12,
-    metal              = 2000,
+    metal              = 2964,
     object             = [[tllmedfusion_dead]],
   },
   heap = {
@@ -75,7 +75,7 @@ local featureDefs = {
     description        = [[Small Fusion Debris]],
     footprintX         = 5,
     footprintZ         = 4,
-    metal              = 1000,
+    metal              = 1137,
     object             = [[4x4c]],
   },
 }
