@@ -59,6 +59,7 @@ local unitDef = {
     [[tllamphibot]],
     [[tllhrk]],
     [[tllblind]],
+    [[tllbind]],
     [[tllcrawlb]],
     [[tllsniper]],
     [[tllartybot]],
