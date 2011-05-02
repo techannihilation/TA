@@ -111,7 +111,11 @@ local unitDef = {
     [[tlldcsta]],
     [[tllshoretorp]],
     [[tllsolarns]],
-  },
+    [[tllhltns]],
+    [[tllck]],
+    [[tllfireraiser]],
+	
+	},
   sounds = {
     build              = [[nanlath1]],
     canceldestruct     = [[cancel2]],
