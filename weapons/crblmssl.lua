@@ -1,0 +1,25 @@
+return {
+        crblmssl = {
+        areaofeffect = 1920,
+        ballistic = 0,
+        craterboost = 6,
+        cratermult = 3,
+        edgeeffectiveness = 0.25,
+        explosiongenerator = "custom:FLASHNUKE1920",
+        impulseboost = 3,
+        impulsefactor = 3,
+        name = "Matter/AntimatterExplosion",
+        range = 72000,
+        reloadtime = 120,
+        rendertype = 1,
+        shakeduration = 3,
+        shakemagnitude = 50,
+        soundhit = "xplomed4",
+        soundstart = "misicbm1",
+        turret = 1,
+        weaponvelocity = 250,
+        damage = {
+        default = 11500,
+        },
+  },
+  }
