@@ -78,6 +78,24 @@ local morphDefs = {
 		into = 'corcom7',
             time = 380,
 	},
+      tllcom = {
+		into = 'tllcom3',
+            time = 30,
+	    metal = 1350,
+	    energy = 12000,
+	},
+      tllcom3 = {
+		into = 'tllcom5',
+            time = 190,
+	},
+      tllcom5 = {
+		into = 'tllcom6',
+            time = 280,
+	},
+      tllcom6 = {
+		into = 'tllcom7',
+            time = 380,
+	},
       corrl = {
 		into = 'corrl1',
             time = 10,
