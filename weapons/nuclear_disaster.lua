@@ -1,11 +1,11 @@
 return {
-        nuclear_distaster = {
+        nuclear_disaster = {
         areaofeffect = 1180,
         ballistic = 1,
         craterboost = 0,
         cratermult = 0,
         edgeeffectiveness = 0.5,
-  --      explosiongenerator = "custom:EXPLOSIONBIG",
+        explosiongenerator = "custom:flashnukex480",
         impulseboost = 0,
         impulsefactor = 0,
         name = "Matter/AntimatterExplosion",
