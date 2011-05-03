@@ -30,6 +30,7 @@ local unitDef = {
   footprintZ         = 2,
   frenchdescription  = [[Tourelle lance-missiles]],
   germandescription  = [[Raketenturm]],
+  iconType           = [[building]],
   italiandescription = [[Torretta missilistica]],
   maxDamage          = 456,
   maxSlope           = 14,

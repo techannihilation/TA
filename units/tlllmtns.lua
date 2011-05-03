@@ -30,6 +30,7 @@ local unitDef = {
   footprintZ         = 3,
   frenchdescription  = [[Tourelle lance-missiles NAVY]],
   germandescription  = [[Raketenturm - Marineeinheit]],
+  iconType           = [[building]],
   italiandescription = [[Torretta missilistica - Sezione Navale]],
   maxDamage          = 785,
   maxSlope           = 14,
