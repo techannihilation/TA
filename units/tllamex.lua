@@ -27,6 +27,7 @@ local unitDef = {
   frenchname         = [[Mine Moho]],
   germandescription  = [[Verbesserter Metallextractor]],
   germanname         = [[Moho-Mine]],
+  iconType           = [[building]],
   italiandescription = [[Estrattore di metallo avanzato]],
   italianname        = [[Estrattore Moho]],
   maxDamage          = 3557,

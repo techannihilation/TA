@@ -26,6 +26,7 @@ local unitDef = {
   frenchname         = [[Dépôt de métal]],
   germandescription  = [[Vergrößert Lager für Metallvorräte]],
   germanname         = [[Metallspeicher]],
+  iconType           = [[building]],
   italiandescription = [[Aumenta l'immagazzinamento del metallo]],
   italianname        = [[Deposito di Metallo]],
   maxDamage          = 1811,

@@ -26,6 +26,7 @@ local unitDef = {
   footprintZ         = 8,
   frenchdescription  = [[Augmente le stockage d'énergie et de métal]],
   frenchname         = [[Super Dépôt d'énergie & de métal]],
+  iconType           = [[building]],
   maxDamage          = 16200,
   maxSlope           = 10,
   maxWaterDepth      = 0,

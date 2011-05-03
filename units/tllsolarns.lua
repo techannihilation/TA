@@ -29,6 +29,7 @@ local unitDef = {
   frenchname         = [[Capteur solaire NAVY]],
   germandescription  = [[Gewinnt Energie]],
   germanname         = [[Solarkollektor]],
+  iconType           = [[building]],
   maxDamage          = 485,
   metalStorage       = 0,
   minWaterDepth      = 20,

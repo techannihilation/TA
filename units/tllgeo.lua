@@ -28,6 +28,7 @@ local unitDef = {
   frenchname         = [[Centrale géothermique]],
   germandescription  = [[Liefert Energie/Metal]],
   germanname         = [[Geotherm. Kraftwerk]],
+  iconType           = [[building]],
   italiandescription = [[Produce energia/Metal]],
   italianname        = [[Stabilimento Geotermico]],
   makesMetal         = 9,

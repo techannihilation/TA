@@ -28,6 +28,7 @@ local unitDef = {
   frenchname         = [[Brouilleur]],
   germandescription  = [[Sonarstörer]],
   germanname         = [[Jammer]],
+  iconType           = [[building]],
   maxDamage          = 250,
   maxSlope           = 10,
   metalStorage       = 0,

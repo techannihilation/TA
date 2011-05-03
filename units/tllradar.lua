@@ -27,6 +27,7 @@ local unitDef = {
   frenchname         = [[Tour radar  ]],
   germandescription  = [[Tech Level 1]],
   germanname         = [[Radarturm]],
+  iconType           = [[building]],
   italiandescription = [[Torretta radar]],
   italianname        = [[Torre Radar]],
   maxDamage          = 93,

@@ -28,6 +28,7 @@ local unitDef = {
   frenchname         = [[Extracteur]],
   germandescription  = [[Gewinnt Metall]],
   germanname         = [[Metallextraktor]],
+  iconType           = [[building]],
   italiandescription = [[Estrae metallo]],
   italianname        = [[Estrattore di Metallo]],
   maxDamage          = 232,

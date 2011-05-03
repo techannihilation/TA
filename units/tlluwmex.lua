@@ -28,6 +28,7 @@ local unitDef = {
   frenchname         = [[Extracteur sous-marin]],
   germandescription  = [[Unterwasser-Metallgewinnung]],
   germanname         = [[Tauchschmelze]],
+  iconType           = [[building]],
   italiandescription = [[Estrattore di Metallo sottomarino]],
   italianname        = [[Estr. Metallo subacqueo]],
   maxDamage          = 348,

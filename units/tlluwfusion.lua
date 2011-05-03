@@ -27,6 +27,7 @@ local unitDef = {
   frenchname         = [[Centrale Atom. sous-marine]],
   germandescription  = [[Liefert Energie]],
   germanname         = [[Unterwasser-Fusionsreaktor]],
+  iconType           = [[building]],
   italiandescription = [[Impianto di Fusione sottomarino]],
   italianname        = [[Impianto di Fusione]],
   maxDamage          = 3311,

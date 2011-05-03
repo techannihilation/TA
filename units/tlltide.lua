@@ -28,6 +28,7 @@ local unitDef = {
   germanname         = [[Gezeitenkraftwerk]],
   italiandescription = [[Produce energia]],
   italianname        = [[Generatore a Maree]],
+  iconType           = [[building]],
   maxDamage          = 258,
   maxSlope           = 10,
   minWaterDepth      = 12,

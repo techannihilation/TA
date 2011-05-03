@@ -29,6 +29,7 @@ local unitDef = {
   frenchname         = [[Piège à vent]],
   germandescription  = [[Gewinnt Energie]],
   germanname         = [[Windgenerator]],
+  iconType           = [[building]],
   italiandescription = [[Produce energia]],
   italianname        = [[Generatore a Vento]],
   maxDamage          = 224,

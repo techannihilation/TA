@@ -20,6 +20,7 @@ local unitDef = {
   floater            = true,
   footprintX         = 5,
   footprintZ         = 5,
+  iconType           = [[building]],
   idleAutoHeal       = 5,
   idleTime           = 2000,
   maxDamage          = 4680,

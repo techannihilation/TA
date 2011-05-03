@@ -27,6 +27,7 @@ local unitDef = {
   frenchname         = [[Métallo]],
   germandescription  = [[Wandelt Energie in Metall um]],
   germanname         = [[Metallgenerator]],
+  iconType           = [[building]],
   italiandescription = [[Converte energia in metallo]],
   italianname        = [[Generatore di Metallo]],
   makesMetal         = 1,

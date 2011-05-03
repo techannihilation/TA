@@ -6,7 +6,7 @@ local unitName = "tlladvsolar"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-  activateWhenBuilt  = true,
+  activateWhenBuilt  = true,      
   bmcode             = 0,
   buildAngle         = 8192,
   buildCostEnergy    = 1609,
@@ -29,6 +29,7 @@ local unitDef = {
   frenchname         = [[Capteur solaire/éolienne]],
   germandescription  = [[Gewinnt Energie]],
   germanname         = [[Verb. Solar-/Wind- Energieerzeuger]],
+  iconType           = [[building]],
   maxDamage          = 1376,
   maxSlope           = 10,
   maxWaterDepth      = 0,

@@ -27,6 +27,7 @@ local unitDef = {
   frenchname         = [[Centrale marémotrice sous-marine]],
   germandescription  = [[Liefert Energie]],
   germanname         = [[Verb. Unterwasser Gezeitenkraftwerk]],
+  iconType           = [[building]],
   maxDamage          = 1631,
   maxSlope           = 10,
   maxWaterDepth      = 255,

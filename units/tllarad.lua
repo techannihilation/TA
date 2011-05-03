@@ -28,6 +28,7 @@ local unitDef = {
   frenchname         = [[Tour radar évoluée]],
   germandescription  = [[Langstrecken-Radarturm]],
   germanname         = [[Verbesserter Radarturm]],
+  iconType           = [[building]],
   italiandescription = [[Torre Radar a lungo raggio]],
   italianname        = [[Torre Radar Avanzata]],
   maxDamage          = 432,

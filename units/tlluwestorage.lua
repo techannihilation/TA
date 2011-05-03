@@ -27,6 +27,7 @@ local unitDef = {
   frenchname         = [[Dépôt d'Energie Sous-Marin]],
   germandescription  = [[Größere Energievorräte]],
   germanname         = [[U-Energielager]],
+  iconType           = [[building]],
   italiandescription = [[Deposito di energia sottomarino]],
   italianname        = [[Deposito di energia sub]],
   maxDamage          = 1551,

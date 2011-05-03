@@ -28,6 +28,7 @@ local unitDef = {
   frenchname         = [[Capteur solaire]],
   germandescription  = [[Gewinnt Energie]],
   germanname         = [[Solarkollektor]],
+  iconType           = [[building]],
   maxDamage          = 469,
   maxSlope           = 10,
   maxWaterDepth      = 0,

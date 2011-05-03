@@ -26,6 +26,7 @@ local unitDef = {
   footprintX         = 7,
   footprintZ         = 7,
   frenchdescription  = [[Produit de l'énergie]],
+  iconType           = [[building]],
   maxDamage          = 11380,
   maxSlope           = 10,
   maxWaterDepth      = 0,

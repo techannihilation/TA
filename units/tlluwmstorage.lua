@@ -27,6 +27,7 @@ local unitDef = {
   frenchname         = [[Dépôt de Métal Sous-Marin]],
   germandescription  = [[Größere Metallvorräte]],
   germanname         = [[U-Metalllager]],
+  iconType           = [[building]],
   italiandescription = [[Deposito di metallo sottomarino]],
   italianname        = [[Deposito di metallo sub]],
   maxDamage          = 1725,
