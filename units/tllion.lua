@@ -29,6 +29,7 @@ local unitDef = {
   energyStorage      = 0,
   explodeAs          = [[CRAWL_BLAST]],
   firestandorders    = 1,
+  firestate          = 0,
   footprintX         = 7,
   footprintZ         = 7,
   iconType           = [[building]],
