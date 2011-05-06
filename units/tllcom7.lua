@@ -115,6 +115,8 @@ local unitDef = {
     [[tllhltns]],
     [[tllck]],
     [[tllfireraiser]],
+    [[tllion]],
+
   },
   sounds = {
     build              = [[nanlath1]],
