@@ -268,7 +268,7 @@ unitDef.weaponDefs = weaponDefs
 --------------------------------------------------------------------------------
 
 local featureDefs = {
-  TLLCOM5_HEAP = {
+  HEAP = {
     blocking           = false,
     category           = [[heaps]],
     damage             = 25000,
@@ -298,7 +298,7 @@ local featureDefs = {
     height             = 20,
     hitdensity         = 100,
     metal              = 8000,
-    object             = [[TLLCOM_DEAD]],
+    object             = [[ARMCOM_DEAD]],
     reclaimable        = true,
     seqnamereclamate   = [[TREE1RECLAMATE]],
     world              = [[All Worlds]],

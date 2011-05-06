@@ -232,7 +232,7 @@ unitDef.weaponDefs = weaponDefs
 --------------------------------------------------------------------------------
 
 local featureDefs = {
-  ARMCOM_DEAD = {
+  DEAD = {
     blocking           = true,
     damage             = 10000,
     description        = [[Commander Wreckage]],
@@ -248,7 +248,7 @@ local featureDefs = {
     reclaimable        = true,
     seqnamereclamate   = [[TREE1RECLAMATE]],
   },
-  ARMCOM_HEAP = {
+  HEAP = {
     blocking           = false,
     category           = [[heaps]],
     damage             = 5000,
