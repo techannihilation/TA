@@ -1,4 +1,4 @@
-
+       
 local moveDatas = {
 	AKBOT2 = {
 		crushstrength = 50,
@@ -23,6 +23,15 @@ local moveDatas = {
 		depthmod = 0,
 		footprintx = 3,
 		footprintz = 3,
+		maxslope = 36,
+		maxwaterdepth = 5000,
+		maxwaterslope = 80,
+	},
+	ATANK4 = {
+		crushstrength = 30,
+		depthmod = 0,
+		footprintx = 4,
+		footprintz = 4,
 		maxslope = 36,
 		maxwaterdepth = 5000,
 		maxwaterslope = 80,
@@ -148,6 +157,13 @@ local moveDatas = {
 		crushstrength = 30,
 		footprintx = 3,
 		footprintz = 3,
+		maxslope = 18,
+		maxwaterdepth = 22,
+	},
+	TANK4 = {
+		crushstrength = 30,
+		footprintx = 4,
+		footprintz = 4,
 		maxslope = 18,
 		maxwaterdepth = 22,
 	},
