@@ -1,4 +1,4 @@
--- UNITDEF -- CORKROG1 --
+      -- UNITDEF -- CORKROG1 --
 --------------------------------------------------------------------------------
 
 local unitName = "corkrog1"
@@ -45,7 +45,7 @@ local unitDef = {
   maxVelocity        = 2,
   maxWaterDepth      = 12,
   mobilestandorders  = 1,
-  movementClass      = [[VKBOT6]],
+  movementClass      = [[VKBOT9]],
   name               = [[Super Krogoth]],
   noAutoFire         = false,
   noChaseCategory    = [[VTOL]],
