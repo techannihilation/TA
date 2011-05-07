@@ -100,6 +100,7 @@ local weaponDefs = {
     burnblow           = true,
     burst              = 3,
     burstrate          = .2,
+    canattackground    = false,
     explosionart       = [[explode3]],
     explosiongaf       = [[fx]],
     guidance           = true,
