@@ -6,9 +6,9 @@ local unitName = "tllcv"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-  acceleration       = 0.015,
+  acceleration       = 0.0415,
   bmcode             = 1,
-  brakeRate          = 0.08,
+  brakeRate          = 0.18,
   buildCostEnergy    = 2350,
   buildCostMetal     = 215,
   buildDistance      = 152,
@@ -40,7 +40,7 @@ local unitDef = {
   maneuverleashlength = 640,
   maxDamage          = 912,
   maxSlope           = 16,
-  maxVelocity        = 1.45,
+  maxVelocity        = 1.55,
   maxWaterDepth      = 18,
   metalMake          = 0.3,
   metalStorage       = 50,
