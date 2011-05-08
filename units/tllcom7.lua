@@ -115,6 +115,7 @@ local unitDef = {
     [[tllhltns]],
     [[tllck]],
     [[tllfireraiser]],
+    [[corupmex]],
     [[tllion]],
 
   },
