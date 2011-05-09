@@ -92,11 +92,11 @@ local unitDef = {
     [1]  = {
       def                = [[COR_GOL1]],
       onlyTargetCategory = [[NOTAIR]],
+      },
+    [3]  = {
+      def                = [[CORKROG_ROCKET]],
     },
-    [2]  = {
-      name               = [[CORKROG_HEAD]],
-    },
-   },
+  },
 }
 
 
