@@ -138,7 +138,7 @@ unitDef.weaponDefs = weaponDefs
 --------------------------------------------------------------------------------
 
 local featureDefs = {
-  Heap = {
+  heap = {
     blocking           = false,
     catagory           = [[heaps]],
     damage             = 5234,
