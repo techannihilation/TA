@@ -61,6 +61,7 @@ local unitDef = {
 local featureDefs = {
   dead = {
     blocking           = true,
+    category           = [[tll_corpses]],
     damage             = 3200,
     description        = [[Small Fusion Wreckage]],
     featureDead        = [[heap]],
@@ -72,6 +73,7 @@ local featureDefs = {
   },
   heap = {
     blocking           = false,
+    category           = [[heaps]],
     damage             = 1600,
     description        = [[Small Fusion Debris]],
     footprintX         = 5,

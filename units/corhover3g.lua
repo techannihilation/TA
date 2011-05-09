@@ -221,7 +221,7 @@ local featureDefs = {
   },
   dead = {
     blocking           = true,
-    category           = [[CORE_corpses]],
+    category           = [[core_corpses]],
     damage             = 1000,
     description        = [[Venom Wreckage]],
     energy             = 0,

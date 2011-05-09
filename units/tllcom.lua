@@ -235,6 +235,7 @@ local featureDefs = {
   DEAD = {
     blocking           = true,
     damage             = 10000,
+    category           = [[corpses]],
     description        = [[Commander Wreckage]],
     energy             = 0,
     featureDead        = [[ARMCOM_HEAP]],

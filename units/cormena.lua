@@ -161,7 +161,7 @@ local featureDefs = {
   },
   dead = {
     blocking           = true,
-    category           = [[cor_corpses]],
+    category           = [[core_corpses]],
     damage             = 1682,
     description        = [[Menacer Wreckage]],
     featureDead        = [[corgol_heap]],
