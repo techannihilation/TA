@@ -1,6 +1,6 @@
 return {
         nuclear_blast= {
-        areaofeffect = 1480,
+        areaofeffect = 880,
         avoidfriendly = 0,
         collidefriendly = 0,
         commandfire = 1,
@@ -9,7 +9,7 @@ return {
         cruise = 1,
         edgeeffectiveness = 0.30000001192093,
         energypershot = 250000,
-        explosiongenerator = "custom:ARGHNUKE_FX2",
+        explosiongenerator = "custom:FLASHNUKE768",
         firestarter = 0,
         flighttime = 400,
         guidance = 1,
@@ -42,8 +42,8 @@ return {
         weapontimer = 8,
         weaponvelocity = 1600,
         damage = {
-        commanders = 2500,
-        default = 13000,
+        commanders = 1500,
+        default = 2400,
         },
   },
  }
