@@ -8,6 +8,5 @@ return {
   shortGame='',
   modtype=1,
   depend = {
-    'Balanced Annihilation V7.31',
-  }, 
+     }, 
   }
