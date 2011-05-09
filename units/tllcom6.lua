@@ -152,10 +152,10 @@ local unitDef = {
       def                = [[TLLCOM_LIGHTNING5]],
     },
     [2]  = {
-      def                = [[TLL_DISINTEGRATOR2]],
+      def                = [[COM_SHIELD1]],
     },
     [3]  = {
-      def                = [[COM_SHIELD1]],
+      def                = [[TLL_DISINTEGRATOR2]],
 
     },
   },
