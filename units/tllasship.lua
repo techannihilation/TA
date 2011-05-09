@@ -91,13 +91,7 @@ local unitDef = {
     [1]  = {
       def                = [[TLL_ASTORPEDO]],
     },
-    [2]  = {
-      name               = [[ARMDEPTHCHARGE]],
-    },
-    [3]  = {
-      name               = [[ARMDEPTHCHARGE]],
-    },
-  },
+   },
 }
 
 

@@ -89,10 +89,7 @@ local unitDef = {
       badTargetCategory  = [[CTRL_V]],
       def                = [[ARM_ROY]],
     },
-    [2]  = {
-      name               = [[COREDEPTHCHARGE]],
-    },
-  },
+   },
 }
 
 

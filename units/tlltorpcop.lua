@@ -85,10 +85,7 @@ local unitDef = {
       def                = [[TLLAIR_TORPEDO]],
       onlyTargetCategory = [[UNDERWATER]],
     },
-    [2]  = {
-      name               = [[ARMDEPTHCHARGE]],
-    },
-  },
+   },
 }
 
 

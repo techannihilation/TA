@@ -96,10 +96,7 @@ local unitDef = {
     [2]  = {
       name               = [[CORKROG_HEAD]],
     },
-    [3]  = {
-      def                = [[CORKROG_ROCKET]],
-    },
-  },
+   },
 }
 
 

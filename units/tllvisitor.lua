@@ -87,10 +87,7 @@ local unitDef = {
       def                = [[VISITOR_VPULSE]],
       onlyTargetCategory = [[NOTAIR]],
     },
-    [2]  = {
-      name               = [[CORSHIP_MISSILE]],
-    },
-  },
+   },
 }
 
 

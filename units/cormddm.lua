@@ -93,10 +93,7 @@ local unitDef = {
     [2]  = {
       def                = [[CORE_LASERH1]],
     },
-    [3]  = {
-      name               = [[CORCOMLASER]],
-    },
-  },
+   },
 }
 
 

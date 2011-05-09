@@ -89,13 +89,7 @@ local unitDef = {
       badTargetCategory  = [[VTOL]],
       def                = [[COR_CRUS]],
     },
-    [2]  = {
-      name               = [[COREDEPTHCHARGE]],
-    },
-    [3]  = {
-      name               = [[ARMDEPTHCHARGE]],
-    },
-  },
+   },
 }
 
 
