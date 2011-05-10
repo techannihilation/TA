@@ -81,19 +81,19 @@ local unitDef = {
     [2]  = {
       mainDir            = [[1 0 4]],
       maxAngleDif        = 90,
-      name               = [[GORG_BOTTOM]],
+      def               = [[GORG_BOTTOM]],
       onlyTargetCategory = [[NOTAIR]],
     },
     [3]  = {
       mainDir            = [[-1 0 4]],
       maxAngleDif        = 90,
-      name               = [[GORG_BOTTOM]],
+      def               = [[GORG_BOTTOM]],
       onlyTargetCategory = [[NOTAIR]],
     },
     [4]  = {
       mainDir            = [[0 1 0]],
       maxAngleDif        = 270,
-      name               = [[GORG_TOP]],
+      def               = [[GORG_TOP]],
     },
   },
 }
