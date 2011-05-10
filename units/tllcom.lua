@@ -222,7 +222,11 @@ local weaponDefs = {
     weaponType         = [[LightningCannon]],
     weaponVelocity     = 860,
     damage = {
-      default            = 200,
+     default            = 200,
+      l1subs             = 9,
+      l2subs             = 9,
+      l3subs             = 9,
+      vtrans             = 220,
     },
   },
 }
