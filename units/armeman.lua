@@ -221,7 +221,7 @@ local featureDefs = {
   },
   heap = {
     blocking           = false,
-    catagory           = [[heaps]],
+    category           = [[heaps]],
     damage             = 219,
     description        = [[Emancipator Heap]],
     featurereclamate   = [[smudge01]],
