@@ -151,9 +151,9 @@ unitDef.weaponDefs = weaponDefs
 --------------------------------------------------------------------------------
 
 local featureDefs = {
-  dead = {
+  ["dead"] = {
     blocking           = true,
-    catagory           = [[arm_corpses]],
+    category           = [[arm_corpses]],
     damage             = 4545,
     description        = [[Tankanotor Wreckage]],
     featureDead        = [[heap]],
