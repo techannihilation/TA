@@ -64,6 +64,7 @@ local featureDefs = {
     category           = [[dragonteeth]],
     damage             = 3800,
     description        = [[Dragon's Teeth - NS]],
+    featurereclamate   = [[smudge01]],
     footprintX         = 2,
     footprintZ         = 2,
     height             = 100,

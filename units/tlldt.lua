@@ -76,6 +76,7 @@ local featureDefs = {
     damage             = 4500,
     description        = [[Dragons Teeth]],
     featureDead        = [[RockTeeth]],
+    featurereclamate   = [[smudge01]],
     footprintX         = 2,
     footprintZ         = 2,
     height             = 20,

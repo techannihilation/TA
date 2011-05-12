@@ -1,0 +1,226 @@
+1c1
+< -- UNITDEF -- ARMCOM --
+---
+> -- UNITDEF -- ARMCOM5 --
+4c4
+< local unitName = "armcom"
+---
+> local unitName = "armcom5"
+9c9
+<   acceleration       = 0.18,
+---
+>   acceleration       = 0.22,
+12c12
+<   autoHeal           = 5,
+---
+>   autoHeal           = 10,
+15,18c15,18
+<   brakeRate          = 0.375,
+<   buildCostEnergy    = 2500,
+<   buildCostMetal     = 2500,
+<   buildDistance      = 120,
+---
+>   brakeRate          = 0.395,
+>   buildCostEnergy    = 40000,
+>   buildCostMetal     = 10000,
+>   buildDistance      = 200,
+21c21
+<   buildTime          = 75000,
+---
+>   buildTime          = 400000,
+32c32
+<   cloakCostMoving    = 1000,
+---
+>   cloakCostMoving    = 750,
+38c38
+<   corpse             = [[8_DEAD]],
+---
+>   corpse             = [[DEAD]],
+41,42c41,42
+<   energyStorage      = 1000,
+<   energyMake         = 25,
+---
+>   energyMake         = 150,
+>   energyStorage      = 5000,
+44c44
+<   explodeAs          = [[COMMANDER_BLAST1]],
+---
+>   explodeAs          = [[COMMANDER_BLAST6]],
+50,51c50,51
+<   idleAutoHeal       = 5,
+<   idleTime           = 1800,
+---
+>   idleAutoHeal       = 10,
+>   idleTime           = 1300,
+55,57c55,57
+<   maxDamage          = 3000,
+<   maxSlope           = 20,
+<   maxVelocity        = 1.25,
+---
+>   maxDamage          = 8000,
+>   maxSlope           = 29,
+>   maxVelocity        = 1.7,
+59,61c59,61
+<   metalStorage       = 1000,
+<   metalMake          = 1.5,
+<   minCloakDistance   = 50,
+---
+>   metalMake          = 9,
+>   metalStorage       = 5000,
+>   minCloakDistance   = 40,
+64c64
+<   name               = [[Commander]],
+---
+>   name               = [[Assault Commander]],
+68c68,69
+<   radarDistance      = 700,
+---
+>   onoffable          = true,
+>   radarDistance      = 1000,
+71,72c72,73
+<   selfDestructAs     = [[COMMANDER_BLAST1]],
+<   selfDestructCountdown = 4,
+---
+>   selfDestructAs     = [[COMMANDER_SELFD]],
+>   selfDestructCountdown = 20,
+75c76
+<   sightDistance      = 450,
+---
+>   sightDistance      = 700,
+77c78
+<   sonarDistance      = 300,
+---
+>   sonarDistance      = 500,
+82,83c83,84
+<   turnRate           = 1148,
+<   unitname           = [[armcom]],
+---
+>   turnRate           = 1348,
+>   unitname           = [[armcom5]],
+85c86
+<   workerTime         = 300,
+---
+>   workerTime         = 550,
+94c95
+<     [[armmex]],
+---
+>     [[armmex1]],
+96c97
+<     [[armmakr]],
+---
+>     [[ametalmakerlvl1]],
+111a113,119
+>     [[corekaty]],
+>     [[armrech3]],
+>     [[corupmex]],
+>     [[armfark1]],
+>     [[armfhlt]],
+>     [[abuilderlvl2]],
+>     [[apocketfusion]],
+144c152,155
+<       def                = [[ARMCOMLASER]],
+---
+>       def                = [[ARMCOMLASER5]],
+>     },
+>     [2]  = {
+>       def                = [[COM_SHIELD]],
+147c158
+<       def                = [[ARM_DISINTEGRATOR]],
+---
+>       def                = [[ARM_DISINTEGRATOR2]],
+156c167
+<   ARMCOMLASER = {
+---
+>   ARMCOMLASER5 = {
+158d168
+<     avoidFeature       = false,
+161c171
+<     coreThickness      = 0.1,
+---
+>     coreThickness      = 0.2,
+164d173
+<     cylinderTargetting = 1,
+173c182
+<     name               = [[J7Laser]],
+---
+>     name               = [[J12Laser]],
+175c184
+<     range              = 300,
+---
+>     range              = 450,
+183c192
+<     thickness          = 2,
+---
+>     thickness          = 3,
+189,191c198
+<       default            = 75,
+<       l1bombers          = 180,
+<       l1fighters         = 110,
+---
+>       default            = 150,
+193,194d199
+<       l2bombers          = 180,
+<       l2fighters         = 110,
+197c202
+<       vtrans             = 110,
+---
+>       vtrans             = 230,
+200c205
+<   ARM_DISINTEGRATOR = {
+---
+>   ARM_DISINTEGRATOR2 = {
+207c212
+<     energypershot      = 500,
+---
+>     energypershot      = 1000,
+216,217c221,222
+<     range              = 250,
+<     reloadtime         = 1,
+---
+>     range              = 310,
+>     reloadtime         = 0.4,
+234a240,263
+>   COM_SHIELD = {
+>     isShield           = true,
+>     name               = [[PersonalShield]],
+>     shieldAlpha        = 0.35,
+>     shieldBadColor     = [[1 0.1 0.3]],
+>     shieldEnergyUse    = 200,
+>     shieldForce        = 8,
+>     shieldGoodColor    = [[0.1 1 0.5]],
+>     shieldInterceptType = 1,
+>     shieldMaxSpeed     = 3500,
+>     shieldPower        = 700,
+>     shieldPowerRegen   = 10,
+>     shieldPowerRegenEnergy = 226.6,
+>     shieldRadius       = 70,
+>     shieldRepulser     = true,
+>     smartShield        = true,
+>     visibleShield      = true,
+>     visibleShieldHitFrames = 70,
+>     visibleShieldRepulse = true,
+>     weaponType         = [[Shield]],
+>     damage = {
+>       default            = 100,
+>     },
+>   },
+242c271
+<   ["8_DEAD"] = {
+---
+>   DEAD = {
+248c277
+<     featureDead        = [[8_HEAP]],
+---
+>     featureDead        = [[HEAP]],
+254c283
+<     metal              = 2000,
+---
+>     metal              = 5000,
+260c289
+<   ["8_HEAP"] = {
+---
+>   HEAP = {
+271c300
+<     metal              = 1000,
+---
+>     metal              = 2500,
