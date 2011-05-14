@@ -15,14 +15,16 @@ if (gadgetHandler:IsSyncedCode()) then
 
   local SHOCK_WEAPONS = {
     ["arm_disintegrator"] = true,
-    ["armbomb"] = true,
-    ["armadvbomb"] = true,
-    ["seaadvbomb"] = true,
-    ["armblz"] = true,
+    ["armthund_armbomb"] = true,
+    ["armpnix_armadvbomb"] = true,
+    ["armsb_seaadvbomb"] = true,
+    ["armblz_napalm"] = true,
     ["napalm"] = true,
-    ["shocker"] = true,
-    ["arm_fatboy_notalaser"] = true,
-    ["arm_seaadvbomb"] = true,
+    ["armshock_shocker"] = true,
+    ["armshock1_shocker1"] = true,
+    ["armfboy_arm_fatboy_notalaser"] = true,
+    ["armfboy1_arm_fatboy_notalaser1"] = true,
+
   }
 
   --// find weapons which cause a shockwave
