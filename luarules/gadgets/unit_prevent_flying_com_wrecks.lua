@@ -18,10 +18,10 @@ if (not gadgetHandler:IsSyncedCode()) then
 end
 
 local GetUnitHealth = Spring.GetUnitHealth
---local LICHE_BOMB = WeaponDefNames['arm_pidr'].id
+local LICHE_BOMB = WeaponDefNames['armcybr_arm_pidr'].id
 
 function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponID, attackerID, attackerDefID, attackerTeam)
-	--if (UnitDefs[unitDefID].isCommander) and ((damage > GetUnitHealth(unitID)) or (weaponID==LICHE_BOMB)) then
+	if (UnitDefs[unitDefID].isCommander) and ((damage > GetUnitHealth(unitID)) or (weaponID==LICHE_BOMB)) then
 	if UnitDefs[unitDefID].isCommander and damage > GetUnitHealth(unitID) then
 		return damage, 0
 	end

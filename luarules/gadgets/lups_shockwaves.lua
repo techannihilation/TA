@@ -16,6 +16,7 @@ if (gadgetHandler:IsSyncedCode()) then
   local SHOCK_WEAPONS = {
     ["arm_disintegrator"] = true,
     ["armthund_armbomb"] = true,
+    ["armcybr_arm_pidr"] = true,
     ["armsonic_sonic_cannon"] = true,
     ["armpnix_armadvbomb"] = true,
     ["armsb_seaadvbomb"] = true,
