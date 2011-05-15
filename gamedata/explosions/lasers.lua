@@ -647,6 +647,55 @@ return {
       },
     },
   },
+  ["diesmallwhite"] = {
+    groundflash = {
+      circlealpha        = 1,
+      circlegrowth       = 0,
+      flashalpha         = 0.3,
+      flashsize          = 45,
+      ttl                = 12,
+      color = {
+        [1]  = 0.75,
+        [2]  = 0.75,
+        [3]  = 0.75,
+      },
+    },
+    pikes40 = {
+      air                = true,
+      class              = [[explspike]],
+      count              = 7,
+      ground             = true,
+      water              = true,
+      properties = {
+        alpha              = 0.8,
+        alphadecay         = 0.1,
+        color              = [[1,1,1]],
+        dir                = [[-10 r30,-10 r30,-10 r30]],
+        length             = 8,
+        width              = 5,
+      },
+    },
+      whiteglow = {
+      air                = true,
+      class              = [[heatcloud]],
+      count              = 1,
+      ground             = true,
+      water              = true,
+      properties = {
+        alwaysvisible      = true,
+        heat               = 10,
+        heatfalloff        = 1.2,
+        maxheat            = 15,
+        pos                = [[r-2 r2, 5, r-2 r2]],
+        size               = 3,
+        sizegrowth         = 10,
+        speed              = [[0, 1 0, 0]],
+        texture            = [[laserendred]],
+      },
+    },
+  },
 
+  
+  
 }
 
