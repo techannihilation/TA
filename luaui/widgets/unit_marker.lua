@@ -97,7 +97,6 @@ unitList["TA"]["tllhtlrpc"] = { markerText = "LR Plasma" }
 unitList["TA"]["tllobliterator"] = { markerText = "Obliterator" }
 unitList["TA"]["tllsilo"] = { markerText = "Nuke" }
 
-tllhtlrpc
 
 
 --END OF MARKER LIST---------------------------------------
