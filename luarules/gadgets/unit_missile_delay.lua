@@ -30,8 +30,10 @@ local DELAY_UNIT = {
   [UnitDefNames["mercury"].id] = WeaponDefs[UnitDefNames["mercury"].weapons[1].weaponDef].reload,
   [UnitDefNames["corerad"].id] = WeaponDefs[UnitDefNames["corerad"].weapons[1].weaponDef].reload,
   [UnitDefNames["armcir"].id] = WeaponDefs[UnitDefNames["armcir"].weapons[1].weaponDef].reload,
-  [UnitDefNames["corerad1"].id] = WeaponDefs[UnitDefNames["corerad"].weapons[1].weaponDef].reload,
-  [UnitDefNames["armcir1"].id] = WeaponDefs[UnitDefNames["armcir"].weapons[1].weaponDef].reload,
+  [UnitDefNames["corerad1"].id] = WeaponDefs[UnitDefNames["corerad1"].weapons[1].weaponDef].reload,
+  [UnitDefNames["armcir1"].id] = WeaponDefs[UnitDefNames["armcir1"].weapons[1].weaponDef].reload,
+  [UnitDefNames["tllhmt"].id] = WeaponDefs[UnitDefNames["tllhmt"].weapons[1].weaponDef].reload,
+
 }
 
 local staggerCmd = {
