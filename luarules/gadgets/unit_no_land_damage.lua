@@ -23,19 +23,38 @@ end
 local GetUnitBasePosition = Spring.GetUnitBasePosition
 
 local NO_LAND_DAMAGE = {
-  [WeaponDefNames['coax_depthcharge'].id] = true,
-  [WeaponDefNames['coax_torpedo'].id] = true,
-  [WeaponDefNames['armatl_torpedo'].id] = true,
-  [WeaponDefNames['coratl_torpedo'].id] = true,
-  [WeaponDefNames['armair_torpedo'].id] = true,
-  [WeaponDefNames['armseap_weapon1'].id] = true,
-  [WeaponDefNames['depthcharge'].id] = true,
-  [WeaponDefNames['advdepthcharge'].id] = true,
-  [WeaponDefNames['arm_torpedo'].id] = true,
-  [WeaponDefNames['armsmart_torpedo'].id] = true,
-  [WeaponDefNames['tawf009_weapon'].id] = true,
-  [WeaponDefNames['corssub_weapon'].id] = true,
-  [WeaponDefNames['coramph_weapon1'].id] = true
+  [WeaponDefNames['armdl_coax_depthcharge'].id] = true,
+  [WeaponDefNames['cordl_coax_depthcharge'].id] = true,
+  [WeaponDefNames['tlldcsta_coax_depthcharge'].id] = true,
+  [WeaponDefNames['armtl_coax_torpedo'].id] = true,
+  [WeaponDefNames['cortl_coax_torpedo'].id] = true,
+  [WeaponDefNames['tlltorp_coax_torpedo'].id] = true,
+  [WeaponDefNames['armatl_armatl_torpedo'].id] = true,
+  [WeaponDefNames['coratl_coratl_torpedo'].id] = true,
+  [WeaponDefNames['armlance_armair_torpedo'].id] = true,
+  [WeaponDefNames['cortitan_armair_torpedo'].id] = true,
+  [WeaponDefNames['tlltorpp_armair_torpedo'].id] = true,
+  [WeaponDefNames['armseap_armseap_weapon1'].id] = true,
+  [WeaponDefNames['corseap_armseap_weapon1'].id] = true,
+  [WeaponDefNames['tllseab_armseap_weapon1'].id] = true,
+  [WeaponDefNames['armroy_depthcharge'].id] = true,
+  [WeaponDefNames['corroy_depthcharge'].id] = true,
+  [WeaponDefNames['armcrus_advdepthcharge'].id] = true,
+  [WeaponDefNames['corcrus_advdepthcharge'].id] = true,
+  [WeaponDefNames['armsub_arm_torpedo'].id] = true, 
+  [WeaponDefNames['corsub_arm_torpedo'].id] = true,
+  [WeaponDefNames['tllplunger_arm_torpedo'].id] = true,
+  [WeaponDefNames['armsubk_armsmart_torpedo'].id] = true,
+  [WeaponDefNames['corshark_armsmart_torpedo'].id] = true,
+  [WeaponDefNames['tllmanta_armsmart_torpedo'].id] = true,
+  [WeaponDefNames['uppercut_armsmart_torpedo'].id] = true,
+  [WeaponDefNames['tawf009_tawf009_weapon'].id] = true,
+  [WeaponDefNames['uppercut_tawf009_weapon'].id] = true,
+  [WeaponDefNames['corssub_corssub_weapon'].id] = true,
+  [WeaponDefNames['tllorc_corssub_weapon'].id] = true,
+  [WeaponDefNames['coramph_coramph_weapon1'].id] = true
+  [WeaponDefNames['tllamphibot_coramph_weapon1'].id] = true
+
 }
 
 function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, 
