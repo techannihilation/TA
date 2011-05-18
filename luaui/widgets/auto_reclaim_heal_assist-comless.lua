@@ -17,7 +17,7 @@ function widget:GetInfo()
 	return {
 		name = "Auto Reclaim/Heal/Assist-Comless",
 		desc = "Makes idle unselected builders/rez/com/nanos to reclaim metal if metal bar is not full, repair nearby units and assist in building",
-		author = "Pithikos",
+		author = "Pithikos-modified by nixtux",
 		date = "Nov 21, 2010",
 		license = "GPLv3",
 		layer = 0,
