@@ -34,7 +34,25 @@ local GetAllUnits = Spring.GetAllUnits
 
 local COM_BLAST = WeaponDefNames['commander_blast'].id
 
-local DGUN = WeaponDefNames['arm_disintegrator'].id
+local DGUN = {
+  [WeaponDefNames['armcom_arm_disintegrator'].id = true,
+  [WeaponDefNames['armcom1_arm_disintegrator'].id = true,
+  [WeaponDefNames['armcom4_arm_disintegrator1'].id = true,
+  [WeaponDefNames['armcom5_arm_disintegrator2'].id = true,
+  [WeaponDefNames['armcom6_arm_disintegrator2'].id = true,
+  [WeaponDefNames['armcom7_arm_disintegrator2'].id = true,
+  [WeaponDefNames['corcom_arm_disintegrator'].id = true,
+  [WeaponDefNames['corcom1_arm_disintegrator'].id = true,
+  [WeaponDefNames['corcom3_arm_disintegrator1'].id = true,
+  [WeaponDefNames['corcom5_arm_disintegrator2'].id = true,
+  [WeaponDefNames['corcom6_arm_disintegrator2'].id = true,
+  [WeaponDefNames['corcom7_arm_disintegrator2'].id = true,
+  [WeaponDefNames['tllcom_arm_disintegrator3'].id = true,
+  [WeaponDefNames['tllcom3_tll_disintegrator1'].id = true,
+  [WeaponDefNames['tllcom5_tll_disintegrator2'].id = true,
+  [WeaponDefNames['tllcom6_tll_disintegrator2'].id = true,
+  [WeaponDefNames['tllcom7_tll_disintegrator2'].id = true,
+}
 
 local COMMANDER = {
   [UnitDefNames["corcom"].id] = true,
