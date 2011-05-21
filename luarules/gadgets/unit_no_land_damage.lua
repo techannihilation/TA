@@ -52,11 +52,9 @@ local NO_LAND_DAMAGE = {
   [WeaponDefNames['uppercut_tawf009_weapon'].id] = true,
   [WeaponDefNames['corssub_corssub_weapon'].id] = true,
   [WeaponDefNames['tllorc_corssub_weapon'].id] = true,
-  [WeaponDefNames['coramph_coramph_weapon1'].id] = true
-  [WeaponDefNames['tllamphibot_coramph_weapon1'].id] = true
-  [WeaponDefNames['tlltorpcop_tllair_torpedo'].id] = true
-
-
+  [WeaponDefNames['coramph_coramph_weapon1'].id] = true,
+  [WeaponDefNames['tllamphibot_coramph_weapon1'].id] = true,
+  [WeaponDefNames['tlltorpcop_tllair_torpedo'].id] = true,
 }
 
 function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, 
