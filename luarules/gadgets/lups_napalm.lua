@@ -13,6 +13,7 @@ function gadget:GetInfo()
 end
 
 local FIRE_WEAPONS = {
+  ["tllhtml_tll_rockets2"] = true,
   ["corhurc_coradvbomb"] = true,
   ["tllabomber_coradvbomb"] = true,
   ["corshad_corebomb"] = true,
