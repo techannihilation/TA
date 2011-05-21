@@ -1,2 +1,4 @@
 *~
 *.swp
+.directory
+*.kate-swp
