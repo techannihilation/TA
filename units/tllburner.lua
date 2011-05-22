@@ -43,7 +43,7 @@ local unitDef = {
   movementClass      = [[KBOT2]],
   name               = [[Burner]],
   noAutoFire         = false,
-  noChaseCategory    = [[CTRL_V]],
+  noChaseCategory    = [[VTOL]],
   objectName         = [[TLLBURNER]],
   selfDestructAs     = [[MEDIUM_BUILDING]],
   shootme            = 1,
@@ -84,7 +84,7 @@ local unitDef = {
   },
   weapons = {
     [1]  = {
-      badTargetCategory  = [[CTRL_V]],
+      badTargetCategory  = [[VTOL]],
       def                = [[TLL_FLAME]],
     },
   },

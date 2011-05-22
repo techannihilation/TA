@@ -43,7 +43,7 @@ local unitDef = {
   movementClass      = [[BOAT4]],
   name               = [[Violator]],
   noAutoFire         = false,
-  noChaseCategory    = [[CTRL_V]],
+  noChaseCategory    = [[VTOL]],
   objectName         = [[TLLVIOLATOR]],
   scale              = 0.5,
   selfDestructAs     = [[BIG_UNIT]],
@@ -86,7 +86,7 @@ local unitDef = {
   },
   weapons = {
     [1]  = {
-      badTargetCategory  = [[CTRL_V]],
+      badTargetCategory  = [[VTOL]],
       def                = [[ARM_ROY]],
     },
    },

@@ -77,7 +77,7 @@ local unitDef = {
   },
   weapons = {
     [1]  = {
-      badTargetCategory  = [[CTRL_V]],
+      badTargetCategory  = [[VTOL]],
       def                = [[ARMRL_MISSILE]],
     },
   },

@@ -43,7 +43,7 @@ local unitDef = {
   movementClass      = [[TANK2]],
   name               = [[Vampire]],
   noAutoFire         = false,
-  noChaseCategory    = [[CTRL_V]],
+  noChaseCategory    = [[VTOL]],
   objectName         = [[TLLGLADIUS]],
   selfDestructAs     = [[SMALL_UNIT]],
   shootme            = 1,
@@ -83,7 +83,7 @@ local unitDef = {
   },
   weapons = {
     [1]  = {
-      badTargetCategory  = [[CTRL_V]],
+      badTargetCategory  = [[VTOL]],
       def                = [[TLLLIGHT_PARALYZER]],
     },
   },

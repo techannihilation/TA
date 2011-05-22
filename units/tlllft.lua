@@ -72,7 +72,7 @@ local unitDef = {
   },
   weapons = {
     [1]  = {
-      badTargetCategory  = [[CTRL_V]],
+      badTargetCategory  = [[VTOL]],
       def                = [[TLL_FLAME]],
       onlyTargetCategory = [[NOTAIR]],
     },
