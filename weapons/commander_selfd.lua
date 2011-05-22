@@ -19,7 +19,8 @@ return {
         turret = 1,
         weaponvelocity = 250,
         damage = {
-        default = 25000,
-        },
+        default = 90000,
+        commanders = 2800,
+         },
   },
   }
