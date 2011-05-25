@@ -28,7 +28,6 @@ local unitDef = {
   firestandorders    = 1,
   footprintX         = 3,
   footprintZ         = 3,
-  frenchdescription  = [[Commande le Canon Orbital]],
   maxDamage          = 3800,
   maxSlope           = 10,
   maxWaterDepth      = 0,
