@@ -26,7 +26,7 @@ local initdone = false
 local gameStart = false
 
 function gadget:UnitCreated(unitID, unitDefID, unitTeam)
-  if (not gameStart) and (UnitDefs[unitDefID].name == 'armcom') or (UnitDefs[unitDefID].name == 'corcom') then
+  if (not gameStart) and (UnitDefs[unitDefID].name == 'armcom') or (UnitDefs[unitDefID].name == 'corcom') or (UnitDefs[unitDefID].name == 'tllcom')then
     Spring.SetUnitNoDraw(unitID, true)
     Spring.SetUnitNeutral(unitID, true)
     Spring.SetUnitNoMinimap(unitID, true)
@@ -67,7 +67,7 @@ end
 
 else
 
-local preloadmodels = (UnitDefNames["corcom"].radius + UnitDefNames["armcom"].radius)
+local preloadmodels = (UnitDefNames["corcom"].radius + UnitDefNames["armcom"].radius + UnitDefNames["tllcom"].radius)
 
 function gadget:Initialize()
   gadgetHandler:AddSyncAction("gatesound", GateSound)
