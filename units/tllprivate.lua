@@ -6,7 +6,7 @@ local unitName = "tllprivate"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-  acceleration       = 0.12,
+  acceleration       = 0.31,
   badTargetCategory  = [[vtol]],
   bmcode             = 1,
   brakeRate          = 0.19,
@@ -43,12 +43,12 @@ local unitDef = {
   movementClass      = [[KBOT2]],
   name               = [[Private]],
   noAutoFire         = false,
-  noChaseCategory    = [[vtol]],
+  noChaseCategory    = [[VTOL]],
   objectName         = [[TLLPRIVATE]],
   selfDestructAs     = [[SMALL_UNIT]],
   shootme            = 1,
   side               = [[TLL]],
-  sightDistance      = 280,
+  sightDistance      = 411,
   spanishdescription = [[Kbot de infantería]],
   standingfireorder  = 2,
   standingmoveorder  = 2,
