@@ -28,7 +28,7 @@ end
 
 -- global vars (so other widget (i.e. guis) can interact with the widget)
 
-mmw_update         = 1.25  -- Seconds per update, do not set this too low
+mmw_update         = 1.75  -- Seconds per update, do not set this too low
 mmw_etargetPercent = 0.5   -- Percent of energy bar to aim for
 mmw_estallPercent  = 0.3   -- Percent of "mmw_etargetPercent", when energy stalling begins (30% of 50% -> 15%)
 mmw_forceStall     = false
