@@ -51,7 +51,7 @@ local unitDef = {
   zbuffer            = 1,
   sfxtypes = {
     explosiongenerators = {
-      [[custom:webbluelight]],
+      [[custom:tllupgweb_effect]],
     },
   },
   sounds = {

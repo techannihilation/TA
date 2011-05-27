@@ -30,29 +30,7 @@ return {
     },
   },
   
- ["webbluelight"] = {
-    useairlos          = false,
-    usedefaultexplosions = false,
-    heatcloud = {
-      air                = true,
-      count              = 3,
-      ground             = true,
-      water              = true,
-      properties = {
-        heat               = 35,
-        heatfalloff        = 0.54,
-        maxheat            = 35,
-        pos                = [[0, 0.0, 0]],
-        size               = [[15.0 r1]],
-        sizegrowth         = [[0.09 r.16]],
-        sizemod            = 0,
-        sizemodmod         = 0,
-        speed              = [[0.04 r-0.1, 0.04 r-0.1, 0.04 r-0.1]],
-        texture            = [[blueexploredexplo]],
-        useairlos          = false,
-      },
-    },
-  },
+ 
 
   
   ["smallwhitelight"] = {
