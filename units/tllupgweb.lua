@@ -12,6 +12,7 @@ local unitDef = {
   buildCostEnergy    = 3833,
   buildCostMetal     = 211,
   builder            = false,
+  buildPic           = [[tllweb.pcx]],
   buildTime          = 24060,
   canAttack          = true,
   canGuard           = true,

@@ -626,6 +626,12 @@ local morphDefs = {
 		metal = 2000,
 		energy = 20000,
 	},
+	 tllweb = {
+		into = 'tllupgweb',
+            time = 10,
+		xp = 0.60,
+		metal = 50,
+	},
 }
 
 
