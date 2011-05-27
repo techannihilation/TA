@@ -6,7 +6,7 @@ local unitName = "tllpbot"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-  acceleration       = 0.1,
+  acceleration       = 0.11,
   badTargetCategory  = [[vtol]],
   bmcode             = 1,
   brakeRate          = 0.13,
@@ -34,7 +34,7 @@ local unitDef = {
   maneuverleashlength = 640,
   maxDamage          = 1220,
   maxSlope           = 14,
-  maxVelocity        = 1.11,
+  maxVelocity        = 1.40,
   maxWaterDepth      = 12,
   mobilestandorders  = 1,
   movementClass      = [[KBOT2]],
@@ -45,7 +45,7 @@ local unitDef = {
   selfDestructAs     = [[BIG_UNIT]],
   shootme            = 1,
   side               = [[TLL]],
-  sightDistance      = 250,
+  sightDistance      = 350,
   standingfireorder  = 2,
   standingmoveorder  = 0,
   steeringmode       = 2,
@@ -109,7 +109,7 @@ local weaponDefs = {
     minbarrelangle     = -35,
     name               = [[Light Gauss]],
     range              = 355,
-    reloadtime         = 1,
+    reloadtime         = 0.8,
     renderType         = 4,
     soundHit           = [[xplosml3]],
     soundStart         = [[canlite3]],
@@ -121,7 +121,7 @@ local weaponDefs = {
     weaponType         = [[Cannon]],
     weaponVelocity     = 250,
     damage = {
-      default            = 97,
+      default            = 94,
     },
   },
 }
