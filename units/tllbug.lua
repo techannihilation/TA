@@ -6,8 +6,8 @@ local unitName = "tllbug"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-  acceleration       = 0.14,
-  badTargetCategory  = [[vtol]],
+  acceleration       = 0.46,
+  badTargetCategory  = [[VTOL]],
   bmcode             = 1,
   brakeRate          = 0.25,
   buildCostEnergy    = 112,
@@ -47,7 +47,7 @@ local unitDef = {
   selfDestructAs     = [[SMALL_UNIT]],
   shootme            = 1,
   side               = [[TLL]],
-  sightDistance      = 263,
+  sightDistance      = 498,
   standingfireorder  = 2,
   standingmoveorder  = 2,
   steeringmode       = 2,
