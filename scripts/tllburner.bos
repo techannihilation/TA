@@ -24,35 +24,26 @@ walk()
 		move lfoot to y-axis [0.000000] now;
 		turn lleg to x-axis <-41.357143> now;
 		turn rleg to x-axis <54.736264> now;
-//		turn head to x-axis <-10.945055> now;
 		turn rfoot to x-axis <-34.670330> now;
 		turn lfoot to x-axis <13.379121> now;
 		sleep 159;
 	}
 	if( TRUE )
 	{
-//		move body to z-axis [0.350000] now;
 		move lleg to y-axis [-0.200000] now;
 		move rleg to y-axis [0.500000] now;
-//		turn hips to z-axis <5.159341> now;
-//		turn body to x-axis <6.082418> now;
 		turn lleg to x-axis <-41.357143> now;
 		turn rleg to x-axis <55.346154> now;
-//		turn head to x-axis <-5.467033> now;
 		turn rfoot to x-axis <-17.934066> now;
 		turn lfoot to x-axis <34.670330> now;
 		sleep 87;
 	}
 	if( TRUE )
 	{
-//		move body to z-axis [0.700000] now;
 		move lleg to y-axis [0.649994] now;
 		move rleg to y-axis [1.000000] now;
-//		turn hips to z-axis <10.335165> now;
-//		turn body to x-axis <12.159341> now;
 		turn lleg to x-axis <-32.236264> now;
 		turn rleg to x-axis <55.956044> now;
-//		turn head to x-axis <0.000000> now;
 		turn rfoot to x-axis <-1.214286> now;
 		turn lfoot to x-axis <17.027473> now;
 		sleep 73;
@@ -61,12 +52,9 @@ walk()
 	{
 		move lleg to y-axis [1.350000] now;
 		move rleg to y-axis [1.900000] now;
-//		move head to y-axis [-0.000006] now;
 		move rfoot to y-axis [0.000000] now;
-//		turn hips to z-axis <14.593407> now;
 		turn lleg to x-axis <-10.945055> now;
 		turn rleg to x-axis <18.247253> now;
-//		turn head to x-axis <13.379121> now;
 		turn rfoot to x-axis <-17.637363> now;
 		turn lfoot to x-axis <0.000000> now;
 		sleep 83;
@@ -75,13 +63,9 @@ walk()
 	{
 		move lleg to y-axis [0.950000] now;
 		move rleg to y-axis [1.949994] now;
-//		move head to x-axis [-0.350000] now;
-//		move head to y-axis [-0.425000] now;
 		move rfoot to y-axis [0.000000] now;
-//		turn hips to z-axis <12.159341> now;
 		turn lleg to x-axis <3.038462> now;
 		turn rleg to x-axis <4.857143> now;
-//		turn head to x-axis <18.247253> now;
 		turn rfoot to x-axis <-22.192308> now;
 		turn rfoot to y-axis <0.000000> now;
 		turn lfoot to x-axis <-16.725275> now;
@@ -92,13 +76,9 @@ walk()
 		move hips to z-axis [0.000000] now;
 		move lleg to y-axis [0.950000] now;
 		move rleg to y-axis [1.999994] now;
-//		move head to x-axis [-0.700000] now;
-//		move head to y-axis [-0.850000] now;
 		move rfoot to y-axis [0.000000] now;
-//		turn hips to z-axis <9.725275> now;
 		turn lleg to x-axis <11.549451> now;
 		turn rleg to x-axis <-8.505495> now;
-//		turn head to x-axis <23.104396> now;
 		turn rfoot to x-axis <-26.758242> now;
 		turn rfoot to y-axis <0.000000> now;
 		turn lfoot to x-axis <-24.324176> now;
@@ -106,34 +86,20 @@ walk()
 	}
 	if( TRUE )
 	{
-//		move hips to z-axis [0.000000] now;
-//		move body to z-axis [0.475000] now;
 		move lleg to y-axis [0.475000] now;
 		move rleg to y-axis [1.774994] now;
-//		move head to x-axis [-0.350000] now;
-//		move head to y-axis [-0.425000] now;
-//		turn hips to z-axis <5.769231> now;
-//		turn body to x-axis <8.813187> now;
 		turn lleg to x-axis <17.027473> now;
 		turn rleg to x-axis <-25.236264> now;
-//		turn head to x-axis <11.549451> now;
 		turn rfoot to x-axis <-8.203297> now;
 		turn lfoot to x-axis <-20.670330> now;
 		sleep 193;
 	}
 	if( TRUE )
 	{
-//		move hips to z-axis [0.000000] now;
-//		move body to z-axis [0.250000] now;
 		move lleg to y-axis [0.000000] now;
 		move rleg to y-axis [1.549994] now;
-//		move head to x-axis [0.000000] now;
-//		move head to y-axis [0.000000] now;
-//		turn hips to z-axis <1.824176> now;
-//		turn body to x-axis <5.467033> now;
 		turn lleg to x-axis <29.802198> now;
 		turn rleg to x-axis <-41.967033> now;
-//		turn head to x-axis <0.000000> now;
 		turn rfoot to x-axis <10.335165> now;
 		turn lfoot to x-axis <-29.192308> now;
 		sleep 225;
@@ -142,10 +108,7 @@ walk()
 	{
 		move lleg to y-axis [0.000000] now;
 		move rleg to y-axis [0.824994] now;
-//		turn hips to z-axis <0.912088> now;
-//		turn body to x-axis <2.736264> now;
 		turn lleg to x-axis <38.005495> now;
-//		turn head to x-axis <-5.159341> now;
 		turn rfoot to x-axis <10.335165> now;
 		turn lfoot to x-axis <-33.148352> now;
 		sleep 181;
@@ -154,46 +117,34 @@ walk()
 	{
 		move lleg to y-axis [0.000000] now;
 		move rleg to y-axis [0.099994] now;
-//		turn hips to z-axis <0.000000> now;
-//		turn body to x-axis <0.000000> now;
 		turn lleg to x-axis <55.956044> now;
-//		turn head to x-axis <-10.335165> now;
 		turn rfoot to x-axis <1.214286> now;
 		turn lfoot to x-axis <-31.626374> now;
 		sleep 124;
 	}
 	if( TRUE )
 	{
-//		move body to z-axis [0.475000] now;
 		move lleg to y-axis [0.500000] now;
 		turn hips to z-axis <-3.335165> now;
-//		turn body to x-axis <5.769231> now;
 		turn lleg to x-axis <46.225275> now;
 		turn rleg to x-axis <-51.093407> now;
-//		turn head to x-axis <-5.159341> now;
 		turn rfoot to x-axis <15.813187> now;
 		turn lfoot to x-axis <-19.456044> now;
 		sleep 100;
 	}
 	if( TRUE )
 	{
-//		move body to z-axis [0.700000] now;
 		move lleg to y-axis [1.000000] now;
-//		turn hips to z-axis <-6.681319> now;
-//		turn body to x-axis <11.549451> now;
 		turn lleg to x-axis <55.346154> now;
 		turn rleg to x-axis <-60.214286> now;
-//		turn head to x-axis <0.000000> now;
 		turn rfoot to x-axis <45.615385> now;
 		turn lfoot to x-axis <-12.159341> now;
 		sleep 76;
 	}
 	if( TRUE )
 	{
-//		move hips to y-axis [-0.225000] now;
 		move lleg to y-axis [1.299994] now;
 		move rleg to y-axis [0.624994] now;
-//		turn hips to z-axis <-11.247253> now;
 		turn lleg to x-axis <36.791209> now;
 		turn rleg to x-axis <-46.225275> now;
 		turn rfoot to x-axis <31.923077> now;
@@ -202,10 +153,8 @@ walk()
 	}
 	if( TRUE )
 	{
-//		move hips to y-axis [-0.450000] now;
 		move lleg to y-axis [1.599994] now;
 		move rleg to y-axis [1.149994] now;
-//		turn hips to z-axis <-15.813187> now;
 		turn lleg to x-axis <18.247253> now;
 		turn rleg to x-axis <-32.236264> now;
 		turn rfoot to x-axis <18.247253> now;
@@ -216,11 +165,8 @@ walk()
 	{
 		move lleg to y-axis [1.799994] now;
 		move rleg to y-axis [1.349994] now;
-//		move head to y-axis [-0.475000] now;
-//		turn hips to z-axis <-13.379121> now;
 		turn lleg to x-axis <4.560440> now;
 		turn rleg to x-axis <-18.549451> now;
-//		turn head to x-axis <12.467033> now;
 		turn rfoot to x-axis <4.560440> now;
 		turn lfoot to x-axis <-21.582418> now;
 		sleep 104;
@@ -229,56 +175,36 @@ walk()
 	{
 		move lleg to y-axis [1.999994] now;
 		move rleg to y-axis [1.549994] now;
-//		move head to y-axis [-0.950000] now;
-//		turn hips to z-axis <-10.945055> now;
 		turn lleg to x-axis <-9.115385> now;
 		turn rleg to x-axis <-4.857143> now;
-//		turn head to x-axis <24.934066> now;
 		turn rfoot to x-axis <-9.115385> now;
 		turn lfoot to x-axis <-26.148352> now;
 		sleep 146;
 	}
 	if( TRUE )
 	{
-//		move body to z-axis [0.400000] now;
 		move lleg to y-axis [1.424994] now;
 		move rleg to y-axis [0.949994] now;
-//		move head to y-axis [-0.775000] now;
-//		turn hips to z-axis <-6.681319> now;
-//		turn body to x-axis <8.203297> now;
 		turn lleg to x-axis <-30.412088> now;
 		turn rleg to x-axis <4.857143> now;
-//		turn head to x-axis <18.549451> now;
 		turn rfoot to x-axis <-14.901099> now;
 		turn lfoot to x-axis <-15.203297> now;
 		sleep 190;
 	}
 	if( TRUE )
 	{
-//		move body to z-axis [0.100000] now;
 		move lleg to y-axis [0.849994] now;
 		move rleg to y-axis [0.350000] now;
-//		move head to y-axis [-0.600006] now;
-//		turn hips to z-axis <-2.423077> now;
-//		turn body to x-axis <4.857143> now;
 		turn lleg to x-axis <-51.692308> now;
 		turn rleg to x-axis <14.593407> now;
-//		turn head to x-axis <12.159341> now;
 		turn rfoot to x-axis <-20.670330> now;
 		turn lfoot to x-axis <-4.247253> now;
 		sleep 204;
 	}
-//	move hips to y-axis [-0.225000] now;
-//	move hips to z-axis [0.000000] now;
-//	move body to z-axis [0.050000] now;
 	move lleg to y-axis [0.424994] now;
 	move rleg to y-axis [0.175000] now;
-//	move head to y-axis [-0.300006] now;
-//	turn hips to z-axis <-1.214286> now;
-//	turn body to x-axis <2.423077> now;
 	turn lleg to x-axis <-46.527473> now;
 	turn rleg to x-axis <34.670330> now;
-//	turn head to x-axis <0.604396> now;
 	turn rfoot to x-axis <-27.670330> now;
 	turn rfoot to y-axis <0.000000> now;
 	turn lfoot to x-axis <-2.736264> now;
@@ -289,8 +215,6 @@ walklegs()
 {
 	if( TRUE )
 	{
-//		move body to y-axis [0.000000] now;
-//		move head to y-axis [0.000000] now;
 		move rfoot to y-axis [0.000000] now;
 		move lfoot to y-axis [0.000000] now;
 		turn lleg to x-axis <-41.357143> now;
@@ -301,11 +225,8 @@ walklegs()
 	}
 	if( TRUE )
 	{
-//		move body to z-axis [0.350000] now;
 		move lleg to y-axis [-0.200000] now;
 		move rleg to y-axis [0.500000] now;
-//		turn hips to z-axis <5.159341> now;
-//		turn body to x-axis <6.082418> now;
 		turn lleg to x-axis <-41.357143> now;
 		turn rleg to x-axis <55.346154> now;
 		turn rfoot to x-axis <-17.934066> now;
@@ -314,11 +235,8 @@ walklegs()
 	}
 	if( TRUE )
 	{
-//		move body to z-axis [0.700000] now;
 		move lleg to y-axis [0.649994] now;
 		move rleg to y-axis [1.000000] now;
-//		turn hips to z-axis <10.335165> now;
-//		turn body to x-axis <12.159341> now;
 		turn lleg to x-axis <-32.236264> now;
 		turn rleg to x-axis <55.956044> now;
 		turn rfoot to x-axis <-1.214286> now;
@@ -330,7 +248,6 @@ walklegs()
 		move lleg to y-axis [1.350000] now;
 		move rleg to y-axis [1.900000] now;
 		move rfoot to y-axis [0.000000] now;
-//		turn hips to z-axis <14.593407> now;
 		turn lleg to x-axis <-10.945055> now;
 		turn rleg to x-axis <18.247253> now;
 		turn rfoot to x-axis <-17.637363> now;
@@ -342,7 +259,6 @@ walklegs()
 		move lleg to y-axis [0.950000] now;
 		move rleg to y-axis [1.949994] now;
 		move rfoot to y-axis [0.000000] now;
-//		turn hips to z-axis <12.159341> now;
 		turn lleg to x-axis <3.038462> now;
 		turn rleg to x-axis <4.857143> now;
 		turn rfoot to x-axis <-22.192308> now;
@@ -352,11 +268,9 @@ walklegs()
 	}
 	if( TRUE )
 	{
-//		move hips to z-axis [0.000000] now;
 		move lleg to y-axis [0.950000] now;
 		move rleg to y-axis [1.999994] now;
 		move rfoot to y-axis [0.000000] now;
-//		turn hips to z-axis <9.725275> now;
 		turn lleg to x-axis <11.549451> now;
 		turn rleg to x-axis <-8.505495> now;
 		turn rfoot to x-axis <-26.758242> now;
@@ -366,12 +280,8 @@ walklegs()
 	}
 	if( TRUE )
 	{
-//		move hips to z-axis [0.000000] now;
-//		move body to z-axis [0.475000] now;
 		move lleg to y-axis [0.475000] now;
 		move rleg to y-axis [1.774994] now;
-//		turn hips to z-axis <5.769231> now;
-//		turn body to x-axis <8.813187> now;
 		turn lleg to x-axis <17.027473> now;
 		turn rleg to x-axis <-25.236264> now;
 		turn rfoot to x-axis <-8.203297> now;
@@ -380,12 +290,8 @@ walklegs()
 	}
 	if( TRUE )
 	{
-//		move hips to z-axis [0.000000] now;
-//		move body to z-axis [0.250000] now;
 		move lleg to y-axis [0.000000] now;
 		move rleg to y-axis [1.549994] now;
-//		turn hips to z-axis <1.824176> now;
-//		turn body to x-axis <5.467033> now;
 		turn lleg to x-axis <29.802198> now;
 		turn rleg to x-axis <-41.967033> now;
 		turn rfoot to x-axis <10.335165> now;
@@ -396,8 +302,6 @@ walklegs()
 	{
 		move lleg to y-axis [0.000000] now;
 		move rleg to y-axis [0.824994] now;
-//		turn hips to z-axis <0.912088> now;
-//		turn body to x-axis <2.736264> now;
 		turn lleg to x-axis <38.005495> now;
 		turn rfoot to x-axis <10.335165> now;
 		turn lfoot to x-axis <-33.148352> now;
@@ -407,8 +311,6 @@ walklegs()
 	{
 		move lleg to y-axis [0.000000] now;
 		move rleg to y-axis [0.099994] now;
-//		turn hips to z-axis <0.000000> now;
-//		turn body to x-axis <0.000000> now;
 		turn lleg to x-axis <55.956044> now;
 		turn rfoot to x-axis <1.214286> now;
 		turn lfoot to x-axis <-31.626374> now;
@@ -416,10 +318,7 @@ walklegs()
 	}
 	if( TRUE )
 	{
-//		move body to z-axis [0.475000] now;
 		move lleg to y-axis [0.500000] now;
-//		turn hips to z-axis <-3.335165> now;
-//		turn body to x-axis <5.769231> now;
 		turn lleg to x-axis <46.225275> now;
 		turn rleg to x-axis <-51.093407> now;
 		turn rfoot to x-axis <15.813187> now;
@@ -428,10 +327,7 @@ walklegs()
 	}
 	if( TRUE )
 	{
-//		move body to z-axis [0.700000] now;
 		move lleg to y-axis [1.000000] now;
-//		turn hips to z-axis <-6.681319> now;
-//		turn body to x-axis <11.549451> now;
 		turn lleg to x-axis <55.346154> now;
 		turn rleg to x-axis <-60.214286> now;
 		turn rfoot to x-axis <45.615385> now;
@@ -440,10 +336,8 @@ walklegs()
 	}
 	if( TRUE )
 	{
-//		move hips to y-axis [-0.225000] now;
 		move lleg to y-axis [1.299994] now;
 		move rleg to y-axis [0.624994] now;
-//		turn hips to z-axis <-11.247253> now;
 		turn lleg to x-axis <36.791209> now;
 		turn rleg to x-axis <-46.225275> now;
 		turn rfoot to x-axis <31.923077> now;
@@ -452,10 +346,8 @@ walklegs()
 	}
 	if( TRUE )
 	{
-//		move hips to y-axis [-0.450000] now;
 		move lleg to y-axis [1.599994] now;
 		move rleg to y-axis [1.149994] now;
-//		turn hips to z-axis <-15.813187> now;
 		turn lleg to x-axis <18.247253> now;
 		turn rleg to x-axis <-32.236264> now;
 		turn rfoot to x-axis <18.247253> now;
@@ -466,7 +358,6 @@ walklegs()
 	{
 		move lleg to y-axis [1.799994] now;
 		move rleg to y-axis [1.349994] now;
-//		turn hips to z-axis <-13.379121> now;
 		turn lleg to x-axis <4.560440> now;
 		turn rleg to x-axis <-18.549451> now;
 		turn rfoot to x-axis <4.560440> now;
@@ -477,7 +368,6 @@ walklegs()
 	{
 		move lleg to y-axis [1.999994] now;
 		move rleg to y-axis [1.549994] now;
-//		turn hips to z-axis <-10.945055> now;
 		turn lleg to x-axis <-9.115385> now;
 		turn rleg to x-axis <-4.857143> now;
 		turn rfoot to x-axis <-9.115385> now;
@@ -486,11 +376,8 @@ walklegs()
 	}
 	if( TRUE )
 	{
-//		move body to z-axis [0.400000] now;
 		move lleg to y-axis [1.424994] now;
 		move rleg to y-axis [0.949994] now;
-//		turn hips to z-axis <-6.681319> now;
-//		turn body to x-axis <8.203297> now;
 		turn lleg to x-axis <-30.412088> now;
 		turn rleg to x-axis <4.857143> now;
 		turn rfoot to x-axis <-14.901099> now;
@@ -499,11 +386,8 @@ walklegs()
 	}
 	if( TRUE )
 	{
-//		move body to z-axis [0.100000] now;
 		move lleg to y-axis [0.849994] now;
 		move rleg to y-axis [0.350000] now;
-//		turn hips to z-axis <-2.423077> now;
-//		turn body to x-axis <4.857143> now;
 		turn lleg to x-axis <-51.692308> now;
 		turn rleg to x-axis <14.593407> now;
 		turn rfoot to x-axis <-20.670330> now;
@@ -512,11 +396,8 @@ walklegs()
 	}
 	move hips to y-axis [-0.225000] now;
 	move hips to z-axis [0.000000] now;
-//	move body to z-axis [0.050000] now;
 	move lleg to y-axis [0.424994] now;
 	move rleg to y-axis [0.175000] now;
-//	turn hips to z-axis <-1.214286> now;
-//	turn body to x-axis <2.423077> now;
 	turn lleg to x-axis <-46.527473> now;
 	turn rleg to x-axis <34.670330> now;
 	turn rfoot to x-axis <-27.670330> now;
@@ -700,7 +581,7 @@ AimPrimary(heading, pitch)
 	{
 		sleep 100;
 	}
-	turn head to y-axis heading speed <100.000000>;
+	turn head to y-axis heading speed <190.000000>;
 	wait-for-turn head around y-axis;
 	turn sleeve to x-axis <0.000000> - pitch speed <60.000000>;
 	wait-for-turn sleeve around x-axis;
