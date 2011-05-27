@@ -6,7 +6,7 @@ local unitName = "tllfirestarter"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-  acceleration       = 0.1,
+  acceleration       = 0.11,
   badTargetCategory  = [[NOWEAPON]],
   bmcode             = 1,
   brakeRate          = 0.15,
@@ -48,7 +48,7 @@ local unitDef = {
   selfDestructAs     = [[BIG_UNIT]],
   shootme            = 1,
   side               = [[TLL]],
-  sightDistance      = 290,
+  sightDistance      = 390,
   spanishdescription = [[Kbot lanzamisil antiaéreo]],
   standingfireorder  = 2,
   standingmoveorder  = 2,
@@ -115,7 +115,7 @@ local weaponDefs = {
     name               = [[Missiles]],
     noSelfDamage       = true,
     range              = 760,
-    reloadtime         = 2,
+    reloadtime         = 1.8,
     renderType         = 1,
     selfprop           = true,
     smokedelay         = 0.1,
