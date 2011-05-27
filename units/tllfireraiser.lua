@@ -6,7 +6,7 @@ local unitName = "tllfireraiser"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-  acceleration       = 0.1,
+  acceleration       = 0.11,
   badTargetCategory  = [[vtol]],
   bmcode             = 1,
   brakeRate          = 0.15,
@@ -48,7 +48,7 @@ local unitDef = {
   selfDestructAs     = [[BIG_UNIT]],
   shootme            = 1,
   side               = [[TLL]],
-  sightDistance      = 260,
+  sightDistance      = 329,
   spanishdescription = [[Kbot Lanzacohetes]],
   standingfireorder  = 2,
   standingmoveorder  = 1,
