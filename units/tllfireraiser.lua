@@ -7,7 +7,7 @@ local unitName = "tllfireraiser"
 
 local unitDef = {
   acceleration       = 0.11,
-  badTargetCategory  = [[vtol]],
+  badTargetCategory  = [[VTOL]],
   bmcode             = 1,
   brakeRate          = 0.15,
   buildCostEnergy    = 841,

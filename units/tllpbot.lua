@@ -7,7 +7,7 @@ local unitName = "tllpbot"
 
 local unitDef = {
   acceleration       = 0.11,
-  badTargetCategory  = [[vtol]],
+  badTargetCategory  = [[VTOL]],
   bmcode             = 1,
   brakeRate          = 0.13,
   buildCostEnergy    = 675,
@@ -40,7 +40,7 @@ local unitDef = {
   movementClass      = [[KBOT2]],
   name               = [[Rainman]],
   noAutoFire         = false,
-  noChaseCategory    = [[vtol]],
+  noChaseCategory    = [[VTOL]],
   objectName         = [[TLLpbot]],
   selfDestructAs     = [[BIG_UNIT]],
   shootme            = 1,
