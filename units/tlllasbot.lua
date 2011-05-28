@@ -6,7 +6,7 @@ local unitName = "tlllasbot"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-  acceleration       = 0.1,
+  acceleration       = 0.11,
   badTargetCategory  = [[VTOL]],
   bmcode             = 1,
   brakeRate          = 0.15,
@@ -49,7 +49,7 @@ local unitDef = {
   selfDestructAs     = [[BIG_UNIT]],
   shootme            = 1,
   side               = [[TLL]],
-  sightDistance      = 290,
+  sightDistance      = 405,
   standingfireorder  = 2,
   standingmoveorder  = 1,
   steeringmode       = 2,

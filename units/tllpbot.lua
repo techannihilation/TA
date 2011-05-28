@@ -121,7 +121,7 @@ local weaponDefs = {
     weaponType         = [[Cannon]],
     weaponVelocity     = 250,
     damage = {
-      default            = 94,
+      default            = 80,
     },
   },
 }
