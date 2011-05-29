@@ -6,7 +6,7 @@ local unitName = "tllsalamander"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-  acceleration       = 0.0095,
+  acceleration       = 0.15,
   badTargetCategory  = [[VTOL]],
   bmcode             = 1,
   brakeRate          = 0.0085,
@@ -46,14 +46,14 @@ local unitDef = {
   selfDestructAs     = [[BIG_UNIT]],
   shootme            = 1,
   side               = [[TLL]],
-  sightDistance      = 240,
+  sightDistance      = 325,
   spanishdescription = [[Tanque anfibio]],
   standingfireorder  = 2,
   standingmoveorder  = 0,
   steeringmode       = 1,
   TEDClass           = [[TANK]],
   threed             = 1,
-  turnRate           = 380,
+  turnRate           = 880,
   unitname           = [[tllsalamander]],
   unitnumber         = 837,
   version            = 3.1,
