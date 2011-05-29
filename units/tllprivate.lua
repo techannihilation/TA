@@ -7,7 +7,7 @@ local unitName = "tllprivate"
 
 local unitDef = {
   acceleration       = 0.31,
-  badTargetCategory  = [[vtol]],
+  badTargetCategory  = [[VTOL]],
   bmcode             = 1,
   brakeRate          = 0.19,
   buildCostEnergy    = 535,
