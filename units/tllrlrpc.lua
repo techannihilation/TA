@@ -100,6 +100,7 @@ local weaponDefs = {
     energypershot      = 12000,
     explosionart       = [[bio1]],
     explosiongaf       = [[CAexp2]],
+    explosionGenerator = [[custom:FLASH2]],
     fireStarter        = 90,
     id                 = 119,
     impulseBoost       = 0.123,
