@@ -59,6 +59,7 @@ local unitDef = {
   objectName         = [[eclipse]],
   ovradjust          = 1,
   scale              = 1,
+  script             = [[eclipse.cob]],
   selfDestructAs     = [[BIG_UNIT]],
   shootme            = 1,
   side               = [[CORE]],
