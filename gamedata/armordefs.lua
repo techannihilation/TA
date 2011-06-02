@@ -71,7 +71,7 @@ hgunships = {
 	blade = 99,
 	blackdawn = 99,
 	b52g = 99,
-	["tu95-a"] = 99,
+	eclipse = 99,
 	tllcopter = 99,
 	tllrobber = 99,
 },
