@@ -141,9 +141,6 @@ local weaponDefs = {
     },
   },
 }
-    },
-  },
-}
 unitDef.weaponDefs = weaponDefs
 
 
