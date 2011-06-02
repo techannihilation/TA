@@ -39,7 +39,7 @@ return {
         heatfalloff        = 0.54,
         maxheat            = 35,
         pos                = [[0, 0.0, 0]],
-        size               = [[16.0 r1]],
+        size               = [[18.0 r1]],
         sizegrowth         = [[0.09 r.16]],
         sizemod            = 0,
         sizemodmod         = 0,

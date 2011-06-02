@@ -1,0 +1,243 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  m1, m2, intake1,intake2, mount1, mount2, base, airframe, wing1, wing2, tail, ex, drop;
+
+static-var  Restore_Delay, laser, InStateChange, LastWantedState;
+
+// Signal definitions
+#define SIG_AIM_2			2
+
+#define SMOKEPIECE1 base
+
+#include "StateChg.h"
+
+activatescr()
+{
+	if( TRUE )
+	{
+		turn wing1 to z-axis <0.0> speed <25.0>;
+		turn wing2 to z-axis <0.0> speed <25.0>;
+		wait-for-turn wing1 around z-axis;
+		wait-for-turn wing2 around z-axis;
+		sleep 150;
+	}
+	sleep 44;
+	return (0);
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		turn wing1 to z-axis <95.0> speed <10.0>;
+		turn wing2 to z-axis <-95.0> speed <10.0>;
+		wait-for-turn wing1 around z-axis;
+		wait-for-turn wing2 around z-axis;
+	}
+	sleep 44;
+	return (0);
+}
+
+InitState()
+{
+	LastWantedState = 1;
+	InStateChange = 0;
+	return (0);
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( InStateChange )
+	{
+		LastWantedState = requestedstate;
+		return (0);
+	}
+	InStateChange = 1;
+	currentstate = LastWantedState;
+	LastWantedState = requestedstate;
+	while( LastWantedState != currentstate )
+	{
+		if( LastWantedState == 0 )
+		{
+			call-script activatescr();
+			currentstate = 0;
+		}
+		if( LastWantedState == 1 )
+		{
+			call-script deactivatescr();
+			currentstate = 1;
+		}
+	}
+	InStateChange = 0;
+	return (0);
+}
+
+#include "SmokeUnit.h"
+#define ACTIVATECMD			call-script activatescr();
+#define DEACTIVATECMD		call-script deactivatescr();
+
+Create()
+{
+	hide m1;
+	hide m2;
+	laser = 1;
+	Restore_Delay = 3000;
+	call-script InitState();
+	call-script DeactivateScr();
+	start-script SmokeUnit();
+	return (0);
+}
+
+Activate()
+{
+	start-script RequestState(0);
+	return (0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+	return (0);
+}
+
+RestoreAfterDelay()
+{
+	sleep Restore_Delay;
+	turn mount1 to y-axis <0.000000> speed <90.021978>;
+	turn mount1 to x-axis <0.000000> speed <50.010989>;
+	turn mount2 to y-axis <0.000000> speed <90.021978>;
+	turn mount2 to x-axis <0.000000> speed <50.010989>;
+	return (0);
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = drop;
+	return (0);
+}
+
+QuerySecondary(piecenum)
+{
+    if( laser == 0)
+    {
+	  piecenum = mount1;
+	}
+    if( laser == 1)
+    {
+	  piecenum = mount2;
+	}
+	return (0);
+}
+
+AimSecondary(heading, pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	turn mount1 to y-axis heading speed <390.093407>;
+	turn mount2 to x-axis <0.000000> - pitch speed <350.082418>;
+	turn mount1 to y-axis heading speed <390.093407>;
+	turn mount2 to x-axis <0.000000> - pitch speed <350.082418>;
+	wait-for-turn mount1 around y-axis;
+	wait-for-turn mount2 around x-axis;
+	wait-for-turn mount1 around y-axis;
+	wait-for-turn mount2 around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireSecondary()
+{
+	laser = !laser;
+	if( laser == 0 )
+	{
+		show m1;
+		sleep 150;
+		hide m1;
+		return (0);
+	}
+	if( laser == 1 )
+	{
+		show m2;
+		sleep 150;
+		hide m2;
+		return (0);
+	}
+	
+}
+
+AimFromSecondary(piecenum)
+{
+    if( laser == 0)
+    {
+	  piecenum = mount1;
+	}
+    if( laser == 1)
+    {
+	  piecenum = mount2;
+	}
+	return (0);
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+	return (0);
+}
+
+Killed(severity, corpsetype)
+{
+	hide m1;
+	hide m2;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type BITMAPONLY | BITMAP1;
+		explode drop type FALL | BITMAP2;
+		explode m1 type FALL | BITMAP3;
+		explode m2 type FALL | BITMAP4;
+		explode tail type FALL | BITMAP5;
+		explode ex type FALL | BITMAP1;
+		explode wing1 type SHATTER | BITMAP2;
+		explode wing2 type SHATTER | BITMAP3;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type BITMAPONLY | BITMAP1;
+		explode drop type FALL | BITMAP2;
+		explode m1 type FALL | BITMAP3;
+		explode m2 type FALL | BITMAP4;
+		explode tail type FALL | BITMAP5;
+		explode ex type FALL | BITMAP1;
+		explode wing1 type SHATTER | BITMAP2;
+		explode wing2 type SHATTER | BITMAP3;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type BITMAPONLY | BITMAP1;
+		explode drop type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode m1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode m2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode tail type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode ex type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode wing1 type SHATTER | BITMAP2;
+		explode wing2 type SHATTER | BITMAP3;
+		return (0);
+	}
+	corpsetype = 3;
+	explode base type BITMAPONLY | BITMAP1;
+	explode drop type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode m1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode m2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode tail type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode ex type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode wing1 type SHATTER | EXPLODE_ON_HIT | BITMAP2;
+	explode wing2 type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+	return (0);
+}
