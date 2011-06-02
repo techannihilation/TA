@@ -6,7 +6,7 @@ local unitName = "tlllasbot"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-  acceleration       = 0.11,
+  acceleration       = 0.1,
   badTargetCategory  = [[VTOL]],
   bmcode             = 1,
   brakeRate          = 0.15,
@@ -19,7 +19,7 @@ local unitDef = {
   canMove            = true,
   canPatrol          = true,
   canstop            = 1,
-  category           = [[TLL KBOT LEVEL2 WEAPON NOTAIR NOTSUB ]],
+  category           = [[TLL KBOT LEVEL2 WEAPON NOTAIR NOTSUB CTRL_W]],
   copyright          = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
   corpse             = [[dead]],
   defaultmissiontype = [[Standby]],
@@ -111,7 +111,7 @@ local weaponDefs = {
     lineOfSight        = true,
     name               = [[HighEnergyLaser]],
     noSelfDamage       = true,
-    range              = 340,
+    range              = 300,
     reloadtime         = 0.30,
     renderType         = 0,
     rgbColor           = [[0 1 0]],
@@ -125,7 +125,7 @@ local weaponDefs = {
     weaponVelocity     = 2250,
     damage = {
       commanders         = 90,
-      default            = 87,
+      default            = 53,
       gunships           = 35,
       hgunships          = 35,
       l1bombers          = 35,
@@ -141,8 +141,10 @@ local weaponDefs = {
     },
   },
 }
-
-      unitDef.weaponDefs = weaponDefs
+    },
+  },
+}
+unitDef.weaponDefs = weaponDefs
 
 
 --------------------------------------------------------------------------------

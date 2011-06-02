@@ -118,7 +118,7 @@ local weaponDefs = {
     weaponVelocity     = 1500,
     damage = {
       commanders         = 2500,
-      default            = 20000,
+      default            = 75000,
     },
   },
   TAWF_BANISHER2 = {
@@ -136,7 +136,7 @@ local weaponDefs = {
     name               = [[Banisher]],
     noSelfDamage       = true,
     range              = 1000,
-    reloadtime         = 6,
+    reloadtime         = 1,
     renderType         = 1,
     selfprop           = true,
     smokedelay         = 0.01,
@@ -156,7 +156,7 @@ local weaponDefs = {
     weaponVelocity     = 400,
     damage = {
       commanders         = 1000,
-      default            = 4000,
+      default            = 2000,
       l1subs             = 5,
       l2subs             = 5,
       l3subs             = 5,
