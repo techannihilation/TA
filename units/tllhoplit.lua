@@ -6,7 +6,7 @@ local unitName = "tllhoplit"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-  acceleration       = 0.077,
+  acceleration       = 0.060,
   badTargetCategory  = [[VTOL]],
   bmcode             = 1,
   brakeRate          = 0.02,
@@ -32,7 +32,7 @@ local unitDef = {
   maneuverleashlength = 640,
   maxDamage          = 940,
   maxSlope           = 10,
-  maxVelocity        = 1.95,
+  maxVelocity        = 2.4,
   maxWaterDepth      = 12,
   mobilestandorders  = 1,
   movementClass      = [[TANK2]],
@@ -44,7 +44,7 @@ local unitDef = {
   selfDestructAs     = [[BIG_UNIT]],
   shootme            = 1,
   side               = [[TLL]],
-  sightDistance      = 435,
+  sightDistance      = 740,
   standingfireorder  = 2,
   standingmoveorder  = 1,
   steeringmode       = 1,

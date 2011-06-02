@@ -6,7 +6,7 @@ local unitName = "tllartybot"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-  acceleration       = 0.1,
+  acceleration       = 0.4,
   badTargetCategory  = [[VTOL]],
   bmcode             = 1,
   brakeRate          = 0.18,
@@ -38,7 +38,7 @@ local unitDef = {
   maneuverleashlength = 640,
   maxDamage          = 2115,
   maxSlope           = 16,
-  maxVelocity        = 1.25,
+  maxVelocity        = 1.70,
   maxWaterDepth      = 25,
   metalStorage       = 0,
   mobilestandorders  = 1,
@@ -52,7 +52,7 @@ local unitDef = {
   selfDestructAs     = [[BIG_UNIT]],
   shootme            = 1,
   side               = [[TLL]],
-  sightDistance      = 245,
+  sightDistance      = 400,
   spanishdescription = [[Kbot gauss]],
   standingfireorder  = 2,
   standingmoveorder  = 1,

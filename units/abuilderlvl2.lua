@@ -52,7 +52,6 @@ local unitDef = {
   unitname           = [[abuilderlvl2]],
   workerTime         = 100,
   buildoptions = {
-    [[tllmedfusion]],
     [[ametalmakerlvl1]],
     [[arm_wind_generator]],
     [[armmex1]],

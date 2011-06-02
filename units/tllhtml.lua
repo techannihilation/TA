@@ -6,7 +6,7 @@ local unitName = "tllhtml"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-  acceleration       = 0.015,
+  acceleration       = 0.02,
   badTargetCategory  = [[VTOL]],
   bmcode             = 1,
   brakeRate          = 0.027,
@@ -36,9 +36,9 @@ local unitDef = {
   footprintZ         = 4,
   frenchdescription  = [[MechBot de combat]],
   maneuverleashlength = 640,
-  maxDamage          = 44872,
+  maxDamage          = 98560,
   maxSlope           = 16,
-  maxVelocity        = .85,
+  maxVelocity        = 1,
   maxWaterDepth      = 12,
   metalStorage       = 0,
   mobilestandorders  = 1,
@@ -52,7 +52,7 @@ local unitDef = {
   selfDestructAs     = [[BIG_UNIT]],
   shootme            = 1,
   side               = [[TLL]],
-  sightDistance      = 425,
+  sightDistance      = 950,
   standingfireorder  = 2,
   standingmoveorder  = 1,
   steeringmode       = 1,
@@ -171,7 +171,7 @@ local weaponDefs = {
     weaponType         = [[Cannon]],
     weaponVelocity     = 400,
     damage = {
-      default            = 300,
+      default            = 600,
     },
   },
 }

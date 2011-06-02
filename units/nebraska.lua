@@ -31,7 +31,7 @@ local unitDef = {
   frenchname         = [[NEBRASKA]],
   germandescription  = [[Ionenkanone]],
   germanname         = [[NEBRASKA]],
-  maxDamage          = 32500,
+  maxDamage          = 65000,
   maxSlope           = 10,
   maxWaterDepth      = 0,
   metalStorage       = 0,
@@ -44,7 +44,7 @@ local unitDef = {
   selfDestructAs     = [[MEDIUM_BUILDING]],
   shootme            = 1,
   side               = [[CORE]],
-  sightDistance      = 1180,
+  sightDistance      = 2000,
   standingfireorder  = 2,
   TEDClass           = [[FORT]],
   threed             = 1,
@@ -125,8 +125,8 @@ local weaponDefs = {
     damage = {
       commanders         = 2200,
       default            = 3000,
-      t3mechs            = 16000,
-      t4mechs            = 21000,
+      t3mechs            = 32000,
+      t4mechs            = 42000,
     },
   },
 }
