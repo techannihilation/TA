@@ -114,8 +114,8 @@ local weaponDefs = {
     noSelfDamage       = true,
     paralyzer          = true,
     paralyzertime      = 35,
-    range              = 1400,
-    reloadtime         = 14,
+    range              = 1600,
+    reloadtime         = 10,
     renderType         = 7,
     soundHit           = [[xplomed4]],
     soundStart         = [[charge]],
@@ -126,7 +126,7 @@ local weaponDefs = {
     weaponVelocity     = 850,
     damage = {
       commanders         = 200,
-      default            = 9999,
+      default            = 15999,
     },
   },
 }

@@ -52,7 +52,6 @@ local unitDef = {
   unitname           = [[cbuilderlvl2]],
   workerTime         = 100,
   buildoptions = {
-    [[tllmedfusion]],
     [[cmetalmakerlvl1]],
     [[core_wind_generator]],
     [[cormex1]],

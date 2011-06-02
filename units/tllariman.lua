@@ -6,7 +6,7 @@ local unitName = "tllariman"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-  acceleration       = 0.016,
+  acceleration       = 0.025,
   badTargetCategory  = [[NOWEAPON]],
   bmcode             = 1,
   brakeRate          = 0.01,
@@ -36,7 +36,7 @@ local unitDef = {
   maneuverleashlength = 640,
   maxDamage          = 1812,
   maxSlope           = 10,
-  maxVelocity        = 1.75,
+  maxVelocity        = 2.30,
   maxWaterDepth      = 12,
   mobilestandorders  = 1,
   movementClass      = [[TANK2]],
@@ -47,7 +47,7 @@ local unitDef = {
   selfDestructAs     = [[BIG_UNIT]],
   shootme            = 1,
   side               = [[TLL]],
-  sightDistance      = 250,
+  sightDistance      = 320,
   standingfireorder  = 2,
   standingmoveorder  = 0,
   steeringmode       = 1,

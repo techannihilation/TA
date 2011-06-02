@@ -6,7 +6,7 @@ local unitName = "tllsalamander"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-  acceleration       = 0.0095,
+  acceleration       = 0.02,
   badTargetCategory  = [[VTOL]],
   bmcode             = 1,
   brakeRate          = 0.0085,
@@ -33,7 +33,7 @@ local unitDef = {
   germandescription  = [[Amphibienpanzer]],
   italiandescription = [[Carro armato anfibio]],
   maneuverleashlength = 640,
-  maxDamage          = 1628,
+  maxDamage          = 3220,
   maxSlope           = 12,
   maxVelocity        = 1.35,
   maxWaterDepth      = 255,
@@ -113,7 +113,7 @@ local weaponDefs = {
     weaponType         = [[Cannon]],
     weaponVelocity     = 450,
     damage = {
-      default            = 116,
+      default            = 250,
       gunships           = 25,
       hgunships          = 25,
       l1bombers          = 25,
