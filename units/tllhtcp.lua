@@ -52,6 +52,7 @@ local unitDef = {
   buildoptions = {
     [[tllhtml]],
     [[tllblind]],
+    [[tllhtcb]],
 
   },
   sounds = {
