@@ -67,7 +67,7 @@ local unitDef = {
     [[corcrw]],
     [[blackdawn]],
     [[shrike]],
-    [[eclipse],
+    [[tu95-a]],
   },
   sfxtypes = {
     explosiongenerators = {
