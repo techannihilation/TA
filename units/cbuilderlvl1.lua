@@ -71,7 +71,6 @@ local unitDef = {
     [[corca]],
     [[corhurc]],
     [[corvamp]],
-    [[coraca]],
   },
 }
 
