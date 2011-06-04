@@ -1,5 +1,1 @@
-*~
-*.swp
-.directory
-*.kate-swp
-.git
+*
