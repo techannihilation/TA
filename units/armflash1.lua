@@ -46,6 +46,7 @@ local unitDef = {
   noAutoFire         = false,
   noChaseCategory    = [[VTOL]],
   objectName         = [[ARMFLASH1]],
+  script             = [[armflash.com]],
   seismicSignature   = 0,
   selfDestructAs     = [[BIG_UNIT]],
   side               = [[ARM]],
