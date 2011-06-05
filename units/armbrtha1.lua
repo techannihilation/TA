@@ -40,6 +40,7 @@ local unitDef = {
   metalStorage       = 0,
   name               = [[Big Bertha TECH 3]],
   objectName         = [[ARMBRTHA1]],
+  script             = [[armbrtha.cob]],
   seismicSignature   = 0,
   selfDestructAs     = [[ATOMIC_BLAST]],
   side               = [[ARM]],
