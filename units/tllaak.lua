@@ -41,6 +41,7 @@ local unitDef = {
   movementClass      = [[akbot2]],
   name               = [[Spreader]],
   noAutoFire         = false,
+  noChaseCategory    = [[ALL]],
   objectName         = [[TLLAAK]],
   selfDestructAs     = [[BIG_UNIT]],
   shootme            = 1,
