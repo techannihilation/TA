@@ -700,7 +700,7 @@ AimPrimary(heading, pitch)
 	{
 		sleep 100;
 	}
-	turn head to y-axis heading speed <200.000000>;
+	turn head to y-axis heading speed <75.000000>;
 	wait-for-turn head around y-axis;
 	turn sleeve to x-axis <0.000000> - pitch speed <60.000000>;
 	wait-for-turn sleeve around x-axis;
