@@ -1,73 +1,106 @@
+#define TA			// This is a TA script
 
-piece base,sleeves,turret,barrela,flare,body,barrelb,anneau;
+#include "sfxtype.h"
+#include "exptype.h"
 
-#define SIG_AIM	2
-#define SMOKEPIECE1 body
+piece  base, sleeves, turret, barrela, flare, body, barrelb, anneau;
 
-#include "EXPtype.h"
-#include "smokeunit.h"
+// Signal definitions
+#define SIG_AIM				2
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from body;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
 
 Create()
- { hide flare;
-   dont-shade body;
-   dont-cache flare;
+{
+	hide flare;
+	dont-shade body;
+	dont-cache flare;
+	dont-cache sleeves;
+	dont-cache turret;
+	dont-cache barrela;
+	dont-cache barrelb;
+	dont-cache anneau;
+	start-script SmokeUnit();
+}
 
-   dont-cache sleeves;
-   dont-cache turret;
-   dont-cache barrela;
-   dont-cache barrelb;
-   dont-cache anneau;
-
-
-   start-script SmokeUnit();
-  }
-
-AimPrimary(heading,pitch)
- { signal SIG_AIM;
-   set-signal-mask SIG_AIM;
-   turn turret to y-axis heading speed <10>;
-   TURN sleeves to x-axis (0 - pitch) SPEED <15>;
-   wait-for-turn turret around y-axis;
-   wait-for-turn sleeves around x-axis;
-   return(TRUE);
-  }
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	turn turret to y-axis heading speed <10.000000>;
+	turn sleeves to x-axis <0.000000> - pitch speed <15.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn sleeves around x-axis;
+	return (1);
+}
 
 FirePrimary()
- { 
-	   show flare;
-	   move barrela to z-axis [-1] speed [500];
-	   move barrelb to z-axis [-4.5] speed [500];
-	   sleep 150;
-	   hide flare; 
-	   move barrela to z-axis [0] speed [1];
-	   move barrelb to z-axis [0] speed [1.5];
-	   sleep 500;
-  }
+{
+	move barrela to z-axis [-1.000000] speed [500.000000];
+	move barrelb to z-axis [-4.500000] speed [500.000000];
+	emit-sfx 1024 + 0 from flare;
+	sleep 150;
+	move barrela to z-axis [0.000000] speed [1.000000];
+	move barrelb to z-axis [0.000000] speed [1.500000];
+
+}
 
 AimFromPrimary(piecenum)
- { piecenum=turret;
-  }
+{
+	piecenum = turret;
+}
 
 QueryPrimary(piecenum)
- { piecenum=flare;
-  }
+{
+	piecenum = flare;
+}
 
 SweetSpot(piecenum)
- { piecenum=turret;
-  }
+{
+	piecenum = turret;
+}
 
-Killed( severity, corpsetype )
- { hide flare;
-   explode barrela type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
-   explode sleeves type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
-   explode turret type SHATTER | EXPLODE_ON_HIT | BITMAP2;
-   if (severity <= 25)
-    { corpsetype = 1;
-      return( 0 );
-     }
-   if (severity <= 50)
-    { corpsetype = 2;
-      return( 0 );
-     }
-   corpsetype = 3;
-  }
+Killed(severity, corpsetype)
+{
+	hide flare;
+	explode barrela type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
+	explode sleeves type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
+	explode turret type SHATTER | EXPLODE_ON_HIT | BITMAP2;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		return (0);
+	}
+	corpsetype = 3;
+}
