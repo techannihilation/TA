@@ -1,227 +1,229 @@
+#define TA			// This is a TA script
 
-piece base ,socle, body, zap1, zap2, ring, boule, sleeve, flare,p1 ;
+#include "sfxtype.h"
+#include "exptype.h"
 
-static-var i, canshoot,restore_delay ;
+piece  base, socle, body, zap1, zap2, ring, boule, sleeve,
+       flare, p1;
 
-#DEFINE SMOKEPIECE1	socle
-#DEFINE SIG_NUM1	2
+static-var  Static_Var_1, Static_Var_2, restore_delay;
 
-#INCLUDE "smokeunit.h"
-#INCLUDE "exptype.h"
+// Signal definitions
+#define SIG_AIM				2
 
-zaps()
- { var t;
-   while (get BUILD_PERCENT_LEFT)
-    { sleep 500; }
-   while (TRUE)
-    { t=300+rand(50,1000);
-      sleep t;
-      show zap1;
-      sleep 75;
-      show zap2;
-      sleep 100;
-      hide zap1;
-      sleep 50;
-      hide zap2;
-      sleep 100;
-      show zap1;
-      sleep 75;
-      show zap2;
-      sleep 100;
-      hide zap1;
-      sleep 50;
-      hide zap2;
-      sleep 100;
-      }
-  }
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from socle;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+zaps(Func_Var_1)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 500;
+	}
+	while( TRUE )
+	{
+		Func_Var_1 = 300 + Rand( 50, 1000 );
+		sleep Func_Var_1;
+		show zap1;
+		sleep 75;
+		show zap2;
+		sleep 100;
+		hide zap1;
+		sleep 50;
+		hide zap2;
+		sleep 100;
+		show zap1;
+		sleep 75;
+		show zap2;
+		sleep 100;
+		hide zap1;
+		sleep 50;
+		hide zap2;
+		sleep 100;
+	}
+}
 
 flotte()
- {
-  while (get BUILD_PERCENT_LEFT)
-    { sleep 500; }
-  while (TRUE)
-    {
-     sleep 100;
-     move boule to y-axis [0.5] speed [3];
-     wait-for-move boule along y-axis;
-     move boule to y-axis [1] speed [2];
-     wait-for-move boule along y-axis;
-     move boule to y-axis [-0.5] speed [3];
-     wait-for-move boule along y-axis;
-     move boule to y-axis [-1] speed [2];
-     wait-for-move boule along y-axis;
-    }
- }
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 500;
+	}
+	while( TRUE )
+	{
+		sleep 100;
+		move boule to y-axis [0.500000] speed [3.000000];
+		wait-for-move boule along y-axis;
+		move boule to y-axis [1.000000] speed [2.000000];
+		wait-for-move boule along y-axis;
+		move boule to y-axis [-0.500000] speed [3.000000];
+		wait-for-move boule along y-axis;
+		move boule to y-axis [-1.000000] speed [2.000000];
+		wait-for-move boule along y-axis;
+	}
+}
 
 tourne()
- {
-  while (get BUILD_PERCENT_LEFT)
-    { sleep 500; }
-  while (TRUE)
-    {
-     sleep 100;
-     turn p1 to z-axis <15> speed <20>;
-     wait-for-turn p1 around z-axis;
-     turn p1 to z-axis <20> speed <10>;
-     wait-for-turn p1 around z-axis;
-     turn p1 to z-axis <25> speed <5>;
-     wait-for-turn p1 around z-axis;
-     turn p1 to z-axis <-15> speed <20>;
-     wait-for-turn p1 around z-axis;
-     turn p1 to z-axis <-20> speed <10>;
-     wait-for-turn p1 around z-axis;
-     turn p1 to z-axis <-25> speed <5>;
-     wait-for-turn p1 around z-axis;
-    }
- }
-
-
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 500;
+	}
+	while( TRUE )
+	{
+		sleep 100;
+		turn p1 to z-axis <15.000000> speed <20.000000>;
+		wait-for-turn p1 around z-axis;
+		turn p1 to z-axis <20.000000> speed <10.000000>;
+		wait-for-turn p1 around z-axis;
+		turn p1 to z-axis <25.000000> speed <5.000000>;
+		wait-for-turn p1 around z-axis;
+		turn p1 to z-axis <-15.000000> speed <20.000000>;
+		wait-for-turn p1 around z-axis;
+		turn p1 to z-axis <-20.000000> speed <10.000000>;
+		wait-for-turn p1 around z-axis;
+		turn p1 to z-axis <-25.000000> speed <5.000000>;
+		wait-for-turn p1 around z-axis;
+	}
+}
 
 Create()
+{
+	hide flare;
+	hide zap1;
+	hide zap2;
+	dont-cache flare;
+	dont-cache boule;
+	dont-cache ring;
+	dont-cache body;
+	dont-cache zap1;
+	dont-cache zap2;
+	dont-cache p1;
+	Static_Var_1 = 0;
+	Static_Var_2 = 1;
+	restore_delay = 3000;
+	start-script SmokeUnit();
+	start-script zaps();
+	start-script flotte();
+	start-script tourne();
+	while( get BUILD_PERCENT_LEFT )
 	{
-		HIDE flare;
-		HIDE zap1;
-		HIDE zap2;
-		DONT-cache flare;
-		DONT-cache boule;
-		DONT-cache ring;
-		DONT-cache body;
-		DONT-cache zap1;
-		DONT-cache zap2;
-		DONT-cache p1;
-
-		i=0;
-		canshoot=TRUE;
-		restore_delay = 3000;
-	
-		START-SCRIPT SmokeUnit();
-		START-SCRIPT Zaps();
-		START-SCRIPT flotte();
-		START-SCRIPT tourne();
-
-
-		while( get BUILD_PERCENT_LEFT )
-		{
-			sleep 1000;
-		}
-		
-		spin boule around y-axis speed <80>;
-		spin body around y-axis speed <10>;
-		spin ring around z-axis speed <20>;
-		spin flare around z-axis speed <500>;
-
-		spin zap1 around x-axis speed <250>;
-		spin zap2 around x-axis speed <150>;
-
+		sleep 1000;
 	}
+	spin boule around y-axis speed <80.000000>;
+	spin body around y-axis speed <10.000000>;
+	spin ring around z-axis speed <20.000000>;
+	spin flare around z-axis speed <500.000000>;
+	spin zap1 around x-axis speed <250.000000>;
+	spin zap2 around x-axis speed <150.000000>;
+}
 
-SetMaxReloadTime(time)
-	{
-		restore_delay = time * 2 ;
-	}
+SetMaxReloadTime(Func_Var_1)
+{
+	restore_delay = Func_Var_1 * 2;
+}
 
 RestoreAfterDelay()
+{
+	sleep restore_delay;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	turn sleeve to y-axis heading speed <100.000000>;
+	turn sleeve to x-axis <0.000000> - pitch speed <150.000000>;
+	wait-for-turn sleeve around y-axis;
+	wait-for-turn sleeve around x-axis;
+	while( !Static_Var_2 )
 	{
-		SLEEP restore_delay;
+		sleep 500;
 	}
+	start-script RestoreAfterDelay();
+	return (1);
+}
 
-AimPrimary(heading,pitch)
-	{
-		SIGNAL SIG_NUM1;
-		SET-SIGNAL-MASK SIG_NUM1;
-		
-		TURN sleeve to y-axis heading SPEED <100>;
-		TURN sleeve to x-axis (0 - pitch) SPEED <150>;
-
-
-		WAIT-FOR-TURN sleeve around y-axis;
-		WAIT-FOR-TURN sleeve around x-axis;
-		
-		WHILE (!canshoot)
-			{
-			sleep 500;
-			}
-
-		START-SCRIPT RestoreAfterDelay();
-
-		RETURN ( TRUE );
-	}
 FirePrimary()
-	{
-		SHOW flare;
-		SHOW zap1;
-		SLEEP 20;
-		Show zap2;
-		Sleep 25;
-		Hide zap1;
-		Sleep 25;
-		hide flare;
-		Hide zap2;
-		SHOW zap1;
-		SLEEP 20;
-		Show zap2;
-		Sleep 25;
-		show flare;
-		Hide zap1;
-		Sleep 25;
-		Hide zap2;
-		SHOW zap1;
-		SLEEP 20;
-		Show zap2;
-		Sleep 25;
-		Hide zap1;
-		hide flare;
-		Sleep 25;
-		Hide zap2;		
-	}
+{
+
+}
 
 QueryPrimary(piecenum)
-	{
-		piecenum = flare;
-	}
+{
+	piecenum = flare;
+}
+
 AimFromPrimary(piecenum)
-	{
-		piecenum = sleeve;
-	}
+{
+	piecenum = sleeve;
+}
+
 SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
 	{
-		piecenum = base;
+		corpsetype = 1;
+		explode socle type BITMAPONLY | BITMAP1;
+		explode body type BITMAPONLY | BITMAP3;
+		explode boule type BITMAPONLY | BITMAP5;
+		explode p1 type BITMAPONLY | BITMAP1;
+		return (0);
 	}
-Killed(severity,corpsetype)
+	if( severity <= 50 )
 	{
-		IF (severity <= 25 )
-			{
-			corpsetype = 1 ;
-			EXPLODE  socle type  	BITMAPONLY | BITMAP1;
-			EXPLODE  body type  	BITMAPONLY | BITMAP3;
-			EXPLODE  boule type  	BITMAPONLY | BITMAP5;
-			EXPLODE  p1 type  		BITMAPONLY | BITMAP1;
-			RETURN ( 0 );
-			}
-		IF (severity <= 50 )
-			{
-			corpsetype = 2 ;
-			EXPLODE  socle type  		FALL | BITMAP1;
-			EXPLODE  boule type  		SHATTER | BITMAP3;
-			EXPLODE  ring type	  		SHATTER | BITMAP4;
-			EXPLODE  zap1 type  		FALL | BITMAP5;
-			EXPLODE  zap2 type  		FALL | BITMAP5;
-			RETURN ( 0 );
-			}
-		IF (severity <= 99 )
-			{
-			corpsetype = 3 ;
-			EXPLODE  socle type	 	 	SHATTER | BITMAP2;
-			EXPLODE  boule type	  		SHATTER | BITMAP3;
-			EXPLODE  ring type 	 		SHATTER | BITMAP4;
-			EXPLODE  zap1 type  		FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-			EXPLODE  p1 type  		FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-			RETURN ( 0 );
-			}
-		corpsetype = 3 ;
-		EXPLODE  socle type  	SHATTER | BITMAP5;
-		EXPLODE  boule type  	SHATTER | BITMAP3;
-		EXPLODE  ring type  	SHATTER | EXPLODE_ON_HIT | BITMAP4;
-		EXPLODE  zap1 type  	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-		EXPLODE  p1 type  	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		corpsetype = 2;
+		explode socle type FALL | BITMAP1;
+		explode boule type SHATTER | BITMAP3;
+		explode ring type SHATTER | BITMAP4;
+		explode zap1 type FALL | BITMAP5;
+		explode zap2 type FALL | BITMAP5;
+		return (0);
 	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode socle type SHATTER | BITMAP2;
+		explode boule type SHATTER | BITMAP3;
+		explode ring type SHATTER | BITMAP4;
+		explode zap1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode p1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		return (0);
+	}
+	corpsetype = 3;
+	explode socle type SHATTER | BITMAP5;
+	explode boule type SHATTER | BITMAP3;
+	explode ring type SHATTER | EXPLODE_ON_HIT | BITMAP4;
+	explode zap1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode p1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+}
