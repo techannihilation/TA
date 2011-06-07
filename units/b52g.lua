@@ -18,6 +18,7 @@ local unitDef = {
   buildCostEnergy    = 85342,
   buildCostMetal     = 7350,
   builder            = false,
+  buildPic           = [[rat_armbomber.bmp]],
   buildTime          = 77364,
   canAttack          = true,
   canFly             = true,

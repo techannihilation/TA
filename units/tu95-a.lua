@@ -18,6 +18,7 @@ local unitDef = {
   buildCostEnergy    = 80342,
   buildCostMetal     = 6810,
   builder            = false,
+  buildPic           = [[eclipse.pcx]],
   buildTime          = 135337,
   canAttack          = true,
   canFly             = true,
