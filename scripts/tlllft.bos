@@ -1,74 +1,114 @@
-// by Nikola Genkov, nikola_g@yahoo.com
+#define TA			// This is a TA script
 
-piece base,tower,turret,tube,tail;
+#include "sfxtype.h"
+#include "exptype.h"
 
-#define SIG_AIM	2
-#define SMOKEPIECE1 tube
+piece  base, tower, turret, tube, tail;
 
-#include "smokeunit.h"
-#include "EXPtype.h"
+// Signal definitions
+#define SIG_AIM				2
 
-flames()
- { var t;
-   while (get BUILD_PERCENT_LEFT)
-    { sleep 500; }
-   while (1)
-    { t=200+rand(50,1000);
-      sleep t;
-      emit-sfx SFXTYPE_VTOL from tail;
-     }
-  }
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from tube;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+flames(Func_Var_1)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 500;
+	}
+	while( TRUE )
+	{
+		Func_Var_1 = 200 + Rand( 50, 800 );
+		sleep Func_Var_1;
+		emit-sfx 0 from tail;
+	}
+}
 
 Create()
- { dont-shade tower;
-   dont-shade turret;
-   dont-shade tube;
-   dont-shade tail;
-   cache tower;
-   cache turret;
-   cache tail;
-   dont-cache tube;
-   start-script SmokeUnit();
-   start-script flames();
-  }
+{
+	dont-shade tower;
+	dont-shade turret;
+	dont-shade tube;
+	dont-shade tail;
+	hide tail;
+	cache tower;
+	cache turret;
+	cache tail;
+	dont-cache tube;
+	start-script SmokeUnit();
+	start-script flames();
+}
 
-AimPrimary(heading,pitch)
- { signal SIG_AIM;
-   set-signal-mask SIG_AIM;
-   turn turret to y-axis heading speed <120>;
-   turn tube to x-axis (0-pitch) speed <50>;
-   wait-for-turn turret around y-axis;
-   wait-for-turn tube around x-axis;
-   return(TRUE);
-  }
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	turn turret to y-axis heading speed <120.000000>;
+	turn tube to x-axis <0.000000> - pitch speed <50.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn tube around x-axis;
+	return (1);
+}
 
 FirePrimary()
- { 
-  }
+{
+}
 
 AimFromPrimary(piecenum)
- { piecenum=tube;
-  }
+{
+	piecenum = tube;
+}
 
 QueryPrimary(piecenum)
- { piecenum=tail;
-  }
+{
+	piecenum = tail;
+}
 
 SweetSpot(piecenum)
- { piecenum=base;
-  }
+{
+	piecenum = base;
+}
 
-Killed( severity, corpsetype )
- { explode tube type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP4;
-   explode turret type SHATTER | EXPLODE_ON_HIT | BITMAP2;
-   explode tower type BITMAPONLY | BITMAP4;
-   if (severity <= 25)
-    { corpsetype = 1;
-      return( 0 );
-     }
-   if (severity <= 50)
-    { corpsetype = 2;
-      return( 0 );
-     }
-   corpsetype = 3;
-  }
+Killed(severity, corpsetype)
+{
+	explode tube type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP4;
+	explode turret type SHATTER | EXPLODE_ON_HIT | BITMAP2;
+	explode tower type BITMAPONLY | BITMAP4;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		return (0);
+	}
+	corpsetype = 3;
+}
