@@ -53,6 +53,7 @@ local unitDef = {
   shootme            = 1,
   side               = [[TLL]],
   sightDistance      = 400,
+  smoothAnim         = true,
   spanishdescription = [[Kbot Lanzacohetes pesado]],
   standingfireorder  = 2,
   standingmoveorder  = 1,

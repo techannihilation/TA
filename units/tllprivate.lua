@@ -49,6 +49,7 @@ local unitDef = {
   shootme            = 1,
   side               = [[TLL]],
   sightDistance      = 455,
+  smoothAnim         = true,
   spanishdescription = [[Kbot de infantería]],
   standingfireorder  = 2,
   standingmoveorder  = 2,

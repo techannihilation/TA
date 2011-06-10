@@ -46,6 +46,7 @@ local unitDef = {
   shootme            = 1,
   side               = [[TLL]],
   sightDistance      = 360,
+  smoothAnim         = true,
   standingfireorder  = 2,
   standingmoveorder  = 0,
   steeringmode       = 2,

@@ -53,6 +53,7 @@ local unitDef = {
   shootme            = 1,
   side               = [[TLL]],
   sightDistance      = 340,
+  smoothAnim         = true,
   spanishdescription = [[Nivel Tecn. 1]],
   spanishname        = [[Kbot de Constr. ]],
   standingmoveorder  = 1,

@@ -49,6 +49,7 @@ local unitDef = {
   shootme            = 1,
   side               = [[TLL]],
   sightDistance      = 200,
+  smoothAnim         = true,
   standingmoveorder  = 0,
   steeringmode       = 1,
   TEDClass           = [[KBOT]],

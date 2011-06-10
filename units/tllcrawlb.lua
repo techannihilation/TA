@@ -55,6 +55,7 @@ local unitDef = {
   shootme            = 1,
   side               = [[TLL]],
   sightDistance      = 400,
+  smoothAnim         = true,
   spanishdescription = [[Bomba de asalto]],
   standingfireorder  = 0,
   standingmoveorder  = 0,
