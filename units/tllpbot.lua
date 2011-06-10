@@ -32,7 +32,7 @@ local unitDef = {
   footprintX         = 2,
   footprintZ         = 2,
   maneuverleashlength = 640,
-  maxDamage          = 1400,
+  maxDamage          = 1500,
   maxSlope           = 14,
   maxVelocity        = 1.60,
   maxWaterDepth      = 12,
@@ -121,7 +121,7 @@ local weaponDefs = {
     weaponType         = [[Cannon]],
     weaponVelocity     = 250,
     damage = {
-      default            = 73,
+      default            = 80,
     },
   },
 }
