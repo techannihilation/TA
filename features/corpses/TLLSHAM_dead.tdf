@@ -1,0 +1,37 @@
+[TLLSHAM_dead]
+	{
+	world=All Worlds;
+	description=Dead Shaman;
+	category=TLL_corpses;
+	object=TLLSHAM_dead;
+	featuredead=TLLSHAM_heap;
+	footprintx=2;
+	footprintz=2;
+	height=20;
+	blocking=1;
+	hitdensity=100;
+	metal=350;
+	damage=1200;
+	reclaimable=1;
+	featurereclamate=smudge01;
+	seqnamereclamate=tree1reclamate;
+	}
+
+[TLLSHAM_heap]
+	{
+	world=All Worlds;
+	description=Extra Dead Shaman;
+	category=heaps;
+	object=2x2d;
+	footprintx=2;
+	footprintz=2;
+	height=4;
+	blocking=0;
+	hitdensity=100;
+	metal=150;
+	damage=900;
+	reclaimable=1;
+	featurereclamate=smudge01;
+	seqnamereclamate=tree1reclamate;
+	}
+
