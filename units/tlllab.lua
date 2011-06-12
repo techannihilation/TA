@@ -58,7 +58,7 @@ local unitDef = {
   zbuffer            = 1,
   buildoptions = {
     [[tllck]],
-    [[cornecro]],
+    [[tllsham]],
     [[tllprivate]],
     [[tllfireraiser]],
     [[tllpbot]],
