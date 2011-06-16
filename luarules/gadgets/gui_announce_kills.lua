@@ -17,10 +17,8 @@ function friendlyName(teamID)
 	local _,_,_,notHuman,side,_,_,_ = Spring.GetTeamInfo(teamID)
 	if notHuman then
 		if side == "arm" then return "Arm"
-		end
-		if  side == "tll" then return "Tll"
-		end
-		if side == "core" then return "Core"
+		elseif side == "core" then return "Core"
+		elseif  side == "tll" then return "Tll"
 		else return side
 		end
 	else
