@@ -249,6 +249,10 @@ commanders = {
 	cordecom = 99,
 	commando = 99,
 	tllcom = 99,
+	tllcom3 = 99,
+	tllcom5 = 99,
+	tllcom6 = 99,
+	tllcom7 = 99,
 	tlldecom = 99,
 },
 spies = {
