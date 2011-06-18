@@ -606,6 +606,7 @@ rech = {
 defense = {
 	corpun = 99,
 	armguard = 99,
+	tlllbt = 99,
 	corhlt = 99,
 	armhlt = 99,
 	tllhlt = 99,
