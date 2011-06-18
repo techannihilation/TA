@@ -268,6 +268,7 @@ crawlingbombs = {
 flamethrowers = {
 	corpyro = 99,
 	cormaw = 99,
+	tllburner = 99,
 },
 minelayers = {
 	armmlv = 99,
