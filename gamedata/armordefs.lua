@@ -318,6 +318,7 @@ nanos = {
 	armhevsenan = 99,
 	corhevsenan = 99,
 	tllnanotc = 99,
+	tllhevsenan = 99,
 },
 dl = {
 	armdl = 99,
