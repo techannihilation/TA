@@ -304,6 +304,7 @@ antibomber = {
 	corerad = 99,
 	mercury = 99,
 	screamer = 99,
+	tllhmt = 99,
 },
 antifighter = {
 	packo = 99,
