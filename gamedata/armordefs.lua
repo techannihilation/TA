@@ -578,7 +578,7 @@ shield = {
 	corgate = 99,
 	armflosh = 99,
 	corflshd = 99,
-	tllhtlrpc = 99,
+	tllgate = 99,
 },
 rech = {
 	corech6 = 99,
