@@ -1,7 +1,7 @@
--- UNITDEF -- TLLINT --
+-- UNITDEF -- TLLRICHTER --
 --------------------------------------------------------------------------------
 
-local unitName = "tllint"
+local unitName = "tllrichter"
 
 --------------------------------------------------------------------------------
 
@@ -11,10 +11,10 @@ local unitDef = {
   buildAngle         = 4096,
   buildCostEnergy    = 6363,
   buildCostMetal     = 698,
-  buildTime          = 11955,
+  buildTime          = 10955,
   category           = [[ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR]],
   corpse             = [[DEAD]],
-  description        = [[Intrusion Countermeasure System]],
+  description        = [[Richter Seismic System]],
   energyUse          = 125,
   explodeAs          = [[LARGE_BUILDINGEX]],
   footprintX         = 4,
@@ -26,16 +26,16 @@ local unitDef = {
   maxDamage          = 2500,
   maxSlope           = 36,
   maxWaterDepth      = 0,
-  name               = [[tllint]],
-  objectName         = [[TLLINT]],
+  name               = [[tllrichter]],
+  objectName         = [[TLLRICHTER]],
   onoffable          = true,
-  seismicDistance    = 2000,
+  seismicDistance    = 2200,
   seismicSignature   = 0,
   selfDestructAs     = [[LARGE_BUILDING]],
   side               = [[TLL]],
   sightDistance      = 225,
   TEDClass           = [[SPECIAL]],
-  unitname           = [[corsd]],
+  unitname           = [[tllrichter]],
   yardMap            = [[oooooooooooooooo]],
   sounds = {
     activate           = [[targon2]],
@@ -65,7 +65,7 @@ local featureDefs = {
     blocking           = true,
     category           = [[corpses]],
     damage             = 1500,
-    description        = [[Tllint Wreckage]],
+    description        = [[Richter Wreckage]],
     energy             = 0,
     featureDead        = [[HEAP]],
     featurereclamate   = [[SMUDGE01]],
@@ -74,7 +74,7 @@ local featureDefs = {
     height             = 15,
     hitdensity         = 100,
     metal              = 448,
-    object             = [[TLLINT_DEAD]],
+    object             = [[TLLRICHTER_DEAD]],
     reclaimable        = true,
     seqnamereclamate   = [[TREE1RECLAMATE]],
     world              = [[All Worlds]],
@@ -83,7 +83,7 @@ local featureDefs = {
     blocking           = false,
     category           = [[heaps]],
     damage             = 750,
-    description        = [[tllint Heap]],
+    description        = [[Richter Heap]],
     energy             = 0,
     featurereclamate   = [[SMUDGE01]],
     footprintX         = 4,
