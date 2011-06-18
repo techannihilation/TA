@@ -313,6 +313,7 @@ antifighter = {
 anniddm = {
 	armanni = 99,
 	cordoom = 99,
+	tllobliterator = 99,
 },
 nanos = {
 	armnanotc = 99,
