@@ -103,6 +103,7 @@ vtol = {
 l1subs = {
 	armsub = 99,
 	corsub = 99,
+	tllplunger = 99,
 },
 l2subs = {
 	armsubk = 99,
