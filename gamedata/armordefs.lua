@@ -386,6 +386,7 @@ heavyunits = {
 	armasy = 99,
 	corfmd = 99,
 	armamd = 99,
+	tllbind = 99,
 },
 hover = {
 	armch = 99,
