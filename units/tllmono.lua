@@ -1,7 +1,7 @@
--- UNITDEF -- MONO --
+-- UNITDEF -- TLLMONO --
 --------------------------------------------------------------------------------
 
-local unitName = "mono"
+local unitName = "tllmono"
 
 --------------------------------------------------------------------------------
 
@@ -19,7 +19,7 @@ local unitDef = {
   canMove            = true,
   canPatrol          = true,
   canstop            = 1,
-  category           = [[CORE KBOT WEAPON NOTAIR NOTSUB CTRL_G CTRL_K CTRL_W NOTSHIP LEVEL4 NOTSILO ALL]],
+  category           = [[KBOT WEAPON NOTAIR NOTSUB NOTSHIP ALL]],
   copyright          = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
   corpse             = [[corcrash_dead]],
   damageModifier     = 0.1,
@@ -46,7 +46,7 @@ local unitDef = {
   name               = [[Monolith IV]],
   noAutoFire         = false,
   noChaseCategory    = [[VTOL]],
-  objectName         = [[mono4]],
+  objectName         = [[tllmono]],
   ovradjust          = 1,
   radarDistance      = 1200,
   selfDestructAs     = [[COMMANDER_BLAST]],
@@ -59,7 +59,7 @@ local unitDef = {
   TEDClass           = [[KBOT]],
   threed             = 1,
   turnRate           = 108,
-  unitname           = [[mono]],
+  unitname           = [[tllmono]],
   unitnumber         = 162,
   version            = 1,
   workerTime         = 0,
