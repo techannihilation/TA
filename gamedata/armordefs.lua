@@ -608,5 +608,6 @@ defense = {
 	armguard = 99,
 	corhlt = 99,
 	armhlt = 99,
+	tllhlt = 99,
 },
 }
