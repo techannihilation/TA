@@ -108,7 +108,7 @@ local weaponDefs = {
     metalpershot       = 0,
     name               = [[Spray Lightning]],
     noSelfDamage       = true,
-    range              = 470,
+    range              = 440,
     reloadtime         = 1,
     renderType         = 7,
     soundHit           = [[lashit2]],
@@ -121,8 +121,8 @@ local weaponDefs = {
     weaponType         = [[LightningCannon]],
     weaponVelocity     = 860,
     damage = {
-      commanders         = 340,
-      default            = 260,
+      commanders         = 280,
+      default            = 220,
     },
   },
 }
