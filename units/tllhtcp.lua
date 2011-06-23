@@ -50,10 +50,9 @@ local unitDef = {
   yardMap            = [[oooccccooo oooccccooo oooccccooo cccccccccc cccccccccc cccccccccc oooccccooo oooccccooo oooccccooo oooccccooo ]],
   zbuffer            = 1,
   buildoptions = {
-    [[tllhtcb]],
     [[tllhtml]],
     [[tllblind]],
-    [[tllgrim]],
+    [[tllhtcb]],
 
   },
   sounds = {
