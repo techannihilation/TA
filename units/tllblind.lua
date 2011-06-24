@@ -138,6 +138,8 @@ local weaponDefs = {
     weaponVelocity     = 1000,
     damage = {
       default            = 805,
+      t3mechs            = 2000,
+      t4mechs            = 3000,
     },
   },
   COR_GOL = {
