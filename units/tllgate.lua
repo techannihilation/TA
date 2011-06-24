@@ -1,12 +1,12 @@
--- UNITDEF -- TLLHTLRPC --
+-- UNITDEF -- TLLGATE --
 --------------------------------------------------------------------------------
 
-local unitName = "tllhtlrpc"
+local unitName = "tllgate"
 
 --------------------------------------------------------------------------------
 
 local unitDef = {
-  badTargetCategory  = [[VTOL]],
+  activateWhenBuilt  = true,
   bmcode             = 0,
   buildAngle         = 1700,
   buildCostEnergy    = 29850,
@@ -15,41 +15,37 @@ local unitDef = {
   buildTime          = 53485,
   canAttack          = true,
   canstop            = 1,
-  category           = [[TLL LEVEL3 STRATEGIC WEAPON NOTAIR NOTSUB ]],
+  category           = [[TLL ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR]],
   copyright          = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
-  corpse             = [[dead]],
-  defaultmissiontype = [[GUARD_NOMOVE]],
-  description        = [[Plasma Deflector]],
-  designation        = [[TL-EXT]],
-  energyMake         = 0,
-  energyStorage      = 1800,
-  energyUse          = 0,
+  corpse             = [[tllgate_dead]],
+  description        = [[Plasma Deflectorr]],
+  designation        = [[TLL-GG]],
+  energyStorage      = 0,
+  energyUse          = 1800,
   explodeAs          = [[CRAWL_BLAST]],
-  firestandorders    = 1,
-  footprintX         = 3,
+  footprintX         = 5,
   footprintZ         = 3,
   maxDamage          = 3800,
   maxSlope           = 10,
   maxWaterDepth      = 0,
   metalStorage       = 0,
-  name               = [[Reeper]],
-  noAutoFire         = true,
-  noChaseCategory    = [[VTOL]],
-  objectName         = [[TLLHTLRPC]],
+  name               = [[Shield Generator]],
+  noAutoFire         = false,
+  norestrict         = 1,
+  objectName         = [[TLLGATE]],
+  onoffable          = true,
   ovradjust          = 1,
   radarDistance      = 0,
-  selfDestructAs     = [[CRAWL_BLAST]],
-  shootme            = 1,
+  selfDestructAs     = [[MINE_NUKE]],
   side               = [[TLL]],
   sightDistance      = 240,
-  standingfireorder  = 0,
-  TEDClass           = [[FORT]],
+  TEDClass           = [[SPECIAL]],
   threed             = 1,
-  unitname           = [[tllhtlrpc]],
-  unitnumber         = 940,
+  unitname           = [[tllgate]],
+  unitnumber         = 3403,
   version            = 3.1,
   workerTime         = 0,
-  yardMap            = [[ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo ]],
+  yardMap            = [[ooo ooo ooo ooo ooo]],
   zbuffer            = 1,
   sounds = {
     canceldestruct     = [[cancel2]],
@@ -66,20 +62,19 @@ local unitDef = {
       [[count1]],
     },
     ok = {
-      [[servroc1]],
+      [[drone1]],
     },
     select = {
-      [[servroc1]],
+      [[drone1]],
     },
   },
-  weapons = {
+   weapons = {
     [1]  = {
       badTargetCategory  = [[VTOL]],
       def                = [[REPULSOR]],
     },
   },
 }
-
 
 --------------------------------------------------------------------------------
 
@@ -112,11 +107,8 @@ local weaponDefs = {
 }
 unitDef.weaponDefs = weaponDefs
 
-
---------------------------------------------------------------------------------
-
 local featureDefs = {
-  dead = {
+  tllgate_dead = {
     blocking           = true,
     category           = [[tll_corpses]],
     damage             = 1884,
@@ -128,7 +120,7 @@ local featureDefs = {
     height             = 12,
     hitdensity         = 100,
     metal              = 2442,
-    object             = [[tllhtlrpc_dead]],
+    object             = [[tllgate_dead]],
     reclaimable        = true,
     seqnamereclamate   = [[tree1reclamate]],
     world              = [[all]],

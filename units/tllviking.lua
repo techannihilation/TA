@@ -6,7 +6,7 @@ local unitName = "tllviking"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-  acceleration       = 0.0055,
+  acceleration       = 0.01,
   badTargetCategory  = [[NOWEAPON]],
   bmcode             = 1,
   brakeRate          = 0.018,
@@ -35,7 +35,7 @@ local unitDef = {
   germandescription  = [[Schlachtschiff]],
   italiandescription = [[Nave da battaglia]],
   maneuverleashlength = 640,
-  maxDamage          = 6154,
+  maxDamage          = 14880,
   maxVelocity        = 2.07,
   minWaterDepth      = 30,
   mobilestandorders  = 1,
@@ -48,7 +48,7 @@ local unitDef = {
   selfDestructAs     = [[BIG_UNIT]],
   shootme            = 1,
   side               = [[TLL]],
-  sightDistance      = 350,
+  sightDistance      = 1000,
   spanishdescription = [[Acorazado]],
   standingfireorder  = 2,
   standingmoveorder  = 0,

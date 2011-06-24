@@ -1,0 +1,132 @@
+[heavy_rockets2]
+	{
+	ID=252;
+	name=altmyer-Rockets;
+	rendertype=1;
+	lineofsight=1;
+	turret=1;
+
+	model=armsalvo2_missile2;
+
+	range=2000;
+	reloadtime=0.9;
+	weapontimer=5;
+	weaponvelocity=845;
+	TurnRate=60000;
+	startvelocity=378;
+	weaponacceleration=287;
+	areaofeffect=40;
+
+
+	sprayangle=3742;
+	burst=1;
+	burstrate=0;	
+
+	SoundStart=harpyattack2;
+	SoundHit=bigexplodetll;
+
+	firestarter=70;
+	smokedelay=.01;
+	guidance=1;
+	tracks=1;
+	selfprop=1;
+	smoketrail=1;
+	tolerance=9000;
+
+	explosiongaf=favboom;
+	explosionart=favboom;
+
+	waterexplosiongaf=fx;
+	waterexplosionart=h2o;
+
+	lavaexplosiongaf=fx;
+	lavaexplosionart=lavasplash;
+
+	startsmoke=1;
+
+	[DAMAGE]
+	      {
+	      default=150;
+	      ARMTHUND=85;
+	      ARMBRAWL=85;
+	      ARMPEEP=85;
+	      ARMFIG=85;
+	      ARMCA=85;
+	      ARMACA=85;
+	      ARMATLAS=85;
+	      ARMPNIX=85;
+	      ARMHAWK=85;
+	      ARMLANCE=85;
+	      ARMAARD=85;
+	      ARMDRAGF=85;
+	      CORFINK=85;
+	      CORVENG=85;
+	      CORVAMP=85;
+	      CORHURC=85;
+	      CORTITAN=85;
+	      CORACA=85;
+	      CORSHAD=85;
+	      CORAPE=85;
+	      CORCA=85;
+	      CORVALK=85;
+	      CORFALC=85;
+	      }
+	}
+[Monoweap]
+	{
+	ID=225;
+	name=Plasma;
+	rendertype=1;
+	lineofsight=1;
+	turret=1;
+
+	model=plasma;
+	
+	range=1000;
+	reloadtime=1.6;
+	energypershot=20;
+	weaponvelocity=780;
+	areaofeffect=48;
+	edgeeffectiveness=0.99;
+	
+	weapontimer=300;
+	noautorange=1;
+	
+	MinBarrelAngle=-3640; 
+	
+	burst=1;
+	burstrate=0;
+	
+	soundtrigger=0;
+	soundstart=AMATIR;
+
+	
+	beamweapon=1;
+	duration=4;
+	
+	beamlaser=1;
+	beamtime=1;
+	color=40;
+	color2=230;
+	
+	intensity=2;// Alpha of the laser (0-1). Default: 0.9.
+	thickness=15;// Width of the laser. Default: 2.
+	
+	tolerance=1820;
+	
+	explosiongaf=Shockboom;
+	explosionart=Shockboom;
+	
+	waterexplosiongaf=fx;
+	waterexplosionart=h2oboom1;
+	
+	lavaexplosiongaf=fx;
+	lavaexplosionart=lavasplashsm;
+
+        startsmoke=1;
+	
+	[DAMAGE]
+		{
+		default=3000;
+		}
+	}

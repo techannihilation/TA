@@ -338,7 +338,11 @@ function StartPoint(_,x,z,name,playerID,faction)
     startPoints[playerID].name = name
     if faction == "armcom" then
       startPoints[playerID].faction = "(ARM) "
-    else
+    end
+    if faction == "tllcom" then
+      startPoints[playerID].faction = "(TLL) "
+    end
+    if faction == "armcom" then
       startPoints[playerID].faction = "(CORE) "
     end
   end
@@ -347,7 +351,11 @@ end
 function FactionChange(_,playerID, faction)
   if faction == "armcom" then
     startPoints[playerID].faction = "(ARM) "
-  else
+  end
+  if faction == "tllcom" then
+    startPoints[playerID].faction = "(TLL) "
+  end
+  if faction == "corcom" then
     startPoints[playerID].faction = "(CORE) "
   end
 end

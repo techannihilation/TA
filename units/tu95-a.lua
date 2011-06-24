@@ -18,6 +18,7 @@ local unitDef = {
   buildCostEnergy    = 80342,
   buildCostMetal     = 6810,
   builder            = false,
+  buildPic           = [[eclipse.pcx]],
   buildTime          = 135337,
   canAttack          = true,
   canFly             = true,
@@ -53,12 +54,13 @@ local unitDef = {
   maxWaterDepth      = 0,
   metalStorage       = 0,
   mobilestandorders  = 1,
-  name               = [[Tu95 Bear-A]],
+  name               = [[Eclipse]],
   noAutoFire         = false,
   noChaseCategory    = [[Underwater]],
-  objectName         = [[Tu95-A]],
+  objectName         = [[eclipse]],
   ovradjust          = 1,
   scale              = 1,
+  script             = [[eclipse.cob]],
   selfDestructAs     = [[BIG_UNIT]],
   shootme            = 1,
   side               = [[CORE]],
@@ -70,7 +72,7 @@ local unitDef = {
   TEDClass           = [[VTOL]],
   threed             = 1,
   turnRate           = 215,
-  unitname           = [[tu95-a]],
+  unitname           = [[eclipse]],
   unitnumber         = 8009,
   upright            = true,
   version            = 2,
@@ -99,7 +101,7 @@ local unitDef = {
   },
   weapons = {
     [1]  = {
-      def                = [[FAB-500]],
+      def                = [[FAB500]],
     },
   },
 }
@@ -108,7 +110,7 @@ local unitDef = {
 --------------------------------------------------------------------------------
 
 local weaponDefs = {
-  ["FAB-500"] = {
+  ["FAB500"] = {
     areaOfEffect       = 182,
     balistic           = 1,
     burst              = 110,

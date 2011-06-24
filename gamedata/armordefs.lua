@@ -103,6 +103,7 @@ vtol = {
 l1subs = {
 	armsub = 99,
 	corsub = 99,
+	tllplunger = 99,
 },
 l2subs = {
 	armsubk = 99,
@@ -204,6 +205,8 @@ t3mechs = {
 	armpod = 99,
 	troman = 99,
 	tllhtml = 99,
+	tllblind = 99,
+
 },
 t4mechs = {
 	armraz1 = 99,
@@ -247,6 +250,10 @@ commanders = {
 	cordecom = 99,
 	commando = 99,
 	tllcom = 99,
+	tllcom3 = 99,
+	tllcom5 = 99,
+	tllcom6 = 99,
+	tllcom7 = 99,
 	tlldecom = 99,
 },
 spies = {
@@ -262,6 +269,7 @@ crawlingbombs = {
 flamethrowers = {
 	corpyro = 99,
 	cormaw = 99,
+	tllburner = 99,
 },
 minelayers = {
 	armmlv = 99,
@@ -296,6 +304,7 @@ antibomber = {
 	corerad = 99,
 	mercury = 99,
 	screamer = 99,
+	tllhmt = 99,
 },
 antifighter = {
 	packo = 99,
@@ -304,6 +313,7 @@ antifighter = {
 anniddm = {
 	armanni = 99,
 	cordoom = 99,
+	tllobliterator = 99,
 },
 nanos = {
 	armnanotc = 99,
@@ -311,6 +321,7 @@ nanos = {
 	armhevsenan = 99,
 	corhevsenan = 99,
 	tllnanotc = 99,
+	tllhevsenan = 99,
 },
 dl = {
 	armdl = 99,
@@ -378,6 +389,7 @@ heavyunits = {
 	armasy = 99,
 	corfmd = 99,
 	armamd = 99,
+	tllbind = 99,
 },
 hover = {
 	armch = 99,
@@ -569,6 +581,7 @@ shield = {
 	corgate = 99,
 	armflosh = 99,
 	corflshd = 99,
+	tllgate = 99,
 },
 rech = {
 	corech6 = 99,
@@ -593,7 +606,9 @@ rech = {
 defense = {
 	corpun = 99,
 	armguard = 99,
+	tlllbt = 99,
 	corhlt = 99,
 	armhlt = 99,
+	tllhlt = 99,
 },
 }

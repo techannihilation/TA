@@ -26,7 +26,6 @@ local unitDef = {
   frenchname         = [[Métallo flottant]],
   germandescription  = [[Schwimmende Metallherstellung]],
   germanname         = [[Schwimmschmelze]],
-  iconType           = [[building]],
   italiandescription = [[Fabbrica metalli]],
   italianname        = [[Generatore di Metallo - SN]],
   makesMetal         = 1.1,

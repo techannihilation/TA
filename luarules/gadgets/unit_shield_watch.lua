@@ -26,7 +26,7 @@ local mathMin = math.min
 local shieldDef = {}
 shieldDef[UnitDefNames["armgate"].id] = true
 shieldDef[UnitDefNames["corgate"].id] = true
-shieldDef[UnitDefNames["tllhtlrpc"].id] = true
+shieldDef[UnitDefNames["tllgate"].id] = true
 
 local shields = {}
 local gameFrame = 0

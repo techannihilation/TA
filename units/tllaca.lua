@@ -78,7 +78,7 @@ local unitDef = {
     [[tllpulaser]],
     [[tllplasma]],
     [[tllobliterator]],
-    [[tllhtlrpc]],
+    [[tllgate]],
     [[tllflak]],
     [[tllhmt]],
     [[tllemp]],

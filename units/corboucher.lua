@@ -31,7 +31,7 @@ local unitDef = {
   frenchname         = [[Le Boucher]],
   germandescription  = [[Laser Batterie]],
   germanname         = [[Omega]],
-  maxDamage          = 40000,
+  maxDamage          = 80000,
   maxSlope           = 10,
   maxWaterDepth      = 0,
   metalStorage       = 0,
@@ -43,7 +43,7 @@ local unitDef = {
   selfDestructAs     = [[MEDIUM_BUILDING]],
   shootme            = 1,
   side               = [[CORE]],
-  sightDistance      = 1150,
+  sightDistance      = 2000,
   standingfireorder  = 2,
   TEDClass           = [[FORT]],
   threed             = 1,
@@ -126,8 +126,8 @@ local weaponDefs = {
     damage = {
       commanders         = 2200,
       default            = 2500,
-      t3mechs            = 16000,
-      t4mechs            = 21000,
+      t3mechs            = 32000,
+      t4mechs            = 42000,
     },
   },
 }

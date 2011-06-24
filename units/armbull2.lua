@@ -6,7 +6,7 @@ local unitName = "armbull2"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-  acceleration       = 0.7,
+  acceleration       = 0.2,
   badTargetCategory  = [[WATER]],
   bmcode             = 1,
   brakeRate          = 0.3,
@@ -128,7 +128,7 @@ local weaponDefs = {
     weaponVelocity     = 550,
     damage = {
       commanders         = 2,
-      default            = 19,
+      default            = 12,
     },
   },
   ARM_BULL2 = {
@@ -163,7 +163,7 @@ local weaponDefs = {
     weaponType         = [[Cannon]],
     weaponVelocity     = 310,
     damage = {
-      default            = 447,
+      default            = 325,
     },
   },
 }

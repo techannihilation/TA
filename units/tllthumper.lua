@@ -6,7 +6,7 @@ local unitName = "tllthumper"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-  acceleration       = 0.010,
+  acceleration       = 0.030,
   badTargetCategory  = [[VTOL]],
   bmcode             = 1,
   brakeRate          = 0.02,
@@ -46,7 +46,7 @@ local unitDef = {
   selfDestructAs     = [[BIG_UNIT]],
   shootme            = 1,
   side               = [[TLL]],
-  sightDistance      = 250,
+  sightDistance      = 650,
   spanishdescription = [[Tanque súper pesado]],
   standingfireorder  = 2,
   standingmoveorder  = 1,

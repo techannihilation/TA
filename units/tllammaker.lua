@@ -29,7 +29,6 @@ local unitDef = {
   frenchname         = [[Métallo avançé]],
   germandescription  = [[Metallgewinnung]],
   germanname         = [[Moho-Metallschmelze]],
-  iconType           = [[building]],
   italiandescription = [[Complesso per la creazione di metalli]],
   italianname        = [[Crea-Metalli Moho]],
   makesMetal         = 12,

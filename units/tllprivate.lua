@@ -6,7 +6,7 @@ local unitName = "tllprivate"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-  acceleration       = 0.31,
+  acceleration       = 0.24,
   badTargetCategory  = [[VTOL]],
   bmcode             = 1,
   brakeRate          = 0.19,
@@ -48,7 +48,8 @@ local unitDef = {
   selfDestructAs     = [[SMALL_UNIT]],
   shootme            = 1,
   side               = [[TLL]],
-  sightDistance      = 411,
+  sightDistance      = 455,
+  smoothAnim         = true,
   spanishdescription = [[Kbot de infantería]],
   standingfireorder  = 2,
   standingmoveorder  = 2,

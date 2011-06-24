@@ -2,8 +2,8 @@ return {
 	commander_blast = {
 		areaofeffect = 720,
 		ballistic = 1,
-		craterboost = 6,
-		cratermult = 3,
+		craterboost = 0,
+		cratermult = 0,
 		edgeeffectiveness = 0.25,
 		explosiongenerator = "custom:FLASHNUKE1280",
 		impulseboost = 3,

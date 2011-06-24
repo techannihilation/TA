@@ -3,15 +3,14 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  torso, head, arms, belly, lthigh, lleg, rleg, flare1, flare2, pelvis, rthigh, lfoot, rfoot, ground;
+piece  torso, head, arms, belly, lthigh, lleg, rleg, flare1,
+       flare2, pelvis, rthigh, lfoot, rfoot, ground;
 
-static-var  restore_delay,gun_0;
+static-var  restore_delay, gun_1;
 
 // Signal definitions
 #define SIG_MOVE			2
-#define SIG_AIM			4
-
-#define SMOKEPIECE1 torso
+#define SIG_AIM				4
 
 
 walk()
@@ -20,190 +19,158 @@ walk()
 	{
 		if( TRUE )
 		{
-		//	move belly to y-axis [0.0] now;
-			move lthigh to y-axis [0.0] now;
-			move lleg to y-axis [0.6] now;
-			move rleg to y-axis [0.0] now;
-		//	move torso to y-axis [-0.4] now;
-			move arms to y-axis [-0.0] now;
-			turn pelvis to z-axis <2.8> now;
-		//	turn belly to x-axis <-6.0> now;
-			turn rthigh to x-axis <14.4> now;
-			turn lthigh to x-axis <-44.7> now;
-			turn lleg to x-axis <-1.0> now;
-			turn lfoot to x-axis <10.9> now;
-			turn rleg to x-axis <6.3> now;
-			turn rfoot to x-axis <-13.7> now;
-		//	turn torso to x-axis <-0.3> now;
-			sleep 130;
-		}
-		if( TRUE )
-		{
-			move lthigh to y-axis [0.6] now;
-			move lleg to y-axis [0.0] now;
-		//	move torso to y-axis [0.0] now;
-			turn pelvis to z-axis <6.7> now;
-		//	turn belly to x-axis <-4.6> now;
-			turn rthigh to x-axis <21.5> now;
-			turn lthigh to x-axis <-23.9> now;
-			turn lleg to x-axis <7.4> now;
-			turn lfoot to x-axis <16.5> now;
-			turn rleg to x-axis <12.7> now;
-			turn rfoot to x-axis <-3.5> now;
-		//	turn torso to x-axis <2.8> now;
-			sleep 130;
-		}
-		if( TRUE )
-		{
-			turn belly to x-axis <3.2> now;
-			sleep 130;
-		}
-		if( TRUE )
-		{
-		//	turn belly to x-axis <2.1> now;
-		//	turn torso to x-axis <11.6> now;
-			sleep 130;
-		}
-		if( TRUE )
-		{
-			move rthigh to y-axis [0.2] now;
-			move lthigh to y-axis [0.3] now;
-			move rleg to y-axis [0.5] now;
-		//	move torso to y-axis [-0.1] now;
-			turn pelvis to z-axis <5.3> now;
-		//	turn belly to x-axis <0.0> now;
-			turn rthigh to x-axis <14.1> now;
-			turn lthigh to x-axis <-14.4> now;
-			turn lfoot to x-axis <6.3> now;
-			turn rleg to x-axis <8.1> now;
-			turn rfoot to x-axis <-2.5> now;
-		//	turn torso to x-axis <5.3> now;
-			sleep 130;
-		}
-		if( TRUE )
-		{
-			move lthigh to y-axis [0.1] now;
-			move rleg to y-axis [0.8] now;
-		//	move torso to y-axis [-0.2] now;
-			turn pelvis to z-axis <3.5> now;
-		//	turn belly to x-axis <5.3> now;
-			turn rthigh to x-axis <3.5> now;
-			turn lthigh to x-axis <-1.4> now;
-			turn lfoot to x-axis <-6.0> now;
-		//	turn torso to x-axis <3.2> now;
-			sleep 120;
-		}
-		if( TRUE )
-		{
-			move lthigh to y-axis [0.0] now;
-		//	move torso to y-axis [-0.1] now;
-			turn pelvis to z-axis <0.0> now;
-		//	turn belly to x-axis <2.5> now;
-			turn rthigh to x-axis <-6.7> now;
-			turn lthigh to x-axis <4.2> now;
-			turn lfoot to x-axis <-11.6> now;
-		//	turn torso to x-axis <8.1> now;
+			move lthigh to y-axis [0.000000] now;
+			move lleg to y-axis [0.600000] now;
+			move rleg to y-axis [0.000000] now;
+			move arms to y-axis [0.000000] now;
+	//		turn pelvis to z-axis <2.796703> now;
+			turn rthigh to x-axis <14.395604> now;
+			turn lthigh to x-axis <-44.697802> now;
+			turn lleg to x-axis <-1.000000> now;
+			turn lfoot to x-axis <10.895604> now;
+			turn rleg to x-axis <6.296703> now;
+			turn rfoot to x-axis <-13.697802> now;
 			sleep 110;
 		}
 		if( TRUE )
 		{
-			move rleg to y-axis [0.8] now;
-		//	move torso to y-axis [0.0] now;
-			turn pelvis to z-axis <-1.4> now;
-		//	turn belly to x-axis <-3.9> now;
-			turn rthigh to x-axis <-17.9> now;
-			turn lthigh to x-axis <8.8> now;
-		//	turn torso to x-axis <7.4> now;
+			move lthigh to y-axis [0.600000] now;
+			move lleg to y-axis [0.000000] now;
+	//		turn pelvis to z-axis <6.697802> now;
+			turn rthigh to x-axis <21.500000> now;
+			turn lthigh to x-axis <-23.895604> now;
+			turn lleg to x-axis <7.395604> now;
+			turn lfoot to x-axis <16.500000> now;
+			turn rleg to x-axis <12.697802> now;
+			turn rfoot to x-axis <-3.500000> now;
 			sleep 110;
 		}
 		if( TRUE )
 		{
-			move rleg to y-axis [0.1] now;
-			turn pelvis to z-axis <-2.8> now;
-		//	turn belly to x-axis <-7.4> now;
-			turn rthigh to x-axis <-36.9> now;
-			turn lthigh to x-axis <15.8> now;
-			turn lfoot to x-axis <-6.3> now;
-			turn rleg to x-axis <-9.8> now;
-		//	turn torso to x-axis <1.8> now;
+			move rthigh to y-axis [0.200000] now;
+			move lthigh to y-axis [0.300000] now;
+			move rleg to y-axis [0.500000] now;
+	//		turn pelvis to z-axis <5.296703> now;
+			turn rthigh to x-axis <14.098901> now;
+			turn lthigh to x-axis <-14.395604> now;
+			turn lfoot to x-axis <6.296703> now;
+			turn rleg to x-axis <8.098901> now;
+			turn rfoot to x-axis <-2.500000> now;
 			sleep 110;
 		}
 		if( TRUE )
 		{
-			move rthigh to y-axis [0.6] now;
-			move lleg to y-axis [0.4] now;
-		//	move torso to y-axis [-0.1] now;
-			turn pelvis to z-axis <-6.7> now;
-		//	turn belly to x-axis <1.1> now;
-			turn lthigh to x-axis <22.9> now;
-			turn lfoot to x-axis <-2.8> now;
-			turn rleg to x-axis <10.2> now;
-			turn rfoot to x-axis <27.4> now;
-		//	turn torso to x-axis <-2.5> now;
-			sleep 130;
+			move lthigh to y-axis [0.100000] now;
+			move rleg to y-axis [0.800000] now;
+	//		turn pelvis to z-axis <3.500000> now;
+			turn rthigh to x-axis <3.500000> now;
+			turn lthigh to x-axis <-1.395604> now;
+			turn lfoot to x-axis <-6.000000> now;
+			sleep 110;
 		}
 		if( TRUE )
 		{
-		//	turn belly to x-axis <13.0> now;
-			sleep 130;
+			move lthigh to y-axis [0.000000] now;
+	//		turn pelvis to z-axis <0.000000> now;
+			turn rthigh to x-axis <-6.697802> now;
+			turn lthigh to x-axis <4.197802> now;
+			turn lfoot to x-axis <-11.598901> now;
+			sleep 110;
 		}
 		if( TRUE )
 		{
-		//	turn belly to x-axis <9.1> now;
-		//	turn torso to x-axis <8.4> now;
-			sleep 130;
+			move rleg to y-axis [0.800000] now;
+	//		turn pelvis to z-axis <-1.395604> now;
+			turn rthigh to x-axis <-17.895604> now;
+			turn lthigh to x-axis <8.796703> now;
+			sleep 110;
 		}
 		if( TRUE )
 		{
-			move rthigh to y-axis [0.3] now;
-			move lleg to y-axis [0.7] now;
-		//	move torso to y-axis [-0.1] now;
-			turn pelvis to z-axis <-5.3> now;
-		//	turn belly to x-axis <7.0> now;
-			turn rthigh to x-axis <-22.5> now;
-			turn lthigh to x-axis <16.2> now;
-			turn lfoot to x-axis <0.0> now;
-			turn rfoot to x-axis <12.3> now;
-		//	turn torso to x-axis <1.8> now;
-			sleep 120;
+			move rleg to y-axis [0.100000] now;
+	//		turn pelvis to z-axis <-2.796703> now;
+			turn rthigh to x-axis <-36.895604> now;
+			turn lthigh to x-axis <15.796703> now;
+			turn lfoot to x-axis <-6.296703> now;
+			turn rleg to x-axis <-9.796703> now;
+			sleep 110;
 		}
 		if( TRUE )
 		{
-			move rthigh to y-axis [0.1] now;
-			move lleg to y-axis [1.0] now;
-		//	move torso to y-axis [-0.2] now;
-			turn pelvis to z-axis <-3.5> now;
-		//	turn belly to x-axis <-3.2> now;
-			turn rthigh to x-axis <-10.5> now;
-			turn lthigh to x-axis <5.3> now;
-			turn lfoot to x-axis <-0.7> now;
-			turn rfoot to x-axis <0.3> now;
-		//	turn torso to x-axis <-3.9> now;
-			sleep 130;
+			move rthigh to y-axis [0.600000] now;
+			move lleg to y-axis [0.400000] now;
+	//		turn pelvis to z-axis <-6.697802> now;
+			turn lthigh to x-axis <22.895604> now;
+			turn lfoot to x-axis <-2.796703> now;
+			turn rleg to x-axis <10.197802> now;
+			turn rfoot to x-axis <27.395604> now;
+			sleep 110;
 		}
 		if( TRUE )
 		{
-			move rthigh to y-axis [0.0] now;
-		//	move torso to y-axis [-0.3] now;
-			turn pelvis to z-axis <0.0> now;
-		//	turn belly to x-axis <-4.2> now;
-			turn rthigh to x-axis <0.7> now;
-			turn lthigh to x-axis <-12.3> now;
-			turn rfoot to x-axis <-11.6> now;
-		//	turn torso to x-axis <-0.7> now;
-			sleep 130;
+			move rthigh to y-axis [0.300000] now;
+			move lleg to y-axis [0.700000] now;
+	//		turn pelvis to z-axis <-5.296703> now;
+			turn rthigh to x-axis <-22.500000> now;
+			turn lthigh to x-axis <16.197802> now;
+			turn lfoot to x-axis <0.000000> now;
+			turn rfoot to x-axis <12.296703> now;
+			sleep 110;
 		}
-		move lleg to y-axis [0.9] now;
-	//	move torso to y-axis [-0.4] now;
-		turn pelvis to z-axis <1.4> now;
-	//	turn belly to x-axis <-5.3> now;
-		turn rthigh to x-axis <3.5> now;
-		turn lthigh to x-axis <-23.2> now;
-	//	turn torso to x-axis <0.7> now;
+		if( TRUE )
+		{
+			move rthigh to y-axis [0.100000] now;
+			move lleg to y-axis [1.000000] now;
+	//		turn pelvis to z-axis <-3.500000> now;
+			turn rthigh to x-axis <-10.500000> now;
+			turn lthigh to x-axis <5.296703> now;
+			turn lfoot to x-axis <-0.697802> now;
+			turn rfoot to x-axis <0.296703> now;
+			sleep 110;
+		}
+		if( TRUE )
+		{
+			move rthigh to y-axis [0.000000] now;
+	//		turn pelvis to z-axis <0.000000> now;
+			turn rthigh to x-axis <0.697802> now;
+			turn lthigh to x-axis <-12.296703> now;
+			turn rfoot to x-axis <-11.598901> now;
+			sleep 110;
+		}
+		move lleg to y-axis [0.900000] now;
+	//	turn pelvis to z-axis <1.395604> now;
+		turn rthigh to x-axis <3.500000> now;
+		turn lthigh to x-axis <-23.197802> now;
 		sleep 130;
 	}
 }
-#include "SmokeUnit.h"
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 258;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 257;
+			}
+			emit-sfx smoketype from torso;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
 
 StartMoving()
 {
@@ -216,39 +183,42 @@ StopMoving()
 {
 	signal SIG_MOVE;
 	set-signal-mask SIG_MOVE;
-	turn pelvis to z-axis <0.0> speed <150.0>;
-	turn belly to x-axis <0.0> speed <150.0>;
-	move torso to y-axis [0.0] speed [1.0];
-	turn torso to x-axis <0.0> speed <150.0>;
-	turn rthigh to x-axis <0.0> speed <150.0>;
-	turn rleg to x-axis <0.0> speed <150.0>;
-	turn rfoot to x-axis <0.0> speed <150.0>;
-	turn lthigh to x-axis <0.0> speed <150.0>;
-	turn lleg to x-axis <0.0> speed <150.0>;
-	turn lfoot to x-axis <0.0> speed <150.0>;
+	turn pelvis to z-axis <0.000000> speed <150.000000>;
+	turn belly to x-axis <0.000000> speed <150.000000>;
+	move torso to y-axis [0.000000] speed [1.000000];
+	turn torso to x-axis <0.000000> speed <150.000000>;
+	turn rthigh to x-axis <0.000000> speed <150.000000>;
+	turn rleg to x-axis <0.000000> speed <150.000000>;
+	turn rfoot to x-axis <0.000000> speed <150.000000>;
+	turn lthigh to x-axis <0.000000> speed <150.000000>;
+	turn lleg to x-axis <0.000000> speed <150.000000>;
+	turn lfoot to x-axis <0.000000> speed <150.000000>;
 }
 
-flames()
- { var t;
-   while (get BUILD_PERCENT_LEFT)
-    { sleep 500; }
-   while (1)
-    { t=300+rand(50,1000);
-      sleep t;
-      show flare1;
-      sleep 150;
-      hide flare1;
-      show flare2;
-      sleep 100;
-      hide flare2;
-        }
-  }
+flames(Func_Var_1)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 500;
+	}
+	while( TRUE )
+	{
+		Func_Var_1 = 300 + Rand( 50, 1000 );
+		sleep Func_Var_1;
+		show flare1;
+		sleep 150;
+		hide flare1;
+		show flare2;
+		sleep 100;
+		hide flare2;
+	}
+}
 
 Create()
 {
 	hide flare1;
 	hide flare2;
-	gun_0=0;
+	gun_1 = torso;
 	restore_delay = 3000;
 	start-script StopMoving();
 	start-script flames();
@@ -272,29 +242,28 @@ AimFromPrimary(piecenum)
 
 QueryPrimary(piecenum)
 {
-if ( gun_0 == 0)
+	if( gun_1 == 0 )
 	{
-	piecenum = flare1;
+		piecenum = flare1;
 	}
-
-if ( gun_0 == 1)
+	if( gun_1 == 1 )
 	{
-	piecenum = flare2;
+		piecenum = flare2;
 	}
 }
 
 RestoreAfterDelay()
 {
 	sleep restore_delay;
-	turn torso to y-axis <0.0> speed <90.0>;
+	turn torso to y-axis <0.000000> speed <90.000000>;
 }
 
 AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	turn torso to y-axis heading speed <90.0>;
-	turn arms to x-axis <0.0> speed <45.0>;
+	turn torso to y-axis heading speed <90.000000>;
+	turn arms to x-axis <0.000000> speed <45.000000>;
 	wait-for-turn torso around y-axis;
 	start-script RestoreAfterDelay();
 	return (1);
@@ -302,21 +271,20 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-if (gun_0 == 0)
+	if( gun_1 == 0 )
 	{
-	show flare1;
-	sleep 150;
-	hide flare1;
+		show flare1;
+		sleep 150;
+		hide flare1;
 	}
-if (gun_0 == 1)
+	if( gun_1 == 1 )
 	{
-	show flare2;
-	sleep 150;
-	hide flare2;
+		show flare2;
+		sleep 150;
+		hide flare2;
 	}
-gun_0 = !gun_0;
+	gun_1 = !gun_1;
 }
-
 
 AimTertiary(heading, pitch)
 {
@@ -335,9 +303,8 @@ AimFromTertiary(piecenum)
 
 QueryTertiary(piecenum)
 {
-piecenum = pelvis;
+	piecenum = pelvis;
 }
-
 
 Killed(severity, corpsetype)
 {

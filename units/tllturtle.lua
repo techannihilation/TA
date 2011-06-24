@@ -57,6 +57,7 @@ local unitDef = {
   shootme            = 1,
   side               = [[TLL]],
   sightDistance      = 155,
+  smoothAnim         = true,
   spanishdescription = [[Defensa de Misiles Móvil]],
   standingfireorder  = 2,
   standingmoveorder  = 1,

@@ -57,6 +57,11 @@ local unitDef = {
   customparams = {
     canareaattack      = 1,
   },
+  sfxtypes = {
+    explosiongenerators = {
+      [[custom:berthaflare]],
+    },
+   },
   sounds = {
     canceldestruct     = [[cancel2]],
     underattack        = [[warning1]],

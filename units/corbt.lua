@@ -6,7 +6,7 @@ local unitName = "corbt"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-  acceleration       = 0.01,
+  acceleration       = 0.03,
   badTargetCategory  = [[VTOL]],
   bmcode             = 1,
   brakeRate          = 0.03029395,
@@ -38,9 +38,9 @@ local unitDef = {
   germandescription  = [[mobile Belagerungsplattform]],
   germanname         = [[Sloth]],
   maneuverleashlength = 640,
-  maxDamage          = 19212,
+  maxDamage          = 54650,
   maxSlope           = 12,
-  maxVelocity        = 0.9,
+  maxVelocity        = 1.2,
   maxWaterDepth      = 20,
   metalStorage       = 0,
   mobilestandorders  = 1,
@@ -53,7 +53,7 @@ local unitDef = {
   selfDestructAs     = [[BIG_UNIT]],
   shootme            = 1,
   side               = [[CORE]],
-  sightDistance      = 600,
+  sightDistance      = 1200,
   standingfireorder  = 2,
   standingmoveorder  = 1,
   steeringmode       = 1,
@@ -113,7 +113,7 @@ local weaponDefs = {
     model              = [[BTPulse]],
     name               = [[Bt Weapon]],
     noSelfDamage       = true,
-    range              = 1900,
+    range              = 2100,
     reloadtime         = 14,
     renderType         = 1,
     shakeduration      = 0,
@@ -127,8 +127,7 @@ local weaponDefs = {
     weaponVelocity     = 600,
     damage = {
       commanders         = 1800,
-      default            = 5320,
-      t3mechs            = 16300,
+      default            = 8320,
     },
   },
 }

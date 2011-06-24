@@ -26,7 +26,7 @@ walk()
 		turn rleg to x-axis <54.736264> now;
 		turn rfoot to x-axis <-34.670330> now;
 		turn lfoot to x-axis <13.379121> now;
-		sleep 159;
+		sleep 70;
 	}
 	if( TRUE )
 	{
@@ -36,7 +36,7 @@ walk()
 		turn rleg to x-axis <55.346154> now;
 		turn rfoot to x-axis <-17.934066> now;
 		turn lfoot to x-axis <34.670330> now;
-		sleep 87;
+		sleep 70;
 	}
 	if( TRUE )
 	{
@@ -46,7 +46,7 @@ walk()
 		turn rleg to x-axis <55.956044> now;
 		turn rfoot to x-axis <-1.214286> now;
 		turn lfoot to x-axis <17.027473> now;
-		sleep 73;
+		sleep 70;
 	}
 	if( TRUE )
 	{
@@ -57,7 +57,7 @@ walk()
 		turn rleg to x-axis <18.247253> now;
 		turn rfoot to x-axis <-17.637363> now;
 		turn lfoot to x-axis <0.000000> now;
-		sleep 83;
+		sleep 70;
 	}
 	if( TRUE )
 	{
@@ -69,7 +69,7 @@ walk()
 		turn rfoot to x-axis <-22.192308> now;
 		turn rfoot to y-axis <0.000000> now;
 		turn lfoot to x-axis <-16.725275> now;
-		sleep 160;
+		sleep 70;
 	}
 	if( TRUE )
 	{
@@ -82,7 +82,7 @@ walk()
 		turn rfoot to x-axis <-26.758242> now;
 		turn rfoot to y-axis <0.000000> now;
 		turn lfoot to x-axis <-24.324176> now;
-		sleep 183;
+		sleep 70;
 	}
 	if( TRUE )
 	{
@@ -92,7 +92,7 @@ walk()
 		turn rleg to x-axis <-25.236264> now;
 		turn rfoot to x-axis <-8.203297> now;
 		turn lfoot to x-axis <-20.670330> now;
-		sleep 193;
+		sleep 70;
 	}
 	if( TRUE )
 	{
@@ -102,7 +102,7 @@ walk()
 		turn rleg to x-axis <-41.967033> now;
 		turn rfoot to x-axis <10.335165> now;
 		turn lfoot to x-axis <-29.192308> now;
-		sleep 225;
+		sleep 70;
 	}
 	if( TRUE )
 	{
@@ -111,7 +111,7 @@ walk()
 		turn lleg to x-axis <38.005495> now;
 		turn rfoot to x-axis <10.335165> now;
 		turn lfoot to x-axis <-33.148352> now;
-		sleep 181;
+		sleep 70;
 	}
 	if( TRUE )
 	{
@@ -120,7 +120,7 @@ walk()
 		turn lleg to x-axis <55.956044> now;
 		turn rfoot to x-axis <1.214286> now;
 		turn lfoot to x-axis <-31.626374> now;
-		sleep 124;
+		sleep 70;
 	}
 	if( TRUE )
 	{
@@ -130,7 +130,7 @@ walk()
 		turn rleg to x-axis <-51.093407> now;
 		turn rfoot to x-axis <15.813187> now;
 		turn lfoot to x-axis <-19.456044> now;
-		sleep 100;
+		sleep 70;
 	}
 	if( TRUE )
 	{
@@ -139,7 +139,7 @@ walk()
 		turn rleg to x-axis <-60.214286> now;
 		turn rfoot to x-axis <45.615385> now;
 		turn lfoot to x-axis <-12.159341> now;
-		sleep 76;
+		sleep 70;
 	}
 	if( TRUE )
 	{
@@ -149,7 +149,7 @@ walk()
 		turn rleg to x-axis <-46.225275> now;
 		turn rfoot to x-axis <31.923077> now;
 		turn lfoot to x-axis <-14.593407> now;
-		sleep 59;
+		sleep 70;
 	}
 	if( TRUE )
 	{
@@ -159,200 +159,7 @@ walk()
 		turn rleg to x-axis <-32.236264> now;
 		turn rfoot to x-axis <18.247253> now;
 		turn lfoot to x-axis <-17.027473> now;
-		sleep 82;
-	}
-	if( TRUE )
-	{
-		move lleg to y-axis [1.799994] now;
-		move rleg to y-axis [1.349994] now;
-		turn lleg to x-axis <4.560440> now;
-		turn rleg to x-axis <-18.549451> now;
-		turn rfoot to x-axis <4.560440> now;
-		turn lfoot to x-axis <-21.582418> now;
-		sleep 104;
-	}
-	if( TRUE )
-	{
-		move lleg to y-axis [1.999994] now;
-		move rleg to y-axis [1.549994] now;
-		turn lleg to x-axis <-9.115385> now;
-		turn rleg to x-axis <-4.857143> now;
-		turn rfoot to x-axis <-9.115385> now;
-		turn lfoot to x-axis <-26.148352> now;
-		sleep 146;
-	}
-	if( TRUE )
-	{
-		move lleg to y-axis [1.424994] now;
-		move rleg to y-axis [0.949994] now;
-		turn lleg to x-axis <-30.412088> now;
-		turn rleg to x-axis <4.857143> now;
-		turn rfoot to x-axis <-14.901099> now;
-		turn lfoot to x-axis <-15.203297> now;
-		sleep 190;
-	}
-	if( TRUE )
-	{
-		move lleg to y-axis [0.849994] now;
-		move rleg to y-axis [0.350000] now;
-		turn lleg to x-axis <-51.692308> now;
-		turn rleg to x-axis <14.593407> now;
-		turn rfoot to x-axis <-20.670330> now;
-		turn lfoot to x-axis <-4.247253> now;
-		sleep 204;
-	}
-	move lleg to y-axis [0.424994] now;
-	move rleg to y-axis [0.175000] now;
-	turn lleg to x-axis <-46.527473> now;
-	turn rleg to x-axis <34.670330> now;
-	turn rfoot to x-axis <-27.670330> now;
-	turn rfoot to y-axis <0.000000> now;
-	turn lfoot to x-axis <-2.736264> now;
-	sleep 206;
-}
-
-walklegs()
-{
-	if( TRUE )
-	{
-		move rfoot to y-axis [0.000000] now;
-		move lfoot to y-axis [0.000000] now;
-		turn lleg to x-axis <-41.357143> now;
-		turn rleg to x-axis <54.736264> now;
-		turn rfoot to x-axis <-34.670330> now;
-		turn lfoot to x-axis <13.379121> now;
-		sleep 111;
-	}
-	if( TRUE )
-	{
-		move lleg to y-axis [-0.200000] now;
-		move rleg to y-axis [0.500000] now;
-		turn lleg to x-axis <-41.357143> now;
-		turn rleg to x-axis <55.346154> now;
-		turn rfoot to x-axis <-17.934066> now;
-		turn lfoot to x-axis <34.670330> now;
-		sleep 61;
-	}
-	if( TRUE )
-	{
-		move lleg to y-axis [0.649994] now;
-		move rleg to y-axis [1.000000] now;
-		turn lleg to x-axis <-32.236264> now;
-		turn rleg to x-axis <55.956044> now;
-		turn rfoot to x-axis <-1.214286> now;
-		turn lfoot to x-axis <17.027473> now;
-		sleep 49;
-	}
-	if( TRUE )
-	{
-		move lleg to y-axis [1.350000] now;
-		move rleg to y-axis [1.900000] now;
-		move rfoot to y-axis [0.000000] now;
-		turn lleg to x-axis <-10.945055> now;
-		turn rleg to x-axis <18.247253> now;
-		turn rfoot to x-axis <-17.637363> now;
-		turn lfoot to x-axis <0.000000> now;
-		sleep 58;
-	}
-	if( TRUE )
-	{
-		move lleg to y-axis [0.950000] now;
-		move rleg to y-axis [1.949994] now;
-		move rfoot to y-axis [0.000000] now;
-		turn lleg to x-axis <3.038462> now;
-		turn rleg to x-axis <4.857143> now;
-		turn rfoot to x-axis <-22.192308> now;
-		turn rfoot to y-axis <0.000000> now;
-		turn lfoot to x-axis <-16.725275> now;
-		sleep 109;
-	}
-	if( TRUE )
-	{
-		move lleg to y-axis [0.950000] now;
-		move rleg to y-axis [1.999994] now;
-		move rfoot to y-axis [0.000000] now;
-		turn lleg to x-axis <11.549451> now;
-		turn rleg to x-axis <-8.505495> now;
-		turn rfoot to x-axis <-26.758242> now;
-		turn rfoot to y-axis <0.000000> now;
-		turn lfoot to x-axis <-24.324176> now;
-		sleep 124;
-	}
-	if( TRUE )
-	{
-		move lleg to y-axis [0.475000] now;
-		move rleg to y-axis [1.774994] now;
-		turn lleg to x-axis <17.027473> now;
-		turn rleg to x-axis <-25.236264> now;
-		turn rfoot to x-axis <-8.203297> now;
-		turn lfoot to x-axis <-20.670330> now;
-		sleep 133;
-	}
-	if( TRUE )
-	{
-		move lleg to y-axis [0.000000] now;
-		move rleg to y-axis [1.549994] now;
-		turn lleg to x-axis <29.802198> now;
-		turn rleg to x-axis <-41.967033> now;
-		turn rfoot to x-axis <10.335165> now;
-		turn lfoot to x-axis <-29.192308> now;
-		sleep 153;
-	}
-	if( TRUE )
-	{
-		move lleg to y-axis [0.000000] now;
-		move rleg to y-axis [0.824994] now;
-		turn lleg to x-axis <38.005495> now;
-		turn rfoot to x-axis <10.335165> now;
-		turn lfoot to x-axis <-33.148352> now;
-		sleep 123;
-	}
-	if( TRUE )
-	{
-		move lleg to y-axis [0.000000] now;
-		move rleg to y-axis [0.099994] now;
-		turn lleg to x-axis <55.956044> now;
-		turn rfoot to x-axis <1.214286> now;
-		turn lfoot to x-axis <-31.626374> now;
-		sleep 86;
-	}
-	if( TRUE )
-	{
-		move lleg to y-axis [0.500000] now;
-		turn lleg to x-axis <46.225275> now;
-		turn rleg to x-axis <-51.093407> now;
-		turn rfoot to x-axis <15.813187> now;
-		turn lfoot to x-axis <-19.456044> now;
-		sleep 67;
-	}
-	if( TRUE )
-	{
-		move lleg to y-axis [1.000000] now;
-		turn lleg to x-axis <55.346154> now;
-		turn rleg to x-axis <-60.214286> now;
-		turn rfoot to x-axis <45.615385> now;
-		turn lfoot to x-axis <-12.159341> now;
-		sleep 53;
-	}
-	if( TRUE )
-	{
-		move lleg to y-axis [1.299994] now;
-		move rleg to y-axis [0.624994] now;
-		turn lleg to x-axis <36.791209> now;
-		turn rleg to x-axis <-46.225275> now;
-		turn rfoot to x-axis <31.923077> now;
-		turn lfoot to x-axis <-14.593407> now;
-		sleep 40;
-	}
-	if( TRUE )
-	{
-		move lleg to y-axis [1.599994] now;
-		move rleg to y-axis [1.149994] now;
-		turn lleg to x-axis <18.247253> now;
-		turn rleg to x-axis <-32.236264> now;
-		turn rfoot to x-axis <18.247253> now;
-		turn lfoot to x-axis <-17.027473> now;
-		sleep 56;
+		sleep 70;
 	}
 	if( TRUE )
 	{
@@ -372,7 +179,7 @@ walklegs()
 		turn rleg to x-axis <-4.857143> now;
 		turn rfoot to x-axis <-9.115385> now;
 		turn lfoot to x-axis <-26.148352> now;
-		sleep 100;
+		sleep 70;
 	}
 	if( TRUE )
 	{
@@ -382,7 +189,7 @@ walklegs()
 		turn rleg to x-axis <4.857143> now;
 		turn rfoot to x-axis <-14.901099> now;
 		turn lfoot to x-axis <-15.203297> now;
-		sleep 130;
+		sleep 70;
 	}
 	if( TRUE )
 	{
@@ -392,7 +199,200 @@ walklegs()
 		turn rleg to x-axis <14.593407> now;
 		turn rfoot to x-axis <-20.670330> now;
 		turn lfoot to x-axis <-4.247253> now;
-		sleep 140;
+		sleep 70;
+	}
+	move lleg to y-axis [0.424994] now;
+	move rleg to y-axis [0.175000] now;
+	turn lleg to x-axis <-46.527473> now;
+	turn rleg to x-axis <34.670330> now;
+	turn rfoot to x-axis <-27.670330> now;
+	turn rfoot to y-axis <0.000000> now;
+	turn lfoot to x-axis <-2.736264> now;
+	sleep 70;
+}
+
+walklegs()
+{
+	if( TRUE )
+	{
+		move rfoot to y-axis [0.000000] now;
+		move lfoot to y-axis [0.000000] now;
+		turn lleg to x-axis <-41.357143> now;
+		turn rleg to x-axis <54.736264> now;
+		turn rfoot to x-axis <-34.670330> now;
+		turn lfoot to x-axis <13.379121> now;
+		sleep 70;
+	}
+	if( TRUE )
+	{
+		move lleg to y-axis [-0.200000] now;
+		move rleg to y-axis [0.500000] now;
+		turn lleg to x-axis <-41.357143> now;
+		turn rleg to x-axis <55.346154> now;
+		turn rfoot to x-axis <-17.934066> now;
+		turn lfoot to x-axis <34.670330> now;
+		sleep 70;
+	}
+	if( TRUE )
+	{
+		move lleg to y-axis [0.649994] now;
+		move rleg to y-axis [1.000000] now;
+		turn lleg to x-axis <-32.236264> now;
+		turn rleg to x-axis <55.956044> now;
+		turn rfoot to x-axis <-1.214286> now;
+		turn lfoot to x-axis <17.027473> now;
+		sleep 70;
+	}
+	if( TRUE )
+	{
+		move lleg to y-axis [1.350000] now;
+		move rleg to y-axis [1.900000] now;
+		move rfoot to y-axis [0.000000] now;
+		turn lleg to x-axis <-10.945055> now;
+		turn rleg to x-axis <18.247253> now;
+		turn rfoot to x-axis <-17.637363> now;
+		turn lfoot to x-axis <0.000000> now;
+		sleep 70;
+	}
+	if( TRUE )
+	{
+		move lleg to y-axis [0.950000] now;
+		move rleg to y-axis [1.949994] now;
+		move rfoot to y-axis [0.000000] now;
+		turn lleg to x-axis <3.038462> now;
+		turn rleg to x-axis <4.857143> now;
+		turn rfoot to x-axis <-22.192308> now;
+		turn rfoot to y-axis <0.000000> now;
+		turn lfoot to x-axis <-16.725275> now;
+		sleep 70;
+	}
+	if( TRUE )
+	{
+		move lleg to y-axis [0.950000] now;
+		move rleg to y-axis [1.999994] now;
+		move rfoot to y-axis [0.000000] now;
+		turn lleg to x-axis <11.549451> now;
+		turn rleg to x-axis <-8.505495> now;
+		turn rfoot to x-axis <-26.758242> now;
+		turn rfoot to y-axis <0.000000> now;
+		turn lfoot to x-axis <-24.324176> now;
+		sleep 70;
+	}
+	if( TRUE )
+	{
+		move lleg to y-axis [0.475000] now;
+		move rleg to y-axis [1.774994] now;
+		turn lleg to x-axis <17.027473> now;
+		turn rleg to x-axis <-25.236264> now;
+		turn rfoot to x-axis <-8.203297> now;
+		turn lfoot to x-axis <-20.670330> now;
+		sleep 70;
+	}
+	if( TRUE )
+	{
+		move lleg to y-axis [0.000000] now;
+		move rleg to y-axis [1.549994] now;
+		turn lleg to x-axis <29.802198> now;
+		turn rleg to x-axis <-41.967033> now;
+		turn rfoot to x-axis <10.335165> now;
+		turn lfoot to x-axis <-29.192308> now;
+		sleep 70;
+	}
+	if( TRUE )
+	{
+		move lleg to y-axis [0.000000] now;
+		move rleg to y-axis [0.824994] now;
+		turn lleg to x-axis <38.005495> now;
+		turn rfoot to x-axis <10.335165> now;
+		turn lfoot to x-axis <-33.148352> now;
+		sleep 70;
+	}
+	if( TRUE )
+	{
+		move lleg to y-axis [0.000000] now;
+		move rleg to y-axis [0.099994] now;
+		turn lleg to x-axis <55.956044> now;
+		turn rfoot to x-axis <1.214286> now;
+		turn lfoot to x-axis <-31.626374> now;
+		sleep 70;
+	}
+	if( TRUE )
+	{
+		move lleg to y-axis [0.500000] now;
+		turn lleg to x-axis <46.225275> now;
+		turn rleg to x-axis <-51.093407> now;
+		turn rfoot to x-axis <15.813187> now;
+		turn lfoot to x-axis <-19.456044> now;
+		sleep 70;
+	}
+	if( TRUE )
+	{
+		move lleg to y-axis [1.000000] now;
+		turn lleg to x-axis <55.346154> now;
+		turn rleg to x-axis <-60.214286> now;
+		turn rfoot to x-axis <45.615385> now;
+		turn lfoot to x-axis <-12.159341> now;
+		sleep 70;
+	}
+	if( TRUE )
+	{
+		move lleg to y-axis [1.299994] now;
+		move rleg to y-axis [0.624994] now;
+		turn lleg to x-axis <36.791209> now;
+		turn rleg to x-axis <-46.225275> now;
+		turn rfoot to x-axis <31.923077> now;
+		turn lfoot to x-axis <-14.593407> now;
+		sleep 70;
+	}
+	if( TRUE )
+	{
+		move lleg to y-axis [1.599994] now;
+		move rleg to y-axis [1.149994] now;
+		turn lleg to x-axis <18.247253> now;
+		turn rleg to x-axis <-32.236264> now;
+		turn rfoot to x-axis <18.247253> now;
+		turn lfoot to x-axis <-17.027473> now;
+		sleep 70;
+	}
+	if( TRUE )
+	{
+		move lleg to y-axis [1.799994] now;
+		move rleg to y-axis [1.349994] now;
+		turn lleg to x-axis <4.560440> now;
+		turn rleg to x-axis <-18.549451> now;
+		turn rfoot to x-axis <4.560440> now;
+		turn lfoot to x-axis <-21.582418> now;
+		sleep 70;
+	}
+	if( TRUE )
+	{
+		move lleg to y-axis [1.999994] now;
+		move rleg to y-axis [1.549994] now;
+		turn lleg to x-axis <-9.115385> now;
+		turn rleg to x-axis <-4.857143> now;
+		turn rfoot to x-axis <-9.115385> now;
+		turn lfoot to x-axis <-26.148352> now;
+		sleep 70;
+	}
+	if( TRUE )
+	{
+		move lleg to y-axis [1.424994] now;
+		move rleg to y-axis [0.949994] now;
+		turn lleg to x-axis <-30.412088> now;
+		turn rleg to x-axis <4.857143> now;
+		turn rfoot to x-axis <-14.901099> now;
+		turn lfoot to x-axis <-15.203297> now;
+		sleep 70;
+	}
+	if( TRUE )
+	{
+		move lleg to y-axis [0.849994] now;
+		move rleg to y-axis [0.350000] now;
+		turn lleg to x-axis <-51.692308> now;
+		turn rleg to x-axis <14.593407> now;
+		turn rfoot to x-axis <-20.670330> now;
+		turn lfoot to x-axis <-4.247253> now;
+		sleep 70;
 	}
 	move hips to y-axis [-0.225000] now;
 	move hips to z-axis [0.000000] now;
@@ -403,7 +403,7 @@ walklegs()
 	turn rfoot to x-axis <-27.670330> now;
 	turn rfoot to y-axis <0.000000> now;
 	turn lfoot to x-axis <-2.736264> now;
-	sleep 140;
+	sleep 70;
 }
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -581,7 +581,7 @@ AimPrimary(heading, pitch)
 	{
 		sleep 100;
 	}
-	turn head to y-axis heading speed <190.000000>;
+	turn head to y-axis heading speed <75.000000>;
 	wait-for-turn head around y-axis;
 	turn sleeve to x-axis <0.000000> - pitch speed <60.000000>;
 	wait-for-turn sleeve around x-axis;
