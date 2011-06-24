@@ -206,6 +206,7 @@ t3mechs = {
 	troman = 99,
 	tllhtml = 99,
 	tllblind = 99,
+	tllgrim = 99,
 
 },
 t4mechs = {
