@@ -207,7 +207,7 @@ t3mechs = {
 	tllhtml = 99,
 	tllblind = 99,
 	tllgrim = 99,
-
+	tllmono = 99,
 },
 t4mechs = {
 	armraz1 = 99,

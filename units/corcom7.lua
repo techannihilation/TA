@@ -119,6 +119,7 @@ local unitDef = {
     [[cpocketfusion]],
     [[corgant1]],
     [[cordrag1]],
+    [[monkeylord]],
   },
   sounds = {
     build              = [[nanlath2]],
