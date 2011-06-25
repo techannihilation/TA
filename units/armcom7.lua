@@ -119,7 +119,7 @@ local unitDef = {
     [[apocketfusion]],
     [[armshltx1]],
     [[cordrag1]],
-    [[monkeylord]],
+    [[armpraet]],
   },
   sounds = {
     build              = [[nanlath1]],
