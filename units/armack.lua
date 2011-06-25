@@ -62,7 +62,6 @@ local unitDef = {
     [[armfus]],
     [[armckfus]],
     [[armshltx]],
-    [[armgant]],
     [[amgeo]],
     [[armgmm]],
     [[armmoho]],
