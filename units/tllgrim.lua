@@ -127,8 +127,8 @@ local weaponDefs = {
     damage = {
       commanders         = 900,
       default            = 200,
-      t3mechs            = 30000,
-      t4mechs            = 40000,
+      t3mechs            = 22000,
+      t4mechs            = 32000,
     },
   },
   TLLGRIM_MISSILE = {
