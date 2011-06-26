@@ -36,7 +36,7 @@ local unitDef = {
   immunetoparalyzer  = 1,
   maneuverleashlength = 640,
   manuverleashlength = 2560,
-  maxDamage          = 61000,
+  maxDamage          = 72000,
   maxSlope           = 36,
   maxVelocity        = .9,
   maxWaterDepth      = 500,
@@ -88,10 +88,11 @@ local unitDef = {
   },
   weapons = {
     [1]  = {
-      badTargetCategory  = [[VTOL]],
+      badTargetCategory  = [[NOTAIR]],
       def                = [[heavy_rockets2]],
     },
     [2]  = {
+      badTargetCategory  = [[VTOL]],
       def                = [[MonoWeap]],
     },
   },
@@ -179,6 +180,15 @@ local weaponDefs = {
     weaponVelocity     = 845,
     damage = {
       default            = 150,
+      gunships           = 750,
+      hgunships          = 500,
+      l1bombers          = 250,
+      l1fighters         = 250,
+      l2bombers          = 750,
+      l2fighters         = 500,
+      vradar             = 250,
+      vtol               = 250,
+      vtrans             = 250,
     },
   },
 }
