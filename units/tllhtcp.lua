@@ -54,6 +54,7 @@ local unitDef = {
     [[tllhtml]],
     [[tllblind]],
     [[tllgrim]],
+    [[tllmlrpc]],
 
   },
   sounds = {
