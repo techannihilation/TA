@@ -61,7 +61,12 @@ local unitDef = {
     [[armgor]],
     [[gorg]],
     [[macross]],
-    [[armpraet]],
+    [[cordem]],
+    [[corkarg]],
+    [[shiva]],
+    [[armraven]],
+    [[corjurgen]],
+    [[troman]],
   },
   sfxtypes = {
     explosiongenerators = {

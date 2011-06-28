@@ -117,6 +117,7 @@ local unitDef = {
     [[tllfireraiser]],
     [[corupmex]],
     [[tllion]],
+    [[tllmono]],
 
   },
   sounds = {

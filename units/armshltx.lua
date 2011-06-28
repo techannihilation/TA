@@ -60,7 +60,12 @@ local unitDef = {
     [[arm_furie]],
     [[armbanth]],
     [[armjag]],
-    [[armpraet]],
+    [[armjugg]],
+    [[armraz]],
+    [[marauder]],
+    [[armshock]],
+    [[armcrabe]],
+    [[armpod]],
   },
   sfxtypes = {
     explosiongenerators = {

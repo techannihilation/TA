@@ -19,7 +19,7 @@ local unitDef = {
   canMove            = true,
   canPatrol          = true,
   canstop            = 1,
-  category           = [[TLL KBOT LEVEL3 WEAPON NOTAIR NOTSUB CTRL_W]],
+  category           = [[TLL KBOT LEVEL3 WEAPON NOTAIR NOTSUB]],
   copyright          = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
   corpse             = [[dead]],
   defaultmissiontype = [[Standby]],
@@ -138,6 +138,8 @@ local weaponDefs = {
     weaponVelocity     = 1000,
     damage = {
       default            = 805,
+      t3mechs            = 1600,
+      t4mechs            = 2400,
     },
   },
   COR_GOL = {

@@ -117,6 +117,8 @@ local unitDef = {
     [[corfhlt]],
     [[cbuilderlvl2]],
     [[cpocketfusion]],
+    [[monkeylord]],
+
   },
   sounds = {
     build              = [[nanlath2]],

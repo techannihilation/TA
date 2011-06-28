@@ -117,6 +117,7 @@ local unitDef = {
     [[armfhlt]],
     [[abuilderlvl2]],
     [[apocketfusion]],
+    [[armpraet]],
   },
   sounds = {
     build              = [[nanlath1]],

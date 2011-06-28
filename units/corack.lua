@@ -61,7 +61,6 @@ local unitDef = {
   buildoptions = {
     [[corfus]],
     [[corgant]],
-    [[armmechl]],
     [[cmgeo]],
     [[corbhmth]],
     [[cormoho]],
