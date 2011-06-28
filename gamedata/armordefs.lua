@@ -576,6 +576,7 @@ hover = {
 	corsd = 99,
 	armvulc = 99,
 	corbuzz = 99,
+	tllmlrpc = 99,
 },
 shield = {
 	armgate = 99,

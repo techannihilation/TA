@@ -119,6 +119,13 @@ local moveDatas = {
 		maxslope = 18,
 		maxwaterdepth = 22,
 	},
+	HTANK5 = {
+		crushstrength = 250,
+		footprintx = 5,
+		footprintz = 5,
+		maxslope = 18,
+		maxwaterdepth = 22,
+	},
 	HTKBOT4 = {
 		crushstrength = 250,
 		footprintx = 4,
