@@ -64,7 +64,7 @@ if (gadgetHandler:IsSyncedCode()) then
 				if at~=bestTeam then
 					bestTeam=at
 					if soundsOn then Spring.PlaySoundFile(snd) end
-					Spring.SendMessage(friendlyName(bestTeam) .. " has taken the lead with " .. bestKills .. " kills.")
+					Spring.SendMessage("\255\255\001\001" .. friendlyName(bestTeam) .. " has taken the lead with " .. bestKills .. " kills.")
 				end
 			end
 		end
