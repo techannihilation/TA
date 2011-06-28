@@ -124,7 +124,7 @@ local weaponDefs = {
     name               = [[JadeEagle-Laser]],
     pitchtolerance     = 12000,
     range              = 360,
-    reloadtime         = 1.3,
+    reloadtime         = 1.0,
     renderType         = 0,
     soundHit           = [[lasrhit1]],
     soundStart         = [[Lasrmas2]],
@@ -137,7 +137,7 @@ local weaponDefs = {
     weaponType         = [[BeamLaser]],
     weaponVelocity     = 800,
     damage = {
-      default            = 90,
+      default            = 225,
     },
   },
 }
