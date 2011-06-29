@@ -94,6 +94,7 @@ local unitDef = {
     [2]  = {
       badTargetCategory  = [[VTOL]],
       def                = [[MonoWeap]],
+      onlyTargetCategory = [[NOTAIR]],
     },
   },
 }
@@ -111,6 +112,8 @@ local weaponDefs = {
     burstrate          = 0,
     color              = 40,
     color2             = 230,
+    craterBoost        = 0,
+    craterMult         = 0,
     duration           = 4,
     edgeEffectiveness  = 0.99,
     energypershot      = 20,
