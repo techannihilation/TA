@@ -146,7 +146,7 @@ local weaponDefs = {
     weaponType         = [[BeamLaser]],
     weaponVelocity     = 250,
     damage = {
-      default            = 1050,
+      default            = 1550,
     },
   },
   Cybran_Monkeylord_Shield = {
