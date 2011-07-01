@@ -18,19 +18,6 @@ local options={
        type="section",
     },
 	{
-		key="deathmode",
-		name="Game End Mode",
-		desc="What it takes to eliminate a team",
-		type="list",
-		def="com",
-		section="ba_modes",
-		items={
-			{key="killall", name="Kill Everything", desc="Every last unit must be eliminated, no exceptions!"},
-			{key="com", name="Kill all enemy Commanders", desc="When a team has no Commanders left it loses"},
-			{key="comcontrol", name="No Commander, No Control", desc="A player without a Commander cannot issue orders"},
-		}
-	},
-	{
 		key    = "mo_coop",
 		name   = "Cooperative Mode",
 		desc   = "Adds an extra commander for comsharing teams",
@@ -101,6 +88,25 @@ local options={
 		type   = "bool",
 		def    = false,
 		section= "ba_options",
+    },
+       {
+		key="teamdeathmode",
+		name="Team Game End Mode",
+		desc="What it takes to eliminate a Team",
+		type="list",
+		def="allyzerounits",
+		items={
+		{key="none", name="Never Die", desc="All Teams will stay alive regardless of what happends, gameover will never arrive."},
+		{key="teamzerounits", name="Team Death on Zero Units", desc="The Team will die when it has 0 units."},
+		{key="allyzerounits", name="AllyTeam Death on Zero units", desc="The Team will die when every Team in his AllyTeam have 0 units."},
+      }
+   },
+	{
+	key    = "shareddynamicalliancevictory",
+	name   = "Dynamic Ally Victory",
+	desc   = "Ingame alliance should count for game over condition.",
+	type   = "bool",
+	def    = false,
     },
 	{
        key    = "startmetal",
