@@ -18,7 +18,6 @@ local unitDef = {
   buildPic           = [[CORAMPH.DDS]],
   buildTime          = 9650,
   canAttack          = true,
-  canDGun            = true,
   canGuard           = true,
   canMove            = true,
   canPatrol          = true,

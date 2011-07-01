@@ -14,7 +14,6 @@ local unitDef = {
   builder            = false,
   buildTime          = 444423,
   canAttack          = true,
-  canDGun            = true,
   canGuard           = true,
   canMove            = true,
   canPatrol          = true,
