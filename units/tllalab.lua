@@ -63,6 +63,7 @@ local unitDef = {
     [[tllsniper]],
     [[tllartybot]],
     [[tllaak]],
+    [[tlltraq]],
     [[tlldecom]],
     [[tllturtle]],
     [[tllobserver]],
