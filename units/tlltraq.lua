@@ -10,8 +10,8 @@ local unitDef = {
   badTargetCategory  = [[VTOL]],
   bmcode             = 1,
   brakeRate          = 0.21,
-  buildCostEnergy    = 20234,
-  buildCostMetal     = 1464,
+  buildCostEnergy    = 11234,
+  buildCostMetal     = 764,
   builder            = false,
   buildTime          = 23659,
   canAttack          = true,
@@ -129,7 +129,7 @@ local weaponDefs = {
     weaponType         = [[BeamLaser]],
     weaponVelocity     = 1100,
     damage = {
-      default            = 110,
+      default            = 330,
     },
   },
 }
