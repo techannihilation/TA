@@ -113,7 +113,7 @@ local weaponDefs = {
     lavaexplosiongaf   = [[fx]],
     name               = [[Lighghht Cannon]],
     range              = 600,
-    reloadtime         = 0.65,
+    reloadtime         = 0.5,
     renderType         = 4,
     rgbColor           = [[1 0 0]],
     rgbColor2          = [[1 1 1]],
@@ -129,7 +129,7 @@ local weaponDefs = {
     weaponType         = [[Cannon]],
     weaponVelocity     = 370,
     damage = {
-      default            = 105,
+      default            = 225,
     },
   },
 }
