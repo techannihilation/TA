@@ -89,7 +89,7 @@ local unitDef = {
   },
   weapons = {
     [1]  = {
-      def                = [[TLL_ASTORPEDO]],
+      def                = [[TLL_ASEDO]],
     },
    },
 }
@@ -98,7 +98,7 @@ local unitDef = {
 --------------------------------------------------------------------------------
 
 local weaponDefs = {
-  TLL_ASTORPEDO = {
+  TLL_ASEDO = {
     areaOfEffect       = 16,
     burnblow           = true,
     burst              = 5,

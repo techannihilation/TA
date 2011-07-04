@@ -92,7 +92,7 @@ local unitDef = {
   weapons = {
     [1]  = {
       badTargetCategory  = [[NOTSUB]],
-      def                = [[ARMSMART_TORPEDO]],
+      def                = [[ARMSMART_EDO]],
     },
   },
 }
@@ -101,7 +101,7 @@ local unitDef = {
 --------------------------------------------------------------------------------
 
 local weaponDefs = {
-  ARMSMART_TORPEDO = {
+  ARMSMART_EDO = {
     areaOfEffect       = 16,
     avoidFriendly      = false,
     burnblow           = true,

@@ -22,7 +22,7 @@ local unitDef = {
   canMove            = true,
   canPatrol          = true,
   canstop            = 1,
-  category           = [[TLL VTOL LEVEL2 WEAPON TORP NOTSUB NOTSTRUCTURE]],
+  category           = [[TLL VTOL LEVEL2 WEAPON  NOTSUB NOTSTRUCTURE]],
   copyright          = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
   cruiseAlt          = 55,
   defaultmissiontype = [[VTOL_standby]],
@@ -82,7 +82,7 @@ local unitDef = {
   },
   weapons = {
     [1]  = {
-      def                = [[TLLAIR_TORPEDO]],
+      def                = [[TLLAIR_EDO]],
       onlyTargetCategory = [[UNDERWATER]],
     },
    },
@@ -92,7 +92,7 @@ local unitDef = {
 --------------------------------------------------------------------------------
 
 local weaponDefs = {
-  TLLAIR_TORPEDO = {
+  TLLAIR_EDO = {
     areaOfEffect       = 24,
     burnblow           = true,
     burst              = 3,

@@ -20,7 +20,7 @@ local unitDef = {
   canMove            = true,
   canPatrol          = true,
   canstop            = 1,
-  category           = [[TLL UNDERWATER LEVEL1 TORP WEAPON NOTAIR NOTSTRUCTURE  ]],
+  category           = [[TLL UNDERWATER LEVEL1  WEAPON NOTAIR NOTSTRUCTURE  ]],
   copyright          = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
   corpse             = [[dead]],
   defaultmissiontype = [[Standby]],
@@ -88,7 +88,7 @@ local unitDef = {
   weapons = {
     [1]  = {
       badTargetCategory  = [[NOTSUB]],
-      def                = [[ARM_TORPEDO]],
+      def                = [[ARM_EDO]],
     },
   },
 }
@@ -97,7 +97,7 @@ local unitDef = {
 --------------------------------------------------------------------------------
 
 local weaponDefs = {
-  ARM_TORPEDO = {
+  ARM_EDO = {
     areaOfEffect       = 16,
     avoidFriendly      = false,
     burnblow           = true,

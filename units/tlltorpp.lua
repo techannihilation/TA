@@ -20,7 +20,7 @@ local unitDef = {
   canMove            = true,
   canPatrol          = true,
   canstop            = 1,
-  category           = [[TLL VTOL LEVEL2 WEAPON TORP  NOTSUB  ]],
+  category           = [[TLL VTOL LEVEL2 WEAPON   NOTSUB  ]],
   collide            = false,
   copyright          = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
   cruiseAlt          = 150,
@@ -46,7 +46,7 @@ local unitDef = {
   mobilestandorders  = 1,
   name               = [[Trawler]],
   noAutoFire         = false,
-  objectName         = [[TLLTORPP]],
+  objectName         = [[TLLP]],
   ovradjust          = 1,
   radarDistance      = 0,
   selfDestructAs     = [[BIG_UNIT]],
@@ -88,7 +88,7 @@ local unitDef = {
   },
   weapons = {
     [1]  = {
-      def                = [[ARMAIR_TORPEDO]],
+      def                = [[ARMAIR_EDO]],
     },
   },
 }
@@ -97,7 +97,7 @@ local unitDef = {
 --------------------------------------------------------------------------------
 
 local weaponDefs = {
-  ARMAIR_TORPEDO = {
+  ARMAIR_EDO = {
     areaOfEffect       = 16,
     avoidFriendly      = false,
     burnblow           = true,

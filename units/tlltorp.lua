@@ -16,7 +16,7 @@ local unitDef = {
   buildTime          = 4204,
   canAttack          = true,
   canstop            = 1,
-  category           = [[TLL SPECIAL WEAPON TORP LEVEL2 NOTAIR NOTSUB ]],
+  category           = [[TLL SPECIAL WEAPON  LEVEL2 NOTAIR NOTSUB ]],
   copyright          = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
   corpse             = [[dead]],
   defaultmissiontype = [[GUARD_NOMOVE]],
@@ -83,7 +83,7 @@ local unitDef = {
   weapons = {
     [1]  = {
       badTargetCategory  = [[NOWEAPON]],
-      def                = [[COAX_TORPEDO]],
+      def                = [[COAX_EDO]],
     },
   },
 }
@@ -92,7 +92,7 @@ local unitDef = {
 --------------------------------------------------------------------------------
 
 local weaponDefs = {
-  COAX_TORPEDO = {
+  COAX_EDO = {
     areaOfEffect       = 16,
     avoidFriendly      = false,
     burnblow           = true,

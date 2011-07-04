@@ -15,7 +15,7 @@ local unitDef = {
   buildTime          = 8580,
   canAttack          = true,
   canstop            = 1,
-  category           = [[TLL SPECIAL WEAPON TORP LEVEL2 NOTAIR NOTSUB ]],
+  category           = [[TLL SPECIAL WEAPON  LEVEL2 NOTAIR NOTSUB ]],
   copyright          = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
   corpse             = [[dead]],
   defaultmissiontype = [[GUARD_NOMOVE]],
@@ -81,7 +81,7 @@ local unitDef = {
   },
   weapons = {
     [1]  = {
-      def                = [[TLL_ADVTORPEDO]],
+      def                = [[TLL_ADVEDO]],
     },
   },
 }
@@ -90,7 +90,7 @@ local unitDef = {
 --------------------------------------------------------------------------------
 
 local weaponDefs = {
-  TLL_ADVTORPEDO = {
+  TLL_ADVEDO = {
     areaOfEffect       = 32,
     burnblow           = true,
     burst              = 2,
