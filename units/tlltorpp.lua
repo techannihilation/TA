@@ -46,7 +46,7 @@ local unitDef = {
   mobilestandorders  = 1,
   name               = [[Trawler]],
   noAutoFire         = false,
-  objectName         = [[TLLP]],
+  objectName         = [[TLLTORPP]],
   ovradjust          = 1,
   radarDistance      = 0,
   selfDestructAs     = [[BIG_UNIT]],
@@ -88,7 +88,7 @@ local unitDef = {
   },
   weapons = {
     [1]  = {
-      def                = [[ARMAIR_EDO]],
+      def                = [[ARMAIR_TORPEDO]],
     },
   },
 }
@@ -97,7 +97,7 @@ local unitDef = {
 --------------------------------------------------------------------------------
 
 local weaponDefs = {
-  ARMAIR_EDO = {
+  ARMAIR_TORPEDO = {
     areaOfEffect       = 16,
     avoidFriendly      = false,
     burnblow           = true,

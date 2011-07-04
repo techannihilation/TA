@@ -73,7 +73,7 @@ local unitDef = {
   weapons = {
     [1]  = {
       badTargetCategory  = [[VTOL]],
-      def                = [[TLL_EDO]],
+      def                = [[TLL_TORPEDO]],
     },
   },
 }
@@ -82,7 +82,7 @@ local unitDef = {
 --------------------------------------------------------------------------------
 
 local weaponDefs = {
-  TLL_EDO = {
+  TLL_TORPEDO = {
     areaOfEffect       = 16,
     burnblow           = true,
     explosionart       = [[explode3]],

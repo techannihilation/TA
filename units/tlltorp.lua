@@ -83,7 +83,7 @@ local unitDef = {
   weapons = {
     [1]  = {
       badTargetCategory  = [[NOWEAPON]],
-      def                = [[COAX_EDO]],
+      def                = [[COAX_TORPEDP]],
     },
   },
 }
@@ -92,7 +92,7 @@ local unitDef = {
 --------------------------------------------------------------------------------
 
 local weaponDefs = {
-  COAX_EDO = {
+  COAX_TORPEDO = {
     areaOfEffect       = 16,
     avoidFriendly      = false,
     burnblow           = true,

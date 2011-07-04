@@ -82,7 +82,7 @@ local unitDef = {
   },
   weapons = {
     [1]  = {
-      def                = [[TLLAIR_EDO]],
+      def                = [[TLLAIR_TORPEDO]],
       onlyTargetCategory = [[UNDERWATER]],
     },
    },
@@ -92,7 +92,7 @@ local unitDef = {
 --------------------------------------------------------------------------------
 
 local weaponDefs = {
-  TLLAIR_EDO = {
+  TLLAIR_TORPEDO = {
     areaOfEffect       = 24,
     burnblow           = true,
     burst              = 3,
