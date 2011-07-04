@@ -83,7 +83,7 @@ local unitDef = {
   weapons = {
     [1]  = {
       badTargetCategory  = [[NOWEAPON]],
-      def                = [[COAX_TORPEDP]],
+      def                = [[COAX_TORPEDO]],
     },
   },
 }
