@@ -41,7 +41,7 @@ local unitDef = {
   maneuverleashlength = 640,
   maxDamage          = 2857,
   maxSlope           = 10,
-  maxVelocity        = 1.4,
+  maxVelocity        = 1.7,
   maxWaterDepth      = 12,
   metalStorage       = 0,
   mobilestanorders   = 1,
@@ -104,7 +104,7 @@ local unitDef = {
 
 local weaponDefs = {
   CORKROG_FIRE10 = {
-    areaOfEffect       = 8,
+    areaOfEffect       = 12,
     explosionart       = [[explode5]],
     explosiongaf       = [[fx]],
     explosionGenerator = [[custom:KNIGHT_EXPLOSION_FX]],
@@ -115,7 +115,7 @@ local weaponDefs = {
     minbarrelangle     = -15,
     name               = [[Gauss Cannon]],
     range              = 700,
-    reloadtime         = 1.6,
+    reloadtime         = 1.0,
     renderType         = 4,
     soundHit           = [[xplomed21]],
     soundStart         = [[Krogun1]],
@@ -127,7 +127,7 @@ local weaponDefs = {
     weaponType         = [[Cannon]],
     weaponVelocity     = 450,
     damage = {
-      default            = 280,
+      default            = 320,
     },
   },
 }
