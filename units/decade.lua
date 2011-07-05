@@ -44,6 +44,7 @@ local unitDef = {
   mobilestandorders  = 1,
   movementClass      = [[BOAT4]],
   name               = [[Decade]],
+  nochasecategory    = [[UNDERWATER VTOL]],
   noAutoFire         = false,
   objectName         = [[DECADE]],
   scale              = 0.5,

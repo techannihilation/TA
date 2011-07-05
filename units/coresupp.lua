@@ -44,6 +44,7 @@ local unitDef = {
   mobilestandorders  = 1,
   movementClass      = [[BOAT4]],
   name               = [[Supporter]],
+  nochasecategory    = [[UNDERWATER VTOL]],
   noAutoFire         = false,
   objectName         = [[CORESUPP]],
   scale              = 0.5,
