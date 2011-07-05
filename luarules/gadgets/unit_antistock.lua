@@ -28,6 +28,8 @@ local isAnti = {
 		[UnitDefNames['tllantinuke'].id] = true, -- Antinuke
 		[UnitDefNames['armcarry'].id] = true, -- Colossus (Arm carrier)
 		[UnitDefNames['corcarry'].id] = true, -- Hive (Core carrier)
+		[UnitDefNames['tllgiant'].id] = true, -- Giant (Tll carrier)
+
 	}
 
 local spSetUnitStockpile = Spring.SetUnitStockpile
