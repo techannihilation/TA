@@ -178,7 +178,7 @@ local weaponDefs = {
     weaponType         = [[MissileLauncher]],
     weaponVelocity     = 773,
     damage = {
-      default            = 129,
+      default            = 400,
     },
   },
   TAWF114_weapon = {
