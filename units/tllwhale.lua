@@ -20,7 +20,7 @@ local unitDef = {
   canPatrol          = true,
   canstop            = 1,
   cantBeTransported  = true,
-  category           = [[TLL ALL MOBILE WEAPON NOTLAND NOTAIR]],
+  category           = [[TLL ALL UNDERWATER MOBILE WEAPON NOTLAND NOTAIR]],
   cloakCost          = 100,
   cloakCostMoving    = 180,
   collisionvolumeoffsets = [[0 -20 0]],
@@ -90,7 +90,7 @@ local unitDef = {
   },
   weapons = {
     [1]  = {
-      badTargetCategory  = [[NOTSTRUCTURE]],
+      badTargetCategory  = [[MOBILE]],
       def                = [[WHALE_VPULSE]],
     },
   },

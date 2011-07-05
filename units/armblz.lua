@@ -6,7 +6,7 @@ local unitName = "armblz"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-  acceleration       = 0.12,
+  acceleration       = 0.45,
   altfromsealevel    = 1,
   attackrunlength    = 180,
   badTargetCategory  = [[VTOL]],
@@ -22,6 +22,7 @@ local unitDef = {
   canGuard           = true,
   canMove            = true,
   canPatrol          = true,
+  canLoopbackAttack  = true,
   canstop            = 1,
   category           = [[ALL NOTLAND MOBILE NOTSUB VTOL NOWEAPON NOTSHIP]],
   collide            = false,
@@ -38,10 +39,11 @@ local unitDef = {
   footprintZ         = 3,
   frenchdescription  = [[Bombardier Napalm]],
   germandescription  = [[Napalm Bomber]],
-  maneuverleashlength = 1280,
+  maneuverleashlength = 1080,
+  maxBank            = 0.95,
   maxDamage          = 960,
   maxSlope           = 10,
-  maxVelocity        = 8.7,
+  maxVelocity        = 12.7,
   maxWaterDepth      = 0,
   metalStorage       = 0,
   mobilestandorders  = 1,
@@ -128,7 +130,7 @@ local weaponDefs = {
     sprayAngle         = 300,
     weaponType         = [[AircraftBomb]],
     damage = {
-      default            = 280,
+      default            = 240,
     },
   },
 }

@@ -83,7 +83,7 @@ local unitDef = {
   },
   weapons = {
     [1]  = {
-      badTargetCategory  = [[NOTSTRUCTURE]],
+      badTargetCategory  = [[MOBILE]],
       def                = [[VISITOR_VPULSE]],
       onlyTargetCategory = [[NOTAIR]],
     },
