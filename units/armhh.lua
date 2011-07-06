@@ -128,7 +128,7 @@ local weaponDefs = {
     turret             = true,
     weaponType         = [[BeamLaser]],
     damage = {
-      default            = 380,
+      default            = 250,
     },
   },
 }
