@@ -18,21 +18,31 @@ buildSounds[UnitDefNames["corvp"].id] = "sounds/pvehwork.wav"
 buildSounds[UnitDefNames["coravp"].id] = "sounds/pvehwork.wav"
 buildSounds[UnitDefNames["armvp"].id] = "sounds/pvehwork.wav"
 buildSounds[UnitDefNames["armavp"].id] = "sounds/pvehwork.wav"
+buildSounds[UnitDefNames["tllvp"].id] = "sounds/pvehwork.wav"
+buildSounds[UnitDefNames["tllavp"].id] = "sounds/pvehwork.wav"
+
 
 buildSounds[UnitDefNames["corap"].id] = "sounds/pairwork.wav"
 buildSounds[UnitDefNames["coraap"].id] = "sounds/pairwork.wav"
 buildSounds[UnitDefNames["armap"].id] = "sounds/pairwork.wav"
 buildSounds[UnitDefNames["armaap"].id] = "sounds/pairwork.wav"
+buildSounds[UnitDefNames["tllap"].id] = "sounds/pairwork.wav"
+buildSounds[UnitDefNames["tllaap"].id] = "sounds/pairwork.wav"
 
 buildSounds[UnitDefNames["corsy"].id] = "sounds/pshpwork.wav"
 buildSounds[UnitDefNames["corasy"].id] = "sounds/pshpwork.wav"
 buildSounds[UnitDefNames["armsy"].id] = "sounds/pshpwork.wav"
 buildSounds[UnitDefNames["armasy"].id] = "sounds/pshpwork.wav"
+buildSounds[UnitDefNames["tllsy"].id] = "sounds/pshpwork.wav"
+buildSounds[UnitDefNames["tllasy"].id] = "sounds/pshpwork.wav"
 
 buildSounds[UnitDefNames["corlab"].id] = "sounds/plabwork.wav"
 buildSounds[UnitDefNames["coralab"].id] = "sounds/plabwork.wav"
 buildSounds[UnitDefNames["armlab"].id] = "sounds/plabwork.wav"
 buildSounds[UnitDefNames["armalab"].id] = "sounds/plabwork.wav"
+buildSounds[UnitDefNames["tlllab"].id] = "sounds/plabwork.wav"
+buildSounds[UnitDefNames["tllalab"].id] = "sounds/plabwork.wav"
+
 
 local GetUnitBasePosition = Spring.GetUnitBasePosition
 local GetUnitDefID = Spring.GetUnitDefID

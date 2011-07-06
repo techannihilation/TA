@@ -32,7 +32,14 @@ end
 
 local GetAllUnits = Spring.GetAllUnits
 
-local COM_BLAST = WeaponDefNames['commander_blast'].id
+local COM_BLAST = {
+  [WeaponDefNames['commander_blast1'].id] = true,
+  [WeaponDefNames['commander_blast4'].id] = true,
+  [WeaponDefNames['commander_blast5'].id] = true,
+  [WeaponDefNames['commander_blast6'].id] = true,
+  [WeaponDefNames['commander_blast7'].id] = true,
+  [WeaponDefNames['commander_blast8'].id] = true,
+}
 
 local DGUN = {
   [WeaponDefNames['armcom_arm_disintegrator'].id] = true,

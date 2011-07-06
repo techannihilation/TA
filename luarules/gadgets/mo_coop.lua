@@ -117,8 +117,10 @@ function gadget:RecvLuaMsg(msg, id)
     elseif (msg:find("coop_factionchange",1,true)) then
       local playerID = string.match(msg, ",([^,]+)")
       if id == (playerID * 1) then
-        if startPoints[id].commander == "armcom" then
+       if startPoints[id].commander == "armcom" then
           startPoints[id].commander = "corcom"
+	elseif startPoints[id].commander == "corcom" then
+          startPoints[id].commander = "tllcom"
         else
           startPoints[id].commander = "armcom"
         end
