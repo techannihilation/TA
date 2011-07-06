@@ -75,11 +75,9 @@ local unitDef = {
     [[armmark]],
     [[armhh]],
     [[armcav]],
-    [[snowman]],
     [[taipan]],
     [[akmech]],
     [[armhdpw]],
-    [[magilla]],
     [[armmech]],
   },
   sounds = {
