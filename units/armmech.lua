@@ -150,7 +150,7 @@ local weaponDefs = {
     },
   },
   ARMMECH_ROCKET = {
-    areaOfEffect       = 40,
+    areaOfEffect       = 120,
     energypershot      = 80,
     explosionart       = [[explode3]],
     explosiongaf       = [[fx]],
