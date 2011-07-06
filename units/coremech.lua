@@ -128,7 +128,7 @@ local weaponDefs = {
     weaponType         = [[Cannon]],
     weaponVelocity     = 600,
     damage = {
-      default            = 185,
+      default            = 250,
       gunships           = 60,
       hgunships          = 60,
       l1bombers          = 60,
@@ -178,7 +178,7 @@ local weaponDefs = {
     weaponType         = [[MissileLauncher]],
     weaponVelocity     = 773,
     damage = {
-      default            = 400,
+      default            = 600,
     },
   },
   TAWF114_weapon = {
