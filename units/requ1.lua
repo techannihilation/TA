@@ -29,6 +29,7 @@ local unitDef = {
   energyUse          = 0.8,
   explodeAs          = [[CORGRIPN_BOMB]],
   firestandorders    = 1,
+  firestate          = 0,
   footprintX         = 3,
   footprintZ         = 3,
   leaveTracks        = true,
