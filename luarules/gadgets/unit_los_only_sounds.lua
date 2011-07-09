@@ -44,6 +44,15 @@ buildSounds[UnitDefNames["tlllab"].id] = "sounds/plabwork.wav"
 buildSounds[UnitDefNames["tllalab"].id] = "sounds/plabwork.wav"
 
 
+buildSounds[UnitDefNames["corech3"].id] = "sounds/radar1.wav"
+buildSounds[UnitDefNames["corech18"].id] = "sounds/radar1.wav"
+buildSounds[UnitDefNames["corech21"].id] = "sounds/radar1.wav"
+buildSounds[UnitDefNames["armrech3"].id] = "sounds/radar1.wav"
+buildSounds[UnitDefNames["armrech18"].id] = "sounds/radar1.wav"
+buildSounds[UnitDefNames["armrech21"].id] = "sounds/radar1.wav"
+
+
+
 local GetUnitBasePosition = Spring.GetUnitBasePosition
 local GetUnitDefID = Spring.GetUnitDefID
 

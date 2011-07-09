@@ -22,6 +22,7 @@ local unitDef = {
   canPatrol          = true,
   canstop            = 1,
   category           = [[CORE KBOT WEAPON NOTAIR NOTSUB]],
+  corpse             = [[monkeylord_dead]],
   damageModifier     = 1,
   defaultmissiontype = [[Standby]],
   description        = [[Experimental Siege Unit]],
@@ -177,6 +178,48 @@ local weaponDefs = {
   },
 }
 unitDef.weaponDefs = weaponDefs
+
+
+--------------------------------------------------------------------------------
+
+local featureDefs = {
+  monkeylord_dead = {
+    blocking           = false,
+    category           = [[corpses]],
+    damage             = 348,
+    description        = [[Monkeylord Wreckage]],
+    energy             = 0,
+    featureDead        = [[monkeylord_heap]],
+    featurereclamate   = [[SMUDGE01]],
+    footprintX         = 6,
+    footprintZ         = 6,
+    height             = 20,
+    hitdensity         = 100,
+    metal              = 7727,
+    object             = [[MONKEYLORD_DEAD]],
+    reclaimable        = false,
+    seqnamereclamate   = [[TREE1RECLAMATE]],
+    world              = [[All Worlds]],
+  },
+  monkeylord_heap = {
+    blocking           = false,
+    category           = [[heaps]],
+    damage             = 174,
+    description        = [[Monkeylord Heap]],
+    energy             = 0,
+    featurereclamate   = [[SMUDGE01]],
+    footprintX         = 6,
+    footprintZ         = 6,
+    height             = 4,
+    hitdensity         = 100,
+    metal              = 2943,
+    object             = [[6X6A]],
+    reclaimable        = false,
+    seqnamereclamate   = [[TREE1RECLAMATE]],
+    world              = [[All Worlds]],
+  },
+}
+unitDef.featureDefs = featureDefs
 
 
 --------------------------------------------------------------------------------

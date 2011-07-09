@@ -27,6 +27,7 @@ local unitDef = {
   energyUse          = 0,
   explodeAs          = [[ATOMIC_BLASTSML]],
   firestandorders    = 1,
+  firestate          = 0,
   footprintX         = 5,
   footprintZ         = 5,
   frenchdescription  = [[Lance-missiles nucléaires]],

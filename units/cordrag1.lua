@@ -25,6 +25,7 @@ local unitDef = {
   canstop            = 1,
   cantBeTransported  = true,
   category           = [[CORE VTOL LEVEL3 WEAPON NOTSUB]],
+  collide            = false,
   collisionvolumeoffsets = [[0 -20 0]],
   collisionvolumescales = [[50 80 160]],
   collisionvolumetest = 0,
