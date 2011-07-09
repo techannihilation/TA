@@ -121,7 +121,7 @@ local weaponDefs = {
     weaponVelocity     = 450,
     damage = {
       commanders         = 8,
-      default            = 16,
+      default            = 30,
     },
   },
   VTOL_ROCKET5 = {
@@ -148,7 +148,7 @@ local weaponDefs = {
     weaponVelocity     = 600,
     damage = {
       commanders         = 53,
-      default            = 39,
+      default            = 75,
     },
   },
 }
