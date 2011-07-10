@@ -137,7 +137,7 @@ local weaponDefs = {
     weaponType         = [[MissileLauncher]],
     weaponVelocity     = 800,
     damage = {
-      default            = 50,
+      default            =142 ,
     },
   },
 }
