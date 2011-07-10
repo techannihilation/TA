@@ -381,16 +381,14 @@ local morphDefs = {
       armstump = {
 	{
 		into = 'armstump1',
-            time = 5,
-		xp = 0.01,
-		metal = 60,
-		energy = 180,
+            time = 15,
+		xp = 0.1,
+
 	},
 	{
 		into = 'armbull',
-            time = 15,
-		xp = 0.35,
-		metal = 130,
+            time = 30,
+		xp = 0.60,
 		energy = 2000,
 	},
 	},
@@ -452,10 +450,8 @@ local morphDefs = {
     },
       corgator = {
 		into = 'corgator1',
-            time = 5,
-		xp = 0.01,
-		energy = 90,
-		metal = 60,
+            time = 10,
+		xp = 0.05
 	},
       corlevlr = {
 	{
@@ -481,16 +477,13 @@ local morphDefs = {
       corraid = {
 	{
 		into = 'corraid1',
-            time = 5,
-		xp = 0.01,
-		metal = 60,
-		energy = 180,
+            time = 15,
+		xp = 0.1,
 	},
 	{
 		into = 'correap',
-            time = 15,
-		xp = 0.35,
-		metal = 130,
+            time = 30,
+		xp = 0.60,
 		energy = 2000,
 	},
 	},
