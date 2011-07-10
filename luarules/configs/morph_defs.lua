@@ -375,10 +375,8 @@ local morphDefs = {
 	},
       armflash = {
 		into = 'armflash1',
-            time = 5,
-		xp = 0.01,
-			energy = 90,
-			metal = 60,
+            time = 10,
+			xp = 0.05
 	},
       armstump = {
 	{
