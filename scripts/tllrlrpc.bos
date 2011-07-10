@@ -68,6 +68,19 @@ zaps(Func_Var_1)
 	}
 }
 
+glow(Func_Var_2)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 500;
+	}
+	while( TRUE )
+	{
+		emit-sfx 1024 + 0 from boule;
+		Func_Var_2 = 300 + Rand( 50, 1000 );
+		sleep Func_Var_2;
+	}
+}
 flotte()
 {
 	while( get BUILD_PERCENT_LEFT )
@@ -117,6 +130,7 @@ Create()
 	hide flare;
 	hide zap1;
 	hide zap2;
+	hide boule;
 	dont-cache flare;
 	dont-cache boule;
 	dont-cache ring;
@@ -129,6 +143,7 @@ Create()
 	restore_delay = 3000;
 	start-script SmokeUnit();
 	start-script zaps();
+    start-script glow();
 	start-script flotte();
 	start-script tourne();
 	while( get BUILD_PERCENT_LEFT )

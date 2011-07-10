@@ -54,6 +54,11 @@ local unitDef = {
   customparams = {
     canareaattack      = 1,
   },
+  sfxtypes = {
+    explosiongenerators = {
+      [[custom:tllbarret_effect]],
+    },
+  },
   sounds = {
     canceldestruct     = [[cancel2]],
     underattack        = [[warning1]],
@@ -92,15 +97,15 @@ local weaponDefs = {
     accuracy           = 100,
     areaOfEffect       = 180,
     beamWeapon         = true,
-    color              = 96,
-    color2             = 98,
+    color              = 128,
+    color2             = 130,
     craterBoost        = 0,
     craterMult         = 0,
     duration           = 0.6,
     energypershot      = 12000,
     explosionart       = [[bio1]],
     explosiongaf       = [[CAexp2]],
-    explosionGenerator = [[custom:FLASH2]],
+    explosionGenerator = [[custom:LIGHTNING_FLASH]],
     fireStarter        = 90,
     id                 = 119,
     impulseBoost       = 0.123,
