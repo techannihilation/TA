@@ -25,6 +25,7 @@ local unitDef = {
   energyStorage      = 0,
   energyUse          = 0,
   explodeAs          = [[ATOMIC_BLAST]],
+  firestate          = 0,
   firestandorders    = 1,
   footprintX         = 4,
   footprintZ         = 4,

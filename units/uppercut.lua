@@ -34,6 +34,7 @@ local unitDef = {
   energyUse          = 0.4,
   explodeAs          = [[CRAWL_BLASTSML]],
   firestandorders    = 1,
+  firestate          = 2,
   footprintX         = 4,
   footprintZ         = 4,
   iconType           = [[sea]],

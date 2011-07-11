@@ -25,7 +25,7 @@ local unitDef = {
   copyright          = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
   corpse             = [[DEAD]],
   defaultmissiontype = [[Standby]],
-  description        = [[Assault All-Terrain allien vehicle]],
+  description        = [[Assault All-Terrain alien vehicle]],
   designation        = [[TADDWARM]],
   downloadable       = 1,
   energyMake         = 0,
@@ -134,7 +134,7 @@ local weaponDefs = {
     weaponType         = [[Cannon]],
     weaponVelocity     = 450,
     damage = {
-      default            = 350,
+      default            = 500,
     },
   },
   WARM_ROCKET = {

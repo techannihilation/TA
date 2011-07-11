@@ -41,7 +41,7 @@ local unitDef = {
   germanname         = [[AH-256 Club]],
   hoverAttack        = true,
   maneuverleashlength = 1024,
-  maxDamage          = 1680,
+  maxDamage          = 2980,
   maxSlope           = 10,
   maxVelocity        = 5,
   maxWaterDepth      = 0,
@@ -122,7 +122,7 @@ local weaponDefs = {
     weaponVelocity     = 450,
     damage = {
       commanders         = 8,
-      default            = 16,
+      default            = 25,
     },
   },
   VTOL_ROCKET5 = {
@@ -149,7 +149,7 @@ local weaponDefs = {
     weaponVelocity     = 600,
     damage = {
       commanders         = 53,
-      default            = 39,
+      default            = 50,
     },
   },
 }

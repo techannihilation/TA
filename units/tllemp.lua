@@ -26,6 +26,7 @@ local unitDef = {
   energyUse          = 0,
   explodeAs          = [[ATOMIC_BLASTSML]],
   firestandorders    = 1,
+  firestate          = 0,
   footprintX         = 4,
   footprintZ         = 4,
   iconType           = [[building]],
