@@ -103,38 +103,33 @@ local weaponDefs = {
   CORBT_CANNON = {
     --accuracy=400;
     areaOfEffect       = 140,
-	ballistic          = true,
+    ballistic          = true,
     --craterBoost        = 0.1,
     --craterMult         = 0.1,
     edgeEffectiveness  = 0.1,
     --explosionart       = [[rogboom1]],
     --explosiongaf       = [[rogboom1]],
-	gravityaffected    = [[true]],
-	explosionGenerator = [[custom:BT_BOMB_explosion]],
+    gravityaffected    = [[true]],
+    explosionGenerator = [[custom:BT_BOMB_explosion]],
     id                 = 239,
-
-	
     impulseBoost       = 0.2,
     impulseFactor      = 0.2,
-	--intensity          = 0.6,
+    --intensity          = 0.6,
     lineOfSight        = true,
-	
     model              = [[bomb]],
     name               = [[Pepper spray]],
     noSelfDamage       = false,
-	projectiles=30;
+    projectiles=30;
     range              = 1250,
-
-	--rgbColor           = [[1 0.20 0.2]],
+    --rgbColor           = [[1 0.20 0.2]],
     reloadtime         = 10,
     renderType         = 1,
-	size               = 2.5,
+    size               = 2.5,
     shakeduration      = 0,
     shakemagnitude     = 0,
-	
     soundHit           = [[xplomed4]],
     soundStart         = [[Big_Cannon]],
-	sprayAngle         = 2100,
+    sprayAngle         = 2100,
     turret             = true,
     waterexplosionart  = [[h2o]],
     waterexplosiongaf  = [[fx]],
