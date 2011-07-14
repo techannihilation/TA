@@ -10,8 +10,8 @@ local unitDef = {
   badTargetCategory  = [[VTOL]],
   bmcode             = 1,
   brakeRate          = 0.03029395,
-  buildCostEnergy    = 69701,
-  buildCostMetal     = 14500,
+  buildCostEnergy    = 101900,
+  buildCostMetal     = 14550,
   builder            = false,
   buildTime          = 105530,
   canAttack          = true,
@@ -53,7 +53,7 @@ local unitDef = {
   selfDestructAs     = [[BIG_UNIT]],
   shootme            = 1,
   side               = [[CORE]],
-  sightDistance      = 1200,
+  sightDistance      = 1000,
   standingfireorder  = 2,
   standingmoveorder  = 1,
   steeringmode       = 1,
@@ -97,18 +97,18 @@ local unitDef = {
 
 
 --------------------------------------------------------------------------------
---1500 DPS (36/12*600)
+--1875 DPS
 --15000 per shot
 local weaponDefs = {
   CORBT_CANNON = {
     --accuracy=400;
-    areaOfEffect       = 140,
+    areaOfEffect       = 210,
 	ballistic          = true,
     --craterBoost        = 0.1,
-    --craterMult         = 0.1,
+    craterMult         = 0.1,
     edgeEffectiveness  = 0.1,
-    --explosionart       = [[rogboom1]],
-    --explosiongaf       = [[rogboom1]],
+    explosionart       = [[rogboom1]],
+    explosiongaf       = [[rogboom1]],
 	gravityaffected    = [[true]],
 	explosionGenerator = [[custom:BT_BOMB_explosion]],
     id                 = 239,
@@ -123,10 +123,10 @@ local weaponDefs = {
     name               = [[Pepper spray]],
     noSelfDamage       = false,
 	projectiles=30;
-    range              = 1250,
+    range              = 1150,
 
 	--rgbColor           = [[1 0.20 0.2]],
-    reloadtime         = 10,
+    reloadtime         = 8,
     renderType         = 1,
 	size               = 2.5,
     shakeduration      = 0,
