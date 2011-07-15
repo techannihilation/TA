@@ -1,4 +1,5 @@
 local options={
+ 
 	{
 	   key    = "StartingResources",
 	   name   = "Starting Resources",
@@ -95,6 +96,7 @@ local options={
 		desc="What it takes to eliminate a Team",
 		type="list",
 		def="allyzerounits",
+		section= "ta_modes",
 		items={
 		{key="none", name="Never Die", desc="All Teams will stay alive regardless of what happends, gameover will never arrive."},
 		{key="teamzerounits", name="Team Death on Zero Units", desc="The Team will die when it has 0 units."},
@@ -107,6 +109,8 @@ local options={
 	desc   = "Ingame alliance should count for game over condition.",
 	type   = "bool",
 	def    = false,
+	section= "ta_modes",
+
     },
 	{
        key    = "startmetal",
