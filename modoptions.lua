@@ -6,15 +6,15 @@ local options={
 	   type   = "section",
 	},
     {
-       key="ba_modes",
-       name="Balanced Annihilation - Game Modes",
-       desc="Balanced Annihilation - Game Modes",
+       key="ta_modes",
+       name="Tech Annihilation - Game Modes",
+       desc="Tech Annihilation - Game Modes",
        type="section",
     },
     {
-       key="ba_options",
-       name="Balanced Annihilation - Options",
-       desc="Balanced Annihilation - Options",
+       key="ta_options",
+       name="Tech Annihilation - Options",
+       desc="Tech Annihilation - Options",
        type="section",
     },
 	{
@@ -23,7 +23,7 @@ local options={
 		desc   = "Adds an extra commander for comsharing teams",
 		type   = "bool",
 		def    = false,
-		section= "ba_modes",
+		section= "ta_modes",
     },
 	{
 		key    = "mo_greenfields",
@@ -31,7 +31,7 @@ local options={
 		desc   = "No metal extraction on any map",
 		type   = "bool",
 		def    = false,
-		section= "ba_modes",
+		section= "ta_modes",
     },
     {
 		key    = "mo_noowner",
@@ -39,7 +39,7 @@ local options={
 		desc   = "Units with no player control are instantly removed/destroyed",
 		type   = "bool",
 		def    = false,
-		section= "ba_modes",
+		section= "ta_modes",
     },
 	{
 		key    = "mo_progmines",
@@ -47,7 +47,7 @@ local options={
 		desc   = "New mines take some time to become fully established, death resets progress",
 		type   = "bool",
 		def    = false,
-		section= "ba_modes",
+		section= "ta_modes",
     },
     {
 		key    = "mo_preventdraw",
@@ -55,7 +55,7 @@ local options={
 		desc   = "Last Com alive is immune to comblast, D-gunning the last enemy Com with your last Com disqualifies you",
 		type   = "bool",
 		def    = false,
-		section= "ba_options",
+		section= "ta_options",
     },
 	{
 		key    = "mo_noshare",
@@ -63,7 +63,7 @@ local options={
 		desc   = "Prevents players from giving units or resources to enemies",
 		type   = "bool",
 		def    = true,
-		section= "ba_options",
+		section= "ta_options",
     },
 	{
 		key    = "mo_comgate",
@@ -71,7 +71,7 @@ local options={
 		desc   = "Commanders warp in at gamestart with a shiny teleport effect",
 		type   = "bool",
 		def    = false,
-		section= "ba_options",
+		section= "ta_options",
     },
     {
 		key    = "mo_enemywrecks",
@@ -79,7 +79,7 @@ local options={
 		desc   = "Gives you LOS of enemy wreckage",
 		type   = "bool",
 		def    = true,
-		section= "ba_options",
+		section= "ta_options",
     },
 	{
 		key    = "mo_nowrecks",
@@ -87,7 +87,7 @@ local options={
 		desc   = "Removes all unit wrecks from the game",
 		type   = "bool",
 		def    = false,
-		section= "ba_options",
+		section= "ta_options",
     },
        {
 		key="teamdeathmode",
