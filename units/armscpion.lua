@@ -42,6 +42,7 @@ local unitDef = {
   maxVelocity        = 1.090,
   maxWaterDepth      = 200,
   metalStorage       = 0,
+  minCloakDistance   = 60,
   mobilestandorders  = 1,
   movementClass      = [[ATANK3]],
   name               = [[Scorpion]],
