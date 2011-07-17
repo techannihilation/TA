@@ -105,7 +105,7 @@ local unitDef = {
 
 local weaponDefs = {
   ARMTRUCK_MISSILE = {
-    areaOfEffect       = 48,
+    areaOfEffect       = 24,
     burst              = 2,
     burstrate          = 0.25,
     craterBoost        = 0,
@@ -120,8 +120,8 @@ local weaponDefs = {
     model              = [[missile]],
     name               = [[Missiles]],
     noSelfDamage       = true,
-    range              = 600,
-    reloadtime         = 3.34,
+    range              = 570,
+    reloadtime         = 3.5,
     renderType         = 1,
     selfprop           = true,
     smokedelay         = 0.1,
@@ -134,15 +134,14 @@ local weaponDefs = {
     texture2           = [[armsmoketrail]],
     tolerance          = 8000,
     tracks             = true,
-    trajectoryHeight   = 0.50,
+    trajectoryHeight   = 0.08,
     turnRate           = 63000,
     turret             = true,
     weaponAcceleration = 108,
     weaponTimer        = 5,
     weaponType         = [[MissileLauncher]],
-    weaponVelocity     = 540,
+    weaponVelocity     = 560,
     damage = {
-      commanders         = 50,
       default            = 25,
     },
   },

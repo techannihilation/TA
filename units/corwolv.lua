@@ -104,8 +104,8 @@ local unitDef = {
 
 local weaponDefs = {
   CORWOLV_GUN = {
-    accuracy           = 275,
-    areaOfEffect       = 88,
+    accuracy           = 300,
+    areaOfEffect       = 68,
     ballistic          = true,
     craterBoost        = 0,
     craterMult         = 0,
