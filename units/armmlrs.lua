@@ -100,7 +100,7 @@ local unitDef = {
 
 local weaponDefs = {
   ["227mm_rockets3"] = {
-    areaOfEffect       = 456,
+    areaOfEffect       = 326,
     burnblow           = true,
     burst              = 2,
     burstrate          = 0.5,
@@ -117,7 +117,7 @@ local weaponDefs = {
     model              = [[227mmrock]],
     name               = [[227mm rockets3]],
     proximityPriority  = -1,
-    range              = 2100,
+    range              = 2000,
     reloadtime         = 30,
     renderType         = 1,
     selfprop           = true,
