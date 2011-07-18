@@ -1,4 +1,3 @@
-
 --[[
 ------------------------------------------------------------
 		Tech Tree gadget
@@ -27,6 +26,9 @@ To make use of this gadget:
 		WARNING: DO NOT USE ProvideTechRange ON MOBILE UNIT!
 		If a unit sporting a ProvideTechRange range moves, then units affected by it will not update.
 		However, you can now have mobile units requiring tech unlocked by ranged providers, they'll get updated as they move.
+------------------------------------------------------------
+	The COB functions TechLost and TechGranted will be called
+	by the gadget if a unit requiring a tech has them.
 ------------------------------------------------------------
 Exemple of FBI declaring tech trees that would be managed by this gadget:
 
@@ -273,6 +275,9 @@ function gadget:GetInfo()
 	}
 end
 
+	if ( Spring.GetModOptions().comm  == "feature" ) then
+		gadgetHandler.RemoveGadget()
+	end
 
 local function dbgEcho(...)
 	if Spring.IsDevLuaEnabled() or false then-- Either /cheat /devlua or change that false to true for more debug info
@@ -307,6 +312,7 @@ if (gadgetHandler:IsSyncedCode()) then
 	local RecheckTeams={}
 	local RecheckUnits={}
 
+	local UnitsWithScripts={}
 
 	local function NthCharIs(str,n,charlist)
 		local char=string.sub(str,n,n)
@@ -545,6 +551,7 @@ if (gadgetHandler:IsSyncedCode()) then
 		else
 			for _,req in pairs(AccessionTable[cmd]) do
 				if not CheckTech(req.tech,team,req.quantity,...) then
+					dbgEcho("cmd "..cmd.." forbidden for lack of "..req.tech)
 					return false
 				end
 			end
@@ -715,11 +722,29 @@ if (gadgetHandler:IsSyncedCode()) then
 							MaybeAllowedElsewhere=false
 						end
 					end
-					ReqDesc=(ReqDesc and ReqDesc.."\255\255\255\255, " or "\255\255\255\255Requires ")..color..req.tech
+					local q=req.quantity
+					ReqDesc=(ReqDesc and ReqDesc.."\255\255\255\255, " or "\255\255\255\255Requires ")..color..((q and q~=1) and q.." " or "")..req.tech
 				end
 				ReqDesc=ReqDesc.."\n\255\255\255\255"..(GrantDesc[cid] or OriDesc[cid])
 				local enabled=AllowedHereAndNow or (MaybeAllowedElsewhere and UnitDefs[ud].speed>0)
 				Spring.EditUnitCmdDesc(u,UnitCmdDesc,{disabled=not enabled,tooltip=ReqDesc})
+			end
+		end
+
+		-- Not anymore editing buttons, but calling COB scripts when tech is lost and regained
+		if UnitsWithScripts[u] then
+			local newstate=CheckCmd(-Spring.GetUnitDefID(u),team,u)
+			if newstate~=UnitsWithScripts[u].state then
+				UnitsWithScripts[u].state=newstate
+				if newstate then
+					if UnitsWithScripts[u].TechGrantedCOBFuncID then
+						Spring.CallCOBScript(u,UnitsWithScripts[u].TechGrantedCOBFuncID,0)
+					end
+				else
+					if UnitsWithScripts[u].TechLostCOBFuncID then
+						Spring.CallCOBScript(u,UnitsWithScripts[u].TechLostCOBFuncID,0)
+					end
+				end
 			end
 		end
 
@@ -805,6 +830,10 @@ if (gadgetHandler:IsSyncedCode()) then
 
 
 	function gadget:UnitCreated(u,ud,team)
+		local idl,idg=Spring.GetCOBScriptID(u,"TechLost"),Spring.GetCOBScriptID(u,"TechGranted")
+		if AccessionTable[-ud] and (idl or idg) then
+			UnitsWithScripts[u]={state=nil,TechLostCOBFuncID=idl,TechGrantedCOBFuncID=idg}
+		end
 		if ProviderTable[ud] then
 			Spring.SetUnitTooltip(u,ConcatProvList(ProviderTable[ud])..Spring.GetUnitTooltip(u))
 			for _,pt in pairs(ProviderTable[ud]) do
@@ -841,6 +870,7 @@ if (gadgetHandler:IsSyncedCode()) then
 		if ProviderTable[ud] then
 			UnitLost(u,ud,team)
 		end
+		UnitsWithScripts[u]=nil
 	end
 
 
@@ -866,8 +896,12 @@ if (gadgetHandler:IsSyncedCode()) then
 
 
 	function gadget:AllowCommand(u,ud,team,cmd,param,opt,synced)
-		return CheckCmd(cid,team,Spring.GetUnitPosition(u))
-	end
+                if param and cmd<0 and #param==4 then
+                    return CheckCmd(cmd,team,param[1],param[2],param[3])
+                else
+                    return CheckCmd(cmd,team,Spring.GetUnitPosition(u))
+                end
+        end
 
 
 	function gadget:AllowUnitCreation(ud,builder,team,x,y,z)
@@ -880,6 +914,7 @@ if (gadgetHandler:IsSyncedCode()) then
 
 
 	function gadget:Initialize()
+
 
 		for _,ud in pairs(UnitDefs) do
 			local cp=ud.customParams
@@ -981,11 +1016,13 @@ else--unsynced
 				if SYNCED.Tech.TechTable[tech.tech].Ranged then
 					DrawWorldTimer=DrawWorldTimer or Spring.GetTimer()
 					local cm=math.abs(((Spring.DiffTimers(Spring.GetTimer(),DrawWorldTimer)/.78)%2)-1)
-					providedby={}
-					while SYNCED.Tech.TechTable[tech.tech].ProvidedBy[1+#providedby] do
-						table.insert(providedby,SYNCED.Tech.TechTable[tech.tech].ProvidedBy[1+#providedby])
+					RangedProviders={}
+					for _,id in sipairs(SYNCED.Tech.TechTable[tech.tech].ProvidedBy) do
+						if SYNCED.Tech.ProviderTable[id][tech.tech].range then
+							table.insert(RangedProviders,id)
+						end
 					end
-					for _,u in ipairs(Spring.GetTeamUnitsByDefs(Spring.GetLocalTeamID(),providedby)) do
+					for _,u in ipairs(Spring.GetTeamUnitsByDefs(Spring.GetLocalTeamID(),RangedProviders)) do
 						local x,y,z=Spring.GetUnitPosition(u)
 						gl.Color(cm,cm,cm,1)
 						gl.LineWidth(3)
