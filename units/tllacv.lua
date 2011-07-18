@@ -85,6 +85,7 @@ local unitDef = {
     [[tllvp]],
     [[tllavp]],
     [[tllmohogeo]],
+    [[tllrichter]],
   },
   sounds = {
     build              = [[nanlath1]],

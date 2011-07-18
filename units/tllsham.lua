@@ -63,7 +63,6 @@ local unitDef = {
   spanishdescription = [[Kbot Resurrection]],
   spanishname        = [[Necro]],
   standingmoveorder  = 2,
-  stealth            = true,
   steeringmode       = 2,
   TEDClass           = [[KBOT]],
   threed             = 1,

@@ -107,7 +107,7 @@ local unitDef = {
 
 local weaponDefs = {
   TAWF113_WEAPON = {
-    accuracy           = 250,
+    accuracy           = 300,
     areaOfEffect       = 80,
     ballistic          = true,
     craterBoost        = 0,

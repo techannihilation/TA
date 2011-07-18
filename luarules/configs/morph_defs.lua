@@ -106,36 +106,36 @@ local morphDefs = {
 	},
       armllt = {
 		into = 'armllt1',
-            time = 10,
+            time = 20,
 		xp = 0.60,
 	},
       corllt = {
 		into = 'corllt1',
-            time = 10,
+            time = 20,
 		xp = 0.60,
 	},
       armhlt = {
 	{
 		into = 'armhlt1',
-            time = 10,
+            time = 30,
 		xp = 0.50,
 	},
 	{
 		into = 'armpb',
-            time = 10,
-		xp = 0.80,
+            time = 20,
+		xp = 0.50,
 	},
 	},
       corhlt= {
 	{
 		into = 'corhlt1',
-            time = 10,
+            time = 30,
 		xp = 0.50,
 	},
 	{
 		into = 'corvipe',
-            time = 10,
-		xp = 0.80,
+            time = 20,
+		xp = 0.50,
 	},
 	},
       armguard= {

@@ -4,7 +4,7 @@
 local unitName = "corpyro"
 
 --------------------------------------------------------------------------------
-
+--~BA750
 local unitDef = {
   acceleration       = 0.45,
   badTargetCategory  = [[ANTIFLAME]],
@@ -34,7 +34,7 @@ local unitDef = {
   idleAutoHeal       = 5,
   idleTime           = 1800,
   maneuverleashlength = 640,
-  maxDamage          = 690,
+  maxDamage          = 1000,
   maxSlope           = 17,
   maxVelocity        = 2.70,
   maxWaterDepth      = 25,

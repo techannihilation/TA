@@ -100,7 +100,7 @@ local unitDef = {
 
 local weaponDefs = {
   ["anti ship missile"] = {
-    areaOfEffect       = 524,
+    areaOfEffect       = 424,
     burnblow           = true,
     cruisealt          = 120,
     explosionart       = [[explode3]],
@@ -114,7 +114,7 @@ local weaponDefs = {
     metalpershot       = 0,
     model              = [[antishipm]],
     name               = [[Antiship missile]],
-    range              = 2250,
+    range              = 2090,
     reloadtime         = 27,
     renderType         = 1,
     selfprop           = true,

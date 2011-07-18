@@ -745,6 +745,79 @@ return {
       },
     },
   },
+  
+   ["BT_BOMB_explosion"] = {
+    groundflash = {
+      air                = true,
+      circlealpha        = 0.5,
+      circlegrowth       = 8,
+      flashalpha         = 0.7,
+      flashsize          = 140,
+      ground             = true,
+      ttl                = 17,
+      water              = true,
+      color = {
+        [1]  = 1,
+        [2]  = 0.4,
+        [3]  = 0,
+      },
+    },
+    pop1 = {
+      air                = true,
+      class              = [[heatcloud]],
+      count              = 7,
+      ground             = true,
+      water              = true,
+      properties = {
+        heat               = 10,
+        heatfalloff        = 0.7,
+        maxheat            = 15,
+        pos                = [[r-2 r2, 3, r-2 r2]],
+        size               = 80,
+        sizegrowth         = 1.5,
+        speed              = [[0, 1 0, 0]],
+        texture            = [[starexplo]],
+      },
+    },
+    pop2 = {
+      air                = true,
+      class              = [[heatcloud]],
+      count              = 4,
+      ground             = true,
+      water              = true,
+      properties = {
+        heat               = 10,
+        heatfalloff        = 0.8,
+        maxheat            = 15,
+        pos                = [[r-25 r25, 5, r-25 r25]],
+        size               = [[60 r-1.5]],
+        sizegrowth         =1.5,
+        speed              = [[r-1 r1, 1 0, r-1 r1]],
+        texture            = [[mildexplo]],
+      },
+    },
+      smoke = {
+      air                = true,
+      count              = 7,
+      ground             = true,
+      water              = true,
+      properties = {
+        agespeed           = 0.1,
+        color              = 0.2,
+        pos                = [[r-3 r3, r-3 r3, r-3 r3]],
+        size               = 80,
+        sizeexpansion      = 0.6,
+        sizegrowth         = 1,
+        speed              = [[0, 1 r2.3, 0]],
+        startsize          = 10,
+		texture            = [[mildexplo]],
+      },
+    },
+  },
+  
+  
+  
+  
 
   ["blue_explosion"] = {
     generatorpop1 = {
@@ -2266,4 +2339,5 @@ return {
   },
 
 }
+
 
