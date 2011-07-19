@@ -26,15 +26,55 @@ local alterLevelRegex = '^' .. string.char(137) .. '(%d+)$'
 local mmLevelParamName = 'mmLevel'
 local mmCapacityParamName = 'mmCapacity'
 local mmUseParamName = 'mmUse'
+local fRate = 32
+
+local AC0 = 1.2/100
+local AC1 = 1.3/100
+local AC2 = 1.4/100
+local AC3 = 1.5/100
+local AC4 = 1.6/100
+local AC5 = 1.7/100
+local AC6 = 1.8/100
+
+local T0 = 1.08/100
+local T1 = 1.16/100
+local T2 = 1.24/100
+local T3 = 1.31/100
+local T4 = 1.39/100
+local T5 = 1.47/100
+local T6 = 1.53/100
+
+
+
 local convertCapacities = {
-        [UnitDefNames.armmakr.id]  = { c = (60/32), e = (1/60) }, 
-        [UnitDefNames.cormakr.id]  = { c = (60/32), e = (1/60) },
-        [UnitDefNames.armfmkr.id]  = { c = (60/32), e = (1/55) },
-        [UnitDefNames.corfmkr.id]  = { c = (60/32), e = (1/55) },
-        [UnitDefNames.armmmkr.id]  = { c = (600/32), e = (1/50) }, 
-        [UnitDefNames.cormmkr.id]  = { c = (600/32), e = (1/50) },
-        [UnitDefNames.armuwmmm.id] = { c = (600/32), e = (1/46) }, 
-        [UnitDefNames.coruwmmm.id] = { c = (600/32), e = (1/46) }
+
+		--ARM
+		[UnitDefNames.armmakr.id]  = { c = (50/fRate), e = (AC0) }, -- Normal
+		[UnitDefNames.armfmkr.id]  = { c = (100/fRate), e = (AC1) }, -- Floating
+		[UnitDefNames.ametalmakerlvl1.id]  = { c = (200/fRate), e = (AC2) }, -- T1,5
+		--[UnitDefNames.____.id]  = { c = (400/fRate), e = (AC3) }, -- Cloaked/Hardened
+		[UnitDefNames.armmmkr.id]  = { c = (800/fRate), e = (AC4) }, -- Moho
+		[UnitDefNames.armuwmmm.id]  = { c = (1000/fRate), e = (AC5) }, -- Underwater
+		[UnitDefNames.ametalmakerlvl2.id]  = { c = (16000/fRate), e = (AC6) }, -- Super
+					
+		--CORE
+		[UnitDefNames.cormakr.id]  = { c = (64/fRate), e = (AC0) }, -- Normal
+		[UnitDefNames.corfmkr.id]  = { c = (128/fRate), e = (AC1) }, -- Floating
+		[UnitDefNames.cmetalmakerlvl1.id]  = { c = (256/fRate), e = (AC2) }, -- T1,5
+		--[UnitDefNames.____.id]  = { c = (512/fRate), e = (AC3) }, -- Cloaked/Hardened
+		[UnitDefNames.cormmkr.id]  = { c = (1024/fRate), e = (AC4) }, -- Moho
+		[UnitDefNames.coruwmmm.id]  = { c = (1280/fRate), e = (AC5) }, -- Underwater
+		[UnitDefNames.cmetalmakerlvl2.id]  = { c = (20480/fRate), e = (AC6) }, -- Super
+
+		--TLL
+		[UnitDefNames.tllmm.id]  = { c = (100/fRate), e = (T0) }, -- Normal
+		[UnitDefNames.tllwmconv.id]  = { c = (100/fRate), e = (T1) }, -- Floating
+		--[UnitDefNames.____.id]  = { c = (300/fRate), e = (T2) }, -- T1,5
+		--[UnitDefNames.____.id]  = { c = (600/fRate), e = (T3) }, -- Cloaked/Hardened
+		[UnitDefNames.tllammaker.id]  = { c = (1000/fRate), e = (T4) }, -- Moho
+		--[UnitDefNames.____.id]  = { c = (1000/fRate), e = (T5) }, -- Underwater
+		--[UnitDefNames.____.id]  = { c = (10000/fRate), e = (T6) }, -- Super
+
     }
 
 ----------------------------------------------------------------
