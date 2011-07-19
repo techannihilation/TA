@@ -4,25 +4,23 @@
 local unitName = "cmetalmakerlvl2"
 
 --------------------------------------------------------------------------------
-
+--GADGETED
 local unitDef = {
   activateWhenBuilt  = true,
-  buildCostEnergy    = 402393.020,
-  buildCostMetal     = 13581.3775,
+  buildCostEnergy    = 609111,
+  buildCostMetal     = 31883,
   builder            = false,
-  buildTime          = 156525.000,
+  buildTime          = 200000,
   category           = [[ALL NOTSUB NOWEAPON SPECIAL NOTAIR]],
   corpse             = [[dead]],
   damageModifier     = 0.25,
-  description        = [[Heavy convertion of energy into metal]],
+  description        = [[Converts upto 20480 Energy to Metal]],
   designation        = [[MMC]],
   energyStorage      = 0,
-  energyUse          = 12000,
   explodeAs          = [[nuclear_missile1]],
   floater            = true,
   footprintX         = 4,
   footprintZ         = 4,
-  makesMetal         = 300,
   maxDamage          = 6200,
   maxSlope           = 20,
   maxWaterDepth      = 0,

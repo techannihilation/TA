@@ -4,23 +4,21 @@
 local unitName = "cmetalmakerlvl1"
 
 --------------------------------------------------------------------------------
-
+-- GADGETED
 local unitDef = {
   activateWhenBuilt  = true,
-  buildCostEnergy    = 3739,
-  buildCostMetal     = 134,
+  buildCostEnergy    = 5988,
+  buildCostMetal     = 188,
   builder            = false,
-  buildTime          = 1745,
+  buildTime          = 5988,
   category           = [[ALL NOTSUB NOWEAPON SPECIAL NOTAIR]],
-  description        = [[Upgraded Metal Maker]],
+  description        = [[Converts upto 256 Energy to Metal]],
   designation        = [[MM-15]],
   energyStorage      = 0,
-  energyUse          = 170,
   explodeAs          = [[ARMESTOR_BUILDING]],
   floater            = true,
   footprintX         = 4,
   footprintZ         = 3,
-  makesMetal         = 3,
   maxDamage          = 324,
   maxSlope           = 10,
   maxWaterDepth      = 255,

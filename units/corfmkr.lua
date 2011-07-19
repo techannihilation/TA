@@ -4,29 +4,27 @@
 local unitName = "corfmkr"
 
 --------------------------------------------------------------------------------
-
+-- GADGETED
 local unitDef = {
   acceleration       = 0,
   activateWhenBuilt  = true,
   bmcode             = 0,
   brakeRate          = 0,
   buildAngle         = 8192,
-  buildCostEnergy    = 2530,
-  buildCostMetal     = 1,
+  buildCostEnergy    = 2186,
+  buildCostMetal     = 20,
   builder            = false,
   buildPic           = [[CORFMKR.DDS]],
-  buildTime          = 2682,
+  buildTime          = 2186,
   category           = [[ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR]],
-  description        = [[Converts Energy to Metal]],
+  description        = [[Converts upto 128 Energy to Metal]],
   energyStorage      = 0,
-  energyUse          = 60,
   explodeAs          = [[ARMESTOR_BUILDINGEX]],
   footprintX         = 3,
   footprintZ         = 3,
   iconType           = [[building]],
   idleAutoHeal       = 5,
   idleTime           = 1800,
-  makesMetal         = 1,
   maxDamage          = 120,
   maxSlope           = 10,
   maxVelocity        = 0,

@@ -4,15 +4,15 @@
 local unitName = "cormakr"
 
 --------------------------------------------------------------------------------
-
+-- GADGETED
 local unitDef = {
   acceleration       = 0,
   activateWhenBuilt  = true,
   bmcode             = 0,
   brakeRate          = 0,
   buildAngle         = 8192,
-  buildCostEnergy    = 1156,
-  buildCostMetal     = 9,
+  buildCostEnergy    = 1282,
+  buildCostMetal     = 7,
   builder            = false,
   buildPic           = [[CORMAKR.DDS]],
   buildTime          = 1282,
@@ -21,16 +21,14 @@ local unitDef = {
   collisionvolumescales = [[46 22 35]],
   collisionvolumetest = 1,
   collisionvolumetype = [[Box]],
-  description        = [[Converts Energy to Metal]],
+  description        = [[Converts upto 64 Energy to Metal]],
   energyStorage      = 0,
-  energyUse          = 60,
   explodeAs          = [[ARMESTOR_BUILDINGEX]],
   footprintX         = 4,
   footprintZ         = 3,
   iconType           = [[building]],
   idleAutoHeal       = 5,
   idleTime           = 1800,
-  makesMetal         = 0.8,
   maxDamage          = 150,
   maxSlope           = 10,
   maxVelocity        = 0,

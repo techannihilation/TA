@@ -4,15 +4,15 @@
 local unitName = "tllammaker"
 
 --------------------------------------------------------------------------------
-
+-- GADGETED
 local unitDef = {
   activateWhenBuilt  = false,
   bmcode             = 0,
   buildAngle         = 8192,
-  buildCostEnergy    = 18803,
-  buildCostMetal     = 161,
+  buildCostEnergy    = 5286,
+  buildCostMetal     = 528,
   builder            = false,
-  buildTime          = 46820,
+  buildTime          = 52863,
   category           = [[TLL  LEVEL2 NOWEAPON NOTAIR NOTSUB  ]],
   copyright          = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
   corpse             = [[dead]],
@@ -21,7 +21,6 @@ local unitDef = {
   designation        = [[TL-AMMK]],
   downloadable       = 1,
   energyStorage      = 0,
-  energyUse          = 700,
   explodeAs          = [[ATOMIC_BLAST]],
   footprintX         = 4,
   footprintZ         = 4,
@@ -31,7 +30,6 @@ local unitDef = {
   germanname         = [[Moho-Metallschmelze]],
   italiandescription = [[Complesso per la creazione di metalli]],
   italianname        = [[Crea-Metalli Moho]],
-  makesMetal         = 12,
   maxDamage          = 480,
   maxSlope           = 10,
   maxWaterDepth      = 0,
