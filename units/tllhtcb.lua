@@ -4,7 +4,7 @@
 local unitName = "tllhtcb"
 
 --------------------------------------------------------------------------------
-
+--Experimental
 local unitDef = {
   acceleration       = 0.018,
   bmcode             = 1,
@@ -44,7 +44,7 @@ local unitDef = {
   metalStorage       = 100,
   mobilestandorders  = 1,
   movementClass      = [[HTANK3]],
-  name               = [[Experimental Construction Vehicle]],
+  name               = [[High Tech Construction Vehicle]],
   noAutoFire         = false,
   objectName         = [[TLLHTCB]],
   selfDestructAs     = [[BIG_UNIT]],
