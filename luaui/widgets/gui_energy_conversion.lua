@@ -3,9 +3,9 @@ function widget:GetInfo()
 	return {
 		name      = 'Energy Conversion Info',
 		desc      = 'Displays energy conversion info',
-		author    = 'Niobium',
+		author    = 'Niobium (mod by Finkky)',
 		date      = 'May 2011',
-		license   = 'GNU GPL v2',
+		license   = 'GNU GPL v2.1',
 		layer     = 0,
 		enabled   = true,
 	}
@@ -17,14 +17,14 @@ end
 local alterLevelFormat = string.char(137) .. '%i'
 
 local px, py = 500, 100
-local sx, sy = 128, 54
+local sx, sy = 180, 70
 
 local hoverLeft = 53
-local hoverRight = 123
-local hoverBottom = 23
-local hoverTop = 35
-local barBottom = 28
-local barTop = 30
+local hoverRight = sx - 7
+local hoverBottom = 23 + 16
+local hoverTop = 35 + 16
+local barBottom = 28 + 16
+local barTop = 30 + 16
 
 --------------------------------------------------------------------------------
 -- Speedups
@@ -44,6 +44,33 @@ local spGetMyTeamID = Spring.GetMyTeamID
 local spGetTeamRulesParam = Spring.GetTeamRulesParam
 local spSendLuaRulesMsg = Spring.SendLuaRulesMsg
 local spGetSpectatingState = Spring.GetSpectatingState
+
+
+
+local eThresholds = { 
+	{title="AAA", color={0.1, 1, 0, 0.5}, e=0.0178}, 
+	{title="AA", color={0.4, 1, 0, 0.5}, e=0.0168}, 
+	{title="A", color={0.6, 1, 0, 0.5}, e=0.0158}, 
+	{title="B", color={0.8, 1, 0, 0.5}, e=0.0148}, 
+	{title="C", color={1, 0.8, 0, 0.5}, e=0.0138}, 
+	{title="D", color={1, 0.4, 0, 0.5}, e=0.0128}, 
+	{title="E", color={0.8, 0, 0, 0.5}, e=0.0118}, 
+	{title="EE", color={0.6, 0, 0, 0.5}, e=0.0108}, 
+	{title="EEE", color={0.4, 0, 0, 0.5}, e=0.001}, 
+	{title="UKN", color={0, 0, 0, 0.5}, e=-0.001}, 
+}
+
+--table.sort(eThresholds, function(a,b) return a.e>b.e end)
+
+local function getLetter(effi)
+
+	for a, v in ipairs(eThresholds) do
+		if (effi > v.e) then 
+			return v
+		end
+	end
+	return eThresholds[#eThresholds-1]
+end 
 
 --------------------------------------------------------------------------------
 -- Funcs
@@ -65,6 +92,8 @@ function widget:DrawScreen()
     local curLevel = spGetTeamRulesParam(myTeamID, 'mmLevel')
     local curUsage = spGetTeamRulesParam(myTeamID, 'mmUse')
     local curCapacity = spGetTeamRulesParam(myTeamID, 'mmCapacity')
+	local curAvgEfficiency = spGetTeamRulesParam(myTeamID, 'mmAvgEfficiency')
+	--local curAvgEfficiency  = 20
     
     -- Positioning
     glPushMatrix()
@@ -74,15 +103,34 @@ function widget:DrawScreen()
         glColor(0, 0, 0, 0.5)
         glRect(0, 0, sx, sy)
         
+		
+		local currentRating  = getLetter(curAvgEfficiency)
+		
+		glColor(currentRating.color)
+		glRect(sx, 0, sx+sy, sy)
+		
+		
+		glBeginText()
+			
+		glEndText()
+		
+		
         -- Text
-        glColor(1, 1, 1, 1)
-        glBeginText()
-            glText('Energy Conversion', 64, 37, 12, 'cd')
-            glText('Hover:', 5, 21, 12, 'd')
-            glText('Usage:', 5, 5, 12, 'd')
-            glText(format('%i / %i', curUsage, curCapacity), 123, 5, 12, 'dr')
-        glEndText()
         
+        glBeginText()
+			glColor(1, 0, 1, 0.5)
+            glText('Energy Conversion', 64, 53, 12, 'cd')
+            glText('Hover:', 5, 37, 12, 'd')
+            glText('Usage:', 5, 21, 12, 'd')
+			glText('Efficiency:', 5, 5, 12, 'd')
+            glText(format('%i / %i', curUsage, curCapacity), 175, 21, 12, 'dr')
+			glText(format('%.2f%s (x1000) ',curAvgEfficiency * 1000, '%'), 175, 5, 12, 'dr')
+			glText(currentRating.title, sx+sy/2, sy/2 - 9, 26, 'co') --
+	    glEndText()
+
+		
+		
+		glColor(1, 1, 1, 1)
         -- Bar
         glRect(hoverLeft, barBottom, hoverRight, barTop)
         

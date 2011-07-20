@@ -1,10 +1,9 @@
-
 function gadget:GetInfo()
     return {
         name      = 'Energy Conversion',
         desc      = 'Handles converting energy to metal',
-        author    = 'Niobium(modified by TheFatController)',
-        version   = 'v2.0',
+        author    = 'Niobium(modified by TheFatController, Finkky)',
+        version   = 'v2.1',
         date      = 'May 2011',
         license   = 'GNU GPL, v2 or later',
         layer     = 0,
@@ -26,7 +25,8 @@ local alterLevelRegex = '^' .. string.char(137) .. '(%d+)$'
 local mmLevelParamName = 'mmLevel'
 local mmCapacityParamName = 'mmCapacity'
 local mmUseParamName = 'mmUse'
-local fRate = 32
+local mmAvgEfficiencyParamName = 'mmAvgEfficiency'
+local  fRate = 32
 
 local AC0 = 1.2/100
 local AC1 = 1.3/100
@@ -89,6 +89,7 @@ local teamActiveMM = {}
 local lastPost = {}
 local splitMMPointer = 1
 local splitMMUpdate = 90
+local lastKnownEffi = 0
 
 ----------------------------------------------------------------
 -- Speedups
@@ -109,7 +110,12 @@ local spSetUnitCOBValue = Spring.SetUnitCOBValue
 local function AdjustTeamCapacity(teamID, adjustment, e)
     local newCapacity = teamCapacities[teamID][e] + adjustment
     teamCapacities[teamID][e] = newCapacity
-    spSetTeamRulesParam(teamID, mmCapacityParamName, 32 * newCapacity)
+	
+	local totalCapacity = 0
+	for j = 1, #eSteps do
+		totalCapacity = totalCapacity + teamCapacities[teamID][eSteps[j]]
+	end
+    spSetTeamRulesParam(teamID, mmCapacityParamName, fRate * totalCapacity)
 end
 
 local function UpdateMetalMakers(teamID, energyUse)
@@ -167,6 +173,7 @@ function gadget:Initialize()
         spSetTeamRulesParam(tID, mmLevelParamName, 0.75)
         spSetTeamRulesParam(tID, mmCapacityParamName, 0)
         spSetTeamRulesParam(tID, mmUseParamName, 0)
+		spSetTeamRulesParam(tID, mmAvgEfficiencyParamName, lastKnownEffi)
     end
     splitMMUpdate = math.floor(math.max((90 / #teamList),1))
 end
@@ -179,18 +186,36 @@ function gadget:GameFrame(n)
         local convertAmount = eCur - eStor * spGetTeamRulesParam(tID, mmLevelParamName)
         local eConvert = 0
         local mConvert = 0
+		
+		local eConverted = 0
+		local mConverted = 0
+		
         for j = 1, #eSteps do
-			if (convertAmount > 0) then
-				local convertStep = min(teamCapacities[tID][eSteps[j]], convertAmount)
-				spUseTeamResource(tID, 'energy', convertStep)
-				spAddTeamResource(tID, 'metal',  convertStep * eSteps[j])
-				teamUsages[tID] = teamUsages[tID] + convertStep
-				convertAmount = convertAmount - convertStep
-			else break end
+			if(teamCapacities[tID][eSteps[j]] > 0.00002) then
+				if (convertAmount > 0.00002) then
+					--Spring.Echo(teamCapacities[tID][eSteps[j]]*32 .. ", " .. convertAmount)
+				
+					local convertStep = min(teamCapacities[tID][eSteps[j]], convertAmount)
+					eConverted = convertStep + eConverted
+					mConverted = convertStep * eSteps[j] + mConverted
+					
+					spUseTeamResource(tID, 'energy', convertStep)
+					spAddTeamResource(tID, 'metal',  convertStep * eSteps[j])
+					teamUsages[tID] = teamUsages[tID] + convertStep
+					convertAmount = convertAmount - convertStep
+				else break end
+			end
 		end
+		
+		if (eConverted > 0) then
+			lastKnownEffi = mConverted/eConverted
+		end
+		
         if postUsages then
-			local tUsage = (2 * teamUsages[tID])
+			local tUsage = (2 * teamUsages[tID]) --bcs its each 16 frame and game displays usage per 32 frames
             spSetTeamRulesParam(tID, mmUseParamName, tUsage)
+			spSetTeamRulesParam(tID, mmAvgEfficiencyParamName, lastKnownEffi)			
+			
             lastPost[tID] = tUsage
             teamUsages[tID] = 0
         end

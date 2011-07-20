@@ -4,7 +4,7 @@
 local unitName = "armuwmmm"
 
 --------------------------------------------------------------------------------
-
+-- GADGETED
 local unitDef = {
   acceleration       = 0,
   activateWhenBuilt  = true,
@@ -15,7 +15,7 @@ local unitDef = {
   buildCostMetal     = 1462,
   builder            = false,
   buildPic           = [[ARMUWMMM.DDS]],
-  buildTime          = 51562,
+  buildTime          = 30000,
   category           = [[ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR]],
   corpse             = [[DEAD]],
   damageModifier     = 0.3,
