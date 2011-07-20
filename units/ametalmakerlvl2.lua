@@ -29,6 +29,7 @@ local unitDef = {
   objectName         = [[AMetalMakerLvl2]],
   onoffable          = true,
   radarDistance      = 0,
+  script             = [[armmmkr.cob]],
   selfDestructAs     = [[nuclear_missile1]],
   side               = [[ARM]],
   sightDistance      = 210,
