@@ -4,23 +4,23 @@
 local unitName = "crnns"
 
 --------------------------------------------------------------------------------
-
+--NEWFUS
 local unitDef = {
   activateWhenBuilt  = true,
   bmcode             = 0,
   buildAngle         = 16000,
-  buildCostEnergy    = 199618,
-  buildCostMetal     = 14318,
+  buildCostEnergy    = 145000,
+  buildCostMetal     = 17000,
   builder            = false,
-  buildTime          = 235000,
+  buildTime          = 360000,
   category           = [[CORE LEVEL3 NOWEAPON NOTAIR NOTSUB]],
   copyright          = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
   damageModifier     = 0.9,
-  description        = [[Produces Highly Energy / Storage]],
+  description        = [[Produces Energy / Storage]],
   designation        = [[AE-CKF]],
   downloadable       = 1,
-  energyStorage      = 40000,
-  energyUse          = -4200,
+  energyStorage      = 51200,
+  energyMake          = 5120,
   explodeAs          = [[Nuclear_Missile]],
   footprintX         = 10,
   footprintZ         = 8,
