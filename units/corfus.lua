@@ -4,23 +4,23 @@
 local unitName = "corfus"
 
 --------------------------------------------------------------------------------
-
+--NEWFUS
 local unitDef = {
   acceleration       = 0,
   activateWhenBuilt  = true,
   bmcode             = 0,
   brakeRate          = 0,
   buildAngle         = 16384,
-  buildCostEnergy    = 32292,
-  buildCostMetal     = 5103,
+  buildCostEnergy    = 35000,
+  buildCostMetal     = 4700,
   builder            = false,
   buildPic           = [[CORFUS.DDS]],
-  buildTime          = 97640,
+  buildTime          = 108800,
   category           = [[ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR]],
   corpse             = [[DEAD]],
   description        = [[Produces Energy / Storage]],
-  energyMake         = 1400,
-  energyStorage      = 2500,
+  energyMake         = 1280,
+  energyStorage      = 2560,
   energyUse          = 0,
   explodeAs          = [[ATOMIC_BLAST]],
   footprintX         = 5,
