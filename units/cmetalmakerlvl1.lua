@@ -27,6 +27,7 @@ local unitDef = {
   objectName         = [[CMetalMakerLvl1]],
   onoffable          = true,
   radarDistance      = 0,
+  script             = [[cormakr.cob]],
   selfDestructAs     = [[ARMESTOR_BUILDING]],
   side               = [[CORE]],
   sightDistance      = 210,
