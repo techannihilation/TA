@@ -38,7 +38,7 @@ local morphDefs = {
 	},
       armcom4 = {
 		into = 'armcom5',
-            time = 90,
+            time = 60,
 	},
       armcom5 = {
 		into = 'armcom6',
@@ -68,7 +68,7 @@ local morphDefs = {
 	},
       corcom3 = {
 		into = 'corcom5',
-            time = 90,
+            time = 60,
 	},
       corcom5 = {
 		into = 'corcom6',
@@ -86,7 +86,7 @@ local morphDefs = {
 	},
       tllcom3 = {
 		into = 'tllcom5',
-            time = 90,
+            time = 60,
 	},
       tllcom5 = {
 		into = 'tllcom6',
