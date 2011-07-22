@@ -3,7 +3,7 @@ function gadget:GetInfo()
         name      = 'Energy Conversion',
         desc      = 'Handles converting energy to metal',
         author    = 'Niobium(modified by TheFatController, Finkky)',
-        version   = 'v2.1',
+        version   = 'v2.2',
         date      = 'May 2011',
         license   = 'GNU GPL, v2 or later',
         layer     = 0,
@@ -26,7 +26,13 @@ local mmLevelParamName = 'mmLevel'
 local mmCapacityParamName = 'mmCapacity'
 local mmUseParamName = 'mmUse'
 local mmAvgEfficiencyParamName = 'mmAvgEfficiency'
-local  fRate = 32
+local mmAvgEffiParamName = 'mmAvgEffi'
+
+local frameRate = 32
+local resourceRefreshRate = 16 -- In Frames
+local resourceFraction = resourceRefreshRate / frameRate
+local resourceUpdatesPerGameSec = frameRate / resourceRefreshRate
+
 
 local AC0 = 1.2/100
 local AC1 = 1.3/100
@@ -49,31 +55,31 @@ local T6 = 1.53/100
 local convertCapacities = {
 
 		--ARM
-		[UnitDefNames.armmakr.id]  = { c = (50/fRate), e = (AC0) }, -- Normal
-		[UnitDefNames.armfmkr.id]  = { c = (100/fRate), e = (AC1) }, -- Floating
-		[UnitDefNames.ametalmakerlvl1.id]  = { c = (200/fRate), e = (AC2) }, -- T1,5
-		--[UnitDefNames.____.id]  = { c = (400/fRate), e = (AC3) }, -- Cloaked/Hardened
-		[UnitDefNames.armmmkr.id]  = { c = (800/fRate), e = (AC4) }, -- Moho
-		[UnitDefNames.armuwmmm.id]  = { c = (1000/fRate), e = (AC5) }, -- Underwater
-		[UnitDefNames.ametalmakerlvl2.id]  = { c = (16000/fRate), e = (AC6) }, -- Super
+		[UnitDefNames.armmakr.id]  = { c = 50, e = (AC0) }, -- Normal
+		[UnitDefNames.armfmkr.id]  = { c = 100, e = (AC1) }, -- Floating
+		[UnitDefNames.ametalmakerlvl1.id]  = { c = 200, e = (AC2) }, -- T1,5
+		--[UnitDefNames.____.id]  = { c = 400, e = (AC3) }, -- Cloaked/Hardened
+		[UnitDefNames.armmmkr.id]  = { c = 800, e = (AC4) }, -- Moho
+		[UnitDefNames.armuwmmm.id]  = { c = 1000, e = (AC5) }, -- Underwater
+		[UnitDefNames.ametalmakerlvl2.id]  = { c = 16000, e = (AC6) }, -- Super
 					
 		--CORE
-		[UnitDefNames.cormakr.id]  = { c = (64/fRate), e = (AC0) }, -- Normal
-		[UnitDefNames.corfmkr.id]  = { c = (128/fRate), e = (AC1) }, -- Floating
-		[UnitDefNames.cmetalmakerlvl1.id]  = { c = (256/fRate), e = (AC2) }, -- T1,5
-		--[UnitDefNames.____.id]  = { c = (512/fRate), e = (AC3) }, -- Cloaked/Hardened
-		[UnitDefNames.cormmkr.id]  = { c = (1024/fRate), e = (AC4) }, -- Moho
-		[UnitDefNames.coruwmmm.id]  = { c = (1280/fRate), e = (AC5) }, -- Underwater
-		[UnitDefNames.cmetalmakerlvl2.id]  = { c = (20480/fRate), e = (AC6) }, -- Super
+		[UnitDefNames.cormakr.id]  = { c = 64, e = (AC0) }, -- Normal
+		[UnitDefNames.corfmkr.id]  = { c = 128, e = (AC1) }, -- Floating
+		[UnitDefNames.cmetalmakerlvl1.id]  = { c = 256, e = (AC2) }, -- T1,5
+		--[UnitDefNames.____.id]  = { c = 512, e = (AC3) }, -- Cloaked/Hardened
+		[UnitDefNames.cormmkr.id]  = { c = 1024, e = (AC4) }, -- Moho
+		[UnitDefNames.coruwmmm.id]  = { c = 1280, e = (AC5) }, -- Underwater
+		[UnitDefNames.cmetalmakerlvl2.id]  = { c =20480, e = (AC6) }, -- Super
 
 		--TLL
-		[UnitDefNames.tllmm.id]  = { c = (100/fRate), e = (T0) }, -- Normal
-		[UnitDefNames.tllwmconv.id]  = { c = (100/fRate), e = (T1) }, -- Floating
-		--[UnitDefNames.____.id]  = { c = (300/fRate), e = (T2) }, -- T1,5
-		--[UnitDefNames.____.id]  = { c = (600/fRate), e = (T3) }, -- Cloaked/Hardened
-		[UnitDefNames.tllammaker.id]  = { c = (1000/fRate), e = (T4) }, -- Moho
-		--[UnitDefNames.____.id]  = { c = (1000/fRate), e = (T5) }, -- Underwater
-		--[UnitDefNames.____.id]  = { c = (10000/fRate), e = (T6) }, -- Super
+		[UnitDefNames.tllmm.id]  = { c = 100, e = (T0) }, -- Normal
+		[UnitDefNames.tllwmconv.id]  = { c = 100, e = (T1) }, -- Floating
+		--[UnitDefNames.____.id]  = { c = 300, e = (T2) }, -- T1,5
+		--[UnitDefNames.____.id]  = { c = 600, e = (T3) }, -- Cloaked/Hardened
+		[UnitDefNames.tllammaker.id]  = { c = 1000, e = (T4) }, -- Moho
+		--[UnitDefNames.____.id]  = { c = 1000, e = (T5) }, -- Underwater
+		--[UnitDefNames.____.id]  = { c = 10000, e = (T6) }, -- Super
 
     }
 
@@ -89,7 +95,6 @@ local teamActiveMM = {}
 local lastPost = {}
 local splitMMPointer = 1
 local splitMMUpdate = 90
-local lastKnownEffi = 0
 
 ----------------------------------------------------------------
 -- Speedups
@@ -115,7 +120,7 @@ local function AdjustTeamCapacity(teamID, adjustment, e)
 	for j = 1, #eSteps do
 		totalCapacity = totalCapacity + teamCapacities[teamID][eSteps[j]]
 	end
-    spSetTeamRulesParam(teamID, mmCapacityParamName, fRate * totalCapacity)
+    spSetTeamRulesParam(teamID, mmCapacityParamName, totalCapacity)
 end
 
 local function UpdateMetalMakers(teamID, energyUse)
@@ -141,9 +146,43 @@ local function UpdateMetalMakers(teamID, energyUse)
 end
 
 ----------------------------------------------------------------
+-- Efficiencies Methods
+----------------------------------------------------------------
+local Efficiencies = {size =4, buffer={}, pointer=0}
+
+function Efficiencies:avg()
+	local sumE = 0
+	local sumM = 0
+	local nonZeroCount = 0
+	for j=1, self.size do
+		if not (self.buffer[j] == nil) then
+			sumM = sumM + self.buffer[j].m
+			sumE = sumE + self.buffer[j].e
+			nonZeroCount = nonZeroCount + 1 
+		end
+	end
+	if(nonZeroCount > 0 and sumE > 0) then return sumM/sumE end
+	return 0
+end
+
+function Efficiencies:push(o)
+	self.buffer[self.pointer + 1] = o
+	self.pointer = (self.pointer +1) % self.size
+end
+
+
+
+function Efficiencies:init()
+	for j=1, self.size do
+		self.buffer[j]=nil
+	end
+end
+
+----------------------------------------------------------------
 -- Callins
 ----------------------------------------------------------------
 function gadget:Initialize()
+	Efficiencies:init()
     local i = 1
     for defid, defs in pairs(convertCapacities) do
 		local inTable = false
@@ -173,53 +212,54 @@ function gadget:Initialize()
         spSetTeamRulesParam(tID, mmLevelParamName, 0.75)
         spSetTeamRulesParam(tID, mmCapacityParamName, 0)
         spSetTeamRulesParam(tID, mmUseParamName, 0)
-		spSetTeamRulesParam(tID, mmAvgEfficiencyParamName, lastKnownEffi)
+		spSetTeamRulesParam(tID, mmAvgEffiParamName, Efficiencies:avg())
+
     end
     splitMMUpdate = math.floor(math.max((90 / #teamList),1))
 end
 
 function gadget:GameFrame(n)
-    local postUsages = (n % 16 == 0)
-    for i = 1, #teamList do
-        local tID = teamList[i]
-        local eCur, eStor = spGetTeamResources(tID, 'energy')
-        local convertAmount = eCur - eStor * spGetTeamRulesParam(tID, mmLevelParamName)
-        local eConvert = 0
-        local mConvert = 0
-		
-		local eConverted = 0
-		local mConverted = 0
-		
-        for j = 1, #eSteps do
-			if(teamCapacities[tID][eSteps[j]] > 0.00002) then
-				if (convertAmount > 0.00002) then
-					--Spring.Echo(teamCapacities[tID][eSteps[j]]*32 .. ", " .. convertAmount)
-				
-					local convertStep = min(teamCapacities[tID][eSteps[j]], convertAmount)
-					eConverted = convertStep + eConverted
-					mConverted = convertStep * eSteps[j] + mConverted
-					
-					spUseTeamResource(tID, 'energy', convertStep)
-					spAddTeamResource(tID, 'metal',  convertStep * eSteps[j])
-					teamUsages[tID] = teamUsages[tID] + convertStep
-					convertAmount = convertAmount - convertStep
-				else break end
-			end
-		end
-		
-		if (eConverted > 0) then
-			lastKnownEffi = mConverted/eConverted
-		end
-		
-        if postUsages then
-			local tUsage = (2 * teamUsages[tID]) --bcs its each 16 frame and game displays usage per 32 frames
-            spSetTeamRulesParam(tID, mmUseParamName, tUsage)
-			spSetTeamRulesParam(tID, mmAvgEfficiencyParamName, lastKnownEffi)			
+	if (n % resourceRefreshRate == 0) then
+		for i = 1, #teamList do
+			local tID = teamList[i]
+			local eCur, eStor = spGetTeamResources(tID, 'energy')
+			local convertAmount = eCur - eStor * spGetTeamRulesParam(tID, mmLevelParamName)
+			local eConvert = 0
+			local mConvert = 0
 			
-            lastPost[tID] = tUsage
-            teamUsages[tID] = 0
-        end
-    end
+			local eConverted = 0
+			local mConverted = 0
+			
+			for j = 1, #eSteps do
+				if(teamCapacities[tID][eSteps[j]] > 1) then
+					if (convertAmount > 1) then
+						-- Spring.Echo(string.format('[C: %i E: %.1f%s (x1000) ]: %.1f  - %.1f', teamCapacities[tID][eSteps[j]], eSteps[j] * 1000, '%', teamCapacities[tID][eSteps[j]] * resourceFraction, convertAmount))
+					
+						local convertStep = min(teamCapacities[tID][eSteps[j]] * resourceFraction, convertAmount)
+						eConverted = convertStep + eConverted
+						mConverted = convertStep * eSteps[j] + mConverted
+						
+						spUseTeamResource(tID, 'energy', convertStep)
+						spAddTeamResource(tID, 'metal',  convertStep * eSteps[j])
+						teamUsages[tID] = teamUsages[tID] + convertStep
+						convertAmount = convertAmount - convertStep
+					else break end
+				end
+			end
+			
+			Efficiencies:push({m=mConverted, e=eConverted})
+						
+			local tUsage = (resourceUpdatesPerGameSec * teamUsages[tID])
+			spSetTeamRulesParam(tID, mmUseParamName, tUsage)
+			spSetTeamRulesParam(tID, mmAvgEffiParamName, Efficiencies:avg())			
+			
+			lastPost[tID] = tUsage
+			teamUsages[tID] = 0
+		end
+	end
+	
+	
+	
     if (n%splitMMUpdate == 0) then
 		local tID = teamList[splitMMPointer]
 		UpdateMetalMakers(tID,lastPost[tID])
@@ -231,10 +271,13 @@ function gadget:GameFrame(n)
     end
 end
 
+
+
+
 function gadget:UnitFinished(uID, uDefID, uTeam)
     local cDefs = convertCapacities[uDefID]
     if cDefs then
-        teamMMList[uTeam][cDefs.e][uID] = {capacity=cDefs.c*32, status=1}
+        teamMMList[uTeam][cDefs.e][uID] = {capacity=cDefs.c, status=1}
         teamActiveMM[uTeam] = teamActiveMM[uTeam] + 1
         spSetUnitCOBValue(uID,1024,1)
         AdjustTeamCapacity(uTeam, cDefs.c, cDefs.e)

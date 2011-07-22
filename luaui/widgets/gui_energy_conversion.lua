@@ -92,8 +92,13 @@ function widget:DrawScreen()
     local curLevel = spGetTeamRulesParam(myTeamID, 'mmLevel')
     local curUsage = spGetTeamRulesParam(myTeamID, 'mmUse')
     local curCapacity = spGetTeamRulesParam(myTeamID, 'mmCapacity')
-	local curAvgEfficiency = spGetTeamRulesParam(myTeamID, 'mmAvgEfficiency')
-	--local curAvgEfficiency  = 20
+	--local curAvgEfficiency = spGetTeamRulesParam(myTeamID, 'mmAvgEfficiency')
+	local curAvgEffi = spGetTeamRulesParam(myTeamID, 'mmAvgEffi')
+	-- local curLevel=0.2
+	-- local curUsage = 20
+	-- local curCapacity = 20
+	-- local curAvgEfficiency=20
+	-- local curAvgEffi  = 20
     
     -- Positioning
     glPushMatrix()
@@ -104,19 +109,13 @@ function widget:DrawScreen()
         glRect(0, 0, sx, sy)
         
 		
-		local currentRating  = getLetter(curAvgEfficiency)
+		local currentRating  = getLetter(curAvgEffi)
 		
 		glColor(currentRating.color)
 		glRect(sx, 0, sx+sy, sy)
 		
 		
-		glBeginText()
-			
-		glEndText()
-		
-		
         -- Text
-        
         glBeginText()
 			glColor(1, 0, 1, 0.5)
             glText('Energy Conversion', 64, 53, 12, 'cd')
@@ -124,7 +123,7 @@ function widget:DrawScreen()
             glText('Usage:', 5, 21, 12, 'd')
 			glText('Efficiency:', 5, 5, 12, 'd')
             glText(format('%i / %i', curUsage, curCapacity), 175, 21, 12, 'dr')
-			glText(format('%.2f%s (x1000) ',curAvgEfficiency * 1000, '%'), 175, 5, 12, 'dr')
+			glText(format('%.2f%s (x1000) : %.1f', curAvgEffi * 1000, '%', curAvgEffi * curUsage), 175, 5, 12, 'dr')
 			glText(currentRating.title, sx+sy/2, sy/2 - 9, 26, 'co') --
 	    glEndText()
 
