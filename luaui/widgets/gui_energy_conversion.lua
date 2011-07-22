@@ -17,7 +17,7 @@ end
 local alterLevelFormat = string.char(137) .. '%i'
 
 local px, py = 500, 100
-local sx, sy = 180, 70
+local sx, sy = 190, 70
 
 local hoverLeft = 53
 local hoverRight = sx - 7
@@ -118,12 +118,13 @@ function widget:DrawScreen()
         -- Text
         glBeginText()
 			glColor(1, 0, 1, 0.5)
-            glText('Energy Conversion', 64, 53, 12, 'cd')
-            glText('Hover:', 5, 37, 12, 'd')
-            glText('Usage:', 5, 21, 12, 'd')
-			glText('Efficiency:', 5, 5, 12, 'd')
-            glText(format('%i / %i', curUsage, curCapacity), 175, 21, 12, 'dr')
-			glText(format('%.2f%s (x1000) : %.1f', curAvgEffi * 1000, '%', curAvgEffi * curUsage), 175, 5, 12, 'dr')
+            glText('Energy Conversion', 5, 53, 12, 'do')
+			glText(format('+%.1fm',  curAvgEffi * curUsage), 185, 53, 12, 'dro')
+            glText('Hover:', 5, 37, 12, 'do')
+            glText('Usage:', 5, 21, 12, 'do')
+			glText('Efficiency:', 5, 5, 12, 'do')
+            glText(format('%i / %i', curUsage, curCapacity), 185, 21, 12, 'dro')
+			glText(format('%.2f%s (x1000)', curAvgEffi * 1000, '%'), 185, 5, 12, 'dro')
 			glText(currentRating.title, sx+sy/2, sy/2 - 9, 26, 'co') --
 	    glEndText()
 
