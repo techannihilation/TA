@@ -90,6 +90,7 @@ local teamList = {}
 local teamCapacities = {}
 local teamUsages = {}
 local teamMMList = {}
+local teamEfficiencies = {}
 local eSteps = {}
 local teamActiveMM = {}
 local lastPost = {}
@@ -112,6 +113,13 @@ local spSetUnitCOBValue = Spring.SetUnitCOBValue
 ----------------------------------------------------------------
 -- Functions
 ----------------------------------------------------------------
+
+local function prototype(t)
+  local u = { }
+  for k, v in pairs(t) do u[k] = v end
+  return setmetatable(u, getmetatable(t))
+end
+
 local function AdjustTeamCapacity(teamID, adjustment, e)
     local newCapacity = teamCapacities[teamID][e] + adjustment
     teamCapacities[teamID][e] = newCapacity
@@ -148,7 +156,7 @@ end
 ----------------------------------------------------------------
 -- Efficiencies Methods
 ----------------------------------------------------------------
-local Efficiencies = {size =4, buffer={}, pointer=0}
+local Efficiencies = {size =4, buffer={}, pointer=0, tID = -1}
 
 function Efficiencies:avg()
 	local sumE = 0
@@ -172,17 +180,17 @@ end
 
 
 
-function Efficiencies:init()
+function Efficiencies:init(tID)
 	for j=1, self.size do
 		self.buffer[j]=nil
 	end
+	self.tID = tID
 end
 
 ----------------------------------------------------------------
 -- Callins
 ----------------------------------------------------------------
 function gadget:Initialize()
-	Efficiencies:init()
     local i = 1
     for defid, defs in pairs(convertCapacities) do
 		local inTable = false
@@ -201,6 +209,8 @@ function gadget:Initialize()
     for i = 1, #teamList do
         local tID = teamList[i]
         teamCapacities[tID] = {}
+		teamEfficiencies[tID] = prototype(Efficiencies)
+		teamEfficiencies[tID]:init(tID)
         teamMMList[tID] = {}
         teamActiveMM[tID] = 0
         lastPost[tID] = 0
@@ -212,12 +222,13 @@ function gadget:Initialize()
         spSetTeamRulesParam(tID, mmLevelParamName, 0.75)
         spSetTeamRulesParam(tID, mmCapacityParamName, 0)
         spSetTeamRulesParam(tID, mmUseParamName, 0)
-		spSetTeamRulesParam(tID, mmAvgEffiParamName, Efficiencies:avg())
+		spSetTeamRulesParam(tID, mmAvgEffiParamName, teamEfficiencies[tID]:avg())
 
     end
     splitMMUpdate = math.floor(math.max((90 / #teamList),1))
 end
-
+-- DEV
+-- local infoTimer = 0
 function gadget:GameFrame(n)
 	if (n % resourceRefreshRate == 0) then
 		for i = 1, #teamList do
@@ -226,15 +237,13 @@ function gadget:GameFrame(n)
 			local convertAmount = eCur - eStor * spGetTeamRulesParam(tID, mmLevelParamName)
 			local eConvert = 0
 			local mConvert = 0
-			
 			local eConverted = 0
 			local mConverted = 0
 			
 			for j = 1, #eSteps do
 				if(teamCapacities[tID][eSteps[j]] > 1) then
 					if (convertAmount > 1) then
-						-- Spring.Echo(string.format('[C: %i E: %.1f%s (x1000) ]: %.1f  - %.1f', teamCapacities[tID][eSteps[j]], eSteps[j] * 1000, '%', teamCapacities[tID][eSteps[j]] * resourceFraction, convertAmount))
-					
+						--Spring.Echo(string.format('[C: %i E: %.1f%s (x1000) ]: %.1f  - %.1f', teamCapacities[tID][eSteps[j]], eSteps[j] * 1000, '%', teamCapacities[tID][eSteps[j]] * resourceFraction, convertAmount))
 						local convertStep = min(teamCapacities[tID][eSteps[j]] * resourceFraction, convertAmount)
 						eConverted = convertStep + eConverted
 						mConverted = convertStep * eSteps[j] + mConverted
@@ -246,20 +255,24 @@ function gadget:GameFrame(n)
 					else break end
 				end
 			end
-			
-			Efficiencies:push({m=mConverted, e=eConverted})
-						
+
+			teamEfficiencies[tID]:push({m=mConverted, e=eConverted})
+			-- DEV
+			-- if(infoTimer == 15) then
+				-- Spring.Echo(teamEfficiencies[tID].tID .. ", "..teamEfficiencies[tID]avg())
+			-- end
 			local tUsage = (resourceUpdatesPerGameSec * teamUsages[tID])
 			spSetTeamRulesParam(tID, mmUseParamName, tUsage)
-			spSetTeamRulesParam(tID, mmAvgEffiParamName, Efficiencies:avg())			
+			spSetTeamRulesParam(tID, mmAvgEffiParamName, teamEfficiencies[tID]:avg())			
 			
 			lastPost[tID] = tUsage
 			teamUsages[tID] = 0
 		end
+		-- DEV
+		-- if (infoTimer == 15) then infoTimer = 0 end
+		-- infoTimer = infoTimer + 1 
 	end
-	
-	
-	
+
     if (n%splitMMUpdate == 0) then
 		local tID = teamList[splitMMPointer]
 		UpdateMetalMakers(tID,lastPost[tID])
@@ -300,7 +313,7 @@ end
 
 function gadget:UnitGiven(uID, uDefID, newTeam, oldTeam)
     local cDefs = convertCapacities[uDefID]
-    if convertCapacity then
+    if cDefs then
         local _, _, _, _, buildProg = spGetUnitHealth(uID)
         if (buildProg == 1) then
             AdjustTeamCapacity(oldTeam, -cDefs.c, cDefs.e)
