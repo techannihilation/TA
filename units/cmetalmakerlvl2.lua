@@ -7,7 +7,7 @@ local unitName = "cmetalmakerlvl2"
 --GADGETED
 local unitDef = {
   activateWhenBuilt  = true,
-  buildCostEnergy    = 609111,
+  buildCostEnergy    = 1509111,
   buildCostMetal     = 31883,
   builder            = false,
   buildTime          = 240000,
