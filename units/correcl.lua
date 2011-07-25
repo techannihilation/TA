@@ -56,7 +56,6 @@ local unitDef = {
   smoothAnim         = true,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[SHIP]],
   turnRate           = 282,
   unitname           = [[correcl]],
   waterline          = 30,

@@ -37,7 +37,6 @@ local unitDef = {
   selfDestructAs     = [[SMALL_BUILDING]],
   side               = [[Arm]],
   sightDistance      = 367.5,
-  TEDClass           = [[ENERGY]],
   threed             = 1,
   unitname           = [[arm_wind_generator]],
   unitnumber         = 76,

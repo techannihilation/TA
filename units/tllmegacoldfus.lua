@@ -38,7 +38,6 @@ local unitDef = {
   selfDestructAs     = [[SUPERBLAST_BUILDING]],
   side               = [[TLL]],
   sightDistance      = 210,
-  TEDClass           = [[]],
   threed             = 1,
   unitname           = [[tllmegacoldfus]],
   unitnumber         = 922,

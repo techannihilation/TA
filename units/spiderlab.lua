@@ -44,7 +44,6 @@ local unitDef = {
   spanishname        = [[Laboratorio Arácnido]],
   standingfireorder  = 2,
   standingmoveorder  = 1,
-  TEDClass           = [[PLANT]],
   threed             = 1,
   unitname           = [[spiderlab]],
   unitnumber         = 7765,

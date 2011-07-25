@@ -47,7 +47,6 @@ local unitDef = {
   sightDistance      = 210,
   spanishdescription = [[Produce energía]],
   spanishname        = [[Generador Eólico]],
-  TEDClass           = [[]],
   threed             = 1,
   unitname           = [[tllwindtrap]],
   unitnumber         = 851,

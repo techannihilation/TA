@@ -62,7 +62,6 @@ local unitDef = {
   standingmoveorder  = 1,
   stealth            = true,
   steeringmode       = 1,
-  TEDClass           = [[CNSTR]],
   terraformSpeed     = 120,
   trackOffset        = 12,
   trackStrength      = 5,

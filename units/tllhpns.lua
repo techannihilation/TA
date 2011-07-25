@@ -49,7 +49,6 @@ local unitDef = {
   spanishname        = [[Plataforma Hovercraft]],
   standingfireorder  = 2,
   standingmoveorder  = 1,
-  TEDClass           = [[PLANT]],
   threed             = 1,
   unitname           = [[tllhpns]],
   unitnumber         = 26003,

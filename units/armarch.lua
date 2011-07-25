@@ -43,7 +43,6 @@ local unitDef = {
   side               = [[ARM]],
   sightDistance      = 450,
   standingfireorder  = 2,
-  TEDClass           = [[FORT]],
   threed             = 1,
   unitname           = [[armarch]],
   unitnumber         = 911,

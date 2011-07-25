@@ -52,7 +52,6 @@ local unitDef = {
   spanishname        = [[Plataforma de Hidroaviones]],
   standingfireorder  = 2,
   standingmoveorder  = 1,
-  TEDClass           = [[PLANT]],
   threed             = 1,
   unitname           = [[tllplat]],
   unitnumber         = 875,

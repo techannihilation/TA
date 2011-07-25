@@ -49,7 +49,6 @@ local unitDef = {
   smoothAnim         = true,
   standingfireorder  = 2,
   stealth            = true,
-  TEDClass           = [[SPECIAL]],
   turnRate           = 0,
   unitname           = [[ajuno]],
   useBuildingGroundDecal = true,

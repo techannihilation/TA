@@ -39,7 +39,6 @@ local unitDef = {
   side               = [[CORE]],
   sightDistance      = 192,
   smoothAnim         = true,
-  TEDClass           = [[ENERGY]],
   threed             = 1,
   unitname           = [[coruwadves]],
   version            = 1.2,

@@ -43,7 +43,6 @@ local unitDef = {
   side               = [[CORE]],
   sightDistance      = 260,
   smoothAnim         = true,
-  TEDClass           = [[ENERGY]],
   turnRate           = 0,
   unitname           = [[coradvsol]],
   workerTime         = 0,

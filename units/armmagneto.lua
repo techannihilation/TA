@@ -47,7 +47,6 @@ local unitDef = {
   sightDistance      = 1000,
   sonarDistance      = 500,
   standingfireorder  = 2,
-  TEDClass           = [[FORT]],
   threed             = 1,
   unitname           = [[armmagneto]],
   unitnumber         = 163463878543677545,

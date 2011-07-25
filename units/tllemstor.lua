@@ -39,7 +39,6 @@ local unitDef = {
   selfDestructAs     = [[ESTOR_BUILDING]],
   side               = [[TLL]],
   sightDistance      = 210,
-  TEDClass           = [[]],
   threed             = 1,
   unitname           = [[tllemstor]],
   unitnumber         = 939,

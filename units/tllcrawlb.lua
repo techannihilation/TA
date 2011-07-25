@@ -60,7 +60,6 @@ local unitDef = {
   standingfireorder  = 0,
   standingmoveorder  = 0,
   steeringmode       = 1,
-  TEDClass           = [[KBOT]],
   threed             = 1,
   turnRate           = 512,
   unitname           = [[tllcrawlb]],

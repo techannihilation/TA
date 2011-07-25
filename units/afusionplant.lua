@@ -42,7 +42,6 @@ local unitDef = {
   side               = [[ARM]],
   sightDistance      = 300,
   smoothAnim         = true,
-  TEDClass           = [[ENERGY]],
   threed             = 1,
   turnRate           = 0,
   unitname           = [[afusionplant]],

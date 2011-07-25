@@ -39,7 +39,6 @@ local unitDef = {
   side               = [[CORE]],
   sightDistance      = 169,
   smoothAnim         = true,
-  TEDClass           = [[ENERGY]],
   turnRate           = 0,
   unitname           = [[coruwes]],
   workerTime         = 0,

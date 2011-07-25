@@ -40,7 +40,6 @@ local unitDef = {
   selfDestructAs     = [[SMALL_BUILDING]],
   side               = [[TLL]],
   sightDistance      = 210,
-  TEDClass           = [[]],
   threed             = 1,
   unitname           = [[tllsolar]],
   unitnumber         = 804,

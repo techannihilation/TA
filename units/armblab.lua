@@ -48,7 +48,6 @@ local unitDef = {
   sightDistance      = 202,
   standingmoveorder  = 1,
   stealth            = true,
-  TEDClass           = [[PLANT]],
   threed             = 1,
   unitname           = [[armblab]],
   unitnumber         = 2003,

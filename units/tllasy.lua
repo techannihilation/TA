@@ -47,7 +47,6 @@ local unitDef = {
   sightDistance      = 245,
   standingfireorder  = 2,
   standingmoveorder  = 2,
-  TEDClass           = [[PLANT]],
   threed             = 1,
   unitname           = [[tllasy]],
   unitnumber         = 858,

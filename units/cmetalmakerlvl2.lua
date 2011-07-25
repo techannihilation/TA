@@ -34,7 +34,6 @@ local unitDef = {
   selfDestructAs     = [[nuclear_missile1]],
   side               = [[CORE]],
   sightDistance      = 210,
-  TEDClass           = [[METAL]],
   unitname           = [[cmetalmakerlvl2]],
   workerTime         = 0,
   yardMap            = [[OOO OOO OOO]],

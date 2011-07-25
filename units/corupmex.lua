@@ -35,7 +35,6 @@ local unitDef = {
   selfDestructAs     = [[SMALL_BUILDING]],
   side               = [[CORE]],
   sightDistance      = 273,
-  TEDClass           = [[METAL]],
   unitname           = [[corupmex]],
   unitnumber         = 48,
   workerTime         = 0,

@@ -52,7 +52,6 @@ local unitDef = {
   spanishdescription = [[Buque distorsionador de radar]],
   standingmoveorder  = 0,
   steeringmode       = 1,
-  TEDClass           = [[SHIP]],
   threed             = 1,
   turnRate           = 385,
   unitname           = [[tllmixer]],

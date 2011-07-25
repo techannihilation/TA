@@ -53,7 +53,6 @@ local unitDef = {
   side               = [[CORE]],
   sightDistance      = 175,
   standingfireorder  = 2,
-  TEDClass           = [[FORT]],
   threed             = 1,
   unitname           = [[corflu]],
   unitnumber         = 16,

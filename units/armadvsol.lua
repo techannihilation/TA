@@ -47,7 +47,6 @@ local unitDef = {
   side               = [[ARM]],
   sightDistance      = 260,
   smoothAnim         = true,
-  TEDClass           = [[ENERGY]],
   turnRate           = 0,
   unitname           = [[armadvsol]],
   useBuildingGroundDecal = true,

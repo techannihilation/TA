@@ -45,7 +45,6 @@ local unitDef = {
   selfDestructAs     = [[MEDIUM_BUILDING]],
   side               = [[ARM]],
   sightDistance      = 210,
-  TEDClass           = [[SPECIAL]],
   turnRate           = 0,
   unitname           = [[armdf]],
   useBuildingGroundDecal = true,

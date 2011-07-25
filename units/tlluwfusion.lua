@@ -42,7 +42,6 @@ local unitDef = {
   sightDistance      = 110,
   spanishdescription = [[Planta de fusión submarina]],
   spanishname        = [[Planta de Fusión]],
-  TEDClass           = [[]],
   threed             = 1,
   unitname           = [[tlluwfusion]],
   unitnumber         = 867,

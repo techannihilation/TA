@@ -54,7 +54,6 @@ local unitDef = {
   standingmoveorder  = 1,
   stealth            = true,
   steeringmode       = 1,
-  TEDClass           = [[VTOL]],
   turnRate           = 1337,
   unitname           = [[corvamp]],
   unitRestricted     = 150,

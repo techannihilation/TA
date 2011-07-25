@@ -38,7 +38,6 @@ local unitDef = {
   side               = [[CORE]],
   sightDistance      = 300,
   smoothAnim         = true,
-  TEDClass           = [[ENERGY]],
   threed             = 1,
   turnRate           = 0,
   unitname           = [[cfusionplant]],

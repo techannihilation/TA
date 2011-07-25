@@ -44,7 +44,6 @@ local unitDef = {
   sightDistance      = 210,
   spanishdescription = [[Genera energía]],
   spanishname        = [[Reactor de Fusión NS]],
-  TEDClass           = [[ENERGY]],
   threed             = 1,
   unitname           = [[crnns]],
   unitnumber         = 233,

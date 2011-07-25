@@ -44,7 +44,6 @@ local unitDef = {
   sightDistance      = 240,
   standingfireorder  = 2,
   standingmoveorder  = 1,
-  TEDClass           = [[PLANT]],
   threed             = 1,
   unitname           = [[tllaap]],
   unitnumber         = 883,

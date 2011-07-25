@@ -32,7 +32,6 @@ local unitDef = {
   selfDestructAs     = [[ARMESTOR_BUILDING]],
   side               = [[ARM]],
   sightDistance      = 210,
-  TEDClass           = [[METAL]],
   unitname           = [[ametalmakerlvl1]],
   workerTime         = 0,
   yardMap            = [[OOOOOOOOO]],

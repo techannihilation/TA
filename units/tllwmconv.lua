@@ -43,7 +43,6 @@ local unitDef = {
   sightDistance      = 200,
   spanishdescription = [[Produce metal]],
   spanishname        = [[Productor de Metal - SN]],
-  TEDClass           = [[]],
   threed             = 1,
   unitname           = [[tllwmconv]],
   unitnumber         = 870,

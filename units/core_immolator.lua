@@ -43,7 +43,6 @@ local unitDef = {
   side               = [[Core]],
   sightDistance      = 665,
   standingfireorder  = 2,
-  TEDClass           = [[FORT]],
   threed             = 1,
   unitname           = [[core_immolator]],
   unitnumber         = 124,

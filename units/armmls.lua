@@ -50,7 +50,6 @@ local unitDef = {
   smoothAnim         = true,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[SHIP]],
   terraformSpeed     = 1200,
   turnRate           = 388,
   unitname           = [[armmls]],

@@ -56,7 +56,6 @@ local unitDef = {
   standingfireorder  = 2,
   standingmoveorder  = 2,
   steeringmode       = 1,
-  TEDClass           = [[VTOL]],
   threed             = 1,
   turnRate           = 356,
   unitname           = [[tllbomber]],

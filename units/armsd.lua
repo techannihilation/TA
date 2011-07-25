@@ -35,7 +35,6 @@ local unitDef = {
   selfDestructAs     = [[LARGE_BUILDING]],
   side               = [[ARM]],
   sightDistance      = 240,
-  TEDClass           = [[SPECIAL]],
   unitname           = [[armsd]],
   yardMap            = [[oooooooooooooooo]],
   sounds = {

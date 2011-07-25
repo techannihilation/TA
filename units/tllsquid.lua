@@ -56,7 +56,6 @@ local unitDef = {
   sonarDistanceJam   = 475,
   standingmoveorder  = 0,
   steeringmode       = 1,
-  TEDClass           = [[WATER]],
   threed             = 1,
   turnRate           = 580,
   unitname           = [[tllsquid]],

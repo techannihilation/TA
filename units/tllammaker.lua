@@ -46,7 +46,6 @@ local unitDef = {
   sightDistance      = 210,
   spanishdescription = [[Complejo de producción de metal]],
   spanishname        = [[Productor de Metal Moho]],
-  TEDClass           = [[]],
   threed             = 1,
   unitname           = [[tllammaker]],
   unitnumber         = 847,

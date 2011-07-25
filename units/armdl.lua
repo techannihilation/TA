@@ -52,7 +52,6 @@ local unitDef = {
   smoothAnim         = true,
   sonarDistance      = 515,
   standingfireorder  = 2,
-  TEDClass           = [[WATER]],
   turnRate           = 0,
   unitname           = [[armdl]],
   useBuildingGroundDecal = true,

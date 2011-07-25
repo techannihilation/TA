@@ -49,7 +49,6 @@ local unitDef = {
   sightDistance      = 380,
   smoothAnim         = true,
   steeringmode       = 1,
-  TEDClass           = [[CNSTR]],
   turnRate           = 1,
   unitname           = [[tllnanotc]],
   upright            = true,

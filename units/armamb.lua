@@ -57,7 +57,6 @@ local unitDef = {
   sightDistance      = 442,
   smoothAnim         = true,
   standingfireorder  = 2,
-  TEDClass           = [[FORT]],
   turnRate           = 0,
   unitname           = [[armamb]],
   useBuildingGroundDecal = true,

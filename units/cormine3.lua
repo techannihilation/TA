@@ -60,7 +60,6 @@ local unitDef = {
   smoothAnim         = true,
   standingfireorder  = 0,
   stealth            = true,
-  TEDClass           = [[SPECIAL]],
   turnRate           = 0,
   unitname           = [[cormine3]],
   workerTime         = 0,

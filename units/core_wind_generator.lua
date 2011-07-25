@@ -37,7 +37,6 @@ local unitDef = {
   selfDestructAs     = [[SMALL_BUILDING]],
   side               = [[Core]],
   sightDistance      = 367.5,
-  TEDClass           = [[ENERGY]],
   threed             = 1,
   unitname           = [[core_wind_generator]],
   unitnumber         = 153,

@@ -38,7 +38,6 @@ local unitDef = {
   selfDestructAs     = [[CRBLMSSL]],
   side               = [[TLL]],
   sightDistance      = 210,
-  TEDClass           = [[]],
   threed             = 1,
   unitname           = [[tllcoldfus]],
   unitnumber         = 922,

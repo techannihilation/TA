@@ -45,7 +45,6 @@ local unitDef = {
   sightDistance      = 195,
   smoothAnim         = true,
   standingfireorder  = 2,
-  TEDClass           = [[SPECIAL]],
   turnRate           = 0,
   unitname           = [[corfmd2]],
   unitRestricted     = 8,

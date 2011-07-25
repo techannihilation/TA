@@ -31,7 +31,6 @@ local unitDef = {
   selfDestructAs     = [[LIGHTSHIPBLAST]],
   side               = [[CORE]],
   sightDistance      = 150,
-  TEDClass           = [[ENERGY]],
   unitname           = [[cpocketfusion]],
   workerTime         = 0,
   yardMap            = [[OOOOOOOOOOOOOOO]],

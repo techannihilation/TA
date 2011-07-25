@@ -34,7 +34,6 @@ local unitDef = {
   side               = [[TLL]],
   sightDistance      = 263,
   smoothAnim         = true,
-  TEDClass           = [[]],
   unitname           = [[tllmedfusion]],
   workerTime         = 0,
   yardMap            = [[ooooo ooooo ooooo ooooo ooooo]],

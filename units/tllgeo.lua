@@ -45,7 +45,6 @@ local unitDef = {
   sightDistance      = 210,
   spanishdescription = [[Genera energía/Metal]],
   spanishname        = [[Planta Geotérmica]],
-  TEDClass           = [[]],
   threed             = 1,
   unitname           = [[tllgeo]],
   unitnumber         = 803,

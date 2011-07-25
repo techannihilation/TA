@@ -43,7 +43,6 @@ local unitDef = {
   side               = [[TLL]],
   sightDistance      = 175,
   sonarDistanceJam   = 1300,
-  TEDClass           = [[WATER]],
   threed             = 1,
   unitname           = [[tlluwjam]],
   unitnumber         = 869,

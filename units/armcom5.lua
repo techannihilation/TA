@@ -79,7 +79,6 @@ local unitDef = {
   standingfireorder  = 2,
   standingmoveorder  = 0,
   steeringmode       = 2,
-  TEDClass           = [[COMMANDER]],
   turnRate           = 1348,
   unitname           = [[armcom5]],
   upright            = true,

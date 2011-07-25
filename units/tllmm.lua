@@ -42,7 +42,6 @@ local unitDef = {
   sightDistance      = 210,
   spanishdescription = [[Transforma energía en metal]],
   spanishname        = [[Productor de Metal]],
-  TEDClass           = [[]],
   threed             = 1,
   unitname           = [[tllmm]],
   unitnumber         = 814,

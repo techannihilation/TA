@@ -49,7 +49,6 @@ local unitDef = {
   sightDistance      = 560,
   smoothAnim         = true,
   stealth            = true,
-  TEDClass           = [[FORT]],
   turnRate           = 0,
   unitname           = [[armeyes]],
   workerTime         = 0,

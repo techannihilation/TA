@@ -49,7 +49,6 @@ local unitDef = {
   sortbias           = 0,
   standingfireorder  = 2,
   standingmoveorder  = 1,
-  TEDClass           = [[PLANT]],
   threed             = 1,
   unitname           = [[armevp]],
   unitnumber         = 3336,
