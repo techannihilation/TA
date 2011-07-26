@@ -4,29 +4,27 @@
 local unitName = "armfmkr"
 
 --------------------------------------------------------------------------------
-
+--GADGETED
 local unitDef = {
   acceleration       = 0,
   activateWhenBuilt  = true,
   bmcode             = 0,
   brakeRate          = 0,
   buildAngle         = 8192,
-  buildCostEnergy    = 2480,
-  buildCostMetal     = 1,
+  buildCostEnergy    = 1914,
+  buildCostMetal     = 18,
   builder            = false,
   buildPic           = [[ARMFMKR.DDS]],
-  buildTime          = 2958,
+  buildTime          = 2000,
   category           = [[ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR]],
-  description        = [[Converts Energy to Metal]],
+  description        = [[Converts upto 100 Energy to Metal]],
   energyStorage      = 0,
-  energyUse          = 60,
   explodeAs          = [[ARMESTOR_BUILDINGEX]],
   footprintX         = 3,
   footprintZ         = 3,
   iconType           = [[building]],
   idleAutoHeal       = 5,
   idleTime           = 1800,
-  makesMetal         = 1,
   maxDamage          = 110,
   maxSlope           = 10,
   maxVelocity        = 0,

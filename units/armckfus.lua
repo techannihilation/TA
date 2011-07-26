@@ -4,26 +4,26 @@
 local unitName = "armckfus"
 
 --------------------------------------------------------------------------------
-
+--NEWFUS
 local unitDef = {
   acceleration       = 0,
   bmcode             = 0,
   brakeRate          = 0,
   buildAngle         = 4096,
-  buildCostEnergy    = 34646,
-  buildCostMetal     = 5469,
+  buildCostEnergy    = 51800,
+  buildCostMetal     = 4750,
   builder            = false,
   buildPic           = [[ARMCKFUS.DDS]],
-  buildTime          = 184389,
+  buildTime          = 100000,
   category           = [[ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR]],
-  cloakCost          = 50,
+  cloakCost          = 100,
   collisionvolumeoffsets = [[0 0 0]],
   collisionvolumescales = [[98 59 62]],
   collisionvolumetest = 1,
   collisionvolumetype = [[Box]],
   corpse             = [[DEAD]],
   description        = [[Produces Energy / Storage]],
-  energyMake         = 1400,
+  energyMake         = 1350,
   energyStorage      = 2500,
   energyUse          = 0,
   explodeAs          = [[ATOMIC_BLAST]],

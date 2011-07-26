@@ -4,31 +4,29 @@
 local unitName = "armuwmmm"
 
 --------------------------------------------------------------------------------
-
+-- GADGETED
 local unitDef = {
   acceleration       = 0,
   activateWhenBuilt  = true,
   bmcode             = 0,
   brakeRate          = 0,
   buildAngle         = 8192,
-  buildCostEnergy    = 34077,
-  buildCostMetal     = 780,
+  buildCostEnergy    = 51562,
+  buildCostMetal     = 1462,
   builder            = false,
   buildPic           = [[ARMUWMMM.DDS]],
-  buildTime          = 48964,
+  buildTime          = 30000,
   category           = [[ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR]],
   corpse             = [[DEAD]],
   damageModifier     = 0.3,
-  description        = [[Converts Energy to Metal]],
+  description        = [[Converts upto 1000 Energy to Metal]],
   energyStorage      = 0,
-  energyUse          = 600,
   explodeAs          = [[ATOMIC_BLAST]],
   footprintX         = 5,
   footprintZ         = 4,
   iconType           = [[building]],
   idleAutoHeal       = 5,
   idleTime           = 1800,
-  makesMetal         = 16,
   maxDamage          = 1100,
   maxSlope           = 16,
   maxVelocity        = 0,

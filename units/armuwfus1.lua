@@ -4,21 +4,21 @@
 local unitName = "armuwfus1"
 
 --------------------------------------------------------------------------------
-
+--NEWFUS
 local unitDef = {
   acceleration       = 0,
   activateWhenBuilt  = true,
   bmcode             = 0,
   brakeRate          = 0,
   buildAngle         = 8192,
-  buildCostEnergy    = 212600,
-  buildCostMetal     = 14566,
+  buildCostEnergy    = 183000,
+  buildCostMetal     = 16000,
   builder            = false,
   buildPic           = [[ARMUWFUS.DDS]],
-  buildTime          = 225000,
+  buildTime          = 300000,
   category           = [[ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR]],
   description        = [[Produces Highly Energy / Storage]],
-  energyMake         = 4200,
+  energyMake         = 5000,
   energyStorage      = 40000,
   explodeAs          = [[Nuclear_missile]],
   floater            = true,

@@ -4,6 +4,7 @@
 local unitName = "cormmkr"
 
 --------------------------------------------------------------------------------
+-- GADGETED
 
 local unitDef = {
   acceleration       = 0,
@@ -11,24 +12,22 @@ local unitDef = {
   bmcode             = 0,
   brakeRate          = 0,
   buildAngle         = 8192,
-  buildCostEnergy    = 38928,
-  buildCostMetal     = 1151,
+  buildCostEnergy    = 53482,
+  buildCostMetal     = 1264,
   builder            = false,
   buildPic           = [[CORMMKR.DDS]],
-  buildTime          = 21253,
+  buildTime          = 48000,
   category           = [[CORE NOWEAPON NOTAIR NOTSUB NOTSHIP LEVEL3 NOTLAND ALL]],
   corpse             = [[DEAD]],
   damageModifier     = 0.3,
-  description        = [[Converts Energy to Metal]],
+  description        = [[Converts upto 1024 Energy to Metal]],
   energyStorage      = 0,
-  energyUse          = 600,
   explodeAs          = [[ATOMIC_BLAST]],
   footprintX         = 4,
   footprintZ         = 4,
   iconType           = [[building]],
   idleAutoHeal       = 5,
   idleTime           = 1800,
-  makesMetal         = 14,
   maxDamage          = 900,
   maxSlope           = 10,
   maxVelocity        = 0,

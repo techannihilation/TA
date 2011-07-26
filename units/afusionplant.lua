@@ -4,15 +4,15 @@
 local unitName = "afusionplant"
 
 --------------------------------------------------------------------------------
-
+--NEWFUS
 local unitDef = {
   activateWhenBuilt  = true,
   bmcode             = 0,
   buildAngle         = 90096,
-  buildCostEnergy    = 955000,
-  buildCostMetal     = 33835,
+  buildCostEnergy    = 1150000,
+  buildCostMetal     = 56000,
   builder            = false,
-  buildTime          = 1583000,
+  buildTime          = 1800000,
   category           = [[ALL NOTSUB NOWEAPON SPECIAL NOTAIR]],
   collisionvolumeoffsets = [[0 0 0]],
   collisionvolumescales = [[138 99 72]],
@@ -20,9 +20,9 @@ local unitDef = {
   collisionvolumetype = [[Box]],
   copyright          = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
   corpse             = [[dead]],
-  description        = [[Produces 20000 energy]],
-  energyMake         = 20000,
-  energyStorage      = 20000,
+  description        = [[Produces energy]],
+  energyMake         = 24000,
+  energyStorage      = 50000,
   energyUse          = 0,
   explodeAs          = [[SUPERBLAST_BUILDING]],
   floater            = true,

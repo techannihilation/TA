@@ -4,25 +4,23 @@
 local unitName = "ametalmakerlvl2"
 
 --------------------------------------------------------------------------------
-
+--GADGETED
 local unitDef = {
   activateWhenBuilt  = true,
-  buildCostEnergy    = 400215.875,
-  buildCostMetal     = 13559.845,
+  buildCostEnergy    = 1200755,
+  buildCostMetal     = 23119,
   builder            = false,
-  buildTime          = 155467.950,
+  buildTime          = 200000,
   category           = [[ALL NOTSUB NOWEAPON SPECIAL NOTAIR]],
   corpse             = [[dead]],
   damageModifier     = 0.25,
-  description        = [[Heavy convertion of energy into metal]],
+  description        = [[Converts upto 16000 Energy to Metal]],
   designation        = [[AEM-MEM]],
   energyStorage      = 0,
-  energyUse          = 12000,
   explodeAs          = [[nuclear_missile1]],
   floater            = true,
   footprintX         = 4,
   footprintZ         = 4,
-  makesMetal         = 300,
   maxDamage          = 5000.0,
   maxSlope           = 20,
   maxWaterDepth      = 0,
@@ -31,6 +29,7 @@ local unitDef = {
   objectName         = [[AMetalMakerLvl2]],
   onoffable          = true,
   radarDistance      = 0,
+  script             = [[armmmkr.cob]],
   selfDestructAs     = [[nuclear_missile1]],
   side               = [[ARM]],
   sightDistance      = 210,

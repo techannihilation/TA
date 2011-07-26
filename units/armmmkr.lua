@@ -4,6 +4,7 @@
 local unitName = "armmmkr"
 
 --------------------------------------------------------------------------------
+--GADGETED
 
 local unitDef = {
   acceleration       = 0,
@@ -11,24 +12,22 @@ local unitDef = {
   bmcode             = 0,
   brakeRate          = 0,
   buildAngle         = 8192,
-  buildCostEnergy    = 39350,
-  buildCostMetal     = 1158,
+  buildCostEnergy    = 40247,
+  buildCostMetal     = 946,
   builder            = false,
   buildPic           = [[ARMMMKR.DDS]],
-  buildTime          = 24980,
+  buildTime          = 40000,
   category           = [[ARM NOWEAPON NOTAIR NOTSUB NOTSHIP LEVEL3 NOTLAND ALL]],
   corpse             = [[DEAD]],
   damageModifier     = 0.3,
-  description        = [[Converts Energy to Metal]],
+  description        = [[Converts upto 800 Energy to Metal]],
   energyStorage      = 0,
-  energyUse          = 600,
   explodeAs          = [[ATOMIC_BLAST]],
   footprintX         = 4,
   footprintZ         = 4,
   iconType           = [[building]],
   idleAutoHeal       = 5,
   idleTime           = 1800,
-  makesMetal         = 14,
   maxDamage          = 800,
   maxSlope           = 10,
   maxVelocity        = 0,
