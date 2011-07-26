@@ -4,21 +4,21 @@
 local unitName = "cfusionplant"
 
 --------------------------------------------------------------------------------
-
+--NEWFUS
 local unitDef = {
   activateWhenBuilt  = true,
   bmcode             = 0,
   buildAngle         = 90096,
-  buildCostEnergy    = 1110690,
-  buildCostMetal     = 34356,
+  buildCostEnergy    = 970000,
+  buildCostMetal     = 63000,
   builder            = false,
-  buildTime          = 1583000,
+  buildTime          = 2200000,
   category           = [[ALL NOTSUB NOWEAPON SPECIAL NOTAIR]],
   copyright          = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
   corpse             = [[dead]],
-  description        = [[Produces 20000 energy]],
-  energyMake         = 20000,
-  energyStorage      = 20000,
+  description        = [[Produces energy]],
+  energyMake         = 25600,
+  energyStorage      = 25600,
   energyUse          = 0,
   explodeAs          = [[SUPERBLAST_BUILDING]],
   floater            = true,

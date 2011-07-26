@@ -4,23 +4,21 @@
 local unitName = "ametalmakerlvl1"
 
 --------------------------------------------------------------------------------
-
+--GADGETED
 local unitDef = {
   activateWhenBuilt  = true,
-  buildCostEnergy    = 3763,
-  buildCostMetal     = 123,
+  buildCostEnergy    = 4795,
+  buildCostMetal     = 143,
   builder            = false,
-  buildTime          = 1729,
+  buildTime          = 4000,
   category           = [[ALL NOTSUB NOWEAPON SPECIAL NOTAIR]],
-  description        = [[Upgraded Metal Maker]],
+  description        = [[Converts upto 200 Energy to Metal]],
   designation        = [[AEM-EMM]],
   energyStorage      = 0,
-  energyUse          = 170,
   explodeAs          = [[ARMESTOR_BUILDING]],
   floater            = true,
   footprintX         = 3,
   footprintZ         = 3,
-  makesMetal         = 3,
   maxDamage          = 300.2,
   maxSlope           = 10,
   maxWaterDepth      = 255,
