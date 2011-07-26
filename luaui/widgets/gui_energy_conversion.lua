@@ -124,7 +124,7 @@ function widget:DrawScreen()
             glText('Usage:', 5, 21, 12, 'do')
 			glText('Efficiency:', 5, 5, 12, 'do')
             glText(format('%i / %i', curUsage, curCapacity), 185, 21, 12, 'dro')
-			glText(format('%.2f%s (x1000)', curAvgEffi * 1000, '%'), 185, 5, 12, 'dro')
+			glText(format('%.2f m / 1000 e', curAvgEffi * 1000), 185, 5, 12, 'dro')
 			glText(currentRating.title, sx+sy/2, sy/2 - 9, 26, 'co') --
 	    glEndText()
 
