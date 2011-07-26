@@ -38,7 +38,6 @@ local unitDef = {
   maxVelocity        = 0,
   maxWaterDepth      = 0,
   metalStorage       = 0,
-  movementClass      = [[KBOT1]],
   name               = [[Nano Turret]],
   noAutoFire         = false,
   objectName         = [[ARMNANOTC]],
