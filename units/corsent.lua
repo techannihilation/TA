@@ -54,7 +54,6 @@ local unitDef = {
   standingfireorder  = 2,
   standingmoveorder  = 0,
   steeringmode       = 2,
-  TEDClass           = [[TANK]],
   trackOffset        = 6,
   trackStrength      = 5,
   trackStretch       = 1,

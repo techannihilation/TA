@@ -50,7 +50,6 @@ local unitDef = {
   sightDistance      = 676,
   smoothAnim         = true,
   standingfireorder  = 2,
-  TEDClass           = [[METAL]],
   turnRate           = 0,
   unitname           = [[cormexp]],
   workerTime         = 0,

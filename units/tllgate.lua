@@ -39,7 +39,6 @@ local unitDef = {
   selfDestructAs     = [[MINE_NUKE]],
   side               = [[TLL]],
   sightDistance      = 240,
-  TEDClass           = [[SPECIAL]],
   threed             = 1,
   unitname           = [[tllgate]],
   unitnumber         = 3403,

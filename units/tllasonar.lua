@@ -42,7 +42,6 @@ local unitDef = {
   side               = [[TLL]],
   sightDistance      = 195,
   sonarDistance      = 2680,
-  TEDClass           = [[WATER]],
   threed             = 1,
   unitname           = [[tllasonar]],
   unitnumber         = 865,

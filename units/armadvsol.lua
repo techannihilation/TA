@@ -4,14 +4,14 @@
 local unitName = "armadvsol"
 
 --------------------------------------------------------------------------------
-
+--NEWFUS
 local unitDef = {
   acceleration       = 0,
   activateWhenBuilt  = true,
   bmcode             = 0,
   brakeRate          = 0,
   buildAngle         = 4096,
-  buildCostEnergy    = 4725,
+  buildCostEnergy    = 4680,
   buildCostMetal     = 343,
   builder            = false,
   buildingGroundDecalDecaySpeed = 30,
@@ -19,7 +19,7 @@ local unitDef = {
   buildingGroundDecalSizeY = 6,
   buildingGroundDecalType = [[armadvsol_aoplane.dds]],
   buildPic           = [[ARMADVSOL.DDS]],
-  buildTime          = 7945,
+  buildTime          = 7000,
   category           = [[ALL NOTSUB NOWEAPON NOTAIR]],
   corpse             = [[DEAD]],
   damageModifier     = 0.9,
@@ -47,7 +47,6 @@ local unitDef = {
   side               = [[ARM]],
   sightDistance      = 260,
   smoothAnim         = true,
-  TEDClass           = [[ENERGY]],
   turnRate           = 0,
   unitname           = [[armadvsol]],
   useBuildingGroundDecal = true,

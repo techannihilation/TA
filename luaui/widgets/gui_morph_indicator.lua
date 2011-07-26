@@ -147,12 +147,12 @@ end
 local function SetUnitRank(unitID)
   local ud = UnitDefs[GetUnitDefID(unitID)]
   local rankIndex = 0
-  local unitName = ud.name
   local i, v
   if (ud == nil) then
     alliedUnits[unitID] = nil
     return
   end
+  local unitName = ud.name
   local xp = GetUnitExperience(unitID)
   if (not xp) then
     alliedUnits[unitID] = nil

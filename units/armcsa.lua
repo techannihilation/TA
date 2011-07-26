@@ -58,7 +58,6 @@ local unitDef = {
   smoothAnim         = true,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[VTOL]],
   terraformSpeed     = 180,
   turnRate           = 148,
   unitname           = [[armcsa]],

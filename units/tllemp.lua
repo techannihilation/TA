@@ -44,7 +44,6 @@ local unitDef = {
   side               = [[TLL]],
   sightDistance      = 350,
   standingfireorder  = 0,
-  TEDClass           = [[SPECIAL]],
   threed             = 1,
   unitname           = [[tllemp]],
   unitnumber         = 861,

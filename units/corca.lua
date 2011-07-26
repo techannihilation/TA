@@ -56,7 +56,6 @@ local unitDef = {
   smoothAnim         = true,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[CNSTR]],
   terraformSpeed     = 135,
   turnRate           = 94,
   unitname           = [[corca]],

@@ -49,7 +49,6 @@ local unitDef = {
   spanishdescription = [[Lanzamisiles nucleares]],
   standingfireorder  = 0,
   stealth            = true,
-  TEDClass           = [[SPECIAL]],
   threed             = 1,
   unitname           = [[tllsilo]],
   unitnumber         = 859,

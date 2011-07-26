@@ -50,7 +50,6 @@ local unitDef = {
   standingfireorder  = 2,
   standingmoveorder  = 1,
   stealth            = true,
-  TEDClass           = [[PLANT]],
   threed             = 1,
   unitname           = [[aahpns]],
   unitnumber         = 11002,

@@ -57,7 +57,6 @@ local unitDef = {
   spanishname        = [[Venom]],
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[CNSTR]],
   threed             = 1,
   turnRate           = 1020,
   unitname           = [[armmlspd]],

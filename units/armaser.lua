@@ -55,7 +55,6 @@ local unitDef = {
   smoothAnim         = true,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[KBOT]],
   turnRate           = 1045,
   unitname           = [[armaser]],
   workerTime         = 0,

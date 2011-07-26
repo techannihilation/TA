@@ -54,7 +54,6 @@ local unitDef = {
   standingfireorder  = 1,
   standingmoveorder  = 0,
   steeringmode       = 1,
-  TEDClass           = [[TANK]],
   threed             = 1,
   turnRate           = 192,
   unitname           = [[armsiege]],

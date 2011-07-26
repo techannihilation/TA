@@ -49,7 +49,6 @@ local unitDef = {
   sightDistance      = 230,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[TANK]],
   threed             = 1,
   turnRate           = 512,
   unitname           = [[tllobscurer]],

@@ -57,7 +57,6 @@ local unitDef = {
   spanishname        = [[Buque de Constr.]],
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[SHIP]],
   threed             = 1,
   turnRate           = 321,
   unitname           = [[tllcs]],

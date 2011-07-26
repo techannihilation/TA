@@ -45,7 +45,6 @@ local unitDef = {
   sightDistance      = 700,
   smoothAnim         = true,
   standingfireorder  = 2,
-  TEDClass           = [[FORT]],
   turnRate           = 0,
   unitname           = [[corerad]],
   workerTime         = 0,

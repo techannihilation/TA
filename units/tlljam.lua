@@ -41,7 +41,6 @@ local unitDef = {
   selfDestructAs     = [[BIG_UNIT]],
   side               = [[TLL]],
   sightDistance      = 240,
-  TEDClass           = [[SPECIAL]],
   threed             = 1,
   unitname           = [[tlljam]],
   unitnumber         = 841,

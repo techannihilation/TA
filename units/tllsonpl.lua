@@ -58,7 +58,6 @@ local unitDef = {
   spanishdescription = [[Sonar Aerotransportado]],
   standingmoveorder  = 2,
   steeringmode       = 1,
-  TEDClass           = [[VTOL]],
   threed             = 1,
   turnRate           = 455,
   unitname           = [[tllsonpl]],

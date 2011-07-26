@@ -61,7 +61,6 @@ local unitDef = {
   standingfireorder  = 0,
   standingmoveorder  = 1,
   steeringmode       = 2,
-  TEDClass           = [[KBOT]],
   threed             = 1,
   turnRate           = 1216,
   unitname           = [[tllsniper]],

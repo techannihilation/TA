@@ -43,7 +43,6 @@ local unitDef = {
   side               = [[ARM]],
   sightDistance      = 273,
   smoothAnim         = true,
-  TEDClass           = [[ENERGY]],
   turnRate           = 0,
   unitname           = [[armwin]],
   windGenerator      = 120,

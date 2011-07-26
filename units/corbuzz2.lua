@@ -50,7 +50,6 @@ local unitDef = {
   sightDistance      = 273,
   smoothAnim         = true,
   standingfireorder  = 3,
-  TEDClass           = [[FORT]],
   turnRate           = 0,
   unitname           = [[corbuzz2]],
   workerTime         = 0,

@@ -53,7 +53,6 @@ local unitDef = {
   standingfireorder  = 2,
   standingmoveorder  = 1,
   steeringmode       = 2,
-  TEDClass           = [[KBOT]],
   turnRate           = 1103,
   unitname           = [[corstorm1]],
   upright            = true,

@@ -55,7 +55,6 @@ local unitDef = {
   smoothAnim         = true,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[SHIP]],
   turnRate           = 540,
   unitname           = [[armsjam]],
   workerTime         = 0,

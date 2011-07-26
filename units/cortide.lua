@@ -41,7 +41,6 @@ local unitDef = {
   side               = [[CORE]],
   sightDistance      = 130,
   smoothAnim         = true,
-  TEDClass           = [[WATER]],
   tidalGenerator     = 1,
   turnRate           = 0,
   unitname           = [[cortide]],

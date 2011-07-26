@@ -44,7 +44,6 @@ local unitDef = {
   sightDistance      = 310,
   spanishdescription = [[Láser automático pesado]],
   standingfireorder  = 2,
-  TEDClass           = [[FORT]],
   threed             = 1,
   unitname           = [[tllpulaser]],
   unitnumber         = 844,

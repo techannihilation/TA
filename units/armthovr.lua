@@ -58,7 +58,6 @@ local unitDef = {
   standingfireorder  = 2,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[TANK]],
   transportCapacity  = 20,
   transportmaxunits  = 8,
   transportSize      = 3,

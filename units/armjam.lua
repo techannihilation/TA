@@ -65,7 +65,6 @@ local unitDef = {
   spanishname        = [[Jammer]],
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[TANK]],
   threed             = 1,
   trackOffset        = 8,
   trackStrength      = 10,

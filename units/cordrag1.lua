@@ -69,7 +69,6 @@ local unitDef = {
   standingfireorder  = 2,
   standingmoveorder  = 1,
   steeringmode       = 2,
-  TEDClass           = [[VTOL]],
   threed             = 1,
   transmaxunits      = 1,
   transportCapacity  = 1,

@@ -63,7 +63,6 @@ local unitDef = {
   spanishname        = [[Falcon]],
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[VTOL]],
   threed             = 1,
   transmaxunits      = 1,
   transportCapacity  = 1,

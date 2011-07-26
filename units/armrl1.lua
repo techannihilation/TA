@@ -45,7 +45,6 @@ local unitDef = {
   sightDistance      = 455,
   smoothAnim         = true,
   standingfireorder  = 2,
-  TEDClass           = [[METAL]],
   turnRate           = 0,
   unitname           = [[armrl1]],
   workerTime         = 0,

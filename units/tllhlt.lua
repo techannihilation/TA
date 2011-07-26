@@ -44,7 +44,6 @@ local unitDef = {
   sightDistance      = 380,
   spanishdescription = [[Torre láser pesada]],
   standingfireorder  = 2,
-  TEDClass           = [[FORT]],
   threed             = 1,
   unitname           = [[tllhlt]],
   unitnumber         = 810,

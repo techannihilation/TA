@@ -44,7 +44,6 @@ local unitDef = {
   sightDistance      = 550,
   spanishdescription = [[Arma de fuego antiaéreo]],
   standingfireorder  = 2,
-  TEDClass           = [[FORT]],
   threed             = 1,
   unitname           = [[tllflak]],
   unitnumber         = 818,

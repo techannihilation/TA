@@ -59,7 +59,6 @@ local unitDef = {
   sonarDistance      = 450,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[SHIP]],
   threed             = 1,
   turnRate           = 240,
   unitname           = [[tllacsub]],

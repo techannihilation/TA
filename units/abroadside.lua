@@ -52,7 +52,6 @@ local unitDef = {
   selfDestructAs     = [[MEGA_BLAST1]],
   side               = [[ARM]],
   sightDistance      = 800,
-  TEDClass           = [[VTOL]],
   turnRate           = 86.45,
   unitname           = [[abroadside]],
   sounds = {
