@@ -49,6 +49,9 @@ shieldDef[UnitDefNames["tllcom5"].id] = true
 shieldDef[UnitDefNames["tllcom6"].id] = true
 shieldDef[UnitDefNames["tllcom7"].id] = true
 shieldDef[UnitDefNames["tllgate"].id] = true
+shieldDef[UnitDefNames["tllgate1"].id] = true
+shieldDef[UnitDefNames["tllmono"].id] = true
+
 local shields = {}
 local gameFrame = 0
 

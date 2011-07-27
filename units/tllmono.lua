@@ -7,6 +7,7 @@ local unitName = "tllmono"
 
 local unitDef = {
   acceleration       = 0.10,
+  activateWhenBuilt  = true,
   bmcode             = 1,
   brakeRate          = 0.71,
   buildCostEnergy    = 230039,
@@ -46,6 +47,7 @@ local unitDef = {
   noAutoFire         = false,
   noChaseCategory    = [[VTOL]],
   objectName         = [[tllmono]],
+  onoffable          = true,
   ovradjust          = 1,
   radarDistance      = 1200,
   selfDestructAs     = [[COMMANDER_BLAST]],
@@ -93,6 +95,9 @@ local unitDef = {
       badTargetCategory  = [[VTOL]],
       def                = [[MonoWeap]],
       onlyTargetCategory = [[NOTAIR]],
+    },
+     [3]  = {
+      def                = [[Monolith_Shield]],
     },
   },
 }
@@ -190,6 +195,32 @@ local weaponDefs = {
       vradar             = 250,
       vtol               = 250,
       vtrans             = 250,
+    },
+  },
+   Monolith_Shield = {
+    id                 = 9346,
+    isShield           = true,
+    name               = [[Monolith_Shield]],
+    range              = 290,
+    shieldAlpha        = 0.5,
+    shieldBadColor     = [[1 0.2 0.2]],
+    shieldEnergyUse    = 1500,
+    shieldForce        = 9,
+    shieldGoodColor    = [[0.2 1 0.2]],
+    shieldInterceptType = 1,
+    shieldMaxSpeed     = 3500,
+    shieldPower        = 7000,
+    shieldPowerRegen   = 50,
+    shieldPowerRegenEnergy = 300,
+    shieldRadius       = 290,
+    shieldRepulser     = true,
+    smartShield        = true,
+    turret             = true,
+    visibleShield      = true,
+    visibleShieldRepulse = true,
+    weaponType         = [[Shield]],
+    damage = {
+      default            = 100,
     },
   },
 }
