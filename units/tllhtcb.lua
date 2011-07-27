@@ -62,6 +62,7 @@ local unitDef = {
   zbuffer            = 1,
   buildoptions = {
     [[tllmegacoldfus]],
+    [[tllgate1]],
      },
   sounds = {
     build              = [[nanlath1]],
