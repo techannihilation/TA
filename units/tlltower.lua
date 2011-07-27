@@ -35,7 +35,6 @@ local unitDef = {
   selfDestructAs     = [[SMALL_BUILDING]],
   side               = [[TLL]],
   sightDistance      = 1300,
-  TEDClass           = [[SPECIAL]],
   threed             = 1,
   unitname           = [[tlltower]],
   unitnumber         = 1809,

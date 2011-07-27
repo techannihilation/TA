@@ -60,7 +60,6 @@ local unitDef = {
   standingmoveorder  = 1,
   stealth            = true,
   steeringmode       = 1,
-  TEDClass           = [[VTOL]],
   transmaxunits      = 1,
   transportCapacity  = 30,
   transportmaxunits  = 1,

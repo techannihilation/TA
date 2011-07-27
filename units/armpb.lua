@@ -51,7 +51,6 @@ local unitDef = {
   sightDistance      = 598,
   smoothAnim         = true,
   standingfireorder  = 2,
-  TEDClass           = [[FORT]],
   turnRate           = 0,
   unitname           = [[armpb]],
   yardMap            = [[ooooooooo]],

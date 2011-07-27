@@ -58,7 +58,6 @@ local unitDef = {
   standingfireorder  = 2,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[SHIP]],
   turnRate           = 454,
   unitname           = [[armcrus]],
   workerTime         = 0,

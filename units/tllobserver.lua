@@ -52,7 +52,6 @@ local unitDef = {
   smoothAnim         = true,
   standingmoveorder  = 0,
   steeringmode       = 1,
-  TEDClass           = [[KBOT]],
   threed             = 1,
   turnRate           = 750,
   unitname           = [[tllobserver]],

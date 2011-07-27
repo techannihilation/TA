@@ -51,7 +51,6 @@ local unitDef = {
   standingmoveorder  = 1,
   stealth            = true,
   steeringmode       = 1,
-  TEDClass           = [[VTOL]],
   threed             = 1,
   turnRate           = 1280,
   unitname           = [[shrike]],

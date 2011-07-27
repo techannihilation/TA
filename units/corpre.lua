@@ -49,7 +49,6 @@ local unitDef = {
   spanishdescription = [[Arma de fuego antiaéreo]],
   spanishname        = [[Precipitator]],
   standingfireorder  = 2,
-  TEDClass           = [[FORT]],
   threed             = 1,
   unitname           = [[corpre]],
   unitnumber         = 161,

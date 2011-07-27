@@ -45,7 +45,6 @@ local unitDef = {
   sightDistance      = 273,
   smoothAnim         = true,
   standingfireorder  = 2,
-  TEDClass           = [[FORT]],
   turnRate           = 0,
   unitname           = [[corint1]],
   workerTime         = 0,

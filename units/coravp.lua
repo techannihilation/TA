@@ -52,7 +52,6 @@ local unitDef = {
   sortbias           = 0,
   standingfireorder  = 2,
   standingmoveorder  = 1,
-  TEDClass           = [[PLANT]],
   turnRate           = 0,
   unitname           = [[coravp]],
   useBuildingGroundDecal = true,

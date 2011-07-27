@@ -56,7 +56,6 @@ local unitDef = {
   smoothAnim         = true,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[SHIP]],
   terraformSpeed     = 900,
   turnRate           = 364,
   unitname           = [[coracsub]],

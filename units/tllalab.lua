@@ -44,7 +44,6 @@ local unitDef = {
   sightDistance      = 220,
   standingfireorder  = 2,
   standingmoveorder  = 2,
-  TEDClass           = [[PLANT]],
   threed             = 1,
   unitname           = [[tllalab]],
   unitnumber         = 816,

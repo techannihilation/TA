@@ -4,22 +4,22 @@
 local unitName = "aafus"
 
 --------------------------------------------------------------------------------
-
+--NEWFUS
 local unitDef = {
   acceleration       = 0,
   activateWhenBuilt  = false,
   bmcode             = 0,
   brakeRate          = 0,
   buildAngle         = 4096,
-  buildCostEnergy    = 74115,
-  buildCostMetal     = 10709,
+  buildCostEnergy    = 110000,
+  buildCostMetal     = 9320,
   builder            = false,
   buildingGroundDecalDecaySpeed = 30,
   buildingGroundDecalSizeX = 8,
   buildingGroundDecalSizeY = 8,
   buildingGroundDecalType = [[aafus_aoplane.dds]],
   buildPic           = [[AAFUS.DDS]],
-  buildTime          = 197529,
+  buildTime          = 200000,
   category           = [[ALL NOTSUB NOWEAPON SPECIAL NOTAIR]],
   collisionvolumeoffsets = [[0 0 0]],
   collisionvolumescales = [[118 78 76]],
@@ -29,7 +29,7 @@ local unitDef = {
   damageModifier     = 0.95,
   description        = [[Enhanced Energy Output / Storage]],
   energyMake         = 3000,
-  energyStorage      = 25000,
+  energyStorage      = 50000,
   energyUse          = 0,
   explodeAs          = [[NUCLEAR_MISSILE]],
   footprintX         = 7,
@@ -51,7 +51,6 @@ local unitDef = {
   side               = [[ARM]],
   sightDistance      = 273,
   smoothAnim         = true,
-  TEDClass           = [[ENERGY]],
   turnRate           = 0,
   unitname           = [[aafus]],
   useBuildingGroundDecal = true,

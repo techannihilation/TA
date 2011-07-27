@@ -61,7 +61,6 @@ local unitDef = {
   standingfireorder  = 0,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[SPECIAL]],
   turnRate           = 64,
   unitname           = [[armhcar]],
   waterline          = 2,

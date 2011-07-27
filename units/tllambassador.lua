@@ -50,7 +50,6 @@ local unitDef = {
   spanishdescription = [[Transporte anfibio]],
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[SHIP]],
   threed             = 1,
   transportCapacity  = 20,
   transportSize      = 3,

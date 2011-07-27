@@ -50,7 +50,6 @@ local unitDef = {
   sightDistance      = 215,
   smoothAnim         = true,
   sonarDistance      = 2400,
-  TEDClass           = [[WATER]],
   turnRate           = 0,
   unitname           = [[armason]],
   useBuildingGroundDecal = true,

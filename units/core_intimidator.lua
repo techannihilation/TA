@@ -43,7 +43,6 @@ local unitDef = {
   side               = [[Core]],
   sightDistance      = 367.5,
   standingfireorder  = 2,
-  TEDClass           = [[FORT]],
   threed             = 1,
   unitname           = [[core_intimidator]],
   unitnumber         = 113,

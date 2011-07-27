@@ -44,7 +44,6 @@ local unitDef = {
   sightDistance      = 550,
   smoothAnim         = true,
   standingfireorder  = 2,
-  TEDClass           = [[WATER]],
   turnRate           = 0,
   unitname           = [[armfflak]],
   waterline          = 4,

@@ -53,7 +53,6 @@ local unitDef = {
   spanishdescription = [[Avión de reconocimiento]],
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[VTOL]],
   threed             = 1,
   turnRate           = 800,
   unitname           = [[tllprob]],

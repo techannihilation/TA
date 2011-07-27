@@ -4,21 +4,20 @@
 local unitName = "tllwmconv"
 
 --------------------------------------------------------------------------------
-
+-- GADGETED
 local unitDef = {
   activateWhenBuilt  = true,
   bmcode             = 0,
   buildAngle         = 8192,
-  buildCostEnergy    = 1597,
-  buildCostMetal     = 6,
+  buildCostEnergy    = 274,
+  buildCostMetal     = 27,
   builder            = false,
-  buildTime          = 2887,
+  buildTime          = 2200,
   category           = [[TLL  LEVEL1 NOWEAPON NOTAIR NOTSUB]],
   copyright          = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
   corpse             = [[dead]],
-  description        = [[Floating Metal Maker]],
+  description        = [[Converts upto 100 Energy into Metal]],
   designation        = [[WM-CONV]],
-  energyUse          = 80,
   explodeAs          = [[SMALL_BUILDINGEX]],
   footprintX         = 3,
   footprintZ         = 3,
@@ -28,7 +27,6 @@ local unitDef = {
   germanname         = [[Schwimmschmelze]],
   italiandescription = [[Fabbrica metalli]],
   italianname        = [[Generatore di Metallo - SN]],
-  makesMetal         = 1.1,
   maxDamage          = 120,
   maxSlope           = 10,
   minWaterDepth      = 10,
@@ -43,7 +41,6 @@ local unitDef = {
   sightDistance      = 200,
   spanishdescription = [[Produce metal]],
   spanishname        = [[Productor de Metal - SN]],
-  TEDClass           = [[]],
   threed             = 1,
   unitname           = [[tllwmconv]],
   unitnumber         = 870,

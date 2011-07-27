@@ -56,7 +56,6 @@ local unitDef = {
   smoothAnim         = true,
   standingfireorder  = 2,
   stealth            = true,
-  TEDClass           = [[FORT]],
   threed             = 1,
   turnRate           = 1e-13,
   unitname           = [[cormaw]],

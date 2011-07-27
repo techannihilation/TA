@@ -44,7 +44,6 @@ local unitDef = {
   side               = [[Arm]],
   sightDistance      = 612.5,
   standingfireorder  = 2,
-  TEDClass           = [[FORT]],
   threed             = 1,
   unitname           = [[arm_guardian]],
   unitnumber         = 36,

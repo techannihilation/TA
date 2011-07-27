@@ -55,7 +55,6 @@ local unitDef = {
   smoothAnim         = true,
   standingfireorder  = 2,
   stealth            = true,
-  TEDClass           = [[SPECIAL]],
   turnRate           = 0,
   unitname           = [[corfmine3]],
   waterline          = 0,

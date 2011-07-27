@@ -55,7 +55,6 @@ local unitDef = {
   standingfireorder  = 2,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[VTOL]],
   turnRate           = 535,
   unitname           = [[armcybr]],
   workerTime         = 0,

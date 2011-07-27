@@ -43,7 +43,6 @@ local unitDef = {
   sightDistance      = 140,
   spanishdescription = [[Incrementa el almacenaje de metal]],
   spanishname        = [[Almacén Metal Subacuático]],
-  TEDClass           = [[]],
   threed             = 1,
   unitname           = [[tlluwmstorage]],
   unitnumber         = 856,

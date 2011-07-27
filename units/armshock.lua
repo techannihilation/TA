@@ -52,7 +52,6 @@ local unitDef = {
   standingfireorder  = 2,
   standingmoveorder  = 0,
   steeringmode       = 1,
-  TEDClass           = [[TANK]],
   turnRate           = 231,
   unitname           = [[armshock]],
   sounds = {

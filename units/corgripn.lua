@@ -55,7 +55,6 @@ local unitDef = {
   standingmoveorder  = 2,
   stealth            = true,
   steeringmode       = 1,
-  TEDClass           = [[VTOL]],
   turnRate           = 396,
   unitname           = [[corgripn]],
   sounds = {

@@ -56,7 +56,6 @@ local unitDef = {
   smoothAnim         = true,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[VTOL]],
   transmaxunits      = 1,
   transportCapacity  = 30,
   transportmaxunits  = 1,

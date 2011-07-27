@@ -56,7 +56,6 @@ local unitDef = {
   standingmoveorder  = 1,
   steeringmode       = 1,
   seismicSignature   = 5000,
-  TEDClass           = [[KBOT]],
   threed             = 1,
   turnRate           = 108,
   unitname           = [[tllmono]],

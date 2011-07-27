@@ -62,7 +62,6 @@ local unitDef = {
   spanishname        = [[Informer]],
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[TANK]],
   threed             = 1,
   trackOffset        = 0,
   trackStrength      = 10,

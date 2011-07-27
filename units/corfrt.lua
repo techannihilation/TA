@@ -45,7 +45,6 @@ local unitDef = {
   sightDistance      = 468,
   smoothAnim         = true,
   standingfireorder  = 2,
-  TEDClass           = [[METAL]],
   turnRate           = 0,
   unitname           = [[corfrt]],
   waterline          = 9,
