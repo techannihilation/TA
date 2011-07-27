@@ -47,6 +47,7 @@ local char = string.char
 
 local glColor = gl.Color
 local glText = gl.Text
+local glRect = gl.Rect
 
 local spGetTeamInfo = Spring.GetTeamInfo
 local spGetPlayerInfo = Spring.GetPlayerInfo
@@ -64,12 +65,15 @@ local spGetUnitTeam = Spring.GetUnitTeam
 local uDefs = UnitDefs
 local wDefs = WeaponDefs
 
+local myTeamID = Spring.GetMyTeamID
+local spGetTeamRulesParam = Spring.GetTeamRulesParam
+
 ------------------------------------------------------------------------------------
 -- Functions
 ------------------------------------------------------------------------------------
 local function DrawText(t1, t2)
 	glText(t1, cX, cY, fontSize, "o")
-	glText(t2, cX + 60, cY, fontSize, "o")
+	glText(t2, cX + 100, cY, fontSize, "o")
 	cY = cY - fontSize
 end
 
@@ -140,10 +144,39 @@ function widget:DrawScreen()
 	
 	cX = mx + xOffset
 	cY = my + yOffset
-	glColor(1.0, 1.0, 1.0, 1.0)
 	
+	glColor(1.0, 1.0, 1.0, 1.0)
+
 	glText(teamColorStr(uTeam) .. teamName(uTeam) .. "'s " .. yellow .. uDef.humanName .. white .. " (" .. uDef.name .. ", #" .. uID .. ")", cX, cY, fontSize, "o")
 	cY = cY - 2 * fontSize
+
+	
+	if(WG.energyConversion) then
+		local makerTemp = WG.energyConversion.convertCapacities[uDefID]
+		local curAvgEffi = spGetTeamRulesParam(myTeamID(), 'mmAvgEffi')
+		local avgCR = 0.015
+		if(makerTemp) then 
+			DrawText(orange .. "Metal maker properties", '')
+			DrawText("M-Capac.:", makerTemp.c)
+			DrawText("M-Effi.:", format('%.2f m / 1000 e', makerTemp.e * 1000))
+			cY = cY - fontSize
+		end
+		if not (#uDef.weapons>0) then
+			if (uDef.energyMake and uDef.energyMake>10) then
+			-- Powerplants 
+				DrawText(orange .. "Powerplant properties", '')
+				DrawText("CR is metal maker conversion rate", '')
+				DrawText("E-Out.:", uDef.energyMake)
+				DrawText("M-Cost.:", uDef.metalCost)
+				DrawText("Avg-Effi.:", format('%.2f%% e / (m + e * avg. CR) ', uDef.energyMake * 100 / (uDef.metalCost + uDef.energyCost * avgCR)))
+				if(curAvgEffi>0) then
+					DrawText("Curr-Effi.:", format('%.2f%% e / (m + e * curr. CR) ', uDef.energyMake * 100 / (uDef.metalCost + uDef.energyCost * curAvgEffi)))
+				end
+				cY = cY - fontSize
+			end
+		end
+	end
+	
 	
 	-- Units that are still building
 	if buildProg and (buildProg < 1.0) then

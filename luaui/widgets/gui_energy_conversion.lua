@@ -61,6 +61,9 @@ local eThresholds = {
 }
 
 --table.sort(eThresholds, function(a,b) return a.e>b.e end)
+local convertCapacities = VFS.Include('LuaRules/Configs/maker_defs.lua')
+
+
 
 local function getLetter(effi)
 
@@ -76,6 +79,10 @@ end
 -- Funcs
 --------------------------------------------------------------------------------
 function widget:Initialize()
+
+	
+	WG.energyConversion = {convertCapacities = convertCapacities}
+	
 	local playerID = Spring.GetMyPlayerID()
 	local _, _, spec, _, _, _, _, _ = Spring.GetPlayerInfo(playerID)
 		
@@ -124,7 +131,7 @@ function widget:DrawScreen()
             glText('Usage:', 5, 21, 12, 'do')
 			glText('Efficiency:', 5, 5, 12, 'do')
             glText(format('%i / %i', curUsage, curCapacity), 185, 21, 12, 'dro')
-			glText(format('%.2f%s (x1000)', curAvgEffi * 1000, '%'), 185, 5, 12, 'dro')
+			glText(format('%.2f m / 1000 e', curAvgEffi * 1000), 185, 5, 12, 'dro')
 			glText(currentRating.title, sx+sy/2, sy/2 - 9, 26, 'co') --
 	    glEndText()
 
