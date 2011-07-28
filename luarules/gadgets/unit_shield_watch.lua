@@ -26,7 +26,7 @@ local mathMin = math.min
 local shieldDef = {}
 --Arm
 shieldDef[UnitDefNames["armgate"].id] = true
-shieldDef[UnitDefNames["armgate1"].id] = true
+--shieldDef[UnitDefNames["armgate1"].id] = true
 shieldDef[UnitDefNames["armgate2"].id] = true
 shieldDef[UnitDefNames["armcom5"].id] = true
 shieldDef[UnitDefNames["armcom6"].id] = true
@@ -36,7 +36,7 @@ shieldDef[UnitDefNames["armmas"].id] = true
 shieldDef[UnitDefNames["armflosh"].id] = true
 --Core
 shieldDef[UnitDefNames["corgate"].id] = true
-shieldDef[UnitDefNames["corgate1"].id] = true
+--shieldDef[UnitDefNames["corgate1"].id] = true
 shieldDef[UnitDefNames["corgate2"].id] = true
 shieldDef[UnitDefNames["corcom5"].id] = true
 shieldDef[UnitDefNames["corcom6"].id] = true
@@ -49,7 +49,7 @@ shieldDef[UnitDefNames["tllcom5"].id] = true
 shieldDef[UnitDefNames["tllcom6"].id] = true
 shieldDef[UnitDefNames["tllcom7"].id] = true
 shieldDef[UnitDefNames["tllgate"].id] = true
-shieldDef[UnitDefNames["tllgate1"].id] = true
+--shieldDef[UnitDefNames["tllgate1"].id] = true
 shieldDef[UnitDefNames["tllmono"].id] = true
 
 local shields = {}
