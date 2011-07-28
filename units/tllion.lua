@@ -45,7 +45,6 @@ local unitDef = {
   side               = [[TLL]],
   sightDistance      = 300,
   standingfireorder  = 2,
-  TEDClass           = [[FORT]],
   unitname           = [[tllion]],
   workerTime         = 0,
   yardMap            = [[yoooyyy yoooooo ooooooo ooooooo yoooooo yoooooy yyooooy ]],

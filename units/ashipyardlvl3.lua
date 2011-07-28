@@ -37,7 +37,6 @@ local unitDef = {
   selfDestructAs     = [[SHIPBLAST]],
   side               = [[ARM]],
   sightDistance      = 220,
-  TEDClass           = [[PLANT]],
   unitname           = [[ashipyardlvl3]],
   workerTime         = 240,
   yardMap            = [[OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO]],

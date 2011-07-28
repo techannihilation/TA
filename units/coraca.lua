@@ -57,7 +57,6 @@ local unitDef = {
   smoothAnim         = true,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[CNSTR]],
   turnRate           = 121,
   unitname           = [[coraca]],
   workerTime         = 180,

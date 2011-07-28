@@ -51,7 +51,6 @@ local unitDef = {
   spanishname        = [[Kbot Todoterreno de Constr.]],
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[TANK]],
   threed             = 1,
   turnRate           = 1020,
   unitname           = [[armcspid]],

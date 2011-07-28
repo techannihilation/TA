@@ -60,7 +60,6 @@ local unitDef = {
   standingfireorder  = 2,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[KBOT]],
   threed             = 1,
   turnRate           = 100,
   unitname           = [[armcrabe]],

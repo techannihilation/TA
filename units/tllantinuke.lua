@@ -44,7 +44,6 @@ local unitDef = {
   sightDistance      = 155,
   spanishdescription = [[Sistema de Defensa Antimisiles]],
   standingfireorder  = 2,
-  TEDClass           = [[FORT]],
   threed             = 1,
   unitname           = [[tllantinuke]],
   unitnumber         = 860,

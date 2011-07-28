@@ -46,7 +46,6 @@ local unitDef = {
   sightDistance      = 585,
   smoothAnim         = true,
   standingfireorder  = 2,
-  TEDClass           = [[WATER]],
   turnRate           = 0,
   unitname           = [[coratl]],
   waterline          = 30,

@@ -61,7 +61,6 @@ local unitDef = {
   standingfireorder  = 2,
   standingmoveorder  = 1,
   steeringmode       = 2,
-  TEDClass           = [[TANK]],
   threed             = 1,
   turnRate           = 220,
   unitname           = [[armsonic]],

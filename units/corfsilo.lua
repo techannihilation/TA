@@ -45,7 +45,6 @@ local unitDef = {
   side               = [[CORE]],
   sightDistance      = 350,
   standingfireorder  = 0,
-  TEDClass           = [[SPECIAL]],
   threed             = 1,
   unitname           = [[corfsilo]],
   unitnumber         = 3364,

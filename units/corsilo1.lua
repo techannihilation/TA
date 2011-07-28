@@ -46,7 +46,6 @@ local unitDef = {
   sightDistance      = 455,
   smoothAnim         = true,
   standingfireorder  = 0,
-  TEDClass           = [[SPECIAL]],
   turnRate           = 0,
   unitname           = [[corsilo1]],
   workerTime         = 0,

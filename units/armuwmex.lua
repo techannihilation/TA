@@ -42,7 +42,6 @@ local unitDef = {
   side               = [[ARM]],
   sightDistance      = 182,
   smoothAnim         = true,
-  TEDClass           = [[METAL]],
   turnRate           = 0,
   unitname           = [[armuwmex]],
   workerTime         = 0,

@@ -69,7 +69,6 @@ local unitDef = {
   spanishname        = [[B-52G Stratofortress]],
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[VTOL]],
   threed             = 1,
   turnRate           = 185,
   unitname           = [[RaT_ArmBomber]],

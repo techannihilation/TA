@@ -60,7 +60,6 @@ local unitDef = {
   standingfireorder  = 2,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[WATER]],
   turnRate           = 200,
   unitname           = [[uppercut]],
   waterline          = 42,

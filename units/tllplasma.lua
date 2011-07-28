@@ -45,7 +45,6 @@ local unitDef = {
   sightDistance      = 310,
   spanishdescription = [[Cañon de ataque pesado]],
   standingfireorder  = 2,
-  TEDClass           = [[FORT]],
   threed             = 1,
   unitname           = [[tllplasma]],
   unitnumber         = 878,

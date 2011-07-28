@@ -61,7 +61,6 @@ local unitDef = {
   standingfireorder  = 2,
   standingmoveorder  = 1,
   stealth            = false,
-  TEDClass           = [[KBOT]],
   turnRate           = 900,
   unitname           = [[corjurgen]],
   upright            = true,

@@ -45,7 +45,6 @@ local unitDef = {
   side               = [[ARM]],
   sightDistance      = 155,
   smoothAnim         = true,
-  TEDClass           = [[SPECIAL]],
   turnRate           = 0,
   unitname           = [[armveil]],
   workerTime         = 0,

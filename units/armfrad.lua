@@ -46,7 +46,6 @@ local unitDef = {
   side               = [[ARM]],
   sightDistance      = 760,
   smoothAnim         = true,
-  TEDClass           = [[SPECIAL]],
   turnRate           = 0,
   unitname           = [[armfrad]],
   waterline          = 5,

@@ -47,7 +47,6 @@ local unitDef = {
   sightDistance      = 680,
   spanishdescription = [[Arma de Energía]],
   standingfireorder  = 2,
-  TEDClass           = [[FORT]],
   threed             = 1,
   unitname           = [[tllobliterator]],
   unitnumber         = 813,

@@ -48,7 +48,6 @@ local unitDef = {
   spanishname        = [[Mech Lab]],
   standingfireorder  = 2,
   standingmoveorder  = 1,
-  TEDClass           = [[PLANT]],
   threed             = 1,
   unitname           = [[armmechl]],
   unitnumber         = 609,

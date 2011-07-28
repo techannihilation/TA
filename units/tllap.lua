@@ -51,7 +51,6 @@ local unitDef = {
   spanishname        = [[Planta Constr. Aeronaves ]],
   standingfireorder  = 2,
   standingmoveorder  = 1,
-  TEDClass           = [[PLANT]],
   threed             = 1,
   unitname           = [[tllap]],
   unitnumber         = 915,

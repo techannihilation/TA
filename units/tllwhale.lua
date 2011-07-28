@@ -59,7 +59,6 @@ local unitDef = {
   standingmoveorder  = 1,
   stealth            = true,
   steeringmode       = 1,
-  TEDClass           = [[SHIP]],
   threed             = 1,
   turnRate           = 75,
   unitname           = [[tllwhale]],

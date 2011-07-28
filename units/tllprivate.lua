@@ -54,7 +54,6 @@ local unitDef = {
   standingfireorder  = 2,
   standingmoveorder  = 2,
   steeringmode       = 2,
-  TEDClass           = [[KBOT]],
   threed             = 1,
   turnRate           = 1120,
   unitname           = [[tllprivate]],

@@ -36,7 +36,6 @@ local unitDef = {
   side               = [[ARM]],
   sightDistance      = 220,
   stealth            = true,
-  TEDClass           = [[PLANT]],
   unitname           = [[acovertopscentre]],
   workerTime         = 160,
   yardMap            = [[OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO]],

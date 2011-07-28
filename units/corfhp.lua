@@ -45,7 +45,6 @@ local unitDef = {
   smoothAnim         = true,
   standingfireorder  = 2,
   standingmoveorder  = 1,
-  TEDClass           = [[PLANT]],
   turnRate           = 0,
   unitname           = [[corfhp]],
   waterline          = 5,

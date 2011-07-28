@@ -58,7 +58,6 @@ local unitDef = {
   sightDistance      = 350,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[CNSTR]],
   threed             = 1,
   turnRate           = 1.33,
   unitname           = [[ananotower]],

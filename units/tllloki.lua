@@ -51,7 +51,6 @@ local unitDef = {
   standingfireorder  = 2,
   standingmoveorder  = 0,
   steeringmode       = 1,
-  TEDClass           = [[TANK]],
   threed             = 1,
   turnRate           = 350,
   unitname           = [[tllloki]],

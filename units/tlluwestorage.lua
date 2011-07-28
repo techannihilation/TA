@@ -43,7 +43,6 @@ local unitDef = {
   sightDistance      = 140,
   spanishdescription = [[Incrementa el almacenaje de energía]],
   spanishname        = [[Almacén Energía Subacuát.]],
-  TEDClass           = [[]],
   threed             = 1,
   unitname           = [[tlluwestorage]],
   unitnumber         = 857,

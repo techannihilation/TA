@@ -50,7 +50,6 @@ local unitDef = {
   sightDistance      = 357.5,
   smoothAnim         = true,
   sortbias           = 0,
-  TEDClass           = [[SPECIAL]],
   turnRate           = 0,
   unitname           = [[armasp]],
   useBuildingGroundDecal = true,

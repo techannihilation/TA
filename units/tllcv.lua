@@ -57,7 +57,6 @@ local unitDef = {
   spanishname        = [[Vehículo de Constr.]],
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[CNSTR]],
   threed             = 1,
   turnRate           = 275,
   unitname           = [[tllcv]],

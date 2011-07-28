@@ -45,7 +45,6 @@ local unitDef = {
   side               = [[CORE]],
   sightDistance      = 104,
   smoothAnim         = true,
-  TEDClass           = [[SPECIAL]],
   turnRate           = 0,
   unitname           = [[corjamt]],
   workerTime         = 0,

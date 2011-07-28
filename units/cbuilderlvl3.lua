@@ -46,7 +46,6 @@ local unitDef = {
   selfDestructAs     = [[SHIPBLAST]],
   side               = [[CORE]],
   sightDistance      = 400,
-  TEDClass           = [[VTOL]],
   turnRate           = 199.50,
   unitname           = [[cbuilderlvl3]],
   workerTime         = 2000,

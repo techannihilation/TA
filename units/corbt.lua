@@ -10,10 +10,10 @@ local unitDef = {
   badTargetCategory  = [[VTOL]],
   bmcode             = 1,
   brakeRate          = 0.03029395,
-  buildCostEnergy    = 69701,
-  buildCostMetal     = 7673,
+  buildCostEnergy    = 201900,
+  buildCostMetal     = 14950,
   builder            = false,
-  buildTime          = 65530,
+  buildTime          = 155530,
   canAttack          = true,
   canGuard           = true,
   canMove            = true,
@@ -31,8 +31,8 @@ local unitDef = {
   energyUse          = 100,
   explodeAs          = [[BIG_UNITEX]],
   firestandorders    = 1,
-  footprintX         = 4,
-  footprintZ         = 4,
+  footprintX         = 5,
+  footprintZ         = 5,
   frenchdescription  = [[Char d'assaut lourd évolué]],
   frenchname         = [[Sloth]],
   germandescription  = [[mobile Belagerungsplattform]],
@@ -44,7 +44,7 @@ local unitDef = {
   maxWaterDepth      = 20,
   metalStorage       = 0,
   mobilestandorders  = 1,
-  movementClass      = [[htank4]],
+  movementClass      = [[htank5]],
   name               = [[Metron]],
   noAutoFire         = false,
   noChaseCategory    = [[VTOL]],
@@ -53,11 +53,10 @@ local unitDef = {
   selfDestructAs     = [[BIG_UNIT]],
   shootme            = 1,
   side               = [[CORE]],
-  sightDistance      = 1200,
+  sightDistance      = 1000,
   standingfireorder  = 2,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[TANK]],
   threed             = 1,
   turnRate           = 80,
   unitname           = [[corbt]],
@@ -97,37 +96,44 @@ local unitDef = {
 
 
 --------------------------------------------------------------------------------
-
+--1875 DPS
+--15000 per shot
 local weaponDefs = {
   CORBT_CANNON = {
-    areaOfEffect       = 480,
-    craterBoost        = 0,
-    craterMult         = 0,
-    edgeEffectiveness  = 0.1,
+    areaOfEffect       = 210,
+    ballistic          = true,
+    craterMult         = 0.02,
+    edgeEffectiveness  = 0.18,
     explosionart       = [[rogboom1]],
     explosiongaf       = [[rogboom1]],
+    gravityaffected    = [[true]],
+    explosionGenerator = [[custom:BT_BOMB_explosion]],
     id                 = 239,
-    impulseBoost       = 0,
-    impulseFactor      = 0,
+    impulseBoost       = 0.2,
+    impulseFactor      = 0.2,
     lineOfSight        = true,
-    model              = [[BTPulse]],
-    name               = [[Bt Weapon]],
-    noSelfDamage       = true,
-    range              = 2100,
-    reloadtime         = 14,
+    model              = [[bomb]],
+    name               = [[Pepper spray]],
+    noSelfDamage       = false,
+    projectiles = 30,
+    range              = 1150,
+    reloadtime         = 8,
     renderType         = 1,
+    size               = 2.5,
     shakeduration      = 0,
     shakemagnitude     = 0,
-    soundHit           = [[xplomed4]],
-    soundStart         = [[Big_Cannon]],
+    soundHit           = [[explode3]],
+	--Recorded by snottyboy
+    soundStart         = [[mortar_snottyboy]],
+    sprayAngle         = 2100,
     turret             = true,
     waterexplosionart  = [[h2o]],
     waterexplosiongaf  = [[fx]],
     weaponType         = [[Cannon]],
-    weaponVelocity     = 600,
+    weaponVelocity     = 500,
     damage = {
-      commanders         = 1800,
-      default            = 8320,
+      commanders         = 100,
+      default            = 500,
     },
   },
 }
@@ -171,7 +177,6 @@ local featureDefs = {
   },
 }
 unitDef.featureDefs = featureDefs
-
 
 --------------------------------------------------------------------------------
 

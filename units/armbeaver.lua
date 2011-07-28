@@ -52,7 +52,6 @@ local unitDef = {
   smoothAnim         = true,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[TANK]],
   terraformSpeed     = 240,
   trackOffset        = 0,
   trackStrength      = 5,

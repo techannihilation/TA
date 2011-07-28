@@ -46,7 +46,6 @@ local unitDef = {
   smoothAnim         = true,
   standingfireorder  = 2,
   standingmoveorder  = 0,
-  TEDClass           = [[PLANT]],
   turnRate           = 0,
   unitname           = [[armasy]],
   waterline          = 6,

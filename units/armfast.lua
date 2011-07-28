@@ -4,14 +4,14 @@
 local unitName = "armfast"
 
 --------------------------------------------------------------------------------
-
+--~BA750
 local unitDef = {
   acceleration       = 0.36,
   badTargetCategory  = [[ANTIEMG]],
   bmcode             = 1,
   brakeRate          = 0.375,
-  buildCostEnergy    = 3506,
-  buildCostMetal     = 161,
+  buildCostEnergy    = 4382,
+  buildCostMetal     = 177,
   builder            = false,
   buildPic           = [[ARMFAST.DDS]],
   buildTime          = 3168,
@@ -33,7 +33,7 @@ local unitDef = {
   idleAutoHeal       = 5,
   idleTime           = 1800,
   maneuverleashlength = 640,
-  maxDamage          = 580,
+  maxDamage          = 620,
   maxSlope           = 17,
   maxVelocity        = 3.61,
   maxWaterDepth      = 12,
@@ -52,7 +52,6 @@ local unitDef = {
   standingfireorder  = 2,
   standingmoveorder  = 1,
   steeringmode       = 2,
-  TEDClass           = [[KBOT]],
   turnRate           = 1430,
   unitname           = [[armfast]],
   upright            = true,

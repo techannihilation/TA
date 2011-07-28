@@ -42,7 +42,6 @@ local unitDef = {
   sightDistance      = 210,
   spanishdescription = [[Incrementa capacidad de alm.energía]],
   spanishname        = [[Almacén de Energía]],
-  TEDClass           = [[]],
   threed             = 1,
   unitname           = [[tllestor]],
   unitnumber         = 892,

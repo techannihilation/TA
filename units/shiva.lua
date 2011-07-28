@@ -51,7 +51,6 @@ local unitDef = {
   standingfireorder  = 2,
   standingmoveorder  = 1,
   steeringmode       = 2,
-  TEDClass           = [[KBOT]],
   turnRate           = 616,
   unitname           = [[shiva]],
   upright            = true,

@@ -4,24 +4,24 @@
 local unitName = "cafus"
 
 --------------------------------------------------------------------------------
-
+--NEWFUS
 local unitDef = {
   acceleration       = 0,
   activateWhenBuilt  = false,
   bmcode             = 0,
   brakeRate          = 0,
   buildAngle         = 4096,
-  buildCostEnergy    = 64730,
-  buildCostMetal     = 10997,
+  buildCostEnergy    = 85000,
+  buildCostMetal     = 10500,
   builder            = false,
   buildPic           = [[CAFUS.DDS]],
-  buildTime          = 198390,
+  buildTime          = 260000,
   category           = [[ALL NOTSUB NOWEAPON SPECIAL NOTAIR]],
   corpse             = [[DEAD]],
   damageModifier     = 0.95,
   description        = [[Enhanced Energy Output / Storage]],
-  energyMake         = 3000,
-  energyStorage      = 25000,
+  energyMake         = 3200,
+  energyStorage      = 51200,
   energyUse          = 0,
   explodeAs          = [[NUCLEAR_MISSILE]],
   footprintX         = 6,
@@ -43,7 +43,6 @@ local unitDef = {
   side               = [[CORE]],
   sightDistance      = 273,
   smoothAnim         = true,
-  TEDClass           = [[ENERGY]],
   turnRate           = 0,
   unitname           = [[cafus]],
   workerTime         = 0,

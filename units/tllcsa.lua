@@ -63,7 +63,6 @@ local unitDef = {
   spanishname        = [[Hidroavión de Construcción]],
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[VTOL]],
   threed             = 1,
   turnRate           = 125,
   unitname           = [[tllcsa]],

@@ -47,7 +47,6 @@ local unitDef = {
   selfDestructAs     = [[SMALLSHIP]],
   side               = [[ARM]],
   sightDistance      = 400,
-  TEDClass           = [[CNSTR]],
   turnRate           = 380.38,
   unitname           = [[abuilderlvl2]],
   workerTime         = 100,

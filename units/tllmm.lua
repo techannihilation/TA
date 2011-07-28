@@ -4,22 +4,21 @@
 local unitName = "tllmm"
 
 --------------------------------------------------------------------------------
-
+-- GADGETED
 local unitDef = {
   activateWhenBuilt  = true,
   bmcode             = 0,
   buildAngle         = 8192,
-  buildCostEnergy    = 100,
-  buildCostMetal     = 21,
+  buildCostEnergy    = 160,
+  buildCostMetal     = 16,
   builder            = false,
-  buildTime          = 2901,
+  buildTime          = 2000,
   category           = [[TLL  LEVEL1 NOWEAPON NOTAIR NOTSUB]],
   copyright          = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
   corpse             = [[dead]],
   damageModifier     = 0.4,
-  description        = [[Converts Energy into Metal]],
+  description        = [[Converts upto 100 Energy into Metal]],
   designation        = [[]],
-  energyUse          = 80,
   explodeAs          = [[ARMESTOR_BUILDINGEX]],
   footprintX         = 3,
   footprintZ         = 3,
@@ -29,7 +28,6 @@ local unitDef = {
   germanname         = [[Metallgenerator]],
   italiandescription = [[Converte energia in metallo]],
   italianname        = [[Generatore di Metallo]],
-  makesMetal         = 1,
   maxDamage          = 172,
   maxSlope           = 10,
   maxWaterDepth      = 0,
@@ -42,7 +40,6 @@ local unitDef = {
   sightDistance      = 210,
   spanishdescription = [[Transforma energía en metal]],
   spanishname        = [[Productor de Metal]],
-  TEDClass           = [[]],
   threed             = 1,
   unitname           = [[tllmm]],
   unitnumber         = 814,

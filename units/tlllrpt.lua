@@ -47,7 +47,6 @@ local unitDef = {
   sightDistance      = 210,
   spanishdescription = [[Cañón de plasma de largo alcance]],
   standingfireorder  = 2,
-  TEDClass           = [[FORT]],
   threed             = 1,
   unitname           = [[tlllrpt]],
   unitnumber         = 820,

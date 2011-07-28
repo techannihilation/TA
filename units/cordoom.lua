@@ -48,7 +48,6 @@ local unitDef = {
   sightDistance      = 780,
   smoothAnim         = true,
   standingfireorder  = 2,
-  TEDClass           = [[FORT]],
   turnRate           = 0,
   unitname           = [[cordoom]],
   workerTime         = 0,

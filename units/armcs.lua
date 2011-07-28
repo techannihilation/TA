@@ -53,7 +53,6 @@ local unitDef = {
   smoothAnim         = true,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[SHIP]],
   terraformSpeed     = 750,
   turnRate           = 448,
   waterline          = 1,

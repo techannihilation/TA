@@ -61,7 +61,6 @@ local unitDef = {
   spanishname        = [[Aeronave de Constr. ]],
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[VTOL]],
   threed             = 1,
   turnRate           = 92,
   unitname           = [[tllca]],

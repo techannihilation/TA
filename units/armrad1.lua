@@ -45,7 +45,6 @@ local unitDef = {
   side               = [[ARM]],
   sightDistance      = 680,
   smoothAnim         = true,
-  TEDClass           = [[SPECIAL]],
   turnRate           = 0,
   unitname           = [[armrad1]],
   workerTime         = 0,

@@ -50,7 +50,6 @@ local unitDef = {
   spanishdescription = [[Lanzatorpedos]],
   spanishname        = [[Lanzatorpedos]],
   standingfireorder  = 2,
-  TEDClass           = [[WATER]],
   threed             = 1,
   unitname           = [[tlltorp]],
   unitnumber         = 855,

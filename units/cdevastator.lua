@@ -68,7 +68,6 @@ local unitDef = {
   standingfireorder  = 2,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[VTOL]],
   turnRate           = 66.50,
   unitname           = [[cdevastator]],
   upright            = true,

@@ -57,7 +57,6 @@ local unitDef = {
   smoothAnim         = true,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[CNSTR]],
   terraformSpeed     = 240,
   turnRate           = 138,
   unitname           = [[armaca]],

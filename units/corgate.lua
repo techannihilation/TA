@@ -42,7 +42,6 @@ local unitDef = {
   side               = [[CORE]],
   sightDistance      = 273,
   smoothAnim         = true,
-  TEDClass           = [[SPECIAL]],
   turnRate           = 0,
   unitname           = [[corgate]],
   workerTime         = 0,

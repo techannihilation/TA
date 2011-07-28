@@ -45,7 +45,6 @@ local unitDef = {
   side               = [[CORE]],
   sightDistance      = 155,
   smoothAnim         = true,
-  TEDClass           = [[SPECIAL]],
   turnRate           = 0,
   unitname           = [[corshroud]],
   workerTime         = 0,

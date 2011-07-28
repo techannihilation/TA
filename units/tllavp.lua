@@ -48,7 +48,6 @@ local unitDef = {
   spanishname        = [[Planta Av. Constr. Vehículos]],
   standingfireorder  = 2,
   standingmoveorder  = 0,
-  TEDClass           = [[PLANT]],
   threed             = 1,
   unitname           = [[tllavp]],
   unitnumber         = 832,

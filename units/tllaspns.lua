@@ -43,7 +43,6 @@ local unitDef = {
   side               = [[TLL]],
   sightDistance      = 175,
   sortbias           = 0,
-  TEDClass           = [[SPECIAL]],
   threed             = 1,
   unitname           = [[tllaspns]],
   unitnumber         = 881,

@@ -62,7 +62,6 @@ local unitDef = {
   standingfireorder  = 2,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[TANK]],
   threed             = 1,
   turnRate           = 260,
   unitname           = [[armvisit]],

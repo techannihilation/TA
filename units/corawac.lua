@@ -55,7 +55,6 @@ local unitDef = {
   sonarDistance      = 1200,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[VTOL]],
   turnRate           = 402,
   unitname           = [[corawac]],
   workerTime         = 0,

@@ -48,7 +48,6 @@ local unitDef = {
   spanishdescription = [[Defensa Múltiple de Energía]],
   spanishname        = [[Búnker Araña]],
   standingfireorder  = 2,
-  TEDClass           = [[FORT]],
   threed             = 1,
   unitname           = [[aspdbunk]],
   unitnumber         = 8799,

@@ -52,7 +52,6 @@ local unitDef = {
   smoothAnim         = true,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[CNSTR]],
   terraformSpeed     = 1240,
   turnRate           = 935,
   unitname           = [[corack]],

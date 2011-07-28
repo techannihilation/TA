@@ -38,7 +38,6 @@ local unitDef = {
   sightDistance      = 400,
   smoothAnim         = true,
   steeringmode       = 2,
-  TEDClass           = [[KBOT]],
   turnRate           = 1021,
   unitname           = [[armaak]],
   upright            = true,

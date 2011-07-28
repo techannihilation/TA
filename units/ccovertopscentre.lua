@@ -36,7 +36,6 @@ local unitDef = {
   side               = [[CORE]],
   sightDistance      = 220,
   stealth            = true,
-  TEDClass           = [[PLANT]],
   unitname           = [[ccovertopscentre]],
   workerTime         = 160,
   yardMap            = [[OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO]],

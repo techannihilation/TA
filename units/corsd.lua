@@ -35,7 +35,6 @@ local unitDef = {
   selfDestructAs     = [[LARGE_BUILDING]],
   side               = [[CORE]],
   sightDistance      = 225,
-  TEDClass           = [[SPECIAL]],
   unitname           = [[corsd]],
   yardMap            = [[oooooooooooooooo]],
   sounds = {

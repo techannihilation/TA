@@ -45,7 +45,6 @@ local unitDef = {
   side               = [[ARM]],
   sightDistance      = 350,
   standingfireorder  = 0,
-  TEDClass           = [[SPECIAL]],
   threed             = 1,
   unitname           = [[armfsilo]],
   unitnumber         = 3362,

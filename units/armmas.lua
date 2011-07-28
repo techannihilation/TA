@@ -43,7 +43,6 @@ local unitDef = {
   selfDestructAs     = [[MINE_NUKE]],
   side               = [[ARM]],
   sightDistance      = 322,
-  TEDClass           = [[METAL]],
   unitname           = [[armmas]],
   workerTime         = 0,
   yardMap            = [[ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo]],

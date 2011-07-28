@@ -56,7 +56,6 @@ local unitDef = {
   standingmoveorder  = 1,
   stealth            = true,
   steeringmode       = 2,
-  TEDClass           = [[KBOT]],
   turnRate           = 1320,
   unitname           = [[corspy]],
   upright            = true,

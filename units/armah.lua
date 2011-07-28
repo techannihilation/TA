@@ -54,7 +54,6 @@ local unitDef = {
   standingfireorder  = 2,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[TANK]],
   turnRate           = 490,
   unitname           = [[armah]],
   workerTime         = 0,

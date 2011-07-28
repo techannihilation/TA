@@ -52,7 +52,6 @@ local unitDef = {
   smoothAnim         = true,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[KBOT]],
   turnRate           = 583,
   unitname           = [[corvoyr]],
   workerTime         = 0,

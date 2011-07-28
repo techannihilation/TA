@@ -57,7 +57,6 @@ local unitDef = {
   standingfireorder  = 2,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[KBOT]],
   threed             = 1,
   turnRate           = 510,
   unitname           = [[cormena]],

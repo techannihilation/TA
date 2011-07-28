@@ -53,7 +53,6 @@ local unitDef = {
   sightDistance      = 249,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[CNSTR]],
   threed             = 1,
   turnRate           = 310,
   unitname           = [[tllack]],
@@ -86,6 +85,7 @@ local unitDef = {
     [[tlllab]],
     [[tllalab]],
     [[tllmohogeo]],
+    [[tllrichter]],
   },
   sounds = {
     build              = [[nanlath1]],

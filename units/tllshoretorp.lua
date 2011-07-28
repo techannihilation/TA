@@ -40,7 +40,6 @@ local unitDef = {
   side               = [[TLL]],
   sightDistance      = 380,
   standingfireorder  = 2,
-  TEDClass           = [[FORT]],
   threed             = 1,
   unitname           = [[tllshoretorp]],
   unitnumber         = 946,

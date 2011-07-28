@@ -42,7 +42,6 @@ local unitDef = {
   sightDistance      = 210,
   spanishdescription = [[Incrementa capacidad de alm. metal]],
   spanishname        = [[Almacén de Metal]],
-  TEDClass           = [[]],
   threed             = 1,
   unitname           = [[tllmstor]],
   unitnumber         = 893,

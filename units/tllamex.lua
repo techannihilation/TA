@@ -44,7 +44,6 @@ local unitDef = {
   sightDistance      = 210,
   spanishdescription = [[Extractor avanzado de metal]],
   spanishname        = [[Mina Moho]],
-  TEDClass           = [[]],
   threed             = 1,
   unitname           = [[tllamex]],
   unitnumber         = 910,

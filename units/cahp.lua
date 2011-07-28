@@ -51,7 +51,6 @@ local unitDef = {
   spanishname        = [[Plataforma Av. Hovercraft]],
   standingfireorder  = 2,
   standingmoveorder  = 1,
-  TEDClass           = [[PLANT]],
   threed             = 1,
   unitname           = [[cahp]],
   unitnumber         = 11005,

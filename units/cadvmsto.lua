@@ -34,7 +34,6 @@ local unitDef = {
   selfDestructAs     = [[SMALL_BUILDING]],
   side               = [[CORE]],
   sightDistance      = 300,
-  TEDClass           = [[METAL]],
   threed             = 1,
   unitname           = [[cadvmsto]],
   unitnumber         = 996,

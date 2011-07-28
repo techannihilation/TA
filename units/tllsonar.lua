@@ -46,7 +46,6 @@ local unitDef = {
   sonarDistance      = 1320,
   spanishdescription = [[Detecta submarinos]],
   spanishname        = [[Estación de Sonar]],
-  TEDClass           = [[WATER]],
   threed             = 1,
   unitname           = [[tllsonar]],
   unitnumber         = 853,

@@ -55,7 +55,6 @@ local unitDef = {
   sonarDistance      = 100,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[KBOT]],
   threed             = 1,
   turnRate           = 1020,
   unitname           = [[tllarchnano]],

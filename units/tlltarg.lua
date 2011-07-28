@@ -47,7 +47,6 @@ local unitDef = {
   sonarDistance      = 6000,
   spanishdescription = [[Radar de puntería automático]],
   spanishname        = [[Complejo Búsqueda Blancos]],
-  TEDClass           = [[SPECIAL]],
   threed             = 1,
   unitname           = [[tlltarg]],
   unitnumber         = 921,

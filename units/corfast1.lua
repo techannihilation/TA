@@ -52,7 +52,6 @@ local unitDef = {
   smoothAnim         = true,
   standingmoveorder  = 1,
   steeringmode       = 2,
-  TEDClass           = [[CNSTR]],
   turnRate           = 1210,
   unitname           = [[corfast1]],
   upright            = true,

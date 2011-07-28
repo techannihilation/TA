@@ -39,7 +39,6 @@ local unitDef = {
   side               = [[ARM]],
   sightDistance      = 130,
   smoothAnim         = true,
-  TEDClass           = [[FORT]],
   turnRate           = 0,
   unitname           = [[armfort]],
   workerTime         = 0,

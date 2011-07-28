@@ -51,7 +51,6 @@ local unitDef = {
   spanishdescription = [[Radar móvil]],
   standingmoveorder  = 0,
   steeringmode       = 1,
-  TEDClass           = [[TANK]],
   threed             = 1,
   turnRate           = 380,
   unitname           = [[tlldivine]],

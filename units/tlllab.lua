@@ -48,7 +48,6 @@ local unitDef = {
   spanishdescription = [[Produce Kbots]],
   spanishname        = [[Laboratorio Kbot]],
   standingmoveorder  = 2,
-  TEDClass           = [[PLANT]],
   threed             = 1,
   unitname           = [[tlllab]],
   unitnumber         = 811,

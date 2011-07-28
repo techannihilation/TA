@@ -54,7 +54,6 @@ local unitDef = {
   standingfireorder  = 2,
   standingmoveorder  = 1,
   steeringmode       = 2,
-  TEDClass           = [[KBOT]],
   turnRate           = 1056,
   unitname           = [[armbanth1]],
   upright            = true,

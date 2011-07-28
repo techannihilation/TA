@@ -53,7 +53,6 @@ local unitDef = {
   spanishname        = [[Difusor]],
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[TANK]],
   threed             = 1,
   turnRate           = 950,
   unitname           = [[armjaspd]],

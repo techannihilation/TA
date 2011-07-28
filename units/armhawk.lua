@@ -54,7 +54,6 @@ local unitDef = {
   standingmoveorder  = 1,
   stealth            = true,
   steeringmode       = 1,
-  TEDClass           = [[VTOL]],
   turnRate           = 1425,
   unitname           = [[armhawk]],
   unitRestricted     = 150,

@@ -48,7 +48,6 @@ local unitDef = {
   smoothAnim         = true,
   sonarDistance      = 525,
   standingfireorder  = 2,
-  TEDClass           = [[WATER]],
   turnRate           = 0,
   unitname           = [[cordl]],
   workerTime         = 0,

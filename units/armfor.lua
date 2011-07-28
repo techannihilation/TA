@@ -36,7 +36,6 @@ local unitDef = {
   selfDestructAs     = [[Nuclear_missile1]],
   side               = [[arm]],
   sightDistance      = 250,
-  TEDClass           = [[ENERGY]],
   threed             = 1,
   unitname           = [[armfor]],
   unitnumber         = 2415,

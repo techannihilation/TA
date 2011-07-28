@@ -47,7 +47,6 @@ local unitDef = {
   spanishname        = [[Astillero]],
   standingfireorder  = 2,
   standingmoveorder  = 2,
-  TEDClass           = [[PLANT]],
   threed             = 1,
   unitname           = [[tllsy]],
   unitnumber         = 849,

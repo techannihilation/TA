@@ -45,7 +45,6 @@ local unitDef = {
   sightDistance      = 225,
   standingfireorder  = 2,
   standingmoveorder  = 1,
-  TEDClass           = [[PLANT]],
   threed             = 1,
   unitname           = [[corehpad]],
   unitnumber         = 100897,

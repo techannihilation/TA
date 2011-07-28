@@ -61,7 +61,6 @@ local unitDef = {
   standingfireorder  = 2,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[SHIP]],
   turnRate           = 260,
   unitname           = [[corblackhy]],
   waterline          = 5,

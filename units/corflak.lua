@@ -46,7 +46,6 @@ local unitDef = {
   sightDistance      = 525,
   smoothAnim         = true,
   standingfireorder  = 2,
-  TEDClass           = [[FORT]],
   turnRate           = 0,
   unitname           = [[corflak]],
   workerTime         = 0,

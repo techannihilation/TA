@@ -46,7 +46,6 @@ local unitDef = {
   sightDistance      = 350,
   spanishdescription = [[Torreta de radar de largo alcance]],
   spanishname        = [[Torra de Radar Avanzada]],
-  TEDClass           = [[SPECIAL]],
   threed             = 1,
   unitname           = [[tllarad]],
   unitnumber         = 843,

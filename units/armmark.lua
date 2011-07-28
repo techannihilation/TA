@@ -63,7 +63,6 @@ local unitDef = {
   spanishname        = [[Marker]],
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[KBOT]],
   threed             = 1,
   turnRate           = 505,
   unitname           = [[armmark]],

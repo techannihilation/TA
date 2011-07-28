@@ -59,7 +59,6 @@ local unitDef = {
   spanishname        = [[Hovercraft Av. de Constr.]],
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[CNSTR]],
   threed             = 1,
   turnRate           = 220,
   unitname           = [[aach]],

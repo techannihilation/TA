@@ -53,7 +53,6 @@ local unitDef = {
   sightDistance      = 240,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[SHIP]],
   threed             = 1,
   turnRate           = 350,
   unitname           = [[tllacs]],

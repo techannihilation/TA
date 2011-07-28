@@ -49,7 +49,6 @@ local unitDef = {
   spanishdescription = [[Lanzatorpedos Avanzado]],
   spanishname        = [[Lanzatorpedos Avanzado]],
   standingfireorder  = 2,
-  TEDClass           = [[WATER]],
   threed             = 1,
   unitname           = [[tllatorp]],
   unitnumber         = 866,

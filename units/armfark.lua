@@ -52,7 +52,6 @@ local unitDef = {
   smoothAnim         = true,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[KBOT]],
   terraformSpeed     = 360,
   turnRate           = 1100,
   unitname           = [[armfark]],

@@ -44,7 +44,6 @@ local unitDef = {
   side               = [[Arm]],
   sightDistance      = 367.5,
   standingfireorder  = 2,
-  TEDClass           = [[FORT]],
   threed             = 1,
   unitname           = [[arm_big_bertha]],
   unitnumber         = 16,

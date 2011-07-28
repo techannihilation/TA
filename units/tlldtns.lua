@@ -43,7 +43,6 @@ local unitDef = {
   sightDistance      = 100,
   spanishdescription = [[Dragon's Teeth flotante]],
   spanishname        = [[Dragon's Teeth]],
-  TEDClass           = [[FORT]],
   threed             = 1,
   unitname           = [[tlldtns]],
   unitnumber         = 938,

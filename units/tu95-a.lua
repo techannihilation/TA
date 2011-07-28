@@ -69,7 +69,6 @@ local unitDef = {
   spanishname        = [[Tu-95 Bear-A]],
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[VTOL]],
   threed             = 1,
   turnRate           = 215,
   unitname           = [[eclipse]],

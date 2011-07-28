@@ -64,7 +64,6 @@ local unitDef = {
   spanishname        = [[Necro]],
   standingmoveorder  = 2,
   steeringmode       = 2,
-  TEDClass           = [[KBOT]],
   threed             = 1,
   turnRate           = 1000,
   unitname           = [[tllsham]],

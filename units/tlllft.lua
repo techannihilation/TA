@@ -43,7 +43,6 @@ local unitDef = {
   side               = [[TLL]],
   sightDistance      = 422,
   standingfireorder  = 2,
-  TEDClass           = [[FORT]],
   threed             = 1,
   unitname           = [[tlllft]],
   unitnumber         = 808,

@@ -42,7 +42,6 @@ local unitDef = {
   side               = [[ARM]],
   sightDistance      = 273,
   smoothAnim         = true,
-  TEDClass           = [[SPECIAL]],
   turnRate           = 0,
   unitname           = [[armgate]],
   workerTime         = 0,

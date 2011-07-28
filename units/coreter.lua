@@ -55,7 +55,6 @@ local unitDef = {
   smoothAnim         = true,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[TANK]],
   trackOffset        = 3,
   trackStrength      = 6,
   trackStretch       = 1,

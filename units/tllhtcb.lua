@@ -4,7 +4,7 @@
 local unitName = "tllhtcb"
 
 --------------------------------------------------------------------------------
-
+--Experimental
 local unitDef = {
   acceleration       = 0.018,
   bmcode             = 1,
@@ -23,7 +23,7 @@ local unitDef = {
   copyright          = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
   corpse             = [[dead]],
   defaultmissiontype = [[Standby]],
-  description        = [[Tech Level 2]],
+  description        = [[Tech Level 3]],
   designation        = [[]],
   energyMake         = 25,
   energyStorage      = 100,
@@ -31,9 +31,9 @@ local unitDef = {
   explodeAs          = [[BIG_UNITEX]],
   footprintX         = 3,
   footprintZ         = 3,
-  frenchdescription  = [[Niveau Tech 2]],
+  frenchdescription  = [[Niveau Tech 3]],
   frenchname         = [[Véhicule de constr. évolué]],
-  germandescription  = [[Tech Level 2]],
+  germandescription  = [[Tech Level 3]],
   germanname         = [[Verb. Konstr.-Fahrzeug]],
   maneuverleashlength = 320,
   maxDamage          = 2124,
@@ -44,7 +44,7 @@ local unitDef = {
   metalStorage       = 100,
   mobilestandorders  = 1,
   movementClass      = [[HTANK3]],
-  name               = [[Advanced Construction Vehicle]],
+  name               = [[High Tech Construction Vehicle]],
   noAutoFire         = false,
   objectName         = [[TLLHTCB]],
   selfDestructAs     = [[BIG_UNIT]],
@@ -53,7 +53,6 @@ local unitDef = {
   sightDistance      = 230,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[CNSTR]],
   threed             = 1,
   turnRate           = 250,
   unitname           = [[tllhtcb]],
@@ -63,6 +62,7 @@ local unitDef = {
   zbuffer            = 1,
   buildoptions = {
     [[tllmegacoldfus]],
+    [[tllgate1]],
      },
   sounds = {
     build              = [[nanlath1]],
