@@ -36,6 +36,7 @@ local unitDef = {
   onoffable          = true,
   ovradjust          = 1,
   radarDistance      = 0,
+  script             = [[tllgate.cob]],
   selfDestructAs     = [[MINE_NUKE]],
   side               = [[TLL]],
   sightDistance      = 240,
