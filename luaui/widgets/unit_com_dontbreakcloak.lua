@@ -23,7 +23,7 @@ local isCommander = {
   [UnitDefNames["corcom5"].id] = true,
   [UnitDefNames["corcom6"].id] = true,
   [UnitDefNames["corcom7"].id] = true,
-  [UnitDefNames["corsklt"].id] = true,
+  [UnitDefNames["corsktl"].id] = true,
 
 --Arm 
   [UnitDefNames["armcom"].id] = true,
