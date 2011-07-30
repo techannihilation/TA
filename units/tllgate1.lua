@@ -12,6 +12,7 @@ local unitDef = {
   buildCostEnergy    = 124382,
   buildCostMetal     = 18000,
   builder            = false,
+  buildPic           = [[tllgate.pcx]],
   buildTime          = 253485,
   canAttack          = true,
   canstop            = 1,
