@@ -37,7 +37,6 @@ local unitDef = {
   name               = [[Moho Metal Maker]],
   noAutoFire         = false,
   objectName         = [[tllammaker]],
-  onoffable          = true,
   radarDistance      = 0,
   selfDestructAs     = [[ATOMIC_BLAST]],
   side               = [[TLL]],

@@ -34,7 +34,6 @@ local unitDef = {
   name               = [[Metal Maker]],
   noAutoFire         = false,
   objectName         = [[TLLMM]],
-  onoffable          = true,
   selfDestructAs     = [[ARMESTOR_BUILDING]],
   side               = [[TLL]],
   sightDistance      = 210,
