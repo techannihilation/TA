@@ -20,6 +20,7 @@ local unitDef = {
   canPatrol          = true,
   canstop            = 1,
   category           = [[ALL TANK WEAPON NOTSUB NOTAIR]],
+  corpse             = [[rockblack_dead]],
   copyright          = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
   defaultmissiontype = [[Standby]],
   description        = [[Crusade Missile Tank]],
@@ -141,6 +142,44 @@ local weaponDefs = {
   },
 }
 unitDef.weaponDefs = weaponDefs
+
+--------------------------------------------------------------------------------
+
+local featureDefs = {
+  rockblack_dead = {
+    blocking           = true,
+    category           = [[arm_corpses]],
+    damage             = unitDef.maxDamage*0.6,
+    description        = [[Wreckage]],
+    featureDead        = [[heap]],
+    featurereclamate   = [[smudge01]],
+    footprintX         = 4,
+    footprintZ         = 4,
+    height             = 12,
+    hitdensity         = 100,
+    metal              = unitDef.buildCostMetal*0.8,
+    object             = [[rockblack_dead]],
+    reclaimable        = true,
+    seqnamereclamate   = [[tree1reclamate]],
+    world              = [[all]],
+  },
+  heap = {
+    blocking           = false,
+    category           = [[heaps]],
+    damage             = unitDef.maxDamage*0.36,
+    description        = [[Metal Shards]],
+    featurereclamate   = [[smudge01]],
+    footprintX         = 4,
+    footprintZ         = 4,
+    hitdensity         = 4,
+    metal              = unitDef.buildCostMetal*0.64,
+    object             = [[4x4d]],
+    reclaimable        = true,
+    seqnamereclamate   = [[tree1reclamate]],
+    world              = [[all]],
+  },
+}
+unitDef.featureDefs = featureDefs
 
 
 --------------------------------------------------------------------------------
