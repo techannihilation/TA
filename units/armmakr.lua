@@ -38,6 +38,7 @@ local unitDef = {
   name               = [[Metal Maker]],
   noAutoFire         = false,
   objectName         = [[ARMMAKR]],
+  script              = [[armmakr.lua]],
   seismicSignature   = 0,
   selfDestructAs     = [[ARMESTOR_BUILDING]],
   side               = [[ARM]],
