@@ -25,7 +25,6 @@ local unitDef = {
   metalStorage       = 0,
   name               = [[T1.5 Metal Maker]],
   objectName         = [[AMetalMakerLvl1]],
-  onoffable          = true,
   radarDistance      = 0,
   selfDestructAs     = [[ARMESTOR_BUILDING]],
   side               = [[ARM]],

@@ -25,7 +25,6 @@ local unitDef = {
   metalStorage       = 0,
   name               = [[T1.5 Metal Maker]],
   objectName         = [[CMetalMakerLvl1]],
-  onoffable          = true,
   radarDistance      = 0,
   script             = [[cormakr.cob]],
   selfDestructAs     = [[ARMESTOR_BUILDING]],

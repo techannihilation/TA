@@ -34,7 +34,6 @@ local unitDef = {
   name               = [[Floating Metal Maker]],
   noAutoFire         = false,
   objectName         = [[CORFMKR]],
-  onoffable          = true,
   seismicSignature   = 0,
   selfDestructAs     = [[ARMESTOR_BUILDING]],
   side               = [[CORE]],

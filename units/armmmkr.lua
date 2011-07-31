@@ -36,7 +36,6 @@ local unitDef = {
   name               = [[Moho Metal Maker]],
   noAutoFire         = false,
   objectName         = [[ARMMMKR]],
-  onoffable          = true,
   seismicSignature   = 0,
   selfDestructAs     = [[ATOMIC_BLAST]],
   side               = [[ARM]],

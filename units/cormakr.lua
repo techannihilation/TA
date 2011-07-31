@@ -37,7 +37,6 @@ local unitDef = {
   name               = [[Metal Maker]],
   noAutoFire         = false,
   objectName         = [[CORMAKR]],
-  onoffable          = true,
   seismicSignature   = 0,
   selfDestructAs     = [[ARMESTOR_BUILDING]],
   side               = [[CORE]],
