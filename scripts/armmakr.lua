@@ -35,19 +35,23 @@ function script.Killed(recentDamage, maxHealth)
 
 	local severity = recentDamage/maxHealth
 	if  severity <= .25  then
-		Explode(base, sfxShatter)
-		Explode(sphere, sfxShatter )
+		Explode(sphere, sfxNone)
+		Explode(base, sfxNone )
+		--Spring.Echo("LOW")
 		return 0
 	elseif  severity <= .50  then
+		Explode(sphere, sfxNone)
 		Explode(base, sfxShatter)
-		Explode(sphere, sfxShatter )
+		--Spring.Echo("MED")
 		return 0
 	elseif  severity <= .99  then
-		Explode(base, sfxBitmap)
-		Explode(sphere, sfxShatter + sfxExplodeOnHit )
+		Explode(sphere, sfxExplode)
+		Explode(base, sfxShatter)
+		--Spring.Echo("BIG")
 		return 0
 	end
 	Explode(base, sfxShatter + sfxExplodeOnHit )
 	Explode(sphere, sfxFall + sfxSmoke  + sfxFire  + sfxExplodeOnHit )
+	--Spring.Echo("FULL")
 	return 0
 end

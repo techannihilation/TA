@@ -17,7 +17,6 @@ SFXTYPE_REVERSEWAKE2 = 5
 
 sfxNone 		= SFX.NONE
 sfxExplode 		= SFX.EXPLODE
-sfxBitmap 		= SFX.BITMAP_ONLY
 sfxShatter		= SFX.SHATTER
 sfxFall	  		= SFX.FALL
 sfxSmoke   		= SFX.SMOKE
