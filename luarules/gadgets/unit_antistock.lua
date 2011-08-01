@@ -22,13 +22,22 @@ end
 --------------------------------------------------------------------------------
 local isAnti = {
 		[UnitDefNames['armamd'].id] = true, -- Protector
-		[UnitDefNames['corfmd'].id] = true, -- Fortitude
 		[UnitDefNames['armamd1'].id] = true, -- Adv Protector
-		[UnitDefNames['corfmd1'].id] = true, -- Adv Fortitude
-		[UnitDefNames['tllantinuke'].id] = true, -- Antinuke
+		[UnitDefNames['armscab'].id] = true, -- Mobile Anti
+		[UnitDefNames['armscab1'].id] = true, -- Mobile Anti
 		[UnitDefNames['armcarry'].id] = true, -- Colossus (Arm carrier)
+		
+		[UnitDefNames['corfmd'].id] = true, -- Fortitude
+		[UnitDefNames['corfmd1'].id] = true, -- Adv Fortitude
+		[UnitDefNames['corfmd2'].id] = true, -- T3 Anti
+		[UnitDefNames['cormabm'].id] = true, -- Mobile Anti
+		[UnitDefNames['cormabm1'].id] = true, -- Mobile Anti
 		[UnitDefNames['corcarry'].id] = true, -- Hive (Core carrier)
+
+		[UnitDefNames['tllantinuke'].id] = true, -- Antinuke
 		[UnitDefNames['tllgiant'].id] = true, -- Giant (Tll carrier)
+		[UnitDefNames['tllturtle'].id] = true, -- Mobile Anti
+
 
 	}
 
