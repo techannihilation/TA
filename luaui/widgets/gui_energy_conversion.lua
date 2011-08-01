@@ -10,6 +10,25 @@ function widget:GetInfo()
 		enabled   = true,
 	}
 end
+--------------------------------------------------------------------------------
+-- Config
+--------------------------------------------------------------------------------
+
+local efficiencyClassBoxEnabled = true
+
+local EfficiencyThresholds = { 
+	{title="S", 		color={r = 0.3, 	g = 0.6, 	b = 1, a = 0.5}, e=0.018}, 
+	{title="A+", 		color={r = 0.1, 	g = 1, 		b = 0.3, 	a = 0.5}, e=0.018}, 
+	{title="A+", 		color={r = 0.1, 	g = 1, 		b = 0, 	a = 0.5}, e=0.017}, 
+	{title="A", 		color={r = 0.4, 	g = 1, 		b = 0, 	a = 0.5}, e=0.016}, 
+	{title="B", 		color={r = 0.7, 	g = 1, 		b = 0, 	a = 0.5}, e=0.015}, 
+	{title="C", 		color={r = 1, 	g = 1, 		b = 0, 	a = 0.5}, e=0.014}, 
+	{title="D", 		color={r = 1, 	g = 0.5, 	b = 0, 	a = 0.5}, e=0.013}, 
+	{title="E", 		color={r = 1, 	g = 0, 		b = 0, 	a = 0.5}, e=0.012}, 
+	{title="E-", 		color={r = 0.8, 	g = 0, 		b = 0, 	a = 0.5}, e=0.001}, 
+	{title="/", 			color={r = 0.6, 	g = 0.6, 	b = 0.6,	a = 0.5}, e=0}
+}
+
 
 --------------------------------------------------------------------------------
 -- Var
@@ -17,15 +36,25 @@ end
 local alterLevelFormat = string.char(137) .. '%i'
 
 local px, py = 500, 100
-local sx, sy = 190, 70
+local sx, sy = 250, 80
+local bx, by = 21, 20
+local lrBorder = 7
 
 local hoverLeft = 53
 local hoverRight = sx - 7
-local hoverBottom = 23 + 16
-local hoverTop = 35 + 16
-local barBottom = 28 + 16
-local barTop = 30 + 16
 
+
+
+
+local barTop = 40 + 10
+local barThickness = 5
+local barBottom = barTop - barThickness
+
+local hoverTop = barTop + 3
+local hoverBottom = barBottom - 3
+local hoverHWidth = 3
+
+local resourceRefreshRate = 16
 --------------------------------------------------------------------------------
 -- Speedups
 --------------------------------------------------------------------------------
@@ -44,45 +73,113 @@ local spGetMyTeamID = Spring.GetMyTeamID
 local spGetTeamRulesParam = Spring.GetTeamRulesParam
 local spSendLuaRulesMsg = Spring.SendLuaRulesMsg
 local spGetSpectatingState = Spring.GetSpectatingState
+local spGetTeamResources = Spring.GetTeamResources
 
-
-
-local eThresholds = { 
-	{title="AAA", color={0.1, 1, 0, 0.5}, e=0.0178}, 
-	{title="AA", color={0.4, 1, 0, 0.5}, e=0.0168}, 
-	{title="A", color={0.6, 1, 0, 0.5}, e=0.0158}, 
-	{title="B", color={0.8, 1, 0, 0.5}, e=0.0148}, 
-	{title="C", color={1, 0.8, 0, 0.5}, e=0.0138}, 
-	{title="D", color={1, 0.4, 0, 0.5}, e=0.0128}, 
-	{title="E", color={0.8, 0, 0, 0.5}, e=0.0118}, 
-	{title="EE", color={0.6, 0, 0, 0.5}, e=0.0108}, 
-	{title="EEE", color={0.4, 0, 0, 0.5}, e=0.001}, 
-	{title="UKN", color={0, 0, 0, 0.5}, e=-0.001}, 
-}
-
---table.sort(eThresholds, function(a,b) return a.e>b.e end)
 local convertCapacities = VFS.Include('LuaRules/Configs/maker_defs.lua')
 
+--table.sort(EfficiencyThresholds, function(a,b) return a.e>b.e end)
+local WhiteStr   = "\255\255\255\255"
+local BlackStr   = "\255\001\001\001"
+local GreyStr    = "\255\192\192\192"
+local RedStr     = "\255\255\001\001"
+local GreenStr   = "\255\001\255\001"
+local BlueStr    = "\255\001\001\255"
+local YellowStr  = "\255\255\255\001"
+
+local r, g, b, a
+local myTeamID
+local curLevel
+local curUsage
+local curCapacity
+local curAvgEffi
+local eCur, eStor
+local capacityColor
+local mProducedColor
+local relativeCapacity
+local hasData = false
 
 
 local function getLetter(effi)
 
-	for a, v in ipairs(eThresholds) do
-		if (effi > v.e) then 
+	for a, v in ipairs(EfficiencyThresholds) do
+		if (effi >= v.e) then 
 			return v
 		end
 	end
-	return eThresholds[#eThresholds-1]
+	return EfficiencyThresholds[#EfficiencyThresholds-1]
 end 
 
+
+function EfficiencyThresholds:getTextColor(effi)
+	Spring.Echo(effi)
+	local nearestHigherT, nearestLowerT
+
+	for a, v in ipairs(self) do
+		
+		if (effi >= v.e) then
+			nearestLowerT = v
+			break
+		end
+		nearestHigherT = v
+	end
+	
+	if not nearestLowerT then 
+		nearestLowerT = self[#self]
+	end
+	
+	local rel
+	
+	if not nearestHigherT then 
+		nearestHigherT = nearestLowerT 
+		rel = 0
+	else
+		rel = (effi - nearestLowerT.e) / (nearestHigherT.e -  nearestLowerT.e)
+	end
+	
+	
+	return 
+		(nearestLowerT.color.r + rel * (nearestHigherT.color.r - nearestLowerT.color.r)), 
+		(nearestLowerT.color.g + rel * (nearestHigherT.color.g - nearestLowerT.color.g)), 
+		(nearestLowerT.color.b + rel * (nearestHigherT.color.b - nearestLowerT.color.b)),
+		(nearestLowerT.color.a + rel * (nearestHigherT.color.a - nearestLowerT.color.a)) 
+end
+
+
+local function drawBorder(x0, y0, x1, y1, t)
+	glRect(x0, 		y0,		x1, 		y0 + t) -- TOP
+	glRect(x0, 		y1,		x1,  		y1 - t) -- BOTTOM
+	glRect(x0, 		y0 + t, 	x0 + t,  y1  - t) -- LEFT
+	glRect(x1 - t, 	y0 + t,	x1, 		y1  - t) -- RIGHT
+end
+
+local function refreshData() 
+
+	myTeamID = spGetMyTeamID()
+	curLevel = spGetTeamRulesParam(myTeamID, 'mmLevel')
+	curUsage = spGetTeamRulesParam(myTeamID, 'mmUse')
+	curCapacity = spGetTeamRulesParam(myTeamID, 'mmCapacity')
+	curAvgEffi = spGetTeamRulesParam(myTeamID, 'mmAvgEffi')
+	eCur, eStor = spGetTeamResources(myTeamID, 'energy')
+
+	mProducedColor = (curUsage > 0 and curAvgEffi > 0)  and GreenStr .. '+' or YellowStr
+	eDrainedColor = (curUsage > 0 and curAvgEffi > 0)  and RedStr .. '-' or YellowStr
+	
+	
+	local rc= curUsage/curCapacity
+	
+	if rc<0.8 then capacityColor = GreenStr elseif rc<1 then capacityColor = WhiteStr else capacityColor = YellowStr end
+	
+	r, g, b, a = EfficiencyThresholds:getTextColor(curAvgEffi)
+	
+	hasData = true
+end
 --------------------------------------------------------------------------------
--- Funcs
+-- Callins
 --------------------------------------------------------------------------------
 function widget:Initialize()
 
-	
 	WG.energyConversion = {convertCapacities = convertCapacities}
-	
+		
 	local playerID = Spring.GetMyPlayerID()
 	local _, _, spec, _, _, _, _, _ = Spring.GetPlayerInfo(playerID)
 		
@@ -90,61 +187,81 @@ function widget:Initialize()
 		Spring.Echo("<Energy Conversion Info> Spectator mode. Widget removed.")
 		widgetHandler:RemoveWidget()
 	end
+	
+end
+
+
+function widget:GameFrame(n)
+	if (n % resourceRefreshRate == 1) then
+		refreshData() 
+	end
 end
 
 function widget:DrawScreen()
-    
-    -- Var
-    local myTeamID = spGetMyTeamID()
-    local curLevel = spGetTeamRulesParam(myTeamID, 'mmLevel')
-    local curUsage = spGetTeamRulesParam(myTeamID, 'mmUse')
-    local curCapacity = spGetTeamRulesParam(myTeamID, 'mmCapacity')
-	--local curAvgEfficiency = spGetTeamRulesParam(myTeamID, 'mmAvgEfficiency')
-	local curAvgEffi = spGetTeamRulesParam(myTeamID, 'mmAvgEffi')
-	-- local curLevel=0.2
-	-- local curUsage = 20
-	-- local curCapacity = 20
-	-- local curAvgEfficiency=20
-	-- local curAvgEffi  = 20
-    
+	
+	if not hasData then refreshData() end
+
     -- Positioning
     glPushMatrix()
-        glTranslate(px, py, 0)
-        
-        -- Panel
-        glColor(0, 0, 0, 0.5)
-        glRect(0, 0, sx, sy)
-        
-		
-		local currentRating  = getLetter(curAvgEffi)
-		
-		glColor(currentRating.color)
-		glRect(sx, 0, sx+sy, sy)
-		
-		
-        -- Text
-        glBeginText()
-			glColor(1, 0, 1, 0.5)
-            glText('Energy Conversion', 5, 53, 12, 'do')
-			glText(format('+%.1fm',  curAvgEffi * curUsage), 185, 53, 12, 'dro')
-            glText('Hover:', 5, 37, 12, 'do')
-            glText('Usage:', 5, 21, 12, 'do')
-			glText('Efficiency:', 5, 5, 12, 'do')
-            glText(format('%i / %i', curUsage, curCapacity), 185, 21, 12, 'dro')
-			glText(format('%.2f m / 1000 e', curAvgEffi * 1000), 185, 5, 12, 'dro')
-			glText(currentRating.title, sx+sy/2, sy/2 - 9, 26, 'co') --
-	    glEndText()
+	glTranslate(px, py, 0)
+	
+	-- Panel
+	glColor(0, 0, 0, 0.5)
+	glRect(0, 0, sx, sy)
+	glColor(0, 0, 0, 0.8)
+	drawBorder(0, 0, sx, sy, 1)
 
+	-- Class box
+	if efficiencyClassBoxEnabled then
+		local currentRating  = getLetter(curAvgEffi)
+		local t = 1
+		glColor(r, g, b, 0.5)
+		drawBorder(sx - bx, 0, sx, by, t)
 		
+		glColor(r, g, b, 0.3)
+		glRect(sx - bx + t, t, sx - t, by- t)
 		
-		glColor(1, 1, 1, 1)
-        -- Bar
-        glRect(hoverLeft, barBottom, hoverRight, barTop)
-        
-        -- Slider
-        local sliderX = hoverLeft + (hoverRight - hoverLeft) * curLevel
-        glColor(1, 0, 0, 0.75)
-        glRect(sliderX - 2, hoverBottom, sliderX + 2, hoverTop)
+		glColor(r, g, b, 1)
+		glText(currentRating.title, sx-bx/2, by/2 +1, 12, 'cv') 
+	end
+	
+	-- Text
+	glBeginText()
+
+		glText('Energy Conversion', lrBorder, 58, 12, 'do')
+		glText(format('%s%.1f m%s / %s%.0f e', mProducedColor, curAvgEffi * curUsage, WhiteStr, eDrainedColor, curUsage), sx - lrBorder, 58, 12, 'dr')
+		
+		glText('Hover:', lrBorder, 40, 12, 'do')
+		
+		glText('Usage:', lrBorder, 22, 12, 'do')
+		if (curCapacity > 0) then
+			glText(format('%i / %i (%s%i%%%s)', curUsage, curCapacity, capacityColor, curUsage/curCapacity*100,WhiteStr), sx - lrBorder, 22, 12, 'dr')
+		else
+			glText(format('no capacity', RedStr), sx - lrBorder, 22, 12, 'dr')
+		end
+		
+		glText('Efficiency (Class)', lrBorder, 4, 12, 'do')
+		glText(format('%s  %.2f m%s / 1000 e',   format("%c%c%c%c", 255, r*254 + 1, g*254 + 1, b*254 + 1),  curAvgEffi * 1000, WhiteStr), sx - lrBorder -bx, 4, 12, 'dr')
+
+	glEndText()
+
+	
+	
+	-- Bar
+	glColor(0, 0, 0, 0.5)
+	glRect(hoverLeft, barBottom, hoverRight, barTop)
+	local energyRelative = eCur/eStor
+	
+	glColor(1, 1, 0, 1)
+	glRect(hoverLeft+1, barBottom+1, hoverLeft+1 + energyRelative *  (hoverRight - hoverLeft - 2), barTop - 1)
+	
+	-- Slider
+	local sliderX = hoverLeft + (hoverRight - hoverLeft) * curLevel
+	glColor(1, 0, 0, 0.75)
+	glRect(sliderX - hoverHWidth, hoverBottom, sliderX + hoverHWidth, hoverTop)
+	
+	glColor(0, 0, 0, 1)
+	drawBorder(sliderX - hoverHWidth, hoverBottom, sliderX + hoverHWidth, hoverTop, 1)
         
     glPopMatrix()
 end
@@ -176,6 +293,7 @@ function widget:GetConfigData()
 	local vsx, vsy = gl.GetViewSizes()
 	return {px / vsx, py / vsy}
 end
+
 function widget:SetConfigData(data)
 	local vsx, vsy = gl.GetViewSizes()
 	px = math.floor(math.max(0, vsx * math.min(data[1] or 0, 0.95)))
