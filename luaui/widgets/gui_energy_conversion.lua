@@ -111,7 +111,6 @@ end
 
 
 function EfficiencyThresholds:getTextColor(effi)
-	Spring.Echo(effi)
 	local nearestHigherT, nearestLowerT
 
 	for a, v in ipairs(self) do
