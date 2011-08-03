@@ -35,7 +35,6 @@ local unitDef = {
   name               = [[Underwater Moho Metal Maker]],
   noAutoFire         = false,
   objectName         = [[CORUWMMM]],
-  onoffable          = true,
   seismicSignature   = 0,
   selfDestructAs     = [[ATOMIC_BLAST]],
   side               = [[CORE]],

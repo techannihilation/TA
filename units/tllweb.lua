@@ -37,6 +37,7 @@ local unitDef = {
   noAutoFire         = false,
   noChaseCategory    = [[NOTAIR]],
   objectName         = [[TLLweb]],
+  script             = [[tllweb.lua]],
   selfDestructAs     = [[MEDIUM_BUILDING]],
   shootme            = 1,
   side               = [[TLL]],

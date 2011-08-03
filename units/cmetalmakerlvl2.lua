@@ -27,7 +27,6 @@ local unitDef = {
   metalStorage       = 0,
   name               = [[T3 Metal Maker]],
   objectName         = [[CMetalMakerLvl2]],
-  onoffable          = true,
   radarDistance      = 0,
   script             = [[cormmkr.cob]],
   selfDestructAs     = [[nuclear_missile1]],

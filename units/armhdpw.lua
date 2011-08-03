@@ -99,7 +99,7 @@ local unitDef = {
       onlyTargetCategory = [[NOTAIR]],
     },
     [2]  = {
-      def                = [[ADV-EMG3]],
+      def                = [[NOWEAPON]],
     },
   },
 }
