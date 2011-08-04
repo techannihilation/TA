@@ -57,7 +57,6 @@ local unitDef = {
   standingfireorder  = 2,
   standingmoveorder  = 1,
   steeringmode       = 2,
-  TEDClass           = [[KBOT]],
   threed             = 1,
   turnRate           = 205,
   unitname           = [[macross]],

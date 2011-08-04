@@ -60,7 +60,6 @@ local unitDef = {
   standingfireorder  = 0,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[SHIP]],
   turnRate           = 64,
   unitname           = [[corhcar]],
   version            = 1,

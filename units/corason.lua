@@ -45,7 +45,6 @@ local unitDef = {
   sightDistance      = 210,
   smoothAnim         = true,
   sonarDistance      = 2400,
-  TEDClass           = [[WATER]],
   turnRate           = 0,
   unitname           = [[corason]],
   workerTime         = 0,

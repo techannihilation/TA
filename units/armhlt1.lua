@@ -5,17 +5,21 @@ local unitName = "armhlt1"
 
 --------------------------------------------------------------------------------
 
+-- should be about 1.8 times stronger than normal one
+-- 1.5 times bigger hp, + 80 range, 2 times bigger dps, 1.2 times faster ROF
+-- morph cost should be reduced by 30% (in morph config)
+
 local unitDef = {
   acceleration       = 0,
   badTargetCategory  = [[ANTILASER]],
   bmcode             = 0,
   brakeRate          = 0,
   buildAngle         = 8192,
-  buildCostEnergy    = 12398,
-  buildCostMetal     = 1214,
+  buildCostEnergy    = 8900,
+  buildCostMetal     = 745,
   builder            = false,
   buildPic           = [[ARMHLT.DDS]],
-  buildTime          = 22575,
+  buildTime          = 17000,
   canAttack          = true,
   canstop            = 1,
   category           = [[ARM WEAPON NOTAIR NOTSUB NOTSHIP LEVEL2 NOTLAND ALL]],
@@ -31,7 +35,7 @@ local unitDef = {
   iconType           = [[building]],
   idleAutoHeal       = 5,
   idleTime           = 1800,
-  maxDamage          = 4325,
+  maxDamage          = 3500,
   maxSlope           = 10,
   maxVelocity        = 0,
   maxWaterDepth      = 0,
@@ -46,7 +50,6 @@ local unitDef = {
   sightDistance      = 494,
   smoothAnim         = true,
   standingfireorder  = 2,
-  TEDClass           = [[FORT]],
   turnRate           = 0,
   unitname           = [[armhlt1]],
   workerTime         = 0,
@@ -93,7 +96,7 @@ local weaponDefs = {
     coreThickness      = 0.45,
     craterBoost        = 0,
     craterMult         = 0,
-    energypershot      = 300,
+    energypershot      = 150,
     explosionGenerator = [[custom:GreenLaser]],
     fireStarter        = 90,
     impulseBoost       = 0.123,
@@ -115,8 +118,8 @@ local weaponDefs = {
     weaponType         = [[BeamLaser]],
     weaponVelocity     = 2850,
     damage = {
-      commanders         = 1250,
-      default            = 1850,
+      commanders         = 1200,
+      default            = 920,
       gunships           = 35,
       hgunships          = 35,
       l1bombers          = 35,

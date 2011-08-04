@@ -53,7 +53,6 @@ local unitDef = {
   sightDistance      = 230,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[CNSTR]],
   threed             = 1,
   turnRate           = 250,
   unitname           = [[tllacv]],

@@ -48,7 +48,6 @@ local unitDef = {
   spanishname        = [[Gorilla Gantry]],
   standingfireorder  = 2,
   standingmoveorder  = 1,
-  TEDClass           = [[PLANT]],
   threed             = 1,
   unitname           = [[armgant]],
   unitnumber         = 253,

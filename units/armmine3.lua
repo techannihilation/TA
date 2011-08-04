@@ -60,7 +60,6 @@ local unitDef = {
   smoothAnim         = true,
   standingfireorder  = 2,
   stealth            = true,
-  TEDClass           = [[SPECIAL]],
   turnRate           = 0,
   unitname           = [[armmine3]],
   workerTime         = 0,

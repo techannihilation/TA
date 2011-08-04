@@ -61,7 +61,6 @@ local unitDef = {
   spanishname        = [[Submarino Constr.]],
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[SHIP]],
   threed             = 1,
   turnRate           = 256,
   unitname           = [[tllcsub]],

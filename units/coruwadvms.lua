@@ -39,7 +39,6 @@ local unitDef = {
   side               = [[CORE]],
   sightDistance      = 182,
   smoothAnim         = true,
-  TEDClass           = [[METAL]],
   threed             = 1,
   unitname           = [[coruwadvms]],
   version            = 1.2,

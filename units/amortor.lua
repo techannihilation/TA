@@ -45,7 +45,6 @@ local unitDef = {
   side               = [[ARM]],
   sightDistance      = 350,
   standingfireorder  = 2,
-  TEDClass           = [[FORT]],
   threed             = 1,
   unitname           = [[amortor]],
   unitnumber         = 111,

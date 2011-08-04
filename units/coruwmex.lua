@@ -42,7 +42,6 @@ local unitDef = {
   side               = [[CORE]],
   sightDistance      = 169,
   smoothAnim         = true,
-  TEDClass           = [[METAL]],
   turnRate           = 0,
   unitname           = [[coruwmex]],
   workerTime         = 0,

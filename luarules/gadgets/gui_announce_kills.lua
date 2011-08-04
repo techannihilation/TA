@@ -24,7 +24,11 @@ function friendlyName(teamID)
 	else
 		names=nil
 		for _,pid in ipairs(Spring.GetPlayerList(teamID,true)) do
-			names=(names and names.."," or "").."<PLAYER"..pid..">"
+			local player = Spring.GetPlayerInfo(pid)
+                        local _, _, spec, _, _, _, _, _ = Spring.GetPlayerInfo(pid) 
+     if ( spec ~= true ) then 
+        names=(names and names.."," or "").."<PLAYER"..pid..">"
+      end
 		end
 		if names == nil then return ("Team " .. teamID) end
 		return (names and names or "")

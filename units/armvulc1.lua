@@ -47,7 +47,6 @@ local unitDef = {
   sightDistance      = 273,
   smoothAnim         = true,
   standingfireorder  = 1,
-  TEDClass           = [[FORT]],
   turnRate           = 0,
   unitname           = [[armvulc1]],
   workerTime         = 0,

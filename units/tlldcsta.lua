@@ -40,7 +40,6 @@ local unitDef = {
   sightDistance      = 150,
   sonarDistance      = 450,
   standingfireorder  = 2,
-  TEDClass           = [[WATER]],
   threed             = 1,
   unitname           = [[tlldcsta]],
   unitnumber         = 879,

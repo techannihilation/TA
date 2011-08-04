@@ -34,7 +34,6 @@ local unitDef = {
   selfDestructAs     = [[LARGE_BUILDING]],
   side               = [[TLL]],
   sightDistance      = 225,
-  TEDClass           = [[SPECIAL]],
   unitname           = [[tllrichter]],
   yardMap            = [[oooooooooooooooo]],
   sounds = {

@@ -43,7 +43,6 @@ local unitDef = {
   selfDestructAs     = [[MINE_NUKE]],
   side               = [[CORE]],
   sightDistance      = 322,
-  TEDClass           = [[METAL]],
   unitname           = [[cormas]],
   unitnumber         = 33644,
   workerTime         = 0,

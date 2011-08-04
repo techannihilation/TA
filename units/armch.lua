@@ -53,7 +53,6 @@ local unitDef = {
   smoothAnim         = true,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[CNSTR]],
   terraformSpeed     = 330,
   turnRate           = 425,
   unitname           = [[armch]],

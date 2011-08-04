@@ -51,7 +51,6 @@ local unitDef = {
   sightDistance      = 286,
   smoothAnim         = true,
   stealth            = true,
-  TEDClass           = [[METAL]],
   turnRate           = 0,
   unitname           = [[armamex]],
   useBuildingGroundDecal = true,

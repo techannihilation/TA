@@ -42,7 +42,6 @@ local unitDef = {
   sightDistance      = 100,
   spanishdescription = [[Defensa de perímetro]],
   spanishname        = [[Defensa]],
-  TEDClass           = [[FORT]],
   threed             = 1,
   unitname           = [[tlladt]],
   unitnumber         = 937,

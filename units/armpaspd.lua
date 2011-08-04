@@ -59,7 +59,6 @@ local unitDef = {
   standingmoveorder  = 1,
   stealth            = true,
   steeringmode       = 2,
-  TEDClass           = [[TANK]],
   threed             = 1,
   turnRate           = 1011,
   unitname           = [[armpaspd]],

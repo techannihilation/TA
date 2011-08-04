@@ -42,7 +42,6 @@ local unitDef = {
   sightDistance      = 130,
   spanishdescription = [[Extractor de metal submarino]],
   spanishname        = [[Extractor de Metal]],
-  TEDClass           = [[]],
   threed             = 1,
   unitname           = [[tllauwmex]],
   unitnumber         = 908,

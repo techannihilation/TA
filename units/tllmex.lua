@@ -44,7 +44,6 @@ local unitDef = {
   sightDistance      = 210,
   spanishdescription = [[Extrae metal]],
   spanishname        = [[Extractor de Metal]],
-  TEDClass           = [[]],
   threed             = 1,
   unitname           = [[tllmex]],
   unitnumber         = 802,

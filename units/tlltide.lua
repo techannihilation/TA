@@ -44,7 +44,6 @@ local unitDef = {
   sonarDistance      = 0,
   spanishdescription = [[Produce energía]],
   spanishname        = [[Generador Maremotriz]],
-  TEDClass           = [[WATER]],
   threed             = 1,
   tidalGenerator     = 1,
   unitname           = [[tlltide]],

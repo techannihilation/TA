@@ -49,7 +49,6 @@ local unitDef = {
   side               = [[ARM]],
   sightDistance      = 820,
   smoothAnim         = true,
-  TEDClass           = [[SPECIAL]],
   turnRate           = 0,
   unitname           = [[armarad]],
   useBuildingGroundDecal = true,

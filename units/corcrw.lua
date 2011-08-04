@@ -62,7 +62,6 @@ local unitDef = {
   standingfireorder  = 2,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[VTOL]],
   turnRate           = 297,
   unitname           = [[corcrw]],
   upright            = true,

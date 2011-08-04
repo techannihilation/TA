@@ -43,7 +43,6 @@ local unitDef = {
   sightDistance      = 350,
   spanishdescription = [[Torre de Radar ]],
   spanishname        = [[Torre de Radar ]],
-  TEDClass           = [[SPECIAL]],
   threed             = 1,
   unitname           = [[tllradar]],
   unitnumber         = 809,

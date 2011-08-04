@@ -39,7 +39,6 @@ local unitDef = {
   side               = [[CORE]],
   sightDistance      = 130,
   smoothAnim         = true,
-  TEDClass           = [[FORT]],
   turnRate           = 0,
   unitname           = [[corfort]],
   workerTime         = 0,

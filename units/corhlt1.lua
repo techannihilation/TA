@@ -5,24 +5,29 @@ local unitName = "corhlt1"
 
 --------------------------------------------------------------------------------
 
+
+-- should be about 1.8 times stronger than normal one
+-- 1.5 times bigger hp, + 80 range, 1.8 times bigger dps, 2 times faster ROF
+-- morph cost should be reduced by 30% (in morph config)
+
 local unitDef = {
   acceleration       = 0,
   badTargetCategory  = [[ANTILASER]],
   bmcode             = 0,
   brakeRate          = 0,
   buildAngle         = 4096,
-  buildCostEnergy    = 13443,
-  buildCostMetal     = 1249,
+  buildCostEnergy    = 8000,
+  buildCostMetal     = 810,
   builder            = false,
   buildPic           = [[CORHLT.DDS]],
-  buildTime          = 22622,
+  buildTime          = 17000,
   canAttack          = true,
   canstop            = 1,
   category           = [[CORE WEAPON NOTAIR NOTSUB NOTSHIP LEVEL2 NOTLAND ALL]],
   corpse             = [[CORHLT_DEAD]],
   defaultmissiontype = [[GUARD_NOMOVE]],
   description        = [[Heavy Laser Tower]],
-  energyStorage      = 1000,
+  energyStorage      = 400,
   energyUse          = 0,
   explodeAs          = [[MEDIUM_BUILDINGEX]],
   firestandorders    = 1,
@@ -31,7 +36,7 @@ local unitDef = {
   iconType           = [[building]],
   idleAutoHeal       = 5,
   idleTime           = 1800,
-  maxDamage          = 4475,
+  maxDamage          = 3715, -- 1,5x more HP
   maxSlope           = 10,
   maxVelocity        = 0,
   maxWaterDepth      = 0,
@@ -46,7 +51,6 @@ local unitDef = {
   sightDistance      = 455,
   smoothAnim         = true,
   standingfireorder  = 2,
-  TEDClass           = [[FORT]],
   turnRate           = 0,
   unitname           = [[corhlt1]],
   workerTime         = 0,
@@ -93,7 +97,7 @@ local weaponDefs = {
     coreThickness      = 0.2,
     craterBoost        = 0,
     craterMult         = 0,
-    energypershot      = 100,
+    energypershot      = 50,
     explosionGenerator = [[custom:GreenLaser]],
     fireStarter        = 90,
     impulseBoost       = 0.123,
@@ -102,8 +106,8 @@ local weaponDefs = {
     lineOfSight        = true,
     name               = [[HighEnergyLaser]],
     noSelfDamage       = true,
-    range              = 700,
-    reloadtime         = 0.6,
+    range              = 700, -- +80 range
+    reloadtime         = 0.6, -- 2 times faster ROF, 1.8x times bigger DPS
     renderType         = 0,
     rgbColor           = [[0 1 0]],
     soundHit           = [[lasrhit1]],
@@ -116,7 +120,7 @@ local weaponDefs = {
     weaponVelocity     = 2250,
     damage = {
       commanders         = 500,
-      default            = 700,
+      default            = 315,
       gunships           = 35,
       hgunships          = 35,
       l1bombers          = 35,

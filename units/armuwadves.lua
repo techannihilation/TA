@@ -39,7 +39,6 @@ local unitDef = {
   side               = [[ARM]],
   sightDistance      = 169,
   smoothAnim         = true,
-  TEDClass           = [[ENERGY]],
   threed             = 1,
   unitname           = [[armuwadves]],
   version            = 1.2,

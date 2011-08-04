@@ -40,7 +40,6 @@ local unitDef = {
   selfDestructAs     = [[ESTOR_BUILDING]],
   side               = [[TLL]],
   sightDistance      = 110,
-  TEDClass           = [[]],
   threed             = 1,
   tidalGenerator     = 1,
   unitname           = [[tllatidal]],

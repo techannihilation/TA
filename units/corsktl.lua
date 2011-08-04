@@ -60,7 +60,6 @@ local unitDef = {
   standingfireorder  = 2,
   standingmoveorder  = 1,
   steeringmode       = 1,
-  TEDClass           = [[KBOT]],
   turninplace        = 0,
   turnRate           = 1122,
   unitname           = [[corsktl]],

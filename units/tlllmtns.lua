@@ -46,7 +46,6 @@ local unitDef = {
   sightDistance      = 425,
   spanishdescription = [[Torre Lanzamisiles-Serie Naval]],
   standingfireorder  = 2,
-  TEDClass           = [[FORT]],
   threed             = 1,
   unitname           = [[tlllmtns]],
   unitnumber         = 888,

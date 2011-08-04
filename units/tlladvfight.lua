@@ -54,7 +54,6 @@ local unitDef = {
   standingmoveorder  = 1,
   stealth            = true,
   steeringmode       = 1,
-  TEDClass           = [[VTOL]],
   smoothAnim         = true,
   threed             = 1,
   turnRate           = 1400,

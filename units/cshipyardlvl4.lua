@@ -37,7 +37,6 @@ local unitDef = {
   selfDestructAs     = [[SUPERBLAST]],
   side               = [[CORE]],
   sightDistance      = 220,
-  TEDClass           = [[PLANT]],
   unitname           = [[cshipyardlvl4]],
   workerTime         = 240,
   yardMap            = [[OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO]],

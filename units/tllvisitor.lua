@@ -52,7 +52,6 @@ local unitDef = {
   standingfireorder  = 2,
   standingmoveorder  = 0,
   steeringmode       = 1,
-  TEDClass           = [[SHIP]],
   threed             = 1,
   turnRate           = 142,
   unitname           = [[tllvisitor]],

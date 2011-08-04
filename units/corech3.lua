@@ -44,7 +44,6 @@ local unitDef = {
   selfDestructAs     = [[COMMANDER_BLAST]],
   side               = [[ARM]],
   sightDistance      = 0,
-  TEDClass           = [[SPECIAL]],
   threed             = 1,
   unitname           = [[corech3]],
   unitnumber         = 7210,

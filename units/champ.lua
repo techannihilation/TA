@@ -62,7 +62,6 @@ local unitDef = {
   standingmoveorder  = 1,
   stealth            = true,
   steeringmode       = 2,
-  TEDClass           = [[TANK]],
   threed             = 1,
   turnRate           = 244,
   unitname           = [[champ]],

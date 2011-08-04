@@ -54,7 +54,6 @@ local unitDef = {
   standingmoveorder  = 1,
   stealth            = true,
   steeringmode       = 2,
-  TEDClass           = [[KBOT]],
   turnRate           = 1118,
   unitname           = [[cornecro]],
   upright            = true,

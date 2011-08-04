@@ -58,7 +58,6 @@ local unitDef = {
   standingmoveorder  = 1,
   stealth            = true,
   steeringmode       = 2,
-  TEDClass           = [[KBOT]],
   turnRate           = 1016,
   unitname           = [[commando]],
   upright            = true,

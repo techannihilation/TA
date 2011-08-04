@@ -38,7 +38,6 @@ local unitDef = {
   side               = [[TLL]],
   sightDistance      = 100,
   spanishdescription = [[Defensa de perímetro]],
-  TEDClass           = [[FORT]],
   threed             = 1,
   unitname           = [[tlldt]],
   unitnumber         = 936,

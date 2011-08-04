@@ -47,7 +47,6 @@ local unitDef = {
   sightDistance      = 380,
   spanishdescription = [[Torre láser pesada-Serie Naval]],
   standingfireorder  = 2,
-  TEDClass           = [[FORT]],
   threed             = 1,
   unitname           = [[tllhltns]],
   unitnumber         = 882,

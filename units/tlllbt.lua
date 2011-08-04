@@ -43,7 +43,6 @@ local unitDef = {
   sightDistance      = 350,
   spanishdescription = [[Cañón de plasma pesado]],
   standingfireorder  = 2,
-  TEDClass           = [[FORT]],
   threed             = 1,
   unitname           = [[tlllbt]],
   unitnumber         = 807,
