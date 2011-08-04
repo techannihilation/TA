@@ -26,7 +26,7 @@ function friendlyName(teamID)
 		for _,pid in ipairs(Spring.GetPlayerList(teamID,true)) do
 			local player = Spring.GetPlayerInfo(pid)
                         local _, _, spec, _, _, _, _, _ = Spring.GetPlayerInfo(pid) 
-      if not spec then
+     if ( spec ~= true ) then 
         names=(names and names.."," or "").."<PLAYER"..pid..">"
       end
 		end
