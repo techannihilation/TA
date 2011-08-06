@@ -60,9 +60,6 @@ local unitDef = {
     canceldestruct     = [[cancel2]],
     deactivate         = [[radjam1]],
     underattack        = [[tllwarning]],
-    arrived = {
-      [[varmstop]],
-    },
     cant = {
       [[wearoff]],
     },
