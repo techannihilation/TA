@@ -68,9 +68,6 @@ local unitDef = {
   sounds = {
     canceldestruct     = [[cancel2]],
     underattack        = [[tllwarning]],
-    arrived = {
-      [[hovsmof2]],
-    },
     cant = {
       [[wearoff]],
     },
@@ -83,7 +80,7 @@ local unitDef = {
       [[tllcount]],
     },
     ok = {
-      [[hovsmok2]],
+      [[hovmdok1]],
     },
     select = {
       [[tllhoverok]],
