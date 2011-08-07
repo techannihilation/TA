@@ -3,6 +3,7 @@
 --
 --  file:    game_spawn.lua
 --  brief:   spawns start unit and sets storage levels
+--           (special version for XTA)
 --  author:  Tobi Vollebregt
 --
 --  Copyright (C) 2010.
@@ -12,15 +13,15 @@
 --------------------------------------------------------------------------------
 
 function gadget:GetInfo()
-	return {
-		name      = "Spawn",
-		desc      = "spawns start unit and sets storage levels",
-		author    = "Tobi Vollebregt/TheFatController",
-		date      = "January, 2010",
-		license   = "GNU GPL, v2 or later",
-		layer     = 0,
-		enabled   = true  --  loaded by default?
-	}
+    return {
+        name      = "Spawn",
+        desc      = "spawns start unit and sets storage levels",
+        author    = "Tobi Vollebregt/TheFatController",
+        date      = "January, 2010",
+        license   = "GNU GPL, v2 or later",
+        layer     = 0,
+        enabled   = true  --  loaded by default?
+    }
 end
 
 --------------------------------------------------------------------------------
@@ -28,30 +29,85 @@ end
 
 -- synced only
 if (not gadgetHandler:IsSyncedCode()) then
-	return false
+    return false
 end
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+-- Maps `comm' mod option to ARM start unit.
+local arm_start_unit = {
+    l0 = "armcom",
+    l1 = "armcom4",
+    l2 = "armcom5",
+    l3 = "armcom6",
+    l4 = "armcom7",
+}
+
+-- Maps `comm' mod option to CORE start unit.
+local core_start_unit = {
+    l0 = "corcom",
+    l1 = "corcom3",
+    l2 = "corcom5",
+    l3 = "corcom6",
+    l4 = "corcom7",
+}
+-- Maps `comm' mod option to CORE start unit.
+local tll_start_unit = {
+    l0 = "tllcom",
+    l1 = "tllcom3",
+    l2 = "tllcom5",
+    l3 = "tllcom6",
+    l4 = "tllcom7",
+}
+
+    
+-- Maps sideName (as specified in side data) to table of start units.
+local start_unit_table = {
+    arm = arm_start_unit,
+    core = core_start_unit,
+    tll = tll_start_unit,
+}
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
 local modOptions = Spring.GetModOptions()
 
-local coopMode = tonumber(Spring.GetModOptions().mo_coop) or 0
+local coopMode = tonumber(modOptions.mo_coop) or 0
+local commType = modOptions.comm
+
+--[[
+local enabled = tonumber(modOptions.mo_coop) or 0
+if enabled ~= 0 then
+    commType = "zeroupgrade"
+end
+]]--
+
+--  Always use level 0 com when no modoptions present
+if not commType then
+    commType = "l0"
+end
+
 
 local function GetStartUnit(teamID)
-	-- get the team startup info
-	local side = select(5, Spring.GetTeamInfo(teamID))
-	local startUnit
-	if (side == "") then
-		-- startscript didn't specify a side for this team
-		local sidedata = Spring.GetSideData()
-		if (sidedata and #sidedata > 0) then
-			startUnit = sidedata[1 + teamID % #sidedata].startUnit
-		end
-	else
-		startUnit = Spring.GetSideData(side)
-	end
-	return startUnit
+    local side = select(5, Spring.GetTeamInfo(teamID))
+    if (side == "") then
+        -- startscript didn't specify a side for this team
+        local sidedata = Spring.GetSideData()
+        if (sidedata and #sidedata > 0) then
+            side = sidedata[1 + teamID % #sidedata].sideName
+        end
+    end
+    local startUnit
+    if start_unit_table[side] then
+        -- Arm or Core.
+        startUnit = start_unit_table[side][commType]
+    else
+        -- Unknown side.
+        startUnit = Spring.GetSideData(side)
+    end
+    return startUnit
 end
 
 local function SpawnStartUnit(teamID)
@@ -70,12 +126,12 @@ local function SpawnStartUnit(teamID)
 			or ((z>Game.mapSizeZ/2) and "north" or "south")
 		local commanderID = Spring.CreateUnit(startUnit, x, y, z, facing, teamID)
 		-- set the *team's* lineage root
-		-- Spring.SetUnitLineage(commanderID, teamID, true)
+		Spring.SetUnitLineage(commanderID, teamID, true)
 	
 		-- set start resources, either from mod options or custom team keys
 		local teamOptions = select(7, Spring.GetTeamInfo(teamID))
-		local m = modOptions.startmetal or 1000
-		local e = modOptions.startenergy or 1000
+		local m = teamOptions.startmetal  or modOptions.startmetal  or 1000
+		local e = teamOptions.startenergy or modOptions.startenergy or 1000
 
 		if (m and tonumber(m) ~= 0) then
 			Spring.SetUnitResourcing(commanderID, "m", 0)
@@ -92,17 +148,6 @@ local function SpawnStartUnit(teamID)
 	end
 end
 
-function gadget:Initialize()
-	local gaiaTeamID = Spring.GetGaiaTeamID()
-	local teams = Spring.GetTeamList()
-	for i = 1,#teams do
-		local teamID = teams[i]
-		if (teamID ~= gaiaTeamID) then
-			Spring.SetTeamResource(teamID, "ms", 0)
-			Spring.SetTeamResource(teamID, "es", 0)
-		end
-	end
-end
 
 function gadget:GameStart()
 	local excludeTeams = {}
@@ -120,14 +165,27 @@ function gadget:GameStart()
 		end
 	
 	end
-	-- spawn start units
+
+    -- spawn start units
+    local gaiaTeamID = Spring.GetGaiaTeamID()
+    local teams = Spring.GetTeamList()
+    for i = 1,#teams do
+        local teamID = teams[i]
+        -- don't spawn a start unit for the Gaia team
+        if (teamID ~= gaiaTeamID) and (not excludeTeams[teamID]) then
+            SpawnStartUnit(teamID)
+        end
+    end
+end
+
+function gadget:Initialize()
 	local gaiaTeamID = Spring.GetGaiaTeamID()
 	local teams = Spring.GetTeamList()
 	for i = 1,#teams do
 		local teamID = teams[i]
-		-- don't spawn a start unit for the Gaia team
-		if (teamID ~= gaiaTeamID) and (not excludeTeams[teamID]) then
-			SpawnStartUnit(teamID)
+		if (teamID ~= gaiaTeamID) then
+			Spring.SetTeamResource(teamID, "ms", 0)
+			Spring.SetTeamResource(teamID, "es", 0)
 		end
 	end
 end
