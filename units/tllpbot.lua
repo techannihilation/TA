@@ -60,9 +60,6 @@ local unitDef = {
   sounds = {
     canceldestruct     = [[cancel2]],
     underattack        = [[tllwarning]],
-    arrived = {
-      [[kbarmstp]],
-    },
     cant = {
       [[wearoff]],
     },

@@ -83,10 +83,10 @@ local unitDef = {
       [[count1]],
     },
     ok = {
-      [[torpok1]],
+      [[servsml6]],
     },
     select = {
-      [[torpsel1]],
+      [[servsml6]],
     },
   },
 }

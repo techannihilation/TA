@@ -82,7 +82,7 @@ local unitDef = {
       [[suarmmov]],
     },
     select = {
-      [[watrjam1]],
+      [[radjam1]],
     },
   },
 }
