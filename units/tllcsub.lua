@@ -44,7 +44,7 @@ local unitDef = {
   maneuverleashlength = 640,
   maxDamage          = 280,
   maxVelocity        = 2.15,
-  metalMake          = 0.4,
+  metalMake          = 0.25,
   metalStorage       = 50,
   minWaterDepth      = 20,
   mobilestandorders  = 1,
@@ -68,7 +68,7 @@ local unitDef = {
   upright            = true,
   version            = 3.1,
   waterline          = 30,
-  workerTime         = 130,
+  workerTime         = 150,
   zbuffer            = 1,
    buildoptions = {
     [[tlltide]],
