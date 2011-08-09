@@ -222,9 +222,7 @@ local morphDefs = {
 	},
       armgmm = {
 		into = 'armfor',
-		time = 140,
-		metal = 1300,
-		energy = 15500,
+		time = 180,
 	},
       armgate = {
 		into = 'armgate1',
