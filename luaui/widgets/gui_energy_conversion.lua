@@ -163,6 +163,11 @@ local function refreshData()
 	mProducedColor = (curUsage > 0 and curAvgEffi > 0)  and GreenStr .. '+' or YellowStr
 	eDrainedColor = (curUsage > 0 and curAvgEffi > 0)  and RedStr .. '-' or YellowStr
 	
+	if not (eCur and eStor) or (eStor <= 0) then 
+		eStor = 1
+		eCur = 1
+	end
+
 	
 	local rc= curUsage/curCapacity
 	
