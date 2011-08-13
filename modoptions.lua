@@ -151,5 +151,77 @@ local options={
        step   = 1,  -- quantization is aligned to the def value
                     -- (step <= 0) means that there is no quantization
 	},
+	{
+	key     = 'wall_time',
+	name    = 'Wall Time',
+	desc    = 'How many minutes will the wall divide the teams?',
+	--section = 'hexfarm_options',
+	type    = 'number',
+	min     = 0,
+	max     = 60,
+	step    = 1,
+	def     = 10,
+	},
+	
+	{
+	key     = 'wall_size',
+	name    = 'Wall Size',
+	desc    = 'How many percent of the map will each team get at start?',
+	--section = 'hexfarm_options',
+	type    = 'number',
+	min     = 10,
+	max     = 45,
+	step    = 1,
+	def     = 45,
+	},
+	
+	{
+	key     = 'los',
+	name    = 'Line of Sight',
+	desc    = 'Can you see past the wall?',
+	--section = 'hexfarm_options',
+	type    = 'list',
+	def     = '1',
+	items   = 
+	{
+		{
+			key  = '0',
+			name = 'normal LOS rules',
+			desc = 'everything works as expected.',
+		},
+		{
+			key  = '1',
+			name = 'Full LOS',
+			desc = 'You can see enemy units, everywhere.',
+		},
+--		{
+--			key  = '2',
+--			name = 'Blindness',
+--			desc = 'You can not see enemy units at all.',
+--		},
+	},
+	},
+	
+	{
+	key     = 'weapons',
+	name    = 'Cease-Fire',
+	desc    = 'Are weapons blocked as long as the wall remains?',
+	--section = 'hexfarm_options',
+	type    = 'list',
+	def     = '1',
+	items   = 
+	{
+		{
+			key  = '1',
+			name = 'Yes',
+			desc = 'No unit can shoot until the timer is up.',
+		},
+		{
+			key  = '2',
+			name = 'No',
+			desc = 'Units can shot as normal.',
+		},
+	},
+	},
 }
 return options
