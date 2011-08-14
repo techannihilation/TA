@@ -18,6 +18,12 @@ local options={
        desc="Tech Annihilation - Options",
        type="section",
     },
+    {
+       key="ta_wall",
+       name="Tech Annihilation - Peace Time Settings",
+       desc="Tech Annihilation - Peace Time Settings",
+       type="section",
+    },
 	{
 		key    = "mo_coop",
 		name   = "Cooperative Mode",
@@ -155,7 +161,7 @@ local options={
 	key     = 'wall_time',
 	name    = 'Wall Time',
 	desc    = 'How many minutes will the wall divide the teams?',
-	--section = 'hexfarm_options',
+	section = 'ta_wall',
 	type    = 'number',
 	min     = 0,
 	max     = 60,
@@ -167,7 +173,7 @@ local options={
 	key     = 'wall_size',
 	name    = 'Wall Size',
 	desc    = 'How many percent of the map will each team get at start?',
-	--section = 'hexfarm_options',
+	section = 'ta_wall',
 	type    = 'number',
 	min     = 10,
 	max     = 45,
@@ -179,7 +185,7 @@ local options={
 	key     = 'los',
 	name    = 'Line of Sight',
 	desc    = 'Can you see past the wall?',
-	--section = 'hexfarm_options',
+	section = 'ta_wall',
 	type    = 'list',
 	def     = '0',
 	items   = 
@@ -206,9 +212,9 @@ local options={
 	key     = 'weapons',
 	name    = 'Cease-Fire',
 	desc    = 'Are weapons blocked as long as the wall remains?',
-	--section = 'hexfarm_options',
+	section = 'ta_wall',
 	type    = 'list',
-	def     = '1',
+	def     = '2',
 	items   = 
 	{
 		{
