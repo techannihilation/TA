@@ -181,7 +181,7 @@ local options={
 	desc    = 'Can you see past the wall?',
 	--section = 'hexfarm_options',
 	type    = 'list',
-	def     = '1',
+	def     = '0',
 	items   = 
 	{
 		{
