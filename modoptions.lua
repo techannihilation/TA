@@ -160,7 +160,7 @@ local options={
 	min     = 0,
 	max     = 60,
 	step    = 1,
-	def     = 10,
+	def     = 0,
 	},
 	
 	{
