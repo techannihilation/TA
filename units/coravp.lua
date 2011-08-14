@@ -77,7 +77,6 @@ local unitDef = {
     [[nsacskv]],
     [[tawf116]],
     [[armciph]],
-    [[cormonsta]],
     [[requ1]],
     [[cormddm]],
   },

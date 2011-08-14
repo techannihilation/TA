@@ -76,6 +76,7 @@ local unitDef = {
     [[corcrab]],
     [[armkrmi]],
     [[krogtaar]],
+	[[cormonsta]],
   },
   sfxtypes = {
     explosiongenerators = {
