@@ -1,120 +1,111 @@
--- UNITDEF -- ARMMEX1 --
---------------------------------------------------------------------------------
-
-local unitName = "armmex1"
-
---------------------------------------------------------------------------------
-
-local unitDef = {
-  acceleration       = 0,
-  activateWhenBuilt  = true,
-  bmcode             = 0,
-  brakeRate          = 0,
-  buildAngle         = 8192,
-  buildCostEnergy    = 5521,
-  buildCostMetal     = 325,
-  builder            = false,
-  buildPic           = [[ARMMEX.png]],
-  buildTime          = 1800,
-  category           = [[ARM NOWEAPON NOTAIR NOTSUB NOTSHIP NOTLAND ALL]],
-  corpse             = [[ARMMEX_DEAD]],
-  description        = [[Upg Metal Extractor amphibious]],
-  energyStorage      = 0,
-  energyUse          = 40,
-  explodeAs          = [[TINY_BUILDINGEX]],
-  extractsMetal      = 0.003,
-  footprintX         = 3,
-  footprintZ         = 3,
-  iconType           = [[building]],
-  idleAutoHeal       = 5,
-  idleTime           = 1800,
-  maxDamage          = 570,
-  maxSlope           = 20,
-  maxVelocity        = 0,
-  maxWaterDepth      = 9999,
-  metalStorage       = 300,
-  name               = [[Metal Extractor]],
-  noAutoFire         = false,
-  objectName         = [[ARMMEX]],
-  onoffable          = true,
-  seismicSignature   = 0,
-  selfDestructAs     = [[TINY_BUILDINGEX]],
-  selfDestructCountdown = 1,
-  side               = [[ARM]],
-  sightDistance      = 273,
-  smoothAnim         = true,
-  turnRate           = 0,
-  unitname           = [[armmex1]],
-  workerTime         = 0,
-  yardMap            = [[ooooooooo]],
-  sounds = {
-    activate           = [[mexrun1]],
-    canceldestruct     = [[cancel2]],
-    deactivate         = [[mexoff1]],
-    underattack        = [[warning1]],
-    working            = [[mexrun1]],
-    count = {
-      [[count6]],
-      [[count5]],
-      [[count4]],
-      [[count3]],
-      [[count2]],
-      [[count1]],
-    },
-    ok = {
-      [[servmed2]],
-    },
-    select = {
-      [[mexon1]],
-    },
-  },
+local Def = {
+	armmex1 = {
+		acceleration = 0,
+		activateWhenBuilt = true,
+		bmcode = 0,
+		brakeRate = 0,
+		buildAngle = 8192,
+		buildCostEnergy = 5521,
+		buildCostMetal = 325,
+		buildPic = [[ARMMEX.png]],
+		buildTime = 1800,
+		builder = false,
+		category = [[ALL NOTMOBILE NOTVTOL NOTSUB NOTWEAPON NOTDEFENSE NOTSUBNOTSHIP NOTHOVERNOTVTOL]],
+		corpse = [[ARMMEX_DEAD]],
+		description = [[Upg Metal Extractor amphibious]],
+		energyStorage = 0,
+		energyUse = 40,
+		explodeAs = [[TINY_BUILDINGEX]],
+		extractsMetal = 0.003,
+		featureDefs = {
+			ARMMEX_DEAD = {
+				blocking = true,
+				category = [[corpses]],
+				damage = nil,
+				description = nil,
+				energy = 0,
+				featureDead = [[ARMMEX_HEAP]],
+				featurereclamate = [[SMUDGE01]],
+				footprintX = 3,
+				footprintZ = 3,
+				height = 20,
+				hitdensity = 100,
+				metal = nil,
+				object = [[ARMMEX_DEAD]],
+				reclaimable = true,
+				seqnamereclamate = [[TREE1RECLAMATE]],
+				world = [[All Worlds]],
+			},
+			ARMMEX_HEAP = {
+				blocking = false,
+				category = [[heaps]],
+				damage = nil,
+				description = nil,
+				energy = 0,
+				featurereclamate = [[SMUDGE01]],
+				footprintX = 3,
+				footprintZ = 3,
+				height = 4,
+				hitdensity = 100,
+				metal = nil,
+				object = [[3X3B]],
+				reclaimable = true,
+				seqnamereclamate = [[TREE1RECLAMATE]],
+				world = [[All Worlds]],
+			},
+		},
+		footprintX = 3,
+		footprintZ = 3,
+		iconType = [[building]],
+		idleAutoHeal = 5,
+		idleTime = 1800,
+		maxDamage = 570,
+		maxSlope = 20,
+		maxVelocity = 0,
+		maxWaterDepth = 9999,
+		metalStorage = 300,
+		name = [[Metal Extractor]],
+		noAutoFire = false,
+		noChaseCategory = [[ALL]],
+		objectName = [[ARMMEX]],
+		onoffable = true,
+		seismicSignature = 0,
+		selfDestructAs = [[TINY_BUILDINGEX]],
+		selfDestructCountdown = 1,
+		side = [[ARM]],
+		sightDistance = 273,
+		smoothAnim = true,
+		sounds = {
+			activate = [[mexrun1]],
+			canceldestruct = [[cancel2]],
+			count = {
+				[1] = [[count6]],
+				[2] = [[count5]],
+				[3] = [[count4]],
+				[4] = [[count3]],
+				[5] = [[count2]],
+				[6] = [[count1]],
+			},
+			deactivate = [[mexoff1]],
+			ok = {
+				[1] = [[servmed2]],
+			},
+			select = {
+				[1] = [[mexon1]],
+			},
+			underattack = [[warning1]],
+			working = [[mexrun1]],
+		},
+		turnRate = 0,
+		unitname = [[armmex1]],
+		workerTime = 0,
+		yardMap = [[ooooooooo]],
+	},
 }
-
-
---------------------------------------------------------------------------------
-
-local featureDefs = {
-  ARMMEX_DEAD = {
-    blocking           = true,
-    category           = [[corpses]],
-    damage             = unitDef.maxDamage*0.6,
-    description        = [[Metal Extractor Wreckage]],
-    energy             = 0,
-    featureDead        = [[ARMMEX_HEAP]],
-    featurereclamate   = [[SMUDGE01]],
-    footprintX         = 3,
-    footprintZ         = 3,
-    height             = 20,
-    hitdensity         = 100,
-    metal              = unitDef.buildCostMetal*0.8,
-    object             = [[ARMMEX_DEAD]],
-    reclaimable        = true,
-    seqnamereclamate   = [[TREE1RECLAMATE]],
-    world              = [[All Worlds]],
-  },
-  ARMMEX_HEAP = {
-    blocking           = false,
-    category           = [[heaps]],
-    damage             = unitDef.maxDamage*0.36,
-    description        = [[Metal Extractor Heap]],
-    energy             = 0,
-    featurereclamate   = [[SMUDGE01]],
-    footprintX         = 3,
-    footprintZ         = 3,
-    height             = 4,
-    hitdensity         = 100,
-    metal              = unitDef.buildCostMetal*0.64,
-    object             = [[3X3B]],
-    reclaimable        = true,
-    seqnamereclamate   = [[TREE1RECLAMATE]],
-    world              = [[All Worlds]],
-  },
-}
-unitDef.featureDefs = featureDefs
-
-
---------------------------------------------------------------------------------
-
-return lowerkeys({ [unitName] = unitDef })
-
---------------------------------------------------------------------------------
+Def.armmex1.featureDefs.ARMMEX_DEAD.damage = 0.6000 * Def.armmex1.maxDamage
+Def.armmex1.featureDefs.ARMMEX_DEAD.description = Def.armmex1.name .. [[ Wreckage]]
+Def.armmex1.featureDefs.ARMMEX_DEAD.metal = 0.8000 * Def.armmex1.buildCostMetal
+Def.armmex1.featureDefs.ARMMEX_HEAP.damage = 0.3600 * Def.armmex1.maxDamage
+Def.armmex1.featureDefs.ARMMEX_HEAP.description = Def.armmex1.name .. [[ Heap]]
+Def.armmex1.featureDefs.ARMMEX_HEAP.metal = 0.6400 * Def.armmex1.buildCostMetal
+return lowerkeys(Def)

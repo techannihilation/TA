@@ -18,6 +18,12 @@ local options={
        desc="Tech Annihilation - Options",
        type="section",
     },
+    {
+       key="ta_wall",
+       name="Tech Annihilation - Peace Time Settings",
+       desc="Tech Annihilation - Peace Time Settings",
+       type="section",
+    },
 	{
 		key    = "mo_coop",
 		name   = "Cooperative Mode",
@@ -150,6 +156,78 @@ local options={
        max    = 1000000,
        step   = 1,  -- quantization is aligned to the def value
                     -- (step <= 0) means that there is no quantization
+	},
+	{
+	key     = 'wall_time',
+	name    = 'Wall Time',
+	desc    = 'How many minutes will the wall divide the teams?',
+	section = 'ta_wall',
+	type    = 'number',
+	min     = 0,
+	max     = 60,
+	step    = 1,
+	def     = 0,
+	},
+	
+	{
+	key     = 'wall_size',
+	name    = 'Wall Size',
+	desc    = 'How many percent of the map will each team get at start?',
+	section = 'ta_wall',
+	type    = 'number',
+	min     = 10,
+	max     = 45,
+	step    = 1,
+	def     = 45,
+	},
+	
+	{
+	key     = 'los',
+	name    = 'Line of Sight',
+	desc    = 'Can you see past the wall?',
+	section = 'ta_wall',
+	type    = 'list',
+	def     = '0',
+	items   = 
+	{
+		{
+			key  = '0',
+			name = 'normal LOS rules',
+			desc = 'everything works as expected.',
+		},
+		{
+			key  = '1',
+			name = 'Full LOS',
+			desc = 'You can see enemy units, everywhere.',
+		},
+--		{
+--			key  = '2',
+--			name = 'Blindness',
+--			desc = 'You can not see enemy units at all.',
+--		},
+	},
+	},
+	
+	{
+	key     = 'weapons',
+	name    = 'Cease-Fire',
+	desc    = 'Are weapons blocked as long as the wall remains?',
+	section = 'ta_wall',
+	type    = 'list',
+	def     = '2',
+	items   = 
+	{
+		{
+			key  = '1',
+			name = 'Yes',
+			desc = 'No unit can shoot until the timer is up.',
+		},
+		{
+			key  = '2',
+			name = 'No',
+			desc = 'Units can shot as normal.',
+		},
+	},
 	},
 }
 return options

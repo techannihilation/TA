@@ -1,110 +1,99 @@
--- UNITDEF -- CFUSIONPLANT --
---------------------------------------------------------------------------------
-
-local unitName = "cfusionplant"
-
---------------------------------------------------------------------------------
---NEWFUS
-local unitDef = {
-  activateWhenBuilt  = true,
-  bmcode             = 0,
-  buildAngle         = 90096,
-  buildCostEnergy    = 970000,
-  buildCostMetal     = 63000,
-  builder            = false,
-  buildTime          = 2200000,
-  category           = [[ALL NOTSUB NOWEAPON SPECIAL NOTAIR]],
-  copyright          = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
-  corpse             = [[dead]],
-  description        = [[Produces energy]],
-  energyMake         = 25600,
-  energyStorage      = 25600,
-  energyUse          = 0,
-  explodeAs          = [[SUPERBLAST_BUILDING]],
-  floater            = true,
-  footprintX         = 9,
-  footprintZ         = 9,
-  iconType           = [[building]],
-  maxDamage          = 30000.0,
-  maxSlope           = 10,
-  maxWaterDepth      = 0,
-  metalStorage       = 0,
-  name               = [[Mega Fusion Reactor]],
-  noAutoFire         = false,
-  objectName         = [[CFusionPlant]],
-  radarDistance      = 0,
-  seismicSignature   = 0,
-  selfDestructAs     = [[SUPERBLAST_BUILDING]],
-  side               = [[CORE]],
-  sightDistance      = 300,
-  smoothAnim         = true,
-  threed             = 1,
-  turnRate           = 0,
-  unitname           = [[cfusionplant]],
-  unitnumber         = 106,
-  version            = 1,
-  workerTime         = 0,
-  yardMap            = [[ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo]],
-  sounds = {
-    canceldestruct     = [[cancel2]],
-    underattack        = [[warning1]],
-    count = {
-      [[count6]],
-      [[count5]],
-      [[count4]],
-      [[count3]],
-      [[count2]],
-      [[count1]],
-    },
-    select = {
-      [[fusion2]],
-    },
-  },
+local Def = {
+	cfusionplant = {
+		activateWhenBuilt = true,
+		bmcode = 0,
+		buildAngle = 90096,
+		buildCostEnergy = 970000,
+		buildCostMetal = 63000,
+		buildTime = 2200000,
+		builder = false,
+		category = [[ALL NOTMOBILE NOTVTOL NOTSUB NOTWEAPON NOTDEFENSE NOTSUBNOTSHIP NOTHOVERNOTVTOL]],
+		copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
+		corpse = [[dead]],
+		description = [[Produces energy]],
+		energyMake = 25600,
+		energyStorage = 25600,
+		energyUse = 0,
+		explodeAs = [[SUPERBLAST_BUILDING]],
+		featureDefs = {
+			dead = {
+				blocking = true,
+				category = [[core_corpses]],
+				damage = nil,
+				description = [[Mega Fusion Wreckage]],
+				featureDead = [[heap]],
+				featurereclamate = [[smudge01]],
+				footprintX = 5,
+				footprintZ = 5,
+				height = 20,
+				hitdensity = 100,
+				metal = nil,
+				object = [[CFusionPlant_dead]],
+				reclaimable = true,
+				seqnamereclamate = [[tree1reclamate]],
+				world = [[All Worlds]],
+			},
+			heap = {
+				blocking = false,
+				category = [[heaps]],
+				damage = nil,
+				description = [[Mega Fusion Heap]],
+				featurereclamate = [[smudge01]],
+				footprintX = 5,
+				footprintZ = 5,
+				height = 4,
+				hitdensity = 100,
+				metal = nil,
+				object = [[CFusionPlant_heap]],
+				reclaimable = true,
+				seqnamereclamate = [[tree1reclamate]],
+				world = [[All Worlds]],
+			},
+		},
+		floater = true,
+		footprintX = 9,
+		footprintZ = 9,
+		iconType = [[building]],
+		maxDamage = 30000,
+		maxSlope = 10,
+		maxWaterDepth = 0,
+		metalStorage = 0,
+		name = [[Mega Fusion Reactor]],
+		noAutoFire = false,
+		noChaseCategory = [[ALL]],
+		objectName = [[CFusionPlant]],
+		radarDistance = 0,
+		seismicSignature = 0,
+		selfDestructAs = [[SUPERBLAST_BUILDING]],
+		side = [[CORE]],
+		sightDistance = 300,
+		smoothAnim = true,
+		sounds = {
+			canceldestruct = [[cancel2]],
+			count = {
+				[1] = [[count6]],
+				[2] = [[count5]],
+				[3] = [[count4]],
+				[4] = [[count3]],
+				[5] = [[count2]],
+				[6] = [[count1]],
+			},
+			select = {
+				[1] = [[fusion2]],
+			},
+			underattack = [[warning1]],
+		},
+		threed = 1,
+		turnRate = 0,
+		unitname = [[cfusionplant]],
+		unitnumber = 106,
+		version = 1,
+		workerTime = 0,
+		yardMap = [[ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo]],
+	},
 }
-
-
---------------------------------------------------------------------------------
-
-local featureDefs = {
-  dead = {
-    blocking           = true,
-    category           = [[core_corpses]],
-    damage             = unitDef.maxDamage*0.6,
-    description        = [[Mega Fusion Wreckage]],
-    featureDead        = [[heap]],
-    featurereclamate   = [[smudge01]],
-    footprintX         = 5,
-    footprintZ         = 5,
-    height             = 20,
-    hitdensity         = 100,
-    metal              = unitDef.buildCostMetal*0.8,
-    object             = [[CFusionPlant_dead]],
-    reclaimable        = true,
-    seqnamereclamate   = [[tree1reclamate]],
-    world              = [[All Worlds]],
-  },
-  heap = {
-    blocking           = false,
-    category           = [[heaps]],
-    damage             = unitDef.maxDamage*0.36,
-    description        = [[Mega Fusion Heap]],
-    featurereclamate   = [[smudge01]],
-    footprintX         = 5,
-    footprintZ         = 5,
-    height             = 4,
-    hitdensity         = 100,
-    metal              = unitDef.buildCostMetal*0.64,
-    object             = [[CFusionPlant_heap]],
-    reclaimable        = true,
-    seqnamereclamate   = [[tree1reclamate]],
-    world              = [[All Worlds]],
-  },
-}
-unitDef.featureDefs = featureDefs
-
-
---------------------------------------------------------------------------------
-
-return lowerkeys({ [unitName] = unitDef })
-
---------------------------------------------------------------------------------
+Def.cfusionplant.featureDefs.dead.damage = 0.6000 * Def.cfusionplant.maxDamage
+Def.cfusionplant.featureDefs.dead.metal = 0.8000 * Def.cfusionplant.buildCostMetal
+Def.cfusionplant.featureDefs.heap.damage = 0.3600 * Def.cfusionplant.maxDamage
+Def.cfusionplant.featureDefs.heap.metal = 0.6400 * Def.cfusionplant.buildCostMetal
+return lowerkeys(Def)

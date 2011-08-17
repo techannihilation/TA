@@ -1,93 +1,81 @@
--- UNITDEF -- ASHIPYARDLVL3 --
---------------------------------------------------------------------------------
-
-local unitName = "ashipyardlvl3"
-
---------------------------------------------------------------------------------
-
-local unitDef = {
-  buildCostEnergy    = 99000,
-  buildCostMetal     = 21200,
-  builder            = true,
-  buildTime          = 500000.500,
-  canMove            = true,
-  canPatrol          = true,
-  canstop            = 1,
-  category           = [[BIG BUILDING]],
-  collisionvolumeoffsets = [[0 0 -5]],
-  collisionvolumescales = [[272 168 536]],
-  collisionvolumetest = 0,
-  collisionvolumetype = [[Ell]],
-  corpse             = [[dead]],
-  description        = [[builds AeroShips]],
-  designation        = [[GZ-FA3C]],
-  energyStorage      = 500,
-  energyUse          = 0,
-  explodeAs          = [[SHIPBLAST]],
-  floater            = true,
-  footprintX         = 16,
-  footprintZ         = 30,
-  maxDamage          = 70000.0,
-  maxSlope           = 10,
-  maxWaterDepth      = 255,
-  metalStorage       = 500,
-  name               = [[Shipyard]],
-  objectName         = [[AShipyardLvl3]],
-  radarDistance      = 0,
-  selfDestructAs     = [[SHIPBLAST]],
-  side               = [[ARM]],
-  sightDistance      = 220,
-  unitname           = [[ashipyardlvl3]],
-  workerTime         = 240,
-  yardMap            = [[OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO]],
-  buildoptions = {
-    [[abroadside]],
-  },
-  sounds = {
-    build              = [[hoverok1]],
-    canceldestruct     = [[cancel2]],
-    underattack        = [[warning1]],
-    unitcomplete       = [[untdone]],
-    count = {
-      [[count6]],
-      [[count5]],
-      [[count4]],
-      [[count3]],
-      [[count2]],
-      [[count1]],
-    },
-    select = {
-      [[hoversl1]],
-    },
-  },
+local Def = {
+	ashipyardlvl3 = {
+		buildCostEnergy = 99000,
+		buildCostMetal = 21200,
+		buildTime = 500000.5,
+		builder = true,
+		buildoptions = {
+			[1] = [[abroadside]],
+		},
+		canMove = true,
+		canPatrol = true,
+		canstop = 1,
+		category = [[ALL NOTMOBILE NOTVTOL NOTSUB NOTWEAPON PLANT NOTDEFENSE NOTSUBNOTSHIP NOTHOVERNOTVTOL]],
+		collisionvolumeoffsets = [[0 0 -5]],
+		collisionvolumescales = [[272 168 536]],
+		collisionvolumetest = 0,
+		collisionvolumetype = [[Ell]],
+		corpse = [[dead]],
+		description = [[builds AeroShips]],
+		designation = [[GZ-FA3C]],
+		energyStorage = 500,
+		energyUse = 0,
+		explodeAs = [[SHIPBLAST]],
+		featureDefs = {
+			dead = {
+				blocking = true,
+				category = [[arm_corpses]],
+				damage = nil,
+				description = nil,
+				featurereclamate = [[smudge01]],
+				footprintX = 8,
+				footprintZ = 12,
+				height = 20,
+				hitdensity = 100,
+				metal = nil,
+				object = [[AShipyardLvl3_dead]],
+				reclaimable = true,
+				seqnamereclamate = [[tree1reclamate]],
+				world = [[All Worlds]],
+			},
+		},
+		floater = true,
+		footprintX = 16,
+		footprintZ = 30,
+		maxDamage = 70000,
+		maxSlope = 10,
+		maxWaterDepth = 255,
+		metalStorage = 500,
+		name = [[Shipyard]],
+		noChaseCategory = [[ALL]],
+		objectName = [[AShipyardLvl3]],
+		radarDistance = 0,
+		selfDestructAs = [[SHIPBLAST]],
+		side = [[ARM]],
+		sightDistance = 220,
+		sounds = {
+			build = [[hoverok1]],
+			canceldestruct = [[cancel2]],
+			count = {
+				[1] = [[count6]],
+				[2] = [[count5]],
+				[3] = [[count4]],
+				[4] = [[count3]],
+				[5] = [[count2]],
+				[6] = [[count1]],
+			},
+			select = {
+				[1] = [[hoversl1]],
+			},
+			underattack = [[warning1]],
+			unitcomplete = [[untdone]],
+		},
+		unitname = [[ashipyardlvl3]],
+		workerTime = 240,
+		yardMap = [[OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO]],
+	},
 }
-
-
---------------------------------------------------------------------------------
-
-local featureDefs = {
-  dead = {
-    blocking           = true,
-    category           = [[arm_corpses]],
-    damage             = unitDef.maxDamage*0.6,
-    description        = [[AeroShipyard Wreckage]],
-    featurereclamate   = [[smudge01]],
-    footprintX         = 8,
-    footprintZ         = 12,
-    height             = 20,
-    hitdensity         = 100,
-    metal              = unitDef.buildCostMetal*0.8,
-    object             = [[AShipyardLvl3_dead]],
-    reclaimable        = true,
-    seqnamereclamate   = [[tree1reclamate]],
-    world              = [[All Worlds]],
-  },
-}
-unitDef.featureDefs = featureDefs
-
-
---------------------------------------------------------------------------------
-
-return lowerkeys({ [unitName] = unitDef })
-
---------------------------------------------------------------------------------
+Def.ashipyardlvl3.featureDefs.dead.damage = 0.6000 * Def.ashipyardlvl3.maxDamage
+Def.ashipyardlvl3.featureDefs.dead.description = Def.ashipyardlvl3.name .. [[Aero Wreckage]]
+Def.ashipyardlvl3.featureDefs.dead.metal = 0.8000 * Def.ashipyardlvl3.buildCostMetal
+return lowerkeys(Def)
