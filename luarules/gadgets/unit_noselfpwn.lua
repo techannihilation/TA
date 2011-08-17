@@ -25,15 +25,23 @@ local SetUnitHealth = Spring.SetUnitHealth
 local newSpring = false
 
 local PWN_UNITS = {}
+--Arm
+PWN_UNITS[UnitDefNames["armpt"].id] = true
+PWN_UNITS[UnitDefNames["armham"].id] = true
+PWN_UNITS[UnitDefNames["armfav"].id] = true
+--Core
 PWN_UNITS[UnitDefNames["corpyro"].id] = true
 PWN_UNITS[UnitDefNames["cormaw"].id] = true
 PWN_UNITS[UnitDefNames["corthud"].id] = true
-PWN_UNITS[UnitDefNames["armham"].id] = true
-PWN_UNITS[UnitDefNames["armfav"].id] = true
 PWN_UNITS[UnitDefNames["corfav"].id] = true
 PWN_UNITS[UnitDefNames["corak"].id] = true
 PWN_UNITS[UnitDefNames["corpt"].id] = true
-PWN_UNITS[UnitDefNames["armpt"].id] = true
+--The lost legacy
+PWN_UNITS[UnitDefNames["tllpbot"].id] = true
+PWN_UNITS[UnitDefNames["tllburner"].id] = true
+PWN_UNITS[UnitDefNames["tlllft"].id] = true
+PWN_UNITS[UnitDefNames["tllotter"].id] = true
+
 
 function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, 
                             weaponID, attackerID, attackerDefID, attackerTeam)
