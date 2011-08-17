@@ -1,301 +1,213 @@
-local Def = {
-	armah = {
-		acceleration = 0.096,
-		bmcode = 1,
-		brakeRate = 0.112,
-		buildCostEnergy = 4237,
-		buildCostMetal = 217,
-		buildPic = [[ARMAH.png]],
-		buildTime = nil,
-		builder = false,
-		canAttack = true,
-		canGuard = true,
-		canHover = true,
-		canMove = true,
-		canPatrol = true,
-		canstop = 1,
-		category = [[ALL HOVER MOBILE WEAPON NOTSUB NOTSHIP NOTAIR]],
-		corpse = [[DEAD]],
-		defaultmissiontype = [[Standby]],
-		description = [[Anti-Air Hovercraft]],
-		energyMake = 2.6,
-		energyStorage = 0,
-		energyUse = 2.6,
-		explodeAs = [[BIG_UNITEX]],
-		featureDefs = {
-			DEAD = {
-				blocking = false,
-				category = [[corpses]],
-				damage = 575.4,
-				description = [[Swatter Wreckage]],
-				energy = 0,
-				featureDead = [[HEAP]],
-				footprintX = 3,
-				footprintZ = 3,
-				height = 20,
-				hitdensity = 100,
-				metal = 173.6,
-				object = [[ARMAH_DEAD]],
-				reclaimable = true,
-				seqnamereclamate = [[TREE1RECLAMATE]],
-				world = [[All Worlds]],
-			},
-			HEAP = {
-				blocking = false,
-				category = [[heaps]],
-				damage = 345.24,
-				description = [[Swatter Heap]],
-				energy = 0,
-				footprintX = 3,
-				footprintZ = 3,
-				height = 4,
-				hitdensity = 100,
-				metal = 138.88,
-				object = [[3X3B]],
-				reclaimable = true,
-				seqnamereclamate = [[TREE1RECLAMATE]],
-				world = [[All Worlds]],
-			},
-		},
-		firestandorders = 1,
-		footprintX = 3,
-		footprintZ = 3,
-		idleAutoHeal = 5,
-		idleTime = 1800,
-		maneuverleashlength = 640,
-		maxDamage = 959,
-		maxSlope = 16,
-		maxVelocity = 3.34,
-		maxWaterDepth = 0,
-		metalStorage = 0,
-		mobilestandorders = 1,
-		movementClass = [[HOVER3]],
-		name = [[Swatter]],
-		noAutoFire = false,
-		noChaseCategory = [[ALL]],
-		objectName = [[ARMAH]],
-		seismicSignature = 0,
-		selfDestructAs = [[BIG_UNIT]],
-		side = [[ARM]],
-		sightDistance = 509,
-		smoothAnim = true,
-		sonarDistance = 350,
-		sounds = {
-			canceldestruct = [[cancel2]],
-			cant = {
-				[1] = [[cantdo4]],
-			},
-			count = {
-				[1] = [[count6]],
-				[2] = [[count5]],
-				[3] = [[count4]],
-				[4] = [[count3]],
-				[5] = [[count2]],
-				[6] = [[count1]],
-			},
-			ok = {
-				[1] = [[hovmdok1]],
-			},
-			select = {
-				[1] = [[hovmdsl1]],
-			},
-			underattack = [[warning1]],
-		},
-		standingfireorder = 2,
-		standingmoveorder = 1,
-		steeringmode = 1,
-		turnRate = 490,
-		unitname = [[armah]],
-		weaponDefs = {
-			ARMAH_WEAPON = {
-				areaOfEffect = 48,
-				burst = 3,
-				burstrate = 0.2,
-				canattackground = false,
-				craterBoost = 0,
-				craterMult = 0,
-				damage = {
-					default = 62,
-					l1subs = 5,
-					l2subs = 5,
-					l3subs = 5,
-				},
-				explosionGenerator = [[custom:FLASH2]],
-				fireStarter = 70,
-				guidance = true,
-				impulseBoost = 0.123,
-				impulseFactor = 0.123,
-				lineOfSight = true,
-				metalpershot = 0,
-				model = [[missile]],
-				name = [[Missiles]],
-				noSelfDamage = true,
-				range = 700,
-				reloadtime = 2.2,
-				renderType = 1,
-				selfprop = true,
-				smokeTrail = true,
-				smokedelay = 0.1,
-				soundHit = [[xplomed2]],
-				soundStart = [[rockhvy2]],
-				startVelocity = 450,
-				startsmoke = 1,
-				texture2 = [[armsmoketrail]],
-				toAirWeapon = true,
-				tolerance = 10000,
-				tracks = true,
-				turnRate = 63000,
-				turret = true,
-				weaponAcceleration = 164,
-				weaponTimer = 5,
-				weaponType = [[MissileLauncher]],
-				weaponVelocity = 670,
-			},
-			BOGUS_MISSILE = {
-				areaOfEffect = 48,
-				canattackground = false,
-				craterBoost = 0,
-				craterMult = 0,
-				damage = {
-					default = 0,
-				},
-				impulseBoost = 0,
-				impulseFactor = 0,
-				lineOfSight = true,
-				metalpershot = 0,
-				name = [[Missiles]],
-				range = 800,
-				reloadtime = 0.5,
-				renderType = 1,
-				startVelocity = 450,
-				toAirWeapon = true,
-				tolerance = 9000,
-				turnRate = 33000,
-				turret = true,
-				weaponAcceleration = 101,
-				weaponTimer = 0.1,
-				weaponType = [[Cannon]],
-				weaponVelocity = 650,
-			},
-		},
-		weapons = {
-			[1] = {
-				def = [[BOGUS_MISSILE]],
-			},
-			[2] = {
-				def = [[ARMAH_WEAPON]],
-			},
-		},
-		workerTime = 0,
-	},
+-- UNITDEF -- ARMAH --
+--------------------------------------------------------------------------------
+
+local unitName = "armah"
+
+--------------------------------------------------------------------------------
+
+local unitDef = {
+  acceleration       = 0.096,
+  bmcode             = 1,
+  brakeRate          = 0.112,
+  buildCostEnergy    = 4237,
+  buildCostMetal     = 217,
+  builder            = false,
+  buildPic           = [[ARMAH.png]],
+  buildTime          = 3565,
+  canAttack          = true,
+  canGuard           = true,
+  canHover           = true,
+  canMove            = true,
+  canPatrol          = true,
+  canstop            = 1,
+  category           = [[ALL HOVER MOBILE WEAPON NOTSUB NOTSHIP NOTAIR]],
+  corpse             = [[DEAD]],
+  defaultmissiontype = [[Standby]],
+  description        = [[Anti-Air Hovercraft]],
+  energyMake         = 2.6,
+  energyStorage      = 0,
+  energyUse          = 2.6,
+  explodeAs          = [[BIG_UNITEX]],
+  firestandorders    = 1,
+  footprintX         = 3,
+  footprintZ         = 3,
+  idleAutoHeal       = 5,
+  idleTime           = 1800,
+  maneuverleashlength = 640,
+  maxDamage          = 959,
+  maxSlope           = 16,
+  maxVelocity        = 3.34,
+  maxWaterDepth      = 0,
+  metalStorage       = 0,
+  mobilestandorders  = 1,
+  movementClass      = [[HOVER3]],
+  name               = [[Swatter]],
+  noAutoFire         = false,
+  noChaseCategory    = [[ALL]],
+  objectName         = [[ARMAH]],
+  seismicSignature   = 0,
+  selfDestructAs     = [[BIG_UNIT]],
+  side               = [[ARM]],
+  sightDistance      = 509,
+  smoothAnim         = true,
+  sonarDistance      = 350,
+  standingfireorder  = 2,
+  standingmoveorder  = 1,
+  steeringmode       = 1,
+  turnRate           = 490,
+  unitname           = [[armah]],
+  workerTime         = 0,
+  sounds = {
+    canceldestruct     = [[cancel2]],
+    underattack        = [[warning1]],
+    cant = {
+      [[cantdo4]],
+    },
+    count = {
+      [[count6]],
+      [[count5]],
+      [[count4]],
+      [[count3]],
+      [[count2]],
+      [[count1]],
+    },
+    ok = {
+      [[hovmdok1]],
+    },
+    select = {
+      [[hovmdsl1]],
+    },
+  },
+  weapons = {
+    [1]  = {
+      def                = [[BOGUS_MISSILE]],
+    },
+    [2]  = {
+      def                = [[ARMAH_WEAPON]],
+    },
+  },
 }
-Def.aach.buildTime = 2.0955 * Def.aach.buildCostEnergy
-Def.aach.featureDefs.dead.damage = 0.6000 * Def.aach.maxDamage
-Def.aach.featureDefs.dead.metal = 0.8000 * Def.aach.buildCostMetal
-Def.aafus.buildTime = 1.8182 * Def.aafus.buildCostEnergy
-Def.aahp.buildTime = 2.6001 * Def.aahp.buildCostEnergy
-Def.aahp.featureDefs.dead.damage = 0.6000 * Def.aahp.maxDamage
-Def.aahp.featureDefs.dead.metal = 0.8000 * Def.aahp.buildCostMetal
-Def.aahp.featureDefs.heap.damage = 0.3600 * Def.aahp.maxDamage
-Def.aahp.featureDefs.heap.metal = 0.6400 * Def.aahp.buildCostMetal
-Def.aahpns.buildTime = 1.2217 * Def.aahpns.buildCostEnergy
-Def.aahpns.featureDefs.dead.damage = 0.6000 * Def.aahpns.maxDamage
-Def.aahpns.featureDefs.dead.metal = 0.8000 * Def.aahpns.buildCostMetal
-Def.aahpns.featureDefs.heap.damage = 0.3600 * Def.aahpns.maxDamage
-Def.aahpns.featureDefs.heap.metal = 0.6400 * Def.aahpns.buildCostMetal
-Def.abroadside.buildTime = 1.4286 * Def.abroadside.buildCostEnergy
-Def.abroadside.featureDefs.dead.damage = 0.6000 * Def.abroadside.maxDamage
-Def.abroadside.featureDefs.dead.metal = 0.8000 * Def.abroadside.buildCostMetal
-Def.abuilderlvl1.buildTime = 3.9372 * Def.abuilderlvl1.buildCostEnergy
-Def.abuilderlvl2.buildTime = 1.1032 * Def.abuilderlvl2.buildCostEnergy
-Def.abuilderlvl2.featureDefs.dead.damage = 0.6000 * Def.abuilderlvl2.maxDamage
-Def.abuilderlvl2.featureDefs.dead.metal = 0.8000 * Def.abuilderlvl2.buildCostMetal
-Def.abuilderlvl3.buildTime = 0.6800 * Def.abuilderlvl3.buildCostEnergy
-Def.abuilderlvl3.featureDefs.dead.damage = 0.6000 * Def.abuilderlvl3.maxDamage
-Def.abuilderlvl3.featureDefs.dead.metal = 0.8000 * Def.abuilderlvl3.buildCostMetal
-Def.acovertopscentre.buildTime = 0.0466 * Def.acovertopscentre.buildCostEnergy
-Def.acovertopscentre.featureDefs.dead.damage = 0.6000 * Def.acovertopscentre.maxDamage
-Def.acovertopscentre.featureDefs.dead.metal = 0.8000 * Def.acovertopscentre.buildCostMetal
-Def.aexxec.buildTime = 1.6005 * Def.aexxec.buildCostEnergy
-Def.aexxec.featureDefs.dead.damage = 0.6000 * Def.aexxec.maxDamage
-Def.aexxec.featureDefs.dead.description = Def.aexxec.name .. [[ Wreckage]]
-Def.aexxec.featureDefs.dead.metal = 0.8000 * Def.aexxec.buildCostMetal
-Def.aexxec.featureDefs.heap.damage = 0.3600 * Def.aexxec.maxDamage
-Def.aexxec.featureDefs.heap.description = Def.aexxec.name .. [[ Heap]]
-Def.aexxec.featureDefs.heap.metal = 0.6400 * Def.aexxec.buildCostMetal
-Def.afusionplant.buildTime = 1.5652 * Def.afusionplant.buildCostEnergy
-Def.afusionplant.featureDefs.dead.damage = 0.6000 * Def.afusionplant.maxDamage
-Def.afusionplant.featureDefs.dead.metal = 0.8000 * Def.afusionplant.buildCostMetal
-Def.afusionplant.featureDefs.heap.damage = 0.3600 * Def.afusionplant.maxDamage
-Def.afusionplant.featureDefs.heap.metal = 0.6400 * Def.afusionplant.buildCostMetal
-Def.ahermes.buildTime = 3.0064 * Def.ahermes.buildCostEnergy
-Def.ahermes.featureDefs.dead.damage = 0.6000 * Def.ahermes.maxDamage
-Def.ahermes.featureDefs.dead.description = Def.ahermes.name .. [[ Wreckage]]
-Def.ahermes.featureDefs.dead.metal = 0.8000 * Def.ahermes.buildCostMetal
-Def.ahermes.featureDefs.heap.damage = 0.3600 * Def.ahermes.maxDamage
-Def.ahermes.featureDefs.heap.description = Def.ahermes.name .. [[ Wreckage]]
-Def.ahermes.featureDefs.heap.metal = 0.6400 * Def.ahermes.buildCostMetal
-Def.airwolf3g.buildTime = 0.3809 * Def.airwolf3g.buildCostEnergy
-Def.ajuno.buildTime = 1.3167 * Def.ajuno.buildCostEnergy
-Def.akmech.buildTime = 0.4768 * Def.akmech.buildCostEnergy
-Def.akmech.featureDefs.heap.damage = 0.3600 * Def.akmech.maxDamage
-Def.akmech.featureDefs.heap.metal = 0.6400 * Def.akmech.buildCostMetal
-Def.ametalmakerlvl1.buildTime = 0.8342 * Def.ametalmakerlvl1.buildCostEnergy
-Def.ametalmakerlvl2.buildTime = 0.1666 * Def.ametalmakerlvl2.buildCostEnergy
-Def.ametalmakerlvl2.featureDefs.dead.damage = 0.6000 * Def.ametalmakerlvl2.maxDamage
-Def.ametalmakerlvl2.featureDefs.dead.metal = 0.8000 * Def.ametalmakerlvl2.buildCostMetal
-Def.ametalmakerlvl2.featureDefs.heap.damage = 0.3600 * Def.ametalmakerlvl2.maxDamage
-Def.ametalmakerlvl2.featureDefs.heap.metal = 0.6400 * Def.ametalmakerlvl2.buildCostMetal
-Def.amgeo.buildTime = 2.2727 * Def.amgeo.buildCostEnergy
-Def.amortor.buildTime = 1.1531 * Def.amortor.buildCostEnergy
-Def.amortor.featureDefs.dead.damage = 0.6000 * Def.amortor.maxDamage
-Def.amortor.featureDefs.dead.metal = 0.8000 * Def.amortor.buildCostMetal
-Def.amortor.featureDefs.heap.damage = 0.3600 * Def.amortor.maxDamage
-Def.amortor.featureDefs.heap.metal = 0.6400 * Def.amortor.buildCostMetal
-Def.ananotower.buildTime = 0.7070 * Def.ananotower.buildCostEnergy
-Def.ananotower.featureDefs.dead.damage = 0.6000 * Def.ananotower.maxDamage
-Def.ananotower.featureDefs.dead.metal = 0.8000 * Def.ananotower.buildCostMetal
-Def.apache.buildTime = 1.9878 * Def.apache.buildCostEnergy
-Def.apocketfusion.buildTime = 1.4490 * Def.apocketfusion.buildCostEnergy
-Def.apocketfusion.featureDefs.dead.damage = 0.6000 * Def.apocketfusion.maxDamage
-Def.apocketfusion.featureDefs.dead.description = Def.apocketfusion.name .. [[ Wreckage]]
-Def.apocketfusion.featureDefs.dead.metal = 0.8000 * Def.apocketfusion.buildCostMetal
-Def.arm_big_bertha.buildTime = 1.4919 * Def.arm_big_bertha.buildCostEnergy
-Def.arm_furie.buildTime = 1.0319 * Def.arm_furie.buildCostEnergy
-Def.arm_furie.featureDefs.dead.damage = 0.6000 * Def.arm_furie.maxDamage
-Def.arm_furie.featureDefs.dead.metal = 0.8000 * Def.arm_furie.buildCostMetal
-Def.arm_furie.featureDefs.furie_heap.damage = 0.3600 * Def.arm_furie.maxDamage
-Def.arm_furie.featureDefs.furie_heap.metal = 0.6400 * Def.arm_furie.buildCostMetal
-Def.arm_guardian.buildTime = 0.6756 * Def.arm_guardian.buildCostEnergy
-Def.arm_guardian.featureDefs.core_immolator_heap.damage = 0.6000 * Def.arm_guardian.maxDamage
-Def.arm_guardian.featureDefs.core_immolator_heap.metal = 0.8000 * Def.arm_guardian.buildCostMetal
-Def.arm_guardian.featureDefs.dead.damage = 0.3600 * Def.arm_guardian.maxDamage
-Def.arm_guardian.featureDefs.dead.description = Def.arm_guardian.name .. [[ Wreckage]]
-Def.arm_guardian.featureDefs.dead.metal = 0.6400 * Def.arm_guardian.buildCostMetal
-Def.arm_immolator.buildTime = 0.3812 * Def.arm_immolator.buildCostEnergy
-Def.arm_immolator.featureDefs.core_immolator_dead.damage = 0.6000 * Def.arm_immolator.maxDamage
-Def.arm_immolator.featureDefs.core_immolator_dead.description = Def.arm_immolator.name .. [[ Wreckage]]
-Def.arm_immolator.featureDefs.core_immolator_dead.metal = 0.8000 * Def.arm_immolator.buildCostMetal
-Def.arm_immolator.featureDefs.core_immolator_heap.damage = 0.3600 * Def.arm_immolator.maxDamage
-Def.arm_immolator.featureDefs.core_immolator_heap.description = Def.arm_immolator.name .. [[ Heap]]
-Def.arm_immolator.featureDefs.core_immolator_heap.metal = 0.6400 * Def.arm_immolator.buildCostMetal
-Def.arm_wind_generator.buildTime = 3.1493 * Def.arm_wind_generator.buildCostEnergy
-Def.arm_wind_generator.featureDefs.core_wind_generator_heap.damage = 0.6000 * Def.arm_wind_generator.maxDamage
-Def.arm_wind_generator.featureDefs.core_wind_generator_heap.metal = 0.8000 * Def.arm_wind_generator.buildCostMetal
-Def.arm_wind_generator.featureDefs.dead.damage = 0.3600 * Def.arm_wind_generator.maxDamage
-Def.arm_wind_generator.featureDefs.dead.metal = 0.6400 * Def.arm_wind_generator.buildCostMetal
-Def.armaak.buildTime = 1.3213 * Def.armaak.buildCostEnergy
-Def.armaap.buildTime = 0.6286 * Def.armaap.buildCostEnergy
-Def.armaas.buildTime = 1.2224 * Def.armaas.buildCostEnergy
-Def.armaaspd.buildTime = 1.8562 * Def.armaaspd.buildCostEnergy
-Def.armaaspd.featureDefs.dead.damage = 0.6000 * Def.armaaspd.maxDamage
-Def.armaaspd.featureDefs.dead.metal = 0.8000 * Def.armaaspd.buildCostMetal
-Def.armaaspd.featureDefs.heap.damage = 0.3600 * Def.armaaspd.maxDamage
-Def.armaaspd.featureDefs.heap.metal = 0.6400 * Def.armaaspd.buildCostMetal
-Def.armaca.buildTime = 0.9542 * Def.armaca.buildCostEnergy
-Def.armack.buildTime = 0.6176 * Def.armack.buildCostEnergy
-Def.armacsub.buildTime = 1.5057 * Def.armacsub.buildCostEnergy
-Def.armacv.buildTime = 0.3918 * Def.armacv.buildCostEnergy
-Def.armadvsol.buildTime = 1.4957 * Def.armadvsol.buildCostEnergy
-Def.armah.buildTime = 0.8414 * Def.armah.buildCostEnergy
-return lowerkeys(Def)
+
+
+--------------------------------------------------------------------------------
+
+local weaponDefs = {
+  ARMAH_WEAPON = {
+    areaOfEffect       = 48,
+    burst              = 3,
+    burstrate          = 0.2,
+    canattackground    = false,
+    craterBoost        = 0,
+    craterMult         = 0,
+    explosionGenerator = [[custom:FLASH2]],
+    fireStarter        = 70,
+    guidance           = true,
+    impulseBoost       = 0.123,
+    impulseFactor      = 0.123,
+    lineOfSight        = true,
+    metalpershot       = 0,
+    model              = [[missile]],
+    name               = [[Missiles]],
+    noSelfDamage       = true,
+    range              = 700,
+    reloadtime         = 2.2,
+    renderType         = 1,
+    selfprop           = true,
+    smokedelay         = 0.1,
+    smokeTrail         = true,
+    soundHit           = [[xplomed2]],
+    soundStart         = [[rockhvy2]],
+    startsmoke         = 1,
+    startVelocity      = 450,
+    texture2           = [[armsmoketrail]],
+    toAirWeapon        = true,
+    tolerance          = 10000,
+    tracks             = true,
+    turnRate           = 63000,
+    turret             = true,
+    weaponAcceleration = 164,
+    weaponTimer        = 5,
+    weaponType         = [[MissileLauncher]],
+    weaponVelocity     = 670,
+    damage = {
+      default            = 62,
+      l1subs             = 5,
+      l2subs             = 5,
+      l3subs             = 5,
+    },
+  },
+  BOGUS_MISSILE = {
+    areaOfEffect       = 48,
+    canattackground    = false,
+    craterBoost        = 0,
+    craterMult         = 0,
+    impulseBoost       = 0,
+    impulseFactor      = 0,
+    lineOfSight        = true,
+    metalpershot       = 0,
+    name               = [[Missiles]],
+    range              = 800,
+    reloadtime         = 0.5,
+    renderType         = 1,
+    startVelocity      = 450,
+    toAirWeapon        = true,
+    tolerance          = 9000,
+    turnRate           = 33000,
+    turret             = true,
+    weaponAcceleration = 101,
+    weaponTimer        = 0.1,
+    weaponType         = [[Cannon]],
+    weaponVelocity     = 650,
+    damage = {
+      default            = 0,
+    },
+  },
+}
+unitDef.weaponDefs = weaponDefs
+
+
+--------------------------------------------------------------------------------
+
+local featureDefs = {
+  DEAD = {
+    blocking           = false,
+    category           = [[corpses]],
+    damage             = unitDef.maxDamage*0.6,
+    description        = [[Swatter Wreckage]],
+    energy             = 0,
+    featureDead        = [[HEAP]],
+    footprintX         = 3,
+    footprintZ         = 3,
+    height             = 20,
+    hitdensity         = 100,
+    metal              = unitDef.buildCostMetal*0.8,
+    object             = [[ARMAH_DEAD]],
+    reclaimable        = true,
+    seqnamereclamate   = [[TREE1RECLAMATE]],
+    world              = [[All Worlds]],
+  },
+  HEAP = {
+    blocking           = false,
+    category           = [[heaps]],
+    damage             = unitDef.maxDamage*0.36,
+    description        = [[Swatter Heap]],
+    energy             = 0,
+    footprintX         = 3,
+    footprintZ         = 3,
+    height             = 4,
+    hitdensity         = 100,
+    metal              = unitDef.buildCostMetal*0.64,
+    object             = [[3X3B]],
+    reclaimable        = true,
+    seqnamereclamate   = [[TREE1RECLAMATE]],
+    world              = [[All Worlds]],
+  },
+}
+unitDef.featureDefs = featureDefs
+
+
+--------------------------------------------------------------------------------
+
+return lowerkeys({ [unitName] = unitDef })
+
+--------------------------------------------------------------------------------

@@ -1,171 +1,121 @@
-local Def = {
-	ananotower = {
-		acceleration = 0.2394,
-		bmcode = 1,
-		brakeRate = 0.798,
-		buildCostEnergy = 37362.81,
-		buildCostMetal = 1904.85,
-		buildDistance = 1200,
-		buildTime = nil,
-		builder = true,
-		canAssist = true,
-		canGuard = true,
-		canMove = false,
-		canPatrol = true,
-		canreclamate = 0,
-		canstop = 1,
-		cantBeTransported = true,
-		category = [[ALL NOTSUB NOWEAPON SPECIAL NOTAIR]],
-		copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
-		corpse = [[dead]],
-		defaultmissiontype = [[patrol]],
-		description = [[stationary nanolathe]],
-		designation = [[A-MT1]],
-		energyMake = 10,
-		energyStorage = 200,
-		energyUse = 5,
-		explodeAs = [[LIGHTSHIPBLAST]],
-		featureDefs = {
-			dead = {
-				blocking = true,
-				category = [[arm_corpses]],
-				damage = nil,
-				description = [[Arm Nanotower Remains]],
-				featurereclamate = [[smudge01]],
-				footprintX = 4,
-				footprintZ = 4,
-				height = 20,
-				hitdensity = 100,
-				metal = nil,
-				object = [[ANanotower_dead]],
-				reclaimable = true,
-				seqnamereclamate = [[tree1reclamate]],
-				world = [[All Worlds]],
-			},
-		},
-		floater = true,
-		footprintX = 2,
-		footprintZ = 2,
-		frenchdescription = [[Nanolateur stationnaire]],
-		frenchname = [[Tour nanolatique]],
-		germandescription = [[Nano Turm]],
-		germanname = [[Nano Turm]],
-		maneuverleashlength = 0,
-		mass = 1000000,
-		maxDamage = 2000,
-		maxSlope = 20,
-		maxVelocity = 0,
-		maxWaterDepth = 25,
-		metalMake = 0,
-		metalStorage = 0,
-		mobilestandorders = 1,
-		name = [[Long Range Nanotower]],
-		noAutoFire = false,
-		objectName = [[ANanotower]],
-		ovradjust = 1,
-		radarDistance = 0,
-		selfDestructAs = [[LIGHTSHIPBLAST]],
-		shootme = 1,
-		side = [[ARM]],
-		sightDistance = 350,
-		sounds = {
-			build = [[nanlath1]],
-			canceldestruct = [[cancel2]],
-			cant = {
-				[1] = [[cantdo4]],
-			},
-			count = {
-				[1] = [[count6]],
-				[2] = [[count5]],
-				[3] = [[count4]],
-				[4] = [[count3]],
-				[5] = [[count2]],
-				[6] = [[count1]],
-			},
-			ok = {
-				[1] = [[varmmove]],
-			},
-			repair = [[repair1]],
-			select = {
-				[1] = [[varmsel]],
-			},
-			underattack = [[warning1]],
-			working = [[reclaim1]],
-		},
-		standingmoveorder = 1,
-		steeringmode = 1,
-		threed = 1,
-		turnRate = 1.33,
-		unitname = [[ananotower]],
-		version = 3,
-		workerTime = 750,
-		zbuffer = 1,
-	},
+-- UNITDEF -- ANANOTOWER --
+--------------------------------------------------------------------------------
+
+local unitName = "ananotower"
+
+--------------------------------------------------------------------------------
+
+local unitDef = {
+  acceleration       = 0.2394,
+  bmcode             = 1,
+  brakeRate          = 0.798,
+  buildCostEnergy    = 37362.810,
+  buildCostMetal     = 1904.850,
+  buildDistance      = 1200,
+  builder            = true,
+  buildTime          = 26415.380,
+  canAssist          = true,
+  canGuard           = true,
+  canMove            = false,
+  canPatrol          = true,
+  canreclamate       = 0,
+  canstop            = 1,
+  cantBeTransported  = true,
+  category           = [[ALL NOTSUB NOWEAPON SPECIAL NOTAIR]],
+  copyright          = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
+  corpse             = [[dead]],
+  defaultmissiontype = [[patrol]],
+  description        = [[stationary nanolathe]],
+  designation        = [[A-MT1]],
+  energyMake         = 10,
+  energyStorage      = 200,
+  energyUse          = 5,
+  explodeAs          = [[LIGHTSHIPBLAST]],
+  floater            = true,
+  footprintX         = 2,
+  footprintZ         = 2,
+  frenchdescription  = [[Nanolateur stationnaire]],
+  frenchname         = [[Tour nanolatique]],
+  germandescription  = [[Nano Turm]],
+  germanname         = [[Nano Turm]],
+  maneuverleashlength = 0,
+  mass               = 1000000,
+  maxDamage          = 2000.0,
+  maxSlope           = 20,
+  maxVelocity        = 0.00,
+  maxWaterDepth      = 25,
+  metalMake          = 0,
+  metalStorage       = 0,
+  mobilestandorders  = 1,
+  name               = [[Long Range Nanotower]],
+  noAutoFire         = false,
+  objectName         = [[ANanotower]],
+  ovradjust          = 1,
+  radarDistance      = 0,
+  selfDestructAs     = [[LIGHTSHIPBLAST]],
+  shootme            = 1,
+  side               = [[ARM]],
+  sightDistance      = 350,
+  standingmoveorder  = 1,
+  steeringmode       = 1,
+  threed             = 1,
+  turnRate           = 1.33,
+  unitname           = [[ananotower]],
+  version            = 3.0,
+  workerTime         = 750,
+  zbuffer            = 1,
+  sounds = {
+    build              = [[nanlath1]],
+    canceldestruct     = [[cancel2]],
+    repair             = [[repair1]],
+    underattack        = [[warning1]],
+    working            = [[reclaim1]],
+    cant = {
+      [[cantdo4]],
+    },
+    count = {
+      [[count6]],
+      [[count5]],
+      [[count4]],
+      [[count3]],
+      [[count2]],
+      [[count1]],
+    },
+    ok = {
+      [[varmmove]],
+    },
+    select = {
+      [[varmsel]],
+    },
+  },
 }
-Def.aach.buildTime = 2.0955 * Def.aach.buildCostEnergy
-Def.aach.featureDefs.dead.damage = 0.6000 * Def.aach.maxDamage
-Def.aach.featureDefs.dead.metal = 0.8000 * Def.aach.buildCostMetal
-Def.aafus.buildTime = 1.8182 * Def.aafus.buildCostEnergy
-Def.aahp.buildTime = 2.6001 * Def.aahp.buildCostEnergy
-Def.aahp.featureDefs.dead.damage = 0.6000 * Def.aahp.maxDamage
-Def.aahp.featureDefs.dead.metal = 0.8000 * Def.aahp.buildCostMetal
-Def.aahp.featureDefs.heap.damage = 0.3600 * Def.aahp.maxDamage
-Def.aahp.featureDefs.heap.metal = 0.6400 * Def.aahp.buildCostMetal
-Def.aahpns.buildTime = 1.2217 * Def.aahpns.buildCostEnergy
-Def.aahpns.featureDefs.dead.damage = 0.6000 * Def.aahpns.maxDamage
-Def.aahpns.featureDefs.dead.metal = 0.8000 * Def.aahpns.buildCostMetal
-Def.aahpns.featureDefs.heap.damage = 0.3600 * Def.aahpns.maxDamage
-Def.aahpns.featureDefs.heap.metal = 0.6400 * Def.aahpns.buildCostMetal
-Def.abroadside.buildTime = 1.4286 * Def.abroadside.buildCostEnergy
-Def.abroadside.featureDefs.dead.damage = 0.6000 * Def.abroadside.maxDamage
-Def.abroadside.featureDefs.dead.metal = 0.8000 * Def.abroadside.buildCostMetal
-Def.abuilderlvl1.buildTime = 3.9372 * Def.abuilderlvl1.buildCostEnergy
-Def.abuilderlvl2.buildTime = 1.1032 * Def.abuilderlvl2.buildCostEnergy
-Def.abuilderlvl2.featureDefs.dead.damage = 0.6000 * Def.abuilderlvl2.maxDamage
-Def.abuilderlvl2.featureDefs.dead.metal = 0.8000 * Def.abuilderlvl2.buildCostMetal
-Def.abuilderlvl3.buildTime = 0.6800 * Def.abuilderlvl3.buildCostEnergy
-Def.abuilderlvl3.featureDefs.dead.damage = 0.6000 * Def.abuilderlvl3.maxDamage
-Def.abuilderlvl3.featureDefs.dead.metal = 0.8000 * Def.abuilderlvl3.buildCostMetal
-Def.acovertopscentre.buildTime = 0.0466 * Def.acovertopscentre.buildCostEnergy
-Def.acovertopscentre.featureDefs.dead.damage = 0.6000 * Def.acovertopscentre.maxDamage
-Def.acovertopscentre.featureDefs.dead.metal = 0.8000 * Def.acovertopscentre.buildCostMetal
-Def.aexxec.buildTime = 1.6005 * Def.aexxec.buildCostEnergy
-Def.aexxec.featureDefs.dead.damage = 0.6000 * Def.aexxec.maxDamage
-Def.aexxec.featureDefs.dead.description = Def.aexxec.name .. [[ Wreckage]]
-Def.aexxec.featureDefs.dead.metal = 0.8000 * Def.aexxec.buildCostMetal
-Def.aexxec.featureDefs.heap.damage = 0.3600 * Def.aexxec.maxDamage
-Def.aexxec.featureDefs.heap.description = Def.aexxec.name .. [[ Heap]]
-Def.aexxec.featureDefs.heap.metal = 0.6400 * Def.aexxec.buildCostMetal
-Def.afusionplant.buildTime = 1.5652 * Def.afusionplant.buildCostEnergy
-Def.afusionplant.featureDefs.dead.damage = 0.6000 * Def.afusionplant.maxDamage
-Def.afusionplant.featureDefs.dead.metal = 0.8000 * Def.afusionplant.buildCostMetal
-Def.afusionplant.featureDefs.heap.damage = 0.3600 * Def.afusionplant.maxDamage
-Def.afusionplant.featureDefs.heap.metal = 0.6400 * Def.afusionplant.buildCostMetal
-Def.ahermes.buildTime = 3.0064 * Def.ahermes.buildCostEnergy
-Def.ahermes.featureDefs.dead.damage = 0.6000 * Def.ahermes.maxDamage
-Def.ahermes.featureDefs.dead.description = Def.ahermes.name .. [[ Wreckage]]
-Def.ahermes.featureDefs.dead.metal = 0.8000 * Def.ahermes.buildCostMetal
-Def.ahermes.featureDefs.heap.damage = 0.3600 * Def.ahermes.maxDamage
-Def.ahermes.featureDefs.heap.description = Def.ahermes.name .. [[ Wreckage]]
-Def.ahermes.featureDefs.heap.metal = 0.6400 * Def.ahermes.buildCostMetal
-Def.airwolf3g.buildTime = 0.3809 * Def.airwolf3g.buildCostEnergy
-Def.ajuno.buildTime = 1.3167 * Def.ajuno.buildCostEnergy
-Def.akmech.buildTime = 0.4768 * Def.akmech.buildCostEnergy
-Def.akmech.featureDefs.heap.damage = 0.3600 * Def.akmech.maxDamage
-Def.akmech.featureDefs.heap.metal = 0.6400 * Def.akmech.buildCostMetal
-Def.ametalmakerlvl1.buildTime = 0.8342 * Def.ametalmakerlvl1.buildCostEnergy
-Def.ametalmakerlvl2.buildTime = 0.1666 * Def.ametalmakerlvl2.buildCostEnergy
-Def.ametalmakerlvl2.featureDefs.dead.damage = 0.6000 * Def.ametalmakerlvl2.maxDamage
-Def.ametalmakerlvl2.featureDefs.dead.metal = 0.8000 * Def.ametalmakerlvl2.buildCostMetal
-Def.ametalmakerlvl2.featureDefs.heap.damage = 0.3600 * Def.ametalmakerlvl2.maxDamage
-Def.ametalmakerlvl2.featureDefs.heap.metal = 0.6400 * Def.ametalmakerlvl2.buildCostMetal
-Def.amgeo.buildTime = 2.2727 * Def.amgeo.buildCostEnergy
-Def.amortor.buildTime = 1.1531 * Def.amortor.buildCostEnergy
-Def.amortor.featureDefs.dead.damage = 0.6000 * Def.amortor.maxDamage
-Def.amortor.featureDefs.dead.metal = 0.8000 * Def.amortor.buildCostMetal
-Def.amortor.featureDefs.heap.damage = 0.3600 * Def.amortor.maxDamage
-Def.amortor.featureDefs.heap.metal = 0.6400 * Def.amortor.buildCostMetal
-Def.ananotower.buildTime = 0.7070 * Def.ananotower.buildCostEnergy
-Def.ananotower.featureDefs.dead.damage = 0.6000 * Def.ananotower.maxDamage
-Def.ananotower.featureDefs.dead.metal = 0.8000 * Def.ananotower.buildCostMetal
-return lowerkeys(Def)
+
+
+--------------------------------------------------------------------------------
+
+local featureDefs = {
+  dead = {
+    blocking           = true,
+    category           = [[arm_corpses]],
+    damage             = unitDef.maxDamage*0.6,
+    description        = [[Arm Nanotower Remains]],
+    featurereclamate   = [[smudge01]],
+    footprintX         = 4,
+    footprintZ         = 4,
+    height             = 20,
+    hitdensity         = 100,
+    metal              = unitDef.buildCostMetal*0.8,
+    object             = [[ANanotower_dead]],
+    reclaimable        = true,
+    seqnamereclamate   = [[tree1reclamate]],
+    world              = [[All Worlds]],
+  },
+}
+unitDef.featureDefs = featureDefs
+
+
+--------------------------------------------------------------------------------
+
+return lowerkeys({ [unitName] = unitDef })
+
+--------------------------------------------------------------------------------

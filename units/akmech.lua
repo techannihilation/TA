@@ -1,278 +1,248 @@
-local Def = {
-	akmech = {
-		acceleration = 0.08,
-		bmcode = 1,
-		brakeRate = 0.18,
-		buildCostEnergy = 113247,
-		buildCostMetal = 8850,
-		buildTime = nil,
-		builder = false,
-		canAttack = true,
-		canGuard = true,
-		canMove = true,
-		canPatrol = true,
-		canstop = 1,
-		category = [[KBOT MOBILE ALL NOTSUB NOWEAPON NOTAIR]],
-		corpse = [[DEAD]],
-		defaultmissiontype = [[Standby]],
-		description = [[AK X-1 General Heavy Assault "Vengence"]],
-		designation = [[AKMech]],
-		downloadable = 1,
-		energyMake = 1.8,
-		energyStorage = 0,
-		energyUse = 1.8,
-		explodeAs = [[CRAWL_BLAST]],
-		featureDefs = {
-			DEAD = {
-				blocking = true,
-				category = [[core_corpses]],
-				damage = 30808.2,
-				description = [[Vengence Remains]],
-				featureDead = [[heap]],
-				featurereclamate = [[smudge01]],
-				footprintX = 3,
-				footprintZ = 3,
-				height = 20,
-				hitdensity = 100,
-				metal = 7080,
-				object = [[AKMech_DEAD]],
-				reclaimable = true,
-				seqnamereclamate = [[tree1reclamate]],
-				world = [[All Worlds]],
-			},
-			heap = {
-				blocking = false,
-				category = [[heaps]],
-				damage = nil,
-				description = [[Vegence Heap]],
-				featurereclamate = [[smudge01]],
-				footprintX = 3,
-				footprintZ = 3,
-				height = 4,
-				hitdensity = 100,
-				metal = nil,
-				object = [[3x3a]],
-				reclaimable = true,
-				seqnamereclamate = [[tree1reclamate]],
-				world = [[All Worlds]],
-			},
-		},
-		firestandorders = 1,
-		footprintX = 2,
-		footprintZ = 2,
-		frenchdescription = [[General d'assaut lourd AK X-1]],
-		germandescription = [[AK X-1 General, Schwerer Angreifer]],
-		germanname = [[Vengence]],
-		maneuverleashlength = 640,
-		maxDamage = 51347,
-		maxSlope = 30,
-		maxVelocity = 1.15,
-		maxWaterDepth = 50,
-		metalStorage = 0,
-		mobilestandorders = 1,
-		movementClass = [[KBOT2]],
-		name = [[Vengence]],
-		noAutoFire = false,
-		noChaseCategory = [[VTOL]],
-		objectName = [[AKMECH]],
-		ovradjust = 1,
-		radarDistance = 0,
-		renchname = [[Vengence]],
-		selfDestructAs = [[CRAWL_BLAST]],
-		shootme = 1,
-		side = [[CORE]],
-		sightDistance = 288,
-		sounds = {
-			canceldestruct = [[cancel2]],
-			cant = {
-				[1] = [[cantdo4]],
-			},
-			count = {
-				[1] = [[count6]],
-				[2] = [[count5]],
-				[3] = [[count4]],
-				[4] = [[count3]],
-				[5] = [[count2]],
-				[6] = [[count1]],
-			},
-			ok = {
-				[1] = [[mavbok1]],
-			},
-			select = {
-				[1] = [[mavbsel1]],
-			},
-			underattack = [[warning1]],
-		},
-		standingfireorder = 2,
-		standingmoveorder = 1,
-		steeringmode = 2,
-		threed = 1,
-		turnRate = 444,
-		unitname = [[akmech]],
-		unitnumber = 388,
-		upright = true,
-		version = 3,
-		weaponDefs = {
-			AKMECH_CANNON = {
-				areaOfEffect = 4,
-				damage = {
-					default = 510,
-				},
-				explosionGenerator = [[custom:MultirocketXXX]],
-				explosionart = [[explode5]],
-				explosiongaf = [[fx]],
-				lavaexplosionart = [[lavasplashsm]],
-				lavaexplosiongaf = [[fx]],
-				lineOfSight = true,
-				model = [[missile10]],
-				name = [[super AK sabots]],
-				range = 700,
-				reloadtime = 1.4,
-				renderType = 1,
-				soundHit = [[splauncher_impact]],
-				soundStart = [[splauncher_fire]],
-				soundwater = [[explode3]],
-				startsmoke = 1,
-				tolerance = 500,
-				turret = true,
-				waterexplosionart = [[h2oboom1]],
-				waterexplosiongaf = [[fx]],
-				weaponTimer = 2,
-				weaponType = [[Cannon]],
-				weaponVelocity = 500,
-			},
-			AKMECH_ROCKET = {
-				areaOfEffect = 200,
-				balistic = 1,
-				damage = {
-					default = 2000,
-				},
-				edgeEffectiveness = 1,
-				explosionGenerator = [[custom:MultirocketXXX]],
-				explosionart = [[NAPALM1]],
-				explosiongaf = [[NAPALM1]],
-				fireStarter = 1000,
-				lavaexplosionart = [[lavasplash]],
-				lavaexplosiongaf = [[fx]],
-				manualBombSettings = true,
-				model = [[missile10]],
-				name = [[Pyro Type MLRS rockets]],
-				range = 800,
-				reloadtime = 10,
-				renderType = 1,
-				smokeTrail = true,
-				smokedelay = 1,
-				soundHit = [[explode3]],
-				soundStart = [[rockhvy2]],
-				soundTrigger = true,
-				startsmoke = 1,
-				turret = true,
-				waterexplosionart = [[h2o]],
-				waterexplosiongaf = [[fx]],
-				weaponTimer = 5,
-				weaponType = [[Cannon]],
-				weaponVelocity = 350,
-			},
-			ARM_LIGHTLASER4 = {
-				accuracy = 400,
-				areaOfEffect = 8,
-				beamTime = 0.36,
-				beamlaser = 1,
-				burnblow = true,
-				color = 155,
-				color2 = 225,
-				damage = {
-					default = 345,
-				},
-				energypershot = 10,
-				explosionGenerator = [[custom:PURPLELASER2]],
-				fireStarter = 20,
-				id = 80,
-				impulseFactor = 0,
-				laserFlareSize = 10,
-				lineOfSight = true,
-				name = [[Light Laser]],
-				range = 700,
-				reloadtime = 0.59,
-				renderType = 0,
-				soundHit = [[xplolrg1]],
-				soundStart = [[lasrfir3]],
-				soundTrigger = true,
-				targetMoveError = 0.4,
-				thickness = 1.8,
-				tolerance = 500,
-				turret = true,
-				weaponType = [[BeamLaser]],
-				weaponVelocity = 1500,
-			},
-		},
-		weapons = {
-			[1] = {
-				def = [[ARM_LIGHTLASER4]],
-				onlyTargetCategory = [[NOTAIR]],
-			},
-			[2] = {
-				def = [[AKMECH_CANNON]],
-				onlyTargetCategory = [[NOTAIR]],
-			},
-			[3] = {
-				def = [[AKMECH_ROCKET]],
-				onlyTargetCategory = [[NOTAIR]],
-			},
-		},
-		workerTime = 0,
-		zbuffer = 1,
-	},
+-- UNITDEF -- AKMECH --
+--------------------------------------------------------------------------------
+
+local unitName = "akmech"
+
+--------------------------------------------------------------------------------
+
+local unitDef = {
+  acceleration       = 0.08,
+  bmcode             = 1,
+  brakeRate          = 0.18,
+  buildCostEnergy    = 113247,
+  buildCostMetal     = 8850,
+  builder            = false,
+  buildTime          = 54000,
+  canAttack          = true,
+  canGuard           = true,
+  canMove            = true,
+  canPatrol          = true,
+  canstop            = 1,
+  category           = [[KBOT MOBILE ALL NOTSUB NOWEAPON NOTAIR]],
+  corpse             = [[DEAD]],
+  defaultmissiontype = [[Standby]],
+  description        = [[AK X-1 General Heavy Assault "Vengence"]],
+  designation        = [[AKMech]],
+  downloadable       = 1,
+  energyMake         = 1.8,
+  energyStorage      = 0,
+  energyUse          = 1.8,
+  explodeAs          = [[CRAWL_BLAST]],
+  firestandorders    = 1,
+  footprintX         = 2,
+  footprintZ         = 2,
+  frenchdescription  = [[General d'assaut lourd AK X-1]],
+  germandescription  = [[AK X-1 General, Schwerer Angreifer]],
+  germanname         = [[Vengence]],
+  maneuverleashlength = 640,
+  maxDamage          = 51347,
+  maxSlope           = 30,
+  maxVelocity        = 1.15,
+  maxWaterDepth      = 50,
+  metalStorage       = 0,
+  mobilestandorders  = 1,
+  movementClass      = [[KBOT2]],
+  name               = [[Vengence]],
+  noAutoFire         = false,
+  noChaseCategory    = [[VTOL]],
+  objectName         = [[AKMECH]],
+  ovradjust          = 1,
+  radarDistance      = 0,
+  renchname          = [[Vengence]],
+  selfDestructAs     = [[CRAWL_BLAST]],
+  shootme            = 1,
+  side               = [[CORE]],
+  sightDistance      = 288,
+  standingfireorder  = 2,
+  standingmoveorder  = 1,
+  steeringmode       = 2,
+  threed             = 1,
+  turnRate           = 444,
+  unitname           = [[akmech]],
+  unitnumber         = 388,
+  upright            = true,
+  version            = 3.0,
+  workerTime         = 0,
+  zbuffer            = 1,
+  sounds = {
+    canceldestruct     = [[cancel2]],
+    underattack        = [[warning1]],
+    cant = {
+      [[cantdo4]],
+    },
+    count = {
+      [[count6]],
+      [[count5]],
+      [[count4]],
+      [[count3]],
+      [[count2]],
+      [[count1]],
+    },
+    ok = {
+      [[mavbok1]],
+    },
+    select = {
+      [[mavbsel1]],
+    },
+  },
+  weapons = {
+    [1]  = {
+      def                = [[ARM_LIGHTLASER4]],
+      onlyTargetCategory = [[NOTAIR]],
+    },
+    [2]  = {
+      def                = [[AKMECH_CANNON]],
+      onlyTargetCategory = [[NOTAIR]],
+    },
+    [3]  = {
+      def                = [[AKMECH_ROCKET]],
+      onlyTargetCategory = [[NOTAIR]],
+    },
+  },
 }
-Def.aach.buildTime = 2.0955 * Def.aach.buildCostEnergy
-Def.aach.featureDefs.dead.damage = 0.6000 * Def.aach.maxDamage
-Def.aach.featureDefs.dead.metal = 0.8000 * Def.aach.buildCostMetal
-Def.aafus.buildTime = 1.8182 * Def.aafus.buildCostEnergy
-Def.aahp.buildTime = 2.6001 * Def.aahp.buildCostEnergy
-Def.aahp.featureDefs.dead.damage = 0.6000 * Def.aahp.maxDamage
-Def.aahp.featureDefs.dead.metal = 0.8000 * Def.aahp.buildCostMetal
-Def.aahp.featureDefs.heap.damage = 0.3600 * Def.aahp.maxDamage
-Def.aahp.featureDefs.heap.metal = 0.6400 * Def.aahp.buildCostMetal
-Def.aahpns.buildTime = 1.2217 * Def.aahpns.buildCostEnergy
-Def.aahpns.featureDefs.dead.damage = 0.6000 * Def.aahpns.maxDamage
-Def.aahpns.featureDefs.dead.metal = 0.8000 * Def.aahpns.buildCostMetal
-Def.aahpns.featureDefs.heap.damage = 0.3600 * Def.aahpns.maxDamage
-Def.aahpns.featureDefs.heap.metal = 0.6400 * Def.aahpns.buildCostMetal
-Def.abroadside.buildTime = 1.4286 * Def.abroadside.buildCostEnergy
-Def.abroadside.featureDefs.dead.damage = 0.6000 * Def.abroadside.maxDamage
-Def.abroadside.featureDefs.dead.metal = 0.8000 * Def.abroadside.buildCostMetal
-Def.abuilderlvl1.buildTime = 3.9372 * Def.abuilderlvl1.buildCostEnergy
-Def.abuilderlvl2.buildTime = 1.1032 * Def.abuilderlvl2.buildCostEnergy
-Def.abuilderlvl2.featureDefs.dead.damage = 0.6000 * Def.abuilderlvl2.maxDamage
-Def.abuilderlvl2.featureDefs.dead.metal = 0.8000 * Def.abuilderlvl2.buildCostMetal
-Def.abuilderlvl3.buildTime = 0.6800 * Def.abuilderlvl3.buildCostEnergy
-Def.abuilderlvl3.featureDefs.dead.damage = 0.6000 * Def.abuilderlvl3.maxDamage
-Def.abuilderlvl3.featureDefs.dead.metal = 0.8000 * Def.abuilderlvl3.buildCostMetal
-Def.acovertopscentre.buildTime = 0.0466 * Def.acovertopscentre.buildCostEnergy
-Def.acovertopscentre.featureDefs.dead.damage = 0.6000 * Def.acovertopscentre.maxDamage
-Def.acovertopscentre.featureDefs.dead.metal = 0.8000 * Def.acovertopscentre.buildCostMetal
-Def.aexxec.buildTime = 1.6005 * Def.aexxec.buildCostEnergy
-Def.aexxec.featureDefs.dead.damage = 0.6000 * Def.aexxec.maxDamage
-Def.aexxec.featureDefs.dead.description = Def.aexxec.name .. [[ Wreckage]]
-Def.aexxec.featureDefs.dead.metal = 0.8000 * Def.aexxec.buildCostMetal
-Def.aexxec.featureDefs.heap.damage = 0.3600 * Def.aexxec.maxDamage
-Def.aexxec.featureDefs.heap.description = Def.aexxec.name .. [[ Heap]]
-Def.aexxec.featureDefs.heap.metal = 0.6400 * Def.aexxec.buildCostMetal
-Def.afusionplant.buildTime = 1.5652 * Def.afusionplant.buildCostEnergy
-Def.afusionplant.featureDefs.dead.damage = 0.6000 * Def.afusionplant.maxDamage
-Def.afusionplant.featureDefs.dead.metal = 0.8000 * Def.afusionplant.buildCostMetal
-Def.afusionplant.featureDefs.heap.damage = 0.3600 * Def.afusionplant.maxDamage
-Def.afusionplant.featureDefs.heap.metal = 0.6400 * Def.afusionplant.buildCostMetal
-Def.ahermes.buildTime = 3.0064 * Def.ahermes.buildCostEnergy
-Def.ahermes.featureDefs.dead.damage = 0.6000 * Def.ahermes.maxDamage
-Def.ahermes.featureDefs.dead.description = Def.ahermes.name .. [[ Wreckage]]
-Def.ahermes.featureDefs.dead.metal = 0.8000 * Def.ahermes.buildCostMetal
-Def.ahermes.featureDefs.heap.damage = 0.3600 * Def.ahermes.maxDamage
-Def.ahermes.featureDefs.heap.description = Def.ahermes.name .. [[ Wreckage]]
-Def.ahermes.featureDefs.heap.metal = 0.6400 * Def.ahermes.buildCostMetal
-Def.airwolf3g.buildTime = 0.3809 * Def.airwolf3g.buildCostEnergy
-Def.ajuno.buildTime = 1.3167 * Def.ajuno.buildCostEnergy
-Def.akmech.buildTime = 0.4768 * Def.akmech.buildCostEnergy
-Def.akmech.featureDefs.heap.damage = 0.3600 * Def.akmech.maxDamage
-Def.akmech.featureDefs.heap.metal = 0.6400 * Def.akmech.buildCostMetal
-return lowerkeys(Def)
+
+
+--------------------------------------------------------------------------------
+
+local weaponDefs = {
+  AKMECH_CANNON = {
+    areaOfEffect       = 4,
+    explosionart       = [[explode5]],
+    explosiongaf       = [[fx]],
+    explosionGenerator = [[custom:MultirocketXXX]],
+    lavaexplosionart   = [[lavasplashsm]],
+    lavaexplosiongaf   = [[fx]],
+    lineOfSight        = true,
+    model              = [[missile10]],
+    name               = [[super AK sabots]],
+    range              = 700,
+    reloadtime         = 1.4,
+    renderType         = 1,
+    soundHit           = [[splauncher_impact]],
+    soundStart         = [[splauncher_fire]],
+    soundwater         = [[explode3]],
+    startsmoke         = 1,
+    tolerance          = 500,
+    turret             = true,
+    waterexplosionart  = [[h2oboom1]],
+    waterexplosiongaf  = [[fx]],
+    weaponTimer        = 2,
+    weaponType         = [[Cannon]],
+    weaponVelocity     = 500,
+    damage = {
+      default            = 510,
+    },
+  },
+  AKMECH_ROCKET = {
+    areaOfEffect       = 200,
+    balistic           = 1,
+    edgeEffectiveness  = 1,
+    explosionart       = [[NAPALM1]],
+    explosiongaf       = [[NAPALM1]],
+    explosionGenerator = [[custom:MultirocketXXX]],
+    fireStarter        = 1000,
+    lavaexplosionart   = [[lavasplash]],
+    lavaexplosiongaf   = [[fx]],
+    manualBombSettings = true,
+    model              = [[missile10]],
+    name               = [[Pyro Type MLRS rockets]],
+    range              = 800,
+    reloadtime         = 10,
+    renderType         = 1,
+    smokedelay         = 1,
+    smokeTrail         = true,
+    soundHit           = [[explode3]],
+    soundStart         = [[rockhvy2]],
+    soundTrigger       = true,
+    startsmoke         = 1,
+    turret             = true,
+    waterexplosionart  = [[h2o]],
+    waterexplosiongaf  = [[fx]],
+    weaponTimer        = 5,
+    weaponType         = [[Cannon]],
+    weaponVelocity     = 350,
+    damage = {
+      default            = 2000,
+    },
+  },
+  ARM_LIGHTLASER4 = {
+    accuracy           = 400,
+    areaOfEffect       = 8,
+    beamlaser          = 1,
+    beamTime           = 0.36,
+    burnblow           = true,
+    color              = 155,
+    color2             = 225,
+    energypershot      = 10,
+    explosionGenerator = [[custom:PURPLELASER2]],
+    fireStarter        = 20,
+    id                 = 80,
+    impulseFactor      = 0,
+    laserFlareSize     = 10,
+    lineOfSight        = true,
+    name               = [[Light Laser]],
+    range              = 700,
+    reloadtime         = 0.59,
+    renderType         = 0,
+    soundHit           = [[xplolrg1]],
+    soundStart         = [[lasrfir3]],
+    soundTrigger       = true,
+    targetMoveError    = 0.4,
+    thickness          = 1.8,
+    tolerance          = 500,
+    turret             = true,
+    weaponType         = [[BeamLaser]],
+    weaponVelocity     = 1500,
+    damage = {
+      default            = 345,
+    },
+  },
+}
+unitDef.weaponDefs = weaponDefs
+
+
+--------------------------------------------------------------------------------
+
+local featureDefs = {
+  DEAD = {
+    blocking           = true,
+    category           = [[core_corpses]],
+    damage             = unitDef.maxDamage*0.6,
+    description        = [[Vengence Remains]],
+    featureDead        = [[heap]],
+    featurereclamate   = [[smudge01]],
+    footprintX         = 3,
+    footprintZ         = 3,
+    height             = 20,
+    hitdensity         = 100,
+    metal              = unitDef.buildCostMetal*0.8,
+    object             = [[AKMech_DEAD]],
+    reclaimable        = true,
+    seqnamereclamate   = [[tree1reclamate]],
+    world              = [[All Worlds]],
+  },
+  heap = {
+    blocking           = false,
+    category           = [[heaps]],
+    damage             = unitDef.maxDamage*0.36,
+    description        = [[Vegence Heap]],
+    featurereclamate   = [[smudge01]],
+    footprintX         = 3,
+    footprintZ         = 3,
+    height             = 4,
+    hitdensity         = 100,
+    metal              = unitDef.buildCostMetal*0.64,
+    object             = [[3x3a]],
+    reclaimable        = true,
+    seqnamereclamate   = [[tree1reclamate]],
+    world              = [[All Worlds]],
+  },
+}
+unitDef.featureDefs = featureDefs
+
+
+--------------------------------------------------------------------------------
+
+return lowerkeys({ [unitName] = unitDef })
+
+--------------------------------------------------------------------------------

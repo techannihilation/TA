@@ -1,88 +1,81 @@
-local Def = {
-	abuilderlvl1 = {
-		acceleration = 0.0399,
-		airHoverFactor = 0,
-		brakeRate = 1.995,
-		buildCostEnergy = 2595.645,
-		buildCostMetal = 940.7,
-		buildDistance = 100,
-		buildTime = nil,
-		builder = true,
-		buildoptions = {
-			[1] = [[armsolar]],
-			[2] = [[armmex]],
-			[3] = [[armaap]],
-			[4] = [[armnanotc]],
-			[5] = [[armeyes]],
-			[6] = [[armveil]],
-			[7] = [[armfort]],
-			[8] = [[armarad]],
-			[9] = [[armmine2]],
-			[10] = [[tawf001]],
-			[11] = [[armpb]],
-			[12] = [[armanni]],
-			[13] = [[armamb]],
-			[14] = [[packo]],
-			[15] = [[armflak]],
-			[16] = [[armdl]],
-			[17] = [[armca]],
-			[18] = [[armpnix]],
-			[19] = [[armhawk]],
-			[20] = [[armaca]],
-		},
-		canFly = true,
-		canGuard = true,
-		canMove = true,
-		canPatrol = true,
-		canReclaim = true,
-		canstop = 1,
-		category = [[ALL NOTLAND MOBILE NOTSUB ANTIFLAME ANTIGATOR ANTIEMG ANTILASER VTOL NOWEAPON NOTSHIP]],
-		collide = false,
-		cruiseAlt = 90,
-		description = [[Combat Engineer]],
-		designation = [[GZ-MCA]],
-		dontland = 1,
-		energyMake = 15,
-		energyStorage = 100,
-		energyUse = 1.1,
-		explodeAs = [[BIG_UNITEX]],
-		footprintX = 3,
-		footprintZ = 3,
-		iconType = [[air]],
-		maxDamage = 949.6,
-		maxSlope = 10,
-		maxVelocity = 10.773,
-		maxWaterDepth = 255,
-		metalMake = 0.2,
-		metalStorage = 50,
-		name = [[colipper]],
-		objectName = [[ABuilderLvl1]],
-		radarDistance = 0,
-		repairSpeed = 35,
-		selfDestructAs = [[SMALLSHIP]],
-		side = [[ARM]],
-		sightDistance = 270,
-		turnRate = 513.38,
-		unitname = [[abuilderlvl1]],
-		workerTime = 150,
-	},
+-- UNITDEF -- ABUILDERLVL1 --
+--------------------------------------------------------------------------------
+
+local unitName = "abuilderlvl1"
+
+--------------------------------------------------------------------------------
+
+local unitDef = {
+  acceleration       = 0.0399,
+  airHoverFactor     = 0,
+  brakeRate          = 1.995,
+  buildCostEnergy    = 2595.645,
+  buildCostMetal     = 940.700,
+  buildDistance      = 100,
+  builder            = true,
+  buildTime          = 10219.5225,
+  canFly             = true,
+  canGuard           = true,
+  canMove            = true,
+  canPatrol          = true,
+  canReclaim         = true,
+  canstop            = 1,
+  category           = [[ALL NOTLAND MOBILE NOTSUB ANTIFLAME ANTIGATOR ANTIEMG ANTILASER VTOL NOWEAPON NOTSHIP]],
+  collide            = false,
+  cruiseAlt          = 90,
+  description        = [[Combat Engineer]],
+  designation        = [[GZ-MCA]],
+  dontland           = 1,
+  energyMake         = 15,
+  energyStorage      = 100,
+  energyUse          = 1.1,
+  explodeAs          = [[BIG_UNITEX]],
+  footprintX         = 3,
+  footprintZ         = 3,
+  iconType           = [[air]],
+  maxDamage          = 949.6,
+  maxSlope           = 10,
+  maxVelocity        = 10.773,
+  maxWaterDepth      = 255,
+  metalMake          = 0.2,
+  metalStorage       = 50,
+  name               = [[colipper]],
+  objectName         = [[ABuilderLvl1]],
+  radarDistance      = 0,
+  repairSpeed        = 35,
+  selfDestructAs     = [[SMALLSHIP]],
+  side               = [[ARM]],
+  sightDistance      = 270,
+  turnRate           = 513.38,
+  unitname           = [[abuilderlvl1]],
+  workerTime         = 150,
+  buildoptions = {
+    [[armsolar]],
+    [[armmex]],
+    [[armaap]],
+    [[armnanotc]],
+    [[armeyes]],
+    [[armveil]],
+    [[armfort]],
+    [[armarad]],
+    [[armmine2]],
+    [[tawf001]],
+    [[armpb]],
+    [[armanni]],
+    [[armamb]],
+    [[packo]],
+    [[armflak]],
+    [[armdl]],
+    [[armca]],
+    [[armpnix]],
+    [[armhawk]],
+    [[armaca]],
+  },
 }
-Def.aach.buildTime = 2.0955 * Def.aach.buildCostEnergy
-Def.aach.featureDefs.dead.damage = 0.6000 * Def.aach.maxDamage
-Def.aach.featureDefs.dead.metal = 0.8000 * Def.aach.buildCostMetal
-Def.aafus.buildTime = 1.8182 * Def.aafus.buildCostEnergy
-Def.aahp.buildTime = 2.6001 * Def.aahp.buildCostEnergy
-Def.aahp.featureDefs.dead.damage = 0.6000 * Def.aahp.maxDamage
-Def.aahp.featureDefs.dead.metal = 0.8000 * Def.aahp.buildCostMetal
-Def.aahp.featureDefs.heap.damage = 0.3600 * Def.aahp.maxDamage
-Def.aahp.featureDefs.heap.metal = 0.6400 * Def.aahp.buildCostMetal
-Def.aahpns.buildTime = 1.2217 * Def.aahpns.buildCostEnergy
-Def.aahpns.featureDefs.dead.damage = 0.6000 * Def.aahpns.maxDamage
-Def.aahpns.featureDefs.dead.metal = 0.8000 * Def.aahpns.buildCostMetal
-Def.aahpns.featureDefs.heap.damage = 0.3600 * Def.aahpns.maxDamage
-Def.aahpns.featureDefs.heap.metal = 0.6400 * Def.aahpns.buildCostMetal
-Def.abroadside.buildTime = 1.4286 * Def.abroadside.buildCostEnergy
-Def.abroadside.featureDefs.dead.damage = 0.6000 * Def.abroadside.maxDamage
-Def.abroadside.featureDefs.dead.metal = 0.8000 * Def.abroadside.buildCostMetal
-Def.abuilderlvl1.buildTime = 3.9372 * Def.abuilderlvl1.buildCostEnergy
-return lowerkeys(Def)
+
+
+--------------------------------------------------------------------------------
+
+return lowerkeys({ [unitName] = unitDef })
+
+--------------------------------------------------------------------------------
