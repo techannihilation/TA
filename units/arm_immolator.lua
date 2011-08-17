@@ -1,180 +1,165 @@
--- UNITDEF -- ARM_IMMOLATOR --
---------------------------------------------------------------------------------
-
-local unitName = "arm_immolator"
-
---------------------------------------------------------------------------------
-
-local unitDef = {
-  bmcode             = 0,
-  buildAngle         = 8192,
-  buildCostEnergy    = 115165,
-  buildCostMetal     = 2152,
-  builder            = false,
-  buildPic           = [[core_immolator.png]],
-  buildTime          = 43900,
-  canAttack          = true,
-  canGuard           = true,
-  canstop            = 1,
-  category           = [[CORE WEAPON NOTAIR NOTSUB]],
-  corpse             = [[core_immolator_dead]],
-  defaultmissiontype = [[GUARD_NOMOVE]],
-  description        = [[- Plasma Tower]],
-  designation        = [[COR-PLAS]],
-  downloadable       = 1,
-  energyStorage      = 1200,
-  energyUse          = 0,
-  explodeAs          = [[ATOMIC_BLAST]],
-  firestandorders    = 1,
-  footprintX         = 4,
-  footprintZ         = 4,
-  healtime           = 11,
-  iconType           = [[building]],
-  maxDamage          = 2800,
-  maxSlope           = 10,
-  maxWaterDepth      = 0,
-  metalStorage       = 0,
-  name               = [[Immolator]],
-  noAutoFire         = false,
-  objectName         = [[core_immolator]],
-  radarDistance      = 0,
-  selfDestructAs     = [[ATOMIC_BLAST]],
-  shootme            = 1,
-  side               = [[Arm]],
-  sightDistance      = 665,
-  standingfireorder  = 2,
-  threed             = 1,
-  unitname           = [[arm_immolator]],
-  unitnumber         = 124,
-  version            = 3,
-  workerTime         = 0,
-  yardMap            = [[oooo oooo oooo oooo]],
-  zbuffer            = 1,
-  customparams = {
-    canareaattack      = 1,
-  },
-  sfxtypes = {
-    explosiongenerators = {
-      [[custom:berthaflare]],
-    },
-  },
-  sounds = {
-    canceldestruct     = [[cancel2]],
-    underattack        = [[warning1]],
-    cant = {
-      [[cantdo4]],
-    },
-    count = {
-      [[count6]],
-      [[count5]],
-      [[count4]],
-      [[count3]],
-      [[count2]],
-      [[count1]],
-    },
-    ok = {
-      [[kbcormov]],
-    },
-    select = {
-      [[kbcorsel]],
-    },
-  },
-  weapons = {
-    [1]  = {
-      badTargetCategory  = [[VTOL]],
-      def                = [[CORE_INTIMIDATOR3]],
-      onlyTargetCategory = [[NOTAIR]],
-    },
-  },
+local Def = {
+	arm_immolator = {
+		bmcode = 0,
+		buildAngle = 8192,
+		buildCostEnergy = 115165,
+		buildCostMetal = 2152,
+		buildPic = [[core_immolator.png]],
+		buildTime = 43900,
+		builder = false,
+		canAttack = true,
+		canGuard = true,
+		canstop = 1,
+		category = [[CORE WEAPON NOTAIR NOTSUB]],
+		corpse = [[core_immolator_dead]],
+		customparams = {
+			canareaattack = 1,
+		},
+		defaultmissiontype = [[GUARD_NOMOVE]],
+		description = [[- Plasma Tower]],
+		designation = [[COR-PLAS]],
+		downloadable = 1,
+		energyStorage = 1200,
+		energyUse = 0,
+		explodeAs = [[ATOMIC_BLAST]],
+		featureDefs = {
+			core_immolator_dead = {
+				blocking = true,
+				category = [[core_corpses]],
+				damage = nil,
+				description = nil,
+				featureDead = [[core_immolator_heap]],
+				featurereclamate = [[smudge01]],
+				footprintX = 3,
+				footprintZ = 3,
+				height = 20,
+				hitdensity = 100,
+				metal = nil,
+				object = [[core_immolator_dead]],
+				reclaimable = true,
+				seqnamereclamate = [[tree1reclamate]],
+				world = [[All Worlds]],
+			},
+			core_immolator_heap = {
+				blocking = false,
+				category = [[heaps]],
+				damage = nil,
+				description = nil,
+				featurereclamate = [[smudge01]],
+				footprintX = 3,
+				footprintZ = 3,
+				height = 4,
+				hitdensity = 100,
+				metal = nil,
+				object = [[3x3d]],
+				reclaimable = true,
+				seqnamereclamate = [[tree1reclamate]],
+				world = [[All Worlds]],
+			},
+		},
+		firestandorders = 1,
+		footprintX = 4,
+		footprintZ = 4,
+		healtime = 11,
+		iconType = [[building]],
+		maxDamage = 2800,
+		maxSlope = 10,
+		maxWaterDepth = 0,
+		metalStorage = 0,
+		name = [[Immolator]],
+		noAutoFire = false,
+		objectName = [[core_immolator]],
+		radarDistance = 0,
+		selfDestructAs = [[ATOMIC_BLAST]],
+		sfxtypes = {
+			explosiongenerators = {
+				[1] = [[custom:berthaflare]],
+			},
+		},
+		shootme = 1,
+		side = [[Arm]],
+		sightDistance = 665,
+		sounds = {
+			canceldestruct = [[cancel2]],
+			cant = {
+				[1] = [[cantdo4]],
+			},
+			count = {
+				[1] = [[count6]],
+				[2] = [[count5]],
+				[3] = [[count4]],
+				[4] = [[count3]],
+				[5] = [[count2]],
+				[6] = [[count1]],
+			},
+			ok = {
+				[1] = [[kbcormov]],
+			},
+			select = {
+				[1] = [[kbcorsel]],
+			},
+			underattack = [[warning1]],
+		},
+		standingfireorder = 2,
+		threed = 1,
+		unitname = [[arm_immolator]],
+		unitnumber = 124,
+		version = 3,
+		weaponDefs = {
+			CORE_INTIMIDATOR3 = {
+				accuracy = 535,
+				aimrate = 2200,
+				areaOfEffect = 250,
+				ballistic = true,
+				craterBoost = 0.15,
+				craterMult = 0.15,
+				damage = {
+					blackhydra = 3000,
+					default = 650,
+					flakboats = 3000,
+					jammerboats = 3000,
+					l1subs = 5,
+					l2subs = 5,
+					l3subs = 5,
+					otherboats = 3000,
+					seadragon = 3000,
+				},
+				energypershot = 4000,
+				explosionGenerator = [[custom:FLASHBIGBUILDING]],
+				gravityaffected = [[true]],
+				holdtime = 1,
+				impulseBoost = 0,
+				impulseFactor = 0,
+				metalpershot = 1,
+				name = [[IntimidatorCannon]],
+				noSelfDamage = true,
+				range = 5100,
+				reloadtime = 9,
+				renderType = 4,
+				soundHit = [[xplonuk1]],
+				soundStart = [[xplonuk3]],
+				startsmoke = 1,
+				turret = true,
+				weaponType = [[Cannon]],
+				weaponVelocity = 850,
+			},
+		},
+		weapons = {
+			[1] = {
+				badTargetCategory = [[VTOL]],
+				def = [[CORE_INTIMIDATOR3]],
+				onlyTargetCategory = [[NOTAIR]],
+			},
+		},
+		workerTime = 0,
+		yardMap = [[oooo oooo oooo oooo]],
+		zbuffer = 1,
+	},
 }
-
-
---------------------------------------------------------------------------------
-
-local weaponDefs = {
-  CORE_INTIMIDATOR3 = {
-    accuracy           = 535,
-    aimrate            = 2200,
-    areaOfEffect       = 250,
-    ballistic          = true,
-    craterBoost        = 0.15,
-    craterMult         = 0.15,
-    energypershot      = 4000,
-    explosionGenerator = [[custom:FLASHBIGBUILDING]],
-    gravityaffected    = [[true]],
-    holdtime           = 1,
-    impulseBoost       = 0,
-    impulseFactor      = 0,
-    metalpershot       = 1,
-    name               = [[IntimidatorCannon]],
-    noSelfDamage       = true,
-    range              = 5100,
-    reloadtime         = 9,
-    renderType         = 4,
-    soundHit           = [[xplonuk1]],
-    soundStart         = [[xplonuk3]],
-    startsmoke         = 1,
-    turret             = true,
-    weaponType         = [[Cannon]],
-    weaponVelocity     = 850,
-    damage = {
-      blackhydra         = 3000,
-      default            = 650,
-      flakboats          = 3000,
-      jammerboats        = 3000,
-      l1subs             = 5,
-      l2subs             = 5,
-      l3subs             = 5,
-      otherboats         = 3000,
-      seadragon          = 3000,
-    },
-  },
-}
-unitDef.weaponDefs = weaponDefs
-
-
---------------------------------------------------------------------------------
-
-local featureDefs = {
-  core_immolator_dead = {
-    blocking           = true,
-    category           = [[core_corpses]],
-    damage             = unitDef.maxDamage*0.6,
-    description        = [[Immolator Wreckage]],
-    featureDead        = [[core_immolator_heap]],
-    featurereclamate   = [[smudge01]],
-    footprintX         = 3,
-    footprintZ         = 3,
-    height             = 20,
-    hitdensity         = 100,
-    metal              = unitDef.buildCostMetal*0.8,
-    object             = [[core_immolator_dead]],
-    reclaimable        = true,
-    seqnamereclamate   = [[tree1reclamate]],
-    world              = [[All Worlds]],
-  },
-  core_immolator_heap = {
-    blocking           = false,
-    category           = [[heaps]],
-    damage             = unitDef.maxDamage*0.36,
-    description        = [[Immolator Heap]],
-    featurereclamate   = [[smudge01]],
-    footprintX         = 3,
-    footprintZ         = 3,
-    height             = 4,
-    hitdensity         = 100,
-    metal              = unitDef.buildCostMetal*0.64,
-    object             = [[3x3d]],
-    reclaimable        = true,
-    seqnamereclamate   = [[tree1reclamate]],
-    world              = [[All Worlds]],
-  },
-}
-unitDef.featureDefs = featureDefs
-
-
---------------------------------------------------------------------------------
-
-return lowerkeys({ [unitName] = unitDef })
-
---------------------------------------------------------------------------------
+Def.arm_immolator.featureDefs.core_immolator_dead.damage = 0.6000 * Def.arm_immolator.maxDamage
+Def.arm_immolator.featureDefs.core_immolator_dead.description = Def.arm_immolator.name .. [[ Wreckage]]
+Def.arm_immolator.featureDefs.core_immolator_dead.metal = 0.8000 * Def.arm_immolator.buildCostMetal
+Def.arm_immolator.featureDefs.core_immolator_heap.damage = 0.3600 * Def.arm_immolator.maxDamage
+Def.arm_immolator.featureDefs.core_immolator_heap.description = Def.arm_immolator.name .. [[ Heap]]
+Def.arm_immolator.featureDefs.core_immolator_heap.metal = 0.6400 * Def.arm_immolator.buildCostMetal
+return lowerkeys(Def)
