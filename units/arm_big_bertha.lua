@@ -1,190 +1,241 @@
--- UNITDEF -- ARM_BIG_BERTHA --
---------------------------------------------------------------------------------
-
-local unitName = "arm_big_bertha"
-
---------------------------------------------------------------------------------
-
-local unitDef = {
-  bmcode             = 0,
-  buildAngle         = 4096,
-  buildCostEnergy    = 45530,
-  buildCostMetal     = 4076,
-  builder            = false,
-  buildPic           = [[arm_big_bertha.png]],
-  buildTime          = 67926,
-  canAttack          = true,
-  canGuard           = true,
-  canstop            = 1,
-  category           = [[ARM LEVEL3 WEAPON NOTAIR NOTSUB]],
-  corpse             = [[ARMBRTHA_DEAD]],
-  defaultmissiontype = [[GUARD_NOMOVE]],
-  description        = [[- Long Range EMP Paralizer]],
-  designation        = [[ARM-LRC]],
-  downloadable       = 1,
-  energyMake         = 0,
-  energyStorage      = 0,
-  energyUse          = 0,
-  explodeAs          = [[ATOMIC_BLAST]],
-  firestandorders    = 1,
-  footprintX         = 5,
-  footprintZ         = 5,
-  healtime           = 11,
-  iconType           = [[building]],
-  immunetoparalyzer  = 1,
-  maxDamage          = 4950,
-  maxSlope           = 10,
-  maxWaterDepth      = 33,
-  metalStorage       = 0,
-  name               = [[Big Bertha Paralizer]],
-  objectName         = [[arm_big_bertha]],
-  radarDistance      = 0,
-  selfDestructAs     = [[ATOMIC_BLAST]],
-  shootme            = 1,
-  side               = [[Arm]],
-  sightDistance      = 367.5,
-  standingfireorder  = 2,
-  threed             = 1,
-  unitname           = [[arm_big_bertha]],
-  unitnumber         = 16,
-  version            = 1.2,
-  workerTime         = 0,
-  yardMap            = [[oooo oooo oooo oooo]],
-  zbuffer            = 1,
-  customparams = {
-    canareaattack      = 1,
-  },
-  sfxtypes = {
-    explosiongenerators = {
-      [[custom:BERTHAFLARE]],
-    },
-  },
-  sounds = {
-    canceldestruct     = [[cancel2]],
-    underattack        = [[warning1]],
-    cant = {
-      [[cantdo4]],
-    },
-    count = {
-      [[count6]],
-      [[count5]],
-      [[count4]],
-      [[count3]],
-      [[count2]],
-      [[count1]],
-    },
-    ok = {
-      [[servlrg3]],
-    },
-    select = {
-      [[servlrg3]],
-    },
-  },
-  weapons = {
-    [1]  = {
-      badTargetCategory  = [[VTOL]],
-      def                = [[ARM_BERTHACANNONEMP]],
-      onlyTargetCategory = [[NOTAIR]],
-    },
-  },
+local Def = {
+	arm_big_bertha = {
+		bmcode = 0,
+		buildAngle = 4096,
+		buildCostEnergy = 45530,
+		buildCostMetal = 4076,
+		buildPic = [[arm_big_bertha.png]],
+		buildTime = nil,
+		builder = false,
+		canAttack = true,
+		canGuard = true,
+		canstop = 1,
+		category = [[ARM LEVEL3 WEAPON NOTAIR NOTSUB]],
+		corpse = [[ARMBRTHA_DEAD]],
+		customparams = {
+			canareaattack = 1,
+		},
+		defaultmissiontype = [[GUARD_NOMOVE]],
+		description = [[- Long Range EMP Paralizer]],
+		designation = [[ARM-LRC]],
+		downloadable = 1,
+		energyMake = 0,
+		energyStorage = 0,
+		energyUse = 0,
+		explodeAs = [[ATOMIC_BLAST]],
+		featureDefs = {
+			ARMBRTHA_DEAD = {
+				blocking = true,
+				category = [[corpses]],
+				damage = 2970,
+				description = [[Big Bertha Wreckage]],
+				energy = 0,
+				featureDead = [[ARMBRTHA_HEAP]],
+				featurereclamate = [[SMUDGE01]],
+				footprintX = 3,
+				footprintZ = 3,
+				height = 40,
+				hitdensity = 100,
+				metal = 3260.8,
+				object = [[ARMBRTHA_DEAD]],
+				reclaimable = true,
+				seqnamereclamate = [[TREE1RECLAMATE]],
+				world = [[All Worlds]],
+			},
+			ARMBRTHA_HEAP = {
+				blocking = false,
+				category = [[heaps]],
+				damage = 1782,
+				description = [[Big Bertha Heap]],
+				energy = 0,
+				featurereclamate = [[SMUDGE01]],
+				footprintX = 3,
+				footprintZ = 3,
+				height = 4,
+				hitdensity = 100,
+				metal = 2608.64,
+				object = [[3X3E]],
+				reclaimable = true,
+				seqnamereclamate = [[TREE1RECLAMATE]],
+				world = [[All Worlds]],
+			},
+		},
+		firestandorders = 1,
+		footprintX = 5,
+		footprintZ = 5,
+		healtime = 11,
+		iconType = [[building]],
+		immunetoparalyzer = 1,
+		maxDamage = 4950,
+		maxSlope = 10,
+		maxWaterDepth = 33,
+		metalStorage = 0,
+		name = [[Big Bertha Paralizer]],
+		objectName = [[arm_big_bertha]],
+		radarDistance = 0,
+		selfDestructAs = [[ATOMIC_BLAST]],
+		sfxtypes = {
+			explosiongenerators = {
+				[1] = [[custom:BERTHAFLARE]],
+			},
+		},
+		shootme = 1,
+		side = [[Arm]],
+		sightDistance = 367.5,
+		sounds = {
+			canceldestruct = [[cancel2]],
+			cant = {
+				[1] = [[cantdo4]],
+			},
+			count = {
+				[1] = [[count6]],
+				[2] = [[count5]],
+				[3] = [[count4]],
+				[4] = [[count3]],
+				[5] = [[count2]],
+				[6] = [[count1]],
+			},
+			ok = {
+				[1] = [[servlrg3]],
+			},
+			select = {
+				[1] = [[servlrg3]],
+			},
+			underattack = [[warning1]],
+		},
+		standingfireorder = 2,
+		threed = 1,
+		unitname = [[arm_big_bertha]],
+		unitnumber = 16,
+		version = 1.2,
+		weaponDefs = {
+			ARM_BERTHACANNONEMP = {
+				accuracy = 300,
+				aimrate = 500,
+				alphaDecay = 0.01,
+				areaOfEffect = 800,
+				ballistic = true,
+				cegTag = [[vulcanfx1]],
+				color = 3,
+				craterBoost = 0,
+				craterMult = 0,
+				damage = {
+					default = 1900,
+				},
+				edgeEffectiveness = 50,
+				energypershot = 16300,
+				explosionGenerator = [[custom:EMPFLASH240]],
+				fireStarter = 50,
+				gravityaffected = [[true]],
+				groundbounce = false,
+				holdtime = 1,
+				id = 72,
+				impulseBoost = 0,
+				impulseFactor = 0,
+				name = [[Bertha Cannon]],
+				noGap = true,
+				paralyzeTime = 16,
+				paralyzer = true,
+				range = 6750,
+				reloadtime = 15.67,
+				renderType = 4,
+				rgbColor = [[1 0.8 0.5]],
+				separation = 0.01,
+				size = 4,
+				sizeDecay = -0.01,
+				soundHit = [[EMGPULS1]],
+				soundStart = [[xplonuk4]],
+				stages = 20,
+				startsmoke = 1,
+				tolerance = 7000,
+				turret = true,
+				waterbounce = false,
+				weaponType = [[Cannon]],
+				weaponVelocity = 1100,
+			},
+		},
+		weapons = {
+			[1] = {
+				badTargetCategory = [[VTOL]],
+				def = [[ARM_BERTHACANNONEMP]],
+				onlyTargetCategory = [[NOTAIR]],
+			},
+		},
+		workerTime = 0,
+		yardMap = [[oooo oooo oooo oooo]],
+		zbuffer = 1,
+	},
 }
-
-
---------------------------------------------------------------------------------
-
-local weaponDefs = {
-  ARM_BERTHACANNONEMP = {
-    accuracy           = 300,
-    aimrate            = 500,
-    alphaDecay         = 0.01,
-    areaOfEffect       = 800,
-    ballistic          = true,
-    cegTag             = [[vulcanfx1]],
-    color              = 3,
-    craterBoost        = 0.0,
-    craterMult         = 0.0,
-    edgeEffectiveness  = 50,
-    energypershot      = 16300,
-    explosionGenerator = [[custom:EMPFLASH240]],
-    fireStarter        = 50,
-    gravityaffected    = [[true]],
-    groundbounce       = false,
-    holdtime           = 1,
-    id                 = 72,
-    impulseBoost       = 0.0,
-    impulseFactor      = 0.0,
-    name               = [[Bertha Cannon]],
-    noGap              = true,
-    paralyzer          = true,
-    paralyzeTime       = 16,
-    range              = 6750,
-    reloadtime         = 15.67,
-    renderType         = 4,
-    rgbColor           = [[1 0.8 0.5]],
-    separation         = 0.01,
-    size               = 4,
-    sizeDecay          = -0.01,
-    soundHit           = [[EMGPULS1]],
-    soundStart         = [[xplonuk4]],
-    stages             = 20,
-    startsmoke         = 1,
-    tolerance          = 7000,
-    turret             = true,
-    waterbounce        = false,
-    weaponType         = [[Cannon]],
-    weaponVelocity     = 1100,
-    damage = {
-      default            = 1900,
-    },
-  },
-}
-unitDef.weaponDefs = weaponDefs
-
-
---------------------------------------------------------------------------------
-
-local featureDefs = {
-  ARMBRTHA_DEAD = {
-    blocking           = true,
-    category           = [[corpses]],
-    damage             = unitDef.maxDamage*0.6,
-    description        = [[Big Bertha Wreckage]],
-    energy             = 0,
-    featureDead        = [[ARMBRTHA_HEAP]],
-    featurereclamate   = [[SMUDGE01]],
-    footprintX         = 3,
-    footprintZ         = 3,
-    height             = 40,
-    hitdensity         = 100,
-    metal              = unitDef.buildCostMetal*0.8,
-    object             = [[ARMBRTHA_DEAD]],
-    reclaimable        = true,
-    seqnamereclamate   = [[TREE1RECLAMATE]],
-    world              = [[All Worlds]],
-  },
-  ARMBRTHA_HEAP = {
-    blocking           = false,
-    category           = [[heaps]],
-    damage             = unitDef.maxDamage*0.36,
-    description        = [[Big Bertha Heap]],
-    energy             = 0,
-    featurereclamate   = [[SMUDGE01]],
-    footprintX         = 3,
-    footprintZ         = 3,
-    height             = 4,
-    hitdensity         = 100,
-    metal              = unitDef.buildCostMetal*0.64,
-    object             = [[3X3E]],
-    reclaimable        = true,
-    seqnamereclamate   = [[TREE1RECLAMATE]],
-    world              = [[All Worlds]],
-  },
-}
-unitDef.featureDefs = featureDefs
-
-
---------------------------------------------------------------------------------
-
-return lowerkeys({ [unitName] = unitDef })
-
---------------------------------------------------------------------------------
+Def.aach.buildTime = 2.0955 * Def.aach.buildCostEnergy
+Def.aach.featureDefs.dead.damage = 0.6000 * Def.aach.maxDamage
+Def.aach.featureDefs.dead.metal = 0.8000 * Def.aach.buildCostMetal
+Def.aafus.buildTime = 1.8182 * Def.aafus.buildCostEnergy
+Def.aahp.buildTime = 2.6001 * Def.aahp.buildCostEnergy
+Def.aahp.featureDefs.dead.damage = 0.6000 * Def.aahp.maxDamage
+Def.aahp.featureDefs.dead.metal = 0.8000 * Def.aahp.buildCostMetal
+Def.aahp.featureDefs.heap.damage = 0.3600 * Def.aahp.maxDamage
+Def.aahp.featureDefs.heap.metal = 0.6400 * Def.aahp.buildCostMetal
+Def.aahpns.buildTime = 1.2217 * Def.aahpns.buildCostEnergy
+Def.aahpns.featureDefs.dead.damage = 0.6000 * Def.aahpns.maxDamage
+Def.aahpns.featureDefs.dead.metal = 0.8000 * Def.aahpns.buildCostMetal
+Def.aahpns.featureDefs.heap.damage = 0.3600 * Def.aahpns.maxDamage
+Def.aahpns.featureDefs.heap.metal = 0.6400 * Def.aahpns.buildCostMetal
+Def.abroadside.buildTime = 1.4286 * Def.abroadside.buildCostEnergy
+Def.abroadside.featureDefs.dead.damage = 0.6000 * Def.abroadside.maxDamage
+Def.abroadside.featureDefs.dead.metal = 0.8000 * Def.abroadside.buildCostMetal
+Def.abuilderlvl1.buildTime = 3.9372 * Def.abuilderlvl1.buildCostEnergy
+Def.abuilderlvl2.buildTime = 1.1032 * Def.abuilderlvl2.buildCostEnergy
+Def.abuilderlvl2.featureDefs.dead.damage = 0.6000 * Def.abuilderlvl2.maxDamage
+Def.abuilderlvl2.featureDefs.dead.metal = 0.8000 * Def.abuilderlvl2.buildCostMetal
+Def.abuilderlvl3.buildTime = 0.6800 * Def.abuilderlvl3.buildCostEnergy
+Def.abuilderlvl3.featureDefs.dead.damage = 0.6000 * Def.abuilderlvl3.maxDamage
+Def.abuilderlvl3.featureDefs.dead.metal = 0.8000 * Def.abuilderlvl3.buildCostMetal
+Def.acovertopscentre.buildTime = 0.0466 * Def.acovertopscentre.buildCostEnergy
+Def.acovertopscentre.featureDefs.dead.damage = 0.6000 * Def.acovertopscentre.maxDamage
+Def.acovertopscentre.featureDefs.dead.metal = 0.8000 * Def.acovertopscentre.buildCostMetal
+Def.aexxec.buildTime = 1.6005 * Def.aexxec.buildCostEnergy
+Def.aexxec.featureDefs.dead.damage = 0.6000 * Def.aexxec.maxDamage
+Def.aexxec.featureDefs.dead.description = Def.aexxec.name .. [[ Wreckage]]
+Def.aexxec.featureDefs.dead.metal = 0.8000 * Def.aexxec.buildCostMetal
+Def.aexxec.featureDefs.heap.damage = 0.3600 * Def.aexxec.maxDamage
+Def.aexxec.featureDefs.heap.description = Def.aexxec.name .. [[ Heap]]
+Def.aexxec.featureDefs.heap.metal = 0.6400 * Def.aexxec.buildCostMetal
+Def.afusionplant.buildTime = 1.5652 * Def.afusionplant.buildCostEnergy
+Def.afusionplant.featureDefs.dead.damage = 0.6000 * Def.afusionplant.maxDamage
+Def.afusionplant.featureDefs.dead.metal = 0.8000 * Def.afusionplant.buildCostMetal
+Def.afusionplant.featureDefs.heap.damage = 0.3600 * Def.afusionplant.maxDamage
+Def.afusionplant.featureDefs.heap.metal = 0.6400 * Def.afusionplant.buildCostMetal
+Def.ahermes.buildTime = 3.0064 * Def.ahermes.buildCostEnergy
+Def.ahermes.featureDefs.dead.damage = 0.6000 * Def.ahermes.maxDamage
+Def.ahermes.featureDefs.dead.description = Def.ahermes.name .. [[ Wreckage]]
+Def.ahermes.featureDefs.dead.metal = 0.8000 * Def.ahermes.buildCostMetal
+Def.ahermes.featureDefs.heap.damage = 0.3600 * Def.ahermes.maxDamage
+Def.ahermes.featureDefs.heap.description = Def.ahermes.name .. [[ Wreckage]]
+Def.ahermes.featureDefs.heap.metal = 0.6400 * Def.ahermes.buildCostMetal
+Def.airwolf3g.buildTime = 0.3809 * Def.airwolf3g.buildCostEnergy
+Def.ajuno.buildTime = 1.3167 * Def.ajuno.buildCostEnergy
+Def.akmech.buildTime = 0.4768 * Def.akmech.buildCostEnergy
+Def.akmech.featureDefs.heap.damage = 0.3600 * Def.akmech.maxDamage
+Def.akmech.featureDefs.heap.metal = 0.6400 * Def.akmech.buildCostMetal
+Def.ametalmakerlvl1.buildTime = 0.8342 * Def.ametalmakerlvl1.buildCostEnergy
+Def.ametalmakerlvl2.buildTime = 0.1666 * Def.ametalmakerlvl2.buildCostEnergy
+Def.ametalmakerlvl2.featureDefs.dead.damage = 0.6000 * Def.ametalmakerlvl2.maxDamage
+Def.ametalmakerlvl2.featureDefs.dead.metal = 0.8000 * Def.ametalmakerlvl2.buildCostMetal
+Def.ametalmakerlvl2.featureDefs.heap.damage = 0.3600 * Def.ametalmakerlvl2.maxDamage
+Def.ametalmakerlvl2.featureDefs.heap.metal = 0.6400 * Def.ametalmakerlvl2.buildCostMetal
+Def.amgeo.buildTime = 2.2727 * Def.amgeo.buildCostEnergy
+Def.amortor.buildTime = 1.1531 * Def.amortor.buildCostEnergy
+Def.amortor.featureDefs.dead.damage = 0.6000 * Def.amortor.maxDamage
+Def.amortor.featureDefs.dead.metal = 0.8000 * Def.amortor.buildCostMetal
+Def.amortor.featureDefs.heap.damage = 0.3600 * Def.amortor.maxDamage
+Def.amortor.featureDefs.heap.metal = 0.6400 * Def.amortor.buildCostMetal
+Def.ananotower.buildTime = 0.7070 * Def.ananotower.buildCostEnergy
+Def.ananotower.featureDefs.dead.damage = 0.6000 * Def.ananotower.maxDamage
+Def.ananotower.featureDefs.dead.metal = 0.8000 * Def.ananotower.buildCostMetal
+Def.apache.buildTime = 1.9878 * Def.apache.buildCostEnergy
+Def.apocketfusion.buildTime = 1.4490 * Def.apocketfusion.buildCostEnergy
+Def.apocketfusion.featureDefs.dead.damage = 0.6000 * Def.apocketfusion.maxDamage
+Def.apocketfusion.featureDefs.dead.description = Def.apocketfusion.name .. [[ Wreckage]]
+Def.apocketfusion.featureDefs.dead.metal = 0.8000 * Def.apocketfusion.buildCostMetal
+Def.arm_big_bertha.buildTime = 1.4919 * Def.arm_big_bertha.buildCostEnergy
+return lowerkeys(Def)

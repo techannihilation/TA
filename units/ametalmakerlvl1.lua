@@ -1,60 +1,101 @@
--- UNITDEF -- AMETALMAKERLVL1 --
---------------------------------------------------------------------------------
-
-local unitName = "ametalmakerlvl1"
-
---------------------------------------------------------------------------------
---GADGETED
-local unitDef = {
-  activateWhenBuilt  = true,
-  buildCostEnergy    = 4795,
-  buildCostMetal     = 143,
-  builder            = false,
-  buildTime          = 4000,
-  category           = [[ALL NOTSUB NOWEAPON SPECIAL NOTAIR]],
-  description        = [[Converts upto 200 Energy to Metal]],
-  designation        = [[AEM-EMM]],
-  energyStorage      = 0,
-  explodeAs          = [[ARMESTOR_BUILDING]],
-  floater            = true,
-  footprintX         = 3,
-  footprintZ         = 3,
-  maxDamage          = 300.2,
-  maxSlope           = 10,
-  maxWaterDepth      = 255,
-  metalStorage       = 0,
-  name               = [[T1.5 Metal Maker]],
-  objectName         = [[AMetalMakerLvl1]],
-  radarDistance      = 0,
-  selfDestructAs     = [[ARMESTOR_BUILDING]],
-  side               = [[ARM]],
-  sightDistance      = 210,
-  unitname           = [[ametalmakerlvl1]],
-  workerTime         = 0,
-  yardMap            = [[OOOOOOOOO]],
-  sounds = {
-    activate           = [[metlon1]],
-    canceldestruct     = [[cancel2]],
-    deactivate         = [[metloff1]],
-    underattack        = [[warning1]],
-    working            = [[metlrun1]],
-    count = {
-      [[count6]],
-      [[count5]],
-      [[count4]],
-      [[count3]],
-      [[count2]],
-      [[count1]],
-    },
-    select = {
-      [[metlon1]],
-    },
-  },
+local Def = {
+	ametalmakerlvl1 = {
+		activateWhenBuilt = true,
+		buildCostEnergy = 4795,
+		buildCostMetal = 143,
+		buildTime = nil,
+		builder = false,
+		category = [[ALL NOTSUB NOWEAPON SPECIAL NOTAIR]],
+		description = [[Converts upto 200 Energy to Metal]],
+		designation = [[AEM-EMM]],
+		energyStorage = 0,
+		explodeAs = [[ARMESTOR_BUILDING]],
+		floater = true,
+		footprintX = 3,
+		footprintZ = 3,
+		maxDamage = 300.2,
+		maxSlope = 10,
+		maxWaterDepth = 255,
+		metalStorage = 0,
+		name = [[T1.5 Metal Maker]],
+		objectName = [[AMetalMakerLvl1]],
+		radarDistance = 0,
+		selfDestructAs = [[ARMESTOR_BUILDING]],
+		side = [[ARM]],
+		sightDistance = 210,
+		sounds = {
+			activate = [[metlon1]],
+			canceldestruct = [[cancel2]],
+			count = {
+				[1] = [[count6]],
+				[2] = [[count5]],
+				[3] = [[count4]],
+				[4] = [[count3]],
+				[5] = [[count2]],
+				[6] = [[count1]],
+			},
+			deactivate = [[metloff1]],
+			select = {
+				[1] = [[metlon1]],
+			},
+			underattack = [[warning1]],
+			working = [[metlrun1]],
+		},
+		unitname = [[ametalmakerlvl1]],
+		workerTime = 0,
+		yardMap = [[OOOOOOOOO]],
+	},
 }
-
-
---------------------------------------------------------------------------------
-
-return lowerkeys({ [unitName] = unitDef })
-
---------------------------------------------------------------------------------
+Def.aach.buildTime = 2.0955 * Def.aach.buildCostEnergy
+Def.aach.featureDefs.dead.damage = 0.6000 * Def.aach.maxDamage
+Def.aach.featureDefs.dead.metal = 0.8000 * Def.aach.buildCostMetal
+Def.aafus.buildTime = 1.8182 * Def.aafus.buildCostEnergy
+Def.aahp.buildTime = 2.6001 * Def.aahp.buildCostEnergy
+Def.aahp.featureDefs.dead.damage = 0.6000 * Def.aahp.maxDamage
+Def.aahp.featureDefs.dead.metal = 0.8000 * Def.aahp.buildCostMetal
+Def.aahp.featureDefs.heap.damage = 0.3600 * Def.aahp.maxDamage
+Def.aahp.featureDefs.heap.metal = 0.6400 * Def.aahp.buildCostMetal
+Def.aahpns.buildTime = 1.2217 * Def.aahpns.buildCostEnergy
+Def.aahpns.featureDefs.dead.damage = 0.6000 * Def.aahpns.maxDamage
+Def.aahpns.featureDefs.dead.metal = 0.8000 * Def.aahpns.buildCostMetal
+Def.aahpns.featureDefs.heap.damage = 0.3600 * Def.aahpns.maxDamage
+Def.aahpns.featureDefs.heap.metal = 0.6400 * Def.aahpns.buildCostMetal
+Def.abroadside.buildTime = 1.4286 * Def.abroadside.buildCostEnergy
+Def.abroadside.featureDefs.dead.damage = 0.6000 * Def.abroadside.maxDamage
+Def.abroadside.featureDefs.dead.metal = 0.8000 * Def.abroadside.buildCostMetal
+Def.abuilderlvl1.buildTime = 3.9372 * Def.abuilderlvl1.buildCostEnergy
+Def.abuilderlvl2.buildTime = 1.1032 * Def.abuilderlvl2.buildCostEnergy
+Def.abuilderlvl2.featureDefs.dead.damage = 0.6000 * Def.abuilderlvl2.maxDamage
+Def.abuilderlvl2.featureDefs.dead.metal = 0.8000 * Def.abuilderlvl2.buildCostMetal
+Def.abuilderlvl3.buildTime = 0.6800 * Def.abuilderlvl3.buildCostEnergy
+Def.abuilderlvl3.featureDefs.dead.damage = 0.6000 * Def.abuilderlvl3.maxDamage
+Def.abuilderlvl3.featureDefs.dead.metal = 0.8000 * Def.abuilderlvl3.buildCostMetal
+Def.acovertopscentre.buildTime = 0.0466 * Def.acovertopscentre.buildCostEnergy
+Def.acovertopscentre.featureDefs.dead.damage = 0.6000 * Def.acovertopscentre.maxDamage
+Def.acovertopscentre.featureDefs.dead.metal = 0.8000 * Def.acovertopscentre.buildCostMetal
+Def.aexxec.buildTime = 1.6005 * Def.aexxec.buildCostEnergy
+Def.aexxec.featureDefs.dead.damage = 0.6000 * Def.aexxec.maxDamage
+Def.aexxec.featureDefs.dead.description = Def.aexxec.name .. [[ Wreckage]]
+Def.aexxec.featureDefs.dead.metal = 0.8000 * Def.aexxec.buildCostMetal
+Def.aexxec.featureDefs.heap.damage = 0.3600 * Def.aexxec.maxDamage
+Def.aexxec.featureDefs.heap.description = Def.aexxec.name .. [[ Heap]]
+Def.aexxec.featureDefs.heap.metal = 0.6400 * Def.aexxec.buildCostMetal
+Def.afusionplant.buildTime = 1.5652 * Def.afusionplant.buildCostEnergy
+Def.afusionplant.featureDefs.dead.damage = 0.6000 * Def.afusionplant.maxDamage
+Def.afusionplant.featureDefs.dead.metal = 0.8000 * Def.afusionplant.buildCostMetal
+Def.afusionplant.featureDefs.heap.damage = 0.3600 * Def.afusionplant.maxDamage
+Def.afusionplant.featureDefs.heap.metal = 0.6400 * Def.afusionplant.buildCostMetal
+Def.ahermes.buildTime = 3.0064 * Def.ahermes.buildCostEnergy
+Def.ahermes.featureDefs.dead.damage = 0.6000 * Def.ahermes.maxDamage
+Def.ahermes.featureDefs.dead.description = Def.ahermes.name .. [[ Wreckage]]
+Def.ahermes.featureDefs.dead.metal = 0.8000 * Def.ahermes.buildCostMetal
+Def.ahermes.featureDefs.heap.damage = 0.3600 * Def.ahermes.maxDamage
+Def.ahermes.featureDefs.heap.description = Def.ahermes.name .. [[ Wreckage]]
+Def.ahermes.featureDefs.heap.metal = 0.6400 * Def.ahermes.buildCostMetal
+Def.airwolf3g.buildTime = 0.3809 * Def.airwolf3g.buildCostEnergy
+Def.ajuno.buildTime = 1.3167 * Def.ajuno.buildCostEnergy
+Def.akmech.buildTime = 0.4768 * Def.akmech.buildCostEnergy
+Def.akmech.featureDefs.heap.damage = 0.3600 * Def.akmech.maxDamage
+Def.akmech.featureDefs.heap.metal = 0.6400 * Def.akmech.buildCostMetal
+Def.ametalmakerlvl1.buildTime = 0.8342 * Def.ametalmakerlvl1.buildCostEnergy
+return lowerkeys(Def)

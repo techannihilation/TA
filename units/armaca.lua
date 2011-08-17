@@ -1,149 +1,237 @@
--- UNITDEF -- ARMACA --
---------------------------------------------------------------------------------
-
-local unitName = "armaca"
-
---------------------------------------------------------------------------------
-
-local unitDef = {
-  acceleration       = 0.078,
-  bankscale          = 1.5,
-  bmcode             = 1,
-  brakeRate          = 1.875,
-  buildCostEnergy    = 29096,
-  buildCostMetal     = 2720,
-  buildDistance      = 60,
-  builder            = true,
-  buildPic           = [[ARMACA.png]],
-  buildTime          = 27763,
-  canFly             = true,
-  canGuard           = true,
-  canMove            = true,
-  canPatrol          = true,
-  canReclaim         = true,
-  canstop            = 1,
-  category           = [[ALL NOTLAND MOBILE NOTSUB ANTIFLAME ANTIGATOR ANTIEMG ANTILASER VTOL NOWEAPON NOTSHIP]],
-  collide            = false,
-  corpse             = [[1_DEAD]],
-  cruiseAlt          = 80,
-  defaultmissiontype = [[VTOL_standby]],
-  description        = [[Tech Level 2]],
-  energyMake         = 10,
-  energyStorage      = 50,
-  energyUse          = 10,
-  explodeAs          = [[CA_EX]],
-  footprintX         = 2,
-  footprintZ         = 2,
-  iconType           = [[air]],
-  idleAutoHeal       = 5,
-  idleTime           = 1800,
-  maneuverleashlength = 1280,
-  maxDamage          = 2180,
-  maxSlope           = 10,
-  maxVelocity        = 8.4,
-  maxWaterDepth      = 0,
-  metalMake          = 0.1,
-  metalStorage       = 50,
-  mobilestandorders  = 1,
-  name               = [[Advanced Construction Aircraft]],
-  noAutoFire         = false,
-  objectName         = [[ARMACA]],
-  radarDistance      = 50,
-  scale              = 0.8,
-  seismicSignature   = 0,
-  selfDestructAs     = [[BIG_UNIT]],
-  side               = [[arm]],
-  sightDistance      = 383.5,
-  smoothAnim         = true,
-  standingmoveorder  = 1,
-  steeringmode       = 1,
-  terraformSpeed     = 240,
-  turnRate           = 138,
-  unitname           = [[armaca]],
-  workerTime         = 180,
-  buildoptions = {
-    [[armfus]],
-    [[armckfus]],
-    [[armplat]],
-    [[amgeo]],
-    [[armgmm]],
-    [[armmoho]],
-    [[armmmkr]],
-    [[armuwadves]],
-    [[armuwadvms]],
-    [[armarad]],
-    [[armveil]],
-    [[armfort]],
-    [[armasp]],
-    [[armtarg]],
-    [[armsd]],
-    [[armgate]],
-    [[armflak]],
-    [[mercury]],
-    [[armemp]],
-    [[armamd]],
-    [[armsilo]],
-    [[armbrtha]],
-    [[armvulc]],
-    [[armdf]],
-    [[armap]],
-    [[armaap]],
-    [[armmagneto]],
-    [[arm_big_bertha]],
-    [[nebraska]],
-    [[armrech18]],
-  },
-  sounds = {
-    build              = [[nanlath1]],
-    canceldestruct     = [[cancel2]],
-    repair             = [[repair1]],
-    underattack        = [[warning1]],
-    working            = [[reclaim1]],
-    cant = {
-      [[cantdo4]],
-    },
-    count = {
-      [[count6]],
-      [[count5]],
-      [[count4]],
-      [[count3]],
-      [[count2]],
-      [[count1]],
-    },
-    ok = {
-      [[vtolarmv]],
-    },
-    select = {
-      [[vtolarac]],
-    },
-  },
+local Def = {
+	armaca = {
+		acceleration = 0.078,
+		bankscale = 1.5,
+		bmcode = 1,
+		brakeRate = 1.875,
+		buildCostEnergy = 29096,
+		buildCostMetal = 2720,
+		buildDistance = 60,
+		buildPic = [[ARMACA.png]],
+		buildTime = nil,
+		builder = true,
+		buildoptions = {
+			[1] = [[armfus]],
+			[2] = [[armckfus]],
+			[3] = [[armplat]],
+			[4] = [[amgeo]],
+			[5] = [[armgmm]],
+			[6] = [[armmoho]],
+			[7] = [[armmmkr]],
+			[8] = [[armuwadves]],
+			[9] = [[armuwadvms]],
+			[10] = [[armarad]],
+			[11] = [[armveil]],
+			[12] = [[armfort]],
+			[13] = [[armasp]],
+			[14] = [[armtarg]],
+			[15] = [[armsd]],
+			[16] = [[armgate]],
+			[17] = [[armflak]],
+			[18] = [[mercury]],
+			[19] = [[armemp]],
+			[20] = [[armamd]],
+			[21] = [[armsilo]],
+			[22] = [[armbrtha]],
+			[23] = [[armvulc]],
+			[24] = [[armdf]],
+			[25] = [[armap]],
+			[26] = [[armaap]],
+			[27] = [[armmagneto]],
+			[28] = [[arm_big_bertha]],
+			[29] = [[nebraska]],
+			[30] = [[armrech18]],
+		},
+		canFly = true,
+		canGuard = true,
+		canMove = true,
+		canPatrol = true,
+		canReclaim = true,
+		canstop = 1,
+		category = [[ALL NOTLAND MOBILE NOTSUB ANTIFLAME ANTIGATOR ANTIEMG ANTILASER VTOL NOWEAPON NOTSHIP]],
+		collide = false,
+		corpse = [[1_DEAD]],
+		cruiseAlt = 80,
+		defaultmissiontype = [[VTOL_standby]],
+		description = [[Tech Level 2]],
+		energyMake = 10,
+		energyStorage = 50,
+		energyUse = 10,
+		explodeAs = [[CA_EX]],
+		featureDefs = {
+			1_DEAD = {
+				blocking = true,
+				category = [[corpses]],
+				damage = 1308,
+				description = [[Advanced Construction Airplane Wreckage]],
+				footprintX = 2,
+				footprintZ = 2,
+				height = 20,
+				hitdensity = 100,
+				metal = 2176,
+				object = [[ARMACA_DEAD]],
+				reclaimable = true,
+				seqnamereclamate = [[TREE1RECLAMATE]],
+				world = [[All Worlds]],
+			},
+		},
+		footprintX = 2,
+		footprintZ = 2,
+		iconType = [[air]],
+		idleAutoHeal = 5,
+		idleTime = 1800,
+		maneuverleashlength = 1280,
+		maxDamage = 2180,
+		maxSlope = 10,
+		maxVelocity = 8.4,
+		maxWaterDepth = 0,
+		metalMake = 0.1,
+		metalStorage = 50,
+		mobilestandorders = 1,
+		name = [[Advanced Construction Aircraft]],
+		noAutoFire = false,
+		objectName = [[ARMACA]],
+		radarDistance = 50,
+		scale = 0.8,
+		seismicSignature = 0,
+		selfDestructAs = [[BIG_UNIT]],
+		side = [[arm]],
+		sightDistance = 383.5,
+		smoothAnim = true,
+		sounds = {
+			build = [[nanlath1]],
+			canceldestruct = [[cancel2]],
+			cant = {
+				[1] = [[cantdo4]],
+			},
+			count = {
+				[1] = [[count6]],
+				[2] = [[count5]],
+				[3] = [[count4]],
+				[4] = [[count3]],
+				[5] = [[count2]],
+				[6] = [[count1]],
+			},
+			ok = {
+				[1] = [[vtolarmv]],
+			},
+			repair = [[repair1]],
+			select = {
+				[1] = [[vtolarac]],
+			},
+			underattack = [[warning1]],
+			working = [[reclaim1]],
+		},
+		standingmoveorder = 1,
+		steeringmode = 1,
+		terraformSpeed = 240,
+		turnRate = 138,
+		unitname = [[armaca]],
+		workerTime = 180,
+	},
 }
-
-
---------------------------------------------------------------------------------
-
-local featureDefs = {
-  ["1_DEAD"] = {
-    blocking           = true,
-    category           = [[corpses]],
-    damage             = unitDef.maxDamage*0.6,
-    description        = [[Advanced Construction Airplane Wreckage]],
-    footprintX         = 2,
-    footprintZ         = 2,
-    height             = 20,
-    hitdensity         = 100,
-    metal              = unitDef.buildCostMetal*0.8,
-    object             = [[ARMACA_DEAD]],
-    reclaimable        = true,
-    seqnamereclamate   = [[TREE1RECLAMATE]],
-    world              = [[All Worlds]],
-  },
-}
-unitDef.featureDefs = featureDefs
-
-
---------------------------------------------------------------------------------
-
-return lowerkeys({ [unitName] = unitDef })
-
---------------------------------------------------------------------------------
+Def.aach.buildTime = 2.0955 * Def.aach.buildCostEnergy
+Def.aach.featureDefs.dead.damage = 0.6000 * Def.aach.maxDamage
+Def.aach.featureDefs.dead.metal = 0.8000 * Def.aach.buildCostMetal
+Def.aafus.buildTime = 1.8182 * Def.aafus.buildCostEnergy
+Def.aahp.buildTime = 2.6001 * Def.aahp.buildCostEnergy
+Def.aahp.featureDefs.dead.damage = 0.6000 * Def.aahp.maxDamage
+Def.aahp.featureDefs.dead.metal = 0.8000 * Def.aahp.buildCostMetal
+Def.aahp.featureDefs.heap.damage = 0.3600 * Def.aahp.maxDamage
+Def.aahp.featureDefs.heap.metal = 0.6400 * Def.aahp.buildCostMetal
+Def.aahpns.buildTime = 1.2217 * Def.aahpns.buildCostEnergy
+Def.aahpns.featureDefs.dead.damage = 0.6000 * Def.aahpns.maxDamage
+Def.aahpns.featureDefs.dead.metal = 0.8000 * Def.aahpns.buildCostMetal
+Def.aahpns.featureDefs.heap.damage = 0.3600 * Def.aahpns.maxDamage
+Def.aahpns.featureDefs.heap.metal = 0.6400 * Def.aahpns.buildCostMetal
+Def.abroadside.buildTime = 1.4286 * Def.abroadside.buildCostEnergy
+Def.abroadside.featureDefs.dead.damage = 0.6000 * Def.abroadside.maxDamage
+Def.abroadside.featureDefs.dead.metal = 0.8000 * Def.abroadside.buildCostMetal
+Def.abuilderlvl1.buildTime = 3.9372 * Def.abuilderlvl1.buildCostEnergy
+Def.abuilderlvl2.buildTime = 1.1032 * Def.abuilderlvl2.buildCostEnergy
+Def.abuilderlvl2.featureDefs.dead.damage = 0.6000 * Def.abuilderlvl2.maxDamage
+Def.abuilderlvl2.featureDefs.dead.metal = 0.8000 * Def.abuilderlvl2.buildCostMetal
+Def.abuilderlvl3.buildTime = 0.6800 * Def.abuilderlvl3.buildCostEnergy
+Def.abuilderlvl3.featureDefs.dead.damage = 0.6000 * Def.abuilderlvl3.maxDamage
+Def.abuilderlvl3.featureDefs.dead.metal = 0.8000 * Def.abuilderlvl3.buildCostMetal
+Def.acovertopscentre.buildTime = 0.0466 * Def.acovertopscentre.buildCostEnergy
+Def.acovertopscentre.featureDefs.dead.damage = 0.6000 * Def.acovertopscentre.maxDamage
+Def.acovertopscentre.featureDefs.dead.metal = 0.8000 * Def.acovertopscentre.buildCostMetal
+Def.aexxec.buildTime = 1.6005 * Def.aexxec.buildCostEnergy
+Def.aexxec.featureDefs.dead.damage = 0.6000 * Def.aexxec.maxDamage
+Def.aexxec.featureDefs.dead.description = Def.aexxec.name .. [[ Wreckage]]
+Def.aexxec.featureDefs.dead.metal = 0.8000 * Def.aexxec.buildCostMetal
+Def.aexxec.featureDefs.heap.damage = 0.3600 * Def.aexxec.maxDamage
+Def.aexxec.featureDefs.heap.description = Def.aexxec.name .. [[ Heap]]
+Def.aexxec.featureDefs.heap.metal = 0.6400 * Def.aexxec.buildCostMetal
+Def.afusionplant.buildTime = 1.5652 * Def.afusionplant.buildCostEnergy
+Def.afusionplant.featureDefs.dead.damage = 0.6000 * Def.afusionplant.maxDamage
+Def.afusionplant.featureDefs.dead.metal = 0.8000 * Def.afusionplant.buildCostMetal
+Def.afusionplant.featureDefs.heap.damage = 0.3600 * Def.afusionplant.maxDamage
+Def.afusionplant.featureDefs.heap.metal = 0.6400 * Def.afusionplant.buildCostMetal
+Def.ahermes.buildTime = 3.0064 * Def.ahermes.buildCostEnergy
+Def.ahermes.featureDefs.dead.damage = 0.6000 * Def.ahermes.maxDamage
+Def.ahermes.featureDefs.dead.description = Def.ahermes.name .. [[ Wreckage]]
+Def.ahermes.featureDefs.dead.metal = 0.8000 * Def.ahermes.buildCostMetal
+Def.ahermes.featureDefs.heap.damage = 0.3600 * Def.ahermes.maxDamage
+Def.ahermes.featureDefs.heap.description = Def.ahermes.name .. [[ Wreckage]]
+Def.ahermes.featureDefs.heap.metal = 0.6400 * Def.ahermes.buildCostMetal
+Def.airwolf3g.buildTime = 0.3809 * Def.airwolf3g.buildCostEnergy
+Def.ajuno.buildTime = 1.3167 * Def.ajuno.buildCostEnergy
+Def.akmech.buildTime = 0.4768 * Def.akmech.buildCostEnergy
+Def.akmech.featureDefs.heap.damage = 0.3600 * Def.akmech.maxDamage
+Def.akmech.featureDefs.heap.metal = 0.6400 * Def.akmech.buildCostMetal
+Def.ametalmakerlvl1.buildTime = 0.8342 * Def.ametalmakerlvl1.buildCostEnergy
+Def.ametalmakerlvl2.buildTime = 0.1666 * Def.ametalmakerlvl2.buildCostEnergy
+Def.ametalmakerlvl2.featureDefs.dead.damage = 0.6000 * Def.ametalmakerlvl2.maxDamage
+Def.ametalmakerlvl2.featureDefs.dead.metal = 0.8000 * Def.ametalmakerlvl2.buildCostMetal
+Def.ametalmakerlvl2.featureDefs.heap.damage = 0.3600 * Def.ametalmakerlvl2.maxDamage
+Def.ametalmakerlvl2.featureDefs.heap.metal = 0.6400 * Def.ametalmakerlvl2.buildCostMetal
+Def.amgeo.buildTime = 2.2727 * Def.amgeo.buildCostEnergy
+Def.amortor.buildTime = 1.1531 * Def.amortor.buildCostEnergy
+Def.amortor.featureDefs.dead.damage = 0.6000 * Def.amortor.maxDamage
+Def.amortor.featureDefs.dead.metal = 0.8000 * Def.amortor.buildCostMetal
+Def.amortor.featureDefs.heap.damage = 0.3600 * Def.amortor.maxDamage
+Def.amortor.featureDefs.heap.metal = 0.6400 * Def.amortor.buildCostMetal
+Def.ananotower.buildTime = 0.7070 * Def.ananotower.buildCostEnergy
+Def.ananotower.featureDefs.dead.damage = 0.6000 * Def.ananotower.maxDamage
+Def.ananotower.featureDefs.dead.metal = 0.8000 * Def.ananotower.buildCostMetal
+Def.apache.buildTime = 1.9878 * Def.apache.buildCostEnergy
+Def.apocketfusion.buildTime = 1.4490 * Def.apocketfusion.buildCostEnergy
+Def.apocketfusion.featureDefs.dead.damage = 0.6000 * Def.apocketfusion.maxDamage
+Def.apocketfusion.featureDefs.dead.description = Def.apocketfusion.name .. [[ Wreckage]]
+Def.apocketfusion.featureDefs.dead.metal = 0.8000 * Def.apocketfusion.buildCostMetal
+Def.arm_big_bertha.buildTime = 1.4919 * Def.arm_big_bertha.buildCostEnergy
+Def.arm_furie.buildTime = 1.0319 * Def.arm_furie.buildCostEnergy
+Def.arm_furie.featureDefs.dead.damage = 0.6000 * Def.arm_furie.maxDamage
+Def.arm_furie.featureDefs.dead.metal = 0.8000 * Def.arm_furie.buildCostMetal
+Def.arm_furie.featureDefs.furie_heap.damage = 0.3600 * Def.arm_furie.maxDamage
+Def.arm_furie.featureDefs.furie_heap.metal = 0.6400 * Def.arm_furie.buildCostMetal
+Def.arm_guardian.buildTime = 0.6756 * Def.arm_guardian.buildCostEnergy
+Def.arm_guardian.featureDefs.core_immolator_heap.damage = 0.6000 * Def.arm_guardian.maxDamage
+Def.arm_guardian.featureDefs.core_immolator_heap.metal = 0.8000 * Def.arm_guardian.buildCostMetal
+Def.arm_guardian.featureDefs.dead.damage = 0.3600 * Def.arm_guardian.maxDamage
+Def.arm_guardian.featureDefs.dead.description = Def.arm_guardian.name .. [[ Wreckage]]
+Def.arm_guardian.featureDefs.dead.metal = 0.6400 * Def.arm_guardian.buildCostMetal
+Def.arm_immolator.buildTime = 0.3812 * Def.arm_immolator.buildCostEnergy
+Def.arm_immolator.featureDefs.core_immolator_dead.damage = 0.6000 * Def.arm_immolator.maxDamage
+Def.arm_immolator.featureDefs.core_immolator_dead.description = Def.arm_immolator.name .. [[ Wreckage]]
+Def.arm_immolator.featureDefs.core_immolator_dead.metal = 0.8000 * Def.arm_immolator.buildCostMetal
+Def.arm_immolator.featureDefs.core_immolator_heap.damage = 0.3600 * Def.arm_immolator.maxDamage
+Def.arm_immolator.featureDefs.core_immolator_heap.description = Def.arm_immolator.name .. [[ Heap]]
+Def.arm_immolator.featureDefs.core_immolator_heap.metal = 0.6400 * Def.arm_immolator.buildCostMetal
+Def.arm_wind_generator.buildTime = 3.1493 * Def.arm_wind_generator.buildCostEnergy
+Def.arm_wind_generator.featureDefs.core_wind_generator_heap.damage = 0.6000 * Def.arm_wind_generator.maxDamage
+Def.arm_wind_generator.featureDefs.core_wind_generator_heap.metal = 0.8000 * Def.arm_wind_generator.buildCostMetal
+Def.arm_wind_generator.featureDefs.dead.damage = 0.3600 * Def.arm_wind_generator.maxDamage
+Def.arm_wind_generator.featureDefs.dead.metal = 0.6400 * Def.arm_wind_generator.buildCostMetal
+Def.armaak.buildTime = 1.3213 * Def.armaak.buildCostEnergy
+Def.armaap.buildTime = 0.6286 * Def.armaap.buildCostEnergy
+Def.armaas.buildTime = 1.2224 * Def.armaas.buildCostEnergy
+Def.armaaspd.buildTime = 1.8562 * Def.armaaspd.buildCostEnergy
+Def.armaaspd.featureDefs.dead.damage = 0.6000 * Def.armaaspd.maxDamage
+Def.armaaspd.featureDefs.dead.metal = 0.8000 * Def.armaaspd.buildCostMetal
+Def.armaaspd.featureDefs.heap.damage = 0.3600 * Def.armaaspd.maxDamage
+Def.armaaspd.featureDefs.heap.metal = 0.6400 * Def.armaaspd.buildCostMetal
+Def.armaca.buildTime = 0.9542 * Def.armaca.buildCostEnergy
+return lowerkeys(Def)

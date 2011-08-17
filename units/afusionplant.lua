@@ -1,114 +1,137 @@
--- UNITDEF -- AFUSIONPLANT --
---------------------------------------------------------------------------------
-
-local unitName = "afusionplant"
-
---------------------------------------------------------------------------------
---NEWFUS
-local unitDef = {
-  activateWhenBuilt  = true,
-  bmcode             = 0,
-  buildAngle         = 90096,
-  buildCostEnergy    = 1150000,
-  buildCostMetal     = 56000,
-  builder            = false,
-  buildTime          = 1800000,
-  category           = [[ALL NOTSUB NOWEAPON SPECIAL NOTAIR]],
-  collisionvolumeoffsets = [[0 0 0]],
-  collisionvolumescales = [[138 99 72]],
-  collisionvolumetest = 1,
-  collisionvolumetype = [[Box]],
-  copyright          = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
-  corpse             = [[dead]],
-  description        = [[Produces energy]],
-  energyMake         = 24000,
-  energyStorage      = 50000,
-  energyUse          = 0,
-  explodeAs          = [[SUPERBLAST_BUILDING]],
-  floater            = true,
-  footprintX         = 11,
-  footprintZ         = 8,
-  iconType           = [[building]],
-  maxDamage          = 26500.0,
-  maxSlope           = 10,
-  maxWaterDepth      = 0,
-  metalStorage       = 0,
-  name               = [[Mega Fusion Reactor]],
-  noAutoFire         = false,
-  objectName         = [[AFusionPlant]],
-  radarDistance      = 0,
-  seismicSignature   = 0,
-  selfDestructAs     = [[SUPERBLAST_BUILDING]],
-  side               = [[ARM]],
-  sightDistance      = 300,
-  smoothAnim         = true,
-  threed             = 1,
-  turnRate           = 0,
-  unitname           = [[afusionplant]],
-  unitnumber         = 33,
-  version            = 1,
-  workerTime         = 0,
-  yardMap            = [[oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo]],
-  sounds = {
-    canceldestruct     = [[cancel2]],
-    underattack        = [[warning1]],
-    count = {
-      [[count6]],
-      [[count5]],
-      [[count4]],
-      [[count3]],
-      [[count2]],
-      [[count1]],
-    },
-    select = {
-      [[fusion1]],
-    },
-  },
+local Def = {
+	afusionplant = {
+		activateWhenBuilt = true,
+		bmcode = 0,
+		buildAngle = 90096,
+		buildCostEnergy = 1150000,
+		buildCostMetal = 56000,
+		buildTime = nil,
+		builder = false,
+		category = [[ALL NOTSUB NOWEAPON SPECIAL NOTAIR]],
+		collisionvolumeoffsets = [[0 0 0]],
+		collisionvolumescales = [[138 99 72]],
+		collisionvolumetest = 1,
+		collisionvolumetype = [[Box]],
+		copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
+		corpse = [[dead]],
+		description = [[Produces energy]],
+		energyMake = 24000,
+		energyStorage = 50000,
+		energyUse = 0,
+		explodeAs = [[SUPERBLAST_BUILDING]],
+		featureDefs = {
+			dead = {
+				blocking = true,
+				category = [[arm_corpses]],
+				damage = nil,
+				description = [[Mega fusion wreckage]],
+				featureDead = [[heap]],
+				featurereclamate = [[smudge01]],
+				footprintX = 5,
+				footprintZ = 4,
+				height = 40,
+				hitdensity = 100,
+				metal = nil,
+				object = [[AFusionPlant_dead]],
+				reclaimable = true,
+				seqnamereclamate = [[tree1reclamate]],
+				world = [[All Worlds]],
+			},
+			heap = {
+				blocking = false,
+				category = [[heaps]],
+				damage = nil,
+				description = [[Mega Fusion Debris]],
+				featurereclamate = [[smudge01]],
+				footprintX = 4,
+				footprintZ = 4,
+				height = 4,
+				hitdensity = 100,
+				metal = nil,
+				object = [[AFusionPlant_heap]],
+				reclaimable = true,
+				seqnamereclamate = [[tree1reclamate]],
+				world = [[All Worlds]],
+			},
+		},
+		floater = true,
+		footprintX = 11,
+		footprintZ = 8,
+		iconType = [[building]],
+		maxDamage = 26500,
+		maxSlope = 10,
+		maxWaterDepth = 0,
+		metalStorage = 0,
+		name = [[Mega Fusion Reactor]],
+		noAutoFire = false,
+		objectName = [[AFusionPlant]],
+		radarDistance = 0,
+		seismicSignature = 0,
+		selfDestructAs = [[SUPERBLAST_BUILDING]],
+		side = [[ARM]],
+		sightDistance = 300,
+		smoothAnim = true,
+		sounds = {
+			canceldestruct = [[cancel2]],
+			count = {
+				[1] = [[count6]],
+				[2] = [[count5]],
+				[3] = [[count4]],
+				[4] = [[count3]],
+				[5] = [[count2]],
+				[6] = [[count1]],
+			},
+			select = {
+				[1] = [[fusion1]],
+			},
+			underattack = [[warning1]],
+		},
+		threed = 1,
+		turnRate = 0,
+		unitname = [[afusionplant]],
+		unitnumber = 33,
+		version = 1,
+		workerTime = 0,
+		yardMap = [[oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo]],
+	},
 }
-
-
---------------------------------------------------------------------------------
-
-local featureDefs = {
-  dead = {
-    blocking           = true,
-    category           = [[arm_corpses]],
-    damage             = unitDef.maxDamage*0.6,
-    description        = [[Mega fusion wreckage]],
-    featureDead        = [[heap]],
-    featurereclamate   = [[smudge01]],
-    footprintX         = 5,
-    footprintZ         = 4,
-    height             = 40,
-    hitdensity         = 100,
-    metal              = unitDef.buildCostMetal*0.8,
-    object             = [[AFusionPlant_dead]],
-    reclaimable        = true,
-    seqnamereclamate   = [[tree1reclamate]],
-    world              = [[All Worlds]],
-  },
-  heap = {
-    blocking           = false,
-    category           = [[heaps]],
-    damage             = unitDef.maxDamage*0.36,
-    description        = [[Mega Fusion Debris]],
-    featurereclamate   = [[smudge01]],
-    footprintX         = 4,
-    footprintZ         = 4,
-    height             = 4,
-    hitdensity         = 100,
-    metal              = unitDef.buildCostMetal*0.64,
-    object             = [[AFusionPlant_heap]],
-    reclaimable        = true,
-    seqnamereclamate   = [[tree1reclamate]],
-    world              = [[All Worlds]],
-  },
-}
-unitDef.featureDefs = featureDefs
-
-
---------------------------------------------------------------------------------
-
-return lowerkeys({ [unitName] = unitDef })
-
---------------------------------------------------------------------------------
+Def.aach.buildTime = 2.0955 * Def.aach.buildCostEnergy
+Def.aach.featureDefs.dead.damage = 0.6000 * Def.aach.maxDamage
+Def.aach.featureDefs.dead.metal = 0.8000 * Def.aach.buildCostMetal
+Def.aafus.buildTime = 1.8182 * Def.aafus.buildCostEnergy
+Def.aahp.buildTime = 2.6001 * Def.aahp.buildCostEnergy
+Def.aahp.featureDefs.dead.damage = 0.6000 * Def.aahp.maxDamage
+Def.aahp.featureDefs.dead.metal = 0.8000 * Def.aahp.buildCostMetal
+Def.aahp.featureDefs.heap.damage = 0.3600 * Def.aahp.maxDamage
+Def.aahp.featureDefs.heap.metal = 0.6400 * Def.aahp.buildCostMetal
+Def.aahpns.buildTime = 1.2217 * Def.aahpns.buildCostEnergy
+Def.aahpns.featureDefs.dead.damage = 0.6000 * Def.aahpns.maxDamage
+Def.aahpns.featureDefs.dead.metal = 0.8000 * Def.aahpns.buildCostMetal
+Def.aahpns.featureDefs.heap.damage = 0.3600 * Def.aahpns.maxDamage
+Def.aahpns.featureDefs.heap.metal = 0.6400 * Def.aahpns.buildCostMetal
+Def.abroadside.buildTime = 1.4286 * Def.abroadside.buildCostEnergy
+Def.abroadside.featureDefs.dead.damage = 0.6000 * Def.abroadside.maxDamage
+Def.abroadside.featureDefs.dead.metal = 0.8000 * Def.abroadside.buildCostMetal
+Def.abuilderlvl1.buildTime = 3.9372 * Def.abuilderlvl1.buildCostEnergy
+Def.abuilderlvl2.buildTime = 1.1032 * Def.abuilderlvl2.buildCostEnergy
+Def.abuilderlvl2.featureDefs.dead.damage = 0.6000 * Def.abuilderlvl2.maxDamage
+Def.abuilderlvl2.featureDefs.dead.metal = 0.8000 * Def.abuilderlvl2.buildCostMetal
+Def.abuilderlvl3.buildTime = 0.6800 * Def.abuilderlvl3.buildCostEnergy
+Def.abuilderlvl3.featureDefs.dead.damage = 0.6000 * Def.abuilderlvl3.maxDamage
+Def.abuilderlvl3.featureDefs.dead.metal = 0.8000 * Def.abuilderlvl3.buildCostMetal
+Def.acovertopscentre.buildTime = 0.0466 * Def.acovertopscentre.buildCostEnergy
+Def.acovertopscentre.featureDefs.dead.damage = 0.6000 * Def.acovertopscentre.maxDamage
+Def.acovertopscentre.featureDefs.dead.metal = 0.8000 * Def.acovertopscentre.buildCostMetal
+Def.aexxec.buildTime = 1.6005 * Def.aexxec.buildCostEnergy
+Def.aexxec.featureDefs.dead.damage = 0.6000 * Def.aexxec.maxDamage
+Def.aexxec.featureDefs.dead.description = Def.aexxec.name .. [[ Wreckage]]
+Def.aexxec.featureDefs.dead.metal = 0.8000 * Def.aexxec.buildCostMetal
+Def.aexxec.featureDefs.heap.damage = 0.3600 * Def.aexxec.maxDamage
+Def.aexxec.featureDefs.heap.description = Def.aexxec.name .. [[ Heap]]
+Def.aexxec.featureDefs.heap.metal = 0.6400 * Def.aexxec.buildCostMetal
+Def.afusionplant.buildTime = 1.5652 * Def.afusionplant.buildCostEnergy
+Def.afusionplant.featureDefs.dead.damage = 0.6000 * Def.afusionplant.maxDamage
+Def.afusionplant.featureDefs.dead.metal = 0.8000 * Def.afusionplant.buildCostMetal
+Def.afusionplant.featureDefs.heap.damage = 0.3600 * Def.afusionplant.maxDamage
+Def.afusionplant.featureDefs.heap.metal = 0.6400 * Def.afusionplant.buildCostMetal
+return lowerkeys(Def)

@@ -1,169 +1,211 @@
--- UNITDEF -- AMORTOR --
---------------------------------------------------------------------------------
-
-local unitName = "amortor"
-
---------------------------------------------------------------------------------
-
-local unitDef = {
-  badTargetCategory  = [[VTOL]],
-  bmcode             = 0,
-  buildAngle         = 4096,
-  buildCostEnergy    = 29342,
-  buildCostMetal     = 2010,
-  builder            = false,
-  buildTime          = 33833,
-  canAttack          = true,
-  canstop            = 1,
-  category           = [[ARM WEAPON LEVEL2 NOTAIR NOTSUB ]],
-  copyright          = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
-  corpse             = [[dead]],
-  defaultmissiontype = [[GUARD_NOMOVE]],
-  description        = [[Range Mortar Cannon]],
-  designation        = [[HM-SN11]],
-  energyStorage      = 10,
-  energyUse          = 0,
-  explodeAs          = [[MEDIUM_BUILDINGEX]],
-  firestandorders    = 1,
-  footprintX         = 4,
-  footprintZ         = 4,
-  frenchdescription  = [[Mortier lourd à courte portée]],
-  frenchname         = [[Land Slide]],
-  germandescription  = [[Schwerer Mörser mit kurzer Reichweite]],
-  germanname         = [[Land Slide]],
-  maxDamage          = 3411,
-  maxSlope           = 10,
-  maxWaterDepth      = 0,
-  metalStorage       = 0,
-  name               = [[Land Slide]],
-  noAutoFire         = false,
-  noChaseCategory    = [[VTOL]],
-  objectName         = [[AMORTOR]],
-  radarDistance      = 0,
-  selfDestructAs     = [[MEDIUM_BUILDING]],
-  shootme            = 1,
-  side               = [[ARM]],
-  sightDistance      = 350,
-  standingfireorder  = 2,
-  threed             = 1,
-  unitname           = [[amortor]],
-  unitnumber         = 111,
-  version            = 1,
-  workerTime         = 0,
-  yardMap            = [[ooooooooo]],
-  zbuffer            = 1,
-  sounds = {
-    canceldestruct     = [[cancel2]],
-    cloak              = [[kloak1]],
-    uncloak            = [[kloak1un]],
-    underattack        = [[warning1]],
-    cant = {
-      [[cantdo4]],
-    },
-    count = {
-      [[count6]],
-      [[count5]],
-      [[count4]],
-      [[count3]],
-      [[count2]],
-      [[count1]],
-    },
-    ok = {
-      [[twractv3]],
-    },
-    select = {
-      [[twractv3]],
-    },
-  },
-  weapons = {
-    [1]  = {
-      badTargetCategory  = [[VTOL]],
-      def                = [[MORTARTILLERY]],
-      onlyTargetCategory = [[NOTAIR]],
-    },
-  },
+local Def = {
+	amortor = {
+		badTargetCategory = [[VTOL]],
+		bmcode = 0,
+		buildAngle = 4096,
+		buildCostEnergy = 29342,
+		buildCostMetal = 2010,
+		buildTime = nil,
+		builder = false,
+		canAttack = true,
+		canstop = 1,
+		category = [[ARM WEAPON LEVEL2 NOTAIR NOTSUB ]],
+		copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
+		corpse = [[dead]],
+		defaultmissiontype = [[GUARD_NOMOVE]],
+		description = [[Range Mortar Cannon]],
+		designation = [[HM-SN11]],
+		energyStorage = 10,
+		energyUse = 0,
+		explodeAs = [[MEDIUM_BUILDINGEX]],
+		featureDefs = {
+			dead = {
+				blocking = true,
+				category = [[arm_corpses]],
+				damage = nil,
+				description = [[AMortor Wreckage]],
+				featureDead = [[heap]],
+				featurereclamate = [[smudge01]],
+				footprintX = 3,
+				footprintZ = 3,
+				height = 40,
+				hitdensity = 100,
+				metal = nil,
+				object = [[amortor_dead]],
+				reclaimable = true,
+				seqnamereclamate = [[tree1reclamate]],
+				world = [[All Worlds]],
+			},
+			heap = {
+				blocking = false,
+				category = [[heaps]],
+				damage = nil,
+				description = [[Amortor Heap]],
+				featurereclamate = [[smudge01]],
+				footprintX = 3,
+				footprintZ = 3,
+				height = 4,
+				hitdensity = 100,
+				metal = nil,
+				object = [[4x4d]],
+				reclaimable = true,
+				seqnamereclamate = [[tree1reclamate]],
+				world = [[All Worlds]],
+			},
+		},
+		firestandorders = 1,
+		footprintX = 4,
+		footprintZ = 4,
+		frenchdescription = [[Mortier lourd à courte portée]],
+		frenchname = [[Land Slide]],
+		germandescription = [[Schwerer Mörser mit kurzer Reichweite]],
+		germanname = [[Land Slide]],
+		maxDamage = 3411,
+		maxSlope = 10,
+		maxWaterDepth = 0,
+		metalStorage = 0,
+		name = [[Land Slide]],
+		noAutoFire = false,
+		noChaseCategory = [[VTOL]],
+		objectName = [[AMORTOR]],
+		radarDistance = 0,
+		selfDestructAs = [[MEDIUM_BUILDING]],
+		shootme = 1,
+		side = [[ARM]],
+		sightDistance = 350,
+		sounds = {
+			canceldestruct = [[cancel2]],
+			cant = {
+				[1] = [[cantdo4]],
+			},
+			cloak = [[kloak1]],
+			count = {
+				[1] = [[count6]],
+				[2] = [[count5]],
+				[3] = [[count4]],
+				[4] = [[count3]],
+				[5] = [[count2]],
+				[6] = [[count1]],
+			},
+			ok = {
+				[1] = [[twractv3]],
+			},
+			select = {
+				[1] = [[twractv3]],
+			},
+			uncloak = [[kloak1un]],
+			underattack = [[warning1]],
+		},
+		standingfireorder = 2,
+		threed = 1,
+		unitname = [[amortor]],
+		unitnumber = 111,
+		version = 1,
+		weaponDefs = {
+			MORTARTILLERY = {
+				areaOfEffect = 70,
+				ballistic = true,
+				craterBoost = 0,
+				craterMult = 0,
+				damage = {
+					default = 300,
+				},
+				explosionart = [[explode3]],
+				explosiongaf = [[fx]],
+				gravityaffected = [[true]],
+				id = 169,
+				impulseBoost = 0.123,
+				impulseFactor = 0.123,
+				lavaexplosionart = [[lavasplash]],
+				lavaexplosiongaf = [[fx]],
+				minbarrelangle = -35,
+				name = [[Mortar Cannon]],
+				range = 1700,
+				reloadtime = 2.1,
+				renderType = 4,
+				soundHit = [[xplomed4]],
+				soundStart = [[cannhvy2]],
+				startsmoke = 1,
+				turret = true,
+				waterexplosionart = [[h2o]],
+				waterexplosiongaf = [[fx]],
+				weaponType = [[Cannon]],
+				weaponVelocity = 550,
+			},
+		},
+		weapons = {
+			[1] = {
+				badTargetCategory = [[VTOL]],
+				def = [[MORTARTILLERY]],
+				onlyTargetCategory = [[NOTAIR]],
+			},
+		},
+		workerTime = 0,
+		yardMap = [[ooooooooo]],
+		zbuffer = 1,
+	},
 }
-
-
---------------------------------------------------------------------------------
-
-local weaponDefs = {
-  MORTARTILLERY = {
-    areaOfEffect       = 70,
-    ballistic          = true,
-    craterBoost        = 0,
-    craterMult         = 0,
-    explosionart       = [[explode3]],
-    explosiongaf       = [[fx]],
-    gravityaffected    = [[true]],
-    id                 = 169,
-    impulseBoost       = 0.123,
-    impulseFactor      = 0.123,
-    lavaexplosionart   = [[lavasplash]],
-    lavaexplosiongaf   = [[fx]],
-    minbarrelangle     = -35,
-    name               = [[Mortar Cannon]],
-    range              = 1700,
-    reloadtime         = 2.1,
-    renderType         = 4,
-    soundHit           = [[xplomed4]],
-    soundStart         = [[cannhvy2]],
-    startsmoke         = 1,
-    turret             = true,
-    waterexplosionart  = [[h2o]],
-    waterexplosiongaf  = [[fx]],
-    weaponType         = [[Cannon]],
-    weaponVelocity     = 550,
-    damage = {
-      default            = 300,
-    },
-  },
-}
-unitDef.weaponDefs = weaponDefs
-
-
---------------------------------------------------------------------------------
-
-local featureDefs = {
-  dead = {
-    blocking           = true,
-    category           = [[arm_corpses]],
-    damage             = unitDef.maxDamage*0.6,
-    description        = [[AMortor Wreckage]],
-    featureDead        = [[heap]],
-    featurereclamate   = [[smudge01]],
-    footprintX         = 3,
-    footprintZ         = 3,
-    height             = 40,
-    hitdensity         = 100,
-    metal              = unitDef.buildCostMetal*0.8,
-    object             = [[amortor_dead]],
-    reclaimable        = true,
-    seqnamereclamate   = [[tree1reclamate]],
-    world              = [[All Worlds]],
-  },
-  heap = {
-    blocking           = false,
-    category           = [[heaps]],
-    damage             = unitDef.maxDamage*0.36,
-    description        = [[Amortor Heap]],
-    featurereclamate   = [[smudge01]],
-    footprintX         = 3,
-    footprintZ         = 3,
-    height             = 4,
-    hitdensity         = 100,
-    metal              = unitDef.buildCostMetal*0.64,
-    object             = [[4x4d]],
-    reclaimable        = true,
-    seqnamereclamate   = [[tree1reclamate]],
-    world              = [[All Worlds]],
-  },
-}
-unitDef.featureDefs = featureDefs
-
-
---------------------------------------------------------------------------------
-
-return lowerkeys({ [unitName] = unitDef })
-
---------------------------------------------------------------------------------
+Def.aach.buildTime = 2.0955 * Def.aach.buildCostEnergy
+Def.aach.featureDefs.dead.damage = 0.6000 * Def.aach.maxDamage
+Def.aach.featureDefs.dead.metal = 0.8000 * Def.aach.buildCostMetal
+Def.aafus.buildTime = 1.8182 * Def.aafus.buildCostEnergy
+Def.aahp.buildTime = 2.6001 * Def.aahp.buildCostEnergy
+Def.aahp.featureDefs.dead.damage = 0.6000 * Def.aahp.maxDamage
+Def.aahp.featureDefs.dead.metal = 0.8000 * Def.aahp.buildCostMetal
+Def.aahp.featureDefs.heap.damage = 0.3600 * Def.aahp.maxDamage
+Def.aahp.featureDefs.heap.metal = 0.6400 * Def.aahp.buildCostMetal
+Def.aahpns.buildTime = 1.2217 * Def.aahpns.buildCostEnergy
+Def.aahpns.featureDefs.dead.damage = 0.6000 * Def.aahpns.maxDamage
+Def.aahpns.featureDefs.dead.metal = 0.8000 * Def.aahpns.buildCostMetal
+Def.aahpns.featureDefs.heap.damage = 0.3600 * Def.aahpns.maxDamage
+Def.aahpns.featureDefs.heap.metal = 0.6400 * Def.aahpns.buildCostMetal
+Def.abroadside.buildTime = 1.4286 * Def.abroadside.buildCostEnergy
+Def.abroadside.featureDefs.dead.damage = 0.6000 * Def.abroadside.maxDamage
+Def.abroadside.featureDefs.dead.metal = 0.8000 * Def.abroadside.buildCostMetal
+Def.abuilderlvl1.buildTime = 3.9372 * Def.abuilderlvl1.buildCostEnergy
+Def.abuilderlvl2.buildTime = 1.1032 * Def.abuilderlvl2.buildCostEnergy
+Def.abuilderlvl2.featureDefs.dead.damage = 0.6000 * Def.abuilderlvl2.maxDamage
+Def.abuilderlvl2.featureDefs.dead.metal = 0.8000 * Def.abuilderlvl2.buildCostMetal
+Def.abuilderlvl3.buildTime = 0.6800 * Def.abuilderlvl3.buildCostEnergy
+Def.abuilderlvl3.featureDefs.dead.damage = 0.6000 * Def.abuilderlvl3.maxDamage
+Def.abuilderlvl3.featureDefs.dead.metal = 0.8000 * Def.abuilderlvl3.buildCostMetal
+Def.acovertopscentre.buildTime = 0.0466 * Def.acovertopscentre.buildCostEnergy
+Def.acovertopscentre.featureDefs.dead.damage = 0.6000 * Def.acovertopscentre.maxDamage
+Def.acovertopscentre.featureDefs.dead.metal = 0.8000 * Def.acovertopscentre.buildCostMetal
+Def.aexxec.buildTime = 1.6005 * Def.aexxec.buildCostEnergy
+Def.aexxec.featureDefs.dead.damage = 0.6000 * Def.aexxec.maxDamage
+Def.aexxec.featureDefs.dead.description = Def.aexxec.name .. [[ Wreckage]]
+Def.aexxec.featureDefs.dead.metal = 0.8000 * Def.aexxec.buildCostMetal
+Def.aexxec.featureDefs.heap.damage = 0.3600 * Def.aexxec.maxDamage
+Def.aexxec.featureDefs.heap.description = Def.aexxec.name .. [[ Heap]]
+Def.aexxec.featureDefs.heap.metal = 0.6400 * Def.aexxec.buildCostMetal
+Def.afusionplant.buildTime = 1.5652 * Def.afusionplant.buildCostEnergy
+Def.afusionplant.featureDefs.dead.damage = 0.6000 * Def.afusionplant.maxDamage
+Def.afusionplant.featureDefs.dead.metal = 0.8000 * Def.afusionplant.buildCostMetal
+Def.afusionplant.featureDefs.heap.damage = 0.3600 * Def.afusionplant.maxDamage
+Def.afusionplant.featureDefs.heap.metal = 0.6400 * Def.afusionplant.buildCostMetal
+Def.ahermes.buildTime = 3.0064 * Def.ahermes.buildCostEnergy
+Def.ahermes.featureDefs.dead.damage = 0.6000 * Def.ahermes.maxDamage
+Def.ahermes.featureDefs.dead.description = Def.ahermes.name .. [[ Wreckage]]
+Def.ahermes.featureDefs.dead.metal = 0.8000 * Def.ahermes.buildCostMetal
+Def.ahermes.featureDefs.heap.damage = 0.3600 * Def.ahermes.maxDamage
+Def.ahermes.featureDefs.heap.description = Def.ahermes.name .. [[ Wreckage]]
+Def.ahermes.featureDefs.heap.metal = 0.6400 * Def.ahermes.buildCostMetal
+Def.airwolf3g.buildTime = 0.3809 * Def.airwolf3g.buildCostEnergy
+Def.ajuno.buildTime = 1.3167 * Def.ajuno.buildCostEnergy
+Def.akmech.buildTime = 0.4768 * Def.akmech.buildCostEnergy
+Def.akmech.featureDefs.heap.damage = 0.3600 * Def.akmech.maxDamage
+Def.akmech.featureDefs.heap.metal = 0.6400 * Def.akmech.buildCostMetal
+Def.ametalmakerlvl1.buildTime = 0.8342 * Def.ametalmakerlvl1.buildCostEnergy
+Def.ametalmakerlvl2.buildTime = 0.1666 * Def.ametalmakerlvl2.buildCostEnergy
+Def.ametalmakerlvl2.featureDefs.dead.damage = 0.6000 * Def.ametalmakerlvl2.maxDamage
+Def.ametalmakerlvl2.featureDefs.dead.metal = 0.8000 * Def.ametalmakerlvl2.buildCostMetal
+Def.ametalmakerlvl2.featureDefs.heap.damage = 0.3600 * Def.ametalmakerlvl2.maxDamage
+Def.ametalmakerlvl2.featureDefs.heap.metal = 0.6400 * Def.ametalmakerlvl2.buildCostMetal
+Def.amgeo.buildTime = 2.2727 * Def.amgeo.buildCostEnergy
+Def.amortor.buildTime = 1.1531 * Def.amortor.buildCostEnergy
+Def.amortor.featureDefs.dead.damage = 0.6000 * Def.amortor.maxDamage
+Def.amortor.featureDefs.dead.metal = 0.8000 * Def.amortor.buildCostMetal
+Def.amortor.featureDefs.heap.damage = 0.3600 * Def.amortor.maxDamage
+Def.amortor.featureDefs.heap.metal = 0.6400 * Def.amortor.buildCostMetal
+return lowerkeys(Def)

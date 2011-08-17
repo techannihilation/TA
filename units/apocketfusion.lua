@@ -1,86 +1,141 @@
--- UNITDEF -- APOCKETFUSION --
---------------------------------------------------------------------------------
-
-local unitName = "apocketfusion"
-
---------------------------------------------------------------------------------
-
-local unitDef = {
-  activateWhenBuilt  = true,
-  buildCostEnergy    = 4900,
-  buildCostMetal     = 400,
-  builder            = false,
-  buildTime          = 7100.0,
-  category           = [[ARM LEVEL3 SPECIAL NOWEAPON NOTAIR NOTSUB ALL]],
-  collisionvolumeoffsets = [[0 0 0]],
-  collisionvolumescales = [[48 29 22]],
-  collisionvolumetest = 1,
-  collisionvolumetype = [[Box]],
-  corpse             = [[dead]],
-  description        = [[produces 100 energy]],
-  designation        = [[APE-FPF]],
-  energyMake         = 100,
-  energyStorage      = 150,
-  energyUse          = 0,
-  explodeAs          = [[MEDIUM_BUILDINGEX]],
-  footprintX         = 3,
-  footprintZ         = 2,
-  maxDamage          = 1650.0,
-  maxSlope           = 20,
-  maxWaterDepth      = 0,
-  metalStorage       = 0,
-  name               = [[Pocket Fusion]],
-  objectName         = [[APocketFusion]],
-  radarDistance      = 0,
-  selfDestructAs     = [[LIGHTSHIPBLAST]],
-  side               = [[ARM]],
-  sightDistance      = 150,
-  unitname           = [[apocketfusion]],
-  workerTime         = 0,
-  yardMap            = [[OOOOOOOOOOOOOOOOOOOO]],
-  sounds = {
-    canceldestruct     = [[cancel2]],
-    underattack        = [[warning1]],
-    count = {
-      [[count6]],
-      [[count5]],
-      [[count4]],
-      [[count3]],
-      [[count2]],
-      [[count1]],
-    },
-    select = {
-      [[fusion1]],
-    },
-  },
+local Def = {
+	apocketfusion = {
+		activateWhenBuilt = true,
+		buildCostEnergy = 4900,
+		buildCostMetal = 400,
+		buildTime = nil,
+		builder = false,
+		category = [[ARM LEVEL3 SPECIAL NOWEAPON NOTAIR NOTSUB ALL]],
+		collisionvolumeoffsets = [[0 0 0]],
+		collisionvolumescales = [[48 29 22]],
+		collisionvolumetest = 1,
+		collisionvolumetype = [[Box]],
+		corpse = [[dead]],
+		description = [[produces 100 energy]],
+		designation = [[APE-FPF]],
+		energyMake = 100,
+		energyStorage = 150,
+		energyUse = 0,
+		explodeAs = [[MEDIUM_BUILDINGEX]],
+		featureDefs = {
+			dead = {
+				blocking = true,
+				category = [[arm_corpses]],
+				damage = nil,
+				description = nil,
+				featurereclamate = [[smudge01]],
+				footprintX = 3,
+				footprintZ = 2,
+				height = 20,
+				hitdensity = 100,
+				metal = nil,
+				object = [[APocketFusion_dead]],
+				reclaimable = true,
+				seqnamereclamate = [[tree1reclamate]],
+				world = [[All Worlds]],
+			},
+		},
+		footprintX = 3,
+		footprintZ = 2,
+		maxDamage = 1650,
+		maxSlope = 20,
+		maxWaterDepth = 0,
+		metalStorage = 0,
+		name = [[Pocket Fusion]],
+		objectName = [[APocketFusion]],
+		radarDistance = 0,
+		selfDestructAs = [[LIGHTSHIPBLAST]],
+		side = [[ARM]],
+		sightDistance = 150,
+		sounds = {
+			canceldestruct = [[cancel2]],
+			count = {
+				[1] = [[count6]],
+				[2] = [[count5]],
+				[3] = [[count4]],
+				[4] = [[count3]],
+				[5] = [[count2]],
+				[6] = [[count1]],
+			},
+			select = {
+				[1] = [[fusion1]],
+			},
+			underattack = [[warning1]],
+		},
+		unitname = [[apocketfusion]],
+		workerTime = 0,
+		yardMap = [[OOOOOOOOOOOOOOOOOOOO]],
+	},
 }
-
-
---------------------------------------------------------------------------------
-
-local featureDefs = {
-  dead = {
-    blocking           = true,
-    category           = [[arm_corpses]],
-    damage             = unitDef.maxDamage*0.6,
-    description        = [[Pocket Fusion Wreckage]],
-    featurereclamate   = [[smudge01]],
-    footprintX         = 3,
-    footprintZ         = 2,
-    height             = 20,
-    hitdensity         = 100,
-    metal              = unitDef.buildCostMetal*0.8,
-    object             = [[APocketFusion_dead]],
-    reclaimable        = true,
-    seqnamereclamate   = [[tree1reclamate]],
-    world              = [[All Worlds]],
-  },
-}
-unitDef.featureDefs = featureDefs
-
-
---------------------------------------------------------------------------------
-
-return lowerkeys({ [unitName] = unitDef })
-
---------------------------------------------------------------------------------
+Def.aach.buildTime = 2.0955 * Def.aach.buildCostEnergy
+Def.aach.featureDefs.dead.damage = 0.6000 * Def.aach.maxDamage
+Def.aach.featureDefs.dead.metal = 0.8000 * Def.aach.buildCostMetal
+Def.aafus.buildTime = 1.8182 * Def.aafus.buildCostEnergy
+Def.aahp.buildTime = 2.6001 * Def.aahp.buildCostEnergy
+Def.aahp.featureDefs.dead.damage = 0.6000 * Def.aahp.maxDamage
+Def.aahp.featureDefs.dead.metal = 0.8000 * Def.aahp.buildCostMetal
+Def.aahp.featureDefs.heap.damage = 0.3600 * Def.aahp.maxDamage
+Def.aahp.featureDefs.heap.metal = 0.6400 * Def.aahp.buildCostMetal
+Def.aahpns.buildTime = 1.2217 * Def.aahpns.buildCostEnergy
+Def.aahpns.featureDefs.dead.damage = 0.6000 * Def.aahpns.maxDamage
+Def.aahpns.featureDefs.dead.metal = 0.8000 * Def.aahpns.buildCostMetal
+Def.aahpns.featureDefs.heap.damage = 0.3600 * Def.aahpns.maxDamage
+Def.aahpns.featureDefs.heap.metal = 0.6400 * Def.aahpns.buildCostMetal
+Def.abroadside.buildTime = 1.4286 * Def.abroadside.buildCostEnergy
+Def.abroadside.featureDefs.dead.damage = 0.6000 * Def.abroadside.maxDamage
+Def.abroadside.featureDefs.dead.metal = 0.8000 * Def.abroadside.buildCostMetal
+Def.abuilderlvl1.buildTime = 3.9372 * Def.abuilderlvl1.buildCostEnergy
+Def.abuilderlvl2.buildTime = 1.1032 * Def.abuilderlvl2.buildCostEnergy
+Def.abuilderlvl2.featureDefs.dead.damage = 0.6000 * Def.abuilderlvl2.maxDamage
+Def.abuilderlvl2.featureDefs.dead.metal = 0.8000 * Def.abuilderlvl2.buildCostMetal
+Def.abuilderlvl3.buildTime = 0.6800 * Def.abuilderlvl3.buildCostEnergy
+Def.abuilderlvl3.featureDefs.dead.damage = 0.6000 * Def.abuilderlvl3.maxDamage
+Def.abuilderlvl3.featureDefs.dead.metal = 0.8000 * Def.abuilderlvl3.buildCostMetal
+Def.acovertopscentre.buildTime = 0.0466 * Def.acovertopscentre.buildCostEnergy
+Def.acovertopscentre.featureDefs.dead.damage = 0.6000 * Def.acovertopscentre.maxDamage
+Def.acovertopscentre.featureDefs.dead.metal = 0.8000 * Def.acovertopscentre.buildCostMetal
+Def.aexxec.buildTime = 1.6005 * Def.aexxec.buildCostEnergy
+Def.aexxec.featureDefs.dead.damage = 0.6000 * Def.aexxec.maxDamage
+Def.aexxec.featureDefs.dead.description = Def.aexxec.name .. [[ Wreckage]]
+Def.aexxec.featureDefs.dead.metal = 0.8000 * Def.aexxec.buildCostMetal
+Def.aexxec.featureDefs.heap.damage = 0.3600 * Def.aexxec.maxDamage
+Def.aexxec.featureDefs.heap.description = Def.aexxec.name .. [[ Heap]]
+Def.aexxec.featureDefs.heap.metal = 0.6400 * Def.aexxec.buildCostMetal
+Def.afusionplant.buildTime = 1.5652 * Def.afusionplant.buildCostEnergy
+Def.afusionplant.featureDefs.dead.damage = 0.6000 * Def.afusionplant.maxDamage
+Def.afusionplant.featureDefs.dead.metal = 0.8000 * Def.afusionplant.buildCostMetal
+Def.afusionplant.featureDefs.heap.damage = 0.3600 * Def.afusionplant.maxDamage
+Def.afusionplant.featureDefs.heap.metal = 0.6400 * Def.afusionplant.buildCostMetal
+Def.ahermes.buildTime = 3.0064 * Def.ahermes.buildCostEnergy
+Def.ahermes.featureDefs.dead.damage = 0.6000 * Def.ahermes.maxDamage
+Def.ahermes.featureDefs.dead.description = Def.ahermes.name .. [[ Wreckage]]
+Def.ahermes.featureDefs.dead.metal = 0.8000 * Def.ahermes.buildCostMetal
+Def.ahermes.featureDefs.heap.damage = 0.3600 * Def.ahermes.maxDamage
+Def.ahermes.featureDefs.heap.description = Def.ahermes.name .. [[ Wreckage]]
+Def.ahermes.featureDefs.heap.metal = 0.6400 * Def.ahermes.buildCostMetal
+Def.airwolf3g.buildTime = 0.3809 * Def.airwolf3g.buildCostEnergy
+Def.ajuno.buildTime = 1.3167 * Def.ajuno.buildCostEnergy
+Def.akmech.buildTime = 0.4768 * Def.akmech.buildCostEnergy
+Def.akmech.featureDefs.heap.damage = 0.3600 * Def.akmech.maxDamage
+Def.akmech.featureDefs.heap.metal = 0.6400 * Def.akmech.buildCostMetal
+Def.ametalmakerlvl1.buildTime = 0.8342 * Def.ametalmakerlvl1.buildCostEnergy
+Def.ametalmakerlvl2.buildTime = 0.1666 * Def.ametalmakerlvl2.buildCostEnergy
+Def.ametalmakerlvl2.featureDefs.dead.damage = 0.6000 * Def.ametalmakerlvl2.maxDamage
+Def.ametalmakerlvl2.featureDefs.dead.metal = 0.8000 * Def.ametalmakerlvl2.buildCostMetal
+Def.ametalmakerlvl2.featureDefs.heap.damage = 0.3600 * Def.ametalmakerlvl2.maxDamage
+Def.ametalmakerlvl2.featureDefs.heap.metal = 0.6400 * Def.ametalmakerlvl2.buildCostMetal
+Def.amgeo.buildTime = 2.2727 * Def.amgeo.buildCostEnergy
+Def.amortor.buildTime = 1.1531 * Def.amortor.buildCostEnergy
+Def.amortor.featureDefs.dead.damage = 0.6000 * Def.amortor.maxDamage
+Def.amortor.featureDefs.dead.metal = 0.8000 * Def.amortor.buildCostMetal
+Def.amortor.featureDefs.heap.damage = 0.3600 * Def.amortor.maxDamage
+Def.amortor.featureDefs.heap.metal = 0.6400 * Def.amortor.buildCostMetal
+Def.ananotower.buildTime = 0.7070 * Def.ananotower.buildCostEnergy
+Def.ananotower.featureDefs.dead.damage = 0.6000 * Def.ananotower.maxDamage
+Def.ananotower.featureDefs.dead.metal = 0.8000 * Def.ananotower.buildCostMetal
+Def.apache.buildTime = 1.9878 * Def.apache.buildCostEnergy
+Def.apocketfusion.buildTime = 1.4490 * Def.apocketfusion.buildCostEnergy
+Def.apocketfusion.featureDefs.dead.damage = 0.6000 * Def.apocketfusion.maxDamage
+Def.apocketfusion.featureDefs.dead.description = Def.apocketfusion.name .. [[ Wreckage]]
+Def.apocketfusion.featureDefs.dead.metal = 0.8000 * Def.apocketfusion.buildCostMetal
+return lowerkeys(Def)

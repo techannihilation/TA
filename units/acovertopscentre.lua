@@ -1,75 +1,86 @@
--- UNITDEF -- ACOVERTOPSCENTRE --
---------------------------------------------------------------------------------
-
-local unitName = "acovertopscentre"
-
---------------------------------------------------------------------------------
-
-local unitDef = {
-  activateWhenBuilt  = true,
-  buildCostEnergy    = 1400000,
-  buildCostMetal     = 75000,
-  builder            = true,
-  buildTime          = 65250.000,
-  canMove            = true,
-  canPatrol          = true,
-  canstop            = 1,
-  category           = [[BIG BUILDING]],
-  corpse             = [[dead]],
-  description        = [[Build T4 con]],
-  designation        = [[COC-2]],
-  energyStorage      = 250,
-  energyUse          = 180,
-  explodeAs          = [[SHIPBLAST]],
-  floater            = true,
-  footprintX         = 13,
-  footprintZ         = 12,
-  maxDamage          = 36000,
-  maxSlope           = 10,
-  maxWaterDepth      = 255,
-  metalStorage       = 250,
-  name               = [[OPS Centre T4]],
-  objectName         = [[ACovertOpsCentre]],
-  onoffable          = true,
-  radarDistance      = 0,
-  selfDestructAs     = [[SHIPBLAST]],
-  side               = [[ARM]],
-  sightDistance      = 220,
-  stealth            = true,
-  unitname           = [[acovertopscentre]],
-  workerTime         = 160,
-  yardMap            = [[OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO]],
-  buildoptions = {
-    [[abuilderlvl3]],
-  },
+local Def = {
+	acovertopscentre = {
+		activateWhenBuilt = true,
+		buildCostEnergy = 1400000,
+		buildCostMetal = 75000,
+		buildTime = nil,
+		builder = true,
+		buildoptions = {
+			[1] = [[abuilderlvl3]],
+		},
+		canMove = true,
+		canPatrol = true,
+		canstop = 1,
+		category = [[BIG BUILDING]],
+		corpse = [[dead]],
+		description = [[Build T4 con]],
+		designation = [[COC-2]],
+		energyStorage = 250,
+		energyUse = 180,
+		explodeAs = [[SHIPBLAST]],
+		featureDefs = {
+			dead = {
+				blocking = false,
+				category = [[arm_corpses]],
+				damage = nil,
+				description = [[OPS ARM Wreckage]],
+				featurereclamate = [[smudge01]],
+				footprintX = 12,
+				footprintZ = 12,
+				height = 20,
+				hitdensity = 100,
+				metal = nil,
+				object = [[ACovertOpsCentre_dead]],
+				reclaimable = true,
+				seqnamereclamate = [[tree1reclamate]],
+				world = [[All Worlds]],
+			},
+		},
+		floater = true,
+		footprintX = 13,
+		footprintZ = 12,
+		maxDamage = 36000,
+		maxSlope = 10,
+		maxWaterDepth = 255,
+		metalStorage = 250,
+		name = [[OPS Centre T4]],
+		objectName = [[ACovertOpsCentre]],
+		onoffable = true,
+		radarDistance = 0,
+		selfDestructAs = [[SHIPBLAST]],
+		side = [[ARM]],
+		sightDistance = 220,
+		stealth = true,
+		unitname = [[acovertopscentre]],
+		workerTime = 160,
+		yardMap = [[OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO]],
+	},
 }
-
-
---------------------------------------------------------------------------------
-
-local featureDefs = {
-  dead = {
-    blocking           = false,
-    category           = [[arm_corpses]],
-    damage             = unitDef.maxDamage*0.6,
-    description        = [[OPS ARM Wreckage]],
-    featurereclamate   = [[smudge01]],
-    footprintX         = 12,
-    footprintZ         = 12,
-    height             = 20,
-    hitdensity         = 100,
-    metal              = unitDef.buildCostMetal*0.8,
-    object             = [[ACovertOpsCentre_dead]],
-    reclaimable        = true,
-    seqnamereclamate   = [[tree1reclamate]],
-    world              = [[All Worlds]],
-  },
-}
-unitDef.featureDefs = featureDefs
-
-
---------------------------------------------------------------------------------
-
-return lowerkeys({ [unitName] = unitDef })
-
---------------------------------------------------------------------------------
+Def.aach.buildTime = 2.0955 * Def.aach.buildCostEnergy
+Def.aach.featureDefs.dead.damage = 0.6000 * Def.aach.maxDamage
+Def.aach.featureDefs.dead.metal = 0.8000 * Def.aach.buildCostMetal
+Def.aafus.buildTime = 1.8182 * Def.aafus.buildCostEnergy
+Def.aahp.buildTime = 2.6001 * Def.aahp.buildCostEnergy
+Def.aahp.featureDefs.dead.damage = 0.6000 * Def.aahp.maxDamage
+Def.aahp.featureDefs.dead.metal = 0.8000 * Def.aahp.buildCostMetal
+Def.aahp.featureDefs.heap.damage = 0.3600 * Def.aahp.maxDamage
+Def.aahp.featureDefs.heap.metal = 0.6400 * Def.aahp.buildCostMetal
+Def.aahpns.buildTime = 1.2217 * Def.aahpns.buildCostEnergy
+Def.aahpns.featureDefs.dead.damage = 0.6000 * Def.aahpns.maxDamage
+Def.aahpns.featureDefs.dead.metal = 0.8000 * Def.aahpns.buildCostMetal
+Def.aahpns.featureDefs.heap.damage = 0.3600 * Def.aahpns.maxDamage
+Def.aahpns.featureDefs.heap.metal = 0.6400 * Def.aahpns.buildCostMetal
+Def.abroadside.buildTime = 1.4286 * Def.abroadside.buildCostEnergy
+Def.abroadside.featureDefs.dead.damage = 0.6000 * Def.abroadside.maxDamage
+Def.abroadside.featureDefs.dead.metal = 0.8000 * Def.abroadside.buildCostMetal
+Def.abuilderlvl1.buildTime = 3.9372 * Def.abuilderlvl1.buildCostEnergy
+Def.abuilderlvl2.buildTime = 1.1032 * Def.abuilderlvl2.buildCostEnergy
+Def.abuilderlvl2.featureDefs.dead.damage = 0.6000 * Def.abuilderlvl2.maxDamage
+Def.abuilderlvl2.featureDefs.dead.metal = 0.8000 * Def.abuilderlvl2.buildCostMetal
+Def.abuilderlvl3.buildTime = 0.6800 * Def.abuilderlvl3.buildCostEnergy
+Def.abuilderlvl3.featureDefs.dead.damage = 0.6000 * Def.abuilderlvl3.maxDamage
+Def.abuilderlvl3.featureDefs.dead.metal = 0.8000 * Def.abuilderlvl3.buildCostMetal
+Def.acovertopscentre.buildTime = 0.0466 * Def.acovertopscentre.buildCostEnergy
+Def.acovertopscentre.featureDefs.dead.damage = 0.6000 * Def.acovertopscentre.maxDamage
+Def.acovertopscentre.featureDefs.dead.metal = 0.8000 * Def.acovertopscentre.buildCostMetal
+return lowerkeys(Def)

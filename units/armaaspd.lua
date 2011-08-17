@@ -1,199 +1,281 @@
--- UNITDEF -- ARMAASPD --
---------------------------------------------------------------------------------
-
-local unitName = "armaaspd"
-
---------------------------------------------------------------------------------
-
-local unitDef = {
-  acceleration       = 0.165,
-  badTargetCategory  = [[NOTAIR]],
-  bmcode             = 1,
-  brakeRate          = 0.165,
-  buildCostEnergy    = 1189,
-  buildCostMetal     = 107,
-  builder            = false,
-  buildTime          = 2207,
-  canAttack          = true,
-  canGuard           = true,
-  canMove            = true,
-  canPatrol          = true,
-  canstop            = 1,
-  category           = [[ALL TANK MOBILE WEAPON NOTSUB NOTSHIP NOTAIR]],
-  copyright          = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
-  corpse             = [[dead]],
-  defaultmissiontype = [[Standby]],
-  description        = [[All-terrain Anti-air Kbot]],
-  designation        = [[ARM-AKML]],
-  downloadable       = 1,
-  energyMake         = 1.3,
-  energyStorage      = 0,
-  energyUse          = 0.3,
-  explodeAs          = [[BIG_UNITEX]],
-  firestandorders    = 1,
-  footprintX         = 3,
-  footprintZ         = 3,
-  frenchdescription  = [[All-terrain Anti-air Kbot]],
-  frenchname         = [[Ra]],
-  germandescription  = [[All-terrain Anti-air Kbot]],
-  germanname         = [[Ra]],
-  italiandescription = [[All-terrain Anti-air Kbot]],
-  italianname        = [[Ra]],
-  maneuverleashlength = 640,
-  maxDamage          = 632,
-  maxSlope           = 16,
-  maxVelocity        = 1.4687,
-  maxWaterDepth      = 12,
-  metalStorage       = 0,
-  mobilestandorders  = 1,
-  movementClass      = [[TKBOT3]],
-  name               = [[Ra]],
-  noAutoFire         = false,
-  noChaseCategory    = [[NOTAIR]],
-  objectName         = [[ARMAASPD]],
-  ovradjust          = 1,
-  radarDistance      = 0,
-  selfDestructAs     = [[BIG_UNIT]],
-  shootme            = 1,
-  side               = [[ARM]],
-  sightDistance      = 235,
-  spanishdescription = [[Kbot Todo-terreno Antiaéreo]],
-  spanishname        = [[Ra]],
-  standingfireorder  = 2,
-  standingmoveorder  = 1,
-  steeringmode       = 1,
-  threed             = 1,
-  turnRate           = 1020,
-  unitname           = [[armaaspd]],
-  unitnumber         = 6981,
-  version            = 1,
-  workerTime         = 0,
-  zbuffer            = 1,
-  sounds = {
-    canceldestruct     = [[cancel2]],
-    underattack        = [[warning1]],
-    cant = {
-      [[cantdo4]],
-    },
-    count = {
-      [[count6]],
-      [[count5]],
-      [[count4]],
-      [[count3]],
-      [[count2]],
-      [[count1]],
-    },
-    ok = {
-      [[spider2]],
-    },
-    select = {
-      [[spider3]],
-    },
-  },
-  weapons = {
-    [1]  = {
-      badTargetCategory  = [[NOTAIR]],
-      def                = [[ARMRL_MISSILE]],
-    },
-  },
+local Def = {
+	armaaspd = {
+		acceleration = 0.165,
+		badTargetCategory = [[NOTAIR]],
+		bmcode = 1,
+		brakeRate = 0.165,
+		buildCostEnergy = 1189,
+		buildCostMetal = 107,
+		buildTime = nil,
+		builder = false,
+		canAttack = true,
+		canGuard = true,
+		canMove = true,
+		canPatrol = true,
+		canstop = 1,
+		category = [[ALL TANK MOBILE WEAPON NOTSUB NOTSHIP NOTAIR]],
+		copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
+		corpse = [[dead]],
+		defaultmissiontype = [[Standby]],
+		description = [[All-terrain Anti-air Kbot]],
+		designation = [[ARM-AKML]],
+		downloadable = 1,
+		energyMake = 1.3,
+		energyStorage = 0,
+		energyUse = 0.3,
+		explodeAs = [[BIG_UNITEX]],
+		featureDefs = {
+			dead = {
+				blocking = true,
+				category = [[arm_corpses]],
+				damage = nil,
+				description = [[RA Wreckage]],
+				featureDead = [[heap]],
+				featurereclamate = [[smudge01]],
+				footprintX = 3,
+				footprintZ = 3,
+				height = 40,
+				hitdensity = 100,
+				metal = nil,
+				object = [[armaaspd_dead]],
+				reclaimable = true,
+				seqnamereclamate = [[tree1reclamate]],
+				world = [[All Worlds]],
+			},
+			heap = {
+				blocking = false,
+				category = [[heaps]],
+				damage = nil,
+				description = [[RA Heap]],
+				featurereclamate = [[smudge01]],
+				footprintX = 3,
+				footprintZ = 3,
+				height = 4,
+				hitdensity = 100,
+				metal = nil,
+				object = [[3x3a]],
+				reclaimable = true,
+				seqnamereclamate = [[tree1reclamate]],
+				world = [[All Worlds]],
+			},
+		},
+		firestandorders = 1,
+		footprintX = 3,
+		footprintZ = 3,
+		frenchdescription = [[All-terrain Anti-air Kbot]],
+		frenchname = [[Ra]],
+		germandescription = [[All-terrain Anti-air Kbot]],
+		germanname = [[Ra]],
+		italiandescription = [[All-terrain Anti-air Kbot]],
+		italianname = [[Ra]],
+		maneuverleashlength = 640,
+		maxDamage = 632,
+		maxSlope = 16,
+		maxVelocity = 1.4687,
+		maxWaterDepth = 12,
+		metalStorage = 0,
+		mobilestandorders = 1,
+		movementClass = [[TKBOT3]],
+		name = [[Ra]],
+		noAutoFire = false,
+		noChaseCategory = [[NOTAIR]],
+		objectName = [[ARMAASPD]],
+		ovradjust = 1,
+		radarDistance = 0,
+		selfDestructAs = [[BIG_UNIT]],
+		shootme = 1,
+		side = [[ARM]],
+		sightDistance = 235,
+		sounds = {
+			canceldestruct = [[cancel2]],
+			cant = {
+				[1] = [[cantdo4]],
+			},
+			count = {
+				[1] = [[count6]],
+				[2] = [[count5]],
+				[3] = [[count4]],
+				[4] = [[count3]],
+				[5] = [[count2]],
+				[6] = [[count1]],
+			},
+			ok = {
+				[1] = [[spider2]],
+			},
+			select = {
+				[1] = [[spider3]],
+			},
+			underattack = [[warning1]],
+		},
+		spanishdescription = [[Kbot Todo-terreno Antiaéreo]],
+		spanishname = [[Ra]],
+		standingfireorder = 2,
+		standingmoveorder = 1,
+		steeringmode = 1,
+		threed = 1,
+		turnRate = 1020,
+		unitname = [[armaaspd]],
+		unitnumber = 6981,
+		version = 1,
+		weaponDefs = {
+			ARMRL_MISSILE = {
+				areaOfEffect = 48,
+				canattackground = false,
+				craterBoost = 0,
+				craterMult = 0,
+				damage = {
+					default = 113,
+					gunships = 84,
+					hgunships = 84,
+					l1subs = 5,
+					l2bombers = 300,
+					l2subs = 5,
+					l3subs = 5,
+				},
+				explosionGenerator = [[custom:FLASH2]],
+				fireStarter = 70,
+				flightTime = 1.5,
+				guidance = true,
+				impulseBoost = 0.123,
+				impulseFactor = 0.123,
+				lineOfSight = true,
+				metalpershot = 0,
+				model = [[missile]],
+				name = [[Missiles]],
+				noSelfDamage = true,
+				range = 765,
+				reloadtime = 1.7,
+				renderType = 1,
+				selfprop = true,
+				smokeTrail = true,
+				smokedelay = 0.1,
+				soundHit = [[xplomed2]],
+				soundStart = [[rockhvy2]],
+				startVelocity = 400,
+				startsmoke = 1,
+				texture2 = [[armsmoketrail]],
+				toAirWeapon = true,
+				tolerance = 10000,
+				tracks = true,
+				turnRate = 63000,
+				turret = true,
+				weaponAcceleration = 150,
+				weaponTimer = 5,
+				weaponType = [[MissileLauncher]],
+				weaponVelocity = 750,
+			},
+		},
+		weapons = {
+			[1] = {
+				badTargetCategory = [[NOTAIR]],
+				def = [[ARMRL_MISSILE]],
+			},
+		},
+		workerTime = 0,
+		zbuffer = 1,
+	},
 }
-
-
---------------------------------------------------------------------------------
-
-local weaponDefs = {
-  ARMRL_MISSILE = {
-    areaOfEffect       = 48,
-    canattackground    = false,
-    craterBoost        = 0,
-    craterMult         = 0,
-    explosionGenerator = [[custom:FLASH2]],
-    fireStarter        = 70,
-    flightTime         = 1.5,
-    guidance           = true,
-    impulseBoost       = 0.123,
-    impulseFactor      = 0.123,
-    lineOfSight        = true,
-    metalpershot       = 0,
-    model              = [[missile]],
-    name               = [[Missiles]],
-    noSelfDamage       = true,
-    range              = 765,
-    reloadtime         = 1.7,
-    renderType         = 1,
-    selfprop           = true,
-    smokedelay         = 0.1,
-    smokeTrail         = true,
-    soundHit           = [[xplomed2]],
-    soundStart         = [[rockhvy2]],
-    startsmoke         = 1,
-    startVelocity      = 400,
-    texture2           = [[armsmoketrail]],
-    toAirWeapon        = true,
-    tolerance          = 10000,
-    tracks             = true,
-    turnRate           = 63000,
-    turret             = true,
-    weaponAcceleration = 150,
-    weaponTimer        = 5,
-    weaponType         = [[MissileLauncher]],
-    weaponVelocity     = 750,
-    damage = {
-      default            = 113,
-      gunships           = 84,
-      hgunships          = 84,
-      l1subs             = 5,
-      l2bombers          = 300,
-      l2subs             = 5,
-      l3subs             = 5,
-    },
-  },
-}
-unitDef.weaponDefs = weaponDefs
-
-
---------------------------------------------------------------------------------
-
-local featureDefs = {
-  dead = {
-    blocking           = true,
-    category           = [[arm_corpses]],
-    damage             = unitDef.maxDamage*0.6,
-    description        = [[RA Wreckage]],
-    featureDead        = [[heap]],
-    featurereclamate   = [[smudge01]],
-    footprintX         = 3,
-    footprintZ         = 3,
-    height             = 40,
-    hitdensity         = 100,
-    metal              = unitDef.buildCostMetal*0.8,
-    object             = [[armaaspd_dead]],
-    reclaimable        = true,
-    seqnamereclamate   = [[tree1reclamate]],
-    world              = [[All Worlds]],
-  },
-  heap = {
-    blocking           = false,
-    category           = [[heaps]],
-    damage             = unitDef.maxDamage*0.36,
-    description        = [[RA Heap]],
-    featurereclamate   = [[smudge01]],
-    footprintX         = 3,
-    footprintZ         = 3,
-    height             = 4,
-    hitdensity         = 100,
-    metal              = unitDef.buildCostMetal*0.64,
-    object             = [[3x3a]],
-    reclaimable        = true,
-    seqnamereclamate   = [[tree1reclamate]],
-    world              = [[All Worlds]],
-  },
-}
-unitDef.featureDefs = featureDefs
-
-
---------------------------------------------------------------------------------
-
-return lowerkeys({ [unitName] = unitDef })
-
---------------------------------------------------------------------------------
+Def.aach.buildTime = 2.0955 * Def.aach.buildCostEnergy
+Def.aach.featureDefs.dead.damage = 0.6000 * Def.aach.maxDamage
+Def.aach.featureDefs.dead.metal = 0.8000 * Def.aach.buildCostMetal
+Def.aafus.buildTime = 1.8182 * Def.aafus.buildCostEnergy
+Def.aahp.buildTime = 2.6001 * Def.aahp.buildCostEnergy
+Def.aahp.featureDefs.dead.damage = 0.6000 * Def.aahp.maxDamage
+Def.aahp.featureDefs.dead.metal = 0.8000 * Def.aahp.buildCostMetal
+Def.aahp.featureDefs.heap.damage = 0.3600 * Def.aahp.maxDamage
+Def.aahp.featureDefs.heap.metal = 0.6400 * Def.aahp.buildCostMetal
+Def.aahpns.buildTime = 1.2217 * Def.aahpns.buildCostEnergy
+Def.aahpns.featureDefs.dead.damage = 0.6000 * Def.aahpns.maxDamage
+Def.aahpns.featureDefs.dead.metal = 0.8000 * Def.aahpns.buildCostMetal
+Def.aahpns.featureDefs.heap.damage = 0.3600 * Def.aahpns.maxDamage
+Def.aahpns.featureDefs.heap.metal = 0.6400 * Def.aahpns.buildCostMetal
+Def.abroadside.buildTime = 1.4286 * Def.abroadside.buildCostEnergy
+Def.abroadside.featureDefs.dead.damage = 0.6000 * Def.abroadside.maxDamage
+Def.abroadside.featureDefs.dead.metal = 0.8000 * Def.abroadside.buildCostMetal
+Def.abuilderlvl1.buildTime = 3.9372 * Def.abuilderlvl1.buildCostEnergy
+Def.abuilderlvl2.buildTime = 1.1032 * Def.abuilderlvl2.buildCostEnergy
+Def.abuilderlvl2.featureDefs.dead.damage = 0.6000 * Def.abuilderlvl2.maxDamage
+Def.abuilderlvl2.featureDefs.dead.metal = 0.8000 * Def.abuilderlvl2.buildCostMetal
+Def.abuilderlvl3.buildTime = 0.6800 * Def.abuilderlvl3.buildCostEnergy
+Def.abuilderlvl3.featureDefs.dead.damage = 0.6000 * Def.abuilderlvl3.maxDamage
+Def.abuilderlvl3.featureDefs.dead.metal = 0.8000 * Def.abuilderlvl3.buildCostMetal
+Def.acovertopscentre.buildTime = 0.0466 * Def.acovertopscentre.buildCostEnergy
+Def.acovertopscentre.featureDefs.dead.damage = 0.6000 * Def.acovertopscentre.maxDamage
+Def.acovertopscentre.featureDefs.dead.metal = 0.8000 * Def.acovertopscentre.buildCostMetal
+Def.aexxec.buildTime = 1.6005 * Def.aexxec.buildCostEnergy
+Def.aexxec.featureDefs.dead.damage = 0.6000 * Def.aexxec.maxDamage
+Def.aexxec.featureDefs.dead.description = Def.aexxec.name .. [[ Wreckage]]
+Def.aexxec.featureDefs.dead.metal = 0.8000 * Def.aexxec.buildCostMetal
+Def.aexxec.featureDefs.heap.damage = 0.3600 * Def.aexxec.maxDamage
+Def.aexxec.featureDefs.heap.description = Def.aexxec.name .. [[ Heap]]
+Def.aexxec.featureDefs.heap.metal = 0.6400 * Def.aexxec.buildCostMetal
+Def.afusionplant.buildTime = 1.5652 * Def.afusionplant.buildCostEnergy
+Def.afusionplant.featureDefs.dead.damage = 0.6000 * Def.afusionplant.maxDamage
+Def.afusionplant.featureDefs.dead.metal = 0.8000 * Def.afusionplant.buildCostMetal
+Def.afusionplant.featureDefs.heap.damage = 0.3600 * Def.afusionplant.maxDamage
+Def.afusionplant.featureDefs.heap.metal = 0.6400 * Def.afusionplant.buildCostMetal
+Def.ahermes.buildTime = 3.0064 * Def.ahermes.buildCostEnergy
+Def.ahermes.featureDefs.dead.damage = 0.6000 * Def.ahermes.maxDamage
+Def.ahermes.featureDefs.dead.description = Def.ahermes.name .. [[ Wreckage]]
+Def.ahermes.featureDefs.dead.metal = 0.8000 * Def.ahermes.buildCostMetal
+Def.ahermes.featureDefs.heap.damage = 0.3600 * Def.ahermes.maxDamage
+Def.ahermes.featureDefs.heap.description = Def.ahermes.name .. [[ Wreckage]]
+Def.ahermes.featureDefs.heap.metal = 0.6400 * Def.ahermes.buildCostMetal
+Def.airwolf3g.buildTime = 0.3809 * Def.airwolf3g.buildCostEnergy
+Def.ajuno.buildTime = 1.3167 * Def.ajuno.buildCostEnergy
+Def.akmech.buildTime = 0.4768 * Def.akmech.buildCostEnergy
+Def.akmech.featureDefs.heap.damage = 0.3600 * Def.akmech.maxDamage
+Def.akmech.featureDefs.heap.metal = 0.6400 * Def.akmech.buildCostMetal
+Def.ametalmakerlvl1.buildTime = 0.8342 * Def.ametalmakerlvl1.buildCostEnergy
+Def.ametalmakerlvl2.buildTime = 0.1666 * Def.ametalmakerlvl2.buildCostEnergy
+Def.ametalmakerlvl2.featureDefs.dead.damage = 0.6000 * Def.ametalmakerlvl2.maxDamage
+Def.ametalmakerlvl2.featureDefs.dead.metal = 0.8000 * Def.ametalmakerlvl2.buildCostMetal
+Def.ametalmakerlvl2.featureDefs.heap.damage = 0.3600 * Def.ametalmakerlvl2.maxDamage
+Def.ametalmakerlvl2.featureDefs.heap.metal = 0.6400 * Def.ametalmakerlvl2.buildCostMetal
+Def.amgeo.buildTime = 2.2727 * Def.amgeo.buildCostEnergy
+Def.amortor.buildTime = 1.1531 * Def.amortor.buildCostEnergy
+Def.amortor.featureDefs.dead.damage = 0.6000 * Def.amortor.maxDamage
+Def.amortor.featureDefs.dead.metal = 0.8000 * Def.amortor.buildCostMetal
+Def.amortor.featureDefs.heap.damage = 0.3600 * Def.amortor.maxDamage
+Def.amortor.featureDefs.heap.metal = 0.6400 * Def.amortor.buildCostMetal
+Def.ananotower.buildTime = 0.7070 * Def.ananotower.buildCostEnergy
+Def.ananotower.featureDefs.dead.damage = 0.6000 * Def.ananotower.maxDamage
+Def.ananotower.featureDefs.dead.metal = 0.8000 * Def.ananotower.buildCostMetal
+Def.apache.buildTime = 1.9878 * Def.apache.buildCostEnergy
+Def.apocketfusion.buildTime = 1.4490 * Def.apocketfusion.buildCostEnergy
+Def.apocketfusion.featureDefs.dead.damage = 0.6000 * Def.apocketfusion.maxDamage
+Def.apocketfusion.featureDefs.dead.description = Def.apocketfusion.name .. [[ Wreckage]]
+Def.apocketfusion.featureDefs.dead.metal = 0.8000 * Def.apocketfusion.buildCostMetal
+Def.arm_big_bertha.buildTime = 1.4919 * Def.arm_big_bertha.buildCostEnergy
+Def.arm_furie.buildTime = 1.0319 * Def.arm_furie.buildCostEnergy
+Def.arm_furie.featureDefs.dead.damage = 0.6000 * Def.arm_furie.maxDamage
+Def.arm_furie.featureDefs.dead.metal = 0.8000 * Def.arm_furie.buildCostMetal
+Def.arm_furie.featureDefs.furie_heap.damage = 0.3600 * Def.arm_furie.maxDamage
+Def.arm_furie.featureDefs.furie_heap.metal = 0.6400 * Def.arm_furie.buildCostMetal
+Def.arm_guardian.buildTime = 0.6756 * Def.arm_guardian.buildCostEnergy
+Def.arm_guardian.featureDefs.core_immolator_heap.damage = 0.6000 * Def.arm_guardian.maxDamage
+Def.arm_guardian.featureDefs.core_immolator_heap.metal = 0.8000 * Def.arm_guardian.buildCostMetal
+Def.arm_guardian.featureDefs.dead.damage = 0.3600 * Def.arm_guardian.maxDamage
+Def.arm_guardian.featureDefs.dead.description = Def.arm_guardian.name .. [[ Wreckage]]
+Def.arm_guardian.featureDefs.dead.metal = 0.6400 * Def.arm_guardian.buildCostMetal
+Def.arm_immolator.buildTime = 0.3812 * Def.arm_immolator.buildCostEnergy
+Def.arm_immolator.featureDefs.core_immolator_dead.damage = 0.6000 * Def.arm_immolator.maxDamage
+Def.arm_immolator.featureDefs.core_immolator_dead.description = Def.arm_immolator.name .. [[ Wreckage]]
+Def.arm_immolator.featureDefs.core_immolator_dead.metal = 0.8000 * Def.arm_immolator.buildCostMetal
+Def.arm_immolator.featureDefs.core_immolator_heap.damage = 0.3600 * Def.arm_immolator.maxDamage
+Def.arm_immolator.featureDefs.core_immolator_heap.description = Def.arm_immolator.name .. [[ Heap]]
+Def.arm_immolator.featureDefs.core_immolator_heap.metal = 0.6400 * Def.arm_immolator.buildCostMetal
+Def.arm_wind_generator.buildTime = 3.1493 * Def.arm_wind_generator.buildCostEnergy
+Def.arm_wind_generator.featureDefs.core_wind_generator_heap.damage = 0.6000 * Def.arm_wind_generator.maxDamage
+Def.arm_wind_generator.featureDefs.core_wind_generator_heap.metal = 0.8000 * Def.arm_wind_generator.buildCostMetal
+Def.arm_wind_generator.featureDefs.dead.damage = 0.3600 * Def.arm_wind_generator.maxDamage
+Def.arm_wind_generator.featureDefs.dead.metal = 0.6400 * Def.arm_wind_generator.buildCostMetal
+Def.armaak.buildTime = 1.3213 * Def.armaak.buildCostEnergy
+Def.armaap.buildTime = 0.6286 * Def.armaap.buildCostEnergy
+Def.armaas.buildTime = 1.2224 * Def.armaas.buildCostEnergy
+Def.armaaspd.buildTime = 1.8562 * Def.armaaspd.buildCostEnergy
+Def.armaaspd.featureDefs.dead.damage = 0.6000 * Def.armaaspd.maxDamage
+Def.armaaspd.featureDefs.dead.metal = 0.8000 * Def.armaaspd.buildCostMetal
+Def.armaaspd.featureDefs.heap.damage = 0.3600 * Def.armaaspd.maxDamage
+Def.armaaspd.featureDefs.heap.metal = 0.6400 * Def.armaaspd.buildCostMetal
+return lowerkeys(Def)

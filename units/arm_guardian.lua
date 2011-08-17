@@ -1,191 +1,253 @@
--- UNITDEF -- ARM_GUARDIAN --
---------------------------------------------------------------------------------
-
-local unitName = "arm_guardian"
-
---------------------------------------------------------------------------------
-
-local unitDef = {
-  bmcode             = 0,
-  buildAngle         = 8192,
-  buildCostEnergy    = 53811,
-  buildCostMetal     = 2169,
-  builder            = false,
-  buildPic           = [[arm_guardian.png]],
-  buildTime          = 36357,
-  canAttack          = true,
-  canGuard           = true,
-  canstop            = 1,
-  category           = [[ARM LEVEL2 WEAPON NOTAIR NOTSUB]],
-  corpse             = [[dead]],
-  defaultmissiontype = [[GUARD_NOMOVE]],
-  description        = [[-Heavy Plasma Battery]],
-  designation        = [[ARM-GUARD]],
-  downloadable       = 1,
-  energyStorage      = 200,
-  energyUse          = 0,
-  explodeAs          = [[MEDIUM_BUILDINGEX]],
-  firestandorders    = 1,
-  footprintX         = 4,
-  footprintZ         = 4,
-  healtime           = 11,
-  highTrajectory     = 2,
-  iconType           = [[building]],
-  maxDamage          = 8000,
-  maxSlope           = 10,
-  maxWaterDepth      = 22,
-  metalStorage       = 0,
-  name               = [[Resistant Guardian]],
-  noAutoFire         = false,
-  objectName         = [[arm_guardian]],
-  radarDistance      = 0,
-  selfDestructAs     = [[MEDIUM_BUILDING]],
-  shootme            = 1,
-  side               = [[Arm]],
-  sightDistance      = 612.5,
-  standingfireorder  = 2,
-  threed             = 1,
-  unitname           = [[arm_guardian]],
-  unitnumber         = 36,
-  version            = 1.2,
-  workerTime         = 0,
-  yardMap            = [[oooo]],
-  zbuffer            = 1,
-  customparams = {
-    canareaattack      = 1,
-  },
-  sfxtypes = {
-    explosiongenerators = {
-      [[custom:dgunflare]],
-    },
-  },
-  sounds = {
-    canceldestruct     = [[cancel2]],
-    cloak              = [[kloak1]],
-    uncloak            = [[kloak1un]],
-    underattack        = [[warning1]],
-    cant = {
-      [[cantdo4]],
-    },
-    count = {
-      [[count6]],
-      [[count5]],
-      [[count4]],
-      [[count3]],
-      [[count2]],
-      [[count1]],
-    },
-    ok = {
-      [[twrturn3]],
-    },
-    select = {
-      [[twrturn3]],
-    },
-  },
-  weapons = {
-    [1]  = {
-      badTargetCategory  = [[VTOL]],
-      def                = [[ARMFIXED_GUN1]],
-      onlyTargetCategory = [[NOTAIR]],
-    },
-  },
+local Def = {
+	arm_guardian = {
+		bmcode = 0,
+		buildAngle = 8192,
+		buildCostEnergy = 53811,
+		buildCostMetal = 2169,
+		buildPic = [[arm_guardian.png]],
+		buildTime = nil,
+		builder = false,
+		canAttack = true,
+		canGuard = true,
+		canstop = 1,
+		category = [[ARM LEVEL2 WEAPON NOTAIR NOTSUB]],
+		corpse = [[dead]],
+		customparams = {
+			canareaattack = 1,
+		},
+		defaultmissiontype = [[GUARD_NOMOVE]],
+		description = [[-Heavy Plasma Battery]],
+		designation = [[ARM-GUARD]],
+		downloadable = 1,
+		energyStorage = 200,
+		energyUse = 0,
+		explodeAs = [[MEDIUM_BUILDINGEX]],
+		featureDefs = {
+			core_immolator_heap = {
+				blocking = false,
+				category = [[heaps]],
+				damage = nil,
+				description = [[Immolator Heap]],
+				featurereclamate = [[smudge01]],
+				footprintX = 3,
+				footprintZ = 3,
+				height = 4,
+				hitdensity = 100,
+				metal = nil,
+				object = [[3x3d]],
+				reclaimable = true,
+				seqnamereclamate = [[tree1reclamate]],
+				world = [[All Worlds]],
+			},
+			dead = {
+				blocking = true,
+				category = [[core_corpses]],
+				damage = nil,
+				description = nil,
+				featureDead = [[core_immolator_heap]],
+				featurereclamate = [[smudge01]],
+				footprintX = 3,
+				footprintZ = 3,
+				height = 20,
+				hitdensity = 100,
+				metal = nil,
+				object = [[core_immolator_dead]],
+				reclaimable = true,
+				seqnamereclamate = [[tree1reclamate]],
+				world = [[All Worlds]],
+			},
+		},
+		firestandorders = 1,
+		footprintX = 4,
+		footprintZ = 4,
+		healtime = 11,
+		highTrajectory = 2,
+		iconType = [[building]],
+		maxDamage = 8000,
+		maxSlope = 10,
+		maxWaterDepth = 22,
+		metalStorage = 0,
+		name = [[Resistant Guardian]],
+		noAutoFire = false,
+		objectName = [[arm_guardian]],
+		radarDistance = 0,
+		selfDestructAs = [[MEDIUM_BUILDING]],
+		sfxtypes = {
+			explosiongenerators = {
+				[1] = [[custom:dgunflare]],
+			},
+		},
+		shootme = 1,
+		side = [[Arm]],
+		sightDistance = 612.5,
+		sounds = {
+			canceldestruct = [[cancel2]],
+			cant = {
+				[1] = [[cantdo4]],
+			},
+			cloak = [[kloak1]],
+			count = {
+				[1] = [[count6]],
+				[2] = [[count5]],
+				[3] = [[count4]],
+				[4] = [[count3]],
+				[5] = [[count2]],
+				[6] = [[count1]],
+			},
+			ok = {
+				[1] = [[twrturn3]],
+			},
+			select = {
+				[1] = [[twrturn3]],
+			},
+			uncloak = [[kloak1un]],
+			underattack = [[warning1]],
+		},
+		standingfireorder = 2,
+		threed = 1,
+		unitname = [[arm_guardian]],
+		unitnumber = 36,
+		version = 1.2,
+		weaponDefs = {
+			ARMFIXED_GUN1 = {
+				accuracy = 75,
+				areaOfEffect = 198,
+				ballistic = true,
+				craterBoost = 0,
+				craterMult = 0,
+				damage = {
+					blackhydra = 526,
+					commanders = 526,
+					default = 700,
+					flakboats = 526,
+					gunships = 90,
+					hgunships = 90,
+					jammerboats = 526,
+					l1bombers = 90,
+					l1fighters = 90,
+					l1subs = 5,
+					l2bombers = 90,
+					l2fighters = 90,
+					l2subs = 5,
+					l3subs = 5,
+					otherboats = 526,
+					seadragon = 526,
+					vradar = 90,
+					vtol = 90,
+					vtrans = 90,
+				},
+				edgeEffectiveness = 0.25,
+				explosionGenerator = [[custom:FLASH96]],
+				gravityaffected = [[true]],
+				impulseBoost = 0.123,
+				impulseFactor = 1.123,
+				name = [[PlasmaCannon]],
+				noSelfDamage = true,
+				range = 1000,
+				reloadtime = 2,
+				renderType = 4,
+				soundHit = [[xplomed2]],
+				soundStart = [[cannhvy5]],
+				startsmoke = 1,
+				targetMoveError = 0.2,
+				turret = true,
+				weaponType = [[Cannon]],
+				weaponVelocity = 450,
+			},
+		},
+		weapons = {
+			[1] = {
+				badTargetCategory = [[VTOL]],
+				def = [[ARMFIXED_GUN1]],
+				onlyTargetCategory = [[NOTAIR]],
+			},
+		},
+		workerTime = 0,
+		yardMap = [[oooo]],
+		zbuffer = 1,
+	},
 }
-
-
---------------------------------------------------------------------------------
-
-local weaponDefs = {
-  ARMFIXED_GUN1 = {
-    accuracy           = 75,
-    areaOfEffect       = 198,
-    ballistic          = true,
-    craterBoost        = 0,
-    craterMult         = 0,
-    edgeEffectiveness  = 0.25,
-    explosionGenerator = [[custom:FLASH96]],
-    gravityaffected    = [[true]],
-    impulseBoost       = 0.123,
-    impulseFactor      = 1.123,
-    name               = [[PlasmaCannon]],
-    noSelfDamage       = true,
-    range              = 1000,
-    reloadtime         = 2,
-    renderType         = 4,
-    soundHit           = [[xplomed2]],
-    soundStart         = [[cannhvy5]],
-    startsmoke         = 1,
-    targetMoveError    = 0.2,
-    turret             = true,
-    weaponType         = [[Cannon]],
-    weaponVelocity     = 450,
-    damage = {
-      blackhydra         = 526,
-      commanders         = 526,
-      default            = 700,
-      flakboats          = 526,
-      gunships           = 90,
-      hgunships          = 90,
-      jammerboats        = 526,
-      l1bombers          = 90,
-      l1fighters         = 90,
-      l1subs             = 5,
-      l2bombers          = 90,
-      l2fighters         = 90,
-      l2subs             = 5,
-      l3subs             = 5,
-      otherboats         = 526,
-      seadragon          = 526,
-      vradar             = 90,
-      vtol               = 90,
-      vtrans             = 90,
-    },
-  },
-}
-unitDef.weaponDefs = weaponDefs
-
-
---------------------------------------------------------------------------------
-
-local featureDefs = {
-  core_immolator_heap = {
-    blocking           = false,
-    category           = [[heaps]],
-    damage             = unitDef.maxDamage*0.6,
-    description        = [[Immolator Heap]],
-    featurereclamate   = [[smudge01]],
-    footprintX         = 3,
-    footprintZ         = 3,
-    height             = 4,
-    hitdensity         = 100,
-    metal              = unitDef.buildCostMetal*0.8,
-    object             = [[3x3d]],
-    reclaimable        = true,
-    seqnamereclamate   = [[tree1reclamate]],
-    world              = [[All Worlds]],
-  },
-  dead = {
-    blocking           = true,
-    category           = [[core_corpses]],
-    damage             = unitDef.maxDamage*0.36,
-    description        = [[Resistant Guardian Wreckage]],
-    featureDead        = [[core_immolator_heap]],
-    featurereclamate   = [[smudge01]],
-    footprintX         = 3,
-    footprintZ         = 3,
-    height             = 20,
-    hitdensity         = 100,
-    metal              = unitDef.buildCostMetal*0.64,
-    object             = [[core_immolator_dead]],
-    reclaimable        = true,
-    seqnamereclamate   = [[tree1reclamate]],
-    world              = [[All Worlds]],
-  },
-}
-unitDef.featureDefs = featureDefs
-
-
---------------------------------------------------------------------------------
-
-return lowerkeys({ [unitName] = unitDef })
-
---------------------------------------------------------------------------------
+Def.aach.buildTime = 2.0955 * Def.aach.buildCostEnergy
+Def.aach.featureDefs.dead.damage = 0.6000 * Def.aach.maxDamage
+Def.aach.featureDefs.dead.metal = 0.8000 * Def.aach.buildCostMetal
+Def.aafus.buildTime = 1.8182 * Def.aafus.buildCostEnergy
+Def.aahp.buildTime = 2.6001 * Def.aahp.buildCostEnergy
+Def.aahp.featureDefs.dead.damage = 0.6000 * Def.aahp.maxDamage
+Def.aahp.featureDefs.dead.metal = 0.8000 * Def.aahp.buildCostMetal
+Def.aahp.featureDefs.heap.damage = 0.3600 * Def.aahp.maxDamage
+Def.aahp.featureDefs.heap.metal = 0.6400 * Def.aahp.buildCostMetal
+Def.aahpns.buildTime = 1.2217 * Def.aahpns.buildCostEnergy
+Def.aahpns.featureDefs.dead.damage = 0.6000 * Def.aahpns.maxDamage
+Def.aahpns.featureDefs.dead.metal = 0.8000 * Def.aahpns.buildCostMetal
+Def.aahpns.featureDefs.heap.damage = 0.3600 * Def.aahpns.maxDamage
+Def.aahpns.featureDefs.heap.metal = 0.6400 * Def.aahpns.buildCostMetal
+Def.abroadside.buildTime = 1.4286 * Def.abroadside.buildCostEnergy
+Def.abroadside.featureDefs.dead.damage = 0.6000 * Def.abroadside.maxDamage
+Def.abroadside.featureDefs.dead.metal = 0.8000 * Def.abroadside.buildCostMetal
+Def.abuilderlvl1.buildTime = 3.9372 * Def.abuilderlvl1.buildCostEnergy
+Def.abuilderlvl2.buildTime = 1.1032 * Def.abuilderlvl2.buildCostEnergy
+Def.abuilderlvl2.featureDefs.dead.damage = 0.6000 * Def.abuilderlvl2.maxDamage
+Def.abuilderlvl2.featureDefs.dead.metal = 0.8000 * Def.abuilderlvl2.buildCostMetal
+Def.abuilderlvl3.buildTime = 0.6800 * Def.abuilderlvl3.buildCostEnergy
+Def.abuilderlvl3.featureDefs.dead.damage = 0.6000 * Def.abuilderlvl3.maxDamage
+Def.abuilderlvl3.featureDefs.dead.metal = 0.8000 * Def.abuilderlvl3.buildCostMetal
+Def.acovertopscentre.buildTime = 0.0466 * Def.acovertopscentre.buildCostEnergy
+Def.acovertopscentre.featureDefs.dead.damage = 0.6000 * Def.acovertopscentre.maxDamage
+Def.acovertopscentre.featureDefs.dead.metal = 0.8000 * Def.acovertopscentre.buildCostMetal
+Def.aexxec.buildTime = 1.6005 * Def.aexxec.buildCostEnergy
+Def.aexxec.featureDefs.dead.damage = 0.6000 * Def.aexxec.maxDamage
+Def.aexxec.featureDefs.dead.description = Def.aexxec.name .. [[ Wreckage]]
+Def.aexxec.featureDefs.dead.metal = 0.8000 * Def.aexxec.buildCostMetal
+Def.aexxec.featureDefs.heap.damage = 0.3600 * Def.aexxec.maxDamage
+Def.aexxec.featureDefs.heap.description = Def.aexxec.name .. [[ Heap]]
+Def.aexxec.featureDefs.heap.metal = 0.6400 * Def.aexxec.buildCostMetal
+Def.afusionplant.buildTime = 1.5652 * Def.afusionplant.buildCostEnergy
+Def.afusionplant.featureDefs.dead.damage = 0.6000 * Def.afusionplant.maxDamage
+Def.afusionplant.featureDefs.dead.metal = 0.8000 * Def.afusionplant.buildCostMetal
+Def.afusionplant.featureDefs.heap.damage = 0.3600 * Def.afusionplant.maxDamage
+Def.afusionplant.featureDefs.heap.metal = 0.6400 * Def.afusionplant.buildCostMetal
+Def.ahermes.buildTime = 3.0064 * Def.ahermes.buildCostEnergy
+Def.ahermes.featureDefs.dead.damage = 0.6000 * Def.ahermes.maxDamage
+Def.ahermes.featureDefs.dead.description = Def.ahermes.name .. [[ Wreckage]]
+Def.ahermes.featureDefs.dead.metal = 0.8000 * Def.ahermes.buildCostMetal
+Def.ahermes.featureDefs.heap.damage = 0.3600 * Def.ahermes.maxDamage
+Def.ahermes.featureDefs.heap.description = Def.ahermes.name .. [[ Wreckage]]
+Def.ahermes.featureDefs.heap.metal = 0.6400 * Def.ahermes.buildCostMetal
+Def.airwolf3g.buildTime = 0.3809 * Def.airwolf3g.buildCostEnergy
+Def.ajuno.buildTime = 1.3167 * Def.ajuno.buildCostEnergy
+Def.akmech.buildTime = 0.4768 * Def.akmech.buildCostEnergy
+Def.akmech.featureDefs.heap.damage = 0.3600 * Def.akmech.maxDamage
+Def.akmech.featureDefs.heap.metal = 0.6400 * Def.akmech.buildCostMetal
+Def.ametalmakerlvl1.buildTime = 0.8342 * Def.ametalmakerlvl1.buildCostEnergy
+Def.ametalmakerlvl2.buildTime = 0.1666 * Def.ametalmakerlvl2.buildCostEnergy
+Def.ametalmakerlvl2.featureDefs.dead.damage = 0.6000 * Def.ametalmakerlvl2.maxDamage
+Def.ametalmakerlvl2.featureDefs.dead.metal = 0.8000 * Def.ametalmakerlvl2.buildCostMetal
+Def.ametalmakerlvl2.featureDefs.heap.damage = 0.3600 * Def.ametalmakerlvl2.maxDamage
+Def.ametalmakerlvl2.featureDefs.heap.metal = 0.6400 * Def.ametalmakerlvl2.buildCostMetal
+Def.amgeo.buildTime = 2.2727 * Def.amgeo.buildCostEnergy
+Def.amortor.buildTime = 1.1531 * Def.amortor.buildCostEnergy
+Def.amortor.featureDefs.dead.damage = 0.6000 * Def.amortor.maxDamage
+Def.amortor.featureDefs.dead.metal = 0.8000 * Def.amortor.buildCostMetal
+Def.amortor.featureDefs.heap.damage = 0.3600 * Def.amortor.maxDamage
+Def.amortor.featureDefs.heap.metal = 0.6400 * Def.amortor.buildCostMetal
+Def.ananotower.buildTime = 0.7070 * Def.ananotower.buildCostEnergy
+Def.ananotower.featureDefs.dead.damage = 0.6000 * Def.ananotower.maxDamage
+Def.ananotower.featureDefs.dead.metal = 0.8000 * Def.ananotower.buildCostMetal
+Def.apache.buildTime = 1.9878 * Def.apache.buildCostEnergy
+Def.apocketfusion.buildTime = 1.4490 * Def.apocketfusion.buildCostEnergy
+Def.apocketfusion.featureDefs.dead.damage = 0.6000 * Def.apocketfusion.maxDamage
+Def.apocketfusion.featureDefs.dead.description = Def.apocketfusion.name .. [[ Wreckage]]
+Def.apocketfusion.featureDefs.dead.metal = 0.8000 * Def.apocketfusion.buildCostMetal
+Def.arm_big_bertha.buildTime = 1.4919 * Def.arm_big_bertha.buildCostEnergy
+Def.arm_furie.buildTime = 1.0319 * Def.arm_furie.buildCostEnergy
+Def.arm_furie.featureDefs.dead.damage = 0.6000 * Def.arm_furie.maxDamage
+Def.arm_furie.featureDefs.dead.metal = 0.8000 * Def.arm_furie.buildCostMetal
+Def.arm_furie.featureDefs.furie_heap.damage = 0.3600 * Def.arm_furie.maxDamage
+Def.arm_furie.featureDefs.furie_heap.metal = 0.6400 * Def.arm_furie.buildCostMetal
+Def.arm_guardian.buildTime = 0.6756 * Def.arm_guardian.buildCostEnergy
+Def.arm_guardian.featureDefs.core_immolator_heap.damage = 0.6000 * Def.arm_guardian.maxDamage
+Def.arm_guardian.featureDefs.core_immolator_heap.metal = 0.8000 * Def.arm_guardian.buildCostMetal
+Def.arm_guardian.featureDefs.dead.damage = 0.3600 * Def.arm_guardian.maxDamage
+Def.arm_guardian.featureDefs.dead.description = Def.arm_guardian.name .. [[ Wreckage]]
+Def.arm_guardian.featureDefs.dead.metal = 0.6400 * Def.arm_guardian.buildCostMetal
+return lowerkeys(Def)

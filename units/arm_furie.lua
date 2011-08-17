@@ -1,284 +1,340 @@
--- UNITDEF -- ARM_FURIE --
---------------------------------------------------------------------------------
-
-local unitName = "arm_furie"
-
---------------------------------------------------------------------------------
-
-local unitDef = {
-  acceleration       = 0.09,
-  bmcode             = 1,
-  brakeRate          = 0.20,
-  buildCostEnergy    = 486664,
-  buildCostMetal     = 35089,
-  builder            = false,
-  buildTime          = 502193,
-  canAttack          = true,
-  canGuard           = true,
-  canMove            = true,
-  canPatrol          = true,
-  canstop            = 1,
-  cantBeTransported  = true,
-  category           = [[KBOT WEAPON ALL NOTSUB NOTAIR]],
-  collisionvolumeoffsets = [[0 -10 -3]],
-  collisionvolumescales = [[54 69 40]],
-  collisionvolumetest = 0,
-  collisionvolumetype = [[Ell]],
-  copyright          = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
-  corpse             = [[dead]],
-  defaultmissiontype = [[Standby]],
-  description        = [[The Legendary Kbot]],
-  designation        = [[ARM-KL]],
-  downloadable       = 1,
-  energyMake         = 1.1,
-  energyStorage      = 0,
-  energyUse          = 1.1,
-  explodeAs          = [[NUCLEAR_MISSILE2]],
-  firestandorders    = 1,
-  footprintX         = 5,
-  footprintZ         = 5,
-  frenchdescription  = [[Kbot Expérimental]],
-  germandescription  = [[Experimental-Kbot]],
-  immunetoparalyzer  = 1,
-  maneuverleashlength = 640,
-  mass               = 200000,
-  maxDamage          = 300489,
-  maxSlope           = 17,
-  maxVelocity        = 1.1,
-  maxWaterDepth      = 12,
-  metalStorage       = 0,
-  mobilestandorders  = 1,
-  movementClass      = [[VKBOT5]],
-  name               = [[Arm Furie]],
-  noAutoFire         = false,
-  objectName         = [[ARM_FURIE]],
-  radarDistance      = 0,
-  selfDestructAs     = [[CRBLMSSL1]],
-  selfDestructCountdown = 20,
-  shootme            = 1,
-  side               = [[ARM]],
-  sightDistance      = 485,
-  standingfireorder  = 2,
-  standingmoveorder  = 1,
-  steeringmode       = 2,
-  threed             = 1,
-  turnRate           = 560,
-  unitname           = [[arm_furie]],
-  unitnumber         = 7218,
-  version            = 3.1,
-  workerTime         = 0,
-  zbuffer            = 1,
-  sounds = {
-    canceldestruct     = [[cancel2]],
-    underattack        = [[warning1]],
-    cant = {
-      [[cantdo4]],
-    },
-    count = {
-      [[count6]],
-      [[count5]],
-      [[count4]],
-      [[count3]],
-      [[count2]],
-      [[count1]],
-    },
-    ok = {
-      [[krogok1]],
-    },
-    select = {
-      [[krogsel1]],
-    },
-  },
-  weapons = {
-    [1]  = {
-      def                = [[ARM_FURIE_HEAD]],
-      onlyTargetCategory = [[Notair]],
-    },
-    [2]  = {
-      def                = [[ARM_FURIE_FIRE]],
-      onlyTargetCategory = [[Notair]],
-    },
-    [3]  = {
-      def                = [[ARM_FURIE_ROCKET]],
-    },
-  },
+local Def = {
+	arm_furie = {
+		acceleration = 0.09,
+		bmcode = 1,
+		brakeRate = 0.2,
+		buildCostEnergy = 486664,
+		buildCostMetal = 35089,
+		buildTime = nil,
+		builder = false,
+		canAttack = true,
+		canGuard = true,
+		canMove = true,
+		canPatrol = true,
+		canstop = 1,
+		cantBeTransported = true,
+		category = [[KBOT WEAPON ALL NOTSUB NOTAIR]],
+		collisionvolumeoffsets = [[0 -10 -3]],
+		collisionvolumescales = [[54 69 40]],
+		collisionvolumetest = 0,
+		collisionvolumetype = [[Ell]],
+		copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
+		corpse = [[dead]],
+		defaultmissiontype = [[Standby]],
+		description = [[The Legendary Kbot]],
+		designation = [[ARM-KL]],
+		downloadable = 1,
+		energyMake = 1.1,
+		energyStorage = 0,
+		energyUse = 1.1,
+		explodeAs = [[NUCLEAR_MISSILE2]],
+		featureDefs = {
+			dead = {
+				blocking = true,
+				category = [[arm_corpses]],
+				damage = nil,
+				description = [[Legendary Wreckage]],
+				featureDead = [[furie_heap]],
+				featurereclamate = [[smudge01]],
+				footprintX = 3,
+				footprintZ = 3,
+				height = 20,
+				hitdensity = 100,
+				metal = nil,
+				object = [[arm_furie_dead]],
+				reclaimable = true,
+				seqnamereclamate = [[tree1reclamate]],
+				world = [[All Worlds]],
+			},
+			furie_heap = {
+				blocking = false,
+				category = [[heaps]],
+				damage = nil,
+				description = [[Legendary Heap]],
+				featurereclamate = [[smudge01]],
+				footprintX = 3,
+				footprintZ = 3,
+				height = 4,
+				hitdensity = 100,
+				metal = nil,
+				object = [[3x3a]],
+				reclaimable = true,
+				seqnamereclamate = [[tree1reclamate]],
+				world = [[All Worlds]],
+			},
+		},
+		firestandorders = 1,
+		footprintX = 5,
+		footprintZ = 5,
+		frenchdescription = [[Kbot Expérimental]],
+		germandescription = [[Experimental-Kbot]],
+		immunetoparalyzer = 1,
+		maneuverleashlength = 640,
+		mass = 200000,
+		maxDamage = 300489,
+		maxSlope = 17,
+		maxVelocity = 1.1,
+		maxWaterDepth = 12,
+		metalStorage = 0,
+		mobilestandorders = 1,
+		movementClass = [[VKBOT5]],
+		name = [[Arm Furie]],
+		noAutoFire = false,
+		objectName = [[ARM_FURIE]],
+		radarDistance = 0,
+		selfDestructAs = [[CRBLMSSL1]],
+		selfDestructCountdown = 20,
+		shootme = 1,
+		side = [[ARM]],
+		sightDistance = 485,
+		sounds = {
+			canceldestruct = [[cancel2]],
+			cant = {
+				[1] = [[cantdo4]],
+			},
+			count = {
+				[1] = [[count6]],
+				[2] = [[count5]],
+				[3] = [[count4]],
+				[4] = [[count3]],
+				[5] = [[count2]],
+				[6] = [[count1]],
+			},
+			ok = {
+				[1] = [[krogok1]],
+			},
+			select = {
+				[1] = [[krogsel1]],
+			},
+			underattack = [[warning1]],
+		},
+		standingfireorder = 2,
+		standingmoveorder = 1,
+		steeringmode = 2,
+		threed = 1,
+		turnRate = 560,
+		unitname = [[arm_furie]],
+		unitnumber = 7218,
+		version = 3.1,
+		weaponDefs = {
+			ARM_FURIE_FIRE = {
+				areaOfEffect = 8,
+				craterBoost = 0,
+				craterMult = 0,
+				damage = {
+					default = 180,
+				},
+				explosionart = [[explode5]],
+				explosiongaf = [[fx]],
+				id = 238,
+				impulseBoost = 0,
+				impulseFactor = 0,
+				lavaexplosionart = [[lavasplashsm]],
+				lavaexplosiongaf = [[fx]],
+				lineOfSight = true,
+				name = [[Gauss Cannon2]],
+				range = 800,
+				reloadtime = 0.1,
+				renderType = 4,
+				soundHit = [[xplomed2]],
+				soundStart = [[gatling]],
+				startsmoke = 1,
+				tolerance = 10000,
+				turret = true,
+				waterexplosionart = [[h2oboom1]],
+				waterexplosiongaf = [[fx]],
+				weaponType = [[Cannon]],
+				weaponVelocity = 450,
+			},
+			ARM_FURIE_HEAD = {
+				areaOfEffect = 8,
+				beamWeapon = true,
+				color = 148,
+				color2 = 217,
+				craterBoost = 0,
+				craterMult = 0,
+				damage = {
+					commanders = 2100,
+					default = 5000,
+				},
+				energypershot = 2100,
+				explosionart = [[explode5]],
+				explosiongaf = [[fx]],
+				fireStarter = 90,
+				id = 217,
+				impulseBoost = 0,
+				impulseFactor = 0,
+				lavaexplosionart = [[lavasplashsm]],
+				lavaexplosiongaf = [[fx]],
+				lineOfSight = true,
+				name = [[Annihilator Weapon2]],
+				range = 1000,
+				reloadtime = 9,
+				renderType = 0,
+				soundHit = [[xplolrg1]],
+				soundStart = [[fireplasma]],
+				tolerance = 500,
+				turret = true,
+				waterexplosionart = [[h2oboom1]],
+				waterexplosiongaf = [[fx]],
+				weaponType = [[LaserCannon]],
+				weaponVelocity = 1500,
+			},
+			ARM_FURIE_ROCKET = {
+				areaOfEffect = 80,
+				craterBoost = 0,
+				craterMult = 0,
+				damage = {
+					armaca = 383,
+					armatlas = 383,
+					armbrawl = 383,
+					armca = 383,
+					armfig = 383,
+					armhawk = 383,
+					armlance = 383,
+					armpeep = 383,
+					armpnix = 383,
+					armthund = 383,
+					coraca = 383,
+					corape = 383,
+					corca = 383,
+					corfink = 383,
+					corhurc = 383,
+					corshad = 383,
+					cortitan = 383,
+					corvalk = 383,
+					corvamp = 383,
+					corveng = 383,
+					default = 700,
+				},
+				explosionart = [[explode3]],
+				explosiongaf = [[fx]],
+				fireStarter = 70,
+				flightTime = 4,
+				guidance = true,
+				id = 182,
+				impulseBoost = 0,
+				impulseFactor = 0,
+				lavaexplosionart = [[lavasplash]],
+				lavaexplosiongaf = [[fx]],
+				lineOfSight = true,
+				metalpershot = 0,
+				model = [[fmdmisl]],
+				name = [[Heavy Rockets2]],
+				range = 1100,
+				reloadtime = 1.1,
+				renderType = 1,
+				selfprop = true,
+				smokeTrail = true,
+				smokedelay = 0.1,
+				soundHit = [[xplosml2]],
+				soundStart = [[rocklit1]],
+				startVelocity = 250,
+				startsmoke = 1,
+				tolerance = 9000,
+				tracks = true,
+				turnRate = 63000,
+				vlaunch = true,
+				waterexplosionart = [[h2o]],
+				waterexplosiongaf = [[fx]],
+				weaponAcceleration = 200,
+				weaponTimer = 2,
+				weaponType = [[StarburstLauncher]],
+				weaponVelocity = 550,
+			},
+		},
+		weapons = {
+			[1] = {
+				def = [[ARM_FURIE_HEAD]],
+				onlyTargetCategory = [[Notair]],
+			},
+			[2] = {
+				def = [[ARM_FURIE_FIRE]],
+				onlyTargetCategory = [[Notair]],
+			},
+			[3] = {
+				def = [[ARM_FURIE_ROCKET]],
+			},
+		},
+		workerTime = 0,
+		zbuffer = 1,
+	},
 }
-
-
---------------------------------------------------------------------------------
-
-local weaponDefs = {
-  ARM_FURIE_FIRE = {
-    areaOfEffect       = 8,
-    craterBoost        = 0,
-    craterMult         = 0,
-    explosionart       = [[explode5]],
-    explosiongaf       = [[fx]],
-    id                 = 238,
-    impulseBoost       = 0,
-    impulseFactor      = 0,
-    lavaexplosionart   = [[lavasplashsm]],
-    lavaexplosiongaf   = [[fx]],
-    lineOfSight        = true,
-    name               = [[Gauss Cannon2]],
-    range              = 800,
-    reloadtime         = .1,
-    renderType         = 4,
-    soundHit           = [[xplomed2]],
-    soundStart         = [[gatling]],
-    startsmoke         = 1,
-    tolerance          = 10000,
-    turret             = true,
-    waterexplosionart  = [[h2oboom1]],
-    waterexplosiongaf  = [[fx]],
-    weaponType         = [[Cannon]],
-    weaponVelocity     = 450,
-    damage = {
-      default            = 180,
-    },
-  },
-  ARM_FURIE_HEAD = {
-    areaOfEffect       = 8,
-    beamWeapon         = true,
-    color              = 148,
-    color2             = 217,
-    craterBoost        = 0,
-    craterMult         = 0,
-    energypershot      = 2100,
-    explosionart       = [[explode5]],
-    explosiongaf       = [[fx]],
-    fireStarter        = 90,
-    id                 = 217,
-    impulseBoost       = 0,
-    impulseFactor      = 0,
-    lavaexplosionart   = [[lavasplashsm]],
-    lavaexplosiongaf   = [[fx]],
-    lineOfSight        = true,
-    name               = [[Annihilator Weapon2]],
-    range              = 1000,
-    reloadtime         = 9,
-    renderType         = 0,
-    soundHit           = [[xplolrg1]],
-    soundStart         = [[fireplasma]],
-    tolerance          = 500,
-    turret             = true,
-    waterexplosionart  = [[h2oboom1]],
-    waterexplosiongaf  = [[fx]],
-    weaponType         = [[LaserCannon]],
-    weaponVelocity     = 1500,
-    damage = {
-      commanders         = 2100,
-      default            = 5000,
-    },
-  },
-  ARM_FURIE_ROCKET = {
-    areaOfEffect       = 80,
-    craterBoost        = 0,
-    craterMult         = 0,
-    explosionart       = [[explode3]],
-    explosiongaf       = [[fx]],
-    fireStarter        = 70,
-    flightTime         = 4,
-    guidance           = true,
-    id                 = 182,
-    impulseBoost       = 0,
-    impulseFactor      = 0,
-    lavaexplosionart   = [[lavasplash]],
-    lavaexplosiongaf   = [[fx]],
-    lineOfSight        = true,
-    metalpershot       = 0,
-    model              = [[fmdmisl]],
-    name               = [[Heavy Rockets2]],
-    range              = 1100,
-    reloadtime         = 1.1,
-    renderType         = 1,
-    selfprop           = true,
-    smokedelay         = .1,
-    smokeTrail         = true,
-    soundHit           = [[xplosml2]],
-    soundStart         = [[rocklit1]],
-    startsmoke         = 1,
-    startVelocity      = 250,
-    tolerance          = 9000,
-    tracks             = true,
-    turnRate           = 63000,
-    vlaunch            = true,
-    waterexplosionart  = [[h2o]],
-    waterexplosiongaf  = [[fx]],
-    weaponAcceleration = 200,
-    weaponTimer        = 2,
-    weaponType         = [[StarburstLauncher]],
-    weaponVelocity     = 550,
-    damage = {
-      armaca             = 383,
-      armatlas           = 383,
-      armbrawl           = 383,
-      armca              = 383,
-      armfig             = 383,
-      armhawk            = 383,
-      armlance           = 383,
-      armpeep            = 383,
-      armpnix            = 383,
-      armthund           = 383,
-      coraca             = 383,
-      corape             = 383,
-      corca              = 383,
-      corfink            = 383,
-      corhurc            = 383,
-      corshad            = 383,
-      cortitan           = 383,
-      corvalk            = 383,
-      corvamp            = 383,
-      corveng            = 383,
-      default            = 700,
-    },
-  },
-}
-unitDef.weaponDefs = weaponDefs
-
-
---------------------------------------------------------------------------------
-
-local featureDefs = {
-  dead = {
-    blocking           = true,
-    category           = [[arm_corpses]],
-    damage             = unitDef.maxDamage*0.6,
-    description        = [[Legendary Wreckage]],
-    featureDead        = [[furie_heap]],
-    featurereclamate   = [[smudge01]],
-    footprintX         = 3,
-    footprintZ         = 3,
-    height             = 20,
-    hitdensity         = 100,
-    metal              = unitDef.buildCostMetal*0.8,
-    object             = [[arm_furie_dead]],
-    reclaimable        = true,
-    seqnamereclamate   = [[tree1reclamate]],
-    world              = [[All Worlds]],
-  },
-  furie_heap = {
-    blocking           = false,
-    category           = [[heaps]],
-    damage             = unitDef.maxDamage*0.36,
-    description        = [[Legendary Heap]],
-    featurereclamate   = [[smudge01]],
-    footprintX         = 3,
-    footprintZ         = 3,
-    height             = 4,
-    hitdensity         = 100,
-    metal              = unitDef.buildCostMetal*0.64,
-    object             = [[3x3a]],
-    reclaimable        = true,
-    seqnamereclamate   = [[tree1reclamate]],
-    world              = [[All Worlds]],
-  },
-}
-unitDef.featureDefs = featureDefs
-
-
---------------------------------------------------------------------------------
-
-return lowerkeys({ [unitName] = unitDef })
-
---------------------------------------------------------------------------------
+Def.aach.buildTime = 2.0955 * Def.aach.buildCostEnergy
+Def.aach.featureDefs.dead.damage = 0.6000 * Def.aach.maxDamage
+Def.aach.featureDefs.dead.metal = 0.8000 * Def.aach.buildCostMetal
+Def.aafus.buildTime = 1.8182 * Def.aafus.buildCostEnergy
+Def.aahp.buildTime = 2.6001 * Def.aahp.buildCostEnergy
+Def.aahp.featureDefs.dead.damage = 0.6000 * Def.aahp.maxDamage
+Def.aahp.featureDefs.dead.metal = 0.8000 * Def.aahp.buildCostMetal
+Def.aahp.featureDefs.heap.damage = 0.3600 * Def.aahp.maxDamage
+Def.aahp.featureDefs.heap.metal = 0.6400 * Def.aahp.buildCostMetal
+Def.aahpns.buildTime = 1.2217 * Def.aahpns.buildCostEnergy
+Def.aahpns.featureDefs.dead.damage = 0.6000 * Def.aahpns.maxDamage
+Def.aahpns.featureDefs.dead.metal = 0.8000 * Def.aahpns.buildCostMetal
+Def.aahpns.featureDefs.heap.damage = 0.3600 * Def.aahpns.maxDamage
+Def.aahpns.featureDefs.heap.metal = 0.6400 * Def.aahpns.buildCostMetal
+Def.abroadside.buildTime = 1.4286 * Def.abroadside.buildCostEnergy
+Def.abroadside.featureDefs.dead.damage = 0.6000 * Def.abroadside.maxDamage
+Def.abroadside.featureDefs.dead.metal = 0.8000 * Def.abroadside.buildCostMetal
+Def.abuilderlvl1.buildTime = 3.9372 * Def.abuilderlvl1.buildCostEnergy
+Def.abuilderlvl2.buildTime = 1.1032 * Def.abuilderlvl2.buildCostEnergy
+Def.abuilderlvl2.featureDefs.dead.damage = 0.6000 * Def.abuilderlvl2.maxDamage
+Def.abuilderlvl2.featureDefs.dead.metal = 0.8000 * Def.abuilderlvl2.buildCostMetal
+Def.abuilderlvl3.buildTime = 0.6800 * Def.abuilderlvl3.buildCostEnergy
+Def.abuilderlvl3.featureDefs.dead.damage = 0.6000 * Def.abuilderlvl3.maxDamage
+Def.abuilderlvl3.featureDefs.dead.metal = 0.8000 * Def.abuilderlvl3.buildCostMetal
+Def.acovertopscentre.buildTime = 0.0466 * Def.acovertopscentre.buildCostEnergy
+Def.acovertopscentre.featureDefs.dead.damage = 0.6000 * Def.acovertopscentre.maxDamage
+Def.acovertopscentre.featureDefs.dead.metal = 0.8000 * Def.acovertopscentre.buildCostMetal
+Def.aexxec.buildTime = 1.6005 * Def.aexxec.buildCostEnergy
+Def.aexxec.featureDefs.dead.damage = 0.6000 * Def.aexxec.maxDamage
+Def.aexxec.featureDefs.dead.description = Def.aexxec.name .. [[ Wreckage]]
+Def.aexxec.featureDefs.dead.metal = 0.8000 * Def.aexxec.buildCostMetal
+Def.aexxec.featureDefs.heap.damage = 0.3600 * Def.aexxec.maxDamage
+Def.aexxec.featureDefs.heap.description = Def.aexxec.name .. [[ Heap]]
+Def.aexxec.featureDefs.heap.metal = 0.6400 * Def.aexxec.buildCostMetal
+Def.afusionplant.buildTime = 1.5652 * Def.afusionplant.buildCostEnergy
+Def.afusionplant.featureDefs.dead.damage = 0.6000 * Def.afusionplant.maxDamage
+Def.afusionplant.featureDefs.dead.metal = 0.8000 * Def.afusionplant.buildCostMetal
+Def.afusionplant.featureDefs.heap.damage = 0.3600 * Def.afusionplant.maxDamage
+Def.afusionplant.featureDefs.heap.metal = 0.6400 * Def.afusionplant.buildCostMetal
+Def.ahermes.buildTime = 3.0064 * Def.ahermes.buildCostEnergy
+Def.ahermes.featureDefs.dead.damage = 0.6000 * Def.ahermes.maxDamage
+Def.ahermes.featureDefs.dead.description = Def.ahermes.name .. [[ Wreckage]]
+Def.ahermes.featureDefs.dead.metal = 0.8000 * Def.ahermes.buildCostMetal
+Def.ahermes.featureDefs.heap.damage = 0.3600 * Def.ahermes.maxDamage
+Def.ahermes.featureDefs.heap.description = Def.ahermes.name .. [[ Wreckage]]
+Def.ahermes.featureDefs.heap.metal = 0.6400 * Def.ahermes.buildCostMetal
+Def.airwolf3g.buildTime = 0.3809 * Def.airwolf3g.buildCostEnergy
+Def.ajuno.buildTime = 1.3167 * Def.ajuno.buildCostEnergy
+Def.akmech.buildTime = 0.4768 * Def.akmech.buildCostEnergy
+Def.akmech.featureDefs.heap.damage = 0.3600 * Def.akmech.maxDamage
+Def.akmech.featureDefs.heap.metal = 0.6400 * Def.akmech.buildCostMetal
+Def.ametalmakerlvl1.buildTime = 0.8342 * Def.ametalmakerlvl1.buildCostEnergy
+Def.ametalmakerlvl2.buildTime = 0.1666 * Def.ametalmakerlvl2.buildCostEnergy
+Def.ametalmakerlvl2.featureDefs.dead.damage = 0.6000 * Def.ametalmakerlvl2.maxDamage
+Def.ametalmakerlvl2.featureDefs.dead.metal = 0.8000 * Def.ametalmakerlvl2.buildCostMetal
+Def.ametalmakerlvl2.featureDefs.heap.damage = 0.3600 * Def.ametalmakerlvl2.maxDamage
+Def.ametalmakerlvl2.featureDefs.heap.metal = 0.6400 * Def.ametalmakerlvl2.buildCostMetal
+Def.amgeo.buildTime = 2.2727 * Def.amgeo.buildCostEnergy
+Def.amortor.buildTime = 1.1531 * Def.amortor.buildCostEnergy
+Def.amortor.featureDefs.dead.damage = 0.6000 * Def.amortor.maxDamage
+Def.amortor.featureDefs.dead.metal = 0.8000 * Def.amortor.buildCostMetal
+Def.amortor.featureDefs.heap.damage = 0.3600 * Def.amortor.maxDamage
+Def.amortor.featureDefs.heap.metal = 0.6400 * Def.amortor.buildCostMetal
+Def.ananotower.buildTime = 0.7070 * Def.ananotower.buildCostEnergy
+Def.ananotower.featureDefs.dead.damage = 0.6000 * Def.ananotower.maxDamage
+Def.ananotower.featureDefs.dead.metal = 0.8000 * Def.ananotower.buildCostMetal
+Def.apache.buildTime = 1.9878 * Def.apache.buildCostEnergy
+Def.apocketfusion.buildTime = 1.4490 * Def.apocketfusion.buildCostEnergy
+Def.apocketfusion.featureDefs.dead.damage = 0.6000 * Def.apocketfusion.maxDamage
+Def.apocketfusion.featureDefs.dead.description = Def.apocketfusion.name .. [[ Wreckage]]
+Def.apocketfusion.featureDefs.dead.metal = 0.8000 * Def.apocketfusion.buildCostMetal
+Def.arm_big_bertha.buildTime = 1.4919 * Def.arm_big_bertha.buildCostEnergy
+Def.arm_furie.buildTime = 1.0319 * Def.arm_furie.buildCostEnergy
+Def.arm_furie.featureDefs.dead.damage = 0.6000 * Def.arm_furie.maxDamage
+Def.arm_furie.featureDefs.dead.metal = 0.8000 * Def.arm_furie.buildCostMetal
+Def.arm_furie.featureDefs.furie_heap.damage = 0.3600 * Def.arm_furie.maxDamage
+Def.arm_furie.featureDefs.furie_heap.metal = 0.6400 * Def.arm_furie.buildCostMetal
+return lowerkeys(Def)
