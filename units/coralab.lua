@@ -17,7 +17,7 @@ local unitDef = {
   buildingGroundDecalSizeX = 8,
   buildingGroundDecalSizeY = 7,
   buildingGroundDecalType = [[asphalt512c.dds]],
-  buildPic           = [[CORALAB.DDS]],
+  buildPic           = [[CORALAB.png]],
   buildTime          = 45519,
   canMove            = true,
   canPatrol          = true,
@@ -76,6 +76,7 @@ local unitDef = {
     [[corcrab]],
     [[armkrmi]],
     [[krogtaar]],
+	[[cormonsta]],
   },
   sfxtypes = {
     explosiongenerators = {
