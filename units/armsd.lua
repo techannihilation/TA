@@ -1,97 +1,107 @@
-local Def = {
-	armsd = {
-		activateWhenBuilt = true,
-		bmcode = 0,
-		buildAngle = 4096,
-		buildCostEnergy = 6739,
-		buildCostMetal = 661,
-		buildPic = [[ARMSD.png]],
-		buildTime = 11877,
-		category = [[ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR]],
-		corpse = [[DEAD]],
-		description = [[Intrusion Countermeasure System]],
-		energyUse = 125,
-		explodeAs = [[LARGE_BUILDINGEX]],
-		featureDefs = {
-			DEAD = {
-				blocking = true,
-				category = [[corpses]],
-				damage = nil,
-				description = nil,
-				energy = 0,
-				featureDead = [[HEAP]],
-				featurereclamate = [[SMUDGE01]],
-				footprintX = 4,
-				footprintZ = 4,
-				height = 15,
-				hitdensity = 100,
-				metal = nil,
-				object = [[ARMSD_DEAD]],
-				reclaimable = true,
-				seqnamereclamate = [[TREE1RECLAMATE]],
-				world = [[All Worlds]],
-			},
-			HEAP = {
-				blocking = false,
-				category = [[heaps]],
-				damage = nil,
-				description = nil,
-				energy = 0,
-				featurereclamate = [[SMUDGE01]],
-				footprintX = 4,
-				footprintZ = 4,
-				height = 4,
-				hitdensity = 100,
-				metal = nil,
-				object = [[4X4A]],
-				reclaimable = true,
-				seqnamereclamate = [[TREE1RECLAMATE]],
-				world = [[All Worlds]],
-			},
-		},
-		footprintX = 4,
-		footprintZ = 4,
-		iconType = [[building]],
-		idleAutoHeal = 5,
-		idleTime = 1800,
-		levelGround = false,
-		maxDamage = 2400,
-		maxSlope = 36,
-		maxWaterDepth = 0,
-		name = [[Tracer]],
-		objectName = [[ARMSD]],
-		onoffable = true,
-		seismicDistance = 2000,
-		seismicSignature = 0,
-		selfDestructAs = [[LARGE_BUILDING]],
-		side = [[ARM]],
-		sightDistance = 240,
-		sounds = {
-			activate = [[targon1]],
-			canceldestruct = [[cancel2]],
-			count = {
-				[1] = [[count6]],
-				[2] = [[count5]],
-				[3] = [[count4]],
-				[4] = [[count3]],
-				[5] = [[count2]],
-				[6] = [[count1]],
-			},
-			deactivate = [[targoff1]],
-			select = {
-				[1] = [[targsel1]],
-			},
-			underattack = [[warning1]],
-			working = [[targsel1]],
-		},
-		unitname = [[armsd]],
-		yardMap = [[oooooooooooooooo]],
-	},
+-- UNITDEF -- ARMSD --
+--------------------------------------------------------------------------------
+
+local unitName = "armsd"
+
+--------------------------------------------------------------------------------
+
+local unitDef = {
+  activateWhenBuilt  = true,
+  bmcode             = 0,
+  buildAngle         = 4096,
+  buildCostEnergy    = 6739,
+  buildCostMetal     = 661,
+  buildPic           = [[ARMSD.png]],
+  buildTime          = 11877,
+  category           = [[ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR]],
+  corpse             = [[DEAD]],
+  description        = [[Intrusion Countermeasure System]],
+  energyUse          = 125,
+  explodeAs          = [[LARGE_BUILDINGEX]],
+  footprintX         = 4,
+  footprintZ         = 4,
+  iconType           = [[building]],
+  idleAutoHeal       = 5,
+  idleTime           = 1800,
+  levelGround        = false,
+  maxDamage          = 2400,
+  maxSlope           = 36,
+  maxWaterDepth      = 0,
+  name               = [[Tracer]],
+  objectName         = [[ARMSD]],
+  onoffable          = true,
+  seismicDistance    = 2000,
+  seismicSignature   = 0,
+  selfDestructAs     = [[LARGE_BUILDING]],
+  side               = [[ARM]],
+  sightDistance      = 240,
+  unitname           = [[armsd]],
+  yardMap            = [[oooooooooooooooo]],
+  sounds = {
+    activate           = [[targon1]],
+    canceldestruct     = [[cancel2]],
+    deactivate         = [[targoff1]],
+    underattack        = [[warning1]],
+    working            = [[targsel1]],
+    count = {
+      [[count6]],
+      [[count5]],
+      [[count4]],
+      [[count3]],
+      [[count2]],
+      [[count1]],
+    },
+    select = {
+      [[targsel1]],
+    },
+  },
 }
-Def.armsd.featureDefs.DEAD.damage = 0.6000 * Def.armsd.maxDamage
-Def.armsd.featureDefs.DEAD.description = Def.armsd.name .. [[ Wreckage]]
-Def.armsd.featureDefs.DEAD.metal = 0.8000 * Def.armsd.buildCostMetal
-Def.armsd.featureDefs.HEAP.damage = 0.3600 * Def.armsd.maxDamage
-Def.armsd.featureDefs.HEAP.description = Def.armsd.name .. [[ Heap]]
-Def.armsd.featureDefs.HEAP.metal = 0.6400 * Def.armsd.buildCostMetal
-return lowerkeys(Def)
+
+
+--------------------------------------------------------------------------------
+
+local featureDefs = {
+  DEAD = {
+    blocking           = true,
+    category           = [[corpses]],
+    damage             = unitDef.maxDamage*0.6,
+    description        = [[Tracer Wreckage]],
+    energy             = 0,
+    featureDead        = [[HEAP]],
+    featurereclamate   = [[SMUDGE01]],
+    footprintX         = 4,
+    footprintZ         = 4,
+    height             = 15,
+    hitdensity         = 100,
+    metal              = unitDef.buildCostMetal*0.8,
+    object             = [[ARMSD_DEAD]],
+    reclaimable        = true,
+    seqnamereclamate   = [[TREE1RECLAMATE]],
+    world              = [[All Worlds]],
+  },
+  HEAP = {
+    blocking           = false,
+    category           = [[heaps]],
+    damage             = unitDef.maxDamage*0.36,
+    description        = [[Tracer Heap]],
+    energy             = 0,
+    featurereclamate   = [[SMUDGE01]],
+    footprintX         = 4,
+    footprintZ         = 4,
+    height             = 4,
+    hitdensity         = 100,
+    metal              = unitDef.buildCostMetal*0.64,
+    object             = [[4X4A]],
+    reclaimable        = true,
+    seqnamereclamate   = [[TREE1RECLAMATE]],
+    world              = [[All Worlds]],
+  },
+}
+unitDef.featureDefs = featureDefs
+
+
+--------------------------------------------------------------------------------
+
+return lowerkeys({ [unitName] = unitDef })
+
+--------------------------------------------------------------------------------

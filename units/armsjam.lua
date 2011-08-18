@@ -1,151 +1,166 @@
-local Def = {
-	armsjam = {
-		acceleration = 0.09,
-		activateWhenBuilt = true,
-		badTargetCategory = [[MOBILE]],
-		bmcode = 1,
-		brakeRate = 0.02,
-		buildCostEnergy = 1928,
-		buildCostMetal = 131,
-		buildPic = [[ARMSJAM.png]],
-		buildTime = 6708,
-		builder = false,
-		canAttack = true,
-		canGuard = true,
-		canMove = true,
-		canPatrol = true,
-		canstop = 1,
-		category = [[ALL NOTLAND MOBILE NOTSUB NOWEAPON SHIP NOTAIR]],
-		corpse = [[DEAD]],
-		defaultmissiontype = [[Standby]],
-		description = [[Radar Jammer Ship]],
-		energyMake = 18,
-		energyStorage = 0,
-		energyUse = 18,
-		explodeAs = [[SMALL_UNITEX]],
-		featureDefs = {
-			DEAD = {
-				blocking = false,
-				category = [[corpses]],
-				damage = nil,
-				description = nil,
-				energy = 0,
-				featureDead = [[HEAP]],
-				footprintX = 4,
-				footprintZ = 4,
-				height = 40,
-				hitdensity = 100,
-				metal = nil,
-				object = [[ARMSJAM_DEAD]],
-				reclaimable = true,
-				seqnamereclamate = [[TREE1RECLAMATE]],
-				world = [[All Worlds]],
-			},
-			HEAP = {
-				blocking = false,
-				category = [[heaps]],
-				damage = nil,
-				description = nil,
-				energy = 0,
-				footprintX = 2,
-				footprintZ = 2,
-				height = 4,
-				hitdensity = 100,
-				metal = nil,
-				object = [[4X4A]],
-				reclaimable = true,
-				seqnamereclamate = [[TREE1RECLAMATE]],
-				world = [[All Worlds]],
-			},
-		},
-		floater = true,
-		footprintX = 4,
-		footprintZ = 4,
-		iconType = [[sea]],
-		idleAutoHeal = 5,
-		idleTime = 1800,
-		maneuverleashlength = 640,
-		maxDamage = 510,
-		maxVelocity = 3.1,
-		metalStorage = 0,
-		minWaterDepth = 6,
-		mobilestandorders = 1,
-		movementClass = [[BOAT4]],
-		name = [[Escort]],
-		noAutoFire = false,
-		noChaseCategory = [[MOBILE]],
-		objectName = [[ARMSJAM]],
-		onoffable = true,
-		radarDistanceJam = 980,
-		seismicSignature = 0,
-		selfDestructAs = [[SMALL_UNIT]],
-		side = [[ARM]],
-		sightDistance = 390,
-		smoothAnim = true,
-		sounds = {
-			canceldestruct = [[cancel2]],
-			cant = {
-				[1] = [[cantdo4]],
-			},
-			count = {
-				[1] = [[count6]],
-				[2] = [[count5]],
-				[3] = [[count4]],
-				[4] = [[count3]],
-				[5] = [[count2]],
-				[6] = [[count1]],
-			},
-			ok = {
-				[1] = [[sharmmov]],
-			},
-			select = {
-				[1] = [[radjam1]],
-			},
-			underattack = [[warning1]],
-		},
-		standingmoveorder = 1,
-		steeringmode = 1,
-		turnRate = 540,
-		unitname = [[armsjam]],
-		weaponDefs = {
-			BOGUS_GROUND_MISSILE = {
-				areaOfEffect = 48,
-				craterBoost = 0,
-				craterMult = 0,
-				damage = {
-					default = 0,
-				},
-				impulseBoost = 0,
-				impulseFactor = 0,
-				lineOfSight = true,
-				metalpershot = 0,
-				name = [[Missiles]],
-				range = 800,
-				reloadtime = 0.5,
-				renderType = 1,
-				startVelocity = 450,
-				tolerance = 9000,
-				turnRate = 33000,
-				turret = true,
-				weaponAcceleration = 101,
-				weaponTimer = 0.1,
-				weaponType = [[Cannon]],
-				weaponVelocity = 650,
-			},
-		},
-		weapons = {
-			[1] = {
-				badTargetCategory = [[MOBILE]],
-				def = [[BOGUS_GROUND_MISSILE]],
-			},
-		},
-		workerTime = 0,
-	},
+-- UNITDEF -- ARMSJAM --
+--------------------------------------------------------------------------------
+
+local unitName = "armsjam"
+
+--------------------------------------------------------------------------------
+
+local unitDef = {
+  acceleration       = 0.09,
+  activateWhenBuilt  = true,
+  badTargetCategory  = [[MOBILE]],
+  bmcode             = 1,
+  brakeRate          = 0.02,
+  buildCostEnergy    = 1928,
+  buildCostMetal     = 131,
+  builder            = false,
+  buildPic           = [[ARMSJAM.png]],
+  buildTime          = 6708,
+  canAttack          = true,
+  canGuard           = true,
+  canMove            = true,
+  canPatrol          = true,
+  canstop            = 1,
+  category           = [[ALL NOTLAND MOBILE NOTSUB NOWEAPON SHIP NOTAIR]],
+  corpse             = [[DEAD]],
+  defaultmissiontype = [[Standby]],
+  description        = [[Radar Jammer Ship]],
+  energyMake         = 18,
+  energyStorage      = 0,
+  energyUse          = 18,
+  explodeAs          = [[SMALL_UNITEX]],
+  floater            = true,
+  footprintX         = 4,
+  footprintZ         = 4,
+  iconType           = [[sea]],
+  idleAutoHeal       = 5,
+  idleTime           = 1800,
+  maneuverleashlength = 640,
+  maxDamage          = 510,
+  maxVelocity        = 3.1,
+  metalStorage       = 0,
+  minWaterDepth      = 6,
+  mobilestandorders  = 1,
+  movementClass      = [[BOAT4]],
+  name               = [[Escort]],
+  noAutoFire         = false,
+  noChaseCategory    = [[MOBILE]],
+  objectName         = [[ARMSJAM]],
+  onoffable          = true,
+  radarDistanceJam   = 980,
+  seismicSignature   = 0,
+  selfDestructAs     = [[SMALL_UNIT]],
+  side               = [[ARM]],
+  sightDistance      = 390,
+  smoothAnim         = true,
+  standingmoveorder  = 1,
+  steeringmode       = 1,
+  turnRate           = 540,
+  unitname           = [[armsjam]],
+  workerTime         = 0,
+  sounds = {
+    canceldestruct     = [[cancel2]],
+    underattack        = [[warning1]],
+    cant = {
+      [[cantdo4]],
+    },
+    count = {
+      [[count6]],
+      [[count5]],
+      [[count4]],
+      [[count3]],
+      [[count2]],
+      [[count1]],
+    },
+    ok = {
+      [[sharmmov]],
+    },
+    select = {
+      [[radjam1]],
+    },
+  },
+  weapons = {
+    [1]  = {
+      badTargetCategory  = [[MOBILE]],
+      def                = [[BOGUS_GROUND_MISSILE]],
+    },
+  },
 }
-Def.armsjam.featureDefs.DEAD.damage = 0.6000 * Def.armsjam.maxDamage
-Def.armsjam.featureDefs.DEAD.description = Def.armsjam.name .. [[ Wreckage]]
-Def.armsjam.featureDefs.DEAD.metal = 0.8000 * Def.armsjam.buildCostMetal
-Def.armsjam.featureDefs.HEAP.damage = 0.3600 * Def.armsjam.maxDamage
-Def.armsjam.featureDefs.HEAP.description = Def.armsjam.name .. [[ Heap]]
-Def.armsjam.featureDefs.HEAP.metal = 0.6400 * Def.armsjam.buildCostMetal
-return lowerkeys(Def)
+
+
+--------------------------------------------------------------------------------
+
+local weaponDefs = {
+  BOGUS_GROUND_MISSILE = {
+    areaOfEffect       = 48,
+    craterBoost        = 0,
+    craterMult         = 0,
+    impulseBoost       = 0,
+    impulseFactor      = 0,
+    lineOfSight        = true,
+    metalpershot       = 0,
+    name               = [[Missiles]],
+    range              = 800,
+    reloadtime         = 0.5,
+    renderType         = 1,
+    startVelocity      = 450,
+    tolerance          = 9000,
+    turnRate           = 33000,
+    turret             = true,
+    weaponAcceleration = 101,
+    weaponTimer        = 0.1,
+    weaponType         = [[Cannon]],
+    weaponVelocity     = 650,
+    damage = {
+      default            = 0,
+    },
+  },
+}
+unitDef.weaponDefs = weaponDefs
+
+
+--------------------------------------------------------------------------------
+
+local featureDefs = {
+  DEAD = {
+    blocking           = false,
+    category           = [[corpses]],
+    damage             = unitDef.maxDamage*0.6,
+    description        = [[Escort Wreckage]],
+    energy             = 0,
+    featureDead        = [[HEAP]],
+    footprintX         = 4,
+    footprintZ         = 4,
+    height             = 40,
+    hitdensity         = 100,
+    metal              = unitDef.buildCostMetal*0.8,
+    object             = [[ARMSJAM_DEAD]],
+    reclaimable        = true,
+    seqnamereclamate   = [[TREE1RECLAMATE]],
+    world              = [[All Worlds]],
+  },
+  HEAP = {
+    blocking           = false,
+    category           = [[heaps]],
+    damage             = unitDef.maxDamage*0.36,
+    description        = [[Escort Heap]],
+    energy             = 0,
+    footprintX         = 2,
+    footprintZ         = 2,
+    height             = 4,
+    hitdensity         = 100,
+    metal              = unitDef.buildCostMetal*0.64,
+    object             = [[4X4A]],
+    reclaimable        = true,
+    seqnamereclamate   = [[TREE1RECLAMATE]],
+    world              = [[All Worlds]],
+  },
+}
+unitDef.featureDefs = featureDefs
+
+
+--------------------------------------------------------------------------------
+
+return lowerkeys({ [unitName] = unitDef })
+
+--------------------------------------------------------------------------------

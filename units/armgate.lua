@@ -1,141 +1,156 @@
-local Def = {
-	armgate = {
-		acceleration = 0,
-		activateWhenBuilt = true,
-		bmcode = 0,
-		brakeRate = 0,
-		buildAngle = 2048,
-		buildCostEnergy = 62191,
-		buildCostMetal = 3532,
-		buildPic = [[ARMGATE.png]],
-		buildTime = 54139,
-		builder = false,
-		category = [[ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR]],
-		corpse = [[DEAD]],
-		description = [[Plasma Deflector]],
-		energyStorage = 1500,
-		energyUse = 0,
-		explodeAs = [[CRAWL_BLAST]],
-		featureDefs = {
-			DEAD = {
-				blocking = true,
-				category = [[corpses]],
-				damage = nil,
-				description = nil,
-				energy = 0,
-				featureDead = [[HEAP]],
-				featurereclamate = [[SMUDGE01]],
-				footprintX = 2,
-				footprintZ = 2,
-				height = 20,
-				hitdensity = 100,
-				metal = nil,
-				object = [[ARMGATE_DEAD]],
-				reclaimable = true,
-				seqnamereclamate = [[TREE1RECLAMATE]],
-				world = [[All Worlds]],
-			},
-			HEAP = {
-				blocking = false,
-				category = [[heaps]],
-				damage = nil,
-				description = nil,
-				energy = 0,
-				featurereclamate = [[SMUDGE01]],
-				footprintX = 2,
-				footprintZ = 2,
-				height = 4,
-				hitdensity = 100,
-				metal = nil,
-				object = [[2X2D]],
-				reclaimable = true,
-				seqnamereclamate = [[TREE1RECLAMATE]],
-				world = [[All Worlds]],
-			},
-		},
-		footprintX = 4,
-		footprintZ = 4,
-		iconType = [[building]],
-		idleAutoHeal = 5,
-		idleTime = 1800,
-		maxDamage = 3000,
-		maxSlope = 10,
-		maxVelocity = 0,
-		maxWaterDepth = 0,
-		metalStorage = 0,
-		name = [[Keeper]],
-		noAutoFire = false,
-		norestrict = 1,
-		objectName = [[ARMGATE]],
-		onoffable = true,
-		seismicSignature = 0,
-		selfDestructAs = [[MINE_NUKE]],
-		side = [[ARM]],
-		sightDistance = 273,
-		smoothAnim = true,
-		sounds = {
-			canceldestruct = [[cancel2]],
-			cant = {
-				[1] = [[cantdo4]],
-			},
-			count = {
-				[1] = [[count6]],
-				[2] = [[count5]],
-				[3] = [[count4]],
-				[4] = [[count3]],
-				[5] = [[count2]],
-				[6] = [[count1]],
-			},
-			ok = {
-				[1] = [[drone1]],
-			},
-			select = {
-				[1] = [[drone1]],
-			},
-			underattack = [[warning1]],
-		},
-		turnRate = 0,
-		unitname = [[armgate]],
-		weaponDefs = {
-			REPULSOR = {
-				damage = {
-					default = 100,
-				},
-				isShield = true,
-				name = [[PlasmaRepulsor]],
-				range = 400,
-				shieldAlpha = 0.35,
-				shieldBadColor = [[1 0.2 0.2]],
-				shieldEnergyUse = 600,
-				shieldForce = 7,
-				shieldGoodColor = [[0.2 1 0.2]],
-				shieldInterceptType = 1,
-				shieldMaxSpeed = 3500,
-				shieldPower = 7500,
-				shieldPowerRegen = 150,
-				shieldPowerRegenEnergy = 562.5,
-				shieldRadius = 400,
-				shieldRepulser = true,
-				smartShield = true,
-				visibleShield = true,
-				visibleShieldHitFrames = 70,
-				visibleShieldRepulse = true,
-				weaponType = [[Shield]],
-			},
-		},
-		weapons = {
-			[1] = {
-				def = [[REPULSOR]],
-			},
-		},
-		workerTime = 0,
-		yardMap = [[oooooooooooooooo]],
-	},
+-- UNITDEF -- ARMGATE --
+--------------------------------------------------------------------------------
+
+local unitName = "armgate"
+
+--------------------------------------------------------------------------------
+
+local unitDef = {
+  acceleration       = 0,
+  activateWhenBuilt  = true,
+  bmcode             = 0,
+  brakeRate          = 0,
+  buildAngle         = 2048,
+  buildCostEnergy    = 62191,
+  buildCostMetal     = 3532,
+  builder            = false,
+  buildPic           = [[ARMGATE.png]],
+  buildTime          = 54139,
+  category           = [[ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR]],
+  corpse             = [[DEAD]],
+  description        = [[Plasma Deflector]],
+  energyStorage      = 1500,
+  energyUse          = 0,
+  explodeAs          = [[CRAWL_BLAST]],
+  footprintX         = 4,
+  footprintZ         = 4,
+  iconType           = [[building]],
+  idleAutoHeal       = 5,
+  idleTime           = 1800,
+  maxDamage          = 3000,
+  maxSlope           = 10,
+  maxVelocity        = 0,
+  maxWaterDepth      = 0,
+  metalStorage       = 0,
+  name               = [[Keeper]],
+  noAutoFire         = false,
+  norestrict         = 1,
+  objectName         = [[ARMGATE]],
+  onoffable          = true,
+  seismicSignature   = 0,
+  selfDestructAs     = [[MINE_NUKE]],
+  side               = [[ARM]],
+  sightDistance      = 273,
+  smoothAnim         = true,
+  turnRate           = 0,
+  unitname           = [[armgate]],
+  workerTime         = 0,
+  yardMap            = [[oooooooooooooooo]],
+  sounds = {
+    canceldestruct     = [[cancel2]],
+    underattack        = [[warning1]],
+    cant = {
+      [[cantdo4]],
+    },
+    count = {
+      [[count6]],
+      [[count5]],
+      [[count4]],
+      [[count3]],
+      [[count2]],
+      [[count1]],
+    },
+    ok = {
+      [[drone1]],
+    },
+    select = {
+      [[drone1]],
+    },
+  },
+  weapons = {
+    [1]  = {
+      def                = [[REPULSOR]],
+    },
+  },
 }
-Def.armgate.featureDefs.DEAD.damage = 0.6000 * Def.armgate.maxDamage
-Def.armgate.featureDefs.DEAD.description = Def.armgate.name .. [[ Wreckage]]
-Def.armgate.featureDefs.DEAD.metal = 0.8000 * Def.armgate.buildCostMetal
-Def.armgate.featureDefs.HEAP.damage = 0.3600 * Def.armgate.maxDamage
-Def.armgate.featureDefs.HEAP.description = Def.armgate.name .. [[ Heap]]
-Def.armgate.featureDefs.HEAP.metal = 0.6400 * Def.armgate.buildCostMetal
-return lowerkeys(Def)
+
+
+--------------------------------------------------------------------------------
+
+local weaponDefs = {
+  REPULSOR = {
+    isShield           = true,
+    name               = [[PlasmaRepulsor]],
+    range              = 400,
+    shieldAlpha        = 0.35,
+    shieldBadColor     = [[1 0.2 0.2]],
+    shieldEnergyUse    = 600,
+    shieldForce        = 7,
+    shieldGoodColor    = [[0.2 1 0.2]],
+    shieldInterceptType = 1,
+    shieldMaxSpeed     = 3500,
+    shieldPower        = 7500,
+    shieldPowerRegen   = 150,
+    shieldPowerRegenEnergy = 562.5,
+    shieldRadius       = 400,
+    shieldRepulser     = true,
+    smartShield        = true,
+    visibleShield      = true,
+    visibleShieldHitFrames = 70,
+    visibleShieldRepulse = true,
+    weaponType         = [[Shield]],
+    damage = {
+      default            = 100,
+    },
+  },
+}
+unitDef.weaponDefs = weaponDefs
+
+
+--------------------------------------------------------------------------------
+
+local featureDefs = {
+  DEAD = {
+    blocking           = true,
+    category           = [[corpses]],
+    damage             = unitDef.maxDamage*0.6,
+    description        = [[Keeper Wreckage]],
+    energy             = 0,
+    featureDead        = [[HEAP]],
+    featurereclamate   = [[SMUDGE01]],
+    footprintX         = 2,
+    footprintZ         = 2,
+    height             = 20,
+    hitdensity         = 100,
+    metal              = unitDef.buildCostMetal*0.8,
+    object             = [[ARMGATE_DEAD]],
+    reclaimable        = true,
+    seqnamereclamate   = [[TREE1RECLAMATE]],
+    world              = [[All Worlds]],
+  },
+  HEAP = {
+    blocking           = false,
+    category           = [[heaps]],
+    damage             = unitDef.maxDamage*0.36,
+    description        = [[Keeper Heap]],
+    energy             = 0,
+    featurereclamate   = [[SMUDGE01]],
+    footprintX         = 2,
+    footprintZ         = 2,
+    height             = 4,
+    hitdensity         = 100,
+    metal              = unitDef.buildCostMetal*0.64,
+    object             = [[2X2D]],
+    reclaimable        = true,
+    seqnamereclamate   = [[TREE1RECLAMATE]],
+    world              = [[All Worlds]],
+  },
+}
+unitDef.featureDefs = featureDefs
+
+
+--------------------------------------------------------------------------------
+
+return lowerkeys({ [unitName] = unitDef })
+
+--------------------------------------------------------------------------------

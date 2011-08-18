@@ -1,86 +1,99 @@
-local Def = {
-	corason = {
-		acceleration = 0,
-		activateWhenBuilt = true,
-		bmcode = 0,
-		brakeRate = 0,
-		buildAngle = 8192,
-		buildCostEnergy = 2257,
-		buildCostMetal = 152,
-		buildPic = [[CORASON.png]],
-		buildTime = 6096,
-		builder = false,
-		canAttack = false,
-		category = [[ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR]],
-		corpse = [[DEAD]],
-		description = [[Extended Sonar]],
-		energyMake = 18,
-		energyStorage = 0,
-		energyUse = 18,
-		explodeAs = [[SMALL_BUILDINGEX]],
-		featureDefs = {
-			DEAD = {
-				blocking = false,
-				category = [[corpses]],
-				damage = nil,
-				description = nil,
-				energy = 0,
-				footprintX = 3,
-				footprintZ = 3,
-				height = 20,
-				hitdensity = 100,
-				metal = nil,
-				object = [[CORASON_DEAD]],
-				reclaimable = true,
-				seqnamereclamate = [[TREE1RECLAMATE]],
-				world = [[All Worlds]],
-			},
-		},
-		footprintX = 3,
-		footprintZ = 3,
-		iconType = [[building]],
-		idleAutoHeal = 5,
-		idleTime = 1800,
-		maxDamage = 2140,
-		maxSlope = 10,
-		maxVelocity = 0,
-		maxangledif1 = 1,
-		metalStorage = 0,
-		minWaterDepth = 24,
-		name = [[Advanced Sonar Station]],
-		noAutoFire = false,
-		objectName = [[CORASON]],
-		onoffable = true,
-		seismicSignature = 0,
-		selfDestructAs = [[SMALL_BUILDING]],
-		side = [[CORE]],
-		sightDistance = 210,
-		smoothAnim = true,
-		sonarDistance = 2400,
-		sounds = {
-			activate = [[radar1]],
-			canceldestruct = [[cancel2]],
-			count = {
-				[1] = [[count6]],
-				[2] = [[count5]],
-				[3] = [[count4]],
-				[4] = [[count3]],
-				[5] = [[count2]],
-				[6] = [[count1]],
-			},
-			deactivate = [[sonarde2]],
-			select = {
-				[1] = [[sonar2]],
-			},
-			underattack = [[warning1]],
-		},
-		turnRate = 0,
-		unitname = [[corason]],
-		workerTime = 0,
-		yardMap = [[ooooooooo]],
-	},
+-- UNITDEF -- CORASON --
+--------------------------------------------------------------------------------
+
+local unitName = "corason"
+
+--------------------------------------------------------------------------------
+
+local unitDef = {
+  acceleration       = 0,
+  activateWhenBuilt  = true,
+  bmcode             = 0,
+  brakeRate          = 0,
+  buildAngle         = 8192,
+  buildCostEnergy    = 2257,
+  buildCostMetal     = 152,
+  builder            = false,
+  buildPic           = [[CORASON.png]],
+  buildTime          = 6096,
+  canAttack          = false,
+  category           = [[ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR]],
+  corpse             = [[DEAD]],
+  description        = [[Extended Sonar]],
+  energyMake         = 18,
+  energyStorage      = 0,
+  energyUse          = 18,
+  explodeAs          = [[SMALL_BUILDINGEX]],
+  footprintX         = 3,
+  footprintZ         = 3,
+  iconType           = [[building]],
+  idleAutoHeal       = 5,
+  idleTime           = 1800,
+  maxangledif1       = 1,
+  maxDamage          = 2140,
+  maxSlope           = 10,
+  maxVelocity        = 0,
+  metalStorage       = 0,
+  minWaterDepth      = 24,
+  name               = [[Advanced Sonar Station]],
+  noAutoFire         = false,
+  objectName         = [[CORASON]],
+  onoffable          = true,
+  seismicSignature   = 0,
+  selfDestructAs     = [[SMALL_BUILDING]],
+  side               = [[CORE]],
+  sightDistance      = 210,
+  smoothAnim         = true,
+  sonarDistance      = 2400,
+  turnRate           = 0,
+  unitname           = [[corason]],
+  workerTime         = 0,
+  yardMap            = [[ooooooooo]],
+  sounds = {
+    activate           = [[radar1]],
+    canceldestruct     = [[cancel2]],
+    deactivate         = [[sonarde2]],
+    underattack        = [[warning1]],
+    count = {
+      [[count6]],
+      [[count5]],
+      [[count4]],
+      [[count3]],
+      [[count2]],
+      [[count1]],
+    },
+    select = {
+      [[sonar2]],
+    },
+  },
 }
-Def.corason.featureDefs.DEAD.damage = 0.6000 * Def.corason.maxDamage
-Def.corason.featureDefs.DEAD.description = Def.corason.name .. [[ Wreckage]]
-Def.corason.featureDefs.DEAD.metal = 0.8000 * Def.corason.buildCostMetal
-return lowerkeys(Def)
+
+
+--------------------------------------------------------------------------------
+
+local featureDefs = {
+  DEAD = {
+    blocking           = false,
+    category           = [[corpses]],
+    damage             = unitDef.maxDamage*0.6,
+    description        = [[Advanced Sonar Station Wreckage]],
+    energy             = 0,
+    footprintX         = 3,
+    footprintZ         = 3,
+    height             = 20,
+    hitdensity         = 100,
+    metal              = unitDef.buildCostMetal*0.8,
+    object             = [[CORASON_DEAD]],
+    reclaimable        = true,
+    seqnamereclamate   = [[TREE1RECLAMATE]],
+    world              = [[All Worlds]],
+  },
+}
+unitDef.featureDefs = featureDefs
+
+
+--------------------------------------------------------------------------------
+
+return lowerkeys({ [unitName] = unitDef })
+
+--------------------------------------------------------------------------------
