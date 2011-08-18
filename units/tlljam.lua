@@ -1,106 +1,117 @@
-local Def = {
-	tlljam = {
-		activateWhenBuilt = true,
-		bmcode = 0,
-		buildAngle = 4899,
-		buildCostEnergy = 2341,
-		buildCostMetal = 152,
-		buildTime = 6555,
-		builder = false,
-		canAttack = false,
-		category = [[ALL NOTMOBILE NOTVTOL NOTSUB NOTWEAPON NOTDEFENSE NOTSUBNOTSHIP NOTHOVERNOTVTOL]],
-		copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
-		corpse = [[dead]],
-		description = [[Radar Jammer]],
-		designation = [[TL-JAM]],
-		energyStorage = 0,
-		energyUse = 60,
-		explodeAs = [[BIG_UNITEX]],
-		featureDefs = {
-			dead = {
-				blocking = true,
-				category = [[tll_corpses]],
-				damage = nil,
-				description = [[Wreckage]],
-				featureDead = [[heap]],
-				featurereclamate = [[smudge01]],
-				footprintX = 2,
-				footprintZ = 2,
-				height = 12,
-				hitdensity = 23,
-				metal = nil,
-				object = [[tlljam_dead]],
-				reclaimable = true,
-				seqnamereclamate = [[tree1reclamate]],
-				world = [[all]],
-			},
-			heap = {
-				blocking = false,
-				category = [[heaps]],
-				damage = nil,
-				description = [[Metal Shards]],
-				featurereclamate = [[smudge01]],
-				footprintX = 2,
-				footprintZ = 2,
-				hitdensity = 4,
-				metal = nil,
-				object = [[2x2a]],
-				reclaimable = true,
-				seqnamereclamate = [[tree1reclamate]],
-				world = [[all]],
-			},
+-- UNITDEF -- TLLJAM --
+--------------------------------------------------------------------------------
+
+local unitName = "tlljam"
+
+--------------------------------------------------------------------------------
+
+local unitDef = {
+	activateWhenBuilt = true,
+	bmcode = 0,
+	buildAngle = 4899,
+	buildCostEnergy = 2341,
+	buildCostMetal = 152,
+	builder = false,
+	buildTime = 6555,
+	canAttack = false,
+	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
+	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
+	corpse = [[dead]],
+	description = [[Radar Jammer]],
+	designation = [[TL-JAM]],
+	energyStorage = 0,
+	energyUse = 60,
+	explodeAs = [[BIG_UNITEX]],
+	footprintX = 2,
+	footprintZ = 2,
+	frenchdescription = [[Brouilleur de radar]],
+	frenchname = [[Brouilleur]],
+	germandescription = [[Radarstörer]],
+	germanname = [[Jammer]],
+	iconType = [[building]],
+	maxDamage = 782,
+	maxSlope = 12,
+	maxWaterDepth = 0,
+	metalStorage = 0,
+	name = [[Jammer]],
+	noAutoFire = false,
+	noChaseCategory = [[ALL]],
+	objectName = [[tlljam]],
+	onoffable = true,
+	radarDistanceJam = 562,
+	selfDestructAs = [[BIG_UNIT]],
+	side = [[TLL]],
+	sightDistance = 240,
+	threed = 1,
+	unitname = [[tlljam]],
+	unitnumber = 841,
+	version = 3.1,
+	workerTime = 0,
+	zbuffer = 1,
+	featureDefs = nil,
+	sounds = {
+		canceldestruct = [[cancel2]],
+		underattack = [[warning1]],
+		cant = {
+			[1] = [[cantdo4]],
 		},
-		footprintX = 2,
-		footprintZ = 2,
-		frenchdescription = [[Brouilleur de radar]],
-		frenchname = [[Brouilleur]],
-		germandescription = [[Radarstörer]],
-		germanname = [[Jammer]],
-		iconType = [[building]],
-		maxDamage = 782,
-		maxSlope = 12,
-		maxWaterDepth = 0,
-		metalStorage = 0,
-		name = [[Jammer]],
-		noAutoFire = false,
-		noChaseCategory = [[ALL]],
-		objectName = [[tlljam]],
-		onoffable = true,
-		radarDistanceJam = 562,
-		selfDestructAs = [[BIG_UNIT]],
-		side = [[TLL]],
-		sightDistance = 240,
-		sounds = {
-			canceldestruct = [[cancel2]],
-			cant = {
-				[1] = [[cantdo4]],
-			},
-			count = {
-				[1] = [[count6]],
-				[2] = [[count5]],
-				[3] = [[count4]],
-				[4] = [[count3]],
-				[5] = [[count2]],
-				[6] = [[count1]],
-			},
-			ok = {
-				[1] = [[kbarmmov]],
-			},
-			select = {
-				[1] = [[radjam1]],
-			},
-			underattack = [[warning1]],
+		count = {
+			[1] = [[count6]],
+			[2] = [[count5]],
+			[3] = [[count4]],
+			[4] = [[count3]],
+			[5] = [[count2]],
+			[6] = [[count1]],
 		},
-		threed = 1,
-		unitname = [[tlljam]],
-		unitnumber = 841,
-		version = 3.1,
-		workerTime = 0,
-		zbuffer = 1,
+		ok = {
+			[1] = [[kbarmmov]],
+		},
+		select = {
+			[1] = [[radjam1]],
+		},
 	},
 }
-Def.tlljam.featureDefs.dead.damage = 0.6000 * Def.tlljam.maxDamage
-Def.tlljam.featureDefs.dead.metal = 0.8000 * Def.tlljam.buildCostMetal
-Def.tlljam.featureDefs.heap.damage = 0.3600 * Def.tlljam.maxDamage
-Def.tlljam.featureDefs.heap.metal = 0.6400 * Def.tlljam.buildCostMetal
-return lowerkeys(Def)
+
+--------------------------------------------------------------------------------
+
+local featureDefs = {
+	dead = {
+		blocking = true,
+		category = [[tll_corpses]],
+		damage = 0.6000 * unitDef.maxDamage,
+		description = [[Wreckage]],
+		featureDead = [[heap]],
+		featurereclamate = [[smudge01]],
+		footprintX = 2,
+		footprintZ = 2,
+		height = 12,
+		hitdensity = 23,
+		metal = 0.8000 * unitDef.buildCostMetal,
+		object = [[tlljam_dead]],
+		reclaimable = true,
+		seqnamereclamate = [[tree1reclamate]],
+		world = [[all]],
+	},
+	heap = {
+		blocking = false,
+		category = [[heaps]],
+		damage = 0.3600 * unitDef.maxDamage,
+		description = [[Metal Shards]],
+		featurereclamate = [[smudge01]],
+		footprintX = 2,
+		footprintZ = 2,
+		hitdensity = 4,
+		metal = 0.6400 * unitDef.buildCostMetal,
+		object = [[2x2a]],
+		reclaimable = true,
+		seqnamereclamate = [[tree1reclamate]],
+		world = [[all]],
+	},
+}
+unitDef.featureDefs = featureDefs
+
+--------------------------------------------------------------------------------
+
+return lowerkeys({[unitName] = unitDef})
+
+--------------------------------------------------------------------------------

@@ -1,147 +1,163 @@
-local Def = {
-	armvulc1 = {
-		acceleration = 0,
-		antiweapons = 1,
-		badTargetCategory = [[MOBILE]],
-		bmcode = 0,
-		brakeRate = 0,
-		buildAngle = 29096,
-		buildCostEnergy = 1803644,
-		buildCostMetal = 273094,
-		buildPic = [[ARMVULC.png]],
-		buildTime = 2772961,
-		builder = false,
-		canAttack = true,
-		canstop = 1,
-		category = [[ALL NOTMOBILE NOTVTOL NOTSUB NOTDEFENSE NOTSUBNOTSHIP NOTHOVERNOTVTOL]],
-		corpse = [[DEAD]],
-		defaultmissiontype = [[GUARD_NOMOVE]],
-		description = [[T3 Rapid-Fire Long-Range Plasma Cannon]],
-		energyMake = 0,
-		energyStorage = 0,
-		energyUse = 0,
-		explodeAs = [[ATOMIC_BLAST]],
-		featureDefs = {
-			DEAD = {
-				blocking = true,
-				category = [[corpses]],
-				damage = nil,
-				description = nil,
-				energy = 0,
-				featurereclamate = [[SMUDGE01]],
-				footprintX = 14,
-				footprintZ = 14,
-				height = 20,
-				hitdensity = 100,
-				metal = nil,
-				object = [[ARMVULC1_DEAD]],
-				reclaimable = true,
-				seqnamereclamate = [[TREE1RECLAMATE]],
-				world = [[All Worlds]],
-			},
+-- UNITDEF -- ARMVULC1 --
+--------------------------------------------------------------------------------
+
+local unitName = "armvulc1"
+
+--------------------------------------------------------------------------------
+
+local unitDef = {
+	acceleration = 0,
+	antiweapons = 1,
+	bmcode = 0,
+	brakeRate = 0,
+	buildAngle = 29096,
+	buildCostEnergy = 1803644,
+	buildCostMetal = 273094,
+	builder = false,
+	buildPic = [[ARMVULC.png]],
+	buildTime = 2772961,
+	canAttack = true,
+	canstop = 1,
+	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
+	corpse = [[DEAD]],
+	defaultmissiontype = [[GUARD_NOMOVE]],
+	description = [[T3 Rapid-Fire Long-Range Plasma Cannon]],
+	energyMake = 0,
+	energyStorage = 0,
+	energyUse = 0,
+	explodeAs = [[ATOMIC_BLAST]],
+	firestandorders = 1,
+	footprintX = 16,
+	footprintZ = 16,
+	iconType = [[building]],
+	idleAutoHeal = 5,
+	idleTime = 1800,
+	maxDamage = 104440,
+	maxSlope = 13,
+	maxVelocity = 0,
+	maxWaterDepth = 0,
+	metalStorage = 0,
+	name = [[Super Vulcan]],
+	noChaseCategory = [[ALL]],
+	objectName = [[ARMVULC1]],
+	script = [[armvulc.cob]],
+	seismicSignature = 0,
+	selfDestructAs = [[ATOMIC_BLAST]],
+	side = [[ARM]],
+	sightDistance = 273,
+	smoothAnim = true,
+	standingfireorder = 1,
+	turnRate = 0,
+	unitname = [[armvulc1]],
+	workerTime = 0,
+	yardMap = [[oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo]],
+	featureDefs = nil,
+	sfxtypes = {
+		explosiongenerators = {
+			[1] = [[custom:vulcanflare]],
 		},
-		firestandorders = 1,
-		footprintX = 16,
-		footprintZ = 16,
-		iconType = [[building]],
-		idleAutoHeal = 5,
-		idleTime = 1800,
-		maxDamage = 104440,
-		maxSlope = 13,
-		maxVelocity = 0,
-		maxWaterDepth = 0,
-		metalStorage = 0,
-		name = [[Super Vulcan]],
-		noChaseCategory = [[ALL]],
-		objectName = [[ARMVULC1]],
-		script = [[armvulc.cob]],
-		seismicSignature = 0,
-		selfDestructAs = [[ATOMIC_BLAST]],
-		sfxtypes = {
-			explosiongenerators = {
-				[1] = [[custom:vulcanflare]],
-			},
+	},
+	sounds = {
+		canceldestruct = [[cancel2]],
+		underattack = [[warning1]],
+		cant = {
+			[1] = [[cantdo4]],
 		},
-		side = [[ARM]],
-		sightDistance = 273,
-		smoothAnim = true,
-		sounds = {
-			canceldestruct = [[cancel2]],
-			cant = {
-				[1] = [[cantdo4]],
-			},
-			count = {
-				[1] = [[count6]],
-				[2] = [[count5]],
-				[3] = [[count4]],
-				[4] = [[count3]],
-				[5] = [[count2]],
-				[6] = [[count1]],
-			},
-			ok = {
-				[1] = [[servlrg3]],
-			},
-			select = {
-				[1] = [[servlrg3]],
-			},
-			underattack = [[warning1]],
+		count = {
+			[1] = [[count6]],
+			[2] = [[count5]],
+			[3] = [[count4]],
+			[4] = [[count3]],
+			[5] = [[count2]],
+			[6] = [[count1]],
 		},
-		standingfireorder = 1,
-		turnRate = 0,
-		unitname = [[armvulc1]],
-		weaponDefs = {
-			ARMVULC_WEAPON1 = {
-				accuracy = 400,
-				areaOfEffect = 224,
-				ballistic = true,
-				collideFriendly = false,
-				color = 2,
-				craterBoost = 0.65,
-				craterMult = 0.65,
-				damage = {
-					blackhydra = 2500,
-					default = 6100,
-					flakboats = 2500,
-					jammerboats = 2500,
-					l1subs = 5,
-					l2subs = 5,
-					l3subs = 5,
-					otherboats = 2500,
-					seadragon = 2500,
-				},
-				edgeEffectiveness = 0.75,
-				energypershot = 61000,
-				explosionGenerator = [[custom:FLASHBIGBUILDING]],
-				gravityaffected = [[true]],
-				impulseBoost = 0.5,
-				impulseFactor = 0.5,
-				name = [[RapidfireLRPC]],
-				noSelfDamage = true,
-				randomdecay = 11,
-				range = 9800,
-				reloadtime = 0.5,
-				renderType = 4,
-				soundHit = [[rflrpc3]],
-				soundStart = [[XPLONUK4]],
-				startsmoke = 1,
-				turret = true,
-				weaponTimer = 14,
-				weaponType = [[Cannon]],
-				weaponVelocity = 1350,
-			},
+		ok = {
+			[1] = [[servlrg3]],
 		},
-		weapons = {
-			[1] = {
-				badTargetCategory = [[MOBILE]],
-				def = [[ARMVULC_WEAPON1]],
-				onlyTargetCategory = [[NOTAIR]],
-			},
+		select = {
+			[1] = [[servlrg3]],
 		},
-		workerTime = 0,
-		yardMap = [[oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo]],
+	},
+	weaponDefs = nil,
+	weapons = {
+		[1] = {
+			def = [[ARMVULC_WEAPON1]],
+			onlyTargetCategory = [[NOTVTOL]],
+		},
 	},
 }
-Def.armvulc1.featureDefs.DEAD.damage = 0.6000 * Def.armvulc1.maxDamage
-Def.armvulc1.featureDefs.DEAD.description = Def.armvulc1.name .. [[ Wreckage]]
-Def.armvulc1.featureDefs.DEAD.metal = 0.8000 * Def.armvulc1.buildCostMetal
-return lowerkeys(Def)
+
+--------------------------------------------------------------------------------
+
+local weaponDefs = {
+	ARMVULC_WEAPON1 = {
+		accuracy = 400,
+		areaOfEffect = 224,
+		ballistic = true,
+		collideFriendly = false,
+		color = 2,
+		craterBoost = 0.65,
+		craterMult = 0.65,
+		edgeEffectiveness = 0.75,
+		energypershot = 61000,
+		explosionGenerator = [[custom:FLASHBIGBUILDING]],
+		gravityaffected = [[true]],
+		impulseBoost = 0.5,
+		impulseFactor = 0.5,
+		name = [[RapidfireLRPC]],
+		noSelfDamage = true,
+		randomdecay = 11,
+		range = 9800,
+		reloadtime = 0.5,
+		renderType = 4,
+		soundHit = [[rflrpc3]],
+		soundStart = [[XPLONUK4]],
+		startsmoke = 1,
+		turret = true,
+		weaponTimer = 14,
+		weaponType = [[Cannon]],
+		weaponVelocity = 1350,
+		damage = {
+			blackhydra = 2500,
+			default = 6100,
+			flakboats = 2500,
+			jammerboats = 2500,
+			l1subs = 5,
+			l2subs = 5,
+			l3subs = 5,
+			otherboats = 2500,
+			seadragon = 2500,
+		},
+	},
+}
+unitDef.weaponDefs = weaponDefs
+
+
+--------------------------------------------------------------------------------
+
+local featureDefs = {
+	DEAD = {
+		blocking = true,
+		category = [[corpses]],
+		damage = 0.6000 * unitDef.maxDamage,
+		description = unitDef.name .. [[ Wreckage]],
+		energy = 0,
+		featurereclamate = [[SMUDGE01]],
+		footprintX = 14,
+		footprintZ = 14,
+		height = 20,
+		hitdensity = 100,
+		metal = 0.8000 * unitDef.buildCostMetal,
+		object = [[ARMVULC1_DEAD]],
+		reclaimable = true,
+		seqnamereclamate = [[TREE1RECLAMATE]],
+		world = [[All Worlds]],
+	},
+}
+unitDef.featureDefs = featureDefs
+
+--------------------------------------------------------------------------------
+
+return lowerkeys({[unitName] = unitDef})
+
+--------------------------------------------------------------------------------
