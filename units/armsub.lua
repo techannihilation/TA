@@ -8,7 +8,6 @@ local unitName = "armsub"
 local unitDef = {
 	acceleration = 0.018,
 	activateWhenBuilt = true,
-	badTargetCategory = [[HOVER NOTSHIP]],
 	bmcode = 1,
 	brakeRate = 0.225,
 	buildCostEnergy = 3724,

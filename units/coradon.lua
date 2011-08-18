@@ -7,7 +7,6 @@ local unitName = "coradon"
 
 local unitDef = {
 	acceleration = 0.09,
-	badTargetCategory = [[NOWEAPON]],
 	bmcode = 1,
 	brakeRate = 0.045,
 	buildCostEnergy = 32000,

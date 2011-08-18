@@ -7,7 +7,6 @@ local unitName = "armarty"
 
 local unitDef = {
 	acceleration = 0.016,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.01,
 	buildCostEnergy = 2546,

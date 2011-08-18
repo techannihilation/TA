@@ -7,7 +7,6 @@ local unitName = "clb"
 
 local unitDef = {
 	acceleration = 0.036,
-	badTargetCategory = [[NOTAIR]],
 	bmcode = 1,
 	brakeRate = 0.05,
 	buildCostEnergy = 92460,

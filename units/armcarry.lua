@@ -9,7 +9,6 @@ local unitDef = {
 	acceleration = 0.026,
 	activateWhenBuilt = true,
 	antiweapons = 1,
-	badTargetCategory = [[NOTAIR]],
 	bmcode = 1,
 	brakeRate = 0.024,
 	buildAngle = 16384,

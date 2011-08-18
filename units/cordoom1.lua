@@ -8,7 +8,6 @@ local unitName = "cordoom1"
 local unitDef = {
 	acceleration = 0,
 	activateWhenBuilt = true,
-	badTargetCategory = [[ANTILASER]],
 	bmcode = 0,
 	brakeRate = 0,
 	buildAngle = 4096,

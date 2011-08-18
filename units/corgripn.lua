@@ -8,7 +8,6 @@ local unitName = "corgripn"
 local unitDef = {
 	acceleration = 0.48,
 	attackrunlength = 180,
-	badTargetCategory = [[NOWEAPON]],
 	bankscale = 1,
 	bmcode = 1,
 	brakeRate = 2.5,

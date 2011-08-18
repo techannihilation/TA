@@ -7,7 +7,6 @@ local unitName = "tllariman"
 
 local unitDef = {
 	acceleration = 0.025,
-	badTargetCategory = [[NOWEAPON]],
 	bmcode = 1,
 	brakeRate = 0.01,
 	buildCostEnergy = 1106,

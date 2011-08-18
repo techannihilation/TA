@@ -7,7 +7,6 @@ local unitName = "cormist"
 
 local unitDef = {
 	acceleration = 0.0352,
-	badTargetCategory = [[ALL]],
 	bmcode = 1,
 	brakeRate = 0.0165,
 	buildCostEnergy = 2177,

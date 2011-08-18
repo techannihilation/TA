@@ -8,7 +8,6 @@ local unitName = "armcroc"
 local unitDef = {
 	acceleration = 0.0528,
 	amphibious = 1,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.0209,
 	buildCostEnergy = 11512,

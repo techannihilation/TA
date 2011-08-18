@@ -7,7 +7,6 @@ local unitName = "armraptor"
 
 local unitDef = {
 	acceleration = 0.21,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.21,
 	buildCostEnergy = 364500,
@@ -68,7 +67,6 @@ local unitDef = {
 	upright = true,
 	version = 1.2,
 	workerTime = 0,
-	wter_badtargetcategory = [[ALL]],
 	zbuffer = 1,
 	featureDefs = nil,
 	weaponDefs = nil,

@@ -7,7 +7,6 @@ local unitName = "armfig"
 
 local unitDef = {
 	acceleration = 2.5,
-	badTargetCategory = [[NOTAIR]],
 	bankscale = 1,
 	bmcode = 1,
 	brakeRate = 7.5,

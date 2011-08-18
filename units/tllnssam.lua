@@ -7,7 +7,6 @@ local unitName = "tllnssam"
 
 local unitDef = {
 	activateWhenBuilt = true,
-	badTargetCategory = [[NOTAIR]],
 	bmcode = 0,
 	buildAngle = 8192,
 	buildCostEnergy = 824,

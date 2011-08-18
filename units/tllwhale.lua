@@ -7,7 +7,6 @@ local unitName = "tllwhale"
 
 local unitDef = {
 	acceleration = 0.02,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.01,
 	buildCostEnergy = 24574,

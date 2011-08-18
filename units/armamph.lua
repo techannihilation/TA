@@ -7,7 +7,6 @@ local unitName = "armamph"
 
 local unitDef = {
 	acceleration = 0.12,
-	badTargetCategory = [[ANTILASER]],
 	bmcode = 1,
 	brakeRate = 0.188,
 	buildCostEnergy = 2468,

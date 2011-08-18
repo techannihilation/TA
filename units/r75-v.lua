@@ -8,7 +8,6 @@ local unitName = "r75-v"
 local unitDef = {
 	acceleration = 0.1,
 	activateWhenBuilt = true,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.05,
 	buildCostEnergy = 1350,

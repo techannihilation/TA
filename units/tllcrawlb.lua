@@ -7,7 +7,6 @@ local unitName = "tllcrawlb"
 
 local unitDef = {
 	acceleration = 0.3,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.12,
 	buildCostEnergy = 1741,
@@ -66,7 +65,6 @@ local unitDef = {
 	unitnumber = 927,
 	version = 3.1,
 	workerTime = 0,
-	wpri_badtargetcategory = [[VTOL]],
 	zbuffer = 1,
 	sounds = {
 		canceldestruct = [[cancel2]],

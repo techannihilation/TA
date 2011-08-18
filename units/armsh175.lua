@@ -8,7 +8,6 @@ local unitName = "armsh175"
 local unitDef = {
 	acceleration = 0.4,
 	activateWhenBuilt = true,
-	badTargetCategory = [[VTOL]],
 	bankscale = 1,
 	bmcode = 1,
 	brakeRate = 3,
@@ -53,7 +52,6 @@ local unitDef = {
 	noAutoFire = false,
 	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMSH175]],
-	onlytargetcategory1 = [[NOTAIR]],
 	radarDistance = 1850,
 	selfDestructAs = [[SMALL_UNIT]],
 	shootme = 1,
@@ -69,7 +67,6 @@ local unitDef = {
 	unitnumber = 75654,
 	version = 3,
 	workerTime = 0,
-	wpri_badtargetcategory = [[VTOL]],
 	zbuffer = 1,
 }
 --------------------------------------------------------------------------------

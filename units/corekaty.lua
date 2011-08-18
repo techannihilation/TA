@@ -7,7 +7,6 @@ local unitName = "corekaty"
 
 local unitDef = {
 	acceleration = 0.027,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.012,
 	buildCostEnergy = 7447,

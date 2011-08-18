@@ -62,7 +62,6 @@ local unitDef = {
 	unitname = [[cortyrnt]],
 	unitnumber = 27174,
 	waterline = 6,
-	weapon4_badtargetcategory = [[ANTILASER]],
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],

@@ -6,7 +6,6 @@ local unitName = "tawf010"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	badTargetCategory = [[VTOL]],
 	bmcode = 0,
 	buildAngle = 8192,
 	buildCostEnergy = 42468,

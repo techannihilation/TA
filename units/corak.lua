@@ -7,7 +7,6 @@ local unitName = "corak"
 
 local unitDef = {
 	acceleration = 0.384,
-	badTargetCategory = [[ANTIGATOR]],
 	bmcode = 1,
 	brakeRate = 0.25,
 	buildCostEnergy = 826,

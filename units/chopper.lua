@@ -67,7 +67,6 @@ local unitDef = {
 	unitnumber = 702,
 	version = 1,
 	workerTime = 0,
-	wter_badtargetcategory = [[VTOL]],
 	zbuffer = 1,
 	sounds = {
 		canceldestruct = [[cancel2]],

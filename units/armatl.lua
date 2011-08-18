@@ -8,7 +8,6 @@ local unitName = "armatl"
 local unitDef = {
 	acceleration = 0,
 	activateWhenBuilt = true,
-	badTargetCategory = [[HOVER NOTSHIP]],
 	bmcode = 0,
 	brakeRate = 0,
 	buildAngle = 16384,

@@ -8,7 +8,6 @@ local unitName = "corsjam"
 local unitDef = {
 	acceleration = 0.096,
 	activateWhenBuilt = true,
-	badTargetCategory = [[MOBILE]],
 	bmcode = 1,
 	brakeRate = 0.022,
 	buildCostEnergy = 2254,

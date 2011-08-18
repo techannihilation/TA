@@ -7,7 +7,6 @@ local unitName = "tllconvincer"
 
 local unitDef = {
 	acceleration = 0.016,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.03,
 	buildCostEnergy = 1887,

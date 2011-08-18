@@ -10,7 +10,6 @@ local unitDef = {
 	activateWhenBuilt = true,
 	ai_limit = [[limit corGFBT 12]],
 	ai_weight = [[weight corGFBT 1.6]],
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.02,
 	buildCostEnergy = 9982,

@@ -50,7 +50,6 @@ local unitDef = {
 	name = [[War Machine]],
 	noAutoFire = false,
 	noChaseCategory = [[SUB VTOL]],
-	nochasecategory1 = [[VTOL]],
 	objectName = [[CORMachn]],
 	ovradjust = 1,
 	radarDistance = 0,

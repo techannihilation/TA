@@ -7,7 +7,6 @@ local unitName = "tllfirestarter"
 
 local unitDef = {
 	acceleration = 0.11,
-	badTargetCategory = [[NOWEAPON]],
 	bmcode = 1,
 	brakeRate = 0.15,
 	buildCostEnergy = 759,

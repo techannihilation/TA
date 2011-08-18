@@ -7,7 +7,6 @@ local unitName = "armpw1"
 
 local unitDef = {
 	acceleration = 0.36,
-	badTargetCategory = [[ANTIEMG]],
 	bmcode = 1,
 	brakeRate = 0.2,
 	buildCostEnergy = 897,

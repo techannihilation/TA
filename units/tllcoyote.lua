@@ -7,7 +7,6 @@ local unitName = "tllcoyote"
 
 local unitDef = {
 	acceleration = 0.055,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.01203,
 	buildCostEnergy = 2150,

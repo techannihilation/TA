@@ -7,7 +7,6 @@ local unitName = "corraid1"
 
 local unitDef = {
 	acceleration = 0.0243,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.0254,
 	buildCostEnergy = 2799,

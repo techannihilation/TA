@@ -8,7 +8,6 @@ local unitName = "coreter"
 local unitDef = {
 	acceleration = 0.0407,
 	activateWhenBuilt = true,
-	badTargetCategory = [[MOBILE]],
 	bmcode = 1,
 	brakeRate = 0.0198,
 	buildCostEnergy = 1757,

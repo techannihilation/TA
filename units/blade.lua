@@ -7,7 +7,6 @@ local unitName = "blade"
 
 local unitDef = {
 	acceleration = 0.6,
-	badTargetCategory = [[VTOL]],
 	bankscale = 1,
 	bmcode = 1,
 	brakeRate = 3.5,

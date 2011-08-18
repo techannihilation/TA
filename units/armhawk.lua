@@ -7,7 +7,6 @@ local unitName = "armhawk"
 
 local unitDef = {
 	acceleration = 0.48,
-	badTargetCategory = [[NOTAIR]],
 	bankscale = 1,
 	bmcode = 1,
 	brakeRate = 11.25,

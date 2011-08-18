@@ -7,7 +7,6 @@ local unitName = "armdfly"
 
 local unitDef = {
 	acceleration = 0.2,
-	badTargetCategory = [[VTOL]],
 	bankscale = 1,
 	bmcode = 1,
 	brakeRate = 6.25,

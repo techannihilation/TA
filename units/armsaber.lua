@@ -8,7 +8,6 @@ local unitName = "armsaber"
 local unitDef = {
 	acceleration = 0.288,
 	amphibious = 1,
-	badTargetCategory = [[ANTILASER]],
 	bankscale = 1,
 	bmcode = 1,
 	brakeRate = 4.613,

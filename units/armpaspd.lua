@@ -9,7 +9,6 @@ local unitDef = {
 	acceleration = 0.1487,
 	ai_limit = [[limit ARMPASPD 2]],
 	ai_weight = [[weight ARMPASPD 0]],
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.15,
 	buildCostEnergy = 7075,

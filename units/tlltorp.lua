@@ -7,7 +7,6 @@ local unitName = "tlltorp"
 
 local unitDef = {
 	activateWhenBuilt = true,
-	badTargetCategory = [[NOTSUB]],
 	bmcode = 0,
 	buildAngle = 16384,
 	buildCostEnergy = 1988,

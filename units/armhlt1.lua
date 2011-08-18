@@ -7,7 +7,6 @@ local unitName = "armhlt1"
 
 local unitDef = {
 	acceleration = 0,
-	badTargetCategory = [[ANTILASER]],
 	bmcode = 0,
 	brakeRate = 0,
 	buildAngle = 8192,

@@ -7,7 +7,6 @@ local unitName = "corgarp"
 
 local unitDef = {
 	acceleration = 0.011,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.011,
 	buildCostEnergy = 2441,

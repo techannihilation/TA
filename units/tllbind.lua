@@ -7,7 +7,6 @@ local unitName = "tllbind"
 
 local unitDef = {
 	acceleration = 0.09,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.183105469,
 	buildCostEnergy = 12400,

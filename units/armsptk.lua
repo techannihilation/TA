@@ -7,7 +7,6 @@ local unitName = "armsptk"
 
 local unitDef = {
 	acceleration = 0.18,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.188,
 	buildCostEnergy = 4200,

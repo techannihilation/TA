@@ -8,7 +8,6 @@ local unitName = "armamspd"
 local unitDef = {
 	acceleration = 0.165,
 	amphibious = 1,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.165,
 	buildCostEnergy = 2645,

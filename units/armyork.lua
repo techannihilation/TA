@@ -7,7 +7,6 @@ local unitName = "armyork"
 
 local unitDef = {
 	acceleration = 0.0396,
-	badTargetCategory = [[ALL]],
 	bmcode = 1,
 	brakeRate = 0.1265,
 	buildCostEnergy = 8510,

@@ -8,7 +8,6 @@ local unitName = "corcrw"
 local unitDef = {
 	acceleration = 0.154,
 	activateWhenBuilt = true,
-	badTargetCategory = [[VTOL]],
 	bankscale = 0.5,
 	bmcode = 1,
 	brakeRate = 3.75,

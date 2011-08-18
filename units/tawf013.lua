@@ -7,7 +7,6 @@ local unitName = "tawf013"
 
 local unitDef = {
 	acceleration = 0.0154,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.0154,
 	buildCostEnergy = 2016,

@@ -7,7 +7,6 @@ local unitName = "cormddm"
 
 local unitDef = {
 	acceleration = 0.006,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.04,
 	buildCostEnergy = 16000,

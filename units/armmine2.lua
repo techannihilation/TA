@@ -8,7 +8,6 @@ local unitName = "armmine2"
 local unitDef = {
 	acceleration = 0,
 	activateWhenBuilt = false,
-	badTargetCategory = [[VTOL]],
 	bmcode = 0,
 	brakeRate = 0,
 	buildCostEnergy = 1000,

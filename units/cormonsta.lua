@@ -7,7 +7,6 @@ local unitName = "cormonsta"
 
 local unitDef = {
 	acceleration = 0.652587891,
-	badTargetCategory = [[NOTAIR]],
 	bmcode = 1,
 	brakeRate = 0.352587891,
 	buildCostEnergy = 27415,

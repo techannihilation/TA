@@ -7,7 +7,6 @@ local unitName = "madsam"
 
 local unitDef = {
 	acceleration = 0,
-	badTargetCategory = [[NOTAIR VTOL]],
 	bmcode = 0,
 	brakeRate = 0,
 	buildAngle = 8192,
@@ -49,7 +48,6 @@ local unitDef = {
 	turnRate = 0,
 	unitname = [[madsam]],
 	workerTime = 0,
-	wpri_targetcategory = [[VTOL1]],
 	yardMap = [[ooooooooo]],
 	featureDefs = nil,
 	sounds = {

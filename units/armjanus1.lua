@@ -7,7 +7,6 @@ local unitName = "armjanus1"
 
 local unitDef = {
 	acceleration = 0.0198,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.055,
 	buildCostEnergy = 3261,

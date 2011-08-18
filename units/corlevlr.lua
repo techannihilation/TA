@@ -7,7 +7,6 @@ local unitName = "corlevlr"
 
 local unitDef = {
 	acceleration = 0.0364,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.3618,
 	buildCostEnergy = 2387,

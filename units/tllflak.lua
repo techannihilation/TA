@@ -6,7 +6,6 @@ local unitName = "tllflak"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	badTargetCategory = [[NOWEAPON]],
 	bmcode = 0,
 	buildAngle = 8192,
 	buildCostEnergy = 8425,

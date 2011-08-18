@@ -7,7 +7,6 @@ local unitName = "corsh"
 
 local unitDef = {
 	acceleration = 0.12,
-	badTargetCategory = [[ANTIGATOR]],
 	bmcode = 1,
 	brakeRate = 0.112,
 	buildCostEnergy = 1439,

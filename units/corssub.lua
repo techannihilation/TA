@@ -8,7 +8,6 @@ local unitName = "corssub"
 local unitDef = {
 	acceleration = 0.028,
 	activateWhenBuilt = true,
-	badTargetCategory = [[HOVER NOTSHIP]],
 	bmcode = 1,
 	brakeRate = 0.188,
 	buildCostEnergy = 11940,

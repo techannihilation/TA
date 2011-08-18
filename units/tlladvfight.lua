@@ -7,7 +7,6 @@ local unitName = "tlladvfight"
 
 local unitDef = {
 	acceleration = 0.6,
-	badTargetCategory = [[NOTAIR]],
 	bankscale = 1,
 	bmcode = 1,
 	brakeRate = 9,

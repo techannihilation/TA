@@ -7,7 +7,6 @@ local unitName = "corthovr"
 
 local unitDef = {
 	acceleration = 0.036,
-	badTargetCategory = [[ANTILASER]],
 	bmcode = 1,
 	brakeRate = 0.062,
 	buildAngle = 16384,

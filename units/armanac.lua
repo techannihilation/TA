@@ -7,7 +7,6 @@ local unitName = "armanac"
 
 local unitDef = {
 	acceleration = 0.084,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.112,
 	buildCostEnergy = 2444,

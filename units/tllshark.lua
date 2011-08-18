@@ -7,7 +7,6 @@ local unitName = "tllshark"
 
 local unitDef = {
 	acceleration = 0.02,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.1,
 	buildCostEnergy = 5643,
@@ -66,7 +65,6 @@ local unitDef = {
 	version = 3.1,
 	waterline = 30,
 	workerTime = 0,
-	wpri_badtargetcategory = [[VTOL]],
 	zbuffer = 1,
 	sounds = {
 		canceldestruct = [[cancel2]],

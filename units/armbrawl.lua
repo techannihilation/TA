@@ -7,7 +7,6 @@ local unitName = "armbrawl"
 
 local unitDef = {
 	acceleration = 0.24,
-	badTargetCategory = [[ANTIEMG]],
 	bankscale = 1,
 	bmcode = 1,
 	brakeRate = 4.41,

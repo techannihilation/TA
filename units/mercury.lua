@@ -7,7 +7,6 @@ local unitName = "mercury"
 
 local unitDef = {
 	acceleration = 0,
-	badTargetCategory = [[NOTAIR]],
 	bmcode = 0,
 	brakeRate = 0,
 	buildCostEnergy = 46860,

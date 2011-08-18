@@ -8,7 +8,6 @@ local unitName = "monkeylord"
 local unitDef = {
 	acceleration = 0.12,
 	activateWhenBuilt = true,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.99,
 	buildCostEnergy = 230039,

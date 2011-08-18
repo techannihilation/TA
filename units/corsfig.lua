@@ -8,7 +8,6 @@ local unitName = "corsfig"
 local unitDef = {
 	acceleration = 0.456,
 	amphibious = 1,
-	badTargetCategory = [[NOTAIR]],
 	bmcode = 1,
 	brakeRate = 7.5,
 	buildCostEnergy = 3558,

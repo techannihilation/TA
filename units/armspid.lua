@@ -7,7 +7,6 @@ local unitName = "armspid"
 
 local unitDef = {
 	acceleration = 0.18,
-	badTargetCategory = [[ALL]],
 	bmcode = 1,
 	brakeRate = 0.188,
 	buildCostEnergy = 3170,

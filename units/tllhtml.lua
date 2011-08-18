@@ -7,7 +7,6 @@ local unitName = "tllhtml"
 
 local unitDef = {
 	acceleration = 0.22,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.027,
 	buildCostEnergy = 27446,

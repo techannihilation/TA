@@ -7,7 +7,6 @@ local unitName = "tllsalamander"
 
 local unitDef = {
 	acceleration = 0.02,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.0085,
 	buildCostEnergy = 1425,

@@ -7,7 +7,6 @@ local unitName = "dao"
 
 local unitDef = {
 	acceleration = 0.031,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.007629395,
 	buildCostEnergy = 2848,

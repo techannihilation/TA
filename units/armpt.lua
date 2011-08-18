@@ -7,7 +7,6 @@ local unitName = "armpt"
 
 local unitDef = {
 	acceleration = 0.096,
-	badTargetCategory = [[ANTIGATOR]],
 	bmcode = 1,
 	brakeRate = 0.025,
 	buildCostEnergy = 985,

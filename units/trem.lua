@@ -7,7 +7,6 @@ local unitName = "trem"
 
 local unitDef = {
 	acceleration = 0.0528,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.11,
 	buildCostEnergy = 45350,

@@ -7,7 +7,6 @@ local unitName = "corparrow"
 
 local unitDef = {
 	acceleration = 0.015,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.0715,
 	buildCostEnergy = 26854,

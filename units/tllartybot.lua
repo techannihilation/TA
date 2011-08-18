@@ -7,7 +7,6 @@ local unitName = "tllartybot"
 
 local unitDef = {
 	acceleration = 0.4,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.18,
 	buildCostEnergy = 2161,

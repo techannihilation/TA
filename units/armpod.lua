@@ -7,7 +7,6 @@ local unitName = "armpod"
 
 local unitDef = {
 	acceleration = 0.152587891,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.152587891,
 	buildCostEnergy = 32425,

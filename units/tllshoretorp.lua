@@ -6,7 +6,6 @@ local unitName = "tllshoretorp"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	badTargetCategory = [[VTOL]],
 	bmcode = 0,
 	buildAngle = 32768,
 	buildCostEnergy = 5724,

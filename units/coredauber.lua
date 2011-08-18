@@ -7,7 +7,6 @@ local unitName = "coredauber"
 
 local unitDef = {
 	acceleration = 0.11,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.183105469,
 	buildCostEnergy = 4265,

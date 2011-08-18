@@ -8,7 +8,6 @@ local unitName = "armvader"
 local unitDef = {
 	acceleration = 0.132,
 	activateWhenBuilt = true,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.162,
 	buildCostEnergy = 5473,

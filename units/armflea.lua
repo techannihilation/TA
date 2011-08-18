@@ -7,7 +7,6 @@ local unitName = "armflea"
 
 local unitDef = {
 	acceleration = 0.5,
-	badTargetCategory = [[ANTIGATOR]],
 	bmcode = 1,
 	brakeRate = 0.5,
 	buildCostEnergy = 322,

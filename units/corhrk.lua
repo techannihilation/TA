@@ -7,7 +7,6 @@ local unitName = "corhrk"
 
 local unitDef = {
 	acceleration = 0.11,
-	badTargetCategory = [[MOBILE]],
 	bmcode = 1,
 	brakeRate = 0.188,
 	buildCostEnergy = 5507,

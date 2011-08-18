@@ -8,7 +8,6 @@ local unitName = "corexp"
 local unitDef = {
 	acceleration = 0,
 	activateWhenBuilt = true,
-	badTargetCategory = [[ANTILASER]],
 	bmcode = 0,
 	brakeRate = 0,
 	buildAngle = 32768,

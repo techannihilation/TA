@@ -7,7 +7,6 @@ local unitName = "armsh"
 
 local unitDef = {
 	acceleration = 0.132,
-	badTargetCategory = [[ANTIGATOR]],
 	bmcode = 1,
 	brakeRate = 0.112,
 	buildCostEnergy = 1344,

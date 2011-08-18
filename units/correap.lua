@@ -7,7 +7,6 @@ local unitName = "correap"
 
 local unitDef = {
 	acceleration = 0.044,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.066,
 	buildCostEnergy = 11348,

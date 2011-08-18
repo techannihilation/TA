@@ -7,7 +7,6 @@ local unitName = "commando"
 
 local unitDef = {
 	acceleration = 0.1,
-	badTargetCategory = [[VTOL]],
 	brakeRate = 0.15,
 	buildCostEnergy = 11040,
 	buildCostMetal = 618,

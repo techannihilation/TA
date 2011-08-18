@@ -7,7 +7,6 @@ local unitName = "tllfight"
 
 local unitDef = {
 	acceleration = 0.45,
-	badTargetCategory = [[NOTAIR]],
 	bankscale = 1,
 	bmcode = 1,
 	brakeRate = 4,

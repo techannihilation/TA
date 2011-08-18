@@ -7,7 +7,6 @@ local unitName = "armpers"
 
 local unitDef = {
 	acceleration = 0.23,
-	badTargetCategory = [[VTOL]],
 	bankscale = 1,
 	bmcode = 1,
 	brakeRate = 2,

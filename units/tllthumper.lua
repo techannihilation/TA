@@ -7,7 +7,6 @@ local unitName = "tllthumper"
 
 local unitDef = {
 	acceleration = 0.03,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.02,
 	buildCostEnergy = 5720,

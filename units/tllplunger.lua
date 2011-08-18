@@ -8,7 +8,6 @@ local unitName = "tllplunger"
 local unitDef = {
 	acceleration = 0.02,
 	activateWhenBuilt = true,
-	badTargetCategory = [[NOWEAPON]],
 	bmcode = 1,
 	brakeRate = 0.15,
 	buildCostEnergy = 2041,

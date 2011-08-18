@@ -7,7 +7,6 @@ local unitName = "devastator"
 
 local unitDef = {
 	acceleration = 0.11,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.07,
 	buildCostEnergy = 11596,

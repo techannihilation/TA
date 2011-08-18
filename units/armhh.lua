@@ -7,7 +7,6 @@ local unitName = "armhh"
 
 local unitDef = {
 	acceleration = 1,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.3,
 	buildCostEnergy = 13655,

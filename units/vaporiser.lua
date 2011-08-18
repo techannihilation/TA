@@ -7,7 +7,6 @@ local unitName = "vaporiser"
 
 local unitDef = {
 	acceleration = 0.06,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.01379,
 	buildCostEnergy = 8435,

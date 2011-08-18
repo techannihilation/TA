@@ -7,7 +7,6 @@ local unitName = "tllhplasma"
 
 local unitDef = {
 	acceleration = 0.075,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.1,
 	buildCostEnergy = 5150,

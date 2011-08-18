@@ -7,7 +7,6 @@ local unitName = "armfast"
 
 local unitDef = {
 	acceleration = 0.36,
-	badTargetCategory = [[ANTIEMG]],
 	bmcode = 1,
 	brakeRate = 0.375,
 	buildCostEnergy = 4382,

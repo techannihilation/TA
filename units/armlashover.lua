@@ -9,7 +9,6 @@ local unitDef = {
 	acceleration = 0.15,
 	ai_limit = [[limit ARMLASHOVER 8]],
 	ai_weight = [[weight ARMLASHOVER 2]],
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.08,
 	buildCostEnergy = 3550,

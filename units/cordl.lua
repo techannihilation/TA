@@ -8,7 +8,6 @@ local unitName = "cordl"
 local unitDef = {
 	acceleration = 0,
 	activateWhenBuilt = true,
-	badTargetCategory = [[NOTSUB]],
 	bmcode = 0,
 	brakeRate = 0,
 	buildAngle = 16384,

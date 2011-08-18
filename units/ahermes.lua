@@ -9,7 +9,6 @@ local unitDef = {
 	acceleration = 0.03,
 	ai_limit = [[limit ahermes 10]],
 	ai_weight = [[weight ahermes 0.3]],
-	badTargetCategory = [[NOTAIR]],
 	bmcode = 1,
 	brakeRate = 0.012,
 	buildCostEnergy = 1710,

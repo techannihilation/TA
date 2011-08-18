@@ -7,7 +7,6 @@ local unitName = "cormart"
 
 local unitDef = {
 	acceleration = 0.0204,
-	badTargetCategory = [[NOTLAND]],
 	bmcode = 1,
 	brakeRate = 0.1232,
 	buildCostEnergy = 5505,

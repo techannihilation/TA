@@ -7,7 +7,6 @@ local unitName = "armiguana"
 
 local unitDef = {
 	acceleration = 0.04,
-	badTargetCategory = [[NOTAIR]],
 	bmcode = 1,
 	brakeRate = 0.1,
 	buildCostEnergy = 14007,

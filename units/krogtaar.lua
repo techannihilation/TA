@@ -7,7 +7,6 @@ local unitName = "krogtaar"
 
 local unitDef = {
 	acceleration = 0.144,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.238,
 	buildCostEnergy = 50499,

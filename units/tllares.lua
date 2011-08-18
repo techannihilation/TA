@@ -7,7 +7,6 @@ local unitName = "tllares"
 
 local unitDef = {
 	acceleration = 0.05,
-	badTargetCategory = [[NOWEAPON]],
 	bmcode = 1,
 	brakeRate = 0.02,
 	buildCostEnergy = 221,

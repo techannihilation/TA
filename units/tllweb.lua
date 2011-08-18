@@ -6,7 +6,6 @@ local unitName = "tllweb"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	badTargetCategory = [[NOWEAPON]],
 	bmcode = 0,
 	buildAngle = 4768,
 	buildCostEnergy = 2533,

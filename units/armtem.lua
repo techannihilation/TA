@@ -7,7 +7,6 @@ local unitName = "armtem"
 
 local unitDef = {
 	acceleration = 0.035,
-	badTargetCategory = [[NOWEAPON]],
 	bmcode = 1,
 	brakeRate = 0.05,
 	buildCostEnergy = 27500,

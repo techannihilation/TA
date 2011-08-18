@@ -7,7 +7,6 @@ local unitName = "airwolf3g"
 
 local unitDef = {
 	acceleration = 3.345,
-	badTargetCategory = [[NOTAIR]],
 	bankscale = 1,
 	bmcode = 1,
 	brakeRate = 7,
@@ -65,7 +64,6 @@ local unitDef = {
 	unitnumber = 10148,
 	unitRestricted = 150,
 	version = 3,
-	wter_badtargetcategory = [[NOTAIR]],
 	zbuffer = 1,
 	sounds = {
 		canceldestruct = [[cancel2]],

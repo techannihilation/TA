@@ -7,7 +7,6 @@ local unitName = "armarch"
 
 local unitDef = {
 	activateWhenBuilt = true,
-	badTargetCategory = [[VTOL]],
 	bmcode = 0,
 	buildAngle = 65536,
 	buildCostEnergy = 132143,

@@ -7,7 +7,6 @@ local unitName = "nsaagriz"
 
 local unitDef = {
 	acceleration = 0.041,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.095,
 	buildCostEnergy = 791817,

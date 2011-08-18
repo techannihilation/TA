@@ -7,7 +7,6 @@ local unitName = "tllloki"
 
 local unitDef = {
 	acceleration = 0.012,
-	badTargetCategory = [[NOWEAPON]],
 	bmcode = 1,
 	brakeRate = 0.01,
 	buildCostEnergy = 1351,

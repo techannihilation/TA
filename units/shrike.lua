@@ -7,7 +7,6 @@ local unitName = "shrike"
 
 local unitDef = {
 	acceleration = 4.45,
-	badTargetCategory = [[NOTAIR]],
 	bankscale = 1,
 	bmcode = 1,
 	brakeRate = 9,
@@ -57,7 +56,6 @@ local unitDef = {
 	unitnumber = 551,
 	unitRestricted = 150,
 	version = 1,
-	wter_badtargetcategory = [[NOTAIR]],
 	zbuffer = 1,
 	sounds = {
 		canceldestruct = [[cancel2]],

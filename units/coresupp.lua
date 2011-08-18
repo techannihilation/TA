@@ -46,7 +46,6 @@ local unitDef = {
 	name = [[Supporter]],
 	noAutoFire = false,
 	noChaseCategory = [[VTOL]],
-	nochasecategory = [[UNDERWATER VTOL]],
 	objectName = [[CORESUPP]],
 	scale = 0.5,
 	seismicSignature = 0,

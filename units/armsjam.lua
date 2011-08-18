@@ -8,7 +8,6 @@ local unitName = "armsjam"
 local unitDef = {
 	acceleration = 0.09,
 	activateWhenBuilt = true,
-	badTargetCategory = [[MOBILE]],
 	bmcode = 1,
 	brakeRate = 0.02,
 	buildCostEnergy = 1928,

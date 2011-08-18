@@ -10,7 +10,6 @@ local unitDef = {
 	altfromsealevel = 1,
 	amphibious = 1,
 	attackrunlength = 260,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 1.5,
 	buildCostEnergy = 7936,

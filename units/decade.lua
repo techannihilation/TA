@@ -46,7 +46,6 @@ local unitDef = {
 	name = [[Decade]],
 	noAutoFire = false,
 	noChaseCategory = [[VTOL]],
-	nochasecategory = [[UNDERWATER VTOL]],
 	objectName = [[DECADE]],
 	scale = 0.5,
 	seismicSignature = 0,

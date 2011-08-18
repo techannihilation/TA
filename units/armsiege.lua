@@ -8,7 +8,6 @@ local unitName = "armsiege"
 local unitDef = {
 	acceleration = 0.01,
 	antiweapons = 1,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.01,
 	buildCostEnergy = 125898,

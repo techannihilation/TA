@@ -7,7 +7,6 @@ local unitName = "requ1"
 
 local unitDef = {
 	acceleration = 0.024,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.008,
 	buildCostEnergy = 43467,

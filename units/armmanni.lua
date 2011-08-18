@@ -7,7 +7,6 @@ local unitName = "armmanni"
 
 local unitDef = {
 	acceleration = 0.0132,
-	badTargetCategory = [[ANTILASER]],
 	bmcode = 1,
 	brakeRate = 0.1375,
 	buildCostEnergy = 12477,

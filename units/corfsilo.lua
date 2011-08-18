@@ -6,7 +6,6 @@ local unitName = "corfsilo"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	badTargetCategory = [[VTOL]],
 	bmcode = 0,
 	buildAngle = 8192,
 	buildCostEnergy = 989624,

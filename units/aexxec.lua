@@ -9,7 +9,6 @@ local unitDef = {
 	acceleration = 0.4,
 	ai_limit = [[limit aexxec 5]],
 	ai_weight = [[weight aexxec 2.5]],
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.25,
 	buildCostEnergy = 5311,

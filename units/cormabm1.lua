@@ -8,7 +8,6 @@ local unitName = "cormabm1"
 local unitDef = {
 	acceleration = 0.0198,
 	antiweapons = 1,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.0374,
 	buildCostEnergy = 162321,

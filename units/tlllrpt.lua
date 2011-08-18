@@ -6,7 +6,6 @@ local unitName = "tlllrpt"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	badTargetCategory = [[LEVEL1]],
 	bmcode = 0,
 	buildAngle = 6700,
 	buildCostEnergy = 18951,
@@ -39,7 +38,6 @@ local unitDef = {
 	noAutoFire = false,
 	noChaseCategory = [[ALL]],
 	objectName = [[TLLLRPT]],
-	onlyTargetCategory = [[NOTAIR]],
 	onoffable = true,
 	selfDestructAs = [[ATOMIC_BLAST]],
 	shootme = 1,

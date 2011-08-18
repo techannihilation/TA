@@ -8,7 +8,6 @@ local unitName = "tawf009"
 local unitDef = {
 	acceleration = 0.08,
 	activateWhenBuilt = true,
-	badTargetCategory = [[HOVER NOTSHIP]],
 	bmcode = 1,
 	brakeRate = 0.3,
 	buildCostEnergy = 11702,

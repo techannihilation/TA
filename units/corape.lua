@@ -7,7 +7,6 @@ local unitName = "corape"
 
 local unitDef = {
 	acceleration = 0.152,
-	badTargetCategory = [[VTOL]],
 	bankscale = 1,
 	bmcode = 1,
 	brakeRate = 3.563,

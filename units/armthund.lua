@@ -9,7 +9,6 @@ local unitDef = {
 	acceleration = 0.096,
 	altfromsealevel = 1,
 	attackrunlength = 170,
-	badTargetCategory = [[MOBILE]],
 	bankscale = 1,
 	bmcode = 1,
 	brakeRate = 0.5,

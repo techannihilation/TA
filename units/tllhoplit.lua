@@ -7,7 +7,6 @@ local unitName = "tllhoplit"
 
 local unitDef = {
 	acceleration = 0.06,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.02,
 	buildCostEnergy = 2010,

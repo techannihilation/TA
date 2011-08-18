@@ -7,7 +7,6 @@ local unitName = "aspdbunk"
 
 local unitDef = {
 	activateWhenBuilt = true,
-	badTargetCategory = [[VTOL]],
 	bmcode = 0,
 	buildAngle = 7398,
 	buildCostEnergy = 8764,

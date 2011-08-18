@@ -7,7 +7,6 @@ local unitName = "nsaclash"
 
 local unitDef = {
 	acceleration = 0.072,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.075,
 	buildCostEnergy = 12211,

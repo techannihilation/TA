@@ -7,7 +7,6 @@ local unitName = "armflspd"
 
 local unitDef = {
 	acceleration = 0.15,
-	badTargetCategory = [[NOTAIR]],
 	bmcode = 1,
 	brakeRate = 0.15,
 	buildCostEnergy = 10895,

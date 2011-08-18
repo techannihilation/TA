@@ -9,7 +9,6 @@ local unitDef = {
 	acceleration = 0.03,
 	ai_weight = [[weight ArmEman 1.7]],
 	antiweapons = [[noweapon]],
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.008,
 	buildCostEnergy = 4935,

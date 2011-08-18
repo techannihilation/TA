@@ -7,7 +7,6 @@ local unitName = "tllpuncher"
 
 local unitDef = {
 	acceleration = 0.055,
-	badTargetCategory = [[NOTAIR]],
 	bmcode = 1,
 	brakeRate = 0.21,
 	buildCostEnergy = 22131,

@@ -7,7 +7,6 @@ local unitName = "armjade"
 
 local unitDef = {
 	acceleration = 0.142,
-	badTargetCategory = [[VTOL]],
 	bankscale = 1,
 	bmcode = 1,
 	brakeRate = 3.85,

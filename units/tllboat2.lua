@@ -8,7 +8,6 @@ local unitName = "tllboat2"
 local unitDef = {
 	acceleration = 0.05,
 	activateWhenBuilt = true,
-	badTargetCategory = [[NOWEAPON]],
 	bmcode = 1,
 	brakeRate = 0.021,
 	buildAngle = 16384,

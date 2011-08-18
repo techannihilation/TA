@@ -9,7 +9,6 @@ local unitDef = {
 	acceleration = 0.251,
 	activateWhenBuilt = true,
 	amphibious = 1,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.152,
 	buildCostEnergy = 13510,

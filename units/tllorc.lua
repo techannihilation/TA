@@ -8,7 +8,6 @@ local unitName = "tllorc"
 local unitDef = {
 	acceleration = 0.04,
 	activateWhenBuilt = true,
-	badTargetCategory = [[NOWEAPON]],
 	bmcode = 1,
 	brakeRate = 0.019,
 	buildCostEnergy = 21407,

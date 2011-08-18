@@ -7,7 +7,6 @@ local unitName = "cormort"
 
 local unitDef = {
 	acceleration = 0.132,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.225,
 	buildCostEnergy = 2065,

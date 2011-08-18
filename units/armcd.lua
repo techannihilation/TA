@@ -7,7 +7,6 @@ local unitName = "armcd"
 
 local unitDef = {
 	acceleration = 0.1,
-	badTargetCategory = [[NOTAIR]],
 	bmcode = 1,
 	brakeRate = 0.25,
 	buildCostEnergy = 8928,

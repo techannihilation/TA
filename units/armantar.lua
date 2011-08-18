@@ -7,7 +7,6 @@ local unitName = "armantar"
 
 local unitDef = {
 	acceleration = 0.01,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.007629395,
 	buildCostEnergy = 43547,
@@ -65,7 +64,6 @@ local unitDef = {
 	unitnumber = 954568,
 	version = 3,
 	workerTime = 0,
-	wter_badtargetcategory = [[NOTAIR]],
 	zbuffer = 1,
 	featureDefs = nil,
 	sounds = {

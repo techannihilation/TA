@@ -8,7 +8,6 @@ local unitName = "tllseaf"
 local unitDef = {
 	acceleration = 0.6,
 	amphibious = 1,
-	badTargetCategory = [[NOTAIR]],
 	bmcode = 1,
 	brakeRate = 4.2,
 	buildCostEnergy = 6420,

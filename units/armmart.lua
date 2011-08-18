@@ -7,7 +7,6 @@ local unitName = "armmart"
 
 local unitDef = {
 	acceleration = 0.0184,
-	badTargetCategory = [[NOTLAND]],
 	bmcode = 1,
 	brakeRate = 0.1232,
 	buildCostEnergy = 6240,

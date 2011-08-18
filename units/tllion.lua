@@ -6,7 +6,6 @@ local unitName = "tllion"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	badTargetCategory = [[VTOL]],
 	bmcode = 0,
 	buildAngle = 1700,
 	buildCostEnergy = 1178502,

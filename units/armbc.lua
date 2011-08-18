@@ -7,7 +7,6 @@ local unitName = "armbc"
 
 local unitDef = {
 	acceleration = 0.005,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.015,
 	buildAngle = 16384,

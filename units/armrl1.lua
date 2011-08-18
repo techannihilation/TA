@@ -7,7 +7,6 @@ local unitName = "armrl1"
 
 local unitDef = {
 	acceleration = 0,
-	badTargetCategory = [[NOWEAPON]],
 	bmcode = 0,
 	brakeRate = 0,
 	buildCostEnergy = 843,

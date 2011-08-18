@@ -7,7 +7,6 @@ local unitName = "armtys"
 
 local unitDef = {
 	acceleration = 0.43756,
-	badTargetCategory = [[VTOL]],
 	bankscale = 0.6,
 	bmcode = 1,
 	brakeRate = 1.5465,
@@ -51,7 +50,6 @@ local unitDef = {
 	noAutoFire = false,
 	noChaseCategory = [[SUB VTOL]],
 	objectName = [[armTYS]],
-	onlytargetcategory2 = [[NOTAIR]],
 	radarDistance = 0,
 	scale = 1,
 	selfDestructAs = [[BIG_UNIT]],

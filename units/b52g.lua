@@ -11,7 +11,6 @@ local unitDef = {
 	ai_weight = [[weight B-52G 4]],
 	altfromsealevel = 1,
 	attackrunlength = 305,
-	badTargetCategory = [[Underwater]],
 	bankscale = 1,
 	bmcode = 1,
 	brakeRate = 2,

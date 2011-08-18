@@ -9,7 +9,6 @@ local unitDef = {
 	acceleration = 0.009,
 	ai_limit = [[limit ARMORCA 6]],
 	ai_weight = [[weight ARMORCA 2]],
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.01,
 	buildCostEnergy = 4130,

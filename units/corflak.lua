@@ -7,7 +7,6 @@ local unitName = "corflak"
 
 local unitDef = {
 	acceleration = 0,
-	badTargetCategory = [[NOWEAPON]],
 	bmcode = 0,
 	brakeRate = 0,
 	buildAngle = 8192,

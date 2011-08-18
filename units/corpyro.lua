@@ -7,7 +7,6 @@ local unitName = "corpyro"
 
 local unitDef = {
 	acceleration = 0.45,
-	badTargetCategory = [[ANTIFLAME]],
 	bmcode = 1,
 	brakeRate = 0.65,
 	buildCostEnergy = 2783,

@@ -7,7 +7,6 @@ local unitName = "armtship"
 
 local unitDef = {
 	acceleration = 0.067,
-	badTargetCategory = [[ANTILASER]],
 	bmcode = 1,
 	brakeRate = 0.09,
 	buildAngle = 16384,
@@ -63,7 +62,6 @@ local unitDef = {
 	unitname = [[armtship]],
 	waterline = 10,
 	workerTime = 0,
-	wpri_badtargetcategory = [[ANTILASER]],
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],

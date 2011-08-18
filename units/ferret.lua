@@ -7,7 +7,6 @@ local unitName = "ferret"
 
 local unitDef = {
 	acceleration = 0.2,
-	badTargetCategory = [[VTOL]],
 	bankscale = 1,
 	bmcode = 1,
 	brakeRate = 5,

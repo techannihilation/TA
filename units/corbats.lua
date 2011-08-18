@@ -7,7 +7,6 @@ local unitName = "corbats"
 
 local unitDef = {
 	acceleration = 0.03,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.025,
 	buildAngle = 16384,

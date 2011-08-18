@@ -9,7 +9,6 @@ local unitDef = {
 	acceleration = 0.18,
 	activateWhenBuilt = true,
 	autoHeal = 5,
-	badTargetCategory = [[ANTILASER]],
 	bmcode = 1,
 	brakeRate = 0.375,
 	buildCostEnergy = 11561,

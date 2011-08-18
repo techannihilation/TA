@@ -8,7 +8,6 @@ local unitName = "armvulc"
 local unitDef = {
 	acceleration = 0,
 	antiweapons = 1,
-	badTargetCategory = [[MOBILE]],
 	bmcode = 0,
 	brakeRate = 0,
 	buildAngle = 29096,

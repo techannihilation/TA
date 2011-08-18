@@ -7,7 +7,6 @@ local unitName = "tllbats2"
 
 local unitDef = {
 	acceleration = 0.005,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.02,
 	buildAngle = 16384,

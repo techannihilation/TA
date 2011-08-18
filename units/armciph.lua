@@ -7,7 +7,6 @@ local unitName = "armciph"
 
 local unitDef = {
 	acceleration = 0.013,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.098,
 	buildCostEnergy = 8523,

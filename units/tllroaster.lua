@@ -7,7 +7,6 @@ local unitName = "tllroaster"
 
 local unitDef = {
 	acceleration = 0.03,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.09,
 	buildCostEnergy = 8797,
@@ -44,7 +43,6 @@ local unitDef = {
 	noAutoFire = false,
 	noChaseCategory = [[SUB VTOL]],
 	objectName = [[TLLROASTER]],
-	onlytargetcategory2 = [[NOTAIR]],
 	selfDestructAs = [[ATOMIC_BLAST]],
 	shootme = 1,
 	side = [[TLL]],

@@ -7,7 +7,6 @@ local unitName = "armlaspd"
 
 local unitDef = {
 	acceleration = 0.12,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.15,
 	buildCostEnergy = 7568,

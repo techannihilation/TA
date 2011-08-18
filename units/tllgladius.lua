@@ -7,7 +7,6 @@ local unitName = "tllgladius"
 
 local unitDef = {
 	acceleration = 0.8,
-	badTargetCategory = [[NOWEAPON]],
 	bmcode = 1,
 	brakeRate = 0.051,
 	buildCostEnergy = 168,

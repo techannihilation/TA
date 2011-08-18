@@ -8,7 +8,6 @@ local unitName = "tllviolator"
 local unitDef = {
 	acceleration = 0.025,
 	activateWhenBuilt = true,
-	badTargetCategory = [[NOWEAPON]],
 	bmcode = 1,
 	brakeRate = 0.011,
 	buildAngle = 16384,

@@ -8,7 +8,6 @@ local unitName = "armsubk"
 local unitDef = {
 	acceleration = 0.034,
 	activateWhenBuilt = true,
-	badTargetCategory = [[NOTSUB]],
 	bmcode = 1,
 	brakeRate = 0.45,
 	buildCostEnergy = 9481,

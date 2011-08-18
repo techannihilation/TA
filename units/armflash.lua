@@ -7,7 +7,6 @@ local unitName = "armflash"
 
 local unitDef = {
 	acceleration = 0.06,
-	badTargetCategory = [[ANTIEMG]],
 	bmcode = 1,
 	brakeRate = 0.065,
 	buildCostEnergy = 914,

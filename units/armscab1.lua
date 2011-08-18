@@ -8,7 +8,6 @@ local unitName = "armscab1"
 local unitDef = {
 	acceleration = 0.048,
 	antiweapons = 1,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.044,
 	buildCostEnergy = 188000,

@@ -7,7 +7,6 @@ local unitName = "corjurgen"
 
 local unitDef = {
 	acceleration = 0.4,
-	badTargetCategory = [[VTOL UNDERWATER]],
 	bmcode = 1,
 	brakeRate = 0.15,
 	buildCostEnergy = 36114,

@@ -7,7 +7,6 @@ local unitName = "tankanotor"
 
 local unitDef = {
 	acceleration = 0.012,
-	badTargetCategory = [[NOTAIR]],
 	bmcode = 1,
 	brakeRate = 0.01,
 	buildCostEnergy = 19602,

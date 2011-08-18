@@ -8,7 +8,6 @@ local unitName = "armsfig"
 local unitDef = {
 	acceleration = 0.48,
 	amphibious = 1,
-	badTargetCategory = [[NOTAIR]],
 	bmcode = 1,
 	brakeRate = 10,
 	buildCostEnergy = 4274,

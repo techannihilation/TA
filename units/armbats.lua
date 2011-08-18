@@ -7,7 +7,6 @@ local unitName = "armbats"
 
 local unitDef = {
 	acceleration = 0.036,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.031,
 	buildAngle = 16384,

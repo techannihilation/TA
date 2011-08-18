@@ -7,7 +7,6 @@ local unitName = "corgator"
 
 local unitDef = {
 	acceleration = 0.055,
-	badTargetCategory = [[ANTIGATOR]],
 	bmcode = 1,
 	brakeRate = 0.055,
 	buildCostEnergy = 1042,

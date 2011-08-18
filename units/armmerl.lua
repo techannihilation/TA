@@ -7,7 +7,6 @@ local unitName = "armmerl"
 
 local unitDef = {
 	acceleration = 0.0198,
-	badTargetCategory = [[MOBILE]],
 	bmcode = 1,
 	brakeRate = 0.0374,
 	buildCostEnergy = 6146,

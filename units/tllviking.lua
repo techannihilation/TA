@@ -7,7 +7,6 @@ local unitName = "tllviking"
 
 local unitDef = {
 	acceleration = 0.01,
-	badTargetCategory = [[NOWEAPON]],
 	bmcode = 1,
 	brakeRate = 0.018,
 	buildAngle = 16384,

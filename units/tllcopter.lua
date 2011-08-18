@@ -7,7 +7,6 @@ local unitName = "tllcopter"
 
 local unitDef = {
 	acceleration = 0.16,
-	badTargetCategory = [[VTOL]],
 	bankscale = 1,
 	bmcode = 1,
 	brakeRate = 4,

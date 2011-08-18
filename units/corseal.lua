@@ -8,7 +8,6 @@ local unitName = "corseal"
 local unitDef = {
 	acceleration = 0.0462,
 	amphibious = 1,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.0209,
 	buildCostEnergy = 12013,

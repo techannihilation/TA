@@ -7,7 +7,6 @@ local unitName = "cjuno"
 
 local unitDef = {
 	acceleration = 0,
-	badTargetCategory = [[MOBILE]],
 	bmcode = 0,
 	brakeRate = 0,
 	buildCostEnergy = 15124,

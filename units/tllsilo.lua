@@ -6,7 +6,6 @@ local unitName = "tllsilo"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	badTargetCategory = [[VTOL]],
 	bmcode = 0,
 	buildAngle = 8192,
 	buildCostEnergy = 38341,

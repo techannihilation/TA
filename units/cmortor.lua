@@ -6,7 +6,6 @@ local unitName = "cmortor"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	badTargetCategory = [[VTOL]],
 	bmcode = 0,
 	buildAngle = 4096,
 	buildCostEnergy = 31342,

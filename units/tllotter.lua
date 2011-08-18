@@ -7,7 +7,6 @@ local unitName = "tllotter"
 
 local unitDef = {
 	acceleration = 0.1,
-	badTargetCategory = [[NOWEAPON]],
 	bmcode = 1,
 	brakeRate = 0.02,
 	buildCostEnergy = 1024,

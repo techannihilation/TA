@@ -7,7 +7,6 @@ local unitName = "magilla"
 
 local unitDef = {
 	acceleration = 0.1,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.25,
 	buildCostEnergy = 12311,

@@ -8,7 +8,6 @@ local unitName = "armcrus"
 local unitDef = {
 	acceleration = 0.048,
 	activateWhenBuilt = true,
-	badTargetCategory = [[SHIP]],
 	bmcode = 1,
 	brakeRate = 0.062,
 	buildAngle = 16384,

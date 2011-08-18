@@ -7,7 +7,6 @@ local unitName = "tllhoverrocket"
 
 local unitDef = {
 	acceleration = 0.04,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.09,
 	buildCostEnergy = 3412,

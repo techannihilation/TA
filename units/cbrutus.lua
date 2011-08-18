@@ -7,7 +7,6 @@ local unitName = "cbrutus"
 
 local unitDef = {
 	acceleration = 0.019,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.018,
 	buildCostEnergy = 10960,

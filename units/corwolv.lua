@@ -7,7 +7,6 @@ local unitName = "corwolv"
 
 local unitDef = {
 	acceleration = 0.011,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.0099,
 	buildCostEnergy = 2219,

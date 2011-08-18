@@ -7,7 +7,6 @@ local unitName = "packo"
 
 local unitDef = {
 	acceleration = 0,
-	badTargetCategory = [[NOWEAPON]],
 	bmcode = 0,
 	brakeRate = 0,
 	buildAngle = 8192,
@@ -54,7 +53,6 @@ local unitDef = {
 	turnRate = 0,
 	unitname = [[packo]],
 	workerTime = 0,
-	wpri_targetcategory = [[VTOL1]],
 	yardMap = [[ooooooooo]],
 	featureDefs = nil,
 	sounds = {

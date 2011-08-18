@@ -6,7 +6,6 @@ local unitName = "tllhmt"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	badTargetCategory = [[NOTAIR]],
 	bmcode = 0,
 	buildAngle = 16384,
 	buildCostEnergy = 16219,

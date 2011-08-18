@@ -64,7 +64,6 @@ local unitDef = {
 	unitnumber = 945,
 	version = 3.1,
 	waterline = 6,
-	wter_badtargetcategory = [[NOTSUB]],
 	zbuffer = 1,
 	featureDefs = nil,
 	sounds = {

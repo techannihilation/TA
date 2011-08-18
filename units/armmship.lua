@@ -8,7 +8,6 @@ local unitName = "armmship"
 local unitDef = {
 	acceleration = 0.024,
 	activateWhenBuilt = true,
-	badTargetCategory = [[MOBILE]],
 	bmcode = 1,
 	brakeRate = 0.028,
 	buildCostEnergy = 9804,

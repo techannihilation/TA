@@ -7,7 +7,6 @@ local unitName = "armmlrs"
 
 local unitDef = {
 	acceleration = 0.34,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.009765625,
 	buildCostEnergy = 89460,

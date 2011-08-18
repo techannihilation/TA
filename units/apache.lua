@@ -7,7 +7,6 @@ local unitName = "apache"
 
 local unitDef = {
 	acceleration = 0.2,
-	badTargetCategory = [[VTOL]],
 	bankscale = 1,
 	bmcode = 1,
 	brakeRate = 2,
@@ -67,7 +66,6 @@ local unitDef = {
 	unitnumber = 75645,
 	version = 3,
 	workerTime = 0,
-	wter_badtargetcategory = [[VTOL]],
 	zbuffer = 1,
 	weaponDefs = nil,
 	weapons = {

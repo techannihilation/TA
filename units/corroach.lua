@@ -8,7 +8,6 @@ local unitName = "corroach"
 local unitDef = {
 	acceleration = 0.12,
 	activateWhenBuilt = true,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.15,
 	buildCostEnergy = 5471,

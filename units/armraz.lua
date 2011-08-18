@@ -57,7 +57,6 @@ local unitDef = {
 	unitname = [[armraz]],
 	upright = true,
 	workerTime = 0,
-	wter_badtargetcategory = [[SUB]],
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],

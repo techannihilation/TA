@@ -8,7 +8,6 @@ local unitName = "champ"
 local unitDef = {
 	acceleration = 0.011,
 	activateWhenBuilt = true,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.026,
 	buildCostEnergy = 22955,

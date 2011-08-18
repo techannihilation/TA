@@ -7,7 +7,6 @@ local unitName = "armcrabe"
 
 local unitDef = {
 	acceleration = 0.552587891,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.252587891,
 	buildCostEnergy = 98432,

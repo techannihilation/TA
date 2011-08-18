@@ -7,7 +7,6 @@ local unitName = "corvamp"
 
 local unitDef = {
 	acceleration = 0.492,
-	badTargetCategory = [[NOTAIR]],
 	bankscale = 1,
 	bmcode = 1,
 	brakeRate = 8.75,

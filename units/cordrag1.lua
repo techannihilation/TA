@@ -78,7 +78,6 @@ local unitDef = {
 	unitnumber = 88001,
 	version = 1.2,
 	workerTime = 0,
-	wter_badtargetcategory = [[VTOL]],
 	zbuffer = 1,
 	weaponDefs = nil,
 	weapons = {

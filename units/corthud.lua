@@ -7,7 +7,6 @@ local unitName = "corthud"
 
 local unitDef = {
 	acceleration = 0.113,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.225,
 	buildCostEnergy = 1061,

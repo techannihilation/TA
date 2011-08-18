@@ -7,7 +7,6 @@ local unitName = "corhover3g"
 
 local unitDef = {
 	acceleration = 0.09,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.11,
 	buildCostEnergy = 14162,

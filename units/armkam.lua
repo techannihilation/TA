@@ -7,7 +7,6 @@ local unitName = "armkam"
 
 local unitDef = {
 	acceleration = 0.154,
-	badTargetCategory = [[VTOL]],
 	bankscale = 1,
 	bmcode = 1,
 	brakeRate = 3.75,

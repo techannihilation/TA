@@ -7,7 +7,6 @@ local unitName = "armwar"
 
 local unitDef = {
 	acceleration = 0.072,
-	badTargetCategory = [[ANTILASER]],
 	bmcode = 1,
 	brakeRate = 0.238,
 	buildCostEnergy = 2944,

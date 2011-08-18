@@ -7,7 +7,6 @@ local unitName = "armfav"
 
 local unitDef = {
 	acceleration = 0.12,
-	badTargetCategory = [[ANTIGATOR]],
 	bmcode = 1,
 	brakeRate = 0.165,
 	buildCostEnergy = 342,

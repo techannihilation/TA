@@ -8,7 +8,6 @@ local unitName = "armmav"
 local unitDef = {
 	acceleration = 0.12,
 	autoHeal = 50,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.125,
 	buildCostEnergy = 12180,

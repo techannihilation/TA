@@ -7,7 +7,6 @@ local unitName = "armlance"
 
 local unitDef = {
 	acceleration = 0.24,
-	badTargetCategory = [[NOTSHIP]],
 	bankscale = 1,
 	bmcode = 1,
 	brakeRate = 7.5,

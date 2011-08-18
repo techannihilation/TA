@@ -10,7 +10,6 @@ local unitDef = {
 	activateWhenBuilt = true,
 	amphibious = 1,
 	autoHeal = 11,
-	badTargetCategory = [[ANTILASER]],
 	bmcode = 1,
 	brakeRate = 0.4,
 	buildCostEnergy = 400000,

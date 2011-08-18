@@ -8,7 +8,6 @@ local unitName = "corspec"
 local unitDef = {
 	acceleration = 0.1,
 	activateWhenBuilt = true,
-	badTargetCategory = [[MOBILE]],
 	bmcode = 1,
 	brakeRate = 0.12,
 	buildCostEnergy = 1453,

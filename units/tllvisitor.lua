@@ -7,7 +7,6 @@ local unitName = "tllvisitor"
 
 local unitDef = {
 	acceleration = 0.012,
-	badTargetCategory = [[UNDERWATER]],
 	bmcode = 1,
 	brakeRate = 0.02,
 	buildCostEnergy = 8054,

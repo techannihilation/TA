@@ -7,7 +7,6 @@ local unitName = "armsonic"
 
 local unitDef = {
 	acceleration = 0.81,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.19,
 	buildCostEnergy = 3991,

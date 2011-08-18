@@ -7,7 +7,6 @@ local unitName = "armvisit"
 
 local unitDef = {
 	acceleration = 0.1,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.09,
 	buildCostEnergy = 2828,

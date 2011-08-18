@@ -7,7 +7,6 @@ local unitName = "armguard"
 
 local unitDef = {
 	acceleration = 0,
-	badTargetCategory = [[VTOL]],
 	bmcode = 0,
 	brakeRate = 0,
 	buildAngle = 8192,

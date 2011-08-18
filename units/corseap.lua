@@ -9,7 +9,6 @@ local unitDef = {
 	acceleration = 0.312,
 	amphibious = 1,
 	attackrunlength = 100,
-	badTargetCategory = [[NOTAIR]],
 	bankscale = 1,
 	bmcode = 1,
 	brakeRate = 4.75,

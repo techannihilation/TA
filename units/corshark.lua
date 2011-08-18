@@ -8,7 +8,6 @@ local unitName = "corshark"
 local unitDef = {
 	acceleration = 0.048,
 	activateWhenBuilt = true,
-	badTargetCategory = [[NOTSUB]],
 	bmcode = 1,
 	brakeRate = 0.25,
 	buildCostEnergy = 9245,

@@ -7,7 +7,6 @@ local unitName = "tllhoverlight"
 
 local unitDef = {
 	acceleration = 0.15,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.05,
 	buildCostEnergy = 1099,

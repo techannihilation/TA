@@ -7,7 +7,6 @@ local unitName = "tllaak"
 
 local unitDef = {
 	acceleration = 0.08,
-	badTargetCategory = [[ALL]],
 	bmcode = 1,
 	brakeRate = 0.15,
 	buildCostEnergy = 2250,
@@ -57,8 +56,6 @@ local unitDef = {
 	unitnumber = 947,
 	upright = true,
 	version = 1,
-	w1_badtargetcategory = [[ALL]],
-	w2_badtargetcategory = [[ALL]],
 	zbuffer = 1,
 	featureDefs = nil,
 	sounds = {

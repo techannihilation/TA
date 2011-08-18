@@ -8,7 +8,6 @@ local unitName = "armroy"
 local unitDef = {
 	acceleration = 0.054,
 	activateWhenBuilt = true,
-	badTargetCategory = [[SHIP]],
 	bmcode = 1,
 	brakeRate = 0.13,
 	buildAngle = 16384,

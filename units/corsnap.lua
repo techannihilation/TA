@@ -7,7 +7,6 @@ local unitName = "corsnap"
 
 local unitDef = {
 	acceleration = 0.078,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.1,
 	buildCostEnergy = 3106,

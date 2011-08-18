@@ -7,7 +7,6 @@ local unitName = "armbull2"
 
 local unitDef = {
 	acceleration = 0.2,
-	badTargetCategory = [[WATER]],
 	bmcode = 1,
 	brakeRate = 0.3,
 	buildCostEnergy = 18541,

@@ -7,7 +7,6 @@ local unitName = "corjeag"
 
 local unitDef = {
 	acceleration = 0.028,
-	badTargetCategory = [[NOTAIR]],
 	bmcode = 1,
 	brakeRate = 0.012,
 	buildCostEnergy = 2150,

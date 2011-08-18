@@ -8,7 +8,6 @@ local unitName = "uppercut"
 local unitDef = {
 	acceleration = 0.015,
 	activateWhenBuilt = true,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.18,
 	buildCostEnergy = 165704,

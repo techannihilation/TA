@@ -7,7 +7,6 @@ local unitName = "corfmine3"
 
 local unitDef = {
 	acceleration = 0,
-	badTargetCategory = [[VTOL]],
 	bmcode = 0,
 	brakeRate = 0,
 	buildCostEnergy = 1500,

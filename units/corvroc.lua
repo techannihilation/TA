@@ -7,7 +7,6 @@ local unitName = "corvroc"
 
 local unitDef = {
 	acceleration = 0.0209,
-	badTargetCategory = [[MOBILE]],
 	bmcode = 1,
 	brakeRate = 0.0418,
 	buildCostEnergy = 6270,

@@ -36,7 +36,6 @@ local unitDef = {
 	noAutoFire = false,
 	noChaseCategory = [[ALL]],
 	objectName = [[tllrlrpc]],
-	onlyTargetCategory = [[NOTAIR]],
 	onoffable = true,
 	selfDestructAs = [[ATOMIC_BLAST]],
 	shootme = 1,

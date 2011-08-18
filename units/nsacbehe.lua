@@ -7,7 +7,6 @@ local unitName = "nsacbehe"
 
 local unitDef = {
 	acceleration = 0.03,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.23,
 	buildCostEnergy = 15360,

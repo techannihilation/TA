@@ -8,7 +8,6 @@ local unitName = "armamd"
 local unitDef = {
 	acceleration = 0,
 	antiweapons = 1,
-	badTargetCategory = [[NOTAIR]],
 	bmcode = 0,
 	brakeRate = 0,
 	buildAngle = 4096,

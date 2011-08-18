@@ -9,7 +9,6 @@ local unitDef = {
 	acceleration = 0.00931,
 	airHoverFactor = 0,
 	airStrafe = false,
-	badTargetCategory = [[VTOL]],
 	brakeRate = 0.399,
 	buildCostEnergy = 1610000,
 	buildCostMetal = 276600,

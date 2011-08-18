@@ -7,7 +7,6 @@ local unitName = "armaaspd"
 
 local unitDef = {
 	acceleration = 0.165,
-	badTargetCategory = [[NOTAIR]],
 	bmcode = 1,
 	brakeRate = 0.165,
 	buildCostEnergy = 1189,

@@ -7,7 +7,6 @@ local unitName = "armsam"
 
 local unitDef = {
 	acceleration = 0.0396,
-	badTargetCategory = [[ALL]],
 	bmcode = 1,
 	brakeRate = 0.0165,
 	buildCostEnergy = 2027,

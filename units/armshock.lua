@@ -7,7 +7,6 @@ local unitName = "armshock"
 
 local unitDef = {
 	acceleration = 0.023,
-	badTargetCategory = [[NOWEAPON]],
 	bmcode = 1,
 	brakeRate = 0.1,
 	buildCostEnergy = 54739,

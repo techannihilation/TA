@@ -7,7 +7,6 @@ local unitName = "armrock1"
 
 local unitDef = {
 	acceleration = 0.12,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.188,
 	buildCostEnergy = 1644,

@@ -10,7 +10,6 @@ local unitDef = {
 	activateWhenBuilt = true,
 	airHoverFactor = 0,
 	airStrafe = false,
-	badTargetCategory = [[VTOL]],
 	bankscale = 0.5,
 	bmcode = 1,
 	brakeRate = 0.399,

@@ -7,7 +7,6 @@ local unitName = "tllhovermissile"
 
 local unitDef = {
 	acceleration = 0.06,
-	badTargetCategory = [[NOTAIR]],
 	bmcode = 1,
 	brakeRate = 0.09,
 	buildCostEnergy = 1677,
@@ -64,7 +63,6 @@ local unitDef = {
 	unitnumber = 28703,
 	version = 1.2,
 	workerTime = 0,
-	wpri_targetcategory = [[VTOL]],
 	zbuffer = 1,
 	featureDefs = nil,
 	sounds = {

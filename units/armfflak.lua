@@ -7,7 +7,6 @@ local unitName = "armfflak"
 
 local unitDef = {
 	acceleration = 0,
-	badTargetCategory = [[NOTAIR]],
 	bmcode = 0,
 	brakeRate = 0,
 	buildAngle = 16384,

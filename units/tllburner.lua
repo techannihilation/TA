@@ -7,7 +7,6 @@ local unitName = "tllburner"
 
 local unitDef = {
 	acceleration = 0.35,
-	badTargetCategory = [[NOWEAPON]],
 	bmcode = 1,
 	brakeRate = 0.183105469,
 	buildCostEnergy = 2400,

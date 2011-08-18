@@ -8,7 +8,6 @@ local unitName = "armfido"
 local unitDef = {
 	acceleration = 0.12,
 	activateWhenBuilt = false,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.375,
 	buildCostEnergy = 5849,

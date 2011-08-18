@@ -8,7 +8,6 @@ local unitName = "armcbomb"
 local unitDef = {
 	acceleration = 0.6,
 	attackrunlength = 170,
-	badTargetCategory = [[VTOL]],
 	bankscale = 1,
 	bmcode = 1,
 	brakeRate = 0.35,

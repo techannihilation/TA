@@ -7,7 +7,6 @@ local unitName = "corfav"
 
 local unitDef = {
 	acceleration = 0.11,
-	badTargetCategory = [[ANTIGATOR]],
 	bmcode = 1,
 	brakeRate = 0.145,
 	buildCostEnergy = 256,

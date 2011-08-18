@@ -7,7 +7,6 @@ local unitName = "corsumo"
 
 local unitDef = {
 	acceleration = 0.048,
-	badTargetCategory = [[ANTILASER]],
 	bmcode = 1,
 	brakeRate = 0.125,
 	buildCostEnergy = 33562,

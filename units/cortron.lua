@@ -8,7 +8,6 @@ local unitName = "cortron"
 local unitDef = {
 	acceleration = 0,
 	antiweapons = 1,
-	badTargetCategory = [[NOTLAND]],
 	bmcode = 0,
 	brakeRate = 0,
 	buildAngle = 8192,

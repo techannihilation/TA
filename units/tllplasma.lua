@@ -6,7 +6,6 @@ local unitName = "tllplasma"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	badTargetCategory = [[VTOL]],
 	bmcode = 0,
 	buildAngle = 8192,
 	buildCostEnergy = 4671,
@@ -38,7 +37,6 @@ local unitDef = {
 	noAutoFire = false,
 	noChaseCategory = [[ALL]],
 	objectName = [[tllplasma]],
-	onlyTargetCategory = [[NOTAIR]],
 	selfDestructAs = [[MEDIUM_BUILDING]],
 	shootme = 1,
 	side = [[TLL]],

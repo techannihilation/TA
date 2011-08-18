@@ -7,7 +7,6 @@ local unitName = "tllannouncer"
 
 local unitDef = {
 	acceleration = 0.03,
-	badTargetCategory = [[NOWEAPON]],
 	bmcode = 1,
 	brakeRate = 0.012,
 	buildCostEnergy = 835,

@@ -7,7 +7,6 @@ local unitName = "tllobliterator"
 
 local unitDef = {
 	activateWhenBuilt = true,
-	badTargetCategory = [[VTOL]],
 	bmcode = 0,
 	buildAngle = 4096,
 	buildCostEnergy = 18025,

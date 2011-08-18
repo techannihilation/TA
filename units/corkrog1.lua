@@ -7,7 +7,6 @@ local unitName = "corkrog1"
 
 local unitDef = {
 	acceleration = 0.108,
-	badTargetCategory = [[ANTILASER]],
 	bmcode = 1,
 	brakeRate = 0.238,
 	buildCostEnergy = 1577039,

@@ -8,7 +8,6 @@ local unitName = "armaser"
 local unitDef = {
 	acceleration = 0.12,
 	activateWhenBuilt = true,
-	badTargetCategory = [[MOBILE]],
 	bmcode = 1,
 	brakeRate = 0.15,
 	buildCostEnergy = 1326,

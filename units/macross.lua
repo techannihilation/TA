@@ -7,7 +7,6 @@ local unitName = "macross"
 
 local unitDef = {
 	acceleration = 0.3,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.32,
 	buildCostEnergy = 241568,

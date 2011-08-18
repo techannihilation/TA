@@ -6,7 +6,6 @@ local unitName = "tlllft"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	badTargetCategory = [[NOWEAPON]],
 	bmcode = 0,
 	buildAngle = 32768,
 	buildCostEnergy = 2846,

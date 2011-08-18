@@ -8,7 +8,6 @@ local unitName = "tllmanta"
 local unitDef = {
 	acceleration = 0.22,
 	activateWhenBuilt = true,
-	badTargetCategory = [[NOWEAPON]],
 	bmcode = 1,
 	brakeRate = 0.22,
 	buildCostEnergy = 5818,

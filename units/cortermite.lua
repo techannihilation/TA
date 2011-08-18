@@ -7,7 +7,6 @@ local unitName = "cortermite"
 
 local unitDef = {
 	acceleration = 0.171,
-	badTargetCategory = [[VTOL]],
 	bmcode = 1,
 	brakeRate = 0.175,
 	buildCostEnergy = 12605,

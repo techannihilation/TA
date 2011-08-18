@@ -7,7 +7,6 @@ local unitName = "corfrog"
 
 local unitDef = {
 	acceleration = 0.04,
-	badTargetCategory = [[NOTAIR]],
 	bmcode = 1,
 	brakeRate = 0.1,
 	buildCostEnergy = 16447,

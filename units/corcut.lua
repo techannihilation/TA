@@ -8,7 +8,6 @@ local unitName = "corcut"
 local unitDef = {
 	acceleration = 0.125,
 	amphibious = 1,
-	badTargetCategory = [[VTOL]],
 	bankscale = 1,
 	bmcode = 1,
 	brakeRate = 3.938,

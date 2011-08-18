@@ -7,7 +7,6 @@ local unitName = "tllantinuke"
 
 local unitDef = {
 	antiweapons = 1,
-	badTargetCategory = [[NOTAIR]],
 	bmcode = 0,
 	buildAngle = 4096,
 	buildCostEnergy = 54500,

@@ -8,7 +8,6 @@ local unitName = "tllequalizer"
 local unitDef = {
 	acceleration = 0.015,
 	activateWhenBuilt = true,
-	badTargetCategory = [[NOWEAPON]],
 	bmcode = 1,
 	brakeRate = 0.05,
 	buildAngle = 16384,
