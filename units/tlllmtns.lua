@@ -16,7 +16,7 @@ local unitDef = {
 	canAttack = true,
 	canGuard = true,
 	canstop = 1,
-	category = [[TLL WEAPON LEVEL1 NOTAIR NOTSUB ]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
@@ -38,7 +38,7 @@ local unitDef = {
 	minWaterDepth = 2,
 	name = [[NS Besom]],
 	noAutoFire = false,
-	noChaseCategory = [[MOBILE]],
+	noChaseCategory = [[ALL]],
 	objectName = [[TLLLMTNS]],
 	selfDestructAs = [[MEDIUM_BUILDING]],
 	shootme = 1,
@@ -80,8 +80,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[ARMRL_MISSILE]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }

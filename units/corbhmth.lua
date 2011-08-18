@@ -19,7 +19,7 @@ local unitDef = {
 	buildTime = 90000,
 	canAttack = true,
 	canstop = 1,
-	category = [[ALL NOTLAND NOTSUB WEAPON NOTSHIP NOTAIR]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[dead]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[Geothermal Plasma Battery]],
@@ -39,7 +39,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[Behemoth]],
 	noAutoFire = false,
-	noChaseCategory = [[MOBILE]],
+	noChaseCategory = [[ALL]],
 	objectName = [[CORBHMTH]],
 	onoffable = false,
 	seismicSignature = 0,
@@ -71,9 +71,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
+			badTargetCategory = [[SMALL TINY]],
 			def = [[CORBHMTH_WEAPON1]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[TLL LEVEL2 WEAPON NOTAIR NOTSUB MOBILE  ]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	defaultmissiontype = [[Standby]],
@@ -41,7 +41,7 @@ local unitDef = {
 	movementClass = [[HTANK3]],
 	name = [[Loki]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[TLLLOKI]],
 	selfDestructAs = [[BIG_UNIT]],
 	shootme = 1,
@@ -82,9 +82,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[CORE_ARTILLERY]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

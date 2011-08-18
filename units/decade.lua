@@ -21,7 +21,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL WEAPON NOTSUB NOTAIR]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[Corvette]],
@@ -45,6 +45,7 @@ local unitDef = {
 	movementClass = [[BOAT4]],
 	name = [[Decade]],
 	noAutoFire = false,
+	noChaseCategory = [[VTOL]],
 	nochasecategory = [[UNDERWATER VTOL]],
 	objectName = [[DECADE]],
 	scale = 0.5,
@@ -86,9 +87,11 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[CORVETTE_LIGHTLASER]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
 			def = [[CORVETTE_LIGHTLASER]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

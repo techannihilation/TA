@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL TANK MOBILE WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[Mobile Artillery]],
@@ -44,7 +44,7 @@ local unitDef = {
 	movementClass = [[TANK3]],
 	name = [[Luger]],
 	noAutoFire = false,
-	noChaseCategory = [[NOTLAND]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMMART]],
 	seismicSignature = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -90,11 +90,10 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOTLAND]],
 			def = [[ARM_ARTILLERY]],
 			mainDir = [[0 0 1]],
 			maxAngleDif = 120,
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

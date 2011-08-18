@@ -23,7 +23,7 @@ local unitDef = {
 	buildTime = 27072,
 	canAttack = true,
 	canstop = 1,
-	category = [[ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	cloakCost = 40,
 	corpse = [[DEAD]],
 	damageModifier = 0.25,
@@ -49,7 +49,7 @@ local unitDef = {
 	minCloakDistance = 70,
 	name = [[Ambusher]],
 	noAutoFire = false,
-	noChaseCategory = [[MOBILE]],
+	noChaseCategory = [[ALL]],
 	objectName = [[ARMAMB]],
 	seismicSignature = 0,
 	selfDestructAs = [[LARGE_BUILDING]],
@@ -89,15 +89,16 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
+			badTargetCategory = [[TINY]],
 			def = [[ARMAMB_GUN]],
 			mainDir = [[0 1 0]],
 			maxAngleDif = 230,
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
+			badTargetCategory = [[TINY]],
 			def = [[ARMAMB_GUN_HIGH]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

@@ -16,7 +16,7 @@ local unitDef = {
 	buildTime = 253485,
 	canAttack = true,
 	canstop = 1,
-	category = [[TLL ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR]],
+	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[tllgate_dead]],
 	description = [[High Strength Plasma Deflector]],
@@ -32,6 +32,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[Shield Generator]],
 	noAutoFire = false,
+	noChaseCategory = [[ALL]],
 	norestrict = 1,
 	objectName = [[TLLGATE1]],
 	onoffable = true,
@@ -73,7 +74,6 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[REPULSOR]],
 		},
 	},

@@ -18,7 +18,7 @@ local unitDef = {
 	buildTime = 17000,
 	canAttack = true,
 	canstop = 1,
-	category = [[CORE WEAPON NOTAIR NOTSUB NOTSHIP LEVEL2 NOTLAND ALL]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[CORHLT_DEAD]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[Heavy Laser Tower]],
@@ -38,7 +38,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[Gatling Gaat Gun]],
 	noAutoFire = false,
-	noChaseCategory = [[MOBILE]],
+	noChaseCategory = [[ALL]],
 	objectName = [[CORHLT]],
 	seismicSignature = 0,
 	selfDestructAs = [[MEDIUM_BUILDING]],
@@ -77,8 +77,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[ANTILASER]],
+			badTargetCategory = [[TINY]],
 			def = [[CORE_LASERH2]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

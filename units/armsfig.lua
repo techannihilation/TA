@@ -23,7 +23,7 @@ local unitDef = {
 	canPatrol = true,
 	canstop = 1,
 	canSubmerge = true,
-	category = [[ALL NOTLAND MOBILE WEAPON ANTIGATOR NOTSUB ANTIFLAME ANTIEMG ANTILASER VTOL NOTSHIP]],
+	category = [[ALL MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP SMALL VTOL]],
 	collide = false,
 	cruiseAlt = 80,
 	defaultmissiontype = [[VTOL_standby]],
@@ -48,7 +48,7 @@ local unitDef = {
 	moverate1 = 8,
 	name = [[Tornado]],
 	noAutoFire = false,
-	noChaseCategory = [[NOTAIR]],
+	noChaseCategory = [[NOTAIR SUB]],
 	objectName = [[ARMSFIG]],
 	seismicSignature = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -88,8 +88,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOTAIR]],
+			badTargetCategory = [[TINY]],
 			def = [[ARMSFIG_WEAPON]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }

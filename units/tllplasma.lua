@@ -15,7 +15,7 @@ local unitDef = {
 	buildTime = 18245,
 	canAttack = true,
 	canstop = 1,
-	category = [[TLL LEVEL2 WEAPON NOTAIR NOTSUB ]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	damageModifier = 0.125,
@@ -36,7 +36,7 @@ local unitDef = {
 	maxWaterDepth = 0,
 	name = [[Happlic]],
 	noAutoFire = false,
-	noChaseCategory = [[NOTAIR]],
+	noChaseCategory = [[ALL]],
 	objectName = [[tllplasma]],
 	onlyTargetCategory = [[NOTAIR]],
 	selfDestructAs = [[MEDIUM_BUILDING]],
@@ -79,8 +79,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
+			badTargetCategory = [[TINY]],
 			def = [[ARMAMB_GUN]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

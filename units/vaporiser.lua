@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL TANK WEAPON NOTSUB NOTAIR]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	collisionVolumeOffsets = [[-1 0 -1]],
 	collisionVolumeScales = [[30.423076629639 13.423076629639 41.423076629639]],
 	collisionVolumeTest = 0,
@@ -45,7 +45,7 @@ local unitDef = {
 	movementClass = [[HTANK3]],
 	name = [[Vaporiser]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[vaporiser]],
 	radarDistance = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -87,14 +87,12 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[MountedAntimatterAccelerator1]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
-			badTargetCategory = [[VTOL]],
 			def = [[MountedAntimatterAccelerator1]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

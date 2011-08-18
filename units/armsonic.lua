@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL TANK MOBILE WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[dead]],
 	defaultmissiontype = [[Standby]],
 	description = [[Sonic Riot Tank]],
@@ -49,7 +49,7 @@ local unitDef = {
 	movementClass = [[TANK3]],
 	name = [[RaTastrophe]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMSONIC]],
 	radarDistance = 0,
 	selfDestructAs = [[SMALL_UNIT]],
@@ -93,9 +93,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[SONIC_CANNON]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

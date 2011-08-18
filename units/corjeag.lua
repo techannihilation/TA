@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL TANK MOBILE WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL SMALL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	defaultmissiontype = [[Standby]],
@@ -48,7 +48,7 @@ local unitDef = {
 	movementClass = [[TANK3]],
 	name = [[Jeager]],
 	noAutoFire = false,
-	noChaseCategory = [[NOTAIR]],
+	noChaseCategory = [[ALL SUB]],
 	objectName = [[CORJEAG]],
 	radarDistance = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -92,8 +92,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOTAIR]],
 			def = [[CORJEAG_MISSILE]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }

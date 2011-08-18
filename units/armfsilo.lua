@@ -15,7 +15,7 @@ local unitDef = {
 	buildTime = 539899,
 	canAttack = true,
 	canstop = 1,
-	category = [[ARM SPECIAL WEAPON LEVEL3 NOTAIR NOTSUB ]],
+	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	description = [[Ultimate Nuclear Missile Launcher]],
@@ -38,6 +38,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[Armageddon]],
 	noAutoFire = false,
+	noChaseCategory = [[ALL]],
 	objectName = [[ARMFSILO]],
 	radarDistance = 0,
 	selfDestructAs = [[NUCLEAR_DISASTER]],
@@ -77,8 +78,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[ARMFSILO_WEAPON]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

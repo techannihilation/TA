@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[TLL TANK LEVEL3 WEAPON NOTAIR NOTSUB ]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	defaultmissiontype = [[standby]],
@@ -41,7 +41,7 @@ local unitDef = {
 	movementClass = [[HTANK4]],
 	name = [[Thumper]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[TLLTHUMPER]],
 	selfDestructAs = [[BIG_UNIT]],
 	shootme = 1,
@@ -82,9 +82,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[TLL_Thumper]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

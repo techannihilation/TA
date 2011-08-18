@@ -17,7 +17,7 @@ local unitDef = {
 	builder = false,
 	buildPic = [[CORFMD.png]],
 	buildTime = 196450,
-	category = [[CORE WEAPON NOTAIR NOTSUB NOTSHIP LEVEL3 NOTLAND ALL]],
+	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	damageModifier = 0.5,
 	description = [[Fast Anti-Nuke System]],
@@ -36,6 +36,7 @@ local unitDef = {
 	maxWaterDepth = 0,
 	metalStorage = 0,
 	name = [[Advanced Fortitude]],
+	noChaseCategory = [[ALL]],
 	objectName = [[CORFMD]],
 	radarDistance = 50,
 	seismicSignature = 0,
@@ -74,8 +75,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOTAIR]],
 			def = [[FMD_ROCKET1]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

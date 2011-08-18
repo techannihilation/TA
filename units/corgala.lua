@@ -23,7 +23,7 @@ local unitDef = {
 	canPatrol = true,
 	canstop = 1,
 	cantBeTransported = true,
-	category = [[CORE LEVEL3 WEAPON NOTAIR NOTSUB]],
+	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	collisionVolumeOffsets = [[0 -15 0]],
 	collisionVolumeScales = [[180.02865600586 262.02865600586 129.02865600586]],
 	collisionVolumeTest = 1,
@@ -51,6 +51,7 @@ local unitDef = {
 	movementClass = [[VKBOT9]],
 	name = [[Galacticus]],
 	noAutoFire = false,
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[CORGALA]],
 	onlytargetcategory3 = [[notair]],
 	selfDestructAs = [[NUCLEAR_MISSILE]],
@@ -70,10 +71,11 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[TAWF_BANISHER2]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
+			badTargetCategory = [[VTOL]],
 			def = [[RavagerBeam]],
 		},
 	},

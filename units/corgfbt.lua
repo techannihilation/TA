@@ -22,7 +22,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL TANK WEAPON NOTSUB NOTAIR]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[Magnesium FireBall Tank (anti spam)]],
@@ -46,7 +46,7 @@ local unitDef = {
 	movementClass = [[TANK2]],
 	name = [[Grimani]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[corGFBT]],
 	ovradjust = 1,
 	selfDestructAs = [[BIG_UNIT]],
@@ -88,9 +88,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[FIREBALL]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

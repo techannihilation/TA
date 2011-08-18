@@ -15,7 +15,7 @@ local unitDef = {
 	buildTime = 8413,
 	canAttack = true,
 	canstop = 1,
-	category = [[TLL SPECIAL LEVEL2 WEAPON NOTAIR NOTSUB ]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
@@ -31,7 +31,7 @@ local unitDef = {
 	maxWaterDepth = 0,
 	name = [[Wiper]],
 	noAutoFire = false,
-	noChaseCategory = [[MOBILE]],
+	noChaseCategory = [[ALL]],
 	objectName = [[TLLSAM]],
 	ovradjust = 1,
 	radarDistance = 950,
@@ -72,8 +72,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOTAIR]],
 			def = [[PACKO_MISSILE]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }

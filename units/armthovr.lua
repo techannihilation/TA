@@ -24,7 +24,7 @@ local unitDef = {
 	canPatrol = true,
 	canstop = 1,
 	cantBeTransported = true,
-	category = [[ALL HOVER MOBILE WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL HOVER MEDIUM MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[Transport Hovercraft]],
@@ -90,8 +90,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[ANTILASER]],
 			def = [[CORFAST_WEAPON]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

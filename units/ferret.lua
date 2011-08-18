@@ -21,7 +21,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ARM VTOL LEVEL2 WEAPON NOTSUB ALL]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL]],
 	collide = false,
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	cruiseAlt = 60,
@@ -49,7 +49,7 @@ local unitDef = {
 	mobilestandorders = 1,
 	name = [[Ferret]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[Ferret]],
 	radarDistance = 0,
 	scale = 1,
@@ -91,9 +91,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[BBU_MMG]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

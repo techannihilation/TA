@@ -21,7 +21,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[CORE KBOT WEAPON NOTAIR NOTSUB]],
+	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[monkeylord_dead]],
 	damageModifier = 1,
 	defaultmissiontype = [[Standby]],
@@ -49,7 +49,7 @@ local unitDef = {
 	movementClass = [[HTKBOT11]],
 	name = [[Cybran Monkeylord Shielded Mech]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[monkeylord]],
 	onoffable = true,
 	ovradjust = 1,
@@ -97,12 +97,12 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[Cybran_Monkeylord_Beam]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[3] = {
 			def = [[Cybran_Monkeylord_Shield]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

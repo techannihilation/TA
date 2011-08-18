@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[TLL LEVEL1 WEAPON NOTAIR NOTSUB MOBILE  ]],
+	category = [[ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL TINY]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	defaultmissiontype = [[Standby]],
@@ -43,7 +43,7 @@ local unitDef = {
 	movementClass = [[TANK2]],
 	name = [[Vampire]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[TLLGLADIUS]],
 	selfDestructAs = [[SMALL_UNIT]],
 	shootme = 1,
@@ -84,8 +84,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[TLLLIGHT_PARALYZER]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

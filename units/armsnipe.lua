@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[KBOT MOBILE WEAPON ALL NOTSHIP NOTAIR]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	cloakCost = 75,
 	cloakCostMoving = 200,
 	corpse = [[DEAD]],
@@ -44,6 +44,7 @@ local unitDef = {
 	mobilestandorders = 1,
 	movementClass = [[KBOT2]],
 	name = [[Sharpshooter]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMSNIPE]],
 	onlyTargetCategory = [[NOTAIR]],
 	radarDistanceJam = 10,
@@ -83,8 +84,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
+			badTargetCategory = [[SMALL TINY]],
 			def = [[ARMSNIPE_WEAPON]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

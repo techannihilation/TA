@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL TANK WEAPON NOTSUB NOTAIR]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	collisionVolumeOffsets = [[0 -13 0]],
 	collisionVolumeScales = [[41.810501098633 45.810501098633 69.810501098633]],
 	collisionVolumeTest = 1,
@@ -49,7 +49,7 @@ local unitDef = {
 	movementClass = [[HTANK4]],
 	name = [[Tankanotor]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[TANKANOTOR]],
 	radarDistance = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -91,11 +91,12 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOTAIR]],
 			def = [[TANKANOTOR_MISSILES]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
 			def = [[TANKANOTOR_MISSILES]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

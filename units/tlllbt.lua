@@ -16,7 +16,7 @@ local unitDef = {
 	canAttack = true,
 	canGuard = true,
 	canstop = 1,
-	category = [[ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
@@ -36,6 +36,7 @@ local unitDef = {
 	maxWaterDepth = 0,
 	name = [[Reliser]],
 	noAutoFire = false,
+	noChaseCategory = [[ALL]],
 	objectName = [[TLLLBT]],
 	selfDestructAs = [[MEDIUM_BUILDING]],
 	shootme = 1,
@@ -76,15 +77,16 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
+			badTargetCategory = [[TINY]],
 			def = [[TLLFIXED_GUN]],
 			mainDir = [[0 1 0]],
 			maxAngleDif = 230,
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
+			badTargetCategory = [[TINY]],
 			def = [[TLLFIXED_GUN_HIGH]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

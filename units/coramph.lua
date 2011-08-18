@@ -22,7 +22,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[KBOT MOBILE WEAPON ALL NOTSHIP NOTAIR]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[HEAP]],
 	defaultmissiontype = [[Standby]],
 	description = [[Amphibious Kbot]],
@@ -85,11 +85,12 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[ANTILASER]],
 			def = [[CORAMPH_WEAPON2]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[3] = {
 			def = [[CORAMPH_WEAPON1]],
+			onlyTargetCategory = [[NOTHOVERNOTVTOL]],
 		},
 	},
 }

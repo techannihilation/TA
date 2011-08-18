@@ -21,7 +21,7 @@ local unitDef = {
 	canPatrol = true,
 	canstop = 1,
 	cantBeTransported = true,
-	category = [[ALL TANK WEAPON NOTSUB NOTAIR]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	defaultmissiontype = [[Standby]],
@@ -51,7 +51,7 @@ local unitDef = {
 	movementClass = [[htank4]],
 	name = [[Champion]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[champ]],
 	radarDistance = 0,
 	selfDestructAs = [[BIG_UNITEX]],
@@ -95,9 +95,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[champ_gauss]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

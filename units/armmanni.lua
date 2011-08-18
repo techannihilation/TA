@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL TANK MOBILE WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[Mobile Tachyon Weapon]],
@@ -44,7 +44,7 @@ local unitDef = {
 	movementClass = [[TANK3]],
 	name = [[Penetrator]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMMANNI]],
 	seismicSignature = 0,
 	selfDestructAs = [[ESTOR_BUILDING]],
@@ -87,11 +87,11 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[ANTILASER]],
+			badTargetCategory = [[SMALL TINY]],
 			def = [[ATAM]],
 			mainDir = [[0 0 1]],
 			maxAngleDif = 180,
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

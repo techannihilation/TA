@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL TANK MOBILE WEAPON ANTIGATOR ANTIEMG NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[Riot Tank]],
@@ -44,7 +44,7 @@ local unitDef = {
 	movementClass = [[TANK2]],
 	name = [[Leveler]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[CORLEVLR]],
 	seismicSignature = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -87,8 +87,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[CORLEVLR_WEAPON]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

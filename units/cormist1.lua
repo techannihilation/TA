@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[CORE TANK MOBILE WEAPON NOTAIR NOTSUB NOTSHIP ALL]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[CORMIST_DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[Missile Truck]],
@@ -44,7 +44,7 @@ local unitDef = {
 	movementClass = [[TANK3]],
 	name = [[Two Tailed Slasher]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[CORMIST1]],
 	seismicSignature = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -92,9 +92,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOTAIR]],
 			def = [[CORTRUCK_MISSILE1]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

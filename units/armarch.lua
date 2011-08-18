@@ -16,7 +16,7 @@ local unitDef = {
 	buildTime = 42190,
 	canAttack = true,
 	canstop = 1,
-	category = [[ARM LEVEL3 WEAPON NOTSUB NOTAIR]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
@@ -36,6 +36,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[Gatling]],
 	noAutoFire = false,
+	noChaseCategory = [[ALL]],
 	objectName = [[armarch]],
 	radarDistance = 0,
 	selfDestructAs = [[LARGE_BUILDING]],
@@ -82,9 +83,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
+			badTargetCategory = [[TINY]],
 			def = [[ARMARCH_GUN]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

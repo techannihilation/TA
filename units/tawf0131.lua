@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ARM TANK WEAPON NOTAIR NOTSUB NOTSHIP ALL]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[TAWF013_DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[upgraded Light Artillery Vehicle]],
@@ -45,7 +45,7 @@ local unitDef = {
 	movementClass = [[TANK3]],
 	name = [[Precise Shellshocker ]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[TAWF0131]],
 	seismicSignature = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -91,11 +91,10 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[TAWF113_WEAPON1]],
 			mainDir = [[0 0 1]],
 			maxAngleDif = 180,
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

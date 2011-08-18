@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL TANK MOBILE WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[heap]],
 	defaultmissiontype = [[Standby]],
@@ -43,7 +43,7 @@ local unitDef = {
 	movementClass = [[AMPHKBOT]],
 	name = [[Namor]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMAMSPD]],
 	radarDistance = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -87,8 +87,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[ARM_PINCER_GAUSS]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

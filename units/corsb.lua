@@ -25,7 +25,7 @@ local unitDef = {
 	canPatrol = true,
 	canstop = 1,
 	canSubmerge = true,
-	category = [[ALL NOTLAND MOBILE WEAPON ANTIGATOR VTOL ANTIFLAME ANTIEMG ANTILASER NOTSUB NOTSHIP]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL]],
 	collide = false,
 	cruiseAlt = 250,
 	defaultmissiontype = [[VTOL_standby]],
@@ -50,7 +50,7 @@ local unitDef = {
 	moverate1 = 8,
 	name = [[Maelstrom]],
 	noAutoFire = true,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[CORSB]],
 	seismicSignature = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -90,8 +90,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[SEAADVBOMB]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

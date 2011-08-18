@@ -15,7 +15,7 @@ local unitDef = {
 	buildTime = 13995,
 	canAttack = true,
 	canstop = 1,
-	category = [[TLL LEVEL3 WEAPON NOTAIR NOTSUB ]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
@@ -36,7 +36,7 @@ local unitDef = {
 	maxWaterDepth = 0,
 	name = [[Candlestick]],
 	noAutoFire = false,
-	noChaseCategory = [[MOBILE]],
+	noChaseCategory = [[ALL]],
 	objectName = [[TLLFLAK]],
 	selfDestructAs = [[MEDIUM_BUILDING]],
 	shootme = 1,
@@ -77,8 +77,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOTAIR]],
 			def = [[ARMFLAK_GUN]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }

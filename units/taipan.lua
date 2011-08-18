@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[KBOT MOBILE ALL NOTSUB NOWEAPON NOTAIR]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	cloakCost = 50,
 	cloakCostMoving = 100,
 	corpse = [[dead]],
@@ -53,7 +53,7 @@ local unitDef = {
 	movementClass = [[KBOT2]],
 	name = [[K-74 Taipan]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[TAIPAN]],
 	onoffable = true,
 	radarDistance = 450,
@@ -100,17 +100,16 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[ARM_FAST7]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
 			def = [[arm_FAST7]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[3] = {
 			def = [[CORKBOT_ROCKET7]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

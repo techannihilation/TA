@@ -15,7 +15,7 @@ local unitDef = {
 	buildPic = [[ARMAAK.png]],
 	buildTime = 6958,
 	canMove = true,
-	category = [[KBOT MOBILE WEAPON ALL NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[Advanced Amphibious Anti-Air Kbot]],
@@ -30,7 +30,7 @@ local unitDef = {
 	maxVelocity = 1.58,
 	movementClass = [[AKBOT2]],
 	name = [[Archangel]],
-	noChaseCategory = [[ALL]],
+	noChaseCategory = [[ALL SUB]],
 	objectName = [[ARMAAK]],
 	seismicSignature = 1,
 	selfDestructAs = [[BIG_UNIT]],
@@ -72,20 +72,25 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[BOGUS_MISSILE]],
+			onlyTargetCategory = [[VTOL]],
 		},
 		[2] = {
 			def = [[ARMAAKBOT_MISSILE1]],
+			onlyTargetCategory = [[VTOL]],
 		},
 		[3] = {
 			def = [[ARMAAKBOT_MISSILE2]],
+			onlyTargetCategory = [[VTOL]],
 			slaveTo = 2,
 		},
 		[4] = {
 			def = [[ARMAAKBOT_MISSILE2]],
+			onlyTargetCategory = [[VTOL]],
 			slaveTo = 1,
 		},
 		[5] = {
 			def = [[AAKFLAK]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }

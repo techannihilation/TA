@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL TANK MOBILE WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[dead]],
 	defaultmissiontype = [[Standby]],
 	description = [[Very Heavy Missile Tank]],
@@ -45,7 +45,7 @@ local unitDef = {
 	movementClass = [[HTANK3]],
 	name = [[Terroriser]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[TAWF014]],
 	radarDistance = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -87,10 +87,11 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOTAIR]],
+			badTargetCategory = [[SMALL TINY]],
 			def = [[TAWF014_weapon]],
 			mainDir = [[0 0 1]],
 			maxAngleDif = 270,
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

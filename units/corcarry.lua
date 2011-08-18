@@ -22,7 +22,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL NOTLAND MOBILE NOTSUB SHIP NOWEAPON NOTAIR]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[Aircraft Carrier with Anti-Nuke]],
@@ -87,8 +87,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOTAIR]],
 			def = [[FMD_ROCKET]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

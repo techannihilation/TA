@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[TLL LEVEL2 WEAPON NOTAIR NOTSUB MOBILE  ]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	defaultmissiontype = [[Standby]],
@@ -42,7 +42,7 @@ local unitDef = {
 	movementClass = [[HTANK4]],
 	name = [[Roaster]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[TLLROASTER]],
 	onlytargetcategory2 = [[NOTAIR]],
 	selfDestructAs = [[ATOMIC_BLAST]],
@@ -84,12 +84,12 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[TLL_OBLITERATOR]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[3] = {
 			def = [[LIGHTNING]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

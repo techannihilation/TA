@@ -21,7 +21,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL TANK WEAPON NOTSUB NOTAIR]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[dead]],
 	defaultmissiontype = [[Standby]],
 	description = [[Amph.Siege Tank]],
@@ -47,7 +47,7 @@ local unitDef = {
 	movementClass = [[ATANK3]],
 	name = [[Orca]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMORCA]],
 	radarDistance = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -90,9 +90,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[ARM_ROY]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

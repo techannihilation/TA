@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL WEAPON NOTSUB NOTAIR]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[Heavy Artillery Vehicle]],
@@ -45,7 +45,7 @@ local unitDef = {
 	movementClass = [[HTANK4]],
 	name = [[Tremor]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[TREM]],
 	seismicSignature = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -88,11 +88,10 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[TREM1]],
 			mainDir = [[0 0 1]],
 			maxAngleDif = 270,
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

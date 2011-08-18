@@ -15,7 +15,7 @@ local unitDef = {
 	buildTime = 8580,
 	canAttack = true,
 	canstop = 1,
-	category = [[TLL SPECIAL WEAPON  LEVEL2 NOTAIR NOTSUB ]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
@@ -37,6 +37,7 @@ local unitDef = {
 	minWaterDepth = 5,
 	name = [[Advanced Torpedo Launcher]],
 	noAutoFire = false,
+	noChaseCategory = [[ALL]],
 	noshadow = 1,
 	objectName = [[TLLatorp]],
 	ovradjust = 1,
@@ -82,7 +83,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
+			badTargetCategory = [[TINY]],
 			def = [[TLL_ADVEDO]],
+			onlyTargetCategory = [[NOTHOVERNOTVTOL]],
 		},
 	},
 }

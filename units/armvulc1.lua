@@ -19,7 +19,7 @@ local unitDef = {
 	buildTime = 2772961,
 	canAttack = true,
 	canstop = 1,
-	category = [[ARM WEAPON NOTAIR NOTSUB NOTSHIP LEVEL2 NOTLAND ALL]],
+	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[T3 Rapid-Fire Long-Range Plasma Cannon]],
@@ -39,6 +39,7 @@ local unitDef = {
 	maxWaterDepth = 0,
 	metalStorage = 0,
 	name = [[Super Vulcan]],
+	noChaseCategory = [[ALL]],
 	objectName = [[ARMVULC1]],
 	script = [[armvulc.cob]],
 	seismicSignature = 0,
@@ -81,9 +82,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[MOBILE]],
 			def = [[ARMVULC_WEAPON1]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

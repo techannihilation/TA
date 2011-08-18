@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL HOVER MOBILE WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL HOVER LARGE MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[corsent_dead]],
 	defaultmissiontype = [[Standby]],
@@ -50,6 +50,7 @@ local unitDef = {
 	movementClass = [[TANKHOVER3]],
 	name = [[Iguana]],
 	noAutoFire = false,
+	noChaseCategory = [[ALL]],
 	objectName = [[ARMIGUANA]],
 	radarDistance = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -94,8 +95,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOTAIR]],
 			def = [[ARMFLAK_GUN]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }

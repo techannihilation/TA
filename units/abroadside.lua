@@ -21,7 +21,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[NOTAIR NOTSUB NOTSHIP LEVEL3 ALL]],
+	category = [[ALL HUGE MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTVTOL SUPERSHIP]],
 	collide = false,
 	collisionvolumeoffsets = [[0 -2 20]],
 	collisionvolumescales = [[230 138 564]],
@@ -46,7 +46,7 @@ local unitDef = {
 	metalStorage = 1000,
 	metalUse = 0,
 	name = [[BROADSIDE]],
-	noChaseCategory = [[NOTAIR]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ABroadside]],
 	radarDistance = 0,
 	selfDestructAs = [[MEGA_BLAST1]],
@@ -82,20 +82,22 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[750MW]],
 			mainDir = [[0 0 1]],
 			maxAngleDif = 270,
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
 			def = [[750MW]],
 			mainDir = [[0 0 1]],
 			maxAngleDif = 270,
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[3] = {
 			def = [[750MW]],
 			mainDir = [[0 0 -1]],
 			maxAngleDif = 270,
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[4] = {
 			def = [[CapitalShipMinigun]],
@@ -111,6 +113,7 @@ local unitDef = {
 			def = [[750MW]],
 			mainDir = [[0 0 1]],
 			maxAngleDif = 270,
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

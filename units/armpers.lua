@@ -21,7 +21,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ARM VTOL LEVEL2 WEAPON NOTSUB ALL]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL]],
 	cruiseAlt = 60,
 	defaultmissiontype = [[VTOL_standby]],
 	description = [[Advanced Gunship [Anti T3/T4]],
@@ -43,7 +43,7 @@ local unitDef = {
 	mobilestandorders = 1,
 	name = [[Perseus]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMPERS]],
 	radarDistance = 0,
 	scale = 1,
@@ -85,9 +85,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[VTOL_ROCKET4]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

@@ -18,7 +18,7 @@ local unitDef = {
 	buildTime = 5300,
 	canAttack = true,
 	canstop = 1,
-	category = [[ARM WEAPON NOTAIR NOTSUB NOTSHIP NOTLAND ALL]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[ARMLLT_DEAD]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[Boosted Light Laser Tower]],
@@ -39,7 +39,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[Boosted LLT]],
 	noAutoFire = false,
-	noChaseCategory = [[MOBILE]],
+	noChaseCategory = [[ALL]],
 	objectName = [[ARMLLT1]],
 	seismicSignature = 0,
 	selfDestructAs = [[MEDIUM_BUILDING]],
@@ -78,8 +78,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[ANTILASER]],
 			def = [[ARM_LIGHTLASER1]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

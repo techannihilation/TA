@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL NOTSUB WEAPON NOTAIR]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[All-Terrain Heavy Plasma Cannon]],
@@ -42,7 +42,7 @@ local unitDef = {
 	movementClass = [[HTKBOT4]],
 	name = [[Vanguard]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMSHOCK]],
 	seismicSignature = 0,
 	selfDestructAs = [[SHOCKER]],
@@ -79,9 +79,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOWEAPON]],
+			badTargetCategory = [[SMALL TINY]],
 			def = [[SHOCKER]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

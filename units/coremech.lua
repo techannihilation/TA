@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[KBOT MOBILE WEAPON ALL NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[Hunter Mech]],
@@ -43,7 +43,7 @@ local unitDef = {
 	movementClass = [[HKBOT4]],
 	name = [[Slaughter]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[coreMech]],
 	ovradjust = 1,
 	radarDistance = 0,
@@ -88,15 +88,15 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[ARMMECH_CANNON]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
 			def = [[TAWF114_weapon]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[3] = {
 			def = [[ARMMECH_ROCKET]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

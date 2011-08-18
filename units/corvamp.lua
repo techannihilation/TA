@@ -21,7 +21,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[CORE VTOL MOBILE WEAPON NOTSUB NOTSHIP ANTIEMG ANTIGATOR ANTILASER ANTIFLAME LEVEL2 NOTLAND ALL]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL]],
 	collide = false,
 	cruiseAlt = 160,
 	defaultmissiontype = [[VTOL_standby]],
@@ -43,7 +43,7 @@ local unitDef = {
 	mobilestandorders = 1,
 	moverate1 = 8,
 	name = [[Vamp]],
-	noChaseCategory = [[NOTAIR]],
+	noChaseCategory = [[NOTAIR SUB]],
 	objectName = [[CORVAMP]],
 	seismicSignature = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -81,11 +81,14 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOTAIR]],
+			badTargetCategory = [[SMALL TINY]],
 			def = [[CORVTOL_ADVMISSILE]],
+			onlyTargetCategory = [[VTOL]],
 		},
 		[2] = {
+			badTargetCategory = [[SMALL TINY]],
 			def = [[CORVTOL_ADVMISSILE]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }

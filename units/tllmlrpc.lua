@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL TANK WEAPON NOTSUB NOTAIR]],
+	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[dead]],
 	defaultmissiontype = [[Standby]],
 	description = [[Mobile LRPC]],
@@ -42,7 +42,7 @@ local unitDef = {
 	movementClass = [[HTANK5]],
 	name = [[Avatar]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[TLLMLRPC]],
 	radarDistance = 0,
 	selfDestructAs = [[ATOMIC_BLAST]],
@@ -87,9 +87,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
+			badTargetCategory = [[SMALL TINY]],
 			def = [[ARM_BERTHACANNON2]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

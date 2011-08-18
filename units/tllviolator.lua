@@ -21,7 +21,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[TLL LEVEL1 WEAPON  NOTAIR MOBILE  ]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	defaultmissiontype = [[Standby]],
@@ -43,7 +43,7 @@ local unitDef = {
 	movementClass = [[BOAT4]],
 	name = [[Violator]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL UNDERWATER]],
+	noChaseCategory = [[VTOL]],
 	objectName = [[TLLVIOLATOR]],
 	scale = 0.5,
 	selfDestructAs = [[BIG_UNIT]],
@@ -87,11 +87,12 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[ARM_ROY]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
 			def = [[DEPTHCHARGE]],
+			onlyTargetCategory = [[NOTHOVERNOTVTOL]],
 		},
 	},
 }

@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL TANK WEAPON NOTSUB NOTAIR]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[Very Heavy Amphibious Tank]],
@@ -44,7 +44,7 @@ local unitDef = {
 	movementClass = [[ATANK3]],
 	name = [[Poison Arrow]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[CORPARROW]],
 	seismicSignature = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -87,8 +87,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[CORE_PARROW]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

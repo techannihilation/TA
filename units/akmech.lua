@@ -18,7 +18,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[KBOT MOBILE ALL NOTSUB NOWEAPON NOTAIR]],
+	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[AK X-1 General Heavy Assault "Vengence"]],
@@ -44,7 +44,7 @@ local unitDef = {
 	movementClass = [[KBOT2]],
 	name = [[Vengence]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[AKMECH]],
 	ovradjust = 1,
 	radarDistance = 0,
@@ -90,15 +90,15 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[ARM_LIGHTLASER4]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
 			def = [[AKMECH_CANNON]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[3] = {
 			def = [[AKMECH_ROCKET]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

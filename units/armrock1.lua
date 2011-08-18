@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ARM KBOT MOBILE WEAPON NOTAIR NOTSUB NOTSHIP ALL]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[ARMROCK_DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[Rocket Kbot]],
@@ -43,7 +43,7 @@ local unitDef = {
 	movementClass = [[KBOT2]],
 	name = [[Insistent Rocko]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMROCK1]],
 	seismicSignature = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -87,8 +87,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[ARM_KBOT_ROCKET1]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

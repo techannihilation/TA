@@ -21,7 +21,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[TLL ALL NOTLAND MOBILE WEAPON NOTSUB SHIP NOTAIR]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	defaultmissiontype = [[Standby]],
@@ -85,11 +85,12 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[ARMTRUCK_MISSILE]],
+			onlyTargetCategory = [[VTOL]],
 		},
 		[2] = {
 			def = [[TLL_LASERSHIP]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

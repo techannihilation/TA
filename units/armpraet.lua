@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[KBOT WEAPON ALL NOTSUB NOTAIR]],
+	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	collisionvolumeoffsets = [[0 0 0]],
 	collisionvolumescales = [[86 120 78]],
 	collisionvolumetest = 0,
@@ -50,7 +50,7 @@ local unitDef = {
 	name = [[Praetorian]],
 	nanoColor = [[0 0 1]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMPRAET]],
 	onoffable = true,
 	ovradjust = 1,
@@ -98,18 +98,18 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[PRAETORIAN_SPLIT]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
 			def = [[PRAETORIAN_ARMS]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[3] = {
 			def = [[PRAETORIAN_ROCKET]],
-			onlyTargetCategory = [[NOTAIR]],
 		},
 		[4] = {
 			def = [[Praetorian_Shield]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

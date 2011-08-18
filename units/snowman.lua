@@ -21,7 +21,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[KBOT MOBILE ALL NOTSUB NOWEAPON NOTAIR]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	cloakCost = 800,
 	cloakCostMoving = 1200,
 	corpse = [[dead]],
@@ -53,7 +53,7 @@ local unitDef = {
 	movementClass = [[KBOT2]],
 	name = [[Snow Man]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[snowman]],
 	radarDistance = 0,
 	selfDestructAs = [[SMALL_UNIT]],
@@ -98,9 +98,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
+			badTargetCategory = [[SMALL TINY]],
 			def = [[armsnowman_weapon]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

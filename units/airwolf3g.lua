@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[CORE VTOL MOBILE WEAPON NOTSUB NOTSHIP ANTIEMG ANTIGATOR ANTILASER ANTIFLAME LEVEL2 NOTLAND ALL]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL]],
 	collide = false,
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	cruiseAlt = 120,
@@ -46,7 +46,7 @@ local unitDef = {
 	mobilestandorders = 1,
 	moverate1 = 8,
 	name = [[Air Wolf]],
-	noChaseCategory = [[NOTAIR]],
+	noChaseCategory = [[NOTAIR SUB]],
 	objectName = [[Airwolf3g]],
 	ovradjust = 1,
 	radarDistance = 0,
@@ -91,14 +91,19 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOTAIR]],
+			badTargetCategory = [[MEDIUM SMALL TINY]],
 			def = [[CORVTOL_ADVMISSILE]],
+			onlyTargetCategory = [[VTOL]],
 		},
 		[2] = {
+			badTargetCategory = [[MEDIUM SMALL TINY]],
 			def = [[CORVTOL_ADVMISSILE]],
+			onlyTargetCategory = [[VTOL]],
 		},
 		[3] = {
+			badTargetCategory = [[MEDIUM SMALL TINY]],
 			def = [[CORVTOL_ADVMISSILE1]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }

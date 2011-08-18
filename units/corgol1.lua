@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL TANK MOBILE WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[CORGOL_DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[Master Assault Tank]],
@@ -43,7 +43,7 @@ local unitDef = {
 	movementClass = [[HTANK4]],
 	name = [[UPG Goliath]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[CORGOL1]],
 	script = [[corgol.cob]],
 	seismicSignature = 0,
@@ -92,8 +92,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
+			badTargetCategory = [[SMALL TINY]],
 			def = [[COR_GOL1]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

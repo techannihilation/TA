@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[TLL VTOL LEVEL1 WEAPON NOTSUB]],
+	category = [[ALL MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP SMALL VTOL]],
 	collide = false,
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	cruiseAlt = 140,
@@ -47,7 +47,7 @@ local unitDef = {
 	moverate1 = 8,
 	name = [[Sparrow]],
 	noAutoFire = false,
-	noChaseCategory = [[NOTAIR]],
+	noChaseCategory = [[NOTAIR SUB]],
 	objectName = [[tllfight]],
 	ovradjust = 1,
 	radarDistance = 0,
@@ -93,11 +93,14 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOTAIR]],
+			badTargetCategory = [[TINY]],
 			def = [[TLLVTOL_MISSILE]],
+			onlyTargetCategory = [[VTOL]],
 		},
 		[2] = {
+			badTargetCategory = [[TINY]],
 			def = [[TLLVTOL_MISSILE]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }

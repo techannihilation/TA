@@ -17,7 +17,7 @@ local unitDef = {
 	buildTime = 1843,
 	canAttack = true,
 	canstop = 1,
-	category = [[ARM WEAPON NOTAIR NOTSUB NOTSHIP NOTLAND ALL]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[ARMRL_DEAD]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[upg Anti-air Tower]],
@@ -37,7 +37,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[upg Defender]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[ALL]],
 	objectName = [[ARMRL]],
 	seismicSignature = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -74,8 +74,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOWEAPON]],
 			def = [[ARMRL_MISSILE1]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }

@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[TLL ALL NOTLAND MOBILE WEAPON NOTSUB SHIP NOTAIR]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	damageModifier = 0.5,
@@ -42,7 +42,7 @@ local unitDef = {
 	movementClass = [[DBOAT6]],
 	name = [[Visitor]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL UNDERWATER]],
+	noChaseCategory = [[ALL]],
 	objectName = [[TLLVISITOR]],
 	selfDestructAs = [[BIG_UNIT]],
 	shootme = 1,
@@ -84,12 +84,12 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[MOBILE]],
 			def = [[VISITOR_VPULSE]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
 			def = [[GA2]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }

@@ -24,7 +24,7 @@ local unitDef = {
 	canPatrol = true,
 	canstop = 1,
 	canSubmerge = true,
-	category = [[ALL NOTLAND MOBILE WEAPON ANTIGATOR NOTSUB ANTIFLAME ANTIEMG ANTILASER VTOL NOTSHIP]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL]],
 	collide = false,
 	cruiseAlt = 100,
 	defaultmissiontype = [[VTOL_standby]],
@@ -50,7 +50,7 @@ local unitDef = {
 	moverate1 = 10,
 	name = [[Sabre]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMSABER]],
 	scale = 1,
 	seismicSignature = 0,
@@ -91,9 +91,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[ANTILASER]],
 			def = [[VTOL_EMG2]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

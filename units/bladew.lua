@@ -23,7 +23,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL WEAPON VTOL NOTSUB]],
+	category = [[ALL MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP TINY VTOL]],
 	collide = false,
 	cruiseAlt = 78,
 	defaultmissiontype = [[VTOL_standby]],
@@ -48,7 +48,7 @@ local unitDef = {
 	mobilestandorders = 1,
 	name = [[Bladewing]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[COMMANDER SUB VTOL]],
 	objectName = [[BLADEW]],
 	scale = 1,
 	seismicSignature = 0,
@@ -87,11 +87,10 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[BLADEWING_LYZER]],
 			mainDir = [[0 0 1]],
 			maxAngleDif = 90,
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

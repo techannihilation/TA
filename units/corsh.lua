@@ -21,7 +21,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL HOVER MOBILE WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL HOVER MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTVTOL SMALL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[Fast Attack Hovercraft]],
@@ -82,8 +82,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[ANTIGATOR]],
 			def = [[ARMSH_WEAPON]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

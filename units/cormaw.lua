@@ -20,7 +20,7 @@ local unitDef = {
 	buildTime = 4419,
 	canAttack = true,
 	canstop = 1,
-	category = [[ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL ANTIFLAME NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	damageModifier = 0.15,
 	defaultmissiontype = [[GUARD_NOMOVE]],
@@ -46,7 +46,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[Dragon's Maw]],
 	noAutoFire = false,
-	noChaseCategory = [[MOBILE]],
+	noChaseCategory = [[ALL]],
 	objectName = [[CORMAW]],
 	radarDistanceJam = 8,
 	seismicSignature = 0,
@@ -91,8 +91,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
+			badTargetCategory = [[ANTIFLAME]],
 			def = [[DMAW]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

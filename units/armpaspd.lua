@@ -21,7 +21,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL TANK MOBILE WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	cloakCost = 100,
 	cloakCostMoving = 400,
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
@@ -46,7 +46,7 @@ local unitDef = {
 	movementClass = [[TKBOT3]],
 	name = [[Wolf]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMPASPD]],
 	radarDistance = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -91,9 +91,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
+			badTargetCategory = [[SMALL TINY]],
 			def = [[ARMPASPD]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

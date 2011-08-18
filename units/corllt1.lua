@@ -18,7 +18,7 @@ local unitDef = {
 	buildTime = 5400,
 	canAttack = true,
 	canstop = 1,
-	category = [[CORE WEAPON NOTAIR NOTSUB NOTSHIP NOTLAND ALL]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[CORLLT_DEAD]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[Rapid-fire Light Laser Tower]],
@@ -40,7 +40,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[RF LLT]],
 	noAutoFire = false,
-	noChaseCategory = [[MOBILE]],
+	noChaseCategory = [[ALL]],
 	objectName = [[CORLLT]],
 	seismicSignature = 0,
 	selfDestructAs = [[MEDIUM_BUILDING]],
@@ -79,8 +79,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[ANTILASER]],
 			def = [[CORE_LIGHTLASER1]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

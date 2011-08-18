@@ -23,7 +23,7 @@ local unitDef = {
 	buildTime = 52071,
 	canAttack = true,
 	canstop = 1,
-	category = [[ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	damageModifier = 0.25,
 	defaultmissiontype = [[GUARD_NOMOVE]],
@@ -43,7 +43,7 @@ local unitDef = {
 	maxWaterDepth = 0,
 	metalStorage = 0,
 	name = [[Annihilator]],
-	noChaseCategory = [[MOBILE]],
+	noChaseCategory = [[ALL]],
 	objectName = [[ARMANNI]],
 	onoffable = true,
 	radarDistance = 1500,
@@ -83,9 +83,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[ANTILASER]],
+			badTargetCategory = [[SMALL TINY]],
 			def = [[ATA]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

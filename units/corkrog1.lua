@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[CORE KBOT WEAPON NOTAIR NOTSUB NOTSHIP ALL]],
+	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	collisionvolumeoffsets = [[0 -8 -10]],
 	collisionvolumescales = [[224 336 208]],
 	collisionvolumetest = 0,
@@ -48,7 +48,7 @@ local unitDef = {
 	movementClass = [[VKBOT9]],
 	name = [[Super Krogoth]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[CORKROG1]],
 	seismicSignature = 0,
 	selfDestructAs = [[CRBLMSSL4]],
@@ -92,11 +92,12 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[CORKROG_FIRE1]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
 			def = [[ATAD1]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[3] = {
 			def = [[CORKROG_ROCKET1]],
@@ -105,6 +106,7 @@ local unitDef = {
 			def = [[KROGCRUSH1]],
 			mainDir = [[0 0 1]],
 			maxAngleDif = 200,
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

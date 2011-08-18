@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[TLL KBOT LEVEL2 WEAPON NOTAIR NOTSUB]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	defaultmissiontype = [[Standby]],
@@ -43,7 +43,7 @@ local unitDef = {
 	movementClass = [[KBOT2]],
 	name = [[Iguana]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[TLLLASBOT]],
 	radarDistance = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -88,6 +88,7 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[TLL_LASERH1]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

@@ -26,7 +26,7 @@ local unitDef = {
 	canPatrol = true,
 	canstop = 1,
 	canSubmerge = true,
-	category = [[ALL NOTLAND MOBILE WEAPON ANTIGATOR NOTSUB ANTIFLAME ANTIEMG ANTILASER VTOL NOTSHIP]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL]],
 	collide = false,
 	cruiseAlt = 250,
 	defaultmissiontype = [[VTOL_standby]],
@@ -51,7 +51,7 @@ local unitDef = {
 	moverate1 = 8,
 	name = [[Tsunami]],
 	noAutoFire = true,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMSB]],
 	scale = 1,
 	seismicSignature = 0,
@@ -92,8 +92,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[SEAADVBOMB]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

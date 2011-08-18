@@ -15,7 +15,7 @@ local unitDef = {
 	canAttack = true,
 	canGuard = true,
 	canstop = 1,
-	category = [[CORE LEVEL3 WEAPON NOTAIR NOTSUB]],
+	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[CORINT_DEAD]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[- Long Range EMP Paralizer]],
@@ -36,6 +36,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[Intimidator Paralizer]],
 	noAutoFire = false,
+	noChaseCategory = [[ALL]],
 	objectName = [[core_intimidator]],
 	radarDistance = 0,
 	selfDestructAs = [[ATOMIC_BLAST]],
@@ -83,9 +84,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[CORE_INTIMIDATOREMP]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

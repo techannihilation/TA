@@ -18,7 +18,7 @@ local unitDef = {
 	buildTime = 5810,
 	canAttack = true,
 	canstop = 1,
-	category = [[ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	cloakCost = 20,
 	corpse = [[DEAD]],
 	damageModifier = 0.2,
@@ -84,6 +84,7 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[PACKO_MISSILE]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }

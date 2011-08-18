@@ -18,7 +18,7 @@ local unitDef = {
 	buildTime = 5237,
 	canAttack = true,
 	canstop = 1,
-	category = [[ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[Hardened Missile Battery]],
@@ -38,6 +38,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[SAM Anticombomb]],
 	noAutoFire = false,
+	noChaseCategory = [[ALL]],
 	objectName = [[MADSAM]],
 	seismicSignature = 0,
 	selfDestructAs = [[LARGE_BUILDING]],
@@ -78,6 +79,7 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[MADSAM_MISSILE]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }

@@ -18,7 +18,7 @@ local unitDef = {
 	buildTime = 19268,
 	canAttack = true,
 	canstop = 1,
-	category = [[ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[Medium Range Plasma Battery]],
@@ -39,7 +39,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[Punisher]],
 	noAutoFire = false,
-	noChaseCategory = [[MOBILE]],
+	noChaseCategory = [[ALL]],
 	objectName = [[CORPUN]],
 	seismicSignature = 0,
 	selfDestructAs = [[MEDIUM_BUILDING]],
@@ -78,15 +78,16 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
+			badTargetCategory = [[TINY]],
 			def = [[CORFIXED_GUN]],
 			mainDir = [[0 1 0]],
 			maxAngleDif = 230,
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
+			badTargetCategory = [[TINY]],
 			def = [[CORFIXED_GUN_HIGH]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

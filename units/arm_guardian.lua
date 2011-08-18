@@ -16,7 +16,7 @@ local unitDef = {
 	canAttack = true,
 	canGuard = true,
 	canstop = 1,
-	category = [[ARM LEVEL2 WEAPON NOTAIR NOTSUB]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[dead]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[-Heavy Plasma Battery]],
@@ -37,6 +37,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[Resistant Guardian]],
 	noAutoFire = false,
+	noChaseCategory = [[ALL]],
 	objectName = [[arm_guardian]],
 	radarDistance = 0,
 	selfDestructAs = [[MEDIUM_BUILDING]],
@@ -86,9 +87,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
+			badTargetCategory = [[TINY]],
 			def = [[ARMFIXED_GUN1]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

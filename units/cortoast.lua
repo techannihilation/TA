@@ -19,7 +19,7 @@ local unitDef = {
 	buildTime = 25717,
 	canAttack = true,
 	canstop = 1,
-	category = [[ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	damageModifier = 0.25,
 	defaultmissiontype = [[GUARD_NOMOVE]],
@@ -42,7 +42,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[Toaster]],
 	noAutoFire = false,
-	noChaseCategory = [[MOBILE]],
+	noChaseCategory = [[ALL]],
 	objectName = [[CORTOAST]],
 	seismicSignature = 0,
 	selfDestructAs = [[LARGE_BUILDING]],
@@ -81,15 +81,16 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
+			badTargetCategory = [[TINY]],
 			def = [[CORTOAST_GUN]],
 			mainDir = [[0 1 0]],
 			maxAngleDif = 230,
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
+			badTargetCategory = [[TINY]],
 			def = [[CORTOAST_GUN_HIGH]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

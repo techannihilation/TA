@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[WEAPON NOTSUB NOTAIR]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	defaultmissiontype = [[Standby]],
 	description = [[Rocket Kbot]],
 	explodeAs = [[MECH_BLAST]],
@@ -38,7 +38,7 @@ local unitDef = {
 	movementClass = [[HKBOT4]],
 	name = [[Medium Catapult]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMRAVEN1]],
 	script = [[armraven.cob]],
 	seismicSignature = 0,
@@ -77,9 +77,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[EXP_HEAVYROCKET1]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

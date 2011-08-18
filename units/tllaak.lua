@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[KBOT MOBILE WEAPON ALL NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[DEAD]],
 	damageModifier = 0.9,
@@ -41,7 +41,7 @@ local unitDef = {
 	movementClass = [[akbot2]],
 	name = [[Spreader]],
 	noAutoFire = false,
-	noChaseCategory = [[ALL]],
+	noChaseCategory = [[ALL SUB]],
 	objectName = [[TLLAAK]],
 	selfDestructAs = [[BIG_UNIT]],
 	shootme = 1,
@@ -86,9 +86,11 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[ARM_CIR2]],
+			onlyTargetCategory = [[VTOL]],
 		},
 		[2] = {
 			def = [[ARMAAKBOT_MISSILE1]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }

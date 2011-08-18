@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[TLL LEVEL1 WEAPON NOTAIR NOTSUB MOBILE  ]],
+	category = [[ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL TINY]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	defaultmissiontype = [[Standby]],
@@ -43,7 +43,7 @@ local unitDef = {
 	movementClass = [[KBOT2]],
 	name = [[Private]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[TLLPRIVATE]],
 	selfDestructAs = [[SMALL_UNIT]],
 	shootme = 1,
@@ -86,8 +86,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[EMG]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[KBOT WEAPON ALL NOTSUB NOTAIR]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[All-Terrain Assault Mech]],
@@ -40,7 +40,7 @@ local unitDef = {
 	movementClass = [[HTKBOT4]],
 	name = [[Karganeth]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[CORKARG]],
 	seismicSignature = 0,
 	selfDestructAs = [[MECH_BLAST]],
@@ -80,14 +80,15 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[SUPER_MISSILE]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
 			def = [[TAWF_BANISHER1]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[3] = {
 			def = [[COR_ERAD]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }

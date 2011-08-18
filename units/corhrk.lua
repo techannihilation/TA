@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[KBOT MOBILE WEAPON ALL NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[Heavy Rocket Kbot]],
@@ -43,7 +43,7 @@ local unitDef = {
 	movementClass = [[KBOT2]],
 	name = [[Dominator]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[CORHRK]],
 	seismicSignature = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -84,7 +84,7 @@ local unitDef = {
 		[1] = {
 			badTargetCategory = [[MOBILE]],
 			def = [[CORHRK_ROCKET]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

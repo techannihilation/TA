@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[TLL  LEVEL2 NOWEAPON NOTAIR MOBILE ]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	defaultmissiontype = [[Standby]],
@@ -43,6 +43,7 @@ local unitDef = {
 	movementClass = [[DBOAT6]],
 	name = [[Giant]],
 	noAutoFire = false,
+	noChaseCategory = [[VTOL]],
 	objectName = [[TLLGIANT]],
 	onoffable = true,
 	radarDistance = 1850,
@@ -88,8 +89,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOTAIR]],
 			def = [[TLL_ROCKET]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

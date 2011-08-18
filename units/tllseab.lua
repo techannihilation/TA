@@ -23,7 +23,7 @@ local unitDef = {
 	canPatrol = true,
 	canstop = 1,
 	canSubmerge = true,
-	category = [[TLL ALL NOTLAND MOBILE WEAPON ANTIGATOR NOTSUB VTOL NOTSHIP]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL]],
 	collide = false,
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	cruiseAlt = 80,
@@ -51,6 +51,7 @@ local unitDef = {
 	moverate1 = 8,
 	name = [[Osprey]],
 	noAutoFire = false,
+	noChaseCategory = [[VTOL]],
 	objectName = [[TLLSEAB]],
 	radarDistance = 0,
 	selfDestructAs = [[SMALL_UNIT]],
@@ -95,14 +96,16 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[ARMSEAP_WEAPON1]],
+			onlyTargetCategory = [[NOTHOVERNOTVTOL]],
 		},
 		[2] = {
 			def = [[ARMSEAP_WEAPON1]],
+			onlyTargetCategory = [[NOTHOVERNOTVTOL]],
 		},
 		[3] = {
 			def = [[TLLVTOL_MISSILE]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

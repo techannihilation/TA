@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ARM KBOT MOBILE WEAPON NOTAIR NOTSUB NOTSHIP LEVEL2 ALL]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[Fast Raider Kbot]],
@@ -42,7 +42,7 @@ local unitDef = {
 	movementClass = [[KBOT2]],
 	name = [[Zipper]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMFAST]],
 	seismicSignature = 0,
 	selfDestructAs = [[SMALL_UNIT]],
@@ -81,8 +81,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[ANTIEMG]],
 			def = [[ARM_FAST]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

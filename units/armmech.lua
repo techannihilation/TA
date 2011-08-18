@@ -21,7 +21,7 @@ local unitDef = {
 	canPatrol = true,
 	canstop = 1,
 	cantBeTransported = true,
-	category = [[KBOT MOBILE ALL NOTSUB NOWEAPON NOTAIR]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[Standby]],
@@ -49,7 +49,7 @@ local unitDef = {
 	movementClass = [[KBOT2]],
 	name = [[Killer]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[armMech]],
 	ovradjust = 1,
 	radarDistance = 0,
@@ -94,15 +94,15 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[ARMMECH_TESLA]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
 			def = [[ARMMECH_CANNON]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[3] = {
 			def = [[ARMMECH_ROCKET]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

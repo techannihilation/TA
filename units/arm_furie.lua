@@ -19,7 +19,7 @@ local unitDef = {
 	canPatrol = true,
 	canstop = 1,
 	cantBeTransported = true,
-	category = [[KBOT WEAPON ALL NOTSUB NOTAIR]],
+	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	collisionvolumeoffsets = [[0 -10 -3]],
 	collisionvolumescales = [[54 69 40]],
 	collisionvolumetest = 0,
@@ -51,6 +51,7 @@ local unitDef = {
 	movementClass = [[VKBOT5]],
 	name = [[Arm Furie]],
 	noAutoFire = false,
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARM_FURIE]],
 	radarDistance = 0,
 	selfDestructAs = [[CRBLMSSL1]],
@@ -94,14 +95,15 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[ARM_FURIE_HEAD]],
-			onlyTargetCategory = [[Notair]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
 			def = [[ARM_FURIE_FIRE]],
-			onlyTargetCategory = [[Notair]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[3] = {
 			def = [[ARM_FURIE_ROCKET]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

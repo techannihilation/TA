@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL TANK WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL SMALL]],
 	collisionvolumeoffsets = [[0 0 1]],
 	collisionvolumescales = [[33 20 35]],
 	collisionvolumetype = [[box]],
@@ -48,7 +48,7 @@ local unitDef = {
 	movementClass = [[TANK3]],
 	name = [[Shellshocker]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[TAWF013]],
 	seismicSignature = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -94,11 +94,10 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[TAWF113_WEAPON]],
 			mainDir = [[0 0 1]],
 			maxAngleDif = 180,
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

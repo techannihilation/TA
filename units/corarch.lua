@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL MOBILE WEAPON NOTLAND SHIP NOTSUB NOTAIR]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[Anti-Air Ship]],
@@ -85,12 +85,15 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[BOGUS_MISSILE]],
+			onlyTargetCategory = [[VTOL]],
 		},
 		[2] = {
 			def = [[GA2]],
+			onlyTargetCategory = [[VTOL]],
 		},
 		[3] = {
 			def = [[MOBILEFLAK]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }

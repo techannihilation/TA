@@ -21,7 +21,7 @@ local unitDef = {
 	canPatrol = true,
 	canstop = 1,
 	cantBeTransported = true,
-	category = [[MOBILE UNDERWATER WEAPON NOTLAND NOTAIR ALL]],
+	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTVTOL SUB]],
 	collisionvolumeoffsets = [[0 -10 0]],
 	collisionvolumescales = [[42 42 156]],
 	collisionvolumetype = [[Ell]],
@@ -49,7 +49,7 @@ local unitDef = {
 	movementClass = [[UBOAT4]],
 	name = [[Uppercut]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[NOTSUBNOTSHIP]],
 	objectName = [[uppercut]],
 	radarDistance = 0,
 	seismicSignature = 0,
@@ -89,18 +89,20 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[UPPERCUT_ROCKET]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
 			def = [[TAWF009_WEAPON]],
 			mainDir = [[0 0 1]],
 			maxAngleDif = 110,
+			onlyTargetCategory = [[NOTHOVERNOTVTOL]],
 		},
 		[3] = {
 			def = [[ARMSMART_TORPEDO]],
 			mainDir = [[0 0 1]],
 			maxAngleDif = 150,
+			onlyTargetCategory = [[NOTHOVERNOTVTOL]],
 		},
 	},
 }

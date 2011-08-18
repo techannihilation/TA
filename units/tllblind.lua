@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[TLL KBOT LEVEL3 WEAPON NOTAIR NOTSUB]],
+	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	defaultmissiontype = [[Standby]],
@@ -46,7 +46,7 @@ local unitDef = {
 	movementClass = [[hkbot4]],
 	name = [[Dreadnought]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[ALL SUB]],
 	objectName = [[TLLBLIND]],
 	ovradjust = 1,
 	radarDistance = 0,
@@ -92,16 +92,16 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[COR_GOL]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
 			def = [[PACKO_MISSILE]],
+			onlyTargetCategory = [[VTOL]],
 		},
 		[3] = {
 			def = [[BLIND_LASER]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

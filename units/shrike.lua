@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ARM VTOL LEVEL2 WEAPON NOTSUB ALL]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL]],
 	collide = false,
 	cruiseAlt = 200,
 	defaultmissiontype = [[VTOL_standby]],
@@ -40,7 +40,7 @@ local unitDef = {
 	mobilestandorders = 1,
 	moverate1 = 8,
 	name = [[Shrike]],
-	noChaseCategory = [[NOTAIR]],
+	noChaseCategory = [[NOTAIR SUB]],
 	objectName = [[SHRIKE]],
 	radarDistance = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -83,14 +83,19 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOTAIR]],
+			badTargetCategory = [[MEDIUM SMALL TINY]],
 			def = [[ARMVTOL_ADVMISSILE]],
+			onlyTargetCategory = [[VTOL]],
 		},
 		[2] = {
+			badTargetCategory = [[MEDIUM SMALL TINY]],
 			def = [[ARMVTOL_ADVMISSILE]],
+			onlyTargetCategory = [[VTOL]],
 		},
 		[3] = {
+			badTargetCategory = [[MEDIUM SMALL TINY]],
 			def = [[ARMVTOL_ADVMISSILE1]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }

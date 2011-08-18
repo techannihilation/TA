@@ -21,7 +21,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL UNDERWATER MOBILE WEAPON NOTLAND NOTAIR]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTVTOL SUB]],
 	collisionvolumeoffsets = [[0 0 0]],
 	collisionvolumescales = [[42 32 64]],
 	collisionvolumetest = 0,
@@ -48,7 +48,7 @@ local unitDef = {
 	movementClass = [[UBOAT3]],
 	name = [[Lurker]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[NOTSUBNOTSHIP]],
 	objectName = [[ARMSUB]],
 	seismicSignature = 0,
 	selfDestructAs = [[SMALL_UNIT]],
@@ -89,10 +89,10 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[HOVER NOTSHIP]],
 			def = [[ARM_TORPEDO]],
 			mainDir = [[0 0 1]],
 			maxAngleDif = 90,
+			onlyTargetCategory = [[NOTHOVERNOTVTOL]],
 		},
 	},
 }

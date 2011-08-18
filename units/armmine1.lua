@@ -21,7 +21,7 @@ local unitDef = {
 	canMove = false,
 	canPatrol = false,
 	canstop = 0,
-	category = [[ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL MINE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	cloakCost = 0.5,
 	collide = false,
 	collisionvolumeoffsets = [[0 -2 0]],
@@ -49,7 +49,7 @@ local unitDef = {
 	minCloakDistance = 8,
 	name = [[Micro]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[ALL]],
 	objectName = [[ARMMINE1]],
 	onoffable = false,
 	seismicSignature = 0,
@@ -88,12 +88,12 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[MINE_DUMMY]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
 			def = [[MINE_DETONATOR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

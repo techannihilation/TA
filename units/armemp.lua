@@ -23,7 +23,7 @@ local unitDef = {
 	buildTime = 79247,
 	canAttack = true,
 	canstop = 1,
-	category = [[ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	description = [[EMP Missile Launcher]],
 	energyStorage = 0,
@@ -42,6 +42,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[Detonator]],
 	noAutoFire = false,
+	noChaseCategory = [[ALL]],
 	objectName = [[ARMEMP]],
 	seismicSignature = 0,
 	selfDestructAs = [[SPYBOMBX]],
@@ -79,8 +80,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[MOBILE]],
 			def = [[ARMEMP_WEAPON]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

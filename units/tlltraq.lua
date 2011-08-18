@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[KBOT MOBILE ALL NOTSUB NOWEAPON NOTAIR]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	cloakCost = 50,
 	cloakCostMoving = 250,
 	corpse = [[dead]],
@@ -47,7 +47,7 @@ local unitDef = {
 	movementClass = [[KBOT2]],
 	name = [[Tracker]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[TLLTRAQ]],
 	onoffable = true,
 	radarDistance = 450,
@@ -92,9 +92,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[TLLTRAQ_WEAPON]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

@@ -27,7 +27,7 @@ local unitDef = {
 	canPatrol = true,
 	canstop = 1,
 	cantBeTransported = true,
-	category = [[ARM VTOL LEVEL2 WEAPON NOTSUB ALL]],
+	category = [[ALL HUGE MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL]],
 	collide = false,
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	cruiseAlt = 320,
@@ -56,7 +56,7 @@ local unitDef = {
 	mobilestandorders = 1,
 	name = [[StratoBomber]],
 	noAutoFire = false,
-	noChaseCategory = [[Underwater]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[RaT_ArmBomber]],
 	ovradjust = 1,
 	scale = 1,
@@ -102,6 +102,7 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[Mk-83]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

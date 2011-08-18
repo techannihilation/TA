@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ARM KBOT LEVEL2 WEAPON NOTAIR NOTSUB ALL]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[ARMFBOY_DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[Very Heavy Plasma Kbot (heavy boost)]],
@@ -42,7 +42,7 @@ local unitDef = {
 	movementClass = [[HKBOT4]],
 	name = [[UPG Fatboy]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMFBOY1]],
 	seismicSignature = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -81,9 +81,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
+			badTargetCategory = [[SMALL TINY]],
 			def = [[ARM_FATBOY_NOTALASER1]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

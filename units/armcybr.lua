@@ -21,7 +21,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ARM VTOL LEVEL2 WEAPON NOTSUB ALL]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL]],
 	collide = false,
 	cruiseAlt = 300,
 	defaultmissiontype = [[VTOL_standby]],
@@ -46,6 +46,7 @@ local unitDef = {
 	moverate1 = 9,
 	name = [[Liche]],
 	noAutoFire = true,
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMCYBR]],
 	seismicSignature = 0,
 	selfDestructAs = [[LARGE_BUILDING]],
@@ -83,7 +84,7 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[ARM_PIDR]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

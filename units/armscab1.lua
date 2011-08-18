@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ARM TANK MOBILE WEAPON NOTAIR NOTSUB NOTSHIP LEVEL2 ALL]],
+	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[ARMSCAB_DEAD]],
 	damageModifier = 0.5,
 	defaultmissiontype = [[Standby]],
@@ -43,7 +43,7 @@ local unitDef = {
 	mobilestandorders = 1,
 	movementClass = [[TKBOT3]],
 	name = [[Fast Scarab]],
-	noChaseCategory = [[ALL]],
+	noChaseCategory = [[ALL SUB]],
 	objectName = [[ARMSCAB]],
 	radarDistance = 50,
 	seismicSignature = 0,
@@ -82,8 +82,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[AMD_ROCKET1]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

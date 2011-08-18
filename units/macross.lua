@@ -20,7 +20,7 @@ local unitDef = {
 	canPatrol = true,
 	canstop = 1,
 	cantBeTransported = true,
-	category = [[KBOT WEAPON ALL NOTSUB NOTAIR]],
+	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	defaultmissiontype = [[Standby]],
@@ -46,7 +46,7 @@ local unitDef = {
 	movementClass = [[HTKBOT4]],
 	name = [[Macross]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[macross5]],
 	radarDistance = 0,
 	selfDestructAs = [[NUCLEAR_MISSILE]],
@@ -90,16 +90,16 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[MACROSS_FIRE]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
 			def = [[MACROSS_ARM_GUN]],
-			onlyTargetCategory = [[Notair]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[3] = {
 			def = [[MACROSS_MISSILE]],
-			onlyTargetCategory = [[Notair]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

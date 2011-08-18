@@ -21,7 +21,7 @@ local unitDef = {
 	canPatrol = true,
 	canstop = 1,
 	cantBeTransported = true,
-	category = [[ALL TANK WEAPON NOTSUB NOTAIR]],
+	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[Standby]],
@@ -49,6 +49,7 @@ local unitDef = {
 	movementClass = [[HTKBOT4]],
 	name = [[War Machine]],
 	noAutoFire = false,
+	noChaseCategory = [[SUB VTOL]],
 	nochasecategory1 = [[VTOL]],
 	objectName = [[CORMachn]],
 	ovradjust = 1,
@@ -92,11 +93,11 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[WARM_GUN]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
+			badTargetCategory = [[VTOL]],
 			def = [[WARM_ROCKET]],
 		},
 	},

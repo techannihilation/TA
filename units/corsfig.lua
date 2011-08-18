@@ -23,7 +23,7 @@ local unitDef = {
 	canPatrol = true,
 	canstop = 1,
 	canSubmerge = true,
-	category = [[ALL NOTLAND MOBILE WEAPON ANTIGATOR VTOL ANTIFLAME ANTIEMG ANTILASER NOTSUB NOTSHIP]],
+	category = [[ALL MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP SMALL VTOL]],
 	collide = false,
 	cruiseAlt = 70,
 	defaultmissiontype = [[VTOL_standby]],
@@ -48,7 +48,7 @@ local unitDef = {
 	moverate1 = 8,
 	name = [[Voodoo]],
 	noAutoFire = false,
-	noChaseCategory = [[NOTAIR]],
+	noChaseCategory = [[NOTAIR SUB]],
 	objectName = [[CORSFIG]],
 	seismicSignature = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -88,8 +88,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOTAIR]],
+			badTargetCategory = [[TINY]],
 			def = [[CORSFIG_WEAPON]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }

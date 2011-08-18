@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[TLL LEVEL2 WEAPON NOTAIR NOTSUB MOBILE  ]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	defaultmissiontype = [[Standby]],
@@ -40,7 +40,7 @@ local unitDef = {
 	movementClass = [[AKBOT2]],
 	name = [[Binder]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[TLLBind]],
 	selfDestructAs = [[MEDIUM_BUILDING]],
 	shootme = 1,
@@ -82,8 +82,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[TLLBINDER_WEAPON]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

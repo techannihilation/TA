@@ -23,7 +23,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL MOBILE WEAPON NOTLAND ANTIGATOR VTOL ANTIFLAME ANTIEMG ANTILASER NOTSUB NOTSHIP]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL]],
 	collide = false,
 	cruiseAlt = 165,
 	defaultmissiontype = [[VTOL_standby]],
@@ -47,7 +47,7 @@ local unitDef = {
 	mobilestandorders = 1,
 	name = [[Shadow]],
 	noAutoFire = true,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[CORSHAD]],
 	seismicSignature = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -84,8 +84,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[MOBILE]],
 			def = [[COREBOMB]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

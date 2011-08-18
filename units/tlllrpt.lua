@@ -16,7 +16,7 @@ local unitDef = {
 	canAttack = true,
 	canGuard = true,
 	canstop = 1,
-	category = [[TLL LEVEL3 WEAPON NOTAIR NOTSUB ]],
+	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
@@ -37,7 +37,7 @@ local unitDef = {
 	maxWaterDepth = 0,
 	name = [[L.R.P.T.]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[ALL]],
 	objectName = [[TLLLRPT]],
 	onlyTargetCategory = [[NOTAIR]],
 	onoffable = true,
@@ -86,8 +86,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[ARM_BERTHACANNON]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

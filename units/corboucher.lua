@@ -15,7 +15,7 @@ local unitDef = {
 	buildTime = 231000,
 	canAttack = true,
 	canstop = 1,
-	category = [[CORE LEVEL2 WEAPON NOTAIR NOTSUB ]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
@@ -37,7 +37,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[The Bucher]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[ALL]],
 	objectName = [[corboucher]],
 	radarDistance = 0,
 	selfDestructAs = [[MEDIUM_BUILDING]],
@@ -79,9 +79,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
+			badTargetCategory = [[LARGE MEDIUM SMALL TINY]],
 			def = [[CORE_BOUCHER]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[CORE TANK MOBILE WEAPON NOTAIR NOTSUB NOTSHIP ALL]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[CORGATOR_DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[Light Tank]],
@@ -44,7 +44,7 @@ local unitDef = {
 	movementClass = [[TANK2]],
 	name = [[Insistent Instigator]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[CORGATOR1]],
 	seismicSignature = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -87,8 +87,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[ANTIGATOR]],
 			def = [[GATOR_LASERX1]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

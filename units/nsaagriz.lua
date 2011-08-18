@@ -21,7 +21,7 @@ local unitDef = {
 	canPatrol = true,
 	canstop = 1,
 	cantBeTransported = true,
-	category = [[ALL TANK WEAPON NOTSUB NOTAIR]],
+	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1998 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	damageModifier = 0.09,
@@ -54,7 +54,7 @@ local unitDef = {
 	movementClass = [[HTANK4]],
 	name = [[Krypto-Blaster]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[NSAAGRIZ]],
 	onoffable = true,
 	ovradjust = 1,
@@ -100,9 +100,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
+			badTargetCategory = [[MEDIUM SMALL TINY]],
 			def = [[K666BLASTER]],
-			onlyTargetCategory = [[Notair]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

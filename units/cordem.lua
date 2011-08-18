@@ -19,7 +19,7 @@ local unitDef = {
 	canPatrol = true,
 	canstop = 1,
 	cantBeTransported = true,
-	category = [[KBOT WEAPON ALL NOTSUB NOTAIR]],
+	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	damageModifier = 0.5,
@@ -44,7 +44,7 @@ local unitDef = {
 	movementClass = [[hkbot4]],
 	name = [[Archdemon]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[CORDEM]],
 	radarDistance = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -88,7 +88,7 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[dem_weapon]],
-			onlyTargetCategory = [[notair]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

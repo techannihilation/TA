@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = false,
 	canPatrol = false,
 	canstop = 0,
-	category = [[ALL WEAPON NOTSUB NOTAIR]],
+	category = [[ALL MINE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	cloakCost = 2,
 	collide = false,
 	defaultmissiontype = [[Standby_Mine]],
@@ -45,7 +45,7 @@ local unitDef = {
 	minWaterDepth = 0,
 	name = [[1100 NS]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[ALL]],
 	objectName = [[CORFMINE3]],
 	seismicSignature = 0,
 	selfDestructAs = [[FMINE_HEAVY]],
@@ -84,12 +84,12 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[MINE_DUMMY]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
 			def = [[MINE_DETONATOR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

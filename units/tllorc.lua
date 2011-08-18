@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[TLL ALL UNDERWATER MOBILE WEAPON NOTLAND NOTAIR]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTVTOL SUB]],
 	collisionvolumeoffsets = [[0 0 0]],
 	collisionvolumescales = [[44 24 74]],
 	collisionvolumetest = 0,
@@ -45,7 +45,7 @@ local unitDef = {
 	movementClass = [[UBOAT4]],
 	name = [[Orc]],
 	noAutoFire = false,
-	noChaseCategory = [[NOTSUB]],
+	noChaseCategory = [[NOTSUBNOTSHIP]],
 	objectName = [[TLLORC]],
 	selfDestructAs = [[BIG_UNIT]],
 	shootme = 1,
@@ -89,8 +89,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOTSUB]],
 			def = [[CORSSUB_WEAPON]],
+			onlyTargetCategory = [[NOTHOVERNOTVTOL]],
 		},
 	},
 }

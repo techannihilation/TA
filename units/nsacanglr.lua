@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL HOVER MOBILE WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL HOVER MEDIUM MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1998 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	defaultmissiontype = [[Standby]],
@@ -50,6 +50,7 @@ local unitDef = {
 	movementClass = [[TANKHOVER3]],
 	name = [[Angler]],
 	noAutoFire = false,
+	noChaseCategory = [[VTOL]],
 	objectName = [[NSACANGLR]],
 	radarDistance = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -95,6 +96,7 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[COREHEAVYDEPTHCHARGE]],
+			onlyTargetCategory = [[NOTHOVERNOTVTOL]],
 		},
 	},
 }

@@ -21,7 +21,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL TANK MOBILE NOTSUB NOWEAPON NOTSHIP NOTAIR]],
+	category = [[ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL SMALL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	defaultmissiontype = [[Standby]],
@@ -50,7 +50,7 @@ local unitDef = {
 	movementClass = [[TANK3]],
 	name = [[Jammer]],
 	noAutoFire = false,
-	noChaseCategory = [[MOBILE]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMJAM]],
 	onoffable = true,
 	ovradjust = 1,
@@ -102,8 +102,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[MOBILE]],
 			def = [[BOGUS_GROUND_MISSILE]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

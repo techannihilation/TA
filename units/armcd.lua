@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL TANK WEAPON NOTSUB NOTAIR]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	collisionVolumeOffsets = [[0 -1 0]],
 	collisionVolumeScales = [[30.908721923828 18.908721923828 48.908721923828]],
 	collisionVolumeTest = 1,
@@ -49,6 +49,7 @@ local unitDef = {
 	movementClass = [[HTANK3]],
 	name = [[Coodos]],
 	noAutoFire = false,
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMCD]],
 	radarDistance = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -91,9 +92,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOTAIR]],
+			badTargetCategory = [[SMALL TINY]],
 			def = [[hvy_laser_weapon]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

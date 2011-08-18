@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ARM TANK MOBILE WEAPON NOTAIR NOTSUB NOTSHIP ALL]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[ARMFLASH_DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[Very Fast Assault Tank]],
@@ -44,7 +44,7 @@ local unitDef = {
 	movementClass = [[TANK2]],
 	name = [[Agile Flash]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMFLASH1]],
 	script = [[armflash.cob]],
 	seismicSignature = 0,
@@ -88,8 +88,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[ANTIEMG]],
 			def = [[EMGX]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

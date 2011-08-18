@@ -27,7 +27,7 @@ local unitDef = {
 	canPatrol = true,
 	canstop = 1,
 	cantBeTransported = true,
-	category = [[CORE VTOL MOBILE WEAPON NOTSUB NOTSHIP ANTIEMG ANTIGATOR ANTILASER ANTIFLAME LEVEL2 NOTLAND ALL ]],
+	category = [[ALL HUGE MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL]],
 	collide = false,
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	cruiseAlt = 320,
@@ -56,7 +56,7 @@ local unitDef = {
 	mobilestandorders = 1,
 	name = [[Eclipse]],
 	noAutoFire = false,
-	noChaseCategory = [[UNDERWATER]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[eclipse]],
 	ovradjust = 1,
 	scale = 1,
@@ -102,6 +102,7 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[FAB500]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

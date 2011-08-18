@@ -15,7 +15,7 @@ local unitDef = {
 	buildTime = 193549,
 	canAttack = true,
 	canstop = 1,
-	category = [[TLL SPECIAL WEAPON LEVEL3 NOTAIR NOTSUB ]],
+	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	damageModifier = 0.28,
@@ -39,6 +39,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[Revenger]],
 	noAutoFire = false,
+	noChaseCategory = [[ALL]],
 	objectName = [[TLLSILO]],
 	ovradjust = 1,
 	radarDistance = 0,
@@ -81,8 +82,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[CRBLMSSL]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

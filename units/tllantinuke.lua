@@ -14,7 +14,7 @@ local unitDef = {
 	buildCostMetal = 1985,
 	builder = false,
 	buildTime = 98025,
-	category = [[TLL SPECIAL WEAPON LEVEL3 NOTAIR NOTSUB ]],
+	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	damageModifier = 0.8,
@@ -35,6 +35,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[Peacemaker]],
 	noAutoFire = true,
+	noChaseCategory = [[ALL]],
 	objectName = [[TLLANTINUKE]],
 	ovradjust = 1,
 	radarDistance = 0,
@@ -76,8 +77,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOTAIR]],
 			def = [[AMD_ROCKET3]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

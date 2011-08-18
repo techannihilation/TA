@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[TLL UNDERWATER LEVEL1  WEAPON NOTAIR MOBILE  ]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTVTOL SUB]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	defaultmissiontype = [[Standby]],
@@ -41,7 +41,7 @@ local unitDef = {
 	movementClass = [[UBOAT3]],
 	name = [[Plunger]],
 	noAutoFire = false,
-	noChaseCategory = [[NOTSUB]],
+	noChaseCategory = [[NOTSUBNOTSHIP]],
 	objectName = [[TLLPLUNGER]],
 	selfDestructAs = [[SMALL_UNIT]],
 	shootme = 1,
@@ -88,8 +88,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOTSUB]],
 			def = [[ARM_TORPEDO]],
+			onlyTargetCategory = [[NOTHOVERNOTVTOL]],
 		},
 	},
 }

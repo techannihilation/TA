@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[KBOT WEAPON ALL NOTSUB NOTAIR]],
+	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	collisionvolumeoffsets = [[0 -9 0]],
 	collisionvolumescales = [[104 106 68]],
 	collisionvolumetype = [[Ell]],
@@ -47,7 +47,7 @@ local unitDef = {
 	movementClass = [[VKBOT5]],
 	name = [[Orcone]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMORCO]],
 	radarDistance = 0,
 	selfDestructAs = [[CRBLMSSL]],
@@ -89,16 +89,16 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[ARMORCO_FIRE]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
 			def = [[ATAD]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[3] = {
 			def = [[CORKROG_ROCKET]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

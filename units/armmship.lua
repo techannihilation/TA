@@ -21,7 +21,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL NOTLAND MOBILE WEAPON NOTSUB SHIP NOTAIR]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTVTOL]],
 	corpse = [[DEAD]],
 	damageModifier = 0.5,
 	defaultmissiontype = [[Standby]],
@@ -46,7 +46,7 @@ local unitDef = {
 	movementClass = [[BOAT5]],
 	name = [[Ranger]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[ALL]],
 	objectName = [[ARMMSHIP]],
 	radarDistance = 1400,
 	seismicSignature = 0,
@@ -85,12 +85,12 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[MOBILE]],
 			def = [[ARMMSHIP_ROCKET]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[3] = {
 			def = [[ARMSHIP_MISSILE]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }

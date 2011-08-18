@@ -23,7 +23,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[CORE VTOL LEVEL2 WEAPON NOTSUB ALL]],
+	category = [[ALL HUGE MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL]],
 	collide = false,
 	collisionvolumeoffsets = [[0 -13 -3]],
 	collisionvolumescales = [[80 23 76]],
@@ -52,6 +52,7 @@ local unitDef = {
 	mobilestandorders = 1,
 	name = [[Krow]],
 	noAutoFire = false,
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[CORCRW]],
 	scale = 1,
 	seismicSignature = 0,
@@ -90,17 +91,16 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[KROWLASER2]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
 			def = [[KROWLASER]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[3] = {
 			def = [[KROWLASER]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

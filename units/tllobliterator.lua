@@ -17,7 +17,7 @@ local unitDef = {
 	canAttack = true,
 	canGuard = true,
 	canstop = 1,
-	category = [[TLL ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	damageModifier = 0.2,
@@ -38,6 +38,7 @@ local unitDef = {
 	maxWaterDepth = 0,
 	name = [[Obliterator]],
 	noAutoFire = false,
+	noChaseCategory = [[ALL]],
 	objectName = [[TLLOBLITERATOR]],
 	onoffable = true,
 	radarDistance = 650,
@@ -78,9 +79,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
+			badTargetCategory = [[SMALL TINY]],
 			def = [[ATADR]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

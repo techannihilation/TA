@@ -21,7 +21,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL TANK WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	defaultmissiontype = [[Standby]],
 	description = [[Tactical Mobile Nuclear Tank]],
 	energyMake = 0,
@@ -43,7 +43,7 @@ local unitDef = {
 	movementClass = [[TANK3]],
 	name = [[Aegis]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[REQU1]],
 	radarDistance = 1800,
 	selfDestructAs = [[SPYBOMBX]],
@@ -87,7 +87,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
+			badTargetCategory = [[MOBILE]],
 			def = [[CORTRON_WEAPON2]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

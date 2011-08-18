@@ -21,7 +21,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL MOBILE WEAPON ANTIGATOR VTOL ANTIFLAME ANTIEMG ANTILASER NOTLAND NOTSUB NOTSHIP]],
+	category = [[ALL MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP SMALL VTOL]],
 	collide = false,
 	cruiseAlt = 110,
 	defaultmissiontype = [[VTOL_standby]],
@@ -46,7 +46,7 @@ local unitDef = {
 	moverate1 = 8,
 	name = [[Avenger]],
 	noAutoFire = false,
-	noChaseCategory = [[NOTAIR]],
+	noChaseCategory = [[NOTAIR SUB]],
 	objectName = [[CORVENG]],
 	seismicSignature = 0,
 	selfDestructAs = [[SMALL_UNIT]],
@@ -83,7 +83,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
+			badTargetCategory = [[TINY]],
 			def = [[CORVTOL_MISSILE_A2A]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }

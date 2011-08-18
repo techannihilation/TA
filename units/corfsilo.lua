@@ -15,7 +15,7 @@ local unitDef = {
 	buildTime = 542439,
 	canAttack = true,
 	canstop = 1,
-	category = [[CORE SPECIAL WEAPON LEVEL3 NOTAIR NOTSUB ]],
+	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	description = [[Ultimate Nuclear Missile Launcher]],
@@ -38,6 +38,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[Remover]],
 	noAutoFire = false,
+	noChaseCategory = [[ALL]],
 	objectName = [[CORFSILO]],
 	radarDistance = 0,
 	selfDestructAs = [[NUCLEAR_DISASTER]],
@@ -77,8 +78,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[CORFSILO_WEAPON]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

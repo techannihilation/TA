@@ -21,7 +21,7 @@ local unitDef = {
 	buildingGroundDecalType = [[armamd_aoplane.dds]],
 	buildPic = [[ARMAMD.png]],
 	buildTime = 125678,
-	category = [[ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	damageModifier = 0.5,
 	description = [[Anti-Nuke System]],
@@ -40,6 +40,7 @@ local unitDef = {
 	maxWaterDepth = 0,
 	metalStorage = 0,
 	name = [[Protector]],
+	noChaseCategory = [[ALL]],
 	objectName = [[ARMAMD]],
 	radarDistance = 50,
 	seismicSignature = 0,
@@ -78,8 +79,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOTAIR]],
 			def = [[AMD_ROCKET3]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

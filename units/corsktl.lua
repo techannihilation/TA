@@ -21,7 +21,7 @@ local unitDef = {
 	canPatrol = true,
 	canstop = 1,
 	cantBeTransported = true,
-	category = [[KBOT MOBILE WEAPON ALL NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	cloakCost = 150,
 	cloakCostMoving = 400,
 	defaultmissiontype = [[Standby]],
@@ -49,7 +49,7 @@ local unitDef = {
 	movementClass = [[AKBOT2]],
 	name = [[Skuttle]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[CORSKTL]],
 	seismicSignature = 64,
 	selfDestructAs = [[CORMINE6]],
@@ -89,12 +89,12 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[CRAWL_DUMMY]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
 			def = [[CRAWL_DETONATOR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

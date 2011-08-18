@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL NOTLAND MOBILE WEAPON NOTSUB SHIP NOTAIR]],
+	category = [[ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTVTOL SMALL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[Scout Boat/Light Anti-Air]],
@@ -44,7 +44,7 @@ local unitDef = {
 	movementClass = [[BOAT4]],
 	name = [[Skeeter]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL UNDERWATER]],
+	noChaseCategory = [[VTOL]],
 	objectName = [[ARMPT]],
 	seismicSignature = 0,
 	selfDestructAs = [[SMALL_UNIT]],
@@ -83,11 +83,12 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[ANTIGATOR]],
 			def = [[ARMPT_LASER]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[3] = {
 			def = [[ARMKBOT_MISSILE]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }

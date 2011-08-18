@@ -15,7 +15,7 @@ local unitDef = {
 	buildTime = 254864,
 	canAttack = true,
 	canstop = 1,
-	category = [[CORE WEAPON LEVEL2 NOTAIR NOTSUB ]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
@@ -37,7 +37,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[NEBRASKA]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[ALL]],
 	objectName = [[NEBRASKA]],
 	ovradjust = 1,
 	radarDistance = 0,
@@ -78,9 +78,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
+			badTargetCategory = [[LARGE MEDIUM SMALL TINY]],
 			def = [[NEBRASKA_WEAPON]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

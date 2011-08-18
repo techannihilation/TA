@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL TANK MOBILE WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL TINY]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[Light Scout Vehicle]],
@@ -44,7 +44,7 @@ local unitDef = {
 	movementClass = [[TANK2]],
 	name = [[Weasel]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[CORFAV]],
 	seismicSignature = 0,
 	selfDestructAs = [[SMALL_UNIT]],
@@ -88,8 +88,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[ANTIGATOR]],
 			def = [[CORE_LASER]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

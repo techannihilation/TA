@@ -21,7 +21,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL UNDERWATER WEAPON NOTAIR]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTVTOL SUB]],
 	collisionvolumeoffsets = [[0 0 0]],
 	collisionvolumescales = [[43 23 63]],
 	collisionvolumetest = 0,
@@ -48,7 +48,7 @@ local unitDef = {
 	movementClass = [[UBOAT4]],
 	name = [[Serpent]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[NOTSUBNOTSHIP]],
 	objectName = [[TAWF009]],
 	seismicSignature = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -89,10 +89,10 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[HOVER NOTSHIP]],
 			def = [[TAWF009_WEAPON]],
 			mainDir = [[0 0 1]],
 			maxAngleDif = 75,
+			onlyTargetCategory = [[NOTHOVERNOTVTOL]],
 		},
 	},
 }

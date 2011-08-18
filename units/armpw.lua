@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[KBOT MOBILE WEAPON ALL NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL TINY]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[Infantry Kbot]],
@@ -43,7 +43,7 @@ local unitDef = {
 	movementClass = [[KBOT2]],
 	name = [[Peewee]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMPW]],
 	seismicSignature = 0,
 	selfDestructAs = [[SMALL_UNIT]],
@@ -83,8 +83,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[ANTIEMG]],
 			def = [[EMG]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

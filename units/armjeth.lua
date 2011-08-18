@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[KBOT MOBILE WEAPON ALL NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL SMALL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[Amphibious Anti-air Kbot]],
@@ -42,7 +42,7 @@ local unitDef = {
 	movementClass = [[AKBOT2]],
 	name = [[Jethro]],
 	noAutoFire = false,
-	noChaseCategory = [[ALL]],
+	noChaseCategory = [[ALL SUB]],
 	objectName = [[ARMJETH]],
 	seismicSignature = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -86,11 +86,12 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[ALL]],
 			def = [[BOGUS_MISSILE]],
+			onlyTargetCategory = [[VTOL]],
 		},
 		[3] = {
 			def = [[ARMKBOT_MISSILE]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }

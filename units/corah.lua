@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL HOVER MOBILE WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL HOVER MEDIUM MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[Anti-Air Hovercraft]],
@@ -83,9 +83,11 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[BOGUS_MISSILE]],
+			onlyTargetCategory = [[VTOL]],
 		},
 		[2] = {
 			def = [[COREAH_WEAPON]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }

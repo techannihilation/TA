@@ -19,7 +19,7 @@ local unitDef = {
 	buildTime = 2724,
 	canAttack = true,
 	canstop = 1,
-	category = [[ALL NOTLAND ANTIGATOR NOTSUB ANTIEMG NOWEAPON NOTSHIP NOTAIR]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[Armed Metal Extractor]],
@@ -41,7 +41,7 @@ local unitDef = {
 	metalStorage = 75,
 	name = [[Exploiter]],
 	noAutoFire = false,
-	noChaseCategory = [[MOBILE]],
+	noChaseCategory = [[ALL]],
 	objectName = [[COREXP]],
 	onoffable = true,
 	seismicSignature = 0,
@@ -82,8 +82,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[ANTILASER]],
 			def = [[HLLT_BOTTOM]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

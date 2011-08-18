@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL TANK WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	defaultmissiontype = [[Standby]],
@@ -46,7 +46,7 @@ local unitDef = {
 	movementClass = [[TANK4]],
 	name = [[Gargoyle]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[CORMDDM]],
 	selfDestructAs = [[ATOMIC_BLAST]],
 	shootme = 1,
@@ -89,12 +89,15 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[ARMSNIPE_WEAPON]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
 			def = [[CORE_LASERH1]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[3] = {
 			def = [[CORE_LASERH2]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

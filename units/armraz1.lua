@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ARM KBOT WEAPON NOTAIR NOTSUB MOBILE ALL]],
+	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	collisionvolumeoffsets = [[0 -15 0]],
 	collisionvolumescales = [[115 150 105]],
 	collisionvolumetest = 0,
@@ -45,6 +45,7 @@ local unitDef = {
 	movementClass = [[HTKBOT7]],
 	name = [[Mega Razorback]],
 	noAutoFire = false,
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMRAZ1]],
 	script = [[armraz.cob]],
 	seismicSignature = 0,
@@ -85,8 +86,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[MECH_RAPIDLASER1]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

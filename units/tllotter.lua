@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[TLL ALL NOTLAND MOBILE WEAPON NOTSUB SHIP NOTAIR]],
+	category = [[ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTVTOL SMALL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	defaultmissiontype = [[Standby]],
@@ -41,7 +41,7 @@ local unitDef = {
 	movementClass = [[BOAT4]],
 	name = [[Otter]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL UNDERWATER]],
+	noChaseCategory = [[VTOL]],
 	objectName = [[TLLOTTER]],
 	selfDestructAs = [[SMALL_UNIT]],
 	shootme = 1,
@@ -83,11 +83,12 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[UNDERWATER]],
 			def = [[ARMPT_LASER]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[3] = {
 			def = [[ARMKBOT_MISSILE]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }

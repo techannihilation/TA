@@ -16,7 +16,7 @@ local unitDef = {
 	canAttack = true,
 	canGuard = true,
 	canstop = 1,
-	category = [[CORE WEAPON NOTAIR NOTSUB]],
+	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[core_immolator_dead]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[- Plasma Tower]],
@@ -36,6 +36,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[Immolator]],
 	noAutoFire = false,
+	noChaseCategory = [[ALL]],
 	objectName = [[core_immolator]],
 	radarDistance = 0,
 	selfDestructAs = [[ATOMIC_BLAST]],
@@ -83,9 +84,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[CORE_INTIMIDATOR3]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

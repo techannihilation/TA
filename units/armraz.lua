@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[KBOT MOBILE WEAPON ALL NOTSUB NOTAIR]],
+	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	collisionvolumeoffsets = [[0.0 -2.0 0.0]],
 	collisionvolumescales = [[38.0 58.0 26.0]],
 	collisionvolumetype = [[box]],
@@ -43,6 +43,7 @@ local unitDef = {
 	movementClass = [[HKBOT4]],
 	name = [[Razorback]],
 	noAutoFire = false,
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMRAZ]],
 	seismicSignature = 0,
 	selfDestructAs = [[MECH_BLAST]],
@@ -82,8 +83,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[MECH_RAPIDLASER]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[KBOT MOBILE WEAPON ALL NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	collisionvolumeoffsets = [[0 0 0]],
 	collisionvolumescales = [[28 27 25]],
 	collisionvolumetype = [[box]],
@@ -45,7 +45,7 @@ local unitDef = {
 	movementClass = [[KBOT2]],
 	name = [[Can]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[CORCAN]],
 	seismicSignature = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -84,8 +84,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[ANTILASER]],
 			def = [[CORE_CANLASER]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

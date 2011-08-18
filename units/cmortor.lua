@@ -15,7 +15,7 @@ local unitDef = {
 	buildTime = 33833,
 	canAttack = true,
 	canstop = 1,
-	category = [[CORE WEAPON LEVEL2 NOTAIR NOTSUB ]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
@@ -37,7 +37,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[Avalanche]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[ALL]],
 	objectName = [[CMORTOR]],
 	radarDistance = 0,
 	selfDestructAs = [[MEDIUM_BUILDING]],
@@ -79,9 +79,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
+			badTargetCategory = [[TINY]],
 			def = [[MORTARTILLERY]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

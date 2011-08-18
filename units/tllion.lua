@@ -16,7 +16,7 @@ local unitDef = {
 	buildTime = 999999,
 	canAttack = true,
 	canstop = 1,
-	category = [[TLL WEAPON NOTAIR NOTSUB ALL]],
+	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	collisionvolumeoffsets = [[0 -89 0]],
 	collisionvolumescales = [[105 182 105]],
 	collisionvolumetest = 1,
@@ -39,7 +39,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[Command Center]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[ALL]],
 	objectName = [[TLLION]],
 	selfDestructAs = [[CRAWL_BLAST]],
 	side = [[TLL]],
@@ -73,8 +73,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[TLL_ION_CANNON]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

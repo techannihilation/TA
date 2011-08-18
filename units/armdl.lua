@@ -23,7 +23,7 @@ local unitDef = {
 	buildTime = 4180,
 	canAttack = true,
 	canstop = 1,
-	category = [[ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[Depthcharge Launcher]],
@@ -44,6 +44,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[Anemone]],
 	noAutoFire = false,
+	noChaseCategory = [[ALL]],
 	objectName = [[ARMDL]],
 	seismicSignature = 0,
 	selfDestructAs = [[SMALL_UNIT]],
@@ -84,8 +85,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOTSUB]],
 			def = [[COAX_DEPTHCHARGE]],
+			onlyTargetCategory = [[NOTHOVERNOTVTOL]],
 		},
 	},
 }

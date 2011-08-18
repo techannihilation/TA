@@ -18,7 +18,7 @@ local unitDef = {
 	buildTime = 21855,
 	canAttack = true,
 	canstop = 1,
-	category = [[ALL WEAPON NOTSUB SPECIAL NOTAIR]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[Anti-Air Flak Gun - Naval Series]],
@@ -37,6 +37,7 @@ local unitDef = {
 	minWaterDepth = 5,
 	name = [[Flakker NS]],
 	noAutoFire = false,
+	noChaseCategory = [[ALL]],
 	objectName = [[ARMFFLAK]],
 	seismicSignature = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -76,8 +77,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOTAIR]],
 			def = [[ARMFLAK_GUN]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }

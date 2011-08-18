@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[TLL ALL HOVER MOBILE WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL HOVER MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTVTOL SMALL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	defaultmissiontype = [[Standby]],
@@ -47,7 +47,7 @@ local unitDef = {
 	movementClass = [[TANKHOVER3]],
 	name = [[Snake]],
 	noAutoFire = false,
-	noChaseCategory = [[NOTAIR]],
+	noChaseCategory = [[ALL]],
 	objectName = [[TLLHOVERMISSILE]],
 	radarDistance = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -91,8 +91,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOTAIR]],
 			def = [[COREAH_WEAPON]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }

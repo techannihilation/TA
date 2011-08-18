@@ -16,7 +16,7 @@ local unitDef = {
 	canAttack = true,
 	canGuard = true,
 	canstop = 1,
-	category = [[TLL WEAPON LEVEL1 NOTAIR NOTSUB ]],
+	category = [[ALL ANTIFLAME NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	collisionvolumeoffsets = [[0 0 0]],
 	collisionvolumescales = [[22 84 22]],
 	collisionvolumetype = [[box]],
@@ -36,7 +36,7 @@ local unitDef = {
 	maxWaterDepth = 0,
 	name = [[L.F.T.]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[ALL]],
 	objectName = [[TLLLFT]],
 	selfDestructAs = [[MEDIUM_BUILDING]],
 	shootme = 1,
@@ -76,9 +76,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
+			badTargetCategory = [[ANTIFLAME]],
 			def = [[TLL_FLAME]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

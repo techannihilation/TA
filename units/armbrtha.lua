@@ -23,7 +23,7 @@ local unitDef = {
 	buildTime = 85185,
 	canAttack = true,
 	canstop = 1,
-	category = [[ARM WEAPON NOTAIR NOTSUB NOTSHIP LEVEL3 NOTLAND ALL]],
+	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[Long Range Plasma Cannon]],
@@ -43,6 +43,7 @@ local unitDef = {
 	maxWaterDepth = 0,
 	metalStorage = 0,
 	name = [[Big Bertha]],
+	noChaseCategory = [[ALL]],
 	objectName = [[ARMBRTHA]],
 	seismicSignature = 0,
 	selfDestructAs = [[ATOMIC_BLAST]],
@@ -88,9 +89,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[MOBILE]],
 			def = [[ARM_BERTHACANNON2]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

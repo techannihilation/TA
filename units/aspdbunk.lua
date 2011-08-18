@@ -16,7 +16,7 @@ local unitDef = {
 	buildTime = 13004,
 	canAttack = true,
 	canstop = 1,
-	category = [[ARM LEVEL2 WEAPON NOTAIR NOTSUB NOTSHIP]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	cloakCost = 20,
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
@@ -36,7 +36,7 @@ local unitDef = {
 	mincloackdistance = 80,
 	name = [[Spider Bunker]],
 	noAutoFire = true,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[ALL]],
 	objectName = [[aspdbunk]],
 	onoffable = true,
 	ovradjust = 1,
@@ -82,14 +82,19 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
+			badTargetCategory = [[TINY]],
 			def = [[ARM_LASERH1]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
+			badTargetCategory = [[TINY]],
 			def = [[ARM_LIGHTLASER]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[3] = {
+			badTargetCategory = [[TINY]],
 			def = [[ARM_LIGHTLASER]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

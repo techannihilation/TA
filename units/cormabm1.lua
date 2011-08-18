@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[CORE TANK MOBILE WEAPON NOTAIR NOTSUB NOTSHIP LEVEL2 ALL]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[CORMABM_DEAD]],
 	damageModifier = 0.5,
 	defaultmissiontype = [[Standby]],
@@ -44,7 +44,7 @@ local unitDef = {
 	mobilestandorders = 1,
 	movementClass = [[TANK3]],
 	name = [[Fast Hedgehog]],
-	noChaseCategory = [[ALL]],
+	noChaseCategory = [[ALL SUB]],
 	objectName = [[CORMABM]],
 	radarDistance = 50,
 	seismicSignature = 0,
@@ -88,8 +88,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[FMD_ROCKET1]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

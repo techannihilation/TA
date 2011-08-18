@@ -17,7 +17,7 @@ local unitDef = {
 	buildTime = 18961,
 	canAttack = true,
 	canstop = 1,
-	category = [[ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	cloakCost = 20,
 	corpse = [[DEAD]],
 	damageModifier = 0.5,
@@ -43,7 +43,7 @@ local unitDef = {
 	minCloakDistance = 55,
 	name = [[Pit Bull]],
 	noAutoFire = false,
-	noChaseCategory = [[MOBILE]],
+	noChaseCategory = [[ALL]],
 	objectName = [[ARMPB]],
 	seismicSignature = 0,
 	selfDestructAs = [[SMALL_BUILDING]],
@@ -81,9 +81,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
+			badTargetCategory = [[SMALL TINY]],
 			def = [[ARMPB_WEAPON]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

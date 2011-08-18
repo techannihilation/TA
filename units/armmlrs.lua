@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL TANK WEAPON NOTSUB NOTAIR]],
+	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	defaultmissiontype = [[Standby]],
 	description = [[Multi Launch Rocket System]],
@@ -47,7 +47,7 @@ local unitDef = {
 	movementClass = [[htank4]],
 	name = [[M270 MLRS]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMMLRS]],
 	radarDistance = 0,
 	selfDestructAs = [[ATOMIC_BLAST]],
@@ -88,9 +88,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
+			badTargetCategory = [[SMALL TINY]],
 			def = [[227mm_rockets3]],
-			onlyTargetCategory = [[notair]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

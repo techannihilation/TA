@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL NOTSUB WEAPON NOTAIR]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	defaultmissiontype = [[Standby]],
 	description = [[Heavy Plasma Cannon]],
 	explodeAs = [[SHOCKER]],
@@ -41,7 +41,7 @@ local unitDef = {
 	movementClass = [[HKBOT4]],
 	name = [[Medium Vanguard]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMSHOCK1]],
 	script = [[armshock.cob]],
 	seismicSignature = 0,
@@ -78,9 +78,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOWEAPON]],
 			def = [[SHOCKER1]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

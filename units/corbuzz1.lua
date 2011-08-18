@@ -19,7 +19,7 @@ local unitDef = {
 	buildTime = 2780630,
 	canAttack = true,
 	canstop = 1,
-	category = [[CORE WEAPON NOTAIR NOTSUB NOTSHIP LEVEL3 NOTLAND ALL]],
+	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	collisionvolumeoffsets = [[0 -19 0]],
 	collisionvolumescales = [[95 184 130]],
 	collisionvolumetest = 0,
@@ -43,6 +43,7 @@ local unitDef = {
 	maxWaterDepth = 0,
 	metalStorage = 0,
 	name = [[Super Buzzsaw]],
+	noChaseCategory = [[ALL]],
 	objectName = [[CORBUZZ1]],
 	script = [[corbuzz.cob]],
 	seismicSignature = 0,
@@ -85,9 +86,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[MOBILE]],
 			def = [[CORBUZZ_WEAPON1]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

@@ -21,7 +21,7 @@ local unitDef = {
 	canPatrol = true,
 	canstop = 1,
 	cantBeTransported = true,
-	category = [[TLL SPECIAL WEAPON LEVEL3 NOTAIR NOTSUB ]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	damageModifier = 0.5,
@@ -49,7 +49,7 @@ local unitDef = {
 	movementClass = [[kbot3]],
 	name = [[Turtle]],
 	noAutoFire = true,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[tllturtle]],
 	ovradjust = 1,
 	radarDistance = 0,
@@ -94,8 +94,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[ARMSCAB_WEAPON]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

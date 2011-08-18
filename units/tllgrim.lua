@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[TLL KBOT WEAPON NOTAIR NOTSUB]],
+	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[dead]],
 	defaultmissiontype = [[Standby]],
 	description = [[Anti T3/T4 Sniper K-bot]],
@@ -42,7 +42,7 @@ local unitDef = {
 	movementClass = [[VKBOT4]],
 	name = [[Grim Reaper]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[TLLGRIM]],
 	radarDistance = 0,
 	selfDestructAs = [[NUCLEAR_MISSILE]],
@@ -85,10 +85,11 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[TLLGRIM_GUN]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
+			badTargetCategory = [[VTOL]],
 			def = [[TLLGRIM_MISSILE]],
 		},
 	},

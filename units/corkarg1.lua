@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[CORE KBOT WEAPON NOTAIR NOTSUB ALL]],
+	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[All-Terrain Very Heavy Assault Mech]],
@@ -41,7 +41,7 @@ local unitDef = {
 	movementClass = [[HTKBOT7]],
 	name = [[MegaTron]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[CORKARG1]],
 	script = [[corkarg.cob]],
 	seismicSignature = 0,
@@ -81,16 +81,16 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[SUPER_MISSILE1]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
 			def = [[TAWF_BANISHER2]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[3] = {
 			def = [[COR_ERAD2]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }

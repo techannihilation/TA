@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[CORE MOBILE WEAPON NOTAIR NOTSUB NOTLAND ALL]],
+	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTVTOL]],
 	collisionvolumeoffsets = [[0 -16 0]],
 	collisionvolumescales = [[74 98 228]],
 	collisionvolumetest = 0,
@@ -48,6 +48,7 @@ local unitDef = {
 	movementClass = [[HDBOAT8]],
 	name = [[Tyrant]],
 	noAutoFire = false,
+	noChaseCategory = [[VTOL]],
 	objectName = [[CORTYRNT]],
 	radarDistance = 2000,
 	selfDestructAs = [[NUCLEAR_BLAST]],
@@ -87,21 +88,20 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[CANNON_TYRNT]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
 			def = [[ROCKET_KROG]],
-			onlyTargetCategory = [[VTOL]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[3] = {
 			def = [[BLOD_DOOM]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[4] = {
 			def = [[BLOD_DOOM]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

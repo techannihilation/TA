@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[TLL ALL NOTLAND MOBILE WEAPON NOTSUB SHIP NOTAIR]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	defaultmissiontype = [[Standby]],
@@ -45,6 +45,7 @@ local unitDef = {
 	movementClass = [[BOAT4]],
 	name = [[Petrel]],
 	noAutoFire = false,
+	noChaseCategory = [[VTOL]],
 	objectName = [[TLLASSHIP]],
 	ovradjust = 1,
 	radarDistance = 0,
@@ -91,6 +92,7 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[TLL_ASEDO]],
+			onlyTargetCategory = [[NOTHOVERNOTVTOL]],
 		},
 	},
 }

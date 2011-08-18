@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[CORE TANK WEAPON NOTAIR NOTSUB ALL]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[CORWOLV_DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[Light Mobile Artillery]],
@@ -45,7 +45,7 @@ local unitDef = {
 	movementClass = [[TANK2]],
 	name = [[Rapid-fire Wolverine]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[CORWOLV1]],
 	seismicSignature = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -91,11 +91,10 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[CORWOLV_GUN1]],
 			mainDir = [[0 0 1]],
 			maxAngleDif = 180,
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

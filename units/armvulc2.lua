@@ -19,7 +19,7 @@ local unitDef = {
 	buildTime = 972961,
 	canAttack = true,
 	canstop = 1,
-	category = [[ARM WEAPON NOTAIR NOTSUB NOTSHIP LEVEL2 NOTLAND ALL]],
+	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[Rapid-Fire Long-Range Plasma Cannon]],
@@ -39,6 +39,7 @@ local unitDef = {
 	maxWaterDepth = 0,
 	metalStorage = 0,
 	name = [[Rapid-Vulcan]],
+	noChaseCategory = [[ALL]],
 	objectName = [[ARMVULC]],
 	seismicSignature = 0,
 	selfDestructAs = [[ATOMIC_BLAST]],
@@ -80,9 +81,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[MOBILE]],
 			def = [[ARMVULC_WEAPON3]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

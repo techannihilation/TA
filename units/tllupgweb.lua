@@ -17,7 +17,7 @@ local unitDef = {
 	canAttack = true,
 	canGuard = true,
 	canstop = 1,
-	category = [[TLL WEAPON LEVEL1 NOTAIR NOTSUB ]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	collisionvolumeoffsets = [[0 0 0]],
 	collisionvolumescales = [[22 75 22]],
 	collisionvolumetype = [[box]],
@@ -39,7 +39,7 @@ local unitDef = {
 	maxWaterDepth = 0,
 	name = [[Tesla]],
 	noAutoFire = false,
-	noChaseCategory = [[NOTAIR]],
+	noChaseCategory = [[ALL]],
 	objectName = [[TLLweb]],
 	script = [[tllweb.lua]],
 	selfDestructAs = [[MEDIUM_BUILDING]],
@@ -85,9 +85,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[SPRAY_LIGHTNING]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

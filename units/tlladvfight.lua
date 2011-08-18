@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[TLL VTOL MOBILE WEAPON NOTSUB NOTSHIP ANTIEMG ANTIGATOR ANTILASER ANTIFLAME LEVEL2 NOTLAND ALL]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL]],
 	collide = false,
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	cruiseAlt = 160,
@@ -42,7 +42,7 @@ local unitDef = {
 	maxWaterDepth = 0,
 	mobilestandorders = 1,
 	name = [[Falcon]],
-	noChaseCategory = [[NOTAIR]],
+	noChaseCategory = [[NOTAIR SUB]],
 	objectName = [[tlladvfight]],
 	ovradjust = 1,
 	radarDistance = 0,
@@ -89,11 +89,14 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOTAIR]],
+			badTargetCategory = [[SMALL TINY]],
 			def = [[ARMVTOL_ADVMISSILE]],
+			onlyTargetCategory = [[VTOL]],
 		},
 		[2] = {
+			badTargetCategory = [[SMALL TINY]],
 			def = [[CORVTOL_ADVMISSILE]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }

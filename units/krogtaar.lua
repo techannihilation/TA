@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[KBOT MOBILE WEAPON ALL NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[dead]],
 	defaultmissiontype = [[Standby]],
 	description = [[Heavy Weapons Mech]],
@@ -43,7 +43,7 @@ local unitDef = {
 	movementClass = [[HKBOT4]],
 	name = [[KrogTaar]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[krogtaar]],
 	radarDistance = 0,
 	selfDestructAs = [[CRAWL_BLAST]],
@@ -85,8 +85,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOWEAPON]],
 			def = [[COR_TAAR_RC]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

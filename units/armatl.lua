@@ -19,7 +19,7 @@ local unitDef = {
 	buildTime = 9262,
 	canAttack = true,
 	canstop = 1,
-	category = [[ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[Advanced Torpedo Launcher]],
@@ -39,6 +39,7 @@ local unitDef = {
 	minWaterDepth = 25,
 	name = [[Moray]],
 	noAutoFire = false,
+	noChaseCategory = [[ALL]],
 	objectName = [[ARMATL]],
 	seismicSignature = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -76,8 +77,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[HOVER NOTSHIP]],
+			badTargetCategory = [[TINY]],
 			def = [[ARMATL_TORPEDO]],
+			onlyTargetCategory = [[NOTHOVERNOTVTOL]],
 		},
 	},
 }

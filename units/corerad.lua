@@ -17,7 +17,7 @@ local unitDef = {
 	buildTime = 19958,
 	canAttack = true,
 	canstop = 1,
-	category = [[ALL WEAPON NOTSUB NOTAIR]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[Bomb-Resistant Medium-Range Missile Battery]],
@@ -38,6 +38,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[Eradicator]],
 	noAutoFire = false,
+	noChaseCategory = [[ALL]],
 	objectName = [[CORERAD]],
 	seismicSignature = 0,
 	selfDestructAs = [[LARGE_BUILDING]],
@@ -76,8 +77,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
+			badTargetCategory = [[SMALL TINY]],
 			def = [[COR_ERAD]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }

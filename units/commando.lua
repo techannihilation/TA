@@ -25,7 +25,7 @@ local unitDef = {
 	canRepair = false,
 	canRestore = false,
 	canstop = 1,
-	category = [[ALL MOBILE WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	defaultmissiontype = [[Standby]],
 	description = [[Stealthy Capture Kbot]],
 	energyMake = 0.8,
@@ -46,7 +46,7 @@ local unitDef = {
 	movementClass = [[KBOT2]],
 	name = [[Commando]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[COMMANDO]],
 	radarDistance = 900,
 	seismicSignature = 64,
@@ -90,8 +90,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
+			badTargetCategory = [[SMALL TINY]],
 			def = [[COMMANDOLAS]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

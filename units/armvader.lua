@@ -21,7 +21,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[KBOT MOBILE WEAPON ALL NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL SMALL]],
 	corpse = [[CORPSE]],
 	defaultmissiontype = [[Standby]],
 	description = [[Crawling Bomb]],
@@ -46,7 +46,7 @@ local unitDef = {
 	movementClass = [[AKBOT2]],
 	name = [[Invader]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMVADER]],
 	seismicSignature = 0,
 	selfDestructAs = [[CRAWL_BLAST]],
@@ -86,12 +86,12 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[CRAWL_DUMMY]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
 			def = [[CRAWL_DETONATOR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[CORE MOBILE WEAPON NOTAIR NOTSUB NOTLAND ALL]],
+	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTVTOL]],
 	collisionvolumeoffsets = [[0 -7 -2]],
 	collisionvolumescales = [[110 86 198]],
 	collisionvolumetest = 0,
@@ -90,10 +90,11 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[NUKE_HCAR_CORE]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
+			badTargetCategory = [[VTOL]],
 			def = [[ROCKET_KROG]],
 		},
 	},

@@ -21,7 +21,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL NOTLAND MOBILE NOTSUB NOWEAPON SHIP NOTAIR]],
+	category = [[ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTVTOL SMALL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[Radar Jammer Ship]],
@@ -44,7 +44,7 @@ local unitDef = {
 	movementClass = [[BOAT4]],
 	name = [[Escort]],
 	noAutoFire = false,
-	noChaseCategory = [[MOBILE]],
+	noChaseCategory = [[VTOL]],
 	objectName = [[ARMSJAM]],
 	onoffable = true,
 	radarDistanceJam = 980,
@@ -83,8 +83,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[MOBILE]],
 			def = [[BOGUS_GROUND_MISSILE]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

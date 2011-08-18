@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL TANK MOBILE WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[Very Heavy Assault Tank]],
@@ -45,7 +45,7 @@ local unitDef = {
 	movementClass = [[HTANK3]],
 	name = [[Pittbull]],
 	noAutoFire = false,
-	noChaseCategory = [[WATER]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMBULL2]],
 	radarDistance = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -87,12 +87,12 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[WATER]],
 			def = [[ARM_BULL2]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
 			def = [[ARMROGUE_CANNON]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

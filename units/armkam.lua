@@ -22,7 +22,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL WEAPON NOTSUB VTOL]],
+	category = [[ALL MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP SMALL VTOL]],
 	collide = false,
 	cruiseAlt = 60,
 	defaultmissiontype = [[VTOL_standby]],
@@ -47,6 +47,7 @@ local unitDef = {
 	moverate1 = 3,
 	name = [[Banshee]],
 	noAutoFire = false,
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMKAM]],
 	scale = 1,
 	seismicSignature = 0,
@@ -84,9 +85,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[MED_EMG]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

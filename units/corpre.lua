@@ -14,7 +14,7 @@ local unitDef = {
 	buildTime = 220000,
 	canAttack = true,
 	canstop = 1,
-	category = [[CORE LEVEL3 WEAPON NOTAIR NOTSUB ]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
@@ -40,6 +40,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[Precipitator]],
 	noAutoFire = false,
+	noChaseCategory = [[ALL]],
 	objectName = [[CORPRE]],
 	radarDistance = 1000,
 	selfDestructAs = [[MEDIUM_BUILDING]],
@@ -83,7 +84,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
+			badTargetCategory = [[LARGE MEDIUM SMALL TINY]],
 			def = [[CapitalShipMinigun]],
+			onlyTargetCategory = [[VTOL SUPERSHIP]],
 		},
 	},
 }

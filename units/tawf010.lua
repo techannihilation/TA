@@ -15,7 +15,7 @@ local unitDef = {
 	buildTime = 45675,
 	canAttack = true,
 	canstop = 1,
-	category = [[ARM WEAPON LEVEL2 NOTAIR NOTSUB ]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
@@ -37,7 +37,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[Enforcer]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[ALL]],
 	objectName = [[TAWF010]],
 	radarDistance = 0,
 	selfDestructAs = [[LARGE_BUILDING]],
@@ -77,17 +77,19 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
+			badTargetCategory = [[TINY]],
 			def = [[TAWF010_weapon]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
+			badTargetCategory = [[TINY]],
 			def = [[TAWF010b_weapon]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[3] = {
+			badTargetCategory = [[TINY]],
 			def = [[TAWF010b_weapon]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

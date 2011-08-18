@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ARM SHIP MOBILE NOTAIR NOTSUB NOTLAND ALL]],
+	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTVTOL]],
 	collisionvolumeoffsets = [[0 -6 1]],
 	collisionvolumescales = [[128 94 206]],
 	collisionvolumetest = 0,
@@ -90,10 +90,11 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[NUKE_HCAR_ARM]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
+			badTargetCategory = [[VTOL]],
 			def = [[ROCKET_MCV]],
 		},
 	},

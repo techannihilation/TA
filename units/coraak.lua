@@ -15,7 +15,7 @@ local unitDef = {
 	buildPic = [[CORAAK.png]],
 	buildTime = 7581,
 	canMove = true,
-	category = [[KBOT MOBILE WEAPON ALL NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[Heavy Amphibious Anti-Air Kbot]],
@@ -29,7 +29,7 @@ local unitDef = {
 	maxVelocity = 1.15,
 	movementClass = [[AKBOT2]],
 	name = [[Manticore]],
-	noChaseCategory = [[ALL]],
+	noChaseCategory = [[ALL SUB]],
 	objectName = [[CORAAK]],
 	seismicSignature = 1,
 	selfDestructAs = [[BIG_UNIT]],
@@ -76,41 +76,51 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[BOGUS_MISSILE]],
+			onlyTargetCategory = [[VTOL]],
 		},
 		[2] = {
 			def = [[CORAAKBOT_MISSILE3]],
+			onlyTargetCategory = [[VTOL]],
 			slaveTo = 1,
 		},
 		[3] = {
 			def = [[CORAAKBOT_MISSILE1]],
+			onlyTargetCategory = [[VTOL]],
 			slaveTo = 1,
 		},
 		[4] = {
 			def = [[CORAAKBOT_MISSILE2]],
+			onlyTargetCategory = [[VTOL]],
 			slaveTo = 1,
 		},
 		[5] = {
 			def = [[CORAAKBOT_MISSILE1]],
+			onlyTargetCategory = [[VTOL]],
 			slaveTo = 1,
 		},
 		[6] = {
 			def = [[CORAAKBOT_MISSILE2]],
+			onlyTargetCategory = [[VTOL]],
 			slaveTo = 1,
 		},
 		[7] = {
 			def = [[CORAAKBOT_MISSILE3]],
+			onlyTargetCategory = [[VTOL]],
 			slaveTo = 1,
 		},
 		[8] = {
 			def = [[CORAAKBOT_MISSILE4]],
+			onlyTargetCategory = [[VTOL]],
 			slaveTo = 1,
 		},
 		[9] = {
 			def = [[CORAAKBOT_MISSILE4]],
+			onlyTargetCategory = [[VTOL]],
 			slaveTo = 1,
 		},
 		[10] = {
 			def = [[AAKFLAK]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }

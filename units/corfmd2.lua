@@ -17,7 +17,7 @@ local unitDef = {
 	builder = false,
 	buildPic = [[CORFMD.png]],
 	buildTime = 496450,
-	category = [[CORE WEAPON NOTAIR NOTSUB NOTSHIP LEVEL3 NOTLAND ALL]],
+	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[CORFMD1_DEAD]],
 	damageModifier = 0.5,
 	description = [[T3 Anti-Nuke System]],
@@ -36,6 +36,7 @@ local unitDef = {
 	maxWaterDepth = 0,
 	metalStorage = 0,
 	name = [[T3 Defensor]],
+	noChaseCategory = [[ALL]],
 	objectName = [[CORFMD2]],
 	radarDistance = 50,
 	script = [[corfmd.cob]],
@@ -75,8 +76,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOTAIR]],
 			def = [[FMD_ROCKET2]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

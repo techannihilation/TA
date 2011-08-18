@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[KBOT MOBILE WEAPON ALL NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL TINY]],
 	corpse = [[ARMFLEA_DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[Fast Scout Kbot]],
@@ -44,7 +44,7 @@ local unitDef = {
 	movementClass = [[KBOT1]],
 	name = [[Pulcina]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMFLEA1]],
 	seismicSignature = 0,
 	selfDestructAs = [[FLEA_EX]],
@@ -83,8 +83,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[ANTIGATOR]],
 			def = [[FLEA_LASER]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

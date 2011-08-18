@@ -19,7 +19,7 @@ local unitDef = {
 	canPatrol = true,
 	canstop = 1,
 	cantBeTransported = true,
-	category = [[KBOT WEAPON ALL NOTSUB NOTAIR]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[Standby]],
@@ -49,7 +49,7 @@ local unitDef = {
 	movementClass = [[hkbot4]],
 	name = [[Troman]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[Troman]],
 	radarDistance = 0,
 	selfDestructAs = [[CRAWL_BLASTSML]],
@@ -95,11 +95,11 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[ARMMAV_WEAPON]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
 			def = [[ARMSNIPE_WEAPON]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

@@ -19,7 +19,7 @@ local unitDef = {
 	buildTime = 4233,
 	canAttack = true,
 	canstop = 1,
-	category = [[ALL NOTLAND WEAPON NOTSHIP NOTSUB SPECIAL NOTAIR]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	description = [[Torpedo Launcher]],
 	energyMake = 0.2,
@@ -39,6 +39,7 @@ local unitDef = {
 	minWaterDepth = 1,
 	name = [[Urchin]],
 	noAutoFire = false,
+	noChaseCategory = [[ALL]],
 	objectName = [[CORTL]],
 	seismicSignature = 0,
 	selfDestructAs = [[MEDIUM_BUILDING]],
@@ -76,8 +77,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[HOVER NOTSHIP]],
 			def = [[COAX_TORPEDO]],
+			onlyTargetCategory = [[NOTHOVERNOTVTOL]],
 		},
 	},
 }

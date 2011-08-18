@@ -20,7 +20,7 @@ local unitDef = {
 	canPatrol = true,
 	canstop = 1,
 	cantBeTransported = true,
-	category = [[TLL ALL UNDERWATER MOBILE WEAPON NOTLAND NOTAIR]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTVTOL SUB]],
 	cloakCost = 100,
 	cloakCostMoving = 180,
 	collisionvolumeoffsets = [[0 -20 0]],
@@ -47,7 +47,7 @@ local unitDef = {
 	movementClass = [[UBOAT4]],
 	name = [[Whale]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[NOTSUBNOTSHIP]],
 	objectName = [[TLLWHALE]],
 	selfDestructAs = [[BIG_UNIT]],
 	shootme = 1,
@@ -91,8 +91,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[MOBILE]],
 			def = [[WHALE_VPULSE]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

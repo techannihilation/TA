@@ -25,7 +25,7 @@ local unitDef = {
 	canRepair = false,
 	canRestore = false,
 	canstop = 1,
-	category = [[CORE KBOT MOBILE WEAPON NOTAIR]],
+	category = [[ALL CONSTR LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	cloakCost = 1500,
 	cloakCostMoving = 4000,
 	corpse = [[dead]],
@@ -51,7 +51,7 @@ local unitDef = {
 	movementClass = [[KBOT2]],
 	name = [[Jürgen]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[corjurgen]],
 	radarDistance = 0,
 	radarDistanceJam = 40,
@@ -94,13 +94,14 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL MOBILE]],
 			def = [[CORJURGEN_WEAPON]],
 			mainDir = [[0 0 1]],
 			maxAngleDif = 40,
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
 			def = [[ARMCOMLASER4]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

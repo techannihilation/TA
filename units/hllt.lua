@@ -18,7 +18,7 @@ local unitDef = {
 	buildTime = 6448,
 	canAttack = true,
 	canstop = 1,
-	category = [[ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[Anti-Swarm Double LLT]],
@@ -39,6 +39,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[HLLT]],
 	noAutoFire = false,
+	noChaseCategory = [[ALL]],
 	objectName = [[HLLT]],
 	seismicSignature = 0,
 	selfDestructAs = [[MEDIUM_BUILDING]],
@@ -77,11 +78,12 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[HLLT_BOTTOM]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
 			def = [[HLLT_TOP]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

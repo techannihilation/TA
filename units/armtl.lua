@@ -19,7 +19,7 @@ local unitDef = {
 	buildTime = 4120,
 	canAttack = true,
 	canstop = 1,
-	category = [[ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[Torpedo Launcher]],
@@ -39,6 +39,7 @@ local unitDef = {
 	minWaterDepth = 1,
 	name = [[Harpoon]],
 	noAutoFire = false,
+	noChaseCategory = [[ALL]],
 	objectName = [[ARMTL]],
 	seismicSignature = 0,
 	selfDestructAs = [[MEDIUM_BUILDING]],
@@ -76,8 +77,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[HOVER NOTSHIP]],
 			def = [[COAX_TORPEDO]],
+			onlyTargetCategory = [[NOTHOVERNOTVTOL]],
 		},
 	},
 }

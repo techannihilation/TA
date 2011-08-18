@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[KBOT WEAPON ALL NOTSUB NOTAIR]],
+	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD1]],
 	defaultmissiontype = [[Standby]],
 	description = [[(barely) Mobile Heavy Turret]],
@@ -38,7 +38,7 @@ local unitDef = {
 	movementClass = [[VKBOT6]],
 	name = [[Juggernaut]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[GORG]],
 	seismicSignature = 0,
 	selfDestructAs = [[CRBLMSSL2]],
@@ -76,25 +76,26 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[JUGGERNAUT_FIRE]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
 			def = [[GORG_BOTTOM]],
 			mainDir = [[1 0 4]],
 			maxAngleDif = 90,
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[3] = {
 			def = [[GORG_BOTTOM]],
 			mainDir = [[-1 0 4]],
 			maxAngleDif = 90,
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[4] = {
 			def = [[GORG_TOP]],
 			mainDir = [[0 1 0]],
 			maxAngleDif = 270,
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

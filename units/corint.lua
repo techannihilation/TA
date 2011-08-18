@@ -19,7 +19,7 @@ local unitDef = {
 	buildTime = 93237,
 	canAttack = true,
 	canstop = 1,
-	category = [[CORE WEAPON NOTAIR NOTSUB NOTSHIP LEVEL3 NOTLAND ALL]],
+	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[Long Range Plasma Cannon]],
@@ -38,6 +38,7 @@ local unitDef = {
 	maxWaterDepth = 0,
 	metalStorage = 0,
 	name = [[Intimidator]],
+	noChaseCategory = [[ALL]],
 	objectName = [[CORINT]],
 	seismicSignature = 0,
 	selfDestructAs = [[ATOMIC_BLAST]],
@@ -82,9 +83,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[MOBILE]],
 			def = [[CORE_INTIMIDATOR2]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

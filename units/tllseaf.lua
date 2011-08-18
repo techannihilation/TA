@@ -22,7 +22,7 @@ local unitDef = {
 	canPatrol = true,
 	canstop = 1,
 	canSubmerge = true,
-	category = [[TLL NOTLAND MOBILE WEAPON ANTIGATOR NOTSUB ANTIFLAME ANTIEMG ANTILASER VTOL NOTSHIP]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL]],
 	collide = false,
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	cruiseAlt = 75,
@@ -48,7 +48,7 @@ local unitDef = {
 	moverate1 = 8,
 	name = [[Gull]],
 	noAutoFire = false,
-	noChaseCategory = [[NOTAIR]],
+	noChaseCategory = [[NOTAIR SUB]],
 	objectName = [[TLLSEAF]],
 	radarDistance = 0,
 	selfDestructAs = [[SMALL_UNIT]],
@@ -93,10 +93,14 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
+			badTargetCategory = [[TINY]],
 			def = [[ARMSFIG_WEAPON]],
+			onlyTargetCategory = [[VTOL]],
 		},
 		[2] = {
+			badTargetCategory = [[TINY]],
 			def = [[TLLVTOL_MISSILE]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }

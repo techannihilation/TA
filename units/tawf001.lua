@@ -18,7 +18,7 @@ local unitDef = {
 	buildTime = 6024,
 	canAttack = true,
 	canstop = 1,
-	category = [[ALL WEAPON NOTSUB NOTAIR]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	collisionvolumeoffsets = [[0 -5 0]],
 	collisionvolumescales = [[27 90 27]],
 	collisionvolumetype = [[box]],
@@ -42,6 +42,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[Beamer]],
 	noAutoFire = false,
+	noChaseCategory = [[ALL]],
 	objectName = [[TAWF001]],
 	seismicSignature = 0,
 	selfDestructAs = [[MEDIUM_BUILDING]],
@@ -80,8 +81,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[TAWF001_WEAPON]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

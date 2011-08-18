@@ -23,7 +23,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[CORE VTOL MOBILE WEAPON NOTSUB NOTSHIP ANTIEMG ANTIGATOR ANTILASER ANTIFLAME LEVEL2 NOTLAND ALL]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL]],
 	collide = false,
 	cruiseAlt = 220,
 	defaultmissiontype = [[VTOL_standby]],
@@ -47,7 +47,7 @@ local unitDef = {
 	mobilestandorders = 1,
 	name = [[Hurricane]],
 	noAutoFire = true,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[CORHURC]],
 	seismicSignature = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -84,8 +84,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[MOBILE]],
 			def = [[CORADVBOMB]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

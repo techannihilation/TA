@@ -19,7 +19,7 @@ local unitDef = {
 	buildTime = 58927,
 	canAttack = true,
 	canstop = 1,
-	category = [[ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	description = [[Tactical Nuke Launcher]],
 	energyStorage = 0,
@@ -39,6 +39,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[Catalyst]],
 	noAutoFire = false,
+	noChaseCategory = [[ALL]],
 	objectName = [[CORTRON]],
 	seismicSignature = 0,
 	selfDestructAs = [[NUCLEAR_MISSILE]],
@@ -75,8 +76,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOTLAND]],
+			badTargetCategory = [[TINY]],
 			def = [[CORTRON_WEAPON]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

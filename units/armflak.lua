@@ -18,7 +18,7 @@ local unitDef = {
 	buildTime = 19005,
 	canAttack = true,
 	canstop = 1,
-	category = [[ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[Anti-Air Flak Gun]],
@@ -77,8 +77,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOWEAPON]],
 			def = [[ARMFLAK_GUN]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }

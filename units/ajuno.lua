@@ -21,7 +21,7 @@ local unitDef = {
 	buildTime = 21833,
 	canAttack = true,
 	canstop = 1,
-	category = [[ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[Anti Radar/Jammer/Minefield Weapon]],
@@ -41,6 +41,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[Arm Juno]],
 	noAutoFire = false,
+	noChaseCategory = [[ALL]],
 	objectName = [[AJUNO]],
 	seismicSignature = 0,
 	selfDestructAs = [[ATOMIC_BLAST]],
@@ -79,8 +80,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[MOBILE]],
 			def = [[JUNO_PULSE]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

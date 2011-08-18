@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[KBOT WEAPON ALL NOTSUB NOTAIR]],
+	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	collisionvolumeoffsets = [[0 -8 -2]],
 	collisionvolumescales = [[60 71 50]],
 	collisionvolumetest = 0,
@@ -44,7 +44,7 @@ local unitDef = {
 	movementClass = [[VKBOT5]],
 	name = [[Bantha]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMBANTH]],
 	seismicSignature = 0,
 	selfDestructAs = [[BANTHA_NUKE]],
@@ -90,12 +90,15 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[ARMBANTHA_FIRE]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
 			def = [[TEHLAZEROFDEWM]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[3] = {
 			def = [[BANTHA_ROCKET]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

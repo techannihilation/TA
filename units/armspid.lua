@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL TANK MOBILE WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[All-terrain EMP Bot]],
@@ -42,7 +42,7 @@ local unitDef = {
 	movementClass = [[TKBOT3]],
 	name = [[Spider]],
 	noAutoFire = false,
-	noChaseCategory = [[ALL]],
+	noChaseCategory = [[ALL SUB]],
 	objectName = [[ARMSPID]],
 	seismicSignature = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -80,8 +80,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[ALL]],
+			badTargetCategory = [[SMALL TINY]],
 			def = [[SPIDER]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

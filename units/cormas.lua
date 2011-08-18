@@ -13,7 +13,7 @@ local unitDef = {
 	buildCostMetal = 5220,
 	builder = false,
 	buildTime = 78000,
-	category = [[CORE NOWEAPON NOTAIR NOTSUB NOTSHIP NOTLAND ALL]],
+	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	collisionvolumeoffsets = [[0 16 0]],
 	collisionvolumescales = [[76 152 76]],
 	collisionvolumetest = 0,
@@ -37,6 +37,7 @@ local unitDef = {
 	metalStorage = 2500,
 	name = [[Dildo]],
 	noAutoFire = false,
+	noChaseCategory = [[ALL]],
 	objectName = [[CORMAS]],
 	onoffable = true,
 	radarDistance = 0,
@@ -51,6 +52,7 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[CORMASshield]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

@@ -19,7 +19,7 @@ local unitDef = {
 	buildTime = 181243,
 	canAttack = true,
 	canstop = 1,
-	category = [[ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	description = [[Nuclear ICBM Launcher]],
 	energyStorage = 0,
@@ -38,6 +38,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[Silencer]],
 	noAutoFire = false,
+	noChaseCategory = [[ALL]],
 	objectName = [[CORSILO]],
 	radarDistance = 50,
 	seismicSignature = 0,
@@ -75,8 +76,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[MOBILE]],
 			def = [[CRBLMSSL]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

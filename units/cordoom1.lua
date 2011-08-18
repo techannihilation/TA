@@ -19,7 +19,7 @@ local unitDef = {
 	buildTime = 255276,
 	canAttack = true,
 	canstop = 1,
-	category = [[CORE WEAPON NOTAIR NOTSUB NOTSHIP LEVEL3 NOTLAND ALL]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	damageModifier = 0.08,
 	description = [[Hight Energy Weapon]],
@@ -38,7 +38,7 @@ local unitDef = {
 	maxWaterDepth = 0,
 	metalStorage = 0,
 	name = [[Advanced Doomsday Machine]],
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[ALL]],
 	objectName = [[CORDOOM1]],
 	onoffable = true,
 	radarDistance = 1200,
@@ -77,15 +77,19 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[ANTILASER]],
+			badTargetCategory = [[MEDIUM SMALL TINY]],
 			def = [[ATADR10]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
+			badTargetCategory = [[SMALL TINY]],
 			def = [[CORSUMO_WEAPON10]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[3] = {
+			badTargetCategory = [[SMALL TINY]],
 			def = [[ADV_DECKLASER10]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

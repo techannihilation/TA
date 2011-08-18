@@ -21,7 +21,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[KBOT MOBILE ALL NOTSUB NOWEAPON NOTSHIP NOTAIR]],
+	category = [[ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL SMALL]],
 	corpse = [[dead]],
 	defaultmissiontype = [[Standby]],
 	description = [[Radar Jammer Kbot]],
@@ -41,7 +41,7 @@ local unitDef = {
 	movementClass = [[KBOT2]],
 	name = [[Spectre]],
 	noAutoFire = false,
-	noChaseCategory = [[MOBILE]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[CORSPEC]],
 	onoffable = true,
 	radarDistance = 0,
@@ -81,8 +81,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[MOBILE]],
 			def = [[BOGUS_GROUND_MISSILE]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

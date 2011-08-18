@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL TANK WEAPON NOTSUB NOTAIR]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[All-terrain Assault Vehicle]],
@@ -43,7 +43,7 @@ local unitDef = {
 	movementClass = [[TKBOT3]],
 	name = [[Termite]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[CORTERMITE]],
 	seismicSignature = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -81,8 +81,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[CORE_TERMITE_LASER]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

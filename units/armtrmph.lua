@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ARM MOBILE WEAPON NOTAIR NOTSUB NOTLAND ALL]],
+	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTVTOL]],
 	collisionvolumeoffsets = [[0 -2 0]],
 	collisionvolumescales = [[70 94 236]],
 	collisionvolumetest = 0,
@@ -47,6 +47,7 @@ local unitDef = {
 	movementClass = [[DBOAT8]],
 	name = [[Triumph]],
 	noAutoFire = false,
+	noChaseCategory = [[VTOL]],
 	objectName = [[ARMTRMPH]],
 	radarDistance = 2000,
 	selfDestructAs = [[NUCLEAR_BLAST]],
@@ -86,25 +87,24 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[CANNON_TRMPH]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
 			def = [[CANNON_TRMPH]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[3] = {
 			def = [[CANNON_BATS_AFT]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[4] = {
 			def = [[CANNON_BATS_AFT]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[5] = {
 			def = [[ROCKET_MCV]],
-			onlyTargetCategory = [[VTOL]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

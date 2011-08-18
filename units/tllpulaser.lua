@@ -15,7 +15,7 @@ local unitDef = {
 	buildTime = 12381,
 	canAttack = true,
 	canstop = 1,
-	category = [[TLL LEVEL2 WEAPON NOTAIR NOTSUB ]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	damageModifier = 0.125,
@@ -37,6 +37,7 @@ local unitDef = {
 	maxWaterDepth = 0,
 	name = [[Adder]],
 	noAutoFire = false,
+	noChaseCategory = [[ALL]],
 	objectName = [[TLLPULASER]],
 	selfDestructAs = [[MEDIUM_BUILDING]],
 	shootme = 1,
@@ -78,8 +79,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
+			badTargetCategory = [[TINY]],
 			def = [[ARM_LASERH2]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

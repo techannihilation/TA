@@ -15,7 +15,7 @@ local unitDef = {
 	buildTime = 59531,
 	canAttack = true,
 	canstop = 1,
-	category = [[TLL SPECIAL WEAPON LEVEL3 NOTAIR NOTSUB ]],
+	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	description = [[Long range EMP Launcher]],
@@ -36,6 +36,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[Freezer]],
 	noAutoFire = false,
+	noChaseCategory = [[ALL]],
 	objectName = [[TLLEMP]],
 	ovradjust = 1,
 	radarDistance = 0,
@@ -76,8 +77,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[ARMEMP_WEAPON]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

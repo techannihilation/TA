@@ -24,7 +24,7 @@ local unitDef = {
 	canPatrol = true,
 	canstop = 1,
 	cantBeTransported = true,
-	category = [[CORE VTOL LEVEL3 WEAPON NOTSUB]],
+	category = [[ALL HUGE MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL]],
 	collide = false,
 	collisionvolumeoffsets = [[0 -20 0]],
 	collisionvolumescales = [[50 80 160]],
@@ -58,7 +58,7 @@ local unitDef = {
 	mobilestandorders = 1,
 	name = [[Black Dragon]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[CORdrag1]],
 	ovradjust = 1,
 	radarDistance = 0,
@@ -83,17 +83,16 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[Breath_of_dragoth]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
 			def = [[Dragoth_cannon]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[3] = {
 			def = [[Dragoth_funnel]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

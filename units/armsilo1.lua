@@ -19,7 +19,7 @@ local unitDef = {
 	buildTime = 178453,
 	canAttack = true,
 	canstop = 1,
-	category = [[ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[ARMSILO_DEAD]],
 	description = [[Advanced Nuclear ICBM Launcher]],
 	energyMake = 0,
@@ -39,6 +39,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[Retaliator 2]],
 	noAutoFire = false,
+	noChaseCategory = [[ALL]],
 	objectName = [[ARMSILO]],
 	radarDistance = 50,
 	seismicSignature = 0,
@@ -76,8 +77,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[MOBILE]],
 			def = [[NUCLEAR_MISSILE1]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

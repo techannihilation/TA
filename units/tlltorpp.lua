@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[TLL VTOL LEVEL2 WEAPON   NOTSUB  ]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL]],
 	collide = false,
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	cruiseAlt = 150,
@@ -46,6 +46,7 @@ local unitDef = {
 	mobilestandorders = 1,
 	name = [[Trawler]],
 	noAutoFire = false,
+	noChaseCategory = [[VTOL]],
 	objectName = [[TLLTORPP]],
 	ovradjust = 1,
 	radarDistance = 0,
@@ -89,6 +90,7 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[ARMAIR_TORPEDO]],
+			onlyTargetCategory = [[NOTHOVERNOTVTOL]],
 		},
 	},
 }

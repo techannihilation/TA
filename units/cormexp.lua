@@ -19,7 +19,7 @@ local unitDef = {
 	buildTime = 32500,
 	canAttack = true,
 	canstop = 1,
-	category = [[ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	damageModifier = 0.3,
 	description = [[Convertible Metal Extractor]],
@@ -41,7 +41,7 @@ local unitDef = {
 	metalStorage = 500,
 	name = [[Moho Exploiter]],
 	noAutoFire = false,
-	noChaseCategory = [[MOBILE]],
+	noChaseCategory = [[ALL]],
 	objectName = [[CORMEXP]],
 	onoffable = true,
 	seismicSignature = 0,
@@ -79,11 +79,14 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[ANTILASER]],
+			badTargetCategory = [[TINY]],
 			def = [[CORSUMO_WEAPON]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
+			badTargetCategory = [[TINY]],
 			def = [[CORMEXP_ROCKET]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

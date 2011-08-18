@@ -17,7 +17,7 @@ local unitDef = {
 	buildTime = 1749,
 	canAttack = true,
 	canstop = 1,
-	category = [[CORE WEAPON NOTAIR NOTSUB NOTSHIP NOTLAND ALL]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[CORRL_DEAD]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[upgraded Anti-air Tower]],
@@ -37,7 +37,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[upg Pulverizer]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[ALL]],
 	objectName = [[CORRL]],
 	seismicSignature = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -74,8 +74,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOWEAPON]],
 			def = [[CORRL_MISSILE1]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }

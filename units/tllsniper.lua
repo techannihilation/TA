@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[TLL KBOT LEVEL2 WEAPON NOTAIR ]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	cloakCost = 600,
 	cloakCostMoving = 1350,
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
@@ -49,7 +49,7 @@ local unitDef = {
 	movementClass = [[kbot2]],
 	name = [[Assassin]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[TLLSNIPER]],
 	radarDistance = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -94,9 +94,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
+			badTargetCategory = [[SMALL TINY]],
 			def = [[CORPROT_WEAPON]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

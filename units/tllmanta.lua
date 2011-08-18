@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[TLL ALL UNDERWATER MOBILE WEAPON NOTLAND NOTAIR]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTVTOL SUB]],
 	collisionvolumeoffsets = [[0 0 0]],
 	collisionvolumescales = [[32 22 62]],
 	collisionvolumetest = 0,
@@ -45,7 +45,7 @@ local unitDef = {
 	movementClass = [[UBOAT3]],
 	name = [[Manta]],
 	noAutoFire = false,
-	noChaseCategory = [[NOTSUB]],
+	noChaseCategory = [[NOTSUBNOTSHIP]],
 	objectName = [[TLLMANTA]],
 	selfDestructAs = [[SMALL_UNIT]],
 	shootme = 1,
@@ -92,8 +92,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOTSUB]],
 			def = [[ARMSMART_TORPEDO]],
+			onlyTargetCategory = [[NOTHOVERNOTVTOL]],
 		},
 	},
 }

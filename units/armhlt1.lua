@@ -18,7 +18,7 @@ local unitDef = {
 	buildTime = 17000,
 	canAttack = true,
 	canstop = 1,
-	category = [[ARM WEAPON NOTAIR NOTSUB NOTSHIP LEVEL2 NOTLAND ALL]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[ARMHLT_DEAD]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[Heavy Laser Tower]],
@@ -38,7 +38,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[High-Energy Sentinel]],
 	noAutoFire = false,
-	noChaseCategory = [[MOBILE]],
+	noChaseCategory = [[ALL]],
 	objectName = [[ARMHLT]],
 	seismicSignature = 0,
 	selfDestructAs = [[MEDIUM_BUILDING]],
@@ -77,8 +77,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[ANTILASER]],
+			badTargetCategory = [[TINY]],
 			def = [[ARM_LASERH2]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

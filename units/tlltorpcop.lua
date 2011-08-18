@@ -22,7 +22,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[TLL VTOL LEVEL2 WEAPON  NOTSUB MOBILE]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	cruiseAlt = 55,
 	defaultmissiontype = [[VTOL_standby]],
@@ -83,7 +83,7 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[TLLAIR_TORPEDO]],
-			onlyTargetCategory = [[UNDERWATER]],
+			onlyTargetCategory = [[SUB]],
 		},
 	},
 }

@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL WEAPON NOTSUB SHIP NOTAIR]],
+	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTVTOL]],
 	collisionvolumeoffsets = [[0 -10 0]],
 	collisionvolumescales = [[90 100 200]],
 	collisionvolumetest = 0,
@@ -50,6 +50,7 @@ local unitDef = {
 	movementClass = [[HDBOAT8]],
 	name = [[Black Hydra]],
 	noAutoFire = false,
+	noChaseCategory = [[VTOL]],
 	objectName = [[CORBLACKHY]],
 	radarDistance = 1510,
 	scale = 100,
@@ -90,31 +91,33 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[HYDRA_PRIME]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
 			def = [[HYDRA_GUN]],
 			mainDir = [[0 0 1]],
 			maxAngleDif = 300,
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[3] = {
 			def = [[HYDRAMISS]],
+			onlyTargetCategory = [[VTOL]],
 		},
 		[4] = {
 			def = [[HYDRA_GUN]],
 			mainDir = [[0 0 1]],
 			maxAngleDif = 300,
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[5] = {
 			def = [[HYDRA_GUN]],
 			mainDir = [[0 0 1]],
 			maxAngleDif = 300,
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[6] = {
 			def = [[HYDRAMISS]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }

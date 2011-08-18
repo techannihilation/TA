@@ -13,7 +13,7 @@ local unitDef = {
 	buildCostMetal = 5430,
 	builder = false,
 	buildTime = 85800,
-	category = [[ARM NOWEAPON NOTAIR NOTSUB NOTSHIP NOTLAND ALL]],
+	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	collisionvolumeoffsets = [[0 0 0]],
 	collisionvolumescales = [[80 112 80]],
 	collisionvolumetest = 0,
@@ -37,6 +37,7 @@ local unitDef = {
 	metalStorage = 2500,
 	name = [[Mass Extractor]],
 	noAutoFire = false,
+	noChaseCategory = [[ALL]],
 	objectName = [[ARMMAS]],
 	onoffable = true,
 	radarDistance = 0,
@@ -50,6 +51,7 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[ARMMASshield]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

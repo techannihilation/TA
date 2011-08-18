@@ -21,7 +21,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[KBOT MOBILE ALL NOTSUB NOWEAPON NOTAIR]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[dead]],
 	defaultmissiontype = [[Standby]],
 	description = [[All Terrain -- Multipurpose Assault K-Bot]],
@@ -52,7 +52,7 @@ local unitDef = {
 	movementClass = [[AMPHKBOT]],
 	name = [[Cavalier]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMCAV]],
 	onoffable = true,
 	radarDistance = 640,
@@ -99,11 +99,11 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[ARMKBOT_MISSILE4]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
 			def = [[CORE_BATSLASER4]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

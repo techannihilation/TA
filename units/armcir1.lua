@@ -17,7 +17,7 @@ local unitDef = {
 	buildTime = 19004,
 	canAttack = true,
 	canstop = 1,
-	category = [[CORE WEAPON NOTAIR NOTSUB ALL]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[ARMCIR_DEAD]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[upgraded Bomb-Resistant Medium-Range Missile Battery]],
@@ -38,6 +38,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[Upg Chainsaw]],
 	noAutoFire = false,
+	noChaseCategory = [[ALL]],
 	objectName = [[ARMCIR]],
 	seismicSignature = 0,
 	selfDestructAs = [[LARGE_BUILDING]],
@@ -76,8 +77,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
+			badTargetCategory = [[SMALL TINY]],
 			def = [[ARM_CIR2]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }

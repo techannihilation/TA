@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[KBOT MOBILE WEAPON ALL ANTIFLAME NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL ANTIFLAME MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[HEAP]],
 	defaultmissiontype = [[Standby]],
 	description = [[Fast Assault Kbot]],
@@ -43,7 +43,7 @@ local unitDef = {
 	movementClass = [[KBOT2]],
 	name = [[Pyro]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[CORPYRO]],
 	seismicSignature = 0,
 	selfDestructAs = [[CORPYRO_BLAST]],
@@ -90,6 +90,7 @@ local unitDef = {
 		[1] = {
 			badTargetCategory = [[ANTIFLAME]],
 			def = [[FLAMETHROWER]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

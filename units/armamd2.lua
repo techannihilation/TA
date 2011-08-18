@@ -17,7 +17,7 @@ local unitDef = {
 	builder = false,
 	buildPic = [[ARMAMD.png]],
 	buildTime = 495678,
-	category = [[ARM WEAPON NOTAIR NOTSUB NOTSHIP LEVEL3 NOTLAND ALL]],
+	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[ARMAMD1_DEAD]],
 	damageModifier = 0.5,
 	description = [[T3  Anti-Nuke System]],
@@ -36,6 +36,7 @@ local unitDef = {
 	maxWaterDepth = 0,
 	metalStorage = 0,
 	name = [[T3 Protector]],
+	noChaseCategory = [[ALL]],
 	objectName = [[ARMAMD2]],
 	radarDistance = 50,
 	script = [[armamd.cob]],
@@ -75,8 +76,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOTAIR]],
 			def = [[AMD_ROCKET2]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

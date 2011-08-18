@@ -21,7 +21,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL TANK MOBILE NOTSUB NOWEAPON NOTSHIP NOTAIR]],
+	category = [[ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL SMALL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[Radar Jammer Vehicle]],
@@ -44,7 +44,7 @@ local unitDef = {
 	movementClass = [[TANK3]],
 	name = [[Deleter]],
 	noAutoFire = false,
-	noChaseCategory = [[MOBILE]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[CORETER]],
 	onoffable = true,
 	radarDistanceJam = 450,
@@ -88,8 +88,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[MOBILE]],
 			def = [[BOGUS_GROUND_MISSILE]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

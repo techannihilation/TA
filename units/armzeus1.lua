@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ARM KBOT MOBILE WEAPON NOTAIR NOTSUB NOTSHIP LEVEL2 ALL]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[ARMZEUS_DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[Heavy Assault Kbot]],
@@ -42,7 +42,7 @@ local unitDef = {
 	movementClass = [[KBOT2]],
 	name = [[UPG Zeus]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMZEUS1]],
 	seismicSignature = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -82,7 +82,7 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[LIGHTNING1]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

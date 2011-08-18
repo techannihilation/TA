@@ -15,7 +15,7 @@ local unitDef = {
 	canAttack = true,
 	canGuard = true,
 	canstop = 1,
-	category = [[ARM WEAPON NOTAIR NOTSUB]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[FerroMagnet Paralyzer]],
@@ -37,7 +37,7 @@ local unitDef = {
 	metalStorage = 500,
 	name = [[Magnetosphere]],
 	noAutoFire = true,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[ALL]],
 	objectName = [[ARMMAGNETO]],
 	onoffable = true,
 	radarDistance = 600,
@@ -80,9 +80,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
+			badTargetCategory = [[TINY]],
 			def = [[SPHERE]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

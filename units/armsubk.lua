@@ -21,7 +21,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL UNDERWATER NOTLAND MOBILE WEAPON NOTAIR]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTVTOL SUB]],
 	collisionvolumeoffsets = [[0 0 0]],
 	collisionvolumescales = [[25 25 65]],
 	collisionvolumetest = 0,
@@ -48,7 +48,7 @@ local unitDef = {
 	movementClass = [[UBOAT3]],
 	name = [[Piranha]],
 	noAutoFire = false,
-	noChaseCategory = [[NOTSUB]],
+	noChaseCategory = [[NOTSUBNOTSHIP]],
 	objectName = [[ARMSUBK]],
 	seismicSignature = 0,
 	selfDestructAs = [[SMALL_UNIT]],
@@ -89,10 +89,10 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOTSUB]],
 			def = [[ARMSMART_TORPEDO]],
 			mainDir = [[0 0 1]],
 			maxAngleDif = 150,
+			onlyTargetCategory = [[NOTHOVERNOTVTOL]],
 		},
 	},
 }

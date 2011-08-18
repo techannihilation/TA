@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[TLL LEVEL2 WEAPON NOTAIR NOTSUB MOBILE  ]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	defaultmissiontype = [[Standby]],
@@ -40,7 +40,7 @@ local unitDef = {
 	movementClass = [[HTANK3]],
 	name = [[Convincer]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[TLLCONVINCER]],
 	selfDestructAs = [[BIG_UNIT]],
 	shootme = 1,
@@ -83,7 +83,7 @@ local unitDef = {
 		[1] = {
 			badTargetCategory = [[MOBILE]],
 			def = [[ARMTRUCK_ROCKET]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

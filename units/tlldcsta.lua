@@ -15,7 +15,7 @@ local unitDef = {
 	buildTime = 4120,
 	canAttack = true,
 	canstop = 1,
-	category = [[TLL SPECIAL WEAPON  LEVEL1 NOTAIR NOTSUB ]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
@@ -31,6 +31,7 @@ local unitDef = {
 	minWaterDepth = 5,
 	name = [[Depth Charge Station]],
 	noAutoFire = false,
+	noChaseCategory = [[ALL]],
 	noshadow = 1,
 	objectName = [[TLLdcsta]],
 	ovradjust = 1,
@@ -74,6 +75,7 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[COAX_DEPTHCHARGE]],
+			onlyTargetCategory = [[NOTHOVERNOTVTOL]],
 		},
 	},
 }

@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL TANK MOBILE WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	damageModifier = 1,
 	defaultmissiontype = [[Standby]],
@@ -45,7 +45,7 @@ local unitDef = {
 	movementClass = [[TANK3]],
 	name = [[Diplomat]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[CORVROC]],
 	seismicSignature = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -90,7 +90,7 @@ local unitDef = {
 		[1] = {
 			badTargetCategory = [[MOBILE]],
 			def = [[CORTRUCK_ROCKET]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

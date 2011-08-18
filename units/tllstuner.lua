@@ -15,7 +15,7 @@ local unitDef = {
 	buildTime = 11528,
 	canAttack = true,
 	canstop = 1,
-	category = [[TLL LEVEL2 WEAPON NOTAIR NOTSUB ]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	damageModifier = 0.125,
@@ -32,6 +32,7 @@ local unitDef = {
 	maxWaterDepth = 0,
 	name = [[Sleeper]],
 	noAutoFire = false,
+	noChaseCategory = [[ALL]],
 	objectName = [[tllstuner]],
 	selfDestructAs = [[MEDIUM_BUILDING]],
 	shootme = 1,
@@ -72,9 +73,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
+			badTargetCategory = [[TINY]],
 			def = [[TLLSTUNER_GUN]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

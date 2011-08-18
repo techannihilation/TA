@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[KBOT MOBILE WEAPON ALL NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[Heavily Armored Assault Kbot]],
@@ -42,7 +42,7 @@ local unitDef = {
 	movementClass = [[HKBOT4]],
 	name = [[Sumo]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[CORSUMO]],
 	seismicSignature = 0,
 	selfDestructAs = [[BIG_UNIT]],
@@ -81,8 +81,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[ANTILASER]],
 			def = [[CORSUMO_WEAPON]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

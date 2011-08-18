@@ -20,7 +20,7 @@ local unitDef = {
 	canPatrol = true,
 	canstop = 1,
 	cantBeTransported = true,
-	category = [[TLL TANK LEVEL3 WEAPON NOTAIR NOTSUB ]],
+	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	damageModifier = 0.75,
@@ -45,7 +45,7 @@ local unitDef = {
 	movementClass = [[VKBOT4]],
 	name = [[Bumblebee]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[TLLHTML]],
 	ovradjust = 1,
 	radarDistance = 0,
@@ -90,12 +90,12 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[TLL_GAUSS2]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
-			badTargetCategory = [[VTOL]],
 			def = [[TLL_ROCKETS2]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

@@ -18,7 +18,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[KBOT MOBILE ALL NOTSUB NOWEAPON NOTAIR]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[dead]],
 	defaultmissiontype = [[Standby]],
 	description = [[The hunter hell.]],
@@ -48,7 +48,7 @@ local unitDef = {
 	movementClass = [[KBOT2]],
 	name = [[Hell DIVER]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	norestrict = 1,
 	objectName = [[ARMHDPW]],
 	ovradjust = 1,
@@ -98,10 +98,11 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[ARM_EMCC3]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
 			def = [[NOWEAPON]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

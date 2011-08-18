@@ -18,7 +18,7 @@ local unitDef = {
 	buildTime = 9622,
 	canAttack = true,
 	canstop = 1,
-	category = [[ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	collisionvolumeoffsets = [[0 0 0]],
 	collisionvolumescales = [[28 92 28]],
 	collisionvolumetype = [[box]],
@@ -41,7 +41,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[Gaat Gun]],
 	noAutoFire = false,
-	noChaseCategory = [[MOBILE]],
+	noChaseCategory = [[ALL]],
 	objectName = [[CORHLT]],
 	seismicSignature = 0,
 	selfDestructAs = [[MEDIUM_BUILDING]],
@@ -80,8 +80,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[ANTILASER]],
+			badTargetCategory = [[TINY]],
 			def = [[CORE_LASERH1]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

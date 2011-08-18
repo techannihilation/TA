@@ -15,7 +15,7 @@ local unitDef = {
 	canAttack = true,
 	canGuard = true,
 	canstop = 1,
-	category = [[ARM NOTAIR NOTSUB NOTSHIP]],
+	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	collisionSphereScale = 0.7,
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
@@ -45,6 +45,7 @@ local unitDef = {
 	maxWaterDepth = 0,
 	metalStorage = 0,
 	name = [[Tabitha]],
+	noChaseCategory = [[ALL]],
 	objectName = [[ARMTABI]],
 	radarDistance = 0,
 	selfDestructAs = [[ATOMIC_NUKE2]],
@@ -84,9 +85,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[ARM_TABITHACANNON]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

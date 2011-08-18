@@ -22,7 +22,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[CORE VTOL LEVEL2 WEAPON NOTSUB MOBILE ALL]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL]],
 	collide = false,
 	cruiseAlt = 220,
 	defaultmissiontype = [[VTOL_standby]],
@@ -44,7 +44,7 @@ local unitDef = {
 	maxWaterDepth = 0,
 	mobilestandorders = 1,
 	name = [[Stiletto]],
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[CORGRIPN]],
 	seismicSignature = 0,
 	selfDestructAs = [[ESTOR_BUILDINGEX]],
@@ -81,8 +81,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[CORGRIPN_BOMB]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

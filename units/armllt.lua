@@ -18,7 +18,7 @@ local unitDef = {
 	buildTime = 2662,
 	canAttack = true,
 	canstop = 1,
-	category = [[ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	collisionvolumeoffsets = [[0 0 0]],
 	collisionvolumescales = [[22 75 22]],
 	collisionvolumetype = [[box]],
@@ -42,7 +42,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[LLT]],
 	noAutoFire = false,
-	noChaseCategory = [[MOBILE]],
+	noChaseCategory = [[ALL]],
 	objectName = [[ARMLLT]],
 	seismicSignature = 0,
 	selfDestructAs = [[MEDIUM_BUILDING]],
@@ -81,8 +81,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[ANTILASER]],
 			def = [[ARM_LIGHTLASER]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

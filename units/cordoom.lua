@@ -19,7 +19,7 @@ local unitDef = {
 	buildTime = 55276,
 	canAttack = true,
 	canstop = 1,
-	category = [[ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	damageModifier = 0.08,
 	description = [[Energy Weapon]],
@@ -38,7 +38,7 @@ local unitDef = {
 	maxWaterDepth = 0,
 	metalStorage = 0,
 	name = [[Doomsday Machine]],
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[ALL]],
 	objectName = [[CORDOOM]],
 	onoffable = true,
 	radarDistance = 1200,
@@ -77,15 +77,19 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[ANTILASER]],
+			badTargetCategory = [[SMALL TINY]],
 			def = [[ATADR]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
+			badTargetCategory = [[TINY]],
 			def = [[CORSUMO_WEAPON]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[3] = {
+			badTargetCategory = [[TINY]],
 			def = [[ADV_DECKLASER]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

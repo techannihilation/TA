@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[TLL ALL NOTLAND MOBILE WEAPON NOTSUB SHIP NOTAIR]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTVTOL]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	defaultmissiontype = [[Standby]],
@@ -42,7 +42,7 @@ local unitDef = {
 	movementClass = [[BOAT4]],
 	name = [[Stinger]],
 	noAutoFire = false,
-	noChaseCategory = [[UNDERWATER]],
+	noChaseCategory = [[ALL]],
 	objectName = [[TLLSTING]],
 	scale = 0.6,
 	selfDestructAs = [[BIG_UNIT]],
@@ -84,14 +84,16 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOTAIR]],
 			def = [[BOGUS_MISSILE]],
+			onlyTargetCategory = [[VTOL]],
 		},
 		[2] = {
 			def = [[GA2]],
+			onlyTargetCategory = [[VTOL]],
 		},
 		[3] = {
 			def = [[MOBILEFLAK]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }

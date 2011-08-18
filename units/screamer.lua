@@ -18,7 +18,7 @@ local unitDef = {
 	buildTime = 37543,
 	canAttack = true,
 	canstop = 1,
-	category = [[ALL WEAPON NOTSUB SPECIAL NOTAIR]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[Long-Range Missile Tower]],
@@ -38,6 +38,7 @@ local unitDef = {
 	metalStorage = 0,
 	name = [[Screamer]],
 	noAutoFire = false,
+	noChaseCategory = [[ALL]],
 	objectName = [[SCREAMER]],
 	onoffable = false,
 	seismicSignature = 0,
@@ -72,8 +73,9 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOTAIR]],
+			badTargetCategory = [[MEDIUM SMALL TINY]],
 			def = [[ARM_ADVSAM]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }

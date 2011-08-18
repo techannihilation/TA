@@ -16,7 +16,7 @@ local unitDef = {
 	canAttack = true,
 	canGuard = true,
 	canstop = 1,
-	category = [[ARM LEVEL3 WEAPON NOTAIR NOTSUB]],
+	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	corpse = [[ARMBRTHA_DEAD]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[- Long Range EMP Paralizer]],
@@ -37,6 +37,7 @@ local unitDef = {
 	maxWaterDepth = 33,
 	metalStorage = 0,
 	name = [[Big Bertha Paralizer]],
+	noChaseCategory = [[ALL]],
 	objectName = [[arm_big_bertha]],
 	radarDistance = 0,
 	selfDestructAs = [[ATOMIC_BLAST]],
@@ -84,9 +85,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[ARM_BERTHACANNONEMP]],
-			onlyTargetCategory = [[NOTAIR]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL TANK MOBILE WEAPON NOTSUB NOTSHIP NOTAIR]],
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL]],
 	cloakCost = 5,
 	cloakCostMoving = 20,
 	corpse = [[DEAD]],
@@ -48,7 +48,7 @@ local unitDef = {
 	movementClass = [[TANK2]],
 	name = [[Gremlin]],
 	noAutoFire = false,
-	noChaseCategory = [[VTOL]],
+	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMST]],
 	seismicSignature = 4,
 	selfDestructAs = [[BIG_UNIT]],
@@ -92,8 +92,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[VTOL]],
 			def = [[ARMST_GAUSS]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }
