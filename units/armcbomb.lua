@@ -129,6 +129,8 @@ local weaponDefs = {
 		waterexplosiongaf = [[fx]],
 		weaponType = [[AircraftBomb]],
 		damage = {
+			bomb_resistant = 86.6667,
+			commanders = 130,
 			default = 260,
 		},
 	},

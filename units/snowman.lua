@@ -141,7 +141,10 @@ local weaponDefs = {
 		weaponType = [[LaserCannon]],
 		weaponVelocity = 6000,
 		damage = {
+			commanders = 5000,
 			default = 36600,
+			sniper_resistant = 12200,
+			subs = 5,
 		},
 	},
 }

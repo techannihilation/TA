@@ -138,6 +138,7 @@ local weaponDefs = {
 		weaponVelocity = 1500,
 		damage = {
 			default = 240,
+			subs = 5,
 		},
 	},
 	ARMANTAR_MISSILE = {
@@ -179,16 +180,8 @@ local weaponDefs = {
 		weaponType = [[MissileLauncher]],
 		weaponVelocity = 660,
 		damage = {
-			default = 100,
-			gunships = 500,
-			hgunships = 500,
-			l1bombers = 120,
-			l1fighters = 90,
-			l2bombers = 150,
-			l2fighters = 120,
-			vradar = 600,
-			vtol = 200,
-			vtrans = 100,
+			default = 200,
+			subs = 5,
 		},
 	},
 }

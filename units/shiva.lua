@@ -115,18 +115,7 @@ local weaponDefs = {
 		weaponVelocity = 310,
 		damage = {
 			default = 900,
-			gunships = 55,
-			hgunships = 55,
-			l1bombers = 55,
-			l1fighters = 55,
-			l1subs = 5,
-			l2bombers = 55,
-			l2fighters = 55,
-			l2subs = 5,
-			l3subs = 5,
-			vradar = 55,
-			vtol = 55,
-			vtrans = 55,
+			subs = 5,
 		},
 	},
 	SHIVA_ROCKET = {
@@ -164,9 +153,7 @@ local weaponDefs = {
 		weaponVelocity = 800,
 		damage = {
 			default = 750,
-			l1subs = 5,
-			l2subs = 5,
-			l3subs = 5,
+			subs = 5,
 		},
 	},
 }

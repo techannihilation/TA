@@ -143,13 +143,7 @@ local weaponDefs = {
 		weaponType = [[TorpedoLauncher]],
 		weaponVelocity = 200,
 		damage = {
-			atl = 375,
 			default = 250,
-			krogoth = 1000,
-			l1subs = 400,
-			l2subs = 400,
-			l3subs = 500,
-			tl = 375,
 		},
 	},
 	TAWF009_WEAPON = {
@@ -186,13 +180,7 @@ local weaponDefs = {
 		weaponType = [[TorpedoLauncher]],
 		weaponVelocity = 220,
 		damage = {
-			atl = 750,
 			default = 500,
-			krogoth = 1500,
-			l1subs = 250,
-			l2subs = 150,
-			l3subs = 250,
-			tl = 750,
 		},
 	},
 	UPPERCUT_ROCKET = {
@@ -240,17 +228,9 @@ local weaponDefs = {
 		weaponType = [[StarburstLauncher]],
 		weaponVelocity = 525,
 		damage = {
-			anniddm = 3000,
-			blackhydra = 14000,
 			commanders = 1600,
 			default = 6000,
-			heavyunits = 4000,
-			hero = 1100,
-			krogoth = 9000,
-			seadragon = 14000,
-			t4mechs = 9000,
-			tech4 = 12000,
-			upgadvtech2 = 4500,
+			subs = 5,
 		},
 	},
 }

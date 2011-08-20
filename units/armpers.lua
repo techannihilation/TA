@@ -109,7 +109,7 @@ local weaponDefs = {
 		name = [[Rockets]],
 		noSelfDamage = true,
 		range = 730,
-		reloadtime = 1,
+		reloadtime = 1.5,
 		renderType = 1,
 		selfprop = true,
 		smokedelay = 0.1,
@@ -127,10 +127,10 @@ local weaponDefs = {
 		weaponType = [[MissileLauncher]],
 		weaponVelocity = 400,
 		damage = {
-			commanders = 0.1,
-			default = 0.1,
-			t3mechs = 590,
-			t4mechs = 800,
+			commanders = 120,
+			default = 450,
+			experimental_land = 1200,
+			experimental_ships = 1200,
 		},
 	},
 }

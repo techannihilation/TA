@@ -132,6 +132,7 @@ local weaponDefs = {
 		weaponVelocity = 500,
 		damage = {
 			default = 510,
+			subs = 5,
 		},
 	},
 	AKMECH_ROCKET = {
@@ -164,6 +165,7 @@ local weaponDefs = {
 		weaponVelocity = 350,
 		damage = {
 			default = 2000,
+			subs = 5,
 		},
 	},
 	ARM_LIGHTLASER4 = {
@@ -196,6 +198,7 @@ local weaponDefs = {
 		weaponVelocity = 1500,
 		damage = {
 			default = 345,
+			subs = 5,
 		},
 	},
 }

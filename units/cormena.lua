@@ -40,7 +40,7 @@ local unitDef = {
 	maneuverleashlength = 640,
 	maxDamage = 1950,
 	maxSlope = 10,
-	maxVelocity = 0.762939453,
+	maxVelocity = 0.7629,
 	maxWaterDepth = 12,
 	metalStorage = 0,
 	mobilestandorders = 1,
@@ -132,6 +132,7 @@ local weaponDefs = {
 		weaponVelocity = 1000,
 		damage = {
 			default = 700,
+			subs = 5,
 		},
 	},
 }

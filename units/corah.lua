@@ -118,7 +118,11 @@ local weaponDefs = {
 		weaponType = [[Cannon]],
 		weaponVelocity = 650,
 		damage = {
-			default = 0,
+			bombers = 60,
+			default = 5,
+			fighters = 60,
+			flak_resistant = 20,
+			unclassed_air = 60,
 		},
 	},
 	COREAH_WEAPON = {
@@ -159,10 +163,11 @@ local weaponDefs = {
 		weaponType = [[MissileLauncher]],
 		weaponVelocity = 670,
 		damage = {
-			default = 62,
-			l1subs = 5,
-			l2subs = 5,
-			l3subs = 5,
+			bombers = 80,
+			default = 5,
+			fighters = 80,
+			flak_resistant = 80,
+			unclassed_air = 80,
 		},
 	},
 }

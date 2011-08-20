@@ -114,7 +114,7 @@ local weaponDefs = {
 		name = [[Missiles]],
 		noSelfDamage = true,
 		range = 710,
-		reloadtime = 2,
+		reloadtime = 0.5,
 		renderType = 1,
 		selfprop = true,
 		smokedelay = 0.1,
@@ -134,12 +134,12 @@ local weaponDefs = {
 		weaponType = [[MissileLauncher]],
 		weaponVelocity = 450,
 		damage = {
-			default = 138,
-			gunships = 105,
-			hgunships = 105,
-			l1subs = 5,
-			l2subs = 5,
-			l3subs = 5,
+			bombers = 200,
+			default = 5,
+			fighters = 200,
+			flak_resistant = 200,
+			subs = 5,
+			unclassed_air = 200,
 		},
 	},
 	CORMSHIP_ROCKET = {
@@ -180,9 +180,7 @@ local weaponDefs = {
 		damage = {
 			commanders = 500,
 			default = 1100,
-			l1subs = 5,
-			l2subs = 5,
-			l3subs = 5,
+			subs = 5,
 		},
 	},
 }

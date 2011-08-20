@@ -11,7 +11,7 @@ local unitDef = {
 	bmcode = 1,
 	brakeRate = 2.5,
 	buildCostEnergy = 8067,
-	buildCostMetal = 333,
+	buildCostMetal = 650,
 	builder = false,
 	buildTime = 17143,
 	canFly = true,
@@ -131,7 +131,7 @@ local weaponDefs = {
 		name = [[Guided Missiles]],
 		noSelfDamage = true,
 		range = 530,
-		reloadtime = 1.5,
+		reloadtime = 2,
 		renderType = 1,
 		selfprop = true,
 		smokedelay = 0.1,
@@ -150,8 +150,8 @@ local weaponDefs = {
 		weaponType = [[MissileLauncher]],
 		weaponVelocity = 480,
 		damage = {
-			commanders = 30,
-			default = 60,
+			commanders = 80,
+			default = 160,
 		},
 	},
 }

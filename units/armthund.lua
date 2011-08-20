@@ -122,11 +122,9 @@ local weaponDefs = {
 		sprayAngle = 300,
 		weaponType = [[AircraftBomb]],
 		damage = {
-			antibomber = 65,
+			bomb_resistant = 48.3333,
+			commanders = 72.5,
 			default = 145,
-			l1subs = 5,
-			l2subs = 5,
-			l3subs = 5,
 		},
 	},
 }

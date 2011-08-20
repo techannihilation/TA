@@ -142,6 +142,7 @@ local weaponDefs = {
 		weaponVelocity = 600,
 		damage = {
 			default = 1260,
+			subs = 5,
 		},
 	},
 }

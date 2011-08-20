@@ -117,8 +117,8 @@ local weaponDefs = {
 		weaponType = [[Cannon]],
 		weaponVelocity = 450,
 		damage = {
-			commanders = 8,
-			default = 30,
+			commanders = 30,
+			default = 60,
 		},
 	},
 	VTOL_ROCKET5 = {
@@ -144,7 +144,7 @@ local weaponDefs = {
 		weaponType = [[Cannon]],
 		weaponVelocity = 600,
 		damage = {
-			commanders = 53,
+			commanders = 37.5,
 			default = 75,
 		},
 	},

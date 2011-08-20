@@ -126,6 +126,7 @@ local weaponDefs = {
 		weaponVelocity = 950,
 		damage = {
 			default = 105,
+			subs = 5,
 		},
 	},
 	SAM2_MISSILE = {
@@ -160,6 +161,7 @@ local weaponDefs = {
 		weaponVelocity = 950,
 		damage = {
 			default = 880,
+			subs = 5,
 		},
 	},
 }

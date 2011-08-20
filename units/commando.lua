@@ -128,11 +128,9 @@ local weaponDefs = {
 		weaponType = [[Cannon]],
 		weaponVelocity = 250,
 		damage = {
-			blackhydra = 30,
 			commanders = 30,
 			default = 5000,
-			krogoth = 30,
-			seadragon = 30,
+			subs = 5,
 		},
 	},
 }

@@ -129,18 +129,7 @@ local weaponDefs = {
 		weaponVelocity = 400,
 		damage = {
 			default = 220,
-			gunships = 65,
-			hgunships = 65,
-			l1bombers = 65,
-			l1fighters = 65,
-			l1subs = 5,
-			l2bombers = 65,
-			l2fighters = 65,
-			l2subs = 5,
-			l3subs = 5,
-			vradar = 65,
-			vtol = 65,
-			vtrans = 65,
+			subs = 5,
 		},
 	},
 	TLL_OBLITERATOR = {
@@ -178,6 +167,7 @@ local weaponDefs = {
 		damage = {
 			commanders = 1200,
 			default = 3100,
+			subs = 5,
 		},
 	},
 }

@@ -10,8 +10,8 @@ local unitDef = {
 	bankscale = 1,
 	bmcode = 1,
 	brakeRate = 6.5,
-	buildCostEnergy = 1858,
-	buildCostMetal = 297,
+	buildCostEnergy = 2200,
+	buildCostMetal = 500,
 	builder = false,
 	buildTime = 15227,
 	canAttack = true,
@@ -132,8 +132,9 @@ local weaponDefs = {
 		weaponType = [[TorpedoLauncher]],
 		weaponVelocity = 100,
 		damage = {
+			bomb_resistant = 500,
+			commanders = 750,
 			default = 1500,
-			krogoth = 3000,
 		},
 	},
 }

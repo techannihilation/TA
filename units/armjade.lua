@@ -133,7 +133,8 @@ local weaponDefs = {
 		weaponType = [[BeamLaser]],
 		weaponVelocity = 800,
 		damage = {
-			default = 225,
+			commanders = 70,
+			default = 140,
 		},
 	},
 }

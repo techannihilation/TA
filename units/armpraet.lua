@@ -147,6 +147,7 @@ local weaponDefs = {
 		weaponVelocity = 1900,
 		damage = {
 			default = 2000,
+			subs = 5,
 		},
 	},
 	PRAETORIAN_ROCKET = {
@@ -182,9 +183,8 @@ local weaponDefs = {
 		weaponType = [[StarburstLauncher]],
 		weaponVelocity = 600,
 		damage = {
-			anniddm = 270,
 			default = 240,
-			megabase = 270,
+			subs = 5,
 		},
 	},
 	Praetorian_Shield = {
@@ -241,8 +241,6 @@ local weaponDefs = {
 		weaponVelocity = 600,
 		damage = {
 			default = 80,
-			megabase = 90,
-			monkeylord = 140,
 		},
 	},
 }

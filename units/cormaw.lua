@@ -139,11 +139,8 @@ local weaponDefs = {
 		damage = {
 			commanders = 20,
 			default = 25,
-			gunships = 4,
-			hgunships = 4,
-			l1subs = 5,
-			l2subs = 5,
-			l3subs = 5,
+			flamethrowers = 8.3333,
+			subs = 5,
 		},
 	},
 }

@@ -47,7 +47,7 @@ local unitDef = {
 	italiandescription = [[Heavy Bomber]],
 	italianname = [[B-52G Stratofortress]],
 	maneuverleashlength = 2500,
-	maxDamage = 10360,
+	maxDamage = 12500,
 	maxSlope = 10,
 	maxVelocity = 9,
 	maxWaterDepth = 0,
@@ -154,7 +154,8 @@ local weaponDefs = {
 		weaponType = [[AircraftBomb]],
 		weaponVelocity = 600,
 		damage = {
-			commanders = 1000,
+			bomb_resistant = 1500,
+			commanders = 1500,
 			default = 4500,
 		},
 	},

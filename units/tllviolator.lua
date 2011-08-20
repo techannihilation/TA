@@ -122,18 +122,7 @@ local weaponDefs = {
 		weaponVelocity = 300,
 		damage = {
 			default = 190,
-			gunships = 41,
-			hgunships = 41,
-			l1bombers = 41,
-			l1fighters = 41,
-			l1subs = 5,
-			l2bombers = 41,
-			l2fighters = 41,
-			l2subs = 5,
-			l3subs = 5,
-			vradar = 41,
-			vtol = 41,
-			vtrans = 41,
+			subs = 5,
 		},
 	},
 	DEPTHCHARGE = {
@@ -170,7 +159,8 @@ local weaponDefs = {
 		weaponType = [[TorpedoLauncher]],
 		weaponVelocity = 100,
 		damage = {
-			default = 210,
+			default = 140,
+			subs = 280,
 		},
 	},
 }

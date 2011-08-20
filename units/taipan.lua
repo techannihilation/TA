@@ -145,6 +145,7 @@ local weaponDefs = {
 		weaponVelocity = 400,
 		damage = {
 			default = 135,
+			subs = 5,
 		},
 	},
 	CORKBOT_ROCKET7 = {
@@ -179,6 +180,7 @@ local weaponDefs = {
 		weaponVelocity = 250,
 		damage = {
 			default = 300,
+			subs = 5,
 		},
 	},
 }

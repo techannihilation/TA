@@ -135,6 +135,7 @@ local weaponDefs = {
 		weaponVelocity = 450,
 		damage = {
 			default = 780,
+			subs = 5,
 		},
 	},
 	ARMJUGG_LASER = {
@@ -168,6 +169,7 @@ local weaponDefs = {
 		weaponVelocity = 1000,
 		damage = {
 			default = 2000,
+			subs = 5,
 		},
 	},
 	ARMJUGG_ROCKET = {
@@ -210,6 +212,7 @@ local weaponDefs = {
 		weaponVelocity = 550,
 		damage = {
 			default = 1000,
+			subs = 5,
 		},
 	},
 }

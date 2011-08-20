@@ -122,13 +122,9 @@ local weaponDefs = {
 		soundStart = [[bombrel]],
 		weaponType = [[AircraftBomb]],
 		damage = {
-			antibomber = 95,
+			bomb_resistant = 70,
+			commanders = 105,
 			default = 210,
-			l1bombers = 5,
-			l1subs = 5,
-			l2bombers = 5,
-			l2subs = 5,
-			l3subs = 5,
 		},
 	},
 }

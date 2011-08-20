@@ -131,11 +131,7 @@ local weaponDefs = {
 		weaponVelocity = 850,
 		damage = {
 			default = 85,
-			gunships = 48,
-			hgunships = 48,
-			l1subs = 5,
-			l2subs = 5,
-			l3subs = 5,
+			subs = 5,
 		},
 	},
 	ARMAMPH_WEAPON1 = {
@@ -167,18 +163,7 @@ local weaponDefs = {
 		weaponVelocity = 500,
 		damage = {
 			default = 70,
-			gunships = 15,
-			hgunships = 15,
-			l1bombers = 15,
-			l1fighters = 15,
-			l1subs = 5,
-			l2bombers = 15,
-			l2fighters = 15,
-			l2subs = 5,
-			l3subs = 5,
-			vradar = 15,
-			vtol = 15,
-			vtrans = 15,
+			subs = 5,
 		},
 	},
 }

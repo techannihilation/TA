@@ -135,9 +135,7 @@ local weaponDefs = {
 		damage = {
 			commanders = 500,
 			default = 800,
-			l1subs = 5,
-			l2subs = 5,
-			l3subs = 5,
+			subs = 5,
 		},
 	},
 	ARMSHIP_MISSILE = {
@@ -156,7 +154,7 @@ local weaponDefs = {
 		name = [[Missiles]],
 		noSelfDamage = true,
 		range = 710,
-		reloadtime = 2,
+		reloadtime = 0.8,
 		renderType = 1,
 		selfprop = true,
 		smokedelay = 0.1,
@@ -176,12 +174,12 @@ local weaponDefs = {
 		weaponType = [[MissileLauncher]],
 		weaponVelocity = 450,
 		damage = {
-			default = 138,
-			gunships = 105,
-			hgunships = 105,
-			l1subs = 5,
-			l2subs = 5,
-			l3subs = 5,
+			bombers = 350,
+			default = 5,
+			fighters = 350,
+			flak_resistant = 350,
+			subs = 5,
+			unclassed_air = 350,
 		},
 	},
 }

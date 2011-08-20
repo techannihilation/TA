@@ -103,6 +103,7 @@ local weaponDefs = {
 		weaponType = [[Shield]],
 		damage = {
 			default = 100,
+			subs = 5,
 		},
 	},
 }

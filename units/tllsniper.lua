@@ -135,7 +135,8 @@ local weaponDefs = {
 		damage = {
 			commanders = 1300,
 			default = 3495,
-			t3mechs = 7100,
+			sniper_resistant = 1165,
+			subs = 5,
 		},
 	},
 }

@@ -131,6 +131,7 @@ local weaponDefs = {
 		weaponVelocity = 500,
 		damage = {
 			default = 1000,
+			subs = 5,
 		},
 	},
 	MACROSS_FIRE = {
@@ -154,8 +155,8 @@ local weaponDefs = {
 		weaponType = [[EmgCannon]],
 		weaponVelocity = 530,
 		damage = {
-			anniddm = 190,
 			default = 140,
+			subs = 5,
 		},
 	},
 	MACROSS_MISSILE = {
@@ -193,6 +194,7 @@ local weaponDefs = {
 		weaponVelocity = 440,
 		damage = {
 			default = 900,
+			subs = 5,
 		},
 	},
 }

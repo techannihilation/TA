@@ -135,6 +135,7 @@ local weaponDefs = {
 		weaponVelocity = 450,
 		damage = {
 			default = 500,
+			subs = 5,
 		},
 	},
 	WARM_ROCKET = {
@@ -179,6 +180,7 @@ local weaponDefs = {
 		weaponVelocity = 550,
 		damage = {
 			default = 1900,
+			subs = 5,
 		},
 	},
 }

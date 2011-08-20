@@ -137,7 +137,7 @@ local weaponDefs = {
 		weaponVelocity = 650,
 		damage = {
 			default = 531,
-			janus1 = 1000,
+			subs = 5,
 		},
 	},
 	Gladiator_Laser = {
@@ -174,6 +174,7 @@ local weaponDefs = {
 		weaponVelocity = 800,
 		damage = {
 			default = 90,
+			subs = 5,
 		},
 	},
 }

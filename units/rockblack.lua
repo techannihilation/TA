@@ -99,7 +99,7 @@ local unitDef = {
 --------------------------------------------------------------------------------
 
 local weaponDefs = {
-	['asm'] = {
+	asm = {
 		areaOfEffect = 424,
 		burnblow = true,
 		cruisealt = 120,
@@ -138,6 +138,7 @@ local weaponDefs = {
 		weaponVelocity = 900,
 		damage = {
 			default = 7500,
+			subs = 5,
 		},
 	},
 }

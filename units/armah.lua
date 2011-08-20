@@ -133,10 +133,11 @@ local weaponDefs = {
 		weaponType = [[MissileLauncher]],
 		weaponVelocity = 670,
 		damage = {
-			default = 62,
-			l1subs = 5,
-			l2subs = 5,
-			l3subs = 5,
+			bombers = 40,
+			default = 5,
+			fighters = 40,
+			flak_resistant = 40,
+			unclassed_air = 40,
 		},
 	},
 	BOGUS_MISSILE = {
@@ -162,7 +163,11 @@ local weaponDefs = {
 		weaponType = [[Cannon]],
 		weaponVelocity = 650,
 		damage = {
-			default = 0,
+			bombers = 50,
+			default = 5,
+			fighters = 50,
+			flak_resistant = 16.6667,
+			unclassed_air = 50,
 		},
 	},
 }

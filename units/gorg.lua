@@ -136,9 +136,7 @@ local weaponDefs = {
 		weaponVelocity = 2250,
 		damage = {
 			default = 75,
-			l1subs = 3,
-			l2subs = 3,
-			l3subs = 3,
+			subs = 5,
 		},
 	},
 	GORG_TOP = {
@@ -174,9 +172,7 @@ local weaponDefs = {
 		weaponVelocity = 2250,
 		damage = {
 			default = 100,
-			l1subs = 3,
-			l2subs = 3,
-			l3subs = 3,
+			subs = 5,
 		},
 	},
 	JUGGERNAUT_FIRE = {
@@ -203,11 +199,8 @@ local weaponDefs = {
 		weaponType = [[EmgCannon]],
 		weaponVelocity = 530,
 		damage = {
-			anniddm = 225,
 			default = 300,
-			l1subs = 5,
-			l2subs = 5,
-			l3subs = 5,
+			subs = 5,
 		},
 	},
 }

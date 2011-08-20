@@ -116,9 +116,7 @@ local weaponDefs = {
 		weaponVelocity = 920,
 		damage = {
 			default = 210,
-			l1subs = 5,
-			l2subs = 5,
-			l3subs = 5,
+			subs = 5,
 		},
 	},
 	TAWF_BANISHER2 = {
@@ -157,9 +155,7 @@ local weaponDefs = {
 		damage = {
 			commanders = 1000,
 			default = 4000,
-			l1subs = 5,
-			l2subs = 5,
-			l3subs = 5,
+			subs = 5,
 		},
 	},
 }

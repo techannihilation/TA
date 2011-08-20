@@ -47,7 +47,7 @@ local unitDef = {
 	italiandescription = [[Heavy Bomber]],
 	italianname = [[Tu-95 Bear-A]],
 	maneuverleashlength = 2200,
-	maxDamage = 21620,
+	maxDamage = 22000,
 	maxSlope = 10,
 	maxVelocity = 7.1,
 	maxWaterDepth = 0,
@@ -140,6 +140,8 @@ local weaponDefs = {
 		waterWeapon = false,
 		weaponType = [[AircraftBomb]],
 		damage = {
+			bomb_resistant = 63.3333,
+			commanders = 95,
 			default = 190,
 		},
 	},

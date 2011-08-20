@@ -129,9 +129,8 @@ local weaponDefs = {
 		weaponVelocity = 350,
 		damage = {
 			commanders = 500,
-			default = 250,
-			dl = 5,
-			krogoth = 500,
+			default = 200,
+			subs = 400,
 		},
 	},
 }

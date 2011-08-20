@@ -133,11 +133,8 @@ local weaponDefs = {
 		weaponType = [[Cannon]],
 		weaponVelocity = 400,
 		damage = {
-			anniddm = 179,
 			default = 336,
-			l1subs = 5,
-			l2subs = 5,
-			l3subs = 5,
+			subs = 5,
 		},
 	},
 	BANTHA_ROCKET = {
@@ -177,11 +174,8 @@ local weaponDefs = {
 		weaponType = [[StarburstLauncher]],
 		weaponVelocity = 2100,
 		damage = {
-			anniddm = 270,
 			default = 360,
-			l1subs = 5,
-			l2subs = 5,
-			l3subs = 5,
+			subs = 5,
 		},
 	},
 	TEHLAZEROFDEWM = {
@@ -213,12 +207,9 @@ local weaponDefs = {
 		weaponType = [[BeamLaser]],
 		weaponVelocity = 1500,
 		damage = {
-			anniddm = 1250,
 			commanders = 999,
 			default = 2500,
-			l1subs = 5,
-			l2subs = 5,
-			l3subs = 5,
+			subs = 5,
 		},
 	},
 }

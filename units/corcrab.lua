@@ -133,6 +133,7 @@ local weaponDefs = {
 		weaponVelocity = 264.95281982422,
 		damage = {
 			default = 1150,
+			subs = 5,
 		},
 	},
 	CORE_LIGHTLASER2 = {
@@ -169,6 +170,7 @@ local weaponDefs = {
 		weaponVelocity = 800,
 		damage = {
 			default = 90,
+			subs = 5,
 		},
 	},
 	CORSMART_TORPEDO2 = {
@@ -203,8 +205,6 @@ local weaponDefs = {
 		weaponType = [[TorpedoLauncher]],
 		weaponVelocity = 100,
 		damage = {
-			armsub = 600,
-			corsub = 600,
 			default = 310,
 		},
 	},

@@ -139,7 +139,7 @@ local weaponDefs = {
 		weaponType = [[Cannon]],
 		weaponVelocity = 450,
 		damage = {
-			commanders = 8,
+			commanders = 12.5,
 			default = 25,
 		},
 	},
@@ -166,7 +166,7 @@ local weaponDefs = {
 		weaponType = [[Cannon]],
 		weaponVelocity = 600,
 		damage = {
-			commanders = 53,
+			commanders = 25,
 			default = 50,
 		},
 	},

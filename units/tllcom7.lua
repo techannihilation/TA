@@ -216,10 +216,8 @@ local weaponDefs = {
 		weaponType = [[DGun]],
 		weaponVelocity = 300,
 		damage = {
-			chicken = 20,
 			commanders = 450,
 			default = 999999,
-			rech = 120,
 		},
 	},
 	TLLCOM_LIGHTNING5 = {
@@ -255,10 +253,7 @@ local weaponDefs = {
 		weaponVelocity = 860,
 		damage = {
 			default = 600,
-			l1subs = 5,
-			l2subs = 5,
-			l3subs = 5,
-			vtrans = 230,
+			subs = 5,
 		},
 	},
 }

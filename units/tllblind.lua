@@ -137,8 +137,7 @@ local weaponDefs = {
 		weaponVelocity = 1000,
 		damage = {
 			default = 805,
-			t3mechs = 1600,
-			t4mechs = 2400,
+			subs = 5,
 		},
 	},
 	COR_GOL = {
@@ -163,18 +162,7 @@ local weaponDefs = {
 		weaponVelocity = 310,
 		damage = {
 			default = 825,
-			gunships = 55,
-			hgunships = 55,
-			l1bombers = 55,
-			l1fighters = 55,
-			l1subs = 5,
-			l2bombers = 55,
-			l2fighters = 55,
-			l2subs = 5,
-			l3subs = 5,
-			vradar = 55,
-			vtol = 55,
-			vtrans = 55,
+			subs = 5,
 		},
 	},
 	PACKO_MISSILE = {
@@ -221,12 +209,11 @@ local weaponDefs = {
 		weaponVelocity = 820,
 		wobble = 120,
 		damage = {
-			default = 560,
-			gunships = 95,
-			hgunships = 95,
-			l1subs = 5,
-			l2subs = 5,
-			l3subs = 5,
+			bombers = 100,
+			default = 5,
+			fighters = 100,
+			flak_resistant = 100,
+			unclassed_air = 100,
 		},
 	},
 }

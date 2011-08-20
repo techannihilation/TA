@@ -150,27 +150,8 @@ local weaponDefs = {
 		weaponType = [[StarburstLauncher]],
 		weaponVelocity = 550,
 		damage = {
-			armaca = 383,
-			armatlas = 383,
-			armbrawl = 383,
-			armca = 383,
-			armfig = 383,
-			armhawk = 383,
-			armlance = 383,
-			armpeep = 383,
-			armpnix = 383,
-			armthund = 383,
-			coraca = 383,
-			corape = 383,
-			corca = 383,
-			corfink = 383,
-			corhurc = 383,
-			corshad = 383,
-			cortitan = 383,
-			corvalk = 383,
-			corvamp = 383,
-			corveng = 383,
 			default = 700,
+			subs = 5,
 		},
 	},
 	ARMGOR_FIRE = {
@@ -201,6 +182,7 @@ local weaponDefs = {
 		weaponVelocity = 475,
 		damage = {
 			default = 750,
+			subs = 5,
 		},
 	},
 	ARMGOR_HEAD = {
@@ -234,6 +216,7 @@ local weaponDefs = {
 		weaponVelocity = 1000,
 		damage = {
 			default = 2000,
+			subs = 5,
 		},
 	},
 }

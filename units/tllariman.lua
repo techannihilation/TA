@@ -124,14 +124,7 @@ local weaponDefs = {
 		weaponVelocity = 900,
 		damage = {
 			default = 75,
-			l1bombers = 180,
-			l1fighters = 110,
-			l1subs = 5,
-			l2bombers = 180,
-			l2fighters = 110,
-			l2subs = 5,
-			l3subs = 5,
-			vtrans = 110,
+			subs = 5,
 		},
 	},
 }

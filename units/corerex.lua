@@ -131,6 +131,7 @@ local weaponDefs = {
 		weaponVelocity = 790,
 		damage = {
 			default = 990,
+			subs = 5,
 		},
 	},
 	SPRAY_LIGHTNING = {
@@ -166,18 +167,7 @@ local weaponDefs = {
 		damage = {
 			commanders = 280,
 			default = 220,
-			gunships = 3,
-			hgunships = 3,
-			l1bombers = 5,
-			l1fighters = 5,
-			l1subs = 2,
-			l2bombers = 5,
-			l2fighters = 5,
-			l2subs = 2,
-			l3subs = 2,
-			vradar = 5,
-			vtol = 5,
-			vtrans = 5,
+			subs = 5,
 		},
 	},
 }

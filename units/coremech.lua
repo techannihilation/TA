@@ -129,18 +129,7 @@ local weaponDefs = {
 		weaponVelocity = 600,
 		damage = {
 			default = 250,
-			gunships = 60,
-			hgunships = 60,
-			l1bombers = 60,
-			l1fighters = 60,
-			l1subs = 5,
-			l2bombers = 60,
-			l2fighters = 60,
-			l2subs = 5,
-			l3subs = 5,
-			vradar = 60,
-			vtol = 60,
-			vtrans = 60,
+			subs = 5,
 		},
 	},
 	ARMMECH_ROCKET = {
@@ -179,6 +168,7 @@ local weaponDefs = {
 		weaponVelocity = 773,
 		damage = {
 			default = 600,
+			subs = 5,
 		},
 	},
 	TAWF114_weapon = {
@@ -219,6 +209,7 @@ local weaponDefs = {
 		weaponVelocity = 310,
 		damage = {
 			default = 550,
+			subs = 5,
 		},
 	},
 }

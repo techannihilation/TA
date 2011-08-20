@@ -183,10 +183,8 @@ local weaponDefs = {
 		weaponType = [[DGun]],
 		weaponVelocity = 300,
 		damage = {
-			chicken = 20,
 			commanders = 450,
 			default = 999999,
-			rech = 120,
 		},
 	},
 	ARMCOMLASER = {
@@ -222,15 +220,12 @@ local weaponDefs = {
 		weaponType = [[BeamLaser]],
 		weaponVelocity = 900,
 		damage = {
+			bombers = 112.5,
 			default = 75,
-			l1bombers = 180,
-			l1fighters = 110,
-			l1subs = 5,
-			l2bombers = 180,
-			l2fighters = 110,
-			l2subs = 5,
-			l3subs = 5,
-			vtrans = 110,
+			fighters = 112.5,
+			flak_resistant = 112.5,
+			subs = 5,
+			unclassed_air = 112.5,
 		},
 	},
 }

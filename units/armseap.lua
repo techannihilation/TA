@@ -132,8 +132,9 @@ local weaponDefs = {
 		weaponType = [[TorpedoLauncher]],
 		weaponVelocity = 100,
 		damage = {
+			bomb_resistant = 320,
+			commanders = 480,
 			default = 960,
-			krogoth = 1750,
 		},
 	},
 }

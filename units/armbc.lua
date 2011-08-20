@@ -135,6 +135,7 @@ local weaponDefs = {
 		weaponVelocity = 690,
 		damage = {
 			default = 490,
+			subs = 5,
 		},
 	},
 	ARM_CRUS = {
@@ -161,18 +162,7 @@ local weaponDefs = {
 		weaponVelocity = 550,
 		damage = {
 			default = 220,
-			gunships = 40,
-			hgunships = 40,
-			l1bombers = 40,
-			l1fighters = 40,
-			l1subs = 5,
-			l2bombers = 40,
-			l2fighters = 40,
-			l2subs = 5,
-			l3subs = 5,
-			vradar = 40,
-			vtol = 40,
-			vtrans = 40,
+			subs = 5,
 		},
 	},
 	ARMBC_MISSILE = {
@@ -210,6 +200,7 @@ local weaponDefs = {
 		weaponVelocity = 660,
 		damage = {
 			default = 130,
+			subs = 5,
 		},
 	},
 }

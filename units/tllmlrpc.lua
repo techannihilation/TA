@@ -124,10 +124,7 @@ local weaponDefs = {
 		weaponVelocity = 1000,
 		damage = {
 			default = 1384,
-			l1subs = 5,
-			l2subs = 5,
-			l3subs = 5,
-			otherboats = 2800,
+			subs = 5,
 		},
 	},
 }

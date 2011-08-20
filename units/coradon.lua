@@ -151,6 +151,7 @@ local weaponDefs = {
 		weaponVelocity = 700,
 		damage = {
 			default = 850,
+			subs = 5,
 		},
 	},
 	CORADON_WEAPON = {
@@ -189,6 +190,7 @@ local weaponDefs = {
 		weaponVelocity = 1000,
 		damage = {
 			default = 650,
+			subs = 5,
 		},
 	},
 }

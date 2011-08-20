@@ -123,10 +123,11 @@ local weaponDefs = {
 		weaponType = [[LaserCannon]],
 		weaponVelocity = 4000,
 		damage = {
-			commanders = 2200,
-			default = 2500,
-			t3mechs = 32000,
-			t4mechs = 42000,
+			commanders = 2800,
+			default = 7000,
+			experimental_land = 28000,
+			experimental_ships = 28000,
+			subs = 5,
 		},
 	},
 }

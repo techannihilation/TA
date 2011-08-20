@@ -131,6 +131,7 @@ local weaponDefs = {
 		weaponVelocity = 350.49963378906,
 		damage = {
 			default = 490,
+			subs = 5,
 		},
 	},
 	ARMJAG_HEAD = {
@@ -160,6 +161,7 @@ local weaponDefs = {
 		weaponVelocity = 1057,
 		damage = {
 			default = 2643,
+			subs = 5,
 		},
 	},
 	ARMJAG_MISS = {
@@ -198,6 +200,7 @@ local weaponDefs = {
 		weaponVelocity = 550,
 		damage = {
 			default = 240,
+			subs = 5,
 		},
 	},
 }

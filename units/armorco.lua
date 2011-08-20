@@ -126,8 +126,8 @@ local weaponDefs = {
 		weaponType = [[EmgCannon]],
 		weaponVelocity = 530,
 		damage = {
-			anniddm = 190,
 			default = 250,
+			subs = 5,
 		},
 	},
 	ATAD = {
@@ -159,12 +159,9 @@ local weaponDefs = {
 		weaponType = [[BeamLaser]],
 		weaponVelocity = 1500,
 		damage = {
-			anniddm = 2500,
 			commanders = 999,
 			default = 5000,
-			l1subs = 5,
-			l2subs = 5,
-			l3subs = 5,
+			subs = 5,
 		},
 	},
 	CORKROG_ROCKET = {
@@ -203,11 +200,8 @@ local weaponDefs = {
 		weaponType = [[StarburstLauncher]],
 		weaponVelocity = 4000,
 		damage = {
-			anniddm = 270,
 			default = 360,
-			l1subs = 5,
-			l2subs = 5,
-			l3subs = 5,
+			subs = 5,
 		},
 	},
 }

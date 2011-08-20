@@ -120,7 +120,7 @@ local weaponDefs = {
 		name = [[Sabot rocket]],
 		noSelfDamage = true,
 		range = 510,
-		reloadtime = 1.25,
+		reloadtime = 1,
 		renderType = 1,
 		selfprop = true,
 		smokedelay = 0.1,
@@ -138,10 +138,10 @@ local weaponDefs = {
 		weaponType = [[MissileLauncher]],
 		weaponVelocity = 1000,
 		damage = {
-			commanders = 0.1,
-			default = 0.1,
-			t3mechs = 1100,
-			t4mechs = 1600,
+			commanders = 140,
+			default = 300,
+			experimental_land = 1400,
+			experimental_ships = 1400,
 		},
 	},
 }

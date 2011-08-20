@@ -128,11 +128,7 @@ local weaponDefs = {
 		weaponVelocity = 850,
 		damage = {
 			default = 85,
-			gunships = 48,
-			hgunships = 48,
-			l1subs = 5,
-			l2subs = 5,
-			l3subs = 5,
+			subs = 5,
 		},
 	},
 	ARMMECH_CANNON = {
@@ -160,18 +156,7 @@ local weaponDefs = {
 		weaponVelocity = 600,
 		damage = {
 			default = 185,
-			gunships = 60,
-			hgunships = 60,
-			l1bombers = 60,
-			l1fighters = 60,
-			l1subs = 5,
-			l2bombers = 60,
-			l2fighters = 60,
-			l2subs = 5,
-			l3subs = 5,
-			vradar = 60,
-			vtol = 60,
-			vtrans = 60,
+			subs = 5,
 		},
 	},
 }

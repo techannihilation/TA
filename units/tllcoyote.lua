@@ -131,11 +131,7 @@ local weaponDefs = {
 		weaponVelocity = 850,
 		damage = {
 			default = 85,
-			gunships = 48,
-			hgunships = 48,
-			l1subs = 5,
-			l2subs = 5,
-			l3subs = 5,
+			subs = 5,
 		},
 	},
 	CORE_REAP = {
@@ -160,18 +156,7 @@ local weaponDefs = {
 		weaponVelocity = 380,
 		damage = {
 			default = 97,
-			gunships = 35,
-			hgunships = 35,
-			l1bombers = 35,
-			l1fighters = 35,
-			l1subs = 5,
-			l2bombers = 35,
-			l2fighters = 35,
-			l2subs = 5,
-			l3subs = 5,
-			vradar = 35,
-			vtol = 35,
-			vtrans = 35,
+			subs = 5,
 		},
 	},
 }

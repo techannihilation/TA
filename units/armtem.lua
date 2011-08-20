@@ -147,6 +147,7 @@ local weaponDefs = {
 		weaponVelocity = 650,
 		damage = {
 			default = 950,
+			subs = 5,
 		},
 	},
 	ARMTEM_WEAPON = {
@@ -173,18 +174,7 @@ local weaponDefs = {
 		weaponVelocity = 500,
 		damage = {
 			default = 790,
-			gunships = 70,
-			hgunships = 70,
-			l1bombers = 70,
-			l1fighters = 70,
-			l1subs = 5,
-			l2bombers = 70,
-			l2fighters = 70,
-			l2subs = 5,
-			l3subs = 5,
-			vradar = 70,
-			vtol = 70,
-			vtrans = 70,
+			subs = 5,
 		},
 	},
 }

@@ -117,6 +117,9 @@ local weaponDefs = {
 		damage = {
 			commanders = 10,
 			default = 26,
+			experimental_ships = 52,
+			ships = 39,
+			subs = 5,
 		},
 	},
 }

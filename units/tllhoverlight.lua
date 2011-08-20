@@ -130,11 +130,8 @@ local weaponDefs = {
 		weaponVelocity = 450,
 		damage = {
 			default = 48,
-			gunships = 6,
-			hgunships = 6,
-			l1subs = 2,
-			l2subs = 2,
-			l3subs = 2,
+			raider_resistant = 24,
+			subs = 5,
 		},
 	},
 }

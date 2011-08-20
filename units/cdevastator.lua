@@ -220,6 +220,7 @@ local weaponDefs = {
 		weaponVelocity = 1450,
 		damage = {
 			default = 32,
+			subs = 5,
 		},
 	},
 	DevastatorRockets = {
@@ -269,6 +270,7 @@ local weaponDefs = {
 		weaponVelocity = 550,
 		damage = {
 			default = 2100,
+			subs = 5,
 		},
 	},
 	MountedAntimatterAccelerator = {
@@ -312,6 +314,7 @@ local weaponDefs = {
 		damage = {
 			commanders = 1500,
 			default = 18000,
+			subs = 5,
 		},
 	},
 }

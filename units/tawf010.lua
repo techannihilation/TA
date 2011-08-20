@@ -134,6 +134,9 @@ local weaponDefs = {
 		weaponVelocity = 450,
 		damage = {
 			default = 330,
+			experimental_ships = 660,
+			ships = 495,
+			subs = 5,
 		},
 	},
 	TAWF010b_weapon = {
@@ -174,6 +177,9 @@ local weaponDefs = {
 		weaponVelocity = 650,
 		damage = {
 			default = 2100,
+			experimental_ships = 4200,
+			ships = 3150,
+			subs = 5,
 		},
 	},
 }

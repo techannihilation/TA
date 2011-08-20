@@ -127,6 +127,7 @@ local weaponDefs = {
 		weaponVelocity = 520,
 		damage = {
 			default = 290,
+			subs = 5,
 		},
 	},
 	MAG_ROCKET = {
@@ -166,6 +167,7 @@ local weaponDefs = {
 		weaponVelocity = 550,
 		damage = {
 			default = 350,
+			subs = 5,
 		},
 	},
 }

@@ -135,6 +135,7 @@ local weaponDefs = {
 		weaponVelocity = 350,
 		damage = {
 			default = 200,
+			subs = 5,
 		},
 	},
 	ARMSCPION_LIGHTNING = {
@@ -162,6 +163,7 @@ local weaponDefs = {
 		weaponVelocity = 400,
 		damage = {
 			default = 200,
+			subs = 5,
 		},
 	},
 	ARMSCPION_TORPEDO = {

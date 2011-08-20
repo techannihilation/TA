@@ -139,10 +139,11 @@ local weaponDefs = {
 		weaponType = [[MissileLauncher]],
 		weaponVelocity = 2500,
 		damage = {
-			default = 80,
-			l1subs = 5,
-			l2subs = 5,
-			l3subs = 5,
+			bombers = 210,
+			default = 5,
+			fighters = 210,
+			flak_resistant = 210,
+			unclassed_air = 210,
 		},
 	},
 	SUPER_MISSILE1 = {
@@ -180,18 +181,7 @@ local weaponDefs = {
 		weaponVelocity = 1500,
 		damage = {
 			default = 140,
-			gunships = 112,
-			hgunships = 112,
-			l1bombers = 150,
-			l1fighters = 150,
-			l1subs = 5,
-			l2bombers = 150,
-			l2fighters = 150,
-			l2subs = 5,
-			l3subs = 5,
-			vradar = 150,
-			vtol = 150,
-			vtrans = 150,
+			subs = 5,
 		},
 	},
 	TAWF_BANISHER2 = {
@@ -230,9 +220,7 @@ local weaponDefs = {
 		damage = {
 			commanders = 1000,
 			default = 4000,
-			l1subs = 5,
-			l2subs = 5,
-			l3subs = 5,
+			subs = 5,
 		},
 	},
 }

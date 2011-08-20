@@ -126,18 +126,7 @@ local weaponDefs = {
 		damage = {
 			commanders = 750,
 			default = 2200,
-			gunships = 55,
-			hgunships = 55,
-			l1bombers = 55,
-			l1fighters = 55,
-			l1subs = 5,
-			l2bombers = 55,
-			l2fighters = 55,
-			l2subs = 5,
-			l3subs = 5,
-			vradar = 55,
-			vtol = 55,
-			vtrans = 55,
+			subs = 5,
 		},
 	},
 	CORKROG_ROCKET = {
@@ -176,11 +165,8 @@ local weaponDefs = {
 		weaponType = [[StarburstLauncher]],
 		weaponVelocity = 4000,
 		damage = {
-			anniddm = 270,
 			default = 560,
-			l1subs = 5,
-			l2subs = 5,
-			l3subs = 5,
+			subs = 5,
 		},
 	},
 }

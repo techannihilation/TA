@@ -135,18 +135,7 @@ local weaponDefs = {
 		weaponVelocity = 600,
 		damage = {
 			default = 250,
-			gunships = 60,
-			hgunships = 60,
-			l1bombers = 60,
-			l1fighters = 60,
-			l1subs = 5,
-			l2bombers = 60,
-			l2fighters = 60,
-			l2subs = 5,
-			l3subs = 5,
-			vradar = 60,
-			vtol = 60,
-			vtrans = 60,
+			subs = 5,
 		},
 	},
 	ARMMECH_ROCKET = {
@@ -185,6 +174,7 @@ local weaponDefs = {
 		weaponVelocity = 773,
 		damage = {
 			default = 500,
+			subs = 5,
 		},
 	},
 	ARMMECH_TESLA = {
@@ -217,6 +207,7 @@ local weaponDefs = {
 		weaponVelocity = 667,
 		damage = {
 			default = 800,
+			subs = 5,
 		},
 	},
 }

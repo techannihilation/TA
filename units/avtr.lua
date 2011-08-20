@@ -123,15 +123,8 @@ local weaponDefs = {
 		weaponType = [[Cannon]],
 		weaponVelocity = 1000,
 		damage = {
-			blackhydra = 2800,
 			default = 1225,
-			flakboats = 2800,
-			jammerboats = 2800,
-			l1subs = 5,
-			l2subs = 5,
-			l3subs = 5,
-			otherboats = 2800,
-			seadragon = 2800,
+			subs = 5,
 		},
 	},
 }

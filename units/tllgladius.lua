@@ -112,8 +112,8 @@ local weaponDefs = {
 		noSelfDamage = true,
 		paralyzer = true,
 		paralyzertime = 38,
-		range = 200,
-		reloadtime = 0.6,
+		range = 180,
+		reloadtime = 0.9,
 		renderType = 0,
 		rgbColor = [[1 1 0]],
 		soundHit = [[lashit]],
@@ -127,7 +127,9 @@ local weaponDefs = {
 		weaponVelocity = 600,
 		damage = {
 			commanders = 20,
-			default = 600,
+			default = 400,
+			raider_resistant = 200,
+			subs = 5,
 		},
 	},
 }

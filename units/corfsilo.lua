@@ -131,7 +131,9 @@ local weaponDefs = {
 		weaponType = [[StarburstLauncher]],
 		weaponVelocity = 150,
 		damage = {
+			bomb_resistant = 10000,
 			default = 30000,
+			subs = 5,
 		},
 	},
 }

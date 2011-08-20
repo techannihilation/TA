@@ -127,18 +127,7 @@ local weaponDefs = {
 		weaponVelocity = 500,
 		damage = {
 			default = 280,
-			gunships = 70,
-			hgunships = 70,
-			l1bombers = 70,
-			l1fighters = 70,
-			l1subs = 5,
-			l2bombers = 70,
-			l2fighters = 70,
-			l2subs = 5,
-			l3subs = 5,
-			vradar = 70,
-			vtol = 70,
-			vtrans = 70,
+			subs = 5,
 		},
 	},
 	ARMSNIPE_WEAPON = {
@@ -173,10 +162,9 @@ local weaponDefs = {
 		damage = {
 			commanders = 1025,
 			default = 2500,
-			l1subs = 5,
-			l2subs = 5,
-			l3subs = 5,
-			t3mechs = 5400,
+			experimental_land = 5400,
+			experimental_ships = 5400,
+			subs = 5,
 		},
 	},
 }

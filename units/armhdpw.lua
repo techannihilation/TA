@@ -137,6 +137,7 @@ local weaponDefs = {
 		weaponVelocity = 500,
 		damage = {
 			default = 75,
+			subs = 5,
 		},
 	},
 	ARM_EMCC3 = {
@@ -168,6 +169,7 @@ local weaponDefs = {
 		weaponVelocity = 475,
 		damage = {
 			default = 23,
+			subs = 5,
 		},
 	},
 }

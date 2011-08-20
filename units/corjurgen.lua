@@ -140,10 +140,7 @@ local weaponDefs = {
 		weaponVelocity = 900,
 		damage = {
 			default = 135,
-			l1subs = 5,
-			l2subs = 5,
-			l3subs = 5,
-			vtrans = 220,
+			subs = 5,
 		},
 	},
 	CORJURGEN_WEAPON = {
@@ -176,8 +173,8 @@ local weaponDefs = {
 		weaponVelocity = 423.7333984375,
 		damage = {
 			commanders = 1250,
-			crawlingbombs = 199,
 			default = 4500,
+			subs = 5,
 		},
 	},
 }

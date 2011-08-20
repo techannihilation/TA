@@ -115,11 +115,9 @@ local weaponDefs = {
 		tolerance = 7000,
 		weaponType = [[AircraftBomb]],
 		damage = {
-			blackhydra = 30,
-			commanders = 30,
+			bomb_resistant = 1333.3333,
+			commanders = 2000,
 			default = 4000,
-			krogoth = 30,
-			seadragon = 30,
 		},
 	},
 }

@@ -121,7 +121,6 @@ local weaponDefs = {
 		damage = {
 			commanders = 2800,
 			default = 1400,
-			krogoth = 2800,
 		},
 	},
 }

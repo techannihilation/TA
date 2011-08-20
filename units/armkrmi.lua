@@ -133,6 +133,7 @@ local weaponDefs = {
 		weaponVelocity = 400,
 		damage = {
 			default = 400,
+			subs = 5,
 		},
 	},
 	ARMKRMI_ROCKET = {
@@ -171,6 +172,7 @@ local weaponDefs = {
 		weaponVelocity = 400,
 		damage = {
 			default = 2000,
+			subs = 5,
 		},
 	},
 }

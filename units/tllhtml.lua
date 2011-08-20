@@ -129,6 +129,7 @@ local weaponDefs = {
 		weaponVelocity = 400,
 		damage = {
 			default = 600,
+			subs = 5,
 		},
 	},
 	TLL_ROCKETS2 = {
@@ -169,9 +170,7 @@ local weaponDefs = {
 		damage = {
 			commanders = 225,
 			default = 345,
-			l1subs = 5,
-			l2subs = 5,
-			l3subs = 5,
+			subs = 5,
 		},
 	},
 }

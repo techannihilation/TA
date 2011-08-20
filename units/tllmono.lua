@@ -142,16 +142,8 @@ local weaponDefs = {
 		weaponType = [[MissileLauncher]],
 		weaponVelocity = 845,
 		damage = {
-			default = 150,
-			gunships = 750,
-			hgunships = 500,
-			l1bombers = 250,
-			l1fighters = 250,
-			l2bombers = 750,
-			l2fighters = 500,
-			vradar = 250,
-			vtol = 250,
-			vtrans = 250,
+			default = 400,
+			subs = 5,
 		},
 	},
 	Monolith_Shield = {
@@ -221,6 +213,7 @@ local weaponDefs = {
 		weaponVelocity = 780,
 		damage = {
 			default = 3000,
+			subs = 5,
 		},
 	},
 }

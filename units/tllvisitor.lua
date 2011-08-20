@@ -135,12 +135,12 @@ local weaponDefs = {
 		weaponType = [[MissileLauncher]],
 		weaponVelocity = 820,
 		damage = {
-			default = 63,
-			gunships = 40,
-			hgunships = 40,
-			l1subs = 5,
-			l2subs = 5,
-			l3subs = 5,
+			bombers = 170,
+			default = 5,
+			fighters = 170,
+			flak_resistant = 170,
+			subs = 5,
+			unclassed_air = 170,
 		},
 	},
 	VISITOR_VPULSE = {
@@ -178,7 +178,8 @@ local weaponDefs = {
 		weaponType = [[StarburstLauncher]],
 		weaponVelocity = 400,
 		damage = {
-			default = 250,
+			default = 700,
+			subs = 5,
 		},
 	},
 }

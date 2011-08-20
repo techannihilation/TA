@@ -128,6 +128,7 @@ local weaponDefs = {
 		weaponVelocity = 385,
 		damage = {
 			default = 1450,
+			subs = 5,
 		},
 	},
 	ARMCRABE_MISSILES = {
@@ -167,6 +168,7 @@ local weaponDefs = {
 		weaponVelocity = 1500,
 		damage = {
 			default = 1650,
+			subs = 5,
 		},
 	},
 }

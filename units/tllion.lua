@@ -127,12 +127,9 @@ local weaponDefs = {
 		weaponType = [[BeamLaser]],
 		weaponVelocity = 2500,
 		damage = {
-			blackhydra = 6000,
 			commanders = 1800,
 			default = 2100,
-			heavyunits = 4000,
-			hero = 14000,
-			krogoth = 10000,
+			subs = 5,
 		},
 	},
 }

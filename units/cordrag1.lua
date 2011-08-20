@@ -130,6 +130,7 @@ local weaponDefs = {
 		weaponVelocity = 950,
 		damage = {
 			default = 429,
+			subs = 5,
 		},
 	},
 	Dragoth_cannon = {
@@ -157,6 +158,7 @@ local weaponDefs = {
 		weaponVelocity = 800,
 		damage = {
 			default = 2300,
+			subs = 5,
 		},
 	},
 	Dragoth_funnel = {
@@ -200,8 +202,8 @@ local weaponDefs = {
 		weaponType = [[Cannon]],
 		weaponVelocity = 750,
 		damage = {
-			cordrag1 = 10,
 			default = 200,
+			subs = 5,
 		},
 	},
 }

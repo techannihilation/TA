@@ -123,10 +123,8 @@ local weaponDefs = {
 		weaponVelocity = 1400,
 		damage = {
 			commanders = 2400,
-			default = 11000,
-			l1subs = 5,
-			l2subs = 5,
-			l3subs = 5,
+			default = 9000,
+			subs = 5,
 		},
 	},
 }

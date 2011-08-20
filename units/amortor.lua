@@ -116,6 +116,9 @@ local weaponDefs = {
 		weaponVelocity = 550,
 		damage = {
 			default = 300,
+			experimental_ships = 600,
+			ships = 450,
+			subs = 5,
 		},
 	},
 }

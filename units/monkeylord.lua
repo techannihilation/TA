@@ -130,7 +130,7 @@ local weaponDefs = {
 		name = [[Cybran_Monkeylord_Beam]],
 		noSelfDamage = true,
 		range = 800,
-		reloadtime = 1e-005,
+		reloadtime = 0,
 		renderType = 1,
 		rgbColor = [[1 0 0]],
 		soundHit = [[BFGBANG]],
@@ -147,6 +147,7 @@ local weaponDefs = {
 		weaponVelocity = 250,
 		damage = {
 			default = 1550,
+			subs = 5,
 		},
 	},
 	Cybran_Monkeylord_Shield = {

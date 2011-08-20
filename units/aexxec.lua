@@ -125,7 +125,7 @@ local weaponDefs = {
 		damage = {
 			commanders = 110,
 			default = 355,
-			janus1 = 300,
+			subs = 5,
 		},
 	},
 }

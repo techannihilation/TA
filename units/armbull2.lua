@@ -132,6 +132,7 @@ local weaponDefs = {
 		weaponVelocity = 310,
 		damage = {
 			default = 325,
+			subs = 5,
 		},
 	},
 	ARMROGUE_CANNON = {
@@ -163,6 +164,7 @@ local weaponDefs = {
 		damage = {
 			commanders = 2,
 			default = 12,
+			subs = 5,
 		},
 	},
 }

@@ -117,13 +117,9 @@ local weaponDefs = {
 		weaponType = [[BeamLaser]],
 		weaponVelocity = 1500,
 		damage = {
-			blackhydra = 7500,
 			commanders = 999,
 			default = 7600,
-			l1subs = 5,
-			l2subs = 5,
-			l3subs = 5,
-			seadragon = 7500,
+			subs = 5,
 		},
 	},
 }

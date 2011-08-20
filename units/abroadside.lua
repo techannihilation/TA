@@ -156,6 +156,7 @@ local weaponDefs = {
 		damage = {
 			commanders = 1100,
 			default = 9000,
+			subs = 5,
 		},
 	},
 	CapitalShipMinigun = {
@@ -202,6 +203,7 @@ local weaponDefs = {
 		weaponVelocity = 1450,
 		damage = {
 			default = 32,
+			subs = 5,
 		},
 	},
 }
