@@ -90,7 +90,7 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			badTargetCategory = [[SMALL TINY]],
-			def = [[anti ship missile]],
+			def = [[asm]],
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
@@ -99,7 +99,7 @@ local unitDef = {
 --------------------------------------------------------------------------------
 
 local weaponDefs = {
-	['anti ship missile'] = {
+	['asm'] = {
 		areaOfEffect = 424,
 		burnblow = true,
 		cruisealt = 120,
