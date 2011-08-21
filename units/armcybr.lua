@@ -140,8 +140,12 @@ local weaponDefs = {
 		weaponVelocity = 400,
 		damage = {
 			bomb_resistant = 2541.6667,
+			bombers = 200,
 			commanders = 1750,
 			default = 7625,
+			fighters = 200,
+			flak_resistant = 200,
+			unclassed_air = 200,
 		},
 	},
 }

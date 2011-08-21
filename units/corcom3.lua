@@ -223,7 +223,7 @@ local weaponDefs = {
 			fighters = 180,
 			flak_resistant = 180,
 			subs = 5,
-			unclassed_air = 180,
+			unclassed_air = 315,
 		},
 	},
 }

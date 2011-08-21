@@ -139,8 +139,12 @@ local weaponDefs = {
 		weaponType = [[Cannon]],
 		weaponVelocity = 450,
 		damage = {
+			bombers = 5,
 			commanders = 12.5,
 			default = 25,
+			fighters = 5,
+			flak_resistant = 5,
+			unclassed_air = 5,
 		},
 	},
 	VTOL_ROCKET5 = {
@@ -166,8 +170,13 @@ local weaponDefs = {
 		weaponType = [[Cannon]],
 		weaponVelocity = 600,
 		damage = {
+			bombers = 5,
 			commanders = 25,
 			default = 50,
+			fighters = 5,
+			flak_resistant = 5,
+			subs = 5,
+			unclassed_air = 5,
 		},
 	},
 }

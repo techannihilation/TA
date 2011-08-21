@@ -149,13 +149,13 @@ local weaponDefs = {
 		weaponType = [[Cannon]],
 		weaponVelocity = 1500,
 		damage = {
-			bombers = 450,
+			bombers = 750,
 			commanders = 10,
 			default = 5,
-			fighters = 450,
-			flak_resistant = 150,
+			fighters = 750,
+			flak_resistant = 250,
 			subs = 5,
-			unclassed_air = 450,
+			unclassed_air = 750,
 		},
 	},
 	BOGUS_MISSILE = {
@@ -181,11 +181,11 @@ local weaponDefs = {
 		weaponType = [[Cannon]],
 		weaponVelocity = 650,
 		damage = {
-			bombers = 50,
+			bombers = 60,
 			default = 5,
-			fighters = 50,
-			flak_resistant = 16.6667,
-			unclassed_air = 50,
+			fighters = 60,
+			flak_resistant = 20,
+			unclassed_air = 60,
 		},
 	},
 	CORAAKBOT_MISSILE1 = {

@@ -137,11 +137,11 @@ local weaponDefs = {
 		weaponType = [[LaserCannon]],
 		weaponVelocity = 2500,
 		damage = {
-			bombers = 3500,
+			bombers = 3600,
 			default = 5,
-			fighters = 3500,
-			flak_resistant = 3500,
-			unclassed_air = 3500,
+			fighters = 3600,
+			flak_resistant = 1200,
+			unclassed_air = 3600,
 		},
 	},
 }

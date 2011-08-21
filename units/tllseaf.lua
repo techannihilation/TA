@@ -140,11 +140,11 @@ local weaponDefs = {
 		weaponType = [[MissileLauncher]],
 		weaponVelocity = 522,
 		damage = {
-			bombers = 140,
+			bombers = 330,
 			default = 5,
-			fighters = 70,
-			flak_resistant = 87.5,
-			unclassed_air = 87.5,
+			fighters = 110,
+			flak_resistant = 165,
+			unclassed_air = 165,
 		},
 	},
 	TLLVTOL_MISSILE = {
@@ -186,11 +186,11 @@ local weaponDefs = {
 		weaponType = [[MissileLauncher]],
 		weaponVelocity = 480,
 		damage = {
-			bombers = 200,
+			bombers = 270,
 			default = 5,
-			fighters = 80,
-			flak_resistant = 100,
-			unclassed_air = 100,
+			fighters = 90,
+			flak_resistant = 135,
+			unclassed_air = 135,
 		},
 	},
 }

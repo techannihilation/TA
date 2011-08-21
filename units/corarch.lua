@@ -124,11 +124,11 @@ local weaponDefs = {
 		weaponType = [[Cannon]],
 		weaponVelocity = 650,
 		damage = {
-			bombers = 50,
+			bombers = 90,
 			default = 5,
-			fighters = 50,
-			flak_resistant = 16.6667,
-			unclassed_air = 50,
+			fighters = 90,
+			flak_resistant = 30,
+			unclassed_air = 90,
 		},
 	},
 	GA2 = {
@@ -207,11 +207,11 @@ local weaponDefs = {
 		weaponType = [[Cannon]],
 		weaponVelocity = 1550,
 		damage = {
-			bombers = 150,
+			bombers = 262.5,
 			default = 5,
-			fighters = 150,
-			flak_resistant = 50,
-			unclassed_air = 150,
+			fighters = 262.5,
+			flak_resistant = 87.5,
+			unclassed_air = 262.5,
 		},
 	},
 }

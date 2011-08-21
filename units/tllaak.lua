@@ -136,11 +136,11 @@ local weaponDefs = {
 		weaponType = [[MissileLauncher]],
 		weaponVelocity = 2500,
 		damage = {
-			bombers = 25,
+			bombers = 30,
 			default = 5,
-			fighters = 25,
-			flak_resistant = 25,
-			unclassed_air = 25,
+			fighters = 30,
+			flak_resistant = 30,
+			unclassed_air = 30,
 		},
 	},
 	ARMAAKBOT_MISSILE1 = {
@@ -182,11 +182,11 @@ local weaponDefs = {
 		weaponType = [[MissileLauncher]],
 		weaponVelocity = 1000,
 		damage = {
-			bombers = 150,
+			bombers = 100,
 			default = 5,
-			fighters = 150,
-			flak_resistant = 150,
-			unclassed_air = 150,
+			fighters = 100,
+			flak_resistant = 100,
+			unclassed_air = 100,
 		},
 	},
 }

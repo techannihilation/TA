@@ -141,12 +141,12 @@ local weaponDefs = {
 		weaponVelocity = 820,
 		wobble = 120,
 		damage = {
-			bombers = 230,
+			bombers = 350,
 			default = 5,
-			fighters = 230,
-			flak_resistant = 230,
+			fighters = 350,
+			flak_resistant = 350,
 			subs = 5,
-			unclassed_air = 230,
+			unclassed_air = 350,
 		},
 	},
 	TLL_LASERSHIP = {

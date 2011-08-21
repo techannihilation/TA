@@ -128,8 +128,12 @@ local weaponDefs = {
 		weaponType = [[BeamLaser]],
 		weaponVelocity = 800,
 		damage = {
+			bombers = 5,
 			commanders = 45,
 			default = 90,
+			fighters = 5,
+			flak_resistant = 5,
+			unclassed_air = 5,
 		},
 	},
 }
