@@ -165,6 +165,7 @@ local weaponDefs = {
 		id = 134,
 		impulseBoost = 0.123,
 		impulseFactor = 0.123,
+		interceptedByShieldType = 2,
 		lavaexplosionart = [[lavasplash]],
 		lavaexplosiongaf = [[fx]],
 		lineOfSight = true,
