@@ -105,7 +105,7 @@ local unitDef = {
 		},
 		[3] = {
 			def = [[TLLVTOL_MISSILE]],
-			onlyTargetCategory = [[NOTVTOL]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }
