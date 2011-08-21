@@ -126,11 +126,11 @@ local weaponDefs = {
 		weaponType = [[Cannon]],
 		weaponVelocity = 1550,
 		damage = {
-			bombers = 350,
+			bombers = 630,
 			default = 5,
-			fighters = 350,
-			flak_resistant = 116.6667,
-			unclassed_air = 350,
+			fighters = 630,
+			flak_resistant = 210,
+			unclassed_air = 630,
 		},
 	},
 }

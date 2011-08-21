@@ -122,11 +122,11 @@ local weaponDefs = {
 		weaponType = [[Cannon]],
 		weaponVelocity = 650,
 		damage = {
-			bombers = 100,
+			bombers = 180,
 			default = 5,
-			fighters = 100,
-			flak_resistant = 33.3333,
-			unclassed_air = 100,
+			fighters = 180,
+			flak_resistant = 60,
+			unclassed_air = 180,
 		},
 	},
 	MOBILEFLAK = {
@@ -159,11 +159,11 @@ local weaponDefs = {
 		weaponType = [[Cannon]],
 		weaponVelocity = 1550,
 		damage = {
-			bombers = 80,
+			bombers = 120,
 			default = 5,
-			fighters = 80,
-			flak_resistant = 26.6667,
-			unclassed_air = 80,
+			fighters = 120,
+			flak_resistant = 40,
+			unclassed_air = 120,
 		},
 	},
 }

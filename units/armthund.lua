@@ -123,8 +123,12 @@ local weaponDefs = {
 		weaponType = [[AircraftBomb]],
 		damage = {
 			bomb_resistant = 48.3333,
+			bombers = 5,
 			commanders = 72.5,
 			default = 145,
+			fighters = 5,
+			flak_resistant = 5,
+			unclassed_air = 5,
 		},
 	},
 }

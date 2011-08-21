@@ -166,7 +166,7 @@ local weaponDefs = {
 			fighters = 112.5,
 			flak_resistant = 112.5,
 			subs = 5,
-			unclassed_air = 112.5,
+			unclassed_air = 196.875,
 		},
 	},
 	DECOY_DISINTEGRATOR = {

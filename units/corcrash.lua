@@ -116,11 +116,11 @@ local weaponDefs = {
 		weaponType = [[Cannon]],
 		weaponVelocity = 650,
 		damage = {
-			bombers = 42,
+			bombers = 75,
 			default = 5,
-			fighters = 42,
-			flak_resistant = 14,
-			unclassed_air = 42,
+			fighters = 75,
+			flak_resistant = 25,
+			unclassed_air = 75,
 		},
 	},
 	COREKBOT_MISSILE = {
@@ -160,11 +160,11 @@ local weaponDefs = {
 		weaponType = [[MissileLauncher]],
 		weaponVelocity = 850,
 		damage = {
-			bombers = 130,
+			bombers = 100,
 			default = 5,
-			fighters = 130,
-			flak_resistant = 130,
-			unclassed_air = 130,
+			fighters = 100,
+			flak_resistant = 100,
+			unclassed_air = 100,
 		},
 	},
 }

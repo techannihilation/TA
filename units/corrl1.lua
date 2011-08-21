@@ -121,11 +121,11 @@ local weaponDefs = {
 		weaponType = [[MissileLauncher]],
 		weaponVelocity = 750,
 		damage = {
-			bombers = 168,
+			bombers = 190,
 			default = 5,
-			fighters = 168,
-			flak_resistant = 168,
-			unclassed_air = 168,
+			fighters = 190,
+			flak_resistant = 190,
+			unclassed_air = 190,
 		},
 	},
 }

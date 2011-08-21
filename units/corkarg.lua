@@ -137,11 +137,12 @@ local weaponDefs = {
 		weaponType = [[MissileLauncher]],
 		weaponVelocity = 1500,
 		damage = {
-			bombers = 210,
+			bombers = 900,
 			default = 5,
-			fighters = 210,
-			flak_resistant = 210,
-			unclassed_air = 210,
+			fighters = 900,
+			flak_resistant = 900,
+			subs = 5,
+			unclassed_air = 900,
 		},
 	},
 	SUPER_MISSILE = {

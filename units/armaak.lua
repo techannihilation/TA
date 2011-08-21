@@ -124,13 +124,13 @@ local weaponDefs = {
 		weaponType = [[Cannon]],
 		weaponVelocity = 1500,
 		damage = {
-			bombers = 340,
+			bombers = 660,
 			commanders = 10,
 			default = 5,
-			fighters = 340,
-			flak_resistant = 113.3333,
+			fighters = 660,
+			flak_resistant = 220,
 			subs = 5,
-			unclassed_air = 340,
+			unclassed_air = 660,
 		},
 	},
 	ARMAAKBOT_MISSILE1 = {

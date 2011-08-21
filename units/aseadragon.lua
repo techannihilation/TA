@@ -189,11 +189,11 @@ local weaponDefs = {
 		weaponType = [[Cannon]],
 		weaponVelocity = 1550,
 		damage = {
-			bombers = 200,
+			bombers = 675,
 			default = 5,
-			fighters = 200,
-			flak_resistant = 66.6667,
-			unclassed_air = 200,
+			fighters = 675,
+			flak_resistant = 225,
+			unclassed_air = 675,
 		},
 	},
 	SEADRAGPRIME = {

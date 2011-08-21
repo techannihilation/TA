@@ -11,7 +11,7 @@ local unitDef = {
 	bmcode = 1,
 	brakeRate = 8.75,
 	buildCostEnergy = 15000,
-	buildCostMetal = 200,
+	buildCostMetal = 120,
 	buildPic = [[CORVAMP.png]],
 	buildTime = 9055,
 	canAttack = true,
@@ -130,11 +130,11 @@ local weaponDefs = {
 		weaponType = [[MissileLauncher]],
 		weaponVelocity = 850,
 		damage = {
-			bombers = 175,
+			bombers = 210,
 			default = 5,
 			fighters = 70,
-			flak_resistant = 87.5,
-			unclassed_air = 87.5,
+			flak_resistant = 105,
+			unclassed_air = 105,
 		},
 	},
 }

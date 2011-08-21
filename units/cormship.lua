@@ -134,12 +134,12 @@ local weaponDefs = {
 		weaponType = [[MissileLauncher]],
 		weaponVelocity = 450,
 		damage = {
-			bombers = 200,
+			bombers = 550,
 			default = 5,
-			fighters = 200,
-			flak_resistant = 200,
+			fighters = 550,
+			flak_resistant = 550,
 			subs = 5,
-			unclassed_air = 200,
+			unclassed_air = 550,
 		},
 	},
 	CORMSHIP_ROCKET = {

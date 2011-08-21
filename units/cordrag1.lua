@@ -129,8 +129,12 @@ local weaponDefs = {
 		weaponType = [[MissileLauncher]],
 		weaponVelocity = 950,
 		damage = {
+			bombers = 5,
 			default = 429,
+			fighters = 5,
+			flak_resistant = 5,
 			subs = 5,
+			unclassed_air = 5,
 		},
 	},
 	Dragoth_cannon = {
@@ -157,8 +161,12 @@ local weaponDefs = {
 		weaponType = [[Cannon]],
 		weaponVelocity = 800,
 		damage = {
+			bombers = 5,
 			default = 2300,
+			fighters = 5,
+			flak_resistant = 5,
 			subs = 5,
+			unclassed_air = 5,
 		},
 	},
 	Dragoth_funnel = {
@@ -202,8 +210,12 @@ local weaponDefs = {
 		weaponType = [[Cannon]],
 		weaponVelocity = 750,
 		damage = {
+			bombers = 5,
 			default = 200,
+			fighters = 5,
+			flak_resistant = 5,
 			subs = 5,
+			unclassed_air = 5,
 		},
 	},
 }
