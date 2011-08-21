@@ -110,6 +110,7 @@ local weaponDefs = {
 		gravityaffected = [[true]],
 		impulseBoost = 0.5,
 		impulseFactor = 0.5,
+		interceptedByShieldType = 2,
 		manualBombSettings = true,
 		model = [[bomb]],
 		name = [[Bombs]],

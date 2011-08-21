@@ -102,6 +102,7 @@ local weaponDefs = {
 		gravityaffected = [[true]],
 		impulseBoost = 0,
 		impulseFactor = 0,
+		interceptedByShieldType = 2,
 		model = [[bomb]],
 		name = [[EMPbomb]],
 		noSelfDamage = true,

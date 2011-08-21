@@ -115,6 +115,7 @@ local weaponDefs = {
 		fireStarter = 100,
 		gravityaffected = [[true]],
 		id = 254,
+		interceptedByShieldType = 2,
 		manualBombSettings = true,
 		model = [[bomb]],
 		name = [[Napalm Bombs]],

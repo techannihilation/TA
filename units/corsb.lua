@@ -110,6 +110,7 @@ local weaponDefs = {
 		gravityaffected = [[true]],
 		impulseBoost = 0.123,
 		impulseFactor = 0.123,
+		interceptedByShieldType = 2,
 		model = [[bomb]],
 		name = [[SeaAdvancedBombs]],
 		noSelfDamage = true,
