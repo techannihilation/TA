@@ -104,6 +104,7 @@ local weaponDefs = {
 		impactonly = 1,
 		impulseBoost = 0.123,
 		impulseFactor = 0.123,
+		interceptedByShieldType = 2,
 		lineOfSight = true,
 		model = [[torpedo]],
 		name = [[TorpedoLauncher]],

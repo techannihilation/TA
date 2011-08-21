@@ -109,6 +109,7 @@ local weaponDefs = {
 		guidance = true,
 		impulseBoost = 1.723,
 		impulseFactor = 1.75,
+		interceptedByShieldType = 2,
 		lineOfSight = true,
 		model = [[plasmafire]],
 		name = [[PlasmaImplosionDumpRocket]],

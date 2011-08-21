@@ -128,6 +128,7 @@ local weaponDefs = {
 		id = 133,
 		impulseBoost = 0.123,
 		impulseFactor = 0.133,
+		interceptedByShieldType = 2,
 		lavaexplosionart = [[lavasplash]],
 		lavaexplosiongaf = [[fx]],
 		model = [[praetorian_missile]],

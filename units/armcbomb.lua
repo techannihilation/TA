@@ -113,6 +113,7 @@ local weaponDefs = {
 		explosiongaf = [[fx]],
 		gravityaffected = [[true]],
 		id = 17,
+		interceptedByShieldType = 2,
 		lavaexplosionart = [[lavasplash]],
 		lavaexplosiongaf = [[fx]],
 		manualBombSettings = true,
