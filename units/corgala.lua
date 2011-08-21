@@ -73,7 +73,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
-			badTargetCategory = [[VTOL]],
 			def = [[RavagerBeam]],
 			onlyTargetCategory = [[NOTVTOL]],
 		},
