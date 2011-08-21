@@ -130,6 +130,11 @@ local UnitEffects = {
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={-31,55,-10}, size=12, precision=22, repeatEffect=true}},
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={31,55,-10}, size=12, precision=22, repeatEffect=true}},
   },
+   [UnitDefNames["corsfus"].id] = {
+    {class='Bursts',options=corsfusBursts},
+    {class='ShieldSphere',options=corsfusShieldSphere},
+    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,100.9,0}, size=29, precision=22, repeatEffect=true}},
+  },
     [UnitDefNames["armlab"].id] = {
 --  {class='Bursts',options=armlabBursts},
 --  {class='ShieldJitter',options={layer=-16, life=math.huge, pos={3,25,20}, size=40, precision=22, repeatEffect=true}},
