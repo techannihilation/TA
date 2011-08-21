@@ -111,6 +111,7 @@ local crnnsdefid = UnitDefNames["crnns"].id
 local tllcoldfusdefid = UnitDefNames["tllcoldfus"].id
 local tllmegacoldfusdefid = UnitDefNames["tllmegacoldfus"].id
 local armuwfus1defid = UnitDefNames["armuwfus1"].id
+local corsfusid = UnitDefNames["corsfus"].id
 
 
 
@@ -265,7 +266,8 @@ end
 
 
 local function UnitCreated(_,unitID,unitDefID)
-  if (lups_luaui)and(corfusdefid == unitDefID) or
+ if (lups_luaui)and(corfusdefid == unitDefID) or
+    (lups_luaui)and(corsfusid == unitDefID) or
     (lups_luaui)and(cafusdefid == unitDefID) or
     (lups_luaui)and(tllmedfusiondefid == unitDefID) or
     (lups_luaui)and(cfusionplantdefid == unitDefID) or
