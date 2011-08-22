@@ -265,7 +265,7 @@ bomb_resistant = {
 	mercury = 99,
 	screamer = 99,
 	tllhmt = 99,
-	corsfus = 99,
+	--corsfus = 99,
 },
 crawlingbombs = {
 	armvader = 99,
