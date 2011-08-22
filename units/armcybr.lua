@@ -93,7 +93,7 @@ local unitDef = {
 
 local weaponDefs = {
 	ARM_PIDR = {
-		areaOfEffect = 412,
+		areaOfEffect = 256,
 		avoidFeature = false,
 		avoidFriendly = false,
 		collideFriendly = false,
