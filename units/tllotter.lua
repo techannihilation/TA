@@ -1,4 +1,3 @@
--- UNITDEF -- TLLOTTER --
 --------------------------------------------------------------------------------
 
 local unitName = "tllotter"
@@ -19,6 +18,10 @@ local unitDef = {
 	canPatrol = true,
 	canstop = 1,
 	category = [[ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTVTOL SMALL]],
+	collisionVolumeScales = [[19.277297973633 28.277294158936 69.277297973633]],
+	collisionVolumeOffsets = [[0 -1 0]],
+	collisionVolumeTest = 1,
+	collisionVolumeType = [[ellipsoid]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	defaultmissiontype = [[Standby]],
