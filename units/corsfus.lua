@@ -41,6 +41,7 @@ local unitDef = {
   name               = [[Airstrike Resistant Fusion Reactor]],
   noAutoFire         = false,
   objectName         = [[CORSFUS]],
+  onoffable = true,
   seismicSignature   = 0,
   selfDestructAs     = [[ATOMIC_BLAST]],
   side               = [[CORE]],
