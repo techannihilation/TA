@@ -64,8 +64,9 @@ local unitDef = {
 		[11] = [[armfsilo]],
 		[12] = [[armamd2]],
 		[13] = [[armmas]],
-		[14] = [[corpre]],
-		[15] = [[cadvmsto]],
+		[14] = [[armt4store]],
+		[15] = [[corpre]],
+		[16] = [[cadvmsto]],
 	},
 	featureDefs = nil,
 	sounds = {
