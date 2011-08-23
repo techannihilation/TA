@@ -31,6 +31,53 @@ local yOffset = 25
 
 local cX, cY
 
+
+local pplants = {
+	["aafus"] = true,
+	["amgeo"] = true,
+	["apocketfusion"] = true,
+	["arm_wind_generator"] = true,
+	["armadvsol"] = true,
+	["armckfus"] = true,
+	["armfor"] = true,
+	["armfus"] = true,
+	["armgeo"] = true,
+	["armgmm"] = true,
+	["armsolar"] = true,
+	["armtide"] = true,
+	["armuwfus"] = true,
+	["armuwfus1"] = true,
+	["armwin"] = true,
+	["cafus"] = true,
+	["cfusionplant"] = true,
+	["cmgeo"] = true,
+	["coradvsol"] = true,
+	["corbhmth"] = true,
+	["corbhmth1"] = true,
+	["core_wind_generator"] = true,
+	["corfus"] = true,
+	["corgeo"] = true,
+	["corsfus"] = true,
+	["corsolar"] = true,
+	["cortide"] = true,
+	["coruwfus"] = true,
+	["corwin"] = true,
+	["cpocketfusion"] = true,
+	["crnns"] = true,
+	["tlladvsolar"] = true,
+	["tllatidal"] = true,
+	["tllcoldfus"] = true,
+	["tllgeo"] = true,
+	["tllmedfusion"] = true,
+	["tllmegacoldfus"] = true,
+	["tllmohogeo"] = true,
+	["tllsolar"] = true,
+	["tllsolarns"] = true,
+	["tlltide"] = true,
+	["tlluwfusion"] = true,
+	["tllwindtrap"] = true,
+}
+
 ------------------------------------------------------------------------------------
 -- Speedups
 ------------------------------------------------------------------------------------
@@ -168,34 +215,35 @@ function widget:DrawScreen()
 			DrawText("M-Effi.:", format('%.2f m / 1000 e', makerTemp.e * 1000))
 			cY = cY - fontSize
 		end
-		if not (#uDef.weapons>0) then
-			if ((uDef.energyMake and uDef.energyMake>10) or (uDef.tidalGenerator and uDef.tidalGenerator > 0)  or (uDef.windGenerator and uDef.windGenerator > 0)) then
-			-- Powerplants 
-				DrawText(orange .. "Powerplant properties", '')
-				DrawText("CR is metal maker conversion rate", '')
-				
-				local totalEOut = uDef.energyMake
-				
-				if (uDef.tidalGenerator > 0 and tidalStrength > 0) then
-					totalEOut = totalEOut + tidalStrength
-				end
-				
-				if (uDef.windGenerator > 0) then
-					local unitWindMin = math.min(windMin, uDef.windGenerator)
-					local unitWindMax = math.min(windMax, uDef.windGenerator)
-					totalEOut = totalEOut + (unitWindMin + unitWindMax) / 2
-				end
-				
-				DrawText("Avg. E-Out.:", totalEOut)
-				DrawText("M-Cost.:", uDef.metalCost)
-				
-				DrawText("Avg-Effi.:", format('%.2f%% e / (m + e * avg. CR) ', totalEOut * 100 / (uDef.metalCost + uDef.energyCost * avgCR)))
-				if(curAvgEffi>0) then
-					DrawText("Curr-Effi.:", format('%.2f%% e / (m + e * curr. CR) ', totalEOut * 100 / (uDef.metalCost + uDef.energyCost * curAvgEffi)))
-				end
-				cY = cY - fontSize
+
+		if pplants[uDef.name] then
+		-- Powerplants 
+			DrawText(orange .. "Powerplant properties", '')
+			DrawText("CR is metal maker conversion rate", '')
+			
+			local totalEOut = uDef.energyMake
+			
+			if (uDef.tidalGenerator > 0 and tidalStrength > 0) then
+				totalEOut = totalEOut + tidalStrength
 			end
 			
+			if (uDef.windGenerator > 0) then
+				local unitWindMin = math.min(windMin, uDef.windGenerator)
+				local unitWindMax = math.min(windMax, uDef.windGenerator)
+				totalEOut = totalEOut + (unitWindMin + unitWindMax) / 2
+			end
+			
+			DrawText("Avg. E-Out.:", totalEOut)
+			DrawText("M-Cost.:", uDef.metalCost)
+			
+			DrawText("Avg-Effi.:", format('%.2f%% e / (m + e * avg. CR) ', totalEOut * 100 / (uDef.metalCost + uDef.energyCost * avgCR)))
+			if(curAvgEffi>0) then
+				DrawText("Curr-Effi.:", format('%.2f%% e / (m + e * curr. CR) ', totalEOut * 100 / (uDef.metalCost + uDef.energyCost * curAvgEffi)))
+			end
+			cY = cY - fontSize
+		end
+			
+		if not (#uDef.weapons>0) or pplants[uDef.name] then
 			if ((uDef.extractsMetal and uDef.extractsMetal  > 0) or (uDef.metalMake and uDef.metalMake > 0) or (uDef.energyMake and uDef.energyMake>0) or (uDef.tidalGenerator and uDef.tidalGenerator > 0)  or (uDef.windGenerator and uDef.windGenerator > 0)) then
 			-- Powerplants 
 				--DrawText(metalColor .. "Total metal generation efficiency", '')
