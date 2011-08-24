@@ -176,7 +176,7 @@ local options={
 	min     = 0,
 	max     = 60,
 	step    = 1,
-	def     = 0,
+	def     = 25,
 	},
 	
 	{
@@ -192,7 +192,7 @@ local options={
 	},
 	
 	{
-	key     = 'los',
+	key     = 'wall_los',
 	name    = 'Line of Sight',
 	desc    = 'Can you see past the wall?',
 	section = 'ta_wall',
@@ -219,7 +219,7 @@ local options={
 	},
 	
 	{
-	key     = 'weapons',
+	key     = 'wall_weapons',
 	name    = 'Cease-Fire',
 	desc    = 'Are weapons blocked as long as the wall remains?',
 	section = 'ta_wall',

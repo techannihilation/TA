@@ -47,10 +47,10 @@ function gadget:Initialize()
 		walls[1].z= Game.mapSizeZ *p
 		walls[2].z= Game.mapSizeZ *(1-p)
 		
-		local los = Spring.GetModOptions()["los"] or '1'
+		local los = Spring.GetModOptions()["wall_los"] or '1'
 		if (los == '1') then seeEverything = true else seeEverything = false end
 		
-		local weapons = Spring.GetModOptions()["weapons"] or '1' 
+		local weapons = Spring.GetModOptions()["wall_weapons"] or '1' 
 		if (weapons == '2') then blockWeapons = false end
 		
 		Spring.Echo ("wallTime in seconds: " .. wallTime .. " | " .. "P=" .. p)
