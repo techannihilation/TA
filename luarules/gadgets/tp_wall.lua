@@ -10,6 +10,12 @@ function gadget:GetInfo()
   }
 end
 
+local enabled = tonumber(Spring.GetModOptions().wall_enabled) or 0
+
+if (enabled == 0) then 
+  return false
+end
+
 --local gl.Vertex = gl.Vertex
 local SpringGetUnitBasePosition = Spring.GetUnitBasePosition   
 local SpringGetUnitTeam = Spring.GetUnitTeam

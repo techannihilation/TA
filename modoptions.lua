@@ -157,6 +157,16 @@ local options={
        step   = 1,  -- quantization is aligned to the def value
                     -- (step <= 0) means that there is no quantization
 	},
+
+	{
+	key    = "wall_enabled",
+	name   = "Enable peace time wall",
+	desc   = "Turn Wall on/off",
+	type   = "bool",
+	def    = false,
+	section= "ta_wall",
+	},
+
 	{
 	key     = 'wall_time',
 	name    = 'Wall Time',
