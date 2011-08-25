@@ -157,6 +157,16 @@ local options={
        step   = 1,  -- quantization is aligned to the def value
                     -- (step <= 0) means that there is no quantization
 	},
+
+	{
+	key    = "wall_enabled",
+	name   = "Enable peace time wall",
+	desc   = "Turn Wall on/off",
+	type   = "bool",
+	def    = false,
+	section= "ta_wall",
+	},
+
 	{
 	key     = 'wall_time',
 	name    = 'Wall Time',
@@ -166,7 +176,7 @@ local options={
 	min     = 0,
 	max     = 60,
 	step    = 1,
-	def     = 0,
+	def     = 25,
 	},
 	
 	{
@@ -182,7 +192,7 @@ local options={
 	},
 	
 	{
-	key     = 'los',
+	key     = 'wall_los',
 	name    = 'Line of Sight',
 	desc    = 'Can you see past the wall?',
 	section = 'ta_wall',
@@ -209,7 +219,7 @@ local options={
 	},
 	
 	{
-	key     = 'weapons',
+	key     = 'wall_weapons',
 	name    = 'Cease-Fire',
 	desc    = 'Are weapons blocked as long as the wall remains?',
 	section = 'ta_wall',
