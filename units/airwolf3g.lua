@@ -19,7 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL]],
+	category = [[ALL MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL WEAPON]],
 	collide = false,
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	cruiseAlt = 120,
@@ -89,17 +89,17 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[TINYVTOL SMALLVTOL MEDIUMVTOL]],
+			badTargetCategory = [[MEDIUMVTOL SMALLVTOL TINYVTOL]],
 			def = [[CORVTOL_ADVMISSILE]],
 			onlyTargetCategory = [[VTOL]],
 		},
 		[2] = {
-			badTargetCategory = [[TINYVTOL SMALLVTOL MEDIUMVTOL]],
+			badTargetCategory = [[MEDIUMVTOL SMALLVTOL TINYVTOL]],
 			def = [[CORVTOL_ADVMISSILE]],
 			onlyTargetCategory = [[VTOL]],
 		},
 		[3] = {
-			badTargetCategory = [[TINYVTOL SMALLVTOL MEDIUMVTOL]],
+			badTargetCategory = [[MEDIUMVTOL SMALLVTOL TINYVTOL]],
 			def = [[CORVTOL_ADVMISSILE1]],
 			onlyTargetCategory = [[VTOL]],
 		},

@@ -20,7 +20,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL MEDIUMVTOL]],
+	category = [[ALL MEDIUMVTOL MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL WEAPON]],
 	collide = false,
 	cruiseAlt = 160,
 	defaultmissiontype = [[VTOL_standby]],
@@ -80,12 +80,12 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[TINYVTOL SMALLVTOL]],
+			badTargetCategory = [[SMALLVTOL TINYVTOL]],
 			def = [[ARMVTOL_ADVMISSILE]],
 			onlyTargetCategory = [[VTOL]],
 		},
 		[2] = {
-			badTargetCategory = [[TINYVTOL SMALLVTOL]],
+			badTargetCategory = [[SMALLVTOL TINYVTOL]],
 			def = [[ARMVTOL_ADVMISSILE]],
 			onlyTargetCategory = [[VTOL]],
 		},
