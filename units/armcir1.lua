@@ -77,7 +77,7 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[SMALL TINY]],
+			badTargetCategory = [[TINYVTOL SMALLVTOL]],
 			def = [[ARM_CIR2]],
 			onlyTargetCategory = [[VTOL]],
 		},

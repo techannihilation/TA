@@ -70,7 +70,7 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[MEDIUM SMALL TINY]],
+			badTargetCategory = [[TINYVTOL SMALLVTOL MEDIUMVTOL]],
 			def = [[CORE_ADVSAM]],
 			onlyTargetCategory = [[VTOL]],
 		},
