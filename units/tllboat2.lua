@@ -20,9 +20,9 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTVTOL]],
-	collisionVolumeScales = [[35.42106628418 64.42106628418 77.42106628418]],
+	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTVTOL WEAPON]],
 	collisionVolumeOffsets = [[0 -5 0]],
+	collisionVolumeScales = [[35.42106628418 64.42106628418 77.42106628418]],
 	collisionVolumeTest = 1,
 	collisionVolumeTyp = [[ellipsoid]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
@@ -237,4 +237,3 @@ unitDef.featureDefs = featureDefs
 return lowerkeys({[unitName] = unitDef})
 
 --------------------------------------------------------------------------------
-

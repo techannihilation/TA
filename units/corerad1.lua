@@ -17,7 +17,7 @@ local unitDef = {
 	buildTime = 19958,
 	canAttack = true,
 	canstop = 1,
-	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	corpse = [[CORERAD_DEAD]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[Upgraded Bomb-Resistant Medium-Range Missile Battery]],
@@ -77,7 +77,7 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[SMALL TINY]],
+			badTargetCategory = [[SMALLVTOL TINYVTOL]],
 			def = [[COR_ERAD2]],
 			onlyTargetCategory = [[VTOL]],
 		},

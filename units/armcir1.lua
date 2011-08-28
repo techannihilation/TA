@@ -17,7 +17,7 @@ local unitDef = {
 	buildTime = 19004,
 	canAttack = true,
 	canstop = 1,
-	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	corpse = [[ARMCIR_DEAD]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[upgraded Bomb-Resistant Medium-Range Missile Battery]],
@@ -77,7 +77,7 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[SMALL TINY]],
+			badTargetCategory = [[SMALLVTOL TINYVTOL]],
 			def = [[ARM_CIR2]],
 			onlyTargetCategory = [[VTOL]],
 		},

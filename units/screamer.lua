@@ -17,7 +17,7 @@ local unitDef = {
 	buildTime = 37543,
 	canAttack = true,
 	canstop = 1,
-	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL]],
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[Long-Range Missile Tower]],
@@ -72,7 +72,7 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[MEDIUM SMALL TINY]],
+			badTargetCategory = [[MEDIUMVTOL SMALLVTOL TINYVTOL]],
 			def = [[ARM_ADVSAM]],
 			onlyTargetCategory = [[VTOL]],
 		},
