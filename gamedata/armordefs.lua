@@ -287,6 +287,10 @@ mines = {
 	armfmine3 = 99,
 	corfmine3 = 99,
 },
+minelayers = {
+	armmlv = 99,
+	cormlv = 99,
+},
 commanders = {
 	armcom = 99,
 	armcom1 = 99,
