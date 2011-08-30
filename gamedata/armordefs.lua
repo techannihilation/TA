@@ -273,6 +273,13 @@ crawlingbombs = {
 	corsktl = 99,
 	tllcrawlb = 99,
 },
+nanos = {
+	armnanotc = 99,
+	cornanotc = 99,
+	armhevsenan = 99,
+	corhevsenan = 99,
+	tllnanotc = 99,
+},
 mines = {
 	armmine1 = 99,
 	armmine2 = 99,
