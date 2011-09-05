@@ -15,7 +15,6 @@ local unitDef = {
 	builder = true,
 	buildTime = 13917,
 	cainrepair = 1,
-	canCapture = true,
 	canGuard = true,
 	canMove = true,
 	canPatrol = true,
