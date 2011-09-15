@@ -34,6 +34,7 @@ local cX, cY
 
 local pplants = {
 	["aafus"] = true,
+	["afusionplant"] = true,
 	["amgeo"] = true,
 	["apocketfusion"] = true,
 	["arm_wind_generator"] = true,
@@ -243,7 +244,7 @@ function widget:DrawScreen()
 			cY = cY - fontSize
 		end
 			
-		if not (#uDef.weapons>0) or pplants[uDef.name] then
+		if not (#uDef.weapons>0) or uDef.isBuilding or pplants[uDef.name] then
 			if ((uDef.extractsMetal and uDef.extractsMetal  > 0) or (uDef.metalMake and uDef.metalMake > 0) or (uDef.energyMake and uDef.energyMake>0) or (uDef.tidalGenerator and uDef.tidalGenerator > 0)  or (uDef.windGenerator and uDef.windGenerator > 0)) then
 			-- Powerplants 
 				--DrawText(metalColor .. "Total metal generation efficiency", '')
