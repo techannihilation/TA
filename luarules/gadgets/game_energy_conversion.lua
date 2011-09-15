@@ -365,12 +365,20 @@ function gadget:UnitGiven(uID, uDefID, newTeam, oldTeam)
 				AdjustTeamCapacity(oldTeam, -cDefs.c, cDefs.e)
 				AdjustTeamCapacity(newTeam,  cDefs.c, cDefs.e)
 			end
-			
-            teamMMList[newTeam][cDefs.e][uID] = teamMMList[oldTeam][cDefs.e][uID]
             if (teamMMList[oldTeam][cDefs.e][uID].status == 1) then
 				teamActiveMM[oldTeam] = teamActiveMM[oldTeam] - 1
 				teamActiveMM[newTeam] = teamActiveMM[newTeam] + 1
 			end
+			
+			--teamMMList[newTeam][cDefs.e][uID] = teamMMList[oldTeam][cDefs.e][uID]
+			-- using "deep copy" instead 
+			
+			teamMMList[newTeam][cDefs.e][uID] = {}
+			teamMMList[newTeam][cDefs.e][uID].capacity = teamMMList[oldTeam][cDefs.e][uID].capacity
+			teamMMList[newTeam][cDefs.e][uID].status = teamMMList[oldTeam][cDefs.e][uID].status
+			teamMMList[newTeam][cDefs.e][uID].emped = teamMMList[oldTeam][cDefs.e][uID].emped
+			teamMMList[newTeam][cDefs.e][uID].built  = teamMMList[oldTeam][cDefs.e][uID].built
+			
             teamMMList[oldTeam][cDefs.e][uID] = nil
         end
     end
