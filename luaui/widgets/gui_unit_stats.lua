@@ -31,14 +31,64 @@ local yOffset = 25
 
 local cX, cY
 
+
+local pplants = {
+	["aafus"] = true,
+	["afusionplant"] = true,
+	["amgeo"] = true,
+	["apocketfusion"] = true,
+	["arm_wind_generator"] = true,
+	["armadvsol"] = true,
+	["armckfus"] = true,
+	["armfor"] = true,
+	["armfus"] = true,
+	["armgeo"] = true,
+	["armgmm"] = true,
+	["armsolar"] = true,
+	["armtide"] = true,
+	["armuwfus"] = true,
+	["armuwfus1"] = true,
+	["armwin"] = true,
+	["cafus"] = true,
+	["cfusionplant"] = true,
+	["cmgeo"] = true,
+	["coradvsol"] = true,
+	["corbhmth"] = true,
+	["corbhmth1"] = true,
+	["core_wind_generator"] = true,
+	["corfus"] = true,
+	["corgeo"] = true,
+	["corsfus"] = true,
+	["corsolar"] = true,
+	["cortide"] = true,
+	["coruwfus"] = true,
+	["corwin"] = true,
+	["cpocketfusion"] = true,
+	["crnns"] = true,
+	["tlladvsolar"] = true,
+	["tllatidal"] = true,
+	["tllcoldfus"] = true,
+	["tllgeo"] = true,
+	["tllmedfusion"] = true,
+	["tllmegacoldfus"] = true,
+	["tllmohogeo"] = true,
+	["tllsolar"] = true,
+	["tllsolarns"] = true,
+	["tlltide"] = true,
+	["tlluwfusion"] = true,
+	["tllwindtrap"] = true,
+}
+
 ------------------------------------------------------------------------------------
 -- Speedups
 ------------------------------------------------------------------------------------
 local white = '\255\255\255\255'
-local green = '\255\1\255\1'
+local green = "\255\001\255\001"
+local red = '\255\255\001\001'
 local yellow = '\255\255\255\1'
 local orange = '\255\255\128\1'
 local blue = '\255\128\128\255'
+local metalColor = '\255\48\48\128'
 
 local max = math.max
 local floor = math.floor
@@ -62,11 +112,16 @@ local spGetUnitExp = Spring.GetUnitExperience
 local spGetUnitHealth = Spring.GetUnitHealth
 local spGetUnitTeam = Spring.GetUnitTeam
 
+local tidalStrength = Game.tidal
+local windMin = Game.windMin
+local windMax = Game.windMax
+
 local uDefs = UnitDefs
 local wDefs = WeaponDefs
 
 local myTeamID = Spring.GetMyTeamID
 local spGetTeamRulesParam = Spring.GetTeamRulesParam
+local spGetTooltip = Spring.GetCurrentTooltip
 
 ------------------------------------------------------------------------------------
 -- Functions
@@ -161,22 +216,79 @@ function widget:DrawScreen()
 			DrawText("M-Effi.:", format('%.2f m / 1000 e', makerTemp.e * 1000))
 			cY = cY - fontSize
 		end
-		if not (#uDef.weapons>0) then
-			if (uDef.energyMake and uDef.energyMake>10) then
+
+		if pplants[uDef.name] then
+		-- Powerplants 
+			DrawText(orange .. "Powerplant properties", '')
+			DrawText("CR is metal maker conversion rate", '')
+			
+			local totalEOut = uDef.energyMake
+			
+			if (uDef.tidalGenerator > 0 and tidalStrength > 0) then
+				totalEOut = totalEOut + tidalStrength
+			end
+			
+			if (uDef.windGenerator > 0) then
+				local unitWindMin = math.min(windMin, uDef.windGenerator)
+				local unitWindMax = math.min(windMax, uDef.windGenerator)
+				totalEOut = totalEOut + (unitWindMin + unitWindMax) / 2
+			end
+			
+			DrawText("Avg. E-Out.:", totalEOut)
+			DrawText("M-Cost.:", uDef.metalCost)
+			
+			DrawText("Avg-Effi.:", format('%.2f%% e / (m + e * avg. CR) ', totalEOut * 100 / (uDef.metalCost + uDef.energyCost * avgCR)))
+			if(curAvgEffi>0) then
+				DrawText("Curr-Effi.:", format('%.2f%% e / (m + e * curr. CR) ', totalEOut * 100 / (uDef.metalCost + uDef.energyCost * curAvgEffi)))
+			end
+			cY = cY - fontSize
+		end
+			
+		if not (#uDef.weapons>0) or uDef.isBuilding or pplants[uDef.name] then
+			if ((uDef.extractsMetal and uDef.extractsMetal  > 0) or (uDef.metalMake and uDef.metalMake > 0) or (uDef.energyMake and uDef.energyMake>0) or (uDef.tidalGenerator and uDef.tidalGenerator > 0)  or (uDef.windGenerator and uDef.windGenerator > 0)) then
 			-- Powerplants 
-				DrawText(orange .. "Powerplant properties", '')
-				DrawText("CR is metal maker conversion rate", '')
-				DrawText("E-Out.:", uDef.energyMake)
-				DrawText("M-Cost.:", uDef.metalCost)
-				DrawText("Avg-Effi.:", format('%.2f%% e / (m + e * avg. CR) ', uDef.energyMake * 100 / (uDef.metalCost + uDef.energyCost * avgCR)))
-				if(curAvgEffi>0) then
-					DrawText("Curr-Effi.:", format('%.2f%% e / (m + e * curr. CR) ', uDef.energyMake * 100 / (uDef.metalCost + uDef.energyCost * curAvgEffi)))
+				--DrawText(metalColor .. "Total metal generation efficiency", '')
+				DrawText(metalColor .. "Estimated time of recovering 100% of cost:", '')
+				
+				local totalMOut = uDef.metalMake or 0
+				local totalEOut = uDef.energyMake or 0
+				
+				if (uDef.extractsMetal and uDef.extractsMetal  > 0) then
+					local metalExtractor = {inc = 0, out = 0, passed= false}
+					local tooltip = spGetTooltip()
+					string.gsub(tooltip, 'Metal: ....%d+%.%d', function(x) string.gsub(x, "%d+%.%d", function(y) metalExtractor.inc = tonumber(y); end) end)
+					string.gsub(tooltip, 'Energy: ....%d+%.%d+..../....-%d+%.%d+', function(x) string.gsub(x, "%d+%.%d", function(y) if (metalExtractor.passed) then metalExtractor.out = tonumber(y); else metalExtractor.passed = true end; end) end)
+					
+					totalMOut = totalMOut + metalExtractor.inc
+					totalEOut = totalEOut -  metalExtractor.out
+				end
+				
+				if (uDef.tidalGenerator > 0 and tidalStrength > 0) then
+					totalEOut = totalEOut + tidalStrength
+				end
+				
+				if (uDef.windGenerator > 0) then
+					local unitWindMin = math.min(windMin, uDef.windGenerator)
+					local unitWindMax = math.min(windMax, uDef.windGenerator)
+					totalEOut = totalEOut + (unitWindMin + unitWindMax) / 2
+				end
+		
+				if(totalEOut * avgCR + totalMOut > 0) then
+				
+					local avgSec = (uDef.metalCost + uDef.energyCost * avgCR)/(totalEOut * avgCR + totalMOut)
+					local currSec = (uDef.metalCost + uDef.energyCost * curAvgEffi)/(totalEOut * curAvgEffi + totalMOut)
+				
+					DrawText('Average: ', format('%i sec (%i min %i sec)', avgSec, avgSec/60, avgSec%60))
+					if(curAvgEffi>0) then
+						DrawText('Current: ', format('%i sec (%i min %i sec)', currSec, currSec/60, currSec%60))
+					end
+				else
+					DrawText('Average: ', "Unknown")
 				end
 				cY = cY - fontSize
 			end
 		end
 	end
-	
 	
 	-- Units that are still building
 	if buildProg and (buildProg < 1.0) then

@@ -262,8 +262,8 @@ modConfig["TA"]["unitList"] =
 --implement this if you want dps-depending ring-colors
 --colors will be interpolated by dps scores between min and max values. values outside range will be set to nearest value in range -> min or max
 modConfig["TA"]["armorTags"] = {}
-modConfig["TA"]["armorTags"]["air"] = "vtol"
-modConfig["TA"]["armorTags"]["ground"] = "else"
+modConfig["TA"]["armorTags"]["air"] = "default"
+modConfig["TA"]["armorTags"]["ground"] = "default"
 modConfig["TA"]["dps"] = {}
 modConfig["TA"]["dps"]["ground"] = {}
 modConfig["TA"]["dps"]["air"] = {}
@@ -285,7 +285,7 @@ modConfig["TA"]["color"]["enemy"]["air"]["min"] = { 0.0, 1.0, 0.0 }
 
 modConfig["TA"]["color"]["enemy"]["air"]["max"] = { 0.0, 0.0, 1.0 }
 modConfig["TA"]["color"]["enemy"]["nuke"] =  { 1.0, 1.0, 1.0 }
-modConfig["TA"]["color"]["ally"] = modConfig["BA"]["color"]["enemy"]
+modConfig["TA"]["color"]["ally"] = modConfig["TA"]["color"]["enemy"]
 --end of custom colors
 --end of TA
 

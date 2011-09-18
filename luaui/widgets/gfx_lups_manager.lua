@@ -130,6 +130,11 @@ local UnitEffects = {
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={-31,55,-10}, size=12, precision=22, repeatEffect=true}},
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={31,55,-10}, size=12, precision=22, repeatEffect=true}},
   },
+   [UnitDefNames["corsfus"].id] = {
+    {class='Bursts',options=corsfusBursts},
+    {class='ShieldSphere',options=corsfusShieldSphere},
+    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,100.9,0}, size=29, precision=22, repeatEffect=true}},
+  },
     [UnitDefNames["armlab"].id] = {
 --  {class='Bursts',options=armlabBursts},
 --  {class='ShieldJitter',options={layer=-16, life=math.huge, pos={3,25,20}, size=40, precision=22, repeatEffect=true}},
@@ -276,7 +281,34 @@ local UnitEffects = {
     {class='AirJet',options={color={1,1,1}, width=12, length=15, piece="thrust1", onActive=true}},
     {class='AirJet',options={color={1,1,1}, width=12, length=15, piece="thrust2", onActive=true}},
  },
-
+ [UnitDefNames["tllca"].id] = {
+    {class='AirJet',options={color={1,1,1}, width=6, length=15, piece="rthrust", onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=6, length=15, piece="lthrust", onActive=true}},
+ },
+ [UnitDefNames["tllfight"].id] = {
+    {class='AirJet',options={color={1,1,1}, width=6, length=18, piece="thrust", onActive=true}},
+ },
+ [UnitDefNames["tllbomber"].id] = {
+    {class='AirJet',options={color={1,1,1}, width=3, length=18, piece="rthrust", onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=3, length=18, piece="lthrust", onActive=true}},
+ },
+ [UnitDefNames["tlltorpp"].id] = {
+    {class='AirJet',options={color={1,1,1}, width=7, length=20, piece="rthrust", onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=7, length=20, piece="lthrust", nActive=true}},
+ },
+ [UnitDefNames["tlladvfight"].id] = {
+    {class='AirJet',options={color={0,0,1}, width=5, length=22, piece="rthrust", onActive=true}},
+    {class='AirJet',options={color={0,0,1}, width=5, length=22, piece="lthrust", onActive=true}},
+ },
+ [UnitDefNames["tllseaf"].id] = {
+    {class='AirJet',options={color={1,1,1}, width=6, length=18, piece="thrust", onActive=true}},
+ },
+  [UnitDefNames["tllabomber"].id] = {
+    {class='AirJet',options={color={0,0,1}, width=3, length=24, piece="rthrust", onActive=true}},
+    {class='AirJet',options={color={0,0,1}, width=3, length=24, piece="rrthrust", onActive=true}},
+    {class='AirJet',options={color={0,0,1}, width=3, length=24, piece="lthrust", onActive=true}},
+    {class='AirJet',options={color={0,0,1}, width=3, length=24, piece="llthrust", onActive=true}},
+ },
 }
 
 local t = os.date('*t')

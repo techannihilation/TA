@@ -93,6 +93,22 @@ corfusBursts = {
   count      = 30,
 }
 
+  corsfusBursts = {
+  life       = math.huge,
+  pos        = {0,100,-5},
+  rotSpeed   = 0.75,
+  rotSpread  = 1,
+  rotairdrag = 1,
+  arc        = 90,
+  arcSpread  = 0,
+  size       = 35,
+  sizeSpread = 0,
+  colormap   = { {0.7, 1, 0.7, 0.5} },
+  directional= true,
+  repeatEffect = true,
+  count      = 30,
+}
+
 cafusBursts = {
   life       = math.huge,
   pos        = {0,58,-5},
@@ -245,6 +261,16 @@ corfusShieldSphere = {
   life=20,
   pos = {0,50,-6},
   size=22,
+  colormap1 = { {0.9, 0.9, 1, 0.75},{0.9, 0.9, 1, 1.0},{0.9, 0.9, 1, 1.0},{0.9, 0.9, 1, 0.75} },
+  colormap2 = { {0.2, 0.6, 0.2, 0.4},{0.2, 0.6, 0.2, 0.45},{0.2, 0.6, 0.2, 0.45},{0.2, 0.6, 0.2, 0.4} },
+  repeatEffect=true
+}
+
+corsfusShieldSphere = {
+  layer=-35,
+  life=20,
+  pos = {0,100,-6},
+  size=26,
   colormap1 = { {0.9, 0.9, 1, 0.75},{0.9, 0.9, 1, 1.0},{0.9, 0.9, 1, 1.0},{0.9, 0.9, 1, 0.75} },
   colormap2 = { {0.2, 0.6, 0.2, 0.4},{0.2, 0.6, 0.2, 0.45},{0.2, 0.6, 0.2, 0.45},{0.2, 0.6, 0.2, 0.4} },
   repeatEffect=true
