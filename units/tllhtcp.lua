@@ -54,7 +54,6 @@ local unitDef = {
 		[2] = [[tllhtml]],
 		[3] = [[tllblind]],
 		[4] = [[tllgrim]],
-		[5] = [[tllmlrpc]],
 	},
 	featureDefs = nil,
 	sounds = {
