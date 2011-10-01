@@ -132,6 +132,7 @@ local resources = {
 			bluenovaexplo='bluenovaexplo.tga',
 			randdots='randdots.tga',
 			blueexploredexplo='blueexploredexplo.tga',
+			bombsmoke='bombsmoke.tga',
 		},
 	},
 }
