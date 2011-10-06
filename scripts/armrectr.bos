@@ -3,12 +3,13 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
+#define SIG_BUILD		4	
+
 piece  llathe, rlathe, torso, hips, Lleg, Rleg, Rfoot, Lfoot,
        Lshoulder, Rshoulder, head, Rarm, Larm, llathepoint, rlathepoint, shield1,
        shield2, shield3, shield4;
 
-static-var  Static_Var_1, bMoving, Static_Var_3, Static_Var_4, spray,
-            statechg_DesiredState, statechg_StateChanging, building;
+static-var  bMoving, spray, statechg_DesiredState, statechg_StateChanging, notBuilding;
 
 
 walk()
@@ -333,9 +334,6 @@ walk()
 		turn llathe to x-axis <23.005495> speed <243.000000>;
 		sleep 100;
 	}
-	sleep 100;
-	return (0);
-	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
 }
 
 walklegs()
@@ -534,34 +532,6 @@ walklegs()
 		turn Lfoot to x-axis <14.000000> speed <145.000000>;
 		sleep 100;
 	}
-	sleep 100;
-}
-
-SmokeUnit(healthpercent, sleeptime, smoketype)
-{
-	while( get BUILD_PERCENT_LEFT )
-	{
-		sleep 400;
-	}
-	while( TRUE )
-	{
-		healthpercent = get HEALTH;
-		if( healthpercent < 66 )
-		{
-			smoketype = 256 | 2;
-			if( Rand( 1, 66 ) < healthpercent )
-			{
-				smoketype = 256 | 1;
-			}
-			emit-sfx smoketype from torso;
-		}
-		sleeptime = healthpercent * 50;
-		if( sleeptime < 200 )
-		{
-			sleeptime = 200;
-		}
-		sleep sleeptime;
-	}
 }
 
 MotionControl(moving, aiming, justmoved)
@@ -570,24 +540,21 @@ MotionControl(moving, aiming, justmoved)
 	while( TRUE )
 	{
 		moving = bMoving;
-		aiming = Static_Var_3;
+		aiming = notBuilding;
 		if( moving )
 		{
 			if( aiming )
 			{
-				Static_Var_4 = 1;
-				call-script walklegs();
-			}
-			if( !aiming )
-			{
-				Static_Var_4 = 0;
 				call-script walk();
+			}
+			else
+			{
+				call-script walklegs();
 			}
 			justmoved = TRUE;
 		}
-		if( !moving )
+		else
 		{
-			Static_Var_4 = 1;
 			if( justmoved )
 			{
 				move hips to y-axis [0.000000] speed [3.000000];
@@ -611,45 +578,32 @@ MotionControl(moving, aiming, justmoved)
 
 Go()
 {
-	Static_Var_3 = 1;
-	if( Static_Var_3 )
-	{
-		turn Lshoulder to x-axis <0.000000> now;
-		turn Lshoulder to x-axis <-10.000000> speed <59.000000>;
-		turn Rshoulder to x-axis <0.000000> now;
-		turn Rshoulder to x-axis <-10.000000> speed <57.000000>;
-		turn Rarm to x-axis <0.000000> now;
-		turn Rarm to x-axis <-22.000000> speed <120.000000>;
-		turn Larm to x-axis <0.000000> now;
-		turn Larm to x-axis <-22.000000> speed <120.000000>;
-		sleep 30;
-	}
-	if( Static_Var_3 )
-	{
-		turn Lshoulder to x-axis <-21.000000> speed <48.000000>;
-		turn Rshoulder to x-axis <-21.000000> speed <47.000000>;
-		turn Rarm to x-axis <-44.005495> speed <98.000000>;
-		turn Larm to x-axis <-44.005495> speed <98.000000>;
-		sleep 60;
-	}
-	if( Static_Var_3 )
-	{
-		turn Rarm to z-axis <33.005495> speed <145.000000>;
-		turn rlathe to z-axis <-63.010989> speed <277.000000>;
-		turn Larm to z-axis <-33.005495> speed <145.000000>;
-		turn llathe to z-axis <62.010989> speed <272.000000>;
-		sleep 60;
-	}
-	if( Static_Var_3 )
-	{
-		turn torso to x-axis <27.005495> speed <121.000000>;
-		turn Rarm to z-axis <20.000000> speed <58.000000>;
-		turn Larm to z-axis <-20.000000> speed <58.000000>;
-		sleep 90;
-	}
-	turn torso to y-axis Static_Var_1 speed <240.000000>;
-	wait-for-turn torso around y-axis;
-	set INBUILDSTANCE to 1;
+	turn Lshoulder to x-axis <0.000000> now;
+	turn Lshoulder to x-axis <-10.000000> speed <59.000000>;
+	turn Rshoulder to x-axis <0.000000> now;
+	turn Rshoulder to x-axis <-10.000000> speed <57.000000>;
+	turn Rarm to x-axis <0.000000> now;
+	turn Rarm to x-axis <-22.000000> speed <120.000000>;
+	turn Larm to x-axis <0.000000> now;
+	turn Larm to x-axis <-22.000000> speed <120.000000>;
+	sleep 30;
+
+	turn Lshoulder to x-axis <-21.000000> speed <48.000000>;
+	turn Rshoulder to x-axis <-21.000000> speed <47.000000>;
+	turn Rarm to x-axis <-44.005495> speed <98.000000>;
+	turn Larm to x-axis <-44.005495> speed <98.000000>;
+	sleep 60;
+
+	turn Rarm to z-axis <33.005495> speed <145.000000>;
+	turn rlathe to z-axis <-63.010989> speed <277.000000>;
+	turn Larm to z-axis <-33.005495> speed <145.000000>;
+	turn llathe to z-axis <62.010989> speed <272.000000>;
+	sleep 60;
+
+	turn torso to x-axis <27.005495> speed <121.000000>;
+	turn Rarm to z-axis <20.000000> speed <58.000000>;
+	turn Larm to z-axis <-20.000000> speed <58.000000>;
+	sleep 90;
 }
 
 Stop()
@@ -657,54 +611,38 @@ Stop()
 	set INBUILDSTANCE to 0;
 	turn torso to y-axis <0.000000> speed <160.000000>;
 	wait-for-turn torso around y-axis;
-	if( Static_Var_3 )
-	{
-		turn torso to x-axis <27.972527> now;
-		turn torso to x-axis <0.000000> speed <139.000000>;
-		turn Lshoulder to x-axis <-21.890110> now;
-		turn Rshoulder to x-axis <-21.280220> now;
-		turn Rarm to x-axis <-44.395604> now;
-		turn Rarm to z-axis <20.049451> now;
-		turn Rarm to z-axis <33.005495> speed <66.000000>;
-		turn rlathe to z-axis <-63.851648> now;
-		turn Larm to x-axis <-44.395604> now;
-		turn Larm to z-axis <-20.049451> now;
-		turn Larm to z-axis <-33.005495> speed <66.000000>;
-		turn llathe to z-axis <62.642857> now;
-		sleep 200;
-	}
-	if( Static_Var_3 )
-	{
-		turn Rarm to z-axis <0.000000> speed <167.000000>;
-		turn rlathe to z-axis <0.000000> speed <319.000000>;
-		turn Larm to z-axis <0.000000> speed <167.000000>;
-		turn llathe to z-axis <0.000000> speed <313.000000>;
-		sleep 200;
-	}
-	if( Static_Var_3 )
-	{
-		turn Lshoulder to x-axis <-10.000000> speed <54.000000>;
-		turn Rshoulder to x-axis <-10.000000> speed <53.000000>;
-		turn Rarm to x-axis <-22.000000> speed <111.000000>;
-		turn Larm to x-axis <-22.000000> speed <111.000000>;
-		sleep 200;
-	}
-	if( Static_Var_3 )
-	{
-		turn Lshoulder to x-axis <0.000000> speed <54.000000>;
-		turn Rshoulder to x-axis <0.000000> speed <53.000000>;
-		turn Rarm to x-axis <0.000000> speed <111.000000>;
-		turn Larm to x-axis <0.000000> speed <111.000000>;
-		sleep 200;
-	}
-	sleep 10;
-	Static_Var_3 = 0;
-}
 
-InitState()
-{
-	statechg_DesiredState = TRUE;
-	statechg_StateChanging = FALSE;
+	turn torso to x-axis <27.972527> now;
+	turn torso to x-axis <0.000000> speed <139.000000>;
+	turn Lshoulder to x-axis <-21.890110> now;
+	turn Rshoulder to x-axis <-21.280220> now;
+	turn Rarm to x-axis <-44.395604> now;
+	turn Rarm to z-axis <20.049451> now;
+	turn Rarm to z-axis <33.005495> speed <66.000000>;
+	turn rlathe to z-axis <-63.851648> now;
+	turn Larm to x-axis <-44.395604> now;
+	turn Larm to z-axis <-20.049451> now;
+	turn Larm to z-axis <-33.005495> speed <66.000000>;
+	turn llathe to z-axis <62.642857> now;
+	sleep 200;
+
+	turn Rarm to z-axis <0.000000> speed <167.000000>;
+	turn rlathe to z-axis <0.000000> speed <319.000000>;
+	turn Larm to z-axis <0.000000> speed <167.000000>;
+	turn llathe to z-axis <0.000000> speed <313.000000>;
+	sleep 200;
+
+	turn Lshoulder to x-axis <-10.000000> speed <54.000000>;
+	turn Rshoulder to x-axis <-10.000000> speed <53.000000>;
+	turn Rarm to x-axis <-22.000000> speed <111.000000>;
+	turn Larm to x-axis <-22.000000> speed <111.000000>;
+	sleep 200;
+
+	turn Lshoulder to x-axis <0.000000> speed <54.000000>;
+	turn Rshoulder to x-axis <0.000000> speed <53.000000>;
+	turn Rarm to x-axis <0.000000> speed <111.000000>;
+	turn Larm to x-axis <0.000000> speed <111.000000>;
+	sleep 200;
 }
 
 RequestState(requestedstate, currentstate)
@@ -719,48 +657,78 @@ RequestState(requestedstate, currentstate)
 	statechg_DesiredState = requestedstate;
 	while( statechg_DesiredState != currentstate )
 	{
-		if( statechg_DesiredState == 0 )
-		{
-			call-script Go();
-			currentstate = 0;
-		}
-		if( statechg_DesiredState == 1 )
+		if( statechg_DesiredState )
 		{
 			call-script Stop();
+			notBuilding = 1;
 			currentstate = 1;
+		}
+		else
+		{
+			call-script Go();
+			notBuilding = 0;
+			currentstate = 0;
 		}
 	}
 	statechg_StateChanging = FALSE;
 }
 
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 500;
+	}
+	start-script MotionControl();
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 258;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 257;
+			}
+			emit-sfx smoketype from torso;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
 Create()
 {
 	bMoving = FALSE;
-	Static_Var_3 = 0;
-	Static_Var_4 = 1;
+	notBuilding = 1;
 	spray = llathe;
-	Static_Var_1 = 0;
-	building = 0;
-	call-script InitState();
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
 	start-script SmokeUnit();
-	start-script MotionControl();
 }
 
-StartBuilding(Func_Var_1)
+StartBuilding(heading, pitch)
 {
-	Static_Var_1 = Func_Var_1;
-	building = 1;
 	start-script RequestState(0);
+	while( notBuilding ) sleep 100;
+	signal SIG_BUILD;
+	turn torso to y-axis heading speed <240.000000>;
+	wait-for-turn torso around y-axis;
+	set INBUILDSTANCE to 1;
 }
 
 StopBuilding()
 {
-    building = 0;
-    sleep 5000;
-   	if(building == 0)
-	{
-	  start-script RequestState(1);
-	}
+	signal SIG_BUILD;	
+	set-signal-mask SIG_BUILD;
+	sleep 6000;
+	set-signal-mask 0;
+	signal SIG_BUILD;	
+	start-script RequestState(1);
 }
 
 StartMoving()
@@ -779,10 +747,12 @@ QueryNanoPiece(piecenum)
 	spray = !spray;
 }
 
+/*
 TargetHeading(Func_Var_1)
 {
 	Static_Var_1 = 0 - Func_Var_1;
 }
+*/
 
 SweetSpot(piecenum)
 {
