@@ -139,6 +139,17 @@ local UnitEffects = {
 --  {class='Bursts',options=armlabBursts},
 --  {class='ShieldJitter',options={layer=-16, life=math.huge, pos={3,25,20}, size=40, precision=22, repeatEffect=true}},
   },
+    [UnitDefNames["armmex1"].id] = {
+    {class='SimpleParticles2', options=MergeTable({pos={-6,15,0}, delay=10, lifeSpread=300},sparks)},
+  },
+    [UnitDefNames["cormex1"].id] = {
+    {class='SimpleParticles2', options=MergeTable({pos={-6,20,0}, delay=20, lifeSpread=300},sparks)},
+  },
+      
+      
+      
+      
+      
 
 
   --// ENERGY STORAGE //--------------------
