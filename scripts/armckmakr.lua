@@ -10,7 +10,7 @@ function ImAMetalMaker()
 	
 	mmState = -1
 	
-	local c = 0.8
+	local c = 1
 	while  true  do
 		if (GetUnitValue(WHAT_DO) == 1) then
 			if mmState ~= 1 then 
