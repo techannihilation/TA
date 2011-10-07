@@ -2,7 +2,7 @@
 local AC0 = 1.2/100
 local AC1 = 1.3/100
 local AC2 = 1.4/100
-local AC3 = 1.5/100
+local AC3 = 1.45/100
 local AC4 = 1.6/100
 local AC5 = 1.7/100
 local AC6 = 1.8/100
@@ -22,7 +22,7 @@ local convertCapacities = {
 		[UnitDefNames.armmakr.id]  = { c = 50, e = (AC0) }, -- Normal
 		[UnitDefNames.armfmkr.id]  = { c = 100, e = (AC1) }, -- Floating
 		[UnitDefNames.ametalmakerlvl1.id]  = { c = 200, e = (AC2) }, -- T1,5
-		--[UnitDefNames.____.id]  = { c = 400, e = (AC3) }, -- Cloaked/Hardened
+		[UnitDefNames.armckmakr.id]  = { c = 500, e = (AC3) }, -- Cloaked/Hardened
 		[UnitDefNames.armmmkr.id]  = { c = 800, e = (AC4) }, -- Moho
 		[UnitDefNames.armuwmmm.id]  = { c = 1000, e = (AC5) }, -- Underwater
 		[UnitDefNames.ametalmakerlvl2.id]  = { c = 16000, e = (AC6) }, -- Super
@@ -31,7 +31,7 @@ local convertCapacities = {
 		[UnitDefNames.cormakr.id]  = { c = 64, e = (AC0) }, -- Normal
 		[UnitDefNames.corfmkr.id]  = { c = 128, e = (AC1) }, -- Floating
 		[UnitDefNames.cmetalmakerlvl1.id]  = { c = 256, e = (AC2) }, -- T1,5
-		--[UnitDefNames.____.id]  = { c = 512, e = (AC3) }, -- Cloaked/Hardened
+		[UnitDefNames.corhmakr.id]  = { c = 1536, e = (AC3) }, -- Cloaked/Hardened
 		[UnitDefNames.cormmkr.id]  = { c = 1024, e = (AC4) }, -- Moho
 		[UnitDefNames.coruwmmm.id]  = { c = 1280, e = (AC5) }, -- Underwater
 		[UnitDefNames.cmetalmakerlvl2.id]  = { c =20480, e = (AC6) }, -- Super
