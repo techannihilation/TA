@@ -128,7 +128,7 @@ local weaponDefs = {
 		damage = {
 			commanders = 20,
 			default = 300,
-			raider_resistant = 325,
+			raider_resistant = 270,
 			subs = 5,
 		},
 	},
