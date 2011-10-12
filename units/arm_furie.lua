@@ -1,4 +1,4 @@
-p --- UNITDEF -- ARM_FURIE --
+--- UNITDEF -- ARM_FURIE --
 --------------------------------------------------------------------------------
 
 local unitName = "arm_furie"
