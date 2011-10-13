@@ -3,118 +3,167 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, arm1, arm2, arm3, arm4, flare, barrel, turret, lights, box1, box2, box3, box4;
-static-var  gun_1, restore_delay;
+piece  base, body, arm1, arm2, arm3, arm4, flare, barrel,
+       turret, lights, box1, box2, box3, box4;
+
+static-var  gun_1, restore_delay, statechg_DesiredState, statechg_StateChanging;
 
 // Signal definitions
 #define SIG_AIM				2
 
-#define SMOKEPIECE1 base
-
-#include "StateChg.h"
 
 activatescr()
 {
-
 	if( TRUE )
-	{	
-	turn arm1 to z-axis <55> speed <50>;
-	turn arm2 to z-axis <-55> speed <50>;
-	turn arm3 to x-axis <-55> speed <50>;
-	turn arm4 to x-axis <55> speed <50>;
-	turn box1 to z-axis <85> speed <50>;
-	turn box2 to z-axis <-85> speed <50>;
-	turn box3 to x-axis <-85> speed <50>;
-	turn box4 to x-axis <85> speed <50>;
-
-	SLEEP 1200;
+	{
+		turn arm1 to z-axis <55.010989> speed <50.010989>;
+		turn arm2 to z-axis <-55.010989> speed <50.010989>;
+		turn arm3 to x-axis <-55.010989> speed <50.010989>;
+		turn arm4 to x-axis <55.010989> speed <50.010989>;
+		turn box1 to z-axis <85.016484> speed <50.010989>;
+		turn box2 to z-axis <-85.016484> speed <50.010989>;
+		turn box3 to x-axis <-85.016484> speed <50.010989>;
+		turn box4 to x-axis <85.016484> speed <50.010989>;
+		sleep 1200;
 	}
 	if( TRUE )
 	{
-	move barrel to y-axis [8] speed [5];
-	sleep 1000;
+		move barrel to y-axis [8.000000] speed [5.000000];
+		sleep 1000;
 	}
 	if( TRUE )
 	{
-	spin barrel around y-axis speed <10>;
-	SLEEP 250;
-	spin barrel around y-axis speed <40>;
-	SLEEP 250;
-	spin barrel around y-axis speed <60>;
-	SLEEP 250;
-	spin barrel around y-axis speed <90>;
-	SLEEP 250;
-	spin barrel around y-axis speed <120>;
-	SLEEP 250;
-	spin barrel around y-axis speed <150>;
-	SLEEP 250;
-	spin barrel around y-axis speed <190>;
-	SLEEP 250;
-	spin barrel around y-axis speed <250>;
-	SLEEP 250;
-	spin barrel around y-axis speed <370>;
-	SLEEP 250;
-	spin barrel around y-axis speed <500>;
-	SLEEP 250;
-
+		spin barrel around y-axis speed <10.000000>;
+		sleep 250;
+		spin barrel around y-axis speed <40.005495>;
+		sleep 250;
+		spin barrel around y-axis speed <60.010989>;
+		sleep 250;
+		spin barrel around y-axis speed <90.016484>;
+		sleep 250;
+		spin barrel around y-axis speed <120.027473>;
+		sleep 250;
+		spin barrel around y-axis speed <150.032967>;
+		sleep 250;
+		spin barrel around y-axis speed <190.043956>;
+		sleep 250;
+		spin barrel around y-axis speed <250.060440>;
+		sleep 250;
+		spin barrel around y-axis speed <370.087912>;
+		sleep 250;
+		spin barrel around y-axis speed <500.120879>;
+		sleep 250;
 	}
-SLEEP 500;
+	sleep 500;
 }
 
 deactivatescr()
 {
 	if( TRUE )
 	{
-	spin barrel around y-axis speed <400>;
-	SLEEP 550;
-	spin barrel around y-axis speed <320>;
-	SLEEP 550;
-	spin barrel around y-axis speed <200>;
-	SLEEP 750;
-	turn barrel to y-axis <0> speed <90>;
-	SLEEP 1000;
+		spin barrel around y-axis speed <400.093407>;
+		sleep 550;
+		spin barrel around y-axis speed <320.076923>;
+		sleep 550;
+		spin barrel around y-axis speed <200.043956>;
+		sleep 750;
+		turn barrel to y-axis <0.000000> speed <90.016484>;
+		sleep 1000;
 	}
 	if( TRUE )
 	{
-	move barrel to y-axis [0] speed [5];
-	sleep 1000;
+		move barrel to y-axis [0.000000] speed [5.000000];
+		sleep 1000;
 	}
 	if( TRUE )
 	{
-	turn arm3 to x-axis <0> speed <50>;
-	turn arm4 to x-axis <0> speed <50>;
-	turn arm1 to z-axis <0> speed <50>;
-	turn arm2 to z-axis <0> speed <50>;
-	turn box3 to x-axis <0> speed <50>;
-	turn box4 to x-axis <0> speed <50>;
-	turn box1 to z-axis <0> speed <50>;
-	turn box2 to z-axis <0> speed <50>;
-	
+		turn arm3 to x-axis <0.000000> speed <50.010989>;
+		turn arm4 to x-axis <0.000000> speed <50.010989>;
+		turn arm1 to z-axis <0.000000> speed <50.010989>;
+		turn arm2 to z-axis <0.000000> speed <50.010989>;
+		turn box3 to x-axis <0.000000> speed <50.010989>;
+		turn box4 to x-axis <0.000000> speed <50.010989>;
+		turn box1 to z-axis <0.000000> speed <50.010989>;
+		turn box2 to z-axis <0.000000> speed <50.010989>;
 	}
 }
 
-#include "SmokeUnit.h"
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
 
-Go()
+go()
 {
 	call-script activatescr();
-	gun_1=1;
+	gun_1 = body;
 }
 
-Stop()
+stop()
 {
-	gun_1=0;
+	gun_1 = base;
 	sleep 4000;
 	call-script deactivatescr();
 }
-#define ACTIVATECMD		call-script Go();
-#define DEACTIVATECMD		call-script Stop();
-#include "StateChg.h"
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
 
 Create()
 {
 	call-script InitState();
-	gun_1 = 0;
+	gun_1 = base;
 	dont-shade turret;
 	dont-shade lights;
 	dont-shade arm1;
@@ -125,7 +174,6 @@ Create()
 	dont-shade box2;
 	dont-shade box3;
 	dont-shade box4;
-
 	dont-cache flare;
 	dont-cache lights;
 	dont-cache arm1;
@@ -133,31 +181,25 @@ Create()
 	dont-cache arm3;
 	dont-cache arm4;
 	dont-cache barrel;
-
-	
 	hide flare;
-	
-	turn lights to y-axis <45> NOW;
-	
+	//turn lights to y-axis <45.005495> now;
 	restore_delay = 3000;
 	start-script SmokeUnit();
 }
 
 Activate()
 {
-
 	start-script RequestState(0);
 }
 
 Deactivate()
 {
 	start-script RequestState(1);
-
 }
 
-SetMaxReloadTime(time)
+SetMaxReloadTime(Func_Var_1)
 {
-	restore_delay = time * 2;
+	restore_delay = Func_Var_1 * 2;
 }
 
 RestoreAfterDelay()
@@ -183,16 +225,12 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-	gun_1=0;
-
-	move barrel to y-axis [0] speed [400];
-
+	gun_1 = base;
+	move barrel to y-axis [0.000000] speed [400.000000];
 	show flare;
-	SLEEP 250;
+	sleep 250;
 	hide flare;
-	
-	move barrel to y-axis [7] speed [8];
-	
+	move barrel to y-axis [7.000000] speed [8.000000];
 	start-script RequestState(1);
 }
 
