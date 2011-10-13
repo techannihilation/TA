@@ -78,6 +78,11 @@ local unitDef = {
 			[1] = [[gantsel1]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=13,
+	buildingGroundDecalSizeY=13,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[tllhtcp_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
