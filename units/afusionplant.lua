@@ -66,6 +66,11 @@ local unitDef = {
 			[1] = [[fusion1]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=11,
+	buildingGroundDecalSizeY=11,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[afusionplant_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

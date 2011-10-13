@@ -88,6 +88,11 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=5,
+	buildingGroundDecalSizeY=5,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[tlllbt_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

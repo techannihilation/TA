@@ -84,6 +84,11 @@ local unitDef = {
 			[1] = [[pvehactv]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=10,
+	buildingGroundDecalSizeY=9,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[corevp_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

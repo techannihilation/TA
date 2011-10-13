@@ -86,6 +86,11 @@ local unitDef = {
 			[1] = [[plabactv]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=7,
+	buildingGroundDecalSizeY=7,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[armlab_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

@@ -70,6 +70,11 @@ local unitDef = {
 			[1] = [[tlltidal]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=5,
+	buildingGroundDecalSizeY=5,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[tlltide_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

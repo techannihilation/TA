@@ -85,6 +85,11 @@ local unitDef = {
 			[1] = [[pairactv]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=9,
+	buildingGroundDecalSizeY=7,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[corap_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

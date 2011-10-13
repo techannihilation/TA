@@ -69,6 +69,11 @@ local unitDef = {
 			[1] = [[radar1]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=4,
+	buildingGroundDecalSizeY=4,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[armrad1_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

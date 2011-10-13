@@ -54,6 +54,11 @@ local unitDef = {
 			[1] = [[fusion2]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=8,
+	buildingGroundDecalSizeY=8,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[tllmedfusion_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

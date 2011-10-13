@@ -95,6 +95,11 @@ local unitDef = {
 			[1] = [[pvehactv]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=11,
+	buildingGroundDecalSizeY=9,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[armvp_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

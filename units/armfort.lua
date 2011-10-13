@@ -45,6 +45,11 @@ local unitDef = {
 	workerTime = 0,
 	yardMap = [[ffff]],
 	featureDefs = nil,
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=4,
+	buildingGroundDecalSizeY=4,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[armfort_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

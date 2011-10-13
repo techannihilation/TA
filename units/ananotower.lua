@@ -90,6 +90,11 @@ local unitDef = {
 			[1] = [[varmsel]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=4,
+	buildingGroundDecalSizeY=4,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[ananotower_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

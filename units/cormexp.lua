@@ -88,6 +88,11 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=8,
+	buildingGroundDecalSizeY=8,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[cormexp_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

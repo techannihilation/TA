@@ -75,6 +75,11 @@ local unitDef = {
 			def = [[REPULSOR]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=5,
+	buildingGroundDecalSizeY=5,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[tllgate_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

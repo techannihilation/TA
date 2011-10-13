@@ -59,6 +59,11 @@ local unitDef = {
       [[storngy1]],
     },
   },
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=11,
+	buildingGroundDecalSizeY=11,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[armt4store_aoplane.dds]],
 }
 
 

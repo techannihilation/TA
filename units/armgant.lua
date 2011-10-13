@@ -86,6 +86,11 @@ local unitDef = {
 			[1] = [[gantsel1]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=12,
+	buildingGroundDecalSizeY=12,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[armgant_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

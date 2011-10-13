@@ -72,6 +72,11 @@ local unitDef = {
 			[1] = [[radjam1]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=4,
+	buildingGroundDecalSizeY=4,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[armveil_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

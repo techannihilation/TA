@@ -76,6 +76,11 @@ local unitDef = {
 			[1] = [[minesel1]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=3,
+	buildingGroundDecalSizeY=3,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[armeyes_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

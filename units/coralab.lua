@@ -102,6 +102,11 @@ local unitDef = {
 			[1] = [[plabactv]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=8,
+	buildingGroundDecalSizeY=7,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[coralab_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

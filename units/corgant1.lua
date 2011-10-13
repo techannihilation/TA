@@ -90,6 +90,11 @@ local unitDef = {
 			[1] = [[gantsel1]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=20,
+	buildingGroundDecalSizeY=20,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[corgant1_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

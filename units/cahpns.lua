@@ -88,6 +88,11 @@ local unitDef = {
 			[1] = [[hoversl2]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=12,
+	buildingGroundDecalSizeY=12,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[cahpns_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

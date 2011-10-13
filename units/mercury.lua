@@ -75,6 +75,11 @@ local unitDef = {
 			onlyTargetCategory = [[VTOL]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=6,
+	buildingGroundDecalSizeY=6,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[mercury_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
