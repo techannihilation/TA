@@ -86,11 +86,6 @@ local unitDef = {
 			[1] = [[seaplsl1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=10,
-	buildingGroundDecalSizeY=10,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tllplat_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

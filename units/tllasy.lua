@@ -87,11 +87,6 @@ local unitDef = {
 			[1] = [[pshpactv]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=12,
-	buildingGroundDecalSizeY=12,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tllasy_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
