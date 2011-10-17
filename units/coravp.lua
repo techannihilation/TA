@@ -16,7 +16,7 @@ local unitDef = {
 	buildingGroundDecalDecaySpeed = 3000,
 	buildingGroundDecalSizeX = 10,
 	buildingGroundDecalSizeY = 8,
-	buildingGroundDecalType = [[asphalt512c.dds]],
+	buildingGroundDecalType=[[coravp_aoplane.dds]],
 	buildPic = [[CORAVP.png]],
 	buildTime = 36492,
 	canMove = true,
@@ -104,11 +104,6 @@ local unitDef = {
 			[1] = [[pvehactv]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=10,
-	buildingGroundDecalSizeY=8,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[coravp_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

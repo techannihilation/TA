@@ -16,7 +16,7 @@ local unitDef = {
 	buildingGroundDecalDecaySpeed = 3000,
 	buildingGroundDecalSizeX = 8,
 	buildingGroundDecalSizeY = 7,
-	buildingGroundDecalType = [[asphalt512c.dds]],
+	buildingGroundDecalType=[[coralab_aoplane.dds]],
 	buildPic = [[CORALAB.png]],
 	buildTime = 45519,
 	canMove = true,
@@ -102,11 +102,6 @@ local unitDef = {
 			[1] = [[plabactv]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=8,
-	buildingGroundDecalSizeY=7,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[coralab_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

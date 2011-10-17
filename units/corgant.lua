@@ -15,7 +15,7 @@ local unitDef = {
 	buildingGroundDecalDecaySpeed = 0.01,
 	buildingGroundDecalSizeX = 10,
 	buildingGroundDecalSizeY = 10,
-	buildingGroundDecalType = [[asphalt512c.dds]],
+	buildingGroundDecalType=[[corgant_aoplane.dds]],
 	buildPic = [[CORGANT.png]],
 	buildTime = 67321,
 	canMove = true,
@@ -97,11 +97,6 @@ local unitDef = {
 			[1] = [[gantsel1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=10,
-	buildingGroundDecalSizeY=10,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[corgant_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

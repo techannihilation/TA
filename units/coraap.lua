@@ -15,7 +15,7 @@ local unitDef = {
 	buildingGroundDecalDecaySpeed = 3000,
 	buildingGroundDecalSizeX = 9,
 	buildingGroundDecalSizeY = 7,
-	buildingGroundDecalType = [[asphalt512c.dds]],
+	buildingGroundDecalType=[[coraap_aoplane.dds]],
 	buildPic = [[CORAAP.png]],
 	buildTime = 40678,
 	canMove = true,
@@ -92,11 +92,6 @@ local unitDef = {
 			[1] = [[pairactv]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=9,
-	buildingGroundDecalSizeY=7,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[coraap_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
