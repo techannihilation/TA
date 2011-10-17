@@ -15,7 +15,7 @@ local unitDef = {
 	buildingGroundDecalDecaySpeed = 0.01,
 	buildingGroundDecalSizeX = 20,
 	buildingGroundDecalSizeY = 20,
-	buildingGroundDecalType = [[asphalt512.dds]],
+	buildingGroundDecalType=[[armshltx1_aoplane.dds]],
 	buildPic = [[ARMSHLTX.png]],
 	buildTime = 261380,
 	canMove = true,
@@ -87,11 +87,6 @@ local unitDef = {
 			[1] = [[gantsel1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=20,
-	buildingGroundDecalSizeY=20,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armshltx1_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

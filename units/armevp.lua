@@ -14,7 +14,7 @@ local unitDef = {
 	buildingGroundDecalDecaySpeed = 3000,
 	buildingGroundDecalSizeX = 9,
 	buildingGroundDecalSizeY = 7,
-	buildingGroundDecalType = [[asphalt512.dds]],
+	buildingGroundDecalType=[[armevp_aoplane.dds]],
 	buildTime = 69990,
 	canMove = false,
 	canPatrol = true,
@@ -85,11 +85,6 @@ local unitDef = {
 			[1] = [[pvehactv]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=9,
-	buildingGroundDecalSizeY=7,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armevp_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

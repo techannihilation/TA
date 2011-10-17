@@ -16,7 +16,7 @@ local unitDef = {
 	buildingGroundDecalDecaySpeed = 3000,
 	buildingGroundDecalSizeX = 7,
 	buildingGroundDecalSizeY = 7,
-	buildingGroundDecalType = [[asphalt512.dds]],
+	buildingGroundDecalType=[[armlab_aoplane.dds]],
 	buildPic = [[ARMLAB.png]],
 	buildTime = 5260,
 	canMove = true,
@@ -86,11 +86,6 @@ local unitDef = {
 			[1] = [[plabactv]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=7,
-	buildingGroundDecalSizeY=7,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armlab_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
