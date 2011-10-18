@@ -66,6 +66,11 @@ local unitDef = {
 			[1] = [[waterex1]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=8,
+	buildingGroundDecalSizeY=8,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[armuwmme_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

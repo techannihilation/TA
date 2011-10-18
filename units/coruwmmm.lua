@@ -64,6 +64,11 @@ local unitDef = {
 			[1] = [[metlon2]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=8,
+	buildingGroundDecalSizeY=8,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[coruwmmm_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

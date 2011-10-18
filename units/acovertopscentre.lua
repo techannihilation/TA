@@ -44,6 +44,11 @@ local unitDef = {
 		[1] = [[abuilderlvl3]],
 	},
 	featureDefs = nil,
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=15,
+	buildingGroundDecalSizeY=15,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[acovertopscentre_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

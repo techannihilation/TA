@@ -89,6 +89,11 @@ local unitDef = {
 			onlyTargetCategory = [[VTOL SUPERSHIP]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=8,
+	buildingGroundDecalSizeY=8,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[corpre_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

@@ -75,6 +75,11 @@ local unitDef = {
 			[1] = [[mexon2]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=5,
+	buildingGroundDecalSizeY=5,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[cormex1_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

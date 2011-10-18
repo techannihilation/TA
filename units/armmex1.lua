@@ -71,6 +71,11 @@ local unitDef = {
 			[1] = [[mexon1]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=5,
+	buildingGroundDecalSizeY=5,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[armmex1_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

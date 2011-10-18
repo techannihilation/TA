@@ -70,6 +70,11 @@ local unitDef = {
 			[1] = [[metlon1]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=6,
+	buildingGroundDecalSizeY=6,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[tllammaker_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

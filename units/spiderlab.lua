@@ -81,6 +81,11 @@ local unitDef = {
 			[1] = [[plabactv]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=10,
+	buildingGroundDecalSizeY=10,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[spiderlab_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

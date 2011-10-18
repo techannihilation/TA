@@ -79,6 +79,11 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=10,
+	buildingGroundDecalSizeY=10,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[corsilo1_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

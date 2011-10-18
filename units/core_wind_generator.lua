@@ -62,6 +62,11 @@ local unitDef = {
 			[1] = [[windgen2]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=6,
+	buildingGroundDecalSizeY=6,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[core_wind_generator_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

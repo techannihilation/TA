@@ -91,6 +91,11 @@ local unitDef = {
 			[1] = [[vcorsel]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=4,
+	buildingGroundDecalSizeY=4,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[cnanotower_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

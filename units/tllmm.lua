@@ -65,6 +65,11 @@ local unitDef = {
 			[1] = [[metlon1]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=5,
+	buildingGroundDecalSizeY=5,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[tllmm_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

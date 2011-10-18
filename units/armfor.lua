@@ -59,6 +59,11 @@ local unitDef = {
 			[1] = [[geothrm1]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=6,
+	buildingGroundDecalSizeY=6,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[armfor_aoplane.dds]],
 }
 --------------------------------------------------------------------------------
 

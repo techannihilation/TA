@@ -81,6 +81,11 @@ local unitDef = {
 			onlyTargetCategory = [[VTOL]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=4,
+	buildingGroundDecalSizeY=4,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[tlllmt_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

@@ -76,6 +76,11 @@ local unitDef = {
 			def = [[REPULSOR2]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=5,
+	buildingGroundDecalSizeY=5,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[armgate2_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
