@@ -320,6 +320,15 @@ local UnitEffects = {
     {class='AirJet',options={color={0,0,1}, width=3, length=24, piece="lthrust", onActive=true}},
     {class='AirJet',options={color={0,0,1}, width=3, length=24, piece="llthrust", onActive=true}},
  },
+ [UnitDefNames["cbuilderlvl1"].id] = {
+    {class='AirJet',options={color={1,1,1}, width=7, length=20, piece="engine_r", onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=7, length=20, piece="engine_l", nActive=true}},
+ },
+ [UnitDefNames["cbuilderlvl2"].id] = {
+    {class='AirJet',options={color={1,1,1}, width=7, length=20, piece="engine_r", onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=7, length=20, piece="engine_l", nActive=true}},
+
+ },
 }
 
 local t = os.date('*t')
