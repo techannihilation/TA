@@ -1,0 +1,103 @@
+[KBOTROCKETHIT]
+{
+	usedefaultexplosions=0;	
+
+[groundflash]
+   	{
+      	flashSize = 80;
+      	flashAlpha = 0.3;
+      	circleGrowth = 0;
+      	circleAlpha = 0;
+      	ttl = 30;
+      	color = 0.33, .2, 0.2;
+	air=1;
+     	ground=1;
+      	water=1;
+	}
+[sparkystuff]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0;
+		sizeMod=1.0;
+		pos=0, 0, 0; 
+		emitVector=0, 1, 0;
+	      gravity=0, -0.45, 0;  
+		colorMap=1 1 1 0.01   1 0.7 0.2 0.01   0 0 0 0.01;
+		Texture=flamespark;
+		airdrag=0.95;
+		particleLife=32;
+		particleLifeSpread=0;
+		numParticles=8;
+		particleSpeed=5.4;
+		particleSpeedSpread=1.8;
+		particleSize=2.5;
+		particleSizeSpread=2.4;
+		emitRot=28;
+		emitRotSpread=65;
+		directional=1;
+		alwaysVisible=1;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[spikes]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-6 r12,-6 r12,-6 r12;
+			width=20;
+			length=1; //60;
+			alpha=1;
+			alphadecay=0.07;
+			color=1.0, 0.5, 0.4;
+
+		}
+		air=1;
+		water=1;
+		ground=1;
+  		count=12; 
+	}
+
+[exhale]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0.3;
+		sizeMod=1.0;
+		pos=0, 1, 0; 
+		gravity=0, 0, 0;
+		
+
+		Texture=smoke;
+		airdrag=0.77;
+		colorMap=0.7 0.5 0.4 0.01 0.1 0.1 0.1 0.2 0.0 0.0 0.0 0.01;
+
+		particleLifeSpread=30; 
+		particleSpeedSpread=10;  
+		particleSizeSpread=2;   
+		
+		particleLife=90;
+		numParticles=12; 
+		particleSpeed=-5; 
+		particleSize=3;
+		
+		
+		emitVector=0, 1, 0; 
+		emitRot=80;
+		emitRotSpread=5; 
+		directional=0; 
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+
+}
