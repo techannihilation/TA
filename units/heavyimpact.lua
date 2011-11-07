@@ -54,12 +54,16 @@ local unitDef = {
   turnRate           = 400,
   unitname           = [[heavyimpact]],
   upright            = true,
+  pieceTrailCEGTag= [[Debree]],
+  pieceTrailCEGRange = 4,
+
+  
   customparams = {
     canareaattack      = 1,
   },
   sfxtypes = {
     explosiongenerators = {
-      [[custom:goliathflare]],
+      [[custom:BERTHAFLARE]],
     },
   },
   sounds = {
@@ -100,12 +104,21 @@ local unitDef = {
 local weaponDefs = {
   CORMECHART = {
     accuracy           = 300,
+    alphadecay         = 0.3,
     areaOfEffect       = 256,
     ballistic          = true,
+    cegTag             = [[vulcanfx]],
+    GroundBounce       = 0,
+    WaterBounce        = 0,
+    NumBounce          = 1,
+    BounceSlip         = 1.01,
+    BounceRebound      = 0.8,
+    bounceExplosionGenerator = [[custom:BERTHASHOT]],
     craterBoost        = 0,
     craterMult         = 0,
+    color              = 3,
     edgeEffectiveness  = 0.6,
-    explosionGenerator = [[custom:ORIONEXPLO]],
+    explosionGenerator = [[custom:BERTHAshot]],
     gravityaffected    = [[true]],
     impulseBoost       = 0.123,
     impulseFactor      = 0.123,
@@ -113,12 +126,17 @@ local weaponDefs = {
     minbarrelangle     = -35,
     name               = [[HeavyCannon]],
     noSelfDamage       = true,
+    nogap              = 1,
     range              = 1450,
     reloadtime         = 1,
     renderType         = 4,
     soundHit           = [[xplomed2]],
     soundStart         = [[cannhvy5]],
     startsmoke         = 1,
+    stages             = 20,
+    separation         = 0.45,
+    sizedecay          = -0.15,
+    size               = 3,
     targetMoveError    = 0.25,
     turret             = true,
     weaponType         = [[Cannon]],
