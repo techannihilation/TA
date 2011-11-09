@@ -182,6 +182,8 @@ experimental_land = {
 	tlllongshot = 99,
 	-- tll t3 bots
         helepolis = 99,
+	hyperion = 99,
+	heavyimpact = 99,
 	tllhtcb = 99,
 	tllhtml = 99,
 	tllblind = 99,
