@@ -7,7 +7,6 @@ local unitName = "heavyimpact"
 
 local unitDef = {
   acceleration       = 0.06,
-  badTargetCategory  = [[NOWEAPON]],
   brakeRate          = 0.1,
   buildCostEnergy    = 42090,
   buildCostMetal     = 2400,
@@ -40,7 +39,7 @@ local unitDef = {
   movementClass      = [[VKBOT5]],
   name               = [[Heavy Impact]],
   noAutoFire         = false,
-  noChaseCategory    = [[VTOL]],
+  noChaseCategory    = [[VTOL SUBS]],
   objectName         = [[heavyimpact]],
   seismicSignature   = 0,
   selfDestructAs     = [[SMALL_BUILDING]],
@@ -59,7 +58,7 @@ local unitDef = {
 
   
   customparams = {
-    canareaattack      = 1,
+   canareaattack      = 1,
   },
   sfxtypes = {
     explosiongenerators = {
@@ -90,10 +89,9 @@ local unitDef = {
   weapons = {
     [1]  = {
       badTargetCategory  = [[VTOL]],
+      weaponmaindir1     = [[0 0 1]],
       def                = [[CORMECHART]],
-      mainDir            = [[0 0 1]],
-      maxAngleDif        = 140,
-      onlyTargetCategory = [[NOTAIR]],
+      onlyTargetCategory = [[NOTVTOL]],
     },
   },
 }
@@ -118,7 +116,7 @@ local weaponDefs = {
     craterMult         = 0,
     color              = 3,
     edgeEffectiveness  = 0.6,
-    explosionGenerator = [[custom:BERTHAshot]],
+    explosionGenerator = [[custom:BERTHASHOT]],
     gravityaffected    = [[true]],
     impulseBoost       = 0.123,
     impulseFactor      = 0.123,
@@ -140,7 +138,7 @@ local weaponDefs = {
     targetMoveError    = 0.25,
     turret             = true,
     weaponType         = [[Cannon]],
-    weaponVelocity     = 600,
+    weaponVelocity     = 450,
     damage = {
       default            = 400,
       gunships           = 100,
