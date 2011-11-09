@@ -175,7 +175,13 @@ experimental_ships = {
 },
 --### LAND ###
 experimental_land = {
+        -- tll t3 vechiles
+        tlltelsatnk = 99,
+	tlldemon = 99,
+	tllacid = 99,
+	tlllongshot = 99,
 	-- tll t3 bots
+        helepolis = 99,
 	tllhtcb = 99,
 	tllhtml = 99,
 	tllblind = 99,

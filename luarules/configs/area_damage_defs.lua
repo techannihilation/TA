@@ -3,7 +3,7 @@ local array = {}
 local DAMAGE_PERIOD = 2 -- how often damage is applied
 
 local weapons = {
-	tllacid_acidrain_rocket = { radius = 480, damage = 80, duration =800, rangeFall = 0.6, timeFall = 0.5},
+	tllacid_acidrain_rocket = { radius = 480, damage = 100, duration = 200, rangeFall = 0.6, timeFall = 0.5},
 }
 
 -- radius		- defines size of sphereical area in which damage is dealt
@@ -13,7 +13,7 @@ local weapons = {
 -- timeFall		- the proportion of damage not dealt increases linearly with elapsed time from 0 to timeFall at the duration
 
 local presets = {
-	module_napalmgrenade = { radius = 256, damage = 20, duration = 1400, rangeFall = 0.6, timeFall = 0.5 },
+	--module_napalmgrenade = { radius = 256, damage = 20, duration = 1400, rangeFall = 0.6, timeFall = 0.5 },
 }
 
 ------------------------
