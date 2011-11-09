@@ -86,6 +86,7 @@ local unitDef = {
 		[22] = [[tllavp]],
 		[23] = [[tllmohogeo]],
 		[24] = [[tllrichter]],
+	        [25] = [[tllevp]],
 	},
 	featureDefs = nil,
 	sounds = {
