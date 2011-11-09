@@ -19,7 +19,7 @@ local unitDef = {
   canPatrol          = true,
   canstop            = 1,
   cantBeTransported  = true,
-  category           = [[CORE KBOT LEVEL3 WEAPON NOTAIR NOTSUB NOTSTRUCTURE CTRL_W CTRL_G CTRL_K]],
+  category           = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
   copyright          = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
   corpse             = [[CorKarg_dead]],
   damageModifier     = 0.5,
@@ -66,7 +66,7 @@ local unitDef = {
   zbuffer            = 1,
   weapons = {
     [1]  = {
-      badTargetCategory  = [[NOTSTRUCTURE]],
+      onlyTargetCategory = [[NOTVTOL]],
       def                = [[KARGANETH_CANNON]],
     },
   },
