@@ -116,6 +116,7 @@ local unitDef = {
 		[31] = [[corupmex]],
 		[32] = [[tllion]],
 		[33] = [[tllmono]],
+		[34] = [[tllsealock]],
 	},
 	featureDefs = nil,
 	sounds = {
