@@ -63,6 +63,11 @@ local unitDef = {
   version            = 3,
   workerTime         = 0,
   zbuffer            = 1,
+    sfxtypes = {
+		explosiongenerators = {
+			[1] = [[custom:bluemuzzle]],
+		},
+	},	
   weapons = {
     [1]  = {
       onlyTargetCategory = [[NOTVTOL]],
