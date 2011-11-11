@@ -60,7 +60,7 @@
 			numParticles=12;
 			particleSpeed=5;
 			particleSpeedSpread=5;
-			particleSize=20;
+			particleSize=15;
 			particleSizeSpread=60;
 			emitRot=90;
 			emitRotSpread=10;
@@ -104,7 +104,7 @@
       alwaysVisible=1;
       texture=bluenovaexplo;
             heat = 10;
-            maxheat = 60;
+            maxheat = 25;
             heatFalloff = 1;
 
             size = 0.2;
@@ -148,7 +148,7 @@
       numParticles      = 12;
       particleSpeed     = 5;
       particleSpeedSpread  = 10;
-      particleSize      = 10;
+      particleSize      = 7;
       particleSizeSpread   = 30;
 
       directional    = 0;
@@ -206,7 +206,7 @@
       numParticles      = 6;
       particleSpeed     = 10;
       particleSpeedSpread  = 10;
-      particleSize      = 20;
+      particleSize      = 15;
       particleSizeSpread   = 8;
 
       directional    = 1;
@@ -222,11 +222,11 @@
    [groundflash]
    {
       alwaysVisible=1;
-      flashSize = 280;
+      flashSize = 50;
       flashAlpha = 1;
       circleGrowth = 4.0;
       circleAlpha = 1;
-      ttl = 20;
+      ttl = 15;
       color = 0.0, 0.4, 1.0;
    }
 }
