@@ -27,6 +27,8 @@ if (gadgetHandler:IsSyncedCode()) then
     ["armfboy_arm_fatboy_notalaser"] = true,
     ["armfboy1_arm_fatboy_notalaser1"] = true,
     ["tllhtml_tll_gauss2"] = true,
+    ["tlldemon_demonslayer_cannon"] = true,
+
     }
 
   --// find weapons which cause a shockwave

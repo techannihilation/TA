@@ -115,6 +115,8 @@ local unitDef = {
 		[30] = [[tllfireraiser]],
 		[31] = [[corupmex]],
 		[32] = [[tllmono]],
+		[33] = [[tllsealock]],
+
 	},
 	featureDefs = nil,
 	sounds = {
