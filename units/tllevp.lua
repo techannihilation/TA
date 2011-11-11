@@ -55,7 +55,9 @@ local unitDef = {
 		[2] = [[tllmlrpc]],
 		[3] = [[tlldemon]],
 		[4] = [[tllacid]],	
-		[5] = [[tlllongshot]],			
+		[5] = [[tlllongshot]],
+		[6] = [[anvil]],
+
 
 },
   sounds = {
