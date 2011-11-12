@@ -15,7 +15,7 @@
 		colorMap	= 0 0.5 0 1   0.05 .34 0.05 1  	0 0 0 0.01;
 
       		pos 		= 0, 18, 0;
-		gravity		= 0, 0.05 r0.05, 0;
+		gravity		= 0, 0.025 r0.05, 0;
 	       	emitVector	= 0, 1, 0;
 		emitRot		= 0;
 		emitRotSpread	= 100;
@@ -24,7 +24,7 @@
 		sizeMod		= 1.0;
 
 		airdrag			= 1;
-		particleLife		= 2880;
+		particleLife		= 280;
 		particleLifeSpread	= 50;
 		numParticles		= 120;
 		particleSpeed		= 1;
@@ -54,7 +54,7 @@
 		colorMap	= 0 0.5 0 1   0.05 .34 0.05 1  	0 0 0 0.01;
 
       		pos 		= 0, 18, 0;
-		gravity		= 0, 0.005 r0.005, 0;
+		gravity		= 0, 0.0001 r0.001, 0;
 	       	emitVector	= 0, 1, 0;
 		emitRot		= 90;
 		emitRotSpread	= 0;
@@ -63,9 +63,9 @@
 		sizeMod		= 1.0;
 
 		airdrag			= 1;
-		particleLife		= 3880;
+		particleLife		= 280;
 		particleLifeSpread	= 50;
-		numParticles		= 220;
+		numParticles		= 120;
 		particleSpeed		= 1;
 		particleSpeedSpread	= 0.5;
 		particleSize		= 30;
@@ -94,16 +94,16 @@
 		colorMap	= 0 0.5 0 .01   0.05 .34 0.05 .01  	0 0 0 0.01;
 
       		pos 		= 0, 18, 0;
-		gravity		= 0, 0.005 r0.005, 0;
+		gravity		= 0, 0.0025 r0.005, 0;
 	       	emitVector	= 0, 1, 0;
 		emitRot		= 90;
 		emitRotSpread	= 0;
 
-		sizeGrowth	= -0.35;
+		sizeGrowth	= -0.15;
 		sizeMod		= 1.0;
 
 		airdrag			= 1;
-		particleLife		= 2880;
+		particleLife		= 880;
 		particleLifeSpread	= 90;
 		numParticles		= 120;
 		particleSpeed		= 0.8;
