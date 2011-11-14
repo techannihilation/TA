@@ -22,7 +22,6 @@ local unitDef = {
 	energyMake = 2500,
 	energyUse = 1500,
 	energyStorage = 40000,
-	energyUse = 0,
 	explodeAs = [[NUCLEAR_MISSILE]],
 	footprintX = 5,
 	footprintZ = 5,
