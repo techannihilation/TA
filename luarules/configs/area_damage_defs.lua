@@ -3,7 +3,7 @@ local array = {}
 local DAMAGE_PERIOD = 2 -- how often damage is applied
 
 local weapons = {
-	tllacid_acidrain_rocket = { radius = 480, damage = 100, duration = 425, rangeFall = 0.6, timeFall = 0.5},
+	tllacid_acidrain_rocket = { radius = 400, damage = 100, duration = 625, rangeFall = 0.6, timeFall = 0.5},
 }
 
 -- radius		- defines size of sphereical area in which damage is dealt
