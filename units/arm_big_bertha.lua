@@ -48,6 +48,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[arm_big_bertha]],
 	unitnumber = 16,
+	usePieceCollisionVolumes = 1,
 	version = 1.2,
 	workerTime = 0,
 	yardMap = [[oooo oooo oooo oooo]],

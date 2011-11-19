@@ -146,9 +146,15 @@ local dynamicPieceCollisionVolume = {}	--dynamic per piece collision volume defi
 		on={54,50,50,0,2,-1,0,1,0},
 		off={54,45,50,0,-4,-1,0,1,0},
 	}
-
-	
-	--[[ sample's from xta
+		
+	pieceCollisionVolume["armbrtha"] = {
+			["0"]={true,32,80,32,0,20,0,1,1},
+			["2"]={true,26,30,70,0,0,14,1,2},
+			["1"]={false},
+			["3"]={true,8,8,42,0,1,94,1,2},
+			["4"]={false},	
+	}
+			
 	pieceCollisionVolume["arm_big_bertha"] = {
 		["0"]={true,28,74,28,0,34,0,1,1},
 		["2"]={true,15,15,113,0,0,30,1,2},
@@ -156,25 +162,6 @@ local dynamicPieceCollisionVolume = {}	--dynamic per piece collision volume defi
 		["3"]={false},
 		["4"]={false},
 	}
-	
-	pieceCollisionVolume["arm_vulcan"] = {
-		["1"]={true,60,94,60,0,47,-1,1,1},
-		["6"]={true,36,36,106,0,0,27,1,2},
-		["0"]={false},
-		["2"]={false},
-		["3"]={false},
-		["5"]={false},
-		["4"]={false},
-		["7"]={false},
-		["8"]={false},
-		["9"]={false},
-		["10"]={false},
-		["11"]={false},
-		["12"]={false},
-		["13"]={false},
-		["14"]={false},
-	}
-        --]]
 	dynamicPieceCollisionVolume["tllsealock"] = {
 		on = {
 			["13"]={true,116,122,32,26,6,0,2,0},
@@ -215,15 +202,6 @@ local dynamicPieceCollisionVolume = {}	--dynamic per piece collision volume defi
 			["15"]={false},
 			["16"]={false},
 		}
-	}
-	
-	pieceCollisionVolume["armbrtha"] = {
-			["0"]={true,32,80,32,0,20,0,1,1},
-			["2"]={true,26,30,70,0,0,14,1,2},
-			["1"]={false},
-			["3"]={true,8,8,42,0,1,94,1,2},
-			["4"]={false},
-		
 	}
 		
 return unitCollisionVolume, pieceCollisionVolume, dynamicPieceCollisionVolume
