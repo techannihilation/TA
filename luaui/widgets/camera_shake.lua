@@ -40,7 +40,7 @@ local shake = 0
 
 local powerScale = 200
 
-local decayFactor = 5
+local decayFactor = 2.5
 
 local minArea  = 32  -- weapon's area of effect
 local minPower = (0.02 / powerScale)
@@ -66,10 +66,14 @@ end
 function widget:ShockFront(power, dx, dy, dz)
   exps = exps + 1
   power = power * powerScale
-  if (power > 10) then
-    power = 10
+  if (power > 0.2) then
+    power = 0.2
   end
+  
   shake = shake + power
+  if (shake > 0.3) then 
+	shake = 0.3
+  end
 end
 
 
