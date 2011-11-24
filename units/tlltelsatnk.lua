@@ -82,7 +82,7 @@ local unitDef = {
   },
   weapons = {
     [1]  = {
-      badTargetCategory  = [[VTOL]],
+      onlyTargetCategory = [[NOTVTOL]],
       def                = [[TLLTELSA_CANNON]],
     },
   },
