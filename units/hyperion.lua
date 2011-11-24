@@ -81,9 +81,9 @@ local unitDef = {
 
 local weaponDefs = {
   KARGANETH_CANNON = {
-    cegTag             = [[bluelight]],
-	accuracy           = 500,
-    areaOfEffect       = 290,
+	cegTag = [[bluelight]],
+	accuracy = 500,
+	areaOfEffect = 290,
 	beamlaser = 1,
 	beamTime = 0.55,
 	burnblow = true,
@@ -91,9 +91,7 @@ local weaponDefs = {
 	craterBoost = 0,
 	craterMult = 0,
 	endsmoke = 0,
-	--explosionGenerator = [[custom:anvil]],
 	explosionGenerator = [[custom:bigparticleboom]],
-	--fallOffRate = 0.8,
 	energypershot      = 15000,
 	edgeEffectiveness  = 0.01,
 	minIntensity = 0.2,
@@ -103,10 +101,10 @@ local weaponDefs = {
 	largeBeamLaser = true,
 	laserFlareSize = 5,
 	lineOfSight = true,
-	name               = [[Karganeth Siege Cannon]],
+	name = [[Karganeth Siege Cannon]],
 	noExplode = true,
-	range              = 750,
-    reloadtime         = 0.54,
+	range = 750,
+	reloadtime = 0.54,
 	renderType = 0,
 	rgbColor = [[0.10 0.2 1]],
 	rgbColor2 = [[.15 .3 1]],
@@ -119,15 +117,14 @@ local weaponDefs = {
 	--texture2 = [[EMG]], --beamend
 	texture3 = [[beamrifle]], --muzzle
 	--texture4 = [[EMG]], --flare
-	thickness = 7,
+	thickness =11,
 	tolerance = 100000,
 	turret = true,
 	weaponType = [[BeamLaser]],
 	weaponVelocity = 1500,
-		
-    damage = {
-          default = 4500,
-			subs = 5,
+	damage = {
+	      default = 4500,
+	      subs = 5,
     },
   },
 }
