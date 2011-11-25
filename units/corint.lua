@@ -47,6 +47,7 @@ local unitDef = {
 	standingfireorder = 2,
 	turnRate = 0,
 	unitname = [[corint]],
+	usePieceCollisionVolumes = 1,
 	workerTime = 0,
 	yardMap = [[ooooooooooooooooooooooooo]],
 	customparams = {

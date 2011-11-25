@@ -54,6 +54,7 @@ local unitDef = {
 	turnRate = 0,
 	unitname = [[corgant]],
 	useBuildingGroundDecal = true,
+	usePieceCollisionVolumes = 1,
 	workerTime = 600,
 	yardMap = [[oooooooooooooooooooocccccoooocccccoooocccccoooocccccoooocccccoooocccccoooocccccoo]],
 	buildoptions = {
