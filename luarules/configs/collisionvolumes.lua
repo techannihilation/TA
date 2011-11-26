@@ -123,10 +123,6 @@ local dynamicPieceCollisionVolume = {}	--dynamic per piece collision volume defi
 		on={64,20,64,0,0,0,1,1,1},
 		off={38,20,38,0,0,0,1,1,1},
 	}
-	unitCollisionVolume["cortoast"] = {
-		on={44,23,44,0,4,0,2,1,0},
-		off={44,7,44,0,-3.3,0,2,1,0},
-	}
 	unitCollisionVolume["corvipe"] = {
 		on={39,86,39,0,-10,0,0,1,0},
 		off={39,55,39,0,-27,0,0,1,0},
@@ -143,185 +139,55 @@ local dynamicPieceCollisionVolume = {}	--dynamic per piece collision volume defi
 		on={73,57,84,0,-7,6,0,1,0},
 		off={73,38,60,0,-12,0,0,1,0},
 	}	
-		
 	pieceCollisionVolume["armbrtha"] = {
 			["0"]={true,32,80,32,0,20,0,1,1},
 			["2"]={true,26,30,70,0,0,14,1,2},
-			["1"]={false},
 			["3"]={true,8,8,42,0,1,94,1,2},
-			["4"]={false},	
 	}
 	pieceCollisionVolume["corint"] = {
 			["0"]={true,73,103,73,0,50,0,1,1},
 			["2"]={true,13,13,48,0,1,55,1,2},
-			["1"]={false},
-			["3"]={false},
-			["4"]={false},	
 	}		
-			
 	pieceCollisionVolume["arm_big_bertha"] = {
 		["0"]={true,28,74,28,0,34,0,1,1},
 		["2"]={true,15,15,113,0,0,30,1,2},
-		["1"]={false},
-		["3"]={false},
-		["4"]={false},
 	}
 	dynamicPieceCollisionVolume["corgant"] = {
 		on = {
 			["0"]={true,118,96,130,0,0,0,1,2},
-			["1"]={false},
-			["2"]={false},
-			["3"]={false},
-			["4"]={false},
-			["5"]={false},
-			["6"]={false},
-			["7"]={false},
-			["8"]={false},
-			["9"]={false},
-			["10"]={false},
-			["11"]={false},
-			["12"]={false},
-			["13"]={false},
-			["14"]={false},
-			["15"]={false},
-			["16"]={false},
 			["17"]={true,105,55,105,0,7,30,1,2},
-			["18"]={false},
-			["19"]={false},
-			["20"]={false},
-			["21"]={false},
-			["22"]={false},
-			["23"]={false},
-			["24"]={false},
-			["25"]={false},
-			["26"]={false},
-			["27"]={false},
-			["28"]={false},
-			["29"]={false},
-			["30"]={false},
-			["31"]={false},
-			["33"]={false},
-			["32"]={false},
-			["33"]={false},
-			["34"]={false},
-			["35"]={false},
-			["36"]={false},
-			["37"]={false},
-			["38"]={false},
-			["39"]={false},
-			
-			
 		},
 		off = {
 			["0"]={true,110,66,130,0,0,0,1,2},
-			["1"]={false},
-			["2"]={false},
-			["3"]={false},
-			["4"]={false},
-			["5"]={false},
-			["6"]={false},
-			["7"]={false},
-			["8"]={false},
-			["9"]={false},
-			["10"]={false},
-			["11"]={false},
-			["12"]={false},
-			["13"]={false},
-			["14"]={false},
-			["15"]={false},
-			["16"]={false},
-			["17"]={false},
-			["18"]={false},
-			["19"]={false},
-			["20"]={false},
-			["21"]={false},
-			["22"]={false},
-			["23"]={false},
-			["24"]={false},
-			["25"]={false},
-			["26"]={false},
-			["27"]={false},
-			["28"]={false},
-			["29"]={false},
-			["30"]={false},
-			["31"]={false},
-			["33"]={false},
-			["32"]={false},
-			["33"]={false},
-			["34"]={false},
-			["35"]={false},
-			["36"]={false},
-			["37"]={false},
-			["38"]={false},
-			["39"]={false},
 		}
-	}	
+	}
 	dynamicPieceCollisionVolume["armarad"] = {
 		on = {
 			["0"]={true,25,45,25,0,22,0,1,1},
-			["1"]={false},
 			["2"]={true,76,29,29,0,3,0,1,0},
-			["3"]={false},
-			["4"]={false},
-			["5"]={false},
-			["6"]={false},
-		
-			
-			
 		},
 		off = {
 			["0"]={true,32,51,32,0,8,1,0,0},
-			["1"]={false},
-			["2"]={false},
-			["3"]={false},
-			["4"]={false},
-			["5"]={false},
-			["6"]={false},
-		
-			
 		}
 	}
-		
 	dynamicPieceCollisionVolume["tllsealock"] = {
 		on = {
 			["13"]={true,116,122,32,26,6,0,2,0},
 			["10"]={true,116,122,32,-26,6,0,2,0},
-			["1"]={false},
-			["2"]={false},
-			["3"]={false},
-			["4"]={false},
-			["6"]={false},
-			["7"]={false},
-			["8"]={false},
-			["9"]={false},
-			["0"]={false},
-			["11"]={false},
-			["12"]={false},
-			["5"]={false},
-			["14"]={false},
-			["15"]={false},
-			["16"]={false},
-			
 		},
 		off = {
 			["12"]={true,56,132,40,-22,6,0,2,0},
 			["9"]={true,56,132,40,22,6,0,2,0},
-			["1"]={false},
-			["2"]={false},
-			["3"]={false},
-			["4"]={false},
-			["6"]={false},
-			["7"]={false},
-			["8"]={false},
-			["10"]={false},
-			["0"]={false},
-			["11"]={false},
-			["13"]={false},
-			["5"]={false},
-			["14"]={false},
-			["15"]={false},
-			["16"]={false},
 		}
 	}
-		
+		dynamicPieceCollisionVolume["cortoast"] = {
+		on = {
+			["1"]={true,44,23,44,0,0,0,2,0},
+			["5"]={true,10,10,60,0,13,13,1,2},
+		},
+		off = {
+			["1"]={true,44,7,44,0,0,0,2,0},
+		}
+	}
+
 return unitCollisionVolume, pieceCollisionVolume, dynamicPieceCollisionVolume

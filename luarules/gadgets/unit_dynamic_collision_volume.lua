@@ -3,7 +3,7 @@ function gadget:GetInfo()
     name      = "Dynamic collision volume & Hitsphere Scaledown",
     desc      = "Adjusts collision volume for pop-up style units & Reduces the diameter of default sphere collision volume for 3DO models",
     author    = "Deadnight Warrior",
-    date      = "Dec 10, 2010",
+    date      = "Nov 26, 2011",
     license   = "GNU GPL, v2 or later",
     layer     = 0,
     enabled   = true  --  loaded by default?
@@ -17,6 +17,7 @@ local unitCollisionVolume, pieceCollisionVolume, dynamicPieceCollisionVolume = i
 -- Localization and speedups
 local spGetPieceCollisionData = Spring.GetUnitPieceCollisionVolumeData
 local spSetPieceCollisionData = Spring.SetUnitPieceCollisionVolumeData
+local spGetPieceList = Spring.GetUnitPieceList
 local spGetUnitCollisionData = Spring.GetUnitCollisionVolumeData
 local spSetUnitCollisionData = Spring.SetUnitCollisionVolumeData
 local spGetFeatureCollisionData = Spring.GetFeatureCollisionVolumeData
@@ -26,23 +27,7 @@ local spActive = Spring.GetUnitIsActive
 local airScalX, airScalY, airScalZ
 local pairs = pairs	
 
-function gadget:Initialize()
-	-- Spring 0.83 doesn't scale collision volumes of aircraft by additional 0.5 like Spring 0.82 does
-	if spGetFeatureCollisionData then
-		airScalX, airScalY, airScalZ = 0.375, 0.225, 0.45
-	else
-		airScalX, airScalY, airScalZ = 0.75, 0.45, 0.9
-	end
---[[ Print all feature defs
- for id,featureDef in pairs(FeatureDefs) do
-   for name,param in featureDef:pairs() do
-     Spring.Echo(name,param)
-   end
- end
-]]--
-end
 
-	
 if (gadgetHandler:IsSyncedCode()) then
 
 	--Reduces the diameter of default (unspecified) collision volume for 3DO models,
@@ -52,15 +37,16 @@ if (gadgetHandler:IsSyncedCode()) then
 		if (pieceCollisionVolume[UnitDefs[unitDefID].name]) then
 			--[[  ment for per piece collision volumes for XTA commanders 
 			if (UnitDefs[unitDefID].isCommander==true) then
-				local pieceList = Spring.GetUnitPieceList(unitID)
-				for i=0, #pieceList-1 do
+				for i=0, #spGetPieceList-1 do
 					local xs, ys, zs, xo, yo, zo, vtype, ttype, axis, en = spGetPieceCollisionData(unitID, i)
 					spSetPieceCollisionData(unitID, i, true, true,true,true, xs, ys, zs, xo, yo, zo, 1, 1)
 				end
 			else
 			]]--
-				for pieceIndex, p in pairs(pieceCollisionVolume[UnitDefs[unitDefID].name]) do
-					if (p[1]==true) then
+				local t = pieceCollisionVolume[UnitDefs[unitDefID].name]
+				for pieceIndex=0, #spGetPieceList(unitID)-1 do
+					local p = t[tostring(pieceIndex)]
+					if p then
 						spSetPieceCollisionData(unitID, pieceIndex, p[1], p[1],p[1],p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9])
 					else
 						spSetPieceCollisionData(unitID, pieceIndex, false, false,false,false, 1, 1, 1, 0, 0, 0, 1, 1)
@@ -68,8 +54,10 @@ if (gadgetHandler:IsSyncedCode()) then
 				end
 			--end
 		elseif dynamicPieceCollisionVolume[UnitDefs[unitDefID].name] then
-			for pieceIndex, p in pairs(dynamicPieceCollisionVolume[UnitDefs[unitDefID].name].on) do
-				if (p[1]==true) then
+			local t = dynamicPieceCollisionVolume[UnitDefs[unitDefID].name].on
+			for pieceIndex=0, #spGetPieceList(unitID)-1 do
+				local p = t[tostring(pieceIndex)]
+				if p then
 					spSetPieceCollisionData(unitID, pieceIndex, p[1], p[1],p[1],p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9])
 				else
 					spSetPieceCollisionData(unitID, pieceIndex, false, false,false,false, 1, 1, 1, 0, 0, 0, 1, 1)
@@ -84,7 +72,7 @@ if (gadgetHandler:IsSyncedCode()) then
 					elseif (not UnitDefs[unitDefID].canFly) then
 						spSetUnitCollisionData(unitID, xs*0.75, ys*0.75, zs*0.75,  xo, yo, zo,  vtype, htype, axis)
 					else
-						spSetUnitCollisionData(unitID, xs*airScalX, ys*airScalY, zs*airScalZ,  xo, yo, zo,  vtype, htype, axis)
+						spSetUnitCollisionData(unitID, xs*0.375, ys*0.225, zs*0.45,  xo, yo, zo,  vtype, htype, axis)
 					end
 				end
 			end
@@ -92,9 +80,7 @@ if (gadgetHandler:IsSyncedCode()) then
 	end
 
 
-	-- Requires Spring 0.83 and up, same as for 3DO units, but for features,
-	-- disabled on Spring <0.83
-	if spGetFeatureCollisionData then
+	-- Same as for 3DO units, but for features,
 	function gadget:FeatureCreated(featureID, allyTeam)
 		local featureModel = FeatureDefs[Spring.GetFeatureDefID(featureID)].modelname
 		featureModel = featureModel:lower()
@@ -112,7 +98,6 @@ if (gadgetHandler:IsSyncedCode()) then
 			end
 		end
 	end
-	end
 
 
 	--check if a unit is pop-up type (the list must be entered manually)
@@ -121,7 +106,7 @@ if (gadgetHandler:IsSyncedCode()) then
 		if unitCollisionVolume[un] then
 			popupUnits[unitID]={name=un, state=-1, perPiece=false}
 		elseif dynamicPieceCollisionVolume[un] then
-			popupUnits[unitID]={name=un, state=-1, perPiece=true}
+			popupUnits[unitID]={name=un, state=-1, perPiece=true, numPieces = #spGetPieceList(unitID)-1}
 		end
 	end
 
@@ -140,54 +125,46 @@ if (gadgetHandler:IsSyncedCode()) then
 		if (n%15 ~= 0) then
 			return
 		end
-		local p
+		local p, t
 		for unitID,defs in pairs(popupUnits) do
 			if spArmor(unitID) then
-				if defs.perPiece then
-					if (defs.state ~= 0) then
-						for pieceIndex, p in pairs(dynamicPieceCollisionVolume[defs.name].off) do
-							if (p[1]==true) then
+				if (defs.state ~= 0) then
+					if defs.perPiece then
+						t = dynamicPieceCollisionVolume[defs.name].off
+						for pieceIndex=0, defs.numPieces do
+							p = t[tostring(pieceIndex)]
+							if p then
 								spSetPieceCollisionData(unitID, pieceIndex, p[1], p[1],p[1],p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9])
 							else
 								spSetPieceCollisionData(unitID, pieceIndex, false, false,false,false, 1, 1, 1, 0, 0, 0, 1, 1)
 							end
-						end
-						popupUnits[unitID].state = 0
-					end
-				else
-					if (defs.state ~= 0) then
+						end	
+					else
 						p = unitCollisionVolume[defs.name].off
 						spSetUnitCollisionData(unitID, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9])
-						popupUnits[unitID].state = 0
 					end
+					popupUnits[unitID].state = 0
 				end
 			else
-				if defs.perPiece then
-					if (defs.state ~= 1) then
-						for pieceIndex, p in pairs(dynamicPieceCollisionVolume[defs.name].on) do
-							if (p[1]==true) then
+				if (defs.state ~= 1) then
+					if defs.perPiece then
+						t = dynamicPieceCollisionVolume[defs.name].on
+						for pieceIndex=0, defs.numPieces do
+							p = t[tostring(pieceIndex)]
+							if p then
 								spSetPieceCollisionData(unitID, pieceIndex, p[1], p[1],p[1],p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9])
 							else
 								spSetPieceCollisionData(unitID, pieceIndex, false, false,false,false, 1, 1, 1, 0, 0, 0, 1, 1)
 							end
 						end
-						popupUnits[unitID].state = 1
-					end		
-				else
-					if (defs.state ~= 1) then
+					else
 						p = unitCollisionVolume[defs.name].on
 						spSetUnitCollisionData(unitID, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9])
-						popupUnits[unitID].state = 1
 					end
+					popupUnits[unitID].state = 1
 				end
-				--[[ if units don't use ARMORED variable, uncomment this block to make it use ACTIVATION as well
-				if ( spActive(unitID) ) then
-					p = unitCollisionVolume[name].on
-				else
-					p = unitCollisionVolume[name].off
-				end
-				]]--
 			end			
 		end
 	end
+	
 end
