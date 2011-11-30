@@ -89,7 +89,7 @@ local unitDef = {
 			def = [[ARMPT_LASER]],
 			onlyTargetCategory = [[NOTVTOL]],
 		},
-		[3] = {
+		[2] = {
 			def = [[ARMKBOT_MISSILE]],
 			onlyTargetCategory = [[VTOL]],
 		},

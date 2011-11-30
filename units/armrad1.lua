@@ -48,6 +48,7 @@ local unitDef = {
 	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[armrad1]],
+	usePieceCollisionVolumes = 1,
 	workerTime = 0,
 	yardMap = [[oooo]],
 	featureDefs = nil,
