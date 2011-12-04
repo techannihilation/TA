@@ -83,11 +83,11 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			def = [[BOGUS_MISSILE]],
+			def = [[GA2]],
 			onlyTargetCategory = [[VTOL]],
 		},
 		[2] = {
-			def = [[GA2]],
+			def = [[BOGUS_MISSILE]],
 			onlyTargetCategory = [[VTOL]],
 		},
 		[3] = {
