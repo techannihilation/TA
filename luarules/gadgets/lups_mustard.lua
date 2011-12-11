@@ -1,8 +1,8 @@
--- $Id: lups_napalm.lua 3171 2008-11-06 09:06:29Z det $
+-- $Id: lups_mustard.lua 3171 2008-11-06 09:06:29Z det $
 
 function gadget:GetInfo()
   return {
-    name      = "Napalm",
+    name      = "Mustard",
     desc      = "",
     author    = "jK",
     date      = "Sep. 2008",
@@ -13,61 +13,56 @@ function gadget:GetInfo()
 end
 
 local FIRE_WEAPONS = {
-  ["tllhtml_tll_rockets2"] = true,
-  ["corhurc_coradvbomb"] = true,
-  ["corshad_corebomb"] = true,
-  ["armcbomb_arm_carpet_bomb"] = true,
-  ["armraven_exp_heavyrocket"] = true,
-  ["armraven1_exp_heavyrocket1"] = true,
-  ["corsb_seaadvbomb"] = true,
-}
+  ["tllabomber_coradvbomb"] = true,
+  ["tllbomber_tllbomb"] = true,
+ }
 
 if (gadgetHandler:IsSyncedCode()) then
 
-  local napalmWeapons = {}
+  local mustardWeapons = {}
 
-  --// find napalms
+  --// find mustards
   for i=1,#WeaponDefs do
     local wd = WeaponDefs[i]
     if FIRE_WEAPONS[wd.name] then
       Script.SetWatchWeapon(wd.id,true)
-      napalmWeapons[wd.id] = true
+      mustardWeapons[wd.id] = true
     end
   end
 
-  local napalmExplosions  = {}
+  local mustardExplosions  = {}
 
   --// Speed-ups
   local SendToUnsynced = SendToUnsynced
 
   function gadget:Explosion(weaponID, px, py, pz)
-    if (napalmWeapons[weaponID]) then
-      napalmExplosions[#napalmExplosions+1] = {px, py, pz}
+    if (mustardWeapons[weaponID]) then
+      mustardExplosions[#mustardExplosions+1] = {px, py, pz}
     end
     return false
   end
 
   function gadget:GameFrame(n)
-    if (#napalmExplosions>0) then
-      _G.napalmExplosions =  napalmExplosions
-      _G.napalmCount      = #napalmExplosions
-      SendToUnsynced("napalm_GameFrame")
-      napalmExplosions = {}
+    if (#mustardExplosions>0) then
+      _G.mustardExplosions =  mustardExplosions
+      _G.mustardCount      = #mustardExplosions
+      SendToUnsynced("mustard_GameFrame")
+      mustardExplosions = {}
     end
   end
 
   function gadget:RecvLuaMsg(msg, id)
     if (msg == "lups shutdown") then
-		SendToUnsynced("napalm_Toggle",false,id)
+		SendToUnsynced("mustard_Toggle",false,id)
 	elseif (msg == "lups running") then
-		SendToUnsynced("napalm_Toggle",true,id)
+		SendToUnsynced("mustard_Toggle",true,id)
 	end
   end
 
 else
 
-  local napalmFX = {
-    colormap        = { {0, 0, 0, 0.01}, {0.75, 0.75, 0.9, 0.02}, {0.45, 0.2, 0.3, 0.1}, {0.4, 0.16, 0.1, 0.12}, {0.3, 0.15, 0.01, 0.15},  {0.3, 0.15, 0.01, 0.15}, {0.3, 0.15, 0.01, 0.15}, {0.1, 0.035, 0.01, 0.1}, {0, 0, 0, 0.01} },
+  local mustardFX = {
+    colormap        = { {0, 0, 0, 0.01}, {0.75, 0.75, 0.9, 0.02}, {0.2, 0.45, 0.3, 0.1}, {0.16, 0.4, 0.1, 0.12}, {0.13, 0.3, 0.01, 0.15},  {0.13, 0.4, 0.01, 0.15}, {0.13, 0.5, 0.01, 0.15}, {0.1, 0.035, 0.01, 0.1}, {0, 0, 0, 0.01} },
     count           = 4,
     life            = 100,
     lifeSpread      = 40,
@@ -92,11 +87,12 @@ else
     sizeExp         = 2.5,
 
     layer           = 1,
-    texture         = "bitmaps/GPL/flame.png",
+    texture         = "bitmaps/fireball_green.tga",
   }
 
 
   local heatFX = {
+    colormap        = { {0, 0, 0, 0.01}, {0.75, 0.75, 0.9, 0.02}, {0.2, 0.45, 0.3, 0.1}, {0.16, 0.4, 0.1, 0.12}, {0.13, 0.3, 0.01, 0.15},  {0.13, 0.4, 0.01, 0.15}, {0.13, 0.5, 0.01, 0.15}, {0.1, 0.035, 0.01, 0.1}, {0, 0, 0, 0.01} },
     count         = 1,
     emitVector    = {0,1,0},
     emitRotSpread = 60,
@@ -119,7 +115,7 @@ else
     animSpeed     = 0.25,
     heat          = 6.5,
 
-    texture       = "bitmaps/GPL/Lups/mynoise2.png",
+    texture       = "bitmaps/mustard.png",
   }
 
   local Lups
@@ -128,18 +124,18 @@ else
   local enabled = false
 
   local function SpawnNapalmFX(pos)
-    napalmFX.pos = {pos[1],pos[2],pos[3]}
-    Lups.AddParticles('SimpleParticles2',napalmFX)
+    mustardFX.pos = {pos[1],pos[2],pos[3]}
+    Lups.AddParticles('SimpleParticles2',mustardFX)
     if enabled then
-		heatFX.pos = napalmFX.pos
-		Lups.AddParticles('JitterParticles2',heatFX)
+		heatFX.pos = mustardFX.pos
+		Lups.AddParticles('SimpleParticles2',heatFX)
 	end
   end
 
   local function GameFrame()
     if (not Lups) then Lups = GG['Lups']; LupsAddParticles = Lups.AddParticles end
-    local explosions = SYNCED.napalmExplosions
-    for i=1,SYNCED.napalmCount do
+    local explosions = SYNCED.mustardExplosions
+    for i=1,SYNCED.mustardCount do
       SpawnNapalmFX(explosions[i])
     end
   end
@@ -155,15 +151,15 @@ else
   end
 
   function gadget:Initialize()
-    gl.DeleteTexture(napalmFX.texture)
-    gadgetHandler:AddSyncAction("napalm_GameFrame", GameFrame)
-    gadgetHandler:AddSyncAction("napalm_Toggle", Toggle)
+    gl.DeleteTexture(mustardFX.texture)
+    gadgetHandler:AddSyncAction("mustard_GameFrame", GameFrame)
+    gadgetHandler:AddSyncAction("mustard_Toggle", Toggle)
   end
 
 
   function gadget:Shutdown()
-    gadgetHandler.RemoveSyncAction("napalm_GameFrame")
-    gadgetHandler.RemoveSyncAction("napalm_Toggle")
+    gadgetHandler.RemoveSyncAction("mustard_GameFrame")
+    gadgetHandler.RemoveSyncAction("mustard_Toggle")
   end
 
 end

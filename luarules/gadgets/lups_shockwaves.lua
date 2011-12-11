@@ -17,7 +17,6 @@ if (gadgetHandler:IsSyncedCode()) then
     ["arm_disintegrator"] = true,
     ["armthund_armbomb"] = true,
     ["armcybr_arm_pidr"] = true,
-    ["armsonic_sonic_cannon"] = true,
     ["armpnix_armadvbomb"] = true,
     ["armsb_seaadvbomb"] = true,
     ["armblz_napalm"] = true,
