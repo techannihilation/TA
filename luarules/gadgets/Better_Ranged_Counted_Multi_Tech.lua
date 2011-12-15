@@ -194,7 +194,7 @@ Other synced gadgets may access the four following functions:
 		Useful to lock commands that are not build commands.
 		Cannot be used more than once on the same command.
 
-		Exemple: GG.TechSlaveCommand(CMD.DGUN,"Heavy Weapons, Offensive Commander")
+		Example: GG.TechSlaveCommand(CMD.MANUALFIRE,"Heavy Weapons, Offensive Commander")
 		Would make the D-Gun button locked until both "heavy weapons" and "offensive commander" technologies are reached.
 
 

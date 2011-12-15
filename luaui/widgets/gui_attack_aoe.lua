@@ -56,7 +56,7 @@ local GetUnitRadius          = Spring.GetUnitRadius
 local GetUnitStates          = Spring.GetUnitStates
 local TraceScreenRay         = Spring.TraceScreenRay
 local CMD_ATTACK             = CMD.ATTACK
-local CMD_DGUN               = CMD.DGUN
+local CMD.MANUALFIRE               = CMD.MANUALFIRE
 local g                      = Game.gravity
 local GAME_SPEED             = 30
 local g_f                    = g / GAME_SPEED / GAME_SPEED
@@ -595,7 +595,7 @@ function widget:DrawWorld()
   if not hasSelection then return end
   local _, cmd, _ = GetActiveCommand()
   
-  if (cmd == CMD_DGUN and dgunUnitDefID) then
+  if (cmd == CMD.MANUALFIRE and dgunUnitDefID) then
     mouseDistance = GetMouseDistance() or 1000
     local tx, ty, tz = GetMouseTargetPosition()
     if (not tx) then return end
