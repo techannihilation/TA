@@ -36,7 +36,7 @@ if (gadgetHandler:IsSyncedCode()) then
 	function gadget:UnitCreated(unitID, unitDefID, unitTeam)
 		if (pieceCollisionVolume[UnitDefs[unitDefID].name]) then
 			--[[  ment for per piece collision volumes for XTA commanders 
-			if (UnitDefs[unitDefID].isCommander==true) then
+			if (UnitDefs[unitDefID].canManualFire==true) then
 				for i=0, #spGetPieceList-1 do
 					local xs, ys, zs, xo, yo, zo, vtype, ttype, axis, en = spGetPieceCollisionData(unitID, i)
 					spSetPieceCollisionData(unitID, i, true, true,true,true, xs, ys, zs, xo, yo, zo, 1, 1)
