@@ -1,0 +1,42 @@
+Fix one of tllstings weapons not firing 
+Better pathing for tllotter and tllcs
+Add AA weapon to tllotter
+Fix mex snap widget
+Camera Shake Widget capped
+Fix corbt weapons effect volume
+Fix bombers command fire tag for new engine release
+Reduce color of weapon to match damage
+T2 Missile units (veh/bot) rebalanced
+Add updated game_end from from engine
+Add Widgets from engine examples
+Update CollisionVolumes gadget with latest version and add many new collision volumes
+Small Pathing fix for monkeylord and tllmono
+Adjust tllhtcp yardmap so upto 6v6 footprint units can exit
+Add new cegs for tllweb tllupgweb explosions
+Updated telsa weapon effect
+Fix damage of floating dragon teeth
+Update taken the lead gadget with latest version
+Swap weapons in script and fix object pieces starting with numbers(keeps scriptor happy) 
+Add lups effect for t1.5 builders
+TLL fusions, metal production added/energy use increased accordingly, renamed
+Add AOPlates for all ground based units
+Clean up code in lups_manager.lua
+Remove mincloakdistance and sonar distance from unitdef -- helldiver
+Add updated model with texture fix, thanks again juzza for fix -- tllgrim and tllhtml
+New units add corhmakr armckmakr 
+Fix tllroaster side weapons
+Armfurie hp reduced 15%
+gorilla hp reduced 10%
+Buff to some tll vechile weapons turn rates
+T1.5 Mex revised  upg renamed to overcharged and lups effect added
+Add ba's better animation scripts, thanks dnw
+Unit limit raised for t3 fighters 150 > 300
+Clean up duplicate unitpic and flip sea nanos unitpics
+Fixed unitdefs_post fixes starting e/m
+New units added to tll they now have expermental vechile plant with new units
+tllacid -- tlldemon -- tlltelsatnk -- tllanvil -- tlllongshot
+2 new units to tll t3 kbot lab -- hyperion and heavyimpact
+Add air takeoff fix gadgets
+Add Map edge widget
+Add new lups weapon effect for tllbombers
+
