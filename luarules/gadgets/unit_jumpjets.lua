@@ -254,7 +254,7 @@ local function Jump(unitID, finish)
       local y = start[2] + vector[2]*i + (1-(2*i-1)^2)*height -- parabola
       local z = start[3] + vector[3]*i
       mcSetPosition(unitID, x, y, z)
---      mcSetPosition(fakeUnitID, x, y, z)
+      if fakeUnitID then mcSetPosition(fakeUnitID, x, y, z) end
       if (not halfJump and step > 0.5) then
         spCallCOBScript(unitID, "HalfJump", 0)
         halfJump = true
