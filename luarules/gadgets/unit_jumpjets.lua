@@ -235,7 +235,7 @@ local function Jump(unitID, finish)
   
   if (jumpDef.aaShootMe) then
     fakeUnitID = spCreateUnit(
-      "arm_construction_aircraft", start[1], start[2], start[3], "n", teamID)
+      "armca", start[1], start[2], start[3], "n", teamID)
     mcEnable(fakeUnitID)
     spSetUnitNoSelect(fakeUnitID, true)
     spSetUnitBlocking(fakeUnitID, false)
@@ -254,7 +254,7 @@ local function Jump(unitID, finish)
       local y = start[2] + vector[2]*i + (1-(2*i-1)^2)*height -- parabola
       local z = start[3] + vector[3]*i
       mcSetPosition(unitID, x, y, z)
-      mcSetPosition(fakeUnitID, x, y, z)
+--      mcSetPosition(fakeUnitID, x, y, z)
       if (not halfJump and step > 0.5) then
         spCallCOBScript(unitID, "HalfJump", 0)
         halfJump = true
