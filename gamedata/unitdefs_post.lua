@@ -1,5 +1,5 @@
 if (Spring.GetModOptions) then
-	local modOptions = Spring.GetModOptions()
+local modOptions = Spring.GetModOptions()
 
 
 local Commanders = {
@@ -29,3 +29,10 @@ local Commanders = {
 		end
 	end
 end
+
+for _, ud in pairs(UnitDefs) do
+    if not ud.customparams then
+        ud.customparams = {}
+    end
+ end
+

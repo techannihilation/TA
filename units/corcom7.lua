@@ -35,6 +35,9 @@ local unitDef = {
 	collisionvolumetype = [[Ell]],
 	commander = true,
 	corpse = [[DEAD]],
+	customParams           = {
+		iscommander = 1,
+	},
 	defaultmissiontype = [[Standby]],
 	description = [[Commander]],
 	energyMake = 1500,

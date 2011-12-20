@@ -31,6 +31,9 @@ local unitDef = {
 	collisionvolumescales = [[36 44 26]],
 	collisionvolumetest = 1,
 	collisionvolumetype = [[Ell]],
+	customParams           = {
+		iscommander = 1,
+	},
 	decoyFor = [[armcom]],
 	defaultmissiontype = [[Standby]],
 	description = [[Decoy Commander]],

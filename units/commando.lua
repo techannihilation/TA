@@ -25,6 +25,9 @@ local unitDef = {
 	canRestore = false,
 	canstop = 1,
 	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
+	customParams           = {
+		iscommander = 1,
+	},
 	defaultmissiontype = [[Standby]],
 	description = [[Stealthy Capture Kbot]],
 	energyMake = 0.8,
