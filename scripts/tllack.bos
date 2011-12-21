@@ -216,8 +216,9 @@ Deactivate()
 StartBuilding(Func_Var_1)
 {
 	Static_Var_7 = Func_Var_1;
-	signal 4;
 	start-script RequestState(0);
+	signal 4;
+	set INBUILDSTANCE to 1;
 }
 
 StopBuilding()
