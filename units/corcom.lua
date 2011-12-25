@@ -36,7 +36,7 @@ local unitDef = {
 	commander = true,
 	corpse = [[8_DEAD]],
 	customParams           = {
-		iscommander = 1,
+		iscommander = true,
 	},
 	defaultmissiontype = [[Standby]],
 	description = [[Commander]],

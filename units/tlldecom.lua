@@ -32,7 +32,7 @@ local unitDef = {
 	collisionvolumetest = 1,
 	collisionvolumetype = [[Ell]],
 	customParams           = {
-		iscommander = 1,
+		iscommander = true,
 	},
 	decoyFor = [[tllcom]],
 	defaultmissiontype = [[Standby]],
