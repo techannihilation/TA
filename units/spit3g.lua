@@ -16,7 +16,7 @@ local unitDef = {
   buildTime          = 262240,
   canAttack          = true,
   canstop            = 1,
-  category           = [[CORE LEVEL3 weapon NOTAIR NOTSUB ]],
+  category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
   copyright          = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
   corpse             = [[dead]],
   defaultmissiontype = [[GUARD_NOMOVE]],
@@ -50,13 +50,11 @@ local unitDef = {
   spanishdescription = [[Arma de fuego antiaéreo]],
   spanishname        = [[Spit fire]],
   standingfireorder  = 2,
-  TEDClass           = [[FORT]],
   threed             = 1,
   unitname           = [[spit3g]],
   unitnumber         = 13250,
   version            = 3.1,
   workerTime         = 0,
-  wter_badtargetcategory = [[NOTAIR]],
   yardMap            = [[ooooooooo]],
   zbuffer            = 1,
   sounds = {
@@ -82,19 +80,25 @@ local unitDef = {
       [[twrturn3]],
     },
   },
+  
   weapons = {
-    [1]  = {
-      onlyTargetCategory = [[VTOL]],
-      def               = [[ARMFLAK_GUN]],
-    },
-    [2]  = {
-      def                = [[SPIT3G_MISSILE]],
-      
-    },
-    [3]  = {
-	def                = [[SPIT3G_MISSILE]],
-    },
-  },
+		[1] = {
+			badTargetCategory = [[MEDIUMVTOL SMALLVTOL TINYVTOL]],
+			def               = [[ARMFLAK_GUN]],
+			onlyTargetCategory = [[VTOL SUPERSHIP]],
+		},
+		[2] = {
+			badTargetCategory = [[MEDIUMVTOL SMALLVTOL TINYVTOL]],
+			def                = [[SPIT3G_MISSILE]],
+			onlyTargetCategory = [[VTOL SUPERSHIP]],
+		},
+		[3] = {
+			badTargetCategory = [[MEDIUMVTOL SMALLVTOL TINYVTOL]],
+			def                = [[SPIT3G_MISSILE]],
+			onlyTargetCategory = [[VTOL SUPERSHIP]],
+		},
+	},
+
 }
 
 
@@ -174,13 +178,13 @@ local weaponDefs = {
     weaponTimer        = 15,
     weaponType         = [[MissileLauncher]],
     weaponVelocity     = 1950,
-	damage = {
-			bombers = 165,
+    damage = {
+      bombers = 600,
 			default = 5,
-			fighters = 110,
-			flak_resistant = 110,
-			unclassed_air = 110,
-		},
+			fighters = 600,
+			flak_resistant = 600,
+			unclassed_air = 600,
+    },
   },
 }
 unitDef.weaponDefs = weaponDefs
