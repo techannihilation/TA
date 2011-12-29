@@ -1,7 +1,7 @@
--- flak-fx
+-- tllflak-fx
 
 return {
-  ["flak-fx"] = {
+  ["tllflak-fx"] = {
     usedefaultexplosions = false,
     exhale = {
       air                = true,
