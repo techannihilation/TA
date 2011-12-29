@@ -6,7 +6,6 @@ local unitName = "spit3g"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-  badTargetCategory  = [[NOTAIR]],
   bmcode             = 0,
   buildAngle         = 9814,
   buildCostEnergy    = 229801,
@@ -15,7 +14,7 @@ local unitDef = {
   buildTime          = 262240,
   canAttack          = true,
   canstop            = 1,
-  category           = [[CORE LEVEL3 weapon NOTAIR NOTSUB ]],
+  category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
   copyright          = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
   corpse             = [[dead]],
   defaultmissiontype = [[GUARD_NOMOVE]],
@@ -49,13 +48,11 @@ local unitDef = {
   spanishdescription = [[Arma de fuego antiaéreo]],
   spanishname        = [[Spit fire]],
   standingfireorder  = 2,
-  TEDClass           = [[FORT]],
   threed             = 1,
   unitname           = [[spit3g]],
   unitnumber         = 13250,
   version            = 3.1,
   workerTime         = 0,
-  wter_badtargetcategory = [[NOTAIR]],
   yardMap            = [[ooooooooo]],
   zbuffer            = 1,
   sounds = {
@@ -81,19 +78,25 @@ local unitDef = {
       [[twrturn3]],
     },
   },
+  
   weapons = {
-    [1]  = {
-      onlyTargetCategory = [[VTOL]],
-      def               = [[ARMFLAK_GUN]],
-    },
-    [2]  = {
-      def                = [[SPIT3G_MISSILE]],
-      
-    },
-    [3]  = {
-	def                = [[SPIT3G_MISSILE]],
-    },
-  },
+		[1] = {
+			badTargetCategory = [[MEDIUMVTOL SMALLVTOL TINYVTOL]],
+			def               = [[ARMFLAK_GUN]],
+			onlyTargetCategory = [[VTOL SUPERSHIP]],
+		},
+		[2] = {
+			badTargetCategory = [[MEDIUMVTOL SMALLVTOL TINYVTOL]],
+			def                = [[SPIT3G_MISSILE]],
+			onlyTargetCategory = [[VTOL SUPERSHIP]],
+		},
+		[3] = {
+			badTargetCategory = [[MEDIUMVTOL SMALLVTOL TINYVTOL]],
+			def                = [[SPIT3G_MISSILE]],
+			onlyTargetCategory = [[VTOL SUPERSHIP]],
+		},
+	},
+
 }
 
 
@@ -179,16 +182,11 @@ local weaponDefs = {
     weaponType         = [[MissileLauncher]],
     weaponVelocity     = 950,
     damage = {
-      default            = 0,
-      gunships           = 100,
-      hgunships          = 100,
-      l1bombers          = 100,
-      l1fighters         = 100,
-      l2bombers          = 100,
-      l2fighters         = 100,
-      vradar             = 100,
-      vtol               = 100,
-      vtrans             = 55,
+      bombers = 600,
+			default = 5,
+			fighters = 600,
+			flak_resistant = 600,
+			unclassed_air = 600,
     },
   },
 }
