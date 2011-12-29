@@ -106,6 +106,7 @@ local weaponDefs = {
 		ballistic = true,
 		burnblow = true,
 		canattackground = false,
+	        cegTag = [[berthashot1]],
 		color = 1,
 		craterBoost = 0,
 		craterMult = 0,
@@ -140,6 +141,7 @@ local weaponDefs = {
 	},
   SPIT3G_MISSILE = {
     areaOfEffect       = 48,
+    cegTag = [[RAVENTRAIL]],
     craterBoost        = 0,
     craterMult         = 0,
     explosionart       = [[explode3]],
