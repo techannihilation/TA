@@ -32,7 +32,7 @@ local unitDef = {
 	collisionvolumetest = 1,
 	collisionvolumetype = [[Ell]],
 	customParams           = {
-		iscommander = 1,
+		iscommander = true,
 	},
 	decoyFor = [[armcom]],
 	defaultmissiontype = [[Standby]],
@@ -62,7 +62,7 @@ local unitDef = {
 	name = [[Commander]],
 	noChaseCategory = [[ALL SUB]],
 	norestrict = 1,
-	objectName = [[ARMCOM]],
+	objectName = [[ARMDECOM]],
 	radarDistance = 50,
 	reclaimable = false,
 	seismicSignature = 0,
