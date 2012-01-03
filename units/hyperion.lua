@@ -142,6 +142,7 @@ local featureDefs = {
     description        = [[Karganeth Wreckage]],
     energy             = 0,
     featurereclamate   = [[SMUDGE01]],
+    featureDead        = [[hyperion_heap]],
     footprintX         = 3,
     footprintZ         = 3,
     height             = 40,
@@ -151,6 +152,23 @@ local featureDefs = {
     reclaimable        = true,
     world              = [[All Worlds]],
   },
+ hyperion_heap = {
+	blocking = false,
+	category = [[heaps]],
+	damage = 0.3600 * unitDef.maxDamage,
+	description = unitDef.name .. [[ Heap]],
+	energy = 0,
+	featurereclamate = [[SMUDGE01]],
+	footprintX = 3,
+	footprintZ = 3,
+	height = 4,
+	hitdensity = 100,
+	metal = 0.6400 * unitDef.buildCostMetal,
+	object = [[3X3A]],
+	reclaimable = true,
+	seqnamereclamate = [[TREE1RECLAMATE]],
+	world = [[All Worlds]],
+	},
 }
 unitDef.featureDefs = featureDefs
 

@@ -1,7 +1,7 @@
--- UNITDEF -- SPIT3G --
+-- UNITDEF -- TLLDB --
 --------------------------------------------------------------------------------
 
-local unitName = "spit3g"
+local unitName = "tlldb"
 
 --------------------------------------------------------------------------------
 
@@ -14,7 +14,7 @@ local unitDef = {
   buildTime          = 262240,
   canAttack          = true,
   canstop            = 1,
-  category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
+  category           = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
   copyright          = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
   corpse             = [[dead]],
   defaultmissiontype = [[GUARD_NOMOVE]],
@@ -27,29 +27,21 @@ local unitDef = {
   firestandorders    = 1,
   footprintX         = 3,
   footprintZ         = 3,
-  frenchdescription  = [[Canon antiaérien]],
-  frenchname         = [[Spit fire]],
-  germandescription  = [[Hochgeschwindigkeitsflak]],
-  germanname         = [[Spit fire]],
-  italiandescription = [[Cannone per bersagli aerei]],
-  italianname        = [[Spit fire]],
   maxDamage          = 21324,
   maxSlope           = 10,
   maxWaterDepth      = 0,
   metalStorage       = 0,
-  name               = [[Spit fire]],
+  name               = [[Dragons Breath]],
   noAutoFire         = false,
-  objectName         = [[SPIT3G]],
+  objectName         = [[TLLDB]],
   radarDistance      = 0,
   selfDestructAs     = [[MEDIUM_BUILDING]],
   shootme            = 1,
   side               = [[CORE]],
   sightDistance      = 400,
-  spanishdescription = [[Arma de fuego antiaéreo]],
-  spanishname        = [[Spit fire]],
   standingfireorder  = 2,
   threed             = 1,
-  unitname           = [[spit3g]],
+  unitname           = [[tlldb]],
   unitnumber         = 13250,
   version            = 3.1,
   workerTime         = 0,
@@ -208,7 +200,7 @@ local featureDefs = {
     height             = 10,
     hitdensity         = 23,
     metal              = 914,
-    object             = [[spit3g_dead]],
+    object             = [[tlldb_dead]],
     reclaimable        = true,
     seqnamereclamate   = [[tree1reclamate]],
     world              = [[all]],
