@@ -1,7 +1,7 @@
--- UNITDEF -- SPIT3G --
+-- UNITDEF -- TLLDB --
 --------------------------------------------------------------------------------
 
-local unitName = "spit3g"
+local unitName = "tlldb"
 
 --------------------------------------------------------------------------------
 
@@ -27,12 +27,6 @@ local unitDef = {
   firestandorders    = 1,
   footprintX         = 3,
   footprintZ         = 3,
-  frenchdescription  = [[Canon antiaérien]],
-  frenchname         = [[Spit fire]],
-  germandescription  = [[Hochgeschwindigkeitsflak]],
-  germanname         = [[Spit fire]],
-  italiandescription = [[Cannone per bersagli aerei]],
-  italianname        = [[Spit fire]],
   maxDamage          = 21324,
   maxSlope           = 10,
   maxWaterDepth      = 0,
@@ -49,7 +43,7 @@ local unitDef = {
   spanishname        = [[Spit fire]],
   standingfireorder  = 2,
   threed             = 1,
-  unitname           = [[spit3g]],
+  unitname           = [[tlldb]],
   unitnumber         = 13250,
   version            = 3.1,
   workerTime         = 0,
@@ -208,7 +202,7 @@ local featureDefs = {
     height             = 10,
     hitdensity         = 23,
     metal              = 914,
-    object             = [[spit3g_dead]],
+    object             = [[tlldb_dead]],
     reclaimable        = true,
     seqnamereclamate   = [[tree1reclamate]],
     world              = [[all]],
