@@ -17,7 +17,6 @@ local unitDef = {
 	buildingGroundDecalDecaySpeed = 30,
 	buildingGroundDecalSizeX = 7,
 	buildingGroundDecalSizeY = 7,
-	buildingGroundDecalType = [[corhmakr_aoplane.png]],
 	buildPic = [[corhmakr.png]],
 	buildTime = 62000,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -75,7 +74,7 @@ local unitDef = {
 	buildingGroundDecalSizeX=7,
 	buildingGroundDecalSizeY=7,
 	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[corhmakr_aoplane.dds]],
+	buildingGroundDecalType=[[corhmakr_aoplane.png]],
 }
 --------------------------------------------------------------------------------
 
