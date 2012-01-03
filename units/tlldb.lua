@@ -78,12 +78,12 @@ local unitDef = {
 			onlyTargetCategory = [[VTOL]],
 		},
 		[2] = {
-			badTargetCategory  = [[SMALLVTOL TINYVTOL]],
+			badTargetCategory  = [[MEDIUMVTOL SMALLVTOL TINYVTOL]],
 			def                = [[DRAGON_BREATH_MISSILE]],
 			onlyTargetCategory = [[VTOL SUPERSHIP]],
 		},
 		[3] = {
-			badTargetCategory  = [[SMALLVTOL TINYVTOL]],
+			badTargetCategory  = [[MEDIUMVTOL SMALLVTOL TINYVTOL]],
 			def                = [[DRAGON_BREATH_MISSILE]],
 			onlyTargetCategory = [[VTOL SUPERSHIP]],
 		},
