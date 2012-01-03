@@ -83,7 +83,7 @@ local weaponDefs = {
   KARGANETH_CANNON = {
 	cegTag = [[bluelight]],
 	accuracy = 500,
-	areaOfEffect = 290,
+	areaOfEffect = 350,
 	beamlaser = 1,
 	beamTime = 0.55,
 	burnblow = true,
@@ -124,6 +124,7 @@ local weaponDefs = {
 	weaponVelocity = 1500,
 	damage = {
 	      default = 4500,
+		  experimental = 9000,
 	      subs = 5,
     },
   },
@@ -135,21 +136,39 @@ unitDef.weaponDefs = weaponDefs
 
 local featureDefs = {
   hyperion_dead = {
-    blocking           = false,
+    blocking           = true,
     category           = [[corpses]],
     damage             = 0.6000 * unitDef.maxDamage,
     description        = [[Karganeth Wreckage]],
     energy             = 0,
     featurereclamate   = [[SMUDGE01]],
+    featureDead        = [[hyperion_heap]],
     footprintX         = 3,
     footprintZ         = 3,
     height             = 40,
     hitdensity         = 100,
     metal              = 0.8000 * unitDef.buildCostMetal,
     object             = [[HYPERION_DEAD]],
-    reclaimable        = false,
+    reclaimable        = true,
     world              = [[All Worlds]],
   },
+ hyperion_heap = {
+	blocking = false,
+	category = [[heaps]],
+	damage = 0.3600 * unitDef.maxDamage,
+	description = unitDef.name .. [[ Heap]],
+	energy = 0,
+	featurereclamate = [[SMUDGE01]],
+	footprintX = 3,
+	footprintZ = 3,
+	height = 4,
+	hitdensity = 100,
+	metal = 0.6400 * unitDef.buildCostMetal,
+	object = [[3X3A]],
+	reclaimable = true,
+	seqnamereclamate = [[TREE1RECLAMATE]],
+	world = [[All Worlds]],
+	},
 }
 unitDef.featureDefs = featureDefs
 
