@@ -75,18 +75,17 @@ local unitDef = {
   
   weapons = {
 		[1] = {
-			badTargetCategory = [[MEDIUMVTOL SMALLVTOL TINYVTOL]],
-			def               = [[ARMFLAK_GUN]],
-			onlyTargetCategory = [[VTOL SUPERSHIP]],
+			def                = [[DRAGON_BREATH_GUN]],
+			onlyTargetCategory = [[VTOL]],
 		},
 		[2] = {
-			badTargetCategory = [[MEDIUMVTOL SMALLVTOL TINYVTOL]],
-			def                = [[SPIT3G_MISSILE]],
+			badTargetCategory  = [[MEDIUMVTOL SMALLVTOL TINYVTOL]],
+			def                = [[DRAGON_BREATH_MISSILE]],
 			onlyTargetCategory = [[VTOL SUPERSHIP]],
 		},
 		[3] = {
-			badTargetCategory = [[MEDIUMVTOL SMALLVTOL TINYVTOL]],
-			def                = [[SPIT3G_MISSILE]],
+			badTargetCategory  = [[MEDIUMVTOL SMALLVTOL TINYVTOL]],
+			def                = [[DRAGON_BREATH_MISSILE]],
 			onlyTargetCategory = [[VTOL SUPERSHIP]],
 		},
 	},
@@ -97,7 +96,7 @@ local unitDef = {
 --------------------------------------------------------------------------------
 
 local weaponDefs = {
-  	ARMFLAK_GUN = {
+  	DRAGON_BREATH_GUN = {
 		accuracy = 1000,
 		areaOfEffect = 192,
 		ballistic = true,
@@ -113,9 +112,9 @@ local weaponDefs = {
 		impulseBoost = 0,
 		impulseFactor = 0,
 		minbarrelangle = -24,
-		name = [[FlakCannon]],
+		name = [[Dragon Breath Flak Cannon]],
 		noSelfDamage = true,
-		range = 975,
+		range = 1150,
 		reloadtime = 0.4,
 		renderType = 4,
 		size = 5,
@@ -135,10 +134,10 @@ local weaponDefs = {
 			unclassed_air = 600,
 		},
 	},
-  SPIT3G_MISSILE = {
-    areaOfEffect       = 48,
+  DRAGON_BREATH_MISSILE = {
+    areaOfEffect       = 140,
+    cegTag             = [[RAVENTRAIL]],
     canattackground = false,
-    cegTag = [[RAVENTRAIL]],
     craterBoost        = 0,
     craterMult         = 0,
     explosionGenerator = [[custom:ARM_FIRE_SMALL]],
@@ -150,10 +149,10 @@ local weaponDefs = {
     lineOfSight        = true,
     metalpershot       = 0,
     model              = [[quadmissile3g]],
-    name               = [[SAM Rockets]],
+    name               = [[Dragons Breath Missile]],
     noSelfDamage       = true,
     range              = 1800,
-    reloadtime         = 0.6,
+    reloadtime         = 1,
     renderType         = 1,
     selfprop           = true,
     smokedelay         = .001,
@@ -161,21 +160,23 @@ local weaponDefs = {
     soundHit           = [[explode]],
     soundStart         = [[rocklit3]],
     startsmoke         = 1,
-    startVelocity      = 600,
+    startVelocity      = 750,
     toAirWeapon        = true,
     tolerance          = 8500,
     tracks             = true,
-    turnRate           = 37000,
+    turnRate           = 50000,
+    waterexplosionart  = [[h2o]],
+    waterexplosiongaf  = [[fx]],
     weaponAcceleration = 201,
     weaponTimer        = 15,
     weaponType         = [[MissileLauncher]],
     weaponVelocity     = 1950,
     damage = {
-      bombers = 600,
+      bombers = 2200,
 			default = 5,
-			fighters = 600,
-			flak_resistant = 600,
-			unclassed_air = 600,
+			fighters = 1700,
+			flak_resistant = 2200,
+			unclassed_air = 1400,
     },
   },
 }
