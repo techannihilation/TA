@@ -17,7 +17,6 @@ if (gadgetHandler:IsSyncedCode()) then
     ["arm_disintegrator"] = true,
     ["armthund_armbomb"] = true,
     ["armcybr_arm_pidr"] = true,
-    ["armsonic_sonic_cannon"] = true,
     ["armpnix_armadvbomb"] = true,
     ["armsb_seaadvbomb"] = true,
     ["armblz_napalm"] = true,
@@ -46,7 +45,7 @@ if (gadgetHandler:IsSyncedCode()) then
       if (wd.type == "DGun") then
         SendToUnsynced("lups_shockwave", px, py, pz, 4.0, 18, 0.13, true)
       else
-        local growth = (wd.areaOfEffect*1.1)/20
+        local growth = (wd.damageAreaOfEffect*1.1)/20
         SendToUnsynced("lups_shockwave", px, py, pz, growth, false)
       end
     end

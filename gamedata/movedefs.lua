@@ -37,6 +37,12 @@ local moveDatas = {
 		maxwaterdepth = 5000,
 		maxwaterslope = 80,
 	},
+	BOAT3 = {
+		crushstrength = 40,
+		footprintx = 3,
+		footprintz = 3,
+		minwaterdepth = 5,
+	},
 	BOAT4 = {
 		crushstrength = 40,
 		footprintx = 4,

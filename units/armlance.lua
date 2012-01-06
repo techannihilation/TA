@@ -99,6 +99,7 @@ local weaponDefs = {
 		collideFriendly = false,
 		craterBoost = 0,
 		craterMult = 0,
+		commandfire = false,
 		explosionGenerator = [[custom:FLASH2]],
 		guidance = true,
 		impactonly = 1,

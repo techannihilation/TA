@@ -51,6 +51,7 @@ local unitDef = {
 	standingfireorder = 2,
 	turnRate = 0,
 	unitname = [[cortoast]],
+	usePieceCollisionVolumes = 1,
 	workerTime = 0,
 	yardMap = [[ooooooooo]],
 	featureDefs = nil,

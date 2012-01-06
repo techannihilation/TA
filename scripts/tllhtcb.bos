@@ -43,13 +43,13 @@ activatescr()
 {
 	if( TRUE )
 	{
-		turn rdoor to z-axis <-180.043956> speed <180.043956>;
-		turn ldoor to z-axis <180.043956> speed <180.043956>;
+		turn rdoor to z-axis <-180.038462> speed <180.038462>;
+		turn ldoor to z-axis <180.038462> speed <180.038462>;
 		sleep 500;
 	}
 	if( TRUE )
 	{
-		move p1 to y-axis [4.000031] speed [8.000061];
+		move p1 to y-axis [4.000031] speed [8.000055];
 		sleep 250;
 	}
 	sleep 100;
@@ -60,12 +60,12 @@ deactivatescr()
 	if( TRUE )
 	{
 		sleep 500;
-		move p1 to y-axis [0.000000] speed [8.000061];
+		move p1 to y-axis [0.000000] speed [8.000055];
 	}
 	if( TRUE )
 	{
-		turn rdoor to z-axis <0.000000> speed <180.043956>;
-		turn ldoor to z-axis <0.000000> speed <180.043956>;
+		turn rdoor to z-axis <0.000000> speed <180.038462>;
+		turn ldoor to z-axis <0.000000> speed <180.038462>;
 		sleep 500;
 	}
 	sleep 10;
@@ -74,7 +74,7 @@ deactivatescr()
 Go()
 {
 	call-script activatescr();
-	turn nano to y-axis Static_Var_1 speed <190.043956>;
+	turn nano to y-axis Static_Var_1 speed <190.038462>;
 	wait-for-turn nano around y-axis;
 	set INBUILDSTANCE to 1;
 }
@@ -82,7 +82,7 @@ Go()
 Stop()
 {
 	set INBUILDSTANCE to 0;
-	turn nano to y-axis <0.000000> speed <190.043956>;
+	turn nano to y-axis <0.000000> speed <190.038462>;
 	wait-for-turn nano around y-axis;
 	call-script deactivatescr();
 }
@@ -170,13 +170,19 @@ StartBuilding(Func_Var_1)
 {
 	Static_Var_1 = Func_Var_1;
 	start-script RequestState(0);
+	signal 4;
+	set INBUILDSTANCE to 1;
 }
 
 StopBuilding()
 {
+	signal 4;
+	set-signal-mask 4;
+	sleep 6000;
+	set-signal-mask 0;
+	signal 4;
 	start-script RequestState(1);
 }
-
 
 QueryNanoPiece(piecenum)
 {
@@ -190,7 +196,6 @@ QueryNanoPiece(piecenum)
 	}
 	spray = !spray;
 }
-
 
 SweetSpot(piecenum)
 {

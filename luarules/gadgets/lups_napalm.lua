@@ -15,7 +15,6 @@ end
 local FIRE_WEAPONS = {
   ["tllhtml_tll_rockets2"] = true,
   ["corhurc_coradvbomb"] = true,
-  ["tllabomber_coradvbomb"] = true,
   ["corshad_corebomb"] = true,
   ["armcbomb_arm_carpet_bomb"] = true,
   ["armraven_exp_heavyrocket"] = true,

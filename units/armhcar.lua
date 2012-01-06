@@ -17,6 +17,7 @@ local unitDef = {
 	buildTime = 349755,
 	canAttack = true,
 	canGuard = true,
+	canManualFire = true,
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
@@ -90,12 +91,12 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			def = [[NUKE_HCAR_ARM]],
-			onlyTargetCategory = [[NOTVTOL]],
-		},
-		[2] = {
 			badTargetCategory = [[VTOL]],
 			def = [[ROCKET_MCV]],
+		},
+		[3] = {
+			def = [[NUKE_HCAR_ARM]],
+			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }

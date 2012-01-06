@@ -1,0 +1,297 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+//-------------------------------------------------------------------------------------------------
+// Pieces
+//-------------------------------------------------------------------------------------------------
+piece  base, turret1, stand, door1, door2, door3, door4, turret2,
+       emit1, emit2, emit3, emit4;
+
+//-------------------------------------------------------------------------------------------------
+// Static var
+//-------------------------------------------------------------------------------------------------
+static-var  isFullyOpen, gun_1;
+
+//-------------------------------------------------------------------------------------------------
+// Signal definitions
+//-------------------------------------------------------------------------------------------------
+#define SIG_AIM	2
+#define SIG_OPENCLOSE 4
+
+//-------------------------------------------------------------------------------------------------
+// Functions
+//-------------------------------------------------------------------------------------------------
+FClose()
+{
+    // Signal guard
+    signal SIG_OPENCLOSE;
+    set-signal-mask SIG_OPENCLOSE;
+
+    // State
+    isFullyOpen = 0;
+
+    // Animation
+	turn turret1 to y-axis <0.000000> speed <200.000000>;
+	turn turret2 to x-axis <90.000000> speed <200.000000>;
+	wait-for-turn turret2 around x-axis;
+	wait-for-turn turret1 around y-axis;
+	move stand to y-axis [-23.389996] speed [41.000000];
+	sleep 400;
+	turn door1 to z-axis <-3.000000> speed <309.000000>;
+	turn door2 to z-axis <3.000000> speed <308.000000>;
+	turn door3 to x-axis <-3.000000> speed <309.000000>;
+	turn door4 to x-axis <3.000000> speed <309.000000>;
+	sleep 400;
+	
+	// Fully closed -> Gain armor
+	set ARMORED to 1;
+}
+
+FCloseAfterDelay()
+{
+    // Signals
+    set-signal-mask SIG_OPENCLOSE;
+    
+    // Script
+    sleep 4000;
+    set-signal-mask 0; // To stop FClose from inheriting SIG_OPENCLOSE and killing itself
+    start-script FClose();
+}
+
+FOpen()
+{
+    // Signals
+    signal SIG_OPENCLOSE;
+    set-signal-mask SIG_OPENCLOSE;
+   
+    // Lose armor immediately
+	set ARMORED to 0;
+	
+	// Animation
+	turn door1 to z-axis <-179.038462> speed <827.000000>;
+	turn door2 to z-axis <178.038462> speed <826.000000>;
+	turn door3 to x-axis <-179.038462> speed <827.000000>;
+	turn door4 to x-axis <179.038462> speed <829.000000>;
+	move stand to y-axis [0.000000] speed [76.000000];
+	wait-for-turn door4 around x-axis;
+	wait-for-move stand along y-axis;
+
+	
+	    // Done
+	isFullyOpen = 1;
+    
+    // Remember to close later
+    start-script FCloseAfterDelay();
+}
+
+
+//-------------------------------------------------------------------------------------------------
+// Callins
+//-------------------------------------------------------------------------------------------------
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 500;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 258;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 257;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+    // Pieces
+	dont-shade door1;
+	dont-shade door2;
+	dont-shade door3;
+	dont-shade door4;
+	dont-shade stand;
+	dont-shade turret1;
+	dont-shade turret2;
+	dont-cache door1;
+	dont-cache door2;
+	dont-cache door3;
+	dont-cache door4;
+	dont-cache stand;
+	dont-cache turret1;
+	dont-cache turret2;
+	gun_1 = turret1;
+	// State (Fully open)
+    isFullyOpen = 1;
+    start-script FCloseAfterDelay();
+
+    // Other threads
+	start-script SmokeUnit();
+	
+    // Alignment
+	move turret1 to y-axis [5.0] now;
+	turn door1 to z-axis <-179.038462> now;
+	turn door2 to z-axis <178.038462> now;
+	turn door3 to x-axis <-179.038462> now;
+	turn door4 to x-axis <179.038462> now;
+}
+
+AimPrimary(heading, pitch)
+{
+	
+    // Signal guard
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	
+	// Open up
+    start-script FOpen();
+	while(!isFullyOpen)
+	{
+		sleep 250;
+	}
+	turn turret1 to y-axis heading speed <200.000000>;
+	turn turret2 to x-axis <0.000000> - pitch speed <200.000000>;
+	wait-for-turn turret1 around y-axis;
+	wait-for-turn turret2 around x-axis;
+	return (1);
+}
+
+FirePrimary()
+{
+	if( gun_1 == 1 )
+	{
+		gun_1 = 2;
+		return (0);
+	}
+	if( gun_1 == 2 )
+	{
+		gun_1 = 3;
+		return (0);
+	}
+	if( gun_1 == 3 )
+	{
+		gun_1 = 4;
+		return (0);
+	}
+	if( gun_1 == 4 )
+	{
+		gun_1 = 1;
+	}
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = turret1;
+}
+
+QueryPrimary(piecenum)
+{
+	if( gun_1 == 1 )
+	{
+		piecenum = emit1;
+	}
+	if( gun_1 == 2 )
+	{
+		piecenum = emit2;
+	}
+	if( gun_1 == 3 )
+	{
+		piecenum = emit3;
+	}
+	if( gun_1 == 4 )
+	{
+		piecenum = emit4;
+	}
+}
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		if( isFullyOpen )
+		{
+			corpsetype = 1;
+		}
+		if( !isFullyOpen )
+		{
+			corpsetype = 2;
+		}
+		explode base type BITMAPONLY | BITMAP2;
+		explode door1 type BITMAPONLY | BITMAP3;
+		explode door2 type BITMAPONLY | BITMAP4;
+		explode door3 type BITMAPONLY | BITMAP5;
+		explode door4 type BITMAPONLY | BITMAP1;
+		explode stand type BITMAPONLY | BITMAP3;
+		explode turret1 type BITMAPONLY | BITMAP4;
+		explode turret2 type BITMAPONLY | BITMAP5;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		if( isFullyOpen )
+		{
+			corpsetype = 2;
+		}
+		if( !isFullyOpen )
+		{
+			corpsetype = 3;
+		}
+		explode base type BITMAPONLY | BITMAP2;
+		explode door1 type FALL | BITMAP3;
+		explode door2 type FALL | BITMAP4;
+		explode door3 type FALL | BITMAP5;
+		explode door4 type FALL | BITMAP1;
+		explode stand type BITMAPONLY | BITMAP3;
+		explode turret1 type BITMAPONLY | BITMAP4;
+		explode turret2 type BITMAPONLY | BITMAP5;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		if( isFullyOpen )
+		{
+			corpsetype = 3;
+		}
+		if( !isFullyOpen )
+		{
+			corpsetype = 4;
+		}
+		explode base type BITMAPONLY | BITMAP2;
+		explode door1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode door2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode door3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode door4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode stand type BITMAPONLY | BITMAP1;
+		explode turret1 type BITMAPONLY | BITMAP4;
+		explode turret2 type BITMAPONLY | BITMAP5;
+		return (0);
+	}
+	corpsetype = 4;
+	explode base type BITMAPONLY | BITMAP2;
+	explode door1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode door2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode door3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode door4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode stand type BITMAPONLY | BITMAP3;
+	explode turret1 type BITMAPONLY | BITMAP4;
+	explode turret2 type BITMAPONLY | BITMAP5;
+}

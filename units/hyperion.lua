@@ -81,32 +81,30 @@ local unitDef = {
 
 local weaponDefs = {
   KARGANETH_CANNON = {
-    cegTag             = [[bluelight]],
-	accuracy           = 500,
-    areaOfEffect       = 290,
+	cegTag = [[bluelight]],
+	accuracy = 500,
+	areaOfEffect = 350,
 	beamlaser = 1,
 	beamTime = 0.55,
 	burnblow = true,
-	coreThickness = 0.25,
+	coreThickness = 0.45,
 	craterBoost = 0,
 	craterMult = 0,
 	endsmoke = 0,
-	--explosionGenerator = [[custom:anvil]],
 	explosionGenerator = [[custom:bigparticleboom]],
-	--fallOffRate = 0.8,
 	energypershot      = 15000,
 	edgeEffectiveness  = 0.01,
-	minIntensity = 0.2,
+	--minIntensity = 100,
 	fireStarter = 20,
 	id = 168,
 	impulseFactor = 0.2,
 	largeBeamLaser = true,
 	laserFlareSize = 5,
 	lineOfSight = true,
-	name               = [[Karganeth Siege Cannon]],
+	name = [[Karganeth Siege Cannon]],
 	noExplode = true,
-	range              = 750,
-    reloadtime         = 0.54,
+	range = 750,
+	reloadtime = 0.54,
 	renderType = 0,
 	rgbColor = [[0.10 0.2 1]],
 	rgbColor2 = [[.15 .3 1]],
@@ -119,15 +117,15 @@ local weaponDefs = {
 	--texture2 = [[EMG]], --beamend
 	texture3 = [[beamrifle]], --muzzle
 	--texture4 = [[EMG]], --flare
-	thickness = 7,
+	thickness =14,
 	tolerance = 100000,
 	turret = true,
 	weaponType = [[BeamLaser]],
 	weaponVelocity = 1500,
-		
-    damage = {
-          default = 4500,
-			subs = 5,
+	damage = {
+	      default = 4500,
+		  experimental = 9000,
+	      subs = 5,
     },
   },
 }
@@ -138,21 +136,39 @@ unitDef.weaponDefs = weaponDefs
 
 local featureDefs = {
   hyperion_dead = {
-    blocking           = false,
+    blocking           = true,
     category           = [[corpses]],
     damage             = 0.6000 * unitDef.maxDamage,
     description        = [[Karganeth Wreckage]],
     energy             = 0,
     featurereclamate   = [[SMUDGE01]],
+    featureDead        = [[hyperion_heap]],
     footprintX         = 3,
     footprintZ         = 3,
     height             = 40,
     hitdensity         = 100,
     metal              = 0.8000 * unitDef.buildCostMetal,
     object             = [[HYPERION_DEAD]],
-    reclaimable        = false,
+    reclaimable        = true,
     world              = [[All Worlds]],
   },
+ hyperion_heap = {
+	blocking = false,
+	category = [[heaps]],
+	damage = 0.3600 * unitDef.maxDamage,
+	description = unitDef.name .. [[ Heap]],
+	energy = 0,
+	featurereclamate = [[SMUDGE01]],
+	footprintX = 3,
+	footprintZ = 3,
+	height = 4,
+	hitdensity = 100,
+	metal = 0.6400 * unitDef.buildCostMetal,
+	object = [[3X3A]],
+	reclaimable = true,
+	seqnamereclamate = [[TREE1RECLAMATE]],
+	world = [[All Worlds]],
+	},
 }
 unitDef.featureDefs = featureDefs
 

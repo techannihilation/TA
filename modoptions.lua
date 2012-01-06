@@ -88,7 +88,15 @@ local options={
 		def    = true,
 		section= "ta_options",
     },
-	{
+    {
+		key    = 'mo_allowfactionchange',
+		name   = 'Allow Faction Change',
+		desc   = 'Allows faction to be changed ingame',
+		type   = 'bool',
+		def    = true,
+		section= 'ta_options',
+    },
+    {
 		key    = "mo_nowrecks",
 		name   = "No Unit Wrecks",
 		desc   = "Removes all unit wrecks from the game",
