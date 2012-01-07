@@ -633,7 +633,6 @@ local morphDefs = {
 		metal = 8000,
 		energy = 72000,
 	},
-		},
       tllnanotc = {
 		into = 'tllnanotc1',
 		tech = 1,
