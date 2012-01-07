@@ -21,7 +21,7 @@ local modrules  = {
   },
 
   nanospray = {
-    allow_team_colors = true;
+    allow_team_colors = false;
   },
   
   featureLOS = { featureVisibility = 2; }
