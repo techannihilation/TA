@@ -46,6 +46,7 @@ local unitDef = {
 	metalStorage = 0,
 	mobilestandorders = 1,
 	name = [[Hardened Nanotower]],
+	nanoColor = {0.6, 0.8, 0.4},
 	noAutoFire = false,
 	noChaseCategory = [[ALL]],
 	objectName = [[ANanotower]],
