@@ -1,7 +1,7 @@
--- UNITDEF -- TLLNANOTC --
+-- UNITDEF -- TLLNANOTC1 --
 --------------------------------------------------------------------------------
 
-local unitName = "tllnanotc"
+local unitName = "tllnanotc1"
 
 --------------------------------------------------------------------------------
 
@@ -41,7 +41,7 @@ local unitDef = {
 	name = [[Nano Turret]],
 	noAutoFire = false,
 	noChaseCategory = [[ALL]],
-	objectName = [[TLLNANOTC]],
+	objectName = [[TLLNANOTC1]],
 	script = [[cornanotc.cob]],
 	seismicSignature = 0,
 	selfDestructAs = [[TINY_BUILDINGEX]],
@@ -50,7 +50,7 @@ local unitDef = {
 	smoothAnim = true,
 	steeringmode = 1,
 	turnRate = 1,
-	unitname = [[tllnanotc]],
+	unitname = [[tllnanotc1]],
 	upright = true,
 	workerTime = 300,
 	sounds = {
