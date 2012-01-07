@@ -601,14 +601,14 @@ local morphDefs = {
       armnanotc1 = {
 		into = 'armnanotc2',
 		tech = 2,
-		time = 30,
+		time = 60,
 		metal = 2400,
 		energy = 36000,
 	},
       armnanotc2 = {
 		into = 'armnanotc3',
 		tech = 3,
-		time = 30,
+		time = 120,
 		metal = 5500,
 		energy = 72000,
 	},
@@ -622,16 +622,31 @@ local morphDefs = {
       cornanotc1 = {
 		into = 'cornanotc2',
 		tech = 2,
-		time = 30,
+		time = 60,
 		metal = 3200,
 		energy = 36000,
 	},
       cornanotc2 = {
 		into = 'cornanotc3',
 		tech = 3,
-		time = 30,
+		time = 120,
 		metal = 8000,
 		energy = 72000,
+	},
+		},
+      tllnanotc = {
+		into = 'tllnanotc1',
+		tech = 1,
+		time = 30,
+		metal = 800,
+		energy = 18000,
+	},
+      tllnanotc1 = {
+		into = 'tllnanotc2',
+		tech = 2,
+		time = 60,
+		metal = 3200,
+		energy = 36000,
 	},
 }
 
