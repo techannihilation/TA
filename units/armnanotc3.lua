@@ -1,19 +1,19 @@
--- UNITDEF -- CORNANOTC --
+-- UNITDEF -- ARMNANOTC3 --
 --------------------------------------------------------------------------------
 
-local unitName = "cornanotc"
+local unitName = "armnanotc3"
 
 --------------------------------------------------------------------------------
 
 local unitDef = {
 	acceleration = 0,
 	brakeRate = 1.5,
-	buildCostEnergy = 9000,
-	buildCostMetal = 300,
-	buildDistance = 400, --
+	buildCostEnergy = 200000, --
+	buildCostMetal = 6800, --
+	buildDistance = 1200, --
 	builder = true,
-	buildPic = [[CORNANOTC.png]],
-	buildTime = 5000,
+	buildPic = [[ARMNANOTC.png]],
+	buildTime = 40000, --
 	canGuard = true,
 	canMove = false,
 	canPatrol = true,
@@ -24,8 +24,8 @@ local unitDef = {
 	defaultmissiontype = [[Standby]],
 	description = [[Repairs and builds in large radius]],
 	energyStorage = 0,
-	energyUse = 20, --
-	explodeAs = [[NANOBOOM2]],
+	energyUse = 325, --
+	explodeAs = [[NANOBOOM5]],
 	footprintX = 3,
 	footprintZ = 3,
 	iconType = [[building]],
@@ -33,30 +33,30 @@ local unitDef = {
 	idleTime = 1800,
 	maneuverleashlength = 380,
 	mass = 1000000000000,
-	maxDamage = 400, --
+	maxDamage = 2000, --
 	maxSlope = 10,
 	maxVelocity = 0,
 	maxWaterDepth = 0,
 	metalStorage = 0,
-	name = [[Nano Turret Level 1]],
+	name = [[Nano Turret Level 4]],
 	noAutoFire = false,
 	noChaseCategory = [[ALL]],
-	objectName = [[CORNANOTC]],
+	objectName = [[ARMNANOTC3]],
+	script = [[armnanotc.cob]],
 	seismicSignature = 0,
 	selfDestructAs = [[TINY_BUILDINGEX]],
-	side = [[CORE]],
+	side = [[ARM]],
 	sightDistance = 380,
 	smoothAnim = true,
 	steeringmode = 1,
 	turnRate = 1,
-	unitname = [[cornanotc]],
+	unitname = [[armnanotc3]],
 	upright = true,
-	workerTime = 300, --
+	workerTime = 1600, --
 	sounds = {
-		build = [[nanlath2]],
+		build = [[nanlath1]],
 		canceldestruct = [[cancel2]],
-		capture = [[capture1]],
-		repair = [[repair2]],
+		repair = [[repair1]],
 		underattack = [[warning1]],
 		working = [[reclaim1]],
 		cant = {
@@ -71,17 +71,17 @@ local unitDef = {
 			[6] = [[count1]],
 		},
 		ok = {
-			[1] = [[vcormove]],
+			[1] = [[varmmove]],
 		},
 		select = {
-			[1] = [[vcorsel]],
+			[1] = [[varmsel]],
 		},
 	},
 	buildingGroundDecalDecaySpeed=30,
 	buildingGroundDecalSizeX=5,
 	buildingGroundDecalSizeY=5,
 	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[cornanotc_aoplane.dds]],
+	buildingGroundDecalType=[[armnanotc_aoplane.dds]],
 }
 --------------------------------------------------------------------------------
 

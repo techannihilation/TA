@@ -1,19 +1,19 @@
--- UNITDEF -- CORNANOTC --
+-- UNITDEF -- TLLNANOTC1 --
 --------------------------------------------------------------------------------
 
-local unitName = "cornanotc"
+local unitName = "tllnanotc1"
 
 --------------------------------------------------------------------------------
 
 local unitDef = {
 	acceleration = 0,
 	brakeRate = 1.5,
-	buildCostEnergy = 9000,
-	buildCostMetal = 300,
-	buildDistance = 400, --
+	buildCostEnergy = 20000,
+	buildCostMetal = 1250,
+	buildDistance = 600,
 	builder = true,
 	buildPic = [[CORNANOTC.png]],
-	buildTime = 5000,
+	buildTime = 13000,
 	canGuard = true,
 	canMove = false,
 	canPatrol = true,
@@ -24,8 +24,8 @@ local unitDef = {
 	defaultmissiontype = [[Standby]],
 	description = [[Repairs and builds in large radius]],
 	energyStorage = 0,
-	energyUse = 20, --
-	explodeAs = [[NANOBOOM2]],
+	energyUse = 30,
+	explodeAs = [[NANOBOOM3]],
 	footprintX = 3,
 	footprintZ = 3,
 	iconType = [[building]],
@@ -33,15 +33,16 @@ local unitDef = {
 	idleTime = 1800,
 	maneuverleashlength = 380,
 	mass = 1000000000000,
-	maxDamage = 400, --
+	maxDamage = 950,
 	maxSlope = 10,
 	maxVelocity = 0,
 	maxWaterDepth = 0,
 	metalStorage = 0,
-	name = [[Nano Turret Level 1]],
+	name = [[Nano Turret Level 2]],
 	noAutoFire = false,
 	noChaseCategory = [[ALL]],
-	objectName = [[CORNANOTC]],
+	objectName = [[TLLNANOTC1]],
+	script = [[cornanotc.cob]],
 	seismicSignature = 0,
 	selfDestructAs = [[TINY_BUILDINGEX]],
 	side = [[CORE]],
@@ -49,9 +50,9 @@ local unitDef = {
 	smoothAnim = true,
 	steeringmode = 1,
 	turnRate = 1,
-	unitname = [[cornanotc]],
+	unitname = [[tllnanotc1]],
 	upright = true,
-	workerTime = 300, --
+	workerTime = 600,
 	sounds = {
 		build = [[nanlath2]],
 		canceldestruct = [[cancel2]],
@@ -81,7 +82,7 @@ local unitDef = {
 	buildingGroundDecalSizeX=5,
 	buildingGroundDecalSizeY=5,
 	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[cornanotc_aoplane.dds]],
+	buildingGroundDecalType=[[tllnanotc_aoplane.dds]],
 }
 --------------------------------------------------------------------------------
 

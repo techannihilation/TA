@@ -48,7 +48,6 @@ local unitDef = {
 	mobilestandorders = 1,
 	movementClass = [[VKBOT5]],
 	name = [[Praetorian]],
-	nanoColor = [[0 0 1]],
 	noAutoFire = false,
 	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMPRAET]],

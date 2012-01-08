@@ -1,19 +1,19 @@
--- UNITDEF -- CORNANOTC --
---------------------------------------------------------------------------------
+-- UNITDEF -- CORNANOTC3 --
+-------------------------------------------------------------------------------
 
-local unitName = "cornanotc"
+local unitName = "cornanotc3"
 
 --------------------------------------------------------------------------------
 
 local unitDef = {
 	acceleration = 0,
 	brakeRate = 1.5,
-	buildCostEnergy = 9000,
-	buildCostMetal = 300,
-	buildDistance = 400, --
+	buildCostEnergy = 200000, --
+	buildCostMetal = 6800, --
+	buildDistance = 900, --
 	builder = true,
 	buildPic = [[CORNANOTC.png]],
-	buildTime = 5000,
+	buildTime = 40000, --
 	canGuard = true,
 	canMove = false,
 	canPatrol = true,
@@ -24,8 +24,8 @@ local unitDef = {
 	defaultmissiontype = [[Standby]],
 	description = [[Repairs and builds in large radius]],
 	energyStorage = 0,
-	energyUse = 20, --
-	explodeAs = [[NANOBOOM2]],
+	energyUse = 325, --
+	explodeAs = [[NANOBOOM5]],
 	footprintX = 3,
 	footprintZ = 3,
 	iconType = [[building]],
@@ -33,15 +33,16 @@ local unitDef = {
 	idleTime = 1800,
 	maneuverleashlength = 380,
 	mass = 1000000000000,
-	maxDamage = 400, --
+	maxDamage = 2000, --
 	maxSlope = 10,
 	maxVelocity = 0,
 	maxWaterDepth = 0,
 	metalStorage = 0,
-	name = [[Nano Turret Level 1]],
+	name = [[Nano Turret Level 4]],
 	noAutoFire = false,
 	noChaseCategory = [[ALL]],
-	objectName = [[CORNANOTC]],
+	objectName = [[CORNANOTC3]],
+	script = [[cornanotc.cob]],
 	seismicSignature = 0,
 	selfDestructAs = [[TINY_BUILDINGEX]],
 	side = [[CORE]],
@@ -49,9 +50,9 @@ local unitDef = {
 	smoothAnim = true,
 	steeringmode = 1,
 	turnRate = 1,
-	unitname = [[cornanotc]],
+	unitname = [[cornanotc3]],
 	upright = true,
-	workerTime = 300, --
+	workerTime = 2400, --
 	sounds = {
 		build = [[nanlath2]],
 		canceldestruct = [[cancel2]],
