@@ -39,7 +39,6 @@ local unitDef = {
 	maxWaterDepth = 0,
 	metalStorage = 0,
 	name = [[Nano Turret Level 1]],
-	nanoColor = {0.1, 0.6, 0.1},
 	noAutoFire = false,
 	noChaseCategory = [[ALL]],
 	objectName = [[CORNANOTC]],
