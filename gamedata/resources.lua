@@ -77,6 +77,7 @@ local resources = {
 			heatcloud='explo.tga',
 			flame='flame.tga',
 			graysmoke='graysmoke.tga',
+			smokeorange='gpl/smoke_orange.png',
 			fireball='fireball.tga',
         		laserendpink='laserendpink.tga',
 			flare='flare.tga',
