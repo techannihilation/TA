@@ -1,25 +1,25 @@
+local Commanders = {
+	["corcom"] = true,
+	["corcom1"] = true,
+	["corcom3"] = true,
+	["corcom5"] = true,
+	["corcom6"] = true,
+	["corcom7"] = true,
+	["armcom"] = true,
+	["armcom1"] = true,
+	["armcom4"] = true,
+	["armcom5"] = true,
+	["armcom6"] = true,
+	["armcom7"] = true,
+	["tllcom"] = true,
+	["tllcom3"] = true,
+	["tllcom5"] = true,
+	["tllcom6"] = true,
+	["tllcom7"] = true,
+}
+	
 if (Spring.GetModOptions) then
 	local modOptions = Spring.GetModOptions()
-	local Commanders = {
-	  ["corcom"] = true,
-	  ["corcom1"] = true,
-	  ["corcom3"] = true,
-	  ["corcom5"] = true,
-	  ["corcom6"] = true,
-	  ["corcom7"] = true,
-	  ["armcom"] = true,
-	  ["armcom1"] = true,
-	  ["armcom4"] = true,
-	  ["armcom5"] = true,
-	  ["armcom6"] = true,
-	  ["armcom7"] = true,
-	  ["tllcom"] = true,
-	  ["tllcom3"] = true,
-	  ["tllcom5"] = true,
-	  ["tllcom6"] = true,
-	  ["tllcom7"] = true,
-	}
-
 	for name, ud in pairs(UnitDefs) do  
 		if (Commanders[ud.unitname]) then
 			ud.energystorage = modOptions.startenergy or 1000
@@ -64,15 +64,25 @@ function WorkerTimeThresholds:getColor(wt)
 		(nearestLowerT.color.b + rel * (nearestHigherT.color.b - nearestLowerT.color.b))
 end
 
-for _, ud in pairs(UnitDefs) do
-	if not ud.customparams then
+-- Setting customproperty "iscommander" for commanders listed in Commaders table
+for name, ud in pairs(UnitDefs) do
+	if not (ud.customparams and type(ud.customparams) == "table") then
 		ud.customparams = {}
 	end
+	ud.customparams["iscommander"] = (Commanders[name] or false)
 end
-	 
+
+-- Setting nanocolor
 for name, ud in pairs(UnitDefs) do
 	if ((ud.workertime or 0) > 0) then
 		ud.nanocolor = {WorkerTimeThresholds:getColor(ud.workertime)}
+	end
+end
+
+-- Setting collisionvolumetest true for all canFly units
+for name, ud in pairs(UnitDefs) do
+	if (ud.canfly) then
+		ud.collisionvolumetest = true
 	end
 end
 
