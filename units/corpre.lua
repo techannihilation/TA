@@ -101,7 +101,7 @@ local unitDef = {
 local weaponDefs = {
 	CapitalShipMinigun = {
 		accuracy = 750,
-		areaOfEffect = 75,
+		areaOfEffect = 85,
 		beamWeapon = true,
 		burnblow = 1,
 		burst = 2,
@@ -111,7 +111,7 @@ local weaponDefs = {
 		craterMult = 0,
 		duration = 0.04,
 		edgeEffectiveness = 0.4,
-		energypershot = 5000,
+		energypershot = 2000,
 		explosionart = [[Explode5]],
 		explosiongaf = [[FX]],
 		guidance = true,
@@ -142,13 +142,13 @@ local weaponDefs = {
 		turret = true,
 		PredictBoost = 1,
 		weaponType = [[LaserCannon]],
-		weaponVelocity = 2500,
+		weaponVelocity = 3500,
 		damage = {
-			bombers = 3600,
+			bombers = 2400,
 			default = 5,
-			fighters = 3600,
-			flak_resistant = 1200,
-			unclassed_air = 3600,
+			fighters = 2400,
+			flak_resistant = 800,
+			unclassed_air = 2400,
 		},
 	},
 }
