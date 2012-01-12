@@ -29,16 +29,30 @@ if (Spring.GetModOptions) then
 end
 
 local WorkerTimeThresholds = { 
-	{wt = 2000,		color={r = 0.7, g = 0.7, 	b = 1.0}},
-	{wt = 1000,		color={r = 0.7, g = 1.0, 	b = 0.7}},
-	{wt = 250, 		color={r = 0.2, g = 0.6, 	b = 0.2}},
-	{wt = 0, 		color={r = 0.5, g = 0.5, 	b = 0.2}}
+	g = {
+		{wt = 2000,		color={r = 0.8, g = 1.0, 	b = 0.8}},
+		{wt = 1000,		color={r = 0.5, g = 0.9, 	b = 0.5}},
+		{wt = 250, 		color={r = 0.2, g = 0.6, 	b = 0.2}},
+		{wt = 0, 		color={r = 0.0, g = 0.4, 	b = 0.0}}
+	},
+	b = {
+		{wt = 2000,		color={r = 0.8, g = 1.0, 	b = 1.0}},
+		{wt = 1000,		color={r = 0.5, g = 0.85, 	b = 0.85}},
+		{wt = 250, 		color={r = 0.2, g = 0.55, 	b = 0.55}},
+		{wt = 0, 		color={r = 0.0, g = 0.35, 	b = 0.35}}
+	},
+	y = {
+		{wt = 2000,		color={r = 1.0, g = 1.0, 	b = 0.8}},
+		{wt = 1000,		color={r = 0.85, g = 0.85, 	b = 0.5}},
+		{wt = 250, 		color={r = 0.55, g = 0.55, 	b = 0.2}},
+		{wt = 0, 		color={r = 0.35, g = 0.35, 	b = 0.0}}
+	}
 }
 
-function WorkerTimeThresholds:getColor(wt)
+function WorkerTimeThresholds:getColor(wt, c)
 	local nearestHigherT, nearestLowerT
 
-	for _, v in ipairs(self) do
+	for _, v in ipairs(self[c]) do
 		if (wt >= v.wt) then
 			nearestLowerT = v
 			break
@@ -47,7 +61,7 @@ function WorkerTimeThresholds:getColor(wt)
 	end
 	
 	if not nearestLowerT then 
-		nearestLowerT = self[#self]
+		nearestLowerT = self[c][#(self[c])]
 	end
 	
 	local rel
@@ -75,7 +89,13 @@ end
 -- Setting nanocolor
 for name, ud in pairs(UnitDefs) do
 	if ((ud.workertime or 0) > 0) then
-		ud.nanocolor = {WorkerTimeThresholds:getColor(ud.workertime)}
+		if((ud.unitname):lower():find("tll")) then
+			ud.nanocolor = {WorkerTimeThresholds:getColor(ud.workertime, "y")}
+		elseif ((ud.unitname):lower():find("cor")) then
+				ud.nanocolor = {WorkerTimeThresholds:getColor(ud.workertime, "b")}
+		else
+			ud.nanocolor = {WorkerTimeThresholds:getColor(ud.workertime, "g")}
+		end
 	end
 end
 
