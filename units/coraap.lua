@@ -67,7 +67,7 @@ local unitDef = {
 		[9] = [[corcrw]],
 		[10] = [[blackdawn]],
 		[11] = [[shrike]],
-		[12] = [[tu95-a]],
+		[12] = [[coreclipse]],
 	},
 	featureDefs = nil,
 	sfxtypes = {

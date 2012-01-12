@@ -1,7 +1,7 @@
--- UNITDEF -- B52G --
+-- UNITDEF -- ARMCYCLONE --
 --------------------------------------------------------------------------------
 
-local unitName = "b52g"
+local unitName = "armcyclone"
 
 --------------------------------------------------------------------------------
 
@@ -17,7 +17,7 @@ local unitDef = {
 	buildCostEnergy = 85342,
 	buildCostMetal = 7350,
 	builder = false,
-	buildPic = [[b52g.png]],
+	buildPic = [[armcyclone.png]],
 	buildTime = 77364,
 	canAttack = true,
 	canFly = true,
@@ -31,8 +31,8 @@ local unitDef = {
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	cruiseAlt = 320,
 	defaultmissiontype = [[VTOL_standby]],
-	description = [[TSAR Bomber]],
-	designation = [[MST B-52G Stratofortress]],
+	description = [[TSAR Cyclone Bomber]],
+	designation = [[]],
 	downloadable = 1,
 	energyMake = 30,
 	energyStorage = 0,
@@ -40,12 +40,6 @@ local unitDef = {
 	explodeAs = [[BIG_UNITEX]],
 	footprintX = 3,
 	footprintZ = 3,
-	frenchdescription = [[Bombardier lourd]],
-	frenchname = [[B-52G Stratorfortress]],
-	germandescription = [[Schwerer Bomber]],
-	germanname = [[B-52G Stratofortress]],
-	italiandescription = [[Heavy Bomber]],
-	italianname = [[B-52G Stratofortress]],
 	maneuverleashlength = 2500,
 	maxDamage = 12500,
 	maxSlope = 10,
@@ -53,24 +47,22 @@ local unitDef = {
 	maxWaterDepth = 0,
 	metalStorage = 0,
 	mobilestandorders = 1,
-	name = [[StratoBomber]],
+	name = [[Arm Cyclone]],
 	noAutoFire = false,
 	noChaseCategory = [[SUB VTOL]],
-	objectName = [[RaT_ArmBomber]],
+	objectName = [[armcyclone]],
 	ovradjust = 1,
 	scale = 1,
-	script = [[RaT_ArmBomber.cob]],
+	script = [[armcyclone.cob]],
 	selfDestructAs = [[BIG_UNIT]],
 	shootme = 1,
 	side = [[ARM]],
 	sightDistance = 400,
-	spanishdescription = [[Heavy Bomber]],
-	spanishname = [[B-52G Stratofortress]],
 	standingmoveorder = 1,
 	steeringmode = 1,
 	threed = 1,
 	turnRate = 185,
-	unitname = [[RaT_ArmBomber]],
+	unitname = [[armcyclone]],
 	unitnumber = 8016,
 	upright = true,
 	version = 2,
