@@ -269,7 +269,7 @@ for name, ud in pairs(UnitDefs) do
 	if not (ud.customparams and type(ud.customparams) == "table") then
 		ud.customparams = {}
 	end
-	ud.customparams["iscommander"] = (Commanders[name] or false)
+	-- ud.customparams["iscommander"] = (Commanders[name] or false)
 end
 
 -- Setting nanocolor
