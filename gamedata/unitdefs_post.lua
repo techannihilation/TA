@@ -264,13 +264,6 @@ function WorkerTimeThresholds:getColor(wt, c)
 		(nearestLowerT.color.b + rel * (nearestHigherT.color.b - nearestLowerT.color.b))
 end
 
--- Setting customproperty "iscommander" for commanders listed in Commaders table
-for name, ud in pairs(UnitDefs) do
-	if not (ud.customparams and type(ud.customparams) == "table") then
-		ud.customparams = {}
-	end
-	-- ud.customparams["iscommander"] = (Commanders[name] or false)
-end
 
 -- Setting nanocolor
 for name, ud in pairs(UnitDefs) do
