@@ -18,6 +18,9 @@ local unitDef = {
 	collisionvolumetest = 1,
 	collisionvolumetype = [[Box]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
+	customParams           = {
+		ismorphingrc = true,
+	},
 	description = [[Enable New t2 units]],
 	designation = [[LAB-01]],
 	energyMake = 0,

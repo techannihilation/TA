@@ -137,7 +137,7 @@ local function GetTechLevel(UnitDefID)
 end
 
 local function isFactory(UnitDefID)
-  return UnitDefs[UnitDefID].isFactory or false
+  return UnitDefs[UnitDefID].isFactory or UnitDefs[UnitDefID].customParams.ismorphingrc or false
 end
 
 
