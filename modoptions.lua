@@ -88,7 +88,15 @@ local options={
 		def    = true,
 		section= "ta_options",
     },
-	{
+    {
+		key    = 'mo_allowfactionchange',
+		name   = 'Allow Faction Change',
+		desc   = 'Allows faction to be changed ingame',
+		type   = 'bool',
+		def    = true,
+		section= 'ta_options',
+    },
+    {
 		key    = "mo_nowrecks",
 		name   = "No Unit Wrecks",
 		desc   = "Removes all unit wrecks from the game",
@@ -96,6 +104,19 @@ local options={
 		def    = false,
 		section= "ta_options",
     },
+	{ 
+		key="deathmode",
+		name="Game End Mode",
+		desc="What it takes to eliminate a team",
+		type="list",
+		def="killall",
+		section="ta_modes",
+		items={
+			{key="killall", name="Kill Everything", desc="Every last unit must be eliminated, no exceptions!"},
+			{key="com", name="Kill all enemy Commanders", desc="When a team has no Commanders left it loses"},
+			{key="comcontrol", name="No Commander, No Control", desc="A player without a Commander cannot issue orders"},
+		}
+	},
        {
 		key="teamdeathmode",
 		name="Team Game End Mode",

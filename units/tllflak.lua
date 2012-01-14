@@ -80,6 +80,11 @@ local unitDef = {
 			onlyTargetCategory = [[VTOL]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=5,
+	buildingGroundDecalSizeY=5,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[tllflak_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -91,6 +96,7 @@ local weaponDefs = {
 		ballistic = true,
 		burnblow = true,
 		canattackground = false,
+		cegTag = [[tllflak-fx]],
 		color = 1,
 		craterBoost = 0,
 		craterMult = 0,

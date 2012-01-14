@@ -243,6 +243,54 @@ return {
     },
   },
 
+  ["anvil"] = {
+    groundflash = {
+      circlealpha        = 0.7,
+      circlegrowth       = 1,
+      flashalpha         = 0.3,
+      flashsize          = 66,
+      ttl                = 12,
+      color = {
+        [1]  = 0.0,
+        [2]  = 0.0,
+        [3]  = 0.6,
+      },
+    },
+    pikes20 = {
+      air                = true,
+      class              = [[explspike]],
+      count              = 15,
+      ground             = true,
+      water              = true,
+      properties = {
+        alpha              = 0.5,
+        alphadecay         = 0.1,
+        color              = [[0.8,0.7,0.4]],
+        dir                = [[-20 r40,-20 r40,-20 r40]],
+        length             = 12,
+        width              = 6,
+      },
+    },
+    whiteglow = {
+      air                = true,
+      class              = [[heatcloud]],
+      count              = 1,
+      ground             = true,
+      water              = true,
+      properties = {
+        alwaysvisible      = true,
+        heat               = 7,
+        heatfalloff        = 1.2,
+        maxheat            = 10,
+        pos                = [[r-2 r2, 5, r-2 r2]],
+        size               = 8,
+        sizegrowth         = 4,
+        speed              = [[0, 1 0, 0]],
+        texture            = [[mildexplo]],
+      },
+    },
+  },
+
   ["laseranni"] = {
     groundflash = {
       circlealpha        = 1,

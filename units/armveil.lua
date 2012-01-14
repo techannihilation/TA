@@ -48,6 +48,7 @@ local unitDef = {
 	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[armveil]],
+	usePieceCollisionVolumes = 1,
 	workerTime = 0,
 	yardMap = [[oooo]],
 	featureDefs = nil,
@@ -72,6 +73,11 @@ local unitDef = {
 			[1] = [[radjam1]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=4,
+	buildingGroundDecalSizeY=4,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[armveil_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

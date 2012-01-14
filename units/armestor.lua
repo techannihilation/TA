@@ -61,6 +61,11 @@ local unitDef = {
 			[1] = [[storngy1]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=5,
+	buildingGroundDecalSizeY=5,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[armestor_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

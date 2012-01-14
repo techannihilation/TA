@@ -9,8 +9,8 @@ local unitDef = {
 	activateWhenBuilt = true,
 	bmcode = 0,
 	buildAngle = 65536,
-	buildCostEnergy = 132143,
-	buildCostMetal = 3874,
+	buildCostEnergy = 82143,
+	buildCostMetal = 3574,
 	builder = false,
 	buildTime = 42190,
 	canAttack = true,
@@ -87,13 +87,18 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=6,
+	buildingGroundDecalSizeY=6,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[armarch_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
 
 local weaponDefs = {
 	ARMARCH_GUN = {
-		accuracy = 150,
+		accuracy = 200,
 		areaOfEffect = 126,
 		ballistic = true,
 		craterBoost = 0,
@@ -103,7 +108,7 @@ local weaponDefs = {
 		gravityaffected = [[true]],
 		minbarrelangle = -35,
 		name = [[Rapid Cannon]],
-		range = 1750,
+		range = 1550,
 		reloadtime = 0.17,
 		renderType = 4,
 		rgbColor = [[1 0.6 0.3]],
@@ -115,10 +120,10 @@ local weaponDefs = {
 		weaponType = [[Cannon]],
 		weaponVelocity = 900,
 		damage = {
-			commanders = 10,
-			default = 26,
-			experimental_ships = 52,
-			ships = 39,
+			commanders = 15,
+			default = 44,
+			experimental_ships = 88,
+			ships = 66,
 			subs = 5,
 		},
 	},

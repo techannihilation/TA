@@ -1,0 +1,205 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  posts, sonar, radar, routerwall, rmidwall, rinnerwall, louterwall, lmidwall,
+       linnerwall, missileturret, mflare1, mflare2, mflare3, torplauncher, torpturret, torpflare;
+
+static-var  gun_2, Static_Var_2, Static_Var_3;
+
+
+OpenYard()
+{
+	set YARD_OPEN to 1;
+	while( !get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 1;
+	}
+	set BUGGER_OFF to 0;
+}
+
+CloseYard()
+{
+	set YARD_OPEN to 0;
+	while( get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 0;
+	}
+	set BUGGER_OFF to 0;
+}
+
+opengate()
+{
+    turn routerwall to y-axis <-70.016484> speed <40.005495>;
+	turn rmidwall to y-axis <140.027473> speed <40.005495> * <0.005495>;
+	turn rinnerwall to y-axis <-140.027473> speed <40.005495> * <0.005495>;
+	turn louterwall to y-axis <70.016484> speed <40.005495>;
+	turn lmidwall to y-axis <-140.027473> speed <40.005495> * <0.005495>;
+	turn linnerwall to y-axis <140.027473> speed <40.005495> * <0.005495>;
+	wait-for-turn linnerwall around y-axis;
+	set ARMORED to 1;
+	call-script OpenYard();
+}
+
+closegate()
+{
+	call-script CloseYard();
+	stop-spin sonar around y-axis decelerate <50.005495> * <0.000000>;
+	stop-spin radar around y-axis decelerate <-60.005495> * <0.000000>;
+	turn routerwall to y-axis <0.000000> speed <40.005495>;
+	turn rmidwall to y-axis <0.000000> speed <40.005495> * <0.005495>;
+	turn rinnerwall to y-axis <0.000000> speed <40.005495> * <0.005495>;
+	turn louterwall to y-axis <0.000000> speed <40.005495>;
+	turn lmidwall to y-axis <0.000000> speed <40.005495> * <0.005495>;
+	turn linnerwall to y-axis <0.000000> speed <40.005495> * <0.005495>;
+	wait-for-turn linnerwall around y-axis;
+	set ARMORED to 0;
+}
+
+statemonitor()
+{
+	Static_Var_3 = get ACTIVATION;
+	Static_Var_2 = 9;
+	while( TRUE )
+	{
+		while( Static_Var_2 == Static_Var_3 )
+		{
+			Static_Var_3 = get ACTIVATION;
+			sleep 250;
+		}
+		Static_Var_2 = Static_Var_3;
+		signal 2;
+		if( Static_Var_3 == 0 )
+		{
+			start-script closegate();
+		}
+		if( Static_Var_3 == 1 )
+		{
+			start-script opengate();
+		}
+		if( Static_Var_3 == 2 )
+		{
+			start-script opengate();
+		}
+	}
+}
+
+delayedreopen()
+{
+	signal 2;
+	set-signal-mask 2;
+	sleep 5000;
+	start-script opengate();
+}
+
+autoclose()
+{
+	start-script closegate();
+	start-script delayedreopen();
+}
+
+Activate()
+{
+	spin sonar around y-axis speed <50.005495> accelerate <50.005495> * <0.000000>;
+	spin radar around y-axis speed <-60.005495> accelerate <-60.005495> * <0.000000>;
+}
+
+Deactivate()
+{
+	stop-spin sonar around y-axis decelerate <50.005495> * <0.000000>;
+	stop-spin radar around y-axis decelerate <-60.005495> * <0.000000>;
+}
+
+Create()
+{
+	dont-shade radar;
+	dont-shade sonar;
+	dont-shade missileturret;
+	dont-shade torpturret;
+	dont-shade torplauncher;
+	dont-shade torpflare;
+	dont-shade routerwall;
+	dont-shade rmidwall;
+	dont-shade rinnerwall;
+	dont-shade louterwall;
+	dont-shade lmidwall;
+	dont-shade linnerwall;
+	dont-shade posts;
+	gun_2 = sonar;
+	while( get 17 > 0 )
+	{
+		sleep 500;
+	}
+	start-script statemonitor();
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = torplauncher;
+}
+
+AimPrimary(heading, pitch)
+{
+	if( Static_Var_2 == 1 )
+	{
+		start-script autoclose();
+	}
+	turn torpturret to y-axis heading speed <250.060440>;
+	turn torplauncher to x-axis <0.000000> - pitch speed <250.060440>;
+	wait-for-turn torpturret around y-axis;
+	wait-for-turn torplauncher around x-axis;
+	return (1);
+}
+
+FirePrimary()
+{
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = torpflare;
+}
+
+AimFromSecondary(piecenum)
+{
+	piecenum = missileturret;
+}
+
+AimSecondary(heading, pitch)
+{
+	turn missileturret to y-axis heading speed <250.060440>;
+	turn missileturret to x-axis <0.000000> - pitch speed <250.060440>;
+	wait-for-turn missileturret around y-axis;
+	wait-for-turn missileturret around x-axis;
+	return (1);
+}
+
+FireSecondary()
+{
+	++gun_2;
+	if( gun_2 == 4 )
+	{
+		gun_2 = sonar;
+	}
+}
+
+QuerySecondary(piecenum)
+{
+	if( gun_2 == 1 )
+	{
+		piecenum = mflare1;
+	}
+	if( gun_2 == 2 )
+	{
+		piecenum = mflare2;
+	}
+	if( gun_2 == 3 )
+	{
+		piecenum = mflare3;
+	}
+}

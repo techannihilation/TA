@@ -62,6 +62,11 @@ local unitDef = {
 			[1] = [[windgen1]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=6,
+	buildingGroundDecalSizeY=6,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[arm_wind_generator_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -95,7 +100,7 @@ local featureDefs = {
 		height = 20,
 		hitdensity = 100,
 		metal = 0.6400 * unitDef.buildCostMetal,
-		object = [[core_wind_generator_dead]],
+		object = [[arm_wind_generator_dead]],
 		reclaimable = true,
 		seqnamereclamate = [[tree1reclamate]],
 		world = [[All Worlds]],

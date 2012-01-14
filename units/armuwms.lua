@@ -60,6 +60,11 @@ local unitDef = {
 			[1] = [[stormtl1]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=6,
+	buildingGroundDecalSizeY=6,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[armuwms_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

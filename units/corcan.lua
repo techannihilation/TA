@@ -23,6 +23,7 @@ local unitDef = {
 	collisionvolumeoffsets = [[0 0 0]],
 	collisionvolumescales = [[28 27 25]],
 	collisionvolumetype = [[box]],
+	collisionvolumetest = 1,
 	corpse = [[DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[Armored Assault Kbot]],

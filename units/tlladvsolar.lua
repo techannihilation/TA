@@ -69,6 +69,11 @@ local unitDef = {
 			[1] = [[windgen1]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=8,
+	buildingGroundDecalSizeY=8,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[tlladvsolar_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

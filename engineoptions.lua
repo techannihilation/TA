@@ -26,35 +26,7 @@
 --
 
 local options = {
-   --Need to remove after next release  
-  {
-    key    = 'GameMode',
-    name   = 'Game end condition',
-    desc   = 'Determines what condition triggers the defeat of a player',
-    type   = 'list',
-    section= "ta_modes",
-    def    = '0',
-    items  = 
-    {
-      { 
-        key  = '0',
-        name = 'Kill everything',
-        desc = 'The player will lose when all his units have died',
-      },
-      {
-        key  = '1',
-        name = 'Commander ends',
-        desc = 'The player will lose when his commander dies',
-      },
-      {
-        key  = '2',
-        name = 'Commander lineage ends',
-        desc = 'This is a stricter form of commander ends\nevery unit will inherit the lineage from the player whom built it\neven if shared, when the commander dies the unit will still die',
-      },
-    },
-  },
-  --end
-   
+     
   
    {
        key="ta_others",

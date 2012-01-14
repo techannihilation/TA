@@ -102,18 +102,18 @@ local tryloading  = 1     --// try to activate lups if it isn't found
 local lups_luaui = false --// lups running as widget?
 local nilDispList
 
-local corfusdefid = UnitDefNames["corfus"].id
-local tllmedfusiondefid = UnitDefNames["tllmedfusion"].id
-local cafusdefid = UnitDefNames["cafus"].id
-local cfusionplantdefid = UnitDefNames["cfusionplant"].id
-local cpocketfusiondefid = UnitDefNames["cpocketfusion"].id
-local crnnsdefid = UnitDefNames["crnns"].id
-local tllcoldfusdefid = UnitDefNames["tllcoldfus"].id
-local tllmegacoldfusdefid = UnitDefNames["tllmegacoldfus"].id
-local armuwfus1defid = UnitDefNames["armuwfus1"].id
-local corsfusid = UnitDefNames["corsfus"].id
-
-
+local fusion_units = {
+	[UnitDefNames["corfus"].id] = true,
+	[UnitDefNames["tllmedfusion"].id] = true,
+	[UnitDefNames["cafus"].id] = true,
+	[UnitDefNames["cfusionplant"].id] = true,
+	[UnitDefNames["cpocketfusion"].id] = true,
+	[UnitDefNames["crnns"].id] = true,
+	[UnitDefNames["tllcoldfus"].id] = true,
+	[UnitDefNames["tllmegacoldfus"].id] = true,
+	[UnitDefNames["armuwfus1"].id] = true,
+	[UnitDefNames["corsfus"].id] = true
+}
 
 
 --------------------------------------------------------------------------------
@@ -266,16 +266,7 @@ end
 
 
 local function UnitCreated(_,unitID,unitDefID)
- if (lups_luaui)and(corfusdefid == unitDefID) or
-    (lups_luaui)and(corsfusid == unitDefID) or
-    (lups_luaui)and(cafusdefid == unitDefID) or
-    (lups_luaui)and(tllmedfusiondefid == unitDefID) or
-    (lups_luaui)and(cfusionplantdefid == unitDefID) or
-    (lups_luaui)and(crnnsdefid == unitDefID) or
-    (lups_luaui)and(armuwfus1defid == unitDefID) or
-    (lups_luaui)and(tllcoldfusdefid == unitDefID) or
-    (lups_luaui)and(tllmegacoldfusdefid == unitDefID) or
-    (lups_luaui)and(cpocketfusiondefid == unitDefID) then
+	if (lups_luaui and fusion_units[unitDefID])	then
     Spring.UnitRendering.SetLODCount(unitID,1)
     Spring.UnitRendering.SetLODLength(unitID,1,1)
     Spring.UnitRendering.SetMaterial(unitID,1,"defaults3o",{shader="s3o"})

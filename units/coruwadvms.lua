@@ -62,6 +62,11 @@ local unitDef = {
 			[1] = [[stormtl2]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=6,
+	buildingGroundDecalSizeY=6,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[coruwadvms_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

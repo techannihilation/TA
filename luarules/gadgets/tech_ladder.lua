@@ -11,8 +11,8 @@ LabNames = {
 LockedNames = {
 		{"amortor","cmortor","armblz","armjade","armdragf","corfalc","armcbomb","armscar","armmedt","armarty","armeman","dao","cbrutus","aexxec","armsonic","armdark","gladiator","cslicer","corgfbt",}, -- Tech 1
 		{"armanni","cordoom","arm_big_bertha","core_intimidator","armvulc","corbuzz","armbull2","armsilo","corsilo",}, -- Tech 5
-		{"armshock","armcrabe","cordem","corkarg","shiva","armraven","corjurgen","armmech","armpod","troman","armgant","armmechl","armjugg","armraz","marauder","nebraska","corboucher","cormddm","armhh","armcav","snowman","airwolf3g","taipan","akmech","armhdpw","tankanotor","vaporiser","armscpion","armcd","armpers","shrike","corprot","coredauber","coremech","corcrab","nsacskv","tawf116","armciph","cormonsta","requ1","blackdawn","tu95-a","b52g","armkrmi","magilla","krogtaar",}, -- Tech 7
-		{"abuilderlvl3","cbuilderlvl3",}, -- Tech 10
+		{"armshock","armcrabe","cordem","corkarg","shiva","armraven","corjurgen","armmech","armpod","troman","armgant","armmechl","armjugg","armraz","marauder","cormddm","armhh","armcav","snowman","airwolf3g","taipan","akmech","armhdpw","tankanotor","vaporiser","armscpion","armcd","armpers","shrike","corprot","coredauber","coremech","corcrab","nsacskv","tawf116","armciph","cormonsta","requ1","blackdawn","coreclipse","armcyclone","armkrmi","magilla","krogtaar",}, -- Tech 7
+		{"nebraska","corboucher","abuilderlvl3","cbuilderlvl3",}, -- Tech 10
 	}
 
 

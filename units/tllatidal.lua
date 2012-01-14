@@ -65,6 +65,11 @@ local unitDef = {
 			[1] = [[tidegen2]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=6,
+	buildingGroundDecalSizeY=6,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[tllatidal_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

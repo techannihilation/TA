@@ -62,6 +62,11 @@ local unitDef = {
 			[1] = [[storngy2]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=8,
+	buildingGroundDecalSizeY=8,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[coruwadves_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

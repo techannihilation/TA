@@ -69,6 +69,11 @@ local unitDef = {
 			[1] = [[mohoon1]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=8,
+	buildingGroundDecalSizeY=8,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[armmoho_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

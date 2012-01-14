@@ -11,13 +11,12 @@ local unitDef = {
   bmcode             = 0,
   brakeRate          = 0,
   buildAngle         = 16384,
-  buildCostEnergy    = 136000,
-  buildCostMetal     = 15700,
+  buildCostEnergy    = 142000,
+  buildCostMetal     = 15000,
   builder            = false,
   buildPic           = [[CORSFUS.png]],
   buildTime          = 298000,
   category           = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
-  
   modelCenterOffset = [[0 -55 0]],
   collisionvolumeoffsets = [[0 -15 0]],
   collisionvolumescales = [[45 100 45]],
@@ -74,6 +73,11 @@ local unitDef = {
     },
 
   },
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=12,
+	buildingGroundDecalSizeY=12,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[corsfus_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -127,7 +131,7 @@ local featureDefs = {
     height             = 20,
     hitdensity         = 100,
     metal              = unitDef.buildCostMetal*0.8,
-    object             = [[CORFUS_DEAD]],
+    object             = [[CORSFUS_DEAD]],
     reclaimable        = true,
     seqnamereclamate   = [[TREE1RECLAMATE]],
     world              = [[All Worlds]],

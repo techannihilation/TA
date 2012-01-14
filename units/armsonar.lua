@@ -68,6 +68,11 @@ local unitDef = {
 			[1] = [[sonar1]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=4,
+	buildingGroundDecalSizeY=4,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[armsonar_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

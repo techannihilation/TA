@@ -80,6 +80,11 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=6,
+	buildingGroundDecalSizeY=6,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[tllemp_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -107,7 +112,7 @@ local weaponDefs = {
 		paralyzer = true,
 		paralyzeTime = 35,
 		propeller = 1,
-		range = 6000,
+		range = 4450,
 		reloadtime = 2,
 		renderType = 1,
 		selfprop = true,
@@ -153,7 +158,7 @@ local featureDefs = {
 		height = 12,
 		hitdensity = 123,
 		metal = 0.8000 * unitDef.buildCostMetal,
-		object = [[tllsilo_dead]],
+		object = [[tllemp_dead]],
 		reclaimable = true,
 		seqnamereclamate = [[tree1reclamate]],
 		world = [[all]],

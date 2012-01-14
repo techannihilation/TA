@@ -76,7 +76,7 @@ function widget:UnitIdle(unitID, unitDefID, unitTeam)
 		--don't apply to factories 
 		--don't apply to units with hold position
 		if (UnitDefs[unitDefID]["canReclaim"] or UnitDefs[unitDefID]["canRepair"] or UnitDefs[unitDefID]["canCapture"])
-			and not (UnitDefs[unitDefID]["isFactory"] or UnitDefs[unitDefID]["isCommander"])
+			and not (UnitDefs[unitDefID]["isFactory"] or UnitDefs[unitDefID]["customParams.iscommander"])
 			and Spring.GetUnitStates(unitID)["movestate"] ~= 0
 		then     --check if unit can reclaim
 			  --echo("Unit "..UnitDefs[unitDefID]["humanName"].." considered a reclaimer");

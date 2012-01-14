@@ -47,14 +47,16 @@ local unitDef = {
 	unitnumber = 934,
 	version = 3.1,
 	workerTime = 980,
-	yardMap = [[oooccccooo oooccccooo oooccccooo cccccccccc cccccccccc cccccccccc oooccccooo oooccccooo oooccccooo oooccccooo ]],
+	yardMap = [[ooccccccoo ooccccccoo ooccccccoo cccccccccc cccccccccc cccccccccc ooccccccoo ooccccccoo ooccccccoo ooccccccoo ]],
 	zbuffer = 1,
 	buildoptions = {
 		[1] = [[tllhtcb]],
 		[2] = [[tllhtml]],
 		[3] = [[tllblind]],
 		[4] = [[tllgrim]],
-		[5] = [[tllmlrpc]],
+		[5] = [[heavyimpact]],
+		[6] = [[hyperion]],
+
 	},
 	featureDefs = nil,
 	sounds = {
@@ -78,6 +80,11 @@ local unitDef = {
 			[1] = [[gantsel1]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=13,
+	buildingGroundDecalSizeY=13,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[tllhtcp_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -121,7 +128,6 @@ local featureDefs = {
 		category = [[heaps]],
 		damage = 0.2160 * unitDef.maxDamage,
 		description = [[Metal Shards]],
-		featureDead = [[heap]],
 		featurereclamate = [[smudge01]],
 		footprintX = 11,
 		footprintZ = 11,

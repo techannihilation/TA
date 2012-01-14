@@ -15,7 +15,7 @@ local unitDef = {
 	buildingGroundDecalDecaySpeed = 3000,
 	buildingGroundDecalSizeX = 9,
 	buildingGroundDecalSizeY = 7,
-	buildingGroundDecalType = [[asphalt512c.dds]],
+	buildingGroundDecalType=[[coraap_aoplane.dds]],
 	buildPic = [[CORAAP.png]],
 	buildTime = 40678,
 	canMove = true,
@@ -67,7 +67,7 @@ local unitDef = {
 		[9] = [[corcrw]],
 		[10] = [[blackdawn]],
 		[11] = [[shrike]],
-		[12] = [[tu95-a]],
+		[12] = [[coreclipse]],
 	},
 	featureDefs = nil,
 	sfxtypes = {

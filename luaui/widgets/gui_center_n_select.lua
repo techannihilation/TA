@@ -37,7 +37,7 @@ if (enabled == 1) then
 end
 
 function widget:UnitFinished(unitID, unitDefID, unitTeam)
-  if (unitTeam ~= myTeamID) or (not UnitDefs[unitDefID].isCommander) then return end
+  if (unitTeam ~= myTeamID) or (not UnitDefs[unitDefID].customParams.iscommander) then return end
   Spring.SelectUnitArray({unitID})
   local x,y,z = Spring.GetUnitPosition(unitID)
   Spring.SetCameraTarget(x,800,z)

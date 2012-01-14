@@ -18,6 +18,10 @@ local unitDef = {
 	canAttack = true,
 	canstop = 1,
 	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
+	collisionvolumeoffsets = "0 1 0",
+	collisionvolumescales = "36 89 36",
+	collisionvolumetest = 1,
+	collisionvolumetype = "CylY",
 	corpse = [[DEAD]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[Heavy Laser Tower]],
@@ -81,6 +85,11 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=4,
+	buildingGroundDecalSizeY=4,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[armhlt_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

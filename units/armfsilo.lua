@@ -81,6 +81,11 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=19,
+	buildingGroundDecalSizeY=19,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[armfsilo_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

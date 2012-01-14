@@ -61,6 +61,11 @@ local unitDef = {
 			[1] = [[watfusn1]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=6,
+	buildingGroundDecalSizeY=6,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[armuwfus_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

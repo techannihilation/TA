@@ -14,7 +14,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON PLANT]],
+	category = [[LEVEL3 ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON PLANT]],
 	corpse = [[dead]],
 	description = [[build T4 Con]],
 	designation = [[COC-1]],
@@ -61,6 +61,11 @@ local unitDef = {
 			[1] = [[corplant1]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=15,
+	buildingGroundDecalSizeY=15,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[ccovertopscentre_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

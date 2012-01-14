@@ -48,6 +48,7 @@ local unitDef = {
 	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[armrad1]],
+	usePieceCollisionVolumes = 1,
 	workerTime = 0,
 	yardMap = [[oooo]],
 	featureDefs = nil,
@@ -69,6 +70,11 @@ local unitDef = {
 			[1] = [[radar1]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=4,
+	buildingGroundDecalSizeY=4,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[armrad1_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

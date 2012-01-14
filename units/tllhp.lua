@@ -83,6 +83,11 @@ local unitDef = {
 			[1] = [[hoversl2]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=10,
+	buildingGroundDecalSizeY=10,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[tllhp_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

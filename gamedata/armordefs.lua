@@ -21,7 +21,7 @@ bombers = {
 	armpnix = 99,
 	armsb = 99,
 	armthund = 99,
-	b52g = 99,
+	armcyclone = 99,
 	corgripn = 99,
 	corhurc = 99,
 	corsb = 99,
@@ -30,7 +30,7 @@ bombers = {
 	tllabomber = 99,
 	tllbomber = 99,
 	tlltorpp = 99,
-	["tu95-a"] = 99,
+	coreclipse = 99,
 	tllseab = 99,
 	corseap = 99,
 	armseap = 99,
@@ -175,7 +175,15 @@ experimental_ships = {
 },
 --### LAND ###
 experimental_land = {
+        -- tll t3 vechiles
+        tlltelsatnk = 99,
+	tlldemon = 99,
+	tllacid = 99,
+	tlllongshot = 99,
 	-- tll t3 bots
+        helepolis = 99,
+	hyperion = 99,
+	heavyimpact = 99,
 	tllhtcb = 99,
 	tllhtml = 99,
 	tllblind = 99,
@@ -275,10 +283,18 @@ crawlingbombs = {
 },
 nanos = {
 	armnanotc = 99,
+	armnanotc1 = 99,
+	armnanotc2 = 99,
+	armnanotc3 = 99,
 	cornanotc = 99,
+	cornanotc1 = 99,
+	cornanotc2 = 99,
+	cornanotc3 = 99,
 	armhevsenan = 99,
 	corhevsenan = 99,
 	tllnanotc = 99,
+	tllnanotc1 = 99,
+	tllnanotc2 = 99,
 },
 mines = {
 	armmine1 = 99,

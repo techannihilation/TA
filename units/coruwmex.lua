@@ -66,6 +66,11 @@ local unitDef = {
 			[1] = [[waterex2]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=5,
+	buildingGroundDecalSizeY=5,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[coruwmex_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

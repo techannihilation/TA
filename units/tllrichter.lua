@@ -56,6 +56,11 @@ local unitDef = {
 			[1] = [[targsel2]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=8,
+	buildingGroundDecalSizeY=8,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[tllrichter_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

@@ -1,0 +1,208 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, fusee, fum1, fum2, fum3, flare1, flare2,
+       antenne, arm, target, lights, aimer;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
+            Static_Var_6, Static_Var_7, Static_Var_8, Static_Var_9, Static_Var_10;
+
+// Signal definitions
+#define SIG_AIM				2
+
+
+HitByWeapon(anglex, anglez)
+{
+	var Func_Var_3;
+	Func_Var_3 = get HEALTH;
+	if( Func_Var_3 <= 60 )
+	{
+		if( !Static_Var_5 )
+		{
+			Static_Var_5 = 1;
+			hide arm;
+			explode arm type FALL | SHATTER | SMOKE | BITMAP2;
+		}
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	Static_Var_5 = 0;
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent >= 75 )
+		{
+			if( Static_Var_5 )
+			{
+				Static_Var_5 = 0;
+				show arm;
+			}
+		}
+		if( healthpercent < 66 )
+		{
+			smoketype = 258;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 257;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+fum()
+{
+	while( Static_Var_2 )
+	{
+		explode fusee type BITMAPONLY | BITMAP3;
+		emit-sfx 257 from fum1;
+		emit-sfx 257 from fum2;
+		emit-sfx 257 from fum3;
+		sleep Static_Var_6;
+	}
+}
+
+Launchsequence()
+{
+	sleep 2500;
+	turn arm to y-axis <90.000000> speed <60.000000>;
+	while( Static_Var_9 )
+	{
+		emit-sfx 257 from fum2;
+		emit-sfx 258 from fum3;
+		sleep 33;
+		--Static_Var_9;
+	}
+	Static_Var_9 = 45;
+	Static_Var_2 = 1;
+	Static_Var_6 = 85;
+	Static_Var_7 = [20.000000];
+	Static_Var_8 = [8.000000];
+	start-script fum();
+	while( Static_Var_7 <= [480.000000] )
+	{
+		move fusee to y-axis Static_Var_7 speed Static_Var_8;
+		wait-for-move fusee along y-axis;
+		Static_Var_6 = Static_Var_6 - 3;
+		Static_Var_7 = Static_Var_7 + [20.000000];
+		Static_Var_8 = Static_Var_8 + [8.000000];
+	}
+	Static_Var_6 = 10;
+	move fusee to y-axis [800.000000] speed [200.000000];
+	wait-for-move fusee along y-axis;
+	Static_Var_6 = 6;
+	move fusee to y-axis [1600.000000] speed [260.000000];
+	wait-for-move fusee along y-axis;
+	Static_Var_2 = 0;
+	hide fusee;
+	sleep 1000;
+	spin antenne around y-axis speed <50.000000>;
+	move fusee to y-axis [-0.650000] now;
+	sleep 5000;
+	Static_Var_10 = 0;
+}
+
+Create()
+{
+	dont-cache flare1;
+	dont-cache flare2;
+	dont-cache fusee;
+	hide flare1;
+	hide flare2;
+	move aimer to y-axis [8000.000000] now;
+	Static_Var_2 = 0;
+	Static_Var_9 = 45;
+	Static_Var_10 = 1;
+//	turn body to y-axis <20.000000> now;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 500;
+	}
+	start-script Launchsequence();
+	start-script SmokeUnit();
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = aimer;
+}
+
+AimPrimary(heading, pitch)
+{
+	if( Static_Var_10 )
+	{
+		return (0);
+	}
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	var Func_Var_3, Func_Var_4;
+	turn aimer to y-axis heading now;
+	turn aimer to x-axis <0.000000> - pitch now;
+	Func_Var_3 = [6000.000000];
+	move target to z-axis Func_Var_3 now;
+	while( get GROUND_HEIGHT(get PIECE_XZ(target)) < get PIECE_Y(target) )
+	{
+		Func_Var_3 = Func_Var_3 + [100.000000];
+		move target to z-axis Func_Var_3 now;
+	}
+	Func_Var_4 = get ABS(get XZ_HYPOT(get PIECE_XZ(target) - get PIECE_XZ(base)));
+	turn aimer to x-axis <0.000000> now;
+	move target to z-axis Func_Var_4 now;
+	return (1);
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = target;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode antenne type BITMAPONLY | BITMAP1;
+		explode body type BITMAPONLY | BITMAP2;
+		explode arm type BITMAPONLY | BITMAP4;
+		explode flare1 type BITMAPONLY | BITMAP5;
+		explode flare2 type BITMAPONLY | BITMAP1;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode body type SHATTER | BITMAP1;
+		explode arm type FALL | BITMAP4;
+		explode lights type FALL | BITMAP5;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode body type SHATTER | BITMAP1;
+		explode antenne type BITMAPONLY | BITMAP2;
+		explode arm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode lights type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		return (0);
+	}
+	corpsetype = 3;
+	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP1;
+	explode lights type BITMAPONLY | BITMAP2;
+	explode antenne type SHATTER | EXPLODE_ON_HIT | BITMAP1;
+	explode arm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+}

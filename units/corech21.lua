@@ -12,7 +12,7 @@ local unitDef = {
 	buildCostMetal = 8000,
 	builder = false,
 	buildTime = 50000,
-	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
+	category = [[LEVEL2 ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
 	collisionvolumeoffsets = [[-1 -9 -5]],
 	collisionvolumescales = [[64 70 102]],
 	collisionvolumetest = 1,
@@ -69,6 +69,11 @@ local unitDef = {
 			[1] = [[radar1]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=10,
+	buildingGroundDecalSizeY=10,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[corech21_aoplane.dds]],
 }
 --------------------------------------------------------------------------------
 

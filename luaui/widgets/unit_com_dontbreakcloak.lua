@@ -34,7 +34,7 @@ local isCommander = {
   [UnitDefNames["armcom7"].id] = true,
   [UnitDefNames["taipan"].id] = true,
 
---The losy legacy
+--The lost legacy
   [UnitDefNames["tllcom"].id] = true,
   [UnitDefNames["tllcom3"].id] = true,
   [UnitDefNames["tllcom5"].id] = true,

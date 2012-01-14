@@ -1,0 +1,142 @@
+[Lightning_Flash]
+{
+
+  
+	[FakeRing]
+		{
+		class=CSimpleGroundFlash;
+		[properties]
+		{
+		  texture=groundring;
+		  size=5;
+		  sizeGrowth=3 r-3;
+		  ttl=12;
+
+	          colorMap=1 1 1 1  0.2 0.6 1 11     0 0 0 0.1;
+		}
+    	air=0;
+    	ground=1;
+    	water=0;
+	count=4;
+	}
+
+	[FakeLight]
+		{
+		class=CSimpleGroundFlash;
+		[properties]
+		{
+		  texture=groundflash;
+		  size=5;
+		  sizeGrowth=3 r-3;
+		  ttl=8;
+
+	          colorMap=1 1 1 1  0.2 0.6 1 11     0 0 0 0.1;
+		}
+    	air=0;
+    	ground=1;
+    	water=0;
+	count=4;
+	}
+
+ 	[ShineGlow]
+	{
+		class=explspike;
+		[properties]
+		{
+
+			dir= 0 r-40 r40, 0 r-40 r40, 0 r-40 r40;
+			width=70;
+			length=1;
+			alpha=1;
+			pos=0,5,0;
+			alphadecay=0.10;
+			color=0.45, 0.6, 1;
+
+		}
+		air=1;
+		water=0;
+		ground=1;
+  		count=4; 
+	}
+	[Trailtest]
+	{
+	class=CSimpleParticleSystem;
+
+		[properties]
+		{
+
+		Texture=bombsmoke;
+
+
+		colorMap	= 0 0.25 1 1   0.05 .34 0.96 .8  	0 0 0 0.01;
+
+      		pos 		= 0, 18, 0;
+		gravity		= 0, 0 r-1 r1, 0;
+	       	emitVector	= 0 r-1 r1, 0 r-1 r1, 0 r-1 r1;
+		emitRot		= 0;
+		emitRotSpread	= 0 r-3 r3;
+
+		sizeGrowth	= -0.35;
+		sizeMod		= 1.0;
+
+		airdrag			= 1;
+		particleLife		= 180;
+		particleLifeSpread	= 90;
+		numParticles		= 12;
+		particleSpeed		= 0 r0.2 i0.25;
+		particleSpeedSpread	= 0;
+		particleSize		= 5;
+		particleSizeSpread	= 2;
+
+		directional		= 0; 
+		useAirLos		= 1;
+		}
+	air=1;
+	ground=1;
+	water=0;
+	count=3;
+	}
+
+
+
+	[Spark]
+	{
+	class=CSimpleParticleSystem;
+
+		[properties]
+		{
+
+		Texture=Plasma;
+
+
+		colorMap	= 0 0.25 1 .001   0.05 .34 0.96 .01  	0 0 0 0.01;
+
+      		pos 		= 0, 5 r5, 0;
+		gravity		= 0, 0 r-0.35, 0;
+	       	emitVector	= 0, 1, 0;
+		emitRot		= 0;
+		emitRotSpread	= 0 r-360 r360;
+
+		sizeGrowth	= -0.35;
+		sizeMod		= 1.0;
+
+		airdrag			= 1;
+		particleLife		= 60;
+		particleLifeSpread	= 10;
+		numParticles		= 15;
+		particleSpeed		= 2;
+		particleSpeedSpread	= 4;
+		particleSize		= 5;
+		particleSizeSpread	= 2;
+
+		directional		= 1; 
+		useAirLos		= 1;
+		}
+	air=1;
+	ground=1;
+	water=0;
+	count=1;
+	}
+
+
+}

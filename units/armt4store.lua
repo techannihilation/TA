@@ -15,7 +15,7 @@ local unitDef = {
   buildCostMetal     = 9500,
   builder            = false,
   buildPic           = [[armt4store.png]],
-  buildTime          = 3900,
+  buildTime          = 90000,
   category           = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
   corpse             = [[DEAD]],
   description        = [[T4 Energy Storage (1M)]],
@@ -59,6 +59,11 @@ local unitDef = {
       [[storngy1]],
     },
   },
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=11,
+	buildingGroundDecalSizeY=11,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[armt4store_aoplane.dds]],
 }
 
 
@@ -78,7 +83,7 @@ local featureDefs = {
     height             = 40,
     hitdensity         = 100,
     metal              = unitDef.buildCostMetal*0.8,
-    object             = [[ARMESTOR_DEAD]],
+    object             = [[ARMT4STORE_DEAD]],
     reclaimable        = true,
     seqnamereclamate   = [[TREE1RECLAMATE]],
     world              = [[All Worlds]],

@@ -348,7 +348,7 @@ function widget:DrawScreen()
 				DrawText("Weap:", uWep.type)
 			end
 			
-			DrawText("Info:", format("%d range, %d aoe, %d%% edge", uWep.range, uWep.areaOfEffect, 100 * uWep.edgeEffectiveness))
+			DrawText("Info:", format("%d range, %d aoe, %d%% edge", uWep.range, uWep.damageAreaOfEffect, 100 * uWep.edgeEffectiveness))
 			
 			local dmgString
 			if oBurst > 1 then

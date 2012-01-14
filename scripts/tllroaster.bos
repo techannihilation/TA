@@ -10,6 +10,7 @@ static-var  restore_delay, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_
 
 // Signal definitions
 #define SIG_AIM				2
+#define SIG_AIM_2			4
 #define SIG_AIM_3			8
 
 
@@ -125,7 +126,7 @@ RestoreAfterDelay()
 {
 	set-signal-mask SIG_AIM;
 	sleep restore_delay;
-	turn turret1 to y-axis <0.000000> speed <10.000000>;
+	turn turret1 to y-axis <0.000000> speed <50.000000>;
 }
 
 RestoreAfterDelay3()
@@ -140,7 +141,7 @@ AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	turn turret1 to y-axis heading speed <10.000000>;
+	turn turret1 to y-axis heading speed <50.000000>;
 	wait-for-turn turret1 around y-axis;
 	start-script RestoreAfterDelay();
 	return (1);
@@ -148,7 +149,6 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-
 }
 
 AimFromPrimary(piecenum)
@@ -165,44 +165,20 @@ AimTertiary(heading, pitch)
 {
 	signal SIG_AIM_3;
 	set-signal-mask SIG_AIM_3;
-	if( heading >= 0 AND heading <= 32760 )
-	{
-		Static_Var_2 = 0;
-		turn turret3 to y-axis heading speed <100.000000>;
-		wait-for-turn turret3 around y-axis;
-	}
-	if( heading >= 32760 AND heading <= 65520 )
-	{
-		Static_Var_2 = 1;
-		turn turret2 to y-axis heading speed <100.000000>;
-		wait-for-turn turret2 around y-axis;
-	}
+	turn turret3 to y-axis heading speed <100.000000>;
+	wait-for-turn turret3 around y-axis;
 	start-script RestoreAfterDelay3();
 	return (1);
 }
 
 FireTertiary()
 {
-	if( Static_Var_2 == 0 )
-	{
 	
-	}
-	if( Static_Var_2 == 1 )
-	{
-		
-	}
 }
 
 AimFromTertiary(piecenum)
 {
-	if( Static_Var_2 == 0 )
-	{
-		piecenum = turret3;
-	}
-	if( Static_Var_2 == 1 )
-	{
-		piecenum = turret2;
-	}
+	piecenum = turret3;
 }
 
 QueryTertiary(piecenum)
@@ -210,10 +186,37 @@ QueryTertiary(piecenum)
 	piecenum = flare3;
 }
 
+
+AimSecondary(heading, pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	turn turret2 to y-axis heading speed <100.000000>;
+	wait-for-turn turret2 around y-axis;
+	start-script RestoreAfterDelay3();
+	return (1);
+}
+
+FireSecondary()
+{
+	
+}
+
+AimFromSecondary(piecenum)
+{
+	piecenum = turret2;
+}
+
+QuerySecondary(piecenum)
+{
+	piecenum = flare2;
+}
+
 SweetSpot(piecenum)
 {
 	piecenum = body;
 }
+
 
 Killed(severity, corpsetype)
 {

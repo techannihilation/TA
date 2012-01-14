@@ -70,6 +70,11 @@ local unitDef = {
 			[1] = [[tllgeosel]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=6,
+	buildingGroundDecalSizeY=6,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[tllgeo_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -87,7 +92,7 @@ local featureDefs = {
 		height = 21,
 		hitdensity = 105,
 		metal = 0.8000 * unitDef.buildCostMetal,
-		object = [[tllmex_dead]],
+		object = [[tllgeo_dead]],
 		reclaimable = true,
 		seqnamereclamate = [[tree1reclamate]],
 		world = [[All Worlds]],

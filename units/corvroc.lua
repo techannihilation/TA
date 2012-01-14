@@ -98,7 +98,7 @@ local unitDef = {
 
 local weaponDefs = {
 	CORTRUCK_ROCKET = {
-		areaOfEffect = 175,
+		areaOfEffect = 100,
 		craterBoost = 0,
 		craterMult = 0,
 		edgeEffectiveness = 0.5,
@@ -114,7 +114,7 @@ local weaponDefs = {
 		name = [[Rocket]],
 		noautorange = 1,
 		noSelfDamage = true,
-		range = 1600,
+		range = 1400,
 		reloadtime = 20,
 		renderType = 1,
 		selfprop = true,
@@ -133,7 +133,7 @@ local weaponDefs = {
 		weaponVelocity = 415,
 		damage = {
 			commanders = 650,
-			default = 2350,
+			default = 1950,
 			subs = 5,
 		},
 	},

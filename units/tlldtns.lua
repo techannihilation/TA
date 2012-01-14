@@ -53,6 +53,11 @@ local unitDef = {
 	yardMap = [[ww ww]],
 	zbuffer = 1,
 	featureDefs = nil,
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=4,
+	buildingGroundDecalSizeY=4,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[tlldtns_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -62,7 +67,7 @@ local featureDefs = {
 		autoreclaimable = 0,
 		blocking = true,
 		category = [[dragonteeth]],
-		damage = 2220,
+		damage = 2500,
 		description = [[Dragon's Teeth - NS]],
 		featurereclamate = [[smudge01]],
 		footprintX = 2,

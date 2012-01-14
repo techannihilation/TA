@@ -134,7 +134,7 @@ local function createminimap(r)
 		
 		color=r.cresizebackground,
 		texturecolor=r.cmovecolor,
-		texture="/LuaUI/Images/RedMinimap/resize.png",
+		texture="luaui/images/redminimap/resize.png",
 		
 		border=r.cborder,
 		movable=r.dragbutton,
@@ -153,7 +153,7 @@ local function createminimap(r)
 		
 		color=r.cmovebackground,
 		texturecolor=r.cmovecolor,
-		texture="/LuaUI/Images/RedMinimap/move.png",
+		texture="luaui/images/redminimap/move.png",
 		
 		border=r.cborder,
 		movable=r.dragbutton,

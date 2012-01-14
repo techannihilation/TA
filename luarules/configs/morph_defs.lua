@@ -591,6 +591,80 @@ local morphDefs = {
 		time = 30,
 		xp = 0.60,
 	},
+      armnanotc = {
+		  {
+		into = 'armnanotc1',
+		time = 30,
+		tech = 1,
+		metal = 380,
+		energy = 11000,
+	},
+		  {
+		into = 'ananotower',
+		time = 30,
+		tech = 1,
+		metal = 1500,
+		energy = 36000,
+	},
+	},
+      armnanotc1 = {
+		into = 'armnanotc2',
+		tech = 2,
+		time = 60,
+		metal = 1320,
+		energy = 43000,
+	},
+      armnanotc2 = {
+		into = 'armnanotc3',
+		tech = 3,
+		time = 120,
+		metal = 3520,
+		energy = 99000,
+	},
+      cornanotc = {
+		  {
+		into = 'cornanotc1',
+		tech = 1,
+		time = 30,
+		metal = 680,
+		energy = 11000,
+	},
+		  {
+		into = 'cnanotower',
+		tech = 1,
+		time = 30,
+		metal = 1500,
+		energy = 36000,
+	},
+	},
+      cornanotc1 = {
+		into = 'cornanotc2',
+		tech = 2,
+		time = 60,
+		metal = 1320,
+		energy = 43000,
+	},
+      cornanotc2 = {
+		into = 'cornanotc3',
+		tech = 3,
+		time = 120,
+		metal = 3520,
+		energy = 99000,
+	},
+      tllnanotc = {
+		into = 'tllnanotc1',
+		tech = 1,
+		time = 30,
+		metal = 800,
+		energy = 13000,
+	},
+      tllnanotc1 = {
+		into = 'tllnanotc2',
+		tech = 2,
+		time = 60,
+		metal = 2700,
+		energy = 33000,
+	},
 }
 
 

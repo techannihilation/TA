@@ -74,6 +74,11 @@ local unitDef = {
 			[1] = [[tllwindsel]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=6,
+	buildingGroundDecalSizeY=6,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[tllwindtrap_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

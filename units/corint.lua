@@ -47,6 +47,7 @@ local unitDef = {
 	standingfireorder = 2,
 	turnRate = 0,
 	unitname = [[corint]],
+	usePieceCollisionVolumes = 1,
 	workerTime = 0,
 	yardMap = [[ooooooooooooooooooooooooo]],
 	customparams = {
@@ -86,6 +87,11 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=8,
+	buildingGroundDecalSizeY=8,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[corint_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

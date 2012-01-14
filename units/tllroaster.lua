@@ -85,8 +85,16 @@ local unitDef = {
 			def = [[TLL_OBLITERATOR]],
 			onlyTargetCategory = [[NOTVTOL]],
 		},
+		[2] = {
+			def = [[LIGHTNING]],
+			mainDir = [[1 0 0]],
+			maxAngleDif =220,
+			onlyTargetCategory = [[NOTVTOL]],
+		},
 		[3] = {
 			def = [[LIGHTNING]],
+			mainDir = [[-1 0 4]],
+			maxAngleDif = 220,
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
