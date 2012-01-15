@@ -21,6 +21,7 @@ local unitDef = {
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	customParams           = {
 		ismorphingrc = true,
+		providetech = [[Advanced T1 Unit Research Centre,Advanced T2 Unit Research Centre]],
 	},
 	description = [[Enable Offensive Defense]],
 	designation = [[LAB-01]],

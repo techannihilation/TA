@@ -16,6 +16,9 @@ local unitDef = {
 	canstop = 1,
 	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
+	customparams = {
+		RequireTech = [[Advanced T1 Unit Research Centre]]
+		       },
 	corpse = [[dead]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[Range Mortar Cannon]],

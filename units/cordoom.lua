@@ -19,6 +19,9 @@ local unitDef = {
 	canAttack = true,
 	canstop = 1,
 	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
+	customparams = {
+		RequireTech = [[Advanced T2 Unit Research Centre]]
+		       },
 	corpse = [[DEAD]],
 	damageModifier = 0.08,
 	description = [[Energy Weapon]],

@@ -19,7 +19,10 @@ local unitDef = {
 	collisionvolumetest = 1,
 	collisionvolumetype = [[Box]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
-	description = [[Enable New t1 units]],
+	customparams = {
+		providetech = [[Advanced T1 Unit Research Centre]]
+		       },
+	description = [[Advanced T1 Unit Research Centre]],
 	designation = [[LAB-01]],
 	energyMake = 0,
 	energyStorage = 0,
