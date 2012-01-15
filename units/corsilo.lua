@@ -19,6 +19,9 @@ local unitDef = {
 	canAttack = true,
 	canstop = 1,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
+	customparams = {
+		RequireTech = [[Advanced T2 Unit Research Centre]]
+		       },
 	corpse = [[DEAD]],
 	description = [[Nuclear ICBM Launcher]],
 	energyStorage = 0,
