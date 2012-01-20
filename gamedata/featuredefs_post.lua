@@ -104,7 +104,7 @@ local function recursiveHeap(fd, ud, heapLevel)
 	if isstring(fd.featuredead) then
 		fname = fd.featuredead
 		innerFd = FeatureDefs[fname]
-		Spring.Echo(innerFd)
+		--Spring.Echo(innerFd)
 		if innerFd then
 			-- unitfeature has some featureDead
 			processFeature(fname, ud, heapLevel)
@@ -115,11 +115,11 @@ local function recursiveHeap(fd, ud, heapLevel)
 end
 
 local function processUnitFeatures(ud)
-	Spring.Echo("PUF")
+	--Spring.Echo("PUF")
 	if (isstring(ud.corpse) and istable(ud.featuredefs)) then
 		fname = ud.corpse
 		fd = FeatureDefs[fname]
-		Spring.Echo(fd)
+	--	Spring.Echo(fd)
 		if (fd) then
 			-- unit has some corpse
 			if (ud.corpse:lower():find("heap")) then
@@ -188,7 +188,6 @@ for udName, ud in pairs(UnitDefs) do
     ProcessUnitDef(udName, ud)
   end
 end
-
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
