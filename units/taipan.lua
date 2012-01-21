@@ -22,6 +22,9 @@ local unitDef = {
 	cloakCost = 50,
 	cloakCostMoving = 100,
 	corpse = [[dead]],
+	customparams = {
+		RequireTech = [[Advanced T2 Unit Research Centre]]
+		       },
 	defaultmissiontype = [[Standby]],
 	description = [[Cloakable Assault KBot]],
 	designation = [[ARM-K-74]],

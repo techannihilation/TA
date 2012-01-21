@@ -20,6 +20,9 @@ local unitDef = {
 	canstop = 1,
 	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	corpse = [[DEAD]],
+	customparams = {
+		RequireTech = [[Advanced T2 Unit Research Centre]]
+		       },
 	defaultmissiontype = [[Standby]],
 	description = [[AK X-1 General Heavy Assault "Vengence"]],
 	designation = [[AKMech]],

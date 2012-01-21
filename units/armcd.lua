@@ -24,6 +24,9 @@ local unitDef = {
 	collisionVolumeTest = 1,
 	collisionVolumeType = [[CylZ]],
 	corpse = [[dead]],
+	customparams = {
+		RequireTech = [[Advanced T2 Unit Research Centre]]
+		       },
 	defaultmissiontype = [[Standby]],
 	description = [[Heavy Laser Tank]],
 	designation = [[ARM-CD]],
