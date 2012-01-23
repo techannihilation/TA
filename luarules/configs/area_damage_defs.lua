@@ -4,6 +4,7 @@ local DAMAGE_PERIOD = 2 -- how often damage is applied
 
 local weapons = {
 	tllacid_acidrain_rocket = { radius = 400, damage = 100, duration = 625, rangeFall = 0.6, timeFall = 0.5},
+	armsonic_sonic_cannon = { radius = 95, damage = 200, duration = 120, rangeFall = 0.25, timeFall = 0.8}
 }
 
 -- radius		- defines size of sphereical area in which damage is dealt
