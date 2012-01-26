@@ -87,12 +87,11 @@ else
     sizeExp         = 2.5,
 
     layer           = 1,
-    texture         = "bitmaps/fireball_green.tga",
+    texture         = "bitmaps/mustard.png",
   }
 
 
   local heatFX = {
-    colormap        = { {0, 0, 0, 0.01}, {0.75, 0.75, 0.9, 0.02}, {0.2, 0.45, 0.3, 0.1}, {0.16, 0.4, 0.1, 0.12}, {0.13, 0.3, 0.01, 0.15},  {0.13, 0.4, 0.01, 0.15}, {0.13, 0.5, 0.01, 0.15}, {0.1, 0.035, 0.01, 0.1}, {0, 0, 0, 0.01} },
     count         = 1,
     emitVector    = {0,1,0},
     emitRotSpread = 60,
@@ -115,7 +114,7 @@ else
     animSpeed     = 0.25,
     heat          = 6.5,
 
-    texture       = "bitmaps/mustard.png",
+    texture       = "bitmaps/GPL/Lups/mynoise2.png",
   }
 
   local Lups
