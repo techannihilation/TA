@@ -19,9 +19,6 @@ local unitDef = {
 	canAttack = true,
 	canstop = 1,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
-	customparams = {
-		RequireTech = [[Advanced T2 Unit Research Centre]]
-		       },
 	collisionvolumeoffsets = [[0 -19 0]],
 	collisionvolumescales = [[65 150 90]],
 	collisionvolumetest = 0,

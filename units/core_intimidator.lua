@@ -16,9 +16,6 @@ local unitDef = {
 	canGuard = true,
 	canstop = 1,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
-	customparams = {
-		RequireTech = [[Advanced T2 Unit Research Centre]]
-		       },
 	corpse = [[CORINT_DEAD]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[- Long Range EMP Paralizer]],

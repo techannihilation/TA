@@ -17,6 +17,9 @@ local unitDef = {
 	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
+	customparams = {
+			RequireTech = [[Advanced T4 Unit Research Centre]]
+       },
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[Anti Experimental Cannon]],
 	designation = [[BOUCHER-GUARD]],

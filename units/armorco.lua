@@ -24,6 +24,9 @@ local unitDef = {
 	collisionvolumescales = [[104 106 68]],
 	collisionvolumetype = [[Ell]],
 	corpse = [[Dead]],
+	customparams = {
+				RequireTech = [[Advanced T3 Unit Research Centre]]
+		       },
 	damageModifier = 1,
 	defaultmissiontype = [[Standby]],
 	description = [[Experimental Assault Kbot]],
