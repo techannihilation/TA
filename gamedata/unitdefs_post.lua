@@ -198,6 +198,22 @@ local WTimeUnits = {
 	}
 }
 	
+local Nanos = {
+	armnanotc = true,
+	armnanotc1 = true,
+	armnanotc2 = true,
+	armnanotc3 = true,
+	cornanotc = true,
+	cornanotc1 = true,
+	cornanotc2 = true,
+	cornanotc3 = true,
+	armhevsenan = true,
+	corhevsenan = true,
+	tllnanotc = true,
+	tllnanotc1 = true,
+	tllnanotc2 = true,
+}
+
 if (Spring.GetModOptions) then
 	local modOptions = Spring.GetModOptions()
 	for name, ud in pairs(UnitDefs) do  
@@ -234,6 +250,10 @@ local WorkerTimeThresholds = {
 		{wt = 0, 		color={r = 0.3, g = 0.3, 	b = 0.3}}
 	}
 }
+local NanoCoefs = {
+	reclaimCoef = 0.832,
+	repairCoef = 0.875
+}
 
 function WorkerTimeThresholds:getColor(wt, c)
 	local nearestHigherT, nearestLowerT
@@ -268,14 +288,19 @@ end
 -- Setting nanocolor
 for name, ud in pairs(UnitDefs) do
 	if ((ud.workertime or 0) > 0) then
+		udwt = ud.workertime
+		if(Nanos[ud.unitname]) then
+			ud.repairspeed = math.pow(udwt, NanoCoefs.repairCoef)
+			ud.reclaimspeed = math.pow(udwt, NanoCoefs.reclaimCoef)
+		end
 		if(WTimeUnits.tll[ud.unitname]) then
-			ud.nanocolor = {WorkerTimeThresholds:getColor(ud.workertime, "y")}
+			ud.nanocolor = {WorkerTimeThresholds:getColor(udwt, "y")}
 		elseif (WTimeUnits.core[ud.unitname]) then
-			ud.nanocolor = {WorkerTimeThresholds:getColor(ud.workertime, "b")}
+			ud.nanocolor = {WorkerTimeThresholds:getColor(udwt, "b")}
 		elseif (WTimeUnits.arm[ud.unitname]) then
-			ud.nanocolor = {WorkerTimeThresholds:getColor(ud.workertime, "g")}
+			ud.nanocolor = {WorkerTimeThresholds:getColor(udwt, "g")}
 		else
-			ud.nanocolor = {WorkerTimeThresholds:getColor(ud.workertime, "w")}
+			ud.nanocolor = {WorkerTimeThresholds:getColor(udwt, "w")}
 		end
 	end
 end
