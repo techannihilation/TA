@@ -40,7 +40,7 @@ local WTimeUnits = {
 		["armcom1"] = true,
 		["armcom4"] = true,
 		["armcom5"] = true,
-		["armcom6"] = true,FLASH1
+		["armcom6"] = true,
 		["armcom7"] = true,
 		["armcp"] = true,
 		["armcs"] = true,
@@ -134,7 +134,7 @@ local WTimeUnits = {
 		["cornanotc2"] = true,
 		["cornanotc3"] = true,
 		["cornecro"] = true,
-		["corplat"] = true,FLASH1
+		["corplat"] = true,
 		["correcl"] = true,
 		["corsy"] = true,
 		["cortl"] = true,
@@ -242,7 +242,7 @@ local WorkerTimeThresholds = {
 		{wt = 1000,		color={r = 0.85, g = 0.85, 	b = 0.5}},
 		{wt = 250, 		color={r = 0.55, g = 0.55, 	b = 0.2}},
 		{wt = 0, 		color={r = 0.35, g = 0.35, 	b = 0.0}}
-	},FLASH1
+	},
 	w = {
 		{wt = 2000,		color={r = 1.0, g = 1.0, 	b = 1.0}},
 		{wt = 1000,		color={r = 0.8, g = 0.8, 	b = 0.8}},
@@ -307,190 +307,8 @@ end
 
 -- Setting collisionvolumetest true for all canFly units
 for name, ud in pairs(UnitDefs) do
-			ud.collisionvolumetest = true
-	end
-end
-
-
-		rel = (wt - nearestLowerT.wt) / (nearestHigherT.wt -  nearestLowerT.wt)
-	end
-	
-	return 
-		(nearestLowerT.color.r + rel * (nearestHigherT.color.r - nearestLowerT.color.r)), 
-		(nearestLowerT.color.g + rel * (nearestHigherT.color.g - nearestLowerT.color.g)), 
-		(nearestLowerT.color.b + rel * (nearestHigherT.color.b - nearestLowerT.color.b))
-end
-
-
--- Setting nanocolor
-for name, ud in pairs(UnitDefs) do
-	if ((ud.workertime or 0) > 0) then
-		udwt = ud.workertime
-		if(Nanos[ud.unitname]) then
-			ud.repairspeed = math.pow(udwt, NanoCoefs.repairCoef)
-			ud.reclaimspeed = math.pow(udwt, NanoCoefs.reclaimCoef)
-		end
-		if(WTimeUnits.tll[ud.unitname]) then
-			ud.nanocolor = {WorkerTimeThresholds:getColor(udwt, "y")}
-		elseif (WTimeUnits.core[ud.unitname]) then
-			ud.nanocolor = {WorkerTimeThresholds:getColor(udwt, "b")}
-		elseif (WTimeUnits.arm[ud.unitname]) then
-			ud.nanocolor = {WorkerTimeThresholds:getColor(udwt, "g")}
-		else
-			ud.nanocolor = {WorkerTimeThresholds:getColor(udwt, "w")}
-		end
-	end
-end
-
--- Setting collisionvolumetest true for all canFly units
-for name, ud in pairs(UnitDefs) do
-			ud.collisionvolumetest = true
-	end
-end
-
-
-		rel = (wt - nearestLowerT.wt) / (nearestHigherT.wt -  nearestLowerT.wt)
-	end
-	
-	return 
-		(nearestLowerT.color.r + rel * (nearestHigherT.color.r - nearestLowerT.color.r)), 
-		(nearestLowerT.color.g + rel * (nearestHigherT.color.g - nearestLowerT.color.g)), 
-		(nearestLowerT.color.b + rel * (nearestHigherT.color.b - nearestLowerT.color.b))
-end
-
-
--- Setting nanocolor
-for name, ud in pairs(UnitDefs) do
-	if ((ud.workertime or 0) > 0) then
-		udwt = ud.workertime
-		if(Nanos[ud.unitname]) then
-			ud.repairspeed = math.pow(udwt, NanoCoefs.repairCoef)
-			ud.reclaimspeed = math.pow(udwt, NanoCoefs.reclaimCoef)
-		end
-		if(WTimeUnits.tll[ud.unitname]) then
-			ud.nanocolor = {WorkerTimeThresholds:getColor(udwt, "y")}
-		elseif (WTimeUnits.core[ud.unitname]) then
-			ud.nanocolor = {WorkerTimeThresholds:getColor(udwt, "b")}
-		elseif (WTimeUnits.arm[ud.unitname]) then
-			ud.nanocolor = {WorkerTimeThresholds:getColor(udwt, "g")}
-		else
-			ud.nanocolor = {WorkerTimeThresholds:getColor(udwt, "w")}
-		end
-	end
-end
-
--- Setting collisionvolumetest true for all canFly units
-for name, ud in pairs(UnitDefs) do
-			ud.collisionvolumetest = true
-	end
-end
-
-
-		rel = (wt - nearestLowerT.wt) / (nearestHigherT.wt -  nearestLowerT.wt)
-	end
-	
-	return 
-		(nearestLowerT.color.r + rel * (nearestHigherT.color.r - nearestLowerT.color.r)), 
-		(nearestLowerT.color.g + rel * (nearestHigherT.color.g - nearestLowerT.color.g)), 
-		(nearestLowerT.color.b + rel * (nearestHigherT.color.b - nearestLowerT.color.b))
-end
-
-
--- Setting nanocolor
-for name, ud in pairs(UnitDefs) do
-	if ((ud.workertime or 0) > 0) then
-		udwt = ud.workertime
-		if(Nanos[ud.unitname]) then
-			ud.repairspeed = math.pow(udwt, NanoCoefs.repairCoef)
-			ud.reclaimspeed = math.pow(udwt, NanoCoefs.reclaimCoef)
-		end
-		if(WTimeUnits.tll[ud.unitname]) then
-			ud.nanocolor = {WorkerTimeThresholds:getColor(udwt, "y")}
-		elseif (WTimeUnits.core[ud.unitname]) then
-			ud.nanocolor = {WorkerTimeThresholds:getColor(udwt, "b")}
-		elseif (WTimeUnits.arm[ud.unitname]) then
-			ud.nanocolor = {WorkerTimeThresholds:getColor(udwt, "g")}
-		else
-			ud.nanocolor = {WorkerTimeThresholds:getColor(udwt, "w")}
-		end
-	end
-end
-
--- Setting collisionvolumetest true for all canFly units
-for name, ud in pairs(UnitDefs) do
-			ud.collisionvolumetest = true
-	end
-end
-
-
-		rel = (wt - nearestLowerT.wt) / (nearestHigherT.wt -  nearestLowerT.wt)
-	end
-	
-	return 
-		(nearestLowerT.color.r + rel * (nearestHigherT.color.r - nearestLowerT.color.r)), 
-		(nearestLowerT.color.g + rel * (nearestHigherT.color.g - nearestLowerT.color.g)), 
-		(nearestLowerT.color.b + rel * (nearestHigherT.color.b - nearestLowerT.color.b))
-end
-
-
--- Setting nanocolor
-for name, ud in pairs(UnitDefs) do
-	if ((ud.workertime or 0) > 0) then
-		udwt = ud.workertime
-		if(Nanos[ud.unitname]) then
-			ud.repairspeed = math.pow(udwt, NanoCoefs.repairCoef)
-			ud.reclaimspeed = math.pow(udwt, NanoCoefs.reclaimCoef)
-		end
-		if(WTimeUnits.tll[ud.unitname]) then
-			ud.nanocolor = {WorkerTimeThresholds:getColor(udwt, "y")}
-		elseif (WTimeUnits.core[ud.unitname]) then
-			ud.nanocolor = {WorkerTimeThresholds:getColor(udwt, "b")}
-		elseif (WTimeUnits.arm[ud.unitname]) then
-			ud.nanocolor = {WorkerTimeThresholds:getColor(udwt, "g")}
-		else
-			ud.nanocolor = {WorkerTimeThresholds:getColor(udwt, "w")}
-		end
-	end
-end
-
--- Setting collisionvolumetest true for all canFly units
-for name, ud in pairs(UnitDefs) do
-			ud.collisionvolumetest = true
-	end
-end
-
-
-	
-	return 
-		(nearestLowerT.color.r + rel * (nearestHigherT.color.r - nearestLowerT.color.r)), 
-		(nearestLowerT.color.g + rel * (nearestHigherT.color.g - nearestLowerT.color.g)), 
-		(nearestLowerT.color.b + rel * (nearestHigherT.color.b - nearestLowerT.color.b))
-end
-
-
--- Setting nanocolor
-for name, ud in pairs(UnitDefs) do
-	if ((ud.workertime or 0) > 0) then
-		udwt = ud.workertime
-		if(Nanos[ud.unitname]) then
-			ud.repairspeed = math.pow(udwt, NanoCoefs.repairCoef)
-			ud.reclaimspeed = math.pow(udwt, NanoCoefs.reclaimCoef)
-		end
-		if(WTimeUnits.tll[ud.unitname]) then
-			ud.nanocolor = {WorkerTimeThresholds:getColor(udwt, "y")}
-		elseif (WTimeUnits.core[ud.unitname]) then
-			ud.nanocolor = {WorkerTimeThresholds:getColor(udwt, "b")}
-		elseif (WTimeUnits.arm[ud.unitname]) then
-			ud.nanocolor = {WorkerTimeThresholds:getColor(udwt, "g")}
-		else
-			ud.nanocolor = {WorkerTimeThresholds:getColor(udwt, "w")}
-		end
-	end
-end
-
--- Setting collisionvolumetest all units
-for name, ud in pairs(UnitDefs) do
-			ud.collisionvolumetest = true
+	if (ud.canfly) then
+		ud.collisionvolumetest = true
 	end
 end
 
