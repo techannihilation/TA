@@ -305,10 +305,8 @@ for name, ud in pairs(UnitDefs) do
 	end
 end
 
--- Setting collisionvolumetest true for all canFly units
+-- Setting collisionvolumetest true for all units
 for name, ud in pairs(UnitDefs) do
-	if (ud.canfly) then
 		ud.collisionvolumetest = true
-	end
 end
 
