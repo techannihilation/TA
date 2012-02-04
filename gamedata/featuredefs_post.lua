@@ -80,6 +80,23 @@ local featureConfig =
 -- deeper nesting wont't be accepted
 }
 
+local skipUnits = {
+	['cormaw'] = true,
+	['cordrag'] = true,
+	['corfdrag'] = true,
+	['corfort'] = true,
+	
+	['armclaw'] = true,
+	['armdrag'] = true,
+	['armfdrag'] = true,
+	['armfort'] = true,
+	
+	['tlldtns'] = true,
+	['tlladt'] = true,
+	['tlldt'] = true,
+	
+}
+
 
 
 local function processFeature(fname, ud, level)
@@ -115,6 +132,10 @@ local function recursiveHeap(fd, ud, heapLevel)
 end
 
 local function processUnitFeatures(ud)
+	if skipUnits[ud.unitname or ""] then
+		return
+	end
+	
 	--Spring.Echo("PUF")
 	if (isstring(ud.corpse) and istable(ud.featuredefs)) then
 		fname = ud.corpse
