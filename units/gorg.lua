@@ -21,6 +21,9 @@ local unitDef = {
 	canstop = 1,
 	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	corpse = [[DEAD1]],
+	customparams = {
+				RequireTech = [[Advanced T3 Unit Research Centre]]
+		       },
 	defaultmissiontype = [[Standby]],
 	description = [[(barely) Mobile Heavy Turret]],
 	energyMake = 35,
