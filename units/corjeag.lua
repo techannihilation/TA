@@ -21,6 +21,9 @@ local unitDef = {
 	category = [[ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL SMALL WEAPON]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
+	customparams = {
+		RequireTech = [[Advanced T1 Unit Research Centre]]
+		       },
 	defaultmissiontype = [[Standby]],
 	description = [[Anti-Air Vehicle]],
 	designation = [[COR-AAAV]],
