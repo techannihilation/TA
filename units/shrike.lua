@@ -22,6 +22,9 @@ local unitDef = {
 	category = [[ALL MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL WEAPON]],
 	collide = false,
 	cruiseAlt = 200,
+	customparams = {
+				RequireTech = [[Advanced T3 Unit Research Centre]]
+		       },
 	defaultmissiontype = [[VTOL_standby]],
 	description = [[Stealth Fighter]],
 	designation = [[AFD-J9]],

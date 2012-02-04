@@ -16,6 +16,9 @@ local unitDef = {
 	canstop = 1,
 	category = [[LEVEL3 ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON PLANT]],
 	corpse = [[dead]],
+	customParams = {
+			providetech = [[Advanced T1 Unit Research Centre,Advanced T2 Unit Research Centre,Advanced T3 Unit Research Centre,Advanced T4 Unit Research Centre]],
+	},
 	description = [[build T4 Con]],
 	designation = [[COC-1]],
 	energyStorage = 250,

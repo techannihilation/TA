@@ -19,6 +19,7 @@ local unitDef = {
 	collisionvolumetype = [[Box]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	customParams           = {
+		providetech = [[Advanced T1 Unit Research Centre,Advanced T2 Unit Research Centre,Advanced T3 Unit Research Centre]],
 		ismorphingrc = true,
 	},
 	description = [[Enable New t2 units]],

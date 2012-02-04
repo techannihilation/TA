@@ -23,6 +23,9 @@ local unitDef = {
 	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	copyright = [[Copyright 1998 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
+	customparams = {
+				RequireTech = [[Advanced T3 Unit Research Centre]]
+		       },
 	damageModifier = 0.09,
 	defaultmissiontype = [[Standby]],
 	description = [[Armored Mobile Blaster]],

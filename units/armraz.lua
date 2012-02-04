@@ -24,6 +24,9 @@ local unitDef = {
 	collisionvolumescales = [[38.0 58.0 26.0]],
 	collisionvolumetype = [[box]],
 	corpse = [[DEAD]],
+	customparams = {
+				RequireTech = [[Advanced T3 Unit Research Centre]]
+		       },
 	defaultmissiontype = [[Standby]],
 	description = [[Battle Mech]],
 	explodeAs = [[MECH_BLASTSML]],

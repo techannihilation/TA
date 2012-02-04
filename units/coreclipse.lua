@@ -30,6 +30,9 @@ local unitDef = {
 	collide = false,
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	cruiseAlt = 320,
+	customparams = {
+				RequireTech = [[Advanced T3 Unit Research Centre]]
+		       },
 	defaultmissiontype = [[VTOL_standby]],
 	description = [[Long Ammo Heavy Bomber]],
 	designation = [[MST Tu-95 Bear-A]],
