@@ -15,7 +15,7 @@ local unitDef = {
 	buildTime = 160000,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
-	corpse = [[tllgeo_dead]],
+	corpse = [[tllmohogeo_dead]],
 	description = [[Hazardous Geothermal Foundry Produces Energy/Metal]],
 	designation = [[]],
 	energyMake = 3000,
@@ -85,7 +85,7 @@ local unitDef = {
 --------------------------------------------------------------------------------
 
 local featureDefs = {
-	tllgeo_dead = {
+	tllmohogeo_dead = {
 		blocking = true,
 		category = [[tll_corpses]],
 		damage = 0.6000 * unitDef.maxDamage,
@@ -102,7 +102,7 @@ local featureDefs = {
 		seqnamereclamate = [[tree1reclamate]],
 		world = [[All Worlds]],
 	},
-	tllgeo_heap = {
+	tllmohogeo_heap = {
 		blocking = false,
 		category = [[heaps]],
 		damage = 0.3600 * unitDef.maxDamage,
