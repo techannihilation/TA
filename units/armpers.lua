@@ -23,7 +23,7 @@ local unitDef = {
 	category = [[ALL MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL WEAPON]],
 	cruiseAlt = 60,
 	customparams = {
-		RequireTech = [[Advanced T2 Unit Research Centre]]
+		RequireTech = [[Advanced T3 Unit Research Centre]]
 		       },
 	defaultmissiontype = [[VTOL_standby]],
 	description = [[Advanced Gunship [Anti T3/T4]],

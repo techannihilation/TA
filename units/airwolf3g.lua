@@ -24,7 +24,7 @@ local unitDef = {
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	cruiseAlt = 120,
 	customparams = {
-		RequireTech = [[Advanced T2 Unit Research Centre]]
+		RequireTech = [[Advanced T3 Unit Research Centre]]
 		       },
 	defaultmissiontype = [[VTOL_standby]],
 	description = [[Super Fighter]],
