@@ -7,10 +7,10 @@ local unitName = "ccovertopscentre"
 
 local unitDef = {
 	activateWhenBuilt = true,
-	buildCostEnergy = 1300000,
+	buildCostEnergy = 10500000,
 	buildCostMetal = 76000,
 	builder = true,
-	buildTime = 65250,
+	buildTime = 240000,
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,

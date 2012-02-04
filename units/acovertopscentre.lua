@@ -7,10 +7,10 @@ local unitName = "acovertopscentre"
 
 local unitDef = {
 	activateWhenBuilt = true,
-	buildCostEnergy = 1400000,
+	buildCostEnergy = 10000000,
 	buildCostMetal = 75000,
 	builder = true,
-	buildTime = 65250,
+	buildTime = 250000,
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
