@@ -6,7 +6,7 @@
 piece  torso, mlasflsh, bigflsh, nanospray, nanogun, luparm, ruparm, pelvis,
        rthigh, lthigh, biggun, lleg, lfoot, rleg, rfoot, head;
 
-static-var  bMoving, bAiming, Static_Var_3, Static_Var_4, justfired,
+static-var  bMoving, bAiming, Static_Var_3, Static_Var_4, Static_Var_6 ,justfired,
 			building, buildx, buildy, moveSpeed, currentSpeed;
 
 // Signal definitions
@@ -444,6 +444,11 @@ MotionControl(Func_Var_1, Func_Var_2)
 	}
 }
 
+Shield()
+{
+	Static_Var_6 = !Static_Var_6;
+}
+
 Create()
 {
 	hide bigflsh;
@@ -454,6 +459,7 @@ Create()
 	justfired = FALSE;
 	Static_Var_3 = 1;
 	Static_Var_4 = 0;
+	Static_Var_6 = 1;
 	buildy = 0;
 	buildx = 0;
 	moveSpeed = get MAX_SPEED;
@@ -539,6 +545,28 @@ FirePrimary()
 	hide mlasflsh;
 	sleep 400;
 	justfired = FALSE;
+}
+
+AimFromSecondary(piecenum)
+{
+	piecenum = rleg;
+}
+
+QuerySecondary(piecenum)
+{
+	piecenum = rleg;
+}
+
+AimSecondary(heading, pitch)
+{
+	if( Static_Var_6 )
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
 }
 
 AimFromTertiary(piecenum)
