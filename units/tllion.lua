@@ -48,6 +48,11 @@ local unitDef = {
 	workerTime = 0,
 	yardMap = [[yoooyyy yoooooo ooooooo ooooooo yoooooo yoooooy yyooooy ]],
 	featureDefs = nil,
+	sfxtypes = {
+		explosiongenerators = {
+			[1] = [[custom:Trail_Large_Rocket]],
+		},
+	},
 	sounds = {
 		canceldestruct = [[cancel2]],
 		underattack = [[warning1]],
