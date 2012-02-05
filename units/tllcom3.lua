@@ -69,6 +69,7 @@ local unitDef = {
 	objectName = [[TLLCOM]],
 	radarDistance = 940,
 	reclaimable = false,
+	script = [[tllcom.cob]],
 	seismicSignature = 0,
 	selfDestructAs = [[COMMANDER_SELFD]],
 	selfDestructCountdown = 20,

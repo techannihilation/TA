@@ -70,6 +70,7 @@ local unitDef = {
 	onoffable = true,
 	radarDistance = 1120,
 	reclaimable = false,
+	script = [[corcom.cob]],
 	seismicSignature = 0,
 	selfDestructAs = [[COMMANDER_SELFD]],
 	selfDestructCountdown = 20,
