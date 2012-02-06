@@ -69,6 +69,7 @@ local unitDef = {
 	objectName = [[ARMCOM]],
 	radarDistance = 760,
 	reclaimable = false,
+	script = [[armcom.cob]],
 	seismicSignature = 0,
 	selfDestructAs = [[COMMANDER_blast1]],
 	selfDestructCountdown = 20,

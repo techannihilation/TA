@@ -70,6 +70,7 @@ local unitDef = {
 	onoffable = true,
 	radarDistance = 1060,
 	reclaimable = false,
+	script = [[armcom.cob]],
 	seismicSignature = 0,
 	selfDestructAs = [[COMMANDER_SELFD]],
 	selfDestructCountdown = 20,

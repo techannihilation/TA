@@ -6,11 +6,13 @@
 piece  torso, ruparm, luparm, rbigflash, nanospray, pelvis, lfirept, head,
        lthigh, rthigh, nanolath, biggun, rleg, lleg;
 
-static-var  bMoving, bAiming, Static_Var_3, Static_Var_4, justfired,
-			building, buildx, buildy, moveSpeed, currentSpeed;
+static-var  bMoving, bAiming, Static_Var_3, gun_3, gun_1,
+            Static_Var_6, Static_Var_7, Static_Var_8, Static_Var_9, Static_Var_10,
+            Static_Var_11;
 
 // Signal definitions
 #define SIG_AIM				2
+
 
 walk()
 {
@@ -28,7 +30,7 @@ walk()
 		turn biggun to x-axis <-63.000000> now;
 		turn rleg to x-axis <39.000000> now;
 		turn lleg to x-axis <42.000000> now;
-		sleep 4000 / currentSpeed;
+		sleep 4000 / Static_Var_11;
 	}
 	if( bMoving )
 	{
@@ -36,7 +38,7 @@ walk()
 		turn ruparm to x-axis <-13.000000> now;
 		turn luparm to x-axis <12.000000> now;
 		turn nanolath to x-axis <-42.000000> now;
-		sleep 4000 / currentSpeed;
+		sleep 4000 / Static_Var_11;
 	}
 	if( bMoving )
 	{
@@ -51,7 +53,7 @@ walk()
 		turn biggun to x-axis <-63.000000> now;
 		turn rleg to x-axis <52.000000> now;
 		turn lleg to x-axis <28.000000> now;
-		sleep 10000 / currentSpeed;
+		sleep 10000 / Static_Var_11;
 	}
 	if( bMoving )
 	{
@@ -66,7 +68,7 @@ walk()
 		turn biggun to x-axis <-63.000000> now;
 		turn rleg to x-axis <58.000000> now;
 		turn lleg to x-axis <16.000000> now;
-		sleep 9000 / currentSpeed;
+		sleep 9000 / Static_Var_11;
 	}
 	if( bMoving )
 	{
@@ -80,7 +82,7 @@ walk()
 		turn nanolath to x-axis <-42.000000> now;
 		turn rleg to x-axis <44.000000> now;
 		turn lleg to x-axis <6.000000> now;
-		sleep 9000 / currentSpeed;
+		sleep 9000 / Static_Var_11;
 	}
 	if( bMoving )
 	{
@@ -95,7 +97,7 @@ walk()
 		turn biggun to x-axis <-63.000000> now;
 		turn rleg to x-axis <71.000000> now;
 		turn lleg to x-axis <20.000000> now;
-		sleep 8000 / currentSpeed;
+		sleep 8000 / Static_Var_11;
 	}
 	if( bMoving )
 	{
@@ -106,7 +108,7 @@ walk()
 		turn ruparm to x-axis <8.000000> now;
 		turn luparm to x-axis <-9.000000> now;
 		turn rleg to x-axis <55.000000> now;
-		sleep 7000 / currentSpeed;
+		sleep 7000 / Static_Var_11;
 	}
 	if( bMoving )
 	{
@@ -121,7 +123,7 @@ walk()
 		turn biggun to x-axis <-63.000000> now;
 		turn rleg to x-axis <34.000000> now;
 		turn lleg to x-axis <20.000000> now;
-		sleep 8000 / currentSpeed;
+		sleep 8000 / Static_Var_11;
 	}
 	if( bMoving )
 	{
@@ -136,7 +138,7 @@ walk()
 		turn biggun to x-axis <-63.000000> now;
 		turn rleg to x-axis <40.000000> now;
 		turn lleg to x-axis <31.000000> now;
-		sleep 4000 / currentSpeed;
+		sleep 4000 / Static_Var_11;
 	}
 	if( bMoving )
 	{
@@ -144,7 +146,7 @@ walk()
 		turn luparm to x-axis <-12.000000> now;
 		turn nanolath to x-axis <-42.000000> now;
 		turn biggun to x-axis <-63.000000> now;
-		sleep 4000 / currentSpeed;
+		sleep 4000 / Static_Var_11;
 	}
 	if( bMoving )
 	{
@@ -158,7 +160,7 @@ walk()
 		turn nanolath to x-axis <-42.000000> now;
 		turn biggun to x-axis <-62.000000> now;
 		turn lleg to x-axis <44.000000> now;
-		sleep 10000 / currentSpeed;
+		sleep 10000 / Static_Var_11;
 	}
 	if( bMoving )
 	{
@@ -171,7 +173,7 @@ walk()
 		turn luparm to x-axis <-3.000000> now;
 		turn biggun to x-axis <-63.000000> now;
 		turn lleg to x-axis <55.000000> now;
-		sleep 9000 / currentSpeed;
+		sleep 9000 / Static_Var_11;
 	}
 	if( bMoving )
 	{
@@ -186,7 +188,7 @@ walk()
 		turn biggun to x-axis <-63.000000> now;
 		turn rleg to x-axis <8.000000> now;
 		turn lleg to x-axis <60.000000> now;
-		sleep 8000 / currentSpeed;
+		sleep 8000 / Static_Var_11;
 	}
 	if( bMoving )
 	{
@@ -200,7 +202,7 @@ walk()
 		turn biggun to x-axis <-63.000000> now;
 		turn rleg to x-axis <26.000000> now;
 		turn lleg to x-axis <56.000000> now;
-		sleep 8000 / currentSpeed;
+		sleep 8000 / Static_Var_11;
 	}
 	if( bMoving )
 	{
@@ -211,7 +213,7 @@ walk()
 		turn ruparm to x-axis <-7.000000> now;
 		turn luparm to x-axis <10.000000> now;
 		turn lleg to x-axis <56.000000> now;
-		sleep 7000 / currentSpeed;
+		sleep 7000 / Static_Var_11;
 	}
 	move pelvis to y-axis [0.000000] now;
 	turn pelvis to x-axis <5.000000> now;
@@ -222,7 +224,7 @@ walk()
 	turn luparm to x-axis <10.000000> now;
 	turn biggun to x-axis <-63.000000> now;
 	turn lleg to x-axis <26.000000> now;
-	sleep 8000 / currentSpeed;
+	sleep 8000 / Static_Var_11;
 }
 
 walklegs()
@@ -236,7 +238,7 @@ walklegs()
 		turn rthigh to x-axis <18.000000> now;
 		turn rleg to x-axis <39.000000> now;
 		turn lleg to x-axis <42.000000> now;
-		sleep 8000 / currentSpeed;
+		sleep 8000 / Static_Var_11;
 	}
 	if( bMoving )
 	{
@@ -246,7 +248,7 @@ walklegs()
 		turn rthigh to x-axis <9.000000> now;
 		turn rleg to x-axis <52.000000> now;
 		turn lleg to x-axis <28.000000> now;
-		sleep 10000 / currentSpeed;
+		sleep 10000 / Static_Var_11;
 	}
 	if( bMoving )
 	{
@@ -256,7 +258,7 @@ walklegs()
 		turn rthigh to x-axis <0.000000> now;
 		turn rleg to x-axis <58.000000> now;
 		turn lleg to x-axis <16.000000> now;
-		sleep 9000 / currentSpeed;
+		sleep 9000 / Static_Var_11;
 	}
 	if( bMoving )
 	{
@@ -266,7 +268,7 @@ walklegs()
 		turn rthigh to x-axis <-6.000000> now;
 		turn rleg to x-axis <44.000000> now;
 		turn lleg to x-axis <6.000000> now;
-		sleep 9000 / currentSpeed;
+		sleep 9000 / Static_Var_11;
 	}
 	if( bMoving )
 	{
@@ -276,7 +278,7 @@ walklegs()
 		turn rthigh to x-axis <-34.000000> now;
 		turn rleg to x-axis <71.000000> now;
 		turn lleg to x-axis <20.000000> now;
-		sleep 8000 / currentSpeed;
+		sleep 8000 / Static_Var_11;
 	}
 	if( bMoving )
 	{
@@ -284,7 +286,7 @@ walklegs()
 		turn lthigh to x-axis <13.000000> now;
 		turn rthigh to x-axis <-43.000000> now;
 		turn rleg to x-axis <55.000000> now;
-		sleep 7000 / currentSpeed;
+		sleep 7000 / Static_Var_11;
 	}
 	if( bMoving )
 	{
@@ -294,7 +296,7 @@ walklegs()
 		turn rthigh to x-axis <-48.000000> now;
 		turn rleg to x-axis <34.000000> now;
 		turn lleg to x-axis <20.000000> now;
-		sleep 8000 / currentSpeed;
+		sleep 8000 / Static_Var_11;
 	}
 	if( bMoving )
 	{
@@ -304,7 +306,7 @@ walklegs()
 		turn rthigh to x-axis <-40.000000> now;
 		turn rleg to x-axis <40.000000> now;
 		turn lleg to x-axis <31.000000> now;
-		sleep 8000 / currentSpeed;
+		sleep 8000 / Static_Var_11;
 	}
 	if( bMoving )
 	{
@@ -313,7 +315,7 @@ walklegs()
 		turn lthigh to x-axis <9.000000> now;
 		turn rthigh to x-axis <-34.000000> now;
 		turn lleg to x-axis <44.000000> now;
-		sleep 10000 / currentSpeed;
+		sleep 10000 / Static_Var_11;
 	}
 	if( bMoving )
 	{
@@ -322,7 +324,7 @@ walklegs()
 		turn lthigh to x-axis <1.000000> now;
 		turn rthigh to x-axis <-26.000000> now;
 		turn lleg to x-axis <55.000000> now;
-		sleep 9000 / currentSpeed;
+		sleep 9000 / Static_Var_11;
 	}
 	if( bMoving )
 	{
@@ -332,7 +334,7 @@ walklegs()
 		turn rthigh to x-axis <4.000000> now;
 		turn rleg to x-axis <8.000000> now;
 		turn lleg to x-axis <60.000000> now;
-		sleep 8000 / currentSpeed;
+		sleep 8000 / Static_Var_11;
 	}
 	if( bMoving )
 	{
@@ -342,7 +344,7 @@ walklegs()
 		turn rthigh to x-axis <10.000000> now;
 		turn rleg to x-axis <26.000000> now;
 		turn lleg to x-axis <56.000000> now;
-		sleep 8000 / currentSpeed;
+		sleep 8000 / Static_Var_11;
 	}
 	if( bMoving )
 	{
@@ -350,22 +352,25 @@ walklegs()
 		turn lthigh to x-axis <-44.000000> now;
 		turn rthigh to x-axis <12.000000> now;
 		turn lleg to x-axis <56.000000> now;
-		sleep 7000 / currentSpeed;
+		sleep 7000 / Static_Var_11;
 	}
 	move pelvis to y-axis [0.000000] now;
 	turn pelvis to x-axis <5.000000> now;
 	turn lthigh to x-axis <-44.000000> now;
 	turn rthigh to x-axis <14.000000> now;
 	turn lleg to x-axis <26.000000> now;
-	sleep 8000 / currentSpeed;
+	sleep 8000 / Static_Var_11;
 }
 
 UnitSpeed()
 {
-	while(TRUE)
+	while( TRUE )
 	{
-		currentSpeed = (get CURRENT_SPEED)*100/moveSpeed;
-		if (currentSpeed<20) currentSpeed=20;
+		Static_Var_11 = (get CURRENT_SPEED)*100 / Static_Var_10;
+		if( Static_Var_11 < 20 )
+		{
+			Static_Var_11 = 20;
+		}
 		sleep 142;
 	}
 }
@@ -379,7 +384,7 @@ MotionControl(moving, aiming, justmoved)
 		aiming = bAiming;
 		if( moving )
 		{
-			Static_Var_4 = 0;
+			gun_3 = torso;
 			if( aiming )
 			{
 				Static_Var_3 = 1;
@@ -413,6 +418,11 @@ MotionControl(moving, aiming, justmoved)
 	}
 }
 
+Shield()
+{
+	Static_Var_6 = !Static_Var_6;
+}
+
 Create()
 {
 	hide rbigflash;
@@ -420,14 +430,15 @@ Create()
 	hide nanospray;
 	bMoving = FALSE;
 	bAiming = FALSE;
-	building = FALSE;
-	justfired = FALSE;
+	Static_Var_6 = 1;
+	Static_Var_7 = 0;
+	gun_1 = torso;
 	Static_Var_3 = 1;
-	Static_Var_4 = 0;
-	buildy = 0;
-	buildx = 0;
-	moveSpeed = get MAX_SPEED;
-	currentSpeed = 100;
+	gun_3 = torso;
+	Static_Var_9 = 0;
+	Static_Var_8 = 0;
+	Static_Var_10 = get MAX_SPEED;
+	Static_Var_11 = 100;
 	start-script MotionControl();
 	start-script UnitSpeed();
 }
@@ -435,7 +446,7 @@ Create()
 StartMoving()
 {
 	bMoving = TRUE;
-	Static_Var_4 = 0;
+	gun_3 = torso;
 }
 
 StopMoving()
@@ -461,18 +472,18 @@ RestorePosition()
 	wait-for-turn torso around y-axis;
 	wait-for-turn ruparm around x-axis;
 	wait-for-turn luparm around x-axis;
-	Static_Var_4 = 0;
+	gun_3 = torso;
 	bAiming = FALSE;
 }
 
 ResumeBuilding()
 {
-     sleep 400;
-     if ((building) AND (NOT justfired))
-     {
-           turn torso to y-axis buildy speed <150.000000>;
-           turn luparm to x-axis <-30.000000> - buildx speed <45.000000>;
-     }
+	sleep 400;
+	if( Static_Var_7 AND !gun_1 )
+	{
+		turn torso to y-axis Static_Var_9 speed <150.000000>;
+		turn luparm to x-axis <-30.000000> - Static_Var_8 speed <45.000000>;
+	}
 }
 
 AimFromPrimary(piecenum)
@@ -487,7 +498,7 @@ QueryPrimary(piecenum)
 
 AimPrimary(heading, pitch)
 {
-	if( Static_Var_4 == 1 )
+	if( gun_3 == 1 )
 	{
 		return (0);
 	}
@@ -498,10 +509,10 @@ AimPrimary(heading, pitch)
 	turn luparm to x-axis <-30.000000> - pitch speed <200.000000>;
 	wait-for-turn torso around y-axis;
 	wait-for-turn luparm around x-axis;
-	justfired = TRUE;
-	if (building == TRUE) 
+	gun_1 = ruparm;
+	if( Static_Var_7 == 1 )
 	{
-	    start-script ResumeBuilding();
+		start-script ResumeBuilding();
 	}
 	return (1);
 }
@@ -512,7 +523,29 @@ FirePrimary()
 	sleep 100;
 	hide lfirept;
 	sleep 400;
-	justfired = FALSE;
+	gun_1 = torso;
+}
+
+AimFromSecondary(piecenum)
+{
+	piecenum = rleg;
+}
+
+QuerySecondary(piecenum)
+{
+	piecenum = rleg;
+}
+
+AimSecondary(heading, pitch)
+{
+	if( Static_Var_6 )
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
 }
 
 AimFromTertiary(piecenum)
@@ -529,7 +562,7 @@ AimTertiary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	Static_Var_4 = 1;
+	gun_3 = ruparm;
 	bAiming = TRUE;
 	turn torso to y-axis heading speed <300.000000>;
 	turn ruparm to x-axis <-24.000000> - pitch speed <90.000000>;
@@ -543,18 +576,18 @@ FireTertiary()
 	show rbigflash;
 	sleep 100;
 	hide rbigflash;
-	Static_Var_4 = 0;
+	gun_3 = torso;
 }
 
 StartBuilding(Func_Var_1, Func_Var_2)
 {
-	Static_Var_4 = 0;
+	gun_3 = torso;
 	bAiming = TRUE;
-	building = TRUE;
+	Static_Var_7 = 1;
 	turn torso to y-axis Func_Var_1 speed <300.000000>;
 	turn luparm to x-axis <-30.000000> - Func_Var_2 speed <90.000000>;
-	buildy = Func_Var_1;
-	buildx = Func_Var_2;
+	Static_Var_9 = Func_Var_1;
+	Static_Var_8 = Func_Var_2;
 	wait-for-turn torso around y-axis;
 	wait-for-turn luparm around x-axis;
 	set INBUILDSTANCE to 1;
@@ -569,9 +602,9 @@ TargetCleared(Func_Var_1)
 
 StopBuilding()
 {
-    building = FALSE;
+	Static_Var_7 = 0;
 	set INBUILDSTANCE to 0;
 	signal SIG_AIM;
-	set-signal-mask SIG_AIM;;
+	set-signal-mask SIG_AIM;
 	call-script RestorePosition();
 }
