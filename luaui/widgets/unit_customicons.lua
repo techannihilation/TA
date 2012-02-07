@@ -94,9 +94,9 @@ function widget:Initialize()
         Spring.SetUnitDefIcon(udid, "e3.user")
       elseif (ud.name=="armfus") or (ud.name=="corfus") or (ud.name=="armckfus") or (ud.name=="armdf") or (ud.name=="armuwfus") or (ud.name=="coruwfus") then
         Spring.SetUnitDefIcon(udid, "e2.user")
-      elseif (ud.name=="armcom") or (ud.name=="armdecom") then
+      elseif (ud.name=="armcom") then
         Spring.SetUnitDefIcon(udid, "armcom.user")
-      elseif (ud.name=="corcom") or (ud.name=="cordecom") then
+      elseif (ud.name=="corcom") then
         Spring.SetUnitDefIcon(udid, "corcom.user")
       elseif (ud.name=="corkrog") then
         Spring.SetUnitDefIcon(udid, "krogoth.user")
