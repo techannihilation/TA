@@ -546,7 +546,7 @@ sparks1 = {
   sizeGrowth   = 0.4,
   emitVector   = {0,0,0},
   emitRotSpread = 70,
-  texture      = 'bitmaps/lighttest.png',
+  texture      = 'bitmaps/PD/Lightningball.TGA',
   count        = 6,
   repeatEffect = true,
   }
@@ -568,7 +568,7 @@ sparksr2 = {
   sizeGrowth   = 0.4,
   emitVector   = {0,0,0},
   emitRotSpread = 70,
-  texture      = 'bitmaps/lighttest.png',
+  texture      = 'bitmaps/PD/Lightningball.TGA',
   count        = 6,
   repeatEffect = true,
   }
@@ -590,7 +590,7 @@ sparksr2 = {
   sizeGrowth   = 0.5,
   emitVector   = {0,0,0},
   emitRotSpread = 70,
-  texture      = 'bitmaps/lighttest.png',
+  texture      = 'bitmaps/PD/Lightningball.TGA',
   count        = 8,
   repeatEffect = true,
   }
