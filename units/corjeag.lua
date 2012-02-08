@@ -132,7 +132,6 @@ local weaponDefs = {
 		soundStart = [[JeagerAAMissiles]],
 		startsmoke = 1,
 		startVelocity = 820,
-		toAirWeapon = true,
 		tolerance = 7000,
 		tracks = true,
 		turnRate = 68000,

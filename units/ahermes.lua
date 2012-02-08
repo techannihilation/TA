@@ -129,7 +129,6 @@ local weaponDefs = {
 		soundTrigger = true,
 		startsmoke = 1,
 		startVelocity = 520,
-		toAirWeapon = true,
 		tolerance = 9950,
 		tracks = true,
 		turnRate = 68000,

@@ -211,7 +211,6 @@ local weaponDefs = {
 		soundStart = [[Rocklit3]],
 		startsmoke = 0,
 		startVelocity = 650,
-		toAirWeapon = true,
 		tolerance = 8000,
 		tracks = true,
 		turnRate = 72000,
