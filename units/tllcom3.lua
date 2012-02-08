@@ -1,4 +1,4 @@
--- UNITDEF -- TLLCOM3 --
+w-- UNITDEF -- TLLCOM3 --
 --------------------------------------------------------------------------------
 
 local unitName = "tllcom3"
@@ -29,8 +29,8 @@ local unitDef = {
 	category = [[ALL COMMANDER CONSTR LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	cloakCost = 100,
 	cloakCostMoving = 800,
-	collisionvolumeoffsets = [[0 -1 0]],
-	collisionvolumescales = [[36 44 26]],
+	collisionvolumeoffsets = [[0 -13 0]],
+	collisionvolumescales = [[45 52 26]],
 	collisionvolumetest = 1,
 	collisionvolumetype = [[Ell]],
 	commander = true,
