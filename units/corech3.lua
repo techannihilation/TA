@@ -22,7 +22,7 @@ local unitDef = {
 	customparams = {
 		providetech = [[Advanced T1 Unit Research Centre]],
 		       },
-	description = [[Advanced T1 Unit Research Centre]],
+	description = [[Unlock's Advanced Units]],
 	designation = [[LAB-01]],
 	energyMake = 0,
 	energyStorage = 0,
@@ -39,7 +39,7 @@ local unitDef = {
 	maxSlope = 10,
 	maxWaterDepth = 0,
 	metalStorage = 0,
-	name = [[Research Center]],
+	name = [[Advanced T1 Unit Research Centre]],
 	noAutoFire = false,
 	noChaseCategory = [[ALL]],
 	objectName = [[LABORECH]],
