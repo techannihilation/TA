@@ -21,9 +21,6 @@ local unitDef = {
 	canstop = 1,
 	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	corpse = [[DEAD]],
-	customparams = {
-				RequireTech = [[Advanced T3 Unit Research Centre]]
-		       },
 	defaultmissiontype = [[Standby]],
 	description = [[All-Terrain Assault Mech]],
 	explodeAs = [[MECH_BLASTSML]],
