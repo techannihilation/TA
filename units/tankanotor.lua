@@ -110,6 +110,7 @@ local weaponDefs = {
 		areaOfEffect = 320,
 		burst = 2,
 		burstrate = 0.24,
+		cegTag = [[Trail_Large_Rocket]],
 		craterBoost = 0,
 		craterMult = 0,
 		explosionart = [[bigboom]],
