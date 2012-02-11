@@ -312,6 +312,8 @@ function widget:DrawScreen()
 	if uDef.sonarRadius >= 64 then DrawText("Sonar:", format(blue .. "%d", uDef.sonarRadius)) end
 	if uDef.jammerRadius >= 64 then DrawText("Jam:", format(orange .. "%d", uDef.jammerRadius)) end
 	if uDef.buildSpeed > 0 then DrawText("Build:", format(yellow .. "%d", uDef.buildSpeed)) end
+	if uDef.repairSpeed > 0 then DrawText("Repair:", format(yellow .. "%d", uDef.repairSpeed)) end
+	if uDef.reclaimSpeed > 0 then DrawText("Reclaim:", format(yellow .. "%d", uDef.reclaimSpeed)) end
 	if uDef.stealth then DrawText("Other:", "Stealthy") end
 	cY = cY - fontSize
 	
