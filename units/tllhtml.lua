@@ -139,6 +139,7 @@ local weaponDefs = {
 	TLL_ROCKETS2 = {
 		accuracy = 300,
 		areaOfEffect = 145,
+		cegTag = [[trail_medium_rocket]],
 		craterBoost = 0,
 		craterMult = 0,
 		edgeEffectiveness = 0.4,
