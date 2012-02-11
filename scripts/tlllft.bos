@@ -8,6 +8,10 @@ piece  base, tower, turret, tube, tail;
 // Signal definitions
 #define SIG_AIM				2
 
+lua_FlameShot(weapon) //Distortion and lups flame effect
+{
+  return 0;
+}
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -74,6 +78,12 @@ AimPrimary(heading, pitch)
 	wait-for-turn turret around y-axis;
 	wait-for-turn tube around x-axis;
 	return (1);
+}
+
+Shot1()
+{
+	call-script lua_FlameShot(1);
+	return (TRUE);
 }
 
 FirePrimary()
