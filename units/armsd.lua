@@ -11,6 +11,10 @@ local unitDef = {
 	buildAngle = 4096,
 	buildCostEnergy = 6739,
 	buildCostMetal = 661,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 6,
+	buildingGroundDecalSizeY = 6,
+	buildingGroundDecalType = [[armsd_aoplane.dds]],
 	buildPic = [[ARMSD.png]],
 	buildTime = 11877,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -37,6 +41,7 @@ local unitDef = {
 	side = [[ARM]],
 	sightDistance = 240,
 	unitname = [[armsd]],
+	useBuildingGroundDecal = true,
 	yardMap = [[oooooooooooooooo]],
 	featureDefs = nil,
 	sounds = {
@@ -57,11 +62,6 @@ local unitDef = {
 			[1] = [[targsel1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=6,
-	buildingGroundDecalSizeY=6,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armsd_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -70,6 +70,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[1.95468139648 -4.13748790283 4.81853485107]],
+		collisionvolumescales = [[63.6464233398 24.2004241943 64.3273773193]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

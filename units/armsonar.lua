@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 403,
 	buildCostMetal = 20,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 4,
+	buildingGroundDecalSizeY = 4,
+	buildingGroundDecalType = [[armsonar_aoplane.dds]],
 	buildPic = [[ARMSONAR.png]],
 	buildTime = 912,
 	canAttack = false,
@@ -48,6 +52,7 @@ local unitDef = {
 	sonarDistance = 1200,
 	turnRate = 0,
 	unitname = [[armsonar]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooo]],
 	featureDefs = nil,
@@ -68,11 +73,6 @@ local unitDef = {
 			[1] = [[sonar1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=4,
-	buildingGroundDecalSizeY=4,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armsonar_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -81,6 +81,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = false,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[0.0 -1.56127929678e-05 -0.0]],
+		collisionvolumescales = [[31.3499755859 42.5373687744 28.2463684082]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

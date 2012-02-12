@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 7058,
 	buildCostMetal = 749,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 6,
+	buildingGroundDecalSizeY = 6,
+	buildingGroundDecalType = [[cortarg_aoplane.dds]],
 	buildPic = [[CORTARG.png]],
 	buildTime = 10898,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -45,6 +49,7 @@ local unitDef = {
 	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[cortarg]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooooooooooooooooooo]],
 	featureDefs = nil,
@@ -66,11 +71,6 @@ local unitDef = {
 			[1] = [[targsel2]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=6,
-	buildingGroundDecalSizeY=6,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[cortarg_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -79,6 +79,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[0.625 -3.66210937486e-06 -0.246391296387]],
+		collisionvolumescales = [[62.75 20.2424926758 64.4927825928]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 16115,
 	buildCostMetal = 2318,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 5,
+	buildingGroundDecalSizeY = 5,
+	buildingGroundDecalType = [[cortoast_aoplane.dds]],
 	buildPic = [[CORTOAST.png]],
 	buildTime = 25717,
 	canAttack = true,
@@ -51,6 +55,7 @@ local unitDef = {
 	standingfireorder = 2,
 	turnRate = 0,
 	unitname = [[cortoast]],
+	useBuildingGroundDecal = true,
 	usePieceCollisionVolumes = 1,
 	workerTime = 0,
 	yardMap = [[ooooooooo]],
@@ -93,11 +98,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=5,
-	buildingGroundDecalSizeY=5,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[cortoast_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -176,6 +176,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[2.98622894287 -7.32421874261e-08 6.36557769775]],
+		collisionvolumescales = [[66.412979126 46.1585998535 60.6329803467]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

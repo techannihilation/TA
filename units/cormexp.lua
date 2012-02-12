@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 12121,
 	buildCostMetal = 2219,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 8,
+	buildingGroundDecalSizeY = 8,
+	buildingGroundDecalType = [[cormexp_aoplane.dds]],
 	buildPic = [[CORMEXP.png]],
 	buildTime = 32500,
 	canAttack = true,
@@ -51,6 +55,7 @@ local unitDef = {
 	standingfireorder = 2,
 	turnRate = 0,
 	unitname = [[cormexp]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[ooooooooooooooooooooooooo]],
 	featureDefs = nil,
@@ -88,11 +93,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=8,
-	buildingGroundDecalSizeY=8,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[cormexp_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -175,6 +175,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[0.0 0.0263531005859 -0.0]],
+		collisionvolumescales = [[85.8415527344 30.0151062012 74.3409423828]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

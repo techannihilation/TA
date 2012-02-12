@@ -15,7 +15,7 @@ local unitDef = {
 	buildingGroundDecalDecaySpeed = 0.01,
 	buildingGroundDecalSizeX = 10,
 	buildingGroundDecalSizeY = 10,
-	buildingGroundDecalType=[[corgant_aoplane.dds]],
+	buildingGroundDecalType = [[corgant_aoplane.dds]],
 	buildPic = [[CORGANT.png]],
 	buildTime = 67321,
 	canMove = true,
@@ -68,7 +68,6 @@ local unitDef = {
 		[8] = [[armgor]],
 		[9] = [[macross]],
 		[10] = [[corjurgen]],
-
 	},
 	featureDefs = nil,
 	sfxtypes = {
@@ -107,6 +106,10 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[0 -21 0]],
+		collisionvolumescales = [[114 74 129]],
+		collisionvolumetest = 1,
+		collisionvolumetype = [[CylZ]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

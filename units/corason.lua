@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 2257,
 	buildCostMetal = 152,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 5,
+	buildingGroundDecalSizeY = 5,
+	buildingGroundDecalType = [[corason_aoplane.dds]],
 	buildPic = [[CORASON.png]],
 	buildTime = 6096,
 	canAttack = false,
@@ -48,6 +52,7 @@ local unitDef = {
 	sonarDistance = 2400,
 	turnRate = 0,
 	unitname = [[corason]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[ooooooooo]],
 	featureDefs = nil,
@@ -68,11 +73,6 @@ local unitDef = {
 			[1] = [[sonar2]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=5,
-	buildingGroundDecalSizeY=5,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[corason_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -81,6 +81,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = false,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[-2.39038085938 -9.06459454346 0.315093994141]],
+		collisionvolumescales = [[43.173828125 10.1218109131 43.7690734863]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

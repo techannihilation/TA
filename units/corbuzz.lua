@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 281404,
 	buildCostMetal = 26460,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 11,
+	buildingGroundDecalSizeY = 11,
+	buildingGroundDecalType = [[corbuzz_aoplane.dds]],
 	buildPic = [[CORBUZZ.png]],
 	buildTime = 516630,
 	canAttack = true,
@@ -52,6 +56,7 @@ local unitDef = {
 	standingfireorder = 3,
 	turnRate = 0,
 	unitname = [[corbuzz]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo]],
 	featureDefs = nil,
@@ -88,11 +93,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=11,
-	buildingGroundDecalSizeY=11,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[corbuzz_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -143,6 +143,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[1.84717559814 -0.761228344727 2.30910491943]],
+		collisionvolumescales = [[83.9113311768 124.753143311 117.611557007]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

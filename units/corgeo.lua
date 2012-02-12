@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 11500,
 	buildCostMetal = 1350,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 6,
+	buildingGroundDecalSizeY = 6,
+	buildingGroundDecalType = [[corgeo_aoplane.dds]],
 	buildPic = [[CORGEO.png]],
 	buildTime = 24000,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -44,6 +48,7 @@ local unitDef = {
 	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[corgeo]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooo oGGo oGGo oooo]],
 	featureDefs = nil,
@@ -62,11 +67,6 @@ local unitDef = {
 			[1] = [[geothrm2]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=6,
-	buildingGroundDecalSizeY=6,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[corgeo_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -75,6 +75,9 @@ local featureDefs = {
 	dead = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[0.0799026489258 -0.00265155029297 -0.0]],
+		collisionvolumescales = [[71.8282928467 49.0236968994 58.0464782715]],
+		collisionvolumetype = [[Box]],
 		damage = 0.3600 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,
