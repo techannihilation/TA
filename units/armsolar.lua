@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 0,
 	buildCostMetal = 145,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 8,
+	buildingGroundDecalSizeY = 8,
+	buildingGroundDecalType = [[armsolar_aoplane.dds]],
 	buildPic = [[ARMSOLAR.png]],
 	buildTime = 2045,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -46,6 +50,7 @@ local unitDef = {
 	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[armsolar]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[yycyy yoooy coooc yoooy yycyy]],
 	featureDefs = nil,
@@ -66,11 +71,6 @@ local unitDef = {
 			[1] = [[solar1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=8,
-	buildingGroundDecalSizeY=8,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armsolar_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -79,6 +79,10 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[0 -18 1]],
+		collisionvolumescales = [[50 76 50]],
+		collisionvolumetest = 1,
+		collisionvolumetype = [[Ell]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

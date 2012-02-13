@@ -15,6 +15,10 @@ local unitDef = {
 	buildCostMetal = 621,
 	buildDistance = 6,
 	builder = true,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 12,
+	buildingGroundDecalSizeY = 12,
+	buildingGroundDecalType = [[corasp_aoplane.dds]],
 	buildPic = [[CORASP.png]],
 	buildTime = 18315,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -49,6 +53,7 @@ local unitDef = {
 	sortbias = 0,
 	turnRate = 0,
 	unitname = [[corasp]],
+	useBuildingGroundDecal = true,
 	workerTime = 20000,
 	yardMap = [[ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo]],
 	featureDefs = nil,
@@ -69,11 +74,6 @@ local unitDef = {
 			[1] = [[pairactv]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=12,
-	buildingGroundDecalSizeY=12,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[corasp_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -82,6 +82,10 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[0 0 0]],
+		collisionvolumescales = [[135 20 135]],
+		collisionvolumetest = 1,
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

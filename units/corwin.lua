@@ -13,6 +13,10 @@ local unitDef = {
 	buildCostEnergy = 163,
 	buildCostMetal = 42,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 5,
+	buildingGroundDecalSizeY = 5,
+	buildingGroundDecalType = [[corwin_aoplane.dds]],
 	buildPic = [[CORWIN.png]],
 	buildTime = 1687,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -42,6 +46,7 @@ local unitDef = {
 	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[corwin]],
+	useBuildingGroundDecal = true,
 	windGenerator = 120,
 	workerTime = 0,
 	yardMap = [[ooooooooo]],
@@ -61,11 +66,6 @@ local unitDef = {
 			[1] = [[windgen2]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=5,
-	buildingGroundDecalSizeY=5,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[corwin_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -74,6 +74,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[-0.00634765625 0.0963876586914 -0.0]],
+		collisionvolumescales = [[47.8161621094 48.6615753174 44.0332336426]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

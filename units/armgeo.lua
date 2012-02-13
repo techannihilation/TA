@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 8300,
 	buildCostMetal = 1400,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 6,
+	buildingGroundDecalSizeY = 6,
+	buildingGroundDecalType = [[armgeo_aoplane.dds]],
 	buildPic = [[ARMGEO.png]],
 	buildTime = 21000,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -44,6 +48,7 @@ local unitDef = {
 	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[armgeo]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooo oGGo oGGo oooo]],
 	featureDefs = nil,
@@ -62,11 +67,6 @@ local unitDef = {
 			[1] = [[geothrm1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=6,
-	buildingGroundDecalSizeY=6,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armgeo_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -75,6 +75,9 @@ local featureDefs = {
 	dead = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[1.99999237061 -7.92236328095e-06 -0.0428466796875]],
+		collisionvolumescales = [[68.1631622314 53.8843841553 59.4699707031]],
+		collisionvolumetype = [[Box]],
 		damage = 0.3600 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

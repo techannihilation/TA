@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 85000,
 	buildCostMetal = 10500,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 9,
+	buildingGroundDecalSizeY = 9,
+	buildingGroundDecalType = [[cafus_aoplane.dds]],
 	buildPic = [[CAFUS.png]],
 	buildTime = 260000,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -46,6 +50,7 @@ local unitDef = {
 	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[cafus]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooooooooooooooooooooooooooooooooooo]],
 	featureDefs = nil,
@@ -64,11 +69,6 @@ local unitDef = {
 			[1] = [[fusion2]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=9,
-	buildingGroundDecalSizeY=9,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[cafus_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -77,6 +77,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = -6.1618,
+		collisionvolumescales = [[114.264892578 89.6709289551 97.8311309814]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

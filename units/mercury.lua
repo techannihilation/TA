@@ -12,6 +12,10 @@ local unitDef = {
 	buildCostEnergy = 46860,
 	buildCostMetal = 1572,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 6,
+	buildingGroundDecalSizeY = 6,
+	buildingGroundDecalType = [[mercury_aoplane.dds]],
 	buildPic = [[MERCURY.png]],
 	buildTime = 38843,
 	canAttack = true,
@@ -46,6 +50,7 @@ local unitDef = {
 	standingfireorder = 2,
 	turnRate = 0,
 	unitname = [[mercury]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooooooooooooooo]],
 	featureDefs = nil,
@@ -75,11 +80,6 @@ local unitDef = {
 			onlyTargetCategory = [[VTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=6,
-	buildingGroundDecalSizeY=6,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[mercury_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -140,6 +140,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[5.46072387695 -4.67773437478e-05 -1.26287078857]],
+		collisionvolumescales = [[51.8714294434 86.3341064453 50.9362335205]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 37000,
 	buildCostMetal = 4500,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 8,
+	buildingGroundDecalSizeY = 8,
+	buildingGroundDecalType = [[coruwfus_aoplane.dds]],
 	buildPic = [[CORUWFUS.png]],
 	buildTime = 115200,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -43,6 +47,7 @@ local unitDef = {
 	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[coruwfus]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[ooooooooooooooooooooooooo]],
 	featureDefs = nil,
@@ -61,11 +66,6 @@ local unitDef = {
 			[1] = [[watfusn2]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=8,
-	buildingGroundDecalSizeY=8,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[coruwfus_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -74,6 +74,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[1.8653717041 -0.0807505981445 0.994560241699]],
+		collisionvolumescales = [[89.9762878418 27.3368988037 72.5986480713]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

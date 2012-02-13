@@ -13,6 +13,10 @@ local unitDef = {
 	buildCostEnergy = 5357,
 	buildCostMetal = 338,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 5,
+	buildingGroundDecalSizeY = 5,
+	buildingGroundDecalType = [[packo_aoplane.dds]],
 	buildPic = [[PACKO.png]],
 	buildTime = 5810,
 	canAttack = true,
@@ -52,6 +56,7 @@ local unitDef = {
 	standingfireorder = 2,
 	turnRate = 0,
 	unitname = [[packo]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[ooooooooo]],
 	featureDefs = nil,
@@ -85,11 +90,6 @@ local unitDef = {
 			onlyTargetCategory = [[VTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=5,
-	buildingGroundDecalSizeY=5,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[packo_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -155,6 +155,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[-0.544990539551 0.0 -0.500007629395]],
+		collisionvolumescales = [[48.1152496338 19.0 48.1152496338]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = [[Pack0 Wreckage]],
 		energy = 0,

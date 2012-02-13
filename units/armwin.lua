@@ -13,6 +13,10 @@ local unitDef = {
 	buildCostEnergy = 162,
 	buildCostMetal = 35,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 5,
+	buildingGroundDecalSizeY = 5,
+	buildingGroundDecalType = [[armwin_aoplane.dds]],
 	buildPic = [[ARMWIN.png]],
 	buildTime = 1603,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -46,6 +50,7 @@ local unitDef = {
 	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[armwin]],
+	useBuildingGroundDecal = true,
 	windGenerator = 120,
 	workerTime = 0,
 	yardMap = [[ooooooooo]],
@@ -65,11 +70,6 @@ local unitDef = {
 			[1] = [[windgen1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=5,
-	buildingGroundDecalSizeY=5,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armwin_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -78,6 +78,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[0.407234191895 -7.26560776367 -4.28938293457]],
+		collisionvolumescales = [[41.3442230225 45.3115844727 37.0443725586]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

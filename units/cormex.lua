@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 514,
 	buildCostMetal = 51,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 5,
+	buildingGroundDecalSizeY = 5,
+	buildingGroundDecalType = [[cormex_aoplane.dds]],
 	buildPic = [[CORMEX.png]],
 	buildTime = 1874,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -47,6 +51,7 @@ local unitDef = {
 	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[cormex]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[ooooooooo]],
 	featureDefs = nil,
@@ -74,11 +79,6 @@ local unitDef = {
 			[1] = [[mexon2]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=5,
-	buildingGroundDecalSizeY=5,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[cormex_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -87,6 +87,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[-3.07257080078 -0.112374182129 0.00819396972656]],
+		collisionvolumescales = [[61.0307312012 23.0310516357 47.5323181152]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

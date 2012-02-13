@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 600,
 	buildCostMetal = 54,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 4,
+	buildingGroundDecalSizeY = 4,
+	buildingGroundDecalType = [[corrad_aoplane.dds]],
 	buildPic = [[CORRAD.png]],
 	buildTime = 1137,
 	canAttack = false,
@@ -48,6 +52,7 @@ local unitDef = {
 	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[corrad]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooo]],
 	featureDefs = nil,
@@ -69,11 +74,6 @@ local unitDef = {
 			[1] = [[radar2]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=4,
-	buildingGroundDecalSizeY=4,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[corrad_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -82,6 +82,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[0.353988647461 -0.0323567626953 1.37395477295]],
+		collisionvolumescales = [[34.8413696289 57.1648864746 30.8629608154]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

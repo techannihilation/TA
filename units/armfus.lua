@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 39800,
 	buildCostMetal = 3460,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 6,
+	buildingGroundDecalSizeY = 6,
+	buildingGroundDecalType = [[armfus_aoplane.dds]],
 	buildPic = [[ARMFUS.png]],
 	buildTime = 68000,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -49,6 +53,7 @@ local unitDef = {
 	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[armfus]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooooooooooooooooooo]],
 	featureDefs = nil,
@@ -67,11 +72,6 @@ local unitDef = {
 			[1] = [[fusion1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=6,
-	buildingGroundDecalSizeY=6,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armfus_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -80,6 +80,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[0.420112609863 0.0956184448242 -0.353080749512]],
+		collisionvolumescales = [[98.7820892334 38.6634368896 65.8547515869]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

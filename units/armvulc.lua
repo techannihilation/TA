@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 203644,
 	buildCostMetal = 26890,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 11,
+	buildingGroundDecalSizeY = 11,
+	buildingGroundDecalType = [[armvulc_aoplane.dds]],
 	buildPic = [[ARMVULC.png]],
 	buildTime = 505961,
 	canAttack = true,
@@ -48,6 +52,7 @@ local unitDef = {
 	standingfireorder = 1,
 	turnRate = 0,
 	unitname = [[armvulc]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo]],
 	featureDefs = nil,
@@ -84,11 +89,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=11,
-	buildingGroundDecalSizeY=11,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armvulc_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -139,6 +139,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[-30.100944519 -5.74996727295 19.3314819336]],
+		collisionvolumescales = [[169.401870728 123.486465454 147.862945557]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

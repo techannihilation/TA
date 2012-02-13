@@ -13,6 +13,10 @@ local unitDef = {
 	buildCostEnergy = 3345,
 	buildCostMetal = 240,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 4,
+	buildingGroundDecalSizeY = 4,
+	buildingGroundDecalType = [[tawf001_aoplane.dds]],
 	buildPic = [[TAWF001.png]],
 	buildTime = 6024,
 	canAttack = true,
@@ -51,6 +55,7 @@ local unitDef = {
 	standingfireorder = 2,
 	turnRate = 0,
 	unitname = [[tawf001]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooo]],
 	featureDefs = nil,
@@ -84,11 +89,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=4,
-	buildingGroundDecalSizeY=4,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tawf001_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -141,6 +141,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[-1.45989990234 -3.69362253418 0.310646057129]],
+		collisionvolumescales = [[48.9197998047 59.9625549316 37.0396270752]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

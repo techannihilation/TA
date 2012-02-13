@@ -11,6 +11,10 @@ local unitDef = {
 	buildCostEnergy = 10032,
 	buildCostMetal = 690,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 8,
+	buildingGroundDecalSizeY = 8,
+	buildingGroundDecalType = [[coruwadves_aoplane.dds]],
 	buildPic = [[CORUWADVES.png]],
 	buildTime = 20416,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -42,6 +46,7 @@ local unitDef = {
 	smoothAnim = true,
 	threed = 1,
 	unitname = [[coruwadves]],
+	useBuildingGroundDecal = true,
 	version = 1.2,
 	workerTime = 0,
 	yardMap = [[ooooooooooooooooooooooooo]],
@@ -62,11 +67,6 @@ local unitDef = {
 			[1] = [[storngy2]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=8,
-	buildingGroundDecalSizeY=8,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[coruwadves_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -75,6 +75,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[-2.07458496094 4.21508789046e-05 -0.501388549805]],
+		collisionvolumescales = [[87.0777893066 35.5382843018 90.1298522949]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = [[Advanced Energy Storage Wreckage]],
 		energy = 0,
