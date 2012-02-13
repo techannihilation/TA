@@ -10,6 +10,10 @@ static-var  Static_Var_1, restore_delay, statechg_DesiredState, statechg_StateCh
 // Signal definitions
 #define SIG_AIM				2
 
+lua_FlameShot(weapon) //Distortion and lups flame effect
+{
+  return 0;
+}
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -88,11 +92,6 @@ RequestState(requestedstate, currentstate)
 		}
 	}
 	statechg_StateChanging = FALSE;
-}
-
-lua_FlameShot(weapon) //Distortion and lups flame effect
-{
-  return 0;
 }
 
 Create()
