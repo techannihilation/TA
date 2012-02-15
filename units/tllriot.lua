@@ -39,7 +39,7 @@ local unitDef = {
   maxWaterDepth      = 100,
   metalStorage       = 0,
   mobilestandorders  = 1,
-  movementClass      = [[ATANK3]],
+  movementClass      = [[TANK3]],
   name               = [[Pacifier]],
   noAutoFire         = false,
   noChaseCategory    = [[VTOL]],
@@ -84,10 +84,11 @@ local unitDef = {
       [[tarmsel]],
     },
   },
+  weaponDefs = nil,
   weapons = {
     [1]  = {
       badTargetCategory  = [[VTOL]],
-      name               = [[ArmPac_Gun]],
+      def = [[TLLRIOT_CANNON]],
     },
   },
 }
@@ -96,6 +97,40 @@ local unitDef = {
 --------------------------------------------------------------------------------
 
 local weaponDefs = {
+	TLLRIOT_CANNON = {
+		areaOfEffect = 235,
+		burnblow = true,
+		coreThickness = 0.5,
+		edgeEffectiveness = 0.1,
+		energypershot = 5,
+		explosionGenerator = [[custom:lightningexplo]],
+		fireStarter = 0,
+		id = 181,
+		impulseFactor = 0,
+		intensity = 1.5,
+		lavaexplosionart = [[flamestream]],
+		lavaexplosiongaf = [[fx]],
+		lineOfSight = true,
+		minbarrelangle = -25,
+		name = [[Sonic Wave Projector]],
+		range = 480,
+		reloadtime = 1.9,
+		renderType = 3,
+		rgbColor = [[0.8 0.8 1]],
+		size = 2.5,
+		soundHit = [[debris4]],
+		soundStart = [[sonicwv1]],
+		tolerance = 2000,
+		turret = true,
+		waterexplosionart = [[parablast]],
+		waterexplosiongaf = [[fx]],
+		weaponType = [[Cannon]],
+		weaponVelocity = 300,
+		damage = {
+			default = 20, --additional damage by area damage gadget
+			subs = 5,
+		},
+	},
 }
 unitDef.weaponDefs = weaponDefs
 
