@@ -60,11 +60,11 @@ local unitDef = {
 	zbuffer = 1,
 	buildoptions = {
 		[1] = [[clb]],
-		[2] = [[armtigre2]],
+		[2] = [[cormachn]],
 		[3] = [[armmcv]],
 		[4] = [[rockblack]],
 		[5] = [[corbt]],
-		[6] = [[cormachn]],
+		[6] = [[armtigre2]],
 	},
 	featureDefs = nil,
 	sounds = {

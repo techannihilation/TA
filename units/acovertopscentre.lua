@@ -7,15 +7,18 @@ local unitName = "acovertopscentre"
 
 local unitDef = {
 	activateWhenBuilt = true,
-	buildCostEnergy = 1400000,
+	buildCostEnergy = 10000000,
 	buildCostMetal = 75000,
 	builder = true,
-	buildTime = 65250,
+	buildTime = 250000,
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
 	category = [[LEVEL3 ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON PLANT]],
 	corpse = [[dead]],
+		customParams           = {
+		providetech = [[Advanced T1 Unit Research Centre,Advanced T2 Unit Research Centre,Advanced T3 Unit Research Centre,Advanced T4 Unit Research Centre]],
+	},
 	description = [[Build T4 con]],
 	designation = [[COC-2]],
 	energyStorage = 250,

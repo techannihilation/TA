@@ -127,7 +127,6 @@ local weaponDefs = {
 		soundHit = [[flakhit]],
 		soundStart = [[flakfire]],
 		startsmoke = 1,
-		toAirWeapon = true,
 		turret = true,
 		unitsonly = 1,
 		weaponTimer = 1,

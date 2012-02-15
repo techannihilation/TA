@@ -21,6 +21,9 @@ local unitDef = {
 	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[rockblack_dead]],
+	customparams = {
+				RequireTech = [[Advanced T3 Unit Research Centre]]
+		       },
 	defaultmissiontype = [[Standby]],
 	description = [[Crusade Missile Tank]],
 	designation = [[MA-GM2]],

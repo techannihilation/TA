@@ -12,6 +12,10 @@ local unitDef = {
 	buildCostEnergy = 5285,
 	buildCostMetal = 917,
 	builder = true,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 11,
+	buildingGroundDecalSizeY = 11,
+	buildingGroundDecalType = [[csubpen_aoplane.dds]],
 	buildPic = [[CSUBPEN.png]],
 	buildTime = 11402,
 	canPatrol = true,
@@ -47,6 +51,7 @@ local unitDef = {
 	standingmoveorder = 1,
 	turnRate = 0,
 	unitname = [[csubpen]],
+	useBuildingGroundDecal = true,
 	workerTime = 150,
 	yardMap = [[oooooooooCCCCCCooCCCCCCooCCCCCCooCCCCCCooCCCCCCooCCCCCCooCCCCCCo]],
 	buildoptions = {
@@ -77,11 +82,6 @@ local unitDef = {
 			[1] = [[pvehactv]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=11,
-	buildingGroundDecalSizeY=11,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[csubpen_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -90,6 +90,10 @@ local featureDefs = {
 	DEAD = {
 		blocking = false,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[0 0 -15]],
+		collisionvolumescales = [[111 34 86]],
+		collisionvolumetest = 1,
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

@@ -13,6 +13,10 @@ local unitDef = {
 	buildCostEnergy = 5750,
 	buildCostMetal = 295,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 5,
+	buildingGroundDecalSizeY = 5,
+	buildingGroundDecalType = [[madsam_aoplane.dds]],
 	buildPic = [[MADSAM.png]],
 	buildTime = 5237,
 	canAttack = true,
@@ -47,6 +51,7 @@ local unitDef = {
 	standingfireorder = 2,
 	turnRate = 0,
 	unitname = [[madsam]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[ooooooooo]],
 	featureDefs = nil,
@@ -80,11 +85,6 @@ local unitDef = {
 			onlyTargetCategory = [[VTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=5,
-	buildingGroundDecalSizeY=5,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[madsam_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -122,7 +122,6 @@ local weaponDefs = {
 		startsmoke = 1,
 		startVelocity = 520,
 		texture2 = [[coresmoketrail]],
-		toAirWeapon = true,
 		tolerance = 9950,
 		tracks = true,
 		turnRate = 68000,
@@ -149,6 +148,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[6.74545288086 -0.640270874023 -2.82326507568]],
+		collisionvolumescales = [[55.5325927734 38.388458252 42.4240570068]],
+		collisionvolumetype = [[Box]],
 		damage = 0.7500 * unitDef.maxDamage,
 		description = [[SAM Wreckage]],
 		energy = 0,

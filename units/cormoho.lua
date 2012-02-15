@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 7677,
 	buildCostMetal = 598,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 8,
+	buildingGroundDecalSizeY = 8,
+	buildingGroundDecalType = [[cormoho_aoplane.dds]],
 	buildPic = [[CORMOHO.png]],
 	buildTime = 14125,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -46,6 +50,7 @@ local unitDef = {
 	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[cormoho]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[ooooooooooooooooooooooooo]],
 	featureDefs = nil,
@@ -70,11 +75,6 @@ local unitDef = {
 			[1] = [[mohoon2]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=8,
-	buildingGroundDecalSizeY=8,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[cormoho_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -83,6 +83,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[0.0 0.0263531005859 -0.0]],
+		collisionvolumescales = [[85.8415527344 30.0151062012 74.3409423828]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

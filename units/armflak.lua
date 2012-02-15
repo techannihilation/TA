@@ -13,6 +13,10 @@ local unitDef = {
 	buildCostEnergy = 37425,
 	buildCostMetal = 969,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 4,
+	buildingGroundDecalSizeY = 4,
+	buildingGroundDecalType = [[armflak_aoplane.dds]],
 	buildPic = [[ARMFLAK.png]],
 	buildTime = 19005,
 	canAttack = true,
@@ -47,6 +51,7 @@ local unitDef = {
 	standingfireorder = 2,
 	turnRate = 0,
 	unitname = [[armflak]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooo]],
 	featureDefs = nil,
@@ -80,11 +85,6 @@ local unitDef = {
 			onlyTargetCategory = [[VTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=4,
-	buildingGroundDecalSizeY=4,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armflak_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -114,7 +114,6 @@ local weaponDefs = {
 		soundHit = [[flakhit]],
 		soundStart = [[flakfire]],
 		startsmoke = 1,
-		toAirWeapon = true,
 		turret = true,
 		unitsonly = 1,
 		weaponTimer = 1,
@@ -138,6 +137,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[-3.8550491333 -3.09570312496e-05 3.13596343994]],
+		collisionvolumescales = [[30.5327911377 31.4515380859 37.50050354]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 42599,
 	buildCostMetal = 2978,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 6,
+	buildingGroundDecalSizeY = 6,
+	buildingGroundDecalType = [[cordoom_aoplane.dds]],
 	buildPic = [[CORDOOM.png]],
 	buildTime = 55276,
 	canAttack = true,
@@ -49,6 +53,7 @@ local unitDef = {
 	standingfireorder = 2,
 	turnRate = 0,
 	unitname = [[cordoom]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[yooy oooo oooo yooy]],
 	featureDefs = nil,
@@ -91,11 +96,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=6,
-	buildingGroundDecalSizeY=6,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[cordoom_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -214,6 +214,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[0.281730651855 -0.153618286133 3.57356262207]],
+		collisionvolumescales = [[80.6815948486 91.7637634277 82.1471252441]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

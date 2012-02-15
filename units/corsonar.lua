@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 399,
 	buildCostMetal = 20,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 4,
+	buildingGroundDecalSizeY = 4,
+	buildingGroundDecalType = [[corsonar_aoplane.dds]],
 	buildPic = [[CORSONAR.png]],
 	buildTime = 900,
 	canAttack = false,
@@ -48,6 +52,7 @@ local unitDef = {
 	sonarDistance = 1200,
 	turnRate = 0,
 	unitname = [[corsonar]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooo]],
 	featureDefs = nil,
@@ -68,11 +73,6 @@ local unitDef = {
 			[1] = [[sonar2]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=4,
-	buildingGroundDecalSizeY=4,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[corsonar_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -81,6 +81,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = false,
 		category = [[corpses]],
+		collisionvolumeoffsets = -1.3868,
+		collisionvolumescales = [[32.5395965576 31.6859893799 26.2655792236]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

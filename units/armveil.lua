@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 17501,
 	buildCostMetal = 119,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 4,
+	buildingGroundDecalSizeY = 4,
+	buildingGroundDecalType = [[armveil_aoplane.dds]],
 	buildPic = [[ARMVEIL.png]],
 	buildTime = 9080,
 	canAttack = false,
@@ -48,6 +52,7 @@ local unitDef = {
 	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[armveil]],
+	useBuildingGroundDecal = true,
 	usePieceCollisionVolumes = 1,
 	workerTime = 0,
 	yardMap = [[oooo]],
@@ -73,11 +78,6 @@ local unitDef = {
 			[1] = [[radjam1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=4,
-	buildingGroundDecalSizeY=4,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armveil_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -86,6 +86,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[-7.16355133057 1.47216796904e-05 -4.91466522217]],
+		collisionvolumescales = [[47.5629425049 83.2464294434 33.8293304443]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

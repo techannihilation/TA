@@ -13,6 +13,10 @@ local unitDef = {
 	buildCostEnergy = 550,
 	buildCostMetal = 320,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 8,
+	buildingGroundDecalSizeY = 8,
+	buildingGroundDecalType = [[cormstor_aoplane.dds]],
 	buildPic = [[CORMSTOR.png]],
 	buildTime = 2925,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -42,6 +46,7 @@ local unitDef = {
 	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[cormstor]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[ooooooooooooooooooooooooo]],
 	featureDefs = nil,
@@ -60,11 +65,6 @@ local unitDef = {
 			[1] = [[stormtl2]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=8,
-	buildingGroundDecalSizeY=8,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[cormstor_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -73,6 +73,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[0.0 0.0812438964844 0.0845336914063]],
+		collisionvolumescales = [[81.4313354492 33.987487793 63.1903381348]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

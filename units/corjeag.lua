@@ -21,6 +21,9 @@ local unitDef = {
 	category = [[ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL SMALL WEAPON]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
+	customparams = {
+		RequireTech = [[Advanced T1 Unit Research Centre]]
+		       },
 	defaultmissiontype = [[Standby]],
 	description = [[Anti-Air Vehicle]],
 	designation = [[COR-AAAV]],
@@ -129,7 +132,6 @@ local weaponDefs = {
 		soundStart = [[JeagerAAMissiles]],
 		startsmoke = 1,
 		startVelocity = 820,
-		toAirWeapon = true,
 		tolerance = 7000,
 		tracks = true,
 		turnRate = 68000,

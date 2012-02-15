@@ -234,27 +234,27 @@ local morphDefs = {
 	},
       corech3 = {
 		into = 'corech18',
-		time = 30,
+		time = 45,
 	},
       corech18 = {
 		into = 'corech21',
-		time = 30,
+		time = 60,
 	},
       corech21 = {
 		into = 'CCovertOpsCentre',
-		time = 120,
+		time = 240,
 	},
       armrech3 = {
 		into = 'armrech18',
-		time = 30,
+		time = 45,
 	},
       armrech18 = {
 		into = 'armrech21',
-		time = 30,
+		time = 60,
 	},
       armrech21 = {
 		into = 'ACovertOpsCentre',
-		time = 120,
+		time = 240,
 	},
       armvulc = {
 		into = 'armvulc2',

@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 7945,
 	buildCostMetal = 226,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 4,
+	buildingGroundDecalSizeY = 4,
+	buildingGroundDecalType = [[armjamt_aoplane.dds]],
 	buildPic = [[ARMJAMT.png]],
 	buildTime = 9955,
 	canAttack = false,
@@ -51,6 +55,7 @@ local unitDef = {
 	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[armjamt]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooo]],
 	featureDefs = nil,
@@ -75,11 +80,6 @@ local unitDef = {
 			[1] = [[radjam1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=4,
-	buildingGroundDecalSizeY=4,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armjamt_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -88,6 +88,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = -2.5,
+		collisionvolumescales = [[28.2096405029 67.270401001 28.2096252441]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

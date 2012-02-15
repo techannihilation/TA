@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 62191,
 	buildCostMetal = 3532,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 6,
+	buildingGroundDecalSizeY = 6,
+	buildingGroundDecalType = [[armgate_aoplane.dds]],
 	buildPic = [[ARMGATE.png]],
 	buildTime = 54139,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -45,6 +49,7 @@ local unitDef = {
 	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[armgate]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooooooooooooooo]],
 	featureDefs = nil,
@@ -75,11 +80,6 @@ local unitDef = {
 			def = [[REPULSOR]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=6,
-	buildingGroundDecalSizeY=6,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armgate_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -121,6 +121,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[0.0 -2.91625976558e-05 -0.414924621582]],
+		collisionvolumescales = [[57.2399902344 32.5033416748 63.3298492432]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

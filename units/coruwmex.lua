@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 519,
 	buildCostMetal = 56,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 5,
+	buildingGroundDecalSizeY = 5,
+	buildingGroundDecalType = [[coruwmex_aoplane.dds]],
 	buildPic = [[CORUWMEX.png]],
 	buildTime = 1887,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -45,6 +49,7 @@ local unitDef = {
 	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[coruwmex]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[ooooooooo]],
 	featureDefs = nil,
@@ -66,11 +71,6 @@ local unitDef = {
 			[1] = [[waterex2]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=5,
-	buildingGroundDecalSizeY=5,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[coruwmex_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -79,6 +79,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[0.610664367676 -0.375460168457 -0.573463439941]],
+		collisionvolumescales = [[48.6033782959 20.3522796631 48.5289764404]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

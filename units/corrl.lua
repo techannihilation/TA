@@ -12,6 +12,10 @@ local unitDef = {
 	buildCostEnergy = 805,
 	buildCostMetal = 76,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 5,
+	buildingGroundDecalSizeY = 5,
+	buildingGroundDecalType = [[corrl_aoplane.dds]],
 	buildPic = [[CORRL.png]],
 	buildTime = 1749,
 	canAttack = true,
@@ -46,6 +50,7 @@ local unitDef = {
 	standingfireorder = 2,
 	turnRate = 0,
 	unitname = [[corrl]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[ooooooooo]],
 	featureDefs = nil,
@@ -77,11 +82,6 @@ local unitDef = {
 			onlyTargetCategory = [[VTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=5,
-	buildingGroundDecalSizeY=5,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[corrl_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -114,7 +114,6 @@ local weaponDefs = {
 		startsmoke = 1,
 		startVelocity = 400,
 		texture2 = [[coresmoketrail]],
-		toAirWeapon = true,
 		tolerance = 10000,
 		tracks = true,
 		turnRate = 63000,
@@ -141,6 +140,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[-0.808319091797 0.000184020996095 2.23503112793]],
+		collisionvolumescales = [[30.2288513184 52.705368042 33.0822753906]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

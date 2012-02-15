@@ -28,6 +28,9 @@ local unitDef = {
 	cloakCost = 1500,
 	cloakCostMoving = 4000,
 	corpse = [[dead]],
+	customparams = {
+				RequireTech = [[Advanced T3 Unit Research Centre]]
+		       },
 	defaultmissiontype = [[Standby]],
 	description = [[Pro Football Kbot]],
 	designation = [[CR-TK]],

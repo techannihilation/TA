@@ -20,6 +20,9 @@ local unitDef = {
 	canstop = 1,
 	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
+	customparams = {
+				RequireTech = [[Advanced T3 Unit Research Centre]]
+		       },
 	defaultmissiontype = [[Standby]],
 	description = [[Multi Launch Rocket System]],
 	designation = [[MLRS]],

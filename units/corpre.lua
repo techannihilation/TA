@@ -135,7 +135,6 @@ local weaponDefs = {
 		texture2 = [[NULL]],
 		texture3 = [[NULL]],
 		thickness = 3.5,
-		toAirWeapon = true,
 		tolerance = 0,
 		tracks = true,
 		turnRate = 15000,

@@ -22,6 +22,9 @@ local unitDef = {
 	canPatrol = true,
 	canstop = 1,
 	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
+	customparams = {
+		RequireTech = [[Advanced T1 Unit Research Centre]]
+		       },
 	corpse = [[DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[Magnesium FireBall Tank (anti spam)]],

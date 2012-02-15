@@ -20,6 +20,9 @@ local unitDef = {
 	canstop = 1,
 	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	corpse = [[dead]],
+	customparams = {
+		RequireTech = [[Advanced T2 Unit Research Centre]]
+		       },
 	defaultmissiontype = [[Standby]],
 	description = [[The hunter hell.]],
 	designation = [[TAEF/ARM-HDPW]],

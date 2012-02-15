@@ -126,7 +126,6 @@ local weaponDefs = {
 		startsmoke = 1,
 		startVelocity = 650,
 		texture2 = [[armsmoketrail]],
-		toAirWeapon = true,
 		tolerance = 9000,
 		tracks = true,
 		turnRate = 63000,

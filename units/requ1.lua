@@ -21,6 +21,9 @@ local unitDef = {
 	canPatrol = true,
 	canstop = 1,
 	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
+	customparams = {
+		RequireTech = [[Advanced T2 Unit Research Centre]]
+		       },
 	defaultmissiontype = [[Standby]],
 	description = [[Tactical Mobile Nuclear Tank]],
 	energyMake = 0,

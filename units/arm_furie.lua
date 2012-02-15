@@ -26,6 +26,9 @@ local unitDef = {
 	collisionvolumetype = [[Ell]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
+	customparams = {
+				RequireTech = [[Advanced T3 Unit Research Centre]]
+		       },
 	defaultmissiontype = [[Standby]],
 	description = [[The Legendary Kbot]],
 	designation = [[ARM-KL]],

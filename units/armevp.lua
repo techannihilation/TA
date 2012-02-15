@@ -61,11 +61,11 @@ local unitDef = {
 	buildoptions = {
 		[1] = [[avtr]],
 		[2] = [[armsiege]],
-		[3] = [[nsaagriz]],
-		[4] = [[armmlrs]],
-		[5] = [[champ]],
+		[3] = [[champ]],
+		[4] = [[corerex]],
+		[5] = [[armmlrs]],
 		[6] = [[armantar]],
-		[7] = [[corerex]],
+		[7] = [[nsaagriz]],
 	},
 	featureDefs = nil,
 	sounds = {

@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 0,
 	buildCostMetal = 113,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 8,
+	buildingGroundDecalSizeY = 8,
+	buildingGroundDecalType = [[corsolar_aoplane.dds]],
 	buildPic = [[CORSOLAR.png]],
 	buildTime = 1600,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -45,6 +49,7 @@ local unitDef = {
 	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[corsolar]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[ccccc coooc coooc coooc ccccc]],
 	featureDefs = nil,
@@ -65,11 +70,6 @@ local unitDef = {
 			[1] = [[solar2]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=8,
-	buildingGroundDecalSizeY=8,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[corsolar_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -78,6 +78,10 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[0 -9 0]],
+		collisionvolumescales = [[70 36 70]],
+		collisionvolumetest = 1,
+		collisionvolumetype = [[Ell]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

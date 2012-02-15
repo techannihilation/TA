@@ -23,6 +23,10 @@ function gadget:GetInfo()
     enabled   = true
   }
 end
+-- Changes for TechA 
+-- Fix Rc not being factory to unlock morph
+-- Fix level output for our needs
+
 
 -- Changes for "The Cursed"
 --    CarRepairer: may add a customized texture in the morphdefs, otherwise uses original behavior (unit buildicon and the word Morph). Break changes made in CA.
@@ -339,7 +343,7 @@ local function GetMorphToolTip(unitID, unitDefID, teamID, morphDef, teamTech, un
      (not teamOwnsReqUnit)
   then
     tt = tt .. RedStr .. 'needs'
-    if (morphDef.tech>teamTech) then tt = tt .. ' level: ' .. morphDef.tech end
+    if (morphDef.tech>teamTech) then tt = tt .. ' tech level: ' .. morphDef.tech+1 end
     if (morphDef.xp>unitXP)     then tt = tt .. ' xp: '    .. string.format('%.2f',morphDef.xp) end
     if (morphDef.rank>unitRank) then tt = tt .. ' rank: '  .. morphDef.rank .. ' (' .. string.format('%.2f',RankToXp(unitDefID,morphDef.rank)) .. 'xp)' end
     if (not teamOwnsReqUnit)    then tt = tt .. ' unit: '  .. UnitDefs[morphDef.require].humanName end

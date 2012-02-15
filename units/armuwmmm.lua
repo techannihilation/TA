@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 51562,
 	buildCostMetal = 1462,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 6,
+	buildingGroundDecalSizeY = 6,
+	buildingGroundDecalType = [[armuwmmm_aoplane.dds]],
 	buildPic = [[ARMUWMMM.png]],
 	buildTime = 30000,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -43,6 +47,7 @@ local unitDef = {
 	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[armuwmmm]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooooooooooooooooooo]],
 	featureDefs = nil,
@@ -64,11 +69,6 @@ local unitDef = {
 			[1] = [[metlon1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=6,
-	buildingGroundDecalSizeY=6,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armuwmmm_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -77,6 +77,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[1.91563415527 -2.21923828114e-05 -2.03186035156]],
+		collisionvolumescales = [[70.811340332 33.9307556152 58.6123657227]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

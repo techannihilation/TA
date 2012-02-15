@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 800,
 	buildCostMetal = 30,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 3,
+	buildingGroundDecalSizeY = 3,
+	buildingGroundDecalType = [[armeyes_aoplane.dds]],
 	buildPic = [[ARMEYES.png]],
 	buildTime = 1500,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -52,6 +56,7 @@ local unitDef = {
 	stealth = true,
 	turnRate = 0,
 	unitname = [[armeyes]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[o]],
 	featureDefs = nil,
@@ -76,11 +81,6 @@ local unitDef = {
 			[1] = [[minesel1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=3,
-	buildingGroundDecalSizeY=3,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armeyes_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -89,6 +89,9 @@ local featureDefs = {
 	DRAGONSEYES_DEAD = {
 		blocking = false,
 		category = [[heaps]],
+		collisionvolumeoffsets = [[-0.0323944091797 0.0 0.00588226318359]],
+		collisionvolumescales = [[15.8270874023 2.5 15.2345123291]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Heap]],
 		energy = 0,

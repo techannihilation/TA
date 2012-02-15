@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 35000,
 	buildCostMetal = 4700,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 8,
+	buildingGroundDecalSizeY = 8,
+	buildingGroundDecalType = [[corfus_aoplane.dds]],
 	buildPic = [[CORFUS.png]],
 	buildTime = 108800,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -45,6 +49,7 @@ local unitDef = {
 	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[corfus]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[ooooooooooooooooooooooooo]],
 	featureDefs = nil,
@@ -63,11 +68,6 @@ local unitDef = {
 			[1] = [[fusion2]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=8,
-	buildingGroundDecalSizeY=8,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[corfus_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -76,6 +76,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[3.32994842529 0.0812156738281 2.24537658691]],
+		collisionvolumescales = [[116.287948608 73.0596313477 95.7222900391]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

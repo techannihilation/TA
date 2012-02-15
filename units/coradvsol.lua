@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 3230,
 	buildCostMetal = 294,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 6,
+	buildingGroundDecalSizeY = 6,
+	buildingGroundDecalType = [[coradvsol_aoplane.dds]],
 	buildPic = [[CORADVSOL.png]],
 	buildTime = 6200,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -46,6 +50,7 @@ local unitDef = {
 	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[coradvsol]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooooooooooooooo]],
 	featureDefs = nil,
@@ -66,11 +71,6 @@ local unitDef = {
 			[1] = [[solar2]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=6,
-	buildingGroundDecalSizeY=6,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[coradvsol_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -79,6 +79,10 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[0 -27 -1]],
+		collisionvolumescales = [[60 112 58]],
+		collisionvolumetest = 1,
+		collisionvolumetype = [[Ell]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

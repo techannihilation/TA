@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 2340,
 	buildCostMetal = 280,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 4,
+	buildingGroundDecalSizeY = 4,
+	buildingGroundDecalType = [[cordl_aoplane.dds]],
 	buildPic = [[CORDL.png]],
 	buildTime = 4280,
 	canAttack = true,
@@ -50,6 +54,7 @@ local unitDef = {
 	standingfireorder = 2,
 	turnRate = 0,
 	unitname = [[cordl]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooo]],
 	featureDefs = nil,
@@ -83,11 +88,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTHOVERNOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=4,
-	buildingGroundDecalSizeY=4,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[cordl_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -143,6 +143,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[-0.56217956543 -6.50129699707 0.0390319824219]],
+		collisionvolumescales = [[41.9183044434 28.9974060059 37.2331542969]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

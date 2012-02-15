@@ -10,6 +10,10 @@ static-var  Static_Var_1, restore_delay, statechg_DesiredState, statechg_StateCh
 // Signal definitions
 #define SIG_AIM				2
 
+lua_FlameShot(weapon) //Distortion and lups flame effect
+{
+  return 0;
+}
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -144,6 +148,12 @@ AimPrimary(heading, pitch)
 	wait-for-turn barrel around x-axis;
 	start-script RestoreAfterDelay();
 	return (1);
+}
+
+Shot1()
+{
+	call-script lua_FlameShot(1);
+	return (TRUE);
 }
 
 FirePrimary()

@@ -22,6 +22,9 @@ local unitDef = {
 	cantBeTransported = true,
 	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	corpse = [[dead]],
+	customparams = {
+				RequireTech = [[Advanced T3 Unit Research Centre]]
+		       },
 	damageModifier = 0.5,
 	defaultmissiontype = [[Standby]],
 	description = [[All-Terrain K-bot Biomechanics]],

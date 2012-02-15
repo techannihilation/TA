@@ -145,9 +145,36 @@ local UnitEffects = {
     [UnitDefNames["cormex1"].id] = {
     {class='SimpleParticles2', options=MergeTable({pos={-6,20,0}, delay=20, lifeSpread=300},sparks)},
   },
-      
-      
-      
+    [UnitDefNames["armrech3"].id] = {
+    {class='SimpleParticles2', options=MergeTable({pos={-12,60,-37}, delay=15, lifeSpread=30},sparksr1)},
+    {class='SimpleParticles2', options=MergeTable({pos={-12,75,-37}, delay=30, lifeSpread=30},sparksr1)},
+    {class='SimpleParticles2', options=MergeTable({pos={-12,90,-37}, delay=45, lifeSpread=30},sparksr1)},
+  },
+    [UnitDefNames["armrech18"].id] = {
+    {class='SimpleParticles2', options=MergeTable({pos={-12,60,-37}, delay=15, lifeSpread=30},sparksr2)},
+    {class='SimpleParticles2', options=MergeTable({pos={-12,75,-37}, delay=30, lifeSpread=30},sparksr2)},
+    {class='SimpleParticles2', options=MergeTable({pos={-12,90,-37}, delay=45, lifeSpread=30},sparksr2)},
+  },
+    [UnitDefNames["armrech21"].id] = {
+    {class='SimpleParticles2', options=MergeTable({pos={-12,60,-37}, delay=15, lifeSpread=30},sparksr3)},
+    {class='SimpleParticles2', options=MergeTable({pos={-12,75,-37}, delay=30, lifeSpread=30},sparksr3)},
+    {class='SimpleParticles2', options=MergeTable({pos={-12,90,-37}, delay=45, lifeSpread=30},sparksr3)},
+  },
+    [UnitDefNames["corech3"].id] = {
+    {class='SimpleParticles2', options=MergeTable({pos={-12,60,-37}, delay=15, lifeSpread=30},sparksr1)},
+    {class='SimpleParticles2', options=MergeTable({pos={-12,75,-37}, delay=30, lifeSpread=30},sparksr1)},
+    {class='SimpleParticles2', options=MergeTable({pos={-12,90,-37}, delay=45, lifeSpread=30},sparksr1)},
+  },
+    [UnitDefNames["corech18"].id] = {
+    {class='SimpleParticles2', options=MergeTable({pos={-12,60,-37}, delay=15, lifeSpread=30},sparksr2)},
+    {class='SimpleParticles2', options=MergeTable({pos={-12,75,-37}, delay=30, lifeSpread=30},sparksr2)},
+    {class='SimpleParticles2', options=MergeTable({pos={-12,90,-37}, delay=45, lifeSpread=30},sparksr2)},
+  },
+    [UnitDefNames["corech21"].id] = {
+    {class='SimpleParticles2', options=MergeTable({pos={-12,60,-37}, delay=15, lifeSpread=30},sparksr3)},
+    {class='SimpleParticles2', options=MergeTable({pos={-12,75,-37}, delay=30, lifeSpread=30},sparksr3)},
+    {class='SimpleParticles2', options=MergeTable({pos={-12,90,-37}, delay=45, lifeSpread=30},sparksr3)},
+  },
       
       
 
@@ -351,9 +378,6 @@ if (t.yday>350) then --(t.month==12)
   UnitEffects[UnitDefNames["armcom7"].id] = {
     {class='SantaHat',options={color={1,0.1,0,1}, pos={0,4,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=8, piece="head"}},
   }
-  UnitEffects[UnitDefNames["armdecom"].id] = {
-    {class='SantaHat',options={color={1,0.1,0,1}, pos={0,4,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=8, piece="head"}},
-  }
   UnitEffects[UnitDefNames["corcom"].id] = {
     {class='SantaHat',options={color={1,0.1,0,1}, pos={0,0,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=16, piece="head"}},
   }
@@ -372,9 +396,6 @@ if (t.yday>350) then --(t.month==12)
   UnitEffects[UnitDefNames["corcom7"].id] = {
     {class='SantaHat',options={color={1,0.1,0,1}, pos={0,0,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=16, piece="head"}},
   }
-  UnitEffects[UnitDefNames["cordecom"].id] = {
-    {class='SantaHat',options={color={1,0.1,0,1}, pos={0,0,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=16, piece="head"}},
-  }
   UnitEffects[UnitDefNames["tllcom"].id] = {
     {class='SantaHat',options={color={1,0.1,0,1}, pos={0,8.8,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=11, piece="head"}},
   }
@@ -390,10 +411,8 @@ if (t.yday>350) then --(t.month==12)
   UnitEffects[UnitDefNames["tllcom7"].id] = {
     {class='SantaHat',options={color={1,0.1,0,1}, pos={0,8.8,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=11, piece="head"}},
   }
-  UnitEffects[UnitDefNames["tlldecom"].id] = {
-    {class='SantaHat',options={color={1,0.1,0,1}, pos={0,8.8,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=11, piece="head"}},
-  }
-end
+
+  end
 
 local abs = math.abs
 local spGetSpectatingState = Spring.GetSpectatingState
