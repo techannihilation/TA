@@ -265,6 +265,7 @@ raider_resistant = {
 	armwar = 99,
 	corexp = 99,
 	corlevlr = 99,
+	tllriot = 99,
 },
 -- TODO bombresistant
 bomb_resistant = {
