@@ -19,7 +19,7 @@ local unitDef = {
   canMove            = true,
   canPatrol          = true,
   canstop            = 1,
-  category           = [[ARM TANK LEVEL2 WEAPON ]],
+  category 			 = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
   corpse             = [[dead]],
   defaultmissiontype = [[Standby]],
   description        = [[Medium Riot Tank]],
@@ -41,7 +41,7 @@ local unitDef = {
   movementClass      = [[TANK3]],
   name               = [[Pacifier]],
   noAutoFire         = false,
-  noChaseCategory    = [[VTOL]],
+  noChaseCategory    = [[SUB VTOL]],
   objectName         = [[tllriot]],
   ovradjust          = 1,
   radarDistance      = 0,
@@ -83,7 +83,7 @@ local unitDef = {
   weaponDefs = nil,
   weapons = {
     [1]  = {
-      badTargetCategory  = [[VTOL]],
+      onlyTargetCategory = [[NOTVTOL]],
       def = [[TLLRIOT_CANNON]],
     },
   },
