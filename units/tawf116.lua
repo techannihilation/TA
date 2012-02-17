@@ -21,9 +21,6 @@ local unitDef = {
 	canstop = 1,
 	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	corpse = [[dead]],
-	customparams = {
-		RequireTech = [[Advanced T2 Unit Research Centre]]
-		       },
 	damageModifier = 0.65,
 	defaultmissiontype = [[Standby]],
 	description = [[Extended Armour Assault Vehicle]],
@@ -66,6 +63,9 @@ local unitDef = {
 	version = 3.1,
 	workerTime = 0,
 	zbuffer = 1,
+	customparams = {
+		RequireTech = [[Advanced T2 Unit Research Centre]],
+	},
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],

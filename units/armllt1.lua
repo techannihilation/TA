@@ -13,6 +13,10 @@ local unitDef = {
 	buildCostEnergy = 1300,
 	buildCostMetal = 170,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 4,
+	buildingGroundDecalSizeY = 4,
+	buildingGroundDecalType = [[armllt1_aoplane.dds]],
 	buildPic = [[armllt1.png]],
 	buildTime = 5300,
 	canAttack = true,
@@ -48,6 +52,7 @@ local unitDef = {
 	standingfireorder = 2,
 	turnRate = 0,
 	unitname = [[armllt1]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooo]],
 	featureDefs = nil,
@@ -81,11 +86,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=4,
-	buildingGroundDecalSizeY=4,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armllt1_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

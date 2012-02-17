@@ -23,11 +23,8 @@ local unitDef = {
 	canstop = 1,
 	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	corpse = [[dead]],
-	customparams = {
-		RequireTech = [[Advanced T2 Unit Research Centre]]
-		       },
 	defaultmissiontype = [[Standby]],
-	description = [[All Terrain -- Multipurpose Assault K-Bot]],
+	description = [[All-Terrain - Multipurpose Assault Kbot]],
 	designation = [[ARM-K47]],
 	downloadable = 1,
 	energyMake = 30,
@@ -76,6 +73,9 @@ local unitDef = {
 	version = 3,
 	workerTime = 0,
 	zbuffer = 1,
+	customparams = {
+		RequireTech = [[Advanced T2 Unit Research Centre]],
+	},
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],

@@ -12,6 +12,10 @@ local unitDef = {
 	buildCostMetal = 4400,
 	buildDistance = 900,
 	builder = true,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 5,
+	buildingGroundDecalSizeY = 5,
+	buildingGroundDecalType = [[tllnanotc_aoplane.dds]],
 	buildPic = [[CORNANOTC.png]],
 	buildTime = 27000,
 	canGuard = true,
@@ -52,6 +56,7 @@ local unitDef = {
 	turnRate = 1,
 	unitname = [[tllnanotc2]],
 	upright = true,
+	useBuildingGroundDecal = true,
 	workerTime = 1200,
 	sounds = {
 		build = [[nanlath2]],
@@ -78,11 +83,6 @@ local unitDef = {
 			[1] = [[vcorsel]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=5,
-	buildingGroundDecalSizeY=5,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tllnanotc_aoplane.dds]],
 }
 --------------------------------------------------------------------------------
 

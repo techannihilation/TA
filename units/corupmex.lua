@@ -12,6 +12,10 @@ local unitDef = {
 	buildCostEnergy = 6033,
 	buildCostMetal = 1062,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 5,
+	buildingGroundDecalSizeY = 5,
+	buildingGroundDecalType = [[corupmex_aoplane.dds]],
 	buildTime = 96444,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
 	corpse = [[dead]],
@@ -38,6 +42,7 @@ local unitDef = {
 	sightDistance = 273,
 	unitname = [[corupmex]],
 	unitnumber = 48,
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[ooooooooo]],
 	customparams = {
@@ -66,11 +71,6 @@ local unitDef = {
 			[1] = [[mexon1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=5,
-	buildingGroundDecalSizeY=5,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[corupmex_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

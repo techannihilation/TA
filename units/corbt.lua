@@ -22,9 +22,6 @@ local unitDef = {
 	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
-	customparams = {
-				RequireTech = [[Advanced T3 Unit Research Centre]]
-		       },
 	defaultmissiontype = [[Standby]],
 	description = [[Heavy Weapons Platform]],
 	designation = [[AC-BT]],
@@ -66,6 +63,9 @@ local unitDef = {
 	version = 3.1,
 	workerTime = 0,
 	zbuffer = 1,
+	customparams = {
+		RequireTech = [[Advanced T3 Unit Research Centre]],
+	},
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],

@@ -21,9 +21,6 @@ local unitDef = {
 	canPatrol = true,
 	canstop = 1,
 	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
-	customparams = {
-		RequireTech = [[Advanced T1 Unit Research Centre]]
-		       },
 	corpse = [[dead]],
 	defaultmissiontype = [[Standby]],
 	description = [[Fast Assault Tank]],
@@ -67,6 +64,9 @@ local unitDef = {
 	version = 1.2,
 	workerTime = 0,
 	zbuffer = 1,
+	customparams = {
+		RequireTech = [[Advanced T1 Unit Research Centre]],
+	},
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],

@@ -20,8 +20,8 @@ local unitDef = {
 	buildTime = 350000,
 	canAttack = true,
 	canCapture = true,
-	canManualFire = true,
 	canGuard = true,
+	canManualFire = true,
 	canMove = true,
 	canPatrol = true,
 	canreclamate = 1,
@@ -35,9 +35,6 @@ local unitDef = {
 	collisionvolumetype = [[Ell]],
 	commander = true,
 	corpse = [[DEAD]],
-	customParams           = {
-		iscommander = true,
-	},
 	defaultmissiontype = [[Standby]],
 	description = [[Commander]],
 	energyMake = 1500,
@@ -122,6 +119,9 @@ local unitDef = {
 		[33] = [[corgant1]],
 		[34] = [[cordrag1]],
 		[35] = [[monkeylord]],
+	},
+	customParams = {
+		iscommander = true,
 	},
 	featureDefs = nil,
 	sounds = {

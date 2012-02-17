@@ -10,6 +10,10 @@ local unitDef = {
 	buildCostEnergy = 16527,
 	buildCostMetal = 3457,
 	builder = true,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 12,
+	buildingGroundDecalSizeY = 12,
+	buildingGroundDecalType = [[cahp_aoplane.dds]],
 	buildTime = 34521,
 	canMove = false,
 	canPatrol = true,
@@ -55,6 +59,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[cahp]],
 	unitnumber = 11005,
+	useBuildingGroundDecal = true,
 	version = 1.2,
 	workerTime = 400,
 	yardMap = [[ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo]],
@@ -88,11 +93,6 @@ local unitDef = {
 			[1] = [[hoversl2]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=12,
-	buildingGroundDecalSizeY=12,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[cahp_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

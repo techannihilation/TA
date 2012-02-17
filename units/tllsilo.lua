@@ -11,6 +11,10 @@ local unitDef = {
 	buildCostEnergy = 38341,
 	buildCostMetal = 10108,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 8,
+	buildingGroundDecalSizeY = 8,
+	buildingGroundDecalType = [[tllsilo_aoplane.dds]],
 	buildTime = 193549,
 	canAttack = true,
 	canstop = 1,
@@ -52,6 +56,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[tllsilo]],
 	unitnumber = 859,
+	useBuildingGroundDecal = true,
 	version = 3.1,
 	workerTime = 0,
 	yardMap = [[ooooo ooooo ooooo ooooo ooooo]],
@@ -85,11 +90,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=8,
-	buildingGroundDecalSizeY=8,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tllsilo_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

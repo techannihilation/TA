@@ -12,6 +12,10 @@ local unitDef = {
 	buildCostEnergy = 124382,
 	buildCostMetal = 18000,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 6,
+	buildingGroundDecalSizeY = 6,
+	buildingGroundDecalType = [[tllgate1_aoplane.dds]],
 	buildPic = [[tllgate.png]],
 	buildTime = 253485,
 	canAttack = true,
@@ -45,6 +49,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[tllgate]],
 	unitnumber = 3403,
+	useBuildingGroundDecal = true,
 	version = 3.1,
 	workerTime = 0,
 	yardMap = [[ooo ooo ooo ooo ooo]],
@@ -77,11 +82,6 @@ local unitDef = {
 			def = [[REPULSOR]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=6,
-	buildingGroundDecalSizeY=6,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tllgate1_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

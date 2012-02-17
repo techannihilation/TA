@@ -12,6 +12,10 @@ local unitDef = {
 	buildCostEnergy = 0,
 	buildCostMetal = 188,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 8,
+	buildingGroundDecalSizeY = 8,
+	buildingGroundDecalType = [[tllsolar_aoplane.dds]],
 	buildTime = 2600,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
@@ -44,6 +48,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[tllsolar]],
 	unitnumber = 804,
+	useBuildingGroundDecal = true,
 	version = 3.1,
 	workerTime = 0,
 	yardMap = [[ooooo ooooo ooooo ooooo ooooo]],
@@ -66,11 +71,6 @@ local unitDef = {
 			[1] = [[solar1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=8,
-	buildingGroundDecalSizeY=8,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tllsolar_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

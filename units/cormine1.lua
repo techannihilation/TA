@@ -13,6 +13,10 @@ local unitDef = {
 	buildCostEnergy = 250,
 	buildCostMetal = 5,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 3,
+	buildingGroundDecalSizeY = 3,
+	buildingGroundDecalType = [[cormine1_aoplane.dds]],
 	buildPic = [[CORMINE1.png]],
 	buildTime = 50,
 	canAttack = false,
@@ -61,6 +65,7 @@ local unitDef = {
 	stealth = true,
 	turnRate = 0,
 	unitname = [[cormine1]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[o]],
 	sounds = {
@@ -95,11 +100,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=3,
-	buildingGroundDecalSizeY=3,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[cormine1_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

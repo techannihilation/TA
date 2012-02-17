@@ -11,15 +11,16 @@ local unitDef = {
 	buildCostEnergy = 120687,
 	buildCostMetal = 21746,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 9,
+	buildingGroundDecalSizeY = 9,
+	buildingGroundDecalType = [[corboucher_aoplane.dds]],
 	buildTime = 231000,
 	canAttack = true,
 	canstop = 1,
 	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
-	customparams = {
-			RequireTech = [[Advanced T4 Unit Research Centre]]
-       },
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[Anti Experimental Cannon]],
 	designation = [[BOUCHER-GUARD]],
@@ -50,10 +51,14 @@ local unitDef = {
 	threed = 1,
 	unitname = [[corboucher]],
 	unitnumber = 731989,
+	useBuildingGroundDecal = true,
 	version = 3,
 	workerTime = 0,
 	yardMap = [[oooooo oooooo oooooo oooooo oooooo oooooo]],
 	zbuffer = 1,
+	customparams = {
+		RequireTech = [[Advanced T4 Unit Research Centre]],
+	},
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],
@@ -86,11 +91,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=9,
-	buildingGroundDecalSizeY=9,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[corboucher_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

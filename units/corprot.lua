@@ -24,9 +24,6 @@ local unitDef = {
 	cloakCost = 500,
 	cloakCostMoving = 1500,
 	corpse = [[dead]],
-	customparams = {
-		RequireTech = [[Advanced T2 Unit Research Centre]]
-		       },
 	defaultmissiontype = [[Standby]],
 	description = [[Heavy Sniper Support Kbot]],
 	designation = [[CR-PT]],
@@ -71,6 +68,9 @@ local unitDef = {
 	version = 1.2,
 	workerTime = 0,
 	zbuffer = 1,
+	customparams = {
+		RequireTech = [[Advanced T2 Unit Research Centre]],
+	},
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],

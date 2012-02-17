@@ -11,6 +11,10 @@ local unitDef = {
 	buildCostEnergy = 1231120,
 	buildCostMetal = 17760,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 8,
+	buildingGroundDecalSizeY = 8,
+	buildingGroundDecalType = [[corpre_aoplane.dds]],
 	buildTime = 220000,
 	canAttack = true,
 	canstop = 1,
@@ -53,6 +57,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[corpre]],
 	unitnumber = 161,
+	useBuildingGroundDecal = true,
 	version = 1,
 	workerTime = 0,
 	yardMap = [[ooooooooo]],
@@ -89,11 +94,6 @@ local unitDef = {
 			onlyTargetCategory = [[VTOL SUPERSHIP]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=8,
-	buildingGroundDecalSizeY=8,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[corpre_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -119,6 +119,7 @@ local weaponDefs = {
 		lineOfSight = true,
 		name = [[Anti-airplane ion mingun]],
 		noSelfDamage = true,
+		PredictBoost = 1,
 		range = 1350,
 		reloadtime = 0.2,
 		renderType = 0,
@@ -139,7 +140,6 @@ local weaponDefs = {
 		tracks = true,
 		turnRate = 15000,
 		turret = true,
-		PredictBoost = 1,
 		weaponType = [[LaserCannon]],
 		weaponVelocity = 3500,
 		damage = {

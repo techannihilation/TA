@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 162563,
 	buildCostMetal = 16000,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 11,
+	buildingGroundDecalSizeY = 11,
+	buildingGroundDecalType = [[armanni1_aoplane.dds]],
 	buildPic = [[ARMANNI.png]],
 	buildTime = 252071,
 	canAttack = true,
@@ -50,6 +54,7 @@ local unitDef = {
 	standingfireorder = 2,
 	turnRate = 0,
 	unitname = [[armanni1]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooooooooooooooo]],
 	featureDefs = nil,
@@ -82,11 +87,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=11,
-	buildingGroundDecalSizeY=11,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armanni1_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

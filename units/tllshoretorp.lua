@@ -11,6 +11,10 @@ local unitDef = {
 	buildCostEnergy = 5724,
 	buildCostMetal = 602,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 5,
+	buildingGroundDecalSizeY = 5,
+	buildingGroundDecalType = [[tllshoretorp_aoplane.dds]],
 	buildTime = 9911,
 	canAttack = true,
 	canGuard = true,
@@ -42,6 +46,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[tllshoretorp]],
 	unitnumber = 946,
+	useBuildingGroundDecal = true,
 	version = 3.1,
 	yardMap = [[ooo ooo ooo]],
 	zbuffer = 1,
@@ -77,11 +82,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTHOVERNOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=5,
-	buildingGroundDecalSizeY=5,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tllshoretorp_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

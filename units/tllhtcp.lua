@@ -11,6 +11,10 @@ local unitDef = {
 	buildCostEnergy = 80000,
 	buildCostMetal = 15400,
 	builder = true,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 13,
+	buildingGroundDecalSizeY = 13,
+	buildingGroundDecalType = [[tllhtcp_aoplane.dds]],
 	buildTime = 92000,
 	canMove = true,
 	canPatrol = true,
@@ -45,6 +49,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[tllhtcp]],
 	unitnumber = 934,
+	useBuildingGroundDecal = true,
 	version = 3.1,
 	workerTime = 980,
 	yardMap = [[ooccccccoo ooccccccoo ooccccccoo cccccccccc cccccccccc cccccccccc ooccccccoo ooccccccoo ooccccccoo ooccccccoo ]],
@@ -56,7 +61,6 @@ local unitDef = {
 		[4] = [[tllgrim]],
 		[5] = [[heavyimpact]],
 		[6] = [[hyperion]],
-
 	},
 	featureDefs = nil,
 	sounds = {
@@ -80,11 +84,6 @@ local unitDef = {
 			[1] = [[gantsel1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=13,
-	buildingGroundDecalSizeY=13,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tllhtcp_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

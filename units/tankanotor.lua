@@ -24,9 +24,6 @@ local unitDef = {
 	collisionVolumeTest = 1,
 	collisionVolumeType = [[CylZ]],
 	corpse = [[dead]],
-	customparams = {
-		RequireTech = [[Advanced T2 Unit Research Centre]]
-		       },
 	defaultmissiontype = [[Standby]],
 	description = [[Heavy Rocket Tank]],
 	designation = [[TANKANOTOR]],
@@ -68,6 +65,9 @@ local unitDef = {
 	version = 3,
 	workerTime = 0,
 	zbuffer = 1,
+	customparams = {
+		RequireTech = [[Advanced T2 Unit Research Centre]],
+	},
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],

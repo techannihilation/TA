@@ -19,9 +19,6 @@ local unitDef = {
 	canPatrol = true,
 	canstop = 1,
 	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
-	customparams = {
-		RequireTech = [[Advanced T1 Unit Research Centre]]
-		       },
 	corpse = [[dead]],
 	defaultmissiontype = [[Standby]],
 	description = [[Sonic Riot Tank]],
@@ -70,6 +67,9 @@ local unitDef = {
 	version = 1,
 	workerTime = 0,
 	zbuffer = 1,
+	customparams = {
+		RequireTech = [[Advanced T1 Unit Research Centre]],
+	},
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],
@@ -136,7 +136,7 @@ local weaponDefs = {
 		weaponType = [[Cannon]],
 		weaponVelocity = 600,
 		damage = {
-			default = 20, --additional damage by area damage gadget
+			default = 20,
 			subs = 5,
 		},
 	},

@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 137536,
 	buildCostMetal = 7987,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 10,
+	buildingGroundDecalSizeY = 10,
+	buildingGroundDecalType = [[corsilo1_aoplane.dds]],
 	buildPic = [[CORSILO.png]],
 	buildTime = 181243,
 	canAttack = true,
@@ -48,6 +52,7 @@ local unitDef = {
 	standingfireorder = 0,
 	turnRate = 0,
 	unitname = [[corsilo1]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[ooooooooooooooooooooooooooooooooooooooooooooooooo]],
 	featureDefs = nil,
@@ -79,11 +84,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=10,
-	buildingGroundDecalSizeY=10,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[corsilo1_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

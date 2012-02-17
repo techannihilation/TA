@@ -26,9 +26,6 @@ local unitDef = {
 	collisionVolumeTest = 1,
 	collisionVolumeType = [[CylX]],
 	corpse = [[dead]],
-	customparams = {
-		RequireTech = [[Advanced T2 Unit Research Centre]]
-		       },
 	defaultmissiontype = [[Standby]],
 	description = [[Very Heavy Stealth Amphibious Tank]],
 	designation = [[ARM-SCPION]],
@@ -74,6 +71,9 @@ local unitDef = {
 	version = 1,
 	workerTime = 0,
 	zbuffer = 1,
+	customparams = {
+		RequireTech = [[Advanced T2 Unit Research Centre]],
+	},
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],

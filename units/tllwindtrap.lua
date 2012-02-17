@@ -12,6 +12,10 @@ local unitDef = {
 	buildCostEnergy = 208,
 	buildCostMetal = 37,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 6,
+	buildingGroundDecalSizeY = 6,
+	buildingGroundDecalType = [[tllwindtrap_aoplane.dds]],
 	buildTime = 1961,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
@@ -51,6 +55,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[tllwindtrap]],
 	unitnumber = 851,
+	useBuildingGroundDecal = true,
 	version = 3.1,
 	windGenerator = 120,
 	workerTime = 0,
@@ -74,11 +79,6 @@ local unitDef = {
 			[1] = [[tllwindsel]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=6,
-	buildingGroundDecalSizeY=6,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tllwindtrap_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

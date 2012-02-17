@@ -12,6 +12,10 @@ local unitDef = {
 	buildCostEnergy = 2447,
 	buildCostMetal = 44,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 5,
+	buildingGroundDecalSizeY = 5,
+	buildingGroundDecalType = [[tlluwmex_aoplane.dds]],
 	buildTime = 3644,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
@@ -47,6 +51,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[tlluwmex]],
 	unitnumber = 898,
+	useBuildingGroundDecal = true,
 	version = 3.1,
 	workerTime = 0,
 	yardMap = [[ooooooooo]],
@@ -70,11 +75,6 @@ local unitDef = {
 			[1] = [[waterex1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=5,
-	buildingGroundDecalSizeY=5,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tlluwmex_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

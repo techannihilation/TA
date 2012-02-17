@@ -24,9 +24,6 @@ local unitDef = {
 	collisionVolumeTest = 1,
 	collisionVolumeType = [[box]],
 	corpse = [[dead]],
-	customparams = {
-		RequireTech = [[Advanced T2 Unit Research Centre]]
-		       },
 	defaultmissiontype = [[Standby]],
 	description = [[High Energy Laser Tank]],
 	designation = [[vaporiser]],
@@ -64,6 +61,9 @@ local unitDef = {
 	version = 2,
 	workerTime = 0,
 	zbuffer = 1,
+	customparams = {
+		RequireTech = [[Advanced T2 Unit Research Centre]],
+	},
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],

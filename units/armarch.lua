@@ -12,6 +12,10 @@ local unitDef = {
 	buildCostEnergy = 82143,
 	buildCostMetal = 3574,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 6,
+	buildingGroundDecalSizeY = 6,
+	buildingGroundDecalType = [[armarch_aoplane.dds]],
 	buildTime = 42190,
 	canAttack = true,
 	canstop = 1,
@@ -46,6 +50,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[armarch]],
 	unitnumber = 911,
+	useBuildingGroundDecal = true,
 	version = 3,
 	workerTime = 0,
 	yardMap = [[oooooooooooooooo]],
@@ -87,11 +92,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=6,
-	buildingGroundDecalSizeY=6,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armarch_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

@@ -11,6 +11,10 @@ local unitDef = {
 	buildCostEnergy = 40236,
 	buildCostMetal = 1980,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 5,
+	buildingGroundDecalSizeY = 5,
+	buildingGroundDecalType = [[armmagneto_aoplane.dds]],
 	buildTime = 34000,
 	canAttack = true,
 	canGuard = true,
@@ -50,6 +54,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[armmagneto]],
 	unitnumber = 1.6346387854368e+017,
+	useBuildingGroundDecal = true,
 	version = 1,
 	workerTime = 0,
 	yardMap = [[ooo ooo ooo]],
@@ -85,11 +90,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=5,
-	buildingGroundDecalSizeY=5,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armmagneto_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

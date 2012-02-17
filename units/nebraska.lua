@@ -11,15 +11,16 @@ local unitDef = {
 	buildCostEnergy = 199413,
 	buildCostMetal = 18789,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 11,
+	buildingGroundDecalSizeY = 11,
+	buildingGroundDecalType = [[nebraska_aoplane.dds]],
 	buildTime = 254864,
 	canAttack = true,
 	canstop = 1,
 	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
-	customparams = {
-			RequireTech = [[Advanced T4 Unit Research Centre]]
-	},
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[Anti Experimental Cannon]],
 	designation = [[NEBRASKA-HLT]],
@@ -51,10 +52,14 @@ local unitDef = {
 	threed = 1,
 	unitname = [[nebraska]],
 	unitnumber = 567167,
+	useBuildingGroundDecal = true,
 	version = 3,
 	workerTime = 0,
 	yardMap = [[oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo]],
 	zbuffer = 1,
+	customparams = {
+		RequireTech = [[Advanced T4 Unit Research Centre]],
+	},
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],
@@ -85,11 +90,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=11,
-	buildingGroundDecalSizeY=11,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[nebraska_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

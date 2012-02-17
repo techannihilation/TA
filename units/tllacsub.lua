@@ -27,7 +27,7 @@ local unitDef = {
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
 	defaultmissiontype = [[Standby]],
-	description = [[Build UW Structures]],
+	description = [[Build Underwater Structures]],
 	designation = [[TL-CS]],
 	downloadable = 1,
 	energyMake = 18,
@@ -80,7 +80,6 @@ local unitDef = {
 		[9] = [[tllatorp]],
 		[10] = [[tlldtns]],
 		[11] = [[tllsealock]],
-
 	},
 	featureDefs = nil,
 	sounds = {

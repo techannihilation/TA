@@ -10,6 +10,10 @@ local unitDef = {
 	buildCostEnergy = 5988,
 	buildCostMetal = 188,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 5,
+	buildingGroundDecalSizeY = 5,
+	buildingGroundDecalType = [[cmetalmakerlvl1_aoplane.dds]],
 	buildTime = 4800,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
 	description = [[Converts upto 256 Energy to Metal]],
@@ -32,6 +36,7 @@ local unitDef = {
 	side = [[CORE]],
 	sightDistance = 210,
 	unitname = [[cmetalmakerlvl1]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[OOOOOOOOOOOO]],
 	sounds = {
@@ -52,11 +57,6 @@ local unitDef = {
 			[1] = [[metlon2]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=5,
-	buildingGroundDecalSizeY=5,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[cmetalmakerlvl1_aoplane.dds]],
 }
 --------------------------------------------------------------------------------
 

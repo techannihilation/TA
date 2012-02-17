@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 322599,
 	buildCostMetal = 12478,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 9,
+	buildingGroundDecalSizeY = 9,
+	buildingGroundDecalType = [[cordoom1_aoplane.dds]],
 	buildPic = [[CORDOOM.png]],
 	buildTime = 255276,
 	canAttack = true,
@@ -49,6 +53,7 @@ local unitDef = {
 	standingfireorder = 2,
 	turnRate = 0,
 	unitname = [[cordoom1]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[ooooooooo]],
 	featureDefs = nil,
@@ -91,11 +96,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=9,
-	buildingGroundDecalSizeY=9,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[cordoom1_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

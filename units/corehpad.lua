@@ -12,6 +12,10 @@ local unitDef = {
 	buildCostEnergy = 17570,
 	buildCostMetal = 1250,
 	builder = true,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 9,
+	buildingGroundDecalSizeY = 9,
+	buildingGroundDecalType = [[corehpad_aoplane.dds]],
 	buildTime = 19981,
 	canMove = true,
 	canPatrol = true,
@@ -49,6 +53,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[corehpad]],
 	unitnumber = 100897,
+	useBuildingGroundDecal = true,
 	version = 1,
 	workerTime = 190,
 	yardMap = [[ooooooo ooooooo occccco occccco occccco occccco]],
@@ -77,11 +82,6 @@ local unitDef = {
 			[1] = [[pairactv]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=9,
-	buildingGroundDecalSizeY=9,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[corehpad_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

@@ -10,6 +10,10 @@ local unitDef = {
 	buildCostEnergy = 1531,
 	buildCostMetal = 1155,
 	builder = true,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 10,
+	buildingGroundDecalSizeY = 10,
+	buildingGroundDecalType = [[tllhp_aoplane.dds]],
 	buildTime = 14105,
 	canMove = true,
 	canPatrol = true,
@@ -52,6 +56,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[tllhp]],
 	unitnumber = 19103,
+	useBuildingGroundDecal = true,
 	version = 1.2,
 	workerTime = 400,
 	yardMap = [[ooccccoo ooccccoo ooccccoo ooccccoo ooccccoo ooccccoo ooccccoo]],
@@ -83,11 +88,6 @@ local unitDef = {
 			[1] = [[hoversl2]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=10,
-	buildingGroundDecalSizeY=10,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tllhp_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

@@ -20,9 +20,6 @@ local unitDef = {
 	canstop = 1,
 	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
-	customparams = {
-		RequireTech = [[Advanced T1 Unit Research Centre]]
-		       },
 	corpse = [[dead]],
 	damageModifier = 0.8,
 	defaultmissiontype = [[Standby]],
@@ -66,6 +63,9 @@ local unitDef = {
 	unitnumber = 760,
 	version = 1,
 	zbuffer = 1,
+	customparams = {
+		RequireTech = [[Advanced T1 Unit Research Centre]],
+	},
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],

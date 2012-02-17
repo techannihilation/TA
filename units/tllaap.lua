@@ -10,6 +10,10 @@ local unitDef = {
 	buildCostEnergy = 8700,
 	buildCostMetal = 2840,
 	builder = true,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 10,
+	buildingGroundDecalSizeY = 10,
+	buildingGroundDecalType = [[tllaap_aoplane.dds]],
 	buildTime = 25762,
 	canMove = true,
 	canPatrol = true,
@@ -48,6 +52,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[tllaap]],
 	unitnumber = 883,
+	useBuildingGroundDecal = true,
 	version = 3.1,
 	workerTime = 420,
 	yardMap = [[oooooo occcco occcco occcco occcco occcco oooooo]],
@@ -79,11 +84,6 @@ local unitDef = {
 			[1] = [[pairactv]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=10,
-	buildingGroundDecalSizeY=10,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tllaap_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

@@ -1,4 +1,4 @@
---- UNITDEF -- ARM_FURIE --
+-- UNITDEF -- ARM_FURIE --
 --------------------------------------------------------------------------------
 
 local unitName = "arm_furie"
@@ -26,9 +26,6 @@ local unitDef = {
 	collisionvolumetype = [[Ell]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
-	customparams = {
-				RequireTech = [[Advanced T3 Unit Research Centre]]
-		       },
 	defaultmissiontype = [[Standby]],
 	description = [[The Legendary Kbot]],
 	designation = [[ARM-KL]],
@@ -72,6 +69,9 @@ local unitDef = {
 	version = 3.1,
 	workerTime = 0,
 	zbuffer = 1,
+	customparams = {
+		RequireTech = [[Advanced T3 Unit Research Centre]],
+	},
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],

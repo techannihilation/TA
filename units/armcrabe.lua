@@ -22,12 +22,9 @@ local unitDef = {
 	cantBeTransported = true,
 	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	corpse = [[dead]],
-	customparams = {
-				RequireTech = [[Advanced T3 Unit Research Centre]]
-		       },
 	damageModifier = 0.5,
 	defaultmissiontype = [[Standby]],
-	description = [[All-Terrain K-bot Biomechanics]],
+	description = [[All-Terrain Kbot Biomechanics]],
 	designation = [[ARM-CRABE]],
 	energyMake = 0.7,
 	energyStorage = 0,
@@ -69,6 +66,9 @@ local unitDef = {
 	version = 1,
 	workerTime = 0,
 	zbuffer = 1,
+	customparams = {
+		RequireTech = [[Advanced T3 Unit Research Centre]],
+	},
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],

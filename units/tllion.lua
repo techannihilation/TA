@@ -11,6 +11,10 @@ local unitDef = {
 	buildCostEnergy = 1178502,
 	buildCostMetal = 274840,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 10,
+	buildingGroundDecalSizeY = 10,
+	buildingGroundDecalType = [[tllion_aoplane.dds]],
 	buildPic = [[tllion.png]],
 	buildTime = 999999,
 	canAttack = true,
@@ -45,6 +49,7 @@ local unitDef = {
 	sightDistance = 300,
 	standingfireorder = 2,
 	unitname = [[tllion]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[yoooyyy yoooooo ooooooo ooooooo yoooooo yoooooy yyooooy ]],
 	featureDefs = nil,
@@ -81,11 +86,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=10,
-	buildingGroundDecalSizeY=10,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tllion_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

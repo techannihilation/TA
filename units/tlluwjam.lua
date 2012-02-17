@@ -12,6 +12,10 @@ local unitDef = {
 	buildCostEnergy = 803,
 	buildCostMetal = 121,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 5,
+	buildingGroundDecalSizeY = 5,
+	buildingGroundDecalType = [[tlluwjam_aoplane.dds]],
 	buildTime = 4912,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
@@ -47,6 +51,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[tlluwjam]],
 	unitnumber = 869,
+	useBuildingGroundDecal = true,
 	version = 3.1,
 	workerTime = 0,
 	yardMap = [[ooooooooo]],
@@ -73,11 +78,6 @@ local unitDef = {
 			[1] = [[radjam1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=5,
-	buildingGroundDecalSizeY=5,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tlluwjam_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
