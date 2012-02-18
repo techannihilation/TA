@@ -8,7 +8,7 @@ piece  pelvis, torso, spines, launcher, door1, flip1, door2, flip2,
        rflame2, rtubes, rslide1, rslide2, rtop, luparm, lloarm,
        ltubes, lfirept, flame12, lslide1, lslide2, lflame2,
        ltop, head, horns, eyegun, lthigh, lleg, lfoot, rthigh,
-       rleg, rfoot,  exppt;
+       rleg, rfoot;
 
 static-var  gun_1, bAiming, Static_Var_3, Static_Var_4, Static_Var_5,
             Static_Var_6, Static_Var_7, gun_3, Static_Var_9, bMoving;
