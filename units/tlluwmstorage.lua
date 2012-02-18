@@ -11,6 +11,10 @@ local unitDef = {
 	buildCostEnergy = 1388,
 	buildCostMetal = 358,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 6,
+	buildingGroundDecalSizeY = 6,
+	buildingGroundDecalType = [[tlluwmstorage_aoplane.dds]],
 	buildTime = 3849,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
@@ -47,6 +51,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[tlluwmstorage]],
 	unitnumber = 856,
+	useBuildingGroundDecal = true,
 	version = 3.1,
 	workerTime = 0,
 	yardMap = [[oooooooooooooooo]],
@@ -67,11 +72,6 @@ local unitDef = {
 			[1] = [[stormtl1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=6,
-	buildingGroundDecalSizeY=6,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tlluwmstorage_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

@@ -13,6 +13,10 @@ local unitDef = {
 	buildCostEnergy = 12370,
 	buildCostMetal = 1450,
 	builder = true,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 9,
+	buildingGroundDecalSizeY = 9,
+	buildingGroundDecalType = [[armcp_aoplane.dds]],
 	buildTime = 19240,
 	canMove = true,
 	canPatrol = true,
@@ -50,6 +54,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[armcp]],
 	unitnumber = 8,
+	useBuildingGroundDecal = true,
 	version = 1,
 	workerTime = 100,
 	yardMap = [[ooooooo ooooooo occccco occccco occccco occccco]],
@@ -78,11 +83,6 @@ local unitDef = {
 			[1] = [[pairactv]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=9,
-	buildingGroundDecalSizeY=9,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armcp_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

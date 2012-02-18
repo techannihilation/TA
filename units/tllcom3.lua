@@ -20,8 +20,8 @@ local unitDef = {
 	buildTime = 300000,
 	canAttack = true,
 	canCapture = true,
-	canManualFire = true,
 	canGuard = true,
+	canManualFire = true,
 	canMove = true,
 	canPatrol = true,
 	canreclamate = 1,
@@ -35,9 +35,6 @@ local unitDef = {
 	collisionvolumetype = [[Ell]],
 	commander = true,
 	corpse = [[DEAD]],
-	customParams           = {
-		iscommander = true,
-	},
 	defaultmissiontype = [[Standby]],
 	description = [[Commander]],
 	energyMake = 25,
@@ -116,6 +113,9 @@ local unitDef = {
 		[28] = [[tllhltns]],
 		[29] = [[tllck]],
 		[30] = [[tllfireraiser]],
+	},
+	customParams = {
+		iscommander = true,
 	},
 	featureDefs = nil,
 	sounds = {

@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 714321,
 	buildCostMetal = 22108,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 9,
+	buildingGroundDecalSizeY = 9,
+	buildingGroundDecalType = [[corfmd2_aoplane.dds]],
 	buildPic = [[CORFMD.png]],
 	buildTime = 496450,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
@@ -48,6 +52,7 @@ local unitDef = {
 	turnRate = 0,
 	unitname = [[corfmd2]],
 	unitRestricted = 8,
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooooooooooooooo]],
 	featureDefs = nil,
@@ -79,11 +84,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=9,
-	buildingGroundDecalSizeY=9,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[corfmd2_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

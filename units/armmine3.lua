@@ -13,6 +13,10 @@ local unitDef = {
 	buildCostEnergy = 1250,
 	buildCostMetal = 20,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 3,
+	buildingGroundDecalSizeY = 3,
+	buildingGroundDecalType = [[armmine3_aoplane.dds]],
 	buildPic = [[ARMMINE3.png]],
 	buildTime = 125,
 	canAttack = false,
@@ -61,6 +65,7 @@ local unitDef = {
 	stealth = true,
 	turnRate = 0,
 	unitname = [[armmine3]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[o]],
 	sounds = {
@@ -95,11 +100,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=3,
-	buildingGroundDecalSizeY=3,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armmine3_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 33000,
 	buildCostMetal = 4100,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 8,
+	buildingGroundDecalSizeY = 8,
+	buildingGroundDecalType = [[armgmm_aoplane.dds]],
 	buildPic = [[ARMGMM.png]],
 	buildTime = 63000,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -42,6 +46,7 @@ local unitDef = {
 	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[armgmm]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[ooooo ooooo ooGoo ooooo ooooo]],
 	sounds = {
@@ -59,11 +64,6 @@ local unitDef = {
 			[1] = [[geothrm1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=8,
-	buildingGroundDecalSizeY=8,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armgmm_aoplane.dds]],
 }
 --------------------------------------------------------------------------------
 

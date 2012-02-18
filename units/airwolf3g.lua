@@ -23,9 +23,6 @@ local unitDef = {
 	collide = false,
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	cruiseAlt = 120,
-	customparams = {
-		RequireTech = [[Advanced T3 Unit Research Centre]]
-		       },
 	defaultmissiontype = [[VTOL_standby]],
 	description = [[Super Fighter]],
 	designation = [[CASF-3g]],
@@ -68,6 +65,9 @@ local unitDef = {
 	unitRestricted = 300,
 	version = 3,
 	zbuffer = 1,
+	customparams = {
+		RequireTech = [[Advanced T3 Unit Research Centre]],
+	},
 	sounds = {
 		canceldestruct = [[cancel2]],
 		underattack = [[warning1]],

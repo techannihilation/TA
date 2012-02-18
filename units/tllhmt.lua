@@ -11,6 +11,10 @@ local unitDef = {
 	buildCostEnergy = 16219,
 	buildCostMetal = 2157,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 5,
+	buildingGroundDecalSizeY = 5,
+	buildingGroundDecalType = [[tllhmt_aoplane.dds]],
 	buildTime = 13341,
 	canAttack = true,
 	canGuard = true,
@@ -41,6 +45,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[tllhmt]],
 	unitnumber = 817,
+	useBuildingGroundDecal = true,
 	version = 1,
 	workerTime = 0,
 	yardMap = [[ooooooooo]],
@@ -77,11 +82,6 @@ local unitDef = {
 			onlyTargetCategory = [[VTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=5,
-	buildingGroundDecalSizeY=5,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tllhmt_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

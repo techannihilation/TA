@@ -11,6 +11,10 @@ local unitDef = {
 	buildCostEnergy = 5000000,
 	buildCostMetal = 600000,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 13,
+	buildingGroundDecalSizeY = 13,
+	buildingGroundDecalType = [[corflu_aoplane.dds]],
 	buildTime = 10000000,
 	canAttack = true,
 	canGuard = true,
@@ -57,6 +61,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[corflu]],
 	unitnumber = 16,
+	useBuildingGroundDecal = true,
 	version = 1,
 	workerTime = 0,
 	yardMap = [[oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo]],
@@ -89,11 +94,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=13,
-	buildingGroundDecalSizeY=13,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[corflu_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

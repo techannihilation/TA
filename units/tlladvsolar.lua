@@ -12,6 +12,10 @@ local unitDef = {
 	buildCostEnergy = 1600,
 	buildCostMetal = 395,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 8,
+	buildingGroundDecalSizeY = 8,
+	buildingGroundDecalType = [[tlladvsolar_aoplane.dds]],
 	buildTime = 7000,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
@@ -48,6 +52,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[tlladvsolar]],
 	unitnumber = 846,
+	useBuildingGroundDecal = true,
 	version = 3.1,
 	windGenerator = 25,
 	workerTime = 0,
@@ -69,11 +74,6 @@ local unitDef = {
 			[1] = [[windgen1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=8,
-	buildingGroundDecalSizeY=8,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tlladvsolar_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

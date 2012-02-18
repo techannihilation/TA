@@ -12,6 +12,10 @@ local unitDef = {
 	buildCostEnergy = 21230,
 	buildCostMetal = 7560,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 11,
+	buildingGroundDecalSizeY = 11,
+	buildingGroundDecalType = [[tllemstor_aoplane.dds]],
 	buildTime = 57710,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
 	cloakCost = 680,
@@ -42,6 +46,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[tllemstor]],
 	unitnumber = 939,
+	useBuildingGroundDecal = true,
 	version = 3.1,
 	workerTime = 0,
 	yardMap = [[oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo]],
@@ -62,11 +67,6 @@ local unitDef = {
 			[1] = [[storngy1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=11,
-	buildingGroundDecalSizeY=11,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tllemstor_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

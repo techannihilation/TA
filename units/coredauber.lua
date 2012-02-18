@@ -20,9 +20,6 @@ local unitDef = {
 	canstop = 1,
 	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	corpse = [[dead]],
-	customparams = {
-		RequireTech = [[Advanced T2 Unit Research Centre]]
-		       },
 	defaultmissiontype = [[Standby]],
 	description = [[Heavy Laser Escort]],
 	designation = [[KA-PS6]],
@@ -62,6 +59,9 @@ local unitDef = {
 	version = 3.1,
 	workerTime = 0,
 	zbuffer = 1,
+	customparams = {
+		RequireTech = [[Advanced T2 Unit Research Centre]],
+	},
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],

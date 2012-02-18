@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 127666,
 	buildCostMetal = 12736,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 8,
+	buildingGroundDecalSizeY = 8,
+	buildingGroundDecalType = [[corgate1_aoplane.dds]],
 	buildPic = [[CORGATE.png]],
 	buildTime = 377166,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -46,6 +50,7 @@ local unitDef = {
 	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[corgate1]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooooooooooooooo]],
 	featureDefs = nil,
@@ -76,11 +81,6 @@ local unitDef = {
 			def = [[REPULSOR1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=8,
-	buildingGroundDecalSizeY=8,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[corgate1_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

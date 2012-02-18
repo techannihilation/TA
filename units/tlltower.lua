@@ -11,6 +11,10 @@ local unitDef = {
 	buildCostEnergy = 950,
 	buildCostMetal = 41,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 4,
+	buildingGroundDecalSizeY = 4,
+	buildingGroundDecalType = [[tlltower_aoplane.dds]],
 	buildTime = 5372,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
 	collisionvolumeoffsets = [[0 -20 0]],
@@ -39,15 +43,11 @@ local unitDef = {
 	threed = 1,
 	unitname = [[tlltower]],
 	unitnumber = 1809,
+	useBuildingGroundDecal = true,
 	version = 1,
 	yardMap = [[oooo]],
 	zbuffer = 1,
 	featureDefs = nil,
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=4,
-	buildingGroundDecalSizeY=4,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tlltower_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

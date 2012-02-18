@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 1017,
 	buildCostMetal = 5,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 5,
+	buildingGroundDecalSizeY = 5,
+	buildingGroundDecalType = [[armmakr_aoplane.dds]],
 	buildPic = [[ARMMAKR.png]],
 	buildTime = 1000,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -46,6 +50,7 @@ local unitDef = {
 	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[armmakr]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[ooooooooo]],
 	sounds = {
@@ -66,11 +71,6 @@ local unitDef = {
 			[1] = [[metlon1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=5,
-	buildingGroundDecalSizeY=5,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armmakr_aoplane.dds]],
 }
 --------------------------------------------------------------------------------
 

@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 1282,
 	buildCostMetal = 7,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 5,
+	buildingGroundDecalSizeY = 5,
+	buildingGroundDecalType = [[cormakr_aoplane.dds]],
 	buildPic = [[CORMAKR.png]],
 	buildTime = 1200,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -45,6 +49,7 @@ local unitDef = {
 	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[cormakr]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooooooooooo]],
 	sounds = {
@@ -65,11 +70,6 @@ local unitDef = {
 			[1] = [[metlon2]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=5,
-	buildingGroundDecalSizeY=5,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[cormakr_aoplane.dds]],
 }
 --------------------------------------------------------------------------------
 

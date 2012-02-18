@@ -22,9 +22,6 @@ local unitDef = {
 	cloakCost = 50,
 	cloakCostMoving = 100,
 	corpse = [[dead]],
-	customparams = {
-		RequireTech = [[Advanced T2 Unit Research Centre]]
-		       },
 	defaultmissiontype = [[Standby]],
 	description = [[Cloakable Assault KBot]],
 	designation = [[ARM-K-74]],
@@ -77,6 +74,9 @@ local unitDef = {
 	version = 3,
 	workerTime = 0,
 	zbuffer = 1,
+	customparams = {
+		RequireTech = [[Advanced T2 Unit Research Centre]],
+	},
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],

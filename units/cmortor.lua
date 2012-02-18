@@ -11,14 +11,15 @@ local unitDef = {
 	buildCostEnergy = 31342,
 	buildCostMetal = 1987,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 6,
+	buildingGroundDecalSizeY = 6,
+	buildingGroundDecalType = [[cmortor_aoplane.dds]],
 	buildTime = 33833,
 	canAttack = true,
 	canstop = 1,
 	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
-	customparams = {
-		RequireTech = [[Advanced T1 Unit Research Centre]]
-		       },
 	corpse = [[dead]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[Range Mortar Cannon]],
@@ -50,10 +51,14 @@ local unitDef = {
 	threed = 1,
 	unitname = [[cmortor]],
 	unitnumber = 111,
+	useBuildingGroundDecal = true,
 	version = 1,
 	workerTime = 0,
 	yardMap = [[ooooooooo]],
 	zbuffer = 1,
+	customparams = {
+		RequireTech = [[Advanced T1 Unit Research Centre]],
+	},
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],
@@ -86,11 +91,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=6,
-	buildingGroundDecalSizeY=6,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[cmortor_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

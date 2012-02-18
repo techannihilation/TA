@@ -21,9 +21,6 @@ local unitDef = {
 	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
-	customparams = {
-		RequireTech = [[Advanced T2 Unit Research Centre]]
-		       },
 	defaultmissiontype = [[Standby]],
 	description = [[Mobile Energy Weapon]],
 	designation = [[CORE-DOOM]],
@@ -65,6 +62,9 @@ local unitDef = {
 	unitnumber = 2032,
 	version = 1.2,
 	zbuffer = 1,
+	customparams = {
+		RequireTech = [[Advanced T2 Unit Research Centre]],
+	},
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],

@@ -22,9 +22,6 @@ local unitDef = {
 	canstop = 1,
 	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	corpse = [[DEAD]],
-	customparams = {
-		RequireTech = [[Advanced T2 Unit Research Centre]]
-		       },
 	defaultmissiontype = [[Standby]],
 	description = [[Hunter Mech]],
 	designation = [[TADDMCH]],
@@ -65,6 +62,9 @@ local unitDef = {
 	version = 3,
 	workerTime = 0,
 	zbuffer = 1,
+	customparams = {
+		RequireTech = [[Advanced T2 Unit Research Centre]],
+	},
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],

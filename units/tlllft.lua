@@ -11,6 +11,10 @@ local unitDef = {
 	buildCostEnergy = 2846,
 	buildCostMetal = 262,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 4,
+	buildingGroundDecalSizeY = 4,
+	buildingGroundDecalType = [[tlllft_aoplane.dds]],
 	buildTime = 5846,
 	canAttack = true,
 	canGuard = true,
@@ -45,6 +49,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[tlllft]],
 	unitnumber = 808,
+	useBuildingGroundDecal = true,
 	version = 1,
 	yardMap = [[oooo]],
 	zbuffer = 1,
@@ -80,11 +85,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=4,
-	buildingGroundDecalSizeY=4,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tlllft_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

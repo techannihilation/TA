@@ -12,6 +12,10 @@ local unitDef = {
 	buildCostEnergy = 12000,
 	buildCostMetal = 5950,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 6,
+	buildingGroundDecalSizeY = 6,
+	buildingGroundDecalType = [[tllmohogeo_aoplane.dds]],
 	buildTime = 160000,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
@@ -49,6 +53,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[tllmohogeo]],
 	unitnumber = 803,
+	useBuildingGroundDecal = true,
 	version = 1,
 	yardMap = [[GGGGGGGGGGGGGGGG]],
 	zbuffer = 1,
@@ -75,11 +80,6 @@ local unitDef = {
 			[1] = [[tllgeosel]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=6,
-	buildingGroundDecalSizeY=6,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tllmohogeo_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

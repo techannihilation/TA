@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 94000,
 	buildCostMetal = 4900,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 8,
+	buildingGroundDecalSizeY = 8,
+	buildingGroundDecalType = [[cmgeo_aoplane.dds]],
 	buildPic = [[CMGEO.png]],
 	buildTime = 132000,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -43,6 +47,7 @@ local unitDef = {
 	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[cmgeo]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[ooooooo ooooooo oGGoooo oGGoooo ooooooo]],
 	sounds = {
@@ -60,11 +65,6 @@ local unitDef = {
 			[1] = [[geothrm2]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=8,
-	buildingGroundDecalSizeY=8,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[cmgeo_aoplane.dds]],
 }
 --------------------------------------------------------------------------------
 

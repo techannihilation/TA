@@ -12,6 +12,10 @@ local unitDef = {
 	buildCostEnergy = 491000,
 	buildCostMetal = 4100,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 6,
+	buildingGroundDecalSizeY = 6,
+	buildingGroundDecalType = [[armfor_aoplane.dds]],
 	buildTime = 250000,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
@@ -40,6 +44,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[armfor]],
 	unitnumber = 2415,
+	useBuildingGroundDecal = true,
 	version = 1,
 	workerTime = 0,
 	yardMap = [[oooo oooo oooo oooo]],
@@ -59,11 +64,6 @@ local unitDef = {
 			[1] = [[geothrm1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=6,
-	buildingGroundDecalSizeY=6,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armfor_aoplane.dds]],
 }
 --------------------------------------------------------------------------------
 

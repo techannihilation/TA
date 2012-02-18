@@ -20,8 +20,8 @@ local unitDef = {
 	buildTime = 100000,
 	canAttack = true,
 	canCapture = true,
-	canManualFire = true,
 	canGuard = true,
+	canManualFire = true,
 	canMove = true,
 	canPatrol = true,
 	canreclamate = 1,
@@ -35,9 +35,6 @@ local unitDef = {
 	collisionvolumetype = [[Ell]],
 	commander = true,
 	corpse = [[DEAD]],
-	customParams           = {
-		iscommander = true,
-	},
 	defaultmissiontype = [[Standby]],
 	description = [[Commander]],
 	energyMake = 100,
@@ -114,6 +111,9 @@ local unitDef = {
 		[26] = [[cbuilderlvl2]],
 		[27] = [[corech3]],
 		[28] = [[cpocketfusion]],
+	},
+	customParams = {
+		iscommander = true,
 	},
 	featureDefs = nil,
 	sounds = {

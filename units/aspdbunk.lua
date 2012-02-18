@@ -12,6 +12,10 @@ local unitDef = {
 	buildCostEnergy = 8764,
 	buildCostMetal = 717,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 4,
+	buildingGroundDecalSizeY = 4,
+	buildingGroundDecalType = [[aspdbunk_aoplane.dds]],
 	buildTime = 13004,
 	canAttack = true,
 	canstop = 1,
@@ -50,6 +54,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[aspdbunk]],
 	unitnumber = 8799,
+	useBuildingGroundDecal = true,
 	version = 1.2,
 	workerTime = 0,
 	yardMap = [[oooo]],
@@ -96,11 +101,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=4,
-	buildingGroundDecalSizeY=4,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[aspdbunk_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

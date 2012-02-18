@@ -20,9 +20,6 @@ local unitDef = {
 	canstop = 1,
 	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	corpse = [[dead]],
-	customparams = {
-		RequireTech = [[Advanced T2 Unit Research Centre]]
-		       },
 	defaultmissiontype = [[Standby]],
 	description = [[Skirmish Tank]],
 	designation = [[NSA-CSKV]],
@@ -70,6 +67,9 @@ local unitDef = {
 	version = 1,
 	workerTime = 0,
 	zbuffer = 1,
+	customparams = {
+		RequireTech = [[Advanced T2 Unit Research Centre]],
+	},
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],

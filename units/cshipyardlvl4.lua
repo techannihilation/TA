@@ -9,6 +9,10 @@ local unitDef = {
 	buildCostEnergy = 94000,
 	buildCostMetal = 20000,
 	builder = true,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 33,
+	buildingGroundDecalSizeY = 33,
+	buildingGroundDecalType = [[cshipyardlvl4_aoplane.dds]],
 	buildTime = 500000.5,
 	canMove = true,
 	canPatrol = true,
@@ -19,7 +23,7 @@ local unitDef = {
 	collisionvolumetest = 1,
 	collisionvolumetype = [[Ell]],
 	corpse = [[dead]],
-	description = [[Build AeroShips]],
+	description = [[Builds AeroShips]],
 	energyStorage = 1000,
 	energyUse = 0,
 	explodeAs = [[SUPERBLAST]],
@@ -39,6 +43,7 @@ local unitDef = {
 	side = [[CORE]],
 	sightDistance = 220,
 	unitname = [[cshipyardlvl4]],
+	useBuildingGroundDecal = true,
 	workerTime = 240,
 	yardMap = [[OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO]],
 	buildoptions = {
@@ -62,11 +67,6 @@ local unitDef = {
 			[1] = [[corplant1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=33,
-	buildingGroundDecalSizeY=33,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[cshipyardlvl4_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

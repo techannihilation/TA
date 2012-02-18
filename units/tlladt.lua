@@ -11,6 +11,10 @@ local unitDef = {
 	buildCostEnergy = 695,
 	buildCostMetal = 29,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 4,
+	buildingGroundDecalSizeY = 4,
+	buildingGroundDecalType = [[tlladt_aoplane.dds]],
 	buildTime = 995,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
@@ -46,16 +50,12 @@ local unitDef = {
 	threed = 1,
 	unitname = [[tlladt]],
 	unitnumber = 937,
+	useBuildingGroundDecal = true,
 	version = 1,
 	workerTime = 0,
 	yardMap = [[ff ff]],
 	zbuffer = 1,
 	featureDefs = nil,
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=4,
-	buildingGroundDecalSizeY=4,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tlladt_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

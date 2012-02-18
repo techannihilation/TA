@@ -12,6 +12,10 @@ local unitDef = {
 	buildCostEnergy = 1287,
 	buildCostMetal = 485,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 6,
+	buildingGroundDecalSizeY = 6,
+	buildingGroundDecalType = [[tllatidal_aoplane.dds]],
 	buildTime = 3255,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
@@ -45,6 +49,7 @@ local unitDef = {
 	tidalGenerator = 1,
 	unitname = [[tllatidal]],
 	unitnumber = 880,
+	useBuildingGroundDecal = true,
 	version = 3.1,
 	workerTime = 0,
 	yardMap = [[oooo oooo oooo oooo]],
@@ -65,11 +70,6 @@ local unitDef = {
 			[1] = [[tidegen2]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=6,
-	buildingGroundDecalSizeY=6,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tllatidal_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

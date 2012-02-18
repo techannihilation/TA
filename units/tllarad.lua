@@ -12,6 +12,10 @@ local unitDef = {
 	buildCostEnergy = 1950,
 	buildCostMetal = 431,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 5,
+	buildingGroundDecalSizeY = 5,
+	buildingGroundDecalType = [[tllarad_aoplane.dds]],
 	buildTime = 5050,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
@@ -50,6 +54,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[tllarad]],
 	unitnumber = 843,
+	useBuildingGroundDecal = true,
 	version = 3.1,
 	workerTime = 0,
 	yardMap = [[ooooooooo]],
@@ -73,11 +78,6 @@ local unitDef = {
 			[1] = [[radadvn1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=5,
-	buildingGroundDecalSizeY=5,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tllarad_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

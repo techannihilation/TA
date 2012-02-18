@@ -11,6 +11,10 @@ local unitDef = {
 	buildCostEnergy = 500000,
 	buildCostMetal = 30000,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 10,
+	buildingGroundDecalSizeY = 10,
+	buildingGroundDecalType = [[armrech21_aoplane.dds]],
 	buildTime = 100000,
 	category = [[LEVEL2 ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
 	collisionvolumeoffsets = [[-1 -9 -5]],
@@ -18,11 +22,7 @@ local unitDef = {
 	collisionvolumetest = 1,
 	collisionvolumetype = [[Box]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
-	customParams           = {
-		providetech = [[Advanced T1 Unit Research Centre,Advanced T2 Unit Research Centre,Advanced T3 Unit Research Centre]],
-		ismorphingrc = true,
-	},
-	description = [[Unlock's Advanced Units]],
+	description = [[Unlocks Advanced Units]],
 	designation = [[LAB-01]],
 	energyMake = 0,
 	energyStorage = 0,
@@ -51,10 +51,15 @@ local unitDef = {
 	threed = 1,
 	unitname = [[armrech21]],
 	unitnumber = 7210,
+	useBuildingGroundDecal = true,
 	version = 3.1,
 	workerTime = 0,
 	yardMap = [[ooooooo ooooooo ooooooo ooooooo ooooooo]],
 	zbuffer = 1,
+	customParams = {
+		ismorphingrc = true,
+		providetech = [[Advanced T1 Unit Research Centre,Advanced T2 Unit Research Centre,Advanced T3 Unit Research Centre]],
+	},
 	sounds = {
 		activate = [[radar1]],
 		canceldestruct = [[cancel2]],
@@ -73,11 +78,6 @@ local unitDef = {
 			[1] = [[radar1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=10,
-	buildingGroundDecalSizeY=10,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armrech21_aoplane.dds]],
 }
 --------------------------------------------------------------------------------
 

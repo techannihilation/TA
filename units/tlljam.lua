@@ -12,6 +12,10 @@ local unitDef = {
 	buildCostEnergy = 2341,
 	buildCostMetal = 152,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 4,
+	buildingGroundDecalSizeY = 4,
+	buildingGroundDecalType = [[tlljam_aoplane.dds]],
 	buildTime = 6555,
 	canAttack = false,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -45,6 +49,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[tlljam]],
 	unitnumber = 841,
+	useBuildingGroundDecal = true,
 	version = 3.1,
 	workerTime = 0,
 	zbuffer = 1,
@@ -70,11 +75,6 @@ local unitDef = {
 			[1] = [[radjam1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=4,
-	buildingGroundDecalSizeY=4,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tlljam_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

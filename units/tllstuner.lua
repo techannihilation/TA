@@ -11,6 +11,10 @@ local unitDef = {
 	buildCostEnergy = 3872,
 	buildCostMetal = 662,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 6,
+	buildingGroundDecalSizeY = 6,
+	buildingGroundDecalType = [[tllstuner_aoplane.dds]],
 	buildTime = 11528,
 	canAttack = true,
 	canstop = 1,
@@ -41,6 +45,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[tllstuner]],
 	unitnumber = 842,
+	useBuildingGroundDecal = true,
 	version = 3.1,
 	workerTime = 0,
 	yardMap = [[oooo oooo oooo oooo]],
@@ -77,11 +82,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=6,
-	buildingGroundDecalSizeY=6,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tllstuner_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

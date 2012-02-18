@@ -11,6 +11,10 @@ local unitDef = {
 	buildCostEnergy = 13341,
 	buildCostMetal = 1120,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 6,
+	buildingGroundDecalSizeY = 6,
+	buildingGroundDecalType = [[tllemp_aoplane.dds]],
 	buildTime = 59531,
 	canAttack = true,
 	canstop = 1,
@@ -47,6 +51,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[tllemp]],
 	unitnumber = 861,
+	useBuildingGroundDecal = true,
 	version = 3.1,
 	workerTime = 0,
 	yardMap = [[oooo oooo oooo oooo]],
@@ -80,11 +85,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=6,
-	buildingGroundDecalSizeY=6,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tllemp_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

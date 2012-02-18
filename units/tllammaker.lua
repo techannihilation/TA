@@ -12,6 +12,10 @@ local unitDef = {
 	buildCostEnergy = 5286,
 	buildCostMetal = 528,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 6,
+	buildingGroundDecalSizeY = 6,
+	buildingGroundDecalType = [[tllammaker_aoplane.dds]],
 	buildTime = 35000,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
@@ -47,6 +51,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[tllammaker]],
 	unitnumber = 847,
+	useBuildingGroundDecal = true,
 	version = 3.1,
 	workerTime = 0,
 	yardMap = [[oooo oooo oooo oooo]],
@@ -70,11 +75,6 @@ local unitDef = {
 			[1] = [[metlon1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=6,
-	buildingGroundDecalSizeY=6,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tllammaker_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

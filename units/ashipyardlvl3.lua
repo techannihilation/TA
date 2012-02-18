@@ -9,6 +9,10 @@ local unitDef = {
 	buildCostEnergy = 99000,
 	buildCostMetal = 21200,
 	builder = true,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 33,
+	buildingGroundDecalSizeY = 33,
+	buildingGroundDecalType = [[ashipyardlvl3_aoplane.dds]],
 	buildTime = 500000.5,
 	canMove = true,
 	canPatrol = true,
@@ -19,7 +23,7 @@ local unitDef = {
 	collisionvolumetest = 1,
 	collisionvolumetype = [[Ell]],
 	corpse = [[dead]],
-	description = [[builds AeroShips]],
+	description = [[Produces AeroShips]],
 	designation = [[GZ-FA3C]],
 	energyStorage = 500,
 	energyUse = 0,
@@ -39,6 +43,7 @@ local unitDef = {
 	side = [[ARM]],
 	sightDistance = 220,
 	unitname = [[ashipyardlvl3]],
+	useBuildingGroundDecal = true,
 	workerTime = 240,
 	yardMap = [[OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO]],
 	buildoptions = {
@@ -62,11 +67,6 @@ local unitDef = {
 			[1] = [[hoversl1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=33,
-	buildingGroundDecalSizeY=33,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[ashipyardlvl3_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

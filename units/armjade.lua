@@ -23,9 +23,6 @@ local unitDef = {
 	category = [[ALL MEDIUMVTOL MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL WEAPON]],
 	collide = false,
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
-	customparams = {
-		RequireTech = [[Advanced T1 Unit Research Centre]]
-		       },
 	cruiseAlt = 150,
 	defaultmissiontype = [[VTOL_standby]],
 	description = [[Laser Gunship]],
@@ -71,6 +68,9 @@ local unitDef = {
 	version = 3.1,
 	workerTime = 0,
 	zbuffer = 1,
+	customparams = {
+		RequireTech = [[Advanced T1 Unit Research Centre]],
+	},
 	sounds = {
 		canceldestruct = [[cancel2]],
 		underattack = [[warning1]],

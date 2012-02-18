@@ -24,11 +24,8 @@ local unitDef = {
 	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[DEAD]],
-	customparams = {
-		RequireTech = [[Advanced T2 Unit Research Centre]]
-		       },
 	defaultmissiontype = [[Standby]],
-	description = [[Heavy Assault mech]],
+	description = [[Heavy Assault Mech]],
 	designation = [[sWsAMECH]],
 	downloadable = 1,
 	energyMake = 1.8,
@@ -71,6 +68,9 @@ local unitDef = {
 	version = 3,
 	workerTime = 0,
 	zbuffer = 1,
+	customparams = {
+		RequireTech = [[Advanced T2 Unit Research Centre]],
+	},
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],

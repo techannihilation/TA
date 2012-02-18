@@ -19,9 +19,6 @@ local unitDef = {
 	canPatrol = true,
 	canstop = 1,
 	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
-	customparams = {
-		RequireTech = [[Advanced T2 Unit Research Centre]]
-		       },
 	corpse = [[DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[Very Heavy Assault Tank]],
@@ -64,6 +61,9 @@ local unitDef = {
 	version = 3,
 	workerTime = 0,
 	zbuffer = 1,
+	customparams = {
+		RequireTech = [[Advanced T2 Unit Research Centre]],
+	},
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],

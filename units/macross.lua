@@ -22,11 +22,8 @@ local unitDef = {
 	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
-	customparams = {
-				RequireTech = [[Advanced T3 Unit Research Centre]]
-		       },
 	defaultmissiontype = [[Standby]],
-	description = [[Krogoth class k-bot All-terrain]],
+	description = [[Krogoth Class All-Terrain Kbot]],
 	designation = [[GPB-1S]],
 	energyMake = 22.5,
 	energyStorage = 100,
@@ -67,6 +64,9 @@ local unitDef = {
 	version = 3.1,
 	workerTime = 0,
 	zbuffer = 1,
+	customparams = {
+		RequireTech = [[Advanced T3 Unit Research Centre]],
+	},
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],

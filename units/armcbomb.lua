@@ -23,12 +23,9 @@ local unitDef = {
 	category = [[ALL MEDIUMVTOL MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL WEAPON]],
 	collide = false,
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
-	customparams = {
-		RequireTech = [[Advanced T1 Unit Research Centre]]
-		       },
 	cruiseAlt = 155,
 	defaultmissiontype = [[VTOL_standby]],
-	description = [[Fast bomber]],
+	description = [[Fast Bomber]],
 	designation = [[ARM-CRPT]],
 	energyMake = 5,
 	energyStorage = 0,
@@ -68,6 +65,9 @@ local unitDef = {
 	upright = true,
 	version = 1,
 	zbuffer = 1,
+	customparams = {
+		RequireTech = [[Advanced T1 Unit Research Centre]],
+	},
 	sounds = {
 		canceldestruct = [[cancel2]],
 		underattack = [[warning1]],

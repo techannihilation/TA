@@ -13,6 +13,10 @@ local unitDef = {
 	buildCostEnergy = 8000,
 	buildCostMetal = 810,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 4,
+	buildingGroundDecalSizeY = 4,
+	buildingGroundDecalType = [[corhlt1_aoplane.dds]],
 	buildPic = [[CORHLT.png]],
 	buildTime = 17000,
 	canAttack = true,
@@ -50,6 +54,7 @@ local unitDef = {
 	standingfireorder = 2,
 	turnRate = 0,
 	unitname = [[corhlt1]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooo]],
 	featureDefs = nil,
@@ -84,11 +89,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=4,
-	buildingGroundDecalSizeY=4,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[corhlt1_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

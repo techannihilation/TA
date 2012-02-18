@@ -11,6 +11,10 @@ local unitDef = {
 	buildCostEnergy = 989475,
 	buildCostMetal = 153890,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 19,
+	buildingGroundDecalSizeY = 19,
+	buildingGroundDecalType = [[armfsilo_aoplane.dds]],
 	buildTime = 539899,
 	canAttack = true,
 	canstop = 1,
@@ -48,6 +52,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[armfsilo]],
 	unitnumber = 3362,
+	useBuildingGroundDecal = true,
 	version = 1,
 	workerTime = 0,
 	yardMap = [[oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo]],
@@ -81,11 +86,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=19,
-	buildingGroundDecalSizeY=19,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armfsilo_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
