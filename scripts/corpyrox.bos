@@ -172,12 +172,16 @@ RestoreAfterDelay()
 	{
 		turn head to y-axis <10.000000> speed <20.000000>;
 		wait-for-turn head around y-axis;
+		emit-sfx 257 from head;
 		turn head to y-axis <-10.000000> speed <20.000000>;
 		wait-for-turn head around y-axis;
+		emit-sfx 257 from head;
 		turn head to y-axis <0.000000> speed <20.000000>;
 		wait-for-turn head around y-axis;
+		emit-sfx 257 from head;
 	}
 	turn head to y-axis <0.000000> speed <20.000000>;
+	emit-sfx 257 from head;
 	wait-for-turn head around y-axis;
 	sleep 10;
 }
@@ -340,13 +344,11 @@ AimTertiary()
 
 FireTertiary()
 {
-	gun_3 = 1;
 	cache eyegun;
 	turn flip1 to z-axis <0.000000> speed <90.000000>;
 	turn flip2 to z-axis <0.000000> speed <90.000000>;
 	sleep [1.098633];
 	dont-cache eyegun;
-	gun_3 = 0;
 }
 
 AimFromTertiary(piecenum)
