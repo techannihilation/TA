@@ -47,11 +47,13 @@ function widget:Initialize()
 
   Spring.AddUnitIcon("armcom.user", "LuaUI/Icons/armcom.png",2)
   Spring.AddUnitIcon("corcom.user", "LuaUI/Icons/corcom.png",2)
+  Spring.AddUnitIcon("tllcom.user", "LuaUI/Icons/tllcom.png",2)
   Spring.AddUnitIcon("cross.user", "LuaUI/Icons/cross.png")
   Spring.AddUnitIcon("diamond.user", "LuaUI/Icons/diamond.png",1.1)
   Spring.AddUnitIcon("e.user", "LuaUI/Icons/e.png")
   Spring.AddUnitIcon("e2.user", "LuaUI/Icons/e.png",1.4)
   Spring.AddUnitIcon("e3.user", "LuaUI/Icons/e.png",1.8)
+  Spring.AddUnitIcon("e4.user", "LuaUI/Icons/e.png",2.3)
   Spring.AddUnitIcon("hemi-down.user", "LuaUI/Icons/hemi-down.png",1.3)
   Spring.AddUnitIcon("hemi-up.user", "LuaUI/Icons/hemi-up.png")
   Spring.AddUnitIcon("hemi.user", "LuaUI/Icons/hemi.png")
@@ -74,9 +76,15 @@ function widget:Initialize()
   Spring.AddUnitIcon("tri-down.user", "LuaUI/Icons/tri-down.png",1.3)
   Spring.AddUnitIcon("tri-up.user", "LuaUI/Icons/tri-up.png",1.4)
   Spring.AddUnitIcon("tri-up_fighter.user", "LuaUI/Icons/tri-up.png",0.9)
+  Spring.AddUnitIcon("tri-up_fighter1.user", "LuaUI/Icons/tri-up.png",1.2)
   Spring.AddUnitIcon("triangle-down.user", "LuaUI/Icons/triangle-down.png")
   Spring.AddUnitIcon("triangle-up.user", "LuaUI/Icons/triangle-up.png")
   Spring.AddUnitIcon("x.user", "LuaUI/Icons/x.png")
+  Spring.AddUnitIcon("rc.user", "LuaUI/Icons/rc.png",1.4)
+  Spring.AddUnitIcon("rc1.user", "LuaUI/Icons/rc.png",2)
+  Spring.AddUnitIcon("t4ships.user", "LuaUI/Icons/t4ships.png",2)
+
+
    
   -- Setup the unitdef icons
   for udid,ud in pairs(UnitDefs) do
@@ -85,21 +93,48 @@ function widget:Initialize()
       if (ud.origIconType == nil) then
         ud.origIconType = ud.iconType
       end
-      
-      if (ud.name=="armwin") or (ud.name=="corwin") then
+ 
+--wind      
+      if (ud.name=="armwin") or (ud.name=="corwin") or (ud.name=="tllwindtrap") then
         Spring.SetUnitDefIcon(udid, "e.user")
-      elseif (ud.name=="armfig") or (ud.name=="corveng") or (ud.name=="armhawk") or (ud.name=="corvamp") then
+--fighters
+      elseif (ud.name=="armfig") or (ud.name=="corveng") or (ud.name=="tllfight") or (ud.name=="armhawk") or (ud.name=="corvamp") or (ud.name=="tlladvfight") then
         Spring.SetUnitDefIcon(udid, "tri-up_fighter.user") 
-      elseif (ud.name=="cafus") or (ud.name=="aafus") then
+--t3 fighters
+      elseif (ud.name=="airwolf3g") or (ud.name=="shrike") then
+        Spring.SetUnitDefIcon(udid, "tri-up_fighter1.user") 
+--t4 fusions
+      elseif (ud.name=="cfusionplant") or (ud.name=="afusionplant") or (ud.name=="tllmegacoldfus") then
+        Spring.SetUnitDefIcon(udid, "e4.user")
+--t2 fusions
+      elseif (ud.name=="cafus") or (ud.name=="aafus") or (ud.name=="tllmedfusion") then
         Spring.SetUnitDefIcon(udid, "e3.user")
-      elseif (ud.name=="armfus") or (ud.name=="corfus") or (ud.name=="armckfus") or (ud.name=="armdf") or (ud.name=="armuwfus") or (ud.name=="coruwfus") then
+--std fusions
+      elseif (ud.name=="armfus") or (ud.name=="corfus") or (ud.name=="tllcoldfus") or (ud.name=="armckfus") or (ud.name=="armdf") or (ud.name=="armuwfus")
+      or (ud.name=="coruwfus") or (ud.name=="armckfus") or (ud.name=="tlluwfusion") then
         Spring.SetUnitDefIcon(udid, "e2.user")
-      elseif (ud.name=="armcom") then
+--armcom
+      elseif (ud.name=="armcom") or (ud.name=="armcom1") or (ud.name=="armcom4") or (ud.name=="armcom5") or (ud.name=="armcom6") or (ud.name=="armcom7") then
         Spring.SetUnitDefIcon(udid, "armcom.user")
-      elseif (ud.name=="corcom") then
+--corcom
+      elseif (ud.name=="corcom") or (ud.name=="corcom1") or (ud.name=="corcom3") or (ud.name=="corcom5") or (ud.name=="corcom6") or (ud.name=="corcom7") then
         Spring.SetUnitDefIcon(udid, "corcom.user")
+--tllcom
+      elseif (ud.name=="tllcom") or (ud.name=="tllcom1") or (ud.name=="tllcom3") or (ud.name=="tllcom5") or (ud.name=="tllcom6") or (ud.name=="tllcom7") then
+        Spring.SetUnitDefIcon(udid, "tllcom.user")
+--krogoth
       elseif (ud.name=="corkrog") then
         Spring.SetUnitDefIcon(udid, "krogoth.user")
+--RC
+      elseif (ud.name=="armrech3") or (ud.name=="armrech18") or (ud.name=="armrech21")
+      or (ud.name=="corech3") or (ud.name=="corech18") or (ud.name=="corech21") then
+        Spring.SetUnitDefIcon(udid, "rc.user")
+--last rc
+      elseif (ud.name=="ccovertopscentre") or (ud.name=="acovertopscentre") then
+        Spring.SetUnitDefIcon(udid, "rc1.user")
+--broadside etc
+      elseif (ud.name=="abroadside") or (ud.name=="cdevastator") then
+        Spring.SetUnitDefIcon(udid, "t4ships.user")
       elseif (ud.isFactory) then
         -- factories
         Spring.SetUnitDefIcon(udid, "square_x_factory.user")
