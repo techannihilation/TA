@@ -1,7 +1,7 @@
--- UNITDEF -- CORHLT1 --
+-- UNITDEF -- CORVHLT --
 --------------------------------------------------------------------------------
 
-local unitName = "corhlt1"
+local unitName = "corvhlt"
 
 --------------------------------------------------------------------------------
 
@@ -17,7 +17,7 @@ local unitDef = {
 	buildingGroundDecalSizeX = 4,
 	buildingGroundDecalSizeY = 4,
 	buildingGroundDecalType = [[corhlt1_aoplane.dds]],
-	buildPic = [[CORHLT.png]],
+	buildPic = [[CORVHLT.png]],
 	buildTime = 17000,
 	canAttack = true,
 	canstop = 1,
@@ -25,9 +25,9 @@ local unitDef = {
 	collisionvolumeoffsets = [[0 0 0]],
 	collisionvolumescales = [[28 92 28]],
 	collisionvolumetype = [[box]],
-	corpse = [[CORHLT_DEAD]],
+	corpse = [[CORVHLT_DEAD]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
-	description = [[Heavy Laser Tower]],
+	description = [[Very Heavy Laser Tower]],
 	energyStorage = 400,
 	energyUse = 0,
 	explodeAs = [[MEDIUM_BUILDINGEX]],
@@ -45,7 +45,7 @@ local unitDef = {
 	name = [[Gatling Gaat Gun]],
 	noAutoFire = false,
 	noChaseCategory = [[ALL]],
-	objectName = [[CORHLT]],
+	objectName = [[CORVHLT]],
 	seismicSignature = 0,
 	selfDestructAs = [[MEDIUM_BUILDING]],
 	side = [[CORE]],
@@ -53,7 +53,7 @@ local unitDef = {
 	smoothAnim = true,
 	standingfireorder = 2,
 	turnRate = 0,
-	unitname = [[corhlt1]],
+	unitname = [[corvhlt]],
 	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooo]],
@@ -135,7 +135,7 @@ unitDef.weaponDefs = weaponDefs
 --------------------------------------------------------------------------------
 
 local featureDefs = {
-	CORHLT_DEAD = {
+	CORVHLT_DEAD = {
 		blocking = true,
 		category = [[corpses]],
 		damage = 0.6000 * unitDef.maxDamage,
@@ -153,7 +153,7 @@ local featureDefs = {
 		seqnamereclamate = [[TREE1RECLAMATE]],
 		world = [[All Worlds]],
 	},
-	CORHLT_HEAP = {
+	CORVHLT_HEAP = {
 		blocking = false,
 		category = [[heaps]],
 		damage = 0.3600 * unitDef.maxDamage,

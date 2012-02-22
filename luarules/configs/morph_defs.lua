@@ -118,7 +118,7 @@ local morphDefs = {
 	},
       armhlt = {
 	{
-		into = 'armhlt1',
+		into = 'armvhlt',
 		time = 20,
 		metal = 250,
 		xp = 0.30,
@@ -132,7 +132,7 @@ local morphDefs = {
 	},
       corhlt= {
 	{
-		into = 'corhlt1',
+		into = 'corvhlt',
 		time = 20,
 		metal = 260,
 		xp = 0.30,

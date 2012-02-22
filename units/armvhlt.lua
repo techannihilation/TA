@@ -1,7 +1,7 @@
--- UNITDEF -- ARMHLT1 --
+-- UNITDEF -- ARMVHLT --
 --------------------------------------------------------------------------------
 
-local unitName = "armhlt1"
+local unitName = "armvhlt"
 
 --------------------------------------------------------------------------------
 
@@ -17,7 +17,7 @@ local unitDef = {
 	buildingGroundDecalSizeX = 4,
 	buildingGroundDecalSizeY = 4,
 	buildingGroundDecalType = [[armhlt1_aoplane.dds]],
-	buildPic = [[ARMHLT.png]],
+	buildPic = [[ARMVHLT.png]],
 	buildTime = 17000,
 	canAttack = true,
 	canstop = 1,
@@ -26,9 +26,9 @@ local unitDef = {
 	collisionvolumescales = [[36 89 36]],
 	collisionvolumetest = 1,
 	collisionvolumetype = [[CylY]],
-	corpse = [[ARMHLT_DEAD]],
+	corpse = [[ARMVHLT_DEAD]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
-	description = [[Heavy Laser Tower]],
+	description = [[Very Heavy Laser Tower]],
 	energyStorage = 1000,
 	energyUse = 0,
 	explodeAs = [[MEDIUM_BUILDINGEX]],
@@ -46,7 +46,7 @@ local unitDef = {
 	name = [[High-Energy Sentinel]],
 	noAutoFire = false,
 	noChaseCategory = [[ALL]],
-	objectName = [[ARMHLT]],
+	objectName = [[ARMVHLT]],
 	seismicSignature = 0,
 	selfDestructAs = [[MEDIUM_BUILDING]],
 	side = [[ARM]],
@@ -54,7 +54,7 @@ local unitDef = {
 	smoothAnim = true,
 	standingfireorder = 2,
 	turnRate = 0,
-	unitname = [[armhlt1]],
+	unitname = [[armvhlt]],
 	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooo]],
@@ -136,7 +136,7 @@ unitDef.weaponDefs = weaponDefs
 --------------------------------------------------------------------------------
 
 local featureDefs = {
-	ARMHLT_DEAD = {
+	ARMVHLT_DEAD = {
 		blocking = true,
 		category = [[corpses]],
 		damage = 0.6000 * unitDef.maxDamage,
@@ -154,7 +154,7 @@ local featureDefs = {
 		seqnamereclamate = [[TREE1RECLAMATE]],
 		world = [[All Worlds]],
 	},
-	ARMHLT_HEAP = {
+	ARMVHLT_HEAP = {
 		blocking = false,
 		category = [[heaps]],
 		damage = 0.3600 * unitDef.maxDamage,
