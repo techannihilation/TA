@@ -44,6 +44,7 @@ local unitDef = {
   workerTime         = 0,
   yardMap            = [[oooo oooo oooo oooo]],
   zbuffer            = 1,
+  onoffable = true,
   sounds = {
     canceldestruct     = [[cancel2]],
     underattack        = [[warning1]],
