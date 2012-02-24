@@ -54,12 +54,12 @@ local unitDef = {
   workerTime         = 100,
   yardMap            = [[oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo]],
   buildoptions = {
-    [[armeca]],
-    [[tawf015]],
-    [[armorion]],
-    [[armcybr]],
-    [[blade]],
-    [[armor]],
+		[1] = [[tawf015]],
+		[2] = [[airwolf3g]],
+		[3] = [[armpers]],
+		[4] = [[armorion]],
+		[5] = [[armcyclone]],
+		[6] = [[armor]],
   },
   sounds = {
     build              = [[pairwork]],

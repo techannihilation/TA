@@ -67,9 +67,6 @@ local unitDef = {
 		[9] = [[blade]],
 		[10] = [[corgripn]],
 		[11] = [[armcybr]],
-		[12] = [[armcyclone]],
-		[13] = [[armpers]],
-		[14] = [[airwolf3g]],
 	},
 	featureDefs = nil,
 	sfxtypes = {

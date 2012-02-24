@@ -65,9 +65,6 @@ local unitDef = {
 	unitRestricted = 300,
 	version = 3,
 	zbuffer = 1,
-	customparams = {
-		RequireTech = [[Advanced T3 Unit Research Centre]],
-	},
 	sounds = {
 		canceldestruct = [[cancel2]],
 		underattack = [[warning1]],

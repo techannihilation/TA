@@ -65,9 +65,6 @@ local unitDef = {
 		[7] = [[corawac]],
 		[8] = [[armsl]],
 		[9] = [[corcrw]],
-		[10] = [[blackdawn]],
-		[11] = [[shrike]],
-		[12] = [[coreclipse]],
 	},
 	featureDefs = nil,
 	sfxtypes = {

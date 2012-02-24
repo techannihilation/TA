@@ -24,9 +24,6 @@ local unitDef = {
 	category = [[ALL MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL WEAPON]],
 	collide = false,
 	cruiseAlt = 55,
-	customparams = {
-				RequireTech = [[Advanced T3 Unit Research Centre]]
-		       },
 	defaultmissiontype = [[VTOL_standby]],
 	description = [[Advanced Gunship [Anti T3/T4]],
 	designation = [[A1-AA-VTOL]],
