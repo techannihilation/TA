@@ -1,4 +1,5 @@
 -- light_plasma
+-- kargmissile_explosion
 -- light_plasma_ignite
 
 return {
@@ -24,6 +25,35 @@ return {
         [1]  = 0.99599999189377,
         [2]  = 0.98000001907349,
         [3]  = 0.56599998474121,
+      },
+    },
+  },
+
+  ["kargmissile_explosion"] = {
+    foom = {
+      class              = [[CExpGenSpawner]],
+      count              = 1,
+      ground             = false,
+      unit               = 1,
+      properties = {
+        delay              = 0,
+        explosiongenerator = [[custom:LIGHT_PLASMA_IGNITE]],
+        pos                = [[dir]],
+      },
+    },
+    groundflash = {
+      air                = true,
+      circlealpha        = 0.6,
+      circlegrowth       = 1,
+      flashalpha         = 0.9,
+      flashsize          = 40,
+      ground             = true,
+      ttl                = 15,
+      water              = true,
+      color = {
+        [1]  = 1,
+        [2]  = 0.30000001192093,
+        [3]  = 0.20000000298023,
       },
     },
   },
