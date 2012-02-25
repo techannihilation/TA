@@ -56,9 +56,10 @@ local unitDef = {
 	buildoptions = {
 		[1] = [[shrike]],
 		[2] = [[blackdawn]],
-		[3] = [[corsbomb]],
-		[4] = [[coreclipse]],
-		[5] = [[corbtrans]],
+		[3] = [[corrag]],
+		[4] = [[corsbomb]],
+		[5] = [[coreclipse]],
+		[6] = [[corbtrans]],
 	},
 	featureDefs = nil,
 	sounds = {
