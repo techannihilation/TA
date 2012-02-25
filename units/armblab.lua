@@ -13,6 +13,10 @@ local unitDef = {
 	buildCostEnergy = 4756,
 	buildCostMetal = 1270,
 	builder = true,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 8,
+	buildingGroundDecalSizeY = 8,
+	buildingGroundDecalType = [[armblab_aoplane.dds]],
 	buildTime = 14004,
 	canMove = true,
 	canPatrol = true,
@@ -52,6 +56,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[armblab]],
 	unitnumber = 2003,
+	useBuildingGroundDecal = true,
 	version = 3,
 	workerTime = 200,
 	yardMap = [[00000 0CCC0 0CCC0 0CCC0 0CCC0]],
@@ -85,11 +90,6 @@ local unitDef = {
 			[1] = [[plabactv]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=8,
-	buildingGroundDecalSizeY=8,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armblab_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

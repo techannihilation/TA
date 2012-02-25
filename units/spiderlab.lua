@@ -11,6 +11,10 @@ local unitDef = {
 	buildCostEnergy = 4989,
 	buildCostMetal = 1238,
 	builder = true,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 10,
+	buildingGroundDecalSizeY = 10,
+	buildingGroundDecalType = [[spiderlab_aoplane.dds]],
 	buildTime = 15930,
 	canMove = true,
 	canPatrol = true,
@@ -48,6 +52,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[spiderlab]],
 	unitnumber = 7765,
+	useBuildingGroundDecal = true,
 	version = 1.2,
 	workerTime = 200,
 	yardMap = [[000000 0CCCC0 0CCCC0 0CCCC0 0CCCC0 0CCCC0 0CCCC0]],
@@ -81,11 +86,6 @@ local unitDef = {
 			[1] = [[plabactv]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=10,
-	buildingGroundDecalSizeY=10,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[spiderlab_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
