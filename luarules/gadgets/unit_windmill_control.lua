@@ -38,6 +38,7 @@ local slope = 0
 -------------------------------------------------------------------------------------
 
 -- Speed-ups
+local uDefs = UnitDefs
 
 local CallCOBScript        = Spring.CallCOBScript
 local GetCOBScriptID       = Spring.GetCOBScriptID
@@ -68,9 +69,17 @@ function gadget:GameFrame(n)
     local heading = GetHeadingFromVector(x, z)
 		
     for unitID, scriptIDs in pairs(windmills) do
-      local de = strength * 1.5 
-      AddUnitResource(unitID, "e", de)
-      local speed = de * COBSCALE * 0.025
+      
+	  local uDefID = GetUnitDefID(unitID) ; if not uDefID then break end
+	  local uDef = uDefs[uDefID]
+	  
+	  local mult = 2.5 -- DEFAULT
+	  if uDef.customParams then
+		mult = uDef.customParams.energymultiplier or mult
+	  end
+	  
+      AddUnitResource(unitID, "e", strength * (mult - 1))
+      local speed = strength * mult * COBSCALE * 0.025
 
       CallCOBScript(unitID, scriptIDs.speed, 0, speed)
       CallCOBScript(unitID, scriptIDs.dir,   0, heading)

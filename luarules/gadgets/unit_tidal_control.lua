@@ -26,6 +26,12 @@ end
 local windDefs = {
   [ UnitDefNames['armatidal'].id ] = true,
   [ UnitDefNames['coratidal'].id ] = true,
+  [ UnitDefNames['tllatidal'].id ] = true,
+}
+
+local defsScript = { --enables script calling
+  [ UnitDefNames['armatidal'].id ] = true,
+  [ UnitDefNames['coratidal'].id ] = true,
 }
 
 local windmills = {}
@@ -38,6 +44,7 @@ local slope = 0
 -------------------------------------------------------------------------------------
 
 -- Speed-ups
+local uDefs = UnitDefs
 
 local CallCOBScript        = Spring.CallCOBScript
 local GetCOBScriptID       = Spring.GetCOBScriptID
@@ -67,11 +74,24 @@ function gadget:GameFrame(n)
     local strength = Game.tidal
 		
     for unitID, scriptIDs in pairs(windmills) do
-      local de = strength
-      AddUnitResource(unitID, "e", de)
-      local speed = de * COBSCALE * 0.00625
+	
+	 
+	  local uDefID = GetUnitDefID(unitID) ; if not uDefID then break end
+	  local uDef = uDefs[uDefID]
+	  
+	  local mult = 2 -- DEFAULT
+	  if uDef.customParams then
+		mult = uDef.customParams.energymultiplier or mult
+	  end
+	  
 
-      CallCOBScript(unitID, scriptIDs.speed, 0, speed)
+      AddUnitResource(unitID, "e", strength * (mult - 1))
+	
+	  if (defsScript[unitDefID]) then
+		local speed = strength * mult * COBSCALE * 0.025
+        CallCOBScript(unitID, scriptIDs.speed, 0, speed)
+      end
+      
     end
   end
 end
