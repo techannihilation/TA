@@ -74,7 +74,7 @@ local unitDef = {
 	},
 	sfxtypes = {
 		explosiongenerators = {
-			[1] = [[custom:greenflare]],
+	--		[1] = [[custom:greenflare]],
 			[2] = [[custom:unitfire]],
 		},
 	},
