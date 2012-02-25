@@ -96,6 +96,9 @@ unclassed_air = {
 	corvalk = 99,
 	tllrobber = 99,
 	tlltplane = 99,
+	-- gunship fighters
+	tawf015 = 99,
+	corrag = 99,
 },
 --### SEA ###
 ships = {
