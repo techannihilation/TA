@@ -23,6 +23,7 @@ local convertCapacities = {
 		[UnitDefNames.armmakr.id]  = { c = 50, e = (AC0) }, -- Normal
 		[UnitDefNames.armfmkr.id]  = { c = 100, e = (AC1) }, -- Floating
 		[UnitDefNames.ametalmakerlvl1.id]  = { c = 200, e = (AC2) }, -- T1,5
+		[UnitDefNames.armamaker.id]  = { c = 200, e = (AC2) }, -- T1,5
 		[UnitDefNames.armckmakr.id]  = { c = 500, e = (AC3) }, -- Cloaked/Hardened
 		[UnitDefNames.armmmkr.id]  = { c = 800, e = (AC4) }, -- Moho
 		[UnitDefNames.armuwmmm.id]  = { c = 1000, e = (AC5) }, -- Underwater
@@ -34,6 +35,7 @@ local convertCapacities = {
 		[UnitDefNames.cormakr.id]  = { c = 64, e = (AC0) }, -- Normal
 		[UnitDefNames.corfmkr.id]  = { c = 128, e = (AC1) }, -- Floating
 		[UnitDefNames.cmetalmakerlvl1.id]  = { c = 256, e = (AC2) }, -- T1,5
+		[UnitDefNames.coramaker.id]  = { c = 256, e = (AC2) }, -- T1,5
 		[UnitDefNames.corhmakr.id]  = { c = 1536, e = (AC3) }, -- Cloaked/Hardened
 		[UnitDefNames.cormmkr.id]  = { c = 1024, e = (AC4) }, -- Moho
 		[UnitDefNames.coruwmmm.id]  = { c = 1280, e = (AC5) }, -- Underwater
