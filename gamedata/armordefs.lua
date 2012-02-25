@@ -97,7 +97,8 @@ unclassed_air = {
 	tllrobber = 99,
 	tlltplane = 99,
 	-- gunship fighters
-	tawf015  = 99,
+	tawf015 = 99,
+	corrag = 99,
 },
 --### SEA ###
 ships = {
