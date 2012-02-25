@@ -54,11 +54,12 @@ local unitDef = {
 	workerTime = 600,
 	yardMap = [[oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo]],
 	buildoptions = {
-		[1] = [[shrike]],
-		[2] = [[blackdawn]],
-		[3] = [[corsbomb]],
-		[4] = [[coreclipse]],
-		[5] = [[corbtrans]],
+		[1] = [[corrag]],
+		[2] = [[shrike]],
+		[3] = [[blackdawn]],
+		[4] = [[corsbomb]],
+		[5] = [[coreclipse]],
+		[6] = [[corbtrans]],
 	},
 	featureDefs = nil,
 	sounds = {
