@@ -115,16 +115,14 @@ local function UpdateMetalMakers(teamID, energyUse)
 						teamActiveMM[teamID] = (teamActiveMM[teamID] + 1)
 					end
 				else
-					if (not defs.emped) then
-						if (teamActiveMM[teamID] == 0) then break end
-					else
-						if (defs.status == 1) then
-							updateUnitCoversion(unitID, 0, 0)
-							spSetUnitCOBValue(unitID,1024,0)
-							defs.status = 0
-							teamActiveMM[teamID] = (teamActiveMM[teamID] - 1)
-						end
+					if (teamActiveMM[teamID] == 0) then break end
+					if (defs.status == 1) then
+						updateUnitCoversion(unitID, 0, 0)
+						spSetUnitCOBValue(unitID,1024,0)
+						defs.status = 0
+						teamActiveMM[teamID] = (teamActiveMM[teamID] - 1)
 					end
+
 				end
 			end
 		end
