@@ -48,7 +48,7 @@ local eSteps = {}
 local teamActiveMM = {}
 local lastPost = {}
 local splitMMPointer = 1
-local splitMMUpdate = 90
+local splitMMUpdate = -1
 ----------------------------------------------------------------
 -- Constant
 ----------------------------------------------------------------
@@ -59,6 +59,7 @@ local paralysisRelRate = 75 -- unit HP / paralysisRelRate = paralysis dmg drop r
 -- Speedups
 ----------------------------------------------------------------
 local min = math.min
+local max = math.max
 local spGetPlayerInfo = Spring.GetPlayerInfo
 local spGetTeamRulesParam = Spring.GetTeamRulesParam
 local spSetTeamRulesParam = Spring.SetTeamRulesParam
@@ -69,6 +70,9 @@ local spGetUnitHealth = Spring.GetUnitHealth
 local spSetUnitCOBValue = Spring.SetUnitCOBValue
 local spGetUnitTeam = Spring.GetUnitTeam
 local spGetUnitDefID = Spring.GetUnitDefID
+local spAddUnitResource = Spring.AddUnitResource
+local spUseUnitResource = Spring.UseUnitResource
+local spSetUnitResourcing = Spring.SetUnitResourcing
 
 ----------------------------------------------------------------
 -- Functions
@@ -91,27 +95,31 @@ local function AdjustTeamCapacity(teamID, adjustment, e)
     spSetTeamRulesParam(teamID, mmCapacityParamName, totalCapacity)
 end
 
+local function updateUnitCoversion(unitID, amount, e)
+	spSetUnitResourcing(unitID, "umm", amount * e)
+	spSetUnitResourcing(unitID, "uue", amount)
+end
+
 local function UpdateMetalMakers(teamID, energyUse)
 	for j = 1, #eSteps do
 		for unitID, defs in pairs(teamMMList[teamID][eSteps[j]]) do
 			if (defs.built) then
-				if (defs.emped) then
-					if (defs.status == 1) then
-						spSetUnitCOBValue(unitID,1024,0)
-						defs.status = 0
-						teamActiveMM[teamID] = (teamActiveMM[teamID] - 1)
+				if (not defs.emped and energyUse > 0) then
+					amount = max(0,min(energyUse, defs.capacity))
+					energyUse = (energyUse - defs.capacity)
+					updateUnitCoversion(unitID, amount, eSteps[j])
+					
+					if (defs.status == 0) then
+						spSetUnitCOBValue(unitID,1024,1)
+						defs.status = 1
+						teamActiveMM[teamID] = (teamActiveMM[teamID] + 1)
 					end
 				else
-					if (energyUse > 0) then
-						energyUse = (energyUse - defs.capacity)
-						if (defs.status == 0) then
-							spSetUnitCOBValue(unitID,1024,1)
-							defs.status = 1
-							teamActiveMM[teamID] = (teamActiveMM[teamID] + 1)
-						end
-					else
+					if (not defs.emped) then
 						if (teamActiveMM[teamID] == 0) then break end
+					else
 						if (defs.status == 1) then
+							updateUnitCoversion(unitID, 0, 0)
 							spSetUnitCOBValue(unitID,1024,0)
 							defs.status = 0
 							teamActiveMM[teamID] = (teamActiveMM[teamID] - 1)
@@ -244,62 +252,58 @@ function gadget:Initialize()
 		spSetTeamRulesParam(tID, mmAvgEffiParamName, teamEfficiencies[tID]:avg())
 
     end
-    splitMMUpdate = math.floor(math.max((90 / #teamList),1))
+    splitMMUpdate = math.floor(math.max((frameRate / #teamList),1))
 end
 
 
 function gadget:GameFrame(n)
 
-	if (n % resourceRefreshRate == 0) then
+	-- process emped in the least likely used frame by the actual per team maker computations
+	if (n % resourceRefreshRate == resourceRefreshRate - 1) then
 		currentFrameStamp = currentFrameStamp + 1
-		
 		EmpedVector:process(currentFrameStamp)
-		
-		
-		for i = 1, #teamList do
-			local tID = teamList[i]
-			local eCur, eStor = spGetTeamResources(tID, 'energy')
-			local convertAmount = eCur - eStor * spGetTeamRulesParam(tID, mmLevelParamName)
-			local eConvert = 0
-			local mConvert = 0
-			local eConverted = 0
-			local mConverted = 0
-			
-			for j = 1, #eSteps do
-				if(teamCapacities[tID][eSteps[j]] > 1) then
-					if (convertAmount > 1) then
-						local convertStep = min(teamCapacities[tID][eSteps[j]] * resourceFraction, convertAmount)
-						eConverted = convertStep + eConverted
-						mConverted = convertStep * eSteps[j] + mConverted
-						
-						spUseTeamResource(tID, 'energy', convertStep)
-						spAddTeamResource(tID, 'metal',  convertStep * eSteps[j])
-						teamUsages[tID] = teamUsages[tID] + convertStep
-						convertAmount = convertAmount - convertStep
-					else break end
-				end
-			end
-
-			teamEfficiencies[tID]:push({m=mConverted, e=eConverted})
-
-			local tUsage = (resourceUpdatesPerGameSec * teamUsages[tID])
-			spSetTeamRulesParam(tID, mmUseParamName, tUsage)
-			spSetTeamRulesParam(tID, mmAvgEffiParamName, teamEfficiencies[tID]:avg())			
-			
-			lastPost[tID] = tUsage
-			teamUsages[tID] = 0
-		end
 	end
 
-    if (n%splitMMUpdate == 0) then
-		local tID = teamList[splitMMPointer]
-		UpdateMetalMakers(tID,lastPost[tID])
-		if (splitMMPointer == #teamList) then
-			splitMMPointer = 1
-		else
-			splitMMPointer = splitMMPointer + 1
+	-- process a team in each gameframe so that all teams are process exactly once in every 16 gameframes
+	-- in case of more than 16 teams ingame, two or more teams are processed in one gameframe
+
+	if (n % resourceRefreshRate == splitMMPointer) then
+		for i = 0, (math.ceil(#teamList / resourceRefreshRate) - 1) do
+			local tID
+			local tpos = (splitMMPointer + i * resourceRefreshRate)
+			if tpos <= #teamList then
+				tID = teamList[tpos]
+				
+				local eCur, eStor = spGetTeamResources(tID, 'energy')
+				local convertAmount = eCur - eStor * spGetTeamRulesParam(tID, mmLevelParamName)
+				local eConvert, mConvert, eConverted, mConverted, teamUsages = 0, 0, 0, 0, 0
+
+				for j = 1, #eSteps do
+					if(teamCapacities[tID][eSteps[j]] > 1) then
+						if (convertAmount > 1) then
+							local convertStep = min(teamCapacities[tID][eSteps[j]] * resourceFraction, convertAmount)
+							eConverted = convertStep + eConverted
+							mConverted = convertStep * eSteps[j] + mConverted
+							teamUsages = teamUsages + convertStep
+							convertAmount = convertAmount - convertStep
+						else break end
+					end
+				end
+
+				teamEfficiencies[tID]:push({m=mConverted, e=eConverted})
+				local tUsage = (resourceUpdatesPerGameSec * teamUsages)
+				UpdateMetalMakers(tID,tUsage)
+				spSetTeamRulesParam(tID, mmUseParamName, tUsage)
+				spSetTeamRulesParam(tID, mmAvgEffiParamName, teamEfficiencies[tID]:avg())	
+			
+				if (splitMMPointer == #teamList) then
+					splitMMPointer = 1
+				else
+					splitMMPointer = splitMMPointer + 1
+				end
+			end
 		end
-    end
+	end
 end
 
 
@@ -369,9 +373,6 @@ function gadget:UnitGiven(uID, uDefID, newTeam, oldTeam)
 				teamActiveMM[oldTeam] = teamActiveMM[oldTeam] - 1
 				teamActiveMM[newTeam] = teamActiveMM[newTeam] + 1
 			end
-			
-			--teamMMList[newTeam][cDefs.e][uID] = teamMMList[oldTeam][cDefs.e][uID]
-			-- using "deep copy" instead 
 			
 			teamMMList[newTeam][cDefs.e][uID] = {}
 			teamMMList[newTeam][cDefs.e][uID].capacity = teamMMList[oldTeam][cDefs.e][uID].capacity

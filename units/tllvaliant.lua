@@ -1,4 +1,4 @@
--- UNITDEF -- RLLVALIANT --
+-- UNITDEF -- TLLVALIANT --
 --------------------------------------------------------------------------------
 
 local unitName = "tllvaliant"
@@ -6,72 +6,72 @@ local unitName = "tllvaliant"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-  acceleration       = 0.154,
-  activateWhenBuilt  = true,
-  airHoverFactor     = 0,
-  airStrafe          = false,
-  autoHeal           = 5,
-  bankscale          = 1,
-  bmcode             = 1,
-  brakeRate          = 3.75,
-  buildCostEnergy    = 140000,
-  buildCostMetal     = 10000,
-  builder            = true,
-  buildTime          = 170000,
-  canAttack          = true,
-  canFly             = true,
-  canGuard           = true,
-  canMove            = true,
-  canPatrol          = true,
-  canRestore         = false,
-  canReclaim         = false,
-  canResurrect       = false,
-  canCapture         = true,
-  canstop            = 1,
-  captureSpeed       = 600,
-  category           = [[ALL HUGE MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTVTOL SUPERSHIP WEAPON]],
-  collide            = false,
-  commander          = true,
-  cruiseAlt          = 20,
-  dontland           = 1,
-  energyMake         = 50,
-  energyStorage      = 10000,
-  energyUse          = 0,
-  explodeAs          = [[MEGA_BLAST]],
-  firestandorders    = 1,
-  footprintX         = 6,
-  footprintZ         = 6,
-  hoverAttack        = true,
-  iconType           = [[gunship]],
-  idleAutoHeal       = 5,
-  idleTime           = 1800,
-  immunetoparalyzer  = 1,
-  maxDamage          = 14500,
-  maxVelocity        = 1.50,
-  maxWaterDepth      = 0,
-  metalMake          = 2.5,
-  metalStorage       = 10000,
-  mobilestandorders  = 1,
-  name               = [[Valiant]],
-  noAutoFire         = false,
-  objectName         = [[TLLVALIANT]],
-  ovradjust          = 1,
-  pitchscale         = 0.5,
-  radarDistance      = 700,
-  reclaimable        = false,
-  selfDestructAs     = [[MEGA_BLAST1]],
-  shootme            = 1,
-  showPlayerName     = true,
-  side               = [[tll]],
-  sightDistance      = 633,
-  smoothAnim         = true,
-  standingfireorder  = 2,
-  standingmoveorder  = 1,
-  steeringmode       = 1,
-  turnRate           = 100,
-  unitname           = [[tllvaliant]],
-  workerTime         = 400,
-  sounds = {
+	acceleration = 0.154,
+	activateWhenBuilt = true,
+	airHoverFactor = 0,
+	airStrafe = false,
+	autoHeal = 5,
+	bankscale = 1,
+	bmcode = 1,
+	brakeRate = 3.75,
+	buildCostEnergy = 140000,
+	buildCostMetal = 10000,
+	builder = true,
+	buildTime = 170000,
+	canAttack = true,
+	canCapture = true,
+	canFly = true,
+	canGuard = true,
+	canMove = true,
+	canPatrol = true,
+	canReclaim = false,
+	canRestore = false,
+	canResurrect = false,
+	canstop = 1,
+	captureSpeed = 600,
+	category = [[ALL HUGE MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTVTOL SUPERSHIP WEAPON]],
+	collide = false,
+	commander = true,
+	cruiseAlt = 20,
+	dontland = 1,
+	energyMake = 50,
+	energyStorage = 10000,
+	energyUse = 0,
+	explodeAs = [[MEGA_BLAST]],
+	firestandorders = 1,
+	footprintX = 6,
+	footprintZ = 6,
+	hoverAttack = true,
+	iconType = [[gunship]],
+	idleAutoHeal = 5,
+	idleTime = 1800,
+	immunetoparalyzer = 1,
+	maxDamage = 14500,
+	maxVelocity = 1.5,
+	maxWaterDepth = 0,
+	metalMake = 2.5,
+	metalStorage = 10000,
+	mobilestandorders = 1,
+	name = [[Valiant]],
+	noAutoFire = false,
+	objectName = [[TLLVALIANT]],
+	ovradjust = 1,
+	pitchscale = 0.5,
+	radarDistance = 700,
+	reclaimable = false,
+	selfDestructAs = [[MEGA_BLAST1]],
+	shootme = 1,
+	showPlayerName = true,
+	side = [[tll]],
+	sightDistance = 633,
+	smoothAnim = true,
+	standingfireorder = 2,
+	standingmoveorder = 1,
+	steeringmode = 1,
+	turnRate = 100,
+	unitname = [[tllvaliant]],
+	workerTime = 400,
+	sounds = {
 		canceldestruct = [[cancel2]],
 		underattack = [[warning1]],
 		arrived = {
@@ -95,30 +95,29 @@ local unitDef = {
 			[1] = [[bigsel]],
 		},
 	},
-  weapons = {
-    [1]  = {
-      def                = [[750MW]],
-      mainDir            = [[0 0 1]],
-      maxAngleDif        = 90,
-      onlyTargetCategory = [[NOTVTOL]],
-
-    },
-    [2]  = {
-      def                = [[CapitalShipMinigun]],
-      mainDir            = [[0 1 0.75]],
-      maxAngleDif        = 270,
-    },
-    [3]  = {
-      def                = [[CapitalShipMinigun]],
-    },
-  },
+	weaponDefs = nil,
+	weapons = {
+		[1] = {
+			def = [[750MW]],
+			mainDir = [[0 0 1]],
+			maxAngleDif = 90,
+			onlyTargetCategory = [[NOTVTOL]],
+		},
+		[2] = {
+			def = [[CapitalShipMinigun]],
+			mainDir = [[0 1 0.75]],
+			maxAngleDif = 270,
+		},
+		[3] = {
+			def = [[CapitalShipMinigun]],
+		},
+	},
 }
-
 
 --------------------------------------------------------------------------------
 
 local weaponDefs = {
-  ['750MW'] = {
+	['750MW'] = {
 		accuracy = 500,
 		areaOfEffect = 260,
 		beamWeapon = true,
@@ -207,9 +206,8 @@ local weaponDefs = {
 }
 unitDef.weaponDefs = weaponDefs
 
-
 --------------------------------------------------------------------------------
 
-return lowerkeys({ [unitName] = unitDef })
+return lowerkeys({[unitName] = unitDef})
 
 --------------------------------------------------------------------------------

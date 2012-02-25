@@ -1,4 +1,5 @@
 
+local ACZ = 1.0/100
 local AC0 = 1.2/100
 local AC1 = 1.3/100
 local AC2 = 1.4/100
@@ -26,6 +27,8 @@ local convertCapacities = {
 		[UnitDefNames.armmmkr.id]  = { c = 800, e = (AC4) }, -- Moho
 		[UnitDefNames.armuwmmm.id]  = { c = 1000, e = (AC5) }, -- Underwater
 		[UnitDefNames.ametalmakerlvl2.id]  = { c = 16000, e = (AC6) }, -- Super
+		
+		[UnitDefNames.armgen.id]  = { c = UnitDefNames.armgen.energyMake, e = (ACZ) }, -- Armgen Combo fusion
 					
 		--CORE
 		[UnitDefNames.cormakr.id]  = { c = 64, e = (AC0) }, -- Normal
@@ -36,6 +39,7 @@ local convertCapacities = {
 		[UnitDefNames.coruwmmm.id]  = { c = 1280, e = (AC5) }, -- Underwater
 		[UnitDefNames.cmetalmakerlvl2.id]  = { c =20480, e = (AC6) }, -- Super
 
+		[UnitDefNames.corgen.id]  = { c = UnitDefNames.corgen.energyMake, e = (ACZ) }, -- Corgen Combo fusion
 		--TLL
 		[UnitDefNames.tllmm.id]  = { c = 100, e = (T0) }, -- Normal
 		[UnitDefNames.tllwmconv.id]  = { c = 100, e = (T1) }, -- Floating
