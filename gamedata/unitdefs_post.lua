@@ -220,7 +220,6 @@ if (Spring.GetModOptions) then
 		end
 		if (not Commanders[ud.unitname]) then
 			ud.mass = math.max(ud.maxdamage / 6.0, ud.buildcostmetal)
-			ud.cantbetransported = false
 		end
 	end
 end
