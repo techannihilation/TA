@@ -19,7 +19,6 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	cantBeTransported = true,
 	category = [[ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL HUGE WEAPON]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
