@@ -18,7 +18,6 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	cantBeTransported = true,
 	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	collisionvolumeoffsets = [[0 5 2]],
 	collisionvolumescales = [[54 81 54]],

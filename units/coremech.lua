@@ -7,8 +7,6 @@ local unitName = "coremech"
 
 local unitDef = {
 	acceleration = 0.05,
-	ai_limit = [[limit coreMech 12]],
-	ai_weight = [[weight coreMech 4.4]],
 	bmcode = 1,
 	brakeRate = 0.18,
 	buildCostEnergy = 20842,
