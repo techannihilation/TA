@@ -218,6 +218,10 @@ if (Spring.GetModOptions) then
 			ud.energystorage = modOptions.startenergy or 1000
 			ud.metalstorage = modOptions.startmetal or 1000
 		end
+		if (not Commanders[ud.unitname]) then
+			ud.mass = math.max(ud.maxdamage / 6.0, ud.buildcostmetal)
+			ud.cantbetransported = false
+		end
 	end
 end
 
