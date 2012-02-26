@@ -52,7 +52,7 @@ local unitDef = {
 	workerTime = 100,
 	buildoptions = {
 		[1] = [[coramaker]],
-		[2] = [[core_wind_generator]],
+		[2] = [[corawin]],
 		[3] = [[cormex1]],
 	},
 	featureDefs = nil,

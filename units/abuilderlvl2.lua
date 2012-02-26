@@ -53,7 +53,7 @@ local unitDef = {
 	workerTime = 100,
 	buildoptions = {
 		[1] = [[armamaker]],
-		[2] = [[arm_wind_generator]],
+		[2] = [[armawin]],
 		[3] = [[armmex1]],
 	},
 	featureDefs = nil,
