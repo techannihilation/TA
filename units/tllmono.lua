@@ -110,6 +110,7 @@ local weaponDefs = {
 		areaOfEffect = 40,
 		burst = 1,
 		burstrate = 0,
+		canattackground = false,
 		explosionart = [[favboom]],
 		explosiongaf = [[favboom]],
 		fireStarter = 70,

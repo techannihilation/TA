@@ -97,6 +97,7 @@ local weaponDefs = {
 		burnblow = true,
 		burst = 8,
 		burstrate = 0.4,
+		canattackground = false,
 		craterBoost = 0,
 		craterMult = 0,
 		edgeEffectiveness = 0.75,

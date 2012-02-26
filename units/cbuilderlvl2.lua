@@ -51,8 +51,8 @@ local unitDef = {
 	unitname = [[cbuilderlvl2]],
 	workerTime = 100,
 	buildoptions = {
-		[1] = [[cmetalmakerlvl1]],
-		[2] = [[core_wind_generator]],
+		[1] = [[coramaker]],
+		[2] = [[corawin]],
 		[3] = [[cormex1]],
 	},
 	featureDefs = nil,
