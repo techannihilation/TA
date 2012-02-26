@@ -48,7 +48,6 @@ local unitDef = {
 	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMOR]],
 	radarDistance = 0,
-	releaseHeld = true,
 	scale = 0.8,
 	selfDestructAs = [[BIG_UNIT]],
 	shootme = 1,
