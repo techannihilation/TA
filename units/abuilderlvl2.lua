@@ -52,7 +52,7 @@ local unitDef = {
 	unitname = [[abuilderlvl2]],
 	workerTime = 100,
 	buildoptions = {
-		[1] = [[ametalmakerlvl1]],
+		[1] = [[armamaker]],
 		[2] = [[arm_wind_generator]],
 		[3] = [[armmex1]],
 	},
