@@ -29,11 +29,6 @@ local windDefs = {
   [ UnitDefNames['tllatidal'].id ] = true,
 }
 
-local defsScript = { --enables script calling
-  [ UnitDefNames['armatidal'].id ] = true,
-  [ UnitDefNames['coratidal'].id ] = true,
-}
-
 local windmills = {}
 local groundMin, groundMax = 0,0
 local groundExtreme = 0
@@ -87,10 +82,11 @@ function gadget:GameFrame(n)
 
       AddUnitResource(unitID, "e", strength * (mult - 1))
 	
-	  if (defsScript[unitDefID]) then
 		local speed = strength * mult * COBSCALE * 0.025
+		speed = speed/8  -- slow down effect
+		--Spring.Echo("Speed: "..speed)
         CallCOBScript(unitID, scriptIDs.speed, 0, speed)
-      end
+      
       
     end
   end
