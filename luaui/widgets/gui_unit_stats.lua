@@ -77,6 +77,10 @@ local pplants = {
 	["tlltide"] = true,
 	["tlluwfusion"] = true,
 	["tllwindtrap"] = true,
+	["corawin"] = true,
+	["armawin"] = true,
+	["coratidal"] = true,
+	["armatidal"] = true,
 }
 
 ------------------------------------------------------------------------------------
@@ -225,13 +229,22 @@ function widget:DrawScreen()
 			local totalEOut = uDef.energyMake
 			
 			if (uDef.tidalGenerator > 0 and tidalStrength > 0) then
-				totalEOut = totalEOut + tidalStrength
+			    local mult = 1 -- DEFAULT
+			    if uDef.customParams then
+					mult = uDef.customParams.energymultiplier or mult
+			    end
+				totalEOut = totalEOut + tidalStrength * mult
 			end
 			
 			if (uDef.windGenerator > 0) then
+				local mult = 1 -- DEFAULT
+			    if uDef.customParams then
+					mult = uDef.customParams.energymultiplier or mult
+			    end
+				
 				local unitWindMin = math.min(windMin, uDef.windGenerator)
 				local unitWindMax = math.min(windMax, uDef.windGenerator)
-				totalEOut = totalEOut + (unitWindMin + unitWindMax) / 2
+				totalEOut = totalEOut + ((unitWindMin + unitWindMax) / 2 ) * mult
 			end
 			
 			DrawText("Avg. E-Out.:", totalEOut)
@@ -264,13 +277,24 @@ function widget:DrawScreen()
 				end
 				
 				if (uDef.tidalGenerator > 0 and tidalStrength > 0) then
-					totalEOut = totalEOut + tidalStrength
+					  local mult = 1 -- DEFAULT
+					  if uDef.customParams then
+						mult = uDef.customParams.energymultiplier or mult
+					  end
+					  
+					totalEOut = totalEOut + tidalStrength * mult
 				end
 				
 				if (uDef.windGenerator > 0) then
+				
+					  local mult = 1 -- DEFAULT
+					  if uDef.customParams then
+						mult = uDef.customParams.energymultiplier or mult
+					  end
+				
 					local unitWindMin = math.min(windMin, uDef.windGenerator)
 					local unitWindMax = math.min(windMax, uDef.windGenerator)
-					totalEOut = totalEOut + (unitWindMin + unitWindMax) / 2
+					totalEOut = totalEOut + ((unitWindMin + unitWindMax) / 2) * mult
 				end
 		
 				if(totalEOut * avgCR + totalMOut > 0) then
