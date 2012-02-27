@@ -7,7 +7,6 @@ local unitName = "corrock"
 
 local unitDef = {
   acceleration       = 0.108,
-  badTargetCategory  = [[VTOL]],
   bmcode             = 1,
   brakeRate          = 0.188,
   buildCostEnergy    = 2500,
