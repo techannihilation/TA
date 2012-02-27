@@ -60,6 +60,11 @@ local unitDef = {
 	turnRate = 792,
 	unitname = [[armbrawl]],
 	workerTime = 0,
+	sfxtypes = {
+	    explosiongenerators = {
+		[[custom:muendungsfeuer]],
+	  },
+	},
 	sounds = {
 		canceldestruct = [[cancel2]],
 		underattack = [[warning1]],
@@ -97,10 +102,11 @@ local weaponDefs = {
 		areaOfEffect = 8,
 		burst = 3,
 		burstrate = 0.1,
+		cegTag = [[VTOL_EMGTRAIL]],
 		craterBoost = 0,
 		craterMult = 0,
 		endsmoke = 0,
-		explosionGenerator = [[custom:BRAWLIMPACTS]],
+		explosionGenerator = [[custom:LIGHTARMS]],
 		impactonly = 1,
 		impulseBoost = 0.123,
 		impulseFactor = 0.123,
