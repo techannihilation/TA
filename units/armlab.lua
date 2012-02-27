@@ -66,7 +66,11 @@ local unitDef = {
 		[6] = [[armjeth]],
 		[7] = [[armwar]],
 		[8] = [[armflea]],
-		[9] = [[aexxec]],
+		[9] = [[armpw1]],
+		[10] = [[armcrack]],
+		[11] = [[aexxec]],
+		
+		
 	},
 	featureDefs = nil,
 	sounds = {
