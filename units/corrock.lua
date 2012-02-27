@@ -59,6 +59,9 @@ local unitDef = {
   unitname           = [[corrock]],
   upright            = true,
   workerTime         = 0,
+  customparams       = {
+     RequireTech = [[Advanced T1 Unit Research Centre]],
+   },
   sfxtypes = {
     explosiongenerators = {
       [[custom:rocketflare]],
