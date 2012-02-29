@@ -34,6 +34,8 @@ bombers = {
 	tllseab = 99,
 	corseap = 99,
 	armseap = 99,
+	corsbomb = 99,
+	armorion = 99,
 },
 flak_resistant = {
 	apache = 99,
@@ -96,6 +98,8 @@ unclassed_air = {
 	corvalk = 99,
 	tllrobber = 99,
 	tlltplane = 99,
+	armor = 99,
+	corbtrans = 99,
 	-- gunship fighters
 	tawf015 = 99,
 	corrag = 99,
