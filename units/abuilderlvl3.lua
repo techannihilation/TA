@@ -65,7 +65,7 @@ local unitDef = {
 		[12] = [[armamd2]],
 		[13] = [[armmas]],
 		[14] = [[armt4store]],
-		[15] = [[corpre]],
+		[15] = [[armhys]],
 		[16] = [[cadvmsto]],
 	},
 	featureDefs = nil,
