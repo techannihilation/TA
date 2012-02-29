@@ -115,7 +115,7 @@ local unitDef = {
 		[29] = [[armfark1]],
 		[30] = [[armfhlt]],
 		[31] = [[abuilderlvl2]],
-		[32] = [[apocketfusion]],
+		[32] = [[armgen]],
 	},
 	customParams = {
 		iscommander = true,

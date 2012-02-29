@@ -110,7 +110,7 @@ local unitDef = {
 		[25] = [[cordl]],
 		[26] = [[cbuilderlvl2]],
 		[27] = [[corech3]],
-		[28] = [[cpocketfusion]],
+		[28] = [[corgen]],
 	},
 	customParams = {
 		iscommander = true,
