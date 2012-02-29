@@ -162,6 +162,12 @@ local resources = {
 			plasmaball23='plasmaball/plasmaball23.tga',
 			plasmaball24='plasmaball/plasmaball24.tga',
 			plasmaball25='plasmaball/plasmaball25.tga',
+			--nuke
+			burn='burn.tga',
+			flamenuke='flamenew.tga',
+			odd='odd.tga',	
+			groundflash43='clouds2.tga',
+			clouds2='clouds2.tga',
 		},
 	},
 }

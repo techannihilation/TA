@@ -57,6 +57,9 @@ local unitDef = {
 	upright = true,
 	workerTime = 0,
 	featureDefs = nil,
+	customparams = {
+		RequireTech = [[Advanced T1 Unit Research Centre]],
+	},
 	sounds = {
 		canceldestruct = [[cancel2]],
 		underattack = [[warning1]],

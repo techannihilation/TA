@@ -64,8 +64,10 @@ local unitDef = {
 		[4] = [[corstorm]],
 		[5] = [[corthud]],
 		[6] = [[corcrash]],
-		[7] = [[armflea1]],
-		[8] = [[gladiator]],
+		[7] = [[corpunk]],
+		[8] = [[corak1]],
+		[9] = [[corrock]],
+		[10] = [[gladiator]],
 	},
 	featureDefs = nil,
 	sfxtypes = {
