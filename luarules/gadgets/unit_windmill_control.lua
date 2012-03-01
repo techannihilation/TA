@@ -62,8 +62,8 @@ local atan2 = math.atan2
 function gadget:GameFrame(n)
   if (((n+16) % 32) < 0.1) then
     if (n==48) then
-      Spring.SendMessage('Initializing Windmill Controls' )
-      Spring.SendMessage('Done' )
+   --   Spring.SendMessage('Initializing Windmill Controls' )
+   --   Spring.SendMessage('Done' )
     end
     local _, _, _, strength, x, _, z = GetWind()
     local heading = GetHeadingFromVector(x, z)
