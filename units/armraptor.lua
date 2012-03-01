@@ -68,9 +68,30 @@ local unitDef = {
 	version = 1.2,
 	workerTime = 0,
 	zbuffer = 1,
+	sounds = {
+		canceldestruct = [[cancel2]],
+		underattack = [[warning1]],
+		cant = {
+			[1] = [[cantdo4]],
+		},
+		count = {
+			[1] = [[count6]],
+			[2] = [[count5]],
+			[3] = [[count4]],
+			[4] = [[count3]],
+			[5] = [[count2]],
+			[6] = [[count1]],
+		},
+		ok = {
+			[1] = [[mavbok1]],
+		},
+		select = {
+			[1] = [[mavbsel1]],
+		},
+	},
 	featureDefs = nil,
 	weaponDefs = nil,
-	weapons = {
+		weapons = {
 		[1] = {
 			def = [[MECH_RAPIDLASER1]],
 			onlyTargetCategory = [[NOTVTOL]],
