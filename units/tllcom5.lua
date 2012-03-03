@@ -115,7 +115,6 @@ local unitDef = {
 		[29] = [[tllck]],
 		[30] = [[tllfireraiser]],
 		[31] = [[corupmex]],
-		[32] = [[tllsealock]],
 	},
 	customParams = {
 		iscommander = true,
