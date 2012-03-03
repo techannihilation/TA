@@ -100,6 +100,7 @@ StatusControl()
 		{
 			if( Static_Var_6 > 10 )
 			{
+				emit-sfx 1024 + 0 from horns;
 				Static_Var_7 = 1;
 				show horns;
 				show rflame2;
@@ -122,6 +123,7 @@ StatusControl()
 		{
 			if( Static_Var_6 > 20 )
 			{
+				emit-sfx 1024 + 0 from launcher;
 				Static_Var_7 = 2;
 				show launcher;
 				show door1;
@@ -148,8 +150,8 @@ PilotLight(Func_Var_1)
 {
 	while( TRUE )
 	{
-			emit-sfx 1024 + 0 from flame1;
-			emit-sfx 1024 + 0 from flame12;
+			emit-sfx 1024 + 1 from flame1;
+			emit-sfx 1024 + 1 from flame12;
 			sleep 30;
 	}
 }
@@ -172,16 +174,16 @@ RestoreAfterDelay()
 	{
 		turn head to y-axis <10.000000> speed <20.000000>;
 		wait-for-turn head around y-axis;
-		emit-sfx 257 from head;
+		emit-sfx 258 from head;
 		turn head to y-axis <-10.000000> speed <20.000000>;
 		wait-for-turn head around y-axis;
-		emit-sfx 257 from head;
+		emit-sfx 258 from head;
 		turn head to y-axis <0.000000> speed <20.000000>;
 		wait-for-turn head around y-axis;
-		emit-sfx 257 from head;
+		emit-sfx 258 from head;
 	}
 	turn head to y-axis <0.000000> speed <20.000000>;
-	emit-sfx 257 from head;
+	emit-sfx 258 from head;
 	wait-for-turn head around y-axis;
 	sleep 10;
 }
