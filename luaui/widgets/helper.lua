@@ -13,7 +13,7 @@ end
 
 local upgradeMouseCursor = "Reclaim" 
 
-local CMD_UPGRADEMEX = 31244 
+local CMD_UPGRADEMEX = 32244 
 
 local builderDefs = nil 
 
