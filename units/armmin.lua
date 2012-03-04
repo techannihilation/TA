@@ -69,7 +69,9 @@ local unitDef = {
     [[armfmine3]],
     [[armfdrag]],
     [[armeyes]],
+    [[armmine7]],
     [[armmine6]],
+
   },
   sounds = {
     build              = [[nanlath1]],
