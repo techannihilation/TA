@@ -103,6 +103,8 @@ unclassed_air = {
 	-- gunship fighters
 	tawf015 = 99,
 	corrag = 99,
+	armmin = 99,
+	cormin = 99,
 },
 --### SEA ###
 ships = {
