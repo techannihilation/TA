@@ -31,7 +31,6 @@ local unitDef = {
 	captureSpeed = 600,
 	category = [[ALL HUGE MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTVTOL SUPERSHIP WEAPON]],
 	collide = false,
-	commander = true,
 	cruiseAlt = 20,
 	dontland = 1,
 	energyMake = 50,
