@@ -133,7 +133,7 @@ function widget:Initialize()
       elseif (ud.name=="ccovertopscentre") or (ud.name=="acovertopscentre") then
         Spring.SetUnitDefIcon(udid, "rc1.user")
 --broadside etc
-      elseif (ud.name=="abroadside") or (ud.name=="cdevastator") then
+      elseif (ud.name=="abroadside") or (ud.name=="cdevastator") or (ud.name=="tllvaliant") then
         Spring.SetUnitDefIcon(udid, "t4ships.user")
       elseif (ud.isFactory) then
         -- factories
