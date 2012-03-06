@@ -354,7 +354,18 @@ local UnitEffects = {
  [UnitDefNames["cbuilderlvl2"].id] = {
     {class='AirJet',options={color={1,1,1}, width=7, length=20, piece="engine_r", onActive=true}},
     {class='AirJet',options={color={1,1,1}, width=7, length=20, piece="engine_l", onActive=true}},
-
+ },
+ [UnitDefNames["tllvaliant"].id] = {
+    {class='AirJet',options={color={0.6,0.1,0}, width=17, length=30, piece="rthrust", onActive=true}},
+    {class='AirJet',options={color={0.6,0.1,0}, width=17, length=30, piece="lthrust", onActive=true}},
+ },
+  [UnitDefNames["abroadside"].id] = {
+    {class='AirJet',options={color={1,1,1}, width=30, length=35, piece="rthrust", onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=30, length=35, piece="lthrust", onActive=true}},
+ },
+  [UnitDefNames["cdevastator"].id] = {
+    {class='AirJet',options={color={0.8,0.1,0}, width=30, length=35, piece="rthrust", onActive=true}},
+    {class='AirJet',options={color={0.8,0.1,0}, width=30, length=35, piece="lthrust", onActive=true}},
  },
 }
 
