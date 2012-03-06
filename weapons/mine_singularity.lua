@@ -1,31 +1,30 @@
--- WEAPONDEF -- MINE_NUKE --
+-- WEAPONDEF -- MINE_SINGULARITY --
 --------------------------------------------------------------------------------
 
-local weaponName = "mine_nuke"
+local weaponName = "mine_singularity"
 
 --------------------------------------------------------------------------------
 
 local weaponDef = {
-	areaofeffect = 768,
+	areaofeffect = 200,
 	ballistic = 1,
-	craterboost = 5,
-	cratermult = 2.5,
-	edgeeffectiveness = 0.20000000298023,
-	explosiongenerator = [[custom:FLASHNUKE768]],
-	impulseboost = 0.25,
-	impulsefactor = 0.25,
-	name = [[NuclearMine]],
-	range = 1000,
+	craterboost = 10,
+	cratermult = 5,
+	edgeeffectiveness = 0.69999998807907,
+	explosiongenerator = [[custom:singularitybomb]],
+	impulseboost = 0,
+	name = [[SingularityMine]],
+	range = 480,
 	reloadtime = 3.5999999046326,
 	rendertype = 4,
-	soundhit = [[xplonuk3]],
+	soundhit = [[xplolrg3]],
 	soundstart = [[largegun]],
-	waterweapon = 1,
 	weaponvelocity = 250,
 	damage = {
-		commanders = 1500,
-		default = 3500,
-		mines = 20,
+		commanders = 5000,
+		default = 15000,
+		minelayers = 100,
+		mines = 5,
 	},
 }
 --------------------------------------------------------------------------------
