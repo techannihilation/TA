@@ -112,6 +112,7 @@ local weaponDefs = {
 		explosionGenerator = [[custom:NAPALM_Expl]],
 		fireStarter = 10,
 		impulseFactor = 0,
+		interceptedByShieldType = 16,
 		manualBombSettings = true,
 		model = [[bombe]],
 		myGravity = 0.2,
