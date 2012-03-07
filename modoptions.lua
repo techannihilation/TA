@@ -64,7 +64,19 @@ local options={
 		def    = false,
 		section= "ta_options",
     },
-	{
+    {
+		key="qtpfs",
+		name="Pathfinding system",
+		desc="Which pathfinding system to use",
+		type="list",
+		section= "ta_modes",
+		def="qtpfs",
+		items={
+			{key="0", name="Default", desc="Default Spring path finding engine"},
+			{key="1", name="QTPFS", desc="Quick/Tesellating Path Finding System"},
+		}
+    },
+    {
 		key    = "mo_noshare",
 		name   = "No Sharing To Enemies",
 		desc   = "Prevents players from giving units or resources to enemies",
