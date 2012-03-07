@@ -15,6 +15,7 @@ local unitDef = {
 	buildingGroundDecalSizeX = 10,
 	buildingGroundDecalSizeY = 10,
 	buildingGroundDecalType = [[corech21_aoplane.dds]],
+	buildPic = [[corech3.png]],
 	buildTime = 100000,
 	category = [[LEVEL2 ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
 	collisionvolumeoffsets = [[-1 -9 -5]],
