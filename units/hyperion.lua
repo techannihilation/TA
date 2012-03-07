@@ -68,6 +68,27 @@ local unitDef = {
 	workerTime = 0,
 	zbuffer = 1,
 	featureDefs = nil,
+	sounds = {
+		canceldestruct = [[cancel2]],
+		underattack = [[warning1]],
+		cant = {
+			[1] = [[cantdo4]],
+		},
+		count = {
+			[1] = [[count6]],
+			[2] = [[count5]],
+			[3] = [[count4]],
+			[4] = [[count3]],
+			[5] = [[count2]],
+			[6] = [[count1]],
+		},
+		ok = {
+			[1] = [[krogok1]],
+		},
+		select = {
+			[1] = [[krogsel1]],
+		},
+	},
 	sfxtypes = {
 		explosiongenerators = {
 			[1] = [[custom:bluemuzzle]],
