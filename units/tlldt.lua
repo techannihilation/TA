@@ -27,6 +27,7 @@ local unitDef = {
 	footprintX = 2,
 	footprintZ = 2,
 	isFeature = true,
+	levelGround = false,
 	maxDamage = 100,
 	maxSlope = 32,
 	maxWaterDepth = 0,
