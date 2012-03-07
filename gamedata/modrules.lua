@@ -28,8 +28,9 @@ local modrules  = {
   },
     
   system = {
-    pathFinderSystem = 1,	97	    pathFinderSystem = (Spring.GetModOptions() and (Spring.GetModOptions().qtpfs == "1") and 1) or 0,
+    pathFinderSystem = (Spring.GetModOptions() and (Spring.GetModOptions().qtpfs == "1") and 1) or 0,
   },
+  
 }
 
 
