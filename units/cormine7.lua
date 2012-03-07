@@ -59,6 +59,9 @@ local unitDef = {
   unitname           = [[cormine7]],
   workerTime         = 0,
   yardMap            = [[o]],
+  customparams = {
+     RequireTech = [[Advanced T3 Unit Research Centre]],
+  },
   sounds = {
     canceldestruct     = [[cancel2]],
     underattack        = [[warning1]],
