@@ -83,7 +83,7 @@ local UnitEffects = {
   [UnitDefNames["corfus"].id] = {
     {class='Bursts',options=corfusBursts},
     {class='ShieldSphere',options=corfusShieldSphere},
-    {class='ShieldJitter',options={life=math.huge, pos={0,40.5,-6.5}, size=21, precision=22, repeatEffect=true}},
+    {class='ShieldJitter',options={life=math.huge, pos={0,50,-5}, size=25, precision=22, repeatEffect=true}},
     {class='GroundFlash',options=groundFlashGreen},
   },
  [UnitDefNames["cfusionplant"].id] = {
@@ -133,7 +133,7 @@ local UnitEffects = {
    [UnitDefNames["corsfus"].id] = {
     {class='Bursts',options=corsfusBursts},
     {class='ShieldSphere',options=corsfusShieldSphere},
-    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,100.9,0}, size=29, precision=22, repeatEffect=true}},
+    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,100.9,0}, size=32, precision=22, repeatEffect=true}},
   },
     [UnitDefNames["armlab"].id] = {
 --  {class='Bursts',options=armlabBursts},
