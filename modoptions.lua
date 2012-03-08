@@ -12,6 +12,7 @@ local options={
        desc="Tech Annihilation - Game Modes",
        type="section",
     },
+    
     {
        key="ta_options",
        name="Tech Annihilation - Options",
@@ -24,6 +25,14 @@ local options={
        desc="Tech Annihilation - Peace Time Settings",
        type="section",
     },
+    {
+	key    = "mo_heatmap",
+	name   = "Heatmap for pathing",
+	desc   = "Turn Heatmap on/off",
+	type   = "bool",
+	def    = false,
+	section= "ta_modes",
+	},
 	{
 		key    = "mo_coop",
 		name   = "Cooperative Mode",
