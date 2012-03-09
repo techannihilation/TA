@@ -12,7 +12,12 @@ local options={
        desc="Tech Annihilation - Game Modes",
        type="section",
     },
-    
+        {
+       key="ta_exp",
+       name="Tech Annihilation - Experimental Options",
+       desc="Tech Annihilation - Experimental Options",
+       type="section",
+    },
     {
        key="ta_options",
        name="Tech Annihilation - Options",
@@ -27,11 +32,11 @@ local options={
     },
     {
 	key    = "mo_heatmap",
-	name   = "Heatmap for pathing",
-	desc   = "Turn Heatmap on/off",
+	name   = "Enable Heatmap's",
+	desc   = "Enables Pathing Heatmaps",
 	type   = "bool",
 	def    = false,
-	section= "ta_modes",
+	section= "ta_exp",
 	},
 	{
 		key    = "mo_coop",
@@ -78,7 +83,7 @@ local options={
 		name="Pathfinding system",
 		desc="Which pathfinding system to use",
 		type="list",
-		section= "ta_modes",
+		section= "ta_exp",
 		def="qtpfs",
 		items={
 			{key="0", name="Default", desc="Default Spring path finding engine"},
