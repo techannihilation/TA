@@ -1,0 +1,354 @@
+[Explosion_VeryHeavy_Rocket-2]
+{ 
+	[FakeRing]
+		{
+		class=CSimpleGroundFlash;
+		[properties]
+		{
+		  texture=groundring;
+		  size=5;
+		  sizeGrowth=3 r-3;
+		  ttl=12;
+
+	          colorMap=1 1 0 1  1 0.6 0.25 1     0 0 0 0.1;
+		}
+    	air=0;
+    	ground=1;
+    	water=0;
+	count=4;
+	}
+
+	[FakeLight]
+		{
+		class=CSimpleGroundFlash;
+		[properties]
+		{
+		  texture=groundflash;
+		  size=200 r-5;
+		  sizeGrowth=5 r-3;
+		  ttl=32 r4 r-4;
+
+	          colorMap=1 1 1 1    1 0.6 0.25 1     0 0 0 0.1;
+		}
+    	air=0;
+    	ground=1;
+    	water=0;
+	count=4;
+	}
+
+	[Spark]
+	{
+	class=CSimpleParticleSystem;
+
+		[properties]
+		{
+
+		Texture=redexplo;
+
+
+		colorMap	= 1 0.25 0.12 .01   0.96 .34 0.05 .008  	0 0 0 0.01;
+
+      		pos 		= 0, 18, 0;
+		gravity		= 0, -0.5, 0;
+	       	emitVector	= 0, 1, 0;
+		emitRot		= 0;
+		emitRotSpread	= 40;
+
+		sizeGrowth	= 0.0 r.05;
+		sizeMod		= 1.0;
+
+		airdrag			= 1;
+		particleLife		= 10;
+		particleLifeSpread	= 50;
+		numParticles		= 40;
+		particleSpeed		= 8;
+		particleSpeedSpread	= 7;
+		particleSize		= 1;
+		particleSizeSpread	= 7;
+
+		directional		= 1; 
+		useAirLos		= 1;
+		}
+	air=1;
+	ground=1;
+	water=0;
+	count=1;
+	}
+
+	[Boom]
+	{
+	class=CSimpleParticleSystem;
+
+		[properties]
+		{
+
+		Texture=smokeorange;
+
+
+		//colorMap	=0 0 0 0  1 0.7 0.45 .7   0.96 .66 0.25 .5  	0 0 0 0.01;
+		colorMap	=0 0 0 0  0 0 0 0  0.8 0.8 0.8 0.8   	0 0 0 0.01;
+
+      		pos 		= 0, 40, 0;
+		gravity		= 0, 0.045, 0;
+	       	emitVector	= 0, 1, 0;
+		emitRot		= 0;
+		emitRotSpread	= 90;
+		//emitmul 	= 0,0.12,0;
+
+		sizeGrowth	= 0.5 r.25;
+		sizeMod		= 1.0;
+
+		airdrag			= 0.999;
+		particleLife		= 60;
+		particleLifeSpread	= 50;
+		numParticles		= 40;
+		particleSpeed		= 3;
+		particleSpeedSpread	= 1;
+		particleSize		= 8;
+		particleSizeSpread	= 12;
+
+		directional		= 0; 
+		useAirLos		= 0;
+		}
+	air=1;
+	ground=1;
+	water=0;
+	count=0;
+	}
+
+	[Boom3]
+	{
+	class=CSimpleParticleSystem;
+
+		[properties]
+		{
+
+		Texture=mildexplo;
+
+
+
+		colorMap	=0 0 0 0  1 0.5 0.2 0.01   	0 0 0 0.01;
+
+      		pos 		= 0, 50, 0;
+		gravity		= 0, 0.03, 0;
+	       	emitVector	= 0, 1, 0;
+		emitRot		= 0;
+		emitRotSpread	= 360;
+		//emitmul 	= 0,0.12,0;
+
+		sizeGrowth	= 0.7 r.25;
+		sizeMod		= 1.0;
+
+		airdrag			= 0.999;
+		particleLife		= 50;
+		particleLifeSpread	= 40;
+		numParticles		= 30;
+		particleSpeed		= 1;
+		particleSpeedSpread	= 1;
+		particleSize		= 7;
+		particleSizeSpread	= 4;
+
+		directional		= 0; 
+		useAirLos		= 0;
+		}
+	air=1;
+	ground=1;
+	water=0;
+	count=1;
+	}
+
+
+	[Boom2]
+	{
+	class=CSimpleParticleSystem;
+
+		[properties]
+		{
+
+		Texture=dirt;
+
+
+		//colorMap	=0 0 0 0  1 0.6 0.05 .7   0.9321 .355 0.035 .5  	0 0 0 0.01;
+		colorMap	=0 0 0 0  0.9321 .6 0.035 .5    0.8 0.8 0.8 0.8  	0 0 0 0.01;
+      		pos 		= 0, 40, 0;
+		gravity		= 0, 0.01, 0;
+	       	emitVector	= 0, 1, 0;
+		emitRot		= 90;
+		emitRotSpread	= 0;
+		//emitmul 	= 0,0.12,0;
+
+		sizeGrowth	= 0.7;
+		sizeMod		= 1.0;
+
+		airdrag			= 0.999;
+		particleLife		= 60;
+		particleLifeSpread	= 50;
+		numParticles		= 50;
+		particleSpeed		= 1;
+		particleSpeedSpread	= 3;
+		particleSize		= 0.5;
+		particleSizeSpread	= 0;
+
+		directional		= 0; 
+		useAirLos		= 0;
+		}
+	air=1;
+	ground=1;
+	water=0;
+	count=1;
+	}
+
+	[trails]
+	{
+		class=CExpGenSpawner;
+		[properties]
+		{
+			delay=8;
+			dir=0 r-1 r1,0 r-1 r1,0 r-1 r1;
+			damage=0 r100;
+			explosionGenerator=custom:Explosion_VeryHeavy_Rocket_Controller-2;
+			speed=0,0,0;
+			pos=0,0,0;
+	
+		}
+		air=0;
+		ground=1;
+		water=0;
+		count=3;
+	}
+
+
+
+
+}
+[Explosion_VeryHeavy_Rocket_Controller-2]
+{
+
+	[trails]
+	{
+		class=CExpGenSpawner;
+		[properties]
+		{
+			delay=8 i2.0;
+			dir=0,1,0;
+			damage=0 i0.5;
+			explosionGenerator=custom:Explosion_VeryHeavy_Rocket_Trail-2;
+			speed=0,0,0;		
+			pos=1 d.1 y1 i2 x1 y0 d1 s1 x0,-1 y1 i-.6 p2 x1 y1 0.94 x0 a1,2   d1 s1 x0;
+
+		}
+		air=1;
+		ground=1;
+		water=1;
+		count=40;
+		}
+	}
+
+
+
+
+
+
+
+
+[Explosion_VeryHeavy_Rocket_Trail-2]
+{
+	[FakeLight]
+		{
+		class=CSimpleGroundFlash;
+		[properties]
+		{
+		  texture=groundflash;
+		  size=25 r-5;
+		  sizeGrowth=0;
+		  ttl=3;
+
+	          colorMap=1 1 1 1       0 0 0 0.1;
+		}
+    	air=0;
+    	ground=1;
+    	water=0;
+	count=1;
+	}
+
+	[Spark]
+	{
+	class=CSimpleParticleSystem;
+
+		[properties]
+		{
+
+		Texture=bombsmoke;
+
+
+		colorMap	=0 0 0 0  1 0.3 0 .01     	0 0 0 0.01;
+
+      		pos 		= 0, 0, 0;
+		gravity		= 0, 0, 0;
+	       	emitVector	= 0, 1, 0;
+		emitRot		= 0;
+		emitRotSpread	= 0 r360;
+
+		sizeGrowth	= 0.4;
+		sizeMod		= 1.0;
+
+		airdrag			= 1;
+		particleLife		= 4;
+		particleLifeSpread	= 4;
+		numParticles		= 8;
+		particleSpeed		= 5;
+		particleSpeedSpread	= 3;
+		particleSize		= 1;
+		particleSizeSpread	= 0;
+
+		directional		= 1; 
+		useAirLos		= 1;
+		}
+	air=1;
+	ground=1;
+	water=0;
+	count=1;
+	}
+
+
+
+	[Smoke]
+	{
+	class=CSimpleParticleSystem;
+
+		[properties]
+		{
+
+		Texture=GenericSmokeCloud1;
+
+
+		colorMap	= 0 0 0 0 1 0.5 0.3 .8  1 .34 0.05 .8   .6 .6 .6 .8  	0 0 0 0.01;
+
+      		pos 		= 0, 0, 0;
+		gravity		= 0, 0, 0;
+	       	emitVector	= 0, 0.2, 0;
+		emitRot		= 0;
+		emitRotSpread	= 40;
+		emitdir		= dir;
+
+		sizeGrowth	= 0.4;
+		sizeMod		= 1.0;
+
+		airdrag			= 1;
+		particleLife		= 32;
+		particleLifeSpread	= 32;
+		numParticles		= 5;
+		particleSpeed		= 2;
+		particleSpeedSpread	= 1;
+		particleSize		= 1;
+		particleSizeSpread	= 0;
+
+		directional		= 1; 
+		useAirLos		= 1;
+		}
+	air=1;
+	ground=1;
+	water=0;
+	count=1;
+	}
+}
