@@ -66,7 +66,7 @@ function gadget:GameFrame(n)
    --   Spring.SendMessage('Done' )
     end
     local _, _, _, strength, x, _, z = GetWind()
-    local heading = GetHeadingFromVector(x, z)
+    local heading = GetHeadingFromVector(-x, -z)
 		
     for unitID, scriptIDs in pairs(windmills) do
       
