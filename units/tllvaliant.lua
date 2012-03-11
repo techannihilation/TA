@@ -32,7 +32,6 @@ local unitDef = {
 	category = [[ALL HUGE MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTVTOL SUPERSHIP WEAPON]],
 	collide = false,
 	cruiseAlt = 20,
-	dontland = 1,
 	energyMake = 50,
 	energyStorage = 10000,
 	energyUse = 0,
