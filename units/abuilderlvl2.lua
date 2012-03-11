@@ -56,7 +56,8 @@ local unitDef = {
 		[2] = [[armawin]],
 		[3] = [[armmex1]],
 		[4] = [[armgen]],
-		[5] = [[armuwlightfus]],
+		[5] = [[armlightfus]],
+		[6] = [[armuwlightfus]],
 	},
 	featureDefs = nil,
 	sounds = {
