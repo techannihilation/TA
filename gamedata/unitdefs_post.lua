@@ -86,6 +86,7 @@ local WTimeUnits = {
 		["asubpen"] = true,
 		["consul1"] = true,
 		["spiderlab"] = true,
+		["armeap"] = true,
 	},
 	core = {
 		["coraap"] = true,
@@ -146,9 +147,10 @@ local WTimeUnits = {
 		["ccovertopscentre"] = true,
 		["cnanotower"] = true,
 		["commando"] = true,
-		["consul"] = true,
+		["corassis"] = true,
 		["cshipyardlvl4"] = true,
 		["csubpen"] = true,
+		["coreap"] = true,
 	},
 	tll = {
 		["tllaap"] = true,

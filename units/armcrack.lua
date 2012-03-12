@@ -114,7 +114,7 @@ local weaponDefs = {
     name               = [[Lightartmissarm]],
     noSelfDamage       = true,
     range              = 700,
-    reloadtime         = 3,
+    reloadtime         = 4.5,
     renderType         = 1,
     selfprop           = true,
     smokedelay         = 0.1,
@@ -132,8 +132,7 @@ local weaponDefs = {
     weaponVelocity     = 200,
     wobble             = 9000,
     damage = {
-      commanders         = 100,
-      default            = 88,
+      default            = 220,
       subs               = 5,
     },
   },

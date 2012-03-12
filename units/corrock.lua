@@ -132,8 +132,7 @@ local weaponDefs = {
     weaponVelocity     = 200,
     wobble             = 9000,
     damage = {
-      commanders         = 150,
-      default            = 175,
+      default            = 300,
       subs               = 5,
     },
   },
