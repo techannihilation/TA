@@ -108,9 +108,8 @@ local unitDef = {
 		[23] = [[corrl]],
 		[24] = [[corfrt]],
 		[25] = [[cordl]],
-		[26] = [[corekaty]],
-		[27] = [[corfast1]],
-		[28] = [[corfhlt]],
+		[26] = [[corfast1]],
+		[27] = [[corfhlt]],
 	},
 	customParams = {
 		iscommander = true,

@@ -108,9 +108,8 @@ local unitDef = {
 		[23] = [[armrl]],
 		[24] = [[armfrt]],
 		[25] = [[armdl]],
-		[26] = [[corekaty]],
-		[27] = [[armfark1]],
-		[28] = [[armfhlt]],
+		[26] = [[armfark1]],
+		[27] = [[armfhlt]],
 	},
 	customParams = {
 		iscommander = true,
