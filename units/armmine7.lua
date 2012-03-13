@@ -20,10 +20,10 @@ local unitDef = {
   canMove            = false,
   canPatrol          = false,
   canstop            = 0,
-  category = [[ALL MINE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
+  category           = [[ALL MINE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
   cloakCost          = 300,
   defaultmissiontype = [[Standby_Mine]],
-description        = [[Singularity Bomb]],
+  description        = [[Singularity Bomb]],
   energyStorage      = 0,
   energyUse          = 0,
   explodeAs          = [[mine_singularity]],
@@ -34,8 +34,6 @@ description        = [[Singularity Bomb]],
   idleAutoHeal       = 10,
   idleTime           = 300,
   initCloaked        = true,
-  kamikaze           = true,
-  kamikazeDistance   = 32,
   maxDamage          = 300,
   maxSlope           = 40,
   maxVelocity        = 0,
@@ -83,11 +81,68 @@ description        = [[Singularity Bomb]],
       [[minesel1]],
     },
   },
+weaponDefs = nil,
+	weapons = {
+		[1] = {
+			def = [[MINE_DUMMY]],
+			onlyTargetCategory = [[NOTVTOL]],
+		},
+		[2] = {
+			def = [[MINE_DETONATOR]],
+			onlyTargetCategory = [[NOTVTOL]],
+		},
+	},
 }
-
 
 --------------------------------------------------------------------------------
 
-return lowerkeys({ [unitName] = unitDef })
+local weaponDefs = {
+	MINE_DETONATOR = {
+		areaOfEffect = 5,
+		ballistic = true,
+		craterBoost = 0,
+		craterMult = 0,
+		edgeEffectiveness = 0,
+		explosionGenerator = [[]],
+		fireSubmersed = true,
+		gravityaffected = [[true]],
+		impulseBoost = 0,
+		impulseFactor = 0,
+		name = [[Mine Detonator]],
+		range = 1,
+		reloadtime = 0.1,
+		renderType = 4,
+		weaponType = [[Cannon]],
+		weaponVelocity = 1000,
+		damage = {
+			default = 0,
+			mines = 100,
+		},
+	},
+	MINE_DUMMY = {
+		areaOfEffect = 0,
+		craterBoost = 0,
+		craterMult = 0,
+		edgeEffectiveness = 0,
+		explosionGenerator = [[]],
+		fireSubmersed = true,
+		impulseBoost = 0,
+		impulseFactor = 0,
+		name = [[Crawlingbomb Dummy Weapon]],
+		range = 64,
+		reloadtime = 0.1,
+		tolerance = 100000,
+		weaponType = [[Melee]],
+		weaponVelocity = 100000,
+		damage = {
+			default = 0,
+		},
+	},
+}
+unitDef.weaponDefs = weaponDefs
+
+--------------------------------------------------------------------------------
+
+return lowerkeys({[unitName] = unitDef})
 
 --------------------------------------------------------------------------------
