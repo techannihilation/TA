@@ -34,6 +34,7 @@ local unitDef = {
   idleAutoHeal       = 10,
   idleTime           = 300,
   initCloaked        = true,
+  levelground        = false,
   maxDamage          = 150,
   maxSlope           = 40,
   maxVelocity        = 0,
