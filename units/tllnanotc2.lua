@@ -15,7 +15,7 @@ local unitDef = {
 	buildingGroundDecalDecaySpeed = 30,
 	buildingGroundDecalSizeX = 5,
 	buildingGroundDecalSizeY = 5,
-	buildingGroundDecalType = [[tllnanotc_aoplane.dds]],
+	buildingGroundDecalType = [[tllnanotc2_aoplane.dds]],
 	buildPic = [[CORNANOTC.png]],
 	buildTime = 27000,
 	canGuard = true,
@@ -83,11 +83,6 @@ local unitDef = {
 			[1] = [[vcorsel]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=5,
-	buildingGroundDecalSizeY=5,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tllnanotc2_aoplane.dds]],
 }
 --------------------------------------------------------------------------------
 

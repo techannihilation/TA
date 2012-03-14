@@ -68,6 +68,11 @@ local unitDef = {
 	workerTime = 0,
 	zbuffer = 1,
 	featureDefs = nil,
+	sfxtypes = {
+		explosiongenerators = {
+			[1] = [[custom:bluemuzzle]],
+		},
+	},
 	sounds = {
 		canceldestruct = [[cancel2]],
 		underattack = [[warning1]],
@@ -87,11 +92,6 @@ local unitDef = {
 		},
 		select = {
 			[1] = [[krogsel1]],
-		},
-	},
-	sfxtypes = {
-		explosiongenerators = {
-			[1] = [[custom:bluemuzzle]],
 		},
 	},
 	weaponDefs = nil,

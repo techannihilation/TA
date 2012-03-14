@@ -11,6 +11,10 @@ local unitDef = {
 	buildCostEnergy = 9550,
 	buildCostMetal = 6148,
 	builder = true,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 13,
+	buildingGroundDecalSizeY = 13,
+	buildingGroundDecalType = [[tllhtcp_aoplane.dds]],
 	buildTime = 66120,
 	canMove = true,
 	canPatrol = true,
@@ -45,6 +49,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[tllhtcp]],
 	unitnumber = 934,
+	useBuildingGroundDecal = true,
 	version = 3.1,
 	workerTime = 980,
 	yardMap = [[oooccccooo oooccccooo oooccccooo cccccccccc cccccccccc cccccccccc oooccccooo oooccccooo oooccccooo oooccccooo ]],
@@ -78,11 +83,6 @@ local unitDef = {
 			[1] = [[gantsel1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=13,
-	buildingGroundDecalSizeY=13,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tllhtcp_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

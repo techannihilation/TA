@@ -13,6 +13,10 @@ local unitDef = {
 	buildCostEnergy = 8900,
 	buildCostMetal = 745,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 4,
+	buildingGroundDecalSizeY = 4,
+	buildingGroundDecalType = [[armvhlt_aoplane.dds]],
 	buildPic = [[ARMVHLT.png]],
 	buildTime = 17000,
 	canAttack = true,
@@ -86,11 +90,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=4,
-	buildingGroundDecalSizeY=4,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armvhlt_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

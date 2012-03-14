@@ -1,5 +1,5 @@
 -- UNITDEF -- CORNANOTC3 --
--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 local unitName = "cornanotc3"
 
@@ -8,12 +8,16 @@ local unitName = "cornanotc3"
 local unitDef = {
 	acceleration = 0,
 	brakeRate = 1.5,
-	buildCostEnergy = 200000, --
-	buildCostMetal = 6800, --
-	buildDistance = 900, --
+	buildCostEnergy = 200000,
+	buildCostMetal = 6800,
+	buildDistance = 900,
 	builder = true,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 5,
+	buildingGroundDecalSizeY = 5,
+	buildingGroundDecalType = [[cornanotc3_aoplane.dds]],
 	buildPic = [[CORNANOTC3.png]],
-	buildTime = 40000, --
+	buildTime = 40000,
 	canGuard = true,
 	canMove = false,
 	canPatrol = true,
@@ -24,7 +28,7 @@ local unitDef = {
 	defaultmissiontype = [[Standby]],
 	description = [[Repairs and builds in large radius]],
 	energyStorage = 0,
-	energyUse = 325, --
+	energyUse = 325,
 	explodeAs = [[NANOBOOM5C]],
 	footprintX = 3,
 	footprintZ = 3,
@@ -33,7 +37,7 @@ local unitDef = {
 	idleTime = 1800,
 	maneuverleashlength = 380,
 	mass = 1000000000000,
-	maxDamage = 2000, --
+	maxDamage = 2000,
 	maxSlope = 10,
 	maxVelocity = 0,
 	maxWaterDepth = 0,
@@ -52,7 +56,8 @@ local unitDef = {
 	turnRate = 1,
 	unitname = [[cornanotc3]],
 	upright = true,
-	workerTime = 2400, --
+	useBuildingGroundDecal = true,
+	workerTime = 2400,
 	sounds = {
 		build = [[nanlath2]],
 		canceldestruct = [[cancel2]],
@@ -78,16 +83,6 @@ local unitDef = {
 			[1] = [[vcorsel]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=5,
-	buildingGroundDecalSizeY=5,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[cornanotc_aoplane.dds]],
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=5,
-	buildingGroundDecalSizeY=5,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[cornanotc3_aoplane.dds]],
 }
 --------------------------------------------------------------------------------
 

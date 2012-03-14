@@ -12,6 +12,10 @@ local unitDef = {
 	buildCostEnergy = 10000,
 	buildCostMetal = 1700,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 9,
+	buildingGroundDecalSizeY = 9,
+	buildingGroundDecalType = [[armlightfus_aoplane.dds]],
 	buildPic = [[armlightfus.png]],
 	buildTime = 22000,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -40,6 +44,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[armlightfus]],
 	unitnumber = 106,
+	useBuildingGroundDecal = true,
 	version = 1.2,
 	workerTime = 0,
 	yardMap = [[ooooooooooooooooooooooooo]],
@@ -65,11 +70,6 @@ local unitDef = {
 			[1] = [[fusion1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=9,
-	buildingGroundDecalSizeY=9,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armlightfus_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

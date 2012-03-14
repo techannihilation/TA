@@ -10,10 +10,10 @@ local unitDef = {
 	buildCostEnergy = 145000,
 	buildCostMetal = 19200,
 	builder = true,
-	buildingGroundDecalDecaySpeed = 0.01,
-	buildingGroundDecalSizeX = 11,
-	buildingGroundDecalSizeY = 11,
-	buildingGroundDecalType = [[asphalt512c.dds]],
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 13,
+	buildingGroundDecalSizeY = 13,
+	buildingGroundDecalType = [[armeap_aoplane.dds]],
 	buildPic = [[ARMEAP.PNG]],
 	buildTime = 91400,
 	canBeAssisted = true,
@@ -79,11 +79,6 @@ local unitDef = {
 			[1] = [[pairactv]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=13,
-	buildingGroundDecalSizeY=13,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armeap_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

@@ -11,6 +11,10 @@ local unitDef = {
 	buildCostEnergy = 1301120,
 	buildCostMetal = 16200,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 8,
+	buildingGroundDecalSizeY = 8,
+	buildingGroundDecalType = [[armhys_aoplane.dds]],
 	buildPic = [[ARMHYS.png]],
 	buildTime = 210000,
 	canAttack = true,
@@ -39,6 +43,7 @@ local unitDef = {
 	sightDistance = 800,
 	standingfireorder = 2,
 	unitname = [[armhys]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[ooooooooooooooooooooooooo]],
 	featureDefs = nil,
@@ -70,15 +75,9 @@ local unitDef = {
 		[1] = {
 			badTargetCategory = [[MEDIUMVTOL SMALLVTOL TINYVTOL]],
 			def = [[ADVFLAK]],
-			badTargetCategory = [[MEDIUMVTOL SMALLVTOL TINYVTOL]],
 			onlyTargetCategory = [[VTOL SUPERSHIP]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=8,
-	buildingGroundDecalSizeY=8,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armhys_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

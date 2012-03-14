@@ -67,8 +67,8 @@ local unitDef = {
 	},
 	sfxtypes = {
 		explosiongenerators = {
-			  [1] = [[custom:newnanoboomcore]],
-			  [2] = [[custom:PILOT]],
+			[1] = [[custom:newnanoboomcore]],
+			[2] = [[custom:PILOT]],
 		},
 	},
 	sounds = {

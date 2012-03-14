@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 4795,
 	buildCostMetal = 143,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 5,
+	buildingGroundDecalSizeY = 5,
+	buildingGroundDecalType = [[coramaker_aoplane.dds]],
 	buildPic = [[coramaker.png]],
 	buildTime = 4000,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -41,13 +45,9 @@ local unitDef = {
 	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[coramaker]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooooooooooo]],
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=5,
-	buildingGroundDecalSizeY=5,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[coramaker_aoplane.dds]],
 }
 --------------------------------------------------------------------------------
 

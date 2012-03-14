@@ -10,10 +10,10 @@ local unitDef = {
 	buildCostEnergy = 150000,
 	buildCostMetal = 18700,
 	builder = true,
-	buildingGroundDecalDecaySpeed = 0.01,
-	buildingGroundDecalSizeX = 11,
-	buildingGroundDecalSizeY = 11,
-	buildingGroundDecalType = [[asphalt512c.dds]],
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 13,
+	buildingGroundDecalSizeY = 13,
+	buildingGroundDecalType = [[coreap_aoplane.dds]],
 	buildPic = [[COREAP.PNG]],
 	buildTime = 96525,
 	canBeAssisted = true,
@@ -79,11 +79,6 @@ local unitDef = {
 			[1] = [[pairactv]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=13,
-	buildingGroundDecalSizeY=13,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[coreap_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

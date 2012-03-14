@@ -12,6 +12,10 @@ local unitDef = {
 	buildCostEnergy = 4850,
 	buildCostMetal = 526,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 5,
+	buildingGroundDecalSizeY = 5,
+	buildingGroundDecalType = [[corgen_aoplane.dds]],
 	buildPic = [[CORGEN.png]],
 	buildTime = 9900,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -40,6 +44,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[corgen]],
 	unitnumber = 2415,
+	useBuildingGroundDecal = true,
 	version = 1,
 	workerTime = 0,
 	yardMap = [[ooo ooo ooo ooo]],
@@ -60,11 +65,6 @@ local unitDef = {
 			[1] = [[geothrm2]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=5,
-	buildingGroundDecalSizeY=5,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[corgen_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

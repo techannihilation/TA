@@ -69,8 +69,6 @@ local unitDef = {
 		[9] = [[armpw1]],
 		[10] = [[armcrack]],
 		[11] = [[aexxec]],
-		
-		
 	},
 	featureDefs = nil,
 	sounds = {

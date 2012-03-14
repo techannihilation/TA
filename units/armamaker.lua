@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 4795,
 	buildCostMetal = 143,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 6,
+	buildingGroundDecalSizeY = 6,
+	buildingGroundDecalType = [[armamaker_aoplane.dds]],
 	buildPic = [[ARMAMAKER.png]],
 	buildTime = 4000,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -41,13 +45,9 @@ local unitDef = {
 	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[armamaker]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooooooooooooooo]],
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=6,
-	buildingGroundDecalSizeY=6,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armamaker_aoplane.dds]],
 }
 --------------------------------------------------------------------------------
 
