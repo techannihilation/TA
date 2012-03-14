@@ -551,9 +551,6 @@ Shot1()
 	return (TRUE);
 }
 
-FirePrimary()
-{
-}
 
 Killed(severity, corpsetype)
 {
