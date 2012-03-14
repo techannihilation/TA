@@ -68,6 +68,7 @@ local unitDef = {
 	version = 1.2,
 	workerTime = 0,
 	zbuffer = 1,
+	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],
 		underattack = [[warning1]],
@@ -89,9 +90,8 @@ local unitDef = {
 			[1] = [[mavbsel1]],
 		},
 	},
-	featureDefs = nil,
 	weaponDefs = nil,
-		weapons = {
+	weapons = {
 		[1] = {
 			def = [[MECH_RAPIDLASER1]],
 			onlyTargetCategory = [[NOTVTOL]],

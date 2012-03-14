@@ -61,9 +61,9 @@ local unitDef = {
 	unitname = [[armbrawl]],
 	workerTime = 0,
 	sfxtypes = {
-	    explosiongenerators = {
-		[[custom:muendungsfeuer]],
-	  },
+		explosiongenerators = {
+			[1] = [[custom:muendungsfeuer]],
+		},
 	},
 	sounds = {
 		canceldestruct = [[cancel2]],
