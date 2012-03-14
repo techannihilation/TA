@@ -79,6 +79,11 @@ local unitDef = {
 			[1] = [[pairactv]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=13,
+	buildingGroundDecalSizeY=13,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[coreap_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

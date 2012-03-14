@@ -43,6 +43,11 @@ local unitDef = {
 	unitname = [[armamaker]],
 	workerTime = 0,
 	yardMap = [[oooooooooooooooo]],
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=6,
+	buildingGroundDecalSizeY=6,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[armamaker_aoplane.dds]],
 }
 --------------------------------------------------------------------------------
 

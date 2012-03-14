@@ -90,6 +90,11 @@ weaponDefs = nil,
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=3,
+	buildingGroundDecalSizeY=3,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[cormine5_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

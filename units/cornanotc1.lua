@@ -83,6 +83,11 @@ local unitDef = {
 	buildingGroundDecalSizeY=5,
 	useBuildingGroundDecal = true,
 	buildingGroundDecalType=[[cornanotc_aoplane.dds]],
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=5,
+	buildingGroundDecalSizeY=5,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[cornanotc1_aoplane.dds]],
 }
 --------------------------------------------------------------------------------
 

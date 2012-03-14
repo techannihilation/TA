@@ -65,6 +65,11 @@ local unitDef = {
 			[1] = [[fusion2]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=9,
+	buildingGroundDecalSizeY=9,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[corlightfus_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

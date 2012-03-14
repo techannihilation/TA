@@ -90,6 +90,11 @@ weaponDefs = nil,
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=3,
+	buildingGroundDecalSizeY=3,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[armmine5_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

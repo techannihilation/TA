@@ -63,6 +63,11 @@ local unitDef = {
 			[1] = [[windgen2]],
 		},
 	},
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=8,
+	buildingGroundDecalSizeY=8,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[corawin_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

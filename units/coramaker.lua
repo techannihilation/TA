@@ -43,6 +43,11 @@ local unitDef = {
 	unitname = [[coramaker]],
 	workerTime = 0,
 	yardMap = [[oooooooooooo]],
+	buildingGroundDecalDecaySpeed=30,
+	buildingGroundDecalSizeX=5,
+	buildingGroundDecalSizeY=5,
+	useBuildingGroundDecal = true,
+	buildingGroundDecalType=[[coramaker_aoplane.dds]],
 }
 --------------------------------------------------------------------------------
 
