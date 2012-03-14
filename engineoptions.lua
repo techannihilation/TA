@@ -49,16 +49,6 @@ local options = {
   },
 
   {
-    key    = 'LimitDgun',
-    name   = 'Limit D-Gun range',
-    desc   = "The commander's D-Gun weapon will be usable only close to the player's starting location",
-    type   = 'bool',
-    def    = false,
-    section= "ta_others",
-       
-  },
-
-  {
     key    = 'GhostedBuildings',
     name   = 'Ghosted buildings',
     desc   = "Once an enemy building will be spotted\na ghost trail will be placed to memorize location even after the loss of the line of sight",
