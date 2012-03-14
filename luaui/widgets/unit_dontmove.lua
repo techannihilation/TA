@@ -23,8 +23,28 @@ local unitSet = {}
 local unitArray = {
 
   --comms
-  "armcom",
+  --Core
   "corcom",
+  "corcom1",
+  "corcom3",
+  "corcom5",
+  "corcom6",
+  "corcom7",
+
+--Arm 
+  "armcom",
+  "armcom1",
+  "armcom4",
+  "armcom5",
+  "armcom6",
+  "armcom7",
+
+--The lost legacy
+  "tllcom",
+  "tllcom3",
+  "tllcom5",
+  "tllcom6",
+  "tllcom7",
 
   --aa units
   "armjeth",
@@ -131,12 +151,10 @@ end
 
 function widget:UnitFromFactory(unitID, unitDefID, unitTeam)
   local ud = UnitDefs[unitDefID]
-   if ((ud ~= nil) and (unitTeam == Spring.GetMyTeamID())) then
-    for i, v in pairs(unitSet) do
-      if (unitSet[ud.name]) then
-        Spring.GiveOrderToUnit(unitID, CMD.MOVE_STATE, { 0 }, {})
-      end
-    end
+  if ((ud ~= nil) and (unitTeam == Spring.GetMyTeamID())) then
+    if (unitSet[ud.name]) then
+      Spring.GiveOrderToUnit(unitID, CMD.MOVE_STATE, { 0 }, {})
+    end 
   end
 end
 
