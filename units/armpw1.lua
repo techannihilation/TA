@@ -56,10 +56,10 @@ local unitDef = {
 	unitname = [[armpw1]],
 	upright = true,
 	workerTime = 0,
-	featureDefs = nil,
 	customparams = {
 		RequireTech = [[Advanced T1 Unit Research Centre]],
 	},
+	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],
 		underattack = [[warning1]],

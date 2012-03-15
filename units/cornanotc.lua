@@ -10,8 +10,12 @@ local unitDef = {
 	brakeRate = 1.5,
 	buildCostEnergy = 9000,
 	buildCostMetal = 300,
-	buildDistance = 400, --
+	buildDistance = 400,
 	builder = true,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 5,
+	buildingGroundDecalSizeY = 5,
+	buildingGroundDecalType = [[cornanotc_aoplane.dds]],
 	buildPic = [[CORNANOTC.png]],
 	buildTime = 5000,
 	canGuard = true,
@@ -24,7 +28,7 @@ local unitDef = {
 	defaultmissiontype = [[Standby]],
 	description = [[Repairs and builds in large radius]],
 	energyStorage = 0,
-	energyUse = 20, --
+	energyUse = 20,
 	explodeAs = [[NANOBOOM2C]],
 	footprintX = 3,
 	footprintZ = 3,
@@ -33,7 +37,7 @@ local unitDef = {
 	idleTime = 1800,
 	maneuverleashlength = 380,
 	mass = 1000000000000,
-	maxDamage = 400, --
+	maxDamage = 400,
 	maxSlope = 10,
 	maxVelocity = 0,
 	maxWaterDepth = 0,
@@ -51,7 +55,8 @@ local unitDef = {
 	turnRate = 1,
 	unitname = [[cornanotc]],
 	upright = true,
-	workerTime = 300, --
+	useBuildingGroundDecal = true,
+	workerTime = 300,
 	sounds = {
 		build = [[nanlath2]],
 		canceldestruct = [[cancel2]],
@@ -77,11 +82,6 @@ local unitDef = {
 			[1] = [[vcorsel]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=5,
-	buildingGroundDecalSizeY=5,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[cornanotc_aoplane.dds]],
 }
 --------------------------------------------------------------------------------
 
