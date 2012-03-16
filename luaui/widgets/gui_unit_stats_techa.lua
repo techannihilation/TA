@@ -1,7 +1,7 @@
 
 function widget:GetInfo()
 	return {
-		name      = "Unit Stats",
+		name      = "Unit Stats TechA",
 		desc      = "Shows detailed unit stats",
 		author    = "Niobium",
 		date      = "Jan 11, 2009",
