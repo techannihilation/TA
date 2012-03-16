@@ -245,6 +245,7 @@ experimental_land = {
 	-- heroes
 	cdevastator = 99,
 	abroadside = 99,
+	tllvaliant = 99,
 	-- _experimental_
 	armpraet = 99,
 	tllmono = 99,
