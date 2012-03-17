@@ -97,6 +97,8 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[ARM_LIGHTLASER4]],
+			mainDir = [[0 0 1]],
+			maxAngleDif = 90,
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
