@@ -92,7 +92,10 @@ local red = '\255\255\001\001'
 local yellow = '\255\255\255\1'
 local orange = '\255\255\128\1'
 local blue = '\255\128\128\255'
+
 local metalColor = '\255\48\48\128'
+local energyColor = '\255\255\255\128' -- Light yellow
+local buildColor = '\255\128\255\128' -- Light green
 
 local max = math.max
 local floor = math.floor
@@ -103,6 +106,8 @@ local glColor = gl.Color
 local glText = gl.Text
 local glRect = gl.Rect
 
+local spGetMyTeamID = Spring.GetMyTeamID
+local spGetTeamResources = Spring.GetTeamResources
 local spGetTeamInfo = Spring.GetTeamInfo
 local spGetPlayerInfo = Spring.GetPlayerInfo
 local spGetTeamColor = Spring.GetTeamColor
@@ -203,7 +208,6 @@ function widget:DrawScreen()
 	
 	cX = mx + xOffset
 	cY = my + yOffset
-	
 	glColor(1.0, 1.0, 1.0, 1.0)
 
 	glText(teamColorStr(uTeam) .. teamName(uTeam) .. "'s " .. yellow .. uDef.humanName .. white .. " (" .. uDef.name .. ", #" .. uID .. ")", cX, cY, fontSize, "o")
@@ -320,6 +324,10 @@ function widget:DrawScreen()
 		local mTotal = uDef.metalCost
 		local eTotal = uDef.energyCost
 		local buildRem = 1 - buildProg
+		local mRem = mTotal * buildRem
+		local eRem = eTotal * buildRem
+		local mEta = (mRem - mCur) / (mInc + mRec)
+		local eEta = (eRem - eCur) / (eInc + eRec)
 		
 		DrawText("Prog:", format("%d%% / %d%%", 100 * buildProg, 100 * buildRem))
 		DrawText("M:", format("%d / %d (" .. yellow .. "%d" .. white .. ")", mTotal * buildProg, mTotal, mTotal * buildRem))
@@ -327,7 +335,14 @@ function widget:DrawScreen()
 		cY = cY - fontSize
 	end
 	
-	if not (uDef.isBuilding or uDef.isFactory) then
+	------------------------------------------------------------------------------------
+	-- Generic information, cost, move, class
+	------------------------------------------------------------------------------------
+	DrawText("Cost:", format(metalColor .. '%d' .. white .. ' / ' ..
+							energyColor .. '%d' .. white .. ' / ' ..
+							buildColor .. '%d', uDef.metalCost, uDef.energyCost, uDef.buildTime)
+			)
+		if not (uDef.isBuilding or uDef.isFactory) then
 		DrawText("Move:", format("%.1f / %.1f / %.0f (Speed / Accel / Turn)", uDef.speed, 900 * uDef.maxAcc, 30 * uDef.turnRate * (180 / 32767)))
 	end
 	
@@ -350,6 +365,8 @@ function widget:DrawScreen()
 	
 	local wepCounts = {} -- wepCounts[wepDefID] = 1, 2, ...
 	local wepsCompact = {} -- uWepsCompact[1..n] = wepDefID
+	
+	local uWeps = uDef.weapons
 	for i = 1, #uWeps do
 		local wDefID = uWeps[i].weaponDef
 		local wCount = wepCounts[wDefID]
@@ -368,9 +385,9 @@ function widget:DrawScreen()
 		
 		if uWep.range > 16 then
 			
-			local oDmg = uWep.damages[1]
-			local oBurst = uWep.salvoSize
-			local oRld = max((uWep.stockpile and uWep.stockpileTime) or uWep.reload, 0.125) -- Weapon state only checked 8 times/sec (From looking at BA beamer)
+			local oDmg = uWep.damages[0]
+			local oBurst = uWep.salvoSize * uWep.projectiles
+			local oRld = uWep.stockpile and uWep.stockpileTime or uWep.reload
 			local wepCount = wepCounts[wDefId]
 			
 			if wepCount > 1 then
@@ -400,9 +417,16 @@ function widget:DrawScreen()
 				-- They take the correct amount of resources overall
 				-- They take the correct amount of time
 				-- They drain (32/30) times more resources than they should (And the listed drain is real, having lower income than listed drain WILL stall you)
-				local drainReload = (uWep.stockpile and ((30 / 32) * oRld)) or oRld
+				local drainAdjust = uWep.stockpile and 32/30 or 1
 				
-				DrawText("Cost:", format(white .. "%dm, %de = -%.1f, -%.0f", uWep.metalCost, uWep.energyCost, uWep.metalCost / drainReload, uWep.energyCost / drainReload))
+				DrawText('Cost:', format(metalColor .. '%d' .. white .. ', ' ..
+										 energyColor .. '%d' .. white .. ' = ' ..
+										 metalColor .. '-%d' .. white .. ', ' ..
+										 energyColor .. '-%d' .. white .. ' per second',
+										 uWep.metalCost,
+										 uWep.energyCost,
+										 drainAdjust * uWep.metalCost / oRld,
+										 drainAdjust * uWep.energyCost / oRld))
 			end
 			
 			cY = cY - fontSize
