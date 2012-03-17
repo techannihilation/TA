@@ -312,3 +312,18 @@ for name, ud in pairs(UnitDefs) do
 		ud.collisionvolumetest = true
 end
 
+for name, ud in pairs(UnitDefs) do
+	if (ud.maxvelocity) then 
+		ud.turninplacespeedlimit = ud.maxvelocity or 0
+	end
+	if ud.movementClass and (ud.movementClass:find("TANK",1,true) or ud.movementClass:find("HOVER",1,true)) then
+		if (ud.maxvelocity) then 
+			ud.turninplace = 0
+			ud.turninplacespeedlimit = (ud.maxvelocity/2) or 0
+		end
+	elseif ud.movementClass and (ud.movementClass:find("KBOT",1,true)) then
+		if (ud.maxvelocity) and (ud.turninplace) then 
+			ud.turninplaceanglelimit = 91
+		end
+	end
+end 
