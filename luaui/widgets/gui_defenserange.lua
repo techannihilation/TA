@@ -135,7 +135,6 @@ modConfig["TA"]["unitList"] =
 								tawf001 = { weapons = { 1 } },
 								armhlt = { weapons = { 1 } },
 								armguard = { weapons = { 1, 1 } },
-								arm_guardian = { weapons = { 1, 1 } },
 								arm_immolator = { weapons = { 1 } },
 								armamb = { weapons = { 1,1 } }, --ambusher
 								armpb = { weapons = { 1 } }, --pitbull
@@ -153,14 +152,13 @@ modConfig["TA"]["unitList"] =
 								armanni1 = { weapons = { 1 } },
 								aspdbunk = { weapons = { 1 } },
 								armemp = { weapons = { 1 } },
-								armarch = { weapons = { 1 } },
 								armbrtha = { weapons = { 1 } },
 								armbrtha1 = { weapons = { 1 } },
 								arm_big_bertha = { weapons = { 1 } },
 								armvulc = { weapons = { 1 } },
 								armvulc1 = { weapons = { 1 } },
 								armvulc2 = { weapons = { 1 } },
-								ARMTABI = { weapons = { 1 } },
+								armtabi = { weapons = { 1 } },
 									--Anti-Air--
 								armrl = { weapons = { 2 } }, --light aa
 								armrl1 = { weapons = { 2 } },
@@ -254,6 +252,7 @@ modConfig["TA"]["unitList"] =
 								tllnssam = { weapons = { 2 } },
 								tllflak = { weapons = { 2 } },
 								tllsam = { weapons = { 2 } },
+								tlldb = { weapons = { 2 } },
 									--Anti-Nuke--
 								tllantinuke = { weapons = { 3 } } 
 							

@@ -145,36 +145,18 @@ local morphDefs = {
 	},
 	},
       armguard= {
-	{
-		into = 'arm_guardian',
-		time = 20,
-		metal = 800,
-		energy = 6500,
-		xp = 0.50,
-	},
-	{
 		into = 'amortor',
 		time = 30,
 		metal = 900,
 		energy = 9000,
 		xp = 0.60,
 	},
-	},
       corpun= {
-	{
-		into = 'arm_guardian',
-		time = 20,
-		metal = 800,
-		energy = 6500,
-		xp = 0.50,
-	},
-	{
 		into = 'cmortor',
 		time = 30,
 		metal = 900,
 		energy = 9000,
 		xp = 0.60,
-	},
 	},
       armamd = {
 		into = 'armamd1',
