@@ -56,11 +56,12 @@ local unitDef = {
 	yardMap = [[oooooooooCCCCCCooCCCCCCooCCCCCCooCCCCCCooCCCCCCooCCCCCCooCCCCCCo]],
 	buildoptions = {
 		[1] = [[armbeaver]],
-		[2] = [[armpincer]],
-		[3] = [[armcroc]],
-		[4] = [[armjeth]],
-		[5] = [[armaak]],
-		[6] = [[armsub]],
+		[2] = [[armmarv]],
+		[3] = [[armpincer]],
+		[4] = [[armcroc]],
+		[5] = [[armjeth]],
+		[6] = [[armaak]],
+		[7] = [[armsub]],
 	},
 	featureDefs = nil,
 	sounds = {
