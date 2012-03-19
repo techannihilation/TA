@@ -1423,7 +1423,7 @@ function widget:UnitDestroyed(u,ud,ut,a,ad,at) --unitID, unitDefID, teamID, atta
 				bestTeam=at
 				if options["Announce"]["On"] then
 					if soundsOn then Spring.PlaySoundFile(snd) end
-					Spring.SendMessage(friendlyName(bestTeam) .. " has taken the lead with " .. bestKills .. " kills.")
+					--Spring.SendMessage(friendlyName(bestTeam) .. " has taken the lead with " .. bestKills .. " kills.")
 				end
 			end
 		end
