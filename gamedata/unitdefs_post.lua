@@ -327,10 +327,11 @@ for name, ud in pairs(UnitDefs) do
 		end
 	end
 end 
-
+--[[ Remove until engine fix
 for name, ud in pairs(UnitDefs) do
 		if ud.mass >= 10000 and (ud.movementclass) and (ud.maxvelocity)  then
 		--Spring.Echo("Push Resistance added to :- " .. ud.unitname)
 		ud.pushresistant = true
 		end
 end
+--]]
