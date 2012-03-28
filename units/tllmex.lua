@@ -12,6 +12,10 @@ local unitDef = {
 	buildCostEnergy = 218,
 	buildCostMetal = 60,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 5,
+	buildingGroundDecalSizeY = 5,
+	buildingGroundDecalType = [[tllmex_aoplane.dds]],
 	buildTime = 1820,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
@@ -48,6 +52,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[tllmex]],
 	unitnumber = 802,
+	useBuildingGroundDecal = true,
 	version = 1,
 	yardMap = [[ooooooooo]],
 	zbuffer = 1,
@@ -70,11 +75,6 @@ local unitDef = {
 			[1] = [[mexon2]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=5,
-	buildingGroundDecalSizeY=5,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tllmex_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

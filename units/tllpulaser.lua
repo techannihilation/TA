@@ -11,6 +11,10 @@ local unitDef = {
 	buildCostEnergy = 1875,
 	buildCostMetal = 661,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 5,
+	buildingGroundDecalSizeY = 5,
+	buildingGroundDecalType = [[tllpulaser_aoplane.dds]],
 	buildTime = 12381,
 	canAttack = true,
 	canstop = 1,
@@ -47,6 +51,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[tllpulaser]],
 	unitnumber = 844,
+	useBuildingGroundDecal = true,
 	version = 3.1,
 	workerTime = 0,
 	yardMap = [[ooo ooo ooo]],
@@ -83,11 +88,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=5,
-	buildingGroundDecalSizeY=5,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tllpulaser_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

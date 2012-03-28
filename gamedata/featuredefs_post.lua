@@ -132,8 +132,7 @@ local function recursiveHeap(fd, ud, heapLevel)
 end
 
 local function processUnitFeatures(ud)
-	
-	if skipUnits[ud] then
+	if skipUnits[ud.unitname or ""] then
 		return
 	end
 	

@@ -96,24 +96,20 @@ local unitDef = {
 local weaponDefs = {
 	TLL_FLAME = {
 		areaOfEffect = 48,
-
 		avoidFeature = false,
 		burst = 22,
 		burstrate = 0.01,
 		craterBoost = 0,
 		craterMult = 0,
-
 		endsmoke = 1,
 		fireStarter = 100,
 		flameGfxTime = 1.9,
 		groundbounce = true,
-
 		impulseBoost = 0.123,
 		impulseFactor = 0.123,
 		intensity = 0.6,
 		lineOfSight = true,
 		name = [[FlameThroDwer]],
-
 		noSelfDamage = true,
 		range = 255,
 		reloadtime = 0.9,
@@ -121,15 +117,11 @@ local weaponDefs = {
 		rgbColor = [[1 0.95 0.9]],
 		rgbColor2 = [[0.9 0.85 0.8]],
 		sizeGrowth = 1.25,
-
 		soundStart = [[Flamhvy1]],
-
-
 		soundTrigger = false,
 		sprayAngle = 1500,
 		tolerance = 2500,
 		turret = true,
-
 		weaponTimer = 1.5,
 		weaponType = [[Flame]],
 		weaponVelocity = 265,

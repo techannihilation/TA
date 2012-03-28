@@ -74,7 +74,6 @@ local unitDef = {
 		[9] = [[tllatorp]],
 		[10] = [[tlldtns]],
 		[11] = [[tllsealock]],
-
 	},
 	featureDefs = nil,
 	sounds = {

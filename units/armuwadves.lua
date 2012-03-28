@@ -11,6 +11,10 @@ local unitDef = {
 	buildCostEnergy = 10094,
 	buildCostMetal = 773,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 6,
+	buildingGroundDecalSizeY = 6,
+	buildingGroundDecalType = [[armuwadves_aoplane.dds]],
 	buildPic = [[ARMUWADVES.png]],
 	buildTime = 20302,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -42,6 +46,7 @@ local unitDef = {
 	smoothAnim = true,
 	threed = 1,
 	unitname = [[armuwadves]],
+	useBuildingGroundDecal = true,
 	version = 1.2,
 	workerTime = 0,
 	yardMap = [[oooooooooooooooo]],
@@ -62,11 +67,6 @@ local unitDef = {
 			[1] = [[storngy1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=6,
-	buildingGroundDecalSizeY=6,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armuwadves_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -75,6 +75,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[3.87525939941 -1.79256192627 3.92627716064]],
+		collisionvolumescales = [[64.5971679688 44.2836761475 79.9999847412]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = [[Advanced Energy Storage Wreckage]],
 		energy = 0,

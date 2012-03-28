@@ -13,6 +13,10 @@ local unitDef = {
 	buildCostEnergy = 38995,
 	buildCostMetal = 969,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 4,
+	buildingGroundDecalSizeY = 4,
+	buildingGroundDecalType = [[corflak_aoplane.dds]],
 	buildPic = [[CORFLAK.png]],
 	buildTime = 20112,
 	canAttack = true,
@@ -47,6 +51,7 @@ local unitDef = {
 	standingfireorder = 2,
 	turnRate = 0,
 	unitname = [[corflak]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooo]],
 	featureDefs = nil,
@@ -80,11 +85,6 @@ local unitDef = {
 			onlyTargetCategory = [[VTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=4,
-	buildingGroundDecalSizeY=4,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[corflak_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -114,7 +114,6 @@ local weaponDefs = {
 		soundHit = [[flakhit]],
 		soundStart = [[flakfire]],
 		startsmoke = 1,
-		toAirWeapon = true,
 		turret = true,
 		unitsonly = 1,
 		weaponTimer = 1,
@@ -138,6 +137,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[2.3176574707 4.45434570313e-05 0.257888793945]],
+		collisionvolumescales = [[37.281829834 27.9406890869 36.1777038574]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

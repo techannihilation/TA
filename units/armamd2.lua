@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 789439,
 	buildCostMetal = 21937,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 9,
+	buildingGroundDecalSizeY = 9,
+	buildingGroundDecalType = [[armamd2_aoplane.dds]],
 	buildPic = [[ARMAMD.png]],
 	buildTime = 495678,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
@@ -48,6 +52,7 @@ local unitDef = {
 	turnRate = 0,
 	unitname = [[armamd2]],
 	unitRestricted = 8,
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooooooooooooooo]],
 	featureDefs = nil,
@@ -79,11 +84,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=9,
-	buildingGroundDecalSizeY=9,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armamd2_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

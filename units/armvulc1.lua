@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 1803644,
 	buildCostMetal = 273094,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 19,
+	buildingGroundDecalSizeY = 19,
+	buildingGroundDecalType = [[armvulc1_aoplane.dds]],
 	buildPic = [[ARMVULC.png]],
 	buildTime = 2772961,
 	canAttack = true,
@@ -49,6 +53,7 @@ local unitDef = {
 	standingfireorder = 1,
 	turnRate = 0,
 	unitname = [[armvulc1]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo]],
 	featureDefs = nil,
@@ -85,11 +90,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=19,
-	buildingGroundDecalSizeY=19,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armvulc1_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

@@ -11,6 +11,10 @@ local unitDef = {
 	buildCostEnergy = 29342,
 	buildCostMetal = 2010,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 6,
+	buildingGroundDecalSizeY = 6,
+	buildingGroundDecalType = [[amortor_aoplane.dds]],
 	buildTime = 33833,
 	canAttack = true,
 	canstop = 1,
@@ -47,10 +51,14 @@ local unitDef = {
 	threed = 1,
 	unitname = [[amortor]],
 	unitnumber = 111,
+	useBuildingGroundDecal = true,
 	version = 1,
 	workerTime = 0,
 	yardMap = [[ooooooooo]],
 	zbuffer = 1,
+	customparams = {
+		RequireTech = [[Advanced T1 Unit Research Centre]],
+	},
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],
@@ -83,11 +91,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=6,
-	buildingGroundDecalSizeY=6,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[amortor_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

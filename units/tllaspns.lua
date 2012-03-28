@@ -17,7 +17,7 @@ local unitDef = {
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
-	description = [[Floating repair aircraft]],
+	description = [[Automatically Repairs Aircraft - Naval Series]],
 	designation = [[TL-RPNS]],
 	energyMake = 10,
 	energyStorage = 100,
@@ -70,11 +70,6 @@ local unitDef = {
 			[1] = [[pairactv]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=6,
-	buildingGroundDecalSizeY=6,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tllaspns_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

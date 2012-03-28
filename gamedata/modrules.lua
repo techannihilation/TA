@@ -1,8 +1,8 @@
 local modrules  = {
 
   reclaim = {
-    multiReclaim  = 1;
-    reclaimMethod = 0;
+    multiReclaim  = 1,
+    reclaimMethod = 0,
   },
 
 
@@ -16,16 +16,23 @@ local modrules  = {
   },
 
   fireAtDead = {
-    fireAtKilled   = false;
-    fireAtCrashing = false;
+    fireAtKilled   = false,
+    fireAtCrashing = false,
   },
 
   nanospray = {
-    allow_team_colors = false;
+    allow_team_colors = false,
   },
   
-  featureLOS = { featureVisibility = 2; }
-}
+  featureLOS = {
+     featureVisibility = 2,
+	 },
+    
+  system = {
+    pathFinderSystem = (Spring.GetModOptions() and (Spring.GetModOptions().qtpfs == "1") and 1) or 0,
+  },
+ }
+
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

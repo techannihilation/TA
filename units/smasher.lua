@@ -11,9 +11,9 @@ local unitDef = {
 	bmcode = 1,
 	brakeRate = 2.5,
 	buildCostEnergy = 12234,
-	buildCostMetal = 1671,
+	buildCostMetal = 1850,
 	builder = false,
-	buildTime = 23182,
+	buildTime = 42000,
 	canAttack = true,
 	canFly = true,
 	canGuard = false,
@@ -40,9 +40,9 @@ local unitDef = {
 	germanname = [[smasher]],
 	hoverAttack = true,
 	maneuverleashlength = 1024,
-	maxDamage = 5850,
+	maxDamage = 5350,
 	maxSlope = 10,
-	maxVelocity = 5,
+	maxVelocity = 3.8,
 	maxWaterDepth = 0,
 	metalStorage = 0,
 	mobilestandorders = 1,
@@ -67,6 +67,27 @@ local unitDef = {
 	version = 3,
 	workerTime = 0,
 	zbuffer = 1,
+	sounds = {
+		canceldestruct = [[cancel2]],
+		underattack = [[warning1]],
+		cant = {
+			[1] = [[cantdo4]],
+		},
+		count = {
+			[1] = [[count6]],
+			[2] = [[count5]],
+			[3] = [[count4]],
+			[4] = [[count3]],
+			[5] = [[count2]],
+			[6] = [[count1]],
+		},
+		ok = {
+			[1] = [[vtolcrmv]],
+		},
+		select = {
+			[1] = [[vtolcrac]],
+		},
+	},
 	weaponDefs = nil,
 	weapons = {
 		[1] = {

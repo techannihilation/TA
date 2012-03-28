@@ -1,0 +1,56 @@
+-- UNITDEF -- CORAMAKER --
+--------------------------------------------------------------------------------
+
+local unitName = "coramaker"
+
+--------------------------------------------------------------------------------
+
+local unitDef = {
+	acceleration = 0,
+	activateWhenBuilt = true,
+	bmcode = 0,
+	brakeRate = 0,
+	buildAngle = 8192,
+	buildCostEnergy = 4795,
+	buildCostMetal = 143,
+	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 5,
+	buildingGroundDecalSizeY = 5,
+	buildingGroundDecalType = [[coramaker_aoplane.dds]],
+	buildPic = [[coramaker.png]],
+	buildTime = 4000,
+	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
+	description = [[Converts upto 200 Energy to Metal]],
+	energyStorage = 0,
+	explodeAs = [[ARMESTOR_BUILDINGEX]],
+	footprintX = 4,
+	footprintZ = 3,
+	iconType = [[building]],
+	idleAutoHeal = 5,
+	idleTime = 1800,
+	maxDamage = 300,
+	maxSlope = 10,
+	maxVelocity = 0,
+	maxWaterDepth = 0,
+	metalStorage = 0,
+	name = [[Advanced Metal Maker]],
+	noAutoFire = false,
+	objectName = [[CORAMAKER]],
+	onoffable = true,
+	seismicSignature = 0,
+	selfDestructAs = [[ARMESTOR_BUILDING]],
+	side = [[CORE]],
+	sightDistance = 273,
+	smoothAnim = true,
+	turnRate = 0,
+	unitname = [[coramaker]],
+	useBuildingGroundDecal = true,
+	workerTime = 0,
+	yardMap = [[oooooooooooo]],
+}
+--------------------------------------------------------------------------------
+
+return lowerkeys({[unitName] = unitDef})
+
+--------------------------------------------------------------------------------

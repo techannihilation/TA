@@ -11,6 +11,10 @@ local unitDef = {
 	buildCostEnergy = 989624,
 	buildCostMetal = 152460,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 19,
+	buildingGroundDecalSizeY = 19,
+	buildingGroundDecalType = [[corfsilo_aoplane.dds]],
 	buildTime = 542439,
 	canAttack = true,
 	canstop = 1,
@@ -48,6 +52,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[corfsilo]],
 	unitnumber = 3364,
+	useBuildingGroundDecal = true,
 	version = 1,
 	workerTime = 0,
 	yardMap = [[oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo]],
@@ -81,11 +86,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=19,
-	buildingGroundDecalSizeY=19,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[corfsilo_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

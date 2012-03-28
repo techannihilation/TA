@@ -12,6 +12,10 @@ local unitDef = {
 	buildCostEnergy = 290000,
 	buildCostMetal = 50000,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 10,
+	buildingGroundDecalSizeY = 10,
+	buildingGroundDecalType = [[tllmegacoldfus_aoplane.dds]],
 	buildTime = 1500000,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
@@ -43,6 +47,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[tllmegacoldfus]],
 	unitnumber = 922,
+	useBuildingGroundDecal = true,
 	version = 3.1,
 	workerTime = 0,
 	yardMap = [[ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo]],
@@ -68,11 +73,6 @@ local unitDef = {
 			[1] = [[fusion1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=10,
-	buildingGroundDecalSizeY=10,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tllmegacoldfus_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

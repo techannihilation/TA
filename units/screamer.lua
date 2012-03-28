@@ -13,6 +13,10 @@ local unitDef = {
 	buildCostEnergy = 57660,
 	buildCostMetal = 1762,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 6,
+	buildingGroundDecalSizeY = 6,
+	buildingGroundDecalType = [[screamer_aoplane.dds]],
 	buildPic = [[SCREAMER.png]],
 	buildTime = 37543,
 	canAttack = true,
@@ -48,6 +52,7 @@ local unitDef = {
 	standingfireorder = 2,
 	turnRate = 0,
 	unitname = [[screamer]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooooooooooooooo]],
 	featureDefs = nil,
@@ -77,11 +82,6 @@ local unitDef = {
 			onlyTargetCategory = [[VTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=6,
-	buildingGroundDecalSizeY=6,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[screamer_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -115,7 +115,6 @@ local weaponDefs = {
 		startsmoke = 1,
 		startVelocity = 1000,
 		texture2 = [[armsmoketrail]],
-		toAirWeapon = true,
 		tolerance = 10000,
 		tracks = true,
 		trajectoryHeight = 0.55,
@@ -143,6 +142,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[0.0 3.23730468743e-05 -6.73623657227]],
+		collisionvolumescales = [[74.8988952637 49.1488647461 67.5134277344]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

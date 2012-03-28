@@ -11,6 +11,10 @@ local unitDef = {
 	buildCostEnergy = 8425,
 	buildCostMetal = 1109,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 5,
+	buildingGroundDecalSizeY = 5,
+	buildingGroundDecalType = [[tllflak_aoplane.dds]],
 	buildTime = 13995,
 	canAttack = true,
 	canstop = 1,
@@ -46,6 +50,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[tllflak]],
 	unitnumber = 818,
+	useBuildingGroundDecal = true,
 	version = 3.1,
 	yardMap = [[ooooooooo]],
 	zbuffer = 1,
@@ -80,11 +85,6 @@ local unitDef = {
 			onlyTargetCategory = [[VTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=5,
-	buildingGroundDecalSizeY=5,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tllflak_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -115,7 +115,6 @@ local weaponDefs = {
 		soundHit = [[flakhit]],
 		soundStart = [[flakfire]],
 		startsmoke = 1,
-		toAirWeapon = true,
 		turret = true,
 		unitsonly = 1,
 		weaponTimer = 1,

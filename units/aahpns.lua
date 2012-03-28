@@ -7,8 +7,8 @@ local unitName = "aahpns"
 
 local unitDef = {
 	bmcode = 0,
-	buildCostEnergy = 13277,
-	buildCostMetal = 3007,
+	buildCostEnergy = 102000,
+	buildCostMetal = 4520,
 	builder = true,
 	buildTime = 16220,
 	canMove = true,
@@ -17,7 +17,7 @@ local unitDef = {
 	category = [[LEVEL1 ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON PLANT]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
-	description = [[Builds T2 Hovercraft]],
+	description = [[Builds T2 Hovercrafts]],
 	designation = [[ARM-HNS]],
 	downloadable = 1,
 	energyStorage = 300,
@@ -90,11 +90,6 @@ local unitDef = {
 			[1] = [[hoversl1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=11,
-	buildingGroundDecalSizeY=11,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[aahpns_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -111,7 +106,7 @@ local featureDefs = {
 		footprintZ = 8,
 		height = 20,
 		hitdensity = 100,
-		metal = 0.8000 * unitDef.buildCostMetal,
+		metal = 0.5322 * unitDef.buildCostMetal,
 		object = [[Aahpns_dead]],
 		reclaimable = true,
 		seqnamereclamate = [[tree1reclamate]],
@@ -127,7 +122,7 @@ local featureDefs = {
 		footprintZ = 7,
 		height = 4,
 		hitdensity = 100,
-		metal = 0.6400 * unitDef.buildCostMetal,
+		metal = 0.4258 * unitDef.buildCostMetal,
 		object = [[7x7a]],
 		reclaimable = true,
 		seqnamereclamate = [[tree1reclamate]],

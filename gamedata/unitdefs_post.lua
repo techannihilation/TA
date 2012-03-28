@@ -47,7 +47,6 @@ local WTimeUnits = {
 		["armcsa"] = true,
 		["armcspid"] = true,
 		["armcv"] = true,
-		["armdecom"] = true,
 		["armesy"] = true,
 		["armevp"] = true,
 		["armfark"] = true,
@@ -87,6 +86,7 @@ local WTimeUnits = {
 		["asubpen"] = true,
 		["consul1"] = true,
 		["spiderlab"] = true,
+		["armeap"] = true,
 	},
 	core = {
 		["coraap"] = true,
@@ -112,7 +112,6 @@ local WTimeUnits = {
 		["corcs"] = true,
 		["corcsa"] = true,
 		["corcv"] = true,
-		["cordecom"] = true,
 		["corehpad"] = true,
 		["coresy"] = true,
 		["corevp"] = true,
@@ -148,9 +147,10 @@ local WTimeUnits = {
 		["ccovertopscentre"] = true,
 		["cnanotower"] = true,
 		["commando"] = true,
-		["consul"] = true,
+		["corassis"] = true,
 		["cshipyardlvl4"] = true,
 		["csubpen"] = true,
+		["coreap"] = true,
 	},
 	tll = {
 		["tllaap"] = true,
@@ -178,7 +178,6 @@ local WTimeUnits = {
 		["tllcsa"] = true,
 		["tllcsub"] = true,
 		["tllcv"] = true,
-		["tlldecom"] = true,
 		["tllevp"] = true,
 		["tllgiant"] = true,
 		["tllhevsenan"] = true,
@@ -198,12 +197,31 @@ local WTimeUnits = {
 	}
 }
 	
+local Nanos = {
+	armnanotc = true,
+	armnanotc1 = true,
+	armnanotc2 = true,
+	armnanotc3 = true,
+	cornanotc = true,
+	cornanotc1 = true,
+	cornanotc2 = true,
+	cornanotc3 = true,
+	armhevsenan = true,
+	corhevsenan = true,
+	tllnanotc = true,
+	tllnanotc1 = true,
+	tllnanotc2 = true,
+}
+
 if (Spring.GetModOptions) then
 	local modOptions = Spring.GetModOptions()
 	for name, ud in pairs(UnitDefs) do  
 		if (Commanders[ud.unitname]) then
 			ud.energystorage = modOptions.startenergy or 1000
 			ud.metalstorage = modOptions.startmetal or 1000
+		end
+		if (not Commanders[ud.unitname]) then
+			ud.mass = math.max(ud.maxdamage / 6.0, ud.buildcostmetal)
 		end
 	end
 end
@@ -233,6 +251,10 @@ local WorkerTimeThresholds = {
 		{wt = 250, 		color={r = 0.5, g = 0.5, 	b = 0.5}},
 		{wt = 0, 		color={r = 0.3, g = 0.3, 	b = 0.3}}
 	}
+}
+local NanoCoefs = {
+	reclaimCoef = 0.832,
+	repairCoef = 0.875
 }
 
 function WorkerTimeThresholds:getColor(wt, c)
@@ -268,22 +290,48 @@ end
 -- Setting nanocolor
 for name, ud in pairs(UnitDefs) do
 	if ((ud.workertime or 0) > 0) then
+		udwt = ud.workertime
+		if(Nanos[ud.unitname]) then
+			ud.repairspeed = math.pow(udwt, NanoCoefs.repairCoef)
+			ud.reclaimspeed = math.pow(udwt, NanoCoefs.reclaimCoef)
+		end
 		if(WTimeUnits.tll[ud.unitname]) then
-			ud.nanocolor = {WorkerTimeThresholds:getColor(ud.workertime, "y")}
+			ud.nanocolor = {WorkerTimeThresholds:getColor(udwt, "y")}
 		elseif (WTimeUnits.core[ud.unitname]) then
-			ud.nanocolor = {WorkerTimeThresholds:getColor(ud.workertime, "b")}
+			ud.nanocolor = {WorkerTimeThresholds:getColor(udwt, "b")}
 		elseif (WTimeUnits.arm[ud.unitname]) then
-			ud.nanocolor = {WorkerTimeThresholds:getColor(ud.workertime, "g")}
+			ud.nanocolor = {WorkerTimeThresholds:getColor(udwt, "g")}
 		else
-			ud.nanocolor = {WorkerTimeThresholds:getColor(ud.workertime, "w")}
+			ud.nanocolor = {WorkerTimeThresholds:getColor(udwt, "w")}
 		end
 	end
 end
 
--- Setting collisionvolumetest true for all canFly units
+-- Setting collisionvolumetest true for all units
 for name, ud in pairs(UnitDefs) do
-	if (ud.canfly) then
 		ud.collisionvolumetest = true
-	end
 end
 
+for name, ud in pairs(UnitDefs) do
+	if (ud.maxvelocity) then 
+		ud.turninplacespeedlimit = ud.maxvelocity or 0
+	end
+	if ud.movementclass and (ud.movementclass:find("TANK",1,true) or ud.movementclass:find("HOVER",1,true)) then
+		if (ud.maxvelocity) then 
+			ud.turninplace = 0
+			ud.turninplacespeedlimit = (ud.maxvelocity/2) or 0
+		end
+	elseif ud.movementclass and (ud.movementclass:find("KBOT",1,true)) then
+		if (ud.maxvelocity) and (ud.turninplace) then 
+			ud.turninplaceanglelimit = 91
+		end
+	end
+end 
+--[[ Remove until engine fix
+for name, ud in pairs(UnitDefs) do
+		if ud.mass >= 10000 and (ud.movementclass) and (ud.maxvelocity)  then
+		--Spring.Echo("Push Resistance added to :- " .. ud.unitname)
+		ud.pushresistant = true
+		end
+end
+--]]

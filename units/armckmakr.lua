@@ -1,4 +1,4 @@
--- UNITDEF -- ARMMAKR --
+-- UNITDEF -- ARMCKMAKR --
 --------------------------------------------------------------------------------
 
 local unitName = "armckmakr"
@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 18400,
 	buildCostMetal = 450,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 6,
+	buildingGroundDecalSizeY = 6,
+	buildingGroundDecalType = [[armckmakr_aoplane.dds]],
 	buildPic = [[armckmakr.png]],
 	buildTime = 22000,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -34,8 +38,8 @@ local unitDef = {
 	maxSlope = 10,
 	maxVelocity = 0,
 	maxWaterDepth = 0,
-	minCloakDistance = 50,
 	metalStorage = 0,
+	minCloakDistance = 50,
 	name = [[Cloakable Metal Maker]],
 	noAutoFire = false,
 	noChaseCategory = [[ALL]],
@@ -48,6 +52,7 @@ local unitDef = {
 	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[armckmakr]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[ooooooooo]],
 	sounds = {
@@ -68,11 +73,6 @@ local unitDef = {
 			[1] = [[metlon1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=6,
-	buildingGroundDecalSizeY=6,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armckmakr_aoplane.dds]],
 }
 --------------------------------------------------------------------------------
 

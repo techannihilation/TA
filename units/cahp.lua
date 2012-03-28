@@ -7,9 +7,13 @@ local unitName = "cahp"
 
 local unitDef = {
 	bmcode = 0,
-	buildCostEnergy = 16527,
-	buildCostMetal = 3457,
+	buildCostEnergy = 135600,
+	buildCostMetal = 4250,
 	builder = true,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 12,
+	buildingGroundDecalSizeY = 12,
+	buildingGroundDecalType = [[cahp_aoplane.dds]],
 	buildTime = 34521,
 	canMove = false,
 	canPatrol = true,
@@ -55,6 +59,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[cahp]],
 	unitnumber = 11005,
+	useBuildingGroundDecal = true,
 	version = 1.2,
 	workerTime = 400,
 	yardMap = [[ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo]],
@@ -88,11 +93,6 @@ local unitDef = {
 			[1] = [[hoversl2]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=12,
-	buildingGroundDecalSizeY=12,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[cahp_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -109,7 +109,7 @@ local featureDefs = {
 		footprintZ = 8,
 		height = 20,
 		hitdensity = 100,
-		metal = 0.8000 * unitDef.buildCostMetal,
+		metal = 0.6507 * unitDef.buildCostMetal,
 		object = [[Cahp_dead]],
 		reclaimable = true,
 		seqnamereclamate = [[tree1reclamate]],
@@ -125,7 +125,7 @@ local featureDefs = {
 		footprintZ = 7,
 		height = 4,
 		hitdensity = 100,
-		metal = 0.6400 * unitDef.buildCostMetal,
+		metal = 0.5206 * unitDef.buildCostMetal,
 		object = [[7x7a]],
 		reclaimable = true,
 		seqnamereclamate = [[tree1reclamate]],

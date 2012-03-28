@@ -64,7 +64,8 @@ fum()
 {
 	while( Static_Var_2 )
 	{
-		explode fusee type BITMAPONLY | BITMAP3;
+		emit-sfx 1024 + 0 from flare2;
+		//explode fusee type BITMAPONLY | BITMAP3;
 		emit-sfx 257 from fum1;
 		emit-sfx 257 from fum2;
 		emit-sfx 257 from fum3;
@@ -123,7 +124,6 @@ Create()
 	Static_Var_2 = 0;
 	Static_Var_9 = 45;
 	Static_Var_10 = 1;
-//	turn body to y-axis <20.000000> now;
 	while( get BUILD_PERCENT_LEFT )
 	{
 		sleep 500;

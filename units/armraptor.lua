@@ -23,7 +23,7 @@ local unitDef = {
 	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	collisionvolumeoffsets = [[0 -15 0]],
 	collisionvolumescales = [[115 150 105]],
-	collisionvolumetest = 0,
+	collisionvolumetest = 1,
 	collisionvolumetype = [[Ell]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
@@ -69,6 +69,27 @@ local unitDef = {
 	workerTime = 0,
 	zbuffer = 1,
 	featureDefs = nil,
+	sounds = {
+		canceldestruct = [[cancel2]],
+		underattack = [[warning1]],
+		cant = {
+			[1] = [[cantdo4]],
+		},
+		count = {
+			[1] = [[count6]],
+			[2] = [[count5]],
+			[3] = [[count4]],
+			[4] = [[count3]],
+			[5] = [[count2]],
+			[6] = [[count1]],
+		},
+		ok = {
+			[1] = [[mavbok1]],
+		},
+		select = {
+			[1] = [[mavbsel1]],
+		},
+	},
 	weaponDefs = nil,
 	weapons = {
 		[1] = {

@@ -1,6 +1,7 @@
 -- small_red_burn
 -- small_yellow_burn
 -- burn_white
+-- large_burn_white
 -- burn
 -- small_burn_white
 
@@ -200,6 +201,72 @@ return {
     },
   },
 
+   ["large_burn_white"] = {
+    usedefaultexplosions = false,
+    burnpop = {
+      air                = true,
+      class              = [[heatcloud]],
+      count              = 1,
+      ground             = true,
+      water              = true,
+      properties = {
+        directional        = true,
+        emitrot            = 50,
+        emitrotspread      = 50,
+        heat               = 10,
+        heatfalloff        = 0.4,
+        maxheat            = 15,
+        pos                = [[r-2 r2, r0 r1, r-2 r2]],
+        size               = 14,
+        sizegrowth         = 0.6,
+        speed              = [[0, 0, 0]],
+        texture            = [[brightblueexplo]],
+      },
+    },
+    groundflash = {
+      circlealpha        = 1,
+      circlegrowth       = 3,
+      flashalpha         = 1.6,
+      flashsize          = 17,
+      ttl                = 14,
+      color = {
+        [1]  = 0.69999998807907,
+        [2]  = 0.60000002384186,
+        [3]  = 1,
+      },
+    },
+    searingflame = {
+      air                = true,
+      class              = [[CSimpleParticleSystem]],
+      count              = 1,
+      ground             = false,
+      unit               = 1,
+      properties = {
+        airdrag            = 0.8,
+        alwaysvisible      = true,
+        colormap           = [[1 1 1 0.04	0.7 0.7 0.8 0.01	0.4 0.4 0.6 0.01]],
+        directional        = true,
+        emitrot            = 45,
+        emitrotspread      = 32,
+        emitvector         = [[0, 1, 0]],
+        gravity            = [[0, -0.01, 0]],
+        numparticles       = 3,
+        particlelife       = 3,
+        particlelifespread = 9,
+        particlesize       = 12,
+        particlesizespread = 3,
+        particlespeed      = 6,
+        particlespeedspread = 7,
+        pos                = [[0, 2, 0]],
+        sizegrowth         = 1,
+        sizemod            = 0.5,
+        texture            = [[gunshot]],
+        useairlos          = false,
+      },
+    },
+  },
+
+  
   ["burn"] = {
     burnpop = {
       air                = true,

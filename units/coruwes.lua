@@ -13,6 +13,10 @@ local unitDef = {
 	buildCostEnergy = 2540,
 	buildCostMetal = 280,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 6,
+	buildingGroundDecalSizeY = 6,
+	buildingGroundDecalType = [[coruwes_aoplane.dds]],
 	buildPic = [[CORUWES.png]],
 	buildTime = 7241,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -42,6 +46,7 @@ local unitDef = {
 	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[coruwes]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooooooooooooooo]],
 	featureDefs = nil,
@@ -60,11 +65,6 @@ local unitDef = {
 			[1] = [[storngy2]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=6,
-	buildingGroundDecalSizeY=6,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[coruwes_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -73,6 +73,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[5.91815185547 -0.0585083374023 -0.949203491211]],
+		collisionvolumescales = [[57.7583618164 50.6997833252 64.7775878906]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

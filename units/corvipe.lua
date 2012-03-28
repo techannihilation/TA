@@ -13,6 +13,10 @@ local unitDef = {
 	buildCostEnergy = 19140,
 	buildCostMetal = 980,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 5,
+	buildingGroundDecalSizeY = 5,
+	buildingGroundDecalType = [[corvipe_aoplane.dds]],
 	buildPic = [[CORVIPE.png]],
 	buildTime = 19035,
 	canAttack = true,
@@ -21,7 +25,7 @@ local unitDef = {
 	corpse = [[DEAD]],
 	damageModifier = 0.5,
 	defaultmissiontype = [[GUARD_NOMOVE]],
-	description = [[Pop-up Sabot Battery]],
+	description = [[Pop-Up Sabot Battery]],
 	digger = 1,
 	energyStorage = 0,
 	energyUse = 0,
@@ -49,6 +53,7 @@ local unitDef = {
 	standingfireorder = 2,
 	turnRate = 0,
 	unitname = [[corvipe]],
+	useBuildingGroundDecal = true,
 	yardMap = [[ooooooooo]],
 	featureDefs = nil,
 	sounds = {
@@ -82,11 +87,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=5,
-	buildingGroundDecalSizeY=5,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[corvipe_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -141,6 +141,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = -6.5983,
+		collisionvolumescales = [[42.4275054932 38.4097137451 38.8498077393]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

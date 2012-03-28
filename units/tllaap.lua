@@ -7,9 +7,13 @@ local unitName = "tllaap"
 
 local unitDef = {
 	bmcode = 0,
-	buildCostEnergy = 8700,
-	buildCostMetal = 2840,
+	buildCostEnergy = 55000,
+	buildCostMetal = 3700,
 	builder = true,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 10,
+	buildingGroundDecalSizeY = 10,
+	buildingGroundDecalType = [[tllaap_aoplane.dds]],
 	buildTime = 25762,
 	canMove = true,
 	canPatrol = true,
@@ -48,6 +52,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[tllaap]],
 	unitnumber = 883,
+	useBuildingGroundDecal = true,
 	version = 3.1,
 	workerTime = 420,
 	yardMap = [[oooooo occcco occcco occcco occcco occcco oooooo]],
@@ -79,11 +84,6 @@ local unitDef = {
 			[1] = [[pairactv]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=10,
-	buildingGroundDecalSizeY=10,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tllaap_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -100,7 +100,7 @@ local featureDefs = {
 		footprintZ = 7,
 		height = 20,
 		hitdensity = 100,
-		metal = 0.8000 * unitDef.buildCostMetal,
+		metal = 0.6141 * unitDef.buildCostMetal,
 		object = [[tllaap_dead]],
 		reclaimable = true,
 		seqnamereclamate = [[tree1reclamate]],
@@ -116,7 +116,7 @@ local featureDefs = {
 		footprintZ = 7,
 		height = 4,
 		hitdensity = 100,
-		metal = 0.6400 * unitDef.buildCostMetal,
+		metal = 0.4912 * unitDef.buildCostMetal,
 		object = [[6x6a]],
 		reclaimable = true,
 		seqnamereclamate = [[tree1reclamate]],

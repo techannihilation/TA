@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 50000,
 	buildCostMetal = 5000,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 8,
+	buildingGroundDecalSizeY = 8,
+	buildingGroundDecalType = [[corbhmth_aoplane.dds]],
 	buildPic = [[CORBHMTH.png]],
 	buildTime = 90000,
 	canAttack = true,
@@ -49,6 +53,7 @@ local unitDef = {
 	standingfireorder = 2,
 	turnRate = 0,
 	unitname = [[corbhmth]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[ooooo ooooo ooGoo ooooo ooooo]],
 	featureDefs = nil,
@@ -75,11 +80,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=8,
-	buildingGroundDecalSizeY=8,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[corbhmth_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -127,6 +127,9 @@ local featureDefs = {
 	dead = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[1.45333862305 -0.843691186523 0.648628234863]],
+		collisionvolumescales = [[83.4941711426 37.581817627 90.826675415]],
+		collisionvolumetype = [[Box]],
 		damage = 0.3600 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

@@ -12,6 +12,10 @@ local unitDef = {
 	buildCostEnergy = 2750,
 	buildCostMetal = 181,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 4,
+	buildingGroundDecalSizeY = 4,
+	buildingGroundDecalType = [[tllasonar_aoplane.dds]],
 	buildTime = 6812,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
@@ -46,6 +50,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[tllasonar]],
 	unitnumber = 865,
+	useBuildingGroundDecal = true,
 	version = 3.1,
 	workerTime = 0,
 	yardMap = [[oooo]],
@@ -68,11 +73,6 @@ local unitDef = {
 			[1] = [[sonar1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=4,
-	buildingGroundDecalSizeY=4,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tllasonar_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

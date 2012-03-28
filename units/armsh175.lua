@@ -43,7 +43,7 @@ local unitDef = {
 	maneuverleashlength = 1024,
 	maxDamage = 235,
 	maxSlope = 10,
-	maxVelocity = 14,
+	maxVelocity = 9,
 	maxWaterDepth = 0,
 	metalStorage = 0,
 	mobilestandorders = 1,
@@ -68,6 +68,27 @@ local unitDef = {
 	version = 3,
 	workerTime = 0,
 	zbuffer = 1,
+	sounds = {
+		canceldestruct = [[cancel2]],
+		underattack = [[warning1]],
+		cant = {
+			[1] = [[cantdo4]],
+		},
+		count = {
+			[1] = [[count6]],
+			[2] = [[count5]],
+			[3] = [[count4]],
+			[4] = [[count3]],
+			[5] = [[count2]],
+			[6] = [[count1]],
+		},
+		ok = {
+			[1] = [[vtolcrmv]],
+		},
+		select = {
+			[1] = [[vtolcrac]],
+		},
+	},
 }
 --------------------------------------------------------------------------------
 

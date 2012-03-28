@@ -10,6 +10,10 @@ local unitDef = {
 	buildCostEnergy = 1200755,
 	buildCostMetal = 23119,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 6,
+	buildingGroundDecalSizeY = 6,
+	buildingGroundDecalType = [[ametalmakerlvl2_aoplane.dds]],
 	buildTime = 200000,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
 	corpse = [[dead]],
@@ -34,6 +38,7 @@ local unitDef = {
 	side = [[ARM]],
 	sightDistance = 210,
 	unitname = [[ametalmakerlvl2]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[OOO OOO OOO]],
 	featureDefs = nil,
@@ -55,11 +60,6 @@ local unitDef = {
 			[1] = [[metlon1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=6,
-	buildingGroundDecalSizeY=6,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[ametalmakerlvl2_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

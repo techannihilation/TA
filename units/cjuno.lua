@@ -12,6 +12,10 @@ local unitDef = {
 	buildCostEnergy = 15124,
 	buildCostMetal = 617,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 6,
+	buildingGroundDecalSizeY = 6,
+	buildingGroundDecalType = [[cjuno_aoplane.dds]],
 	buildPic = [[CJUNO.png]],
 	buildTime = 27681,
 	canAttack = true,
@@ -47,6 +51,7 @@ local unitDef = {
 	stealth = true,
 	turnRate = 0,
 	unitname = [[cjuno]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooooooooooooooo]],
 	featureDefs = nil,
@@ -78,11 +83,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=6,
-	buildingGroundDecalSizeY=6,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[cjuno_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -142,6 +142,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[1.02378845215 -0.244132250977 6.86585998535]],
+		collisionvolumescales = [[65.8518981934 75.545135498 65.7558898926]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

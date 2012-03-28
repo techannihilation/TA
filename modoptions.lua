@@ -12,6 +12,12 @@ local options={
        desc="Tech Annihilation - Game Modes",
        type="section",
     },
+        {
+       key="ta_exp",
+       name="Tech Annihilation - Experimental Options",
+       desc="Tech Annihilation - Experimental Options",
+       type="section",
+    },
     {
        key="ta_options",
        name="Tech Annihilation - Options",
@@ -24,6 +30,14 @@ local options={
        desc="Tech Annihilation - Peace Time Settings",
        type="section",
     },
+    {
+	key    = "mo_heatmap",
+	name   = "Enable Heatmap's",
+	desc   = "Enables Pathing Heatmaps",
+	type   = "bool",
+	def    = false,
+	section= "ta_exp",
+	},
 	{
 		key    = "mo_coop",
 		name   = "Cooperative Mode",
@@ -64,7 +78,19 @@ local options={
 		def    = false,
 		section= "ta_options",
     },
-	{
+    {
+		key="qtpfs",
+		name="Pathfinding system",
+		desc="Which pathfinding system to use",
+		type="list",
+		section= "ta_exp",
+		def="qtpfs",
+		items={
+			{key="0", name="Default", desc="Default Spring path finding engine"},
+			{key="1", name="QTPFS", desc="Quick/Tesellating Path Finding System"},
+		}
+    },
+    {
 		key    = "mo_noshare",
 		name   = "No Sharing To Enemies",
 		desc   = "Prevents players from giving units or resources to enemies",

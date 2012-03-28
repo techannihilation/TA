@@ -13,6 +13,10 @@ local unitDef = {
 	buildCostEnergy = 4332,
 	buildCostMetal = 275,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 4,
+	buildingGroundDecalSizeY = 4,
+	buildingGroundDecalType = [[hllt_aoplane.dds]],
 	buildPic = [[HLLT.png]],
 	buildTime = 6448,
 	canAttack = true,
@@ -48,6 +52,7 @@ local unitDef = {
 	standingfireorder = 2,
 	turnRate = 0,
 	unitname = [[hllt]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooo]],
 	featureDefs = nil,
@@ -85,11 +90,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=4,
-	buildingGroundDecalSizeY=4,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[hllt_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -182,6 +182,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[-10.5723800659 -3.06343876953 1.66596221924]],
+		collisionvolumescales = [[35.5121612549 61.9105224609 33.3319244385]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

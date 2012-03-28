@@ -111,7 +111,7 @@ local weaponDefs = {
 		name = [[Laser]],
 		noSelfDamage = true,
 		paralyzer = true,
-		paralyzertime = 38,
+		paralyzertime = 10,
 		range = 180,
 		reloadtime = 0.9,
 		renderType = 0,
@@ -127,7 +127,7 @@ local weaponDefs = {
 		weaponVelocity = 600,
 		damage = {
 			commanders = 20,
-			default = 400,
+			default = 320,
 			raider_resistant = 200,
 			subs = 5,
 		},

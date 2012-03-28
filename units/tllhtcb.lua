@@ -65,7 +65,6 @@ local unitDef = {
 		[1] = [[tllmegacoldfus]],
 		[2] = [[tllgate1]],
 		[3] = [[tlldb]],
-
 	},
 	featureDefs = nil,
 	sounds = {

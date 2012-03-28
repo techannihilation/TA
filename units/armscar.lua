@@ -63,6 +63,9 @@ local unitDef = {
 	unitnumber = 760,
 	version = 1,
 	zbuffer = 1,
+	customparams = {
+		RequireTech = [[Advanced T1 Unit Research Centre]],
+	},
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],

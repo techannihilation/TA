@@ -8,10 +8,14 @@ local unitName = "tllhtcp"
 local unitDef = {
 	bmcode = 0,
 	buildAngle = 1024,
-	buildCostEnergy = 9550,
-	buildCostMetal = 6148,
+	buildCostEnergy = 61000,
+	buildCostMetal = 15400,
 	builder = true,
-	buildTime = 66120,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 13,
+	buildingGroundDecalSizeY = 13,
+	buildingGroundDecalType = [[tllhtcp_aoplane.dds]],
+	buildTime = 92000,
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
@@ -28,7 +32,7 @@ local unitDef = {
 	footprintX = 10,
 	footprintZ = 10,
 	iconType = [[building]],
-	maxDamage = 12575,
+	maxDamage = 14575,
 	maxSlope = 10,
 	maxWaterDepth = 0,
 	metalStorage = 1000,
@@ -45,6 +49,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[tllhtcp]],
 	unitnumber = 934,
+	useBuildingGroundDecal = true,
 	version = 3.1,
 	workerTime = 980,
 	yardMap = [[ooccccccoo ooccccccoo ooccccccoo cccccccccc cccccccccc cccccccccc ooccccccoo ooccccccoo ooccccccoo ooccccccoo ]],
@@ -56,7 +61,6 @@ local unitDef = {
 		[4] = [[tllgrim]],
 		[5] = [[heavyimpact]],
 		[6] = [[hyperion]],
-
 	},
 	featureDefs = nil,
 	sounds = {
@@ -80,11 +84,6 @@ local unitDef = {
 			[1] = [[gantsel1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=13,
-	buildingGroundDecalSizeY=13,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tllhtcp_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

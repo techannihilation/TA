@@ -13,7 +13,7 @@ local unitDef = {
 	buildCostEnergy = 12165,
 	buildCostMetal = 875,
 	builder = false,
-	buildTime = 17182,
+	buildTime = 19800,
 	canAttack = true,
 	canFly = true,
 	canGuard = false,
@@ -40,9 +40,9 @@ local unitDef = {
 	germanname = [[AH-256 Club]],
 	hoverAttack = true,
 	maneuverleashlength = 1024,
-	maxDamage = 2980,
+	maxDamage = 2380,
 	maxSlope = 10,
-	maxVelocity = 5,
+	maxVelocity = 4.5,
 	maxWaterDepth = 0,
 	metalStorage = 0,
 	mobilestandorders = 1,
@@ -67,6 +67,27 @@ local unitDef = {
 	version = 3,
 	workerTime = 0,
 	zbuffer = 1,
+	sounds = {
+		canceldestruct = [[cancel2]],
+		underattack = [[warning1]],
+		cant = {
+			[1] = [[cantdo4]],
+		},
+		count = {
+			[1] = [[count6]],
+			[2] = [[count5]],
+			[3] = [[count4]],
+			[4] = [[count3]],
+			[5] = [[count2]],
+			[6] = [[count1]],
+		},
+		ok = {
+			[1] = [[vtolcrmv]],
+		},
+		select = {
+			[1] = [[vtolcrac]],
+		},
+	},
 	weaponDefs = nil,
 	weapons = {
 		[1] = {

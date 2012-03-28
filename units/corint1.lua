@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 152520,
 	buildCostMetal = 19328,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 13,
+	buildingGroundDecalSizeY = 13,
+	buildingGroundDecalType = [[corint1_aoplane.dds]],
 	buildPic = [[CORINT.png]],
 	buildTime = 193237,
 	canAttack = true,
@@ -47,6 +51,7 @@ local unitDef = {
 	standingfireorder = 2,
 	turnRate = 0,
 	unitname = [[corint1]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo]],
 	customparams = {
@@ -86,11 +91,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=13,
-	buildingGroundDecalSizeY=13,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[corint1_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

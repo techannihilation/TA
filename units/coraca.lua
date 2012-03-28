@@ -89,6 +89,7 @@ local unitDef = {
 		[[corbuzz]],
 		[[corap]],
 		[[coraap]],
+		[[coreap]],
 		[[tawf010]],
 		[[core_intimidator]],
 		[[corboucher]],

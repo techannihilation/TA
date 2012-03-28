@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 18304,
 	buildCostMetal = 124,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 4,
+	buildingGroundDecalSizeY = 4,
+	buildingGroundDecalType = [[corshroud_aoplane.dds]],
 	buildPic = [[CORSHROUD.png]],
 	buildTime = 9392,
 	canAttack = false,
@@ -48,6 +52,7 @@ local unitDef = {
 	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[corshroud]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooo]],
 	featureDefs = nil,
@@ -72,11 +77,6 @@ local unitDef = {
 			[1] = [[radjam2]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=4,
-	buildingGroundDecalSizeY=4,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[corshroud_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -85,6 +85,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[-7.38106536865 2.64404296892e-05 2.18940734863]],
+		collisionvolumescales = [[57.2317047119 61.2454528809 48.0499572754]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

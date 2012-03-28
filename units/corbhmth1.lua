@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 120000,
 	buildCostMetal = 9000,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 8,
+	buildingGroundDecalSizeY = 8,
+	buildingGroundDecalType = [[corbhmth1_aoplane.dds]],
 	buildPic = [[CORBHMTH.png]],
 	buildTime = 140000,
 	canAttack = true,
@@ -49,6 +53,7 @@ local unitDef = {
 	standingfireorder = 2,
 	turnRate = 0,
 	unitname = [[corbhmth1]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[ooooo ooooo ooGoo ooooo ooooo]],
 	featureDefs = nil,
@@ -75,11 +80,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=8,
-	buildingGroundDecalSizeY=8,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[corbhmth1_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

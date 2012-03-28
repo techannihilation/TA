@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 1592,
 	buildCostMetal = 159,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 5,
+	buildingGroundDecalSizeY = 5,
+	buildingGroundDecalType = [[armestor_aoplane.dds]],
 	buildPic = [[ARMESTOR.png]],
 	buildTime = 3900,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -43,6 +47,7 @@ local unitDef = {
 	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[armestor]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[ooooooooo]],
 	featureDefs = nil,
@@ -61,11 +66,6 @@ local unitDef = {
 			[1] = [[storngy1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=5,
-	buildingGroundDecalSizeY=5,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armestor_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -74,6 +74,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[0.0361251831055 -3.17626953112e-05 -0.330192565918]],
+		collisionvolumescales = [[39.6697540283 34.9461364746 42.0973052979]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

@@ -12,10 +12,10 @@ local unitDef = {
 	buildCostEnergy = 3957,
 	buildCostMetal = 955,
 	builder = true,
-	buildingGroundDecalDecaySpeed = 0.01,
+	buildingGroundDecalDecaySpeed = 30,
 	buildingGroundDecalSizeX = 9,
 	buildingGroundDecalSizeY = 8,
-	buildingGroundDecalType = [[asphalt512.dds]],
+	buildingGroundDecalType = [[armhp_aoplane.dds]],
 	buildPic = [[ARMHP.png]],
 	buildTime = 13890,
 	canMove = true,
@@ -84,11 +84,6 @@ local unitDef = {
 			[1] = [[hoversl1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=9,
-	buildingGroundDecalSizeY=8,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armhp_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -97,6 +92,10 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[0 0 0]],
+		collisionvolumescales = [[116 20 104]],
+		collisionvolumetest = 1,
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

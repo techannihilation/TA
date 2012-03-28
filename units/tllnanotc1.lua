@@ -12,6 +12,10 @@ local unitDef = {
 	buildCostMetal = 1250,
 	buildDistance = 600,
 	builder = true,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 5,
+	buildingGroundDecalSizeY = 5,
+	buildingGroundDecalType = [[tllnanotc1_aoplane.dds]],
 	buildPic = [[CORNANOTC.png]],
 	buildTime = 13000,
 	canGuard = true,
@@ -25,7 +29,7 @@ local unitDef = {
 	description = [[Repairs and builds in large radius]],
 	energyStorage = 0,
 	energyUse = 30,
-	explodeAs = [[NANOBOOM3]],
+	explodeAs = [[NANOBOOM3T]],
 	footprintX = 3,
 	footprintZ = 3,
 	iconType = [[building]],
@@ -44,7 +48,7 @@ local unitDef = {
 	objectName = [[TLLNANOTC1]],
 	script = [[cornanotc.cob]],
 	seismicSignature = 0,
-	selfDestructAs = [[TINY_BUILDINGEX]],
+	selfDestructAs = [[NANOBOOM2T]],
 	side = [[CORE]],
 	sightDistance = 380,
 	smoothAnim = true,
@@ -52,6 +56,7 @@ local unitDef = {
 	turnRate = 1,
 	unitname = [[tllnanotc1]],
 	upright = true,
+	useBuildingGroundDecal = true,
 	workerTime = 600,
 	sounds = {
 		build = [[nanlath2]],
@@ -78,11 +83,6 @@ local unitDef = {
 			[1] = [[vcorsel]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=5,
-	buildingGroundDecalSizeY=5,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tllnanotc_aoplane.dds]],
 }
 --------------------------------------------------------------------------------
 

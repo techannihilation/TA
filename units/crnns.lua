@@ -12,6 +12,10 @@ local unitDef = {
 	buildCostEnergy = 145000,
 	buildCostMetal = 17000,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 11,
+	buildingGroundDecalSizeY = 11,
+	buildingGroundDecalType = [[crnns_aoplane.dds]],
 	buildTime = 360000,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
@@ -48,6 +52,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[crnns]],
 	unitnumber = 233,
+	useBuildingGroundDecal = true,
 	version = 1.2,
 	waterline = 10,
 	workerTime = 0,
@@ -74,11 +79,6 @@ local unitDef = {
 			[1] = [[mohoon1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=11,
-	buildingGroundDecalSizeY=11,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[crnns_aoplane.dds]],
 }
 --------------------------------------------------------------------------------
 

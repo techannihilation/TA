@@ -247,7 +247,10 @@ end
 
 
 function widget:UnitCmdDone(unitID, unitDefID, unitTeam, cmdID, cmdTag)
-  local cmd = spGetCommandQueue(unitID)[2] 
+  local cmd
+  if spGetCommandQueue(unitID) then
+	cmd = spGetCommandQueue(unitID)[2] 
+  end
   if (cmd and cmd.id == CMD_JUMP) then
       lastJump[unitID] = {
         pos = {spGetUnitPosition(unitID)}, 

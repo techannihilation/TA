@@ -11,6 +11,10 @@ local unitDef = {
 	buildCostEnergy = 2843,
 	buildCostMetal = 479,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 5,
+	buildingGroundDecalSizeY = 5,
+	buildingGroundDecalType = [[tllsam_aoplane.dds]],
 	buildTime = 8413,
 	canAttack = true,
 	canstop = 1,
@@ -42,6 +46,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[tllsam]],
 	unitnumber = 848,
+	useBuildingGroundDecal = true,
 	version = 3.1,
 	workerTime = 0,
 	yardMap = [[ooooooooo]],
@@ -75,11 +80,6 @@ local unitDef = {
 			onlyTargetCategory = [[VTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=5,
-	buildingGroundDecalSizeY=5,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tllsam_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -118,7 +118,6 @@ local weaponDefs = {
 		startsmoke = 1,
 		startVelocity = 520,
 		texture2 = [[armsmoketrail]],
-		toAirWeapon = true,
 		tolerance = 9950,
 		tracks = true,
 		turnRate = 68000,

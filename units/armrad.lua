@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 600,
 	buildCostMetal = 54,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 4,
+	buildingGroundDecalSizeY = 4,
+	buildingGroundDecalType = [[armrad_aoplane.dds]],
 	buildPic = [[ARMRAD.png]],
 	buildTime = 1137,
 	canAttack = false,
@@ -48,6 +52,7 @@ local unitDef = {
 	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[armrad]],
+	useBuildingGroundDecal = true,
 	usePieceCollisionVolumes = 1,
 	workerTime = 0,
 	yardMap = [[oooo]],
@@ -70,11 +75,6 @@ local unitDef = {
 			[1] = [[radar1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=4,
-	buildingGroundDecalSizeY=4,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armrad_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -83,6 +83,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[-1.52809143066 -0.0377662597656 8.02375793457]],
+		collisionvolumescales = [[46.8276062012 74.2716674805 38.2336730957]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

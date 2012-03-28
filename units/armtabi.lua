@@ -8,10 +8,14 @@ local unitName = "armtabi"
 local unitDef = {
 	bmcode = 0,
 	buildAngle = 4096,
-	buildCostEnergy = 1448222,
-	buildCostMetal = 389868,
+	buildCostEnergy = 5000000,
+	buildCostMetal = 600000,
 	builder = false,
-	buildTime = 898527,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 13,
+	buildingGroundDecalSizeY = 13,
+	buildingGroundDecalType = [[armtabi_aoplane.dds]],
+	buildTime = 10000000,
 	canAttack = true,
 	canGuard = true,
 	canstop = 1,
@@ -57,6 +61,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[armtabi]],
 	unitnumber = 16,
+	useBuildingGroundDecal = true,
 	version = 1,
 	workerTime = 0,
 	yardMap = [[oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo]],
@@ -89,11 +94,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=13,
-	buildingGroundDecalSizeY=13,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armtabi_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

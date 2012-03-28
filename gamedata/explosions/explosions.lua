@@ -1256,6 +1256,22 @@ return {
     },
   },
 
+    ["flash4blue"] = {
+    usedefaultexplosions = false,
+    groundflash = {
+      circlealpha        = 1,
+      circlegrowth       = 3,
+      flashalpha         = 1.6,
+      flashsize          = 45,
+      ttl                = 6,
+      color = {
+        [1]  = 0.30000001192093,
+        [2]  = 0.30000001192093,
+        [3]  = 1,
+      },
+    },
+  },
+  
   ["vsmlmissile_explosion"] = {
     usedefaultexplosions = true,
     groundflash = {

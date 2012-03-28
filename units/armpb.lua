@@ -12,6 +12,10 @@ local unitDef = {
 	buildCostEnergy = 17896,
 	buildCostMetal = 870,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 5,
+	buildingGroundDecalSizeY = 5,
+	buildingGroundDecalType = [[armpb_aoplane.dds]],
 	buildPic = [[ARMPB.png]],
 	buildTime = 18961,
 	canAttack = true,
@@ -21,7 +25,7 @@ local unitDef = {
 	corpse = [[DEAD]],
 	damageModifier = 0.5,
 	defaultmissiontype = [[GUARD_NOMOVE]],
-	description = [[Pop-up Gauss Cannon]],
+	description = [[Pop-Up Gauss Cannon]],
 	digger = 1,
 	energyMake = 0,
 	energyStorage = 25,
@@ -52,6 +56,7 @@ local unitDef = {
 	standingfireorder = 2,
 	turnRate = 0,
 	unitname = [[armpb]],
+	useBuildingGroundDecal = true,
 	yardMap = [[ooooooooo]],
 	featureDefs = nil,
 	sounds = {
@@ -85,11 +90,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=5,
-	buildingGroundDecalSizeY=5,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armpb_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -134,6 +134,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[0.0 -1.5039062502e-06 -0.0]],
+		collisionvolumescales = [[33.0 12.8524169922 33.0]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

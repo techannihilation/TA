@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 62520,
 	buildCostMetal = 4328,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 8,
+	buildingGroundDecalSizeY = 8,
+	buildingGroundDecalType = [[corint_aoplane.dds]],
 	buildPic = [[CORINT.png]],
 	buildTime = 93237,
 	canAttack = true,
@@ -47,6 +51,7 @@ local unitDef = {
 	standingfireorder = 2,
 	turnRate = 0,
 	unitname = [[corint]],
+	useBuildingGroundDecal = true,
 	usePieceCollisionVolumes = 1,
 	workerTime = 0,
 	yardMap = [[ooooooooooooooooooooooooo]],
@@ -87,11 +92,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=8,
-	buildingGroundDecalSizeY=8,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[corint_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -141,6 +141,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[0.0 0.0987820556641 -0.0]],
+		collisionvolumescales = [[86.25 91.6069641113 74.6947021484]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

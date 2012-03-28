@@ -118,7 +118,7 @@ local morphDefs = {
 	},
       armhlt = {
 	{
-		into = 'armhlt1',
+		into = 'armvhlt',
 		time = 20,
 		metal = 250,
 		xp = 0.30,
@@ -132,7 +132,7 @@ local morphDefs = {
 	},
       corhlt= {
 	{
-		into = 'corhlt1',
+		into = 'corvhlt',
 		time = 20,
 		metal = 260,
 		xp = 0.30,
@@ -145,36 +145,18 @@ local morphDefs = {
 	},
 	},
       armguard= {
-	{
-		into = 'arm_guardian',
-		time = 20,
-		metal = 800,
-		energy = 6500,
-		xp = 0.50,
-	},
-	{
 		into = 'amortor',
 		time = 30,
 		metal = 900,
 		energy = 9000,
 		xp = 0.60,
 	},
-	},
       corpun= {
-	{
-		into = 'arm_guardian',
-		time = 20,
-		metal = 800,
-		energy = 6500,
-		xp = 0.50,
-	},
-	{
 		into = 'cmortor',
 		time = 30,
 		metal = 900,
 		energy = 9000,
 		xp = 0.60,
-	},
 	},
       armamd = {
 		into = 'armamd1',
@@ -234,27 +216,27 @@ local morphDefs = {
 	},
       corech3 = {
 		into = 'corech18',
-		time = 30,
+		time = 45,
 	},
       corech18 = {
 		into = 'corech21',
-		time = 30,
+		time = 60,
 	},
       corech21 = {
 		into = 'CCovertOpsCentre',
-		time = 120,
+		time = 240,
 	},
       armrech3 = {
 		into = 'armrech18',
-		time = 30,
+		time = 45,
 	},
       armrech18 = {
 		into = 'armrech21',
-		time = 30,
+		time = 60,
 	},
       armrech21 = {
 		into = 'ACovertOpsCentre',
-		time = 120,
+		time = 240,
 	},
       armvulc = {
 		into = 'armvulc2',

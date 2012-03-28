@@ -88,7 +88,7 @@ local unitDef = {
 		[2] = {
 			def = [[LIGHTNING]],
 			mainDir = [[1 0 0]],
-			maxAngleDif =220,
+			maxAngleDif = 220,
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[3] = {

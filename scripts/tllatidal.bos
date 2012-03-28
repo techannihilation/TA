@@ -1,99 +1,160 @@
+#define TA			// This is a TA script
 
-
-piece base, body, wheel, wake1, wake2, wake3, lights;
-
-#define SMOKEPIECE1 base
-static-var OK;
-
-#include "StateChg.h"
-#include "smokeunit.h"
+#include "sfxtype.h"
 #include "exptype.h"
 
-wakes()
+piece  base, body, wheel, wake1, wake2, wake3, lights;
+
+static-var  Static_Var_2, Static_Var_1, statechg_DesiredState, statechg_StateChanging;
+
+
+LuaSetSpeed(speed)
+{
+	Static_Var_1 = speed;
+	if( !get BUILD_PERCENT_LEFT )
 	{
-	while (OK)
-		{
-		EMIT-SFX SFXTYPE_WAKE1 FROM wake1;
-		EMIT-SFX SFXTYPE_WAKE1 FROM wake2;
-		EMIT-SFX SFXTYPE_WAKE1 FROM wake3;
-		SLEEP 200;
-		}
+		spin wheel around z-axis speed Static_Var_1 ;
+		set ACTIVATION to 100;
 	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+wakes()
+{
+	while( Static_Var_2 )
+	{
+		emit-sfx 2 from wake1;
+		emit-sfx 2 from wake2;
+		emit-sfx 2 from wake3;
+		sleep 200;
+	}
+}
 
 Go()
-	{
-	OK=1;
+{
+	Static_Var_2 = 1;
 	dont-cache wheel;
 	dont-cache lights;
-	spin wheel around z-axis speed <-55>;
+	spin wheel around z-axis speed Static_Var_1;
 	start-script wakes();
-	}
+}
 
 Stop()
-	{
-	OK=0;
-	spin wheel around z-axis speed <0>;
+{
+	Static_Var_2 = 0;
+	spin wheel around z-axis speed <0.000000>;
 	cache wheel;
 	cache lights;
-	}
+}
 
-#define ACTIVATECMD call-script Go();
-#define DEACTIVATECMD call-script Stop();
-#include "StateChg.h"
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
 
 Create()
-	{
-	OK=1;
-	turn body to y-axis <45> NOW;
+{
+	Static_Var_2 = 1;
+	Static_Var_1 = 800;
+	turn body to y-axis <45.000000> now;
 	dont-shade body;
 	dont-shade wheel;
 	call-script InitState();
 	start-script SmokeUnit();
-	}
+}
 
 Activate()
-	{
-	start-script RequestState( ACTIVE );
-	}
+{
+	start-script RequestState(0);
+}
 
 Deactivate()
-	{
-	start-script RequestState( INACTIVE );
-	}
+{
+	start-script RequestState(1);
+}
 
 SweetSpot(piecenum)
-	{
-	piecenum=base;
-	}
+{
+	piecenum = base;
+}
 
-Killed( severity, corpsetype )
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
 	{
-	if (severity <= 25)
-		{
 		corpsetype = 1;
-		explode body type	BITMAPONLY | BITMAP1;
-		explode wheel type	BITMAPONLY | BITMAP2;
-		return( 0 );
-		}
-
-	if (severity <= 50)
-		{
-		corpsetype = 2;
-		explode body type	BITMAPONLY | BITMAP1;
-		explode wheel type	SHATTER | EXPLODE_ON_HIT | BITMAP2;
-		return( 0 );
-		}
-
-	if (severity <= 99)
-		{
-		corpsetype = 3;
-		explode body type	SHATTER | EXPLODE_ON_HIT | BITMAP1;
-		explode wheel type	BITMAPONLY | BITMAP2;
-		return( 0 );
-		}
-
-	corpsetype = 3;
-	explode body type	SHATTER | EXPLODE_ON_HIT | BITMAP1;
-	explode wheel type	SHATTER | EXPLODE_ON_HIT | BITMAP2;
-	return( 0 );
+		explode body type BITMAPONLY | BITMAP1;
+		explode wheel type BITMAPONLY | BITMAP2;
+		return (0);
 	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode body type BITMAPONLY | BITMAP1;
+		explode wheel type SHATTER | EXPLODE_ON_HIT | BITMAP2;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode body type SHATTER | EXPLODE_ON_HIT | BITMAP1;
+		explode wheel type BITMAPONLY | BITMAP2;
+		return (0);
+	}
+	corpsetype = 3;
+	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP1;
+	explode wheel type SHATTER | EXPLODE_ON_HIT | BITMAP2;
+}

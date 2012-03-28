@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 150680,
 	buildCostMetal = 18184,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 11,
+	buildingGroundDecalSizeY = 11,
+	buildingGroundDecalType = [[armbrtha1_aoplane.dds]],
 	buildPic = [[ARMBRTHA.png]],
 	buildTime = 185185,
 	canAttack = true,
@@ -49,6 +53,7 @@ local unitDef = {
 	standingfireorder = 0,
 	turnRate = 0,
 	unitname = [[armbrtha1]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo]],
 	customparams = {
@@ -88,11 +93,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=11,
-	buildingGroundDecalSizeY=11,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armbrtha1_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

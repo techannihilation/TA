@@ -11,6 +11,10 @@ local unitDef = {
 	buildCostEnergy = 10400,
 	buildCostMetal = 710,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 6,
+	buildingGroundDecalSizeY = 6,
+	buildingGroundDecalType = [[coruwadvms_aoplane.dds]],
 	buildPic = [[CORUWADVMS.png]],
 	buildTime = 20524,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -42,6 +46,7 @@ local unitDef = {
 	smoothAnim = true,
 	threed = 1,
 	unitname = [[coruwadvms]],
+	useBuildingGroundDecal = true,
 	version = 1.2,
 	workerTime = 0,
 	yardMap = [[oooooooooooooooo]],
@@ -62,11 +67,6 @@ local unitDef = {
 			[1] = [[stormtl2]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=6,
-	buildingGroundDecalSizeY=6,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[coruwadvms_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -75,6 +75,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[-8.0463180542 -4.28710937506e-05 2.1676940918]],
+		collisionvolumescales = [[49.8645172119 42.9171142578 64.3353881836]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = [[Advanced Metal Storage Wreckage]],
 		energy = 0,

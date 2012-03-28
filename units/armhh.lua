@@ -18,7 +18,6 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
-	cantBeTransported = true,
 	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	corpse = [[dead]],
 	defaultmissiontype = [[Standby]],
@@ -65,6 +64,9 @@ local unitDef = {
 	version = 3,
 	workerTime = 0,
 	zbuffer = 1,
+	customparams = {
+		RequireTech = [[Advanced T2 Unit Research Centre]],
+	},
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],

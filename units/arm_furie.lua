@@ -1,4 +1,4 @@
---- UNITDEF -- ARM_FURIE --
+-- UNITDEF -- ARM_FURIE --
 --------------------------------------------------------------------------------
 
 local unitName = "arm_furie"
@@ -21,8 +21,8 @@ local unitDef = {
 	cantBeTransported = true,
 	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	collisionvolumeoffsets = [[0 -10 -3]],
-	collisionvolumescales = [[54 69 40]],
-	collisionvolumetest = 0,
+	collisionvolumescales = [[57 75 40]],
+	collisionvolumetest = 1,
 	collisionvolumetype = [[Ell]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[dead]],
@@ -69,6 +69,9 @@ local unitDef = {
 	version = 3.1,
 	workerTime = 0,
 	zbuffer = 1,
+	customparams = {
+		RequireTech = [[Advanced T3 Unit Research Centre]],
+	},
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],

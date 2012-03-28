@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 77536,
 	buildCostMetal = 7187,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 10,
+	buildingGroundDecalSizeY = 10,
+	buildingGroundDecalType = [[corsilo_aoplane.dds]],
 	buildPic = [[CORSILO.png]],
 	buildTime = 181243,
 	canAttack = true,
@@ -48,6 +52,7 @@ local unitDef = {
 	standingfireorder = 0,
 	turnRate = 0,
 	unitname = [[corsilo]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[ooooooooooooooooooooooooooooooooooooooooooooooooo]],
 	featureDefs = nil,
@@ -79,11 +84,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=10,
-	buildingGroundDecalSizeY=10,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[corsilo_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -150,6 +150,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[0.0 -0.0182740600586 2.87522888184]],
+		collisionvolumescales = [[75.0 23.7250518799 77.7504577637]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

@@ -23,8 +23,8 @@ local weaponDef = {
 	waterweapon = 1,
 	weaponvelocity = 250,
 	damage = {
-		commanders = 1499,
-		default = 7500,
+		commanders = 1500,
+		default = 3500,
 		mines = 20,
 	},
 }

@@ -12,6 +12,10 @@ local unitDef = {
 	buildCostEnergy = 54500,
 	buildCostMetal = 1985,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 6,
+	buildingGroundDecalSizeY = 6,
+	buildingGroundDecalType = [[tllantinuke_aoplane.dds]],
 	buildTime = 98025,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
@@ -47,6 +51,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[tllantinuke]],
 	unitnumber = 860,
+	useBuildingGroundDecal = true,
 	version = 3.1,
 	workerTime = 0,
 	yardMap = [[oooo oooo oooo oooo]],
@@ -80,11 +85,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=6,
-	buildingGroundDecalSizeY=6,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tllantinuke_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------

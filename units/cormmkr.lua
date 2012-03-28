@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 53482,
 	buildCostMetal = 1264,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 6,
+	buildingGroundDecalSizeY = 6,
+	buildingGroundDecalType = [[cormmkr_aoplane.dds]],
 	buildPic = [[CORMMKR.png]],
 	buildTime = 48000,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -43,6 +47,7 @@ local unitDef = {
 	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[cormmkr]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooooooooooooooo]],
 	featureDefs = nil,
@@ -64,11 +69,6 @@ local unitDef = {
 			[1] = [[metlon2]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=6,
-	buildingGroundDecalSizeY=6,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[cormmkr_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -77,6 +77,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[0.0 -2.96020507804e-05 0.388763427734]],
+		collisionvolumescales = [[61.3712463379 53.8299407959 60.5937194824]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

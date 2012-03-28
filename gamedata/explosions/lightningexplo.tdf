@@ -1,0 +1,116 @@
+[lightningexplo]
+{
+
+
+
+
+	[smogcone6]
+	{
+	class=CSimpleParticleSystem;
+
+		[properties]
+		{
+		alwaysVisible=1;
+		Texture=diamondstar;
+
+		colorMap	= 1 1 1 1.0         1 1 1 1.0		      0 0 0 0.0;
+
+      		pos 		= 0, 1, 0;
+		gravity		= 0, 0, 0;
+	       	emitVector	= 0, 1, 0;
+		emitRot		= 90;
+		emitRotSpread	= 80;
+
+		sizeGrowth	= 0.5;
+		sizeMod		= 1.0;
+
+		airdrag			= 0.8;
+		particleLife		= 50;
+		particleLifeSpread	= 10;
+		numParticles		= 20;
+		particleSpeed		= 1;
+		particleSpeedSpread	= 0;
+		particleSize		= 5;
+		particleSizeSpread	= 8;
+
+		directional		= 0; 
+		useAirLos		= 1;
+		}
+	air=1;
+	ground=1;
+	water=1;
+	count=1;
+	}
+
+
+
+
+
+
+	[smogcone]
+	{
+	class=CSimpleParticleSystem;
+
+		[properties]
+		{
+		alwaysVisible=1;
+		Texture=lightb;
+
+		colorMap	= 0.3 0.3 0.8 0.01	0.3 0.4 0.8 0.01		0 0 0 0.0;
+
+      		pos 		= 0, 1, 0;
+		gravity		= 0, 0, 0;
+	       	emitVector	= 0, 1, 0;
+		emitRot		= 90;
+		emitRotSpread	= 20;
+
+		sizeGrowth	= 0.5;
+		sizeMod		= 1.0;
+
+		airdrag			= 0.8;
+		particleLife		= 50;
+		particleLifeSpread	= 10;
+		numParticles		= 3;
+		particleSpeed		= 1;
+		particleSpeedSpread	= 1;
+		particleSize		= 10;
+		particleSizeSpread	= 5;
+
+		directional		= 0; 
+		useAirLos		= 1;
+		}
+	air=1;
+	ground=1;
+	water=1;
+	count=1;
+	}
+
+
+
+
+
+
+
+
+	[Yuped]
+		{
+		class=CSimpleGroundFlash;
+		[properties]
+		{
+		  alwaysvisible=1;
+		  texture=groundflash;
+		  size=50;
+		  sizeGrowth=-0.3;
+		  ttl=100;
+	          colorMap=0.5 0.3 0.8 1 	0.3 0.4 0.8 1		0.0 0.0 0.0 0.0;
+		}
+    	air=1;
+    	ground=1;
+    	water=1;
+	count=1;
+	}
+
+
+
+}
+

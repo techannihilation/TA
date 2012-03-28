@@ -12,10 +12,14 @@ local unitDef = {
 	buildCostEnergy = 12000,
 	buildCostMetal = 5950,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 6,
+	buildingGroundDecalSizeY = 6,
+	buildingGroundDecalType = [[tllmohogeo_aoplane.dds]],
 	buildTime = 160000,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
-	corpse = [[tllgeo_dead]],
+	corpse = [[tllmohogeo_dead]],
 	description = [[Hazardous Geothermal Foundry Produces Energy/Metal]],
 	designation = [[]],
 	energyMake = 3000,
@@ -49,6 +53,7 @@ local unitDef = {
 	threed = 1,
 	unitname = [[tllmohogeo]],
 	unitnumber = 803,
+	useBuildingGroundDecal = true,
 	version = 1,
 	yardMap = [[GGGGGGGGGGGGGGGG]],
 	zbuffer = 1,
@@ -75,22 +80,17 @@ local unitDef = {
 			[1] = [[tllgeosel]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=6,
-	buildingGroundDecalSizeY=6,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[tllmohogeo_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
 
 local featureDefs = {
-	tllgeo_dead = {
+	tllmohogeo_dead = {
 		blocking = true,
 		category = [[tll_corpses]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = [[wreckage]],
-		featureDead = [[tllmohogeo_dead]],
+		featureDead = [[tllmohogeo_heap]],
 		featurereclamate = [[smudge01]],
 		footprintX = 4,
 		footprintZ = 4,
@@ -102,7 +102,7 @@ local featureDefs = {
 		seqnamereclamate = [[tree1reclamate]],
 		world = [[All Worlds]],
 	},
-	tllgeo_heap = {
+	tllmohogeo_heap = {
 		blocking = false,
 		category = [[heaps]],
 		damage = 0.3600 * unitDef.maxDamage,

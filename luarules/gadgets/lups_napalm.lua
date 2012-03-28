@@ -20,6 +20,8 @@ local FIRE_WEAPONS = {
   ["armraven_exp_heavyrocket"] = true,
   ["armraven1_exp_heavyrocket1"] = true,
   ["corsb_seaadvbomb"] = true,
+  ["corpyrox_pyro_rocket"] = true,
+
 }
 
 if (gadgetHandler:IsSyncedCode()) then

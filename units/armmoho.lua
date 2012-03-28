@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 7214,
 	buildCostMetal = 582,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 8,
+	buildingGroundDecalSizeY = 8,
+	buildingGroundDecalType = [[armmoho_aoplane.dds]],
 	buildPic = [[ARMMOHO.png]],
 	buildTime = 14938,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
@@ -45,6 +49,7 @@ local unitDef = {
 	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[armmoho]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[ooooooooooooooooooooooooo]],
 	featureDefs = nil,
@@ -69,11 +74,6 @@ local unitDef = {
 			[1] = [[mohoon1]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=8,
-	buildingGroundDecalSizeY=8,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armmoho_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -82,6 +82,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[2.04105377197 -0.0170824951172 -6.86492156982]],
+		collisionvolumescales = [[77.4562835693 39.9696350098 91.8548431396]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

@@ -11,7 +11,11 @@ local unitDef = {
 	buildAngle = 4096,
 	buildCostEnergy = 6363,
 	buildCostMetal = 698,
-	buildPic = [[ARMSD.png]],
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 6,
+	buildingGroundDecalSizeY = 6,
+	buildingGroundDecalType = [[corsd_aoplane.dds]],
+	buildPic = [[CORSD.png]],
 	buildTime = 11955,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
 	corpse = [[DEAD]],
@@ -37,6 +41,7 @@ local unitDef = {
 	side = [[CORE]],
 	sightDistance = 225,
 	unitname = [[corsd]],
+	useBuildingGroundDecal = true,
 	yardMap = [[oooooooooooooooo]],
 	featureDefs = nil,
 	sounds = {
@@ -57,11 +62,6 @@ local unitDef = {
 			[1] = [[targsel2]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=6,
-	buildingGroundDecalSizeY=6,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[corsd_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -70,6 +70,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[-1.15772247314 -1.86200052979 2.43579101563]],
+		collisionvolumescales = [[68.8967437744 12.3805389404 66.8254699707]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

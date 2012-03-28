@@ -13,6 +13,10 @@ local unitDef = {
 	buildCostEnergy = 637,
 	buildCostMetal = 81,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 4,
+	buildingGroundDecalSizeY = 4,
+	buildingGroundDecalType = [[armllt_aoplane.dds]],
 	buildPic = [[ARMLLT.png]],
 	buildTime = 2662,
 	canAttack = true,
@@ -51,6 +55,7 @@ local unitDef = {
 	standingfireorder = 2,
 	turnRate = 0,
 	unitname = [[armllt]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooo]],
 	featureDefs = nil,
@@ -84,11 +89,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=4,
-	buildingGroundDecalSizeY=4,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[armllt_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -140,6 +140,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[0 0 0]],
+		collisionvolumescales = [[32 40 32]],
+		collisionvolumetype = [[CylY]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

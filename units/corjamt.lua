@@ -14,6 +14,10 @@ local unitDef = {
 	buildCostEnergy = 4791,
 	buildCostMetal = 109,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 4,
+	buildingGroundDecalSizeY = 4,
+	buildingGroundDecalType = [[corjamt_aoplane.dds]],
 	buildPic = [[CORJAMT.png]],
 	buildTime = 4577,
 	canAttack = false,
@@ -48,6 +52,7 @@ local unitDef = {
 	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[corjamt]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooo]],
 	featureDefs = nil,
@@ -72,11 +77,6 @@ local unitDef = {
 			[1] = [[radjam2]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=4,
-	buildingGroundDecalSizeY=4,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[corjamt_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -85,6 +85,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[0.0 2.87750124512 -7.02084350586]],
+		collisionvolumescales = [[27.806640625 26.0538024902 41.8483276367]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,

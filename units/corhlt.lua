@@ -13,6 +13,10 @@ local unitDef = {
 	buildCostEnergy = 4443,
 	buildCostMetal = 449,
 	builder = false,
+	buildingGroundDecalDecaySpeed = 30,
+	buildingGroundDecalSizeX = 4,
+	buildingGroundDecalSizeY = 4,
+	buildingGroundDecalType = [[corhlt_aoplane.dds]],
 	buildPic = [[CORHLT.png]],
 	buildTime = 9622,
 	canAttack = true,
@@ -50,6 +54,7 @@ local unitDef = {
 	standingfireorder = 2,
 	turnRate = 0,
 	unitname = [[corhlt]],
+	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooo]],
 	featureDefs = nil,
@@ -84,11 +89,6 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
-	buildingGroundDecalDecaySpeed=30,
-	buildingGroundDecalSizeX=4,
-	buildingGroundDecalSizeY=4,
-	useBuildingGroundDecal = true,
-	buildingGroundDecalType=[[corhlt_aoplane.dds]],
 }
 
 --------------------------------------------------------------------------------
@@ -139,6 +139,9 @@ local featureDefs = {
 	DEAD = {
 		blocking = true,
 		category = [[corpses]],
+		collisionvolumeoffsets = [[5.89052581787 0.209030175781 17.5331115723]],
+		collisionvolumescales = [[47.0663604736 80.2818603516 63.6924743652]],
+		collisionvolumetype = [[Box]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,
