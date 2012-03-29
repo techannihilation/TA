@@ -1,0 +1,48 @@
+
+UNITS MADE BY KROGOTH86:
+
+You may use all of those units in your mods but you have to give proper credits to me...
+
+Arm:
+"Altered" Vanguard
+Advanced All-Terrain Construction KBot
+Advanced Metal Maker
+Advanced Tidal Generator
+Advanced Underwater Metal Maker
+Advanced Wind Generator
+All-Terrain Construction KBot
+All-Terrain Transport K-Bot
+Cracker (T1 Artillery KBot)
+Crowd (T2 Antispam)
+Disgorger (T2 Hover Depthcharge Launcher)
+Extreme Air Plant
+Extreme Construction Aircraft
+Extreme Construction Mech (legs taken from Core Defiler by TA Arsenal Network)
+Light Fusion Power Plant
+Otter (T2 Hover Artillery)
+Serpahim (T2 Hover AA)
+Smasher (T1 Antispam Turret)
+VHLT (T2 Laser Turret)
+Weaver (T3 All-Terrain-Mech)
+
+Core:
+"Altered" Juggernaut
+Advanced Metal Maker
+Advanced Tidal Generator
+Advanced Underwater Metal Maker
+Advanced Wind Generator
+Airmail (T3 Flying Bomb)
+All-Terrain Transport K-Bot
+Extreme Air Plant
+Extreme Construction Aircraft
+Extreme Construction Mech (legs taken from Core Defiler by TA Arsenal Network)
+Extreme Construction Sub
+Horde (T2 Antispam)
+Light Fusion Power Plant
+Mole (T2 Vehicle Assister)
+Punkie (T1 Scout KBot) (Flea counterpart)
+Rocketeer (T1 Artillery KBot)
+Striker (T2 Fast Raid Tank)
+Thief (T2 Stealth Tank)
+Thud MK-II (T3 Artillery Mech)
+VHLT (T2 Laser Turret)
