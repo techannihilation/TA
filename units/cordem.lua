@@ -122,7 +122,7 @@ local weaponDefs = {
 		noExplode = true,
 		noradar = 1,
 		range = 500,
-		reloadtime = 0.01,
+		reloadtime = 0.03,
 		renderType = 5,
 		rgbColor = [[1 0.95 0.9]],
 		rgbColor2 = [[0.9 0.85 0.8]],
@@ -138,7 +138,7 @@ local weaponDefs = {
 		weaponType = [[Flame]],
 		weaponVelocity = 300,
 		damage = {
-			default = 50,
+			default = 12,
 			subs = 5,
 		},
 	},
