@@ -319,7 +319,11 @@ function widget:DrawScreen()
 	end
 	
 	-- Units that are still building
-	if buildProg and (buildProg < 1.0) then
+	if buildProg and buildProg < 1 then
+		
+		local myTeamID = spGetMyTeamID()
+		local mCur, mStor, mPull, mInc, mExp, mShare, mSent, mRec = spGetTeamResources(myTeamID, 'metal')
+		local eCur, eStor, ePull, eInc, eExp, eShare, eSent, eRec = spGetTeamResources(myTeamID, 'energy')
 		
 		local mTotal = uDef.metalCost
 		local eTotal = uDef.energyCost
