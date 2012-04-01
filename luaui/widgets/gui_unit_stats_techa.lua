@@ -36,8 +36,6 @@ local pplants = {
 	["aafus"] = true,
 	["afusionplant"] = true,
 	["amgeo"] = true,
-	["apocketfusion"] = true,
-	["arm_wind_generator"] = true,
 	["armadvsol"] = true,
 	["armckfus"] = true,
 	["armfor"] = true,
@@ -55,7 +53,6 @@ local pplants = {
 	["coradvsol"] = true,
 	["corbhmth"] = true,
 	["corbhmth1"] = true,
-	["core_wind_generator"] = true,
 	["corfus"] = true,
 	["corgeo"] = true,
 	["corsfus"] = true,
@@ -63,7 +60,6 @@ local pplants = {
 	["cortide"] = true,
 	["coruwfus"] = true,
 	["corwin"] = true,
-	["cpocketfusion"] = true,
 	["crnns"] = true,
 	["tlladvsolar"] = true,
 	["tllatidal"] = true,
@@ -81,6 +77,10 @@ local pplants = {
 	["armawin"] = true,
 	["coratidal"] = true,
 	["armatidal"] = true,
+	["armlightfus"] = true,
+	["armuwlightfus"] = true,
+	["corlightfus"] = true,
+	["coruwlightfus"] = true,
 }
 
 ------------------------------------------------------------------------------------
