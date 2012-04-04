@@ -56,7 +56,8 @@ local unitDef = {
 		[3] = [[cormex1]],
 		[4] = [[corgen]],
 		[5] = [[corlightfus]],
-		[6] = [[coruwlightfus]],
+		[6] = [[coratidal]],
+		[7] = [[coruwlightfus]],
 	},
 	featureDefs = nil,
 	sounds = {
