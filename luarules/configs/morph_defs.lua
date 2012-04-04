@@ -266,6 +266,7 @@ local morphDefs = {
       armpw = {
 		into = 'armpw1',
 		time = 10,
+		xp = 0.01,
 	},
       armrock = {
               {
@@ -307,6 +308,7 @@ local morphDefs = {
       corak = {
 		into = 'corak1',
 		time = 10,
+		xp = 0.01,
 	},
       corstorm = {
                {
