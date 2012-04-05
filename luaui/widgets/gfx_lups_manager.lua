@@ -92,12 +92,6 @@ local UnitEffects = {
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,80.9,-10}, size=39.5, precision=22, repeatEffect=true}},
     {class='GroundFlash',options=groundFlashBigRed},
   },
- [UnitDefNames["cpocketfusion"].id] = {
-    {class='Bursts',options=cpocketfusionBursts},
-    {class='ShieldSphere',options=cpocketfusionShieldSphere},
-    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,16.9,-3}, size=8.5, precision=22, repeatEffect=true}},
-    {class='GroundFlash',options=groundFlashSmallBlue},
- },
  [UnitDefNames["tllmedfusion"].id] = {
     {class='Bursts',options=tllmedfusionBursts},
     {class='ShieldSphere',options=tllmedfusionSphere},

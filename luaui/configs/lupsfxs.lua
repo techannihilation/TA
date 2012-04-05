@@ -140,20 +140,6 @@ cfusionplantBursts = {
 
 }
 
-cpocketfusionBursts = {
-  life       = math.huge,
-  pos        = {0,16,-3},
-  rotSpeed   = 0.5,
-  rotSpread  = 1,
-  arc        = 90,
-  arcSpread  = 0,
-  size       = 14,
-  sizeSpread = 10,
-  colormap   = { {0.5, 0.5, 1.0, 0.2} },
-  directional= true,
-  repeatEffect = true,
-  count      = 50,
-}
 crnnsBursts = {
   life       = math.huge,
   pos        = {-9,26,0},
@@ -283,16 +269,6 @@ cfusionplantShieldSphere = {
   size=38,
   colormap1 = { {1.0, 0.2, 0.2, 0.75},{1.0, 0.2, 0.3, 1.0},{1.0, 0.2, 0.2, 1.0},{1.0, 0.2, 0.3, 0.75} },
   colormap2 = { {0.3, 0.0, 0.0, 0.3},{0.3, 0.0, 0.0, 0.45},{0.3, 0.0, 0.0, 0.45},{0.3, 0.0, 0.0, 0.4} },
-  repeatEffect=true
-}
-
-cpocketfusionShieldSphere = {
-  layer=-35,
-  life=20,
-  pos={0,16.9,-3},
-  size=8,
-  colormap1 = { {0.9, 0.9, 1, 0.75},{0.9, 0.9, 1, 1.0},{0.9, 0.9, 1, 1.0},{0.9, 0.9, 1, 0.75} },
-  colormap2 = { {0.2, 0.2, 1, 0.7},{0.2, 0.2, 1, 0.75},{0.2, 0.2, 1, 0.75},{0.2, 0.2, 1, 0.7} },
   repeatEffect=true
 }
 
