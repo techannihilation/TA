@@ -109,7 +109,6 @@ local fusion_units = {
 	[UnitDefNames["crnns"].id] = true,
 	[UnitDefNames["tllcoldfus"].id] = true,
 	[UnitDefNames["tllmegacoldfus"].id] = true,
-	[UnitDefNames["armuwfus1"].id] = true,
 	[UnitDefNames["corsfus"].id] = true
 }
 

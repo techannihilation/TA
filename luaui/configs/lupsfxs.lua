@@ -272,27 +272,6 @@ cfusionplantShieldSphere = {
   repeatEffect=true
 }
 
-armuwfus1ShieldSphere = {
-  layer=-35,
-  life=20,
-  pos={34,74,-11},
-  size=9,
- colormap1 = { {0.7, 0.7, 1, 0.75},{0.7, 0.7, 1, 1.0},{0.8, 0.7, 1, 1.0},{0.8, 0.7, 1, 0.75} },
-  colormap2 = { {0.1, 0.1, 1, 0.7},{0.1, 0.1, 1, 0.75},{0.1, 0.1, 1, 0.75},{0.1, 0.1, 1, 0.7} },
-  repeatEffect=true
-}
-
-armuwfus1aShieldSphere = {
-  layer=-35,
-  life=20,
-  pos={-34,74,-11},
-  size=9,
-  colormap1 = { {0.7, 0.7, 1, 0.75},{0.7, 0.7, 1, 1.0},{0.8, 0.7, 1, 1.0},{0.8, 0.7, 1, 0.75} },
-  colormap2 = { {0.1, 0.1, 1, 0.7},{0.1, 0.1, 1, 0.75},{0.1, 0.1, 1, 0.75},{0.1, 0.1, 1, 0.7} },
-  repeatEffect=true
-
-}
-
 crnnsShieldSphere = {
   layer=-35,
   life=20,

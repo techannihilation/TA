@@ -112,12 +112,6 @@ local UnitEffects = {
     {class='ShieldSphere',options=crnnsShieldSphere},
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={-9,26.9,0}, size=29, precision=22, repeatEffect=true}},
   },
-[UnitDefNames["armuwfus1"].id] = {
-    {class='ShieldSphere',options=armuwfus1ShieldSphere},
-    {class='ShieldSphere',options=armuwfus1aShieldSphere},
-    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={-34,74,-11}, size=9.2, precision=22, repeatEffect=true}},
-    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={34,74,-11}, size=9.2, precision=22, repeatEffect=true}},
-  },
     [UnitDefNames["aafus"].id] = {
     {class='SimpleParticles2', options=MergeTable({pos={-38,70,-10}, delay=10, lifeSpread=300},sparks)},
     {class='SimpleParticles2', options=MergeTable({pos={21,70,-10}, delay=60, lifeSpread=300},sparks)},
