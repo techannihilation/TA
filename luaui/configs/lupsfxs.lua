@@ -214,19 +214,15 @@ corjamtBursts = {
   repeatEffect = true,
   count      = 20,
 }
-armamakerBursts = {
+armamakerEffect = {
   life       = math.huge,
   pos        = {0,24,0},
-  rotSpeed   = .1,
-  rotSpread  = 1,
-  arc        = 1,
-  arcSpread  = 1,
-  size       = 4,
+  size       = 30,
   sizeSpread = 7,
-  colormap   = { {0.8, 0.8, 0.4, 0.3} },
-  --directional= true,
+  colormap   = { {0.8, 0.8, 0.4, 0.01} },
   onActive   = true,
-  count      = 150,
+  texture    = 'bitmaps/flash1.TGA',
+
 }
 
 ----------------------------------------------------------------------------
