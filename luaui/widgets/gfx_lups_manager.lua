@@ -164,7 +164,9 @@ local UnitEffects = {
     {class='SimpleParticles2', options=MergeTable({pos={-12,75,-37}, delay=30, lifeSpread=30},sparksr3)},
     {class='SimpleParticles2', options=MergeTable({pos={-12,90,-37}, delay=45, lifeSpread=30},sparksr3)},
   },
-
+ [UnitDefNames["armamaker"].id] = {
+       {class='Bursts',options=armamakerBursts},
+  },
   --// ENERGY STORAGE //--------------------
   
  [UnitDefNames["corestor"].id] = {

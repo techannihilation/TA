@@ -214,19 +214,19 @@ corjamtBursts = {
   repeatEffect = true,
   count      = 20,
 }
-armlabBursts = {
+armamakerBursts = {
   life       = math.huge,
-  pos        = {0,18,0},
-  rotSpeed   = 0.5,
+  pos        = {0,24,0},
+  rotSpeed   = .1,
   rotSpread  = 1,
-  arc        = 90,
-  arcSpread  = 0,
-  size       = 5,
-  sizeSpread = 10,
-  colormap   = { {0.1, 0.6, 0.2, 0.3} },
-  directional= true,
-  repeatEffect = true,
-  count      = 50,
+  arc        = 1,
+  arcSpread  = 1,
+  size       = 4,
+  sizeSpread = 7,
+  colormap   = { {0.8, 0.8, 0.4, 0.3} },
+  --directional= true,
+  onActive   = true,
+  count      = 150,
 }
 
 ----------------------------------------------------------------------------
