@@ -88,6 +88,10 @@ local unitDef = {
 			def = [[ARMROTTWEILER_CANNON]],
 			onlyTargetCategory = [[NOTVTOL]],
 		},
+		[3] = {
+			def = [[ARMROTTWEILER_MG]],
+			onlyTargetCategory = [[NOTVTOL]],
+		},
 	},
 }
 
@@ -95,6 +99,33 @@ local unitDef = {
 
 local weaponDefs = {
 	ARMROTTWEILER_CANNON = {
+		areaOfEffect = 160,
+		burnblow = true,
+		craterBoost = 0,
+		craterMult = 0,
+		edgeEffectiveness = 0.75,
+		explosionGenerator = [[custom:FLASH64]],
+		impulseBoost = 0.55,
+		impulseFactor = 0.55,
+		lineOfSight = true,
+		name = [[RiotCannon]],
+		noSelfDamage = true,
+		range = 325,
+		reloadtime = 2.6,
+		renderType = 4,
+		soundHit = [[xplosml3]],
+		soundStart = [[canlite3]],
+		startsmoke = 1,
+		turret = true,
+		weaponType = [[Cannon]],
+		weaponVelocity = 550,
+		damage = {
+			commanders = 100,
+			default = 290,
+			subs = 5,
+		},
+	},
+	ARMROTTWEILER_MG = {
 		areaOfEffect = 160,
 		burnblow = true,
 		craterBoost = 0,
