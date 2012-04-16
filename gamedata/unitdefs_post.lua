@@ -215,11 +215,17 @@ local Nanos = {
 
 if (Spring.GetModOptions) then
 	local modOptions = Spring.GetModOptions()
+	
+   if (modOptions.mo_storageowner == "com") then
+    for name, ud in pairs(UnitDefs) do  
+     if (name == "armcom" or name == "corcom") then
+      ud.energyStorage = modOptions.startenergy or 1000
+      ud.metalStorage = modOptions.startmetal or 1000
+     end
+    end
+  end
+
 	for name, ud in pairs(UnitDefs) do  
-		if (Commanders[ud.unitname]) then
-			ud.energystorage = modOptions.startenergy or 1000
-			ud.metalstorage = modOptions.startmetal or 1000
-		end
 		if (not Commanders[ud.unitname]) then
 			ud.mass = math.max(ud.maxdamage / 6.0, ud.buildcostmetal)
 		end
