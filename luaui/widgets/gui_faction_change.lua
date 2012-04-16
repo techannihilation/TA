@@ -158,16 +158,28 @@ function widget:MousePress(mx, my, mButton)
             if mx < px + 64 then
                 if spGetTeamRulesParam(myTeamID, 'startUnit') ~= armcom then
                     spSendLuaRulesMsg(changeStartUnitPrefix .. armcom)
+		      -- don't use caching, so we're sure the function has been loaded, also, it's called so rarely that doesn't matter if it's slow 
+		      if WG["faction_change"] then 
+			 WG["faction_change"](armcom) 
+	           end 
                 end
                 return true
             elseif mx < px + 128 then
                 if spGetTeamRulesParam(myTeamID, 'startUnit') ~= corcom then
                     spSendLuaRulesMsg(changeStartUnitPrefix .. corcom)
+		    		      -- don't use caching, so we're sure the function has been loaded, also, it's called so rarely that doesn't matter if it's slow 
+		      if WG["faction_change"] then 
+			 WG["faction_change"](corcom) 
+	           end 
                 end
                 return true
             elseif mx < px + 192 then
                 if spGetTeamRulesParam(myTeamID, 'startUnit') ~= tllcom then
                     spSendLuaRulesMsg(changeStartUnitPrefix .. tllcom)
+		    		      -- don't use caching, so we're sure the function has been loaded, also, it's called so rarely that doesn't matter if it's slow 
+		      if WG["faction_change"] then 
+			 WG["faction_change"](tllcom) 
+	           end 
                 end
                 return true
             end
