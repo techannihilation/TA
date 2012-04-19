@@ -7,6 +7,7 @@ local unitName = "tllcoyote"
 
 local unitDef = {
 	acceleration = 0.055,
+	airsightdistance = 650,
 	bmcode = 1,
 	brakeRate = 0.01203,
 	buildCostEnergy = 2150,

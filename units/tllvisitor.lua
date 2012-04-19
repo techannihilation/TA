@@ -7,6 +7,7 @@ local unitName = "tllvisitor"
 
 local unitDef = {
 	acceleration = 0.012,
+	airsightdistance = 790,
 	bmcode = 1,
 	brakeRate = 0.02,
 	buildCostEnergy = 8054,

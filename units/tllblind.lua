@@ -7,6 +7,7 @@ local unitName = "tllblind"
 
 local unitDef = {
 	acceleration = 0.06,
+	airsightdistance = 920,
 	bmcode = 1,
 	brakeRate = 0.15,
 	buildCostEnergy = 45875,

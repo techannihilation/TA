@@ -7,6 +7,7 @@ local unitName = "tllsting"
 
 local unitDef = {
 	acceleration = 0.0115,
+	airsightdistance = 1000,
 	bmcode = 1,
 	brakeRate = 0.018,
 	buildAngle = 16384,
