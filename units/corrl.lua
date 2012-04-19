@@ -7,6 +7,7 @@ local unitName = "corrl"
 
 local unitDef = {
 	acceleration = 0,
+	airsightdistance = 700,
 	bmcode = 0,
 	brakeRate = 0,
 	buildCostEnergy = 805,

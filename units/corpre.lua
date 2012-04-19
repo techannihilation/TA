@@ -6,6 +6,7 @@ local unitName = "corpre"
 --------------------------------------------------------------------------------
 
 local unitDef = {
+	airsightdistance = 1000,
 	bmcode = 0,
 	buildAngle = 2000,
 	buildCostEnergy = 1231120,
