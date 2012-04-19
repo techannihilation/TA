@@ -6,6 +6,7 @@ local unitName = "tllflak"
 --------------------------------------------------------------------------------
 
 local unitDef = {
+	airsightdistance = 1100,
 	bmcode = 0,
 	buildAngle = 8192,
 	buildCostEnergy = 8425,
