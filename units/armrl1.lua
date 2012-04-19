@@ -7,6 +7,7 @@ local unitName = "armrl1"
 
 local unitDef = {
 	acceleration = 0,
+	airsightdistance = 920,
 	bmcode = 0,
 	brakeRate = 0,
 	buildCostEnergy = 843,

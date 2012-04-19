@@ -7,6 +7,7 @@ local unitName = "packo"
 
 local unitDef = {
 	acceleration = 0,
+	airsightdistance = 1050,	
 	bmcode = 0,
 	brakeRate = 0,
 	buildAngle = 8192,

@@ -7,6 +7,7 @@ local unitName = "armcir"
 
 local unitDef = {
 	acceleration = 0,
+	airsightdistance = 1100,	
 	bmcode = 0,
 	brakeRate = 0,
 	buildAngle = 65536,
