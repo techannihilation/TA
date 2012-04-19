@@ -7,6 +7,7 @@ local unitName = "armiguana"
 
 local unitDef = {
 	acceleration = 0.04,
+	airsightdistance = 1000,
 	bmcode = 1,
 	brakeRate = 0.1,
 	buildCostEnergy = 14007,

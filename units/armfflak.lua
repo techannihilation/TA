@@ -6,6 +6,7 @@ local unitName = "armfflak"
 --------------------------------------------------------------------------------
 
 local unitDef = {
+	airsightdistance = 1000,
 	acceleration = 0,
 	bmcode = 0,
 	brakeRate = 0,

@@ -7,6 +7,7 @@ local unitName = "armbanth"
 
 local unitDef = {
 	acceleration = 0.103,
+	airsightdistance = 800,
 	bmcode = 1,
 	brakeRate = 0.218,
 	buildCostEnergy = 167949,

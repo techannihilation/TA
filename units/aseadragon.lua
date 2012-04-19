@@ -6,6 +6,7 @@ local unitName = "aseadragon"
 --------------------------------------------------------------------------------
 
 local unitDef = {
+	airsightdistance = 1075,
 	acceleration = 0.028,
 	activateWhenBuilt = true,
 	bmcode = 1,
