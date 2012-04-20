@@ -47,7 +47,7 @@ local unitDef = {
 	unitname = [[coratidal]],
 	waterline = 16,
 	workerTime = 0,
-	yardMap = [[wwwwww wwwwww wwwwwww wwwwww wwwwww wwwwww]],
+	yardMap = [[wwwwww wwwwww wwwwww wwwwww wwwwww wwwwww]],
 	customParams = {
 		energyMultiplier = 5,
 	},
