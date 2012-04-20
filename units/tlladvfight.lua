@@ -7,6 +7,7 @@ local unitName = "tlladvfight"
 
 local unitDef = {
 	acceleration = 0.6,
+	airsightdistance = 800,
 	bankscale = 1,
 	bmcode = 1,
 	brakeRate = 9,

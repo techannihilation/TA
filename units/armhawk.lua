@@ -7,6 +7,7 @@ local unitName = "armhawk"
 
 local unitDef = {
 	acceleration = 0.48,
+	airsightdistance = 800,
 	bankscale = 1,
 	bmcode = 1,
 	brakeRate = 11.25,

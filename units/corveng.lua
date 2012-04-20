@@ -7,6 +7,7 @@ local unitName = "corveng"
 
 local unitDef = {
 	acceleration = 2.5,
+	airsightdistance = 700,
 	bankscale = 1,
 	bmcode = 1,
 	brakeRate = 2.5,
