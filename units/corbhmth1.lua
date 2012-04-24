@@ -57,6 +57,11 @@ local unitDef = {
 	workerTime = 0,
 	yardMap = [[ooooo ooooo ooGoo ooooo ooooo]],
 	featureDefs = nil,
+	sfxtypes = {
+		explosiongenerators = {
+			[1] = [[custom:muzzleflaretiny]],
+		},
+	},
 	sounds = {
 		canceldestruct = [[cancel2]],
 		underattack = [[warning1]],
