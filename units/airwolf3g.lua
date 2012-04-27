@@ -7,6 +7,7 @@ local unitName = "airwolf3g"
 
 local unitDef = {
 	acceleration = 3.345,
+	airsightdistance = 900,
 	bankscale = 1,
 	bmcode = 1,
 	brakeRate = 7,

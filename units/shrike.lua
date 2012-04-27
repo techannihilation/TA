@@ -7,6 +7,7 @@ local unitName = "shrike"
 
 local unitDef = {
 	acceleration = 4.45,
+	airsightdistance = 900,
 	bankscale = 1,
 	bmcode = 1,
 	brakeRate = 9,

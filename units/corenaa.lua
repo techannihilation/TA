@@ -8,6 +8,7 @@ local unitName = "corenaa"
 local unitDef = {
 	acceleration = 0,
 	activateWhenBuilt = true,
+	airsightdistance = 1000,
 	bmcode = 0,
 	brakeRate = 0,
 	buildAngle = 16384,

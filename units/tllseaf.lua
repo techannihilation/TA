@@ -7,6 +7,7 @@ local unitName = "tllseaf"
 
 local unitDef = {
 	acceleration = 0.6,
+	airsightdistance = 700,
 	amphibious = 1,
 	bmcode = 1,
 	brakeRate = 4.2,

@@ -47,7 +47,7 @@ local unitDef = {
 	unitname = [[armatidal]],
 	waterline = 16,
 	workerTime = 0,
-	yardMap = [[wwwwwwwww]],
+	yardMap = [[wwwwww wwwwww wwwwww wwwwww wwwwww wwwwww]],
 	customParams = {
 		energyMultiplier = 5,
 	},

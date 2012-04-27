@@ -7,6 +7,7 @@ local unitName = "corkarg"
 
 local unitDef = {
 	acceleration = 0.096,
+	airsightdistance = 600,
 	bmcode = 1,
 	brakeRate = 0.238,
 	buildCostEnergy = 58764,

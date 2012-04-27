@@ -7,6 +7,7 @@ local unitName = "corjeag"
 
 local unitDef = {
 	acceleration = 0.028,
+	airsightdistance = 760,
 	bmcode = 1,
 	brakeRate = 0.012,
 	buildCostEnergy = 2150,
