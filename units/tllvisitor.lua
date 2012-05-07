@@ -146,6 +146,7 @@ local weaponDefs = {
 	},
 	VISITOR_VPULSE = {
 		areaOfEffect = 126,
+		cegTag = [[TLLRAVENTRAIL]],
 		explosionart = [[lrptexplo]],
 		explosiongaf = [[lrptexplo]],
 		fireStarter = 100,
@@ -164,7 +165,7 @@ local weaponDefs = {
 		renderType = 1,
 		selfprop = true,
 		smokedelay = 0.5,
-		smokeTrail = true,
+		smokeTrail = false,
 		soundHit = [[vpulsehit]],
 		soundStart = [[vpulsefire]],
 		startsmoke = 1,
