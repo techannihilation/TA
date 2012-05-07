@@ -54,7 +54,7 @@
 		count=1;
 	}
 }
-[RAVENTRAIL]
+[TLLRAVENTRAIL]
 {
 	usedefaultexplosions=0;	
 
