@@ -27,7 +27,7 @@ local unitDef = {
 	collisionVolumeType = [[ellipsoid]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
-	description = [[Anti Radar/Jammer/Minefield Weapon]],
+	description = [[Anti Minefield Weapon]],
 	energyStorage = 0,
 	energyUse = 0,
 	explodeAs = [[ESTOR_BUILDINGEX]],
@@ -133,6 +133,7 @@ local weaponDefs = {
 		damage = {
 			commanders = 1,
 			default = 1,
+			mines = 1000,
 			subs = 5,
 		},
 	},
