@@ -64,6 +64,7 @@ local unitDef = {
 	steeringmode = 1,
 	threed = 1,
 	turnRate = 421,
+	turninplace = 0,
 	unitname = [[tllcs]],
 	unitnumber = 852,
 	version = 3.1,
