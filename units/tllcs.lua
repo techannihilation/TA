@@ -6,9 +6,9 @@ local unitName = "tllcs"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.02,
+	acceleration = 0.04,
 	bmcode = 1,
-	brakeRate = 0.038,
+	brakeRate = 0.25,
 	buildCostEnergy = 2455,
 	buildCostMetal = 275,
 	buildDistance = 265,
@@ -63,7 +63,7 @@ local unitDef = {
 	standingmoveorder = 1,
 	steeringmode = 1,
 	threed = 1,
-	turnRate = 321,
+	turnRate = 421,
 	unitname = [[tllcs]],
 	unitnumber = 852,
 	version = 3.1,
