@@ -6,9 +6,9 @@ local unitName = "tllsalamander"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.02,
+	acceleration = 0.08,
 	bmcode = 1,
-	brakeRate = 0.0085,
+	brakeRate = 0.28,
 	buildCostEnergy = 1425,
 	buildCostMetal = 428,
 	builder = false,

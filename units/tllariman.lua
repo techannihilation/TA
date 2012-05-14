@@ -6,9 +6,9 @@ local unitName = "tllariman"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.025,
+	acceleration = 0.125,
 	bmcode = 1,
-	brakeRate = 0.01,
+	brakeRate = 0.11,
 	buildCostEnergy = 1106,
 	buildCostMetal = 322,
 	builder = false,

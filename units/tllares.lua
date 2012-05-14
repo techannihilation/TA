@@ -6,9 +6,9 @@ local unitName = "tllares"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.05,
+	acceleration = 0.17,
 	bmcode = 1,
-	brakeRate = 0.02,
+	brakeRate = 0.35,
 	buildCostEnergy = 221,
 	buildCostMetal = 152,
 	builder = false,
