@@ -6,11 +6,11 @@ local unitName = "tllboat2"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.05,
+	acceleration = 0.10,
 	activateWhenBuilt = true,
 	airsightdistance = 1000,
 	bmcode = 1,
-	brakeRate = 0.021,
+	brakeRate = 0.11,
 	buildAngle = 16384,
 	buildCostEnergy = 6607,
 	buildCostMetal = 921,
@@ -58,7 +58,7 @@ local unitDef = {
 	standingmoveorder = 2,
 	steeringmode = 1,
 	threed = 1,
-	turnRate = 215,
+	turnRate = 345,
 	unitname = [[tllboat2]],
 	unitnumber = 165,
 	version = 3.1,

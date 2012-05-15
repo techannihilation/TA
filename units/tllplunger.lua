@@ -6,7 +6,7 @@ local unitName = "tllplunger"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.02,
+	acceleration = 0.12,
 	activateWhenBuilt = true,
 	bmcode = 1,
 	brakeRate = 0.15,
@@ -56,7 +56,7 @@ local unitDef = {
 	standingmoveorder = 2,
 	steeringmode = 1,
 	threed = 1,
-	turnRate = 256,
+	turnRate = 356,
 	unitname = [[tllplunger]],
 	unitnumber = 895,
 	upright = true,
