@@ -6,10 +6,10 @@ local unitName = "tllsting"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.0115,
+	acceleration = 0.0215,
 	airsightdistance = 1000,
 	bmcode = 1,
-	brakeRate = 0.018,
+	brakeRate = 0.18,
 	buildAngle = 16384,
 	buildCostEnergy = 18281,
 	buildCostMetal = 1385,
@@ -54,7 +54,7 @@ local unitDef = {
 	standingmoveorder = 1,
 	steeringmode = 1,
 	threed = 1,
-	turnRate = 150,
+	turnRate = 350,
 	unitname = [[tllsting]],
 	unitnumber = 904,
 	version = 3.1,

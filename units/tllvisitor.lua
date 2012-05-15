@@ -6,10 +6,10 @@ local unitName = "tllvisitor"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.012,
+	acceleration = 0.042,
 	airsightdistance = 790,
 	bmcode = 1,
-	brakeRate = 0.02,
+	brakeRate = 0.12,
 	buildCostEnergy = 8054,
 	buildCostMetal = 2485,
 	builder = false,
@@ -53,7 +53,7 @@ local unitDef = {
 	standingmoveorder = 0,
 	steeringmode = 1,
 	threed = 1,
-	turnRate = 142,
+	turnRate = 292,
 	unitname = [[tllvisitor]],
 	unitnumber = 901,
 	version = 3.1,

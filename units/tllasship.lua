@@ -6,10 +6,10 @@ local unitName = "tllasship"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.0105,
+	acceleration = 0.0905,
 	activateWhenBuilt = true,
 	bmcode = 1,
-	brakeRate = 0.03,
+	brakeRate = 0.13,
 	buildAngle = 16384,
 	buildCostEnergy = 15112,
 	buildCostMetal = 1126,
@@ -59,7 +59,8 @@ local unitDef = {
 	standingmoveorder = 1,
 	steeringmode = 1,
 	threed = 1,
-	turnRate = 85,
+	turnRate = 385,
+	turninplace = 0,
 	unitname = [[tllasship]],
 	unitnumber = 945,
 	version = 3.1,

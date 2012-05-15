@@ -6,10 +6,10 @@ local unitName = "tllequalizer"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.015,
+	acceleration = 0.11,
 	activateWhenBuilt = true,
 	bmcode = 1,
-	brakeRate = 0.05,
+	brakeRate = 0.25,
 	buildAngle = 16384,
 	buildCostEnergy = 8805,
 	buildCostMetal = 1745,
@@ -55,7 +55,7 @@ local unitDef = {
 	standingmoveorder = 0,
 	steeringmode = 1,
 	threed = 1,
-	turnRate = 128,
+	turnRate = 328,
 	unitname = [[tllequalizer]],
 	unitnumber = 896,
 	version = 3.1,
