@@ -6,7 +6,7 @@ local unitName = "tllck"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.12,
+	acceleration = 0.19,
 	bmcode = 1,
 	brakeRate = 0.44,
 	buildCostEnergy = 2610,

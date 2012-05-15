@@ -6,10 +6,10 @@ local unitName = "tllfirestarter"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.11,
+	acceleration = 0.21,
 	airsightdistance = 675,
 	bmcode = 1,
-	brakeRate = 0.15,
+	brakeRate = 0.25,
 	buildCostEnergy = 759,
 	buildCostMetal = 112,
 	builder = false,

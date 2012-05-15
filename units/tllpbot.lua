@@ -6,9 +6,9 @@ local unitName = "tllpbot"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.11,
+	acceleration = 0.21,
 	bmcode = 1,
-	brakeRate = 0.13,
+	brakeRate = 0.23,
 	buildCostEnergy = 975,
 	buildCostMetal = 240,
 	builder = false,
