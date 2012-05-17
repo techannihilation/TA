@@ -6,7 +6,7 @@ local unitName = "tllplunger"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.12,
+	acceleration = 0.06,
 	activateWhenBuilt = true,
 	bmcode = 1,
 	brakeRate = 0.15,
@@ -134,7 +134,7 @@ local weaponDefs = {
 		weaponType = [[TorpedoLauncher]],
 		weaponVelocity = 160,
 		damage = {
-			default = 350,
+			default = 280
 		},
 	},
 }
