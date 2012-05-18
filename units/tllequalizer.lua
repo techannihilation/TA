@@ -96,6 +96,7 @@ local unitDef = {
 			mainDir = [[0 0 -1]],
 			maxAngleDif = 240,
 			onlyTargetCategory = [[NOTVTOL]],
+			slaveTo = 1,
 		},
 		[3] = {
 			def = [[TLL_TORPEDO]],
@@ -128,7 +129,7 @@ local weaponDefs = {
 		name = [[HighEnergyLaser]],
 		noSelfDamage = true,
 		range = 785,
-		reloadtime = 1.4,
+		reloadtime = 1.1,
 		renderType = 0,
 		rgbColor = [[0 1 0]],
 		soundHit = [[lasrhit1]],
