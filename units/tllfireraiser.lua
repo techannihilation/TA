@@ -6,9 +6,9 @@ local unitName = "tllfireraiser"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.21,
+	acceleration = 0.17,
 	bmcode = 1,
-	brakeRate = 0.25,
+	brakeRate = 0.21,
 	buildCostEnergy = 841,
 	buildCostMetal = 140,
 	builder = false,
@@ -40,7 +40,7 @@ local unitDef = {
 	maneuverleashlength = 640,
 	maxDamage = 823,
 	maxSlope = 14,
-	maxVelocity = 1.65,
+	maxVelocity = 1.60,
 	maxWaterDepth = 12,
 	mobilestandorders = 1,
 	movementClass = [[KBOT2]],
