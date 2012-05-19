@@ -103,7 +103,7 @@ local unitDef = {
 
 local weaponDefs = {
 	ARMROTTWEILER_CANNON = {
-		areaOfEffect = 190,
+		areaOfEffect = 96,
 		burnblow = true,
 		craterBoost = 0,
 		craterMult = 0,
