@@ -119,7 +119,7 @@ local weaponDefs = {
 		noSelfDamage = true,
 		propeller = 1,
 		range = 500,
-		reloadtime = 2.5,
+		reloadtime = 2.8,
 		renderType = 1,
 		selfprop = true,
 		soundHit = [[xplodep1]],
@@ -134,7 +134,7 @@ local weaponDefs = {
 		weaponType = [[TorpedoLauncher]],
 		weaponVelocity = 160,
 		damage = {
-			default = 264,
+			default = 255,
 		},
 	},
 }
