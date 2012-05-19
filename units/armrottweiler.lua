@@ -133,6 +133,7 @@ local weaponDefs = {
 	ARMROTTWEILER_MG = {
 		areaOfEffect = 8,
 		burst = 2,
+		explosionGenerator = [[custom:popupshine]],
 		id = 243,
 		lineOfSight = true,
 		model = [[bullet4]],
