@@ -113,7 +113,7 @@
 			airdrag=0.8;
 			particleLife=50;
 			particleLifeSpread=0;
-			numParticles=5;
+			numParticles=4;
 			particleSpeed=0;
 			particleSpeedSpread=-2; //12
 			particleSize=2;
@@ -142,7 +142,7 @@
 			airdrag=0.8;
 			particleLife=60;
 			particleLifeSpread=5;
-			numParticles=5;
+			numParticles=4;
 			particleSpeed=-2;
 			particleSpeedSpread=-12;
 			particleSize=0.8;
@@ -216,7 +216,7 @@
 			airdrag=0.8;
 			particleLife=50;
 			particleLifeSpread=0;
-			numParticles=5;
+			numParticles=4;
 			particleSpeed=0;
 			particleSpeedSpread=-2; //12
 			particleSize=2;
@@ -245,7 +245,7 @@
 			airdrag=0.8;
 			particleLife=60;
 			particleLifeSpread=5;
-			numParticles=5;
+			numParticles=4;
 			particleSpeed=-2;
 			particleSpeedSpread=-12;
 			particleSize=0.8;
@@ -319,7 +319,7 @@
 			airdrag=0.8;
 			particleLife=50;
 			particleLifeSpread=0;
-			numParticles=5;
+			numParticles=4;
 			particleSpeed=0;
 			particleSpeedSpread=-2; //12
 			particleSize=2;
@@ -348,7 +348,7 @@
 			airdrag=0.8;
 			particleLife=60;
 			particleLifeSpread=5;
-			numParticles=5;
+			numParticles=4;
 			particleSpeed=-2;
 			particleSpeedSpread=-12;
 			particleSize=0.8;
