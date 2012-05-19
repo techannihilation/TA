@@ -88,13 +88,13 @@ local unitDef = {
 		[1] = {
 			def = [[COR_CRUS]],
 			mainDir = [[0 0 1]],
-			maxAngleDif = 260,
+			maxAngleDif = 290,
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
 			def = [[COR_CRUS]],
 			mainDir = [[0 0 -1]],
-			maxAngleDif = 260,
+			maxAngleDif = 290,
 			onlyTargetCategory = [[NOTVTOL]],
 			slaveTo = 1,
 		},
@@ -129,7 +129,7 @@ local weaponDefs = {
 		name = [[HighEnergyLaser]],
 		noSelfDamage = true,
 		range = 785,
-		reloadtime = 0.84,
+		reloadtime = 0.73,
 		renderType = 0,
 		rgbColor = [[0 1 0]],
 		soundHit = [[lasrhit1]],
@@ -140,7 +140,7 @@ local weaponDefs = {
 		weaponType = [[BeamLaser]],
 		weaponVelocity = 700,
 		damage = {
-			default = 180,
+			default = 185,
 			subs = 5,
 		},
 	},
