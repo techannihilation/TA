@@ -161,10 +161,12 @@ local morphDefs = {
       armamd = {
 		into = 'armamd1',
 		time = 40,
+		tech=2,
 	},
       corfmd = {
 		into = 'corfmd1',
 		time = 40,
+		tech=2,
 	},
       armscab = {
 		into = 'armscab1',
