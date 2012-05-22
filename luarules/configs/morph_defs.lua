@@ -209,10 +209,12 @@ local morphDefs = {
       armgate = {
 		into = 'armgate1',
 		time = 120,
+		tech = 2,
 	},
       corgate = {
 		into = 'corgate1',
 		time = 120,
+		tech = 2,
 	},
       corech3 = {
 		into = 'corech18',
