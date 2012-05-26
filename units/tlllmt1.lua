@@ -16,6 +16,7 @@ local unitDef = {
 	buildingGroundDecalSizeX = 4,
 	buildingGroundDecalSizeY = 4,
 	buildingGroundDecalType = [[tlllmt_aoplane.dds]],
+	buildPic = [[TLLLMT.png]],
 	buildTime = 1646,
 	canAttack = true,
 	canGuard = true,
