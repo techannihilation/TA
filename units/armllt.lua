@@ -24,6 +24,7 @@ local unitDef = {
 	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	collisionvolumeoffsets = [[0 0 0]],
 	collisionvolumescales = [[22 75 22]],
+	collisionvolumetest = 1,
 	collisionvolumetype = [[box]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[GUARD_NOMOVE]],

@@ -8,6 +8,7 @@ local unitName = "tllmono"
 local unitDef = {
 	acceleration = 0.1,
 	activateWhenBuilt = true,
+	airsightdistance = 1100,
 	bmcode = 1,
 	brakeRate = 0.71,
 	buildCostEnergy = 230039,

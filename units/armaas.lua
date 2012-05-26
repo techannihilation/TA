@@ -6,6 +6,7 @@ local unitName = "armaas"
 --------------------------------------------------------------------------------
 
 local unitDef = {
+	airsightdistance = 800,
 	acceleration = 0.048,
 	bmcode = 1,
 	brakeRate = 0.062,

@@ -6,6 +6,7 @@ local unitName = "armhys"
 --------------------------------------------------------------------------------
 
 local unitDef = {
+	airsightdistance = 1000,	
 	bmcode = 0,
 	buildAngle = 10000,
 	buildCostEnergy = 1301120,

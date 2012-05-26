@@ -7,6 +7,7 @@ local unitName = "corflak"
 
 local unitDef = {
 	acceleration = 0,
+	airsightdistance = 1000,
 	bmcode = 0,
 	brakeRate = 0,
 	buildAngle = 8192,
@@ -108,7 +109,7 @@ local weaponDefs = {
 		name = [[FlakCannon]],
 		noSelfDamage = true,
 		range = 975,
-		reloadtime = 0.4,
+		reloadtime = 0.3,
 		renderType = 4,
 		size = 5,
 		soundHit = [[flakhit]],

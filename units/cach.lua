@@ -66,6 +66,7 @@ local unitDef = {
 	unitnumber = 11004,
 	version = 1.2,
 	workerTime = 560,
+	--waterline = 13,
 	zbuffer = 1,
 	buildoptions = {
 		[1] = [[coruwfus]],

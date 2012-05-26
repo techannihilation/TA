@@ -6,6 +6,7 @@ local unitName = "corpre"
 --------------------------------------------------------------------------------
 
 local unitDef = {
+	airsightdistance = 1000,
 	bmcode = 0,
 	buildAngle = 2000,
 	buildCostEnergy = 1231120,
@@ -59,7 +60,7 @@ local unitDef = {
 	useBuildingGroundDecal = true,
 	version = 1,
 	workerTime = 0,
-	yardMap = [[ooooooooo]],
+	yardMap = [[ooooo ooooo ooooo ooooo ooooo]],
 	zbuffer = 1,
 	featureDefs = nil,
 	sounds = {

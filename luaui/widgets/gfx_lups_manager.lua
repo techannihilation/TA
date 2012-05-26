@@ -74,13 +74,14 @@ end
 local UnitEffects = {
 
   --// FUSIONS //--------------------------
-  [UnitDefNames["cafus"].id] = {
+    
+ [UnitDefNames["cafus"].id] = {
     {class='Bursts',options=cafusBursts},
     {class='ShieldSphere',options=cafusShieldSphere},
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,58.9,-4.5}, size=24.5, precision=22, repeatEffect=true}},
     {class='GroundFlash',options=groundFlashBlue},
   },
-  [UnitDefNames["corfus"].id] = {
+ [UnitDefNames["corfus"].id] = {
     {class='Bursts',options=corfusBursts},
     {class='ShieldSphere',options=corfusShieldSphere},
     {class='ShieldJitter',options={life=math.huge, pos={0,50,-5}, size=25, precision=22, repeatEffect=true}},
@@ -92,98 +93,86 @@ local UnitEffects = {
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,80.9,-10}, size=39.5, precision=22, repeatEffect=true}},
     {class='GroundFlash',options=groundFlashBigRed},
   },
- [UnitDefNames["cpocketfusion"].id] = {
-    {class='Bursts',options=cpocketfusionBursts},
-    {class='ShieldSphere',options=cpocketfusionShieldSphere},
-    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,16.9,-3}, size=8.5, precision=22, repeatEffect=true}},
-    {class='GroundFlash',options=groundFlashSmallBlue},
- },
  [UnitDefNames["tllmedfusion"].id] = {
     {class='Bursts',options=tllmedfusionBursts},
     {class='ShieldSphere',options=tllmedfusionSphere},
     {class='ShieldJitter',options={layer=-16, life=math.huge,  pos={-20,40,24}, size=13.9, precision=22, repeatEffect=true}},
-},
+  },
  [UnitDefNames["tllcoldfus"].id] = {
     {class='Bursts',options=tllcoldfusBursts},
     {class='ShieldSphere',options=tllcoldfusShieldSphere},
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,54.9,0}, size=15.9, precision=22, repeatEffect=true}},
-},
+  },
  [UnitDefNames["tllmegacoldfus"].id] = {
     {class='Bursts',options=tllmegacoldfusBursts},
     {class='ShieldSphere',options=tllmegacoldfusShieldSphere},
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,90.9,0}, size=30.9, precision=22, repeatEffect=true}},
-},
+  },
  [UnitDefNames["crnns"].id] = {
     {class='Bursts',options=crnnsBursts},
     {class='ShieldSphere',options=crnnsShieldSphere},
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={-9,26.9,0}, size=29, precision=22, repeatEffect=true}},
   },
-[UnitDefNames["armuwfus1"].id] = {
-    {class='ShieldSphere',options=armuwfus1ShieldSphere},
-    {class='ShieldSphere',options=armuwfus1aShieldSphere},
-    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={-34,74,-11}, size=9.2, precision=22, repeatEffect=true}},
-    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={34,74,-11}, size=9.2, precision=22, repeatEffect=true}},
-  },
-    [UnitDefNames["aafus"].id] = {
+ [UnitDefNames["aafus"].id] = {
     {class='SimpleParticles2', options=MergeTable({pos={-38,70,-10}, delay=10, lifeSpread=300},sparks)},
     {class='SimpleParticles2', options=MergeTable({pos={21,70,-10}, delay=60, lifeSpread=300},sparks)},
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={-31,55,-10}, size=12, precision=22, repeatEffect=true}},
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={31,55,-10}, size=12, precision=22, repeatEffect=true}},
   },
-   [UnitDefNames["corsfus"].id] = {
+ [UnitDefNames["corsfus"].id] = {
     {class='Bursts',options=corsfusBursts},
     {class='ShieldSphere',options=corsfusShieldSphere},
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,100.9,0}, size=32, precision=22, repeatEffect=true}},
   },
-    [UnitDefNames["armlab"].id] = {
+ [UnitDefNames["armlab"].id] = {
 --  {class='Bursts',options=armlabBursts},
 --  {class='ShieldJitter',options={layer=-16, life=math.huge, pos={3,25,20}, size=40, precision=22, repeatEffect=true}},
   },
-    [UnitDefNames["armmex1"].id] = {
+ [UnitDefNames["armmex1"].id] = {
     {class='SimpleParticles2', options=MergeTable({pos={-6,15,0}, delay=10, lifeSpread=300},sparks)},
   },
-    [UnitDefNames["cormex1"].id] = {
+ [UnitDefNames["cormex1"].id] = {
     {class='SimpleParticles2', options=MergeTable({pos={-6,20,0}, delay=20, lifeSpread=300},sparks)},
   },
-    [UnitDefNames["armrech3"].id] = {
+ [UnitDefNames["armrech3"].id] = {
     {class='SimpleParticles2', options=MergeTable({pos={-12,60,-37}, delay=15, lifeSpread=30},sparksr1)},
     {class='SimpleParticles2', options=MergeTable({pos={-12,75,-37}, delay=30, lifeSpread=30},sparksr1)},
     {class='SimpleParticles2', options=MergeTable({pos={-12,90,-37}, delay=45, lifeSpread=30},sparksr1)},
   },
-    [UnitDefNames["armrech18"].id] = {
+ [UnitDefNames["armrech18"].id] = {
     {class='SimpleParticles2', options=MergeTable({pos={-12,60,-37}, delay=15, lifeSpread=30},sparksr2)},
     {class='SimpleParticles2', options=MergeTable({pos={-12,75,-37}, delay=30, lifeSpread=30},sparksr2)},
     {class='SimpleParticles2', options=MergeTable({pos={-12,90,-37}, delay=45, lifeSpread=30},sparksr2)},
   },
-    [UnitDefNames["armrech21"].id] = {
+ [UnitDefNames["armrech21"].id] = {
     {class='SimpleParticles2', options=MergeTable({pos={-12,60,-37}, delay=15, lifeSpread=30},sparksr3)},
     {class='SimpleParticles2', options=MergeTable({pos={-12,75,-37}, delay=30, lifeSpread=30},sparksr3)},
     {class='SimpleParticles2', options=MergeTable({pos={-12,90,-37}, delay=45, lifeSpread=30},sparksr3)},
   },
-    [UnitDefNames["corech3"].id] = {
+ [UnitDefNames["corech3"].id] = {
     {class='SimpleParticles2', options=MergeTable({pos={-12,60,-37}, delay=15, lifeSpread=30},sparksr1)},
     {class='SimpleParticles2', options=MergeTable({pos={-12,75,-37}, delay=30, lifeSpread=30},sparksr1)},
     {class='SimpleParticles2', options=MergeTable({pos={-12,90,-37}, delay=45, lifeSpread=30},sparksr1)},
   },
-    [UnitDefNames["corech18"].id] = {
+ [UnitDefNames["corech18"].id] = {
     {class='SimpleParticles2', options=MergeTable({pos={-12,60,-37}, delay=15, lifeSpread=30},sparksr2)},
     {class='SimpleParticles2', options=MergeTable({pos={-12,75,-37}, delay=30, lifeSpread=30},sparksr2)},
     {class='SimpleParticles2', options=MergeTable({pos={-12,90,-37}, delay=45, lifeSpread=30},sparksr2)},
   },
-    [UnitDefNames["corech21"].id] = {
+ [UnitDefNames["corech21"].id] = {
     {class='SimpleParticles2', options=MergeTable({pos={-12,60,-37}, delay=15, lifeSpread=30},sparksr3)},
     {class='SimpleParticles2', options=MergeTable({pos={-12,75,-37}, delay=30, lifeSpread=30},sparksr3)},
     {class='SimpleParticles2', options=MergeTable({pos={-12,90,-37}, delay=45, lifeSpread=30},sparksr3)},
   },
-      
-      
-
-
+ [UnitDefNames["armamaker"].id] = {
+       {class='StaticParticles',options=armamakerEffect},
+  },
   --// ENERGY STORAGE //--------------------
-  [UnitDefNames["corestor"].id] = {
+  
+ [UnitDefNames["corestor"].id] = {
     {class='GroundFlash',options=groundFlashCorestor},
   },
-  [UnitDefNames["armestor"].id] = {
+ [UnitDefNames["armestor"].id] = {
     {class='GroundFlash',options=groundFlashArmestor},
   },
 

@@ -7,6 +7,7 @@ local unitName = "coraak"
 
 local unitDef = {
 	acceleration = 0.12,
+	airsightdistance = 800,
 	bmcode = 1,
 	brakeRate = 0.188,
 	buildCostEnergy = 5814,

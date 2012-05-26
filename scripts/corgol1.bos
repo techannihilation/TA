@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  turret, base, sleeves, barrel1, barrel2,  flare1, flare2;
+piece  flare1, flare2, turret, base, sleeves, barrel1, barrel2;
 
 static-var  restore_delay, gun_1;
 
@@ -62,6 +62,10 @@ RockUnit(anglex, anglez)
 
 Create()
 {
+	hide flare1;
+	hide flare2;
+	dont-cache flare1;
+	dont-cache flare2;
 	gun_1 = flare1;
 	restore_delay = 3000;
 	start-script SmokeUnit();
@@ -126,6 +130,7 @@ AimFromPrimary(piecenum)
 	piecenum = turret;
 }
 
+
 SweetSpot(piecenum)
 {
 	piecenum = base;
@@ -141,6 +146,8 @@ Killed(severity, corpsetype)
 		explode barrel1 type BITMAPONLY | BITMAP1;
 		explode barrel2 type BITMAPONLY | BITMAP2;
 		explode base type BITMAPONLY | BITMAP3;
+		explode flare1 type BITMAPONLY | BITMAP4;
+		explode flare2 type BITMAPONLY | BITMAP5;
 		explode sleeves type BITMAPONLY | BITMAP1;
 		explode turret type BITMAPONLY | BITMAP2;
 		return (0);
@@ -151,6 +158,8 @@ Killed(severity, corpsetype)
 		explode barrel1 type FALL | BITMAP1;
 		explode barrel2 type FALL | BITMAP2;
 		explode base type BITMAPONLY | BITMAP3;
+		explode flare1 type FALL | BITMAP4;
+		explode flare2 type FALL | BITMAP5;
 		explode sleeves type SHATTER | BITMAP1;
 		explode turret type BITMAPONLY | BITMAP2;
 		return (0);
@@ -161,6 +170,8 @@ Killed(severity, corpsetype)
 		explode barrel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 		explode barrel2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 		explode base type BITMAPONLY | BITMAP3;
+		explode flare1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode flare2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 		explode sleeves type SHATTER | BITMAP1;
 		explode turret type BITMAPONLY | BITMAP2;
 		return (0);
@@ -169,6 +180,8 @@ Killed(severity, corpsetype)
 	explode barrel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 	explode barrel2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 	explode base type BITMAPONLY | BITMAP3;
+	explode flare1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode flare2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 	explode sleeves type SHATTER | EXPLODE_ON_HIT | BITMAP1;
 	explode turret type BITMAPONLY | BITMAP2;
 }

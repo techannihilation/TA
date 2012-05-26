@@ -7,6 +7,7 @@ local unitName = "tllfight"
 
 local unitDef = {
 	acceleration = 0.45,
+	airsightdistance = 700,
 	bankscale = 1,
 	bmcode = 1,
 	brakeRate = 4,

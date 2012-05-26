@@ -7,6 +7,7 @@ local unitName = "corerad"
 
 local unitDef = {
 	acceleration = 0,
+	airsightdistance = 1100,
 	bmcode = 0,
 	brakeRate = 0,
 	buildAngle = 65536,
@@ -47,7 +48,7 @@ local unitDef = {
 	seismicSignature = 0,
 	selfDestructAs = [[LARGE_BUILDING]],
 	side = [[CORE]],
-	sightDistance = 700,
+	sightDistance = 550,
 	smoothAnim = true,
 	standingfireorder = 2,
 	turnRate = 0,

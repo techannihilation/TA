@@ -6,9 +6,9 @@ local unitName = "tllambassador"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.009,
+	acceleration = 0.19,
 	bmcode = 1,
-	brakeRate = 0.0182,
+	brakeRate = 0.182,
 	buildAngle = 16384,
 	buildCostEnergy = 4950,
 	buildCostMetal = 945,
@@ -58,7 +58,7 @@ local unitDef = {
 	threed = 1,
 	transportCapacity = 20,
 	transportSize = 3,
-	turnRate = 110,
+	turnRate = 310,
 	unitname = [[tllambassador]],
 	unitnumber = 943,
 	version = 3.1,

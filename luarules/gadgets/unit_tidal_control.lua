@@ -130,9 +130,9 @@ function gadget:Initialize()
 end
 
 
-function gadget:UnitCreated(unitID, unitDefID, unitTeam)
+function gadget:UnitFinished(unitID, unitDefID, unitTeam)
   if (windDefs[unitDefID]) then
-    SetupUnit(unitID)
+	SetupUnit(unitID)
   end
 end
 

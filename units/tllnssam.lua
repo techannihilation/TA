@@ -7,6 +7,7 @@ local unitName = "tllnssam"
 
 local unitDef = {
 	activateWhenBuilt = true,
+	airsightdistance = 950,
 	bmcode = 0,
 	buildAngle = 8192,
 	buildCostEnergy = 824,

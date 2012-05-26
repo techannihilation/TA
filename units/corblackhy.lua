@@ -8,6 +8,7 @@ local unitName = "corblackhy"
 local unitDef = {
 	acceleration = 0.026,
 	activateWhenBuilt = true,
+	airsightdistance = 900,
 	bmcode = 1,
 	brakeRate = 0.019,
 	buildAngle = 16384,

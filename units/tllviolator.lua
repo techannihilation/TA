@@ -6,10 +6,10 @@ local unitName = "tllviolator"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.025,
+	acceleration = 0.15,
 	activateWhenBuilt = true,
 	bmcode = 1,
-	brakeRate = 0.011,
+	brakeRate = 0.11,
 	buildAngle = 16384,
 	buildCostEnergy = 4607,
 	buildCostMetal = 921,
@@ -59,7 +59,7 @@ local unitDef = {
 	standingmoveorder = 2,
 	steeringmode = 1,
 	threed = 1,
-	turnRate = 115,
+	turnRate = 325,
 	unitname = [[tllviolator]],
 	unitnumber = 894,
 	version = 3.1,

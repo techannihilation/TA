@@ -6,6 +6,7 @@ local unitName = "armpt"
 --------------------------------------------------------------------------------
 
 local unitDef = {
+	airsightdistance = 720,
 	acceleration = 0.096,
 	bmcode = 1,
 	brakeRate = 0.025,

@@ -6,6 +6,7 @@ local unitName = "tllaak"
 --------------------------------------------------------------------------------
 
 local unitDef = {
+	airsightdistance = 950,
 	acceleration = 0.08,
 	bmcode = 1,
 	brakeRate = 0.15,
@@ -45,7 +46,7 @@ local unitDef = {
 	selfDestructAs = [[BIG_UNIT]],
 	shootme = 1,
 	side = [[TLL]],
-	sightDistance = 905,
+	sightDistance = 405,
 	smoothAnim = true,
 	standingfireorder = 2,
 	standingmoveorder = 2,

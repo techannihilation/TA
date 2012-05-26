@@ -6,9 +6,10 @@ local unitName = "tllhoplit"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.06,
+	acceleration = 0.16,
+	airsightdistance = 980,
 	bmcode = 1,
-	brakeRate = 0.02,
+	brakeRate = 0.12,
 	buildCostEnergy = 2010,
 	buildCostMetal = 155,
 	builder = false,

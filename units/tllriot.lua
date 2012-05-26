@@ -6,9 +6,9 @@ local unitName = "tllriot"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.025,
+	acceleration = 0.15,
 	bmcode = 1,
-	brakeRate = 0.055,
+	brakeRate = 0.17,
 	buildCostEnergy = 1450,
 	buildCostMetal = 350,
 	builder = false,

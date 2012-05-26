@@ -6,10 +6,11 @@ local unitName = "tllflak"
 --------------------------------------------------------------------------------
 
 local unitDef = {
+	airsightdistance = 1100,
 	bmcode = 0,
 	buildAngle = 8192,
-	buildCostEnergy = 8425,
-	buildCostMetal = 1109,
+	buildCostEnergy = 10825,
+	buildCostMetal = 1409,
 	builder = false,
 	buildingGroundDecalDecaySpeed = 30,
 	buildingGroundDecalSizeX = 5,
@@ -109,7 +110,7 @@ local weaponDefs = {
 		name = [[FlakCannon]],
 		noSelfDamage = true,
 		range = 975,
-		reloadtime = 0.3,
+		reloadtime = 0.2,
 		renderType = 4,
 		size = 5,
 		soundHit = [[flakhit]],
@@ -121,11 +122,11 @@ local weaponDefs = {
 		weaponType = [[Cannon]],
 		weaponVelocity = 1550,
 		damage = {
-			bombers = 360,
+			bombers = 400,
 			default = 5,
-			fighters = 360,
-			flak_resistant = 120,
-			unclassed_air = 360,
+			fighters = 400,
+			flak_resistant = 133,
+			unclassed_air = 400,
 		},
 	},
 }

@@ -74,7 +74,7 @@ local unitDef = {
 		[13] = [[armsonic]],
 		[14] = [[armdark]],
 		[15] = [[armscar]],
-		[16] = [[armmedt]],
+		[16] = [[armrottweiler]],
 		[17] = [[armarty]],
 		[18] = [[armeman]],
 	},

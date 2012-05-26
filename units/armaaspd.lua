@@ -6,6 +6,7 @@ local unitName = "armaaspd"
 --------------------------------------------------------------------------------
 
 local unitDef = {
+	airsightdistance = 720,
 	acceleration = 0.165,
 	bmcode = 1,
 	brakeRate = 0.165,

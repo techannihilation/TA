@@ -7,6 +7,7 @@ local unitName = "mercury"
 
 local unitDef = {
 	acceleration = 0,
+	airsightdistance = 1200,
 	bmcode = 0,
 	brakeRate = 0,
 	buildCostEnergy = 46860,

@@ -6,9 +6,9 @@ local unitName = "tllannouncer"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.03,
+	acceleration = 0.13,
 	bmcode = 1,
-	brakeRate = 0.012,
+	brakeRate = 0.12,
 	buildCostEnergy = 835,
 	buildCostMetal = 162,
 	builder = false,
