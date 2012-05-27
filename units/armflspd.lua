@@ -6,6 +6,7 @@ local unitName = "armflspd"
 --------------------------------------------------------------------------------
 
 local unitDef = {
+	airsightdistance = 800,
 	acceleration = 0.15,
 	bmcode = 1,
 	brakeRate = 0.15,

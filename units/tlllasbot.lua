@@ -6,7 +6,7 @@ local unitName = "tlllasbot"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.25,
+	acceleration = 0.21,
 	bmcode = 1,
 	brakeRate = 0.18,
 	buildCostEnergy = 1251,

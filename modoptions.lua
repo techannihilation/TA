@@ -130,6 +130,18 @@ local options={
 		def    = false,
 		section= "ta_options",
     },
+       	{
+		key="mo_storageowner",
+		name="Team Storage Owner",
+		desc="What owns the starting resource storage",
+		type="list",
+		def="team",
+		section="ta_options",
+		items={
+			{key="com", name="Commander", desc="Starting resource storage belongs to commander, is lost when commander dies"},
+			{key="team", name="Team", desc="Starting resource storage belongs to the team, cannot be lost"},
+		}
+	},
 	{ 
 		key="deathmode",
 		name="Game End Mode",
@@ -156,21 +168,6 @@ local options={
 		{key="allyzerounits", name="AllyTeam Death on Zero units", desc="The Team will die when every Team in his AllyTeam have 0 units."},
       }
 		},
-		{
-		key="comm",
-		name="Starting Commander Level",
-		desc="Adjusts Starting Commander Level, all higher level commanders feature all upgrades from lower levels",
-		type="list",
-		def="l0",
-		section="ta_modes",
-		items = {
-			{key = "l0", name = "Commander", desc = "Good old Commander with 5000 health"},
-			{key = "l1", name = "Battle Commander", desc = "Commander with 5000 health" },
-			{key = "l2", name = "Assault Commander", desc = "Commander with 8000 health, small shield" },
-			{key = "l3", name = "Star Commander", desc = "Commander with 12000 health, stronger small shield, jumping ability" },
-			{key = "l4", name = "Supreme Commander", desc = "Commander with 16000 health, very strong small shield, über disintegrator" }
-		},
-   },
 	{
 	key    = "shareddynamicalliancevictory",
 	name   = "Dynamic Ally Victory",

@@ -7,6 +7,7 @@ local unitName = "corarch"
 
 local unitDef = {
 	acceleration = 0.042,
+	airsightdistance = 800,
 	bmcode = 1,
 	brakeRate = 0.062,
 	buildAngle = 16384,

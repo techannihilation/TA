@@ -6,6 +6,7 @@ local unitName = "armjeth"
 --------------------------------------------------------------------------------
 
 local unitDef = {
+	airsightdistance = 820,
 	acceleration = 0.12,
 	bmcode = 1,
 	brakeRate = 0.188,

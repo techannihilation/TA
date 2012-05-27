@@ -6,10 +6,10 @@ local unitName = "tllgiant"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.013,
+	acceleration = 0.043,
 	activateWhenBuilt = true,
 	bmcode = 1,
-	brakeRate = 0.022,
+	brakeRate = 0.082,
 	buildAngle = 16384,
 	buildCostEnergy = 12507,
 	buildCostMetal = 1395,

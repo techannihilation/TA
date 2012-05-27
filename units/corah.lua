@@ -7,6 +7,7 @@ local unitName = "corah"
 
 local unitDef = {
 	acceleration = 0.096,
+	airsightdistance = 700,
 	bmcode = 1,
 	brakeRate = 0.112,
 	buildCostEnergy = 4448,

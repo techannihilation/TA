@@ -6,6 +6,7 @@ local unitName = "tllsam"
 --------------------------------------------------------------------------------
 
 local unitDef = {
+	airsightdistance = 1050,
 	bmcode = 0,
 	buildAngle = 8192,
 	buildCostEnergy = 2843,

@@ -6,7 +6,7 @@ local unitName = "tllack"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.18,
+	acceleration = 0.48,
 	bmcode = 1,
 	brakeRate = 0.6,
 	buildCostEnergy = 6024,
@@ -55,7 +55,7 @@ local unitDef = {
 	standingmoveorder = 1,
 	steeringmode = 1,
 	threed = 1,
-	turnRate = 310,
+	turnRate = 800,
 	unitname = [[tllack]],
 	unitnumber = 819,
 	upright = true,

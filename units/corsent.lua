@@ -7,6 +7,7 @@ local unitName = "corsent"
 
 local unitDef = {
 	acceleration = 0.0528,
+	airsightdistance = 800,
 	bmcode = 1,
 	brakeRate = 0.1375,
 	buildCostEnergy = 9487,

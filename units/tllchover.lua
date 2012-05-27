@@ -6,9 +6,9 @@ local unitName = "tllchover"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.015,
+	acceleration = 0.045,
 	bmcode = 1,
-	brakeRate = 0.008,
+	brakeRate = 0.08,
 	buildCostEnergy = 3501,
 	buildCostMetal = 187,
 	buildDistance = 185,
@@ -55,13 +55,13 @@ local unitDef = {
 	selfDestructAs = [[BIG_UNIT]],
 	shootme = 1,
 	side = [[TLL]],
-	sightDistance = 260,
+	sightDistance = 310,
 	spanishdescription = [[Nivel Tecn. 1]],
 	spanishname = [[Hovercraft de Constr.]],
 	standingmoveorder = 1,
 	steeringmode = 1,
 	threed = 1,
-	turnRate = 110,
+	turnRate = 400,
 	unitname = [[tllchover]],
 	unitnumber = 18701,
 	version = 1.2,

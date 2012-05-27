@@ -8,6 +8,7 @@ local unitName = "screamer"
 local unitDef = {
 	acceleration = 0,
 	activateWhenBuilt = true,
+	airsightdistance = 1200,
 	bmcode = 0,
 	brakeRate = 0,
 	buildCostEnergy = 57660,

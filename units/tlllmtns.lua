@@ -6,6 +6,7 @@ local unitName = "tlllmtns"
 --------------------------------------------------------------------------------
 
 local unitDef = {
+	airsightdistance = 700,
 	bmcode = 0,
 	buildAngle = 32768,
 	buildCostEnergy = 524,

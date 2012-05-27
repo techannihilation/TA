@@ -6,9 +6,9 @@ local unitName = "tllacs"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.007,
+	acceleration = 0.11,
 	bmcode = 1,
-	brakeRate = 0.03,
+	brakeRate = 0.30,
 	buildCostEnergy = 7951,
 	buildCostMetal = 998,
 	buildDistance = 210,
@@ -55,7 +55,8 @@ local unitDef = {
 	standingmoveorder = 1,
 	steeringmode = 1,
 	threed = 1,
-	turnRate = 350,
+	turnRate = 450,
+	turninplace = 0,
 	unitname = [[tllacs]],
 	unitnumber = 864,
 	version = 3.1,
@@ -73,7 +74,6 @@ local unitDef = {
 		[8] = [[tllnssam]],
 		[9] = [[tllatorp]],
 		[10] = [[tlldtns]],
-		[11] = [[tllsealock]],
 	},
 	featureDefs = nil,
 	sounds = {

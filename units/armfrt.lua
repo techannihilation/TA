@@ -6,6 +6,7 @@ local unitName = "armfrt"
 --------------------------------------------------------------------------------
 
 local unitDef = {
+	airsightdistance = 780,
 	acceleration = 0,
 	activateWhenBuilt = true,
 	bmcode = 0,

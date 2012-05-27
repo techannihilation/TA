@@ -7,6 +7,7 @@ local unitName = "armyork"
 
 local unitDef = {
 	acceleration = 0.0396,
+	airsightdistance = 1000,
 	bmcode = 1,
 	brakeRate = 0.1265,
 	buildCostEnergy = 8510,

@@ -7,6 +7,7 @@ local unitName = "corkarg"
 
 local unitDef = {
 	acceleration = 0.096,
+	airsightdistance = 600,
 	bmcode = 1,
 	brakeRate = 0.238,
 	buildCostEnergy = 58764,
@@ -115,7 +116,7 @@ local weaponDefs = {
 		name = [[ExplosiveRockets]],
 		noSelfDamage = true,
 		proximityPriority = -4,
-		range = 1250,
+		range = 765,
 		reloadtime = 3.2,
 		renderType = 1,
 		selfprop = true,
@@ -136,12 +137,12 @@ local weaponDefs = {
 		weaponType = [[MissileLauncher]],
 		weaponVelocity = 1500,
 		damage = {
-			bombers = 900,
+			bombers = 275,
 			default = 5,
-			fighters = 900,
-			flak_resistant = 900,
+			fighters = 275,
+			flak_resistant = 275,
 			subs = 5,
-			unclassed_air = 900,
+			unclassed_air = 275,
 		},
 	},
 	SUPER_MISSILE = {

@@ -7,6 +7,7 @@ local unitName = "armcir1"
 
 local unitDef = {
 	acceleration = 0,
+	airsightdistance = 1300,	
 	bmcode = 0,
 	brakeRate = 0,
 	buildAngle = 65536,
@@ -47,7 +48,7 @@ local unitDef = {
 	seismicSignature = 0,
 	selfDestructAs = [[LARGE_BUILDING]],
 	side = [[ARM]],
-	sightDistance = 1100,
+	sightDistance = 750,
 	smoothAnim = true,
 	standingfireorder = 2,
 	turnRate = 0,

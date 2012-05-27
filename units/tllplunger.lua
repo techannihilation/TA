@@ -6,7 +6,7 @@ local unitName = "tllplunger"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.02,
+	acceleration = 0.06,
 	activateWhenBuilt = true,
 	bmcode = 1,
 	brakeRate = 0.15,
@@ -56,7 +56,7 @@ local unitDef = {
 	standingmoveorder = 2,
 	steeringmode = 1,
 	threed = 1,
-	turnRate = 256,
+	turnRate = 356,
 	unitname = [[tllplunger]],
 	unitnumber = 895,
 	upright = true,
@@ -119,7 +119,7 @@ local weaponDefs = {
 		noSelfDamage = true,
 		propeller = 1,
 		range = 500,
-		reloadtime = 2.5,
+		reloadtime = 2.8,
 		renderType = 1,
 		selfprop = true,
 		soundHit = [[xplodep1]],
@@ -134,7 +134,7 @@ local weaponDefs = {
 		weaponType = [[TorpedoLauncher]],
 		weaponVelocity = 160,
 		damage = {
-			default = 350,
+			default = 255,
 		},
 	},
 }

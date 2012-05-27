@@ -6,9 +6,9 @@ local unitName = "tllbats2"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.005,
+	acceleration = 0.015,
 	bmcode = 1,
-	brakeRate = 0.02,
+	brakeRate = 0.12,
 	buildAngle = 16384,
 	buildCostEnergy = 27540,
 	buildCostMetal = 5181,
@@ -56,7 +56,7 @@ local unitDef = {
 	standingmoveorder = 1,
 	steeringmode = 2,
 	threed = 1,
-	turnRate = 62,
+	turnRate = 362,
 	unitname = [[tllbats2]],
 	unitnumber = 930,
 	version = 3.1,

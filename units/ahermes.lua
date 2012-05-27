@@ -6,6 +6,7 @@ local unitName = "ahermes"
 --------------------------------------------------------------------------------
 
 local unitDef = {
+	airsightdistance = 775,	
 	acceleration = 0.03,
 	ai_limit = [[limit ahermes 10]],
 	ai_weight = [[weight ahermes 0.3]],
@@ -53,7 +54,7 @@ local unitDef = {
 	selfDestructAs = [[BIG_UNIT]],
 	shootme = 1,
 	side = [[ARM]],
-	sightDistance = 745,
+	sightDistance = 645,
 	spanishdescription = [[Tanque Antiaéreo]],
 	spanishname = [[Hermes]],
 	standingfireorder = 2,

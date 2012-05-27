@@ -2,7 +2,7 @@ function gadget:GetInfo()
   return { 
     name      = "Mex Upgrader Gadget", 
     desc      = "Upgrades mexes.", 
-    author    = "author: BigHead","Modified by Senna",
+    author    = "author: BigHead, modified by DeadnightWarrior",
     date      = "September 13, 2007", 
     license   = "GNU GPL, v2 or later", 
     layer     = 100, 
@@ -10,7 +10,7 @@ function gadget:GetInfo()
   } 
 end 
 
-local ignoreWeapons = false 
+local ignoreWeapons = false --if the only weapon is a shield it is ignored
 local ignoreStealth = false 
 
 local insert = table.insert 
@@ -52,7 +52,7 @@ local CMD_OPT_INTERNAL = CMD.OPT_INTERNAL
 
 local CMD_AUTOMEX = 31143 
 
-local CMD_UPGRADEMEX = 32244 
+local CMD_UPGRADEMEX = 31244 
 
 local ONTooltip = "Metal makers are upgraded automatically\nby this builder." 
 local OFFTooltip = "Metal makers are NOT upgraded automatically\nby this builder." 
@@ -98,10 +98,17 @@ function determine()
       if (extractsMetal > 0) then 
         local mexDef = {} 
         mexDef.extractsMetal = extractsMetal 
-        mexDef.armed = #unitDef.weapons > 0      
+        if #unitDef.weapons <= 1 then
+          if (#unitDef.weapons == 1 and WeaponDefs[unitDef.weapons[1].weaponDef].isShield) then
+	    mexDef.armed = #unitDef.weapons < 0
+          else
+            mexDef.armed = #unitDef.weapons > 0      
+          end
+        else	
+          mexDef.armed = #unitDef.weapons > 0
+	end	
         mexDef.stealth = unitDef.stealth 
-        mexDef.water = unitDef.minWaterDepth >= 0 
-        
+        mexDef.water = unitDef.minWaterDepth >= 0        
         mexDefs[unitDefID] = mexDef 
       end 
     end 
@@ -322,8 +329,12 @@ function unregisterUnit(unitID, unitDefID, unitTeam, destroyed)
   elseif builder then 
     if getUnitPhase(unitID, unitTeam) == RECLAIMING then 
       local mex = mexes[unitTeam][builder.targetMex] 
-      mexes[unitTeam][builder.targetMex].assignedBuilder = nil 
-      assignClosestBuilder(builder.targetMex, mex, unitTeam) 
+      if mexes[unitTeam][builder.targetMex] then
+        mexes[unitTeam][builder.targetMex].assignedBuilder = nil
+      end
+      if mex then
+		assignClosestBuilder(builder.targetMex, mex, unitTeam) 
+	  end
     end 
     
     builders[unitTeam][unitID] = nil 
@@ -472,7 +483,7 @@ function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, _)
     
     return false 
   elseif cmdID ~= CMD_AUTOMEX then 
-    if builder and getUnitPhase(unitID, teamID) == RECLAIMING then 
+    if builder and builder.targetMex and getUnitPhase(unitID, teamID) == RECLAIMING then 
       mexes[teamID][builder.targetMex].assignedBuilder = nil 
     end 
     return true 

@@ -7,6 +7,7 @@ local unitName = "corcrash"
 
 local unitDef = {
 	acceleration = 0.12,
+	airsightdistance = 770,
 	bmcode = 1,
 	brakeRate = 0.188,
 	buildCostEnergy = 1101,

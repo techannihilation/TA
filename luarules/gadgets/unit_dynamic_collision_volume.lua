@@ -30,37 +30,36 @@ local pairs = pairs
 
 if (gadgetHandler:IsSyncedCode()) then
 
+	--Process all initial map features
+	function gadget:Initialize()
+		for _, featID in pairs(Spring.GetAllFeatures()) do
+			gadget:FeatureCreated(featID)
+		end
+	end
+
+	
 	--Reduces the diameter of default (unspecified) collision volume for 3DO models,
 	--for S3O models it's not needed and will in fact result in wrong collision volume
 	--also handles per piece collision volume definitions
 	function gadget:UnitCreated(unitID, unitDefID, unitTeam)
 		if (pieceCollisionVolume[UnitDefs[unitDefID].name]) then
-			--[[  ment for per piece collision volumes for XTA commanders 
-			if (UnitDefs[unitDefID].customParams.iscommander==true) then
-				for i=0, #spGetPieceList-1 do
-					local xs, ys, zs, xo, yo, zo, vtype, ttype, axis, en = spGetPieceCollisionData(unitID, i)
-					spSetPieceCollisionData(unitID, i, true, true,true,true, xs, ys, zs, xo, yo, zo, 1, 1)
+			local t = pieceCollisionVolume[UnitDefs[unitDefID].name]
+			for pieceIndex=0, #spGetPieceList(unitID)-1 do
+				local p = t[tostring(pieceIndex)]
+				if p then
+					spSetPieceCollisionData(unitID, pieceIndex, true, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8])
+				else
+					spSetPieceCollisionData(unitID, pieceIndex, false, 1, 1, 1, 0, 0, 0, 1, 1)
 				end
-			else
-			]]--
-				local t = pieceCollisionVolume[UnitDefs[unitDefID].name]
-				for pieceIndex=0, #spGetPieceList(unitID)-1 do
-					local p = t[tostring(pieceIndex)]
-					if p then
-						spSetPieceCollisionData(unitID, pieceIndex, p[1], p[1],p[1],p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9])
-					else
-						spSetPieceCollisionData(unitID, pieceIndex, false, false,false,false, 1, 1, 1, 0, 0, 0, 1, 1)
-					end
-				end
-			--end
+			end
 		elseif dynamicPieceCollisionVolume[UnitDefs[unitDefID].name] then
 			local t = dynamicPieceCollisionVolume[UnitDefs[unitDefID].name].on
 			for pieceIndex=0, #spGetPieceList(unitID)-1 do
 				local p = t[tostring(pieceIndex)]
 				if p then
-					spSetPieceCollisionData(unitID, pieceIndex, p[1], p[1],p[1],p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9])
+					spSetPieceCollisionData(unitID, pieceIndex, true, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8])
 				else
-					spSetPieceCollisionData(unitID, pieceIndex, false, false,false,false, 1, 1, 1, 0, 0, 0, 1, 1)
+					spSetPieceCollisionData(unitID, pieceIndex, false, 1, 1, 1, 0, 0, 0, 1, 1)
 				end
 			end
 		else
@@ -134,9 +133,9 @@ if (gadgetHandler:IsSyncedCode()) then
 						for pieceIndex=0, defs.numPieces do
 							p = t[tostring(pieceIndex)]
 							if p then
-								spSetPieceCollisionData(unitID, pieceIndex, p[1], p[1],p[1],p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9])
+								spSetPieceCollisionData(unitID, pieceIndex, true, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8])
 							else
-								spSetPieceCollisionData(unitID, pieceIndex, false, false,false,false, 1, 1, 1, 0, 0, 0, 1, 1)
+								spSetPieceCollisionData(unitID, pieceIndex, false, 1, 1, 1, 0, 0, 0, 1, 1)
 							end
 						end	
 					else
@@ -152,9 +151,9 @@ if (gadgetHandler:IsSyncedCode()) then
 						for pieceIndex=0, defs.numPieces do
 							p = t[tostring(pieceIndex)]
 							if p then
-								spSetPieceCollisionData(unitID, pieceIndex, p[1], p[1],p[1],p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9])
+								spSetPieceCollisionData(unitID, pieceIndex, true, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8])
 							else
-								spSetPieceCollisionData(unitID, pieceIndex, false, false,false,false, 1, 1, 1, 0, 0, 0, 1, 1)
+								spSetPieceCollisionData(unitID, pieceIndex, false, 1, 1, 1, 0, 0, 0, 1, 1)
 							end
 						end
 					else
