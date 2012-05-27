@@ -1,5 +1,14 @@
+ --------------------------- TechA Config --------------------------- 
+
 local modrules  = {
 
+  movement = {
+    allowAirPlanesToLeaveMap = true;  -- defaults to true
+    allowPushingEnemyUnits   = true; -- defaults to false
+    allowCrushingAlliedUnits = false; -- defaults to false
+    allowUnitCollisionDamage = true; -- defaults to false
+  },
+  
   reclaim = {
     multiReclaim  = 1,
     reclaimMethod = 0,
@@ -21,7 +30,7 @@ local modrules  = {
   },
 
   nanospray = {
-    allow_team_colors = false,
+    allow_team_colors = false, --- broken as of 89
   },
   
   featureLOS = {

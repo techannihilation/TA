@@ -134,6 +134,7 @@ modConfig["TA"]["unitList"] =
 								armllt1 = { weapons = { 1 } },
 								tawf001 = { weapons = { 1 } },
 								armhlt = { weapons = { 1 } },
+								armvhlt = { weapons = { 1 } },
 								armguard = { weapons = { 1, 1 } },
 								arm_immolator = { weapons = { 1 } },
 								armamb = { weapons = { 1,1 } }, --ambusher
@@ -186,6 +187,7 @@ modConfig["TA"]["unitList"] =
 								corllt1 = { weapons = { 1 } },
 								hllt = { weapons = { 1 } },
 								corhlt = { weapons = { 1 } },
+								corvhlt = { weapons = { 1 } },
 								corfhlt = { weapons = { 1 } },
 								corpun = { weapons = { 1, 1 } },
 								cordl = { weapons = { 1 } },
@@ -248,6 +250,7 @@ modConfig["TA"]["unitList"] =
 								tllweb = { weapons = { 1 } },
 									--Anti-Air--
 								tlllmt = { weapons = { 2 } },
+								tlllmt1 = { weapons = { 2 } },
 								tllmtNS = { weapons = { 2 } },
 								tllnssam = { weapons = { 2 } },
 								tllflak = { weapons = { 2 } },
