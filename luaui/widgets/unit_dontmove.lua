@@ -23,6 +23,7 @@ local unitSet = {}
 local unitArray = {
 
   --comms
+  
   --Core
   "corcom",
   "corcom1",
@@ -56,6 +57,8 @@ local unitArray = {
   "armyork",
   "cormist",
   "corsent",
+  "ahermes",
+  "corjeag",
   
   "armah",
   "corah",
@@ -63,6 +66,12 @@ local unitArray = {
   "cormls",
   "armaas",
   "corarch",
+  
+  "tllaak",
+  "tllsting",
+  "tllhovermissile",
+  "tllfirestarter",
+  "tllhoplit",
   
   --arty
   "tawf013",
@@ -89,12 +98,13 @@ local unitArray = {
   "armbats",
   "corbats",
   "armbc",
-  "zulu",
   "aseadragon",
   "corblackhy",
   
   "armraven",
+  "armraven1",
   "armshock",
+  "armshock1",
   
   --skirmishers/fire support
   "armjanus",
@@ -110,28 +120,52 @@ local unitArray = {
   "armfav",
   "corfav",
   "armspy",
+  "tllbug",
+  "tllgladius",
   
   "armpt",
   "corpt",
+  "tllotter",
   
   --shields/jammers/radars
+  "armjam",
   "armaser",
-  "arm_jammer",
+  "armjaspd",
   "armsjam",
-  "coreter",
-  "core_spectre",
-  "corsjam",
   
+  "coreter",
+  "concealer",
+  "corspec",
+  "corsjam",
+  "blotter",
+  
+  "tllsquid",
+  "tllobscurer",
+  "tllmixer",
+  "tllconfuser",
+  
+   
   "armseer",
-  "arm_marky",
+  "r75-v",
+  "armmark",
+  
+  "watcher",
   "corvrad",
   "corvoyr",
   
+  "tlldivine",
+  "tllobserver",
+  
+  
   --antinukes
   "armscab",
-  "cormabm",
   "armcarry",
+  
+  "cormabm",
   "corcarry",
+  
+  "tllcarry",
+  "tllturtle",
   
   --misc
   
