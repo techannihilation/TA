@@ -106,8 +106,8 @@ end
 --   30000 - 39999:  LuaRules
 --
 
-local CMD_MORPH_STOP = 32210
-local CMD_MORPH = 31210
+local CMD_MORPH_STOP = 32410
+local CMD_MORPH = 31410
 
 local MAX_MORPH = 0 --// will increase dynamically
 
