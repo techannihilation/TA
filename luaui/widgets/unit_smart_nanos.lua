@@ -155,11 +155,11 @@ function widget:CommandNotify(id, params, options)
   
   local CMD_UPGRADEMEX = math.huge
   
-  if TA and (id == 32244) then
+  if TA and (id == 31244) then
     if (#params == 1) then
       local unitDefID = GetUnitDefID(params[1])
       if (unitDefID ~= nil) and (UnitDefs[unitDefID].extractsMetal) then
-        CMD_UPGRADEMEX = 32244
+        CMD_UPGRADEMEX = 31244
       end
     end
   end
