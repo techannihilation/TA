@@ -466,7 +466,7 @@ PilotLight(Func_Var_1)
 			sleep 100;
 		}
 		emit-sfx 1024 + 0 from flame1;
-		sleep 30;
+		sleep 155;
 	}
 }
 
