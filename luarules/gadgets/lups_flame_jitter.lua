@@ -26,6 +26,7 @@ if (gadgetHandler:IsSyncedCode()) then
 
   --// Speed-ups
   local SendToUnsynced = SendToUnsynced
+  local GAME_SPEED             = 30
 
   -------------------------------------------------------------------------------------
   -------------------------------------------------------------------------------------
@@ -81,7 +82,7 @@ else
     local posx,posy,posz, dirx,diry,dirz = Spring.GetUnitWeaponVectors(unitID,weapon-1)
     local wd  = WeaponDefs[UnitDefs[unitDefID].weapons[weapon].weaponDef]
     local weaponRange = wd.range*wd.duration
-    local weaponVelocity = wd.projectilespeed * 30 -- * gamespeed
+    local weaponVelocity = wd.projectilespeed * GAME_SPEED
 
     local speedx,speedy,speedz = Spring.GetUnitVelocity(unitID)
     local partpos = "x*delay,y*delay,z*delay|x="..speedx..",y="..speedy..",z="..speedz
