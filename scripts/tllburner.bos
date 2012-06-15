@@ -3,11 +3,11 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  body, flare, head, rfoot, lfoot, lleg, rleg, hips,
-       barrel, sleeve;
+piece  body, flare, head, rfoot, lfoot, lleg, rleg,
+       hips, barrel,sleeve;
 
 static-var  bMoving, bAiming, Static_Var_3, Static_Var_4, restore_delay,
-            Static_Var_6;
+            Static_Var_6, moveSpeed, currentSpeed;
 
 // Signal definitions
 #define SIG_MOVE			2
@@ -20,421 +20,513 @@ lua_FlameShot(weapon) //Distortion and lups flame effect
 
 walk()
 {
-	if( TRUE )
+	if( bMoving )
 	{
 		move body to y-axis [0.000000] now;
-		move head to y-axis [0.000000] now;
+		move head to y-axis [-0.000006] speed [0.000002] * currentSpeed;	//adjust anim speed to unit speed
 		move rfoot to y-axis [0.000000] now;
 		move lfoot to y-axis [0.000000] now;
+		turn lleg to x-axis <-41.357143> speed <12.407143> * currentSpeed;
+		turn rleg to x-axis <54.741758> speed <16.422527> * currentSpeed;
+		turn head to x-axis <-10.945055> speed <3.283517> * currentSpeed;
+		turn rfoot to x-axis <-34.670330> speed <10.401099> * currentSpeed;
+		turn lfoot to x-axis <13.379121> speed <4.013736> * currentSpeed;
+		sleep 3180 / currentSpeed;		//adjust sleep time to unit speed
+	}
+	if( bMoving )
+	{
+		move body to z-axis [0.350000] speed [0.175000] * currentSpeed;
+		move lleg to y-axis [-0.200000] speed [0.100000] * currentSpeed;
+		move rleg to y-axis [0.500000] speed [0.250000] * currentSpeed;
+		turn hips to z-axis <5.164835> speed <2.582418> * currentSpeed;
+		turn body to x-axis <6.082418> speed <3.041209> * currentSpeed;
 		turn lleg to x-axis <-41.357143> now;
-		turn rleg to x-axis <54.736264> now;
-		turn rfoot to x-axis <-34.670330> now;
-		turn lfoot to x-axis <13.379121> now;
-		sleep 70;
+		turn rleg to x-axis <55.346154> speed <0.302198> * currentSpeed;
+		turn head to x-axis <-5.472527> speed <2.736264> * currentSpeed;
+		turn rfoot to x-axis <-17.939560> speed <8.365385> * currentSpeed;
+		turn lfoot to x-axis <34.670330> speed <10.645605> * currentSpeed;
+		sleep 1740 / currentSpeed;
 	}
-	if( TRUE )
+	if( bMoving )
 	{
-		move lleg to y-axis [-0.200000] now;
-		move rleg to y-axis [0.500000] now;
-		turn lleg to x-axis <-41.357143> now;
-		turn rleg to x-axis <55.346154> now;
-		turn rfoot to x-axis <-17.934066> now;
-		turn lfoot to x-axis <34.670330> now;
-		sleep 70;
+		move body to z-axis [0.700000] speed [0.175000] * currentSpeed;
+		move lleg to y-axis [0.649994] speed [0.424997] * currentSpeed;
+		move rleg to y-axis [1.000000] speed [0.250000] * currentSpeed;
+		turn hips to z-axis <10.335165> speed <2.585165> * currentSpeed;
+		turn body to x-axis <12.164835> speed <3.041209> * currentSpeed;
+		turn lleg to x-axis <-32.236264> speed <4.560440> * currentSpeed;
+		turn rleg to x-axis <55.956044> speed <0.304945> * currentSpeed;
+		turn head to x-axis <0.000000> speed <2.736264> * currentSpeed;
+		turn rfoot to x-axis <-1.214286> speed <8.362637> * currentSpeed;
+		turn lfoot to x-axis <17.027473> speed <8.821428> * currentSpeed;
+		sleep 1460 / currentSpeed;
 	}
-	if( TRUE )
+	if( bMoving )
 	{
-		move lleg to y-axis [0.649994] now;
-		move rleg to y-axis [1.000000] now;
-		turn lleg to x-axis <-32.236264> now;
-		turn rleg to x-axis <55.956044> now;
-		turn rfoot to x-axis <-1.214286> now;
-		turn lfoot to x-axis <17.027473> now;
-		sleep 70;
-	}
-	if( TRUE )
-	{
-		move lleg to y-axis [1.350000] now;
-		move rleg to y-axis [1.900000] now;
+		move lleg to y-axis [1.350000] speed [0.350003] * currentSpeed;
+		move rleg to y-axis [1.900000] speed [0.450000] * currentSpeed;
+		move head to y-axis [-0.000012] speed [0.000003] * currentSpeed;
 		move rfoot to y-axis [0.000000] now;
-		turn lleg to x-axis <-10.945055> now;
-		turn rleg to x-axis <18.247253> now;
-		turn rfoot to x-axis <-17.637363> now;
-		turn lfoot to x-axis <0.000000> now;
-		sleep 70;
+		turn hips to z-axis <14.593407> speed <2.129121> * currentSpeed;
+		turn lleg to x-axis <-10.945055> speed <10.645604> * currentSpeed;
+		turn rleg to x-axis <18.247253> speed <18.854395> * currentSpeed;
+		turn head to x-axis <13.379121> speed <6.689560> * currentSpeed;
+		turn rfoot to x-axis <-17.637363> speed <8.211538> * currentSpeed;
+		turn lfoot to x-axis <0.000000> speed <8.513737> * currentSpeed;
+		sleep 1660 / currentSpeed;
 	}
-	if( TRUE )
+	if( bMoving )
 	{
-		move lleg to y-axis [0.950000] now;
-		move rleg to y-axis [1.949994] now;
+		move lleg to y-axis [0.950000] speed [0.120000] * currentSpeed;
+		move rleg to y-axis [1.949994] speed [0.014998] * currentSpeed;
+		move head to x-axis [-0.350000] speed [0.105000] * currentSpeed;
+		move head to y-axis [-0.425006] speed [0.127498] * currentSpeed;
 		move rfoot to y-axis [0.000000] now;
-		turn lleg to x-axis <3.038462> now;
-		turn rleg to x-axis <4.857143> now;
-		turn rfoot to x-axis <-22.192308> now;
+		turn hips to z-axis <12.164835> speed <0.728572> * currentSpeed;
+		turn lleg to x-axis <3.038462> speed <4.195055> * currentSpeed;
+		turn rleg to x-axis <4.862637> speed <4.015385> * currentSpeed;
+		turn head to x-axis <18.247253> speed <1.460440> * currentSpeed;
+		turn rfoot to x-axis <-22.197802> speed <1.368132> * currentSpeed;
 		turn rfoot to y-axis <0.000000> now;
-		turn lfoot to x-axis <-16.725275> now;
-		sleep 70;
+		turn lfoot to x-axis <-16.725275> speed <5.017583> * currentSpeed;
+		sleep 3200 / currentSpeed;
 	}
-	if( TRUE )
+	if( bMoving )
 	{
 		move hips to z-axis [0.000000] now;
 		move lleg to y-axis [0.950000] now;
-		move rleg to y-axis [1.999994] now;
+		move rleg to y-axis [1.999994] speed [0.012500] * currentSpeed;
+		move head to x-axis [-0.700000] speed [0.087500] * currentSpeed;
+		move head to y-axis [-0.850006] speed [0.106250] * currentSpeed;
 		move rfoot to y-axis [0.000000] now;
-		turn lleg to x-axis <11.549451> now;
-		turn rleg to x-axis <-8.505495> now;
-		turn rfoot to x-axis <-26.758242> now;
+		turn hips to z-axis <9.730769> speed <0.608516> * currentSpeed;
+		turn lleg to x-axis <11.554945> speed <2.129121> * currentSpeed;
+		turn rleg to x-axis <-8.510989> speed <3.343407> * currentSpeed;
+		turn head to x-axis <23.109890> speed <1.215659> * currentSpeed;
+		turn rfoot to x-axis <-26.758242> speed <1.140110> * currentSpeed;
 		turn rfoot to y-axis <0.000000> now;
-		turn lfoot to x-axis <-24.324176> now;
-		sleep 70;
+		turn lfoot to x-axis <-24.329670> speed <1.901099> * currentSpeed;
+		sleep 3660 / currentSpeed;
 	}
-	if( TRUE )
+	if( bMoving )
 	{
-		move lleg to y-axis [0.475000] now;
-		move rleg to y-axis [1.774994] now;
-		turn lleg to x-axis <17.027473> now;
-		turn rleg to x-axis <-25.236264> now;
-		turn rfoot to x-axis <-8.203297> now;
-		turn lfoot to x-axis <-20.670330> now;
-		sleep 70;
+		move hips to z-axis [0.000000] now;
+		move body to z-axis [0.475000] speed [0.056250] * currentSpeed;
+		move lleg to y-axis [0.475000] speed [0.118750] * currentSpeed;
+		move rleg to y-axis [1.774994] speed [0.056250] * currentSpeed;
+		move head to x-axis [-0.350000] speed [0.087500] * currentSpeed;
+		move head to y-axis [-0.425006] speed [0.106250] * currentSpeed;
+		turn hips to z-axis <5.774725> speed <0.989011> * currentSpeed;
+		turn body to x-axis <8.818681> speed <0.836538> * currentSpeed;
+		turn lleg to x-axis <17.027473> speed <1.368132> * currentSpeed;
+		turn rleg to x-axis <-25.241758> speed <4.182692> * currentSpeed;
+		turn head to x-axis <11.554945> speed <2.888736> * currentSpeed;
+		turn rfoot to x-axis <-8.208791> speed <4.637363> * currentSpeed;
+		turn lfoot to x-axis <-20.675824> speed <0.913462> * currentSpeed;
+		sleep 3860 / currentSpeed;
 	}
-	if( TRUE )
+	if( bMoving )
+	{
+		move hips to z-axis [0.000000] now;
+		move body to z-axis [0.250000] speed [0.048214] * currentSpeed;
+		move lleg to y-axis [0.000000] speed [0.101786] * currentSpeed;
+		move rleg to y-axis [1.549994] speed [0.048214] * currentSpeed;
+		move head to x-axis [0.000000] speed [0.075000] * currentSpeed;
+		move head to y-axis [-0.000006] speed [0.091071] * currentSpeed;
+		turn hips to z-axis <1.824176> speed <0.846546> * currentSpeed;
+		turn body to x-axis <5.472527> speed <0.717033> * currentSpeed;
+		turn lleg to x-axis <29.802198> speed <2.737441> * currentSpeed;
+		turn rleg to x-axis <-41.967033> speed <3.583988> * currentSpeed;
+		turn head to x-axis <0.000000> speed <2.476060> * currentSpeed;
+		turn rfoot to x-axis <10.335165> speed <3.973705> * currentSpeed;
+		turn lfoot to x-axis <-29.192308> speed <1.824961> * currentSpeed;
+		sleep 4500 / currentSpeed;
+	}
+	if( bMoving )
 	{
 		move lleg to y-axis [0.000000] now;
-		move rleg to y-axis [1.549994] now;
-		turn lleg to x-axis <29.802198> now;
-		turn rleg to x-axis <-41.967033> now;
+		move rleg to y-axis [0.824994] speed [0.181250] * currentSpeed;
+		turn hips to z-axis <0.912088> speed <0.228022> * currentSpeed;
+		turn body to x-axis <2.736264> speed <0.684066> * currentSpeed;
+		turn lleg to x-axis <38.010989> speed <2.052198> * currentSpeed;
+		turn head to x-axis <-5.164835> speed <1.291209> * currentSpeed;
 		turn rfoot to x-axis <10.335165> now;
-		turn lfoot to x-axis <-29.192308> now;
-		sleep 70;
+		turn lfoot to x-axis <-33.148352> speed <0.989011> * currentSpeed;
+		sleep 3520 / currentSpeed;
 	}
-	if( TRUE )
+	if( bMoving )
 	{
 		move lleg to y-axis [0.000000] now;
-		move rleg to y-axis [0.824994] now;
-		turn lleg to x-axis <38.005495> now;
-		turn rfoot to x-axis <10.335165> now;
-		turn lfoot to x-axis <-33.148352> now;
-		sleep 70;
+		move rleg to y-axis [0.099994] speed [0.271875] * currentSpeed;
+		turn hips to z-axis <0.000000> speed <0.342033> * currentSpeed;
+		turn body to x-axis <0.000000> speed <1.026099> * currentSpeed;
+		turn lleg to x-axis <55.956044> speed <6.729396> * currentSpeed;
+		turn head to x-axis <-10.335165> speed <1.938874> * currentSpeed;
+		turn rfoot to x-axis <1.214286> speed <3.420330> * currentSpeed;
+		turn lfoot to x-axis <-31.626374> speed <0.570742> * currentSpeed;
+		sleep 2480 / currentSpeed;
 	}
-	if( TRUE )
+	if( bMoving )
 	{
-		move lleg to y-axis [0.000000] now;
-		move rleg to y-axis [0.099994] now;
-		turn lleg to x-axis <55.956044> now;
-		turn rfoot to x-axis <1.214286> now;
-		turn lfoot to x-axis <-31.626374> now;
-		sleep 70;
+		move body to z-axis [0.475000] speed [0.084375] * currentSpeed;
+		move lleg to y-axis [0.500000] speed [0.187500] * currentSpeed;
+		turn hips to z-axis <-3.340659> speed <1.252747> * currentSpeed;
+		turn body to x-axis <5.774725> speed <2.165522> * currentSpeed;
+		turn lleg to x-axis <46.225275> speed <3.649038> * currentSpeed;
+		turn rleg to x-axis <-51.093407> speed <3.422390> * currentSpeed;
+		turn head to x-axis <-5.164835> speed <1.938874> * currentSpeed;
+		turn rfoot to x-axis <15.813187> speed <5.474588> * currentSpeed;
+		turn lfoot to x-axis <-19.461538> speed <4.561813> * currentSpeed;
+		sleep 2000 / currentSpeed;
 	}
-	if( TRUE )
+	if( bMoving )
 	{
-		move lleg to y-axis [0.500000] now;
-		turn hips to z-axis <-3.335165> now;
-		turn lleg to x-axis <46.225275> now;
-		turn rleg to x-axis <-51.093407> now;
-		turn rfoot to x-axis <15.813187> now;
-		turn lfoot to x-axis <-19.456044> now;
-		sleep 70;
+		move body to z-axis [0.700000] speed [0.112500] * currentSpeed;
+		move lleg to y-axis [1.000000] speed [0.250000] * currentSpeed;
+		turn hips to z-axis <-6.686813> speed <1.673077> * currentSpeed;
+		turn body to x-axis <11.554945> speed <2.890110> * currentSpeed;
+		turn lleg to x-axis <55.346154> speed <4.560439> * currentSpeed;
+		turn rleg to x-axis <-60.214286> speed <4.560440> * currentSpeed;
+		turn head to x-axis <0.000000> speed <2.582418> * currentSpeed;
+		turn rfoot to x-axis <45.615385> speed <14.901099> * currentSpeed;
+		turn lfoot to x-axis <-12.164835> speed <3.648352> * currentSpeed;
+		sleep 1520 / currentSpeed;
 	}
-	if( TRUE )
+	if( bMoving )
 	{
-		move lleg to y-axis [1.000000] now;
-		turn lleg to x-axis <55.346154> now;
-		turn rleg to x-axis <-60.214286> now;
-		turn rfoot to x-axis <45.615385> now;
-		turn lfoot to x-axis <-12.159341> now;
-		sleep 70;
+		move hips to y-axis [-0.225000] speed [0.168750] * currentSpeed;
+		move lleg to y-axis [1.299994] speed [0.224996] * currentSpeed;
+		move rleg to y-axis [0.624994] speed [0.393750] * currentSpeed;
+		turn hips to z-axis <-11.252747> speed <3.424450> * currentSpeed;
+		turn lleg to x-axis <36.796703> speed <13.912088> * currentSpeed;
+		turn rleg to x-axis <-46.225275> speed <10.491758> * currentSpeed;
+		turn rfoot to x-axis <31.928571> speed <10.265111> * currentSpeed;
+		turn lfoot to x-axis <-14.593407> speed <1.821429> * currentSpeed;
+		sleep 1180 / currentSpeed;
 	}
-	if( TRUE )
+	if( bMoving )
 	{
-		move lleg to y-axis [1.299994] now;
-		move rleg to y-axis [0.624994] now;
-		turn lleg to x-axis <36.791209> now;
-		turn rleg to x-axis <-46.225275> now;
-		turn rfoot to x-axis <31.923077> now;
-		turn lfoot to x-axis <-14.593407> now;
-		sleep 70;
+		move hips to y-axis [-0.450000] speed [0.112500] * currentSpeed;
+		move lleg to y-axis [1.599994] speed [0.150000] * currentSpeed;
+		move rleg to y-axis [1.149994] speed [0.262500] * currentSpeed;
+		turn hips to z-axis <-15.813187> speed <2.280220> * currentSpeed;
+		turn lleg to x-axis <18.247253> speed <9.274725> * currentSpeed;
+		turn rleg to x-axis <-32.236264> speed <6.994506> * currentSpeed;
+		turn rfoot to x-axis <18.247253> speed <6.840659> * currentSpeed;
+		turn lfoot to x-axis <-17.027473> speed <1.217033> * currentSpeed;
+		sleep 1640 / currentSpeed;
 	}
-	if( TRUE )
+	if( bMoving )
 	{
-		move lleg to y-axis [1.599994] now;
-		move rleg to y-axis [1.149994] now;
-		turn lleg to x-axis <18.247253> now;
-		turn rleg to x-axis <-32.236264> now;
-		turn rfoot to x-axis <18.247253> now;
-		turn lfoot to x-axis <-17.027473> now;
-		sleep 70;
+		move lleg to y-axis [1.799994] speed [0.075000] * currentSpeed;
+		move rleg to y-axis [1.349994] speed [0.075000] * currentSpeed;
+		move head to y-axis [-0.475006] speed [0.178125] * currentSpeed;
+		turn hips to z-axis <-13.379121> speed <0.912775> * currentSpeed;
+		turn lleg to x-axis <4.560440> speed <5.132555> * currentSpeed;
+		turn rleg to x-axis <-18.549451> speed <5.132555> * currentSpeed;
+		turn head to x-axis <12.467033> speed <4.675137> * currentSpeed;
+		turn rfoot to x-axis <4.560440> speed <5.132555> * currentSpeed;
+		turn lfoot to x-axis <-21.587912> speed <1.710165> * currentSpeed;
+		sleep 2080 / currentSpeed;
 	}
-	if( TRUE )
+	if( bMoving )
 	{
-		move lleg to y-axis [1.799994] now;
-		move rleg to y-axis [1.349994] now;
-		turn lleg to x-axis <4.560440> now;
-		turn rleg to x-axis <-18.549451> now;
-		turn rfoot to x-axis <4.560440> now;
-		turn lfoot to x-axis <-21.582418> now;
-		sleep 70;
+		move lleg to y-axis [1.999994] speed [0.060000] * currentSpeed;
+		move rleg to y-axis [1.549994] speed [0.060000] * currentSpeed;
+		move head to y-axis [-0.950006] speed [0.142500] * currentSpeed;
+		turn hips to z-axis <-10.945055> speed <0.730220> * currentSpeed;
+		turn lleg to x-axis <-9.120879> speed <4.104396> * currentSpeed;
+		turn rleg to x-axis <-4.862637> speed <4.106044> * currentSpeed;
+		turn head to x-axis <24.934066> speed <3.740110> * currentSpeed;
+		turn rfoot to x-axis <-9.120879> speed <4.104396> * currentSpeed;
+		turn lfoot to x-axis <-26.153846> speed <1.369780> * currentSpeed;
+		sleep 2920 / currentSpeed;
 	}
-	if( TRUE )
+	if( bMoving )
 	{
-		move lleg to y-axis [1.999994] now;
-		move rleg to y-axis [1.549994] now;
-		turn lleg to x-axis <-9.115385> now;
-		turn rleg to x-axis <-4.857143> now;
-		turn rfoot to x-axis <-9.115385> now;
-		turn lfoot to x-axis <-26.148352> now;
-		sleep 70;
+		move body to z-axis [0.400000] speed [0.075000] * currentSpeed;
+		move lleg to y-axis [1.424994] speed [0.143750] * currentSpeed;
+		move rleg to y-axis [0.949994] speed [0.150000] * currentSpeed;
+		move head to y-axis [-0.775006] speed [0.043750] * currentSpeed;
+		turn hips to z-axis <-6.686813> speed <1.064561> * currentSpeed;
+		turn body to x-axis <8.208791> speed <0.836538> * currentSpeed;
+		turn lleg to x-axis <-30.412088> speed <5.322802> * currentSpeed;
+		turn rleg to x-axis <4.862637> speed <2.431319> * currentSpeed;
+		turn head to x-axis <18.549451> speed <1.596154> * currentSpeed;
+		turn rfoot to x-axis <-14.901099> speed <1.445055> * currentSpeed;
+		turn lfoot to x-axis <-15.203297> speed <2.737637> * currentSpeed;
+		sleep 3800 / currentSpeed;
 	}
-	if( TRUE )
+	if( bMoving )
 	{
-		move lleg to y-axis [1.424994] now;
-		move rleg to y-axis [0.949994] now;
-		turn lleg to x-axis <-30.412088> now;
-		turn rleg to x-axis <4.857143> now;
-		turn rfoot to x-axis <-14.901099> now;
-		turn lfoot to x-axis <-15.203297> now;
-		sleep 70;
+		move body to z-axis [0.100000] speed [0.064286] * currentSpeed;
+		move lleg to y-axis [0.849994] speed [0.123214] * currentSpeed;
+		move rleg to y-axis [0.350000] speed [0.128570] * currentSpeed;
+		move head to y-axis [-0.600012] speed [0.037499] * currentSpeed;
+		turn hips to z-axis <-2.428571> speed <0.912480> * currentSpeed;
+		turn body to x-axis <4.862637> speed <0.717033> * currentSpeed;
+		turn lleg to x-axis <-51.697802> speed <4.561224> * currentSpeed;
+		turn rleg to x-axis <14.593407> speed <2.085165> * currentSpeed;
+		turn head to x-axis <12.164835> speed <1.368132> * currentSpeed;
+		turn rfoot to x-axis <-20.675824> speed <1.237441> * currentSpeed;
+		turn lfoot to x-axis <-4.252747> speed <2.346546> * currentSpeed;
+		sleep 4080 / currentSpeed;
 	}
-	if( TRUE )
-	{
-		move lleg to y-axis [0.849994] now;
-		move rleg to y-axis [0.350000] now;
-		turn lleg to x-axis <-51.692308> now;
-		turn rleg to x-axis <14.593407> now;
-		turn rfoot to x-axis <-20.670330> now;
-		turn lfoot to x-axis <-4.247253> now;
-		sleep 70;
-	}
-	move lleg to y-axis [0.424994] now;
-	move rleg to y-axis [0.175000] now;
-	turn lleg to x-axis <-46.527473> now;
-	turn rleg to x-axis <34.670330> now;
-	turn rfoot to x-axis <-27.670330> now;
+	move hips to y-axis [-0.225000] speed [0.048214] * currentSpeed;
+	move hips to z-axis [0.000000] now;
+	move body to z-axis [0.050000] speed [0.010714] * currentSpeed;
+	move lleg to y-axis [0.424994] speed [0.091071] * currentSpeed;
+	move rleg to y-axis [0.175000] speed [0.037500] * currentSpeed;
+	move head to y-axis [-0.300012] speed [0.064286] * currentSpeed;
+	turn hips to z-axis <-1.214286> speed <0.260204> * currentSpeed;
+	turn body to x-axis <2.428571> speed <0.521586> * currentSpeed;
+	turn lleg to x-axis <-46.527473> speed <1.107928> * currentSpeed;
+	turn rleg to x-axis <34.670330> speed <4.302198> * currentSpeed;
+	turn head to x-axis <0.604396> speed <2.477237> * currentSpeed;
+	turn rfoot to x-axis <-27.670330> speed <1.498823> * currentSpeed;
 	turn rfoot to y-axis <0.000000> now;
-	turn lfoot to x-axis <-2.736264> now;
-	sleep 70;
+	turn lfoot to x-axis <-2.736264> speed <0.324961> * currentSpeed;
+	sleep 4120 / currentSpeed;
 }
 
 walklegs()
 {
-	if( TRUE )
+	if( bMoving )
 	{
+		move body to y-axis [0.000000] now;
+		move head to y-axis [-0.000006] speed [0.112502] * currentSpeed;
 		move rfoot to y-axis [0.000000] now;
 		move lfoot to y-axis [0.000000] now;
+		turn lleg to x-axis <-41.357143> speed <1.938874> * currentSpeed;
+		turn rleg to x-axis <54.741758> speed <7.526785> * currentSpeed;
+		turn rfoot to x-axis <-34.670330> speed <2.625000> * currentSpeed;
+		turn lfoot to x-axis <13.379121> speed <6.043269> * currentSpeed;
+		sleep 2220 / currentSpeed;
+	}
+	if( bMoving )
+	{
+		move body to z-axis [0.350000] speed [0.225000] * currentSpeed;
+		move lleg to y-axis [-0.200000] speed [0.468746] * currentSpeed;
+		move rleg to y-axis [0.500000] speed [0.243750] * currentSpeed;
+		turn hips to z-axis <5.164835> speed <4.784341> * currentSpeed;
+		turn body to x-axis <6.082418> speed <2.740385> * currentSpeed;
 		turn lleg to x-axis <-41.357143> now;
-		turn rleg to x-axis <54.736264> now;
-		turn rfoot to x-axis <-34.670330> now;
-		turn lfoot to x-axis <13.379121> now;
-		sleep 70;
+		turn rleg to x-axis <55.346154> speed <0.453297> * currentSpeed;
+		turn rfoot to x-axis <-17.939560> speed <12.548077> * currentSpeed;
+		turn lfoot to x-axis <34.670330> speed <15.968407> * currentSpeed;
+		sleep 1220 / currentSpeed;
 	}
-	if( TRUE )
+	if( bMoving )
 	{
-		move lleg to y-axis [-0.200000] now;
-		move rleg to y-axis [0.500000] now;
-		turn lleg to x-axis <-41.357143> now;
-		turn rleg to x-axis <55.346154> now;
-		turn rfoot to x-axis <-17.934066> now;
-		turn lfoot to x-axis <34.670330> now;
-		sleep 70;
+		move body to z-axis [0.700000] speed [0.262500] * currentSpeed;
+		move lleg to y-axis [0.649994] speed [0.637495] * currentSpeed;
+		move rleg to y-axis [1.000000] speed [0.375000] * currentSpeed;
+		turn hips to z-axis <10.335165> speed <3.877748> * currentSpeed;
+		turn body to x-axis <12.164835> speed <4.561813> * currentSpeed;
+		turn lleg to x-axis <-32.236264> speed <6.840659> * currentSpeed;
+		turn rleg to x-axis <55.956044> speed <0.457418> * currentSpeed;
+		turn rfoot to x-axis <-1.214286> speed <12.543955> * currentSpeed;
+		turn lfoot to x-axis <17.027473> speed <13.232143> * currentSpeed;
+		sleep 980 / currentSpeed;
 	}
-	if( TRUE )
+	if( bMoving )
 	{
-		move lleg to y-axis [0.649994] now;
-		move rleg to y-axis [1.000000] now;
-		turn lleg to x-axis <-32.236264> now;
-		turn rleg to x-axis <55.956044> now;
-		turn rfoot to x-axis <-1.214286> now;
-		turn lfoot to x-axis <17.027473> now;
-		sleep 70;
-	}
-	if( TRUE )
-	{
-		move lleg to y-axis [1.350000] now;
-		move rleg to y-axis [1.900000] now;
+		move lleg to y-axis [1.350000] speed [0.525005] * currentSpeed;
+		move rleg to y-axis [1.900000] speed [0.675000] * currentSpeed;
 		move rfoot to y-axis [0.000000] now;
-		turn lleg to x-axis <-10.945055> now;
-		turn rleg to x-axis <18.247253> now;
-		turn rfoot to x-axis <-17.637363> now;
-		turn lfoot to x-axis <0.000000> now;
-		sleep 70;
+		turn hips to z-axis <14.593407> speed <3.193681> * currentSpeed;
+		turn lleg to x-axis <-10.945055> speed <15.968407> * currentSpeed;
+		turn rleg to x-axis <18.247253> speed <28.281593> * currentSpeed;
+		turn rfoot to x-axis <-17.637363> speed <12.317308> * currentSpeed;
+		turn lfoot to x-axis <0.000000> speed <12.770605> * currentSpeed;
+		sleep 1160 / currentSpeed;
 	}
-	if( TRUE )
+	if( bMoving )
 	{
-		move lleg to y-axis [0.950000] now;
-		move rleg to y-axis [1.949994] now;
+		move lleg to y-axis [0.950000] speed [0.150000] * currentSpeed;
+		move rleg to y-axis [1.949994] speed [0.018748] * currentSpeed;
 		move rfoot to y-axis [0.000000] now;
-		turn lleg to x-axis <3.038462> now;
-		turn rleg to x-axis <4.857143> now;
-		turn rfoot to x-axis <-22.192308> now;
+		turn hips to z-axis <12.164835> speed <0.910714> * currentSpeed;
+		turn lleg to x-axis <3.038462> speed <5.243819> * currentSpeed;
+		turn rleg to x-axis <4.862637> speed <5.019231> * currentSpeed;
+		turn rfoot to x-axis <-22.197802> speed <1.710165> * currentSpeed;
 		turn rfoot to y-axis <0.000000> now;
-		turn lfoot to x-axis <-16.725275> now;
-		sleep 70;
+		turn lfoot to x-axis <-16.725275> speed <6.271978> * currentSpeed;
+		sleep 2180 / currentSpeed;
 	}
-	if( TRUE )
+	if( bMoving )
 	{
+		move hips to z-axis [0.000000] now;
 		move lleg to y-axis [0.950000] now;
-		move rleg to y-axis [1.999994] now;
+		move rleg to y-axis [1.999994] speed [0.018750] * currentSpeed;
 		move rfoot to y-axis [0.000000] now;
-		turn lleg to x-axis <11.549451> now;
-		turn rleg to x-axis <-8.505495> now;
-		turn rfoot to x-axis <-26.758242> now;
+		turn hips to z-axis <9.730769> speed <0.912775> * currentSpeed;
+		turn lleg to x-axis <11.554945> speed <3.193681> * currentSpeed;
+		turn rleg to x-axis <-8.510989> speed <5.015110> * currentSpeed;
+		turn rfoot to x-axis <-26.758242> speed <1.710165> * currentSpeed;
 		turn rfoot to y-axis <0.000000> now;
-		turn lfoot to x-axis <-24.324176> now;
-		sleep 70;
+		turn lfoot to x-axis <-24.329670> speed <2.851648> * currentSpeed;
+		sleep 24080 / currentSpeed;
 	}
-	if( TRUE )
+	if( bMoving )
 	{
-		move lleg to y-axis [0.475000] now;
-		move rleg to y-axis [1.774994] now;
-		turn lleg to x-axis <17.027473> now;
-		turn rleg to x-axis <-25.236264> now;
-		turn rfoot to x-axis <-8.203297> now;
-		turn lfoot to x-axis <-20.670330> now;
-		sleep 70;
+		move hips to z-axis [0.000000] now;
+		move body to z-axis [0.475000] speed [0.067500] * currentSpeed;
+		move lleg to y-axis [0.475000] speed [0.142500] * currentSpeed;
+		move rleg to y-axis [1.774994] speed [0.067500] * currentSpeed;
+		turn hips to z-axis <5.774725> speed <1.186813> * currentSpeed;
+		turn body to x-axis <8.818681> speed <1.003846> * currentSpeed;
+		turn lleg to x-axis <17.027473> speed <1.641758> * currentSpeed;
+		turn rleg to x-axis <-25.241758> speed <5.019231> * currentSpeed;
+		turn rfoot to x-axis <-8.208791> speed <5.564835> * currentSpeed;
+		turn lfoot to x-axis <-20.675824> speed <1.096154> * currentSpeed;
+		sleep 2660 / currentSpeed;
 	}
-	if( TRUE )
+	if( bMoving )
+	{
+		move hips to z-axis [0.000000] now;
+		move body to z-axis [0.250000] speed [0.067500] * currentSpeed;
+		move lleg to y-axis [0.000000] speed [0.142500] * currentSpeed;
+		move rleg to y-axis [1.549994] speed [0.067500] * currentSpeed;
+		turn hips to z-axis <1.824176> speed <1.185165> * currentSpeed;
+		turn body to x-axis <5.472527> speed <1.003846> * currentSpeed;
+		turn lleg to x-axis <29.802198> speed <3.832418> * currentSpeed;
+		turn rleg to x-axis <-41.967033> speed <5.017583> * currentSpeed;
+		turn rfoot to x-axis <10.335165> speed <5.563187> * currentSpeed;
+		turn lfoot to x-axis <-29.192308> speed <2.554945> * currentSpeed;
+		sleep 3060 / currentSpeed;
+	}
+	if( bMoving )
 	{
 		move lleg to y-axis [0.000000] now;
-		move rleg to y-axis [1.549994] now;
-		turn lleg to x-axis <29.802198> now;
-		turn rleg to x-axis <-41.967033> now;
+		move rleg to y-axis [0.824994] speed [0.271875] * currentSpeed;
+		turn hips to z-axis <0.912088> speed <0.342033> * currentSpeed;
+		turn body to x-axis <2.736264> speed <1.026099> * currentSpeed;
+		turn lleg to x-axis <38.010989> speed <3.078297> * currentSpeed;
 		turn rfoot to x-axis <10.335165> now;
-		turn lfoot to x-axis <-29.192308> now;
-		sleep 70;
+		turn lfoot to x-axis <-33.148352> speed <1.483517> * currentSpeed;
+		sleep 2460 / currentSpeed;
 	}
-	if( TRUE )
+	if( bMoving )
 	{
 		move lleg to y-axis [0.000000] now;
-		move rleg to y-axis [0.824994] now;
-		turn lleg to x-axis <38.005495> now;
-		turn rfoot to x-axis <10.335165> now;
-		turn lfoot to x-axis <-33.148352> now;
-		sleep 70;
+		move rleg to y-axis [0.099994] speed [0.362500] * currentSpeed;
+		turn hips to z-axis <0.000000> speed <0.456044> * currentSpeed;
+		turn body to x-axis <0.000000> speed <1.368132> * currentSpeed;
+		turn lleg to x-axis <55.956044> speed <8.972527> * currentSpeed;
+		turn rfoot to x-axis <1.214286> speed <4.560439> * currentSpeed;
+		turn lfoot to x-axis <-31.626374> speed <0.760989> * currentSpeed;
+		sleep 1720 / currentSpeed;
 	}
-	if( TRUE )
+	if( bMoving )
 	{
-		move lleg to y-axis [0.000000] now;
-		move rleg to y-axis [0.099994] now;
-		turn lleg to x-axis <55.956044> now;
-		turn rfoot to x-axis <1.214286> now;
-		turn lfoot to x-axis <-31.626374> now;
-		sleep 70;
+		move body to z-axis [0.475000] speed [0.112500] * currentSpeed;
+		move lleg to y-axis [0.500000] speed [0.250000] * currentSpeed;
+		turn hips to z-axis <-3.340659> speed <1.670330> * currentSpeed;
+		turn body to x-axis <5.774725> speed <2.887363> * currentSpeed;
+		turn lleg to x-axis <46.225275> speed <4.865384> * currentSpeed;
+		turn rleg to x-axis <-51.093407> speed <4.563187> * currentSpeed;
+		turn rfoot to x-axis <15.813187> speed <7.299450> * currentSpeed;
+		turn lfoot to x-axis <-19.461538> speed <6.082418> * currentSpeed;
+		sleep 1340 / currentSpeed;
 	}
-	if( TRUE )
+	if( bMoving )
 	{
-		move lleg to y-axis [0.500000] now;
-		turn lleg to x-axis <46.225275> now;
-		turn rleg to x-axis <-51.093407> now;
-		turn rfoot to x-axis <15.813187> now;
-		turn lfoot to x-axis <-19.456044> now;
-		sleep 70;
+		move body to z-axis [0.700000] speed [0.168750] * currentSpeed;
+		move lleg to y-axis [1.000000] speed [0.375000] * currentSpeed;
+		turn hips to z-axis <-6.686813> speed <2.509615> * currentSpeed;
+		turn body to x-axis <11.554945> speed <4.335165> * currentSpeed;
+		turn lleg to x-axis <55.346154> speed <6.840659> * currentSpeed;
+		turn rleg to x-axis <-60.214286> speed <6.840659> * currentSpeed;
+		turn rfoot to x-axis <45.615385> speed <22.351649> * currentSpeed;
+		turn lfoot to x-axis <-12.164835> speed <5.472527> * currentSpeed;
+		sleep 1060 / currentSpeed;
 	}
-	if( TRUE )
+	if( bMoving )
 	{
-		move lleg to y-axis [1.000000] now;
-		turn lleg to x-axis <55.346154> now;
-		turn rleg to x-axis <-60.214286> now;
-		turn rfoot to x-axis <45.615385> now;
-		turn lfoot to x-axis <-12.159341> now;
-		sleep 70;
+		move hips to y-axis [-0.225000] now;
+		move lleg to y-axis [1.299994] speed [0.224996] * currentSpeed;
+		move rleg to y-axis [0.624994] speed [0.393750] * currentSpeed;
+		turn hips to z-axis <-11.252747> speed <3.424450> * currentSpeed;
+		turn lleg to x-axis <36.796703> speed <13.912088> * currentSpeed;
+		turn rleg to x-axis <-46.225275> speed <10.491758> * currentSpeed;
+		turn rfoot to x-axis <31.928571> speed <10.265111> * currentSpeed;
+		turn lfoot to x-axis <-14.593407> speed <1.821429> * currentSpeed;
+		sleep 800 / currentSpeed;
 	}
-	if( TRUE )
+	if( bMoving )
 	{
-		move lleg to y-axis [1.299994] now;
-		move rleg to y-axis [0.624994] now;
-		turn lleg to x-axis <36.791209> now;
-		turn rleg to x-axis <-46.225275> now;
-		turn rfoot to x-axis <31.923077> now;
-		turn lfoot to x-axis <-14.593407> now;
-		sleep 70;
+		move hips to y-axis [-0.450000] speed [0.168750] * currentSpeed;
+		move lleg to y-axis [1.599994] speed [0.225000] * currentSpeed;
+		move rleg to y-axis [1.149994] speed [0.393750] * currentSpeed;
+		turn hips to z-axis <-15.813187> speed <3.420330> * currentSpeed;
+		turn lleg to x-axis <18.247253> speed <13.912088> * currentSpeed;
+		turn rleg to x-axis <-32.236264> speed <10.491758> * currentSpeed;
+		turn rfoot to x-axis <18.247253> speed <10.260988> * currentSpeed;
+		turn lfoot to x-axis <-17.027473> speed <1.825550> * currentSpeed;
+		sleep 1120 / currentSpeed;
 	}
-	if( TRUE )
+	if( bMoving )
 	{
-		move lleg to y-axis [1.599994] now;
-		move rleg to y-axis [1.149994] now;
-		turn lleg to x-axis <18.247253> now;
-		turn rleg to x-axis <-32.236264> now;
-		turn rfoot to x-axis <18.247253> now;
-		turn lfoot to x-axis <-17.027473> now;
-		sleep 70;
+		move lleg to y-axis [1.799994] speed [0.100000] * currentSpeed;
+		move rleg to y-axis [1.349994] speed [0.100000] * currentSpeed;
+		turn hips to z-axis <-13.379121> speed <1.217033> * currentSpeed;
+		turn lleg to x-axis <4.560440> speed <6.843407> * currentSpeed;
+		turn rleg to x-axis <-18.549451> speed <6.843406> * currentSpeed;
+		turn rfoot to x-axis <4.560440> speed <6.843407> * currentSpeed;
+		turn lfoot to x-axis <-21.587912> speed <2.280219> * currentSpeed;
+		sleep 1400 / currentSpeed;
 	}
-	if( TRUE )
+	if( bMoving )
 	{
-		move lleg to y-axis [1.799994] now;
-		move rleg to y-axis [1.349994] now;
-		turn lleg to x-axis <4.560440> now;
-		turn rleg to x-axis <-18.549451> now;
-		turn rfoot to x-axis <4.560440> now;
-		turn lfoot to x-axis <-21.582418> now;
-		sleep 70;
+		move lleg to y-axis [1.999994] speed [0.075000] * currentSpeed;
+		move rleg to y-axis [1.549994] speed [0.075000] * currentSpeed;
+		turn hips to z-axis <-10.945055> speed <0.912775> * currentSpeed;
+		turn lleg to x-axis <-9.120879> speed <5.130495> * currentSpeed;
+		turn rleg to x-axis <-4.862637> speed <5.132555> * currentSpeed;
+		turn rfoot to x-axis <-9.120879> speed <5.130495> * currentSpeed;
+		turn lfoot to x-axis <-26.153846> speed <1.712225> * currentSpeed;
+		sleep 2000 / currentSpeed;
 	}
-	if( TRUE )
+	if( bMoving )
 	{
-		move lleg to y-axis [1.999994] now;
-		move rleg to y-axis [1.549994] now;
-		turn lleg to x-axis <-9.115385> now;
-		turn rleg to x-axis <-4.857143> now;
-		turn rfoot to x-axis <-9.115385> now;
-		turn lfoot to x-axis <-26.148352> now;
-		sleep 70;
+		move body to z-axis [0.400000] speed [0.112500] * currentSpeed;
+		move lleg to y-axis [1.424994] speed [0.215625] * currentSpeed;
+		move rleg to y-axis [0.949994] speed [0.225000] * currentSpeed;
+		turn hips to z-axis <-6.686813> speed <1.596841> * currentSpeed;
+		turn body to x-axis <8.208791> speed <1.254808> * currentSpeed;
+		turn lleg to x-axis <-30.412088> speed <7.984203> * currentSpeed;
+		turn rleg to x-axis <4.862637> speed <3.646978> * currentSpeed;
+		turn rfoot to x-axis <-14.901099> speed <2.167582> * currentSpeed;
+		turn lfoot to x-axis <-15.203297> speed <4.106456> * currentSpeed;
+		sleep 2600 / currentSpeed;
 	}
-	if( TRUE )
+	if( bMoving )
 	{
-		move lleg to y-axis [1.424994] now;
-		move rleg to y-axis [0.949994] now;
-		turn lleg to x-axis <-30.412088> now;
-		turn rleg to x-axis <4.857143> now;
-		turn rfoot to x-axis <-14.901099> now;
-		turn lfoot to x-axis <-15.203297> now;
-		sleep 70;
+		move body to z-axis [0.100000] speed [0.090000] * currentSpeed;
+		move lleg to y-axis [0.849994] speed [0.172500] * currentSpeed;
+		move rleg to y-axis [0.350000] speed [0.179998] * currentSpeed;
+		turn hips to z-axis <-2.428571> speed <1.277473> * currentSpeed;
+		turn body to x-axis <4.862637> speed <1.003846> * currentSpeed;
+		turn lleg to x-axis <-51.697802> speed <6.385714> * currentSpeed;
+		turn rleg to x-axis <14.593407> speed <2.919231> * currentSpeed;
+		turn rfoot to x-axis <-20.675824> speed <1.732417> * currentSpeed;
+		turn lfoot to x-axis <-4.252747> speed <3.285165> * currentSpeed;
+		sleep 2800 / currentSpeed;
 	}
-	if( TRUE )
-	{
-		move lleg to y-axis [0.849994] now;
-		move rleg to y-axis [0.350000] now;
-		turn lleg to x-axis <-51.692308> now;
-		turn rleg to x-axis <14.593407> now;
-		turn rfoot to x-axis <-20.670330> now;
-		turn lfoot to x-axis <-4.247253> now;
-		sleep 70;
-	}
-	move hips to y-axis [-0.225000] now;
+	move hips to y-axis [-0.225000] speed [0.067500] * currentSpeed;
 	move hips to z-axis [0.000000] now;
-	move lleg to y-axis [0.424994] now;
-	move rleg to y-axis [0.175000] now;
-	turn lleg to x-axis <-46.527473> now;
-	turn rleg to x-axis <34.670330> now;
-	turn rfoot to x-axis <-27.670330> now;
+	move body to z-axis [0.050000] speed [0.015000] * currentSpeed;
+	move lleg to y-axis [0.424994] speed [0.127500] * currentSpeed;
+	move rleg to y-axis [0.175000] speed [0.052500] * currentSpeed;
+	turn hips to z-axis <-1.214286> speed <0.364285> * currentSpeed;
+	turn body to x-axis <2.428571> speed <0.730220> * currentSpeed;
+	turn lleg to x-axis <-46.527473> speed <1.551099> * currentSpeed;
+	turn rleg to x-axis <34.670330> speed <6.023077> * currentSpeed;
+	turn rfoot to x-axis <-27.670330> speed <2.098352> * currentSpeed;
 	turn rfoot to y-axis <0.000000> now;
-	turn lfoot to x-axis <-2.736264> now;
-	sleep 70;
-}
-
-SmokeUnit(healthpercent, sleeptime, smoketype)
-{
-	while( get BUILD_PERCENT_LEFT )
-	{
-		sleep 400;
-	}
-	while( TRUE )
-	{
-		healthpercent = get HEALTH;
-		if( healthpercent < 66 )
-		{
-			smoketype = 256 | 2;
-			if( Rand( 1, 66 ) < healthpercent )
-			{
-				smoketype = 256 | 1;
-			}
-			emit-sfx smoketype from body;
-		}
-		sleeptime = healthpercent * 50;
-		if( sleeptime < 200 )
-		{
-			sleeptime = 200;
-		}
-		sleep sleeptime;
-	}
+	turn lfoot to x-axis <-2.736264> speed <0.454945> * currentSpeed;
+	sleep 2800 / currentSpeed;
 }
 
 MotionControl(Func_Var_1)
@@ -449,23 +541,23 @@ MotionControl(Func_Var_1)
 				Static_Var_3 = 1;
 				call-script walklegs();
 			}
-			if( !bAiming )
+			else
 			{
 				Static_Var_3 = 0;
 				call-script walk();
 			}
 			Func_Var_1 = 1;
 		}
-		if( !bMoving )
+		else
 		{
 			Static_Var_3 = 1;
 			if( Func_Var_1 )
 			{
 				move body to x-axis [0.000000] speed [1.000000];
-				turn rleg to x-axis <0.000000> speed <200.038462>;
-				turn rfoot to x-axis <0.000000> speed <200.038462>;
-				turn lleg to x-axis <0.000000> speed <200.038462>;
-				turn lfoot to x-axis <0.000000> speed <200.038462>;
+				turn rleg to x-axis <0.000000> speed <200.043956>;
+				turn rfoot to x-axis <0.000000> speed <200.043956>;
+				turn lleg to x-axis <0.000000> speed <200.043956>;
+				turn lfoot to x-axis <0.000000> speed <200.043956>;
 				Func_Var_1 = 0;
 			}
 			sleep 100;
@@ -473,19 +565,74 @@ MotionControl(Func_Var_1)
 	}
 }
 
-flames(Func_Var_1)
+UnitSpeed()
 {
-	while( get BUILD_PERCENT_LEFT )
+	while(TRUE)
 	{
-		sleep 500;
+		currentSpeed = (get CURRENT_SPEED)*20/moveSpeed;	// determine in 1/20ths how fast we're going
+		if (currentSpeed<4) currentSpeed=4;					// prevent infinite timing
+		/*	Unit animation speed notes:
+
+			currentSpeed will be in range from 4 (walking into an immobile obstacle) to 22+ (running down hill)
+
+			turn piece to axis <angle> speed <angspeed/20>*currentSpeed;
+
+			all move and turn speeds in walk() and walklegs() have their value divided by 20, this value is precalculated
+			and wont impede performance
+
+			so when the unit moves at default max speed, it's currentSpeed factor will be 20 so anim speed will be nominal
+			otherwise the speed will be slower or faster depending on the currentSpeed value
+
+			sleep (time*20)/currentSpeed;
+
+			since speed is inverse proportional to time, sleep needs to be divided by currentSpeed, and since nominal
+			factor for currentSpeed is 20 all sleep times are multiplied by 20, this value is also precalculated
+		*/
+		sleep 142;	// sleep time is always rounded to nearest framerate (0..32, 33..65, 66..98, etc.)
+					// so this runs 6 times per second, not 7 as one might think (1000/7 = ~142)
 	}
-	while( TRUE )
+}
+
+flames()
+{
+	var t;
+	while ( TRUE )
 	{
-		Func_Var_1 = 300 + Rand( 50, 1000 );
-		sleep Func_Var_1;
+		t=300+rand(50,1000);
+		sleep t;
 		emit-sfx 0 from flare;
 		sleep 100;
 		emit-sfx 0 from flare;
+     }
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	start-script flames();			//I usually start parallel threads for effects here
+	start-script UnitSpeed();		//as in this case I only have one wait for build completion
+	start-script MotionControl();
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 258;		// Avoid syntax of num | num, use the exptype.h constants instead
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 258;
+			}
+			emit-sfx smoketype from body;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
 	}
 }
 
@@ -495,10 +642,10 @@ Create()
 	bAiming = FALSE;
 	Static_Var_3 = 1;
 	Static_Var_4 = 0;
+	currentSpeed = 100;
+	moveSpeed = get MAX_SPEED;
 	hide flare;
 	restore_delay = 3000;
-	start-script flames();
-	start-script MotionControl();
 	start-script SmokeUnit();
 }
 
@@ -511,19 +658,19 @@ StartMoving()
 	{
 		if( Static_Var_6 == 3 )
 		{
-			emit-sfx 256 | 3 from lfoot;
-			emit-sfx 256 | 3 from rfoot;
-			emit-sfx 256 | 3 from body;
+			emit-sfx 259 from lfoot;
+			emit-sfx 259 from rfoot;
+			emit-sfx 259 from body;
 		}
-		if( Static_Var_6 == 2 )
+		else if( Static_Var_6 == 2 )
 		{
-			emit-sfx 256 | 3 from lfoot;
-			emit-sfx 256 | 3 from rfoot;
+			emit-sfx 259 from lfoot;
+			emit-sfx 259 from rfoot;
 			emit-sfx 3 from lleg;
 			emit-sfx 3 from rleg;
 			emit-sfx 3 from body;
 		}
-		if( Static_Var_6 == 1 )
+		else if( Static_Var_6 == 1 )
 		{
 			emit-sfx 3 from lfoot;
 			emit-sfx 3 from rfoot;
@@ -538,9 +685,9 @@ StopMoving()
 	signal SIG_MOVE;
 }
 
-setSFXoccupy(state)
+setSFXoccupy(Func_Var_1)
 {
-	Static_Var_6 = state;
+	Static_Var_6 = Func_Var_1;
 }
 
 SetMaxReloadTime(Func_Var_1)
@@ -556,13 +703,11 @@ SweetSpot(piecenum)
 RestoreAfterDelay()
 {
 	sleep restore_delay;
-	turn head to y-axis <0.000000> speed <90.000000>;
-	turn sleeve to x-axis <0.000000> speed <60.000000>;
+	turn head to y-axis <0> speed <90>;
+	turn sleeve to x-axis <0> speed <60>;
 	wait-for-turn head around y-axis;
 	bAiming = FALSE;
 }
-
-
 
 AimFromPrimary(piecenum)
 {
@@ -574,14 +719,14 @@ QueryPrimary(piecenum)
 	piecenum = flare;
 }
 
+FirePrimary()
+{
+}
+
 Shot1()
 {
 	call-script lua_FlameShot(1);
 	return (TRUE);
-}
-
-FirePrimary()
-{
 }
 
 AimPrimary(heading, pitch)
@@ -593,13 +738,14 @@ AimPrimary(heading, pitch)
 	{
 		sleep 100;
 	}
-	turn head to y-axis heading speed <75.000000>;
+	turn head to y-axis heading speed <100>;
 	wait-for-turn head around y-axis;
-	turn sleeve to x-axis <0.000000> - pitch speed <60.000000>;
+	turn sleeve to x-axis (0-pitch) speed <60>;
 	wait-for-turn sleeve around x-axis;
 	start-script RestoreAfterDelay();
 	return (1);
 }
+
 
 Killed(severity, corpsetype)
 {
