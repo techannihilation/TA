@@ -16,7 +16,9 @@ local plate = piece 'plate'
 local rdoor = piece 'rdoor' 
 local ldoor = piece 'ldoor' 
 
-local statechg_DesiredState, statechg_StateChanging, Static_Var_3, Static_Var_4, Static_Var_5
+local open = 2
+local close = 4
+
 
 local spGetUnitIsStunned = Spring.GetUnitIsStunned
 local stunned = 0
@@ -70,6 +72,9 @@ end
 
 local function Activate()
       if stunned and stunned == 1 then return end -- ADDED FOR STUNABLE
+      
+      Signal(close) --kill the closing animation if it is in process
+      SetSignalMask(open) --set the signal to kill the opening animation
   --[[
   
 	dont-cache rdoor
@@ -88,23 +93,16 @@ local function Activate()
 	dont-cache pan8
   --]]
 	SetUnitValue(COB.ARMORED, 0) 
-	if  true  then
 	
 		Turn( rdoor , z_axis, math.rad(-(-90.000000)), math.rad(35.000000) )
 		Turn( ldoor , z_axis, math.rad(-(90.000000)), math.rad(35.000000) )
 		WaitForTurn(ldoor, z_axis)
-	end
-	if  true  then
 	
 		Move( plate , y_axis, 9.000000 , 5.000000 )
 		WaitForMove(plate, y_axis)
-	end
-	if  true  then
 	
 		Turn( arm , x_axis, math.rad(-130.000000), math.rad(33.000000) )
 		Sleep(3000)
-	end
-	if  true  then
 	
 		Turn( antenne , x_axis, math.rad(-60.000000), math.rad(45.000000) )
 		Turn( pan1 , y_axis, math.rad(-22.000000), math.rad(30.000000) )
@@ -123,13 +121,14 @@ local function Activate()
 		Sleep(350)
 		Turn( pan8 , y_axis, math.rad(-45.000000), math.rad(30.000000) )
 		Sleep(350)
-	end
+	
 	Sleep(53)
 end
 
 local function Deactivate()
 
-	if  true  then
+		Signal(open) --kill the opening animation if it is in process
+		SetSignalMask(close) --set the signal to kill the closing animation
 	
 		Turn( pan8 , y_axis, 0, math.rad(45.000000) )
 		Sleep(200)
@@ -149,23 +148,17 @@ local function Deactivate()
 		Sleep(200)
 		Turn( antenne , x_axis, 0, math.rad(45.000000) )
 		Sleep(500)
-	end
-	if  true  then
-	
+		
 		Turn( arm , x_axis, math.rad(10.000000), math.rad(33.000000) )
 		WaitForTurn(arm, x_axis)
-	end
-	if  true  then
 	
 		Move( plate , y_axis, 0.000000 , 5.000000 )
 		WaitForMove(plate, y_axis)
-	end
-	if  true  then
-	
+		
 		Turn( rdoor , z_axis, math.rad(-(0.000000)), math.rad(35.000000) )
 		Turn( ldoor , z_axis, math.rad(-(0.000000)), math.rad(35.000000) )
 		WaitForTurn(ldoor, z_axis)
-	end
+	
 	--[[
 	cache rdoor
 	cache ldoor
