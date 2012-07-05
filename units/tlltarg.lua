@@ -46,6 +46,7 @@ local unitDef = {
 	objectName = [[TLLTARG]],
 	onoffable = true,
 	radarDistance = 7250,
+	script = [[tlltarg.lua]],
 	selfDestructAs = [[LARGE_BUILDING]],
 	side = [[TLL]],
 	sightDistance = 110,
