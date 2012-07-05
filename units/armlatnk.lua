@@ -134,12 +134,12 @@ local weaponDefs = {
 		weaponType = [[MissileLauncher]],
 		weaponVelocity = 850,
 		damage = {
-			bombers = 420,
+			bombers = 100,
 			default = 5,
-			fighters = 420,
-			flak_resistant = 420,
+			fighters = 100,
+			flak_resistant = 100,
 			subs = 5,
-			unclassed_air = 420,
+			unclassed_air = 100,
 		},
 	},
 	ARMLATNK_WEAPON = {
