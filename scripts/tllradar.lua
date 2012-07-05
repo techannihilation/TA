@@ -55,7 +55,7 @@ local function StunnedCheck()
 end
 
 local function Activate()
-    if stunned and stunned == 1 then return end -- ADDED FOR STUNABLE
+    if stunned and stunned == 1 then SetUnitValue(COB.ACTIVATION, 0) return end -- ADDED FOR STUNABLE
 	Spin( top , y_axis, 1.000000 )
 	Spin( dish1 , x_axis, 10.000000 )
 	Spin( dish2 , x_axis, -10.000000 )

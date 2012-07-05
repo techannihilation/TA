@@ -71,7 +71,7 @@ end
 
 
 local function Activate()
-      if stunned and stunned == 1 then return end -- ADDED FOR STUNABLE
+    if stunned and stunned == 1 then SetUnitValue(COB.ACTIVATION, 0) return end -- ADDED FOR STUNABLE
       
       Signal(close) --kill the closing animation if it is in process
       SetSignalMask(open) --set the signal to kill the opening animation
