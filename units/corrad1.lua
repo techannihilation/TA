@@ -45,6 +45,7 @@ local unitDef = {
 	objectName = [[CORRAD]],
 	onoffable = true,
 	radarDistance = 2800,
+	script = [[corrad.lua]],
 	seismicSignature = 0,
 	selfDestructAs = [[SMALL_BUILDING]],
 	side = [[CORE]],
