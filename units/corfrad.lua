@@ -43,6 +43,7 @@ local unitDef = {
 	objectName = [[CORFRAD]],
 	onoffable = true,
 	radarDistance = 2100,
+	script = [[corfrad.lua]],
 	seismicSignature = 0,
 	selfDestructAs = [[SMALL_BUILDING]],
 	side = [[CORE]],
