@@ -46,6 +46,7 @@ local unitDef = {
 	onoffable = true,
 	radarDistance = 2200,
 	selfDestructAs = [[BIG_UNIT]],
+	script = [[tlldivine.lua]],
 	shootme = 1,
 	side = [[TLL]],
 	sightDistance = 320,
