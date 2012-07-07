@@ -46,6 +46,7 @@ local unitDef = {
 	objectName = [[TLLOBSERVER]],
 	onoffable = true,
 	radarDistance = 1800,
+	script = [[tllobserver.lua]],
 	selfDestructAs = [[BIG_UNIT]],
 	shootme = 1,
 	side = [[TLL]],
