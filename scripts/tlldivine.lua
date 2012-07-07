@@ -12,6 +12,7 @@ local stunned = 0
 
 local currentSpeed 
 
+
 local function StunnedCheck()
 	while true do
 		if select(1, spGetUnitIsStunned(unitID)) and GetUnitValue(COB.ACTIVATION) == 1  then
@@ -69,15 +70,17 @@ local function script.HitByWeapon(anglex, anglez)
 end
 --]]
 local function Moving()
+       
+        local moveSpeed = GetUnitValue(COB.MAX_SPEED)
 
 	Signal( SIG_MOVE)
 	SetSignalMask( SIG_MOVE)
 	while true do
-	  currentSpeed = GetUnitValue(COB.CURRENT_SPEED)*5 / GetUnitValue(COB.MAX_SPEED)
+	  currentSpeed = GetUnitValue(COB.CURRENT_SPEED)*5 / moveSpeed
 	    if currentSpeed <= 1.5 then currentSpeed = 1.5
 	    end
 	  Sleep(330)
-	  --Spring.Echo (currentSpeed)
+	  Spring.Echo (moveSpeed)
 	  Spin( w1 , x_axis, 1.0 * currentSpeed)
 	  Spin( w2 , x_axis, 1.0 * currentSpeed)
 	end
