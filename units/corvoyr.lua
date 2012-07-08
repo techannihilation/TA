@@ -46,6 +46,7 @@ local unitDef = {
 	objectName = [[CORVOYR]],
 	onoffable = true,
 	radarDistance = 2200,
+	script = [[corvoyr.lua]],
 	seismicSignature = 0,
 	selfDestructAs = [[BIG_UNIT]],
 	side = [[CORE]],
