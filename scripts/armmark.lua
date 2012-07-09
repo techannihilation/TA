@@ -162,8 +162,8 @@ end
 local function Deactivate()
 	StopSpin( rdish , x_axis, 7.021978 )
 	StopSpin( ldish , x_axis, -7.021978 )
-	Turn( rdish , x_axis, 0, math.rad(90.0) )
-	Turn( ldish , x_axis, 0, math.rad(-90.0) )
+	Turn( rdish , x_axis, 90, math.rad(90.0) )
+	Turn( ldish , x_axis, -0, math.rad(90.0) )
 	WaitForTurn(rdish, x_axis)
 	WaitForTurn(ldish, x_axis)
 end
