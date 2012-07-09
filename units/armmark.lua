@@ -56,6 +56,7 @@ local unitDef = {
 	radarDistance = 2200,
 	selfDestructAs = [[BIG_UNIT]],
 	shootme = 1,
+	script = [[armmark.lua]],
 	side = [[ARM]],
 	sightDistance = 900,
 	smoothAnim = true,
