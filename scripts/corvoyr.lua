@@ -14,7 +14,8 @@ include "constants.lua"
 local  bMoving
 
 -- Signal definitions
-local SIG_ACTIVATE = 2
+local SIG_WALK = 2
+local SIG_ACTIVATE = 4
 
 local spGetUnitIsStunned = Spring.GetUnitIsStunned
 local stunned = 0
@@ -36,8 +37,9 @@ local function StunnedCheck()
 end
 
 local function walkscr()
-	if true  then
-	
+	SetSignalMask( SIG_WALK)
+
+	while true do
 		Move( body , y_axis, -0.450000  )
 		Move( body , y_axis, -0.350000 , 1.219513 )
 		Move( thigh1 , x_axis, 0.000000  )
@@ -63,9 +65,6 @@ local function walkscr()
 		Turn( foot1 , x_axis, math.rad(22.950549) )
 		Turn( foot1 , x_axis, math.rad(7.120879), math.rad(193.021978) )
 		Sleep(82)
-	end
-	if  true  then
-	
 		Move( body , y_axis, -0.300000 , 0.543475 )
 		Turn( body , z_axis, math.rad(-(-3.956044)), math.rad(17.203297) )
 		Turn( thigh1 , x_axis, math.rad(2.373626), math.rad(146.236264) )
@@ -73,10 +72,6 @@ local function walkscr()
 		Turn( foot2 , x_axis, math.rad(19.697802), math.rad(81.890110) )
 		Turn( leg1 , x_axis, math.rad(4.747253), math.rad(25.802198) )
 		Turn( foot1 , x_axis, math.rad(-6.329670), math.rad(146.236264) )
-		Sleep(92)
-	end
-	if  true  then
-	
 		Move( body , y_axis, 0.000000 , 3.125000 )
 		Turn( body , z_axis, math.rad(-(-0.791209)), math.rad(32.972527) )
 		Turn( thigh1 , x_axis, math.rad(10.285714), math.rad(82.434066) )
@@ -86,9 +81,6 @@ local function walkscr()
 		Turn( leg1 , x_axis, math.rad(15.032967), math.rad(107.164835) )
 		Turn( foot1 , x_axis, math.rad(-25.324176), math.rad(197.846154) )
 		Sleep(96)
-	end
-	if  true  then
-	
 		Move( body , y_axis, -0.850000 , 9.139789 )
 		Turn( body , z_axis, math.rad(-(12.659341)), math.rad(144.664835) )
 		Turn( thigh1 , x_axis, math.rad(21.362637), math.rad(119.131868) )
@@ -98,9 +90,6 @@ local function walkscr()
 		Turn( leg1 , x_axis, math.rad(16.615385), math.rad(17.016484) )
 		Turn( foot1 , x_axis, math.rad(-5.538462), math.rad(212.741758) )
 		Sleep(93)
-	end
-	if  true  then
-	
 		Move( body , y_axis, -0.550000 , 3.333337 )
 		Turn( body , z_axis, math.rad(-(9.494505)), math.rad(35.170330) )
 		Turn( thigh1 , x_axis, math.rad(18.197802), math.rad(35.170330) )
@@ -110,9 +99,6 @@ local function walkscr()
 		Turn( leg1 , x_axis, math.rad(7.120879), math.rad(105.516484) )
 		Turn( foot1 , x_axis, math.rad(-11.076923), math.rad(61.549451) )
 		Sleep(90)
-	end
-	if  true  then
-	
 		Move( body , y_axis, -0.350000 , 2.127649 )
 		Turn( body , z_axis, math.rad(-(5.538462)), math.rad(42.093407) )
 		Turn( thigh1 , x_axis, math.rad(9.494505), math.rad(92.609890) )
@@ -122,9 +108,6 @@ local function walkscr()
 		Turn( leg1 , x_axis, math.rad(-4.747253), math.rad(126.285714) )
 		Turn( foot1 , x_axis, math.rad(10.285714), math.rad(227.313187) )
 		Sleep(94)
-	end
-	if  true  then
-	
 		Move( body , y_axis, -0.150000 , 2.127661 )
 		Turn( thigh1 , x_axis, math.rad(-11.868132), math.rad(227.313187) )
 		Turn( thigh2 , x_axis, math.rad(3.681319), math.rad(227.313187) )
@@ -133,9 +116,6 @@ local function walkscr()
 		Turn( leg1 , x_axis, math.rad(-4.747253), 0 )
 		Turn( foot1 , x_axis, math.rad(17.406593), math.rad(75.769231) )
 		Sleep(94)
-	end
-	if  true  then
-	
 		Move( body , y_axis, 0.000000 , 1.612909 )
 		Turn( body , z_axis, math.rad(-(0.000000)), math.rad(59.565934) )
 		Turn( thigh1 , x_axis, math.rad(-27.697802), math.rad(170.192308) )
@@ -144,9 +124,6 @@ local function walkscr()
 		Turn( foot2 , x_axis, math.rad(-14.752747), math.rad(76.582418) )
 		Turn( foot1 , x_axis, math.rad(23.741758), math.rad(68.076923) )
 		Sleep(93)
-	end
-	if  true  then
-	
 		Move( body , y_axis, -0.850000 , 9.042548 )
 		Turn( body , z_axis, math.rad(-(-8.703297)), math.rad(92.609890) )
 		Turn( thigh1 , x_axis, math.rad(-53.021978), math.rad(269.412088) )
@@ -157,6 +134,18 @@ local function walkscr()
 		Sleep(94)
 	end
 	Sleep(94)
+end
+
+local function stand()
+			SetSignalMask( SIG_MOVE)
+			Turn( body , z_axis, math.rad(-(0.000000)), math.rad(200.043956) )
+			Move( body , y_axis, 0.000000 , 1.000000 )
+			Turn( leg1 , x_axis, 0, math.rad(200.043956) )
+			Turn( foot1 , x_axis, 0, math.rad(200.043956) )
+			Turn( thigh2 , x_axis, 0, math.rad(200.043956) )
+			Turn( leg2 , x_axis, 0, math.rad(200.043956) )
+			Turn( foot2 , x_axis, 0, math.rad(200.043956) )
+			Sleep(100)
 end
 
 local function still_building_p()
@@ -189,41 +178,13 @@ local function SmokeUnit(healthpercent, sleeptime, smoketype)
 	end
 end
 
-local function MotionControl()
 
-	while  true  do
-		if  bMoving  then
-			 walkscr()
-		end
-		if  not bMoving  then
-			Turn( body , z_axis, math.rad(-(0.000000)), math.rad(200.043956) )
-			Move( body , y_axis, 0.000000 , 1.000000 )
-			Turn( leg1 , x_axis, 0, math.rad(200.043956) )
-			Turn( foot1 , x_axis, 0, math.rad(200.043956) )
-			Turn( thigh2 , x_axis, 0, math.rad(200.043956) )
-			Turn( leg2 , x_axis, 0, math.rad(200.043956) )
-			Turn( foot2 , x_axis, 0, math.rad(200.043956) )
-		end
-		Sleep(100)
-	end
-end
 
 local function spin()
 	if stunned and stunned == 1 then SetUnitValue(COB.ACTIVATION, 0) return end -- ADDED FOR STUNABLE
 	Signal( SIG_ACTIVATE)
 	SetSignalMask( SIG_ACTIVATE)
 	Spin( dish1 , y_axis, math.rad(100))
-end
-
-function script.Create()
-	StartThread(MotionControl)
-	StartThread(SmokeUnit)
-	StartThread(StunnedCheck)
-	StartThread(spin)
-end
-
-function script.Activate()
-	StartThread(spin)
 end
 
 local function holdSpin()
@@ -233,16 +194,27 @@ local function holdSpin()
 	WaitForTurn(dish1, y_axis)
 end
 
+function script.Create()
+	StartThread(SmokeUnit)
+	StartThread(StunnedCheck)
+	--StartThread(spin)
+end
+
+function script.Activate()
+	StartThread(spin)
+end
+
 function script.Deactivate()
 	StartThread(holdSpin)
 end
 
 function script.StartMoving()
-	bMoving = true
+	StartThread(walkscr)
 end
 
 function script.StopMoving()
-	bMoving = false
+  	Signal( SIG_WALK)
+	StartThread(stand)
 end
 
 function script.Killed(recentDamage, maxHealth)
