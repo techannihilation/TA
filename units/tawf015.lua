@@ -86,7 +86,7 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOTVTOL]],
+			--badTargetCategory = [[NOTVTOL]],
 			def = [[Katana_M]],
 		},
 		[2] = {
@@ -94,7 +94,7 @@ local unitDef = {
 			onlyTargetCategory = [[VTOL]],
 		},
 		[3] = {
-			badTargetCategory = [[NOTVTOL]],
+			--badTargetCategory = [[NOTVTOL]],
 			def = [[Katana_M]],
 		},
 	},

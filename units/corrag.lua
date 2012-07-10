@@ -7,7 +7,6 @@ local unitName = "corrag"
 
 local unitDef = {
 	acceleration = 0.24,
-	badTargetCategory = [[ANTIEMG]],
 	bankscale = 1,
 	bmcode = 1,
 	brakeRate = 4.41,
@@ -64,11 +63,11 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOTVTOL]],
+			--badTargetCategory = [[NOTVTOL]],
 			def = [[666Sonicwave]],
 		},
 		[2] = {
-			badTargetCategory = [[NOTVTOL]],
+			--badTargetCategory = [[NOTVTOL]],
 			def = [[666Sonicwave]],
 		},
 		[3] = {
