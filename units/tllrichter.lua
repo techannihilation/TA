@@ -34,6 +34,7 @@ local unitDef = {
 	noChaseCategory = [[ALL]],
 	objectName = [[TLLRICHTER]],
 	onoffable = true,
+	script = [[tllrichter.lua]],
 	seismicDistance = 2200,
 	seismicSignature = 0,
 	selfDestructAs = [[LARGE_BUILDING]],
