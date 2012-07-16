@@ -7,6 +7,7 @@ local modrules  = {
     allowPushingEnemyUnits   = true; -- defaults to false
     allowCrushingAlliedUnits = false; -- defaults to false
     allowUnitCollisionDamage = false; -- defaults to false
+    allowUnitCollisionOverlap = false,	-- defaults to true
   },
   
   reclaim = {
