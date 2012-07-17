@@ -66,12 +66,12 @@ if (gadgetHandler:IsSyncedCode()) then
 					if (vtype==4 and xs==ys and ys==zs) then
 						if (xs>47) then
 							rs, hs = 0.68, 0.60
-							spSetFeatureCollisionData(featureID, xs*0.68, ys*0.60, zs*0.68,  xo, yo-ys*0.09, zo,  vtype, htype, axis)
+							spSetFeatureCollisionData(featID, xs*0.68, ys*0.60, zs*0.68,  xo, yo-ys*0.09, zo,  vtype, htype, axis)
 						else
-							spSetFeatureCollisionData(featureID, xs*0.75, ys*0.67, zs*0.75,  xo, yo-ys*0.1005, zo,  vtype, htype, axis)
+							spSetFeatureCollisionData(featID, xs*0.75, ys*0.67, zs*0.75,  xo, yo-ys*0.1005, zo,  vtype, htype, axis)
 						end
 					end
-					spSetFeatureRadiusAndHeight(featureID, spGetFeatureRadius(featID)*rs, spGetFeatureHeight(featID)*hs)			
+					spSetFeatureRadiusAndHeight(featID, spGetFeatureRadius(featID)*rs, spGetFeatureHeight(featID)*hs)			
 				elseif featureModel:find(".s3o") then
 					if (vtype==4 and xs==ys and ys==zs) then
 						spSetFeatureCollisionData(featID, xs, ys*0.75, zs,  xo, yo-ys*0.09, zo,  vtype, htype, axis)
@@ -129,10 +129,6 @@ if (gadgetHandler:IsSyncedCode()) then
 					spSetUnitCollisionData(unitID, xs*0.375, ys*0.225, zs*0.48,  xo, yo, zo,  vtype, htype, axis)
 				end
 			end
-		
-		end
-		if UnitDefs[unitDefID].model.type=="3do" then
-			spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*rs, spGetUnitHeight(unitID)*hs)
 		end
 	end
 
@@ -166,6 +162,25 @@ if (gadgetHandler:IsSyncedCode()) then
 		end
 	end
 
+	
+	--Reduce radius and height for 3DO units, for buildings this results in cons not being able
+	--to start or finish them depending if the scaling was made on UnitCreated() or UnitFinished()
+	function gadget:UnitFromFactory(unitID, unitDefID, unitTeam)
+		if UnitDefs[unitDefID].model.type=="3do" then
+			local rs, hs = 0.75, 0.67
+			if (vtype==4 and xs==ys and ys==zs) then
+				if (xs>47 and not UnitDefs[unitDefID].canFly) then
+					rs, hs = 0.68, 0.68
+				elseif (not UnitDefs[unitDefID].canFly) then
+					--rs, hs = 0.75, 0.75
+				else
+					rs, hs = 0.48, 0.225
+				end
+			end
+			spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*rs, spGetUnitHeight(unitID)*hs)
+		end
+	end
+	
 
 	--check if a pop-up type unit was destroyed
 	function gadget:UnitDestroyed(unitID, unitDefID, unitTeam)
