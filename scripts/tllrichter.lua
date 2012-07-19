@@ -83,11 +83,11 @@ function script.Killed(recentDamage, maxHealth)
 		return 1
 	
 	elseif  (severity <= .50)  then
-		Explode(body, SFX.SHATTER | FALL + SFX.SMOKE  + SFX.FIRE  + SFX.EXPLODE_ON_HIT )
+		Explode(body, SFX.SHATTER + SFX.SMOKE  + SFX.FIRE  + SFX.EXPLODE_ON_HIT )
 			return 2
 	else
 	
-	Explode(body, SFX.SHATTER | FALL + SFX.SMOKE  + SFX.FIRE  + SFX.EXPLODE_ON_HIT )
+	Explode(body, SFX.SHATTER + SFX.SMOKE  + SFX.FIRE  + SFX.EXPLODE_ON_HIT )
 	return 3
 	end
 end
