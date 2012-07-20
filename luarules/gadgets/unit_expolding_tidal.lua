@@ -44,7 +44,7 @@ local GetUnitDefID         = Spring.GetUnitDefID
 local GetUnitBasePosition  = Spring.GetUnitBasePosition
 local GetUnitPosition      = Spring.GetUnitPosition
 local GetGroundHeight      = Spring.GetGroundHeight
-local Buffer = 3
+local Buffer = 2
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
 
@@ -65,7 +65,7 @@ function gadget:GameFrame(n)
 	--  Spring.Echo("Sum:- " .. minwater + groundy)
 	  if (minwater + groundy ) > ( 0 + Buffer) then 
 	    local rx, ry, rz = GetUnitPosition(unitID)
-	    Spring.SpawnCEG("explosionmedium", rx, ry, rz)
+	    Spring.SpawnCEG("Death_Explosion_Tidal", rx, ry, rz)
 	    Spring.DestroyUnit(unitID, true, false)
 	  end
      
