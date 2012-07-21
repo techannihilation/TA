@@ -90,7 +90,7 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			def = [[CORVIPE_LASER]],
+			def = [[CBRUTUS_MISSILE]],
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
@@ -99,7 +99,7 @@ local unitDef = {
 --------------------------------------------------------------------------------
 
 local weaponDefs = {
-	CORVIPE_LASER = {
+	CBRUTUS_MISSILE = {
 		areaOfEffect = 32,
 		burnblow = true,
 		cegTag = [[trail_medium_rocket]],
