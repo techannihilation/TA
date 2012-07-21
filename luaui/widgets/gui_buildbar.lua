@@ -406,7 +406,11 @@ function widget:DrawScreen()
       end
      -- repeat mode?
       local ustate   = GetUnitStates(facInfo.unitID)
-      options['repeat'] = ustate["repeat"]
+      if ustate ~= nil then
+        options['repeat'] = ustate["repeat"]
+      else
+        options['repeat'] = false
+      end
      -- hover or pressed?
       if (i==hoveredFac+1) then
         options.hovered_repeat = IsInRect(mx,my, {fac_rec[3]-repIcoSize,fac_rec[2],fac_rec[3],fac_rec[2]-repIcoSize}) 
@@ -491,12 +495,15 @@ end
 function widget:DrawWorld()
   -- Draw factories command lines
   if waypointMode>1 or openedMenu>=0 then
-    local unitID
-    if waypointMode>1 
-      then unitID = facs[waypointFac+1].unitID
-      else unitID = facs[openedMenu+1].unitID end
-
-    DrawUnitCommands(unitID)
+    local fac
+    if waypointMode>1 then
+      fac = facs[waypointFac+1]
+    else
+      fac = facs[openedMenu+1]
+    end
+    if fac ~= nil then
+      DrawUnitCommands(fac.unitID)
+    end
   end
 end
 
@@ -514,14 +521,16 @@ function widget:DrawInMiniMap(sx,sy)
        local alpha = 0.5 + math.abs((Spring.GetGameSeconds() % 0.25)*4 - 0.5)
        local x,_,z = Spring.GetUnitBasePosition(facs[openedMenu+1].unitID)
 
-       gl.PointSize(pt*0.066)
-       gl.Color(0, 0, 0)
-       gl.BeginEnd(GL.POINTS, function() gl.Vertex(x, z) end)
-       gl.PointSize(pt*0.051)
-       gl.Color(r,g,b, alpha)
-       gl.BeginEnd(GL.POINTS, function() gl.Vertex(x, z) end)
-       gl.PointSize(1)
-       gl.Color(1, 1, 1, 1)
+       if x ~= nil then
+         gl.PointSize(pt*0.066)
+         gl.Color(0, 0, 0)
+         gl.BeginEnd(GL.POINTS, function() gl.Vertex(x, z) end)
+         gl.PointSize(pt*0.051)
+         gl.Color(r,g,b, alpha)
+         gl.BeginEnd(GL.POINTS, function() gl.Vertex(x, z) end)
+         gl.PointSize(1)
+         gl.Color(1, 1, 1, 1)
+       end
      gl.PopMatrix()
    end
 end
@@ -785,7 +794,7 @@ function MenuHandler(x,y,button)
       local unitID = facs[pressedFac+1].unitID
       local ustate = GetUnitStates(unitID)
       local onoff  = {1}
-      if ustate["repeat"] then onoff = {0} end
+      if ustate ~= nil and ustate["repeat"] then onoff = {0} end
       Spring.GiveOrderToUnit(unitID, CMD.REPEAT, onoff, { })
       Spring.PlaySoundFile(sound_click, 0.97)
     else--if (bar_openByClick) then
