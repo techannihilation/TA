@@ -93,6 +93,7 @@ local unitDef = {
 local weaponDefs = {
 	ARMMH_WEAPON = {
 		areaOfEffect = 64,
+		cegTag = [[ARMRAVENTRAIL]],
 		craterBoost = 0,
 		craterMult = 0,
 		explosionGenerator = [[custom:FLASH3]],
