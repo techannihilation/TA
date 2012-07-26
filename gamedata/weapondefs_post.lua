@@ -60,17 +60,16 @@ local function ProcessUnitDef(udName, ud)
 
   -- convert the death explosions
   if (isstring(ud.explodeas)) then
-    local fullName = udName .. '_' .. ud.explodeas
+    local fullName = ud.explodeas
     if (WeaponDefs[fullName]) then
-     -- Spring.Echo(fullName)
+      Spring.Echo(fullName)
       ud.explodeas = fullName
     end
   end
   if (isstring(ud.selfdestructas)) then
-    local fullName = udName .. '_' .. ud.selfdestructas
+    local fullName = ud.selfdestructas
     if (WeaponDefs[fullName]) then
-      --     Spring.Echo(fullName)
-
+      Spring.Echo(fullName)
       ud.selfdestructas = fullName
     end
   end
