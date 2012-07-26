@@ -62,14 +62,14 @@ local function ProcessUnitDef(udName, ud)
   if (isstring(ud.explodeas)) then
     local fullName = ud.explodeas
     if (WeaponDefs[fullName]) then
-      Spring.Echo(fullName)
+      --Spring.Echo(fullName)
       ud.explodeas = fullName
     end
   end
   if (isstring(ud.selfdestructas)) then
     local fullName = ud.selfdestructas
     if (WeaponDefs[fullName]) then
-      Spring.Echo(fullName)
+      --Spring.Echo(fullName)
       ud.selfdestructas = fullName
     end
   end
