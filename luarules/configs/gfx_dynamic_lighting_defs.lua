@@ -73,6 +73,11 @@ local copyLightDefs = {
 		["armtrmph_rocket_mcv"       ] = "arm_starburst",
 		["armpraet_armpraetorian_rocket"] = "arm_starburst",
 		
+		
+		--light rockets
+		["armcrack_lightartmissarm"   ] = "light_rockets",
+		["corrock_lightartmiss"       ] = "light_rockets",
+
 		--medium rockets
 		["armdark_corhorg_missile"   ] = "medium_rockets",
 		["cbrutus_cbrutus_missile"   ] = "medium_rockets",
@@ -218,6 +223,24 @@ local dynLightDefs = {
 					radius            = 165.0,
 					priority          = 3 * 10 + 1,
 					ttl               = 1.5 * Game.gameSpeed,
+					decayFunctionType = {0.0, 0.0, 0.0},
+					altitudeOffset    = 30.0,
+				},
+			},
+			["light_rockets"] = {
+				projectileLightDef = {
+					diffuseColor      = {0.8,                   0.1,                   0.1                  },
+					specularColor     = {0.8 * rgbSpecMults[1], 0.1 * rgbSpecMults[2], 0.1 * rgbSpecMults[3]},
+					radius            = 95.0,
+					priority          = 1 * 10,
+					ttl               = 100000,
+				},
+					explosionLightDef = {
+					diffuseColor      = {1.0,                   0.1,                   0.1                  },
+					specularColor     = {1.0 * rgbSpecMults[1], 0.1 * rgbSpecMults[2], 0.1 * rgbSpecMults[3]},
+					radius            = 115.0,
+					priority          = 2 * 10 + 1,
+					ttl               = 1.3 * Game.gameSpeed,
 					decayFunctionType = {0.0, 0.0, 0.0},
 					altitudeOffset    = 30.0,
 				},
