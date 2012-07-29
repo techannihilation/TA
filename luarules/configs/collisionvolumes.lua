@@ -34,20 +34,42 @@ Spring.SetUnitPieceCollisionVolumeData ( number unitID, number pieceIndex, boole
 		on=            -- Unit is active/open/poped-up 
 		   {60,80,60,  -- Volume X scale, Volume Y scale, Volume Z scale,
 		    0,15,0,    -- Volume X offset, Volume Y offset, Volume Z offset,
-		    0,1,0},    -- vType, tType, axis}
+		    0,1,0[,    -- vType, tType, axis [,  -- Optional
+			0,0,0]}    -- Aimpoint X offset, Aimpoint Y offset, Aimpoint Z offset]},
 		off={32,48,32,0,-10,0,0,1,0},
-	}
+	}                  -- Aimpoint offsets are relative to unit's base position (aka unit coordiante space)
 	pieceCollisionVolume["arm_big_bertha"] = {
-		["1"]={       -- [pieceIndexNumber]={enabled,
-			   48,74,48,   --              Volume X scale, Volume Y scale, Volume Z scale,
-		       0,0,0,      --              Volume X offset, Volume Y offset, Volume Z offset,
-			   1,1}        --              vType, axis},
-		["2"]={false},
-		....
+		["0"]={true,       -- [pieceIndexNumber]={enabled,
+			   48,74,48,   --            Volume X scale, Volume Y scale, Volume Z scale,
+		       0,0,0,      --            Volume X offset, Volume Y offset, Volume Z offset,
+			   1,1},       --            vType, axis},   
+		....               -- All undefined pieces will be treated as disabled for collision detection
 	}
-
+	dynamicPieceCollisionVolume["core_viper"] = {	--same as with pieceCollisionVolume only uses "on" and "off" tables
+		on = {
+			["0"]={true,51,12,53,0,4,0,2,0},
+			["5"]={true,25,66,25,0,-14,0,1,1},
+			offsets={0,35,0}   -- Aimpoint X offset, Aimpoint Y offset, Aimpoint Z offset
+		},                     -- offsets entry is optional 
+		off = {
+			["0"]={true,51,12,53,0,4,0,2,0},
+			offsets={0,8,0}
+		}
+	}
+	
+	Q: How am I supposed to guess the piece index number?
+	A: Open the model in UpSpring and locate your piece. Count all pieces above it in the piece tree.
+	   Piece index number is equal to number of pieces above it in tree. Root piece has index 0.
+	   Or start counting from tree top till your piece starting from 0. Count lines in Upspring
+	   not along the tree hierarchy.
+	Q: I defined all per piece volumes in here but unit still uses only one collision volume!
+	A: Edit unit's definition file and add:
+		usePieceCollisionVolumes=1;    (FBI)
+		usePieceCollisionVolumes=true, (LUA)
+	Q: The unit always has on/off volume and it never changes
+	A: You need to edit the unit script and set ARMORED status to on or off depending on the
+	   unit's on/off status, unarmored for on and armored for off
 ]]--
-
 
 --Collision volume definitions, ones entered here are for TA, for other mods modify apropriatly
 local unitCollisionVolume = {}			--dynamic collision volume definitions
