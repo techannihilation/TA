@@ -192,12 +192,12 @@ local function checkLocalSettings()
 	local isCandidate = false
 	if spGetConfigInt("LuaSocketEnabled", 0) == 1 then
 		local tcpAllow = spGetConfigString("TCPAllowConnect", "")
-		Spring.Echo(tcpAllow)
-		match01 = tcpAllow:find("0.0.0.0:80", 1, true)
-		match02 = tcpAllow:find("ta-backend.rhcloud.com:80", 1, true)
-		match03 = tcpAllow:find("174.129.95.204:80", 1, true) --DEV PPS
-		Spring.Echo(match02)
-		isCandidate = match01 or match02 or match03 or true
+		--Spring.Echo(tcpAllow)
+		--match01 = tcpAllow:find("0.0.0.0:80", 1, true)
+		match0 = tcpAllow:find("ta-backend.rhcloud.com:80", 1, true)
+		--match03 = tcpAllow:find("174.129.95.204:80", 1, true) --DEV PPS
+		--Spring.Echo(match02)
+		isCandidate = match0
 	end
 	match11 = (spGetConfigString("TATokenKey", emptyStringInd) ~= emptyStringInd)
 	match21 = (spGetConfigString("TATokenSecret", emptyStringInd) ~= emptyStringInd)
