@@ -39,6 +39,7 @@ local unitDef = {
 	noChaseCategory = [[ALL]],
 	objectName = [[CORSD]],
 	onoffable = true,
+	script = [[corsd.lua]],
 	seismicDistance = 2000,
 	seismicSignature = 0,
 	selfDestructAs = [[LARGE_BUILDING]],

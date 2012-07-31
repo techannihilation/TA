@@ -83,7 +83,7 @@ function gadget:GameFrame(n)
       AddUnitResource(unitID, "e", strength * (mult - 1))
 	
 		local speed = strength * mult * COBSCALE * 0.025
-		speed = speed/8  -- slow down effect
+		speed = speed/50  -- slow down effect
 		--Spring.Echo("Speed: "..speed)
         CallCOBScript(unitID, scriptIDs.speed, 0, speed)
       

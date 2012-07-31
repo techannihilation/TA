@@ -49,7 +49,7 @@ local unitDef = {
 	useBuildingGroundDecal = true,
 	windGenerator = 90,
 	workerTime = 0,
-	yardMap = [[ooooooooo]],
+	yardMap = [[ooooo ooooo ooooo ooooo ooooo]],
 	customParams = {
 		energyMultiplier = 3.5,
 	},

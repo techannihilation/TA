@@ -90,22 +90,22 @@ function script.Killed(recentDamage, maxHealth)
 
 	if  (severity <= .25)  then
 	
-		Explode(base, SFX.BITMAPONLY)
-		Explode(dish, SFX.BITMAPONLY)
-		Explode(ear1, SFX.BITMAPONLY)
-		Explode(ear2, SFX.BITMAPONLY)
+		Explode(base, SFX.NONE)
+		Explode(dish, SFX.NONE)
+		Explode(ear1, SFX.NONE)
+		Explode(ear2, SFX.NONE)
 		return 1 -- corpsetype
 		
 	elseif  (severity <= .50)  then
 
-		Explode(base, SFX.BITMAPONLY)
+		Explode(base, SFX.NONE)
 		Explode(dish, SFX.SHATTER)
 		Explode(ear1, SFX.FALL + SFX.SMOKE  + SFX.FIRE  + SFX.EXPLODE_ON_HIT )
 		Explode(ear2, SFX.FALL + SFX.SMOKE  + SFX.FIRE  + SFX.EXPLODE_ON_HIT )
 
 		return 2 -- corpsetype
 	else
-	Explode(base, SFX.BITMAPONLY)
+	Explode(base, SFX.NONE)
 	Explode(dish, SFX.SHATTER + SFX.EXPLODE_ON_HIT )
 	Explode(ear1, SFX.FALL + SFX.SMOKE  + SFX.FIRE  + SFX.EXPLODE_ON_HIT )
 	Explode(ear2, SFX.FALL + SFX.SMOKE  + SFX.FIRE  + SFX.EXPLODE_ON_HIT )

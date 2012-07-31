@@ -133,30 +133,30 @@ function script.Killed(recentDamage, maxHealth)
 	if  (severity <= .25)  then
 		Explode(arm1, SFX.FALL)
 		Explode(arm2, SFX.FALL)
-		Explode(base, SFX.BITMAPONLY)
-		Explode(dish1, SFX.BITMAPONLY)
-		Explode(dish2, SFX.BITMAPONLY)
-		Explode(post, SFX.BITMAPONLY)
+		Explode(base, SFX.NONE)
+		Explode(dish1, SFX.NONE)
+		Explode(dish2, SFX.NONE)
+		Explode(post, SFX.NONE)
 		Explode(turret, SFX.SHATTER)
 		return 1
 	
 	elseif  (severity <= .50)  then
 		Explode(arm1, SFX.FALL + SFX.SMOKE  + SFX.FIRE  + SFX.EXPLODE_ON_HIT )
 		Explode(arm2, SFX.FALL + SFX.SMOKE  + SFX.FIRE  + SFX.EXPLODE_ON_HIT )
-		Explode(base, SFX.BITMAPONLY)
-		Explode(dish1, SFX.BITMAPONLY)
-		Explode(dish2, SFX.BITMAPONLY)
-		Explode(post, SFX.BITMAPONLY)
+		Explode(base, SFX.NONE)
+		Explode(dish1, SFX.NONE)
+		Explode(dish2, SFX.NONE)
+		Explode(post, SFX.NONE)
 		Explode(turret, SFX.SHATTER)
 		return 2
 	else
 	
 	Explode(arm1, SFX.FALL + SFX.SMOKE  + SFX.FIRE  + SFX.EXPLODE_ON_HIT )
 	Explode(arm2, SFX.FALL + SFX.SMOKE  + SFX.FIRE  + SFX.EXPLODE_ON_HIT )
-	Explode(base, SFX.BITMAPONLY)
-	Explode(dish1, SFX.BITMAPONLY)
-	Explode(dish2, SFX.BITMAPONLY)
-	Explode(post, SFX.BITMAPONLY)
+	Explode(base, SFX.NONE)
+	Explode(dish1, SFX.NONE)
+	Explode(dish2, SFX.NONE)
+	Explode(post, SFX.NONE)
 	Explode(turret, SFX.SHATTER + SFX.EXPLODE_ON_HIT )
 	return 3
 	end

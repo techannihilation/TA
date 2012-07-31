@@ -286,9 +286,9 @@ end
 
 function script.Killed(severity, corpsetype)
 
-	Explode(pelvis, SFX.BITMAPONLY)
-	Explode(lthigh, SFX.BITMAPONLY)
-	Explode(rthigh, SFX.BITMAPONLY)
+	Explode(pelvis, SFX.NONE)
+	Explode(lthigh, SFX.NONE)
+	Explode(rthigh, SFX.NONE)
 	Explode(tige, SFX.SHATTER + SFX.EXPLODE_ON_HIT )
 	Explode(d1, SFX.SHATTER + SFX.EXPLODE_ON_HIT )
 	if  severity <= 25  then

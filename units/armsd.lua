@@ -39,6 +39,7 @@ local unitDef = {
 	noChaseCategory = [[ALL]],
 	objectName = [[ARMSD]],
 	onoffable = true,
+	script = [[armsd.lua]],
 	seismicDistance = 2000,
 	seismicSignature = 0,
 	selfDestructAs = [[LARGE_BUILDING]],
