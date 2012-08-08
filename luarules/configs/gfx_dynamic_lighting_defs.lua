@@ -245,7 +245,7 @@ local dynLightDefs = {
 				},
 			},
 
-			["nuke_crblmssl"] = {
+			["nuke_crblmssl1"] = {
 				projectileLightDef = {
 					diffuseColor    = {5.0,                   5.0,                   0.0                  },
 					specularColor   = {5.0 * rgbSpecMults[1], 5.0 * rgbSpecMults[2], 0.0 * rgbSpecMults[3]},
