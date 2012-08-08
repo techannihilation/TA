@@ -74,10 +74,10 @@ local copyLightDefs = {
 		["armsilo1_nuclear_missile1" ] = "nuke_missile1",
 		["armfsilo_armfsilo_weapon"  ] = "fnuke_missile",
 
-
 		--Emp / Tacnuke
 		["armemp_armemp_weapon"      ] = "emp_weapon",
 		["cortron_cortron_weapon"    ] = "tron_weapon",
+		["tllemp_armemp_weapon"      ] = "emp_weapon",
 
 		--Juno
 		["ajuno_juno_pulse"          ] = "juno",
