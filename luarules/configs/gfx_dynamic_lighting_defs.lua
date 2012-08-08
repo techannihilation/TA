@@ -275,7 +275,7 @@ local dynLightDefs = {
 				explosionLightDef = {
 					diffuseColor      = {45.0,                   45.0,                   30.0                  },
 					specularColor     = {45.0 * rgbSpecMults[1], 45.0 * rgbSpecMults[2], 30.0 * rgbSpecMults[3]},
-					priority          = 20 * 10 + 1,
+					priority          = 200 * 10 + 1,
 					radius            = 2920.0,
 					ttl               = 8.5 * Game.gameSpeed,
 					decayFunctionType = {0.0, 0.0, 0.0},
@@ -287,7 +287,7 @@ local dynLightDefs = {
 				projectileLightDef = {
 					diffuseColor    = {5.0,                   5.0,                   0.0                  },
 					specularColor   = {5.0 * rgbSpecMults[1], 5.0 * rgbSpecMults[2], 0.0 * rgbSpecMults[3]},
-					priority        = 20 * 10,
+					priority        = 200 * 10,
 					radius          = 400.0,
 					ttl             = 100000,
 				},
