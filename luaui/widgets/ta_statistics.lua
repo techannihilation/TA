@@ -82,7 +82,7 @@ end
 
 local function SocketConnect(host, port)
 	client=socket.tcp()
-	client:settimeout(50)
+	client:settimeout(250)
 	res, err = client:connect(host, port)
 	if not res and not res=="timeout" then
 		Spring.Echo("Error in connect: "..err)
