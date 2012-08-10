@@ -18,7 +18,7 @@ local modrules  = {
 
   sensors = {   
     los = {
-      losMipLevel = 2, 
+      losMipLevel = 3, 
       losMul      = 1,
       airMipLevel = 4,
       airMul      = 1,
