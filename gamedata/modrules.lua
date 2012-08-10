@@ -18,7 +18,7 @@ local modrules  = {
 
   sensors = {   
     los = {
-      losMipLevel = 2, 
+      losMipLevel = 3, 
       losMul      = 1,
       airMipLevel = 4,
       airMul      = 1,
@@ -31,7 +31,7 @@ local modrules  = {
   },
 
   nanospray = {
-    allow_team_colors = false, --- broken as of 89
+    allow_team_colors = false, --- broken/removed as of 89 thanks kloot
   },
   
   featureLOS = {
@@ -39,6 +39,7 @@ local modrules  = {
 	 },
     
   system = {
+    luaThreadingModel = 3, --Dont go 4 or above unit morph need some loving first
     pathFinderSystem = (Spring.GetModOptions() and (Spring.GetModOptions().qtpfs == "1") and 1) or 0,
   },
  }
