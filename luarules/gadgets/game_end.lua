@@ -31,8 +31,6 @@ if (not gadgetHandler:IsSyncedCode()) then
 	return false
 end
 
-include("luaui/3rdpartylibs/dumper.lua")
-
 local modOptions = Spring.GetModOptions()
 
 -- teamDeathMode possible values: "none", "teamzerounits" , "allyzerounits"
@@ -141,8 +139,6 @@ local function CheckGameOver()
 	end
 
 	if winners then
-		Spring.Echo("GAME OVER")
-		Spring.SendLuaRulesMsg("@@@@@TA$UID@@@@@|".."0".."|".."gameOver".."|"..DataDumper(winners, nil, true))
 		spGameOver(winners)
 	end
 end
