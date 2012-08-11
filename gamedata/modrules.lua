@@ -39,7 +39,7 @@ local modrules  = {
 	 },
     
   system = {
-    luaThreadingModel = 4,
+    luaThreadingModel = 2, -- no higher until all SYNCED calls removed from unit_morph
     pathFinderSystem = (Spring.GetModOptions() and (Spring.GetModOptions().qtpfs == "1") and 1) or 0,
   },
  }
