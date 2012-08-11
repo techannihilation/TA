@@ -39,7 +39,7 @@ local modrules  = {
 	 },
     
   system = {
-    luaThreadingModel = 3, --Dont go 4 or above unit morph need some loving first
+    luaThreadingModel = 4,
     pathFinderSystem = (Spring.GetModOptions() and (Spring.GetModOptions().qtpfs == "1") and 1) or 0,
   },
  }
