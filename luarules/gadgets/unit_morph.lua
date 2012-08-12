@@ -106,6 +106,13 @@ end
 --   30000 - 39999:  LuaRules
 --
 
+include("luarules/3rdparty/DataDumper.lua")
+
+local function dumper(a1)
+  return DataDumper(a1, nil, true)
+end
+
+
 local CMD_MORPH_STOP = 32410
 local CMD_MORPH = 31410
 
@@ -654,7 +661,6 @@ end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
-
 function gadget:Initialize()
   --// RankApi linking
   if (GG.rankHandler) then
@@ -678,9 +684,10 @@ function gadget:Initialize()
   morphDefs = ValidateMorphDefs(morphDefs)
 
   --// make it global for unsynced access via SYNCED
-  _G.morphUnits = morphUnits
-  _G.morphDefs  = morphDefs
-  _G.extraUnitMorphDefs  = extraUnitMorphDefs
+  -- now in game frame
+  --_G.morphUnits = morphUnits
+  --_G.morphDefs  = morphDefs
+  --_G.extraUnitMorphDefs  = extraUnitMorphDefs
 
   --// Register CmdIDs
   for number=0,MAX_MORPH-1 do
@@ -912,10 +919,20 @@ end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-
+local function SYNC_CALL_S(data)
+	SendToUnsynced("SYNC_CALL_Callin_NO2", dumper(data))
+end
 
 function gadget:GameFrame(n)
-
+if (n == 1 ) then
+	SYNCED = {}; 
+	
+	SYNCED.morphUnits = morphUnits
+	SYNCED.morphDefs = morphDefs
+	SYNCED.extraUnitMorphDefs = extraUnitMorphDefs
+	
+	SYNC_CALL_S(SYNCED)
+end
   -- start pending morphs
   for unitid, data in pairs(morphToStart) do
     StartMorph(unitid, unpack(data))
@@ -1097,11 +1114,17 @@ end
 -- speed-ups
 --
 
+local SYNCED = {};
+
+local function SYNC_CALL_US(_, serializedData)
+	SYNCED = loadstring(serializedData)()
+end
+
 local gameFrame;
-local SYNCED = SYNCED
+--local SYNCED = SYNCED
 local CallAsTeam = CallAsTeam
-local spairs = spairs
-local snext = snext
+local pairs = pairs
+local next = next
 
 local GetUnitTeam         = Spring.GetUnitTeam
 local GetUnitHeading      = Spring.GetUnitHeading
@@ -1216,8 +1239,9 @@ end
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-
+	
 function gadget:Initialize()
+  gadgetHandler:AddSyncAction('SYNC_CALL_Callin_NO2', SYNC_CALL_US)
   gadgetHandler:AddSyncAction("unit_morph_finished", SelectSwap)
   gadgetHandler:AddSyncAction("unit_morph_start", StartMorph)
   gadgetHandler:AddSyncAction("unit_morph_stop", StopMorph)
@@ -1225,6 +1249,7 @@ end
 
 
 function gadget:Shutdown()
+  gadgetHandler:RemoveSyncAction('SYNC_CALL_Callin_NO2')
   gadgetHandler:RemoveSyncAction("unit_morph_finished")
   gadgetHandler:RemoveSyncAction("unit_morph_start")
   gadgetHandler:RemoveSyncAction("unit_morph_stop")
@@ -1234,7 +1259,7 @@ function gadget:Update()
   local frame = spGetGameFrame()
   if (frame>oldFrame) then
     oldFrame = frame
-    if snext(SYNCED.morphUnits) then
+    if next(SYNCED.morphUnits) then
       local useLuaUI_ = Script.LuaUI('MorphUpdate')
       if (useLuaUI_~=useLuaUI) then --//Update Callins on change
         drawProgress = not Script.LuaUI('MorphDrawProgress')
@@ -1248,7 +1273,7 @@ function gadget:Update()
           then readTeam = Script.ALL_ACCESS_TEAM
           else readTeam = GetLocalTeamID() end
         CallAsTeam({ ['read'] = readTeam }, function()
-          for unitID, morphData in spairs(SYNCED.morphUnits) do
+          for unitID, morphData in ipairs(SYNCED.morphUnits) do
             if (unitID and morphData)and(IsUnitVisible(unitID)) then
               morphTable[unitID] = {progress=morphData.progress, into=morphData.def.into}
             end
@@ -1348,7 +1373,7 @@ function gadget:DrawWorld()
   end
 
 
-  if (not snext(morphUnits)) then
+  if (not next(morphUnits)) then
     return --//no morphs to draw
   end
 
