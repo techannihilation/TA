@@ -21,43 +21,30 @@ local FIRE_WEAPONS = {
   ["armraven1_exp_heavyrocket1"] = true,
   ["corsb_seaadvbomb"] = true,
   ["corpyrox_pyro_rocket"] = true,
-
 }
 
 if (gadgetHandler:IsSyncedCode()) then
-
-  local napalmWeapons = {}
 
   --// find napalms
   for i=1,#WeaponDefs do
     local wd = WeaponDefs[i]
     if FIRE_WEAPONS[wd.name] then
       Script.SetWatchWeapon(wd.id,true)
-      napalmWeapons[wd.id] = true
     end
   end
-
-  local napalmExplosions  = {}
 
   --// Speed-ups
   local SendToUnsynced = SendToUnsynced
 
   function gadget:Explosion(weaponID, px, py, pz)
-    if (napalmWeapons[weaponID]) then
-      napalmExplosions[#napalmExplosions+1] = {px, py, pz}
-    end
+    SendToUnsynced("napalm_Explosion", weaponID, px, py, pz)
     return false
   end
 
   function gadget:GameFrame(n)
-    if (#napalmExplosions>0) then
-      _G.napalmExplosions =  napalmExplosions
-      _G.napalmCount      = #napalmExplosions
-      SendToUnsynced("napalm_GameFrame")
-      napalmExplosions = {}
-    end
+    SendToUnsynced("napalm_GameFrame",n)
   end
-
+  
   function gadget:RecvLuaMsg(msg, id)
     if (msg == "lups shutdown") then
 		SendToUnsynced("napalm_Toggle",false,id)
@@ -126,8 +113,26 @@ else
 
   local Lups
   local LupsAddParticles 
-  local SYNCED = SYNCED
   local enabled = false
+
+  local napalmWeapons = {}
+  local napalmExplosions  = {}
+
+  --// find napalms
+  for i=1,#WeaponDefs do
+    local wd = WeaponDefs[i]
+    if FIRE_WEAPONS[wd.name] then
+      napalmWeapons[wd.id] = true
+    end
+  end  
+
+
+  local function napalm_Explosion(_, weaponID, px, py, pz)
+    if (napalmWeapons[weaponID]) then
+      napalmExplosions[#napalmExplosions+1] = {px, py, pz}
+    end
+  end
+
 
   local function SpawnNapalmFX(pos)
     napalmFX.pos = {pos[1],pos[2],pos[3]}
@@ -138,13 +143,19 @@ else
 	end
   end
 
-  local function GameFrame()
-    if (not Lups) then Lups = GG['Lups']; LupsAddParticles = Lups.AddParticles end
-    local explosions = SYNCED.napalmExplosions
-    for i=1,SYNCED.napalmCount do
-      SpawnNapalmFX(explosions[i])
+  
+  local function napalm_GameFrame(_, n)
+    if (#napalmExplosions>0) then
+      napalmExplosions =  napalmExplosions
+      napalmCount      = #napalmExplosions
+      if (not Lups) then Lups = GG['Lups']; LupsAddParticles = Lups.AddParticles end
+      local explosions = napalmExplosions
+      for i=1,napalmCount do
+        SpawnNapalmFX(explosions[i])
+      end
+      napalmExplosions = {}
     end
-  end
+  end  
   
   local function Toggle(_,enable,playerId)
     if (playerId == Spring.GetMyPlayerID()) then
@@ -156,16 +167,19 @@ else
 	end
   end
 
+
   function gadget:Initialize()
     gl.DeleteTexture(napalmFX.texture)
-    gadgetHandler:AddSyncAction("napalm_GameFrame", GameFrame)
+    gadgetHandler:AddSyncAction("napalm_GameFrame", napalm_GameFrame)
     gadgetHandler:AddSyncAction("napalm_Toggle", Toggle)
+    gadgetHandler:AddSyncAction("napalm_Explosion", napalm_Explosion)
   end
 
 
   function gadget:Shutdown()
     gadgetHandler.RemoveSyncAction("napalm_GameFrame")
     gadgetHandler.RemoveSyncAction("napalm_Toggle")
+    gadgetHandler:RemoveSyncAction("napalm_Explosion")    
   end
 
 end

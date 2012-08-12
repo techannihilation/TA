@@ -18,38 +18,26 @@ local FIRE_WEAPONS = {
 
 if (gadgetHandler:IsSyncedCode()) then
 
-  local distortWeapons = {}
-
   --// find distorts
   for i=1,#WeaponDefs do
     local wd = WeaponDefs[i]
     if FIRE_WEAPONS[wd.name] then
       Script.SetWatchWeapon(wd.id,true)
-      distortWeapons[wd.id] = true
     end
   end
-
-  local distortExplosions  = {}
 
   --// Speed-ups
   local SendToUnsynced = SendToUnsynced
 
   function gadget:Explosion(weaponID, px, py, pz)
-    if (distortWeapons[weaponID]) then
-      distortExplosions[#distortExplosions+1] = {px, py, pz}
-    end
+    SendToUnsynced("distort_Explosion", weaponID, px, py, pz)
     return false
   end
 
   function gadget:GameFrame(n)
-    if (#distortExplosions>0) then
-      _G.distortExplosions =  distortExplosions
-      _G.distortCount      = #distortExplosions
-      SendToUnsynced("distort_GameFrame")
-      distortExplosions = {}
-    end
+    SendToUnsynced("distort_GameFrame",n)
   end
-
+  
   function gadget:RecvLuaMsg(msg, id)
     if (msg == "lups shutdown") then
 		SendToUnsynced("distort_Toggle",false,id)
@@ -59,7 +47,6 @@ if (gadgetHandler:IsSyncedCode()) then
   end
 
 else
-
   local heatFX = {
     count         = 1,
     emitVector    = {0,1,0},
@@ -73,38 +60,60 @@ else
     speedSpread     = 0.25,
     speedExp        = 7,
 
-    size            = 75,
+    size            = 130,
     sizeSpread      = 40,
     sizeGrowth      = 0.3,
     sizeExp         = 2.5,
 
-    strength      = 1.75,
+    strength      = 1.25,
     scale         = 5.0,
     animSpeed     = 0.25,
-    heat          = 16.5,
+    heat          = 6.5,
 
     texture       = "bitmaps/GPL/Lups/mynoise2.png",
   }
 
   local Lups
   local LupsAddParticles 
-  local SYNCED = SYNCED
   local enabled = false
+
+  local distortWeapons = {}
+  local distortExplosions  = {}
+
+  --// find distorts
+  for i=1,#WeaponDefs do
+    local wd = WeaponDefs[i]
+    if FIRE_WEAPONS[wd.name] then
+      distortWeapons[wd.id] = true
+    end
+  end  
+
+
+  local function distort_Explosion(_, weaponID, px, py, pz)
+    if (distortWeapons[weaponID]) then
+      distortExplosions[#distortExplosions+1] = {px, py, pz}
+    end
+  end
+
 
   local function SpawnNapalmFX(pos)
     heatFX.pos = {pos[1],pos[2],pos[3]}
-    if enabled then
 		Lups.AddParticles('JitterParticles2',heatFX)
-	end
   end
 
-  local function GameFrame()
-    if (not Lups) then Lups = GG['Lups']; LupsAddParticles = Lups.AddParticles end
-    local explosions = SYNCED.distortExplosions
-    for i=1,SYNCED.distortCount do
-      SpawnNapalmFX(explosions[i])
+  
+  local function distort_GameFrame(_, n)
+    if (#distortExplosions>0) then
+      distortExplosions =  distortExplosions
+      distortCount      = #distortExplosions
+      if (not Lups) then Lups = GG['Lups']; LupsAddParticles = Lups.AddParticles end
+      local explosions = distortExplosions
+      for i=1,distortCount do
+        SpawnNapalmFX(explosions[i])
+      end
+      distortExplosions = {}
     end
-  end
+  end  
   
   local function Toggle(_,enable,playerId)
     if (playerId == Spring.GetMyPlayerID()) then
@@ -116,15 +125,18 @@ else
 	end
   end
 
+
   function gadget:Initialize()
-    gadgetHandler:AddSyncAction("distort_GameFrame", GameFrame)
+    gadgetHandler:AddSyncAction("distort_GameFrame", distort_GameFrame)
     gadgetHandler:AddSyncAction("distort_Toggle", Toggle)
+    gadgetHandler:AddSyncAction("distort_Explosion", distort_Explosion)
   end
 
 
   function gadget:Shutdown()
     gadgetHandler.RemoveSyncAction("distort_GameFrame")
     gadgetHandler.RemoveSyncAction("distort_Toggle")
+    gadgetHandler:RemoveSyncAction("distort_Explosion")    
   end
 
 end
