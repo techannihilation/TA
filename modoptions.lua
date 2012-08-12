@@ -161,6 +161,19 @@ local options={
 		{key="teamzerounits", name="Team Death on Zero Units", desc="The Team will die when it has 0 units."},
 		{key="allyzerounits", name="AllyTeam Death on Zero units", desc="The Team will die when every Team in his AllyTeam have 0 units."},
       }
+			{
+		key="deathmode",
+		name="Game End Mode",
+		desc="What it takes to eliminate a team",
+		type="list",
+		def="com",
+		section= "ta_modes",
+		items={
+			{key="killall", name="Kill Everything", desc="Every last unit must be eliminated, no exceptions!"},
+			{key="com", name="Kill all enemy Commanders", desc="When a team has no Commanders left it loses"},
+			{key="comcontrol", name="No Commander, No Control", desc="A player without a Commander cannot issue orders"},
+		}
+	},
 		},
 	{
 	key    = "shareddynamicalliancevictory",
