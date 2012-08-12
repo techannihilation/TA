@@ -18,6 +18,8 @@ if (Game.version=="0.76b1") then
 	return false
 end
 
+  local GAME_SPEED = 30
+
 
 if (gadgetHandler:IsSyncedCode()) then
 -------------------------------------------------------------------------------------
@@ -26,7 +28,6 @@ if (gadgetHandler:IsSyncedCode()) then
 
   --// Speed-ups
   local SendToUnsynced = SendToUnsynced
-  local GAME_SPEED             = 30
 
   -------------------------------------------------------------------------------------
   -------------------------------------------------------------------------------------
