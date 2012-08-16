@@ -87,6 +87,7 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[ARM_LIGHTLASER]],
+			badTargetCategory = [[LARGE HUGE]], 
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
