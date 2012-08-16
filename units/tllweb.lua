@@ -89,7 +89,7 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[SPRAY_LIGHTNING]],
-			badTargetCategory = [[LARGE HUGE]], 
+			badTargetCategory = [[MEDIUM LARGE HUGE]], 
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
