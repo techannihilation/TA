@@ -92,6 +92,8 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[ARM_TORPEDO]],
+			mainDir = [[0 0 1]],
+			maxAngleDif = 90,   
 			onlyTargetCategory = [[NOTHOVERNOTVTOL]],
 		},
 	},
