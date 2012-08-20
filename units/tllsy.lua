@@ -58,11 +58,11 @@ local unitDef = {
 	zbuffer = 1,
 	buildoptions = {
 		[1] = [[tllcs]],
-		[2] = [[tllotter]],
-		[3] = [[tllboat2]],
-		[4] = [[tllviolator]],
-		[5] = [[tllambassador]],
-		[6] = [[tllplunger]],
+		[2] = [[tllplunger]],
+		[3] = [[tllotter]],
+		[4] = [[tllboat2]],
+		[5] = [[tllviolator]],
+		[6] = [[tllambassador]],
 	},
 	featureDefs = nil,
 	sounds = {
