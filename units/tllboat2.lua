@@ -89,12 +89,12 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			def = [[ARMTRUCK_MISSILE]],
-			onlyTargetCategory = [[VTOL]],
-		},
-		[2] = {
 			def = [[TLL_LASERSHIP]],
 			onlyTargetCategory = [[NOTVTOL]],
+		},
+		[2] = {
+			def = [[ARMTRUCK_MISSILE]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }
