@@ -37,6 +37,8 @@ else
 	local splashCEG2					= "Watersplash_Small"
 	local splashCEG3					= "Watersplash_Large"
 	local sndWater 						= "Sounds/SPLSHBIG.WAV"
+	local GetGroundBlocked					= Spring.GetGroundBlocked
+
 	
 	function gadget:Explosion(weaponID, px, py, pz, ownerID)
 		local isWater = Spring.GetGroundHeight(px,pz) < 0
@@ -45,10 +47,10 @@ else
 		if not nonexplosiveWeapons[wType] and isWater and abs(py) <= aoe then
 		
 			Spring.SpawnCEG(splashCEG1, px+random(-aoe,aoe), py, pz+random(-aoe,aoe),0,1,0,aoe,aoe)
-			if aoe >= 16 and aoe < 48 then
+			if aoe >= 16 and aoe < 48 and (not GetGroundBlocked(px, pz)) then
 				Spring.SpawnCEG(splashCEG2, px, 0, pz)
 				--Spring.PlaySoundFile(sndWater,15.0,px,0,pz)
-			elseif aoe >= 48 then
+			elseif aoe >= 48 and (not GetGroundBlocked(px, pz))  then
 				Spring.SpawnCEG(splashCEG3, px, 0, pz)
 			end
 			return true
