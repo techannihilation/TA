@@ -23,8 +23,8 @@
 		sizeMod		= 1.0;
 
 		airdrag			= 1;
-		particleLife		= 180;
-		particleLifeSpread	= 90;
+		particleLife		= 40;
+		particleLifeSpread	= 14;
 		numParticles		= 60;
 		particleSpeed		= 3 i0.25;
 		particleSpeedSpread	= 6;
