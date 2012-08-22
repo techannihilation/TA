@@ -3,8 +3,8 @@ function gadget:GetInfo()
   return {
     name      = "Watereffects",
     desc      = "Make splash sound in water",
-	version   = "1.0",
-    author    = "Jools",
+    version   = "1.1",
+    author    = "Jools ,Nixtux",
     date      = "April,2012",
     license   = "GNU GPL, v2 or later",
     layer     = 0,
@@ -45,11 +45,8 @@ else
 		local aoe = WeaponDefs[weaponID]["damageAreaOfEffect"] / 2
 		local wType = WeaponDefs[weaponID].type
 		if not nonexplosiveWeapons[wType] and isWater and abs(py) <= aoe then
-		
-			Spring.SpawnCEG(splashCEG1, px+random(-aoe,aoe), py, pz+random(-aoe,aoe),0,1,0,aoe,aoe)
 			if aoe >= 16 and aoe < 48 and (not GetGroundBlocked(px, pz)) then
 				Spring.SpawnCEG(splashCEG2, px, 0, pz)
-				--Spring.PlaySoundFile(sndWater,15.0,px,0,pz)
 			elseif aoe >= 48 and (not GetGroundBlocked(px, pz))  then
 				Spring.SpawnCEG(splashCEG3, px, 0, pz)
 			end
