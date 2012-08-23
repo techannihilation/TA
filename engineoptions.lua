@@ -37,7 +37,7 @@ local options = {
   {
     key    = 'MaxUnits',
     name   = 'Max units',
-    desc   = 'Maximum number of units (including buildings) for each team allowed at the same time',
+    desc   = 'Maximum number of units (including buildings) for each team allowed at the same time\nAutoHost Usage :- MaxUnits',
     type   = 'number',
     def    = 500,
     min    = 1,
@@ -51,7 +51,7 @@ local options = {
   {
     key    = 'GhostedBuildings',
     name   = 'Ghosted buildings',
-    desc   = "Once an enemy building will be spotted\na ghost trail will be placed to memorize location even after the loss of the line of sight",
+    desc   = "Once an enemy building will be spotted\na ghost trail will be placed to memorize location even after the loss of the line of sight\nAutoHost Usage :- MaxUnits",
     type   = 'bool',
     def    = true,
     section= "ta_others",
@@ -59,7 +59,7 @@ local options = {
   {
     key    = 'FixedAllies',
     name   = 'Fixed ingame alliances',
-    desc   = 'Disables the possibility of players to dynamically change alliances ingame',
+    desc   = 'Disables the possibility of players to dynamically change alliances ingame\nAutoHost Usage :- FixedAllies',
     type   = 'bool',
     def    = false,
     section= "ta_others",
@@ -68,14 +68,14 @@ local options = {
   {
     key    = 'LimitSpeed',
     name   = 'Speed Restriction',
-    desc   = 'Limits maximum and minimum speed that the players will be allowed to change to',
+    desc   = 'Limits maximum and minimum speed that the players will be allowed to change to\nAutoHost Usage :- LimitSpeed',
     type   = 'section',
   },
 
   {
     key    = 'MaxSpeed',
     name   = 'Maximum game speed',
-    desc   = 'Sets the maximum speed that the players will be allowed to change to',
+    desc   = 'Sets the maximum speed that the players will be allowed to change to\nAutoHost Usage :- MaxSpeed',
     type   = 'number',
     section= 'LimitSpeed',
     def    = 3,
@@ -88,7 +88,7 @@ local options = {
   {
     key    = 'MinSpeed',
     name   = 'Minimum game speed',
-    desc   = 'Sets the minimum speed that the players will be allowed to change to',
+    desc   = 'Sets the minimum speed that the players will be allowed to change to\nAutoHost Usage :- MinSpeed',
     type   = 'number',
     section= 'LimitSpeed',
     def    = 0.3,
@@ -101,7 +101,7 @@ local options = {
   {
     key    = 'DisableMapDamage',
     name   = 'Undeformable map',
-    desc   = 'Prevents the map shape from being changed by weapons',
+    desc   = 'Prevents the map shape from being changed by weapons\nAutoHost Usage :- DisableMapDamage',
     type   = 'bool',
     def    = false,
     section= "ta_others",
