@@ -1273,7 +1273,7 @@ function gadget:Update()
           then readTeam = Script.ALL_ACCESS_TEAM
           else readTeam = GetLocalTeamID() end
         CallAsTeam({ ['read'] = readTeam }, function()
-          for unitID, morphData in pairs(SYNCED.morphUnits) do
+          for unitID, morphData in ipairs(SYNCED.morphUnits) do
             if (unitID and morphData)and(IsUnitVisible(unitID)) then
               morphTable[unitID] = {progress=morphData.progress, into=morphData.def.into}
             end
@@ -1391,7 +1391,7 @@ function gadget:DrawWorld()
   end
 
   CallAsTeam({ ['read'] = readTeam }, function()
-    for unitID, morphData in pairs(morphUnits) do
+    for unitID, morphData in spairs(morphUnits) do
       if (unitID and morphData)and(IsUnitVisible(unitID)) then
         DrawMorphUnit(unitID, morphData,readTeam)
       end
