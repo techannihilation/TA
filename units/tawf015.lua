@@ -86,7 +86,7 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[NOTVTOL]],
+			--badTargetCategory = [[NOTVTOL]],
 			def = [[Katana_M]],
 		},
 		[2] = {
@@ -94,7 +94,7 @@ local unitDef = {
 			onlyTargetCategory = [[VTOL]],
 		},
 		[3] = {
-			badTargetCategory = [[NOTVTOL]],
+			--badTargetCategory = [[NOTVTOL]],
 			def = [[Katana_M]],
 		},
 	},
@@ -126,7 +126,7 @@ local weaponDefs = {
 		selfprop = true,
 		smokedelay = 0.1,
 		smokeTrail = true,
-		soundHit = [[xplosml2]],
+		soundHitDry = [[xplosml2]],
 		soundStart = [[Rocklit3]],
 		startsmoke = 1,
 		startVelocity = 300,
@@ -166,7 +166,7 @@ local weaponDefs = {
 		selfprop = true,
 		smokedelay = 0.1,
 		smokeTrail = true,
-		soundHit = [[xplosml2]],
+		soundHitDry = [[xplosml2]],
 		soundStart = [[Rocklit3]],
 		startsmoke = 1,
 		startVelocity = 400,

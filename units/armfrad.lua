@@ -42,6 +42,7 @@ local unitDef = {
 	objectName = [[ARMFRAD]],
 	onoffable = true,
 	radarDistance = 2100,
+	script = [[armfrad.lua]],
 	seismicSignature = 0,
 	selfDestructAs = [[SMALL_BUILDING]],
 	side = [[ARM]],

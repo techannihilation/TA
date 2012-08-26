@@ -104,17 +104,19 @@ end
 function widget:UnitDestroyed(unitID, unitDefID, unitTeam)
   if unitDamage[unitID] then
     local ux, uy, uz = GetUnitViewPosition(unitID)
-    table.insert(deadList,1,{})
-    local damage = math.ceil(unitDamage[unitID].damage - 0.5)
-    deadList[1].x = ux
-    deadList[1].y = (uy + unitHeight(unitDefID))
-    deadList[1].z = uz
-    deadList[1].lifeSpan = 1
-    deadList[1].fadeTime = math.max((0.03 - (damage / 333333)), 0.015) * 0.66
-    deadList[1].riseTime = (math.min((damage / 2500), 2) + 1)* 1.33
-    deadList[1].damage = damage
-    deadList[1].textSize = getTextSize(damage, false)
-    deadList[1].red = true
+    if ux ~= nil then
+      table.insert(deadList,1,{})
+      local damage = math.ceil(unitDamage[unitID].damage - 0.5)
+      deadList[1].x = ux
+      deadList[1].y = (uy + unitHeight(unitDefID))
+      deadList[1].z = uz
+      deadList[1].lifeSpan = 1
+      deadList[1].fadeTime = math.max((0.03 - (damage / 333333)), 0.015) * 0.66
+      deadList[1].riseTime = (math.min((damage / 2500), 2) + 1)* 1.33
+      deadList[1].damage = damage
+      deadList[1].textSize = getTextSize(damage, false)
+      deadList[1].red = true
+    end
   end
   unitDamage[unitID] = nil
   unitParalyze[unitID] = nil
@@ -122,16 +124,18 @@ function widget:UnitDestroyed(unitID, unitDefID, unitTeam)
     if (v.unitID == unitID) then
       if not v.paralyze then
         local ux, uy, uz = GetUnitViewPosition(unitID)
-        table.insert(deadList,1,{})
-        deadList[1].x = ux + v.offset
-        deadList[1].y = uy + v.height + v.heightOffset
-        deadList[1].z = uz
-        deadList[1].lifeSpan = v.lifeSpan
-        deadList[1].fadeTime = v.fadeTime * 2.5
-        deadList[1].riseTime = v.riseTime * 0.66
-        deadList[1].damage = v.damage
-        deadList[1].textSize = v.textSize
-        deadList[1].red = false
+        if ux ~= nil then
+          table.insert(deadList,1,{})
+          deadList[1].x = ux + v.offset
+          deadList[1].y = uy + v.height + v.heightOffset
+          deadList[1].z = uz
+          deadList[1].lifeSpan = v.lifeSpan
+          deadList[1].fadeTime = v.fadeTime * 2.5
+          deadList[1].riseTime = v.riseTime * 0.66
+          deadList[1].damage = v.damage
+          deadList[1].textSize = v.textSize
+          deadList[1].red = false
+        end
       end
       table.remove(damageTable,i)
     end
@@ -199,7 +203,7 @@ local function drawDeathDPS(damage,ux,uy,uz,textSize,red,alpha)
     glColor(1, 1, 1)
   end
   
-  glText(damage, 0, 0, textSize, "dcno")
+  glText(damage, 0, 0, textSize, "cno")
   
   glPopMatrix()
 end
@@ -210,10 +214,10 @@ local function DrawUnitFunc(yshift, xshift, damage, textSize, alpha, paralyze)
   gl.MultiTexCoord(1, 0.25 + (0.5 * alpha))
   if paralyze then
     glColor(0, 0, 1)
-    glText(damage, 0, 0, textSize, 'acnO')
+    glText(damage, 0, 0, textSize, 'cnO')
   else
     glColor(1, 1, 1)
-    glText(damage, 0, 0, textSize, 'acno')
+    glText(damage, 0, 0, textSize, 'cno')
   end
 end
 

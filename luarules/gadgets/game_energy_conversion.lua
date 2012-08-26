@@ -129,6 +129,16 @@ local function UpdateMetalMakers(teamID, energyUse)
 	end
 end
 
+
+local function checkTeamList(uTeam, e, uID)
+
+	if not teamMMList[uTeam] then Spring.Echo("teamMMList[uTeam] : nil/false , " .. uTeam .. ", " .. e .. ", " .. uID); return false; end
+	if not teamMMList[uTeam][e] then Spring.Echo("teamMMList[uTeam][e] : nil/false , " .. uTeam .. ", " .. e .. ", " .. uID); return false; end
+	if uID and not teamMMList[uTeam][e][uID] then Spring.Echo("teamMMList[uTeam][e][uID] : nil/false , " .. uTeam .. ", " .. e .. ", " .. uID); return false; end
+	
+	return true
+end
+
 ----------------------------------------------------------------
 -- Pseudo Callins
 ----------------------------------------------------------------
@@ -136,6 +146,9 @@ end
 local function UnitParalysed(uID, uDefID, uTeam)
 	local cDefs = convertCapacities[uDefID]
     if cDefs then
+		
+		if not checkTeamList(uTeam, cDefs.e, uID) then Spring.Echo("In UnitParalysed"); return end
+		
         if teamMMList[uTeam][cDefs.e][uID].built then
 			teamMMList[uTeam][cDefs.e][uID].emped = true
             AdjustTeamCapacity(uTeam, -cDefs.c, cDefs.e)
@@ -146,6 +159,9 @@ end
 local function UnitParalysisOver(uID, uDefID, uTeam)
 	local cDefs = convertCapacities[uDefID]
     if cDefs then
+	
+		if not checkTeamList(uTeam, cDefs.e, uID) then Spring.Echo("In UnitParalysisOver"); return end
+	
 		if teamMMList[uTeam][cDefs.e][uID].built then
 			teamMMList[uTeam][cDefs.e][uID].emped = false
 			AdjustTeamCapacity(uTeam, cDefs.c, cDefs.e)
@@ -308,7 +324,10 @@ end
 function gadget:UnitCreated(uID, uDefID, uTeam, builderID)
 	local cDefs = convertCapacities[uDefID]
     if cDefs then
-        teamMMList[uTeam][cDefs.e][uID] = {capacity = 0, status = 0, built = false, emped = false}
+	
+		if not checkTeamList(uTeam, cDefs.e, false) then Spring.Echo("In UnitCreated"); return end
+	
+	    teamMMList[uTeam][cDefs.e][uID] = {capacity = 0, status = 0, built = false, emped = false}
     end
 end
 
@@ -316,6 +335,9 @@ end
 function gadget:UnitFinished(uID, uDefID, uTeam)
     local cDefs = convertCapacities[uDefID]
     if cDefs then
+	
+		if not checkTeamList(uTeam, cDefs.e, uID) then Spring.Echo("In UnitFinished"); return end
+	
         teamMMList[uTeam][cDefs.e][uID].capacity = cDefs.c
 		teamMMList[uTeam][cDefs.e][uID].built = true
 		if not teamMMList[uTeam][cDefs.e][uID].emped then
@@ -344,6 +366,9 @@ end
 function gadget:UnitDestroyed(uID, uDefID, uTeam)
     local cDefs = convertCapacities[uDefID]
     if cDefs then
+		
+		if not checkTeamList(uTeam, cDefs.e, uID) then Spring.Echo("In UnitDestroyed"); return end
+		
         if teamMMList[uTeam][cDefs.e][uID].built then
 			if (teamMMList[uTeam][cDefs.e][uID].status == 1) then
 				teamActiveMM[uTeam] = teamActiveMM[uTeam] - 1
@@ -361,6 +386,9 @@ end
 function gadget:UnitGiven(uID, uDefID, newTeam, oldTeam)
     local cDefs = convertCapacities[uDefID]
     if cDefs then
+		
+		if not checkTeamList(oldTeam, cDefs.e, uID) or not checkTeamList(newTeam, cDefs.e, false) then Spring.Echo("In UnitGiven"); return end
+		
         if teamMMList[oldTeam][cDefs.e][uID].built then
 			
 			if not teamMMList[oldTeam][cDefs.e][uID].emped then

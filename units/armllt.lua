@@ -87,6 +87,7 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[ARM_LIGHTLASER]],
+			badTargetCategory = [[MEDIUM LARGE HUGE]], 
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
@@ -116,7 +117,7 @@ local weaponDefs = {
 		reloadtime = 0.48,
 		renderType = 0,
 		rgbColor = [[1 0 0]],
-		soundHit = [[lasrhit2]],
+		soundHitDry = [[lasrhit2]],
 		soundStart = [[lasrfir3]],
 		soundTrigger = true,
 		targetMoveError = 0.1,

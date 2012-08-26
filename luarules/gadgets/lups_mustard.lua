@@ -15,42 +15,30 @@ end
 local FIRE_WEAPONS = {
   ["tllabomber_coradvbomb"] = true,
   ["tllbomber_tllbomb"] = true,
- }
+}
 
 if (gadgetHandler:IsSyncedCode()) then
-
-  local mustardWeapons = {}
 
   --// find mustards
   for i=1,#WeaponDefs do
     local wd = WeaponDefs[i]
     if FIRE_WEAPONS[wd.name] then
       Script.SetWatchWeapon(wd.id,true)
-      mustardWeapons[wd.id] = true
     end
   end
-
-  local mustardExplosions  = {}
 
   --// Speed-ups
   local SendToUnsynced = SendToUnsynced
 
   function gadget:Explosion(weaponID, px, py, pz)
-    if (mustardWeapons[weaponID]) then
-      mustardExplosions[#mustardExplosions+1] = {px, py, pz}
-    end
+    SendToUnsynced("mustard_Explosion", weaponID, px, py, pz)
     return false
   end
 
   function gadget:GameFrame(n)
-    if (#mustardExplosions>0) then
-      _G.mustardExplosions =  mustardExplosions
-      _G.mustardCount      = #mustardExplosions
-      SendToUnsynced("mustard_GameFrame")
-      mustardExplosions = {}
-    end
+    SendToUnsynced("mustard_GameFrame",n)
   end
-
+  
   function gadget:RecvLuaMsg(msg, id)
     if (msg == "lups shutdown") then
 		SendToUnsynced("mustard_Toggle",false,id)
@@ -119,25 +107,49 @@ else
 
   local Lups
   local LupsAddParticles 
-  local SYNCED = SYNCED
   local enabled = false
+
+  local mustardWeapons = {}
+  local mustardExplosions  = {}
+
+  --// find mustards
+  for i=1,#WeaponDefs do
+    local wd = WeaponDefs[i]
+    if FIRE_WEAPONS[wd.name] then
+      mustardWeapons[wd.id] = true
+    end
+  end  
+
+
+  local function mustard_Explosion(_, weaponID, px, py, pz)
+    if (mustardWeapons[weaponID]) then
+      mustardExplosions[#mustardExplosions+1] = {px, py, pz}
+    end
+  end
+
 
   local function SpawnNapalmFX(pos)
     mustardFX.pos = {pos[1],pos[2],pos[3]}
     Lups.AddParticles('SimpleParticles2',mustardFX)
     if enabled then
 		heatFX.pos = mustardFX.pos
-		Lups.AddParticles('SimpleParticles2',heatFX)
+		Lups.AddParticles('JitterParticles2',heatFX)
 	end
   end
 
-  local function GameFrame()
-    if (not Lups) then Lups = GG['Lups']; LupsAddParticles = Lups.AddParticles end
-    local explosions = SYNCED.mustardExplosions
-    for i=1,SYNCED.mustardCount do
-      SpawnNapalmFX(explosions[i])
+  
+  local function mustard_GameFrame(_, n)
+    if (#mustardExplosions>0) then
+      mustardExplosions =  mustardExplosions
+      mustardCount      = #mustardExplosions
+      if (not Lups) then Lups = GG['Lups']; LupsAddParticles = Lups.AddParticles end
+      local explosions = mustardExplosions
+      for i=1,mustardCount do
+        SpawnNapalmFX(explosions[i])
+      end
+      mustardExplosions = {}
     end
-  end
+  end  
   
   local function Toggle(_,enable,playerId)
     if (playerId == Spring.GetMyPlayerID()) then
@@ -149,16 +161,19 @@ else
 	end
   end
 
+
   function gadget:Initialize()
     gl.DeleteTexture(mustardFX.texture)
-    gadgetHandler:AddSyncAction("mustard_GameFrame", GameFrame)
+    gadgetHandler:AddSyncAction("mustard_GameFrame", mustard_GameFrame)
     gadgetHandler:AddSyncAction("mustard_Toggle", Toggle)
+    gadgetHandler:AddSyncAction("mustard_Explosion", mustard_Explosion)
   end
 
 
   function gadget:Shutdown()
     gadgetHandler.RemoveSyncAction("mustard_GameFrame")
     gadgetHandler.RemoveSyncAction("mustard_Toggle")
+    gadgetHandler:RemoveSyncAction("mustard_Explosion")    
   end
 
 end

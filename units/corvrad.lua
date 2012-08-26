@@ -53,6 +53,7 @@ local unitDef = {
 	onoffable = true,
 	ovradjust = 1,
 	radarDistance = 2200,
+	script = [[corvrad.lua]],
 	selfDestructAs = [[BIG_UNIT]],
 	shootme = 1,
 	side = [[CORE]],

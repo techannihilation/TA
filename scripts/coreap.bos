@@ -1,0 +1,284 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, lift, nanolift, platform1, platform2, nano1, nano2, rollers,
+       door1, door2, pin1, pin2, pin3, pin4, pin5, pin6,
+       pin7, pin8, pipes, lathe1, lathe2, pointer;
+
+static-var  spray, Static_Var_2, statechg_DesiredState, statechg_StateChanging;
+
+// Signal definitions
+#define SIG_ACTIVATE			2
+
+
+activatescr()
+{
+	turn door1 to z-axis <90.000000> speed <40.000000>;
+	turn door2 to z-axis <-90.000000> speed <40.000000>;
+	wait-for-turn door1 around z-axis;
+	move door1 to y-axis [-16.662598] speed [5.554199];
+	move door2 to y-axis [-16.662598] speed [5.554199];
+	show pin1;
+	show pin5;
+	turn pin1 to z-axis <180.000000> speed <100.000000>;
+	turn pin5 to z-axis <180.000000> speed <100.000000>;
+	sleep 400;
+	move lift to y-axis [6.665039] speed [2.777100];
+	show pin2;
+	show pin6;
+	turn pin2 to z-axis <180.000000> speed <100.000000>;
+	turn pin6 to z-axis <180.000000> speed <100.000000>;
+	sleep 400;
+	show pin3;
+	show pin7;
+	turn pin3 to z-axis <180.000000> speed <100.000000>;
+	turn pin7 to z-axis <180.000000> speed <100.000000>;
+	sleep 400;
+	move rollers to y-axis [-11.108398] speed [7.775879];
+	show pin4;
+	show pin8;
+	turn pin4 to z-axis <180.000000> speed <100.000000>;
+	turn pin8 to z-axis <180.000000> speed <100.000000>;
+	sleep 1000;
+	move nanolift to z-axis [5.554199] speed [2.777100];
+	wait-for-move nanolift along z-axis;
+	turn platform1 to z-axis <30.000000> speed <20.000000>;
+	turn platform2 to z-axis <-30.000000> speed <20.000000>;
+	turn nano1 to x-axis <-50.000000> speed <20.000000>;
+	turn nano2 to x-axis <-50.000000> speed <20.000000>;
+	wait-for-turn nano1 around x-axis;
+	sleep 100;
+}
+
+deactivatescr()
+{
+	turn platform1 to z-axis <0.000000> speed <20.000000>;
+	turn platform2 to z-axis <0.000000> speed <20.000000>;
+	turn nano1 to x-axis <0.000000> speed <20.000000>;
+	turn nano2 to x-axis <0.000000> speed <20.000000>;
+	wait-for-turn platform1 around z-axis;
+	move nanolift to z-axis [0.000000] speed [2.777100];
+	sleep 1000;
+	move rollers to y-axis [0.000000] speed [6.665039];
+	turn pin4 to z-axis <0.000000> speed <100.000000>;
+	turn pin8 to z-axis <0.000000> speed <100.000000>;
+	sleep 400;
+	turn pin3 to z-axis <0.000000> speed <100.000000>;
+	turn pin7 to z-axis <0.000000> speed <100.000000>;
+	sleep 400;
+	move lift to y-axis [0.000000] speed [2.777100];
+	show pin2;
+	show pin6;
+	turn pin2 to z-axis <0.000000> speed <100.000000>;
+	turn pin6 to z-axis <0.000000> speed <100.000000>;
+	sleep 400;
+	move door1 to y-axis [0.000000] speed [5.554199];
+	move door2 to y-axis [0.000000] speed [5.554199];
+	show pin1;
+	show pin5;
+	turn pin1 to z-axis <0.000000> speed <100.000000>;
+	turn pin5 to z-axis <0.000000> speed <100.000000>;
+	wait-for-move door1 along y-axis;
+	hide pin1;
+	hide pin2;
+	hide pin3;
+	hide pin4;
+	hide pin5;
+	hide pin6;
+	hide pin7;
+	hide pin8;
+	turn door1 to z-axis <0.000000> speed <40.000000>;
+	turn door2 to z-axis <0.000000> speed <40.000000>;
+	wait-for-turn door1 around z-axis;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+OpenYard()
+{
+	set YARD_OPEN to 1;
+	while( !get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 500;
+		set YARD_OPEN to 1;
+	}
+	set BUGGER_OFF to 0;
+}
+
+CloseYard()
+{
+	set YARD_OPEN to 0;
+	while( get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 500;
+		set YARD_OPEN to 0;
+	}
+	set BUGGER_OFF to 0;
+}
+
+Go()
+{
+	call-script activatescr();
+	call-script OpenYard();
+	set INBUILDSTANCE to 1;
+}
+
+Stop()
+{
+	set INBUILDSTANCE to 0;
+	call-script CloseYard();
+	call-script deactivatescr();
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+Create()
+{
+	spray = base;
+	hide pin1;
+	hide pin2;
+	hide pin3;
+	hide pin4;
+	hide pin5;
+	hide pin6;
+	hide pin7;
+	hide pin8;
+	call-script InitState();
+	start-script SmokeUnit();
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 1000;
+	}
+}
+
+QueryNanoPiece(piecenum)
+{
+	if( spray == 0 )
+	{
+		piecenum = lathe1;
+	}
+	if( spray != 0 )
+	{
+		piecenum = lathe2;
+	}
+	spray = !spray;
+}
+
+Activate()
+{
+	signal SIG_ACTIVATE;
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	signal SIG_ACTIVATE;
+	set-signal-mask SIG_ACTIVATE;
+	if( !Static_Var_2 )
+	{
+		sleep 5000;
+	}
+	set-signal-mask 0;
+	start-script RequestState(1);
+}
+
+StartBuilding()
+{
+}
+
+StopBuilding()
+{
+}
+
+QueryBuildInfo(piecenum)
+{
+	piecenum = pointer;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type SHATTER | BITMAP1;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type SHATTER | BITMAP1;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type SHATTER | BITMAP1;
+		return (0);
+	}
+	corpsetype = 3;
+	explode base type SHATTER | BITMAP1;
+}

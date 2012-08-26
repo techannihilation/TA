@@ -218,7 +218,7 @@ if (Spring.GetModOptions) then
 	
    if (modOptions.mo_storageowner == "com") then
     for name, ud in pairs(UnitDefs) do  
-     if (name == "armcom" or name == "corcom") then
+     if (name == "armcom" or name == "corcom" or name =="tllcom") then
       ud.energyStorage = modOptions.startenergy or 1000
       ud.metalStorage = modOptions.startmetal or 1000
      end
@@ -315,7 +315,7 @@ end
 
 -- Setting collisionvolumetest true for all units
 for name, ud in pairs(UnitDefs) do
-		ud.collisionvolumetest = true
+		ud.collisionvolumetest = 1
 end
 
 for name, ud in pairs(UnitDefs) do

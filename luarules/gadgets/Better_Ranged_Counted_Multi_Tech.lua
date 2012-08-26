@@ -262,6 +262,11 @@ in GetInfo if you need to call them in Initialize.
 
 ]]--
 
+include("luarules/3rdparty/DataDumper.lua")
+
+local function dumper(a1)
+  return DataDumper(a1, nil, true)
+end
 
 function gadget:GetInfo()
 	return {
@@ -295,7 +300,10 @@ local function Xor(a,b)
 end
 
 
+
+
 if (gadgetHandler:IsSyncedCode()) then
+	
 
 
 	-- Variables
@@ -912,10 +920,9 @@ if (gadgetHandler:IsSyncedCode()) then
 		end
 	end
 
+	
 
 	function gadget:Initialize()
-
-
 		for _,ud in pairs(UnitDefs) do
 			local cp=ud.customParams
 			if cp then
@@ -974,7 +981,10 @@ if (gadgetHandler:IsSyncedCode()) then
 
 	end
 
-
+	local function SYNC_CALL_S(data)
+		SendToUnsynced("SYNC_CALL_Callin", dumper(data))
+	end
+	
 	function gadget:GameFrame(frame)
 		if frame%19==17 then
 			if RecheckTeams then
@@ -993,12 +1003,27 @@ if (gadgetHandler:IsSyncedCode()) then
 					unit.z=nz
 				end
 			end
-			_G.Tech={TechTable=TechTable,ProviderTable=ProviderTable,AccessionTable=AccessionTable,ProviderIDs=ProviderIDs,AccessionIDs=AccessionIDs,ProviderRangeByIDs=ProviderRangeByIDs}
+			--_G.Tech={TechTable=TechTable,ProviderTable=ProviderTable,AccessionTable=AccessionTable,ProviderIDs=ProviderIDs,AccessionIDs=AccessionIDs,ProviderRangeByIDs=ProviderRangeByIDs}
+			
+			SYNC_CALL_S({TechTable=TechTable,ProviderTable=ProviderTable,AccessionTable=AccessionTable,ProviderIDs=ProviderIDs,AccessionIDs=AccessionIDs,ProviderRangeByIDs=ProviderRangeByIDs})
 		end
 	end
 
 
 else--unsynced
+	local SYNCED = {};
+	
+	local function SYNC_CALL_US(_, serializedData) 
+		SYNCED.Tech = loadstring(serializedData)()
+	end
+	
+
+	function gadget:Initialize()
+		gadgetHandler:AddSyncAction('SYNC_CALL_Callin', SYNC_CALL_US)
+	end
+	
+	
+
 
 	local DrawWorldTimer = nil
 

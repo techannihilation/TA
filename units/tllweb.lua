@@ -89,6 +89,7 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[SPRAY_LIGHTNING]],
+			badTargetCategory = [[MEDIUM LARGE HUGE]], 
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
@@ -120,14 +121,12 @@ local weaponDefs = {
 		reloadtime = 1,
 		renderType = 7,
 		rgbColor = [[0.2 0.2 1]],
-		soundHit = [[lashit2]],
+		soundHitDry = [[lashit2]],
 		soundStart = [[Lghthvy1]],
 		texture1 = [[lightning]],
 		thickness = 7,
 		tolerance = 600,
 		turret = true,
-		waterexplosionart = [[h2oboom1]],
-		waterexplosiongaf = [[fx]],
 		weaponTimer = 1,
 		weaponType = [[LightningCannon]],
 		weaponVelocity = 860,

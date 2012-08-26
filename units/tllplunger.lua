@@ -92,6 +92,8 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[ARM_TORPEDO]],
+			mainDir = [[0 0 1]],
+			maxAngleDif = 90,   
 			onlyTargetCategory = [[NOTHOVERNOTVTOL]],
 		},
 	},
@@ -122,7 +124,7 @@ local weaponDefs = {
 		reloadtime = 2.8,
 		renderType = 1,
 		selfprop = true,
-		soundHit = [[xplodep1]],
+		soundHitDry = [[xplodep1]],
 		soundStart = [[torpedo1]],
 		startVelocity = 100,
 		tolerance = 32767,

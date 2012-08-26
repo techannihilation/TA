@@ -25,12 +25,6 @@ local options={
        type="section",
     },
     {
-       key="ta_wall",
-       name="Tech Annihilation - Peace Time Settings",
-       desc="Tech Annihilation - Peace Time Settings",
-       type="section",
-    },
-    {
 	key    = "mo_heatmap",
 	name   = "Enable Heatmap's",
 	desc   = "Enables Pathing Heatmaps",
@@ -41,7 +35,7 @@ local options={
 	{
 		key    = "mo_coop",
 		name   = "Cooperative Mode",
-		desc   = "Adds an extra commander for comsharing teams",
+		desc   = "Adds an extra commander for comsharing teams\nAutoHost Usage :- mo_coop",
 		type   = "bool",
 		def    = false,
 		section= "ta_modes",
@@ -49,7 +43,7 @@ local options={
 	{
 		key    = "mo_greenfields",
 		name   = "No Metal Extraction",
-		desc   = "No metal extraction on any map",
+		desc   = "No metal extraction on any map\nAutoHost Usage :- mo_greenfields",
 		type   = "bool",
 		def    = false,
 		section= "ta_modes",
@@ -57,7 +51,7 @@ local options={
     {
 		key    = "mo_noowner",
 		name   = "FFA Mode",
-		desc   = "Units with no player control are instantly removed/destroyed",
+		desc   = "Units with no player control are instantly removed/destroyed\nAutoHost Usage :- mo_noowner",
 		type   = "bool",
 		def    = false,
 		section= "ta_modes",
@@ -65,7 +59,7 @@ local options={
 	{
 		key    = "mo_progmines",
 		name   = "Progressive Mining",
-		desc   = "New mines take some time to become fully established, death resets progress",
+		desc   = "New mines take some time to become fully established, death resets progress\nAutoHost Usage :- mo_progmines",
 		type   = "bool",
 		def    = false,
 		section= "ta_modes",
@@ -73,7 +67,7 @@ local options={
     {
 		key    = "mo_preventdraw",
 		name   = "Commander Ends No Draw",
-		desc   = "Last Com alive is immune to comblast, D-gunning the last enemy Com with your last Com disqualifies you",
+		desc   = "Last Com alive is immune to comblast, D-gunning the last enemy Com with your last Com disqualifies you\nAutoHost Usage :- mo_preventdraw",
 		type   = "bool",
 		def    = false,
 		section= "ta_options",
@@ -81,7 +75,7 @@ local options={
     {
 		key="qtpfs",
 		name="Pathfinding system",
-		desc="Which pathfinding system to use",
+		desc="Which pathfinding system to use\nAutoHost Usage :- qtpfs",
 		type="list",
 		section= "ta_exp",
 		def="qtpfs",
@@ -93,7 +87,7 @@ local options={
     {
 		key    = "mo_noshare",
 		name   = "No Sharing To Enemies",
-		desc   = "Prevents players from giving units or resources to enemies",
+		desc   = "Prevents players from giving units or resources to enemies\nAutoHost Usage :- mo_noshare",
 		type   = "bool",
 		def    = true,
 		section= "ta_options",
@@ -101,7 +95,7 @@ local options={
 	{
 		key    = "mo_comgate",
 		name   = "Commander Gate Effect",
-		desc   = "Commanders warp in at gamestart with a shiny teleport effect",
+		desc   = "Commanders warp in at gamestart with a shiny teleport effect\nAutoHost Usage :- mo_comgate",
 		type   = "bool",
 		def    = false,
 		section= "ta_options",
@@ -109,7 +103,7 @@ local options={
     {
 		key    = "mo_enemywrecks",
 		name   = "Show Enemy Wrecks",
-		desc   = "Gives you LOS of enemy wreckage",
+		desc   = "Gives you LOS of enemy wreckage\nAutoHost Usage :- mo_enemywrecks",
 		type   = "bool",
 		def    = true,
 		section= "ta_options",
@@ -117,7 +111,7 @@ local options={
     {
 		key    = 'mo_allowfactionchange',
 		name   = 'Allow Faction Change',
-		desc   = 'Allows faction to be changed ingame',
+		desc   = 'Allows faction to be changed ingame\nAutoHost Usage :- mo_allowfactionchange',
 		type   = 'bool',
 		def    = true,
 		section= 'ta_options',
@@ -125,7 +119,7 @@ local options={
     {
 		key    = "mo_nowrecks",
 		name   = "No Unit Wrecks",
-		desc   = "Removes all unit wrecks from the game",
+		desc   = "Removes all unit wrecks from the game\nAutoHost Usage :- mo_nowrecks",
 		type   = "bool",
 		def    = false,
 		section= "ta_options",
@@ -133,7 +127,7 @@ local options={
        	{
 		key="mo_storageowner",
 		name="Team Storage Owner",
-		desc="What owns the starting resource storage",
+		desc="What owns the starting resource storage\nAutoHost Usage :- mo_storageowner",
 		type="list",
 		def="team",
 		section="ta_options",
@@ -145,7 +139,7 @@ local options={
 	{ 
 		key="deathmode",
 		name="Game End Mode",
-		desc="What it takes to eliminate a team",
+		desc="What it takes to eliminate a team\nAutoHost Usage :- deathmode",
 		type="list",
 		def="killall",
 		section="ta_modes",
@@ -158,7 +152,7 @@ local options={
        {
 		key="teamdeathmode",
 		name="Team Game End Mode",
-		desc="What it takes to eliminate a Team",
+		desc="What it takes to eliminate a Team\nAutoHost Usage :- teamdeathmode",
 		type="list",
 		def="allyzerounits",
 		section= "ta_modes",
@@ -169,9 +163,22 @@ local options={
       }
 		},
 	{
+		key="deathmode",
+		name="Game End Mode",
+		desc="What it takes to eliminate a team\nAutoHost Usage :- deathmode",
+		type="list",
+		def="com",
+		section= "ta_modes",
+		items={
+			{key="killall", name="Kill Everything", desc="Every last unit must be eliminated, no exceptions!"},
+			{key="com", name="Kill all enemy Commanders", desc="When a team has no Commanders left it loses"},
+			{key="comcontrol", name="No Commander, No Control", desc="A player without a Commander cannot issue orders"},
+		}
+	},
+	{
 	key    = "shareddynamicalliancevictory",
 	name   = "Dynamic Ally Victory",
-	desc   = "Ingame alliance should count for game over condition.",
+	desc   = "Ingame alliance should count for game over condition\nAutoHost Usage :- shareddynamicalliancevictory",
 	type   = "bool",
 	def    = false,
 	section= "ta_modes",
@@ -180,7 +187,7 @@ local options={
 	{
        key    = "startmetal",
        name   = "Starting metal",
-       desc   = "Determines amount of metal and metal storage that each player will start with",
+       desc   = "Determines amount of metal and metal storage that each player will start with\nAutoHost Usage :- startmetal",
        type   = "number",
        section= "StartingResources",
        def    = 1000,
@@ -192,7 +199,7 @@ local options={
 	{
        key    = "startenergy",
        name   = "Starting energy",
-       desc   = "Determines amount of energy and energy storage that each player will start with",
+       desc   = "Determines amount of energy and energy storage that each player will start with\nAutoHost Usage :- startenergy",
        type   = "number",
        section= "StartingResources",
        def    = 1000,
@@ -200,88 +207,6 @@ local options={
        max    = 1000000,
        step   = 1,  -- quantization is aligned to the def value
                     -- (step <= 0) means that there is no quantization
-	},
-
-	{
-	key    = "wall_enabled",
-	name   = "Enable peace time wall",
-	desc   = "Turn Wall on/off",
-	type   = "bool",
-	def    = false,
-	section= "ta_wall",
-	},
-
-	{
-	key     = 'wall_time',
-	name    = 'Wall Time',
-	desc    = 'How many minutes will the wall divide the teams?',
-	section = 'ta_wall',
-	type    = 'number',
-	min     = 0,
-	max     = 60,
-	step    = 1,
-	def     = 25,
-	},
-	
-	{
-	key     = 'wall_size',
-	name    = 'Wall Size',
-	desc    = 'How many percent of the map will each team get at start?',
-	section = 'ta_wall',
-	type    = 'number',
-	min     = 10,
-	max     = 45,
-	step    = 1,
-	def     = 45,
-	},
-	
-	{
-	key     = 'wall_los',
-	name    = 'Line of Sight',
-	desc    = 'Can you see past the wall?',
-	section = 'ta_wall',
-	type    = 'list',
-	def     = '0',
-	items   = 
-	{
-		{
-			key  = '0',
-			name = 'normal LOS rules',
-			desc = 'everything works as expected.',
-		},
-		{
-			key  = '1',
-			name = 'Full LOS',
-			desc = 'You can see enemy units, everywhere.',
-		},
---		{
---			key  = '2',
---			name = 'Blindness',
---			desc = 'You can not see enemy units at all.',
---		},
-	},
-	},
-	
-	{
-	key     = 'wall_weapons',
-	name    = 'Cease-Fire',
-	desc    = 'Are weapons blocked as long as the wall remains?',
-	section = 'ta_wall',
-	type    = 'list',
-	def     = '2',
-	items   = 
-	{
-		{
-			key  = '1',
-			name = 'Yes',
-			desc = 'No unit can shoot until the timer is up.',
-		},
-		{
-			key  = '2',
-			name = 'No',
-			desc = 'Units can shot as normal.',
-		},
-	},
 	},
 }
 return options

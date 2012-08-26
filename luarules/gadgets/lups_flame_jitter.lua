@@ -18,6 +18,8 @@ if (Game.version=="0.76b1") then
 	return false
 end
 
+  local GAME_SPEED = 30
+
 
 if (gadgetHandler:IsSyncedCode()) then
 -------------------------------------------------------------------------------------
@@ -81,7 +83,7 @@ else
     local posx,posy,posz, dirx,diry,dirz = Spring.GetUnitWeaponVectors(unitID,weapon-1)
     local wd  = WeaponDefs[UnitDefs[unitDefID].weapons[weapon].weaponDef]
     local weaponRange = wd.range*wd.duration
-    local weaponVelocity = wd.projectilespeed * 30 -- * gamespeed
+    local weaponVelocity = wd.projectilespeed * GAME_SPEED
 
     local speedx,speedy,speedz = Spring.GetUnitVelocity(unitID)
     local partpos = "x*delay,y*delay,z*delay|x="..speedx..",y="..speedy..",z="..speedz
@@ -89,7 +91,7 @@ else
     particleList[particleCnt] = {
       class        = 'JitterParticles2',
       colormap     = { {1,1,1,1},{1,1,1,1} },
-      count        = 4,
+      count        = 2,
       life         = weaponRange / 12,
       delaySpread  = 25,
       force        = {0,1.5,0},
@@ -123,7 +125,7 @@ else
                        {0.1, 0.035, 0.01, 0.2},
                        {0, 0, 0, 0.01} },
       count        = 4,
-      life         = weaponRange / 6,
+      life         = weaponRange / 7,
       delaySpread  = 25,
 
       force        = {0,1,0},

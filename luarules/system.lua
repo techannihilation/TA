@@ -24,7 +24,10 @@ if (System == nil) then
     GL = GL,
     CMD = CMD,
     CMDTYPE = CMDTYPE,
+    COB = COB,
+    SFX = SFX,
     VFS = VFS,
+    LOG = LOG,
 
     UnitDefs        = UnitDefs,
     UnitDefNames    = UnitDefNames,
@@ -51,7 +54,7 @@ if (System == nil) then
     snext   = snext,
     spairs  = spairs,
     sipairs = sipairs,
-    
+
     --
     --  Standard libraries
     --
@@ -63,15 +66,15 @@ if (System == nil) then
     string = string,
     package = package,
     coroutine = coroutine,
-    
-    --  
+
+    --
     --  Standard functions and variables
     --
     assert         = assert,
     error          = error,
 
     print          = print,
-    
+
     next           = next,
     pairs          = pairs,
     ipairs         = ipairs,
@@ -90,7 +93,7 @@ if (System == nil) then
     loadlib        = loadlib,
     loadstring     = loadstring,
     require        = require,
-    
+
     getmetatable   = getmetatable,
     setmetatable   = setmetatable,
 

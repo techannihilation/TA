@@ -7,6 +7,7 @@ local modrules  = {
     allowPushingEnemyUnits   = true; -- defaults to false
     allowCrushingAlliedUnits = false; -- defaults to false
     allowUnitCollisionDamage = false; -- defaults to false
+    allowUnitCollisionOverlap = false,	-- defaults to true
   },
   
   reclaim = {
@@ -17,7 +18,7 @@ local modrules  = {
 
   sensors = {   
     los = {
-      losMipLevel = 2, 
+      losMipLevel = 3, 
       losMul      = 1,
       airMipLevel = 4,
       airMul      = 1,
@@ -30,7 +31,7 @@ local modrules  = {
   },
 
   nanospray = {
-    allow_team_colors = false, --- broken as of 89
+    allow_team_colors = false, --- broken/removed as of 89 thanks kloot
   },
   
   featureLOS = {
@@ -38,6 +39,7 @@ local modrules  = {
 	 },
     
   system = {
+    luaThreadingModel = 2, -- no higher until all SYNCED calls removed from unit_morph
     pathFinderSystem = (Spring.GetModOptions() and (Spring.GetModOptions().qtpfs == "1") and 1) or 0,
   },
  }
