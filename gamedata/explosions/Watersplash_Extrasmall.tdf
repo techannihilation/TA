@@ -1,4 +1,4 @@
-[Watersplash_Large]
+[Watersplash_Extrasmall]
 {
 
 	[WaterExplosion]
@@ -23,13 +23,13 @@
 		sizeMod		= 1.0;
 
 		airdrag			= 1;
-		particleLife		= 40;
-		particleLifeSpread	= 14;
+		particleLife		= 20;
+		particleLifeSpread	= 10;
 		numParticles		= 40;
 		particleSpeed		= 3 i0.25;
 		particleSpeedSpread	= 2;
-		particleSize		= 5;
-		particleSizeSpread	= 15;
+		particleSize		= 3;
+		particleSizeSpread	= 3;
 
 		directional		= 0; 
 		useAirLos		= 1;
@@ -67,13 +67,13 @@
 		sizeMod		= 1.0;
 
 		airdrag			= 1;
-		particleLife		= 4;
-		particleLifeSpread	= 24;
-		numParticles		= 50;
+		particleLife		= 2;
+		particleLifeSpread	= 12;
+		numParticles		= 40;
 		particleSpeed		= 0 r3 i-0.05;
 		particleSpeedSpread	= 2;
 		particleSize		= 1;
-		particleSizeSpread	= 4;
+		particleSizeSpread	= 2;
 
 		directional		= 1; 
 		useAirLos		= 1;
@@ -107,16 +107,16 @@
 		emitRotSpread	= 0;
 		emitdir 	= 0, 0.5, 0;
 
-		sizeGrowth	= 0.30 r-1.6;
+		sizeGrowth	= 0.10 r-1.2;
 		sizeMod		= 1.0;
 
 		airdrag			= 1;
 		particleLife		= 4;
-		particleLifeSpread	= 24;
-		numParticles		= 50;
-		particleSpeed		= 1 r6;
+		particleLifeSpread	= 16;
+		numParticles		= 40;
+		particleSpeed		= 1 r1;
 		particleSpeedSpread	= 0;
-		particleSize		= 8 r8;
+		particleSize		= 1 r2;
 		particleSizeSpread	= 0;
 
 		directional		= 1; 
@@ -189,16 +189,16 @@
 		emitRotSpread	= 0;
 		emitdir 	= 0, 0.5, 0;
 
-		sizeGrowth	= 0.30 r-1.6;
+		sizeGrowth	= 0.20 r-1.6;
 		sizeMod		= 1.0;
 
 		airdrag			= 1;
 		particleLife		= 4;
-		particleLifeSpread	= 24;
-		numParticles		= 60;
-		particleSpeed		= 1 r6;
+		particleLifeSpread	= 16;
+		numParticles		= 30;
+		particleSpeed		= 1 r1;
 		particleSpeedSpread	= 0;
-		particleSize		= 8 r8;
+		particleSize		= 2 r2;
 		particleSizeSpread	= 0;
 
 		directional		= 1; 
@@ -211,5 +211,4 @@
 	count=1;
 	}
 
- 		
 }
