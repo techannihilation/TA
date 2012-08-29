@@ -1,7 +1,6 @@
 function widget:GetInfo()
 	return {
-	version   = "5",
-	name      = "Red Tooltip",
+	name      = "Red Tooltip", --version 4
 	desc      = "Requires Red UI Framework",
 	author    = "Regret",
 	date      = "August 11, 2009", --last change September 10,2009
@@ -150,7 +149,7 @@ local function createtooltip(r)
 		--overridecursor = true,
 		overrideclick = {2},
 		
-		onupdate=function(self) --the "-1"s are a hack due to a rounding error and laziness
+		onupdate=function(self)
 			if (self.px < (Screen.vsx/2)) then --left side of screen
 				if ((self.sx-r.margin*2) <= text.getwidth()) then
 					self.sx = (text.getwidth()+r.margin*2) -1
@@ -194,11 +193,14 @@ function widget:Initialize()
 	if (not PassedStartupCheck) then return end
 	
 	tooltip = createtooltip(Config.tooltip)
-	
+		
 	Spring.SetDrawSelectionInfo(false) --disables springs default display of selected units count
 	Spring.SendCommands("tooltip 0")
-	
-	AutoResizeObjects() --fix for displacement on crash issue
+	AutoResizeObjects()
+end
+
+function widget:Shutdown()
+	Spring.SendCommands("tooltip 1")
 end
 
 function widget:Update()

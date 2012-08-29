@@ -18,9 +18,9 @@ local CanvasX,CanvasY = 1272,734 --resolution in which the widget was made (for 
 local Config = {
 	minimap = {
 		px = 0,py = 0, --default start position
-		sx = 160*Game.mapX/Game.mapY,sy = 160, --background size
+		sx = math.min(135*Game.mapX/Game.mapY,270),sy = 135, --background size
 		
-		bsx = 16,bsy = 16, --button size
+		bsx = 15,bsy = 15, --button size
 
 		fadetime = 0.25, --fade effect time, in seconds
 		fadedistance = 100, --distance from cursor at which console shows up when empty
@@ -134,8 +134,7 @@ local function createminimap(r)
 		
 		color=r.cresizebackground,
 		texturecolor=r.cmovecolor,
-		texture="luaui/images/redminimap/resize.png",
-		
+		texture="LuaUI/Images/RedMinimap/resize.png",		
 		border=r.cborder,
 		movable=r.dragbutton,
 		overridecursor = true,
@@ -153,7 +152,7 @@ local function createminimap(r)
 		
 		color=r.cmovebackground,
 		texturecolor=r.cmovecolor,
-		texture="luaui/images/redminimap/move.png",
+		texture="LuaUI/Images/RedMinimap/move.png",
 		
 		border=r.cborder,
 		movable=r.dragbutton,
@@ -334,6 +333,7 @@ function widget:Shutdown()
 	Spring.SendCommands("minimap geometry "..oldMinimapGeometry)
 end
 
+
 --save/load stuff
 --currently only position
 function widget:GetConfigData() --save config
@@ -342,8 +342,6 @@ function widget:GetConfigData() --save config
 		local unscale = CanvasY/vsy --needed due to autoresize, stores unresized variables
 		Config.minimap.px = rMinimap.px * unscale
 		Config.minimap.py = rMinimap.py * unscale
-		Config.minimap.sx = rMinimap.sx * unscale
-		Config.minimap.sy = rMinimap.sy * unscale
 		return {Config=Config}
 	end
 end
@@ -351,7 +349,5 @@ function widget:SetConfigData(data) --load config
 	if (data.Config ~= nil) then
 		Config.minimap.px = data.Config.minimap.px
 		Config.minimap.py = data.Config.minimap.py
-		Config.minimap.sx = data.Config.minimap.sx
-		Config.minimap.sy = data.Config.minimap.sy
 	end
 end

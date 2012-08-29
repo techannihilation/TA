@@ -1,7 +1,6 @@
 function widget:GetInfo()
 	return {
-	version   = "8",
-	name      = "Red Resource Bars",
+	name      = "Red Resource Bars", --version 7
 	desc      = "Requires Red UI Framework",
 	author    = "Regret",
 	date      = "August 6, 2009", --last change September 10,2009
@@ -322,23 +321,37 @@ function widget:Initialize()
 	metal.barbackground.mouseheld = {
 		{1,function(mx,my,self)
 			sSetShareLevel("metal",(mx-self.px)/self.sx)
+			updatebar(metal,"metal")
 		end},
 	}
 	energy.barbackground.mouseheld = {
 		{1,function(mx,my,self)
 			sSetShareLevel("energy",(mx-self.px)/self.sx)
+			updatebar(energy,"energy")
 		end},
 	}
 	
 	Spring.SendCommands("resbar 0")
-	
-	AutoResizeObjects() --fix for displacement on crash issue
+	AutoResizeObjects()
+end
+
+function widget:Shutdown()
+	Spring.SendCommands("resbar 1")
+end
+
+local gameFrame = 0
+local lastFrame = -1
+function widget:GameFrame(n)
+	gameFrame = n
 end
 
 function widget:Update()
 	AutoResizeObjects()
-	updatebar(energy,"energy")
-	updatebar(metal,"metal")
+	if (gameFrame ~= lastFrame) then
+		updatebar(energy,"energy")
+		updatebar(metal,"metal")
+		lastFrame = gameFrame
+	end
 end
 
 --save/load stuff

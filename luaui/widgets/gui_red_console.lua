@@ -1,7 +1,6 @@
 function widget:GetInfo()
 	return {
-	version   = "5",
-	name      = "Red Console",
+	name      = "Red Console", --version 4.1
 	desc      = "Requires Red UI Framework",
 	author    = "Regret",
 	date      = "August 13, 2009", --last change September 10,2009
@@ -14,6 +13,8 @@ end
 local NeededFrameworkVersion = 8
 local CanvasX,CanvasY = 1272,734 --resolution in which the widget was made (for 1:1 size)
 --1272,734 == 1280,768 windowed
+local SoundIncomingChat  = 'sounds/beep4.wav'
+local SoundIncomingChatVolume = 1.0
 
 --todo: dont cut words apart when clipping text 
 
@@ -64,11 +65,15 @@ local sfind = string.find
 local sformat = string.format
 local schar = string.char
 local sgsub = string.gsub
+local mfloor = math.floor
+local sbyte = string.byte
+local mmax = math.max
 local glGetTextWidth = gl.GetTextWidth
 local sGetPlayerRoster = Spring.GetPlayerRoster
 local sGetTeamColor = Spring.GetTeamColor
 local sGetMyAllyTeamID = Spring.GetMyAllyTeamID
 local sGetModKeyState = Spring.GetModKeyState
+local spPlaySoundFile = Spring.PlaySoundFile
 
 local function IncludeRedUIFrameworkFunctions()
 	New = WG.Red.New(widget)
@@ -250,7 +255,6 @@ local function createconsole(r)
 	
 	New(activationarea)
 	New(background)
-	background.active = nil
 	New(lines)
 	
 	local counters = {}
@@ -269,6 +273,8 @@ local function createconsole(r)
 	--tooltip
 	background.mouseover = function(mx,my,self) SetTooltip(r.tooltip.background) end
 	
+	background.active = nil
+	
 	return {
 		["background"] = background,
 		["lines"] = lines,
@@ -279,8 +285,7 @@ end
 
 local function clipLine(line,fontsize,maxwidth)
 	local clipped = {}
-	line = sgsub(line,"\n","")
-	
+		
 	local firstclip = line:len()
 	local firstpass = true
 	while (1) do
@@ -345,17 +350,17 @@ local function clipHistory(g,oneline)
 end
 
 local function convertColor(r,g,b)
-	return schar(255)..schar(sformat("%i",r*255))..schar(sformat("%i",g*255))..schar(sformat("%i",b*255))
+	return schar(255, (r*255), (g*255), (b*255))
 end
 
-local function processLine(line,g,cfg)
+local function processLine(line,g,cfg,newlinecolor)
 	if (g.vars.browsinghistory) then
 		if (g.vars.historyoffset == nil) then
 			g.vars.historyoffset = 0
 		end
 		g.vars.historyoffset = g.vars.historyoffset + 1
 	end
-
+	
 	g.vars.nextupdate = 0
 
 	local roster = sGetPlayerRoster()
@@ -363,33 +368,44 @@ local function processLine(line,g,cfg)
 	for i=1,#roster do
 		names[roster[i][1]] = {roster[i][4],roster[i][5],roster[i][3]}
 	end
-	local linetype = 0 --other
+	
 	local name = ""
 	local text = ""
-	if (names[ssub(line,2,(sfind(line,"> ") or 1)-1)] ~= nil) then
-		linetype = 1 --playermessage
-		name = ssub(line,2,sfind(line,"> ")-1)
-		text = ssub(line,slen(name)+4)
-	elseif (names[ssub(line,2,(sfind(line,"] ") or 1)-1)] ~= nil) then
-		linetype = 2 --spectatormessage
-		name = ssub(line,2,sfind(line,"] ")-1)
-		text = ssub(line,slen(name)+4)
-	elseif (names[ssub(line,2,(sfind(line,"(replay)") or 3)-3)] ~= nil) then
-		linetype = 2 --spectatormessage
-		name = ssub(line,2,sfind(line,"(replay)")-3)
-		text = ssub(line,slen(name)+13)
-	elseif (names[ssub(line,1,(sfind(line," added point: ") or 1)-1)] ~= nil) then
-		linetype = 3 --playerpoint
-		name = ssub(line,1,sfind(line," added point: ")-1)
-		text = ssub(line,slen(name.." added point: ")+1)
-	elseif (ssub(line,1,1) == ">") then
-		linetype = 4 --gamemessage
-		text = ssub(line,3)
+	local linetype = 0 --other
+	
+	if (not newlinecolor) then
+		if (names[ssub(line,2,(sfind(line,"> ") or 1)-1)] ~= nil) then
+			linetype = 1 --playermessage
+			name = ssub(line,2,sfind(line,"> ")-1)
+			text = ssub(line,slen(name)+4)
+		elseif (names[ssub(line,2,(sfind(line,"] ") or 1)-1)] ~= nil) then
+			linetype = 2 --spectatormessage
+			name = ssub(line,2,sfind(line,"] ")-1)
+			text = ssub(line,slen(name)+4)
+		elseif (names[ssub(line,2,(sfind(line,"(replay)") or 3)-3)] ~= nil) then
+			linetype = 2 --spectatormessage
+			name = ssub(line,2,sfind(line,"(replay)")-3)
+			text = ssub(line,slen(name)+13)
+		elseif (names[ssub(line,1,(sfind(line," added point: ") or 1)-1)] ~= nil) then
+			linetype = 3 --playerpoint
+			name = ssub(line,1,sfind(line," added point: ")-1)
+			text = ssub(line,slen(name.." added point: ")+1)
+		elseif (ssub(line,1,1) == ">") then
+			linetype = 4 --gamemessage
+			text = ssub(line,3)
+		end		
+	end
+	--mute--
+	local ignoreThisMessage = false
+	if (mutedPlayers[name]) then 
+		ignoreThisMessage = true 
+		--Spring.Echo ("blocked message by " .. name)
 	end
 	
 	local MyAllyTeamID = sGetMyAllyTeamID()
 	local textcolor = nil
 	
+    local playSound = false
 	if (linetype==1) then --playermessage
 		local c = cfg.cothertext
 		local misccolor = convertColor(c[1],c[2],c[3])
@@ -410,6 +426,8 @@ local function processLine(line,g,cfg)
 		local namecolor = convertColor(r,g,b)
 		
 		line = namecolor..name..misccolor..": "..textcolor..text
+        
+        playSound = true
 		
 	elseif (linetype==2) then --spectatormessage
 		local c = cfg.cothertext
@@ -427,6 +445,8 @@ local function processLine(line,g,cfg)
 		
 		line = namecolor.."(s) "..name..misccolor..": "..textcolor..text
 		
+        playSound = true
+        
 	elseif (linetype==3) then --playerpoint
 		local c = cfg.cspectext
 		local namecolor = convertColor(c[1],c[2],c[3])
@@ -461,7 +481,7 @@ local function processLine(line,g,cfg)
 		line = textcolor.."> "..text
 	else --every other message
 		local c = cfg.cmisctext
-		textcolor = convertColor(c[1],c[2],c[3])
+		textcolor = newlinecolor or convertColor(c[1],c[2],c[3])
 		
 		line = textcolor..line
 	end
@@ -469,11 +489,17 @@ local function processLine(line,g,cfg)
 	if (g.vars.consolehistory == nil) then
 		g.vars.consolehistory = {}
 	end
-	local history = g.vars.consolehistory
-	local lineID = #history+1
+	local history = g.vars.consolehistory	
 	
-	history[#history+1] = {line,clock(),lineID,textcolor,linetype}
-	
+	if (not ignoreThisMessage) then		--mute--
+		local lineID = #history+1	
+		history[#history+1] = {line,clock(),lineID,textcolor,linetype}
+        
+        if ( playSound ) then
+            spPlaySoundFile( SoundIncomingChat, SoundIncomingChatVolume, nil, "ui" )
+        end
+	end
+
 	return history[#history]
 end
 
@@ -594,12 +620,19 @@ function widget:Initialize()
 	
 	console = createconsole(Config.console)
 	Spring.SendCommands("console 0")
-	
-	AutoResizeObjects() --fix for displacement on crash issue
+	AutoResizeObjects()
 end
 
-function widget:AddConsoleLine(line,priority)
-	processLine(line,console,Config.console)
+function widget:Shutdown()
+	Spring.SendCommands("console 1")
+end
+
+function widget:AddConsoleLine(lines,priority)
+	lines = lines:match('^\[f=[0-9]+\] (.*)$') or lines
+	local textcolor
+	for line in lines:gmatch("[^\n]+") do
+		textcolor = processLine(line, console, Config.console, textcolor)[4]
+	end
 	clipHistory(console,true)
 end
 
@@ -624,4 +657,49 @@ function widget:SetConfigData(data) --load config
 		Config.console.px = data.Config.console.px
 		Config.console.py = data.Config.console.py
 	end
+end
+
+--mute--
+function widget:TextCommand(s)     
+     local token = {}
+	 local n = 0
+	 --for w in string.gmatch(s, "%a+") do
+	 for w in string.gmatch(s, "%S+") do
+		n = n +1
+		token[n] = w		
+     end
+	 
+	--for i = 1,n do Spring.Echo (token[i]) end
+	 
+	 if (token[1] == "mute") then
+		--Spring.Echo ("geht ums muten")
+		 for i = 2,n do
+			mutePlayer (token[i])
+			Spring.Echo ("*muting " .. token[i] .. "*")
+		end
+	end
+	
+	if (token[1] == "unmute") then
+		--Spring.Echo ("geht ums UNmuten")
+		 for i = 2,n do
+			unmutePlayer (token[i])
+			Spring.Echo ("*unmuting " .. token[i] .."*")
+		end
+		if (n==1) then unmuteAll() Spring.Echo ("unmuting everybody") end
+	end
+	
+end
+
+--mute
+mutedPlayers = {}
+function mutePlayer (playername)
+	mutedPlayers[playername] = true
+end
+
+function unmutePlayer (playername)
+	mutedPlayers[playername] = nil
+end
+
+function unmuteAll ()
+	mutedPlayers = {}
 end
