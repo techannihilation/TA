@@ -1,7 +1,7 @@
 include("colors.h.lua")
 include("keysym.h.lua")
 
-local versionNumber = "6.22-TechA"
+local versionNumber = "6.32"
 
 function widget:GetInfo()
 	return {
@@ -17,6 +17,7 @@ end
 
 --[[
 changelog:
+6.3: heightboost support. missing ba floating turrets added (thx to nixa)
 6.2: speed-up by cpu culling
 6.12: bugfix (BA Ambusher working)
 6.11: added missing water units to BA (torpLauncher/FHLT/FRocketTower)
@@ -34,7 +35,6 @@ local modConfig = {}
 modConfig["BA"] = {}
 modConfig["BA"]["unitList"] = 
 							{ 
-								--Arm
 								armclaw = { weapons = { 1 } },
 								cormaw = { weapons = { 1 } },
 								armllt = { weapons = { 1 } },
@@ -49,7 +49,9 @@ modConfig["BA"]["unitList"] =
 								armtl = { weapons = { 1 } }, --torp launcher
 								armfhlt = { weapons = { 1 } },  --floating hlt
 								armfrt = { weapons = { 2 } },  --floating rocket laucher
-								
+								armfflak = { weapons = { 2 } },  --floating flak AA
+								armatl = { weapons = { 1 } },  --adv torpedo launcher
+
 								armamb = { weapons = { 1,1 } }, --ambusher
 								armpb = { weapons = { 1 } }, --pitbull
 								armanni = { weapons = { 1 } },
@@ -76,7 +78,9 @@ modConfig["BA"]["unitList"] =
 								
 								corfhlt = { weapons = { 1 } },  --floating hlt
 								cortl = { weapons = { 1 } }, --torp launcher
+								coratl = { weapons = { 1 } }, --T2 torp launcher
 								corfrt = { weapons = { 2 } }, --floating rocket laucher
+								corenaa = { weapons = { 2 } }, --floating flak AA
 								
 								cortoast = { weapons = { 1 } },
 								corvipe = { weapons = { 1 } },
@@ -86,9 +90,8 @@ modConfig["BA"]["unitList"] =
 								cortron = { weapons = { 1 } },
 								corfmd = { weapons = { 3 } },
 								corint = { weapons = { 1 } },
-								corbuzz = { weapons = { 1 } }
-	
-								}
+								corbuzz = { weapons = { 1 } }					
+							}
 
 --implement this if you want dps-depending ring-colors
 --colors will be interpolated by dps scores between min and max values. values outside range will be set to nearest value in range -> min or max
@@ -103,8 +106,86 @@ modConfig["BA"]["dps"]["ground"]["max"] = 500
 modConfig["BA"]["dps"]["air"]["min"] = 80
 modConfig["BA"]["dps"]["air"]["max"] = 500
 --end of dps-colors
---implement this if you want custom colors - we dont want it for BA
 
+-- BA
+--to support other mods
+--table initialized and unitList is needed!
+modConfig["BAR"] = {}
+modConfig["BAR"]["unitList"] = 
+							{ 
+								armclaw = { weapons = { 1 } },
+								cormaw = { weapons = { 1 } },
+								armllt = { weapons = { 1 } },
+								tawf001 = { weapons = { 1 } },
+								armhlt = { weapons = { 1 } },
+								armguard = { weapons = { 1, 1 } },
+								armrl = { weapons = { 2 } }, --light aa
+								packo = { weapons = { 2 } },
+								armcir = { weapons = { 2 } }, --chainsaw
+								armdl = { weapons = { 1 } }, --depthcharge
+								ajuno = { weapons = { 1 } },
+								armtl = { weapons = { 1 } }, --torp launcher
+								armfhlt = { weapons = { 1 } },  --floating hlt
+								armfrt = { weapons = { 2 } },  --floating rocket laucher
+								armfflak = { weapons = { 2 } },  --floating flak AA
+								armatl = { weapons = { 1 } },  --adv torpedo launcher
+
+								armamb = { weapons = { 1,1 } }, --ambusher
+								armpb = { weapons = { 1 } }, --pitbull
+								armanni = { weapons = { 1 } },
+								armflak = { weapons = { 2 } },
+								mercury = { weapons = { 2 } },
+								armemp = { weapons = { 1 } },
+								armamd = { weapons = { 3 } }, --antinuke
+								
+								armbrtha = { weapons = { 1 } },
+								armvulc = { weapons = { 1 } },
+								
+								--CORE
+								corexp = { weapons = { 1 } },
+								cormaw = { weapons = { 1 } },
+								corllt = { weapons = { 1 } },
+								hllt = { weapons = { 1 } },
+								corhlt = { weapons = { 1 } },
+								corpun = { weapons = { 1, 1 } },
+								corrl = { weapons = { 2 } },
+								madsam = { weapons = { 2 } },
+								corerad = { weapons = { 2 } },
+								cordl = { weapons = { 1 } },
+								cjuno = { weapons = { 1 } },
+								
+								corfhlt = { weapons = { 1 } },  --floating hlt
+								cortl = { weapons = { 1 } }, --torp launcher
+								coratl = { weapons = { 1 } }, --T2 torp launcher
+								corfrt = { weapons = { 2 } }, --floating rocket laucher
+								corenaa = { weapons = { 2 } }, --floating flak AA
+								
+								cortoast = { weapons = { 1 } },
+								corvipe = { weapons = { 1 } },
+								cordoom = { weapons = { 1 } },
+								corflak = { weapons = { 2 } },
+								screamer = { weapons = { 2 } },
+								cortron = { weapons = { 1 } },
+								corfmd = { weapons = { 3 } },
+								corint = { weapons = { 1 } },
+								corbuzz = { weapons = { 1 } }					
+							}
+
+--implement this if you want dps-depending ring-colors
+--colors will be interpolated by dps scores between min and max values. values outside range will be set to nearest value in range -> min or max
+modConfig["BAR"]["armorTags"] = {}
+modConfig["BAR"]["armorTags"]["air"] = "vtol"
+modConfig["BAR"]["armorTags"]["ground"] = "else"
+modConfig["BAR"]["dps"] = {}
+modConfig["BAR"]["dps"]["ground"] = {}
+modConfig["BAR"]["dps"]["air"] = {}
+modConfig["BAR"]["dps"]["ground"]["min"] = 50
+modConfig["BAR"]["dps"]["ground"]["max"] = 500
+modConfig["BAR"]["dps"]["air"]["min"] = 80
+modConfig["BAR"]["dps"]["air"]["max"] = 500
+
+--implement this if you want custom colors - we dont want it for BA
+--[[
 modConfig["BA"]["color"] = {}
 modConfig["BA"]["color"]["enemy"] = {}
 modConfig["BA"]["color"]["enemy"]["ground"] = {}
@@ -116,7 +197,7 @@ modConfig["BA"]["color"]["enemy"]["air"]["min"] = { 0.0, 1.0, 0.0 }
 modConfig["BA"]["color"]["enemy"]["air"]["max"] = { 0.0, 0.0, 1.0 }
 modConfig["BA"]["color"]["enemy"]["nuke"] =  { 1.0, 1.0, 1.0 }
 modConfig["BA"]["color"]["ally"] = modConfig["BA"]["color"]["enemy"]
-
+--]]
 --end of custom colors
 --end of BA
 
@@ -290,7 +371,6 @@ modConfig["TA"]["color"]["enemy"]["nuke"] =  { 1.0, 1.0, 1.0 }
 modConfig["TA"]["color"]["ally"] = modConfig["TA"]["color"]["enemy"]
 --end of custom colors
 --end of TA
-
 
 -- XTA
 --to support other mods
@@ -510,7 +590,7 @@ state["curModID"] = nil
 state["myPlayerID"] = nil
 
 local lineConfig = {}
-lineConfig["lineWidth"] = 1.5 -- calcs dynamic now
+lineConfig["lineWidth"] = 1.0 -- calcs dynamic now
 lineConfig["alphaValue"] = 0.0 --> dynamic behavior can be found in the function "widget:Update"
 lineConfig["circleDivs"] = 40.0 
 --------------------------------------------------------------------------------
@@ -1068,7 +1148,7 @@ function GetRange2DWeapon( range, yDiff)
 	end
 end
 
-function GetRange2DCannon( range, yDiff, projectileSpeed, rangeFactor, myGravity )
+function GetRange2DCannon( range, yDiff, projectileSpeed, rangeFactor, myGravity, heightBoostFactor )
 	local factor = 0.7071067
 	local smoothHeight = 100.0
 	local speed2d = projectileSpeed*factor
@@ -1077,24 +1157,26 @@ function GetRange2DCannon( range, yDiff, projectileSpeed, rangeFactor, myGravity
 	if ( myGravity ~= nil and myGravity ~= 0 ) then
 		gravity = myGravity   -- i have never seen a stationary weapon using myGravity tag, so its untested :D
 	end
-	local gravity = - ( curGravity / 900 )		-- -0.13333333
+	local gravity = - ( curGravity / 900 ) -- -0.13333333
 		
 	--printDebug("rangeFactor: " .. rangeFactor)
 	--printDebug("ProjSpeed: " .. projectileSpeed)
-	local heightBoostFactor = (2.0 - rangeFactor) / sqrt(rangeFactor)
+	if ( heightBoostFactor < 0.0 ) then
+		heightBoostFactor = (2.0 - rangeFactor) / sqrt(rangeFactor)
+	end
 	
 	if ( yDiff < -smoothHeight ) then
 		yDiff = yDiff * heightBoostFactor
 	elseif ( yDiff < 0.0 ) then
-	  yDiff = yDiff * ( 1.0 + ( heightBoostFactor - 1.0 ) * ( -yDiff)/smoothHeight )
+		yDiff = yDiff * ( 1.0 + ( heightBoostFactor - 1.0 ) * ( -yDiff)/smoothHeight )
 	end
 	
 	local root1 = speed2dSq + 2 * gravity * yDiff
-	if ( root1 < 0 ) then
-		--printDebug("Cann return 0")
-		return 0
+	if ( root1 < 0.0 ) then
+		printDebug("Cann return 0")
+		return 0.0
 	else
-	--	printDebug("Cann return: " .. rangeFactor * ( speed2dSq + speed2d * sqrt( root1 ) ) / (-gravity) )
+		printDebug("Cann return: " .. rangeFactor * ( speed2dSq + speed2d * sqrt( root1 ) ) / (-gravity) )
 		return rangeFactor * ( speed2dSq + speed2d * sqrt( root1 ) ) / (-gravity)
 	end	
 end
@@ -1108,11 +1190,12 @@ function CalcBallisticCircle( x, y, z, range, weaponDef )
 	local rangeFactor = 1.0 --used by range2dCannon
 	if ( weaponDef.type == "Cannon" ) then
 		rangeFunc = GetRange2DCannon
-		rangeFactor = range / GetRange2DCannon( range, 0.0, weaponDef.projectilespeed, rangeFactor )
+		rangeFactor = range / GetRange2DCannon( range, 0.0, weaponDef.projectilespeed, rangeFactor, nil, weaponDef.heightBoostFactor )
 		if ( rangeFactor > 1.0 or rangeFactor <= 0.0 ) then
 			rangeFactor = 1.0
 		end
 	end
+	
 				
 	local yGround = spGetGroundHeight( x,z)
 	for i = 1, lineConfig["circleDivs"] do
@@ -1126,11 +1209,10 @@ function CalcBallisticCircle( x, y, z, range, weaponDef )
 		local posz = z + cosR * rad
 		local posy = spGetGroundHeight( posx, posz )
 
-		local heightDiff = ( posy - yGround) / 2.0							-- maybe y has to be getGroundHeight(x,z) cause y is unit center and not aligned to ground			
-					
+		local heightDiff = ( posy - yGround ) / 2.0							-- maybe y has to be getGroundHeight(x,z) cause y is unit center and not aligned to ground			
 					
 		rad = rad - heightDiff * slope
-		local adjRadius = rangeFunc( range, heightDiff * weaponDef.heightMod, weaponDef.projectilespeed, rangeFactor )
+		local adjRadius = rangeFunc( range, heightDiff * weaponDef.heightMod, weaponDef.projectilespeed, rangeFactor, nil, weaponDef.heightBoostFactor )
 		local adjustment = rad / 2.0
 		local yDiff = 0.0
 					
@@ -1155,7 +1237,7 @@ function CalcBallisticCircle( x, y, z, range, weaponDef )
 			posy = max( posy, 0.0 )  --hack
 			
 			heightDiff = ( posy - yGround ) 																--maybe y has to be Ground(x,z)
-			adjRadius = rangeFunc( range, heightDiff * weaponDef.heightMod, weaponDef.projectilespeed, rangeFactor, weaponDef.myGravity )
+			adjRadius = rangeFunc( range, heightDiff * weaponDef.heightMod, weaponDef.projectilespeed, rangeFactor, weaponDef.myGravity, weaponDef.heightBoostFactor )
 		end
 					
 					
