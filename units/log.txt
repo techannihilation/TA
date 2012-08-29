@@ -1,0 +1,1684 @@
+==== aahp () ====
+    Add cat for nano morph unlock to t2 hover labs
+
+==== abroadside () ====
+    Replace soundhit with soundhitdry
+
+==== aexxec () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== ahermes () ====
+    Replace soundhit with soundhitdry
+
+==== airwolf3g () ====
+    Replace soundhit with soundhitdry
+
+==== ajuno () ====
+    Replace soundhit with soundhitdry
+
+==== akmech () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== amortor () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== anvil () ====
+    Replace soundhit with soundhitdry
+
+==== apache () ====
+    Replace soundhit with soundhitdry
+
+==== armaak () ====
+    Replace soundhit with soundhitdry
+
+==== armaas () ====
+    Replace soundhit with soundhitdry
+
+==== armaaspd () ====
+    Replace soundhit with soundhitdry
+
+==== armah256 () ====
+    Replace soundhit with soundhitdry
+
+==== armah () ====
+    Replace soundhit with soundhitdry
+
+==== armamb () ====
+    Replace soundhit with soundhitdry
+
+==== armamd1 () ====
+    Replace soundhit with soundhitdry
+
+==== armamd2 () ====
+    Replace soundhit with soundhitdry
+
+==== armamd () ====
+    Replace soundhit with soundhitdry
+
+==== armamph () ====
+    Replace soundhit with soundhitdry
+
+==== armamspd () ====
+    Replace soundhit with soundhitdry
+
+==== armanac () ====
+    Replace soundhit with soundhitdry
+
+==== armanni1 () ====
+    Fix a few more yardmaps
+    Replace soundhit with soundhitdry
+
+==== armanni () ====
+    Fix a few more yardmaps
+    Replace soundhit with soundhitdry
+
+==== armantar () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== armarad () ====
+    Add lua unit scripts for armarad
+
+==== armarty () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== armatl () ====
+    Replace soundhit with soundhitdry
+
+==== armawin () ====
+    Fix a few more yardmaps
+
+==== armbanth1 () ====
+    Replace soundhit with soundhitdry
+
+==== armbanth () ====
+    Replace soundhit with soundhitdry
+
+==== armbats () ====
+    Replace soundhit with soundhitdry
+
+==== armbc () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== arm_big_bertha () ====
+    Replace soundhit with soundhitdry
+
+==== armblz () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== armbrtha1 () ====
+    Replace soundhit with soundhitdry
+
+==== armbrtha () ====
+    Replace soundhit with soundhitdry
+
+==== armbull2 () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== armbull () ====
+    Replace soundhit with soundhitdry
+
+==== armcarry () ====
+    Replace soundhit with soundhitdry
+
+==== armcav () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== armcbomb () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== armcd () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== armciph () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== armcir1 () ====
+    Replace soundhit with soundhitdry
+
+==== armcir () ====
+    Replace soundhit with soundhitdry
+
+==== armclaw () ====
+    Replace soundhit with soundhitdry
+
+==== armcom1 () ====
+    Replace soundhit with soundhitdry
+    Replace cylinderTargetting with cylinderTargeting -- 89 compat.
+
+==== armcom4 () ====
+    Replace soundhit with soundhitdry
+
+==== armcom5 () ====
+    Replace soundhit with soundhitdry
+
+==== armcom6 () ====
+    Replace soundhit with soundhitdry
+
+==== armcom7 () ====
+    Replace soundhit with soundhitdry
+
+==== armcom () ====
+    Replace soundhit with soundhitdry
+    Replace cylinderTargetting with cylinderTargeting -- 89 compat.
+
+==== armcrabe () ====
+    Replace soundhit with soundhitdry
+
+==== armcrack () ====
+    Replace soundhit with soundhitdry
+
+==== armcroc () ====
+    Replace soundhit with soundhitdry
+
+==== armcrus () ====
+    Replace soundhit with soundhitdry
+
+==== armcybr () ====
+    Replace soundhit with soundhitdry
+
+==== armcyclone () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== armdark () ====
+    Replace soundhit with soundhitdry
+
+==== armdfly () ====
+    Replace soundhit with soundhitdry
+
+==== armdl () ====
+    Replace soundhit with soundhitdry
+
+==== armeman () ====
+    Replace soundhit with soundhitdry
+
+==== armemp () ====
+    Replace soundhit with soundhitdry
+
+==== armfav () ====
+    Replace soundhit with soundhitdry
+
+==== armfboy1 () ====
+    Replace soundhit with soundhitdry
+
+==== armfboy () ====
+    Replace soundhit with soundhitdry
+
+==== armfflak () ====
+    Replace soundhit with soundhitdry
+
+==== armfhlt () ====
+    Replace soundhit with soundhitdry
+
+==== armfido () ====
+    Replace soundhit with soundhitdry
+
+==== armfig () ====
+    Replace soundhit with soundhitdry
+
+==== armflak () ====
+    Replace soundhit with soundhitdry
+
+==== armflea1 () ====
+    Replace soundhit with soundhitdry
+
+==== armflea () ====
+    Replace soundhit with soundhitdry
+
+==== armflspd () ====
+    Replace soundhit with soundhitdry
+
+==== armfrad () ====
+    Add lua unit scripts for corfrad and armfrad
+
+==== armfrt () ====
+    Replace soundhit with soundhitdry
+
+==== armfsilo () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== arm_furie () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== armgor () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== armguard () ====
+    Replace soundhit with soundhitdry
+
+==== armham1 () ====
+    Replace soundhit with soundhitdry
+
+==== armham () ====
+    Replace soundhit with soundhitdry
+
+==== armhawk () ====
+    Replace soundhit with soundhitdry
+
+==== armhcar () ====
+    Replace soundhit with soundhitdry
+
+==== armhdpw () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== armhh () ====
+    Replace soundhit with soundhitdry
+
+==== armhls () ====
+    Replace soundhit with soundhitdry
+
+==== armhlt () ====
+    Replace soundhit with soundhitdry
+
+==== armhplasma () ====
+    Replace soundhit with soundhitdry
+
+==== armhys () ====
+    Replace soundhit with soundhitdry
+
+==== armiguana () ====
+    Replace soundhit with soundhitdry
+
+==== arm_immolator () ====
+    Replace soundhit with soundhitdry
+
+==== armjade () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== armjag () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== armjanus1 () ====
+    Replace soundhit with soundhitdry
+
+==== armjanus () ====
+    Replace soundhit with soundhitdry
+
+==== armjeth () ====
+    Replace soundhit with soundhitdry
+
+==== armjugg () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== armkrmi () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== armlance () ====
+    Replace soundhit with soundhitdry
+
+==== armlashover () ====
+    Replace soundhit with soundhitdry
+
+==== armlaspd () ====
+    Replace soundhit with soundhitdry
+
+==== armlatnk () ====
+    Replace soundhit with soundhitdry
+    Nerfing pather AA
+    Buffing coyote AA
+
+==== armllt1 () ====
+    Add badTargetCategory MEDIUM LARGE HUGE to light defense towers and LARGE HUGE to upg light defense
+    Replace soundhit with soundhitdry
+
+==== armllt () ====
+    Add badTargetCategory MEDIUM LARGE HUGE to light defense towers and LARGE HUGE to upg light defense
+    Add badTargetCategory LARGE HUGE to light defense towers
+    Replace soundhit with soundhitdry
+
+==== armmagneto () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== armmanni () ====
+    Replace soundhit with soundhitdry
+
+==== armmark () ====
+    No more wobbly eyes
+
+==== armmart () ====
+    Replace soundhit with soundhitdry
+
+==== armmav () ====
+    Replace soundhit with soundhitdry
+
+==== armmcv () ====
+    Replace soundhit with soundhitdry
+
+==== armmech () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== armmedt () ====
+    Replace soundhit with soundhitdry
+
+==== armmerl () ====
+    Replace soundhit with soundhitdry
+
+==== armmh () ====
+    Add ceg to starburst launcher
+    Replace soundhit with soundhitdry
+
+==== armmin () ====
+    Replace soundhit with soundhitdry
+
+==== armmlrs () ====
+    Replace soundhit with soundhitdry
+
+==== armmship () ====
+    Replace soundhit with soundhitdry
+
+==== armorca () ====
+    Replace soundhit with soundhitdry
+
+==== armorco () ====
+    Replace soundhit with soundhitdry
+
+==== armorion () ====
+    Replace soundhit with soundhitdry
+    Replace cylinderTargetting with cylinderTargeting -- 89 compat.
+
+==== armpaspd () ====
+    Replace soundhit with soundhitdry
+
+==== armpb () ====
+    Replace soundhit with soundhitdry
+
+==== armpers () ====
+    Replace soundhit with soundhitdry
+
+==== armpincer () ====
+    Replace soundhit with soundhitdry
+
+==== armpnix () ====
+    Replace soundhit with soundhitdry
+
+==== armpod () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== armpraet () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+    Add sane sensors values
+
+==== armpt () ====
+    Replace soundhit with soundhitdry
+
+==== armrad1 () ====
+    Lua unit script for armrad and armrad1
+
+==== armraptor () ====
+    Replace soundhit with soundhitdry
+
+==== armraven1 () ====
+    Replace soundhit with soundhitdry
+
+==== armraven () ====
+    Replace soundhit with soundhitdry
+
+==== armraz1 () ====
+    Replace soundhit with soundhitdry
+
+==== armraz () ====
+    Replace soundhit with soundhitdry
+
+==== armrl1 () ====
+    Replace soundhit with soundhitdry
+
+==== armrl () ====
+    Replace soundhit with soundhitdry
+
+==== armrock1 () ====
+    Replace soundhit with soundhitdry
+
+==== armrock () ====
+    Replace soundhit with soundhitdry
+
+==== armrottweiler () ====
+    Replace soundhit with soundhitdry
+
+==== armroy () ====
+    Replace soundhit with soundhitdry
+
+==== armsaber () ====
+    Replace soundhit with soundhitdry
+
+==== armsam1 () ====
+    Replace soundhit with soundhitdry
+
+==== armsam () ====
+    Replace soundhit with soundhitdry
+
+==== armsb () ====
+    Replace soundhit with soundhitdry
+
+==== armscab1 () ====
+    Replace soundhit with soundhitdry
+
+==== armscab () ====
+    Replace soundhit with soundhitdry
+
+==== armscar () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== armscpion () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== armsd () ====
+    Add lus emp version for arm/core countermeasure
+
+==== armseap () ====
+    Replace soundhit with soundhitdry
+
+==== armseer () ====
+    Add new lua unit script (emp version)
+
+==== armsfig () ====
+    Replace soundhit with soundhitdry
+
+==== armsh () ====
+    Replace soundhit with soundhitdry
+
+==== armshock1 () ====
+    Replace soundhit with soundhitdry
+
+==== armshock () ====
+    Replace soundhit with soundhitdry
+
+==== armsiege () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+    Armsiege remove 2 bursts per barrel and rebalance to same dps, closes #241
+
+==== armsilo1 () ====
+    Replace soundhit with soundhitdry
+
+==== armsilo () ====
+    Replace soundhit with soundhitdry
+
+==== armsnipe () ====
+    Replace soundhit with soundhitdry
+
+==== armsonic () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== armspid () ====
+    Replace soundhit with soundhitdry
+
+==== armsptk () ====
+    Replace soundhit with soundhitdry
+
+==== armst () ====
+    Replace soundhit with soundhitdry
+
+==== armstump1 () ====
+    Replace soundhit with soundhitdry
+
+==== armstump () ====
+    Replace soundhit with soundhitdry
+
+==== armsubk () ====
+    Replace soundhit with soundhitdry
+
+==== armsub () ====
+    Replace soundhit with soundhitdry
+
+==== armtabi () ====
+    Replace soundhit with soundhitdry
+
+==== armtem () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== armthovr () ====
+    Replace soundhit with soundhitdry
+
+==== armthund () ====
+    Replace soundhit with soundhitdry
+
+==== armtigre2 () ====
+    Replace soundhit with soundhitdry
+
+==== armtl () ====
+    Replace soundhit with soundhitdry
+
+==== armtrmph () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== armtys () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== armvhlt () ====
+    Replace soundhit with soundhitdry
+
+==== armvulc1 () ====
+    Replace soundhit with soundhitdry
+
+==== armvulc2 () ====
+    Replace soundhit with soundhitdry
+
+==== armvulc () ====
+    Replace soundhit with soundhitdry
+
+==== armwar () ====
+    Replace soundhit with soundhitdry
+
+==== armyork () ====
+    Replace soundhit with soundhitdry
+
+==== armzeus1 () ====
+    Replace soundhit with soundhitdry
+
+==== armzeus () ====
+    Replace soundhit with soundhitdry
+
+==== aseadragon () ====
+    Replace soundhit with soundhitdry
+
+==== aspdbunk () ====
+    Replace soundhit with soundhitdry
+
+==== avtr () ====
+    Replace soundhit with soundhitdry
+
+==== blackdawn () ====
+    Replace soundhit with soundhitdry
+
+==== blade () ====
+    Replace soundhit with soundhitdry
+
+==== bladew () ====
+    Replace soundhit with soundhitdry
+
+==== cadvmsto () ====
+    Fix a few more yardmaps
+
+==== cahp () ====
+    Add cat for nano morph unlock to t2 hover labs
+
+==== cbrutus () ====
+    Rename cbrutus weapon def
+    Replace soundhit with soundhitdry
+
+==== cdevastator () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== champ () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== chopper () ====
+    Replace soundhit with soundhitdry
+
+==== cjuno () ====
+    Replace soundhit with soundhitdry
+
+==== clb () ====
+    Replace soundhit with soundhitdry
+
+==== cmortor () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== commando () ====
+    Replace soundhit with soundhitdry
+
+==== coraak () ====
+    Replace soundhit with soundhitdry
+
+==== coradon () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== corah () ====
+    Replace soundhit with soundhitdry
+
+==== corak1 () ====
+    Replace soundhit with soundhitdry
+
+==== corak () ====
+    Replace soundhit with soundhitdry
+
+==== coramph () ====
+    Replace soundhit with soundhitdry
+
+==== corape () ====
+    Replace soundhit with soundhitdry
+
+==== corarad () ====
+    Add lua unit scripts for corarad
+
+==== corarch () ====
+    Replace soundhit with soundhitdry
+
+==== corasship () ====
+    Replace soundhit with soundhitdry
+
+==== coratl () ====
+    Replace soundhit with soundhitdry
+
+==== corbats () ====
+    Replace soundhit with soundhitdry
+
+==== corbhmth1 () ====
+    Replace soundhit with soundhitdry
+
+==== corbhmth () ====
+    Replace soundhit with soundhitdry
+
+==== corblackhy () ====
+    Replace soundhit with soundhitdry
+
+==== corboucher () ====
+    Remove some unneeded weapon tag
+    Fix a few more yardmaps
+    Replace soundhit with soundhitdry
+
+==== corbt () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== corbuzz1 () ====
+    Replace soundhit with soundhitdry
+
+==== corbuzz2 () ====
+    Replace soundhit with soundhitdry
+
+==== corbuzz () ====
+    Replace soundhit with soundhitdry
+
+==== corcan () ====
+    Replace soundhit with soundhitdry
+
+==== corcarry () ====
+    Replace soundhit with soundhitdry
+
+==== corcom1 () ====
+    Replace soundhit with soundhitdry
+    Replace cylinderTargetting with cylinderTargeting -- 89 compat.
+
+==== corcom3 () ====
+    Replace soundhit with soundhitdry
+
+==== corcom5 () ====
+    Replace soundhit with soundhitdry
+
+==== corcom6 () ====
+    Replace soundhit with soundhitdry
+
+==== corcom7 () ====
+    Replace soundhit with soundhitdry
+
+==== corcom () ====
+    Replace soundhit with soundhitdry
+    Replace cylinderTargetting with cylinderTargeting -- 89 compat.
+
+==== corcrab () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== corcrash () ====
+    Replace soundhit with soundhitdry
+
+==== corcrus () ====
+    Replace soundhit with soundhitdry
+
+==== corcrw () ====
+    Replace soundhit with soundhitdry
+
+==== corcut () ====
+    Replace soundhit with soundhitdry
+
+==== cordem () ====
+    tweak flametimefgx
+    Calm down cordem weapon effect
+
+==== cordl () ====
+    Replace soundhit with soundhitdry
+
+==== cordoom1 () ====
+    Fix a few more yardmaps
+    Replace soundhit with soundhitdry
+
+==== cordoom () ====
+    Replace soundhit with soundhitdry
+
+==== cordrag1 () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== coreclipse () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== coredauber () ====
+    Replace soundhit with soundhitdry
+
+==== core_immolator () ====
+    Replace soundhit with soundhitdry
+
+==== core_intimidator () ====
+    Replace soundhit with soundhitdry
+
+==== coremech () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== corenaa () ====
+    Replace soundhit with soundhitdry
+
+==== corerad1 () ====
+    Replace soundhit with soundhitdry
+
+==== corerad () ====
+    Replace soundhit with soundhitdry
+
+==== corerex () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== coresupp () ====
+    Replace soundhit with soundhitdry
+
+==== corexp () ====
+    Replace soundhit with soundhitdry
+
+==== corfav () ====
+    Replace soundhit with soundhitdry
+
+==== corfhlt () ====
+    Replace soundhit with soundhitdry
+
+==== corflak () ====
+    Replace soundhit with soundhitdry
+
+==== corflu () ====
+    Replace soundhit with soundhitdry
+
+==== corfmd1 () ====
+    Replace soundhit with soundhitdry
+
+==== corfmd2 () ====
+    Fix a few more yardmaps
+    Replace soundhit with soundhitdry
+
+==== corfmd () ====
+    Replace soundhit with soundhitdry
+
+==== corfrad () ====
+    Add lua unit scripts for corfrad and armfrad
+
+==== corfrog () ====
+    Replace soundhit with soundhitdry
+
+==== corfrt () ====
+    Replace soundhit with soundhitdry
+
+==== corfsilo () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== corgala () ====
+    Replace soundhit with soundhitdry
+
+==== corgarp () ====
+    Replace soundhit with soundhitdry
+
+==== corgator1 () ====
+    Replace soundhit with soundhitdry
+
+==== corgator () ====
+    Replace soundhit with soundhitdry
+
+==== corgfbt () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== corgol1 () ====
+    Replace soundhit with soundhitdry
+
+==== corgol () ====
+    Replace soundhit with soundhitdry
+
+==== corgripn () ====
+    Replace soundhit with soundhitdry
+
+==== corhcar () ====
+    Replace soundhit with soundhitdry
+
+==== corhlt () ====
+    Replace soundhit with soundhitdry
+
+==== corhmakr () ====
+    Fix a few more yardmaps
+
+==== corhover3g () ====
+    Replace soundhit with soundhitdry
+
+==== corhrk () ====
+    Replace soundhit with soundhitdry
+
+==== corhurc () ====
+    Replace soundhit with soundhitdry
+
+==== corint1 () ====
+    Replace soundhit with soundhitdry
+
+==== corint () ====
+    Replace soundhit with soundhitdry
+
+==== corjeag () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== corjurgen () ====
+    Replace soundhit with soundhitdry
+
+==== corkarg1 () ====
+    Replace soundhit with soundhitdry
+
+==== corkarg () ====
+    Replace soundhit with soundhitdry
+
+==== corkrog1 () ====
+    Replace soundhit with soundhitdry
+
+==== corkrog () ====
+    Replace soundhit with soundhitdry
+
+==== corlevlr1 () ====
+    Replace soundhit with soundhitdry
+
+==== corlevlr () ====
+    Replace soundhit with soundhitdry
+
+==== corllt1 () ====
+    Add badTargetCategory MEDIUM LARGE HUGE to light defense towers and LARGE HUGE to upg light defense
+    Replace soundhit with soundhitdry
+
+==== corllt () ====
+    Add badTargetCategory MEDIUM LARGE HUGE to light defense towers and LARGE HUGE to upg light defense
+    Add badTargetCategory LARGE HUGE to light defense towers
+    Replace soundhit with soundhitdry
+
+==== cormabm1 () ====
+    Replace soundhit with soundhitdry
+
+==== cormabm () ====
+    Replace soundhit with soundhitdry
+
+==== cormachn () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== cormart () ====
+    Replace soundhit with soundhitdry
+
+==== cormatch () ====
+    tweak flametimefgx
+
+==== cormaw () ====
+    tweak flametimefgx
+
+==== cormddm () ====
+    Replace soundhit with soundhitdry
+
+==== cormena () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== cormexp () ====
+    Replace soundhit with soundhitdry
+
+==== cormh () ====
+    Replace soundhit with soundhitdry
+
+==== cormin () ====
+    Replace soundhit with soundhitdry
+
+==== cormist1 () ====
+    Replace soundhit with soundhitdry
+
+==== cormist () ====
+    Replace soundhit with soundhitdry
+
+==== cormonsta () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== cormort () ====
+    Replace soundhit with soundhitdry
+
+==== cormship () ====
+    Replace soundhit with soundhitdry
+
+==== corparrow () ====
+    Replace soundhit with soundhitdry
+
+==== corpre () ====
+    Replace soundhit with soundhitdry
+
+==== corprot () ====
+    Replace soundhit with soundhitdry
+
+==== corpt () ====
+    Replace soundhit with soundhitdry
+
+==== corpun () ====
+    Replace soundhit with soundhitdry
+
+==== corpyro () ====
+    tweak flametimefgx
+    More Tweaks to flame thrower effects
+
+==== corpyrox () ====
+    tweak flametimefgx
+    More Tweaks to flame thrower effects
+
+==== corrad1 () ====
+    Lua unit script for corrad and corrad1
+
+==== corrad () ====
+    Lua unit script for corrad and corrad1
+
+==== corrag () ====
+    Replace soundhit with soundhitdry
+    possible fix, closes 267
+
+==== corraid1 () ====
+    Replace soundhit with soundhitdry
+
+==== corraid () ====
+    Replace soundhit with soundhitdry
+
+==== correap () ====
+    Replace soundhit with soundhitdry
+
+==== corrl1 () ====
+    Replace soundhit with soundhitdry
+
+==== corrl () ====
+    Replace soundhit with soundhitdry
+
+==== corrock () ====
+    Replace soundhit with soundhitdry
+
+==== corroy () ====
+    Replace soundhit with soundhitdry
+
+==== corsb () ====
+    Replace soundhit with soundhitdry
+
+==== corsbomb () ====
+    Replace soundhit with soundhitdry
+    Replace cylinderTargetting with cylinderTargeting -- 89 compat.
+
+==== corsd () ====
+    Add lus emp version for arm/core countermeasure
+
+==== corseal () ====
+    Replace soundhit with soundhitdry
+
+==== corseap () ====
+    Replace soundhit with soundhitdry
+
+==== corsent () ====
+    Replace soundhit with soundhitdry
+
+==== corsfig () ====
+    Replace soundhit with soundhitdry
+
+==== corshad () ====
+    Replace soundhit with soundhitdry
+
+==== corshark () ====
+    Replace soundhit with soundhitdry
+
+==== corsh () ====
+    Replace soundhit with soundhitdry
+
+==== corsilo1 () ====
+    Replace soundhit with soundhitdry
+
+==== corsilo () ====
+    Replace soundhit with soundhitdry
+
+==== corsnap () ====
+    Replace soundhit with soundhitdry
+
+==== corssub () ====
+    Replace soundhit with soundhitdry
+
+==== corstorm1 () ====
+    Replace soundhit with soundhitdry
+
+==== corstorm () ====
+    Replace soundhit with soundhitdry
+
+==== corsub () ====
+    Replace soundhit with soundhitdry
+
+==== corsumo1 () ====
+    Replace soundhit with soundhitdry
+
+==== corsumo () ====
+    Replace soundhit with soundhitdry
+
+==== corthovr () ====
+    Replace soundhit with soundhitdry
+
+==== corthud1 () ====
+    Replace soundhit with soundhitdry
+
+==== corthud () ====
+    Replace soundhit with soundhitdry
+
+==== cortitan () ====
+    Replace soundhit with soundhitdry
+
+==== cortl () ====
+    Replace soundhit with soundhitdry
+
+==== cortoast () ====
+    Replace soundhit with soundhitdry
+
+==== cortotal () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== cortron () ====
+    Replace soundhit with soundhitdry
+
+==== cortyrnt () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== corvamp () ====
+    Replace soundhit with soundhitdry
+
+==== corveng () ====
+    Replace soundhit with soundhitdry
+
+==== corvhlt () ====
+    Replace soundhit with soundhitdry
+
+==== corvipe () ====
+    Replace soundhit with soundhitdry
+
+==== corvoyr () ====
+    core mobile radars' scripts lualized and empable
+
+==== corvrad () ====
+    core mobile radars' scripts lualized and empable
+
+==== corvroc () ====
+    Replace soundhit with soundhitdry
+
+==== corwolv1 () ====
+    Replace soundhit with soundhitdry
+
+==== corwolv () ====
+    Replace soundhit with soundhitdry
+
+==== cslicer () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== dao () ====
+    Replace soundhit with soundhitdry
+
+==== decade () ====
+    Replace soundhit with soundhitdry
+
+==== devastator () ====
+    Replace soundhit with soundhitdry
+
+==== ferret () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== gladiator () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== gorg () ====
+    Replace soundhit with soundhitdry
+
+==== heavyimpact () ====
+    Replace soundhit with soundhitdry
+
+==== helepolis () ====
+    Replace soundhit with soundhitdry
+
+==== hllt () ====
+    Replace soundhit with soundhitdry
+
+==== hyperion () ====
+    Replace soundhit with soundhitdry
+
+==== krogtaar () ====
+    Replace soundhit with soundhitdry
+
+==== macross () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== madsam () ====
+    Replace soundhit with soundhitdry
+
+==== marauder () ====
+    Replace soundhit with soundhitdry
+
+==== mercury () ====
+    Replace soundhit with soundhitdry
+
+==== monkeylord () ====
+    Replace soundhit with soundhitdry
+    Add sane sensors values
+
+==== nebraska () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== nsaagriz () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== nsaatorph () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== nsacanglr () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== nsacbehe () ====
+    Replace soundhit with soundhitdry
+
+==== nsaclash () ====
+    Replace soundhit with soundhitdry
+
+==== nsacskv () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== packo () ====
+    Replace soundhit with soundhitdry
+
+==== requ1 () ====
+    Replace soundhit with soundhitdry
+
+==== rockblack () ====
+    Replace soundhit with soundhitdry
+
+==== screamer () ====
+    Replace soundhit with soundhitdry
+
+==== shiva () ====
+    Replace soundhit with soundhitdry
+
+==== shrike () ====
+    Replace soundhit with soundhitdry
+
+==== smasher () ====
+    Replace soundhit with soundhitdry
+
+==== speeder () ====
+    Replace soundhit with soundhitdry
+
+==== taipan () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== tankanotor () ====
+    Replace soundhit with soundhitdry
+
+==== tawf001 () ====
+    Replace soundhit with soundhitdry
+
+==== tawf009 () ====
+    Replace soundhit with soundhitdry
+
+==== tawf010 () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== tawf0131 () ====
+    Replace soundhit with soundhitdry
+
+==== tawf013 () ====
+    Replace soundhit with soundhitdry
+
+==== tawf014 () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== tawf015 () ====
+    Replace soundhit with soundhitdry
+    possible fix, closes 267
+
+==== tawf114 () ====
+    Replace soundhit with soundhitdry
+
+==== tawf116 () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== tllaak () ====
+    Replace soundhit with soundhitdry
+
+==== tllabomber () ====
+    Replace soundhit with soundhitdry
+
+==== tllacid () ====
+    Replace soundhit with soundhitdry
+
+==== tlladt () ====
+    Bring tll dt damage and cost inline with arm/core counterparts and fix some minor mistakes
+
+==== tlladvfight () ====
+    Replace soundhit with soundhitdry
+
+==== tllamphibot () ====
+    Replace soundhit with soundhitdry
+
+==== tllannouncer () ====
+    Replace soundhit with soundhitdry
+
+==== tllantinuke () ====
+    Replace soundhit with soundhitdry
+
+==== tllarad () ====
+    Add new lua unit script -- radar auto disable when stuned now
+
+==== tllares () ====
+    Replace soundhit with soundhitdry
+
+==== tllariman () ====
+    Replace soundhit with soundhitdry
+    Replace cylinderTargetting with cylinderTargeting -- 89 compat.
+
+==== tllartybot () ====
+    Replace soundhit with soundhitdry
+
+==== tllasship () ====
+    Remove some unneeded weapon tag
+    Change torp model
+    Replace soundhit with soundhitdry
+
+==== tllatidal () ====
+    Tweak minwaterline more inline with arm/core unit and better visual for explosion
+
+==== tllatorp () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== tllbats2 () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== tllbind () ====
+    Replace soundhit with soundhitdry
+
+==== tllblind () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== tllboat2 () ====
+    rebalance tll destroyers
+    Swap weapons placement
+    Replace soundhit with soundhitdry
+
+==== tllbomber () ====
+    Replace soundhit with soundhitdry
+
+==== tllbug () ====
+    Replace soundhit with soundhitdry
+
+==== tllburner () ====
+    tweak flametimefgx
+
+==== tllcom3 () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== tllcom5 () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== tllcom6 () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== tllcom7 () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== tllcom () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== tllconvincer () ====
+    Replace soundhit with soundhitdry
+
+==== tllcoyote () ====
+    Replace soundhit with soundhitdry
+    Nerfing pather AA
+    Buffing coyote AA
+
+==== tllcs () ====
+    tllcs bring buildrange inline with arm/core faction
+
+==== tlldb () ====
+    Replace soundhit with soundhitdry
+
+==== tlldcsta () ====
+    Replace soundhit with soundhitdry
+
+==== tlldemon () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== tlldivine () ====
+    Add new lua unit script tlldivine
+
+==== tlldt () ====
+    Bring tll dt damage and cost inline with arm/core counterparts and fix some minor mistakes
+
+==== tllemp () ====
+    Replace soundhit with soundhitdry
+
+==== tllequalizer () ====
+    Change torp model
+    Replace soundhit with soundhitdry
+
+==== tllfight () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== tllfireraiser () ====
+    Replace soundhit with soundhitdry
+
+==== tllfirestarter () ====
+    Replace soundhit with soundhitdry
+
+==== tllflak () ====
+    Replace soundhit with soundhitdry
+
+==== tllgiant () ====
+    Replace soundhit with soundhitdry
+
+==== tllgladius () ====
+    Replace soundhit with soundhitdry
+
+==== tllgrim () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== tllhlt () ====
+    Replace soundhit with soundhitdry
+
+==== tllhltns () ====
+    Replace soundhit with soundhitdry
+
+==== tllhmt () ====
+    Replace soundhit with soundhitdry
+
+==== tllhoplit () ====
+    Replace soundhit with soundhitdry
+
+==== tllhovergauss () ====
+    Replace soundhit with soundhitdry
+
+==== tllhoverlight () ====
+    Replace soundhit with soundhitdry
+
+==== tllhovermissile () ====
+    Replace soundhit with soundhitdry
+
+==== tllhoverrocket () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== tllhplasma () ====
+    Replace soundhit with soundhitdry
+
+==== tllhrk () ====
+    Small pathing fix for tllhrk
+    Replace soundhit with soundhitdry
+
+==== tllhtml () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== tllion () ====
+    Replace soundhit with soundhitdry
+
+==== tlllasbot () ====
+    Replace soundhit with soundhitdry
+
+==== tlllbt () ====
+    Replace soundhit with soundhitdry
+
+==== tlllft () ====
+    tweak flametimefgx
+
+==== tlllmt1 () ====
+    Replace soundhit with soundhitdry
+
+==== tlllmt () ====
+    Replace soundhit with soundhitdry
+
+==== tlllmtns () ====
+    Replace soundhit with soundhitdry
+
+==== tllloki () ====
+    Replace soundhit with soundhitdry
+
+==== tlllongshot () ====
+    Replace soundhit with soundhitdry
+
+==== tlllrpt () ====
+    Replace soundhit with soundhitdry
+
+==== tllmanta () ====
+    Replace soundhit with soundhitdry
+
+==== tllmlrpc () ====
+    Replace soundhit with soundhitdry
+
+==== tllmono () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+    Add sane sensors values
+
+==== tllnssam () ====
+    Replace soundhit with soundhitdry
+
+==== tllobliterator () ====
+    Replace soundhit with soundhitdry
+
+==== tllobserver () ====
+    Add new lua unit script tllobserver
+
+==== tllorc () ====
+    Replace soundhit with soundhitdry
+
+==== tllotter () ====
+    Replace soundhit with soundhitdry
+    Change tllotter main weapon from laser to emp
+
+==== tllpbot () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== tllplasma () ====
+    Replace soundhit with soundhitdry
+
+==== tllplunger () ====
+    Fix weapon fire angle
+    Replace soundhit with soundhitdry
+
+==== tllpulaser () ====
+    Replace soundhit with soundhitdry
+
+==== tllpuncher () ====
+    Replace soundhit with soundhitdry
+
+==== tllradar () ====
+    Add new lua unit script -- radar auto disable when stuned now
+
+==== tllrichter () ====
+    Add lus script for tll countermeasure ,emp version
+
+==== tllriot () ====
+    Replace soundhit with soundhitdry
+
+==== tllrlrpc () ====
+    Remove some unneeded weapon tag
+    Match Sounds to Weapon Effect
+    Replace soundhit with soundhitdry
+    Calm down explosion effect for barret
+
+==== tllroaster () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== tllrobber () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== tllsalamander () ====
+    Replace soundhit with soundhitdry
+
+==== tllsam () ====
+    Replace soundhit with soundhitdry
+
+==== tllseab () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== tllseaf () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== tllsealock () ====
+    Replace soundhit with soundhitdry
+
+==== tllshoretorp () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== tllsilo () ====
+    Replace soundhit with soundhitdry
+
+==== tllsniper () ====
+    Replace soundhit with soundhitdry
+
+==== tllsting () ====
+    Replace soundhit with soundhitdry
+
+==== tllstuner () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== tllsy () ====
+    Move sub build order now inline with arm/core labs
+
+==== tlltarg () ====
+    Add new lua unit script -- radar auto disable when stuned now -- wip - animation is out
+
+==== tlltelsatnk () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== tllthumper () ====
+    Replace soundhit with soundhitdry
+
+==== tlltide () ====
+    Tweak minwaterline more inline with arm/core unit and better visual for explosion
+
+==== tlltorpcop () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== tlltorp () ====
+    Replace soundhit with soundhitdry
+
+==== tlltorpp () ====
+    Replace soundhit with soundhitdry
+
+==== tlltraq () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== tllturtle () ====
+    Replace soundhit with soundhitdry
+
+==== tllupgweb () ====
+    Remove some unneeded weapon tag
+    Add badTargetCategory MEDIUM LARGE HUGE to light defense towers and LARGE HUGE to upg light defense
+    Replace soundhit with soundhitdry
+
+==== tllvaliant () ====
+    Replace soundhit with soundhitdry
+
+==== tllviking () ====
+    Replace soundhit with soundhitdry
+
+==== tllviolator () ====
+    rebalance tll destroyers
+    Replace soundhit with soundhitdry
+
+==== tllvisitor () ====
+    Replace soundhit with soundhitdry
+
+==== tllweb () ====
+    Remove some unneeded weapon tag
+    Add badTargetCategory MEDIUM LARGE HUGE to light defense towers and LARGE HUGE to upg light defense
+    Add badTargetCategory LARGE HUGE to light defense towers
+    Replace soundhit with soundhitdry
+
+==== tllwhale () ====
+    Remove some unneeded weapon tag
+    Replace soundhit with soundhitdry
+
+==== trem () ====
+    Replace soundhit with soundhitdry
+
+==== troman () ====
+    Replace soundhit with soundhitdry
+
+==== uppercut () ====
+    Replace soundhit with soundhitdry
+
+==== vaporiser () ====
+    Replace soundhit with soundhitdry
+

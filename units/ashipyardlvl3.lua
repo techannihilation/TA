@@ -45,7 +45,7 @@ local unitDef = {
 	unitname = [[ashipyardlvl3]],
 	useBuildingGroundDecal = true,
 	workerTime = 240,
-	yardMap = [[OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO OCCCCCCO]],
+	yardMap = string.rep([[ooccccccccccccoo]],30),
 	buildoptions = {
 		[1] = [[abroadside]],
 	},
