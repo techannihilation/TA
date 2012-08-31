@@ -51,7 +51,7 @@ else
 				Spring.SpawnCEG(splashCEG2, px, 0, pz)
 			elseif aoe >= 48 and aoe < 64 and (not GetGroundBlocked(px, pz)) then
 				Spring.SpawnCEG(splashCEG3, px, 0, pz)
-			elseif aoe >= 64 and (not GetGroundBlocked(px, pz)) then
+			elseif aoe >= 64 and aoe < 300 and (not GetGroundBlocked(px, pz)) then
 				Spring.SpawnCEG(splashCEG4, px, 0, pz)
 			end
 			return true
