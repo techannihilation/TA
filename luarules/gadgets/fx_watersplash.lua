@@ -44,7 +44,7 @@ else
 		local isWater = Spring.GetGroundHeight(px,pz) < 0
 		local aoe = WeaponDefs[weaponID]["damageAreaOfEffect"] / 2
 		local wType = WeaponDefs[weaponID].type
-		if not nonexplosiveWeapons[wType] and isWater and (not GetGroundBlocked(px, pz)) then
+				if not nonexplosiveWeapons[wType] and isWater and abs(py) <= aoe and (not GetGroundBlocked(px, pz)) then
 		        if aoe >= 8 and aoe < 16 then
 				Spring.SpawnCEG(splashCEG1, px, 0, pz)
 			elseif aoe >= 16 and aoe < 48 then
