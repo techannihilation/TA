@@ -333,6 +333,7 @@ for name, ud in pairs(UnitDefs) do
 		end
 	end
 end 
+
 --[[ Remove until engine fix
 for name, ud in pairs(UnitDefs) do
 		if ud.mass >= 10000 and (ud.movementclass) and (ud.maxvelocity)  then
@@ -341,3 +342,11 @@ for name, ud in pairs(UnitDefs) do
 		end
 end
 --]]
+
+
+for name, ud in pairs(UnitDefs) do
+		if ud.builddistance and ud.movementclass and (ud.builddistance < 351) and (ud.builddistance >17) then
+		ud.builddistance = (ud.builddistance + 12)
+		end
+end
+
