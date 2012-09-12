@@ -22,6 +22,7 @@ function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, w
 	if UnitDefs[unitDefID]["canFly"] == true and (damage>GetUnitHealth(unitID)) and random()>0.5 then
 	--NOTE: strafe airmovetype aircraft DO NOT CRASH, only regular stuff like bombers
 		--Spring.Echo('CRASHING AIRCRAFT')
+		Spring.SetUnitCosts(unitID, {metalCost  = 1, energyCost = 1})
 		SetUnitCOBValue(unitID, COB.CRASHING, 1)
 		Spring.SetUnitNoSelect(unitID,true) --cause setting to neutral still allows selection (wtf?)
 	end
