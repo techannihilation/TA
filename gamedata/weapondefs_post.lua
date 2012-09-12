@@ -89,11 +89,66 @@ for udName, ud in pairs(UnitDefs) do
   end
 end
 
-
 --------------------------------------------------------------------------------
+-- TechA Weapon Definitions Post-processing
 --------------------------------------------------------------------------------
+local explosiveWeapons = {
+	MissileLauncher = true,
+	StarburstLauncher = true,
+	TorpedoLauncher = true,
+	Cannon = true,
+	AircraftBomb = true,
+}
+local inertialessWeapons = {
+	LaserCannon = true,
+	BeamLaser = true,
+	EmgCannon = true,
+	Flame = true,
+	LightningCannon = true,
+}
 
+local modOptions = Spring.GetModOptions()
+
+-- Adjustment of terrain damage, kinetic force of weapons, avoidfeature==false for short range and explosive weapons, and add water hit sounds
 for id in pairs(WeaponDefs) do
+	WeaponDefs[id].soundhitwet = ""
+	if WeaponDefs[id].range and tonumber(WeaponDefs[id].range) < 550 or explosiveWeapons[WeaponDefs[id].weapontype] then
+		WeaponDefs[id].avoidfeature = false
+	end
+	if explosiveWeapons[WeaponDefs[id].weapontype] then
+		if WeaponDefs[id].weapontype == "TorpedoLauncher" then
+			WeaponDefs[id].soundhitwet = WeaponDefs[id].soundhitdry
+		else
+			local AoE = tonumber(WeaponDefs[id].areaofeffect) or 0
+			if AoE<50 then
+				WeaponDefs[id].soundhitwet = "splshbig"
+			elseif AoE<88 then
+				WeaponDefs[id].soundhitwet = "splssml"
+			elseif AoE<145 then
+				WeaponDefs[id].soundhitwet = "splsmed"
+			elseif AoE>450 then
+				WeaponDefs[id].soundhitwet = WeaponDefs[id].soundhitdry
+			else
+				WeaponDefs[id].soundhitwet = "splslrg"
+			end
+		end
+	else
+		WeaponDefs[id].soundhitwet = "sizzle"		
+	end	
+	if inertialessWeapons[WeaponDefs[id].weapontype] then
+		WeaponDefs[id].impulseboost = 0
+		WeaponDefs[id].impulsefactor = 0
+	end
+	if WeaponDefs[id].cratermult then 
+		WeaponDefs[id].cratermult = WeaponDefs[id].cratermult * 0.4
+	else
+		WeaponDefs[id].cratermult = 0.4
+	end
+	if WeaponDefs[id].craterboost then
+		WeaponDefs[id].craterboost = WeaponDefs[id].craterboost * 0.4
+	else
+		WeaponDefs[id].craterboost = 0
+	end
 	if WeaponDefs[id].weapontype == "BeamLaser" then
 		WeaponDefs[id].soundhitdry = ""
 		WeaponDefs[id].soundtrigger = 1
