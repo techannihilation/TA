@@ -334,19 +334,15 @@ for name, ud in pairs(UnitDefs) do
 	end
 end 
 
---[[ Remove until engine fix
 for name, ud in pairs(UnitDefs) do
 		if ud.mass >= 10000 and (ud.movementclass) and (ud.maxvelocity)  then
 		--Spring.Echo("Push Resistance added to :- " .. ud.unitname)
 		ud.pushresistant = true
 		end
 end
---]]
-
 
 for name, ud in pairs(UnitDefs) do
 		if ud.builddistance and ud.movementclass and (ud.builddistance < 351) and (ud.builddistance >17) then
 		ud.builddistance = (ud.builddistance + 12)
 		end
 end
-
