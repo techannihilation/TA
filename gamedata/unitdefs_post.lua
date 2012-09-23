@@ -393,9 +393,3 @@ for name, ud in pairs(UnitDefs) do
 		ud.builddistance = (ud.builddistance + 12)
 		end
 end
-
-for name, ud in pairs(UnitDefs) do
-		if ud.builder and ud.movementclass and (ud.movementclass:find("TANK",1,true)) then
-		Spring.Echo("kbot con :-   " .. ud.unitname)
-		end
-end
