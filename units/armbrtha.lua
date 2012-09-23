@@ -48,7 +48,6 @@ local unitDef = {
 	selfDestructAs = [[ATOMIC_BLAST]],
 	side = [[ARM]],
 	sightDistance = 273,
-	smoothAnim = true,
 	standingfireorder = 0,
 	turnRate = 0,
 	unitname = [[armbrtha]],

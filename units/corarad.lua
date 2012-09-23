@@ -50,7 +50,6 @@ local unitDef = {
 	selfDestructAs = [[SMALL_BUILDING]],
 	side = [[CORE]],
 	sightDistance = 780,
-	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[corarad]],
 	useBuildingGroundDecal = true,

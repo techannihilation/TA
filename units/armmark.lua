@@ -59,7 +59,6 @@ local unitDef = {
 	script = [[armmark.lua]],
 	side = [[ARM]],
 	sightDistance = 900,
-	smoothAnim = true,
 	sonarDistance = 0,
 	spanishdescription = [[Kbot de radar]],
 	spanishname = [[Marker]],

@@ -48,7 +48,6 @@ local unitDef = {
 	selfDestructAs = [[SMALL_BUILDING]],
 	side = [[CORE]],
 	sightDistance = 740,
-	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[corfrad]],
 	waterline = 9,

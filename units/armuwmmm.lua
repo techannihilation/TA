@@ -44,7 +44,6 @@ local unitDef = {
 	selfDestructAs = [[ATOMIC_BLAST]],
 	side = [[ARM]],
 	sightDistance = 156,
-	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[armuwmmm]],
 	useBuildingGroundDecal = true,

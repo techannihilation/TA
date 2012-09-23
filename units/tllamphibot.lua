@@ -55,7 +55,6 @@ local unitDef = {
 	shootme = 1,
 	side = [[TLL]],
 	sightDistance = 450,
-	smoothAnim = true,
 	sonardistance = 500,
 	spanishdescription = [[Kbot anfibio]],
 	spanishname = [[]],

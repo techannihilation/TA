@@ -49,7 +49,6 @@ local unitDef = {
 	selfDestructAs = [[ESTOR_BUILDINGEX]],
 	side = [[ARM]],
 	sightDistance = 390,
-	smoothAnim = true,
 	standingfireorder = 2,
 	standingmoveorder = 2,
 	stealth = true,

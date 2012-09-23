@@ -40,7 +40,6 @@ local unitDef = {
 	selfDestructAs = [[SMALL_BUILDING]],
 	side = [[CORE]],
 	sightDistance = 130,
-	smoothAnim = true,
 	TEDClass = [[WATER]],
 	tidalGenerator = 1,
 	turnRate = 0,

@@ -45,7 +45,6 @@ local unitDef = {
 	selfDestructAs = [[ATOMIC_BLAST]],
 	side = [[CORE]],
 	sightDistance = 273,
-	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[corgeo]],
 	useBuildingGroundDecal = true,

@@ -52,7 +52,6 @@ local unitDef = {
 	selfDestructAs = [[SMALL_BUILDING]],
 	side = [[ARM]],
 	sightDistance = 598,
-	smoothAnim = true,
 	standingfireorder = 2,
 	turnRate = 0,
 	unitname = [[armpb]],

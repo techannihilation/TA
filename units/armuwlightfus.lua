@@ -39,7 +39,6 @@ local unitDef = {
 	selfDestructAs = [[CRAWL_BLAST]],
 	side = [[ARM]],
 	sightDistance = 143,
-	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[armuwlightfus]],
 	workerTime = 0,

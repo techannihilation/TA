@@ -52,7 +52,6 @@ local unitDef = {
 	selfDestructAs = [[BIG_UNIT]],
 	side = [[CORE]],
 	sightDistance = 465,
-	smoothAnim = true,
 	sonarDistance = 400,
 	standingfireorder = 2,
 	standingmoveorder = 1,

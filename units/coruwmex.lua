@@ -46,7 +46,6 @@ local unitDef = {
 	selfDestructCountdown = 1,
 	side = [[CORE]],
 	sightDistance = 169,
-	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[coruwmex]],
 	useBuildingGroundDecal = true,

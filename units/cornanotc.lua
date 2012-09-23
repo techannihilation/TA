@@ -50,7 +50,6 @@ local unitDef = {
 	selfDestructAs = [[NANOBOOM2C]],
 	side = [[CORE]],
 	sightDistance = 380,
-	smoothAnim = true,
 	steeringmode = 1,
 	turnRate = 1,
 	unitname = [[cornanotc]],

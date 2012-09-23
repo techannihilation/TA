@@ -46,7 +46,6 @@ local unitDef = {
 	selfDestructCountdown = 1,
 	side = [[ARM]],
 	sightDistance = 182,
-	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[armuwmex]],
 	useBuildingGroundDecal = true,

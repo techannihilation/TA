@@ -74,7 +74,6 @@ local unitDef = {
 	showPlayerName = true,
 	side = [[TLL]],
 	sightDistance = 850,
-	smoothAnim = true,
 	sonarDistance = 540,
 	standingfireorder = 2,
 	standingmoveorder = 0,

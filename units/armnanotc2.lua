@@ -51,7 +51,6 @@ local unitDef = {
 	selfDestructAs = [[NANOBOOM2A]],
 	side = [[ARM]],
 	sightDistance = 380,
-	smoothAnim = true,
 	steeringmode = 1,
 	turnRate = 1,
 	unitname = [[armnanotc2]],

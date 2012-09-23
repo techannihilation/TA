@@ -59,7 +59,6 @@ local unitDef = {
 	shootme = 1,
 	side = [[ARM]],
 	sightDistance = 300,
-	smoothAnim = true,
 	spanishdescription = [[Distorsionador móvil de radar]],
 	spanishname = [[Jammer]],
 	standingmoveorder = 1,

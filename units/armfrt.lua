@@ -44,7 +44,6 @@ local unitDef = {
 	selfDestructAs = [[BIG_UNIT]],
 	side = [[ARM]],
 	sightDistance = 468,
-	smoothAnim = true,
 	standingfireorder = 2,
 	turnRate = 0,
 	unitname = [[armfrt]],

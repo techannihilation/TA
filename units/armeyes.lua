@@ -52,7 +52,6 @@ local unitDef = {
 	seismicSignature = 0,
 	side = [[ARM]],
 	sightDistance = 560,
-	smoothAnim = true,
 	stealth = true,
 	turnRate = 0,
 	unitname = [[armeyes]],

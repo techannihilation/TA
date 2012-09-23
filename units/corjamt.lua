@@ -49,7 +49,6 @@ local unitDef = {
 	selfDestructAs = [[BIG_UNIT]],
 	side = [[CORE]],
 	sightDistance = 104,
-	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[corjamt]],
 	useBuildingGroundDecal = true,

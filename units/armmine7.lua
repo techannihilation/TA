@@ -54,7 +54,6 @@ local unitDef = {
 	selfDestructCountdown = 0,
 	side = [[CORE]],
 	sightDistance = 83.2,
-	smoothAnim = true,
 	standingfireorder = 2,
 	stealth = true,
 	TEDClass = [[SPECIAL]],

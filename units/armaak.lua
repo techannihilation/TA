@@ -36,7 +36,6 @@ local unitDef = {
 	selfDestructAs = [[BIG_UNIT]],
 	side = [[ARM]],
 	sightDistance = 400,
-	smoothAnim = true,
 	steeringmode = 2,
 	turnRate = 1021,
 	unitname = [[armaak]],

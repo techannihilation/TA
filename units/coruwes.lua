@@ -43,7 +43,6 @@ local unitDef = {
 	selfDestructAs = [[ESTOR_BUILDING]],
 	side = [[CORE]],
 	sightDistance = 169,
-	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[coruwes]],
 	useBuildingGroundDecal = true,

@@ -44,7 +44,6 @@ local unitDef = {
 	selfDestructAs = [[NUCLEAR_MISSILE]],
 	side = [[CORE]],
 	sightDistance = 273,
-	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[cmgeo]],
 	useBuildingGroundDecal = true,

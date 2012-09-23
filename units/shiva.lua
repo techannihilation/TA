@@ -47,7 +47,6 @@ local unitDef = {
 	selfDestructAs = [[MECH_BLAST]],
 	side = [[CORE]],
 	sightDistance = 299,
-	smoothAnim = true,
 	standingfireorder = 2,
 	standingmoveorder = 1,
 	steeringmode = 2,

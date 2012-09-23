@@ -74,7 +74,6 @@ local unitDef = {
 	showPlayerName = true,
 	side = [[ARM]],
 	sightDistance = 900,
-	smoothAnim = true,
 	sonarDistance = 600,
 	standingfireorder = 2,
 	standingmoveorder = 0,

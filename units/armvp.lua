@@ -49,7 +49,6 @@ local unitDef = {
 	selfDestructAs = [[LARGE_BUILDING]],
 	side = [[ARM]],
 	sightDistance = 273,
-	smoothAnim = true,
 	sortbias = 0,
 	standingfireorder = 2,
 	standingmoveorder = 1,

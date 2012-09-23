@@ -39,7 +39,6 @@ local unitDef = {
 	selfDestructAs = [[ARMESTOR_BUILDING]],
 	side = [[ARM]],
 	sightDistance = 273,
-	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[armfmkr]],
 	waterline = 3,

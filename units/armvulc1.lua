@@ -49,7 +49,6 @@ local unitDef = {
 	selfDestructAs = [[ATOMIC_BLAST]],
 	side = [[ARM]],
 	sightDistance = 273,
-	smoothAnim = true,
 	standingfireorder = 1,
 	turnRate = 0,
 	unitname = [[armvulc1]],

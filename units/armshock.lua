@@ -51,7 +51,6 @@ local unitDef = {
 	selfDestructAs = [[SHOCKER]],
 	side = [[ARM]],
 	sightDistance = 625,
-	smoothAnim = true,
 	standingfireorder = 2,
 	standingmoveorder = 0,
 	steeringmode = 1,

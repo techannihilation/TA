@@ -47,7 +47,6 @@ local unitDef = {
 	selfDestructAs = [[SMALL_BUILDING]],
 	side = [[ARM]],
 	sightDistance = 760,
-	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[armfrad]],
 	waterline = 5,

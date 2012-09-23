@@ -43,7 +43,6 @@ local unitDef = {
 	selfDestructAs = [[BIG_UNIT]],
 	side = [[CORE]],
 	sightDistance = 598,
-	smoothAnim = true,
 	standingfireorder = 2,
 	turnRate = 0,
 	unitname = [[corfhlt]],

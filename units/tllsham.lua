@@ -64,7 +64,6 @@ local unitDef = {
 	shootme = 1,
 	side = [[TLL]],
 	sightDistance = 500,
-	smoothAnim = true,
 	spanishdescription = [[Kbot Resurrection]],
 	spanishname = [[Necro]],
 	standingmoveorder = 2,

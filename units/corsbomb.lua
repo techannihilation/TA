@@ -57,7 +57,6 @@ local unitDef = {
 	shootme = 1,
 	side = [[CORE]],
 	sightDistance = 400,
-	smoothAnim = true,
 	standingmoveorder = 1,
 	stealth = true,
 	steeringmode = 1,

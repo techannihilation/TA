@@ -51,7 +51,6 @@ local unitDef = {
 	selfDestructAs = [[LARGE_BUILDING]],
 	side = [[CORE]],
 	sightDistance = 416,
-	smoothAnim = true,
 	standingfireorder = 2,
 	turnRate = 0,
 	unitname = [[cortoast]],

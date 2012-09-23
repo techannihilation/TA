@@ -35,7 +35,6 @@ local unitDef = {
 	selfDestructAs = [[BIG_UNIT]],
 	side = [[CORE]],
 	sightDistance = 390,
-	smoothAnim = true,
 	steeringmode = 2,
 	turnRate = 912,
 	unitname = [[coraak]],

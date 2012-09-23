@@ -51,7 +51,6 @@ local unitDef = {
 	selfDestructCountdown = 1,
 	side = [[CORE]],
 	sightDistance = 455,
-	smoothAnim = true,
 	standingfireorder = 2,
 	turnRate = 0,
 	unitname = [[corexp]],

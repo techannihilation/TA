@@ -49,7 +49,6 @@ local unitDef = {
 	selfDestructAs = [[TINY_BUILDINGEX]],
 	side = [[ARM]],
 	sightDistance = 420,
-	smoothAnim = true,
 	steeringmode = 1,
 	turnRate = 1,
 	unitname = [[armhevsenan]],

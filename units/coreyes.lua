@@ -48,7 +48,6 @@ local unitDef = {
 	seismicSignature = 0,
 	side = [[CORE]],
 	sightDistance = 540,
-	smoothAnim = true,
 	stealth = true,
 	turnRate = 0,
 	unitname = [[coreyes]],

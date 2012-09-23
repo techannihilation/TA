@@ -49,7 +49,6 @@ local unitDef = {
 	selfDestructAs = [[MEDIUM_BUILDING]],
 	side = [[CORE]],
 	sightDistance = 594,
-	smoothAnim = true,
 	standingfireorder = 2,
 	turnRate = 0,
 	unitname = [[corllt1]],

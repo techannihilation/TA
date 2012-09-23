@@ -43,7 +43,6 @@ local unitDef = {
 	selfDestructAs = [[MINE_NUKE]],
 	side = [[ARM]],
 	sightDistance = 169,
-	smoothAnim = true,
 	threed = 1,
 	unitname = [[armuwadves]],
 	useBuildingGroundDecal = true,

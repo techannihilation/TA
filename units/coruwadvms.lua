@@ -43,7 +43,6 @@ local unitDef = {
 	selfDestructAs = [[LARGE_BUILDING]],
 	side = [[CORE]],
 	sightDistance = 182,
-	smoothAnim = true,
 	threed = 1,
 	unitname = [[coruwadvms]],
 	useBuildingGroundDecal = true,

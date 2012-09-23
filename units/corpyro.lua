@@ -49,7 +49,6 @@ local unitDef = {
 	selfDestructCountdown = 1,
 	side = [[CORE]],
 	sightDistance = 318,
-	smoothAnim = true,
 	standingfireorder = 2,
 	standingmoveorder = 1,
 	steeringmode = 2,

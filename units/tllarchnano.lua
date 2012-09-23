@@ -51,7 +51,6 @@ local unitDef = {
 	shootme = 1,
 	side = [[TLL]],
 	sightDistance = 305,
-	smoothAnim = true,
 	sonarDistance = 100,
 	standingmoveorder = 1,
 	steeringmode = 1,

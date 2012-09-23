@@ -40,7 +40,6 @@ local unitDef = {
 	selfDestructAs = [[FUSIONX_BLAST]],
 	side = [[TLL]],
 	sightDistance = 263,
-	smoothAnim = true,
 	unitname = [[tllmedfusion]],
 	useBuildingGroundDecal = true,
 	workerTime = 0,

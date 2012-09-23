@@ -47,7 +47,6 @@ local unitDef = {
 	selfDestructAs = [[SMALL_BUILDING]],
 	side = [[CORE]],
 	sightDistance = 260,
-	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[coradvsol]],
 	useBuildingGroundDecal = true,

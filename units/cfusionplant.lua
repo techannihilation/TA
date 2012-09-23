@@ -42,7 +42,6 @@ local unitDef = {
 	selfDestructAs = [[SUPERBLAST_BUILDING]],
 	side = [[CORE]],
 	sightDistance = 300,
-	smoothAnim = true,
 	threed = 1,
 	turnRate = 0,
 	unitname = [[cfusionplant]],

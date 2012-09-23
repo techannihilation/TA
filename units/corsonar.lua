@@ -48,7 +48,6 @@ local unitDef = {
 	selfDestructAs = [[SMALL_BUILDING]],
 	side = [[CORE]],
 	sightDistance = 485,
-	smoothAnim = true,
 	sonarDistance = 1200,
 	turnRate = 0,
 	unitname = [[corsonar]],

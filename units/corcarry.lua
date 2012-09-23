@@ -53,7 +53,6 @@ local unitDef = {
 	selfDestructAs = [[CRAWL_BLAST]],
 	side = [[CORE]],
 	sightDistance = 1040,
-	smoothAnim = true,
 	sonarDistance = 740,
 	standingfireorder = 2,
 	standingmoveorder = 1,

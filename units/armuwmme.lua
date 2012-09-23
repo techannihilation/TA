@@ -46,7 +46,6 @@ local unitDef = {
 	selfDestructAs = [[SMALL_BUILDING]],
 	side = [[ARM]],
 	sightDistance = 182,
-	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[armuwmme]],
 	useBuildingGroundDecal = true,

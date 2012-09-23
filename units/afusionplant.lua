@@ -46,7 +46,6 @@ local unitDef = {
 	selfDestructAs = [[SUPERBLAST_BUILDING]],
 	side = [[ARM]],
 	sightDistance = 300,
-	smoothAnim = true,
 	threed = 1,
 	turnRate = 0,
 	unitname = [[afusionplant]],

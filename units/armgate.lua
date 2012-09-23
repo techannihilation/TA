@@ -46,7 +46,6 @@ local unitDef = {
 	selfDestructAs = [[MINE_NUKE]],
 	side = [[ARM]],
 	sightDistance = 273,
-	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[armgate]],
 	useBuildingGroundDecal = true,

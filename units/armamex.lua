@@ -50,7 +50,6 @@ local unitDef = {
 	selfDestructCountdown = 1,
 	side = [[ARM]],
 	sightDistance = 286,
-	smoothAnim = true,
 	stealth = true,
 	turnRate = 0,
 	unitname = [[armamex]],

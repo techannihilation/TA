@@ -51,7 +51,6 @@ local unitDef = {
 	selfDestructAs = [[NANOBOOM2T]],
 	side = [[CORE]],
 	sightDistance = 380,
-	smoothAnim = true,
 	steeringmode = 1,
 	turnRate = 1,
 	unitname = [[tllnanotc2]],

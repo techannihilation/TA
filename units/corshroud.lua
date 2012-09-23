@@ -49,7 +49,6 @@ local unitDef = {
 	selfDestructAs = [[SMALL_BUILDING]],
 	side = [[CORE]],
 	sightDistance = 155,
-	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[corshroud]],
 	useBuildingGroundDecal = true,

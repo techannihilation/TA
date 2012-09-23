@@ -39,7 +39,6 @@ local unitDef = {
 	seismicSignature = 0,
 	side = [[CORE]],
 	sightDistance = 130,
-	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[corfdrag]],
 	waterline = 10,

@@ -44,7 +44,6 @@ local unitDef = {
 	selfDestructAs = [[ATOMIC_BLAST]],
 	side = [[CORE]],
 	sightDistance = 324,
-	smoothAnim = true,
 	standingfireorder = 2,
 	standingmoveorder = 1,
 	unitname = [[coresy]],

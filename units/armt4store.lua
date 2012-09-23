@@ -43,7 +43,6 @@ local unitDef = {
 	selfDestructAs = [[ESTOR_BUILDING]],
 	side = [[ARM]],
 	sightDistance = 273,
-	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[armestor]],
 	useBuildingGroundDecal = true,

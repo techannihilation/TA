@@ -48,7 +48,6 @@ local unitDef = {
 	selfDestructAs = [[SMALL_BUILDING]],
 	side = [[ARM]],
 	sightDistance = 515,
-	smoothAnim = true,
 	sonarDistance = 1200,
 	turnRate = 0,
 	unitname = [[armsonar]],

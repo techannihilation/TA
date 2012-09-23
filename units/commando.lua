@@ -52,7 +52,6 @@ local unitDef = {
 	selfDestructAs = [[SPYBOMBX]],
 	side = [[CORE]],
 	sightDistance = 650,
-	smoothAnim = true,
 	standingfireorder = 0,
 	standingmoveorder = 1,
 	stealth = true,

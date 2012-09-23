@@ -53,7 +53,6 @@ local unitDef = {
 	selfDestructAs = [[MEDIUM_BUILDING]],
 	side = [[CORE]],
 	sightDistance = 422,
-	smoothAnim = true,
 	standingfireorder = 2,
 	stealth = true,
 	threed = 1,

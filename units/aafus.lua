@@ -51,7 +51,6 @@ local unitDef = {
 	selfDestructAs = [[CRBLMSSL]],
 	side = [[ARM]],
 	sightDistance = 273,
-	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[aafus]],
 	useBuildingGroundDecal = true,

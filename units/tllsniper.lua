@@ -55,7 +55,6 @@ local unitDef = {
 	shootme = 1,
 	side = [[TLL]],
 	sightDistance = 690,
-	smoothAnim = true,
 	spanishdescription = [[Kbot francotirador]],
 	standingfireorder = 0,
 	standingmoveorder = 1,

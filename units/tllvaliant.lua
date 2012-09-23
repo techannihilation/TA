@@ -64,7 +64,6 @@ local unitDef = {
 	showPlayerName = true,
 	side = [[tll]],
 	sightDistance = 633,
-	smoothAnim = true,
 	standingfireorder = 2,
 	standingmoveorder = 1,
 	steeringmode = 1,

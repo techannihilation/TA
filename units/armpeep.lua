@@ -51,7 +51,6 @@ local unitDef = {
 	selfDestructCountdown = 1,
 	side = [[ARM]],
 	sightDistance = 865,
-	smoothAnim = true,
 	standingmoveorder = 1,
 	steeringmode = 1,
 	turnRate = 880,

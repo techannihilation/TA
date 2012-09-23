@@ -41,7 +41,6 @@ local unitDef = {
 	selfDestructAs = [[SMALL_BUILDING]],
 	side = [[ARM]],
 	sightDistance = 130,
-	smoothAnim = true,
 	tidalGenerator = 1,
 	turnRate = 0,
 	unitname = [[armtide]],

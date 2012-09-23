@@ -53,7 +53,6 @@ local unitDef = {
 	selfDestructAs = [[CRBLMSSL4]],
 	side = [[CORE]],
 	sightDistance = 1211,
-	smoothAnim = true,
 	standingfireorder = 2,
 	standingmoveorder = 1,
 	steeringmode = 2,

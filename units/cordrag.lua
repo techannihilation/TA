@@ -43,7 +43,6 @@ local unitDef = {
 	seismicSignature = 0,
 	side = [[CORE]],
 	sightDistance = 130,
-	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[cordrag]],
 	useBuildingGroundDecal = true,

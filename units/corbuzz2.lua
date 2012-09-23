@@ -52,7 +52,6 @@ local unitDef = {
 	selfDestructAs = [[ATOMIC_BLAST]],
 	side = [[CORE]],
 	sightDistance = 273,
-	smoothAnim = true,
 	standingfireorder = 3,
 	turnRate = 0,
 	unitname = [[corbuzz2]],

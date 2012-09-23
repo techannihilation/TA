@@ -39,7 +39,6 @@ local unitDef = {
 	selfDestructAs = [[CRAWL_BLAST]],
 	side = [[CORE]],
 	sightDistance = 143,
-	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[coruwlightfus]],
 	workerTime = 0,

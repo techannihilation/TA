@@ -56,7 +56,6 @@ local unitDef = {
 	shootme = 1,
 	side = [[CORE]],
 	sightDistance = 680,
-	smoothAnim = true,
 	spanishdescription = [[Siege HoverCraft]],
 	spanishname = [[Behemoth]],
 	standingfireorder = 2,

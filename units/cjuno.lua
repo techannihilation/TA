@@ -50,7 +50,6 @@ local unitDef = {
 	selfDestructAs = [[ATOMIC_BLAST]],
 	side = [[CORE]],
 	sightDistance = 494,
-	smoothAnim = true,
 	standingfireorder = 2,
 	stealth = true,
 	turnRate = 0,

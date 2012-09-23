@@ -41,7 +41,6 @@ local unitDef = {
 	selfDestructAs = [[NUCLEAR_MISSILE1]],
 	side = [[ARM]],
 	sightDistance = 143,
-	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[armuwfus1]],
 	waterline = 20,

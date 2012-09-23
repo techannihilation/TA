@@ -44,7 +44,6 @@ local unitDef = {
 	selfDestructAs = [[MINE_NUKE]],
 	side = [[CORE]],
 	sightDistance = 143,
-	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[coruwfus]],
 	useBuildingGroundDecal = true,

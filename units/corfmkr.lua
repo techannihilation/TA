@@ -39,7 +39,6 @@ local unitDef = {
 	selfDestructAs = [[ARMESTOR_BUILDING]],
 	side = [[CORE]],
 	sightDistance = 273,
-	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[corfmkr]],
 	waterline = 21,

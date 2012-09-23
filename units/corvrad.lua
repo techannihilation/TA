@@ -58,7 +58,6 @@ local unitDef = {
 	shootme = 1,
 	side = [[CORE]],
 	sightDistance = 900,
-	smoothAnim = true,
 	sonarDistance = 0,
 	spanishdescription = [[Radar móvil]],
 	spanishname = [[Informer]],

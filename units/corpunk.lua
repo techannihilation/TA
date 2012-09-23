@@ -49,7 +49,6 @@ local unitDef = {
 	selfDestructAs = [[TINY_BUILDINGEX]],
 	side = [[COR]],
 	sightDistance = 650,
-	smoothAnim = true,
 	standingfireorder = 2,
 	standingmoveorder = 1,
 	stealth = true,

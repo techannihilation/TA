@@ -39,7 +39,6 @@ local unitDef = {
 	seismicSignature = 0,
 	side = [[ARM]],
 	sightDistance = 130,
-	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[armfdrag]],
 	waterline = 22,

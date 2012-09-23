@@ -48,7 +48,6 @@ local unitDef = {
 	selfDestructAs = [[ESTOR_BUILDING]],
 	side = [[CORE]],
 	sightDistance = 273,
-	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[corestor]],
 	useBuildingGroundDecal = true,

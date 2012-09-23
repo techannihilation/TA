@@ -53,7 +53,6 @@ local unitDef = {
 	selfDestructAs = [[SMALL_UNIT]],
 	side = [[arm]],
 	sightDistance = 390,
-	smoothAnim = true,
 	standingmoveorder = 1,
 	steeringmode = 1,
 	terraformSpeed = 135,

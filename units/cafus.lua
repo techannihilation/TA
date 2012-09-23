@@ -47,7 +47,6 @@ local unitDef = {
 	selfDestructAs = [[CRBLMSSL]],
 	side = [[CORE]],
 	sightDistance = 273,
-	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[cafus]],
 	useBuildingGroundDecal = true,

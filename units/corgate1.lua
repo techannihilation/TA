@@ -47,7 +47,6 @@ local unitDef = {
 	selfDestructAs = [[MINE_NUKE]],
 	side = [[CORE]],
 	sightDistance = 273,
-	smoothAnim = true,
 	turnRate = 0,
 	unitname = [[corgate1]],
 	useBuildingGroundDecal = true,

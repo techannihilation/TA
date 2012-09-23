@@ -53,7 +53,6 @@ local unitDef = {
 	selfDestructAs = [[NUCLEAR_MISSILE]],
 	side = [[ARM]],
 	sightDistance = 455,
-	smoothAnim = true,
 	standingfireorder = 0,
 	turnRate = 0,
 	unitname = [[armsilo]],
