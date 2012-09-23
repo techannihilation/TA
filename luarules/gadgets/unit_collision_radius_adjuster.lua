@@ -13,7 +13,7 @@
 if (not gadgetHandler:IsSyncedCode()) then
   return
 end
-local AirTrans = {
+local special = {
   [UnitDefNames["corvalk"].id] = 16,
   [UnitDefNames["armsl"].id] = 16,
   [UnitDefNames["corbtrans"].id] = 16,
@@ -24,13 +24,21 @@ local AirTrans = {
 
   [UnitDefNames["tllrobber"].id] = 16,
   [UnitDefNames["tlltplane"].id] = 16,
+  
+  [UnitDefNames["armasp"].id] = 32,
+  [UnitDefNames["corasp"].id] = 32,
+  [UnitDefNames["corcrw"].id] = 24,
 }
 function gadget:UnitCreated(unitID, unitDefID, teamID, builderID)
-	if AirTrans[unitDefID] then
+	if special[unitDefID] then
 		
 		--Spring.Echo('reset radius for airtrans')
 	--Spring.SetUnitRadiusAndHeight New in version 89.0( number unitID, number radius, number height )
-		Spring.SetUnitRadiusAndHeight(unitID, AirTrans[unitDefID], 32 )
+		Spring.SetUnitRadiusAndHeight(unitID, special[unitDefID], 32 )
+	else
+		Spring.SetUnitRadiusAndHeight(unitID,Spring.GetUnitRadius(unitID)*0.66,Spring.GetUnitHeight(unitID))
 	end
 end
+
+
 
