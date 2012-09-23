@@ -318,21 +318,67 @@ for name, ud in pairs(UnitDefs) do
 		ud.collisionvolumetest = 1
 end
 
+local cons = {
+	['armcv'] = true,
+	['armacv']  = true,
+	['consul'] = true,
+	['armbeaver'] = true,
+	['armch'] = true,
+	['armmarv'] = true,
+	['aach'] = true,
+
+	['corcv'] = true,
+	['coracv'] = true,
+	['cormuskrat'] = true,
+	['corch'] = true,
+	['corfred'] = true,
+	['corassis'] = true,
+	['cach'] = true,
+
+	
+	['tllcv'] = true,
+	['tllacv'] = true,
+	['tllhtcb'] = true,
+	}
+local turninplacebots= {
+	['corck'] = true,
+	['corack'] = true,
+	['corfast'] = true,
+	['armck'] = true,
+	['armack'] = true,
+	['armfark'] = true,
+	['tllck'] = true,
+	['tllack'] = true,
+	}
 for name, ud in pairs(UnitDefs) do
 	if (ud.maxvelocity) then 
-		ud.turninplacespeedlimit = ud.maxvelocity or 0
+		ud.turninplacespeedlimit = (ud.maxvelocity*0.66) or 0
+		ud.turninplaceanglelimit = 140
 	end
 	if ud.movementclass and (ud.movementclass:find("TANK",1,true) or ud.movementclass:find("HOVER",1,true)) then
-		if (ud.maxvelocity) then 
+		--Spring.Echo('tank or hover:',ud.name,ud.movementclass)
+		if cons[name] then
+			--Spring.Echo('tank or hover con:',ud.name,ud.moveData)
+			ud.turninplace=1
+			ud.turninplaceanglelimit=60
+			ud.acceleration=ud.acceleration*2
+			ud.brakerate=ud.brakerate*2
+		elseif (ud.maxvelocity) then 
 			ud.turninplace = 0
-			ud.turninplacespeedlimit = (ud.maxvelocity/2) or 0
+			ud.turninplacespeedlimit = (ud.maxvelocity*0.66) or 0
 		end
 	elseif ud.movementclass and (ud.movementclass:find("KBOT",1,true)) then
-		if (ud.maxvelocity) and (ud.turninplace) then 
-			ud.turninplaceanglelimit = 91
+		if turninplacebots[name] then
+			--Spring.Echo('turninplacekbot:',ud.name)
+			ud.turninplace=1
+			ud.turninplaceanglelimit=60
+			ud.acceleration=ud.acceleration*2
+			ud.brakerate=ud.brakerate*2
+		elseif (ud.maxvelocity) then 
+			ud.turninplaceanglelimit = 140
 		end
 	end
-end 
+end
 
 for name, ud in pairs(UnitDefs) do
 		if ud.mass >= 10000 and (ud.movementclass) and (ud.maxvelocity)  then
@@ -341,8 +387,15 @@ for name, ud in pairs(UnitDefs) do
 		end
 end
 
+
 for name, ud in pairs(UnitDefs) do
 		if ud.builddistance and ud.movementclass and (ud.builddistance < 351) and (ud.builddistance >17) then
 		ud.builddistance = (ud.builddistance + 12)
+		end
+end
+
+for name, ud in pairs(UnitDefs) do
+		if ud.builder and ud.movementclass and (ud.movementclass:find("TANK",1,true)) then
+		Spring.Echo("kbot con :-   " .. ud.unitname)
 		end
 end
