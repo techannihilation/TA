@@ -19,7 +19,6 @@ local px, py = 300, 300
 local armcom = UnitDefNames.armcom.id
 local corcom = UnitDefNames.corcom.id
 local tllcom = UnitDefNames.tllcom.id
-local changeStartUnitPrefix = '\138'
 
 --------------------------------------------------------------------------------
 -- Speedups
@@ -156,29 +155,29 @@ function widget:MousePress(mx, my, mButton)
             
             -- Which button?
             if mx < px + 64 then
-                if spGetTeamRulesParam(myTeamID, 'startUnit') ~= armcom then
-                    spSendLuaRulesMsg(changeStartUnitPrefix .. armcom)
+                if spGetTeamRulesParam(myTeamID, 'startUnit') ~= 89 then
+                    spSendLuaRulesMsg('\13889')
 		      -- don't use caching, so we're sure the function has been loaded, also, it's called so rarely that doesn't matter if it's slow 
 		      if WG["faction_change"] then 
-			 WG["faction_change"](armcom) 
+			 WG["faction_change"](89) 
 	           end 
                 end
                 return true
             elseif mx < px + 128 then
-                if spGetTeamRulesParam(myTeamID, 'startUnit') ~= corcom then
-                    spSendLuaRulesMsg(changeStartUnitPrefix .. corcom)
+                if spGetTeamRulesParam(myTeamID, 'startUnit') ~= 406 then
+                    spSendLuaRulesMsg('\138406')
 		    		      -- don't use caching, so we're sure the function has been loaded, also, it's called so rarely that doesn't matter if it's slow 
 		      if WG["faction_change"] then 
-			 WG["faction_change"](corcom) 
+			 WG["faction_change"](406) 
 	           end 
                 end
                 return true
             elseif mx < px + 192 then
-                if spGetTeamRulesParam(myTeamID, 'startUnit') ~= tllcom then
-                    spSendLuaRulesMsg(changeStartUnitPrefix .. tllcom)
+                if spGetTeamRulesParam(myTeamID, 'startUnit') ~= 727 then
+                    spSendLuaRulesMsg('\138727')
 		    		      -- don't use caching, so we're sure the function has been loaded, also, it's called so rarely that doesn't matter if it's slow 
 		      if WG["faction_change"] then 
-			 WG["faction_change"](tllcom) 
+			 WG["faction_change"](727) 
 	           end 
                 end
                 return true
