@@ -388,8 +388,8 @@ for name, ud in pairs(UnitDefs) do
 end
 
 
-for name, ud in pairs(UnitDefs) do
-		if ud.builddistance and ud.movementclass and (ud.builddistance < 351) and (ud.builddistance >17) then
-		ud.builddistance = (ud.builddistance + 12)
-		end
-end
+-- for name, ud in pairs(UnitDefs) do
+		-- if ud.builddistance and ud.movementclass and (ud.builddistance < 351) and (ud.builddistance >17) then
+		-- ud.builddistance = (ud.builddistance + 12)
+		-- end
+-- end
