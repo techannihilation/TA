@@ -11,7 +11,7 @@ local unitDef = {
 	brakeRate = 0.1375,
 	buildCostEnergy = 25400,
 	buildCostMetal = 1535,
-	buildDistance = 110,
+	buildDistance = 122,
 	builder = true,
 	buildPic = [[armmarv.png]],
 	buildTime = 8150,
@@ -78,7 +78,7 @@ local unitDef = {
 		[12] = [[armatidal]],
 		[13] = [[armuwlightfus]],
 		[14] = [[armfhlt]],
-		[15] = [[armtl]]
+		[15] = [[armtl]],
 	},
 	customparams = {
 		RequireTech = [[Advanced T1 Unit Research Centre]],
