@@ -44,7 +44,7 @@ local copyLightDefs = {
 		--Brthas
 		["heavyimpact_cormechart"    ] = "berthacannon",
 		["armbrtha_arm_berthacannon2"] = "berthacannon",
-		["corint_core_intimidator"   ] = "berthacannon",
+		["corint_core_intimidator2"   ] = "berthacannon",
 		["tlllrpt_arm_berthacannon  "] = "berthacannon",
 		["corint1_core_intimidator1" ] = "berthacannon1",
 		["armbrtha1_arm_berthacannon1"] = "berthacannon1",
@@ -377,7 +377,7 @@ local dynLightDefs = {
 					diffuseColor    = {2.9,                   1.9,                   0.2                  },
 					specularColor   = {2.9 * rgbSpecMults[1], 1.9 * rgbSpecMults[2], 0.2 * rgbSpecMults[3]},
 					priority        = 5 * 10,
-					radius          = 125.0,
+					radius          = 165.0,
 					ttl             = 1000,
 				},
 				
