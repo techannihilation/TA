@@ -1,0 +1,131 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, Turretbase, Turret, Gun, B2, B1, Flare;
+
+static-var  Static_Var_1;
+
+// Signal definitions
+#define SIG_AIM				2
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from Turret;
+			emit-sfx smoketype from Turretbase;
+			emit-sfx smoketype from Gun;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	hide Flare;
+	Static_Var_1 = 2500;
+	start-script SmokeUnit();
+}
+
+RestoreAfterDelay()
+{
+	sleep Static_Var_1;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	turn Turret to y-axis heading speed <30.000000>;
+	turn Gun to x-axis <0.000000> - pitch speed <45.000000>;
+	wait-for-turn Turret around y-axis;
+	wait-for-turn Gun around x-axis;
+	return (1);
+}
+
+FirePrimary()
+{
+	move B1 to z-axis [-7.500000] speed [500.000000];
+	move B2 to z-axis [-4.000000] speed [500.000000];
+	wait-for-move B1 along z-axis;
+	emit-sfx 1024 + 0 from Flare;
+	sleep 200;
+	move B1 to z-axis [0.000000] speed [3.500000];
+	move B2 to z-axis [0.000000] speed [3.500000];
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = Flare;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = Turret;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	hide Flare;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode B1 type BITMAPONLY | BITMAP1;
+		explode base type BITMAPONLY | BITMAP2;
+		explode Flare type BITMAPONLY | BITMAP3;
+		explode Gun type BITMAPONLY | BITMAP4;
+		explode Turret type BITMAPONLY | BITMAP5;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode B1 type BITMAPONLY | BITMAP1;
+		explode base type BITMAPONLY | BITMAP2;
+		explode Flare type FALL | BITMAP3;
+		explode Gun type SHATTER | BITMAP4;
+		explode Turret type FALL | BITMAP5;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode B1 type BITMAPONLY | BITMAP1;
+		explode base type BITMAPONLY | BITMAP2;
+		explode Flare type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode Gun type SHATTER | BITMAP4;
+		explode Turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		return (0);
+	}
+	corpsetype = 3;
+	explode B1 type BITMAPONLY | BITMAP1;
+	explode base type BITMAPONLY | BITMAP2;
+	explode Flare type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode Gun type SHATTER | EXPLODE_ON_HIT | BITMAP4;
+	explode Turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+}

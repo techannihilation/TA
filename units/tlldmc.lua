@@ -45,7 +45,15 @@ local unitDef = {
   version            = 1,
   workerTime         = 0,
   yardMap            = [[ooooo ooooo ooooo ooooo ooooo]],
-  zbuffer            = 1,
+  customparams = {
+  canareaattack = 1,
+  },
+  featureDefs = nil,
+  sfxtypes = {
+    explosiongenerators = {
+      [1] = [[custom:gray_berthaflare]],
+    },
+  },
   sounds = {
     canceldestruct     = [[cancel2]],
     underattack        = [[warning1]],
@@ -105,7 +113,7 @@ local weaponDefs = {
 		soundStart = [[Energy]],
 		thickness = 5,
 		turret = true,
-		weaponType = [[LaserCannon]],
+		weaponType = [[Cannon]],
 		weaponVelocity = 1000,
 		damage = {
 			commanders = 2800,
