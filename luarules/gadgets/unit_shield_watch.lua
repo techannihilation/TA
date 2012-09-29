@@ -42,7 +42,6 @@ shieldDef[UnitDefNames["corgate2"].id] = true
 --shieldDef[UnitDefNames["corcom6"].id] = true
 --shieldDef[UnitDefNames["corcom7"].id] = true
 shieldDef[UnitDefNames["cormas"].id] = true
-shieldDef[UnitDefNames["monkeylord"].id] = true
 shieldDef[UnitDefNames["corflshd"].id] = true
 --The lost legacy
 --shieldDef[UnitDefNames["tllcom5"].id] = true
@@ -50,7 +49,6 @@ shieldDef[UnitDefNames["corflshd"].id] = true
 --shieldDef[UnitDefNames["tllcom7"].id] = true
 shieldDef[UnitDefNames["tllgate"].id] = true
 --shieldDef[UnitDefNames["tllgate1"].id] = true
-shieldDef[UnitDefNames["tllmono"].id] = true
 
 local shields = {}
 local gameFrame = 0

@@ -114,7 +114,6 @@ local unitDef = {
 		[29] = [[corfhlt]],
 		[30] = [[cbuilderlvl2]],
 		[31] = [[corgen]],
-		[32] = [[monkeylord]],
 	},
 	customParams = {
 		iscommander = true,

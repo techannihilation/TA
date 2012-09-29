@@ -114,7 +114,6 @@ local unitDef = {
 		[29] = [[armfhlt]],
 		[30] = [[abuilderlvl2]],
 		[31] = [[armgen]],
-		[32] = [[armpraet]],
 	},
 	customParams = {
 		iscommander = true,

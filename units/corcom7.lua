@@ -116,7 +116,6 @@ local unitDef = {
 		[31] = [[corgen]],
 		[32] = [[corgant1]],
 		[33] = [[cordrag1]],
-		[34] = [[monkeylord]],
 	},
 	customParams = {
 		iscommander = true,

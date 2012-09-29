@@ -248,8 +248,6 @@ experimental_land = {
 	tllvaliant = 99,
 	-- _experimental_
 	armpraet = 99,
-	tllmono = 99,
-	monkeylord = 99,
 },
 flamethrowers = {
 	corpyro = 99,
