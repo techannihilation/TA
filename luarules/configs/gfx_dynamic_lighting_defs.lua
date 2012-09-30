@@ -48,6 +48,8 @@ local copyLightDefs = {
 		["tlllrpt_arm_berthacannon  "] = "berthacannon",
 		["corint1_core_intimidator1" ] = "berthacannon1",
 		["armbrtha1_arm_berthacannon1"] = "berthacannon1",
+		["tlldmc_tlldmc"]              = "dark_matter",
+
 
 
 		--Dgun
@@ -386,6 +388,26 @@ local dynLightDefs = {
 					specularColor     = {4.0 * rgbSpecMults[1], 3.0 * rgbSpecMults[2], 1.2 * rgbSpecMults[3]},
 					priority          = 3 * 10 + 1,
 					radius            = 310.0,
+					ttl               = 2 * Game.gameSpeed,
+					decayFunctionType = {0.0, 0.0, 0.0},
+					altitudeOffset    = 150.0,
+				},
+			},
+
+			["dark_matter"] = {
+				projectileLightDef = {
+					diffuseColor    = {0.9,                   0.9,                   2.0                  },
+					specularColor   = {0.9 * rgbSpecMults[1], 0.9 * rgbSpecMults[2], 2.0 * rgbSpecMults[3]},
+					priority        = 5 * 10,
+					radius          = 125.0,
+					ttl             = 1000,
+				},
+				
+				explosionLightDef = {
+					diffuseColor      = {1.2,                   1.2,                   2.5                  },
+					specularColor     = {1.2 * rgbSpecMults[1], 1.2 * rgbSpecMults[2], 2.5 * rgbSpecMults[3]},
+					priority          = 3 * 10 + 1,
+					radius            = 350.0,
 					ttl               = 2 * Game.gameSpeed,
 					decayFunctionType = {0.0, 0.0, 0.0},
 					altitudeOffset    = 150.0,
