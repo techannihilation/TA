@@ -90,10 +90,9 @@ local unitDef = {
 		[25] = [[corbuzz]],
 		[26] = [[corvp]],
 		[27] = [[coravp]],
-		[28] = [[tawf010]],
-		[29] = [[core_intimidator]],
-		[30] = [[corboucher]],
-		[31] = [[corech18]],
+		[28] = [[core_intimidator]],
+		[29] = [[corboucher]],
+		[30] = [[corech18]],
 	},
 	featureDefs = nil,
 	sounds = {
