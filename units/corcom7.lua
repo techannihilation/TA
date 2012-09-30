@@ -115,7 +115,6 @@ local unitDef = {
 		[30] = [[cbuilderlvl2]],
 		[31] = [[corgen]],
 		[32] = [[corgant1]],
-		[33] = [[cordrag1]],
 	},
 	customParams = {
 		iscommander = true,
