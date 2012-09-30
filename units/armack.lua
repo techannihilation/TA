@@ -84,10 +84,9 @@ local unitDef = {
 		[24] = [[armdf]],
 		[25] = [[armlab]],
 		[26] = [[armalab]],
-		[27] = [[armmagneto]],
-		[28] = [[arm_big_bertha]],
-		[29] = [[nebraska]],
-		[30] = [[armrech18]],
+		[27] = [[arm_big_bertha]],
+		[28] = [[nebraska]],
+		[29] = [[armrech18]],
 	},
 	featureDefs = nil,
 	sounds = {

@@ -90,7 +90,6 @@ local unitDef = {
 		[[armap]],
 		[[armaap]],
 		[[armeap]],
-		[[armmagneto]],
 		[[arm_big_bertha]],
 		[[nebraska]],
 		[[armrech18]],
