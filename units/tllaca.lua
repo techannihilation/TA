@@ -90,6 +90,7 @@ local unitDef = {
 		[22] = [[tllaap]],
 		[23] = [[tllmohogeo]],
 		[24] = [[tllrichter]],
+		[25] = [[tlldmc]],
 	},
 	sounds = {
 		build = [[nanlath1]],
