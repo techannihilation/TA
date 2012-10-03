@@ -97,6 +97,7 @@ local weaponDefs = {
 		avoidFeature = false,
 		burst = 3,
 		burstrate = 0.1,
+		cegTag = [[Trail_emg_upg]],
 		craterBoost = 0,
 		craterMult = 0,
 		endsmoke = 0,

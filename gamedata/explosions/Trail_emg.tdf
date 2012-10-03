@@ -1,0 +1,46 @@
+[Trail_emg]
+{
+	usedefaultexplosions=0;	
+	
+	[spikes]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-2 r4,-2 r4,-2 r4;
+			width=2;
+			length=1;
+			alpha=1;
+			alphadecay=0.26;
+			color=1.0, 0.8, 0.2;
+
+		}
+		air=1;
+		water=1;
+		ground=1;
+  		count=3; 
+	}
+}
+[Trail_emg_upg]
+{
+	usedefaultexplosions=0;	
+	
+	[spikes]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-2 r4,-2 r4,-2 r4;
+			width=2.5;
+			length=1.25;
+			alpha=1;
+			alphadecay=0.26;
+			color=1.0, 0.8, 0.2;
+
+		}
+		air=1;
+		water=1;
+		ground=1;
+  		count=3; 
+	}
+}
