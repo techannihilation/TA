@@ -96,6 +96,7 @@ local weaponDefs = {
 		areaOfEffect = 8,
 		burst = 3,
 		burstrate = 0.25,
+		cegTag = [[Trail_emg_upg]],
 		craterBoost = 0,
 		craterMult = 0,
 		endsmoke = 0,

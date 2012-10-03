@@ -116,6 +116,7 @@ local weaponDefs = {
 		beamWeapon = true,
 		burst = 2,
 		burstrate = 0.2,
+		cegTag = [[Trail_emg_upg]],
 		energypershot = 0,
 		fireStarter = 90,
 		id = 219,
