@@ -58,7 +58,7 @@ local unitDef = {
 	featureDefs = nil,
 	sfxtypes = {
 		explosiongenerators = {
-			[1] = [[custom:rocketflare]],
+			[1] = [[custom:muzzle_back]],
 		},
 	},
 	sounds = {
@@ -96,6 +96,7 @@ local unitDef = {
 local weaponDefs = {
 	CORE_KBOT_ROCKET1 = {
 		areaOfEffect = 48,
+		cegTag = [[Trail_rocket_upg]],
 		craterBoost = 0,
 		craterMult = 0,
 		explosionGenerator = [[custom:VSMLMISSILE_EXPLOSION]],
@@ -117,7 +118,7 @@ local weaponDefs = {
 		soundStart = [[rocklit1]],
 		startsmoke = 1,
 		startVelocity = 200,
-		texture2 = [[coresmoketrail]],
+		texture2 = [[null]],
 		trajectoryHeight = 0.45,
 		turret = true,
 		weaponAcceleration = 120,

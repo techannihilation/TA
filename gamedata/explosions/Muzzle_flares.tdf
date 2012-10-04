@@ -1,0 +1,124 @@
+[armrockomuz]
+{   
+[smoke]
+	{
+	class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0.05;
+		sizeMod=1.0;
+		pos=0, 0, 0;
+		emitVector=dir;
+		gravity=0, 0, 0;
+		colorMap=1 1 1 1.0    0 0 0 0.01;
+		Texture=smoke;
+		airdrag=0.8;
+		particleLife=30;
+		particleLifeSpread=0;
+		numParticles=20;
+		particleSpeed=5;
+		particleSpeedSpread=2;
+		particleSize=1;
+		particleSizeSpread=3;
+		emitRot=0;
+		emitRotSpread=20;
+		directional=0;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+[smoke2]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0.5;
+		sizeMod=1.0;
+		pos=0, 0, 0;
+		emitVector=dir;
+		gravity=0, 0.05, 0;
+		colorMap=1 1 1 1.0    0 0 0 0.01;
+		Texture=smoke;
+		airdrag=0.8;
+		particleLife=30;
+		particleLifeSpread=0;
+		numParticles=20;
+		particleSpeed=-1;
+		particleSpeedSpread=-12;
+		particleSize=2;
+		particleSizeSpread=3;
+		emitRot=0;
+		emitRotSpread=10;
+		directional=0;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+}
+[muzzle_front]
+{   
+[smoke]
+	{
+	class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0.05;
+		sizeMod=1.0;
+		pos=0, 0, 0;
+		emitVector=dir;
+		gravity=0, 0, 0;
+		colorMap=1 1 1 1.0    0 0 0 0.01;
+		Texture=smoke;
+		airdrag=0.8;
+		particleLife=30;
+		particleLifeSpread=0;
+		numParticles=20;
+		particleSpeed=5;
+		particleSpeedSpread=2;
+		particleSize=1;
+		particleSizeSpread=3;
+		emitRot=0;
+		emitRotSpread=20;
+		directional=0;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+[muzzle_back]
+{   
+[smoke2]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0.5;
+		sizeMod=1.0;
+		pos=0, 0, 0;
+		emitVector=dir;
+		gravity=0, 0.05, 0;
+		colorMap=1 1 1 1.0    0 0 0 0.01;
+		Texture=smoke;
+		airdrag=0.8;
+		particleLife=30;
+		particleLifeSpread=0;
+		numParticles=20;
+		particleSpeed=-1;
+		particleSpeedSpread=-12;
+		particleSize=2;
+		particleSizeSpread=3;
+		emitRot=0;
+		emitRotSpread=10;
+		directional=0;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+}
