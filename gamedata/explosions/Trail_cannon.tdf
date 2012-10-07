@@ -1,26 +1,16 @@
 [Trail_cannon]
 {
 	usedefaultexplosions=0;	
-	[groundflash]
-	{
-		flashSize = 20;
-		flashAlpha = 0.25;
-		circleGrowth = 0;
-		circleAlpha = 0.1;
-		ttl = 15;
-		color = 1.0, 0.8, 0.2;
-
-	}
 	[spikes]
 	{
 		class=explspike;
 		[properties]
 		{
 			dir=-4 r6,-4 r6,-4 r6;
-			width=6;
-			length=4;
+			width=3;
+			length=1.8;
 			alpha=1;
-			alphadecay=0.28;
+			alphadecay=0.48;
 			color=1.0, 0.8, 0.2;
 
 		}
