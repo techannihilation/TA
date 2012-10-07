@@ -1,6 +1,48 @@
 [armrockomuz]
-{   
-[smoke]
+{
+	usedefaultexplosions=1;	
+
+   [LARGEFLASH]
+   {
+	class = CBitmapMuzzleFlame;
+      
+	[properties]
+      	{
+         	dir = dir;
+         	colorMap=1.0 0.5 0.2 0.01 0.7 0.2 0.1 0.1 0.5 0.2 0.1 0.01; 
+          	size=-5;
+          	length=-25;
+          	sizeGrowth=0.75;
+          	ttl=13;
+          	frontOffset=0;
+          	sideTexture=muzzleside;
+          	frontTexture=muzzlefront;
+      	}
+   water=1;
+   air=1;
+   underwater=1;
+   ground=1;
+   count=1;
+   }
+	[spikes]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-180 r50, 0 r50, 0 r50;
+			width=2;
+			length=1; //60;
+			alpha=1;
+			alphadecay=0.5;
+			color=1.0, 0.5, 0.2;
+
+		}
+		air=1;
+		water=1;
+		ground=1;
+  		count=4; 
+	}
+	[smoke]
 	{
 	class=CSimpleParticleSystem;
 		[properties]
@@ -90,8 +132,51 @@
 	ground=1;
 	count=1;
 	}
+}
 [muzzle_back]
-{   
+{
+	usedefaultexplosions=1;	
+
+   [LARGEFLASH]
+   {
+	class = CBitmapMuzzleFlame;
+      
+	[properties]
+      	{
+         	dir = dir;
+         	colorMap=1.0 0.5 0.2 0.01 0.7 0.2 0.1 0.1 0.5 0.2 0.1 0.01; 
+          	size=-5;
+          	length=-25;
+          	sizeGrowth=0.75;
+          	ttl=13;
+          	frontOffset=0;
+          	sideTexture=muzzleside;
+          	frontTexture=muzzlefront;
+      	}
+   water=1;
+   air=1;
+   underwater=1;
+   ground=1;
+   count=1;
+   }
+	[spikes]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-180 r50, 0 r50, 0 r50;
+			width=2;
+			length=1; //60;
+			alpha=1;
+			alphadecay=0.5;
+			color=1.0, 0.5, 0.2;
+
+		}
+		air=1;
+		water=1;
+		ground=1;
+  		count=4; 
+	}
 [smoke2]
 	{
 		class=CSimpleParticleSystem;
