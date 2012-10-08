@@ -30,7 +30,7 @@ return {
       ground             = true,
       water              = true,
       properties = {
-        airdrag            = 0.95,
+        airdrag            = 0.80,
         colormap           = [[1 0.5 0.3 0.01 0.1 0.1 0.1 0.2 0.1 0.1 0.1 0.2 0 0 0 0.001 0 0 0 0.001]],
         directional        = false,
         emitrot            = 80,
@@ -59,7 +59,7 @@ return {
       properties = {
         alpha              = 0.08,
         color              = [[1.0, 1.0, 1.0]],
-        expansionspeed     = [[1 r1]],
+        expansionspeed     = [[0.7 r1]],
         ttl                = 12,
       },
     },
