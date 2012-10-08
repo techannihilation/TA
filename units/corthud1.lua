@@ -44,6 +44,7 @@ local unitDef = {
 	noAutoFire = false,
 	noChaseCategory = [[SUB VTOL]],
 	objectName = [[CORTHUD1]],
+	script = [[corthud.cob]],
 	seismicSignature = 0,
 	selfDestructAs = [[BIG_UNIT]],
 	side = [[CORE]],
@@ -56,6 +57,11 @@ local unitDef = {
 	upright = true,
 	workerTime = 0,
 	featureDefs = nil,
+	sfxtypes = {
+		explosiongenerators = {
+			[1] = [[custom:small_unit_flare1]],
+		},
+	},
 	sounds = {
 		canceldestruct = [[cancel2]],
 		underattack = [[warning1]],
