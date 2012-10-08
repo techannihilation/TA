@@ -405,7 +405,7 @@ Go()
 		move rcannon to z-axis [0.000000] now;
 		move locase to y-axis [0.000000] now;
 		move locase to z-axis [0.000000] now;
-		move locase to z-axis [-0.739990] speed [0.000000];
+		move locase to z-axis [-0.739984] speed [0.000000];
 		move rfirept to y-axis [-0.300000] now;
 		move rfirept to z-axis [0.209998] now;
 		move lfirept to y-axis [-0.300000] now;
@@ -449,7 +449,7 @@ Stop()
 		move upcase2 to z-axis [-4.379999] now;
 		move upcase2 to z-axis [0.950000] speed [22.000000];
 		move locase to y-axis [0.000000] now;
-		move locase to z-axis [-0.739990] now;
+		move locase to z-axis [-0.739984] now;
 		move rfirept to y-axis [-0.300000] now;
 		move rfirept to z-axis [0.209998] now;
 		move lfirept to y-axis [-0.300000] now;
@@ -630,20 +630,16 @@ FirePrimary()
 	if( gun_1 == 0 )
 	{
 		gun_1 = rfirept;
-		show rfirept;
+		emit-sfx 1024 + 0 from rfirept;
 		move rcannon to z-axis [-2.000000] speed [25.000000];
-		sleep 100;
-		hide rfirept;
 		move rcannon to z-axis [0.000000] speed [4.000000];
 		return (0);
 	}
 	if( gun_1 == 1 )
 	{
 		gun_1 = pelvis;
-		show lfirept;
+		emit-sfx 1024 + 0 from lfirept;
 		move lcannon to z-axis [-2.000000] speed [25.000000];
-		sleep 100;
-		hide lfirept;
 		move lcannon to z-axis [0.000000] speed [4.000000];
 	}
 }

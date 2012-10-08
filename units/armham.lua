@@ -60,6 +60,11 @@ local unitDef = {
 	upright = true,
 	workerTime = 0,
 	featureDefs = nil,
+	sfxtypes = {
+		explosiongenerators = {
+			[1] = [[custom:small_unit_flare]],
+		},
+	},
 	sounds = {
 		canceldestruct = [[cancel2]],
 		underattack = [[warning1]],
