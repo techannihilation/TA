@@ -1,6 +1,6 @@
 [armrockomuz]
 {
-	usedefaultexplosions=1;	
+	usedefaultexplosions=0;	
 
    [LARGEFLASH]
    {
@@ -9,7 +9,7 @@
 	[properties]
       	{
          	dir = dir;
-         	colorMap=1.0 0.5 0.2 0.01 0.7 0.2 0.1 0.1 0.5 0.2 0.1 0.01; 
+         	colorMap=0.2 0.1 1.0 0.01 0.1 0.2 0.3 0.01 0 0 0 0.01; 
           	size=-5;
           	length=-25;
           	sizeGrowth=0.75;
@@ -34,7 +34,7 @@
 			length=1; //60;
 			alpha=1;
 			alphadecay=0.5;
-			color=1.0, 0.5, 0.2;
+			color=0.2 0.1 1.0;
 
 		}
 		air=1;
@@ -47,17 +47,17 @@
 	class=CSimpleParticleSystem;
 		[properties]
 		{
-		sizeGrowth=0.05;
+		sizeGrowth=0.04;
 		sizeMod=1.0;
 		pos=0, 0, 0;
 		emitVector=dir;
 		gravity=0, 0, 0;
-		colorMap=1 1 1 1.0    0 0 0 0.01;
+		colorMap=1 1 1 1  1 1 1 1 0 0 0 0.01;
 		Texture=smoke;
 		airdrag=0.8;
 		particleLife=30;
 		particleLifeSpread=0;
-		numParticles=20;
+		numParticles=15;
 		particleSpeed=5;
 		particleSpeedSpread=2;
 		particleSize=1;
@@ -76,17 +76,17 @@
 		class=CSimpleParticleSystem;
 		[properties]
 		{
-		sizeGrowth=0.5;
+		sizeGrowth=0.4;
 		sizeMod=1.0;
 		pos=0, 0, 0;
 		emitVector=dir;
 		gravity=0, 0.05, 0;
-		colorMap=1 1 1 1.0    0 0 0 0.01;
+		colorMap=1 1 1 1  1 1 1 1 0 0 0 0.01;
 		Texture=smoke;
 		airdrag=0.8;
 		particleLife=30;
 		particleLifeSpread=0;
-		numParticles=20;
+		numParticles=15;
 		particleSpeed=-1;
 		particleSpeedSpread=-12;
 		particleSize=2;
