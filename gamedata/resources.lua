@@ -170,6 +170,13 @@ local resources = {
 			odd='odd.tga',	
 			groundflash43='clouds2.tga',
 			clouds2='clouds2.tga',
+			--Tankette
+			newsmoke='Smoke/DFoom.TGA',
+			flare1='FlarenSpark/Flare1.TGA',
+			flare2='FlarenSpark/Flare2.TGA',
+			flare3='FlarenSpark/Flare3.TGA',
+			flarePills1='FlarenSpark/FlarePills1.TGA',
+
 		},
 	},
 }
