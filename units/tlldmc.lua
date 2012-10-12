@@ -6,90 +6,90 @@ local unitName = "tlldmc"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-  bmcode             = 0,
-  buildAngle         = 8192,
-  buildCostEnergy    = 150000,
-  buildCostMetal     = 55000,
-  builder            = false,
-  buildPic           = [[tlldmc.png]],
-  buildTime          = 150000,
-  canAttack          = true,
-  canstop            = 1,
-  category           = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
-  corpse             = [[armbrtha_dead]],
-  defaultmissiontype = [[GUARD_NOMOVE]],
-  description        = [[Dark Matter Cannon]],
-  designation        = [[ARM-ERC]],
-  energyMake         = 0,
-  energyStorage      = 0,
-  energyUse          = 0,
-  explodeAs          = [[MEDIUM_BUILDINGEX]],
-  firestandorders    = 1,
-  footprintX         = 5,
-  footprintZ         = 5,
-  maxDamage          = 65000,
-  maxSlope           = 10,
-  maxWaterDepth      = 0,
-  metalStorage       = 0,
-  name               = [[DMC]],
-  noAutoFire         = true,
-  objectName         = [[tlldmc]],
-  radarDistance      = 0,
-  selfDestructAs     = [[MEDIUM_BUILDING]],
-  shootme            = 1,
-  sightDistance      = 1500,
-  standingfireorder  = 0,
-  threed             = 1,
-  unitname           = [[tlldmc]],
-  unitnumber         = 200000,
-  version            = 1,
-  workerTime         = 0,
-  yardMap            = [[ooooo ooooo ooooo ooooo ooooo]],
-  customparams = {
-  canareaattack = 1,
-  },
-  featureDefs = nil,
-  sfxtypes = {
-    explosiongenerators = {
-      [1] = [[custom:gray_berthaflare]],
-    },
-  },
-  sounds = {
-    canceldestruct     = [[cancel2]],
-    underattack        = [[warning1]],
-    cant = {
-      [[cantdo4]],
-    },
-    count = {
-      [[count6]],
-      [[count5]],
-      [[count4]],
-      [[count3]],
-      [[count2]],
-      [[count1]],
-    },
-    ok = {
-      [[servlrg3]],
-    },
-    select = {
-      [[servlrg3]],
-    },
-  },
-  weapons = {
-    [1]  = {
-	  badTargetCategory = [[MEDIUM SMALL TINY]],
-	  onlyTargetCategory = [[NOTVTOL]],
-      def                = [[tlldmc]],
-    },
-  },
+	bmcode = 0,
+	buildAngle = 8192,
+	buildCostEnergy = 150000,
+	buildCostMetal = 55000,
+	builder = false,
+	buildPic = [[tlldmc.png]],
+	buildTime = 150000,
+	canAttack = true,
+	canstop = 1,
+	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
+	corpse = [[armbrtha_dead]],
+	defaultmissiontype = [[GUARD_NOMOVE]],
+	description = [[Dark Matter Cannon]],
+	designation = [[ARM-ERC]],
+	energyMake = 0,
+	energyStorage = 0,
+	energyUse = 0,
+	explodeAs = [[MEDIUM_BUILDINGEX]],
+	firestandorders = 1,
+	footprintX = 5,
+	footprintZ = 5,
+	maxDamage = 65000,
+	maxSlope = 10,
+	maxWaterDepth = 0,
+	metalStorage = 0,
+	name = [[DMC]],
+	noAutoFire = true,
+	objectName = [[tlldmc]],
+	radarDistance = 0,
+	selfDestructAs = [[MEDIUM_BUILDING]],
+	shootme = 1,
+	sightDistance = 1500,
+	standingfireorder = 0,
+	threed = 1,
+	unitname = [[tlldmc]],
+	unitnumber = 200000,
+	version = 1,
+	workerTime = 0,
+	yardMap = [[ooooo ooooo ooooo ooooo ooooo]],
+	customparams = {
+		canareaattack = 1,
+	},
+	featureDefs = nil,
+	sfxtypes = {
+		explosiongenerators = {
+			[1] = [[custom:gray_berthaflare]],
+		},
+	},
+	sounds = {
+		canceldestruct = [[cancel2]],
+		underattack = [[warning1]],
+		cant = {
+			[1] = [[cantdo4]],
+		},
+		count = {
+			[1] = [[count6]],
+			[2] = [[count5]],
+			[3] = [[count4]],
+			[4] = [[count3]],
+			[5] = [[count2]],
+			[6] = [[count1]],
+		},
+		ok = {
+			[1] = [[servlrg3]],
+		},
+		select = {
+			[1] = [[servlrg3]],
+		},
+	},
+	weaponDefs = nil,
+	weapons = {
+		[1] = {
+			badTargetCategory = [[MEDIUM SMALL TINY]],
+			def = [[tlldmc]],
+			onlyTargetCategory = [[NOTVTOL]],
+		},
+	},
 }
-
 
 --------------------------------------------------------------------------------
 
 local weaponDefs = {
-  tlldmc = {
-   		areaOfEffect = 390,
+	tlldmc = {
+		areaOfEffect = 390,
 		beamWeapon = true,
 		collideFriendly = false,
 		craterBoost = 0,
@@ -109,7 +109,8 @@ local weaponDefs = {
 		range = 1620,
 		reloadtime = 16,
 		renderType = 0,
-		rgbColor = [[0.9 0.6 1]],
+		rgbColor = [[1 0.95 0.9]],
+		size = 3.23,
 		soundHitDry = [[xplolrg1]],
 		soundStart = [[Energy]],
 		thickness = 5,
@@ -131,51 +132,46 @@ unitDef.weaponDefs = weaponDefs
 --------------------------------------------------------------------------------
 
 local featureDefs = {
-  armbrtha_dead = {
-    blocking           = false,
-    category           = [[corpses]],
-
-    damage = 0.6000 * unitDef.maxDamage,
-    description = unitDef.name .. [[ Wreckage]],
-    energy             = 0,
-    featureDead        = [[armbrtha_heap]],
-    featurereclamate   = [[SMUDGE01]],
-    footprintX         = 3,
-    footprintZ         = 3,
-    height             = 40,
-    hitdensity         = 100,
-
-    metal = 0.8000 * unitDef.buildCostMetal,
-    object             = [[ARMBRTHA_DEAD]],
-    reclaimable        = false,
-    seqnamereclamate   = [[TREE1RECLAMATE]],
-    world              = [[All Worlds]],
-  },
-  armbrtha_heap = {
-    blocking           = false,
-    category           = [[heaps]],
-
-    damage = 0.3600 * unitDef.maxDamage,
-    description = unitDef.name .. [[ Heap]],
-    energy             = 0,
-    featurereclamate   = [[SMUDGE01]],
-    footprintX         = 3,
-    footprintZ         = 3,
-    height             = 4,
-    hitdensity         = 100,
-
-    metal = 0.6400 * unitDef.buildCostMetal,
-    object             = [[3X3E]],
-    reclaimable        = false,
-    seqnamereclamate   = [[TREE1RECLAMATE]],
-    world              = [[All Worlds]],
-  },
+	armbrtha_dead = {
+		blocking = false,
+		category = [[corpses]],
+		damage = 0.6000 * unitDef.maxDamage,
+		description = unitDef.name .. [[ Wreckage]],
+		energy = 0,
+		featureDead = [[armbrtha_heap]],
+		featurereclamate = [[SMUDGE01]],
+		footprintX = 3,
+		footprintZ = 3,
+		height = 40,
+		hitdensity = 100,
+		metal = 0.8000 * unitDef.buildCostMetal,
+		object = [[ARMBRTHA_DEAD]],
+		reclaimable = false,
+		seqnamereclamate = [[TREE1RECLAMATE]],
+		world = [[All Worlds]],
+	},
+	armbrtha_heap = {
+		blocking = false,
+		category = [[heaps]],
+		damage = 0.3600 * unitDef.maxDamage,
+		description = unitDef.name .. [[ Heap]],
+		energy = 0,
+		featurereclamate = [[SMUDGE01]],
+		footprintX = 3,
+		footprintZ = 3,
+		height = 4,
+		hitdensity = 100,
+		metal = 0.6400 * unitDef.buildCostMetal,
+		object = [[3X3E]],
+		reclaimable = false,
+		seqnamereclamate = [[TREE1RECLAMATE]],
+		world = [[All Worlds]],
+	},
 }
 unitDef.featureDefs = featureDefs
 
-
 --------------------------------------------------------------------------------
 
-return lowerkeys({ [unitName] = unitDef })
+return lowerkeys({[unitName] = unitDef})
 
 --------------------------------------------------------------------------------
