@@ -1,4 +1,4 @@
-[armrockomuz]
+[Arm_Rear_Muzzle]
 {
 	usedefaultexplosions=0;	
 
@@ -133,7 +133,7 @@
 	count=1;
 	}
 }
-[muzzle_back]
+[Core_Rear_Muzzle]
 {
 	usedefaultexplosions=1;	
 

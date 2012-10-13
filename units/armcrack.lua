@@ -67,7 +67,7 @@ local unitDef = {
 	featureDefs = nil,
 	sfxtypes = {
 		explosiongenerators = {
-			[1] = [[custom:armrockomuz]],
+			[1] = [[custom:Arm_Rear_Muzzle]],
 		},
 	},
 	sounds = {
