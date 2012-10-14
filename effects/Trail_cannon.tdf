@@ -1,3 +1,4 @@
+//small cannon size 1 - 1.8
 [Trail_cannon]
 {
 	usedefaultexplosions=0;	
@@ -9,6 +10,52 @@
 			dir=-4 r6,-4 r6,-4 r6;
 			width=3;
 			length=2.2;
+			alpha=1;
+			alphadecay=0.48;
+			color=1.0, 0.8, 0.2;
+
+		}
+		air=1;
+		water=1;
+		ground=1;
+  		count=3; 
+	}
+}
+//med cannon size 1.81 - 3.2
+[Trail_cannon_med]
+{
+	usedefaultexplosions=0;	
+	[spikes]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-4 r6,-4 r6,-4 r6;
+			width=5;
+			length=4.2;
+			alpha=1;
+			alphadecay=0.48;
+			color=1.0, 0.8, 0.2;
+
+		}
+		air=1;
+		water=1;
+		ground=1;
+  		count=3; 
+	}
+}
+//large cannon size above 3.21 
+[Trail_cannon_large]
+{
+	usedefaultexplosions=0;	
+	[spikes]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-4 r6,-4 r6,-4 r6;
+			width=8;
+			length=8.2;
 			alpha=1;
 			alphadecay=0.48;
 			color=1.0, 0.8, 0.2;
