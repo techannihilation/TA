@@ -51,7 +51,7 @@ local unitDef = {
 	featureDefs = nil,
 	sfxtypes = {
 		explosiongenerators = {
-			[1] = [[custom:gray_berthaflare]],
+			[1] = [[custom:tlldmc_flare]],
 		},
 	},
 	sounds = {
