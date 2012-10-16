@@ -141,7 +141,7 @@ unitDef.weaponDefs = weaponDefs
 --------------------------------------------------------------------------------
 
 local featureDefs = {
-	CORGOL_DEAD = {
+	CORGOL1_DEAD = {
 		blocking = true,
 		category = [[corpses]],
 		damage = 0.6000 * unitDef.maxDamage,
