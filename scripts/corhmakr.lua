@@ -1,5 +1,3 @@
-include "constants.lua"
-
 local bottomCover, bottomBody, 
 topCover, outerPistle, 
 insides, innerPistle, 
@@ -12,8 +10,37 @@ pistleCover, topBody = piece(
 local WHAT_DO = 1024
 local  mmState
 
+local function still_building_p()
+	local _,_,_,_,buildProgress = Spring.GetUnitHealth(unitID);
+	if (buildProgress == 1) then return false; else return true; end
+end
 
-function ImAMetalMaker()
+local function get_health_percent()
+	local health,maxHealth = Spring.GetUnitHealth(unitID);
+	return ((health / maxHealth) * 100);
+end
+
+
+local function SmokeUnit(healthpercent, sleeptime, smoketype)
+	while still_building_p() do Sleep(400); end
+	
+	while (true) do
+		local health_percent = get_health_percent();
+		
+		if (health_percent < 66) then
+			local smoketype = 258;
+			if (math.random(1, 66) < health_percent) then smoketype = 257; end
+			Spring.UnitScript.EmitSfx(base, smoketype);
+		end
+		
+		local sleep_time = health_percent * 50;
+		if (sleep_time < 200) then 
+		  sleep_time = 200; end
+		Sleep(sleep_time);
+	end
+end
+
+local function ImAMetalMaker()
 	while (GetUnitValue(COB.BUILD_PERCENT_LEFT) ~= 0) do Sleep(150) end
 	
 	mmState = -1
@@ -81,6 +108,10 @@ function script.Create()
 	StartThread(ImAMetalMaker)
 end
 
+function script.ImAMetalMaker()
+	StartThread( ImAMetalMaker)
+end
+
 function script.Killed(recentDamage, maxHealth)
 
 	-- local severity = recentDamage/maxHealth
@@ -100,10 +131,10 @@ function script.Killed(recentDamage, maxHealth)
 		-- Spring.Echo("BIG")
 		-- return 0
 	-- end
-	Explode(bottomBody, sfxShatter )
-	Explode(topCover, sfxShatter )
-	Explode(bottomCover, sfxShatter)
-	Explode(topBody, sfxExplode)
+	Explode(bottomBody, SFX.SHATTER )
+	Explode(topCover, SFX.SHATTER )
+	Explode(bottomCover, SFX.SHATTER)
+	Explode(topBody, SFX.SHATTER)
 	--Spring.Echo("FULL")
 	return 0
 end
