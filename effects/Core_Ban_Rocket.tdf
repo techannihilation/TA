@@ -22,4 +22,43 @@
    ground=1;
    count=1;
    }
+[Smoke]
+	{
+	class=CSimpleParticleSystem;
+
+		[properties]
+		{
+
+		Texture=smoke;
+
+
+		colorMap	= 0.1 0.1 0.1 0.2 0.1 0.1 0.1 0.2 0.1 0.1 0.1 0.2 0 0 0 0.001 0 0 0 0.001;
+
+      		pos 		= 0, 0, 0;
+		gravity		= 0, 0, 0;
+	       	emitVector	= 0, 0.01, 0;
+		emitRot		= 0;
+		emitRotSpread	= 0;
+		emitdir		= dir;
+
+		sizeGrowth	= 0.0 r.65;
+		sizeMod		= 1.0;
+
+		airdrag			= 0.9;
+		particleLife		= 8;
+		particleLifeSpread	= 8;
+		numParticles		= 10;
+		particleSpeed		= 14;
+		particleSpeedSpread	= 1;
+		particleSize		= 0.15;
+		particleSizeSpread	= 3;
+
+		directional		= 1; 
+		useAirLos		= 1;
+		}
+	air=1;
+	ground=1;
+	water=0;
+	count=1;
+	}
 }
