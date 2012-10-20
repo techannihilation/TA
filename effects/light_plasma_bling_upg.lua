@@ -1,16 +1,16 @@
--- light_plasma_bling
+-- light_plasma_bling_upg
 
 
 return {
-  ["light_plasma_bling"] = {
+  ["light_plasma_bling_upg"] = {
  usedefaultexplosions = false,
      
        groundflash = {
       circlealpha        = 0.35,
       circlegrowth       = 0.001,
       flashalpha         = 1.5,
-      flashsize          = 16,
-      ttl                = 16,
+      flashsize          = 19,
+      ttl                = 19,
       color = {
         [1]  = 0.99599999189377,
         [2]  = 0.98000001907349,
@@ -28,7 +28,7 @@ return {
         heatfalloff        = 0.5,
         maxheat            = 15,
         pos                = [[dir]],
-        size               = 7,
+        size               = 8,
         sizegrowth         = 0.7,
         speed              = [[dir]],
         texture            = [[explo]],
@@ -78,7 +78,7 @@ return {
         emitrotspread      = [[0 r-90 r90]],
         emitvector         = [[0, 1, 0]],
         gravity            = [[0, -.15 r0.15 r-1, 0]],
-        numparticles       = 5,
+        numparticles       = 6,
         particlelife       = 10,
         particlelifespread = 3,
         particlesize       = 1,
@@ -102,7 +102,7 @@ return {
         alpha              = 0.88,
         color              = [[0.9, 0.9, 0.5]],
         expansionspeed     = [[0.7 r1]],
-        ttl                = 3,
+        ttl                = 4,
       },
     },
   },
