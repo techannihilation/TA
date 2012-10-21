@@ -705,7 +705,6 @@ local LosRadar = {
 ["tllrlrpc"] = 92.000480651855,
 ["tllrobber"] = 28.799999237061,
 ["tllsam"] = 32.056484222412,
-["tllsealock"] = 102.11684417725,
 ["tllsham"] = 22.78125,
 ["tllshoretorp"] = 105.73903656006,
 ["tllsilo"] = 69.889167785645,

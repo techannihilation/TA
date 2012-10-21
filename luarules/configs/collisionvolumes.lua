@@ -204,16 +204,6 @@ local dynamicPieceCollisionVolume = {}	--dynamic per piece collision volume defi
 			["0"]={32,51,32,0,8,1,0,0},
 		}
 	}
-	dynamicPieceCollisionVolume["tllsealock"] = {
-		on = {
-			["13"]={116,122,32,26,6,0,2,0},
-			["10"]={116,122,32,-26,6,0,2,0},
-		},
-		off = {
-			["12"]={56,132,40,-22,6,0,2,0},
-			["9"]={56,132,40,22,6,0,2,0},
-		}
-	}
 		dynamicPieceCollisionVolume["cortoast"] = {
 		on = {
 			["1"]={44,23,44,0,0,0,2,0},
