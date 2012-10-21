@@ -929,9 +929,32 @@ for name, ud in pairs(UnitDefs) do
 		end
 end
 
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+local function disableunits(unitlist)
+  for name, ud in pairs(UnitDefs) do
+    if (ud.buildoptions) then
+      for _, toremovename in ipairs(unitlist) do
+        for index, unitname in pairs(ud.buildoptions) do
+          if (unitname == toremovename) then
+            table.remove(ud.buildoptions, index)
+          end
+        end
+      end
+    end
+  end
+end
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
--- for name, ud in pairs(UnitDefs) do
-		-- if ud.builddistance and ud.movementclass and (ud.builddistance < 351) and (ud.builddistance >17) then
-		-- ud.builddistance = (ud.builddistance + 12)
-		-- end
--- end
+-- Disable all game end weapons and superships
+-- 
+
+if not (modOptions and tobool(modOptions.superunits)) then
+  disableunits({
+	"corflu", "tllion", "armtabi",
+	"abroadside", "cdevastator", "tllvaliant",
+	"ashipyardlvl3","cshipyardlvl3"
+  })
+end
+--------------------------------------------------------------------------------
