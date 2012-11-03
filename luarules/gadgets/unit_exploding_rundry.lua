@@ -150,7 +150,11 @@ function gadget:GameFrame(n)
 	  if (minwater + groundy ) > ( 0 + Buffer) then 
 	    local rx, ry, rz = GetUnitPosition(unitID)
 	    if mass < 601 then
+	      Spring.SpawnCEG("Death_Explosion_Tidal_Small", rx, 0, rz)
+	    elseif mass >= 601 and mass <= 4000 then
 	      Spring.SpawnCEG("Death_Explosion_Tidal", rx, 0, rz)
+	    else
+	      Spring.SpawnCEG("Death_Explosion_Tidal_Large", rx, 0, rz)
 	    end
 	    Spring.DestroyUnit(unitID, true, false)
 	  end
