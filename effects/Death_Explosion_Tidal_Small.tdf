@@ -164,8 +164,8 @@
 		}
 	air=0;
 	ground=1;
-	water=0;
-	underwater=0;
+	water=1;
+	underwater=1;
 	count=1;
 	}
 
@@ -184,7 +184,7 @@
 		}
     	air=0;
     	ground=1;
-    	water=0;
+    	water=1;
 	count=4;
 	}
 
@@ -266,8 +266,8 @@
 		}
 	air=0;
 	ground=1;
-	water=0;
-	underwater=0;
+	water=1;
+	underwater=1;
 	count=1;
 	}
 
@@ -326,7 +326,7 @@
 		}
     	air=0;
     	ground=1;
-    	water=0;
+    	water=1;
 	count=4;
 	}
 
