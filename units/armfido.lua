@@ -107,7 +107,6 @@ local weaponDefs = {
 		range = 650,
 		reloadtime = 3.2,
 		renderType = 4,
-		rgbColor = [[1 0.95 0.9]],
 		separation = 0.45,
 		size = 1.36,
 		sizedecay = -0.15,
