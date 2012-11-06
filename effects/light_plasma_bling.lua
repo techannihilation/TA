@@ -21,7 +21,7 @@ return {
       air                = true,
       class              = [[heatcloud]],
       count              = 1,
-      ground             = true,
+      ground             = false,
       unit               = 1,
       properties = {
         heat               = 10,
