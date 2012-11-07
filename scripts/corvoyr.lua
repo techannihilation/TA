@@ -9,8 +9,6 @@ local dish1 = piece 'dish1'
 local arm1 = piece 'arm1' 
 local arm2 = piece 'arm2' 
 
-include "constants.lua"
-
 local  bMoving
 
 -- Signal definitions

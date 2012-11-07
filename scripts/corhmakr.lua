@@ -40,7 +40,7 @@ local function SmokeUnit(healthpercent, sleeptime, smoketype)
 	end
 end
 
-local function ImAMetalMaker()
+function ImAMetalMaker()
 	while (GetUnitValue(COB.BUILD_PERCENT_LEFT) ~= 0) do Sleep(150) end
 	
 	mmState = -1

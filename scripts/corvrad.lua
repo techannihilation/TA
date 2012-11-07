@@ -1,5 +1,3 @@
-include "constants.lua"
-
 local base = piece('base') 
 local dish = piece('dish')
 
@@ -102,22 +100,22 @@ function script.Killed(recentDamage, maxHealth)
 
 local severity = recentDamage/maxHealth
 	if  severity <= 0.25  then
-		Explode(dish, sfxNone)
-		Explode(base, sfxNone )
+		Explode(dish, SFX.NONE)
+		Explode(base, SFX.NONE )
 		--Spring.Echo("LOW")
 		return 1
 	elseif  severity <= 0.50  then
-		Explode(dish, sfxNone)
-		Explode(base, sfxShatter)
+		Explode(dish, SFX.NONE)
+		Explode(base, SFX.SHATTER)
 		--Spring.Echo("MED")
 		return 2
 	elseif  severity <= 0.99  then
 		Explode(dish, sfxExplode)
-		Explode(base, sfxShatter)
+		Explode(base, SFX.SHATTER)
 		--Spring.Echo("BIG")
 		return 3
 	end
-	Explode(base, sfxShatter + sfxExplodeOnHit )
-	Explode(dish, sfxFall + sfxSmoke  + sfxFire  + sfxExplodeOnHit )
+	Explode(base, SFX.SHATTER + SFX.EXPLODE_ON_HIT )
+	Explode(dish, SFX.FALL + SFX.SMOKE  + SFX.FIRE  + SFX.EXPLODE_ON_HIT )
 	return 3
 end
