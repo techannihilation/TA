@@ -1,0 +1,25 @@
+[Core_Def_AA_Rocket]
+{ 
+ [engine]
+   {
+    class = CBitmapMuzzleFlame;
+      
+	[properties]
+     	{
+         	dir = dir;
+         	colorMap=1.0 0.2 0.2 0.01	0.3 0.2 0.1 0.01	0 0 0 0.01; 
+          	size=4.3;
+          	length=19;
+          	sizeGrowth=0.9;
+          	ttl=2;
+          	frontOffset=0;
+          	sideTexture=flashside1;
+          	frontTexture=flashside1;
+      	}
+   water=1;
+   air=1;
+   underwater=1;
+   ground=1;
+   count=1;
+   }
+}
