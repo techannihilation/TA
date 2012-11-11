@@ -1,0 +1,249 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, energy, cover, beams, glow;
+
+static-var shared;
+
+#define SECURE_XZ\
+if(xz<0)\
+{\
+xz=0 - xz;\
+}\
+x=xz/65536;\
+z=xz - x*65536;\
+if(z>32767)\
+{\
+z=65536 - z;\
+/*x=x+(1-2*(xz<0));*/\
+x=x+(xz>0);\
+}\
+if(707333111<get XZ_HYPOT((x/2)*65536 + (z/2)))\
+{\
+xz=500333222;\
+}
+
+#include "sfxtype.h"
+#include "exptype.h"
+// Lowest valid unit ID number
+#ifndef MIN_ID
+#define MIN_ID 69
+#endif
+
+// Highest valid unit ID number
+#ifndef MAX_ID
+#define MAX_ID 70
+#endif
+
+// ID of current unit
+#ifndef MY_ID
+#define MY_ID 71
+#endif
+
+// Player number of the unit given in parameter
+#ifndef UNIT_TEAM
+#define UNIT_TEAM 72
+#endif
+
+// Like BUILD_PERCENT_LEFT, but comes with a unit parameter
+#ifndef UNIT_BUILD_PERCENT_LEFT
+#define UNIT_BUILD_PERCENT_LEFT 73
+#endif
+
+// Is unit allied to the current COB script
+#ifndef UNIT_ALLIED
+#define UNIT_ALLIED 74
+#endif
+
+// Is unit owned by the local computer
+#ifndef UNIT_IS_ON_THIS_COMP
+#define UNIT_IS_ON_THIS_COMP 75
+#endif
+
+// Kills * 100
+#ifndef VETERAN_LEVEL
+#define VETERAN_LEVEL 32
+#endif
+
+#define armestor 2966258
+#define corestor 2402830
+#define talestor 9999999
+#define armses 3811741
+#define corses 2992413
+#define talses 9999999
+#define cornova_upgrade 9999999
+
+
+
+#define armestorSize ([12.8] + [1])
+#define armsesSize ([19.2] + [2])
+#define corestorSize ([12.8] + [1])
+#define corsesSize ([19.2] + [2])
+#define talestorSize ([12.8] + [1])
+#define talsesSize ([19.2] + [2])
+#define cornova_upgradeSize ([38.4] + [8])
+
+
+#define mySize armsesSize
+
+Detect()
+{
+	shared = 0;
+	sleep rand(500,5000);
+	var distance, unit_ID, xz, x, z, spynumb, numb_spies;
+	var max, min, height;
+	max = (get MAX_ID);
+	min = (get MIN_ID);
+	while (1)
+	{
+		numb_spies = 0;
+		for (unit_ID = min; unit_ID <= max; ++unit_ID)
+		{
+			if((get UNIT_ALLIED(unit_ID)) == 1)
+			{
+				if((get UNIT_BUILD_PERCENT_LEFT(unit_ID)) == 0)
+				{
+					height = get UNIT_HEIGHT(unit_ID);
+//					if((height == armestor) || (height == corestor) || (height == talestor))
+//					{
+//						xz = get UNIT_XZ(unit_ID) - get PIECE_XZ(base);
+//						SECURE_XZ;
+//						distance=get XZ_HYPOT(xz);
+//						if (distance <= mySize + armestorSize)
+//						{
+//							++numb_spies;
+//						}
+//					}
+					if((height == armses) || (height == corses) || (height == talses))
+					{
+						xz = get UNIT_XZ(unit_ID) - get PIECE_XZ(base);
+						SECURE_XZ;
+						distance=get XZ_HYPOT(xz);
+						if (distance <= mySize + armsesSize)
+						{
+							++numb_spies;
+						}
+					}
+					if((height == cornova_upgrade))
+					{
+						xz = get UNIT_XZ(unit_ID) - get PIECE_XZ(base);
+						SECURE_XZ;
+						distance=get XZ_HYPOT(xz);
+						if (distance <= mySize + cornova_upgradeSize)
+						{
+							++numb_spies;
+						}
+					}
+				}
+			}
+		}
+		if (numb_spies < 2)
+		{
+			shared = 0;
+			set ACTIVATION to 0;
+			hide glow;
+			show energy;
+		}
+		if (numb_spies >= 2)
+		{
+			shared = 1;
+			set ACTIVATION to 1;
+			hide energy;
+			show glow;
+		}
+		sleep rand(4000,6000);
+	}
+}
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	dont-cache energy;
+	dont-shade energy;
+	dont-cache beams;
+	dont-shade beams;
+	dont-shade cover;
+	
+	hide glow;
+	
+	dont-cache glow;
+	dont-shade glow;
+	
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 1000;
+	}
+	start-script SmokeUnit();
+	start-script detect();
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type BITMAPONLY | BITMAP1;
+		explode energy type SHATTER | EXPLODE_ON_HIT | BITMAP2;
+		explode cover type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+		explode beams type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type BITMAPONLY | BITMAP1;
+		explode energy type SHATTER | EXPLODE_ON_HIT | BITMAP2;
+		explode cover type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+		explode beams type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type BITMAPONLY | BITMAP1;
+		explode energy type SHATTER | EXPLODE_ON_HIT | BITMAP2;
+		explode cover type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+		explode beams type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+		return (0);
+	}
+	corpsetype = 3;
+	explode base type BITMAPONLY | BITMAP1;
+		explode energy type SHATTER | EXPLODE_ON_HIT | BITMAP2;
+		explode cover type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+		explode beams type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+	return (0);
+}
