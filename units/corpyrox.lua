@@ -103,9 +103,6 @@ local unitDef = {
 			def = [[FLAMETHROWER]],
 			onlyTargetCategory = [[NOTVTOL]],
 		},
-		[2] = {
-			def = [[NOWEAPON]],
-		},
 		[3] = {
 			badTargetCategory = [[ANTIFLAME]],
 			def = [[PYRO_ROCKET]],

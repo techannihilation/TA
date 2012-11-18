@@ -101,45 +101,12 @@ local unitDef = {
 			def = [[ARM_EMCC3]],
 			onlyTargetCategory = [[NOTVTOL]],
 		},
-		[2] = {
-			def = [[NOWEAPON]],
-			onlyTargetCategory = [[NOTVTOL]],
-		},
 	},
 }
 
 --------------------------------------------------------------------------------
 
 local weaponDefs = {
-	['ADV-EMG3'] = {
-		areaOfEffect = 12,
-		beamWeapon = true,
-		burst = 2,
-		burstrate = 0.2,
-		cegTag = [[Trail_emg_upg]],
-		energypershot = 0,
-		fireStarter = 90,
-		id = 219,
-		lineOfSight = true,
-		model = [[aemg]],
-		name = [[Advanced EMG]],
-		range = 660,
-		reloadtime = 0.4,
-		renderType = 1,
-		soundHitDry = [[XPLOMed2]],
-		soundStart = [[armkiller1]],
-		soundTrigger = true,
-		sprayAngle = 2048,
-		tolerance = 2500,
-		turret = true,
-		weaponTimer = 2,
-		weaponType = [[LaserCannon]],
-		weaponVelocity = 500,
-		damage = {
-			default = 75,
-			subs = 5,
-		},
-	},
 	ARM_EMCC3 = {
 		areaOfEffect = 8,
 		burst = 4,
