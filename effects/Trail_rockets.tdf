@@ -42,6 +42,42 @@
 		ground=1;
   		count=2; 
 	}
+[exhale3]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0.2;
+		sizeMod=1.0;
+		pos=0, 1, 0; 
+		gravity=0, 0, 0;
+		
+
+		Texture=clouds2;
+		airdrag=0.1;
+		colorMap=0.39 0.39 0.39 0.7	0.39 0.39 0.39 0.7	0.39 0.39 0.39 0.5	0.1 0.1 0.1 0.3	0.1 0.1 0.1 0.2;
+
+		particleLifeSpread=3; 
+		particleSpeedSpread=2;  
+		particleSizeSpread=1;   
+		
+		particleLife=12;
+		numParticles=2; 
+		particleSpeed=1; 
+		particleSize=2;
+		
+		
+		emitVector=0, 1, 0; 
+		emitRot=80;
+		emitRotSpread=20;
+		directional=0; 
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
 [exhale2]
 	{
 		class=CSimpleParticleSystem;
@@ -158,6 +194,42 @@
 		water=1;
 		ground=1;
   		count=2; 
+	}
+[exhale3]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0.2;
+		sizeMod=1.0;
+		pos=0, 1, 0; 
+		gravity=0, 0, 0;
+		
+
+		Texture=clouds2;
+		airdrag=0.1;
+		colorMap=0.39 0.39 0.39 0.7	0.39 0.39 0.39 0.7	0.39 0.39 0.39 0.5	0.1 0.1 0.1 0.3	0.1 0.1 0.1 0.2;
+
+		particleLifeSpread=3; 
+		particleSpeedSpread=2;  
+		particleSizeSpread=1;   
+		
+		particleLife=12;
+		numParticles=2; 
+		particleSpeed=1; 
+		particleSize=2;
+		
+		
+		emitVector=0, 1, 0; 
+		emitRot=80;
+		emitRotSpread=20;
+		directional=0; 
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
 	}
 [exhale2]
 	{
@@ -276,6 +348,42 @@
 		ground=1;
   		count=2; 
 	}
+[exhale3]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0.2;
+		sizeMod=1.0;
+		pos=0, 1, 0; 
+		gravity=0, 0, 0;
+		
+
+		Texture=clouds2;
+		airdrag=0.1;
+		colorMap=0.39 0.39 0.39 0.7	0.39 0.39 0.39 0.7	0.39 0.39 0.39 0.5	0.1 0.1 0.1 0.3	0.1 0.1 0.1 0.2;
+
+		particleLifeSpread=3; 
+		particleSpeedSpread=2;  
+		particleSizeSpread=1;   
+		
+		particleLife=12;
+		numParticles=2; 
+		particleSpeed=1; 
+		particleSize=2;
+		
+		
+		emitVector=0, 1, 0; 
+		emitRot=80;
+		emitRotSpread=20;
+		directional=0; 
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
 [exhale2]
 	{
 		class=CSimpleParticleSystem;
@@ -392,6 +500,42 @@
 		water=1;
 		ground=1;
   		count=2; 
+	}
+[exhale3]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0.2;
+		sizeMod=1.0;
+		pos=0, 1, 0; 
+		gravity=0, 0, 0;
+		
+
+		Texture=clouds2;
+		airdrag=0.1;
+		colorMap=0.39 0.39 0.39 0.7	0.39 0.39 0.39 0.7	0.39 0.39 0.39 0.5	0.1 0.1 0.1 0.3	0.1 0.1 0.1 0.2;
+
+		particleLifeSpread=3; 
+		particleSpeedSpread=2;  
+		particleSizeSpread=1;   
+		
+		particleLife=12;
+		numParticles=2; 
+		particleSpeed=1; 
+		particleSize=2;
+		
+		
+		emitVector=0, 1, 0; 
+		emitRot=80;
+		emitRotSpread=20;
+		directional=0; 
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
 	}
 [exhale2]
 	{
@@ -510,6 +654,42 @@
 		ground=1;
   		count=2; 
 	}
+[exhale3]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0.2;
+		sizeMod=1.0;
+		pos=0, 1, 0; 
+		gravity=0, 0, 0;
+		
+
+		Texture=clouds2;
+		airdrag=0.1;
+		colorMap=0.39 0.39 0.39 0.7	0.39 0.39 0.39 0.7	0.39 0.39 0.39 0.5	0.1 0.1 0.1 0.3	0.1 0.1 0.1 0.2;
+
+		particleLifeSpread=3; 
+		particleSpeedSpread=2;  
+		particleSizeSpread=1;   
+		
+		particleLife=12;
+		numParticles=2; 
+		particleSpeed=1; 
+		particleSize=2;
+		
+		
+		emitVector=0, 1, 0; 
+		emitRot=80;
+		emitRotSpread=20;
+		directional=0; 
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
 [exhale2]
 	{
 		class=CSimpleParticleSystem;
@@ -626,6 +806,42 @@
 		water=1;
 		ground=1;
   		count=2; 
+	}
+[exhale3]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0.2;
+		sizeMod=1.0;
+		pos=0, 1, 0; 
+		gravity=0, 0, 0;
+		
+
+		Texture=clouds2;
+		airdrag=0.1;
+		colorMap=0.39 0.39 0.39 0.7	0.39 0.39 0.39 0.7	0.39 0.39 0.39 0.5	0.1 0.1 0.1 0.3	0.1 0.1 0.1 0.2;
+
+		particleLifeSpread=3; 
+		particleSpeedSpread=2;  
+		particleSizeSpread=1;   
+		
+		particleLife=12;
+		numParticles=2; 
+		particleSpeed=1; 
+		particleSize=2;
+		
+		
+		emitVector=0, 1, 0; 
+		emitRot=80;
+		emitRotSpread=20;
+		directional=0; 
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
 	}
 [exhale2]
 	{
@@ -744,6 +960,42 @@
 		ground=1;
   		count=2; 
 	}
+[exhale3]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0.2;
+		sizeMod=1.0;
+		pos=0, 1, 0; 
+		gravity=0, 0, 0;
+		
+
+		Texture=clouds2;
+		airdrag=0.1;
+		colorMap=0.39 0.39 0.39 0.7	0.39 0.39 0.39 0.7	0.39 0.39 0.39 0.5	0.1 0.1 0.1 0.3	0.1 0.1 0.1 0.2;
+
+		particleLifeSpread=3; 
+		particleSpeedSpread=2;  
+		particleSizeSpread=1;   
+		
+		particleLife=12;
+		numParticles=2; 
+		particleSpeed=1; 
+		particleSize=2;
+		
+		
+		emitVector=0, 1, 0; 
+		emitRot=80;
+		emitRotSpread=20;
+		directional=0; 
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
 [exhale2]
 	{
 		class=CSimpleParticleSystem;
@@ -860,6 +1112,42 @@
 		water=1;
 		ground=1;
   		count=2; 
+	}
+[exhale3]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0.2;
+		sizeMod=1.0;
+		pos=0, 1, 0; 
+		gravity=0, 0, 0;
+		
+
+		Texture=clouds2;
+		airdrag=0.1;
+		colorMap=0.39 0.39 0.39 0.7	0.39 0.39 0.39 0.7	0.39 0.39 0.39 0.5	0.1 0.1 0.1 0.3	0.1 0.1 0.1 0.2;
+
+		particleLifeSpread=3; 
+		particleSpeedSpread=2;  
+		particleSizeSpread=1;   
+		
+		particleLife=12;
+		numParticles=2; 
+		particleSpeed=1; 
+		particleSize=2;
+		
+		
+		emitVector=0, 1, 0; 
+		emitRot=80;
+		emitRotSpread=20;
+		directional=0; 
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
 	}
 [exhale2]
 	{
@@ -978,6 +1266,42 @@
 		ground=1;
   		count=2; 
 	}
+[exhale3]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0.2;
+		sizeMod=1.0;
+		pos=0, 1, 0; 
+		gravity=0, 0, 0;
+		
+
+		Texture=clouds2;
+		airdrag=0.1;
+		colorMap=0.39 0.39 0.39 0.7	0.39 0.39 0.39 0.7	0.39 0.39 0.39 0.5	0.1 0.1 0.1 0.3	0.1 0.1 0.1 0.2;
+
+		particleLifeSpread=3; 
+		particleSpeedSpread=2;  
+		particleSizeSpread=1;   
+		
+		particleLife=12;
+		numParticles=2; 
+		particleSpeed=1; 
+		particleSize=2;
+		
+		
+		emitVector=0, 1, 0; 
+		emitRot=80;
+		emitRotSpread=20;
+		directional=0; 
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
 [exhale2]
 	{
 		class=CSimpleParticleSystem;
@@ -1094,6 +1418,42 @@
 		water=1;
 		ground=1;
   		count=2; 
+	}
+[exhale3]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0.2;
+		sizeMod=1.0;
+		pos=0, 1, 0; 
+		gravity=0, 0, 0;
+		
+
+		Texture=clouds2;
+		airdrag=0.1;
+		colorMap=0.39 0.39 0.39 0.7	0.39 0.39 0.39 0.7	0.39 0.39 0.39 0.5	0.1 0.1 0.1 0.3	0.1 0.1 0.1 0.2;
+
+		particleLifeSpread=3; 
+		particleSpeedSpread=2;  
+		particleSizeSpread=1;   
+		
+		particleLife=12;
+		numParticles=2; 
+		particleSpeed=1; 
+		particleSize=2;
+		
+		
+		emitVector=0, 1, 0; 
+		emitRot=80;
+		emitRotSpread=20;
+		directional=0; 
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
 	}
 [exhale2]
 	{
