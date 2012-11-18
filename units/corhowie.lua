@@ -1,0 +1,164 @@
+-- UNITDEF -- CORHOWIE --
+--------------------------------------------------------------------------------
+
+local unitName = "corhowie"
+
+--------------------------------------------------------------------------------
+
+local unitDef = {
+  acceleration       = 0.108,
+  bmcode             = 1,
+  brakeRate          = 0.188,
+  buildCostEnergy    = 64500,
+  buildCostMetal     = 3450,
+  builder            = false,
+  buildPic           = [[CORHOWIE.DDS]],
+  buildTime          = 56483,
+  canAttack          = true,
+  canGuard           = true,
+  canMove            = true,
+  canPatrol          = true,
+  canstop            = 1,
+  category           = [[ARM LEVEL2 WEAPON NOTAIR NOTSUB CTRL_W]],
+  collisionvolumetest = 1,
+  corpse             = [[dead]],
+  defaultmissiontype = [[Standby]],
+  description        = [[Heavy Rocket Kbot]],
+  designation        = [[ARM-HA8]],
+  explodeAs          = [[CRAWL_BLAST]],
+  firestandorders    = 1,
+  footprintX         = 4,
+  footprintZ         = 4,
+  iconType           = [[assaultkbot]],
+  idleAutoHeal       = 5,
+  idleTime           = 1800,
+  maneuverleashlength = 640,
+  mass               = 3450,
+  maxDamage          = 18900,
+  maxSlope           = 20,
+  maxVelocity        = 1.6,
+  maxWaterDepth      = 12,
+  mobilestandorders  = 1,
+  movementClass      = [[HKBOT4]],
+  name               = [[Howie]],
+  noAutoFire         = false,
+  noChaseCategory    = [[VTOL]],
+  objectName         = [[CORHOWIE]],
+  seismicSignature   = 13,
+  selfDestructAs     = [[CRAWL_BLASTSML]],
+  side               = [[CORE]],
+  sightDistance      = 660,
+  smoothAnim         = true,
+  standingfireorder  = 2,
+  standingmoveorder  = 1,
+  steeringmode       = 2,
+  TEDClass           = [[KBOT]],
+  turninplaceanglelimit = 140,
+  turninplacespeedlimit = 1.0560001134872,
+  turnRate           = 979,
+  unitname           = [[corhowie]],
+  upright            = true,
+  version            = 1.2,
+  workerTime         = 0,
+ weaponDefs = nil,
+	weapons = {
+		[1] = {
+			badTargetCategory = [[SMALL TINY]],
+			def = [[asm]],
+			onlyTargetCategory = [[NOTVTOL]],
+		},
+	},
+}
+
+--------------------------------------------------------------------------------
+
+local weaponDefs = {
+	asm = {
+		areaOfEffect = 424,
+		burnblow = true,
+		cegTag = [[Trail_Large_Rocket]],
+		cruisealt = 120,
+		explosionGenerator = [[custom:Explosion_VeryHeavy_Rocket]],
+		fireStarter = 80,
+		flightTime = 15,
+		guidance = false,
+		lineOfSight = true,
+		metalpershot = 0,
+		model = [[antishipm]],
+		name = [[Antiship missile]],
+		range = 2090,
+		reloadtime = 27,
+		renderType = 1,
+		selfprop = true,
+		smokedelay = 0.02,
+		smokeTrail = true,
+		soundHitDry = [[mlrsboom]],
+		soundStart = [[mlrsfireshort]],
+		soundTrigger = true,
+		startsmoke = 1,
+		startVelocity = 150,
+		tolerance = 1000,
+		tracks = false,
+		trajectoryHeight = 2.8,
+		turnRate = 5000,
+		turret = true,
+		weaponAcceleration = 120,
+		weaponTimer = 15,
+		weaponType = [[MissileLauncher]],
+		weaponVelocity = 900,
+		damage = {
+			default = 7500,
+			subs = 5,
+		},
+	},
+}
+unitDef.weaponDefs = weaponDefs
+
+
+--------------------------------------------------------------------------------
+
+local featureDefs = {
+  dead = {
+    blocking           = true,
+    category           = [[corpses]],
+    damage             = 5100,
+    description        = [[Wreckage]],
+    energy             = 0,
+    featureDead        = [[heap]],
+    featurereclamate   = [[SMUDGE01]],
+    footprintX         = 3,
+    footprintZ         = 3,
+    height             = 15,
+    hitdensity         = 100,
+    metal              = 1725,
+    object             = [[CORHOWIE_dead]],
+    reclaimable        = true,
+    seqnamereclamate   = [[TREE1RECLAMATE]],
+    world              = [[All Worlds]],
+  },
+  heap = {
+    blocking           = false,
+    category           = [[heaps]],
+    damage             = 5100,
+    description        = [[Wreckage]],
+    energy             = 0,
+    featurereclamate   = [[SMUDGE01]],
+    footprintX         = 4,
+    footprintZ         = 4,
+    height             = 4,
+    hitdensity         = 100,
+    metal              = 863,
+    object             = [[3X3B]],
+    reclaimable        = true,
+    seqnamereclamate   = [[TREE1RECLAMATE]],
+    world              = [[All Worlds]],
+  },
+}
+unitDef.featureDefs = featureDefs
+
+
+--------------------------------------------------------------------------------
+
+return lowerkeys({ [unitName] = unitDef })
+
+--------------------------------------------------------------------------------
