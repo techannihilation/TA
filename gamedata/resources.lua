@@ -210,6 +210,10 @@ local resources = {
 			flare2='FlarenSpark/Flare2.TGA',
 			flare3='FlarenSpark/Flare3.TGA',
 			flarePills1='FlarenSpark/FlarePills1.TGA',
+			
+			lightring='lightring.tga',
+			lightb3='lightningball3.tga',
+			lightb4='lightningball4.tga',
 		},
 	},
 }

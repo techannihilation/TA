@@ -56,6 +56,13 @@ local unitDef = {
 	upright = true,
 	workerTime = 0,
 	featureDefs = nil,
+	sfxtypes = {
+		explosiongenerators = {
+			[1] = [[custom:zeusmuzzle]],
+			[2] = [[custom:zeusgroundflash]],
+
+		},
+	},
 	sounds = {
 		canceldestruct = [[cancel2]],
 		underattack = [[warning1]],
