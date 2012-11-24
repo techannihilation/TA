@@ -67,6 +67,7 @@ local unitDef = {
 		[8] = [[armgor]],
 		[9] = [[macross]],
 		[10] = [[corjurgen]],
+		[11] = [[corhowie]],
 	},
 	featureDefs = nil,
 	sfxtypes = {

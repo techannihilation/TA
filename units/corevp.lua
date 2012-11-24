@@ -65,7 +65,6 @@ local unitDef = {
 	buildoptions = {
 		[1] = [[clb]],
 		[2] = [[armmcv]],
-		[3] = [[rockblack]],
 		[4] = [[corbt]],
 		[5] = [[armtigre2]],
 	},
