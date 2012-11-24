@@ -190,7 +190,7 @@ experimental_land = {
 	tllacid = 99,
 	tlllongshot = 99,
 	-- tll t3 bots
-        helepolis = 99,
+	helepolis = 99,
 	hyperion = 99,
 	heavyimpact = 99,
 	tllhtcb = 99,
@@ -235,6 +235,7 @@ experimental_land = {
 	armraven = 99,
 	corjurgen = 99,
 	troman = 99,
+	corhowie = 99,
 	-- t4
 	corkrog1 = 99,
 	corkarg1 = 99,
@@ -259,6 +260,7 @@ flamethrowers = {
 sniper_resistant = {
 	tllbind = 99,
 	armzeus = 99,
+	armzeus1 = 99,
 	corcan = 99,
 },
 raider_resistant = {
