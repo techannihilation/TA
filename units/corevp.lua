@@ -65,8 +65,8 @@ local unitDef = {
 	buildoptions = {
 		[1] = [[clb]],
 		[2] = [[armmcv]],
-		[4] = [[corbt]],
-		[5] = [[armtigre2]],
+		[3] = [[corbt]],
+		[4] = [[armtigre2]],
 	},
 	featureDefs = nil,
 	sounds = {
