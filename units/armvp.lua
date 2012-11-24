@@ -75,7 +75,6 @@ local unitDef = {
 		[15] = [[armscar]],
 		[16] = [[armrottweiler]],
 		[17] = [[armarty]],
-		[18] = [[armeman]],
 	},
 	featureDefs = nil,
 	sounds = {
