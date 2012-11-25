@@ -88,8 +88,8 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
+			badTargetCategory = [[MEDIUM LARGE HUGE]],
 			def = [[SPRAY_LIGHTNING]],
-			badTargetCategory = [[MEDIUM LARGE HUGE]], 
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
@@ -101,8 +101,6 @@ local weaponDefs = {
 	SPRAY_LIGHTNING = {
 		areaOfEffect = 17,
 		beamWeapon = true,
-		color = 128,
-		color2 = 130,
 		craterBoost = 0,
 		craterMult = 0,
 		duration = 1.9,
