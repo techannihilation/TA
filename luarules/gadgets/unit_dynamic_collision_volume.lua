@@ -47,19 +47,29 @@ if (gadgetHandler:IsSyncedCode()) then
 	function gadget:Initialize()
 		local mapConfig = "LuaRules/Configs/DynCVmapCFG/" .. Game.mapName .. ".lua"
 		if VFS.FileExists(mapConfig) then
-			local mapFeatures = include(mapConfig)
+			local mapFeatures = VFS.Include(mapConfig)
 			for _, featID in pairs(Spring.GetAllFeatures()) do
 				local featureModel = FeatureDefs[Spring.GetFeatureDefID(featID)].modelname:lower()
 				if featureModel:len() > 4 then
-					local featureModelTrim = featureModel:match("/.*%."):sub(2,-2)
+					local featureModelTrim
+					if Game.version > "91.0" then
+						featureModelTrim = featureModel:sub(1,-5) -- featureModel:match("/.*%."):sub(2,-2)
+					else
+						featureModelTrim = featureModel:match("/.*%."):sub(2,-2)
+					end
 					if mapFeatures[featureModelTrim] then
 						local p = mapFeatures[featureModelTrim]
 						spSetFeatureCollisionData(featID, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9])
 						spSetFeatureRadiusAndHeight(featID, math.min(p[1], p[3])/2, p[2])
 					elseif featureModel:find(".s3o") then
 						local xs, ys, zs, xo, yo, zo, vtype, htype, axis, _ = spGetFeatureCollisionData(featID)
-						if (vtype==4 and xs==ys and ys==zs) then
-							spSetFeatureCollisionData(featID, xs, ys*0.75, zs,  xo, yo-ys*0.09, zo,  vtype, htype, axis)
+						Spring.Echo(featureModel, xs, ys, zs, xo, yo, zo, vtype, htype, axis)
+						if (vtype>=3 and xs==ys and ys==zs) then
+							if Game.version > "91.0" then
+								spSetFeatureCollisionData(featID, xs, ys*0.75, zs,  xo, yo-ys*0.09, zo,  1, htype, 1)
+							else
+								spSetFeatureCollisionData(featID, xs, ys*0.75, zs,  xo, yo-ys*0.09, zo,  vtype, htype, axis)
+							end
 						end
 					end
 				end
@@ -75,12 +85,13 @@ if (gadgetHandler:IsSyncedCode()) then
 						rs, hs = 0.75, 0.67  
 					end
 					local xs, ys, zs, xo, yo, zo, vtype, htype, axis, _ = spGetFeatureCollisionData(featID)
-					if (vtype==4 and xs==ys and ys==zs) then
+					if (vtype>=3 and xs==ys and ys==zs) then
 						spSetFeatureCollisionData(featID, xs*rs, ys*hs, zs*rs,  xo, yo-ys*0.1323529*rs, zo,  vtype, htype, axis)
 					end
 					spSetFeatureRadiusAndHeight(featID, spGetFeatureRadius(featID)*rs, spGetFeatureHeight(featID)*hs)			
 				elseif featureModel:find(".s3o") then
-					if (vtype==4 and xs==ys and ys==zs) then
+					local xs, ys, zs, xo, yo, zo, vtype, htype, axis, _ = spGetFeatureCollisionData(featID)
+					if (vtype>=3 and xs==ys and ys==zs) then
 						spSetFeatureCollisionData(featID, xs, ys*0.75, zs,  xo, yo-ys*0.09, zo,  vtype, htype, axis)
 					end
 				end
@@ -123,14 +134,14 @@ if (gadgetHandler:IsSyncedCode()) then
 				rs, hs, ws = 0.48, 0.225, 0.35
 			end
 			local xs, ys, zs, xo, yo, zo, vtype, htype, axis, _ = spGetUnitCollisionData(unitID)
-			if (vtype==4 and xs==ys and ys==zs) then
+			if (vtype>=3 and xs==ys and ys==zs) then
 				spSetUnitCollisionData(unitID, xs*ws, ys*hs, zs*rs,  xo, yo, zo,  vtype, htype, axis)
 			end
 			--Reduce radius and height for 3DO units, for buildings this results in cons not being able
 			--to start or finish them depending if the scaling was made on UnitCreated() or UnitFinished()
-			if not UnitDefs[unitDefID].isBuilding then
+			--if not UnitDefs[unitDefID].isBuilding then
 				spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*rs, spGetUnitHeight(unitID)*hs)
-			end
+			--end
 		end
 	end
 
@@ -146,7 +157,7 @@ if (gadgetHandler:IsSyncedCode()) then
 				rs, hs = 0.75, 0.67
 			end
 			local xs, ys, zs, xo, yo, zo, vtype, htype, axis, _ = spGetFeatureCollisionData(featureID)
-			if (vtype==4 and xs==ys and ys==zs) then
+			if (vtype>=3 and xs==ys and ys==zs) then
 				spSetFeatureCollisionData(featureID, xs*rs, ys*hs, zs*rs,  xo, yo-ys*0.09, zo,  vtype, htype, axis)
 			end
 			spSetFeatureRadiusAndHeight(featureID, spGetFeatureRadius(featureID)*rs, spGetFeatureHeight(featureID)*hs)			
@@ -163,6 +174,7 @@ if (gadgetHandler:IsSyncedCode()) then
 		elseif dynamicPieceCollisionVolume[un] then
 			popupUnits[unitID]={name=un, state=-1, perPiece=true, numPieces = #spGetPieceList(unitID)-1}
 		end
+		--[[
 		if UnitDefs[unitDefID].isBuilding and UnitDefs[unitDefID].model.type=="3do" then
 			local rs, hs
 			if (spGetUnitRadius(unitID)>47) then
@@ -172,6 +184,7 @@ if (gadgetHandler:IsSyncedCode()) then
 			end
 			scaleBuilding[unitID] = {rs, hs, 3+select(1,spGetGameFrame())}
 		end
+		--]]
 	end
 
 
@@ -244,6 +257,7 @@ if (gadgetHandler:IsSyncedCode()) then
 			end			
 		end
 		-- Rescale radius and height of buildings in list
+		--[[
 		for unitID, p in pairs(scaleBuilding) do
 			if spValidUnitID(unitID) then
 				if p[3] < select(1,spGetGameFrame()) then
@@ -254,6 +268,7 @@ if (gadgetHandler:IsSyncedCode()) then
 				scaleBuilding[unitID] = nil
 			end
 		end
+		--]]
 	end
 	
 end
