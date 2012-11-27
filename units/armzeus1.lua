@@ -60,7 +60,6 @@ local unitDef = {
 		explosiongenerators = {
 			[1] = [[custom:zeusmuzzle]],
 			[2] = [[custom:zeusgroundflash]],
-
 		},
 	},
 	sounds = {
@@ -99,8 +98,6 @@ local weaponDefs = {
 	LIGHTNING1 = {
 		areaOfEffect = 8,
 		beamWeapon = true,
-		color = 128,
-		color2 = 130,
 		craterBoost = 0,
 		craterMult = 0,
 		duration = 10,
