@@ -5,7 +5,7 @@ function widget:GetInfo()
   return {
     name      = "Projectile lights",
     desc      = "Glows them projectiles!",
-    author    = "Beherith, Deadnight Warrior",
+    author    = "Beherith, Deadnight Warrior, Nixtux",
     date      = "july 2012",
     license   = "GNU GPL, v2 or later",
     layer     = -1,
@@ -13,7 +13,7 @@ function widget:GetInfo()
   }
 end
 
--- minor change by nixtux , removed dgun no need as its controled by dyanimic lighting gadget
+-- minor change by nixtux , Add weapons blacklist
 
 local spGetUnitViewPosition 	= Spring.GetUnitViewPosition
 local spGetUnitDefID			= Spring.GetUnitDefID
@@ -57,6 +57,25 @@ local noise = {--this is so that it flashes a bit, should be addressed with (x+z
 	}
 local pieceprojectilecolor={1.0,1.0,0.5,0.25} -- This is the color of piece projectiles, set to nil to disable
 
+local BLACKLIST = {
+   ["armpaspd_armpaspd"] = true,
+   ["armsnipe_armsnipe_weapon"] = true,
+   ["cormddm_armsnipe_weapon"] = true,
+   ["corprot_corprot_weapon"] = true,
+   ["tllsniper_corprot_weapon"] = true,
+   ["troman_armsnipe_weapon"] = true,
+   ["heavyimpact_cormechart"] = true,
+   ["armbrtha_arm_berthacannon2"] = true,
+   ["corint_core_intimidator2"]= true,
+   ["tlllrpt_arm_berthacannon  "] = true,
+   ["corint1_core_intimidator1" ] = true,
+   ["armbrtha1_arm_berthacannon1"] = true,
+   ["tlldmc_tlldmc"] = true,
+   ["ajuno_juno_pulse"] = true,
+   ["cjuno_juno_pulse"] = true,
+}
+
+   
 listC = gl.CreateList(function()	-- Cannon light decal texture
 	glBeginEnd(GL.QUAD_STRIP,function()  
     --point1
@@ -124,12 +143,12 @@ function widget:Initialize() -- create lighttable
 					--Spring.Echo('Cannon',WeaponDefs[weaponID]['name'],'size', WeaponDefs[weaponID]['size'])
 					size=WeaponDefs[weaponID]['size']
 					plighttable[WeaponDefs[weaponID]['name']]={1.0,1.0,0.5,0.5*((size-0.5)/3.0)}
-				
+
 				elseif (WeaponDefs[weaponID]['type'] == 'LaserCannon') then
 					local colour = WeaponDefs[weaponID].visuals
 					--Spring.Echo(colour)
 					plighttable[WeaponDefs[weaponID]['name']]={colour.colorR,colour.colorG,colour.colorB,0.6,true}  --{0,1,0,0.6}
-				
+
 				elseif (WeaponDefs[weaponID]['type'] == 'LightningCannon') then
 					--Spring.Echo('LightningCannon',WeaponDefs[weaponID]['name'],'size', WeaponDefs[weaponID]['size'])
 					--size=WeaponDefs[weaponID]['size']
@@ -139,13 +158,19 @@ function widget:Initialize() -- create lighttable
 					--Spring.Echo('MissileLauncher',WeaponDefs[weaponID]['name'],'size', WeaponDefs[weaponID]['size'])
 					size=WeaponDefs[weaponID]['size']
 					plighttable[WeaponDefs[weaponID]['name'] ]={1,1,0.8,0.5*((size-1)/3)}
-					
+
 				elseif (WeaponDefs[weaponID]['type'] == 'StarburstLauncher') then
 					--Spring.Echo('StarburstLauncher',WeaponDefs[weaponID]['name'],'size', WeaponDefs[weaponID]['size'])
 					--size=WeaponDefs[weaponID]['size']
 					plighttable[WeaponDefs[weaponID]['name'] ]={1,1,0.8,0.5}
 				end
-			
+
+				for noeffect, v in pairs( BLACKLIST ) do
+					--Spring.Echo(WeaponDefs[weaponID]['name'],'noeffect is ', noeffect)
+					if (WeaponDefs[weaponID]['name'] == noeffect) then
+						plighttable[WeaponDefs[weaponID]['name']]=nil
+					end
+				end
 				
 			end
 		end
