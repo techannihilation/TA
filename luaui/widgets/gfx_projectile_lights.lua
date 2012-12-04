@@ -140,7 +140,7 @@ function widget:Initialize() -- create lighttable
 				--Spring.Echo(UnitDefs[u]['name']..'_'..WeaponDefs[weaponID]['name'])
 				--WeaponDefs[weaponID]['name'] returns: armcom_armcomlaser
 				if (BLACKLIST[WeaponDefs[weaponID]['name']]) then
-					Spring.Echo('Blacklist',WeaponDefs[weaponID]['name'])
+					--Spring.Echo('Blacklist',WeaponDefs[weaponID]['name'])
 					plighttable[WeaponDefs[weaponID]['name']]=nil
 			
 				elseif (WeaponDefs[weaponID]['type'] == 'Cannon' or WeaponDefs[weaponID]['type'] == 'EmgCannon') then
