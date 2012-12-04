@@ -139,7 +139,11 @@ function widget:Initialize() -- create lighttable
 				weaponID=UnitDefs[u]['weapons'][w]['weaponDef']
 				--Spring.Echo(UnitDefs[u]['name']..'_'..WeaponDefs[weaponID]['name'])
 				--WeaponDefs[weaponID]['name'] returns: armcom_armcomlaser
-				if (WeaponDefs[weaponID]['type'] == 'Cannon' or WeaponDefs[weaponID]['type'] == 'EmgCannon') then
+				if (BLACKLIST[WeaponDefs[weaponID]['name']]) then
+					Spring.Echo('Blacklist',WeaponDefs[weaponID]['name'])
+					plighttable[WeaponDefs[weaponID]['name']]=nil
+			
+				elseif (WeaponDefs[weaponID]['type'] == 'Cannon' or WeaponDefs[weaponID]['type'] == 'EmgCannon') then
 					--Spring.Echo('Cannon',WeaponDefs[weaponID]['name'],'size', WeaponDefs[weaponID]['size'])
 					size=WeaponDefs[weaponID]['size']
 					plighttable[WeaponDefs[weaponID]['name']]={1.0,1.0,0.5,0.5*((size-0.5)/3.0)}
@@ -164,14 +168,6 @@ function widget:Initialize() -- create lighttable
 					--size=WeaponDefs[weaponID]['size']
 					plighttable[WeaponDefs[weaponID]['name'] ]={1,1,0.8,0.5}
 				end
-
-				for noeffect, v in pairs( BLACKLIST ) do
-					--Spring.Echo(WeaponDefs[weaponID]['name'],'noeffect is ', noeffect)
-					if (WeaponDefs[weaponID]['name'] == noeffect) then
-						plighttable[WeaponDefs[weaponID]['name']]=nil
-					end
-				end
-				
 			end
 		end
 	end
