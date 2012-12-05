@@ -78,12 +78,12 @@ local dynamicPieceCollisionVolume = {}	--dynamic per piece collision volume defi
 
 
 	unitCollisionVolume["armason"] = {
-		on={57,60,57,0,-7,0,0,1,0},    --{Xscale,Yscale,Zscale, Xoffset,Yoffset,Zoffset, vType,tType,axis}
-		off={24,34,24,0,10,0,0,1,0},
+		on={57,60,57,0,-7,0,1,1,1},    --{Xscale,Yscale,Zscale, Xoffset,Yoffset,Zoffset, vType,tType,axis}
+		off={24,34,24,0,10,0,1,1,1},
 	}
 	unitCollisionVolume["armamb"] = {
-		on={49,45,49,-0.5,-14,0,0,1,0},
-		off={49,26,49,-0.5,-14,0,0,1,0},
+		on={49,45,49,-0.5,-14,0,1,1,1},
+		off={49,26,49,-0.5,-14,0,1,1,1},
 	}
 	unitCollisionVolume["armanni"] = {
 		on={54,81,54,0,-2,0,2,1,0},
@@ -94,24 +94,24 @@ local dynamicPieceCollisionVolume = {}	--dynamic per piece collision volume defi
 		off={95,22,95,0,-1,0,1,1,1},
 	}
 	unitCollisionVolume["armmmkr"] = {
-		on={60,72,60,0,7,0,1,1,1},
+		on={60,70,60,0,7,0,1,1,1},
 		off={60,50,60,0,-4,0,1,1,1},
 	}
 	unitCollisionVolume["armpb"] = {
-		on={39,88,39,0,-11,0,0,1,0},
-		off={39,55,39,0,-27,0,0,1,0},
+		on={39,78,39,0,-11,0,1,1,1},
+		off={39,40,39,0,-27,0,1,1,1},
 	}
 	unitCollisionVolume["armplat"] = {
 		on={105,66,105,0,33,0,2,1,0},
 		off={105,44,105,0,0,0,2,1,0},
 	}
 	unitCollisionVolume["armsolar"] = {
-		on={83,76,83,0,-18,1,0,1,0},
-		off={50,76,50,0,-18,1,0,1,0},
+		on={83,76,83,0,-18,1,1,1,1},
+		off={50,76,50,0,-18,1,1,1,1},
 	}
 	unitCollisionVolume["armtarg"] = {
 		on={62,34,62,0,0,0,2,1,0},
-		off={55,78,55,0,-19.5,0,0,1,0},
+		off={55,78,55,0,-19.5,0,1,1,1},
 	}
 	unitCollisionVolume["armvp"] = {
 		on={120,34,92,0,0,0,2,1,0},
@@ -122,48 +122,48 @@ local dynamicPieceCollisionVolume = {}	--dynamic per piece collision volume defi
 		off={45,87,45,0,0,0,2,1,0},
 	}
 	unitCollisionVolume["corfmkr"] = {
-		on={48,46,48,0,0,0,0,1,0},
-		off={48,43,48,0,-16,0,0,1,0},
+		on={48,46,48,0,0,0,1,1,1},
+		off={48,43,48,0,-16,0,1,1,1},
 	}
 	unitCollisionVolume["cormexp"] = {
-		on={83,77,78,0,-27,0,0,1,0},
-		off={90,135,84,0,-27,0,0,1,0},
+		on={83,77,83,0,-27,0,1,1,1},
+		off={90,135,90,0,-27,0,1,1,1},
 	}
 	unitCollisionVolume["cormmkr"] = {
 		on={60,60,60,0,0,0,1,1,1},
-		off={50,92,50,0,-22.5,0,0,1,0},
+		off={55,92,55,0,-22.5,0,1,1,1},
 	}
 	unitCollisionVolume["corplat"] = {
 		on={112,60,112,0,28,0,1,1,1},
 		off={112,35,112,0,0,0,1,1,1},
 	}
 	unitCollisionVolume["corsolar"] = {
-		on={86,78,86,0,-25,0,0,1,0},
-		off={77,78,77,0,-35,0,0,1,0},
+		on={86,78,86,0,-25,0,1,1,1},
+		off={60,78,60,0,-35,0,1,1,1},
 	}
 	unitCollisionVolume["cortarg"] = {
 		on={64,20,64,0,0,0,1,1,1},
 		off={38,20,38,0,0,0,1,1,1},
 	}
 	unitCollisionVolume["corvipe"] = {
-		on={39,86,39,0,-10,0,0,1,0},
-		off={39,55,39,0,-27,0,0,1,0},
+		on={39,86,39,0,-10,0,1,1,1},
+		off={39,55,39,0,-27,0,1,1,1},
 	}
 	unitCollisionVolume["packo"] = {
-		on={49,51,49,-0.5,-10,0,0,1,0},
-		off={49,23,49,-0.5,-10,0,0,1,0},
+		on={49,51,49,-0.5,-10,0,1,1,1},
+		off={49,23,49,-0.5,-10,0,1,1,1},
 	}
 	unitCollisionVolume["shiva"] = {
-		on={54,50,50,0,2,-1,0,1,0},
-		off={54,45,50,0,-4,-1,0,1,0},
+		on={50,50,50,0,2,-1,1,1,1},
+		off={54,45,54,0,-4,-1,1,1,1},
 	}
 	unitCollisionVolume["tllobliterator"] = {
-		on={73,57,84,0,-7,6,0,1,0},
-		off={73,38,60,0,-12,0,0,1,0},
+		on={82,57,82,0,-7,6,1,1,1},
+		off={73,30,73,0,-12,0,1,1,1},
 	}	
 	pieceCollisionVolume["armbrtha"] = {
 			["0"]={32,80,32,0,20,0,1,1},
-			["2"]={26,30,70,0,0,14,1,2},
+			["2"]={30,30,70,0,0,14,1,2},
 			["3"]={8,8,42,0,1,94,1,2},
 	}
 	pieceCollisionVolume["corint"] = {
@@ -188,11 +188,11 @@ local dynamicPieceCollisionVolume = {}	--dynamic per piece collision volume defi
 	}	
 	dynamicPieceCollisionVolume["corgant"] = {
 		on = {
-			["0"]={118,96,130,0,0,0,1,2},
-			["17"]={105,55,105,0,7,30,1,2},
+			["0"]={130,96,130,0,0,0,1,2},
+			["17"]={105,35,105,0,13,30,2,2},
 		},
 		off = {
-			["0"]={110,66,130,0,0,0,1,2},
+			["0"]={130,66,130,0,0,0,1,2},
 		}
 	}
 	dynamicPieceCollisionVolume["armarad"] = {
@@ -201,7 +201,7 @@ local dynamicPieceCollisionVolume = {}	--dynamic per piece collision volume defi
 			["2"]={76,29,29,0,3,0,1,0},
 		},
 		off = {
-			["0"]={32,51,32,0,8,1,0,0},
+			["0"]={32,51,32,0,8,1,1,1},
 		}
 	}
 		dynamicPieceCollisionVolume["cortoast"] = {
