@@ -29,14 +29,19 @@ local special = {
   [UnitDefNames["corasp"].id] = 32,
   [UnitDefNames["corcrw"].id] = 24,
 }
+
+local SpSetUnitRadiusAndHeight = Spring.SetUnitRadiusAndHeight
+local SpGetUnitRadius = Spring.GetUnitRadius
+local SpGetUnitHeight = Spring.GetUnitHeight
+
 function gadget:UnitCreated(unitID, unitDefID, teamID, builderID)
 	if special[unitDefID] then
 		
 		--Spring.Echo('reset radius for airtrans')
 	--Spring.SetUnitRadiusAndHeight New in version 89.0( number unitID, number radius, number height )
-		Spring.SetUnitRadiusAndHeight(unitID, special[unitDefID], 32 )
+		SpSetUnitRadiusAndHeight(unitID, special[unitDefID], 32 )
 	else
-		Spring.SetUnitRadiusAndHeight(unitID,Spring.GetUnitRadius(unitID)*0.66,Spring.GetUnitHeight(unitID))
+		SpSetUnitRadiusAndHeight(unitID,Spring.GetUnitRadius(unitID)*0.66,SpGetUnitHeight(unitID))
 	end
 end
 

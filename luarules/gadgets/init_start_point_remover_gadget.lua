@@ -11,13 +11,15 @@ function gadget:GetInfo()
 	}
 end
 
+local SpMarkerErasePosition = Spring.MarkerErasePosition
+
 if not gadgetHandler:IsSyncedCode() then
 	function gadget:DrawScreen()
 		local frame=Spring.GetGameFrame()
 		if frame>=2 then
 			for _,team in ipairs(Spring.GetTeamList()) do
 				local x,y,z = Spring.GetTeamStartPosition(team)
-				Spring.MarkerErasePosition(x or 0, y or 0, z or 0)
+				SpMarkerErasePosition(x or 0, y or 0, z or 0)
 			end
 		end
 		if frame>=2 then

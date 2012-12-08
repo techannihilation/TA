@@ -21,6 +21,7 @@ if (not gadgetHandler:IsSyncedCode()) then
 end
 
 local GetUnitCommands = Spring.GetUnitCommands
+local SpGiveOrderArrayToUnitArray = Spring.GiveOrderArrayToUnitArray
 
 local badfactories={
   [UnitDefNames["corsy"].id] = true,
@@ -98,7 +99,7 @@ function gadget:UnitFromFactory(unitID, unitDefID, unitTeam, factID, factDefID, 
 				--Spring.Echo('facing',f)
 			end
 			--Spring.Echo('Unit unstuck from lab')
-			Spring.GiveOrderArrayToUnitArray({unitID},newcmd)
+			SpGiveOrderArrayToUnitArray({unitID},newcmd)
 		end
 	else
 		if badfactories[factDefID] and #Spring.GetUnitCommands(factID)==0 then
@@ -115,7 +116,7 @@ function gadget:UnitFromFactory(unitID, unitDefID, unitTeam, factID, factDefID, 
 				end
 				y=Spring.GetGroundHeight(x,z)
 				local newcmd={{10,{x,y,z},16}} --CMD.MOVE, pos ,16
-				Spring.GiveOrderArrayToUnitArray({unitID},newcmd)
+				SpGiveOrderArrayToUnitArray({unitID},newcmd)
 		end
 	end
 end

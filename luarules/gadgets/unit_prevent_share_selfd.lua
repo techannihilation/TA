@@ -27,9 +27,12 @@ if (not gadgetHandler:IsSyncedCode()) then
   return false
 end
 
+local SpGetUnitSelfDTime = Spring.GetUnitSelfDTime
+local SpGiveOrderToUnit = Spring.GiveOrderToUnit
+
 function gadget:UnitGiven(unitID, unitDefID, unitTeam, oldTeam)
-  if (Spring.GetUnitSelfDTime(unitID) > 0) then
-    Spring.GiveOrderToUnit(unitID, CMD.SELFD, {}, {})
+  if (SpGetUnitSelfDTime(unitID) > 0) then
+    SpGiveOrderToUnit(unitID, CMD.SELFD, {}, {})
   end
 end
 

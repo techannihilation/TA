@@ -17,12 +17,14 @@ if (not gadgetHandler:IsSyncedCode()) then
   return
 end
 
+local SpSetUnitRulesParam = Spring.SetUnitRulesParam
+
 function gadget:UnitCreated(unitID, unitDefID, unitTeam)
-  Spring.SetUnitRulesParam(unitID, "under_construction", 1, { public = true })
+  SpSetUnitRulesParam(unitID, "under_construction", 1, { public = true })
 end
 
 function gadget:UnitFinished(unitID, unitDefID, unitTeam)
-  Spring.SetUnitRulesParam(unitID, "under_construction", 0, { public = true })
+  SpSetUnitRulesParam(unitID, "under_construction", 0, { public = true })
 end
 
 --------------------------------------------------------------------------------

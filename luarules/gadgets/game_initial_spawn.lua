@@ -57,6 +57,7 @@ local spSetTeamRulesParam = Spring.SetTeamRulesParam
 local spGetTeamStartPosition = Spring.GetTeamStartPosition
 local spGetAllyTeamStartBox = Spring.GetAllyTeamStartBox
 local spCreateUnit = Spring.CreateUnit
+local SpAddUnitResource = Spring.AddUnitResource
 local spGetGroundHeight = Spring.GetGroundHeight
 
 ----------------------------------------------------------------
@@ -103,8 +104,8 @@ local function SpawnTeamStartUnit(teamID, allyID, x, z)
     end
     local unitID = spCreateUnit(startUnit, x, spGetGroundHeight(x, z), z, 0, teamID)
      if (comStorage) then
-      Spring.AddUnitResource(unitID, 'm', startMetal)
-      Spring.AddUnitResource(unitID, 'e', startEnergy)
+      SpAddUnitResource(unitID, 'm', startMetal)
+      SpAddUnitResource(unitID, 'e', startEnergy)
     end
 end
 

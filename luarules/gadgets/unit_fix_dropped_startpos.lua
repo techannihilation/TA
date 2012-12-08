@@ -13,6 +13,9 @@ end
 -- SYNCED
 if gadgetHandler:IsSyncedCode() then
 
+local SpSetUnitPosition = Spring.SetUnitPosition
+local SpGiveOrderToUnit = Spring.GiveOrderToUnit
+  
 function gadget:GameFrame(n)
 
   if (n == 1) then
@@ -34,8 +37,8 @@ function gadget:GameFrame(n)
           -- all ok
         else
           -- move into middle of team start box
-          Spring.SetUnitPosition(unitid, (xmin+xmax)/2, (zmin+zmax)/2)
-          Spring.GiveOrderToUnit(unitid, CMD.STOP, {}, {});
+          SpSetUnitPosition(unitid, (xmin+xmax)/2, (zmin+zmax)/2)
+          SpGiveOrderToUnit(unitid, CMD.STOP, {}, {});
         end
       until true
     end

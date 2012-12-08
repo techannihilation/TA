@@ -10,6 +10,9 @@
       }
     end
      
+    
+local SpSpawnCEG = Spring.SpawnCEG
+    
 if (not gadgetHandler:IsSyncedCode()) then
   return
 end
@@ -21,7 +24,7 @@ function gadget:FeatureDestroyed(featureID,allyteam)
 		rm, mm, re, me, rl = Spring.GetFeatureResources(featureID)
 		if (rm ~= nil) then
 			if mm==0 and re == 0 then
-				Spring.SpawnCEG("sparklegreen", fx, fy, fz)
+				SpSpawnCEG("sparklegreen", fx, fy, fz)
 			end
 		end
 	end

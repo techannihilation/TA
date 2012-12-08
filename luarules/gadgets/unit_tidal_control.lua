@@ -51,6 +51,7 @@ local windMin              = Game.windMin
 local windMax              = Game.windMax
 local AddUnitResource      = Spring.AddUnitResource
 local GetUnitBasePosition  = Spring.GetUnitBasePosition
+local SpGetAllUnits        = Spring.GetAllUnits
 local pi_2	= math.pi * 2
 local fmod  = math.fmod
 local atan2 = math.atan2
@@ -117,7 +118,7 @@ function gadget:Initialize()
   -- effect between 0% (flat maps) and 100% (mountained maps)
   slope = 1/(1+math.exp(4 - groundExtreme/105))
 
-  for _, unitID in ipairs(Spring.GetAllUnits()) do
+  for _, unitID in ipairs(SpGetAllUnits()) do
     local unitDefID = Spring.GetUnitDefID(unitID)
     if (windDefs[unitDefID]) then
       SetupUnit(unitID)

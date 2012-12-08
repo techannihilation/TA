@@ -16,6 +16,7 @@ LUAUI_DIRNAME= 'LuaUI/'
 local random  = math.random
 local abs = math.abs
 local GetGroundBlocked = Spring.GetGroundBlocked
+local SpSpawnCEG = Spring.SpawnCEG
 local nonexplosiveWeapons = {
 	LaserCannon = true,
 	BeamLaser = true,
@@ -46,13 +47,13 @@ else
 		local wType = WeaponDefs[weaponID].type
 				if not nonexplosiveWeapons[wType] and isWater and abs(py) <= aoe and (not GetGroundBlocked(px, pz)) then
 		        if aoe >= 8 and aoe < 16 then
-				Spring.SpawnCEG(splashCEG1, px, 0, pz)
+				SpSpawnCEG(splashCEG1, px, 0, pz)
 			elseif aoe >= 16 and aoe < 48 then
-				Spring.SpawnCEG(splashCEG2, px, 0, pz)
+				SpSpawnCEG(splashCEG2, px, 0, pz)
 			elseif aoe >= 48 and aoe < 64 then
-				Spring.SpawnCEG(splashCEG3, px, 0, pz)
+				SpSpawnCEG(splashCEG3, px, 0, pz)
 			elseif aoe >= 64 and aoe < 300 then
-				Spring.SpawnCEG(splashCEG4, px, 0, pz)
+				SpSpawnCEG(splashCEG4, px, 0, pz)
 			end
 			return true
 		else
