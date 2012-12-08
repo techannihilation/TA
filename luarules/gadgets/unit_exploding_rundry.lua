@@ -127,6 +127,10 @@ local GetUnitDefID         = Spring.GetUnitDefID
 local GetUnitBasePosition  = Spring.GetUnitBasePosition
 local GetUnitPosition      = Spring.GetUnitPosition
 local GetGroundHeight      = Spring.GetGroundHeight
+local SpSpawnCEG           = Spring.SpawnCEG
+local SpDestroyUnit        = Spring.DestroyUnit
+local SpGetAllUnits        = Spring.GetAllUnits
+
 local Buffer = 2
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
@@ -150,13 +154,13 @@ function gadget:GameFrame(n)
 	  if (minwater + groundy ) > ( 0 + Buffer) then 
 	    local rx, ry, rz = GetUnitPosition(unitID)
 	    if mass < 601 then
-	      Spring.SpawnCEG("Death_Explosion_Tidal_Small", rx, 0, rz)
+	      SpSpawnCEG("Death_Explosion_Tidal_Small", rx, 0, rz)
 	    elseif mass >= 601 and mass <= 4000 then
-	      Spring.SpawnCEG("Death_Explosion_Tidal", rx, 0, rz)
+	      SpSpawnCEG("Death_Explosion_Tidal", rx, 0, rz)
 	    else
-	      Spring.SpawnCEG("Death_Explosion_Tidal_Large", rx, 0, rz)
+	      SpSpawnCEG("Death_Explosion_Tidal_Large", rx, 0, rz)
 	    end
-	    Spring.DestroyUnit(unitID, true, false)
+	    SpDestroyUnit(unitID, true, false)
 	  end
      
     end
@@ -173,7 +177,7 @@ end
 
 
 function gadget:Initialize()
-  for _, unitID in ipairs(Spring.GetAllUnits()) do
+  for _, unitID in ipairs(SpGetAllUnits()) do
     local unitDefID = Spring.GetUnitDefID(unitID)
     if (tideDefs[unitDefID]) then
       SetupUnit(unitID)
