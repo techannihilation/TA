@@ -11,6 +11,10 @@ function gadget:GetInfo()
 end
 
 local CMD_AREAATTACK = 39954
+local SpGiveOrderToUnit = Spring.GiveOrderToUnit
+local SpSetUnitMoveGoal = Spring.SetUnitMoveGoal
+local SpInsertUnitCmdDesc = Spring.InsertUnitCmdDesc
+local SpSetCustomCommandDrawData = Spring.SetCustomCommandDrawData
 
 if (gadgetHandler:IsSyncedCode()) then
 
@@ -43,12 +47,12 @@ function gadget:GameFrame(f)
 		local phase = math.random(200*math.pi)/100.0
 		if o.radius > 0 then
 			local amp = math.random(o.radius)
-			Spring.GiveOrderToUnit(o.unit, CMD.INSERT, {0, CMD.ATTACK, 0, o.x + math.cos(phase)*amp, o.y, o.z + math.sin(phase)*amp}, {"alt"})
+			SpGiveOrderToUnit(o.unit, CMD.INSERT, {0, CMD.ATTACK, 0, o.x + math.cos(phase)*amp, o.y, o.z + math.sin(phase)*amp}, {"alt"})
 		end
 	end
 	for i,o in pairs(closeList) do
 		closeList[i] = nil
-		Spring.SetUnitMoveGoal(o.unit,o.x,o.y,o.z,o.radius)
+		SpSetUnitMoveGoal(o.unit,o.x,o.y,o.z,o.radius)
 	end
 end
 
@@ -81,7 +85,7 @@ end
 function gadget:UnitCreated(u, ud, team)
 	if UnitDefs[ud].customParams.canareaattack=="1" then
 		range[ud] = WeaponDefs[UnitDefs[ud].weapons[1].weaponDef].range
-		Spring.InsertUnitCmdDesc(u,aadesc)
+		SpInsertUnitCmdDesc(u,aadesc)
 	end
 end
 
@@ -94,7 +98,7 @@ else
 -- no UNSYNCED code
 
 function gadget:Initialize()
-	Spring.SetCustomCommandDrawData(CMD_AREAATTACK, CMDTYPE.ICON_AREA, {1,0,0,.8},true)
+	SpSetCustomCommandDrawData(CMD_AREAATTACK, CMDTYPE.ICON_AREA, {1,0,0,.8},true)
 end
 
 --return false

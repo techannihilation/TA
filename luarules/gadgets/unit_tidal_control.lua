@@ -61,11 +61,7 @@ local atan2 = math.atan2
 
 
 function gadget:GameFrame(n)
-  if (((n+16) % 32) < 0.1) then
-    if (n==48) then
-    --  Spring.SendMessage('Initializing Tidal Controls')
-    --  Spring.SendMessage('Done')
-    end
+  if (((n+20) % 32) < 0.1) then
     local strength = Game.tidal
 		
     for unitID, scriptIDs in pairs(windmills) do

@@ -137,9 +137,7 @@ local Buffer = 2
 
 
 function gadget:GameFrame(n)
-  if (((n+16) % 32) < 0.1) then
-    if (n==48) then
-    end
+  if (((n+18) % 32) < 0.1) then
       for unitID, scriptIDs in pairs(tidals) do
 		 
 	  local uDefID = GetUnitDefID(unitID) ; if not uDefID then break end
