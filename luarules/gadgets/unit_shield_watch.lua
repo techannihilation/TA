@@ -22,6 +22,7 @@ local SetUnitShieldState = Spring.SetUnitShieldState
 local GetUnitResources = Spring.GetUnitResources
 local mathMax = math.max
 local mathMin = math.min
+local pairs = pairs
 
 local shieldDef = {}
 --Arm

@@ -31,6 +31,14 @@ local CMD_INSERT = CMD.INSERT
 local CMD_MOVE = CMD.MOVE
 local CMD_REMOVE = CMD.REMOVE
 
+local pairs = pairs
+local ipairs = ipairs
+local max = math.max
+local sqrt = math.sqrt
+local sin = math.sin
+local cos = math.cos
+local random = math.random
+local atan2 = math.atan2
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -70,10 +78,10 @@ function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOpt
   elseif (cmdID == CMD_LOAD_UNITS) then
      if cmdParams[4] then
        local tx,ty,tz = GetUnitPosition(unitID)
-       local dist = math.sqrt(((cmdParams[1]-tx)*(cmdParams[1]-tx))+((cmdParams[3]-tz)*(cmdParams[3]-tz)))
-       if (dist < math.max(100,cmdParams[4])) then
-         local angle = (math.random()*6.28)-3.14
-         GiveOrderToUnit(unitID, CMD_MOVE, {cmdParams[1] + (math.sin(angle) * 120),ty, cmdParams[3] + (math.cos(angle) * 120)}, cmdOptions.coded)
+       local dist = sqrt(((cmdParams[1]-tx)*(cmdParams[1]-tx))+((cmdParams[3]-tz)*(cmdParams[3]-tz)))
+       if (dist < max(100,cmdParams[4])) then
+         local angle = (random()*6.28)-3.14
+         GiveOrderToUnit(unitID, CMD_MOVE, {cmdParams[1] + (sin(angle) * 120),ty, cmdParams[3] + (cos(angle) * 120)}, cmdOptions.coded)
          GiveOrderToUnit(unitID, CMD_LOAD_UNITS, cmdParams, {"shift"})
          watchList[unitID] = GetGameFrame() + 45
          return false
@@ -86,9 +94,9 @@ function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOpt
        if ((dist < 80) and (GetUnitTeam(unitID) ~= GetUnitTeam(cmdParams[1]))) then	
          local tx,ty,tz = GetUnitPosition(unitID)
          local ux,_,uz = GetUnitPosition(cmdParams[1])
-         local angle = math.atan2((tx-ux),(tz-uz))
+         local angle = atan2((tx-ux),(tz-uz))
          if (cmdTag ~= "nr") then
-           GiveOrderToUnit(unitID, CMD_MOVE, {ux + (math.sin(angle) * 100),ty, uz + (math.cos(angle) * 100)}, cmdOptions.coded)
+           GiveOrderToUnit(unitID, CMD_MOVE, {ux + (sin(angle) * 100),ty, uz + (cos(angle) * 100)}, cmdOptions.coded)
            GiveOrderToUnit(unitID, CMD_LOAD_UNITS, cmdParams, {"shift"})
            watchList[unitID] = GetGameFrame() + 45
          end

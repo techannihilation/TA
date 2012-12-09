@@ -37,6 +37,9 @@ local spGiveOrderToUnit = Spring.GiveOrderToUnit
 local abs = math.abs
 local min = math.min
 
+local CMD_STOP = CMD.STOP
+local ipairs = ipairs
+local pairs = pairs
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -77,7 +80,7 @@ function checkLabs()
 		  end
 		end
 		
-		spGiveOrderToUnit(id, CMD.STOP, {}, {})
+		spGiveOrderToUnit(id, CMD_STOP, {}, {})
 		--[[
 		local l = abs(ux-Lv.minx)
 		local r = abs(ux-Lv.maxx)

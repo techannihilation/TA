@@ -32,6 +32,7 @@ armourTurrets[UnitDefNames["cordoom"].id] = true
 armourTurrets[UnitDefNames["packo"].id] = true
 local UPDATE = 30
 local timeCounter = 15
+local pairs = pairs
 
 function gadget:GameFrame(n)
   if (n >= timeCounter) then

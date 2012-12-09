@@ -18,6 +18,7 @@ end
 
 local SpringGetUnitPosition =Spring.GetUnitPosition
 local SpringGetAllUnits =Spring.GetAllUnits
+local pairs = pairs
 
 if (not gadgetHandler:IsSyncedCode()) then
   return false

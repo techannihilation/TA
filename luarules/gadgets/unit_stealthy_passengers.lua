@@ -28,7 +28,7 @@ local stealthyUnits = {}
 
 local spGetUnitDefID = Spring.GetUnitDefID
 local spSetUnitStealth = Spring.SetUnitStealth
-
+local pairs = pairs
 ----------------------------------------------------------------
 -- Callins
 ----------------------------------------------------------------

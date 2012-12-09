@@ -22,7 +22,10 @@ end
 
 local GetUnitCommands = Spring.GetUnitCommands
 local SpGiveOrderArrayToUnitArray = Spring.GiveOrderArrayToUnitArray
-
+local SpGetUnitPosition = Spring.GetUnitPosition
+local SpGetUnitBuildFacing = Spring.GetUnitBuildFacing 
+local pairs = pairs
+local CMD_SET_WANTED_MAX_SPEED = CMD.SET_WANTED_MAX_SPEED
 local badfactories={
   [UnitDefNames["corsy"].id] = true,
   [UnitDefNames["corasy"].id] = true,
@@ -67,9 +70,9 @@ function gadget:UnitFromFactory(unitID, unitDefID, unitTeam, factID, factDefID, 
 	--Spring.Echo('UnitFromFactorycommands:',to_string(Spring.GetUnitCommands(unitID)))
 			
 	if userOrders then
-		local cmd=Spring.GetUnitCommands(unitID)
-		if cmd and #cmd==1 and cmd[1]['id']==CMD.SET_WANTED_MAX_SPEED then -- =70
-			local factcmd=Spring.GetUnitCommands(factID)
+		local cmd=GetUnitCommands(unitID)
+		if cmd and #cmd==1 and cmd[1]['id']==CMD_SET_WANTED_MAX_SPEED then -- =70
+			local factcmd=GetUnitCommands(factID)
 			--Spring.Echo('UnitFromFactorycommands:',to_string(Spring.GetUnitCommands(unitID)))
 			--Spring.Echo('Factorycommands:',to_string(factcmd))
 			--Spring.Echo('FactorycmdID:',factcmd[1]['id'])
@@ -83,8 +86,8 @@ function gadget:UnitFromFactory(unitID, unitDefID, unitTeam, factID, factDefID, 
 					--Spring.Echo('newcmd2',to_string(newcmd[k]))
 				end
 			else
-				local x,y,z = Spring.GetUnitPosition(factID)
-				local f=Spring.GetUnitBuildFacing(factID)
+				local x,y,z = SpGetUnitPosition(factID)
+				local f=SpGetUnitBuildFacing(factID)
 				if f==0 then
 					z=z+96
 				elseif f==1 then
@@ -102,9 +105,9 @@ function gadget:UnitFromFactory(unitID, unitDefID, unitTeam, factID, factDefID, 
 			SpGiveOrderArrayToUnitArray({unitID},newcmd)
 		end
 	else
-		if badfactories[factDefID] and #Spring.GetUnitCommands(factID)==0 then
-			local x,y,z = Spring.GetUnitPosition(factID)
-				local f=Spring.GetUnitBuildFacing(factID)
+		if badfactories[factDefID] and #GetUnitCommands(factID)==0 then
+			local x,y,z = SpGetUnitPosition(factID)
+				local f=SpGetUnitBuildFacing(factID)
 				if f==0 then
 					z=z+96
 				elseif f==1 then

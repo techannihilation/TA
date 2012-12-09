@@ -15,6 +15,13 @@ local SpGiveOrderToUnit = Spring.GiveOrderToUnit
 local SpSetUnitMoveGoal = Spring.SetUnitMoveGoal
 local SpInsertUnitCmdDesc = Spring.InsertUnitCmdDesc
 local SpSetCustomCommandDrawData = Spring.SetCustomCommandDrawData
+local SpGetUnitPosition = Spring.GetUnitPosition
+local pairs = pairs
+local random = math.random
+local cos = math.cos
+local sin = math.sin
+local sqrt = math.sqrt
+local pi = math.pi
 
 if (gadgetHandler:IsSyncedCode()) then
 
@@ -44,10 +51,10 @@ local aadesc= {
 function gadget:GameFrame(f)
 	for i,o in pairs(attackList) do
 		attackList[i] = nil
-		local phase = math.random(200*math.pi)/100.0
+		local phase = random(200*pi)/100.0
 		if o.radius > 0 then
-			local amp = math.random(o.radius)
-			SpGiveOrderToUnit(o.unit, CMD.INSERT, {0, CMD.ATTACK, 0, o.x + math.cos(phase)*amp, o.y, o.z + math.sin(phase)*amp}, {"alt"})
+			local amp = random(o.radius)
+			SpGiveOrderToUnit(o.unit, CMD.INSERT, {0, CMD.ATTACK, 0, o.x + cos(phase)*amp, o.y, o.z + sin(phase)*amp}, {"alt"})
 		end
 	end
 	for i,o in pairs(closeList) do
@@ -70,8 +77,8 @@ end
 
 function gadget:CommandFallback(u,ud,team,cmd,param,opt)
 	if cmd == CMD_AREAATTACK then
-		local x,_,z = Spring.GetUnitPosition(u)
-		local dist = math.sqrt((x-param[1])*(x-param[1]) + (z-param[3])*(z-param[3]))
+		local x,_,z = SpGetUnitPosition(u)
+		local dist = sqrt((x-param[1])*(x-param[1]) + (z-param[3])*(z-param[3]))
 		if dist <= range[ud] - param[4] then
 			table.insert(attackList, {unit = u, x=param[1], y=param[2], z=param[3], radius=param[4]})
 		else

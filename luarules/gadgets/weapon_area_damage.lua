@@ -17,6 +17,12 @@ if (gadgetHandler:IsSyncedCode()) then
 local frameNum
 local explosionList = {}
 local DAMAGE_PERIOD ,weaponInfo = include("LuaRules/Configs/area_damage_defs.lua")
+local SpAddUnitDamage = Spring.AddUnitDamage
+local SpGetUnitsInSphere = Spring.GetUnitsInSphere
+local SpGetUnitPosition = Spring.GetUnitPosition
+local sqrt = math.sqrt
+local pairs = pairs
+local ipairs = ipairs
 
 function gadget:Explosion(weaponID, px, py, pz, ownerID)
 	if (weaponInfo[weaponID]) then
@@ -41,15 +47,15 @@ function gadget:GameFrame(f)
 	frameNum=f
 	if (f%DAMAGE_PERIOD == 0) then
 		for i,w in pairs(explosionList) do
-			local ulist = Spring.GetUnitsInSphere(w.pos.x, w.pos.y, w.pos.z, w.radius)
+			local ulist = SpGetUnitsInSphere(w.pos.x, w.pos.y, w.pos.z, w.radius)
 			if (ulist) then
 				for _,u in ipairs(ulist) do
-					local ux, uy, uz = Spring.GetUnitPosition(u)
+					local ux, uy, uz = SpGetUnitPosition(u)
 					local damage = w.damage
 					if w.rangeFall ~= 0 then
-						damage = damage - damage*w.rangeFall*math.sqrt((ux-w.pos.x)^2 + (uy-w.pos.y)^2 + (uz-w.pos.z)^2)/w.radius
+						damage = damage - damage*w.rangeFall*sqrt((ux-w.pos.x)^2 + (uy-w.pos.y)^2 + (uz-w.pos.z)^2)/w.radius
 					end
-					Spring.AddUnitDamage(u, damage, 0, w.owner, w.id, 0, 0, 0)
+					SpAddUnitDamage(u, damage, 0, w.owner, w.id, 0, 0, 0)
 				end
 			end
 			w.damage = w.damage - w.timeLoss

@@ -41,7 +41,7 @@ function gadget:UnitCreated(unitID, unitDefID, teamID, builderID)
 	--Spring.SetUnitRadiusAndHeight New in version 89.0( number unitID, number radius, number height )
 		SpSetUnitRadiusAndHeight(unitID, special[unitDefID], 32 )
 	else
-		SpSetUnitRadiusAndHeight(unitID,Spring.GetUnitRadius(unitID)*0.66,SpGetUnitHeight(unitID))
+		SpSetUnitRadiusAndHeight(unitID,SpGetUnitRadius(unitID)*0.66,SpGetUnitHeight(unitID))
 	end
 end
 

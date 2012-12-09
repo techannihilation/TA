@@ -131,6 +131,9 @@ local SpSpawnCEG           = Spring.SpawnCEG
 local SpDestroyUnit        = Spring.DestroyUnit
 local SpGetAllUnits        = Spring.GetAllUnits
 
+local ipairs = ipairs
+local pairs = pairs
+
 local Buffer = 2
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
@@ -176,7 +179,7 @@ end
 
 function gadget:Initialize()
   for _, unitID in ipairs(SpGetAllUnits()) do
-    local unitDefID = Spring.GetUnitDefID(unitID)
+    local unitDefID = GetUnitDefID(unitID)
     if (tideDefs[unitDefID]) then
       SetupUnit(unitID)
     end

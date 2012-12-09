@@ -15,7 +15,11 @@ if gadgetHandler:IsSyncedCode() then
 
 local SpSetUnitPosition = Spring.SetUnitPosition
 local SpGiveOrderToUnit = Spring.GiveOrderToUnit
-  
+local SpGetUnitAllyTeam = Spring.GetUnitAllyTeam
+local SpGetAllyTeamStartBox = Spring.GetAllyTeamStartBox
+local SpGetUnitPosition = Spring.GetUnitPosition
+local CMD_STOP = CMD.STOP
+
 function gadget:GameFrame(n)
 
   if (n == 1) then
@@ -26,11 +30,11 @@ function gadget:GameFrame(n)
       repeat -- emulating "continue"
 
         local unitid = units[i]
-        local allyid = Spring.GetUnitAllyTeam(unitid)
+        local allyid = SpGetUnitAllyTeam(unitid)
         if not allyid then break end
-        local xmin, zmin, xmax, zmax = Spring.GetAllyTeamStartBox(allyid)
+        local xmin, zmin, xmax, zmax = SpGetAllyTeamStartBox(allyid)
         if not xmin then break end
-        local x, y, z = Spring.GetUnitPosition(unitid)
+        local x, y, z = SpGetUnitPosition(unitid)
 
         if not x then break end
         if (xmin <= x+16 and x-16 <= xmax and zmin <= z+16 and z-16 <= zmax) then
@@ -38,7 +42,7 @@ function gadget:GameFrame(n)
         else
           -- move into middle of team start box
           SpSetUnitPosition(unitid, (xmin+xmax)/2, (zmin+zmax)/2)
-          SpGiveOrderToUnit(unitid, CMD.STOP, {}, {});
+          SpGiveOrderToUnit(unitid, CMD_STOP, {}, {});
         end
       until true
     end
