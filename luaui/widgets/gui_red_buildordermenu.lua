@@ -15,6 +15,11 @@ local NeededFrameworkVersion = 8
 local CanvasX,CanvasY = 1272,734 --resolution in which the widget was made (for 1:1 size)
 --1272,734 == 1280,768 windowed
 
+local SpSetActiveCommand = Spring.SetActiveCommand
+local SpForceLayoutUpdate = Spring.ForceLayoutUpdate
+local SpGetCmdDescIndex = Spring.GetCmdDescIndex
+local SpGetModKeyState = Spring.GetModKeyState
+
 --todo: build categories (eco | labs | defences | etc) basically sublists of buildcmds (maybe for regular orders too)
 
 local Config = {
@@ -344,10 +349,10 @@ local function UpdateGrid(g,cmds,ordertype)
 		
 		icon.mouseclick = {
 			{1,function(mx,my,self)
-				Spring.SetActiveCommand(Spring.GetCmdDescIndex(cmd.id),1,true,false,Spring.GetModKeyState())
+				SpSetActiveCommand(SpGetCmdDescIndex(cmd.id),1,true,false,SpGetModKeyState())
 			end},
 			{3,function(mx,my,self)
-				Spring.SetActiveCommand(Spring.GetCmdDescIndex(cmd.id),3,false,true,Spring.GetModKeyState())
+				SpSetActiveCommand(SpGetCmdDescIndex(cmd.id),3,false,true,SpGetModKeyState())
 			end},
 		}
 		
@@ -502,7 +507,7 @@ local hijackedlayout = false
 function widget:Shutdown()
 	if (hijackedlayout) then
 		widgetHandler:ConfigLayoutHandler(true)
-		Spring.ForceLayoutUpdate()
+		SpForceLayoutUpdate()
 	end
 end
 local function GetCommands()
@@ -573,7 +578,7 @@ local function hijacklayout()
 		return "", xIcons, yIcons, {}, {}, {}, {}, {}, {}, {}, iconList
 	end
 	widgetHandler:ConfigLayoutHandler(dummylayouthandler) --override default build/ordermenu layout
-	Spring.ForceLayoutUpdate()
+	SpForceLayoutUpdate()
 	hijackedlayout = true
 	hijackattempts = hijackattempts + 1
 end

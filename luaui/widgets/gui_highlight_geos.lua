@@ -24,16 +24,18 @@ local glLineWidth = gl.LineWidth
 local glDepthTest = gl.DepthTest
 local glCallList = gl.CallList
 local glColor = gl.Color
+local glVertex = gl.Vertex
+local glBeginEnd = gl.BeginEnd
 local spGetMapDrawMode = Spring.GetMapDrawMode
 
 ----------------------------------------------------------------
 -- Functions
 ----------------------------------------------------------------
 local function PillarVerts(x, y, z)
-	gl.Color(1, 1, 0, 1)
-	gl.Vertex(x, y, z)
-	gl.Color(1, 1, 0, 0)
-	gl.Vertex(x, y + 1000, z)
+	glColor(1, 1, 0, 1)
+	glVertex(x, y, z)
+	glColor(1, 1, 0, 0)
+	glVertex(x, y + 1000, z)
 end
 
 local function HighlightGeos()
@@ -42,7 +44,7 @@ local function HighlightGeos()
 		local fID = features[i]
 		if FeatureDefs[Spring.GetFeatureDefID(fID)].geoThermal then
 			local fx, fy, fz = Spring.GetFeaturePosition(fID)
-			gl.BeginEnd(GL.LINE_STRIP, PillarVerts, fx, fy, fz)
+			glBeginEnd(GL.LINE_STRIP, PillarVerts, fx, fy, fz)
 		end
 	end
 end

@@ -45,6 +45,11 @@ local sSendCommands = Spring.SendCommands
 local sGetMiniMapGeometry = Spring.GetMiniMapGeometry
 local sGetCameraState = Spring.GetCameraState
 
+local glSlaveMiniMap = gl.SlaveMiniMap
+local glResetState = gl.ResetState
+local glResetMatrices = gl.ResetMatrices
+local glDrawMiniMap = gl.DrawMiniMap
+
 local function IncludeRedUIFrameworkFunctions()
 	New = WG.Red.New(widget)
 	Copy = WG.Red.Copytable
@@ -264,7 +269,7 @@ function widget:Initialize()
 	
 	rMinimap = createminimap(Config.minimap)
 	
-	gl.SlaveMiniMap(true)
+	glSlaveMiniMap(true)
 	
 	AutoResizeObjects() --fix for displacement on crash issue
 end
@@ -275,16 +280,16 @@ function widget:Update()
 	local _,_,_,_,minimized,maximized = sGetMiniMapGeometry()
 	if (maximized) then
 		--hack to reset state minimap
-		gl.SlaveMiniMap(false) 
-		gl.SlaveMiniMap(true)
+		glSlaveMiniMap(false) 
+		glSlaveMiniMap(true)
 		----
 	end
 	
 	if (minimized) then
 		rMinimap.active = false
 		--hack to reset state minimap
-		gl.SlaveMiniMap(false) 
-		gl.SlaveMiniMap(true)
+		glSlaveMiniMap(false) 
+		glSlaveMiniMap(true)
 		----
 	else
 		rMinimap.active = nil
@@ -316,21 +321,21 @@ function widget:DrawScreen()
 		return
 	end
 	-- this makes jK rage
-	gl.ResetState()
-	gl.ResetMatrices()
+	glResetState()
+	glResetMatrices()
 	----
 	
-	gl.DrawMiniMap()
+	glDrawMiniMap()
 	
 	-- this makes jK rage
-	gl.ResetState()
-	gl.ResetMatrices()
+	glResetState()
+	glResetMatrices()
 	----
 end
 
 function widget:Shutdown()
-	gl.SlaveMiniMap(false)
-	Spring.SendCommands("minimap geometry "..oldMinimapGeometry)
+	glSlaveMiniMap(false)
+	sSendCommands("minimap geometry "..oldMinimapGeometry)
 end
 
 

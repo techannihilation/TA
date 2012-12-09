@@ -55,7 +55,10 @@ local spIsUnitSelected       = Spring.IsUnitSelected
 local spIsUnitVisible        = Spring.IsUnitVisible
 local spSendCommands         = Spring.SendCommands
 
-
+local sin                    = math.sin
+local cos                    = math.cos
+local pi                     = math.pi
+local acos                   = math.acos
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -95,20 +98,20 @@ local startTimer = spGetTimer()
 function widget:Initialize()
   circleLines = glCreateList(function()
     glBeginEnd(GL_LINE_LOOP, function()
-      local radstep = (2.0 * math.pi) / circleDivs
+      local radstep = (2.0 * pi) / circleDivs
       for i = 1, circleDivs do
         local a = (i * radstep)
-        glVertex(math.sin(a), circleOffset, math.cos(a))
+        glVertex(sin(a), circleOffset, cos(a))
       end
     end)
   end)
 
   circlePolys = glCreateList(function()
     glBeginEnd(GL_TRIANGLE_FAN, function()
-      local radstep = (2.0 * math.pi) / circleDivs
+      local radstep = (2.0 * pi) / circleDivs
       for i = 1, circleDivs do
         local a = (i * radstep)
-        glVertex(math.sin(a), circleOffset, math.cos(a))
+        glVertex(sin(a), circleOffset, cos(a))
       end
     end)
   end)
@@ -193,7 +196,7 @@ function widget:DrawWorldPreUnit()
           if (trackSlope and (not UnitDefs[udid].canFly)) then
             local x, y, z = spGetUnitBasePosition(unitID)
             local gx, gy, gz = spGetGroundNormal(x, z)
-            local degrot = math.acos(gy) * 180 / math.pi
+            local degrot = acos(gy) * 180 / pi
             glColor(colorSet[1])
             glDrawListAtUnit(unitID, circlePolys, false,
                              radius, 1.0, radius,
@@ -234,7 +237,7 @@ function widget:DrawWorldPreUnit()
       if (trackSlope and (not UnitDefs[udid].canFly)) then
         local x, y, z = spGetUnitBasePosition(unitID)
         local gx, gy, gz = spGetGroundNormal(x, z)
-        local degrot = math.acos(gy) * 180 / math.pi
+        local degrot = acos(gy) * 180 / pi
         glDrawListAtUnit(unitID, circleLines, false,
                          radius, 1.0, radius,
                           degrot, gz, 0, -gx)

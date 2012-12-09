@@ -36,6 +36,7 @@ local glTranslate      = gl.Translate
 local glBillboard      = gl.BillboardFixed
 local CreateBillboard  = gl.CreateBillboard
 local glDrawFuncAtUnit = gl.DrawFuncAtUnit
+local glDeleteTexture  = gl.DeleteTexture
 
 local GL_GREATER = GL.GREATER
 
@@ -137,7 +138,7 @@ end
 
 function widget:Shutdown()
   for _,rankTexture in ipairs(rankTextures) do
-    gl.DeleteTexture(rankTexture)
+    glDeleteTexture(rankTexture)
   end
 end
 

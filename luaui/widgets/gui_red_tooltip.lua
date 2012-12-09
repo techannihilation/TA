@@ -37,6 +37,8 @@ local Config = {
 
 local sGetCurrentTooltip = Spring.GetCurrentTooltip
 local sGetSelectedUnitsCount = Spring.GetSelectedUnitsCount
+local sSendCommands = Spring.SendCommands
+local sSetDrawSelectionInfo = Spring.SetDrawSelectionInfo
 
 local function IncludeRedUIFrameworkFunctions()
 	New = WG.Red.New(widget)
@@ -194,13 +196,13 @@ function widget:Initialize()
 	
 	tooltip = createtooltip(Config.tooltip)
 		
-	Spring.SetDrawSelectionInfo(false) --disables springs default display of selected units count
-	Spring.SendCommands("tooltip 0")
+	sSetDrawSelectionInfo(false) --disables springs default display of selected units count
+	sSendCommands("tooltip 0")
 	AutoResizeObjects()
 end
 
 function widget:Shutdown()
-	Spring.SendCommands("tooltip 1")
+	sSendCommands("tooltip 1")
 end
 
 function widget:Update()

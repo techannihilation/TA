@@ -23,16 +23,18 @@ function widget:GetInfo()
   }
 end
 
+local SpGiveOrderToUnit = Spring.GiveOrderToUnit
+local SpGetMyTeamID     = Spring.GetMyTeamID
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
 
 function widget:UnitCreated(unitID, unitDefID, unitTeam)
   local ud = UnitDefs[unitDefID]
-  if ((ud ~= nil) and (unitTeam == Spring.GetMyTeamID())) then
+  if ((ud ~= nil) and (unitTeam == SpGetMyTeamID())) then
     if (ud.canStockpile) then
       -- give stockpilers 100 units to build
-      Spring.GiveOrderToUnit(unitID, CMD.STOCKPILE, {}, { "ctrl", "shift" })
+      SpGiveOrderToUnit(unitID, CMD.STOCKPILE, {}, { "ctrl", "shift" })
     end
   end
 end

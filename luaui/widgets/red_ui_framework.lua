@@ -18,6 +18,7 @@ local version = 8
 
 local clock = os.clock
 local glGetTextWidth = gl.GetTextWidth
+local abs = math.abs
 local sgsub = string.gsub
 local function getLineCount(text)
 	_,linecount = sgsub(text,"\n","\n")
@@ -406,8 +407,8 @@ local function processMouseEvents(o)
 						local schangex = snewpx-s.px
 						local schangey = snewpy-s.py
 						
-						if (math.abs(changex)>math.abs(schangex)) then changex = schangex end
-						if (math.abs(changey)>math.abs(schangey)) then changey = schangey end
+						if (abs(changex)>abs(schangex)) then changex = schangex end
+						if (abs(changey)>abs(schangey)) then changey = schangey end
 					end
 					for j=1,#o.movableslaves do --move slaves
 						local s = o.movableslaves[j]

@@ -71,8 +71,9 @@ local spGetUnitDefDimensions   = Spring.GetUnitDefDimensions
 local spSelectUnitArray        = Spring.SelectUnitArray
 local spSelectUnitMap          = Spring.SelectUnitMap
 local spSendCommands           = Spring.SendCommands
-
-
+local floor                    = math.floor
+local cos                      = math.cos
+local pi                       = math.pi
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
 
@@ -99,8 +100,8 @@ local activePress = false
 local mouseIcon = -1
 local currentDef = nil
 
-local iconSizeX = math.floor(useModels and 80 or 64)
-local iconSizeY = math.floor(iconSizeX * 0.75)
+local iconSizeX = floor(useModels and 80 or 64)
+local iconSizeY = floor(iconSizeX * 0.75)
 local fontSize = iconSizeY * 0.25
 
 local rectMinX = 0
@@ -159,11 +160,11 @@ end
 
 function SetupDimensions(count)
   local xmid = vsx * 0.5
-  local width = math.floor(iconSizeX * count)
-  rectMinX = math.floor(xmid - (0.5 * width))
-  rectMaxX = math.floor(xmid + (0.5 * width))
-  rectMinY = math.floor(0)
-  rectMaxY = math.floor(rectMinY + iconSizeY)
+  local width = floor(iconSizeX * count)
+  rectMinX = floor(xmid - (0.5 * width))
+  rectMaxX = floor(xmid + (0.5 * width))
+  rectMinY = floor(0)
+  rectMaxY = floor(rectMinY + iconSizeY)
 end
 
 
@@ -247,7 +248,7 @@ end
 
 
 function DrawUnitDefModel(unitDefID, iconPos, count)
-  local xmin = math.floor(rectMinX + (iconSizeX * iconPos))
+  local xmin = floor(rectMinX + (iconSizeX * iconPos))
   local xmax = xmin + iconSizeX
   if ((xmax < 0) or (xmin > vsx)) then return end  -- bail
   
@@ -274,7 +275,7 @@ function DrawUnitDefModel(unitDefID, iconPos, count)
   glTranslate(xmid, ymid, 0)
   glRotate(15.0, 1, 0, 0)
   local timer = 1.5 * widgetHandler:GetHourTimer()
-  glRotate(math.cos(0.5 * math.pi * timer) * 60.0, 0, 1, 0)
+  glRotate(cos(0.5 * pi * timer) * 60.0, 0, 1, 0)
 
   CenterUnitDef(unitDefID)
   
@@ -319,7 +320,7 @@ end
 
 
 function DrawUnitDefTexture(unitDefID, iconPos, count)
-  local xmin = math.floor(rectMinX + (iconSizeX * iconPos))
+  local xmin = floor(rectMinX + (iconSizeX * iconPos))
   local xmax = xmin + iconSizeX
   if ((xmax < 0) or (xmin > vsx)) then return end  -- bail
   
@@ -473,7 +474,7 @@ function MouseOverIcon(x, y)
   if (y < rectMinY)   then return -1 end
   if (y > rectMaxY)   then return -1 end
 
-  local icon = math.floor((x - rectMinX) / iconSizeX)
+  local icon = floor((x - rectMinX) / iconSizeX)
   -- clamp the icon range
   if (icon < 0) then
     icon = 0

@@ -47,6 +47,14 @@ local glBlending       = gl.Blending
 local glDrawFuncAtUnit = gl.DrawFuncAtUnit
 local glPushMatrix     = gl.PushMatrix
 local glPopMatrix      = gl.PopMatrix
+local glMultiTexCoord  = gl.MultiTexCoord
+local glTexture        = gl.Texture
+
+local ceil             = math.ceil
+local random           = math.random
+local min              = math.min
+local max              = math.max
+local floor            = math.floor
 
 local GL_GREATER             = GL.GREATER
 local GL_SRC_ALPHA           = GL.SRC_ALPHA
@@ -84,21 +92,21 @@ end
 local function getTextSize(damage, paralyze)
   local sizeMod = 3
   if paralyze then sizeMod = 2.25 end
-  return math.floor(8 * (1 + sizeMod * (1 - (200 / (200 + damage)))))
+  return floor(8 * (1 + sizeMod * (1 - (200 / (200 + damage)))))
 end
 
 local function displayDamage(unitID, unitDefID, damage, paralyze)
   table.insert(damageTable,1,{})
   damageTable[1].unitID = unitID
-  damageTable[1].damage = math.ceil(damage - 0.5)
+  damageTable[1].damage = ceil(damage - 0.5)
   damageTable[1].height = unitHeight(unitDefID)
-  damageTable[1].offset = (6 - math.random(0,12))
+  damageTable[1].offset = (6 - random(0,12))
   damageTable[1].textSize = getTextSize(damage, paralyze)
   damageTable[1].heightOffset = 0
   damageTable[1].lifeSpan = 1
   damageTable[1].paralyze = paralyze
-  damageTable[1].fadeTime = math.max((0.03 - (damage / 333333)), 0.015)
-  damageTable[1].riseTime = (math.min((damage / 2500), 2) + 1)
+  damageTable[1].fadeTime = max((0.03 - (damage / 333333)), 0.015)
+  damageTable[1].riseTime = (min((damage / 2500), 2) + 1)
 end
 
 function widget:UnitDestroyed(unitID, unitDefID, unitTeam)
@@ -106,13 +114,13 @@ function widget:UnitDestroyed(unitID, unitDefID, unitTeam)
     local ux, uy, uz = GetUnitViewPosition(unitID)
     if ux ~= nil then
       table.insert(deadList,1,{})
-      local damage = math.ceil(unitDamage[unitID].damage - 0.5)
+      local damage = ceil(unitDamage[unitID].damage - 0.5)
       deadList[1].x = ux
       deadList[1].y = (uy + unitHeight(unitDefID))
       deadList[1].z = uz
       deadList[1].lifeSpan = 1
-      deadList[1].fadeTime = math.max((0.03 - (damage / 333333)), 0.015) * 0.66
-      deadList[1].riseTime = (math.min((damage / 2500), 2) + 1)* 1.33
+      deadList[1].fadeTime = max((0.03 - (damage / 333333)), 0.015) * 0.66
+      deadList[1].riseTime = (min((damage / 2500), 2) + 1)* 1.33
       deadList[1].damage = damage
       deadList[1].textSize = getTextSize(damage, false)
       deadList[1].red = true
@@ -195,7 +203,7 @@ local function drawDeathDPS(damage,ux,uy,uz,textSize,red,alpha)
   glPushMatrix()
   glTranslate(ux, uy, uz)
   glBillboard()
-  gl.MultiTexCoord(1, 0.25 + (0.5 * alpha))
+  glMultiTexCoord(1, 0.25 + (0.5 * alpha))
   
   if red then
     glColor(1, 0, 0)
@@ -211,7 +219,7 @@ end
 local function DrawUnitFunc(yshift, xshift, damage, textSize, alpha, paralyze)
   glTranslate(xshift, yshift, 0)
   glBillboard()
-  gl.MultiTexCoord(1, 0.25 + (0.5 * alpha))
+  glMultiTexCoord(1, 0.25 + (0.5 * alpha))
   if paralyze then
     glColor(0, 0, 1)
     glText(damage, 0, 0, textSize, 'cnO')
@@ -245,7 +253,7 @@ function widget:DrawWorld()
   glDepthTest(true)
   glAlphaTest(GL_GREATER, 0)
   glBlending(GL_SRC_ALPHA, GL_ONE)
-  gl.Texture(1, LUAUI_DIRNAME .. "images/gradient_alpha_2.png")
+  glTexture(1, LUAUI_DIRNAME .. "images/gradient_alpha_2.png")
 
   for i, damage in pairs(damageTable) do
     if (damage.lifeSpan <= 0) then 
@@ -279,7 +287,7 @@ function widget:DrawWorld()
     end
   end
     
-  gl.Texture(1, false)
+  glTexture(1, false)
   glBlending(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
   glAlphaTest(false)
   glDepthTest(false)

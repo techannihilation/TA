@@ -446,6 +446,7 @@ do
 
   local customInfo = {}
   local ci
+  local max = math.max
 
   function DrawUnitInfos(unitID,unitDefID, ud)
     if (not customInfo[unitDefID]) then
@@ -550,7 +551,7 @@ do
         _,reloaded,reloadFrame = GetUnitWeaponState(unitID,ci.primaryWeapon)
         if (reloaded==false) then
           reload = 1 - ((reloadFrame-gameFrame)/30) / ci.reloadTime;
-          reload = math.max(reload,0)
+          reload = max(reload,0)
           AddBar("reload",reload,"reload",(fullText and floor(reload*100)..'%') or '')
         end
       end

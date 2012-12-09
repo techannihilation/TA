@@ -97,7 +97,9 @@ local capacityColor
 local mProducedColor
 local relativeCapacity
 local hasData = false
-
+local min = math.min
+local max = math.max
+local floor = math.floor
 
 local function getLetter(effi)
 
@@ -300,6 +302,6 @@ end
 
 function widget:SetConfigData(data)
 	local vsx, vsy = gl.GetViewSizes()
-	px = math.floor(math.max(0, vsx * math.min(data[1] or 0, 0.95)))
-	py = math.floor(math.max(0, vsy * math.min(data[2] or 0, 0.95)))
+	px = floor(max(0, vsx * min(data[1] or 0, 0.95)))
+	py = floor(max(0, vsy * min(data[2] or 0, 0.95)))
 end
