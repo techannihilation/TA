@@ -92,14 +92,6 @@ local options={
 		def    = true,
 		section= "ta_options",
     },
-	{
-		key    = "mo_comgate",
-		name   = "Commander Gate Effect",
-		desc   = "Commanders warp in at gamestart with a shiny teleport effect\nAutoHost Usage :- mo_comgate",
-		type   = "bool",
-		def    = false,
-		section= "ta_options",
-    },
     {
 		key    = "mo_enemywrecks",
 		name   = "Show Enemy Wrecks",
