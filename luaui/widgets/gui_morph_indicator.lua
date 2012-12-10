@@ -120,7 +120,7 @@ function widget:Initialize()
   if (UnitDefs[1].height == nil) then
     for udid, ud in ipairs(UnitDefs) do
       -- this cause a lag on loading, but it is a huge performance improvment!
-      ud.height = Spring.GetUnitDefDimensions(udid).radius
+      ud.height = GetUnitDefDimensions(udid).radius
     end
   end
 

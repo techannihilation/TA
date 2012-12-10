@@ -19,7 +19,7 @@ function widget:GetInfo()
     date      = "Jun 15, 2007",
     license   = "GNU GPL, v2 or later",
     layer     = 0,
-    enabled   = true  --  loaded by default?
+    enabled   = false  --  loaded by default?
   }
 end
 
@@ -45,7 +45,7 @@ local decayFactor = 2.5
 local minArea  = 32  -- weapon's area of effect
 local minPower = (0.02 / powerScale)
 local distAdj  = 100
-
+local random = math.random
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -78,7 +78,7 @@ end
 
 
 local function birand(val)
-  return val * (1.0 - (0.002 * math.random(1000)))
+  return val * (1.0 - (0.002 * random(1000)))
 end
 
 

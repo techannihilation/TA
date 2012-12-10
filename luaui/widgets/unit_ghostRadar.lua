@@ -44,7 +44,7 @@ local glTranslate           = gl.Translate
 local debug = false
 local dots = {}
 local lastTime
-local updateInt = 2 --seconds for the ::update loop
+local updateInt = 3 --seconds for the ::update loop
 
 function widget:UnitEnteredRadar(unitID, allyTeam)
 	if ( dots[unitID] ~= nil ) then

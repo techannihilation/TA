@@ -25,6 +25,11 @@ local GetGameFrame         = Spring.GetGameFrame
 local GetCommandQueue      = Spring.GetCommandQueue
 local GetUnitStates        = Spring.GetUnitStates
 
+local CMD_ATTACK = CMD.ATTACK
+local CMD_SET_WANTED_MAX_SPEED = CMD.SET_WANTED_MAX_SPEED
+local CMD_REMOVE = CMD.REMOVE
+local CMD_WAIT = CMD.WAIT
+
 local my_bombers={}
 
 local function AddUnit(unit_id, unit_udid_)
@@ -118,24 +123,24 @@ function widget:Update(dt)
 				bomber_data.reload_frame=reload_frame
 				if did_shot then
 					local commands=GetCommandQueue(bomber_id)
-					if commands and commands[1] and commands[1].id==CMD.ATTACK and commands[2] then
+					if commands and commands[1] and commands[1].id==CMD_ATTACK and commands[2] then
 						local got_next_orders=false
 						for i=2,#commands do
-							if commands[i].id ~= CMD.SET_WANTED_MAX_SPEED then
+							if commands[i].id ~= CMD_SET_WANTED_MAX_SPEED then
 								got_next_orders=true
 								break
 							end
 						end
 						if got_next_orders then
 							--Spring.Echo(CMD[commands[2].id])
-							GiveOrderToUnit(bomber_id, CMD.REMOVE,{commands[1].tag},{})
+							GiveOrderToUnit(bomber_id, CMD_REMOVE,{commands[1].tag},{})
 							local states=GetUnitStates(bomber_id)
 							if states and (states['repeat']) then
 								GiveOrderToUnit(bomber_id, commands[1].id,commands[1].params,{'shift'})
 							end
 							--- workaround for mantis 1823
-							GiveOrderToUnit(bomber_id, CMD.WAIT,{},{})
-							GiveOrderToUnit(bomber_id, CMD.WAIT,{},{})
+							GiveOrderToUnit(bomber_id, CMD_WAIT,{},{})
+							GiveOrderToUnit(bomber_id, CMD_WAIT,{},{})
 						end
 					end
 				end

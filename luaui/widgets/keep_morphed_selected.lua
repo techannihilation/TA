@@ -15,15 +15,20 @@ end
 local Createds={}
 local Destroyeds={}
 
+local SpIsUnitSelected = Spring.IsUnitSelected
+local SpSelectUnitArray = Spring.SelectUnitArray
+local SpGetUnitPosition = Spring.GetUnitPosition
+local ipairs = ipairs
+
 function widget:UnitDestroyed(unitID,unitDefID,teamID)
-	if Spring.IsUnitSelected(unitID) then
-		local x,_,z=Spring.GetUnitPosition(unitID)
+	if SpIsUnitSelected(unitID) then
+		local x,_,z=SpGetUnitPosition(unitID)
 		table.insert(Destroyeds,{u=unitID,x=x,z=z,t=teamID})
 	end
 end
 
 function widget:UnitCreated(unitID,unitDefID,teamID)
-	local x,_,z=Spring.GetUnitPosition(unitID)
+	local x,_,z=SpGetUnitPosition(unitID)
 	table.insert(Createds,{u=unitID,x=x,z=z,t=teamID})
 end
 
@@ -37,7 +42,7 @@ function widget:GameFrame(frameNum)
 		end
 	end
 	if #ToReSelect>0 then
-		Spring.SelectUnitArray(ToReSelect,true)
+		SpSelectUnitArray(ToReSelect,true)
 	end
 	Createds={}
 	Destroyeds={}

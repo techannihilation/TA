@@ -62,6 +62,10 @@ local spEcho                = Spring.Echo
 local spGetUnitDefID        = Spring.GetUnitDefID
 local spGetUnitRulesParam   = Spring.GetUnitRulesParam
 
+local GL_TEXTURE_ENV = GL.TEXTURE_ENV
+local GL_REPLACE = GL.REPLACE
+local GL_TEXTURE_ENV_MODE = GL.TEXTURE_ENV_MODE
+
 local mdeg = math.deg
 local matan2 = math.atan2
 
@@ -128,10 +132,10 @@ function DrawGhostFeatures()
 	glTexture(0,"$units1")
 	--glTexture(1,"$units1")
 
-	glTexEnv( GL.TEXTURE_ENV, GL.TEXTURE_ENV_MODE, 34160 )				--GL_COMBINE_RGB_ARB
+	glTexEnv( GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, 34160 )				--GL_COMBINE_RGB_ARB
 	--use the alpha given by glColor for the outgoing alpha.
-	glTexEnv( GL.TEXTURE_ENV, 34162, GL.REPLACE )			--GL_COMBINE_ALPHA
-	glTexEnv( GL.TEXTURE_ENV, 34184, 34167 )			--GL_SOURCE0_ALPHA_ARB			GL_PRIMARY_COLOR_ARB
+	glTexEnv( GL_TEXTURE_ENV, 34162, GL_REPLACE )			--GL_COMBINE_ALPHA
+	glTexEnv( GL_TEXTURE_ENV, 34184, 34167 )			--GL_SOURCE0_ALPHA_ARB			GL_PRIMARY_COLOR_ARB
 	
 	--------------------------Draw-------------------------------------------------------------
 	for unitID, ghost in pairs( ghostFeatures ) do
@@ -155,9 +159,9 @@ function DrawGhostFeatures()
 	end
 
 	--------------------------Clean up-------------------------------------------------------------
-	glTexEnv( GL.TEXTURE_ENV, GL.TEXTURE_ENV_MODE, 8448 )				--GL_MODULATE
+	glTexEnv( GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, 8448 )				--GL_MODULATE
 	--use the alpha given by glColor for the outgoing alpha.
-	glTexEnv( GL.TEXTURE_ENV, 34162, 8448 )											--GL_MODULATE
+	glTexEnv( GL_TEXTURE_ENV, 34162, 8448 )											--GL_MODULATE
 	----gl.TexEnv( GL.TEXTURE_ENV, 34184, 5890 )			--GL_SOURCE0_ALPHA_ARB			GL_TEXTURE
 end
 

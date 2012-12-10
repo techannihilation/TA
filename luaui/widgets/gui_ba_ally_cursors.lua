@@ -1,4 +1,4 @@
---------------------------------------------------------------------------------
+-- --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 --
 --  Copyright (C) 2007.
@@ -19,7 +19,7 @@ function widget:GetInfo()
 	handler   = true
   }
 end
-
+-- 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -34,6 +34,7 @@ local numMousePos     = 2 --//num mouse pos in 1 packet
 -- locals
 
 local pairs = pairs
+local ipairs = ipairs
 
 local GetMouseState   = Spring.GetMouseState
 local TraceScreenRay  = Spring.TraceScreenRay
@@ -56,6 +57,9 @@ local glBeginEnd      = gl.BeginEnd
 
 local floor = math.floor
 local tanh  = math.tanh
+local abs = math.abs
+local min = math.min
+
 local GL_QUADS = GL.QUADS
 
 local clock = os.clock
@@ -248,7 +252,7 @@ local function SetTeamColor(teamID,a)
     glColor(color)
     return
   end
-  local r, g, b = Spring.GetTeamColor(teamID)
+  local r, g, b = GetTeamColor(teamID)
   if (r and g and b) then
     color = { r, g, b }
     teamColors[teamID] = color
@@ -264,7 +268,7 @@ function widget:MousePress(x,y,button)
     local _,pos = TraceScreenRay(mx,my,true)
 
     if (pos~=nil) then
-      if (math.abs(pos[1] - lastx) > 300) or (math.abs(pos[3] - lastz) > 300) then
+      if (abs(pos[1] - lastx) > 300) or (abs(pos[3] - lastz) > 300) then
         poshistory[0] = VFS.PackU16(floor(pos[1]))
         poshistory[1] = VFS.PackU16(floor(pos[3]))
         poshistory[2] = VFS.PackU16(floor(pos[1]))
@@ -302,7 +306,7 @@ function widget:DrawWorldPreUnit()
 
       if (lastUpdatedDiff<sendPacketEvery) then
         local scale  = (1-(lastUpdatedDiff/sendPacketEvery))*numMousePos
-        local iscale = math.min(floor(scale),numMousePos-1)
+        local iscale = min(floor(scale),numMousePos-1)
         local fscale = scale-iscale
 
         wx = CubicInterpolate2(data[iscale*2+1],data[(iscale+1)*2+1],fscale)

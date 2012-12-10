@@ -32,6 +32,10 @@ local orderUnit      = Spring.GiveOrderToUnit
 local getUnitTeam    = Spring.GetUnitTeam
 local isUnitSelected = Spring.IsUnitSelected
 local getGameSeconds = Spring.GetGameSeconds
+local SpGetUnitStates = Spring.GetUnitStates
+local pairs = pairs
+local CMD_FIGHT = CMD.FIGHT
+local floor = math.floor
 local gameInSecs     = 0
 local lastOrderGivenInSecs= 0
 --now also checking for canRepair,canCapture due to non reclaimers in tech annihilation mod which can repair and build
@@ -56,13 +60,13 @@ end
 
 --Give reclaimers the FIGHT command every second
 function widget:GameFrame()
-	gameInSecs=math.floor(getGameSeconds())               --gives the time in seconds(rounded)
+	gameInSecs=floor(getGameSeconds())               --gives the time in seconds(rounded)
 	--echo("Time in secs: "..gameInSecs.."    Last order given at: "..lastOrderGivenInSecs) --¤debug
 	if (gameInSecs>lastOrderGivenInSecs) then
 		for unitID in pairs(idleReclaimers) do
 			local x, y, z = getUnitPos(unitID)                --get unit's position
 			if (not isUnitSelected(unitID)) then              --if unit is not selected
-				orderUnit(unitID, CMD.FIGHT, { x, y, z }, {})   --command unit to reclaim
+				orderUnit(unitID, CMD_FIGHT, { x, y, z }, {})   --command unit to reclaim
 			end
 			lastOrderGivenInSecs=gameInSecs                   --record the time that command was given
 		end
@@ -77,7 +81,7 @@ function widget:UnitIdle(unitID, unitDefID, unitTeam)
 		--don't apply to units with hold position
 		if (UnitDefs[unitDefID]["canReclaim"] or UnitDefs[unitDefID]["canRepair"] or UnitDefs[unitDefID]["canCapture"])
 			and not (UnitDefs[unitDefID]["isFactory"] or UnitDefs[unitDefID]["canManualFire"])
-			and Spring.GetUnitStates(unitID)["movestate"] ~= 0
+			and SpGetUnitStates(unitID)["movestate"] ~= 0
 		then     --check if unit can reclaim
 			  --echo("Unit "..UnitDefs[unitDefID]["humanName"].." considered a reclaimer");
 			  idleReclaimers[unitID]=true                 --add unit to register

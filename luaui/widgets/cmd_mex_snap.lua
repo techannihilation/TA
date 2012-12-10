@@ -12,6 +12,12 @@ function widget:GetInfo()
 		handler   = true
 	}
 end
+------------------------------------------------------------
+-- Blacklist
+------------------------------------------------------------
+local mapBlackList = {
+ "Brazillian_Battlefield_Remake_V2",
+}
 
 ------------------------------------------------------------
 -- Speedups
@@ -19,6 +25,27 @@ end
 local spGetActiveCommand = Spring.GetActiveCommand
 local spGetMouseState = Spring.GetMouseState
 local spTraceScreenRay = Spring.TraceScreenRay
+local SpGiveOrder = Spring.GiveOrder
+local SpGetMyTeamID = Spring.GetMyTeamID
+local SpPos2BuildPos = Spring.Pos2BuildPos
+local SpGetBuildFacing = Spring.GetBuildFacing
+
+local glDepthTest = gl.DepthTest
+local glLineWidth = gl.LineWidth
+local glColor = gl.Color
+local glDepthMask = gl.DepthMask
+local glBeginEnd = gl.BeginEnd
+local glPushMatrix = gl.PushMatrix
+local glPopMatrix = gl.PopMatrix
+local glTranslate = gl.Translate
+local glRotate = gl.Rotate
+local glUnitShape = gl.UnitShape
+local glVertex = gl.Vertex
+local GL_LINE_STRIP = GL.LINE_STRIP
+
+local pairs = pairs
+local ipairs = ipairs
+local huge = math.huge
 
 local isMex = {}
 for uDefID, uDef in pairs(UnitDefs) do
@@ -32,7 +59,7 @@ end
 ------------------------------------------------------------
 local function GetClosestMetalSpot(x, z)
 	local bestSpot
-	local bestDist = math.huge
+	local bestDist = huge
 	local metalSpots = WG.metalSpots
 	for i = 1, #metalSpots do
 		local spot = metalSpots[i]
@@ -48,7 +75,7 @@ end
 
 local function GetClosestMexPosition(spot, x, z, uDefID, facing)
 	local bestPos
-	local bestDist = math.huge
+	local bestDist = huge
 	local positions = WG.GetMexPositions(spot, uDefID, facing, true)
 	for i = 1, #positions do
 		local pos = positions[i]
@@ -68,12 +95,12 @@ local function GiveNotifyingOrder(cmdID, cmdParams, cmdOpts)
 		return
 	end
 	
-	Spring.GiveOrder(cmdID, cmdParams, cmdOpts.coded)
+	SpGiveOrder(cmdID, cmdParams, cmdOpts.coded)
 end
 
 local function DoLine(x1, y1, z1, x2, y2, z2)
-    gl.Vertex(x1, y1, z1)
-    gl.Vertex(x2, y2, z2)
+    glVertex(x1, y1, z1)
+    glVertex(x2, y2, z2)
 end
 
 ------------------------------------------------------------
@@ -84,8 +111,14 @@ function widget:Initialize()
 		Spring.Echo("<Snap Mex> This widget requires the 'Metalspot Finder' widget to run.")
 		widgetHandler:RemoveWidget(self)
 	end
-end
 
+	for key,value in ipairs(mapBlackList) do
+		if (Game.mapName == value) then
+			Spring.Echo("<Snap Mex> This map is incompatible - removing mex snap widget.")
+			widgetHandler:RemoveWidget(self)
+		end
+	end
+end
 function widget:DrawWorld()
 	
 	-- Check command is to build a mex
@@ -98,35 +131,35 @@ function widget:DrawWorld()
 	if not pos then return end
 	
 	-- Find build position and check if it is valid (Would get 100% metal)
-	local bx, by, bz = Spring.Pos2BuildPos(-cmdID, pos[1], pos[2], pos[3])
+	local bx, by, bz = SpPos2BuildPos(-cmdID, pos[1], pos[2], pos[3])
 	local closestSpot = GetClosestMetalSpot(bx, bz)
 	if not closestSpot or WG.IsMexPositionValid(closestSpot, bx, bz) then return end
 	
 	-- Get the closet position that would give 100%
-	local bface = Spring.GetBuildFacing()
+	local bface = SpGetBuildFacing()
 	local bestPos = GetClosestMexPosition(closestSpot, bx, bz, -cmdID, bface)
 	if not bestPos then return end
 	
 	-- Draw !
-	gl.DepthTest(false)
+	glDepthTest(false)
 	
-	gl.LineWidth(1.49)
-    gl.Color(1, 1, 0, 0.5)
-    gl.BeginEnd(GL.LINE_STRIP, DoLine, bx, by, bz, bestPos[1], bestPos[2], bestPos[3])
-	gl.LineWidth(1.0)
+	glLineWidth(1.49)
+    glColor(1, 1, 0, 0.5)
+    glBeginEnd(GL_LINE_STRIP, DoLine, bx, by, bz, bestPos[1], bestPos[2], bestPos[3])
+	glLineWidth(1.0)
 	
-	gl.DepthTest(true)
-	gl.DepthMask(true)
+	glDepthTest(true)
+	glDepthMask(true)
 	
-	gl.Color(1, 1, 1, 0.5)
-	gl.PushMatrix()
-		gl.Translate(bestPos[1], bestPos[2], bestPos[3])
-		gl.Rotate(90 * bface, 0, 1, 0)
-		gl.UnitShape(-cmdID, Spring.GetMyTeamID())
-	gl.PopMatrix()
+	glColor(1, 1, 1, 0.5)
+	glPushMatrix()
+		glTranslate(bestPos[1], bestPos[2], bestPos[3])
+		glRotate(90 * bface, 0, 1, 0)
+		glUnitShape(-cmdID, SpGetMyTeamID())
+	glPopMatrix()
 	
-	gl.DepthTest(false)
-	gl.DepthMask(false)
+	glDepthTest(false)
+	glDepthMask(false)
 end
 
 function widget:CommandNotify(cmdID, cmdParams, cmdOpts)

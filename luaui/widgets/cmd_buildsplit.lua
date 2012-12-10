@@ -26,6 +26,7 @@ local spGiveOrderToUnit = Spring.GiveOrderToUnit
 local spGiveOrderToUnitArray = Spring.GiveOrderToUnitArray
 
 local uDefs = UnitDefs
+local pairs = pairs
 
 local buildID = 0
 local buildLocs = {}
