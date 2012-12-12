@@ -1,3 +1,4 @@
+
 --[[
 ------------------------------------------------------------
 		Tech Tree gadget
@@ -194,7 +195,7 @@ Other synced gadgets may access the four following functions:
 		Useful to lock commands that are not build commands.
 		Cannot be used more than once on the same command.
 
-		Example: GG.TechSlaveCommand(CMD.MANUALFIRE,"Heavy Weapons, Offensive Commander")
+		Exemple: GG.TechSlaveCommand(CMD.DGUN,"Heavy Weapons, Offensive Commander")
 		Would make the D-Gun button locked until both "heavy weapons" and "offensive commander" technologies are reached.
 
 
@@ -262,11 +263,6 @@ in GetInfo if you need to call them in Initialize.
 
 ]]--
 
-include("luarules/3rdparty/DataDumper.lua")
-
-local function dumper(a1)
-  return DataDumper(a1, nil, true)
-end
 
 function gadget:GetInfo()
 	return {
@@ -300,10 +296,7 @@ local function Xor(a,b)
 end
 
 
-
-
 if (gadgetHandler:IsSyncedCode()) then
-	
 
 
 	-- Variables
@@ -904,25 +897,38 @@ if (gadgetHandler:IsSyncedCode()) then
 
 
 	function gadget:AllowCommand(u,ud,team,cmd,param,opt,synced)
-                if param and cmd<0 and #param==4 then
-                    return CheckCmd(cmd,team,param[1],param[2],param[3])
-                else
-                    return CheckCmd(cmd,team,Spring.GetUnitPosition(u))
-                end
-        end
-
-
-	function gadget:AllowUnitCreation(ud,builder,team,x,y,z)
-		if x and z then
-			return CheckCmd(-ud,team,x,y,z)
+		local x,y,z
+		if param and cmd<0 and #param==4 then
+			x,y,z = param[1],param[2],param[3]
 		else
-			return CheckCmd(-ud,team,builder)
+			x,y,z = Spring.GetUnitPosition(u)
 		end
+		local ICanHaz = CheckCmd(cmd,team,x,y,z)
+		if not ICanHaz then
+			Spring.PlaySoundFile("sounds/moarpower.wav", 5, x, y, z)
+			Spring.SpawnCEG("moarpower", x, y, z)
+		end
+	return ICanHaz
 	end
 
-	
+
+    function gadget:AllowUnitCreation(ud,builder,team,x,y,z)
+        local CanIHaz = true
+        if x and z then
+            CanIHaz = CheckCmd(-ud,team,x,y,z)
+        else
+            CanIHaz =  CheckCmd(-ud,team,builder)
+        end
+        if not CanIHaz then
+            Spring.PlaySoundFile("sounds/moarpower.wav", 5, x, y, z)
+        end
+        return CanIHaz
+	end
+
 
 	function gadget:Initialize()
+
+
 		for _,ud in pairs(UnitDefs) do
 			local cp=ud.customParams
 			if cp then
@@ -981,10 +987,7 @@ if (gadgetHandler:IsSyncedCode()) then
 
 	end
 
-	local function SYNC_CALL_S(data)
-		SendToUnsynced("SYNC_CALL_Callin", dumper(data))
-	end
-	
+
 	function gadget:GameFrame(frame)
 		if frame%19==17 then
 			if RecheckTeams then
@@ -1003,27 +1006,12 @@ if (gadgetHandler:IsSyncedCode()) then
 					unit.z=nz
 				end
 			end
-			--_G.Tech={TechTable=TechTable,ProviderTable=ProviderTable,AccessionTable=AccessionTable,ProviderIDs=ProviderIDs,AccessionIDs=AccessionIDs,ProviderRangeByIDs=ProviderRangeByIDs}
-			
-			SYNC_CALL_S({TechTable=TechTable,ProviderTable=ProviderTable,AccessionTable=AccessionTable,ProviderIDs=ProviderIDs,AccessionIDs=AccessionIDs,ProviderRangeByIDs=ProviderRangeByIDs})
+			_G.Tech={TechTable=TechTable,ProviderTable=ProviderTable,AccessionTable=AccessionTable,ProviderIDs=ProviderIDs,AccessionIDs=AccessionIDs,ProviderRangeByIDs=ProviderRangeByIDs}
 		end
 	end
 
 
 else--unsynced
-	local SYNCED = {};
-	
-	local function SYNC_CALL_US(_, serializedData) 
-		SYNCED.Tech = loadstring(serializedData)()
-	end
-	
-
-	function gadget:Initialize()
-		gadgetHandler:AddSyncAction('SYNC_CALL_Callin', SYNC_CALL_US)
-	end
-	
-	
-
 
 	local DrawWorldTimer = nil
 
