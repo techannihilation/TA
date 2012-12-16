@@ -122,7 +122,7 @@ end
 
 function gadget:UnitCreated(unitID, unitDefID, teamID, builderID)
 	local ud = UnitDefs[unitDefID]
-	if (ud.builder==true and #ud.buildOptions>0 or ud.name:find("_nano_tower",1,true)) then
+	if (ud.builder==true and #ud.buildOptions>0 or (ud.name:find("nanotc",1,true) or ud.name:find("nanotower",1,true))) then
 		local stMode
 		if ud.name:find("_nano_tower",1,true) then
 			stMode=0
