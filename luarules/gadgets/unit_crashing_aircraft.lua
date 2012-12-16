@@ -84,7 +84,7 @@ function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, w
 	if crashing[unitID] then 
 		return 0,0
 	end --hacky
-	if UnitDefs[unitDefID]["canFly"] == true and (damage>GetUnitHealth(unitID)) and random()>0.5 then
+	if UnitDefs[unitDefID]["canFly"] == true and (damage>GetUnitHealth(unitID)) and random()>0.33 then
 	--NOTE: strafe airmovetype aircraft DO NOT CRASH, only regular stuff like bombers
 		--Spring.Echo('CRASHING AIRCRAFT',unitID)
 		SetUnitCOBValue(unitID, COB.CRASHING, 1)
@@ -101,13 +101,4 @@ function gadget:UnitDestroyed(unitID, unitDefID, teamID, attackerID, attackerDef
 		--Spring.Echo('CRASHING AIRCRAFT UNITDESTROYED CALLED!',unitID)
 		crashing[unitID]=nil
 	end
-end
-
-function gadget:AllowUnitBuildStep(builderID, builderTeamID, uID, uDefID, step) --THIS IS VERY HACKY AND BAD FOR PERFORMACE!
-	--Spring.Echo('AllowUnitBuildStep',uID,step)
-	if step<0 and crashing[uID] then
-		--Spring.Echo('AllowUnitBuildStep ON CRASHING!')
-		return false
-	end
-	return true
 end
