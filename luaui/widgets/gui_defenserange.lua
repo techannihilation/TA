@@ -319,7 +319,6 @@ modConfig["TA"]["unitList"] =
 								tllsilo = { weapons = { 1 } },
 								tllhlt = { weapons = { 1 } },
 								tllhltns = { weapons = { 1 } },
-								tllhmt = { weapons = { 1 } },
 								tlllrpt = { weapons = { 1 } },
 								tllobliterator = { weapons = { 1 } },
 								tllplasma = { weapons = { 1 } },
@@ -337,6 +336,7 @@ modConfig["TA"]["unitList"] =
 								tllflak = { weapons = { 2 } },
 								tllsam = { weapons = { 2 } },
 								tlldb = { weapons = { 2 } },
+								tllhmt = { weapons = { 2 } },
 									--Anti-Nuke--
 								tllantinuke = { weapons = { 3 } } 
 							
