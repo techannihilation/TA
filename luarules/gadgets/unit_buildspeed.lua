@@ -71,6 +71,14 @@ local function AddBuildspeedCmdDesc(unitID)
     FindUnitCmdDesc(unitID, CMD.FIRE_STATE) or
     123456 -- back of the pack
   buildspeedCmdDesc.params[1] = '1'
+  local uDefID = GetUnitDefID(unitID)
+  local ud = UnitDefs[uDefID]
+   if (ud.name:find("nanotc",1,true) or ud.name:find("nanotower",1,true)) then
+     removeButton(unitID, CMD.ATTACK)
+     removeButton(unitID, CMD.MOVE)
+     removeButton(unitID, CMD.FIGHT)
+     removeButton(unitID, CMD.FIRE_STATE)
+   end
   spInsertUnitCmdDesc(unitID, insertID + 1, buildspeedCmdDesc)
 end
 
@@ -117,6 +125,12 @@ local function BuildspeedCommand(unitID, unitDefID, cmdParams, teamID)
 	UpdateButton(unitID, cmdParams[1])
 end
 
+function removeButton(unitID, ID)
+  local cmdID = FindUnitCmdDesc(unitID, ID)
+  if cmdID then
+    spRemoveUnitCmdDesc(unitID, cmdID)
+  end
+end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
