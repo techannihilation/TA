@@ -36,6 +36,7 @@ local spRemoveUnitCmdDesc = Spring.RemoveUnitCmdDesc
 --------------------------------------------------------------------------------
 
 CMD_BUILDSPEED = 33455
+--CMD_BUILDSPEEDBOOST = 33456
 local passiveBuilders = {} -- passiveBuilders[uID] = nil / bool
 local requiresMetal = {} -- requiresMetal[uDefID] = bool
 local requiresEnergy = {} -- requiresEnergy[uDefID] = bool
@@ -54,6 +55,16 @@ local buildspeedCmdDesc = {
   tooltip = 'Orders: Production Rate',
   params  = { '0', 'Passive', '25%', '50%', '75%', '100%'}
 }
+ 
+local buildspeedboostCmdDesc = {
+  id      = CMD_BUILDSPEEDBOOST,
+  type    = CMDTYPE.ICON_MODE,
+  name    = 'BOOST',
+  cursor  = 'Production',
+  action  = 'Production',
+  tooltip = 'Nano Boost',
+  params  = { 'Boost', 'Off'}
+}
   
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -71,6 +82,8 @@ local function AddBuildspeedCmdDesc(unitID)
     FindUnitCmdDesc(unitID, CMD.FIRE_STATE) or
     123456 -- back of the pack
   buildspeedCmdDesc.params[1] = '1'
+  buildspeedboostCmdDesc.params[1] = '1'
+  
   local uDefID = GetUnitDefID(unitID)
   local ud = UnitDefs[uDefID]
    if (ud.name:find("nanotc",1,true) or ud.name:find("nanotower",1,true)) then
@@ -79,7 +92,9 @@ local function AddBuildspeedCmdDesc(unitID)
      removeButton(unitID, CMD.FIGHT)
      removeButton(unitID, CMD.FIRE_STATE)
    end
+   
   spInsertUnitCmdDesc(unitID, insertID + 1, buildspeedCmdDesc)
+  --spInsertUnitCmdDesc(unitID, insertID + 2, buildspeedboostCmdDesc)
 end
 
 
@@ -138,7 +153,7 @@ function gadget:UnitCreated(unitID, unitDefID, teamID, builderID)
 	local ud = UnitDefs[unitDefID]
 	if (ud.builder==true and #ud.buildOptions>0 or (ud.name:find("nanotc",1,true) or ud.name:find("nanotower",1,true))) then
 		local stMode
-		if ud.name:find("_nano_tower",1,true) then
+		if (ud.name:find("nanotc",1,true) or ud.name:find("nanotower",1,true)) then
 			stMode=0
 		else
 			stMode=4
