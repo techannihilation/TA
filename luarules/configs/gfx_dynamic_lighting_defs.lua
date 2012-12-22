@@ -42,7 +42,6 @@ local copyLightDefs = {
 		["atomic_blastsml"           ] = "atomic_blastsml",
 
 		--Brthas
-		["heavyimpact_cormechart"    ] = "berthacannon",
 		["armbrtha_arm_berthacannon2"] = "berthacannon",
 		["corint_core_intimidator2"   ] = "berthacannon",
 		["tlllrpt_arm_berthacannon  "] = "berthacannon",
