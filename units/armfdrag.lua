@@ -56,6 +56,7 @@ local featureDefs = {
 		category = [[dragonteeth]],
 		damage = 2500,
 		description = [[Shark's Teeth]],
+		floating = true,
 		footprintX = 2,
 		footprintZ = 2,
 		height = 75,
