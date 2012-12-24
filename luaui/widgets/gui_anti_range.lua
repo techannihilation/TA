@@ -16,6 +16,11 @@ end
 --------------------------------------------------------------------------------
 local arm_anti = UnitDefNames.armamd.id
 local core_anti = UnitDefNames.corfmd.id
+local arm_anti1 = UnitDefNames.armamd1.id
+local core_anti1 = UnitDefNames.corfmd1.id
+local arm_anti2 = UnitDefNames.armamd2.id
+local core_anti2 = UnitDefNames.corfmd2.id
+local tllantinuke = UnitDefNames.tllantinuke.id
 
 --------------------------------------------------------------------------------
 -- Speedups
@@ -34,7 +39,7 @@ local glDrawGroundCircle = gl.DrawGroundCircle
 --------------------------------------------------------------------------------
 function widget:DrawWorld()
     local _, cmdID = spGetActiveCommand()
-    if cmdID == -arm_anti or cmdID == -core_anti then
+    if cmdID == -arm_anti or cmdID == -core_anti or -arm_anti1 or cmdID == -core_anti1 or -arm_anti2 or cmdID == -core_anti2 or cmdID == -tllantinuke then
         local mx, my = spGetMouseState()
         local _, pos = spTraceScreenRay(mx, my, true)
         if pos then
