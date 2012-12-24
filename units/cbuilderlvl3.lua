@@ -67,9 +67,10 @@ local unitDef = {
 		[10] = [[cordoom1]],
 		[11] = [[corfsilo]],
 		[12] = [[corfmd2]],
-		[13] = [[cormas]],
-		[14] = [[corpre]],
-		[15] = [[cadvmsto]],
+		[13] = [[corses]],
+		[14] = [[cormas]],
+		[15] = [[corpre]],
+		[16] = [[cadvmsto]],
 	},
 	featureDefs = nil,
 	sounds = {

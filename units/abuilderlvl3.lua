@@ -64,7 +64,7 @@ local unitDef = {
 		[11] = [[armfsilo]],
 		[12] = [[armamd2]],
 		[13] = [[armmas]],
-		[14] = [[armt4store]],
+		[14] = [[armses]],
 		[15] = [[armhys]],
 		[16] = [[cadvmsto]],
 	},
