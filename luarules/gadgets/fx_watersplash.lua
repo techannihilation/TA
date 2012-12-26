@@ -55,10 +55,8 @@ else
 			elseif aoe >= 64 and aoe < 300 then
 				SpSpawnCEG(splashCEG4, px, 0, pz)
 			end
-			return true
-		else
-			return false
 		end
+		return false
 	end
 	
 	function gadget:Initialize()
