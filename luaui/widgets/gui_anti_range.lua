@@ -39,7 +39,7 @@ local glDrawGroundCircle = gl.DrawGroundCircle
 --------------------------------------------------------------------------------
 function widget:DrawWorld()
     local _, cmdID = spGetActiveCommand()
-    if cmdID == -arm_anti or cmdID == -core_anti or -arm_anti1 or cmdID == -core_anti1 or -arm_anti2 or cmdID == -core_anti2 or cmdID == -tllantinuke then
+    if cmdID == -arm_anti or cmdID == -core_anti or cmdID == -arm_anti1 or cmdID == -core_anti1 or cmdID == -arm_anti2 or cmdID == -core_anti2 or cmdID == -tllantinuke then
         local mx, my = spGetMouseState()
         local _, pos = spTraceScreenRay(mx, my, true)
         if pos then
