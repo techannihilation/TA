@@ -263,7 +263,37 @@ in GetInfo if you need to call them in Initialize.
 
 ]]--
 
+------------------------------------------------------------
+--- Speedups
+------------------------------------------------------------
+local SpGetTeamList = Spring.GetTeamList
+local SpSetTeamRulesParam = Spring.SetTeamRulesParam
+local SpGetUnitHealth = Spring.GetUnitHealth
+local SpGetUnitPosition = Spring.GetUnitPosition
+local SpGetUnitDefID = Spring.GetUnitDefID
+local SpGetUnitIsDead = Spring.GetUnitIsDead
+local SpGetTeamUnitsByDefs = Spring.GetTeamUnitsByDefs
+local SpGetUnitTeam = Spring.GetUnitTeam
+local SpGetUnitCmdDescs = Spring.GetUnitCmdDescs
+local SpFindUnitCmdDesc = Spring.FindUnitCmdDesc
+local SpEditUnitCmdDesc = Spring.EditUnitCmdDesc
+local SpGetAllUnits = Spring.GetAllUnits
+local SpSetUnitTooltip = Spring.SetUnitTooltip
+local SpGetUnitTooltip = Spring.GetUnitTooltip
+local SpGetTeamUnits = Spring.GetTeamUnits
+local SpGetSelectedUnits = Spring.GetSelectedUnits
+local SpGetMouseState = Spring.GetMouseState
+local SpTraceScreenRay = Spring.TraceScreenRay
+local SpDiffTimers = Spring.DiffTimers
+local SpGetTimer = Spring.GetTimer
+local SpGetActiveCommand = Spring.GetActiveCommand
+local SpIsGUIHidden = Spring.IsGUIHidden
 
+local huge = math.huge
+local abs = math.abs
+------------------------------------------------------------
+		
+		
 function gadget:GetInfo()
 	return {
 		name = "Tech Trees (with count, range, sign, ...)",
@@ -414,16 +444,16 @@ if (gadgetHandler:IsSyncedCode()) then
 		if not TechTable[techname] then
 			TechTable[techname]={name=techname,ProvidedBy={},AccessTo={},ProviderSum={}}
 			dbgEcho("New Technology declared: \""..techname.."\"")
-			for _,team in ipairs(Spring.GetTeamList()) do
+			for _,team in ipairs(SpGetTeamList()) do
 				TechTable[techname].ProviderSum[team]=0
-				Spring.SetTeamRulesParam(team,"technology:"..techname,0)
+				SpSetTeamRulesParam(team,"technology:"..techname,0)
 			end
 		end
 	end
 
 
 	local function isComplete(u)
-		local health,maxHealth,paralyzeDamage,captureProgress,buildProgress=Spring.GetUnitHealth(u)
+		local health,maxHealth,paralyzeDamage,captureProgress,buildProgress=SpGetUnitHealth(u)
 		if buildProgress and buildProgress>=1 then
 			return true
 		else
@@ -508,8 +538,8 @@ if (gadgetHandler:IsSyncedCode()) then
 			local x,z
 			local u=ParseID(...)
 			if u then
-				x,_,z=Spring.GetUnitPosition(u)
-				local ud=UnitDefs[Spring.GetUnitDefID(u)]
+				x,_,z=SpGetUnitPosition(u)
+				local ud=UnitDefs[SpGetUnitDefID(u)]
 				if ud.transportMass<80000 or ud.speed~=0 then
 					RecheckUnits[u]={id=u,x=x,z=z}
 				end
@@ -518,13 +548,13 @@ if (gadgetHandler:IsSyncedCode()) then
 			end
 			if x and z then
 				local sum=TechTable[TechName].ProviderSum[Team]
-				for _,u in ipairs(Spring.GetTeamUnitsByDefs(Team,TechTable[TechName].ProvidedBy)) do
-					for _,tp in pairs(ProviderTable[Spring.GetUnitDefID(u)]) do
+				for _,u in ipairs(SpGetTeamUnitsByDefs(Team,TechTable[TechName].ProvidedBy)) do
+					for _,tp in pairs(ProviderTable[SpGetUnitDefID(u)]) do
 						if tp.tech==TechName and tp.range then
-							local ux,_,uz=Spring.GetUnitPosition(u)
+							local ux,_,uz=SpGetUnitPosition(u)
 							if (ux-x)*(ux-x)+(uz-z)*(uz-z)<=tp.range*tp.range then
 								local q=tp.quantity or 1
-								if (isComplete(u) or q<0) and not Spring.GetUnitIsDead(u) then
+								if (isComplete(u) or q<0) and not SpGetUnitIsDead(u) then
 									sum=sum+q
 								end
 							end
@@ -627,7 +657,7 @@ if (gadgetHandler:IsSyncedCode()) then
 		end
 
 		-- Make all buttons be refreshed
-		for _,team in ipairs(Spring.GetTeamList()) do
+		for _,team in ipairs(SpGetTeamList()) do
 			RecheckTeams[team]=team
 		end
 
@@ -662,7 +692,7 @@ if (gadgetHandler:IsSyncedCode()) then
 				local q=AccessionTable[r][tech.name].quantity or 1
 				access_str=(access_str and access_str..", " or "\r\n\tRequired: ")..(q and q.." " or "").."by "..((r<0 and UnitDefs[-r]) and UnitDefs[-r].humanName or "CMD "..r)
 			end
-			for _,team in ipairs(Spring.GetTeamList()) do
+			for _,team in ipairs(SpGetTeamList()) do
 				team_str=(team_str and team_str.." " or "\r\n\t").."Team"..team..":"..tech.ProviderSum[team]
 			end
 			str=str..(provider_str or "")..(consumer_str or "")..(access_str or "")..(team_str or "").."\r\n"
@@ -674,14 +704,14 @@ if (gadgetHandler:IsSyncedCode()) then
 
 	local function EditButtons(u,ud,team)
 
-		ud=ud or Spring.GetUnitDefID(u)
-		team=team or Spring.GetUnitTeam(u)
+		ud=ud or SpGetUnitDefID(u)
+		team=team or SpGetUnitTeam(u)
 
 		-- Sub-functions
 		local function GrantingToolTip(u,ucd,cmd)
 			if not GrantDesc[cmd] then
 				if not OriDesc[cmd] then
-					OriDesc[cmd]=Spring.GetUnitCmdDescs(u)[ucd].tooltip
+					OriDesc[cmd]=SpGetUnitCmdDescs(u)[ucd].tooltip
 				end
 				GrantDesc[cmd]=ConcatProvList(ProviderTable[-cmd],", ")..OriDesc[cmd]
 			end
@@ -694,19 +724,19 @@ if (gadgetHandler:IsSyncedCode()) then
 
 		-- What is granted
 		for _,ud in ipairs(ProviderIDs) do
-			local UnitCmdDesc = Spring.FindUnitCmdDesc(u,-ud)
+			local UnitCmdDesc = SpFindUnitCmdDesc(u,-ud)
 			if UnitCmdDesc then
-				Spring.EditUnitCmdDesc(u,UnitCmdDesc,{tooltip=GrantingToolTip(u,UnitCmdDesc,-ud)})
+				SpEditUnitCmdDesc(u,UnitCmdDesc,{tooltip=GrantingToolTip(u,UnitCmdDesc,-ud)})
 			end
 		end
 
 		-- What is required
 		for _,cid in ipairs(AccessionIDs) do
-			local UnitCmdDesc = Spring.FindUnitCmdDesc(u,cid)
+			local UnitCmdDesc = SpFindUnitCmdDesc(u,cid)
 			if UnitCmdDesc then
 				local ReqDesc=nil
 				if not OriDesc[cid] then
-					OriDesc[cid]=Spring.GetUnitCmdDescs(u)[UnitCmdDesc].tooltip
+					OriDesc[cid]=SpGetUnitCmdDescs(u)[UnitCmdDesc].tooltip
 				end
 				local AllowedHereAndNow=true
 				local MaybeAllowedElsewhere=true
@@ -716,7 +746,7 @@ if (gadgetHandler:IsSyncedCode()) then
 						color="\255\64\255\64"--green
 					else
 						AllowedHereAndNow=false
-						if TechTable[req.tech].Ranged and #Spring.GetTeamUnitsByDefs(team,TechTable[req.tech].ProvidedBy)>=1 then
+						if TechTable[req.tech].Ranged and #SpGetTeamUnitsByDefs(team,TechTable[req.tech].ProvidedBy)>=1 then
 							color="\255\255\255\64"--yellow
 						else
 							color="\255\255\64\64"--red
@@ -728,13 +758,13 @@ if (gadgetHandler:IsSyncedCode()) then
 				end
 				ReqDesc=ReqDesc.."\n\255\255\255\255"..(GrantDesc[cid] or OriDesc[cid])
 				local enabled=AllowedHereAndNow or (MaybeAllowedElsewhere and UnitDefs[ud].speed>0)
-				Spring.EditUnitCmdDesc(u,UnitCmdDesc,{disabled=not enabled,tooltip=ReqDesc})
+				SpEditUnitCmdDesc(u,UnitCmdDesc,{disabled=not enabled,tooltip=ReqDesc})
 			end
 		end
 
 		-- Not anymore editing buttons, but calling COB scripts when tech is lost and regained
 		if UnitsWithScripts[u] then
-			local newstate=CheckCmd(-Spring.GetUnitDefID(u),team,u)
+			local newstate=CheckCmd(-SpGetUnitDefID(u),team,u)
 			if newstate~=UnitsWithScripts[u].state then
 				UnitsWithScripts[u].state=newstate
 				if newstate then
@@ -759,7 +789,7 @@ if (gadgetHandler:IsSyncedCode()) then
 		elseif type(arg)=="table" then
 			us=arg
 		else
-			us=Spring.GetAllUnits()
+			us=SpGetAllUnits()
 		end
 		for _,u in pairs(us) do
 			EditButtons(u)
@@ -788,8 +818,8 @@ if (gadgetHandler:IsSyncedCode()) then
 				table.insert(TechTable[t].AccessTo,cmd)
 			end
 			-- Edit buttons of existing units:
-			for _,u in ipairs(Spring.GetAllUnits()) do
-				local UnitCmdDesc = Spring.FindUnitCmdDesc(u,cmd)
+			for _,u in ipairs(SpGetAllUnits()) do
+				local UnitCmdDesc = SpFindUnitCmdDesc(u,cmd)
 				if UnitCmdDesc then
 					EditButtons(u)
 				end
@@ -806,8 +836,8 @@ if (gadgetHandler:IsSyncedCode()) then
 			Spring.Echo("Bad call to Grant Tech: TechName=\""..TechName.."\", Team="..Team.." (wrong)")
 			return false
 		else
-			TechTable[TechName].ProviderSum[Team]=Quantity or math.huge
-			Spring.SetTeamRulesParam(Team,"technology:"..TechName,TechTable[TechName].ProviderSum[Team])
+			TechTable[TechName].ProviderSum[Team]=Quantity or huge
+			SpSetTeamRulesParam(Team,"technology:"..TechName,TechTable[TechName].ProviderSum[Team])
 			RecheckTeams[Team]=Team
 			return true
 		end
@@ -821,7 +851,7 @@ if (gadgetHandler:IsSyncedCode()) then
 				if (isComplete(u) or (pt.quantity or 1)<0) then
 					if not pt.range then
 						TechTable[pt.tech].ProviderSum[team]=TechTable[pt.tech].ProviderSum[team]-(pt.quantity or 1)
-						Spring.SetTeamRulesParam(team,"technology:"..pt.tech,TechTable[pt.tech].ProviderSum[team])
+						SpSetTeamRulesParam(team,"technology:"..pt.tech,TechTable[pt.tech].ProviderSum[team])
 					end
 					RecheckTeams[team]=team
 				end
@@ -836,12 +866,12 @@ if (gadgetHandler:IsSyncedCode()) then
 			UnitsWithScripts[u]={state=nil,TechLostCOBFuncID=idl,TechGrantedCOBFuncID=idg}
 		end
 		if ProviderTable[ud] then
-			Spring.SetUnitTooltip(u,ConcatProvList(ProviderTable[ud])..Spring.GetUnitTooltip(u))
+			SpSetUnitTooltip(u,ConcatProvList(ProviderTable[ud])..SpGetUnitTooltip(u))
 			for _,pt in pairs(ProviderTable[ud]) do
 				if (pt.quantity or 1)<0 then
 					if not pt.range then
 						TechTable[pt.tech].ProviderSum[team]=TechTable[pt.tech].ProviderSum[team]+(pt.quantity or 1)
-						Spring.SetTeamRulesParam(team,"technology:"..pt.tech,TechTable[pt.tech].ProviderSum[team])
+						SpSetTeamRulesParam(team,"technology:"..pt.tech,TechTable[pt.tech].ProviderSum[team])
 					end
 					RecheckTeams[team]=team
 				end
@@ -857,7 +887,7 @@ if (gadgetHandler:IsSyncedCode()) then
 				if (pt.quantity or 1)>=0 then
 					if not pt.range then
 						TechTable[pt.tech].ProviderSum[team]=TechTable[pt.tech].ProviderSum[team]+(pt.quantity or 1)
-						Spring.SetTeamRulesParam(team,"technology:"..pt.tech,TechTable[pt.tech].ProviderSum[team])
+						SpSetTeamRulesParam(team,"technology:"..pt.tech,TechTable[pt.tech].ProviderSum[team])
 					end
 					RecheckTeams[team]=team
 				end
@@ -880,7 +910,7 @@ if (gadgetHandler:IsSyncedCode()) then
 			for _,pt in pairs(ProviderTable[ud]) do
 				if (isComplete(u) or (pt.quantity or 1)<0) and not pt.range then
 					TechTable[pt.tech].ProviderSum[team]=TechTable[pt.tech].ProviderSum[team]+(pt.quantity or 1)
-					Spring.SetTeamRulesParam(team,"technology:"..pt.tech,TechTable[pt.tech].ProviderSum[team])
+					SpSetTeamRulesParam(team,"technology:"..pt.tech,TechTable[pt.tech].ProviderSum[team])
 					RecheckTeams[team]=team
 				end
 			end
@@ -901,7 +931,7 @@ if (gadgetHandler:IsSyncedCode()) then
 		if param and cmd<0 and #param==4 then
 			x,y,z = param[1],param[2],param[3]
 		else
-			x,y,z = Spring.GetUnitPosition(u)
+			x,y,z = SpGetUnitPosition(u)
 		end
 		local ICanHaz = CheckCmd(cmd,team,x,y,z)
 		if not ICanHaz then
@@ -992,14 +1022,14 @@ if (gadgetHandler:IsSyncedCode()) then
 		if frame%19==17 then
 			if RecheckTeams then
 				for _,team in pairs(RecheckTeams) do
-					for _,u in ipairs(Spring.GetTeamUnits(team)) do
+					for _,u in ipairs(SpGetTeamUnits(team)) do
 						EditButtons(u,nil,team)
 					end
 				end
 				RecheckTeams={}
 			end
 			for _,unit in pairs(RecheckUnits) do
-				local x,_,z=Spring.GetUnitPosition(unit.id)
+				local x,_,z=SpGetUnitPosition(unit.id)
 				if x~=unit.x and z~=unit.z then
 					EditButtons(unit.id)
 					unit.x=nx
@@ -1017,29 +1047,29 @@ else--unsynced
 
 	function gadget:DrawWorld()
 
-		if Spring.IsGUIHidden() or not SYNCED.Tech then
+		if SpIsGUIHidden() or not SYNCED.Tech then
 			return
 		end
 
-		local _,cmd=Spring.GetActiveCommand()
+		local _,cmd=SpGetActiveCommand()
 
 		-- Placing a unit or giving an order requiring ranged tech
 		if SYNCED.Tech.AccessionTable[cmd] then
 			for _,tech in spairs(SYNCED.Tech.AccessionTable[cmd]) do
 				if SYNCED.Tech.TechTable[tech.tech].Ranged then
-					DrawWorldTimer=DrawWorldTimer or Spring.GetTimer()
-					local cm=math.abs(((Spring.DiffTimers(Spring.GetTimer(),DrawWorldTimer)/.78)%2)-1)
+					DrawWorldTimer=DrawWorldTimer or SpGetTimer()
+					local cm=abs(((SpDiffTimers(SpGetTimer(),DrawWorldTimer)/.78)%2)-1)
 					RangedProviders={}
 					for _,id in sipairs(SYNCED.Tech.TechTable[tech.tech].ProvidedBy) do
 						if SYNCED.Tech.ProviderTable[id][tech.tech].range then
 							table.insert(RangedProviders,id)
 						end
 					end
-					for _,u in ipairs(Spring.GetTeamUnitsByDefs(Spring.GetLocalTeamID(),RangedProviders)) do
-						local x,y,z=Spring.GetUnitPosition(u)
+					for _,u in ipairs(SpGetTeamUnitsByDefs(Spring.GetLocalTeamID(),RangedProviders)) do
+						local x,y,z=SpGetUnitPosition(u)
 						gl.Color(cm,cm,cm,1)
 						gl.LineWidth(3)
-						gl.DrawGroundCircle(x,y,z,SYNCED.Tech.ProviderTable[Spring.GetUnitDefID(u)][tech.tech].range,24)
+						gl.DrawGroundCircle(x,y,z,SYNCED.Tech.ProviderTable[SpGetUnitDefID(u)][tech.tech].range,24)
 						gl.Color(1,1,1,1)
 						gl.LineWidth(1)
 					end
@@ -1048,16 +1078,16 @@ else--unsynced
 		end
 
 		-- Selected or mousehovered unit(s) providing range tech
-		local units=Spring.GetSelectedUnits() or {}
-		local mx,my=Spring.GetMouseState()
-		local kind,id=Spring.TraceScreenRay(mx,my,false,true)
+		local units=SpGetSelectedUnits() or {}
+		local mx,my=SpGetMouseState()
+		local kind,id=SpTraceScreenRay(mx,my,false,true)
 		if kind=="unit" then
 			table.insert(units,id)
 		end
 		for _,u in ipairs(units) do
-			local ptrange=SYNCED.Tech.ProviderRangeByIDs[Spring.GetUnitDefID(u)]
+			local ptrange=SYNCED.Tech.ProviderRangeByIDs[SpGetUnitDefID(u)]
 			if ptrange then
-				local x,y,z=Spring.GetUnitPosition(u)
+				local x,y,z=SpGetUnitPosition(u)
 				gl.Color(0,0.2,1,1)
 				gl.LineWidth(1)
 				gl.DrawGroundCircle(x,y,z,ptrange,24)
@@ -1069,13 +1099,13 @@ else--unsynced
 		if cmd and cmd<0 then
 			local ptrange=SYNCED.Tech.ProviderRangeByIDs[-cmd]
 			if ptrange then
-				local mx,my=Spring.GetMouseState()
-				local _,pos=Spring.TraceScreenRay(mx,my,true,true)
+				local mx,my=SpGetMouseState()
+				local _,pos=SpTraceScreenRay(mx,my,true,true)
 				if type(pos)=="table" then
 					local x,y,z=unpack(pos)
 					--local cm=math.abs(((gadgetHandler:GetHourTimer()*1.73)%2)-1)-- GetHourTimer not increased in gadgets
-					DrawWorldTimer=DrawWorldTimer or Spring.GetTimer()
-					local cm=math.abs(((Spring.DiffTimers(Spring.GetTimer(),DrawWorldTimer)*1.73)%2)-1)
+					DrawWorldTimer=DrawWorldTimer or SpGetTimer()
+					local cm=abs(((SpDiffTimers(SpGetTimer(),DrawWorldTimer)*1.73)%2)-1)
 					gl.Color(0,cm,1,1)
 					gl.LineWidth(2)
 					gl.DrawGroundCircle(x,y,z,ptrange,24)
