@@ -296,8 +296,20 @@ local UnitEffects = {
     {class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=20, emitVector = {0,1,0}, piece="lbthrust", onActive=true}},
     {class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=20, emitVector = {0,1,0}, piece="rfthrust", onActive=true}}, 
     {class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=20, emitVector = {0,1,0}, piece="rbthrust", onActive=true}},
-  
  },
+  [UnitDefNames["armorion"].id] = {
+    {class='AirJet',options={color={0.6,0.1,0}, width=7, length=24, piece="rthrust", onActive=true}},
+    {class='AirJet',options={color={0.6,0.1,0}, width=7, length=24, piece="lthrust", onActive=true}},
+ },
+  [UnitDefNames["armcyclone"].id] = {
+    {class='AirJet',options={color={0.6,0.1,0}, width=2.3, length=24, piece="rthrust", onActive=true}},
+    {class='AirJet',options={color={0.6,0.1,0}, width=2.3, length=24, piece="rrthrust", onActive=true}},
+    {class='AirJet',options={color={0.6,0.1,0}, width=2.3, length=24, piece="lthrust", onActive=true}},
+    {class='AirJet',options={color={0.6,0.1,0}, width=2.3, length=24, piece="llthrust", onActive=true}},
+ },
+  [UnitDefNames["coreclipse"].id] = {
+    {class='AirJet',options={color={0.6,0.1,0}, width=5.7, length=45, piece="thrust", onActive=true}},
+ }, 
  [UnitDefNames["corfalc"].id] = {
     {class='AirJet',options={color={0.6,0.1,0}, width=5.7, length=45, piece="thrust", onActive=true}},
  }, 
@@ -323,7 +335,7 @@ local UnitEffects = {
  },
  [UnitDefNames["tlltorpp"].id] = {
     {class='AirJet',options={color={1,1,1}, width=7, length=20, piece="rthrust", onActive=true}},
-    {class='AirJet',options={color={1,1,1}, width=7, length=20, piece="lthrust", nActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=7, length=20, piece="lthrust", onActive=true}},
  },
  [UnitDefNames["tlladvfight"].id] = {
     {class='AirJet',options={color={0,0,1}, width=5, length=22, piece="rthrust", onActive=true}},
