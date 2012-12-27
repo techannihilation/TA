@@ -24,6 +24,17 @@ end
             
 ]]--
 
+local pairs = pairs
+local SpGetAllUnits = Spring.GetAllUnits
+local SpGetUnitDefID = Spring.GetUnitDefID
+local SpIsUnitAllied = Spring.IsUnitAllied
+local SpIsUnitSelected = Spring.IsUnitSelected
+local SpGetUnitPosition = Spring.GetUnitPosition
+
+local glLineWidth = gl.LineWidth
+local glColor = gl.Color
+local glDrawGroundCircle = gl.DrawGroundCircle
+
 local ringsDefs = {
     --Arm nanos
 	[UnitDefNames.armnanotc.id] = {
@@ -72,13 +83,13 @@ local ringsDefs = {
 local ringedUnits = {}
 
 function widget:Initialize()
-    for _, uId in pairs(Spring.GetAllUnits()) do
+    for _, uId in pairs(SpGetAllUnits()) do
         widget:UnitEnteredLos(uId)
     end
 end
 
 function widget:UnitEnteredLos(uId)
-    local uDefId = Spring.GetUnitDefID(uId)
+    local uDefId = SpGetUnitDefID(uId)
     if uDefId then
         widget:UnitCreated(uId, uDefId)
     end
@@ -93,13 +104,13 @@ end
 
 function widget:DrawWorld()
     for uId, rings in pairs(ringedUnits) do
-		if (Spring.IsUnitAllied(uId)and Spring.IsUnitSelected(uId)) then
-			local ux, uy, uz = Spring.GetUnitPosition(uId)
+		if (SpIsUnitAllied(uId)and SpIsUnitSelected(uId)) then
+			local ux, uy, uz = SpGetUnitPosition(uId)
 			if ux then
 				for _, ring in pairs(rings) do
-					gl.Color(ring.color)
-					gl.LineWidth(ring.lineWidth or 1)
-					gl.DrawGroundCircle(ux, uy, uz, ring.radius, ring.divs or 32)
+					glColor(ring.color)
+					glLineWidth(ring.lineWidth or 1)
+					glDrawGroundCircle(ux, uy, uz, ring.radius, ring.divs or 24)
 				end
 			else
 				ringedUnits[uId] = nil
@@ -107,6 +118,6 @@ function widget:DrawWorld()
 		end
 	end
     
-    gl.LineWidth(1)
-    gl.Color(1, 1, 1, 1)
+    glLineWidth(1)
+    glColor(1, 1, 1, 1)
 end
