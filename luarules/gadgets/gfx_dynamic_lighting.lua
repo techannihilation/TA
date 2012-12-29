@@ -1,10 +1,6 @@
 -- NOTES:
 --   games that rely on custom model shaders are SOL
 --
---   this config-structure silently assumes a LightDef
---   does not get used by more than one WeaponDef, but
---   copy-pasting is always an option (see below)
---
 --   for projectile lights, ttl values are arbitrarily
 --   large to make the lights survive until projectiles
 --   die (see ProjectileDestroyed() for the reason why)
@@ -13,11 +9,6 @@
 --   ttls should be the actual ttl-values so attached
 --   lights die when their "engine" cuts out, but this
 --   gets complex (eg. flighttime is not available)
---
---   general rule: big things take priority over small
---   things, for example nuke explosion > bertha shell
---   impact > mobile artillery shell impact (and trail
---   lights should obey the same relation)
 --
 --   Explosion() occurs before ProjectileDestroyed(),
 --   so for best effect maxDynamic{Map, Model}Lights
@@ -36,9 +27,17 @@ local PROJECTILE_GENERATED_EVENT_ID = 10001
 local PROJECTILE_DESTROYED_EVENT_ID = 10002
 local PROJECTILE_EXPLOSION_EVENT_ID = 10003
 
-
-
 if (gadgetHandler:IsSyncedCode()) then
+	function gadget:GetInfo()
+        return {
+			-- put this gadget in a lower layer than fx_watersplash and exp_no_air_nuke
+			-- (which both want noGFX) so the short-circuit evaluation in gh:Explosion()
+			-- does not cut us out
+			enabled = true,
+			layer   = -1,
+		}
+	end
+
 	-- register/deregister for the synced Projectile*/Explosion call-ins
 	function gadget:Initialize()
 		for weaponDefName, _ in pairs(weaponLightDefs) do
@@ -110,9 +109,6 @@ else
 				explosionLightDefs[weaponDef.id] = explosionLightDef
 
 				-- NOTE: these rates are not sensible if the decay-type is exponential
-				--Spring.Echo("pld :" .. projectileLightDef)
-				--Spring.Echo("pld.dft :" .. projectileLightDef.decayFunctionType)
-
 				if (projectileLightDef ~= nil and projectileLightDef.decayFunctionType ~= nil) then
 					projectileLightDefs[weaponDef.id].ambientDecayRate  = vector_scalar_div(projectileLightDef.ambientColor or {0.0, 0.0, 0.0}, projectileLightDef.ttl or 1.0)
 					projectileLightDefs[weaponDef.id].diffuseDecayRate  = vector_scalar_div(projectileLightDef.diffuseColor or {0.0, 0.0, 0.0}, projectileLightDef.ttl or 1.0)
@@ -144,6 +140,7 @@ else
 			-- [3] = projectileOwnerID,
 			-- [4] = projectileWeaponDefID,
 		}
+
 		SpringSetMapLightTrackingState(projectileLights[projectileID][1], projectileID, true, false)
 		SpringSetModelLightTrackingState(projectileLights[projectileID][2], projectileID, true, false)
 	end
@@ -182,6 +179,7 @@ else
 
 		local explosionLightAlt = explosionLightDef.altitudeOffset or 0.0
 		local explosionLightPos = {posx, posy + explosionLightAlt, posz}
+
 		-- NOTE: explosions are non-tracking, so need to supply position
 		-- FIXME:? explosion "ID"'s would require bookkeeping in :Update
 		local explosionLightTbl = {position = explosionLightPos, }
@@ -211,8 +209,8 @@ else
 	end
 
 	function gadget:Initialize()
-		local maxMapLights = Spring.GetConfigInt("MaxDynamicMapLights")
-		local maxMdlLights = Spring.GetConfigInt("MaxDynamicModelLights")
+		local maxMapLights = Spring.GetConfigInt("MaxDynamicMapLights") or 0
+		local maxMdlLights = Spring.GetConfigInt("MaxDynamicModelLights") or 0
 
 		if (maxMapLights <= 0 and maxMdlLights <= 0) then
 			Spring.Echo("[" .. (self:GetInfo()).name .. "] client has disabled dynamic lighting")
