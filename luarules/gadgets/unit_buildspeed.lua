@@ -183,29 +183,29 @@ function gadget:Initialize()
 end
 
 function gadget:GameFrame(n)
-    if n % 16 == 0 then
-        for i = 1, #teamList do
-            local teamID = teamList[i]
-            local mCur, mStor, mPull, mInc, mExp, mShare, mSent, mRec, mExc = spGetTeamResources(teamID, 'metal')
-            local eCur, eStor, ePull, eInc, eExp, eShare, eSent, eRec, eExc = spGetTeamResources(teamID, 'energy')
-            -- stabilize the situation if storage is small
-            if ePull > eExp then
-                eCur = eCur - (ePull - eExp)
-            end
-            if eExc > 0 then
-                eCur = eCur + eExc
-            end            
-            if mPull > mExp then
-                mCur = mCur - (mPull - mExp)
-            end
-            if mExc > 0 then
-                mCur = mCur + mExc
-            end
-            -- never consider it a stall if the actual combined income is higher than the total expense
-            teamMetalStalling[teamID] = (mCur < 0.5 * mPull) and ((mInc + mRec) <= (mExp + mSent))
-            teamEnergyStalling[teamID] = (eCur < 0.5 * ePull) and ((eInc + eRec) <= (eExp + eSent))
-        end
-    end
+  if n % 16 == 0 then
+		for i = 1, #teamList do
+			local teamID = teamList[i]
+			local mCur, mStor, mPull, mInc, mExp, mShare, mSent, mRec, mExc = spGetTeamResources(teamID, 'metal')
+			local eCur, eStor, ePull, eInc, eExp, eShare, eSent, eRec, eExc = spGetTeamResources(teamID, 'energy')
+			-- stabilize the situation if storage is small
+			if ePull > eExp then
+				eCur = eCur - (ePull - eExp)
+			end
+			if eExc > 0 then
+				eCur = eCur + eExc
+			end            
+			if mPull > mExp then
+				mCur = mCur - (mPull - mExp)
+			end
+			if mExc > 0 then
+				mCur = mCur + mExc
+			end
+			-- never consider it a stall if the actual combined income is higher than the total expense
+			teamMetalStalling[teamID] = (mCur < 0.5 * mPull) and ((mInc + mRec) <= (mExp*1.1 + mSent))
+			teamEnergyStalling[teamID] = (eCur < 0.5 * ePull) and ((eInc + eRec) <= (eExp*1.1 + eSent))
+		end
+	end
 end
 
 function gadget:AllowUnitBuildStep(builderID, builderTeamID, uID, uDefID, step)
@@ -213,7 +213,7 @@ function gadget:AllowUnitBuildStep(builderID, builderTeamID, uID, uDefID, step)
 end
 function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, _)
 	local returnvalue
-	if cmdID ~= CMD_BUILDSPEED then
+	if cmdID ~= CMD_BUILDSPEED or UnitDefs[unitDefID].buildSpeed==0 then
 		return true
 	end
 	BuildspeedCommand(unitID, unitDefID, cmdParams, teamID)  
@@ -228,6 +228,5 @@ function gadget:Shutdown()
 		end
 	end
 end
-
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
