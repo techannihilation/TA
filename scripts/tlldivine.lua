@@ -80,7 +80,7 @@ local function Moving()
 	    if currentSpeed <= 1.5 then currentSpeed = 1.5
 	    end
 	  Sleep(330)
-	  Spring.Echo (moveSpeed)
+	  --Spring.Echo (currentSpeed)
 	  Spin( w1 , x_axis, 1.0 * currentSpeed)
 	  Spin( w2 , x_axis, 1.0 * currentSpeed)
 	end
