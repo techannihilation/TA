@@ -751,10 +751,42 @@ end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
+local function disableunits(unitlist)
+  for name, ud in pairs(UnitDefs) do
+    if (ud.buildoptions) then
+      for _, toremovename in ipairs(unitlist) do
+        for index, unitname in pairs(ud.buildoptions) do
+          if (unitname == toremovename) then
+	    Spring.Echo("Unit removed :-  " .. toremovename)
+            table.remove(ud.buildoptions, index)
+          end
+        end
+      end
+    end
+  end
+end
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 if (Spring.GetModOptions) then
 	local modOptions = Spring.GetModOptions()
 	
+--------------------------------------------------------------------------------
+----Disable superunits
+--------------------------------------------------------------------------------
+if (modOptions and not (modOptions.superunits)) then
+  disableunits({
+	"corflu", "tllion", "armtabi",
+	"abroadside", "cdevastator", "tllvaliant",
+	"ashipyardlvl4","cshipyardlvl4"
+  })
+end
+	
+--------------------------------------------------------------------------------
+----Set com options
+--------------------------------------------------------------------------------
+
    if (modOptions.mo_storageowner == "com") then
     for name, ud in pairs(UnitDefs) do  
      if (name == "armcom" or name == "corcom" or name =="tllcom") then
@@ -769,7 +801,13 @@ if (Spring.GetModOptions) then
 			ud.mass = math.max(ud.maxdamage / 6.0, ud.buildcostmetal)
 		end
 	end
+	
 end
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+
 
 local WorkerTimeThresholds = { 
 	g = {
@@ -926,32 +964,3 @@ for name, ud in pairs(UnitDefs) do
 		end
 end
 
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
-local function disableunits(unitlist)
-  for name, ud in pairs(UnitDefs) do
-    if (ud.buildoptions) then
-      for _, toremovename in ipairs(unitlist) do
-        for index, unitname in pairs(ud.buildoptions) do
-          if (unitname == toremovename) then
-            table.remove(ud.buildoptions, index)
-          end
-        end
-      end
-    end
-  end
-end
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
-
--- Disable all game end weapons and superships
--- 
-
-if not (modOptions and tobool(modOptions.superunits)) then
-  disableunits({
-	"corflu", "tllion", "armtabi",
-	"abroadside", "cdevastator", "tllvaliant",
-	"ashipyardlvl3","cshipyardlvl3"
-  })
-end
---------------------------------------------------------------------------------
