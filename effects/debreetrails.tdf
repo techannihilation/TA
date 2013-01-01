@@ -5,19 +5,6 @@
 [DEBREE1]
 {
 	usedefaultexplosions=0;	
-
-[groundflash]
-   	{
-      	flashSize = 30;
-      	flashAlpha = 0.3;
-      	circleGrowth = 0;
-      	circleAlpha = 0;
-      	ttl = 2;
-      	color = 0.9, 0.7, 0.2;
-	air=1;
-     	ground=1;
-      	water=1;
-	}
    [LARGEFLASH]
    {
 	class = CBitmapMuzzleFlame;
@@ -97,22 +84,9 @@
 	}
 
 }
-[DEBREE2]
+[LARGE_DEBREE2]
 {
 	usedefaultexplosions=0;	
-
-[groundflash]
-   	{
-      	flashSize = 30;
-      	flashAlpha = 0.3;
-      	circleGrowth = 0;
-      	circleAlpha = 0;
-      	ttl = 4;
-      	color = 0.9, 0.7, 0.2;
-	air=1;
-     	ground=1;
-      	water=1;
-	}
    [LARGEFLASH]
    {
 	class = CBitmapMuzzleFlame;
@@ -120,7 +94,7 @@
 	[properties]
       	{
          	dir = dir;
-         	colorMap=1.0 0.9 0.7 0.01 0.3 0.2 0.1 0.01 0 0 0 0.01; 
+         	colorMap=1.0 0.3 0.8 0.01 0.3 0.2 0.1 0.01 0 0 0 0.01; 
           	size=-6;
           	length=-6;
           	sizeGrowth=0.75;
@@ -145,7 +119,7 @@
 			length=5; //60;
 			alpha=1;
 			alphadecay=0.75;
-			color=1.0, 0.7, 0.3;
+			color=1.0, 0.3, 0.0;
 
 		}
 		air=1;
@@ -153,25 +127,130 @@
 		ground=1;
   		count=4; 
 	}
+[Smoke]
+	{
+	class=CSimpleParticleSystem;
 
+		[properties]
+		{
 
+		Texture=GenericSmokeCloud1;
+		
+		colorMap	= 1 0.45 0.0 0.8  0.7 0.5 0.0 0.5	0.1 0.1 0.1 0.5 0 0 0 0.01;
+
+      		pos 		= 0, 0, 0;
+		gravity		= 0, 0, 0;
+	       	emitVector	= 0, 0.2, 0;
+		emitRot		= 0;
+		emitRotSpread	= 0;
+		emitdir		= dir;
+
+		sizeGrowth	= 0.0 r.65;
+		sizeMod		= 1.0;
+
+		airdrag			= 0.8;
+		particleLife		= 6;
+		particleLifeSpread	= 16;
+		numParticles		= 5;
+		particleSpeed		= 2;
+		particleSpeedSpread	= 2;
+		particleSize		= 1;
+		particleSizeSpread	= 3;
+
+		directional		= 1; 
+		useAirLos		= 1;
+		}
+	air=1;
+	ground=1;
+	water=0;
+	count=1;
+	}
+}
+[DEBREE2]
+{
+	usedefaultexplosions=0;	
+   [LARGEFLASH]
+   {
+	class = CBitmapMuzzleFlame;
+      
+	[properties]
+      	{
+         	dir = dir;
+         	colorMap=1.0 0.3 0.8 0.01 0.3 0.2 0.1 0.01 0 0 0 0.01; 
+          	size=-6;
+          	length=-6;
+          	sizeGrowth=0.75;
+          	ttl=1;
+          	frontOffset=0;
+          	sideTexture=muzzleside;
+          	frontTexture=muzzlefront;
+      	}
+   water=1;
+   air=1;
+   underwater=1;
+   ground=1;
+   count=1;
+   }
+	[spikes]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-1 r2,-1 r2,-1 r2;
+			width=5;
+			length=5; //60;
+			alpha=1;
+			alphadecay=0.75;
+			color=1.0, 0.3, 0.0;
+
+		}
+		air=1;
+		water=1;
+		ground=1;
+  		count=4; 
+	}
+[Smoke]
+	{
+	class=CSimpleParticleSystem;
+
+		[properties]
+		{
+
+		Texture=GenericSmokeCloud1;
+		
+		colorMap	= 1 0.45 0.0 0.8  0.7 0.5 0.0 0.5	0.1 0.1 0.1 0.5 0 0 0 0.01;
+
+      		pos 		= 0, 0, 0;
+		gravity		= 0, 0, 0;
+	       	emitVector	= 0, 0.2, 0;
+		emitRot		= 0;
+		emitRotSpread	= 0;
+		emitdir		= dir;
+
+		sizeGrowth	= 0.0 r.65;
+		sizeMod		= 1.0;
+
+		airdrag			= 0.5;
+		particleLife		= 6;
+		particleLifeSpread	= 16;
+		numParticles		= 5;
+		particleSpeed		= 2;
+		particleSpeedSpread	= 2;
+		particleSize		= 0.6;
+		particleSizeSpread	= 3;
+
+		directional		= 1; 
+		useAirLos		= 1;
+		}
+	air=1;
+	ground=1;
+	water=0;
+	count=1;
+	}
 }
 [DEBREE3]
 {
 	usedefaultexplosions=0;	
-
-[groundflash]
-   	{
-      	flashSize = 30;
-      	flashAlpha = 0.3;
-      	circleGrowth = 0;
-      	circleAlpha = 0;
-      	ttl = 5;
-      	color = 0.2, 0.7, 0.9;
-	air=1;
-     	ground=1;
-      	water=1;
-	}
    [LARGEFLASH]
    {
 	class = CBitmapMuzzleFlame;
@@ -213,23 +292,219 @@
   		count=4; 
 	}
 }
+[DEBREE4]
+{
+	usedefaultexplosions=0;	
+   [LARGEFLASH]
+   {
+	class = CBitmapMuzzleFlame;
+      
+	[properties]
+      	{
+         	dir = dir;
+         	colorMap=1.0 0.3 0.8 0.01 0.3 0.2 0.1 0.01 0 0 0 0.01; 
+          	size=-6;
+          	length=-6;
+          	sizeGrowth=0.75;
+          	ttl=1;
+          	frontOffset=0;
+          	sideTexture=muzzleside;
+          	frontTexture=muzzlefront;
+      	}
+   water=1;
+   air=1;
+   underwater=1;
+   ground=1;
+   count=1;
+   }
+	[spikes]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-1 r2,-1 r2,-1 r2;
+			width=5;
+			length=5; //60;
+			alpha=1;
+			alphadecay=0.75;
+			color=1.0, 0.3, 0.0;
 
-[NANODEBREE1]
+		}
+		air=1;
+		water=1;
+		ground=1;
+  		count=4; 
+	}
+}
+[LARGE_DEBREE5]
+{
+	usedefaultexplosions=0;	
+   [LARGEFLASH]
+   {
+	class = CBitmapMuzzleFlame;
+      
+	[properties]
+      	{
+         	dir = dir;
+         	colorMap=1 0.5 0 0.01 0.6 0.2 0 0.01 0 0 0 0.01; 
+          	size=-6;
+          	length=-6;
+          	sizeGrowth=0.75;
+          	ttl=1;
+          	frontOffset=0;
+          	sideTexture=muzzleside;
+          	frontTexture=muzzlefront;
+      	}
+   water=1;
+   air=1;
+   underwater=1;
+   ground=1;
+   count=1;
+   }
+	[spikes]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-1 r2,-1 r2,-1 r2;
+			width=3;
+			length=3; //60;
+			alpha=1;
+			alphadecay=0.75;
+			color=1.0, 0.3, 0.0;
+
+		}
+		air=1;
+		water=1;
+		ground=1;
+  		count=4; 
+	}
+[Smoke]
+	{
+	class=CSimpleParticleSystem;
+
+		[properties]
+		{
+
+		Texture=GenericSmokeCloud1;
+		
+		colorMap	= 1 0.5 0 1  0.6 0.2 0 0.8	0.1 0.1 0.1 0.6 0 0 0 0.01;
+
+      		pos 		= 0, 0, 0;
+		gravity		= 0, 0, 0;
+	       	emitVector	= 0, 0.2, 0;
+		emitRot		= 0;
+		emitRotSpread	= 0;
+		emitdir		= dir;
+
+		sizeGrowth	= 0.0 r.65;
+		sizeMod		= 1.0;
+
+		airdrag			= 0.8;
+		particleLife		= 6;
+		particleLifeSpread	= 16;
+		numParticles		= 5;
+		particleSpeed		= 2;
+		particleSpeedSpread	= 2;
+		particleSize		= 1;
+		particleSizeSpread	= 3;
+
+		directional		= 1; 
+		useAirLos		= 1;
+		}
+	air=1;
+	ground=1;
+	water=0;
+	count=1;
+	}
+}
+[DEBREE5]
 {
 	usedefaultexplosions=0;	
 
-[groundflash]
-   	{
-      	flashSize = 30;
-      	flashAlpha = 0.3;
-      	circleGrowth = 0;
-      	circleAlpha = 0;
-      	ttl = 2;
-      	color = 0.2, 0.9, 0.2;
-	air=1;
-     	ground=1;
-      	water=1;
+   [LARGEFLASH]
+   {
+	class = CBitmapMuzzleFlame;
+      
+	[properties]
+      	{
+         	dir = dir;
+         	colorMap=1 0.5 0 0.01 0.6 0.2 0 0.01 0 0 0 0.01; 
+          	size=-4;
+          	length=-4;
+          	sizeGrowth=0.65;
+          	ttl=1;
+          	frontOffset=0;
+          	sideTexture=muzzleside;
+          	frontTexture=muzzlefront;
+      	}
+   water=1;
+   air=1;
+   underwater=1;
+   ground=1;
+   count=1;
+   }
+	[spikes]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-1 r2,-1 r2,-1 r2;
+			width=2;
+			length=2;
+			alpha=1;
+			alphadecay=0.75;
+			color=1.0, 0.3, 0.0;
+
+		}
+		air=1;
+		water=1;
+		ground=1;
+  		count=4; 
 	}
+[Smoke]
+	{
+	class=CSimpleParticleSystem;
+
+		[properties]
+		{
+
+		Texture=GenericSmokeCloud1;
+		
+		colorMap	= 1 0.5 0 1  0.6 0.2 0 0.8	0.1 0.1 0.1 0.6 0 0 0 0.01;
+
+      		pos 		= 0, 0, 0;
+		gravity		= 0, 0, 0;
+	       	emitVector	= 0, 0.2, 0;
+		emitRot		= 0;
+		emitRotSpread	= 0;
+		emitdir		= dir;
+
+		sizeGrowth	= 0.0 r.65;
+		sizeMod		= 1.0;
+
+		airdrag			= 0.8;
+		particleLife		= 4;
+		particleLifeSpread	= 16;
+		numParticles		= 4;
+		particleSpeed		= 2;
+		particleSpeedSpread	= 2;
+		particleSize		= 0.5;
+		particleSizeSpread	= 3;
+
+		directional		= 1; 
+		useAirLos		= 1;
+		}
+	air=1;
+	ground=1;
+	water=0;
+	count=1;
+	}
+
+}
+[NANODEBREE1]
+{
+	usedefaultexplosions=0;	
    [LARGEFLASH]
    {
 	class = CBitmapMuzzleFlame;
@@ -348,19 +623,6 @@
 [NANODEBREE0]
 {
 	usedefaultexplosions=0;	
-
-[groundflash]
-   	{
-      	flashSize = 30;
-      	flashAlpha = 0.3;
-      	circleGrowth = 0;
-      	circleAlpha = 0;
-      	ttl = 2;
-      	color = 0.2, 0.7, 0.9;
-	air=1;
-     	ground=1;
-      	water=1;
-	}
    [LARGEFLASH]
    {
 	class = CBitmapMuzzleFlame;

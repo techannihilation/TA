@@ -47,7 +47,7 @@ local unitDef = {
 	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMROTTWEILER]],
 	radarDistance = 0,
-	selfDestructAs = [[BIG_UNIT]],
+	selfDestructAs = [[BIG_TANK]],
 	shootme = 1,
 	side = [[ARM]],
 	sightDistance = 355,
@@ -61,6 +61,15 @@ local unitDef = {
 	version = 1,
 	workerTime = 0,
 	zbuffer = 1,
+	sfxtypes = {
+		explosiongenerators = {
+			[1] = [[custom:Core_Rear_Muzzle]],
+			[2] = [[custom:armrottweiler_mg_flare]],
+		},
+		pieceExplosionGenerators = { 
+			"DEBREE5", 
+		}, 
+        },
 	customparams = {
 		RequireTech = [[Advanced T1 Unit Research Centre]],
 	},
