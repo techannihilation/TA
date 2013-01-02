@@ -11,9 +11,9 @@
 		[properties]
 		{
 		alwaysVisible=1;
-		Texture=diamondstar;
+		Texture=brightblueexplo;
 
-		colorMap	= 1 1 1 1.0         1 1 1 1.0		      0 0 0 0.0;
+		colorMap	= 0.3 0.3 0.8 0.02         .03 .03 .08 0.01		      0 0 0 0.0;
 
       		pos 		= 0, 1, 0;
 		gravity		= 0, 0, 0;
@@ -27,7 +27,7 @@
 		airdrag			= 0.8;
 		particleLife		= 50;
 		particleLifeSpread	= 10;
-		numParticles		= 20;
+		numParticles		= 15;
 		particleSpeed		= 1;
 		particleSpeedSpread	= 0;
 		particleSize		= 5;
@@ -102,7 +102,7 @@
 		  size=50;
 		  sizeGrowth=-0.3;
 		  ttl=100;
-	          colorMap=0.5 0.3 0.8 1 	0.3 0.4 0.8 1		0.0 0.0 0.0 0.0;
+	          colorMap=0.3 0.3 0.8 1 	0.2 0.2 0.6 1		0.0 0.0 0.0 0.0;
 		}
     	air=1;
     	ground=1;
