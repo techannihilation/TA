@@ -757,7 +757,7 @@ local function disableunits(unitlist)
       for _, toremovename in ipairs(unitlist) do
         for index, unitname in pairs(ud.buildoptions) do
           if (unitname == toremovename) then
-	    Spring.Echo("Unit removed :-  " .. toremovename)
+	    --Spring.Echo("Unit removed :-  " .. toremovename)
             table.remove(ud.buildoptions, index)
           end
         end
