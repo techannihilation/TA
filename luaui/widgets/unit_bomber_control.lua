@@ -24,6 +24,7 @@ local GetUnitTeam          = Spring.GetUnitTeam
 local GetGameFrame         = Spring.GetGameFrame
 local GetCommandQueue      = Spring.GetCommandQueue
 local GetUnitStates        = Spring.GetUnitStates
+local GetTeamUnits         = Spring.GetTeamUnits
 
 local CMD_ATTACK = CMD.ATTACK
 local CMD_SET_WANTED_MAX_SPEED = CMD.SET_WANTED_MAX_SPEED
@@ -50,7 +51,7 @@ local function AddUnit(unit_id, unit_udid_)
 end
 
 function widget:UnitCreated(unit_id, unit_udid, unit_tid)
-	if unit_tid==Spring.GetMyTeamID() then
+	if unit_tid==GetMyTeamID() then
 		AddUnit(unit_id,unit_udid)
 	end
 end
@@ -75,7 +76,7 @@ end
 local function UpdateUnitsList()
 	local my_team=GetMyTeamID()
 	my_bombers={}
-	for _,unit_id in ipairs(Spring.GetTeamUnits(my_team)) do
+	for _,unit_id in ipairs(GetTeamUnits(my_team)) do
 		AddUnit(unit_id,nil)
 	end
 end

@@ -15,8 +15,15 @@ end
 
 
 --------------------------------------------------------------------------------
+----Speedups
 --------------------------------------------------------------------------------
 
+local SpGiveOrderToUnit = Spring.GiveOrderToUnit
+local SpGetMyTeamID = Spring.GetMyTeamID
+local CMD_MOVE_STATE = CMD.MOVE_STATE
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 local unitSet = {}
 
@@ -185,9 +192,9 @@ end
 
 function widget:UnitFromFactory(unitID, unitDefID, unitTeam)
   local ud = UnitDefs[unitDefID]
-  if ((ud ~= nil) and (unitTeam == Spring.GetMyTeamID())) then
+  if ((ud ~= nil) and (unitTeam == SpGetMyTeamID())) then
     if (unitSet[ud.name]) then
-      Spring.GiveOrderToUnit(unitID, CMD.MOVE_STATE, { 0 }, {})
+      SpGiveOrderToUnit(unitID, CMD_MOVE_STATE, { 0 }, {})
     end 
   end
 end
