@@ -128,13 +128,13 @@ end
 
 local function BuildspeedCommand(unitID, unitDefID, cmdParams, teamID)
 	if cmdParams[1] == 1 then
-		Spring.SetUnitBuildSpeed(unitID, buildspeedlist[unitID].speed *.25)
+		SetUnitBuildSpeed(unitID, buildspeedlist[unitID].speed *.25)
 	elseif cmdParams[1] == 2 then
-		Spring.SetUnitBuildSpeed(unitID, buildspeedlist[unitID].speed*.5)
+		SetUnitBuildSpeed(unitID, buildspeedlist[unitID].speed*.5)
 	elseif cmdParams[1] == 3 then
-		Spring.SetUnitBuildSpeed(unitID, buildspeedlist[unitID].speed*.75)
+		SetUnitBuildSpeed(unitID, buildspeedlist[unitID].speed*.75)
 	else
-		Spring.SetUnitBuildSpeed(unitID, buildspeedlist[unitID].speed)
+		SetUnitBuildSpeed(unitID, buildspeedlist[unitID].speed)
 	end
 	buildspeedlist[unitID].mode=cmdParams[1]
 	UpdateButton(unitID, cmdParams[1])

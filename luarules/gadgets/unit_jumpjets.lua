@@ -35,7 +35,6 @@ Spring.SetGameRulesParam("jumpJets",1)
 
 local CMD_JUMP = 38521
 
-local Spring      = Spring
 local MoveCtrl    = Spring.MoveCtrl
 local coroutine   = coroutine
 local Sleep       = coroutine.yield
