@@ -16,8 +16,9 @@ end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
-local SpringGetUnitPosition =Spring.GetUnitPosition
-local SpringGetAllUnits =Spring.GetAllUnits
+local SpringGetUnitPosition = Spring.GetUnitPosition
+local SpringGetAllUnits = Spring.GetAllUnits
+local SpringDestroyUnit = Spring.DestroyUnit
 local pairs = pairs
 
 if (not gadgetHandler:IsSyncedCode()) then
@@ -25,15 +26,16 @@ if (not gadgetHandler:IsSyncedCode()) then
 end
 mapX = Game.mapSizeX
 mapZ = Game.mapSizeZ
+
 function gadget:GameFrame (f)
 	if (f%61==0) then
-		local all_units = SpringGetAllUnits ()
+		local all_units = SpringGetAllUnits()
 		for i in pairs(all_units) do
 			x,y,z = SpringGetUnitPosition(all_units[i])
 			if (z==nil or x==nil) then
 			else
 				if ( z <-2500 or x< -2500 or z> mapZ+2500 or x> mapX+2500) then
-						Spring.DestroyUnit (all_units[i])
+						SpringDestroyUnit(all_units[i])
 				end
 			end
 			-- if (z < 0 or x< 0 or x>2000) then
