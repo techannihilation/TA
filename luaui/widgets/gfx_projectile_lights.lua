@@ -24,7 +24,7 @@ local spGetProjectilePosition	= Spring.GetProjectilePosition
 local spGetProjectileType		= Spring.GetProjectileType
 local spGetProjectileName		= Spring.GetProjectileName
 local spGetProjectileVelocity	= Spring.GetProjectileVelocity
-
+local spGetGameFrame 			= Spring.GetGameFrame
 
 local glPushMatrix		= gl.PushMatrix
 local glTranslate		= gl.Translate
@@ -45,8 +45,6 @@ local floor				= math.floor
 local sqrt				= math.sqrt
 local deg				= math.deg
 local atan2				= math.atan2
-
-local udefTab			= UnitDefs
 
 local list      
 local plighttable = {}
@@ -101,6 +99,11 @@ end)
 
 
 function widget:Initialize() -- create lighttable
+	local modOptions = Spring.GetModOptions()
+	if modOptions and modOptions.lowcpu == "1" then
+		Spring.Echo("Low performance mode is on, removing widget")
+		widgetHandler:RemoveWidget()
+	end
 
 	for u=1, #UnitDefs do
 		if UnitDefs[u]['weapons'] and #UnitDefs[u]['weapons']>0 then --only units with weapons
@@ -147,97 +150,71 @@ function widget:Initialize() -- create lighttable
 	end
 end
 
+local plist = {}
+local frame = 0
 function widget:DrawWorldPreUnit()
-	local sx,sy,px,py = Spring.GetViewGeometry()
-	--Spring.Echo('viewport=',sx,sy,px,py)
+	local sx,sy,px,py = spGetViewGeometry()
+
 	local x1=0
 	local y1=0
 	local cx,cy,p
 	local d=0
 	local x2=Game.mapSizeX 
 	local y2=Game.mapSizeZ
-	--[[
-	at, bl=Spring.TraceScreenRay(0,0,true,false,false) --bottom left
-	--Spring.Echo('bl',at,bl)
-	if at=='ground' then
-		x1=math.max(x1, bl[1])
-		--x2=math.min(x2, tl[1])
-		--y1=math.max(y1, bl[3])
-		y2=math.min(y2, bl[3])
-	end
-	at, br=Spring.TraceScreenRay(sx-1,0,true,false,false)
-	if at=='ground' then
-		--x1=math.max(x1, tl[1])
-		x2=math.min(x2, br[1])
-		--y1=math.max(y1, tl[3])
-		y2=math.min(y2, br[3])
-	end
-	at, tl=Spring.TraceScreenRay(0,sy-1,true,false,false)
-	if at=='ground' then
-		x1=math.max(x1, tl[1])
-		--x2=math.min(x2, tl[1])
-		y1=math.max(y1, tl[3])
-		--y2=math.min(y2, tl[3])
-	end
-	at, tr=Spring.TraceScreenRay(sx-1,sy-1,true,false,false)
-	--Spring.Echo('tr',at)
-	if at=='ground' then
-	--	Spring.Echo('tr',at,tr)
-		--x1=math.max(x1, tl[1])
-		x2=math.min(x2, tr[1])
-		y1=math.max(y1, tr[3])
-		--y2=math.min(y2, tl[3])
-	end]]--
-	local plist
-	local at, p = spTraceScreenRay(sx/2,sy/2,true,false,false)
-	local outofbounds=0
-	if at=='ground' then
-		cx=p[1]
-		cy=p[3]
-		
-		at, p = spTraceScreenRay(0,0,true,false,false) --bottom left
+
+	if frame < spGetGameFrame() then
+		frame=spGetGameFrame()
+	
+		local at, p=spTraceScreenRay(sx/2,sy/2,true,false,false)
+		local outofbounds=0
 		if at=='ground' then
-			d = max(d,(cx-p[1])*(cx-p[1])+(cy-p[3])*(cy-p[3]))
-		else 
-			outofbounds = outofbounds+1
+			cx=p[1]
+			--x2=math.min(x2, tl[1])
+			cy=p[3]		--y2=math.min(y2, tl[3])
+			
+			at, p=spTraceScreenRay(0,0,true,false,false) --bottom left
+			if at=='ground' then
+				d=max(d,(cx-p[1])*(cx-p[1])+(cy-p[3])*(cy-p[3]))
+			else 
+				outofbounds=outofbounds+1
+			end
+			at, p=spTraceScreenRay(sx-1,0,true,false,false) --bottom left
+			if at=='ground' then
+				d=max(d,(cx-p[1])*(cx-p[1])+(cy-p[3])*(cy-p[3]))
+			else 
+				outofbounds=outofbounds+1
+			end
+			at, p=spTraceScreenRay(sx-1,sy-1,true,false,false) --bottom left
+			if at=='ground' then
+				d=max(d,(cx-p[1])*(cx-p[1])+(cy-p[3])*(cy-p[3]))
+			else 
+				outofbounds=outofbounds+1
+			end
+			at, p=spTraceScreenRay(0,sy-1,true,false,false) --bottom left
+			if at=='ground' then
+				d=max(d,(cx-p[1])*(cx-p[1])+(cy-p[3])*(cy-p[3]))
+			else 
+				outofbounds=outofbounds+1
+			end
+			if outofbounds>=3 then
+				plist=spGetProjectilesInRectangle(x1,y1,x2,y2,false,false) --todo, only those in view or close:P
+			else
+				d=sqrt(d)
+				plist=spGetProjectilesInRectangle(cx-d,cy-d,cx+d,cy+d,false,false) 
+			end
+		else -- if we are not pointing at ground, get the whole list.
+			plist=spGetProjectilesInRectangle(x1,y1,x2,y2,false,false) --todo, only those in view or close:P
 		end
-		at, p = spTraceScreenRay(sx-1,0,true,false,false) --bottom left
-		if at=='ground' then
-			d = max(d,(cx-p[1])*(cx-p[1])+(cy-p[3])*(cy-p[3]))
-		else 
-			outofbounds = outofbounds+1
-		end
-		at, p = spTraceScreenRay(sx-1,sy-1,true,false,false) --bottom left
-		if at=='ground' then
-			d = max(d,(cx-p[1])*(cx-p[1])+(cy-p[3])*(cy-p[3]))
-		else 
-			outofbounds = outofbounds+1
-		end
-		at, p = spTraceScreenRay(0,sy-1,true,false,false) --bottom left
-		if at=='ground' then
-			d = max(d,(cx-p[1])*(cx-p[1])+(cy-p[3])*(cy-p[3]))
-		else 
-			outofbounds = outofbounds+1
-		end
-		if outofbounds>=3 then
-			plist = spGetProjectilesInRectangle(x1,y1,x2,y2,false,false) --todo, only those in view or close:P
-		else
-			d = sqrt(d)
-			plist = spGetProjectilesInRectangle(cx-d,cy-d,cx+d,cy+d,false,false) 
-		end
-	else -- if we are not pointing at ground, get the whole list.
-		plist = spGetProjectilesInRectangle(x1,y1,x2,y2,false,false) --todo, only those in view or close:P
 	end
 		--todo, only those in view or close:P
 	--Spring.GetCameraPosition 
 	--Spring.GetCameraPosition() -> number x, number y, number z
 	--Spring.GetCameraDirection() -> number forward_x, number forward_y, number forward_z
 	--Spring.GetCameraFOV( ) -> number fov
-	local nplist = #plist
 
 	--Spring.Echo('mapview',nplist,outofbounds,d,cx,cy)
 	--Spring.Echo('fov',Spring.GetCameraFOV(),Spring.GetCameraPosition())
-	if nplist>0 then --dont do anything if there are no projectiles in range of view
+	if #plist>0 then --dont do anything if there are no projectiles in range of view
 		--Spring.Echo('#projectiles:',#plist)
 		glTexture('luaui/images/pointlight.tga') --simple white square with alpha white blurred circle
 		
@@ -253,10 +230,10 @@ function widget:DrawWorldPreUnit()
 		
 		local x, y, z
 		local fx, fy 
-		gl.Blending("alpha_add") --makes it go into +
+		glBlending("alpha_add") --makes it go into +
 		local lightparams
 		-- AND NOW FOR THE FUN STUFF!
-		for i=1, nplist do
+		for i=1, #plist do
 			local pID = plist[i]
 			x, y, z = spGetProjectilePosition(pID)
 			local wep, piece = spGetProjectileType(pID)
@@ -294,6 +271,8 @@ function widget:DrawWorldPreUnit()
 
 		glTexture(false) --be nice, reset stuff 
 		glColor(1.0,1.0,1.0,1.0)
+		glBlending(false)
+		glDepthTest(true)
 	end
 end
 
