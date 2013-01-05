@@ -25,13 +25,11 @@ Create()
 	move canon4 to z-axis [1.000000] now;
 	gun_1 = canon1;
 	restore_delay = 3000;
-	return (0);
 }
 
 SetMaxReloadTime(Func_Var_1)
 {
 	restore_delay = Func_Var_1 * 2;
-	return (0);
 }
 
 RestoreAfterDelay()
@@ -40,7 +38,6 @@ RestoreAfterDelay()
 	turn body to y-axis <0.000000> speed <50.000000>;
 	turn box1 to x-axis <0.000000> speed <25.000000>;
 	turn box2 to x-axis <0.000000> speed <25.000000>;
-	return (0);
 }
 
 AimPrimary(heading, pitch)
@@ -55,17 +52,14 @@ AimPrimary(heading, pitch)
 	wait-for-turn box2 around x-axis;
 	start-script RestoreAfterDelay();
 	return (1);
-	return (0);
 }
 
 FirePrimary()
 {
 	if( gun_1 == 1 )
 	{
-		show flare1;
+		emit-sfx 1024 + 0 from flare1;
 		move canon1 to z-axis [0.350000] speed [500.000000];
-		sleep 150;
-		hide flare1;
 		wait-for-move canon1 along z-axis;
 		move canon1 to z-axis [1.000000] speed [3.000000];
 		gun_1 = canon2;
@@ -73,10 +67,8 @@ FirePrimary()
 	}
 	if( gun_1 == 2 )
 	{
-		show flare3;
+		emit-sfx 1024 + 0 from flare3;
 		move canon3 to z-axis [0.350000] speed [500.000000];
-		sleep 150;
-		hide flare3;
 		wait-for-move canon3 along z-axis;
 		move canon3 to z-axis [1.000000] speed [3.000000];
 		gun_1 = canon3;
@@ -84,10 +76,8 @@ FirePrimary()
 	}
 	if( gun_1 == 3 )
 	{
-		show flare2;
+		emit-sfx 1024 + 0 from flare2;
 		move canon2 to z-axis [0.350000] speed [500.000000];
-		sleep 150;
-		hide flare2;
 		wait-for-move canon2 along z-axis;
 		move canon2 to z-axis [1.000000] speed [3.000000];
 		gun_1 = canon4;
@@ -95,22 +85,18 @@ FirePrimary()
 	}
 	if( gun_1 == 4 )
 	{
-		show flare4;
+		emit-sfx 1024 + 0 from flare4;
 		move canon4 to z-axis [0.350000] speed [500.000000];
-		sleep 150;
-		hide flare4;
 		wait-for-move canon4 along z-axis;
 		move canon4 to z-axis [1.000000] speed [3.000000];
 		gun_1 = canon1;
 		return (0);
 	}
-	return (0);
 }
 
 AimFromPrimary(piecenum)
 {
 	piecenum = body;
-	return (0);
 }
 
 QueryPrimary(piecenum)
@@ -131,13 +117,11 @@ QueryPrimary(piecenum)
 	{
 		piecenum = flash4;
 	}
-	return (0);
 }
 
 SweetSpot(piecenum)
 {
 	piecenum = base;
-	return (0);
 }
 
 Killed(severity, corpsetype)
@@ -194,6 +178,5 @@ Killed(severity, corpsetype)
 	explode box2 type 30;
 	explode body type 30;
 	explode chassis type 30;
-	return (0);
 	return (0);
 }

@@ -59,6 +59,14 @@ local unitDef = {
 	version = 1.2,
 	workerTime = 0,
 	zbuffer = 1,
+	sfxtypes = {
+		explosiongenerators = {
+			[1] = [[custom:aexxec_flare]],
+		},
+		pieceExplosionGenerators = { 
+			"DEBREE5", 
+		}, 
+        },
 	customparams = {
 		RequireTech = [[Advanced T1 Unit Research Centre]],
 	},
@@ -100,6 +108,7 @@ local weaponDefs = {
 		areaOfEffect = 8,
 		beamWeapon = true,
 		energypershot = 0,
+		explosionGenerator = [[custom:exxec]],
 		fireStarter = 30,
 		lineOfSight = true,
 		name = [[Annihilator Weapon]],
