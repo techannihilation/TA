@@ -772,11 +772,9 @@ local defs = {}
 for moveName, moveData in pairs(moveDatas) do
 
   if (heatenabled == 0) then 
-  	moveData.heatmapping = false
-	moveData.name = moveName
-  else
-	moveData.name = moveName
+	moveData.heatmapping = false
   end
+	moveData.name = moveName
 	defs[#defs + 1] = moveData
 end
 
