@@ -60,6 +60,7 @@ local paralysisRelRate = 75 -- unit HP / paralysisRelRate = paralysis dmg drop r
 ----------------------------------------------------------------
 local min = math.min
 local max = math.max
+local ceil = math.ceil
 local spGetPlayerInfo = Spring.GetPlayerInfo
 local spGetTeamRulesParam = Spring.GetTeamRulesParam
 local spSetTeamRulesParam = Spring.SetTeamRulesParam
@@ -282,7 +283,7 @@ function gadget:GameFrame(n)
 	-- in case of more than 16 teams ingame, two or more teams are processed in one gameframe
 
 	if (n % resourceRefreshRate == splitMMPointer) then
-		for i = 0, (math.ceil(#teamList / resourceRefreshRate) - 1) do
+		for i = 0, (ceil(#teamList / resourceRefreshRate) - 1) do
 			local tID
 			local tpos = (splitMMPointer + i * resourceRefreshRate)
 			if tpos <= #teamList then
@@ -357,7 +358,7 @@ function gadget:UnitDamaged(uID, uDefID, uTeam, damage, paralyzer)
 		local _, maxHealth, paralyzeDamage, _ ,_ = spGetUnitHealth(uID)
 		local relativeParDmg = paralyzeDamage -  maxHealth
 		if (relativeParDmg > 0) then 
-			EmpedVector:push(uID, currentFrameStamp + math.ceil(relativeParDmg / (maxHealth / paralysisRelRate)))
+			EmpedVector:push(uID, currentFrameStamp + ceil(relativeParDmg / (maxHealth / paralysisRelRate)))
 		end
     end
 end
