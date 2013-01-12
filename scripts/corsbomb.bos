@@ -1,0 +1,180 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, fuselage, eng1, eng2, flare1, sfx3, sfx4, fin,
+       turret1, turret2, fpt1a, fpt1b, fpt2a, fpt2b;
+
+static-var  statechg_DesiredState, statechg_StateChanging, gun_1;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	var Func_Var_4;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			Func_Var_4 = Rand( 1, 2 );
+			if( Func_Var_4 == 1 )
+			{
+				emit-sfx smoketype from sfx3;
+			}
+			if( Func_Var_4 == 2 )
+			{
+				emit-sfx smoketype from sfx4;
+			}
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+activatescr()
+{
+}
+
+deactivatescr()
+{
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script activatescr();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script deactivatescr();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+Create()
+{
+	call-script InitState();
+	start-script SmokeUnit();
+	gun_1 = base;
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = flare1;
+}
+
+FirePrimary()
+{
+	sleep 1500;
+	gun_1 = fuselage;
+	set CURRENT_FUEL to 0;
+	sleep 1000;
+	gun_1 = base;
+}
+
+AimSecondary()
+{
+	while( gun_1 == 0 )
+	{
+		sleep 100;
+	}
+	return (1);
+}
+
+QuerySecondary(piecenum)
+{
+	piecenum = base;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type BITMAPONLY | BITMAP3;
+		explode fuselage type BITMAPONLY | BITMAP5;
+		explode eng1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode eng2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode turret1 type SHATTER | BITMAP2;
+		explode turret2 type SHATTER | BITMAP2;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type BITMAPONLY | BITMAP3;
+		explode fuselage type BITMAPONLY | BITMAP5;
+		explode eng1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode eng2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode turret1 type SHATTER | BITMAP2;
+		explode turret2 type SHATTER | BITMAP2;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type BITMAPONLY | BITMAP3;
+		explode fuselage type BITMAPONLY | BITMAP5;
+		explode turret2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode turret1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode eng1 type SHATTER | BITMAP2;
+		explode eng2 type SHATTER | BITMAP2;
+		return (0);
+	}
+	corpsetype = 3;
+	explode base type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode fuselage type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode turret2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode turret1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode eng1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode eng2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;;
+}
