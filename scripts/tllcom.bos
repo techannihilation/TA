@@ -542,10 +542,6 @@ AimTertiary(heading, pitch)
 	set-signal-mask SIG_AIM;
 	Static_Var_4 = 1;
 	bAiming = TRUE;
-	while( !Static_Var_3 )
-	{
-		sleep 100;
-	}
 	turn torso to y-axis heading speed <300.000000>;
 	turn ruparm to x-axis <-45.000000> speed <65.000000>;
 	turn rlowarm to x-axis <-45.000000> speed <65.000000>;
