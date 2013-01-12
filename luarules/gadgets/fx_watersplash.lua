@@ -15,8 +15,10 @@ end
 LUAUI_DIRNAME= 'LuaUI/'
 local random  = math.random
 local abs = math.abs
+local SpGetGroundHeight = Spring.GetGroundHeight
 local GetGroundBlocked = Spring.GetGroundBlocked
 local SpSpawnCEG = Spring.SpawnCEG
+
 local nonexplosiveWeapons = {
 	LaserCannon = true,
 	BeamLaser = true,
@@ -42,7 +44,7 @@ else
 
 	
 	function gadget:Explosion(weaponID, px, py, pz, ownerID)
-		local isWater = Spring.GetGroundHeight(px,pz) < 0
+		local isWater = SpGetGroundHeight(px,pz) < 0
 		local aoe = WeaponDefs[weaponID]["damageAreaOfEffect"] / 2
 		local wType = WeaponDefs[weaponID].type
 				if not nonexplosiveWeapons[wType] and isWater and abs(py) <= aoe and (not GetGroundBlocked(px, pz)) then
@@ -63,7 +65,7 @@ else
 	
 		for id,Def in pairs(WeaponDefs) do
 			local weaponID
-			if Def.damageAreaOfEffect ~= nil and Def.damageAreaOfEffect >8 and not nonexplosiveWeapons[Def.type] then
+			if Def.damageAreaOfEffect ~= nil and Def.damageAreaOfEffect > 8 and not nonexplosiveWeapons[Def.type] then
 				Script.SetWatchWeapon(Def.id, true)
 			end
 		end
