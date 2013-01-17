@@ -133,7 +133,7 @@ local options={
 		name="Game End Mode",
 		desc="What it takes to eliminate a team\nAutoHost Usage :- deathmode",
 		type="list",
-		def="killall",
+		def="com",
 		section="ta_modes",
 		items={
 			{key="killall", name="Kill Everything", desc="Every last unit must be eliminated, no exceptions!"},
