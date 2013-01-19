@@ -1,7 +1,7 @@
 function widget:GetInfo()
   return {
-    name      = "Custom Unit Rings",
-    desc      = "Draws rings based upon customparams",
+    name      = "Nano Unit Rings",
+    desc      = "Draws rings showing nano build range",
     author    = "Original - CarRepairer, Revamped - Regret, This Version - Niobium",
     date      = "04/05/2012",
     license   = "Public Domain",
