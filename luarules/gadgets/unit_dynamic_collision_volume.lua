@@ -14,9 +14,6 @@ end
 local popupUnits = {}		--list of pop-up style units
 local unitCollisionVolume, pieceCollisionVolume, dynamicPieceCollisionVolume = include("LuaRules/Configs/CollisionVolumes.lua")
 
--- Building's radius must be scaled after UnitFinished()
-local scaleBuilding = {}
-
 -- Localization and speedups
 local spGetPieceCollisionData = Spring.GetUnitPieceCollisionVolumeData
 local spSetPieceCollisionData = Spring.SetUnitPieceCollisionVolumeData
@@ -53,7 +50,7 @@ if (gadgetHandler:IsSyncedCode()) then
 				if featureModel:len() > 4 then
 					local featureModelTrim
 					if Game.version > "91.0" then
-						featureModelTrim = featureModel:sub(1,-5)
+						featureModelTrim = featureModel:sub(1,-5) -- featureModel:match("/.*%."):sub(2,-2)
 					else
 						featureModelTrim = featureModel:match("/.*%."):sub(2,-2)
 					end
@@ -137,11 +134,12 @@ if (gadgetHandler:IsSyncedCode()) then
 			if (vtype>=3 and xs==ys and ys==zs) then
 				spSetUnitCollisionData(unitID, xs*ws, ys*hs, zs*rs,  xo, yo, zo,  vtype, htype, axis)
 			end
-			if UnitDefs[unitDefID].canFly and UnitDefs[unitDefID].transportCapacity>0 then
-				spSetUnitRadiusAndHeight(unitID, 16, 16)
-			else
+			-- the following lines are commented because they're not needed in XTA, but that might change
+			--if UnitDefs[unitDefID].canFly and UnitDefs[unitDefID].transportCapacity>0 then
+			--	spSetUnitRadiusAndHeight(unitID, 16, 16)
+			--else
 				spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*rs, spGetUnitHeight(unitID)*hs)
-			end
+			--end
 		end
 	end
 
