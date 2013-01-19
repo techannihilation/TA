@@ -567,7 +567,7 @@ local morphDefs = {
       armshock1 = {
 		into = 'armshock',
 		time = 60,
-		xp = 0.60,
+		xp = 0.75,
 	},
       armraven1 = {
 		into = 'armraven',
