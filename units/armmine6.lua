@@ -10,6 +10,7 @@ local unitDef = {
 	activateWhenBuilt = false,
 	bmcode = 0,
 	brakeRate = 0,
+	blocking = false,
 	buildCostEnergy = 8000,
 	buildCostMetal = 1000,
 	builder = false,
@@ -61,7 +62,6 @@ local unitDef = {
 	unitname = [[armmine6]],
 	useBuildingGroundDecal = true,
 	workerTime = 0,
-	yardMap = [[o]],
 	customparams = {
 		RequireTech = [[Advanced T2 Unit Research Centre]],
 	},

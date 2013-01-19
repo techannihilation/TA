@@ -61,7 +61,6 @@ local unitDef = {
 	unitname = [[cormine7]],
 	useBuildingGroundDecal = true,
 	workerTime = 0,
-	yardMap = [[o]],
 	customparams = {
 		RequireTech = [[Advanced T3 Unit Research Centre]],
 	},
