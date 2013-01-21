@@ -23,7 +23,6 @@ local unitDef = {
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
 	collisionVolumeScales = [[57.6 37.6 57.6]],
 	collisionVolumeOffsets = [[0 -10 0]],
-	collisionVolumeTest = 1,
 	collisionVolumeType = [[CylY]],
 	corpse = [[DEAD]],
 	description = [[Increases Energy Storage (16000)]],
