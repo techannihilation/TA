@@ -95,7 +95,7 @@ function determine(ud, wd)
         local mexDef = {} 
         mexDef.extractsMetal = extractsMetal 
         if #unitDef.weapons <= 1 then
-          if (#unitDef.weapons == 1 and wd[unitDef.weapons[1].weaponDef].weaponType == "Shield") then
+          if (#unitDef.weapons == 1 and wd[unitDef.weapons[1].weaponDef].isShield) then
 	    mexDef.armed = #unitDef.weapons < 0
           else
             mexDef.armed = #unitDef.weapons > 0      
