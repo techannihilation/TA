@@ -196,11 +196,12 @@ local dynLightDefs = {
 			--   ttl value roughly matches CEG duration
 			["nuke_missile"] = {
 				projectileLightDef = {
-					diffuseColor    = {5.0,                   5.0,                   0.0                  },
-					specularColor   = {5.0 * rgbSpecMults[1], 5.0 * rgbSpecMults[2], 0.0 * rgbSpecMults[3]},
+					diffuseColor    = {3.0,                   1.0,                   0.0                  },
+					specularColor   = {3.0 * rgbSpecMults[1], 1.0 * rgbSpecMults[2], 0.0 * rgbSpecMults[3]},
 					priority        = 20 * 10,
-					radius          = 460.0,
+					radius          = 300.0,
 					ttl             = 100000,
+					ignoreLOS       = false,
 				},
 				explosionLightDef = {
 					diffuseColor      = {45.0,                   45.0,                   30.0                  },
@@ -215,11 +216,12 @@ local dynLightDefs = {
 
 			["nuke_missile1"] = {
 				projectileLightDef = {
-					diffuseColor    = {5.0,                   5.0,                   0.0                  },
-					specularColor   = {5.0 * rgbSpecMults[1], 5.0 * rgbSpecMults[2], 0.0 * rgbSpecMults[3]},
+					diffuseColor    = {3.0,                   1.0,                   0.0                  },
+					specularColor   = {3.0 * rgbSpecMults[1], 1.0 * rgbSpecMults[2], 0.0 * rgbSpecMults[3]},
 					priority        = 30 * 10,
-					radius          = 470.0,
+					radius          = 320.0,
 					ttl             = 100000,
+					ignoreLOS       = false,
 				},
 				explosionLightDef = {
 					diffuseColor      = {45.0,                   45.0,                   30.0                  },
@@ -234,11 +236,12 @@ local dynLightDefs = {
 
 			["nuke_crblmssl"] = {
 				projectileLightDef = {
-					diffuseColor    = {5.0,                   5.0,                   0.0                  },
-					specularColor   = {5.0 * rgbSpecMults[1], 5.0 * rgbSpecMults[2], 0.0 * rgbSpecMults[3]},
+					diffuseColor    = {3.0,                   1.0,                   0.0                  },
+					specularColor   = {3.0 * rgbSpecMults[1], 1.0 * rgbSpecMults[2], 0.0 * rgbSpecMults[3]},
 					priority        = 20 * 10,
-					radius          = 460.0,
+					radius          = 300.0,
 					ttl             = 100000,
+					ignoreLOS       = false,
 				},
 				explosionLightDef = {
 					diffuseColor      = {45.0,                   45.0,                   30.0                  },
@@ -253,11 +256,12 @@ local dynLightDefs = {
 
 			["nuke_crblmssl1"] = {
 				projectileLightDef = {
-					diffuseColor    = {5.0,                   5.0,                   0.0                  },
-					specularColor   = {5.0 * rgbSpecMults[1], 5.0 * rgbSpecMults[2], 0.0 * rgbSpecMults[3]},
+					diffuseColor    = {3.0,                   1.0,                   0.0                  },
+					specularColor   = {3.0 * rgbSpecMults[1], 1.0 * rgbSpecMults[2], 0.0 * rgbSpecMults[3]},
 					priority        = 30 * 10,
-					radius          = 460.0,
+					radius          = 320.0,
 					ttl             = 100000,
+					ignoreLOS       = false,
 				},
 				explosionLightDef = {
 					diffuseColor      = {45.0,                   45.0,                   30.0                  },
@@ -272,11 +276,12 @@ local dynLightDefs = {
 
 			["fnuke_missile"] = {
 				projectileLightDef = {
-					diffuseColor    = {5.0,                   5.0,                   0.0                  },
-					specularColor   = {5.0 * rgbSpecMults[1], 5.0 * rgbSpecMults[2], 0.0 * rgbSpecMults[3]},
+					diffuseColor    = {3.0,                   1.0,                   0.0                  },
+					specularColor   = {3.0 * rgbSpecMults[1], 1.0 * rgbSpecMults[2], 0.0 * rgbSpecMults[3]},
 					priority        = 20 * 10,
 					radius          = 400.0,
 					ttl             = 100000,
+					ignoreLOS       = false,
 				},
 				explosionLightDef = {
 					diffuseColor      = {45.0,                   45.0,                   30.0                  },
@@ -291,11 +296,12 @@ local dynLightDefs = {
 
 			["fnuke_missile1"] = {
 				projectileLightDef = {
-					diffuseColor    = {5.0,                   5.0,                   0.0                  },
-					specularColor   = {5.0 * rgbSpecMults[1], 5.0 * rgbSpecMults[2], 0.0 * rgbSpecMults[3]},
+					diffuseColor    = {3.0,                   1.0,                   0.0                  },
+					specularColor   = {3.0 * rgbSpecMults[1], 1.0 * rgbSpecMults[2], 0.0 * rgbSpecMults[3]},
 					priority        = 40 * 10,
 					radius          = 400.0,
 					ttl             = 100000,
+					ignoreLOS       = false,
 				},
 				explosionLightDef = {
 					diffuseColor      = {45.0,                   45.0,                   30.0                  },
@@ -316,6 +322,7 @@ local dynLightDefs = {
 					priority        = 8 * 10,
 					radius          = 200.0,
 					ttl             = 100000,
+					ignoreLOS       = false,
 				},
 				explosionLightDef = {
 					diffuseColor      = {12.0,                   12.0,                   8.0                  },
@@ -335,6 +342,7 @@ local dynLightDefs = {
 					priority        = 8 * 10,
 					radius          = 200.0,
 					ttl             = 100000,
+					ignoreLOS       = false,
 				},
 				explosionLightDef = {
 					diffuseColor      = {12.0,                   12.0,                   8.0                  },
