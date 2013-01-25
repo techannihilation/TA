@@ -78,10 +78,10 @@ local options={
 		desc="Which pathfinding system to use\nAutoHost Usage :- qtpfs",
 		type="list",
 		section= "ta_exp",
-		def="qtpfs",
+		def="normal",
 		items={
-			{key="0", name="Default", desc="Default Spring path finding engine"},
-			{key="1", name="QTPFS", desc="Quick/Tesellating Path Finding System"},
+			{key="normal", name="Default", desc="Default Spring path finding engine"},
+			{key="qtpfs", name="QTPFS", desc="Quick/Tesellating Path Finding System"},
 		}
     },
     {
