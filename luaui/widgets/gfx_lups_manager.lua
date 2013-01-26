@@ -297,6 +297,11 @@ local UnitEffects = {
     {class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=20, emitVector = {0,1,0}, piece="rfthrust", onActive=true}}, 
     {class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=20, emitVector = {0,1,0}, piece="rbthrust", onActive=true}},
  },
+  [UnitDefNames["cbuilderlvl2"].id] = {
+    {class='AirJet',options={color={1.0,0.1,0.2}, width=4.7, length=15, emitVector = {0,1,0}, piece="thrust", onActive=true}},
+    {class='AirJet',options={color={1.0,0.1,0.2}, width=4.7, length=15, emitVector = {0,1,0}, piece="lbthrust", onActive=true}},
+    {class='AirJet',options={color={1.0,0.1,0.2}, width=4.7, length=15, emitVector = {0,1,0}, piece="rbthrust", onActive=true}},
+ },
   [UnitDefNames["armorion"].id] = {
     {class='AirJet',options={color={0.6,0.1,0}, width=7, length=24, piece="rthrust", onActive=true}},
     {class='AirJet',options={color={0.6,0.1,0}, width=7, length=24, piece="lthrust", onActive=true}},
@@ -349,10 +354,6 @@ local UnitEffects = {
     {class='AirJet',options={color={0,0,1}, width=3, length=24, piece="rrthrust", onActive=true}},
     {class='AirJet',options={color={0,0,1}, width=3, length=24, piece="lthrust", onActive=true}},
     {class='AirJet',options={color={0,0,1}, width=3, length=24, piece="llthrust", onActive=true}},
- },
- [UnitDefNames["cbuilderlvl2"].id] = {
-    {class='AirJet',options={color={1,1,1}, width=7, length=20, piece="engine_r", onActive=true}},
-    {class='AirJet',options={color={1,1,1}, width=7, length=20, piece="engine_l", onActive=true}},
  },
  [UnitDefNames["tllvaliant"].id] = {
     {class='AirJet',options={color={0.6,0.1,0}, width=17, length=30, piece="rthrust", onActive=true}},
