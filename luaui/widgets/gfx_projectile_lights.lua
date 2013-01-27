@@ -133,10 +133,6 @@ function widget:Initialize() -- create lighttable
 					elseif (WeaponDefs[weaponID]['type'] == 'LaserCannon') then
 						local colour = WeaponDefs[weaponID].visuals
 						plighttable[WeaponDefs[weaponID]['name']]={colour.colorR,colour.colorG,colour.colorB,0.6,true}  --{0,1,0,0.6}
-
-					elseif (WeaponDefs[weaponID]['type'] == 'LightningCannon') then
-						plighttable[WeaponDefs[weaponID]['name']]={0.2,0.2,1.0,0.6,true}
-
 					elseif (WeaponDefs[weaponID]['type'] == 'MissileLauncher') then
 						size=WeaponDefs[weaponID]['size']
 						plighttable[WeaponDefs[weaponID]['name'] ]={1,1,0.8,0.5*((size-1)/3)}
