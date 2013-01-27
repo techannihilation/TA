@@ -148,6 +148,7 @@ local resources = {
 			coresmoketrail='coresmoketrail.tga',
 			shotgunflare='shotgunflare.tga',
 			lightb='PD/lightningball.tga',
+			lightb2='PD/lightningball2.tga',
 			lightning='PD/lightning.tga',
 			plasma='GPL/plasma.tga',
 			flashside1='flashside1.tga',
