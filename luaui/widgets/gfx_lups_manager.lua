@@ -171,7 +171,13 @@ local UnitEffects = {
  [UnitDefNames["armestor"].id] = {
     {class='GroundFlash',options=groundFlashArmestor},
   },
-
+ [UnitDefNames["corses"].id] = {
+    {class='GroundFlash',options=groundFlashCorses},
+  },
+ [UnitDefNames["armses"].id] = {
+    {class='GroundFlash',options=groundFlashArmses},
+  },
+  
   --// PLANES still need to do work here //----------------------------
   [UnitDefNames["armfig"].id] = {
     {class='AirJet',options={color={0.3,0.2,0}, width=6, length=45, piece="rearthrust", onActive=true}},
