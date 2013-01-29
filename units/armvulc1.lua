@@ -97,6 +97,7 @@ local weaponDefs = {
 	ARMVULC_WEAPON1 = {
 		accuracy = 400,
 		areaOfEffect = 224,
+		avoidground = false,
 		ballistic = true,
 		cegTag = [[Trail_cannon]],
 		collideFriendly = false,

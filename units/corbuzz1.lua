@@ -101,6 +101,7 @@ local weaponDefs = {
 	CORBUZZ_WEAPON1 = {
 		accuracy = 450,
 		areaOfEffect = 256,
+		avoidground = false,
 		ballistic = true,
 		cegTag = [[Trail_cannon]],
 		collideFriendly = false,
