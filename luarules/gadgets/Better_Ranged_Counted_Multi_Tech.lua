@@ -2,7 +2,7 @@
 --[[
 ------------------------------------------------------------
 		Tech Tree gadget
-------------------------------------------------------------
+------------------------------------------------------------Fmath.
 To make use of this gadget:
 	Edit the FBI of your units, 
 	adding RequireTech and ProvideTech tags
@@ -288,6 +288,7 @@ local SpDiffTimers = Spring.DiffTimers
 local SpGetTimer = Spring.GetTimer
 local SpGetActiveCommand = Spring.GetActiveCommand
 local SpIsGUIHidden = Spring.IsGUIHidden
+local SpGetLocalTeamID = Spring.GetLocalTeamID
 
 local huge = math.huge
 local abs = math.abs
@@ -1065,7 +1066,7 @@ else--unsynced
 							table.insert(RangedProviders,id)
 						end
 					end
-					for _,u in ipairs(SpGetTeamUnitsByDefs(Spring.GetLocalTeamID(),RangedProviders)) do
+					for _,u in ipairs(SpGetTeamUnitsByDefs(SpGetLocalTeamID(),RangedProviders)) do
 						local x,y,z=SpGetUnitPosition(u)
 						gl.Color(cm,cm,cm,1)
 						gl.LineWidth(3)
