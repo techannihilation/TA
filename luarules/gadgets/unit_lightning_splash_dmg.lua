@@ -24,9 +24,9 @@ end
 ----------------------------------------------------------------
 
 local sparkWeapons = {
-    [WeaponDefNames.armzeus_lightning.id] = {ceg = "ZEUS_FLASH_SUB", forkdamage = 0.5, maxunits=2},
-    [WeaponDefNames.armzeus1_lightning1.id] = {ceg = "ZEUS_FLASH_SUB", forkdamage = 0.5, maxunits=3},
-    [WeaponDefNames.armclaw_dclaw.id] = {ceg = "CLAW_FLASH_SUB", forkdamage = 0.325, maxunits=2},
+    [WeaponDefNames.armzeus_lightning.id] = {ceg = "ZEUS_FLASH_SUB", forkdamage = 0.5, maxunits = 2, radius = 60},
+    [WeaponDefNames.armzeus1_lightning1.id] = {ceg = "ZEUS_FLASH_SUB", forkdamage = 0.5, maxunits = 3, radius = 60},
+    [WeaponDefNames.armclaw_dclaw.id] = {ceg = "CLAW_FLASH_SUB", forkdamage = 0.325, maxunits = 2, radius = 60},
 }
 
 local immuneToSplash = {
@@ -37,7 +37,7 @@ local immuneToSplash = {
 
 local mRandom = math.random
 local rad = math.rad
-local SpGetUnitPosition = SpGetUnitPosition
+local SpGetUnitPosition = Spring.GetUnitPosition
 local SpGetUnitsInSphere = Spring.GetUnitsInSphere
 local SpGetUnitDefID = Spring.GetUnitDefID
 local SpSpawnCEG = Spring.SpawnCEG
@@ -50,7 +50,7 @@ function gadget:UnitDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weap
     if sparkWeapons[weaponID] then
       local x,y,z = SpGetUnitPosition(unitID)
       local angle = rad(mRandom(1,360))
-      local nearUnits = SpGetUnitsInSphere(x,y,z,60)
+      local nearUnits = SpGetUnitsInSphere(x,y,z,sparkWeapons[weaponID].radius)
       local count = 0
       for _,nearUnit in ipairs(nearUnits) do
         if (count >= sparkWeapons[weaponID].maxunits) then 
