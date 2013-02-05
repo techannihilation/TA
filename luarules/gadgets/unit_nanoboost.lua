@@ -4,9 +4,9 @@
 
 function gadget:GetInfo()
   return {
-    name      = "Production Rate",
-    desc      = "Adds a button that sets the production rate for a factory or sets it passive",
-    author    = "CAKE modified by Deadnight Warrior", --uses code from Niobium's Passive Builders as well
+    name      = "Nano Boost",
+    desc      = "Turbo mode for nanos",
+    author    = "Nixtux", -- based on production rate gadget by Deadnight Warrior
     date      = "Oct 20, 2007",
     license   = "GNU GPL, v2 or later",
     layer     = 0,
@@ -27,50 +27,37 @@ end
 --Speed-ups
 local GetUnitDefID    = Spring.GetUnitDefID
 local FindUnitCmdDesc = Spring.FindUnitCmdDesc
-local SetUnitBuildspeed = Spring.SetUnitBuildSpeed
 local spGetTeamResources = Spring.GetTeamResources
 local spInsertUnitCmdDesc = Spring.InsertUnitCmdDesc
 local spEditUnitCmdDesc = Spring.EditUnitCmdDesc
 local spRemoveUnitCmdDesc = Spring.RemoveUnitCmdDesc
+local SpAddUnitDamage = Spring.AddUnitDamage
+local SpGetUnitPosition = Spring.GetUnitPosition
+local SpSpawnCEG = Spring.SpawnCEG
+
+local mrandom = math.random
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
-CMD_BUILDSPEED = 33455
---CMD_BUILDSPEEDBOOST = 33456
-local passiveBuilders = {} -- passiveBuilders[uID] = nil / bool
-local requiresMetal = {} -- requiresMetal[uDefID] = bool
-local requiresEnergy = {} -- requiresEnergy[uDefID] = bool
-local teamList = {} -- teamList[1..n] = teamID
-local teamMetalStalling = {} -- teamStalling[teamID] = nil / bool
-local teamEnergyStalling = {} -- teamStalling[teamID] = nil / bool
+CMD_NANOBOOST = 33456
+local boostednanos = {} -- list of nanos in boostmode
 
 local buildspeedlist = {}
 
 local buildspeedCmdDesc = {
-  id      = CMD_BUILDSPEED,
+  id      = CMD_NANOBOOST,
   type    = CMDTYPE.ICON_MODE,
-  name    = 'Production',
-  cursor  = 'Production',
-  action  = 'Production',
+  name    = 'Boost',
+  cursor  = 'Boost',
+  action  = 'Boost',
   tooltip = 'Orders: Production Rate',
-  params  = { '0', 'Passive', '25%', '50%', '75%', '100%'}
+  params  = { '0', 'Normal', 'Boost'}
 }
- 
-local buildspeedboostCmdDesc = {
-  id      = CMD_BUILDSPEEDBOOST,
-  type    = CMDTYPE.ICON_MODE,
-  name    = 'BOOST',
-  cursor  = 'Production',
-  action  = 'Production',
-  tooltip = 'Nano Boost',
-  params  = { 'Boost', 'Off'}
-}
-  
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
 local function AddBuildspeedCmdDesc(unitID)
-  if (FindUnitCmdDesc(unitID, CMD_BUILDSPEED)) then
+  if (FindUnitCmdDesc(unitID, CMD_NANOBOOST)) then
     return  -- already exists
   end
   local insertID = 
@@ -81,41 +68,29 @@ local function AddBuildspeedCmdDesc(unitID)
     FindUnitCmdDesc(unitID, CMD.MOVE_STATE) or
     FindUnitCmdDesc(unitID, CMD.FIRE_STATE) or
     123456 -- back of the pack
-  buildspeedCmdDesc.params[1] = '1'
-  buildspeedboostCmdDesc.params[1] = '1'
-  
-  local uDefID = GetUnitDefID(unitID)
-  local ud = UnitDefs[uDefID]
-   if (ud.name:find("nanotc",1,true) or ud.name:find("nanotower",1,true)) then
-     removeButton(unitID, CMD.ATTACK)
-     removeButton(unitID, CMD.MOVE)
-     removeButton(unitID, CMD.FIGHT)
-     removeButton(unitID, CMD.FIRE_STATE)
-   end
-   
-  spInsertUnitCmdDesc(unitID, insertID + 1, buildspeedCmdDesc)
-  --spInsertUnitCmdDesc(unitID, insertID + 2, buildspeedboostCmdDesc)
+    
+    --Remove unused button
+    removeButton(unitID, CMD.ATTACK)
+    removeButton(unitID, CMD.MOVE)
+    removeButton(unitID, CMD.FIGHT)
+    removeButton(unitID, CMD.FIRE_STATE)
+    buildspeedCmdDesc.params[1] = '1'
+    spInsertUnitCmdDesc(unitID, insertID + 1, buildspeedCmdDesc)
 end
 
 
 local function UpdateButton(unitID, statusStr)
-  local cmdDescID = FindUnitCmdDesc(unitID, CMD_BUILDSPEED)
+  local cmdDescID = FindUnitCmdDesc(unitID, CMD_NANOBOOST)
   if (cmdDescID == nil) then
     return
   end
 
   local tooltip
   if (statusStr == 0) then
-    tooltip = 'Orders: Production halted when resource stalling.'
-  elseif (statusStr == 1) then
-    tooltip = 'Orders: Production at 25%.'
-  elseif (statusStr == 2) then
-    tooltip = 'Orders: Production at 50%.'
-  elseif (statusStr == 3) then
-    tooltip = 'Orders: Production at 75%.'
-  else
-    tooltip = 'Orders: Full Production.'
-  end
+    tooltip = 'Nano running in normal opperations\nWarning Boost mode all power diverted to Production\nNano will be running in an unstable mode\nDAMAGE WILL OCCUR'
+  else 
+    tooltip = 'Boost: Production at 150%.\nSelect to Revert to normal production.'
+   end
 
   buildspeedCmdDesc.params[1] = statusStr
 
@@ -128,13 +103,13 @@ end
 
 local function BuildspeedCommand(unitID, unitDefID, cmdParams, teamID)
 	if cmdParams[1] == 1 then
-		SetUnitBuildSpeed(unitID, buildspeedlist[unitID].speed *.25)
-	elseif cmdParams[1] == 2 then
-		SetUnitBuildSpeed(unitID, buildspeedlist[unitID].speed*.5)
-	elseif cmdParams[1] == 3 then
-		SetUnitBuildSpeed(unitID, buildspeedlist[unitID].speed*.75)
+		--Spring.Echo("boosted at " .. buildspeedlist[unitID].speed *1.5)
+		Spring.SetUnitBuildSpeed(unitID, buildspeedlist[unitID].speed *1.5,0,0)
+		boostednanos[unitID] = true
 	else
-		SetUnitBuildSpeed(unitID, buildspeedlist[unitID].speed)
+		--Spring.Echo("not boosted at " .. buildspeedlist[unitID].speed)
+		Spring.SetUnitBuildSpeed(unitID, buildspeedlist[unitID].speed, buildspeedlist[unitID].repair, buildspeedlist[unitID].reclaim)
+		boostednanos[unitID] = nil
 	end
 	buildspeedlist[unitID].mode=cmdParams[1]
 	UpdateButton(unitID, cmdParams[1])
@@ -146,19 +121,16 @@ function removeButton(unitID, ID)
     spRemoveUnitCmdDesc(unitID, cmdID)
   end
 end
+
+
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
 function gadget:UnitCreated(unitID, unitDefID, teamID, builderID)
 	local ud = UnitDefs[unitDefID]
-	if (ud.builder==true and #ud.buildOptions>0 or (ud.name:find("nanotc",1,true) or ud.name:find("nanotower",1,true))) then
-		local stMode
-		if (ud.name:find("nanotc",1,true) or ud.name:find("nanotower",1,true)) then
-			stMode=0
-		else
-			stMode=4
-		end
-		buildspeedlist[unitID]={speed=ud.buildSpeed, mode=stMode}
+	if (ud.builder==true and (ud.name:find("nanotc",1,true) or ud.name:find("nanotower",1,true))) then
+		local stMode = 0
+		buildspeedlist[unitID]={speed=ud.buildSpeed, repair=ud.repairSpeed, reclaim=ud.reclaimSpeed, mode=stMode}
 		AddBuildspeedCmdDesc(unitID)
 		UpdateButton(unitID, stMode)
 	end
@@ -166,15 +138,11 @@ end
 
 function gadget:UnitDestroyed(unitID, _, teamID)
 	buildspeedlist[unitID] = nil
+	boostednanos[unitID] = nil
 end
 
 function gadget:Initialize()
-	for uDefID, uDef in pairs(UnitDefs) do
-		requiresMetal[uDefID] = (uDef.metalCost > 1) -- T1 metal makers cost 1 metal.
-		requiresEnergy[uDefID] = (uDef.energyCost > 0) -- T1 solars cost 0 energy.
-	end
-	teamList = Spring.GetTeamList()
-	gadgetHandler:RegisterCMDID(CMD_BUILDSPEED)
+	gadgetHandler:RegisterCMDID(CMD_NANOBOOST)
 	for _, unitID in ipairs(Spring.GetAllUnits()) do
 		local teamID = Spring.GetUnitTeam(unitID)
 		local unitDefID = GetUnitDefID(unitID)
@@ -183,37 +151,20 @@ function gadget:Initialize()
 end
 
 function gadget:GameFrame(n)
-  if n % 16 == 0 then
-		for i = 1, #teamList do
-			local teamID = teamList[i]
-			local mCur, mStor, mPull, mInc, mExp, mShare, mSent, mRec, mExc = spGetTeamResources(teamID, 'metal')
-			local eCur, eStor, ePull, eInc, eExp, eShare, eSent, eRec, eExc = spGetTeamResources(teamID, 'energy')
-			-- stabilize the situation if storage is small
-			if ePull > eExp then
-				eCur = eCur - (ePull - eExp)
-			end
-			if eExc > 0 then
-				eCur = eCur + eExc
-			end            
-			if mPull > mExp then
-				mCur = mCur - (mPull - mExp)
-			end
-			if mExc > 0 then
-				mCur = mCur + mExc
-			end
-			-- never consider it a stall if the actual combined income is higher than the total expense
-			teamMetalStalling[teamID] = (mCur < 0.5 * mPull) and ((mInc + mRec) <= (mExp*1.1 + mSent))
-			teamEnergyStalling[teamID] = (eCur < 0.5 * ePull) and ((eInc + eRec) <= (eExp*1.1 + eSent))
-		end
-	end
+  if n % 128 == 0 then
+    for unitID in pairs(boostednanos) do
+      local x,y,z = SpGetUnitPosition(unitID)
+      SpSpawnCEG("ZEUS_FLASH_SUB",x,y,z,0,0,0)
+      damage = mrandom(0,140)
+      --Spring.Echo("Damage added in frame " .. n .. "   Dps = " .. damage)
+      SpAddUnitDamage(unitID ,damage)
+    end
+  end
 end
 
-function gadget:AllowUnitBuildStep(builderID, builderTeamID, uID, uDefID, step)
-    return (step <= 0) or not (buildspeedlist[builderID].mode==0 and ((teamMetalStalling[builderTeamID] and requiresMetal[uDefID]) or (teamEnergyStalling[builderTeamID] and requiresEnergy[uDefID])))
-end
 function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, _)
 	local returnvalue
-	if cmdID ~= CMD_BUILDSPEED or UnitDefs[unitDefID].buildSpeed==0 then
+	if cmdID ~= CMD_NANOBOOST or UnitDefs[unitDefID].buildSpeed==0 then
 		return true
 	end
 	BuildspeedCommand(unitID, unitDefID, cmdParams, teamID)  
@@ -222,7 +173,7 @@ end
 
 function gadget:Shutdown()
 	for _, unitID in ipairs(Spring.GetAllUnits()) do
-		local cmdDescID = FindUnitCmdDesc(unitID, CMD_BUILDSPEED)
+		local cmdDescID = FindUnitCmdDesc(unitID, CMD_NANOBOOST)
 		if (cmdDescID) then
 			spRemoveUnitCmdDesc(unitID, cmdDescID)
 		end
