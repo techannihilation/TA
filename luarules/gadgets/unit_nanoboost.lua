@@ -35,6 +35,7 @@ local SpAddUnitDamage = Spring.AddUnitDamage
 local SpGetUnitPosition = Spring.GetUnitPosition
 local SpSpawnCEG = Spring.SpawnCEG
 local uDefs = UnitDefs
+local SpGetUnitHealth = Spring.GetUnitHealth
 
 local mrandom = math.random
 --------------------------------------------------------------------------------
@@ -106,7 +107,7 @@ local function UpdateButton(unitID, statusStr)
   if (statusStr == 0) then
     tooltip = 'Nano running in normal opperations\nWarning Boost mode all power diverted to Production\nNano will be running in an unstable mode\nDAMAGE WILL OCCUR'
   else 
-    tooltip = 'Boost: Production at 150%.\nSelect to Revert to normal production.'
+    tooltip = 'Boost: Production at 180%.\nSelect to Revert to normal production.'
    end
 
   buildspeedCmdDesc.params[1] = statusStr
@@ -173,10 +174,11 @@ function gadget:GameFrame(n)
 	--Is ud.maxDamage hidden for a reason
 	--local uDefID = GetUnitDefID(unitID) ; if not uDefID then break end
 	--local uDef = uDefs[uDefID]
-	--local hp = uDef.maxDamage
-	  local damage = mrandom(0,(130))
-	--Spring.Echo("hp = " .. hp .."      " .. damage)
-	  SpAddUnitDamage(unitID ,damage)
+	  local chp,hp = SpGetUnitHealth(unitID)
+	  local damage = mrandom(0,(hp*0.18))
+	  Spring.Echo("hp = " .. hp .."      " .. damage)
+	  Spring.SetUnitHealth(unitID,(chp-damage))
+	 --pAddUnitDamage(unitID ,damage)
 	  local x,y,z = SpGetUnitPosition(unitID)
 	  SpSpawnCEG("ZEUS_FLASH_SUB",x,y,z,0,0,0)
       end
