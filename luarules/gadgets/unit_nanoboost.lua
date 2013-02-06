@@ -34,6 +34,7 @@ local spRemoveUnitCmdDesc = Spring.RemoveUnitCmdDesc
 local SpAddUnitDamage = Spring.AddUnitDamage
 local SpGetUnitPosition = Spring.GetUnitPosition
 local SpSpawnCEG = Spring.SpawnCEG
+local uDefs = UnitDefs
 
 local mrandom = math.random
 --------------------------------------------------------------------------------
@@ -44,14 +45,30 @@ local boostednanos = {} -- list of nanos in boostmode
 
 local buildspeedlist = {}
 
+local nanos = {
+  [UnitDefNames["armnanotc"].id] = true,
+  [UnitDefNames["armnanotc1"].id] = true,
+  [UnitDefNames["armnanotc2"].id] = true,
+  [UnitDefNames["armnanotc3"].id] = true,
+  [UnitDefNames["ananotower"].id] = true,
+  [UnitDefNames["cornanotc"].id] = true,
+  [UnitDefNames["cornanotc1"].id] = true,
+  [UnitDefNames["cornanotc2"].id] = true,
+  [UnitDefNames["cornanotc3"].id] = true,
+  [UnitDefNames["cnanotower"].id] = true,
+  [UnitDefNames["tllnanotc"].id] = true,
+  [UnitDefNames["tllnanotc1"].id] = true,
+  [UnitDefNames["tllnanotc2"].id] = true,
+}
+
 local buildspeedCmdDesc = {
   id      = CMD_NANOBOOST,
   type    = CMDTYPE.ICON_MODE,
   name    = 'Boost',
   cursor  = 'Boost',
   action  = 'Boost',
-  tooltip = 'Orders: Production Rate',
-  params  = { '0', 'Normal', 'Boost'}
+  tooltip = 'Divert All power to Construction',
+  params  = { '0', 'Boost', 'Normal'}
 }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -104,7 +121,7 @@ end
 local function BuildspeedCommand(unitID, unitDefID, cmdParams, teamID)
 	if cmdParams[1] == 1 then
 		--Spring.Echo("boosted at " .. buildspeedlist[unitID].speed *1.5)
-		Spring.SetUnitBuildSpeed(unitID, buildspeedlist[unitID].speed *1.5,0,0)
+		Spring.SetUnitBuildSpeed(unitID, buildspeedlist[unitID].speed *1.8,0,0)
 		boostednanos[unitID] = true
 	else
 		--Spring.Echo("not boosted at " .. buildspeedlist[unitID].speed)
@@ -122,13 +139,12 @@ function removeButton(unitID, ID)
   end
 end
 
-
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
 function gadget:UnitCreated(unitID, unitDefID, teamID, builderID)
 	local ud = UnitDefs[unitDefID]
-	if (ud.builder==true and (ud.name:find("nanotc",1,true) or ud.name:find("nanotower",1,true))) then
+	if nanos[unitDefID] then
 		local stMode = 0
 		buildspeedlist[unitID]={speed=ud.buildSpeed, repair=ud.repairSpeed, reclaim=ud.reclaimSpeed, mode=stMode}
 		AddBuildspeedCmdDesc(unitID)
@@ -153,18 +169,24 @@ end
 function gadget:GameFrame(n)
   if n % 128 == 0 then
     for unitID in pairs(boostednanos) do
-      local x,y,z = SpGetUnitPosition(unitID)
-      SpSpawnCEG("ZEUS_FLASH_SUB",x,y,z,0,0,0)
-      damage = mrandom(0,140)
-      --Spring.Echo("Damage added in frame " .. n .. "   Dps = " .. damage)
-      SpAddUnitDamage(unitID ,damage)
+      	if mrandom(0,1) == 0 then 
+	--Is ud.maxDamage hidden for a reason
+	--local uDefID = GetUnitDefID(unitID) ; if not uDefID then break end
+	--local uDef = uDefs[uDefID]
+	--local hp = uDef.maxDamage
+	  local damage = mrandom(0,(130))
+	--Spring.Echo("hp = " .. hp .."      " .. damage)
+	  SpAddUnitDamage(unitID ,damage)
+	  local x,y,z = SpGetUnitPosition(unitID)
+	  SpSpawnCEG("ZEUS_FLASH_SUB",x,y,z,0,0,0)
+      end
     end
   end
 end
 
 function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, _)
 	local returnvalue
-	if cmdID ~= CMD_NANOBOOST or UnitDefs[unitDefID].buildSpeed==0 then
+	if cmdID ~= CMD_NANOBOOST or not nanos[unitDefID] then
 		return true
 	end
 	BuildspeedCommand(unitID, unitDefID, cmdParams, teamID)  
