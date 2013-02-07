@@ -121,7 +121,7 @@ end
 
 local function BuildspeedCommand(unitID, unitDefID, cmdParams, teamID)
 	if cmdParams[1] == 1 then
-		--Spring.Echo("boosted at " .. buildspeedlist[unitID].speed *1.5)
+		--Spring.Echo("boosted at " .. buildspeedlist[unitID].speed *1.8)
 		Spring.SetUnitBuildSpeed(unitID, buildspeedlist[unitID].speed *1.8,0,0)
 		boostednanos[unitID] = true
 	else
@@ -171,14 +171,10 @@ function gadget:GameFrame(n)
   if n % 128 == 0 then
     for unitID in pairs(boostednanos) do
       	if mrandom(0,1) == 0 then 
-	--Is ud.maxDamage hidden for a reason
-	--local uDefID = GetUnitDefID(unitID) ; if not uDefID then break end
-	--local uDef = uDefs[uDefID]
-	  local chp,hp = SpGetUnitHealth(unitID)
+	  local _,hp = SpGetUnitHealth(unitID)
 	  local damage = mrandom(0,(hp*0.18))
-	  Spring.Echo("hp = " .. hp .."      " .. damage)
-	  Spring.SetUnitHealth(unitID,(chp-damage))
-	 --pAddUnitDamage(unitID ,damage)
+	  --Spring.Echo("hp = " .. hp .."      " .. damage)
+	  SpAddUnitDamage(unitID ,damage)
 	  local x,y,z = SpGetUnitPosition(unitID)
 	  SpSpawnCEG("ZEUS_FLASH_SUB",x,y,z,0,0,0)
       end
