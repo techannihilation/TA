@@ -117,7 +117,7 @@ local function SetupMexDefInfos()
 		if (extractsMetal > 0) then
 			mexDefInfos[unitDefID] = {}
 			mexDefInfos[unitDefID][1] = extractsMetal
-			mexDefInfos[unitDefID][2] = unitDef.extractSquare
+			--mexDefInfos[unitDefID][2] = unitDef.extractSquare
 			if (unitDef.xsize % 4 == 2) then
 				mexDefInfos[unitDefID][3] = true
 			end
