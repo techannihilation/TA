@@ -12,7 +12,7 @@ return {
       properties = {
         airdrag            = 1,
         alwaysvisible      = false,
-        colormap           = [[0.2 0.2 1  0.01	0.2 0.2 1 0.01	0 0 0 0.01]],
+        colormap           = [[1 0.2 0.2  0.01	0.2 0.2 1 0.01	0 0 0 0.01]],
         directional        = true,
         emitrot            = 0,
         emitrotspread      = 180,
@@ -39,7 +39,7 @@ return {
       underwater         = 1,
       water              = true,
       properties = {
-        colormap           = [[0.2 0.2 1  0.01	0.2 0.2 1 0.01	0 0 0 0.01]],
+        colormap           = [[1 0.2 0.1  0.01	0.2 0.2 1 0.01	0 0 0 0.01]],
         dir                = [[dir]],
         frontoffset        = 0,
         fronttexture       = [[muzzlefront]],
@@ -116,7 +116,7 @@ return {
       properties = {
         alpha              = 1,
         alphadecay         = 0.15,
-        color              = [[0.2, 0.2, 1]],
+        color              = [[1, 0.2, .1]],
         dir                = [[-25 r20,-25 r20,-25 r20]],
         length             = 1,
         width              = 40,
