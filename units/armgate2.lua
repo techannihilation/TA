@@ -86,6 +86,7 @@ local unitDef = {
 
 local weaponDefs = {
 	REPULSOR2 = {
+		isShield = true,
 		name = [[PlasmaRepulsor]],
 		range = 340,
 		shieldAlpha = 0.3,

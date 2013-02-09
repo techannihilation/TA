@@ -191,6 +191,7 @@ local weaponDefs = {
 	},
 	Praetorian_Shield = {
 		id = 9346,
+		isShield = true,
 		name = [[Praetorian_Shield]],
 		range = 360,
 		shieldAlpha = 0.3,
