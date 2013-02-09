@@ -289,6 +289,8 @@ local SpGetTimer = Spring.GetTimer
 local SpGetActiveCommand = Spring.GetActiveCommand
 local SpIsGUIHidden = Spring.IsGUIHidden
 local SpGetLocalTeamID = Spring.GetLocalTeamID
+local SpGetCOBScriptID = Spring.GetCOBScriptID
+local SpCallCOBScript = Spring.CallCOBScript
 
 local huge = math.huge
 local abs = math.abs
@@ -770,11 +772,11 @@ if (gadgetHandler:IsSyncedCode()) then
 				UnitsWithScripts[u].state=newstate
 				if newstate then
 					if UnitsWithScripts[u].TechGrantedCOBFuncID then
-						Spring.CallCOBScript(u,UnitsWithScripts[u].TechGrantedCOBFuncID,0)
+						SpCallCOBScript(u,UnitsWithScripts[u].TechGrantedCOBFuncID,0)
 					end
 				else
 					if UnitsWithScripts[u].TechLostCOBFuncID then
-						Spring.CallCOBScript(u,UnitsWithScripts[u].TechLostCOBFuncID,0)
+						SpCallCOBScript(u,UnitsWithScripts[u].TechLostCOBFuncID,0)
 					end
 				end
 			end
@@ -862,7 +864,7 @@ if (gadgetHandler:IsSyncedCode()) then
 
 
 	function gadget:UnitCreated(u,ud,team)
-		local idl,idg=Spring.GetCOBScriptID(u,"TechLost"),Spring.GetCOBScriptID(u,"TechGranted")
+		local idl,idg=SpGetCOBScriptID(u,"TechLost"),SpGetCOBScriptID(u,"TechGranted")
 		if AccessionTable[-ud] and (idl or idg) then
 			UnitsWithScripts[u]={state=nil,TechLostCOBFuncID=idl,TechGrantedCOBFuncID=idg}
 		end
@@ -928,33 +930,20 @@ if (gadgetHandler:IsSyncedCode()) then
 
 
 	function gadget:AllowCommand(u,ud,team,cmd,param,opt,synced)
-		local x,y,z
-		if param and cmd<0 and #param==4 then
-			x,y,z = param[1],param[2],param[3]
-		else
-			x,y,z = SpGetUnitPosition(u)
-		end
-		local ICanHaz = CheckCmd(cmd,team,x,y,z)
-		if not ICanHaz then
-			--Spring.PlaySoundFile("sounds/moarpower.wav", 5, x, y, z)
-			--Spring.SpawnCEG("moarpower", x, y, z)
-		end
-	return ICanHaz
+	 if param and cmd<0 and #param==4 then
+	   return CheckCmd(cmd,team,param[1],param[2],param[3])
+	 else
+	   return CheckCmd(cmd,team,SpGetUnitPosition(u))
+	 end
 	end
-
-
+	
     function gadget:AllowUnitCreation(ud,builder,team,x,y,z)
-        local CanIHaz = true
         if x and z then
-            CanIHaz = CheckCmd(-ud,team,x,y,z)
+            return CheckCmd(-ud,team,x,y,z)
         else
-            CanIHaz =  CheckCmd(-ud,team,builder)
+            return CheckCmd(-ud,team,builder)
         end
-        if not CanIHaz then
-            --Spring.PlaySoundFile("sounds/moarpower.wav", 5, x, y, z)
         end
-        return CanIHaz
-	end
 
 
 	function gadget:Initialize()
