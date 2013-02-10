@@ -159,7 +159,7 @@ function widget:MousePress(mx, my, mButton)
                     spSendLuaRulesMsg('\13889')
 		      -- don't use caching, so we're sure the function has been loaded, also, it's called so rarely that doesn't matter if it's slow 
 		      if WG["faction_change"] then 
-			 WG["faction_change"](89) 
+			 WG["faction_change"](88) 
 	           end 
                 end
                 return true
@@ -168,7 +168,7 @@ function widget:MousePress(mx, my, mButton)
                     spSendLuaRulesMsg('\138406')
 		    		      -- don't use caching, so we're sure the function has been loaded, also, it's called so rarely that doesn't matter if it's slow 
 		      if WG["faction_change"] then 
-			 WG["faction_change"](406) 
+			 WG["faction_change"](402) 
 	           end 
                 end
                 return true
@@ -177,7 +177,7 @@ function widget:MousePress(mx, my, mButton)
                     spSendLuaRulesMsg('\138727')
 		    		      -- don't use caching, so we're sure the function has been loaded, also, it's called so rarely that doesn't matter if it's slow 
 		      if WG["faction_change"] then 
-			 WG["faction_change"](727) 
+			 WG["faction_change"](721) 
 	           end 
                 end
                 return true
