@@ -56,7 +56,7 @@ local GetUnitRadius          = Spring.GetUnitRadius
 local GetUnitStates          = Spring.GetUnitStates
 local TraceScreenRay         = Spring.TraceScreenRay
 local CMD_ATTACK             = CMD.ATTACK
-local CMD_MANUALFIRE         = CMD.MANUALFIRE
+local CMD_DGUN               = CMD.MANUALFIRE
 local g                      = Game.gravity
 local GAME_SPEED             = 30
 local g_f                    = g / GAME_SPEED / GAME_SPEED
@@ -177,7 +177,7 @@ local function SetupUnitDef(unitDefID, unitDef)
         if (weaponDef.type == "DGun") then
           dgunInfo[unitDefID] = {range = weaponDef.range, aoe = weaponDef.damageAreaOfEffect}
         elseif (weaponDef.canAttackGround
-                and not weaponDef.isShield 
+                and not (weaponDef.type == "Shield")
                 and not ToBool(weaponDef.interceptor)
                 and (weaponDef.damageAreaOfEffect > maxSpread or weaponDef.range * (weaponDef.accuracy + weaponDef.sprayAngle) > maxSpread )
                 and not string.find(weaponDef.name, "flak")) then
@@ -201,18 +201,18 @@ local function SetupUnitDef(unitDefID, unitDef)
   if (maxWeaponDef.cylinderTargeting >= 100) then
     aoeDefInfo[unitDefID] = {type = "orbital", scatter = scatter}
   elseif (weaponType == "Cannon") then
-    aoeDefInfo[unitDefID] = {type = "ballistic", scatter = scatter, v = maxWeaponDef.projectilespeed * GAME_SPEED , range = maxWeaponDef.range}
+    aoeDefInfo[unitDefID] = {type = "ballistic", scatter = scatter, v = maxWeaponDef.projectilespeed * 30, range = maxWeaponDef.range}
   elseif (weaponType == "MissileLauncher") then
     local turnRate = 0
     if (maxWeaponDef.tracks) then
       turnRate = maxWeaponDef.turnRate
     end
     if (maxWeaponDef.wobble > turnRate * 1.4) then
-      scatter = (maxWeaponDef.wobble - maxWeaponDef.turnRate) * maxWeaponDef.projectilespeed * GAME_SPEED * 16
+      scatter = (maxWeaponDef.wobble - maxWeaponDef.turnRate) * maxWeaponDef.projectilespeed * 30 * 16
       local rangeScatter = (8 * maxWeaponDef.wobble - maxWeaponDef.turnRate)
       aoeDefInfo[unitDefID] = {type = "wobble", scatter = scatter, rangeScatter = rangeScatter, range = maxWeaponDef.range}
     elseif (maxWeaponDef.wobble > turnRate) then
-      scatter = (maxWeaponDef.wobble - maxWeaponDef.turnRate) * maxWeaponDef.projectilespeed * GAME_SPEED * 16
+      scatter = (maxWeaponDef.wobble - maxWeaponDef.turnRate) * maxWeaponDef.projectilespeed * 30 * 16
       aoeDefInfo[unitDefID] = {type = "wobble", scatter = scatter}
     elseif (maxWeaponDef.tracks) then
       aoeDefInfo[unitDefID] = {type = "tracking"}
@@ -595,7 +595,7 @@ function widget:DrawWorld()
   if not hasSelection then return end
   local _, cmd, _ = GetActiveCommand()
   
-  if (cmd == CMD.MANUALFIRE and dgunUnitDefID) then
+  if (cmd == CMD_DGUN and dgunUnitDefID) then
     mouseDistance = GetMouseDistance() or 1000
     local tx, ty, tz = GetMouseTargetPosition()
     if (not tx) then return end
