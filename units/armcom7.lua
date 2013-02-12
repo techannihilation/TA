@@ -234,7 +234,6 @@ local weaponDefs = {
 		},
 	},
 	COM_SHIELD2 = {
-		isShield = true,
 		name = [[PersonalShield]],
 		shieldAlpha = 0.35,
 		shieldBadColor = [[1 0.1 0.3]],

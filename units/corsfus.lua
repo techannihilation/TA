@@ -85,7 +85,6 @@ local unitDef = {
 local weaponDefs = {
 	CORSFUSshield = {
 		exteriorshield = 0,
-		isShield = true,
 		name = [[FusionShield]],
 		shieldAlpha = 0.3,
 		shieldBadColor = [[1 0.2 0.2]],

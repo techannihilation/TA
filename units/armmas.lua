@@ -65,7 +65,6 @@ local unitDef = {
 
 local weaponDefs = {
 	ARMMASshield = {
-		isShield = true,
 		name = [[ExtractorShield]],
 		shieldAlpha = 0.4,
 		shieldBadColor = [[0.05 0.05 0.05]],

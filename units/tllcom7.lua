@@ -167,7 +167,6 @@ local unitDef = {
 
 local weaponDefs = {
 	COM_SHIELD2 = {
-		isShield = true,
 		name = [[PersonalShield]],
 		rgbColor = [[1.000 0.000 0.000]],
 		shieldAlpha = 0.35,
