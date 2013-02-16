@@ -40,7 +40,7 @@ local BlackList = {
    ["cormist1_cortruck_missile1"] = true,
    ["gladiator_armknot_missile3"] = true,
    ["corrock_lightartmiss"] = true,
-
+   ["tawf114_tawf_banisher"] = true,
    }
    
    local Tlltrails = {

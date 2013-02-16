@@ -8,9 +8,9 @@
      	{
          	dir = dir;
          	colorMap=1.0 0.2 0.2 0.01	0.3 0.2 0.1 0.01	0 0 0 0.01; 
-          	size=4.3;
+          	size=5.3;
           	length=19;
-          	sizeGrowth=0.9;
+          	sizeGrowth=1.1;
           	ttl=2;
           	frontOffset=0;
           	sideTexture=flashside1;
