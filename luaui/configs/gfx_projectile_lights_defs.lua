@@ -38,7 +38,7 @@ local BlackList = {
    ["corstorm1_core_kbot_rocket1"] = true,
    ["cormist_cortruck_missile"] = true,
    ["cormist1_cortruck_missile1"] = true,
-   ["gladiator_armknot_missile3"] = true,
+   ["gladiator_armkbot_missile3"] = true,
    ["corrock_lightartmiss"] = true,
    ["tawf114_tawf_banisher"] = true,
    }
