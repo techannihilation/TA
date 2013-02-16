@@ -24,4 +24,28 @@ local BlackList = {
    ["cortron_cortron_weapon"] = true,
    ["tllemp_armemp_weapon"] = true,
    }
-return BlackList
+   
+   local Armtrails = {
+   ["armrock_arm_kbot_rocket"] = true,
+   ["armrock1_arm_kbot_rocket1"] = true,
+   ["armsam_armtruck_missile"] = true,
+   ["armsam1_armtruck_missile1"] = true,
+   ["armcrack_lightartmiss"] = true,
+   }
+      
+   local Coretrails = {
+   ["corstorm_core_kbot_rocket"] = true,
+   ["corstorm1_core_kbot_rocket1"] = true,
+   ["cormist_cortruck_missile"] = true,
+   ["cormist1_cortruck_missile1"] = true,
+   ["gladiator_armknot_missile3"] = true,
+   ["corrock_lightartmiss"] = true,
+
+   }
+   
+   local Tlltrails = {
+   ["tllannouncer_cortruck_missile"] = true,
+   ["tllfireraiser_tll_kbot_rocket"] = true,
+   }
+   
+return BlackList, Armtrails, Coretrails, Tlltrails

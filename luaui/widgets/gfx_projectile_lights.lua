@@ -13,6 +13,8 @@ function widget:GetInfo()
   }
 end
 
+--Add seperate color for different missile projectiles - Nixtux
+
 local spGetUnitViewPosition 	= Spring.GetUnitViewPosition
 local spGetUnitDefID			= Spring.GetUnitDefID
 local spGetGroundHeight			= Spring.GetGroundHeight
@@ -48,7 +50,7 @@ local atan2				= math.atan2
 
 local list      
 local plighttable = {}
-local BlackList = include("Configs/gfx_projectile_lights_defs.lua")	-- weapons that shouldn't use projectile lights
+local BlackList, Armtrails, Coretrails, Tlltrails = include("Configs/gfx_projectile_lights_defs.lua")	-- weapons that shouldn't use projectile lights
 local noise = {--this is so that it flashes a bit, should be addressed with (x+z)%10 +1
 	1.1,
 	1.0,
@@ -72,10 +74,10 @@ listC = gl.CreateList(function()	-- Cannon light decal texture
     glTexCoord(0.0,1.0)                           
     glVertex(4.0,0.0,-4.0)                   
     --point3
-    glTexCoord(1.0,0.0)
+    glTexCoord(0.5,0.0)
     glVertex(-4.0,0.0,4.0)
     --point4
-    glTexCoord(1.0,1.0)
+    glTexCoord(0.5,1.0)
     glVertex(4.0,0.0,4.0)
     end)
 end)
@@ -83,62 +85,76 @@ end)
 listL = gl.CreateList(function()	-- Laser cannon decal texture
 	glBeginEnd(GL.QUAD_STRIP,function()  
     --point1
-    glTexCoord(0.0,0.0)
-    glVertex(-2.0,0.0,-10.0)
+    glTexCoord(0.5,0.0)
+    glVertex(-2.0,0.0,-4.0)
     --point2                                 
-    glTexCoord(0.0,1.0)                           
-    glVertex(2.0,0.0,-10.0)                   
+    glTexCoord(0.5,1.0)                           
+    glVertex(2.0,0.0,-4.0)                   
     --point3
     glTexCoord(1.0,0.0)
-    glVertex(-2.0,0.0,4.0)
+    glVertex(-2.0,0.0,2.0)
     --point4
     glTexCoord(1.0,1.0)
-    glVertex(2.0,0.0,4.0)
+    glVertex(2.0,0.0,2.0)
     end)
 end)
 
 
 function widget:Initialize() -- create lighttable
+  --[[
 	local modOptions = Spring.GetModOptions()
 	if modOptions and modOptions.lowcpu == "1" then
-		Spring.Echo("Low performance mode is on, removing widget")
+		Spring.Echo('Low performance mode is on, removing "Projectile lights" widget')
 		widgetHandler:RemoveWidget()
 	end
-
+--]]
 	for u=1, #UnitDefs do
 		if UnitDefs[u]['weapons'] and #UnitDefs[u]['weapons']>0 then --only units with weapons
 			--These projectiles should have lights:
-				--Cannon (projectile size: tempsize = 2.0f + std::min(wd.damages[0] * 0.0025f, wd.damageAreaOfEffect * 0.1f);)
-				--EmgCannon (only gorg uses it, and lights dont look so good too close to ground)
-				--LaserCannon --only sniper uses it, no need to make shot more visible
-				--LightningCannon --projectile is centered on emit point
-				--Flame --a bit iffy cause of long projectile life... too bad it looks great.
+				--Cannon - projectile size: tempsize = 2.0f + std::min(wd.damages[0] * 0.0025f, wd.damageAreaOfEffect * 0.1f);)
+				--EmgCannon - looks a bit shiny when close to ground
+				--LaserCannon - über effects
+				--Flame - a bit iffy cause of long projectile life... but it looks great.
 			--Shouldn't:
 				--Dgun
 				--MissileLauncher
 				--StarburstLauncher
 				--AircraftBomb
 				--BeamLaser --Beamlasers shouldnt, because they are buggy (GetProjectilePosition returns center of beam, no other info avalable)
+				--LightningCannon --same as BeamLasers
 				--Melee
 				--Shield
 				--TorpedoLauncher
 			for w=1, #UnitDefs[u]['weapons'] do 
-				local size
 				weaponID = UnitDefs[u]['weapons'][w]['weaponDef']
-				if not BlackList[WeaponDefs[weaponID].name] then 
-					if (WeaponDefs[weaponID]['type'] == 'Cannon' or WeaponDefs[weaponID]['type'] == 'EmgCannon') then
+				local wdID = WeaponDefs[weaponID]
+				if not BlackList[wdID.name] then	-- prevent projectile light, if the weapon has some other light effect
+					if (wdID.type == 'Cannon' or wdID.type == 'EmgCannon') then
+						plighttable[wdID.name] = {1.0,1.0,0.5,0.5*((wdID.size-0.65)/3.0)}
+					elseif (wdID.type == 'LaserCannon') then
+						local colour = wdID.visuals
+						plighttable[wdID.name] = {
+							colour.colorR, colour.colorG, colour.colorB, 0.75
+							,
+							wdID.projectilespeed * wdID.duration, colour.thickness^0.33333}
+					--Core Missiles 
+					elseif (wdID.type == 'MissileLauncher') and Coretrails[wdID.name] then
 						size=WeaponDefs[weaponID]['size']
-						plighttable[WeaponDefs[weaponID]['name']]={1.0,1.0,0.5,0.5*((size-0.65)/3.0)}
-
-					elseif (WeaponDefs[weaponID]['type'] == 'LaserCannon') then
-						local colour = WeaponDefs[weaponID].visuals
-						plighttable[WeaponDefs[weaponID]['name']]={colour.colorR,colour.colorG,colour.colorB,0.6,true}  --{0,1,0,0.6}
-					elseif (WeaponDefs[weaponID]['type'] == 'MissileLauncher') then
+						plighttable[wdID.name]={1,0.2,0.2,0.5*((size-1)/3)}
+					--Arm Missiles
+					elseif (wdID.type == 'MissileLauncher') and Armtrails[wdID.name] then
 						size=WeaponDefs[weaponID]['size']
-						plighttable[WeaponDefs[weaponID]['name'] ]={1,1,0.8,0.5*((size-1)/3)}
-
-					elseif (WeaponDefs[weaponID]['type'] == 'StarburstLauncher') then
-						plighttable[WeaponDefs[weaponID]['name'] ]={1,1,0.8,0.5}
+						plighttable[wdID.name]={0.7,0.7,1,0.5*((size-1)/3)}
+					--Tll Missiles
+					elseif (wdID.type == 'MissileLauncher') and Tlltrails[wdID.name] then
+						size=WeaponDefs[weaponID]['size']
+						plighttable[wdID.name]={1,1,0.2,0.5*((size-1)/3)}
+					--Other Missiles
+					elseif (wdID.type == 'MissileLauncher') then
+						size=WeaponDefs[weaponID]['size']
+						plighttable[wdID.name]={1,1,0.8,0.5*((size-1)/3)}
+					elseif (wdID.type == 'StarburstLauncher') then
+						plighttable[wdID.name]={1,1,0.8,0.5}
 					end
 				end
 			end	
@@ -146,60 +162,65 @@ function widget:Initialize() -- create lighttable
 	end
 end
 
+local sx, sy, px, py = spGetViewGeometry()
+function widget:ViewResize(viewSizeX, viewSizeY)
+	sx, sy, px, py = spGetViewGeometry()
+end
+
 local plist = {}
 local frame = 0
+local x1, y1 = 0, 0
+local x2, y2 = Game.mapSizeX, Game.mapSizeZ
 function widget:DrawWorldPreUnit()
-	local sx,sy,px,py = spGetViewGeometry()
-
-	local x1=0
-	local y1=0
-	local cx,cy,p
-	local d=0
-	local x2=Game.mapSizeX 
-	local y2=Game.mapSizeZ
 
 	if frame < spGetGameFrame() then
-		frame=spGetGameFrame()
+		frame = spGetGameFrame()
 	
-		local at, p=spTraceScreenRay(sx/2,sy/2,true,false,false)
-		local outofbounds=0
+		local at, p = spTraceScreenRay(sx*0.5,sy*0.5,true,false,false)
 		if at=='ground' then
-			cx=p[1]
+			local cx, cy = p[1], p[3]
+			local dcxp1, dcxp3
+			local outofbounds = 0
+			local d = 0
 			--x2=math.min(x2, tl[1])
-			cy=p[3]		--y2=math.min(y2, tl[3])
+			--y2=math.min(y2, tl[3])
 			
-			at, p=spTraceScreenRay(0,0,true,false,false) --bottom left
+			at, p = spTraceScreenRay(0, 0, true, false, false) --bottom left
 			if at=='ground' then
-				d=max(d,(cx-p[1])*(cx-p[1])+(cy-p[3])*(cy-p[3]))
+				dcxp1, dcxp3 = cx-p[1], cy-p[3]
+				d = max(d, dcxp1*dcxp1 + dcxp3*dcxp3)
 			else 
-				outofbounds=outofbounds+1
+				outofbounds = outofbounds+1
 			end
-			at, p=spTraceScreenRay(sx-1,0,true,false,false) --bottom left
+			at, p = spTraceScreenRay(sx-1, 0, true, false, false) --bottom left
 			if at=='ground' then
-				d=max(d,(cx-p[1])*(cx-p[1])+(cy-p[3])*(cy-p[3]))
+				dcxp1, dcxp3 = cx-p[1], cy-p[3]
+				d = max(d, dcxp1*dcxp1 + dcxp3*dcxp3)
 			else 
-				outofbounds=outofbounds+1
+				outofbounds = outofbounds+1
 			end
-			at, p=spTraceScreenRay(sx-1,sy-1,true,false,false) --bottom left
+			at, p = spTraceScreenRay(sx-1, sy-1, true, false, false) --bottom left
 			if at=='ground' then
-				d=max(d,(cx-p[1])*(cx-p[1])+(cy-p[3])*(cy-p[3]))
+				dcxp1, dcxp3 = cx-p[1], cy-p[3]
+				d = max(d, dcxp1*dcxp1 + dcxp3*dcxp3)
 			else 
-				outofbounds=outofbounds+1
+				outofbounds = outofbounds+1
 			end
-			at, p=spTraceScreenRay(0,sy-1,true,false,false) --bottom left
+			at, p = spTraceScreenRay(0, sy-1, true, false, false) --bottom left
 			if at=='ground' then
-				d=max(d,(cx-p[1])*(cx-p[1])+(cy-p[3])*(cy-p[3]))
+				dcxp1, dcxp3 = cx-p[1], cy-p[3]
+				d = max(d, dcxp1*dcxp1 + dcxp3*dcxp3)
 			else 
-				outofbounds=outofbounds+1
+				outofbounds = outofbounds+1
 			end
 			if outofbounds>=3 then
-				plist=spGetProjectilesInRectangle(x1,y1,x2,y2,false,false) --todo, only those in view or close:P
+				plist = spGetProjectilesInRectangle(x1, y1, x2, y2, false, false) --todo, only those in view or close:P
 			else
-				d=sqrt(d)
-				plist=spGetProjectilesInRectangle(cx-d,cy-d,cx+d,cy+d,false,false) 
+				d = sqrt(d)
+				plist = spGetProjectilesInRectangle(cx-d, cy-d, cx+d, cy+d, false, false) 
 			end
 		else -- if we are not pointing at ground, get the whole list.
-			plist=spGetProjectilesInRectangle(x1,y1,x2,y2,false,false) --todo, only those in view or close:P
+			plist = spGetProjectilesInRectangle(x1, y1, x2, y2, false, false) --todo, only those in view or close:P
 		end
 	end
 		--todo, only those in view or close:P
@@ -212,20 +233,20 @@ function widget:DrawWorldPreUnit()
 	--Spring.Echo('fov',Spring.GetCameraFOV(),Spring.GetCameraPosition())
 	if #plist>0 then --dont do anything if there are no projectiles in range of view
 		--Spring.Echo('#projectiles:',#plist)
-		glTexture('luaui/images/pointlight.tga') --simple white square with alpha white blurred circle
 		
 		--enabling both test and mask means they wont be drawn over cliffs when obscured
 			--but also means that they will flicker cause of z-fighting when scrolling around...
 			--and ESPECIALLY when overlapping
 		-- mask=false and test=true is perfect, no overlap flicker, no cliff overdraw
 			--BUT it clips into cliffs from the side....
+		glTexture('luaui/images/lightmap.tga') --simple white rectangle with alpha white blurred circle and square
 		glDepthMask(false)
 		--glDepthMask(true)
 		glDepthTest(false)
 		--glDepthTest(GL.LEQUAL) 
 		
-		local x, y, z
-		local fx, fy 
+		local x, y, z, dx, dz
+		--local fx, fy = 32, 32	--footprint
 		glBlending("alpha_add") --makes it go into +
 		local lightparams
 		-- AND NOW FOR THE FUN STUFF!
@@ -234,30 +255,31 @@ function widget:DrawWorldPreUnit()
 			x, y, z = spGetProjectilePosition(pID)
 			local wep, piece = spGetProjectileType(pID)
 			if piece then
-				lightparams={1.0,1.0,0.5,0.3}
+				lightparams = {1.0, 1.0, 0.5, 0.3}
 			else
-				lightparams=plighttable[spGetProjectileName(pID)]
+				lightparams = plighttable[spGetProjectileName(pID)]
 			end
 			if (lightparams and x and y>0) then -- projectile is above water
-				fx = 32
-				fy = 32 --footprint
-				local height = max(0, spGetGroundHeight(x,z)) --above water projectiles should show on water surface
-				local diff = height-y	-- this is usually 5 for land units, 5+cruisehieght for others
+				--fx = 32
+				--fy = 32 --footprint
+				local height = max(0, spGetGroundHeight(x, z)) --above water projectiles should show on water surface
+				--local diff = height-y	-- this is usually 5 for land units, 5+cruisehieght for others
 										-- the plus 5 is do that it doesn't clip all ugly like, unneeded with depthtest and mask both false!
 										-- diff is negative, cause we need to put the lighting under it
 										-- diff defines size and diffusion rate)
-				local factor = max(0.01,(100.0+diff)/100.0) --factor=1 at when almost touching ground, factor=0 when above 100 height)
-				if (factor >0.01) then 	
-					glColor(lightparams[1],lightparams[2],lightparams[3],lightparams[4]*factor*factor*noise[floor(x+z+pID)%10+1]) -- attentuation is x^2
-					factor = max(factor,0.3) -- clamp the size
+				local factor = max(0.01, (100.0+height-y)*0.01) --factor=1 at when almost touching ground, factor=0 when above 100 height)
+				if (factor >= 0.01 and factor < 1.0) then
+					glColor(lightparams[1], lightparams[2], lightparams[3], lightparams[4]*factor*factor*noise[floor(x+z+pID)%10+1]) -- attentuation is x^2
+					factor = 32*(1.1-max(factor, 0.3)) -- clamp the size
 					glPushMatrix()
-					glTranslate(x,y+diff+5,z)  -- push in y dir by height (to push it on the ground!), +5 to keep it above surface
-					glScale(fx*(1.1-factor),1.0,fy*(1.1-factor)) -- scale it by size
+					glTranslate(x, height+5, z)  -- push in y dir by height (to push it on the ground!), +5 to keep it above surface
 					if lightparams[5] then
-						local dx,_,dz = spGetProjectileVelocity(pID)
-						glRotate(deg(atan2(dx,dz)),0.0,1.0,0.0)	-- align laser cannon light with projectile direction
+						dx, _, dz = spGetProjectileVelocity(pID)
+						glRotate(deg(atan2(dx,dz)), 0.0, 1.0, 0.0)	-- align laser cannon light with projectile direction
+						glScale(factor*lightparams[6], 1.0, factor*lightparams[5]) -- scale it by size
 						glCallList(listL) -- draw laser cannon light
 					else
+						glScale(factor, 1.0, factor) -- scale it by size
 						glCallList(listC) -- draw cannon light
 					end					
 					glPopMatrix()
@@ -266,7 +288,7 @@ function widget:DrawWorldPreUnit()
 		end
 
 		glTexture(false) --be nice, reset stuff 
-		glColor(1.0,1.0,1.0,1.0)
+		glColor(1.0, 1.0, 1.0, 1.0)
 		glBlending(false)
 		glDepthTest(true)
 	end
