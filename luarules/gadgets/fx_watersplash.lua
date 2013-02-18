@@ -2,7 +2,7 @@
 function gadget:GetInfo()
   return {
     name      = "Watereffects",
-    desc      = "Make splash sound in water",
+    desc      = "Spawns splash effect",
     version   = "1.1",
     author    = "Jools ,Nixtux",
     date      = "April,2012",
@@ -34,6 +34,11 @@ local BlackList = {  --todo move to config file it will get big
      ["corstorm1_core_kbot_rocket1"] = true,
      ["gladiator_armkbot_missile3"] = true,
      ["tllfireraiser_tll_kbot_rocket"] = true,
+     
+     ["armrock1_arm_kbot_rocket1"] = true,
+     ["corstorm1_core_kbot_rocket1"] = true,
+     
+     ["armrottweiler_armrottweiler_cannon"] = true,
    }
    
 if not gadgetHandler:IsSyncedCode() then
