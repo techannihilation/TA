@@ -39,6 +39,9 @@ local BlackList = {  --todo move to config file it will get big
      ["corstorm1_core_kbot_rocket1"] = true,
      
      ["armrottweiler_armrottweiler_cannon"] = true,
+     
+     ["armcrack_lightartmiss"] = true,
+     ["corrock_lightartmiss"] = true,
    }
    
 if not gadgetHandler:IsSyncedCode() then
