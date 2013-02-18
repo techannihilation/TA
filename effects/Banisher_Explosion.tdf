@@ -69,7 +69,8 @@
 		directional		= 1; 
 		useAirLos		= 1;
 		}
-	air=1;
+	air=0;
+	unit=1;
 	ground=0;
 	water=0;
 	count=1;
