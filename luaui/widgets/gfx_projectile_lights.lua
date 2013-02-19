@@ -260,8 +260,6 @@ function widget:DrawWorldPreUnit()
 				lightparams = plighttable[spGetProjectileName(pID)]
 			end
 			if (lightparams and x and y>0) then -- projectile is above water
-				--fx = 32
-				--fy = 32 --footprint
 				local height = max(0, spGetGroundHeight(x, z)) --above water projectiles should show on water surface
 				--local diff = height-y	-- this is usually 5 for land units, 5+cruisehieght for others
 										-- the plus 5 is do that it doesn't clip all ugly like, unneeded with depthtest and mask both false!
@@ -269,20 +267,22 @@ function widget:DrawWorldPreUnit()
 										-- diff defines size and diffusion rate)
 				local factor = max(0.01, (100.0+height-y)*0.01) --factor=1 at when almost touching ground, factor=0 when above 100 height)
 				if (factor >= 0.01 and factor < 1.0) then
-					glColor(lightparams[1], lightparams[2], lightparams[3], lightparams[4]*factor*factor*noise[floor(x+z+pID)%10+1]) -- attentuation is x^2
-					factor = 32*(1.1-max(factor, 0.3)) -- clamp the size
-					glPushMatrix()
-					glTranslate(x, height+5, z)  -- push in y dir by height (to push it on the ground!), +5 to keep it above surface
-					if lightparams[5] then
-						dx, _, dz = spGetProjectileVelocity(pID)
-						glRotate(deg(atan2(dx,dz)), 0.0, 1.0, 0.0)	-- align laser cannon light with projectile direction
-						glScale(factor*lightparams[6], 1.0, factor*lightparams[5]) -- scale it by size
-						glCallList(listL) -- draw laser cannon light
-					else
-						glScale(factor, 1.0, factor) -- scale it by size
-						glCallList(listC) -- draw cannon light
-					end					
-					glPopMatrix()
+					dx, _, dz = spGetProjectileVelocity(pID)
+					if dx*dx + dz*dz > 0.1 then		-- when a projectile hits a target above ground, there's an unaligned flash due to velocity being 0
+						glColor(lightparams[1], lightparams[2], lightparams[3], lightparams[4]*factor*factor*noise[floor(x+z+pID)%10+1]) -- attentuation is x^2
+						factor = 32*(1.1-max(factor, 0.3)) -- clamp the size
+						glPushMatrix()
+						glTranslate(x, height+5, z)  -- push in y dir by height (to push it on the ground!), +5 to keep it above surface
+						if lightparams[5] then
+							glRotate(deg(atan2(dx,dz)), 0.0, 1.0, 0.0)	-- align laser cannon light with projectile direction
+							glScale(factor*lightparams[6], 1.0, factor*lightparams[5]) -- scale it by thickness, duration and height from ground
+							glCallList(listL) -- draw laser cannon light
+						else
+							glScale(factor, 1.0, factor) -- scale it by size and height from ground
+							glCallList(listC) -- draw cannon light
+						end					
+						glPopMatrix()
+					end
 				end
 			end
 		end
