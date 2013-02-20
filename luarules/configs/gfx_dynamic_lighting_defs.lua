@@ -403,18 +403,18 @@ local dynLightDefs = {
 
 			["dark_matter"] = {
 				projectileLightDef = {
-					diffuseColor    = {0.2,                   0.2,                   2.0                  },
-					specularColor   = {0.2 * rgbSpecMults[1], 0.2 * rgbSpecMults[2], 2.0 * rgbSpecMults[3]},
+					diffuseColor    = {1.4,                   0.2,                   0.2                  },
+					specularColor   = {1.2 * rgbSpecMults[1], 0.2 * rgbSpecMults[2], 0.2 * rgbSpecMults[3]},
 					priority        = 5 * 10,
 					radius          = 155.0,
-					ttl             = 1000,
+					ttl             = 100,
 				},
 				
 				explosionLightDef = {
-					diffuseColor      = {0.2,                   0.2,                   2.5                  },
-					specularColor     = {0.2 * rgbSpecMults[1], 0.2 * rgbSpecMults[2], 2.5 * rgbSpecMults[3]},
+					diffuseColor      = {1.4,                   0.2,                   0.2                  },
+					specularColor     = {1.4 * rgbSpecMults[1], 0.2 * rgbSpecMults[2], 0.2 * rgbSpecMults[3]},
 					priority          = 3 * 10 + 1,
-					radius            = 450.0,
+					radius            = 600.0,
 					ttl               = 2 * Game.gameSpeed,
 					decayFunctionType = {0.0, 0.0, 0.0},
 					altitudeOffset    = 150.0,

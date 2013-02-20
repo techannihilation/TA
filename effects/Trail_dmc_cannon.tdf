@@ -9,7 +9,7 @@
 			dir=-4 r6,-4 r6,-4 r6;
 			width=23;
 			length=13;
-			alpha=1;
+			alpha=0.5;
 			alphadecay=0.18;
 			color=1, 0.2, 0.2;
 
@@ -27,10 +27,10 @@
 		[properties]
 		{
 
-		Texture=flash1;
+		Texture=EMG;
 
 
-		colorMap	= 1 0.2 0.2  0.01	1 0.20.2 1 0.01	0 0 0 0.01;
+		colorMap	= 1 0.2 0.2 .005   1 0.2 0.2 .005   	0 0 0 0.001;
 
 		pos             = 0 r-10 r10, 0 r-10 r10, 0 r-10 r10;
 
@@ -40,8 +40,8 @@
 		emitRotSpread	= 0;
 		emitdir		= dir;
 
-		sizeGrowth	= 0.0 .65;
-		sizeMod		= -1.0;
+		sizeGrowth	= 0.2;
+		sizeMod		= 1.0;
 
 		airdrag			= 0.65;
 		particleLife		= 4;
@@ -49,14 +49,14 @@
 		numParticles		= 32;
 		particleSpeed		= 1;
 		particleSpeedSpread	= 1;
-		particleSize		= 0.5;
+		particleSize		= 0.02;
 		particleSizeSpread	= 2;
 
 		directional		= 1; 
 		useAirLos		= 1;
 		}
 	air=1;
-	ground=1;
+	ground=0;
 	water=0;
 	count=1;
 	}
