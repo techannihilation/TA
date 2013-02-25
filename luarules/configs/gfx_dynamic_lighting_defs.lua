@@ -43,13 +43,14 @@ local copyLightDefs = {
 
 		--Brthas
 		["armbrtha_arm_berthacannon2"] = "berthacannon",
-		["corint_core_intimidator2"   ] = "berthacannon",
+		["corint_core_intimidator2"  ] = "berthacannon",
 		["tlllrpt_arm_berthacannon  "] = "berthacannon",
+		["heavyimpact_cormechart"    ] = "berthacannon",
+		["clb_core_intimidator2"     ] = "berthacannon",
+		["avtr_arm_berthacannon2"    ] = "berthacannon",
 		["corint1_core_intimidator1" ] = "berthacannon1",
 		["armbrtha1_arm_berthacannon1"] = "berthacannon1",
 		["tlldmc_tlldmc"]              = "dark_matter",
-
-
 
 		--Dgun
 		["armcom_arm_disintegrator"  ] = "arm_disintegrator",

@@ -23,6 +23,9 @@ local BlackList = {
    ["armemp_armemp_weapon"] = true,
    ["cortron_cortron_weapon"] = true,
    ["tllemp_armemp_weapon"] = true,
+   ["heavyimpact_cormechart"] = true,
+   ["clb_core_intimidator2"] = true,
+   ["avtr_arm_berthacannon2"] = true,
    }
    
    local Armtrails = {
