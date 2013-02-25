@@ -156,4 +156,7 @@ for id in pairs(WeaponDefs) do
 		WeaponDefs[id].soundhitdry = ""
 		WeaponDefs[id].soundtrigger = 1
 	end
+	if WeaponDefs[id].weapontype == "Shield" then
+		WeaponDefs[id].isshield = 1
+	end
 end
