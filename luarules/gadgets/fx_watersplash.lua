@@ -42,6 +42,7 @@ local BlackList = {  --todo move to config file it will get big
      
      ["armcrack_lightartmiss"] = true,
      ["corrock_lightartmiss"] = true,
+     ["tlldmc_tlldmc"] = true,
    }
    
 if not gadgetHandler:IsSyncedCode() then
