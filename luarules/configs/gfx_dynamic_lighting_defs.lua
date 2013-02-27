@@ -46,8 +46,8 @@ local copyLightDefs = {
 		["corint_core_intimidator2"  ] = "berthacannon",
 		["tlllrpt_arm_berthacannon  "] = "berthacannon",
 		["heavyimpact_cormechart"    ] = "berthacannon",
-		["clb_core_intimidator2"     ] = "berthacannon",
-		["avtr_arm_berthacannon2"    ] = "berthacannon",
+		["clb_core_intimidator2"     ] = "berthacannon_light",
+		["avtr_arm_berthacannon2"    ] = "berthacannon_light",
 		["corint1_core_intimidator1" ] = "berthacannon1",
 		["armbrtha1_arm_berthacannon1"] = "berthacannon1",
 		["tlldmc_tlldmc"]              = "dark_matter",
@@ -362,18 +362,38 @@ local dynLightDefs = {
 			--   since these share their CEG, but has
 			
 			--   higher priority
-			["berthacannon"] = {
+			["berthacannon_light"] = {
 				projectileLightDef = {
-					diffuseColor    = {2.9,                   1.9,                   0.2                  },
-					specularColor   = {2.9 * rgbSpecMults[1], 1.9 * rgbSpecMults[2], 0.2 * rgbSpecMults[3]},
+					diffuseColor    = {0.8,                   0.6,                   0.0                  },
+					specularColor   = {1.9 * rgbSpecMults[1], 0.9 * rgbSpecMults[2], 0.0 * rgbSpecMults[3]},
 					priority        = 5 * 10,
 					radius          = 105.0,
 					ttl             = 1000,
 				},
 				
+			explosionLightDef = {
+					diffuseColor      = {1.7,                   1.2,                   0.0                  },
+					specularColor     = {1.7 * rgbSpecMults[1], 1.2 * rgbSpecMults[2], 0.0 * rgbSpecMults[3]},
+					priority          = 2 * 10 + 1,
+					radius            = 205.0,
+					ttl               = 2 * Game.gameSpeed,
+					decayFunctionType = {0.0, 0.0, 0.0},
+					altitudeOffset    = 150.0,
+				},
+			},
+			
+			["berthacannon"] = {
+				projectileLightDef = {
+					diffuseColor    = {1.6,                   1.2,                   0.0                  },
+					specularColor   = {1.9 * rgbSpecMults[1], 0.9 * rgbSpecMults[2], 0.0 * rgbSpecMults[3]},
+					priority        = 5 * 10,
+					radius          = 125.0,
+					ttl             = 1000,
+				},
+				
 				explosionLightDef = {
-					diffuseColor      = {4.0,                   3.0,                   1.2                  },
-					specularColor     = {4.0 * rgbSpecMults[1], 3.0 * rgbSpecMults[2], 1.2 * rgbSpecMults[3]},
+					diffuseColor      = {1.7,                   1.2,                   0.0                  },
+					specularColor     = {1.7 * rgbSpecMults[1], 1.2 * rgbSpecMults[2], 0.0 * rgbSpecMults[3]},
 					priority          = 3 * 10 + 1,
 					radius            = 220.0,
 					ttl               = 2 * Game.gameSpeed,
@@ -384,16 +404,16 @@ local dynLightDefs = {
 
 			["berthacannon1"] = {
 				projectileLightDef = {
-					diffuseColor    = {2.9,                   1.9,                   0.2                  },
-					specularColor   = {2.9 * rgbSpecMults[1], 1.9 * rgbSpecMults[2], 0.2 * rgbSpecMults[3]},
+					diffuseColor    = {2.4,                   1.8,                   0.0                  },
+					specularColor   = {1.9 * rgbSpecMults[1], 0.9 * rgbSpecMults[2], 0.0 * rgbSpecMults[3]},
 					priority        = 5 * 10,
-					radius          = 165.0,
+					radius          = 185.0,
 					ttl             = 1000,
 				},
 				
 				explosionLightDef = {
-					diffuseColor      = {4.0,                   3.0,                   1.2                  },
-					specularColor     = {4.0 * rgbSpecMults[1], 3.0 * rgbSpecMults[2], 1.2 * rgbSpecMults[3]},
+					diffuseColor      = {1.7,                   1.2,                   0.0                  },
+					specularColor     = {1.7 * rgbSpecMults[1], 1.2 * rgbSpecMults[2], 0.0 * rgbSpecMults[3]},
 					priority          = 3 * 10 + 1,
 					radius            = 310.0,
 					ttl               = 2 * Game.gameSpeed,
