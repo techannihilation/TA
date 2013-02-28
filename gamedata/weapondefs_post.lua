@@ -159,4 +159,12 @@ for id in pairs(WeaponDefs) do
 	if WeaponDefs[id].weapontype == "Shield" then
 		WeaponDefs[id].isshield = 1
 	end
+	
+	if WeaponDefs[id].weapontype == "Cannon" and WeaponDefs[id].cegtag == "Trail_cannon" and WeaponDefs[id].size then
+	  if WeaponDefs[id].size > 1.81 and WeaponDefs[id].size < 3.2 then
+	    WeaponDefs[id].cegtag = "Trail_cannon_med"
+	  elseif WeaponDefs[id].size > 3.20 then
+	    WeaponDefs[id].cegtag = "Trail_cannon_large"
+	  end
+	end
 end
