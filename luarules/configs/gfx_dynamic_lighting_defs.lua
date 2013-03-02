@@ -1,4 +1,4 @@
-local function CopyTable(srcTbl, dstTbl)
+  local function CopyTable(srcTbl, dstTbl)
 	assert(dstTbl ~= nil)
 
 	for key, val in pairs(srcTbl) do
@@ -432,8 +432,8 @@ local dynLightDefs = {
 				},
 				
 				explosionLightDef = {
-					diffuseColor      = {1.4,                   0.2,                   0.2                  },
-					specularColor     = {1.4 * rgbSpecMults[1], 0.2 * rgbSpecMults[2], 0.2 * rgbSpecMults[3]},
+					diffuseColor      = {1.4,                   0.5,                   0.2                  },
+					specularColor     = {1.4 * rgbSpecMults[1], 1.2 * rgbSpecMults[2], 0.2 * rgbSpecMults[3]},
 					priority          = 3 * 10 + 1,
 					radius            = 600.0,
 					ttl               = 2 * Game.gameSpeed,
