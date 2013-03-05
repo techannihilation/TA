@@ -82,6 +82,9 @@ local unitDef = {
 	unitname = [[corcom5]],
 	upright = true,
 	workerTime = 550,
+	customparams = {
+		providetech = [[Battle Commander,Assault Commander]],
+	},
 	buildoptions = {
 		[1] = [[corsolar]],
 		[2] = [[cortide]],

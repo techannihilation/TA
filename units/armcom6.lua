@@ -82,6 +82,9 @@ local unitDef = {
 	unitname = [[armcom6]],
 	upright = true,
 	workerTime = 600,
+	customparams = {
+		providetech = [[Battle Commander,Assault Commander,Star Commander]],
+	},
 	buildoptions = {
 		[1] = [[armsolar]],
 		[2] = [[armtide]],

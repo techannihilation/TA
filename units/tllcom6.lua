@@ -82,6 +82,10 @@ local unitDef = {
 	unitname = [[tllcom6]],
 	upright = true,
 	workerTime = 600,
+	customparams = {
+		providetech = [[Battle Commander,Assault Commander,Star Commander]],
+	},
+	buildoptions = {
 	buildoptions = {
 		[1] = [[tllsolar]],
 		[2] = [[tlltide]],

@@ -47,6 +47,7 @@ local unitDef = {
 	yardMap = [[ooooo ooooo ooooo ooooo ooooo]],
 	customparams = {
 		canareaattack = 1,
+		RequireTech = [[Star Commander]],
 	},
 	featureDefs = nil,
 	sfxtypes = {
@@ -95,7 +96,7 @@ local weaponDefs = {
 		craterBoost = 0,
 		craterMult = 0,
 		duration = 0.025,
-		energypershot = 390000,
+		energypershot = 20000,
 		explosionGenerator = [[custom:Tlldmc_Explosion]],
 		fireStarter = 90,
 		id = 254,		
