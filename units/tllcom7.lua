@@ -86,7 +86,6 @@ local unitDef = {
 		providetech = [[Battle Commander,Assault Commander,Star Commander,Supreme Commander]],
 	},
 	buildoptions = {
-	buildoptions = {
 		[1] = [[tllsolar]],
 		[2] = [[tlltide]],
 		[3] = [[tllwindtrap]],
