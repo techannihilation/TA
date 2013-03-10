@@ -50,7 +50,7 @@ local atan2				= math.atan2
 
 local list      
 local plighttable = {}
-local BlackList, Armtrails, Coretrails, Tlltrails = include("Configs/gfx_projectile_lights_defs.lua")	-- weapons that shouldn't use projectile lights
+local BlackList, Armtrails, Coretrails, Tlltrails, Plasmabatts = include("Configs/gfx_projectile_lights_defs.lua")	-- weapons that shouldn't use projectile lights
 local noise = {--this is so that it flashes a bit, should be addressed with (x+z)%10 +1
 	1.1,
 	1.0,
@@ -129,7 +129,10 @@ function widget:Initialize() -- create lighttable
 				weaponID = UnitDefs[u]['weapons'][w]['weaponDef']
 				local wdID = WeaponDefs[weaponID]
 				if not BlackList[wdID.name] then	-- prevent projectile light, if the weapon has some other light effect
-					if (wdID.type == 'Cannon' or wdID.type == 'EmgCannon') then
+					--Buzz/Vulc
+					if (wdID.type == 'Cannon') and Plasmabatts[wdID.name] then
+						plighttable[wdID.name]={0.35,0.25,0,15*((wdID.size-0.65)/3.0),_,_,((wdID.size/2.6)+0.5)}  -- 7th is *size 
+					elseif (wdID.type == 'Cannon' or wdID.type == 'EmgCannon') then
 						plighttable[wdID.name] = {1.0,1.0,0.5,0.5*((wdID.size-0.65)/3.0)}
 					elseif (wdID.type == 'LaserCannon') then
 						local colour = wdID.visuals
@@ -273,10 +276,13 @@ function widget:DrawWorldPreUnit()
 						factor = 32*(1.1-max(factor, 0.3)) -- clamp the size
 						glPushMatrix()
 						glTranslate(x, height+5, z)  -- push in y dir by height (to push it on the ground!), +5 to keep it above surface
-						if lightparams[5] then
+						if lightparams[6] then
 							glRotate(deg(atan2(dx,dz)), 0.0, 1.0, 0.0)	-- align laser cannon light with projectile direction
 							glScale(factor*lightparams[6], 1.0, factor*lightparams[5]) -- scale it by thickness, duration and height from ground
 							glCallList(listL) -- draw laser cannon light
+						elseif lightparams[7] then
+							glScale(factor*lightparams[7], 1.0, factor*lightparams[7]) -- Allow Custom size settings
+							glCallList(listC) -- draw cannon light
 						else
 							glScale(factor, 1.0, factor) -- scale it by size and height from ground
 							glCallList(listC) -- draw cannon light

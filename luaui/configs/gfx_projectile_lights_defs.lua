@@ -52,4 +52,23 @@ local BlackList = {
    ["tllfireraiser_tll_kbot_rocket"] = true,
    }
    
-return BlackList, Armtrails, Coretrails, Tlltrails
+   local Plasmabatts = {
+   ["amortor_mortartillery"] = true,
+   ["armguard_armfixed_gun"] = true,
+   ["armguard_armfixed_gun_high"] = true,
+   ["armvulc_armvulc_weapon2"] = true,
+   ["armvulc1_armvulc_weapon1"] = true,
+   ["armvulc2_armvulc_weapon3"] = true,
+   
+   ["cmortor_mortartillery"] = true,
+   ["corpun_corfixed_gun"] = true,
+   ["corpun_corfixed_gun_high"] = true,
+   ["corbuzz_corbuzz_weapon2"] = true,
+   ["corbuzz1_corbuzz_weapon1"] = true,
+   ["corbuzz2_corbuzz_weapon3"] = true,
+
+   ["tlllbt_tllfixed_gun"] = true,
+   ["tlllbt_tllfixed_gun_high"] = true,
+   }
+   
+return BlackList, Armtrails, Coretrails, Tlltrails, Plasmabatts
