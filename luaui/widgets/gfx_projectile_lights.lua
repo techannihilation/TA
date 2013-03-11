@@ -131,7 +131,7 @@ function widget:Initialize() -- create lighttable
 				if not BlackList[wdID.name] then	-- prevent projectile light, if the weapon has some other light effect
 					--Buzz/Vulc
 					if (wdID.type == 'Cannon') and Plasmabatts[wdID.name] then
-						plighttable[wdID.name]={0.35,0.25,0,15*((wdID.size-0.65)/3.0),_,_,((wdID.size/2.6)+0.5)}  -- 7th is *size 
+						plighttable[wdID.name]={0.8,0.6,0,2.0*((wdID.size-0.65)/3.0),_,_,((wdID.size/2.6)+0.5)}  -- 7th is *size 
 					elseif (wdID.type == 'Cannon' or wdID.type == 'EmgCannon') then
 						plighttable[wdID.name] = {1.0,1.0,0.5,0.5*((wdID.size-0.65)/3.0)}
 					elseif (wdID.type == 'LaserCannon') then

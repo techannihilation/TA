@@ -123,6 +123,7 @@ local weaponDefs = {
 		reloadtime = 0.7,
 		renderType = 4,
 		separation = 0.45,
+		size = 1,
 		sizedecay = -0.15,
 		soundHitDry = [[XPLOLRG2]],
 		soundStart = [[BERTHA6]],

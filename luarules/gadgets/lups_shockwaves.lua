@@ -15,33 +15,38 @@ end
 if (gadgetHandler:IsSyncedCode()) then
 
   local SHOCK_WEAPONS = {
+    --Arm
     ["armcom_arm_disintegrator"] = true,
     ["armcom1_arm_disintegrator"] = true,
     ["armcom4_arm_disintegrator1"] = true,
     ["armcom5_arm_disintegrator2"] = true,
     ["armcom6_arm_disintegrator2"] = true,
     ["armcom7_arm_disintegrator2"] = true,
+    --["amortor_mortartillery"] = true, -- to small aoe
+    ["armguard_armfixed_gun"] = true,
+    ["armguard_armfixed_gun_high"] = true,
+    ["armthund_armbomb"] = true,
+    ["armcybr_arm_pidr"] = true,
+    ["armpnix_armadvbomb"] = true,
+    ["armsb_seaadvbomb"] = true,
+    ["armblz_napalm"] = true,
+    ["armshock_shocker"] = true,
+    ["armshock1_shocker1"] = true,
+    ["armfboy_arm_fatboy_notalaser"] = true,
+    ["armfboy1_arm_fatboy_notalaser1"] = true,
+    --Core
     ["corcom_arm_disintegrator"] = true,
     ["corcom1_arm_disintegrator"] = true,
     ["corcom3_arm_disintegrator1"] = true,
     ["corcom5_arm_disintegrator2"] = true,
     ["corcom6_arm_disintegrator2"] = true,
     ["corcom7_arm_disintegrator2"] = true,
+    --The Lost Legacy
     ["tllcom_arm_disintegrator3"] = true,
     ["tllcom3_tll_disintegrator1"] = true,
     ["tllcom5_tll_disintegrator2"] = true,
     ["tllcom6_tll_disintegrator2"] = true,
     ["tllcom7_tll_disintegrator2"] = true,
-    ["armthund_armbomb"] = true,
-    ["armcybr_arm_pidr"] = true,
-    ["armpnix_armadvbomb"] = true,
-    ["armsb_seaadvbomb"] = true,
-    ["armblz_napalm"] = true,
-    ["napalm"] = true,
-    ["armshock_shocker"] = true,
-    ["armshock1_shocker1"] = true,
-    ["armfboy_arm_fatboy_notalaser"] = true,
-    ["armfboy1_arm_fatboy_notalaser1"] = true,
     ["tllhtml_tll_gauss2"] = true,
     ["tlldemon_demonslayer_cannon"] = true,
   }
