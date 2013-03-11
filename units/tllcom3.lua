@@ -81,9 +81,6 @@ local unitDef = {
 	unitname = [[tllcom3]],
 	upright = true,
 	workerTime = 400,
-	customparams = {
-		providetech = [[Battle Commander]],
-	},
 	buildoptions = {
 		[1] = [[tllsolar]],
 		[2] = [[tlltide]],
@@ -117,6 +114,7 @@ local unitDef = {
 		[30] = [[tllfireraiser]],
 	},
 	customParams = {
+		providetech = [[Battle Commander]],
 		iscommander = true,
 	},
 	featureDefs = nil,

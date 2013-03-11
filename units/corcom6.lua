@@ -82,9 +82,6 @@ local unitDef = {
 	unitname = [[corcom6]],
 	upright = true,
 	workerTime = 600,
-	customparams = {
-		providetech = [[Battle Commander,Assault Commander,Star Commander]],
-	},
 	buildoptions = {
 		[1] = [[corsolar]],
 		[2] = [[cortide]],
@@ -119,6 +116,7 @@ local unitDef = {
 		[31] = [[corgen]],
 	},
 	customParams = {
+		providetech = [[Battle Commander,Assault Commander,Star Commander]],
 		iscommander = true,
 	},
 	featureDefs = nil,
