@@ -41,42 +41,42 @@ local ringsDefs = {
         { color = {0.2, 0.6, 0.2, 1.0}, lineWidth = 2, radius = 450 },
     },
 	[UnitDefNames.armnanotc1.id] = {
-        { color = {0.25, 0.65, 0.25, 1.0}, lineWidth = 2.2, radius = 600 },
+        { color = {0.25, 0.65, 0.25, 1.0}, lineWidth = 2, radius = 600 },
     },
         [UnitDefNames.armnanotc2.id] = {
-        { color = {0.42, 0.81, 0.42, 1.0}, lineWidth = 2.5, radius = 900 },
+        { color = {0.42, 0.81, 0.42, 1.0}, lineWidth = 2, radius = 900 },
     },
         [UnitDefNames.armnanotc3.id] = {
-        { color = {0.68, 0.95, 0.68, 1.0}, lineWidth = 3, radius = 1200 },
+        { color = {0.68, 0.95, 0.68, 1.0}, lineWidth = 2, radius = 1200 },
     },
        [UnitDefNames.ananotower.id] = {
-        { color = {0.34, 0.74, 0.34, 1.0}, lineWidth = 2.2, radius = 750 },
+        { color = {0.34, 0.74, 0.34, 1.0}, lineWidth = 2, radius = 750 },
     },
     --Core nanos
 	[UnitDefNames.cornanotc.id] = {
         { color = {0.21, 0.56, 0.56, 1.0}, lineWidth = 2, radius = 400 },
     },
 	[UnitDefNames.cornanotc1.id] = {
-        { color = {0.34, 0.65, 0.65, 1.0}, lineWidth = 2.2, radius = 450 },
+        { color = {0.34, 0.65, 0.65, 1.0}, lineWidth = 2, radius = 450 },
     },
         [UnitDefNames.cornanotc2.id] = {
-        { color = {0.56, 0.87, 0.87, 1.0}, lineWidth = 2.5, radius = 680 },
+        { color = {0.56, 0.87, 0.87, 1.0}, lineWidth = 2, radius = 680 },
     },
         [UnitDefNames.cornanotc3.id] = {
-        { color = {0.8, 1.0, 1.0, 1.0}, lineWidth = 3, radius = 900 },
+        { color = {0.8, 1.0, 1.0, 1.0}, lineWidth = 2, radius = 900 },
     },
        [UnitDefNames.cnanotower.id] = {
-        { color = {0.46, 0.81, 0.81, 1.0}, lineWidth = 2,2, radius = 575 },
+        { color = {0.46, 0.81, 0.81, 1.0}, lineWidth = 2, radius = 575 },
     },
     --Tll nanos
     	[UnitDefNames.tllnanotc.id] = {
         { color = {0.55, 0.55, 0.21, 1.0}, lineWidth = 2, radius = 450 },
     },
 	[UnitDefNames.tllnanotc1.id] = {
-        { color = {0.68, 0.68, 0.34, 1.0}, lineWidth = 2.2, radius = 600 },
+        { color = {0.68, 0.68, 0.34, 1.0}, lineWidth = 2, radius = 600 },
     },
         [UnitDefNames.tllnanotc2.id] = {
-        { color = {0.87, 0.87, 0.56, 1.0}, lineWidth = 3, radius = 900 },
+        { color = {0.87, 0.87, 0.56, 1.0}, lineWidth = 2, radius = 900 },
     },
 }
 
