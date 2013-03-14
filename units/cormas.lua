@@ -17,6 +17,7 @@ local unitDef = {
 	buildingGroundDecalSizeY = 10,
 	buildingGroundDecalType = [[cormas_aoplane.dds]],
 	buildTime = 78000,
+	canattack = false,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
 	collisionvolumeoffsets = [[0 16 0]],
 	collisionvolumescales = [[76 152 76]],

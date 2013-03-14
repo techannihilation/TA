@@ -20,6 +20,7 @@ local unitDef = {
 	buildingGroundDecalType = [[corgate2_aoplane.dds]],
 	buildPic = [[CORGATE.png]],
 	buildTime = 77166,
+	canattack = false,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
 	corpse = [[DEAD]],
 	description = [[Small Plasma Deflector]],

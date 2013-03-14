@@ -18,6 +18,7 @@ local unitDef = {
 	buildingGroundDecalType = [[tllgate_aoplane.dds]],
 	buildTime = 53485,
 	canAttack = true,
+	canattack = false,
 	canstop = 1,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
 	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],

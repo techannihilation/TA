@@ -20,6 +20,7 @@ local unitDef = {
 	buildingGroundDecalType = [[armgate_aoplane.dds]],
 	buildPic = [[ARMGATE.png]],
 	buildTime = 54139,
+	canattack = false,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
 	collisionVolumeScales = [[57 37 57]],
 	collisionVolumeOffsets = [[0 -4 1]],

@@ -20,6 +20,7 @@ local unitDef = {
 	buildingGroundDecalType = [[corgate_aoplane.dds]],
 	buildPic = [[CORGATE.png]],
 	buildTime = 57166,
+	canattack = false,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
 	collisionVolumeScales = [[57 38 57]],
 	collisionVolumeOffsets = [[0 -4 1]],

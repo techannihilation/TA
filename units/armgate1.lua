@@ -20,6 +20,7 @@ local unitDef = {
 	buildingGroundDecalType = [[armgate1_aoplane.dds]],
 	buildPic = [[ARMGATE.png]],
 	buildTime = 354139,
+	canattack = false,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
 	corpse = [[DEAD]],
 	description = [[Long Range Plasma Deflector]],
