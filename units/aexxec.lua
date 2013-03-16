@@ -19,6 +19,9 @@ local unitDef = {
 	canPatrol = true,
 	canstop = 1,
 	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
+	collisionVolumeScales = [[32.564346313477 30.564346313477 26.564346313477]],
+	collisionVolumeOffsets = [[0 -2 3]],
+	collisionVolumeType = [[box]],
 	corpse = [[dead]],
 	defaultmissiontype = [[Standby]],
 	description = [[Heavy Assault Kbot]],
@@ -125,7 +128,7 @@ local weaponDefs = {
 		weaponVelocity = 800,
 		damage = {
 			commanders = 50,
-			default = 150,
+			default = 150, 
 			subs = 5,
 		},
 	},
