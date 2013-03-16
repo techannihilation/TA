@@ -38,7 +38,6 @@ local unitDef = {
 	germanname = [[Experimentelles Forschungslabor]],
 	maxDamage = 3000,
 	maxSlope = 10,
-	maxWaterDepth = 0,
 	metalStorage = 0,
 	name = [[Advanced T1 Research Center]],
 	noAutoFire = false,

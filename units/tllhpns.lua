@@ -33,7 +33,6 @@ local unitDef = {
 	italiandescription = [[Costruisce Hovercraft]],
 	italianname = [[Piattaforma Hovercraft]],
 	maxDamage = 3888,
-	maxWaterDepth = 0,
 	metalStorage = 200,
 	minWaterDepth = 30,
 	mobilestandorders = 1,

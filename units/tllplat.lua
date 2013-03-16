@@ -34,7 +34,6 @@ local unitDef = {
 	italiandescription = [[Costruzione idrovolanti]],
 	italianname = [[Piattaforma idrovolanti]],
 	maxDamage = 2121,
-	maxWaterDepth = 0,
 	metalMake = 1,
 	metalStorage = 850,
 	minWaterDepth = 30,

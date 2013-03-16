@@ -33,7 +33,6 @@ local unitDef = {
 	italiandescription = [[Torretta Laser pesante galleggiante]],
 	maxDamage = 5210,
 	maxSlope = 14,
-	maxWaterDepth = 0,
 	minWaterDepth = 5,
 	name = [[NS H.L.T.]],
 	noAutoFire = false,

@@ -34,7 +34,6 @@ local unitDef = {
 	italiandescription = [[Torretta missilistica - Sezione Navale]],
 	maxDamage = 785,
 	maxSlope = 14,
-	maxWaterDepth = 0,
 	minWaterDepth = 2,
 	name = [[NS Besom]],
 	noAutoFire = false,

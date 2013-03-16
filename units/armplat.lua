@@ -31,7 +31,6 @@ local unitDef = {
 	idleTime = 1800,
 	maxDamage = 1820,
 	maxVelocity = 0,
-	maxWaterDepth = 0,
 	metalMake = 1,
 	metalStorage = 200,
 	minWaterDepth = 30,

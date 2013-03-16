@@ -28,7 +28,6 @@ local unitDef = {
 	maxDamage = 110,
 	maxSlope = 10,
 	maxVelocity = 0,
-	maxWaterDepth = 0,
 	metalStorage = 0,
 	minWaterDepth = 11,
 	name = [[Floating Metal Maker]],

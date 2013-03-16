@@ -29,7 +29,6 @@ local unitDef = {
 	maxDamage = 50,
 	maxSlope = 32,
 	maxVelocity = 0,
-	maxWaterDepth = 0,
 	metalStorage = 0,
 	minWaterDepth = 1,
 	name = [[Shark's Teeth]],
