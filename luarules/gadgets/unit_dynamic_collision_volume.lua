@@ -128,11 +128,17 @@ if (gadgetHandler:IsSyncedCode()) then
 			elseif (not UnitDefs[unitDefID].canFly) then
 				rs, hs, ws = 0.75, 0.75, 0.75
 			else
-				rs, hs, ws = 0.48, 0.225, 0.35
+				rs, hs, ws = 0.58, 0.25, 0.58
 			end
 			local xs, ys, zs, xo, yo, zo, vtype, htype, axis, _ = spGetUnitCollisionData(unitID)
 			if (vtype>=3 and xs==ys and ys==zs) then
+			  if (hs == 0.25 ) and ( ys*hs ) < 20 and (UnitDefs[unitDefID].canFly) then
+			        spSetUnitCollisionData(unitID, xs*ws, 20, zs*rs,  xo, yo, zo,  1, htype, 1)
+			  elseif (UnitDefs[unitDefID].canFly) then
+				spSetUnitCollisionData(unitID, xs*ws, ys*hs, zs*rs,  xo, yo, zo,  1, htype, 1)
+			  else 
 				spSetUnitCollisionData(unitID, xs*ws, ys*hs, zs*rs,  xo, yo, zo,  vtype, htype, axis)
+			  end
 			end
 			-- the following lines are commented because they're not needed in XTA, but that might change
 			--if UnitDefs[unitDefID].canFly and UnitDefs[unitDefID].transportCapacity>0 then
