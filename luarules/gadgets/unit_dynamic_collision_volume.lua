@@ -128,13 +128,15 @@ if (gadgetHandler:IsSyncedCode()) then
 			elseif (not UnitDefs[unitDefID].canFly) then
 				rs, hs, ws = 0.75, 0.75, 0.75
 			else
-				rs, hs, ws = 0.58, 0.25, 0.58
+				rs, hs, ws = 0.53, 0.22, 0.53
 			end
 			local xs, ys, zs, xo, yo, zo, vtype, htype, axis, _ = spGetUnitCollisionData(unitID)
 			if (vtype>=3 and xs==ys and ys==zs) then
-			  if (hs == 0.25 ) and ( ys*hs ) < 20 and (UnitDefs[unitDefID].canFly) then
-			        spSetUnitCollisionData(unitID, xs*ws, 20, zs*rs,  xo, yo, zo,  1, htype, 1)
+			  local maxv = (ys*hs)
+			  if ( ys*hs ) < 15 and (UnitDefs[unitDefID].canFly) then -- Limit Max V height
+			        spSetUnitCollisionData(unitID, xs*ws, 15, zs*rs,  xo, yo, zo,  1, htype, 1)
 			  elseif (UnitDefs[unitDefID].canFly) then
+			  Spring.Echo("a max  " .. maxv )
 				spSetUnitCollisionData(unitID, xs*ws, ys*hs, zs*rs,  xo, yo, zo,  1, htype, 1)
 			  else 
 				spSetUnitCollisionData(unitID, xs*ws, ys*hs, zs*rs,  xo, yo, zo,  vtype, htype, axis)
