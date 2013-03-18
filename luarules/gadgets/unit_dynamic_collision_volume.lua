@@ -132,22 +132,20 @@ if (gadgetHandler:IsSyncedCode()) then
 			end
 			local xs, ys, zs, xo, yo, zo, vtype, htype, axis, _ = spGetUnitCollisionData(unitID)
 			if (vtype>=3 and xs==ys and ys==zs) then
-			  local maxv = (ys*hs)
 			  if ( ys*hs ) < 15 and (UnitDefs[unitDefID].canFly) then -- Limit Max V height
 			        spSetUnitCollisionData(unitID, xs*ws, 15, zs*rs,  xo, yo, zo,  1, htype, 1)
 			  elseif (UnitDefs[unitDefID].canFly) then
-			  Spring.Echo("a max  " .. maxv )
 				spSetUnitCollisionData(unitID, xs*ws, ys*hs, zs*rs,  xo, yo, zo,  1, htype, 1)
 			  else 
 				spSetUnitCollisionData(unitID, xs*ws, ys*hs, zs*rs,  xo, yo, zo,  vtype, htype, axis)
 			  end
 			end
-			-- the following lines are commented because they're not needed in XTA, but that might change
-			--if UnitDefs[unitDefID].canFly and UnitDefs[unitDefID].transportCapacity>0 then
-			--	spSetUnitRadiusAndHeight(unitID, 16, 16)
-			--else
+			
+			if UnitDefs[unitDefID].canFly and UnitDefs[unitDefID].transportCapacity>0 then
+				spSetUnitRadiusAndHeight(unitID, 16, 16)
+			else
 				spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*rs, spGetUnitHeight(unitID)*hs)
-			--end
+			end
 		end
 	end
 
