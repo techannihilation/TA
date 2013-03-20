@@ -46,6 +46,7 @@ local unitDef = {
 	onoffable = true,
 	radarDistance = 0,
 	selfDestructAs = [[COMMANDER_BLAST]],
+	script = [[corech3.lua]],
 	side = [[ARM]],
 	sightDistance = 0,
 	threed = 1,

@@ -45,6 +45,7 @@ local unitDef = {
 	objectName = [[LABORECH]],
 	onoffable = true,
 	radarDistance = 0,
+	script = [[corech3.lua]],
 	selfDestructAs = [[COMMANDER_BLAST]],
 	side = [[ARM]],
 	sightDistance = 0,
