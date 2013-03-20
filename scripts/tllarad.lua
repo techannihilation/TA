@@ -117,7 +117,7 @@ local function Activate()
 	Turn( dish4 , z_axis, math.rad(-(120.000000)), math.rad(15.000000) )
 	Turn( dish2 , x_axis, math.rad(120.000000), math.rad(15.000000) )
 	Turn( dish3 , x_axis, math.rad(-120.000000), math.rad(15.000000) )
-	Spin( top , y_axis, 2.000000 )
+	Spin( top , y_axis, 0.900000 )
 end
 
 local function Deactivate()
