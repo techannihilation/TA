@@ -65,7 +65,7 @@ local function Deactivate()
 	StopSpin ( radar , y_axis, 0.000000 )
 end
 
-
+--[[
 local function TechLost()
   Spring.Echo("Techlost")
  -- currentTechCount = Spring.GetTeamRulesParam(team,"technology:" .. TechName)
