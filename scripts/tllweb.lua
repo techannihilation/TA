@@ -88,10 +88,10 @@ function script.Killed(recentDamage, maxHealth)
 		return 1 -- corpsetype
 
 	elseif (severity <= .5) then
-		Explode(base, SFX.SHATTER)
+		Explode(base, SFX.FALL + SFX.SMOKE)
 		return 2 -- corpsetype
 	else
-		Explode(base, SFX.SHATTER)
+		Explode(base, SFX.SMOKE + SFX.FIRE + SFX.EXPLODE)
 		return 3 -- corpsetype
 	end
 end
