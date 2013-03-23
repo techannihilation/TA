@@ -128,12 +128,12 @@ if (gadgetHandler:IsSyncedCode()) then
 			elseif (not UnitDefs[unitDefID].canFly) then
 				rs, hs, ws = 0.75, 0.75, 0.75
 			else
-				rs, hs, ws = 0.53, 0.22, 0.53
+				rs, hs, ws = 0.53, 0.17, 0.53
 			end
 			local xs, ys, zs, xo, yo, zo, vtype, htype, axis, _ = spGetUnitCollisionData(unitID)
 			if (vtype>=3 and xs==ys and ys==zs) then
-			  if ( ys*hs ) < 15 and (UnitDefs[unitDefID].canFly) then -- Limit Max V height
-			        spSetUnitCollisionData(unitID, xs*ws, 15, zs*rs,  xo, yo, zo,  1, htype, 1)
+			  if ( ys*hs ) < 13 and (UnitDefs[unitDefID].canFly) then -- Limit Max V height
+			        spSetUnitCollisionData(unitID, xs*ws, 13, zs*rs,  xo, yo, zo,  1, htype, 1)
 			  elseif (UnitDefs[unitDefID].canFly) then
 				spSetUnitCollisionData(unitID, xs*ws, ys*hs, zs*rs,  xo, yo, zo,  1, htype, 1)
 			  else 
