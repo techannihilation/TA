@@ -124,9 +124,9 @@ if (gadgetHandler:IsSyncedCode()) then
 		elseif UnitDefs[unitDefID].model.type=="3do" then
 			local rs, hs, ws
 			if (spGetUnitRadius(unitID)>47 and not UnitDefs[unitDefID].canFly) then
-				rs, hs, ws = 0.68, 0.68, 0.68
+				rs, hs, ws = 0.59, 0.59, 0.59
 			elseif (not UnitDefs[unitDefID].canFly) then
-				rs, hs, ws = 0.75, 0.75, 0.75
+				rs, hs, ws = 0.62, 0.62, 0.62
 			else
 				rs, hs, ws = 0.53, 0.17, 0.53
 			end
