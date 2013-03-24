@@ -4,7 +4,7 @@ function widget:GetInfo()
 		name      = "CustomFormations2",
 		desc      = "Allows you to draw your own formation line.",
 		author    = "Niobium", -- Based on 'Custom Formations' by jK and gunblob
-		version   = "v3.3",
+		version   = "v3.4",
 		date      = "Mar, 2010",
 		license   = "GNU GPL, v2 or later",
 		layer     = 10000,
@@ -123,6 +123,7 @@ local spTraceScreenRay = Spring.TraceScreenRay
 local spGetGroundHeight = Spring.GetGroundHeight
 local spGetFeaturePosition = Spring.GetFeaturePosition
 local spGiveOrderToUnit = Spring.GiveOrderToUnit
+local spGetUnitHeight = Spring.GetUnitHeight
 
 local mapSizeX, mapSizeZ = Game.mapSizeX, Game.mapSizeZ
 local maxUnits = Game.maxUnits
@@ -253,9 +254,32 @@ local function AddFNode(pos)
 	totaldxy = 0
 	return true
 end
-local function GetInterpNodes(number)
-	
-	local spacing = fDists[#fNodes] / (number - 1)
+
+local function HasWaterWeapon(UnitDefID)
+	local haswaterweapon = false
+	local numweapons = #(UnitDefs[UnitDefID]["weapons"])
+	for j=1, numweapons do
+		local weapondefid = UnitDefs[UnitDefID]["weapons"][j]["weaponDef"]
+		local iswaterweapon = WeaponDefs[weapondefid]["waterWeapon"]
+		if iswaterweapon then haswaterweapon=true end
+	end	
+	return haswaterweapon
+end
+
+local function GetInterpNodes(mUnits)
+		
+	local number = #mUnits
+	local spacing = fDists[#fNodes] / (#mUnits - 1)
+
+	local haswaterweapon = {}
+	for i=1, number do
+		local UnitDefID = spGetUnitDefID(mUnits[i])
+		haswaterweapon[i] = HasWaterWeapon(UnitDefID)
+	end
+	--result of this and code below is that the height of the aimpoint for a unit [i] will be:
+	--(a) on GetGroundHeight(units aimed position), if the unit has a waterweapon
+	--(b) on whichever is highest out of water surface (=0) and GetGroundHeight(units aimed position), if the unit does not have water weapon. 
+	--in BA this must match the behaviour of prevent_range_hax or commands will get modified.
 	
 	local interpNodes = {}
 	
@@ -270,7 +294,9 @@ local function GetInterpNodes(number)
 	local eZ = ePos[3]
 	local eDist = fDists[2]
 	
-	interpNodes[1] = {sX, spGetGroundHeight(sX, sZ), sZ}
+	local sY 
+	if haswaterweapon[1] then sY=spGetGroundHeight(sX, sZ) else sY=math.max(0,spGetGroundHeight(sX,sZ)) end
+	interpNodes[1] = {sX, sY, sZ}
 	
 	for n = 1, number - 2 do
 		
@@ -291,13 +317,19 @@ local function GetInterpNodes(number)
 		local nFrac = (reqDist - sDist) / (eDist - sDist)
 		local nX = sX * (1 - nFrac) + eX * nFrac
 		local nZ = sZ * (1 - nFrac) + eZ * nFrac
-		interpNodes[n + 1] = {nX, spGetGroundHeight(nX, nZ), nZ}
+		local nY 
+		if haswaterweapon[number+1] then nY=spGetGroundHeight(nX, nZ) else nY=math.max(0,spGetGroundHeight(nX, nZ)) end
+		interpNodes[n + 1] = {nX, nY, nZ}
 	end
 	
 	ePos = fNodes[#fNodes]
 	eX = ePos[1]
 	eZ = ePos[3]
-	interpNodes[number] = {eX, spGetGroundHeight(eX, eZ), eZ}
+	local eY 
+	if haswaterweapon[number] then  eY=spGetGroundHeight(eX, eZ) else eY=math.max(0,spGetGroundHeight(eX, eZ)) end
+	interpNodes[number] = {eX, eY, eZ}
+	
+	--DEBUG for i=1,number do Spring.Echo(interpNodes[i]) end
 	
 	return interpNodes
 end
@@ -535,9 +567,10 @@ function widget:MouseRelease(mx, my, mButton)
 			-- Order is a formation
 			-- Are any units able to execute it?
 			local mUnits = GetExecutingUnits(usingCmd)
+			
 			if #mUnits > 0 then
-				
-				local interpNodes = GetInterpNodes(#mUnits)
+		
+				local interpNodes = GetInterpNodes(mUnits)
 				
 				local orders
 				if (#mUnits <= maxHungarianUnits) then
