@@ -106,6 +106,7 @@ local weaponDefs = {
 		cegTag = [[Trail_cannon]],
 		craterBoost = 0,
 		craterMult = 0,
+		explosionGenerator = [[custom:flash70_fakelight]],
 		gravityaffected = [[TRUE]],
 		id = 169,
 		impulseBoost = 0.123,
