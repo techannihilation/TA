@@ -31,7 +31,6 @@ local spGetTeamResources = Spring.GetTeamResources
 local spInsertUnitCmdDesc = Spring.InsertUnitCmdDesc
 local spEditUnitCmdDesc = Spring.EditUnitCmdDesc
 local spRemoveUnitCmdDesc = Spring.RemoveUnitCmdDesc
-local SpAddUnitDamage = Spring.AddUnitDamage
 local SpGetUnitPosition = Spring.GetUnitPosition
 local SpSpawnCEG = Spring.SpawnCEG
 local uDefs = UnitDefs
@@ -174,7 +173,7 @@ function gadget:GameFrame(n)
 	  local _,hp = SpGetUnitHealth(unitID)
 	  local damage = mrandom(0,(hp*0.25))
 	  --Spring.Echo("hp = " .. hp .."      " .. damage)
-	  SpAddUnitDamage(unitID ,damage)
+	  Spring.AddUnitDamage(unitID ,damage)
 	  local x,y,z = SpGetUnitPosition(unitID)
 	  SpSpawnCEG("ZEUS_FLASH_SUB",x,y,z,0,0,0)
       end

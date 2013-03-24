@@ -71,8 +71,7 @@ function gadget:UnitDestroyed(unitID, unitDefID, unitTeam)
   end
 end
 
-function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, 
-                            weaponID, attackerID, attackerDefID, attackerTeam)
+function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponID, projectileID, attackerID, attackerDefID, attackerTeam)
   if (weaponID == COM_BLAST) and FAILBOMB[attackerID] and (attackerID ~= unitID) then
     local x,y,z = Spring.GetUnitBasePosition(unitID)
 	local h = Spring.GetGroundHeight(x,z)
