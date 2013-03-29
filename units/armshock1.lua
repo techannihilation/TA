@@ -86,7 +86,7 @@ local unitDef = {
 
 local weaponDefs = {
 	SHOCKER1 = {
-		areaOfEffect = 196,
+		areaOfEffect = 140,
 		avoidFeature = false,
 		avoidFriendly = false,
 		ballistic = true,
@@ -95,7 +95,7 @@ local weaponDefs = {
 		craterBoost = 0,
 		craterMult = 0,
 		edgeEffectiveness = 0.5,
-		explosionGenerator = [[custom:flash192_fakelight]],
+		explosionGenerator = [[custom:flash140_fakelight]],
 		gravityaffected = [[TRUE]],
 		heightBoostFactor = 1.15,
 		impulseBoost = 0.5,
