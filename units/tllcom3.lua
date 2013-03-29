@@ -163,6 +163,7 @@ local weaponDefs = {
 	TLL_DISINTEGRATOR1 = {
 		areaOfEffect = 36,
 		avoidFriendly = false,
+		avoidground = false,
 		beamWeapon = true,
 		commandfire = true,
 		craterBoost = 0,

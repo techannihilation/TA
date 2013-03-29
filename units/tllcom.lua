@@ -158,6 +158,7 @@ local weaponDefs = {
 	ARM_DISINTEGRATOR3 = {
 		areaOfEffect = 36,
 		avoidFriendly = false,
+		avoidground = false,
 		beamWeapon = true,
 		commandfire = true,
 		craterBoost = 0,
