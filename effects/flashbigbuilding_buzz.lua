@@ -96,8 +96,8 @@ return {
       circlealpha        = 3,
       circlegrowth       = 6,
       flashalpha         = 2.9,
-      flashsize          = 50,
-      ttl                = 10,
+      flashsize          = 30,
+      ttl                = 8,
       color = {
         [1]  = 1,
         [2]  = 0.89999997615814,
@@ -113,7 +113,7 @@ return {
       water              = false,
       properties = {
         colormap           = [[0.8 0.6 0 0.90 0.8 0.6 0 0.30     0 0 0 0.1]],
-        size               = 17,
+        size               = 15,
         sizegrowth         = [[3 r-3]],
         texture            = [[groundflash]],
         ttl                = 28,
@@ -184,7 +184,7 @@ return {
       circlegrowth       = 6,
       flashalpha         = 2.9,
       flashsize          = 128,
-      ttl                = 12,
+      ttl                = 9,
       color = {
         [1]  = 1,
         [2]  = 0.89999997615814,
@@ -270,8 +270,8 @@ return {
       circlealpha        = 3,
       circlegrowth       = 6,
       flashalpha         = 2.9,
-      flashsize          = 140,
-      ttl                = 14,
+      flashsize          = 120,
+      ttl                = 9,
       color = {
         [1]  = 1,
         [2]  = 0.89999997615814,
@@ -357,8 +357,8 @@ return {
       circlealpha        = 3,
       circlegrowth       = 8,
       flashalpha         = 2.9,
-      flashsize          = 192,
-      ttl                = 12,
+      flashsize          = 150,
+      ttl                = 8,
       color = {
         [1]  = 1,
         [2]  = 0.89999997615814,
@@ -377,7 +377,7 @@ return {
         size               = 63,
         sizegrowth         = [[3 r-3]],
         texture            = [[groundflash]],
-        ttl                = 32,
+        ttl                = 36,
       },
     },
       explosionball = {
@@ -444,8 +444,8 @@ return {
       circlealpha        = 3,
       circlegrowth       = 8,
       flashalpha         = 2.9,
-      flashsize          = 208,
-      ttl                = 14,
+      flashsize          = 160,
+      ttl                = 9,
       color = {
         [1]  = 1,
         [2]  = 0.89999997615814,
@@ -531,8 +531,8 @@ return {
       circlealpha        = 3,
       circlegrowth       = 8,
       flashalpha         = 2.9,
-      flashsize          = 256,
-      ttl                = 14,
+      flashsize          = 220,
+      ttl                = 9,
       color = {
         [1]  = 1,
         [2]  = 0.89999997615814,
