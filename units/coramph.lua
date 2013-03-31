@@ -46,6 +46,7 @@ local unitDef = {
 	noChaseCategory = [[VTOL]],
 	objectName = [[CORAMPH]],
 	radarDistance = 300,
+	script = [[coramph.lua]],
 	seismicSignature = 0,
 	selfDestructAs = [[BIG_UNIT]],
 	side = [[CORE]],
