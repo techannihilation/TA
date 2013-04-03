@@ -271,6 +271,7 @@ local function RestoreAfterDelay()
 end
 
 function script.AimWeapon(num, heading, pitch)
+	local _, basepos, _ = Spring.GetUnitPosition(unitID)
 	if num == 1 then
 		Signal( SIG_AIM)
 		SetSignalMask( SIG_AIM)
@@ -278,8 +279,7 @@ function script.AimWeapon(num, heading, pitch)
 		WaitForTurn(head, y_axis)
 		--Spring.Echo("Weapon one position :" .. basepos)
 		StartThread(RestoreAfterDelay)
-		_, baseposw1, _ = Spring.GetUnitPosition(unitID)
-		if baseposw1 > -18 then
+		if basepos > -18 then
 			return true
 		else
 			return false
@@ -289,9 +289,8 @@ function script.AimWeapon(num, heading, pitch)
 		SetSignalMask( SIG_AIM_3)
 		Turn( head , y_axis, heading , math.rad(60.000000) )
 		WaitForTurn(head, y_axis)
-		_, baseposw2, _ = Spring.GetUnitPosition(unitID)
 		--Spring.Echo("Weapon two position :" .. basepos)
-		if baseposw2 < -16 then
+		if basepos < -16 then
 			return true
 		else
 			return false
