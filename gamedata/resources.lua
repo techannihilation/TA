@@ -215,6 +215,10 @@ local resources = {
 			lightring='lightring.tga',
 			lightb3='lightningball3.tga',
 			lightb4='lightningball4.tga',
+			
+			debris2='other/debris2.tga',
+			debris='other/debris.tga',
+			dirtplosion2='other/dirtplosion2.tga',
 		},
 	},
 }

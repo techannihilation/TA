@@ -4,7 +4,8 @@
 
 return {
   ["flashbigbuilding_buzz"] = {
-    usedefaultexplosions = true,
+    usedefaultexplosions = false,
+
   groundflash = {
       circlealpha        = 3,
       circlegrowth       = 14,
@@ -89,9 +90,22 @@ return {
         useairlos          = true,
       },
     },
+     plumeSpawn = {
+      air                = true,
+      class              = [[CExpGenSpawner]],
+      count              = 1,
+      ground             = true,
+      water              = true,
+      properties = {
+        delay              = 0,
+        explosiongenerator = [[custom:plume]],
+        pos                = [[0, 0, 0]],
+      },
+    },
   },
    ["flash70_fakelight"] = {
-    usedefaultexplosions = true,
+    usedefaultexplosions = false,
+
   groundflash = {
       circlealpha        = 3,
       circlegrowth       = 6,
@@ -176,9 +190,22 @@ return {
         useairlos          = true,
       },
     },
+     plumeSpawn = {
+      air                = true,
+      class              = [[CExpGenSpawner]],
+      count              = 1,
+      ground             = true,
+      water              = true,
+      properties = {
+        delay              = 0,
+        explosiongenerator = [[custom:plume]],
+        pos                = [[0, 0, 0]],
+      },
+    },
   },
    ["flash128_fakelight"] = {
-    usedefaultexplosions = true,
+    usedefaultexplosions = false,
+
   groundflash = {
       circlealpha        = 3,
       circlegrowth       = 6,
@@ -263,9 +290,22 @@ return {
         useairlos          = true,
       },
     },
+     plumeSpawn = {
+      air                = true,
+      class              = [[CExpGenSpawner]],
+      count              = 1,
+      ground             = true,
+      water              = true,
+      properties = {
+        delay              = 0,
+        explosiongenerator = [[custom:plume]],
+        pos                = [[0, 0, 0]],
+      },
+    },
   },
    ["flash140_fakelight"] = {
-    usedefaultexplosions = true,
+    usedefaultexplosions = false,
+
   groundflash = {
       circlealpha        = 3,
       circlegrowth       = 6,
@@ -350,9 +390,22 @@ return {
         useairlos          = true,
       },
     },
+     plumeSpawn = {
+      air                = true,
+      class              = [[CExpGenSpawner]],
+      count              = 1,
+      ground             = true,
+      water              = true,
+      properties = {
+        delay              = 0,
+        explosiongenerator = [[custom:plume]],
+        pos                = [[0, 0, 0]],
+      },
+    },
   },
    ["flash192_fakelight"] = {
-    usedefaultexplosions = true,
+    usedefaultexplosions = false,
+
   groundflash = {
       circlealpha        = 3,
       circlegrowth       = 8,
@@ -437,9 +490,22 @@ return {
         useairlos          = true,
       },
     },
+     plumeSpawn = {
+      air                = true,
+      class              = [[CExpGenSpawner]],
+      count              = 1,
+      ground             = true,
+      water              = true,
+      properties = {
+        delay              = 0,
+        explosiongenerator = [[custom:plume]],
+        pos                = [[0, 0, 0]],
+      },
+    },
    },
     ["flash208_fakelight"] = {
-    usedefaultexplosions = true,
+    usedefaultexplosions = false,
+
   groundflash = {
       circlealpha        = 3,
       circlegrowth       = 8,
@@ -524,9 +590,22 @@ return {
         useairlos          = true,
       },
     },
+     plumeSpawn = {
+      air                = true,
+      class              = [[CExpGenSpawner]],
+      count              = 1,
+      ground             = true,
+      water              = true,
+      properties = {
+        delay              = 0,
+        explosiongenerator = [[custom:plume]],
+        pos                = [[0, 0, 0]],
+      },
     },
+   },
      ["flash256_fakelight"] = {
-    usedefaultexplosions = true,
+    usedefaultexplosions = false,
+
   groundflash = {
       circlealpha        = 3,
       circlegrowth       = 8,
@@ -609,6 +688,18 @@ return {
         sizemod            = 1.0,
         texture            = [[Plasma]],
         useairlos          = true,
+      },
+    },
+     plumeSpawn = {
+      air                = true,
+      class              = [[CExpGenSpawner]],
+      count              = 1,
+      ground             = true,
+      water              = true,
+      properties = {
+        delay              = 0,
+        explosiongenerator = [[custom:plume]],
+        pos                = [[0, 0, 0]],
       },
     },
    },
