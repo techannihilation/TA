@@ -2,9 +2,9 @@
 
 function gadget:GetInfo()
   return {
-    name      = "Napalm",
+    name      = "Napalm and More",
     desc      = "",
-    author    = "jK",
+    author    = "jK ,made ugly by nixtux",
     date      = "Sep. 2008",
     license   = "GNU GPL, v2 or later",
     layer     = 0,
@@ -23,12 +23,21 @@ local FIRE_WEAPONS = {
   ["corpyrox_pyro_rocket"] = true,
 }
 
-if (gadgetHandler:IsSyncedCode()) then
+local DISTORT_WEAPONS = {
+  ["armsonic_sonic_cannon"] = true,
+}
+
+local MUSTARD_WEAPONS = {
+  ["tllabomber_coradvbomb"] = true,
+  ["tllbomber_tllbomb"] = true,
+}
+
+  if (gadgetHandler:IsSyncedCode()) then
 
   --// find napalms
   for i=1,#WeaponDefs do
     local wd = WeaponDefs[i]
-    if FIRE_WEAPONS[wd.name] then
+    if FIRE_WEAPONS[wd.name] or DISTORT_WEAPONS[wd.name] or MUSTARD_WEAPONS[wd.name] then
       Script.SetWatchWeapon(wd.id,true)
     end
   end
@@ -83,8 +92,36 @@ else
     layer           = 1,
     texture         = "bitmaps/GPL/flame.png",
   }
+    
+  local mustardFX = {
+    colormap        = { {0, 0, 0, 0.01}, {0.75, 0.75, 0.9, 0.02}, {0.2, 0.45, 0.3, 0.1}, {0.16, 0.4, 0.1, 0.12}, {0.13, 0.3, 0.01, 0.15},  {0.13, 0.4, 0.01, 0.15}, {0.13, 0.5, 0.01, 0.15}, {0.1, 0.035, 0.01, 0.1}, {0, 0, 0, 0.01} },
+    count           = 4,
+    life            = 100,
+    lifeSpread      = 40,
+    emitVector      = {0,1,0},
+    emitRotSpread   = 90,
+    force           = {0,0.3,0},
 
+    partpos         = "r*sin(alpha),0,r*cos(alpha) | r=rand()*15, alpha=rand()*2*pi",
 
+    rotSpeed        = 0.25,
+    rotSpeedSpread  = -0.5,
+    rotSpread       = 360,
+    rotExp          = 1.5,
+
+    speed           = 0.225,
+    speedSpread     = 0.05,
+    speedExp        = 7,
+
+    size            = 35,
+    sizeSpread      = 10,
+    sizeGrowth      = 0.15,
+    sizeExp         = 2.5,
+
+    layer           = 1,
+    texture         = "bitmaps/mustard.png",
+  }
+    
   local heatFX = {
     count         = 1,
     emitVector    = {0,1,0},
@@ -110,19 +147,29 @@ else
 
     texture       = "bitmaps/GPL/Lups/mynoise2.png",
   }
-
+   
   local Lups
   local LupsAddParticles 
   local enabled = false
 
   local napalmWeapons = {}
   local napalmExplosions  = {}
+  
+  local distortWeapons = {}
+  local distortExplosions  = {}
+  
+  local mustardWeapons = {}
+  local mustardExplosions  = {}
 
   --// find napalms
   for i=1,#WeaponDefs do
     local wd = WeaponDefs[i]
     if FIRE_WEAPONS[wd.name] then
       napalmWeapons[wd.id] = true
+    elseif DISTORT_WEAPONS[wd.name] then
+      distortWeapons[wd.id] = true
+    elseif MUSTARD_WEAPONS[wd.name] then
+      mustardWeapons[wd.id] = true
     end
   end  
 
@@ -130,6 +177,10 @@ else
   local function napalm_Explosion(_, weaponID, px, py, pz)
     if (napalmWeapons[weaponID]) then
       napalmExplosions[#napalmExplosions+1] = {px, py, pz}
+    elseif (distortWeapons[weaponID]) then
+       distortExplosions[#distortExplosions+1] = {px, py, pz}
+    elseif (mustardWeapons[weaponID]) then
+      mustardExplosions[#mustardExplosions+1] = {px, py, pz}
     end
   end
 
@@ -137,12 +188,19 @@ else
   local function SpawnNapalmFX(pos)
     napalmFX.pos = {pos[1],pos[2],pos[3]}
     Lups.AddParticles('SimpleParticles2',napalmFX)
-    if enabled then
-		heatFX.pos = napalmFX.pos
-		Lups.AddParticles('JitterParticles2',heatFX)
-	end
   end
 
+  local function SpawnMustardFX(pos)
+    mustardFX.pos = {pos[1],pos[2],pos[3]}
+    Lups.AddParticles('SimpleParticles2',mustardFX)
+  end
+  
+  local function SpawnHeatFX(pos)
+     if enabled then
+	heatFX.pos = {pos[1],pos[2],pos[3]}
+	Lups.AddParticles('JitterParticles2',heatFX)
+   end
+end
   
   local function napalm_GameFrame(_, n)
     if (#napalmExplosions>0) then
@@ -152,10 +210,31 @@ else
       local explosions = napalmExplosions
       for i=1,napalmCount do
         SpawnNapalmFX(explosions[i])
+        SpawnHeatFX(explosions[i])
       end
       napalmExplosions = {}
+    elseif (#distortExplosions>0) then
+      distortExplosions =  distortExplosions
+      distortCount      = #distortExplosions
+      if (not Lups) then Lups = GG['Lups']; LupsAddParticles = Lups.AddParticles end
+      local heatexplosions = distortExplosions
+      for i=1,distortCount do
+        SpawnHeatFX(heatexplosions[i])
+      end
+      distortExplosions = {}
+    elseif (#mustardExplosions>0) then
+      mustardExplosions =  mustardExplosions
+      mustardCount      = #mustardExplosions
+      if (not Lups) then Lups = GG['Lups']; LupsAddParticles = Lups.AddParticles end
+      local mexplosions = mustardExplosions
+      for i=1,mustardCount do
+        SpawnMustardFX(mexplosions[i])
+	SpawnHeatFX(mexplosions[i])
+
+      end
+      mustardExplosions = {}
     end
-  end  
+end  
   
   local function Toggle(_,enable,playerId)
     if (playerId == Spring.GetMyPlayerID()) then
