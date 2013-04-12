@@ -10,8 +10,8 @@ return {
       circlealpha        = 3,
       circlegrowth       = 14,
       flashalpha         = 2.9,
-      flashsize          = 192,
-      ttl                = 14,
+      flashsize          = 120,
+      ttl                = 11,
       color = {
         [1]  = 1,
         [2]  = 0.89999997615814,
@@ -30,7 +30,7 @@ return {
         size               = 140,
         sizegrowth         = [[3 r-3]],
         texture            = [[groundflash]],
-        ttl                = 32,
+        ttl                = 24,
       },
     },
      explosionball = {
@@ -108,7 +108,7 @@ return {
 
   groundflash = {
       circlealpha        = 3,
-      circlegrowth       = 6,
+      circlegrowth       = 10,
       flashalpha         = 2.9,
       flashsize          = 30,
       ttl                = 8,
@@ -130,7 +130,7 @@ return {
         size               = 15,
         sizegrowth         = [[3 r-3]],
         texture            = [[groundflash]],
-        ttl                = 28,
+        ttl                = 26,
       },
     },
      explosionball = {
@@ -198,7 +198,7 @@ return {
       water              = true,
       properties = {
         delay              = 0,
-        explosiongenerator = [[custom:plume]],
+        explosiongenerator = [[custom:plume_small]],
         pos                = [[0, 0, 0]],
       },
     },
@@ -208,10 +208,10 @@ return {
 
   groundflash = {
       circlealpha        = 3,
-      circlegrowth       = 6,
+      circlegrowth       = 10,
       flashalpha         = 2.9,
-      flashsize          = 128,
-      ttl                = 9,
+      flashsize          = 90,
+      ttl                = 11,
       color = {
         [1]  = 1,
         [2]  = 0.89999997615814,
@@ -230,7 +230,7 @@ return {
         size               = 42,
         sizegrowth         = [[3 r-3]],
         texture            = [[groundflash]],
-        ttl                = 32,
+        ttl                = 26,
       },
     },
      explosionball = {
@@ -298,7 +298,7 @@ return {
       water              = true,
       properties = {
         delay              = 0,
-        explosiongenerator = [[custom:plume]],
+        explosiongenerator = [[custom:plume_small]],
         pos                = [[0, 0, 0]],
       },
     },
@@ -308,9 +308,9 @@ return {
 
   groundflash = {
       circlealpha        = 3,
-      circlegrowth       = 6,
+      circlegrowth       = 10,
       flashalpha         = 2.9,
-      flashsize          = 120,
+      flashsize          = 110,
       ttl                = 9,
       color = {
         [1]  = 1,
@@ -330,7 +330,7 @@ return {
         size               = 46,
         sizegrowth         = [[3 r-3]],
         texture            = [[groundflash]],
-        ttl                = 32,
+        ttl                = 24,
       },
     },
      explosionball = {
@@ -408,10 +408,10 @@ return {
 
   groundflash = {
       circlealpha        = 3,
-      circlegrowth       = 8,
+      circlegrowth       = 14,
       flashalpha         = 2.9,
-      flashsize          = 150,
-      ttl                = 8,
+      flashsize          = 120,
+      ttl                = 11,
       color = {
         [1]  = 1,
         [2]  = 0.89999997615814,
@@ -430,7 +430,7 @@ return {
         size               = 63,
         sizegrowth         = [[3 r-3]],
         texture            = [[groundflash]],
-        ttl                = 36,
+        ttl                = 26,
       },
     },
       explosionball = {
@@ -508,10 +508,10 @@ return {
 
   groundflash = {
       circlealpha        = 3,
-      circlegrowth       = 8,
+      circlegrowth       = 15,
       flashalpha         = 2.9,
-      flashsize          = 160,
-      ttl                = 9,
+      flashsize          = 120,
+      ttl                = 11,
       color = {
         [1]  = 1,
         [2]  = 0.89999997615814,
@@ -530,7 +530,7 @@ return {
         size               = 68,
         sizegrowth         = [[3 r-3]],
         texture            = [[groundflash]],
-        ttl                = 32,
+        ttl                = 26,
       },
     },
       explosionball = {
@@ -608,10 +608,10 @@ return {
 
   groundflash = {
       circlealpha        = 3,
-      circlegrowth       = 8,
+      circlegrowth       = 16,
       flashalpha         = 2.9,
-      flashsize          = 220,
-      ttl                = 9,
+      flashsize          = 120,
+      ttl                = 11,
       color = {
         [1]  = 1,
         [2]  = 0.89999997615814,
@@ -630,7 +630,7 @@ return {
         size               = 84,
         sizegrowth         = [[3 r-3]],
         texture            = [[groundflash]],
-        ttl                = 32,
+        ttl                = 26,
       },
     },
       explosionball = {
@@ -699,6 +699,118 @@ return {
       properties = {
         delay              = 0,
         explosiongenerator = [[custom:plume]],
+        pos                = [[0, 0, 0]],
+      },
+    },
+   },
+    ["flash292_fakelight"] = {
+    usedefaultexplosions = false,
+
+  groundflash = {
+      circlealpha        = 3,
+      circlegrowth       = 16,
+      flashalpha         = 2.9,
+      flashsize          = 120,
+      ttl                = 12,
+      color = {
+        [1]  = 1,
+        [2]  = 0.89999997615814,
+        [3]  = 0.80000001192093,
+      },
+    },
+    fakedynflash = {
+      air                = false,
+      class              = [[CSimpleGroundFlash]],
+      count              = 4,
+      ground             = true,
+      
+      water              = false,
+      properties = {
+        colormap           = [[0.8 0.6 0 0.90	0.8 0.6 0 0.30     0 0 0 0.1]],
+        size               = 102,
+        sizegrowth         = [[3 r-3]],
+        texture            = [[groundflash]],
+        ttl                = 26,
+      },
+    },
+      explosionball = {
+      air                = true,
+      class              = [[CSimpleParticleSystem]],
+      count              = 1,
+      ground             = true,
+      water              = false,
+      properties = {
+        airdrag            = 1,
+        colormap           = [[0 0 0 0  1 0.8 0.6 .1   1 0.8 0.4 .8  	0 0 0 0.01]],
+        directional        = true,
+        emitdir            = [[0, 0.5, 0]],
+        emitrot            = 0,
+        emitrotspread      = 360,
+        emitvector         = [[0, 1, 0]],
+        gravity            = [[0, 0, 0]],
+        numparticles       = 24,
+        particlelife       = 8,
+        particlelifespread = 16,
+        particlesize       = 1,
+        particlesizespread = 8,
+        particlespeed      = [[0 r0.2 i-0.05]],
+        particlespeedspread = 1.5,
+        pos                = [[0, 5, 0]],
+        sizegrowth         = [[0.50 r-.50]],
+        sizemod            = 1.0,
+        texture            = [[smokeorange]],
+        useairlos          = true,
+      },
+    },
+    spark = {
+      air                = true,
+      class              = [[CSimpleParticleSystem]],
+      count              = 1,
+      ground             = true,
+      water              = false,
+      properties = {
+        airdrag            = 1,
+        colormap           = [[1 0.75 0 .01   0.96 .74 0.05 .008  	0 0 0 0.01]],
+        directional        = true,
+        emitrot            = 0,
+        emitrotspread      = [[0 r-360 r360]],
+        emitvector         = [[0, 1, 0]],
+        gravity            = [[0, -.25 r0.25 r-1, 0]],
+        numparticles       = 30,
+        particlelife       = 10,
+        particlelifespread = 50,
+        particlesize       = 1,
+        particlesizespread = 2,
+        particlespeed      = 5,
+        particlespeedspread = 3,
+        pos                = [[0, 18, 0]],
+        sizegrowth         = [[0.0 r.05]],
+        sizemod            = 1.0,
+        texture            = [[Plasma]],
+        useairlos          = true,
+      },
+    },
+     plumeSpawn = {
+      air                = true,
+      class              = [[CExpGenSpawner]],
+      count              = 1,
+      ground             = true,
+      water              = true,
+      properties = {
+        delay              = 0,
+        explosiongenerator = [[custom:plume]],
+        pos                = [[0, 0, 0]],
+      },
+    },
+     plasmaSpawn = {
+      air                = true,
+      class              = [[CExpGenSpawner]],
+      count              = 1,
+      ground             = true,
+      water              = true,
+      properties = {
+        delay              = 0,
+        explosiongenerator = [[custom:klara]],
         pos                = [[0, 0, 0]],
       },
     },

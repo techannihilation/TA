@@ -61,25 +61,30 @@ local BlackList = {
    ["armbc_arm_bccannon"] = true,
    ["armtrmph_cannon_trmph"] = true,
    ["aseadragon_seadragprime"] = true,
-
-
+  
+   --["armbrtha_arm_berthacannon2"] = true,
+   ["armbrtha1_arm_berthacannon1"] = true,
    ["armvulc_armvulc_weapon2"] = true,
    ["armvulc1_armvulc_weapon1"] = true,
    ["armvulc2_armvulc_weapon3"] = true,
+   ["avtr_arm_berthacannon2"] = true,
    
    ["cmortor_mortartillery"] = true,
    ["corpun_corfixed_gun"] = true,
    ["corpun_corfixed_gun_high"] = true,
    ["corblackhy_hydra_prime"] = true,
    ["cortyrnt_cannon_tyrnt"] = true,
-
-
+   
+   --["corint_core_intimidator2"] = true,
+   ["corint1_core_intimidator1"] = true,
    ["corbuzz_corbuzz_weapon2"] = true,
    ["corbuzz1_corbuzz_weapon1"] = true,
    ["corbuzz2_corbuzz_weapon3"] = true,
+   ["clb_core_intimidator2"] = true,
 
    ["tlllbt_tllfixed_gun"] = true,
    ["tlllbt_tllfixed_gun_high"] = true,
-   }
+   ["tlllrpt_arm_berthacannon"] = true,
+}
    
 return BlackList, Armtrails, Coretrails, Tlltrails, Plasmabatts

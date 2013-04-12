@@ -60,6 +60,67 @@
 		ground=1;
 		count=1;
 	}
-	
-
+}
+[plume_small]
+{
+	[dirt1]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=1.5;
+			sizeMod=1.0;
+			pos=0, 2, 0;
+			emitVector=0, 1, 0;
+			gravity=0, 0, 0;
+			colorMap=1 0.5 0.3 0.3  0.45 0.37 0.3 0.6  0.45 0.37 0.3 .6	 0 0 0 0.01;
+			Texture=dirtplosion2;
+			airdrag=0.8;
+			particleLife=18.5;
+			particleLifeSpread=3;
+			numParticles=15;
+			particleSpeed=0;
+			particleSpeedSpread=12;
+			particleSize=1;
+			particleSizeSpread=3;
+			emitRot=0;
+			emitRotSpread=20;
+			directional=1;
+			alwaysvisible=1;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=1;
+	} 
+	[dirt2]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=1.5;
+			sizeMod=1.0;
+			pos=0, 2, 0;
+			emitVector=0, 1, 0;
+			gravity=0, 0, 0;
+			colorMap=1 0.6 0.2 0.3	 0 0 0 0.01;
+			Texture=dirtplosion2;
+			airdrag=0.8;
+			particleLife=18.5;
+			particleLifeSpread=3;
+			numParticles=15;
+			particleSpeed=0;
+			particleSpeedSpread=12;
+			particleSize=1;
+			particleSizeSpread=3;
+			emitRot=0;
+			emitRotSpread=20;
+			directional=1;
+			alwaysvisible=1;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=1;
+	}
 }
