@@ -566,13 +566,13 @@ local morphDefs = {
 	},
       armshock1 = {
 		into = 'armshock',
-		time = 60,
+		time = 150,
 		xp = 0.75,
 	},
       armraven1 = {
 		into = 'armraven',
-		time = 60,
-		xp = 0.60,
+		time = 150,
+		xp = 0.70,
 	},
       tllweb = {
 		into = 'tllupgweb',
