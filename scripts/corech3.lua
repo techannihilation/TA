@@ -9,6 +9,7 @@ local TechName = 'Advanced T1 Unit Research Centre'
 local team = Spring.GetUnitTeam(unitID)
 
 local currentTechCount
+local new = 0
 
 local function StunnedCheck()
 	while true do
@@ -65,18 +66,18 @@ local function Deactivate()
 	StopSpin ( radar , y_axis, 0.000000 )
 end
 
---[[
-local function TechLost()
+
+local function TechLostOut() -- callout dont use TechLost or TechGranted is brmt callin
   Spring.Echo("Techlost")
- -- currentTechCount = Spring.GetTeamRulesParam(team,"technology:" .. TechName)
- -- Spring.Echo("rc amounts :".. currentTechCount)
   GG.TechGrant(TechName,team,-1)
 end
 
-local function TechGranted()
-  Spring.Echo("Techgranted")
- -- currentTechCount = Spring.GetTeamRulesParam(team,"technology:" .. TechName)
-  GG.TechGrant(TechName,team,1)
+local function TechGrantedOut()
+     Spring.Echo("Techgranted")
+-- if new < 1 then
+   GG.TechGrant(TechName,team,1)
+ -- end
+  new = new + 1
 end
 --]]
 function script.Create()
@@ -87,12 +88,12 @@ function script.Create()
 end
 
 function script.Activate()
-  	StartThread( TechGranted)
+  	StartThread( TechGrantedOut)
 	StartThread( Activate)
 end
 
 function script.Deactivate()
-  	StartThread( TechLost)
+  	StartThread( TechLostOut)
 	StartThread( Deactivate)
 end
 
