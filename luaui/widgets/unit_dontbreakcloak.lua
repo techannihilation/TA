@@ -1,10 +1,10 @@
 
 function widget:GetInfo()
 	return {
-		name      = 'Com DontBreakCloak',
-		desc      = 'Sets commanders to hold fire when cloaked',
-		author    = 'Niobium',
-		version   = '1.0',
+		name      = 'DontBreakCloak',
+		desc      = 'Sets units to hold fire when cloaked',
+		author    = 'Niobium',  
+		version   = '1.1',
 		date      = 'April 2011',
 		license   = 'GNU GPL, v2 or later',
 		layer     = 0,
@@ -24,6 +24,9 @@ local isCommander = {
   [UnitDefNames["corcom6"].id] = true,
   [UnitDefNames["corcom7"].id] = true,
   [UnitDefNames["corsktl"].id] = true,
+  [UnitDefNames["corjurgen"].id] = true,
+  [UnitDefNames["corprot"].id] = true,
+
 
 --Arm 
   [UnitDefNames["armcom"].id] = true,
@@ -33,6 +36,9 @@ local isCommander = {
   [UnitDefNames["armcom6"].id] = true,
   [UnitDefNames["armcom7"].id] = true,
   [UnitDefNames["taipan"].id] = true,
+  [UnitDefNames["armpaspd"].id] = true,
+  [UnitDefNames["armsnipe"].id] = true,
+ 
 
 --The lost legacy
   [UnitDefNames["tllcom"].id] = true,
@@ -41,6 +47,8 @@ local isCommander = {
   [UnitDefNames["tllcom6"].id] = true,
   [UnitDefNames["tllcom7"].id] = true,
   [UnitDefNames["tlltraq"].id] = true,
+  [UnitDefNames["tllsniper"].id] = true,
+  [UnitDefNames["tllwhale"].id] = true,
 
 }
 
