@@ -655,6 +655,16 @@ local morphDefs = {
 		metal = 2700,
 		energy = 33000,
 	},
+      corshieldgen = {
+		into = 'corshieldgen_static',
+		tech = 1,
+		time = 60
+	},    
+      corshieldgen_static = {
+		into = 'corshieldgen',
+		tech = 1,
+		time = 60
+		},    
 }
 
 
