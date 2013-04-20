@@ -124,6 +124,18 @@ local UnitEffects = {
     {class='ShieldSphere',options=corsfusShieldSphere},
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,100.9,0}, size=32, precision=22, repeatEffect=true}},
   },
+   [UnitDefNames["corshieldgen"].id] = {
+    {class='ShieldSphere',options=corshieldgenShieldSphere},
+    {class='SimpleParticles2', options=MergeTable({piece="sphere", delay=20, lifeSpread=300},shield)},
+    {class='SimpleParticles2', options=MergeTable({piece="sphere", delay=40, lifeSpread=300},shield)},
+    {class='SimpleParticles2', options=MergeTable({piece="sphere", delay=60, lifeSpread=300},shield)},
+  },
+   [UnitDefNames["corshieldgen_static"].id] = {
+    {class='ShieldSphere',options=corshieldgen_staticShieldSphere},
+    {class='SimpleParticles2', options=MergeTable({piece="sphere", delay=20, lifeSpread=300},shield)},
+    {class='SimpleParticles2', options=MergeTable({piece="sphere", delay=40, lifeSpread=300},shield)},
+    {class='SimpleParticles2', options=MergeTable({piece="sphere", delay=60, lifeSpread=300},shield)},
+  },
  [UnitDefNames["armmex1"].id] = {
     {class='SimpleParticles2', options=MergeTable({pos={-6,15,0}, delay=10, lifeSpread=300},sparks)},
   },

@@ -326,6 +326,26 @@ tllmedfusionSphere = {
   repeatEffect=true
 }
 
+corshieldgenShieldSphere = {
+  layer=-35,
+  life=20,
+  piece="sphere",
+  layer=-16,
+  size=14,
+  colormap1 = { {0.65,0.55,0.9, 1.0},{0.55,0.55,0.9, 0.8},{0.65,0.55,0.9, 0.8},{0.55,0.55,0.9, 1.0} },
+  colormap2 = { {0, 0, 0, 1},{0, 0, 0, 1},{0, 0, 0, 1},{0, 0, 0, 1} },
+  repeatEffect=true
+}
+corshieldgen_staticShieldSphere = {
+  layer=-35,
+  life=30,
+  piece="sphere",
+  layer=-16,
+  size=20,
+  colormap1 = { {0.85,0.55,0.9, 1.0},{0.55,0.55,0.9, 0.8},{0.85,0.55,0.9, 0.8},{0.55,0.55,0.9, 1.0} },
+  colormap2 = { {0, 0, 0, 1},{0, 0, 0, 1},{0, 0, 0, 1},{0, 0, 0, 1} },
+  repeatEffect=true
+}
 ----------------------------------------------------------------------------
 -- LIGHT -------------------------------------------------------------------
 ----------------------------------------------------------------------------
@@ -561,3 +581,24 @@ sparksr2 = {
   count        = 8,
   repeatEffect = true,
   }
+  shield = {
+  speed        = 0,
+  speedSpread  = 0,
+  life         = 60,
+  lifeSpread   = 10,
+  partpos      = "0,0,0",
+  colormap     = { {0.4, 0.4, 0.8, 0.01}, {0.3, 0.3, 0.7, 0.01}, {0, 0, 0, 0.0}, {0, 0, 0, 0.0}, {0, 0, 0, 0.0}, {0, 0, 0, 0.0}, {0, 0, 0, 0.0}, {0, 0, 0, 0.0}, },
+  rotSpeed     = 0.1,
+  rotFactor    = 1.0,
+  rotFactorSpread = -2.0,
+  rotairdrag   = 0.99,
+  rotSpread    = 360,
+  size         = 12,
+  sizeSpread   = 12,
+  sizeGrowth   = 0.4,
+  emitVector   = {0,0,0},
+  emitRotSpread = 70,
+  texture      = 'bitmaps/Lightningball3.tga',
+  count        = 6,
+  repeatEffect = true,
+}
