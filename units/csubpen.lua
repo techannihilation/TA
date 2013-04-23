@@ -18,6 +18,7 @@ local unitDef = {
 	buildingGroundDecalType = [[csubpen_aoplane.dds]],
 	buildPic = [[CSUBPEN.png]],
 	buildTime = 11402,
+	canMove = true,
 	canPatrol = true,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON PLANT]],
 	corpse = [[DEAD]],
