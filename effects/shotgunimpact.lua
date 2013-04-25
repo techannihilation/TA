@@ -56,7 +56,6 @@ return {
         color              = 0.3,
         pos                = [[0,-1 i4,0]],
         size               = 45,
-        sizegrowth         = 0,
         speed              = [[0, 5, 0]],
       },
     },
