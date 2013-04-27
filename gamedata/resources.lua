@@ -219,6 +219,9 @@ local resources = {
 			debris2='other/debris2.tga',
 			debris='other/debris.tga',
 			dirtplosion2='other/dirtplosion2.tga',
+			
+			nanonew='nano.tga',
+			exploo='explo.jpg',
 		},
 	},
 }
