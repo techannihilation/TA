@@ -60,6 +60,15 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
+Debu()
+{
+	while ( TRUE )
+	{
+		emit-sfx 1024 + 0 from target;
+		sleep 50;
+	}
+}
+
 fum()
 {
 	while( Static_Var_2 )
@@ -130,6 +139,7 @@ Create()
 	}
 	start-script Launchsequence();
 	start-script SmokeUnit();
+	start-script Debu();
 }
 
 AimFromPrimary(piecenum)
@@ -145,20 +155,17 @@ AimPrimary(heading, pitch)
 	}
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	var Func_Var_3, Func_Var_4;
+	var radius;
 	turn aimer to y-axis heading now;
-	turn aimer to x-axis <0.000000> - pitch now;
-	Func_Var_3 = [6000.000000];
-	move target to z-axis Func_Var_3 now;
-	while( get GROUND_HEIGHT(get PIECE_XZ(target)) < get PIECE_Y(target) )
-	{
-		Func_Var_3 = Func_Var_3 + [100.000000];
-		move target to z-axis Func_Var_3 now;
-	}
-	Func_Var_4 = get ABS(get XZ_HYPOT(get PIECE_XZ(target) - get PIECE_XZ(base)));
-	turn aimer to x-axis <0.000000> now;
-	move target to z-axis Func_Var_4 now;
+	radius = get ABS(get KTAN(<90>+pitch))*1280000;
+	move target to z-axis radius now;
+	sleep 1;
 	return (1);
+}
+
+FirePrimary()
+{
+	sleep 150;
 }
 
 QueryPrimary(piecenum)
