@@ -2,31 +2,27 @@
 
 return {
   ["sparklegreen"] = {
-    explosionspikes = {
+     sparklespawn = {
       air                = true,
-      class              = [[explspike]],
-      count              = 7,
+      class              = [[CExpGenSpawner]],
+      count              = 30,
       ground             = true,
-      water              = true,
+      water              = false,
       properties = {
-        alpha              = 1,
-        alphadecay         = 0.19,
-        alwaysvisible      = false,
-        color              = [[0.1, 0.6, 0.1]],
-        dir                = [[-45 r90,-45 r90,-45 r90]],
-        length             = 0.1,
-        width              = 1,
+        delay              = [[0 i0.13 r1]],
+        explosiongenerator = [[custom:sparklegreen_control]],
+        pos                = [[-3 r6, 0 r38, -3 r6]],
       },
     },
-    groundflash = {
+     groundflash = {
       air                = true,
       alwaysvisible      = true,
       circlealpha        = 0.0,
       circlegrowth       = 8,
       flashalpha         = 0.9,
-      flashsize          = 10,
+      flashsize          = 40,
       ground             = true,
-      ttl                = 17,
+      ttl                = 25,
       water              = true,
       color = {
         [1]  = 0.5,
@@ -34,7 +30,9 @@ return {
         [3]  = 0.5,
       },
     },
-    poof01 = {
+  },
+   ["sparklegreen_control"] = {
+      poof01 = {
       air                = true,
       class              = [[CSimpleParticleSystem]],
       count              = 1,
@@ -42,45 +40,26 @@ return {
       properties = {
         airdrag            = 0.2,
         alwaysvisible      = false,
-        colormap           = [[1.0 1.0 1.0 0.04	0.5 1.0 0.5 0.01	0.1 0.1 0.1 0.01]],
+        colormap           = [[1.0 1.0 1.0 0.84	0.5 1.0 0.5 0.11	0.5 1.0 0.5 0.01	0.1 0.1 0.1 0.01]],
         directional        = false,
         emitrot            = 45,
         emitrotspread      = 32,
         emitvector         = [[0, 1, 0]],
-        gravity            = [[0, 0.5, 0]],
-        numparticles       = 8,
-        particlelife       = 5,
+        gravity            = [[0, -.10, 0]],
+        numparticles       = 1,
+        particlelife       = [[4 i0.43 r1]],
         particlelifespread = 16,
-        particlesize       = 10,
+        particlesize       = 2.2,
         particlesizespread = 0,
         particlespeed      = 16,
         particlespeedspread = 1,
-        pos                = [[0, 2, 0]],
-        sizegrowth         = 0.8,
+        pos                = [[0, 0, 0]],
+        sizegrowth         = -0.12,
         sizemod            = 1.0,
-        texture            = [[randdots]],
+        texture            = [[nanonew]],
         useairlos          = false,
       },
     },
-    pop1 = {
-      air                = true,
-      class              = [[heatcloud]],
-      count              = 1,
-      ground             = true,
-      water              = true,
-      properties = {
-        alwaysvisible      = false,
-        heat               = 10,
-        heatfalloff        = 1.8,
-        maxheat            = 10,
-        pos                = [[r-2 r2, 5, r-2 r2]],
-        size               = 1,
-        sizegrowth         = 16,
-        speed              = [[0, 0, 0]],
-        texture            = [[greennovaexplo]],
-      },
-    },
   },
-
 }
 
