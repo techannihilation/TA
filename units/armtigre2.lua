@@ -123,6 +123,7 @@ local weaponDefs = {
 		reloadtime = 2.5,
 		renderType = 4,
 		separation = 0.45,
+		size = 2.21,
 		sizedecay = -0.15,
 		soundHitDry = [[xplomed4]],
 		soundStart = [[cannhvy2]],
