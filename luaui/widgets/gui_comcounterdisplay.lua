@@ -6,7 +6,7 @@ function widget:GetInfo()
 		date		= "Dec 27, 2012",
 		license		= "GNU GPL, v2 or later",
 		layer		= 0,
-		enabled		= true
+		enabled		= false
 	}
 end
 
@@ -119,7 +119,7 @@ function isCom(unitID,unitDefID)
 end
 
 function isDeadCom(fName)
-	return fName == "corcom_dead" or fName == "armcom_dead" -- or fName == "corcom_heap" or fName == "armcom_heap"
+	return fName == "corcom_dead" or fName == "armcom_dead" or fName == "tllcom_dead" -- or fName == "corcom_heap" or fName == "armcom_heap"
 end
 
 function colourNames(teamID) -- I didn't make this, but thank you to whoever did!
