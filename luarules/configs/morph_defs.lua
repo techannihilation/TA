@@ -658,12 +658,12 @@ local morphDefs = {
       corshieldgen = {
 		into = 'corshieldgen_static',
 		tech = 1,
-		time = 60
+		time = 25,
 	},    
       corshieldgen_static = {
 		into = 'corshieldgen',
 		tech = 1,
-		time = 60
+		time = 25,
 		},    
 }
 
