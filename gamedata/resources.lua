@@ -222,6 +222,7 @@ local resources = {
 			
 			nanonew='nano.tga',
 			exploo='explo.jpg',
+			ring='ring.tga',
 		},
 	},
 }
