@@ -58,7 +58,6 @@ return {
         agespeed           = 0.02,
         pos                = [[-20 r40, r20, -20 r40]],
         size               = [[5 r10]],
-        sizegrowth         = -2,
         speed              = [[0.75 r-1.5, 1.7 r1.6, 0.75 r-1.5]],
       },
     },

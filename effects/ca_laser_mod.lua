@@ -12,9 +12,6 @@ return {
       ground             = true,
       water              = true,
       properties = {
-        directional        = true,
-        emitrot            = 50,
-        emitrotspread      = 50,
         heat               = 10,
         heatfalloff        = 0.4,
         maxheat            = 15,
@@ -79,9 +76,6 @@ return {
       ground             = true,
       water              = true,
       properties = {
-        directional        = true,
-        emitrot            = 50,
-        emitrotspread      = 50,
         heat               = 10,
         heatfalloff        = 0.4,
         maxheat            = 15,

@@ -26,7 +26,6 @@ return {
         airdrag            = 1,
         colormap           = [[1 0.7 0 .8  1 .55 0.05 .8   .05 .05 .05 .8  	0 0 0 0.01]],
         directional        = true,
-        emitdir            = [[dir]],
         emitrot            = 0,
         emitrotspread      = 0,
         emitvector         = [[0, 0.2, 0]],

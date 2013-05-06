@@ -26,7 +26,6 @@ return {
       ground             = true,
       water              = true,
       properties = {
-		colormap           = [[0.9 0.9 0.8 0.6      1 1 0.1 0.4]],
         heat               = 20,
         heatfalloff        = 1,
         maxheat            = 20,
@@ -47,7 +46,6 @@ return {
       water              = true,
       properties = {
         airdrag            = 1.0,
-        colormap           = [[0.9 0.9 0.8 0.6      1 1 0.1 0.4]],
         directional        = true,
         emitrot            = 0,
         emitrotspread      = 180,
@@ -91,7 +89,6 @@ return {
       ground             = true,
       water              = true,
       properties = {
-		colormap           = [[0.8 0.9 0.93 0.6      0.1 1 1 0.4]],
         heat               = 20,
         heatfalloff        = 1,
         maxheat            = 20,
@@ -158,7 +155,6 @@ return {
       ground             = true,
       water              = true,
       properties = {
-		colormap           = [[0.8 0.9 0.8 0.6      0.1 1 0.1 0.4]],
         heat               = 20,
         heatfalloff        = 1,
         maxheat            = 20,

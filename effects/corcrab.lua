@@ -65,7 +65,6 @@ return {
         pos                = [[5 r-5, 5 r-5, 5 r-5]],
         size               = 1,
         sizeexpansion      = 0.25,
-        sizegrowth         = -1.5,
         speed              = [[0, 0.6 r0.3, 0]],
         startsize          = 0.5,
       },

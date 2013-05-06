@@ -21,7 +21,6 @@ return {
       ground             = true,
       water              = true,
       properties = {
-        color              = [[0.0, 1, 0.5]],
         heat               = 15,
         heatfalloff        = 1,
         maxheat            = 15,
@@ -44,7 +43,6 @@ return {
         pos                = [[0, 0, 0]],
         size               = 2.25,
         sizeexpansion      = 0.1,
-        sizegrowth         = 0.2,
         speed              = [[0, 0.33, 0]],
         startsize          = 2.25,
       },

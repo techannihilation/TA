@@ -58,7 +58,6 @@ return {
         pos                = [[0, 0, 0]],
         size               = 0.2,
         sizeexpansion      = 0.1,
-        sizegrowth         = 0.2,
         speed              = [[0, 0.6, 0.0]],
         startsize          = 0.1,
       },
