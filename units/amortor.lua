@@ -63,6 +63,11 @@ local unitDef = {
 	customparams = {
 		RequireTech = [[Advanced T1 Unit Research Centre]],
 	},
+	sfxtypes = {
+		explosiongenerators = {
+			[1] = [[custom:mediumflare]],
+		},
+        },
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],

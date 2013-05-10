@@ -58,6 +58,11 @@ local unitDef = {
 	workerTime = 0,
 	yardMap = [[oooooooooooooooo]],
 	featureDefs = nil,
+	sfxtypes = {
+		explosiongenerators = {
+			[1] = [[custom:mediumflare]],
+		},
+        },
 	sounds = {
 		canceldestruct = [[cancel2]],
 		cloak = [[kloak2]],
