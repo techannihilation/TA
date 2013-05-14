@@ -58,7 +58,7 @@ local function SmokeUnit(healthpercent, sleeptime, smoketype)
 end
 
 local function Activate()
-        if stunned and stunned == 1 then SetUnitValue(COB.ACTIVATION, 0) return end -- ADDED FOR STUNABLE
+  --      if stunned and stunned == 1 then SetUnitValue(COB.ACTIVATION, 0) return end -- ADDED FOR STUNABLE
 	Spin( radar , y_axis, math.rad(60.010989))
 end
 
@@ -66,7 +66,7 @@ local function Deactivate()
 	StopSpin ( radar , y_axis, 0.000000 )
 end
 
-
+--[[
 local function TechLostOut() -- callout dont use TechLost or TechGranted is brmt callin
   Spring.Echo("Techlost")
   GG.TechGrant(TechName,team,-1)
@@ -83,17 +83,17 @@ end
 function script.Create()
 
 	StartThread(Activate)
-	StartThread(StunnedCheck)
+	--StartThread(StunnedCheck)
 	StartThread(SmokeUnit)
 end
 
 function script.Activate()
-  	StartThread( TechGrantedOut)
+  --	StartThread( TechGrantedOut)
 	StartThread( Activate)
 end
 
 function script.Deactivate()
-  	StartThread( TechLostOut)
+  --	StartThread( TechLostOut)
 	StartThread( Deactivate)
 end
 
