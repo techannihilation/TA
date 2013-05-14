@@ -78,6 +78,7 @@ local unitDef = {
 		[16] = [[armkrmi]],
 		[17] = [[krogtaar]],
 		[18] = [[corpyrox]],
+		[19] = [[corshieldgen]],
 	},
 	featureDefs = nil,
 	sfxtypes = {
