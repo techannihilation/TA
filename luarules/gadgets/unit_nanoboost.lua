@@ -35,6 +35,7 @@ local SpGetUnitPosition = Spring.GetUnitPosition
 local SpSpawnCEG = Spring.SpawnCEG
 local uDefs = UnitDefs
 local SpGetUnitHealth = Spring.GetUnitHealth
+local SpSetUnitHealth = Spring.SetUnitHealth
 
 local mrandom = math.random
 --------------------------------------------------------------------------------
@@ -68,7 +69,7 @@ local buildspeedCmdDesc = {
   cursor  = 'Boost',
   action  = 'Boost',
   tooltip = 'Divert All power to Construction',
-  params  = { '0', 'Boost', 'Normal'}
+  params  = { '0', 'Boost Off', 'Boost On'}
 }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -89,7 +90,7 @@ local function AddBuildspeedCmdDesc(unitID)
     --Remove unused button
     removeButton(unitID, CMD.ATTACK)
     removeButton(unitID, CMD.MOVE)
-    removeButton(unitID, CMD.FIGHT)
+    --removeButton(unitID, CMD.FIGHT)
     removeButton(unitID, CMD.FIRE_STATE)
     buildspeedCmdDesc.params[1] = '1'
     spInsertUnitCmdDesc(unitID, insertID + 1, buildspeedCmdDesc)
@@ -171,9 +172,9 @@ function gadget:GameFrame(n)
     for unitID in pairs(boostednanos) do
       	if mrandom(0,1) == 0 then 
 	  local _,hp = SpGetUnitHealth(unitID)
-	  local damage = mrandom(0,(hp*0.25))
+	  local damage = mrandom(0,(hp*0.33))
 	  --Spring.Echo("hp = " .. hp .."      " .. damage)
-	  Spring.AddUnitDamage(unitID ,damage)
+	  SpSetUnitHealth(unitID ,(hp-damage))
 	  local x,y,z = SpGetUnitPosition(unitID)
 	  SpSpawnCEG("ZEUS_FLASH_SUB",x,y,z,0,0,0)
       end
