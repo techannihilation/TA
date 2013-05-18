@@ -105,7 +105,7 @@ local function UpdateButton(unitID, statusStr)
 
   local tooltip
   if (statusStr == 0) then
-    tooltip = 'Nano running in normal opperations\nWarning Boost mode all power diverted to Production\nNano will be running in an unstable mode\nDAMAGE WILL OCCUR'
+    tooltip = 'Nano running in normal opperations\n\255\255\001\001Warning Boost mode all power diverted to Production\nNano will be running in an unstable mode\nDAMAGE WILL OCCUR'
   else 
     tooltip = 'Boost: Production at 180%.\nSelect to Revert to normal production.'
    end
