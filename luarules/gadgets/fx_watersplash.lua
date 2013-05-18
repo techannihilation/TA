@@ -43,6 +43,21 @@ local BlackList = {  --todo move to config file it will get big
      ["armcrack_lightartmiss"] = true,
      ["corrock_lightartmiss"] = true,
      ["tlldmc_tlldmc"] = true,
+     
+     ["armbanth_bantha_rocket"] = true,
+     ["armbanth1_bantha_rocket1"] = true,
+     ["armmerl_armtruck_rocket"] = true,
+     ["armorco_corkrog_rocket"] = true,
+     ["armtigre2_corkrog_rocket"] = true,
+     ["corhrk_corhrk_rocket"] = true,
+     ["corkrog_corkrog_rocket"] = true,
+     ["corkrog1_corkrog_rocket1"] = true,
+     ["corvroc_cortruck_rocket"] = true,
+     ["shiva_shiva_rocket"] = true,
+     ["tllconvincer_armtruck_rocket"] = true,
+     ["tllhrk_corhrk_rocket"] = true,
+     ["tllvisitor_visitor_vpulse"] = true,
+
    }
    
 if not gadgetHandler:IsSyncedCode() then
