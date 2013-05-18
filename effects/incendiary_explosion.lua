@@ -309,7 +309,7 @@ return {
       water              = true,
       properties = {
         delay              = 0,
-        explosiongenerator = [[custom:Watersplash_Extralarge]],
+        explosiongenerator = [[custom:Watersplash_Small]],
         pos                = [[0, 0, 0]],
       },
     },

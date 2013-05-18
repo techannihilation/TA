@@ -8,42 +8,42 @@
 --  Licensed under the terms of the GNU GPL, v2 or later.
 --
 --------------------------------------------------------------------------------
+-- This gadget checks through the attributes of each unitdef and assigns an appropriate icon for use in the minimap & zoomed out mode.
+--
+-- The reason that this is a gadget (it could also be a widget) and not part of weapondefs_post.lua/iconTypes.lua is the following:  
+-- the default valuesfor UnitDefs attributes that are not specified in our unitdefs lua files are only loaded into UnitDefs AFTER  
+-- unitdefs_post.lua and iconTypes.lua have been processed. For example, at the time of unitdefs_post, for most units ud.speed is  
+-- nil and not a number, so we can't e.g. compare it to zero. Also, it's more modularized as a widget/gadget. 
+-- [We could set the default values up in unitdefs_post to match engine defaults but thats just too hacky.]
+--
+-- Bluestone 27/04/2013
 --------------------------------------------------------------------------------
 
-function widget:GetInfo()
+function gadget:GetInfo()
   return {
     name      = "CustomIcons",
     desc      = "Sets custom unit icons for BA",
     author    = "trepan,BD,TheFatController",
     date      = "Jan 8, 2007",
     license   = "GNU GPL, v2 or later",
-    layer     = 0,
+    layer     = -100,
     enabled   = true  --  loaded by default?
   }
 end
 
 --------------------------------------------------------------------------------
---------------------------------------------------------------------------------
 
+if (gadgetHandler:IsSyncedCode()) then
+  return false
+end
+
+--------------------------------------------------------------------------------
 
 local wasLuaModUIEnabled = 0
 
 --------------------------------------------------------------------------------
 
-
-function widget:Shutdown()
-  -- revert our changes
-  for udid,ud in pairs(UnitDefs) do
-    if ((ud ~= nil) and (ud.origIconType ~= nil)) then
-      Spring.SetUnitDefIcon(udid, ud.origIconType)
-    end
-  end
-end
-
-
---------------------------------------------------------------------------------
-
-function widget:Initialize()
+function gadget:Initialize()
 
   Spring.AddUnitIcon("armcom.user", "LuaUI/Icons/armcom.png",2)
   Spring.AddUnitIcon("corcom.user", "LuaUI/Icons/corcom.png",2)
@@ -199,6 +199,7 @@ function widget:Initialize()
       end
     end
   end
+  gadgetHandler:RemoveGadget()
 end
 
 
