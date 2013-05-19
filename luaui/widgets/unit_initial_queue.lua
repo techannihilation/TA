@@ -208,10 +208,15 @@ function widget:Initialize()
 	-- Get our starting unit
 	-- Sometimes the information is not available, so the widget will error and exit :)
 	local _, _, _, _, mySide = Spring.GetTeamInfo(myTeamID)
-	local startUnitName = Spring.GetSideData(mySide)
-	sDefID = UnitDefNames[startUnitName].id
-	InitializeFaction(sDefID)
-	WG["faction_change"] = InitializeFaction
+	  if mySide == "" then -- Don't run unless we know what faction the player is 
+		widgetHandler:RemoveWidget(self) 
+		return 
+	  else 
+	        local startUnitName = Spring.GetSideData(mySide) 
+	        sDefID = UnitDefNames[startUnitName].id 
+	        InitializeFaction(sDefID) 
+	        WG["faction_change"] = InitializeFaction 
+	  end 
 end
 
 function InitializeFaction(sDefID)
