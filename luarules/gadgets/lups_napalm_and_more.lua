@@ -25,10 +25,12 @@ local FIRE_WEAPONS = {
 
 local DISTORT_WEAPONS = {
   ["armsonic_sonic_cannon"] = true,
-  ["corvroc_cortruck_rocket'"] = true,
-  ["armmerl_armtruck_rocket'"] = true,
-  ["shiva_shiva_rocket'"] = true,
-  ["armorco_corkrog_rocket'"] = true,
+  ["corvroc_cortruck_rocket"] = true,
+  ["armmerl_armtruck_rocket"] = true,
+  ["shiva_shiva_rocket"] = true,
+  ["armorco_corkrog_rocket"] = true,
+  ["corhowie_asm"] = true,
+  ["armmlrs_227mm_rockets3"] = true,
 }
 
 local MUSTARD_WEAPONS = {
