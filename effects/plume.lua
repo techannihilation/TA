@@ -11,8 +11,7 @@ return {
       water              = true,
       properties = {
         airdrag            = 0.8,
-        alwaysvisible      = true,
-        colormap           = [[1 0.5 0.3 0.3  0.45 0.37 0.3 0.6  0.45 0.37 0.3 .6	 0 0 0 0.01]],
+        colormap           = [[1 0.5 0.3 0.5 1 0.5 0.3 0.3  0.45 0.37 0.3 0.6  0.45 0.37 0.3 .6	 0 0 0 0.01]],
         directional        = true,
         emitrot            = 0,
         emitrotspread      = 25,
@@ -29,6 +28,8 @@ return {
         sizegrowth         = 2.8,
         sizemod            = 1.0,
         texture            = [[dirtplosion2]],
+        useairlos          = true,
+
       },
     },
     dirt2 = {
@@ -39,8 +40,7 @@ return {
       water              = true,
       properties = {
         airdrag            = 0.8,
-        alwaysvisible      = true,
-        colormap           = [[1 0.6 0.2 0.3	 0 0 0 0.01]],
+        colormap           = [[1 0.6 0.2 0.7	 0 0 0 0.01]],
         directional        = true,
         emitrot            = 0,
         emitrotspread      = 25,
@@ -57,6 +57,8 @@ return {
         sizegrowth         = 2.8,
         sizemod            = 1.0,
         texture            = [[dirtplosion2]],
+        useairlos          = true,
+
       },
     },
   },
@@ -70,8 +72,7 @@ return {
       water              = true,
       properties = {
         airdrag            = 0.8,
-        alwaysvisible      = true,
-        colormap           = [[1 0.5 0.3 0.3  0.45 0.37 0.3 0.6  0.45 0.37 0.3 .6	 0 0 0 0.01]],
+        colormap           = [[1 0.5 0.3 0.5 1 0.5 0.3 0.3 0.45 0.37 0.3 0.6  0.45 0.37 0.3 .6	 0 0 0 0.01]],
         directional        = true,
         emitrot            = 0,
         emitrotspread      = 20,
@@ -88,6 +89,8 @@ return {
         sizegrowth         = 1.5,
         sizemod            = 1.0,
         texture            = [[dirtplosion2]],
+        useairlos          = true,
+
       },
     },
     dirt2 = {
@@ -98,7 +101,6 @@ return {
       water              = true,
       properties = {
         airdrag            = 0.8,
-        alwaysvisible      = true,
         colormap           = [[1 0.6 0.2 0.3	 0 0 0 0.01]],
         directional        = true,
         emitrot            = 0,
@@ -116,6 +118,8 @@ return {
         sizegrowth         = 1.5,
         sizemod            = 1.0,
         texture            = [[dirtplosion2]],
+        useairlos          = true,
+
       },
     },
   },
