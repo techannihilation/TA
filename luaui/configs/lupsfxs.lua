@@ -240,7 +240,15 @@ armamakerEffect = {
   texture    = 'bitmaps/flash1.TGA',
 
 }
-
+armgenEffect = {
+  life       = math.huge,
+  pos        = {-2,33,2},
+  size       = 12,
+  sizeSpread = 7,
+  colormap   = { {0.9, 0.9, 0.5, 0.01} },
+  onActive   = true,
+  texture    = 'bitmaps/flare.TGA',
+}
 ----------------------------------------------------------------------------
 -- COLORSPHERES ------------------------------------------------------------
 ----------------------------------------------------------------------------
@@ -566,7 +574,7 @@ sparksr2 = {
   life         = 50,
   lifeSpread   = 20,
   partpos      = "5-rand()*10, 5-rand()*10, 5-rand()*10 ",
-  --partpos      = "0,0,0",
+  partpos      = "0,24,0",
   colormap     = { {0.8, 0.8, 0.8, 0.01}, {0, 0, 0, 0.0}, {0, 0, 0, 0.0}, {0, 0, 0, 0.0}, {0, 0, 0, 0.0}, {0, 0, 0, 0.0}, {0, 0, 0, 0.0}, {0, 0, 0, 0.0}, },
   rotSpeed     = 0.1,
   rotFactor    = 1.0,
@@ -599,3 +607,25 @@ sparksr2 = {
   count        = 6,
   repeatEffect = true,
 }
+  corgensparks = {
+  speed        = 0,
+  speedSpread  = 0,
+  life         = 30,
+  lifeSpread   = 20,
+  partpos      = "5-rand()*10, 5-rand()*10, 5-rand()*10 ",
+  partpos      = "0,24,0",
+  colormap     = { {0.6, 0.6, 0.0, 0.01}, {0, 0, 0, 0.0}, {0, 0, 0, 0.0}, {0, 0, 0, 0.0}, {0, 0, 0, 0.0}, {0, 0, 0, 0.0}, {0, 0, 0, 0.0}, {0, 0, 0, 0.0}, },
+  rotSpeed     = 0.1,
+  rotFactor    = 1.0,
+  rotFactorSpread = -2.0,
+  rotairdrag   = 0.99,
+  rotSpread    = 360,
+  size         = 13,
+  sizeSpread   = 12,
+  sizeGrowth   = 0.5,
+  emitVector   = {0,0,0},
+  emitRotSpread = 70,
+  texture      = 'bitmaps/Emg.tga',
+  count        = 8,
+  repeatEffect = true,
+  }
