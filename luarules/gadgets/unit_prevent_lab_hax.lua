@@ -108,7 +108,8 @@ end
 function gadget:UnitCreated(unitID, unitDefID)
   local ud = UnitDefs[unitDefID]
   local name = ud.name
-  if (ud.isFactory == true) and not (name == "armap" or name == "armaap" or name == "corap" or name == "coraap") then
+  if (ud.isFactory == true) and not (name == "armap" or name == "armaap" or name == "armeap" or name == "corap" or name == "coraap" or name == "coreap"
+  or name == "tllap" or name == "tllaap") then
 	local ux, uy, uz  = spGetUnitPosition(unitID)
 	local face = spGetUnitBuildFacing(unitID)
 	local xsize = ud.xsize*4
@@ -143,7 +144,7 @@ function gadget:UnitGiven(unitID, unitDefID)
 end
 
 function gadget:GameFrame(n)
-  if (n % 6 == 0) then 
+  if (n % 18 == 0) then 
 	checkLabs()
   end
 end
