@@ -103,6 +103,7 @@ local weaponDefs = {
 		areaOfEffect = 126,
 		cegTag = [[TLLRAVENTRAIL]],
 		fireStarter = 100,
+		fireSubmersed = true,
 		flightTime = 10,
 		guidance = true,
 		id = 243,
