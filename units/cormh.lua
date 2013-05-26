@@ -99,6 +99,7 @@ local weaponDefs = {
 		craterBoost = 0,
 		craterMult = 0,
 		explosionGenerator = [[custom:FLASH4]],
+		fireSubmersed = true,
 		fireStarter = 100,
 		flightTime = 10,
 		guidance = true,

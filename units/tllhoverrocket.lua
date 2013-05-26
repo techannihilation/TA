@@ -102,6 +102,7 @@ local weaponDefs = {
 	TLL_Vpulse = {
 		areaOfEffect = 126,
 		cegTag = [[TLLRAVENTRAIL]],
+		fireSubmersed = true,
 		fireStarter = 100,
 		flightTime = 10,
 		guidance = true,
