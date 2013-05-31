@@ -53,7 +53,7 @@ return {
         particlesizespread = 0,
         particlespeed      = [[1 r1]],
         particlespeedspread = 0,
-        pos                = [[0 r-2 r2, 0, 0 r-2 r2]],
+        pos                = [[0 r-2 r2, 4, 0 r-2 r2]],
         sizegrowth         = [[0.040]],
         sizemod            = 1.0,
         texture            = [[GenericSmokeCloud1]],
