@@ -28,7 +28,7 @@ if not gadgetHandler:IsSyncedCode() then
 	
 else
 	-----------------
-	-- SYNCED PART --Explosion_Medium_VLight
+	-- SYNCED PART --
 	-----------------
 	
   	local splashCEG1					= "Watersplash_Extrasmall"
