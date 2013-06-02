@@ -28,6 +28,25 @@ local BlackList = {
    ["avtr_arm_berthacannon2"] = true,
    ["tlldmc_tlldmc"] = true,
    ["coradon_coradon_weapon"] = true,
+   --Flak Cannons
+   ["tllflak_armflak_gun"] = true,
+   ["armfflak_armflak_gun"] = true,
+   ["tlldb_dragon_breath_gun"] = true,
+   ["tllflak_armflak_gun"] = true,
+   ["tllpuncher_tllflak_spider"] = true,
+   ["corfrog_armflak_gun"] = true,
+   ["corenaa_armflak_gun"] = true,
+   ["corsent_mobileflak"] = true,
+   ["corarch_mobileflak"] = true,
+   ["armyork_mobileflak"] = true,
+   ["aseadragon_seadragonflak"] = true,
+   ["corflak_armflak_gun"] = true,
+   ["armiguana_armflak_gun"] = true,
+   ["armhys_advflak"] = true,
+   ["corpre_advflak"] = true,
+   ["armflspd_armflak_spider"] = true,
+   ["armaak_aakflak"] = true,
+   ["armflak_armflak_gun"] = true,
    }
    
    local Armtrails = {
