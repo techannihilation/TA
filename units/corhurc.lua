@@ -93,6 +93,7 @@ local unitDef = {
 local weaponDefs = {
 	CORADVBOMB = {
 		areaOfEffect = 220,
+		burst = 5,
 		collideFriendly = false,
 		commandfire = false,
 		craterBoost = 0,
