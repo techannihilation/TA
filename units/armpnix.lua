@@ -93,6 +93,7 @@ local unitDef = {
 local weaponDefs = {
 	ARMADVBOMB = {
 		areaOfEffect = 194,
+		burst = 5,
 		collideFriendly = false,
 		commandfire = false,
 		craterBoost = 0,
