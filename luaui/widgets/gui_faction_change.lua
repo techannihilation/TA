@@ -16,9 +16,9 @@ end
 --------------------------------------------------------------------------------
 local px, py = 300, 300
 
-local armcom = UnitDefNames.armcom.id
-local corcom = UnitDefNames.corcom.id
-local tllcom = UnitDefNames.tllcom.id
+local armcomDefID = UnitDefNames.armcom.id
+local corcomDefID = UnitDefNames.corcom.id
+local tllcomDefID = UnitDefNames.tllcom.id
 
 --------------------------------------------------------------------------------
 -- Speedups
@@ -111,11 +111,11 @@ function widget:DrawScreen()
         -- Highlight
         glColor(1, 1, 0, 0.5)
         local teamStartUnit = spGetTeamRulesParam(myTeamID, 'startUnit')
-        if teamStartUnit == armcom then
+        if teamStartUnit == armcomDefID then
             glRect(1, 1, 63, 63)
-        elseif teamStartUnit == corcom then
+        elseif teamStartUnit == corcomDefID then
             glRect(65, 1, 127, 63)
-        elseif teamStartUnit == tllcom then
+        elseif teamStartUnit == tllcomDefID then
             glRect(129, 1, 191, 63)
         end
         
@@ -155,29 +155,29 @@ function widget:MousePress(mx, my, mButton)
             
             -- Which button?
             if mx < px + 64 then
-                if spGetTeamRulesParam(myTeamID, 'startUnit') ~= 88 then
-                    spSendLuaRulesMsg('\13888')
+                if spGetTeamRulesParam(myTeamID, 'startUnit') ~= armcomDefID then
+                    spSendLuaRulesMsg('\138' .. tostring(armcomDefID)) 
 		      -- don't use caching, so we're sure the function has been loaded, also, it's called so rarely that doesn't matter if it's slow 
 		      if WG["faction_change"] then 
-			 WG["faction_change"](88) 
+			 WG["faction_change"](armcomDefID) 
 	           end 
                 end
                 return true
             elseif mx < px + 128 then
-                if spGetTeamRulesParam(myTeamID, 'startUnit') ~= 402 then
-                    spSendLuaRulesMsg('\138402')
+                if spGetTeamRulesParam(myTeamID, 'startUnit') ~= corcomDefID then
+                    spSendLuaRulesMsg('\138' .. tostring(corcomDefID)) 
 		    		      -- don't use caching, so we're sure the function has been loaded, also, it's called so rarely that doesn't matter if it's slow 
 		      if WG["faction_change"] then 
-			 WG["faction_change"](402) 
+			 WG["faction_change"](corcomDefID) 
 	           end 
                 end
                 return true
             elseif mx < px + 192 then
-                if spGetTeamRulesParam(myTeamID, 'startUnit') ~= 721 then
-                    spSendLuaRulesMsg('\138721')
+                if spGetTeamRulesParam(myTeamID, 'startUnit') ~= tllcomDefID then
+                    spSendLuaRulesMsg('\138' .. tostring(tllcomDefID)) 
 		    		      -- don't use caching, so we're sure the function has been loaded, also, it's called so rarely that doesn't matter if it's slow 
 		      if WG["faction_change"] then 
-			 WG["faction_change"](721) 
+			 WG["faction_change"](tllcomDefID) 
 	           end 
                 end
                 return true
