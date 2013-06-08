@@ -59,7 +59,7 @@ local resources = {
 			'scars/scar1.bmp',
 			'scars/scar2.bmp',
 			'scars/scar3.bmp',
-			'scars/scar4.bmp',
+			'scars/scar3.bmp',
 		},
 		trees = {
 			bark='Bark.bmp',
