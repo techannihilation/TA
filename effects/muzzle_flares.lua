@@ -189,6 +189,40 @@ return {
       },
     },
   },
+   ["pw_muzzle"] = {
+     largeflash = {
+      air                = true,
+      class              = [[CBitmapMuzzleFlame]],
+      count              = 1,
+      ground             = true,
+      underwater         = 1,
+      water              = true,
+      properties = {
+        colormap           = [[1 1 1 0.07  1 0.7 0 0.01	0.9 0.3 0 0.01	0 0 0 0.01]],
+        dir                = [[dir]],
+        frontoffset        = 0,
+        fronttexture       = [[null]],
+        length             = 12,
+        sidetexture        = [[plasma]],
+        size               = 7,
+        sizegrowth         = 1,
+        ttl                = 3,
+      },
+    },
+     groundflash = {
+      circlealpha        = 1,
+      circlegrowth       = 0,
+      flashalpha         = 0.4,
+      flashsize          = 35,
+      ttl                = 3,
+      color = {
+        [1]  = 1,
+        [2]  = 0.7,
+        [3]  = 0,
+      },
+    },
+  },
+
 
 }
 

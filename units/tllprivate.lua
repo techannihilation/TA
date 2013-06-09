@@ -63,6 +63,11 @@ local unitDef = {
 	version = 3.1,
 	zbuffer = 1,
 	featureDefs = nil,
+	sfxtypes = {
+		explosiongenerators = {
+			[1] = [[custom:pw_muzzle]],
+		},
+        },
 	sounds = {
 		canceldestruct = [[cancel2]],
 		underattack = [[tllwarning]],

@@ -47,6 +47,7 @@ local unitDef = {
 	noAutoFire = false,
 	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMPW1]],
+	script = [[armpw.cob]],
 	seismicSignature = 0,
 	selfDestructAs = [[SMALL_UNIT]],
 	side = [[ARM]],
@@ -62,6 +63,11 @@ local unitDef = {
 		RequireTech = [[Advanced T1 Unit Research Centre]],
 	},
 	featureDefs = nil,
+	sfxtypes = {
+		explosiongenerators = {
+			[1] = [[custom:pw_muzzle]],
+		},
+        },
 	sounds = {
 		canceldestruct = [[cancel2]],
 		underattack = [[warning1]],
