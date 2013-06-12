@@ -81,6 +81,7 @@ local BlackList = {
    ["armbc_arm_bccannon"] = true,
    ["armtrmph_cannon_trmph"] = true,
    ["aseadragon_seadragprime"] = true,
+   ["arm_immolator_core_intimidator3"] = true,
   
    --["armbrtha_arm_berthacannon2"] = true,
    ["armbrtha1_arm_berthacannon1"] = true,
@@ -94,6 +95,7 @@ local BlackList = {
    ["corpun_corfixed_gun_high"] = true,
    ["corblackhy_hydra_prime"] = true,
    ["cortyrnt_cannon_tyrnt"] = true,
+   ["core_immolator_core_intimidator3"] = true,
    
    --["corint_core_intimidator2"] = true,
    ["corint1_core_intimidator1"] = true,
