@@ -101,6 +101,7 @@ local unitDef = {
 local weaponDefs = {
 	SEAADVBOMB = {
 		areaOfEffect = 100,
+		burst = 5,
 		collideFriendly = false,
 		commandfire = false,
 		craterBoost = 0,
