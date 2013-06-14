@@ -117,7 +117,6 @@ local weaponDefs = {
 		areaOfEffect = 16,
 		avoidFriendly = false,
 		burnblow = true,
-		burst = 5,
 		collideFriendly = false,
 		craterBoost = 0,
 		craterMult = 0,
