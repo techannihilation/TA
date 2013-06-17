@@ -47,6 +47,24 @@ local unitDef = {
 	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooooooooooo]],
+	sounds = {
+		activate = [[metlon2]],
+		canceldestruct = [[cancel2]],
+		deactivate = [[metloff2]],
+		underattack = [[warning1]],
+		working = [[metlrun2]],
+		count = {
+			[1] = [[count6]],
+			[2] = [[count5]],
+			[3] = [[count4]],
+			[4] = [[count3]],
+			[5] = [[count2]],
+			[6] = [[count1]],
+		},
+		select = {
+			[1] = [[metlon2]],
+		},
+	},
 }
 --------------------------------------------------------------------------------
 
