@@ -73,6 +73,14 @@ local options={
 		section= "ta_options",
     },
     {
+		key    = "mo_startpoint_assist",
+		name   = "Startpoint Assist",
+		desc   = "Chooses sensible starting places for players/AIs who forgot to choose a startpoint for themselves\nAutoHost Usage :- mo_startpoint_assist",
+		type   = "bool",
+		def    = true,
+		section= "ta_options",
+    },
+    {
 		key="qtpfs",
 		name="Pathfinding system",
 		desc="Which pathfinding system to use\nAutoHost Usage :- qtpfs",
