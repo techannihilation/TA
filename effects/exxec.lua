@@ -17,7 +17,7 @@ return {
         ttl                = 100,
       },
     },
-    pop = {
+    glow = {
       air                = true,
       count              = 2,
       class              = [[heatcloud]],
