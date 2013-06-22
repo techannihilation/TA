@@ -37,6 +37,7 @@ local BlackList = {
      ["tllconvincer_armtruck_rocket"] = true,
      ["tllhrk_corhrk_rocket"] = true,
      ["tllvisitor_visitor_vpulse"] = true,
+     ["tawf114_tawf_banisher"] = true,
 }
    
 return nonexplosiveWeapons, BlackList
