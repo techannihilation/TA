@@ -83,6 +83,7 @@ local lastFrame  = -1
 local prevHeight = nil
 local myID
 local posLoaded = false
+local needUpdate = false
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -255,8 +256,7 @@ end
 function widget:TeamDied(teamID)
   deadTeams[teamID] = true
   if setUpTeam() then
-    updateStatics()
-    updateBars()
+    needUpdate = true
   end
 end
 
@@ -264,8 +264,7 @@ function widget:UnitCreated(unitID, unitDefID, unitTeam)
   if deadTeams[unitTeam] then
     deadTeams[unitTeam] = nil
     if setUpTeam() then
-      updateStatics()
-      updateBars()
+      needUpdate = true
     end
   end
 end
@@ -382,6 +381,12 @@ end
 
 function widget:DrawScreen()
   if enabled and (not IsGUIHidden()) then
+      if needUpdate then
+        updateStatics()
+        updateBars()
+        needUpdate = false
+      end
+
       gl.CallList(staticList)
       gl.CallList(displayList)
       if (labelText[1]) then

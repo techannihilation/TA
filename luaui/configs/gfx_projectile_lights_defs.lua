@@ -28,6 +28,9 @@ local BlackList = {
    ["avtr_arm_berthacannon2"] = true,
    ["tlldmc_tlldmc"] = true,
    ["coradon_coradon_weapon"] = true,
+   ["armsonic_sonic_cannon"] = true,
+   ["corbt_corbt_cannon"] = true,
+
    --Flak Cannons
    ["tllflak_armflak_gun"] = true,
    ["armfflak_armflak_gun"] = true,

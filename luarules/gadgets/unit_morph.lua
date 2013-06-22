@@ -109,8 +109,6 @@ end
 local CMD_MORPH_STOP = 32410
 local CMD_MORPH = 31410
 
-local MAX_MORPH = 0 --// will increase dynamically
-
 local floor = math.floor
 local pi = math.pi
 local abs = math.abs
@@ -163,6 +161,9 @@ local CMD_TRAJECTORY = CMD.TRAJECTORY
 local CMD_STOP = CMD.STOP
 local CMD_SELFD = CMD.SELFD
 
+local morphPenalty = 1.0
+local MAX_MORPH = 0 --// will increase dynamically
+
 --------------------------------------------------------------------------------
 --  COMMON
 --------------------------------------------------------------------------------
@@ -205,70 +206,16 @@ local function HeadingToFacing(heading)
         return floor((heading + 8192) / 16384) % 4
 end
 
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
-
-
-if (gadgetHandler:IsSyncedCode()) then
---------------------------------------------------------------------------------
---  SYNCED
---------------------------------------------------------------------------------
-
-include("LuaRules/colors.h.lua")
-
-local stopPenalty  = 0.667
-local morphPenalty = 1.0
-local upgradingBuildSpeed = 250
-local XpScale = 0.50
-
-local XpMorphUnits = {}
-
-local devolution = true            --// remove upgrade capabilities after factory destruction?
-local stopMorphOnDevolution = true --// should morphing stop during devolution
-
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
-
-local morphDefs  = {} --// make it global in Initialize()
-local extraUnitMorphDefs = {} -- stores mainly planetwars morphs
-local hostName = nil -- planetwars hostname
-local PWUnits = {} -- planetwars units
-local morphUnits = {} --// make it global in Initialize()
-local reqDefIDs  = {} --// all possible unitDefID's, which are used as a requirement for a morph
-local morphToStart = {} -- morphes to start next frame
-
---// per team techlevel and owned MorphReq. units table
-local teamTechLevel = {}
-local teamReqUnits  = {}
-local teamList = SpGetTeamList()
-for i=1,#teamList do
-  local teamID = teamList[i]
-  teamReqUnits[teamID]  = {}
-  teamTechLevel[teamID] = 0
-end
-
-local morphCmdDesc = {
---  id     = CMD_MORPH, -- added by the calling function because there is now more than one option
-  type   = CMDTYPE.ICON,
-  name   = 'Morph',
-  cursor = 'Morph',  -- add with LuaUI?
-  action = 'morph',
-}
-
---// will be replaced in Initialize()
-local RankToXp    = function() return 0 end
-local GetUnitRank = function() return 0 end
-
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
-
-
 --// translate lowercase UnitNames to real unitname (with upper-/lowercases)
 local defNamesL = {}
 for defName in pairs(UnitDefNames) do
   defNamesL[string.lower(defName)] = defName
 end
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
 
 local function DefCost(paramName, udSrc, udDst)
   local pSrc = udSrc[paramName]
@@ -358,6 +305,59 @@ local function ValidateMorphDefs(mds)
   end
   return newDefs
 end
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+
+if (gadgetHandler:IsSyncedCode()) then
+--------------------------------------------------------------------------------
+--  SYNCED
+--------------------------------------------------------------------------------
+
+include("LuaRules/colors.h.lua")
+
+local stopPenalty  = 0.667
+local upgradingBuildSpeed = 250
+local XpScale = 0.50
+
+local XpMorphUnits = {}
+
+local devolution = true            --// remove upgrade capabilities after factory destruction?
+local stopMorphOnDevolution = true --// should morphing stop during devolution
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+local morphDefs  = {} --// make it global in Initialize()
+local extraUnitMorphDefs = {} -- stores mainly planetwars morphs
+local hostName = nil -- planetwars hostname
+local PWUnits = {} -- planetwars units
+local morphUnits = {} --// make it global in Initialize()
+local reqDefIDs  = {} --// all possible unitDefID's, which are used as a requirement for a morph
+local morphToStart = {} -- morphes to start next frame
+
+--// per team techlevel and owned MorphReq. units table
+local teamTechLevel = {}
+local teamReqUnits  = {}
+local teamList = SpGetTeamList()
+for i=1,#teamList do
+  local teamID = teamList[i]
+  teamReqUnits[teamID]  = {}
+  teamTechLevel[teamID] = 0
+end
+
+local morphCmdDesc = {
+--  id     = CMD_MORPH, -- added by the calling function because there is now more than one option
+  type   = CMDTYPE.ICON,
+  name   = 'Morph',
+  cursor = 'Morph',  -- add with LuaUI?
+  action = 'morph',
+}
+
+--// will be replaced in Initialize()
+local RankToXp    = function() return 0 end
+local GetUnitRank = function() return 0 end
 
 
 --------------------------------------------------------------------------------
@@ -494,7 +494,7 @@ end
 --------------------------------------------------------------------------------
 
 
-local function StartMorph(unitID, unitDefID, teamID, morphDef)
+local function StartMorph(unitID, unitDefID, teamID, morphDef, cmdp)
 
   -- do not allow morph for unfinsihed units
   if not isFinished(unitID) then return true end
@@ -510,6 +510,7 @@ local function StartMorph(unitID, unitDefID, teamID, morphDef)
     morphID = morphID,
     teamID = teamID,
   }
+  SendToUnsynced("mph_str", unitID, 0.0, morphDef.increment, morphID, teamID, cmdp)
 
   local cmdDescID = SpFindUnitCmdDesc(unitID, morphDef.cmd)
   if (cmdDescID) then
@@ -522,6 +523,7 @@ end
 
 local function StopMorph(unitID, morphData)
   morphUnits[unitID] = nil
+  SendToUnsynced("mph_stp", unitID)
 
   SpSetUnitHealth(unitID, { paralyze = -1})
   local scale = morphData.progress * stopPenalty
@@ -692,6 +694,7 @@ local function UpdateMorph(unitID, morphData)
 
   if (SpUseUnitResource(unitID, morphData.def.resTable)) then
     morphData.progress = morphData.progress + morphData.increment
+    SendToUnsynced("mph_prg", unitID, morphData.progress)
   end
   if (morphData.progress >= 1.0) then
     FinishMorph(unitID, morphData)
@@ -729,9 +732,6 @@ function gadget:Initialize()
   morphDefs = ValidateMorphDefs(morphDefs)
 
   --// make it global for unsynced access via SYNCED
-  _G.morphUnits = morphUnits
-  _G.morphDefs  = morphDefs
-  _G.extraUnitMorphDefs  = extraUnitMorphDefs
 
   --// Register CmdIDs
   for number=0,MAX_MORPH-1 do
@@ -1027,6 +1027,7 @@ end
 
 function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOptions)
   local morphData = morphUnits[unitID]
+  local cmdp = nil
   if (morphData) then
     if (cmdID==morphData.def.stopCmd)or(cmdID==CMD_STOP)or(cmdID==CMD_MORPH_STOP) then
       if not SpGetUnitTransporter(unitID) then
@@ -1059,6 +1060,7 @@ function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOpt
         --Spring.Echo('Morph gadget: AllowCommand generic morph, target valid')
         --return true
         morphDef=(morphDefs[unitDefID] or {})[GG.MorphInfo[unitDefID][cmdParams[1]]]
+        cmdp = cmdParams[1]
       else
         --Spring.Echo('Morph gadget: AllowCommand generic morph, invalid target')
         return false
@@ -1067,6 +1069,7 @@ function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOpt
     elseif (cmdID > CMD_MORPH and cmdID <= CMD_MORPH+MAX_MORPH) then
       --Spring.Echo('Morph gadget: AllowCommand specific morph')
       morphDef = (morphDefs[unitDefID] or {})[cmdID] or extraUnitMorphDefs[unitID]
+      cmdp = -cmdID
     end
     if ((morphDef)and
         (morphDef.tech<=teamTechLevel[teamID])and
@@ -1079,7 +1082,7 @@ function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOpt
         --// so we have to start the morph here
         -- dont start directly to break recursion
         --StartMorph(unitID, unitDefID, teamID, morphDef)
-        morphToStart[unitID] = {unitDefID, teamID, morphDef}
+        morphToStart[unitID] = {unitDefID, teamID, morphDef, cmdp}
         return false
       else
         return true
@@ -1191,8 +1194,11 @@ local useLuaUI = false
 local oldFrame = 0        --//used to save bandwidth between unsynced->LuaUI
 local drawProgress = true --//a widget can do this job too (see healthbars)
 
-local morphUnits
+local morphUnits = {}
+local morphDefs = {}
+local extraUnitMorphDefs = {}
 
+local MAX_MORPH = 0 --// will increase dynamically
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -1211,7 +1217,7 @@ local function SelectSwap(cmd, oldID, newID)
   end
 
 
-  if (Script.LuaUI('MorphFinished')) then
+  if false then --(Script.LuaUI('MorphFinished')) then
     if (useLuaUI) then
       local readTeam, spec, specFullView = nil,GetSpectatingState()
       if (specFullView)
@@ -1229,7 +1235,7 @@ local function SelectSwap(cmd, oldID, newID)
 end
 
 local function StartMorph(cmd, unitID, unitDefID, morphID)
-  if (Script.LuaUI('MorphStart')) then
+  if false then --(Script.LuaUI('MorphStart')) then
     if (useLuaUI) then
       local readTeam, spec, specFullView = nil,GetSpectatingState()
       if (specFullView)
@@ -1237,7 +1243,7 @@ local function StartMorph(cmd, unitID, unitDefID, morphID)
         else readTeam = GetLocalTeamID() end
       CallAsTeam({ ['read'] = readTeam }, function()
         if (unitID)and(IsUnitVisible(unitID)) then
-          Script.LuaUI.MorphStart(unitID, (SYNCED.morphDefs[unitDefID] or {})[morphID] or SYNCED.extraUnitMorphDefs[unitID])
+          Script.LuaUI.MorphStart(unitID, (morphDefs[unitDefID] or {})[morphID] or nil) -- or SYNCED.extraUnitMorphDefs[unitID])
         end
       end)
     end
@@ -1246,7 +1252,7 @@ local function StartMorph(cmd, unitID, unitDefID, morphID)
 end
 
 local function StopMorph(cmd, unitID)
-  if (Script.LuaUI('MorphStop')) then
+  if false then --(Script.LuaUI('MorphStop')) then
     if (useLuaUI) then
       local readTeam, spec, specFullView = nil,GetSpectatingState()
       if (specFullView)
@@ -1262,13 +1268,57 @@ local function StopMorph(cmd, unitID)
   return true
 end
 
+
+local function StartMph(cmd, unitID, prog, incr, mID, tID, cmdp)
+  local tdef = nil
+  if cmdp == nil then
+    for _,md in pairs(morphDefs[SpGetUnitDefID(unitID)]) do
+      tdef = md
+      break
+    end
+  end  
+  if cmdp ~= nil and cmdp >= 0 then  
+    tdef =(tdef or {})[GG.MorphInfo[unitDefID][cmdp]]
+  end
+  if cmdp ~= nil and cmdp < 0 then  
+    tdef = (tdef or {})[-cmdp] or extraUnitMorphDefs[unitID]
+  end
+  
+  morphUnits[unitID] = {
+    def = tdef,
+    progress = prog,
+    increment = incr,
+    morphID = mID,
+    teamID = tID,
+  }
+end
+
+local function StopMph(cmd, unitID)
+  morphUnits[unitID] = nil
+end
+
+local function ProgMph(cmd, unitID, prog)
+  if (morphUnits[unitID] ~= nil) then
+    morphUnits[unitID].progress = prog
+  end
+end
+
+
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
 function gadget:Initialize()
+  --// get the morphDefs
+  morphDefs = include("LuaRules/Configs/morph_defs.lua")
+  if (not morphDefs) then gadgetHandler:RemoveGadget(); return; end
+  morphDefs = ValidateMorphDefs(morphDefs)
+
   gadgetHandler:AddSyncAction("unit_morph_finished", SelectSwap)
   gadgetHandler:AddSyncAction("unit_morph_start", StartMorph)
   gadgetHandler:AddSyncAction("unit_morph_stop", StopMorph)
+  gadgetHandler:AddSyncAction("mph_str", StartMph)
+  gadgetHandler:AddSyncAction("mph_stp", StopMph)
+  gadgetHandler:AddSyncAction("mph_prg", ProgMph)
 end
 
 
@@ -1276,16 +1326,19 @@ function gadget:Shutdown()
   gadgetHandler:RemoveSyncAction("unit_morph_finished")
   gadgetHandler:RemoveSyncAction("unit_morph_start")
   gadgetHandler:RemoveSyncAction("unit_morph_stop")
+  gadgetHandler:RemoveSyncAction("mph_str")
+  gadgetHandler:RemoveSyncAction("mph_stp")
+  gadgetHandler:RemoveSyncAction("mph_prg")
 end
 
 function gadget:Update()
   local frame = spGetGameFrame()
   if (frame>oldFrame) then
     oldFrame = frame
-    if snext(SYNCED.morphUnits) then
-      local useLuaUI_ = Script.LuaUI('MorphUpdate')
+    if next(morphUnits) then
+      local useLuaUI_ = false --Script.LuaUI('MorphUpdate')
       if (useLuaUI_~=useLuaUI) then --//Update Callins on change
-        drawProgress = not Script.LuaUI('MorphDrawProgress')
+        drawProgress = true --not Script.LuaUI('MorphDrawProgress')
         useLuaUI     = useLuaUI_
       end
 
@@ -1296,7 +1349,7 @@ function gadget:Update()
           then readTeam = Script.ALL_ACCESS_TEAM
           else readTeam = GetLocalTeamID() end
         CallAsTeam({ ['read'] = readTeam }, function()
-          for unitID, morphData in spairs(SYNCED.morphUnits) do
+          for unitID, morphData in pairs(morphUnits) do
             if (unitID and morphData)and(IsUnitVisible(unitID)) then
               morphTable[unitID] = {progress=morphData.progress, into=morphData.def.into}
             end
@@ -1391,12 +1444,11 @@ end
 
 function gadget:DrawWorld()
   if (not morphUnits) then
-    morphUnits = SYNCED.morphUnits
     if (not morphUnits) then return end
   end
 
 
-  if (not snext(morphUnits)) then
+  if (not next(morphUnits)) then
     return --//no morphs to draw
   end
 
@@ -1414,7 +1466,7 @@ function gadget:DrawWorld()
   end
 
   CallAsTeam({ ['read'] = readTeam }, function()
-    for unitID, morphData in spairs(morphUnits) do
+    for unitID, morphData in pairs(morphUnits) do
       if (unitID and morphData)and(IsUnitVisible(unitID)) then
         DrawMorphUnit(unitID, morphData,readTeam)
       end

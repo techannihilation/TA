@@ -32,6 +32,18 @@ local options={
 	def    = false,
 	section= "ta_exp",
 	},
+    {
+	key    = "mo_therebedragons",
+	name   = "Enable Luathreadingmodel 4",
+	desc   = "Enables Full Mt support",
+	type = "list",
+	section = "ta_exp",
+	def = "off",
+	items={
+		{key="full", name="full", desc="Luathreadingmodel 4"},
+		{key="off", name="off", desc="Luathreadingmodel 2"},
+	      }
+	},
 	{
 		key    = "mo_coop",
 		name   = "Cooperative Mode",
@@ -70,6 +82,14 @@ local options={
 		desc   = "Last Com alive is immune to comblast, D-gunning the last enemy Com with your last Com disqualifies you\nAutoHost Usage :- mo_preventdraw",
 		type   = "bool",
 		def    = false,
+		section= "ta_options",
+    },
+    {
+		key    = "mo_startpoint_assist",
+		name   = "Startpoint Assist",
+		desc   = "Chooses sensible starting places for players/AIs who forgot to choose a startpoint for themselves\nAutoHost Usage :- mo_startpoint_assist",
+		type   = "bool",
+		def    = true,
 		section= "ta_options",
     },
     {

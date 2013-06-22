@@ -86,9 +86,9 @@ return {
         alpha              = 1,
         alphadecay         = 0.35,
         color              = [[1.0, 0.7, 0.2]],
-        dir                = [[-45 r90,-45 r90,-45 r90]],
+        dir                = [[-20 r40,-20 r40,-20 r40]],
         length             = 1,
-        width              = 22,
+        width              = 16,
       },
     },
     windsphere = {
@@ -99,11 +99,10 @@ return {
       properties = {
         alpha              = 0.05,
         color              = [[1.0, 1.0, 1.0]],
-        expansionspeed     = [[4 r4]],
-        ttl                = 12,
+        expansionspeed     = [[3 r3]],
+        ttl                = 7,
       },
     },
   },
-
 }
 
