@@ -10,7 +10,7 @@ local moveDatas
 		depthmod = 0,
 		footprintx = 2,
 		footprintz = 2,
--- 		maxslope = 36,
+		maxslope = 36,
 		maxwaterdepth = 5000,
 		maxwaterslope = 50,
 	},
@@ -83,7 +83,6 @@ local moveDatas
 		maxwaterdepth = 5000,
 		maxwaterslope = 80,
 	},
-	
 	HDBOAT8 = {
 		crushstrength = 1400,
 		footprintx = 8,
