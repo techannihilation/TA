@@ -10,7 +10,7 @@ local moveDatas
 		depthmod = 0,
 		footprintx = 2,
 		footprintz = 2,
-		maxslope = 36,
+-- 		maxslope = 36,
 		maxwaterdepth = 5000,
 		maxwaterslope = 50,
 	},
@@ -75,7 +75,7 @@ local moveDatas
 		minwaterdepth = 15,
 	},
 	HAKBOT4 = {
-		crushstrength = 250,
+		crushstrength = 253,
 		depthmod = 0,
 		footprintx = 4,
 		footprintz = 4,
@@ -98,7 +98,7 @@ local moveDatas
 		maxwaterdepth = 22,
 	},
 	HKBOT4 = {
-		crushstrength = 250,
+		crushstrength = 253,
 		footprintx = 4,
 		footprintz = 4,
 		maxslope = 36,
@@ -137,7 +137,7 @@ local moveDatas
 		maxwaterdepth = 22,
 	},
 	HTANK5 = {
-		crushstrength = 250,
+		crushstrength = 253,
 		footprintx = 5,
 		footprintz = 5,
 		maxslope = 18,
@@ -158,7 +158,7 @@ local moveDatas
 		maxwaterdepth = 22,
 	},
 	HTKBOT7 = {
-		crushstrength = 250,
+		crushstrength = 253,
 		footprintx = 7,
 		footprintz = 7,
 		maxslope = 80,
@@ -324,7 +324,7 @@ else
   
   moveDatas = {
      
-AKBOT2 = {
+	AKBOT2 = {
 		crushstrength = 50,
 		depthmod = 0,
 		footprintx = 2,
@@ -421,7 +421,7 @@ AKBOT2 = {
 		minwaterdepth = 15,
 	},
 	HAKBOT4 = {
-		crushstrength = 250,
+		crushstrength = 253,
 		depthmod = 0,
 		footprintx = 4,
 		footprintz = 4,
@@ -507,7 +507,7 @@ AKBOT2 = {
 		maxwaterdepth = 22,
 	},
 	HTANK5 = {
-		crushstrength = 250,
+		crushstrength = 253,
 		footprintx = 5,
 		footprintz = 5,
 		heatproduced = 50,
@@ -537,7 +537,7 @@ AKBOT2 = {
 		maxwaterdepth = 22,
 	},
 	HTKBOT7 = {
-		crushstrength = 250,
+		crushstrength = 253,
 		footprintx = 7,
 		footprintz = 7,
 		heatproduced = 80,
