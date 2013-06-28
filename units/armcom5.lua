@@ -35,6 +35,7 @@ local unitDef = {
 	collisionvolumetype = [[Ell]],
 	commander = true,
 	corpse = [[DEAD]],
+	decoyFor = [[armcom]],
 	defaultmissiontype = [[Standby]],
 	description = [[Commander]],
 	energyMake = 500,
