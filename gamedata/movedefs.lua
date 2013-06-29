@@ -442,7 +442,7 @@ else
 		minwaterdepth = 15,
 	},
 	HKBOT3 = {
-		crushstrength = 250,
+		crushstrength = 253,
 		footprintx = 3,
 		footprintz = 3,
 		heatproduced = 30,
@@ -452,7 +452,7 @@ else
 		maxwaterdepth = 22,
 	},
 	HKBOT4 = {
-		crushstrength = 250,
+		crushstrength = 253,
 		footprintx = 4,
 		footprintz = 4,
 		heatproduced = 40,
@@ -576,7 +576,7 @@ else
 		maxwaterdepth = 22,
 	},
 	KBOT3 = {
-		crushstrength = 15,
+		crushstrength = 120,
 		footprintx = 3,
 		footprintz = 3,
 		heatproduced = 30,
