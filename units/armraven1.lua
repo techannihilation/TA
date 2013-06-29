@@ -134,6 +134,51 @@ local weaponDefs = {
 }
 unitDef.weaponDefs = weaponDefs
 
+
+--------------------------------------------------------------------------------
+
+local featureDefs = {
+	DEAD = {
+		blocking = true,
+		category = [[corpses]],
+		collisionvolumeoffsets = [[3.19359588623 0.0 1.04564666748]],
+		collisionvolumescales = [[66.3871917725 26.0 41.4744720459]],
+		collisionvolumetype = [[Box]],
+		damage = 0.6000 * unitDef.maxDamage,
+		description = unitDef.name .. [[ Wreckage]],
+		energy = 0,
+		featureDead = [[HEAP]],
+		featurereclamate = [[SMUDGE01]],
+		footprintX = 3,
+		footprintZ = 3,
+		height = 40,
+		hitdensity = 100,
+		metal = 0.8000 * unitDef.buildCostMetal,
+		object = [[ARMRAVEN1_DEAD]],
+		reclaimable = true,
+		seqnamereclamate = [[TREE1RECLAMATE]],
+		world = [[All Worlds]],
+	},
+	HEAP = {
+		blocking = false,
+		category = [[heaps]],
+		damage = 0.3600 * unitDef.maxDamage,
+		description = unitDef.name .. [[ Heap]],
+		energy = 0,
+		featurereclamate = [[SMUDGE01]],
+		footprintX = 3,
+		footprintZ = 3,
+		height = 4,
+		hitdensity = 100,
+		metal = 0.6400 * unitDef.buildCostMetal,
+		object = [[3X3C]],
+		reclaimable = true,
+		seqnamereclamate = [[TREE1RECLAMATE]],
+		world = [[All Worlds]],
+	},
+}
+unitDef.featureDefs = featureDefs
+
 --------------------------------------------------------------------------------
 
 return lowerkeys({[unitName] = unitDef})
