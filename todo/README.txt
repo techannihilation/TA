@@ -1,9 +1,11 @@
 ToDo List
 
-Fix projectile size and color for plasma weapons    - nixtux
+New Screenshots for load screens  --bug #232
 
-All Ceg trails for all AA units using missile model
+Fix morph gadget to not allow morph while jumping --bug #311
 
-Re add stats logging - Finkky 
+Eco lead announcer widget --bug #269
 
-Get deadalus to finish tlldmc explosion - hahaha no chance 
+Track decals -- tll tanks are missing them and a few other t1.5-t3 tanks  --bug #250
+
+Fix tll logo -- pink is ugly --bug #218
