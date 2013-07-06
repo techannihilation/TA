@@ -35,6 +35,7 @@ local unitDef = {
 	collisionvolumetype = [[Ell]],
 	commander = true,
 	corpse = [[DEAD]],
+	decoyFor = [[tllcom]],
 	defaultmissiontype = [[Standby]],
 	description = [[Commander]],
 	energyMake = 25,

@@ -24,8 +24,8 @@ local unitDef = {
 	description = [[Heavy Plasma Cannon]],
 	explodeAs = [[SHOCKER]],
 	firestandorders = 1,
-	footprintX = 4,
-	footprintZ = 4,
+	footprintX = 3,
+	footprintZ = 3,
 	highTrajectory = 2,
 	idleAutoHeal = 5,
 	idleTime = 1800,
@@ -37,7 +37,7 @@ local unitDef = {
 	maxVelocity = 0.7,
 	maxWaterDepth = 0,
 	mobilestandorders = 1,
-	movementClass = [[HKBOT4]],
+	movementClass = [[KBOT3]],
 	name = [[Medium Vanguard]],
 	noAutoFire = false,
 	noChaseCategory = [[SUB VTOL]],
@@ -126,6 +126,51 @@ local weaponDefs = {
 	},
 }
 unitDef.weaponDefs = weaponDefs
+
+
+--------------------------------------------------------------------------------
+
+local featureDefs = {
+	DEAD = {
+		blocking = true,
+		category = [[corpses]],
+		collisionvolumeoffsets = [[-3.37104034424 -1.05229058838 1.8899307251]],
+		collisionvolumescales = [[64.0154266357 41.4324188232 55.433883667]],
+		collisionvolumetype = [[Box]],
+		damage = 0.6000 * unitDef.maxDamage,
+		description = unitDef.name .. [[ Wreckage]],
+		energy = 0,
+		featureDead = [[HEAP]],
+		featurereclamate = [[SMUDGE01]],
+		footprintX = 3,
+		footprintZ = 3,
+		height = 20,
+		hitdensity = 100,
+		metal = 0.8000 * unitDef.buildCostMetal,
+		object = [[ARMSHOCK1_DEAD]],
+		reclaimable = true,
+		seqnamereclamate = [[TREE1RECLAMATE]],
+		world = [[All Worlds]],
+	},
+	HEAP = {
+		blocking = false,
+		category = [[heaps]],
+		damage = 0.3600 * unitDef.maxDamage,
+		description = unitDef.name .. [[ Heap]],
+		energy = 0,
+		featurereclamate = [[SMUDGE01]],
+		footprintX = 3,
+		footprintZ = 3,
+		height = 4,
+		hitdensity = 100,
+		metal = 0.6400 * unitDef.buildCostMetal,
+		object = [[4X4D]],
+		reclaimable = true,
+		seqnamereclamate = [[TREE1RECLAMATE]],
+		world = [[All Worlds]],
+	},
+}
+unitDef.featureDefs = featureDefs
 
 --------------------------------------------------------------------------------
 

@@ -1251,6 +1251,18 @@ return {
         ttl                = [[10 r4 r-4]],
       },
     },
+     groundflash = {
+      circlealpha        = 1,
+      circlegrowth       = 1,
+      flashalpha         = 1.3,
+      flashsize          = 7,
+      ttl                = 3,
+      color = {
+        [1]  = 1,
+        [2]  = 1,
+        [3]  = 0.60000002384186,
+      },
+    },
    glow = {
       air                = true,
       count              = 1,
@@ -1300,19 +1312,67 @@ return {
 
     ["flash4blue"] = {
     usedefaultexplosions = false,
-    groundflash = {
-      circlealpha        = 1,
-      circlegrowth       = 3,
-      flashalpha         = 1.6,
-      flashsize          = 45,
-      ttl                = 6,
-      color = {
-        [1]  = 0.30000001192093,
-        [2]  = 0.30000001192093,
-        [3]  = 1,
+  bluelightwater= {
+      air                = false,
+      class              = [[CSimpleGroundFlash]],
+      count              = 1,
+      ground             = true,
+      water              = true,
+      properties = {
+        colormap           = [[0 0 1 1     0.14 0.14 1 1     0 0 0 0.1]],
+        size               = [[28 r2]],
+        sizegrowth         = [[2 r-3]],
+        texture            = [[groundflash]],
+        ttl                = [[10 r4 r-4]],
+      },
+    },
+   glow = {
+      air                = true,
+      count              = 1,
+      class              = [[heatcloud]],
+      ground             = true,
+      water              = true,
+      properties = {
+        heat               = 10,
+        heatfalloff        = 0.70,
+        maxheat            = 20,
+        pos                = [[0, 0.0, 0]],
+        size               = [[12.0 r2]],
+        sizegrowth         = [[0.09 r.16]],
+        sizemod            = 0,
+        sizemodmod         = 0,
+        speed              = [[0.05 r-0.1, 0.05 r-0.1, 0.05 r-0.1]],
+        texture            = [[bluenovaexplo]],
+        useairlos          = false,
+      },
+    },
+   Spawner1 = {
+      air                = true,
+      class              = [[CExpGenSpawner]],
+      count              = 4,
+      ground             = true,
+      water              = true,
+      unit               = 0,
+      properties = {
+        delay              = [[2 i2]],
+        explosiongenerator = [[custom:thermite_drip_laser]],
+        pos                = [[-5 r5,-2 r2,-5 r5]],
+      },
+    },
+     SteamSpawn = {
+      air                = false,
+      class              = [[CExpGenSpawner]],
+      count              = 2,
+      ground             = false,
+      water              = true,
+      properties = {
+        delay              = [[0]],
+        explosiongenerator = [[custom:lasersteam]],
+        pos                = [[0, 0, 0]],
       },
     },
   },
+
   
   ["vsmlmissile_explosion"] = {
     usedefaultexplosions = true,

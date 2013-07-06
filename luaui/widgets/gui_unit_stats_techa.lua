@@ -81,6 +81,8 @@ local pplants = {
 	["armuwlightfus"] = true,
 	["corlightfus"] = true,
 	["coruwlightfus"] = true,
+	["armgen"] = true,
+	["corgen"] = true,
 }
 
 ------------------------------------------------------------------------------------

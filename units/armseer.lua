@@ -50,6 +50,7 @@ local unitDef = {
 	objectName = [[ARMSEER]],
 	onoffable = true,
 	radarDistance = 2300,
+	script = [[armseer.lua]],
 	seismicSignature = 0,
 	selfDestructAs = [[BIG_UNIT]],
 	side = [[ARM]],
