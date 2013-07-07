@@ -128,6 +128,13 @@ local moveDatas
 		maxslope = 18,
 		maxwaterdepth = 22,
 	},
+	VHTANK5 = {
+		crushstrength = 1400,
+		footprintx = 5,
+		footprintz = 5,
+		maxslope = 18,
+		maxwaterdepth = 22,
+	},
 	HKBOT3 = {
 		crushstrength = 253,
 		footprintx = 3,
@@ -157,7 +164,7 @@ local moveDatas
 		maxwaterdepth = 22,
 	},
 	HTKBOT7 = {
-		crushstrength = 253,
+		crushstrength = 1400,
 		footprintx = 7,
 		footprintz = 7,
 		maxslope = 80,
@@ -536,7 +543,7 @@ else
 		maxwaterdepth = 22,
 	},
 	HTKBOT7 = {
-		crushstrength = 253,
+		crushstrength = 1400,
 		footprintx = 7,
 		footprintz = 7,
 		heatproduced = 80,
