@@ -46,8 +46,8 @@ local unitlist={--- Human friendly list. Automatically converted to unitdef IDs 
 {'armllt','armtl'},
 {'corllt','cortl'},
 {'tllweb','tlltl'},
-
-
+{'armlightfus','armuwlightfus'},
+{'corlightfus','coruwlightfus'},
 }
 
 function widget:GetInfo()
