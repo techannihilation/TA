@@ -510,7 +510,7 @@ local function StartMorph(unitID, unitDefID, teamID, morphDef, cmdp)
     morphID = morphID,
     teamID = teamID,
   }
-  SendToUnsynced("mph_str", unitID, 0.0, morphDef.increment, morphID, teamID, cmdp)
+  SendToUnsynced("mph_str", unitID, unitDefID, 0.0, morphDef.increment, morphID, teamID, cmdp)
 
   local cmdDescID = SpFindUnitCmdDesc(unitID, morphDef.cmd)
   if (cmdDescID) then
@@ -1096,6 +1096,7 @@ end
 
 
 function gadget:CommandFallback(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOptions)
+  local cmdp = nil
   if (cmdID < CMD_MORPH or cmdID > CMD_MORPH+MAX_MORPH) then
     return false  --// command was not used
   end
@@ -1108,6 +1109,7 @@ function gadget:CommandFallback(unitID, unitDefID, teamID, cmdID, cmdParams, cmd
     if cmdParams[1] then
       --Spring.Echo('Morph gadget: CommandFallback generic morph with target provided')
       morphDef=(morphDefs[unitDefID] or {})[GG.MorphInfo[unitDefID][cmdParams[1]]]
+      cmdp = cmdParams[1]
     else
       --Spring.Echo('Morph gadget: CommandFallback generic morph, default target')
       for _,md in pairs(morphDefs[unitDefID]) do
@@ -1118,6 +1120,7 @@ function gadget:CommandFallback(unitID, unitDefID, teamID, cmdID, cmdParams, cmd
   else
     --Spring.Echo('Morph gadget: CommandFallback specific morph')
     morphDef = (morphDefs[unitDefID] or {})[cmdID] or extraUnitMorphDefs[unitID]
+    cmdp = -cmdID
   end
   if (not morphDef) then
     return true, true  --// command was used, remove it
@@ -1126,7 +1129,7 @@ function gadget:CommandFallback(unitID, unitDefID, teamID, cmdID, cmdParams, cmd
   if (not morphData) then
     -- dont start directly to break recursion
     --StartMorph(unitID, unitDefID, teamID, morphDef)
-    morphToStart[unitID] = {unitDefID, teamID, morphDef}
+    morphToStart[unitID] = {unitDefID, teamID, morphDef, cmdp}
     return true, true
   end
   return true, false  --// command was used, do not remove it
@@ -1269,21 +1272,21 @@ local function StopMorph(cmd, unitID)
 end
 
 
-local function StartMph(cmd, unitID, prog, incr, mID, tID, cmdp)
+local function StartMph(cmd, unitID, unitDefID, prog, incr, mID, tID, cmdp)
   local tdef = nil
   if cmdp == nil then
-    for _,md in pairs(morphDefs[SpGetUnitDefID(unitID)]) do
+    for _,md in pairs(morphDefs[unitDefID]) do
       tdef = md
       break
     end
   end  
   if cmdp ~= nil and cmdp >= 0 then  
-    tdef =(tdef or {})[GG.MorphInfo[unitDefID][cmdp]]
+    tdef =(morphDefs[unitDefID] or {})[GG.MorphInfo[unitDefID][cmdp]]
   end
   if cmdp ~= nil and cmdp < 0 then  
-    tdef = (tdef or {})[-cmdp] or extraUnitMorphDefs[unitID]
+    tdef = (morphDefs[unitDefID] or {})[-cmdp] or extraUnitMorphDefs[unitID]
   end
-  
+    
   morphUnits[unitID] = {
     def = tdef,
     progress = prog,

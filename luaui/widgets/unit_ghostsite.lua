@@ -117,7 +117,7 @@ function widget:UnitEnteredLos(unitID, allyTeam)
 	
 	local udef = udefTab[spGetUnitDefID(unitID)]
 		
-	if ( udef.isBuilding == true or udef.isFactory == true) and (spGetUnitRulesParam(unitID, "under_construction") == 1)  then
+	if ( udef ~= nil and (udef.isBuilding == true or udef.isFactory == true) and (spGetUnitRulesParam(unitID, "under_construction") == 1))  then
 		local x, y, z = spGetUnitBasePosition(unitID)
 		
 		local dx,_,dz = spGetUnitDirection(unitID)

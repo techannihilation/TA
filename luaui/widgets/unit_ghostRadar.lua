@@ -58,7 +58,7 @@ function widget:UnitEnteredLos(unitID, allyTeam )
 	local udef = udefTab[udefID]
 		
 	--skip buildings, they get ghosted anyway
-	if ( udef.isBuilding == false and udef.isFactory == false ) then 
+	if ( udef ~= nil and udef.isBuilding == false and udef.isFactory == false ) then 
 		dots[unitID] = {}
 		dots[unitID]["unitDefId"] = udefID
 		dots[unitID]["teamId"] = allyTeam
