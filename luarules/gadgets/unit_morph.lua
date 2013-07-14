@@ -148,6 +148,8 @@ local SpUseUnitResource = Spring.UseUnitResource
 local GetUnitTeam = Spring.GetUnitTeam
 local SpRemoveUnitCmdDesc = Spring.RemoveUnitCmdDesc
 local SpGetTeamInfo = Spring.GetTeamInfo
+local spGetUnitRulesParam = Spring.GetUnitRulesParam
+
 
 local CMD_GUARD = CMD.GUARD
 local CMD_INSERT = CMD.INSERT
@@ -497,7 +499,7 @@ end
 local function StartMorph(unitID, unitDefID, teamID, morphDef, cmdp)
 
   -- do not allow morph for unfinsihed units
-  if not isFinished(unitID) then return true end
+  if not isFinished(unitID) or (Spring.GetUnitRulesParam(unitID,"jumpReload") == 0) then return true end
 
   SpSetUnitHealth(unitID, { paralyze = 1.0e9 })    --// turns mexes and mm off (paralyze the unit)
   SpSetUnitResourcing(unitID,"e",0)                --// turns solars off
