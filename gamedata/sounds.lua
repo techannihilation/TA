@@ -1,3 +1,4 @@
+
 --- Valid entries used by engine: IncomingChat, MultiSelect, MapPoint
 --- other than that, you can give it any name and access it like before with filenames
 local Sounds = {
@@ -24,6 +25,7 @@ local Sounds = {
 			rolloff = 0.2,
 			dopplerscale = 0,      
 		},
+		--[[
 		ExampleSound = {
 			--- some things you can do with this file
 
@@ -68,6 +70,7 @@ local Sounds = {
 			--- you can loop it for X miliseconds
 			looptime = 0,
 		},
+		--]]
 		FailedCommand = {
 			file = "sounds/beep3.wav",
 		},
