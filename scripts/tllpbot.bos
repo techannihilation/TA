@@ -312,17 +312,17 @@ walk()
 
 stand()
 {
-	move lleg to y-axis [0.000000] now;
-	move lfoot to z-axis [0.000000] now;
-	move rleg to y-axis [0.000000] now;
-	move rfoot to z-axis [0.000000] now;
-	turn body to z-axis <0.000000> now;
-	turn rthigh to x-axis <0.000000> now;
-	turn lthigh to x-axis <0.000000> now;
-	turn lleg to x-axis <0.000000> now;
-	turn lfoot to x-axis <0.000000> now;
-	turn rleg to x-axis <0.000000> now;
-	turn rfoot to x-axis <0.000000> now;
+	move lleg to y-axis [0.000000] speed <40.000000>;
+	move lfoot to z-axis [0.000000] speed <40.000000>;
+	move rleg to y-axis [0.000000] speed <40.000000>;
+	move rfoot to z-axis [0.000000] speed <40.000000>;
+	turn body to z-axis <0.000000> speed <20.000000>;
+	turn rthigh to x-axis <0.000000> speed <40.000000>;
+	turn lthigh to x-axis <0.000000> speed <40.000000>;
+	turn lleg to x-axis <0.000000> speed <20.000000>;
+	turn lfoot to x-axis <0.000000> speed <30.000000>;
+	turn rleg to x-axis <0.000000> speed <20.000000>;
+	turn rfoot to x-axis <0.000000> speed <30.000000>;
 }
 
 MotionControl(Func_Var_1, Func_Var_2)
