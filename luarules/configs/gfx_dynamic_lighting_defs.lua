@@ -79,7 +79,8 @@ local copyLightDefs = {
 		["armsilo_nuclear_missile"   ] = "nuke_missile",
 		["armsilo1_nuclear_missile1" ] = "nuke_missile1",
 		["armfsilo_armfsilo_weapon"  ] = "fnuke_missile",
-
+		["armcybr_arm_pidr"          ] = "mini_nuke",
+		
 		--Emp / Tacnuke
 		["armemp_armemp_weapon"      ] = "emp_weapon",
 		["cortron_cortron_weapon"    ] = "tron_weapon",
@@ -315,6 +316,17 @@ local dynLightDefs = {
 				},
 			},
 
+			["mini_nuke"] = {
+				explosionLightDef = {
+					diffuseColor      = {2.0,                   2.0,                   2.0                  },
+					specularColor     = {2.0 * rgbSpecMults[1], 2.0 * rgbSpecMults[2], 2.0 * rgbSpecMults[3]},
+					priority          = 20 * 10 + 1,
+					radius            = 640.0,
+					ttl               = 2.8 * Game.gameSpeed,
+					decayFunctionType = {0.0, 0.0, 0.0},
+					altitudeOffset    = 250.0,
+				},
+			},
 			-- Arm Stunner / Core Neutron (small nuke) projectiles
 			["emp_weapon"] = {
 				projectileLightDef = {
