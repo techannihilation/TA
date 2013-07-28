@@ -13,7 +13,7 @@ local BlackList = {
    ["tlldmc_tlldmc"] = true,
    ["ajuno_juno_pulse"] = true,
    ["cjuno_juno_pulse"] = true,
-   ["corsilo_crblmssl"] = true,
+   --["corsilo_crblmssl"] = true,
    ["corsilo1_crblmssl1"] = true,
    ["corfsilo_corfsilo_weapon"] = true,
    ["tllsilo_crblmssl"] = true,
@@ -52,12 +52,18 @@ local BlackList = {
    ["armflak_armflak_gun"] = true,
    }
    
+   local Customlight ={
+   ["armpw_emg"] = {0.8,0.6,0,30},
+   ["armpw1_emg"] = {0.8,0.6,0,30},
+   ["corsilo_crblmssl"] = {1.0,0.25,0,430},
+   }
+   
    local Armtrails = {
    ["armrock_arm_kbot_rocket"] = true,
    ["armrock1_arm_kbot_rocket1"] = true,
    ["armsam_armtruck_missile"] = true,
    ["armsam1_armtruck_missile1"] = true,
-   ["armcrack_lightartmiss"] = true,
+   ["armcrack_lightartmissarm"] = true,
    }
       
    local Coretrails = {
@@ -112,4 +118,4 @@ local BlackList = {
    ["tlllrpt_arm_berthacannon"] = true,
 }
    
-return BlackList, Armtrails, Coretrails, Tlltrails, Plasmabatts
+return BlackList, Customlight, Armtrails, Coretrails, Tlltrails, Plasmabatts
