@@ -13,7 +13,7 @@ local BlackList = {
    ["tlldmc_tlldmc"] = true,
    ["ajuno_juno_pulse"] = true,
    ["cjuno_juno_pulse"] = true,
-   --["corsilo_crblmssl"] = true,
+   ["corsilo_crblmssl"] = true,
    ["corsilo1_crblmssl1"] = true,
    ["corfsilo_corfsilo_weapon"] = true,
    ["tllsilo_crblmssl"] = true,
@@ -55,7 +55,6 @@ local BlackList = {
    local Customlight ={
    ["armpw_emg"] = {0.8,0.6,0,30},
    ["armpw1_emg"] = {0.8,0.6,0,30},
-   ["corsilo_crblmssl"] = {1.0,0.25,0,430},
    }
    
    local Armtrails = {
