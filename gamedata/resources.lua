@@ -215,6 +215,7 @@ local resources = {
 			lightring='lightring.tga',
 			lightb3='lightningball3.tga',
 			lightb4='lightningball4.tga',
+			lightning2='lightning2.jpg',
 			
 			debris2='other/debris2.tga',
 			debris='other/debris.tga',
