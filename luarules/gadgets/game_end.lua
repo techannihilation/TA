@@ -42,9 +42,6 @@ local sharedDynamicAllianceVictory = tonumber(modOptions.shareddynamicalliancevi
 -- ignoreGaia is a C-like bool
 local ignoreGaia = tonumber(modOptions.ignoregaiawinner) or 1
 
---playerQuit is a C-like bool
-local playerQuitIsDead = tonumber(modOptions.playerquitisdead) or 1
-
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -85,6 +82,7 @@ local AreTeamsAllied = Spring.AreTeamsAllied
 local allyTeamInfos = {}
 local teamToAllyTeam = {}
 local playerIDtoAIs = {}
+local playerQuitIsDead = 1
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -99,6 +97,16 @@ function gadget:Initialize()
 		gadgetHandler:RemoveGadget()
 	end
 	local gaiaTeamID = Spring.GetGaiaTeamID()
+	if #GetTeamList() == 3 then -- 2 teams + gaia
+		playerQuitIsDead = 0 -- let player quit & rejoin in 1v1
+	end
+	
+
+	if #GetTeamList() <= 2 then -- sandbox mode (gaia + possibly one player)
+		gadgetHandler:RemoveGadget()
+		return
+	end
+	
 	-- at start, fill in the table of all alive allyteams
 	for _,allyTeamID in ipairs(GetAllyTeamList()) do
 		local allyTeamInfo = {}
