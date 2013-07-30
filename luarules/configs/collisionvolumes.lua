@@ -95,7 +95,7 @@ local dynamicPieceCollisionVolume = {}	--dynamic per piece collision volume defi
 	}
 	unitCollisionVolume["armclaw"] = {
 		on={32,39,32,0,-6,0,1,1,1},
-		off={32,22,32,0,-16.5,0,1,1,1},
+		off={32,32,32,0,-13.5,0,0,1,1},
 	}
 	unitCollisionVolume["armmmkr"] = {
 		on={60,70,60,0,7,0,1,1,1},
@@ -131,7 +131,7 @@ local dynamicPieceCollisionVolume = {}	--dynamic per piece collision volume defi
 	}
 	unitCollisionVolume["cormaw"] = {
 		on={32,39,32,0,-6,0,1,1,1},
-		off={32,22,32,0,-16,0,1,1,1},
+		off={32,32,32,0,-13,0,0,1,1},
 	}
 	unitCollisionVolume["cormexp"] = {
 		on={83,77,83,0,-27,0,1,1,1},
@@ -214,7 +214,7 @@ local dynamicPieceCollisionVolume = {}	--dynamic per piece collision volume defi
 			["7"]={10,10,60,0,3,13,1,2},
 		},
 		off = {
-			["1"]={44,7,44,0,0,0,2,0},
+			["1"]={51,51,51,0,-9,0,0,1},
 		}
 	}
 		dynamicPieceCollisionVolume["corvipe"] = {
@@ -223,7 +223,7 @@ local dynamicPieceCollisionVolume = {}	--dynamic per piece collision volume defi
 			["5"]={25,46,25,0,25,0,1,1},
 		},
 		off = {
-			["0"]={39,55,39,0,0,0,0,1},
+			["0"]={39,39,39,0,-2,0,0,1},
 		}
 	}
 return unitCollisionVolume, pieceCollisionVolume, dynamicPieceCollisionVolume
