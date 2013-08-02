@@ -116,5 +116,43 @@ local BlackList = {
    ["tlllbt_tllfixed_gun_high"] = true,
    ["tlllrpt_arm_berthacannon"] = true,
 }
-   
-return BlackList, Customlight, Armtrails, Coretrails, Tlltrails, Plasmabatts
+
+local Tlltrailssb = {
+  ["tllacid_acidrain_rocket"] = true,
+  ["tllvisitor_visitor_vpulse"] = true,
+  ["tllconvincer_armtruck_rocket"] = true,
+  ["tllhoverrocket_tll_vpulse"] = true,
+  ["tllhrk_corhrk_rocket"] = true,
+  ["tllwhale_whale_vpulse"] = true,
+  ["tlldb_dragon_breath_missile"] = true,
+}
+
+  local Armtrailssb = {
+  ["armgor_arm_furie_rocket"] = true,
+  ["armbanth1_bantha_rocket1"] = true,
+  ["arm_furie_arm_furie_rocket"] = true,
+  ["armmerl_armtruck_rocket"] = true,
+  ["armjag_armjag_miss"] = true,
+  ["armmship_armmship_rocket"] = true,
+  ["armtem_armtem_rocket"] = true,
+  ["armjugg_armjugg_rocket"] = true,
+  ["armorco_corkrog_rocket"] = true,
+  ["armbanth_bantha_rocket"] = true,
+  ["armmh_armmh_weapon"] = true,
+  ["armtigre2_corkrog_rocket"] = true,
+  ["armtrmph_rocket_mcv"] = true,
+  ["armpraet_praetorian_rocket"] = true,
+  ["armkrmi_armkrmi_rocket"] = true,
+}
+  local Coretrailssd = {
+  ["corhrk_corhrk_rocket"] = true,
+  ["corkrog1_corkrog_rocket1"] = true,
+  ["corvroc_cortruck_rocket"] = true,
+  ["cormh_cormh_weapon"] = true,
+  ["cortyrnt_rocket_krog"] = true,
+  ["cormship_cormship_rocket"] = true,
+  ["corkrog_corkrog_rocket"] = true,
+  }
+
+
+return BlackList, Customlight, Armtrails, Coretrails, Tlltrails, Plasmabatts, Tlltrailssb, Armtrailssb, Coretrailssd
