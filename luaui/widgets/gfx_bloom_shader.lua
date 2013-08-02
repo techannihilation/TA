@@ -15,10 +15,10 @@ end
 
 -- config params
 local dbgDraw = 0					-- draw only the bloom-mask? [0 | 1]
-local glowAmplifier = 1.0			-- intensity multiplier when filtering a glow source fragment [1, n]
-local blurAmplifier = 1.0		-- intensity multiplier when applying a blur pass [1, n] (should be set close to 1)
-local illumThreshold = 0.5			-- how bright does a fragment need to be before being considered a glow source? [0, 1]
-local blurPasses = 2				-- how many iterations of (7x7) Gaussian blur should be applied to the glow sources?
+local glowAmplifier = 1.2			-- intensity multiplier when filtering a glow source fragment [1, n]
+local blurAmplifier = 1.1		-- intensity multiplier when applying a blur pass [1, n] (should be set close to 1)
+local illumThreshold = 1			-- how bright does a fragment need to be before being considered a glow source? [0, 1]
+local blurPasses = 3				-- how many iterations of (7x7) Gaussian blur should be applied to the glow sources?
 local dilatePass = 0				-- dilate the glow sources after blurring? [0 | 1]
 
 -- non-editables
@@ -30,8 +30,7 @@ local ivsy = 1.0 / vsy
 --quality =2 : 113 fps, 57% memctrler load, 99% shader load
 --quality =1 : 90 fps, 9% memctrler load, 99% shader load
 --quality =4 : 123 fps, 9% memctrler load, 99% shader load
-local quality  = 1
-
+local quality  = 2
 
 
 -- shader and texture handles
@@ -58,6 +57,7 @@ local glRenderToTexture = gl.RenderToTexture
 local glTexture = gl.Texture
 local glTexRect = gl.TexRect
 local glGenerateMipmaps = gl.GenerateMipmap
+local glReadPixels = gl.ReadPixels
 
 local glGetShaderLog = gl.GetShaderLog
 local glCreateShader = gl.CreateShader
@@ -123,7 +123,7 @@ local combineShaderTexture0Loc = nil
 local combineShaderTexture1Loc = nil
 
 local bloomin=0
-
+local minimapbrightness=nil
 
 local function SetIllumThreshold()
 	local ra, ga, ba = glGetSun("ambient")
@@ -134,12 +134,13 @@ local function SetIllumThreshold()
 	local diffuseIntensity  = rd * 0.299 + gd * 0.587 + bd * 0.114
 	local specularIntensity = rs * 0.299 + gs * 0.587 + bs * 0.114
 
-	-- illumThreshold = (0.8 * ambientIntensity) + (0.1 * diffuseIntensity) + (0.1 * specularIntensity)
+	illumThreshold = illumThreshold*(0.8 * ambientIntensity) + (0.5 * diffuseIntensity) + (0.1 * specularIntensity)
 
 	print("[BloomShader::SetIllumThreshold] sun ambient color:  ", ra .. ", " .. ga .. ", " .. ba .. " (intensity: " .. ambientIntensity .. ")")
 	print("[BloomShader::SetIllumThreshold] sun diffuse color:  ", rd .. ", " .. gd .. ", " .. bd .. " (intensity: " .. diffuseIntensity .. ")")
 	print("[BloomShader::SetIllumThreshold] sun specular color: ", rs .. ", " .. gs .. ", " .. bs .. " (intensity: " .. specularIntensity .. ")")
 	print("[BloomShader::SetIllumThreshold] illumination threshold: " .. illumThreshold)
+	Spring.Echo("[BloomShader::SetIllumThreshold] illumination threshold: " .. illumThreshold)
 end
 
 local function RemoveMe(msg)
@@ -228,23 +229,24 @@ function widget:Initialize()
 			uniform sampler2D texture0;
 			uniform float inverseRX;
 			uniform float fragBlurAmplifier;
-			//const float invKernelSum = 0.015625;
-			const float invKernelSum = 0.0147;
+			const float invKernelSum = 0.01;
 
 			void main(void) {
 				vec2 texCoors = vec2(gl_TexCoord[0]);
-				vec4 samples[7];
+				vec4 samples[9];
 
-				samples[0] = texture2D(texture0, texCoors + vec2(-3 * inverseRX, 0));
-				samples[1] = texture2D(texture0, texCoors + vec2(-2 * inverseRX, 0));
-				samples[2] = texture2D(texture0, texCoors + vec2(-1 * inverseRX, 0));
-				samples[3] = texture2D(texture0, texCoors + vec2( 0            , 0));
-				samples[4] = texture2D(texture0, texCoors + vec2( 1 * inverseRX, 0));
-				samples[5] = texture2D(texture0, texCoors + vec2( 2 * inverseRX, 0));
-				samples[6] = texture2D(texture0, texCoors + vec2( 3 * inverseRX, 0));
+				samples[0] = texture2D(texture0, texCoors + vec2(-4 * inverseRX, 0));
+				samples[1] = texture2D(texture0, texCoors + vec2(-3 * inverseRX, 0));
+				samples[2] = texture2D(texture0, texCoors + vec2(-2 * inverseRX, 0));
+				samples[3] = texture2D(texture0, texCoors + vec2(-1 * inverseRX, 0));
+				samples[4] = texture2D(texture0, texCoors + vec2( 0            , 0));
+				samples[5] = texture2D(texture0, texCoors + vec2( 1 * inverseRX, 0));
+				samples[6] = texture2D(texture0, texCoors + vec2( 2 * inverseRX, 0));
+				samples[7] = texture2D(texture0, texCoors + vec2( 3 * inverseRX, 0));
+				samples[8] = texture2D(texture0, texCoors + vec2( 4 * inverseRX, 0));
 
-				samples[3] = (3*samples[0] + 6*samples[1] + 15*samples[2] + 20*samples[3] + 15*samples[4] + 6*samples[5] + 3*samples[6]);
-				gl_FragColor = (samples[3] * invKernelSum) * fragBlurAmplifier;
+				samples[4] = (3*samples[0] + 7*samples[1] + 15*samples[2] + 20*samples[3] + 25*samples[4] + 20*samples[5] + 15*samples[6] + 7*samples[7]+ 3*samples[8]);
+				gl_FragColor = (samples[4] * invKernelSum) * fragBlurAmplifier;
 			}
 		]],
 
@@ -261,23 +263,24 @@ function widget:Initialize()
 			uniform sampler2D texture0;
 			uniform float inverseRY;
 			uniform float fragBlurAmplifier;
-			//const float invKernelSum = 0.015625;
-			const float invKernelSum = 0.0147;
+			const float invKernelSum = 0.01;
 
 			void main(void) {
 				vec2 texCoors = vec2(gl_TexCoord[0]);
-				vec4 samples[7];
+				vec4 samples[9];
 
-				samples[0] = texture2D(texture0, texCoors + vec2(0, -3 * inverseRY));
-				samples[1] = texture2D(texture0, texCoors + vec2(0, -2 * inverseRY));
-				samples[2] = texture2D(texture0, texCoors + vec2(0, -1 * inverseRY));
-				samples[3] = texture2D(texture0, texCoors + vec2(0,  0            ));
-				samples[4] = texture2D(texture0, texCoors + vec2(0,  1 * inverseRY));
-				samples[5] = texture2D(texture0, texCoors + vec2(0,  2 * inverseRY));
-				samples[6] = texture2D(texture0, texCoors + vec2(0,  3 * inverseRY));
+				samples[0] = texture2D(texture0, texCoors + vec2(0, -4 * inverseRY));
+				samples[1] = texture2D(texture0, texCoors + vec2(0, -3 * inverseRY));
+				samples[2] = texture2D(texture0, texCoors + vec2(0, -2 * inverseRY));
+				samples[3] = texture2D(texture0, texCoors + vec2(0, -1 * inverseRY));
+				samples[4] = texture2D(texture0, texCoors + vec2(0,  0            ));
+				samples[5] = texture2D(texture0, texCoors + vec2(0,  1 * inverseRY));
+				samples[6] = texture2D(texture0, texCoors + vec2(0,  2 * inverseRY));
+				samples[7] = texture2D(texture0, texCoors + vec2(0,  3 * inverseRY));
+				samples[8] = texture2D(texture0, texCoors + vec2(0,  4 * inverseRY));
 
-				samples[3] = (3*samples[0] + 6*samples[1] + 15*samples[2] + 20*samples[3] + 15*samples[4] + 6*samples[5] + 3*samples[6]);
-				gl_FragColor = (samples[3] * invKernelSum) * fragBlurAmplifier;
+				samples[4] = (3*samples[0] + 7*samples[1] + 15*samples[2] + 20*samples[3] + 25*samples[4] + 20*samples[5] + 15*samples[6] + 7*samples[7]+ 3*samples[8]);
+				gl_FragColor = (samples[4] * invKernelSum) * fragBlurAmplifier;
 			}
 		]],
 
@@ -325,27 +328,29 @@ function widget:Initialize()
 	end
 
 	dilateShaderV51 = glCreateShader({
-		fragment = [[
-			uniform sampler2D texture0;
-			uniform float inverseRY;
-
+		vertex= [[
+			varying vec3 position;
+			varying vec3 normal;
+			 
 			void main(void) {
-				vec2 texCoors = vec2(gl_TexCoord[0]);
-				vec4 samples[5];
-				vec4 maxSample;
-
- 				samples[ 0] = texture2D(texture0, texCoors + vec2(0, -2 * inverseRY));
-				samples[ 1] = texture2D(texture0, texCoors + vec2(0, -1 * inverseRY));
-				samples[ 2] = texture2D(texture0, texCoors + vec2(0,  0            ));
-				samples[ 3] = texture2D(texture0, texCoors + vec2(0,  1 * inverseRY));
-				samples[ 4] = texture2D(texture0, texCoors + vec2(0,  2 * inverseRY));
-
-				maxSample = max(samples[0], samples[1]);
-				maxSample = max(maxSample,  samples[2]);
-				maxSample = max(maxSample,  samples[3]);
-				maxSample = max(maxSample,  samples[4]);
-
-				gl_FragColor = maxSample;
+				gl_FrontColor  = gl_Color;
+				gl_Position    = gl_ModelViewProjectionMatrix * gl_Vertex;
+				gl_TexCoord[0] = gl_MultiTexCoord0;
+			 
+				position = vec3(gl_ModelViewMatrix * gl_Vertex);
+				normal = normalize(gl_NormalMatrix * gl_Normal);
+			}
+			]],
+		fragment = [[
+					#version 120
+			 
+			varying vec3 position;
+			varying vec3 normal;
+			 
+			void main(void) {
+				gl_FragData[0] = gl_Color;
+				gl_FragData[1] = vec4(normal, 1.0);
+				gl_FragData[2] = gl_Color;
 			}
 		]],
 
@@ -370,9 +375,8 @@ function widget:Initialize()
 			void main(void) {
 				vec2 texCoors = vec2(gl_TexCoord[0]);
 				vec3 color = vec3(texture2D(texture0, texCoors));
-				float illum = dot(color, vec3(0.2990, 0.5870, 0.1140));
+				float illum = dot(color, vec3(0.2990, 0.4870, 0.2140)); //adjusted from the real values of  vec3(0.2990, 0.5870, 0.1140)
 				float minlight=min(color.r,min(color.g,color.b));
-				//vec4 samples[25]; //this does not seem to be needed at all...
 
 				if (illum > illuminationThreshold) {
 					//gl_FragColor = vec4(mix(color,color-vec3(minlight,minlight,minlight),0.5), 1.0) * fragGlowAmplifier;
@@ -414,6 +418,8 @@ function widget:Initialize()
 	combineShaderDebgDrawLoc = glGetUniformLocation(combineShader, "debugDraw")
 	combineShaderTexture0Loc = glGetUniformLocation(combineShader, "texture0")
 	combineShaderTexture1Loc = glGetUniformLocation(combineShader, "texture1")
+	
+
 end
 
 function widget:Shutdown()
@@ -475,70 +481,32 @@ end
 
 
 
-local function Bloom2()
-
-	bloomin=bloomin+1
-	if (bloomin%100==0) then
-		Spring.Echo('Blooming!!!',bloomin)
-	end
-	gl.Color(1, 1, 1, 1)
-	local k=1
-	local l=-1
-	gl.MultiTexCoord(0,0.5,0.5)
-	glCopyToTexture(screenTexture, 0, 0, 0, 0, vsx, vsy, nil,0)
- 
-	glUseShader(brightShader)
-		glUniformInt(brightShaderText0Loc, 0)
-		glUniform(   brightShaderInvRXLoc, ivsx)
-		glUniform(   brightShaderInvRYLoc, ivsy)
-		glUniform(   brightShaderIllumLoc, illumThreshold)
-		glUniform(   brightShaderFragLoc, glowAmplifier)
-		mglRenderToTexture(brightTexture1, screenTexture, k,l)
-	glUseShader(0)
-
-
-
-	for i = 1, blurPasses do
-		glUseShader(blurShaderH71)
-			glUniformInt(blurShaderH71Text0Loc, 0)
-			glUniform(   blurShaderH71InvRXLoc, ivsx)
-			glUniform(   blurShaderH71FragLoc, blurAmplifier)
-			mglRenderToTexture(brightTexture2, brightTexture1,k,l)
-		glUseShader(0)
-		glUseShader(blurShaderV71)
-			glUniformInt(blurShaderV71Text0Loc, 0)
-			glUniform(   blurShaderV71InvRYLoc, ivsy)
-			glUniform(   blurShaderV71FragLoc, blurAmplifier)
-			mglRenderToTexture(brightTexture1, brightTexture2,k,l)
-		glUseShader(0)
-	end
-
-
-	if (dilatePass == 1) then
-		glUseShader(dilateShaderH51)
-			glUniformInt(dilateShaderH51Text0Loc, 0)
-			glUniform(   dilateShaderH51InvRXLoc, ivsx)
-			mglRenderToTexture(brightTexture2, brightTexture1, k,l)
-		glUseShader(0)
-		glUseShader(dilateShaderV51)
-			glUniformInt(dilateShaderV51Text0Loc, 0)
-			glUniform(   dilateShaderV51InvRYLoc, ivsy)
-			mglRenderToTexture(brightTexture1, brightTexture2,k,l)
-		glUseShader(0)
-	end
-
-
-	glUseShader(combineShader)
-		glUniformInt(combineShaderDebgDrawLoc, dbgDraw)
-		glUniformInt(combineShaderTexture0Loc, 0)
-		glUniformInt(combineShaderTexture1Loc, 1)
-		mglActiveTexture(0, screenTexture, vsx, vsy, false, true)
-		mglActiveTexture(1, brightTexture1, vsx, vsy, false, true)
-	glUseShader(0)
-end
-
 local function Bloom()
+	if minimapbrightness == nil then
+		--get 100 points on minimap
+		glTexture("$minimap")
 
+		local r=0
+		local g=0
+		local b=0
+		local a=0
+		local cnt =0
+		for x=1, 9 do
+			
+			for y= 1, 9 do
+				local pr,pg,pb,pa = glReadPixels(50+10*x,50+10*y,1,1)
+				r=r+pr/81
+				g=g+pg/81
+				b=b+pb/81
+				a=a+pa/81
+				cnt=cnt+1
+			end
+		end
+		glTexture(false)
+		minimapbrightness=r*0.3+g*0.5+b*0.2
+		Spring.Echo("Bloom shader minimap brightness values:",cnt,r,g,b,a)
+		
+	end
 	-- bloomin=bloomin+1
 	-- if (bloomin%100==0) then
 		-- Spring.Echo('Blooming!!!',bloomin)
