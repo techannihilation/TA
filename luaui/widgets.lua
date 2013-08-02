@@ -152,6 +152,9 @@ local flexCallIns = {
   'DrawScreenEffects',
   'DrawInMiniMap',
   'RecvSkirmishAIMessage',
+  --Custom Callins
+  'CameraBroadcastEvent', 
+  'MouseCursorEvent',
 }
 local flexCallInMap = {}
 for _,ci in ipairs(flexCallIns) do
@@ -237,19 +240,21 @@ end
 
 function widgetHandler:LoadConfigData()
   local chunk, err = loadfile(CONFIG_FILENAME)
-  if (chunk == nil) then
-    return {}
-  else
-    local tmp = {math = {huge = math.huge}}
-    setfenv(chunk, tmp)
-    self.orderList = chunk().order
-    self.configData = chunk().data
-    if (not self.orderList) then
-      self.orderList = {} -- safety
+  if (chunk == nil) or (chunk() == nil) or (err) then
+    if err then
+      Spring.Log(section, LOG.ERROR, err)
     end
-    if (not self.configData) then
-      self.configData = {} -- safety
-    end
+    return
+  end
+  local tmp = {math = {huge = math.huge}}
+  setfenv(chunk, tmp)
+  self.orderList = chunk().order
+  self.configData = chunk().data
+  if (not self.orderList) then
+    self.orderList = {} -- safety
+  end
+  if (not self.configData) then
+    self.configData = {} -- safety
   end
 end
 
@@ -1919,6 +1924,23 @@ function widgetHandler:StockpileChanged(unitID, unitDefID, unitTeam,
   return
 end
 
+--------------------------------------------------------------------------------
+--Custom Callins
+--------------------------------------------------------------------------------
+
+function widgetHandler:CameraBroadcastEvent(playerID,cameraState)
+  for _,w in ipairs(self.CameraBroadcastEventList) do
+    w:CameraBroadcastEvent(playerID,cameraState)
+  end
+  return
+end
+
+function widgetHandler:MouseCursorEvent(playerID,x,z,click)
+  for _,w in ipairs(self.MouseCursorEventList) do
+    w:MouseCursorEvent(playerID,x,z,click)
+  end
+  return
+end
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

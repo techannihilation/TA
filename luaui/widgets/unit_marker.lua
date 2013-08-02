@@ -169,7 +169,7 @@ function widget:UnitEnteredLos(unitID, allyTeam)
 	local udef = UnitDefs[udefId]
 	local x, y, z = spGetUnitPosition(unitID)
 	
-	if (  unitList[curModID] ~= nil ) and (  unitList[curModID][udef.name] ~= nil ) and  ( unitList[curModID][udef.name]["markerText"] ~= nil ) then
+	if (  udef ~= nil and unitList[curModID] ~= nil ) and (  unitList[curModID][udef.name] ~= nil ) and  ( unitList[curModID][udef.name]["markerText"] ~= nil ) then
 		--the unit is in the list -> has to get marked
 		if ( knownUnits[unitID] == nil ) or ( knownUnits[unitID] ~= udefId ) then
 			--unit wasnt marked already or unit changed

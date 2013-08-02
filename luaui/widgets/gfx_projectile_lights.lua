@@ -271,7 +271,7 @@ function widget:DrawWorldPreUnit()
 				local factor = max(0.01, (100.0+height-y)*0.01) --factor=1 at when almost touching ground, factor=0 when above 100 height)
 				if (factor >= 0.01 and factor < 1.0) then
 					dx, _, dz = spGetProjectileVelocity(pID)
-					if dx*dx + dz*dz > 0.1 then		-- when a projectile hits a target above ground, there's an unaligned flash due to velocity being 0
+					if dx ~= nil and dx*dx + dz*dz > 0.1 then		-- when a projectile hits a target above ground, there's an unaligned flash due to velocity being 0
 						glColor(lightparams[1], lightparams[2], lightparams[3], lightparams[4]*factor*factor*noise[floor(x+z+pID)%10+1]) -- attentuation is x^2
 						factor = 32*(1.1-max(factor, 0.3)) -- clamp the size
 						glPushMatrix()

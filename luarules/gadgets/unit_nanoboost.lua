@@ -36,6 +36,7 @@ local SpSpawnCEG = Spring.SpawnCEG
 local uDefs = UnitDefs
 local SpGetUnitHealth = Spring.GetUnitHealth
 local SpSetUnitHealth = Spring.SetUnitHealth
+local spSetUnitRulesParam  = Spring.SetUnitRulesParam
 
 local mrandom = math.random
 --------------------------------------------------------------------------------
@@ -123,11 +124,15 @@ local function BuildspeedCommand(unitID, unitDefID, cmdParams, teamID)
 	if cmdParams[1] == 1 then
 		--Spring.Echo("boosted at " .. buildspeedlist[unitID].speed *1.8)
 		Spring.SetUnitBuildSpeed(unitID, buildspeedlist[unitID].speed *1.8,0,0)
+		spSetUnitRulesParam(unitID,"nanoPower",(buildspeedlist[unitID].speed *1.8))
 		boostednanos[unitID] = true
+
 	else
 		--Spring.Echo("not boosted at " .. buildspeedlist[unitID].speed)
 		Spring.SetUnitBuildSpeed(unitID, buildspeedlist[unitID].speed, buildspeedlist[unitID].repair, buildspeedlist[unitID].reclaim)
+		spSetUnitRulesParam(unitID,"nanoPower",buildspeedlist[unitID].speed)
 		boostednanos[unitID] = nil
+		
 	end
 	buildspeedlist[unitID].mode=cmdParams[1]
 	UpdateButton(unitID, cmdParams[1])

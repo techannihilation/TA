@@ -1,4 +1,4 @@
--- $Id$
+-- $Id: gui_buildbar.lua 2491 2008-07-17 13:36:51Z det $
 
 function widget:GetInfo()
   return {
@@ -99,9 +99,11 @@ end
 -------------------------------------------------------------------------------
 -- SCREENSIZE FUNCTIONS
 -------------------------------------------------------------------------------
+local floor       = math.floor
+
 local iconSizeX  = 65
-local iconSizeY  = math.floor(iconSizeX * 0.75)
-local repIcoSize = math.floor(iconSizeY*0.6)   --repeat iconsize
+local iconSizeY  = floor(iconSizeX * 0.75)
+local repIcoSize = floor(iconSizeY*0.6)   --repeat iconsize
 local fontSize   = iconSizeY * 0.25
 local borderSize = 1.5
 local maxVisibleBuilds = 3
@@ -127,10 +129,10 @@ end
 
 
 local function UpdateIconSizes()
-  iconSizeX = math.floor(bar_iconSizeBase+((vsx-800)/38))
-  iconSizeY = math.floor(iconSizeX * 0.75)
+  iconSizeX = floor(bar_iconSizeBase+((vsx-800)/38))
+  iconSizeY = floor(iconSizeX * 0.75)
   fontSize  = iconSizeY * 0.25
-  repIcoSize = math.floor(iconSizeY*0.6)
+  repIcoSize = floor(iconSizeY*0.6)
 end
 
 
@@ -163,18 +165,21 @@ local glTexRect   = gl.TexRect
 local glLineWidth = gl.LineWidth
 local push        = table.insert
 local tan         = math.tan
-
+local rad         = math.rad
+local abs         = math.abs
+local min         = math.min
+local max         = math.max
 
 -------------------------------------------------------------------------------
 -- INITIALIZTION FUNCTIONS
 -------------------------------------------------------------------------------
 function widget:Initialize()
- -- blurFullscreen = ((useBlurShader)and(WG['blur_api'])and(WG['blur_api'].Fullscreen))
- -- if (useBlurShader)and(blurFullscreen==nil) then
- --   Spring.Echo('BuildBar Warning: you deactivated the "blurApi" widget, please reactivate it.')
- -- end
---  blurFullscreen = (blurFullscreen)or(function() return end)
-
+  --[[blurFullscreen = ((useBlurShader)and(WG['blur_api'])and(WG['blur_api'].Fullscreen))
+  if (useBlurShader)and(blurFullscreen==nil) then
+   Spring.Echo('BuildBar Warning: you deactivated the "blurApi" widget, please reactivate it.')
+  end
+  blurFullscreen = (blurFullscreen)or(function() return end)
+--]]
   myTeamID = Spring.GetMyTeamID()
 
   UpdateFactoryList()
@@ -192,7 +197,7 @@ function widget:GetConfigData()
     openByClick  = bar_openByClick,
     autoclose    = bar_autoclose,
 
-   -- useBlurShader= useBlurShader
+    --useBlurShader= useBlurShader
   }
 end
 
@@ -205,8 +210,8 @@ function widget:SetConfigData(data)
   bar_openByClick  = data.openByClick  or false
   bar_autoclose    = data.autoclose    or (not bar_openByClick)
 
-  bar_side         = math.min( math.max(bar_side, 0), 3)
-  bar_align        = math.min( math.max(bar_align,-1) ,1)
+  bar_side         = min( max(bar_side, 0), 3)
+  bar_align        = min( max(bar_align,-1) ,1)
   --SetupNewScreenAlignment()
 
   -- shader
@@ -276,12 +281,12 @@ end
 
 local function DrawBuildProgress(left,top,right,bottom, progress, color)
   glColor(color)
-  local xcen = (left+right)/2
-  local ycen = (top+bottom)/2
+  local xcen = (left+right)*0.5
+  local ycen = (top+bottom)*0.5
 
   local alpha = 360*(progress)
-  local alpha_rad = math.rad(alpha)
-  local beta_rad  = math.pi/2 - alpha_rad
+  local alpha_rad = rad(alpha)
+  local beta_rad  = math.pi*0.5 - alpha_rad
   local list = {}
   push(list, {v = { xcen,  ycen }})
   push(list, {v = { xcen,  top }})
@@ -502,6 +507,7 @@ function widget:DrawWorld()
       fac = facs[openedMenu+1]
     end
     if fac ~= nil then
+
       DrawUnitCommands(fac.unitID)
     end
   end
@@ -511,16 +517,15 @@ end
 function widget:DrawInMiniMap(sx,sy)
    if (openedMenu>-1) then
      gl.PushMatrix()
-       local pt = math.min(sx,sy)
+       local pt = min(sx,sy)
 
        gl.LoadIdentity()
        gl.Translate(0, 1, 0)
        gl.Scale(1 / msx, -1 / msz, 1)
 
        local r,g,b = GetTeamColor(myTeamID)
-       local alpha = 0.5 + math.abs((Spring.GetGameSeconds() % 0.25)*4 - 0.5)
+       local alpha = 0.5 + abs((Spring.GetGameSeconds() % 0.25)*4 - 0.5)
        local x,_,z = Spring.GetUnitBasePosition(facs[openedMenu+1].unitID)
-
        if x ~= nil then
          gl.PointSize(pt*0.066)
          gl.Color(0, 0, 0)
@@ -544,7 +549,7 @@ local function _clampScreen(mid,half,vsd)
   elseif (mid+half>vsd) then
     return vsd-half*2, vsd 
   else
-    local val = math.floor(mid - half)
+    local val = floor(mid - half)
     return        val, val+half*2
   end
 end
@@ -562,7 +567,7 @@ function SetupDimensions(count)
   else                   -- vertical (left or right bar)
     vsa,iconSizeA,vsb,iconSizeB = vsy,iconSizeY,vsx,iconSizeX
   end
-  length = math.floor(iconSizeA * count)
+  length = floor(iconSizeA * count)
   mid    = vsa * 0.5 + bar_offset
 
   -- setup expanding direction
@@ -592,26 +597,26 @@ function SetupSubDimensions()
   local buildListn = #facs[openedMenu+1].buildList
   if bar_horizontal then --please note the factorylist is horizontal not the buildlist!!!
 
-    boptRect[1]  = math.floor(facRect[1] + iconSizeX * openedMenu)
+    boptRect[1]  = floor(facRect[1] + iconSizeX * openedMenu)
     boptRect[3]  = boptRect[1] + iconSizeX
     if bar_side==2 then --top
       boptRect[2] = vsy - iconSizeY
-      boptRect[4] = boptRect[2] - math.floor(iconSizeY * buildListn)
+      boptRect[4] = boptRect[2] - floor(iconSizeY * buildListn)
     else --bottom
       boptRect[4] = iconSizeY
-      boptRect[2] = iconSizeY + math.floor(iconSizeY * buildListn)
+      boptRect[2] = iconSizeY + floor(iconSizeY * buildListn)
     end
 
   else
 
-    boptRect[2]  = math.floor(facRect[2] - iconSizeY * openedMenu)
+    boptRect[2]  = floor(facRect[2] - iconSizeY * openedMenu)
     boptRect[4]  = boptRect[2] - iconSizeY
     if bar_side==0 then --left
       boptRect[1] = iconSizeX
-      boptRect[3] = iconSizeX + math.floor(iconSizeX * buildListn)
+      boptRect[3] = iconSizeX + floor(iconSizeX * buildListn)
     else --right
       boptRect[3] = vsx - iconSizeX
-      boptRect[1] = boptRect[3] - math.floor(iconSizeX * buildListn)
+      boptRect[1] = boptRect[3] - floor(iconSizeX * buildListn)
     end
 
   end
@@ -818,7 +823,7 @@ function MenuHandler(x,y,button)
     openedMenu   = -1
     pressedFac   = -1
     hoveredFac   = -1
-   -- blurFullscreen(false)
+    --blurFullscreen(false)
     blured = false
   end
   return
@@ -884,9 +889,9 @@ function MouseOverIcon(x, y)
   then
     local icon
     if bar_horizontal then
-      icon = math.floor((x - facRect[1]) / fac_inext[1])
+      icon = floor((x - facRect[1]) / fac_inext[1])
     else
-      icon = math.floor((y - facRect[2]) / fac_inext[2])
+      icon = floor((y - facRect[2]) / fac_inext[2])
     end
 
     if (icon >= #facs) then
@@ -908,13 +913,13 @@ function MouseOverSubIcon(x,y)
   then
     local icon  
     if bar_side==0 then
-      icon = math.floor((x - boptRect[1]) / bopt_inext[1])
+      icon = floor((x - boptRect[1]) / bopt_inext[1])
     elseif bar_side==2 then
-      icon = math.floor((y - boptRect[2]) / bopt_inext[2])
+      icon = floor((y - boptRect[2]) / bopt_inext[2])
     elseif bar_side==1 then
-      icon = math.floor((x - boptRect[3]) / bopt_inext[1])
+      icon = floor((x - boptRect[3]) / bopt_inext[1])
     else --bar_side==3
-      icon = math.floor((y - boptRect[4]) / bopt_inext[2])
+      icon = floor((y - boptRect[4]) / bopt_inext[2])
     end
 
     if (icon > #facs[openedMenu+1].buildList-1) then
@@ -1032,7 +1037,7 @@ function widget:TweakDrawScreen()
   local rect = {}
   if bar_horizontal then
     if bar_align==0 then         -- centered line
-      rect = {(facRect[1]+facRect[3])/2, facRect[2], (facRect[1]+facRect[3])/2, facRect[4]}
+      rect = {(facRect[1]+facRect[3])*0.5, facRect[2], (facRect[1]+facRect[3])*0.5, facRect[4]}
     elseif (bar_align>0) then    -- left line
       rect = {facRect[1], facRect[2], facRect[1], facRect[4]}
     else --if (bar_align<0) then -- right line
@@ -1040,7 +1045,7 @@ function widget:TweakDrawScreen()
     end
   else
     if bar_align==0 then         -- centered line
-      rect = {facRect[1], (facRect[2]+facRect[4])/2, facRect[3], (facRect[2]+facRect[4])/2}
+      rect = {facRect[1], (facRect[2]+facRect[4])*0.5, facRect[3], (facRect[2]+facRect[4])*0.5}
     elseif (bar_align>0) then    -- bottom line
       rect={facRect[1], facRect[4], facRect[3], facRect[4]}
     else --if (bar_align<0) then -- top line
@@ -1103,8 +1108,8 @@ function widget:TweakMouseMove(x, y, dx, dy, button)
     if bar_horizontal then
       bar_offset = bar_offset + dx
 
-      if math.abs(TweakPressedPos_Y-y)>100 then
-        local bar_center = (facRect[1] + facRect[3])/2
+      if abs(TweakPressedPos_Y-y)>100 then
+        local bar_center = (facRect[1] + facRect[3])*0.5
         if bar_center>0.5*vsx then
           bar_side=1
         else
@@ -1117,8 +1122,8 @@ function widget:TweakMouseMove(x, y, dx, dy, button)
       end
     else
       bar_offset = bar_offset + dy
-      if math.abs(TweakPressedPos_X-x)>100 then
-        local bar_center = (facRect[2] + facRect[4])/2
+      if abs(TweakPressedPos_X-x)>100 then
+        local bar_center = (facRect[2] + facRect[4])*0.5
         if bar_center>0.5*vsy then
           bar_side=3
         else
@@ -1137,9 +1142,9 @@ function widget:TweakMouseWheel(up,value)
   -- you can resize the icons with the mousewheel
   if (hoveredFac+hoveredBOpt>=-1) then
     if up then
-      bar_iconSizeBase = math.max(bar_iconSizeBase + 3,40)
+      bar_iconSizeBase = max(bar_iconSizeBase + 3,40)
     else
-      bar_iconSizeBase = math.max(bar_iconSizeBase - 3,40)
+      bar_iconSizeBase = max(bar_iconSizeBase - 3,40)
     end
 
     UpdateIconSizes()

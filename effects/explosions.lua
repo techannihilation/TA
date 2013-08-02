@@ -318,7 +318,8 @@ return {
   ["pilot"] = {
     heatcloud = {
       air                = true,
-      count              = 1,
+      class              = [[heatcloud]],
+      count              = 3,
       ground             = true,
       water              = true,
       properties = {
@@ -326,10 +327,29 @@ return {
         heatfalloff        = 2,
         maxheat            = 30,
         pos                = [[0, -1.5, 0]],
-        size               = 10,
+        size               = 5,
         sizegrowth         = -0.04,
         speed              = [[0 r1, 1.5 r1, 0 r1]],
         useairlos          = false,
+        texture            = [[fireball]],
+      },
+    },
+   heatcloud1 = {
+      air                = true,
+      class              = [[heatcloud]],
+      count              = 1,
+      ground             = true,
+      water              = true,
+      properties = {
+        heat               = 22,
+        heatfalloff        = 3,
+        maxheat            = 30,
+        pos                = [[0, -1.5, 0]],
+        size               = 4,
+        sizegrowth         = -0.04,
+        speed              = [[0 r1, 1.5 r1, 0 r1]],
+        useairlos          = false,
+        texture            = [[fire1]],
       },
     },
     smoke2 = {
@@ -340,9 +360,9 @@ return {
       properties = {
         agespeed           = 0.03,
         glowfalloff        = 10,
-        pos                = [[0, 1, 0]],
-        size               = 2,
-        speed              = [[0,1.75,0]],
+        pos                = [[0, 0, 0]],
+        size               = 6,
+        speed              = [[0 r1, 1.5 r1, 0 r1]],
         useairlos          = false,
       },
     },

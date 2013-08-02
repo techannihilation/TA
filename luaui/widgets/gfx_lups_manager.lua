@@ -457,7 +457,7 @@ local spGetSpectatingState = Spring.GetSpectatingState
 local spGetUnitDefID       = Spring.GetUnitDefID
 local spGetUnitRulesParam  = Spring.GetUnitRulesParam
 local spGetUnitIsActive    = Spring.GetUnitIsActive
-local spSpringGetUnitArmored = Spring.GetUnitArmored
+local spGetUnitArmored     = Spring.GetUnitArmored
 local SpGetUnitBasePosition = Spring.GetUnitBasePosition
 local SpGetMyPlayerID      = Spring.GetMyPlayerID
 local SpGetAllUnits        = Spring.GetAllUnits
@@ -548,7 +548,7 @@ local function UnitEnteredLos(_,unitID)
   if (effects) then
 	for _,fx in ipairs(effects) do
 	  if (fx.options.onActive == true) and (spGetUnitIsActive(unitID) == nil) or
-	     (fx.options.onActive == true) and spSpringGetUnitArmored(unitID) then 
+	     (fx.options.onActive == true) and spGetUnitArmored(unitID) then 
 		break
 	else
 		if (fx.class=="GroundFlash") then
