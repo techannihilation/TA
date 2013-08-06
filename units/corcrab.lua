@@ -53,13 +53,10 @@ local unitDef = {
 	standingfireorder = 2,
 	standingmoveorder = 1,
 	steeringmode = 1,
-	threed = 1,
 	turnRate = 1020,
 	unitname = [[corcrab]],
 	unitnumber = 10005,
-	version = 3,
 	workerTime = 0,
-	zbuffer = 1,
 	customparams = {
 		RequireTech = [[Advanced T2 Unit Research Centre]],
 	},

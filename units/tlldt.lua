@@ -17,7 +17,6 @@ local unitDef = {
 	buildingGroundDecalType = [[tlldt_aoplane.dds]],
 	buildTime = 520,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
-	copyright = [[Copyright 1997 Humongous Entertainment. All rights reserved.]],
 	corpse = [[TLLDragonsTeeth]],
 	description = [[Dragon's Teeth]],
 	designation = [[TL-DT]],
@@ -41,14 +40,11 @@ local unitDef = {
 	radarDistance = 0,
 	side = [[TLL]],
 	sightDistance = 1,
-	threed = 1,
 	unitname = [[tlldt]],
 	unitnumber = 936,
 	useBuildingGroundDecal = true,
-	version = 1,
 	workerTime = 0,
 	yardMap = [[ff ff]],
-	zbuffer = 1,
 	featureDefs = nil,
 }
 

@@ -54,13 +54,10 @@ local unitDef = {
 	standingfireorder = 2,
 	standingmoveorder = 1,
 	steeringmode = 1,
-	threed = 1,
 	turnRate = 399,
 	unitname = [[vaporiser]],
 	unitnumber = 543,
-	version = 2,
 	workerTime = 0,
-	zbuffer = 1,
 	customparams = {
 		RequireTech = [[Advanced T2 Unit Research Centre]],
 	},

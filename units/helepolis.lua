@@ -61,14 +61,11 @@ local unitDef = {
 	standingmoveorder = 1,
 	steeringmode = 2,
 	TEDClass = [[KBOT]],
-	threed = 1,
 	turnRate = 600,
 	unitname = [[helepolis]],
 	unitnumber = 269,
 	upright = false,
-	version = 1.2,
 	workerTime = 0,
-	zbuffer = 1,
 	customparams = {
 	},
 	sfxtypes = {
