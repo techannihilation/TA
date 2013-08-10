@@ -6,7 +6,7 @@ function widget:GetInfo()
 		date		= "Dec 27, 2012",
 		license		= "GNU GPL, v2 or later",
 		layer		= 0,
-		enabled		= true
+		enabled		= false,
 	}
 end
 
@@ -386,6 +386,7 @@ function widget:GameFrame(n)
 	if myTeamID ~= spGetMyTeamID() then
 		IChanged()
 	end
+	--[[
 	for _, featureInfo in ipairs(featureToProcess) do
 		if featureInfo[1] then
 			newFeature(featureInfo[2],featureInfo[3])
@@ -411,6 +412,7 @@ function widget:GameFrame(n)
 			wreckProcessChange(n,data.position,data.variables.reclaim,reclaimLeft,"Com is being resurrected","Com is being reclaimed")
 		end
 	end
+	--]]
 	if toClean[n] then
 		for _,coords in ipairs(toClean[n]) do
 			spMarkerErasePosition( coords[1], coords[2], coords[3] )
