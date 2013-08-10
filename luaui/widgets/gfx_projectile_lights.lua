@@ -50,7 +50,7 @@ local atan2				= math.atan2
 
 local list      
 local plighttable = {}
-local BlackList, Armtrails, Coretrails, Tlltrails, Plasmabatts = include("Configs/gfx_projectile_lights_defs.lua")	-- weapons that shouldn't use projectile lights
+local BlackList, Customlight, Armtrails, Coretrails, Tlltrails, Plasmabatts, Tlltrailssb, Armtrailssb, Coretrailssd = include("Configs/gfx_projectile_lights_defs.lua")	-- weapons that shouldn't use projectile lights
 local noise = {--this is so that it flashes a bit, should be addressed with (x+z)%10 +1
 	1.1,
 	1.0,
@@ -130,7 +130,10 @@ function widget:Initialize() -- create lighttable
 				local wdID = WeaponDefs[weaponID]
 				if not BlackList[wdID.name] then	-- prevent projectile light, if the weapon has some other light effect
 					--Buzz/Vulc
-					if (wdID.type == 'Cannon') and Plasmabatts[wdID.name] then
+		--[[			if Customlight[wdID.name] then
+					       Spring.Echo("Custom lights for :"..wdID.name)
+					       plighttable[wdID.name]=Customlight[wdID.name]
+		--]]			if (wdID.type == 'Cannon') and Plasmabatts[wdID.name] then
 						plighttable[wdID.name]={0.8,0.6,0,2.0*((wdID.size-0.65)/3.0),_,_,((wdID.size/2.6)+0.5)}  -- 7th is *size 
 					elseif (wdID.type == 'Cannon' or wdID.type == 'EmgCannon') then
 						plighttable[wdID.name] = {1.0,1.0,0.5,0.5*((wdID.size-0.65)/3.0)}
@@ -156,8 +159,17 @@ function widget:Initialize() -- create lighttable
 					elseif (wdID.type == 'MissileLauncher') then
 						size=WeaponDefs[weaponID]['size']
 						plighttable[wdID.name]={1,1,0.8,0.5*((size-1)/3)}
+					elseif (wdID.type == 'StarburstLauncher') and Coretrailssd[wdID.name] then
+						size=WeaponDefs[weaponID]['size']
+						plighttable[wdID.name]={1,0.2,0.2,0.5*((size-1)/2)}
+					elseif (wdID.type == 'StarburstLauncher') and Armtrailssb[wdID.name] then
+						size=WeaponDefs[weaponID]['size']
+						plighttable[wdID.name]={0.5,0.5,1,0.5*((size-1)/2)}
+					elseif (wdID.type == 'StarburstLauncher') and Tlltrailssb[wdID.name] then
+						size=WeaponDefs[weaponID]['size']
+						plighttable[wdID.name]={1,1,0.2,0.5*((size-1)/2)}
 					elseif (wdID.type == 'StarburstLauncher') then
-						plighttable[wdID.name]={1,1,0.8,0.5}
+						plighttable[wdID.name]={1,1,0.8,15*size}
 					end
 				end
 			end	
