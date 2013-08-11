@@ -118,7 +118,7 @@ function gadget:FeatureDestroyed(featureID)
 	local wreckLocation = {GetFeaturePosition(featureID)}
 	for unitID, unitPos in pairs(rezzedList) do
 		if sqDist(unitPos,wreckLocation) < distThreshold then
-			SetUnitExperience(unitID,wreckInfo.experience)
+			SetUnitExperience(unitID,(wreckInfo.experience*0.50))
 			rezzedUnits[wreckInfo.unitDefID][unitID] = nil
 			return
 		end
