@@ -32,6 +32,7 @@ local unitDef = {
 	idleTime = 1800,
 	levelGround = false,
 	maxDamage = 2400,
+	maxSlope = 36,
 	maxWaterDepth = 0,
 	name = [[Tracer]],
 	noChaseCategory = [[ALL]],
