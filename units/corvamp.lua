@@ -37,7 +37,6 @@ local unitDef = {
 	idleTime = 1800,
 	maneuverleashlength = 1280,
 	maxDamage = 600,
-	maxSlope = 10,
 	maxVelocity = 12.7,
 	maxWaterDepth = 0,
 	mobilestandorders = 1,

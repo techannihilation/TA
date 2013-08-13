@@ -10,7 +10,7 @@ local unitDef = {
 	buildAngle = 8192,
 	buildCostEnergy = 150000,
 	buildCostMetal = 55000,
-	builder = false,
+	isbuilder = false,
 	buildPic = [[tlldmc.png]],
 	buildTime = 150000,
 	
@@ -35,7 +35,6 @@ local unitDef = {
 	footprintX = 5,
 	footprintZ = 5,
 	maxDamage = 65000,
-	maxSlope = 10,
 	maxWaterDepth = 0,
 	metalStorage = 0,
 	name = [[DMC]],

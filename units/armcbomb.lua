@@ -35,7 +35,6 @@ local unitDef = {
 	footprintZ = 3,
 	maneuverleashlength = 1280,
 	maxDamage = 562,
-	maxSlope = 10,
 	maxVelocity = 14,
 	maxWaterDepth = 0,
 	metalStorage = 0,

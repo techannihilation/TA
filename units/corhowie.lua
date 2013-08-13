@@ -34,7 +34,6 @@ local unitDef = {
   maneuverleashlength = 640,
   mass               = 3450,
   maxDamage          = 4750,
-  maxSlope           = 20,
   maxVelocity        = 1.6,
   maxWaterDepth      = 12,
   mobilestandorders  = 1,
