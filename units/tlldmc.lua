@@ -10,7 +10,7 @@ local unitDef = {
 	buildAngle = 8192,
 	buildCostEnergy = 150000,
 	buildCostMetal = 55000,
-	isbuilder = false,
+	builder = false,
 	buildPic = [[tlldmc.png]],
 	buildTime = 150000,
 	
