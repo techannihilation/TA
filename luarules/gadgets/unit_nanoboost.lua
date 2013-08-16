@@ -47,7 +47,7 @@ local boostednanos = {} -- list of nanos in boostmode
 
 local buildspeedlist = {}
 
-local nanos = {armhevsenan
+local nanos = {
   --Arm
   [UnitDefNames["armnanotc"].id] = true,
   [UnitDefNames["armnanotc1"].id] = true,
