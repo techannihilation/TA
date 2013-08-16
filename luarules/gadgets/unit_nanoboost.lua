@@ -47,20 +47,26 @@ local boostednanos = {} -- list of nanos in boostmode
 
 local buildspeedlist = {}
 
-local nanos = {
+local nanos = {armhevsenan
+  --Arm
   [UnitDefNames["armnanotc"].id] = true,
   [UnitDefNames["armnanotc1"].id] = true,
   [UnitDefNames["armnanotc2"].id] = true,
   [UnitDefNames["armnanotc3"].id] = true,
   [UnitDefNames["ananotower"].id] = true,
+  [UnitDefNames["armhevsenan"].id] = true,
+  --Core
   [UnitDefNames["cornanotc"].id] = true,
   [UnitDefNames["cornanotc1"].id] = true,
   [UnitDefNames["cornanotc2"].id] = true,
   [UnitDefNames["cornanotc3"].id] = true,
   [UnitDefNames["cnanotower"].id] = true,
+  [UnitDefNames["corhevsenan"].id] = true,
+  --Tll
   [UnitDefNames["tllnanotc"].id] = true,
   [UnitDefNames["tllnanotc1"].id] = true,
   [UnitDefNames["tllnanotc2"].id] = true,
+  [UnitDefNames["tllhevsenan"].id] = true,
 }
 
 local buildspeedCmdDesc = {
