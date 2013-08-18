@@ -13,11 +13,10 @@ function widget:GetInfo()
   }
 end
 
---Add seperate color for different missile projectiles - Nixtux
-
 local spGetUnitViewPosition 	= Spring.GetUnitViewPosition
 local spGetUnitDefID			= Spring.GetUnitDefID
 local spGetGroundHeight			= Spring.GetGroundHeight
+local spGetGroundNormal			= Spring.GetGroundNormal
 local spGetVectorFromHeading	= Spring.GetVectorFromHeading
 local spTraceScreenRay			= Spring.TraceScreenRay
 local spGetViewGeometry			= Spring.GetViewGeometry
@@ -45,8 +44,9 @@ local glBlending		= gl.Blending
 local max				= math.max
 local floor				= math.floor
 local sqrt				= math.sqrt
-local deg				= math.deg
 local atan2				= math.atan2
+local acos				= math.acos
+local abs				= math.abs
 
 local list      
 local plighttable = {}
@@ -99,6 +99,23 @@ listL = gl.CreateList(function()	-- Laser cannon decal texture
     end)
 end)
 
+listN = gl.CreateList(function()	-- Laser cannon decal texture
+	glBeginEnd(GL.QUAD_STRIP,function()  
+    --point1
+    glTexCoord(0.5,0.0)
+    glVertex(-2.0,0.0,-2.0)
+    --point2                                 
+    glTexCoord(0.5,1.0)                           
+    glVertex(2.0,0.0,-2.0)                   
+    --point3
+    glTexCoord(1.0,0.0)
+    glVertex(-2.0,0.0,2.0)
+    --point4
+    glTexCoord(1.0,1.0)
+    glVertex(2.0,0.0,2.0)
+    end)
+end)
+
 
 function widget:Initialize() -- create lighttable
   --[[
@@ -130,44 +147,48 @@ function widget:Initialize() -- create lighttable
 				local wdID = WeaponDefs[weaponID]
 				if not BlackList[wdID.name] then	-- prevent projectile light, if the weapon has some other light effect
 					--Buzz/Vulc
-		--[[			if Customlight[wdID.name] then
+					if Customlight[wdID.name] then
 					       Spring.Echo("Custom lights for :"..wdID.name)
 					       plighttable[wdID.name]=Customlight[wdID.name]
-		--]]			if (wdID.type == 'Cannon') and Plasmabatts[wdID.name] then
-						plighttable[wdID.name]={0.8,0.6,0,2.0*((wdID.size-0.65)/3.0),_,_,((wdID.size/2.6)+0.5)}  -- 7th is *size 
+					elseif (wdID.type == 'Cannon') and Plasmabatts[wdID.name] then
+						plighttable[wdID.name]={0.8,0.6,0,4.0*((wdID.size-0.65)/3.0),_,_,((wdID.size/2.6)+0.5)}  -- 7th is *size 
 					elseif (wdID.type == 'Cannon' or wdID.type == 'EmgCannon') then
-						plighttable[wdID.name] = {1.0,1.0,0.5,0.5*((wdID.size-0.65)/3.0)}
+						plighttable[wdID.name] = {1.0,1.0,0.5,1.2*((wdID.size-0.65)/3.0)}
 					elseif (wdID.type == 'LaserCannon') then
 						local colour = wdID.visuals
 						plighttable[wdID.name] = {
-							colour.colorR, colour.colorG, colour.colorB, 0.75
-							,
+							colour.colorR, colour.colorG, colour.colorB, 0.6,
 							wdID.projectilespeed * wdID.duration, colour.thickness^0.33333}
+					elseif (wdID.type == 'LightningCannon' or wdID.type == 'BeamLaser') then
+						local colour = wdID.visuals
+						plighttable[wdID.name] = {colour.colorR, colour.colorG, colour.colorB, 0.75, true, colour.thickness^0.45}
+					--	Bugged for Lightning cannon and Beam Lasers
+					--	plighttable[wdID.name]={0.2,0.2,1.0,0.6,true} --]]
 					--Core Missiles 
 					elseif (wdID.type == 'MissileLauncher') and Coretrails[wdID.name] then
 						size=WeaponDefs[weaponID]['size']
-						plighttable[wdID.name]={1,0.2,0.2,0.5*((size-1)/3)}
+						plighttable[wdID.name]={1,0.2,0.2,0.8*((size-1)/3)}
 					--Arm Missiles
 					elseif (wdID.type == 'MissileLauncher') and Armtrails[wdID.name] then
 						size=WeaponDefs[weaponID]['size']
-						plighttable[wdID.name]={0.7,0.7,1,0.5*((size-1)/3)}
+						plighttable[wdID.name]={0.7,0.7,1,0.8*((size-1)/3)}
 					--Tll Missiles
 					elseif (wdID.type == 'MissileLauncher') and Tlltrails[wdID.name] then
 						size=WeaponDefs[weaponID]['size']
-						plighttable[wdID.name]={1,1,0.2,0.5*((size-1)/3)}
+						plighttable[wdID.name]={1,1,0.2,0.8*((size-1)/3)}
 					--Other Missiles
 					elseif (wdID.type == 'MissileLauncher') then
 						size=WeaponDefs[weaponID]['size']
 						plighttable[wdID.name]={1,1,0.8,0.5*((size-1)/3)}
 					elseif (wdID.type == 'StarburstLauncher') and Coretrailssd[wdID.name] then
 						size=WeaponDefs[weaponID]['size']
-						plighttable[wdID.name]={1,0.2,0.2,0.5*((size-1)/2)}
+						plighttable[wdID.name]={1,0.2,0.2,2*((size-1)/2)}
 					elseif (wdID.type == 'StarburstLauncher') and Armtrailssb[wdID.name] then
 						size=WeaponDefs[weaponID]['size']
-						plighttable[wdID.name]={0.5,0.5,1,0.5*((size-1)/2)}
+						plighttable[wdID.name]={0.5,0.5,1,2*((size-1)/2)}
 					elseif (wdID.type == 'StarburstLauncher') and Tlltrailssb[wdID.name] then
 						size=WeaponDefs[weaponID]['size']
-						plighttable[wdID.name]={1,1,0.2,0.5*((size-1)/2)}
+						plighttable[wdID.name]={1,1,0.2,2*((size-1)/2)}
 					elseif (wdID.type == 'StarburstLauncher') then
 						plighttable[wdID.name]={1,1,0.8,15*size}
 					end
@@ -260,7 +281,7 @@ function widget:DrawWorldPreUnit()
 		glDepthTest(false)
 		--glDepthTest(GL.LEQUAL) 
 		
-		local x, y, z, dx, dz
+		local x, y, z, dx, dz, nx, ny, ang
 		--local fx, fy = 32, 32	--footprint
 		glBlending("alpha_add") --makes it go into +
 		local lightparams
@@ -281,25 +302,56 @@ function widget:DrawWorldPreUnit()
 										-- diff is negative, cause we need to put the lighting under it
 										-- diff defines size and diffusion rate)
 				local factor = max(0.01, (100.0+height-y)*0.01) --factor=1 at when almost touching ground, factor=0 when above 100 height)
-				if (factor >= 0.01 and factor < 1.0) then
-					dx, _, dz = spGetProjectileVelocity(pID)
-					if dx ~= nil and dx*dx + dz*dz > 0.1 then		-- when a projectile hits a target above ground, there's an unaligned flash due to velocity being 0
-						glColor(lightparams[1], lightparams[2], lightparams[3], lightparams[4]*factor*factor*noise[floor(x+z+pID)%10+1]) -- attentuation is x^2
-						factor = 32*(1.1-max(factor, 0.3)) -- clamp the size
-						glPushMatrix()
-						glTranslate(x, height+5, z)  -- push in y dir by height (to push it on the ground!), +5 to keep it above surface
-						if lightparams[6] then
-							glRotate(deg(atan2(dx,dz)), 0.0, 1.0, 0.0)	-- align laser cannon light with projectile direction
-							glScale(factor*lightparams[6], 1.0, factor*lightparams[5]) -- scale it by thickness, duration and height from ground
-							glCallList(listL) -- draw laser cannon light
-						elseif lightparams[7] then
-							glScale(factor*lightparams[7], 1.0, factor*lightparams[7]) -- Allow Custom size settings
-							glCallList(listC) -- draw cannon light
-						else
-							glScale(factor, 1.0, factor) -- scale it by size and height from ground
-							glCallList(listC) -- draw cannon light
-						end					
-						glPopMatrix()
+				-- experimental support for beam lasers and lightning cannons, works only when fired on a unit/feature, not ground
+				if lightparams[5] and type(lightparams[5])=="boolean" then 
+					local targID, targType = Spring.GetProjectileTarget(pID)
+					if targID then
+						local tx,ty,tz
+						if targType=="u" then
+							_,_,_,tx,ty,tz = Spring.GetUnitPosition(targID,false,true)
+						elseif targType=="f" then
+							_,_,_,tx,ty,tz = Spring.GetFeaturePosition(targID,false,true)
+						end
+						Spring.Echo(targType)
+						if ty<=y*1.25 then	-- no neon lights if aiming towards air
+							glColor(lightparams[1], lightparams[2], lightparams[3], lightparams[4]*factor*factor*noise[floor(x+z+pID)%10+1]) -- attentuation is x^2
+							factor = 32*(1.1-max(factor, 0.3)) -- clamp the size
+							glPushMatrix()
+							glTranslate(x, height+3, z)  -- push in y dir by height (to push it on the ground!), +3 to keep it above surface
+							local scX, scZ = tx-x, tz-z
+							glRotate(atan2(scX,scZ)*57.295779513082320876798, 0.0, 1.0, 0.0)	-- align light with beam direction
+							glScale(factor*lightparams[6], 1.0, factor*sqrt(scX*scX+scZ*scZ)*.052) -- scale it by thickness, distance to target and height from ground
+							glCallList(listN) -- draw neon light
+							glPopMatrix()
+						end
+					end
+				else	-- other weapons
+					if (factor >= 0.01 and factor < 1.0) then
+						dx, _, dz = spGetProjectileVelocity(pID)
+						if dx*dx + dz*dz > 0.1 then		-- when a projectile hits a target above ground, there's an unaligned flash due to velocity being 0
+							glColor(lightparams[1], lightparams[2], lightparams[3], lightparams[4]*factor*factor*noise[floor(x+z+pID)%10+1]) -- attentuation is x^2
+							factor = 32*(1.1-max(factor, 0.3)) -- clamp the size
+							glPushMatrix()
+							--glTranslate(x, height+3, z)
+							glTranslate(x, y+3, z)  -- push in y dir by height (to push it on the ground!), +3 to keep it above surface
+							nx, ny = spGetGroundNormal(x,z)
+							ang = acos(ny)*57.295779513082320876798		-- deg(x) is 4x slower than x*57.295779513082320876798
+							if nx>0 then ang = ang * -1.0 end
+							glRotate(ang, 0.0, 0.0, 1.0)	-- align to ground slope, rather coarse but fast method
+							glRotate(atan2(dx,dz)*57.295779513082320876798, 0.0, 1.0, 0.0)	-- align light with projectile direction, needed for slope alignment too
+							glTranslate(0,height-y,0)
+							if lightparams[5] then
+								glScale(factor*lightparams[6], 1.0, factor*lightparams[5]) -- scale it by thickness, duration and height from ground
+								glCallList(listL) -- draw laser cannon light
+							elseif lightparams[7] then
+								glScale(factor*lightparams[7], 1.0, factor*lightparams[7]) -- Allow Custom size settings
+								glCallList(listC) -- draw cannon light
+							else
+								glScale(factor, 1.0, factor) -- scale it by size and height from ground
+								glCallList(listC) -- draw cannon light
+							end					
+							glPopMatrix()
+						end
 					end
 				end
 			end
