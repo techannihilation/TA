@@ -54,7 +54,7 @@ local unitDef = {
 	unitname = [[armhevsenan]],
 	upright = true,
 	waterline = 7,
-	workerTime = 300,
+	workerTime = 350,
 }
 --------------------------------------------------------------------------------
 
