@@ -159,9 +159,9 @@ function widget:Initialize() -- create lighttable
 						plighttable[wdID.name] = {
 							colour.colorR, colour.colorG, colour.colorB, 0.6,
 							wdID.projectilespeed * wdID.duration, colour.thickness^0.33333}
-					elseif (wdID.type == 'LightningCannon' or wdID.type == 'BeamLaser') then
+					elseif (wdID.type == 'LightningCannon'  or (wdID.type == 'BeamLaser'and wdID.range < 500)) then
 						local colour = wdID.visuals
-						plighttable[wdID.name] = {colour.colorR, colour.colorG, colour.colorB, 0.75, true, colour.thickness^0.45}
+						plighttable[wdID.name] = {colour.colorR/2.3, colour.colorG/2.3, colour.colorB/2.3, 0.75, true, colour.thickness^0.45}
 					--	Bugged for Lightning cannon and Beam Lasers
 					--	plighttable[wdID.name]={0.2,0.2,1.0,0.6,true} --]]
 					--Core Missiles 
