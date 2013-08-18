@@ -56,7 +56,6 @@ local unitDef = {
 	standingfireorder = 2,
 	standingmoveorder = 1,
 	steeringmode = 2,
-	threed = 1,
 	trackOffset = -6,
 	trackStrength = 6,
 	trackStretch = 1,
@@ -65,9 +64,7 @@ local unitDef = {
 	turnRate = 400,
 	unitname = [[corgfbt]],
 	unitnumber = 397,
-	version = 2.5,
 	workerTime = 0,
-	zbuffer = 1,
 	customparams = {
 		RequireTech = [[Advanced T1 Unit Research Centre]],
 	},

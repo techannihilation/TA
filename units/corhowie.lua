@@ -55,7 +55,6 @@ local unitDef = {
   turnRate           = 979,
   unitname           = [[corhowie]],
   upright            = true,
-  version            = 1.2,
   workerTime         = 0,
   customparams = {
 		RequireTech = [[Advanced T3 Unit Research Centre]],

@@ -15,7 +15,7 @@ function widget:GetInfo()
 		desc      = "Players list with useful information / shortcuts. Use tweakmode (ctrl+F11) to customize.",
 		author    = "Marmoth.",
 		date      = "11.06.2013",
-		version   = "10",
+		version   = "11",
 		license   = "GNU GPL, v2 or later",
 		layer     = -4,
 		enabled   = true,  --  loaded by default?
@@ -28,12 +28,14 @@ end
 -- v9.0 (Bluestone): modifications to deal with twice as many players/specs; specs are rendered in a small font and cpu/ping does not show for them. 
 -- v9.1 ([teh]decay): added notification about shared resources
 -- v10  (Bluestone): Better use of opengl for a big speed increase & less spaghetti
+-- v11  (Bluestone): Get take info from cmd_idle_players
 
 --------------------------------------------------------------------------------
 -- SPEED UPS
 --------------------------------------------------------------------------------
 
 local Spring_GetGameSeconds      = Spring.GetGameSeconds
+local Spring_GetGameFrame		 = Spring.GetGameFrame
 local Spring_GetAllyTeamList     = Spring.GetAllyTeamList
 local Spring_GetTeamInfo         = Spring.GetTeamInfo
 local Spring_GetTeamList         = Spring.GetTeamList
@@ -519,24 +521,27 @@ function CreatePlayerFromTeam(teamID)
 	else
 	
 		if Spring_GetGameSeconds() < 0.1 then
-		
 			tname = "no player yet"
 			ttotake = false
 			tdead = false
-		
-		else
-		
-			if Spring_GetTeamUnitCount(teamID) > 0  then
-				tname = "- aband. units -"
-				ttotake = true
-				tdead = false
-			else
-				tname = "- dead team -"
-				ttotake = false
-				tdead = true
+		elseif Spring_GetTeamRulesParam(teamID, "numActivePlayers") == 0 then
+			local units = Spring_GetTeamUnitCount(teamID)
+			local energy = Spring_GetTeamResources(teamID,"energy")
+			local metal = Spring_GetTeamResources(teamID,"metal")
+			if units and energy and metal then
+				if (units > 0) or (energy > 0) or (metal > 0) then			
+					ttotake = true
+				end
 			end
-		
+		else
+			ttotake = false					
 		end
+		
+		
+	end
+	
+	if tname == nil then
+		tname = "- aband. units -"
 	end
 	
 	return{
@@ -649,6 +654,7 @@ function SortAllyTeams(vOffset)
 		end
 	end
 	
+	
 	return vOffset
 end
 
@@ -727,7 +733,23 @@ function SortPlayers(teamID,allyTeamID,vOffset)
 		table.insert(drawListOffset, vOffset)
 		table.insert(drawList, 64 + teamID)  -- no players team
 		player[64 + teamID].posY = vOffset
+		if Spring_GetGameFrame() > 0 then
+			if Spring_GetTeamRulesParam(teamID, "numActivePlayers") == 0 then
+				local units = Spring_GetTeamUnitCount(teamID)
+				local energy = Spring_GetTeamResources(teamID,"energy")
+				local metal = Spring_GetTeamResources(teamID,"metal")
+				if units and metal and energy then
+					if (units > 0) or (energy > 0) or (metal > 0) then			
+						player[64+teamID].totake = true
+					else
+						player[64+teamID].totake = false	
+					end
+				end
+			end
+		end
 	end
+	
+	
 	return vOffset
 end
 
@@ -925,13 +947,13 @@ function CreateMainList(tip)
 	
 	for i, drawObject in ipairs(drawList) do
 		if drawObject == -5 then
-			DrawLabel("SPECS", drawListOffset[i])
+			DrawLabel(" SPECS", drawListOffset[i])
 		elseif drawObject == -4 then
 			DrawSeparator(drawListOffset[i])
 		elseif drawObject == -3 then
-			DrawLabel("ENEMIES", drawListOffset[i])
+			DrawLabel(" ENEMIES", drawListOffset[i])
 		elseif drawObject == -2 then
-			DrawLabel("ALLIES", drawListOffset[i])
+			DrawLabel(" ALLIES", drawListOffset[i])
 		elseif drawObject == -1 then
 			leader = true
 		else
@@ -991,6 +1013,7 @@ function DrawPlayerTip(playerID, leader, vOffset, mouseX, mouseY)
 	local posY     = widgetPosY + widgetHeight - vOffset
 	
 	if mouseY >= posY and mouseY <= posY + 16 then tipY = true end
+
 	
 	if spec == false then --player
 		if leader == true then                              -- take / share buttons
@@ -1517,12 +1540,12 @@ function widget:MousePress(x,y,button)
 							if clickedPlayer.totake == true then
 								if right == true then
 									if IsOnRect(x,y, widgetPosX - 57, posY - 1,widgetPosX - 12, posY + 17) then                            --take button
-										Take()                                                                                             --
+										Take(clickedPlayer.team, clickedPlayer.name, i)                                                                                             --
 										return true                                                                                        --
 									end                                                                                                    --
 								else                                                                                                       --
 									if IsOnRect(x,y, widgetPosX + widgetWidth + 12, posY-1,widgetPosX + widgetWidth + 57, posY + 17) then  --
-										Take()                                                                                             --
+										Take(clickedPlayer.team, clickedPlayer.name, i)                                                                                             --
 										return true
 									end
 								end
@@ -1966,6 +1989,22 @@ function CheckPlayersChange()
 			player[i].ping    = pingTime*1000-((pingTime*1000)%1)
 			player[i].cpu     = cpuUsage*100-((cpuUsage*100)%1)
 		end
+		if teamID and Spring_GetGameFrame() > 0 then
+			if Spring_GetTeamRulesParam(teamID, "numActivePlayers") == 0 and player[i].totake == false then
+				local units = Spring_GetTeamUnitCount(teamID)
+				local energy = Spring_GetTeamResources(teamID,"energy")
+				local metal = Spring_GetTeamResources(teamID,"metal")
+				if units and energy and metal then
+					if (units > 0) or (energy > 0) or (metal > 0) then			
+						player[i].totake = true
+						sorting = true
+					end
+				end
+			else
+				player[i].name = name
+				player[i].totake = false					
+			end
+		end
 	end
 	if sorting == true then    -- sorts the list again if change needs it
 		SortList()
@@ -1994,20 +2033,22 @@ function GetNeed(resType,teamID)
 	return false
 end
 
-function Take()
+local reportTake = false
+local tookTeamID
+local tookTeamName
+local tookFrame
+
+function Take(teamID,name, i)
 
 	-- sends the /take command to spring
 
-	Spring_SendCommands{"take"}
-	Spring_SendCommands{"say a: I took the abandoned units."}
-	for i = 0,127 do
-		if player[i].allyteam == myAllyTeamID then
-			if player[i].totake == true then
-				player[i] = CreatePlayerFromTeam(player[i].team)
-				SortList()
-			end
-		end
-	end
+	reportTake = true
+	tookTeamID = teamID
+	tookTeamName = name
+	tookFrame = Spring.GetGameFrame()
+	
+	Spring_SendCommands("luarules take2 " .. teamID)
+
 	return
 end
 
@@ -2021,6 +2062,32 @@ local updateRate = 0.5
 
 function widget:Update(delta) 
 	timeCounter = timeCounter + delta
+	curFrame = Spring_GetGameFrame()
+		
+	if reportTake and curFrame >= 2 + tookFrame then --i have no idea why it takes two frames, but it does
+		local teamID = tookTeamID
+		local afterE = Spring_GetTeamResources(teamID,"energy")
+		local afterM = Spring_GetTeamResources(teamID, "metal")
+		local afterU = Spring_GetTeamUnitCount(teamID)
+	
+		Spring_SendCommands("say a: I took " .. colourNames(tookTeamID) .. tookTeamName .. ".")
+		
+		if afterE~=0 or afterM~=0 or  afterU~=0 then
+			Spring_SendCommands("say a: Left  " .. afterU .. " units, " .. afterE .. " energy and " .. afterM .. " metal remaining.")
+		end
+		
+		for j = 0,127 do
+			if player[j].allyteam == myAllyTeamID then
+				if player[j].totake == true then
+					player[j] = CreatePlayerFromTeam(player[j].team)
+					SortList()
+				end
+			end
+		end	
+
+		reportTake = false
+	end
+	
 	if timeCounter < updateRate then
 		return
 	else
@@ -2031,7 +2098,6 @@ end
 
 function widget:TeamDied(teamID)
 	player[teamID+64]        = CreatePlayerFromTeam(teamID)
-	player[teamID+64].totake = false
 	SortList()
 end
 
@@ -2047,7 +2113,3 @@ function widget:ViewResize(viewSizeX, viewSizeY)
 		widgetPosX  = widgetRight - widgetWidth
 	end
 end
-
-
--- Coord in % (resize) geometry will not be done
--- ajouter les d�cryptages de messages "widget:AddConsoleLine(line,priority)" appel� � chaque fois qu'il doit ajouter une ligne

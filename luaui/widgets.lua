@@ -153,8 +153,6 @@ local flexCallIns = {
   'DrawInMiniMap',
   'RecvSkirmishAIMessage',
   --Custom Callins
-  'CameraBroadcastEvent', 
-  'MouseCursorEvent',
 }
 local flexCallInMap = {}
 for _,ci in ipairs(flexCallIns) do
@@ -1926,21 +1924,6 @@ end
 
 --------------------------------------------------------------------------------
 --Custom Callins
---------------------------------------------------------------------------------
-
-function widgetHandler:CameraBroadcastEvent(playerID,cameraState)
-  for _,w in ipairs(self.CameraBroadcastEventList) do
-    w:CameraBroadcastEvent(playerID,cameraState)
-  end
-  return
-end
-
-function widgetHandler:MouseCursorEvent(playerID,x,z,click)
-  for _,w in ipairs(self.MouseCursorEventList) do
-    w:MouseCursorEvent(playerID,x,z,click)
-  end
-  return
-end
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

@@ -63,7 +63,6 @@ local unitDef = {
 	steeringmode = 1,
 	turnRate = 64,
 	unitname = [[corhcar]],
-	version = 1,
 	waterline = 2,
 	workerTime = 750,
 	featureDefs = nil,
