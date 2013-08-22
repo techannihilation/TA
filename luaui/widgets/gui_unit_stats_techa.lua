@@ -85,6 +85,14 @@ local pplants = {
 	["corgen"] = true,
 }
 
+local negsolar = {
+	["armsolar"] =true,
+	["corsolar"] =true,
+	["tllsolar"] =true,
+	["tllsolarns"] =true,
+	["tladvlsolar"] =true,
+}
+
 ------------------------------------------------------------------------------------
 -- Speedups
 ------------------------------------------------------------------------------------
@@ -233,6 +241,10 @@ function widget:DrawScreen()
 			DrawText("CR is metal maker conversion rate", '')
 			
 			local totalEOut = uDef.energyMake
+			
+			if negsolar[uDef.name] then
+				totalEOut = totalEOut + math.abs(uDef.energyUpkeep)
+			end
 			
 			if (uDef.tidalGenerator > 0 and tidalStrength > 0) then
 			    local mult = 1 -- DEFAULT
