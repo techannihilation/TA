@@ -825,7 +825,7 @@ function registerUnit(unitID, unitDefID, unitTeam)
   
     builders[unitID] = {["buildSpeed"] = unitDef.buildSpeed, originalBuildSpeed = unitDef.buildSpeed, ['unitDef'] = unitDef, ["owned"] = (unitTeam == myTeamID), ["targetID"] = nil, ["guards"] = {}}
     
-    if unitDef.isCommander then
+    if unitDef.customParams.iscommander then
       commanderBuildSpeed = unitDef.buildSpeed
     end
     
