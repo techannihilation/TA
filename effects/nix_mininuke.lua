@@ -34,7 +34,7 @@ return {
    glow = {
       air                = true,
       class              = [[CSimpleParticleSystem]],
-      count              = 3,
+      count              = 1,
       ground             = true,
       water              = true,
       properties = {
@@ -74,8 +74,8 @@ return {
         emitrotspread      = 360,
         emitvector         = [[0,1,0]],
         gravity            = [[0 , 0.004, 0]],
-        numparticles       = 70,
-        particlelife       = 290,
+        numparticles       = 90,
+        particlelife       = 260,
         particlelifespread = 40,
         particlesize       = 9,
         particlesizespread = 25,
@@ -103,10 +103,10 @@ return {
         emitrotspread      = 360,
         emitvector         = [[0,1,0]],
         gravity            = [[0 , 0.005, 0]],
-        numparticles       = 70,
-        particlelife       = 320,
+        numparticles       = 40,
+        particlelife       = 290,
         particlelifespread = 40,
-        particlesize       = 9,
+        particlesize       = 65,
         particlesizespread = 25,
         particlespeed      = [[2 i0.25]],
         particlespeedspread = 2.2,
@@ -131,9 +131,9 @@ return {
         emitrot            = 90,
         emitrotspread      = 0,
         emitvector         = [[0, 1, 0]],
-        gravity            = [[0, 0.018, 0]],
-        numparticles       = 60,
-        particlelife       = 350,
+        gravity            = [[0, 0.015, 0]],
+        numparticles       = 55,
+        particlelife       = 320,
         particlelifespread = 15,
         particlesize       = [[1.2]],
         particlesizespread = 0,
@@ -212,7 +212,7 @@ return {
      SpikeSpawner = {
       air                = true,
       class              = [[CExpGenSpawner]],
-      count              = 20,
+      count              = 18,
       ground             = true,
       water              = false,
       properties = {
@@ -221,53 +221,8 @@ return {
         pos                = [[0, 0, 0]],
       },
     },
-     Firespire = {
-      air                = true,
-      class              = [[CExpGenSpawner]],
-      count              = 0,
-      ground             = true,
-      water              = false,
-      properties = {
-        delay              = [[1 i1]],
-        explosiongenerator = [[custom:Fire_spire]],
-        pos                = [[-30 r60, 0,-30 r60]],
-      },
-    },
   },
   
-  
-["Fire_spire"] = {
-    explosionball = {
-      air                = true,
-      class              = [[CSimpleParticleSystem]],
-      count              = 1,
-      ground             = true,
-      water              = true,
-      properties = { 
-	airdrag            = 0.99,
-        colormap           = [[0 0 0 0	1 0.5 0 .2	0.5 0.4 0.4 0.3		1 0.5 0 .4 		0.1 0.1 0.1 0.3		0 0 0 0.01]],
-        directional        = true,
-        emitrot            = 0,
-        emitrotspread      = 10,
-        emitvector         = [[0, 1, 0]],
-        gravity            = [[0.0, 0.0005, 0.0]],
-        numparticles       = 1,
-        particlelife       = 190,
-        particlelifespread = 10,
-        particlesize       = 0.5,
-        particlesizespread = 8,
-        particlespeed      = [[0 r0.2 i-0.05]],
-        particlespeedspread = 1.5,
-        pos                = [[0, 0, 0]],
-        sizegrowth         = [[0.40 r-.25]],
-        sizemod            = 1.0,
-        texture            = [[smokeorange]],
-        useairlos          = true,
-      },
-    },
-    
-},
-
 ["nuke_spike"] = {
     spikesofhell1 = {
       air                = true,
@@ -285,8 +240,7 @@ return {
       },
     },
 },
-  
-  
+    
   ["fireball_piece"] = {
     rocks = {
       air                = true,
@@ -366,6 +320,7 @@ return {
       },
     },
   },
+  
   ["fireball_expl"] = {
     usedefaultexplosions = true,
     fwoosh = {
@@ -393,7 +348,6 @@ return {
       },
     },
   },
-
 }
 
 
