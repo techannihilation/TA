@@ -148,7 +148,7 @@ function widget:Initialize() -- create lighttable
 				if not BlackList[wdID.name] then	-- prevent projectile light, if the weapon has some other light effect
 					--Buzz/Vulc
 					if Customlight[wdID.name] then
-					       Spring.Echo("Custom lights for :"..wdID.name)
+					       --Spring.Echo("Custom lights for :"..wdID.name)
 					       plighttable[wdID.name]=Customlight[wdID.name]
 					elseif (wdID.type == 'Cannon') and Plasmabatts[wdID.name] then
 						plighttable[wdID.name]={0.8,0.6,0,4.0*((wdID.size-0.65)/3.0),_,_,((wdID.size/2.6)+0.5)}  -- 7th is *size 
@@ -161,7 +161,7 @@ function widget:Initialize() -- create lighttable
 							wdID.projectilespeed * wdID.duration, colour.thickness^0.33333}
 					elseif (wdID.type == 'LightningCannon'  or (wdID.type == 'BeamLaser'and wdID.range < 500)) then
 						local colour = wdID.visuals
-						plighttable[wdID.name] = {colour.colorR/2.3, colour.colorG/2.3, colour.colorB/2.3, 0.75, true, colour.thickness^0.45}
+						plighttable[wdID.name] = {colour.colorR*0.55, colour.colorG*0.55, colour.colorB*0.55, 0.75, true, colour.thickness^0.45}
 					--	Bugged for Lightning cannon and Beam Lasers
 					--	plighttable[wdID.name]={0.2,0.2,1.0,0.6,true} --]]
 					--Core Missiles 
@@ -305,7 +305,7 @@ function widget:DrawWorldPreUnit()
 				-- experimental support for beam lasers and lightning cannons, works only when fired on a unit/feature, not ground
 				if lightparams[5] and type(lightparams[5])=="boolean" then 
 					local targID, targType = Spring.GetProjectileTarget(pID)
-					if targID then
+					if targID and (targType ~= nil) then
 						local tx,ty,tz
 						if targType=="u" then
 							_,_,_,tx,ty,tz = Spring.GetUnitPosition(targID,false,true)
@@ -328,7 +328,7 @@ function widget:DrawWorldPreUnit()
 				else	-- other weapons
 					if (factor >= 0.01 and factor < 1.0) then
 						dx, _, dz = spGetProjectileVelocity(pID)
-						if dx*dx + dz*dz > 0.1 then		-- when a projectile hits a target above ground, there's an unaligned flash due to velocity being 0
+						if dx ~= nil and dx*dx + dz*dz > 0.1 then    -- when a projectile hits a target above ground, there's an unaligned flash due to velocity being 0
 							glColor(lightparams[1], lightparams[2], lightparams[3], lightparams[4]*factor*factor*noise[floor(x+z+pID)%10+1]) -- attentuation is x^2
 							factor = 32*(1.1-max(factor, 0.3)) -- clamp the size
 							glPushMatrix()

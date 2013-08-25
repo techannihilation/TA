@@ -42,6 +42,7 @@ local sharedDynamicAllianceVictory = tonumber(modOptions.shareddynamicalliancevi
 -- ignoreGaia is a C-like bool
 local ignoreGaia = tonumber(modOptions.ignoregaiawinner) or 1
 
+
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -82,7 +83,7 @@ local AreTeamsAllied = Spring.AreTeamsAllied
 local allyTeamInfos = {}
 local teamToAllyTeam = {}
 local playerIDtoAIs = {}
-local playerQuitIsDead = 1
+local playerQuitIsDead = true
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -95,16 +96,22 @@ end
 function gadget:Initialize()
 	if teamDeathMode == "none" then
 		gadgetHandler:RemoveGadget()
-	end
-	local gaiaTeamID = Spring.GetGaiaTeamID()
-	if #GetTeamList() == 3 then -- 2 teams + gaia
-		playerQuitIsDead = 0 -- let player quit & rejoin in 1v1
+		return
 	end
 	
+	local gaiaTeamID = Spring.GetGaiaTeamID()
+	local teamCount = 0
+	for _,teamID in ipairs(GetTeamList()) do
+		if ignoreGaia ~= 1 or teamID ~= gaiaTeamID then
+			teamCount = teamCount + 1
+		end
+	end
 
-	if #GetTeamList() <= 2 then -- sandbox mode (gaia + possibly one player)
+	if teamCount < 2 then -- sandbox mode ( possibly gaia + possibly one player)
 		gadgetHandler:RemoveGadget()
 		return
+	elseif teamCount == 2 then
+		playerQuitIsDead = false -- let player quit & rejoin in 1v1
 	end
 	
 	-- at start, fill in the table of all alive allyteams
@@ -216,7 +223,7 @@ local function UpdateAllyTeamIsDead(allyTeamID)
 	local allyTeamInfo = allyTeamInfos[allyTeamID]
 	local dead = true
 	for teamID,teamInfo in pairs(allyTeamInfo.teams) do
-		if playerQuitIsDead == 0 then
+		if not playerQuitIsDead then
 			dead = dead and (teamInfo.dead or not teamInfo.hasLeader )
 		else
 			dead = dead and (teamInfo.dead or not teamInfo.isControlled )
@@ -248,6 +255,9 @@ function gadget:PlayerChanged(playerID)
 	local teamInfo = allyTeamInfos[allyTeamID].teams[teamID]
 	teamInfo.players[playerID] = active and not spectator
 	teamInfo.hasLeader = select(2,GetTeamInfo(teamID)) >= 0
+	if not teamInfo.hasLeader and not teamInfo.dead then
+		KillTeam(teamID)
+	end	
 	if not teamInfo.isAI then
 		--if team isn't ai controlled, then we need to check if we have attached players
 		teamInfo.isControlled = false
