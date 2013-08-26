@@ -39,7 +39,7 @@ local modrules  = {
 	 },
     
   system = {
-    luaThreadingModel = (Spring.GetModOptions() and (Spring.GetModOptions().mo_therebedragons == "full") and 4) or 2,
+    --luaThreadingModel = (Spring.GetModOptions() and (Spring.GetModOptions().mo_therebedragons == "full") and 4) or 4,
     pathFinderSystem = (Spring.GetModOptions() and (Spring.GetModOptions().qtpfs == "qtpfs") and 1) or 0,
   },
  }
