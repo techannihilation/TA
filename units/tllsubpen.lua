@@ -7,8 +7,8 @@ local unitName = "tllsubpen"
 
 local unitDef = {
 	bmcode = 0,
-	buildCostEnergy = 1250,
-	buildCostMetal = 1250,
+	buildCostEnergy = 2500,
+	buildCostMetal = 2000,
 	builder = true,
 	buildTime = 6520,
 	canGuard = true,
