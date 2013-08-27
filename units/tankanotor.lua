@@ -87,11 +87,13 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[TANKANOTOR_MISSILES]],
-			onlyTargetCategory = [[NOTVTOL]],
+			badTargetCategory = [[VTOL]],
+			onlyTargetCategory = [[ALL]],
 		},
 		[2] = {
 			def = [[TANKANOTOR_MISSILES]],
-			onlyTargetCategory = [[NOTVTOL]],
+			badTargetCategory = [[VTOL]],
+			onlyTargetCategory = [[ALL]],
 		},
 	},
 }

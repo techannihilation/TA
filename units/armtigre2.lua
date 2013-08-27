@@ -91,6 +91,8 @@ local unitDef = {
 		},
 		[3] = {
 			def = [[CORKROG_ROCKET]],
+			badTargetCategory = [[VTOL]],
+			onlyTargetCategory = [[ALL]],
 		},
 	},
 }

@@ -82,11 +82,11 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			badTargetCategory = [[SMALL TINY]],
 			def = [[TAWF014_weapon]],
 			mainDir = [[0 0 1]],
 			maxAngleDif = 270,
-			onlyTargetCategory = [[NOTVTOL]],
+			badTargetCategory = [[VTOL]],
+			onlyTargetCategory = [[ALL]],
 		},
 	},
 }
