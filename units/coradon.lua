@@ -1,4 +1,4 @@
--- UNITDEF -- CORADON --
+    -- UNITDEF -- CORADON --
 --------------------------------------------------------------------------------
 
 local unitName = "coradon"
@@ -61,6 +61,9 @@ local unitDef = {
 	waterline = 7,
 	workerTime = 0,
 	featureDefs = nil,
+	customparams = {
+		RequireTech = [[Advanced T2 Unit Research Centre]],
+	},
 	sounds = {
 		canceldestruct = [[cancel2]],
 		underattack = [[warning1]],
