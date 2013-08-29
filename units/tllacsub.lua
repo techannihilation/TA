@@ -70,7 +70,10 @@ local unitDef = {
 		[7] = [[tlllmtns]],
 		[8] = [[tllnssam]],
 		[9] = [[tllatorp]],
-		[10] = [[tlldtns]],
+		[10] = [[tllasonar]],
+		[11] = [[tlluwjam]],
+		[12] = [[tlldtns]],
+		
 	},
 	featureDefs = nil,
 	sounds = {
