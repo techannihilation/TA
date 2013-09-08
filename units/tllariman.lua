@@ -94,6 +94,7 @@ local weaponDefs = {
 		craterMult = 0,
 		cylinderTargeting = 1,
 		edgeEffectiveness = 0.99,
+		energypershot = 10,
 		explosionGenerator = [[custom:SMALL_RED_BURN]],
 		fireStarter = 70,
 		impactonly = 1,
