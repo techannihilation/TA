@@ -3,115 +3,152 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, pad, doors, door1, door2, door3, door4, arms, arm1, arm2, arm3, arm4, flo1, flo2, flo3, flo4, nano1, nano2,wake1,wake2,wake3,wake4;
+piece  base, body, pad, doors, door1, door2, door3, door4,
+       arms, arm1, arm2, arm3, arm4, flo1, flo2, flo3,
+       flo4, nano1, nano2, wake1, wake2, wake3, wake4;
 
-static-var  spray, unitviewer;
+static-var  spray, unitviewer, statechg_DesiredState, statechg_StateChanging, tidal_Spd;
 
 // Signal definitions
 #define SIG_ACTIVATE			2
 
-#include "StateChg.h"
+Tangue()
+{
+	tidal_Spd = get UNKNOWN_UNIT_VALUE(1030);
+	while( TRUE )
+	{
+	   	turn body to x-axis <1.000000> * tidal_Spd speed <0.400000> * tidal_Spd;
+		turn body to z-axis <1.000000> * tidal_Spd speed <0.400000> * tidal_Spd;
+		wait-for-turn body around x-axis;
+		turn body to x-axis <-1.000000> * tidal_Spd speed <0.400000> * tidal_Spd;
+		turn body to z-axis <-1.000000> * tidal_Spd speed  <0.400000> * tidal_Spd;
+		wait-for-turn body around x-axis;
+		turn body to x-axis <0.000000> speed <0.400000> * tidal_Spd;
+		turn body to z-axis <0.000000> speed <0.400000> * tidal_Spd;
+	}
+}
 
 activatescr()
 {
 	if( TRUE )
 	{
-	move body to y-axis [12.5] speed [3];
-	turn arm1 to x-axis <45> speed <13>;
-	turn flo1 to x-axis <-45> speed <13>;
-	turn arm2 to x-axis <-45> speed <13>;
-	turn flo2 to x-axis <45> speed <13>;
-	turn arm3 to z-axis <45> speed <13>;
-	turn flo3 to z-axis <-45> speed <13>;
-	turn arm4 to z-axis <-45> speed <13>;
-	turn flo4 to z-axis <45> speed <13>;
-	wait-for-move body along y-axis;
+		move body to y-axis [12.500000] speed [3.000000];
+		turn arm1 to x-axis <45.000000> speed <13.000000>;
+		turn flo1 to x-axis <-45.000000> speed <13.000000>;
+		turn arm2 to x-axis <-45.000000> speed <13.000000>;
+		turn flo2 to x-axis <45.000000> speed <13.000000>;
+		turn arm3 to z-axis <45.000000> speed <13.000000>;
+		turn flo3 to z-axis <-45.000000> speed <13.000000>;
+		turn arm4 to z-axis <-45.000000> speed <13.000000>;
+		turn flo4 to z-axis <45.000000> speed <13.000000>;
+		wait-for-move body along y-axis;
 	}
 	if( TRUE )
 	{
-	turn door1 to z-axis <-50> speed <20>;
-	turn door2 to z-axis <50> speed <20>;
-	turn door3 to x-axis <-50> speed <20>;
-	turn door4 to x-axis <50> speed <20>;
-	move doors to y-axis [-10] speed [3];
-	emit-sfx 256 | 3 from door1;
-	emit-sfx 256 | 3 from door2;
-	emit-sfx 256 | 3 from door3;
-	emit-sfx 256 | 3 from door4;
-	emit-sfx 256 | 3 from wake1;
-	emit-sfx 256 | 3 from wake2;
-	emit-sfx 256 | 3 from wake3;
-	emit-sfx 256 | 3 from wake4;
-	Sleep 1250;
-	emit-sfx 256 | 3 from door1;
-	emit-sfx 256 | 3 from door2;
-	emit-sfx 256 | 3 from door3;
-	emit-sfx 256 | 3 from door4;
-	emit-sfx 256 | 3 from wake1;
-	emit-sfx 256 | 3 from wake2;
-	emit-sfx 256 | 3 from wake3;
-	emit-sfx 256 | 3 from wake4;
-	Sleep 1250;
+		turn door1 to z-axis <-50.000000> speed <20.000000>;
+		turn door2 to z-axis <50.000000> speed <20.000000>;
+		turn door3 to x-axis <-50.000000> speed <20.000000>;
+		turn door4 to x-axis <50.000000> speed <20.000000>;
+		move doors to y-axis [-10.000000] speed [3.000000];
+		emit-sfx 256 | 3 from door1;
+		emit-sfx 256 | 3 from door2;
+		emit-sfx 256 | 3 from door3;
+		emit-sfx 256 | 3 from door4;
+		emit-sfx 256 | 3 from wake1;
+		emit-sfx 256 | 3 from wake2;
+		emit-sfx 256 | 3 from wake3;
+		emit-sfx 256 | 3 from wake4;
+		sleep 1250;
+		emit-sfx 256 | 3 from door1;
+		emit-sfx 256 | 3 from door2;
+		emit-sfx 256 | 3 from door3;
+		emit-sfx 256 | 3 from door4;
+		emit-sfx 256 | 3 from wake1;
+		emit-sfx 256 | 3 from wake2;
+		emit-sfx 256 | 3 from wake3;
+		emit-sfx 256 | 3 from wake4;
+		sleep 1250;
 	}
 	if( TRUE )
 	{
-	move pad to y-axis [2] speed [5];
-	move nano1 to y-axis [3.2] speed [5];
-	move nano2 to y-axis [3.2] speed [5];
+		move pad to y-axis [2.000000] speed [5.000000];
+		move nano1 to y-axis [3.200000] speed [5.000000];
+		move nano2 to y-axis [3.200000] speed [5.000000];
 	}
-SLEEP 800;
+	sleep 800;
 }
 
 deactivatescr()
 {
 	if( TRUE )
 	{
-	move pad to y-axis [0] speed [7];
-	move nano1 to y-axis [0] speed [5];
-	move nano2 to y-axis [0] speed [5];
-	SLEEP 1000;
+		move pad to y-axis [0.000000] speed [7.000000];
+		move nano1 to y-axis [0.000000] speed [5.000000];
+		move nano2 to y-axis [0.000000] speed [5.000000];
+		sleep 1000;
 	}
 	if( TRUE )
 	{
-	move doors to y-axis [0] speed [7];
-	turn door1 to z-axis <0> speed <20>;
-	turn door2 to z-axis <0> speed <20>;
-	turn door3 to x-axis <0> speed <20>;
-	turn door4 to x-axis <0> speed <20>;
-	SLEEP 2500;
+		move doors to y-axis [0.000000] speed [7.000000];
+		turn door1 to z-axis <0.000000> speed <20.000000>;
+		turn door2 to z-axis <0.000000> speed <20.000000>;
+		turn door3 to x-axis <0.000000> speed <20.000000>;
+		turn door4 to x-axis <0.000000> speed <20.000000>;
+		sleep 2500;
 	}
 	if( TRUE )
 	{
-	move body to y-axis [0] speed [3];
-	turn arm1 to x-axis <0> speed <12>;
-	turn flo1 to x-axis <0> speed <12>;
-	turn arm2 to x-axis <0> speed <12>;
-	turn flo2 to x-axis <0> speed <12>;
-	turn arm3 to z-axis <0> speed <12>;
-	turn flo3 to z-axis <0> speed <12>;
-	turn arm4 to z-axis <0> speed <12>;
-	turn flo4 to z-axis <0> speed <12>;
-	emit-sfx 256 | 3 from door1;
-	emit-sfx 256 | 3 from door2;
-	emit-sfx 256 | 3 from door3;
-	emit-sfx 256 | 3 from door4;
-	emit-sfx 256 | 3 from wake1;
-	emit-sfx 256 | 3 from wake2;
-	emit-sfx 256 | 3 from wake3;
-	emit-sfx 256 | 3 from wake4;
-	Sleep 125;
+		move body to y-axis [0.000000] speed [3.000000];
+		turn arm1 to x-axis <0.000000> speed <12.000000>;
+		turn flo1 to x-axis <0.000000> speed <12.000000>;
+		turn arm2 to x-axis <0.000000> speed <12.000000>;
+		turn flo2 to x-axis <0.000000> speed <12.000000>;
+		turn arm3 to z-axis <0.000000> speed <12.000000>;
+		turn flo3 to z-axis <0.000000> speed <12.000000>;
+		turn arm4 to z-axis <0.000000> speed <12.000000>;
+		turn flo4 to z-axis <0.000000> speed <12.000000>;
+		emit-sfx 256 | 3 from door1;
+		emit-sfx 256 | 3 from door2;
+		emit-sfx 256 | 3 from door3;
+		emit-sfx 256 | 3 from door4;
+		emit-sfx 256 | 3 from wake1;
+		emit-sfx 256 | 3 from wake2;
+		emit-sfx 256 | 3 from wake3;
+		emit-sfx 256 | 3 from wake4;
+		sleep 125;
 	}
 	sleep 47;
 }
 
-#include "Yard.h"
+OpenYard()
+{
+	set YARD_OPEN to 1;
+	while( !get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 1;
+	}
+	set BUGGER_OFF to 0;
+}
+
+CloseYard()
+{
+	set YARD_OPEN to 0;
+	while( get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 0;
+	}
+	set BUGGER_OFF to 0;
+}
 
 Go()
 {
 	dont-cache nano1;
 	dont-cache nano2;
 	dont-cache pad;
-	
 	call-script activatescr();
 	call-script OpenYard();
 	set INBUILDSTANCE to 1;
@@ -125,11 +162,39 @@ Stop()
 	cache nano1;
 	cache nano2;
 	cache pad;
-	
 }
-#define ACTIVATECMD		call-script Go();
-#define DEACTIVATECMD		call-script Stop();
-#include "StateChg.h"
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
 
 Create()
 {
@@ -141,13 +206,12 @@ Create()
 	dont-shade nano2;
 	dont-shade pad;
 	dont-shade body;
-	
-	turn doors to y-axis <-45> NOW;
-	turn arms to y-axis <45> NOW;
-
+	turn doors to y-axis <-45.000000> now;
+	turn arms to y-axis <45.000000> now;
 	unitviewer = FALSE;
 	spray = base;
 	call-script InitState();
+	start-script Tangue();
 }
 
 QueryNanoPiece(piecenum)
@@ -188,7 +252,7 @@ Deactivate()
 
 StartBuilding()
 {
-	spin pad around y-axis speed <30>;
+	spin pad around y-axis speed <30.000000>;
 }
 
 StopBuilding()

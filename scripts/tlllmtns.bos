@@ -1,119 +1,217 @@
-piece base,tower,bearing,turret,barrel1,barrel2,barrel3,barrel4,flare1,flare2,flare3,flare4;
-piece wake1,wake2,wake3,wake4,wake5,wake6,wake7,wake8;
+#define TA			// This is a TA script
 
-static-var barrel;
+#include "sfxtype.h"
+#include "exptype.h"
 
-#define SIG_AIM	2
-#define SMOKEPIECE1 turret
+piece  base, tower, bearing, turret, barrel1, barrel2, barrel3, barrel4,
+       flare1, flare2, flare3, flare4, wake1, wake2, wake3, wake4,
+       wake5, wake6, wake7, wake8;
 
-#include "smokeunit.h"
-#include "EXPtype.h"
-#include "rockunit.h"
+static-var  gun_1, tidal_Spd;
+
+// Signal definitions
+#define SIG_AIM				2
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from turret;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Tangue()
+{
+	tidal_Spd = get UNKNOWN_UNIT_VALUE(1030);
+	while( TRUE )
+	{
+	   	turn base to x-axis <1.000000> * tidal_Spd speed <1.000000> * tidal_Spd;
+		turn base to z-axis <1.000000> * tidal_Spd speed <1.000000> * tidal_Spd;
+		wait-for-turn base around x-axis;
+		turn base to x-axis <-1.000000> * tidal_Spd speed <1.000000> * tidal_Spd;
+		turn base to z-axis <-1.000000> * tidal_Spd speed  <1.000000> * tidal_Spd;
+		wait-for-turn base around x-axis;
+		turn base to x-axis <0.000000> speed <1.000000> * tidal_Spd;
+		turn base to z-axis <0.000000> speed <1.000000> * tidal_Spd;
+	}
+}
+
+RockUnit(anglex, anglez)
+{
+	turn base to x-axis anglex speed <50.000000>;
+	turn base to z-axis anglez speed <50.000000>;
+	wait-for-turn base around z-axis;
+	wait-for-turn base around x-axis;
+	turn base to z-axis <0.000000> speed <20.000000>;
+	turn base to x-axis <0.000000> speed <20.000000>;
+}
 
 Create()
- { hide flare1;
-   hide flare2;
-   hide flare3;
-   hide flare4;
-   dont-shade tower;
-   dont-shade turret;
-   dont-shade flare1;
-   dont-shade flare2;
-   dont-shade flare3;
-   dont-shade flare4;
-   dont-shade barrel1;
-   dont-shade barrel2;
-   dont-shade barrel3;
-   dont-shade barrel4;
-   dont-cache tower;
-   dont-cache turret;
-   dont-cache flare1;
-   dont-cache flare2;
-   dont-cache flare3;
-   dont-cache flare4;
-   dont-cache barrel1;
-   dont-cache barrel2;
-   dont-cache barrel3;
-   dont-cache barrel4;
-   barrel=0;   
-   start-script SmokeUnit();
-  }
+{
+	hide flare1;
+	hide flare2;
+	hide flare3;
+	hide flare4;
+	dont-shade tower;
+	dont-shade turret;
+	dont-shade flare1;
+	dont-shade flare2;
+	dont-shade flare3;
+	dont-shade flare4;
+	dont-shade barrel1;
+	dont-shade barrel2;
+	dont-shade barrel3;
+	dont-shade barrel4;
+	dont-cache tower;
+	dont-cache turret;
+	dont-cache flare1;
+	dont-cache flare2;
+	dont-cache flare3;
+	dont-cache flare4;
+	dont-cache barrel1;
+	dont-cache barrel2;
+	dont-cache barrel3;
+	dont-cache barrel4;
+	gun_1 = base;
+	start-script SmokeUnit();
+	start-script Tangue();
+}
 
-AimPrimary(heading,pitch)
- { signal SIG_AIM;
-   set-signal-mask SIG_AIM;
-     emit-sfx SFXTYPE_WAKE1 from wake1;
-     emit-sfx SFXTYPE_WAKE1 from wake2;
-     emit-sfx SFXTYPE_WAKE1 from wake3;
-     emit-sfx SFXTYPE_WAKE1 from wake4;
-     emit-sfx SFXTYPE_WAKE1 from wake5;
-     emit-sfx SFXTYPE_WAKE1 from wake6;
-     emit-sfx SFXTYPE_WAKE1 from wake7;
-     emit-sfx SFXTYPE_WAKE1 from wake8;
-   turn bearing to y-axis heading speed <250>;
-   wait-for-turn bearing around y-axis;
-     emit-sfx SFXTYPE_WAKE1 from wake1;
-     emit-sfx SFXTYPE_WAKE1 from wake2;
-     emit-sfx SFXTYPE_WAKE1 from wake3;
-     emit-sfx SFXTYPE_WAKE1 from wake4;
-     emit-sfx SFXTYPE_WAKE1 from wake5;
-     emit-sfx SFXTYPE_WAKE1 from wake6;
-     emit-sfx SFXTYPE_WAKE1 from wake7;
-     emit-sfx SFXTYPE_WAKE1 from wake8;
-   return(TRUE);
-  }
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	emit-sfx 2 from wake1;
+	emit-sfx 2 from wake2;
+	emit-sfx 2 from wake3;
+	emit-sfx 2 from wake4;
+	emit-sfx 2 from wake5;
+	emit-sfx 2 from wake6;
+	emit-sfx 2 from wake7;
+	emit-sfx 2 from wake8;
+	turn bearing to y-axis heading speed <250.000000>;
+	wait-for-turn bearing around y-axis;
+	emit-sfx 2 from wake1;
+	emit-sfx 2 from wake2;
+	emit-sfx 2 from wake3;
+	emit-sfx 2 from wake4;
+	emit-sfx 2 from wake5;
+	emit-sfx 2 from wake6;
+	emit-sfx 2 from wake7;
+	emit-sfx 2 from wake8;
+	return (1);
+}
 
 FirePrimary()
- { if (barrel==0)
-    { show flare1; sleep 200; hide flare1; 
-      turn turret to y-axis <270> speed <200>;
-      barrel=1; return 0; }
-   if (barrel==1)
-    { show flare2; sleep 200; hide flare2; 
-      turn turret to y-axis <180> speed <200>;
-      barrel=2; return 0; }
-   if (barrel==2)
-    { show flare3; sleep 200; hide flare3; 
-      turn turret to y-axis <90> speed <200>;
-      barrel=3; return 0; }
-   if (barrel==3)
-    { show flare4; sleep 200; hide flare4; 
-      turn turret to y-axis <0> speed <200>;
-      barrel=0; return 0; }
-  }
+{
+	if( gun_1 == 0 )
+	{
+		show flare1;
+		sleep 200;
+		hide flare1;
+		turn turret to y-axis <270.000000> speed <200.000000>;
+		gun_1 = tower;
+		return (0);
+	}
+	if( gun_1 == 1 )
+	{
+		show flare2;
+		sleep 200;
+		hide flare2;
+		turn turret to y-axis <180.000000> speed <200.000000>;
+		gun_1 = bearing;
+		return (0);
+	}
+	if( gun_1 == 2 )
+	{
+		show flare3;
+		sleep 200;
+		hide flare3;
+		turn turret to y-axis <90.000000> speed <200.000000>;
+		gun_1 = turret;
+		return (0);
+	}
+	if( gun_1 == 3 )
+	{
+		show flare4;
+		sleep 200;
+		hide flare4;
+		turn turret to y-axis <0.000000> speed <200.000000>;
+		gun_1 = base;
+		return (0);
+	}
+}
 
 AimFromPrimary(piecenum)
- { piecenum=turret;
-  }
+{
+	piecenum = turret;
+}
 
 QueryPrimary(piecenum)
- { if (barrel==0) { piecenum=flare1; }
-   if (barrel==1) { piecenum=flare2; }
-   if (barrel==2) { piecenum=flare3; }
-   if (barrel==3) { piecenum=flare4; }
-  }
+{
+	if( gun_1 == 0 )
+	{
+		piecenum = flare1;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = flare2;
+	}
+	if( gun_1 == 2 )
+	{
+		piecenum = flare3;
+	}
+	if( gun_1 == 3 )
+	{
+		piecenum = flare4;
+	}
+}
 
 SweetSpot(piecenum)
- { piecenum=base;
-  }
+{
+	piecenum = base;
+}
 
-Killed( severity, corpsetype )
- { hide flare1;
-   hide flare2;
-   hide flare3;
-   hide flare4;
-   explode barrel1 type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
-   explode barrel2 type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
-   explode barrel3 type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
-   explode barrel4 type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
-   explode turret type SHATTER | EXPLODE_ON_HIT | BITMAP4;
-   if (severity <= 25)
-    { corpsetype = 1;
-      return( 0 );
-     }
-   if (severity <= 50)
-    { corpsetype = 2;
-      return( 0 );
-     }
-   corpsetype = 3;
-  }
+Killed(severity, corpsetype)
+{
+	hide flare1;
+	hide flare2;
+	hide flare3;
+	hide flare4;
+	explode barrel1 type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
+	explode barrel2 type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
+	explode barrel3 type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
+	explode barrel4 type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
+	explode turret type SHATTER | EXPLODE_ON_HIT | BITMAP4;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		return (0);
+	}
+	corpsetype = 3;
+}

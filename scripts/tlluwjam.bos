@@ -5,7 +5,7 @@
 
 piece  base, body, rotor, dish1, dish2;
 
-static-var  statechg_DesiredState, statechg_StateChanging;
+static-var  statechg_DesiredState, statechg_StateChanging, tidal_Spd;
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -38,16 +38,17 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Tangue()
 {
+	tidal_Spd = get UNKNOWN_UNIT_VALUE(1030);
 	while( TRUE )
 	{
-		turn body to x-axis <2.000000> speed <2.000000>;
-		turn body to z-axis <2.000000> speed <2.000000>;
+	   	turn body to x-axis <1.000000> * tidal_Spd speed <1.000000> * tidal_Spd;
+		turn body to z-axis <1.000000> * tidal_Spd speed <1.000000> * tidal_Spd;
 		wait-for-turn body around x-axis;
-		turn body to x-axis <-2.000000> speed <2.000000>;
-		turn body to z-axis <-2.000000> speed <2.000000>;
+		turn body to x-axis <-1.000000> * tidal_Spd speed <1.000000> * tidal_Spd;
+		turn body to z-axis <-1.000000> * tidal_Spd speed  <1.000000> * tidal_Spd;
 		wait-for-turn body around x-axis;
-		turn body to x-axis <0.000000> speed <2.000000>;
-		turn body to z-axis <0.000000> speed <2.000000>;
+		turn body to x-axis <0.000000> speed <1.000000> * tidal_Spd;
+		turn body to z-axis <0.000000> speed <1.000000> * tidal_Spd;
 	}
 }
 
