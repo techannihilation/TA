@@ -45,6 +45,7 @@ local unitDef = {
 	unitname = [[tllasonar]],
 	unitnumber = 865,
 	useBuildingGroundDecal = true,
+	waterline = 0,
 	workerTime = 0,
 	yardMap = [[oooo]],
 	featureDefs = nil,
