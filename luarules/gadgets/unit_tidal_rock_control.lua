@@ -55,7 +55,7 @@ local GetTide              = Game.tidal/10
 
 function gadget:UnitCreated(unitID, unitDefID, unitTeam)
 	if rockideDefs[unitDefID] then
-		Spring.Echo("TIDAL SPEED :" .. GetTide)
+		--Spring.Echo("TIDAL SPEED :" .. GetTide)
 		SetUnitCOBValue(unitID,1030,GetTide)
 	end
 end
