@@ -88,9 +88,10 @@ local pplants = {
 local negsolar = {
 	["armsolar"] =true,
 	["corsolar"] =true,
+	["crnns"] =true,
 	["tllsolar"] =true,
 	["tllsolarns"] =true,
-	["tladvlsolar"] =true,
+	["tlladvsolar"] =true,
 }
 
 ------------------------------------------------------------------------------------
@@ -251,7 +252,7 @@ function widget:DrawScreen()
 			    if uDef.customParams then
 					mult = uDef.customParams.energymultiplier or mult
 			    end
-				totalEOut = totalEOut + tidalStrength * mult
+				totalEOut = totalEOut +(tidalStrength * mult)
 			end
 			
 			if (uDef.windGenerator > 0) then
@@ -262,7 +263,7 @@ function widget:DrawScreen()
 				
 				local unitWindMin = math.min(windMin, uDef.windGenerator)
 				local unitWindMax = math.min(windMax, uDef.windGenerator)
-				totalEOut = totalEOut + ((unitWindMin + unitWindMax) / 2 ) * mult
+				totalEOut = totalEOut + (((unitWindMin + unitWindMax) / 2 ) * mult)
 			end
 			
 			DrawText("Avg. E-Out.:", totalEOut)
@@ -369,6 +370,7 @@ function widget:DrawScreen()
 	if uDef.sonarRadius >= 64 then DrawText("Sonar:", format(blue .. "%d", uDef.sonarRadius)) end
 	if uDef.jammerRadius >= 64 then DrawText("Jam:", format(orange .. "%d", uDef.jammerRadius)) end
 	if uDef.buildSpeed > 0 then DrawText("Build:", format(yellow .. "%d", uDef.buildSpeed)) end
+	if uDef.buildDistance > 0 then DrawText("B Dist:", format(yellow .. "%d", uDef.buildDistance)) end
 	if (uDef.repairSpeed > 0 and uDef.repairSpeed ~= uDef.buildSpeed) then DrawText("Repair:", format(yellow .. "%d", uDef.repairSpeed)) end
 	if (uDef.reclaimSpeed > 0 and uDef.reclaimSpeed ~= uDef.buildSpeed) then DrawText("Reclaim:", format(yellow .. "%d", uDef.reclaimSpeed)) end
 	if (uDef.resurrectSpeed > 0 and uDef.resurrectSpeed ~= uDef.buildSpeed) then DrawText("Resurrect:", format(yellow .. "%d", uDef.resurrectSpeed)) end
@@ -376,6 +378,8 @@ function widget:DrawScreen()
 	if (uDef.terraformSpeed > 0 and uDef.terraformSpeed ~= uDef.buildSpeed) then DrawText("Capture:", format(yellow .. "%d", uDef.terraformSpeed)) end
 	if uDef.stealth then DrawText("Other:", "Stealthy") end
 	if uDef.mass > 0 then DrawText("Mass:", format(orange .. "%d", uDef.mass)) end
+	if uDef.isTransport and uDef.transportMass > 0 then DrawText("Transporter Max Mass:", format(orange .. "%d", uDef.transportMass)) end
+
 
 	cY = cY - fontSize
 	

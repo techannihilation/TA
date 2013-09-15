@@ -6,7 +6,7 @@
 piece  base, body, arm1, arm2, nano1, spray1, spray2, arm3,
        arm4, nano2, spray3, spray4;
 
-static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging;
+static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging, tidal_Spd;
 
 // Signal definitions
 #define SIG_ACTIVATE			2
@@ -37,7 +37,22 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		}
 		sleep sleeptime;
 	}
-	return (0);
+}
+
+Tangue()
+{
+	tidal_Spd = get UNKNOWN_UNIT_VALUE(1030);
+	while( TRUE )
+	{
+	   	turn body to x-axis <1.000000> * tidal_Spd speed <0.400000> * tidal_Spd;
+		turn body to z-axis <1.000000> * tidal_Spd speed <0.400000> * tidal_Spd;
+		wait-for-turn body around x-axis;
+		turn body to x-axis <-1.000000> * tidal_Spd speed <0.400000> * tidal_Spd;
+		turn body to z-axis <-1.000000> * tidal_Spd speed  <0.400000> * tidal_Spd;
+		wait-for-turn body around x-axis;
+		turn body to x-axis <0.000000> speed <0.400000> * tidal_Spd;
+		turn body to z-axis <0.000000> speed <0.400000> * tidal_Spd;
+	}
 }
 
 OpenYard()
@@ -50,7 +65,6 @@ OpenYard()
 		set YARD_OPEN to 1;
 	}
 	set BUGGER_OFF to 0;
-	return (0);
 }
 
 CloseYard()
@@ -63,7 +77,6 @@ CloseYard()
 		set YARD_OPEN to 0;
 	}
 	set BUGGER_OFF to 0;
-	return (0);
 }
 
 activatescr()
@@ -75,7 +88,6 @@ activatescr()
 	turn arm4 to z-axis <60.000000> speed <40.000000>;
 	turn nano2 to z-axis <-35.000000> speed <21.000000>;
 	wait-for-turn nano1 around z-axis;
-	return (0);
 }
 
 deactivatescr()
@@ -87,7 +99,6 @@ deactivatescr()
 	turn arm4 to z-axis <0.000000> speed <29.000000>;
 	turn nano2 to z-axis <0.000000> speed <25.000000>;
 	wait-for-turn nano1 around z-axis;
-	return (0);
 }
 
 Go()
@@ -95,7 +106,6 @@ Go()
 	call-script activatescr();
 	call-script OpenYard();
 	set INBUILDSTANCE to 1;
-	return (0);
 }
 
 Stop()
@@ -103,14 +113,12 @@ Stop()
 	set INBUILDSTANCE to 0;
 	call-script CloseYard();
 	call-script deactivatescr();
-	return (0);
 }
 
 InitState()
 {
 	statechg_DesiredState = TRUE;
 	statechg_StateChanging = FALSE;
-	return (0);
 }
 
 RequestState(requestedstate, currentstate)
@@ -137,7 +145,6 @@ RequestState(requestedstate, currentstate)
 		}
 	}
 	statechg_StateChanging = FALSE;
-	return (0);
 }
 
 Create()
@@ -152,7 +159,7 @@ Create()
 	Static_Var_1 = 0;
 	call-script InitState();
 	start-script SmokeUnit();
-	return (0);
+	
 }
 
 QueryNanoPiece(piecenum)
@@ -178,14 +185,12 @@ QueryNanoPiece(piecenum)
 	{
 		Static_Var_1 = 0;
 	}
-	return (0);
 }
 
 Activate()
 {
 	signal SIG_ACTIVATE;
 	start-script RequestState(0);
-	return (0);
 }
 
 Deactivate()
@@ -195,7 +200,6 @@ Deactivate()
 	sleep 3500;
 	set-signal-mask 0;
 	start-script RequestState(1);
-	return (0);
 }
 
 StartBuilding()
@@ -209,13 +213,11 @@ StopBuilding()
 QueryBuildInfo(piecenum)
 {
 	piecenum = body;
-	return (0);
 }
 
 SweetSpot(piecenum)
 {
 	piecenum = body;
-	return (0);
 }
 
 Killed(severity, corpsetype)
@@ -241,5 +243,4 @@ Killed(severity, corpsetype)
 	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP3;
 	explode nano2 type SHATTER | EXPLODE_ON_HIT | BITMAP3;
 	explode arm2 type SHATTER | EXPLODE_ON_HIT | BITMAP3;
-	return (0);
 }

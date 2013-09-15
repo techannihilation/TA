@@ -1,0 +1,173 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, arm, dish, light;
+
+static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging, tidal_Spd;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from body;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Tangue()
+{
+	tidal_Spd = get UNKNOWN_UNIT_VALUE(1030);
+	while( TRUE )
+	{
+	   	turn body to x-axis <1.000000> * tidal_Spd speed <0.400000> * tidal_Spd;
+		turn body to z-axis <1.000000> * tidal_Spd speed <0.400000> * tidal_Spd;
+		wait-for-turn body around x-axis;
+		turn body to x-axis <-1.000000> * tidal_Spd speed <0.400000> * tidal_Spd;
+		turn body to z-axis <-1.000000> * tidal_Spd speed  <0.400000> * tidal_Spd;
+		wait-for-turn body around x-axis;
+		turn body to x-axis <0.000000> speed <0.400000> * tidal_Spd;
+		turn body to z-axis <0.000000> speed <0.400000> * tidal_Spd;
+	}
+}
+
+ShieldOn()
+{
+	Static_Var_1 = 1;
+}
+
+ShieldOff()
+{
+	Static_Var_1 = 0;
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script ShieldOn();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script ShieldOff();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+Create()
+{
+	dont-shade dish;
+	dont-shade arm;
+	dont-shade light;
+	call-script InitState();
+	start-script SmokeUnit();
+	start-script Tangue();
+	set ARMORED to 1;
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+RestoreAfterDelay()
+{
+	sleep 1000;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = base;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = body;
+}
+
+FirePrimary()
+{
+}
+
+AimPrimary(heading, pitch)
+{
+	sleep 100;
+	return (Static_Var_1);
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode body type BITMAPONLY | BITMAP1;
+		explode arm type BITMAPONLY | BITMAP2;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode body type SHATTER | EXPLODE_ON_HIT | BITMAP2;
+		explode dish type SHATTER | EXPLODE_ON_HIT | BITMAP2;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode body type SHATTER | EXPLODE_ON_HIT | BITMAP1;
+		explode dish type BITMAPONLY | BITMAP2;
+		return (0);
+	}
+	corpsetype = 3;
+	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP1;
+	explode dish type SHATTER | EXPLODE_ON_HIT | BITMAP2;
+}

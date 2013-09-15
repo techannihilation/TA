@@ -91,7 +91,8 @@ local unitDef = {
 			def = [[TAWF_BANISHER]],
 			mainDir = [[0 0 1]],
 			maxAngleDif = 270,
-			onlyTargetCategory = [[NOTVTOL]],
+			badTargetCategory = [[VTOL]],
+			onlyTargetCategory = [[ALL]],
 		},
 	},
 }

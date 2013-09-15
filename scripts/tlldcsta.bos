@@ -1,65 +1,108 @@
-piece base, body, lights, flare1, flare2;
+#define TA			// This is a TA script
 
-#define SIG_AIM	2
-#define SMOKEPIECE1 base
+#include "sfxtype.h"
+#include "exptype.h"
 
-#include "smokeunit.h"
-#include "EXPtype.h"
+piece  base, body, lights, flare1, flare2;
+
+static-var  tidal_Spd;
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Tangue()
+{
+	tidal_Spd = get UNKNOWN_UNIT_VALUE(1030);
+	while( TRUE )
+	{
+	   	turn body to x-axis <1.000000> * tidal_Spd speed <1.000000> * tidal_Spd;
+		turn body to z-axis <1.000000> * tidal_Spd speed <1.000000> * tidal_Spd;
+		wait-for-turn body around x-axis;
+		turn body to x-axis <-1.000000> * tidal_Spd speed <1.000000> * tidal_Spd;
+		turn body to z-axis <-1.000000> * tidal_Spd speed  <1.000000> * tidal_Spd;
+		wait-for-turn body around x-axis;
+		turn body to x-axis <0.000000> speed <1.000000> * tidal_Spd;
+		turn body to z-axis <0.000000> speed <1.000000> * tidal_Spd;
+	}
+}
 
 Create()
-	{
+{
 	dont-cache lights;
-       	start-script SmokeUnit();
-	}
+	start-script SmokeUnit();
+	start-script Tangue();
+}
 
 QueryPrimary(piecenum)
-	{
-	piecenum=flare1;
-	}
+{
+	piecenum = flare1;
+}
+
 QuerySecondary(piecenum)
-	{
-	Sleep 300;
-	piecenum=flare2;
-	}
+{
+	sleep 300;
+	piecenum = flare2;
+}
+
 QueryTertiary(piecenum)
-	{
-	Sleep 600;
-	piecenum=flare1;
-	}
+{
+	sleep 600;
+	piecenum = flare1;
+}
 
 SweetSpot(piecenum)
-	{
-	piecenum=base;
-	}
+{
+	piecenum = base;
+}
 
-Killed( severity, corpsetype )
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
 	{
-	if (severity <= 25)
-		{
 		corpsetype = 1;
-		explode body type	BITMAPONLY | BITMAP1;
-		explode flare1 type	BITMAPONLY | BITMAP2;
-		return( 0 );
-		}
-
-	if (severity <= 50)
-		{
-		corpsetype = 2;
-		explode flare1 type	BITMAPONLY | BITMAP2;
-		explode body type	SHATTER | BITMAP3;
-		return( 0 );
-		}
-
-	if (severity <= 99)
-		{
-		corpsetype = 3;
-		explode flare1 type	BITMAPONLY | BITMAP2;
-		explode body type	SHATTER | EXPLODE_ON_HIT | BITMAP3;
-		return( 0 );
-		}
-
-	corpsetype = 3;
-	explode flare1 type	BITMAPONLY | BITMAP2;
-	explode body type	SHATTER | EXPLODE_ON_HIT | BITMAP3;
-	return( 0 );
+		explode body type BITMAPONLY | BITMAP1;
+		explode flare1 type BITMAPONLY | BITMAP2;
+		return (0);
 	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode flare1 type BITMAPONLY | BITMAP2;
+		explode body type SHATTER | BITMAP3;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode flare1 type BITMAPONLY | BITMAP2;
+		explode body type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+		return (0);
+	}
+	corpsetype = 3;
+	explode flare1 type BITMAPONLY | BITMAP2;
+	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+}
