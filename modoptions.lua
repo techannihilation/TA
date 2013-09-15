@@ -32,18 +32,6 @@ local options={
 	def    = false,
 	section= "ta_exp",
 	},
-    {
-	key    = "mo_therebedragons",
-	name   = "Enable Luathreadingmodel 4",
-	desc   = "Enables Full Mt support",
-	type = "list",
-	section = "ta_exp",
-	def = "off",
-	items={
-		{key="full", name="full", desc="Luathreadingmodel 4"},
-		{key="off", name="off", desc="Luathreadingmodel 2"},
-	      }
-	},
 	{
 		key    = "mo_coop",
 		name   = "Cooperative Mode",
