@@ -41,17 +41,17 @@ deactivatescr()
 	}
 	if( TRUE )
 	{
-		move plat to y-axis [0.000000] speed [120.000000];
-		move gun to y-axis [0.000000] speed [90.000000];
+		move plat to y-axis [0.000000] speed [30.000000];
+		move gun to y-axis [0.000000] speed [25.000000];
 		wait-for-move plat along y-axis;
 	}
 	if( TRUE )
 	{
-		move door1 to z-axis [0.000000] speed [78.000000];
-		move door2 to x-axis [0.000000] speed [78.000000];
-		move door3 to z-axis [0.000000] speed [78.000000];
-		move door4 to x-axis [0.000000] speed [78.000000];
-		move doors to y-axis [0.000000] speed [28.000000];
+		move door1 to z-axis [0.000000] speed [30.000000];
+		move door2 to x-axis [0.000000] speed [30.000000];
+		move door3 to z-axis [0.000000] speed [30.000000];
+		move door4 to x-axis [0.000000] speed [30.000000];
+		move doors to y-axis [0.000000] speed [10.000000];
 		wait-for-move door1 along z-axis;
 	}
 	set ARMORED to 1;
@@ -187,7 +187,7 @@ Create()
 	dont-shade gun;
 	dont-cache flare;
 	hide flare;
-	restore_delay = 3000;
+	restore_delay = 1000;
 	start-script SmokeUnit();
 }
 
@@ -240,7 +240,7 @@ FirePrimary()
 {
 	move gun to y-axis [5.000000] speed [500.000000];
 	show flare;
-	sleep 150;
+	sleep 15;
 	hide flare;
 	move gun to y-axis [3.000000] speed [3.000000];
 }
