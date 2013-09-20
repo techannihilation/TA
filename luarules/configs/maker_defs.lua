@@ -14,7 +14,7 @@ local T1 = 1.16/100
 --local T2 = 1.24/100
 --local T3 = 1.31/100
 local T4 = 1.42/100
---local T5 = 1.47/100
+local T5 = 1.47/100
 --local T6 = 1.53/100
 
 
@@ -49,7 +49,7 @@ local convertCapacities = {
 		--[UnitDefNames.____.id]  = { c = 300, e = (T2) }, -- T1,5
 		--[UnitDefNames.____.id]  = { c = 600, e = (T3) }, -- Cloaked/Hardened
 		[UnitDefNames.tllammaker.id]  = { c = 1000, e = (T4) }, -- Moho
-		--[UnitDefNames.____.id]  = { c = 1000, e = (T5) }, -- Underwater
+		[UnitDefNames.tllwmmohoconv.id]  = { c = 1000, e = (T5) }, -- Underwater
 		--[UnitDefNames.____.id]  = { c = 10000, e = (T6) }, -- Super
 
     }
