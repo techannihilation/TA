@@ -9,27 +9,26 @@ local unitDef = {
 	activateWhenBuilt = true,
 	bmcode = 0,
 	buildAngle = 8192,
-	buildCostEnergy = 274,
-	buildCostMetal = 27,
+	buildCostEnergy = 80274,
+	buildCostMetal = 1532,
 	builder = false,
-	buildTime = 2200,
+	buildTime = 22000,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
-	corpse = [[dead]],
-	description = [[Converts upto 100 Energy into Metal]],
+	description = [[Converts upto 1000 Energy into Metal]],
 	designation = [[WM-CONV]],
-	explodeAs = [[SMALL_BUILDINGEX]],
+	explodeAs = [[ATOMIC_BLASTSML]],
 	footprintX = 5,
 	footprintZ = 5,
-	maxDamage = 120,
+	maxDamage = 1300,
 	maxSlope = 10,
-	minWaterDepth = 10,
-	name = [[Metal Producer]],
+	minWaterDepth = 15,
+	name = [[Floating Moho Metal Maker]],
 	noAutoFire = false,
 	noChaseCategory = [[ALL]],
 	noshadow = 1,
 	objectName = [[tllwmmohoconv]],
 	ovradjust = 1,
-	selfDestructAs = [[SMALL_BUILDING]],
+	selfDestructAs = [[ATOMIC_BLAST]],
 	side = [[TLL]],
 	sightDistance = 200,
 	unitname = [[tllwmmohoconv]],
@@ -56,28 +55,6 @@ local unitDef = {
 		},
 	},
 }
-
---------------------------------------------------------------------------------
-
-local featureDefs = {
-	dead = {
-		blocking = true,
-		category = [[tll_corpses]],
-		damage = 0.6000 * unitDef.maxDamage,
-		description = [[Wreckage]],
-		featurereclamate = [[smudge01]],
-		footprintX = 3,
-		footprintZ = 3,
-		height = 12,
-		hitdensity = 102,
-		metal = 0.8000 * unitDef.buildCostMetal,
-		object = [[tllWMconv_dead]],
-		reclaimable = true,
-		seqnamereclamate = [[tree1reclamate]],
-		world = [[all]],
-	},
-}
-unitDef.featureDefs = featureDefs
 
 --------------------------------------------------------------------------------
 
