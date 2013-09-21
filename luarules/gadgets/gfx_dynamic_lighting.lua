@@ -40,6 +40,12 @@ if (gadgetHandler:IsSyncedCode()) then
 
 	-- register/deregister for the synced Projectile*/Explosion call-ins
 	function gadget:Initialize()
+
+		local modOptions = Spring.GetModOptions()
+                if (modOptions ~= nil and tonumber(modOptions.mo_dynamic) == "0") then
+                        gadgetHandler:RemoveGadget(self)
+                end
+		
 		for weaponDefName, _ in pairs(weaponLightDefs) do
 			local weaponDef = WeaponDefNames[weaponDefName]
 

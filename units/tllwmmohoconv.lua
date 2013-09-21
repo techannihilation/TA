@@ -1,7 +1,7 @@
--- UNITDEF -- TLLWMCONV --
+-- UNITDEF -- TLLWMMOHOCONV --
 --------------------------------------------------------------------------------
 
-local unitName = "tllwmconv"
+local unitName = "tllwmmohoconv"
 
 --------------------------------------------------------------------------------
 
@@ -9,33 +9,32 @@ local unitDef = {
 	activateWhenBuilt = true,
 	bmcode = 0,
 	buildAngle = 8192,
-	buildCostEnergy = 274,
-	buildCostMetal = 27,
+	buildCostEnergy = 80274,
+	buildCostMetal = 1532,
 	builder = false,
-	buildTime = 2200,
+	buildTime = 22000,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
-	corpse = [[dead]],
-	description = [[Converts upto 100 Energy into Metal]],
+	description = [[Converts upto 1000 Energy into Metal]],
 	designation = [[WM-CONV]],
-	explodeAs = [[SMALL_BUILDINGEX]],
-	footprintX = 3,
-	footprintZ = 3,
-	maxDamage = 120,
+	explodeAs = [[ATOMIC_BLASTSML]],
+	footprintX = 5,
+	footprintZ = 5,
+	maxDamage = 1300,
 	maxSlope = 10,
-	minWaterDepth = 10,
-	name = [[Metal Producer]],
+	minWaterDepth = 15,
+	name = [[Floating Moho Metal Maker]],
 	noAutoFire = false,
 	noChaseCategory = [[ALL]],
 	noshadow = 1,
-	objectName = [[tllWMconv]],
+	objectName = [[tllwmmohoconv]],
 	ovradjust = 1,
-	selfDestructAs = [[SMALL_BUILDING]],
+	selfDestructAs = [[ATOMIC_BLAST]],
 	side = [[TLL]],
 	sightDistance = 200,
-	unitname = [[tllwmconv]],
+	unitname = [[tllwmmohoconv]],
 	unitnumber = 870,
-	waterline = 5,
-	yardMap = [[wwwwwwwww]],
+	waterline = 0,
+	yardMap = [[wwwww wwwww wwwww wwwww wwwww]],
 	featureDefs = nil,
 	sounds = {
 		activate = [[metlon1]],
@@ -56,28 +55,6 @@ local unitDef = {
 		},
 	},
 }
-
---------------------------------------------------------------------------------
-
-local featureDefs = {
-	dead = {
-		blocking = true,
-		category = [[tll_corpses]],
-		damage = 0.6000 * unitDef.maxDamage,
-		description = [[Wreckage]],
-		featurereclamate = [[smudge01]],
-		footprintX = 3,
-		footprintZ = 3,
-		height = 12,
-		hitdensity = 102,
-		metal = 0.8000 * unitDef.buildCostMetal,
-		object = [[tllWMconv_dead]],
-		reclaimable = true,
-		seqnamereclamate = [[tree1reclamate]],
-		world = [[all]],
-	},
-}
-unitDef.featureDefs = featureDefs
 
 --------------------------------------------------------------------------------
 
