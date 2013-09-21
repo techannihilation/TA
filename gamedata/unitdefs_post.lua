@@ -895,6 +895,17 @@ for name, ud in pairs(UnitDefs) do
 		ud.collisionvolumetest = 1
 end
 
+-- Brakerate for 95
+for name, ud in pairs(UnitDefs) do
+	if (ud.brakerate) then 
+	    if ud.canfly then
+		ud.brakerate = ud.brakerate * 0.04
+	    else 
+		ud.brakerate = ud.brakerate * 3.0
+	    end
+	end
+end
+
 local cons = {
 	['armcv'] = true,
 	['armacv']  = true,
