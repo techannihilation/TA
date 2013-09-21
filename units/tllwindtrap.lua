@@ -37,7 +37,6 @@ local unitDef = {
 	noAutoFire = false,
 	noChaseCategory = [[ALL]],
 	objectName = [[Tllwindtrap]],
-	onoffable = true,
 	ovradjust = 1,
 	radarDistance = 0,
 	selfDestructAs = [[SMALL_BUILDING]],

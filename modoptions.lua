@@ -32,7 +32,7 @@ local options={
 	def    = false,
 	section= "ta_exp",
 	},
-    {
+	{
 		key    = "mo_coop",
 		name   = "Cooperative Mode",
 		desc   = "Adds an extra commander for comsharing teams\nAutoHost Usage :- mo_coop",
@@ -77,7 +77,7 @@ local options={
 		name   = "Startpoint Assist",
 		desc   = "Chooses sensible starting places for players/AIs who forgot to choose a startpoint for themselves\nAutoHost Usage :- mo_startpoint_assist",
 		type   = "bool",
-		def    = true,
+		def    = false,
 		section= "ta_options",
     },
     {
@@ -91,6 +91,14 @@ local options={
 			{key="normal", name="Default", desc="Default Spring path finding engine"},
 			{key="qtpfs", name="QTPFS", desc="Quick/Tesellating Path Finding System"},
 		}
+    },
+        {
+		key    = "mo_dynamic",
+		name   = "Enables Dynamic Lighting",
+		desc   = "Toggles Dynamic lighing on or off\nAutoHost Usage :- mo_dynamic",
+		type   = "bool",
+		def    = false,
+		section= "ta_options",
     },
     {
 		key    = "mo_noshare",

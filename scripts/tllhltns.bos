@@ -1,84 +1,150 @@
-piece base,tower,turret,sleeves,gun,flare,barrel;
-piece wake1,wake2,wake3,wake4,wake5,wake6,wake7,wake8;
+#define TA			// This is a TA script
 
-#define SIG_AIM	2
-#define SMOKEPIECE1 turret
+#include "sfxtype.h"
+#include "exptype.h"
 
-#include "smokeunit.h"
-#include "EXPtype.h"
-#include "rockunit.h"
+piece  base, tower, turret, sleeves, gun, flare, barrel, wake1,
+       wake2, wake3, wake4, wake5, wake6, wake7, wake8;
+
+static-var  tidal_Spd;
+
+// Signal definitions
+#define SIG_AIM				2
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from turret;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Tangue()
+{
+	tidal_Spd = get UNKNOWN_UNIT_VALUE(1030);
+	while( TRUE )
+	{
+	   	turn base to x-axis <1.000000> * tidal_Spd speed <1.000000> * tidal_Spd;
+		turn base to z-axis <1.000000> * tidal_Spd speed <1.000000> * tidal_Spd;
+		wait-for-turn base around x-axis;
+		turn base to x-axis <-1.000000> * tidal_Spd speed <1.000000> * tidal_Spd;
+		turn base to z-axis <-1.000000> * tidal_Spd speed  <1.000000> * tidal_Spd;
+		wait-for-turn base around x-axis;
+		turn base to x-axis <0.000000> speed <1.000000> * tidal_Spd;
+		turn base to z-axis <0.000000> speed <1.000000> * tidal_Spd;
+	}
+}
+
+RockUnit(anglex, anglez)
+{
+	turn base to x-axis anglex speed <50.000000>;
+	turn base to z-axis anglez speed <50.000000>;
+	wait-for-turn base around z-axis;
+	wait-for-turn base around x-axis;
+	turn base to z-axis <0.000000> speed <20.000000>;
+	turn base to x-axis <0.000000> speed <20.000000>;
+}
 
 Create()
- { dont-shade tower;
-   dont-cache sleeves;
-   dont-cache gun;
-   dont-cache barrel;
-   dont-cache flare;
-   hide flare;
-   start-script SmokeUnit();
-  }
+{
+	dont-shade tower;
+	dont-cache sleeves;
+	dont-cache gun;
+	dont-cache barrel;
+	dont-cache flare;
+	hide flare;
+	start-script SmokeUnit();
+	start-script Tangue();
+}
 
-AimPrimary(heading,pitch)
- { signal SIG_AIM;
-   set-signal-mask SIG_AIM;
-     emit-sfx SFXTYPE_WAKE1 from wake1;
-     emit-sfx SFXTYPE_WAKE1 from wake2;
-     emit-sfx SFXTYPE_WAKE1 from wake3;
-     emit-sfx SFXTYPE_WAKE1 from wake4;
-     emit-sfx SFXTYPE_WAKE1 from wake5;
-     emit-sfx SFXTYPE_WAKE1 from wake6;
-     emit-sfx SFXTYPE_WAKE1 from wake7;
-     emit-sfx SFXTYPE_WAKE1 from wake8;
-   turn turret to y-axis heading speed <150>;
-   turn sleeves to x-axis (0-pitch) speed <70>;
-   wait-for-turn turret around y-axis;
-   wait-for-turn sleeves around x-axis;
-     emit-sfx SFXTYPE_WAKE1 from wake1;
-     emit-sfx SFXTYPE_WAKE1 from wake2;
-     emit-sfx SFXTYPE_WAKE1 from wake3;
-     emit-sfx SFXTYPE_WAKE1 from wake4;
-     emit-sfx SFXTYPE_WAKE1 from wake5;
-     emit-sfx SFXTYPE_WAKE1 from wake6;
-     emit-sfx SFXTYPE_WAKE1 from wake7;
-     emit-sfx SFXTYPE_WAKE1 from wake8;
-   return(TRUE);
-  }
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	emit-sfx 2 from wake1;
+	emit-sfx 2 from wake2;
+	emit-sfx 2 from wake3;
+	emit-sfx 2 from wake4;
+	emit-sfx 2 from wake5;
+	emit-sfx 2 from wake6;
+	emit-sfx 2 from wake7;
+	emit-sfx 2 from wake8;
+	turn turret to y-axis heading speed <150.000000>;
+	turn sleeves to x-axis <0.000000> - pitch speed <70.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn sleeves around x-axis;
+	emit-sfx 2 from wake1;
+	emit-sfx 2 from wake2;
+	emit-sfx 2 from wake3;
+	emit-sfx 2 from wake4;
+	emit-sfx 2 from wake5;
+	emit-sfx 2 from wake6;
+	emit-sfx 2 from wake7;
+	emit-sfx 2 from wake8;
+	return (1);
+}
 
 FirePrimary()
- { 
-   turn gun to z-axis <180> speed <380>;
-   show flare;
-   move barrel to z-axis [-1] speed [500];
-   sleep 150;
-   hide flare;
-   move barrel to z-axis [0] speed [50];	
-   wait-for-turn gun around z-axis;
-   turn gun to z-axis <0> NOW;
-  }
+{
+	turn gun to z-axis <180.000000> speed <380.000000>;
+	show flare;
+	move barrel to z-axis [-1.000000] speed [500.000000];
+	sleep 150;
+	hide flare;
+	move barrel to z-axis [0.000000] speed [50.000000];
+	wait-for-turn gun around z-axis;
+	turn gun to z-axis <0.000000> now;
+}
 
 AimFromPrimary(piecenum)
- { piecenum=sleeves;
-  }
+{
+	piecenum = sleeves;
+}
 
 QueryPrimary(piecenum)
- { piecenum=flare;
-  }
+{
+	piecenum = flare;
+}
 
 SweetSpot(piecenum)
- { piecenum=base;
-  }
+{
+	piecenum = base;
+}
 
-Killed( severity, corpsetype )
- { explode sleeves type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP4;
-   explode turret type SHATTER | EXPLODE_ON_HIT | BITMAP2;
-   explode tower type BITMAPONLY | BITMAP4;
-   if (severity <= 25)
-    { corpsetype = 1;
-      return( 0 );
-     }
-   if (severity <= 50)
-    { corpsetype = 2;
-      return( 0 );
-     }
-   corpsetype = 3;
-  }
+Killed(severity, corpsetype)
+{
+	explode sleeves type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP4;
+	explode turret type SHATTER | EXPLODE_ON_HIT | BITMAP2;
+	explode tower type BITMAPONLY | BITMAP4;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		return (0);
+	}
+	corpsetype = 3;
+}

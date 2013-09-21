@@ -28,7 +28,6 @@ local unitDef = {
 	noChaseCategory = [[ALL]],
 	noshadow = 1,
 	objectName = [[tllWMconv]],
-	onoffable = true,
 	ovradjust = 1,
 	selfDestructAs = [[SMALL_BUILDING]],
 	side = [[TLL]],
