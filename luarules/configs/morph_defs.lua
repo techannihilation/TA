@@ -193,13 +193,15 @@ local morphDefs = {
 	},
       armsilo = {
 		into = 'armsilo1',
+		tech=2,
 		time = 30,
-		xp = 0.01,
+		xp = 0.15,
 	},
       corsilo = {
 		into = 'corsilo1',
+		tech=2,
 		time = 30,
-		xp = 0.01,
+		xp = 0.15,
 	},
       armcir = {
 		into = 'armcir1',
