@@ -39,6 +39,7 @@ local unitDef = {
 	objectName = [[TLLANTINUKE]],
 	ovradjust = 1,
 	radarDistance = 0,
+	script = [[tllantinuke.cob]],
 	selfDestructAs = [[CRAWL_BLASTSML]],
 	shootme = 1,
 	side = [[TLL]],
