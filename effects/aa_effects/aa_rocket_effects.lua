@@ -37,7 +37,7 @@ return {
         fronttexture       = [[none]],
         length             = 18,
         sidetexture        = [[flashside1]],
-        size               = 4.3,
+        size               = 5.5,
         sizegrowth         = 0.9,
         ttl                = 2,
       },
