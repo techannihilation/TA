@@ -148,6 +148,7 @@ local weaponDefs = {
 	ARMSHIP_MISSILE = {
 		areaOfEffect = 48,
 		canattackground = false,
+		cegTag = [[Arm_Def_AA_Rocket]],
 		craterBoost = 0,
 		craterMult = 0,
 		explosionGenerator = [[custom:FLASH2]],

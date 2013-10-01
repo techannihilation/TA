@@ -98,6 +98,7 @@ local weaponDefs = {
 		burst = 10,
 		burstrate = 0.1,
 		canattackground = false,
+		cegTag = [[Arm_Def_AA_Rocket]],
 		craterBoost = 0,
 		craterMult = 0,
 		explosionGenerator = [[custom:ARM_FIRE_SMALL]],
