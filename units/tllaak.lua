@@ -95,6 +95,7 @@ local weaponDefs = {
 		burst = 11,
 		burstrate = 0.4,
 		canattackground = false,
+		cegTag = [[Tll_Def_AA_Rocket]],
 		craterBoost = 0,
 		craterMult = 0,
 		edgeEffectiveness = 0.75,

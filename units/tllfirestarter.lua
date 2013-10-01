@@ -92,6 +92,7 @@ local unitDef = {
 local weaponDefs = {
 	ARMKBOT_MISSILE = {
 		areaOfEffect = 48,
+		cegTag = [[Tll_Def_AA_Rocket]],
 		canattackground = false,
 		craterBoost = 0,
 		craterMult = 0,
