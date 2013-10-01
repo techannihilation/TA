@@ -57,6 +57,7 @@ local unitDef = {
 	steeringmode = 1,
 	transmaxunits = 1,
 	transportCapacity = 1,
+	transportMass = 5000,
 	transportSize = 5,
 	turnRate = 109,
 	unitname = [[corfalc]],
