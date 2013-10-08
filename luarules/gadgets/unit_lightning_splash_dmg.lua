@@ -46,7 +46,7 @@ local SpAddUnitDamage = Spring.AddUnitDamage
 ----------------------------------------------------------------
 -- Callins
 ----------------------------------------------------------------
-function gadget:UnitDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponID, attackerID, attackerDefID, attackerTeam)
+function gadget:UnitDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponID, projectileID, attackerID, attackerDefID, attackerTeam)
     if sparkWeapons[weaponID] then
       local x,y,z = SpGetUnitPosition(unitID)
       local angle = rad(mRandom(1,360))
