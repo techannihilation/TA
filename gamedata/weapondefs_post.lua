@@ -155,6 +155,7 @@ for id in pairs(WeaponDefs) do
 	if WeaponDefs[id].weapontype == "BeamLaser" then
 		WeaponDefs[id].soundhitdry = ""
 		WeaponDefs[id].soundtrigger = 1
+		WeaponDefs[id].sweepfire = false
 	end
 	if WeaponDefs[id].weapontype == "Cannon" and WeaponDefs[id].cegtag == "Trail_cannon" and WeaponDefs[id].size then
 	  if WeaponDefs[id].size > 1.81 and WeaponDefs[id].size < 3.2 then
