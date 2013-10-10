@@ -15,6 +15,7 @@ local unitDef = {
 	buildingGroundDecalSizeX = 10,
 	buildingGroundDecalSizeY = 10,
 	buildingGroundDecalType = [[armrech21_aoplane.dds]],
+	buildPic = [[armrech.png]],
 	buildTime = 100000,
 	category = [[LEVEL2 ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
 	collisionvolumeoffsets = [[-1 -9 -5]],

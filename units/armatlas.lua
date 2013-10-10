@@ -56,6 +56,7 @@ local unitDef = {
 	steeringmode = 1,
 	transmaxunits = 1,
 	transportCapacity = 1,
+	transportMass = 5000,
 	transportSize = 3,
 	turnRate = 550,
 	unitname = [[armatlas]],

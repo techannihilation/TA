@@ -176,6 +176,11 @@ local morphDefs = {
 		into = 'cormabm1',
 		time = 80,
 	},
+      tllantinuke = {
+		into = 'tllantinuke1',
+		time = 40,
+		tech=2,
+	},
       armanni = {
 		into = 'armanni1',
 		time = 120,
@@ -188,13 +193,15 @@ local morphDefs = {
 	},
       armsilo = {
 		into = 'armsilo1',
+		tech=2,
 		time = 30,
-		xp = 0.01,
+		xp = 0.15,
 	},
       corsilo = {
 		into = 'corsilo1',
+		tech=2,
 		time = 30,
-		xp = 0.01,
+		xp = 0.15,
 	},
       armcir = {
 		into = 'armcir1',

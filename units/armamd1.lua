@@ -49,7 +49,6 @@ local unitDef = {
 	standingfireorder = 2,
 	turnRate = 0,
 	unitname = [[armamd1]],
-	unitRestricted = 8,
 	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooooooooooooooo]],

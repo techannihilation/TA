@@ -10,10 +10,10 @@ function gadget:GetInfo()
 	}
 end
 
-local maxIdleTreshold = 60 --in seconds
-local maxPing = 30 -- in seconds
+local maxIdleTreshold = 120 --in seconds
+local maxPing = 45 -- in seconds
 local finishedResumingPing = 2 --in seconds
-local maxInitialQueueSlack = 120 -- in seconds
+local maxInitialQueueSlack = 240 -- in seconds
 local takeCommand = "take2"
 local minTimeToTake = 10 -- in seconds
 --in chose ingame startpostype, players must place beforehand, so take an action, grace period can be shorter

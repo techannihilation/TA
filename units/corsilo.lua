@@ -11,8 +11,8 @@ local unitDef = {
 	bmcode = 0,
 	brakeRate = 0,
 	buildAngle = 8192,
-	buildCostEnergy = 77536,
-	buildCostMetal = 7187,
+	buildCostEnergy = 79200,
+	buildCostMetal = 8210,
 	builder = false,
 	buildingGroundDecalDecaySpeed = 30,
 	buildingGroundDecalSizeX = 10,
@@ -89,7 +89,7 @@ local unitDef = {
 
 local weaponDefs = {
 	CRBLMSSL = {
-		areaOfEffect = 1920,
+		areaOfEffect = 1650,
 		cegTag = [[Trail_Large_Rocket]],
 		avoidFriendly = false,
 		collideFriendly = false,
@@ -136,11 +136,11 @@ local weaponDefs = {
 		weaponAcceleration = 100,
 		weaponTimer = 7,
 		weaponType = [[StarburstLauncher]],
-		weaponVelocity = 1600,
+		weaponVelocity = 1300,
 		damage = {
-			bomb_resistant = 3833.3333,
+			bomb_resistant = 4000,
 			commanders = 2500,
-			default = 11500,
+			default = 12000,
 			subs = 5,
 		},
 	},
