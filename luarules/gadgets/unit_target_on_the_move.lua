@@ -11,6 +11,13 @@ function gadget:GetInfo()
   }
 end
 
+
+--include("LuaRules/Configs/customcmds.h.lua")
+
+local CMD_UNIT_SET_TARGET = 34923
+local CMD_UNIT_CANCEL_TARGET = 34924
+local CMD_UNIT_SET_TARGET_RECTANGLE = 34925
+
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 if (gadgetHandler:IsSyncedCode()) then --SYNCED
@@ -32,19 +39,19 @@ local spGetUnitTeam			= Spring.GetUnitTeam
 local spAreTeamsAllied		= Spring.AreTeamsAllied
 local spGetUnitsInRectangle	= Spring.GetUnitsInRectangle
 local spGetUnitsInCylinder	= Spring.GetUnitsInCylinder
+local spSetUnitRulesParam	= Spring.SetUnitRulesParam
+local spGetCommandQueue     = Spring.GetCommandQueue
 
 local CMD_STOP				= CMD.STOP
 
-local noUnitTarget			= 0
-local LICHE					= UnitDefNames["armcybr"].id
 
 --------------------------------------------------------------------------------
 -- Config
 
--- Unseen targets will be removed after at least UNSEEN_TIMEOUT*USEEN_UPDATE_FREQUENCY frames 
+-- Unseen targets will be removed after at least UNSEEN_TIMEOUT*USEEN_UPDATE_FREQUENCY frames
 -- and at most (UNSEEN_TIMEOUT+1)*USEEN_UPDATE_FREQUENCY frames/
 local USEEN_UPDATE_FREQUENCY = 150
-local UNSEEN_TIMEOUT = 2 
+local UNSEEN_TIMEOUT = 2
 
 --------------------------------------------------------------------------------
 -- Globals
@@ -54,9 +61,7 @@ local validUnits = {}
 for i=1, #UnitDefs do
 	local ud = UnitDefs[i]
 	if (ud.canAttack and ud.maxWeaponRange and ud.maxWeaponRange > 0) or ud.isFactory then
-		if (not (ud.canFly and ud.isBomber)) and ud.canMove and (not (i == LICHE)) then
-			validUnits[i] = true
-		end
+		validUnits[i] = true
 	end
 end
 
@@ -65,36 +70,33 @@ local units = {} -- data holds all unitID data
 --------------------------------------------------------------------------------
 -- Commands
 
---include("LuaRules/Configs/customcmds.h.lua")
-
-local CMD_UNIT_SET_TARGET_RECTANGLE = 34923
-local CMD_UNIT_CANCEL_TARGET = 34924
-local CMD_UNIT_SET_TARGET_CIRCLE = 34925
+local tooltipText = 'Sets a top priority attack target, to be used if within range (not removed by move commands)'
 
 local unitSetTargetRectangleCmdDesc = {
 	id		= CMD_UNIT_SET_TARGET_RECTANGLE,
 	type	= CMDTYPE.ICON_UNIT_OR_RECTANGLE,
-	name	= 'Set Target',
+	name	= 'Target',
 	action	= 'settargetrectangle',
 	cursor	= 'settarget',
-	tooltip	= 'Sets target for unit, not removed by move commands',
+	tooltip	= tooltipText,
 	hidden	= true,
 }
 
 local unitSetTargetCircleCmdDesc = {
-	id		= CMD_UNIT_SET_TARGET_CIRCLE,
+	id		= CMD_UNIT_SET_TARGET,
 	type	= CMDTYPE.ICON_UNIT_OR_AREA,
-	name	= 'Set Target',
+	name	= '\n  Set\nTarget\n', --extra spaces center the 'Set' text
 	action	= 'settarget',
 	cursor	= 'settarget',
-	tooltip	= 'Sets a top priority attack target, to be used if within range (not removed by move commands)',
+	tooltip	= tooltipText,
 	hidden	= false,
 }
+
 
 local unitCancelTargetCmdDesc = {
 	id		= CMD_UNIT_CANCEL_TARGET,
 	type	= CMDTYPE.ICON,
-	name	= 'Cancel Target',
+	name	= '\nCancel\nTarget\n',
 	action	= 'canceltarget',
 	tooltip	= 'Removes top priority target, if set',
 	hidden	= false,
@@ -122,27 +124,50 @@ local function locationInRange(unitID, x, y, z, range)
 	return range and ((ux - x)^2 + (uz - z)^2) < range^2
 end
 
-local function setTarget(data)
+local function checkTarget(data)
 	if spValidUnitID(data.id) then
 		if tonumber(data.target) and spValidUnitID(data.target) and spGetUnitAllyTeam(data.target) ~= data.allyTeam then
-			if data.bypassRangeCheck or unitInRange(data.id, data.target, data.range) then
-				spSetUnitTarget(data.id, data.target)
-				if GG.GetUnitTarget(unitID) ~= data.target then
-					SendToUnsynced("targetChange",data.id, data.target)
-				end
+			local inRange = unitInRange(data.id, data.target, data.range)
+			if not inRange and not data.bypassRangeCheck then
+				return false
 			end
+			return true
 		elseif not tonumber(data.target) and data.target then
-			if data.bypassRangeCheck or locationInRange(data.id, data.target[1], data.target[2], data.target[3], data.range) then
-				spSetUnitTarget(data.id, data.target[1],data.target[2],data.target[3])
-				if GG.GetUnitTarget(unitID) ~= data.target then
-					SendToUnsynced("targetChange",data.id, data.target[1],data.target[2],data.target[3])
-				end
+			local inRange = locationInRange(data.id, data.target[1], data.target[2], data.target[3], data.range)
+			if not inRange and not data.bypassRangeCheck then
+				return false
 			end
-		else
-			return false
+			return true
 		end
 	end
-	return true
+	return false
+end
+
+local function setTarget(data)
+	if tonumber(data.target) and spValidUnitID(data.target) and spGetUnitAllyTeam(data.target) ~= data.allyTeam  then
+		spSetUnitTarget(data.id, data.target,false,data.userTarget)
+
+		spSetUnitRulesParam(data.id,"targetID",data.target)
+		spSetUnitRulesParam(data.id,"targetCoordX",-1)
+		spSetUnitRulesParam(data.id,"targetCoordY",-1)
+		spSetUnitRulesParam(data.id,"targetCoordZ",-1)
+
+		if GG.GetUnitTarget(unitID) ~= data.target then
+			SendToUnsynced("targetChange",data.id, data.target)
+		end
+	elseif not tonumber(data.target) and data.target then
+
+		spSetUnitTarget(data.id, data.target[1],data.target[2],data.target[3],false,data.userTarget)
+
+		spSetUnitRulesParam(data.id,"targetID",-1)
+		spSetUnitRulesParam(data.id,"targetCoordX",data.target[1])
+		spSetUnitRulesParam(data.id,"targetCoordY",data.target[2])
+		spSetUnitRulesParam(data.id,"targetCoordZ",data.target[3])
+
+		if GG.GetUnitTarget(unitID) ~= data.target then
+			SendToUnsynced("targetChange",data.id, data.target[1],data.target[2],data.target[3])
+		end
+	end
 end
 
 local function removeUnseenTarget(data)
@@ -167,14 +192,19 @@ end
 
 local function addUnit(unitID, data)
 	if spValidUnitID(unitID) then
-		if setTarget(data) then
+		if checkTarget(data) then
+			setTarget(data)
 			units[unitID] = data
 		end
 	end
 end
 
 local function removeUnit(unitID)
-	spSetUnitTarget(unitID, noUnitTarget)
+	spSetUnitTarget(unitID, 0) --unsets target
+	spSetUnitRulesParam(unitID,"targetID",-1)
+	spSetUnitRulesParam(unitID,"targetCoordX",-1)
+	spSetUnitRulesParam(unitID,"targetCoordY",-1)
+	spSetUnitRulesParam(unitID,"targetCoordZ",-1)
 	if GG.GetUnitTarget(unitID) then
 		SendToUnsynced("targetChange",unitID)
 	end
@@ -183,42 +213,40 @@ end
 
 function gadget:Initialize()
 
-	-- register cursor
-	Spring.AssignMouseCursor("settarget", "cursorsettarget", false)
-	
 	-- register command
-	gadgetHandler:RegisterCMDID(CMD_UNIT_SET_TARGET_RECTANGLE)
+	gadgetHandler:RegisterCMDID(CMD_UNIT_SET_TARGET)
 	gadgetHandler:RegisterCMDID(CMD_UNIT_CANCEL_TARGET)
-	
+	gadgetHandler:RegisterCMDID(CMD_UNIT_SET_TARGET_RECTANGLE)
+
 	-- load active units
 	for _, unitID in ipairs(Spring.GetAllUnits()) do
 		local unitDefID = spGetUnitDefID(unitID)
 		local teamID = spGetUnitTeam(unitID)
 		gadget:UnitCreated(unitID, unitDefID, teamID)
 	end
-	
+
 end
 
-function gadget:UnitCreated(unitID, unitDefID, unitTeam, builderID) 
+function gadget:UnitCreated(unitID, unitDefID, unitTeam, builderID)
 	if validUnits[unitDefID] then
 		--spInsertUnitCmdDesc(unitID, unitSetTargetRectangleCmdDesc)
 		spInsertUnitCmdDesc(unitID, unitSetTargetCircleCmdDesc)
 		spInsertUnitCmdDesc(unitID, unitCancelTargetCmdDesc)
 	end
-	
 end
 
 function gadget:UnitFromFactory(unitID, unitDefID, unitTeam, facID, facDefID)
 	if validUnits[unitDefID] and units[facID] then
 		local data = units[facID]
 		addUnit(unitID, {
-			id = unitID, 
+			id = unitID,
 			target = data.target,
-			allyTeam = spGetUnitAllyTeam(unitID), 
+			allyTeam = spGetUnitAllyTeam(unitID),
 			range = UnitDefs[unitDefID].maxWeaponRange,
 			alwaysSeen = data.alwaysSeen,
 			bypassRangeCheck = data.bypassRangeCheck,
 			ignoreStop = data.ignoreStop,
+			userTarget = data.userTarget,
 		})
 	end
 end
@@ -238,12 +266,12 @@ local function disSQ(x1,y1,x2,y2)
 	return (x1 - x2)^2 + (y1 - y2)^2
 end
 
-local function setTargetClosestFromList(unitID, unitDefID, team, choiceUnits, bypassRangeCheck, ignoreStop)
+local function getTargetClosestFromList(unitID, unitDefID, team, choiceUnits )
 
 	local ux, uy, uz = spGetUnitPosition(unitID)
-				
+
 	local bestDis = false
-	local bestUnit = false
+	local bestUnit
 
 	if ux and choiceUnits then
 		for i = 1, #choiceUnits do
@@ -260,36 +288,25 @@ local function setTargetClosestFromList(unitID, unitDefID, team, choiceUnits, by
 			end
 		end
 	end
-	
-	if bestUnit then
-		local targetUnitDef = spGetUnitDefID(bestUnit)
-		local tud = targetUnitDef and UnitDefs[targetUnitDef]
-		addUnit(unitID, {
-			id = unitID, 
-			target = bestUnit, 
-			allyTeam = spGetUnitAllyTeam(unitID), 
-			range = UnitDefs[unitDefID].maxWeaponRange,
-			alwaysSeen = tud and (tud.isBuilding or tud.speed == 0),
-			bypassRangeCheck = bypassRangeCheck,
-			ignoreStop = ignoreStop,
-		})
-	end
+
+	return bestUnit
 end
 
-function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOptions)
-	
-	if cmdID == CMD_UNIT_SET_TARGET_RECTANGLE or cmdID == CMD_UNIT_SET_TARGET_CIRCLE then
+local function processCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOptions)
+	if cmdID == CMD_UNIT_SET_TARGET or cmdID == CMD_UNIT_SET_TARGET_RECTANGLE or cmdID == CMD_UNIT_CANCEL_TARGET then
 		if validUnits[unitDefID] then
 			local bypassRangeCheck = not cmdOptions.meta
 			local ignoreStop = cmdOptions.ctrl
+			local userTarget = not cmdOptions.internal
+			local target
 			if #cmdParams == 6 then
 				--rectangle
 				local team = spGetUnitTeam(unitID)
-				
+
 				if not team then
-					return false
+					return true
 				end
-				
+
 				local top, bot, left, right
 				if cmdParams[1] < cmdParams[4] then
 					left = cmdParams[1]
@@ -298,7 +315,7 @@ function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOpt
 					left = cmdParams[4]
 					right = cmdParams[1]
 				end
-				
+
 				if cmdParams[3] < cmdParams[6] then
 					top = cmdParams[3]
 					bot = cmdParams[6]
@@ -306,71 +323,98 @@ function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOpt
 					bot = cmdParams[6]
 					top = cmdParams[3]
 				end
-				
-				local units = CallAsTeam(team,
-					function ()
-					return spGetUnitsInRectangle(left,top,right,bot) end)
-				
-				setTargetClosestFromList(unitID, unitDefID, team, units, bypassRangeCheck, ignoreStop)
-			
+
+				local units = CallAsTeam(team, function()
+					return spGetUnitsInRectangle(left,top,right,bot)
+				end)
+				--TODO: perhaps we should insert a new order on top of queue without cancelling area order
+				-- much like area reclaim, etc, until there are no enemies available
+				target = getTargetClosestFromList(unitID, unitDefID, team, units )
+
+
 			elseif #cmdParams == 4 then
-				--circle
-				local team = spGetUnitTeam(unitID)
-				
-				if not team then
-					return false
-				end
-				
-				local units = CallAsTeam(team,
-					function ()
-					return spGetUnitsInCylinder(cmdParams[1],cmdParams[3],cmdParams[4]) end)
-					
-				setTargetClosestFromList(unitID, unitDefID, team, units, bypassRangeCheck, ignoreStop)
-				
-			elseif #cmdParams == 3 then
-				--coordinate
-				addUnit(unitID, {
-					id = unitID, 
+				-- if radius is 0, it's a single click
+				if cmdParams[4] == 0 then
+					--coordinate
 					target = {
 						cmdParams[1],
-						CallAsTeam(teamID, function () return spGetGroundHeight(cmdParams[1],cmdParams[3]) end),
+						CallAsTeam(teamID, function()
+							return spGetGroundHeight(cmdParams[1],cmdParams[3])
+						end),
 						cmdParams[3],
-					},
-					allyTeam = spGetUnitAllyTeam(unitID), 
-					range = UnitDefs[unitDefID].maxWeaponRange,
-					bypassRangeCheck = bypassRangeCheck,
-					ignoreStop = ignoreStop,
-				})
+					}
+				else
+					--circle
+					local team = spGetUnitTeam(unitID)
+
+					if not team then
+						return true
+					end
+					local units = CallAsTeam(team, function()
+						return spGetUnitsInCylinder(cmdParams[1],cmdParams[3],cmdParams[4])
+					end)
+					-- perhaps we should insert a new order on top of queue without cancelling area order
+					target = getTargetClosestFromList(unitID, unitDefID, team, units )
+				end
+			elseif #cmdParams == 3 then
+				--coordinate
+				target = {
+					cmdParams[1],
+					CallAsTeam(teamID, function()
+						return spGetGroundHeight(cmdParams[1],cmdParams[3])
+					end),
+					cmdParams[3],
+				}
 			elseif #cmdParams == 1 then
 				--single target
-				local targetUnitDef = spGetUnitDefID(cmdParams[1])
-				local tud = targetUnitDef and UnitDefs[targetUnitDef]
-				addUnit(unitID, {
-					id = unitID, 
-					target = cmdParams[1], 
-					allyTeam = spGetUnitAllyTeam(unitID), 
-					range = UnitDefs[unitDefID].maxWeaponRange,
-					alwaysSeen = tud and (tud.isBuilding or tud.speed == 0),
-					bypassRangeCheck = bypassRangeCheck,
-					ignoreStop = ignoreStop,
-				})
+				target = cmdParams[1]
 			elseif #cmdParams == 0 then
 				--no param, unset target
 				removeUnit(unitID)
 			end
+			if target then
+				local alwaysSeen
+				if tonumber(target) and spValidUnitID(target) then -- target is a specific unit
+					local targetUnitDef = spGetUnitDefID(target)
+					local tud = targetUnitDef and UnitDefs[targetUnitDef]
+					alwaysSeen = tud and (tud.isBuilding or tud.speed == 0)
+				end
+				addUnit(unitID, {
+					id = unitID,
+					target = target,
+					allyTeam = spGetUnitAllyTeam(unitID),
+					range = UnitDefs[unitDefID].maxWeaponRange,
+					alwaysSeen = alwaysSeen,
+					bypassRangeCheck = bypassRangeCheck,
+					ignoreStop = ignoreStop,
+					userTarget = userTarget,
+				})
+			end
 		end
-		return false  -- command was used
-	elseif cmdID == CMD_UNIT_CANCEL_TARGET then
-		if validUnits[unitDefID] then
-			removeUnit(unitID)
-		end
-		return false  -- command was used
-	elseif cmdID == CMD_STOP then
-		if units[unitID] and not units[unitID].ignoreStop then 
+		return true
+	end
+end
+
+function gadget:UnitCmdDone(unitID, unitDefID, teamID, cmdID, cmdTag, cmdParams, cmdOptions)
+	processCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOptions)
+	if cmdID == CMD_STOP then
+		if units[unitID] and not units[unitID].ignoreStop then
 			removeUnit(unitID)
 		end
 	end
-	return true  -- command was not used
+end
+
+function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOptions)
+	if #spGetCommandQueue(unitID) == 0 or not cmdOptions.shift then
+		if processCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOptions) then
+			return false --command was used & fully processed, so block command
+		elseif cmdID == CMD_STOP then
+			if units[unitID] and not units[unitID].ignoreStop then
+				removeUnit(unitID)
+			end
+		end
+	end
+	return true  -- command was not used OR was used but not fully processed, so don't block command
 end
 
 --------------------------------------------------------------------------------
@@ -380,14 +424,16 @@ function gadget:GameFrame(n)
 	if n%16 == 15 then -- timing synced with slow update to reduce attack jittering
 		-- 15 causes attack command to override target command
 		-- 0 causes target command to take precedence
-		
+
 		for unitID, data in pairs(units) do
-			if not setTarget(data) then
+			if not checkTarget(data) then
 				removeUnit(unitID)
+			else
+				setTarget(data)
 			end
 		end
 	end
-	
+
 	if n%USEEN_UPDATE_FREQUENCY == 0 then
 		for unitID, data in pairs(units) do
 			if removeUnseenTarget(data) then
@@ -395,7 +441,7 @@ function gadget:GameFrame(n)
 			end
 		end
 	end
-	
+
 end
 
 --------------------------------------------------------------------------------
@@ -421,7 +467,7 @@ local spIsUnitInView 		= Spring.IsUnitInView
 local spGetUnitPosition 	= Spring.GetUnitPosition
 local spGetUnitLosState 	= Spring.GetUnitLosState
 local spValidUnitID 		= Spring.ValidUnitID
-local spGetMyAllyTeamID 	= Spring.GetMyAllyTeamID 	
+local spGetMyAllyTeamID 	= Spring.GetMyAllyTeamID
 local spGetMyTeamID			= Spring.GetMyTeamID
 local spIsUnitSelected		= Spring.IsUnitSelected
 local spGetModKeyState		= Spring.GetModKeyState
@@ -441,14 +487,22 @@ local drawAllTargets = {}
 local drawTarget = {}
 local unitTargets = {}
 
+
 function gadget:Initialize()
 	gadgetHandler:AddChatAction("targetdrawteam", handleTargetDrawEvent,"toggles drawing targets for units, params: teamID doDraw")
 	gadgetHandler:AddChatAction("targetdrawunit", handleUnitTargetDrawEvent,"toggles drawing targets for units, params: unitID")
 	gadgetHandler:AddSyncAction("targetChange", handleTargetChangeEvent)
+
+	-- register cursor
+	Spring.AssignMouseCursor("settarget", "cursorsettarget", false)
+	--show the command in the queue
+	Spring.SetCustomCommandDrawData(CMD_UNIT_SET_TARGET,"settarget",commandColour,true)
 end
 
 function gadget:Shutdown()
-	gadgetHandler:RemoveChatAction('targetDraw')
+	gadgetHandler:RemoveChatAction('targetdrawteam')
+	gadgetHandler:RemoveChatAction('targetdrawunit')
+	gadgetHandler:RemoveSyncAction("targetChange")
 end
 
 function handleUnitTargetDrawEvent(_,_,params)
@@ -471,12 +525,12 @@ function handleTargetChangeEvent(_,unitID,dataA,dataB,dataC)
 	end
 end
 
-local function pos2func(u2) 
+local function pos2func(u2)
 	local _,_,_,x2,y2,z2 = spGetUnitPosition(u2,true)
 	return x2,y2,z2
 end
 
-local function unitDraw(u1, u2) 
+local function unitDraw(u1, u2)
 	local _,_,_,x1,y1,z1 = spGetUnitPosition(u1,true)
 	glVertex(x1,y1,z1)
 	glVertex(CallAsTeam(myTeam, pos2func, u2)) -- check teams los for target
@@ -508,6 +562,7 @@ function gadget:DrawWorld()
 		if drawTarget[unitID] or drawAllTargets[spGetUnitTeam(unitID)] or spIsUnitSelected(unitID) then
 			if spectator or spGetUnitAllyTeam(unitID) == myAllyTeam then
 				glBeginEnd(GL_LINES, function()
+				--TODO: show cursor animation at target point
 					if tonumber(unitTarget) and spValidUnitID(unitTarget) then
 						--single unit target
 						if spectator then
