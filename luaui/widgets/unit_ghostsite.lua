@@ -62,10 +62,6 @@ local spEcho                = Spring.Echo
 local spGetUnitDefID        = Spring.GetUnitDefID
 local spGetUnitRulesParam   = Spring.GetUnitRulesParam
 
-local GL_TEXTURE_ENV = GL.TEXTURE_ENV
-local GL_REPLACE = GL.REPLACE
-local GL_TEXTURE_ENV_MODE = GL.TEXTURE_ENV_MODE
-
 local mdeg = math.deg
 local matan2 = math.atan2
 
@@ -132,10 +128,10 @@ function DrawGhostFeatures()
 	glTexture(0,"$units1")
 	--glTexture(1,"$units1")
 
-	glTexEnv( GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, 34160 )				--GL_COMBINE_RGB_ARB
+	glTexEnv( GL.TEXTURE_ENV, GL.TEXTURE_ENV_MODE, 34160 )				--GL_COMBINE_RGB_ARB
 	--use the alpha given by glColor for the outgoing alpha.
-	glTexEnv( GL_TEXTURE_ENV, 34162, GL_REPLACE )			--GL_COMBINE_ALPHA
-	glTexEnv( GL_TEXTURE_ENV, 34184, 34167 )			--GL_SOURCE0_ALPHA_ARB			GL_PRIMARY_COLOR_ARB
+	glTexEnv( GL.TEXTURE_ENV, 34162, GL.REPLACE )			--GL_COMBINE_ALPHA
+	glTexEnv( GL.TEXTURE_ENV, 34184, 34167 )			--GL_SOURCE0_ALPHA_ARB			GL_PRIMARY_COLOR_ARB
 	
 	--------------------------Draw-------------------------------------------------------------
 	for unitID, ghost in pairs( ghostFeatures ) do
@@ -159,9 +155,9 @@ function DrawGhostFeatures()
 	end
 
 	--------------------------Clean up-------------------------------------------------------------
-	glTexEnv( GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, 8448 )				--GL_MODULATE
+	glTexEnv( GL.TEXTURE_ENV, GL.TEXTURE_ENV_MODE, 8448 )				--GL_MODULATE
 	--use the alpha given by glColor for the outgoing alpha.
-	glTexEnv( GL_TEXTURE_ENV, 34162, 8448 )											--GL_MODULATE
+	glTexEnv( GL.TEXTURE_ENV, 34162, 8448 )											--GL_MODULATE
 	----gl.TexEnv( GL.TEXTURE_ENV, 34184, 5890 )			--GL_SOURCE0_ALPHA_ARB			GL_TEXTURE
 end
 
@@ -195,12 +191,29 @@ function ScanFeatures()
 	local features = spGetAllFeatures()
 	
 	if firstScan then
-	  local sfind = string.find
-	  for _, fID in ipairs(features) do
-	    local fDefId = spGetFeatureDefID(fID)
-	    local fName = FeatureDefs[fDefId].name
-	    if sfind(fName, 'tree') or sfind(fName, 'rock') then
-	      ignoreFeature[fDefId] = true
+	  if (Spring.GetGameFrame() == 0) then
+	      -- Ignore all the map features we can see before game start
+		  for _, fID in ipairs(features) do
+			local fDefId = spGetFeatureDefID(fID)
+			if not ignoreFeature[fDefId] then
+				local x, y, z = spGetFeaturePosition(fID)
+				local LosOrRadar, inLos, inRadar = spGetPositionLosState(x, y, z)
+				if not inLos then
+					ignoreFeature[fDefId] = true
+				end
+			end
+		  end
+	  else 
+	    -- Widget loaded mid game, just use original 'ignore trees and rocks' logic
+        local sfind = string.find
+	    for _, fID in ipairs(features) do
+	      if not ignoreFeature[fDefId] then
+	        local fDefId = spGetFeatureDefID(fID)
+	        local fText = string.lower(FeatureDefs[fDefId].name .. " " .. (FeatureDefs[fDefId].tooltip or ""))
+	        if sfind(fText, 'tree') or sfind(fText, 'rock') then
+	          ignoreFeature[fDefId] = true
+	        end
+	      end
 	    end
 	  end
 	  firstScan = false
@@ -282,7 +295,6 @@ function CheckSpecState()
 	local _, _, spec, _, _, _, _, _ = spGetPlayerInfo(playerID)
 		
 	if ( spec == true ) then
-		spEcho("<Ghost Site> Spectator mode. Widget removed.")
 		widgetHandler:RemoveWidget()
 		return false
 	end
