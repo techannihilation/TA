@@ -761,7 +761,7 @@ function SortSpecs(vOffset)
 	
 	for _,playerID in ipairs(playersList) do
 		_,active,spec = Spring_GetPlayerInfo(playerID)
-		if spec == true then
+		if spec and active then
 			if player[playerID].name ~= nil then
 				
 				-- add "Specs" label if first spec
@@ -2036,7 +2036,7 @@ end
 local reportTake = false
 local tookTeamID
 local tookTeamName
-local tookFrame
+local tookFrame = -120
 
 function Take(teamID,name, i)
 
@@ -2059,33 +2059,43 @@ end
 
 local timeCounter = 0
 local updateRate = 0.5
+local lastTakeMsg = -120
 
 function widget:Update(delta) 
 	timeCounter = timeCounter + delta
 	curFrame = Spring_GetGameFrame()
-		
-	if reportTake and curFrame >= 2 + tookFrame then --i have no idea why it takes two frames, but it does
-		local teamID = tookTeamID
-		local afterE = Spring_GetTeamResources(teamID,"energy")
-		local afterM = Spring_GetTeamResources(teamID, "metal")
-		local afterU = Spring_GetTeamUnitCount(teamID)
+
+	if curFrame >= 30 + tookFrame then
+		if lastTakeMsg + 120 < tookFrame and reportTake then 
+			local teamID = tookTeamID
+			local afterE = Spring_GetTeamResources(teamID,"energy")
+			local afterM = Spring_GetTeamResources(teamID, "metal")
+			local afterU = Spring_GetTeamUnitCount(teamID)
 	
-		Spring_SendCommands("say a: I took " .. colourNames(tookTeamID) .. tookTeamName .. ".")
+			local toSay = "say a: I took " .. tookTeamName .. ". "
 		
-		if afterE~=0 or afterM~=0 or  afterU~=0 then
-			Spring_SendCommands("say a: Left  " .. afterU .. " units, " .. afterE .. " energy and " .. afterM .. " metal remaining.")
-		end
-		
-		for j = 0,127 do
-			if player[j].allyteam == myAllyTeamID then
-				if player[j].totake == true then
-					player[j] = CreatePlayerFromTeam(player[j].team)
-					SortList()
+			if afterE and afterM and afterU then
+				if afterE > 1.0 or afterM > 1.0 or  afterU > 0 then
+					toSay = toSay .. "Left  " .. math.floor(afterU) .. " units, " .. math.floor(afterE) .. " energy and " .. math.floor(afterM) .. " metal."
 				end
 			end
-		end	
+			
+			Spring_SendCommands(toSay)
+		
+			for j = 0,127 do
+				if player[j].allyteam == myAllyTeamID then
+					if player[j].totake == true then
+						player[j] = CreatePlayerFromTeam(player[j].team)
+						SortList()
+					end
+				end
+			end	
 
-		reportTake = false
+			lastTakeMsg = tookFrame
+			reportTake = false
+		else
+			reportTake = false
+		end
 	end
 	
 	if timeCounter < updateRate then

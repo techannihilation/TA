@@ -12,7 +12,7 @@
 --------------------------------------------------------------------------------
 --
 --  TODO:  - get rid of the ':'/self referencing, it's a waste of cycles
---         - (De)RegisterCOBCallback(data)
+--         - (De)RegisterCOBCallback(data) + callin?
 --
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -83,130 +83,9 @@ gadgetHandler = {
 }
 
 
--- these call-ins are set to 'nil' if not used
--- they are setup in UpdateCallIns()
-local callInLists = {
-	"Shutdown",
-
-	"GamePreload",
-	"GameStart",
-	"GameOver",
-	"GameID",
-	"TeamDied",
-
-	"GameFrame",
-
-	"ViewResize",  -- FIXME ?
-
-	"TextCommand",  -- FIXME ?
-	"GotChatMsg",
-	"RecvLuaMsg",
-
-	-- Unit CallIns
-	"UnitCreated",
-	"UnitFinished",
-	"UnitFromFactory",
-	"UnitDestroyed",
-	"UnitExperience",
-	"UnitIdle",
-	"UnitCmdDone",
-	"UnitPreDamaged",
-	"UnitDamaged",
-	"UnitTaken",
-	"UnitGiven",
-	"UnitEnteredRadar",
-	"UnitEnteredLos",
-	"UnitLeftRadar",
-	"UnitLeftLos",
-	"UnitSeismicPing",
-	"UnitLoaded",
-	"UnitUnloaded",
-	"UnitCloaked",
-	"UnitDecloaked",
-	-- optional
-	-- "UnitUnitCollision",
-	-- "UnitFeatureCollision",
-	-- "UnitMoveFailed",
-	"StockpileChanged",
-
-	-- Feature CallIns
-	"FeatureCreated",
-	"FeatureDestroyed",
-
-	-- Projectile CallIns
-	"ProjectileCreated",
-	"ProjectileDestroyed",
-
-	-- Shield CallIns
-	"ShieldPreDamaged",
-
-	-- Misc Synced CallIns
-	"Explosion",
-
-	-- LuaRules CallIns (note: the *PreDamaged calls belong here too)
-	"CommandFallback",
-	"AllowCommand",
-	"AllowUnitCreation",
-	"AllowUnitTransfer",
-	"AllowUnitBuildStep",
-	"AllowFeatureBuildStep",
-	"AllowFeatureCreation",
-	"AllowResourceLevel",
-	"AllowResourceTransfer",
-	"AllowDirectUnitControl",
-	"MoveCtrlNotify",
-	"TerraformComplete",
-	"AllowWeaponTargetCheck",
-	"AllowWeaponTarget",
-	-- unsynced
-	"DrawUnit",
-	"DrawFeature",
-	"DrawShield",
-	"DrawProjectile",
-	"RecvSkirmishAIMessage",
-
-	-- COB CallIn  (FIXME?)
-	"CobCallback",
-
-	-- Unsynced CallIns
-	"Update",
-	"DefaultCommand",
-	"DrawGenesis",
-	"DrawWorld",
-	"DrawWorldPreUnit",
-	"DrawWorldShadow",
-	"DrawWorldReflection",
-	"DrawWorldRefraction",
-	"DrawScreenEffects",
-	"DrawScreen",
-	"DrawInMiniMap",
-	"RecvFromSynced",
-
-	-- moved from LuaUI
-	"KeyPress",
-	"KeyRelease",
-	"MousePress",
-	"MouseRelease",
-	"MouseMove",
-	"MouseWheel",
-	"IsAbove",
-	"GetTooltip",
-
-	-- FIXME -- not implemented  (more of these?)
-	"WorldTooltip",
-	"MapDrawCmd",
-	"GameSetup",
-	"DefaultCommand",
-
-	-- Save/Load
-	"Save",
-	"Load",
-}
-
-
 -- initialize the call-in lists
 do
-  for _,listname in ipairs(callInLists) do
+  for _,listname in ipairs(CALLIN_LIST) do
     gadgetHandler[listname .. 'List'] = {}
   end
 end
@@ -537,7 +416,7 @@ local function SafeWrapGadget(gadget)
     end
   end
 
-  for _,ciName in ipairs(callInLists) do
+  for _,ciName in ipairs(CALLIN_LIST) do
     if (gadget[ciName]) then
       gadget[ciName] = SafeWrap(gadget[ciName], ciName)
     end
@@ -583,7 +462,7 @@ function gadgetHandler:InsertGadget(gadget)
   end
 
   ArrayInsert(self.gadgets, true, gadget)
-  for _,listname in ipairs(callInLists) do
+  for _,listname in ipairs(CALLIN_LIST) do
     local func = gadget[listname]
     if (type(func) == 'function') then
       ArrayInsert(self[listname..'List'], func, gadget)
@@ -612,7 +491,7 @@ function gadgetHandler:RemoveGadget(gadget)
   ArrayRemove(self.gadgets, gadget)
   self:RemoveGadgetGlobals(gadget)
   actionHandler.RemoveGadgetActions(gadget)
-  for _,listname in ipairs(callInLists) do
+  for _,listname in ipairs(CALLIN_LIST) do
     ArrayRemove(self[listname..'List'], gadget)
   end
 
@@ -630,16 +509,22 @@ end
 
 function gadgetHandler:UpdateCallIn(name)
   local listName = name .. 'List'
-  if ((#self[listName] > 0)       or
-      (name == 'GotChatMsg')      or
-      (name == 'RecvFromSynced')) then
+  local forceUpdate = (name == 'GotChatMsg' or name == 'RecvFromSynced') -- redundant?
+
+  _G[name] = nil
+
+  if (forceUpdate or #self[listName] > 0) then
     local selffunc = self[name]
-    _G[name] = function(...)
-      return selffunc(self, ...)
+
+    if (selffunc ~= nil) then
+      _G[name] = function(...)
+        return selffunc(self, ...)
+      end
+    else
+      Spring.Log(LOG_SECTION, LOG.ERROR, "UpdateCallIn: " .. name .. " is not implemented")
     end
-  else
-    _G[name] = nil
   end
+
   Script.UpdateCallIn(name)
 end
 
@@ -674,7 +559,7 @@ end
 
 
 function gadgetHandler:UpdateCallIns()
-  for _,name in ipairs(callInLists) do
+  for _,name in ipairs(CALLIN_LIST) do
     self:UpdateCallIn(name)
   end
 end
@@ -775,7 +660,7 @@ function gadgetHandler:RaiseGadget(gadget)
     end
   end
   Raise(self.gadgets, true, gadget)
-  for _,listname in ipairs(callInLists) do
+  for _,listname in ipairs(CALLIN_LIST) do
     Raise(self[listname..'List'], gadget[listname], gadget)
   end
 end
@@ -807,7 +692,7 @@ function gadgetHandler:LowerGadget(gadget)
     end
   end
   Lower(self.gadgets, true, gadget)
-  for _,listname in ipairs(callInLists) do
+  for _,listname in ipairs(CALLIN_LIST) do
     Lower(self[listname..'List'], gadget[listname], gadget)
   end
 end
@@ -833,12 +718,11 @@ end
 --
 
 function gadgetHandler:RegisterGlobal(owner, name, value)
-  if ((name == nil)        or
-      (_G[name])           or
-      (self.globals[name]) or
-      (CallInsMap[name])) then
-    return false
-  end
+  if (name == nil) then return false end
+  if (_G[name] ~= nil) then return false end
+  if (self.globals[name] ~= nil) then return false end
+  if (CALLIN_MAP[name] ~= nil) then return false end
+
   _G[name] = value
   self.globals[name] = owner
   return true
@@ -1131,7 +1015,7 @@ end
 
 function gadgetHandler:DrawProjectile(projectileID, drawMode)
   for _,g in ipairs(self.DrawProjectileList) do
-    if (g:DrawProjectile(projectile, drawMode)) then
+    if (g:DrawProjectile(projectileID, drawMode)) then
       return true
     end
   end
@@ -1172,6 +1056,14 @@ function gadgetHandler:AllowCommand(unitID, unitDefID, unitTeam,
   return true
 end
 
+function gadgetHandler:AllowStartPosition(cx, cy, cz, playerID, readyState, rx, ry, rz)
+  for _,g in ipairs(self.AllowStartPositionList) do
+    if (not g:AllowStartPosition(cx, cy, cz, playerID, readyState, rx, ry, rz)) then
+      return false
+    end
+  end
+  return true
+end
 
 function gadgetHandler:AllowUnitCreation(unitDefID, builderID, builderTeam, x, y, z, facing)
   for _,g in ipairs(self.AllowUnitCreationList) do
@@ -1380,38 +1272,52 @@ end
 
 
 function gadgetHandler:UnitPreDamaged(
-	unitID, unitDefID, unitTeam,
-	damage, paralyzer,
-	weaponDefID, projectileID,
-	attackerID, attackerDefID, attackerTeam)
-  local rDam = damage
-  local rImp = 1.0
+  unitID,
+  unitDefID,
+  unitTeam,
+  damage,
+  paralyzer,
+  weaponDefID,
+  projectileID,
+  attackerID,
+  attackerDefID,
+  attackerTeam
+)
+  local retDamage = damage
+  local retImpulse = 1.0
 
   for _,g in ipairs(self.UnitPreDamagedList) do
-    dam, imp = g:UnitPreDamaged(unitID, unitDefID, unitTeam,
-                  rDam, paralyzer, weaponDefID, projectileID,
-                  attackerID, attackerDefID, attackerTeam)
-    if (dam ~= nil) then
-      rDam = dam
-    end
-    if (imp ~= nil) then
-      rImp = math.min(imp, rImp)
-    end
+    dmg, imp = g:UnitPreDamaged(
+      unitID, unitDefID, unitTeam,
+      retDamage, paralyzer,
+      weaponDefID, projectileID,
+      attackerID, attackerDefID, attackerTeam)
+
+    if (dmg ~= nil) then retDamage = dmg end
+    if (imp ~= nil) then retImpulse = imp end
   end
 
-  return rDam, rImp
+  return retDamage, retImpulse
 end
 
 
-function gadgetHandler:UnitDamaged(unitID, unitDefID, unitTeam,
-                                   damage, paralyzer, weaponDefID,
-                                   attackerID, attackerDefID, attackerTeam)
+function gadgetHandler:UnitDamaged(
+  unitID,
+  unitDefID,
+  unitTeam,
+  damage,
+  paralyzer,
+  weaponDefID,
+  projectileID,
+  attackerID,
+  attackerDefID,
+  attackerTeam
+)
   for _,g in ipairs(self.UnitDamagedList) do
     g:UnitDamaged(unitID, unitDefID, unitTeam,
-                  damage, paralyzer, weaponDefID,
+                  damage, paralyzer, weaponDefID, projectileID,
                   attackerID, attackerDefID, attackerTeam)
   end
-  return
 end
 
 
@@ -1550,6 +1456,52 @@ function gadgetHandler:FeatureDestroyed(featureID, allyTeam)
     g:FeatureDestroyed(featureID, allyTeam)
   end
   return
+end
+
+function gadgetHandler:FeatureDamaged(
+  featureID,
+  featureDefID,
+  featureTeam,
+  damage,
+  weaponDefID,
+  projectileID,
+  attackerID,
+  attackerDefID,
+  attackerTeam
+)
+  for _,g in ipairs(self.FeatureDamagedList) do
+    g:FeatureDamaged(featureID, featureDefID, featureTeam,
+                    damage, weaponDefID, projectileID,
+                    attackerID, attackerDefID, attackerTeam)
+  end
+end
+
+function gadgetHandler:FeaturePreDamaged(
+  featureID,
+  featureDefID,
+  featureTeam,
+  damage,
+  weaponDefID,
+  projectileID,
+  attackerID,
+  attackerDefID,
+  attackerTeam
+)
+  local retDamage = damage
+  local retImpulse = 1.0
+
+  for _,g in ipairs(self.FeaturePreDamagedList) do
+    dmg, imp = g:FeaturePreDamaged(
+      featureID, featureDefID, featureTeam,
+      retDamage,
+      weaponDefID, projectileID,
+      attackerID, attackerDefID, attackerTeam)
+
+    if (dmg ~= nil) then retDamage = dmg end
+    if (imp ~= nil) then retImpulse = imp end
+  end
+
+  return retDamage, retImpulse
 end
 
 

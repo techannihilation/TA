@@ -60,6 +60,7 @@ local unitDef = {
 	sightDistance = 125,
 	standingmoveorder = 1,
 	steeringmode = 1,
+	transportMass = 5000,
 	transportCapacity = 1,
 	transportSize = 3,
 	turnRate = 550,
