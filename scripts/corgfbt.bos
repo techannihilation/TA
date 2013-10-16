@@ -1,0 +1,158 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, turretx, turrety, cannona, flarea;
+
+static-var  Static_Var_1, gun_1;
+
+// Signal definitions
+#define SIG_AIM				2
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+HitByWeapon(anglex, anglez)
+{
+	turn base to z-axis anglez speed <105.000000>;
+	turn base to x-axis anglex speed <105.000000>;
+	wait-for-turn base around z-axis;
+	wait-for-turn base around x-axis;
+	turn base to z-axis <0.000000> speed <30.000000>;
+	turn base to x-axis <0.000000> speed <30.000000>;
+}
+
+Create()
+{
+	hide flarea;
+	cache base;
+	dont-shade flarea;
+	gun_1 = base;
+	Static_Var_1 = 3000;
+	start-script SmokeUnit();
+}
+
+StartMoving()
+{
+	turn base to x-axis <-8.000000> speed <13.000000>;
+	wait-for-turn base around x-axis;
+	turn base to x-axis <0.000000> speed <5.000000>;
+}
+
+StopMoving()
+{
+	turn base to x-axis <0.000000> speed <9.000000>;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+RestoreAfterDelay()
+{
+	sleep Static_Var_1;
+	turn turretx to y-axis <0.000000> speed <125.000000>;
+	turn turrety to x-axis <0.000000> speed <125.000000>;
+	wait-for-turn turretx around y-axis;
+	wait-for-turn turrety around x-axis;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	turn turretx to y-axis heading speed <150.000000>;
+	turn turrety to x-axis <0.000000> - pitch speed <150.000000>;
+	wait-for-turn turretx around y-axis;
+	wait-for-turn turrety around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FirePrimary()
+{
+		show flarea;
+		move cannona to z-axis [-2.000000] now;
+		sleep 100;
+		hide flarea;
+		wait-for-move cannona along z-axis;
+		move cannona to z-axis [0.000000] speed [6.000000];
+}
+
+QueryPrimary(piecenum)
+{
+		piecenum = flarea;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = turretx;
+}
+
+Killed(severity, corpsetype)
+{
+	hide flarea;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type BITMAPONLY | BITMAP1;
+		explode cannona type BITMAPONLY | BITMAP2;
+		explode turrety type BITMAPONLY | BITMAP5;
+		explode turretx type BITMAPONLY | BITMAP1;
+		explode flarea type BITMAPONLY | BITMAP2;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type FALL | BITMAP1;
+		explode cannona type FALL | BITMAP2;
+		explode turrety type FALL | BITMAP5;
+		explode turretx type FALL | BITMAP1;
+		explode flarea type FALL | BITMAP2;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type SHATTER | BITMAP1;
+		explode cannona type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode turrety type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode turretx type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode flarea type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		return (0);
+	}
+	corpsetype = 3;
+	explode base type SHATTER | EXPLODE_ON_HIT | BITMAP1;
+	explode cannona type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode turrety type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode turretx type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode flarea type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+}
