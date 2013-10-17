@@ -217,13 +217,18 @@ local resources = {
 			lightb4='lightningball4.tga',
 			lightning2='lightning2.jpg',
 			
-			debris2='other/debris2.tga',
 			debris='other/debris.tga',
+			debris2='other/debris2.tga',
 			dirtplosion2='other/dirtplosion2.tga',
-			
+				
 			nanonew='nano.tga',
 			exploo='explo.jpg',
 			ring='ring.tga',
+			
+			--Hot fix for generic lava map ceg
+			map_foam= "other/foam_map.tga",
+			map_debris2= "debris2.tga",
+			map_dirtplosion2= "dirtplosion2.tga",	
 		},
 	},
 }
