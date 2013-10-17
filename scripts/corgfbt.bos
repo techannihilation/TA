@@ -98,12 +98,12 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-		show flarea;
-		move cannona to z-axis [-2.000000] now;
-		sleep 100;
-		hide flarea;
-		wait-for-move cannona along z-axis;
-		move cannona to z-axis [0.000000] speed [6.000000];
+//		show flarea;
+//		move cannona to z-axis [-2.000000] now;
+//		sleep 100;
+//		hide flarea;
+//		wait-for-move cannona along z-axis;
+//		move cannona to z-axis [0.000000] speed [6.000000];
 }
 
 QueryPrimary(piecenum)
