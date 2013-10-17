@@ -226,9 +226,9 @@ local resources = {
 			ring='ring.tga',
 			
 			--Hot fix for generic lava map ceg
-			map_foam= "other/foam_map.tga",
-			map_debris2= "debris2.tga",
-			map_dirtplosion2= "dirtplosion2.tga",	
+			map_foam='other/foam_map.tga',
+			map_debris2='other/debris2.tga',
+			map_dirtplosion2='other/dirtplosion2.tga',
 		},
 	},
 }
