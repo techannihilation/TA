@@ -9,7 +9,7 @@ function gadget:GetInfo()
     date      = "2012 sept",
     license   = "GNU GPL, v2 or later",
     layer     = 0,
-    enabled   = true  --  loaded by default?
+    enabled   = false  --  loaded by default?
   }
 end
 
@@ -27,7 +27,7 @@ local SpGetUnitBuildFacing = Spring.GetUnitBuildFacing
 local pairs = pairs
 local CMD_SET_WANTED_MAX_SPEED = CMD.SET_WANTED_MAX_SPEED
 local badfactories={
-  [UnitDefNames["corsy"].id] = true,
+  --[UnitDefNames["corsy"].id] = true,
   [UnitDefNames["corasy"].id] = true,
   [UnitDefNames["corfhp"].id] = true,
   [UnitDefNames["cahpns"].id] = true,
@@ -39,7 +39,7 @@ local badfactories={
   [UnitDefNames["aahpns"].id] = true,
   [UnitDefNames["asubpen"].id] = true,
   
-  [UnitDefNames["tllsy"].id] = true,
+  --[UnitDefNames["tllsy"].id] = true,
   [UnitDefNames["tllasy"].id] = true,
   [UnitDefNames["tllhpns"].id] = true,
   [UnitDefNames["tllsubpen"].id] = true,
@@ -89,13 +89,13 @@ function gadget:UnitFromFactory(unitID, unitDefID, unitTeam, factID, factDefID, 
 				local x,y,z = SpGetUnitPosition(factID)
 				local f=SpGetUnitBuildFacing(factID)
 				if f==0 then
-					z=z+96
+					z=z+128
 				elseif f==1 then
-					x=x+96
+					x=x+128
 				elseif f==2 then
-					z=z-96
+					z=z-128
 				else
-					x=x-96
+					x=x-128
 				end
 				y=Spring.GetGroundHeight(x,z)
 				newcmd[1]={10,{x,y,z},16} --CMD.MOVE, pos ,16

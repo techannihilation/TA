@@ -110,7 +110,7 @@ local severity = recentDamage/maxHealth
 		--Spring.Echo("MED")
 		return 2
 	elseif  severity <= 0.99  then
-		Explode(dish, sfxExplode)
+		Explode(dish, SFX.EXPLODE_ON_HIT)
 		Explode(base, SFX.SHATTER)
 		--Spring.Echo("BIG")
 		return 3

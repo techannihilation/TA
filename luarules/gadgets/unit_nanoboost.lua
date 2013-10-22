@@ -35,7 +35,7 @@ local SpGetUnitPosition = Spring.GetUnitPosition
 local SpSpawnCEG = Spring.SpawnCEG
 local uDefs = UnitDefs
 local SpGetUnitHealth = Spring.GetUnitHealth
-local SpSetUnitHealth = Spring.SetUnitHealth
+local SpAddUnitDamage = Spring.AddUnitDamage
 local spSetUnitRulesParam  = Spring.SetUnitRulesParam
 
 local mrandom = math.random
@@ -179,13 +179,13 @@ function gadget:Initialize()
 end
 
 function gadget:GameFrame(n)
-  if n % 128 == 0 then
+  if n %128 == 0 then
     for unitID in pairs(boostednanos) do
       	if mrandom(0,1) == 0 then 
 	  local _,hp = SpGetUnitHealth(unitID)
-	  local damage = mrandom(0,(hp*0.25))
+	  local damage = mrandom(hp*0.20,(hp*0.45))
 	  --Spring.Echo("hp = " .. hp .."      " .. damage)
-	  SpSetUnitHealth(unitID ,(hp-damage))
+	  SpAddUnitDamage(unitID , damage)
 	  local x,y,z = SpGetUnitPosition(unitID)
 	  SpSpawnCEG("ZEUS_FLASH_SUB",x,y,z,0,0,0)
       end
