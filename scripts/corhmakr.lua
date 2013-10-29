@@ -30,7 +30,7 @@ local function SmokeUnit(healthpercent, sleeptime, smoketype)
 		if (health_percent < 66) then
 			local smoketype = 258;
 			if (math.random(1, 66) < health_percent) then smoketype = 257; end
-			Spring.UnitScript.EmitSfx(base, smoketype);
+			Spring.UnitScript.EmitSfx(bottomBody, smoketype);
 		end
 		
 		local sleep_time = health_percent * 50;
