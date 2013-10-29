@@ -98,4 +98,22 @@ return {
 		params = {'1', 'Shield Off', 'Shield On'},
 	},
   },
+  tlltrid = {
+	{
+		name = "dive_tri",
+		cob = "Dive",
+		tooltip = "Dive Underwater",
+		type = CMDTYPE.ICON_MODE,
+		params = {'1', 'Surface', 'Dive'},
+	},
+  },
+  tllkrak = {
+	{
+		name = "dive_tri",
+		cob = "Dive",
+		tooltip = "Dive Underwater",
+		type = CMDTYPE.ICON_MODE,
+		params = {'1', 'Surface', 'Dive'},
+	},
+  },
 }
