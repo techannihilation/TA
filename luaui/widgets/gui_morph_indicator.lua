@@ -26,6 +26,7 @@ local GetUnitExperience    = Spring.GetUnitExperience
 local GetTeamList          = Spring.GetTeamList
 local GetTeamUnits         = Spring.GetTeamUnits
 local GetMyAllyTeamID      = Spring.GetMyAllyTeamID
+local GetUnitViewPosition  = Spring.GetUnitViewPosition
 
 local glDepthTest      = gl.DepthTest
 local glDepthMask      = gl.DepthMask
@@ -57,7 +58,7 @@ local alliedUnits  = {}
 local myAllyTeamID = 666
 
 local iconsize   = 33
-local iconoffset = 14
+local iconoffset = -20
 
 local rankTexBase = 'LuaUI/Images/Ranks/'
 local rankTextures = {
@@ -68,6 +69,7 @@ local rankTextures = {
 }
 
 local morphRankMax = #rankTextures
+local MiMaxDist = 1750000 -- max dist at which to draw ETA
 
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
@@ -250,27 +252,37 @@ end
 
 
 function widget:DrawWorld()
-  if (next(alliedUnits) == nil) then
-    return -- avoid unnecessary GL calls
-  end
+  if Spring.IsGUIHidden() == false then 
+    if (next(alliedUnits) == nil) then
+      return -- avoid unnecessary GL calls
+    end
   
-  CreateBillboard()
+    CreateBillboard()
 
-  glDepthMask(true)
-  glDepthTest(true)
-  glAlphaTest(GL_GREATER, 0.01)
+    glDepthMask(true)
+    glDepthTest(true)
+    glAlphaTest(GL_GREATER, 0.01)
+    
+    local cx, cy, cz = Spring.GetCameraPosition()
+    for unitID, rankTexHeight in pairs(alliedUnits) do
+      local ux,uy,uz = GetUnitViewPosition(unitID)
+      if ux~=nil then
+        local dx, dy, dz = ux-cx, uy-cy, uz-cz
+        local dist = dx*dx + dy*dy + dz*dz
+	   if dist < MiMaxDist then 
+	     if rankTexHeight[1] then
+	        glTexture(rankTexHeight[1])
+	        glDrawFuncAtUnit(unitID, true, DrawUnitFunc, rankTexHeight[2])
+	     end
+           end
+       end
+    glTexture(false)
 
-  for unitID, rankTexHeight in pairs(alliedUnits) do
-    if rankTexHeight[1] then
-      glTexture(rankTexHeight[1])
-      glDrawFuncAtUnit(unitID, true, DrawUnitFunc, rankTexHeight[2])
+    glAlphaTest(false)
+    glDepthTest(false)
+    glDepthMask(false)
     end
   end
-  glTexture(false)
-
-  glAlphaTest(false)
-  glDepthTest(false)
-  glDepthMask(false)
 end
 
 

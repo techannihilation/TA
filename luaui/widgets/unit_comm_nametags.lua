@@ -147,6 +147,8 @@ end
 
 
 function widget:DrawWorld()
+ if Spring.IsGUIHidden() == false then 
+
   glDepthTest(true)
   glTexture('LuaUI/Images/hellomynameis.png')
   glAlphaTest(GL_GREATER, 0)
@@ -203,6 +205,7 @@ function widget:DrawWorld()
   glColor(1,1,1,1)
   glTexture(false)
   glDepthTest(false)
+ end
 end
 
 function widget:UnitCreated( unitID,  unitDefID,  unitTeam)

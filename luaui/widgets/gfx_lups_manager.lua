@@ -457,6 +457,7 @@ local spGetSpectatingState = Spring.GetSpectatingState
 local spGetUnitDefID       = Spring.GetUnitDefID
 local spGetUnitRulesParam  = Spring.GetUnitRulesParam
 local spGetUnitIsActive    = Spring.GetUnitIsActive
+local spGetUnitVelocity     = Spring.GetUnitVelocity
 local spGetUnitArmored     = Spring.GetUnitArmored
 local SpGetUnitBasePosition = Spring.GetUnitBasePosition
 local SpGetMyPlayerID      = Spring.GetMyPlayerID
@@ -547,17 +548,22 @@ local function UnitEnteredLos(_,unitID)
   local effects   = UnitEffects[unitDefID]
   if (effects) then
 	for _,fx in ipairs(effects) do
-	  if (fx.options.onActive == true) and (spGetUnitIsActive(unitID) == nil) or
-	     (fx.options.onActive == true) and spGetUnitArmored(unitID) then 
-		break
-	else
-		if (fx.class=="GroundFlash") then
-		  fx.options.pos = { SpGetUnitBasePosition(unitID) }
+	  if (fx.options.onActive == true) and (spGetUnitIsActive(unitID) == nil) or --because unitactive returns nil for enemy units, and onActive types are all airjets, we get the unit's velocity, and use that as an approximation to 'active' state --HACKY
+	     (fx.options.onActive == true) and spGetUnitArmored(unitID) then
+	local vx, vy, vz = spGetUnitVelocity(unitID)
+		--Spring.Echo('lupsdbgvel',vx,vy,vz)
+		if (vx== nil or (vx==0 and vz==0)) then 
+			break
+		else
+			if (fx.class=="GroundFlash") then
+			  fx.options.pos = { Spring.GetUnitBasePosition(unitID) }
+			end
+			fx.options.unit = unitID
+			fx.options.under_construction = spGetUnitRulesParam(unitID, "under_construction")
+			--can a unit that is under construction be active? 
+			AddFxs( unitID,LupsAddFX(fx.class,fx.options) )
+			fx.options.unit = nil
 		end
-		fx.options.unit = unitID
-		fx.options.under_construction = spGetUnitRulesParam(unitID, "under_construction")
-		AddFxs( unitID,LupsAddFX(fx.class,fx.options) )
-		fx.options.unit = nil
 	  end
 	end
   end
