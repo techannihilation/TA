@@ -230,6 +230,8 @@ local function DrawUnitFunc(yshift, xshift, damage, textSize, alpha, paralyze)
 end
 
 function widget:DrawWorld()
+ if Spring.IsGUIHidden() == false then 
+
   local theTime = GetGameSeconds()
   
   if (theTime ~= lastTime) then
@@ -292,6 +294,7 @@ function widget:DrawWorld()
   glAlphaTest(false)
   glDepthTest(false)
   glDepthMask(false)
+ end
 end
 
 --------------------------------------------------------------------------------
