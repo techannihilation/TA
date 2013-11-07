@@ -217,8 +217,6 @@ if (gadgetHandler:IsSyncedCode()) then
 						p = unitCollisionVolume[defs.name].off
 						spSetUnitCollisionData(unitID, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9])
 						if p[10] then
-					  Spring.Echo("Broken  "  .. spGetUnitHeight(unitID) .. "    " .. p[10], p[11], p[12] )
-
 							Spring.SetUnitMidAndAimPos(unitID, 0, spGetUnitHeight(unitID)/2, 0, p[10], p[11], p[12],true)
 						end
 					end
@@ -245,9 +243,6 @@ if (gadgetHandler:IsSyncedCode()) then
 						spSetUnitCollisionData(unitID, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9])
 						Spring.Echo(p[10], p[11], p[12])
 						if p[10] then
-						  Spring.Echo("Broken  "  .. spGetUnitHeight(unitID) .. "    " .. p[10], p[11], p[12] )
-						  local ux , uy, uz = Spring.GetUnitPosition(unitID)
-						  Spring.Echo(ux , uy, uz)
 							Spring.SetUnitMidAndAimPos(unitID, 0, spGetUnitHeight(unitID)/2, 0, p[10], p[11], p[12],true)
 						end
 					end

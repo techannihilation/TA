@@ -3,9 +3,9 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base;
+piece  base, emit;
 
-static-var  power ,Static_Var_1;
+static-var  power ,Static_Var_1, Effects;
 
 
 	
@@ -36,10 +36,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-
-
-	
-	
 ImAMetalMaker()
 {
 	while( get BUILD_PERCENT_LEFT )
@@ -53,26 +49,38 @@ ImAMetalMaker()
 		{
 			if( Static_Var_1 != 1 )
 			{
-			set ACTIVATION to 1;
+			Effects = 1;
 			Static_Var_1 = 1;
 			}
 		}
 		else if( Static_Var_1 != 0 )
 		{
-			set ACTIVATION to 0;
+			Effects = 0;
 			Static_Var_1 = 0;
 		}
 		sleep 10;
 	}
 }
 
+EffectWatch()
+{
+	while(TRUE)
+	{
+		while( Effects  == 1)
+		{
+			emit-sfx 1024 + 0 from emit;
+			sleep 1300;
+		}
+	sleep 333;
+	}
+}
 	
 Create()
 {
-
+    Effects = 0;
+    start-script EffectWatch();
 	call-script ImAMetalMaker();
 	start-script SmokeUnit();
-
 }
 
 SweetSpot(piecenum)

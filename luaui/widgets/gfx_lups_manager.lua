@@ -172,18 +172,6 @@ local UnitEffects = {
     {class='SimpleParticles2', options=MergeTable({pos={-12,75,-37}, delay=30, lifeSpread=30},sparksr3)},
     {class='SimpleParticles2', options=MergeTable({pos={-12,90,-37}, delay=45, lifeSpread=30},sparksr3)},
   },
- [UnitDefNames["armamaker"].id] = {
-       {class='StaticParticles',options=armamakerEffect},
-  },
- [UnitDefNames["armgen"].id] = {
-       {class='StaticParticles',options=MergeTable({pos={0,48,0}, onActive=true }, armgenEffect)},
-  },
- [UnitDefNames["corgen"].id] = {
-       {class='StaticParticles',options=MergeTable({pos={0,28,0}, delay=9, lifeSpread=30, onActive=true }, corgensparks)},
-       {class='StaticParticles',options=MergeTable({pos={0,22,0}, delay=19, lifeSpread=30, onActive=true }, corgensparks)},
-       {class='StaticParticles',options=MergeTable({pos={0,16,0}, delay=29, lifeSpread=30, onActive=true }, corgensparks)},
-
-  },
   --// ENERGY STORAGE //--------------------
   
  [UnitDefNames["corestor"].id] = {
