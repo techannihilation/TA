@@ -44,7 +44,8 @@ local rockideDefs = {
     [UnitDefNames['tllfgate'].id ] = true,
     [UnitDefNames['tllfflak'].id ] = true,
     [UnitDefNames['tllwmmohoconv'].id ] = true,
-
+    [UnitDefNames['tlltrid'].id ] = true,
+    [UnitDefNames['tllkrak'].id ] = true,
 }
 
 -------------------------------------------------------------------------------------

@@ -33,7 +33,8 @@ local Spring = Spring
 local table  = table
 
 local etaTable = {}
-
+local etaMaxDist= 10000 -- max dist at which to draw ETA
+---------------------------
 
 --------------------------------------------------------------------------------
 
@@ -202,16 +203,25 @@ local function DrawEtaText(timeLeft,yoffset)
 end
 
 function widget:DrawWorld()
-  gl.DepthTest(true)
+	if Spring.IsGUIHidden() == false then 
+	  gl.DepthTest(true)
 
-  gl.Color(1, 1, 1)
-  --fontHandler.UseDefaultFont()
+	  gl.Color(1, 1, 1,0.1)
+	  --fontHandler.UseDefaultFont()
+	  local cx, cy, cz = Spring.GetCameraPosition()
+	  for unitID, bi in pairs(etaTable) do
+		local ux,uy,uz = Spring.GetUnitViewPosition(unitID)
+		if ux~=nil then
+			local dx, dy, dz = ux-cx, uy-cy, uz-cz
+			local dist = dx*dx + dy*dy + dz*dz
+			if dist < etaMaxDist then 
+				gl.DrawFuncAtUnit(unitID, false, DrawEtaText, bi.timeLeft,bi.yoffset)
+			end
+		end
+	  end
 
-  for unitID, bi in pairs(etaTable) do
-    gl.DrawFuncAtUnit(unitID, false, DrawEtaText, bi.timeLeft,bi.yoffset)
-  end
-
-  gl.DepthTest(false)
+	  gl.DepthTest(false)
+	end
 end
   
 

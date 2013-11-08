@@ -3,9 +3,9 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, pipe, glow, metal;
+piece  base, body, pipe, glow, metal, emit;
 
-static-var  Static_Var_1;
+static-var  Static_Var_1, Effects;
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -37,7 +37,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 go()
 {
-	set ACTIVATION to 1;
+	Effects = 1;
 	cache glow;
 	hide glow;
 	show metal;
@@ -46,7 +46,7 @@ go()
 
 stop()
 {
-	set ACTIVATION to 0;
+	Effects = 0;
 	cache metal;
 	hide metal;
 	show glow;
@@ -79,13 +79,28 @@ ImAMetalMaker()
 	}
 }
 
+EffectWatch()
+{
+	while(TRUE)
+	{
+		while( Effects  == 1)
+		{
+			emit-sfx 1024 + 0 from emit;
+			sleep 1600;
+		}
+	sleep 333;
+	}
+}
+
 Create()
 {
+	Effects = 0;
 	hide metal;
 	dont-shade metal;
 	dont-cache glow;
 	start-script SmokeUnit();
 	start-script ImAMetalMaker();
+	start-script EffectWatch();
 }
 
 SweetSpot(piecenum)

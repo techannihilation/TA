@@ -76,6 +76,10 @@ local unitDef = {
 		[14] = [[tlllmtns]],
 		[15] = [[tllnssam]],
 		[16] = [[tllatorp]],
+		[17] = [[tllkrak]],
+		[18] = [[tlltrid]],
+		[19] = [[tllfgate]],
+		[20] = [[tlldtns]],	
 	},
 	sounds = {
 		build = [[nanlath1]],

@@ -241,6 +241,7 @@ if (gadgetHandler:IsSyncedCode()) then
 					else
 						p = unitCollisionVolume[defs.name].on
 						spSetUnitCollisionData(unitID, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9])
+						Spring.Echo(p[10], p[11], p[12])
 						if p[10] then
 							Spring.SetUnitMidAndAimPos(unitID, 0, spGetUnitHeight(unitID)/2, 0, p[10], p[11], p[12],true)
 						end

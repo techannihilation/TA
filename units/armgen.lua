@@ -42,6 +42,11 @@ local unitDef = {
 	workerTime = 0,
 	yardMap = [[ooo ooo ooo]],
 	featureDefs = nil,
+	sfxtypes = {
+		explosiongenerators = {
+			[1] = [[custom:reactor_sfx_new_other]],
+		},
+        },
 	sounds = {
 		canceldestruct = [[cancel2]],
 		underattack = [[warning1]],
