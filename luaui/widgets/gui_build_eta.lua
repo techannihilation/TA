@@ -33,7 +33,7 @@ local Spring = Spring
 local table  = table
 
 local etaTable = {}
-local etaMaxDist= 10000 -- max dist at which to draw ETA
+local etaMaxDist= 500000 -- max dist at which to draw ETA
 ---------------------------
 
 --------------------------------------------------------------------------------
