@@ -457,7 +457,7 @@ do
         maxShield     = ud.shieldPower,
         canStockpile  = ud.canStockpile,
         reloadTime    = ud.reloadTime,
-        primaryWeapon = ud.primaryWeapon,
+        primaryWeapon = ud.primaryWeapon-1,
       }
     end
     ux, uy, uz = GetUnitViewPosition(unitID)
