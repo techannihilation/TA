@@ -1,6 +1,5 @@
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-	-- needs Spring 94.1.1-1171+ and no sweepfire BeamLasers
 					
 function widget:GetInfo()
   return {
@@ -18,20 +17,13 @@ local spGetUnitViewPosition 	= Spring.GetUnitViewPosition
 local spGetUnitDefID			= Spring.GetUnitDefID
 local spGetGroundHeight			= Spring.GetGroundHeight
 local spGetGroundNormal			= Spring.GetGroundNormal
-local spGetVectorFromHeading	= Spring.GetVectorFromHeading
-local spTraceScreenRay			= Spring.TraceScreenRay
-local spGetViewGeometry			= Spring.GetViewGeometry
 local spGetVisibleProjectiles   = Spring.GetVisibleProjectiles
 local spGetProjectilePosition	= Spring.GetProjectilePosition
 local spGetProjectileType		= Spring.GetProjectileType
 local spGetProjectileDefID		= Spring.GetProjectileDefID
 local spGetProjectileVelocity	= Spring.GetProjectileVelocity
-local spGetProjectileTarget		= Spring.GetProjectileTarget
-local spGetUnitPosition			= Spring.GetUnitPosition
-local spGetUnitRadius			= Spring.GetUnitRadius
-local spGetFeaturePosition		= Spring.GetFeaturePosition
-local spGetFeatureRadius		= Spring.GetFeatureRadius
 local spGetGameFrame 			= Spring.GetGameFrame
+local spGetGameSpeed 			= Spring.GetGameSpeed
 
 local glPushMatrix		= gl.PushMatrix
 local glTranslate		= gl.Translate
@@ -48,6 +40,9 @@ local glDepthMask		= gl.DepthMask
 local glDepthTest		= gl.DepthTest
 local glCallList		= gl.CallList
 local glBlending		= gl.Blending
+local glCreateList		= gl.CreateList
+local glCallList		= gl.CallList
+local glDeleteList		= gl.DeleteList
 local GL_TRIANGLE_STRIP = GL.TRIANGLE_STRIP
 local max, min			= math.max, math.min
 local floor				= math.floor
@@ -74,7 +69,7 @@ local noise = {--this is so that it flashes a bit, should be addressed with (x+z
 	}
 local pieceprojectilecolor={1.0, 1.0, 0.5, 0.25} -- This is the color of piece projectiles, set to nil to disable
 
-listC = gl.CreateList(function()	-- Cannon light decal texture
+listC = glCreateList(function()	-- Cannon light decal texture
 	glBeginEnd(GL.QUAD_STRIP,function()  
     --point1
     glTexCoord(0.0,0.0)
@@ -91,7 +86,7 @@ listC = gl.CreateList(function()	-- Cannon light decal texture
     end)
 end)
 
-listL = gl.CreateList(function()	-- Laser cannon decal texture
+listL = glCreateList(function()	-- Laser cannon decal texture
 	glBeginEnd(GL.QUAD_STRIP,function()  
     --point1
     glTexCoord(0.5,0.0)
@@ -109,20 +104,18 @@ listL = gl.CreateList(function()	-- Laser cannon decal texture
 end)
 
 function widget:Initialize() -- create lighttable
-	
 --[[	local modOptions = Spring.GetModOptions()
 	if modOptions and modOptions.lowcpu == "1" then
 		Spring.Echo('Low performance mode is on, removing "Projectile lights" widget')
 		widgetHandler:RemoveWidget()
 	end
 --]]
- 
 	-- These projectiles should have lights:
 		-- Cannon - projectile size: tempsize = 2.0f + std::min(wd.damages[0] * 0.0025f, wd.damageAreaOfEffect * 0.1f);)
 		-- EmgCannon - looks a bit shiny when close to ground
-		-- LaserCannon - über effects
+		-- LaserCannon - Ã¼ber effects
 		-- Flame - a bit iffy cause of long projectile life... but it looks great.
-		-- BeamLaser --with Spring 94.1.1163+ super-über-ober effects
+		-- BeamLaser --with Spring 94.1.1163+ super-Ã¼ber-ober effects
 		-- LightningCannon --same as BeamLasers
 	-- Shouldn't:
 		-- Dgun	-- uses dynamic lighting
@@ -194,18 +187,9 @@ local x1, y1 = 0, 0
 local x2, y2 = Game.mapSizeX, Game.mapSizeZ
 local x, y, z, dx, dz, nx, ny, nz, ang
 local a, f, h = {}, {}, {}
-function widget:DrawWorldPreUnit()
 
-	if frame < spGetGameFrame() then
-		frame = spGetGameFrame()
-		plist = spGetVisibleProjectiles(-1)
-	end
-
-	if #plist == 0 then
-		--dont do anything if there are no projectiles in range of view
-		return
-	end
-
+local projDrawList
+local function MakeList()
 	--enabling both test and mask means they wont be drawn over cliffs when obscured
 	--but also means that they will flicker cause of z-fighting when scrolling around...
 	--and ESPECIALLY when overlapping
@@ -239,15 +223,15 @@ function widget:DrawWorldPreUnit()
 					tx,ty,tz = spGetProjectileVelocity(pID)
 					if tx then
 						local dist = sqrt(tx*tx + tz*tz) -- distance from beam start till beam end
-						bx, bz = x+tx, z+tz
+						bx = x+tx;  bz = z+tz
 						local endSeg = max(4, floor(dist/(100-min(50,abs(spGetGroundHeight(bx,bz)-spGetGroundHeight(x+tx*0.5,z+tz*0.5))))))	-- number of segments used for beam neon, min 4 segments
-						stpX, stpY, stpZ = tx/endSeg, ty/endSeg, tz/endSeg
-						r,g,b,al,w = lightparams[1], lightparams[2], lightparams[3], lightparams[4], lightparams[6]
+						stpX = tx/endSeg;  stpY = ty/endSeg;  stpZ = tz/endSeg
+						r=lightparams[1]; g=lightparams[2]; b=lightparams[3]; al=lightparams[4]; w=lightparams[6]
 						nf = noise[floor(x+z+pID)%10+1]
 						glPushMatrix()
 						glTranslate(x, 0.0, z)
 						glRotate(atan2(tx,tz)*DegToRad, 0.0, 1.0, 0.0)	-- align light with beam direction
-						bx,bz, px,py,pz = bx+stpX, bz+stpZ, bx, y+ty, bz
+						px=bx; py=y+ty; pz=bz; bx=bx+stpX; bz=bz+stpZ
 						for i=0, endSeg do	-- calculate the size factor, alpha and terrain height of beam neon segments
 							if py>0.0 then
 								h[i] = max(0.0,spGetGroundHeight(px,pz))	-- above water beam should show on water surface
@@ -267,14 +251,15 @@ function widget:DrawWorldPreUnit()
 									f[i] = max(12.0, (1.1-fa)*w)
 								end
 							else
-								a[i], f[i], h[i] = 0.0, 0.0, 0.0
+								a[i]=0.0;  f[i]=0.0;  h[i]=0.0
 							end
-							bx,bz, px, py, pz = px,pz, px-stpX, py-stpY, pz-stpZ
+							bx=px; bz=pz; px=px-stpX; py=py-stpY; pz=pz-stpZ
 						end
-						local i, j, dStep, de, gh = 0, 1, -dist/endSeg
+						local i, j, dStep = 0, 1, -dist/endSeg
 						local a0 = a[0]
 						if a0>0.0 then	-- neon endcap
-							local h0, f0 = h[0], f[0]
+							local h0 = h[0]
+							local f0 = f[0]
 							glShape(GL_TRIANGLE_STRIP, {
 								{	v={-f0,h0,dist+f0},
 									t={0.5,0.0},
@@ -296,7 +281,8 @@ function widget:DrawWorldPreUnit()
 						end
 						a0 = a[endSeg]
 						if a0>0.0 then	-- neon startcap
-							local h0, f0 = h[endSeg], f[endSeg]
+							local h0 = h[endSeg]
+							local f0 = f[endSeg]
 							glShape(GL_TRIANGLE_STRIP, {
 								{	v={-f0,h0,0.01},
 									t={0.25,0.0},
@@ -319,7 +305,8 @@ function widget:DrawWorldPreUnit()
 						for d=dist, 0.01, dStep do	-- render segments of beam neon with alpha>0
 							a0 = a[i]
 							if a0>0.0 or a[j]>0.0 then
-								de, gh = d+dStep, h[i]
+								local de=d+dStep
+								local gh=h[i]
 								glShape(GL_TRIANGLE_STRIP, {
 									--[[ segment delimiter, only for debuging
 									{	v={-f[j],gh,d},
@@ -355,7 +342,7 @@ function widget:DrawWorldPreUnit()
 									--]]
 								})
 							end
-							i, j = i+1, j+1
+							i=i+1;  j=j+1
 						end
 						glPopMatrix()
 					end
@@ -373,7 +360,7 @@ function widget:DrawWorldPreUnit()
 							factor = 32*(1.1-factor)
 							glPushMatrix()
 							nx, ny, nz = spGetGroundNormal(x,z)
-							if ny<0.995 then						-- don't align with slope on flat surface, less transformations, faster
+							if ny<0.995 and height>0 then			-- don't align with slope on flat surface, less transformations, faster
 								glTranslate(x, y, z)
 								ang = min(acos(ny)*DegToRad, 60)	-- deg(x) is 4x slower than x*57.295779513082320876798
 								if nx>0.0 or nz>0.45 then ang = ang * -1.0 end	-- east/west slope correction
@@ -410,6 +397,36 @@ function widget:DrawWorldPreUnit()
 	glColor(1.0, 1.0, 1.0, 1.0)
 	glBlending(false)
 	glDepthTest(true)
+end
+
+function widget:GameFrame()
+	glDeleteList(projDrawList)
+	plist = spGetVisibleProjectiles(-1)
+	if #plist>0 then
+		projDrawList = glCreateList(MakeList)
+	end
+end
+
+local timeDelta = 0
+function widget:Update(dt)
+	local _, _, paused = spGetGameSpeed()
+	if paused then
+		timeDelta = timeDelta + dt
+		if timeDelta > 0.666 then
+			timeDelta = 0
+			glDeleteList(projDrawList)
+			plist = spGetVisibleProjectiles(-1)
+			if #plist>0 then
+				projDrawList = glCreateList(MakeList)
+			end
+		end
+	end
+end
+
+function widget:DrawWorldPreUnit()
+	if projDrawList then
+		glCallList(projDrawList)
+	end
 end
 
 --------------------------------------------------------------------------------
