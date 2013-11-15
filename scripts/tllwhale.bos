@@ -50,6 +50,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 Create()
 {
 	gun_1 = 0;
+	move fakeaimpoint to y-axis [150.000] now;
 	move missile1 to y-axis [-8.400000] now;
 	move missile2 to y-axis [-8.400000] now;
 	start-script SmokeUnit();
@@ -77,6 +78,7 @@ RestoreAfterDelay()
 	set-signal-mask SIG_AIM;
 	sleep 20000;
 	move body to y-axis [0.000000] speed [3.000000];
+	set ARMORED to 0;
 	move missile1 to y-axis [-8.400000] speed [5.000000];
 	move missile2 to y-axis [-8.400000] speed [5.000000];
 	wait-for-move missile1 along y-axis;
@@ -102,6 +104,7 @@ AimPrimary()
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
 	move body to y-axis [6.000000] speed [3.000000];
+	set ARMORED to 1;
 	turn ldoor1 to z-axis <90.000000> speed <50.000000>;
 	turn rdoor1 to z-axis <-90.000000> speed <50.000000>;
 	turn ldoor2 to z-axis <90.000000> speed <50.000000>;
@@ -118,6 +121,7 @@ AimPrimary()
 	move missile1 to y-axis [0.000000] speed [5.000000];
 	move missile2 to y-axis [0.000000] speed [5.000000];
 	wait-for-move missile1 along y-axis;
+	move fakeaimpoint to y-axis [0] speed 20000;
 	start-script RestoreAfterDelay();
 	return (1);
 }
