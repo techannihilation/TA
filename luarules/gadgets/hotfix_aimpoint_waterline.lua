@@ -76,7 +76,7 @@ if (not gadgetHandler:IsSyncedCode()) then
 end
 
 function gadget:UnitCreated(unitID, unitDefID, unitTeam)
-	if not UnitDefs[unitDefID].canMove or isship[unitDefID] then
+	if isship[unitDefID] then
 	  Spring.Echo("Aim point Reset for :-"..UnitDefs[unitDefID].name)
 		local bx,by,bz,mx,my,mz,ax,ay,az = Spring.GetUnitPosition(unitID,true,true) --basepoint,midpoint,aimpoint
 		local h = Spring.GetUnitHeight(unitID)
