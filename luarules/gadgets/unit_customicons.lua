@@ -85,6 +85,7 @@ function gadget:Initialize()
   Spring.AddUnitIcon("t4ships.user", "icons/t4ships.png",2)
   Spring.AddUnitIcon("bships.user", "icons/bship.png",1.7)
   Spring.AddUnitIcon("bsships.user", "icons/bship.png",2.3)
+  Spring.AddUnitIcon("tiny-sphere.user", "icons/sphere.png",0.65)
 
 
    
@@ -180,7 +181,7 @@ function gadget:Initialize()
         Spring.SetUnitDefIcon(udid, "hemi-down.user")
       elseif (((ud.radarRadius > 1) or
                (ud.sonarRadius > 1) or
-               (ud.seismicRadius > 1)) and (ud.speed <= 0)) then
+               (ud.seismicRadius > 1)) and (ud.speed <= 0) and (#ud.weapons <= 0)) then
         -- sensors
         Spring.SetUnitDefIcon(udid, "hourglass-side.user")
       elseif (((ud.jammerRadius > 1) or
@@ -192,10 +193,14 @@ function gadget:Initialize()
          if (not ud.weaponCount) then
             ud.weaponCount = 0
          end
-        if (ud.weaponCount <= 0) then
+       if (#ud.weapons <= 0) then
           Spring.SetUnitDefIcon(udid, "square.user")
         else
-          Spring.SetUnitDefIcon(udid, "x.user")
+		  if ud.weapons[1].onlyTargets["vtol"] then
+			Spring.SetUnitDefIcon(udid, "slash.user")		  
+		  else
+			Spring.SetUnitDefIcon(udid, "x.user")
+		  end
         end
       else
         if (ud.techLevel == 4) then
@@ -208,9 +213,17 @@ function gadget:Initialize()
       end
     end
   end
-  --gadgetHandler:RemoveGadget()
+  
+  -- Shrink scouts
+  Spring.SetUnitDefIcon(UnitDefNames["corfav"].id, "tiny-sphere.user")
+  Spring.SetUnitDefIcon(UnitDefNames["armfav"].id, "tiny-sphere.user")
+  Spring.SetUnitDefIcon(UnitDefNames["corak"].id, "tiny-sphere.user")
+  Spring.SetUnitDefIcon(UnitDefNames["armpw"].id, "tiny-sphere.user")
+  Spring.SetUnitDefIcon(UnitDefNames["armflea"].id, "tiny-sphere.user")
+  Spring.SetUnitDefIcon(UnitDefNames["tllbug"].id, "tiny-sphere.user")
+  Spring.SetUnitDefIcon(UnitDefNames["tllgladius"].id, "tiny-sphere.user")
+  Spring.SetUnitDefIcon(UnitDefNames["tllprivate"].id, "tiny-sphere.user")
 end
-
 
 --------------------------------------------------------------------------------
 
