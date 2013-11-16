@@ -10,10 +10,10 @@ function gadget:GetInfo()
 	}
 end
 
-local maxIdleTreshold = 120 --in seconds
-local maxPing = 45 -- in seconds
+local maxIdleTreshold = 60 --in seconds
+local maxPing = 30 -- in seconds
 local finishedResumingPing = 2 --in seconds
-local maxInitialQueueSlack = 240 -- in seconds
+local maxInitialQueueSlack = 120 -- in seconds
 local takeCommand = "take2"
 local minTimeToTake = 10 -- in seconds
 --in chose ingame startpostype, players must place beforehand, so take an action, grace period can be shorter
@@ -27,38 +27,38 @@ if ( not gadgetHandler:IsSyncedCode()) then
 	local GetLastUpdateSeconds = Spring.GetLastUpdateSeconds
 	local SendLuaRulesMsg = Spring.SendLuaRulesMsg
 	local GetMouseState = Spring.GetMouseState
-	
+
 	local min = math.min
 	local max = math.max
-	
+
 	local nameEnclosingPatterns = {{""," added point"},{"<","> "},{"> <","> "},{"[","] "}}
 	local myPlayerName = Spring.GetPlayerInfo(Spring.GetMyPlayerID())
 	local lastActionTime = 0
-	local timer = 0 
+	local timer = 0
 	local updateTimer = 0
 	local isIdle = true
 	local updateRefreshTime = 1 --in seconds
-	local initialQueueTime 
+	local initialQueueTime
 
 	local mx,my = GetMouseState()
-	
+
 	function gadget:Initialize()
 		gadgetHandler:AddSyncAction("onGameStart", onGameStart)
 		gadgetHandler:AddChatAction("initialQueueTime",onInitialQueueTime)
 	end
-	
+
 	function gadget:Shutdown()
 		gadgetHandler:RemoveChatAction('initialQueueTime')
 		gadgetHandler:RemoveSyncAction("onGameStart")
 	end
-	
+
 	function onInitialQueueTime(_,_,words)
 		initialQueueTime = tonumber(words[1])
 		if initialQueueTime then
 			initialQueueTime = min(initialQueueTime,maxInitialQueueSlack)
 		end
 	end
-	
+
 	function onGameStart()
 		if initialQueueTime then
 			NotIdle()
@@ -119,7 +119,7 @@ if ( not gadgetHandler:IsSyncedCode()) then
 	function gadget:KeyPress()
 		NotIdle()
 	end
-	
+
 	-- extract a player name from a text message
 	function getPlayerName(playerMessage)
 		local pos
@@ -130,7 +130,7 @@ if ( not gadgetHandler:IsSyncedCode()) then
 			local prefixstart,prefixend
 			local suffixstart,suffixend
 			if prefix ~= "" then
-				prefixstart,prefixend = playerMessage:find(prefix,1,true) 
+				prefixstart,prefixend = playerMessage:find(prefix,1,true)
 			end
 			prefixend = (prefixend or 0 ) + 1
 			if suffix ~= "" then
@@ -143,7 +143,9 @@ if ( not gadgetHandler:IsSyncedCode()) then
 		end
 		return ""
 	end
-	
+
+	--this callin has never been implemented!
+	--[[
 	function gadget:AddConsoleLine(line)
 		if line:len() == 0 then
 			return
@@ -152,6 +154,7 @@ if ( not gadgetHandler:IsSyncedCode()) then
 			NotIdle()
 		end
 	end
+	]]--
 
 else
 
@@ -176,11 +179,12 @@ else
 	local SendMessageToPlayer = Spring.SendMessageToPlayer
 	local SendMessageToAllyTeam = Spring.SendMessageToAllyTeam
 	local Echo = Spring.Echo
-	
+	local IsCheatingEnabled = Spring.IsCheatingEnabled
+
 	local resourceList = {"metal","energy"}
 	local gaiaTeamID = Spring.GetGaiaTeamID()
 	local gameSpeed = Game.gameSpeed
-	
+
 	local min = math.min
 	local max = math.max
 
@@ -195,10 +199,6 @@ else
 		ok = ok and newval.pingOK
 		ok = ok and newval.present
 		return ok
-	end
-
-	function gadget:PlayerChanged()
-		UpdatePlayerInfos()
 	end
 
 	local function UpdatePlayerInfos()
@@ -230,7 +230,7 @@ else
 			local oldPingOk = playerInfoTableEntry.pingOK
 			if oldPingOk == false then
 				pingTreshold = finishedResumingPing --use smaller threshold to determine finished resuming
-			end 
+			end
 			playerInfoTableEntry.pingOK = ping < pingTreshold
 			if not spectator then
 				if oldPingOk and not playerInfoTableEntry.pingOK then
@@ -243,7 +243,7 @@ else
 				playerInfoTableEntry.present = false -- initialize to afk
 			end
 			playerInfoTable[playerID] = playerInfoTableEntry
-			
+
 			--mark hosted ais as controlled
 			local hostedAis = aiOwners[aiHost]
 			if hostedAis then
@@ -254,12 +254,12 @@ else
 					end
 				end
 			end
-			
+
 			if CheckPlayerState(playerID) then -- bump amount of active players in a team
 				TeamToRemainingPlayers[teamID] = TeamToRemainingPlayers[teamID] + 1
 			end
 		end
-		
+
 		for teamID,teamCount in ipairs(TeamToRemainingPlayers) do
 			-- set to a public readable value that there's nobody controlling the team
 			SetTeamRulesParam(teamID, "numActivePlayers", teamCount )
@@ -312,10 +312,10 @@ else
 		-- prevent resources to leak to uncontrolled teams
 		return GetTeamRulesParam(toTeamID,"numActivePlayers") ~= 0
 	end
-	
+
 	function gadget:AllowUnitTransfer(unitID, unitDefID, fromTeamID, toTeamID, capture)
 		-- prevent units to be shared to uncontrolled teams
-		return capture or GetTeamRulesParam(toTeamID,"numActivePlayers") ~= 0
+		return capture or GetTeamRulesParam(toTeamID,"numActivePlayers") ~= 0 or IsCheatingEnabled()
 	end
 
 
