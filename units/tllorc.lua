@@ -81,6 +81,8 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[CORSSUB_WEAPON]],
+			mainDir = [[0 0 1]],
+			maxAngleDif = 90,
 			onlyTargetCategory = [[NOTHOVERNOTVTOL]],
 		},
 	},
