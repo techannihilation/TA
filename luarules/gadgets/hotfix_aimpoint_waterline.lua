@@ -77,7 +77,7 @@ end
 
 function gadget:UnitCreated(unitID, unitDefID, unitTeam)
 	if isship[unitDefID] then
-	  Spring.Echo("Aim point Reset for :-"..UnitDefs[unitDefID].name)
+	  --Spring.Echo("Aim point Reset for :-"..UnitDefs[unitDefID].name)
 		local bx,by,bz,mx,my,mz,ax,ay,az = Spring.GetUnitPosition(unitID,true,true) --basepoint,midpoint,aimpoint
 		local h = Spring.GetUnitHeight(unitID)
 		if by <= 0 and by + h >= 0 then
