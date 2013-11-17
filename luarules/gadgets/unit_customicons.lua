@@ -51,6 +51,7 @@ function gadget:Initialize()
   Spring.AddUnitIcon("cross.user", "icons/cross.png")
   Spring.AddUnitIcon("diamond.user", "icons/diamond.png",1.1)
   Spring.AddUnitIcon("e.user", "icons/e.png")
+  Spring.AddUnitIcon("e1.user", "icons/e.png",1.2)
   Spring.AddUnitIcon("e2.user", "icons/e.png",1.4)
   Spring.AddUnitIcon("e3.user", "icons/e.png",1.8)
   Spring.AddUnitIcon("e4.user", "icons/e.png",2.3)
@@ -100,6 +101,9 @@ function gadget:Initialize()
 --wind      
       if (ud.name=="armwin") or (ud.name=="corwin") or (ud.name=="tllwindtrap") then
         Spring.SetUnitDefIcon(udid, "e.user")
+-- t1.5 wind      
+      if (ud.name=="armawin") or (ud.name=="corawin") then
+        Spring.SetUnitDefIcon(udid, "e1.user")
 --fighters
       elseif (ud.name=="armfig") or (ud.name=="corveng") or (ud.name=="tllfight") or (ud.name=="armhawk") or (ud.name=="corvamp") or (ud.name=="tlladvfight") then
         Spring.SetUnitDefIcon(udid, "tri-up_fighter.user") 
