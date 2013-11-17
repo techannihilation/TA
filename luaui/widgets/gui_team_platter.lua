@@ -40,7 +40,7 @@ local glLineWidth            = gl.LineWidth
 local glPolygonOffset        = gl.PolygonOffset
 local glVertex               = gl.Vertex
 local spDiffTimers           = Spring.DiffTimers
-local spGetAllUnits          = Spring.GetAllUnits
+local spGetVisibleUnits      = Spring.GetVisibleUnits
 local spGetGroundNormal      = Spring.GetGroundNormal
 local spGetSelectedUnits     = Spring.GetSelectedUnits
 local spGetTeamColor         = Spring.GetTeamColor
@@ -59,6 +59,9 @@ local sin                    = math.sin
 local cos                    = math.cos
 local pi                     = math.pi
 local acos                   = math.acos
+
+local TpMaxDist = 2750000 -- max dist at which to draw ETA
+
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -178,6 +181,10 @@ end
 --------------------------------------------------------------------------------
 
 function widget:DrawWorldPreUnit()
+    if Spring.IsGUIHidden() == true then 
+      return  -- avoid unnecessary GL calls
+    end
+    
   glLineWidth(3.0)
 
   glDepthTest(true)
@@ -185,8 +192,18 @@ function widget:DrawWorldPreUnit()
   glPolygonOffset(-50, -2)
 
   local lastColorSet = nil
-  for _,unitID in ipairs(spGetAllUnits()) do
-    if (spIsUnitVisible(unitID)) then
+   local visibleUnits = spGetVisibleUnits()
+   if #visibleUnits then
+    for i=1, #visibleUnits do
+    unitID = visibleUnits[i]    
+    local cx, cy, cz = Spring.GetCameraPosition()
+    local ux,uy,uz = Spring.GetUnitViewPosition(unitID)
+     if ux~=nil then
+     local dx, dy, dz = ux-cx, uy-cy, uz-cz
+     local dist = dx*dx + dy*dy + dz*dz
+      if dist < TpMaxDist then 
+      
+      
       local teamID = spGetUnitTeam(unitID)
       if (teamID and teamID~=GetGaiaTeamID) then	--+++
         local udid = spGetUnitDefID(unitID)
@@ -211,12 +228,17 @@ function widget:DrawWorldPreUnit()
                              radius, 1.0, radius)
             glColor(colorSet[2])
             glDrawListAtUnit(unitID, circleLines, false,
-                             radius, 1.0, radius)
-          end
+                              radius, 1.0, radius)
+         end
         end
       end
-    end
-  end
+     end
+   end
+ end
+end
+	   
+
+	
 
   glPolygonOffset(false)
 
@@ -247,7 +269,6 @@ function widget:DrawWorldPreUnit()
       end
     end
   end
-
   glLineWidth(1.0)
 end
               

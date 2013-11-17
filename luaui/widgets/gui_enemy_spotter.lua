@@ -43,6 +43,9 @@ local keepTeamColorsForSmallAllyTeam    = 3       -- (number of teams)   use tea
 local spotterColor = {                            -- default color values
    {0,0,1} , {1,0,1} , {0,1,1} , {0,1,0} , {1,0.5,0} , {0,1,1} , {1,1,0} , {1,1,1} , {0.5,0.5,0.5} , {0,0,0} , {0.5,0,0} , {0,0.5,0} , {0,0,0.5} , {0.5,0.5,0} , {0.5,0,0.5} , {0,0.5,0.5} , {1,0.5,0.5} , {0.5,0.5,0.1} , {0.5,0.1,0.5},
 }
+
+local EsMaxDist = 2500000 -- max dist at which to draw ETA
+
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -197,8 +200,14 @@ function widget:DrawWorldPreUnit()
    glPolygonOffset(-100, -2)
    local visibleUnits = spGetVisibleUnits()
    if #visibleUnits then
-      for i=1, #visibleUnits do
-         unitID = visibleUnits[i]
+    for i=1, #visibleUnits do
+    unitID = visibleUnits[i]
+    local cx, cy, cz = Spring.GetCameraPosition()
+    local ux,uy,uz = Spring.GetUnitViewPosition(unitID)
+     if ux~=nil then
+       local dx, dy, dz = ux-cx, uy-cy, uz-cz
+       local dist = dx*dx + dy*dy + dz*dz
+	if dist < EsMaxDist then 
          local allyID = spGetUnitAllyTeam(unitID)
          if circlePolys[allyID] ~= nil then
             if not skipOwnAllyTeam  or  (skipOwnAllyTeam  and  not (allyID == myAllyID))  then
@@ -211,9 +220,12 @@ function widget:DrawWorldPreUnit()
                end
             end
          end
+        end
       end
+     end
    end
 end
+
              
 
 --------------------------------------------------------------------------------
