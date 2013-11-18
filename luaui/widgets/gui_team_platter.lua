@@ -170,8 +170,7 @@ local function GetTeamColorSet(teamID)
   end
   local r,g,b = spGetTeamColor(teamID)
   
-  colors = {{ r, g, b, 0.4 },
-            { r, g, b, 0.7 }}
+  colors = { r, g, b, 0.14 }
   teamColors[teamID] = colors
   return colors
 end
@@ -214,21 +213,14 @@ function widget:DrawWorldPreUnit()
             local x, y, z = spGetUnitBasePosition(unitID)
             local gx, gy, gz = spGetGroundNormal(x, z)
             local degrot = acos(gy) * 180 / pi
-            glColor(colorSet[1])
+            glColor(colorSet)
             glDrawListAtUnit(unitID, circlePolys, false,
-                             radius, 1.0, radius,
-                             degrot, gz, 0, -gx)
-            glColor(colorSet[2])
-            glDrawListAtUnit(unitID, circleLines, false,
                              radius, 1.0, radius,
                              degrot, gz, 0, -gx)
           else
-            glColor(colorSet[1])
+            glColor(colorSet)
             glDrawListAtUnit(unitID, circlePolys, false,
                              radius, 1.0, radius)
-            glColor(colorSet[2])
-            glDrawListAtUnit(unitID, circleLines, false,
-                              radius, 1.0, radius)
          end
         end
       end
