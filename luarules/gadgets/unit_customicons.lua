@@ -87,7 +87,7 @@ function gadget:Initialize()
   Spring.AddUnitIcon("bships.user", "icons/bship.png",1.7)
   Spring.AddUnitIcon("bsships.user", "icons/bship.png",2.3)
   Spring.AddUnitIcon("tiny-sphere.user", "icons/sphere.png",0.65)
-
+  Spring.AddUnitIcon("shield.user", "icons/shield.tga",1.7)
 
    
   -- Setup the unitdef icons
@@ -165,10 +165,13 @@ function gadget:Initialize()
       elseif (ud.canFly) then
         -- aircraft
         Spring.SetUnitDefIcon(udid, "tri-up.user")
-      elseif ((ud.speed <= 0) and ud.hasShield) then
+      elseif ((ud.speed <= 0) and ud.shieldWeaponDef) then
         -- immobile shields
-        Spring.SetUnitDefIcon(udid, "hemi-up.user")
-      elseif ((ud.extractsMetal > 0) or (ud.makesMetal > 0)) then
+        Spring.SetUnitDefIcon(udid, "shield.user")
+      elseif ((ud.extractsMetal > 0) or (ud.makesMetal > 0)) or
+	(ud.name=="armmakr") or (ud.name=="armfmkr") or (ud.name=="ametalmakerlvl1") or (ud.name=="armamaker") or (ud.name=="armckmakr") or (ud.name=="armmmkr") or (ud.name=="armuwmmm") or (ud.name=="ametalmakerlvl2") or
+	(ud.name=="cormakr") or (ud.name=="corfmkr") or (ud.name=="cmetalmakerlvl1") or (ud.name=="coramaker") or (ud.name=="corhmakr") or (ud.name=="cormmkr") or (ud.name=="coruwmmm")or (ud.name=="cmetalmakerlvl2")
+	or (ud.name=="tllmm") or (ud.name=="tlluwconv") or (ud.name=="tllammaker") or (ud.name=="tllwmmohoconv")then
         -- metal extractors and makers
         Spring.SetUnitDefIcon(udid, "m.user")
       elseif ((ud.totalEnergyOut > 10) and (ud.speed <= 0)) then
