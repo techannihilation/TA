@@ -70,6 +70,8 @@ local fhDraw		= fontHandler.Draw
 --value: attributes = {name, color, height, currentAttributes, torsoPieceID}
 --currentAttributes = {name, color, height}
 local comms = {}
+local CnMaxDist = 3000000 -- max dist at which to draw ETA
+
 
 --------------------------------------------------------------------------------
 -- helper functions
@@ -194,11 +196,19 @@ function widget:DrawWorld()
     if (not heading) then
       return
     end
-    local rot = (heading / 32768) * 180
-    glDrawFuncAtUnit(unitID, false, DrawCommName, unitID, attributes)
-    if (showStickyTags) then
-      glDrawFuncAtUnit(unitID, false, DrawCommName2, unitID, attributes, rot)
-    end
+    local cx, cy, cz = Spring.GetCameraPosition()
+    local ux,uy,uz = Spring.GetUnitViewPosition(unitID)
+     if ux~=nil then
+       local dx, dy, dz = ux-cx, uy-cy, uz-cz
+       local dist = dx*dx + dy*dy + dz*dz
+	if dist < CnMaxDist then 
+	  local rot = (heading / 32768) * 180
+	  glDrawFuncAtUnit(unitID, false, DrawCommName, unitID, attributes)
+	    if (showStickyTags) then
+	       glDrawFuncAtUnit(unitID, false, DrawCommName2, unitID, attributes, rot)
+	    end
+       end
+     end
   end
 
   glAlphaTest(false)
