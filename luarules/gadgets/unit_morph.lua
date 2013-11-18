@@ -1191,7 +1191,7 @@ local GL_ONE_MINUS_SRC_ALPHA = GL.ONE_MINUS_SRC_ALPHA
 local GL_COLOR_BUFFER_BIT = GL.COLOR_BUFFER_BIT
 
 local headingToDegree = (360 / 65535)
-
+local MdMaxDist = 1500000  -- max dist at which to draw ETA
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -1472,8 +1472,16 @@ function gadget:DrawWorld()
 
   CallAsTeam({ ['read'] = readTeam }, function()
     for unitID, morphData in pairs(morphUnits) do
-      if (unitID and morphData)and(IsUnitVisible(unitID)) then
-        DrawMorphUnit(unitID, morphData,readTeam)
+    local cx, cy, cz = Spring.GetCameraPosition()
+    local ux,uy,uz = Spring.GetUnitViewPosition(unitID)
+      if ux~=nil then
+      local dx, dy, dz = ux-cx, uy-cy, uz-cz
+      local dist = dx*dx + dy*dy + dz*dz
+        if dist < MdMaxDist then 
+          if (unitID and morphData)and(IsUnitVisible(unitID)) then
+          DrawMorphUnit(unitID, morphData,readTeam)
+          end
+        end
       end
     end
   end)
