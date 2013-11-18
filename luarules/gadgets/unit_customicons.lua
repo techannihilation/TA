@@ -102,7 +102,7 @@ function gadget:Initialize()
       if (ud.name=="armwin") or (ud.name=="corwin") or (ud.name=="tllwindtrap") then
         Spring.SetUnitDefIcon(udid, "e.user")
 -- t1.5 wind      
-      if (ud.name=="armawin") or (ud.name=="corawin") then
+      elseif (ud.name=="armawin") or (ud.name=="corawin") then
         Spring.SetUnitDefIcon(udid, "e1.user")
 --fighters
       elseif (ud.name=="armfig") or (ud.name=="corveng") or (ud.name=="tllfight") or (ud.name=="armhawk") or (ud.name=="corvamp") or (ud.name=="tlladvfight") then
