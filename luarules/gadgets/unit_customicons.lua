@@ -150,53 +150,53 @@ function gadget:Initialize()
       or (ud.name=="armtrmph") or (ud.name=="armbc") then
         Spring.SetUnitDefIcon(udid, "bsships.user")
       elseif (ud.isFactory) then
-        -- factories
+-- factories
         Spring.SetUnitDefIcon(udid, "square_x_factory.user")
       elseif (ud.isBuilder) then
-        -- builders
+-- builders
         if ((ud.speed > 0) and ud.canMove) then
           Spring.SetUnitDefIcon(udid, "cross.user")     -- mobile
         else
           Spring.SetUnitDefIcon(udid, "square_+.user")  -- immobile
         end
+-- nuke / antinuke ( stockpile weapon anyway )
       elseif (ud.stockpileWeaponDef ~= nil) then
-      	-- nuke / antinuke ( stockpile weapon anyway )
       	Spring.SetUnitDefIcon(udid, "nuke.user")
+-- aircraft	
       elseif (ud.canFly) then
-        -- aircraft
         Spring.SetUnitDefIcon(udid, "tri-up.user")
+-- immobile shields
       elseif ((ud.speed <= 0) and ud.shieldWeaponDef) then
-        -- immobile shields
         Spring.SetUnitDefIcon(udid, "shield.user")
+-- metal extractors and makers
       elseif ((ud.extractsMetal > 0) or (ud.makesMetal > 0)) or
 	(ud.name=="armmakr") or (ud.name=="armfmkr") or (ud.name=="ametalmakerlvl1") or (ud.name=="armamaker") or (ud.name=="armckmakr") or (ud.name=="armmmkr") or (ud.name=="armuwmmm") or (ud.name=="ametalmakerlvl2") or
 	(ud.name=="cormakr") or (ud.name=="corfmkr") or (ud.name=="cmetalmakerlvl1") or (ud.name=="coramaker") or (ud.name=="corhmakr") or (ud.name=="cormmkr") or (ud.name=="coruwmmm")or (ud.name=="cmetalmakerlvl2")
 	or (ud.name=="tllmm") or (ud.name=="tlluwconv") or (ud.name=="tllammaker") or (ud.name=="tllwmmohoconv")then
-        -- metal extractors and makers
         Spring.SetUnitDefIcon(udid, "m.user")
+-- energy generators
       elseif ((ud.totalEnergyOut > 10) and (ud.speed <= 0)) then
-        -- energy generators
         Spring.SetUnitDefIcon(udid, "e.user")
+-- transports
       elseif (ud.isTransport) then
-        -- transports
         Spring.SetUnitDefIcon(udid, "diamond.user")
+-- submarines
       elseif ((ud.minWaterDepth > 0) and (ud.speed > 0) and (ud.waterline > 10)) then
-        -- submarines
         Spring.SetUnitDefIcon(udid, "tri-down.user")
+-- ships
       elseif ((ud.minWaterDepth > 0) and (ud.speed > 0)) then
-        -- ships
         Spring.SetUnitDefIcon(udid, "hemi-down.user")
+-- sensors
       elseif (((ud.radarRadius > 1) or
                (ud.sonarRadius > 1) or
                (ud.seismicRadius > 1)) and (ud.speed <= 0) and (#ud.weapons <= 0)) then
-        -- sensors
         Spring.SetUnitDefIcon(udid, "hourglass-side.user")
+-- jammers
       elseif (((ud.jammerRadius > 1) or
                (ud.sonarJamRadius > 1)) and (ud.speed <= 0)) then
-        -- jammers
         Spring.SetUnitDefIcon(udid, "hourglass.user")
+-- defenders and other buildings
       elseif (ud.isBuilding or (ud.speed <= 0)) then
-         -- defenders and other buildings
          if (not ud.weaponCount) then
             ud.weaponCount = 0
          end
@@ -221,7 +221,7 @@ function gadget:Initialize()
     end
   end
   
-  -- Shrink scouts
+-- Shrink scouts
   Spring.SetUnitDefIcon(UnitDefNames["corfav"].id, "tiny-sphere.user")
   Spring.SetUnitDefIcon(UnitDefNames["armfav"].id, "tiny-sphere.user")
   Spring.SetUnitDefIcon(UnitDefNames["corak"].id, "tiny-sphere.user")
