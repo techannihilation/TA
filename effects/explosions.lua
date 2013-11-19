@@ -1066,7 +1066,6 @@ return {
         particlespeed      = 1,
         particlespeedspread = 2,
         pos                = [[-3, -1, 0]],
-        size               = 0.1,
         sizegrowth         = -.2,
         sizemod            = 1,
         texture            = [[brightblueexplo]],
