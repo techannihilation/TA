@@ -501,6 +501,7 @@ local function StartMorph(unitID, unitDefID, teamID, morphDef, cmdp)
   -- do not allow morph for unfinsihed units
   if not isFinished(unitID) or (Spring.GetUnitRulesParam(unitID,"jumpReload") == 0) then return true end
 
+  Spring.SetUnitRulesParam(unitID,"Morphing",1)
   SpSetUnitHealth(unitID, { paralyze = 1.0e9 })    --// turns mexes and mm off (paralyze the unit)
   SpSetUnitResourcing(unitID,"e",0)                --// turns solars off
   SpGiveOrderToUnit(unitID, CMD_ONOFF, { 0 }, { "alt" }) --// turns radars/jammers off
@@ -548,6 +549,7 @@ end
 
 
 local function FinishMorph(unitID, morphData)
+  Spring.SetUnitRulesParam(unitID,"Morphing",0)
   local udDst = UnitDefs[morphData.def.into]
   local ud = UnitDefs[unitID]
   local defName = udDst.name

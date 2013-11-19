@@ -525,7 +525,7 @@ do
 
       --// PARALYZE
       if (emp>0.01)and(hp>0.01)and(emp<1e8) then 
-        local stunned = GetUnitIsStunned(unitID)
+        local stunned = GetUnitIsStunned(unitID) 
         local infotext = ""
         if (stunned) then
           paraUnits[#paraUnits+1]=unitID
@@ -540,7 +540,9 @@ do
           end
         end
         local empcolor_index = (stunned and ((blink and "emp_b") or "emp_p")) or ("emp")
-        AddBar("paralyze",emp,empcolor_index,infotext)
+	  if not (Spring.GetUnitRulesParam(unitID,"Morphing") == 1) then
+          AddBar("paralyze",emp,empcolor_index,infotext)
+	  end
       end
 
       --// CAPTURE
