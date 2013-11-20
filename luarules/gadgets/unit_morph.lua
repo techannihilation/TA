@@ -527,6 +527,7 @@ end
 local function StopMorph(unitID, morphData)
   morphUnits[unitID] = nil
   SendToUnsynced("mph_stp", unitID)
+  Spring.SetUnitRulesParam(unitID,"Morphing",0)
 
   SpSetUnitHealth(unitID, { paralyze = -1})
   local scale = morphData.progress * stopPenalty
