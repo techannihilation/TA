@@ -262,7 +262,6 @@ function widget:DrawWorld()
     glDepthMask(true)
     glDepthTest(true)
     glAlphaTest(GL_GREATER, 0.01)
-    
     local cx, cy, cz = Spring.GetCameraPosition()
     for unitID, rankTexHeight in pairs(alliedUnits) do
       local ux,uy,uz = GetUnitViewPosition(unitID)
@@ -276,12 +275,13 @@ function widget:DrawWorld()
 	     end
            end
        end
+    end
+    
     glTexture(false)
-
     glAlphaTest(false)
     glDepthTest(false)
     glDepthMask(false)
-    end
+    
   end
 end
 
