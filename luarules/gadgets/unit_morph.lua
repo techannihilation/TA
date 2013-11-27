@@ -1488,6 +1488,7 @@ function gadget:DrawWorld()
       end
     end
   end)
+  glColor(1, 1, 1, 1)
   glDepthTest(false)
   glBlending(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
 end
