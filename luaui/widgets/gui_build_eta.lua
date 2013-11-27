@@ -206,7 +206,7 @@ function widget:DrawWorld()
 	if Spring.IsGUIHidden() == false then 
 	  gl.DepthTest(true)
 
-	  gl.Color(1, 1, 1,0.1)
+	  gl.Color(1, 1, 1, 0.1)
 	  --fontHandler.UseDefaultFont()
 	  local cx, cy, cz = Spring.GetCameraPosition()
 	  for unitID, bi in pairs(etaTable) do
@@ -219,7 +219,8 @@ function widget:DrawWorld()
 			end
 		end
 	  end
-
+	  
+	  gl.Color(1, 1, 1, 1) 
 	  gl.DepthTest(false)
 	end
 end
