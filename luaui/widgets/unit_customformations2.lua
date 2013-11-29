@@ -45,13 +45,15 @@ local formationCmds = {
 	[CMD.ATTACK] = true,
 	[CMD.PATROL] = true,
 	[CMD.UNLOAD_UNIT] = true,
-	[38521] = true -- Jump
+	[38521] = true, -- Jump
+	[34923] = true -- set target
 }
 
 -- What commands require alt to be held (Must also appear in formationCmds)
 local requiresAlt = {
 	[CMD.ATTACK] = true,
-	[CMD.UNLOAD_UNIT] = true
+	[CMD.UNLOAD_UNIT] = true,
+	[34923] = true -- set target
 }
 
 -- Context-based default commands that can be overridden (i.e. guard when mouseover unit)
@@ -66,6 +68,7 @@ local positionCmds = {
 	[CMD.MOVE]=true,		[CMD.ATTACK]=true,		[CMD.RECLAIM]=true,		[CMD.RESTORE]=true,		[CMD.RESURRECT]=true,
 	[CMD.PATROL]=true,		[CMD.CAPTURE]=true,		[CMD.FIGHT]=true, 		[CMD.MANUALFIRE]=true,		[38521]=true, -- jump
 	[CMD.UNLOAD_UNIT]=true,	[CMD.UNLOAD_UNITS]=true,[CMD.LOAD_UNITS]=true,	[CMD.GUARD]=true,		[CMD.AREA_ATTACK] = true,
+	[34923] = true -- set target
 }
 
 --------------------------------------------------------------------------------
@@ -214,6 +217,7 @@ local function SetColor(cmdID, alpha)
 	if     cmdID == CMD_MOVE       then glColor(0.5, 1.0, 0.5, alpha) -- Green
 	elseif cmdID == CMD_ATTACK     then glColor(1.0, 0.2, 0.2, alpha) -- Red
 	elseif cmdID == CMD_UNLOADUNIT then glColor(1.0, 1.0, 0.0, alpha) -- Yellow
+	elseif cmdID == 34923		   then glColor(1.0, 0.7, 0.0, alpha) -- Orange
 	else                                glColor(0.5, 0.5, 1.0, alpha) -- Blue
 	end
 end
@@ -777,8 +781,10 @@ function widget:DrawWorld()
 		zoomY = camY - max(spGetGroundHeight(camX, camZ), 0)
 	end
 	if zoomY < 6 then zoomY = 6 end
-	local unitCount = spGetSelectedUnitsCount()
-	DrawFormationDots(tVerts, zoomY, unitCount)
+	if lineLength > 0 then  --don't try and draw if the command was cancelled by having two mouse buttons pressed at once
+		local unitCount = spGetSelectedUnitsCount()
+		DrawFormationDots(tVerts, zoomY, unitCount)
+	end
   end
 end
 

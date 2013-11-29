@@ -706,12 +706,12 @@ function UnitDetected( unitID, allyTeam, teamId )
 	local dps
 	local weaponDef
 	
-	if ( #udef.weapons == 0  ) then
+	if ( #udef.weapons == 0  ) or ( udef.speed and udef.speed  > 0.0001 ) then
 		--not intresting, has no weapons, lame
 		--printDebug("Unit ignored: weaponCount is 0")
 		return
 	end
-
+	
 	printDebug( udef.name )
 	local foundWeapons = {}
 			
