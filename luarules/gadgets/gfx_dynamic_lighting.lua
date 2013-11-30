@@ -37,15 +37,9 @@ if (gadgetHandler:IsSyncedCode()) then
 			layer   = -1,
 		}
 	end
-
+	
 	-- register/deregister for the synced Projectile*/Explosion call-ins
 	function gadget:Initialize()
-
-		local modOptions = Spring.GetModOptions()
-                if (modOptions ~= nil and tonumber(modOptions.mo_dynamic) == "0") then
-                        gadgetHandler:RemoveGadget(self)
-                end
-		
 		for weaponDefName, _ in pairs(weaponLightDefs) do
 			local weaponDef = WeaponDefNames[weaponDefName]
 
@@ -215,10 +209,12 @@ else
 	end
 
 	function gadget:Initialize()
+	  
 		local maxMapLights = Spring.GetConfigInt("MaxDynamicMapLights") or 0
 		local maxMdlLights = Spring.GetConfigInt("MaxDynamicModelLights") or 0
+		local enabled = tonumber(Spring.GetModOptions().mo_dynamic) or 0
 
-		if (maxMapLights <= 0 and maxMdlLights <= 0) then
+		if (maxMapLights <= 0 and maxMdlLights <= 0 or enabled == 0) then
 			Spring.Echo("[" .. (self:GetInfo()).name .. "] client has disabled dynamic lighting")
 			gadgetHandler:RemoveGadget(self)
 			return
