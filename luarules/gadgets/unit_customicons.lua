@@ -114,10 +114,10 @@ function gadget:Initialize()
       elseif (ud.name=="cfusionplant") or (ud.name=="afusionplant") or (ud.name=="tllmegacoldfus") then
         Spring.SetUnitDefIcon(udid, "e4.user")
 --t2 fusions
-      elseif (ud.name=="cafus") or (ud.name=="aafus") or (ud.name=="tllmedfusion") then
+      elseif (ud.name=="cafus") or (ud.name=="aafus") or (ud.name=="tllcoldfus") then
         Spring.SetUnitDefIcon(udid, "e3.user")
 --std fusions
-      elseif (ud.name=="armfus") or (ud.name=="corfus") or (ud.name=="tllcoldfus") or (ud.name=="armckfus") or (ud.name=="armdf") or (ud.name=="armuwfus")
+      elseif (ud.name=="armfus") or (ud.name=="corfus") or (ud.name=="tllmedfusion") or (ud.name=="armckfus") or (ud.name=="armdf") or (ud.name=="armuwfus")
       or (ud.name=="coruwfus") or (ud.name=="armckfus") or (ud.name=="tlluwfusion") then
         Spring.SetUnitDefIcon(udid, "e2.user")
 --armcom
