@@ -22,8 +22,8 @@
 function gadget:GetInfo()
   return {
     name      = "CustomIcons",
-    desc      = "Sets custom unit icons for BA",
-    author    = "trepan,BD,TheFatController",
+    desc      = "Sets custom unit icons for TA",
+    author    = "trepan,BD,TheFatController,Nixtux",
     date      = "Jan 8, 2007",
     license   = "GNU GPL, v2 or later",
     layer     = -100,
@@ -117,8 +117,8 @@ function gadget:Initialize()
       elseif (ud.name=="cafus") or (ud.name=="aafus") or (ud.name=="tllcoldfus") then
         Spring.SetUnitDefIcon(udid, "e3.user")
 --std fusions
-      elseif (ud.name=="armfus") or (ud.name=="corfus") or (ud.name=="tllmedfusion") or (ud.name=="armckfus") or (ud.name=="armdf") or (ud.name=="armuwfus")
-      or (ud.name=="coruwfus") or (ud.name=="armckfus") or (ud.name=="tlluwfusion") then
+      elseif (ud.name=="armfus") or (ud.name=="corfus") or (ud.name=="corsfus") or (ud.name=="crnns") or (ud.name=="tllmedfusion") or (ud.name=="armckfus") or (ud.name=="armdf")
+      or (ud.name=="armuwfus") or (ud.name=="armuwfus1") or (ud.name=="coruwfus") or (ud.name=="armckfus") or (ud.name=="tlluwfusion") then
         Spring.SetUnitDefIcon(udid, "e2.user")
 --armcom
       elseif (ud.name=="armcom") or (ud.name=="armcom1") or (ud.name=="armcom4") or (ud.name=="armcom5") or (ud.name=="armcom6") or (ud.name=="armcom7") then
