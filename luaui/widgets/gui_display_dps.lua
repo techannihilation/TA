@@ -72,6 +72,7 @@ local lastTime = 0
 local paused = false
 local changed = false
 local heightList = {}
+local DpsMaxDist = 1750000 -- max dist at which to draw ETA
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -157,9 +158,15 @@ function widget:UnitTaken(unitID, unitDefID, oldTeam, newTeam)
 end
 
 function widget:UnitDamaged(unitID, unitDefID, unitTeam, damage, paralyzer)
-  if (damage < 1.5) then return end
+  local cx, cy, cz = Spring.GetCameraPosition()
+  local ux,uy,uz = GetUnitViewPosition(unitID)
+  if ux~=nil then
+    local dx, dy, dz = ux-cx, uy-cy, uz-cz
+    local dist = dx*dx + dy*dy + dz*dz
+      if dist < DpsMaxDist then 
+        if (damage < 1.5) then return end
   
-  if (UnitDefs[unitDefID] == nil) then return end
+        if (UnitDefs[unitDefID] == nil) then return end
     
   if paralyzer then
     if unitParalyze[unitID] then
@@ -181,6 +188,9 @@ function widget:UnitDamaged(unitID, unitDefID, unitTeam, damage, paralyzer)
     unitDamage[unitID].time = (lastTime + 0.1)
   end
 end
+  end
+end
+
 
 local function calcDPS(inTable, paralyze, theTime)
   for unitID,damageDef in pairs(inTable) do
