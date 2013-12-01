@@ -56,7 +56,7 @@ function gadget:Initialize()
   Spring.AddUnitIcon("e3.user", "icons/e.png",1.8)
   Spring.AddUnitIcon("e4.user", "icons/e.png",2.3)
   Spring.AddUnitIcon("hemi-down.user", "icons/hemi-down.png",1.3)
-  Spring.AddUnitIcon("hemi-up.user", "icons/hemi-up.png")
+  Spring.AddUnitIcon("hemi-up.user", "icons/hemi-up.png",1.8)
   Spring.AddUnitIcon("hemi.user", "icons/hemi.png")
   Spring.AddUnitIcon("hourglass-side.user", "icons/hourglass-side.png")
   Spring.AddUnitIcon("hourglass.user", "icons/hourglass.png")
@@ -87,7 +87,7 @@ function gadget:Initialize()
   Spring.AddUnitIcon("bships.user", "icons/bship.png",1.7)
   Spring.AddUnitIcon("bsships.user", "icons/bship.png",2.3)
   Spring.AddUnitIcon("tiny-sphere.user", "icons/sphere.png",0.65)
-  Spring.AddUnitIcon("shield.user", "icons/shield.tga",1.7)
+
 
    
   -- Setup the unitdef icons
@@ -167,7 +167,7 @@ function gadget:Initialize()
         Spring.SetUnitDefIcon(udid, "tri-up.user")
 -- immobile shields
       elseif ((ud.speed <= 0) and ud.shieldWeaponDef) then
-        Spring.SetUnitDefIcon(udid, "shield.user")
+        Spring.SetUnitDefIcon(udid, "hemi-up.user")
 -- metal extractors and makers
       elseif ((ud.extractsMetal > 0) or (ud.makesMetal > 0)) or
 	(ud.name=="armmakr") or (ud.name=="armfmkr") or (ud.name=="ametalmakerlvl1") or (ud.name=="armamaker") or (ud.name=="armckmakr") or (ud.name=="armmmkr") or (ud.name=="armuwmmm") or (ud.name=="ametalmakerlvl2") or
