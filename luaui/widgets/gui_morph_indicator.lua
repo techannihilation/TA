@@ -269,14 +269,12 @@ function widget:DrawWorld()
       for i=1, #visibleUnits do
       unitID = visibleUnits[i]   
         local ux,uy,uz = GetUnitViewPosition(unitID)
-        if ux~=nil then
+        if ux~=nil and alliedUnits[unitID] and alliedUnits[unitID][1] then
           local dx, dy, dz = ux-cx, uy-cy, uz-cz
           local dist = dx*dx + dy*dy + dz*dz
 	   if dist < MiMaxDist then 
-	     if alliedUnits[unitID][1] then
 	        glTexture(alliedUnits[unitID][1])
 	        glDrawFuncAtUnit(unitID, true, DrawUnitFunc, alliedUnits[unitID][2])
-	     end
            end
         end
     end
