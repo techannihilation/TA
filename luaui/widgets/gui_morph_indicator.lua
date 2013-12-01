@@ -264,18 +264,23 @@ function widget:DrawWorld()
     glAlphaTest(GL_GREATER, 0.01)
     
     local cx, cy, cz = Spring.GetCameraPosition()
-    for unitID, rankTexHeight in pairs(alliedUnits) do
-      local ux,uy,uz = GetUnitViewPosition(unitID)
-      if ux~=nil then
-        local dx, dy, dz = ux-cx, uy-cy, uz-cz
-        local dist = dx*dx + dy*dy + dz*dz
+    local visibleUnits = Spring.GetVisibleUnits()
+    if #visibleUnits then
+      for i=1, #visibleUnits do
+      unitID = visibleUnits[i]   
+        local ux,uy,uz = GetUnitViewPosition(unitID)
+        if ux~=nil then
+          local dx, dy, dz = ux-cx, uy-cy, uz-cz
+          local dist = dx*dx + dy*dy + dz*dz
 	   if dist < MiMaxDist then 
-	     if rankTexHeight[1] then
-	        glTexture(rankTexHeight[1])
-	        glDrawFuncAtUnit(unitID, true, DrawUnitFunc, rankTexHeight[2])
+	     if alliedUnits[unitID][1] then
+	        glTexture(alliedUnits[unitID][1])
+	        glDrawFuncAtUnit(unitID, true, DrawUnitFunc, alliedUnits[unitID][2])
 	     end
            end
-       end
+        end
+    end
+    
     glTexture(false)
 
     glAlphaTest(false)
