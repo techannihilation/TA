@@ -87,6 +87,7 @@ function gadget:Initialize()
   Spring.AddUnitIcon("bships.user", "icons/bship.png",1.7)
   Spring.AddUnitIcon("bsships.user", "icons/bship.png",2.3)
   Spring.AddUnitIcon("tiny-sphere.user", "icons/sphere.png",0.65)
+  Spring.AddUnitIcon("blank.user", "icons/sphere.png",0.0)
 
 
    
@@ -172,7 +173,7 @@ function gadget:Initialize()
       elseif ((ud.extractsMetal > 0) or (ud.makesMetal > 0)) or
 	(ud.name=="armmakr") or (ud.name=="armfmkr") or (ud.name=="ametalmakerlvl1") or (ud.name=="armamaker") or (ud.name=="armckmakr") or (ud.name=="armmmkr") or (ud.name=="armuwmmm") or (ud.name=="ametalmakerlvl2") or
 	(ud.name=="cormakr") or (ud.name=="corfmkr") or (ud.name=="cmetalmakerlvl1") or (ud.name=="coramaker") or (ud.name=="corhmakr") or (ud.name=="cormmkr") or (ud.name=="coruwmmm")or (ud.name=="cmetalmakerlvl2")
-	or (ud.name=="tllmm") or (ud.name=="tlluwconv") or (ud.name=="tllammaker") or (ud.name=="tllwmmohoconv")then
+	or (ud.name=="tllmm") or (ud.name=="tlluwconv") or (ud.name=="tllammaker") or (ud.name=="tllwmmohoconv") then
         Spring.SetUnitDefIcon(udid, "m.user")
 -- energy generators
       elseif ((ud.totalEnergyOut > 10) and (ud.speed <= 0)) then
@@ -195,6 +196,11 @@ function gadget:Initialize()
       elseif (((ud.jammerRadius > 1) or
                (ud.sonarJamRadius > 1)) and (ud.speed <= 0)) then
         Spring.SetUnitDefIcon(udid, "hourglass.user")
+--Dragon teeth
+      elseif (ud.name=="cordrag") or (ud.name=="corfdrag") or (ud.name=="corfort") or
+	     (ud.name=="armdrag") or (ud.name=="armfdrag") or (ud.name=="armfort") or
+	     (ud.name=="tlldtns") or (ud.name=="tlladt") or (ud.name=="tlldt") then
+      Spring.SetUnitDefIcon(udid, "blank.user")
 -- defenders and other buildings
       elseif (ud.isBuilding or (ud.speed <= 0)) then
          if (not ud.weaponCount) then
@@ -230,6 +236,10 @@ function gadget:Initialize()
   Spring.SetUnitDefIcon(UnitDefNames["tllbug"].id, "tiny-sphere.user")
   Spring.SetUnitDefIcon(UnitDefNames["tllgladius"].id, "tiny-sphere.user")
   Spring.SetUnitDefIcon(UnitDefNames["tllprivate"].id, "tiny-sphere.user")
+  
+-- No icons for cormaw/armclaw to match dt
+  Spring.SetUnitDefIcon(UnitDefNames["cormaw"].id, "blank.user")
+  Spring.SetUnitDefIcon(UnitDefNames["armclaw"].id, "blank.user")
 end
 
 --------------------------------------------------------------------------------
