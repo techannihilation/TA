@@ -174,6 +174,7 @@ end
 
 
 function widget:DrawWorldPreUnit()
+   if Spring.IsGUIHidden() == false then
 	glDepthTest(GL_ALWAYS)
 	glTexture('LuaUI/Images/AlliedCursors.png')
 	glPolygonOffset(-7,-10)
@@ -199,10 +200,11 @@ function widget:DrawWorldPreUnit()
 			end
 		end
 	end
-
+	
 	glPolygonOffset(false)
 	glTexture(false)
 	glDepthTest(false)
+   end
 end       				
 
 --------------------------------------------------------------------------------
