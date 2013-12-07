@@ -236,10 +236,6 @@ function gadget:Initialize()
   Spring.SetUnitDefIcon(UnitDefNames["tllbug"].id, "tiny-sphere.user")
   Spring.SetUnitDefIcon(UnitDefNames["tllgladius"].id, "tiny-sphere.user")
   Spring.SetUnitDefIcon(UnitDefNames["tllprivate"].id, "tiny-sphere.user")
-  
--- No icons for cormaw/armclaw to match dt
-  Spring.SetUnitDefIcon(UnitDefNames["cormaw"].id, "blank.user")
-  Spring.SetUnitDefIcon(UnitDefNames["armclaw"].id, "blank.user")
 end
 
 --------------------------------------------------------------------------------
