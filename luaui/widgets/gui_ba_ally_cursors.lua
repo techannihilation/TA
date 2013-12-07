@@ -168,13 +168,19 @@ end
 
 function widget:PlayerChanged(playerID)
 	local _, _, isSpec, teamID = GetPlayerInfo(playerID)
-	color = {1, 1, 1, 0.6}
+	local r, g, b = Spring.GetTeamColor(teamID)
+	local color
+	if isSpec then
+		color = {1, 1, 1, 0.6}
+	elseif r and g and b then
+		color = {r, g, b, 0.75}
+	end
 	teamColors[teamID] = color
 end
 
 
 function widget:DrawWorldPreUnit()
-   if Spring.IsGUIHidden() == false then
+  if Spring.IsGUIHidden() == false then
 	glDepthTest(GL_ALWAYS)
 	glTexture('LuaUI/Images/AlliedCursors.png')
 	glPolygonOffset(-7,-10)
@@ -200,11 +206,11 @@ function widget:DrawWorldPreUnit()
 			end
 		end
 	end
-	
+
 	glPolygonOffset(false)
 	glTexture(false)
 	glDepthTest(false)
-   end
+  end
 end       				
 
 --------------------------------------------------------------------------------
