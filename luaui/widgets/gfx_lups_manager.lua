@@ -446,13 +446,7 @@ local spGetUnitDefID       = Spring.GetUnitDefID
 local spGetUnitRulesParam  = Spring.GetUnitRulesParam
 local spGetUnitIsActive    = Spring.GetUnitIsActive
 local spGetUnitVelocity     = Spring.GetUnitVelocity
-local spGetUnitArmored     = Spring.GetUnitArmored
-local SpGetUnitBasePosition = Spring.GetUnitBasePosition
-local SpGetMyPlayerID      = Spring.GetMyPlayerID
-local SpGetAllUnits        = Spring.GetAllUnits
-local SpGetUnitDefID       = Spring.GetUnitDefID
-local SpGetGameFrame       = Spring.GetGameFrame
-local SpSendLuaRulesMsg    = Spring.SendLuaRulesMsg
+
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -509,12 +503,12 @@ local function UnitFinished(_,unitID,unitDefID)
   if (effects) then
     for _,fx in ipairs(effects) do
       if (not fx.options) then
-        Spring.Echo("LUPS DEBUG ", UnitDefs[unitDefID].name, fx and fx.class)
+        --Spring.Echo("LUPS DEBUG ", UnitDefs[unitDefID].name, fx and fx.class)
         return
       end
 
       if (fx.class=="GroundFlash") then
-        fx.options.pos = { SpGetUnitBasePosition(unitID) }
+        fx.options.pos = { Spring.GetUnitBasePosition(unitID) }
       end
       fx.options.unit = unitID
       AddFxs( unitID,LupsAddFX(fx.class,fx.options) )
@@ -536,9 +530,9 @@ local function UnitEnteredLos(_,unitID)
   local effects   = UnitEffects[unitDefID]
   if (effects) then
 	for _,fx in ipairs(effects) do
-	  if (fx.options.onActive == true) and (spGetUnitIsActive(unitID) == nil) or --because unitactive returns nil for enemy units, and onActive types are all airjets, we get the unit's velocity, and use that as an approximation to 'active' state --HACKY
-	     (fx.options.onActive == true) and spGetUnitArmored(unitID) then
-	local vx, vy, vz = spGetUnitVelocity(unitID)
+		
+	  if (fx.options.onActive == true) and (spGetUnitIsActive(unitID) == nil) then  --because unitactive returns nil for enemy units, and onActive types are all airjets, we get the unit's velocity, and use that as an approximation to 'active' state --HACKY
+		local vx, vy, vz = spGetUnitVelocity(unitID)
 		--Spring.Echo('lupsdbgvel',vx,vy,vz)
 		if (vx== nil or (vx==0 and vz==0)) then 
 			break
@@ -570,7 +564,7 @@ end
 --------------------------------------------------------------------------------
 
 local function PlayerChanged(_,playerID)
-  if (playerID == SpGetMyPlayerID()) then
+  if (playerID == Spring.GetMyPlayerID()) then
     --// clear all FXs
     for _,unitFxIDs in pairs(particleIDs) do
       for _,fxID in ipairs(unitFxIDs) do
@@ -585,10 +579,10 @@ end
 
 local function CheckForExistingUnits()
   --// initialize effects for existing units
-  local allUnits = SpGetAllUnits();
+  local allUnits = Spring.GetAllUnits();
   for i=1,#allUnits do
     local unitID    = allUnits[i]
-    local unitDefID = SpGetUnitDefID(unitID)
+    local unitDefID = Spring.GetUnitDefID(unitID)
     if (spGetUnitRulesParam(unitID, "under_construction") ~= 1) then
 		UnitFinished(nil,unitID,unitDefID)
 	end
@@ -598,8 +592,8 @@ local function CheckForExistingUnits()
 end
 
 function widget:GameFrame()
-  if (SpGetGameFrame() > 0) then
-    SpSendLuaRulesMsg("lups running","allies")
+  if (Spring.GetGameFrame() > 0) then
+    Spring.SendLuaRulesMsg("lups running","allies")
     widgetHandler:RemoveWidgetCallIn("GameFrame",widget)
   end
 end
@@ -632,7 +626,7 @@ function widget:Update()
 
   LupsAddFX = Lups.AddParticles
 
-  SpSendLuaRulesMsg("lups running","allies")
+  Spring.SendLuaRulesMsg("lups running","allies")
 
   widget.UnitFinished   = UnitFinished
   widget.UnitDestroyed  = UnitDestroyed
@@ -661,7 +655,7 @@ function widget:Shutdown()
     particleIDs = {}
   end
 
-  SpSendLuaRulesMsg("lups shutdown","allies")
+  Spring.SendLuaRulesMsg("lups shutdown","allies")
 end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
