@@ -6,7 +6,7 @@ local unitName = "armblz"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.45,
+	acceleration = 0.090,
 	altfromsealevel = 1,
 	attackrunlength = 180,
 	bankscale = 1,
@@ -25,7 +25,7 @@ local unitDef = {
 	canstop = 1,
 	category = [[ALL MEDIUMVTOL MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL WEAPON]],
 	collide = false,
-	cruiseAlt = 240,
+	cruiseAlt = 165,
 	description = [[Napalm Bomber]],
 	designation = [[AFD-BLZ]],
 	energyMake = 0,
@@ -39,7 +39,7 @@ local unitDef = {
 	maxBank = 0.95,
 	maxDamage = 864,
 	maxSlope = 10,
-	maxVelocity = 12.7,
+	maxVelocity = 11.5,
 	maxWaterDepth = 0,
 	metalStorage = 0,
 	mobilestandorders = 1,

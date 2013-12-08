@@ -6,7 +6,7 @@ local unitName = "armcbomb"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.6,
+	acceleration = 0.085,
 	attackrunlength = 170,
 	bankscale = 1,
 	bmcode = 1,
@@ -22,7 +22,7 @@ local unitDef = {
 	canstop = 1,
 	category = [[ALL MEDIUMVTOL MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL WEAPON]],
 	collide = false,
-	cruiseAlt = 155,
+	cruiseAlt = 165,
 	defaultmissiontype = [[VTOL_standby]],
 	description = [[Fast Bomber]],
 	designation = [[ARM-CRPT]],
@@ -36,7 +36,7 @@ local unitDef = {
 	maneuverleashlength = 1280,
 	maxDamage = 562,
 	maxSlope = 10,
-	maxVelocity = 14,
+	maxVelocity = 12.8,
 	maxWaterDepth = 0,
 	metalStorage = 0,
 	mobilestandorders = 1,
