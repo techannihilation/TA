@@ -46,7 +46,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
-	move body to y-axis [45.000000] now;
+//	move body to y-axis [45.000000] now;
 	hide flare1a;
 	hide flare1b;
 	hide flare1c;
@@ -80,7 +80,7 @@ Create()
 	{
 		sleep 500;
 	}
-	move body to y-axis [0.000000] speed [10.000000];
+//	move body to y-axis [0.000000] speed [10.000000];
 }
 
 RestoreSecondary()
