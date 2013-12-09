@@ -17,6 +17,7 @@ local unitDef = {
 	buildPic = [[cormin.png]],
 	buildTime = 1600,
 	canAssist = false,
+	canBeAssisted = false,
 	canFly = true,
 	canGuard = true,
 	canMove = true,
