@@ -7,7 +7,6 @@ local unitName = "abuilderlvl1"
 
 local unitDef = {
 	acceleration = 0.0399,
-	airHoverFactor = 0,
 	brakeRate = 1.995,
 	buildCostEnergy = 2595.645,
 	buildCostMetal = 940.7,
