@@ -7,7 +7,6 @@ local unitName = "cbuilderlvl2"
 
 local unitDef = {
 	acceleration = 0.0266,
-	airHoverFactor = 0,
 	brakeRate = 1.5295,
 	buildCostEnergy = 3358,
 	buildCostMetal = 654,
