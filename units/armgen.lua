@@ -19,7 +19,7 @@ local unitDef = {
 	buildPic = [[ARMGEN.png]],
 	buildTime = 7800,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
-	corpse = [[dead]],
+	corpse = [[heap]],
 	description = [[Produces Energy]],
 	energyMake = 100,
 	energyStorage = 150,
@@ -67,23 +67,6 @@ local unitDef = {
 --------------------------------------------------------------------------------
 
 local featureDefs = {
-	dead = {
-		blocking = true,
-		category = [[core_corpses]],
-		damage = 0.0695 * unitDef.maxDamage,
-		description = [[Wreckage]],
-		featureDead = [[heap]],
-		featurereclamate = [[smudge01]],
-		footprintX = 3,
-		footprintZ = 3,
-		height = 20,
-		hitdensity = 100,
-		metal = 0.3844 * unitDef.buildCostMetal,
-		object = [[3x3d]],
-		reclaimable = true,
-		seqnamereclamate = [[tree1reclamate]],
-		world = [[All Worlds]],
-	},
 	heap = {
 		blocking = false,
 		category = [[heaps]],
