@@ -296,6 +296,9 @@ local UnitEffects = {
  [UnitDefNames["armblz"].id] = {
     {class='AirJet',options={color={0.6,0.1,0}, width=5.7, length=45, piece="rearthrust", onActive=true}},
   },
+   [UnitDefNames["corfiend"].id] = {
+    {class='AirJet',options={color={0.6,0.1,0}, width=5.7, length=45, piece="emit", onActive=true}},
+  },
  [UnitDefNames["armcbomb"].id] = {
     {class='AirJet',options={color={0.6,0.1,0}, width=1.7, length=15, piece="thrustr0", onActive=true}},
     {class='AirJet',options={color={0.6,0.1,0}, width=1.7, length=15, piece="thrustr1", onActive=true}},

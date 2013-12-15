@@ -36,7 +36,7 @@ local Bombers = { -- ALL BOMBER TYPE AIRCRAFT FAIL THIS CHECK
   [UnitDefNames["corgripn"].id] = true,
   [UnitDefNames["coreclipse"].id] = true,
   [UnitDefNames["corsbomb"].id] = true,
-  [UnitDefNames["armcbomb"].id] = true,
+  [UnitDefNames["corfiend"].id] = true,
   
   [UnitDefNames["armcybr"].id] = true,
   [UnitDefNames["armlance"].id] = true,

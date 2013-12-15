@@ -66,7 +66,7 @@ local unitDef = {
 		[4] = [[corshad]],
 		[5] = [[corvalk]],
 		[6] = [[bladew]],
-		[7] = [[armcbomb]],
+		[7] = [[corfiend]],
 		[8] = [[corfalc]],
 	},
 	featureDefs = nil,
