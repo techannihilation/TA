@@ -299,16 +299,6 @@ local UnitEffects = {
    [UnitDefNames["corfiend"].id] = {
     {class='AirJet',options={color={0.6,0.1,0}, width=5.7, length=45, piece="emit", onActive=true}},
   },
- [UnitDefNames["armcbomb"].id] = {
-    {class='AirJet',options={color={0.6,0.1,0}, width=1.7, length=15, piece="thrustr0", onActive=true}},
-    {class='AirJet',options={color={0.6,0.1,0}, width=1.7, length=15, piece="thrustr1", onActive=true}},
-    {class='AirJet',options={color={0.6,0.1,0}, width=1.7, length=15, piece="thrustr2", onActive=true}}, 
-    {class='AirJet',options={color={0.6,0.1,0}, width=1.7, length=15, piece="thrustr3", onActive=true}},
-    {class='AirJet',options={color={0.6,0.1,0}, width=1.7, length=15, piece="thrustl0", onActive=true}},
-    {class='AirJet',options={color={0.6,0.1,0}, width=1.7, length=15, piece="thrustl1", onActive=true}},
-    {class='AirJet',options={color={0.6,0.1,0}, width=1.7, length=15, piece="thrustl2", onActive=true}},
-    {class='AirJet',options={color={0.6,0.1,0}, width=1.7, length=15, piece="thrustl3", onActive=true}},
-    },
  [UnitDefNames["abuilderlvl2"].id] = {
     {class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=20, emitVector = {0,1,0}, piece="lfthrust", onActive=true}},
     {class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=20, emitVector = {0,1,0}, piece="lbthrust", onActive=true}},
