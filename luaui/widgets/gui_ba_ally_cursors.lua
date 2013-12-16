@@ -59,6 +59,8 @@ local GL_QUADS				= GL.QUADS
 
 local clock					= os.clock
 
+local AcMaxDist = 12000000
+
 local alliedCursorsPos = {}
 
 
@@ -204,9 +206,16 @@ function widget:DrawWorldPreUnit()
 			if notIdle[playerID] then
 				--draw a cursor
 				gy = GetGroundHeight(wx,wz)
+	
+				local cx, cy, cz = Spring.GetCameraPosition()
 				if (IsSphereInView(wx,gy,wz,QSIZE)) then
+				    local dx, dy, dz = wx-cx, gy-cy, wz-cz
+				    local dist = dx*dx + dy*dy + dz*dz
+				     if dist < AcMaxDist then
 					SetTeamColor(teamID,playerID,n)
 					glBeginEnd(GL_QUADS,DrawGroundquad,wx,gy,wz)
+				     
+				     end
 				end
 			else
 				--mark a player as notIdle as soon as they move (and keep them always set notIdle after this)
