@@ -253,9 +253,9 @@ end
 
 function widget:DrawWorld()
   if Spring.IsGUIHidden() == false then 
-    if (next(alliedUnits) == nil) then
-      return -- avoid unnecessary GL calls
-    end
+    --if (next(alliedUnits) == nil) then
+    --  return -- avoid unnecessary GL calls
+   -- end
   
     CreateBillboard()
 
@@ -263,24 +263,19 @@ function widget:DrawWorld()
     glDepthTest(true)
     glAlphaTest(GL_GREATER, 0.01)
     local cx, cy, cz = Spring.GetCameraPosition()
-    if #alliedUnits then
-      for i=1, #alliedUnits do
-      unitID = alliedUnits[i]
-    --for unitID, rankTexHeight in pairs(alliedUnits) do
-      if alliedUnits[1] then
+    for unitID, rankTexHeight in pairs(alliedUnits) do
       local ux,uy,uz = GetUnitViewPosition(unitID)
       if ux~=nil then
         local dx, dy, dz = ux-cx, uy-cy, uz-cz
         local dist = dx*dx + dy*dy + dz*dz
 	   if dist < MiMaxDist then 
-	        glTexture(alliedUnits[1])
-	        glDrawFuncAtUnit(unitID, true, DrawUnitFunc, alliedUnits[2])
+	     if rankTexHeight[1] then
+	        glTexture(rankTexHeight[1])
+	        glDrawFuncAtUnit(unitID, true, DrawUnitFunc, rankTexHeight[2])
 	     end
            end
        end
     end
-    end
-    
     
     glTexture(false)
     glAlphaTest(false)
