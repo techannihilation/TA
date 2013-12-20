@@ -6,11 +6,11 @@ local unitName = "tllbind"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.09,
+	acceleration = 0.06,
 	bmcode = 1,
-	brakeRate = 0.183105469,
+	brakeRate = 0.133,
 	buildCostEnergy = 12400,
-	buildCostMetal = 2585,
+	buildCostMetal = 2985,
 	builder = false,
 	buildTime = 47896,
 	canAttack = true,
@@ -30,9 +30,9 @@ local unitDef = {
 	footprintX = 2,
 	footprintZ = 2,
 	maneuverleashlength = 640,
-	maxDamage = 12715,
+	maxDamage = 11115,
 	maxSlope = 17,
-	maxVelocity = 0.92,
+	maxVelocity = 0.82,
 	maxWaterDepth = 25,
 	mobilestandorders = 1,
 	movementClass = [[AKBOT2]],

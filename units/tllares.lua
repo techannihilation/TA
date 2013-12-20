@@ -6,9 +6,9 @@ local unitName = "tllares"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.14,
+	acceleration = 0.08,
 	bmcode = 1,
-	brakeRate = 0.3,
+	brakeRate = 0.10,
 	buildCostEnergy = 221,
 	buildCostMetal = 168,
 	builder = false,
@@ -30,7 +30,7 @@ local unitDef = {
 	footprintX = 2,
 	footprintZ = 2,
 	maneuverleashlength = 640,
-	maxDamage = 688,
+	maxDamage = 648,
 	maxSlope = 10,
 	maxVelocity = 2.95,
 	maxWaterDepth = 12,
