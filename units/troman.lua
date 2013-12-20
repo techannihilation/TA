@@ -81,13 +81,14 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			def = [[ARMMAV_WEAPON]],
-			onlyTargetCategory = [[NOTVTOL]],
-		},
-		[2] = {
 			def = [[ARMSNIPE_WEAPON]],
 			onlyTargetCategory = [[NOTVTOL]],
 		},
+		[2] = {
+			def = [[ARMMAV_WEAPON]],
+			onlyTargetCategory = [[NOTVTOL]],
+		},
+
 	},
 }
 
@@ -136,7 +137,7 @@ local weaponDefs = {
 		name = [[SniperWeapon]],
 		noradar = 1,
 		noSelfDamage = true,
-		range = 900,
+		range = 1050,
 		reloadtime = 10,
 		renderType = 0,
 		rgbColor = [[1 1 0]],
