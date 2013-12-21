@@ -473,7 +473,7 @@ AimPrimary(heading, pitch)
 	bAiming = TRUE;
 	while( !Static_Var_3 )
 	{
-		sleep 100;
+		sleep 30;
 	}
 	turn body to y-axis heading speed <150.000000>;
 	turn pack to x-axis <0.000000> - pitch speed <150.000000>;
