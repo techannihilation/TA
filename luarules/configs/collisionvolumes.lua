@@ -76,6 +76,27 @@ local unitCollisionVolume = {}			--dynamic collision volume definitions
 local pieceCollisionVolume = {}			--per piece collision volume definitions
 local dynamicPieceCollisionVolume = {}	--dynamic per piece collision volume definitions
 
+local sublist = {
+    [UnitDefNames["tllwhale"].id] = true, --hmm
+    [UnitDefNames["tllacsub"].id] = true,
+    [UnitDefNames["coracsub"].id] = true,
+    [UnitDefNames["armacsub"].id] = true,
+    [UnitDefNames["tllorc"].id] = true,
+    [UnitDefNames["armrecl"].id] = true,
+    [UnitDefNames["uppercut"].id] = true,
+    [UnitDefNames["tllsquid"].id] = true,
+    [UnitDefNames["tllshark"].id] = true,
+    [UnitDefNames["tllplunger"].id] = true,
+    [UnitDefNames["corssub"].id] = true,
+    [UnitDefNames["corsub"].id] = true,
+    [UnitDefNames["tllmanta"].id] = true,
+    [UnitDefNames["tllcsub"].id] = true,
+    [UnitDefNames["armsub"].id] = true,
+    [UnitDefNames["correcl"].id] = true,
+    [UnitDefNames["armsubk"].id] = true,
+    [UnitDefNames["tawf009"].id] = true,
+    [UnitDefNames["corshark"].id] = true,
+}
 
 	unitCollisionVolume["armason"] = {
 		on={57,60,57,0,-7,0,1,1,1},    --{Xscale,Yscale,Zscale, Xoffset,Yoffset,Zoffset, vType,tType,axis}
@@ -238,4 +259,4 @@ local dynamicPieceCollisionVolume = {}	--dynamic per piece collision volume defi
 			["0"]={39,39,39,0,-2,0,0,1},
 		}
 	}
-return unitCollisionVolume, pieceCollisionVolume, dynamicPieceCollisionVolume
+return unitCollisionVolume, pieceCollisionVolume, dynamicPieceCollisionVolume, sublist
