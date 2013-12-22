@@ -17,6 +17,7 @@ local unitDef = {
 	builder = true,
 	buildPic = [[ARMCARRY.png]],
 	buildTime = 85394,
+	canassist = false,
 	canGuard = true,
 	canMove = true,
 	canPatrol = true,

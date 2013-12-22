@@ -17,6 +17,7 @@ local unitDef = {
 	builder = true,
 	buildPic = [[CORCARRY.png]],
 	buildTime = 85271,
+	canassist = false,
 	canGuard = true,
 	canMove = true,
 	canPatrol = true,
