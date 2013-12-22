@@ -204,11 +204,30 @@ QueryWeapon3(piecenum)
 	piecenum = flare5;
 }
 
+AimWeapon3(heading, pitch)
+{
+	return (1);
+}
+
+FireWeapon3()
+{
+	sleep 150;
+}
+
 QueryWeapon4(piecenum)
 {
 	piecenum = flare6;
 }
 
+AimWeapon4(heading, pitch)
+{
+	return (1);
+}
+
+FireWeapon4()
+{
+	sleep 150;
+}
 SweetSpot(piecenum)
 {
 	piecenum = base;
