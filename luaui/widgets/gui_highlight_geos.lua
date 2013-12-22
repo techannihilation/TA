@@ -27,6 +27,22 @@ local glColor = gl.Color
 local glVertex = gl.Vertex
 local glBeginEnd = gl.BeginEnd
 local spGetMapDrawMode = Spring.GetMapDrawMode
+local SpGetSelectedUnits = Spring.GetSelectedUnits
+
+local tll_geo = UnitDefNames.tllgeo.id
+local tll_mohogeo = UnitDefNames.tllmohogeo.id
+local am_geo = UnitDefNames.amgeo.id
+local arm_for = UnitDefNames.armfor.id
+local arm_geo = UnitDefNames.armgeo.id
+local cm_geo = UnitDefNames.cmgeo.id
+local corbhmth_geo = UnitDefNames.corbhmth.id
+local corbhmth1_geo = UnitDefNames.corbhmth1.id
+local cor_geo = UnitDefNames.corgeo.id
+
+
+
+
+
 
 ----------------------------------------------------------------
 -- Functions
@@ -59,8 +75,9 @@ function widget:Shutdown()
 end
 
 function widget:DrawWorld()
-	
-	if spGetMapDrawMode() == 'metal' then
+    local _, cmdID = Spring.GetActiveCommand()
+	if spGetMapDrawMode() == 'metal' or cmdID == -tll_geo or cmdID == -tll_mohogeo or cmdID == -am_geo or cmdID == -arm_for or cmdID == -arm_geo or cmdID == -cm_geo
+	or cmdID == -corbhmth_geo or cmdID == -corbhmth1_geo or cmdID == -cor_geo then
 		
 		if not geoDisplayList then
 			geoDisplayList = gl.CreateList(HighlightGeos)
