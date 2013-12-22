@@ -15,7 +15,6 @@ local modrules  = {
     reclaimMethod = 0,
   },
 
-
   sensors = {   
     los = {
       losMipLevel = 3, 
@@ -36,8 +35,13 @@ local modrules  = {
   
   featureLOS = {
      featureVisibility = 2,
-	 },
+  },
     
+  transportability = {
+     transportHover  = 1,
+     --targetableTransportedUnits = true,
+  },
+  
   system = {
     luaThreadingModel = 2, --To be removed as of 95
     pathFinderSystem = (Spring.GetModOptions() and (Spring.GetModOptions().qtpfs == "qtpfs") and 1) or 0,
