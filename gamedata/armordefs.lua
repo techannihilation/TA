@@ -15,7 +15,7 @@ fighters = {
 },
 bombers = {
            "armblz",
-           "armcbomb",
+           "corfiend",
            "armcybr",
            "armlance",
            "armpnix",
