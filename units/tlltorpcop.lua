@@ -31,6 +31,7 @@ local unitDef = {
 	energyUse = 1.2,
 	explodeAs = [[BIG_UNITEX]],
 	firestandorders = 1,
+	floater = true,
 	footprintX = 3,
 	footprintZ = 3,
 	hoverAttack = true,
