@@ -13,6 +13,7 @@ end
 -- Pop-up style unit and per piece collision volume definitions
 local popupUnits = {}		--list of pop-up style units
 local unitCollisionVolume, pieceCollisionVolume, dynamicPieceCollisionVolume, sublist = include("LuaRules/Configs/CollisionVolumes.lua")
+local mapFeatures = {}
 
 -- Localization and speedups
 local spGetPieceCollisionData = Spring.GetUnitPieceCollisionVolumeData
@@ -44,15 +45,15 @@ if (gadgetHandler:IsSyncedCode()) then
 	function gadget:Initialize()
 		local mapConfig = "LuaRules/Configs/DynCVmapCFG/" .. Game.mapName .. ".lua"
 		if VFS.FileExists(mapConfig) then
-			local mapFeatures = VFS.Include(mapConfig)
+			mapFeatures = VFS.Include(mapConfig)
 			for _, featID in pairs(Spring.GetAllFeatures()) do
 				local featureModel = FeatureDefs[Spring.GetFeatureDefID(featID)].modelname:lower()
 				if featureModel:len() > 4 then
 					local featureModelTrim
 					if Game.version > "91.0" then
-						featureModelTrim = featureModel:sub(1,-5) -- featureModel:match("/.*%."):sub(2,-2)
-					else
 						featureModelTrim = featureModel:match("/.*%."):sub(2,-2)
+					else
+						featureModelTrim = featureModel:sub(1,-5)
 					end
 					if mapFeatures[featureModelTrim] then
 						local p = mapFeatures[featureModelTrim]
@@ -102,10 +103,8 @@ if (gadgetHandler:IsSyncedCode()) then
 	--also handles per piece collision volume definitions
 	function gadget:UnitCreated(unitID, unitDefID, unitTeam)
 		if sublist[unitDefID] then
-			spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*0.65, spGetUnitHeight(unitID)*0.65)
-		end
-	  
-		if (pieceCollisionVolume[UnitDefs[unitDefID].name]) then
+			spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*0.40, spGetUnitHeight(unitID)*0.40)
+		elseif (pieceCollisionVolume[UnitDefs[unitDefID].name]) then
 			local t = pieceCollisionVolume[UnitDefs[unitDefID].name]
 			for pieceIndex=0, #spGetPieceList(unitID)-1 do
 				local p = t[tostring(pieceIndex)]
@@ -150,6 +149,16 @@ if (gadgetHandler:IsSyncedCode()) then
 			else
 				spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*rs, spGetUnitHeight(unitID)*hs)
 			end
+		elseif UnitDefs[unitDefID].model.type=="3do" then	-- a 3DO unit that has dynamic or per-piece CV still needs a radius and height adjustment
+			local rs, hs
+			if (spGetUnitRadius(unitID)>47 and not UnitDefs[unitDefID].canFly) then
+				rs, hs = 0.68, 0.68
+			elseif (not UnitDefs[unitDefID].canFly) then
+				rs, hs = 0.75, 0.75
+			else
+				rs, hs = 0.52, 0.24
+			end
+			spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*rs, spGetUnitHeight(unitID)*hs)
 		end
 	end
 
@@ -157,7 +166,18 @@ if (gadgetHandler:IsSyncedCode()) then
 	-- Same as for 3DO units, but for features
 	function gadget:FeatureCreated(featureID, allyTeam)
 		local featureModel = FeatureDefs[Spring.GetFeatureDefID(featureID)].modelname:lower()
-		if featureModel:find(".3do") then
+		if featureModel == "" then return end	--geovents or engine trees have no models		
+		local featureModelTrim
+		if Game.version > "91.0" then
+			featureModelTrim = featureModel:match("/.*%."):sub(2,-2)
+		else
+			featureModelTrim = featureModel:sub(1,-5)
+		end
+		if mapFeatures[featureModelTrim] then	-- it just might happen that some map features can have corpses
+			local p = mapFeatures[featureModelTrim]
+			spSetFeatureCollisionData(featureID, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9])
+			spSetFeatureRadiusAndHeight(featureID, min(p[1], p[3])*0.5, p[2])		
+		elseif featureModelTrim:find(".3do",-1) then
 			local rs, hs
 			if (spGetFeatureRadius(featureID)>47) then
 				rs, hs = 0.68, 0.60
@@ -168,7 +188,7 @@ if (gadgetHandler:IsSyncedCode()) then
 			if (vtype>=3 and xs==ys and ys==zs) then
 				spSetFeatureCollisionData(featureID, xs*rs, ys*hs, zs*rs,  xo, yo-ys*0.09, zo,  vtype, htype, axis)
 			end
-			spSetFeatureRadiusAndHeight(featureID, spGetFeatureRadius(featureID)*rs, spGetFeatureHeight(featureID)*hs)			
+			spSetFeatureRadiusAndHeight(featureID, spGetFeatureRadius(featureID)*rs, spGetFeatureHeight(featureID)*hs)
 		end
 	end
 
