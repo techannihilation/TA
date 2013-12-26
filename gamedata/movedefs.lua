@@ -214,13 +214,6 @@ local moveDatas
 		crushstrength = 5,
 		subMarine = 1,
 	},
-	UBOAT4 = {
-		footprintx = 4,
-		footprintz = 4,
-		minwaterdepth = 40,
-		crushstrength = 5,
-		subMarine = 1,
-	},
 	TANKHOVER3 = {
 		crushstrength = 90,
 		depthmod = 0,
@@ -535,17 +528,6 @@ else
 		heatmapping = true,
 		heatmod = 0.15,
 		minwaterdepth = 35,
-		crushstrength = 5,
-		subMarine = 1,
-	},
-	
-	UBOAT4 = {
-		footprintx = 4,
-		footprintz = 4,
-		heatproduced = 40,
-		heatmapping = false,
-		heatmod = 0.15,
-		minwaterdepth = 40,
 		crushstrength = 5,
 		subMarine = 1,
 	},
