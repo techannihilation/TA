@@ -79,6 +79,7 @@ gadgetHandler = {
   xViewSizeOld = 1,
   yViewSizeOld = 1,
 
+  actionHandler = actionHandler,
   mouseOwner = nil,
 }
 
@@ -803,6 +804,13 @@ end
 --
 --  The call-in distribution routines
 --
+function gadgetHandler:GameSetup(state, ready, playerStates)
+  local success, newReady = false, ready
+  for _,g in ipairs(self.GameSetupList) do
+    success, newReady = g:GameSetup(state, ready, playerStates)
+  end
+  return success, newReady
+end
 
 function gadgetHandler:GamePreload()
   for _,g in ipairs(self.GamePreloadList) do
@@ -1177,6 +1185,7 @@ function gadgetHandler:TerraformComplete(unitID, unitDefID, unitTeam,
 end
 
 
+
 function gadgetHandler:AllowWeaponTargetCheck(attackerID, attackerWeaponNum, attackerWeaponDefID)
 	for _, g in ipairs(self.AllowWeaponTargetCheckList) do
 		if (not g:AllowWeaponTargetCheck(attackerID, attackerWeaponNum, attackerWeaponDefID)) then
@@ -1202,6 +1211,16 @@ function gadgetHandler:AllowWeaponTarget(attackerID, targetID, attackerWeaponNum
 	end
 
 	return allowed, priority
+end
+
+function gadgetHandler:AllowWeaponInterceptTarget(interceptorUnitID, interceptorWeaponNum, interceptorTargetID)
+	for _, g in ipairs(self.AllowWeaponInterceptTargetList) do
+		if (not g:AllowWeaponInterceptTarget(interceptorUnitID, interceptorWeaponNum, interceptorTargetID)) then
+			return false
+		end
+	end
+
+	return true
 end
 
 
@@ -1263,9 +1282,9 @@ function gadgetHandler:UnitIdle(unitID, unitDefID, unitTeam)
 end
 
 
-function gadgetHandler:UnitCmdDone(unitID, unitDefID, unitTeam, cmdID, cmdTag)
+function gadgetHandler:UnitCmdDone(unitID, unitDefID, unitTeam, cmdID, cmdTag, cmdParams, cmdOpts)
   for _,g in ipairs(self.UnitCmdDoneList) do
-    g:UnitCmdDone(unitID, unitDefID, unitTeam, cmdID, cmdTag)
+    g:UnitCmdDone(unitID, unitDefID, unitTeam, cmdID, cmdTag, cmdParams, cmdOpts)
   end
   return
 end
@@ -1581,6 +1600,15 @@ function gadgetHandler:DefaultCommand(type, id)
   return
 end
 
+function gadgetHandler:CommandNotify(id, params, options)
+  for _,g in ipairs(self.CommandNotifyList) do
+    if (g:CommandNotify(id, params, options)) then
+      return true
+    end
+  end
+  return false
+end
+
 
 function gadgetHandler:DrawGenesis()
   for _,g in ipairs(self.DrawGenesisList) do
@@ -1744,6 +1772,16 @@ function gadgetHandler:GetTooltip(x, y)
     end
   end
   return ''
+end
+
+
+function gadgetHandler:MapDrawCmd(playerID, cmdType, px, py, pz, labelText)
+  for _,g in ipairs(self.MapDrawCmdList) do
+    if (g:MapDrawCmd(playerID, cmdType, px, py, pz, labelText)) then
+      return true
+    end
+  end
+  return false
 end
 
 --------------------------------------------------------------------------------
