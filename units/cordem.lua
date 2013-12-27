@@ -125,7 +125,9 @@ local weaponDefs = {
 		weapontype = "Flame",
 		weaponvelocity = 265,
 		damage = {
-			default = 20,
+			default = 30,
+			flamethrowers = 10,
+			raider_resistant = 14,
 			subs = 1,
 		},
 	},
