@@ -34,6 +34,7 @@ local tll_mohogeo = UnitDefNames.tllmohogeo.id
 local am_geo = UnitDefNames.amgeo.id
 local arm_for = UnitDefNames.armfor.id
 local arm_geo = UnitDefNames.armgeo.id
+local arm_gmm = UnitDefNames.armgmm.id
 local cm_geo = UnitDefNames.cmgeo.id
 local corbhmth_geo = UnitDefNames.corbhmth.id
 local corbhmth1_geo = UnitDefNames.corbhmth1.id
@@ -77,7 +78,7 @@ end
 function widget:DrawWorld()
     local _, cmdID = Spring.GetActiveCommand()
 	if spGetMapDrawMode() == 'metal' or cmdID == -tll_geo or cmdID == -tll_mohogeo or cmdID == -am_geo or cmdID == -arm_for or cmdID == -arm_geo or cmdID == -cm_geo
-	or cmdID == -corbhmth_geo or cmdID == -corbhmth1_geo or cmdID == -cor_geo then
+	or cmdID == -corbhmth_geo or cmdID == -corbhmth1_geo or cmdID == -cor_geo or cmdID == -arm_gmm then
 		
 		if not geoDisplayList then
 			geoDisplayList = gl.CreateList(HighlightGeos)
