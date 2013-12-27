@@ -98,6 +98,56 @@ local sublist = {
     [UnitDefNames["corshark"].id] = true,
 }
 
+local isship = {
+       [UnitDefNames['armaas'].id] = true,
+       [UnitDefNames['armbats'].id] = true,
+       [UnitDefNames['armbc'].id] = true,
+       [UnitDefNames['armcarry'].id] = true,
+       [UnitDefNames['armcrus'].id] = true,
+       [UnitDefNames['armcs'].id] = true,
+       [UnitDefNames['armhcar'].id] = true,
+       [UnitDefNames['armhls'].id] = true,
+       [UnitDefNames['armmls'].id] = true,
+       [UnitDefNames['armmship'].id] = true,
+       [UnitDefNames['armpt'].id] = true,
+       [UnitDefNames['armroy'].id] = true,
+       [UnitDefNames['armsjam'].id] = true,
+       [UnitDefNames['armtrmph'].id] = true,
+       [UnitDefNames['armtship'].id] = true,
+       [UnitDefNames['aseadragon'].id] = true,
+       [UnitDefNames['corarch'].id] = true,
+       [UnitDefNames['corasship'].id] = true,
+       [UnitDefNames['corbats'].id] = true,
+       [UnitDefNames['corblackhy'].id] = true,
+       [UnitDefNames['corcarry'].id] = true,
+       [UnitDefNames['corcrus'].id] = true,
+       [UnitDefNames['corcs'].id] = true,
+       [UnitDefNames['coresupp'].id] = true,
+       [UnitDefNames['corhcar'].id] = true,
+       [UnitDefNames['cormls'].id] = true,
+       [UnitDefNames['cormship'].id] = true,
+       [UnitDefNames['corpt'].id] = true,
+       [UnitDefNames['corroy'].id] = true,
+       [UnitDefNames['corsjam'].id] = true,
+       [UnitDefNames['cortship'].id] = true,
+       [UnitDefNames['cortyrnt'].id] = true,
+       [UnitDefNames['decade'].id] = true,
+       [UnitDefNames['tllacs'].id] = true,
+       [UnitDefNames['tllambassador'].id] = true,
+       [UnitDefNames['tllasship'].id] = true,
+       [UnitDefNames['tllbats2'].id] = true,
+       [UnitDefNames['tllboat2'].id] = true,
+       [UnitDefNames['tllcs'].id] = true,
+       [UnitDefNames['tllequalizer'].id] = true,
+       [UnitDefNames['tllgiant'].id] = true,
+       [UnitDefNames['tllmixer'].id] = true,
+       [UnitDefNames['tllotter'].id] = true,
+       [UnitDefNames['tllsting'].id] = true,
+       [UnitDefNames['tllviking'].id] = true,
+       [UnitDefNames['tllviolator'].id] = true,
+       [UnitDefNames['tllvisitor'].id] = true,
+}
+
 	unitCollisionVolume["armason"] = {
 		on={57,60,57,0,-7,0,1,1,1},    --{Xscale,Yscale,Zscale, Xoffset,Yoffset,Zoffset, vType,tType,axis}
 		off={24,34,24,0,10,0,1,1,1},
@@ -259,4 +309,4 @@ local sublist = {
 			["0"]={39,39,39,0,-2,0,0,1},
 		}
 	}
-return unitCollisionVolume, pieceCollisionVolume, dynamicPieceCollisionVolume, sublist
+return unitCollisionVolume, pieceCollisionVolume, dynamicPieceCollisionVolume, sublist, isship

@@ -12,7 +12,7 @@ end
 
 -- Pop-up style unit and per piece collision volume definitions
 local popupUnits = {}		--list of pop-up style units
-local unitCollisionVolume, pieceCollisionVolume, dynamicPieceCollisionVolume, sublist = include("LuaRules/Configs/CollisionVolumes.lua")
+local unitCollisionVolume, pieceCollisionVolume, dynamicPieceCollisionVolume, sublist, isship = include("LuaRules/Configs/CollisionVolumes.lua")
 local mapFeatures = {}
 
 -- Localization and speedups
@@ -102,9 +102,7 @@ if (gadgetHandler:IsSyncedCode()) then
 	--for S3O models it's not needed and will in fact result in wrong collision volume
 	--also handles per piece collision volume definitions
 	function gadget:UnitCreated(unitID, unitDefID, unitTeam)
-		if sublist[unitDefID] then
-			spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*0.40, spGetUnitHeight(unitID)*0.40)
-		elseif (pieceCollisionVolume[UnitDefs[unitDefID].name]) then
+		if (pieceCollisionVolume[UnitDefs[unitDefID].name]) then
 			local t = pieceCollisionVolume[UnitDefs[unitDefID].name]
 			for pieceIndex=0, #spGetPieceList(unitID)-1 do
 				local p = t[tostring(pieceIndex)]
@@ -149,6 +147,9 @@ if (gadgetHandler:IsSyncedCode()) then
 			else
 				spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*rs, spGetUnitHeight(unitID)*hs)
 			end
+		end
+		if UnitDefs[unitDefID].model.type=="3do" and sublist[unitDefID] then
+			spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*0.50, spGetUnitHeight(unitID)*0.50)
 		elseif UnitDefs[unitDefID].model.type=="3do" then	-- a 3DO unit that has dynamic or per-piece CV still needs a radius and height adjustment
 			local rs, hs
 			if (spGetUnitRadius(unitID)>47 and not UnitDefs[unitDefID].canFly) then
@@ -160,6 +161,20 @@ if (gadgetHandler:IsSyncedCode()) then
 			end
 			spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*rs, spGetUnitHeight(unitID)*hs)
 		end
+		if UnitDefs[unitDefID].model.type=="3do" and isship[unitDefID] then
+			local bx,by,bz,mx,my,mz,ax,ay,az = Spring.GetUnitPosition(unitID,true,true) --basepoint,midpoint,aimpoint
+			local h = Spring.GetUnitHeight(unitID)
+			if by <= 0 and by + h >= 0 then
+				--Spring.Echo("Aimpoint Waterline: Set aimpoint of " .. unitID)
+				Spring.SetUnitMidAndAimPos(unitID,mx,my,mz,ax,0,az) 
+			end
+		elseif UnitDefs[unitDefID].model.type=="3do" and not UnitDefs[unitDefID].canMove and UnitDefs[unitDefID].waterline > 0 then
+			local bx,by,bz,mx,my,mz,ax,ay,az = Spring.GetUnitPosition(unitID,true,true) --basepoint,midpoint,aimpoint
+			local h = Spring.GetUnitHeight(unitID)/3
+				--Spring.Echo("floater Aimpoint Waterline: Set aimpoint of " .. unitID)
+				Spring.SetUnitMidAndAimPos(unitID,mx,my,mz,ax,h,az) 
+		end
+		
 	end
 
 
