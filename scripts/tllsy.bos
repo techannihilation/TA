@@ -64,10 +64,12 @@ OpenYard()
 		set YARD_OPEN to 1;
 	}
 	set BUGGER_OFF to 0;
+	set ARMORED to 1;
 }
 
 CloseYard()
 {
+	set ARMORED to 0;
 	set YARD_OPEN to 0;
 	while( get YARD_OPEN )
 	{
