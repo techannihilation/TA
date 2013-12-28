@@ -13,13 +13,11 @@ local unitDef = {
 	builder = false,
 	buildPic = [[tlldmc.png]],
 	buildTime = 150000,
-	
 	buildingGroundDecalDecaySpeed=30,
 	buildingGroundDecalSizeX=8,
 	buildingGroundDecalSizeY=8,
 	useBuildingGroundDecal = true,
 	buildingGroundDecalType=[[tlldmc_aoplane.dds]],
-	
 	canAttack = true,
 	canstop = 1,
 	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
@@ -34,6 +32,9 @@ local unitDef = {
 	firestandorders = 1,
 	footprintX = 5,
 	footprintZ = 5,
+	iconType = [[building]],
+	idleAutoHeal = 7,
+	idleTime = 1800,
 	maxDamage = 65000,
 	maxSlope = 10,
 	maxWaterDepth = 0,

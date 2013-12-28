@@ -1,4 +1,4 @@
--- UNITDEF -- TLLAMBASSADOR --
+ -- UNITDEF -- TLLAMBASSADOR --
 --------------------------------------------------------------------------------
 
 local unitName = "tllambassador"
@@ -33,6 +33,8 @@ local unitDef = {
 	floater = true,
 	footprintX = 5,
 	footprintZ = 5,
+	idleAutoHeal = 5,
+	idleTime = 1800,
 	maneuverleashlength = 640,
 	maxDamage = 15200,
 	maxVelocity = 2.85,
