@@ -6,7 +6,7 @@ local unitName = "tllprob"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 1.4,
+	acceleration = 0.5,
 	bankscale = 1,
 	bmcode = 1,
 	brakeRate = 10,
@@ -33,7 +33,7 @@ local unitDef = {
 	maneuverleashlength = 1280,
 	maxDamage = 96,
 	maxSlope = 10,
-	maxVelocity = 11.5,
+	maxVelocity = 12.0,
 	maxWaterDepth = 255,
 	metalStorage = 0,
 	mobilestandorders = 1,
