@@ -170,7 +170,7 @@ if (gadgetHandler:IsSyncedCode()) then
 			end		
 		end
 		if UnitDefs[unitDefID].name == "armtl" or UnitDefs[unitDefID].name == "armatl" or UnitDefs[unitDefID].name == "cortl" or UnitDefs[unitDefID].name == "coratl"
-		or UnitDefs[unitDefID].name == "tlltorp" or UnitDefs[unitDefID].name == "tllatorp" then
+		or UnitDefs[unitDefID].name == "tlltorp" or UnitDefs[unitDefID].name == "tllatorp" or UnitDefs[unitDefID].name == "tllwmjam" then
 			local bx,by,bz,mx,my,mz,ax,ay,az = Spring.GetUnitPosition(unitID,true,true) --basepoint,midpoint,aimpoint
 			--Spring.Echo("Aimpoint Waterline: Set aimpoint of " .. unitID .. " torp ".. ay)
 			Spring.SetUnitMidAndAimPos(unitID,mx,my,mz,ax,2,az)
