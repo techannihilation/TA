@@ -146,6 +146,9 @@ local isship = {
        [UnitDefNames['tllviking'].id] = true,
        [UnitDefNames['tllviolator'].id] = true,
        [UnitDefNames['tllvisitor'].id] = true,
+       --add two tll units fo decade fix until next engine release
+       [UnitDefNames['tllwmconv'].id] = true,
+       [UnitDefNames['tllasonar'].id] = true,
 }
 
 	unitCollisionVolume["armason"] = {
