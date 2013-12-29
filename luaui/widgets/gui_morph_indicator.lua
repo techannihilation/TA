@@ -58,7 +58,7 @@ local alliedUnits  = {}
 local myAllyTeamID = 666
 
 local iconsize   = 33
-local iconoffset = -20
+local iconoffset = 14
 
 local rankTexBase = 'LuaUI/Images/Ranks/'
 local rankTextures = {
@@ -271,7 +271,7 @@ function widget:DrawWorld()
 	   if dist < MiMaxDist then 
 	     if rankTexHeight[1] then
 	        glTexture(rankTexHeight[1])
-	        glDrawFuncAtUnit(unitID, true, DrawUnitFunc, rankTexHeight[2])
+	        glDrawFuncAtUnit(unitID, false, DrawUnitFunc, rankTexHeight[2])
 	     end
            end
        end
