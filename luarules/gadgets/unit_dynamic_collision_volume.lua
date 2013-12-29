@@ -166,15 +166,15 @@ if (gadgetHandler:IsSyncedCode()) then
 			local h = Spring.GetUnitHeight(unitID)
 			if by <= 0 and by + h >= 0 then
 				--Spring.Echo("Aimpoint Waterline: Set aimpoint of " .. unitID)
-				Spring.SetUnitMidAndAimPos(unitID,mx,my,mz,ax,0,az) 
-			end
-		elseif UnitDefs[unitDefID].model.type=="3do" and not UnitDefs[unitDefID].canMove and UnitDefs[unitDefID].waterline > 0 then
-			local bx,by,bz,mx,my,mz,ax,ay,az = Spring.GetUnitPosition(unitID,true,true) --basepoint,midpoint,aimpoint
-			local h = Spring.GetUnitHeight(unitID)/3
-				--Spring.Echo("floater Aimpoint Waterline: Set aimpoint of " .. unitID)
-				Spring.SetUnitMidAndAimPos(unitID,mx,my,mz,ax,h,az) 
+				Spring.SetUnitMidAndAimPos(unitID,mx,my,mz,ax,2,az) 
+			end		
 		end
-		
+		if UnitDefs[unitDefID].name == "armtl" or UnitDefs[unitDefID].name == "armatl" or UnitDefs[unitDefID].name == "cortl" or UnitDefs[unitDefID].name == "coratl"
+		or UnitDefs[unitDefID].name == "tlltorp" or UnitDefs[unitDefID].name == "tllatorp" then
+			local bx,by,bz,mx,my,mz,ax,ay,az = Spring.GetUnitPosition(unitID,true,true) --basepoint,midpoint,aimpoint
+			--Spring.Echo("Aimpoint Waterline: Set aimpoint of " .. unitID .. " torp ".. ay)
+			Spring.SetUnitMidAndAimPos(unitID,mx,my,mz,ax,2,az)
+		end
 	end
 
 
