@@ -149,6 +149,7 @@ local isship = {
        --add two tll units fo decade fix until next engine release
        [UnitDefNames['tllwmconv'].id] = true,
        [UnitDefNames['tllasonar'].id] = true,
+       [UnitDefNames['tllsonar'].id] = true,
 }
 
 	unitCollisionVolume["armason"] = {
