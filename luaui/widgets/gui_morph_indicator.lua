@@ -51,9 +51,10 @@ local morphRanks ={}
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
 
-local update = 2.0
+local update = 4.0
 
 local alliedUnits  = {}
+local smallList = {}
 
 local myAllyTeamID = 666
 
@@ -180,7 +181,10 @@ local function SetUnitRank(unitID)
 
   local rankTex = rankTextures[rankIndex]
 
-  alliedUnits[unitID] = { rankTex, ud.height + iconoffset }
+  alliedUnits[unitID] = {}
+    if (rankTex ~= nil) then 
+      smallList[unitID] = { rankTex, ud.height + iconoffset }
+    end
 end
 
 
@@ -229,6 +233,7 @@ end
 
 function widget:UnitDestroyed(unitID, unitDefID, unitTeam)
   alliedUnits[unitID] = nil
+  smallList[unitID] = nil
 end
 
 
@@ -237,6 +242,7 @@ function widget:UnitGiven(unitID, unitDefID, oldTeam, newTeam)
     SetUnitRank(unitID)
   else
     alliedUnits[unitID] = nil
+    smallList[unitID] = nil
   end
 end
 
@@ -253,7 +259,7 @@ end
 
 function widget:DrawWorld()
   if Spring.IsGUIHidden() == false then 
-    --if (next(alliedUnits) == nil) then
+    --if (next(smallList) == nil) then
     --  return -- avoid unnecessary GL calls
    -- end
   
@@ -263,16 +269,14 @@ function widget:DrawWorld()
     glDepthTest(true)
     glAlphaTest(GL_GREATER, 0.01)
     local cx, cy, cz = Spring.GetCameraPosition()
-    for unitID, rankTexHeight in pairs(alliedUnits) do
+    for unitID, rankTexHeight in pairs(smallList) do
       local ux,uy,uz = GetUnitViewPosition(unitID)
       if ux~=nil then
         local dx, dy, dz = ux-cx, uy-cy, uz-cz
         local dist = dx*dx + dy*dy + dz*dz
 	   if dist < MiMaxDist then 
-	     if rankTexHeight[1] then
 	        glTexture(rankTexHeight[1])
 	        glDrawFuncAtUnit(unitID, false, DrawUnitFunc, rankTexHeight[2])
-	     end
            end
        end
     end
