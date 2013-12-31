@@ -81,7 +81,7 @@ local unitDef = {
 		[17] = [[corfhlt]],
 		[18] = [[cortl]],
 		[19] = [[corplat]],
-		[20] = [[corhevsenan]],
+		[20] = [[corfnanotc]],
 		[21] = [[corech3]],
 	},
 	featureDefs = nil,

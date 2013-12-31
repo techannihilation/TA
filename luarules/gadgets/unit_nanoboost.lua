@@ -54,19 +54,27 @@ local nanos = {
   [UnitDefNames["armnanotc2"].id] = true,
   [UnitDefNames["armnanotc3"].id] = true,
   [UnitDefNames["ananotower"].id] = true,
-  [UnitDefNames["armhevsenan"].id] = true,
+  [UnitDefNames["armfnanotc"].id] = true,
+  [UnitDefNames["armfnanotc1"].id] = true,
+  [UnitDefNames["armfnanotc2"].id] = true,
+  [UnitDefNames["armfnanotc3"].id] = true,
   --Core
   [UnitDefNames["cornanotc"].id] = true,
   [UnitDefNames["cornanotc1"].id] = true,
   [UnitDefNames["cornanotc2"].id] = true,
   [UnitDefNames["cornanotc3"].id] = true,
   [UnitDefNames["cnanotower"].id] = true,
-  [UnitDefNames["corhevsenan"].id] = true,
+  [UnitDefNames["corfnanotc"].id] = true,
+  [UnitDefNames["corfnanotc1"].id] = true,
+  [UnitDefNames["corfnanotc2"].id] = true,
+  [UnitDefNames["corfnanotc3"].id] = true,
   --Tll
   [UnitDefNames["tllnanotc"].id] = true,
   [UnitDefNames["tllnanotc1"].id] = true,
   [UnitDefNames["tllnanotc2"].id] = true,
-  [UnitDefNames["tllhevsenan"].id] = true,
+  [UnitDefNames["tllfnanotc"].id] = true,
+  [UnitDefNames["tllfnanotc1"].id] = true,
+  [UnitDefNames["tllfnanotc2"].id] = true,
 }
 
 local buildspeedCmdDesc = {

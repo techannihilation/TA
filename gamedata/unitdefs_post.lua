@@ -54,7 +54,10 @@ local WTimeUnits = {
 		["armfhp"] = true,
 		["armgant"] = true,
 		["armhcar"] = true,
-		["armhevsenan"] = true,
+		["armfnanotc"] = true,
+		["armfnanotc1"] = true,
+		["armfnanotc2"] = true,
+		["armfnanotc3"] = true,
 		["armhp"] = true,
 		["armlab"] = true,
 		["armmechl"] = true,
@@ -121,7 +124,10 @@ local WTimeUnits = {
 		["corgant"] = true,
 		["corgant1"] = true,
 		["corhcar"] = true,
-		["corhevsenan"] = true,
+		["corfnanotc"] = true,
+		["corfnanotc1"] = true,
+		["corfnanotc2"] = true,
+		["corfnanotc3"] = true,
 		["corhp"] = true,
 		["corjurgen"] = true,
 		["corlab"] = true,
@@ -180,7 +186,9 @@ local WTimeUnits = {
 		["tllcv"] = true,
 		["tllevp"] = true,
 		["tllgiant"] = true,
-		["tllhevsenan"] = true,
+		["tllfnanotc"] = true,
+		["tllfnanotc1"] = true,
+		["tllfnanotc2"] = true,
 		["tllhp"] = true,
 		["tllhpns"] = true,
 		["tllhtcb"] = true,
@@ -206,11 +214,20 @@ local Nanos = {
 	cornanotc1 = true,
 	cornanotc2 = true,
 	cornanotc3 = true,
-	armhevsenan = true,
-	corhevsenan = true,
 	tllnanotc = true,
 	tllnanotc1 = true,
-	tllnanotc2 = true,
+	tllnanotc2 = true,	
+	armfnanotc = true,
+	armfnanotc1 = true,
+	armfnanotc2 = true,
+	armfnanotc3 = true,
+	corfnanotc = true,
+	corfnanotc1 = true,
+	corfnanotc2 = true,
+	corfnanotc3 = true,
+	tllfnanotc = true,
+	tllfnanotc1 = true,
+	tllfnanotc2 = true,
 }
 
 -- Set los radar emit heights for all units
@@ -314,7 +331,6 @@ local LosRadar = {
 ["armguard"] = 30.768804550171,
 ["armhcar"] = 46.368804931641,
 ["armhdpw"] = 21.374128341675,
-["armhevsenan"] = 20.699998855591,
 ["armhlt"] = 79.108726501465,
 ["armhys"] = 65.653953552246,
 ["armiguana"] = 21.520320892334,
@@ -663,7 +679,6 @@ local LosRadar = {
 ["tllgeo"] = 49.038093566895,
 ["tllgiant"] = 48.921562194824,
 ["tllgrim"] = 78.513931274414,
-["tllhevsenan"] = 20.699998855591,
 ["tllhlt"] = 47.88187789917,
 ["tllhltns"] = 50.006248474121,
 ["tllhmt"] = 37.422386169434,
@@ -974,4 +989,14 @@ for name, ud in pairs(UnitDefs) do
 		ud.pushresistant = true
 		end
 end
+
+local count = 0
+for name, ud in pairs(UnitDefs) do
+		if not (ud.idleautoheal) or not (ud.idletime) then
+		--Spring.Echo("idelauto heal is :- " ..ud.idleautoheal .. " for " .. ud.unitname .. " with idletime of :- " ..ud.idletime )
+		Spring.Echo("default autoheal for "..ud.unitname)
+		count = count + 1
+		end
+end
+Spring.Echo("count is ".. count)
 

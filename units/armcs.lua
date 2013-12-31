@@ -81,7 +81,7 @@ local unitDef = {
 		[17] = [[armfhlt]],
 		[18] = [[armtl]],
 		[19] = [[armplat]],
-		[20] = [[armhevsenan]],
+		[20] = [[armfnanotc]],
 		[21] = [[armrech3]],
 	},
 	featureDefs = nil,
