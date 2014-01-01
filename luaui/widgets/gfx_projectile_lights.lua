@@ -129,12 +129,13 @@ function widget:Initialize() -- create lighttable
 		local weaponDef = WeaponDefs[w]
 		if not BlackList[weaponDef.name] then	-- prevent projectile light, if the weapon has some other light effect
 			if Customlight[weaponDef.name] then
-			       --Spring.Echo("Custom lights for :"..weaponDef.name)
+			       Spring.Echo(Customlight[weaponDef.name])
+			       Spring.Echo("Custom lights for :"..weaponDef.name)
 			       plighttable[w]=Customlight[weaponDef.name]
 			elseif (weaponDef.type == 'Cannon') and Plasmabatts[weaponDef.name] then
 				plighttable[w]={0.8,0.6,0,4.0*((weaponDef.size-0.65)/3.0),_,_,((weaponDef.size/2.6)+0.5)}  -- 7th is *size 
 			elseif (weaponDef.type == 'Cannon' or weaponDef.type == 'EmgCannon') then
-				plighttable[w] = {1.0,1.0,0.5,1.2*((weaponDef.size-0.65)/3.0)}
+				plighttable[w] = {0.8,0.6,0,1.2*((weaponDef.size-0.65)/2.5)}
 			elseif (weaponDef.type == 'LaserCannon') then
 				local colour = weaponDef.visuals
 				plighttable[w] = {
@@ -142,11 +143,11 @@ function widget:Initialize() -- create lighttable
 					weaponDef.projectilespeed * weaponDef.duration, colour.thickness^0.33333}			
 			elseif (weaponDef.type == 'LightningCannon') then
 				local colour = weaponDef.visuals
-				plighttable[w] = {colour.colorR, colour.colorG, colour.colorB, 0.75, true, 64*colour.thickness^0.45, 1.1}					
+				plighttable[w] = {colour.colorR, colour.colorG, colour.colorB, 0.16, true, 64*colour.thickness^0.50, 1.1}					
 			elseif (weaponDef.type == 'BeamLaser') then
-				local colour, alpha, thick, blend = weaponDef.visuals, 0.55, 0.35, 0
+				local colour, alpha, thick, blend = weaponDef.visuals, 0.15, 0.18, 0
 				if weaponDef.largeBeamLaser==true then
-					alpha, thick, blend = 0.25, 0.58, 0.12
+					alpha, thick, blend = 0.25, 0.80, 0.22
 				end
 				plighttable[w] = {colour.colorR+blend/5, colour.colorG+blend, colour.colorB, alpha, true, 64*colour.thickness^thick, 1.07}
 			--Core Missiles 

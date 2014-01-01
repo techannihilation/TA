@@ -53,8 +53,10 @@ local BlackList = {
    }
    
    local Customlight ={
-   ["armpw_emg"] = {0.8,0.6,0,30},
-   ["armpw1_emg"] = {0.8,0.6,0,30},
+   ["armpw_emg"] = {0.48,0.36,0,0.7},
+   ["armpw1_emg"] = {0.48,0.36,0,0.8},
+   ["armhdpw_arm_emcc3"] = {0.48,0.36,0.1,0.20},
+
    }
    
    local Armtrails = {
