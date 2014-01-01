@@ -64,6 +64,11 @@ local unitDef = {
 	customparams = {
 		RequireTech = [[Advanced T2 Unit Research Centre]],
 	},
+		sfxtypes = {
+		explosiongenerators = {
+			[1] = [[custom:pw_muzzle]],
+		},
+        },
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],

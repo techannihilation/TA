@@ -438,7 +438,7 @@ AimFromPrimary(piecenum)
 	{
 		piecenum = ruparm;
 	}
-	if( gun_1 == 1 )
+	else
 	{
 		piecenum = luparm;
 	}
@@ -450,7 +450,7 @@ QueryPrimary(piecenum)
 	{
 		piecenum = rflare;
 	}
-	if( gun_1 == 1 )
+	else
 	{
 		piecenum = lflare;
 	}
@@ -460,21 +460,49 @@ FirePrimary()
 {
 	if( gun_1 == 0 )
 	{
-		show rflare;
+		emit-sfx 1024 from rflare;
 		move rguncap to z-axis [-0.900000] now;
-		sleep 100;
-		hide rflare;
+		sleep 25;
+		wait-for-move rguncap along z-axis;
+		move rguncap to z-axis [0.000000] now;
+		emit-sfx 1024 from rflare;
+		move rguncap to z-axis [-0.900000] now;
+		sleep 25;
+		wait-for-move rguncap along z-axis;
+		move rguncap to z-axis [0.000000] now;
+		emit-sfx 1024 from rflare;
+		move rguncap to z-axis [-0.900000] now;
+		sleep 25;
+		wait-for-move rguncap along z-axis;
+		move rguncap to z-axis [0.000000] now;
+		emit-sfx 1024 from rflare;
+		move rguncap to z-axis [-0.900000] now;
+		sleep 25;
 		wait-for-move rguncap along z-axis;
 		move rguncap to z-axis [0.000000] now;
 		gun_1 = head;
 		return (0);
 	}
-	if( gun_1 == 1 )
+   else
 	{
-		show lflare;
+		emit-sfx 1024 from lflare;
 		move lguncap to z-axis [-0.900000] now;
-		sleep 100;
-		hide lflare;
+		sleep 25;
+		wait-for-move lguncap along z-axis;
+		move lguncap to z-axis [0.000000] now;
+		emit-sfx 1024 from lflare;
+		move lguncap to z-axis [-0.900000] now;
+		sleep 25;
+		wait-for-move lguncap along z-axis;
+		move lguncap to z-axis [0.000000] now;
+		emit-sfx 1024 from lflare;
+		move lguncap to z-axis [-0.900000] now;
+		sleep 25;
+		wait-for-move lguncap along z-axis;
+		move lguncap to z-axis [0.000000] now;
+		emit-sfx 1024 from lflare;
+		move lguncap to z-axis [-0.900000] now;
+		sleep 25;
 		wait-for-move lguncap along z-axis;
 		move lguncap to z-axis [0.000000] now;
 		gun_1 = torso;
@@ -489,13 +517,13 @@ AimPrimary(heading, pitch)
 	bAiming = TRUE;
 	while( !Static_Var_3 )
 	{
-		sleep 100;
+		sleep 65;
 	}
-	turn torso to y-axis heading speed <190.000000>;
-	turn lloarm to x-axis <0.000000> speed <200.000000>;
-	turn rloarm to x-axis <0.000000> speed <200.000000>;
-	turn luparm to x-axis <0.000000> - pitch speed <200.000000>;
-	turn ruparm to x-axis <0.000000> - pitch speed <200.000000>;
+	turn torso to y-axis heading speed <100.000000>;
+	turn lloarm to x-axis <0.000000> speed <100.000000>;
+	turn rloarm to x-axis <0.000000> speed <100.000000>;
+	turn luparm to x-axis <0.000000> - pitch speed <100.000000>;
+	turn ruparm to x-axis <0.000000> - pitch speed <100.000000>;
 	wait-for-turn torso around y-axis;
 	wait-for-turn lloarm around x-axis;
 	wait-for-turn rloarm around x-axis;
