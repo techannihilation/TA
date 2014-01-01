@@ -45,6 +45,7 @@ local unitDef = {
 	noAutoFire = false,
 	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMMART]],
+	pushResistant = true,
 	seismicSignature = 0,
 	selfDestructAs = [[BIG_UNIT]],
 	side = [[ARM]],

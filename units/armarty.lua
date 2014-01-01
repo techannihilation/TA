@@ -45,6 +45,7 @@ local unitDef = {
 	noAutoFire = false,
 	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMARTY]],
+	pushResistant = true,
 	radarDistance = 0,
 	selfDestructAs = [[BIG_UNIT]],
 	shootme = 1,

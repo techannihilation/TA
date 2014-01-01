@@ -40,6 +40,7 @@ local unitDef = {
 	noAutoFire = false,
 	noChaseCategory = [[SUB VTOL]],
 	objectName = [[TLLLOKI]],
+	pushResistant = true,
 	selfDestructAs = [[BIG_UNIT]],
 	shootme = 1,
 	side = [[TLL]],

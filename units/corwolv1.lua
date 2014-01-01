@@ -46,6 +46,7 @@ local unitDef = {
 	noAutoFire = false,
 	noChaseCategory = [[SUB VTOL]],
 	objectName = [[CORWOLV1]],
+	pushResistant = true,
 	seismicSignature = 0,
 	selfDestructAs = [[BIG_UNIT]],
 	side = [[CORE]],

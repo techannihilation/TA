@@ -48,6 +48,7 @@ local unitDef = {
 	noAutoFire = false,
 	noChaseCategory = [[VTOL]],
 	objectName = [[CORROCK]],
+	pushResistant = true,
 	seismicSignature = 0,
 	selfDestructAs = [[BIG_UNIT]],
 	side = [[CORE]],
