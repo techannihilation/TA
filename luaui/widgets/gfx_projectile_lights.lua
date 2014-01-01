@@ -129,8 +129,7 @@ function widget:Initialize() -- create lighttable
 		local weaponDef = WeaponDefs[w]
 		if not BlackList[weaponDef.name] then	-- prevent projectile light, if the weapon has some other light effect
 			if Customlight[weaponDef.name] then
-			       Spring.Echo(Customlight[weaponDef.name])
-			       Spring.Echo("Custom lights for :"..weaponDef.name)
+			       --Spring.Echo("Custom lights for :"..weaponDef.name)
 			       plighttable[w]=Customlight[weaponDef.name]
 			elseif (weaponDef.type == 'Cannon') and Plasmabatts[weaponDef.name] then
 				plighttable[w]={0.8,0.6,0,4.0*((weaponDef.size-0.65)/3.0),_,_,((weaponDef.size/2.6)+0.5)}  -- 7th is *size 
