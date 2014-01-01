@@ -29,11 +29,8 @@ local FindUnitCmdDesc = Spring.FindUnitCmdDesc
 local InsertUnitCmdDesc = Spring.InsertUnitCmdDesc 
 local EditUnitCmdDesc = Spring.EditUnitCmdDesc
 local SendMessageToTeam = Spring.SendMessageToTeam
-
-local sqrt = math.sqrt
-local pairs = pairs
-local ipairs = ipairs
-
+local ValidUnitID = Spring.ValidUnitID
+local GetUnitIsDead = Spring.GetUnitIsDead
 
 local builderDefs = {} 
 local mexDefs = {} 
@@ -407,13 +404,13 @@ function getDistance(unitID, mexID, teamID)
   local x1, _, y1 = GetUnitPosition(unitID) 
   local mex = mexes[teamID][mexID] 
   local x2, y2 = mex.x, mex.z 
-  return sqrt((x1-x2)^2 + (y1-y2)^2) 
+  return math.sqrt((x1-x2)^2 + (y1-y2)^2) 
 end 
 
 function getDistanceFromPosition(x1, y1, mexID, teamID) 
   local mex = mexes[teamID][mexID] 
   local x2, y2 = mex.x, mex.z 
-  return sqrt((x1-x2)^2 + (y1-y2)^2) 
+  return math.sqrt((x1-x2)^2 + (y1-y2)^2) 
 end 
 
 
@@ -488,8 +485,8 @@ function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, _)
     
     return false 
   elseif cmdID ~= CMD_AUTOMEX then 
-    if builder and builder.targetMex and getUnitPhase(unitID, teamID) == RECLAIMING then 
-      mexes[teamID][builder.targetMex].assignedBuilder = nil 
+    if builder and builder.targetMex and ValidUnitID(builder.targetMex) and (not GetUnitIsDead(builder.targetMex)) and (getUnitPhase(unitID, teamID) == RECLAIMING) then 
+	  mexes[teamID][builder.targetMex].assignedBuilder = nil 
     end 
     return true 
   end 
