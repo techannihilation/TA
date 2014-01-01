@@ -139,7 +139,6 @@ local weaponDefs = {
 		texture4 = [[null]],
 		tolerance = 9000,
 		tracks = true,
-		turnRate = 33000,
 		turret = true,
 		weaponAcceleration = 101,
 		weaponTimer = 5,
