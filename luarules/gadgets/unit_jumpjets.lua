@@ -348,10 +348,12 @@ function gadget:CommandFallback(unitID, unitDefID, teamID,    -- keeps getting
   local range   = jumpDef.range
   local reload  = jumpDef.reload or 0
   local t       = spGetGameSeconds()
-
+  local count   = 100/reload
 
   if (distSqr < (range*range)) then
+    spSetUnitRulesParam(unitID,"jumpReload",count*(t - lastJump[unitID])*0.01) --fix me need to make smoother progress bar
     if ( (t - lastJump[unitID] >= reload) and (not jumping[unitID]) ) then
+      
       local coords = table.concat(cmdParams)
       if (not jumps[coords]) then
         Jump(unitID, cmdParams)

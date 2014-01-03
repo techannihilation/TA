@@ -41,10 +41,12 @@ local drawFeatureHealth  = true
 local featureTitlesAlpha = featureBarAlpha * titlesAlpha/barAlpha
 local featureHpThreshold = 0.85
 
-local infoDistance = 250000 --max squared distance at which text it drawn for healthbars
-local maxFeatureInfoDistance = 150000 --max squared distance at which text it drawn for features
-local maxFeatureDistance = 250000 --max squared distance at which any info is drawn for features
-local maxUnitDistance = 9000000 --max squared distance at which any info is drawn for units  MUST BE LARGER THAN FOR FEATURES!
+local infoDistance = 300000 --max squared distance at which text it drawn for healthbars
+local maxFeatureInfoDistance = 250000 --max squared distance at which text it drawn for features
+local maxFeatureDistance = 500000 --max squared distance at which any info is drawn for features
+local maxUnitDistance = 5500000 --max squared distance at which any info is drawn for units  MUST BE LARGER THAN FOR FEATURES!
+
+local drawJumpJet        = Spring.GetGameRulesParam("jumpJets")
 
 local minReloadTime = 4 --// in seconds
 
@@ -78,6 +80,7 @@ local barColors = {
   stock   = { 0.50,0.50,0.50,barAlpha },
   reload  = { 0.00,0.60,0.60,barAlpha },
   shield  = { 0.20,0.60,0.60,barAlpha },
+  jump    = { 0.00,0.90,0.00,barAlpha },
   resurrect = { 1.00,0.50,0.00,featureBarAlpha },
   reclaim   = { 0.75,0.75,0.75,featureBarAlpha },
 }
@@ -454,6 +457,7 @@ do
     if (not customInfo[unitDefID]) then
       customInfo[unitDefID] = {
         height        = ud.height+14,
+	canJump       = (ud.customParams.canjump=="1")or(GetUnitRulesParam(unitID,"jumpReload")),
         maxShield     = ud.shieldPower,
         canStockpile  = ud.canStockpile,
         reloadTime    = ud.reloadTime,
@@ -557,6 +561,14 @@ do
           reload = 1 - ((reloadFrame-gameFrame)/30) / ci.reloadTime;
           reload = math.max(reload,0)
           AddBar("reload",reload,"reload",(fullText and floor(reload*100)..'%') or '')
+        end
+      end
+      
+        --// JUMPJET
+      if (drawJumpJet)and(ci.canJump) then
+        local jumpReload = GetUnitRulesParam(unitID,"jumpReload")
+        if (jumpReload and (jumpReload>0) and (jumpReload<1)) then
+          AddBar("jump",jumpReload,"jump",(fullText and floor(jumpReload*100)..'%') or '')
         end
       end
 

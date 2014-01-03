@@ -119,6 +119,7 @@ local unitDef = {
 	customParams = {
 		providetech = [[Battle Commander,Assault Commander]],
 		iscommander = true,
+		canjump   = [[1]],
 	},
 	featureDefs = nil,
 	sounds = {
