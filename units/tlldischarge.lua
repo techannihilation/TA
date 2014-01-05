@@ -66,13 +66,9 @@ local unitDef = {
 	featureDefs = nil,
 	sfxtypes = {
 		explosiongenerators = {
-			[1] = [[custom:aexxec_flare]],
-		},
-        },
-	sfxtypes = {
-		explosiongenerators = {
 			[1] = [[custom:jetpack]],
 			[2] = [[custom:tlldischarge]],
+			[1] = [[custom:might_and_magic]],
 		},
 	},
 	customparams = {

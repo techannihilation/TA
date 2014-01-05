@@ -63,6 +63,38 @@ return {
       },
     },
   },
+  
+  ["might_and_magic"] = {
+    sparkles = {
+     air                = true,
+      class              = [[CSimpleParticleSystem]],
+      count              = 1,
+      ground             = true,
+      unit               = 1,
+      water              = true,
+      properties = {
+        airdrag            = 0.95,
+        colormap           = [[0 0 0 0	0.5 0.5 0.9 0.01  0.6 0.6 0.9 0.01	  0.5 0.5 0.9 0.01	  0.1 0.1 0.1 0.01	  0 0 0 0.01]],
+        directional        = true,
+        emitrot            = 0,
+        emitrotspread      = 0,
+        emitvector         = [[0, 0, 0]],
+        gravity            = [[0, 0, 0]],
+        numparticles       = 3,
+        particlelife       = 15,
+        particlelifespread = 0,
+        particlesize       = 5.0,
+        particlesizespread = 0,
+        particlespeed      = 1,
+        particlespeedspread = 0,
+        pos                = [[0, 0, 0]],
+        sizegrowth         = 1.0,
+        sizemod            = -1.0,
+        texture            = [[lightb]],
+      },
+    },
+  },
+  
  ["tlldischarge"] = {
     unit_sparkles = {
       air                = true,

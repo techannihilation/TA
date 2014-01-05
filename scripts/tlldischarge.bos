@@ -632,6 +632,8 @@ AimSecondary(heading, pitch)
 
 FirePrimary()
 {
+		emit-sfx 1024 + 2 from rgunflare;
+		emit-sfx 1024 + 2 from lgunflare;
 		emit-sfx 1024 + 1 from spark_emit;
 		sleep 33;
 		emit-sfx 1024 + 1 from spark_emit;
