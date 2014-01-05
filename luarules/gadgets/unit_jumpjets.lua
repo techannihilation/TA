@@ -252,6 +252,7 @@ local function Jump(unitID, finish)
       local x = start[1] + vector[1]*i
       local y = start[2] + vector[2]*i + (1-(2*i-1)^2)*height -- parabola
       local z = start[3] + vector[3]*i
+      Spring.SetUnitCOBValue(unitID,1029,i * 100)      
       mcSetPosition(unitID, x, y, z)
       if fakeUnitID then mcSetPosition(fakeUnitID, x, y, z) end
       if (not halfJump and step > 0.5) then
@@ -351,9 +352,7 @@ function gadget:CommandFallback(unitID, unitDefID, teamID,    -- keeps getting
   local count   = 100/reload
 
   if (distSqr < (range*range)) then
-    spSetUnitRulesParam(unitID,"jumpReload",count*(t - lastJump[unitID])*0.01) --fix me need to make smoother progress bar
-    if ( (t - lastJump[unitID] >= reload) and (not jumping[unitID]) ) then
-      
+     
       local coords = table.concat(cmdParams)
       if (not jumps[coords]) then
         Jump(unitID, cmdParams)
@@ -369,7 +368,7 @@ function gadget:CommandFallback(unitID, unitDefID, teamID,    -- keeps getting
         jumps[coords] = jumps[coords] + 1
         return true, true -- command was used, remove it 
       end
-    end
+    
   else
     Approach(unitID, cmdParams, range)
   end
