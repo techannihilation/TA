@@ -64,4 +64,11 @@ return {
     reload    = 15, -- optional
     aaShootMe = false, -- optional
   },
+    tlldischarge = {
+    range     = 250,
+    height    = 250,
+    speed     = 3, 
+    reload    = 15, -- optional
+    aaShootMe = false, -- optional
+  },
 }
