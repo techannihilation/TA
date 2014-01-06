@@ -1,134 +1,232 @@
-#define TA
-// Advanced Solar/Wind Generator 
+#define TA			// This is a TA script
 
-piece base, body, lights, dish1, dish2, dish3, dish4, dish5;
-
-static-var built, lastfanspeed, lastdir;
-
-#define SMOKEPIECE1 base
-#define EXPLODEPIECE1 dish1
-#define EXPLODEPIECE2 dish2
-#define EXPLODEPIECE3 dish4
-
-
-#include "StateChg.h"
-#include "explodepartwindsolar.h"
+#include "sfxtype.h"
 #include "exptype.h"
 
-Go()
-	{
-	SET ARMORED to FALSE;
+piece  base, body, lights, dish1, dish2, dish3, dish4, dish5;
 
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, statechg_DesiredState, statechg_StateChanging,
+            Static_Var_6, Static_Var_7, Static_Var_8;
+
+
+HitByWeapon(anglex, anglez)
+{
+	var Func_Var_3;
+	Func_Var_3 = get HEALTH;
+	if( Func_Var_3 <= 60 )
+	{
+		if( Static_Var_6 == 0 )
+		{
+			Static_Var_6 = 1;
+			hide dish1;
+			explode dish1 type FALL | SHATTER | SMOKE | BITMAP2;
+		}
+	}
+	if( Func_Var_3 <= 50 )
+	{
+		if( Static_Var_7 == 0 )
+		{
+			Static_Var_7 = 1;
+			hide dish2;
+			explode dish2 type FALL | SHATTER | SMOKE | BITMAP2;
+		}
+	}
+	if( Func_Var_3 <= 35 )
+	{
+		if( Static_Var_8 == 0 )
+		{
+			Static_Var_8 = 1;
+			hide dish4;
+			explode dish4 type FALL | SHATTER | SMOKE | BITMAP2;
+		}
+	}
+	signal 16;
+	set-signal-mask 16;
+	set ACTIVATION to 0;
+	sleep 16000;
+	set ACTIVATION to 1;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	Static_Var_6 = 0;
+	Static_Var_7 = 0;
+	Static_Var_8 = 0;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent >= 40 )
+		{
+			if( Static_Var_8 == 1 )
+			{
+				Static_Var_8 = 0;
+				show dish4;
+			}
+		}
+		if( healthpercent >= 60 )
+		{
+			if( Static_Var_7 == 1 )
+			{
+				Static_Var_7 = 0;
+				show dish2;
+			}
+		}
+		if( healthpercent >= 75 )
+		{
+			if( Static_Var_6 == 1 )
+			{
+				Static_Var_6 = 0;
+				show dish1;
+			}
+		}
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Go()
+{
 	dont-cache lights;
 	dont-cache dish1;
 	dont-cache dish2;
 	dont-cache dish3;
 	dont-cache dish4;
 	dont-cache dish5;
-
-	TURN dish1 to x-axis <-45> SPEED <40>;
-	TURN dish2 to x-axis <-45> SPEED <40>;
-	TURN dish3 to x-axis <-45> SPEED <40>;
-	TURN dish4 to x-axis <-45> SPEED <40>;
-	TURN dish5 to x-axis <-45> SPEED <40>;
-	}
+	turn dish1 to x-axis <-45.000000> speed <40.000000>;
+	turn dish2 to x-axis <-45.000000> speed <40.000000>;
+	turn dish3 to x-axis <-45.000000> speed <40.000000>;
+	turn dish4 to x-axis <-45.000000> speed <40.000000>;
+	turn dish5 to x-axis <-45.000000> speed <40.000000>;
+}
 
 Stop()
-	{
-
-	TURN dish1 to x-axis <0> SPEED <40>;
-	TURN dish2 to x-axis <0> SPEED <40>;
-	TURN dish3 to x-axis <0> SPEED <40>;
-	TURN dish4 to x-axis <0> SPEED <40>;
-	TURN dish5 to x-axis <0> SPEED <40>;
-
+{
+	turn dish1 to x-axis <0.000000> speed <40.000000>;
+	turn dish2 to x-axis <0.000000> speed <40.000000>;
+	turn dish3 to x-axis <0.000000> speed <40.000000>;
+	turn dish4 to x-axis <0.000000> speed <40.000000>;
+	turn dish5 to x-axis <0.000000> speed <40.000000>;
 	cache lights;
 	cache dish1;
 	cache dish2;
 	cache dish3;
 	cache dish4;
 	cache dish5;
+}
 
-	SET ARMORED to TRUE;
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
 	}
-
-#define ACTIVATECMD call-script Go();
-#define DEACTIVATECMD call-script Stop();
-#include "StateChg.h"
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
 
 Create()
-	{
-	
+{
 	dont-shade dish1;
 	dont-shade dish2;
 	dont-shade dish3;
 	dont-shade dish4;
 	dont-shade dish5;
 	dont-shade lights;
-
-
-	lastfanspeed = <20>;
-	lastdir = 0;
-
-
+	Static_Var_2 = 3640;
+	Static_Var_3 = 0;
 	call-script InitState();
 	start-script SmokeUnit();
-	}
+}
 
 Activate()
-	{
-	start-script RequestState( ACTIVE );
-	}
+{
+	start-script RequestState(0);
+}
 
 Deactivate()
-	{
-	start-script RequestState( INACTIVE );
-	}
+{
+	start-script RequestState(1);
+}
 
-SetSpeed(fanspeed)
-	{
-	}
+SetSpeed(Func_Var_1)
+{
+}
 
-SetDirection(dir)
-	{
-	}
+SetDirection(heading)
+{
+}
 
 SweetSpot(piecenum)
-	{
-	piecenum=body;
-	}
+{
+	piecenum = body;
+}
 
-Killed( severity, corpsetype )
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
 	{
-	if (severity <= 25)
-		{
 		corpsetype = 1;
-		explode body type	BITMAPONLY | BITMAP1;
-		explode lights type	BITMAPONLY | BITMAP2;
-		explode dish3 type	BITMAPONLY | BITMAP3;
-		}
-
-	if (severity <= 50)
-		{
-		corpsetype = 2;
-		explode body type	BITMAPONLY | BITMAP1;
-		explode dish3 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode lights type	BITMAPONLY | BITMAP3;
-		return( 0 );
-		}
-
-	if (severity <= 99)
-		{
-		corpsetype = 3;
-		explode dish3 type	BITMAPONLY | BITMAP1;
-		explode body type	SHATTER | BITMAP2;
-		explode dish2 type	BITMAPONLY | BITMAP3;
-		return( 0 );
-		}
-
-	corpsetype = 3;
-	explode dish2 type	BITMAPONLY | BITMAP1;
-	explode body type	SHATTER | BITMAP2;
-	explode dish4 type	BITMAPONLY | BITMAP3;
-	return( 0 );
+		explode body type BITMAPONLY | BITMAP1;
+		explode lights type BITMAPONLY | BITMAP2;
+		explode dish3 type BITMAPONLY | BITMAP3;
 	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode body type BITMAPONLY | BITMAP1;
+		explode dish3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode lights type BITMAPONLY | BITMAP3;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode dish3 type BITMAPONLY | BITMAP1;
+		explode body type SHATTER | BITMAP2;
+		explode dish2 type BITMAPONLY | BITMAP3;
+		return (0);
+	}
+	corpsetype = 3;
+	explode dish2 type BITMAPONLY | BITMAP1;
+	explode body type SHATTER | BITMAP2;
+	explode dish4 type BITMAPONLY | BITMAP3;
+}

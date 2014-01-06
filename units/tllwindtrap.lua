@@ -19,7 +19,6 @@ local unitDef = {
 	buildTime = 1961,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
 	corpse = [[dead]],
-	damageModifier = 0.9,
 	description = [[Produces Energy]],
 	designation = [[TL-WT]],
 	digger = 1,
