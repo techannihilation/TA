@@ -85,6 +85,7 @@ local landBoxSize = 60
 local jumps       = {}
 local precision   = 1
 local jumping     = {}
+local jumpcount = {}
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -182,6 +183,8 @@ end
 local function Jump(unitID, finish)
 
   jumping[unitID]     = true
+  
+  jumpcount[unitID] = true
 
   local start         = {spGetUnitPosition(unitID)}
   local fakeUnitID
@@ -351,9 +354,10 @@ function gadget:CommandFallback(unitID, unitDefID, teamID,    -- keeps getting
   local count   = 100/reload
 
   if (distSqr < (range*range)) then
+
     spSetUnitRulesParam(unitID,"jumpReload",count*(t - lastJump[unitID])*0.01) --fix me need to make smoother progress bar
-    if ( (t - lastJump[unitID] >= reload) and (not jumping[unitID]) ) then
-      
+    if ( (t - lastJump[unitID] >= reload) and (not jumping[unitID]) ) or ( jumpcount[unitID] == nil )then
+ 
       local coords = table.concat(cmdParams)
       if (not jumps[coords]) then
         Jump(unitID, cmdParams)
