@@ -85,7 +85,7 @@ local landBoxSize = 60
 local jumps       = {}
 local precision   = 1
 local jumping     = {}
-local jumpcount = {}
+local jumpcount   = {}
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -325,6 +325,7 @@ end
 
 function gadget:UnitDestroyed(unitID, unitDefID)
   lastJump[unitID]  = nil
+  jumpcount[unitID] = nil
 end
 
 
