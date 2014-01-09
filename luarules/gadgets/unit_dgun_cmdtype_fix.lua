@@ -23,6 +23,15 @@ end
 ----------------------------------------------------------------
 local canDGun = {}
 
+local nukes = {
+    [UnitDefNames["uppercut"].id] = true,
+    [UnitDefNames["armhcar"].id] = true,
+    [UnitDefNames["corhcar"].id] = true,
+}
+
+local emp = {
+    [UnitDefNames["tlldischarge"].id] = true,
+}
 ----------------------------------------------------------------
 -- Speedups
 ----------------------------------------------------------------
@@ -30,7 +39,7 @@ local spFindUnitCmdDesc = Spring.FindUnitCmdDesc
 local spGetUnitCmdDescs = Spring.GetUnitCmdDescs
 local spEditUnitCmdDesc = Spring.EditUnitCmdDesc
 
-local CMD_DGUN = CMD.MANUALFIRE
+local CMD_MANUALFIRE = CMD.MANUALFIRE
 local CMDTYPE_ICON_UNIT_OR_MAP = CMDTYPE.ICON_UNIT_OR_MAP
 
 ----------------------------------------------------------------
@@ -46,7 +55,7 @@ end
 
 function gadget:UnitCreated(uID, uDefID, uTeam)
     if canDGun[uDefID] then
-        local cmdIdx = spFindUnitCmdDesc(uID, CMD_DGUN)
+        local cmdIdx = spFindUnitCmdDesc(uID, CMD_MANUALFIRE)
         if cmdIdx then
             local cmdDesc = spGetUnitCmdDescs(uID, cmdIdx, cmdIdx)[1]
             if cmdDesc then
@@ -55,5 +64,27 @@ function gadget:UnitCreated(uID, uDefID, uTeam)
                 spEditUnitCmdDesc(uID, cmdIdx, cmdDesc)
             end
         end
+    elseif nukes[uDefID] then
+        local cmdIdx = spFindUnitCmdDesc(uID, CMD_MANUALFIRE)
+        if cmdIdx then
+            local cmdDesc = spGetUnitCmdDescs(uID, cmdIdx, cmdIdx)[1]
+            if cmdDesc then
+				cmdDesc['name'] = 'Nuke'
+                cmdDesc.type = CMDTYPE_ICON_UNIT_OR_MAP
+                spEditUnitCmdDesc(uID, cmdIdx, cmdDesc)
+            end
+        end
+    elseif emp[uDefID] then
+        local cmdIdx = spFindUnitCmdDesc(uID, CMD_MANUALFIRE)
+        if cmdIdx then
+            local cmdDesc = spGetUnitCmdDescs(uID, cmdIdx, cmdIdx)[1]
+            if cmdDesc then
+				cmdDesc['name'] = 'E M P'
+                cmdDesc.type = CMDTYPE_ICON_UNIT_OR_MAP
+                spEditUnitCmdDesc(uID, cmdIdx, cmdDesc)
+            end
+        end
     end
 end
+
+    
