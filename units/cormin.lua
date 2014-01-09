@@ -63,6 +63,9 @@ local unitDef = {
 	turnRate = 256,
 	unitname = [[cormin]],
 	workerTime = 10,
+	customParams = {
+		customstock = true,
+	},
 	buildoptions = {
 		[1] = [[cormine1]],
 		[2] = [[cormine2]],

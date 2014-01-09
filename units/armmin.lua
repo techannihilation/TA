@@ -63,6 +63,9 @@ local unitDef = {
 	turnRate = 248,
 	unitname = [[armmin]],
 	workerTime = 10,
+	customParams = {
+		customstock = true,
+	},
 	buildoptions = {
 		[1] = [[armmine1]],
 		[2] = [[armmine2]],

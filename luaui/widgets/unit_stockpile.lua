@@ -33,8 +33,13 @@ function widget:UnitCreated(unitID, unitDefID, unitTeam)
   local ud = UnitDefs[unitDefID]
   if ((ud ~= nil) and (unitTeam == SpGetMyTeamID())) then
     if (ud.canStockpile) then
-      -- give stockpilers 100 units to build
-      SpGiveOrderToUnit(unitID, CMD.STOCKPILE, {}, { "ctrl", "shift" })
+      if (ud.customParams.customstock) then
+	-- give stockpilers 100 units to build
+        SpGiveOrderToUnit(unitID, CMD.STOCKPILE, {}, { "shift" })
+      else
+        -- give stockpilers 100 units to build
+        SpGiveOrderToUnit(unitID, CMD.STOCKPILE, {}, { "ctrl", "shift" })
+      end
     end
   end
 end
