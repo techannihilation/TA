@@ -2,6 +2,20 @@
 return {
 ["jetpack"] = {
     usedefaultexplosions = false,
+     akelight = {
+      air                = false,
+      class              = [[CSimpleGroundFlash]],
+      count              = 1,
+      ground             = true,
+      water              = false,
+      properties = {
+        colormap           = [[1 1 1 1    1 0.3 0.25 1     0 0 0 0.1]],
+        size               = [[5]],
+        sizegrowth         = [[2 r-2]],
+        texture            = [[groundflash]],
+        ttl                = [[8 r4 r-4]],
+      },
+    },
     engine = {
       air                = true,
       class              = [[CBitmapMuzzleFlame]],

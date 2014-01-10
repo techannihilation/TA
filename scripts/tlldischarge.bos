@@ -7,7 +7,7 @@ piece  torso, pelvis, lleg, lfoot, rleg, rfoot, rthigh, lthigh, head,
        luparm, ruparm, rarm, larm, mpack, rmispoint, lmispoint,
        rmissle2, lmissle2, rgunflare, lgunflare, l_jetpk, r_jetpk, spark_emit;
 
-static-var  bMoving, bAiming, Static_Var_3, restore_delay, gun_1, gun_3, Bjumping, jumpPercent, Shot;
+static-var  bMoving, bAiming, Static_Var_3, restore_delay, gun_1, gun_3, Bjumping, jumpPercent;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -24,34 +24,20 @@ JumpControl()
 	}	
 }
 
-SparkControl()
-{
-	
-	while (Shot == 1)
-	{
-
-		sleep 300;
-
-	}	
-}
-
 Jumping()
 {	
-
-	while ( jumpPercent < 50 )
+	while (TRUE)
 	{
-	//get PRINT(jumpPercent);
-	emit-sfx 1024 + 0 from l_jetpk;
-	emit-sfx 1024 + 0 from r_jetpk;
-	sleep 10;
+	if ( jumpPercent < 50 )
+		{
+		//get PRINT(jumpPercent);
+		emit-sfx 1024 + 0 from l_jetpk;
+		emit-sfx 1024 + 0 from r_jetpk;
+		sleep 11;
+		}
+		sleep 11;
 	}
-	while ( jumpPercent == 91 ) 
-	{
-	//get legs ready to land
-
-	sleep 100;
-	
-	}
+	sleep 11;
 }
 
 BeginJump()
@@ -63,47 +49,16 @@ BeginJump()
 	start-script Jumping();
 	//Bend legs ready to jump
 	turn torso to z-axis <0.000000> speed <25.883543>;
-	turn lfoot to x-axis <-20.000000> speed <99.798387>;
-	turn lleg to x-axis [-58.000000] now;
-	turn lthigh to x-axis <45.000000> speed <219.556452>;
-	turn rfoot to x-axis <-20.000000> speed <99.798387>;
-	turn rleg to x-axis [-58.000000] now;
-	turn rthigh to x-axis <45.000000> speed <219.556452>;
-	sleep 200;
-	turn lfoot to x-axis <0.000000> speed <29.798387>;
-	turn lleg to x-axis [0.000000] speed <19.556452>;
-	turn lthigh to x-axis <0.000000> speed <19.556452>;
-	turn rfoot to x-axis <0.000000> speed <19.556452>;
-	turn rleg to x-axis [0.000000] speed <19.556452>;
-	turn rthigh to x-axis <0.000000> speed <219.556452>;
+	turn rfoot to x-axis <22.000000> speed <90.798387>;
+	turn lfoot to x-axis <22.000000> speed <90.798387>;
 }
 
 EndJump()
 {
 	Bjumping = FALSE;
-	get PRINT(1111);
-	move pelvis to y-axis [0.000000] speed [12.883543];
-    turn pelvis to x-axis <-8.000000> speed <33.883543>;
-	turn lfoot to x-axis <-3.000000> speed <17.221477>;
-	turn lleg to x-axis <11.000000> speed <21.221477>;
-	turn lthigh to x-axis <-30.000000> speed <33.442953>;
-	
-	
-	turn rfoot to x-axis <-3.000000> speed <17.221477>;
-	turn rleg to x-axis <11.000000> speed <21.221477>;
-	turn rthigh to x-axis <-30.000000> speed <33.442953>;
-
-	sleep 10000;
 	//set legs back
-	move pelvis to y-axis [0.000000] speed [28.883543];
-	turn pelvis to x-axis <0.000000> speed <12.883543>;
-	turn lfoot to x-axis <0.000000> speed <29.798387>;
-	turn lleg to x-axis [0.000000] speed <19.556452>;
-	turn lthigh to x-axis <0.000000> speed <19.556452>;
-	turn rfoot to x-axis <0.000000> speed <19.556452>;
-	turn rleg to x-axis [0.000000] speed <19.556452>;
-	turn rthigh to x-axis <0.000000> speed <219.556452>;
-	
+	turn rfoot to x-axis <0.000000> speed <240.556452>;
+	turn lfoot to x-axis <0.000000> speed <240.798387>;
 }
 
 
@@ -550,7 +505,6 @@ Create()
 	start-script MotionControl();
 	start-script SmokeUnit();
 	start-script JumpControl();
-	start-script SparkControl();
 	}
 
 
@@ -592,7 +546,6 @@ AimPrimary(heading, pitch)
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
 	bAiming = TRUE;
-	Shot = 1;
 	while( !Static_Var_3 )
 	{
 		sleep 250;
@@ -604,7 +557,6 @@ AimPrimary(heading, pitch)
 	wait-for-turn ruparm around x-axis;
 	wait-for-turn luparm around x-axis;
 	sleep 200;
-	Shot = 0;
 	start-script RestoreAfterDelay();
 	return (1);
 }
@@ -635,7 +587,11 @@ FirePrimary()
 		emit-sfx 1024 + 2 from rgunflare;
 		emit-sfx 1024 + 2 from lgunflare;
 		emit-sfx 1024 + 1 from spark_emit;
-		sleep 33;
+		sleep 11;
+		emit-sfx 1024 + 1 from spark_emit;
+		sleep 11;
+		emit-sfx 1024 + 1 from spark_emit;
+		sleep 11;
 		emit-sfx 1024 + 1 from spark_emit;
 		sleep 33;
 		return (0);
