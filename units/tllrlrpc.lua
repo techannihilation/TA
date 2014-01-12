@@ -59,7 +59,8 @@ local unitDef = {
 	featureDefs = nil,
 	sfxtypes = {
 		explosiongenerators = {
-			[1] = [[custom:tllbarret_effect]],
+			[1] = [[custom:tlluberweb]],
+			[2] = [[custom:tlluber_glow]],
 		},
 	},
 	sounds = {
@@ -116,10 +117,10 @@ local weaponDefs = {
 		range = 3700,
 		reloadtime = 0.6,
 		renderType = 7,
-		rgbColor = [[0.2 0.2 1]],
+		rgbColor = [[0.6 0.6 0.9]],
 		soundHitDry = [[maghit]],
 		soundStart = [[krypto]],
-		texture1 = [[lightning]],
+		texture1 = [[strike]],
 		thickness = 16,
 		tolerance = 500,
 		turret = true,

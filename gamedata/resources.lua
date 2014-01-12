@@ -229,6 +229,9 @@ local resources = {
 			map_foam='other/foam_map.tga',
 			map_debris2='other/debris2.tga',
 			map_dirtplosion2='other/dirtplosion2.tga',
+			
+			--lightning
+			strike='strike.png',
 		},
 	},
 }

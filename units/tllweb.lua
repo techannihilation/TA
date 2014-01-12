@@ -57,7 +57,8 @@ local unitDef = {
 	featureDefs = nil,
 	sfxtypes = {
 		explosiongenerators = {
-			[1] = [[custom:tllweb_effect]],
+			[1] = [[custom:tllweb]],
+			[2] = [[custom:tllweb_glow]],
 		},
 	},
 	sounds = {
@@ -116,10 +117,10 @@ local weaponDefs = {
 		range = 440,
 		reloadtime = 1,
 		renderType = 7,
-		rgbColor = [[0.2 0.2 1]],
+		rgbColor = [[0.6 0.6 0.9]],
 		soundHitDry = [[lashit2]],
 		soundStart = [[Lghthvy1]],
-		texture1 = [[lightning]],
+		texture1 = [[strike]],
 		thickness = 7,
 		tolerance = 600,
 		turret = true,
