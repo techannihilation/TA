@@ -4,7 +4,7 @@
 #include "exptype.h"
 
 piece  base, socle, body, zap1, zap2, ring, boule, sleeve,
-       flare, p1;
+       flare, p1, emit;
 
 static-var  Static_Var_1, Static_Var_2, restore_delay;
 
@@ -76,7 +76,7 @@ glow(Func_Var_2)
 	}
 	while( TRUE )
 	{
-		emit-sfx 1024 + 0 from boule;
+		emit-sfx 1024 + 0 from emit;
 		Func_Var_2 = 300 + Rand( 50, 1000 );
 		sleep Func_Var_2;
 	}
@@ -142,7 +142,7 @@ Create()
 	Static_Var_2 = 1;
 	restore_delay = 3000;
 	start-script SmokeUnit();
-	start-script zaps();
+	//start-script zaps();
     start-script glow();
 	start-script flotte();
 	start-script tourne();
@@ -186,7 +186,8 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-
+	emit-sfx 1024 + 0 from emit;
+	emit-sfx 1024 + 1 from emit;
 }
 
 QueryPrimary(piecenum)

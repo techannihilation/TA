@@ -8,6 +8,7 @@ local SIG_AIM = 2
 
 -- Effects
 local ZAP   = 1024
+local GLOW  = 1025
 
 local function still_building_p()
 	local _,_,_,_,buildProgress = Spring.GetUnitHealth(unitID);
@@ -43,7 +44,7 @@ local function Zaps()
 
 	while (true) do
 		EmitSfx( flare, ZAP)
-		Sleep(1390)
+		Sleep(800)
 	end
 end
 
@@ -62,7 +63,7 @@ function script.AimWeapon1(heading, pitch)
 end
 
 function script.FireWeapon1()
-
+	EmitSfx( flare, GLOW)
 end
 
 function script.AimFromWeapon1()
