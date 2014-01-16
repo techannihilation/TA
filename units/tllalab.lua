@@ -64,8 +64,9 @@ local unitDef = {
 		[10] = [[tllaak]],
 		[11] = [[tlltraq]],
 		[12] = [[tllturtle]],
-		[13] = [[tllobserver]],
-		[14] = [[tllconfuser]],
+		[13] = [[tlldischarge]],
+		[14] = [[tllobserver]],
+		[15] = [[tllconfuser]],
 	},
 	featureDefs = nil,
 	sounds = {
