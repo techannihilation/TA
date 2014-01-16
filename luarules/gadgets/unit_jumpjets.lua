@@ -67,6 +67,7 @@ local spGetUnitDefID       = Spring.GetUnitDefID
 local spGetUnitTeam        = Spring.GetUnitTeam
 local spDestroyUnit        = Spring.DestroyUnit
 local spCreateUnit         = Spring.CreateUnit
+local SpValidUnitID        = Spring.ValidUnitID
 
 local mcSetRotationVelocity = MoveCtrl.SetRotationVelocity
 --local mcSetLeaveTracks      = MoveCtrl.SetLeaveTracks
@@ -248,7 +249,7 @@ local function Jump(unitID, finish)
   local function JumpLoop()
     local halfJump
     for i=0, 1, step do
-      if (not spGetUnitTeam(unitID)) then
+      if (not spGetUnitTeam(unitID)) and SpValidUnitID(unitID) then
         spDestroyUnit(fakeUnitID, false, true)
         return -- unit died
       end
@@ -282,7 +283,6 @@ local function Jump(unitID, finish)
   end
   
   StartScript(JumpLoop)
-  
 end
 
 
