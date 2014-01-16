@@ -567,18 +567,10 @@ AimSecondary(heading, pitch)
 	signal SIG_AIM_3;
 	set-signal-mask SIG_AIM_3;
 	bAiming = TRUE;
-	get PRINT (pitch);
 	if( pitch < 10012 )
 	{
 		return (0);
 	}
-	turn lmispoint to y-axis heading now;
-	turn rmispoint to y-axis heading now;
-	turn lmispoint to x-axis <0.000000> - pitch now;
-	turn rmispoint to x-axis <0.000000> - pitch now;
-	wait-for-turn lmispoint around x-axis;
-	wait-for-turn rmispoint around x-axis;
-	//start-script RestoreAfterDelay();
 	return (1);
 }
 
