@@ -49,6 +49,7 @@ local unitDef = {
 	objectName = [[ARMROCK1]],
 	seismicSignature = 0,
 	selfDestructAs = [[BIG_UNIT]],
+	script = [[armrock.cob]],
 	side = [[ARM]],
 	sightDistance = 388,
 	standingfireorder = 2,

@@ -503,7 +503,7 @@ AimPrimary(heading, pitch)
 		sleep 100;
 	}
 	turn torso to y-axis heading speed <130.027473>;
-	turn lmisspod to x-axis <-90.016484> speed <95.016484>;
+	turn lmisspod to x-axis <-90.016484> - pitch speed <95.016484>;
 	wait-for-turn torso around y-axis;
 	wait-for-turn lmisspod around x-axis;
 	start-script RestoreAfterDelay();
