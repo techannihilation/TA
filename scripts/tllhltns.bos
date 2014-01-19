@@ -6,7 +6,7 @@
 piece  base, tower, turret, sleeves, gun, flare, barrel, wake1,
        wake2, wake3, wake4, wake5, wake6, wake7, wake8;
 
-static-var  tidal_Spd;
+static-var  Static_Var_1;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -41,17 +41,17 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Tangue()
 {
-	tidal_Spd = get UNKNOWN_UNIT_VALUE(1030);
+	Static_Var_1 = get UNKNOWN_UNIT_VALUE(1030);
 	while( TRUE )
 	{
-	   	turn base to x-axis <1.000000> * tidal_Spd speed <1.000000> * tidal_Spd;
-		turn base to z-axis <1.000000> * tidal_Spd speed <1.000000> * tidal_Spd;
+		turn base to x-axis <1.000000> * Static_Var_1 speed <1.000000> * Static_Var_1;
+		turn base to z-axis <1.000000> * Static_Var_1 speed <1.000000> * Static_Var_1;
 		wait-for-turn base around x-axis;
-		turn base to x-axis <-1.000000> * tidal_Spd speed <1.000000> * tidal_Spd;
-		turn base to z-axis <-1.000000> * tidal_Spd speed  <1.000000> * tidal_Spd;
+		turn base to x-axis <-1.000000> * Static_Var_1 speed <1.000000> * Static_Var_1;
+		turn base to z-axis <-1.000000> * Static_Var_1 speed <1.000000> * Static_Var_1;
 		wait-for-turn base around x-axis;
-		turn base to x-axis <0.000000> speed <1.000000> * tidal_Spd;
-		turn base to z-axis <0.000000> speed <1.000000> * tidal_Spd;
+		turn base to x-axis <0.000000> speed <1.000000> * Static_Var_1;
+		turn base to z-axis <0.000000> speed <1.000000> * Static_Var_1;
 	}
 }
 
@@ -106,12 +106,13 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-	turn gun to z-axis <180.000000> speed <380.000000>;
-	show flare;
 	move barrel to z-axis [-1.000000] speed [500.000000];
+	show flare;
 	sleep 150;
 	hide flare;
 	move barrel to z-axis [0.000000] speed [50.000000];
+	sleep 300;
+	turn gun to z-axis <180.000000> speed <380.000000>;
 	wait-for-turn gun around z-axis;
 	turn gun to z-axis <0.000000> now;
 }
