@@ -61,6 +61,7 @@ Create()
 
 PositionSpindle()
 {
+	sleep 325;
 	if( gun_1 == 1 )
 	{
 		turn spindle to z-axis <0.000000> speed <400.093407>;
