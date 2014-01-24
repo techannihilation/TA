@@ -401,11 +401,11 @@ AimPrimary(heading, pitch)
 	{
 		sleep 30;
 	}
-	turn body to y-axis heading speed <225.000000>;
-	turn larm to x-axis <-45.000000> speed <200.000000>;
-	turn rarm to x-axis <-45.000000> speed <200.000000>;
-	turn llowarm to x-axis <-15.000000> speed <200.000000>;
-	turn rlowarm to x-axis <-15.000000> speed <200.000000>;
+	turn body to y-axis heading speed <325.000000>;
+	turn larm to x-axis <-45.000000> speed <300.000000>;
+	turn rarm to x-axis <-45.000000> speed <300.000000>;
+	turn llowarm to x-axis <-15.000000> speed <300.000000>;
+	turn rlowarm to x-axis <-15.000000> speed <300.000000>;
 	wait-for-turn body around y-axis;
 	wait-for-turn larm around x-axis;
 	wait-for-turn rarm around x-axis;
