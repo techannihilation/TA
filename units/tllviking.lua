@@ -78,7 +78,7 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			def = [[COR_CRUS]],
+			def = [[ARM_BATS]],
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
@@ -86,7 +86,7 @@ local unitDef = {
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[3] = {
-			def = [[ARM_BATS]],
+			def = [[COR_CRUS]],
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
