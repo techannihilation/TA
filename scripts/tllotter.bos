@@ -6,7 +6,7 @@
 piece  base, body, turret, barrel1, flare1, flare2, wake1, wake2,
        wake3, sleeve, barrel2, turret1, launcher1, flare3;
 
-static-var  gun_1,gun_2, restore_delay;
+static-var  gun_1, Static_Var_2, restore_delay;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -95,28 +95,21 @@ AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	turn turret to y-axis heading speed <300.000000>;
-	turn sleeve to x-axis <0.000000> - pitch speed <200.000000>;
+	turn turret to y-axis heading speed <400.000000>;
+	turn sleeve to x-axis <0.000000> - pitch speed <266.000000>;
 	wait-for-turn turret around y-axis;
 	wait-for-turn sleeve around x-axis;
 	start-script RestoreAfterDelay();
 	return (1);
 }
 
-
 FirePrimary()
 {
 	if( gun_1 == 1 )
 	{
-		show flare1;
-		sleep 150;
-		hide flare1;
 		gun_1 = turret;
 		return (0);
 	}
-	show flare2;
-	sleep 150;
-	hide flare2;
 	gun_1 = body;
 }
 
@@ -140,7 +133,6 @@ AimSecondary(heading, pitch)
 	start-script RestoreAfterDelay2();
 	return (1);
 }
-
 
 QuerySecondary(piecenum)
 {

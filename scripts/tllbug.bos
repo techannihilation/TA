@@ -43,13 +43,13 @@ walkscr()
 {
 	turn llegb to z-axis <0.000000> now;
 	turn llegb to z-axis <-38.258242> speed <910.000000>;
-	turn rlegb to y-axis <55.357143> speed <660.283995>;
+	turn rlegb to y-axis <55.357143> speed <660.280220>;
 	turn rlegb to z-axis <38.258242> now;
 	turn rlegb to z-axis <0.000000> speed <910.000000>;
 	turn rlegf to y-axis <0.000000> now;
-	turn rlegf to y-axis <60.307692> speed <1446.549451>;
-	turn rlegf to z-axis <37.807692> speed <450.959218>;
-	turn llegf to y-axis <-60.307692> now;
+	turn rlegf to y-axis <60.302198> speed <1446.549451>;
+	turn rlegf to z-axis <37.802198> speed <450.956044>;
+	turn llegf to y-axis <-60.302198> now;
 	turn llegf to y-axis <0.000000> speed <1446.549451>;
 	turn llegf to z-axis <0.000000> now;
 	sleep 42;
@@ -65,15 +65,15 @@ walkscr()
 	turn rlegb to z-axis <38.258242> speed <910.000000>;
 	turn rlegf to y-axis <0.000000> speed <1442.000000>;
 	turn rlegf to z-axis <0.000000> speed <0.000000>;
-	turn llegf to y-axis <-60.307692> speed <1442.000000>;
+	turn llegf to y-axis <-60.302198> speed <1442.000000>;
 	turn llegf to z-axis <-38.258242> speed <0.000000>;
 	sleep 42;
 	turn llegb to y-axis <0.000000> speed <1323.000000>;
 	turn llegb to z-axis <0.000000> speed <0.000000>;
 	turn rlegb to y-axis <55.357143> speed <1323.000000>;
 	turn rlegb to z-axis <38.258242> speed <0.000000>;
-	turn rlegf to z-axis <37.807692> speed <910.000000>;
-	turn llegf to y-axis <-60.307692> speed <0.000000>;
+	turn rlegf to z-axis <37.802198> speed <910.000000>;
+	turn llegf to y-axis <-60.302198> speed <0.000000>;
 	turn llegf to z-axis <0.000000> speed <910.000000>;
 	sleep 42;
 }
@@ -123,17 +123,22 @@ FirePrimary()
 
 RestoreAfterDelay()
 {
+	signal 4;
+	set-signal-mask 4;
 	sleep restore_delay;
-	turn turret to y-axis <0.000000> speed <90.000000>;
-	turn barrel to x-axis <0.000000> speed <45.000000>;
+	set-signal-mask 0;
+	turn turret to y-axis <0.000000> speed <270.000000>;
+	turn barrel to x-axis <0.000000> speed <135.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn barrel around x-axis;
 }
 
 AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	turn turret to y-axis heading speed <150.000000>;
-	turn barrel to x-axis <0.000000> - pitch speed <200.000000>;
+	turn turret to y-axis heading speed <400.000000>;
+	turn barrel to x-axis <0.000000> - pitch speed <450.000000>;
 	wait-for-turn turret around y-axis;
 	wait-for-turn barrel around x-axis;
 	start-script RestoreAfterDelay();
