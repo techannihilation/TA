@@ -3,74 +3,120 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, turret, door1, door2, sleeve, barrel1, barrel2, flare1, flare2;
+piece  base, body, turret, door1, door2, sleeve, barrel1, barrel2,
+       flare1, flare2;
 
-static-var  running_0, restore_delay, gun_0, position;
+static-var  Static_Var_1, restore_delay, gun_1, bAiming, statechg_DesiredState,
+            statechg_StateChanging, Static_Var_7;
 
 // Signal definitions
 #define SIG_AIM				2
-
-#define SMOKEPIECE1 base
-#define EXPLODEPIECE1 door1
-
-#include "StateChg.h"
 
 activatescr()
 {
 	if( TRUE )
 	{
-	turn door1 to z-axis <90> speed <110>;
-	turn door2 to z-axis <-90> speed <110>;
-	sleep 750;
-	move turret to y-axis [0] speed [15];
-	sleep 1000;
-	turn sleeve to x-axis <0> speed <60>;
+		turn door1 to z-axis <90.000000> speed <110.000000>;
+		turn door2 to z-axis <-90.000000> speed <110.000000>;
+		sleep 750;
+		move turret to y-axis [0.000000] speed [15.000000];
+		sleep 1000;
+		turn sleeve to x-axis <0.000000> speed <60.000000>;
 	}
-sleep 10;
+	sleep 10;
 }
 
 deactivatescr()
 {
 	if( TRUE )
 	{
-	turn sleeve to x-axis <-90> speed <60>;
-	sleep 1000;
-	}
-	if ( TRUE )
-	{
-	move turret to y-axis [-25] speed [15];
-	sleep 1000;
+		turn sleeve to x-axis <-90.000000> speed <60.000000>;
+		sleep 1000;
 	}
 	if( TRUE )
 	{
-	turn door1 to z-axis <0> speed <85>;
-	turn door2 to z-axis <0> speed <85>;
+		move turret to y-axis [-25.000000] speed [15.000000];
+		sleep 1000;
+	}
+	if( TRUE )
+	{
+		turn door1 to z-axis <0.000000> speed <85.000000>;
+		turn door2 to z-axis <0.000000> speed <85.000000>;
 	}
 	sleep 10;
 }
-#include "Explodepartsnorock.h"
+
+HitByWeapon(anglex, anglez)
+{
+	var Func_Var_3;
+	Func_Var_3 = get HEALTH;
+	if( Func_Var_3 <= 60 )
+	{
+		if( Static_Var_7 == 0 )
+		{
+			Static_Var_7 = 1;
+			hide door1;
+			explode door1 type FALL | SMOKE | BITMAP2;
+		}
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	Static_Var_7 = 0;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent >= 75 )
+		{
+			if( Static_Var_7 == 1 )
+			{
+				Static_Var_7 = 0;
+				show door1;
+			}
+		}
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
 
 Go()
 {
-	
 	dont-cache door1;
 	dont-cache door2;
-	dont-cache sleeve;	
+	dont-cache sleeve;
 	dont-cache barrel1;
 	dont-cache barrel2;
 	dont-cache turret;
-	if( !running_0 )
+	if( !Static_Var_1 )
 	{
 		call-script activatescr();
 	}
-	running_0  = 1;
-	set ARMORED to FALSE;
+	Static_Var_1 = 1;
+	set ARMORED to 0;
 }
 
 Stop()
 {
-	set ARMORED to TRUE;
-	running_0  = 0;
+	set ARMORED to 1;
+	Static_Var_1 = 0;
 	call-script deactivatescr();
 	cache door1;
 	cache door2;
@@ -79,51 +125,74 @@ Stop()
 	cache barrel2;
 	cache turret;
 }
-#define ACTIVATECMD		call-script Go();
-#define DEACTIVATECMD		call-script Stop();
-#include "StateChg.h"
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
 
 RestoreAfterDelay()
 {
 	sleep restore_delay;
 	set-signal-mask 0;
-	if (position == 0)
-		{
-		turn turret to y-axis <0> speed <200.0>;
-		}
-	if (position == 1)
-		{
-		turn turret to y-axis <180> speed <200.0>;
-		} 
+	if( bAiming == 0 )
+	{
+		turn turret to y-axis <0.000000> speed <200.000000>;
+	}
+	if( bAiming == 1 )
+	{
+		turn turret to y-axis <180.000000> speed <200.000000>;
+	}
 	wait-for-turn turret around y-axis;
 	start-script RequestState(1);
 }
 
 Create()
 {
-	
 	dont-shade door1;
 	dont-shade door2;
 	dont-shade sleeve;
 	dont-shade barrel1;
 	dont-shade barrel2;
 	dont-shade turret;
-
 	hide flare1;
 	hide flare2;
-
-	running_0  = 1;
-	gun_0=1;
-	position=0;
-
-	restore_delay = 3000;
+	Static_Var_1 = 1;
+	gun_1 = body;
+	bAiming = FALSE;
+	restore_delay = 4000;
 	call-script InitState();
 	start-script SmokeUnit();
 	start-script RequestState(0);
-
-	turn door1 to z-axis <90> NOW;
-	turn door2 to z-axis <-90> NOW;
-
+	turn door1 to z-axis <90.000000> now;
+	turn door2 to z-axis <-90.000000> now;
 	set-signal-mask SIG_AIM;
 	while( get BUILD_PERCENT_LEFT )
 	{
@@ -132,54 +201,41 @@ Create()
 	start-script RestoreAfterDelay();
 }
 
-SetMaxReloadTime(time)
-{
-	restore_delay = time * 2;
-}
-
 AimPrimary(heading, pitch)
 {
 	start-script RequestState(0);
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	while( !running_0 )
+	while( !Static_Var_1 )
 	{
 		sleep 250;
 	}
-	if (Heading < <270> and heading > <90> )
-		{
-		position = 1;
-		}
-	if (Heading > <270> or heading < <90> )
-		{
-		position = 0;
-		}
-	TURN turret to y-axis heading SPEED <200>;
-	TURN sleeve to x-axis (0 - pitch) SPEED <150>;
-	WAIT-FOR-TURN sleeve around x-axis;
-	WAIT-FOR-TURN turret around y-axis;
+	turn turret to y-axis heading speed <200.000000>;
+	turn sleeve to x-axis <0.000000> - pitch speed <150.000000>;
+	wait-for-turn sleeve around x-axis;
+	wait-for-turn turret around y-axis;
 	start-script RestoreAfterDelay();
 	return (1);
 }
 
 FirePrimary()
 {
-if ( gun_0 ==1 )
+	if( gun_1 == 1 )
 	{
-	move barrel1 to z-axis [-1.5] speed [200];
-	sleep 150;
-	move barrel1 to z-axis [0] speed [10];
+		move barrel1 to z-axis [-1.500000] speed [200.000000];
+		sleep 150;
+		move barrel1 to z-axis [0.000000] speed [10.000000];
 	}
-if ( gun_0 ==2 )
+	if( gun_1 == 2 )
 	{
-	move barrel2 to z-axis [-1.5] speed [200];
-	sleep 150;
-	move barrel2 to z-axis [0] speed [10];
+		move barrel2 to z-axis [-1.500000] speed [200.000000];
+		sleep 150;
+		move barrel2 to z-axis [0.000000] speed [10.000000];
 	}
-gun_0=gun_0+1;
-if ( gun_0 >=3 )
+	++gun_1;
+	if( gun_1 >= 3 )
 	{
-	gun_0=1;
+		gun_1 = body;
 	}
 }
 
@@ -190,13 +246,13 @@ AimFromPrimary(piecenum)
 
 QueryPrimary(piecenum)
 {
-if (gun_0==1)
+	if( gun_1 == 1 )
 	{
-	piecenum = flare1;
+		piecenum = flare1;
 	}
-if (gun_0==2)
+	if( gun_1 == 2 )
 	{
-	piecenum = flare2;
+		piecenum = flare2;
 	}
 }
 
@@ -209,11 +265,11 @@ Killed(severity, corpsetype)
 {
 	if( severity <= 25 )
 	{
-		if( running_0 )
+		if( Static_Var_1 )
 		{
 			corpsetype = 1;
 		}
-		if( !running_0 )
+		if( !Static_Var_1 )
 		{
 			corpsetype = 2;
 		}
@@ -227,11 +283,11 @@ Killed(severity, corpsetype)
 	}
 	if( severity <= 50 )
 	{
-		if( running_0 )
+		if( Static_Var_1 )
 		{
 			corpsetype = 2;
 		}
-		if( !running_0 )
+		if( !Static_Var_1 )
 		{
 			corpsetype = 3;
 		}
@@ -246,11 +302,11 @@ Killed(severity, corpsetype)
 	}
 	if( severity <= 99 )
 	{
-		if( running_0 )
+		if( Static_Var_1 )
 		{
 			corpsetype = 3;
 		}
-		if( !running_0 )
+		if( !Static_Var_1 )
 		{
 			corpsetype = 4;
 		}
