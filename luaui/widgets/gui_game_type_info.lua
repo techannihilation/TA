@@ -76,8 +76,8 @@ function widget:DrawScreen()
 		message = "Kill all enemy Commanders"
 	elseif Spring.GetModOptions().deathmode=="comcontrol" then
 		message = "Lose your Commander, Lose Control!"
-	elseif Spring.GetModOptions().deathmode=="minors" then
-		message = "changeme" -- depends on mod
+	elseif Spring.GetModOptions().deathmode=="killall" then
+		message = "Kill all Units" -- depends on mod
 	end
   end
 		
