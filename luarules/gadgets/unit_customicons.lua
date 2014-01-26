@@ -89,7 +89,9 @@ function gadget:Initialize()
   Spring.AddUnitIcon("bsships.user", "icons/bship.png",2.3)
   Spring.AddUnitIcon("tiny-sphere.user", "icons/sphere.png",0.65)
   Spring.AddUnitIcon("blank.user", "icons/sphere.png",0.0)
-
+  Spring.AddUnitIcon("mech.user", "icons/mech.tga",3.60)
+  Spring.AddUnitIcon("med_mech.user", "icons/mech.tga",3.0)
+  Spring.AddUnitIcon("small_mech.user", "icons/mech.tga",2.5)
 
    
   -- Setup the unitdef icons
@@ -137,6 +139,15 @@ function gadget:Initialize()
 --super krogoth
       elseif (ud.name=="corkrog1") then
         Spring.SetUnitDefIcon(udid, "s_krogoth.user")
+--small mech
+      elseif (ud.name=="corkarg") or (ud.name=="arm_furie") or (ud.name=="armbanth") then
+        Spring.SetUnitDefIcon(udid, "small_mech.user")
+--med mech
+      elseif (ud.name=="armorco") or (ud.name=="gorg") or (ud.name=="cordem") then
+        Spring.SetUnitDefIcon(udid, "med_mech.user")
+--t4 mechs
+      elseif (ud.name=="corkarg1") or (ud.name=="corgala") or (ud.name=="armraz1") or (ud.name=="armraptor") or (ud.name=="armbanth1") then
+        Spring.SetUnitDefIcon(udid, "mech.user")
 --RC
       elseif (ud.name=="armrech3") or (ud.name=="armrech18") or (ud.name=="armrech21")
       or (ud.name=="corech3") or (ud.name=="corech18") or (ud.name=="corech21") then
