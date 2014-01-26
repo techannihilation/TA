@@ -60,7 +60,8 @@ function gadget:Initialize()
   Spring.AddUnitIcon("hemi.user", "icons/hemi.png")
   Spring.AddUnitIcon("hourglass-side.user", "icons/hourglass-side.png")
   Spring.AddUnitIcon("hourglass.user", "icons/hourglass.png")
-  Spring.AddUnitIcon("krogoth.user", "icons/krogoth.png",3)
+  Spring.AddUnitIcon("krogoth.user", "icons/krogoth.tga",3)
+  Spring.AddUnitIcon("s_krogoth.user", "icons/krogoth.tga",4.5)
   Spring.AddUnitIcon("m-down.user", "icons/m-down.png")
   Spring.AddUnitIcon("m-up.user", "icons/m-up.png")
   Spring.AddUnitIcon("m.user", "icons/m.png")
@@ -133,6 +134,9 @@ function gadget:Initialize()
 --krogoth
       elseif (ud.name=="corkrog") then
         Spring.SetUnitDefIcon(udid, "krogoth.user")
+--super krogoth
+      elseif (ud.name=="corkrog1") then
+        Spring.SetUnitDefIcon(udid, "s_krogoth.user")
 --RC
       elseif (ud.name=="armrech3") or (ud.name=="armrech18") or (ud.name=="armrech21")
       or (ud.name=="corech3") or (ud.name=="corech18") or (ud.name=="corech21") then
