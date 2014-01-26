@@ -641,7 +641,7 @@ function widget:MouseRelease(mx, my, mButton)
 	
 	return true
 end
-function widget:KeyRelease(key)
+function widget:KeyRelease(key, mods, label, unicode)
 	if (key == keyShift) and endShift then
 		spSetActiveCommand(0)
 		endShift = false
