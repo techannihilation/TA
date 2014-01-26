@@ -1,57 +1,50 @@
-local versionNumber = "1.31"
+local versionNumber = "1.55"
 ---------------------------------------------------------------------------------------------------
---  Bugs
----------------------------------------------------------------------------------------------------
--- * With option "remove dead team" some things are not rendered graphically.
----------------------------------------------------------------------------------------------------
---  Todo
----------------------------------------------------------------------------------------------------
--- * Write manual :)
----------------------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------------------
--------------------------
--- Newest version is 1.31
--------------------------
--- * Compatible with spring 85.0
--- * fixed bug with incorrect expand button location
 
--------------
--- New in 1.3
--------------
---  * Added possibility to move the statistics table. To move it, click on the move button at top left and drag the window where you want it.
---  * Added option tomove to next and previous team from within the statistics table. Use the arrows beside team number to do that.
---  * Fixed some bugs that appear when widget is on the left side of the screen.
---  * The statistics window is now closed by right-clicking on it (or pressing the close/collapse button on the widget).
+----------------------------------------------------------------------------------------------------------------------------
+-- Changelog
 
--------------
--- New in 1.2
--------------
---  * Ctrl+click on arm/core image to zoom in on player's commander (if alive)
---  * Fixed sorting of kill distribution graph
---  * Fixed some bugs relating to more start positions than players in game
---  * Fixed speeded up blink rate when increasing game speed.
-
--- New in 1.1.1
----------------
--- Fixed load/save bug
--- Player kill distribution graph added.
-
--- New in 1.1
 ------------------------
--- * Added many options to tweak screen, press ctrl+F11 to customise widget
--- * Saves settings now
--- * Click on arm/core image to go to player start position
--- * Changed kills/losses bar to display killed hp/lost hp instead of kills/losses
--- * Added active player mode, can be disabled/customised in options
--- * Made calls more efficient by moving stuff out of drawscreen function
----------------------------------------------------------------------------------------------------
+-- Version 1.54
+------------------------
+-- * Bug fixes and performance improvements
+-- * Added TS values and better handling of screen position
+-- * Improved player list management and handling of dead players
+
+------------------------
+-- Version 1.5
+------------------------
+-- * Rewritten code to increase performance, fps cost down by 50% in normal usage scenario.
+-- * Now uses drawlists and gl.loadFont
+
+------------------------
+-- Version 1.41
+------------------------
+-- * Bug fixes and performance improvements
+
+------------------------
+-- Version 1.4
+------------------------
+-- * Performance improvements
+-- * Font improvements
+-- * Display extended info by pressing on i-button instead of overcomplicated arrows
+-- * Drag widget with right button; drag infopanel with left button and close with right (yes i know, maybe counter-intuitive)
+-- * Fixed opengl bugs
+
+------------------------
+-- version 1.32
+------------------------
+-- * Compatible with spring 95.0
+-- * fixed bug with incorrect expand button location
+-- * fixed spam errors bc of old tags
+------------------------
 
 function widget:GetInfo()
 	return {
 		name = "Ecostats",
 		desc = "Display team eco",
 		author = "Jools",
-		date = "8 jan 2012",
+		date = "jan, 2014",
 		license = "GNU GPL, v2 or later",
 		layer = 99,
 		enabled = false
@@ -62,9 +55,7 @@ end
 --  Declarations
 ---------------------------------------------------------------------------------------------------
 
-local bestTeam = nil
-local bestKills = nil
-local worstLosses = nil
+local bestTeam, bestKills, worstLosses 						
 local killCounters 					= {}
 local lossCounters 					= {}
 local killedHP						= {}
@@ -72,41 +63,32 @@ local lostHP						= {}
 local kMat 							= {}     -- player to player kill matrix
 local PmaxDmg						= 0
 local comTable 						= {}
-local playerData 					= {}
 local teamData 						= {}
-local pressedToMove                	= nil    -- click detection for moving the widget
-local pressedHPlus 					= nil
-local pressedHMinus 				= nil
-local pressedWPlus 					= nil
-local pressedWMinus 				= nil
+local allyData 						= {}
+local pressedToMove, pressedHPlus, pressedHMinus, pressedWPlus, pressedWMinus -- click detection for moving the widget
 local pressedExpandMove 			= false
-local moveStart                    	= nil    -- position of the cursor before dragging the widget
 local gamestarted 					= false
-local startanimation
 local gameover						= false
 local inSpecMode					= false
 local expandDown                    = false
 local expandLeft                    = false
+local isReplay						= Spring.IsReplay()
 
-local motto							= {}
-local expandButtonPos			 	= {}
-local collapseButtonPos			 	= {}
-local expandButtonState 		 	= {}
-local collapseButtonState		 	= {}
+local infoButton			 		= {}
 local playerButton					= {}
 local options						= {}
 local expandMove					= {}
 local Teambutton					= {}
 
-
 local lastPlayerChange				= 0
-local updateList					= {}
+local lastDrawUpdate				
+local drawList
 
 local vsx,vsy                    	= gl.GetViewSizes()
 local right							= true
 local widgetHeight					
 local widgetWidth                	= 110
-local widgetPosX                 	= vsx-widgetWidth-5
+local widgetPosX                 	= vsx-widgetWidth
 local widgetPosY                 	= 600
 local widgetRight			 	    = widgetPosX + widgetWidth
 local tH						 	= 75 -- team row height
@@ -114,9 +96,13 @@ local WBadge					 	= 14 -- width of player badge (side icon)
 local iPosX, iPosY
 local InfotablePosX, InfotablePosY	-- Expand bar bottom left coordinates
 local cW 							= 100 -- column width
-local infoTableHeight 				= 480
-local nilCount						= 0
+local infoTableHeight 				= 520
 local ctrlDown 						= false
+local textsize						= 11
+local textlarge						= 18
+local gaiaID						= Spring.GetGaiaTeamID()
+local gaiaAllyID					= select(6,Spring.GetTeamInfo(gaiaID))
+local LIMITSPEED					= 2.0 -- gamespseed under which to fully update dynamic graphics
 
 ---------------------------------------------------------------------------------------------------
 local announcingOn = true
@@ -124,74 +110,63 @@ local soundsOn = true -- set true if you want sounds
 local snd = "LuaUI/Sounds/ding.ogg" --path to sound file
 if snd == nil then soundsOn = false end
 
-local armImage      	= "LuaUI/Images/ecostats/arm_default.png"
-local coreImage      	= "LuaUI/Images/ecostats/core_default.png"
-local font            	= "LuaUI/Fonts/FreeMonoBold_12"
-local font2         	= "LuaUI/Fonts/FreeSansBold_14"
-local optContrast		= "LuaUI/Images/ecostats/contrast.png"
-local optBorders		= "LuaUI/Images/ecostats/borders.png"
-local optBordersOff		= "LuaUI/Images/ecostats/bordersOff.png"
-local optChkBoxOn		= "LuaUI/Images/ecostats/chkBoxOn.png"
-local optChkBoxOff		= "LuaUI/Images/ecostats/chkBoxOff.png"
-local optButtMore		= "LuaUI/Images/ecostats/ButtonMore.png"
-local optButtLess		= "LuaUI/Images/ecostats/ButtonLess.png"
-local defImage	 		= "LuaUI/Images/ecostats/default.png"
-local imgMove	 		= "LuaUI/Images/ecostats/move.png"
-local imgPrev	 		= "LuaUI/Images/ecostats/arrowL.png"
-local imgNext	 		= "LuaUI/Images/ecostats/arrowR.png"
+local fontPath  		= "LuaUI/Fonts/ebrima.ttf" 
+local font2Path  		= "LuaUI/Fonts/ebrima.ttf"
+local myFont	 		= gl.LoadFont("FreeSansBold.otf",textsize, 1.9, 40) --gl.LoadFont(fontPath,textsize,2,20)
+local myFontBig	 		= gl.LoadFont(font2Path,textlarge,5,40)
+
+local images			= {
+						["arm"]					= "LuaUI/Images/ecostats/arm_default.png",
+						["core"]     			= "LuaUI/Images/ecostats/core_default.png",
+						["contrast"]			= "LuaUI/Images/ecostats/contrast.png",
+						["borderson"]			= "LuaUI/Images/ecostats/borders.png",
+						["bordersoff"]			= "LuaUI/Images/ecostats/bordersOff.png",
+						["checkboxon"]			= "LuaUI/Images/ecostats/chkBoxOn.png",
+						["checkboxoff"]			= "LuaUI/Images/ecostats/chkBoxOff.png",
+						["more"]				= "LuaUI/Images/ecostats/ButtonMore.png",
+						["less"]				= "LuaUI/Images/ecostats/ButtonLess.png",
+						["default"]				= "LuaUI/Images/ecostats/default.png",
+						["move"]				= "LuaUI/Images/ecostats/move.png",
+						["arrowleft"]			= "LuaUI/Images/ecostats/arrowL.png",
+						["arrowright"]			= "LuaUI/Images/ecostats/arrowR.png",
+						["info"]				= "LuaUI/Images/ecostats/info.png",
+						["dead"]     			= "LuaUI/Images/ecostats/cross.png",
+						}
+			
+local AttackUnits			= {}
+local BuilderUnits			= {}
+			
 ---------------------------------------------------------------------------------------------------
 --  Speed ups
 ---------------------------------------------------------------------------------------------------
-local Echo 						 = Spring.Echo
-local Spring_GetGameSeconds      = Spring.GetGameSeconds
-local Spring_GetAllyTeamList     = Spring.GetAllyTeamList
-local Spring_GetTeamInfo         = Spring.GetTeamInfo
-local Spring_GetTeamList         = Spring.GetTeamList
-local Spring_GetPlayerInfo       = Spring.GetPlayerInfo
-local Spring_GetPlayerList       = Spring.GetPlayerList
-local Spring_GetTeamColor        = Spring.GetTeamColor
-local Spring_GetLocalAllyTeamID  = Spring.GetLocalAllyTeamID
-local Spring_GetLocalTeamID      = Spring.GetLocalTeamID
-local Spring_GetLocalPlayerID    = Spring.GetLocalPlayerID
-local Spring_ShareResources      = Spring.ShareResources
-local Spring_GetTeamUnitCount    = Spring.GetTeamUnitCount
-local Spring_GetTeamResources    = Spring.GetTeamResources
-local Spring_SendCommands        = Spring.SendCommands
-local Spring_GetConfigInt        = Spring.GetConfigInt
-local Spring_GetMouseState       = Spring.GetMouseState
-local Spring_GetAIInfo           = Spring.GetAIInfo
 
-local GetTextWidth        		 = fontHandler.GetTextWidth
-local UseFont             		 = fontHandler.UseFont
-local TextDraw            		 = fontHandler.Draw
-local TextDrawCentered    		 = fontHandler.DrawCentered
-local TextDrawRight       		 = fontHandler.DrawRight
+local Echo 						 = Spring.Echo
+local glText            		 = gl.Text
 
 ---------------------------------------------------------------------------------------------------
 --  Start
 ---------------------------------------------------------------------------------------------------
 
 function widget:Initialize()
-	if not (Spring.GetSpectatingState() or Spring.IsReplay()) then
+	if not (Spring.GetSpectatingState() or isReplay) then
 		inSpecMode = false
 		Echo("Ecostats: widget loaded in active player mode")
 	else
 		inSpecMode = true
 		Echo("Ecostats: widget loaded in spectator mode")
 	end
-	if Spring_GetGameSeconds() > 0 then gamestarted = true end
+	if Spring.GetGameSeconds() > 0 then gamestarted = true end
+	
 	Init()
-	return true
 end
 
 function widget:Shutdown()
-	--debugInfo()
+	 gl.DeleteList(drawList)
+	 gl.DeleteList(drawListDynamic)
 end
 
 function Init()
-	local nbTeams = getNbTeams()
 	local maxPlayers = getMaxPlayers()
-	if not gamestarted then startanimation = false end
 	bestKills = 0
 	worstLosses = 0
 	killCounters = {}
@@ -199,32 +174,28 @@ function Init()
 	killedHP = {}
 	lostHP = {}
 	kMat = {}
-	playerData = {}
 	teamData = {}
+	allyData = {}
 	comTable = {}
-	motto = {}
-	expandButtonState = {}
-	collapseButtonState = {}
-	expandButtonPos	 = {}
+	infoButton	 = {}
 	expandMove    = {}
-	collapseButtonPos  = {}
 	playerButton = {}
 	iPosX = {}
 	iPosY = {}
+	iPanel = {}
 	Teambutton = {}
 	Teambutton["Next"] = {}
 	Teambutton["Prev"] = {}
 	right = widgetPosX/vsx > 0.5
-	widgetHeight						= nbTeams*tH+2
+	widgetHeight = getNbTeams()*tH+2
 	
 	if right then
 		InfotablePosX = widgetPosX - (180 + cW*maxPlayers)
 	else
-		InfotablePosX = widgetPosX + widgetWidth - 1
+		InfotablePosX = widgetPosX + widgetWidth
 	end
-	InfotablePosY = widgetPosY + widgetHeight - 2
+	InfotablePosY = widgetPosY + widgetHeight
 	
-	--Echo("Init 1 completed")
 	if maxPlayers == 1 then
 		WBadge = 18
 	elseif maxPlayers == 2 or maxPlayers == 3 then
@@ -236,94 +207,54 @@ function Init()
 		widgetWidth = 30 + maxPlayers * WBadge
 		
 	end 
-	if widgetPosX + widgetWidth + 5 > vsx then
-		widgetPosX = vsx-widgetWidth-5
-	end
 	
-	if widgetPosX < 5 then
-		widgetPosX = 5
-	end
-	
-	for _,player in ipairs(Spring_GetTeamList()) do
-		killCounters[player] = 0
-		lossCounters[player] = 0
-		killedHP[player] = 0
-		lostHP[player] = 0
-		kMat[player] = {}
-		playerData[player] = {}
-		playerButton[player] = {}
-		for sortindex,enemy in ipairs(Spring_GetTeamList()) do
-			kMat[player][sortindex] = {enemy,0} -- maintain association: 1 = pID, 2 = kills
+	for _,teamID in ipairs(Spring.GetTeamList()) do
+		if teamID ~= gaiaID then
+			killCounters[teamID] = 0
+			lossCounters[teamID] = 0
+			killedHP[teamID] = 0
+			lostHP[teamID] = 0
+			kMat[teamID] = {}
+			setPlayerTable(teamID)
+			playerButton[teamID] = {}
+			for sortindex,enemy in ipairs(Spring.GetTeamList()) do
+				kMat[teamID][sortindex] = {enemy,0} -- maintain association: 1 = pID, 2 = kills
+			end
 		end
 	end
-	--Echo("Init 2 completed")
 	
 	for id,unitDef in ipairs(UnitDefs) do
-		 if unitDef.customParams.iscommander then
-			 for name,param in unitDef:pairs() do
-				if name == "id" then table.insert(comTable,param) end
-			end
-		 end
-	end
+		if unitDef.customParams.iscommander then
+			table.insert(comTable,id)
+		end
+		if #(unitDef.weapons) > 0 then
+			AttackUnits[id] = true
+		end
+		if unitDef.isBuilder then
+			BuilderUnits[id] = true
+		end
+	end	
 	
-	--Echo("Init 3 completed")
-	local mottoTable ={
-	"but","firstling","of","a","cow","firstling","of","a","sheep","firstling","of","a","goat","","thou","shalt","redeem","they","are","holy:","thou","shalt","sprinkle","their","blood","upon","altar","ando","shalt","burn","their","fat","an","offering","made","by","fire","a","sweet","savour","unto","LORD","Pharaoh","shall","hearken","unto","you","that","I","may","lay","my","hand","upon","Egypt","bring","forth","mine","armies","my","people","children","of","Israel","out","of","land","of","Egypt","by","great","judgments","on","east","side","toward","rising","of","sun","shall","they","of","standard","of","camp","of","Judah","pitch","throughout","their","armies","Nahshon","son","of","Amminadab","shall","be","captain","of","children","of","Judah", "Spam", "Wattle", "Annihilation", "Total","Babbles","Commander","the","army","Tribulex ","have","the","perfect","strat","for","one","map!","FrozenLegacy","Sorry,","Frozen","has","self","destructed,","come","again","later","Jools","Do","you","want","some","mines","with","that?","Ansiktsburk","Allies","losing,","need","to","tech","faster","Malric","My","GF","let","me","play",":)","Scifi","modding,","go","away","Jimjoe","Stop","talking","about","my","mum,","Shift","V1ntage","really","bad!","shift","ukraine","joke","to","you?","Punarbhava","too","out","it","to","care","Snel","the","only","good","Swedish","player","really","CoW","Core","War:","Manolo","Less","playing,","more","speccing!","Seba","1v1?","TheMightyOne","It","failed","me","the","first","9000","times,","so","it","now!","FlorisXIV","have","more","smurfs","than","ingame","minutes","Error232","rusty,","swear!","Kloot","HLT","here,","HLT","there","HermuldXV","cow","says","mooh","Jim","Hatama","No-one","knows","who","am","Ray","hate","people","who","are","better","than","me;","love","CoW","RoX","Rogues","XTA","Janid","love","my","crashers","like","my","children","Tobi","got","bored","doing","everything","John","My","AK","beats","your","AK","Pintle","Hey,","didn't","my","clan","used","to","be","good?","1v0ry_k1ng","actually","played,","but","know","the","balance","better","than","you","PhreakY","riding","on","knowing","Pintle","SIN","Basic","Everything","OP","unless","say","otherwise","el_barto","Barto","timed","out","before","he","could","be","quoted","Creed","not","Admin!","DearLordAnimal","am","but","one","many","DojeH","Every","low","ranking","German","player","me"
-	}
-
-	local teamlist = Spring_GetAllyTeamList()
-	for _,team in ipairs (teamlist) do
-	
-		local nbPlayers = getNbPlayers(team)
-		--Echo("Initing team:",team)
-		local motto1 = mottoTable[math.random(table.getn(mottoTable))]
-		motto1 = firstToUpper(motto1)
-		local motto2 = mottoTable[math.random(table.getn(mottoTable))]
-		local motto3 = mottoTable[math.random(table.getn(mottoTable))]
-		motto[team] = "'"..motto1.." "..motto2.." and "..motto3.."'"
-		expandButtonPos[team]		= {}
-		collapseButtonPos[team]		= {}
-		expandButtonState[team]		= {}
-		collapseButtonState[team]	= {}
-		expandMove[team] 			= {}
-		Teambutton["Next"][team] 	= {}
-		Teambutton["Prev"][team] 	= {}
-		
-		teamData[team] 				= {}
-		
-		expandButtonPos[team]["x1"] = 0
-		collapseButtonPos[team]["x1"] = 0
-		expandButtonPos[team]["y1"] = 0
-		collapseButtonPos[team]["y1"] = 0
-		expandButtonPos[team]["x2"] = 0
-		collapseButtonPos[team]["x2"] = 0
-		expandButtonPos[team]["y2"] = 0
-		collapseButtonPos[team]["y2"] = 0
-		expandButtonState[team]["mouse"] 	= false
-		expandButtonState[team]["click"] 	= false
-		collapseButtonState[team]["mouse"] 	= false
-		collapseButtonState[team]["click"] 	= false
-		expandMove[team]["x1"]		= 0
-		expandMove[team]["x2"]		= 0
-		expandMove[team]["y1"]		= 0
-		expandMove[team]["y2"]		= 0
-		expandMove[team]["mouseover"]		= false
-		Teambutton["Next"][team]["x1"]	= 0	
-		Teambutton["Next"][team]["x2"]	= 0
-		Teambutton["Next"][team]["y1"]	= 0
-		Teambutton["Next"][team]["y2"]	= 0
-		Teambutton["Next"][team]["mouse"] = false
-		Teambutton["Next"][team]["click"] = false
-		Teambutton["Prev"][team]["x1"]	= 0	
-		Teambutton["Prev"][team]["x2"]	= 0
-		Teambutton["Prev"][team]["y1"]	= 0
-		Teambutton["Prev"][team]["y2"]	= 0
-		Teambutton["Prev"][team]["mouse"] = false
-		Teambutton["Prev"][team]["click"] = false
-		
-		defineButtonCoords(team)
+	local allyList = Spring.GetAllyTeamList()
+	for _,allyID in ipairs (allyList) do
+		if allyID ~= gaiaAllyID then
+			setAllyData(allyID)		
+			local nbPlayers 						= getNbPlayers(allyID)
+			infoButton[allyID]						= {}
+			expandMove[allyID] 						= {}
+			Teambutton["Next"][allyID] 				= {}
+			Teambutton["Prev"][allyID] 				= {}
+			infoButton[allyID]["mouse"] 			= false
+			infoButton[allyID]["click"] 			= false
+			expandMove[allyID]["mouseover"]			= false
+			Teambutton["Next"][allyID]["mouse"] 	= false
+			Teambutton["Next"][allyID]["click"] 	= false
+			Teambutton["Prev"][allyID]["mouse"] 	= false
+			Teambutton["Prev"][allyID]["click"] 	= false
+			iPanel[allyID]							= false
+		end
 	end
-	--Echo("Init 4 completed")
+	updateButtons()
 	UpdateTeams()
 	if not options.disable then
 		Echo("Ecostats:Options not loaded, using default settings. (This is normal during first run.)")
@@ -332,25 +263,22 @@ function Init()
 	
 	local frame = Spring.GetGameFrame()
 	lastPlayerChange = frame
-	updateList["frame"] 			= {}
-	updateList["team"] 				= {}
-	--Echo("Init completed")
+
+	
 end
 
 function Reinit()
-	--Echo("Reiniting...")
-	local nbTeams = getNbTeams()
+			
 	local maxPlayers = getMaxPlayers()
-	if not gamestarted then startanimation = false end
-	
-	if (not inSpecMode) and gamestarted and (not startanimation) then 
+		
+	if (not inSpecMode) and gamestarted then 
 		if widgetWidth < 60 then widgetWidth = 60 end
 		if tH < 50 then tH = 50 end
 	else
 		if widgetWidth <  110 then widgetWidth = 110 end
 		if tH < 75 then tH = 75 end
 	end
-	widgetHeight = nbTeams*tH+2
+	
 	if maxPlayers == 1 then
 		WBadge = 18
 	elseif maxPlayers == 2 or maxPlayers == 3 then
@@ -361,16 +289,14 @@ function Reinit()
 	if maxPlayers * WBadge + 30 > widgetWidth then 
 		widgetWidth = 30 + maxPlayers * WBadge
 	end	
-	if widgetPosX + widgetWidth + 5 > vsx then widgetPosX = vsx-widgetWidth -5 end
-	if widgetPosX < 5 then widgetPosX = 5 end
+	if widgetPosX + widgetWidth > vsx then widgetPosX = vsx-widgetWidth end
+	if widgetPosX < 0 then widgetPosX = 0 end
 	
-	local teamlist = Spring_GetAllyTeamList()
-	delayedUpdateTeams()
+	local allyList = Spring.GetAllyTeamList()
+	UpdateTeams()
+	UpdateTeams()
+	updateButtons()
 	
-	for _,team in ipairs (teamlist) do
-		delayedUpdateButtons()
-	end
-	--Echo("Reinit complete")
 end
 
 ---------------------------------------------------------------------------------------------------
@@ -381,9 +307,9 @@ function setDefaults()
 	options = {}
 	options["contrastMore"] = {}
 	options["contrastLess"] = {}
-	options["contrast"] = 0.3
+	options["contrast"] = 0.2
 	options["borders"] = {}
-	options["borders"]["On"] = true
+	options["borders"]["On"] = false
 	options["disable"] = {}
 	options["disable"]["On"] = false
 	options["FPBar1"] = {}
@@ -403,14 +329,14 @@ function setDefaults()
 	options["heightInc"] = {}
 	options["heightDec"] = {}
 	options["Announce"] = {}
-	options["Announce"]["On"] = true
+	options["Announce"]["On"] = false
 	options["resText"] = {}
 	options["removeDead"] = {}
 	options["resText"]["On"] = true
 	options["removeDead"]["On"] = false
 	vsx,vsy 			= gl.GetViewSizes()
 	widgetWidth 		= 110
-	widgetPosX         	= vsx-widgetWidth-5
+	widgetPosX         	= vsx-widgetWidth
 	widgetPosY         	= 600
 	expandDown         	= true
 	expandLeft         	= true
@@ -498,19 +424,17 @@ function widget:SetConfigData(data)      -- load
 	expandLeft         	= data.expandLeft or expandLeft
 	tH					= data.tH or tH
 	soundsOn 			= data.soundsOn or soundsOn
-	--Echo("Loaded all config data")
-	--printOptions()
 end
 
 ---------------------------------------------------------------------------------------------------
---  General
+--  Local
 ---------------------------------------------------------------------------------------------------
 
-function firstToUpper(str)
+local function firstToUpper(str)
 	return (str:sub(1,1):upper()..str:sub(2))
 end
 
-function digitsep(amount)
+local function digitsep(amount)
   local formatted = amount
   while true do
     formatted, k = string.gsub(formatted, "^(-?%d+)(%d%d%d)", '%1 %2')
@@ -521,14 +445,78 @@ function digitsep(amount)
   return formatted
 end
 
+local function round(num, idp)
+  local mult = 10^(idp or 0)
+  return math.floor(num * mult + 0.5) / mult
+end
+
+local function friendlyName(teamID)
+	if teamID == nil then return "NONE" end
+	local _,_,_,isAIteam,side,_,_,_ = Spring.GetTeamInfo(teamID)
+	if isAIteam then
+		if side == "arm" then return "Arm"
+		elseif side == "core" then return "Core"
+		elseif not (side == nil or #side < 1) then return side
+		else return ("Team " .. teamID)
+		end
+	else
+		names=nil
+		for _,pid in ipairs(Spring.GetPlayerList(teamID,true)) do
+			local name,active,spectator,_,_,_,_,_,_ = Spring.GetPlayerInfo(pid)
+			if not spectator then
+				names=(names and names.."," or "").."<PLAYER"..pid..">"
+			end
+		end
+		if names == nil or #names < 1 then return ("Team " .. teamID) end
+		return (names and names or "")
+	end
+end
+
+local function formatRes(number)
+	local label
+	if number > 10000 then
+		label = table.concat({math.floor(round(number/1000)),"k"})
+	elseif number > 1000 then
+		label = table.concat({string.sub(round(number/1000,1),1,2+string.find(round(number/1000,1),".")),"k"})
+	elseif number > 10 then
+		label = string.sub(round(number,0),1,3+string.find(round(number,0),"."))
+	else
+		label = string.sub(round(number,1),1,2+string.find(round(number,1),"."))
+	end
+	return tostring(label)
+end
+
+local function formatRes1000(number)
+	local label
+	if number == nil then
+		Echo(Spring.GetGameFrame(),": formatRes1000 returned nil")
+		
+		return nil
+	end
+	if number > 10000 then
+		label = digitsep(round(number))
+	elseif number > 1000 then
+		label = digitsep(round(number))
+	elseif number > 10 then
+		label = string.sub(round(number,0),1,3+string.find(round(number,0),"."))
+	else
+		label = string.sub(round(number,1),1,2+string.find(round(number,1),"."))
+	end
+	return label
+end
+
+---------------------------------------------------------------------------------------------------
+--  General
+---------------------------------------------------------------------------------------------------
+
 function UpdateAllPlayers()
-	for _,player in ipairs(Spring_GetTeamList()) do
-		if player ~= Spring.GetGaiaTeamID then
+	for _,teamID in ipairs(Spring.GetTeamList()) do
+		if teamID ~= gaiaID then
 			if inSpecMode then
-				setPlayerTable(player)
+				setPlayerTable(teamID)
 			else
-				local team = playerData[player].teamID
-				if team == Spring.GetMyAllyTeamID() then setPlayerTable(player) end
+				local allyID = teamData[teamID].allyID
+				if allyID == Spring.GetMyAllyTeamID() then setPlayerTable(teamID) end
 			end
 		end
 	end
@@ -539,242 +527,151 @@ function UpdatePlayer(pID)
 		if inSpecMode then
 			setPlayerTable(pID)
 		else
-			local team = playerData[pID].teamID
-			if team == Spring.GetMyAllyTeamID() then setPlayerTable(pID) end
+			local allyID = teamData[pID].allyID
+			if allyID == Spring.GetMyAllyTeamID() then setPlayerTable(pID) end
 		end
 	end
 end
 
 function UpdateTeams()
-	local teamlist = Spring_GetAllyTeamList()	
-	for _,team in ipairs (teamlist) do
-		--Echo("Updating team",team,inSpecMode,Spring.GetMyAllyTeamID())
+	local allyList = Spring.GetAllyTeamList()	
+	for _,allyID in ipairs (allyList) do	
 		if inSpecMode then
-			--Echo("Updating team:",team, "inSpecMode")
-			setTeamTable(team)
+			setAllyData(allyID)
 		else
-			if team == Spring.GetMyAllyTeamID() then 
-				--Echo("Updating team: ",team,"not inSpecMode")
-				setTeamTable(team) 
+			if allyID == Spring.GetMyAllyTeamID() then 
+				setAllyData(allyID) 
 			end
 		end
 	end
-	--Echo("Finished updating teams")
+	
 end
 
 function UpdateTeam(teamID)
 	if inSpecMode then
-		--Echo("Updating team:",team, "inSpecMode")
-		setTeamTable(teamID)
+		setAllyData(teamID)
 	else
 		if teamID == Spring.GetMyAllyTeamID() then 
-			--Echo("Updating team: ",team,"not inSpecMode")
-			setTeamTable(teamID) 
+			setAllyData(teamID) 
 		end
-	end
-end
-
-function delayedUpdateTeam(teamID)
-	local frame = Spring.GetGameFrame()
-	table.insert(updateList["frame"],frame)
-	table.insert(updateList["team"],teamID)
-end
-
-function delayedUpdateTeams()
-	local frame = Spring.GetGameFrame()
-	table.insert(updateList["frame"],frame)
-	table.insert(updateList["team"],1000)
-end
-
-function delayedUpdateButtons()
-	local frame = Spring.GetGameFrame()
-	table.insert(updateList["frame"],frame)
-	table.insert(updateList["team"],2000)
-end
-
-function round(num, idp)
-  local mult = 10^(idp or 0)
-  return math.floor(num * mult + 0.5) / mult
-end
-
-function friendlyName(teamID)
-	if teamID == nil then return "NONE" end
-	local _,_,_,isAIteam,side,_,_,_ = Spring_GetTeamInfo(teamID)
-	if isAIteam then
-		if side == "arm" then return "Arm"
-		elseif side == "core" then return "Core"
-		elseif not (side == nil or #side < 1) then return side
-		else return ("Team " .. teamID)
-		end
-	else
-		names=nil
-		for _,pid in ipairs(Spring_GetPlayerList(teamID,true)) do
-			local name,active,spectator,_,_,_,_,_,_ = Spring_GetPlayerInfo(pid)
-			if not spectator then
-				names=(names and names.."," or "").."<PLAYER"..pid..">"
-			end
-		end
-		if names == nil or #names < 1 then return ("Team " .. teamID) end
-		return (names and names or "")
 	end
 end
 
 function setPlayerTable(pID)
-	--Echo("Setting table for player:",pID)
-	if pID == nil then return end
+	
 	local side, tID, isDead, commanderAlive, minc, einc, kills, losses, x, y, kills2, losses2, leaderName, leaderID, active, unitCount, spectator, country, rank
-	_,leaderID,isDead,_,side,tID,_,_ 	= Spring_GetTeamInfo(pID)
-	if not leaderID then return end
-	--Echo("Returning player table for player:", pID, leaderID, tID)
-	leaderName,active,spectator,_,_,_,_,country,rank	= Spring_GetPlayerInfo(leaderID)
-	--Echo("Player ID:", pID, "Team ID:", tID, leaderName, Spring.GetTeamStartPosition(pID))
-	-- filter for active players
-	local tmp1,_,tmp3 = Spring.GetTeamStartPosition(pID)
-	local tred, tgreen, tblue = Spring_GetTeamColor(pID)
+	_,leaderID,isDead,isAI,side,tID,_,_ 	= Spring.GetTeamInfo(pID)
+	leaderName,active,spectator,_,_,_,_,country,rank	= Spring.GetPlayerInfo(leaderID)
+	
+	local tred, tgreen, tblue = Spring.GetTeamColor(pID)
 	local luminance  = (tred * 0.299) + (tgreen * 0.587) + (tblue * 0.114)
 	if (luminance < 0.2) then
 		tred = tred + 0.25
 		tgreen = tgreen + 0.25
 		tblue = tblue + 0.25
 	end
-	--Echo("Phase 2: Setting table for player:",pID, tmp1, tred, leaderID,leaderName)
-	if tmp1 == nil then
-		--Echo("setPlayerTable: startposX is nil for player:", pID,"Setting to zero.")
-		tmp1 = 0
-		tmp3 = 0
-	end
 	
-	x = math.floor(tmp1)
-	y = math.floor(tmp3)
-	kills2,losses2,_,_,_,_ 		= Spring.GetTeamUnitStats(pID)
-	_,_,_,minc,_,_,_,_ 			= Spring_GetTeamResources(pID,"metal")
-	_,_,_,einc,_,_,_,_ 			= Spring_GetTeamResources(pID,"energy")
-	
-	if minc == nil or einc == nil then
-		--Echo("setPlayerTable: energy/metal resources are nil for player:", pID,"Setting to zero.")
-		minc = 0
-		einc = 0
-	end
-	
+	kills2,losses2 				= Spring.GetTeamUnitStats(pID)
+	_,_,_,minc 					= Spring.GetTeamResources(pID,"metal")
+	_,_,_,einc 					= Spring.GetTeamResources(pID,"energy")
+	x,_,y 						= Spring.GetTeamStartPosition(pID)
 	commanderAlive 				= checkCommander(pID)
 	kills 						= killCounters[pID]
 	losses 						= lossCounters[pID]
 	killedhp 					= killedHP[pID]
 	losthp 						= lostHP[pID]
-	unitCount 					= Spring_GetTeamUnitCount(pID)
-	--Echo("Phase 3: Setting table for player:",pID, commanderAlive,checkCommander(0))
-	playerData[pID] 				= {}
-	playerData[pID]["playerID"] 	= pID
-	playerData[pID]["teamID"] 		= tID
-	playerData[pID]["red"]			= tred
-	playerData[pID]["green"]		= tgreen
-	playerData[pID]["blue"]			= tblue
-	playerData[pID]["startx"]		= x
-	playerData[pID]["starty"]		= y
-	playerData[pID]["side"]			= side
-	playerData[pID]["isDead"] 		= isDead
-	playerData[pID]["hasCom"]		= commanderAlive
-	playerData[pID]["minc"]			= minc
-	playerData[pID]["einc"] 		= einc
-	playerData[pID]["kills"]		= kills
-	playerData[pID]["losses"]		= losses
-	playerData[pID]["kills2"]		= kills2
-	playerData[pID]["losses2"]		= losses2
-	playerData[pID]["killedhp"]		= killedhp
-	playerData[pID]["losthp"]		= losthp
-	playerData[pID]["leaderID"]		= leaderID
-	playerData[pID]["leaderName"]	= leaderName
-	playerData[pID]["active"]		= active
-	playerData[pID]["spectator"]	= spectator
-	playerData[pID]["unitCount"]	= unitCount
-	playerData[pID]["country"]		= country
-	playerData[pID]["rank"]			= rank
+	unitCount 					= Spring.GetTeamUnitCount(pID)
+	
+	if not teamData[pID] then teamData[pID] = {} end
+	
+	teamData[pID]["playerID"] 		= pID
+	teamData[pID]["allyID"] 		= tID
+	teamData[pID]["red"]			= tred
+	teamData[pID]["green"]			= tgreen
+	teamData[pID]["blue"]			= tblue
+	teamData[pID]["startx"]			= x
+	teamData[pID]["starty"]			= y
+	teamData[pID]["side"]			= side
+	teamData[pID]["isDead"] 		= isDead
+	teamData[pID]["hasCom"]			= commanderAlive
+	teamData[pID]["minc"]			= minc
+	teamData[pID]["einc"] 			= einc
+	teamData[pID]["kills"]			= kills
+	teamData[pID]["losses"]			= losses
+	teamData[pID]["kills2"]			= kills2
+	teamData[pID]["losses2"]		= losses2
+	teamData[pID]["killedhp"]		= killedhp
+	teamData[pID]["losthp"]			= losthp
+	teamData[pID]["leaderID"]		= leaderID
+	teamData[pID]["leaderName"]		= leaderName
+	teamData[pID]["active"]			= active
+	teamData[pID]["spectator"]		= spectator
+	teamData[pID]["unitCount"]		= unitCount
+	teamData[pID]["country"]		= country
+	teamData[pID]["rank"]			= rank
+	teamData[pID]["isAI"]			= isAI
 	setPlayerFP(pID)
 	setPlayerBP(pID)
-	--Echo("Finished setting table for player:",pID)
+	teamData[pID]["skill"]			= GetSkill(pID)
 end
 
-function setTeamTable(team)
-	local playerList = Spring_GetTeamList(team)
-	for _,p in ipairs (playerList) do
-		setPlayerTable(p)
-		--Echo("Finished setting player table for player", p, playerData[p].hasCom)
-	end
-	--Echo("Finished setting player tables for team", team)
-	local player1 = playerList[1] --leader id
+function setAllyData(allyID)
+	if allyID == gaiaAllyID then return end
+	local id = allyID + 1
 	
-	if player1 == nil then return end
+	local playerList = Spring.GetTeamList(allyID)
 	
-	if teamData[team] == nil then 
-		teamData[team]				= {}
-	end
-	teamData[team]["tE"] 			= getTeamSum(team,"einc")
-	teamData[team]["tM"] 			= getTeamSum(team,"minc")
-	teamData[team]["tFP"]			= getTeamSum(team,"firepower")
-	teamData[team]["tBP"]			= getTeamSum(team,"buildpower")
-	teamData[team]["tFPM"]			= getTeamSum(team,"firepowerMob")
-	teamData[team]["tBPA"]			= getTeamSum(team,"buildpowerAir")
-	teamData[team]["x"]				= getTeamSum(team,"startx")
-	teamData[team]["y"]				= getTeamSum(team,"starty")
-	teamData[team]["validPlayers"]	= getNbPlacedPositions(team)
-	teamData[team]["label"]			= getCardinal (teamData[team]["x"]/teamData[team]["validPlayers"],teamData[team]["y"]/teamData[team]["validPlayers"])
-	teamData[team]["kills"]			= getTeamSum(team,"kills")
-	teamData[team]["losses"]		= getTeamSum(team,"losses")
-	teamData[team]["killedhp"]		= getTeamSum(team,"killedhp")
-	teamData[team]["losthp"]		= getTeamSum(team,"losthp")
-	teamData[team]["isAlive"]		= isTeamAlive(team)
-	teamData[team]["leader"]		= playerData[player1]["leaderName"]
-	--Echo("Finished setting team table for team", team)
-end
-
-function getPlayerTable(pID)
-	--setPlayerTable(pID)
-	return playerData[pID]
-end
-
-function getTeamSum(team,param)
-	local tValue = 0
-	for _,pID in ipairs (Spring_GetTeamList(team)) do
-		if playerData[pID] == nil then
-			--Echo("Ecostats:getTeamSum returned nil for (T/P):",team,pID,param, playerData)
-			--printTeams()
-			return nil
-		elseif playerData[pID][param] == nil then 
-			--Echo("Ecostats:getTeamSum returned nil for (T/P):",team,pID,param,playerData[pID].leaderName)
-			--printTeams()
-			return nil
+	if #playerList > 0 and isTeamAlive(allyID) then
+		for _,tID in ipairs (playerList) do
+			if tID ~= gaiaID then
+				setPlayerTable(tID)
+			end
 		end
-		tValue = tValue + playerData[pID][param]
+				
+		local player1 = playerList[1] --leader id
+			
+		if not allyData[id] then allyData[id] = {} end
+		
+		allyData[id]["tE"] 				= getTeamSum(allyID,"einc")
+		allyData[id]["tM"] 				= getTeamSum(allyID,"minc")
+		allyData[id]["tFP"]				= getTeamSum(allyID,"firepower")
+		allyData[id]["tBP"]				= getTeamSum(allyID,"buildpower")
+		allyData[id]["tFPM"]			= getTeamSum(allyID,"firepowerMob")
+		allyData[id]["tBPA"]			= getTeamSum(allyID,"buildpowerAir")
+		allyData[id]["x"]				= getTeamSum(allyID,"startx")
+		allyData[id]["y"]				= getTeamSum(allyID,"starty")
+		allyData[id]["validPlayers"]	= getNbPlacedPositions(allyID)
+		allyData[id]["kills"]			= getTeamSum(allyID,"kills")
+		allyData[id]["losses"]			= getTeamSum(allyID,"losses")
+		allyData[id]["killedhp"]		= getTeamSum(allyID,"killedhp")
+		allyData[id]["losthp"]			= getTeamSum(allyID,"losthp")
+		allyData[id]["isAlive"]			= isTeamAlive(allyID)
+		allyData[id]["leader"]			= teamData[player1]["leaderName"] or "N/A"
+		allyData[id]["tFP"]				= getTeamSum(allyID,"firepower")
+		allyData[id]["tFPM"]			= getTeamSum(allyID,"firepowerMob")
+		allyData[id]["tBP"]				= getTeamSum(allyID,"buildpower")
+		allyData[id]["tBPA"]			= getTeamSum(allyID,"buildpowerAir")
+		allyData[id]["aID"]				= allyID
+	else
+		if options["removeDead"]["On"] then
+			allyData[id] = nil
+		end
 	end
+
+end
+
+function getTeamSum(allyID,param)
+	local tValue = 0
+	local teamList = Spring.GetTeamList(allyID)
+		
+	for _,tID in ipairs (teamList) do
+		if tID ~= gaiaID then
+			tValue = tValue + (teamData[tID][param] or 0)
+		end
+	end
+	
 	return tValue
-end
-
-function getTeamAvg(team,param)
-	local tValue = 0
-	local nbPlayers = 0
-	--local leaderID,leaderName,active,spectator,isDead
-
-	for _,pID in ipairs (Spring_GetTeamList(team)) do
-		-- leadername = playerData[pID].leaderName
-		-- leaderID = playerData[pID].leaderID
-		-- active = playerData[pID].active
-		-- spectator = playerData[pID].spectator
-		-- isDead = playerData[pID].isDead
-
-		if param == nil then
-			debugInfo()
-			Echo("loop:",team,pID,param,leadername,active,spectator,isDead)
-		end
-		if gamestarted and playerData[pID].unitCount > 0 then
-			nbPlayers = nbPlayers + 1
-			tValue = tValue + playerData[pID][param]
-		end
-	end
-	if nbPlayers == 0 then
-		--Echo("Inf:",team,param,name,tValue)
-		return getTeamSum(team, param)
-	end
-	return tValue/nbPlayers
+	
 end
 
 function getTeamStarts(team)
@@ -782,14 +679,13 @@ function getTeamStarts(team)
 	local x, y, active, leaderID, leaderName, isDead
 	local validPlayers = 0
 	
-	for _,pID in ipairs (Spring_GetTeamList(team)) do
-		leaderID = playerData[pID].leaderID
-		x = playerData[pID].startx
-		y = playerData[pID].starty
-		active = playerData[pID].active
-		--_,leaderID,isDead			= Spring_GetTeamInfo(pID)
-		leaderName,active,spectator	= Spring_GetPlayerInfo(leaderID)				
-		isDead = playerData[pID].isDead
+	for _,pID in ipairs (Spring.GetTeamList(team)) do
+		leaderID = teamData[pID].leaderID
+		x = teamData[pID].startx
+		y = teamData[pID].starty
+		active = teamData[pID].active
+		leaderName,active,spectator	= Spring.GetPlayerInfo(leaderID)				
+		isDead = teamData[pID].isDead
 		if leaderName and startx then
 			if active and startx >= 0 and starty >= 0 or isDead then
 				validPlayers = validPlayers +1
@@ -805,13 +701,14 @@ function getTeamStarts(team)
 	end
 end
 
-function isTeamReal(teamID)
-	if teamID == nil then return false end
+function isTeamReal(allyID)
+	if allyID == nil then return false end
 	local leaderID, spectator, isDead, unitCount
-	for _,pID in ipairs (Spring_GetTeamList(teamID)) do
-		_,leaderID,isDead			= Spring_GetTeamInfo(pID)
-		unitCount					= Spring_GetTeamUnitCount(pID)
-		leaderName,active,spectator	= Spring_GetPlayerInfo(leaderID)
+
+	for _,tID in ipairs (Spring.GetTeamList(allyID)) do
+		_,leaderID,isDead			= Spring.GetTeamInfo(tID)
+		unitCount					= Spring.GetTeamUnitCount(tID)
+		leaderName,active,spectator	= Spring.GetPlayerInfo(leaderID)
 		if leaderName ~= nil or isDead or unitCount > 0 then return true end
 	end
 	return false
@@ -819,65 +716,48 @@ end
 
 function isTeamAlive(teamID)
 	if teamID == nil then return false end
-	for _,pID in ipairs (Spring_GetTeamList(teamID)) do
-		if 	not playerData[pID]["isDead"] then return true end
+	for _,pID in ipairs (Spring.GetTeamList(teamID)) do
+		if not teamData[pID]["isDead"] then return true end
 	end
 	return false
 end
 
 function getNbTeams()
 	local nbTeams = 0
-	local teamlist = Spring_GetAllyTeamList()
-	for _,team in ipairs (teamlist) do
-		if isTeamReal(team) then nbTeams = nbTeams + 1 end
+	for _,allyID in ipairs (Spring.GetAllyTeamList()) do
+		if isTeamReal(allyID) then nbTeams = nbTeams + 1 end
 	end
 	return nbTeams
 end
 
 function getNbPlayers(teamID)
-	local nbPlayers = #(Spring_GetTeamList(teamID))
+	local nbPlayers = #(Spring.GetTeamList(teamID))
 	return nbPlayers
 end
 	
 function getMaxPlayers()
 	local maxPlayers = 0
 	local myNum
-	for _,team in ipairs(Spring_GetAllyTeamList()) do
-		myNum = getNbPlayers(team)
+	for _,allyID in ipairs(Spring.GetAllyTeamList()) do
+		myNum = getNbPlayers(allyID)
 		if myNum > maxPlayers then maxPlayers = myNum end
 	end
+	
 	return maxPlayers
-end
-
-function getMinPlayers()
-	local minPlayers = nil
-	local myNum
-	for _,team in ipairs(Spring_GetAllyTeamList()) do
-		myNum = getNbPlayers(team)
-		if myNum > 0 then
-			if not minPlayers then 
-				minPlayers = myNum
-			else
-				if myNum < minPlayers then minPlayers = myNum end
-			end
-		end
-	end
-	return minPlayers
 end
 
 function getNbActivePlayers(teamID)
 	local nbPlayers = 0
 	local leaderID,active,spectator,isDead, leaderName
 
-	for _,pID in ipairs (Spring_GetTeamList(teamID)) do
-		leaderID = playerData[pID].leaderID
-		leaderName = playerData[pID].leaderName
-		active = playerData[pID].active
-		spectator = playerData[pID].spectator
-		isDead = playerData[pID].isDead
+	for _,pID in ipairs (Spring.GetTeamList(teamID)) do
+		leaderID = teamData[pID].leaderID
+		leaderName = teamData[pID].leaderName
+		active = teamData[pID].active
+		spectator = teamData[pID].spectator
+		isDead = teamData[pID].isDead
 		if not (spectator or isDead or leaderID == -1) and active then
 			nbPlayers = nbPlayers +1
-			--Echo("getNbPlayers",teamID,pID,spectator, isDead, leaderID,nbPlayers, leaderName)
 		end
 	end
 	return nbPlayers
@@ -887,24 +767,22 @@ function getNbPlacedPositions(teamID)
 	local nbPlayers = 0
 	local startx, starty, active, leaderID, unitCount, leaderName, isDead
 	
-	for _,pID in ipairs (Spring_GetTeamList(teamID)) do
-		if playerData[pID] == nil then
+	for _,pID in ipairs (Spring.GetTeamList(teamID)) do
+		if teamData[pID] == nil then
 			Echo("getNbPlacedPositions returned nil:",teamID)
 			return nil
 		end
-		leaderID = playerData[pID].leaderID
+		leaderID = teamData[pID].leaderID
 		if leaderID == nil then
 			Echo("getNbPlacedPositions returned nil:",teamID)
 			return nil
 		end
-		startx = playerData[pID].startx
-		starty = playerData[pID].starty
-		active = playerData[pID].active
-		--_,leaderID,isDead			= Spring_GetTeamInfo(pID)
-		--unitCount					= Spring_GetTeamUnitCount(pID)
-		leaderName,active,spectator	= Spring_GetPlayerInfo(leaderID)				
+		startx = teamData[pID].startx or -1
+		starty = teamData[pID].starty or -1
+		active = teamData[pID].active
+		leaderName,active,spectator	= Spring.GetPlayerInfo(leaderID)				
 		
-		isDead = playerData[pID].isDead
+		isDead = teamData[pID].isDead
 		if (active and startx >= 0 and starty >= 0 and leaderName ~= nil)  or isDead then
 			nbPlayers = nbPlayers +1
 		end
@@ -923,118 +801,91 @@ end
 function setPlayerFP(pID)
 	local pFP = 0
 	local pFPMob = 0
-	local unitList = Spring.GetTeamUnits(pID)
-	if unitList == nil then
-		Echo("setPlayerFP: unitlist is nil for player:", pID)
-		return nil
-	end
-	local team = playerData[pID].teamID
-	for _, unitID in ipairs(unitList) do
-		if unitID == nil or UnitDefs[Spring.GetUnitDefID(unitID)] == nil then
-			Echo("setPlayerFP: unitID is nil for player:", pID, unitID, Spring.GetUnitDefID(unitID))
-			return nil
-		end
-		if #(UnitDefs[Spring.GetUnitDefID(unitID)].weapons) > 0 and isUnitComplete(unitID) then
-			pFP = pFP + Spring.GetUnitHealth(unitID)
-			if UnitDefs[Spring.GetUnitDefID(unitID)].canMove then
-				pFPMob = pFPMob + Spring.GetUnitHealth(unitID)
+		
+	local team = teamData[pID].allyID
+	for _, unitID in ipairs(Spring.GetTeamUnits(pID)) do
+		local udid = Spring.GetUnitDefID(unitID)
+		if udid then
+			if AttackUnits[udid] and isUnitComplete(unitID) then
+				pFP = pFP + (Spring.GetUnitHealth(unitID) or 0)
+				if UnitDefs[udid].canMove then
+					pFPMob = pFPMob + (Spring.GetUnitHealth(unitID) or 0)
+				end
 			end
 		end
 	end
-	playerData[pID]["firepower"]			= pFP
-	playerData[pID]["firepowerMob"]			= pFPMob
-	teamData[team]["tFP"]					= getTeamSum(team,"firepower")
-	teamData[team]["tFPM"]					= getTeamSum(team,"firepowerMob")
+	teamData[pID]["firepower"]			= pFP
+	teamData[pID]["firepowerMob"]		= pFPMob
 end
 
 function setPlayerBP(pID)
 	local pBP = 0
-	local pBPair = 0
-	local unitList = Spring.GetTeamUnits(pID)
-	if unitList == nil then
-		Echo("setPlayerBP: returned nil for player:", pID)
-		return nil
-	end
-	local team = playerData[pID].teamID
-	for _, unitID in ipairs(unitList) do			
-		if unitID == nil or UnitDefs[Spring.GetUnitDefID(unitID)] == nil then
-			Echo("setPlayerBP: unitID is nil for player:", pID, unitID, Spring.GetUnitDefID(unitID))
-			return nil
-		end
-		if (UnitDefs[Spring.GetUnitDefID(unitID)].isBuilder) and isUnitComplete(unitID) then
-			pBP = pBP + UnitDefs[Spring.GetUnitDefID(unitID)].buildSpeed
-			if UnitDefs[Spring.GetUnitDefID(unitID)].canFly then
-				pBPair = pBPair + UnitDefs[Spring.GetUnitDefID(unitID)].buildSpeed
+	local pBPair = 0	
+	local team = teamData[pID].allyID
+	
+	for _, unitID in ipairs(Spring.GetTeamUnits(pID)) do			
+		local udid = Spring.GetUnitDefID(unitID)
+		if udid then
+			if BuilderUnits[udid] and isUnitComplete(unitID) then
+				pBP = pBP + (UnitDefs[udid].buildSpeed or 0)
+				if UnitDefs[udid].canFly then
+					pBPair = pBPair + (UnitDefs[udid].buildSpeed or 0)
+				end
 			end
 		end
 	end
-	playerData[pID]["buildpower"]			= pBP
-	playerData[pID]["buildpowerAir"]		= pBPair
-	teamData[team]["tBP"]					= getTeamSum(team,"buildpower")
-	teamData[team]["tBPA"]					= getTeamSum(team,"buildpowerAir")
+	
+	teamData[pID]["buildpower"]			= pBP
+	teamData[pID]["buildpowerAir"]		= pBPair
 end
 
 function setPlayerResources()
 	local minc, einc
-	for _,pID in ipairs(Spring_GetTeamList()) do
-		_,_,_,minc,_,_,_,_ 				= Spring_GetTeamResources(pID,"metal")
-		_,_,_,einc,_,_,_,_ 				= Spring_GetTeamResources(pID,"energy")
-		playerData[pID]["minc"]			= minc
-		playerData[pID]["einc"] 		= einc
-	end
 	
-	for _,team in ipairs(Spring_GetAllyTeamList()) do
-		if inSpecMode then
-			teamData[team]["tE"] 	= getTeamSum(team,"einc")
-			teamData[team]["tM"] 	= getTeamSum(team,"minc")
-		else
-			if team == Spring.GetMyAllyTeamID() then 
-				teamData[team]["tE"] 	= getTeamSum(team,"einc")
-				teamData[team]["tM"] 	= getTeamSum(team,"minc")
+	if inSpecMode then
+		for _,data in pairs(allyData) do
+			allyID = data.aID
+			data["tM"] = 0
+			data["tE"] = 0
+			for _, teamID in ipairs (Spring.GetTeamList(allyID)) do
+				if teamID ~= gaiaID then
+					minc = select(4,Spring.GetTeamResources(teamID,"metal")) or 0
+					einc = select(4,Spring.GetTeamResources(teamID,"energy")) or 0
+					teamData[teamID]["minc"] = minc
+					teamData[teamID]["einc"] = einc
+					data["tM"] = data["tM"] + minc
+					data["tE"] = data["tE"] + einc
+				end
 			end
 		end
-	end
+	else
+		local allyID = Spring.GetMyAllyTeamID()
+		local data = allyData[allyID+1]
+		data["tM"] = 0
+		data["tE"] = 0
+		for _, teamID in ipairs (Spring.GetTeamList(allyID)) do
+			if teamID ~= gaiaID then
+				minc = select(4,Spring.GetTeamResources(teamID,"metal")) or 0
+				einc = select(4,Spring.GetTeamResources(teamID,"energy")) or 0
+				teamData[teamID]["minc"] = minc
+				teamData[teamID]["einc"] = einc
+				data["tM"] = data["tM"] + minc
+				data["tE"] = data["tE"] + einc
+			end
+		end
+	end	
+	drawStandard()
+	drawDynamic()
 end
 
 function setPlayerActivestate()
 	local active
 	local leaderID
-	for _,pID in ipairs(Spring_GetTeamList()) do
-		_,leaderID 	= Spring_GetTeamInfo(pID)
-		_,active	= Spring_GetPlayerInfo(leaderID)
-		playerData[pID]["active"] 		= active
+	for tID,data in pairs(teamData) do
+		_,leaderID 	= Spring.GetTeamInfo(tID)
+		_,active	= Spring.GetPlayerInfo(leaderID)
+		data["active"] 			= active
 	end
-end
-
-function getCardinal(x,y)
-	if not x or not y then return nil end
-	local xMax = Game.mapSizeX
-	local yMax = Game.mapSizeZ
-	local cardinal
-	local d = 0.3
-	if x < 0 and y < 0 then
-		cardinal = ".."
-	elseif x/xMax < d and y/yMax < d then
-		cardinal = "NW"
-	elseif x/xMax < 1-d and y/yMax < d then
-		cardinal = "N"
-	elseif x/xMax >= 1-d and y/yMax < d then
-		cardinal = "NE"
-	elseif x/xMax < d and y/yMax < 1-d then
-		cardinal = "W"
-	elseif x/xMax < d and y/yMax >= 1-d then
-		cardinal = "SW"
-	elseif x/xMax < 1-d and y/yMax >= 1-d then
-		cardinal = "S"
-	elseif x/xMax >= 1-d and y/yMax >= 1-d then
-		cardinal = "SE"
-	elseif x/xMax >= 1-d and y/yMax < 1-d then
-		cardinal = "E"
-	else
-		cardinal = "C"
-	end
-	--Echo(math.floor(100*x/xMax),math.floor(100*y/yMax),cardinal)
-	return cardinal
 end
 
 function isUnitComplete(UnitID)
@@ -1046,9 +897,55 @@ function isUnitComplete(UnitID)
 	end
 end
 
+function GetSkill(playerID)
+	local customtable = select(10,Spring.GetPlayerInfo(playerID)) -- player custom table
+	
+	if not customtable then return "N/A" end
+	
+	local tsMu = customtable.skill 
+	local tsSigma = customtable.skilluncertainty
+	local tskill = ""
+	if tsMu then
+		tskill = tsMu and tonumber(tsMu:match("%d+%.?%d*")) or 0
+		tskill = round(tskill,0)
+		if string.find(tsMu, ")") then
+			tskill = "\255"..string.char(190)..string.char(140)..string.char(140) .. tskill -- ')' means inferred from lobby rank
+		else
+		
+			-- show privacy mode
+			local priv = ""
+			if string.find(tsMu, "~") then -- '~' means privacy mode is on
+				priv = "\255"..string.char(200)..string.char(200)..string.char(200) .. "*" 		
+			end
+			
+			--show sigma
+			if tsSigma then -- 0 is low sigma, 3 is high sigma
+				tsSigma=tonumber(tsSigma)
+				local tsRed, tsGreen, tsBlue 
+				if tsSigma > 2 then
+					tsRed, tsGreen, tsBlue = 190, 130, 130
+				elseif tsSigma == 2 then
+					tsRed, tsGreen, tsBlue = 140, 140, 140
+				elseif tsSigma == 1 then
+					tsRed, tsGreen, tsBlue = 195, 195, 195
+				elseif tsSigma < 1 then
+						tsRed, tsGreen, tsBlue = 250, 250, 250
+				end
+				tskill = priv .. "\255"..string.char(tsRed)..string.char(tsGreen)..string.char(tsBlue) .. tskill
+			else
+				tskill = priv .. "\255"..string.char(195)..string.char(195)..string.char(195) .. tskill --should never happen
+			end
+		end
+	else
+		tskill = "\255"..string.char(160)..string.char(160)..string.char(160) .. "?"
+	end
+	return tskill
+end
+
 ---------------------------------------------------------------------------------------------------
 --  User interface
 ---------------------------------------------------------------------------------------------------
+
 function IsOnButton(x, y, BLcornerX, BLcornerY,TRcornerX,TRcornerY)
 	if BLcornerX == nil then return false end
 	-- check if the mouse is in a rectangle
@@ -1059,270 +956,126 @@ function IsOnButton(x, y, BLcornerX, BLcornerY,TRcornerX,TRcornerY)
 
 end
 
-function defineButtonCoords(teamID)
+function updateButtons()
 	
-	local w1 = 14
-	local x1, y1, x2, y2
-	local nbPlayers = getNbPlayers(teamID)
-	local maxPlayers = getMaxPlayers()
-	local lm = 20
-	local w = 180 + cW*nbPlayers
+	if widgetPosX < 0 then
+		widgetPosX = 0
+	elseif widgetPosX + widgetWidth > vsx then
+		widgetPosX = vsx-widgetWidth
+	end
+
+	if widgetPosY < 0 then
+		widgetPosY = 0
+	elseif widgetPosY + widgetHeight > vsy then
+		widgetPosY = vsy - widgetHeight
+	end
 	
-	--Echo("defineButtonCoords "..teamID..":",nbPlayers,maxPlayers, w,InfotablePosX,InfotablePosY)
-	
-	if right then
-		x1 	= widgetPosX - w1
+	widgetRight = widgetPosX + widgetWidth
+	if widgetPosX + widgetWidth/2 > vsx/2 then
+		right = true
 	else
-		x1	= widgetPosX + widgetWidth - 1
+		right = false
 	end
+		
+	local drawpos = 0
 	
-	iPosX[teamID] = InfotablePosX
-	iPosY[teamID] = InfotablePosY
-	
-	if iPosX[teamID] < 0 then iPosX[teamID] = 0 end
-	if iPosX[teamID] + w > vsx then iPosX[teamID] = vsx - w end
-	if iPosY[teamID] - infoTableHeight < 0 then iPosY[teamID] = infoTableHeight end
-	if iPosY[teamID]  > vsy then iPosY[teamID] = vsy  end
-	
-	x2 = x1 + w1
-	y1 = widgetPosY + widgetHeight - teamID*tH - w1 - 2
-	y2 = y1 + w1
-	
-	expandButtonPos[teamID]["x1"] 		= x1
-	expandButtonPos[teamID]["y1"] 		= y1
-	expandButtonPos[teamID]["x2"] 		= x2
-	expandButtonPos[teamID]["y2"] 		= y2
+	for _, data in pairs(allyData) do
+		local allyID = data.aID
+		
+		if allyID ~= gaiaAllyID then 
+			
+			local w1 = 14
+			local x1, y1, x2, y2
+			local nbPlayers = getNbPlayers(allyID)
+			local maxPlayers = getMaxPlayers()
+			local lm = 20
+			local w = 180 + cW*nbPlayers
+			
+			if inSpecMode then
+				widgetHeight = getNbTeams()*tH+2
+			else
+				widgetHeight = tH+2
+			end
+			
+			x1 	= widgetPosX + 2
+			
+			iPosX[allyID] = InfotablePosX
+			iPosY[allyID] = InfotablePosY
+			
+			if iPosX[allyID] < 0 then iPosX[allyID] = 0 end
+			if iPosX[allyID] + w > vsx then iPosX[allyID] = vsx - w end
+			if iPosY[allyID] - infoTableHeight < 0 then iPosY[allyID] = infoTableHeight end
+			if iPosY[allyID]  > vsy then iPosY[allyID] = vsy  end
+			
+			x2 = x1 + w1
+			y1 = widgetPosY + widgetHeight - (drawpos)*tH - w1 - 3 
+			y2 = y1 + w1
+			
+			--Echo("IB1",allyID,infoButton[allyID])
+			
+			infoButton[allyID]["x1"] 		= x1
+			infoButton[allyID]["y1"] 		= y1
+			infoButton[allyID]["x2"] 		= x2
+			infoButton[allyID]["y2"] 		= y2
+			
+			--Echo("IB2",allyID,infoButton[allyID].y1)
 
-	local x3, y3, x4, y4
-	local w2 = 25
-
-	if right then
-		x3 = widgetPosX - w2
-	else
-		x3 = widgetPosX + widgetWidth
+			local x3, y3, x4, y4
+			local w2 = 18
+			
+			local x5, y5, x6, y6
+			
+			x5 	= iPosX[allyID] + lm
+			x6 	= iPosX[allyID] + lm + 20
+			y6 	= iPosY[allyID] - 25
+			y5 	= y6 - 20
+			
+			expandMove[allyID]["x1"] 		= x5
+			expandMove[allyID]["y1"] 		= y5
+			expandMove[allyID]["x2"] 		= x6
+			expandMove[allyID]["y2"] 		= y6
+			
+			local x7,x8,x9,x10,y7,y8,y9,y10
+			
+			x7 = iPosX[allyID] + w/2 - 60
+			x8 = x7 + 12 
+			y8 = iPosY[allyID] - 25
+			y7 = y8 - 18
+			
+			x9 = iPosX[allyID] + w/2 + 38
+			x10 = x9 + 12
+			y10 = iPosY[allyID] - 25
+			y9 = y10 - 18
+			
+			Teambutton["Prev"][allyID]["x1"] = x7
+			Teambutton["Prev"][allyID]["x2"] = x8
+			Teambutton["Next"][allyID]["x1"] = x9
+			Teambutton["Next"][allyID]["x2"] = x10
+			Teambutton["Prev"][allyID]["y1"] = y7
+			Teambutton["Prev"][allyID]["y2"] = y8
+			Teambutton["Next"][allyID]["y1"] = y9
+			Teambutton["Next"][allyID]["y2"] = y10
+		end
+		
+		for i,tID in ipairs(Spring.GetTeamList(allyID)) do
+			playerButton[tID]["x1"] = widgetPosX + WBadge*(i-1) + 25 + (WBadge-14)*4 
+			playerButton[tID]["x2"] = widgetPosX + WBadge*(i-1) + 25 + (WBadge-14)*4 + WBadge
+			playerButton[tID]["y1"] = widgetPosY + widgetHeight - tH*(drawpos) - 16 - (WBadge-14)
+			playerButton[tID]["y2"] = widgetPosY + widgetHeight - tH*(drawpos) - 16 - (WBadge-14) + WBadge
+			playerButton[tID]["pID"] = tID
+			
+			if not inSpecMode then 
+				playerButton[tID]["x1"] = widgetPosX + WBadge*(i-1) + 25 + (WBadge-14)*4  - 10
+				playerButton[tID]["x2"] = widgetPosX + WBadge*(i-1) + 25 + (WBadge-14)*4 + WBadge - 10
+				
+			end
+		end
+		
+		if isTeamReal(allyID) and (allyID == Spring.GetMyAllyTeamID() or inSpecMode) then
+			drawpos = drawpos + 1
+		end
+		data["drawpos"] = drawpos
 	end
-	y3 = widgetPosY + widgetHeight - teamID*tH - w2 - 2
-	x4 = x3 + w2
-	y4 = y3 + w2
-
-	collapseButtonPos[teamID]["x1"] 	= x3
-	collapseButtonPos[teamID]["y1"] 	= y3
-	collapseButtonPos[teamID]["x2"] 	= x4
-	collapseButtonPos[teamID]["y2"] 	= y4
-	
-	local x5, y5, x6, y6
-	
-	x5 	= iPosX[teamID] + lm
-	x6 	= iPosX[teamID] + lm + 20
-	y6 	= iPosY[teamID] - 25
-	y5 	= y6 - 20
-	
-	expandMove[teamID]["x1"] 		= x5
-	expandMove[teamID]["y1"] 		= y5
-	expandMove[teamID]["x2"] 		= x6
-	expandMove[teamID]["y2"] 		= y6
-	
-	local x7,x8,x9,x10,y7,y8,y9,y10
-	
-	x7 = iPosX[teamID] + w/2 - 60
-	x8 = x7 + 12 
-	y8 = iPosY[teamID] - 25
-	y7 = y8 - 18
-	
-	x9 = iPosX[teamID] + w/2 + 38
-	x10 = x9 + 12
-	y10 = iPosY[teamID] - 25
-	y9 = y10 - 18
-	
-	Teambutton["Prev"][teamID]["x1"] = x7
-	Teambutton["Prev"][teamID]["x2"] = x8
-	Teambutton["Next"][teamID]["x1"] = x9
-	Teambutton["Next"][teamID]["x2"] = x10
-	Teambutton["Prev"][teamID]["y1"] = y7
-	Teambutton["Prev"][teamID]["y2"] = y8
-	Teambutton["Next"][teamID]["y1"] = y9
-	Teambutton["Next"][teamID]["y2"] = y10	
-end
-
----------------------------------------------------------------------------------------------------
---  Debuggging related
----------------------------------------------------------------------------------------------------
-function debugInfo()
-	Echo("Debugging info:______________________________________________________")
-	Echo("Printing player tables")
-	printPlayers()
-	--Echo("Printing button tables")
-
-	--printButtonTables()
-	Echo("Printing team tables")
-	printTeams()
-	Echo("Printing defined variable list")
-	for _,pID in ipairs (Spring_GetTeamList()) do
-		printPlayerVar(pID,"startx")
-		printPlayerVar(pID,"leaderName")
-		printPlayerVar(pID,"teamID")
-	end
-	Echo("End of debugging info:_______________________________________________________")
-end
-
-function printTeamTable()
-	Echo("------------------")
-	--local teamList = Spring_GetAllyTeamList()
-	--local teams =Spring_GetTeamList()
-	--for i,team in ipairs (teamList) do
-		--Echo("Team",team)
-		UpdateAllPlayers()
-		for _,ply in ipairs (Spring_GetTeamList()) do
-			local playerstats = getPlayerTable(ply)
-			Echo("Team ",playerstats.teamID," is: Player ",ply," = ",playerstats.playerID," = ",playerstats.leaderName)
-		end
-		for i,pID in pairs (playerData) do
-				Echo("Table 1: index, PID=playerID:",i,pID,pID.playerID)
-				Echo("--------- Loop 2...")
-				for name, param in pairs(pID) do
-				Echo("Table 2: Team ", pID.teamID," Player ", pID.playerID,": ",name,param)
-				end
-		end
-	--end
-end
-
-function printTeams()
-	local teamList = Spring_GetAllyTeamList()
-	--UpdateTeams()
-	for _,team in ipairs (teamList) do
-		for name, param in pairs (teamData[team]) do
-			Echo("Teamdata:",team, name, param)
-		end
-	end
-	
-end
-
-function printPlayers()
-	for _,p in ipairs (Spring_GetTeamList()) do
-		--UpdatePlayer(p)
-		for name, param in pairs (playerData[p]) do
-			Echo("Playerdata:",p, name, param)
-		end
-	end
-end
-
-function CompareTables()
-	--UpdateAllPlayers()
-	--UpdateTeams()
-	for _,team in ipairs (Spring_GetAllyTeamList()) do
-		Echo("Team tables:________________________________")
-		for name, param in pairs (teamData[team]) do
-			Echo("Table 4: Team ", team,name,param)
-		end
-		Echo("________________________________end of team table")
-		--
-		for _,player in ipairs (Spring_GetTeamList(team)) do
-		Echo("--------------------------------------------")
-		Echo("Table 3: Team ", team, "= ",playerData[player].teamID,", Player ",player," = ", playerData[player].playerID)
-		Echo("--------------------------------------------")
-		for name, param in pairs (playerData[player]) do
-			Echo("Table 3: Team ", team, ", Player ",playerData[player].leaderName,name,param)
-		end
-		--Echo("Boxdata...")
-		--Echo("Expand table:")
-		--Echo(expandButtonPos[team]["x1"])
-		--Echo(expandButtonPos[team]["y1"])
-		--Echo(expandButtonPos[team]["x2"])
-		--Echo(expandButtonPos[team]["y2"])
-		--Echo("Collapse table:")
-		--Echo(collapseButtonPos[team]["x1"])
-		--Echo(collapseButtonPos[team]["y1"])
-		--Echo(collapseButtonPos[team]["x2"])
-		--Echo(collapseButtonPos[team]["y2"])
-		-- Echo("--------------------------------------------")
-		-- Echo("---------New Player-------------------------")
-		-- Echo("--------------------------------------------")
-		end
-	end
-end
-
-function printButtonTables()
-	local plist = Spring_GetTeamList()
-	for _,p in ipairs (plist) do
-		Echo("Player buttons:")
-		if not playerButton[p] == nil then
-			Echo(playerButton[p]["x1"])
-			Echo(playerButton[p]["y1"])
-			Echo(playerButton[p]["x2"])
-			Echo(playerButton[p]["y2"])
-			Echo(playerButton[p]["pID"])
-		else
-			Echo("nil for player: ",p, playerButton)
-		end
-		Echo("________________")
-	end
-	
-	-- local teamlist = Spring_GetAllyTeamList()
-	-- for i,team in ipairs (teamlist) do
-		-- Echo("Expand table:")
-		-- Echo(expandButtonPos[team]["x1"])
-		-- Echo(expandButtonPos[team]["y1"])
-		-- Echo(expandButtonPos[team]["x2"])
-		-- Echo(expandButtonPos[team]["y2"])
-		-- Echo("Collapse table:")
-		-- Echo(collapseButtonPos[team]["x1"])
-		-- Echo(collapseButtonPos[team]["y1"])
-		-- Echo(collapseButtonPos[team]["x2"])
-		-- Echo(collapseButtonPos[team]["y2"])
-	-- end
-end
-
-function printOptions()
-	Echo ("Printing options")
-	for _,name in pairs (options) do
-		for u,v in pairs (name) do
-			Echo("Option loaded:",u,v)
-		end
-	end
-end
-
-function printKMat()
-	for playerid, playertable in pairs(kMat) do
-		Echo("__________________")		
-		Echo("Player " ..  playerid .. ": " .. (playerData[playerid]["leaderName"] or "N/A"))
-		for sortindex, enemytable in pairs (playertable) do
-			local enemy = enemytable[1]
-			local kills = enemytable[2]
-			Echo("Kills (p/e/hp):", playerid, sortindex, enemy, kills)
-		end
-	end
-end
-
-function printPlayerVar(pID,param)
-	Echo("Print player, var:",pID,param,playerData[pID][param])
-end
-
-function widget:KeyPress(key, mods, isRepeat) -- used for getting debugging info quickly
-	if (key == 0x07A) and (not isRepeat) then 				-- Z
-		--printKMat()
-		--printTeams()
-		--printPlayers()
-		--Echo("My team = " .. Spring.GetMyTeamID())
-	elseif (key == 0x078) and (not isRepeat) then
-		--printPlayers()		-- X
-	elseif (key == 0x01B) and (not isRepeat) and (not mods.ctrl) and (not mods.shift) then --esc
-		local teamlist = Spring_GetAllyTeamList()
-		for _,team in ipairs (teamlist) do
-			expandButtonState[team]["click"] = false
-		end
-	elseif (key == 0x132) and (not isRepeat) and (not mods.shift) then --ctrl
-		--Echo("Ctrl down")
-		ctrlDown = true
-	end
-	return false
-end
-
-function widget:KeyRelease(key)
-	if (key == 0x132) then --ctrl
-		--Echo("Ctrl up")
-		ctrlDown = false
-	end
-	return false
 end
 
 ---------------------------------------------------------------------------------------------------
@@ -1332,44 +1085,39 @@ end
 function widget:PlayerChanged(playerID)
 	local frame = Spring.GetGameFrame()
 	lastPlayerChange = frame
-	if not (Spring.GetSpectatingState() or Spring.IsReplay()) then
+	if not (Spring.GetSpectatingState() or isReplay) then
 		if inSpecMode then Echo("Ecostats: widget now in active player mode.") end
 		inSpecMode = false
-		delayedUpdateTeams()
+		UpdateTeams()
 	else
 		if not inSpecMode then Echo("Ecostats: widget now in spectator mode.") end
 		inSpecMode = true
 		Reinit()
-	end	
-end
-
-function widget:UnitCreated(unitID, unitDefID, teamID, builderID)
-	--if teamID ~= nil and isUnitComplete(unitID) then
-		--Echo("Unit is created. Parameters:",unitID, unitDefID, teamID, builderID)
-		--UpdatePlayer(teamID)
-	--end
+	end
+	drawStandard()
+	drawDynamic()
 end
 
 function widget:UnitFinished(unitID, unitDefID, teamID)
-	team = playerData[teamID]["teamID"]
+	team = teamData[teamID]["allyID"]
 	if teamID ~= nil and isUnitComplete(unitID) then
 		--Echo("Unit is finished. Parameters:",unitID, unitDefID, teamID)
-		delayedUpdateTeam(team)
+		UpdateTeam(team)
 	end
 end
 
 function widget:UnitTaken(unitID, unitDefID, unitTeam, newTeam)
-	local newteam = playerData[newTeam]["teamID"]
-	local oldteam = playerData[unitTeam]["teamID"]
-	if newTeam ~= nil then delayedUpdateTeam(newteam) end
-	if oldTeam ~= nil then delayedUpdateTeam(oldteam) end
+	local newteam = teamData[newTeam]["allyID"]
+	local oldteam = teamData[unitTeam]["allyID"]
+	if newTeam ~= nil then UpdateTeam(newteam) end
+	if oldTeam ~= nil then UpdateTeam(oldteam) end
 end
 
 function widget:UnitGiven(unitID, unitDefID, unitTeam, oldTeam)
-	local newteam = playerData[unitTeam]["teamID"]
-	local oldteam = playerData[oldTeam]["teamID"]
-	if newTeam ~= nil then delayedUpdateTeam(newteam) end
-	if oldTeam ~= nil then delayedUpdateTeam(oldteam) end
+	local newteam = teamData[unitTeam]["allyID"]
+	local oldteam = teamData[oldTeam]["allyID"]
+	if newTeam ~= nil then UpdateTeam(newteam) end
+	if oldTeam ~= nil then UpdateTeam(oldteam) end
 end
 
 function widget:UnitDestroyed(u,ud,ut,a,ad,at) --unitID, unitDefID, teamID, attackerID
@@ -1378,15 +1126,15 @@ function widget:UnitDestroyed(u,ud,ut,a,ad,at) --unitID, unitDefID, teamID, atta
 	--Echo("Unit attacker",a)
 	if a then at = Spring.GetUnitTeam(a) end
 	if ut then
-		uteam = playerData[ut]["teamID"]
+		uteam = teamData[ut]["allyID"]
 		--Echo("Unit is destroyed!. Parameters:",ut,at)
-		delayedUpdateTeam(uteam)
+		UpdateTeam(uteam)
 	end
 
 	if at then
-		ateam = playerData[at]["teamID"]
+		ateam = teamData[at]["allyID"]
 		--Echo("Unit is destroyed!. Parameters:",ut,at)
-		delayedUpdateTeam(ateam)
+		UpdateTeam(ateam)
 	end
 
 	local function sortByLargest(v1,v2)
@@ -1399,7 +1147,7 @@ function widget:UnitDestroyed(u,ud,ut,a,ad,at) --unitID, unitDefID, teamID, atta
 	
 	if ut and at and (not Spring.AreTeamsAllied(ut,at)) and isUnitComplete(u) and u and a and u~=a then
 		local _,uhp =  Spring.GetUnitHealth(u)
-		--local playerlist = Spring_GetTeamList()
+		--local playerlist = Spring.GetTeamList()
 		killCounters[at]=killCounters[at]+1
 		lossCounters[ut]=lossCounters[ut]+1
 		killedHP[at] =  killedHP[at] + uhp
@@ -1423,7 +1171,7 @@ function widget:UnitDestroyed(u,ud,ut,a,ad,at) --unitID, unitDefID, teamID, atta
 				bestTeam=at
 				if options["Announce"]["On"] then
 					if soundsOn then Spring.PlaySoundFile(snd) end
-					--Spring.SendMessage(friendlyName(bestTeam) .. " has taken the lead with " .. bestKills .. " kills.")
+					Spring.SendMessage(friendlyName(bestTeam) .. " has taken the lead with " .. bestKills .. " kills.")
 				end
 			end
 		end
@@ -1443,10 +1191,10 @@ end
 function widget:TeamDied(TeamID)
 	local frame = Spring.GetGameFrame()
 	lastPlayerChange = frame
-	if not (Spring.GetSpectatingState() or Spring.IsReplay()) then
+	if not (Spring.GetSpectatingState() or isReplay) then
 		if inSpecMode then Echo("Ecostats: widget now in active player mode.") end
 		inSpecMode = false
-		delayedUpdateTeams()
+		UpdateTeams()
 	else
 		if not inSpecMode then Echo("Ecostats: widget now in spectator mode.") end
 		inSpecMode = true
@@ -1455,46 +1203,11 @@ function widget:TeamDied(TeamID)
 end
 
 function widget:MapDrawCmd(playerID, cmdType, px, py, pz, labeltext)
-	if not gamestarted then UpdateTeams() end
-end
-
-function widget:GameFrame(frameNum)
-	local delay = 3
-	
-	if frameNum%30 == 0 then 
-		setPlayerResources() 
+	if not gamestarted then 
+		UpdateTeams() 
+		drawStandard()
+		drawDynamic()
 	end
-	
-	if frameNum - lastPlayerChange == 30 
-		then UpdateTeams() 
-		local teamlist = Spring_GetAllyTeamList()
-			for _,team in ipairs (teamlist) do
-			defineButtonCoords(team)
-		end
-	end
-	
-	if updateList["frame"] and #updateList["frame"] > 0 and frameNum > 0 then
-		if frameNum > updateList["frame"][1] + delay then
-			if updateList["team"][1] == 1000 then
-				UpdateTeams()
-				table.remove(updateList["frame"],1)
-				table.remove(updateList["team"],1)
-			elseif updateList["team"][1] == 2000 then
-				local teamlist = Spring_GetAllyTeamList()
-				for _,team in ipairs (teamlist) do
-					defineButtonCoords(team)
-				end
-				table.remove(updateList["frame"],1)
-				table.remove(updateList["team"],1)
-			else
-				UpdateTeam(updateList["team"][1])
-				table.remove(updateList["frame"],1)
-				table.remove(updateList["team"],1)
-			end
-		end
-	end
-
-	if not gamestarted and frameNum > 0 then gamestarted = true end
 end
 
 function widget:TweakMouseMove(x,y,dx,dy,button)
@@ -1507,35 +1220,10 @@ function widget:TweakMouseMove(x,y,dx,dy,button)
 		end
 		widgetPosX = widgetPosX + dx
 		widgetPosY = widgetPosY + dy
-
-		if widgetPosY <= 0 then
-			widgetPosY = 0
-			expandDown = false
-		end
-		if widgetPosY + widgetHeight >= vsy then
-			widgetPosY = vsy - widgetHeight
-			expandDown = true
-		end
-		if widgetPosX < 5 then
-			widgetPosX = 5
-			expandLeft = false
-		end
-		if widgetPosX + widgetWidth + 5 > vsx then
-			widgetPosX = vsx - widgetWidth - 5
-			expandLeft = true
-		end
-		widgetTop   = widgetPosY + widgetHeight
-		widgetRight = widgetPosX + widgetWidth
-		if widgetPosX + widgetWidth/2 > vsx/2 then
-			right = true
-		else
-			right = false
-		end
 		
-		for _,team in ipairs (Spring_GetAllyTeamList()) do
-			defineButtonCoords(team)
-		end
-		--Echo("Tweak mm: right, eD, eL, x,y = ", right, expandDown, expandLeft,x,vsx,y,vsy)
+		updateButtons()
+		drawStandard()
+		drawDynamic()
 	end
 end
 
@@ -1555,7 +1243,6 @@ function widget:TweakMousePress(x, y, button)
 			if options["contrast"] < 0 then options["contrast"] = 0 end
 			Echo("Contrast = " .. formatRes1000(options["contrast"]))
 			return true
-		
 		elseif IsOnButton(x, y, options["contrastMore"]["x1"],options["contrastMore"]["y1"],options["contrastMore"]["x2"],options["contrastMore"]["y2"]) then
 			options["contrast"] = options["contrast"] + 0.1
 			if options["contrast"] > 1.0 then options["contrast"] = 1.0 end
@@ -1570,7 +1257,7 @@ function widget:TweakMousePress(x, y, button)
 			pressedWPlus = true
 			widgetWidth = widgetWidth + 5
 			if widgetWidth > 500 then widgetWidth = 500 end
-			if widgetPosX + widgetWidth > vsx then widgetPosX = vsx - widgetWidth - 5 end
+			if widgetPosX + widgetWidth > vsx then widgetPosX = vsx - widgetWidth end
 			return true
 		
 		elseif IsOnButton(x, y, options["widthDec"]["x1"],options["widthDec"]["y1"],options["widthDec"]["x2"],options["widthDec"]["y2"]) then
@@ -1589,8 +1276,9 @@ function widget:TweakMousePress(x, y, button)
 			tH = tH - 2
 			if tH < 4 then tH = 4 end
 			return true
+			
 		elseif IsOnButton(x, y, options["disable"]["x1"],options["disable"]["y1"],options["disable"]["x2"],options["disable"]["y2"]) then
-			options["disable"]["On"] = not options["disable"]["On"]	
+			options["disable"]["On"] = not options["disable"]["On"]
 			return true
 		elseif IsOnButton(x, y, options["Announce"]["x1"],options["Announce"]["y1"],options["Announce"]["x2"],options["Announce"]["y2"]) then
 			options["Announce"]["On"] = not options["Announce"]["On"]	
@@ -1631,29 +1319,36 @@ function widget:TweakMousePress(x, y, button)
 end
 
 function widget:TweakMouseRelease(x,y,button)
-	pressedToMove = nil                                              -- ends the share slider process
+	pressedToMove = nil                                             
 	pressedHPlus = false
 	pressedHMinus = false
 	pressedWPlus = false
 	pressedWMinus = false
-	
+end
+
+function widget:KeyPress(key, mods, isRepeat) 
+	if (key == 0x132) and (not isRepeat) and not (mods.shift) and (not mods.alt) then -- ctrl
+		ctrlDown = true
+	end
+	return false
+end
+
+function widget:KeyRelease(key) 
+	if (key == 0x132)  then -- ctrl
+		ctrlDown = false
+	end
+	return false
 end
 
 function widget:MouseMove(x, y, dx, dy, button)
 	if pressedExpandMove then
-		local nbPlayers = getMaxPlayers()
-		for _,team in ipairs (Spring_GetAllyTeamList()) do
-			if expandButtonState[team]["click"] then nbPlayers = getNbPlayers(team) end
+		for _,data in pairs (allyData) do
+			local allyID = data.aID
+			
+			if infoButton[allyID]["click"] then nbPlayers = getNbPlayers(allyID) end
 		end
 		
-		local w = 180 + cW*nbPlayers
-				
-		-- if moveStartX == nil then                                                      -- move table on y axis
-			-- moveStartX = x - InfotablePosX
-		-- end
-		-- if moveStartY == nil then                                                      -- move table on y axis
-			-- moveStartY = y - InfotablePosY
-		-- end
+		local w = 180 + cW*getMaxPlayers()
 		
 		InfotablePosX = InfotablePosX + dx
 		InfotablePosY = InfotablePosY + dy
@@ -1665,10 +1360,12 @@ function widget:MouseMove(x, y, dx, dy, button)
 		if InfotablePosX + w  > vsx then
 			InfotablePosX = vsx - w
 		end
-		for _,team in ipairs (Spring_GetAllyTeamList()) do
-			defineButtonCoords(team)
-		end
-		--Echo("Moving:", InfotablePosX, InfotablePosY)
+		
+		updateButtons()
+		setPlayerResources()
+		drawStandard()
+		drawDynamic()
+		return true
 	end
 	
 	if pressedToMove then
@@ -1681,33 +1378,11 @@ function widget:MouseMove(x, y, dx, dy, button)
 		widgetPosX = widgetPosX + dx
 		widgetPosY = widgetPosY + dy
 
-		if widgetPosY <= 0 then
-			widgetPosY = 0
-			expandDown = false
-		end
-		if widgetPosY + widgetHeight >= vsy then
-			widgetPosY = vsy - widgetHeight
-			expandDown = true
-		end
-		if widgetPosX < 5 then
-			widgetPosX = 5
-			expandLeft = false
-		end
-		if widgetPosX + widgetWidth + 5 > vsx then
-			widgetPosX = vsx - widgetWidth - 5
-			expandLeft = true
-		end
-		widgetTop   = widgetPosY + widgetHeight
-		widgetRight = widgetPosX + widgetWidth
-		if widgetPosX + widgetWidth/2 > vsx/2 then
-			right = true
-		else
-			right = false
-		end
-		
-		for _,team in ipairs (Spring_GetAllyTeamList()) do
-			defineButtonCoords(team)
-		end
+		updateButtons()
+		setPlayerResources()
+		drawStandard()
+		drawDynamic()
+		return true
 	end
 	return false
 end
@@ -1716,100 +1391,130 @@ function widget:MousePress(x, y, button)
 	----------------
 	-- LEFT BUTTON
 	----------------
+		
 	if button == 1 then	
-		local teamlist = Spring_GetAllyTeamList()
-		local playerlist = Spring_GetTeamList()
-		local x1, x2, y1, y2
-		local x3, x4, y3, y4		
+		
+		local playerlist = Spring.GetTeamList()
+		local x1, x2, y1, y2		
 		local pressedExpand = false
 		local nbPlayers
 		local x7, y7, x8, y8, pID
 		local x9, y9, x10, y10 
 		local x11,x12,x13,x14,y11,y12,y13,y14
+		local x15,x16,y15,y16
 		
-		for _,team in ipairs (teamlist) do
-			x3 = collapseButtonPos[team]["x1"]
-			y3 = collapseButtonPos[team]["y1"]
-			x4 = collapseButtonPos[team]["x2"]
-			y4 = collapseButtonPos[team]["y2"]
-			x1 = expandButtonPos[team]["x1"]
-			x2 = expandButtonPos[team]["x2"]
-			y1 = expandButtonPos[team]["y1"]
-			y2 = expandButtonPos[team]["y2"]
-			nbPlayers = getNbPlayers(team)
+		for _,data in pairs (allyData) do
+			local allyID = data.aID
+			local allyDataID = allyID+1
+			if allyID ~= gaiaAllyID then				
+				nbPlayers = getNbPlayers(allyID)
+				
+				-- info-button
+				x1 = infoButton[allyID]["x1"]
+				x2 = infoButton[allyID]["x2"]
+				y1 = infoButton[allyID]["y1"]
+				y2 = infoButton[allyID]["y2"]
+				
+				-- move infotable button	
+				x9 = expandMove[allyID]["x1"]
+				x10 = expandMove[allyID]["x2"]
+				y9 = expandMove[allyID]["y1"]
+				y10 = expandMove[allyID]["y2"]
+				
+				-- prev/next allyID
+				x11 = Teambutton["Prev"][allyID]["x1"]
+				x12 = Teambutton["Prev"][allyID]["x2"]
+				y11 = Teambutton["Prev"][allyID]["y1"]
+				y12 = Teambutton["Prev"][allyID]["y2"]
+
+				x13 = Teambutton["Next"][allyID]["x1"]
+				x14 = Teambutton["Next"][allyID]["x2"]
+				y13 = Teambutton["Next"][allyID]["y1"]
+				y14 = Teambutton["Next"][allyID]["y2"]
 								
-			if expandButtonState[team]["click"] then
-				if IsOnButton(x, y, x3, y3, x4, y4) then -- or IsOnButton(x, y, x5, y5, x6, y6) then
-					collapseButtonState[team]["click"] = true
-					expandButtonState[team]["click"] = false
-					return false
-				end
-			end
-			if IsOnButton(x, y, x1, y1, x2, y2) and (not options["removeDead"]["On"] or teamData[team]["isAlive"]) then pressedExpand = true end
-		
-			x9 = expandMove[team]["x1"]
-			x10 = expandMove[team]["x2"]
-			y9 = expandMove[team]["y1"]
-			y10 = expandMove[team]["y2"]
-			if IsOnButton(x, y, x9, y9, x10, y10) then 	
-				pressedExpandMove = true 	
-				return true
-			end
-			
-			x11 = Teambutton["Prev"][team]["x1"]
-			x12 = Teambutton["Prev"][team]["x2"]
-			y11 = Teambutton["Prev"][team]["y1"]
-			y12 = Teambutton["Prev"][team]["y2"]
-			if IsOnButton(x, y, x11, y11, x12, y12) and inSpecMode then
-				if expandButtonState[team]["click"] and team > 0 then
-					expandButtonState[team]["click"] = false
-					collapseButtonState[team]["click"] = true
-					expandButtonState[team-1]["click"] = true
-					collapseButtonState[team-1]["click"] = false
+				-- infotable coords
+				x15 = iPosX[allyID]
+				y16 = iPosY[allyID]
+				x16 = x15 + 180 + cW*getNbPlayers(allyID)
+				y15 = y16 - infoTableHeight
+				
+				-- info-button
+				if IsOnButton(x, y, x1, y1, x2, y2) and (not options["removeDead"]["On"] or allyData[allyDataID]["isAlive"]) then 
+					for _,data in pairs (allyData) do
+						local aID = data.aID
+						if aID ~= allyID then
+							infoButton[aID]["click"] = false
+						end
+					end
+					infoButton[allyID]["click"] = not infoButton[allyID]["click"]
+					drawStandard()
+					drawDynamic()
 					return true
 				end
-			end
+				
+				-- infotable active
+				if infoButton[allyID]["click"] then
+						
+					-- prev team
+					if IsOnButton(x, y, x11, y11, x12, y12) and inSpecMode then
+						if allyID > 0 then
+							local prevAlly = FindPrevAlly(allyID)
+							if prevAlly then
+								infoButton[allyID]["click"] = false
+								infoButton[prevAlly]["click"] = true
+							end
+							drawStandard()
+							drawDynamic()
+							return true
+						end
+						
+					-- next team
+					elseif IsOnButton(x, y, x13, y13, x14, y14) and inSpecMode  then
+						if  allyID <  getNbTeams() - 1  then
+							local nextAlly = FindNextAlly(allyID)
+							if nextAlly then
+								infoButton[allyID]["click"] = false
+								infoButton[nextAlly]["click"] = true
+							end
+							drawStandard()
+							return true
+						end
 		
-			x13 = Teambutton["Next"][team]["x1"]
-			x14 = Teambutton["Next"][team]["x2"]
-			y13 = Teambutton["Next"][team]["y1"]
-			y14 = Teambutton["Next"][team]["y2"]
-			if IsOnButton(x, y, x13, y13, x14, y14) and inSpecMode  then
-				if expandButtonState[team]["click"] and team <  getNbTeams() - 1  then
-					expandButtonState[team]["click"] = false
-					collapseButtonState[team]["click"] = true
-					expandButtonState[team+1]["click"] = true
-					collapseButtonState[team+1]["click"] = false
-					return true
+					-- just move infotable
+					elseif IsOnButton(x, y, x9, y9, x10, y10) or IsOnButton(x, y, x15, y15, x16, y16) then 	
+						pressedExpandMove = true
+						drawStandard()
+						drawDynamic()
+						return true
+					end
 				end
 			end
-			
 		end
 		
-		for _,player in ipairs (playerlist) do
-			if not playerData[player].isDead then
-				local team = playerData[player].teamID
-				--Echo("Buttonpress:",team,player,isTeamReal(team))
-				if isTeamReal(team) and (team == Spring.GetMyAllyTeamID() or inSpecMode)then			
-					x7 = playerButton[player]["x1"]
-					x8 = playerButton[player]["x2"]
-					y7 = playerButton[player]["y1"]
-					y8 = playerButton[player]["y2"]
-					pID = playerButton[player]["pID"]
+		-- main widget buttons
+		for _,teamID in ipairs (playerlist) do
+			if teamID ~= gaiaID and not teamData[teamID].isDead then
+				local allyID = teamData[teamID].allyID
+				
+				if isTeamReal(allyID) and (allyID == Spring.GetMyAllyTeamID() or inSpecMode)then			
+					x7 = playerButton[teamID]["x1"]
+					x8 = playerButton[teamID]["x2"]
+					y7 = playerButton[teamID]["y1"]
+					y8 = playerButton[teamID]["y2"]
+					
 					if IsOnButton(x, y, x7, y7, x8, y8) then
-						if ctrlDown and playerData[player].hasCom then
+						if ctrlDown and teamData[teamID].hasCom then
 							local com
 							for _, commanderID in ipairs (comTable) do
-								com  = Spring.GetTeamUnitsByDefs(pID,commanderID)[1] or com
+								com  = Spring.GetTeamUnitsByDefs(teamID,commanderID)[1] or com
 							end
-							--Echo(com)
+				
 							if com then
-								--Echo("Still com")
+				
 								local cx, cy, cz
 								local camState = Spring.GetCameraState()
 								cx, cy, cz = Spring.GetUnitPosition(com)
-								--Echo(camState.height)
-								--if cx then Spring.SetCameraTarget(cx,cy,cz) end
+				
 								if camState and cx then
 									camState["px"] = cx
 									camState["py"] = cy
@@ -1820,33 +1525,23 @@ function widget:MousePress(x, y, button)
 								end
 							end
 						elseif not ctrlDown then
-							local sx = playerData[pID].startx
-							local sz = playerData[pID].starty
+							local sx = teamData[teamID].startx
+							local sz = teamData[teamID].starty
 							local sy = Spring.GetGroundHeight(sx,sz)
 							local camState = Spring.GetCameraState()
-							if camState and sx then
+							if camState and sx and sz and sx > 0 and sz > 0 then
 								camState["px"] = sx
 								camState["py"] = sy
 								camState["pz"] = sz
 								camState["height"] = 5000
 								Spring.SetCameraState(camState,2)
 							end
-							--Echo("On button #2: ",x,y)
 						end
 					end
 				end
 			end
 		end
-		
-		if pressedExpand then
-			for _,team in ipairs (teamlist) do
-				x1 = expandButtonPos[team]["x1"]
-				x2 = expandButtonPos[team]["x2"]
-				y1 = expandButtonPos[team]["y1"]
-				y2 = expandButtonPos[team]["y2"]
-				expandButtonState[team]["click"] = IsOnButton(x, y, x1, y1, x2, y2)
-			end
-		end
+				
 		return false
 	----------------
 	-- RIGHT BUTTON
@@ -1857,30 +1552,44 @@ function widget:MousePress(x, y, button)
 			return true
 		end
 	elseif button == 3 then
-		
 		local x5, y5, x6, y6
-		local teamlist = Spring_GetAllyTeamList()
 		local w
 		
-		for _,team in ipairs (teamlist) do
-		
-			nbPlayers = getNbPlayers(team)
-			w = 180 + cW*nbPlayers
+		for _,data in pairs (allyData) do
+			local allyID = data.aID
 			
-			x5 = iPosX[team]
-			x6 = x5 + w
-			y6 = iPosY[team]
-			y5 = y6 - infoTableHeight
-			
-			if expandButtonState[team]["click"] then
-				if IsOnButton(x, y, x5, y5, x6, y6) then
-					collapseButtonState[team]["click"] = true
-					expandButtonState[team]["click"] = false
+			if allyID ~= gaiaAllyID then
+				w = 180 + cW*getNbPlayers(allyID)
+				
+				x5 = iPosX[allyID]
+				x6 = x5 + w
+				y6 = iPosY[allyID]
+				y5 = y6 - infoTableHeight
+				
+				
+				if infoButton[allyID]["click"] then	
+					if IsOnButton(x, y, x5, y5, x6, y6) then
+						infoButton[allyID]["click"] = false
+						drawStandard()
+						drawDynamic()
+						return true
+					end
 				end
 			end
 		end
 		
-		return false
+		-- second loop is needed for drag detection, because otherwise it returns true too soon
+		for _,data in pairs (allyData) do
+		local allyID = data.aID
+			if IsOnButton(x,y,widgetPosX,widgetPosY,widgetPosX+widgetWidth,widgetPosY+widgetHeight) then
+				pressedToMove = true
+				drawStandard()
+				drawDynamic()
+				return true
+			else
+				return false
+			end
+		end
 	else
 		return false
 	end
@@ -1889,315 +1598,409 @@ end
 function widget:MouseRelease(x,y,button)
 	if button == 1 then 
 		pressedExpandMove = false 
-	elseif button == 2 then
+	elseif button == 2 or button == 3 then
 		pressedToMove = nil                                              -- ends move action
 	end
 end
 
 function widget:IsAbove(x, y)
-	local teamlist = Spring_GetAllyTeamList()
-	local playerlist = Spring_GetTeamList()
+	local allyList = Spring.GetAllyTeamList()
+	local playerlist = Spring.GetTeamList()
 	local x1, x2, y1, y2
 	local x3, x4, y3, y4
 	local x5, x6, y5, y6
 	local x7, x8, y7, y8
 	local x9, x10, y9, y10
 	local x11, x12, y11, y12
+	local w = 180 + cW*getMaxPlayers()
+	local speed,_,paused = Spring.GetGameSpeed()
 	
-	for _,team in ipairs (teamlist) do
-		x1 = expandButtonPos[team]["x1"]
-		x2 = expandButtonPos[team]["x2"]
-		y1 = expandButtonPos[team]["y1"]
-		y2 = expandButtonPos[team]["y2"]
-		expandButtonState[team]["mouse"] = IsOnButton(x, y, x1, y1, x2, y2)
-
-		x7 = expandMove[team]["x1"]
-		x8 = expandMove[team]["x2"]	
-		y7 = expandMove[team]["y1"]	
-		y8 = expandMove[team]["y2"]	
-		expandMove[team]["mouseover"] = IsOnButton(x, y, x7, y7, x8, y8)
-		
-		x9 = Teambutton["Prev"][team]["x1"]
-		x10 = Teambutton["Prev"][team]["x2"]
-		y9 = Teambutton["Prev"][team]["y1"]
-		y10 = Teambutton["Prev"][team]["y2"]
-		
-		Teambutton["Prev"][team]["mouse"] = IsOnButton(x, y, x9, y9, x10, y10)
-		
-		x11 = Teambutton["Next"][team]["x1"]
-		x12 = Teambutton["Next"][team]["x2"]
-		y11 = Teambutton["Next"][team]["y1"]
-		y12 = Teambutton["Next"][team]["y2"]
-		Teambutton["Next"][team]["mouse"] = IsOnButton(x, y, x11, y11, x12, y12)
-		
-		x3 = collapseButtonPos[team]["x1"]
-		y3 = collapseButtonPos[team]["y1"]
-		x4 = collapseButtonPos[team]["x2"]
-		y4 = collapseButtonPos[team]["y2"]
-		
-		collapseButtonState[team]["mouse"] = IsOnButton(x, y, x3, y3, x4, y4)
+	--player faction button
+	for _,teamID in ipairs (playerlist) do
+		if teamID ~= gaiaID then
+			x5 = playerButton[teamID]["x1"]
+			x6 = playerButton[teamID]["x2"]
+			y5 = playerButton[teamID]["y1"]
+			y6 = playerButton[teamID]["y2"]
+			
+			playerButton[teamID]["mouse"] = IsOnButton(x, y, x5, y5, x6, y6)
+			
+			if IsOnButton(x,y, x5,y5,x6,y6) then
+				if (not paused) and speed < LIMITSPEED and (not isReplay) then
+					drawDynamic()
+				end
+				return true
+			end
+		end
 	end
-		
-	for _,player in ipairs (playerlist) do
-		x5 = playerButton[player]["x1"]
-		x6 = playerButton[player]["x2"]
-		y5 = playerButton[player]["y1"]
-		y6 = playerButton[player]["y2"]
-		
-		playerButton[player]["mouse"] = IsOnButton(x, y, x5, y5, x6, y6)
+	
+	--team infobutton
+	for _,allyID in ipairs (allyList) do
+		if allyID ~= gaiaAllyID then
+				
+			x1 = infoButton[allyID]["x1"]
+			x2 = infoButton[allyID]["x2"]
+			y1 = infoButton[allyID]["y1"]
+			y2 = infoButton[allyID]["y2"]
+			infoButton[allyID]["mouse"] = IsOnButton(x, y, x1, y1, x2, y2)
+			
+			if IsOnButton(x, y, x1, y1, x2, y2) then
+				if (not paused) and speed < LIMITSPEED and (not isReplay) then
+					drawDynamic()
+				end
+				return true
+			end
+			if infoButton[allyID]["click"] then
+				-- move expand table button
+				x7 = expandMove[allyID]["x1"]
+				x8 = expandMove[allyID]["x2"]	
+				y7 = expandMove[allyID]["y1"]	
+				y8 = expandMove[allyID]["y2"]	
+				expandMove[allyID]["mouseover"] = IsOnButton(x, y, x7, y7, x8, y8)
+				
+				if IsOnButton(x, y, x7, y7, x8, y8) then
+					if (not paused) and speed < LIMITSPEED and (not isReplay) then
+						drawDynamic()
+					end
+					return true
+				end
+				
+				--next/prev team
+				x9 = Teambutton["Prev"][allyID]["x1"]
+				x10 = Teambutton["Prev"][allyID]["x2"]
+				y9 = Teambutton["Prev"][allyID]["y1"]
+				y10 = Teambutton["Prev"][allyID]["y2"]
+				
+				Teambutton["Prev"][allyID]["mouse"] = IsOnButton(x, y, x9, y9, x10, y10)
+				
+				if IsOnButton(x, y, x9, y9, x10, y10) then
+					if (not paused) and speed < LIMITSPEED and (not isReplay) then
+						drawDynamic()
+					end
+					return true
+				end
+				
+				x11 = Teambutton["Next"][allyID]["x1"]
+				x12 = Teambutton["Next"][allyID]["x2"]
+				y11 = Teambutton["Next"][allyID]["y1"]
+				y12 = Teambutton["Next"][allyID]["y2"]
+				Teambutton["Next"][allyID]["mouse"] = IsOnButton(x, y, x11, y11, x12, y12)
+				
+				if IsOnButton(x, y, x11, y11, x12, y12) then
+					if (not paused) and speed < LIMITSPEED and (not isReplay) then
+						drawDynamic()
+					end
+					return true
+				end
+			end
+		end
+	end
+	
+	for _,allyID in ipairs (allyList) do
+		if allyID ~= gaiaAllyID then
+			if IsOnButton(x,y, InfotablePosX, InfotablePosY-infoTableHeight, InfotablePosX + w, InfotablePosY) and infoButton[allyID]["click"] then
+				iPanel[allyID] = true
+			else
+				iPanel[allyID] = false
+			end
+		end
 	end
 	
 	return false
 end
 
+function widget:ViewResize(viewSizeX, viewSizeY)
+	vsx,vsy = gl.GetViewSizes()
+	Reinit()
+end
+
+function FindNextAlly(allyID)
+	
+	local allyDataID = allyID+1
+	for i=allyDataID,#allyData do
+		if allyData[i+1] then return i end
+	end
+	return false
+end
+
+function FindPrevAlly(allyID)
+	
+	local allyDataID = allyID+1
+	for i=allyDataID,1,-1 do
+		if allyData[i-1] then return i-2 end
+	end
+	return false
+end
+
+
 ---------------------------------------------------------------------------------------------------
 --  Draw
 ---------------------------------------------------------------------------------------------------
 
+function drawDynamic()
+	
+	if (drawListDynamic) then gl.DeleteList(drawListDynamic) end
+	
+	--
+	
+	local function drawFunction()
+
+		local t = Spring.GetGameSeconds()
+		
+		for _, data in pairs(allyData) do
+			local aID = data.aID
+			local drawpos = data.drawpos
+			
+			if isTeamReal(aID) and (aID == Spring.GetMyAllyTeamID() or inSpecMode) and aID ~= gaiaAllyID then
+				
+				local posy = tH*(drawpos)
+				local label, isAlive, hasCom
+				
+				-- Infobutton
+				if not infoButton[aID]["click"] then
+					DrawInfoButton(aID, infoButton[aID]["mouse"],right,false)
+				else
+					DrawInfoButton(aID, infoButton[aID]["mouse"],right,true)
+				end
+				
+				-- Expand table border and buttons
+				if infoButton[aID]["click"] then
+					DrawExpandTableBorders(aID)
+					DrawExpandTableButtons(aID)
+				end
+				
+				local teamList = Spring.GetTeamList(aID)
+				
+				-- Player faction images
+				for i, tID  in ipairs (teamList) do
+					if tID ~= gaiaID then
+						
+						local tData = teamData[tID]
+						local r = tData.red or 1
+						local g = tData.green or 1
+						local b = tData.blue or 1	
+						local alpha, sideImg
+						local side = tData.side
+						local posx = WBadge*(i-1)
+						
+						sideImg = images[side] or images["default"]
+					
+						data["isAlive"] = not tData.isDead
+						hasCom = tData.hasCom
+										
+						if Spring.GetGameSeconds() > 0 then
+							if not tData.isDead then
+								if tData.active then
+									alpha = 1
+								else
+									alpha = 0.3
+								end						
+								
+								if hasCom then
+									DrawSideImage(sideImg,posx,posy, r, g, b,alpha,false,playerButton[tID]["mouse"],t, false)--big icon	
+								else
+									DrawSideImage(sideImg,posx,posy, r, g, b,alpha,true,playerButton[tID]["mouse"],t, false) --small icon
+								end
+							else
+								sideImg = images["dead"]
+								DrawSideImage(sideImg,posx,posy, r, g, b,alpha,true,playerButton[tID]["mouse"],t, true) --dead, big icon
+							end
+						else
+							DrawBox( posx, posy, r, g, b)
+						end
+					end
+				end
+			end
+		end
+	end
+	
+	--
+	
+	drawListDynamic = gl.CreateList(drawFunction)
+end
+		
+function drawStandard()
+	
+	if (drawList) then gl.DeleteList(drawList) end
+	
+	local function drawFunction()
+	
+		local maxMetal 					= 0
+		local maxEnergy 				= 0
+		local maxFP 					= 0
+		local maxBP 					= 0
+		local maxHP 					= 0
+		local splits
+		
+		
+		if not gamestarted then updateButtons() end
+		
+		for _, data in pairs(allyData) do
+			local aID = data.aID
+			
+			if isTeamReal(aID) and (aID == Spring.GetMyAllyTeamID() or inSpecMode) and aID ~= gaiaAllyID then
+					
+				-- Expanded table
+				if infoButton[aID]["click"] then
+					--Echo("ET:",aID)
+					DrawExpandTable(aID)
+				end
+								
+				if data["tM"] and data["tM"] > maxMetal then
+					maxMetal = data["tM"]
+				end
+				if data["tE"] and data["tE"] > maxEnergy then
+					maxEnergy = data["tE"]
+				end
+				if data["tFP"] and data["tFP"] > maxFP then
+					maxFP = data["tFP"]
+				end
+				if data["tBP"] and data["tBP"] > maxBP then
+					maxBP = data["tBP"]
+				end
+				if data["killedhp"] and data["killedhp"] > maxHP then
+					maxHP = data["killedhp"]
+				end
+				if data["losthp"] and data["losthp"] > maxHP then
+					maxHP = data["losthp"]
+				end
+			end
+		end
+	
+		splits = math.floor(0.001*maxHP/widgetWidth)
+	
+		for _, data in pairs(allyData) do
+			local aID = data.aID
+			local drawpos = data.drawpos
+			
+			if isTeamReal(aID) and (aID == Spring.GetMyAllyTeamID() or inSpecMode) and aID ~= gaiaAllyID then
+			
+				local posy = tH*(drawpos)
+				if data["isAlive"] then DrawBackground(posy) end
+				
+				local t = Spring.GetGameSeconds()
+				if data["isAlive"] and t > 5 and gamestarted and not gameover then
+					DrawEBar(data["tE"]/maxEnergy,posy)
+					DrawEText(data["tE"],posy)
+					DrawKillDeathText(data["kills"],data["losses"],posy)
+					DrawKillBar(data["killedhp"],posy,splits)
+					DrawLossesBar(data["losthp"],posy,splits)
+				else
+					if gamestarted and t < 5 then
+						DrawLabelCT("(Go!)", posy,t)
+					elseif not gamestarted then
+						setPlayerActivestate()
+						local nbPlayers = getNbPlayers(aID)
+						local nbActive = getNbActivePlayers(aID)
+						local nbPlaced = getNbPlacedPositions(aID)
+						if nbActive > 0 then
+							if nbPlayers > 1 and nbPlaced > 0 then
+								DrawLabelCM("(On their marks)", posy)
+								DrawLabelCM2(table.concat({"   ",nbPlaced,"/",nbPlayers}), posy)
+							elseif nbPlayers > 1 then
+								DrawLabelC("(Warming up)", posy)
+							elseif nbPlayers == 1 then
+								if nbPlaced == 1 then
+									DrawLabelCM("(On his marks)", posy)
+								else
+									DrawLabelC("(Warming up)", posy)
+								end
+							end
+						else
+							DrawLabelC("(No one here)", posy)
+						end
+					end
+				end
+				if data["isAlive"] and t > 5 and not gameover then
+				DrawMBar(data["tM"]/maxMetal,posy)
+				DrawMText(data["tM"],posy)
+				end
+				if data["tFP"] and data["tFP"] > 0 and not gameover then
+					DrawFPBar(data["tFP"]/maxFP,posy,data["tFPM"]/data["tFP"])
+				end
+				if data["tBP"] and data["tBP"] > 0 and not gameover then
+					DrawBPBar(data["tBP"]/maxBP,posy,data["tBPA"]/data["tBP"])
+				end			
+			end
+		end
+	end
+	
+	drawList = gl.CreateList(drawFunction)	
+end
+
 function widget:TweakDrawScreen()
-	fontHandler.UseFont(font)
 	DrawOptionRibbon()
+	updateButtons()	
+	drawStandard()
+	drawDynamic()		
 end
 
 function widget:DrawScreen()
-
-	if Spring.IsGUIHidden() then return	end
-	if not inSpecMode and options["disable"]["On"] then return end
 	
-	local vOffset                 = 0         -- position of the next object to draw
-	local mouseX,mouseY           = Spring.GetMouseState()
-	local teamlist = Spring_GetAllyTeamList()
+	if Spring.IsGUIHidden() or (not inSpecMode and options["disable"]["On"]) then return end
 	
-	local nbTeams = getNbTeams()
-	local t = Spring_GetGameSeconds()
-	if t > 0 then startanimation = true end
-	if t > 5 then 
-		startanimation = false 
-		if t < 6 then 
-			Reinit()
-			if not inSpecMode then
-				widgetWidth = 60+50*(6-t)
-				if right then 
-					widgetPosX  = widgetRight - widgetWidth
-				end
-			end
-		end
-	end
+	if not drawList then drawStandard() end
+	if not drawListDynamic then drawDynamic() end
 	
-	if inSpecMode then
-		widgetHeight = nbTeams*tH+2
-	else
-		widgetHeight = tH+2
-	end
-	fontHandler.UseFont(font)
-
-	local maxMetal = 0
-	local maxEnergy = 0
-	local maxFP = 0
-	local maxBP = 0
-	local maxHP = 0
-	local splits
-		
-	for i,team in ipairs (teamlist) do
-		if isTeamReal(team) and (team == Spring.GetMyAllyTeamID() or inSpecMode) then
-			local label
-			local isAlive
-			local hasCom
-			--Echo("Beginning drawing for team:",team)
-			if (not options["removeDead"]["On"]) or teamData[team]["isAlive"] then
-				--Echo("Leakcheck:",i,team,options["removeDead"]["On"],teamData[team]["isAlive"], teamData[team]["leader"])
-				DrawLabel(teamData[team]["label"],i*tH)
-				DrawBackground(i*tH)
-			end
-			if not gamestarted then defineButtonCoords(team) end
-			if not expandButtonState[team]["click"] then
-				DrawExpandButton(team, expandButtonState[team]["mouse"],right)
-			else
-				DrawExpandTable(team)
-				if expandButtonState[team]["click"] then DrawCollapseButton(team, right) end
-			end
-
-			for j,ply in ipairs (Spring_GetTeamList(team)) do
-				local r = getPlayerTable(ply).red
-				local g = getPlayerTable(ply).green
-				local b = getPlayerTable(ply).blue
-				if r == nil then
-					nilCount = nilCount + 1
-					--if nilCount < 5 then Echo("Ecostats: r,g,b = nil for:",team,ply,playerData[ply].leaderName,inSpecMode) end
-					if nilCount > 100 then
-						Echo("Ecostats/DrawScreen: detected 100 errors, reinitialising...")
-						Init()
-					end
-					return
-				end
-				local alpha
-				local side = getPlayerTable(ply).side
-				local sideImg
-				if side == "arm" then
-					sideImg = armImage
-				elseif side == "core" then
-					sideImg = coreImage
-				else
-					sideImg = defImage
-				end
-				isAlive = not getPlayerTable(ply).isDead
-				if isAlive then teamData[team]["isAlive"] = true end
-				hasCom = getPlayerTable(ply).hasCom
-				
-				if Spring_GetGameSeconds() > 0 then
-					if isAlive then
-						if getPlayerTable(ply).active then
-							alpha = 1
-						else
-							alpha = 0.3
-						end						
-						playerButton[ply]["x1"] = widgetPosX + WBadge*(j-1) + 25 + (WBadge-14)*4 
-						playerButton[ply]["x2"] = widgetPosX + WBadge*(j-1) + 25 + (WBadge-14)*4 + WBadge
-						playerButton[ply]["y1"] = widgetPosY + widgetHeight - tH*i + tH - 16 - (WBadge-14)
-						playerButton[ply]["y2"] = widgetPosY + widgetHeight - tH*i + tH - 16 - (WBadge-14) + WBadge
-						playerButton[ply]["pID"] = ply
-						if not inSpecMode then 
-							playerButton[ply]["x1"] = playerButton[ply]["x1"] - 10
-							playerButton[ply]["x2"] = playerButton[ply]["x2"] - 10
-						end
-						if hasCom then
-							DrawSideImage(sideImg,WBadge*(j-1),tH*i, r, g, b,alpha,false,playerButton[ply]["mouse"],t)--big icon	
-						else
-							DrawSideImage(sideImg,WBadge*(j-1),tH*i, r, g, b,alpha,true,playerButton[ply]["mouse"],t) --small icon
-						end
-					end
-				else
-					--DrawSideImage(defImage,WBadge*(j-1),tH*i, r, g, b,0.8,false,playerButton[ply]["mouse"],0)--big icon	
-					DrawBox( WBadge*(j-1), tH*i, r, g, b)
-				end
-			end
-			if teamData[team]["tM"] > maxMetal then
-				maxMetal = teamData[team]["tM"]
-			end
-			if teamData[team]["tE"] > maxEnergy then
-				maxEnergy = teamData[team]["tE"]
-			end
-			if teamData[team]["tFP"] > maxFP then
-				maxFP = teamData[team]["tFP"]
-			end
-			if teamData[team]["tBP"] > maxBP then
-				maxBP = teamData[team]["tBP"]
-			end
-			if teamData[team]["killedhp"] > maxHP then
-				maxHP = teamData[team]["killedhp"]
-			end
-			if teamData[team]["losthp"] > maxHP then
-				maxHP = teamData[team]["losthp"]
-			end
-		end
-	end
-
-	splits = math.floor(0.001*maxHP/widgetWidth)
-	
-	for i, team in ipairs (teamlist) do
-		if isTeamReal(team) and (team == Spring.GetMyAllyTeamID() or inSpecMode)then
-			if teamData[team]["isAlive"] and t > 5 and gamestarted and not gameover then
-				if inSpecMode then DrawEBar(teamData[team]["tE"]/maxEnergy,i*tH) end
-				if inSpecMode and team ~= 0 and teamData[0]["isAlive"] and t > 5 and gamestarted and not gameover then DrawEBar(teamData[0]["tE"]/maxEnergy,tH) end 	--ugly fix to weird problem
-				--if i == 4 then DrawEBar(teamData[0]["tE"]/maxEnergy,3*tH) end
-				--Echo(teamData[0]["tE"],maxEnergy,teamData[0]["tE"]/maxEnergy)
-				DrawEText(teamData[team]["tE"],i*tH)
-				DrawKillDeathText(teamData[team]["kills"],teamData[team]["losses"],i*tH)
-				DrawKillBar(teamData[team]["killedhp"],i*tH,splits)
-				DrawLossesBar(teamData[team]["losthp"],i*tH,splits)
-			elseif gamestarted and t > 5 then -- team died or gameover
-				--if not options["removeDead"]["On"] then
-					--DrawLabelCM("Kills: "..teamData[team]["kills"],i*tH)
-					--DrawLabelCM2("Losses: "..teamData[team]["losses"],i*tH)
-				--end
-			else
-				if gamestarted and t < 5 then
-					DrawLabelCT("(Go!)", i*tH,t)
-				elseif not gamestarted then
-					setPlayerActivestate()
-					local nbPlayers = getNbPlayers(team)
-					local nbActive = getNbActivePlayers(team)
-					local nbPlaced = getNbPlacedPositions(team)
-					if nbActive > 0 then
-						if nbPlayers > 1 and nbPlaced > 0 then
-							DrawLabelCM("(On their marks)", i*tH)
-							DrawLabelCM2("   "..nbPlaced.."/"..nbPlayers, i*tH)
-						elseif nbPlayers > 1 then
-							DrawLabelC("(Warming up)", i*tH)
-						elseif nbPlayers == 1 then
-							if nbPlaced == 1 then
-								DrawLabelCM("(On his marks)", i*tH)
-							else
-								DrawLabelC("(Warming up)", i*tH)
-							end
-						end
-					else
-						DrawLabelC("(No one here)", i*tH)
-					end
-				end
-			end
-			if teamData[team]["isAlive"] and t > 5 and not gameover then
-				if inSpecMode then DrawMBar(teamData[team]["tM"]/maxMetal,i*tH) end
-				DrawMText(teamData[team]["tM"],i*tH)
-			end
-			if teamData[team]["tFP"] > 0 and not gameover then
-				DrawFPBar(teamData[team]["tFP"]/maxFP,i*tH,teamData[team]["tFPM"]/teamData[team]["tFP"])
-			end
-			if teamData[team]["tBP"] > 0 and not gameover then
-				DrawBPBar(teamData[team]["tBP"]/maxBP,i*tH,teamData[team]["tBPA"]/teamData[team]["tBP"])
-			end
-		end
-	end
+	gl.PushMatrix()
+	gl.CallList(drawList)
+	gl.CallList(drawListDynamic)
+	gl.PopMatrix()
 	
 end
 
-function formatRes(number)
-	local label
-	if number > 10000 then
-		label = math.floor(round(number/1000)).."k"
-	elseif number > 1000 then
-		label = string.sub(round(number/1000,1),1,2+string.find(round(number/1000,1),".")).."k"
-	elseif number > 10 then
-		label = string.sub(round(number,0),1,3+string.find(round(number,0),"."))
-	else
-		label = string.sub(round(number,1),1,2+string.find(round(number,1),"."))
+function widget:Update()
+	speed,_,paused = Spring.GetGameSpeed()
+	
+	if paused or (isReplay and speed < LIMITSPEED) then
+		drawDynamic()
 	end
-	return label
+	
+	if not gamestarted then
+		drawStandard()
+	end
 end
 
-function formatRes1000(number)
-	local label
-	if number == nil then
-		Echo("formatRes1000 returned nil")
-		return nil
+function widget:GameFrame(frameNum)
+	
+	if frameNum < 5 * 30 then
+		drawStandard()
+		drawDynamic()
 	end
-	if number > 10000 then
-		label = digitsep(round(number))
-	elseif number > 1000 then
-		label = digitsep(round(number))
-	elseif number > 10 then
-		label = string.sub(round(number,0),1,3+string.find(round(number,0),"."))
-	else
-		label = string.sub(round(number,1),1,2+string.find(round(number,1),"."))
+	
+	if frameNum%32 == 0 then 
+		updateButtons()
+		UpdateTeams() 
+		setPlayerResources()
+		drawStandard()
+		drawDynamic()
 	end
-	return label
+	
+	if frameNum - lastPlayerChange == 30  then 
+		UpdateTeams() 
+		updateButtons()
+	end
+	
+	if not gamestarted and frameNum > 0 then gamestarted = true end
 end
 
-function DrawEText(numberE, vOffset)	
+function DrawEText(numberE, vOffset)
 	if options["resText"]["On"] then
-		local label = "+"..formatRes(numberE)
-		gl.Color(1,1,0,1)
-		TextDraw(label, widgetPosX -7*#label + widgetWidth -4, widgetPosY + widgetHeight -vOffset+tH-42)
-		gl.Color(1,1,1,1)
+		local label = table.concat({"+",formatRes(numberE)})
+		myFont:Begin()
+		myFont:SetTextColor({1, 1, 0, 1})
+		myFont:Print(label, widgetPosX + widgetWidth - 10, widgetPosY + widgetHeight -vOffset+tH-42,textsize,'rs')
+		myFont:End()
 	end
 end
 
 function DrawMText(numberM, vOffset)
 	if options["resText"]["On"] then
-		local label = "+"..formatRes(numberM)
-		gl.Color(0.8,0.8,0.8,1)
-		TextDraw(label, widgetPosX - 7*#label + widgetWidth - 4, widgetPosY + widgetHeight -vOffset+tH-30)
-		gl.Color(1,1,1,1)
+		local label = table.concat({"+",formatRes(numberM)})
+		myFont:Begin()
+		myFont:SetTextColor({0.8,0.8,0.8,1})
+		myFont:Print(label, widgetPosX + widgetWidth - 10, widgetPosY + widgetHeight -vOffset+tH-30,textsize,'rs')
+		myFont:End()
 	end
 end
 
@@ -2245,7 +2048,7 @@ function DrawEBar(tE,vOffset)-- where tE = team Energy = [0,1]
 			widgetPosX + dx,
 			widgetPosY + widgetHeight -vOffset+dy-5
 			)
-	gl.Color(1,1,1)
+	gl.Color(1,1,1,1)
 end
 
 function DrawMBar(tM,vOffset) -- where tM = team Metal = [0,1]
@@ -2415,7 +2218,7 @@ function DrawKillBar(killedhp,vOffset,splits) -- where killedHP = abs. number
 	gl.Color(1,1,1,1)
 end
 
-function DrawLossesBar(losthp,vOffset,splits) 
+function DrawLossesBar(losthp,vOffset,splits)
 	local dx = 1
 	local dy = -1
 	local len = 0.001*losthp/(splits+1)
@@ -2450,54 +2253,18 @@ function DrawKillDeathText(kills, losses, vOffset)
 	local len  = 7 * #(tostring(losses))
 	local len2 = 7 * #(tostring(kills))+len
 	gl.Color(0.8,1,0.8,1)
-	if kills > 0 then TextDraw(kills, widgetPosX + widgetWidth - 15 - dx - len2, widgetPosY + widgetHeight -vOffset+tH-dy+2) end
+	if kills > 0 then glText(kills, widgetPosX + widgetWidth - 15 - dx - len2, widgetPosY + widgetHeight -vOffset+tH-dy+2,textsize) end
 	gl.Color(0.85,0.85,0.85,0.85)
-	if kills > 0 and losses > 0 then TextDraw("/", widgetPosX  + widgetWidth - 10 - dx - len, widgetPosY + widgetHeight -vOffset+tH-dy+2) end
+	if kills > 0 and losses > 0 then glText("/", widgetPosX  + widgetWidth - 10 - dx - len, widgetPosY + widgetHeight -vOffset+tH-dy+2,textsize) end
 	gl.Color(1,0.8,0.8,1)
-	if losses > 0 then TextDraw(losses, widgetPosX + widgetWidth - dx - len, widgetPosY + widgetHeight -vOffset+tH-dy+2) end
-	gl.Color(1,1,1,1)
-end
-
-function DrawDeathText(text, vOffset)
-	gl.Color(1,0.9,0.9,1)
-	--text = string.sub(text, 0, 1)
-	TextDraw(text, widgetPosX + widgetWidth - 33, widgetPosY + widgetHeight -vOffset+tH-62)
-	gl.Color(1,1,1,1)
-end
-
-function DrawKillText(text, vOffset)
-	gl.Color(0.9,1,0.9,1)
-	--text = string.sub(text, 0, 1)
-	TextDraw(text, widgetPosX + 18, widgetPosY + widgetHeight -vOffset+tH-62)
-	gl.Color(1,1,1,1)
-end
-
-function DrawDeathText(text, vOffset)
-	gl.Color(1,0.9,0.9,1)
-	--text = string.sub(text, 0, 1)
-	TextDraw(text, widgetPosX + widgetWidth - 33, widgetPosY + widgetHeight -vOffset+tH-62)
-	gl.Color(1,1,1,1)
-end
-
-function DrawKillText2(text, vOffset)
-	gl.Color(0.7,0.7,0.7,0.8)
-	text = "("..text..")"
-	TextDraw(text, widgetPosX + 10, widgetPosY + widgetHeight -vOffset+tH-73)
-	gl.Color(1,1,1,1)
-end
-
-function DrawDeathText2(text, vOffset)
-	gl.Color(0.7,0.7,0.7,0.8)
-	text = "("..text..")"
-	TextDraw(text, widgetPosX + widgetWidth - 40, widgetPosY + widgetHeight -vOffset+tH-73)
+	if losses > 0 then glText(losses, widgetPosX + widgetWidth - dx - len, widgetPosY + widgetHeight -vOffset+tH-dy+2,textsize) end
 	gl.Color(1,1,1,1)
 end
 
 function DrawBackground(posY)
 	local y1 = widgetPosY - posY + widgetHeight - 1
 	local y2 = widgetPosY - posY + tH + widgetHeight - 1
-
-	gl.Color(0,0,0,options["contrast"])                              -- draws background rectangle
+	gl.Color(0,0,0,options["contrast"])                              
 	gl.Rect(widgetPosX,y1, widgetPosX + widgetWidth, y2)
 	if options["borders"]["On"] then
 		gl.Color(0,0,0,1)
@@ -2506,10 +2273,74 @@ function DrawBackground(posY)
 		gl.Rect(widgetPosX , y1-1, widgetPosX + 1, y2  - 1) --left
 		gl.Rect(widgetPosX + widgetWidth - 1, y1-1, widgetPosX + widgetWidth, y2  - 1)--right
 	end
+	
 	gl.Color(1,1,1,1)
 end
 
+function DrawExpandTableBorders(teamID)
+	
+	local x1, x2, y1, y2
+	local w = 180 + cW*getNbPlayers(teamID) -- infotable width
+	x1 = iPosX[teamID]
+	y2 = iPosY[teamID]
+	x2 = x1 + w
+	y1 = y2 - infoTableHeight
+		
+	if iPanel[teamID] then
+		gl.Color(0,0,0,1)	-- highlight borders
+	else
+		gl.Color(0.3,0.3,0.3,1) 	
+	end
+	
+	gl.Rect(x1, y1-1, x2, y1) 						-- lower
+	gl.Rect(x1, y2, x2, y2+1) 						--upper
+	gl.Rect(x1-1, y1, x1, y2) 						--left
+	gl.Rect(x2, y1, x2+1, y2-1)						--right
+end
+
+function DrawExpandTableButtons(teamID)
+	
+	if expandMove[teamID]["mouseover"] then
+		gl.Color(1,1,1,1)
+	else
+		gl.Color(0.5,0.5,0.8,0.7)
+	end
+	
+	gl.Texture(images["move"])
+	gl.TexRect(expandMove[teamID]["x1"], expandMove[teamID]["y1"] , expandMove[teamID]["x2"], expandMove[teamID]["y2"])
+	gl.Texture(false)
+
+	if Teambutton["Next"][teamID]["mouse"] then
+		if teamID < getNbTeams() - 1 and inSpecMode then
+			gl.Color(0.7,0.9,1,1)
+		else
+			gl.Color(1,0.7,0.7,1)
+		end
+	else
+		gl.Color(0.5,0.5,0.8,0.7)
+	end
+	
+	gl.Texture(images["arrowright"])
+	gl.TexRect(Teambutton["Next"][teamID]["x1"], Teambutton["Next"][teamID]["y1"] , Teambutton["Next"][teamID]["x2"], Teambutton["Next"][teamID]["y2"])
+	gl.Texture(false)
+	
+	if Teambutton["Prev"][teamID]["mouse"] then
+		if teamID > 0 and inSpecMode then
+			gl.Color(0.7,0.9,1,1)
+		else
+			gl.Color(1,0.7,0.7,1)
+		end
+	else
+		gl.Color(0.5,0.5,0.8,0.7)
+	end
+	
+	gl.Texture(images["arrowleft"])
+	gl.TexRect(Teambutton["Prev"][teamID]["x1"], Teambutton["Prev"][teamID]["y1"] , Teambutton["Prev"][teamID]["x2"], Teambutton["Prev"][teamID]["y2"])
+	gl.Texture(false)
+end
+
 function DrawExpandTable(teamID)
+	
 	local nbTeams = getNbTeams()
 	local nbPlayers = getNbPlayers(teamID)
 	if nbPlayers > 5 then cW = 90 end
@@ -2538,103 +2369,66 @@ function DrawExpandTable(teamID)
 	--------------
 	-- Background --
 	--------------
-	gl.Color(0.1,0.1,0.1,0.85)
-	gl.Rect(x1, y1, x2, y2)
-	--gl.Rect(x1, y2 - 25, x2 - 25, y2)
-	gl.Color(0,0,0,1)
-	gl.Rect(x1, y1, x2, y1 + 1) 					-- lower
-	gl.Rect(x1, y2, x2, y2+1) 						--upper
-	gl.Rect(x1, y1, x1+1, y2) 						--left
-	gl.Rect(x2, y1, x2+1, y2-1)						--right
-	gl.Color(clr)
-	fontHandler.UseFont(font2)
-	TextDraw("Team "..teamID, posX + w/2 -30, posY - 38)
-	fontHandler.UseFont(font)
-	gl.Color(0.8,0.8,1,0.4)
-	if (#motto[teamID]+14)*7 > w then
-		TextDraw(motto[teamID], posX + w/2 - (#motto[teamID])*2 - 30, posY - 15)
-	else
-		TextDraw("Team motto: "..motto[teamID], posX + 30, posY - 15)
-	end
-
+	gl.Texture(false)
+	
 	local hasCom
 	local active
 	local mycomlbl
 	local myactlbl
-	local r,b,g,s1, s2, s3, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17,s18, rank, sStatus
-	if expandMove[teamID]["mouseover"] then
-		gl.Color(1,1,1,1)
-	else
-		gl.Color(0.5,0.5,0.8,0.7)
-	end
-	gl.Texture(imgMove)
-	gl.TexRect(expandMove[teamID]["x1"], expandMove[teamID]["y1"] , expandMove[teamID]["x2"], expandMove[teamID]["y2"])
-	
-	if Teambutton["Prev"][teamID]["mouse"] then
-		if teamID > 0 and inSpecMode then
-			gl.Color(0.7,0.9,1,1)
-		else
-			gl.Color(1,0.7,0.7,1)
-		end
-	else
-		gl.Color(0.5,0.5,0.8,0.7)
-	end
-	
-	gl.Texture(imgPrev)
-	gl.TexRect(Teambutton["Prev"][teamID]["x1"], Teambutton["Prev"][teamID]["y1"] , Teambutton["Prev"][teamID]["x2"], Teambutton["Prev"][teamID]["y2"])
-	
-	if Teambutton["Next"][teamID]["mouse"] then
-		if teamID < getNbTeams() - 1 and inSpecMode then
-			gl.Color(0.7,0.9,1,1)
-		else
-			gl.Color(1,0.7,0.7,1)
-		end
-	else
-		gl.Color(0.5,0.5,0.8,0.7)
-	end
-	
-	gl.Texture(imgNext)
-	gl.TexRect(Teambutton["Next"][teamID]["x1"], Teambutton["Next"][teamID]["y1"] , Teambutton["Next"][teamID]["x2"], Teambutton["Next"][teamID]["y2"])
+	local r,b,g,s1, s2, s3, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17,s18, s19, rank, sStatus
 	
 	
-	gl.Color(0.5,0.5,0.8,1)
+	gl.Color(0.1,0.1,0.1,0.85)
+	gl.Rect(x1, y1, x2, y2)
+	
+	local teamlbl = table.concat({"Team ",tostring(teamID)})
+	
+	myFontBig:Begin()
+	myFontBig:SetTextColor({0.8,0.8,1,0.4})
+	myFontBig:Print(teamlbl, posX + w/2 -30, posY - 38,textlarge,'o')
+	myFontBig:End()
+	
 	--------------
 	-- Headings --
 	-------------
-	TextDraw("Player:", posX + lm, posY - dy - 10 - 1*rs)
-	TextDraw("Commander:", posX + lm, posY - dy - 10- 2*rs)
-	TextDraw("Units:", posX + lm, posY - dy - 10 - 3*rs)
-	TextDraw("Metal:", posX + lm, posY - dy - 10 - 4*rs)
-	TextDraw("Energy:", posX + lm, posY - dy - 10 - 5*rs)
-	TextDraw("Firepower:", posX + lm, posY - dy - 10 - 6*rs)
-	TextDraw(".....mobile:", posX + lm, posY - dy - 5 - 7*rs)
-	TextDraw("Buildpower:", posX + lm, posY - dy - 10 - 8*rs)
-	TextDraw(".......air:", posX + lm, posY - dy - 5 - 9*rs)
-	TextDraw("Kills:", posX + lm, posY - dy - 10 - 10*rs)
-	TextDraw("Losses:", posX + lm, posY - dy - 10 - 11*rs)
-	TextDraw("Killed HP:", posX + lm, posY - dy - 10 - 12*rs)
-	TextDraw("Lost HP:", posX + lm, posY - dy - 10 - 13*rs)
-	TextDraw("Active:", posX + lm, posY - dy - 10 - 14*rs)
-	TextDraw("Faction:", posX + lm, posY - dy - 10 - 15*rs)
-	TextDraw("Country:", posX + lm, posY - dy - 10 - 16*rs)
-	TextDraw("Rank:", posX + lm, posY - dy - 10 - 17*rs)
-	gl.Color(0.4,0.4,0.2,1)
-	TextDraw("Kills:", posX + lm, posY - dy - 10 - 22*rs)	
-	TextDraw("0 HP", posX + 100, posY - dy - 10 - 22*rs - 2)
-	local s0 = formatRes1000((1+splits)*hBar/4) .." kHP"
-	TextDraw(s0, posX + 135 - #s0*7, posY - dy - 10 - 22*rs + hBar-2)
-	gl.Color(0.5,0.5,0.8,0.3)
-	TextDraw("(Right-click to close)", posX + lm, posY - dy - 24*rs)
-	gl.Color(0.5,0.5,0.8,1)
-
-	for i, pID in ipairs (Spring_GetTeamList(teamID)) do
+	myFont:Begin()
+	myFont:SetTextColor({0.5,0.5,0.8,1})
+	myFont:Print("Player:", posX + lm, posY - dy - 10 - 1*rs,textsize)
+	myFont:Print("Commander:", posX + lm, posY - dy - 10- 2*rs,textsize)
+	myFont:Print("Units:", posX + lm, posY - dy - 10 - 3*rs,textsize)
+	myFont:Print("Metal:", posX + lm, posY - dy - 10 - 4*rs,textsize)
+	myFont:Print("Energy:", posX + lm, posY - dy - 10 - 5*rs,textsize)
+	myFont:Print("Firepower:", posX + lm, posY - dy - 10 - 6*rs,textsize)
+	myFont:Print(".....mobile:", posX + lm, posY - dy - 5 - 7*rs,textsize)
+	myFont:Print("Buildpower:", posX + lm, posY - dy - 10 - 8*rs,textsize)
+	myFont:Print(".......air:", posX + lm, posY - dy - 5 - 9*rs,textsize)
+	myFont:Print("Kills:", posX + lm, posY - dy - 10 - 10*rs,textsize)
+	myFont:Print("Losses:", posX + lm, posY - dy - 10 - 11*rs,textsize)
+	myFont:Print("Killed HP:", posX + lm, posY - dy - 10 - 12*rs,textsize)
+	myFont:Print("Lost HP:", posX + lm, posY - dy - 10 - 13*rs,textsize)
+	myFont:Print("Active:", posX + lm, posY - dy - 10 - 14*rs,textsize)
+	myFont:Print("Faction:", posX + lm, posY - dy - 10 - 16*rs,textsize)
+	myFont:Print("Country:", posX + lm, posY - dy - 10 - 17*rs,textsize)
+	myFont:Print("Rank:", posX + lm, posY - dy - 10 - 18*rs,textsize,textsize)
+	myFont:Print("Skill:", posX + lm, posY - dy - 10 - 19*rs,textsize,textsize)
+	myFont:SetTextColor({0.4,0.4,0.2,1})
+	myFont:Print("Kills:", posX + lm, posY - dy - 10 - 24*rs,textsize)	
+	myFont:Print("0 HP", posX + 100, posY - dy - 10 - 24*rs - 2,textsize)
+	local s0 = table.concat({formatRes1000((1+splits)*hBar/4) or ""," kHP"})
+	myFont:Print(s0, posX + 135 - #s0*7, posY - dy - 10 - 24*rs + hBar-2,textsize)
+	myFont:SetTextColor({0.5,0.5,0.8,0.3})
+	myFont:Print("(Right-click to close)", posX + lm, posY - dy - 26*rs,textsize)
+	myFont:End()
+	--gl.Color(0.5,0.5,0.8,1)
+	
+	for i, pID in ipairs (Spring.GetTeamList(teamID)) do
 		j = nbPlayers - i
 		------------
 		-- Values --
 		------------
-		r  		= playerData[pID].red
-		g  		= playerData[pID].green
-		b  		= playerData[pID].blue
+		r  		= teamData[pID].red
+		g  		= teamData[pID].green
+		b  		= teamData[pID].blue
 
 		if r ~= nil then
 			local luminance  = (r * 0.299) + (g * 0.587) + (b * 0.114)
@@ -2644,32 +2438,32 @@ function DrawExpandTable(teamID)
 				b = b + 0.2
 			end
 		end
-		s1 		= playerData[pID]["leaderName"] or "(Retired)"
+		s1 		= teamData[pID]["leaderName"] or "(Retired)"
 		if 	#s1 > cW/7 and nbPlayers > 1 then s1 = string.sub(s1,1,math.floor(cW/7)) end
-		s3 		= tostring(playerData[pID]["unitCount"]) or ""
-		hasCom 	= playerData[pID]["hasCom"]
-		s5 		= "+"..formatRes1000(playerData[pID]["minc"])
-		s6		= "+"..formatRes1000(playerData[pID]["einc"])
-		s7		= formatRes1000(playerData[pID]["firepower"])
-		if playerData[pID]["firepower"] > 0 then
-			s8		= formatRes1000(100*(playerData[pID]["firepowerMob"]/playerData[pID]["firepower"])).."%"
+		s3 		= tostring(teamData[pID]["unitCount"]) or ""
+		hasCom 	= teamData[pID]["hasCom"]
+		s5 		= table.concat({"+", formatRes1000(teamData[pID]["minc"]) or ""})
+		s6		= table.concat({"+", formatRes1000(teamData[pID]["einc"]) or ""})
+		s7		= formatRes1000(teamData[pID]["firepower"]) or ""
+		if teamData[pID]["firepower"] > 0 then
+			s8		= table.concat({formatRes1000(100*(teamData[pID]["firepowerMob"]/teamData[pID]["firepower"])) or "","%"})
 		else
 			s8 = ""
 		end
-		s9		= formatRes1000(playerData[pID]["buildpower"])
-		if playerData[pID]["firepower"] > 0 then
-			s10		= formatRes1000(100*(playerData[pID]["buildpowerAir"]/playerData[pID]["buildpower"])).."%"
+		s9		= formatRes1000(teamData[pID]["buildpower"])
+		if teamData[pID]["firepower"] > 0 then
+			s10		= table.concat({formatRes1000(100*(teamData[pID]["buildpowerAir"]/teamData[pID]["buildpower"]))or "","%"})
 		else
 			s10 = ""
 		end
-		s11		= tostring(playerData[pID]["kills"])
-		s12		= tostring(playerData[pID]["losses"])
-		s13		= formatRes1000(playerData[pID]["killedhp"])
-		s14		= formatRes1000(playerData[pID]["losthp"])
-		active 	= playerData[pID]["active"]
-		s16		= firstToUpper(playerData[pID]["side"] or "") 
-		s17		= string.upper(playerData[pID]["country"] or "") 
-		rank 	= playerData[pID]["rank"]
+		s11		= tostring(teamData[pID]["kills"])
+		s12		= tostring(teamData[pID]["losses"])
+		s13		= formatRes1000(teamData[pID]["killedhp"]) or ""
+		s14		= formatRes1000(teamData[pID]["losthp"]) or ""
+		active 	= teamData[pID]["active"]
+		s16		= firstToUpper(teamData[pID]["side"] or "") 
+		s17		= string.upper(teamData[pID]["country"] or "") 
+		rank 	= teamData[pID]["rank"]
 		if rank == 0 then
 			s18 = "Enlisted"
 		elseif rank == 1 then
@@ -2691,88 +2485,97 @@ function DrawExpandTable(teamID)
 		else
 			s18 = ""
 		end
-		gl.Color(r,g,b,1)
+		s19		= teamData[pID]["skill"]
+		
 		------------------
 		-- Print values --
 		------------------
-		TextDraw(s1, posX + w - #s1*7 - rm - j*cW, posY - dy - 10 - 1*rs)
-		gl.Color(clr)
+		myFont:Begin()
+		myFont:SetTextColor({r,g,b,1})
+		myFont:Print(s1, posX + w - rm - j*cW, posY - dy - 10 - 1*rs,textsize,'r')
+		myFont:SetTextColor(clr)
 		if hasCom then
 			s2 = "Yes"
-			gl.Color(0.7,1,0.7,1)
+			myFont:SetTextColor({0.7,1,0.7,1})
 		else
 			s2 = "No"
-			gl.Color(1,0.7,0.7,1)
+			myFont:SetTextColor({1,0.7,0.7,1})
 		end
 						
-		TextDraw(s2, posX + w - #s2*7 - rm - j*cW, posY - dy - 10 - 2*rs)
-		gl.Color(clr)
-		if (playerData[pID]["isDead"]) then gl.Color(0.5,0.5,0.5,0.8) end
-		TextDraw(s3, posX + w - #s3*7 - rm - j*cW, posY - dy - 10 - 3*rs)
-		gl.Color(0.8,0.8,1,1)
-		TextDraw(s5, posX + w - #s5*7 - rm - j*cW, posY - dy - 10 - 4*rs)
-		gl.Color(1,1,0,1)
-		TextDraw(s6, posX + w - #s6*7 - rm - j*cW, posY - dy - 10 - 5*rs)
-		gl.Color(clr)
-		TextDraw(s7, posX + w - #s7*7 - rm - j*cW, posY - dy - 10 - 6*rs)
-		TextDraw(s8, posX + w - #s8*7 - rm + 7 - j*cW, posY - dy - 5 - 7*rs)
-		gl.Color(clr)
-		TextDraw(s9, posX + w - #s9*7 - rm - j*cW, posY - dy - 10 - 8*rs)
-		TextDraw(s10, posX + w - #s10*7 - rm + 7 - j*cW, posY - dy - 5 - 9*rs)
-		gl.Color(clr)
-		TextDraw(s11, posX + w - #s11*7 -rm - j*cW, posY - dy - 10 - 10*rs)
-		TextDraw(s12, posX + w -#s12*7 - rm - j*cW, posY - dy - 10 - 11*rs)
-		TextDraw(s13, posX + w - #s13*7 - rm - j*cW, posY - dy - 10 - 12*rs)
-		TextDraw(s14, posX + w - #s14*7 - rm - j*cW, posY - dy - 10 - 13*rs)
+		myFont:Print(s2, posX + w - rm - j*cW, posY - dy - 10 - 2*rs,textsize,'r')
+		myFont:SetTextColor(clr)
+		if (teamData[pID]["isDead"]) then myFont:SetTextColor({0.5,0.5,0.5,0.8}) end
+		myFont:Print(s3, posX + w - rm - j*cW, posY - dy - 10 - 3*rs,textsize,'r')
+		myFont:SetTextColor({0.8,0.8,1,1})
+		myFont:Print(s5, posX + w - rm - j*cW, posY - dy - 10 - 4*rs,textsize,'r')
+		myFont:SetTextColor({1,1,0,1})
+		myFont:Print(s6, posX + w - rm - j*cW, posY - dy - 10 - 5*rs,textsize,'r')
+		myFont:SetTextColor(clr)
+		myFont:Print(s7, posX + w - rm - j*cW, posY - dy - 10 - 6*rs,textsize,'r')
+		myFont:Print(s8, posX + w - rm + 7 - j*cW, posY - dy - 5 - 7*rs,textsize,'r')
+		myFont:SetTextColor(clr)
+		myFont:Print(s9, posX + w - rm - j*cW, posY - dy - 10 - 8*rs,textsize,'r')
+		myFont:Print(s10, posX + w - rm + 7 - j*cW, posY - dy - 5 - 9*rs,textsize,'r')
+		myFont:SetTextColor(clr)
+		myFont:Print(s11, posX + w - rm - j*cW, posY - dy - 10 - 10*rs,textsize,'r')
+		myFont:Print(s12, posX + w - rm - j*cW, posY - dy - 10 - 11*rs,textsize,'r')
+		myFont:Print(s13, posX + w - rm - j*cW, posY - dy - 10 - 12*rs,textsize,'r')
+		myFont:Print(s14, posX + w - rm - j*cW, posY - dy - 10 - 13*rs,textsize,'r')
 		if active then
 			s15 = "Yes"
-			gl.Color(0.7,1,0.7,1)
+			myFont:SetTextColor({0.7,1,0.7,1})
 		else
 			s15 = "No"
-			gl.Color(1,0.7,0.7,1)
+			myFont:SetTextColor({1,0.7,0.7,1})
 		end
-		TextDraw(s15, posX + w - #s15*7 - rm - j*cW, posY - dy - 10 - 14*rs)
-		gl.Color(clr)
-		TextDraw(s16, posX + w - #s16*7 - rm - j*cW, posY - dy - 10 - 15*rs)
-		TextDraw(s17, posX + w - #s17*7 - rm - j*cW, posY - dy - 10 - 16*rs)
-		TextDraw(s18, posX + w - #s18*7 - rm - j*cW, posY - dy - 10 - 17*rs)
-		--fontHandler.UseFont(font2)
+		myFont:Print(s15, posX + w - rm - j*cW, posY - dy - 10 - 14*rs,textsize,'r')
+		myFont:SetTextColor(clr)
+		myFont:Print(s16, posX + w - rm - j*cW, posY - dy - 10 - 16*rs,textsize,'r')
+		myFont:Print(s17, posX + w - rm - j*cW, posY - dy - 10 - 17*rs,textsize,'r')
+		myFont:Print(s18, posX + w - rm - j*cW, posY - dy - 10 - 18*rs,textsize,'r')
+		myFont:Print(s19, posX + w - rm - j*cW, posY - dy - 10 - 19*rs,textsize,'r')
+		
 		if gamestarted then
-			if not playerData[pID]["active"] and playerData[pID]["unitCount"] > 0 then
-			gl.Color(0.5,0.5,0.8,1)
+			if not teamData[pID]["active"] and teamData[pID]["unitCount"] > 0 then
+			myFont:SetTextColor({0.5,0.5,0.8,1})
 			sStatus = "[MIA]"
-			elseif playerData[pID]["isDead"] then
-			gl.Color(0.5,0.1,0.1,1)
+			elseif teamData[pID]["isDead"] then
+			myFont:SetTextColor({0.5,0.1,0.1,1})
 			sStatus = "[KIA]"
 			else
-			gl.Color(0.7,1,0.7,1)
+			myFont:SetTextColor({0.7,1,0.7,1})
 			sStatus = ""
 			end
 		else
-			if not playerData[pID]["active"] then
-				gl.Color(0.3,0.3,0.6,1)
+			if not teamData[pID]["active"] then
+				myFont:SetTextColor({0.3,0.3,0.6,1})
 				sStatus = "(Not here)"
-			elseif playerData[pID]["startx"] > 0 and playerData[pID]["starty"] > 0 then
-				gl.Color(0.5,0.5,0.8,1)
+			elseif teamData[pID]["startx"] > 0 and teamData[pID]["starty"] > 0 then
+				myFont:SetTextColor({0.5,0.5,0.8,1})
 				sStatus = "(Marked)"
-			elseif playerData[pID]["startx"] == -100 and playerData[pID]["starty"] == -100 then
-				gl.Color(0.4,0.4,0.7,1)
+			elseif teamData[pID]["startx"] == -100 and teamData[pID]["starty"] == -100 then
+				myFont:SetTextColor({0.4,0.4,0.7,1})
 				sStatus = "(Warming up)"
 			else
 				sStatus = ""
 			end
 		end
-		TextDraw(sStatus, posX + w - #sStatus*7 - rm - j*cW, posY - dy - 20 - 18*rs)
+		myFont:Print(sStatus, posX + w - rm - j*cW, posY - dy - 20 - 20*rs,textsize,'r')
+		myFont:End()
 		
-		for rank,_ in ipairs(Spring_GetTeamList()) do -- fist player id in matrix is ranking, since table is sorted by most kills
+		for rank,_ in ipairs(Spring.GetTeamList()) do -- first player id in matrix is ranking, since table is sorted by most kills
 			if rank < 16 then
 				local r2,g2,n2,r3,g3,b3,r4,g4,b4
 				local xi, yi, hi
-				local enemy = kMat[pID][rank][1] -- the associated player with rank is the actual player id that we wanna plot
-												
-				r2 = playerData[enemy].red or 0
-				g2 = playerData[enemy].green or 0
-				b2 = playerData[enemy].blue or 0
+				local enemy = kMat[pID][rank][1] -- the associated player with rank is the actual player id that we want to plot
+				
+				if enemy ~= gaiaID then
+					r2 = teamData[enemy].red or 0
+					g2 = teamData[enemy].green or 0
+					b2 = teamData[enemy].blue or 0
+				else
+					r2,g2,b2 = 1,1,1
+				end
 				
 				local luminance  = (r2 * 0.299) + (g2 * 0.587) + (b2 * 0.114)
 				
@@ -2794,17 +2597,12 @@ function DrawExpandTable(teamID)
 							
 				hi = (kMat[pID][rank][2]/250)/(splits+1) or 0
 				xi = posX + w - rm - (j+0.55)*cW - 10 + 9*rank
-				yi = posY - dy - 10 - 22*rs
+				yi = posY - dy - 10 - 24*rs
 				
 				gl.Color(0.1,0.1,0.05,0.7)
 				--gl.Color(0.4,0.4,0.2,1)
 				gl.Rect(posX + w - rm - (j+0.66)*cW, yi-1, posX + w - rm - j*cW, yi)
 				gl.Rect(posX + w - rm - (j+0.66)*cW, yi+hBar, posX + w - rm - j*cW, yi+hBar+1)
-				--gl.Color(0.1,0.1,0.05,0.1)
-				--gl.Color(0.4,0.4,0.2,0.1)
-				--gl.Rect(posX + w - rm - (j+0.66)*cW, yi+hBar/4, posX + w - rm - j*cW-10, yi+hBar/4+1)
-				--gl.Rect(posX + w - rm - (j+0.66)*cW, yi+hBar/2, posX + w - rm - j*cW, yi+hBar/2+1)
-				--gl.Rect(posX + w - rm - (j+0.66)*cW, yi+3*hBar/4, posX + w - rm - j*cW-10, yi+3*hBar/4+1)
 				
 				gl.Color(r2,g2,b2,1)
 				gl.Rect(
@@ -2830,8 +2628,8 @@ function DrawExpandTable(teamID)
 			end
 		end
 		
-		gl.Color(clr)
-		fontHandler.UseFont(font)
+		gl.Color(1,1,1,1)
+		gl.Texture(false)
 	end
 end
 
@@ -2941,17 +2739,17 @@ function DrawOptionRibbon()
 	gl.Rect(x0,widgetPosY, x0+1, widgetPosY-h)
 	gl.Rect(x1 - 1,widgetPosY, x1, widgetPosY-h)
 	gl.Color(1,1,1,1)
-	TextDraw("Adjust", x0+95, widgetPosY - 10)
-	TextDraw("Options", x0+95, widgetPosY - 90)
+	glText("Adjust", x0+95, widgetPosY - 10,textsize)
+	glText("Options", x0+95, widgetPosY - 90,textsize)
 	gl.Rect(x0+95,widgetPosY - 12, x0 + 137, widgetPosY-13)
 	gl.Rect(x0+95,widgetPosY - 92, x0 + 145, widgetPosY-93)
 	gl.Color(0.8,0.8,1,0.8)
-	TextDraw("Contrast:", x0+5, widgetPosY - 30)
-	TextDraw("Borders:", x0+5, widgetPosY - 50)
-	TextDraw("Width:", x0+125, widgetPosY - 30)
-	TextDraw("Height:", x0+125, widgetPosY - 50)
+	glText("Contrast:", x0+5, widgetPosY - 30,textsize)
+	glText("Borders:", x0+5, widgetPosY - 50,textsize)
+	glText("Width:", x0+125, widgetPosY - 30,textsize)
+	glText("Height:", x0+125, widgetPosY - 50,textsize)
 	gl.Color(1,1,1,1)
-	gl.Texture(optContrast)
+	gl.Texture(images["contrast"])
 	gl.TexRect(
 		options["contrastLess"]["x1"],
 		options["contrastLess"]["y1"],
@@ -2959,9 +2757,9 @@ function DrawOptionRibbon()
 		options["contrastMore"]["y2"]
 		)
 	if options["borders"]["On"] then
-		gl.Texture(optBorders)
+		gl.Texture(images["borderson"])
 	else
-		gl.Texture(optBordersOff)
+		gl.Texture(images["bordersoff"])
 	end
 	gl.TexRect(
 		options["borders"]["x1"],
@@ -2970,21 +2768,21 @@ function DrawOptionRibbon()
 		options["borders"]["y2"]
 		)
 	gl.Color(0.8,0.8,1,0.8)
-	TextDraw("Disable for non-spectators:", x0+5, widgetPosY - 110)
-	TextDraw("Show firepower bar:", x0+5, widgetPosY - 210)
-	TextDraw("Show buildpower bar:", x0+5, widgetPosY - 230)
-	TextDraw("Show kills and losses:", x0+5, widgetPosY - 250)
-	TextDraw("Show resource text:", x0+5, widgetPosY - 170)
-	TextDraw("Announce kills:", x0+5, widgetPosY - 130)
-	TextDraw("Remove dead teams:", x0+5, widgetPosY - 150)
-	TextDraw("(Drag window to reposition)", x0+35, widgetPosY - 280)
+	glText("Disable for non-spectators:", x0+5, widgetPosY - 110,textsize)
+	glText("Show firepower bar:", x0+5, widgetPosY - 210,textsize)
+	glText("Show buildpower bar:", x0+5, widgetPosY - 230,textsize)
+	glText("Show kills and losses:", x0+5, widgetPosY - 250,textsize)
+	glText("Show resource text:", x0+5, widgetPosY - 170,textsize)
+	glText("Announce kills:", x0+5, widgetPosY - 130,textsize)
+	glText("Remove dead teams:", x0+5, widgetPosY - 150,textsize)
+	glText("(Drag window to reposition)", x0+35, widgetPosY - 280,textsize)
 	gl.Color(1,1,1,1)
-	TextDraw("Player", x0+160, widgetPosY - 192)
-	TextDraw("Spec", x0+215, widgetPosY - 192)
+	glText("Player", x0+160, widgetPosY - 192,textsize)
+	glText("Spec", x0+215, widgetPosY - 192,textsize)
 	if options["disable"]["On"] then
-		gl.Texture(optChkBoxOn)
+		gl.Texture(images["checkboxon"])
 	else
-		gl.Texture(optChkBoxOff)
+		gl.Texture(images["checkboxoff"])
 	end
 	gl.TexRect(
 		options["disable"]["x1"],
@@ -2994,9 +2792,9 @@ function DrawOptionRibbon()
 		)
 		
 	if options["FPBar2"]["On"] then
-		gl.Texture(optChkBoxOn)
+		gl.Texture(images["checkboxon"])
 	else
-		gl.Texture(optChkBoxOff)
+		gl.Texture(images["checkboxoff"])
 	end
 	gl.TexRect(
 		options["FPBar2"]["x1"],
@@ -3006,9 +2804,9 @@ function DrawOptionRibbon()
 		)
 		
 	if options["BPBar2"]["On"] then
-		gl.Texture(optChkBoxOn)
+		gl.Texture(images["checkboxon"])
 	else
-		gl.Texture(optChkBoxOff)
+		gl.Texture(images["checkboxoff"])
 	end
 	gl.TexRect(
 		options["BPBar2"]["x1"],
@@ -3018,9 +2816,9 @@ function DrawOptionRibbon()
 		)
 	
 	if options["FPBar1"]["On"] then
-		gl.Texture(optChkBoxOn)
+		gl.Texture(images["checkboxon"])
 	else
-		gl.Texture(optChkBoxOff)
+		gl.Texture(images["checkboxoff"])
 	end
 	gl.TexRect(
 		options["FPBar1"]["x1"],
@@ -3030,9 +2828,9 @@ function DrawOptionRibbon()
 		)
 		
 	if options["BPBar1"]["On"] then
-		gl.Texture(optChkBoxOn)
+		gl.Texture(images["checkboxon"])
 	else
-		gl.Texture(optChkBoxOff)
+		gl.Texture(images["checkboxoff"])
 	end
 	gl.TexRect(
 		options["BPBar1"]["x1"],
@@ -3042,13 +2840,13 @@ function DrawOptionRibbon()
 		)
 	options["kills1"]["On"] = false
 	gl.Color(0.8,0.4,0.4,0.5)
-	TextDraw("(N/A)", x0+170, widgetPosY - 250)
+	glText("(N/A)", x0+170, widgetPosY - 250,textsize)
 	gl.Color(1,1,1,1)
 	
 	if options["kills2"]["On"] then
-		gl.Texture(optChkBoxOn)
+		gl.Texture(images["checkboxon"])
 	else
-		gl.Texture(optChkBoxOff)
+		gl.Texture(images["checkboxoff"])
 	end
 	gl.TexRect(
 		options["kills2"]["x1"],
@@ -3058,9 +2856,9 @@ function DrawOptionRibbon()
 		)
 	
 	if options["Announce"]["On"] then
-		gl.Texture(optChkBoxOn)
+		gl.Texture(images["checkboxon"])
 	else
-		gl.Texture(optChkBoxOff)
+		gl.Texture(images["checkboxoff"])
 	end
 	gl.TexRect(
 		options["Announce"]["x1"],
@@ -3070,9 +2868,9 @@ function DrawOptionRibbon()
 		)
 	
 	if options["resText"]["On"] then
-		gl.Texture(optChkBoxOn)
+		gl.Texture(images["checkboxon"])
 	else
-		gl.Texture(optChkBoxOff)
+		gl.Texture(images["checkboxoff"])
 	end
 	gl.TexRect(
 		options["resText"]["x1"],
@@ -3082,9 +2880,9 @@ function DrawOptionRibbon()
 		)
 		
 	if options["removeDead"]["On"] then
-		gl.Texture(optChkBoxOn)
+		gl.Texture(images["checkboxon"])
 	else
-		gl.Texture(optChkBoxOff)
+		gl.Texture(images["checkboxoff"])
 	end
 	gl.TexRect(
 		options["removeDead"]["x1"],
@@ -3093,28 +2891,28 @@ function DrawOptionRibbon()
 		options["removeDead"]["y2"]
 		)
 	
-	gl.Texture(optButtMore)
+	gl.Texture(images["more"])
 	gl.TexRect(
 		options["widthInc"]["x1"],
 		options["widthInc"]["y1"],
 		options["widthInc"]["x2"],
 		options["widthInc"]["y2"]
 		)
-	gl.Texture(optButtLess)
+	gl.Texture(images["less"])
 	gl.TexRect(
 		options["widthDec"]["x1"],
 		options["widthDec"]["y1"],
 		options["widthDec"]["x2"],
 		options["widthDec"]["y2"]
 		)
-		gl.Texture(optButtMore)
+		gl.Texture(images["more"])
 	gl.TexRect(
 		options["heightInc"]["x1"],
 		options["heightInc"]["y1"],
 		options["heightInc"]["x2"],
 		options["heightInc"]["y2"]
 		)
-	gl.Texture(optButtLess)
+	gl.Texture(images["less"])
 	gl.TexRect(
 		options["heightDec"]["x1"],
 		options["heightDec"]["y1"],
@@ -3123,139 +2921,33 @@ function DrawOptionRibbon()
 		)
 end
 
-function DrawCollapseButton(teamID, right)
-	local x1, y1, x2, y2
-	local label
-	local nbPlayers = getNbPlayers(teamID)
-
-	if right then
-		label 	= ">"
-	else
-		label 	= "<"
-	end
-	x1 	= collapseButtonPos[teamID]["x1"]
-	y1 	= collapseButtonPos[teamID]["y1"]
-	x2 	= collapseButtonPos[teamID]["x2"]
-	y2 	= collapseButtonPos[teamID]["y2"]
-
-	active = collapseButtonState[teamID]["mouse"]
-
-	gl.Color(0.4,0.4,0.8,1)
-	gl.Rect(x1, y1, x2, y2)
-	if active then
-		gl.Color(0.8,0.8,1,1)
-	else
-		gl.Color(0.2,0.2,0.5,1)
-	end
-	gl.Rect(
-			x1,
-			y1,
-			x2+1,
-			y1+1
-			)
-	gl.Rect(
-			x1,
-			y2,
-			x2+1,
-			y2+1
-			)
-	gl.Rect(
-			x1,
-			y1,
-			x1+1,
-			y2+1
-			)
-	gl.Rect(
-			x2,
-			y1,
-			x2+1,
-			y2+1
-			)
-	fontHandler.UseFont(font)
-	if active then
-		gl.Color(0.9,0.9,1,1)
-	else
-		gl.Color(0.3,0.3,0.8,0.8)
-	end
-	fontHandler.UseFont(font2)
-	TextDraw(label, x1 + 7, y1 + 10)
-	fontHandler.UseFont(font)
-	gl.Color(1,1,1,1)
-end
-
-function DrawExpandButton (teamID, active, right)
+function DrawInfoButton (allyID, active, right, big)
 	
+	local allyDataID = allyID+1
 	if options["removeDead"]["On"] then
-		if not teamData[teamID]["isAlive"] then return end
+		if not allyData[allyDataID]["isAlive"] then return end
 	end
 	
-	local x1 = expandButtonPos[teamID]["x1"]
-	local y1 = expandButtonPos[teamID]["y1"]
-	local x2 = expandButtonPos[teamID]["x2"]
-	local y2 = expandButtonPos[teamID]["y2"]
+	local x1 = infoButton[allyID]["x1"]
+	local y1 = infoButton[allyID]["y1"]
+	local x2 = infoButton[allyID]["x2"]
+	local y2 = infoButton[allyID]["y2"]
 
-
-	local label
-	if right then
-		label 	= "<"
-	else
-		label 	= ">"
+	if big then 
+		x2 = x2 + 5
+		y2 = y2 + 5
 	end
-	gl.Color(0,0,0,0.3)
-	gl.Rect(x1, y1, x2, y2)
+	
 	if active then
-		gl.Color(0.8,0.8,1,1)
+		gl.Color(0.8,0.8,0.2,1)
 	else
-		gl.Color(0,0,0,1)
+		gl.Color(1,1,1,1)
 	end
-	gl.Rect(
-			x1,
-			y1,
-			x2+1,
-			y1+1
-			)
-	gl.Rect(
-			x1,
-			y2,
-			x2+1,
-			y2+1
-			)
-	gl.Rect(
-			x1,
-			y1,
-			x1+1,
-			y2+1
-			)
-	gl.Rect(
-			x2,
-			y1,
-			x2+1,
-			y2+1
-			)
-	fontHandler.UseFont(font)
-	if active then
-		gl.Color(0.8,0.8,1,1)
-	else
-		gl.Color(0.3,0.3,0.8,0.8)
-	end
-	TextDraw(label, x1 + 2, y1 + 5)
+	gl.Texture(images["info"])
+	gl.TexRect(x1,y1,x2,y2)
+	
 	gl.Color(1,1,1,1)
-end
-
-function DrawLabel(text, vOffset)
-	fontHandler.UseFont(font2)
-	if widgetWidth < 59 then
-		--fontHandler.UseFont(font)
-		text = string.sub(text, 0, 1)
-	end
-	TextDraw(text or "", widgetPosX + 1, widgetPosY + 2 + widgetHeight -vOffset+tH-15)
-	--gl.Rect(widgetPosX+1, widgetPosY + widgetHeight -vOffset-1, widgetPosX + widgetWidth-1, widgetPosY + widgetHeight -vOffset-2)
-	if options["borders"]["On"] then
-		gl.Color(0,0,0)
-		gl.Rect(widgetPosX+1, widgetPosY + widgetHeight -vOffset-1, widgetPosX + widgetWidth-1, widgetPosY + widgetHeight -vOffset-2)
-	end
-	gl.Color(1,1,1)
-	fontHandler.UseFont(font)
+	gl.Texture(false)
 end
 
 function DrawLabelC(text, vOffset)
@@ -3263,7 +2955,7 @@ function DrawLabelC(text, vOffset)
 		text = string.sub(text, 0, 1)
 	end
 	gl.Color(0.55,0.55,0.8,0.7)
-	TextDraw(text or "", widgetPosX + 15, widgetPosY + widgetHeight -vOffset+tH-42)
+	glText(text or "", widgetPosX + 15, widgetPosY + widgetHeight -vOffset+tH-42,textsize)
 end
 
 function DrawLabelCM(text, vOffset)
@@ -3271,8 +2963,11 @@ function DrawLabelCM(text, vOffset)
 	if widgetWidth < 67 then
 		text = string.sub(text, 0, 1)
 	end
-	gl.Color(0.8,0.8,1,0.8)
-	TextDraw(text or "", widgetPosX + 30-len*1.875, widgetPosY + widgetHeight -vOffset+tH-42)
+	
+	myFont:Begin()
+	myFont:SetTextColor({0.8,0.8,1,0.8})
+	myFont:Print(text or "", widgetPosX + 30-len*1.875, widgetPosY + widgetHeight -vOffset+tH-42,textsize,'s')
+	myFont:End()
 end
 
 function DrawLabelCM2(text, vOffset)
@@ -3280,8 +2975,10 @@ function DrawLabelCM2(text, vOffset)
 	if widgetWidth < 67 then
 		text = string.sub(text, 0, 1)
 	end
-	gl.Color(0.8,0.8,1,0.8)
-	TextDraw(text or "", widgetPosX + 30-len*1.875, widgetPosY + widgetHeight -vOffset+tH-62)
+	myFont:Begin()
+	myFont:SetTextColor({0.8,0.8,1,0.8})
+	myFont:Print(text or "", widgetPosX + 30-len*1.875, widgetPosY + widgetHeight -vOffset+tH-62,textsize,'s')
+	myFont:End()
 end
 
 function DrawLabelCT(text, vOffset,t)
@@ -3290,19 +2987,20 @@ function DrawLabelCT(text, vOffset,t)
 	end
 	local gs 
 	gs,_,_ = Spring.GetGameSpeed() or 1
-	--gl.Color(0.5,0.5,0.8,1-0.1*t)
-	gl.Color(1-0.5*math.sin(20*t/gs),1-0.5*math.sin(20*t/gs),1-0.25*math.sin(20*t/gs),0.8)
+	
+	myFont:Begin()
+	myFont:SetTextColor({1-0.5*math.sin(20*t/gs),1-0.5*math.sin(20*t/gs),1-0.25*math.sin(20*t/gs),0.8})
 	if t < 3 then
-		TextDraw(text or "", widgetPosX + 30, widgetPosY + widgetHeight -vOffset+tH-42)
+		myFont:Print(text or "", widgetPosX + 30, widgetPosY + widgetHeight -vOffset+tH-42,textsize,'s')
 	else
-		TextDraw(text or "", widgetPosX + 30 + (t-3)^12, widgetPosY + widgetHeight -vOffset+tH-42)
+		myFont:Print(text or "", widgetPosX + 30 + (t-3)^12, widgetPosY + widgetHeight -vOffset+tH-42,textsize,'s')
 	end
-	gl.Color(1,1,1,1)
+	myFont:End()
 end
 
 function DrawBox(hOffset, vOffset,r,g,b)
 	local dx = 20
-	local dy = 52
+	local dy = 58
 	gl.Color(.2,.2,.2)
 	gl.Rect(widgetPosX+hOffset+dx+7, widgetPosY + widgetHeight -vOffset+dy+17, widgetPosX+hOffset+dx+8, widgetPosY + widgetHeight -vOffset+dy+3)
 	gl.Rect(widgetPosX+hOffset+dx+20, widgetPosY + widgetHeight -vOffset+dy+17, widgetPosX + hOffset + dx + 21, widgetPosY + widgetHeight -vOffset+dy+3)
@@ -3313,59 +3011,44 @@ function DrawBox(hOffset, vOffset,r,g,b)
 	gl.Color(1,1,1,1)
 end
 
-function DrawSideImage(sideImage, hOffset, vOffset, r, g, b, a, small, mouseOn,t)
-		local w
-		local h
-		local dx
-		local dy
-		if small then
-			w = 8
-			h = 8
-			dx = 28 + (WBadge-14)*4
-			dy = tH - 12
+function DrawSideImage(sideImage, hOffset, vOffset, r, g, b, a, small, mouseOn,t,isDead)
+	local w
+	local h
+	local dx
+	local dy
+	
+	if small then
+		w = 8
+		h = 8
+		dx = 28 + (WBadge-14)*4
+		dy = tH - 12
+	else
+		w = WBadge
+		h = WBadge
+		dx = 25 + (WBadge-14)*4
+		dy = tH - 16 - (WBadge-14)
+	end
+	
+	if not inSpecMode then dx = dx -10 end
+	
+	if mouseOn and (not isDead) then
+		if ctrlDown then
+			gl.Color(1,1,1,a)
 		else
-			w = WBadge
-			h = WBadge
-			dx = 25 + (WBadge-14)*4
-			dy = tH - 16 - (WBadge-14)
+			local gs 
+			gs,_,_ = Spring.GetGameSpeed() or 1
+			gl.Color(r-0.2*math.sin(10*t/gs),g-0.2*math.sin(10*t/gs),b,a)
 		end
-		
-		if not inSpecMode then dx = dx -10 end
-		
-		if mouseOn then
-			if ctrlDown then
-				gl.Color(1,1,1,a)
-			else
-				local gs 
-				gs,_,_ = Spring.GetGameSpeed() or 1
-				gl.Color(r-0.2*math.sin(10*t/gs),g-0.2*math.sin(10*t/gs),b,a)
-			end
-		else
-			gl.Color(r,g,b,a)
-		end
-		gl.Texture(sideImage)
-		gl.TexRect(
-		widgetPosX + hOffset + dx,
-		widgetPosY + widgetHeight - vOffset + dy,
-		widgetPosX + hOffset + dx + w,
-		widgetPosY + widgetHeight - vOffset + dy + h
-		)
-		gl.Color(1,1,1,1)
-end
-
-function DrawKillLabel(vOffset)
-		--gl.Color(0.8,0.8,0.8,0.6)
-		--gl.Texture(defImage)
-		--gl.TexRect(widgetPosX+2, widgetPosY + widgetHeight -vOffset+17, widgetPosX + 16, widgetPosY + widgetHeight -vOffset+1)
-		gl.Color(0.9,1,0.9,0.8)
-		TextDraw("K:", widgetPosX + 2, widgetPosY + widgetHeight -vOffset+tH-62)
-
-end
-
-function DrawDeathLabel(vOffset)
-		--gl.Color(0.8,0.8,0.8,0.6)
-		--gl.Texture(defImage)
-		--gl.TexRect(widgetPosX+52, widgetPosY + widgetHeight -vOffset+1, widgetPosX + 68, widgetPosY + widgetHeight -vOffset+17)
-		gl.Color(1,0.9,0.9,0.8)
-		TextDraw("L:", widgetPosX + widgetWidth -50, widgetPosY + widgetHeight -vOffset+tH-62)
+	else
+		gl.Color(r,g,b,a)
+	end
+	gl.Texture(sideImage)
+	gl.TexRect(
+	widgetPosX + hOffset + dx,
+	widgetPosY + widgetHeight - vOffset + dy,
+	widgetPosX + hOffset + dx + w,
+	widgetPosY + widgetHeight - vOffset + dy + h
+	)
+	gl.Texture(false)
+	gl.Color(1,1,1,1)
 end
