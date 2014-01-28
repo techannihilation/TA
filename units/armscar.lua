@@ -1,4 +1,4 @@
--- UNITDEF -- ARMSCAR --
+  -- UNITDEF -- ARMSCAR --
 --------------------------------------------------------------------------------
 
 local unitName = "armscar"
@@ -107,7 +107,7 @@ local weaponDefs = {
 		nogap = 1,
 		noSelfDamage = true,
 		range = 700,
-		reloadtime = 14,
+		reloadtime = 12,
 		renderType = 4,
 		rgbColor = [[1 0.95 0.9]],
 		separation = 0.45,
