@@ -154,6 +154,8 @@ modConfig["TA"]["unitList"] =
 								tllshoretorp = { weapons = { 1 } },
 								tllstuner = { weapons = { 1 } },
 								tlltorp = { weapons = { 1 } },
+								tllllt = { weapons = { 1 } },
+								tlllft = { weapons = { 1 } },
 								tllweb = { weapons = { 1 } },
 								tlldmc = { weapons = { 1 } },
 									--Anti-Air--
