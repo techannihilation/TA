@@ -35,21 +35,20 @@ SetMaxReloadTime(Func_Var_1)
 RestoreAfterDelay()
 {
 	sleep restore_delay;
-	turn body to y-axis <0.000000> speed <50.000000>;
-	turn box1 to x-axis <0.000000> speed <25.000000>;
-	turn box2 to x-axis <0.000000> speed <25.000000>;
+	turn body to y-axis <0.000000> speed <80.000000>;
+//	turn box1 to x-axis <0.000000> speed <25.000000>;
+//	turn box2 to x-axis <0.000000> speed <25.000000>;
 }
 
 AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	turn body to y-axis heading speed <50.000000>;
-	turn box1 to x-axis <0.000000> - pitch speed <25.000000>;
-	turn box2 to x-axis <0.000000> - pitch speed <25.000000>;
+	turn body to y-axis heading speed <125.000000>;
+//	turn box1 to x-axis <0.000000> - pitch speed <25.000000>;
+//	turn box2 to x-axis <0.000000> - pitch speed <25.000000>;
 	wait-for-turn body around y-axis;
-	wait-for-turn box1 around x-axis;
-	wait-for-turn box2 around x-axis;
+//	wait-for-turn box2 around x-axis;
 	start-script RestoreAfterDelay();
 	return (1);
 }
