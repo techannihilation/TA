@@ -6,11 +6,9 @@ local unitName = "armblab"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	ai_limit = [[limit ARMBLAB 1]],
-	ai_weight = [[weight ARMBLAB 6]],
 	bmcode = 0,
 	buildAngle = 4096,
-	buildCostEnergy = 5707,
+	buildCostEnergy = 9707,
 	buildCostMetal = 2300,
 	builder = true,
 	buildingGroundDecalDecaySpeed = 30,
