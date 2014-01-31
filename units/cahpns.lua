@@ -7,7 +7,7 @@ local unitName = "cahpns"
 
 local unitDef = {
 	bmcode = 0,
-	buildCostEnergy = 100000,
+	buildCostEnergy = 18179,
 	buildCostMetal = 4600,
 	builder = true,
 	buildingGroundDecalDecaySpeed = 30,

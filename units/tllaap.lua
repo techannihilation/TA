@@ -7,7 +7,7 @@ local unitName = "tllaap"
 
 local unitDef = {
 	bmcode = 0,
-	buildCostEnergy = 55000,
+	buildCostEnergy = 19400,
 	buildCostMetal = 4070,
 	builder = true,
 	buildingGroundDecalDecaySpeed = 30,

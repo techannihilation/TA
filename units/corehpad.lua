@@ -6,17 +6,15 @@ local unitName = "corehpad"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	ai_limit = [[limit COREHPAD 3]],
-	ai_weight = [[weight COREHPAD 2]],
 	bmcode = 0,
-	buildCostEnergy = 65000,
-	buildCostMetal = 2480,
+	buildCostEnergy = 21962,
+	buildCostMetal = 2980,
 	builder = true,
 	buildingGroundDecalDecaySpeed = 30,
 	buildingGroundDecalSizeX = 9,
 	buildingGroundDecalSizeY = 9,
 	buildingGroundDecalType = [[corehpad_aoplane.dds]],
-	buildTime = 19981,
+	buildTime = 21981,
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,

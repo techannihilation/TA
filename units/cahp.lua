@@ -7,7 +7,7 @@ local unitName = "cahp"
 
 local unitDef = {
 	bmcode = 0,
-	buildCostEnergy = 135600,
+	buildCostEnergy = 18179,
 	buildCostMetal = 4250,
 	builder = true,
 	buildingGroundDecalDecaySpeed = 30,

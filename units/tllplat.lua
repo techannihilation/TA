@@ -7,7 +7,7 @@ local unitName = "tllplat"
 
 local unitDef = {
 	bmcode = 0,
-	buildCostEnergy = 42000,
+	buildCostEnergy = 17903,
 	buildCostMetal = 3650,
 	builder = true,
 	buildTime = 21483,

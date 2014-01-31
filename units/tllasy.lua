@@ -7,7 +7,7 @@ local unitName = "tllasy"
 
 local unitDef = {
 	bmcode = 0,
-	buildCostEnergy = 33000,
+	buildCostEnergy = 11240,
 	buildCostMetal = 4200,
 	builder = true,
 	buildTime = 13590,

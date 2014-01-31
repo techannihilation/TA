@@ -44,7 +44,7 @@ AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	turn body to y-axis heading speed <125.000000>;
+	turn body to y-axis heading speed <90.000000>;
 //	turn box1 to x-axis <0.000000> - pitch speed <25.000000>;
 //	turn box2 to x-axis <0.000000> - pitch speed <25.000000>;
 	wait-for-turn body around y-axis;
