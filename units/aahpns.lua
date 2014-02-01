@@ -7,7 +7,7 @@ local unitName = "aahpns"
 
 local unitDef = {
 	bmcode = 0,
-	buildCostEnergy = 14604,
+	buildCostEnergy = 35422,
 	buildCostMetal = 4520,
 	builder = true,
 	buildTime = 16220,

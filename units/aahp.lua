@@ -7,7 +7,7 @@ local unitName = "aahp"
 
 local unitDef = {
 	bmcode = 0,
-	buildCostEnergy = 14604,
+	buildCostEnergy = 35422,
 	buildCostMetal = 4200,
 	builder = true,
 	buildingGroundDecalDecaySpeed = 30,
