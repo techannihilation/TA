@@ -122,14 +122,17 @@ if (gadgetHandler:IsSyncedCode()) then
 					spSetPieceCollisionData(unitID, pieceIndex, false, 1, 1, 1, 0, 0, 0, 1, 1)
 				end
 			end
-		elseif UnitDefs[unitDefID].model.type=="3do" then
-			local rs, hs, ws
+		elseif UnitDefs[unitDefID].model.type=="3do" and not sublist[unitDefID] then
+			local rs, hs, ws, ars, ahs
 			if (spGetUnitRadius(unitID)>47 and not UnitDefs[unitDefID].canFly) then
 				rs, hs, ws = 0.59, 0.59, 0.59
+				ars, ahs = 0.66, 0.66
 			elseif (not UnitDefs[unitDefID].canFly) then
 				rs, hs, ws = 0.68, 0.68, 0.68
+				ars, ahs = 0.70, 0.70 
 			else
-				rs, hs, ws = 0.53, 0.17, 0.53
+				rs, hs, ws = 0.53, 0.53, 0.53
+				ars, ahs = 0.63, 0.63 
 			end
 			local xs, ys, zs, xo, yo, zo, vtype, htype, axis, _ = spGetUnitCollisionData(unitID)
 			if (vtype>=3 and xs==ys and ys==zs) then
@@ -145,21 +148,11 @@ if (gadgetHandler:IsSyncedCode()) then
 			if UnitDefs[unitDefID].canFly and UnitDefs[unitDefID].transportCapacity>0 then
 				spSetUnitRadiusAndHeight(unitID, 16, 16)
 			else
-				spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*rs, spGetUnitHeight(unitID)*hs)
+				spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*ars, spGetUnitHeight(unitID)*ahs)
 			end
 		end
 		if UnitDefs[unitDefID].model.type=="3do" and sublist[unitDefID] then
-			spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*0.50, spGetUnitHeight(unitID)*0.50)
-		elseif UnitDefs[unitDefID].model.type=="3do" then	-- a 3DO unit that has dynamic or per-piece CV still needs a radius and height adjustment
-			local rs, hs
-			if (spGetUnitRadius(unitID)>47 and not UnitDefs[unitDefID].canFly) then
-				rs, hs = 0.68, 0.68
-			elseif (not UnitDefs[unitDefID].canFly) then
-				rs, hs = 0.75, 0.75
-			else
-				rs, hs = 0.52, 0.24
-			end
-			spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*rs, spGetUnitHeight(unitID)*hs)
+			spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*0.45, spGetUnitHeight(unitID)*0.45)
 		end
 		if UnitDefs[unitDefID].model.type=="3do" and isship[unitDefID] then
 			local bx,by,bz,mx,my,mz,ax,ay,az = Spring.GetUnitPosition(unitID,true,true) --basepoint,midpoint,aimpoint
@@ -181,13 +174,15 @@ if (gadgetHandler:IsSyncedCode()) then
 	-- Same as for 3DO units, but for features
 	function gadget:FeatureCreated(featureID, allyTeam)
 		local featureModel = FeatureDefs[Spring.GetFeatureDefID(featureID)].modelname:lower()
-		if featureModel == "" then return end	--geovents or engine trees have no models		
+		if featureModel == "" then return end	--geovents or engine trees have no models
+		Spring.Echo(featureModel)
 		local featureModelTrim
 		if Game.version > "91.0" then
 			featureModelTrim = featureModel:match("/.*"):sub(2)
 		else
 			featureModelTrim = featureModel:sub(1,-5)
 		end
+		Spring.Echo(featureModelTrim)
 		if mapFeatures[featureModelTrim] then	-- it just might happen that some map features can have corpses
 			local p = mapFeatures[featureModelTrim]
 			spSetFeatureCollisionData(featureID, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9])
