@@ -106,7 +106,7 @@ local weaponDefs = {
 		name = [[Missiles]],
 		noSelfDamage = true,
 		range = 600,
-		reloadtime = 2,
+		reloadtime = 1.3,
 		renderType = 1,
 		selfprop = true,
 		smokedelay = 0.1,
@@ -125,8 +125,12 @@ local weaponDefs = {
 		weaponType = [[MissileLauncher]],
 		weaponVelocity = 850,
 		damage = {
-			default = 200,
+			bombers = 75,
+			default = 5,
+			fighters = 75,
+			flak_resistant = 75,
 			subs = 5,
+			unclassed_air = 75,
 		},
 	},
 	CORE_REAP = {
