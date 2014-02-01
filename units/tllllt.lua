@@ -120,7 +120,7 @@ local weaponDefs = {
 		name = [[Spray Lightning]],
 		noSelfDamage = true,
 		projectiles = 2,
-		range = 250,
+		range = 350,
 		reloadtime = 1.51,
 		renderType = 7,
 		rgbColor = [[0.6 0.6 0.9]],
@@ -135,7 +135,7 @@ local weaponDefs = {
 		weaponType = [[LightningCannon]],
 		weaponVelocity = 2250,
 		damage = {
-			commanders = 120,
+			commanders = 35,
 			default = 45,
 			subs = 5,
 		},
