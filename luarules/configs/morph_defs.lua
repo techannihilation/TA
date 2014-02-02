@@ -581,11 +581,6 @@ local morphDefs = {
 		time = 150,
 		xp = 0.70,
 	},
-      tllweb = {
-		into = 'tllupgweb',
-		time = 30,
-		xp = 0.60,
-	},
       armnanotc = {
 		 
 		into = 'armnanotc1',
