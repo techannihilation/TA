@@ -133,7 +133,7 @@ return {
       },
     }, 
   },
-   ["tllupgweb_exp"] = {
+   ["tllnewweb_exp"] = {
     ground_flash = {
       air                = true,
       class              = [[CSimpleGroundFlash]],
