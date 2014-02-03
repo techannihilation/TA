@@ -20,68 +20,31 @@ if (not gadgetHandler:IsSyncedCode()) then
   return false
 end
 
-local enabled = tonumber(Spring.GetModOptions().mo_combomb_full_damage) or 1
-
-if (enabled == 1) then 
-  return false
-end
-
 local COM_BLAST = {
   [WeaponDefNames['commander_blast1'].id] = true,
-  [WeaponDefNames['commander_blast4'].id] = true,
   [WeaponDefNames['commander_blast5'].id] = true,
   [WeaponDefNames['commander_blast6'].id] = true,
   [WeaponDefNames['commander_blast7'].id] = true,
   [WeaponDefNames['commander_blast8'].id] = true,
 }
+
+function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponID, projectileID, attackerID, attackerDefID, attackerTeam) --we use UnitPreDamaged so as we get in before unit_transportfix has its effect
   
-local COMMANDER = {
-  [UnitDefNames["corcom"].id] = true,
-  [UnitDefNames["corcom1"].id] = true,
-  [UnitDefNames["corcom3"].id] = true,
-  [UnitDefNames["corcom5"].id] = true,
-  [UnitDefNames["corcom6"].id] = true,
-  [UnitDefNames["corcom7"].id] = true,
-  [UnitDefNames["armcom"].id] = true,
-  [UnitDefNames["armcom1"].id] = true,
-  [UnitDefNames["armcom4"].id] = true,
-  [UnitDefNames["armcom5"].id] = true,
-  [UnitDefNames["armcom6"].id] = true,
-  [UnitDefNames["armcom7"].id] = true,
-  [UnitDefNames["tllcom"].id] = true,
-  [UnitDefNames["tllcom3"].id] = true,
-  [UnitDefNames["tllcom5"].id] = true,
-  [UnitDefNames["tllcom6"].id] = true,
-  [UnitDefNames["tllcom7"].id] = true,
-}
-
-local FAILBOMB = {}
-
-function gadget:UnitCreated(unitID, unitDefID, unitTeam, builderID)
-	FAILBOMB[unitID] = nil
-end
-
-function gadget:UnitDestroyed(unitID, unitDefID, unitTeam)
-  if COMMANDER[unitDefID] then
-    local x,y,z = Spring.GetUnitBasePosition(unitID)
-	local h = Spring.GetGroundHeight(x,z)
-	if ((y-h) > 15) then
-		FAILBOMB[unitID] = true
+  --Spring.Echo("UnitPreDamaged called with unitID " .. unitID .. " and attackerID ", attackerID)
+  
+  if (weaponID == COM_BLAST) and Spring.ValidUnitID(attackerID) then -- we control the damage inflicted on units by the COM_BLAST. Very rarely an invalid attackerID is returned with weaponID=COM_BLAST, I have no idea why/how.
+		--Spring.Echo("weapon is comblast from unloaded com " .. attackerID)
+		local x,y,z = Spring.GetUnitBasePosition(attackerID)
+		local h = Spring.GetGroundHeight(x,z)
+		--Spring.Echo(x .. " " .. y .. " " .. z .. " " .. h)
+		if ((y-h) > 10) then
+			local _,hp = Spring.GetUnitHealth(unitID)
+			local newdamage = math.min(damage,math.max(hp*0.6,400)) 
+			--Spring.Echo("new damage is " .. newdamage .. ", old damage is " .. damage .. ", hp is " .. hp)
+			return newdamage,0
+		end		
 	end
-  end
-end
-
-function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponID, projectileID, attackerID, attackerDefID, attackerTeam)
-  if (weaponID == COM_BLAST) and FAILBOMB[attackerID] and (attackerID ~= unitID) then
-    local x,y,z = Spring.GetUnitBasePosition(unitID)
-	local h = Spring.GetGroundHeight(x,z)
-	if ((y-h) < 10) then
-      local _,hp = Spring.GetUnitHealth(unitID)
-      local newdamage = math.min(damage,math.max(hp*0.6,400))
-      return newdamage,0
-	end
-  end
-  return damage,1
+	return damage,1
 end
 
 --------------------------------------------------------------------------------
