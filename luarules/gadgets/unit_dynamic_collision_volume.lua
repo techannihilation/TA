@@ -175,7 +175,7 @@ if (gadgetHandler:IsSyncedCode()) then
 	function gadget:FeatureCreated(featureID, allyTeam)
 		local featureModel = FeatureDefs[Spring.GetFeatureDefID(featureID)].modelname:lower()
 		if featureModel == "" then return end	--geovents or engine trees have no models
--		local featureModelTrim
+		local featureModelTrim
 		if Game.version > "91.0" then
 			featureModelTrim = featureModel:match("/.*"):sub(2)
 		else
