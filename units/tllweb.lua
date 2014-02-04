@@ -57,8 +57,8 @@ local unitDef = {
 	featureDefs = nil,
 	sfxtypes = {
 		explosiongenerators = {
-			[1] = [[custom:tllweb]],
-			[2] = [[custom:tllweb_glow]],
+			[1] = [[custom:tllupgweb]],
+			[2] = [[custom:tllupg_glow]],
 		},
 	},
 	sounds = {
@@ -104,7 +104,7 @@ local weaponDefs = {
 		craterMult = 0,
 		duration = 1.9,
 		energypershot = 39,
-		explosionGenerator = [[custom:tllnewweb_exp]],
+		explosionGenerator = [[custom:tllupgweb_exp]],
 		fireStarter = 85,
 		id = 225,
 		impulseBoost = 0.123,
