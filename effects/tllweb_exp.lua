@@ -9,7 +9,6 @@ return {
       ground             = true,
       water              = true,
       properties = {
-        alwaysvisible      = true,
         colormap           = [[0.3 0.3 0.8 1 	0.2 0.2 0.6 1		0.0 0.0 0.0 0.0]],
         size               = 30,
         sizegrowth         = -0.3,
@@ -25,7 +24,6 @@ return {
       water              = true,
       properties = {
         airdrag            = 0.8,
-        alwaysvisible      = true,
         colormap           = [[0.3 0.3 0.8 0.02         .03 .03 .08 0.01		      0 0 0 0.0]],
         directional        = false,
         emitrot            = 90,
@@ -55,7 +53,6 @@ return {
       unit               = 1,
       properties = {
         airdrag            = 0.8,
-        alwaysvisible      = true,
         colormap           = [[0.3 0.4 0.9 0.01	0.55 0.7 0.9 0.01		0 0 0 0.0]],
         directional        = false,
         emitrot            = 90,
@@ -141,7 +138,6 @@ return {
       ground             = true,
       water              = true,
       properties = {
-        alwaysvisible      = true,
         colormap           = [[0.3 0.3 0.8 1 	0.2 0.2 0.6 1		0.0 0.0 0.0 0.0]],
         size               = 35,
         sizegrowth         = -0.3,
@@ -157,7 +153,6 @@ return {
       water              = true,
       properties = {
         airdrag            = 0.8,
-        alwaysvisible      = true,
         colormap           = [[0.3 0.3 0.8 0.02         .03 .03 .08 0.01		      0 0 0 0.0]],
         directional        = false,
         emitrot            = 90,
@@ -187,7 +182,6 @@ return {
       unit               = 1,
       properties = {
         airdrag            = 0.8,
-        alwaysvisible      = true,
         colormap           = [[0.3 0.4 0.9 0.01	0.55 0.7 0.9 0.01		0 0 0 0.0]],
         directional        = false,
         emitrot            = 90,
@@ -273,7 +267,6 @@ return {
       ground             = true,
       water              = true,
       properties = {
-        alwaysvisible      = true,
         colormap           = [[0.3 0.3 0.8 1 	0.2 0.2 0.6 1		0.0 0.0 0.0 0.0]],
         size               = 65,
         sizegrowth         = -0.3,
@@ -289,7 +282,6 @@ return {
       water              = true,
       properties = {
         airdrag            = 0.8,
-        alwaysvisible      = true,
         colormap           = [[0.3 0.3 0.8 0.02         .03 .03 .08 0.01		      0 0 0 0.0]],
         directional        = false,
         emitrot            = 90,
@@ -319,7 +311,6 @@ return {
       unit               = 1,
       properties = {
         airdrag            = 0.8,
-        alwaysvisible      = true,
         colormap           = [[0.3 0.4 0.9 0.01	0.55 0.7 0.9 0.01		0 0 0 0.0]],
         directional        = false,
         emitrot            = 90,
