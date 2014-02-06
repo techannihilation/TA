@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, rotor_b, rotor_t, tail, wing_lf, wing_lr, wing_rf, wing_rr,
+piece  base, rotor_b, tail, wing_lf, wing_lr, wing_rf, wing_rr,
        turret, bar_l, bar_r, flare_l, flare_r, r_1, r_2, r_3,
        r_4, blank, fuse, cockpit, stab_l, stab_r, fin_l, fin_r,
        root_l, root_r, engine_l, engine_r;
@@ -166,7 +166,7 @@ FireSecondary()
 		show r_1;
 		sleep 150;
 		hide r_1;
-		gun_2 = rotor_t;
+		gun_2 = rotor_b;
 		return (0);
 	}
 	if( gun_2 == 2 )
@@ -239,7 +239,7 @@ FirePrimary()
 		show flare_l;
 		sleep 150;
 		hide flare_l;
-		gun_1 = rotor_t;
+		gun_1 = rotor_b;
 		return (0);
 	}
 	if( gun_1 == 2 )
@@ -294,7 +294,6 @@ Killed(severity, corpsetype)
 		explode engine_l type BITMAPONLY | BITMAP3;
 		explode engine_r type BITMAPONLY | BITMAP4;
 		explode rotor_b type BITMAPONLY | BITMAP5;
-		explode rotor_t type BITMAPONLY | BITMAP1;
 		explode turret type BITMAPONLY | BITMAP2;
 		explode bar_l type BITMAPONLY | BITMAP3;
 		explode bar_r type BITMAPONLY | BITMAP4;
@@ -320,7 +319,6 @@ Killed(severity, corpsetype)
 		explode engine_l type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
 		explode engine_r type FALL | FIRE | EXPLODE_ON_HIT | BITMAP4;
 		explode rotor_b type FALL | SMOKE | BITMAP5;
-		explode rotor_t type SHATTER | BITMAP1;
 		explode turret type FALL | BITMAP2;
 		explode bar_l type SHATTER | BITMAP3;
 		explode bar_r type FALL | BITMAP4;
@@ -346,7 +344,6 @@ Killed(severity, corpsetype)
 		explode engine_l type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode engine_r type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 		explode rotor_b type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-		explode rotor_t type SHATTER | EXPLODE_ON_HIT | BITMAP1;
 		explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 		explode bar_l type SHATTER | EXPLODE_ON_HIT | BITMAP3;
 		explode bar_r type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
@@ -370,7 +367,6 @@ Killed(severity, corpsetype)
 	explode engine_l type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode engine_r type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 	explode rotor_b type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-	explode rotor_t type SHATTER | EXPLODE_ON_HIT | BITMAP1;
 	explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 	explode bar_l type SHATTER | EXPLODE_ON_HIT | BITMAP3;
 	explode bar_r type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
