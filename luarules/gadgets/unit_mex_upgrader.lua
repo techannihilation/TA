@@ -43,6 +43,8 @@ local FOLOWING_ORDERS = 1
 local RECLAIMING = 2 
 local BUILDING = 3 
 
+local suppress = 0
+
 local scheduledBuilders = {} 
 local addFakeReclaim = {} 
 local addCommands = {} 
@@ -92,7 +94,7 @@ function determine(ud, wd)
         local mexDef = {} 
         mexDef.extractsMetal = extractsMetal 
         if #unitDef.weapons <= 1 then
-          if (#unitDef.weapons == 1 and wd[unitDef.weapons[1].weaponDef].isShield) then
+          if (#unitDef.weapons == 1 and unitDef.shieldWeaponDef) then
 	    mexDef.armed = #unitDef.weapons < 0
           else
             mexDef.armed = #unitDef.weapons > 0      
@@ -233,12 +235,16 @@ function upgradeClosestMex(unitID, teamID, mexesInRange)
   local upgradePairs = builderDefs[builder.unitDefID] 
   
   local mexID = getClosestMex(unitID, upgradePairs, teamID, mexesInRange) 
-
-  if not mexID then 
-    SendMessageToTeam(teamID, builder.humanName .. ": No mexes to upgrade")
+   
+   if not mexID then 
+     if suppress < 5 then
+      SendMessageToTeam(teamID, builder.humanName .. ": No mexes to upgrade")
+     end
+      suppress = suppress + 1
+      GiveOrderToUnit(unitID, CMD_AUTOMEX, { 0 }, {})
     return false 
   end 
-    
+  
   orderBuilder(unitID, mexID) 
   return true 
 end 
