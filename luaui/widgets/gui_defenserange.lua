@@ -158,6 +158,7 @@ modConfig["TA"]["unitList"] =
 								tlllft = { weapons = { 1 } },
 								tllweb = { weapons = { 1 } },
 								tlldmc = { weapons = { 1 } },
+								tlllbt = { weapons = { 1 } },
 									--Anti-Air--
 								tlllmt = { weapons = { 2 } },
 								tlllmt1 = { weapons = { 2 } },
