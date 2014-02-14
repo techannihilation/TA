@@ -549,6 +549,9 @@ MotionControl(moving, aiming, justmoved)
 
 Create()
 {
+	turn flame1 to x-axis <90.000000> now;
+	turn flame1b to x-axis <90.000000> now;
+	turn flame2 to x-axis <90.000000> now;
 	hide flame1;
 	hide flame1b;
 	hide flame2;
@@ -558,7 +561,7 @@ Create()
 	Static_Var_3 = 0;
 	Static_Var_5 = 1;
 	Static_Var_4 = 0;
-	gun_2 = luparm;
+	gun_2 = 1;
 	restore_delay = 1500;
 	set ARMORED to 1;
 	start-script SmokeUnit();
@@ -589,8 +592,6 @@ SetMaxReloadTime(Func_Var_1)
 RestorePrimary()
 {
 	sleep restore_delay;
-	stop-spin gat around y-axis decelerate <50.000000>;
-	stop-spin gat2 around y-axis decelerate <50.000000>;
 	bAiming = FALSE;
 	if( !Static_Var_3 )
 	{
@@ -602,6 +603,9 @@ RestorePrimary()
 RestoreSecondary()
 {
 	set-signal-mask SIG_AIM_2;
+	sleep 500;
+	stop-spin gat around y-axis decelerate <5.000000>;
+	stop-spin gat2 around y-axis decelerate <5.000000>;
 	sleep restore_delay;
 	turn head to y-axis <0.000000> speed <200.000000>;
 	turn head to x-axis <0.000000> speed <200.000000>;
@@ -655,11 +659,11 @@ QuerySecondary(piecenum)
 {
 	if( gun_2 == 1 )
 	{
-		piecenum = gun2;
+		piecenum = flame1;
 	}
-	if( gun_2 == 2 )
+	else
 	{
-		piecenum = gun2b;
+		piecenum = flame1b;
 	}
 }
 
@@ -670,37 +674,34 @@ AimSecondary(heading, pitch)
 	Static_Var_3 = 1;
 	Static_Var_4 = 1;
 	turn torso to y-axis heading speed <150.000000>;
-	turn ruparm to x-axis <-90.000000> speed <120.000000>;
-	turn luparm to x-axis <-90.000000> speed <120.000000>;
-	turn rlowarm to x-axis <0.000000> - pitch speed <120.000000>;
-	turn llowarm to x-axis <0.000000> - pitch speed <120.000000>;
+	turn ruparm to x-axis <-85.000000> speed <120.000000>;
+	turn luparm to x-axis <-85.000000> speed <120.000000>;
+	turn rlowarm to x-axis <00.000000> - pitch speed <120.000000>;
+	turn llowarm to x-axis <00.000000> - pitch speed <120.000000>;
 	wait-for-turn torso around y-axis;
 	wait-for-turn ruparm around x-axis;
 	wait-for-turn luparm around x-axis;
 	wait-for-turn rlowarm around x-axis;
 	wait-for-turn llowarm around x-axis;
-	spin gat around y-axis speed <600.000000> accelerate <75.412088>;
-	spin gat2 around y-axis speed <600.000000> accelerate <75.412088>;
+	spin gat around y-axis speed <320.000000> accelerate <45.412088>;
+	spin gat2 around y-axis speed <320.000000> accelerate <45.412088>;
 	start-script RestoreSecondary();
 	return (1);
 }
+
 
 FireSecondary()
 {
 	if( gun_2 == 1 )
 	{
-		explode douille1 type FALL;
-		gun_2 = ruparm;
 		emit-sfx 1024 + 0 from flame1;
-		return (0);
 	}
-	if( gun_2 == 2 )
+	else
 	{
-		explode douille2 type FALL;
-		gun_2 = luparm;
 		emit-sfx 1024 + 0 from flame1b;
-		return (0);
 	}
+	gun_2 = !gun_2;
+	return (0);
 }
 
 AimTertiary(heading, pitch)
@@ -720,7 +721,7 @@ AimFromTertiary(piecenum)
 
 FireTertiary()
 {
-	emit-sfx 1024 + 0 from flame2;
+	emit-sfx 1024 + 1 from flame2;
 }
 
 QueryTertiary(piecenum)
