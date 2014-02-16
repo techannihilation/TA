@@ -6,12 +6,12 @@ local weaponName = "commander_selfd"
 --------------------------------------------------------------------------------
 
 local weaponDef = {
-	areaofeffect = 1410,
+	areaofeffect = 1010,
 	ballistic = 1,
 	craterboost = 6,
 	cratermult = 3,
 	edgeeffectiveness = 0.25,
-	explosiongenerator = [[custom:NUKEOFGODS]],
+	explosiongenerator = [[custom:comm_explo_1010]],
 	impulseboost = 3,
 	impulsefactor = 3,
 	name = [[Matter/AntimatterExplosion]],
