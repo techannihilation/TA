@@ -81,10 +81,10 @@ function gadget:Initialize()
             local _, _, _, _, teamSide, teamAllyID = spGetTeamInfo(teamID)
             if teamSide == 'core' then
                 spSetTeamRulesParam(teamID, startUnitParamName, corcomDefID)
-            elseif teamSide == 'arm' then
-                spSetTeamRulesParam(teamID, startUnitParamName, armcomDefID)
-	    else
+            elseif teamSide == 'tll' then
                 spSetTeamRulesParam(teamID, startUnitParamName, tllcomDefID)
+	    else
+                spSetTeamRulesParam(teamID, startUnitParamName, armcomDefID)
             end
             spawnTeams[teamID] = teamAllyID
         end
