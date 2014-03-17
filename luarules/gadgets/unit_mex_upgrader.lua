@@ -43,8 +43,6 @@ local FOLOWING_ORDERS = 1
 local RECLAIMING = 2 
 local BUILDING = 3 
 
-local suppress = 0
-
 local scheduledBuilders = {} 
 local addFakeReclaim = {} 
 local addCommands = {} 
@@ -74,7 +72,7 @@ local autoMexCmdDesc = {
 local upgradeMexCmdDesc = { 
   id      = CMD_UPGRADEMEX, 
   type    = CMDTYPE.ICON_UNIT_OR_AREA, 
-  name    = 'Upgrade Mex', 
+  name    = ' Upgrade \n      Mex', 
   cursor  = 'Attack', 
   action  = 'upgrademex', 
   tooltip = 'Upgrade Mex', 
@@ -94,7 +92,7 @@ function determine(ud, wd)
         local mexDef = {} 
         mexDef.extractsMetal = extractsMetal 
         if #unitDef.weapons <= 1 then
-          if (#unitDef.weapons == 1 and unitDef.shieldWeaponDef) then
+          if (#unitDef.weapons == 1 and wd[unitDef.weapons[1].weaponDef].isShield) then
 	    mexDef.armed = #unitDef.weapons < 0
           else
             mexDef.armed = #unitDef.weapons > 0      
@@ -195,7 +193,7 @@ function gadget:GameFrame(n)
   scheduledBuilders = {} 
 
   for unitID, _ in pairs(addFakeReclaim) do 
-    local commands = GetCommandQueue(unitID) 
+    local commands = GetCommandQueue(unitID,5) 
     for i, cmd in ipairs(commands) do 
       if cmd.id == CMD_UPGRADEMEX and not (commands[i+1] and commands[i+1].id == CMD_RECLAIM) then 
         GiveOrderToUnit(unitID, CMD_INSERT, {i, CMD_RECLAIM, CMD_OPT_INTERNAL+1, cmd.params[1]}, {"alt"}) 
@@ -235,16 +233,12 @@ function upgradeClosestMex(unitID, teamID, mexesInRange)
   local upgradePairs = builderDefs[builder.unitDefID] 
   
   local mexID = getClosestMex(unitID, upgradePairs, teamID, mexesInRange) 
-   
-   if not mexID then 
-     if suppress < 5 then
-      SendMessageToTeam(teamID, builder.humanName .. ": No mexes to upgrade")
-     end
-      suppress = suppress + 1
-      GiveOrderToUnit(unitID, CMD_AUTOMEX, { 0 }, {})
+
+  if not mexID then 
+    SendMessageToTeam(teamID, builder.humanName .. ": No mexes to upgrade")
     return false 
   end 
-  
+    
   orderBuilder(unitID, mexID) 
   return true 
 end 
@@ -422,7 +416,7 @@ end
 
 function getUnitPhase(unitID, teamID) 
 
-  local commands = GetCommandQueue(unitID, 1) 
+  local commands = GetCommandQueue(unitID, 2) 
   if #commands == 0 then 
     return IDLE 
   end 
@@ -524,7 +518,7 @@ end
 function gadget:CommandFallback(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOptions) 
   --Echo("CF " .. cmdID)  
 
-  if cmdID ~= CMD_UPGRADEMEX then 
+  if cmdID ~= CMD_UPGRADEMEX or not unitID or not unitDefID then 
     return false 
   end 
   

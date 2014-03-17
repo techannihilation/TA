@@ -479,7 +479,7 @@ local function ReAssignAssists(newUnit,oldUnit)
     local alliedUnits = SpGetTeamUnits(teamID)
     for i=1,#alliedUnits do
       local unitID = alliedUnits[i]
-      local cmds = SpGetCommandQueue(unitID)
+      local cmds = SpGetCommandQueue(unitID,3) -- copy only last 3 commands
       for j=1,#cmds do
         local cmd = cmds[j]
         if (cmd.id == CMD_GUARD)and(cmd.params[1] == oldUnit) then
@@ -653,7 +653,7 @@ local function FinishMorph(unitID, morphData)
   })
 
   --//copy command queue
-  local cmds = SpGetUnitCommands(unitID)
+  local cmds = SpGetUnitCommands(unitID,4) --only copy last 3 command as first is skipped 
   for i = 2, #cmds do  -- skip the first command (CMD_MORPH)
     local cmd = cmds[i]
     SpGiveOrderToUnit(newUnit, cmd.id, cmd.params, cmd.options.coded)
