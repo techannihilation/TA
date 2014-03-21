@@ -48,7 +48,6 @@ local unitDef = {
 	turnRate = 0,
 	unitname = [[cortl]],
 	waterline = 11,
-	workerTime = 5,
 	yardMap = [[wwwwwwwww]],
 	featureDefs = nil,
 	sounds = {

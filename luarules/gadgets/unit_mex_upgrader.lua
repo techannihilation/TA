@@ -124,7 +124,7 @@ end
 
 function processMexData(mexDefID, mexDef, upgradePairs)  
   for defID, def in pairs(mexDefs) do 
-    if (mexDef.water == def.water) and (ignoreStealth or mexDef.stealth == def.stealth) and (ignoreWeapons or mexDef.armed == def.armed) then      
+    if (ignoreStealth or mexDef.stealth == def.stealth) and (ignoreWeapons or mexDef.armed == def.armed) then      
     
       if mexDef.extractsMetal > def.extractsMetal then 
         if not upgradePairs then 
