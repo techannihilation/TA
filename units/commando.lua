@@ -104,7 +104,6 @@ local weaponDefs = {
 		areaOfEffect = 192,
 		ballistic = true,
 		cegTag = [[Trail_cannon]],
-		commandfire = true,
 		craterBoost = 0,
 		craterMult = 0,
 		explosionGenerator = [[custom:EMPFLASH192]],
