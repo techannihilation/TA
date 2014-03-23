@@ -45,12 +45,18 @@ local options = {
     step   = 1,  -- quantization is aligned to the def value
                     -- (step <= 0) means that there is no quantization
     section= "ta_others",
-
   },
-
+  {
+    key    = "mo_enemycomcount",
+    name   = "Enemy Com Counter",
+    desc   = "Tells each team the total number of commanders alive in enemy teams",
+    type   = "bool",
+    def    = true,
+    section= "ta_others",
+  },
   {
     key    = 'GhostedBuildings',
-    name   = 'Ghosted buildings',
+    name   = 'Ghosted Buildings',
     desc   = "Once an enemy building will be spotted\na ghost trail will be placed to memorize location even after the loss of the line of sight\nAutoHost Usage :- MaxUnits",
     type   = 'bool',
     def    = true,
@@ -100,7 +106,7 @@ local options = {
 
   {
     key    = 'DisableMapDamage',
-    name   = 'Undeformable map',
+    name   = 'Undeformable Map',
     desc   = 'Prevents the map shape from being changed by weapons\nAutoHost Usage :- DisableMapDamage',
     type   = 'bool',
     def    = false,
