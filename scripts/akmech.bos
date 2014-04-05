@@ -293,19 +293,13 @@ FireSecondary()
 	if( gun_2 == 0 )
 	{
 		move cannonl to z-axis [-2.289996] now;
-		show flarel;
-		sleep 150;
-		explode shellb type FALL;
-		hide flarel;
+		emit-sfx 1024 + 0 from flarel;
 		move cannonl to z-axis [0.000000] speed [5.000000];
 	}
 	if( gun_2 == 1 )
 	{
 		move cannonr to z-axis [-2.289996] now;
-		show flarer;
-		sleep 150;
-		explode shella type FALL;
-		hide flarer;
+		emit-sfx 1024 + 0 from flarer;
 		move cannonr to z-axis [0.000000] speed [5.000000];
 	}
 	gun_2 = !gun_2;
