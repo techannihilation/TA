@@ -48,7 +48,6 @@ local unitDef = {
 	turnRate = 0,
 	unitname = [[armtl]],
 	waterline = 11,
-	workerTime = 0,
 	yardMap = [[wwwwwwwww]],
 	featureDefs = nil,
 	sounds = {

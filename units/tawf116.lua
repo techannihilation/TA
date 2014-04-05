@@ -61,6 +61,11 @@ local unitDef = {
 	customparams = {
 		RequireTech = [[Advanced T2 Unit Research Centre]],
 	},
+	sfxtypes = {
+		explosiongenerators = {
+			[1] = [[custom:dgungen]],
+		},
+        },
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],
@@ -103,11 +108,11 @@ local weaponDefs = {
 		craterBoost = 0,
 		craterMult = 0,
 		energypershot = 400,
-		explosionGenerator = [[custom:PARALYZER_BLUE]],
+		explosionGenerator = [[custom:DGUNTRACE]],
 		fireStarter = 70,
 		id = 22,
 		lineOfSight = true,
-		model = [[plasmafire]],
+		--model = [[plasmafire]],
 		name = [[Disintegrator]],
 		noExplode = true,
 		range = 300,

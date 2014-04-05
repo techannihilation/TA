@@ -27,7 +27,7 @@ if (gadgetHandler:IsSyncedCode()) then --SYNCED
 local spInsertUnitCmdDesc	= Spring.InsertUnitCmdDesc
 local spGetUnitAllyTeam		= Spring.GetUnitAllyTeam
 local spSetUnitTarget		= Spring.SetUnitTarget
-local spValidUnitID			= Spring.ValidUnitID
+local spValidUnitID		= Spring.ValidUnitID
 local spGetUnitPosition		= Spring.GetUnitPosition
 local spGetGroundHeight		= Spring.GetGroundHeight
 local spGetUnitDefID		= Spring.GetUnitDefID
@@ -35,12 +35,12 @@ local spGetUnitLosState		= Spring.GetUnitLosState
 local spGetUnitSeparation	= Spring.GetUnitSeparation
 local spGetUnitIsCloaked	= Spring.GetUnitIsCloaked
 local spGetUnitPosition		= Spring.GetUnitPosition
-local spGetUnitTeam			= Spring.GetUnitTeam
+local spGetUnitTeam		= Spring.GetUnitTeam
 local spAreTeamsAllied		= Spring.AreTeamsAllied
 local spGetUnitsInRectangle	= Spring.GetUnitsInRectangle
 local spGetUnitsInCylinder	= Spring.GetUnitsInCylinder
 local spSetUnitRulesParam	= Spring.SetUnitRulesParam
-local spGetCommandQueue     = Spring.GetCommandQueue
+local spGetCommandQueue		= Spring.GetCommandQueue
 
 local CMD_STOP				= CMD.STOP
 
