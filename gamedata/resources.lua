@@ -232,6 +232,7 @@ local resources = {
 			
 			--lightning
 			strike='strike.png',
+			lightningball_new='lightningball.png',
 		},
 	},
 }
