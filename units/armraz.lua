@@ -56,9 +56,6 @@ local unitDef = {
 	unitname = [[armraz]],
 	upright = true,
 	workerTime = 0,
-	customparams = {
-		RequireTech = [[Advanced T3 Unit Research Centre]],
-	},
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],
@@ -125,7 +122,7 @@ local weaponDefs = {
 		weaponType = [[BeamLaser]],
 		weaponVelocity = 920,
 		damage = {
-			default = 125,
+			default = 100,
 			subs = 5,
 		},
 	},
