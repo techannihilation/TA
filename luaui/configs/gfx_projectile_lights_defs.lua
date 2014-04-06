@@ -56,9 +56,8 @@ local BlackList = {
    ["armpw_emg"] = {0.48,0.36,0,0.7},
    ["armpw1_emg"] = {0.48,0.36,0,0.8},
    ["armhdpw_arm_emcc3"] = {0.48,0.36,0.1,0.20},
-
+   ["armbanth_armbantha_fire"] = {0.48,0.48,0.9,0.90},
    }
-   
    local Armtrails = {
    ["armrock_arm_kbot_rocket"] = true,
    ["armrock1_arm_kbot_rocket1"] = true,
