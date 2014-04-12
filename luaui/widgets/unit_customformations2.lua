@@ -4,7 +4,7 @@ function widget:GetInfo()
 		name      = "CustomFormations2",
 		desc      = "Allows you to draw your own formation line.",
 		author    = "Niobium", -- based on 'Custom Formations' by jK and gunblob
-		version   = "v4.2",
+		version   = "v4.3",
 		date      = "April, 2013",
 		license   = "GNU GPL, v2 or later",
 		layer     = 10000,
@@ -13,10 +13,19 @@ function widget:GetInfo()
 	}
 end
 
+-- 06/04/13 -- Cleaned up commands in Custom Formations:
+			-- To give a line command: select command, then right click & drag
+			-- To give a command within an area: select command, then left click and drag
+			-- To give a command at a point: select command, left click and don't drag
+			-- To area attack (bombers etc only): select command, hold alt, left click and drag
+			-- To deselect non-default command and return to default command: right click and don't drag
+			-- To deselect default command: left click 
+
 -- 29/05/13 -- Dots are of consistent size depending on zoom and terrain height
 -- 25/05/13 -- Fixed crash bug that was triggered by pressing the left mouse button during line drawing with right mouse button. Also improved visuals.
 -- 13/04/13 -- Visuals remade by PixelOfDeath 
 -- 23/03/13 -- Attack order y-coord placement remade by Bluestone for spring 94+ 
+
 
 --------------------------------------------------------------------------------
 -- User Configurable Constants
@@ -39,37 +48,51 @@ local unitIncreaseThresh	= 0.85 -- We only increase maxUnits if the units are gr
 local lineFadeRate = 2.0
 
 -- What commands are eligible for custom formations
+local CMD_SETTARGET = 34923
+
 local formationCmds = {
 	[CMD.MOVE] = true,
 	[CMD.FIGHT] = true,
 	[CMD.ATTACK] = true,
 	[CMD.PATROL] = true,
 	[CMD.UNLOAD_UNIT] = true,
-	[38521] = true, -- Jump
-	[34923] = true -- set target
+	[CMD_SETTARGET] = true -- set target
 }
 
--- What commands require alt to be held (Must also appear in formationCmds)
+-- What commands require alt to be held 
 local requiresAlt = {
-	[CMD.ATTACK] = true,
-	[CMD.UNLOAD_UNIT] = true,
-	[34923] = true -- set target
+	--nothing!
 }
 
--- Context-based default commands that can be overridden (i.e. guard when mouseover unit)
+-- Context-based default commands that can be overridden (meaning that cf2 doesn't touch the command i.e. guard/attack when mouseover unit)
 -- If the mouse remains on the same target for both Press/Release then the formation is ignored and original command is issued.
 -- Normal logic will follow after override, i.e. must be a formationCmd to get formation, alt must be held if requiresAlt, etc.
 local overrideCmds = {
 	[CMD.GUARD] = CMD.MOVE,
+	[CMD.ATTACK] = CMD.ATTACK,
+	[CMD_SETTARGET] = CMD_SETTARGET, 
 }
 
--- What commands are issued at a position or unit/feature ID (Only used by GetUnitPosition)
+-- What commands can be issued at a position or unit/feature ID (Only used by GetUnitPosition)
 local positionCmds = {
 	[CMD.MOVE]=true,		[CMD.ATTACK]=true,		[CMD.RECLAIM]=true,		[CMD.RESTORE]=true,		[CMD.RESURRECT]=true,
-	[CMD.PATROL]=true,		[CMD.CAPTURE]=true,		[CMD.FIGHT]=true, 		[CMD.MANUALFIRE]=true,		[38521]=true, -- jump
+	[CMD.PATROL]=true,		[CMD.CAPTURE]=true,		[CMD.FIGHT]=true, 		[CMD.MANUALFIRE]=true,	
 	[CMD.UNLOAD_UNIT]=true,	[CMD.UNLOAD_UNITS]=true,[CMD.LOAD_UNITS]=true,	[CMD.GUARD]=true,		[CMD.AREA_ATTACK] = true,
-	[34923] = true -- set target
+	[CMD_SETTARGET] = true -- set target
 }
+
+
+function widget:Initialize()
+	if not requiresAlt[CMD.ATTACK] then
+		Spring.SendCommands('bind Alt+a areaattack')
+	end
+end
+
+function widget:ShutDown()
+	if not requiresAlt[CMD.ATTACK] then
+		Spring.SendCommands('unbind Alt+a areaattack')
+	end
+end
 
 --------------------------------------------------------------------------------
 -- Globals
@@ -92,7 +115,7 @@ local overriddenCmd = nil -- The command we ignored in favor of move
 local overriddenTarget = nil -- The target (for params) we ignored
 
 local usingCmd = nil -- The command to execute across the line
-local usingRMB = false -- If the command is the default it uses right click, otherwise it is active and uses left click
+local usingRMB = false -- All commands use right mouse + drag to do a formation command
 local inMinimap = false -- Is the line being drawn in the minimap
 local endShift = false -- True to reset command when shift is released
 
@@ -182,7 +205,7 @@ local function GetUnitFinalPosition(uID)
 	
 	local ux, uy, uz = spGetUnitPosition(uID)
 	
-	local cmds = spGetCommandQueue(uID,10)
+	local cmds = spGetCommandQueue(uID,-1)
 	for i = #cmds, 1, -1 do
 		
 		local cmd = cmds[i]
@@ -217,7 +240,7 @@ local function SetColor(cmdID, alpha)
 	if     cmdID == CMD_MOVE       then glColor(0.5, 1.0, 0.5, alpha) -- Green
 	elseif cmdID == CMD_ATTACK     then glColor(1.0, 0.2, 0.2, alpha) -- Red
 	elseif cmdID == CMD_UNLOADUNIT then glColor(1.0, 1.0, 0.0, alpha) -- Yellow
-	elseif cmdID == 34923		   then glColor(1.0, 0.7, 0.0, alpha) -- Orange
+	elseif cmdID == CMD_SETTARGET  then glColor(1.0, 0.7, 0.0, alpha) -- Orange
 	else                                glColor(0.5, 0.5, 1.0, alpha) -- Blue
 	end
 end
@@ -377,17 +400,17 @@ function widget:MousePress(mx, my, mButton)
 		usingRMB = false
 	end
 	
+	--Spring.Echo("mouse:", mButton)
+	if mButton ~= 3 then return false end --all formation commands are done using right click & drag
+	
 	-- Get command that would've been issued
 	local _, activeCmdID = spGetActiveCommand()
+	--Spring.Echo("cmd:", CMD[activeCmdID])
 	if activeCmdID then
-		if mButton ~= 1 then return false end
-		
 		usingCmd = activeCmdID
-		usingRMB = false
-	else
-		if mButton ~= 3 then return false end
-		
-		local _, defaultCmdID = spGetDefaultCommand()
+		usingRMB = true
+	else 
+		local _, defaultCmdID = spGetDefaultCommand() --spGetActiveCommand() returns nil if the default command (typically move) is in use
 		if not defaultCmdID then return false end
 		
 		local overrideCmdID = overrideCmds[defaultCmdID]
@@ -441,7 +464,6 @@ function widget:MousePress(mx, my, mButton)
 	return true
 end
 function widget:MouseMove(mx, my, dx, dy, mButton)
-	
 	-- It is possible for MouseMove to fire after MouseRelease
 	if #fNodes == 0 then
 		return false
@@ -509,7 +531,7 @@ function widget:MouseRelease(mx, my, mButton)
 		if shift then
 			endShift = true -- Reset on release of shift
 		else
-			spSetActiveCommand(0) -- Reset immediately
+			spSetActiveCommand(0) -- Deselect command
 		end
 	end
 	
@@ -518,7 +540,7 @@ function widget:MouseRelease(mx, my, mButton)
 	
 	-- Override checking
 	if overriddenCmd then
-		
+	
 		local targetID
 		local targType, targID = spTraceScreenRay(mx, my, false, inMinimap)
 		if targType == 'unit' then
@@ -562,9 +584,30 @@ function widget:MouseRelease(mx, my, mButton)
 		if fDists[#fNodes] < minFormationLength then
 			-- We should check if any units are able to execute it,
 			-- but the order is small enough network-wise that the tiny bug potential isn't worth it.
-			GiveNotifyingOrder(usingCmd, fNodes[1], cmdOpts)
+			
+			-- Check if this order was meant to target a unit
+			local targetID
+			if overrideCmds[usingCmd] then
+				local targType, targID = spTraceScreenRay(mx, my, false, inMinimap)
+				if targType == 'unit' then
+					targetID = targID
+				elseif targType == 'feature' then
+					targetID = targID + maxUnits
+				end
+			end
+			
+			if targetID then
+				-- Give order (i.e. pass the command to the engine to use as normal)
+				GiveNotifyingOrder(usingCmd, {targetID}, cmdOpts)			
+			elseif usingCmd == CMD_MOVE then 
+				GiveNotifyingOrder(usingCmd, fNodes[1], cmdOpts)			
+			else
+				-- Deselect command, select default command instead
+				spSetActiveCommand(0)
+			end
+			
 		else
-			-- Order is a formation
+			-- Order is a formation; line was drawn
 			-- Are any units able to execute it?
 			local mUnits = GetExecutingUnits(usingCmd)
 			
@@ -605,6 +648,7 @@ function widget:MouseRelease(mx, my, mButton)
 					end
 				end
 
+			spSetActiveCommand(0) -- Deselect command
 			end
 		end
 		
@@ -641,7 +685,7 @@ function widget:MouseRelease(mx, my, mButton)
 	
 	return true
 end
-function widget:KeyRelease(key, mods, label, unicode)
+function widget:KeyRelease(key)
 	if (key == keyShift) and endShift then
 		spSetActiveCommand(0)
 		endShift = false
