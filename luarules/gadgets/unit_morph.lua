@@ -479,7 +479,7 @@ local function ReAssignAssists(newUnit,oldUnit)
     local alliedUnits = SpGetTeamUnits(teamID)
     for i=1,#alliedUnits do
       local unitID = alliedUnits[i]
-      local cmds = SpGetCommandQueue(unitID,3) -- copy only last 3 commands
+      local cmds = SpGetCommandQueue(unitID,-1)
       for j=1,#cmds do
         local cmd = cmds[j]
         if (cmd.id == CMD_GUARD)and(cmd.params[1] == oldUnit) then

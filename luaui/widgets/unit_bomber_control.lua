@@ -123,7 +123,7 @@ function widget:Update(dt)
 				bomber_data.reloaded=reloaded
 				bomber_data.reload_frame=reload_frame
 				if did_shot then
-					local commands=GetCommandQueue(bomber_id,5)
+					local commands=GetCommandQueue(bomber_id,-1)
 					if commands and commands[1] and commands[1].id==CMD_ATTACK and commands[2] then
 						local got_next_orders=false
 						for i=2,#commands do
