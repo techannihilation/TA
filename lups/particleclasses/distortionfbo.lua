@@ -148,11 +148,11 @@ function PostDistortion:BeginDraw()
   end
 
   --// don't update the screen copies each frame (needed for gfxs with slow screen copies, geforce5 etc.)
-  --screensUpdated = screensUpdated + 1
-  --if (screensUpdated>pd.screenUpdateSkip) then
+  screensUpdated = screensUpdated + 1
+  if (screensUpdated>pd.screenUpdateSkip) then
     glCopyToTexture(screenCopyTex, 0, 0, vpx, vpy, vsx, vsy)
-   -- screensUpdated = 0
- -- end
+    screensUpdated = 0
+  end
 end
 
 function PostDistortion:EndDraw()
