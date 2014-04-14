@@ -66,6 +66,7 @@ function gadget:Initialize()
   Spring.AddUnitIcon("m-up.user", "icons/m-up.png")
   Spring.AddUnitIcon("m.user", "icons/m.png")
   Spring.AddUnitIcon("nuke.user", "icons/nuke.png",1.25)
+  Spring.AddUnitIcon("slash.user", "icons/slash.png") 
   Spring.AddUnitIcon("sphere.user", "icons/sphere.png",1.1)
   Spring.AddUnitIcon("sphere2.user", "icons/sphere.png",1.35)
   Spring.AddUnitIcon("sphere3.user", "icons/sphere.png",1.7)
@@ -225,7 +226,7 @@ function gadget:Initialize()
           Spring.SetUnitDefIcon(udid, "square.user")
         else
 		  if ud.weapons[1].onlyTargets["vtol"] then
-			Spring.SetUnitDefIcon(udid, "slash.user")		  
+			Spring.SetUnitDefIcon(udid, "slash.user")
 		  else
 			Spring.SetUnitDefIcon(udid, "x.user")
 		  end
