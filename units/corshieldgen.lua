@@ -21,7 +21,7 @@ local unitDef = {
   canPatrol          = true,
   canstop            = 1,
   category           = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
-  corpse             = [[CORESHEILDGEN_DEAD]],
+  corpse             = [[DEAD]],
   defaultmissiontype = [[Standby]],
   description        = [[Shield Kbot]],
   designation        = [[UV-2-AB]],
@@ -100,13 +100,13 @@ unitDef.weaponDefs = weaponDefs
 --------------------------------------------------------------------------------
 
 local featureDefs = {
-	CORESHEILDGEN_DEAD = {
+	DEAD = {
 		blocking = true,
 		category = [[corpses]],
 		damage = 0.6000 * unitDef.maxDamage,
 		description = unitDef.name .. [[ Wreckage]],
 		energy = 0,
-		featureDead = [[CORESHEILDGEN_HEAP]],
+		featureDead = [[CORESHIELDGEN_HEAP]],
 		featurereclamate = [[SMUDGE01]],
 		footprintX = 2,
 		footprintZ = 2,
@@ -118,7 +118,7 @@ local featureDefs = {
 		seqnamereclamate = [[TREE1RECLAMATE]],
 		world = [[All Worlds]],
 	},
-	CORESHEILDGEN_HEAP = {
+	HEAP = {
 		blocking = false,
 		category = [[heaps]],
 		damage = 0.3600 * unitDef.maxDamage,
