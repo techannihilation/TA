@@ -11,7 +11,7 @@ local unitDef = {
 	bmcode = 1,
 	brakeRate = 0.01,
 	buildCostEnergy = 125898,
-	buildCostMetal = 5465,
+	buildCostMetal = 6465,
 	builder = false,
 	buildTime = 40788,
 	canAttack = true,
@@ -130,7 +130,7 @@ local weaponDefs = {
 		weaponType = [[Cannon]],
 		weaponVelocity = 450,
 		damage = {
-			default = 1450,
+			default = 2025,
 			subs = 5,
 		},
 	},
