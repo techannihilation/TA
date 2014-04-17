@@ -1,4 +1,4 @@
--- UNITDEF -- ARMANTAR --
+ -- UNITDEF -- ARMANTAR --
 --------------------------------------------------------------------------------
 
 local unitName = "armantar"
@@ -10,7 +10,7 @@ local unitDef = {
 	bmcode = 1,
 	brakeRate = 0.007629395,
 	buildCostEnergy = 63547,
-	buildCostMetal = 8215,
+	buildCostMetal = 9215,
 	builder = false,
 	buildTime = 30842,
 	canAttack = true,
@@ -27,14 +27,14 @@ local unitDef = {
 	energyMake = 1,
 	energyStorage = 0,
 	energyUse = 25,
-	explodeAs = [[BIG_UNITEX]],
+	explodeAs = [[ESTOR_BUILDING]],
 	firestandorders = 1,
 	footprintX = 4,
 	footprintZ = 4,
 	idleAutoHeal = 5,
 	idleTime = 1800,
 	maneuverleashlength = 640,
-	maxDamage = 26287,
+	maxDamage = 52000,
 	maxSlope = 12,
 	maxVelocity = 0.8,
 	maxWaterDepth = 100,
@@ -48,7 +48,7 @@ local unitDef = {
 	onoffable = true,
 	radarDistance = 1200,
 	radarDistanceJam = 10,
-	selfDestructAs = [[BIG_UNIT]],
+	selfDestructAs = [[NUCLEAR_MISSILE]],
 	shootme = 1,
 	side = [[ARM]],
 	sightDistance = 460,
@@ -127,7 +127,7 @@ local weaponDefs = {
 		weaponType = [[LaserCannon]],
 		weaponVelocity = 1500,
 		damage = {
-			default = 240,
+			default = 500,
 			subs = 5,
 		},
 	},
@@ -165,7 +165,7 @@ local weaponDefs = {
 		weaponType = [[MissileLauncher]],
 		weaponVelocity = 660,
 		damage = {
-			default = 150,
+			default = 200,
 			subs = 5,
 		},
 	},
