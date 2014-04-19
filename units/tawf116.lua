@@ -63,7 +63,7 @@ local unitDef = {
 	},
 	sfxtypes = {
 		explosiongenerators = {
-			[1] = [[custom:dgungen]],
+			--[1] = [[custom:dgungen]],
 		},
         },
 	featureDefs = nil,
