@@ -350,8 +350,7 @@ return {
         alpha              = 1,
         alphadecay         = 0.06,
         color              = [[1, 1, 1]],
-        dir                = [[-35 r70,-35 r70,-35 r7
-	0]],
+        dir                = [[-35 r70,-35 r70,-35 r70]],
         length             = [[14]],
         width              = [[7]],
       },
