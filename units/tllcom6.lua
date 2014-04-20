@@ -169,7 +169,7 @@ local unitDef = {
 			def = [[TLL_DISINTEGRATOR2]],
 		},
 		[4] = {
-			def = [[ARMCOMSEALASER]],
+			def = [[TLLCOMSEALASER]],
 			badtargetcategory = [[VTOL]],
 		},
 	},

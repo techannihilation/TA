@@ -167,7 +167,7 @@ local unitDef = {
 			def = [[ARM_DISINTEGRATOR2]],
 		},
 		[4] = {
-			def = [[ARMCOMSEALASER]],
+			def = [[CORCOMSEALASER]],
 			badtargetcategory = [[VTOL]],
 		},
 	},
