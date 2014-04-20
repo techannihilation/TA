@@ -86,6 +86,7 @@ local unitDef = {
 	sfxtypes = {
 		explosiongenerators = {
 			[1] = [[custom:tllroaster_muzzle]],
+			[2] = [[custom:com_sea_laser_bubbles]],
 		},
 	},
 	buildoptions = {
@@ -166,6 +167,10 @@ local unitDef = {
 		},
 		[3] = {
 			def = [[TLL_DISINTEGRATOR2]],
+		},
+		[4] = {
+			def = [[ARMCOMSEALASER]],
+			badtargetcategory = [[VTOL]],
 		},
 	},
 }
@@ -262,6 +267,43 @@ local weaponDefs = {
 		damage = {
 			default = 400,
 			subs = 5,
+		},
+	},
+	TLLCOMSEALASER = {
+		areaofeffect = 12,
+		avoidfeature = false,
+		beamtime = 0.3,
+		corethickness = 0.4,
+		craterboost = 0,
+		cratermult = 0,
+		cylindertargeting = 1,
+		edgeeffectiveness = 1,
+		explosiongenerator = "custom:UW_LASER_BURN",
+		firestarter = 35,
+		impactonly = 1,
+		impulseboost = 0.123,
+		impulsefactor = 0.123,
+		laserflaresize = 7,
+		name = "J7NSLaser",
+		noselfdamage = true,
+		range = 400,
+		reloadtime = 0.9,
+		rgbcolor = "0.2 0.2 0.6",
+		rgbColor2 = "0.2 0.2 0.2",
+		intensity = 0.3,
+		soundstart = "uwlasrfir1",
+		soundtrigger = true,
+		targetmoveerror = 0.05,
+		thickness = 5,
+		tolerance = 10000,
+		turret = true,
+		fireSubmersed=true,
+		waterWeapon=true,
+		weapontype = "BeamLaser",
+		weaponvelocity = 900,
+		damage = {
+			default = 250,
+			subs = 150,
 		},
 	},
 }
