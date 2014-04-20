@@ -601,6 +601,43 @@ AimSecondary(heading, pitch)
 	}
 }
 
+QueryWeapon4(piecenum)
+{
+	piecenum = mlasflsh;
+}
+
+AimWeapon4(heading, pitch)
+{
+    if ( get PIECE_Y(head) > -7 )
+    {
+     	return (0);
+    }
+	bAiming = TRUE;
+	turn torso to y-axis heading speed <300.000000>;
+	turn luparm to x-axis <-50.000000> - pitch speed <250.000000>;
+	wait-for-turn torso around y-axis;
+	wait-for-turn luparm around x-axis;
+	justfired = TRUE;
+	if (building == TRUE) 
+	{
+	    start-script ResumeBuilding();
+	}
+	return (1);
+}
+
+FireWeapon4()
+{
+
+
+	show mlasflsh;
+	emit-sfx 1024 + 0 from mlasflsh;
+	sleep 100;
+	emit-sfx 1024 + 0 from mlasflsh;
+	hide mlasflsh;
+	sleep 400;
+	justfired = FALSE;
+}
+
 StartBuilding(Func_Var_1, Func_Var_2)
 {
 	Static_Var_4 = 0;

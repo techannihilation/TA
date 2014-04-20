@@ -559,6 +559,41 @@ FireTertiary()
 	move rlowarm to y-axis [0.000000] speed [2.000000];
 }
 
+QueryWeapon4(piecenum)
+{
+	piecenum = lflare;
+}
+
+AimWeapon4(heading, pitch)
+{
+    if ( get PIECE_Y(head) > -7 )
+    {
+     	return (0);
+    }
+	bAiming = TRUE;
+	while( !Static_Var_3 )
+	{
+		sleep 100;
+	}
+	turn torso to y-axis heading speed <300.098901>;
+	turn llowarm to x-axis <-90.000000> speed <75.000000>;
+	turn llowarm to z-axis <0.000000> speed <45.000000>;
+	wait-for-turn torso around y-axis;
+	wait-for-turn llowarm around x-axis;
+	return (1);
+}
+
+FireWeapon4()
+{
+	show lflare;
+	emit-sfx 1024 + 1 from lflare;
+	sleep 100;
+	emit-sfx 1024 + 1 from lflare;
+	hide lflare;
+	sleep 400;
+}
+
+
 StartBuilding(Func_Var_1, Func_Var_2)
 {
 	bAiming = TRUE;
