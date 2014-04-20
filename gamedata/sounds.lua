@@ -1,5 +1,10 @@
 local Sounds = {
    SoundItems = {
+     IncomingChat = {
+ 	--- always play on the front speaker(s)
+ 		file = "sounds/beep4.wav",
+ 		in3d = "false",
+      },
       MultiSelect = {
 		file = "sounds/button9.wav",
 		in3d = "false",
