@@ -59,9 +59,10 @@ local unitDef = {
 	yardMap = [[cccccccc cccccccc cccccccc cccccccc cccccccc cccccccc cccccccc cccccccc]],
 	buildoptions = {
 		[1] = [[clb]],
-		[2] = [[armmcv]],
-		[3] = [[corbt]],
-		[4] = [[armtigre2]],
+		[2] = [[champ]],
+		[3] = [[armmcv]],
+		[4] = [[corbt]],
+		[5] = [[armtigre2]],
 	},
 	featureDefs = nil,
 	sounds = {
