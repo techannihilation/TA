@@ -441,6 +441,9 @@ Create()
 	Static_Var_11 = 100;
 	start-script MotionControl();
 	start-script UnitSpeed();
+	sleep 4000 / Static_Var_11;
+	turn nanolath to x-axis <-42.000000> speed <220.000000>;
+	turn biggun to x-axis <-63.000000> speed <160.000000>;
 }
 
 StartMoving()
