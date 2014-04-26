@@ -24,6 +24,9 @@ local FIRE_WEAPONS = {
 }
 
 local DISTORT_WEAPONS = {
+  ["armcom_teleport"] = true,
+  ["tllcom_teleport"] = true,
+  ["corcom_teleport"] = true,
   ["armsonic_sonic_cannon"] = true,
   ["corvroc_cortruck_rocket"] = true,
   ["armmerl_armtruck_rocket"] = true,
@@ -153,6 +156,32 @@ else
 
     texture       = "bitmaps/GPL/Lups/mynoise2.png",
   }
+  
+    local distortFX = {
+    count         = 1,
+    emitVector    = {0,1,0},
+    emitRotSpread = 60,
+    force         = {0,0.5,0},
+
+    life          = 1,
+    lifeSpread    = 40,
+
+    speed           = 0.25,
+    speedSpread     = 0.25,
+    speedExp        = 7,
+
+    size            = 150,
+    sizeSpread      = 40,
+    sizeGrowth      = 0.3,
+    sizeExp         = 2.5,
+
+    strength      = 1.0,
+    scale         = 5.0,
+    animSpeed     = 0.25,
+    heat          = 12.5,
+
+    texture       = "bitmaps/GPL/Lups/mynoise2.png",
+  }
    
   local Lups
   local LupsAddParticles 
@@ -167,6 +196,11 @@ else
   local mustardWeapons = {}
   local mustardExplosions  = {}
 
+  local DISTORT_SHORT = {
+  ["armcom_teleport"] = true,
+  ["tllcom_teleport"] = true,
+  ["corcom_teleport"] = true,
+}
   --// find napalms
   for i=1,#WeaponDefs do
     local wd = WeaponDefs[i]
@@ -184,7 +218,7 @@ else
     if (napalmWeapons[weaponID]) then
       napalmExplosions[#napalmExplosions+1] = {px, py, pz}
     elseif (distortWeapons[weaponID]) then
-       distortExplosions[#distortExplosions+1] = {px, py, pz}
+       distortExplosions[#distortExplosions+1] = {px, py, pz, weaponID}
     elseif (mustardWeapons[weaponID]) then
       mustardExplosions[#mustardExplosions+1] = {px, py, pz}
     end
@@ -203,8 +237,14 @@ else
   
   local function SpawnHeatFX(pos)
      if enabled then
-	heatFX.pos = {pos[1],pos[2],pos[3]}
-	Lups.AddParticles('JitterParticles2',heatFX)
+       if not (DISTORT_SHORT[WeaponDefs[pos[4]].name]) then
+	 heatFX.pos = {pos[1],pos[2],pos[3]}
+	 Lups.AddParticles('JitterParticles2',heatFX)
+       else 
+	 Spring.Echo("bingo")
+	 distortFX.pos = {pos[1],pos[2],pos[3]}
+	 Lups.AddParticles('JitterParticles2',distortFX)
+       end
    end
 end
   

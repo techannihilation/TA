@@ -18,7 +18,7 @@ return {
      GlowSpawner = {
       air                = true,
       class              = [[CExpGenSpawner]],
-      count              = 10,
+      count              = 13,
       ground             = true,
       water              = false,
       properties = {
@@ -44,7 +44,7 @@ return {
         emitvector         = [[0, 0, 0]],
         gravity            = [[0, 0.00, 0]],
         numparticles       = 1,
-        particlelife       = 10,
+        particlelife       = 11,
         particlelifespread = 0,
         particlesize       = 50,
         particlesizespread = 10,
