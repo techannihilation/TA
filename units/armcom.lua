@@ -161,7 +161,7 @@ local unitDef = {
 			badtargetcategory = [[VTOL]],
 		},
 		[5] = {
-			def = [[COMGATE]],
+			def = [[TELEPORT]],
 		},
 	},
 }
@@ -281,7 +281,7 @@ local weaponDefs = {
 			subs = 75,
 		},
 	},
-	COMGATE = {
+	TELEPORT = {
 		--alwaysVisible = true,
 		avoidFriendly = false,
 		accuracy = 1,
