@@ -83,7 +83,10 @@ local unitDef = {
 	workerTime = 300,
 	sfxtypes = {
 		explosiongenerators = {
-			[2] = [[custom:com_sea_laser_bubbles]],
+			[1] = [[custom:com_sea_laser_bubbles]],
+			--Comgate Effects
+			[2] = [[custom:teleport_beam]],
+			[3] = [[custom:sky_enterance]],
 		},
 	},
 	buildoptions = {
@@ -156,6 +159,9 @@ local unitDef = {
 		[4] = {
 			def = [[ARMCOMSEALASER]],
 			badtargetcategory = [[VTOL]],
+		},
+		[5] = {
+			def = [[COMGATE]],
 		},
 	},
 }
@@ -273,6 +279,38 @@ local weaponDefs = {
 		damage = {
 			default = 125,
 			subs = 75,
+		},
+	},
+	COMGATE = {
+		--alwaysVisible = true,
+		avoidFriendly = false,
+		accuracy = 1,
+		areaOfEffect = 100,
+		beamWeapon = true,
+		craterBoost = 0,
+		craterMult = 0,
+		duration = 10.6,
+		explosionGenerator = [[custom:none]],
+		impulseBoost = 0.123,
+		impulseFactor = 0.123,
+		intensity = 25,
+		lineOfSight = true,
+		name = [[Lightning Transport Beam]],
+		noSelfDamage = true,
+		range = 3000,
+		reloadtime = 0.001,
+		renderType = 7,
+		rgbColor = [[0.6 0.6 0.9]],
+		soundHitDry = [[maghit]],
+		soundStart = [[krypto]],
+		texture1 = [[strike]],
+		thickness = 40,
+		tolerance = 6,
+		turret = true,
+		weaponType = [[LightningCannon]],
+		weaponVelocity = 560,
+		damage = {
+			default = 0,
 		},
 	},
 }

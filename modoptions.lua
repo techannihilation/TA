@@ -33,6 +33,14 @@ local options={
 	section= "ta_exp",
 	},
 	{
+	key    = "mo_comgate",
+	name   = "Commander Teleport Effect",
+	desc   = "Commanders warp in at gamestart with a shiny teleport effect\nAutoHost USage :- mo_comgate",
+	type   = "bool",
+	def    = false,
+	section= "ta_options",
+    },
+	{
 		key    = "mo_coop",
 		name   = "Cooperative Mode",
 		desc   = "Adds an extra commander for comsharing teams\nAutoHost Usage :- mo_coop",
