@@ -241,7 +241,6 @@ else
 	 heatFX.pos = {pos[1],pos[2],pos[3]}
 	 Lups.AddParticles('JitterParticles2',heatFX)
        else 
-	 Spring.Echo("bingo")
 	 distortFX.pos = {pos[1],pos[2],pos[3]}
 	 Lups.AddParticles('JitterParticles2',distortFX)
        end
