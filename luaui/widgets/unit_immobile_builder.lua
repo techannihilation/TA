@@ -99,7 +99,7 @@ function widget:UnitCreated(unitID, unitDefID, unitTeam)
 		return
 	end
 	if IsImmobileBuilder(UnitDefs[unitDefID]) then
-		spGiveOrderToUnit(unitID, CMD_PASSIVE, { 0 }, {})
+		spGiveOrderToUnit(unitID, CMD_PASSIVE, { 1 }, {})
 		spGiveOrderToUnit(unitID, CMD_MOVE_STATE, { 1 }, {})
 		SetupUnit(unitID)
 	end
