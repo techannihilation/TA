@@ -11,7 +11,7 @@ Steam()
 {
 	while ( TRUE )
 	{
-		while( Static_Var_1 == 0 )
+		if ( Static_Var_1 == 0 )
 		{
 		emit-sfx 257 from steam2;
 		sleep 200;
