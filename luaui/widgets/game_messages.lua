@@ -70,7 +70,10 @@ function widget:TeamDied(teamID)
 		end
 	end
 	for _,playerId in ipairs(Spring.GetPlayerList(teamID,true)) do
+	  local _,_,spectator=Spring.GetPlayerInfo(playerId)
+			if  not spectator then 
 		playerNames=(playerNames and playerNames..", " or "")..Spring.GetPlayerInfo(playerId)
+			end
 	end
 	msg = string.format(Translate("Team%i(%s) is no more"), teamID, playerNames or "")
 	Spring.Echo(msg)
