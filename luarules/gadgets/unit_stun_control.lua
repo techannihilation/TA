@@ -4,7 +4,7 @@
 function gadget:GetInfo()
   return {
     name      = "Stun Control",
-    desc      = "Disables Orders for Stunned Units",
+    desc      = "Disables on/off for Stunned Units",
     author    = "Nixtux",
     date      = "Apr 13, 2014",
     license   = "GNU GPL, v2 or later",
@@ -26,13 +26,12 @@ end
 local CMD_ONOFF = CMD.ONOFF
 
 
-
 function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOptions, cmdTag, synced)
   if (cmdID == CMD_ONOFF) and Spring.GetUnitIsStunned(unitID) then
     return false
-    else
-      return true
-      end
+  else
+    return true
+  end
 end
 
 
