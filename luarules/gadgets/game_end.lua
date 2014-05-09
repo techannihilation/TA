@@ -31,17 +31,14 @@ if (not gadgetHandler:IsSyncedCode()) then
 	return false
 end
 
-local modOptions = Spring.GetModOptions()
-
--- teamDeathMode possible values: "none", "teamzerounits" , "allyzerounits"
-local teamDeathMode = modOptions.teamdeathmode or "allyzerounits"
+-- In this gadget, an allyteam is declared dead when it no longer has any units
+-- Allyteam explosion when no coms are left (killing all remaining units of that allyteam) is implemented in teamcomends.lua
 
 -- sharedDynamicAllianceVictory is a C-like bool
-local sharedDynamicAllianceVictory = tonumber(modOptions.shareddynamicalliancevictory) or 0
+local sharedDynamicAllianceVictory = tonumber(Spring.GetModOptions().shareddynamicalliancevictory) or 0
 
 -- ignoreGaia is a C-like bool
-local ignoreGaia = tonumber(modOptions.ignoregaiawinner) or 1
-
+local ignoreGaia = 1
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -94,9 +91,8 @@ function gadget:GameOver()
 end
 
 function gadget:Initialize()
-	if teamDeathMode == "none" then
+	if tostring(Spring.GetModOptions().deathmode) == "none" then
 		gadgetHandler:RemoveGadget()
-		return
 	end
 	
 	local gaiaTeamID = Spring.GetGaiaTeamID()
@@ -106,7 +102,7 @@ function gadget:Initialize()
 			teamCount = teamCount + 1
 		end
 	end
-
+	
 	if teamCount < 2 then -- sandbox mode ( possibly gaia + possibly one player)
 		gadgetHandler:RemoveGadget()
 		return
@@ -150,7 +146,7 @@ function gadget:Initialize()
 		allyTeamInfos[allyTeamID] = allyTeamInfo
 	end
 	for _,playerID in ipairs(GetPlayerList()) do
-		gadget:PlayerChanged(playerID)
+		CheckPlayer(playerID)
 	end
 end
 
@@ -234,7 +230,7 @@ end
 
 function gadget:GameFrame()
 	for _,playerID in ipairs(GetPlayerList()) do
-		gadget:PlayerChanged(playerID)
+		CheckPlayer(playerID) -- because not all events that we want to test call gadget:PlayerChanged (e.g. allying)
 	end
 	local winners
 	if sharedDynamicAllianceVictory == 0 then
@@ -249,7 +245,7 @@ function gadget:GameFrame()
 end
 
 
-function gadget:PlayerChanged(playerID)
+function CheckPlayer(playerID)
 	local _,active,spectator,teamID = GetPlayerInfo(playerID) 
 	local allyTeamID = teamToAllyTeam[teamID] 
 	local teamInfo = allyTeamInfos[allyTeamID].teams[teamID]
@@ -257,9 +253,10 @@ function gadget:PlayerChanged(playerID)
 	teamInfo.hasLeader = select(2,GetTeamInfo(teamID)) >= 0
 	if not teamInfo.hasLeader and not teamInfo.dead then
 		KillTeam(teamID)
-	end	
+		Script.LuaRules.TeamDeathMessage(teamID)
+	end
 	if not teamInfo.isAI then
-		--if team isn't ai controlled, then we need to check if we have attached players
+		--if team isn't AI controlled, then we need to check if we have attached players
 		teamInfo.isControlled = false
 		for _,isControlling in pairs(teamInfo.players) do
 			if isControlling then
@@ -285,7 +282,9 @@ function gadget:TeamDied(teamID)
 	allyTeamInfo.teams[teamID].dead = true
 	allyTeamInfos[allyTeamID] = allyTeamInfo
 	UpdateAllyTeamIsDead(allyTeamID)
+	Script.LuaRules.TeamDeathMessage(teamID)
 end
+
 
 function gadget:UnitCreated(unitID, unitDefID, unitTeamID)
 	local allyTeamID = teamToAllyTeam[unitTeamID]
@@ -309,9 +308,9 @@ function gadget:UnitDestroyed(unitID, unitDefID, unitTeamID)
 	if allyTeamInfo.isGaia and ignoreGaia == 1 then
 		return
 	end
-	if teamDeathMode == "teamzerounits" and teamUnitCount == 0 then
-		KillTeam(unitTeamID)
-	elseif teamDeathMode == "allyzerounits" and allyTeamUnitCount == 0 then
+	
+	if allyTeamUnitCount == 0 then
+		Script.LuaRules.AllyTeamDeathMessage(allyTeamID) 
 		for teamID in pairs(allyTeamInfo.teams) do
 			KillTeam(teamID)
 		end

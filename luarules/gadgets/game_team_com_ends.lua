@@ -15,10 +15,8 @@ end
 -- the allyteam is out
 
 -- the deathmode modoption must be set to one of the following to enable this
-
-local endmodes= {
+local endmodes = {
 	com=true,
-	comcontrol=true,
 }
 
 if (gadgetHandler:IsSyncedCode()) then
@@ -40,14 +38,23 @@ local DestroyUnit=Spring.DestroyUnit
 local GetUnitPosition = Spring.GetUnitPosition
 local SpawnCEG = Spring.SpawnCEG
 
-local DISTANCE_LIMIT = ((math.max(Game.mapSizeX,Game.mapSizeZ) * math.max(Game.mapSizeX,Game.mapSizeZ)) * 0.9)
-local MAX_TIME = 4 * 30
+local DISTANCE_LIMIT = (math.max(Game.mapSizeX,Game.mapSizeZ) * math.max(Game.mapSizeX,Game.mapSizeZ))
 local min = math.min
 local deathWave = false
+local deathTimeBoost = 1
 
 local function getSqrDistance(x1,z1,x2,z2)
   local dx,dz = x1-x2,z1-z2
   return (dx*dx)+(dz*dz)
+end
+
+function gadget:Initialize()
+	if not endmodes[Spring.GetModOptions().deathmode] then
+		gadgetHandler:RemoveGadget() -- in particular, this gadget is removed if deathmode is "killall" or "none"
+	end
+	for _,t in ipairs(Spring.GetAllyTeamList()) do
+		aliveCount[t] = 0
+	end
 end
 
 function gadget:GameFrame(t)
@@ -57,7 +64,7 @@ function gadget:GameFrame(t)
 				for _,team in ipairs(GetTeamList(at)) do
 					for _,unitID in ipairs(GetTeamUnits(team)) do
 						local x,y,z = GetUnitPosition(unitID)
-						local deathTime = min(((getSqrDistance(x,z,defs.x,defs.z) / DISTANCE_LIMIT) * MAX_TIME), MAX_TIME)
+						local deathTime = min(((getSqrDistance(x,z,defs.x,defs.z) / DISTANCE_LIMIT) * 250), 250)
 						if (destroyUnitQueue[unitID] == nil) then
 							destroyUnitQueue[unitID] = { 
 									time = t + deathTime + math.random(0,5), 
@@ -75,17 +82,19 @@ function gadget:GameFrame(t)
 		end
 	end
 	
-	if (deathWave) then
+	if (deathWave) and next(destroyUnitQueue) then
+		local dt = (t + deathTimeBoost)
 		for unitID, defs in pairs(destroyUnitQueue) do
-			if ((t > (defs.time - 15)) and (defs.spark == false)) then
-				SpawnCEG("lightningexplo",defs.x,defs.y,defs.z,0,0,0)
+			if ((dt > (defs.time - 15)) and (defs.spark == false)) then
+				SpawnCEG("DEATH_WAVE_SPARKS",defs.x,defs.y,defs.z,0,0,0)
 				destroyUnitQueue[unitID].spark = true
 			end
-			if (t > defs.time) then
+			if (dt > defs.time) then
 				DestroyUnit(unitID, true)
 				destroyUnitQueue[unitID] = nil
 			end
 		end
+		deathTimeBoost = math.min(deathTimeBoost * 1.125, 250)
 	end
 	
 end
@@ -125,15 +134,6 @@ function gadget:UnitTaken(u, ud, team)
 			local x,y,z = Spring.GetUnitPosition(u)
 			destroyQueue[allyTeam] = {x = x, y = y, z = z}
 		end
-	end
-end
-
-function gadget:Initialize()
-	if not endmodes[Spring.GetModOptions().deathmode] then
-		gadgetHandler:RemoveGadget()
-	end
-	for _,t in ipairs(Spring.GetAllyTeamList()) do
-		aliveCount[t] = 0
 	end
 end
 
