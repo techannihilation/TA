@@ -89,7 +89,7 @@ local NewbiePlacer = false
 
 --Disable noobplacer
 
-[[--
+--[[
 local processedNewbies = false
 if (tonumber((Spring.GetModOptions() or {}).mo_newbie_placer) == 1) and (Game.startPosType == 2) then
 	NewbiePlacer = true
