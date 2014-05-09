@@ -1,61 +1,23 @@
 
 function gadget:GetInfo()
-    return {
-        name      = 'Initial Spawn',
-        desc      = 'Handles initial spawning of units',
-        author    = 'Niobium',
-        version   = 'v1.0',
-        date      = 'April 2011',
-        license   = 'GNU GPL, v2 or later',
-        layer     = 0,
-        enabled   = true
-    }
+	return {
+		name	= 'Initial Spawn',
+		desc	= 'Handles initial spawning of units',
+		author	= 'Niobium',
+		version	= 'v1.0',
+		date	= 'April 2011',
+		license	= 'GNU GPL, v2 or later',
+		layer	= 0,
+		enabled	= true
+	}
 end
 
--- 31/03/13, mo_coop_II deals with the extra startpoints etc needed for teamsIDs with more than one playerID.
+-- Note: (31/03/13) mo_coop_II deals with the extra startpoints etc needed for teamsIDs with more than one playerID.
 
 ----------------------------------------------------------------
--- Synced only
+-- Synced 
 ----------------------------------------------------------------
-if not gadgetHandler:IsSyncedCode() then
-    return false
-end
-
-----------------------------------------------------------------
--- Config
-----------------------------------------------------------------
-local changeStartUnitRegex = '^\138(%d+)$'
-local startUnitParamName = 'startUnit'
-
-----------------------------------------------------------------
--- Var
-----------------------------------------------------------------
-local armcomDefID = UnitDefNames.armcom.id
-local corcomDefID = UnitDefNames.corcom.id
-local tllcomDefID = UnitDefNames.tllcom.id
-
-local validStartUnits = {
-    [armcomDefID] = true,
-    [corcomDefID] = true,
-    [tllcomDefID] = true,
-
-}
-local spawnTeams = {} -- spawnTeams[teamID] = allyID
-
-local modOptions = Spring.GetModOptions() or {}
-local comStorage = false
-if ((modOptions.mo_storageowner) and (modOptions.mo_storageowner == "com")) then
-  comStorage = true
-end
-local startMetal  = tonumber(modOptions.startmetal)  or 1000
-local startEnergy = tonumber(modOptions.startenergy) or 1000
-
-local StartPointTable = {}
-local StartPointAssist 
-
--- guessing vars
-local claimradius = 250*2.3 -- the radius about your own startpoint which the startpoint guesser regards as containing mexes that you've claimed for yourself (dgun range=250)
-local claimheight = 300 -- the height difference relative your own startpoint in which, within the claimradius, the startpoint guesser regards you as claiming mexes (coms can build up a cliff ~200 high but not much more).
+if gadgetHandler:IsSyncedCode() then
 
 ----------------------------------------------------------------
 -- Speedups
@@ -70,288 +32,588 @@ local spCreateUnit = Spring.CreateUnit
 local spGetGroundHeight = Spring.GetGroundHeight
 
 ----------------------------------------------------------------
+-- Config
+----------------------------------------------------------------
+local changeStartUnitRegex = '^\138(%d+)$'
+local startUnitParamName = 'startUnit'
+
+----------------------------------------------------------------
+-- Vars
+----------------------------------------------------------------
+local armcomDefID = UnitDefNames.armcom.id
+local corcomDefID = UnitDefNames.corcom.id
+local tllcomDefID = UnitDefNames.tllcom.id
+
+local validStartUnits = {
+    [armcomDefID] = true,
+    [corcomDefID] = true,
+    [tllcomDefID] = true,
+
+}
+local spawnTeams = {} -- spawnTeams[teamID] = allyID
+
+--each player gets to choose a faction
+local playerStartingUnits = {} -- playerStartingUnits[unitID] = unitDefID
+GG.playerStartingUnits = playerStartingUnits 
+
+--each team gets one startpos. if coop mode is on, extra startpoints are placed in GG.coopStartPoints by mo_coop
+local teamStartPoints = {} -- teamStartPoints[teamID] = {x,y,z}
+GG.teamStartPoints = teamStartPoints 
+local startPointTable = {} --temporary, only for use within this gadget & its libs
+
+local nAllyTeams
+local allyTeams = {} --allyTeams[allyTeamID] is non-nil if this allyTeam will spawn at least one starting unit
+
+----------------------------------------------------------------
+-- Start Point Guesser
+----------------------------------------------------------------
+
+include("luarules/gadgets/lib_startpoint_guesser.lua") --start point guessing routines
+
+----------------------------------------------------------------
+-- FFA Startpoints (modoption)
+----------------------------------------------------------------
+
+if (tonumber(Spring.GetModOptions().mo_noowner) or 0) == 1 then
+	if VFS.FileExists("luarules/configs/ffa_startpoints.lua") then
+		include("luarules/configs/ffa_startpoints.lua") --loads the ffaStartPoints table (if map has it)
+	end
+end
+
+----------------------------------------------------------------
+-- NewbiePlacer (modoption)
+----------------------------------------------------------------
+
+--Newbie Placer (prevents newbies from choosing their own a startpoint and faction)
+local NewbiePlacer = false
+
+--Disable noobplacer
+
+[[--
+local processedNewbies = false
+if (tonumber((Spring.GetModOptions() or {}).mo_newbie_placer) == 1) and (Game.startPosType == 2) then
+	NewbiePlacer = true
+else
+	NewbiePlacer = false
+end
+--]]
+
+--check if a player is to be considered as a 'newbie', in terms of startpoint placements
+function isPlayerNewbie(pID)
+	local customtable
+	local name,_,isSpec,tID,_,_,_,_,pRank = Spring.GetPlayerInfo(pID) 
+	playerRank = tonumber(pRank) or 0
+	customtable = select(10,Spring.GetPlayerInfo(pID)) or {}
+	local tsMu = tostring(customtable.skill) or ""
+	local tsSigma = tonumber(customtable.skilluncertainty) or 3
+	local isNewbie
+	if pRank == 0 and (string.find(tsMu, ")") or tsSigma >= 3) then --rank 0 and not enough ts data
+		isNewbie = true
+	else
+		isNewbie = false
+	end
+	return isNewbie
+end
+
+--a team is a newbie team if it contains at least one newbie player
+function isNewbie(teamID)
+	if not NewbiePlacer then return false end
+	local playerList = Spring.GetPlayerList(teamID) or {}
+	local isNewbie = false
+	for _,playerID in pairs(playerList) do
+		if playerID then
+		local _,_,isSpec,_ = Spring.GetPlayerInfo(playerID) 
+			if not isSpec then
+				isNewbie = isNewbie or isPlayerNewbie(playerID)
+			end
+		end
+	end
+	return isNewbie
+end
+
+----------------------------------------------------------------
+-- NoCloseSpawns (modoption)
+----------------------------------------------------------------
+
+local NoCloseSpawns = false
+local closeSpawnDist = 350
+local mapx = Game.mapX
+local mapz = Game.mapY -- misnomer in API
+local smallmap = (mapx^2 + mapz^2 < 6^2) --TODO: improve this
+
+--Disable no close spawn
+--[[
+if (tonumber(Spring.GetModOptions().mo_no_close_spawns) or 1) and (Game.startPosType ~= 2) and smallmap then --don't load if modoptions says not too or if start pos placement is not 'choose in game' or if map is small
+	NoCloseSpawns = true
+else
+	NoCloseSpawns = false
+end
+--]]
+
+----------------------------------------------------------------
 -- Initialize
 ----------------------------------------------------------------
 function gadget:Initialize()
-    local gaiaTeamID = Spring.GetGaiaTeamID()
-    local teamList = Spring.GetTeamList()
-    for i = 1, #teamList do
-        local teamID = teamList[i]
-        if teamID ~= gaiaTeamID then
-            local _, _, _, _, teamSide, teamAllyID = spGetTeamInfo(teamID)
-            if teamSide == 'core' then
-                spSetTeamRulesParam(teamID, startUnitParamName, corcomDefID)
-            elseif teamSide == 'tll' then
-                spSetTeamRulesParam(teamID, startUnitParamName, tllcomDefID)
-	    else
-                spSetTeamRulesParam(teamID, startUnitParamName, armcomDefID)
-            end
-            spawnTeams[teamID] = teamAllyID
-        end
-    end
+	local gaiaTeamID = Spring.GetGaiaTeamID()
+	local teamList = Spring.GetTeamList()
+	for i = 1, #teamList do
+		local teamID = teamList[i]
+		if teamID ~= gaiaTeamID then
+			--set & broadcast (current) start unit
+			local _, _, _, _, teamSide, teamAllyID = spGetTeamInfo(teamID)
+			if teamSide == 'core' then
+				spSetTeamRulesParam(teamID, startUnitParamName, corcomDefID)
+			elseif teamSide == 'tll' then
+				spSetTeamRulesParam(teamID, startUnitParamName, tllcomDefID)
+			else
+				spSetTeamRulesParam(teamID, startUnitParamName, armcomDefID)
+			end
+			spawnTeams[teamID] = teamAllyID
+			
+			--broadcast if newbie
+			local newbieParam 
+			if isNewbie(teamID) then
+				newbieParam = 1
+			else
+				newbieParam = 0
+			end
+			spSetTeamRulesParam(teamID, 'isNewbie', newbieParam, {public=true}) --visible to all; some widgets (faction choose, initial queue) need to know if its a newbie -> they unload
+		
+			--record that this allyteam will spawn something
+			local _,_,_,_,_,allyTeamID = Spring.GetTeamInfo(teamID)
+			allyTeams[allyTeamID] = allyTeamID
+		end
+	end
+	processedNewbies = true
+	
+	-- count allyteams
+	nAllyTeams = 0
+	for k,v in pairs(allyTeams) do
+		nAllyTeams = nAllyTeams + 1
+	end
+	
+	-- make the relevant part of ffaStartPoints accessible to all 
+	if ffaStartPoints then
+		GG.ffaStartPoints = ffaStartPoints[nAllyTeams] -- NOT indexed by allyTeamID
+	end
+
+	-- mark all players as 'not yet placed'	
+	local initState 
+	if Game.startPosType ~= 2 or ffaStartPoints then
+		initState = -1 -- if players won't be allowed to place startpoints
+	else
+		initState = 0 -- players will be allowed to place startpoints
+	end
+	local playerList = Spring.GetPlayerList()
+	for _,playerID in pairs(playerList) do
+		Spring.SetGameRulesParam("player_" .. playerID .. "_readyState" , initState)
+	end
+	
 end
+
+
+----------------------------------------------------------------
+-- Factions
+----------------------------------------------------------------
 
 -- keep track of choosing faction ingame
-if tonumber((Spring.GetModOptions() or {}).mo_allowfactionchange) == 1 then
-    function gadget:RecvLuaMsg(msg, playerID)
-        local startUnit = tonumber(msg:match(changeStartUnitRegex))
-        if startUnit and validStartUnits[startUnit] then
-            local _, _, playerIsSpec, playerTeam = spGetPlayerInfo(playerID)
-            if not playerIsSpec then
-                spSetTeamRulesParam(playerTeam, startUnitParamName, startUnit, public) --public so as advplayerlist can check faction at GameStart
-                return true
-            end
-        end
-    end
+function gadget:RecvLuaMsg(msg, playerID)
+	local startUnit = tonumber(msg:match(changeStartUnitRegex))
+	if startUnit and validStartUnits[startUnit] then
+		local _, _, playerIsSpec, playerTeam = spGetPlayerInfo(playerID)
+		if not playerIsSpec then
+			playerStartingUnits[playerID] = startUnit
+			spSetTeamRulesParam(playerTeam, startUnitParamName, startUnit, {allied=true, public=false}) -- visible to allies only, set visible to all on GameStart
+			return true
+		end
+	end
 end
 
-if (tonumber((Spring.GetModOptions() or {}).mo_startpoint_assist) == 1) and (Game.startPosType == 2) then
-	 StartPointAssist = true
-else
-	StartPointAssist = false
+
+----------------------------------------------------------------
+-- Startpoints
+----------------------------------------------------------------
+
+function gadget:AllowStartPosition(x,y,z,playerID,readyState)
+	-- communicate readyState to all
+	-- 0: unready, 1: ready, 2: game forcestarted & player not ready, 3: game forcestarted & player absent
+	-- for some reason 2 is sometimes used in place of 1 and is always used for the last player to become ready
+	-- we also add (only used in Initialize) the following
+	-- -1: players will not be allowed to place startpoints; automatically readied once ingame
+	--  4: player has placed a startpoint but is not yet ready
+	if Game.startPosType == 2 then -- choose in game mode
+		Spring.SetGameRulesParam("player_" .. playerID .. "_readyState" , readyState) 
+	end
+	
+	if Game.startPosType == 3 then return true end --choose before game mode
+	if ffaStartPoints then return true end
+	
+	local _,_,_,teamID,allyTeamID,_,_,_,_,_ = Spring.GetPlayerInfo(playerID)
+	if not teamID or not allyTeamID then return false end --fail
+	
+	-- NewbiePlacer
+	if NewbiePlacer then
+		if not processedNewbies then return false end
+		if readyState == 0 and Spring.GetTeamRulesParam(teamID, 'isNewbie') == 1 then 
+			return false 
+		end
+	end
+	
+	-- don't allow player to place startpoint unless its inside the startbox, if we have a startbox
+	if allyTeamID == nil then return false end
+	local xmin, zmin, xmax, zmax = spGetAllyTeamStartBox(allyTeamID)
+	if xmin>=xmax or zmin>=zmax then 
+		return true 
+	else
+		local isOutsideStartbox = (xmin+1 >= x) or (x >= xmax-1) or (zmin+1 >= z) or (z >= zmax-1) -- the engine rounds startpoints to integers but does not round the startbox (wtf)
+		if isOutsideStartbox then 
+			return false
+		end
+	end
+	
+	-- NoCloseSpawns
+	for otherTeamID,startpoint in pairs(startPointTable) do
+		local sx,sz = startpoint[1],startpoint[2]
+		local tooClose = ((x-sx)^2+(z-sz)^2 <= closeSpawnDist^2)
+		local sameTeam = (teamID == otherTeamID)
+		local _,_,_,_,_,otherAllyTeamID = Spring.GetTeamInfo(otherTeamID)
+		local sameAllyTeam = (allyTeamID == otherAllyTeamID)
+		if (sx>0) and tooClose and sameAllyTeam and not sameTeam then
+			Spring.SendMessageToPlayer(playerID,"You cannot place your start position too close to another player")
+			return false
+		end
+	end
+		
+	-- record table of starting points for startpoint assist to use
+	if readyState == 2 then 
+		startPointTable[teamID]={-5000,-5000} --player readied or game was forced started, but player did not place a startpoint.  make a point far away enough not to bother anything else
+	else		
+		startPointTable[teamID]={x,z} --player placed startpoint but has not clicked ready
+		if readyState ~= 1 then
+			Spring.SetGameRulesParam("player_" .. playerID .. "_readyState" , 4) --made startpoint but didn't click ready
+		end
+		SendToUnsynced("StartPointChosen", playerID)
+	end	
+	
+
+
+	return true
 end
+
 
 ----------------------------------------------------------------
 -- Spawning
 ----------------------------------------------------------------
 
--- prevent startpoints being placed outside or on the edge of the startbox, as a workaround for http://springrts.com/mantis/view.php?id=3737
-function gadget:AllowStartPosition(x,y,z,playerID)
-	--Spring.Echo(x,y,z)
-	--yh = Spring.GetGroundHeight(x,z)
-	--Spring.Echo(x,yh,z)
-	--if StartPointAssist == false then return true end
-	local _,_,_,_,allyteamID,_,_,_,_,_ = Spring.GetPlayerInfo(playerID)
-	if allyteamID == nil then return true end
-	local xmin, zmin, xmax, zmax = spGetAllyTeamStartBox(allyteamID)
-	if xmin>=xmax or zmin>=zmax then return true end
-	local isoutsidestartbox = (xmin+1 >= x) or (x >= xmax-1) or (zmin+1 >= z) or (z >= zmax-1) -- the engine round the placing of startpoints to integers but does not round the startbox (wtf)
-	if isoutsidestartbox then 
-		return false
-	else
-		return true
-	end
-	
-	return true
-end--
-
---[[ 
-	Construct a table to tell us which startpoints have actually been placed.
-	This is very hacky because the engine does not have the appropriate callins (see http://springrts.com/mantis/view.php?id=3665).
-	At GameStart it seems all playerIDs "without" a startpoint have had a startpoint placed by the engine.
-	When the engine auto-places startpoints it puts them mostly at (xmin,-500,zmin) but in odd situations it puts them elsewhere too, as of 01/04/13.
-]]--
-local function MakeStartPointTable()
-	local GaiateamID = Spring.GetGaiaTeamID()
-	local allyTeamIDs = Spring.GetAllyTeamList()
-	for j=1,#allyTeamIDs do
-		local teamIDs = Spring.GetTeamList(allyTeamIDs[j])
-		local xmin, zmin, xmax, zmax = spGetAllyTeamStartBox(allyTeamIDs[j]) 
-		for i=1,#teamIDs do
-			local x,y,z = Spring.GetTeamStartPosition(teamIDs[i])
-			local my = Spring.GetGroundHeight(x,z)
-			local isygood = ((y > -500) and (y + 50 > my)) --if the player/AI doesn't make a startpoint, the engine places one for the player/AI. AIs get y=-500 and players get y=-100. this check fails in sea >50 deep.
-			local _,_,_,isAIteam,_,_,_,_ = Spring.GetTeamInfo(teamIDs[i]) 
-			local isGaiateam = (teamIDs[i] == GaiateamID)
-			
-			playerIDs = Spring.GetPlayerList(teamIDs[i])
-			local isactive = true
-			local isspec = false
-			if #playerIDs ~= 0 then
-				if playerIDs[1] ~= nil then
-					_,isactive,isspec,_,_,_,_,_,_,_ = Spring.GetPlayerInfo(playerIDs[1])
-				end
-			end
-			
-			local isplayerspot = true
-			if xmin and xmax then
-				local isLeft = (xmin >= x) 
-				local isTop = (zmin >= z) 
-				isplayerspot = (not isLeft) or (not isTop) 
-			end
-			--Spring.Echo(teamIDs[i],x,z,y,my,isygood,isplayerspot,not isAIteam,not isspec,isactive)--DEBUG
-			
-			if not isGaiateam then
-				if (isygood and ((not isAIteam) or isplayerspot) and (not isspec)) then --guess! engine has no callin that can check 
-					StartPointTable[teamIDs[i]]={x,z} --we believe this startpoint is genuine!
-				else	
-					StartPointTable[teamIDs[i]]={-3*claimradius,-3*claimradius} --far enough out the way to not interfere with guessing routines of other teamIDs
-				end
-			end			
-		end
-	end
-	return StartPointTable
-end
-
--- spawn starting unit
-local function SpawnTeamStartUnit(teamID, allyID, x, z)
-	local startUnit = spGetTeamRulesParam(teamID, startUnitParamName)
-	local xmin, zmin, xmax, zmax = spGetAllyTeamStartBox(allyID) 
-
-	if (StartPointAssist) then 
-		-- guess points for the classified in StartPointTable as not genuine 
-		if (StartPointTable[teamID][1] < 0) then
-			x,z=GuessStartSpot(teamID, allyID, xmin, zmin, xmax, zmax)
-		end
-	else
-		--old start point placement
-		if (x<=0) or (z<=0) then
-			x = (xmin + xmax) / 2
-			z = (zmin + zmax) / 2
-		end
-	end
-
-	local unitID = spCreateUnit(startUnit, x, spGetGroundHeight(x, z), z, 0, teamID) 
-	
-	if (comStorage) then
-	  Spring.AddUnitResource(unitID, 'm', startMetal)
-	  Spring.AddUnitResource(unitID, 'e', startEnergy)
-	end
-end
-
--- cycle through teams and call spawn starting unit
 function gadget:GameStart() 
-	if StartPointAssist then 
-		StartPointTable = MakeStartPointTable() 
+	-- ffa mode spawning
+	if ffaStartPoints then
+		if ffaStartPoints[nAllyTeams] and #(ffaStartPoints[nAllyTeams])==nAllyTeams then
+		-- cycle over ally teams and spawn starting units
+			local allyTeamSpawn = SetFFASpawns()
+			for teamID, allyTeamID in pairs(spawnTeams) do
+				SpawnFFAStartUnit(nAllyTeams, allyTeamID, allyTeamSpawn[allyTeamID], teamID) 
+			end
+			
+			gadgetHandler:RemoveGadget()
+			return
+		end
 	end
-	for teamID, allyID in pairs(spawnTeams) do
-		local startX, _, startZ = Spring.GetTeamStartPosition(teamID)
-		SpawnTeamStartUnit(teamID, allyID, startX, startZ) 
+	
+	-- normal spawning (also used as fallback if ffaStartPoints fails)
+	-- cycle through teams and call spawn team starting unit 
+	for teamID, allyTeamID in pairs(spawnTeams) do
+		SpawnTeamStartUnit(teamID, allyTeamID) 
 	end
+	
+	gadgetHandler:RemoveGadget()
 end
 
+function SetFFASpawns()
+	-- construct a random permutation of [1,...,nAllyTeams] and call it perm (using a Knuth shuffle)
+	local perm = {}
+	for i=1,nAllyTeams do
+		perm[i] = i
+	end
+	for i=1,nAllyTeams-1 do
+		local j = math.random(i,nAllyTeams)
+		local temp = perm[i]
+		perm[i] = perm[j]
+		perm[j] = temp
+	end
+
+	-- construct bijective random map from active allyTeams to [1,...,nAllyTeams] and call it allyTeamSpawn
+	local allyTeamSpawn = {}
+	local slot = 1
+	for allyTeamID in pairs(allyTeams) do
+		allyTeamSpawn[allyTeamID] = perm[slot]
+		slot = slot + 1
+	end
+
+	return allyTeamSpawn
+end
+
+function SpawnFFAStartUnit(nAllyTeams, allyTeamID, allyTeamSpawnID, teamID)
+	-- get allyTeam start pos
+	local startPos = ffaStartPoints[nAllyTeams][allyTeamSpawnID]
+	local x = startPos.x
+	local z = startPos.z
+	
+	-- get team start pos; randomly move slightly to make it look nicer and (w.h.p.) avoid coms in same place in team ffa
+	local r = math.random(50,120)
+	local theta = math.random(100) / 100 * 2 * math.pi
+	local cx = x + r*math.cos(theta)
+	local cz = z + r*math.sin(theta)
+	if not IsSteep(cx,cz) then --IsSteep comes from lib_startpoint_guesser, returns true if pos is too steep for com to walk on
+		x = cx
+		z = cz
+	end
+	
+	-- spawn
+	SpawnStartUnit(teamID, x, z)
+end
+
+
+function SpawnTeamStartUnit(teamID, allyTeamID)
+	local x,_,z = Spring.GetTeamStartPosition(teamID)
+	local xmin, zmin, xmax, zmax = spGetAllyTeamStartBox(allyTeamID) 
+
+	--pick location 
+	local isAIStartPoint = (Game.startPosType == 3) and ((x>0) or (z>0)) --AIs only place startpoints of their own with choose-before-game mode
+	if not isAIStartPoint then
+		if ((not startPointTable[teamID]) or (startPointTable[teamID][1] < 0)) then
+			-- guess points for the ones classified in startPointTable as not genuine (newbies will not have a genuine startpoint)
+			x,z=GuessStartSpot(teamID, allyID, xmin, zmin, xmax, zmax)
+		else
+			--fallback 
+			if (x<=0) or (z<=0) then
+				x = (xmin + xmax) / 2
+				z = (zmin + zmax) / 2
+			end
+		end
+	end
+	
+	--spawn
+	SpawnStartUnit(teamID, x, z)
+end
+
+
+function SpawnStartUnit(teamID, x, z)
+	--get starting unit
+	local startUnit = spGetTeamRulesParam(teamID, startUnitParamName)
+
+	--overwrite startUnit with random faction for newbies 
+	if Spring.GetTeamRulesParam(teamID, 'isNewbie') == 1 then
+		if math.random() > 0.5 then
+			startUnit = corcomDefID
+		else
+			startUnit = armcomDefID
+		end
+	end
+	
+	--spawn starting unit
+	local y = spGetGroundHeight(x,z)
+	local unitID = spCreateUnit(startUnit, x, y, z, 0, teamID) 
+
+	--share info
+	teamStartPoints[teamID] = {x,y,z}
+	spSetTeamRulesParam(teamID, startUnitParamName, startUnit, {public=true}) -- visible to all (and picked up by advpllist)
+
+	--team storage is set up by game_team_resources
+end
+
+
 ----------------------------------------------------------------
---- Guessing Routine ------
+--- StartPoint Guessing ---
 ----------------------------------------------------------------
+
 function GuessStartSpot(teamID, allyID, xmin, zmin, xmax, zmax)
 	--Sanity check
 	if (xmin >= xmax) or (zmin>=zmax) then return 0,0 end 
 	
 	-- Try our guesses
-	local x,z = GuessOne(teamID, allyID, xmin, zmin, xmax, zmax)
+	local x,z = GuessOne(teamID, allyID, xmin, zmin, xmax, zmax, startPointTable)
 	if x>=0 and z>=0 then
-		StartPointTable[teamID]={x,z} 
+		startPointTable[teamID]={x,z} 
 		return x,z 
-	else
-		x,z = GuessTwo(teamID, allyID, xmin, zmin, xmax, zmax)
-		if x>=0 and z>=0 then 
-				StartPointTable[teamID]={x,z} 
-			return x,z 
-		end
 	end
 	
-
+	x,z = GuessTwo(teamID, allyID, xmin, zmin, xmax, zmax, startPointTable)
+	if x>=0 and z>=0 then 
+		startPointTable[teamID]={x,z} 
+		return x,z 
+	end
+	
+	
 	-- GIVE UP, fuuuuuuuuuuuuu --
 	x = (xmin + xmax) / 2
 	z = (zmin + zmax) / 2
-	StartPointTable[teamID]={x,z} 
+	startPointTable[teamID]={x,z} 
 	return x,z
 end
 
--- guess based on metal spots --
-function GuessOne(teamID, allyID, xmin, zmin, xmax, zmax) 	
+----------------------------------------------------------------
+-- Unsynced
+else
+----------------------------------------------------------------
 
-	-- Note: This code is deliberately easy to read and not optimized in its logic since there is no pressure on its runtime.
-	-- It's also got magic number style guesswork in it.
+local myPlayerID = Spring.GetMyPlayerID()
+local _,_,spec,myTeamID = Spring.GetPlayerInfo(myPlayerID) 
+local amNewbie
+local ffaMode = (tonumber(Spring.GetModOptions().mo_noowner) or 0) == 1
+local readied = false --make sure we return true,true for newbies at least once
+local startPointChosen = false
 
-	-- check if mex list generation worked and retrieve if so
-	if not GG.metalSpots then
-		return -1,-1
-	end
-	local metalspots = GG.metalSpots
-	if metalspots == false then 
-		return -1,-1 
-	end
+local NETMSG_STARTPLAYING = 4 -- see BaseNetProtocol.h, packetID sent during the 3.2.1 countdown
+local SYSTEM_ID = -1 -- see LuaUnsyncedRead::GetPlayerTraffic, playerID to get hosts traffic from
+local gameStarting
+local timer = 0
 
-	-- find free metal spots
-	local freemetalspots = {} -- will contain all metalspots that are within teamIDs startbox and are not within one of the cylinders given by (claimradius,claimheight) about an already existing startpoint
-	local k,j = 1,1
-	for i=1,#metalspots do 
-		local spot = metalspots[i]
-		local mx,mz = spot.x,spot.z
-		local my = Spring.GetGroundHeight(mx,mz)
-		local iswithinstartbox = (xmin < mx) and (mx < xmax) and (zmin < mz) and (mz < zmax)
-		
-		local isfree = true
-		for _,startpoint in pairs(StartPointTable) do -- we avoid enemy startpoints too, to prevent unnecessary explosions and to deal with the case of having no startboxes
-			local sx,sz = startpoint[1],startpoint[2]
-			local sy = Spring.GetGroundHeight(sx,sz)
-			local iswithinclaimradius = ((sx-mx)*(sx-mx)+(sz-mz)*(sz-mz) <= (claimradius)*(claimradius))
-			local iswithinclaimheight = (math.abs(my-sy) <= claimheight)
-			if iswithinclaimradius and iswithinclaimheight then 
-				isfree = false 
-				break
-			end
-		end		
-		
-		if isfree and iswithinstartbox then
-			freemetalspots[k] = {mx,mz}
-			k = k + 1		
-		end
-	end
-
-	if k==1 then --found no free metal spots
-		return -1,-1
-	end
-		
-	-- score each free metal spot
-	local freemetalspotscores = {}
-	for i=1,#freemetalspots do freemetalspotscores[i]=0 end 	
-	
-	for i=1,#freemetalspots do
-		local ix,iz = freemetalspots[i][1], freemetalspots[i][2]
-		for j=1,i-1 do
-			if ix ~= jz and iz ~= jz then
-				local jx,jz = freemetalspots[j][1],freemetalspots[j][2]
-				local score = 1/(((math.abs(ix-jx))^2+(math.abs(iz-jz))^2)^(2/3)) -- Magic formula. Assumes all metal spots are of equal production value, TODO...
-				freemetalspotscores[i] = freemetalspotscores[i] + score
-			end
-		end
-	end
-	
-	-- find free metal spot with highest score
-	local bestindex = 1
-	for i=2,#freemetalspotscores do
-		if freemetalspotscores[i] >= freemetalspotscores[bestindex] then
-			bestindex = i
-		end	
-	end
-	
-	-- find nearest free spot closest to best 
-	local bx,bz = freemetalspots[bestindex][1],freemetalspots[bestindex][2]
-	local nx,nz 
-	local bestdistance = (xmax)*(xmax)+(zmax)*(zmax) -- meh, just need to be big
-
-	for i=1,#freemetalspots do
-		if i ~= bestindex then
-			local mx,mz = freemetalspots[i][1],freemetalspots[i][2]
-			local thisdistance = (bx-mx)*(bx-mx)+(bz-mz)*(bz-mz) --no need to squareroot, we care only about the order 
-			if thisdistance < bestdistance then
-				bestdistance = thisdistance
-				nx = mx
-				nz = mz
-			end
-		end
-	end
-	
-	-- if it wasn't possible to find a nearest free spot, or some error caused us to find ourselves, start on the mex
-	if nx==nil or nx==bx or nz==nil or nz==bz then 
-		nx=bx+1
-		nz=bx+1
-	end
-			
-	-- move slightly towards nearest from best 
-	local norm = math.sqrt((bx-nx)*(bx-nx)+(bz-nz)*(bz-nz))
-	local dispx = (nx-bx)/norm
-	local dispz = (nz-bz)/norm
-	local disp = 120
-	x = bx + disp * (dispx)
-	z = bz + disp * (dispz)
-	
-	return x,z
+local vsx, vsy = Spring.GetViewGeometry()
+function gadget:ViewResize()
+  vsx,vsy = Spring.GetViewGeometry()
 end
 
-function GuessTwo(teamID, allyID, xmin, zmin, xmax, zmax)
-	return -1,-1 --TODO: cycle through map startpoints looking for one that isn't close to an already placed startpoint
+local readyX = vsx * 0.8
+local readyY = vsy * 0.8 
+local readyH = 30
+local readyW = 80
+
+local pStates = {} --local copy of playerStates table
+
+function gadget:Initialize()
+	-- add function to receive when startpoints were chosen
+	gadgetHandler:AddSyncAction("StartPointChosen", StartPointChosen)
+	
+	-- create ready button
+	readyButton = gl.CreateList(function()
+		-- draws background rectangle
+		gl.Color(0.1,0.1,.45,0.18)                              
+		gl.Rect(readyX,readyY+readyH, readyX+readyW, readyY)
+	
+		-- draws black border
+		gl.Color(0,0,0,1)
+		gl.BeginEnd(GL.LINE_LOOP, function()
+			gl.Vertex(readyX,readyY)
+			gl.Vertex(readyX,readyY+readyH)
+			gl.Vertex(readyX+readyW,readyY+readyH)
+			gl.Vertex(readyX+readyW,readyY)
+		end)
+		gl.Color(1,1,1,1)
+	end)
 end
+
+function StartPointChosen(_,playerID)
+	if playerID == myPlayerID then
+		startPointChosen = true 
+		if not readied then
+			Script.LuaUI.PlayerReadyStateChanged(playerID, 4)
+		end
+	end
+end
+
+function gadget:GameSetup(state,ready,playerStates)
+	-- check when the 3.2.1 countdown starts
+	if gameStarting==nil and ((Spring.GetPlayerTraffic(SYSTEM_ID, NETMSG_STARTPLAYING) or 0) > 0) then --ugly but effective (can also detect by parsing state string)
+		gameStarting = true
+	end
+
+	-- if we can't choose startpositions, no need for ready button etc
+	if Game.startPosType ~= 2 or ffaMode then
+		return true,true
+	end
+
+	-- notify LuaUI if readyStates have changed
+	for playerID,readyState in pairs(playerStates) do
+		if pStates[playerID] ~= readyState then
+			if readyState == "ready" then
+				Script.LuaUI.PlayerReadyStateChanged(playerID, 1)
+			elseif readyState == "missing" then
+				Script.LuaUI.PlayerReadyStateChanged(playerID, 3)
+			else
+				Script.LuaUI.PlayerReadyStateChanged(playerID, 0) --unready
+			end
+			pStates[playerID] = readyState
+		end
+	end
+
+	-- set my readyState to true if i am a newbie, or if ffa 
+	if not readied or not ready then 
+		amNewbie = (Spring.GetTeamRulesParam(myTeamID, 'isNewbie') == 1)
+		if amNewbie or ffaMode then
+			readied = true
+			return true, true 
+		end
+	end
+	
+	if not ready and readied then -- check if we just readied
+		ready = true
+	elseif ready and not readied then	-- check if we just reconnected/dropped
+		ready = false
+	end
+	
+	return true, ready
+end
+
+function gadget:MousePress(sx,sy)
+	-- pressing ready
+	if sx > readyX and sx < readyX+readyW and sy > readyY and sy < readyY+readyH and Spring.GetGameFrame() <= 0 and Game.startPosType == 2 and gameStarting==nil and not spec then
+		if startPointChosen then
+			readied = true
+			return true
+		else
+			Spring.Echo("Please choose a start point!")
+		end
+	end
+
+	-- message when trying to place startpoint but can't
+	if amNewbie then
+		local target,_ = Spring.TraceScreenRay(sx,sy)
+		if target == "ground" then
+			Spring.Echo("In this match, newbies (rank 0) will have a faction and startpoint chosen for them!")
+		end
+	end
+end
+
+function gadget:MouseRelease(x,y)
+	return false
+end
+
+function gadget:DrawScreen()
+	if not readied and readyButton and Game.startPosType == 2 and gameStarting==nil and not spec then
+		-- draw 'ready' button
+		gl.CallList(readyButton)
+		
+		-- ready text
+		local x,y = Spring.GetMouseState()
+		if x > readyX and x < readyX+readyW and y > readyY and y < readyY+readyH then
+			colorString = "\255\255\230\0"
+		else
+			colorString = "\255\255\255\255"
+		end
+		gl.Text(colorString .. "Ready", readyX+10, readyY+9, 20, "o")
+		gl.Color(1,1,1,1)
+	end
+	
+	if gameStarting then
+		timer = timer + Spring.GetLastUpdateSeconds()
+		if timer % 0.75 <= 0.375 then
+			colorString = "\255\200\200\20"
+		else
+			colorString = "\255\255\255\255"
+		end
+		local text = colorString .. "Game starting in " .. math.max(1,3-math.floor(timer)) .. " seconds..."
+		gl.Text(text, vsx*0.5 - gl.GetTextWidth(text)/2*20, vsy*0.71, 20, "o")
+	end
+	
+	--remove if after gamestart
+	if Spring.GetGameFrame() > 0 or Spring.IsReplay() then 
+		gadgetHandler:RemoveGadget()
+		return
+	end
+end
+
+----------------------------------------------------------------
+end
+----------------------------------------------------------------
 
