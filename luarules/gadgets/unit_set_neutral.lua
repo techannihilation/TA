@@ -22,6 +22,7 @@ local SetUnitNeutral = Spring.SetUnitNeutral
 local GetUnitStates = Spring.GetUnitStates
 local neutralUnits = {}
 local armourTurrets = {}
+
 armourTurrets[UnitDefNames["cormaw"].id] = true
 armourTurrets[UnitDefNames["armclaw"].id] = true
 armourTurrets[UnitDefNames["corvipe"].id] = true
@@ -30,21 +31,24 @@ armourTurrets[UnitDefNames["cortoast"].id] = true
 armourTurrets[UnitDefNames["armamb"].id] = true
 armourTurrets[UnitDefNames["cordoom"].id] = true
 armourTurrets[UnitDefNames["packo"].id] = true
+
 local UPDATE = 30
 local timeCounter = 15
-local pairs = pairs
 
 function gadget:GameFrame(n)
   if (n >= timeCounter) then
     timeCounter = (n + UPDATE)
     for unitID,neutral in pairs(neutralUnits) do
-      local armoured = (GetUnitCOBValue(unitID, 20) > 0)
-      if neutral and (not armoured) then
-        SetUnitNeutral(unitID, false)
-        neutralUnits[unitID] = false  
-      elseif (not neutral) and armoured then
-        SetUnitNeutral(unitID, true)
-        neutralUnits[unitID] = true  
+	  local cobValue = GetUnitCOBValue(unitID, 20)
+      if cobValue then
+		local armoured = (cobValue > 0)
+		if neutral and (not armoured) then
+		  SetUnitNeutral(unitID, false)
+		  neutralUnits[unitID] = false  
+        elseif (not neutral) and armoured then
+          SetUnitNeutral(unitID, true)
+          neutralUnits[unitID] = true  
+		end
       end      
     end    
   end
@@ -64,6 +68,5 @@ function gadget:UnitFinished(unitID, unitDefID, unitTeam)
     end
   end
 end
-
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
