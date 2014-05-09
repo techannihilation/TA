@@ -42,7 +42,7 @@ end
 
 
 function widget:GameFrame(n)
-	if n > 0 then
+	if n > 1 then
 		Spring.SendCommands({"luarules registerUpgradePairs 1"})
 		widgetHandler:RemoveCallIn("GameFrame")
 	end
