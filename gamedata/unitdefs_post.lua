@@ -142,7 +142,6 @@ local WTimeUnits = {
 		["corplat"] = true,
 		["correcl"] = true,
 		["corsy"] = true,
-		["cortl"] = true,
 		["corvp"] = true,
 		["cahp"] = true,
 		["cahpns"] = true,
@@ -910,17 +909,6 @@ for name, ud in pairs(UnitDefs) do
 		ud.collisionvolumetest = 1
 end
 
--- Brakerate for 95
-for name, ud in pairs(UnitDefs) do
-	if (ud.brakerate) then 
-	    if ud.canfly then
-		ud.brakerate = ud.brakerate * 0.04
-	    else 
-		ud.brakerate = ud.brakerate * 3.0
-	    end
-	end
-end
-
 local cons = {
 	['armcv'] = true,
 	['armacv']  = true,
@@ -953,11 +941,37 @@ local turninplacebots= {
 	['tllck'] = true,
 	['tllack'] = true,
 	}
+	
+	
+	
+
 for name, ud in pairs(UnitDefs) do
+
 	if (ud.maxvelocity) then 
 		ud.turninplacespeedlimit = (ud.maxvelocity*0.66) or 0
 		ud.turninplaceanglelimit = 140
 	end
+	
+	--todo: build these into the unitdefs
+	if (ud.hoverattack) then
+		ud.turninplaceanglelimit = 360
+	end
+	if (ud.brakerate) then 
+		if ud.canfly then
+			if ud.hoverattack then
+				ud.brakerate = ud.brakerate * 0.1
+			else
+				ud.brakerate = ud.brakerate * 0.01
+			end
+		else 
+			ud.brakerate = ud.brakerate * 3.0
+		end
+	end
+	
+	if ud.canfly and not ud.hoverattack then
+		ud.acceleration = ud.acceleration * 0.33
+	end
+	
 	if ud.movementclass and (ud.movementclass:find("TANK",1,true) or ud.movementclass:find("HOVER",1,true)) then
 		--Spring.Echo('tank or hover:',ud.name,ud.movementclass)
 		if cons[name] then
@@ -989,14 +1003,3 @@ for name, ud in pairs(UnitDefs) do
 		ud.pushresistant = true
 		end
 end
-
-local count = 0
-for name, ud in pairs(UnitDefs) do
-		if not (ud.idleautoheal) or not (ud.idletime) then
-		--Spring.Echo("idelauto heal is :- " ..ud.idleautoheal .. " for " .. ud.unitname .. " with idletime of :- " ..ud.idletime )
-		Spring.Echo("default autoheal for "..ud.unitname)
-		count = count + 1
-		end
-end
-Spring.Echo("count is ".. count)
-
