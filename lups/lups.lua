@@ -816,16 +816,9 @@ local function CreateVisibleFxList()
 			  for i=1,#UnitEffects do
 				local fx = UnitEffects[i]
 
-				if (fx.onActive and (unitActive == -1)) then
-				  unitActive = spGetUnitIsActive(unitID)
-				  if (unitActive == nil) then --because unitactive returns nil for enemy units, and onActive types are all airjets, we get the unit's velocity, and use that as an approximation to 'active' state --HACKY
-					local vx, vy, vz = spGetUnitVelocity(unitID)
-					--Spring.Echo('lupsdbgvel',vx,vy,vz)
-					if (vx~= nil and (vx~= 0  or vz~=0)) then 
-						unitActive=true
-					end
-				  end
-				end
+				    if (fx.onActive and (unitActive == -1)) then
+              unitActive = spGetUnitIsActive(unitID)
+            end
 				
 				if (fx.under_construction == 1) then
 				  underConstruction = spGetUnitRulesParam(unitID, "under_construction")
@@ -874,7 +867,7 @@ local function CreateVisibleFxList()
               end
             elseif (fx.pos) then
               local pos = fx.pos
-              if (IsPosInLos(pos[1],pos[2],pos[3]))and
+              if (IsPosInLos(pos[1],pos[2],pos[3])) and isIcon == true and
                  (spIsSphereInView(pos[1],pos[2],pos[3],(fx.radius or 200)+100))
               then
                 fx.visible = true
