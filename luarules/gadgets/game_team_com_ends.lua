@@ -86,7 +86,7 @@ function gadget:GameFrame(t)
 		local dt = (t + deathTimeBoost)
 		for unitID, defs in pairs(destroyUnitQueue) do
 			if ((dt > (defs.time - 15)) and (defs.spark == false)) then
-				SpawnCEG("DEATH_WAVE_SPARKS",defs.x,defs.y,defs.z,0,0,0)
+				SpawnCEG("lightningexplo",defs.x,defs.y,defs.z,0,0,0)
 				destroyUnitQueue[unitID].spark = true
 			end
 			if (dt > defs.time) then
