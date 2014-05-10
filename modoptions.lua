@@ -166,17 +166,12 @@ local options={
 		}
 	},
 	{
-		key="deathmode",
-		name="Game End Mode",
-		desc="What it takes to eliminate a team\nAutoHost Usage :- deathmode",
-		type="list",
-		def="com",
-		section= "ta_modes",
-		items={
-			{key="killall", name="Kill Everything", desc="Every last unit must be eliminated, no exceptions!"},
-			{key="com", name="Kill all enemy Commanders", desc="When a team has no Commanders left it loses"},
-			{key="comcontrol", name="No Commander, No Control", desc="A player without a Commander cannot issue orders"},
-		}
+		key    = "mo_no_close_spawns",
+		name   = "No close spawns",
+		desc   = "Prevents players startpoints being placed close together (on large enough maps)",
+		type   = "bool",
+		def    = true,
+		section= "ta_options",
 	},
 	{
 	key    = "shareddynamicalliancevictory",
