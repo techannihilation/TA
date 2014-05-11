@@ -1,111 +1,192 @@
+#define TA			// This is a TA script
 
-piece base,body,turret,holder,launcher,flare1,flare2,flare3,roues;
-
-static-var restore_delay,fire;
-
-#define SIG_AIM 2
-#define SIG_MOVE 4
-#define SMOKEPIECE1 launcher
-#include "smokeunit.h"
+#include "sfxtype.h"
 #include "exptype.h"
-#include "hitweap.h"
+
+piece  base, body, turret, holder, launcher, flare1, flare2, flare3,
+       roues;
+
+static-var  restore_delay, gun_1, wheelSpeed, currentSpeed, moveSpeed;
+
+// Signal definitions
+#define SIG_AIM				2
+#define SIG_MOVE			4
+
+WheelControl()
+{
+	sleep 33;
+	while(TRUE)
+	{
+		currentSpeed = (get CURRENT_SPEED)*20/moveSpeed;
+		wheelSpeed = currentSpeed * 6;
+		if (currentSpeed<5) currentSpeed=5;	// prevent infinite timing
+		spin roues around x-axis speed (<1.000000> * wheelSpeed ) * <0.015> accelerate <5.000000> * currentSpeed;
+		sleep 67;
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	start-script WheelControl();
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from launcher;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+HitByWeapon(anglex, anglez)
+{
+	turn base to z-axis anglez speed <105.000000>;
+	turn base to x-axis anglex speed <105.000000>;
+	wait-for-turn base around z-axis;
+	wait-for-turn base around x-axis;
+	turn base to z-axis <0.000000> speed <30.000000>;
+	turn base to x-axis <0.000000> speed <30.000000>;
+}
 
 StartMoving()
-{ signal SIG_MOVE;
-  set-signal-mask SIG_MOVE;
-  spin roues around x-axis speed <150>;
-  sleep 300;
-  spin roues around x-axis speed <250>;
- }
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	sleep 1;
+}
 
 StopMoving()
-{ signal SIG_MOVE;
-   stop-spin roues around x-axis;
- }
-
+{
+	signal SIG_MOVE;
+	sleep 1;
+}
 
 Create()
-{ hide flare1;
-  hide flare2;
-  hide flare3;
-  fire = 0;
-  restore_delay=3000;
-  start-script SmokeUnit();
- }
+{
+	hide flare1;
+	hide flare2;
+	hide flare3;
+	gun_1 = base;
+	restore_delay = 3000;
+	moveSpeed = get MAX_SPEED;
+	start-script SmokeUnit();
+}
 
-SetMaxReloadTime(time)
-{ restore_delay = time * 2;
- }
+SetMaxReloadTime(Func_Var_1)
+{
+	restore_delay = Func_Var_1 * 2;
+}
 
 RestoreAfterDelay()
-{ set-signal-mask SIG_AIM;
-  sleep restore_delay;
-  turn turret to y-axis <0> speed <150>;
-  turn launcher to x-axis <0> speed <150>;
-  wait-for-turn turret around y-axis;
-  turn holder to x-axis <-50> speed <150>;
-  turn launcher to x-axis <50> speed <150>;
-  move turret to z-axis [0] speed [5];
-  wait-for-move turret along y-axis;
- }
+{
+	set-signal-mask SIG_AIM;
+	sleep restore_delay;
+	turn turret to y-axis <0.000000> speed <150.000000>;
+	turn launcher to x-axis <0.000000> speed <150.000000>;
+	wait-for-turn turret around y-axis;
+	turn holder to x-axis <-50.000000> speed <150.000000>;
+	turn launcher to x-axis <50.000000> speed <150.000000>;
+	move turret to z-axis [0.000000] speed [5.000000];
+	wait-for-move turret along y-axis;
+}
 
-AimPrimary(heading,pitch)
-{ signal SIG_AIM;
-  set-signal-mask SIG_AIM;
-  move turret to z-axis [-2] speed [9];
-  turn holder to x-axis <0> speed <150>;
-  turn turret to y-axis heading speed <250>;
-  turn launcher to x-axis (0-pitch) speed <150>;
-  wait-for-turn turret around y-axis;
-  wait-for-turn launcher around x-axis;
-  start-script RestoreAfterDelay();
-  return(TRUE);
- }
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	move turret to z-axis [-2.000000] speed [9.000000];
+	turn holder to x-axis <0.000000> speed <150.000000>;
+	turn turret to y-axis heading speed <250.000000>;
+	turn launcher to x-axis <0.000000> - pitch speed <150.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn launcher around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
 
 FirePrimary()
-{ if (fire==0)
-   { show flare1; sleep 200; hide flare1;
-     fire=1; return 0; }
-  if (fire==1)
-   { show flare2; sleep 200; hide flare2;
-     fire=2; return 0; }
-  show flare3; sleep 200; hide flare3;
-  fire=0;
- }
+{
+	if( gun_1 == 0 )
+	{
+		show flare1;
+		sleep 200;
+		hide flare1;
+		gun_1 = body;
+		return (0);
+	}
+	if( gun_1 == 1 )
+	{
+		show flare2;
+		sleep 200;
+		hide flare2;
+		gun_1 = turret;
+		return (0);
+	}
+	show flare3;
+	sleep 200;
+	hide flare3;
+	gun_1 = base;
+}
 
 AimFromPrimary(piecenum)
-{ piecenum=launcher;
- }
+{
+	piecenum = launcher;
+}
 
 QueryPrimary(piecenum)
-{ if (fire==0)
-   { piecenum=flare1; }
-  if (fire==1)
-   { piecenum=flare2; }
-  if (fire==2)
-   { piecenum=flare3; }
- }
+{
+	if( gun_1 == 0 )
+	{
+		piecenum = flare1;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = flare2;
+	}
+	if( gun_1 == 2 )
+	{
+		piecenum = flare3;
+	}
+}
 
 SweetSpot(piecenum)
-{ piecenum=body;
- }
+{
+	piecenum = body;
+}
 
-Killed( severity, corpsetype )
-{ 
-  explode base type BITMAPONLY | BITMAP4;
-  if (severity <= 25)
-   { corpsetype = 1;
-     explode launcher type BITMAPONLY | BITMAP4;
-     explode holder type BITMAPONLY | BITMAP5;
-     return( 0 );
-    }
-  explode launcher type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-  explode holder type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-  if (severity <= 50)
-   { corpsetype = 2;
-     return( 0 );
-    }
-  corpsetype = 3;
-  explode turret type SHATTER | EXPLODE_ON_HIT | BITMAP2;
-  explode holder type SHATTER | EXPLODE_ON_HIT | BITMAP2;
- }
+Killed(severity, corpsetype)
+{
+	explode base type BITMAPONLY | BITMAP4;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode launcher type BITMAPONLY | BITMAP4;
+		explode holder type BITMAPONLY | BITMAP5;
+		return (0);
+	}
+	explode launcher type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode holder type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		return (0);
+	}
+	corpsetype = 3;
+	explode turret type SHATTER | EXPLODE_ON_HIT | BITMAP2;
+	explode holder type SHATTER | EXPLODE_ON_HIT | BITMAP2;
+}

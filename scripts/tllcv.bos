@@ -5,11 +5,25 @@
 
 piece  base, body, p1, nano, spray, door, wheels1, wheels2;
 
-static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging;
+static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging,
+			wheelSpeed, currentSpeed, moveSpeed;
 
 // Signal definitions
 #define SIG_MOVE			4
 
+WheelControl()
+{
+	sleep 33;
+	while(TRUE)
+	{
+		currentSpeed = (get CURRENT_SPEED)*20/moveSpeed;
+		wheelSpeed = currentSpeed * 6;
+		if (currentSpeed<5) currentSpeed=5;	// prevent infinite timing
+		spin wheels1 around x-axis speed (<1.000000> * wheelSpeed ) * <0.015> accelerate <5.000000> * currentSpeed;
+		spin wheels2 around x-axis speed (<1.000000> * wheelSpeed ) * <0.015> accelerate <5.000000> * currentSpeed;		
+		sleep 67;
+	}
+}
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -17,6 +31,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	{
 		sleep 400;
 	}
+	start-script WheelControl();
 	while( TRUE )
 	{
 		healthpercent = get HEALTH;
@@ -119,6 +134,7 @@ Create()
 {
 	Static_Var_1 = 0;
 	turn nano to y-axis <90.000000> now;
+	moveSpeed = get MAX_SPEED;
 	call-script InitState();
 	start-script SmokeUnit();
 }
@@ -127,18 +143,13 @@ StartMoving()
 {
 	signal SIG_MOVE;
 	set-signal-mask SIG_MOVE;
-	spin wheels1 around x-axis speed <150.000000>;
-	spin wheels2 around x-axis speed <150.000000>;
-	sleep 300;
-	spin wheels1 around x-axis speed <250.000000>;
-	spin wheels2 around x-axis speed <250.000000>;
+	sleep 1;
 }
 
 StopMoving()
 {
 	signal SIG_MOVE;
-	stop-spin wheels1 around x-axis;
-	stop-spin wheels2 around x-axis;
+	sleep 1;
 }
 
 Activate()
