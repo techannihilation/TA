@@ -9,12 +9,59 @@ piece  base, baseb, turret, canon1, canon2, flare1, flare2, laser,
        roued3b, shell1, shell2;
 
 static-var  restore_delay, Static_Var_2, Static_Var_3, gun_1, gun_2,
-            Static_Var_6, Static_Var_7;
+            Static_Var_6, Static_Var_7, turnClock, turnCounter, wheelSpeed,
+            currentSpeed, moveSpeed;
 
 // Signal definitions
 #define SIG_AIM				2
 #define SIG_AIM_2			4
 #define SIG_AIM_3			8
+
+TurnControl()
+{
+	var lastHeading, currHeading, diffHeading;
+	lastHeading = GET HEADING;
+	while (TRUE)
+	{
+		currHeading = GET HEADING;
+		diffHeading = currHeading - lastHeading;
+		// Set Values for differential system
+		turnClock = <0.015>;
+		turnCounter = <0.015>;	
+		if (diffHeading >= 500)
+			{
+			turnClock = <0.009>;
+			}
+		if (diffHeading <= -500)
+			{
+			turnCounter = <0.009>;
+			}
+		lastHeading = currHeading;
+		sleep 67;
+	}
+}
+
+WheelControl()
+{
+	sleep 33;
+	while(TRUE)
+	{
+		currentSpeed = (get CURRENT_SPEED)*20/moveSpeed;
+		wheelSpeed = currentSpeed * 6;
+		if (currentSpeed<4) currentSpeed=4;	// prevent infinite timing
+		//left wheels
+		spin roueg1 around x-axis speed (<1.000000> * wheelSpeed ) * turnClock accelerate <3.000000> * currentSpeed;
+		spin roueg2 around x-axis speed (<1.000000> * wheelSpeed ) * turnClock accelerate <3.000000> * currentSpeed;
+		spin roueg3 around x-axis speed (<1.000000> * wheelSpeed ) * turnClock accelerate <3.000000> * currentSpeed;
+			
+		//right wheels
+		spin roued1 around x-axis speed (<1.000000> * wheelSpeed ) * turnCounter accelerate <3.000000> * currentSpeed;
+		spin roued2 around x-axis speed (<1.000000> * wheelSpeed ) * turnCounter accelerate <3.000000> * currentSpeed;
+		spin roued3 around x-axis speed (<1.000000> * wheelSpeed ) * turnCounter accelerate <3.000000> * currentSpeed;
+			
+		sleep 67;
+	}
+}
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -23,6 +70,8 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	{
 		sleep 400;
 	}
+	start-script WheelControl();
+	start-script TurnControl();
 	while( TRUE )
 	{
 		healthpercent = get HEALTH;
@@ -58,22 +107,12 @@ HitByWeapon(anglex, anglez)
 
 StartMoving()
 {
-	spin roueg1 around x-axis speed <100.021978>;
-	spin roueg2 around x-axis speed <100.021978>;
-	spin roueg3 around x-axis speed <100.021978>;
-	spin roued1 around x-axis speed <100.021978>;
-	spin roued2 around x-axis speed <100.021978>;
-	spin roued3 around x-axis speed <100.021978>;
+	sleep 1;
 }
 
 StopMoving()
 {
-	spin roueg1 around x-axis speed <0.000000>;
-	spin roueg2 around x-axis speed <0.000000>;
-	spin roueg3 around x-axis speed <0.000000>;
-	spin roued1 around x-axis speed <0.000000>;
-	spin roued2 around x-axis speed <0.000000>;
-	spin roued3 around x-axis speed <0.000000>;
+	sleep 1;
 }
 
 Create()
@@ -89,6 +128,7 @@ Create()
 	gun_2 = baseb;
 	Static_Var_6 = 1;
 	Static_Var_7 = 1;
+	moveSpeed = get MAX_SPEED;
 	restore_delay = 3000;
 }
 
@@ -167,7 +207,7 @@ FirePrimary()
 		move canon1 to z-axis [-2.000000] speed [20.000000];
 		show flare1;
 		show shell1;
-		explode shell1 type FALL;
+		//explode shell1 type FALL;
 		sleep 150;
 		hide flare1;
 		move canon1 to z-axis [0.000000] speed [10.000000];
@@ -179,7 +219,7 @@ FirePrimary()
 		move canon2 to z-axis [-2.000000] speed [20.000000];
 		show flare2;
 		show shell2;
-		explode shell2 type FALL;
+		//explode shell2 type FALL;
 		sleep 150;
 		hide flare2;
 		move canon2 to z-axis [0.000000] speed [10.000000];
