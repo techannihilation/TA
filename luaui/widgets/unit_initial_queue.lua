@@ -39,6 +39,7 @@ local energyColor = '\255\255\255\128' -- Light yellow
 local buildColor = '\255\128\255\128' -- Light green
 local whiteColor = '\255\255\255\255' -- White
 
+
 ------------------------------------------------------------
 -- Globals
 ------------------------------------------------------------
@@ -48,8 +49,11 @@ local sDef -- UnitDefs[sDefID]
 local selDefID = nil -- Currently selected def ID
 local buildQueue = {}
 local buildNameToID = {}
+local gameStarted = false 
 
-local wl, wt = 500, 300
+local wWidth, wHeight = Spring.GetWindowGeometry()
+local wl, wt = 50, 0.5*wHeight
+
 local cellRows = {} -- {{bDefID, bDefID, ...}, ...}
 local panelList = nil -- Display list for panel
 local areDragging = false
@@ -62,6 +66,7 @@ local startUnitParamName = 'startUnit'
 
 local myTeamID = Spring.GetMyTeamID()
 local myPlayerID = Spring.GetMyPlayerID()
+local amNewbie = (Spring.GetTeamRulesParam(myTeamID, 'isNewbie') == 1)
 
 local totalTime
 
@@ -204,6 +209,7 @@ end
 function widget:Initialize()
 	if (Game.startPosType == 1) or			-- Don't run if start positions are random
 	   (Spring.GetGameFrame() > 0) or		-- Don't run if game has already started
+	   (amNewbie) or						-- Don't run if i'm a newbie
 	   (Spring.GetSpectatingState()) then	-- Don't run if we are a spec
 		widgetHandler:RemoveWidget(self)
 		return
@@ -299,15 +305,17 @@ end
 ------------------------------------------------------------
 -- Config
 ------------------------------------------------------------
+--[[
 function widget:GetConfigData()
 	local wWidth, wHeight = Spring.GetWindowGeometry()
 	return {wl / wWidth, wt / wHeight}
 end
 function widget:SetConfigData(data)
 	local wWidth, wHeight = Spring.GetWindowGeometry()
-	wl = math.floor(wWidth * (data[1] or 0.25))
-	wt = math.floor(wHeight * (data[2] or 0.50))
+	wl = math.floor(wWidth * (data[1] or 0.40))
+	wt = math.floor(wHeight * (data[2] or 0.10))
 end
+]]
 
 ------------------------------------------------------------
 -- Drawing
@@ -335,6 +343,8 @@ function widget:DrawScreen()
 	gl.PopMatrix()
 end
 function widget:DrawWorld()
+	--don't draw anything once the game has started; after that engine can draw queues itself
+	if gameStarted then return end
 
 	-- Set up gl
 	gl.LineWidth(1.49)
@@ -355,7 +365,6 @@ function widget:DrawWorld()
 	local sx, sy, sz = Spring.GetTeamStartPosition(myTeamID) -- Returns -100, -100, -100 when none chosen
 	local startChosen = (sx ~= -100)
 	if startChosen then
-
 		-- Correction for start positions in the air
 		sy = Spring.GetGroundHeight(sx, sz)
 
@@ -365,7 +374,8 @@ function widget:DrawWorld()
 		-- Draw start units build radius
 		gl.Color(buildDistanceColor)
 		gl.DrawGroundCircle(sx, sy, sz, sDef.buildDistance, 40)
-	end
+    end
+
 
 	-- Draw all the buildings
 	local queueLineVerts = startChosen and {{v={sx, sy, sz}}} or {}
@@ -404,7 +414,15 @@ end
 ------------------------------------------------------------
 -- Game start
 ------------------------------------------------------------
+
+local comGate = tonumber(Spring.GetModOptions().mo_comgate) or 0 --if comgate is on, all orders are blocked before frame 105
+
+
 function widget:GameFrame(n)
+
+	if not gameStarted then
+		gameStarted = true
+	end
 
 	-- Don't run if we are a spec
 	local areSpec = Spring.GetSpectatingState()
@@ -425,32 +443,35 @@ function widget:GameFrame(n)
 	local buildTime = GetQueueBuildTime()
 	Spring.SendCommands("luarules initialQueueTime " .. buildTime)
 	
-	if (n > 10) then
+	if (n == 141) then
 		--Spring.Echo("> Starting unit never spawned !")
 		widgetHandler:RemoveWidget(self)
 		return
 	end
+	
 
-	local tasker
-	-- Search for our starting unit
-	local units = Spring.GetTeamUnits(Spring.GetMyTeamID())
-	for u = 1, #units do
-		local uID = units[u]
-		if GetUnitCanCompleteQueue(uID) then --Spring.GetUnitDefID(uID) == sDefID then
-			tasker = uID
-			if Spring.GetUnitRulesParam(uID,"startingOwner") == Spring.GetMyPlayerID() then
-				--we found our com even if cooping, assing queue to this particular unit
-				break
+	if (comGate==0 or Spring.GetGameFrame() == 106) then --comGate takes up until frame 105
+		local tasker
+		-- Search for our starting unit
+		local units = Spring.GetTeamUnits(Spring.GetMyTeamID())
+		for u = 1, #units do
+			local uID = units[u]
+			if GetUnitCanCompleteQueue(uID) then --Spring.GetUnitDefID(uID) == sDefID then
+				tasker = uID
+				if Spring.GetUnitRulesParam(uID,"startingOwner") == Spring.GetMyPlayerID() then
+					--we found our com even if cooping, assigning queue to this particular unit
+					break
+				end
 			end
 		end
-	end
-	if tasker then
-		--Spring.Echo("sending queue to unit")
-		for b = 1, #buildQueue do
-			local buildData = buildQueue[b]
-			Spring.GiveOrderToUnit(tasker, -buildData[1], {buildData[2], buildData[3], buildData[4], buildData[5]}, {"shift"})
+		if tasker then
+			--Spring.Echo("sending queue to unit")
+			for b = 1, #buildQueue do
+				local buildData = buildQueue[b]
+				Spring.GiveOrderToUnit(tasker, -buildData[1], {buildData[2], buildData[3], buildData[4], buildData[5]}, {"shift"})
+			end
+			widgetHandler:RemoveWidget(self)
 		end
-		widgetHandler:RemoveWidget(self)
 	end
 end
 
@@ -566,6 +587,77 @@ function widget:MouseMove(mx, my, dx, dy, mButton)
 end
 function widget:MouseRelease(mx, my, mButton)
 	areDragging = false
+end
+
+------------------------------------------------------------
+-- Keyboard -- This will only work with BA!  
+------------------------------------------------------------
+
+--todo all tll faction
+
+local ZKEY = 122
+local XKEY = 120
+local CKEY = 99
+local VKEY = 118
+
+function widget:KeyPress(key,mods,isrepeat)
+	if sDef == UnitDefs[ARMCOM] then
+		if key == ZKEY then
+			if 		selDefID == ARMMEX then 	SetSelDefID(ARMUWMEX)
+			elseif 	selDefID == ARMUWMEX then	SetSelDefID(ARMMEX)
+			else								SetSelDefID(ARMMEX)
+			end		
+		elseif key == XKEY then
+			if 		selDefID == RMSOLAR then	SetSelDefID(ARMWIN)
+			elseif 	selDefID == ARMWIN then		SetSelDefID(ARMTIDE)
+			elseif 	selDefID == ARMTIDE then	SetSelDefID(ARMSOLAR)
+			else 								SetSelDefID(ARMSOLAR)
+			end
+		elseif key == CKEY then
+			if		selDefID == ARMLLT then		SetSelDefID(ARMRAD)
+			elseif 	selDefID == ARMRAD then		SetSelDefID(ARMRL)
+			elseif 	selDefID == ARMRL then 		SetSelDefID(ARMTL)
+			elseif 	selDefID == ARMTL then 		SetSelDefID(ARMSONAR)
+			elseif 	selDefID == ARMSONAR then	SetSelDefID(ARMFRT)
+			elseif 	selDefID == ARMFRT then		SetSelDefID(ARMLLT)
+			else 								SetSelDefID(ARMLLT)
+			end
+		elseif key == VKEY then
+			if		selDefID == ARMLAB then		SetSelDefID(ARMVP)
+			elseif 	selDefID == ARMVP then		SetSelDefID(ARMSY)
+			elseif 	selDefID == ARMSY then		SetSelDefID(ARMLAB)
+			else 								SetSelDefID(ARMLAB)
+			end			
+		end	
+	elseif sDef == UnitDefs[CORCOM] then
+		if key == ZKEY then
+			if 		selDefID == CORMEX then 	SetSelDefID(CORUWMEX)
+			elseif 	selDefID == CORUWMEX then	SetSelDefID(CORMEX)
+			else								SetSelDefID(CORMEX)
+			end		
+		elseif key == XKEY then
+			if 		selDefID == CORSOLAR then	SetSelDefID(CORWIN)
+			elseif 	selDefID == CORWIN then		SetSelDefID(CORTIDE)
+			elseif 	selDefID == CORTIDE then	SetSelDefID(CORSOLAR)
+			else 								SetSelDefID(CORSOLAR)
+			end
+		elseif key == CKEY then
+			if		selDefID == CORLLT then		SetSelDefID(CORRAD)
+			elseif 	selDefID == CORRAD then		SetSelDefID(CORRL)
+			elseif 	selDefID == CORRL then 		SetSelDefID(CORTL)
+			elseif 	selDefID == CORTL then 		SetSelDefID(CORSONAR)
+			elseif 	selDefID == CORSONAR then	SetSelDefID(CORFRT)
+			elseif 	selDefID == CORFRT then		SetSelDefID(CORLLT)
+			else 								SetSelDefID(CORLLT)
+			end
+		elseif key == VKEY then
+			if		selDefID == CORLAB then		SetSelDefID(CORVP)
+			elseif 	selDefID == CORVP then		SetSelDefID(CORSY)
+			elseif 	selDefID == CORSY then		SetSelDefID(CORLAB)
+			else 								SetSelDefID(CORLAB)		
+			end
+		end	
+	end
 end
 
 ------------------------------------------------------------
