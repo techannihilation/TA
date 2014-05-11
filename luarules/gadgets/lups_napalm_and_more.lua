@@ -237,12 +237,12 @@ else
   
   local function SpawnHeatFX(pos)
      if enabled then
-       if not (DISTORT_SHORT[WeaponDefs[pos[4]].name]) then
-	 heatFX.pos = {pos[1],pos[2],pos[3]}
-	 Lups.AddParticles('JitterParticles2',heatFX)
-       else 
+       if pos[4] and (DISTORT_SHORT[WeaponDefs[pos[4]].name]) then
 	 distortFX.pos = {pos[1],pos[2],pos[3]}
 	 Lups.AddParticles('JitterParticles2',distortFX)
+       else 
+	 heatFX.pos = {pos[1],pos[2],pos[3]}
+	 Lups.AddParticles('JitterParticles2',heatFX)
        end
    end
 end
