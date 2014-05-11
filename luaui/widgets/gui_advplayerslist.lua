@@ -492,8 +492,10 @@ function SetSidePics()
 			local startunit = Spring_GetTeamRulesParam(team, 'startUnit')
 			if startunit == armcomDefID then 
 				teamside = "arm"
-			else
+			elseif startunit == corcomDefID then
 				teamside = "core"
+			else
+				teamside = "tll"
 			end
 		else
 			_,_,_,_,teamside = Spring_GetTeamInfo(team)
