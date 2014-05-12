@@ -35,6 +35,10 @@ local GetVisibleUnits     = Spring.GetVisibleUnits
 local GetUnitDefID        = Spring.GetUnitDefID
 local GetAllUnits         = Spring.GetAllUnits
 local GetUnitHeading      = Spring.GetUnitHeading
+local GetGameFrame        = Spring.GetGameFrame
+
+local comGate = tonumber(Spring.GetModOptions().mo_comgate) or 0 --if comgate is on, Don't draw name tag unless commander is shown again, --frame 140
+
 
 local iconsize   = 10
 local iconhsize  = iconsize * 0.5
@@ -149,6 +153,11 @@ end
 
 
 function widget:DrawWorld()
+
+  if comGate == 1 and GetGameFrame() < 140 then
+	return  --Dont draw name tag if comgate is active
+    end
+    
  if Spring.IsGUIHidden() == false then 
 
   glDepthTest(true)
