@@ -39,7 +39,127 @@ local energyColor = '\255\255\255\128' -- Light yellow
 local buildColor = '\255\128\255\128' -- Light green
 local whiteColor = '\255\255\255\255' -- White
 
+-- Building ids
+local ARMCOM = UnitDefNames["armcom"].id
+local CORCOM = UnitDefNames["corcom"].id
 
+local ARMMEX = UnitDefNames["armmex"].id
+local CORMEX = UnitDefNames["cormex"].id
+local ARMUWMEX = UnitDefNames["armuwmex"].id
+local CORUWMEX = UnitDefNames["coruwmex"].id
+
+local ARMSOLAR = UnitDefNames["armsolar"].id
+local CORSOLAR = UnitDefNames["corsolar"].id
+local ARMWIN = UnitDefNames["armwin"].id
+local CORWIN = UnitDefNames["corwin"].id
+local ARMTIDE = UnitDefNames["armtide"].id
+local CORTIDE = UnitDefNames["cortide"].id
+
+local ARMLLT = UnitDefNames["armllt"].id
+local CORLLT = UnitDefNames["corllt"].id
+local ARMRAD = UnitDefNames["armrad"].id
+local CORRAD = UnitDefNames["corrad"].id
+local ARMRL = UnitDefNames["armrl"].id
+local CORRL = UnitDefNames["corrl"].id
+local ARMTL = UnitDefNames["armtl"].id
+local CORTL = UnitDefNames["cortl"].id
+local ARMSONAR = UnitDefNames["armsonar"].id
+local CORSONAR = UnitDefNames["corsonar"].id
+local ARMFRT = UnitDefNames["armfrt"].id
+local CORFRT = UnitDefNames["corfrt"].id
+
+local ARMLAB = UnitDefNames["armlab"].id
+local CORLAB = UnitDefNames["corlab"].id
+local ARMVP = UnitDefNames["armvp"].id
+local CORVP = UnitDefNames["corvp"].id
+local ARMSY = UnitDefNames["armsy"].id
+local CORSY = UnitDefNames["corsy"].id
+
+-- these are not used for hotkeys but used for switch faction buildings
+
+local ARMMSTOR = UnitDefNames["armmstor"].id
+local CORMSTOR = UnitDefNames["cormstor"].id
+
+local ARMESTOR = UnitDefNames["armestor"].id
+local CORESTOR = UnitDefNames["corestor"].id
+
+local ARMMAKR = UnitDefNames["armmakr"].id
+local CORMAKR = UnitDefNames["cormakr"].id
+
+local ARMEYES = UnitDefNames["armeyes"].id
+local COREYES = UnitDefNames["coreyes"].id
+
+local ARMDRAG = UnitDefNames["armdrag"].id
+local CORDRAG = UnitDefNames["cordrag"].id
+
+local ARMDL = UnitDefNames["armdl"].id
+local CORDL = UnitDefNames["cordl"].id
+
+local ARMAP = UnitDefNames["armap"].id
+local CORAP = UnitDefNames["corap"].id
+
+
+
+
+
+local ARMFRAD = UnitDefNames["armfrad"].id
+local CORFRAD = UnitDefNames["corfrad"].id
+
+local ARMUWMS = UnitDefNames["armuwms"].id
+local CORUWMS = UnitDefNames["coruwms"].id
+
+local ARMUWES = UnitDefNames["armuwes"].id
+local CORUWES = UnitDefNames["coruwes"].id
+
+local ARMFMKR = UnitDefNames["armfmkr"].id
+local CORFMKR = UnitDefNames["corfmkr"].id
+
+local ARMFDRAG = UnitDefNames["armfdrag"].id
+local CORFDRAG = UnitDefNames["corfdrag"].id
+
+local ARMPTL = UnitDefNames["armptl"].id
+local CORPTL = UnitDefNames["corptl"].id
+
+-- this info is used to switch buildings between factions
+local armToCore = {}
+
+armToCore[ARMMEX] = CORMEX
+armToCore[ARMUWMEX] = CORUWMEX
+armToCore[ARMSOLAR] = CORSOLAR
+armToCore[ARMWIN] = CORWIN
+armToCore[ARMTIDE] = CORTIDE
+armToCore[ARMLLT] = CORLLT
+armToCore[ARMRAD] = CORRAD
+armToCore[ARMRL] = CORRL
+armToCore[ARMTL] = CORTL
+armToCore[ARMSONAR] = CORSONAR
+armToCore[ARMFRT] = CORFRT
+armToCore[ARMLAB] = CORLAB
+armToCore[ARMVP] = CORVP
+armToCore[ARMSY] = CORSY
+armToCore[ARMMSTOR] = CORMSTOR
+armToCore[ARMESTOR] = CORESTOR
+armToCore[ARMMAKR] = CORMAKR
+armToCore[ARMEYES] = COREYES
+armToCore[ARMDRAG] = CORDRAG
+armToCore[ARMDL] = CORDL
+armToCore[ARMAP] = CORAP
+armToCore[ARMFRAD] = CORFRAD
+armToCore[ARMUWMS] = CORUWMS
+armToCore[ARMUWES] = CORUWES
+armToCore[ARMFMKR] = CORFMKR
+armToCore[ARMFDRAG] = CORFDRAG
+armToCore[ARMPTL] = CORPTL
+
+function table_invert(t)
+    local s={}
+    for k,v in pairs(t) do
+        s[v]=k
+    end
+    return s
+end
+
+local coreToArm = table_invert(armToCore)
 ------------------------------------------------------------
 -- Globals
 ------------------------------------------------------------
@@ -376,6 +496,22 @@ function widget:DrawWorld()
 		gl.DrawGroundCircle(sx, sy, sz, sDef.buildDistance, 40)
     end
 
+    -- Check for faction change
+    for b = 1, #buildQueue do
+        local buildData = buildQueue[b]
+        local buildDataId = buildData[1]
+        if sDef.id == ARMCOM then
+            if coreToArm[buildDataId] ~= nil then
+                buildData[1] = coreToArm[buildDataId]
+                buildQueue[b] = buildData
+            end
+        elseif sDef.id == CORCOM then
+            if armToCore[buildDataId] ~= nil then
+                buildData[1] = armToCore[buildDataId]
+                buildQueue[b] = buildData
+            end
+        end
+    end
 
 	-- Draw all the buildings
 	local queueLineVerts = startChosen and {{v={sx, sy, sz}}} or {}
@@ -443,14 +579,14 @@ function widget:GameFrame(n)
 	local buildTime = GetQueueBuildTime()
 	Spring.SendCommands("luarules initialQueueTime " .. buildTime)
 	
-	if (n == 141) then
+	if (n == 142) then
 		--Spring.Echo("> Starting unit never spawned !")
 		widgetHandler:RemoveWidget(self)
 		return
 	end
 	
 
-	if (comGate==0 or Spring.GetGameFrame() == 106) then --comGate takes up until frame 105
+	if (comGate==0 or Spring.GetGameFrame() == 141) then --comGate takes up until frame 105
 		local tasker
 		-- Search for our starting unit
 		local units = Spring.GetTeamUnits(Spring.GetMyTeamID())
@@ -590,11 +726,8 @@ function widget:MouseRelease(mx, my, mButton)
 end
 
 ------------------------------------------------------------
--- Keyboard -- This will only work with BA!  
+-- Keyboard -- This will only work with BA!
 ------------------------------------------------------------
-
---todo all tll faction
-
 local ZKEY = 122
 local XKEY = 120
 local CKEY = 99
