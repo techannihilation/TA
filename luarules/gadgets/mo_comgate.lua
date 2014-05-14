@@ -38,7 +38,6 @@ end
 function gadget:GameFrame(n)
   if (not gameStart) and (n > 5) then
     gameStart = true
-    Spring.Echo("Teleport Active")   
   end
   if (n == 6) then
     for unitID,data in pairs(hiddenUnits) do
@@ -49,7 +48,8 @@ function gadget:GameFrame(n)
     for unitID,_ in pairs(hiddenUnits) do
 		Spring.SetUnitNoDraw(unitID,false)
     end
-    Spring.Echo("Teleport Complete")
+  end
+  if (n == 170) then
     gadgetHandler:RemoveGadget()
   end
 end
@@ -62,5 +62,55 @@ end
 
 --unsynced
 else
+  
+local vsx,vsy = Spring.GetViewGeometry()
+local GateInfo
+local GateInfo2
+
+function gadget:DrawScreen()
+	if Spring.GetGameFrame() > 20 then 
+		if GateInfo then 
+			gl.DeleteList(GateInfo)
+		end
+	end
+	
+	if Spring.GetGameFrame() > 170 then 
+		if GateInfo2 then 
+			gl.DeleteList(GateInfo2)
+		end
+		gadgetHandler:RemoveGadget()
+		return
+	end
+	
+	if Spring.GetGameFrame() > 140 and GateInfo2 then
+		gl.CallList(GateInfo2)
+	end
+	if Spring.GetGameFrame() < 130 and GateInfo then --use frame 10
+		gl.CallList(GateInfo)
+	end
+	
+end
+
+function gadget:GameOver()
+		if GateInfo then 
+			gl.DeleteList(GateInfo)
+			gl.DeleteList(GateInfo2)
+		end
+		gadgetHandler:RemoveGadget()	
+end
+
+function gadget:Initialize()
+	local textSize = 48
+	local dx = vsx/2
+	local dy = vsy/2
+	GateInfo2 = gl.CreateList(function()
+		-- First message
+		gl.Text("Teleport Complete", dx-210, dy+100, textSize, "o")
+	end)
+	GateInfo = gl.CreateList(function()
+		-- Second Message
+		gl.Text("Teleport Activated", dx-215, dy+100, textSize, "o")
+	end)
+end
 
 end
