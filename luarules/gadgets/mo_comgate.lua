@@ -66,6 +66,8 @@ else
 local vsx,vsy = Spring.GetViewGeometry()
 local GateInfo
 local GateInfo2
+local tackyfont = gl.LoadFont("luarules/fonts/LCD2U___.TTF",72, 1.9, 40)
+
 
 function gadget:DrawScreen()
 	if Spring.GetGameFrame() > 20 then 
@@ -100,16 +102,20 @@ function gadget:GameOver()
 end
 
 function gadget:Initialize()
-	local textSize = 48
+	local textSize = 72
 	local dx = vsx/2
 	local dy = vsy/2
 	GateInfo2 = gl.CreateList(function()
 		-- First message
-		gl.Text("Teleport Complete", dx-210, dy+100, textSize, "o")
+		tackyfont:Begin()
+		tackyfont:Print("Teleport Complete", dx, dy, 72,'cbs')
+		tackyfont:End()
 	end)
 	GateInfo = gl.CreateList(function()
 		-- Second Message
-		gl.Text("Teleport Activated", dx-215, dy+100, textSize, "o")
+		tackyfont:Begin()
+		tackyfont:Print("Teleport Activated", dx, dy, 72,'cbs')
+		tackyfont:End()
 	end)
 end
 
