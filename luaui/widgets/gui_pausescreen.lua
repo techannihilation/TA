@@ -40,18 +40,19 @@ local osClock				= os.clock
 ----------------------------------------------------------------------------------
 -- CONFIGURATION
 local debug = false	
-local boxWidth = 300
-local boxHeight = 60
+local boxWidth = 460
+local boxHeight = 80
 local slideTime = 0.4
 local fadeTime = 1
 local wndBorderSize = 4
-local imgWidth = 160 --drawing size of the image (independent from the real image pixel size)
-local imgTexCoordX = 0.625  --image texture coordinate X -- textures image's dimension is a power of 2 (i use 0.625 cause my image has a width of 256, but region to use is only 160 pixel -> 160 / 256 = 0.625 )
-local imgTexCoordY = 0.625	--image texture coordinate Y -- enter values other than 1.0 to use just a region of the texture image
-local fontSizeHeadline = 36
-local fontSizeAddon = 24
-local windowIconPath = "LuaUI/Images/SpringIconmkII.png"
-local fontPath = "LuaUI/Fonts/MicrogrammaDBold.ttf"
+local imgWidth = 335 --670 --drawing size of the image (independent from the real image pixel size)
+local imgWidthy = 143 --286 
+local imgTexCoordX = 1  --image texture coordinate X -- textures image's dimension is a power of 2 (i use 0.625 cause my image has a width of 256, but region to use is only 160 pixel -> 160 / 256 = 0.625 )
+local imgTexCoordY = 1	--image texture coordinate Y -- enter values other than 1.0 to use just a region of the texture image
+local fontSizeHeadline = 48
+local fontSizeAddon = 36
+local windowIconPath = "LuaUI/Images/ta_logo.png"
+local fontPath = "LuaRules/Fonts/LCD2U___.TTF"
 local windowClosePath = "LuaUI/Images/closex_32.png"
 local imgCloseWidth = 32
 --Color config in drawPause function
@@ -170,8 +171,8 @@ function drawPause()
 	local now = osClock()
 	local diffPauseTime = ( now - pauseTimestamp)
 
-	local text =  { 1.0, 1.0, 1.0, 1.0 }
-	local text2 =  { 0.9, 0.9, 0.9, 1.0 }
+	local text =  { 1.0, 0.0, 0.0, 1.0 }
+	local text2 =  { 0.8, 0.0, 0.0, 0.7 }
 	local outline =  { 0.4, 0.4, 0.4, 1.0 }	
 	local colorWnd = { 0.0, 0.0, 0.0, 0.6 }
 	local colorWnd2 = { 0.5, 0.5, 0.5, 0.6 }
@@ -232,7 +233,7 @@ function drawPause()
 	myFont:Print( "GAME PAUSED", textX, textY, fontSizeHeadline, "O" )
 		
 	myFont:SetTextColor( text2 )
-	myFont:Print( "Press 'Pause' to continue.", textX, textY - lineOffset, fontSizeAddon, "O" )
+	myFont:Print( "Press 'Pause' to continue.", textX-80, textY - lineOffset, fontSizeAddon, "O" )
 	
 	myFont:End()
 	
@@ -254,7 +255,7 @@ function drawPause()
 		end
 	end
 	
-	glTexRect( xCut - imgWidthHalf, yCenter + imgWidthHalf, xCut + imgWidthHalf, yCenter - imgWidthHalf, 0.0, 0.0, imgTexCoordX, imgTexCoordY )
+	glTexRect( xCut - imgWidthHalf, yCenter + imgWidthy/2, xCut + imgWidthHalf, yCenter - imgWidthy/2, 0.0, 0.0, imgTexCoordX, imgTexCoordY )
 	glPopMatrix()
 	
 	glTexture(false)
@@ -270,7 +271,7 @@ function updateWindowCoords()
 	wndX2 = screenCenterX + boxWidth
 	wndY2 = screenCenterY - boxHeight
 
-	textX = wndX1 + ( wndX2 - wndX1 ) * 0.36
+	textX = wndX1 + ( wndX2 - wndX1 ) * 0.52
 	textY = wndY2 + ( wndY1 - wndY2 ) * 0.53
 	lineOffset = ( wndY1 - wndY2 ) * 0.3
 	
