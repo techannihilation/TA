@@ -44,6 +44,7 @@ local unitDef = {
 	sightDistance = 273,
 	unitname = [[corupmex]],
 	unitnumber = 48,
+	unitRestricted = 1,
 	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[ooooooooo]],
