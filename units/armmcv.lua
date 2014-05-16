@@ -95,10 +95,10 @@ local unitDef = {
 			def = [[ARM_BATSAFTX]],
 			onlyTargetCategory = [[NOTVTOL]],
 		},
-		[2] = {
-			def = [[RAVE_MISSILE]],
-			onlyTargetCategory = [[NOTVTOL]],
-		},
+--		[2] = {
+--			def = [[RAVE_MISSILE]],
+--			onlyTargetCategory = [[NOTVTOL]],
+--		},
 	},
 }
 
