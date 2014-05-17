@@ -359,12 +359,10 @@ end
 
 function gadget:UnitDestroyed(uID, uDefID, uTeam)
     local cDefs = convertCapacities[uDefID]
-    if cDefs and uID and spValidUnitID(uID) and uTeam then
+    if cDefs and uID and uTeam then
          if teamMMList[uTeam][cDefs.e][uID].built then
 			if (teamMMList[uTeam][cDefs.e][uID].status == 1) then
 				teamActiveMM[uTeam] = teamActiveMM[uTeam] - 1
-			else
-			  Spring.Echo("nix fix me!!!")
 			end
 			
 			if not teamMMList[uTeam][cDefs.e][uID].emped then
