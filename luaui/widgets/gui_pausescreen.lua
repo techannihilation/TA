@@ -40,8 +40,8 @@ local osClock				= os.clock
 ----------------------------------------------------------------------------------
 -- CONFIGURATION
 local debug = false	
-local boxWidth = 460
-local boxHeight = 80
+local boxWidth = 450
+local boxHeight = 72
 local slideTime = 0.4
 local fadeTime = 1
 local wndBorderSize = 4
@@ -275,7 +275,7 @@ function updateWindowCoords()
 	textY = wndY2 + ( wndY1 - wndY2 ) * 0.53
 	lineOffset = ( wndY1 - wndY2 ) * 0.3
 	
-	yCenter = wndY2 + ( wndY1 - wndY2 ) * 0.5
+	yCenter = wndY2 + ( wndY1 - wndY2 ) * 0.47
 	xCut = wndX1 + ( wndX2 - wndX1 ) * 0.19
 end
 
