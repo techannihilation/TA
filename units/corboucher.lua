@@ -56,7 +56,7 @@ local unitDef = {
 	workerTime = 0,
 	yardMap = [[oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo]],
 	customparams = {
-		RequireTech = [[Advanced T4 Unit Research Centre]],
+		RequireTech = [[Advanced T3 Unit Research Centre]],
 	},
 	featureDefs = nil,
 	sounds = {
