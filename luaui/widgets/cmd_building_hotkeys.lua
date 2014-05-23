@@ -197,8 +197,8 @@ local binds={
 	"bind shift+c buildunit_tlllmtns",
 	
 	
-	"bind v buildunit_armnanotc",
-	"bind shift+v buildunit_armnanotc",
+	"bind v buildunit_cornanotc",
+	"bind shift+v buildunit_cornanotc",
 	"bind v buildunit_armnanotc",
 	"bind shift+v buildunit_armnanotc",
 	"bind v buildunit_tllnanotc",
