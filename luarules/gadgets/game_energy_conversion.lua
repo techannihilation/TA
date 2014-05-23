@@ -333,7 +333,7 @@ end
 function gadget:UnitFinished(uID, uDefID, uTeam)
     local cDefs = convertCapacities[uDefID]
     if cDefs and spValidUnitID(uID) then
-		if teamMMList[uTeam][cDefs.e][uID].capacity then
+		if cDefs.c then
 		teamMMList[uTeam][cDefs.e][uID].capacity = cDefs.c
 			teamMMList[uTeam][cDefs.e][uID].built = true
 				if not teamMMList[uTeam][cDefs.e][uID].emped then
