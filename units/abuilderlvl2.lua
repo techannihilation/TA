@@ -22,7 +22,6 @@ local unitDef = {
 	canstop = 1,
 	category = [[ALL CONSTR MEDIUMVTOL MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTWEAPON VTOL]],
 	collide = false,
-	corpse = [[dead]],
 	cruiseAlt = 130,
 	description = [[Makes Advanced T1 Economy]],
 	designation = [[ARN-MCA]],
@@ -87,28 +86,6 @@ local unitDef = {
 		},
 	},
 }
-
---------------------------------------------------------------------------------
-
-local featureDefs = {
-	dead = {
-		blocking = false,
-		category = [[arm_corpses]],
-		damage = 0.6000 * unitDef.maxDamage,
-		description = unitDef.name .. [[ Wreckage]],
-		featurereclamate = [[smudge01]],
-		footprintX = 4,
-		footprintZ = 4,
-		height = 40,
-		hitdensity = 100,
-		metal = 0.8000 * unitDef.buildCostMetal,
-		object = [[ABuilderLvl2_dead]],
-		reclaimable = true,
-		seqnamereclamate = [[tree1reclamate]],
-		world = [[All Worlds]],
-	},
-}
-unitDef.featureDefs = featureDefs
 
 --------------------------------------------------------------------------------
 
