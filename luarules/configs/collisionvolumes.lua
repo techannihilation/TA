@@ -157,8 +157,8 @@ local isship = {
 		off={24,34,24,0,10,0,1,1,1},
 	}
 	unitCollisionVolume["armamb"] = {
-		on={49,45,49,-0.5,-6,0,1,1,1},
-		off={49,26,49,-0.5,-6,0,1,1,1},
+		on={49,45,49,0,-6,0,1,1,1,0,0,-6},
+		off={49,20,49,0,-6,0,1,1,1,0,10,-6},
 	}
 	unitCollisionVolume["armanni"] = {
 		on={54,81,54,0,-2,0,2,1,0},
@@ -178,7 +178,7 @@ local isship = {
 	}
 	unitCollisionVolume["armpb"] = {
 		on={39,78,39,0,-11,0,1,1,1},
-		off={39,40,39,0,-20,0,1,1,1},
+		off={39,40,39,0,-20,0,1,1,1,0,10,0},
 	}
 	unitCollisionVolume["armplat"] = {
 		on={105,66,105,0,33,0,2,1,0},
@@ -309,7 +309,9 @@ local isship = {
 			["7"]={10,10,60,0,3,13,1,2},
 		},
 		off = {
-			["1"]={51,51,51,0,-9,0,0,1},
+			["1"]={44,12,44,0,0,0,2,0},
+			offsets={0,2,0}
+
 		}
 	}
 	dynamicPieceCollisionVolume["corvipe"] = {
@@ -318,7 +320,8 @@ local isship = {
 			["5"]={25,46,25,0,25,0,1,1},
 		},
 		off = {
-			["0"]={39,39,39,0,-2,0,0,1},
+			["0"]={40,12,30,0,0,0,2,0},
+			offsets={0,3,0}
 		}
 	}
 return unitCollisionVolume, pieceCollisionVolume, dynamicPieceCollisionVolume, sublist, isship
