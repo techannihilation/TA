@@ -3,9 +3,15 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, larm, rarm, lgun, rgun, rotor, tail;
+piece  base, rotor, wing_lf, wing_rf, turret, bar_l, bar_r,
+	   flare_l, flare_r, r_1, r_2, blank, fuse,
+	   cockpit, stab_l, stab_r, fin_l, fin_r, root_l, root_r, engine_l, engine_r;
 
-static-var  gun_1;
+static-var  gun_2, gun_1, restore_delay, statechg_DesiredState, statechg_StateChanging;
+
+// Signal definitions
+#define SIG_AIM				2
+#define SIG_AIM_2			4
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -33,75 +39,74 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		}
 		sleep sleeptime;
 	}
-	return (0);
-	// Build by COBBLER Ver3.0 beta2 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.netzine.ml.org/DCS   
 }
 
-activatescr()
+Go()
 {
-	move tail to z-axis [-5.000000] speed [6.000000];
-	move larm to x-axis [3.000000] speed [4.000000];
-	move rarm to x-axis [-3.000000] speed [4.000000];
-	spin rotor around y-axis speed <777.708791>;
+	spin rotor around y-axis speed <777.060440>;
+	move turret to z-axis [0.000000] speed [2.000000];
 }
 
-deactivatescr()
+Stop()
 {
-	move tail to z-axis [0.000000] speed [5.000000];
-	move larm to x-axis [0.000000] speed [5.000000];
-	move rarm to x-axis [0.000000] speed [5.000000];
-	stop-spin rotor around y-axis decelerate <2.000000>;
+	spin rotor around y-axis speed <0.000000> accelerate <2.000000>;
+	move turret to z-axis [-5.000000] speed [2.000000];
 }
 
-RockUnit(anglex, anglez)
+InitState()
 {
-	turn base to x-axis anglex speed <50.010989>;
-	turn base to z-axis anglez speed <50.010989>;
-	wait-for-turn base around z-axis;
-	wait-for-turn base around x-axis;
-	turn base to z-axis <0.000000> speed <20.000000>;
-	turn base to x-axis <0.000000> speed <20.000000>;
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
 }
 
 Create()
 {
-	call-script deactivatescr();
+	turn wing_lf to y-axis <-80.016484> now;
+	turn wing_rf to y-axis <80.016484> now;
+	move turret to z-axis [-5.000000] now;
+	hide flare_l;
+	hide flare_r;
+	gun_2 = 1;
+	gun_1 = 1;
+	restore_delay = 3000;
+	call-script InitState();
+	start-script SmokeUnit();
 }
 
 Activate()
 {
-	call-script activatescr();
+	start-script RequestState(0);
 }
 
 Deactivate()
 {
-	call-script deactivatescr();
-}
-
-FirePrimary()
-{
-	if( gun_1 == 1 )
-	{
-		gun_1 = rarm;
-		start-script RockUnit();
-	}
-	if( gun_1 == 2 )
-	{
-		start-script RockUnit();
-		gun_1 = larm;
-	}
-}
-
-QueryPrimary(piecenum)
-{
-	if( gun_1 == 1 )
-	{
-		piecenum = lgun;
-	}
-	if( gun_1 == 2 )
-	{
-		piecenum = rgun;
-	}
+	start-script RequestState(1);
 }
 
 SweetSpot(piecenum)
@@ -109,9 +114,119 @@ SweetSpot(piecenum)
 	piecenum = base;
 }
 
+SetMaxReloadTime(Func_Var_1)
+{
+	restore_delay = Func_Var_1 * 2;
+}
+
+RestoreAfterDelay()
+{
+	sleep restore_delay;
+	turn turret to y-axis <0.000000> speed <35.000000>;
+	turn bar_l to x-axis <0.000000> speed <15.000000>;
+	turn bar_r to x-axis <0.000000> speed <15.000000>;
+	turn blank to y-axis <0.000000> speed <35.000000>;
+	turn blank to x-axis <0.000000> speed <15.000000>;
+}
+
+AimSecondary(heading, pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	turn blank to y-axis heading speed <390.000000>;
+	turn blank to x-axis <0.000000> - pitch speed <350.000000>;
+	turn blank to x-axis <0.000000> - pitch speed <350.000000>;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+AimFromSecondary(piecenum)
+{
+	piecenum = blank;
+}
+
+FireSecondary()
+{
+	if( gun_2 == 1 )
+	{
+		show r_1;
+		sleep 150;
+		hide r_1;
+		gun_2 = 2;
+		return (0);
+	}
+	if( gun_2 == 2 )
+	{
+		show r_2;
+		sleep 150;
+		hide r_2;
+		gun_2 = 1;
+		return (0);
+	}
+
+}
+
+QuerySecondary(piecenum)
+{
+	if( gun_2 == 1 )
+	{
+		piecenum = r_1;
+	}
+	if( gun_2 == 2 )
+	{
+		piecenum = r_2;
+	}
+}
+
 AimPrimary(heading, pitch)
 {
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	start-script RestoreAfterDelay();
 	return (1);
+}
+
+FirePrimary()
+{
+	if( gun_1 == 1 )
+	{
+		move bar_l to z-axis [-0.800000] speed [200.000000];
+		wait-for-move bar_l along z-axis;
+		move bar_l to z-axis [0.000000] speed [3.000000];
+		show flare_l;
+		sleep 150;
+		hide flare_l;
+		gun_1 = 2;
+		return (0);
+	}
+	if( gun_1 == 2 )
+	{
+		move bar_r to z-axis [-0.800000] speed [200.000000];
+		wait-for-move bar_r along z-axis;
+		move bar_r to z-axis [0.000000] speed [3.000000];
+		show flare_r;
+		sleep 150;
+		hide flare_r;
+		gun_1 = 1;
+		return (0);
+	}
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = turret;
+}
+
+QueryPrimary(piecenum)
+{
+	if( gun_1 == 1 )
+	{
+		piecenum = flare_l;
+	}
+	if( gun_1 == 2 )
+	{
+		piecenum = flare_r;
+	}
 }
 
 Killed(severity, corpsetype)
@@ -119,31 +234,81 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type SHATTER | BITMAPONLY | BITMAP1;
-		explode rotor type SHATTER | BITMAPONLY | BITMAP1;
+		explode base type BITMAPONLY | BITMAP4;
+		explode fuse type SHATTER | BITMAP5;
+		explode cockpit type BITMAPONLY | BITMAP1;
+		explode stab_l type BITMAPONLY | BITMAP3;
+		explode stab_r type BITMAPONLY | BITMAP4;
+		explode fin_l type BITMAPONLY | BITMAP5;
+		explode fin_r type BITMAPONLY | BITMAP1;
+		explode root_l type BITMAPONLY | BITMAP2;
+		explode root_r type BITMAPONLY | BITMAP3;
+		explode wing_lf type BITMAPONLY | BITMAP4;
+		explode wing_rf type BITMAPONLY | BITMAP1;
+		explode engine_l type BITMAPONLY | BITMAP3;
+		explode engine_r type BITMAPONLY | BITMAP4;
+		explode turret type BITMAPONLY | BITMAP2;
+		explode bar_l type BITMAPONLY | BITMAP3;
+		explode bar_r type BITMAPONLY | BITMAP4;
 		return (0);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type FALL | SHATTER | BITMAPONLY | BITMAP1;
-		explode lgun type FALL | SHATTER | BITMAPONLY | BITMAP1;
-		explode rotor type FALL | SHATTER | BITMAPONLY | BITMAP1;
-		explode rgun type FALL | SHATTER | BITMAPONLY | BITMAP1;
-		explode tail type FALL | SHATTER | BITMAPONLY | BITMAP1;
+		explode base type BITMAPONLY | BITMAP4;
+		explode fuse type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
+		explode cockpit type FALL | BITMAP1;
+		explode stab_l type FALL | BITMAP3;
+		explode stab_r type FALL | BITMAP4;
+		explode fin_l type FALL | BITMAP5;
+		explode fin_r type FALL | SMOKE | BITMAP1;
+		explode root_l type FALL | FIRE | BITMAP2;
+		explode root_r type FALL | EXPLODE_ON_HIT | BITMAP3;
+		explode wing_lf type SHATTER | BITMAP4;
+		explode wing_rf type FALL | SMOKE | FIRE | BITMAP1;
+		explode engine_l type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
+		explode engine_r type FALL | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode turret type FALL | BITMAP2;
+		explode bar_l type SHATTER | BITMAP3;
+		explode bar_r type FALL | BITMAP4;
 		return (0);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type FALL | SHATTER | BITMAPONLY | BITMAP1;
-		explode rgun type FALL | SHATTER | BITMAPONLY | BITMAP1;
-		explode lgun type FALL | SHATTER | BITMAPONLY | BITMAP1;
-		explode rotor type FALL | SHATTER | BITMAPONLY | BITMAP1;
-		explode tail type FALL | SHATTER | BITMAPONLY | BITMAP1;
-		explode larm type FALL | SHATTER | BITMAPONLY | BITMAP1;
+		explode base type BITMAPONLY | BITMAP4;
+		explode fuse type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode cockpit type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode stab_l type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode stab_r type SHATTER | EXPLODE_ON_HIT | BITMAP4;
+		explode fin_l type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode fin_r type SHATTER | EXPLODE_ON_HIT | BITMAP1;
+		explode root_l type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode root_r type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode wing_lf type SHATTER | EXPLODE_ON_HIT | BITMAP4;
+		explode wing_rf type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode engine_l type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode engine_r type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode bar_l type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+		explode bar_r type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 		return (0);
 	}
 	corpsetype = 3;
-	explode base type SHATTER | BITMAPONLY | BITMAP1;
+	explode base type BITMAPONLY | BITMAP4;
+	explode fuse type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode cockpit type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode stab_l type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode stab_r type SHATTER | EXPLODE_ON_HIT | BITMAP4;
+	explode fin_l type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode fin_r type SHATTER | EXPLODE_ON_HIT | BITMAP1;
+	explode root_l type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode root_r type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode wing_lf type SHATTER | EXPLODE_ON_HIT | BITMAP4;
+	explode wing_rf type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode engine_l type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode engine_r type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode bar_l type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+	explode bar_r type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 }
