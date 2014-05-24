@@ -333,7 +333,7 @@ return {
       underwater         = 1,
       water              = true,
       properties = {
-        colormap           = [[1.0 0.3 0.1 0.01 0.3 0.15 0.1 0.01 0 0 0 0.01]],
+        colormap           = [[1.0 0.3 0.1 0.01		0.6 0.35 0.2 0.01	 0 0 0 0.01]],
         dir                = [[dir]],
         frontoffset        = 0,
         fronttexture       = [[muzzlefront]],
@@ -352,7 +352,7 @@ return {
       water              = true,
       properties = {
         airdrag            = 0.8,
-        colormap           = [[1.0 0.6 0.2 0.01 0.1 0.1 0.1 0.2 0.0 0.0 0.0 0.01]],
+        colormap           = [[1.0 0.35 0.03 0.01		0.1 0.1 0.1 0.3		0.0 0.0 0.0 0.01]],
         directional        = false,
         emitrot            = 0,
         emitrotspread      = 10,
@@ -379,7 +379,7 @@ return {
       water              = true,
       properties = {
         airdrag            = 0.8,
-        colormap           = [[1.0 0.6 0.2 0.01 0.1 0.1 0.1 0.2 0.0 0.0 0.0 0.01]],
+        colormap           = [[1.0 0.35 0.03 0.01	0.1 0.1 0.1 0.3		0.1 0.1 0.1 0.3		0.0 0.0 0.0 0.01]],
         directional        = false,
         emitrot            = 0,
         emitrotspread      = 20,
