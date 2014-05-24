@@ -86,15 +86,15 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
+			def = [[VTOL_EMG6]],
+			onlyTargetCategory = [[NOTVTOL]],
+		},
+		[3] = {
 			def = [[VTOL_ROCKET5]],
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
 			def = [[VTOL_ROCKET5]],
-			onlyTargetCategory = [[NOTVTOL]],
-		},
-		[3] = {
-			def = [[VTOL_EMG6]],
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
