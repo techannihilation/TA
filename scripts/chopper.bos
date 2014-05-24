@@ -3,64 +3,45 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  flare1a, flare1b, flare2a, flare2b, flare3a, flare3b, turret, blades,
-       tailblades, base;
+piece  body, base, blades, nosegun, t1, t2, tailgunr, aiml,
+       tailgunl, aimr, pit;
 
-static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, statechg_DesiredState,
-            statechg_StateChanging;
+static-var  Static_Var_1, Static_Var_2, gun_1, Static_Var_4, Static_Var_5,
+            Static_Var_6, Static_Var_7, Static_Var_8, statechg_DesiredState, statechg_StateChanging;
 
 // Signal definitions
-#define SIG_AIM_3			2
+#define SIG_AIM				2
+#define SIG_AIM_2			4
+#define SIG_AIM_3			8
 
-
-SmokeUnit(healthpercent, sleeptime, smoketype)
-{
-	while( get BUILD_PERCENT_LEFT )
-	{
-		sleep 400;
-	}
-	while( TRUE )
-	{
-		healthpercent = get HEALTH;
-		if( healthpercent < 66 )
-		{
-			smoketype = 256 | 2;
-			if( Rand( 1, 66 ) < healthpercent )
-			{
-				smoketype = 256 | 1;
-			}
-			emit-sfx smoketype from base;
-		}
-		sleeptime = healthpercent * 50;
-		if( sleeptime < 200 )
-		{
-			sleeptime = 200;
-		}
-		sleep sleeptime;
-	}
-	return (0);
-	// Build by COBBLER Ver3.0 beta2 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.netzine.ml.org/DCS   
-}
 
 Go()
 {
-	if( TRUE )
-	{
-		spin blades around y-axis speed <777.071429>;
-		spin tailblades around x-axis speed <777.071429>;
-		sleep 25;
-	}
+	turn body to z-axis <-45.010989> speed <75.000000>;
+	move body to x-axis [-7.000000] speed [15.000000];
+	move body to y-axis [3.000000] speed [15.000000];
+	wait-for-move body along x-axis;
+	wait-for-turn body around z-axis;
+	sleep 150;
+	move body to y-axis [0.000000] speed [15.000000];
+	turn body to z-axis <45.010989> speed <75.000000>;
+	move body to x-axis [7.000000] speed [15.000000];
+	wait-for-move body along y-axis;
+	move body to y-axis [3.000000] speed [15.000000];
+	wait-for-move body along x-axis;
+	wait-for-turn body around z-axis;
+	sleep 150;
+	move body to x-axis [0.000000] speed [15.000000];
+	move body to y-axis [0.000000] speed [15.000000];
+	turn body to z-axis <0.000000> speed <75.000000>;
+	wait-for-move body along x-axis;
+	wait-for-turn body around z-axis;
+	sleep 3000;
+	return (0);
 }
 
 Stop()
 {
-	if( TRUE )
-	{
-		sleep 1500;
-		stop-spin blades around y-axis decelerate <2.000000>;
-		stop-spin tailblades around x-axis decelerate <2.000000>;
-		sleep 25;
-	}
 }
 
 InitState()
@@ -95,20 +76,58 @@ RequestState(requestedstate, currentstate)
 	statechg_StateChanging = FALSE;
 }
 
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	var Func_Var_4;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			Func_Var_4 = Rand( 1, 2 );
+			if( Func_Var_4 == 1 )
+			{
+			//	emit-sfx smoketype from Left;
+			}
+			if( Func_Var_4 == 2 )
+			{
+			//	emit-sfx smoketype from Right;
+			}
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
 Create()
 {
-	hide flare1a;
-	hide flare1b;
-	hide flare2a;
-	hide flare2b;
-	hide flare3a;
-	hide flare3b;
-	Static_Var_4 = 3000;
+	Static_Var_5 = 60000;
+	Static_Var_6 = 1500;
+	Static_Var_7 = 1000;
+	Static_Var_8 = 25000;
+	Static_Var_4 = 1;
+	gun_1 = base;
 	Static_Var_1 = 1;
 	Static_Var_2 = 1;
-	Static_Var_3 = 1;
-	start-script SmokeUnit();
 	call-script InitState();
+	start-script SmokeUnit();
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 1000;
+	}
 }
 
 Activate()
@@ -121,67 +140,131 @@ Deactivate()
 	start-script RequestState(1);
 }
 
+StartMoving()
+{
+	turn body to x-axis <5.000000> speed <35.000000>;
+	spin blades around y-axis speed <777.000000>;
+}
+
+StopMoving()
+{
+	turn body to x-axis <0.000000> speed <35.000000>;
+	stop-spin blades around y-axis decelerate <2.000000>;
+}
+
 RestoreAfterDelay()
 {
-	sleep Static_Var_4;
-	turn turret to y-axis <0.000000> speed <90.021978>;
-	turn turret to x-axis <0.000000> speed <50.010989>;
+	sleep 3000;
+	turn nosegun to y-axis <0.000000> speed <55.000000>;
 }
 
-SweetSpot(piecenum)
+AimPrimary(heading, pitch)
 {
-	piecenum = base;
-}
-
-AimTertiary(heading, pitch)
-{
-	signal SIG_AIM_3;
-	set-signal-mask SIG_AIM_3;
-	turn turret to y-axis heading speed <300.071429>;
-	turn turret to x-axis <0.000000> - pitch speed <300.071429>;
-	wait-for-turn turret around y-axis;
-	wait-for-turn turret around x-axis;
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	turn body to x-axis pitch speed <255.000000>;
+	turn nosegun to y-axis heading speed <55.000000>;
 	start-script RestoreAfterDelay();
 	return (1);
 }
 
 FirePrimary()
 {
-	show flare1a;
-	sleep 150;
-	hide flare1a;
-}
-
-FireSecondary()
-{
-	show flare2a;
-	sleep 150;
-	hide flare2a;
-}
-
-FireTertiary()
-{
-	show flare3a;
-	sleep 150;
-	hide flare3a;
-}
-
-AimFromTertiary(piecenum)
-{
-	piecenum = turret;
+	if( gun_1 == 1 )
+	{
+		gun_1 = blades;
+		return (0);
+	}
+	if( gun_1 == 2 )
+	{
+		gun_1 = base;
+		return (0);
+	}
 }
 
 QueryPrimary(piecenum)
 {
-	piecenum = flare1a;
+	if( gun_1 == 1 )
+	{
+		piecenum = t1;
+	}
+	if( gun_1 == 2 )
+	{
+		piecenum = t2;
+	}
+}
+
+AimSecondary(heading, pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	turn nosegun to x-axis heading speed <55.000000>;
+	return (1);
+}
+
+FireSecondary()
+{
 }
 
 QuerySecondary(piecenum)
 {
-	piecenum = flare2a;
+	piecenum = tailgunr;
+}
+
+AimTertiary(heading, pitch)
+{
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
+	turn nosegun to x-axis heading speed <55.000000>;
+	return (1);
+}
+
+FireTertiary()
+{
 }
 
 QueryTertiary(piecenum)
 {
-	piecenum = flare3a;
+	piecenum = tailgunl;
+}
+
+HitByWeapon(anglex, anglez)
+{
+	var Func_Var_3;
+	Func_Var_3 = get HEALTH;
+	if( Func_Var_3 <= 15 )
+	{
+		if( Static_Var_4 == 0 )
+		{
+			Static_Var_4 = 1;
+			//explode pit type FALL | EXPLODE_ON_HIT | BITMAP3;
+		}
+	}
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = body;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode body type BITMAPONLY | BITMAP1;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode body type BITMAPONLY | BITMAP1;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode body type BITMAPONLY | BITMAP1;
+		return (0);
+	}
 }
