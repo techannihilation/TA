@@ -349,6 +349,8 @@ for i=1,#teamList do
   teamTechLevel[teamID] = 0
 end
 
+local CMD_PASSIVE = 34571
+
 local morphCmdDesc = {
 --  id     = CMD_MORPH, -- added by the calling function because there is now more than one option
   type   = CMDTYPE.ICON,
@@ -499,6 +501,7 @@ end
 local function StartMorph(unitID, unitDefID, teamID, morphDef, cmdp)
 
   -- do not allow morph for unfinsihed units
+  -- Spring.Echo(unitID,Spring.GetUnitRulesParam(unitID,"jumpReload"))
   if not isFinished(unitID) or (Spring.GetUnitRulesParam(unitID,"jumpReload") == 0) then return true end
 
   Spring.SetUnitRulesParam(unitID,"Morphing",1)
@@ -642,6 +645,8 @@ local function FinishMorph(unitID, morphData)
   SpSetUnitExperience(newUnit, newXp)
 
   --//copy some state
+  local nanoState = Spring.GetUnitRulesParam(unitID,"NanoPassive") or 0
+
   local states = SpGetUnitStates(unitID)
   SpGiveOrderArrayToUnitArray({ newUnit }, {
     { CMD_FIRE_STATE, { states.firestate },             { } },
@@ -651,7 +656,10 @@ local function FinishMorph(unitID, morphData)
     { CMD_ONOFF,      { 1 },                            { } },
     { CMD_TRAJECTORY, { states.trajectory and 1 or 0 }, { } },
   })
+  
+  Spring.GiveOrderToUnit(newUnit, CMD_PASSIVE, { nanoState }, {})
 
+  
   --//copy command queue
   local cmds = SpGetUnitCommands(unitID,4) --only copy last 3 command as first is skipped 
   for i = 2, #cmds do  -- skip the first command (CMD_MORPH)

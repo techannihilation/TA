@@ -47,6 +47,7 @@ local spFindUnitCmdDesc = Spring.FindUnitCmdDesc
 local spGetUnitCmdDescs = Spring.GetUnitCmdDescs
 local spEditUnitCmdDesc = Spring.EditUnitCmdDesc
 local spGetTeamResources = Spring.GetTeamResources
+local spSetUnitRulesParam  = Spring.SetUnitRulesParam
 
 ----------------------------------------------------------------
 -- Callins
@@ -73,7 +74,7 @@ function gadget:AllowCommand(uID, uDefID, uTeam, cmdID, cmdParams, cmdOptions, c
         cmdDesc.params[1] = cmdParams[1]
         spEditUnitCmdDesc(uID, cmdIdx, cmdDesc)
         passiveBuilders[uID] = (cmdParams[1] == 1)
-		--Spring.Echo(uID,'is passive')
+	spSetUnitRulesParam(uID,"NanoPassive",cmdParams[1])
         return false -- Allowing command causes command queue to be lost if command is unshifted
     end
     return true

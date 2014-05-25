@@ -44,6 +44,28 @@ local hmsx = Game.mapSizeX/2
 local hmsz = Game.mapSizeZ/2
 
 
+local morphednanos = {
+--Core
+  [UnitDefNames["cornanotc1"].id] = true,
+  [UnitDefNames["cornanotc2"].id] = true,
+  [UnitDefNames["cornanotc3"].id] = true,
+  [UnitDefNames["cnanotower"].id] = true,
+
+  
+--Arm 
+  [UnitDefNames["armnanotc1"].id] = true,
+  [UnitDefNames["armnanotc2"].id] = true,
+  [UnitDefNames["armnanotc3"].id] = true,
+  [UnitDefNames["ananotower"].id] = true,
+ 
+ 
+
+--The lost legacy
+  [UnitDefNames["tllnanotc1"].id] = true,
+  [UnitDefNames["tllnanotc2"].id] = true,
+}
+
+
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -86,7 +108,7 @@ function widget:Initialize()
 	end
 	for _,unitID in ipairs(spGetTeamUnits(spGetMyTeamID())) do
 		local unitDefID = spGetUnitDefID(unitID)
-		if IsImmobileBuilder(UnitDefs[unitDefID]) then
+		if IsImmobileBuilder(UnitDefs[unitDefID]) and not morphednanos[unitDefID] then
 			spGiveOrderToUnit(unitID, CMD_MOVE_STATE, { 1 }, {})
 			SetupUnit(unitID)
 		end
@@ -98,7 +120,7 @@ function widget:UnitCreated(unitID, unitDefID, unitTeam)
 	if unitTeam ~= spGetMyTeamID() then
 		return
 	end
-	if IsImmobileBuilder(UnitDefs[unitDefID]) then
+	if IsImmobileBuilder(UnitDefs[unitDefID]) and not morphednanos[unitDefID] then
 		spGiveOrderToUnit(unitID, CMD_PASSIVE, { 1 }, {})
 		spGiveOrderToUnit(unitID, CMD_MOVE_STATE, { 1 }, {})
 		SetupUnit(unitID)
