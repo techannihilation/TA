@@ -183,6 +183,18 @@ FirePrimary()
 	}
 }
 
+Shot1()
+{
+	if( gun_1 == 1 )
+	{
+		emit-sfx 1024+1 from t1;
+	}
+	if( gun_1 == 2 )
+	{
+		emit-sfx 1024+1 from t2;
+	}
+}
+
 QueryPrimary(piecenum)
 {
 	if( gun_1 == 1 )

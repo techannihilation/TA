@@ -62,6 +62,11 @@ local unitDef = {
 	unitname = [[chopper]],
 	unitnumber = 702,
 	workerTime = 0,
+	sfxtypes = {
+		explosiongenerators = {
+			[1] = [[custom:heli_muzzle]],
+		},
+        },
 	sounds = {
 		canceldestruct = [[cancel2]],
 		underattack = [[warning1]],
