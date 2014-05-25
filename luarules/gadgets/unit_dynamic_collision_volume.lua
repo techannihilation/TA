@@ -131,8 +131,8 @@ if (gadgetHandler:IsSyncedCode()) then
 				rs, hs, ws = 0.68, 0.68, 0.68
 				ars, ahs = 0.70, 0.70 
 			else
-				rs, hs, ws = 0.53, 0.53, 0.53
-				ars, ahs = 0.63, 0.63 
+				rs, hs, ws = 0.53, 0.26, 0.53
+				ars, ahs = 0.55, 0.55 
 			end
 			local xs, ys, zs, xo, yo, zo, vtype, htype, axis, _ = spGetUnitCollisionData(unitID)
 			if (vtype>=3 and xs==ys and ys==zs) then
