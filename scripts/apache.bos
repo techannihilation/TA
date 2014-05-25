@@ -1,4 +1,4 @@
-#define TA			//Apache chopper
+#define TA			// This is a TA script
 
 #include "sfxtype.h"
 #include "exptype.h"
@@ -13,12 +13,11 @@ activatescr()
 {
 	if( TRUE )
 	{
-		spin rotor around y-axis speed <777.186813>;
-		spin rearrotor around x-axis speed <777.186813>;
+		spin rotor around y-axis speed <777.181319>;
+		spin rearrotor around x-axis speed <777.181319>;
 		sleep 1454;
 	}
 	sleep 15;
-	return (0);
 }
 
 deactivatescr()
@@ -121,11 +120,10 @@ Deactivate()
 
 FirePrimary()
 {
-	show rflare;
+	emit-sfx 1024+0 from rflare;
 	move rrocket to z-axis [-1.000000] speed [400.000000];
 	sleep 150;
 	wait-for-move rrocket along z-axis;
-	hide rflare;
 	move rrocket to z-axis [0.000000] speed [2.000000];
 }
 
@@ -136,11 +134,10 @@ QueryPrimary(piecenum)
 
 Firesecondary()
 {
-	show lflare;
+	emit-sfx 1024+0 from lflare;
 	move lrocket to z-axis [-1.000000] speed [400.000000];
 	sleep 150;
 	wait-for-move lrocket along z-axis;
-	hide lflare;
 	move lrocket to z-axis [0.000000] speed [2.000000];
 }
 
