@@ -162,7 +162,8 @@ AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	turn body to x-axis pitch speed <255.000000>;
+	//turn body to x-axis pitch speed <255.000000>;
+	turn nosegun to x-axis <0.00000> - pitch speed <55.000000>;
 	turn nosegun to y-axis heading speed <55.000000>;
 	start-script RestoreAfterDelay();
 	return (1);
@@ -198,7 +199,7 @@ AimSecondary(heading, pitch)
 {
 	signal SIG_AIM_2;
 	set-signal-mask SIG_AIM_2;
-	turn nosegun to x-axis heading speed <55.000000>;
+//turn nosegun to x-axis heading speed <55.000000>;
 	return (1);
 }
 
@@ -215,7 +216,7 @@ AimTertiary(heading, pitch)
 {
 	signal SIG_AIM_3;
 	set-signal-mask SIG_AIM_3;
-	turn nosegun to x-axis heading speed <55.000000>;
+//	turn nosegun to x-axis heading speed <55.000000>;
 	return (1);
 }
 
