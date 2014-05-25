@@ -472,10 +472,10 @@ function gadget:ViewResize()
   vsx,vsy = Spring.GetViewGeometry()
 end
 
-local readyX = vsx * 0.8
-local readyY = vsy * 0.8 
-local readyH = 30
-local readyW = 80
+local readyX = vsx * 0.44
+local readyY = vsy * 0.60
+local readyH = 60
+local readyW = 160
 
 local pStates = {} --local copy of playerStates table
 
@@ -589,7 +589,7 @@ function gadget:DrawScreen()
 		else
 			colorString = "\255\255\255\255"
 		end
-		gl.Text(colorString .. "Ready", readyX+10, readyY+9, 20, "o")
+		gl.Text(colorString .. "Ready", readyX+20, readyY+18, 40, "o")
 		gl.Color(1,1,1,1)
 	end
 	
