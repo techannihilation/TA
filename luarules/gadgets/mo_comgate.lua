@@ -2,7 +2,7 @@ function gadget:GetInfo()
   return {
     name      = "Teleport",
     desc      = "Teleport effect.",
-    author    = "quantum, TheFatController",
+    author    = "quantum, TheFatController, Nixtux",
     date      = "June 22, 2007",
     license   = "GNU GPL, v2 or later",
     layer     = 0,
@@ -62,7 +62,8 @@ end
 
 --unsynced
 else
-  
+
+local _,_,spec,_ = Spring.GetPlayerInfo(myPlayerID) 
 local vsx,vsy = Spring.GetViewGeometry()
 local GateInfo
 local GateInfo2
@@ -70,6 +71,7 @@ local tackyfont = gl.LoadFont("luarules/fonts/LCD2U___.TTF",72, 1.9, 40)
 
 
 function gadget:DrawScreen()
+    if not spec then 
 	if Spring.GetGameFrame() > 20 then 
 		if GateInfo then 
 			gl.DeleteList(GateInfo)
@@ -90,7 +92,7 @@ function gadget:DrawScreen()
 	if Spring.GetGameFrame() < 130 and GateInfo then --use frame 10
 		gl.CallList(GateInfo)
 	end
-	
+   end
 end
 
 function gadget:GameOver()
