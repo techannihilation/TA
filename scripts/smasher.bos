@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  lgun, rgun, rrocket, lrocket, base, rotor, rearrotor, fuselage;
+piece  lgun, rgun, rrocket, rflare, lrocket, lflare, base, rotor, rearrotor, fuselage;
 
 static-var  gun_1, gun_2, statechg_DesiredState, statechg_StateChanging;
 
@@ -127,23 +127,26 @@ FirePrimary()
 		{
 			gun_1 = rgun;
 		}
+		
 		move rrocket to z-axis [-1.000000] speed [400.000000];
+		//emit-sfx 1024+0 from rflare;
 		sleep 150;
 		wait-for-move rrocket along z-axis;
 		move rrocket to z-axis [0.000000] speed [2.000000];
 		return (0);
-		if( gun_1 == 1 )
+	if( gun_1 == 1 )
+	{
+		++gun_1;
+		if( gun_1 == 4 )
 		{
-			++gun_1;
-			if( gun_1 == 4 )
-			{
-				gun_1 = lgun;
-			}
-			move lrocket to z-axis [-1.000000] speed [400.000000];
-			sleep 150;
-			wait-for-move lrocket along z-axis;
-			move lrocket to z-axis [0.000000] speed [2.000000];
-			return (0);
+			gun_1 = lgun;
+		}
+		//emit-sfx 1024+0 from rflare;
+		move lrocket to z-axis [-1.000000] speed [400.000000];
+		sleep 150;
+		wait-for-move lrocket along z-axis;
+		move lrocket to z-axis [0.000000] speed [2.000000];
+		return (0);
 		}
 	}
 }
