@@ -61,6 +61,11 @@ local unitDef = {
 	unitname = [[smasher]],
 	unitnumber = 789012,
 	workerTime = 0,
+	sfxtypes = {
+		explosiongenerators = {
+			[1] = [[custom:heli_muzzle]],
+		},
+        },
 	sounds = {
 		canceldestruct = [[cancel2]],
 		underattack = [[warning1]],

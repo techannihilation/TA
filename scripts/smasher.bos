@@ -3,7 +3,8 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  lgun, rgun, rrocket, rflare, lrocket, lflare, base, rotor, rearrotor, fuselage;
+piece  lgun, rgun, rrocket, rflare, lrocket, lflare, base, rotor, rearrotor,
+	   fuselage, rgflare, lgflare;
 
 static-var  gun_1, gun_2, statechg_DesiredState, statechg_StateChanging;
 
@@ -101,7 +102,9 @@ RequestState(requestedstate, currentstate)
 }
 
 Create()
-{
+{	
+	hide lgflare;
+	hide rgflare;
 	gun_1 = lgun;
 	gun_2 = lgun;
 	call-script InitState();
@@ -190,6 +193,18 @@ Firesecondary()
 		wait-for-move lgun along z-axis;
 		move lgun to z-axis [0.000000] speed [3.000000];
 		return (0);
+	}
+}
+
+Shot2()
+{
+	if( gun_2 == 0 )
+	{
+	emit-sfx 1024+0 from rgflare;	
+	}
+	if( gun_2 == 1 )
+	{
+	emit-sfx 1024+0 from rgflare;
 	}
 }
 
