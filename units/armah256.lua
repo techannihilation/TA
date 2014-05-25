@@ -64,6 +64,7 @@ local unitDef = {
 	sfxtypes = {
 		explosiongenerators = {
 			[1] = "custom:muzzle_flare_rocket",
+			[2] = [[custom:heli_muzzle]],
 		},
 	},
 	sounds = {

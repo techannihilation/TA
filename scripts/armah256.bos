@@ -158,13 +158,16 @@ AimSecondary()
 	return (1);
 }
 
+Shot3()
+{
+	emit-sfx 1024+1 from gflare;
+}
+
 FireTertiary()
 {
-	show gflare;
 	move gun to z-axis [-1.000000] speed [400.000000];
 	sleep 150;
 	wait-for-move rrocket along z-axis;
-	hide gflare;
 	move rrocket to z-axis [0.000000] speed [2.000000];
 }
 
