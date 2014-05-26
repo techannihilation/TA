@@ -33,6 +33,7 @@ local unitDef = {
 	explodeAs = [[CA_EX]],
 	footprintX = 3,
 	footprintZ = 3,
+	hoverAttack = true,
 	iconType = [[air]],
 	idleAutoHeal = 5,
 	idleTime = 1800,
