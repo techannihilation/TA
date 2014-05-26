@@ -752,6 +752,21 @@ local LosRadar = {
 ["uppercut"] = 35.965450286865,
 }
 
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--
+-- ud.customparams IS NEVER NIL
+
+for _, ud in pairs(UnitDefs) do
+    if not ud.customparams then
+        ud.customparams = {}
+    end
+ end
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--
+
 for name, ud in pairs(UnitDefs) do  
 	if (LosRadar[ud.unitname]) then
 		if LosRadar[ud.unitname] > 20.00 then  
@@ -1001,5 +1016,12 @@ for name, ud in pairs(UnitDefs) do
 		if ud.mass >= 10000 and (ud.movementclass) and (ud.maxvelocity)  then
 		--Spring.Echo("Push Resistance added to :- " .. ud.unitname)
 		ud.pushresistant = true
+		end
+end
+
+--Needed for Unit Wiki
+for name, ud in pairs(UnitDefs) do
+		if ud.buildpic then
+		  ud.customparams.buildpic = ud.buildpic
 		end
 end
