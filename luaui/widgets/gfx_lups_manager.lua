@@ -330,6 +330,10 @@ local UnitEffects = {
     {class='Ribbon', options={width=1, size=8, piece="ribbon1"}},
     {class='Ribbon', options={width=1, size=8, piece="ribbon2"}},
  }, 
+  [UnitDefNames["corsbomb"].id] = {
+    {class='Ribbon', options={width=1, size=8, piece="ribbon1"}},
+    {class='Ribbon', options={width=1, size=8, piece="ribbon2"}},
+ }, 
  [UnitDefNames["abuilderlvl3"].id] = {
     {class='AirJet',options={color={1,1,1}, width=12, length=15, piece="thrust", onActive=true}},
     {class='AirJet',options={color={1,1,1}, width=12, length=15, piece="thrust1", onActive=true}},
@@ -431,14 +435,13 @@ if (t.yday>350) then --(t.month==12)
     {class='SantaHat',options={color={1,0.1,0,1}, pos={0,8.8,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=11, piece="head"}},
   }
 
-  end
+end
 
 local abs = math.abs
 local spGetSpectatingState = Spring.GetSpectatingState
 local spGetUnitDefID       = Spring.GetUnitDefID
 local spGetUnitRulesParam  = Spring.GetUnitRulesParam
 local spGetUnitIsActive    = Spring.GetUnitIsActive
-local spGetUnitVelocity     = Spring.GetUnitVelocity
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -496,7 +499,7 @@ local function UnitFinished(_,unitID,unitDefID)
   if (effects) then
     for _,fx in ipairs(effects) do
       if (not fx.options) then
-        --Spring.Echo("LUPS DEBUG ", UnitDefs[unitDefID].name, fx and fx.class)
+        Spring.Echo("LUPS DEBUG ", UnitDefs[unitDefID].name, fx and fx.class)
         return
       end
 
@@ -523,22 +526,16 @@ local function UnitEnteredLos(_,unitID)
   local effects   = UnitEffects[unitDefID]
   if (effects) then
 	for _,fx in ipairs(effects) do
-		
-	  if (fx.options.onActive == true) and (spGetUnitIsActive(unitID) == nil) then  --because unitactive returns nil for enemy units, and onActive types are all airjets, we get the unit's velocity, and use that as an approximation to 'active' state --HACKY
-		local vx, vy, vz = spGetUnitVelocity(unitID)
-		--Spring.Echo('lupsdbgvel',vx,vy,vz)
-		if (vx== nil or (vx==0 and vz==0)) then 
-			break
-		else
-			if (fx.class=="GroundFlash") then
-			  fx.options.pos = { Spring.GetUnitBasePosition(unitID) }
-			end
-			fx.options.unit = unitID
-			fx.options.under_construction = spGetUnitRulesParam(unitID, "under_construction")
-			--can a unit that is under construction be active? 
-			AddFxs( unitID,LupsAddFX(fx.class,fx.options) )
-			fx.options.unit = nil
+	  if (fx.options.onActive == true) and (spGetUnitIsActive(unitID) == nil) then
+		break
+	  else
+		if (fx.class=="GroundFlash") then
+		  fx.options.pos = { Spring.GetUnitBasePosition(unitID) }
 		end
+		fx.options.unit = unitID
+		fx.options.under_construction = spGetUnitRulesParam(unitID, "under_construction")
+		AddFxs( unitID,LupsAddFX(fx.class,fx.options) )
+		fx.options.unit = nil
 	  end
 	end
   end

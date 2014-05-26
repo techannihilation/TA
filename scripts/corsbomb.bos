@@ -4,7 +4,8 @@
 #include "exptype.h"
 
 piece  base, fuselage, eng1, eng2, flare1, sfx3, sfx4, fin,
-       turret1, turret2, fpt1a, fpt1b, fpt2a, fpt2b;
+       turret1, turret2, fpt1a, fpt1b, fpt2a, fpt2b,
+       ribbon1, ribbon2;
 
 static-var  statechg_DesiredState, statechg_StateChanging, gun_1;
 
@@ -86,7 +87,14 @@ RequestState(requestedstate, currentstate)
 }
 
 Create()
-{
+{	
+	hide ribbon1;
+	hide ribbon2;
+	hide eng1;
+	hide eng2;
+	hide flare1;
+	hide sfx3;
+	hide sfx4;
 	call-script InitState();
 	start-script SmokeUnit();
 	gun_1 = base;
@@ -171,10 +179,10 @@ Killed(severity, corpsetype)
 		return (0);
 	}
 	corpsetype = 3;
-	explode base type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-	explode fuselage type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode base type BITMAPONLY | BITMAP3;
+	explode fuselage type BITMAPONLY | BITMAP5;
 	explode turret2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode turret1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-	explode eng1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-	explode eng2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;;
+	explode eng1 type SHATTER | BITMAP2;
+	explode eng2 type SHATTER | BITMAP2;
 }
