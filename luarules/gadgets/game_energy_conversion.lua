@@ -74,7 +74,7 @@ local spGetUnitDefID = Spring.GetUnitDefID
 local spAddUnitResource = Spring.AddUnitResource
 local spUseUnitResource = Spring.UseUnitResource
 local spSetUnitResourcing = Spring.SetUnitResourcing
-local spValidUnitID = Spring.ValidUnitID
+
 ----------------------------------------------------------------
 -- Functions
 ----------------------------------------------------------------
@@ -146,9 +146,9 @@ end
 
 local function UnitParalysed(uID, uDefID, uTeam)
 	local cDefs = convertCapacities[uDefID]
-    if cDefs and spValidUnitID(uID) then
+    if cDefs then
 		
-		--if not checkTeamList(uTeam, cDefs.e, uID) then Spring.Echo("In UnitParalysed"); return end --should not be needed now
+		if not checkTeamList(uTeam, cDefs.e, uID) then Spring.Echo("In UnitParalysed"); return end
 		
         if teamMMList[uTeam][cDefs.e][uID].built then
 			teamMMList[uTeam][cDefs.e][uID].emped = true
@@ -159,9 +159,9 @@ end
 
 local function UnitParalysisOver(uID, uDefID, uTeam)
 	local cDefs = convertCapacities[uDefID]
-    if cDefs and spValidUnitID(uID) then
+    if cDefs then
 	
-		--if not checkTeamList(uTeam, cDefs.e, uID) then Spring.Echo("In UnitParalysisOver"); return end --should not be needed now
+		if not checkTeamList(uTeam, cDefs.e, uID) then Spring.Echo("In UnitParalysisOver"); return end
 	
 		if teamMMList[uTeam][cDefs.e][uID].built then
 			teamMMList[uTeam][cDefs.e][uID].emped = false
@@ -325,6 +325,9 @@ end
 function gadget:UnitCreated(uID, uDefID, uTeam, builderID)
 	local cDefs = convertCapacities[uDefID]
     if cDefs then
+	
+		if not checkTeamList(uTeam, cDefs.e, false) then Spring.Echo("In UnitCreated"); return end
+	
 	    teamMMList[uTeam][cDefs.e][uID] = {capacity = 0, status = 0, built = false, emped = false}
     end
 end
@@ -332,37 +335,42 @@ end
 
 function gadget:UnitFinished(uID, uDefID, uTeam)
     local cDefs = convertCapacities[uDefID]
-    if cDefs and spValidUnitID(uID) then
-		if cDefs.c then
-		teamMMList[uTeam][cDefs.e][uID].capacity = cDefs.c
-			teamMMList[uTeam][cDefs.e][uID].built = true
-				if not teamMMList[uTeam][cDefs.e][uID].emped then
-				teamMMList[uTeam][cDefs.e][uID].status = 1
-				teamActiveMM[uTeam] = teamActiveMM[uTeam] + 1
-				spSetUnitCOBValue(uID,1024,1)
-				AdjustTeamCapacity(uTeam, cDefs.c, cDefs.e)
-			end
+    if cDefs then
+	
+		if not checkTeamList(uTeam, cDefs.e, uID) then Spring.Echo("In UnitFinished"); return end
+	
+        teamMMList[uTeam][cDefs.e][uID].capacity = cDefs.c
+		teamMMList[uTeam][cDefs.e][uID].built = true
+		if not teamMMList[uTeam][cDefs.e][uID].emped then
+			teamMMList[uTeam][cDefs.e][uID].status = 1
+			teamActiveMM[uTeam] = teamActiveMM[uTeam] + 1
+			spSetUnitCOBValue(uID,1024,1)
+			AdjustTeamCapacity(uTeam, cDefs.c, cDefs.e)
 		end
     end
 end
 
 
 function gadget:UnitDamaged(uID, uDefID, uTeam, damage, paralyzer)
-    local cDefs = convertCapacities[uDefID]
+	local cDefs = convertCapacities[uDefID]
+
     if paralyzer and cDefs then
-	local _, maxHealth, paralyzeDamage, _ ,_ = spGetUnitHealth(uID)
-	local relativeParDmg = paralyzeDamage -  maxHealth
-	if (relativeParDmg > 0) then 
-	    EmpedVector:push(uID, currentFrameStamp + ceil(relativeParDmg / (maxHealth / paralysisRelRate)))
-	end
+		local _, maxHealth, paralyzeDamage, _ ,_ = spGetUnitHealth(uID)
+		local relativeParDmg = paralyzeDamage -  maxHealth
+		if (relativeParDmg > 0) then 
+			EmpedVector:push(uID, currentFrameStamp + ceil(relativeParDmg / (maxHealth / paralysisRelRate)))
+		end
     end
 end
 
 
 function gadget:UnitDestroyed(uID, uDefID, uTeam)
     local cDefs = convertCapacities[uDefID]
-    if cDefs and uID and uTeam then
-         if teamMMList[uTeam][cDefs.e][uID].built then
+    if cDefs then
+		
+		if not checkTeamList(uTeam, cDefs.e, uID) then Spring.Echo("In UnitDestroyed"); return end
+		
+        if teamMMList[uTeam][cDefs.e][uID].built then
 			if (teamMMList[uTeam][cDefs.e][uID].status == 1) then
 				teamActiveMM[uTeam] = teamActiveMM[uTeam] - 1
 			end
@@ -378,7 +386,10 @@ end
 
 function gadget:UnitGiven(uID, uDefID, newTeam, oldTeam)
     local cDefs = convertCapacities[uDefID]
-    if cDefs and spValidUnitID(uID) then
+    if cDefs then
+		
+		if not checkTeamList(oldTeam, cDefs.e, uID) or not checkTeamList(newTeam, cDefs.e, false) then Spring.Echo("In UnitGiven"); return end
+		
         if teamMMList[oldTeam][cDefs.e][uID].built then
 			
 			if not teamMMList[oldTeam][cDefs.e][uID].emped then
