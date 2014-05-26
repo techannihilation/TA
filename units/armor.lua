@@ -34,6 +34,7 @@ local unitDef = {
 	firestandorders = 1,
 	footprintX = 4,
 	footprintZ = 4,
+	hoverAttack = true,
 	iconType = [[air]],
 	idleAutoHeal = 5,
 	idleTime = 3000,
