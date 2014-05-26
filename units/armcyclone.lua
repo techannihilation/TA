@@ -66,6 +66,9 @@ local unitDef = {
 	unitnumber = 8016,
 	upright = true,
 	workerTime = 0,
+	customparams = {
+		RequireTech = [[Advanced T3 Unit Research Centre]],
+	},
 	sounds = {
 		canceldestruct = [[cancel2]],
 		underattack = [[warning1]],

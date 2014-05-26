@@ -65,6 +65,9 @@ local unitDef = {
 	turnRate = 140,
 	unitname = [[corsbomb]],
 	workerTime = 0,
+	customparams = {
+		RequireTech = [[Advanced T3 Unit Research Centre]],
+	},
 	sounds = {
 		canceldestruct = [[cancel2]],
 		underattack = [[warning1]],
