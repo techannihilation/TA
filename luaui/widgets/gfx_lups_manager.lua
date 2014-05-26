@@ -331,8 +331,8 @@ local UnitEffects = {
     {class='Ribbon', options={width=1, size=8, piece="ribbon2"}},
  }, 
   [UnitDefNames["corsbomb"].id] = {
-    {class='Ribbon', options={width=1, size=8, piece="ribbon1"}},
-    {class='Ribbon', options={width=1, size=8, piece="ribbon2"}},
+    {class='Ribbon', options={width=1, size=12, piece="ribbon1"}},
+    {class='Ribbon', options={width=1, size=12, piece="ribbon2"}},
  }, 
  [UnitDefNames["abuilderlvl3"].id] = {
     {class='AirJet',options={color={1,1,1}, width=12, length=15, piece="thrust", onActive=true}},
