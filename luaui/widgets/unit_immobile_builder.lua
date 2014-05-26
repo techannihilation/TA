@@ -108,7 +108,7 @@ function widget:Initialize()
 	end
 	for _,unitID in ipairs(spGetTeamUnits(spGetMyTeamID())) do
 		local unitDefID = spGetUnitDefID(unitID)
-		if IsImmobileBuilder(UnitDefs[unitDefID]) and not morphednanos[unitDefID] then
+		if IsImmobileBuilder(UnitDefs[unitDefID]) then
 			spGiveOrderToUnit(unitID, CMD_MOVE_STATE, { 1 }, {})
 			SetupUnit(unitID)
 		end
@@ -120,8 +120,10 @@ function widget:UnitCreated(unitID, unitDefID, unitTeam)
 	if unitTeam ~= spGetMyTeamID() then
 		return
 	end
-	if IsImmobileBuilder(UnitDefs[unitDefID]) and not morphednanos[unitDefID] then
+	if IsImmobileBuilder(UnitDefs[unitDefID]) then
+		if not morphednanos[unitDefID] then
 		spGiveOrderToUnit(unitID, CMD_PASSIVE, { 1 }, {})
+		end
 		spGiveOrderToUnit(unitID, CMD_MOVE_STATE, { 1 }, {})
 		SetupUnit(unitID)
 	end
