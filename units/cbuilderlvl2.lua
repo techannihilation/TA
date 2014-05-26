@@ -7,7 +7,7 @@ local unitName = "cbuilderlvl2"
 
 local unitDef = {
 	acceleration = 0.0266,
-	brakeRate = 1.5295,
+	brakeRate = 3.5295,
 	buildCostEnergy = 3358,
 	buildCostMetal = 654,
 	buildDistance = 100,
@@ -31,6 +31,7 @@ local unitDef = {
 	explodeAs = [[BIG_UNITEX]],
 	footprintX = 4,
 	footprintZ = 4,
+	hoverattack = true, 
 	iconType = [[air]],
 	idleAutoHeal = 5,
 	idleTime = 1800,

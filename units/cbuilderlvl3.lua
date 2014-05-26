@@ -6,9 +6,9 @@ local unitName = "cbuilderlvl3"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.02527,
+	acceleration = 0.0133,
 	airHoverFactor = 0,
-	brakeRate = 1.9305,
+	brakeRate = 3.5,
 	buildCostEnergy = 584031.1675,
 	buildCostMetal = 24061.53,
 	buildDistance = 190,
@@ -37,6 +37,7 @@ local unitDef = {
 	explodeAs = [[SHIPBLAST]],
 	footprintX = 3,
 	footprintZ = 5,
+	hoverattack = true, 
 	iconType = [[air]],
 	idleAutoHeal = 5,
 	idleTime = 1800,
