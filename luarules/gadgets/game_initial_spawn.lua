@@ -472,10 +472,11 @@ function gadget:ViewResize()
   vsx,vsy = Spring.GetViewGeometry()
 end
 
-local readyX = vsx * 0.44
-local readyY = vsy * 0.60
 local readyH = 60
 local readyW = 160
+local readyX = vsx * 0.50 - (readyW/2)
+local readyY = vsy * 0.73 - (readyH/2)
+
 
 local pStates = {} --local copy of playerStates table
 
