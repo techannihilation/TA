@@ -63,11 +63,16 @@ end
 --unsynced
 else
 
+local myPlayerID = Spring.GetMyPlayerID()
 local _,_,spec,_ = Spring.GetPlayerInfo(myPlayerID) 
 local vsx,vsy = Spring.GetViewGeometry()
 local GateInfo
 local GateInfo2
+
 local tackyfont = gl.LoadFont("luarules/fonts/LCD2U___.TTF",72, 1.9, 40)
+local msg = ""
+local colorString = "\255\200\001\001"
+local colorString2 = "\255\100\001\001"
 
 
 function gadget:DrawScreen()
@@ -87,7 +92,7 @@ function gadget:DrawScreen()
 	end
 	
 	if Spring.GetGameFrame() > 140 and GateInfo2 then
-		gl.CallList(GateInfo2)
+		--gl.CallList(GateInfo2)
 	end
 	if Spring.GetGameFrame() < 130 and GateInfo then --use frame 10
 		gl.CallList(GateInfo)
@@ -105,18 +110,22 @@ end
 
 function gadget:Initialize()
 	local textSize = 72
-	local dx = vsx/2
-	local dy = vsy/2
+	local dx = vsx*0.5
+	local dy = vsy*0.58
 	GateInfo2 = gl.CreateList(function()
+	
 		-- First message
+		msg = "Teleport Complete"
 		tackyfont:Begin()
-		tackyfont:Print("Teleport Complete", dx, dy, 72,'cbs')
+		tackyfont:Print(colorString2 .. msg, dx, dy, 72,'cb')
 		tackyfont:End()
 	end)
 	GateInfo = gl.CreateList(function()
+	
 		-- Second Message
+		msg = "Teleport Activated"
 		tackyfont:Begin()
-		tackyfont:Print("Teleport Activated", dx, dy, 72,'cbs')
+		tackyfont:Print(colorString .. msg, dx, dy, 72,'cb')
 		tackyfont:End()
 	end)
 end

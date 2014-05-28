@@ -37,24 +37,30 @@ local glText           = gl.Text
 local glTranslate      = gl.Translate
 local spGetGameSeconds = Spring.GetGameSeconds
 
+local message = ""
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
-include("colors.h.lua")
 
-local floor = math.floor
+local tackyfont = gl.LoadFont("luaui/fonts/LCD2U___.TTF",72, 1.9, 40)
 
-
-local font = "LuaUI/Fonts/FreeSansBold_30"
-local fh = fontHandler.UseFont(font)
 
 local vsx, vsy = widgetHandler:GetViewSizes()
 function widget:ViewResize(viewSizeX, viewSizeY)
-  vsx = viewSizeX
-  vsy = viewSizeY
+  vsx = viewSizeX/2
+  vsy = viewSizeY/2
 end
 
+function widget:Initialize()
+  if Spring.GetModOptions().deathmode=="com" then
+    message = "Kill all enemy Commanders"
+  elseif Spring.GetModOptions().deathmode=="killall" then
+    message = "Kill all enemy units"
+  elseif Spring.GetModOptions().deathmode=="neverend" then
+    widgetHandler:RemoveWidget()
+  end
+end
 
 function widget:DrawScreen()
   if (spGetGameSeconds() > 1) then
@@ -62,37 +68,14 @@ function widget:DrawScreen()
   end
   
   local timer = widgetHandler:GetHourTimer()
-  local colorStr = WhiteStr
-  local message
-	
-	
- if (Game.gameMode == 1) then
-	message = "Commander Ends"
-  elseif (Game.gameMode == 2) then
-	message = "Lineage"
-  else
-	message = "Commander Continues"
-	if Spring.GetModOptions().deathmode=="com" then
-		message = "Kill all enemy Commanders"
-	elseif Spring.GetModOptions().deathmode=="comcontrol" then
-		message = "Lose your Commander, Lose Control!"
-	elseif Spring.GetModOptions().deathmode=="killall" then
-		message = "Kill all Units" -- depends on mod
-	end
-  end
-		
+  local colorString = "\255\150\001\001"
 
-  local msg = colorStr .. string.format("%s %s", "Gametype: ",  message)
-  glPushMatrix()
-  glTranslate((vsx * 0.5), (vsy * 0.5) - 50, 0)
-  glScale(1.5, 1.5, 1)
---  glRotate(30 * math.sin(math.pi * 0.5 * timer), 0, 0, 1)
-  if (fh) then
-    fh = fontHandler.UseFont(font)
-    fontHandler.DrawCentered(msg)
-  else
-    glText(msg, 0, 0, 24, "oc")
-  end
-  glPopMatrix()
+  local msg = colorString .. string.format("%s%s", "Gametype: ",  message)
+    tackyfont:Begin()
+    tackyfont:Print(msg, vsx , vsy , 48, "oc")
+    tackyfont:End()
 end
 
+function widget:GameOver()
+  widgetHandler:RemoveWidget()
+end

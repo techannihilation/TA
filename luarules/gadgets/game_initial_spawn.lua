@@ -467,6 +467,8 @@ local SYSTEM_ID = -1 -- see LuaUnsyncedRead::GetPlayerTraffic, playerID to get h
 local gameStarting
 local timer = 0
 
+local tackyfont = gl.LoadFont("luarules/fonts/LCD2U___.TTF",72, 1.9, 40)
+
 local vsx, vsy = Spring.GetViewGeometry()
 function gadget:ViewResize()
   vsx,vsy = Spring.GetViewGeometry()
@@ -586,23 +588,23 @@ function gadget:DrawScreen()
 		-- ready text
 		local x,y = Spring.GetMouseState()
 		if x > readyX and x < readyX+readyW and y > readyY and y < readyY+readyH then
-			colorString = "\255\255\230\0"
+			colorString = "\255\250\001\001"
 		else
-			colorString = "\255\255\255\255"
+			colorString = "\255\200\001\001"
 		end
-		gl.Text(colorString .. "Ready", readyX+20, readyY+18, 40, "o")
+		tackyfont:Print(colorString .. "Ready", readyX+8, readyY+9, 52, "o")
 		gl.Color(1,1,1,1)
 	end
 	
 	if gameStarting then
 		timer = timer + Spring.GetLastUpdateSeconds()
 		if timer % 0.75 <= 0.375 then
-			colorString = "\255\200\200\20"
+			colorString = "\255\250\001\001"
 		else
-			colorString = "\255\255\255\255"
+			colorString = "\255\200\001\001"
 		end
 		local text = colorString .. "Game starting in " .. math.max(1,3-math.floor(timer)) .. " seconds..."
-		gl.Text(text, vsx*0.5 - gl.GetTextWidth(text)/2*20, vsy*0.71, 20, "o")
+		tackyfont:Print(text, vsx*0.5 - gl.GetTextWidth(text)/2*48, vsy*0.71, 48, "o")
 	end
 	
 	--remove if after gamestart
