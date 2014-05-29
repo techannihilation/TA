@@ -74,6 +74,8 @@ local spGetUnitDefID = Spring.GetUnitDefID
 local spAddUnitResource = Spring.AddUnitResource
 local spUseUnitResource = Spring.UseUnitResource
 local spSetUnitResourcing = Spring.SetUnitResourcing
+local spValidUnitID = Spring.ValidUnitID
+
 
 ----------------------------------------------------------------
 -- Functions
@@ -335,7 +337,7 @@ end
 
 function gadget:UnitFinished(uID, uDefID, uTeam)
     local cDefs = convertCapacities[uDefID]
-    if cDefs then
+    if cDefs and spValidUnitID(uID) then
 	
 		if not checkTeamList(uTeam, cDefs.e, uID) then Spring.Echo("In UnitFinished"); return end
 	
@@ -366,7 +368,7 @@ end
 
 function gadget:UnitDestroyed(uID, uDefID, uTeam)
     local cDefs = convertCapacities[uDefID]
-    if cDefs then
+    if cDefs and spValidUnitID(uID) then
 		
 		if not checkTeamList(uTeam, cDefs.e, uID) then Spring.Echo("In UnitDestroyed"); return end
 		
