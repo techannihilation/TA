@@ -98,6 +98,7 @@ local unitDef = {
 local weaponDefs = {
 	ORION_BOMB = {
 		areaOfEffect = 150,
+		bounceExplosionGenerator = [[custom:dust_cloud]],
 		bouncerebound = 0.25,
 		bounceslip = 0.7,
 		burst = 22,
