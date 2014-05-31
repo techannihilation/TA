@@ -43,7 +43,7 @@ local message = ""
 --------------------------------------------------------------------------------
 
 
-local tackyfont = gl.LoadFont("luaui/fonts/LCD2U___.TTF",72, 1.9, 40)
+local tackyfont = gl.LoadFont("luaui/fonts/instruction_bold.ttf",72, 1.9, 40)
 
 
 local vsx, vsy = widgetHandler:GetViewSizes()
@@ -63,16 +63,16 @@ function widget:Initialize()
 end
 
 function widget:DrawScreen()
-  if (spGetGameSeconds() > 1) then
+  if (spGetGameSeconds() >= 1) then
     widgetHandler:RemoveWidget()
   end
   
   local timer = widgetHandler:GetHourTimer()
-  local colorString = "\255\150\001\001"
+  colorString = "\255\255\255\255"
 
   local msg = colorString .. string.format("%s%s", "Gametype: ",  message)
     tackyfont:Begin()
-    tackyfont:Print(msg, vsx , vsy , 48, "oc")
+    tackyfont:Print(msg, vsx , vsy , 46, "oc")
     tackyfont:End()
 end
 

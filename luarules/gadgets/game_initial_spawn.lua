@@ -468,6 +468,7 @@ local gameStarting
 local timer = 0
 
 local tackyfont = gl.LoadFont("luarules/fonts/LCD2U___.TTF",72, 1.9, 40)
+local monofont = gl.LoadFont("luaui/fonts/instruction.ttf",72, 1.9, 40)
 
 local vsx, vsy = Spring.GetViewGeometry()
 function gadget:ViewResize()
@@ -479,6 +480,9 @@ local readyW = 160
 local readyX = vsx * 0.50 - (readyW/2)
 local readyY = vsy * 0.73 - (readyH/2)
 
+local imgTexCoordX = 1  --image texture coordinate X -- textures image's dimension is a power of 2 (i use 0.625 cause my image has a width of 256, but region to use is only 160 pixel -> 160 / 256 = 0.625 )
+local imgTexCoordY = 1	--image texture coordinate Y -- enter values other than 1.0 to use just a region of the texture image
+local botton = "luarules/images/glossy_button_blank_black_rectangle.png"
 
 local pStates = {} --local copy of playerStates table
 
@@ -488,18 +492,25 @@ function gadget:Initialize()
 	
 	-- create ready button
 	readyButton = gl.CreateList(function()
-		-- draws background rectangle
-		gl.Color(0.1,0.1,.45,0.18)                              
-		gl.Rect(readyX,readyY+readyH, readyX+readyW, readyY)
-	
-		-- draws black border
+		--draw button
+		gl.Color(1,1,1,0.6)
+		gl.Texture( ":c:" .. botton )
+		gl.PushMatrix()
+		gl.TexRect( readyX , readyY , readyX + readyW , readyY + readyH , 0.0, 0.0, imgTexCoordX, imgTexCoordY )
+		gl.PopMatrix()
+
+		gl.Texture(false)
+		
+		
 		gl.Color(0,0,0,1)
-		gl.BeginEnd(GL.LINE_LOOP, function()
-			gl.Vertex(readyX,readyY)
-			gl.Vertex(readyX,readyY+readyH)
-			gl.Vertex(readyX+readyW,readyY+readyH)
-			gl.Vertex(readyX+readyW,readyY)
-		end)
+		--gl.BeginEnd(GL.LINE_LOOP, function()
+		--	gl.Vertex(readyX,readyY)
+		--	gl.Vertex(readyX,readyY+readyH)
+		--	gl.Vertex(readyX+readyW,readyY+readyH)
+		--	gl.Vertex(readyX+readyW,readyY)
+		--end)
+		
+		
 		gl.Color(1,1,1,1)
 	end)
 end
@@ -588,23 +599,23 @@ function gadget:DrawScreen()
 		-- ready text
 		local x,y = Spring.GetMouseState()
 		if x > readyX and x < readyX+readyW and y > readyY and y < readyY+readyH then
-			colorString = "\255\250\001\001"
+			colorString = "\255\127\127\127"
 		else
-			colorString = "\255\200\001\001"
+			colorString = "\255\001\001\001"
 		end
-		tackyfont:Print(colorString .. "Ready", readyX+8, readyY+9, 52, "o")
+		monofont:Print(colorString .. "Ready", readyX+8, readyY+12, 52, "o")
 		gl.Color(1,1,1,1)
 	end
 	
 	if gameStarting then
 		timer = timer + Spring.GetLastUpdateSeconds()
 		if timer % 0.75 <= 0.375 then
-			colorString = "\255\250\001\001"
+			colorString = "\255\255\255\255"
 		else
-			colorString = "\255\200\001\001"
+			colorString = "\255\068\107\169"
 		end
 		local text = colorString .. "Game starting in " .. math.max(1,3-math.floor(timer)) .. " seconds..."
-		tackyfont:Print(text, vsx*0.5 - gl.GetTextWidth(text)/2*48, vsy*0.71, 48, "o")
+		monofont:Print(text, vsx*0.5 - gl.GetTextWidth(text)/2*48, vsy*0.71, 48, "o")
 	end
 	
 	--remove if after gamestart

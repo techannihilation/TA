@@ -71,7 +71,7 @@ local GateInfo2
 
 local tackyfont = gl.LoadFont("luarules/fonts/LCD2U___.TTF",72, 1.9, 40)
 local msg = ""
-local colorString = "\255\200\001\001"
+local colorString = "\255\255\255\255"
 local colorString2 = "\255\100\001\001"
 
 
