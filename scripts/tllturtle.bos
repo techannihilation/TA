@@ -30,24 +30,24 @@ walk()
 		move RLFoot to y-axis [0.400000] now;
 		move RLFoot to z-axis [-0.700000] now;
 		move RLFoot to z-axis [-1.300000] speed [4.000000];
-		move RRFoot to x-axis [0.900000] speed [4.895604];
+		move RRFoot to x-axis [0.900000] speed [4.895599];
 		move RRFoot to y-axis [0.400000] speed [2.175824];
 		move RRFoot to z-axis [-1.400000] now;
 		move RRFoot to z-axis [-1.700000] speed [2.100000];
-		move body to y-axis [1.300000] speed [7.071429];
-		move body to z-axis [-0.300000] speed [1.631868];
-		move rightchunk to x-axis [0.600000] speed [3.263736];
-		move rightchunk to y-axis [1.300000] speed [7.071429];
-		move rightchunk to z-axis [-0.300000] speed [1.631868];
-		move leftchunk to x-axis [-0.600000] speed [3.263736];
-		move leftchunk to y-axis [1.300000] speed [7.071429];
-		move leftchunk to z-axis [-0.300000] speed [1.631868];
+		move body to y-axis [1.300000] speed [7.071423];
+		move body to z-axis [-0.300000] speed [1.631866];
+		move rightchunk to x-axis [0.600000] speed [3.263733];
+		move rightchunk to y-axis [1.300000] speed [7.071423];
+		move rightchunk to z-axis [-0.300000] speed [1.631866];
+		move leftchunk to x-axis [-0.600000] speed [3.263733];
+		move leftchunk to y-axis [1.300000] speed [7.071423];
+		move leftchunk to z-axis [-0.300000] speed [1.631866];
 		turn hips to y-axis <-1.500000> now;
-		turn hips to y-axis <3.796703> speed <32.395604>;
-		turn FRFoot to x-axis <-17.895604> now;
-		turn FRFoot to x-axis <-14.796703> speed <18.500000>;
+		turn hips to y-axis <3.791209> speed <32.390110>;
+		turn FRFoot to x-axis <-17.890110> now;
+		turn FRFoot to x-axis <-14.791209> speed <18.500000>;
 		turn rightchunk to x-axis <-8.000000> now;
-		turn rightchunk to x-axis <-11.395604> speed <20.796703>;
+		turn rightchunk to x-axis <-11.390110> speed <20.791209>;
 		sleep 164;
 	}
 	if( bMoving )
@@ -56,13 +56,13 @@ walk()
 		move FRFoot to z-axis [3.500000] speed [0.300000];
 		move RLFoot to z-axis [-1.600000] speed [1.800000];
 		move RRFoot to z-axis [-1.600000] speed [0.600000];
-		turn hips to y-axis <2.296703> speed <9.197802>;
-		turn FLFoot to x-axis <-12.895604> speed <78.296703>;
-		turn FRFoot to x-axis <0.796703> speed <94.395604>;
-		turn RRFoot to x-axis <9.895604> speed <59.895604>;
+		turn hips to y-axis <2.291209> speed <9.192308>;
+		turn FLFoot to x-axis <-12.890110> speed <78.291209>;
+		turn FRFoot to x-axis <0.791209> speed <94.390110>;
+		turn RRFoot to x-axis <9.890110> speed <59.890110>;
 		turn body to x-axis <5.500000> speed <57.500000>;
-		turn rightchunk to x-axis <-0.395604> speed <66.796703>;
-		turn leftchunk to x-axis <-5.697802> speed <34.500000>;
+		turn rightchunk to x-axis <-0.390110> speed <66.791209>;
+		turn leftchunk to x-axis <-5.692308> speed <34.500000>;
 		sleep 165;
 	}
 	if( bMoving )
@@ -71,12 +71,12 @@ walk()
 		move FRFoot to z-axis [2.500000] speed [5.700000];
 		move RLFoot to z-axis [-2.100000] speed [2.700000];
 		move RRFoot to z-axis [-1.600000] speed [0.300000];
-		turn hips to y-axis <-1.895604> speed <25.197802>;
-		turn FLFoot to x-axis <-30.395604> speed <105.296703>;
-		turn RRFoot to x-axis <15.598901> speed <34.296703>;
-		turn body to x-axis <8.395604> speed <29.697802>;
-		turn rightchunk to x-axis <8.000000> speed <50.296703>;
-		turn leftchunk to x-axis <-11.395604> speed <34.296703>;
+		turn hips to y-axis <-1.890110> speed <25.192308>;
+		turn FLFoot to x-axis <-30.390110> speed <105.291209>;
+		turn RRFoot to x-axis <15.593407> speed <34.291209>;
+		turn body to x-axis <8.390110> speed <29.692308>;
+		turn rightchunk to x-axis <8.000000> speed <50.291209>;
+		turn leftchunk to x-axis <-11.390110> speed <34.291209>;
 		sleep 166;
 	}
 	if( bMoving )
@@ -84,12 +84,12 @@ walk()
 		move FRFoot to z-axis [2.300000] speed [1.200000];
 		move RLFoot to z-axis [-2.500000] speed [2.400000];
 		move RRFoot to z-axis [-0.600000] speed [6.100000];
-		turn hips to y-axis <-2.296703> speed <2.296703>;
-		turn FLFoot to x-axis <-19.000000> speed <69.098901>;
-		turn RRFoot to x-axis <19.697802> speed <25.296703>;
-		turn body to x-axis <2.296703> speed <73.697802>;
-		turn rightchunk to x-axis <1.895604> speed <36.796703>;
-		turn leftchunk to x-axis <-6.796703> speed <27.598901>;
+		turn hips to y-axis <-2.291209> speed <2.291209>;
+		turn FLFoot to x-axis <-19.000000> speed <69.093407>;
+		turn RRFoot to x-axis <19.692308> speed <25.291209>;
+		turn body to x-axis <2.291209> speed <73.692308>;
+		turn rightchunk to x-axis <1.890110> speed <36.791209>;
+		turn leftchunk to x-axis <-6.791209> speed <27.593407>;
 		sleep 165;
 	}
 	if( bMoving )
@@ -97,11 +97,11 @@ walk()
 		move FRFoot to z-axis [1.700000] speed [3.600000];
 		move RLFoot to z-axis [-3.200000] speed [4.500000];
 		move RRFoot to z-axis [0.600000] speed [7.200000];
-		turn hips to y-axis <-1.500000> speed <4.598901>;
-		turn FLFoot to x-axis <-0.796703> speed <109.796703>;
-		turn RRFoot to x-axis <7.598901> speed <73.197802>;
-		turn body to x-axis <0.000000> speed <13.697802>;
-		turn leftchunk to x-axis <0.000000> speed <41.197802>;
+		turn hips to y-axis <-1.500000> speed <4.593407>;
+		turn FLFoot to x-axis <-0.791209> speed <109.791209>;
+		turn RRFoot to x-axis <7.593407> speed <73.192308>;
+		turn body to x-axis <0.000000> speed <13.692308>;
+		turn leftchunk to x-axis <0.000000> speed <41.192308>;
 		sleep 166;
 	}
 	if( bMoving )
@@ -109,12 +109,12 @@ walk()
 		move FLFoot to z-axis [2.000000] speed [5.200000];
 		move FRFoot to z-axis [0.700000] speed [6.400000];
 		move RRFoot to z-axis [0.300000] speed [2.100000];
-		turn hips to y-axis <0.000000> speed <9.296703>;
-		turn FLFoot to x-axis <0.000000> speed <4.598901>;
-		turn RLFoot to x-axis <22.395604> speed <136.598901>;
-		turn RRFoot to x-axis <0.796703> speed <41.697802>;
-		turn body to x-axis <-2.296703> speed <13.895604>;
-		turn leftchunk to x-axis <9.098901> speed <55.598901>;
+		turn hips to y-axis <0.000000> speed <9.291209>;
+		turn FLFoot to x-axis <0.000000> speed <4.593407>;
+		turn RLFoot to x-axis <22.390110> speed <136.593407>;
+		turn RRFoot to x-axis <0.791209> speed <41.692308>;
+		turn body to x-axis <-2.291209> speed <13.890110>;
+		turn leftchunk to x-axis <9.093407> speed <55.593407>;
 		sleep 164;
 	}
 	if( bMoving )
@@ -123,10 +123,10 @@ walk()
 		move FRFoot to z-axis [0.100000] speed [3.600000];
 		move RLFoot to z-axis [-1.800000] speed [8.700000];
 		move RRFoot to z-axis [-0.200000] speed [2.700000];
-		turn hips to y-axis <1.098901> speed <6.895604>;
-		turn RLFoot to x-axis <28.895604> speed <38.895604>;
-		turn body to x-axis <-1.098901> speed <6.895604>;
-		turn leftchunk to x-axis <10.296703> speed <6.895604>;
+		turn hips to y-axis <1.093407> speed <6.890110>;
+		turn RLFoot to x-axis <28.890110> speed <38.890110>;
+		turn body to x-axis <-1.093407> speed <6.890110>;
+		turn leftchunk to x-axis <10.291209> speed <6.890110>;
 		sleep 166;
 	}
 	if( bMoving )
@@ -135,10 +135,10 @@ walk()
 		move FRFoot to z-axis [-0.300000] speed [2.100000];
 		move RLFoot to z-axis [-0.500000] speed [7.600000];
 		move RRFoot to z-axis [-0.700000] speed [3.300000];
-		turn hips to y-axis <-1.500000> speed <16.098901>;
-		turn RLFoot to x-axis <10.296703> speed <112.796703>;
-		turn body to x-axis <0.000000> speed <6.895604>;
-		turn leftchunk to x-axis <2.697802> speed <46.000000>;
+		turn hips to y-axis <-1.500000> speed <16.093407>;
+		turn RLFoot to x-axis <10.291209> speed <112.791209>;
+		turn body to x-axis <0.000000> speed <6.890110>;
+		turn leftchunk to x-axis <2.692308> speed <46.000000>;
 		sleep 165;
 	}
 	if( bMoving )
@@ -147,11 +147,11 @@ walk()
 		move FRFoot to z-axis [0.000000] speed [1.800000];
 		move RLFoot to z-axis [0.400000] speed [5.400000];
 		move RRFoot to z-axis [-0.900000] speed [1.200000];
-		turn hips to y-axis <-1.895604> speed <2.296703>;
-		turn FRFoot to x-axis <-10.296703> speed <66.395604>;
-		turn RLFoot to x-axis <-0.395604> speed <64.098901>;
-		turn rightchunk to x-axis <-1.098901> speed <18.296703>;
-		turn leftchunk to x-axis <-2.697802> speed <32.000000>;
+		turn hips to y-axis <-1.890110> speed <2.291209>;
+		turn FRFoot to x-axis <-10.291209> speed <66.390110>;
+		turn RLFoot to x-axis <-0.390110> speed <64.093407>;
+		turn rightchunk to x-axis <-1.093407> speed <18.291209>;
+		turn leftchunk to x-axis <-2.692308> speed <32.000000>;
 		sleep 166;
 	}
 	if( bMoving )
@@ -160,9 +160,9 @@ walk()
 		move FRFoot to z-axis [1.200000] speed [7.300000];
 		move RLFoot to z-axis [-0.400000] speed [4.800000];
 		move RRFoot to z-axis [-1.400000] speed [2.700000];
-		turn hips to y-axis <-2.296703> speed <2.296703>;
-		turn FRFoot to x-axis <-12.500000> speed <13.796703>;
-		turn rightchunk to x-axis <-4.197802> speed <18.395604>;
+		turn hips to y-axis <-2.291209> speed <2.291209>;
+		turn FRFoot to x-axis <-12.500000> speed <13.791209>;
+		turn rightchunk to x-axis <-4.192308> speed <18.390110>;
 		sleep 165;
 	}
 	sleep 166;
@@ -172,19 +172,19 @@ activatescr()
 {
 	if( TRUE )
 	{
-		turn doors to y-axis <-90.000000> speed <80.000000>;
+		turn doors to y-axis <-90.000000> speed <480.000000>;
 		wait-for-turn doors around y-axis;
-		move door1 to z-axis [2.500000] speed [15.000000];
-		move door2 to z-axis [-2.500000] speed [15.000000];
+		move door1 to z-axis [2.500000] speed [90.000000];
+		move door2 to z-axis [-2.500000] speed [90.000000];
 		wait-for-move door1 along z-axis;
 	}
 	if( TRUE )
 	{
-		turn gun to x-axis <-90.000000> speed <80.000000>;
-		move turret to z-axis [5.000000] speed [6.000000];
+		turn gun to x-axis <-90.000000> speed <480.000000>;
+		move turret to z-axis [5.000000] speed [90.000000];
 		wait-for-move turret along z-axis;
 	}
-	sleep 170;
+	sleep 17;
 }
 
 deactivatescr()
@@ -351,10 +351,6 @@ AimPrimary(heading, pitch)
 	start-script RequestState(0);
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	while( !Static_Var_1 )
-	{
-		sleep 200;
-	}
 	start-script RestoreAfterDelay();
 	return (1);
 }
@@ -366,7 +362,6 @@ FirePrimary()
 	sleep 150;
 	hide flare;
 	move gun to z-axis [0.000000] speed [3.000000];
-	sleep 3000;
 }
 
 QueryPrimary(piecenum)
