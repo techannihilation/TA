@@ -102,10 +102,10 @@ local options={
     },
         {
 		key    = "mo_dynamic",
-		name   = "Enables Dynamic Lighting",
+		name   = "Dynamic Lighting",
 		desc   = "Toggles Dynamic lighing on or off\nAutoHost Usage :- mo_dynamic",
 		type   = "bool",
-		def    = false,
+		def    = true,
 		section= "ta_options",
     },
     {
@@ -168,7 +168,7 @@ local options={
 	{
 		key    = "mo_no_close_spawns",
 		name   = "No close spawns",
-		desc   = "Prevents players startpoints being placed close together (on large enough maps)",
+		desc   = "Prevents players startpoints being placed close together (on large enough maps)\nAutoHost Usage :- mo_no_close_spawns",
 		type   = "bool",
 		def    = true,
 		section= "ta_options",

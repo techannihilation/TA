@@ -212,7 +212,7 @@ else
 	  
 		local maxMapLights = Spring.GetConfigInt("MaxDynamicMapLights") or 0
 		local maxMdlLights = Spring.GetConfigInt("MaxDynamicModelLights") or 0
-		local enabled = tonumber(Spring.GetModOptions().mo_dynamic) or 0
+		local enabled = tonumber(Spring.GetModOptions().mo_dynamic) or 1
 
 		if (maxMapLights <= 0 and maxMdlLights <= 0 or enabled == 0) then
 			Spring.Echo("[" .. (self:GetInfo()).name .. "] client has disabled dynamic lighting")
