@@ -747,7 +747,24 @@ end
 local function CreateVisibleFxList()
   local removeFX = {}
   local removeCnt = 1
-
+  
+  local cx, cy, cz = Spring.GetCameraPosition()
+  local smoothheight = Spring.GetSmoothMeshHeight(cx,cz)
+  local tooHigh = ((cy-smoothheight)^2 >= 27000000) 
+  -- if the camera is this high up, don't render lups anymore
+  if tooHigh then
+    for layerID,layer in pairs(RenderSequence) do
+      for partClass,Units in pairs(layer) do
+        for unitID,UnitEffects in pairs(Units) do
+          for i=1,#UnitEffects do
+            UnitEffects[i].visible = false
+          end
+	    end
+	  end
+    end
+    return
+  end
+  
   for layerID,layer in pairs(RenderSequence) do
     for partClass,Units in pairs(layer) do
       for unitID,UnitEffects in pairs(Units) do
@@ -761,6 +778,8 @@ local function CreateVisibleFxList()
           local maxVisibleRadius = -1
           local minNotVisibleRadius = 1e9
           
+          local isIcon = Spring.IsUnitIcon(unitID)
+          
           --// check effects
           for i=1,#UnitEffects do
             local fx = UnitEffects[i]
@@ -773,7 +792,7 @@ local function CreateVisibleFxList()
               underConstruction = spGetUnitRulesParam(unitID, "under_construction")
             end
 
-            if ((not fx.onActive)or(unitActive)) and (underConstruction ~= 1) then
+            if ((not fx.onActive)or(unitActive)) and (underConstruction ~= 1) and (not isIcon) then
               if (fx.Visible) then
                 fx.visible = fx:Visible()
               elseif (z) then
