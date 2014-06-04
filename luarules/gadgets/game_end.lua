@@ -253,7 +253,7 @@ function CheckPlayer(playerID)
 	teamInfo.hasLeader = select(2,GetTeamInfo(teamID)) >= 0
 	if not teamInfo.hasLeader and not teamInfo.dead then
 		KillTeam(teamID)
-		Script.LuaRules.TeamDeathMessage(teamID)
+		--Script.LuaRules.TeamDeathMessage(teamID)
 	end
 	if not teamInfo.isAI then
 		--if team isn't AI controlled, then we need to check if we have attached players
@@ -282,7 +282,7 @@ function gadget:TeamDied(teamID)
 	allyTeamInfo.teams[teamID].dead = true
 	allyTeamInfos[allyTeamID] = allyTeamInfo
 	UpdateAllyTeamIsDead(allyTeamID)
-	Script.LuaRules.TeamDeathMessage(teamID)
+	--Script.LuaRules.TeamDeathMessage(teamID)
 end
 
 
@@ -310,7 +310,7 @@ function gadget:UnitDestroyed(unitID, unitDefID, unitTeamID)
 	end
 	
 	if allyTeamUnitCount == 0 then
-		Script.LuaRules.AllyTeamDeathMessage(allyTeamID) 
+		--Script.LuaRules.AllyTeamDeathMessage(allyTeamID) 
 		for teamID in pairs(allyTeamInfo.teams) do
 			KillTeam(teamID)
 		end
