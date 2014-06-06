@@ -187,9 +187,18 @@ local x1, y1 = 0, 0
 local x2, y2 = Game.mapSizeX, Game.mapSizeZ
 local x, y, z, dx, dz, nx, ny, nz, ang
 local a, f, h = {}, {}, {}
+function widget:DrawWorldPreUnit()
 
-local projDrawList
-local function MakeList()
+	if frame < spGetGameFrame() then
+		frame = spGetGameFrame()
+		plist = spGetVisibleProjectiles(-1)
+	end
+
+	if #plist == 0 then
+		--dont do anything if there are no projectiles in range of view
+		return
+	end
+
 	--enabling both test and mask means they wont be drawn over cliffs when obscured
 	--but also means that they will flicker cause of z-fighting when scrolling around...
 	--and ESPECIALLY when overlapping
@@ -223,15 +232,15 @@ local function MakeList()
 					tx,ty,tz = spGetProjectileVelocity(pID)
 					if tx then
 						local dist = sqrt(tx*tx + tz*tz) -- distance from beam start till beam end
-						bx = x+tx;  bz = z+tz
+						bx, bz = x+tx, z+tz
 						local endSeg = max(4, floor(dist/(100-min(50,abs(spGetGroundHeight(bx,bz)-spGetGroundHeight(x+tx*0.5,z+tz*0.5))))))	-- number of segments used for beam neon, min 4 segments
-						stpX = tx/endSeg;  stpY = ty/endSeg;  stpZ = tz/endSeg
-						r=lightparams[1]; g=lightparams[2]; b=lightparams[3]; al=lightparams[4]; w=lightparams[6]
+						stpX, stpY, stpZ = tx/endSeg, ty/endSeg, tz/endSeg
+						r,g,b,al,w = lightparams[1], lightparams[2], lightparams[3], lightparams[4], lightparams[6]
 						nf = noise[floor(x+z+pID)%10+1]
 						glPushMatrix()
 						glTranslate(x, 0.0, z)
 						glRotate(atan2(tx,tz)*DegToRad, 0.0, 1.0, 0.0)	-- align light with beam direction
-						px=bx; py=y+ty; pz=bz; bx=bx+stpX; bz=bz+stpZ
+						bx,bz, px,py,pz = bx+stpX, bz+stpZ, bx, y+ty, bz
 						for i=0, endSeg do	-- calculate the size factor, alpha and terrain height of beam neon segments
 							if py>0.0 then
 								h[i] = max(0.0,spGetGroundHeight(px,pz))	-- above water beam should show on water surface
@@ -251,15 +260,14 @@ local function MakeList()
 									f[i] = max(12.0, (1.1-fa)*w)
 								end
 							else
-								a[i]=0.0;  f[i]=0.0;  h[i]=0.0
+								a[i], f[i], h[i] = 0.0, 0.0, 0.0
 							end
-							bx=px; bz=pz; px=px-stpX; py=py-stpY; pz=pz-stpZ
+							bx,bz, px, py, pz = px,pz, px-stpX, py-stpY, pz-stpZ
 						end
-						local i, j, dStep = 0, 1, -dist/endSeg
+						local i, j, dStep, de, gh = 0, 1, -dist/endSeg
 						local a0 = a[0]
 						if a0>0.0 then	-- neon endcap
-							local h0 = h[0]
-							local f0 = f[0]
+							local h0, f0 = h[0], f[0]
 							glShape(GL_TRIANGLE_STRIP, {
 								{	v={-f0,h0,dist+f0},
 									t={0.5,0.0},
@@ -281,8 +289,7 @@ local function MakeList()
 						end
 						a0 = a[endSeg]
 						if a0>0.0 then	-- neon startcap
-							local h0 = h[endSeg]
-							local f0 = f[endSeg]
+							local h0, f0 = h[endSeg], f[endSeg]
 							glShape(GL_TRIANGLE_STRIP, {
 								{	v={-f0,h0,0.01},
 									t={0.25,0.0},
@@ -305,8 +312,7 @@ local function MakeList()
 						for d=dist, 0.01, dStep do	-- render segments of beam neon with alpha>0
 							a0 = a[i]
 							if a0>0.0 or a[j]>0.0 then
-								local de=d+dStep
-								local gh=h[i]
+								de, gh = d+dStep, h[i]
 								glShape(GL_TRIANGLE_STRIP, {
 									--[[ segment delimiter, only for debuging
 									{	v={-f[j],gh,d},
@@ -342,7 +348,7 @@ local function MakeList()
 									--]]
 								})
 							end
-							i=i+1;  j=j+1
+							i, j = i+1, j+1
 						end
 						glPopMatrix()
 					end
@@ -360,7 +366,7 @@ local function MakeList()
 							factor = 32*(1.1-factor)
 							glPushMatrix()
 							nx, ny, nz = spGetGroundNormal(x,z)
-							if ny<0.995 and height>0 then			-- don't align with slope on flat surface, less transformations, faster
+							if ny<0.995 then						-- don't align with slope on flat surface, less transformations, faster
 								glTranslate(x, y, z)
 								ang = min(acos(ny)*DegToRad, 60)	-- deg(x) is 4x slower than x*57.295779513082320876798
 								if nx>0.0 or nz>0.45 then ang = ang * -1.0 end	-- east/west slope correction
@@ -399,35 +405,7 @@ local function MakeList()
 	glDepthTest(true)
 end
 
-function widget:GameFrame()
-	glDeleteList(projDrawList)
-	plist = spGetVisibleProjectiles(-1)
-	if #plist>0 then
-		projDrawList = glCreateList(MakeList)
-	end
-end
-
-local timeDelta = 0
-function widget:Update(dt)
-	local _, _, paused = spGetGameSpeed()
-	if paused then
-		timeDelta = timeDelta + dt
-		if timeDelta > 0.666 then
-			timeDelta = 0
-			glDeleteList(projDrawList)
-			plist = spGetVisibleProjectiles(-1)
-			if #plist>0 then
-				projDrawList = glCreateList(MakeList)
-			end
-		end
-	end
-end
-
-function widget:DrawWorldPreUnit()
-	if projDrawList then
-		glCallList(projDrawList)
-	end
-end
-
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
