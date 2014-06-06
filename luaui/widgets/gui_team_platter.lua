@@ -60,7 +60,7 @@ local cos                    = math.cos
 local pi                     = math.pi
 local acos                   = math.acos
 
-local TpMaxDist = 2750000 -- max dist at which to draw ETA
+local TpMaxDist = 9000000 -- max dist at which to draw ETA
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
