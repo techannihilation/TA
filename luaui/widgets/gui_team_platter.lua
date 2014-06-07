@@ -240,13 +240,13 @@ end
 
   glDepthTest(false)
 
-  local teamID = spGetUnitTeam(unitID)
   local diffTime = spDiffTimers(spGetTimer(), startTimer)
   local alpha = 1.0 * math.abs(0.5 - (diffTime * 3.0 % 1.0))
-  local colors  = GetTeamColorSet(teamID)
-  glColor(colors[1],colors[2],colors[3], alpha)
 
   for _,unitID in ipairs(spGetSelectedUnits()) do
+  local teamID = spGetUnitTeam(unitID)
+  local colors  = GetTeamColorSet(teamID)
+  glColor(colors[1],colors[2],colors[3], alpha)
     local cx, cy, cz = Spring.GetCameraPosition()
     local ux,uy,uz = Spring.GetUnitViewPosition(unitID)
      if ux~=nil then
