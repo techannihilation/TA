@@ -228,7 +228,13 @@ end
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-
+function widget:Initialize()
+	local playerID = Spring.GetMyPlayerID()
+	local _, _, spec, _, _, _, _, _ = Spring.GetPlayerInfo(playerID)
+	if ( spec == true ) then
+		widgetHandler:RemoveWidget()
+	end
+end
 
 function widget:CommandNotify(id, params, options)
   if (id ~= CMD_JUMP) then
