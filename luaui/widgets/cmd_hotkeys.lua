@@ -1,6 +1,6 @@
 function widget:GetInfo()
 	return {
-		name = "Set Hotkeys",
+		name = "TechA Custom Hotkeys",
 		desc = "Binds y for Set Target and j for Cancel Target and o for Jump" ,
 		author = "Bluestone",
 		date = "14/05/2013",
@@ -14,10 +14,12 @@ function widget:Initialize()
 	Spring.SendCommands("bind y settarget")
 	Spring.SendCommands("bind j canceltarget")
 	Spring.SendCommands("bind o jump")
+	Spring.SendCommands("bind / morph")
 end
 
 function widget:Shutdown()
 	Spring.SendCommands("unbind y settarget")
 	Spring.SendCommands("unbind j canceltarget")
 	Spring.SendCommands("unbind o jump")
+	Spring.SendCommands("unbind / morph")
 end
