@@ -22,13 +22,14 @@ local rgbSpecMults = {0.25, 0.25, 0.25} -- specular RGB scales
 local copyLightDefs = {
 	["TA"] = {
 		--Self-D , Explosion for large units eg corkrog and commanders etc
-		["commander_blast1"          ] = "commander_blast",
+		["commander_blast1"          ] = "commander_blast_new",  
+		["commander_blast5"          ] = "commander_blast_new",
+		["commander_blast6"          ] = "commander_blast_new",
+		["commander_blast7"          ] = "commander_blast_new",
+		["commander_blast8"          ] = "commander_blast_new",
+		["commander_selfd"           ] = "commander_blast_new",
+
 		["commander_blast4"          ] = "commander_blast",
-		["commander_blast5"          ] = "commander_blast",
-		["commander_blast6"          ] = "commander_blast",
-		["commander_blast7"          ] = "commander_blast",
-		["commander_blast8"          ] = "commander_blast",
-		["commander_selfd"           ] = "commander_blast",
 		["nuclear_missile"           ] = "commander_blast_small",  --1420
 		["nuclear_missile1"          ] = "commander_blast_small",  --1280
 		["nuclear_missile2"          ] = "commander_blast_small",
@@ -143,6 +144,17 @@ local dynLightDefs = {
 					ttl               = 3 * Game.gameSpeed,
 					decayFunctionType = {0.0, 0.0, 0.0},
 					altitudeOffset    = 65.0,
+				},
+			},
+			["commander_blast_new"] = { 
+				explosionLightDef = {
+					diffuseColor      = { 7.0,                    4.0,                    4.0                  },
+					specularColor     = { 7.0 * rgbSpecMults[1],  4.0 * rgbSpecMults[2],  4.0 * rgbSpecMults[3]},
+					priority          = 15 * 10,
+					radius            = 2000.0,
+					ttl               = 4.5 * Game.gameSpeed,
+					decayFunctionType = {0.0, 0.0, 0.0},
+					altitudeOffset    = 165.0,
 				},
 			},
 			["commander_blast_small"] = {
