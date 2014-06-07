@@ -401,6 +401,15 @@ function widget:Initialize()
 	DetectMod()
 
 	UpdateButtons()
+	
+	
+	local myAllyTeam = Spring.GetMyAllyTeamID()
+	local units = Spring.GetAllUnits()
+	for i=1,#units do
+		local unitID = units[i]
+		local unitAllyTeam = Spring.GetUnitAllyTeam(unitID)
+		UnitDetected(unitID, unitAllyTeam == myAllyTeam)
+	end
 end
 
 function widget:UnitCreated( unitID,  unitDefID,  unitTeam)	
