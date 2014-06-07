@@ -60,7 +60,7 @@ local cos                    = math.cos
 local pi                     = math.pi
 local acos                   = math.acos
 
-local TpMaxDist = 9000000 -- max dist at which to draw ETA
+local TpMaxDist = 8000000 -- max dist at which to draw ETA
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -240,25 +240,36 @@ end
 
   glDepthTest(false)
 
+  local teamID = spGetUnitTeam(unitID)
   local diffTime = spDiffTimers(spGetTimer(), startTimer)
-  local alpha = 1.8 * math.abs(0.5 - (diffTime * 3.0 % 1.0))
-  glColor(1, 1, 1, alpha)
+  local alpha = 1.0 * math.abs(0.5 - (diffTime * 3.0 % 1.0))
+  local colors  = GetTeamColorSet(teamID)
+  glColor(colors[1],colors[2],colors[3], alpha)
 
   for _,unitID in ipairs(spGetSelectedUnits()) do
-    local udid = spGetUnitDefID(unitID)
-    local radius = GetUnitDefRealRadius(udid)
-    if (radius) then
-      if (trackSlope and (not UnitDefs[udid].canFly)) then
-        local x, y, z = spGetUnitBasePosition(unitID)
-        local gx, gy, gz = spGetGroundNormal(x, z)
-        local degrot = acos(gy) * 180 / pi
-        glDrawListAtUnit(unitID, circleLines, false,
-                         radius, 1.0, radius,
-                          degrot, gz, 0, -gx)
-      else
-        glDrawListAtUnit(unitID, circleLines, false,
+    local cx, cy, cz = Spring.GetCameraPosition()
+    local ux,uy,uz = Spring.GetUnitViewPosition(unitID)
+     if ux~=nil then
+     local dx, dy, dz = ux-cx, uy-cy, uz-cz
+     local dist = dx*dx + dy*dy + dz*dz
+      if dist < TpMaxDist then 
+        local udid = spGetUnitDefID(unitID)
+        local radius = GetUnitDefRealRadius(udid)
+          if (radius) then
+            if (trackSlope and (not UnitDefs[udid].canFly)) then
+            local x, y, z = spGetUnitBasePosition(unitID)
+            local gx, gy, gz = spGetGroundNormal(x, z)
+            local degrot = acos(gy) * 180 / pi
+            glDrawListAtUnit(unitID, circleLines, false,
+                           radius, 1.0, radius,
+                           degrot, gz, 0, -gx)
+            else
+            glDrawListAtUnit(unitID, circleLines, false,
                          radius, 1.0, radius)
+            end
+	 end
       end
+      
     end
   end
   glLineWidth(1.0)
