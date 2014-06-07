@@ -1,8 +1,8 @@
 function widget:GetInfo()
 	return {
 		name = "TechA Custom Hotkeys",
-		desc = "Binds y for Set Target and j for Cancel Target and o for Jump" ,
-		author = "Bluestone",
+		desc = "Binds keys for settarget/jump/morph gadget" ,
+		author = "Nixtux",
 		date = "14/05/2013",
 		license = "Horses",
 		layer = 1,
