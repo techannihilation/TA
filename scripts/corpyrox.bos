@@ -4,9 +4,9 @@
 #include "exptype.h"
 
 piece  pelvis, torso, spines, launcher, door1, flip1, door2, flip2,
-       firepoint, rflame, lflame, ruparm, rloarm, rfirept, flame1,
+       firepoint, rflame, lflame, ruparm, rloarm, rfirept,
        rflame2, rtubes, rslide1, rslide2, rtop, luparm, lloarm,
-       ltubes, lfirept, flame12, lslide1, lslide2, lflame2,
+       ltubes, lfirept, lslide1, lslide2, lflame2,
        ltop, head, horns, eyegun, lthigh, lleg, lfoot, rthigh,
        rleg, rfoot;
 
@@ -146,15 +146,21 @@ StatusControl()
 	}
 }
 
+
 PilotLight(Func_Var_1)
 {
 	while( TRUE )
 	{
-			emit-sfx 1024 + 1 from flame1;
-			emit-sfx 1024 + 1 from flame12;
-			sleep 155;
+		while( bAiming )
+		{
+			sleep 100;
+		}
+			emit-sfx 1024 + 1 from lfirept;
+			emit-sfx 1024 + 1 from rfirept;
+		sleep 86;
 	}
 }
+
 
 RestoreAfterDelay()
 {
@@ -211,8 +217,6 @@ Create()
 	hide flip2;
 	hide ltubes;
 	hide rtubes;
-	hide flame1;
-	hide flame12;
 	Static_Var_9 = 200;
 	Static_Var_6 = 0;
 	Static_Var_7 = 0;
