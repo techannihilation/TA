@@ -6,7 +6,7 @@ local unitName = "armsehak"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.072,
+	acceleration = 0.102,
 	altfromsealevel = 1,
 	amphibious = 1,
 	attackrunlength = 120,

@@ -6,7 +6,7 @@ local unitName = "corhunt"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.06,
+	acceleration = 0.106,
 	altfromsealevel = 1,
 	amphibious = 1,
 	bankscale = 1,

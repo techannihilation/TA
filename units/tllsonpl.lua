@@ -6,12 +6,12 @@ local unitName = "tllsonpl"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.08,
+	acceleration = 0.09,
 	altfromsealevel = 1,
 	amphibious = 1,
 	bankscale = 1,
 	bmcode = 1,
-	brakeRate = 4.2,
+	brakeRate = 4.6,
 	buildCostEnergy = 7941,
 	buildCostMetal = 151,
 	builder = false,
