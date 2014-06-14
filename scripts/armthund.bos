@@ -101,6 +101,10 @@ RequestState(requestedstate, currentstate)
 
 Create()
 {
+	hide thrust1;
+	hide thrust2;
+	hide thrust3;
+	hide thrust4;
 	call-script InitState();
 	start-script SmokeUnit();
 }
