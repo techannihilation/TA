@@ -269,6 +269,11 @@ local UnitEffects = {
     {class='AirJet',options={color={0.1,0.4,0.6}, width=3.5, length=76, piece="emit1", onActive=true}},
     {class='AirJet',options={color={0.1,0.4,0.6}, width=3.5, length=76, piece="emit2", onActive=true}},
   },
+  [UnitDefNames["abuilderlvl1"].id] = {
+    {class='AirJet',options={color={0.1,0.4,0.6}, width=7, length=11, piece="emit1", onActive=true}},
+    {class='AirJet',options={color={0.1,0.4,0.6}, width=7, length=11, piece="emit2", onActive=true}},
+    {class='AirJet',options={color={0.1,0.4,0.6}, width=7, length=11, piece="emit3", onActive=true}},
+  },
   [UnitDefNames["armsb"].id] = {
     {class='AirJet',options={color={0.1,0.4,0.6}, width=3.7, length=70, piece="emit1", onActive=true}},
   },
