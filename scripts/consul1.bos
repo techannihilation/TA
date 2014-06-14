@@ -1,0 +1,266 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, rnanopoint, lnanopoint, rpinza, lpinza, rfwheel, rrwheel,
+       lfwheel, lrwheel, nanopoint;
+
+static-var  unitviewer, Static_Var_2, statechg_DesiredState, statechg_StateChanging,
+			turnClock, turnCounter, wheelSpeed, currentSpeed, moveSpeed;
+
+TurnControl()
+{
+	var lastHeading, currHeading, diffHeading;
+	lastHeading = GET HEADING;
+	while (TRUE)
+	{
+		currHeading = GET HEADING;
+		diffHeading = currHeading - lastHeading;
+		// Set Values for differential system
+		turnClock = <0.015>;
+		turnCounter = <0.015>;	
+		if (diffHeading >= 500)
+			{
+			turnClock = <0.009>;
+			}
+		if (diffHeading <= -500)
+			{
+			turnCounter = <0.009>;
+			}
+		lastHeading = currHeading;
+		sleep 67;
+	}
+}
+
+WheelControl()
+{
+	sleep 33;
+	while(TRUE)
+	{
+		currentSpeed = (get CURRENT_SPEED)*20/moveSpeed;
+		wheelSpeed = currentSpeed * 6;
+		if (currentSpeed<4) currentSpeed=4;	// prevent infinite timing
+		//left wheels
+		spin lfwheel around x-axis speed (<1.000000> * wheelSpeed ) * turnClock accelerate <3.000000> * currentSpeed;
+		spin lrwheel around x-axis speed (<1.000000> * wheelSpeed ) * turnClock accelerate <3.000000> * currentSpeed;
+				
+		//right wheels
+		spin rfwheel around x-axis speed (<1.000000> * wheelSpeed ) * turnCounter accelerate <3.000000> * currentSpeed;
+		spin rrwheel around x-axis speed (<1.000000> * wheelSpeed ) * turnCounter accelerate <3.000000> * currentSpeed;
+			
+		sleep 67;
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	start-script WheelControl();
+	start-script TurnControl();
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+HitByWeapon(anglex, anglez)
+{
+	turn base to z-axis anglez speed <105.000000>;
+	turn base to x-axis anglex speed <105.000000>;
+	wait-for-turn base around z-axis;
+	wait-for-turn base around x-axis;
+	turn base to z-axis <0.000000> speed <30.000000>;
+	turn base to x-axis <0.000000> speed <30.000000>;
+}
+
+Go()
+{
+	if( TRUE )
+	{
+		turn rpinza to y-axis <-13.000000> speed <30.000000>;
+		turn lpinza to y-axis <13.000000> speed <30.000000>;
+		wait-for-turn rpinza around y-axis;
+		wait-for-turn lpinza around y-axis;
+		sleep 50;
+	}
+	sleep 50;
+	set INBUILDSTANCE to 1;
+}
+
+Stop()
+{
+	set INBUILDSTANCE to 0;
+	if( TRUE )
+	{
+		turn rpinza to y-axis <0.000000> speed <30.000000>;
+		turn lpinza to y-axis <0.000000> speed <30.000000>;
+		wait-for-turn rpinza around y-axis;
+		wait-for-turn lpinza around y-axis;
+		sleep 50;
+	}
+	sleep 50;
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+Create()
+{
+	moveSpeed = get MAX_SPEED;
+	Static_Var_2 = 0;
+	call-script InitState();
+	start-script SmokeUnit();
+}
+
+StartMoving()
+{
+	sleep 1;
+}
+
+StopMoving()
+{
+	sleep 1;
+}
+
+QueryNanoPiece(piecenum)
+{
+	piecenum = nanopoint;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+StartBuilding(Func_Var_1)
+{
+	Static_Var_2 = Func_Var_1;
+	start-script RequestState(0);
+}
+
+StopBuilding()
+{
+	start-script RequestState(1);
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type BITMAPONLY | BITMAP1;
+		explode body type BITMAPONLY | BITMAP1;
+		explode rpinza type BITMAPONLY | BITMAP3;
+		explode rrwheel type SHATTER | SMOKE | EXPLODE_ON_HIT | BITMAP5;
+		explode lfwheel type SHATTER | SMOKE | EXPLODE_ON_HIT | BITMAP5;
+		explode rfwheel type SHATTER | SMOKE | EXPLODE_ON_HIT | BITMAP5;
+		explode lrwheel type SHATTER | SMOKE | EXPLODE_ON_HIT | BITMAP5;
+		explode lpinza type BITMAPONLY | BITMAP3;
+		explode rnanopoint type SHATTER | SMOKE | BITMAP4;
+		explode lnanopoint type SHATTER | SMOKE | BITMAP4;
+		explode nanopoint type SHATTER | SMOKE | BITMAP5;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type BITMAPONLY | BITMAP1;
+		explode body type BITMAPONLY | BITMAP1;
+		explode rpinza type BITMAPONLY | BITMAP3;
+		explode rrwheel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode lfwheel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode rfwheel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode lrwheel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode lpinza type BITMAPONLY | BITMAP3;
+		explode rnanopoint type SHATTER | SMOKE | BITMAP4;
+		explode lnanopoint type SHATTER | SMOKE | BITMAP4;
+		explode nanopoint type SHATTER | SMOKE | FIRE | BITMAP5;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type BITMAPONLY | BITMAP1;
+		explode body type BITMAPONLY | BITMAP1;
+		explode rpinza type BITMAPONLY | BITMAP3;
+		explode rrwheel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode lfwheel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode rfwheel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode lrwheel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode lpinza type BITMAPONLY | BITMAP3;
+		explode rnanopoint type SHATTER | SMOKE | FIRE | BITMAP4;
+		explode lnanopoint type SHATTER | SMOKE | FIRE | BITMAP4;
+		explode nanopoint type SHATTER | SMOKE | FIRE | BITMAP5;
+		return (0);
+	}
+	corpsetype = 3;
+	explode base type BITMAPONLY | BITMAP1;
+	explode body type BITMAPONLY | BITMAP1;
+	explode rpinza type BITMAPONLY | BITMAP2;
+	explode rrwheel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode lfwheel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode rfwheel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode lrwheel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode lpinza type BITMAPONLY | BITMAP2;
+	explode rnanopoint type SHATTER | SMOKE | FIRE | BITMAP4;
+	explode lnanopoint type SHATTER | SMOKE | FIRE | BITMAP4;
+	explode nanopoint type SHATTER | SMOKE | FIRE | BITMAP5;
+}
