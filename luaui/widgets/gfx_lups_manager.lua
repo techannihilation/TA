@@ -339,6 +339,10 @@ local UnitEffects = {
     {class='AirJet',options={color={1,1,1}, width=12, length=15, piece="thrust1", onActive=true}},
     {class='AirJet',options={color={1,1,1}, width=12, length=15, piece="thrust2", onActive=true}},
  },
+   [UnitDefNames["cbuilderlvl1"].id] = {
+    {class='AirJet',options={color={0.8,0.1,0.1}, width=3, length=12, piece="engineExR", onActive=true}},
+    {class='AirJet',options={color={0.8,0.1,0.1}, width=3, length=12, piece="engineExL", onActive=true}},
+ },
  [UnitDefNames["tllca"].id] = {
     {class='AirJet',options={color={1,1,1}, width=6, length=15, piece="rthrust", onActive=true}},
     {class='AirJet',options={color={1,1,1}, width=6, length=15, piece="lthrust", onActive=true}},
