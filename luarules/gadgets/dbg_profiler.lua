@@ -17,7 +17,7 @@ end
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-if not Game.modVersion:find("-dev",1,true) then
+if not Game.modVersion:find("VERSION",1,true) then
   Spring.Echo("debug working")
 	return false
 end
