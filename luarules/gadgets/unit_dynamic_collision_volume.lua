@@ -168,6 +168,12 @@ if (gadgetHandler:IsSyncedCode()) then
 			--Spring.Echo("Aimpoint Waterline: Set aimpoint of " .. unitID .. " torp ".. ay)
 			Spring.SetUnitMidAndAimPos(unitID,mx,my,mz,ax,2,az)
 		end
+		--Set aimsphere to ground level for some popup units (popup control in gadget does no kickin until unit is finished)
+		if UnitDefs[unitDefID].name == "corvipe" or UnitDefs[unitDefID].name == "corsd"then
+			local bx,by,bz,mx,my,mz,ax,ay,az = Spring.GetUnitPosition(unitID,true,true) --basepoint,midpoint,aimpoint
+			--Spring.Echo("Aimpoint Waterline: Set aimpoint of " .. unitID .. " torp ".. ay)
+			Spring.SetUnitMidAndAimPos(unitID,mx,my,mz,ax,by,az)
+		end
 	end
 
 
