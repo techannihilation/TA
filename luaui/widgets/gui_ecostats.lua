@@ -1,15 +1,17 @@
-local versionNumber = "1.55"
+local versionNumber = "1.57"
 ---------------------------------------------------------------------------------------------------
 
 ----------------------------------------------------------------------------------------------------------------------------
 -- Changelog
 
 ------------------------
--- Version 1.54
+-- Version 1.57
 ------------------------
+-- * Some bugfixes and compatibility for EvoRTS
 -- * Bug fixes and performance improvements
 -- * Added TS values and better handling of screen position
 -- * Improved player list management and handling of dead players
+-- * Fixed bug where team bars disappear even if team is alive
 
 ------------------------
 -- Version 1.5
@@ -116,21 +118,23 @@ local myFont	 		= gl.LoadFont("FreeSansBold.otf",textsize, 1.9, 40) --gl.LoadFon
 local myFontBig	 		= gl.LoadFont(font2Path,textlarge,5,40)
 
 local images			= {
-						["arm"]					= "LuaUI/Images/ecostats/arm_default.png",
+						["arm"]				= "LuaUI/Images/ecostats/arm_default.png",
 						["core"]     			= "LuaUI/Images/ecostats/core_default.png",
+						["tll"]				= "LuaUI/Images/ecostats/tll_default.png",
 						["contrast"]			= "LuaUI/Images/ecostats/contrast.png",
 						["borderson"]			= "LuaUI/Images/ecostats/borders.png",
 						["bordersoff"]			= "LuaUI/Images/ecostats/bordersOff.png",
 						["checkboxon"]			= "LuaUI/Images/ecostats/chkBoxOn.png",
 						["checkboxoff"]			= "LuaUI/Images/ecostats/chkBoxOff.png",
-						["more"]				= "LuaUI/Images/ecostats/ButtonMore.png",
-						["less"]				= "LuaUI/Images/ecostats/ButtonLess.png",
-						["default"]				= "LuaUI/Images/ecostats/default.png",
-						["move"]				= "LuaUI/Images/ecostats/move.png",
+						["more"]			= "LuaUI/Images/ecostats/ButtonMore.png",
+						["less"]			= "LuaUI/Images/ecostats/ButtonLess.png",
+						["default"]			= "LuaUI/Images/ecostats/default.png",
+						["move"]			= "LuaUI/Images/ecostats/move.png",
 						["arrowleft"]			= "LuaUI/Images/ecostats/arrowL.png",
 						["arrowright"]			= "LuaUI/Images/ecostats/arrowR.png",
-						["info"]				= "LuaUI/Images/ecostats/info.png",
+						["info"]			= "LuaUI/Images/ecostats/info.png",
 						["dead"]     			= "LuaUI/Images/ecostats/cross.png",
+						["outer_colonies"]		= LUAUI_DIRNAME .. "Images/ecostats/ecommander.png",
 						}
 			
 local AttackUnits			= {}
@@ -581,6 +585,7 @@ function setPlayerTable(pID)
 	killedhp 					= killedHP[pID]
 	losthp 						= lostHP[pID]
 	unitCount 					= Spring.GetTeamUnitCount(pID)
+	if Game.gameShortName == "EvoRTS" then side = "outer_colonies" end
 	
 	if not teamData[pID] then teamData[pID] = {} end
 	
@@ -714,10 +719,10 @@ function isTeamReal(allyID)
 	return false
 end
 
-function isTeamAlive(teamID)
-	if teamID == nil then return false end
-	for _,pID in ipairs (Spring.GetTeamList(teamID)) do
-		if not teamData[pID]["isDead"] then return true end
+function isTeamAlive(allyID)
+	
+	for _,tID in ipairs (Spring.GetTeamList(allyID)) do
+		if teamData[tID] and (not teamData[tID]["isDead"]) then return true end
 	end
 	return false
 end
@@ -1099,16 +1104,26 @@ function widget:PlayerChanged(playerID)
 end
 
 function widget:UnitFinished(unitID, unitDefID, teamID)
-	team = teamData[teamID]["allyID"]
-	if teamID ~= nil and isUnitComplete(unitID) then
-		--Echo("Unit is finished. Parameters:",unitID, unitDefID, teamID)
-		UpdateTeam(team)
+	if teamData[teamID] then
+		team = teamData[teamID]["allyID"]
+		if teamID ~= nil and isUnitComplete(unitID) then
+			--Echo("Unit is finished. Parameters:",unitID, unitDefID, teamID)
+			UpdateTeam(team)
+		end
 	end
 end
 
 function widget:UnitTaken(unitID, unitDefID, unitTeam, newTeam)
-	local newteam = teamData[newTeam]["allyID"]
-	local oldteam = teamData[unitTeam]["allyID"]
+	local newteam, oldteam
+	
+	if teamData[newTeam] then
+		newteam = teamData[newTeam]["allyID"]
+	end
+	
+	if teamData[unitTeam] then
+		oldteam = teamData[unitTeam]["allyID"]
+	end
+	
 	if newTeam ~= nil then UpdateTeam(newteam) end
 	if oldTeam ~= nil then UpdateTeam(oldteam) end
 end
@@ -1121,17 +1136,18 @@ function widget:UnitGiven(unitID, unitDefID, unitTeam, oldTeam)
 end
 
 function widget:UnitDestroyed(u,ud,ut,a,ad,at) --unitID, unitDefID, teamID, attackerID
+	
 	local uteam, ateam
 	a = Spring.GetUnitLastAttacker(u)
 	--Echo("Unit attacker",a)
 	if a then at = Spring.GetUnitTeam(a) end
-	if ut then
+	if ut and teamData[ut] then
 		uteam = teamData[ut]["allyID"]
 		--Echo("Unit is destroyed!. Parameters:",ut,at)
 		UpdateTeam(uteam)
 	end
 
-	if at then
+	if at and teamData[at] then
 		ateam = teamData[at]["allyID"]
 		--Echo("Unit is destroyed!. Parameters:",ut,at)
 		UpdateTeam(ateam)
@@ -1145,7 +1161,7 @@ function widget:UnitDestroyed(u,ud,ut,a,ad,at) --unitID, unitDefID, teamID, atta
 		return v1[1] < v2[1]
 	end
 	
-	if ut and at and (not Spring.AreTeamsAllied(ut,at)) and isUnitComplete(u) and u and a and u~=a then
+	if ut and at and (not Spring.AreTeamsAllied(ut,at)) and isUnitComplete(u) and u and a and u~=a and teamData[ut] and teamData[at] then
 		local _,uhp =  Spring.GetUnitHealth(u)
 		--local playerlist = Spring.GetTeamList()
 		killCounters[at]=killCounters[at]+1
@@ -1438,8 +1454,13 @@ function widget:MousePress(x, y, button)
 				x16 = x15 + 180 + cW*getNbPlayers(allyID)
 				y15 = y16 - infoTableHeight
 				
+				if not allyData[allyDataID]["isAlive"] then
+					allyData[allyDataID]["isAlive"] = isTeamAlive(allyID)
+				end
+				
 				-- info-button
-				if IsOnButton(x, y, x1, y1, x2, y2) and (not options["removeDead"]["On"] or allyData[allyDataID]["isAlive"]) then 
+				if IsOnButton(x, y, x1, y1, x2, y2) and (not options["removeDead"]["On"] or allyData[allyDataID]["isAlive"]) then
+					
 					for _,data in pairs (allyData) do
 						local aID = data.aID
 						if aID ~= allyID then
@@ -1784,7 +1805,6 @@ function drawDynamic()
 						local posx = WBadge*(i-1)
 						
 						sideImg = images[side] or images["default"]
-					
 						data["isAlive"] = not tData.isDead
 						hasCom = tData.hasCom
 										
@@ -1802,6 +1822,7 @@ function drawDynamic()
 									DrawSideImage(sideImg,posx,posy, r, g, b,alpha,true,playerButton[tID]["mouse"],t, false) --small icon
 								end
 							else
+								alpha = 0.8
 								sideImg = images["dead"]
 								DrawSideImage(sideImg,posx,posy, r, g, b,alpha,true,playerButton[tID]["mouse"],t, true) --dead, big icon
 							end
@@ -1874,7 +1895,11 @@ function drawStandard()
 			local drawpos = data.drawpos
 			
 			if isTeamReal(aID) and (aID == Spring.GetMyAllyTeamID() or inSpecMode) and aID ~= gaiaAllyID then
-			
+				
+				if not data["isAlive"] then
+					data["isAlive"] = isTeamAlive(aID)
+				end
+				
 				local posy = tH*(drawpos)
 				if data["isAlive"] then DrawBackground(posy) end
 				
@@ -2919,14 +2944,10 @@ function DrawOptionRibbon()
 		options["heightDec"]["x2"],
 		options["heightDec"]["y2"]
 		)
+	gl.Texture(false)
 end
 
 function DrawInfoButton (allyID, active, right, big)
-	
-	local allyDataID = allyID+1
-	if options["removeDead"]["On"] then
-		if not allyData[allyDataID]["isAlive"] then return end
-	end
 	
 	local x1 = infoButton[allyID]["x1"]
 	local y1 = infoButton[allyID]["y1"]
