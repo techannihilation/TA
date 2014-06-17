@@ -60,19 +60,17 @@ local pairs = pairs
 
 
 function gadget:GameFrame(n)
-  if (((n+18) % 32) < 0.1) then
+  if (((n+18) % 30) < 0.1) then
       for unitID, scriptIDs in pairs(storageunits) do
 	  local uDefID = GetUnitDefID(unitID) ; if not uDefID then break end
 	  local uDef = uDefs[uDefID]
 	  local storagecap = uDef.energyStorage
-	  local penatly = storagecap / 2500 
+	  local penatly = storagecap / 500
 	  
 	  if Spring.GetUnitIsStunned(unitID) then
-		--Spring.Echo(unitID .. " is stunned  " ..storagecap,penatly)
+		Spring.Echo(unitID .. " is stunned  " ..storagecap,penatly)
 		Spring.UseTeamResource(Spring.GetUnitTeam(unitID), "energy", penatly)
-		     storageunits[unitID]= nil
-
-		  end
+	  end
    end
 
   end
