@@ -79,6 +79,8 @@ local unitDef = {
 		[1] = {
 			def = [[CORTRUCK_MISSILE]],
 			onlyTargetCategory = [[NOTVTOL]],
+			maindir = [[0 0 1]],
+			maxangledif = 235, 
 		},
 	},
 }
@@ -117,7 +119,7 @@ local weaponDefs = {
 		Texture4 = [[null]],
 		tolerance = 8000,
 		tracks = true,
-		trajectoryHeight = 0.5,
+		trajectoryHeight = 0.08,
 		turnRate = 63000,
 		turret = true,
 		weaponAcceleration = 109,
