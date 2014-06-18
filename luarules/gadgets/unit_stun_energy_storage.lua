@@ -69,6 +69,8 @@ function gadget:GameFrame(n)
 	  
 	  if Spring.GetUnitIsStunned(unitID) then
 		Spring.Echo(unitID .. " is stunned  " ..storagecap,penatly)
+		local x,y,z = Spring.GetUnitPosition(unitID)
+		Spring.SpawnCEG("ENERGY_STORAGE_LEAK",x,y,z,0,30,0)
 		Spring.UseTeamResource(Spring.GetUnitTeam(unitID), "energy", penatly)
 	  end
    end
