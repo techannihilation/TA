@@ -58,16 +58,21 @@ local pairs = pairs
 
 function gadget:GameFrame(n)
   if (((n+18) % 32) < 0.1) then
-      for unitID, scriptIDs in pairs(storageunits) do
+      for unitID, _ in pairs(storageunits) do
 	  local uDefID = GetUnitDefID(unitID) ; if not uDefID then break end
 	  local uDef = uDefs[uDefID]
-	  local storage = uDef.metalStorage
 	  
-	  if Spring.GetUnitIsStunned(unitID) then
-		local _,totalstorage = Spring.GetTeamResources(Spring.GetUnitTeam(unitID),"metal")
+	  if Spring.GetUnitIsStunned(unitID) and (storageunits[unitID].paracount == 0) then
+		local storage = uDef.metalStorage
+		local currentLevel,totalstorage = Spring.GetTeamResources(Spring.GetUnitTeam(unitID),"metal")
 		Spring.SetTeamResource(Spring.GetUnitTeam(unitID), "ms", (totalstorage)-storage)
 		--Spring.UseTeamResource(Spring.GetUnitTeam(unitID), "metal", storagecap)
-		      storageunits[unitID] = nil
+		      if currentLevel > (totalstorage-storage) then
+				local x,y,z = Spring.GetUnitPosition(unitID)
+				Spring.SpawnCEG("METAL_STORAGE_LEAK",x,y+30,z,0,0,0)
+		      end
+		      
+		      storageunits[unitID].paracount = 1
 		      stunnedstorage[unitID] = true 
 	  end
     end
@@ -81,6 +86,7 @@ function gadget:GameFrame(n)
 	    local _,totalstorage = Spring.GetTeamResources(Spring.GetUnitTeam(unitID),"metal")
 	    Spring.SetTeamResource(Spring.GetUnitTeam(unitID), "ms", totalstorage+storage)
 	    stunnedstorage[unitID] = nil
+	    storageunits[unitID].paracount = 0
 	    end
 	  end
   end
@@ -89,8 +95,7 @@ end
 -------------------------------------------------------------------------------------
 
 local function SetupUnit(unitID)
-  local scriptIDs = {}
-   storageunits[unitID] = scriptIDs
+   storageunits[unitID] = {paracount = 0}
 end
 
 
