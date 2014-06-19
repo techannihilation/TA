@@ -49,11 +49,13 @@ unclassed_air = {
 -- Builders 
            "abuilderlvl1",
            "abuilderlvl2",
+           "abuilderlvl3",
            "armaca",
            "armca",
            "armcsa",
            "cbuilderlvl1",
            "cbuilderlvl2",
+           "cbuilderlvl3",
            "coraca",
            "corca",
            "corcsa",
