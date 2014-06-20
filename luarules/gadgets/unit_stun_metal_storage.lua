@@ -61,15 +61,16 @@ function gadget:GameFrame(n)
       for unitID, _ in pairs(storageunits) do
 	  local uDefID = GetUnitDefID(unitID) ; if not uDefID then break end
 	  local uDef = uDefs[uDefID]
+	  local storage = storageunits[unitID].storage
 	  
 	  if Spring.GetUnitIsStunned(unitID) and (storageunits[unitID].paracount == 0) then
-		local storage = uDef.metalStorage
 		local currentLevel,totalstorage = Spring.GetTeamResources(Spring.GetUnitTeam(unitID),"metal")
-		Spring.SetTeamResource(Spring.GetUnitTeam(unitID), "ms", (totalstorage)-storage)
-		--Spring.UseTeamResource(Spring.GetUnitTeam(unitID), "metal", storagecap)
-		      if currentLevel > (totalstorage-storage) then
+		local less = totalstorage - storage
+		Spring.SetTeamResource(Spring.GetUnitTeam(unitID), "ms", less)
+		      if currentLevel > (less) then
 				local x,y,z = Spring.GetUnitPosition(unitID)
-				Spring.SpawnCEG("METAL_STORAGE_LEAK",x,y+30,z,0,0,0)
+				local height = storageunits[unitID].height * 0.70
+				Spring.SpawnCEG("METAL_STORAGE_LEAK",x,y+height,z,0,0,0)
 		      end
 		      
 		      storageunits[unitID].paracount = 1
@@ -78,11 +79,8 @@ function gadget:GameFrame(n)
     end
   for unitID,_ in pairs(stunnedstorage) do
 
-
+	    local storage = storageunits[unitID].storage
 	    if not Spring.GetUnitIsStunned(unitID) then
-	    local uDefID = GetUnitDefID(unitID) ; if not uDefID then break end
-	    local uDef = uDefs[uDefID]
-	    local storage = uDef.metalStorage
 	    local _,totalstorage = Spring.GetTeamResources(Spring.GetUnitTeam(unitID),"metal")
 	    Spring.SetTeamResource(Spring.GetUnitTeam(unitID), "ms", totalstorage+storage)
 	    stunnedstorage[unitID] = nil
@@ -94,8 +92,10 @@ end
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
 
-local function SetupUnit(unitID)
-   storageunits[unitID] = {paracount = 0}
+local function SetupUnit(unitID,unitDefID)
+  local ud = UnitDefs[unitDefID]
+  if (ud == nil)or(ud.height == nil) then return nil end
+   storageunits[unitID] = {paracount = 0, height = ud.height, storage = ud.metalStorage}
 end
 
 
@@ -103,27 +103,32 @@ function gadget:Initialize()
   for _, unitID in ipairs(SpGetAllUnits()) do
     local unitDefID = GetUnitDefID(unitID)
     if (storageDefs[unitDefID]) then
-      SetupUnit(unitID)
+      SetupUnit(unitID,unitDefID)
     end
   end
 end
 
 function gadget:UnitCreated(unitID, unitDefID, unitTeam)
     if (storageDefs[unitDefID]) then
-    SetupUnit(unitID)
+    SetupUnit(unitID,unitDefID)
   end
 end
 
 function gadget:UnitTaken(unitID, unitDefID, unitTeam)
 	if (storageDefs[unitDefID]) then 
-		SetupUnit(unitID)
+		SetupUnit(unitID,unitDefID)
 	end
 end
 
 
 function gadget:UnitDestroyed(unitID, unitDefID, unitTeam)
-	if (storageDefs[unitDefID]) then 
-	   storageDefs[unitID]= nil
+	if (storageDefs[unitDefID]) then
+	  if storageunits[unitID].paracount == 1 then
+	    local _,totalstorage = Spring.GetTeamResources(Spring.GetUnitTeam(unitID),"metal")
+	    Spring.SetTeamResource(Spring.GetUnitTeam(unitID), "ms", totalstorage + storageunits[unitID].storage)
+	  end
+	  storageDefs[unitID]= nil
+	  stunnedstorage[unitID] = nil
 	end
 end
 
