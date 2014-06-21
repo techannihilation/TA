@@ -482,7 +482,7 @@ local readyY = vsy * 0.73 - (readyH/2)
 
 local imgTexCoordX = 1  --image texture coordinate X -- textures image's dimension is a power of 2 (i use 0.625 cause my image has a width of 256, but region to use is only 160 pixel -> 160 / 256 = 0.625 )
 local imgTexCoordY = 1	--image texture coordinate Y -- enter values other than 1.0 to use just a region of the texture image
-local botton = "luarules/images/glossy_button_blank_black_rectangle.png"
+local button = "luarules/images/glossy_button_blank_black_rectangle.png"
 
 local pStates = {} --local copy of playerStates table
 
@@ -494,7 +494,7 @@ function gadget:Initialize()
 	readyButton = gl.CreateList(function()
 		--draw button
 		gl.Color(1,1,1,0.6)
-		gl.Texture( ":c:" .. botton )
+		gl.Texture( ":c:" .. button )
 		gl.PushMatrix()
 		gl.TexRect( readyX , readyY , readyX + readyW , readyY + readyH , 0.0, 0.0, imgTexCoordX, imgTexCoordY )
 		gl.PopMatrix()
