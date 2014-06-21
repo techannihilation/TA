@@ -186,21 +186,23 @@ function gadget:ViewResize()
 end
 
 local subsButton
-local bH = 30
-local bW = 140
+local bH = 60
+local bW = 400
 local bX = vsx * 0.50 - (bW/2)
 local bY = vsy * 0.73 - (bH/2)
 local offer = false
 
 local imgTexCoordX = 1  --image texture coordinate X -- textures image's dimension is a power of 2 (i use 0.625 cause my image has a width of 256, but region to use is only 160 pixel -> 160 / 256 = 0.625 )
 local imgTexCoordY = 1	--image texture coordinate Y -- enter values other than 1.0 to use just a region of the texture image
-local botton = "luarules/images/glossy_button_blank_black_rectangle.png"
+local button = "luarules/images/glossy_button_blank_black_rectangle.png"
+local monofont = gl.LoadFont("luaui/fonts/instruction.ttf",72, 1.9, 40)
+
 
 function MakeButton()
 	subsButton = gl.CreateList(function()
-		-- draws background rectangle
-		gl.Color(0.1,0.1,.45,0.18)                              
-		gl.Texture( ":c:" .. botton )
+		-- draws background image
+		gl.Color(1,1,1,0.6)
+		gl.Texture( ":c:" .. button )
 		gl.PushMatrix()
 		gl.TexRect( bX , bY , bX + bW , bY + bH , 0.0, 0.0, imgTexCoordX, imgTexCoordY )
 		gl.PopMatrix()
@@ -234,7 +236,8 @@ function gadget:DrawScreen()
         else
             textString = "Withdraw offer"
         end
-		gl.Text(colorString .. textString, bX+10, bY+9, 20, "o")
+		monofont:Print(colorString .. textString, bX+8, bY+12, 52, "o")
+		--gl.Text(colorString .. textString, bX+10, bY+9, 40, "o")
 		gl.Color(1,1,1,1)
     end
 end
