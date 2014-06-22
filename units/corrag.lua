@@ -62,16 +62,16 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			--badTargetCategory = [[NOTVTOL]],
-			def = [[666Sonicwave]],
+			onlyTargetCategory = [[VTOL]],
+			def = [[VTOL_ROCKET]],
 		},
 		[2] = {
-			--badTargetCategory = [[NOTVTOL]],
-			def = [[666Sonicwave]],
+			onlyTargetCategory = [[VTOL]],
+			def = [[VTOL_ROCKET]],
 		},
 		[3] = {
-			def = [[VTOL_ROCKET]],
-			onlyTargetCategory = [[VTOL]],
+			def = [[Sonicwave]],
+			--onlyTargetCategory = [[VTOL]],
 		},
 	},
 }
@@ -79,7 +79,7 @@ local unitDef = {
 --------------------------------------------------------------------------------
 
 local weaponDefs = {
-	['666Sonicwave'] = {
+	Sonicwave = {
 		accuracy = 150,
 		areaOfEffect = 150,
 		beamWeapon = true,
@@ -116,7 +116,7 @@ local weaponDefs = {
 		damage = {
 			bombers = 400,
 			commanders = 100,
-			default = 200,
+			default = 800,
 			fighters = 400,
 			flak_resistant = 600,
 			unclassed_air = 600,

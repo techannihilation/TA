@@ -92,10 +92,6 @@ local unitDef = {
 			def = [[Katana_M2]],
 			onlyTargetCategory = [[VTOL]],
 		},
-		[3] = {
-			--badTargetCategory = [[NOTVTOL]],
-			def = [[Katana_M]],
-		},
 	},
 }
 
@@ -137,7 +133,7 @@ local weaponDefs = {
 		weaponVelocity = 600,
 		damage = {
 			bombers = 400,
-			default = 200,
+			default = 600,
 			fighters = 400,
 			flak_resistant = 600,
 			unclassed_air = 600,
@@ -160,7 +156,7 @@ local weaponDefs = {
 		noSelfDamage = true,
 		pitchtolerance = 18000,
 		range = 550,
-		reloadtime = 0.9,
+		reloadtime = 0.45,
 		renderType = 1,
 		selfprop = true,
 		smokedelay = 0.1,
