@@ -6,10 +6,10 @@ local unitName = "champ"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.011,
+	acceleration = 0.06,
 	activateWhenBuilt = true,
 	bmcode = 1,
-	brakeRate = 0.026,
+	brakeRate = 0.046,
 	buildCostEnergy = 22955,
 	buildCostMetal = 2126,
 	builder = false,
@@ -42,7 +42,7 @@ local unitDef = {
 	maneuverleashlength = 1200,
 	maxDamage = 22245,
 	maxSlope = 18,
-	maxVelocity = 1,
+	maxVelocity = 1.4,
 	maxWaterDepth = 12,
 	metalStorage = 0,
 	mobilestandorders = 1,
