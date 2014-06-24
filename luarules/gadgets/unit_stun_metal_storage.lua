@@ -62,17 +62,19 @@ function gadget:GameFrame(n)
 	  local uDefID = GetUnitDefID(unitID) ; if not uDefID then break end
 	  local uDef = uDefs[uDefID]
 	  local storage = storageunits[unitID].storage
+	  local stunned = Spring.GetUnitIsStunned(unitID)
 	  
-	  if Spring.GetUnitIsStunned(unitID) and (storageunits[unitID].paracount == 0) then
+	  if stunned and (storageunits[unitID].paracount == 0) then
 		local currentLevel,totalstorage = Spring.GetTeamResources(Spring.GetUnitTeam(unitID),"metal")
 		local less = totalstorage - storage
+		 Spring.Echo(less)
+
 		Spring.SetTeamResource(Spring.GetUnitTeam(unitID), "ms", less)
 		      if currentLevel > (less) then
 				local x,y,z = Spring.GetUnitPosition(unitID)
 				local height = storageunits[unitID].height * 0.70
 				Spring.SpawnCEG("METAL_STORAGE_LEAK",x,y+height,z,0,0,0)
 		      end
-		      
 		      storageunits[unitID].paracount = 1
 		      stunnedstorage[unitID] = true 
 	  end
@@ -120,18 +122,19 @@ function gadget:UnitTaken(unitID, unitDefID, unitTeam)
 	end
 end
 
-
-function gadget:UnitDestroyed(unitID, unitDefID, unitTeam)
-	if (storageDefs[unitDefID]) then
-	  if storageunits[unitID].paracount == 1 then
-	    local _,totalstorage = Spring.GetTeamResources(Spring.GetUnitTeam(unitID),"metal")
-	    Spring.SetTeamResource(Spring.GetUnitTeam(unitID), "ms", totalstorage + storageunits[unitID].storage)
-	  end
-	  storageDefs[unitID]= nil
-	  stunnedstorage[unitID] = nil
-	end
+function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponID, projectileID, attackerID, attackerDefID, attackerTeam) --we use UnitPreDamaged so as we get in before unit_transportfix has its effect
+  if (storageDefs[unitDefID]) then
+    local hp = Spring.GetUnitHealth(unitID)
+    if damage > hp then
+      if storageunits[unitID].paracount == 1 then
+        local _,totalstorage = Spring.GetTeamResources(Spring.GetUnitTeam(unitID),"metal")
+          Spring.SetTeamResource(Spring.GetUnitTeam(unitID), "ms", totalstorage + storageunits[unitID].storage)
+        end
+        storageDefs[unitID]= nil
+        stunnedstorage[unitID] = nil
+      end
+    end
 end
-
 
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
