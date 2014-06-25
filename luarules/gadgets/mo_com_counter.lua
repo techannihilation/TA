@@ -15,7 +15,7 @@ end
 
 local enabled = (tostring(Spring.GetModOptions().mo_enemycomcount) == "1") or false
 if not enabled then 
---  return false
+  return false
 end
 
 if not (gadgetHandler:IsSyncedCode()) then --synced only
@@ -45,9 +45,6 @@ local comDefs = {
   [UnitDefNames["tllcom6"].id] = true,
   [UnitDefNames["tllcom7"].id] = true,
 }
-
-local armcomDefID = UnitDefNames.armcom.id
-local corcomDefID = UnitDefNames.corcom.id
 
 local countChanged  = true 
 
@@ -87,10 +84,10 @@ end
 
 local function ReCheck()
 	-- occasionally, recheck just to make sure...
-	local newCount = 0
 	local teamList = Spring.GetTeamList()
 	for _,teamID in pairs(teamList) do
-	  
+	  	local newCount = 0
+
 	  for commanders,_ in pairs(comDefs) do
 		 newCount = newCount + Spring.GetTeamUnitDefCount(teamID, commanders)
 	  end
