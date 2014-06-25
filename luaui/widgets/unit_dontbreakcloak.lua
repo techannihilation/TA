@@ -37,7 +37,6 @@ local isCommander = {
   [UnitDefNames["armcom7"].id] = true,
   [UnitDefNames["taipan"].id] = true,
   [UnitDefNames["armpaspd"].id] = true,
-  [UnitDefNames["armsnipe"].id] = true,
  
 
 --The lost legacy
@@ -47,7 +46,6 @@ local isCommander = {
   [UnitDefNames["tllcom6"].id] = true,
   [UnitDefNames["tllcom7"].id] = true,
   [UnitDefNames["tlltraq"].id] = true,
-  [UnitDefNames["tllsniper"].id] = true,
   [UnitDefNames["tllwhale"].id] = true,
 
 }
