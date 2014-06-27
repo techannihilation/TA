@@ -225,7 +225,7 @@ function widget:Update(deltaTime)
 end
 
 function widget:GameFrame(frame)
-  if frame%29==0 then
+  if frame%129==0 then
     for unitID,v in pairs(smallList) do
       if v[3] == 0 and sentmessage[unitID] == nil then
         Spring.Echo(v[4] .. " Is Ready For Morph")
