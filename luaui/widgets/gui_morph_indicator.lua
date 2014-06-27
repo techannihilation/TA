@@ -69,9 +69,12 @@ local rankTextures = {
   [3] = rankTexBase .. 'star.png',
 }
 
+local sentmessage = {}
+
 local morphRankMax = #rankTextures
 local MiMaxDist = 1750000 -- max dist at which to draw ETA
 
+local message = 0
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
 
@@ -157,6 +160,7 @@ local function SetUnitRank(unitID)
     return
   end
   local unitName = ud.name
+  local humanName = ud.humanName
   local xp = GetUnitExperience(unitID)
   if (not xp) then
     alliedUnits[unitID] = nil
@@ -183,7 +187,7 @@ local function SetUnitRank(unitID)
 
   alliedUnits[unitID] = {}
     if (rankTex ~= nil) then 
-      smallList[unitID] = { rankTex, ud.height + iconoffset }
+      smallList[unitID] = { rankTex, ud.height + iconoffset , message , humanName}
     end
 end
 
@@ -220,6 +224,16 @@ function widget:Update(deltaTime)
   end
 end
 
+function widget:GameFrame(frame)
+  if frame%29==0 then
+    for unitID,v in pairs(smallList) do
+      if v[3] == 0 and sentmessage[unitID] == nil then
+        Spring.Echo(v[4] .. " Is Ready For Morph")
+        sentmessage[unitID] = true
+      end
+    end
+  end
+end
 
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
@@ -234,6 +248,7 @@ end
 function widget:UnitDestroyed(unitID, unitDefID, unitTeam)
   alliedUnits[unitID] = nil
   smallList[unitID] = nil
+  sentmessage[unitID] = nil
 end
 
 
@@ -243,6 +258,7 @@ function widget:UnitGiven(unitID, unitDefID, oldTeam, newTeam)
   else
     alliedUnits[unitID] = nil
     smallList[unitID] = nil
+    sentmessage[unitID] = nil
   end
 end
 
