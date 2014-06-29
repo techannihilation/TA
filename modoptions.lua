@@ -40,6 +40,14 @@ local options={
 	def    = false,
 	section= "ta_options",
     },
+    	{
+	key    = "mo_ecorace",
+	name   = "Announces eco leader",
+	desc   = "Announces player with greatest E/M income every 2 min to all players\nAutoHost USage :- mo_ecorace",
+	type   = "bool",
+	def    = false,
+	section= "ta_options",
+    },
 	{
 		key    = "mo_coop",
 		name   = "Cooperative Mode",

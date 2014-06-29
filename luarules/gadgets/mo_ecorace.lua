@@ -1,6 +1,3 @@
--- This is a GADGET, not a widget
--- Must be inside a mod, in \LuaRules\Gadgets\
-
 function gadget:GetInfo()
 	return {
 		name = "Best Eco Announcer",
@@ -11,6 +8,12 @@ function gadget:GetInfo()
 		layer = 0,
 		enabled = true
 	}
+end
+
+local enabled = tonumber(Spring.GetModOptions().mo_ecorace) or 0
+
+if (enabled == 0) then 
+  return false
 end
 
 if (gadgetHandler:IsSyncedCode()) then
@@ -43,7 +46,7 @@ if (gadgetHandler:IsSyncedCode()) then
 	end
 
 	function gadget:GameFrame(frame)
-		if frame%700==0 then
+		if frame%3600==0 then
 		local teamList = Spring.GetTeamList()
 
 			for _,teamID in pairs(teamList) do
@@ -59,8 +62,10 @@ if (gadgetHandler:IsSyncedCode()) then
 					end
 			--Spring.Echo("Metal " .. Mteamleader,HighMincome)
 			--Spring.Echo("Energy " .. Eteamleader,HighEincome)
-			--Metal
+			end
+						--Metal
 			names=nil
+			if Mteamleader ~= nil then
 			for _,pid in ipairs(Spring.GetPlayerList(Mteamleader,true)) do
 			local _,active,spectator=Spring.GetPlayerInfo(pid)
 				if active and not spectator then
@@ -82,8 +87,12 @@ if (gadgetHandler:IsSyncedCode()) then
 			end
 			Spring.SendMessage("\255\255\001\001" ..(names and names or "").."'s "..GetSide(Mteamleader).." is leading with ".. HighMincome .." Metal Income!\n")
 			end
+		
 			--Energy
+		
 			names=nil
+			if Eteamleader ~= nil then
+
 			for _,pid in ipairs(Spring.GetPlayerList(Eteamleader,true)) do
 			local _,active,spectator=Spring.GetPlayerInfo(pid)
 				if active and not spectator then
@@ -103,8 +112,9 @@ if (gadgetHandler:IsSyncedCode()) then
 					end
 				end
 			end
-			Spring.SendMessage("\255\255\001\001" ..(names and names or "").."'s "..GetSide(Eteamleader).." is leading with ".. HighEincome .." Metal Income!\n")
+			Spring.SendMessage("\255\255\001\001" ..(names and names or "").."'s "..GetSide(Eteamleader).." is leading with ".. HighEincome .." Energy Income!\n")
+			
 			end
-		end
-
+			end
+	end
 	end
