@@ -91,7 +91,7 @@ else
     particleList[particleCnt] = {
       class        = 'JitterParticles2',
       colormap     = { {1,1,1,1},{1,1,1,1} },
-      count        = 2,
+      count        = 2, --2
       life         = weaponRange / 12,
       delaySpread  = 25,
       force        = {0,1.5,0},
@@ -124,8 +124,8 @@ else
                        {0.35, 0.15, 0.15, 0.25},
                        {0.1, 0.035, 0.01, 0.2},
                        {0, 0, 0, 0.01} },
-      count        = 4,
-      life         = weaponRange / 7,
+      count        = 3, --3
+      life         = weaponRange / 5,
       delaySpread  = 25,
 
       force        = {0,1,0},
@@ -157,11 +157,11 @@ else
     particleList[particleCnt] = {
       class        = 'SimpleParticles2',
       colormap     = { {1, 1, 1, 0.01}, {0, 0, 0, 0.01} },
-      count        = 0,
+      count        = 2,
       --delay        = 20,
-      life         = 0,
-      lifeSpread   = 0,
-      delaySpread  = 0,
+      life         = weaponRange / 7,
+      lifeSpread   = 20,
+      delaySpread  = 15,
 
       force        = {0,1,0},
       --forceExp     = 0.2,
