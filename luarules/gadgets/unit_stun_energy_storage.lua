@@ -96,7 +96,7 @@ function gadget:Initialize()
   end
 end
 
-function gadget:UnitCreated(unitID, unitDefID, unitTeam)
+function gadget:UnitFinished(unitID, unitDefID, unitTeam)
     if (storageDefs[unitDefID]) then
     SetupUnit(unitID,unitDefID)
   end
