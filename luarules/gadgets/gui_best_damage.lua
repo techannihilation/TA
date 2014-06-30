@@ -60,7 +60,7 @@ if (gadgetHandler:IsSyncedCode()) then
 
 	function gadget:UnitDamaged(u,ud,ut,d, p ,w ,pr, a,ad,at)
 		currenttime = Spring.GetGameSeconds()
-		if ut and at and (not Spring.AreTeamsAllied(ut,at)) and isUnitComplete(u) and u and a and u~=a then
+		if ut and at and (not Spring.AreTeamsAllied(ut,at)) and isUnitComplete(u) and u and a and u~=a and p == false then
 			DamageCounters[at]=DamageCounters[at]+math.floor(d)
 			if DamageCounters[at]>BestTeamDamageCount then
 				BestTeamDamageCount=DamageCounters[at]
