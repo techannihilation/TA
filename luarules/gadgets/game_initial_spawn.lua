@@ -477,11 +477,11 @@ end
 
 local readyH = 60
 local readyW = 160
-local readyX = vsx * 0.50 - (readyW/2)
-local readyY = vsy * 0.73 - (readyH/2)
+local readyX = vsx - 7 - (readyW)
+local readyY = vsy * 0.84 - (readyH/2)
 
-local imgTexCoordX = 1  --image texture coordinate X -- textures image's dimension is a power of 2 (i use 0.625 cause my image has a width of 256, but region to use is only 160 pixel -> 160 / 256 = 0.625 )
-local imgTexCoordY = 1	--image texture coordinate Y -- enter values other than 1.0 to use just a region of the texture image
+local imgTexCoordX = 1  --image texture coordinate X 
+local imgTexCoordY = 1	--image texture coordinate Y 
 local button = "luarules/images/glossy_button_blank_black_rectangle.png"
 
 local pStates = {} --local copy of playerStates table

@@ -188,8 +188,8 @@ end
 local subsButton
 local bH = 60
 local bW = 400
-local bX = vsx * 0.50 - (bW/2)
-local bY = vsy * 0.73 - (bH/2)
+local bX = vsx - 7 - (bW)
+local bY = vsy * 0.84 - (bH/2)
 local offer = false
 
 local imgTexCoordX = 1  --image texture coordinate X -- textures image's dimension is a power of 2 (i use 0.625 cause my image has a width of 256, but region to use is only 160 pixel -> 160 / 256 = 0.625 )
