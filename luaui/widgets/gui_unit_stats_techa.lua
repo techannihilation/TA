@@ -27,7 +27,7 @@ end
 ------------------------------------------------------------------------------------
 local fontSize = 16
 local xOffset = 25
-local yOffset = 25
+local yOffset = 200
 
 local cX, cY
 
@@ -132,6 +132,9 @@ local spGetUnitExp = Spring.GetUnitExperience
 local spGetUnitHealth = Spring.GetUnitHealth
 local spGetUnitTeam = Spring.GetUnitTeam
 
+local spGetUnitExperience = Spring.GetUnitExperience
+local spGetUnitSensorRadius = Spring.GetUnitSensorRadius
+
 local tidalStrength = Game.tidal
 local windMin = Game.windMin
 local windMax = Game.windMax
@@ -142,6 +145,8 @@ local wDefs = WeaponDefs
 local myTeamID = Spring.GetMyTeamID
 local spGetTeamRulesParam = Spring.GetTeamRulesParam
 local spGetTooltip = Spring.GetCurrentTooltip
+
+local vsx, vsy = Spring.GetViewGeometry()
 
 ------------------------------------------------------------------------------------
 -- Functions
@@ -203,6 +208,10 @@ function widget:Shutdown()
 	end
 end
 
+function widget:ViewResize()
+  vsx,vsy = Spring.GetViewGeometry()
+end
+
 function widget:DrawScreen()
 	
 	local alt, ctrl, meta, shift = spGetModKeyState()
@@ -217,8 +226,9 @@ function widget:DrawScreen()
 	local _, _, _, _, buildProg = spGetUnitHealth(uID)
 	local uTeam = spGetUnitTeam(uID)
 	
+	Spring.Echo(my,vsy)
 	cX = mx + xOffset
-	cY = my + yOffset
+	cY = vsy - yOffset 
 	glColor(1.0, 1.0, 1.0, 1.0)
 
 	glText(teamColorStr(uTeam) .. teamName(uTeam) .. "'s " .. yellow .. uDef.humanName .. white .. " (" .. uDef.name .. ", #" .. uID .. ")", cX, cY, fontSize, "o")
@@ -365,10 +375,20 @@ function widget:DrawScreen()
 		DrawText("Move:", format("%.1f / %.1f / %.0f (Speed / Accel / Turn)", uDef.speed, 900 * uDef.maxAcc, 30 * uDef.turnRate * (180 / 32767)))
 	end
 	
-	DrawText("Los:", format("%d", 32 * uDef.losRadius))
+	DrawText("Class:", Game.armorTypes[uDef.armorType or 0] or '???')
+	
+	local losRadius = spGetUnitSensorRadius(uID, 'los') or 0
+	local airLosRadius = spGetUnitSensorRadius(uID, 'airLos') or 0
+	local seismicRadius = spGetUnitSensorRadius(uID, 'seismic') or 0
+
+	
+	DrawText('Los:', losRadius .. (airLosRadius > losRadius and format(' (AirLos: %d)', airLosRadius) or ''))
+	
 	if uDef.radarRadius >= 64 then DrawText("Radar:", format(green .. "%d", uDef.radarRadius)) end
 	if uDef.sonarRadius >= 64 then DrawText("Sonar:", format(blue .. "%d", uDef.sonarRadius)) end
 	if uDef.jammerRadius >= 64 then DrawText("Jam:", format(orange .. "%d", uDef.jammerRadius)) end
+	if seismicRadius > 0 then DrawText('Seis:' , '\255\255\26\255' .. seismicRadius) end
+	
 	if uDef.buildSpeed > 0 then DrawText("Build:", format(yellow .. "%d", uDef.buildSpeed)) end
 	if uDef.buildDistance > 0 then DrawText("B Dist:", format(yellow .. "%d", uDef.buildDistance)) end
 	if (uDef.repairSpeed > 0 and uDef.repairSpeed ~= uDef.buildSpeed) then DrawText("Repair:", format(yellow .. "%d", uDef.repairSpeed)) end
@@ -383,9 +403,17 @@ function widget:DrawScreen()
 
 	cY = cY - fontSize
 	
-	local uWeps = uDef.weapons
+	------------------------------------------------------------------------------------
+	-- Weapons
+	------------------------------------------------------------------------------------
+	local uExp = spGetUnitExperience(uID)
+	if uExp and (uExp > 0.25) then
+		uExp = uExp / (1 + uExp)
+		DrawText("Exp:", format("+%d%% damage, +%d%% firerate, +%d%% health", 100 * uExp, 100 / (1 - uExp * 0.4) - 100, 70 * uExp))
+		cY = cY - fontSize
+	end
 	
-	local wepCounts = {} -- wepCounts[wepDefID] = 1, 2, ...
+	local wepCounts = {} -- wepCounts[wepDefID] = #
 	local wepsCompact = {} -- uWepsCompact[1..n] = wepDefID
 	
 	local uWeps = uDef.weapons
