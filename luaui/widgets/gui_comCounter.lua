@@ -36,8 +36,8 @@ local glCallList			= gl.CallList
 local glDeleteList			= gl.DeleteList
 
 local textSize				= 12
-local xPos, yPos            = 0.80, 0.85
-local xRelPos, yRelPos		= 0.80, 0.85
+local xPos, yPos	  		= 0.963, 0.665
+local xRelPos, yRelPos			= 0.963, 0.665
 local vsx, vsy				= gl.GetViewSizes()
 local check1x, check1y		= 6, 28
 local check2x, check2y		= 6, 6
@@ -375,8 +375,8 @@ function widget:GetConfigData()
 end
 
 function widget:SetConfigData(data)
-	xRelPos = data.xRelPos or xRelPos
-	yRelPos = data.yRelPos or yRelPos
+	--xRelPos = data.xRelPos or xRelPos
+	--yRelPos = data.yRelPos or yRelPos
 	xPos = xRelPos * vsx
 	yPos = yRelPos * vsy
 	markers = data.markers or markers

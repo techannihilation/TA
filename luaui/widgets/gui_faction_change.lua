@@ -15,7 +15,6 @@ end
 -- Var
 --------------------------------------------------------------------------------
 local wWidth, wHeight = Spring.GetWindowGeometry()
-local px, py = 300, 0.35*wHeight
 
 --------------------------------------------------------------------------------
 -- Speedups
@@ -56,6 +55,7 @@ local commanderDefID = spGetTeamRulesParam(myTeamID, 'startUnit')
 local amNewbie = (spGetTeamRulesParam(myTeamID, 'isNewbie') == 1)
 
 local factionChangeList
+local px, py = wWidth - 198, 0.63*wHeight
 
 --------------------------------------------------------------------------------
 -- Funcs
@@ -76,6 +76,10 @@ function widget:Initialize()
 	   amNewbie then
 		widgetHandler:RemoveWidget(self)
 	end
+end
+
+function widget:ViewResize()
+  wWidth, wHeight = Spring.GetViewGeometry()
 end
 
 function widget:DrawWorld()
@@ -149,7 +153,7 @@ function FactionChangeList()
         
         -- Text
         glBeginText()
-            glText('Choose Your Faction', 64, 64, 12, 'cd')
+            glText('Select Desired Faction', 95, 64, 12, 'cd')
             glText('ARM', 32, 0, 12, 'cd')
             glText('CORE', 96, 0, 12, 'cd')
             glText('TLL', 160, 0, 12, 'cd')

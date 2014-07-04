@@ -617,7 +617,7 @@ function gadget:DrawScreen()
 			colorString = "\255\068\107\169"
 		end
 		local text = colorString .. "Game starting in " .. math.max(1,3-math.floor(timer)) .. " seconds..."
-		monofont:Print(text, vsx*0.5 - gl.GetTextWidth(text)/2*48, vsy*0.71, 48, "o")
+		monofont:Print(text, vsx*0.5 - gl.GetTextWidth(text)/2*48, vsy*0.50, 48, "o")
 	end
 	
 	--remove if after gamestart

@@ -49,7 +49,7 @@ local tackyfont = gl.LoadFont("luaui/fonts/instruction_bold.ttf",72, 1.9, 40)
 local vsx, vsy = widgetHandler:GetViewSizes()
 function widget:ViewResize(viewSizeX, viewSizeY)
   vsx = viewSizeX/2
-  vsy = viewSizeY/2
+  vsy = viewSizeY*0.66
 end
 
 function widget:Initialize()

@@ -171,7 +171,7 @@ local buildNameToID = {}
 local gameStarted = false 
 
 local wWidth, wHeight = Spring.GetWindowGeometry()
-local wl, wt = 50, 0.5*wHeight
+local wl, wt = 7 , 0.44*wHeight
 
 local cellRows = {} -- {{bDefID, bDefID, ...}, ...}
 local panelList = nil -- Display list for panel

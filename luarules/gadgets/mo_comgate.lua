@@ -111,7 +111,7 @@ end
 function gadget:Initialize()
 	local textSize = 72
 	local dx = vsx*0.5
-	local dy = vsy*0.58
+	local dy = vsy*0.72
 	GateInfo2 = gl.CreateList(function()
 	
 		-- First message
