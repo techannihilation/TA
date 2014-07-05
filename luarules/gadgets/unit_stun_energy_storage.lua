@@ -29,7 +29,6 @@ local storageDefs = {
   [ UnitDefNames['armuwadves'].id ] = true,
   [ UnitDefNames['armses'].id ] = true,
   [ UnitDefNames['armuwes'].id ] = true,
-
   --Core 
   [ UnitDefNames['corestor'].id ] = true,
   [ UnitDefNames['coruwadves'].id ] = true,
@@ -63,15 +62,14 @@ function gadget:GameFrame(n)
   if (((n+18) % 30) < 0.1) then
       for unitID, _ in pairs(storageunits) do
  
-	  if Spring.GetUnitIsStunned(unitID) then
-	    	  local penatly = storageunits[unitID].storagecap / 500
-
-		--Spring.Echo(unitID .. " is stunned  " ..storageunits[unitID].storagecap,penatly,storageunits[unitID].height)
-		local x,y,z = Spring.GetUnitPosition(unitID)
-		local height = storageunits[unitID].height * 0.40
-		Spring.SpawnCEG("ENERGY_STORAGE_LEAK",x,y+height,z,0,0,0)
-		Spring.UseTeamResource(Spring.GetUnitTeam(unitID), "energy", penatly)
-	  end
+	if Spring.GetUnitIsStunned(unitID) then
+	local penatly = storageunits[unitID].storagecap / 500
+	--Spring.Echo(unitID .. " is stunned  " ..storageunits[unitID].storagecap,penatly,storageunits[unitID].height)
+	local x,y,z = Spring.GetUnitPosition(unitID)
+	local height = storageunits[unitID].height * 0.40
+	Spring.SpawnCEG("ENERGY_STORAGE_LEAK",x,y+height,z,0,0,0)
+	Spring.UseTeamResource(Spring.GetUnitTeam(unitID), "energy", penatly)
+	end
    end
 
   end
@@ -86,7 +84,7 @@ local function SetupUnit(unitID,unitDefID)
    storageunits[unitID] = {height = ud.height,storagecap = ud.energyStorage}
 end
 
-
+--[[
 function gadget:Initialize()
   for _, unitID in ipairs(SpGetAllUnits()) do
     local unitDefID = GetUnitDefID(unitID)
@@ -95,6 +93,7 @@ function gadget:Initialize()
     end
   end
 end
+--]]
 
 function gadget:UnitFinished(unitID, unitDefID, unitTeam)
     if (storageDefs[unitDefID]) then
