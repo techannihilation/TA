@@ -159,12 +159,18 @@ modConfig["TA"]["unitList"] =
 								tllweb = { weapons = { 1 } },
 								tlldmc = { weapons = { 1 } },
 								tlllbt = { weapons = { 1 } },
+								tlltrid = { weapons = { 1 } },
+								tllkrak = { weapons = { 1 } },
+								
+								tllkrak = { weapons = { 1 } },
+
 									--Anti-Air--
 								tlllmt = { weapons = { 2 } },
 								tlllmt1 = { weapons = { 2 } },
-								tllmtNS = { weapons = { 2 } },
+								tlllmtns = { weapons = { 2 } },
 								tllnssam = { weapons = { 2 } },
 								tllflak = { weapons = { 2 } },
+								tllfflak = { weapons = { 2 } },
 								tllsam = { weapons = { 2 } },
 								tlldb = { weapons = { 2 } },
 								tllhmt = { weapons = { 2 } },
@@ -202,7 +208,6 @@ modConfig["TA"]["color"]["enemy"]["nuke"] =  { 1.0, 1.0, 1.0 }
 modConfig["TA"]["color"]["ally"] = modConfig["TA"]["color"]["enemy"]
 --end of custom colors
 --end of TA
-
 
 	
 --DEFAULT COLOR CONFIG
@@ -397,12 +402,14 @@ end
 
 function widget:Initialize()
 	state["myPlayerID"] = spGetLocalTeamID()
-	
+
+    widgetHandler:RegisterGlobal('SetOpacity_Defense_Range', SetOpacity)
+
 	DetectMod()
 
 	UpdateButtons()
 	
-	
+	--Recheck units on widget reload
 	local myAllyTeam = Spring.GetMyAllyTeamID()
 	local units = Spring.GetAllUnits()
 	for i=1,#units do
@@ -410,6 +417,10 @@ function widget:Initialize()
 		local unitAllyTeam = Spring.GetUnitAllyTeam(unitID)
 		UnitDetected(unitID, unitAllyTeam == myAllyTeam)
 	end
+end
+
+function widget:ShutDown()
+    widgetHandler:DeregisterGlobal('SetOpacity_Defense_Range', SetOpacity)
 end
 
 function widget:UnitCreated( unitID,  unitDefID,  unitTeam)	
@@ -806,6 +817,11 @@ function CheckSpecState()
 	return true
 end
 
+local darkOpacity = 0
+function SetOpacity(dark,light)
+    darkOpacity = dark
+end
+
 
 function widget:Update()
 	local timef = spGetGameSeconds()
@@ -814,7 +830,8 @@ function widget:Update()
 	if ( (timef - updateTimes["line"]) > 0.2 and timef ~= updateTimes["line"] ) then	
 		updateTimes["line"] = timef
 		
-		--adjust line width and alpha by camera height (is this really worth it?!)
+		--adjust line width and alpha by camera height (old code, kept for refence)
+        --[[
 		_, camy, _ = spGetCameraPosition()
 		if ( camy < 700 ) and ( oldcamy >= 700 ) then
 			oldcamy = camy
@@ -832,8 +849,14 @@ function widget:Update()
 			lineConfig["alphaValue"] = 0.35
 			UpdateCircleList()
 		end
-		
+        ]]
+        
+        lineConfig["lineWidth"] = 1.0
+        lineConfig["alphaValue"] = darkOpacity
+        UpdateCircleList()
+	
 	end
+    
 	
 	-- update timers once every <updateInt> seconds
 	if (time % updateTimes["removeInterval"] == 0 and time ~= updateTimes["remove"] ) then	
