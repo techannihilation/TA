@@ -226,7 +226,6 @@ function widget:DrawScreen()
 	local _, _, _, _, buildProg = spGetUnitHealth(uID)
 	local uTeam = spGetUnitTeam(uID)
 	
-	Spring.Echo(my,vsy)
 	cX = mx + xOffset
 	cY = vsy - yOffset 
 	glColor(1.0, 1.0, 1.0, 1.0)
