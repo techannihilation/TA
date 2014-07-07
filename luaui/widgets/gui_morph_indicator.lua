@@ -27,6 +27,7 @@ local GetTeamList          = Spring.GetTeamList
 local GetTeamUnits         = Spring.GetTeamUnits
 local GetMyAllyTeamID      = Spring.GetMyAllyTeamID
 local GetUnitViewPosition  = Spring.GetUnitViewPosition
+local spGetSpectatingState = Spring.GetSpectatingState
 
 local glDepthTest      = gl.DepthTest
 local glDepthMask      = gl.DepthMask
@@ -225,6 +226,9 @@ function widget:Update(deltaTime)
 end
 
 function widget:GameFrame(frame)
+  if spGetSpectatingState() then
+    return
+  end
   if frame%129==0 then
     for unitID,v in pairs(smallList) do
       if v[3] == 0 and sentmessage[unitID] == nil then
