@@ -71,6 +71,11 @@ local unitDef = {
 		RequireTech = [[Advanced T2 Unit Research Centre]],
 	},
 	featureDefs = nil,
+	sfxtypes = {
+		explosiongenerators = {
+			[1] = [[custom:sniper_muzzle]],
+		},
+        },
 	sounds = {
 		canceldestruct = [[cancel2]],
 		underattack = [[warning1]],
