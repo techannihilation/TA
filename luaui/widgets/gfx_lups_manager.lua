@@ -284,7 +284,7 @@ local UnitEffects = {
     {class='AirJet',options={color={0.1,0.5,0.3}, width=3.7, length=28, piece="thrust1", onActive=true}},
   },
   [UnitDefNames["armpers"].id] = {
-     {class='AirJet',options={color={0.6,0.1,0}, width=3.7, length=55, piece="rearthrust", onActive=true}},
+     {class='AirJet',options={color={0.6,0.1,0}, width=5, length=22, piece="rearthrust", onActive=true}},
   },
   [UnitDefNames["airwolf3g"].id] = {
      {class='AirJet',options={color={0.6,0.1,0}, width=3.7, length=50, piece="fum3", onActive=true}},
@@ -295,8 +295,8 @@ local UnitEffects = {
      {class='AirJet',options={color={0.6,0.1,0}, width=3.7, length=50, piece="thrust3", onActive=true}},
   },
   [UnitDefNames["blackdawn"].id] = {
-    {class='AirJet',options={color={0.1,0.4,0.6}, width=3.7, length=42, piece="thrust1", onActive=true}},
-    {class='AirJet',options={color={0.1,0.4,0.6}, width=3.7, length=42, piece="thrust2", onActive=true}},
+    {class='AirJet',options={color={0.1,0.4,0.6}, width=3.7, length=30, piece="thrust1", onActive=true}},
+    {class='AirJet',options={color={0.1,0.4,0.6}, width=3.7, length=30, piece="thrust2", onActive=true}},
   },
  [UnitDefNames["armblz"].id] = {
     {class='AirJet',options={color={0.6,0.1,0}, width=5.7, length=45, piece="rearthrust", onActive=true}},
