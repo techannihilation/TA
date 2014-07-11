@@ -42,83 +42,115 @@ local whiteColor = '\255\255\255\255' -- White
 -- Building ids
 local ARMCOM = UnitDefNames["armcom"].id
 local CORCOM = UnitDefNames["corcom"].id
+local TLLCOM = UnitDefNames["tllcom"].id
 
 local ARMMEX = UnitDefNames["armmex"].id
 local CORMEX = UnitDefNames["cormex"].id
+local TLLMEX = UnitDefNames["tllmex"].id
+
 local ARMUWMEX = UnitDefNames["armuwmex"].id
 local CORUWMEX = UnitDefNames["coruwmex"].id
+local TLLUWMEX = UnitDefNames["tlluwmex"].id
 
 local ARMSOLAR = UnitDefNames["armsolar"].id
 local CORSOLAR = UnitDefNames["corsolar"].id
+local TLLSOLAR = UnitDefNames["tllsolar"].id
+
 local ARMWIN = UnitDefNames["armwin"].id
 local CORWIN = UnitDefNames["corwin"].id
+local TLLWIND = UnitDefNames["tllwindtrap"].id
+
 local ARMTIDE = UnitDefNames["armtide"].id
 local CORTIDE = UnitDefNames["cortide"].id
+local TLLTIDE = UnitDefNames["tlltide"].id
 
 local ARMLLT = UnitDefNames["armllt"].id
 local CORLLT = UnitDefNames["corllt"].id
+local TLLLLT = UnitDefNames["tllllt"].id
+
 local ARMRAD = UnitDefNames["armrad"].id
 local CORRAD = UnitDefNames["corrad"].id
+local TLLRADAR = UnitDefNames["tllradar"].id
+
 local ARMRL = UnitDefNames["armrl"].id
 local CORRL = UnitDefNames["corrl"].id
+local TLLLMT = UnitDefNames["tlllmt"].id
+
 local ARMTL = UnitDefNames["armtl"].id
 local CORTL = UnitDefNames["cortl"].id
+local TLLTORP = UnitDefNames["tlltorp"].id
+
 local ARMSONAR = UnitDefNames["armsonar"].id
 local CORSONAR = UnitDefNames["corsonar"].id
+local TLLSONAR = UnitDefNames["tllsonar"].id
+
 local ARMFRT = UnitDefNames["armfrt"].id
 local CORFRT = UnitDefNames["corfrt"].id
+local TLLLMTNS = UnitDefNames["tlllmtns"].id
 
 local ARMLAB = UnitDefNames["armlab"].id
 local CORLAB = UnitDefNames["corlab"].id
+local TLLLAB = UnitDefNames["tlllab"].id
+
 local ARMVP = UnitDefNames["armvp"].id
 local CORVP = UnitDefNames["corvp"].id
+local TLLVP = UnitDefNames["tllvp"].id
+
 local ARMSY = UnitDefNames["armsy"].id
 local CORSY = UnitDefNames["corsy"].id
+local TLLSY = UnitDefNames["tllsy"].id
 
 -- these are not used for hotkeys but used for switch faction buildings
 
 local ARMMSTOR = UnitDefNames["armmstor"].id
 local CORMSTOR = UnitDefNames["cormstor"].id
+local TLLMSTOR = UnitDefNames["tllmstor"].id
 
 local ARMESTOR = UnitDefNames["armestor"].id
 local CORESTOR = UnitDefNames["corestor"].id
+local TLLESTOR = UnitDefNames["tllestor"].id
 
 local ARMMAKR = UnitDefNames["armmakr"].id
 local CORMAKR = UnitDefNames["cormakr"].id
+local TLLMM = UnitDefNames["tllmm"].id
 
 local ARMEYES = UnitDefNames["armeyes"].id
 local COREYES = UnitDefNames["coreyes"].id
+local TLLTOWER = UnitDefNames["tlltower"].id
 
 local ARMDRAG = UnitDefNames["armdrag"].id
 local CORDRAG = UnitDefNames["cordrag"].id
+local TLLDTNS = UnitDefNames["tlldtns"].id
 
 local ARMDL = UnitDefNames["armdl"].id
 local CORDL = UnitDefNames["cordl"].id
+local TLLSHORETORP = UnitDefNames["tllshoretorp"].id
 
 local ARMAP = UnitDefNames["armap"].id
 local CORAP = UnitDefNames["corap"].id
-
-
-
+local TLLAP = UnitDefNames["tllap"].id
 
 
 local ARMFRAD = UnitDefNames["armfrad"].id
 local CORFRAD = UnitDefNames["corfrad"].id
+local TLLDTNS = UnitDefNames["tlldtns"].id
 
 local ARMUWMS = UnitDefNames["armuwms"].id
 local CORUWMS = UnitDefNames["coruwms"].id
+local TLLUWMSTORAGE = UnitDefNames["tlluwmstorage"].id
 
 local ARMUWES = UnitDefNames["armuwes"].id
 local CORUWES = UnitDefNames["coruwes"].id
+local TLLUWESTORAGE = UnitDefNames["tlluwestorage"].id
 
 local ARMFMKR = UnitDefNames["armfmkr"].id
 local CORFMKR = UnitDefNames["corfmkr"].id
+local TLLWMCONV = UnitDefNames["tllwmconv"].id
 
 local ARMFDRAG = UnitDefNames["armfdrag"].id
 local CORFDRAG = UnitDefNames["corfdrag"].id
+local TLLDTNS = UnitDefNames["tlldtns"].id
 
-local ARMTL = UnitDefNames["armtl"].id
-local CORTL = UnitDefNames["cortl"].id
 
 -- this info is used to switch buildings between factions
 local armToCore = {}
@@ -131,6 +163,7 @@ armToCore[ARMTIDE] = CORTIDE
 armToCore[ARMLLT] = CORLLT
 armToCore[ARMRAD] = CORRAD
 armToCore[ARMRL] = CORRL
+armToCore[ARMTL] = CORTL
 armToCore[ARMSONAR] = CORSONAR
 armToCore[ARMFRT] = CORFRT
 armToCore[ARMLAB] = CORLAB
@@ -148,7 +181,62 @@ armToCore[ARMUWMS] = CORUWMS
 armToCore[ARMUWES] = CORUWES
 armToCore[ARMFMKR] = CORFMKR
 armToCore[ARMFDRAG] = CORFDRAG
-armToCore[ARMTL] = CORTL
+
+local tllToCore = {}
+
+tllToCore[TLLMEX] = CORMEX
+tllToCore[TLLUWMEX] = CORUWMEX
+tllToCore[TLLSOLAR] = CORSOLAR
+tllToCore[TLLWIND] = CORWIN
+tllToCore[TLLTIDE] = CORTIDE
+tllToCore[TLLLLT] = CORLLT
+tllToCore[TLLRADAR] = CORRAD
+tllToCore[TLLLMT] = CORRL
+tllToCore[TLLSONAR] = CORSONAR
+tllToCore[TLLLMTNS] = CORFRT
+tllToCore[TLLLAB] = CORLAB
+tllToCore[TLLVP] = CORVP
+tllToCore[TLLSY] = CORSY
+tllToCore[TLLMSTOR] = CORMSTOR
+tllToCore[TLLESTOR] = CORESTOR
+tllToCore[TLLMM] = CORMAKR
+tllToCore[TLLTOWER] = COREYES
+tllToCore[TLLDTNS] = CORDRAG
+tllToCore[TLLSHORETORP] = CORDL
+tllToCore[TLLAP] = CORAP
+tllToCore[TLLUWMSTORAGE] = CORUWMS
+tllToCore[TLLUWESTORAGE] = CORUWES
+tllToCore[TLLWMCONV] = CORFMKR
+tllToCore[TLLDTNS] = CORFDRAG
+tllToCore[TLLTORP] = CORTL
+
+local tlltoArm = {}
+
+tlltoArm[TLLMEX] = ARMMEX
+tlltoArm[TLLUWMEX] = ARMUWMEX
+tlltoArm[TLLSOLAR] = ARMSOLAR
+tlltoArm[TLLWIND] = ARMWIN
+tlltoArm[TLLTIDE] = ARMTIDE
+tlltoArm[TLLLLT] = ARMLLT
+tlltoArm[TLLRADAR] = ARMRAD
+tlltoArm[TLLLMT] = ARMRL
+tlltoArm[TLLSONAR] = ARMSONAR
+tlltoArm[TLLLMTNS] = ARMFRT
+tlltoArm[TLLLAB] = ARMLAB
+tlltoArm[TLLVP] = ARMVP
+tlltoArm[TLLSY] = ARMSY
+tlltoArm[TLLMSTOR] = ARMMSTOR
+tlltoArm[TLLESTOR] = ARMESTOR
+tlltoArm[TLLMM] = ARMMAKR
+tlltoArm[TLLTOWER] = ARMEYES
+tlltoArm[TLLDTNS] = ARMDRAG
+tlltoArm[TLLSHORETORP] = ARMDL
+tlltoArm[TLLAP] = ARMAP
+tlltoArm[TLLUWMSTORAGE] = ARMUWMS
+tlltoArm[TLLUWESTORAGE] = ARMUWES
+tlltoArm[TLLWMCONV] = ARMFMKR
+tlltoArm[TLLDTNS] = ARMFDRAG
+tlltoArm[TLLTORP] = ARMTL
 
 function table_invert(t)
     local s={}
@@ -159,6 +247,9 @@ function table_invert(t)
 end
 
 local coreToArm = table_invert(armToCore)
+local CoreTotll = table_invert(tllToCore)
+local Armtotll = table_invert(tlltoArm)
+
 ------------------------------------------------------------
 -- Globals
 ------------------------------------------------------------
@@ -504,11 +595,29 @@ function widget:DrawWorld()
                 buildData[1] = coreToArm[buildDataId]
                 buildQueue[b] = buildData
             end
+	    if tlltoArm[buildDataId] ~= nil then
+                buildData[1] = tlltoArm[buildDataId]
+                buildQueue[b] = buildData
+            end
         elseif sDef.id == CORCOM then
             if armToCore[buildDataId] ~= nil then
                 buildData[1] = armToCore[buildDataId]
                 buildQueue[b] = buildData
             end
+	    if tllToCore[buildDataId] ~= nil then
+                buildData[1] = tllToCore[buildDataId]
+                buildQueue[b] = buildData
+            end
+      elseif sDef.id == TLLCOM then
+            if CoreTotll[buildDataId] ~= nil then
+                buildData[1] = CoreTotll[buildDataId]
+                buildQueue[b] = buildData
+            end
+	    if Armtotll[buildDataId] ~= nil then
+                buildData[1] = Armtotll[buildDataId]
+                buildQueue[b] = buildData
+            end
+	    
         end
     end
 
