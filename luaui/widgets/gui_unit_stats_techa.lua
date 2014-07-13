@@ -427,9 +427,6 @@ function widget:DrawScreen()
 		end
 	end
 	
-	local totaldps
-	totaldps = 0
-	
 	for i = 1, #wepsCompact do
 		
 		local wDefId = wepsCompact[i]
@@ -453,10 +450,8 @@ function widget:DrawScreen()
 			local dmgString
 			if oBurst > 1 then
 				dmgString = format(yellow .. "%d (x%d)" .. white .. " / " .. yellow .. "%.2f" .. white .. " = " .. yellow .. "%.2f", oDmg, oBurst, oRld, oBurst * oDmg / oRld)
-				totaldps = totaldps + (oBurst * oDmg / oRld)
 			else
 				dmgString = format(yellow .. "%d" .. white .. " / " .. yellow .. "%.2f" .. white .. " = " .. yellow .. "%.2f", oDmg, oRld, oDmg / oRld)
-				totaldps = totaldps + (oDmg / oRld)
 			end
 			
 			if wepCount > 1 then
@@ -483,21 +478,9 @@ function widget:DrawScreen()
 										 drainAdjust * uWep.energyCost / oRld))
 			end
 			
-					cY = cY - fontSize
+			cY = cY - fontSize
 		end
-		
-	end
-	if totaldps > 0 then
-		DrawText("Total dps:",format(yellow .. "%d", totaldps))
-		DrawText("T1 Cost C:",format(yellow ..    "%.4f", ((uDef.metalCost + (uDef.energyCost/64) * 0.8 ))))
-
-		DrawText("t1 C v dps:",format(yellow ..    "%.4f", ((totaldps/(uDef.metalCost + (uDef.energyCost/64) * 0.8 )))))
-		DrawText("Btime v dps:",format(yellow ..    "%.4f", ((totaldps/uDef.buildTime))))
-		DrawText("Hp v dps:",format(yellow ..    "%.4f", ((totaldps/uDef.health))))
 	end
 end
-
-------------------------------------------------------------------------------------
-
 
 ------------------------------------------------------------------------------------
