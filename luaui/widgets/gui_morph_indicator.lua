@@ -188,7 +188,7 @@ local function SetUnitRank(unitID)
 
   alliedUnits[unitID] = {}
     if (rankTex ~= nil) then 
-      smallList[unitID] = { rankTex, ud.height + iconoffset , message , humanName}
+      smallList[unitID] = { rankTex, ud.height + iconoffset, message, humanName}
     end
 end
 
@@ -231,7 +231,9 @@ function widget:GameFrame(frame)
   end
   if frame%129==0 then
     for unitID,v in pairs(smallList) do
-      if v[3] == 0 and sentmessage[unitID] == nil then
+      local myteam = Spring.GetMyTeamID()
+      local unitsteam = Spring.GetUnitTeam(unitID)
+      if v[3] == 0 and sentmessage[unitID] == nil and myteam == unitsteam then
         Spring.Echo(v[4] .. " Is Ready For Morph")
         sentmessage[unitID] = true
       end
