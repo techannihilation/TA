@@ -77,7 +77,7 @@ function script.Killed(recentDamage, maxHealth)
 		--Spring.Echo("MED")
 		return 0
 	elseif  severity <= .99  then
-		Explode(sphere, sfxExplode)
+		Explode(sphere, SFX.EXPLODE)
 		Explode(base, SFX.SHATTER)
 		--Spring.Echo("BIG")
 		return 0
