@@ -1,0 +1,434 @@
+---------------------------------------v2.28 ---------------------------------------
+----Visual----
+Add dust cloud/water splash effect for armorion bouncing bombs
+Dynamic lighting is now default, Update effect for new commander explosion
+Improve corpyro flame sfx
+Add new unit pics for tll sea planes
+Lups effects added for all combat cons
+Improve ready screen, new fonts + button visuals
+Update arm blaze model texture
+Increase size of battleship icons
+New muzzle flare for sniper units
+New visual for perseus and blackdawn rockets
+
+
+----Bugs----
+Fix dragonfly strage/slow movements
+Fix broken shore torpedo launchers for all factions, Closes #440
+Fix tll mobile anti
+Fix black lups bug
+Fix sea planes scouts low speed
+Fix description for arm/core gens, (Hybrid Energy Producer/Metal Maker)
+Fix vipers not getting hit while under construction
+Fix comCounter, Closes #449
+Remove snipers from dont break cloak widget
+Fix uppercut being produced under construction yard
+Add waypoint for core t2 hover platform (land)
+
+
+----Balance----
+Demolisher Increase buildtime 40788>140000
+Corerex Reduce main cannon damage 990>700, Replace lighting cannon with laser weapon
+Rebalance arm/core sea con planes
+Reduce arm/core spiderlab Metal cost by 15%
+Reblance heli pads, Arm Metalcost 3020>1920, Buildtime 21240>17240, Core Metalcost 2908>2080, Buildtime 21981>16981
+Armjade Reduce cruisealt 150>60
+Rebalance Dragona and Liberty
+Increase champ maneuverability, acceleration 0.011>0.06, breakrate 0.026>0.046, maxvelocity 1>1.4
+Increase corerex maneuverability
+Increase armanter maneuverability, breakrate 0.007 0.05, maxvelocity 0.8>1.6
+Rebalance Gargoyle, BuildcostEnergy 16000>17000 buildbostMetal 2250>2560, maxDamage 5900>7500 ,turntate 130>200, Sniper weapon replaced with Hight power Beamlaser type weapon
+Reduce titan main weapon damage 950>650 range 1600>1400 Reduce aoe 96>48, Set self-d countdown timer to 10s, Max speed reduce by %10
+Rebalance Tactical nukes ,aegis - range 3000>2550 damage 5000>2500, Catalyst - metalcost 754>1800, range 3000>2750
+Rebalance Sea Tactical nukes, Uppercut range 5120>4400, damge 6000>3000
+
+
+----Improvements----
+Update inital queue for tll faction
+Update nano rings, will now only show range while placing building
+Update defensive range widget, add some missing tllsea units
+Update unit stats widget, airlos + unit class + exp, also stats now get printed 200 pixels down from top of screen to stop weapons going off screen
+Add console message for units ready to morph (will only effect morphed units that need XP as morph cost)
+*Add gadget to slowly drain energy storage while stunned
+*Add gadget to control stunned metal storage, when stunned metal storage capacity is removed (all extra metal will be lost)
+Remove map deformation for all weapons apart from nukes/tacknukes
+Killcount gadget is replace with damage counter gadget (show running totoal of player with most damage)
+Add jump command to custom formations and add hotkey "o"
+Add hotkey for morph command "/" will morph first unit only (ie with commander it will morph to battle commander)
+Update mod for upcoming changes in engine 97+
+Unload jumpjets gui if players is spec
+Update team plater, softer hi-lighted color
+Many other small changes now shown here
+Update ecostats widgets to latest version, now with new working tll icon
+Add WIP gadget to announce team with most E/M income
+
+
+
+---------------------------------------v2.27.3 ---------------------------------------
+----Visual----
+New pause screen logo
+Comgate is back, with new custom teleport fx, New visual message if comgate/teleport if activated
+Update furie visual effects
+Update tllacid explosion
+Add new commander death explosions
+Many new weapon visuals
+New models for chopper and tyson helis and new weapon visuals 
+
+----Bugs----
+Stiletto, Fix broken bomb drop values
+Stop specs getting death messages
+Fix armmine2 not self detonating
+Added tll plasma cannon to defensive range widget
+Allow underwater mex's to be auto upgraded
+Reduce Metron weapon sounds
+Restrict unit amount to 1 for jump drive (fix's rare bug)
+fix typo in cmd building hotkeys widget, Closes bug #437
+Give corpunk same explosion as armflea, Closes #433
+Fix popup turrets not getting hit, Closes #438
+Fix countermeasure not getting hit
+Fix air cons slow movement
+
+----Balance----
+Reduce arm/core immolator range 5100>3100
+Tech lock t3 bomber's (T3.5 RC needed)
+Anti Experimental cannons now unlocked by t3 RC
+Replace corcrab with a redesigned cormonsta, 2nd weapon now is AA
+Armmech (Killer), reduce hp by 50%
+Increase hypersion selfd and explosion sizes/damage
+Armsiege metalcost increased 5265>6465,damage 1450>2025
+Rebalance akmech, acceleration 0.08>0.07, maxVelocity 1.15>1.0, maxDamage 51347>48779
+Gorilla, Increase metal cost 12400>14500, Cannon damage 750>300 Make head laser weapon more visible
+Rebalance armanter, metalcost 8215>9215, laserweapon damage 240->500, missilelauncher 150>200, selfd and explosion size increased, Change movedef for armantar will now crush t2 walls
+Reduce arm/core t1.5 bomber's damage by 30%
+Increase blacklily decloak distance, will now decloak more often/sooner
+Armorion, Reduce maxVelocity 15>11.9 and reduce dropped bombs 25>22
+Balance titan, range 1300>1600 reloadtime 1.2>0.9
+Arm_furie reduce hp 255412>188788, main gun damage 180>150
+Hell Diver hp 3750>4250
+Champion increase damage 250>430, Moved from arm to core Experimental Vehicle Plant
+Remove tech lock for armraz, no need for rc
+Akmech reduce aoe of main weapon 200>128 range 800>600
+Armorion, Reduce maxVelocity 15>11.9 and reduce dropped bombs 25>22
+Rebalance cavalier, metalcost 1877>2177, missile (aoe 248>96, range 800>450, reloadtime 7>5, Damage 2171>1500),lightning cannon (aoe 248>96 range 1000>550)
+Rebalance tllflame tower is now counterpart to arm/core boosted llt, also locked unit from build menus unless player owns assault commander or higher
+Remove commandfire from commando main weapon now autofires
+Increase Commander damage for leveler/janus now 0.68*default damage (was around 1/3)
+
+--Rebalance sea con's
+Arm advanced con sub buildpower 575>450
+Core advanced con sub buildpower 575>450
+Tll advanced con sub buildpower 650>510
+Arm Naval Engineer buildpower 400>250, metal cost 213>255
+Core Naval Engineer buildpower 400>250, metal cost 241>289
+
+----Improvements----
+Add idiot proof ready button :D
+Nanos now remember passive/active state after morph
+Add gadget to disable on/off button while units are stunned
+Builders back to passive by default
+Reduce debris default damage, now damage is random between 15 to 30
+Added underwater laser weapon to all commanders
+Cleanup/Optimizes some model
+Replaced starbusrt ceg effect with cheaper version
+Updated camera lock screen widget
+Added new taskbar logo
+Retextured t1.5 cons, Closes #432
+
+---------------------------------------v2.26 ---------------------------------------
+----Visual----
+Improve armcrack corrock weapon trails
+Improve all heli rotor speed and make all rotor cooldown speed on landing and clean up heli some models
+Fix texture bug will tll contruction plants/builders and tllhoverrocket
+
+----Bugs----
+Fix provided range for jump drive
+Fix regex for dynamic collision volumes, feature's / wreaks resized again
+Fix wrong range show for tllviking, Closes #413
+Fix artybot projectile sieze,Closes #409
+Fix restore delay for tllplusar, Closes #411
+Remove some ota flare's for laser type weapon units, Closes #405
+Add correct size for helipads footprint/yardmaps and add aircraft landing controls to helipads
+Fix ferret's weaird weapon effects
+Fix tllcoyote AA weapon
+
+----Balance----
+Added new light lightning tower counterpart for arm/core LLT rebalanced Telsa as beamer counterpart
+--Reduce t2.5 RC cost
+T2.5 RC cost reduced by 500m and 5000e
+--Reduce Labs Energy Cost
+arm advanced hover platform energy cost reduced 135000>35422
+arm advanced airplant energy cost reduced 120000>64986
+arm advanced kbot plant energy cost reduced 116500>67937
+arm advanced shipyard energy cost reduced 64500>35305
+arm advanced vechile plant energy cost reduced 142000>78484
+arm spiderlab energy cost reduced 35000>9707
+arm helipad energy cost reduced 64000>17318, metal cost increased 2520>3021, buildtime increased 19240>21240
+arm sea platform energy cost reduced 85000>43368
+core advanced hover platform energy cost reduced 135600>38135
+core advanced airplant energy cost reduced 121000>69928
+core advanced kbot plant energy cost reduced 115600>67355
+core advanced shipyard energy cost reduced 65000>34939
+core advanced vechile plant energy cost reduced 145000>78962
+core helipad energy cost reduced 65000>21962, metal cost increased 2480>2980, buildtime increased 19981>21981
+core spiderlab energy cost reduced 35600>10986
+tll advanced airplant energy cost reduced 55000>19400
+tll advanced kbot plant energy cost reduced 35000>22764
+tll advanced shipyard energy cost reduced 33000>11240
+tll advanced vechile plant energy cost reduced 24000>23650
+tll sea platform energy cost reduced 42000>17903
+
+Tech lock Behegoli, Increase Destruitor size by 25%, increase hp 1950>2750 and lock both units by t2.5RC
+
+--Other Balance Changes
+Reduce tll commander makeenergy 40>30 and increase battle commander makeenergy 25>30
+Faster aiming for tllprivate
+Increase turnrate of tllotter and tllbug main turrets, also increase projectile speed of tllbug's main weapon
+Tech lock ahermes its t1.5, Closes #417
+Increase armcrack damage 220>240
+Reduced corrock reloadtime 6>5.5
+Increase armdark reloadtime 7>6
+Increase armscar reloadtime 14>12
+Reduced cbrutus hp 1950>1755, sightdistance 600>515, range 650>625
+Tllprivate reduce metal cost 75>60, increase hp 340>350, reduce damage 11>10
+Aexxec Increase turret turn rate 50>90
+
+----Improvements----
+Reorganize t2 hover labs build menus
+Added target on the movement
+Fix Mex Upgrader ignoring shielded mex's
+Added Command Insert widget
+Add widget to show game type at game start
+Updated echo stats widget, Closes #406
+Fix krogs icon and add custom icon for superkrog and new icons for t3/t4 mechs
+
+---------------------------------------v2.25 ---------------------------------------
+----Visual----
+Fix cordem weapon visuals
+Cleaner Visual for laser etc with projectile lights widget
+Muzzle flare added to helldiver
+Better RC exploding animation
+New visuals for all of tll lighting style including tll commanders
+Updated zeus claw splash cegs
+
+----Bugs----
+Carriers now cant assist
+Fix cordem weapon range
+Fix liche, Closes #386
+Hotfix decade missing many units
+Lower stockpile amount for armmin/cormin, Closes #397
+Fix rocko's weapon angle, Closes's #403
+Fix script bug with tll com's nano emitter
+Fix script but with hlt rotstoing barrel too soon
+
+----Balance----
+Cordem increase dps 400>600
+Increase janus/leveler impulse to better match old engine sytle
+Reduce dps for gladiator rocket 83>45
+Add custom hitpshere for all wind turbines, Closes #396
+Remove damage modifier, Tllwintraps now chain correctly
+Medium Catapult Reduce aoe 196>96
+
+----Improvements----
+--Major
+
+Add new kbot  tlldischarge, Jet Pack kbot , main weapon is lightning discharge cannon, 2nd weapon emp bomb launcher
+
+Added Morphable Sea nanos 
+
+Add autoheal values for 370 units that where using engine default values (Nearly all of tll), Idle time before 
+self-repair #increased by x3,and health regained per second reduce by half, to match arm/core values
+
+--Not so Major
+Rename manualfire to nuke or emp for selected units
+Remove initial charge time for jump capable units
+Add new kbot  tlldischarge,-more info to follow
+Add progress bar for reload time on jump capable units
+Add pushResistant to all artillery
+Optimize morph indicator widget
+Added Morphable Sea nanos 
+Remove shatter effect from tllwindtrap animation
+Fix ambusher not closing correctly
+Add specific unit reclaim widget
+Merge all subs into one movement class, pathing improvment
+Custom hitsphere for sea units
+Update luarules base content
+Remove initalcloak from tllwhale tlltraq and taipan
+
+
+---------------------------------------v2.24 ---------------------------------------
+----Visual----
+New replacment bomber for Stratos -- corfiend aka Fiend
+Cslice remove weapon model and change weapon color
+
+
+----Bugs----
+Fix battle sub and some tll sub fire angle
+Fix valiant erratic movements and increase hitsphere size, Closes #380
+Fix combat/eco cons movements while building
+Fix Aircon scripts, Closes #382
+Fix tllcom wreakage value
+
+
+----Balance----
+Balance t1.5 bombers, cruise altitude set to 165, max velocity reduce by 1.2 and fix wtf values for acceleration reduced by up to x6 to sane values
+Aircraft mine layers cant be assisted
+Rebalance make advanced hover platforms have same radar distance and remove wtf's radardistjam and stealth tag, Closes #219
+Armgen/corgen only returns heap
+Tlltarg reduce radar/sonar distance %20, radar 7250>5800, sonar 6000>4800
+Troman fix weapon order long range first, sniper range increased 900>1050
+Rebalance some of tll t1 tanks and kbots
+Increase tll advanced labs (air/kbot/vech) buildtime by 20%, and metal cost by 10%
+Tllroaster Main weapon dps reduced 283>250, Side weapons dps reduced 129>100 each
+Tllsniper Reduce dps 329>300, increase energy cost 1227>6135
+
+
+----Improvements----
+Mass improvment of a ships torpedos (ie they now hit target)
+Added all t1.5 eco to hotkeys widget
+Passive builder is back -- Default active
+No icons for under contruction dragon teeth
+Added some new unit icon, and fine tune unit selection
+Mod option for dynamic lighing
+Seaplanes now float on water surface
+Highlight geo also activates if geos are selected
+Fix sub unit radius being exposed
+
+---------------------------------------v2.23.3---------------------------------------
+----Visual----
+New projectile effect for all AA weapons
+New visual effect for laser type weapons
+New projectile effect for armraven
+
+----Bugs----
+Add transport mass limit for t1 air trans
+Fix gladiator not firing while in shallow water
+Ak Mech fix top turret rotating off center
+Fix armblade facing the wrong way when attacking, Closes #372
+
+----Balance----
+ICBM/Nukes rebalanced, now all having the same missile velocity
+Update nano boost gadget, self damage now is between 20% and 45% when in boost mode
+Rebalancing (mostly nerfing) drillers, energy cost increased by ~50%, metal cost reduced accordingly to preserve efficiency, hp down by 15%, build time up by 10%
+Tll Advanced solar rebalanced, buildtime, hp, efficiency slightly increased
+#339 Metal extractor balancing, T1.5 nerf (was 3 times the t1, now 2.5x the t1), T2 TLL buff (was 4.2x the t1 now 4.5x) , Core exploiter now the same yield as moho mex
+Bumblebee metal cost increased by 10%
+TLL T2+ Fusions efficiency decreased (as they provide build-in makers and cannot be directly compared to other factions in therms of conventional eff.)
+Add tll battle sub to t2 ship yard
+Tllmanta and Tllorc now only fire torpedo's in a forward direction
+Hovers can now be transported
+
+----Improvements----
+Remove Passive nanos gadget
+No more paralyze bar for morphing units
+Improve Custom Icoos widget , icons for MM are back and shields alsonew icon for t2 battleships and t3 ships ,Adv wind now also get correct icon
+Update game from latest Engine
+Fix zombie aircraft
+Fix battle sub movements
+Improve Grimani weapon effect
+Replace costly lups effect for armgen corgen and armamaker with ceg effect
+2 new t2 popup water turrets added for tll faction
+Tllwhale get popup hitsphere, fixes unit being unhitable when surface
+
+---------------------------------------v2.22---------------------------------------
+----Visual----
+
+New CEG effects for cordoom/armanni and armcybr
+New Visual effect for lasers (not all effected)
+Fix Ceg error Spam
+New Death Explosion for RC
+Visual fix for beamer
+Fix arm/core gen lups effect now matches on/off status with MM system
+All tll static sea unit now rock in water depending on maps tidal speed
+Add new loadscreens (increase in file size for now sorry folks)
+Reduce arm cloaked MM size by 0.70%
+Increase core hardened MM by 1.20%
+
+----Bugs----
+
+Disallow morph while jumping, Closes #311
+Fix excess energy for closed solars, Closes #332
+Remove upright from Rlik, Closes #325
+Fix wake bug for all t2 hovers, Closes #245
+Fix waterline for all t2 hovers, Closes #227
+Cleanup name for helipads
+Added hit sphere for cloaked fusion, fixes cheat collision view aspect
+Add decoyfor tag to all commander's, fixes cheat aspect with unit stats
+Fix Core commander animation
+Fix path to armseer stun script(no radar when stunned)
+Add arm/core gens to unit stats
+Tllhlt increase height fixes, not shooting over close units
+Fix way point for arm/core evp
+Fix unbuildable t2 hover floating platforms
+Fix Build range for arm/core hover cons, had problems building t2 hover labs
+Fix unbuildable T2 hover sea labs
+Fix Rainman(tll) walk animation
+Fix some closed units being unhitable
+Fix tllwhale targeting issues
+Fixed torpedo bombers targeting issues
+Add missing guard command for arm spider cons
+Fixed gladiator corpse model
+
+
+----Balance----
+
+--Game changers--
+Massive change for crushstrenth all these unit can now crush t1 wall (shive, armbull, armbull2, correap, anvil, armantar, armmlrs, avtr,
+champ, corgol, corgol1, cortotal, rockblack, tafw114, tllacid, tlldemon, tllroaster, tllthump, tllmlrpc, armfboy, armkrm, corprot,corsumo,
+corsumo1, troman, armjugg, armraven, armraz, cordem, corshieldgen, krogtaar, tllblind)
+
+Massive change for crushstrenth all these unit can now crush t2 wall (armmcv, armsiege, corbt, nsaagriz, armraptor, armraz1 corkrag1, tllgrim, tlltml)
+
+Rework nuke system, fixed all mobile anti, standard anti can only target standard nuke,
+fast anti can target standard and fast nukes,tll anti get new morph option into fast anti, armcarry corcarry and tllgiant get fast anti by default
+Upgrade cost for silo increased now tech2 required (same as fast anti) and xp increase 0.01>0.15
+Unit cap on fast anti's removed also
+
+Special T2 makers buffed Efficiency increased, mainly for arms cloaked, slight decreasing of capacity 500->400, cores hardened doubled capacity,
+Relates to models scaling of these two Cost and additional characteristics were changed to keep to proportions about the same
+
+--Not so big--
+
+T2+ Heavy rocket tanks can now target also air units, damage is currently the same for air/ground/naval
+Tllstuner reduced range 850>660,reduce damage v command 900>150
+Tllfloating nano build speed increase 300>350
+Tllobscurer, Reduce radarjam distance 1350>550 inline with arm/core counterpart, Closes #338
+Tllarchnano, Reduce E output 11<5, Reduce Metal Produced 0.4<0.3
+Increase Tll Hover Con buildpower 80>165
+Increase size of closed hitsphere(pitbull,ambusher) for weapons with small aoe
+Tllsalamander, Increase E cost 1425>14250 and increase buildtime 6351>8351
+Reduce tllconfuser radar jam distance 1000<550
+Lock build to t2.5 RC for coradon and armtem (T2 Battle Hover's), Closes #347
+Lock cortotal and terroriser by T2.5 RC
+Tllsquid Reduce sonarjam 475 >240
+Increasing cost and reducing HP of "TLL pelican" #340
+Remove battle sub from subpen buildmenu
+Increase cost of subpen metal 1250>2000, energy 1250>2500
+Tllturtle Reduce HP 3795>1220 and increase metalpershot 150>225
+Tllariman add energynow uses 10 enery per shot
+Tllriot increase energypershot 15>25
+Tllorc subersub, slowed down (max velocity, turnrate) cost increased, hp slightly increased, #340
+Add tll advanced sonar and jammer to t2 ship and sub buildmenu
+Tllasonar, reduce sonar diastance 2680>1500 and make unit site in water not ocean floor
+Tll get 2 new unit floating flak cannon and floating shield and t2 MM
+Guard command add back to all aircraft
+Tllambassador, General unit improvement's to match arm/core and fix unit pickup failing
+Tlluwjam Reduce jamdistance 1300>750 and make unit sit just under waterline now hitable by ships
+Increased tll t2 MM efficiency very slighly
+
+----Improvements----
+
+New Build pics for core t2 hover's
+Update game end gadget to latest version
+Added Mission gadget/widget, thanks DeadNightWarrior
+Update to may gadget/widgets
+Add wreakages for medium raven and vanguard
+Add context build widget
+Add floating radar tower for tll
+New build pic's for most tll aircraft and few more for arm/core
+Reduce Movedef count by 25%
+Make units stats show correct stats for nanos in boost mode
+Updated projectile lights widget
+Rezed unit come back with 50% original xp
+Add floating nanos to boost gadget
+Add max trans load capacity to unit stats widget
+Remove on/off button from RC's and tllwindtraps
