@@ -358,8 +358,8 @@ function widget:DrawScreen()
 		local eEta = (eRem - eCur) / (eInc + eRec)
 		
 		DrawText("Prog:", format("%d%% / %d%%", 100 * buildProg, 100 * buildRem))
-		DrawText("M:", format("%d / %d (" .. yellow .. "%d" .. white .. ")", mTotal * buildProg, mTotal, mTotal * buildRem))
-		DrawText("E:", format("%d / %d (" .. yellow .. "%d" .. white .. ")", eTotal * buildProg, eTotal, eTotal * buildRem))
+		DrawText("Metal:", format("%d / %d (" .. yellow .. "%d" .. white .. ")", mTotal * buildProg, mTotal, (mTotal * buildRem) + 1))
+		DrawText("Energy:", format("%d / %d (" .. yellow .. "%d" .. white .. ")", eTotal * buildProg, eTotal, (eTotal * buildRem) + 1))
 		cY = cY - fontSize
 	end
 	
