@@ -206,7 +206,7 @@ local weaponDefs = {
 		name = [[UW_Nuke]],
 		noautorange = 1,
 		propeller = 1,
-		range = 5120,
+		range = 4400,
 		reloadtime = 2,
 		renderType = 1,
 		selfprop = true,
@@ -230,7 +230,7 @@ local weaponDefs = {
 		weaponVelocity = 525,
 		damage = {
 			commanders = 1600,
-			default = 6000,
+			default = 3000,
 			subs = 5,
 		},
 	},
