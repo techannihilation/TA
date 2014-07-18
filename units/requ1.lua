@@ -120,7 +120,7 @@ local weaponDefs = {
 		noautorange = 1,
 		noSelfDamage = true,
 		propeller = 1,
-		range = 3000,
+		range = 2550,
 		reloadtime = 2,
 		renderType = 1,
 		selfprop = true,
@@ -143,7 +143,7 @@ local weaponDefs = {
 		weaponVelocity = 700,
 		damage = {
 			commanders = 499,
-			default = 5000,
+			default = 2500,
 			subs = 5,
 		},
 	},
