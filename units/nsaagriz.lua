@@ -68,6 +68,11 @@ local unitDef = {
 	customparams = {
 		RequireTech = [[Advanced T3 Unit Research Centre]],
 	},
+	sfxtypes = {
+		explosiongenerators = {
+		  	[1] = [[custom:tllroaster_muzzle]],
+		},
+	},
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],
@@ -124,15 +129,15 @@ local weaponDefs = {
 		noExplode = true,
 		pitchtolerance = 48000,
 		range = 1400,
-		reloadtime = 0,
+		reloadtime = 0.25,
 		renderType = 0,
 		rgbColor = [[0.5 0.4 1.0]],
 		sprayangle = 200,
 		soundHitDry = [[krypton]],
 		soundStart = [[krypto]],
-		thickness = 18.5,
+		thickness = 10,
 		tolerance = 5000,
-		texture1 = [[lightning2]],
+		texture1 = [[strike]],
 		texture2 = [[null]],
 		texture3 = [[null]],
 		texture4 = [[null]],

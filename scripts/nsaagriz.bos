@@ -7,13 +7,7 @@ piece  base, torso, point, blaster, gun, caisson, caisson1, caisson2,
        radarpole, radar1, radar2, roue1, roue2, roue3, roue4, roue5,
        roue6, roue7, roue8, bearing, corp, cannon;
 
-static-var  restore_delay, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
-            Static_Var_6, Static_Var_7, Static_Var_8, Static_Var_9, Static_Var_10,
-            Static_Var_11, Static_Var_12, Static_Var_13, Static_Var_14, Static_Var_15,
-            Static_Var_16, Static_Var_17, Static_Var_18, Static_Var_19, Static_Var_20,
-            Static_Var_21, Static_Var_22, Static_Var_23, Static_Var_24, Static_Var_25,
-            Static_Var_26, Static_Var_27, Static_Var_28, Static_Var_29, Static_Var_30,
-            Static_Var_31, Static_Var_32, Static_Var_33, statechg_DesiredState, statechg_StateChanging;
+static-var  restore_delay, Static_Var_12, Static_Var_13, statechg_DesiredState, statechg_StateChanging;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -56,18 +50,16 @@ RockUnit(anglex, anglez)
 	wait-for-turn base around x-axis;
 	turn base to z-axis <0.000000> speed <20.000000>;
 	turn base to x-axis <0.000000> speed <20.000000>;
-	return (0);
 }
 
-HitByWeapon(Func_Var_1, Func_Var_2)
+HitByWeapon(anglex, anglez)
 {
-	turn base to z-axis Func_Var_2 speed <105.000000>;
-	turn base to x-axis Func_Var_1 speed <105.000000>;
+	turn base to z-axis anglez speed <105.000000>;
+	turn base to x-axis anglex speed <105.000000>;
 	wait-for-turn base around z-axis;
 	wait-for-turn base around x-axis;
 	turn base to z-axis <0.000000> speed <30.000000>;
 	turn base to x-axis <0.000000> speed <30.000000>;
-	return (0);
 }
 
 Go()
@@ -92,7 +84,6 @@ Go()
 	spin radarpole around y-axis speed <15.000000>;
 	set BUSY to 1;
 	set BUSY to 0;
-	return (0);
 }
 
 Stop()
@@ -118,14 +109,12 @@ Stop()
 	sleep 800;
 	set ARMORED to 1;
 	set BUSY to 0;
-	return (0);
 }
 
 InitState()
 {
 	statechg_DesiredState = TRUE;
 	statechg_StateChanging = FALSE;
-	return (0);
 }
 
 RequestState(requestedstate, currentstate)
@@ -152,19 +141,16 @@ RequestState(requestedstate, currentstate)
 		}
 	}
 	statechg_StateChanging = FALSE;
-	return (0);
 }
 
 Activate()
 {
 	start-script RequestState(0);
-	return (0);
 }
 
 Deactivate()
 {
 	start-script RequestState(1);
-	return (0);
 }
 
 Create()
@@ -174,7 +160,6 @@ Create()
 	Static_Var_13 = 1;
 	restore_delay = 10000;
 	start-script SmokeUnit();
-	return (0);
 }
 
 StartMoving()
@@ -187,7 +172,6 @@ StartMoving()
 	spin roue6 around x-axis speed <9.000000>;
 	spin roue7 around x-axis speed <9.000000>;
 	spin roue8 around x-axis speed <9.000000>;
-	return (0);
 }
 
 StopMoving()
@@ -200,13 +184,11 @@ StopMoving()
 	stop-spin roue6 around x-axis;
 	stop-spin roue7 around x-axis;
 	stop-spin roue8 around x-axis;
-	return (0);
 }
 
 SetMaxReloadTime(Func_Var_1)
 {
 	restore_delay = Func_Var_1 * 2;
-	return (0);
 }
 
 RestoreAfterDelay()
@@ -222,7 +204,6 @@ RestoreAfterDelay()
 		sleep restore_delay;
 		turn blaster to y-axis <0.000000> speed <200.000000>;
 	}
-	return (0);
 }
 
 AimPrimary(heading, pitch)
@@ -242,6 +223,7 @@ FirePrimary()
 {
 	if( Static_Var_13 == 2 )
 	{
+		emit-sfx 1024 + 0 from point;
 		move gun to z-axis [-1.000000] now;
 		sleep 170;
 		move gun to z-axis [0.000000] speed [100.000000];
@@ -255,7 +237,6 @@ AimFromPrimary(piecenum)
 	{
 		piecenum = gun;
 	}
-	return (0);
 }
 
 QueryPrimary(piecenum)
@@ -264,13 +245,11 @@ QueryPrimary(piecenum)
 	{
 		piecenum = point;
 	}
-	return (0);
 }
 
 SweetSpot(piecenum)
 {
 	piecenum = torso;
-	return (0);
 }
 
 Killed(severity, corpsetype)
@@ -315,5 +294,4 @@ Killed(severity, corpsetype)
 	explode caisson1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 	explode caisson2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode cannon type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	return (0);
 }
