@@ -110,7 +110,7 @@ end
 
 function gadget:UnitDestroyed(unitID, unitDefID, unitTeam)
 	if (storageDefs[unitDefID]) then 
-	   storageDefs[unitID]= nil
+	   storageunits[unitID]= nil
 	end
 end
 
