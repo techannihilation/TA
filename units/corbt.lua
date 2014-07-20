@@ -63,6 +63,11 @@ local unitDef = {
 	customparams = {
 		RequireTech = [[Advanced T3 Unit Research Centre]],
 	},
+	sfxtypes = {
+		explosiongenerators = {
+			[1] = [[custom:sniper_muzzle_large]],
+		},
+        },
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],
