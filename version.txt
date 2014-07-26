@@ -1,5 +1,4 @@
----------------------------------------v2.28 ---------------------------------------
-
+---------------------------------------v2.28.2 ---------------------------------------
 ----Visual----
 Add dust cloud/water splash effect for armorion bouncing bombs
 Dynamic lighting is now default, Update effect for new commander explosion
@@ -11,7 +10,6 @@ Update arm blaze model texture
 Increase size of battleship icons
 New muzzle flare for sniper units
 New visual for perseus and blackdawn rockets
-
 
 ----Bugs----
 Fix dragonfly strage/slow movements
@@ -25,7 +23,9 @@ Fix comCounter, Closes #449
 Remove snipers from dont break cloak widget
 Fix uppercut being produced under construction yard
 Add waypoint for core t2 hover platform (land)
-
+Fix reloadtime issue for Kryptoblaster, Add visual effect for emit point Closes #224
+Fix brutus weapon falling short of target, Closes #441 and #456
+Fix armcyclone missing targets
 
 ----Balance----
 Demolisher Increase buildtime 40788>140000
@@ -42,7 +42,7 @@ Rebalance Gargoyle, BuildcostEnergy 16000>17000 buildbostMetal 2250>2560, maxDam
 Reduce titan main weapon damage 950>650 range 1600>1400 Reduce aoe 96>48, Set self-d countdown timer to 10s, Max speed reduce by %10
 Rebalance Tactical nukes ,aegis - range 3000>2550 damage 5000>2500, Catalyst - metalcost 754>1800, range 3000>2750
 Rebalance Sea Tactical nukes, Uppercut range 5120>4400, damge 6000>3000
-
+Reduce morty max speed by 0.18%
 
 ----Improvements----
 Update inital queue for tll faction
@@ -62,7 +62,7 @@ Update team plater, softer hi-lighted color
 Many other small changes now shown here
 Update ecostats widgets to latest version, now with new working tll icon
 Add WIP gadget to announce team with most E/M income
-
+Optimize a few t3 tank models and added new custom hitspheres
 
 
 ---------------------------------------v2.27.3 ---------------------------------------
