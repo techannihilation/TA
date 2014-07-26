@@ -110,7 +110,7 @@ local inertialessWeapons = {
 -- Adjustment of terrain damage, kinetic force of weapons, avoidfeature==false for short range and explosive weapons, and add water hit sounds
 for id in pairs(WeaponDefs) do
 	WeaponDefs[id].soundhitwet = ""
-	if WeaponDefs[id].range and tonumber(WeaponDefs[id].range) < 550 or explosiveWeapons[WeaponDefs[id].weapontype] then
+	if WeaponDefs[id].range and tonumber(WeaponDefs[id].range) < 50 or explosiveWeapons[WeaponDefs[id].weapontype] then
 		WeaponDefs[id].avoidfeature = false
 	end
 	if explosiveWeapons[WeaponDefs[id].weapontype] then
