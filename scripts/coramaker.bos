@@ -4,9 +4,9 @@
 #include "exptype.h"
 
 piece  base, lift, con2, con1, maker, shell2, shell1, con3,
-       con4;
+       con4, emit_maker;
 
-static-var  Static_Var_2 ;
+static-var  Static_Var_2, Effects;
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -56,6 +56,7 @@ Go()
 		move con3 to z-axis [0.610962] speed [0.555420];
 		move con4 to z-axis [-0.610962] speed [0.555420];
 		wait-for-move con1 along x-axis;
+		Effects = 1;
 	}
 }
 
@@ -63,6 +64,7 @@ Stop()
 {
 	if( TRUE )
 	{
+		Effects = 0;
 		move con1 to x-axis [0.000000] speed [0.555420];
 		move con2 to x-axis [0.000000] speed [0.555420];
 		move con3 to x-axis [0.000000] speed [0.555420];
@@ -108,10 +110,27 @@ ImAMetalMaker()
 	}
 }
 
+EffectWatch()
+{
+	while(TRUE)
+	{
+		while( Effects  == 1)
+		{
+			emit-sfx 1024 + 0 from emit_maker;
+			sleep 1300;
+		}
+	sleep 333;
+	}
+}
+	
+	
 Create()
 {
-	call-script ImAMetalMaker();
+	Effects = 0;
+	hide emit_maker;
+   	start-script EffectWatch();
 	start-script SmokeUnit();
+	call-script ImAMetalMaker();
 }
 
 

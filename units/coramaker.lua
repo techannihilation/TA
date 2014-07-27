@@ -47,6 +47,11 @@ local unitDef = {
 	useBuildingGroundDecal = true,
 	workerTime = 0,
 	yardMap = [[oooooooooooo]],
+	sfxtypes = {
+		explosiongenerators = {
+			[1] = [[custom:maker_sfx]],
+		},
+        },
 	sounds = {
 		activate = [[metlon2]],
 		canceldestruct = [[cancel2]],
