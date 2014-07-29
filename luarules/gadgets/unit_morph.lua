@@ -163,6 +163,8 @@ local CMD_TRAJECTORY = CMD.TRAJECTORY
 local CMD_STOP = CMD.STOP
 local CMD_SELFD = CMD.SELFD
 
+local MAXunits = tonumber(Spring.GetModOptions().maxunits) or 500
+
 local morphPenalty = 1.0
 local MAX_MORPH = 0 --// will increase dynamically
 
@@ -504,6 +506,16 @@ local function StartMorph(unitID, unitDefID, teamID, morphDef, cmdp)
   -- Spring.Echo(unitID,Spring.GetUnitRulesParam(unitID,"jumpReload"))
   if not isFinished(unitID) or (Spring.GetUnitRulesParam(unitID,"jumpReload") == 0) then return true end
 
+  Spring.Echo(#Spring.GetTeamUnits(teamID) , (MAXunits))
+  if #Spring.GetTeamUnits(teamID) > (MAXunits * 0.95) then
+    Spring.Echo("\255\255\255\001Warning Unit Limit Approching - Morph may not complete")
+  end
+  if #Spring.GetTeamUnits(teamID) > (MAXunits * 0.99) then 
+    Spring.Echo("\255\255\001\001Morph disabled reduce unit count to proceed")
+    return true 
+  end
+  
+  
   Spring.SetUnitRulesParam(unitID,"Morphing",1)
   SpSetUnitHealth(unitID, { paralyze = 1.0e9 })    --// turns mexes and mm off (paralyze the unit)
   SpSetUnitResourcing(unitID,"e",0)                --// turns solars off
@@ -540,8 +552,8 @@ local function StopMorph(unitID, morphData)
   SpGiveOrderToUnit(unitID, CMD_ONOFF, { 1 }, { "alt" })
   local usedMetal  = morphData.def.metal  * scale
   SpAddUnitResource(unitID, 'metal',  usedMetal)
-  --local usedEnergy = morphData.def.energy * scale
-  --Spring.AddUnitResource(unitID, 'energy', usedEnergy)
+  local usedEnergy = morphData.def.energy * scale
+  SpAddUnitResource(unitID, 'energy', usedEnergy)
 
   SendToUnsynced("unit_morph_stop", unitID)
 
