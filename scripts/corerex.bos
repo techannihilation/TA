@@ -1,0 +1,203 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, turret1, sleeve1, gun1, flare1, turret2,
+       sleeve2, barrel1, barrel2, flare2, flare3;
+
+static-var  restore_delay, gun_2;
+
+// Signal definitions
+#define SIG_AIM				2
+#define SIG_AIM_2			4
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+HitByWeapon(anglex, anglez)
+{
+	turn base to z-axis anglez speed <105.016484>;
+	turn base to x-axis anglex speed <105.016484>;
+	wait-for-turn base around z-axis;
+	wait-for-turn base around x-axis;
+	turn base to z-axis <0.000000> speed <30.005495>;
+	turn base to x-axis <0.000000> speed <30.005495>;
+}
+
+Create()
+{
+	hide flare1;
+	hide flare2;
+	hide flare3;
+	gun_2 = turret1;
+	restore_delay = 3000;
+}
+
+SetMaxReloadTime(Func_Var_1)
+{
+	restore_delay = Func_Var_1 * 2;
+}
+
+RestoreAfterDelay()
+{
+	sleep restore_delay;
+	turn turret1 to y-axis <0.000000> speed <15.000000>;
+	turn sleeve1 to x-axis <0.000000> speed <15.000000>;
+}
+
+RestoreAfterDelay2()
+{
+	sleep restore_delay;
+	turn turret2 to y-axis <0.000000> speed <50.005495>;
+	turn sleeve2 to x-axis <0.000000> speed <35.005495>;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	turn turret1 to y-axis heading speed <45.000000>;
+	turn sleeve1 to x-axis <0.000000> - pitch speed <20.000000>;
+	wait-for-turn turret1 around y-axis;
+	wait-for-turn sleeve1 around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FirePrimary()
+{
+	show flare1;
+	turn gun1 to z-axis <0.000000> now;
+	turn gun1 to z-axis <60.005495> speed <150.027473>;
+	sleep 150;
+	hide flare1;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = flare1;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = turret1;
+}
+
+AimSecondary(heading, pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	turn turret2 to y-axis heading speed <80.016484>;
+	turn sleeve2 to x-axis <0.000000> - <0.989011> speed <15.000000>;
+	wait-for-turn turret1 around y-axis;
+	wait-for-turn sleeve1 around x-axis;
+	start-script RestoreAfterDelay2();
+	return (1);
+}
+
+FireSecondary()
+{
+	if( gun_2 == 1 )
+	{
+	}
+	if( gun_2 == 2 )
+	{
+	}
+	++gun_2;
+	if( gun_2 == 3 )
+	{
+		gun_2 = turret1;
+	}
+}
+
+QuerySecondary(piecenum)
+{
+	if( gun_2 == 1 )
+	{
+		piecenum = flare2;
+	}
+	if( gun_2 == 2 )
+	{
+		piecenum = flare3;
+	}
+}
+
+AimFromSecondary(piecenum)
+{
+	piecenum = turret2;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	hide flare1;
+	hide flare2;
+	hide flare3;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type BITMAPONLY | BITMAP4;
+		explode sleeve1 type BITMAPONLY | BITMAP1;
+		explode turret1 type BITMAPONLY | BITMAP2;
+		explode sleeve2 type BITMAPONLY | BITMAP1;
+		explode turret2 type BITMAPONLY | BITMAP2;
+		return (1);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type BITMAPONLY | BITMAP4;
+		explode sleeve1 type FALL | EXPLODE_ON_HIT | BITMAP1;
+		explode turret1 type SHATTER | BITMAP2;
+		explode sleeve2 type FALL | EXPLODE_ON_HIT | BITMAP1;
+		explode turret2 type SHATTER | BITMAP2;
+		return (1);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type BITMAPONLY | BITMAP4;
+		explode sleeve1 type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
+		explode turret1 type SHATTER | BITMAP2;
+		explode sleeve2 type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
+		explode turret2 type SHATTER | BITMAP2;
+		return (1);
+	}
+	corpsetype = 3;
+	explode base type BITMAPONLY | BITMAP5;
+	explode sleeve1 type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
+	explode turret1 type SHATTER | BITMAP3;
+	explode sleeve2 type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
+	explode turret2 type SHATTER | BITMAP3;
+	return (1);
+}
