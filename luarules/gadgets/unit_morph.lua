@@ -509,7 +509,7 @@ local function StartMorph(unitID, unitDefID, teamID, morphDef, cmdp)
   if #Spring.GetTeamUnits(teamID) > (MAXunits * 0.95) then
     Spring.Echo("\255\255\255\001Warning Unit Limit Approching - Morph may not complete")
   end
-end  if #Spring.GetTeamUnits(teamID) > (MAXunits * 0.99) then 
+  if #Spring.GetTeamUnits(teamID) > (MAXunits * 0.99) then 
     Spring.Echo("\255\255\001\001Morph disabled reduce unit count to proceed")
     return true 
   end
