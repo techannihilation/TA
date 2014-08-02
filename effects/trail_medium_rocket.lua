@@ -1,4 +1,5 @@
 -- trail_medium_rocket
+-- trail_medium_rocket_bomb
 
 return {
   ["trail_medium_rocket"] = {
@@ -50,7 +51,7 @@ return {
       },
     },
   },
- ["trail_medium_rocket_fast"] = {
+ ["trail_medium_rocket_bomb"] = {
   fakelight = {
       air                = false,
       class              = [[CSimpleGroundFlash]],
