@@ -25,7 +25,7 @@ local SpGetTeamUnits = Spring.GetTeamUnits
 
 local tackyfont
 local MAXunits = tonumber(Spring.GetModOptions().maxunits) or 500
-local UnitCount
+local UnitCount = nil
 local tackyfontpath = "luarules/fonts/LCD2U___.TTF"
 local textcolor =  { 1.0, 0.0, 0.0, 1.0 }
 local outline =  { 0.4, 0.4, 0.4, 1.0 }	
