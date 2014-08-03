@@ -20,6 +20,12 @@ local SpSelectUnitArray = Spring.SelectUnitArray
 local SpGetUnitPosition = Spring.GetUnitPosition
 local ipairs = ipairs
 
+function widget:Initialize()
+	if Spring.GetSpectatingState() then
+		widgetHandler:RemoveWidget(self)
+	end
+end
+
 function widget:UnitDestroyed(unitID,unitDefID,teamID)
 	if SpIsUnitSelected(unitID) then
 		local x,_,z=SpGetUnitPosition(unitID)

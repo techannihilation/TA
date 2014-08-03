@@ -58,6 +58,11 @@ local tremove = table.remove
 ---------------------------------------------------------------------------
 -- Code
 ---------------------------------------------------------------------------
+function widget:Initialize()
+  if Spring.GetSpectatingState() then
+    widgetHandler:RemoveWidget(self)
+  end
+end
 
 function widget:Update(dt)
 	

@@ -24,6 +24,9 @@ local SendCommmands = Spring.SendCommands
 local hotKeys = {}
 
 function widget:Initialize()
+  if Spring.GetSpectatingState() then
+    widgetHandler:RemoveWidget(self)
+  end
 	if rebindKeys then
 		for _, keycombo in ipairs(GetActionHotKeys("attack")) do
 			hotKeys[keycombo] = true

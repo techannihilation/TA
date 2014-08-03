@@ -82,6 +82,9 @@ local function UpdateUnitsList()
 end
 
 function widget:Initialize()
+  if Spring.GetSpectatingState() then
+    widgetHandler:RemoveWidget(self)
+  end
 	for i,ud in pairs(UnitDefs) do
 		if bombers[ud.name] then
 			bomber_uds[i]=ud

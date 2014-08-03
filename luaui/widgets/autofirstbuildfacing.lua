@@ -26,6 +26,12 @@ local SpSendCommands = Spring.SendCommands
 local pairs = pairs
 local abs = math.abs
 
+function widget:Initialize()
+  if Spring.GetSpectatingState() then
+    widgetHandler:RemoveWidget(self)
+  end
+end
+
 -- Count all units and calculate their barycenter
 function widget:GameFrame(f)
   if f==3 then

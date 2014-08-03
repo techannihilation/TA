@@ -75,6 +75,9 @@ local updateRate = 8/30
 local timeCounter = 0
 
 function widget:Initialize()
+  if Spring.GetSpectatingState() then
+    widgetHandler:RemoveWidget(self)
+  end
 	local unitnameToUnitDefID = {}--- unit name or humanName --> unit def id
 	for index,def in ipairs(UnitDefs) do
 		unitnameToUnitDefID[def.name]=index
