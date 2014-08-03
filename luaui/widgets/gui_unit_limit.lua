@@ -20,18 +20,21 @@ end
 local SpGetMyTeamID = Spring.GetMyTeamID
 local SpIsGUIHidden = Spring.IsGUIHidden
 local SpGetTeamUnits = Spring.GetTeamUnits
+local spGetSpectatingState = Spring.GetSpectatingState
+
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
 
-local tackyfont
 local MAXunits = tonumber(Spring.GetModOptions().maxunits) or 500
 local UnitCount = nil
+
 local tackyfontpath = "luarules/fonts/LCD2U___.TTF"
 local textcolor =  { 1.0, 0.0, 0.0, 1.0 }
-local outline =  { 0.4, 0.4, 0.4, 1.0 }	
-local vsx,vsy 
-local dx,dy
-local teamID
+local outline =  { 0.1, 0.1, 0.1, 1.0 }	
+local vsx,vsy = Spring.GetViewGeometry()
+local dx,dy = vsx*0.955, vsy*0.88
+local teamID = SpGetMyTeamID()
+local tackyfont = gl.LoadFont( tackyfontpath, 16 )
 
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
@@ -39,20 +42,24 @@ local teamID
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
 function widget:Initialize()
-  tackyfont = gl.LoadFont( tackyfontpath, 16 )
-  teamID = SpGetMyTeamID()
-  UnitCount = #SpGetTeamUnits(teamID)
-  vsx,vsy = Spring.GetViewGeometry()
-  dx = vsx*0.965
-  dy = vsy*0.90
+  if spGetSpectatingState() then
+    widgetHandler:RemoveWidget(self)
+  else
+    tackyfont = gl.LoadFont( tackyfontpath, 16 )
+    teamID = SpGetMyTeamID()
+    UnitCount = #SpGetTeamUnits(teamID)
+    vsx,vsy = Spring.GetViewGeometry()
+    dx = vsx*0.955
+    dy = vsy*0.88
+  end
 end
 
 
 
 function widget:ViewResize()
   vsx,vsy = Spring.GetViewGeometry()
-  dx = vsx*0.965
-  dy = vsy*0.90
+  dx = vsx*0.955
+  dy = vsy*0.88
 end
 
 function widget:GameFrame(frame)
@@ -69,12 +76,12 @@ end
 
 function widget:DrawScreen()
   if (SpIsGUIHidden() == false) then
-    if (UnitCount ~= nil) then
+    if (UnitCount ~= nil) and (Spring.GetGameFrame() > 0) then
     tackyfont:Begin()
     tackyfont:SetOutlineColor( outline )
     tackyfont:SetTextColor( textcolor )
-    tackyfont:Print("Unit Count", dx, dy, 18,'cO')
-    tackyfont:Print(UnitCount, dx, dy - 18, 18,'cO')
+    tackyfont:Print("Unit Count", dx, dy, 20,'cO')
+    tackyfont:Print(UnitCount, dx, dy - 28, 26,'cO')
     tackyfont:End()
     end
   end
