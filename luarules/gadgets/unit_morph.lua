@@ -507,13 +507,8 @@ local function StartMorph(unitID, unitDefID, teamID, morphDef, cmdp)
   if not isFinished(unitID) or (Spring.GetUnitRulesParam(unitID,"jumpReload") == 0) then return true end
 
   if #Spring.GetTeamUnits(teamID) > (MAXunits * 0.95) then
-    Spring.Echo("\255\255\255\001Warning Unit Limit Approching - Morph may not complete")
+    Spring.Echo("\255\255\255\001Warning Unit Limit Approching - Morph May Stall Deduce Unit Count")
   end
-  if #Spring.GetTeamUnits(teamID) > (MAXunits * 0.99) then 
-    Spring.Echo("\255\255\001\001Morph disabled reduce unit count to proceed")
-    return true 
-  end
-  
   
   Spring.SetUnitRulesParam(unitID,"Morphing",1)
   SpSetUnitHealth(unitID, { paralyze = 1.0e9 })    --// turns mexes and mm off (paralyze the unit)
@@ -715,12 +710,12 @@ end
 
 local function UpdateMorph(unitID, morphData)
   if SpGetUnitTransporter(unitID) then return true end
-
-  if (SpUseUnitResource(unitID, morphData.def.resTable)) then
+    local teamID    = GetUnitTeam(unitID)
+  if (morphData.progress < 1.0) and (SpUseUnitResource(unitID, morphData.def.resTable)) then
     morphData.progress = morphData.progress + morphData.increment
     SendToUnsynced("mph_prg", unitID, morphData.progress)
   end
-  if (morphData.progress >= 1.0) then
+  if (morphData.progress >= 1.0) and #Spring.GetTeamUnits(teamID) < (MAXunits) then
     FinishMorph(unitID, morphData)
     return false -- remove from the list, all done
   end
@@ -1461,7 +1456,12 @@ local function DrawMorphUnit(unitID, morphData, localTeamID)
     glPushAttrib(GL_COLOR_BUFFER_BIT)
     glTranslate(px, py+14, pz)
     glBillboard()
-    local progStr = string.format("%.1f%%", 100 * morphData.progress)
+    local progStr
+    if morphData.progress > 1.0 then
+      progStr = "Stalled"
+    else    
+      progStr = string.format("%.1f%%", 100 * morphData.progress)
+    end
     gl.Text(progStr, 0, -20, 9, "oc")
     glPopAttrib()
     glPopMatrix()
