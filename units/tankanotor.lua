@@ -120,7 +120,7 @@ local weaponDefs = {
 		lineOfSight = true,
 		model = [[missileH2]],
 		name = [[Heavy Rocket]],
-		range = 1230,
+		range = 1060,
 		reloadtime = 7,
 		renderType = 1,
 		shakeduration = 1,
@@ -141,7 +141,7 @@ local weaponDefs = {
 		weaponType = [[MissileLauncher]],
 		weaponVelocity = 500,
 		damage = {
-			default = 1150,
+			default = 1000,
 			subs = 5,
 		},
 	},
