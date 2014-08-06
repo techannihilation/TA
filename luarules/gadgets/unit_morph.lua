@@ -1,4 +1,4 @@
--- $Id: unit_morph.lua 4651 2009-05-23 17:04:46Z carrepairer $
+---- $Id: unit_morph.lua 4651 2009-05-23 17:04:46Z carrepairer $
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 --
@@ -509,7 +509,7 @@ local function StartMorph(unitID, unitDefID, teamID, morphDef, cmdp)
   for _,playerId in ipairs(Spring.GetPlayerList(teamID,true)) do
     local _,_,spectator=Spring.GetPlayerInfo(playerId)
     if not spectator and #Spring.GetTeamUnits(teamID) > (MAXunits * 0.95) then
-      Spring.Echo("\255\255\255\001Warning Unit Limit Approching - Morph May Stall Deduce Unit Count")
+      Spring.Echo("\255\255\255\001Warning Unit Limit Approching - Morph May Stall Reduce Unit Count")
     end
   end
   
