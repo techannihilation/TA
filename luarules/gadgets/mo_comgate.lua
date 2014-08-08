@@ -55,7 +55,6 @@ end
 
 function gadget:UnitCreated(unitID, unitDefID, teamID)
 	if (not gameStart) and not hiddenUnits[unitID] then
-	  	Spring.Echo(teamSKILL[teamID])
 		Spring.SetUnitCOBValue(unitID,1029,teamSKILL[teamID])
 		local x,y,z = Spring.GetUnitPosition(unitID)
 		hiddenUnits[unitID] = {x,y,z,teamID}
