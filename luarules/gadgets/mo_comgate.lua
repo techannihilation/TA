@@ -26,9 +26,37 @@ local hiddenUnits = {}
 local gameStart = false
 local gaiaTeamID = Spring.GetGaiaTeamID()
 
+local teamSKILL = {}
+
+function gadget:Initialize()
+   local gaiaTeamID = Spring.GetGaiaTeamID()
+    local teamList = Spring.GetTeamList()
+    for _,tID in pairs(teamList) do
+        if tID==gaiaTeamID then
+            teamSKILL[tID] = 3
+        else
+            local playerList = Spring.GetPlayerList(tID)
+            local teamSkillClass = 5
+            for _,pID in pairs(playerList) do
+                local customtable = select(10,Spring.GetPlayerInfo(pID))
+                local skillClass = customtable.skillclass -- 1 (1st), 2 (top5), 3 (top10), 4 (top20), 5 (other)
+                teamSkillClass = math.min(teamSkillClass, skillClass or 5)
+            end
+            if teamSkillClass >= 5 then
+                teamSKILL[tID] = 1
+            elseif teamSkillClass >= 3 then
+                teamSKILL[tID] = 2
+            else
+                teamSKILL[tID] = 3
+            end
+        end
+    end
+end
 
 function gadget:UnitCreated(unitID, unitDefID, teamID)
 	if (not gameStart) and not hiddenUnits[unitID] then
+	  	Spring.Echo(teamSKILL[teamID])
+		Spring.SetUnitCOBValue(unitID,1029,teamSKILL[teamID])
 		local x,y,z = Spring.GetUnitPosition(unitID)
 		hiddenUnits[unitID] = {x,y,z,teamID}
 		Spring.SetUnitNoDraw(unitID,true) 

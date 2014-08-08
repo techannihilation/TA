@@ -8,7 +8,7 @@ piece  torso, ruparm, luparm, rlowarm, llowarm, nano, pelvis, rflare,
        base, head, teleport;
 
 static-var  bMoving, bAiming, Static_Var_3, Static_Var_4, Static_Var_5,
-			Static_Var_6, counter;
+			Static_Var_6, counter, ceg;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -418,13 +418,14 @@ Shield()
 TeleportControl()
 {
 	sleep 100;
-	emit-sfx 1027 from teleport;
+	ceg = get UNKNOWN_UNIT_VALUE(1029);
+	emit-sfx 1026 from teleport;
 	sleep 2200;
-	emit-sfx 1026 from pelvis;
+	emit-sfx 1026 + ceg from pelvis;
 	sleep 100;
 	while (counter < 23) 
 	{
-		emit-sfx 2048 + 4 from teleport;
+		emit-sfx 2051 + ceg from teleport;
 	    sleep 65;
 	    ++counter;
 	}
@@ -450,7 +451,7 @@ Create()
 	Static_Var_3 = 1;
 	Static_Var_4 = 0;
 	start-script MotionControl();
-	//call-script TeleportControl();
+	call-script TeleportControl();
 }
 
 StartMoving()

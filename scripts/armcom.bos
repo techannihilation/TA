@@ -8,7 +8,7 @@ piece  torso, ruparm, luparm, rbigflash, nanospray, pelvis, lfirept, head,
 
 static-var  bMoving, bAiming, Static_Var_3, Static_Var_4, Static_Var_6, 
 			justfired, building, buildx, buildy, moveSpeed, currentSpeed,
-			counter;
+			counter, ceg;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -422,13 +422,15 @@ Shield()
 TeleportControl()
 {
 	sleep 100;
-	emit-sfx 1026 from teleport;
+	ceg = get UNKNOWN_UNIT_VALUE(1029);
+	get PRINT(ceg);
+	emit-sfx 1025 from teleport;
 	sleep 2200;
-	emit-sfx 1025 from pelvis;
+	emit-sfx 1025 + ceg from pelvis;  
 	sleep 100;
 	while (counter < 23) 
 	{
-		emit-sfx 2048 + 4 from teleport;
+		emit-sfx 2051 + ceg  from teleport;
 	    sleep 65;
 	    ++counter;
 	}
@@ -458,7 +460,7 @@ Create()
 	start-script UnitSpeed();
 	move teleport to y-axis [700.000000] now;
 	turn teleport to x-axis <90.000000> now;
-	//call-script TeleportControl();
+	call-script TeleportControl();
 	sleep 8000 / currentSpeed;
 	turn nanolath to x-axis <-42.000000> speed <220.000000>;
 	turn biggun to x-axis <-63.000000> speed <160.000000>;
