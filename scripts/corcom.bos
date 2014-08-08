@@ -451,9 +451,9 @@ Shield()
 
 TeleportControl()
 {
+
 	sleep 100;
 	ceg = get UNKNOWN_UNIT_VALUE(1029);
-	get PRINT (ceg);
 	emit-sfx 1025 from teleport;
 	sleep 2200;
 	emit-sfx 1025 + ceg from pelvis;
@@ -489,7 +489,7 @@ Create()
 	start-script UnitSpeed();
 	move teleport to y-axis [700.000000] now;
 	turn teleport to x-axis <90.000000> now;
-	call-script TeleportControl();
+	//call-script TeleportControl();
 }
 
 StartMoving()
