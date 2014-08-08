@@ -431,8 +431,8 @@ function widget:DrawScreen()
 		
 		local wDefId = wepsCompact[i]
 		local uWep = wDefs[wDefId]
-		
-		if uWep.range > 16 then
+
+		if uWep.range > 16 and not uWep.name:find("teleport",1,true) then
 			
 			local oDmg = uWep.damages[0]
 			local oBurst = uWep.salvoSize * uWep.projectiles
