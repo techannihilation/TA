@@ -42,7 +42,8 @@ function gadget:Initialize()
 		local tsMu = customtable.skill
 		local tsSigma = customtable.skilluncertainty
 		if tsMu then
-			teamSkill = tonumber(tsMu)
+			teamSkill = tonumber(tsMu) or 1
+			Spring.Echo(teamSkill)
 		end
 		local name = Spring.GetPlayerInfo(pID)
 	        Spring.Echo("look " .. name .. " has ts values of " .. teamSkill)
