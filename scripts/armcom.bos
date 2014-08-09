@@ -423,7 +423,6 @@ TeleportControl()
 {
 	sleep 100;
 	ceg = get UNKNOWN_UNIT_VALUE(1029);
-	get PRINT(ceg);
 	emit-sfx 1025 from teleport;
 	sleep 2200;
 	emit-sfx 1025 + ceg from pelvis;  
@@ -460,7 +459,7 @@ Create()
 	start-script UnitSpeed();
 	move teleport to y-axis [700.000000] now;
 	turn teleport to x-axis <90.000000> now;
-	call-script TeleportControl();
+	//call-script TeleportControl();
 	sleep 8000 / currentSpeed;
 	turn nanolath to x-axis <-42.000000> speed <220.000000>;
 	turn biggun to x-axis <-63.000000> speed <160.000000>;
