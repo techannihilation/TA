@@ -27,6 +27,12 @@ local DISTORT_WEAPONS = {
   ["armcom_teleport"] = true,
   ["tllcom_teleport"] = true,
   ["corcom_teleport"] = true,
+  ["armcom_teleport_blue"] = true,
+  ["tllcom_teleport_blue"] = true,
+  ["corcom_teleport_blue"] = true,
+  ["armcom_teleport_yellow"] = true,
+  ["tllcom_teleport_yellow"] = true,
+  ["corcom_teleport_yellow"] = true,
   ["armsonic_sonic_cannon"] = true,
   ["corvroc_cortruck_rocket"] = true,
   ["armmerl_armtruck_rocket"] = true,
@@ -197,9 +203,15 @@ else
   local mustardExplosions  = {}
 
   local DISTORT_SHORT = {
-  ["armcom_teleport"] = true,
-  ["tllcom_teleport"] = true,
-  ["corcom_teleport"] = true,
+    ["armcom_teleport"] = true,
+    ["tllcom_teleport"] = true,
+    ["corcom_teleport"] = true,
+    ["armcom_teleport_blue"] = true,
+    ["tllcom_teleport_blue"] = true,
+    ["corcom_teleport_blue"] = true,
+    ["armcom_teleport_yellow"] = true,
+    ["tllcom_teleport_yellow"] = true,
+    ["corcom_teleport_yellow"] = true,
 }
   --// find napalms
   for i=1,#WeaponDefs do
