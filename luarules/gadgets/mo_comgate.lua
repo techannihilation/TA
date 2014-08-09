@@ -36,20 +36,23 @@ function gadget:Initialize()
             teamSKILL[tID] = 3
         else
             local playerList = Spring.GetPlayerList(tID)
-            local teamSkillClass = 5
+            local teamSkill = 1
             for _,pID in pairs(playerList) do
                 local customtable = select(10,Spring.GetPlayerInfo(pID))
-                local skillClass = customtable.skillclass -- 1 (1st), 2 (top5), 3 (top10), 4 (top20), 5 (other)
-                teamSkillClass = math.min(teamSkillClass, skillClass or 5)
-	        Spring.Echo("nix look here")
-                Spring.Echo( customtable.skillclass)
+		local tsMu = customtable.skill
+		local tsSigma = customtable.skilluncertainty
+		if tsMu then
+			teamSkill = tsMu
+		end
+		local name = Spring.GetPlayerInfo(pID)
+	        Spring.Echo("look " .. name .. " has ts values of " .. teamSkill)
             end
-            if teamSkillClass >= 5 then
-                teamSKILL[tID] = 1
-            elseif teamSkillClass >= 3 then
+            if teamSkill >= 35 then
+                teamSKILL[tID] = 3
+            elseif teamSkill >= 30 then
                 teamSKILL[tID] = 2
             else
-                teamSKILL[tID] = 3
+                teamSKILL[tID] = 1
             end
         end
     end
