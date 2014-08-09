@@ -41,10 +41,9 @@ function gadget:Initialize()
                 local customtable = select(10,Spring.GetPlayerInfo(pID))
                 local skillClass = customtable.skillclass -- 1 (1st), 2 (top5), 3 (top10), 4 (top20), 5 (other)
                 teamSkillClass = math.min(teamSkillClass, skillClass or 5)
-	   Spring.Echo("nix look here")
-	    Spring.Echo( customtable.skillclass)
+	        Spring.Echo("nix look here")
+                Spring.Echo( customtable.skillclass)
             end
-	 
             if teamSkillClass >= 5 then
                 teamSKILL[tID] = 1
             elseif teamSkillClass >= 3 then
