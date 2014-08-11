@@ -713,6 +713,7 @@ local morphDefs = {
 		metal = 2700,
 		energy = 33000,
 	},
+	--[[
       corshieldgen = {
 		into = 'corshieldgen_static',
 		tech = 1,
@@ -723,6 +724,7 @@ local morphDefs = {
 		tech = 1,
 		time = 25,
 		},    
+	--]]
 }
 
 
