@@ -191,7 +191,7 @@ function gadget:GameFrame(n)
     for unitID in pairs(boostednanos) do
       	if mrandom(0,1) == 0 then 
 	  local _,hp = SpGetUnitHealth(unitID)
-	  local damage = mrandom(hp*0.20,(hp*0.45))
+	  local damage = mrandom(hp*0.20,(hp*0.60))
 	  --Spring.Echo("hp = " .. hp .."      " .. damage)
 	  SpAddUnitDamage(unitID , damage)
 	  local x,y,z = SpGetUnitPosition(unitID)
