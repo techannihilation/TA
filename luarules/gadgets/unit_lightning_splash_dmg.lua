@@ -13,11 +13,9 @@ function gadget:GetInfo()
 end
 
 ----------------------------------------------------------------
--- Synced only
+-- Synced
 ----------------------------------------------------------------
-if not gadgetHandler:IsSyncedCode() then
-    return false
-end
+if (gadgetHandler:IsSyncedCode()) then
 
 ----------------------------------------------------------------
 -- Config
@@ -60,9 +58,24 @@ function gadget:UnitDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weap
         if (nearUnit ~= unitID) and (not immuneToSplash[nearUnitDefID]) then
           local nx,ny,nz = SpGetUnitPosition(nearUnit)
           SpSpawnCEG(sparkWeapons[weaponID].ceg,nx,ny,nz,0,0,0)
+	  SendToUnsynced("splashsound", nx, ny, nz)
           SpAddUnitDamage(nearUnit, damage*sparkWeapons[weaponID].forkdamage, 0, attackerID)
           count = count + 1
         end
       end    
     end
+end
+
+else
+----------------------------------------------------------------
+-- Unsynced
+----------------------------------------------------------------
+function gadget:Initialize()
+  gadgetHandler:AddSyncAction("splashsound", SplashSound)
+end
+
+function SplashSound(_, x, y, z)
+    Spring.PlaySoundFile("sounds/zapzap.wav", 2, x,y,z)
+end
+
 end
