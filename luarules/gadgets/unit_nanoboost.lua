@@ -17,9 +17,8 @@ end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
-if (not gadgetHandler:IsSyncedCode()) then
-  return false  --  silent removal
-end
+--synced
+if (gadgetHandler:IsSyncedCode()) then
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -196,6 +195,7 @@ function gadget:GameFrame(n)
 	  SpAddUnitDamage(unitID , damage)
 	  local x,y,z = SpGetUnitPosition(unitID)
 	  SpSpawnCEG("ZEUS_FLASH_SUB",x,y,z,0,0,0)
+	  SendToUnsynced("boostsound", x, y, z)
       end
     end
   end
@@ -218,5 +218,19 @@ function gadget:Shutdown()
 		end
 	end
 end
+
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
+
+--synced
+else
+
+function gadget:Initialize()
+  gadgetHandler:AddSyncAction("boostsound", BoostSound)
+end
+
+function BoostSound(_, x, y, z)
+    Spring.PlaySoundFile("sounds/zapzap.wav", 5, x,y,z)
+end
+
+end
