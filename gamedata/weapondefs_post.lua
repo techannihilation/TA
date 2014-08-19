@@ -142,12 +142,14 @@ for id in pairs(WeaponDefs) do
 		WeaponDefs[id].impulseboost = 0
 		WeaponDefs[id].impulsefactor = 0
 	end
-	if WeaponDefs[id].cratermult then 
+	if WeaponDefs[id].cratermult and WeaponDefs[id].cratermult > 0 then
+		--Spring.Echo("crater mult " .. id,WeaponDefs[id].cratermult)
 		WeaponDefs[id].cratermult = WeaponDefs[id].cratermult * 0.4
 	else
-		WeaponDefs[id].cratermult = 0.4
+		WeaponDefs[id].cratermult = 0.0
 	end
-	if WeaponDefs[id].craterboost then
+	if WeaponDefs[id].craterboost and WeaponDefs[id].craterboost > 0 then
+		--Spring.Echo("crater boost " .. id,WeaponDefs[id].craterboost)
 		WeaponDefs[id].craterboost = WeaponDefs[id].craterboost * 0.4
 	else
 		WeaponDefs[id].craterboost = 0
