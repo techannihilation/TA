@@ -74,24 +74,34 @@ end
 local UnitEffects = {
 
   --// FUSIONS //--------------------------
-    
+ [UnitDefNames["corfus"].id] = {
+    {class='SimpleParticles2', options=MergeTable({pos={0,50,-5}, delay=0, lifeSpread=30},plasmaball_corfus)},
+    {class='SimpleParticles2', options=MergeTable({pos={0,50,-5}, delay=30, lifeSpread=30},plasmaball_corfus)},
+    {class='ShieldJitter',options={life=math.huge, pos={0,50,-5}, size=25, precision=22, repeatEffect=true}},
+    {class='GroundFlash',options=groundFlashBlue},
+  },
+ [UnitDefNames["corsfus"].id] = {
+    {class='SimpleParticles2', options=MergeTable({pos={0,100,0}, delay=0, lifeSpread=30},plasmaball_corsfus)},
+    {class='SimpleParticles2', options=MergeTable({pos={0,100,0}, delay=30, lifeSpread=30},plasmaball_corsfus)},
+    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,100.9,0},strength = 0.01, size=32, precision=22, repeatEffect=true}},
+    {class='GroundFlash',options=groundFlashBlue},
+  },
  [UnitDefNames["cafus"].id] = {
-    --{class='Bursts',options=cafusBursts},
-    {class='ShieldSphere',options=cafusShieldSphere},
+    {class='SimpleParticles2', options=MergeTable({pos={0,58.9,-4.5}, delay=0, lifeSpread=30},plasmaball_cafus)},
+    {class='SimpleParticles2', options=MergeTable({pos={0,58.9,-4,5}, delay=30, lifeSpread=30},plasmaball_cafus)},
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,58.9,-4.5}, size=24.5, precision=22, repeatEffect=true}},
     {class='GroundFlash',options=groundFlashBlue},
   },
- [UnitDefNames["corfus"].id] = {
-    --{class='Bursts',options=corfusBursts},
-    {class='ShieldSphere',options=corfusShieldSphere},
-    {class='ShieldJitter',options={life=math.huge, pos={0,50,-5}, size=25, precision=22, repeatEffect=true}},
-    {class='GroundFlash',options=groundFlashGreen},
+ [UnitDefNames["crnns"].id] = {
+    {class='SimpleParticles2', options=MergeTable({pos={-9,26.9,0}, delay=0, lifeSpread=30},plasmaball_crnns)},
+    {class='SimpleParticles2', options=MergeTable({pos={-9,26.9,0}, delay=30, lifeSpread=30},plasmaball_crnns)},
+    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={-9,26.9,0}, size=29, precision=22, repeatEffect=true}},
   },
  [UnitDefNames["cfusionplant"].id] = {
-    --{class='Bursts',options=cfusionplantBursts},
-    {class='ShieldSphere',options=cfusionplantShieldSphere},
-    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,80.9,-10}, size=39.5, precision=22, repeatEffect=true}},
-    {class='GroundFlash',options=groundFlashBigRed},
+    {class='SimpleParticles2', options=MergeTable({pos={0,80.9,-10}, delay=0, lifeSpread=30},plasmaball_cfusionplant)},
+    {class='SimpleParticles2', options=MergeTable({pos={0,80.9,-10}, delay=30, lifeSpread=30},plasmaball_cfusionplant)},
+    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,80.9,-10}, size=45.5, precision=22, repeatEffect=true}},
+    {class='GroundFlash',options=groundFlashBigBlue},
   },
  [UnitDefNames["tllmedfusion"].id] = {
     --{class='Bursts',options=tllmedfusionBursts},
@@ -108,23 +118,15 @@ local UnitEffects = {
     {class='ShieldSphere',options=tllmegacoldfusShieldSphere},
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,90.9,0}, size=30.9, precision=22, repeatEffect=true}},
   },
- [UnitDefNames["crnns"].id] = {
-    --{class='Bursts',options=crnnsBursts},
-    {class='ShieldSphere',options=crnnsShieldSphere},
-    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={-9,26.9,0}, size=29, precision=22, repeatEffect=true}},
-  },
  [UnitDefNames["aafus"].id] = {
     {class='SimpleParticles2', options=MergeTable({pos={-38,70,-10}, delay=10, lifeSpread=300},sparks)},
     {class='SimpleParticles2', options=MergeTable({pos={21,70,-10}, delay=60, lifeSpread=300},sparks)},
-    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={-31,55,-10}, size=12, precision=22, repeatEffect=true}},
-    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={31,55,-10}, size=12, precision=22, repeatEffect=true}},
+   -- {class='ShieldJitter',options={layer=-16, life=math.huge, pos={-31,55,-10}, size=12, precision=22, repeatEffect=true}},
+   -- {class='ShieldJitter',options={layer=-16, life=math.huge, pos={31,55,-10}, size=12, precision=22, repeatEffect=true}},
   },
- [UnitDefNames["corsfus"].id] = {
-    --{class='Bursts',options=corsfusBursts},
-    {class='ShieldSphere',options=corsfusShieldSphere},
-    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,100.9,0}, size=32, precision=22, repeatEffect=true}},
-  },
-   [UnitDefNames["corshieldgen"].id] = {
+  --// SHIELDS //--------------------------
+
+  [UnitDefNames["corshieldgen"].id] = {
     {class='ShieldSphere',options=corshieldgenShieldSphere},
     {class='SimpleParticles2', options=MergeTable({piece="sphere", delay=20, lifeSpread=300},shield)},
     {class='SimpleParticles2', options=MergeTable({piece="sphere", delay=40, lifeSpread=300},shield)},
@@ -136,6 +138,8 @@ local UnitEffects = {
     {class='SimpleParticles2', options=MergeTable({piece="sphere", delay=40, lifeSpread=300},shield)},
     {class='SimpleParticles2', options=MergeTable({piece="sphere", delay=60, lifeSpread=300},shield)},
   },
+  
+  --// OTHER //--------------------------
  [UnitDefNames["armmex1"].id] = {
     {class='SimpleParticles2', options=MergeTable({pos={-6,15,0}, delay=10, lifeSpread=300},sparks)},
   },

@@ -103,13 +103,16 @@ local lups_luaui = false --// lups running as widget?
 local nilDispList
 
 local fusion_units = {
+	--Core
 	[UnitDefNames["corfus"].id] = true,
-	[UnitDefNames["tllmedfusion"].id] = true,
+	[UnitDefNames["corsfus"].id] = true,
 	[UnitDefNames["cafus"].id] = true,
 	[UnitDefNames["crnns"].id] = true,
+	[UnitDefNames["cfusionplant"].id] = true,
+	--The Lost Legacy
+	[UnitDefNames["tllmedfusion"].id] = true,
 	[UnitDefNames["tllcoldfus"].id] = true,
 	[UnitDefNames["tllmegacoldfus"].id] = true,
-	[UnitDefNames["corsfus"].id] = true
 }
 
 
@@ -263,7 +266,7 @@ end
 
 
 local function UnitCreated(_,unitID,unitDefID)
-	if (lups_luaui and fusion_units[unitDefID])	then
+    if (lups_luaui and fusion_units[unitDefID]) then
     Spring.UnitRendering.SetLODCount(unitID,1)
     Spring.UnitRendering.SetLODLength(unitID,1,1)
     Spring.UnitRendering.SetMaterial(unitID,1,"defaults3o",{shader="s3o"})
