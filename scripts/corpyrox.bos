@@ -98,7 +98,7 @@ StatusControl()
 		Static_Var_6 = get VETERAN_LEVEL;
 		if( Static_Var_7 == 0 )
 		{
-			if( Static_Var_6 > 10 )
+			if( Static_Var_6 > 5 )
 			{
 				emit-sfx 1024 + 0 from horns;
 				Static_Var_7 = 1;
@@ -121,7 +121,7 @@ StatusControl()
 		}
 		if( Static_Var_7 == 1 )
 		{
-			if( Static_Var_6 > 20 )
+			if( Static_Var_6 > 10 )
 			{
 				emit-sfx 1024 + 0 from launcher;
 				Static_Var_7 = 2;
