@@ -417,6 +417,10 @@ function SimpleParticles2:Visible()
       losState = IsPosInLos(posX,posY,posZ, LocalAllyTeamID)
     end
   end
+  local _, specFullView = Spring.GetSpectatingState()
+    if (specFullView) then
+    losState=true
+    end
   return (losState)and(spIsSphereInView(posX,posY,posZ,radius))
 end
 
