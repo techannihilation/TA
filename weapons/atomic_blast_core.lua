@@ -1,31 +1,28 @@
--- WEAPONDEF -- SUPERBLAST_BUILDING --
+-- WEAPONDEF -- ATOMIC_BLAST_CORE --
 --------------------------------------------------------------------------------
 
-local weaponName = "superblast_building"
+local weaponName = "atomic_blast_core"
 
 --------------------------------------------------------------------------------
 
 local weaponDef = {
-	areaofeffect = 2880,
+	areaofeffect = 480,
 	ballistic = 1,
-	craterboost = 1.5,
-	cratermult = 1,
-	edgeeffectiveness = 0.5,
-	explosiongenerator = [[custom:EXPLOSIONHUGE_BUILDING]],
-	impulseboost = 1,
-	impulsefactor = 1,
-	name = [[Matter/AntimatterExplosion]],
-	range = 3800,
+	craterboost = 0,
+	cratermult = 0,
+	explosiongenerator = [[custom:CORE_FUSION_EXPLO_480]],
+	impulseboost = 0.12300000339746,
+	impulsefactor = 0.12300000339746,
+	name = [[AtomicBlastWeapon]],
+	range = 520,
 	reloadtime = 3.5999999046326,
 	rendertype = 4,
-	shakeduration = 1.2,
-	shakemagnitude = 4,
-	soundhit = [[explosionbig]],
-	soundstart = [[explosionbig]],
+	soundhit = [[xplonuk3]],
+	soundstart = [[largegun]],
 	turret = 1,
-	weaponvelocity = 150,
+	weaponvelocity = 250,
 	damage = {
-		default = 33000,
+		default = 2400,
 	},
 }
 --------------------------------------------------------------------------------

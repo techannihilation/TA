@@ -1,7 +1,7 @@
--- WEAPONDEF -- SUPERBLAST_BUILDING --
+-- WEAPONDEF -- SUPERBLAST_BUILDING_CORE --
 --------------------------------------------------------------------------------
 
-local weaponName = "superblast_building"
+local weaponName = "superblast_building_core"
 
 --------------------------------------------------------------------------------
 
@@ -11,7 +11,7 @@ local weaponDef = {
 	craterboost = 1.5,
 	cratermult = 1,
 	edgeeffectiveness = 0.5,
-	explosiongenerator = [[custom:EXPLOSIONHUGE_BUILDING]],
+	explosiongenerator = [[custom:CORE_FUSION_EXPLO_2880]],
 	impulseboost = 1,
 	impulsefactor = 1,
 	name = [[Matter/AntimatterExplosion]],
