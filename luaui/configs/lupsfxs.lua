@@ -1,4 +1,4 @@
--- $Id: lupsFXs.lua 3485 2008-12-19 23:06:30Z jk $
+VFS.Include("LuaRules/Utilities/tablefunctions.lua")
 
 ----------------------------------------------------------------------------
 -- GROUNDFLASHES -----------------------------------------------------------
@@ -42,11 +42,11 @@ groundFlashViolett = {
   repeatEffect = true,
 }
 
-groundFlashBigRed = {
+groundFlashBigBlue = {
   life       = 50,
   size       = 160,
   texture    = "bitmaps/GPL/Lups/groundflash.png",
-  colormap   = { {1.0, 0.2, 0.5, 0.2},{1.0, 0.2, 0.5, 0.3},{1.0, 0.2, 0.5, 0.2},{1.0, 0.2, 0.5, 0.3}, },
+  colormap   = { {0.5, 0.5, 1.0, 0.3},{0.5, 0.5, 1.0, 0.4},{0.5, 0.5, 1.0, 0.4},{0.5, 0.5, 1.0, 0.3}, },
   repeatEffect = true,
 }
 
@@ -89,7 +89,9 @@ groundFlashArmses = {
   repeatEffect = true,
 }
 
-
+----------------------------------------------------------------------------
+-- BURSTS ------------------------------------------------------------------
+----------------------------------------------------------------------------
 ----------------------------------------------------------------------------
 -- BURSTS ------------------------------------------------------------------
 ----------------------------------------------------------------------------
@@ -277,8 +279,8 @@ corsfusShieldSphere = {
   life=20,
   pos = {0,100,0},
   size=30,
-  colormap1 = { {0.9, 0.9, 1, 0.75},{0.9, 0.9, 1, 1.0},{0.9, 0.9, 1, 1.0},{0.9, 0.9, 1, 0.75} },
-  colormap2 = { {0.2, 0.6, 0.2, 0.4},{0.2, 0.6, 0.2, 0.45},{0.2, 0.6, 0.2, 0.45},{0.2, 0.6, 0.2, 0.4} },
+  colormap1 = { {0.5, 0.5, 1, 0.05},{0.5, 0.5, 1, 0.15},{0.5, 0.5, 1, 0.15},{0.5, 0.5, 1, 0.05} },
+  colormap2 = { {0.2, 0.2, 0.6, 0.4},{0.2, 0.2, 0.6, 0.45},{0.2, 0.2, 0.6, 0.45},{0.2, 0.2, 0.6, 0.4} },
   repeatEffect=true
 }
 
@@ -612,7 +614,6 @@ sparksr2 = {
   speedSpread  = 0,
   life         = 30,
   lifeSpread   = 20,
-  partpos      = "5-rand()*10, 5-rand()*10, 5-rand()*10 ",
   partpos      = "0,24,0",
   colormap     = { {0.6, 0.6, 0.0, 0.01}, {0, 0, 0, 0.0}, {0, 0, 0, 0.0}, {0, 0, 0, 0.0}, {0, 0, 0, 0.0}, {0, 0, 0, 0.0}, {0, 0, 0, 0.0}, {0, 0, 0, 0.0}, },
   rotSpeed     = 0.1,
@@ -627,5 +628,115 @@ sparksr2 = {
   emitRotSpread = 70,
   texture      = 'bitmaps/Emg.tga',
   count        = 8,
+  repeatEffect = true,
+  }
+  plasmaball_corfus = {
+  speed        = 0,
+  speedSpread  = 0,
+  layer        = -36,
+  life         = 60,
+  lifeSpread   = 20,
+  partpos      = "0,0,0",
+  colormap     = { {0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}, },
+  rotSpeed     = 0.1,
+  rotFactor    = 1.0,
+  rotFactorSpread = -2.0,
+  rotairdrag   = 0.99,
+  rotSpread    = 360,
+  size         = 19,
+  sizeSpread   = 10,
+  sizeGrowth   = 0.74,
+  emitVector   = {0,0,0},
+  emitRotSpread = 70,
+  texture      = 'bitmaps/lightningball.png',
+  count        = 2,
+  repeatEffect = true,
+  }
+  plasmaball_corsfus = {
+  speed        = 0,
+  speedSpread  = 0,
+  layer        = -36,
+  life         = 60,
+  lifeSpread   = 20,
+  partpos      = "0,0,0",
+  colormap     = { {0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}, },
+  rotSpeed     = 0.1,
+  rotFactor    = 1.0,
+  rotFactorSpread = -2.0,
+  rotairdrag   = 0.99,
+  rotSpread    = 360,
+  size         = 30,
+  sizeSpread   = 10,
+  sizeGrowth   = 0.74,
+  emitVector   = {0,0,0},
+  emitRotSpread = 70,
+  texture      = 'bitmaps/lightningball.png',
+  count        = 3,
+  repeatEffect = true,
+  }
+  plasmaball_cafus = {
+  speed        = 0,
+  speedSpread  = 0,
+  layer        = -36,
+  life         = 60,
+  lifeSpread   = 20,
+  partpos      = "0,0,0",
+  colormap     = { {0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}, },
+  rotSpeed     = 0.1,
+  rotFactor    = 1.0,
+  rotFactorSpread = -2.0,
+  rotairdrag   = 0.99,
+  rotSpread    = 360,
+  size         = 20,
+  sizeSpread   = 10,
+  sizeGrowth   = 0.74,
+  emitVector   = {0,0,0},
+  emitRotSpread = 70,
+  texture      = 'bitmaps/lightningball.png',
+  count        = 3,
+  repeatEffect = true,
+  }
+  plasmaball_crnns = {
+  speed        = 0,
+  speedSpread  = 0,
+  layer        = -36,
+  life         = 60,
+  lifeSpread   = 20,
+  partpos      = "0,0,0",
+  colormap     = { {0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}, },
+  rotSpeed     = 0.1,
+  rotFactor    = 1.0,
+  rotFactorSpread = -2.0,
+  rotairdrag   = 0.99,
+  rotSpread    = 360,
+  size         = 24,
+  sizeSpread   = 10,
+  sizeGrowth   = 0.74,
+  emitVector   = {0,0,0},
+  emitRotSpread = 70,
+  texture      = 'bitmaps/lightningball.png',
+  count        = 3,
+  repeatEffect = true,
+  }
+  plasmaball_cfusionplant = {
+  speed        = 0,
+  speedSpread  = 0,
+  layer        = -36,
+  life         = 60,
+  lifeSpread   = 20,
+  partpos      = "0,0,0",
+  colormap     = { {0.1, 0.1, 0.4, 0.008}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.008}, },
+  rotSpeed     = 0.1,
+  rotFactor    = 1.0,
+  rotFactorSpread = -2.0,
+  rotairdrag   = 0.99,
+  rotSpread    = 360,
+  size         = 48,
+  sizeSpread   = 10,
+  sizeGrowth   = 0.74,
+  emitVector   = {0,0,0},
+  emitRotSpread = 360,
+  texture      = 'bitmaps/lightningball.png',
+  count        = 5,
   repeatEffect = true,
   }

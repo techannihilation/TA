@@ -1,3 +1,4 @@
+-- $Id: gfx_lups_manager.lua 4440 2009-04-19 15:36:53Z licho $
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 --
@@ -23,12 +24,11 @@ function widget:GetInfo()
 end
 
 
-include("Configs/lupsFXs.lua")
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
-local function MergeTable(table1,table2)
+function MergeTable(table1,table2)
   local result = {}
   for i,v in pairs(table2) do 
     if (type(v)=='table') then
@@ -50,6 +50,11 @@ local function MergeTable(table1,table2)
   return result
 end
 
+include("configs/lupsfxs.lua")
+include("configs/lupsunitfxs.lua")
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 local function blendColor(c1,c2,mix)
   if (mix>1) then mix=1 end
@@ -71,386 +76,58 @@ end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
-local UnitEffects = {
+local UnitEffects = {}
+local registeredUnits = {}	-- all finished units - prevents partial unbuild then rebuild from being treated as two UnitFinished events
 
-  --// FUSIONS //--------------------------
-    
- [UnitDefNames["cafus"].id] = {
-    --{class='Bursts',options=cafusBursts},
-    {class='ShieldSphere',options=cafusShieldSphere},
-    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,58.9,-4.5}, size=24.5, precision=22, repeatEffect=true}},
-    {class='GroundFlash',options=groundFlashBlue},
-  },
- [UnitDefNames["corfus"].id] = {
-    --{class='Bursts',options=corfusBursts},
-    {class='ShieldSphere',options=corfusShieldSphere},
-    {class='ShieldJitter',options={life=math.huge, pos={0,50,-5}, size=25, precision=22, repeatEffect=true}},
-    {class='GroundFlash',options=groundFlashGreen},
-  },
- [UnitDefNames["cfusionplant"].id] = {
-    --{class='Bursts',options=cfusionplantBursts},
-    {class='ShieldSphere',options=cfusionplantShieldSphere},
-    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,80.9,-10}, size=39.5, precision=22, repeatEffect=true}},
-    {class='GroundFlash',options=groundFlashBigRed},
-  },
- [UnitDefNames["tllmedfusion"].id] = {
-    --{class='Bursts',options=tllmedfusionBursts},
-    {class='ShieldSphere',options=tllmedfusionSphere},
-    {class='ShieldJitter',options={layer=-16, life=math.huge,  pos={-20,40,24}, size=13.9, precision=22, repeatEffect=true}},
-  },
- [UnitDefNames["tllcoldfus"].id] = {
-    --{class='Bursts',options=tllcoldfusBursts},
-    {class='ShieldSphere',options=tllcoldfusShieldSphere},
-    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,54.9,0}, size=15.9, precision=22, repeatEffect=true}},
-  },
- [UnitDefNames["tllmegacoldfus"].id] = {
-    --{class='Bursts',options=tllmegacoldfusBursts},
-    {class='ShieldSphere',options=tllmegacoldfusShieldSphere},
-    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,90.9,0}, size=30.9, precision=22, repeatEffect=true}},
-  },
- [UnitDefNames["crnns"].id] = {
-    --{class='Bursts',options=crnnsBursts},
-    {class='ShieldSphere',options=crnnsShieldSphere},
-    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={-9,26.9,0}, size=29, precision=22, repeatEffect=true}},
-  },
- [UnitDefNames["aafus"].id] = {
-    {class='SimpleParticles2', options=MergeTable({pos={-38,70,-10}, delay=10, lifeSpread=300},sparks)},
-    {class='SimpleParticles2', options=MergeTable({pos={21,70,-10}, delay=60, lifeSpread=300},sparks)},
-    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={-31,55,-10}, size=12, precision=22, repeatEffect=true}},
-    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={31,55,-10}, size=12, precision=22, repeatEffect=true}},
-  },
- [UnitDefNames["corsfus"].id] = {
-    --{class='Bursts',options=corsfusBursts},
-    {class='ShieldSphere',options=corsfusShieldSphere},
-    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,100.9,0}, size=32, precision=22, repeatEffect=true}},
-  },
-   [UnitDefNames["corshieldgen"].id] = {
-    {class='ShieldSphere',options=corshieldgenShieldSphere},
-    {class='SimpleParticles2', options=MergeTable({piece="sphere", delay=20, lifeSpread=300},shield)},
-    {class='SimpleParticles2', options=MergeTable({piece="sphere", delay=40, lifeSpread=300},shield)},
-    {class='SimpleParticles2', options=MergeTable({piece="sphere", delay=60, lifeSpread=300},shield)},
-  },
-   [UnitDefNames["corshieldgen_static"].id] = {
-    {class='ShieldSphere',options=corshieldgen_staticShieldSphere},
-    {class='SimpleParticles2', options=MergeTable({piece="sphere", delay=20, lifeSpread=300},shield)},
-    {class='SimpleParticles2', options=MergeTable({piece="sphere", delay=40, lifeSpread=300},shield)},
-    {class='SimpleParticles2', options=MergeTable({piece="sphere", delay=60, lifeSpread=300},shield)},
-  },
- [UnitDefNames["armmex1"].id] = {
-    {class='SimpleParticles2', options=MergeTable({pos={-6,15,0}, delay=10, lifeSpread=300},sparks)},
-  },
- [UnitDefNames["cormex1"].id] = {
-    {class='SimpleParticles2', options=MergeTable({pos={-6,20,0}, delay=20, lifeSpread=300},sparks)},
-  },
- [UnitDefNames["armrech3"].id] = {
-    {class='SimpleParticles2', options=MergeTable({pos={-12,60,-37}, delay=15, lifeSpread=30},sparksr1)},
-    {class='SimpleParticles2', options=MergeTable({pos={-12,75,-37}, delay=30, lifeSpread=30},sparksr1)},
-    {class='SimpleParticles2', options=MergeTable({pos={-12,90,-37}, delay=45, lifeSpread=30},sparksr1)},
-  },
- [UnitDefNames["armrech18"].id] = {
-    {class='SimpleParticles2', options=MergeTable({pos={-12,60,-37}, delay=15, lifeSpread=30},sparksr2)},
-    {class='SimpleParticles2', options=MergeTable({pos={-12,75,-37}, delay=30, lifeSpread=30},sparksr2)},
-    {class='SimpleParticles2', options=MergeTable({pos={-12,90,-37}, delay=45, lifeSpread=30},sparksr2)},
-  },
- [UnitDefNames["armrech21"].id] = {
-    {class='SimpleParticles2', options=MergeTable({pos={-12,60,-37}, delay=15, lifeSpread=30},sparksr3)},
-    {class='SimpleParticles2', options=MergeTable({pos={-12,75,-37}, delay=30, lifeSpread=30},sparksr3)},
-    {class='SimpleParticles2', options=MergeTable({pos={-12,90,-37}, delay=45, lifeSpread=30},sparksr3)},
-  },
- [UnitDefNames["corech3"].id] = {
-    {class='SimpleParticles2', options=MergeTable({pos={-12,60,-37}, delay=15, lifeSpread=30},sparksr1)},
-    {class='SimpleParticles2', options=MergeTable({pos={-12,75,-37}, delay=30, lifeSpread=30},sparksr1)},
-    {class='SimpleParticles2', options=MergeTable({pos={-12,90,-37}, delay=45, lifeSpread=30},sparksr1)},
-  },
- [UnitDefNames["corech18"].id] = {
-    {class='SimpleParticles2', options=MergeTable({pos={-12,60,-37}, delay=15, lifeSpread=30},sparksr2)},
-    {class='SimpleParticles2', options=MergeTable({pos={-12,75,-37}, delay=30, lifeSpread=30},sparksr2)},
-    {class='SimpleParticles2', options=MergeTable({pos={-12,90,-37}, delay=45, lifeSpread=30},sparksr2)},
-  },
- [UnitDefNames["corech21"].id] = {
-    {class='SimpleParticles2', options=MergeTable({pos={-12,60,-37}, delay=15, lifeSpread=30},sparksr3)},
-    {class='SimpleParticles2', options=MergeTable({pos={-12,75,-37}, delay=30, lifeSpread=30},sparksr3)},
-    {class='SimpleParticles2', options=MergeTable({pos={-12,90,-37}, delay=45, lifeSpread=30},sparksr3)},
-  },
-  --// ENERGY STORAGE //--------------------
-  
- [UnitDefNames["corestor"].id] = {
-    {class='GroundFlash',options=groundFlashCorestor},
-  },
- [UnitDefNames["armestor"].id] = {
-    {class='GroundFlash',options=groundFlashArmestor},
-  },
- [UnitDefNames["corses"].id] = {
-    {class='GroundFlash',options=groundFlashCorses},
-  },
- [UnitDefNames["armses"].id] = {
-    {class='GroundFlash',options=groundFlashArmses},
-  },
-  
-  --// PLANES still need to do work here //----------------------------
-  [UnitDefNames["armfig"].id] = {
-    {class='AirJet',options={color={0.3,0.2,0}, width=6, length=45, piece="rearthrust", onActive=true}},
- },
-  [UnitDefNames["armsfig"].id] = {
-    {class='AirJet',options={color={0.3,0.2,0}, width=6, length=45, piece="thrust", onActive=true}},
- },
-  [UnitDefNames["armseap"].id] = {
-    {class='AirJet',options={color={0.3,0.2,0}, width=6, length=45, piece="thrust", onActive=true}},
- },
-  [UnitDefNames["armhawk"].id] = {
-    {class='AirJet',options={color={0.3,0.1,0}, width=6, length=75, piece="rearthrust", onActive=true}},
-  },
-  [UnitDefNames["shrike"].id] = {
-    {class='AirJet',options={color={0.3,0.1,0}, width=4, length=75, piece="lthrust", onActive=true}},
-    {class='AirJet',options={color={0.3,0.1,0}, width=4, length=75, piece="rthrust", onActive=true}},
-    {class='AirJet',options={color={0.3,0.1,0}, width=4, length=75, piece="cthrust", onActive=true}},
-  },
-  [UnitDefNames["corfink"].id] = {
-    {class='AirJet',options={color={0.3,0.1,0}, width=3, length=35, piece="thrustb", onActive=true}},
-  },
-  [UnitDefNames["cortitan"].id] = {
-    {class='AirJet',options={color={0.3,0.1,0}, width=5, length=65, piece="thrustb", onActive=true}},
-  },
-  [UnitDefNames["armlance"].id] = {
-   {class='AirJet',options={color={0.3,0.1,0}, width=5, length=65, piece="thrust", onActive=true}},
-  },
-  [UnitDefNames["corveng"].id] = {
-    {class='AirJet',options={color={0.3,0.1,0}, width=3, length=42, piece="thrusta1", onActive=true}},
-    {class='AirJet',options={color={0.3,0.1,0}, width=3, length=42, piece="thrusta2", onActive=true}},
-  },
-  [UnitDefNames["corsfig"].id] = {
-    {class='AirJet',options={color={0.3,0.1,0}, width=3, length=42, piece="thrust1", onActive=true}},
-    {class='AirJet',options={color={0.3,0.1,0}, width=3, length=42, piece="thrust2", onActive=true}},
-  },
-  [UnitDefNames["corseap"].id] = {
-    {class='AirJet',options={color={0.3,0.1,0}, width=3, length=42, piece="thrust1", onActive=true}},
-    {class='AirJet',options={color={0.3,0.1,0}, width=3, length=42, piece="thrust2", onActive=true}},
-  },
-  [UnitDefNames["corshad"].id] = {
-    {class='AirJet',options={color={0.6,0.1,0}, width=4, length=52, piece="thrusta1", onActive=true}},
-    {class='AirJet',options={color={0.6,0.1,0}, width=4, length=52, piece="thrusta2", onActive=true}},
-  },
-  [UnitDefNames["armthund"].id] = {
-    {class='ThundAirJet',options={color={0.3,0.1,0}, width=2, length=47, piece="thrust1", onActive=true}},
-    {class='ThundAirJet',options={color={0.3,0.1,0}, width=2, length=47, piece="thrust2", onActive=true}},
-    {class='ThundAirJet',options={color={0.3,0.1,0}, width=2, length=47, piece="thrust3", onActive=true}},
-    {class='ThundAirJet',options={color={0.3,0.1,0}, width=2, length=47, piece="thrust4", onActive=true}},
-  },
-  [UnitDefNames["corhurc"].id] = {
-    {class='AirJet',options={color={0.9,0.3,0}, width=10, length=80, piece="thrust", onActive=true}},
-  },
-  [UnitDefNames["armpnix"].id] = {
-    {class='AirJet',options={color={0.3,0.5,0}, width=8, length=75, piece="thrust", onActive=true}},
-  },
-  [UnitDefNames["corvamp"].id] = {
-    {class='AirJet',options={color={0.6,0.1,0}, width=3.5, length=65, piece="thrustb", onActive=true}},
-  },
-  [UnitDefNames["corawac"].id] = {
-    {class='AirJet',options={color={0.8,0.45,0}, width=4, length=50, piece="thrust", onActive=true}},
-  },
-  [UnitDefNames["corhunt"].id] = {
-    {class='AirJet',options={color={0.8,0.45,0}, width=4, length=50, piece="thrust", onActive=true}},
-  },
- [UnitDefNames["armawac"].id] = {
-    {class='AirJet',options={color={0.1,0.4,0.6}, width=3.5, length=50, piece="thrust", onActive=true}},
-  },
- [UnitDefNames["armsehak"].id] = {
-    {class='AirJet',options={color={0.1,0.4,0.6}, width=3.5, length=50, piece="thrust", onActive=true}},
-  },
-  [UnitDefNames["armcybr"].id] = {
-    {class='AirJet',options={color={0.6,0.1,0}, width=3.5, length=60, piece="thrust1", onActive=true}},
-    {class='AirJet',options={color={0.6,0.1,0}, width=3.5, length=60, piece="thrust2", onActive=true}},
-  },
-  [UnitDefNames["armdfly"].id] = {
-    {class='AirJet',options={color={0.1,0.5,0.3}, width=3.5, length=60, piece="jet1", onActive=true}},
-    {class='AirJet',options={color={0.1,0.5,0.3}, width=3.5, length=60, piece="jet2", onActive=true}},
-  },
-  [UnitDefNames["corsb"].id] = {
-    {class='AirJet',options={color={0.1,0.4,0.6}, width=3.5, length=76, piece="emit1", onActive=true}},
-    {class='AirJet',options={color={0.1,0.4,0.6}, width=3.5, length=76, piece="emit2", onActive=true}},
-  },
-  [UnitDefNames["abuilderlvl1"].id] = {
-    {class='AirJet',options={color={0.1,0.4,0.6}, width=7, length=11, piece="emit1", onActive=true}},
-    {class='AirJet',options={color={0.1,0.4,0.6}, width=7, length=11, piece="emit2", onActive=true}},
-    {class='AirJet',options={color={0.1,0.4,0.6}, width=7, length=11, piece="emit3", onActive=true}},
-  },
-  [UnitDefNames["armsb"].id] = {
-    {class='AirJet',options={color={0.1,0.4,0.6}, width=3.7, length=70, piece="emit1", onActive=true}},
-  },
-  [UnitDefNames["corgripn"].id] = {
-    {class='AirJet',options={color={0.1,0.4,0.6}, width=3.7, length=60, piece="thrust", onActive=true}},
-  },
-  [UnitDefNames["blade"].id] = {
-    {class='AirJet',options={color={0.1,0.5,0.3}, width=3.7, length=28, piece="thrust1", onActive=true}},
-  },
-  [UnitDefNames["armpers"].id] = {
-     {class='AirJet',options={color={0.6,0.1,0}, width=5, length=22, piece="rearthrust", onActive=true}},
-  },
-  [UnitDefNames["airwolf3g"].id] = {
-     {class='AirJet',options={color={0.6,0.1,0}, width=3.7, length=50, piece="fum3", onActive=true}},
-  },
-  [UnitDefNames["shrike"].id] = {
-     {class='AirJet',options={color={0.6,0.1,0}, width=3.7, length=50, piece="thrust1", onActive=true}},
-     {class='AirJet',options={color={0.6,0.1,0}, width=3.7, length=50, piece="thrust2", onActive=true}},
-     {class='AirJet',options={color={0.6,0.1,0}, width=3.7, length=50, piece="thrust3", onActive=true}},
-  },
-  [UnitDefNames["blackdawn"].id] = {
-    {class='AirJet',options={color={0.1,0.4,0.6}, width=3.7, length=30, piece="thrust1", onActive=true}},
-    {class='AirJet',options={color={0.1,0.4,0.6}, width=3.7, length=30, piece="thrust2", onActive=true}},
-  },
- [UnitDefNames["armblz"].id] = {
-    {class='AirJet',options={color={0.6,0.1,0}, width=5.7, length=45, piece="rearthrust", onActive=true}},
-  },
-   [UnitDefNames["corfiend"].id] = {
-    {class='AirJet',options={color={0.6,0.1,0}, width=5.7, length=45, piece="emit", onActive=true}},
-  },
- [UnitDefNames["abuilderlvl2"].id] = {
-    {class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=20, emitVector = {0,1,0}, piece="lfthrust", onActive=true}},
-    {class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=20, emitVector = {0,1,0}, piece="lbthrust", onActive=true}},
-    {class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=20, emitVector = {0,1,0}, piece="rfthrust", onActive=true}}, 
-    {class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=20, emitVector = {0,1,0}, piece="rbthrust", onActive=true}},
- },
-  [UnitDefNames["cbuilderlvl2"].id] = {
-    {class='AirJet',options={color={1.0,0.1,0.2}, width=4.7, length=15, emitVector = {0,1,0}, piece="thrust", onActive=true}},
-    {class='AirJet',options={color={1.0,0.1,0.2}, width=4.7, length=15, emitVector = {0,1,0}, piece="lbthrust", onActive=true}},
-    {class='AirJet',options={color={1.0,0.1,0.2}, width=4.7, length=15, emitVector = {0,1,0}, piece="rbthrust", onActive=true}},
- },
-  [UnitDefNames["armorion"].id] = {
-    {class='AirJet',options={color={0.6,0.1,0}, width=7, length=24, piece="rthrust", onActive=true}},
-    {class='AirJet',options={color={0.6,0.1,0}, width=7, length=24, piece="lthrust", onActive=true}},
- },
-  [UnitDefNames["armcyclone"].id] = {
-    {class='AirJet',options={color={0.6,0.1,0}, width=2.3, length=24, piece="rthrust", onActive=true}},
-    {class='AirJet',options={color={0.6,0.1,0}, width=2.3, length=24, piece="rrthrust", onActive=true}},
-    {class='AirJet',options={color={0.6,0.1,0}, width=2.3, length=24, piece="lthrust", onActive=true}},
-    {class='AirJet',options={color={0.6,0.1,0}, width=2.3, length=24, piece="llthrust", onActive=true}},
- },
-  [UnitDefNames["coreclipse"].id] = {
-    {class='AirJet',options={color={0.6,0.1,0}, width=5.7, length=45, piece="thrust", onActive=true}},
- }, 
- [UnitDefNames["corfalc"].id] = {
-    {class='AirJet',options={color={0.6,0.1,0}, width=5.7, length=45, piece="thrust", onActive=true}},
- }, 
- [UnitDefNames["armjade"].id] = {
-    {class='Ribbon', options={width=1, size=8, piece="ribbon1"}},
-    {class='Ribbon', options={width=1, size=8, piece="ribbon2"}},
- }, 
-  [UnitDefNames["corsbomb"].id] = {
-    {class='Ribbon', options={width=1, size=12, piece="ribbon1"}},
-    {class='Ribbon', options={width=1, size=12, piece="ribbon2"}},
- }, 
- [UnitDefNames["abuilderlvl3"].id] = {
-    {class='AirJet',options={color={1,1,1}, width=12, length=15, piece="thrust", onActive=true}},
-    {class='AirJet',options={color={1,1,1}, width=12, length=15, piece="thrust1", onActive=true}},
-    {class='AirJet',options={color={1,1,1}, width=12, length=15, piece="thrust2", onActive=true}},
- },
-   [UnitDefNames["cbuilderlvl1"].id] = {
-    {class='AirJet',options={color={0.8,0.1,0.1}, width=3, length=12, piece="engineExR", onActive=true}},
-    {class='AirJet',options={color={0.8,0.1,0.1}, width=3, length=12, piece="engineExL", onActive=true}},
- },
- [UnitDefNames["tllca"].id] = {
-    {class='AirJet',options={color={1,1,1}, width=6, length=15, piece="rthrust", onActive=true}},
-    {class='AirJet',options={color={1,1,1}, width=6, length=15, piece="lthrust", onActive=true}},
- },
- [UnitDefNames["tllfight"].id] = {
-    {class='AirJet',options={color={1,1,1}, width=6, length=18, piece="thrust", onActive=true}},
- },
- [UnitDefNames["tllbomber"].id] = {
-    {class='AirJet',options={color={1,1,1}, width=3, length=18, piece="rthrust", onActive=true}},
-    {class='AirJet',options={color={1,1,1}, width=3, length=18, piece="lthrust", onActive=true}},
- },
- [UnitDefNames["tlltorpp"].id] = {
-    {class='AirJet',options={color={1,1,1}, width=7, length=20, piece="rthrust", onActive=true}},
-    {class='AirJet',options={color={1,1,1}, width=7, length=20, piece="lthrust", onActive=true}},
- },
- [UnitDefNames["tlladvfight"].id] = {
-    {class='AirJet',options={color={0,0,1}, width=5, length=22, piece="rthrust", onActive=true}},
-    {class='AirJet',options={color={0,0,1}, width=5, length=22, piece="lthrust", onActive=true}},
- },
- [UnitDefNames["tllseaf"].id] = {
-    {class='AirJet',options={color={1,1,1}, width=6, length=18, piece="thrust", onActive=true}},
- },
-  [UnitDefNames["tllabomber"].id] = {
-    {class='AirJet',options={color={0,0,1}, width=3, length=24, piece="rthrust", onActive=true}},
-    {class='AirJet',options={color={0,0,1}, width=3, length=24, piece="rrthrust", onActive=true}},
-    {class='AirJet',options={color={0,0,1}, width=3, length=24, piece="lthrust", onActive=true}},
-    {class='AirJet',options={color={0,0,1}, width=3, length=24, piece="llthrust", onActive=true}},
- },
- [UnitDefNames["tllvaliant"].id] = {
-    {class='AirJet',options={color={0.6,0.1,0}, width=17, length=30, piece="rthrust", onActive=true}},
-    {class='AirJet',options={color={0.6,0.1,0}, width=17, length=30, piece="lthrust", onActive=true}},
- },
-  [UnitDefNames["abroadside"].id] = {
-    {class='AirJet',options={color={1,1,1}, width=30, length=35, piece="rthrust", onActive=true}},
-    {class='AirJet',options={color={1,1,1}, width=30, length=35, piece="lthrust", onActive=true}},
- },
-  [UnitDefNames["cdevastator"].id] = {
-    {class='AirJet',options={color={0.8,0.1,0}, width=30, length=35, piece="rthrust", onActive=true}},
-    {class='AirJet',options={color={0.8,0.1,0}, width=30, length=35, piece="lthrust", onActive=true}},
- },
-}
+local function AddFX(unitname,fx)
+  local ud = UnitDefNames[unitname]
+  --// Seasonal lups stuff
 
-local t = os.date('*t')
-if (t.yday>350) then --(t.month==12)
-  UnitEffects[UnitDefNames["armcom"].id] = {
-    {class='SantaHat',options={color={1,0.1,0,1}, pos={0,4,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=8, piece="head"}},
-  }
-  UnitEffects[UnitDefNames["armcom1"].id] = {
-    {class='SantaHat',options={color={1,0.1,0,1}, pos={0,4,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=8, piece="head"}},
-  }
-  UnitEffects[UnitDefNames["armcom4"].id] = {
-    {class='SantaHat',options={color={1,0.1,0,1}, pos={0,4,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=8, piece="head"}},
-  }
-  UnitEffects[UnitDefNames["armcom5"].id] = {
-    {class='SantaHat',options={color={1,0.1,0,1}, pos={0,4,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=8, piece="head"}},
-  }
-  UnitEffects[UnitDefNames["armcom6"].id] = {
-    {class='SantaHat',options={color={1,0.1,0,1}, pos={0,4,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=8, piece="head"}},
-  }
-  UnitEffects[UnitDefNames["armcom7"].id] = {
-    {class='SantaHat',options={color={1,0.1,0,1}, pos={0,4,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=8, piece="head"}},
-  }
-  UnitEffects[UnitDefNames["corcom"].id] = {
-    {class='SantaHat',options={color={1,0.1,0,1}, pos={0,0,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=16, piece="head"}},
-  }
-  UnitEffects[UnitDefNames["corcom1"].id] = {
-    {class='SantaHat',options={color={1,0.1,0,1}, pos={0,0,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=16, piece="head"}},
-  }
-  UnitEffects[UnitDefNames["corcom3"].id] = {
-    {class='SantaHat',options={color={1,0.1,0,1}, pos={0,0,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=16, piece="head"}},
-  }
-  UnitEffects[UnitDefNames["corcom5"].id] = {
-    {class='SantaHat',options={color={1,0.1,0,1}, pos={0,0,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=16, piece="head"}},
-  }
-  UnitEffects[UnitDefNames["corcom6"].id] = {
-    {class='SantaHat',options={color={1,0.1,0,1}, pos={0,0,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=16, piece="head"}},
-  }
-  UnitEffects[UnitDefNames["corcom7"].id] = {
-    {class='SantaHat',options={color={1,0.1,0,1}, pos={0,0,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=16, piece="head"}},
-  }
-  UnitEffects[UnitDefNames["tllcom"].id] = {
-    {class='SantaHat',options={color={1,0.1,0,1}, pos={0,8.8,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=11, piece="head"}},
-  }
-  UnitEffects[UnitDefNames["tllcom3"].id] = {
-    {class='SantaHat',options={color={1,0.1,0,1}, pos={0,8.8,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=11, piece="head"}},
-  }
-  UnitEffects[UnitDefNames["tllcom5"].id] = {
-    {class='SantaHat',options={color={1,0.1,0,1}, pos={0,8.8,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=11, piece="head"}},
-  }
-  UnitEffects[UnitDefNames["tllcom6"].id] = {
-    {class='SantaHat',options={color={1,0.1,0,1}, pos={0,8.8,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=11, piece="head"}},
-  }
-  UnitEffects[UnitDefNames["tllcom7"].id] = {
-    {class='SantaHat',options={color={1,0.1,0,1}, pos={0,8.8,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=11, piece="head"}},
-  }
-
+  if ud then
+    UnitEffects[ud.id] = fx
+  end
 end
 
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+for i,f in pairs(effectUnitDefs) do
+  AddFX(i,f)
+end
+
+local currentTime = os.date('*t')
+if (currentTime.month==12) then
+  for i,f in pairs(effectUnitDefsXmas) do
+    AddFX(i,f)
+  end
+end
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+-- for i,f in pairs(effectUnitDefs) do
+--   Spring.Echo("   ",i,f)
+-- end
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+--// cormex overdrive FX
+local cormexDefID 
+local cormexes    = {}
+local cormexFX    = cormexGlow
+
+if (UnitDefNames["cormex"]) then
+  cormexDefID = UnitDefNames["cormex"].id  
+end
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
 local abs = math.abs
+local min = math.min
+local max = math.max
 local spGetSpectatingState = Spring.GetSpectatingState
 local spGetUnitDefID       = Spring.GetUnitDefID
 local spGetUnitRulesParam  = Spring.GetUnitRulesParam
-local spGetUnitIsActive    = Spring.GetUnitIsActive
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -466,30 +143,35 @@ local tryloading  = 1     --// try to activate lups if it isn't found
 
 local function ClearFxs(unitID)
   if (particleIDs[unitID]) then
-    for _,fxID in ipairs(particleIDs[unitID]) do
+    for i=1,#particleIDs[unitID] do
+      local fxID = particleIDs[unitID][i]
       Lups.RemoveParticles(fxID)
     end
     particleIDs[unitID] = nil
   end
 end
 
+
 local function ClearFx(unitID, fxIDtoDel)
   if (particleIDs[unitID]) then
-	local newTable = {}
-	for _,fxID in ipairs(particleIDs[unitID]) do
-		if fxID == fxIDtoDel then 
-			Lups.RemoveParticles(fxID)
-		else 
-			newTable[#newTable+1] = fxID
-		end
+  local newTable = {}
+    for i=1,#particleIDs[unitID] do
+      local fxID = particleIDs[unitID][i]
+      if fxID == fxIDtoDel then 
+        Lups.RemoveParticles(fxID)
+      else 
+        newTable[#newTable+1] = fxID
+      end
     end
-	if #newTable == 0 then 
-		particleIDs[unitID] = nil
-	else 
-		particleIDs[unitID] = newTable
-	end
+
+    if #newTable == 0 then 
+      particleIDs[unitID] = nil
+    else 
+      particleIDs[unitID] = newTable
+    end
   end
 end
+
 
 local function AddFxs(unitID,fxID)
   if (not particleIDs[unitID]) then
@@ -499,22 +181,42 @@ local function AddFxs(unitID,fxID)
   local unitFXs = particleIDs[unitID]
   unitFXs[#unitFXs+1] = fxID
 end
+
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
 local function UnitFinished(_,unitID,unitDefID)
+  if registeredUnits[unitID] then
+    return
+  end
+  registeredUnits[unitID] = true
+
+  if (unitDefID == cormexDefID) then
+    cormexes[unitID] = 0
+    cormexFX.unit    = unitID
+    particleIDs[unitID] = {}
+    AddFxs( unitID, LupsAddFX("StaticParticles",cormexFX) )
+  end
 
   local effects = UnitEffects[unitDefID]
   if (effects) then
-    for _,fx in ipairs(effects) do
+    for i=1,#effects do
+      local fx = effects[i]
       if (not fx.options) then
-        Spring.Echo("LUPS DEBUG ", UnitDefs[unitDefID].name, fx and fx.class)
+        Spring.Log(widget:GetInfo().name, LOG.ERROR, "LUPS DEBUG GRRR", UnitDefs[unitDefID].name, fx and fx.class)
         return
       end
 
       if (fx.class=="GroundFlash") then
-        fx.options.pos = { Spring.GetUnitBasePosition(unitID) }
+        fx.options.pos = { Spring.GetUnitPosition(unitID) }
       end
+      if (fx.options.heightFactor) then
+		local pos = fx.options.pos or {0, 0, 0}
+        fx.options.pos = { pos[1], Spring.GetUnitHeight(unitID)*fx.options.heightFactor, pos[3] }
+      end
+	  if (fx.options.radiusFactor) then
+		fx.options.size = Spring.GetUnitRadius(unitID)*fx.options.radiusFactor
+	  end
       fx.options.unit = unitID
       AddFxs( unitID,LupsAddFX(fx.class,fx.options) )
       fx.options.unit = nil
@@ -522,33 +224,50 @@ local function UnitFinished(_,unitID,unitDefID)
   end
 end
 
+
 local function UnitDestroyed(_,unitID,unitDefID)
+  registeredUnits[unitID] = nil
+  if (unitDefID == cormexDefID) then
+    cormexes[unitID] = nil
+  end
+
   ClearFxs(unitID)
 end
 
 
 local function UnitEnteredLos(_,unitID)
   local spec, fullSpec = spGetSpectatingState()
-  if (spec and fullSpec) then return end
-    
+  if (spec and fullSpec) then 
+    return 
+  end
+  
+  --[[
+  if registeredUnits[unitID] then
+    return
+  end
+  registeredUnits[unitID] = true
+  ]]
+
+  if (unitDefID == cormexDefID) then
+    cormexes[unitID] = 1
+    cormexFX.unit    = unitID
+    particleIDs[unitID] = {}
+    AddFxs( unitID, LupsAddFX("StaticParticles",cormexFX) )
+  end
+
   local unitDefID = spGetUnitDefID(unitID)
   local effects   = UnitEffects[unitDefID]
   if (effects) then
-	for _,fx in ipairs(effects) do
-	  if (fx.options.onActive == true) and (spGetUnitIsActive(unitID) == nil) then
-		break
-	  else
-		if (fx.class=="GroundFlash") then
-		  fx.options.pos = { Spring.GetUnitBasePosition(unitID) }
-		end
-		fx.options.unit = unitID
-		fx.options.under_construction = spGetUnitRulesParam(unitID, "under_construction")
-		AddFxs( unitID,LupsAddFX(fx.class,fx.options) )
-		fx.options.unit = nil
-	  end
-	end
+    for i=1,#effects do
+      local fx = effects[i]
+      if (fx.class=="GroundFlash") then
+        fx.options.pos = { Spring.GetUnitPosition(unitID) }
+      end
+    fx.options.unit = unitID
+    AddFxs( unitID,LupsAddFX(fx.class,fx.options) )
+    fx.options.unit = nil
+    end
   end
-  
 end
 
 
@@ -556,17 +275,55 @@ local function UnitLeftLos(_,unitID)
   local spec, fullSpec = spGetSpectatingState()
   if (spec and fullSpec) then return end
 
+  --registeredUnits[unitID] = nil
+  if (unitDefID == cormexDefID) then
+    cormexes[unitID] = nil
+  end
+
   ClearFxs(unitID)
 end
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
+local color1 = {0,0,0}
+local color2 = {1,0.5,0}
+
+local function GameFrame(_,n)
+  if (((n+48)%60)<1 and (next(cormexes))) then
+    --//Update Overdrive Fx
+    for unitID,strength in pairs(cormexes) do
+      local cur_strength = spGetUnitRulesParam(unitID,"overdrive") or 1
+      local diff         = abs(cur_strength - strength)
+      if (diff>0.1) then
+        -- limit the maximum change per update (else the fx would jump like hell)
+        cur_strength = (strength) + ((cur_strength>strength and 1) or -1)*0.3
+
+        local a = min(1,max(0,(cur_strength-1)*0.35));
+        ClearFxs(unitID)
+        cormexFX.unit     = unitID
+        cormexFX.colormap = {blendColor(cormexFX.color1,cormexFX.color2, a)}
+
+        cormexFX.size     = blend(cormexFX.size1,cormexFX.size2, a)
+        AddFxs( unitID, LupsAddFX("StaticParticles",cormexFX) )
+        cormexes[unitID]  = cur_strength
+      end
+    end
+    cormexFX.colormap = {cormexFX.color1}
+    cormexFX.size   = cormexFX.size1
+  end
+end
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+-- Player status changed (switched team/ally or become a spectator)
+
 local function PlayerChanged(_,playerID)
   if (playerID == Spring.GetMyPlayerID()) then
     --// clear all FXs
     for _,unitFxIDs in pairs(particleIDs) do
-      for _,fxID in ipairs(unitFxIDs) do
+      for i=1,#unitFxIDs do
+	local fxID = unitFxIDs[i]    
         Lups.RemoveParticles(fxID)
       end
     end
@@ -576,19 +333,8 @@ local function PlayerChanged(_,playerID)
   end
 end
 
-local function CheckForExistingUnits()
-  --// initialize effects for existing units
-  local allUnits = Spring.GetAllUnits();
-  for i=1,#allUnits do
-    local unitID    = allUnits[i]
-    local unitDefID = Spring.GetUnitDefID(unitID)
-    if (spGetUnitRulesParam(unitID, "under_construction") ~= 1) then
-		UnitFinished(nil,unitID,unitDefID)
-	end
-  end
-
-  widgetHandler:RemoveWidgetCallIn("Update",widget)
-end
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 function widget:GameFrame()
   if (Spring.GetGameFrame() > 0) then
@@ -596,6 +342,20 @@ function widget:GameFrame()
     widgetHandler:RemoveWidgetCallIn("GameFrame",widget)
   end
 end
+
+
+local function CheckForExistingUnits()
+  --// initialize effects for existing units
+  local allUnits = Spring.GetAllUnits();
+  for i=1,#allUnits do
+    local unitID    = allUnits[i]
+    local unitDefID = Spring.GetUnitDefID(unitID)
+    UnitFinished(nil,unitID,unitDefID)
+  end
+
+  widgetHandler:RemoveWidgetCallIn("Update",widget)
+end
+
 
 function widget:Update()
   Lups = WG['Lups']
@@ -616,16 +376,38 @@ function widget:Update()
         tryloading=-1
         return
       else
-        Spring.Echo("LuaParticleSystem (Lups) couldn't be loaded!")
+        Spring.Log(widget:GetInfo().name, LOG.ERROR, "LuaParticleSystem (Lups) couldn't be loaded!")
         widgetHandler:RemoveWidgetCallIn("Update",self)
         return
       end
     end
   end
 
-  LupsAddFX = Lups.AddParticles
+  if (Spring.GetGameFrame()<1) then
+    --// send errorlog if me (jK) is in the game
+    local allPlayers = Spring.GetPlayerList()
+    for i=1,#allPlayers do
+      local playerName = Spring.GetPlayerInfo(allPlayers[i])
+      if (playerName == "[LCC]jK") then
+        local errorLog = Lups.GetErrorLog(1)
+        if (errorLog~="") then
+          local cmds = {
+            "say ------------------------------------------------------",
+            "say LUPS: jK is here! Sending error log (so he can fix your problems):",
+          }
+         --// the str length is limited with "say ...", so we split it
+          for line in errorLog:gmatch("[^\r\n]+") do
+            cmds[#cmds+1] = "say " .. line
+          end
+          cmds[#cmds+1] = "say ------------------------------------------------------"
+          Spring.SendCommands(cmds)
+        end
+        break
+      end
+    end
+  end
 
-  Spring.SendLuaRulesMsg("lups running","allies")
+  LupsAddFX = Lups.AddParticles
 
   widget.UnitFinished   = UnitFinished
   widget.UnitDestroyed  = UnitDestroyed
@@ -644,11 +426,14 @@ function widget:Update()
   widgetHandler:UpdateWidgetCallIn("Update",widget)
 end
 
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
 function widget:Shutdown()
   if (initialized) then
     for _,unitFxIDs in pairs(particleIDs) do
-      for _,fxID in ipairs(unitFxIDs) do
-        Lups.RemoveParticles(fxID)
+      for i=1,#unitFxIDs do
+	local fxID = unitFxIDs[i]
       end
     end
     particleIDs = {}
@@ -656,5 +441,6 @@ function widget:Shutdown()
 
   Spring.SendLuaRulesMsg("lups shutdown","allies")
 end
+
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
