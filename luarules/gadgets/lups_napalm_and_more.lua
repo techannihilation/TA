@@ -53,6 +53,7 @@ local MUSTARD_WEAPONS = {
   for i=1,#WeaponDefs do
     local wd = WeaponDefs[i]
     if FIRE_WEAPONS[wd.name] or DISTORT_WEAPONS[wd.name] or MUSTARD_WEAPONS[wd.name] then
+      
       Script.SetWatchWeapon(wd.id,true)
     end
   end
@@ -252,7 +253,7 @@ else
        if pos[4] and (DISTORT_SHORT[WeaponDefs[pos[4]].name]) then
 	 distortFX.pos = {pos[1],pos[2],pos[3]}
 	 Lups.AddParticles('JitterParticles2',distortFX)
-       else 
+       else
 	 heatFX.pos = {pos[1],pos[2],pos[3]}
 	 Lups.AddParticles('JitterParticles2',heatFX)
        end

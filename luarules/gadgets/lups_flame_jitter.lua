@@ -104,7 +104,7 @@ else
       emitRotSpread= 10,
 
       speed        = 6,
-      speedSpread  = 0,
+      speedSpread  = 1,
       speedExp     = 1.5,
 
       size         = 15,
