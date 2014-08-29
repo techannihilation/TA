@@ -1,4 +1,45 @@
----------------------------------------v2.28.2 ---------------------------------------
+---------------------------------------v2.30 ---------------------------------------
+----Visual----
+Add glow effect on/off effect for t1.5 core metal maker
+Add wip new lups effect for core fusion's
+New wip explosion for core fusions
+
+----Bugs----
+Update morph gadget, if unit limit is reached morph will now stall until unit count is reduced, Progess bar with show Stalled instead of progress percentage
+Fix std anti missing nukes at edge of range
+Fix incorrect range shown for anti placement
+Fix lups effcet simpleparticles2 not showing for specs
+Swap build order for tllsham and tllprivate, now inline with arm/core lab buildmenu's
+
+----Balance----
+Increase tlldischarge jump height by 20% was 250>300
+Rebalanced core armored mex, reloadtime 0.38>0.52, damage 75>90
+Increase Assault Commander shield strength 700>900, Increase Star Commander shield strength 1000>1200, Increase Supreme Commander shield strenght 1500>1650
+Rebalance tankanotor reduce range 1230>1060, Reduce damage 1150>1000
+Rebalance core mobile shield gen, shield radius 155>250, shield power 2900>2600
+Rebalace T1.5 vehicle cons, marv {buildCostEnergy 25400>5400, buildCostMetal 1535>868, buildtime 8150>5150}, fred {buildCostEnergy 26000>4365,buildCostMetal 1520>850, buildTime 8200>5500}
+Increase potential max damage while nanos are in boost mode
+Rebalance salamander, weapon range 305>445 , max speed 1.35>1.55, Increase turret turn rate
+tllsolar increase damage taken when close was 0.33*damage > 0.5*damage
+tlladvsolar increase damage taken when close was 0.25*damage > 0.85*damage
+Rebalanced crasher/jethro, damage 100>110, reloadtime 2>1.3
+Vanguard increase reloadtime 4>6
+Helldiver increase maxdamage 4250>4675, reduce metalcost 1920>1824
+Demon Reduce xp requirement for 2nd weapon by half
+Core shielded fusion and atmoic sea fusion now have same selfd and explosion radius as core advanced fusion
+Reduce explosion size of T4 fusion 3800>2880
+Balance armscar range 700>650, reloadtime 12>14.7
+
+----Improvements----
+Update to latest lups version
+Add widget to show unit count if nearing max allowed units
+Update passive builders with MM metal cost
+Alter teleport beam color depending on players trueskill rank
+Add spark sound for boosted nanos
+Add spark sound for lighning splash damage
+
+
+---------------------------------------v2.29.1 ---------------------------------------
 ----Visual----
 Add dust cloud/water splash effect for armorion bouncing bombs
 Dynamic lighting is now default, Update effect for new commander explosion
