@@ -1,4 +1,4 @@
----------------------------------------v2.30 ---------------------------------------
+ ---------------------------------------v2.30 ---------------------------------------
 ----Visual----
 Add glow effect on/off effect for t1.5 core metal maker
 Add wip new lups effect for core fusion's
