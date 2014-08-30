@@ -209,9 +209,6 @@ end
 
 local function UnitDestroyed(_,unitID,unitDefID)
   registeredUnits[unitID] = nil
-  if (unitDefID == cormexDefID) then
-    cormexes[unitID] = nil
-  end
 
   ClearFxs(unitID)
 end
@@ -251,10 +248,6 @@ local function UnitLeftLos(_,unitID)
   if (spec and fullSpec) then return end
 
   --registeredUnits[unitID] = nil
-  if (unitDefID == cormexDefID) then
-    cormexes[unitID] = nil
-  end
-
   ClearFxs(unitID)
 end
 
