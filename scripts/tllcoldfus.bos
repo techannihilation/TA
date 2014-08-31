@@ -1,110 +1,51 @@
 #define TA			// This is a TA script
 
-piece  base, body, ring, zap1, zap2, zap3, zap4,globe;
+#include "sfxtype.h"
+#include "exptype.h"
 
-#define SMOKEPIECE1 	ring
-#define SMOKEPIECE2 	zap2
-#include "smokeunit.h"
+piece  base, body, ring;
 
 
-zaps1()
- { var t;
-   while (get BUILD_PERCENT_LEFT)
-    { sleep 500; }
-   while (TRUE)
-    { t=300+rand(50,1000);
-      sleep t;
-      show zap1;
-      sleep 75;
-      hide zap1;
-      sleep 50;
-      show zap1;
-      sleep 75;
-      sleep 100;
-      hide zap1;
-      sleep 50;
-      }
-  }
-
-zaps2()
- { var t;
-   while (get BUILD_PERCENT_LEFT)
-    { sleep 500; }
-   while (TRUE)
-    { t=200+rand(100,1000);
-      sleep t;
-      show zap3;
-      sleep 55;
-      show zap4;
-      sleep 100;
-      hide zap3;
-      sleep 50;
-      hide zap4;
-      sleep 90;
-      show zap3;
-      sleep 75;
-      show zap4;
-      sleep 50;
-      hide zap4;
-      sleep 50;
-      hide zap3;
-      sleep 80;
-      }
-  }
-
-zaps3()
- { var t;
-   while (get BUILD_PERCENT_LEFT)
-    { sleep 500; }
-   while (TRUE)
-    { t=100+rand(250,1000);
-      sleep t;
-      show zap2;
-      sleep 100;
-      hide zap2;
-      sleep 100;
-      show zap2;
-      sleep 100;
-      hide zap2;
-      sleep 100;
-      }
-  }
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 258;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 257;
+			}
+			emit-sfx smoketype from ring;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
 
 Create()
-{	
-
+{
 	dont-cache ring;
-	dont-cache zap1;
-	dont-cache zap2;
-	dont-cache zap3;
-	dont-cache zap4;
-
-	hide zap1;
-	hide zap2;
-	hide zap3;
-	hide zap4;
-
 	while( get BUILD_PERCENT_LEFT )
-		{
-			sleep 1000;
-		}
-
-	START-SCRIPT Zaps1();
-	START-SCRIPT Zaps2();
-	START-SCRIPT Zaps3();
-	START-SCRIPT SmokeUnit();
-
-	Spin zap3 around y-axis speed <1>;
-	Spin zap4 around y-axis speed <-1>;
-
+	{
+		sleep 1000;
+	}
+	start-script SmokeUnit();
 }
 
 Activate()
 {
-
-	Spin ring around y-axis speed <10>;
-	Spin globe around y-axis speed <-10>;
-	
+	spin ring around y-axis speed <10.000000>;
 }
 
 SweetSpot(piecenum)

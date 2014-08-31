@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, ring, rblink0, rblink1, rblink2;
+piece  base, tower1, tower2, tower3;
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -22,7 +22,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 			{
 				smoketype = 256 | 1;
 			}
-			emit-sfx smoketype from ring;
+			emit-sfx smoketype from base;
 		}
 		sleeptime = healthpercent * 50;
 		if( sleeptime < 200 )
@@ -35,24 +35,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
-	dont-cache ring;
-	while( get BUILD_PERCENT_LEFT )
-	{
-		sleep 1000;
-	}
 	start-script SmokeUnit();
-	while( TRUE )
-	{
-		emit-sfx 1024 + 0 from rblink0;
-		emit-sfx 1024 + 0 from rblink1;
-		emit-sfx 1024 + 0 from rblink2;
-		sleep 7;
-	}
-}
-
-Activate()
-{
-	spin ring around y-axis speed <10.000000>;
 }
 
 SweetSpot(piecenum)
@@ -65,21 +48,33 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode body type BITMAPONLY | BITMAP2;
+		explode base type BITMAPONLY | BITMAP1;
+		explode tower1 type BITMAPONLY | BITMAP3;
+		explode tower2 type BITMAPONLY | BITMAP4;
+		explode tower3 type BITMAPONLY | BITMAP5;
 		return (0);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode body type SHATTER | BITMAP2;
+		explode base type BITMAPONLY | BITMAP1;
+		explode tower1 type BITMAPONLY | BITMAP3;
+		explode tower2 type BITMAPONLY | BITMAP4;
+		explode tower3 type BITMAPONLY | BITMAP5;
 		return (0);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode body type BITMAPONLY | BITMAP2;
+		explode base type BITMAPONLY | BITMAP1;
+		explode tower1 type BITMAPONLY | BITMAP3;
+		explode tower2 type BITMAPONLY | BITMAP4;
+		explode tower3 type BITMAPONLY | BITMAP5;
 		return (0);
 	}
 	corpsetype = 3;
-	explode body type BITMAPONLY | BITMAP2;
+	explode base type BITMAPONLY | BITMAP1;
+	explode tower1 type BITMAPONLY | BITMAP3;
+	explode tower2 type BITMAPONLY | BITMAP4;
+	explode tower3 type BITMAPONLY | BITMAP5;
 }
