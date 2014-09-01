@@ -7,8 +7,6 @@ local unitName = "corpyrox"
 
 local unitDef = {
 	acceleration = 0.1,
-	antiweapons = 1,
-	bmcode = 1,
 	brakeRate = 0.18,
 	buildCostEnergy = 20000,
 	buildCostMetal = 3000,
@@ -20,13 +18,13 @@ local unitDef = {
 	canPatrol = true,
 	canstop = 1,
 	category = [[ALL ANTIFLAME MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
+	corpse = [[HEAP]],
 	collisionVolumeScales = [[54 66 44]],
 	collisionVolumeOffsets = [[-7 -2 8]],
 	collisionVolumeType = [[box]],
 	damageModifier = 0.666,
 	defaultmissiontype = [[Standby]],
 	description = [[Assault Captain]],
-	designation = [[KB-C9]],
 	energyMake = 1.1,
 	energyStorage = 0,
 	energyUse = 1.1,
@@ -36,8 +34,6 @@ local unitDef = {
 	footprintZ = 2,
 	idleAutoHeal = 5,
 	idleTime = 1800,
-	hideDamage = true,
-	immunetoparalyzer = 1,
 	maneuverleashlength = 640,
 	maxDamage = 18600,
 	maxSlope = 17,
@@ -50,8 +46,6 @@ local unitDef = {
 	noAutoFire = false,
 	noChaseCategory = [[VTOL]],
 	objectName = [[CORPYROX]],
-	ovradjust = 1,
-	radarDistance = 0,
 	selfDestructAs = [[BIG_UNIT]],
 	shootme = 1,
 	side = [[CORE]],
@@ -61,7 +55,6 @@ local unitDef = {
 	steeringmode = 2,
 	turnRate = 950,
 	unitname = [[corpyrox]],
-	unitnumber = 125,
 	upright = true,
 	workerTime = 0,
 	customparams = {
@@ -101,8 +94,7 @@ local unitDef = {
 			def = [[FLAMETHROWER]],
 			onlyTargetCategory = [[NOTVTOL]],
 		},
-		[3] = {
-			badTargetCategory = [[ANTIFLAME]],
+  		[3] = {
 			def = [[PYRO_ROCKET]],
 			onlyTargetCategory = [[NOTVTOL]],
 		},
@@ -129,7 +121,7 @@ local weaponDefs = {
 		lineOfSight = true,
 		name = [[FlameThrower]],
 		noSelfDamage = true,
-		range = 395,
+		range = 400,
 		reloadtime = 1.1,
 		renderType = 5,
 		rgbColor = [[1 0.95 0.9]],
@@ -153,8 +145,7 @@ local weaponDefs = {
 	PYRO_ROCKET = {
 		areaofeffect = 96,
 		avoidfeature = false,
-		burst = 10,
-		burstrate = 0.11999999731779,
+		cegTag = [[Core_Def_AA_Rocket]],
 		craterboost = 0,
 		cratermult = 0,
 		dance = 30,
@@ -170,14 +161,17 @@ local weaponDefs = {
 		name = [[RavenCatapultRockets]],
 		noselfdamage = true,
 		proximitypriority = -1,
-		range = 1050,
-		reloadtime = 15,
+		range = 400,
+		reloadtime = 0.25,
 		smoketrail = true,
 		soundhit = [[rockhit]],
 		soundstart = [[rapidrocket3]],
 		startvelocity = 200,
+		texture1 = [[null]],
 		texture2 = [[coresmoketrail]],
-		trajectoryheight = 1,
+		texture3 = [[null]],
+		texture4 = [[null]],
+		trajectoryheight = 2,
 		turnrate = 0,
 		turret = true,
 		weaponacceleration = 120,
@@ -186,12 +180,36 @@ local weaponDefs = {
 		weaponvelocity = 510,
 		wobble = 2000,
 		damage = {
-			default = 450,
+			default = 100,
 			subs = 5,
 		},
 	},
 }
 unitDef.weaponDefs = weaponDefs
+
+
+--------------------------------------------------------------------------------
+
+local featureDefs = {
+	HEAP = {
+		blocking = false,
+		category = [[heaps]],
+		damage = 0.6000 * unitDef.maxDamage,
+		description = unitDef.name .. [[ Heap]],
+		energy = 0,
+		featurereclamate = [[SMUDGE01]],
+		footprintX = 2,
+		footprintZ = 2,
+		height = 4,
+		hitdensity = 100,
+		metal = 0.8000 * unitDef.buildCostMetal,
+		object = [[2X2C]],
+		reclaimable = true,
+		seqnamereclamate = [[TREE1RECLAMATE]],
+		world = [[All Worlds]],
+	},
+}
+unitDef.featureDefs = featureDefs
 
 --------------------------------------------------------------------------------
 
