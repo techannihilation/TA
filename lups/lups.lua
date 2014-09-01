@@ -683,6 +683,7 @@ local function IsUnitFXVisible(fx)
 	local unitActive = true
 	local unitID = fx.unit
 	local isIcon = Spring.IsUnitIcon(unitID)
+	local _, specFullView = spGetSpectatingState()
 
 	if fx.onActive then
 		unitActive = spGetUnitIsActive(unitID)
@@ -696,7 +697,7 @@ local function IsUnitFXVisible(fx)
 	elseif (not fx.onActive)or(unitActive) then
 		if fx.alwaysVisible then
 			return true
-		elseif (fx.Visible) then
+		elseif (fx.Visible) and (not specFullView) then
 			return fx:Visible()
 		else
 			local unitRadius = (spGetUnitRadius(unitID) + 40)
@@ -709,9 +710,10 @@ local function IsUnitFXVisible(fx)
 end
 
 local function IsProjectileFXVisible(fx)
+  	local _, specFullView = spGetSpectatingState()
 	if fx.alwaysVisible then
 		return true
-	elseif fx.Visible then
+	elseif fx.Visible and (not specFullView) then
 		return fx:Visible()
 	else
 		local proID = fx.projectile
@@ -723,11 +725,12 @@ local function IsProjectileFXVisible(fx)
 end
 
 local function IsWorldFXVisible(fx)
+	local _, specFullView = spGetSpectatingState()
 	if IsTooHigh() then
 		return false
 	elseif fx.alwaysVisible then
 		return true
-	elseif (fx.Visible) then
+	elseif (fx.Visible) and (not specFullView) then
 		return fx:Visible()
 	elseif (fx.pos) then
 		local pos = fx.pos
