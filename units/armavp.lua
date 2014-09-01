@@ -77,9 +77,8 @@ local unitDef = {
 		[14] = [[armjam]],
 		[15] = [[armorca]],
 		[16] = [[tankanotor]],
-		[17] = [[vaporiser]],
-		[18] = [[armscpion]],
-		[19] = [[armcd]],
+		[17] = [[armscpion]],
+		[18] = [[armcd]],
 	},
 	featureDefs = nil,
 	sounds = {

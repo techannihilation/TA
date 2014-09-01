@@ -77,9 +77,8 @@ local unitDef = {
 		[15] = [[coreter]],
 		[16] = [[corvrad]],
 		[17] = [[nsacskv]],
-		[18] = [[tawf116]],
-		[19] = [[requ1]],
-		[20] = [[cormddm]],
+		[18] = [[requ1]],
+		[19] = [[cormddm]],
 	},
 	featureDefs = nil,
 	sfxtypes = {
