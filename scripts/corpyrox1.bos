@@ -91,61 +91,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-StatusControl()
-{
-	while( TRUE )
-	{
-		Static_Var_6 = get VETERAN_LEVEL;
-		if( Static_Var_7 == 0 )
-		{
-			if( Static_Var_6 > 5 )
-			{
-				emit-sfx 1024 + 0 from horns;
-				Static_Var_7 = 1;
-				show horns;
-				show rflame2;
-				show lflame2;
-				show ltubes;
-				show rtubes;
-				dont-cache rflame2;
-				dont-cache lflame2;
-				show lslide1;
-				show lslide2;
-				show rslide1;
-				show rslide2;
-				hide rflame;
-				hide lflame;
-				Static_Var_9 = 0;
-				sleep 1000;
-			}
-		}
-		if( Static_Var_7 == 1 )
-		{
-			if( Static_Var_6 > 10 )
-			{
-				emit-sfx 1024 + 0 from launcher;
-				Static_Var_7 = 2;
-				show launcher;
-				show door1;
-				show door2;
-				show flip1;
-				show flip2;
-				show spines;
-				show eyegun;
-				dont-cache eyegun;
-				set ARMORED to 1;
-				sleep 1000;
-			}
-		}
-		if( Static_Var_7 == 2 )
-		{
-			sleep 1000;
-		}
-		sleep 1000;
-	}
-}
-
-
 PilotLight(Func_Var_1)
 {
 	while( TRUE )
@@ -193,6 +138,13 @@ RestoreAfterDelay()
 	sleep 10;
 }
 
+RestoreAfterDelay1()
+{
+	sleep 2000;
+	turn flip1 to z-axis <0.000000> speed <90.000000>;
+	turn flip2 to z-axis <0.000000> speed <90.000000>;
+}
+
 Create()
 {
 	
@@ -207,13 +159,6 @@ Create()
 	hide eyegun;
 	hide lflame2;
 	hide rflame2;
-	hide spines;
-	hide horns;
-	hide launcher;
-	hide door1;
-	hide door2;
-	hide flip1;
-	hide flip2;
 	hide ltubes;
 	hide rtubes;
 	Static_Var_9 = 200;
@@ -226,7 +171,6 @@ Create()
 	{
 		sleep 400;
 	}
-	start-script StatusControl();
 	start-script SmokeUnit();
 	start-script PilotLight();
 	start-script RestoreAfterDelay();
@@ -336,16 +280,12 @@ AimTertiary()
 	turn flip2 to z-axis <-90.000000> speed <90.000000>;
 	wait-for-turn flip1 around z-axis;
 	wait-for-turn flip2 around z-axis;
+	start-script RestoreAfterDelay1();
 	return (1);
 }
 
 FireTertiary()
 {
-	cache eyegun;
-	turn flip1 to z-axis <0.000000> speed <90.000000>;
-	turn flip2 to z-axis <0.000000> speed <90.000000>;
-	sleep [1.098633];
-	dont-cache eyegun;
 }
 
 AimFromTertiary(piecenum)
