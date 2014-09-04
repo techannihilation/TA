@@ -60,6 +60,7 @@ local unitDef = {
 		[2] = [[armtys]],
 		[3] = [[chopper]],
 		[4] = [[apache]],
+		[5] = [[corhind]],
 	},
 	featureDefs = nil,
 	sounds = {

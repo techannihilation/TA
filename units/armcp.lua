@@ -61,6 +61,7 @@ local unitDef = {
 		[2] = [[ferret]],
 		[3] = [[armah256]],
 		[4] = [[smasher]],
+		[5] = [[armkamo]],
 	},
 	featureDefs = nil,
 	sounds = {

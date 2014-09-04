@@ -44,6 +44,8 @@ flak_resistant = {
            "chopper",
            "smasher",
            "tllcopter",
+	   "corhind",
+	   "armkamo",
 },
 unclassed_air = {
 -- Builders 
