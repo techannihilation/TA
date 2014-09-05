@@ -149,9 +149,11 @@ AimFromPrimary(piecenum)
 	piecenum = gunflash;
 }
 
-Shot1()
+FirePrimary()
 {
-		emit-sfx 1024+0 from gunflash;
+    show gunflash;
+	sleep 200;
+	hide gunflash;
 }
 
 Activate()
