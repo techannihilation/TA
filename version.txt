@@ -1,4 +1,5 @@
- ---------------------------------------v2.30 ---------------------------------------
+---------------------------------------v2.30.1 ---------------------------------------
+
 ----Visual----
 Add glow effect on/off effect for t1.5 core metal maker
 Add wip new lups effect for core fusion's
@@ -29,15 +30,24 @@ Demon Reduce xp requirement for 2nd weapon by half
 Core shielded fusion and atmoic sea fusion now have same selfd and explosion radius as core advanced fusion
 Reduce explosion size of T4 fusion 3800>2880
 Balance armscar range 700>650, reloadtime 12>14.7
+Increase hell diver range 715>865
+Proto Reduce Metal cost 2334>1934, reduce reloadtime 10.6>10
+Krally Reduce Metalcost 1967>1667, Half buildtime 67214>33607, Increase hp 7024>7424
+Slicer Increase turnrate 220>820
+Proto Reduce m cost 1934>1834, cloak cost 500>350, cloakcost moving 1500>750
+Remove vaporiser and seperator t2.5 tanks
+Demon remove auto unlock, and add new unit that unlocks via morph
+Reduce morph xp requirements for corgol and armfboy was 0.60 now 0.30
+Rebalance Terroriser, metalcost 1167>1750, hp 3050>4000, damage 1250>1475
 
-----Improvements----
+---Improvements----
+Add new heavy heli's for arm and core
 Update to latest lups version
 Add widget to show unit count if nearing max allowed units
 Update passive builders with MM metal cost
 Alter teleport beam color depending on players trueskill rank
 Add spark sound for boosted nanos
 Add spark sound for lighning splash damage
-
 
 ---------------------------------------v2.29.1 ---------------------------------------
 ----Visual----
