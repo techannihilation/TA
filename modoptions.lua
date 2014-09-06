@@ -24,14 +24,6 @@ local options={
        desc="Tech Annihilation - Options",
        type="section",
     },
-    {
-	key    = "mo_heatmap",
-	name   = "Enable Heatmap's",
-	desc   = "Enables Pathing Heatmaps",
-	type   = "bool",
-	def    = false,
-	section= "ta_exp",
-	},
 	{
 	key    = "mo_comgate",
 	name   = "Commander Teleport Effect",
