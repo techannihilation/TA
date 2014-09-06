@@ -3,14 +3,11 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, globe, smoke1, smoke2,lights;
+piece  base, body, smoke1, smoke2, lights;
 
 
 Create()
 {
-	//dont-shade globe;
-	//dont-shade body;
-	//dont-cache globe;
 	dont-cache lights;
 }
 
