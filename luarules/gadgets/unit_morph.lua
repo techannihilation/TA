@@ -1186,6 +1186,7 @@ local GetGameFrame        = Spring.GetGameFrame
 local GetSpectatingState  = Spring.GetSpectatingState
 local AddWorldIcon        = Spring.AddWorldIcon
 local AddWorldText        = Spring.AddWorldText
+local IsUnitInView        = Spring.IsUnitInView
 local IsUnitVisible       = Spring.IsUnitVisible
 local GetLocalTeamID      = Spring.GetLocalTeamID
 local spAreTeamsAllied    = Spring.AreTeamsAllied
@@ -1375,7 +1376,7 @@ function gadget:Update()
           else readTeam = GetLocalTeamID() end
         CallAsTeam({ ['read'] = readTeam }, function()
           for unitID, morphData in pairs(morphUnits) do
-            if (unitID and morphData)and(IsUnitVisible(unitID)) then
+            if (unitID and morphData)and(IsUnitInView(unitID)) then
               morphTable[unitID] = {progress=morphData.progress, into=morphData.def.into}
             end
           end
@@ -1460,7 +1461,7 @@ local function DrawMorphUnit(unitID, morphData, localTeamID)
     glTranslate(px, py+14, pz)
     glBillboard()
     local progStr
-    if morphData.progress > 1.0 then
+    if (morphData.progress >= 1.0) and (#Spring.GetTeamUnits(unitTeam) >= MAXunits) then
       progStr = "Stalled"
     else    
       progStr = string.format("%.1f%%", 100 * morphData.progress)
@@ -1498,15 +1499,10 @@ function gadget:DrawWorld()
   CallAsTeam({ ['read'] = readTeam }, function()
     for unitID, morphData in pairs(morphUnits) do
     local cx, cy, cz = Spring.GetCameraPosition()
-    local ux,uy,uz = Spring.GetUnitViewPosition(unitID)
-      if ux~=nil then
-      local dx, dy, dz = ux-cx, uy-cy, uz-cz
-      local dist = dx*dx + dy*dy + dz*dz
-        if dist < MdMaxDist then 
-          if (unitID and morphData)and(IsUnitVisible(unitID)) then
+    local smoothheight = Spring.GetSmoothMeshHeight(cx,cz)
+	local toohigh = ((cy-smoothheight)^2 >= 2500000) 
+          if (unitID and morphData)and(IsUnitVisible(unitID) and not (toohigh)) then
           DrawMorphUnit(unitID, morphData,readTeam)
-          end
-        end
       end
     end
   end)
