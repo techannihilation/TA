@@ -33,25 +33,25 @@ effectUnitDefs = {
     {class='GroundFlash',options=groundFlashBigBlue},
   },
  tllmedfusion = {
-    --{class='Bursts',options=tllmedfusionBursts},
-    {class='ShieldSphere',options=tllmedfusionSphere},
+    {class='SimpleParticles2', options=MergeTable({pos={-20,40,24}, delay=0, lifeSpread=30},plasmaball_tllmedfusion)},
+    {class='SimpleParticles2', options=MergeTable({pos={-20,40,24}, delay=40, lifeSpread=30},plasmaball_tllmedfusion)},
     {class='ShieldJitter',options={layer=-16, life=math.huge,  pos={-20,40,24}, size=13.9, precision=22, repeatEffect=true}},
   },
  tllcoldfus = {
-    --{class='Bursts',options=tllcoldfusBursts},
-    {class='ShieldSphere',options=tllcoldfusShieldSphere},
-    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,54.9,0}, size=15.9, precision=22, repeatEffect=true}},
+    {class='SimpleParticles2', options=MergeTable({pos={0,62,0}, delay=0, lifeSpread=30},plasmaball_tllcoldfus)},
+    {class='SimpleParticles2', options=MergeTable({pos={0,62,0}, delay=40, lifeSpread=30},plasmaball_tllcoldfus)},
+    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,62,0}, size=20, precision=22, repeatEffect=true}},
   },
  tllmegacoldfus = {
-    --{class='Bursts',options=tllmegacoldfusBursts},
-    {class='ShieldSphere',options=tllmegacoldfusShieldSphere},
-    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,90.9,0}, size=30.9, precision=22, repeatEffect=true}},
+    {class='SimpleParticles2', options=MergeTable({pos={0,90,0}, delay=0, lifeSpread=30},plasmaball_tllmegacoldfus)},
+    {class='SimpleParticles2', options=MergeTable({pos={0,90,0}, delay=40, lifeSpread=30},plasmaball_tllmegacoldfus)},
+    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,90,0}, size=30.9, precision=22, repeatEffect=true}},
   },
  aafus = {
     {class='SimpleParticles2', options=MergeTable({pos={-38,70,-10}, delay=10, lifeSpread=300},sparks)},
     {class='SimpleParticles2', options=MergeTable({pos={21,70,-10}, delay=60, lifeSpread=300},sparks)},
-   -- {class='ShieldJitter',options={layer=-16, life=math.huge, pos={-31,55,-10}, size=12, precision=22, repeatEffect=true}},
-   -- {class='ShieldJitter',options={layer=-16, life=math.huge, pos={31,55,-10}, size=12, precision=22, repeatEffect=true}},
+    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={-31,55,-10}, size=12, precision=22, repeatEffect=true}},
+    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={31,55,-10}, size=12, precision=22, repeatEffect=true}},
   },
   --// SHIELDS //--------------------------
 

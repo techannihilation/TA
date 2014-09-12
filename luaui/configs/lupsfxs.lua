@@ -20,6 +20,14 @@ groundFlashBigBlue = {
   repeatEffect = true,
 }
 
+groundFlashYellow = {
+  life       = 50,
+  size       = 100,
+  texture    = "bitmaps/GPL/Lups/groundflash.png",
+  colormap   = { {1.0, 0.2, 0.2, 0.2},{1.0, 0.2, 0.2, 0.25},{1.0, 0.2, 0.2, 0.25},{1.0, 0.2, 0.2, 0.2}, },
+  repeatEffect = true,
+}
+
 groundFlashCorestor = {
   life       = 50,
   size       = 80,
@@ -213,6 +221,78 @@ plasmaball_cfusionplant = {
   emitRotSpread = 360,
   texture      = 'bitmaps/lightningball.png',
   count        = 5,
+  repeatEffect = true,
+  }
+  
+plasmaball_tllmedfusion = {
+  speed        = 0,
+  speedSpread  = 0,
+  layer        = -36,
+  life         = 51,
+  lifeSpread   = 20,
+  partpos      = "0,0,0",
+  colormap     = { {1.0, 0.1, 0.1, 0.005}, {0.9, 0.5, 0.2, 0.01}, {1.0, 0.1, 0.1, 0.005}, },
+  rotSpeed     = 0.2,
+  rotFactor    = 1.0,
+  rotFactorSpread = -2.0,
+  rotairdrag   = 0.99,
+  rotSpread    = 360,
+  sizeExp      = -2,
+  size         = 38,
+  sizeSpread   = -10,
+  sizeGrowth   = -1,
+  emitVector   = {0,0,0},
+  emitRotSpread = 360,
+  texture      = 'bitmaps/lightningball.png',
+  count        = 2,
+  repeatEffect = true,
+  }
+  
+plasmaball_tllcoldfus = {
+  speed        = 0,
+  speedSpread  = 0,
+  layer        = -36,
+  life         = 51,
+  lifeSpread   = 20,
+  partpos      = "0,0,0",
+  colormap     = { {1.0, 0.1, 0.1, 0.005}, {0.9, 0.5, 0.2, 0.01}, {1.0, 0.1, 0.1, 0.005}, },
+  rotSpeed     = 0.2,
+  rotFactor    = 1.0,
+  rotFactorSpread = -2.0,
+  rotairdrag   = 0.99,
+  rotSpread    = 360,
+  sizeExp      = -2,
+  size         = 45,
+  sizeSpread   = -10,
+  sizeGrowth   = -1,
+  emitVector   = {0,0,0},
+  emitRotSpread = 360,
+  texture      = 'bitmaps/lightningball.png',
+  count        = 2,
+  repeatEffect = true,
+  }
+  
+plasmaball_tllmegacoldfus = {
+  speed        = 0,
+  speedSpread  = 0,
+  layer        = -36,
+  life         = 51,
+  lifeSpread   = 20,
+  partpos      = "0,0,0",
+  colormap     = { {1.0, 0.1, 0.1, 0.005}, {0.9, 0.5, 0.2, 0.01}, {1.0, 0.1, 0.1, 0.005}, },
+  rotSpeed     = 0.2,
+  rotFactor    = 1.0,
+  rotFactorSpread = -2.0,
+  rotairdrag   = 0.99,
+  rotSpread    = 360,
+  sizeExp      = -2,
+  size         = 70,
+  sizeSpread   = -10,
+  sizeGrowth   = -1,
+  emitVector   = {0,0,0},
+  emitRotSpread = 360,
+  texture      = 'bitmaps/lightningball.png',
+  count        = 2,
   repeatEffect = true,
   }
 ----------------------------------------------------------------------------
