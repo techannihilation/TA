@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  flare1, flare2, turret, base, sleeve, missile1, missile2;
+piece  flare1, flare2, turret, base, sleeve, ex1, ex2;
 
 static-var  restore_delay, gun_1;
 
@@ -38,10 +38,10 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-HitByWeapon(Func_Var_1, Func_Var_2)
+HitByWeapon(anglex, anglez)
 {
-	turn base to z-axis Func_Var_2 speed <105.000000>;
-	turn base to x-axis Func_Var_1 speed <105.000000>;
+	turn base to z-axis anglez speed <105.000000>;
+	turn base to x-axis anglex speed <105.000000>;
 	wait-for-turn base around z-axis;
 	wait-for-turn base around x-axis;
 	turn base to z-axis <0.000000> speed <30.000000>;
@@ -60,14 +60,8 @@ RockUnit(anglex, anglez)
 
 Create()
 {
-	dont-cache missile1;
-	dont-shade missile1;
-	dont-cache missile2;
-	dont-shade missile2;
 	hide flare1;
 	hide flare2;
-	hide missile1;
-	hide missile2;
 	gun_1 = flare1;
 	restore_delay = 2400;
 	start-script SmokeUnit();
@@ -104,21 +98,15 @@ FirePrimary()
 {
 	if( gun_1 == 1 )
 	{
-		explode flare1 type BITMAPONLY | BITMAP4;
+		emit-sfx 1024 + 0 from flare1;
+		emit-sfx 1024 + 1 from ex1;
 		sleep 20;
-		move missile1 to z-axis [-7.500000] now;
-		hide missile1;
-		show missile1;
-		move missile1 to z-axis [0.000000] speed [10.000000];
 	}
 	if( gun_1 == 0 )
 	{
-		explode flare2 type BITMAPONLY | BITMAP4;
+		emit-sfx 1024 + 0 from flare2;
+		emit-sfx 1024 + 1 from ex2;
 		sleep 20;
-		move missile2 to z-axis [-7.500000] now;
-		hide missile2;
-		show missile2;
-		move missile2 to z-axis [0.000000] speed [10.000000];
 	}
 	gun_1 = !gun_1;
 }
@@ -142,16 +130,12 @@ Killed(severity, corpsetype)
 {
 	hide flare1;
 	hide flare2;
-	hide missile1;
-	hide missile2;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
 		explode base type BITMAPONLY | BITMAP1;
 		explode turret type BITMAPONLY | BITMAP4;
 		explode sleeve type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode missile1 type SHATTER | BITMAP4;
-		explode missile2 type SHATTER | BITMAP4;
 		return (0);
 	}
 	if( severity <= 50 )
@@ -160,8 +144,6 @@ Killed(severity, corpsetype)
 		explode base type BITMAPONLY | BITMAP1;
 		explode turret type SHATTER | BITMAP4;
 		explode sleeve type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode missile1 type SHATTER | BITMAP4;
-		explode missile2 type SHATTER | BITMAP4;
 		return (0);
 	}
 	if( severity <= 99 )
@@ -170,14 +152,10 @@ Killed(severity, corpsetype)
 		explode base type BITMAPONLY | BITMAP1;
 		explode turret type SHATTER | BITMAP4;
 		explode sleeve type SHATTER | EXPLODE_ON_HIT | BITMAP4;
-		explode missile1 type SHATTER | BITMAP4;
-		explode missile2 type SHATTER | BITMAP4;
 		return (0);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP1;
 	explode turret type SHATTER | EXPLODE_ON_HIT | BITMAP4;
 	explode sleeve type SHATTER | EXPLODE_ON_HIT | BITMAP4;
-	explode missile1 type SHATTER | BITMAP4;
-	explode missile2 type SHATTER | BITMAP4;
 }

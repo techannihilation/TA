@@ -64,6 +64,12 @@ local unitDef = {
 	unitname = [[tawf114]],
 	workerTime = 0,
 	featureDefs = nil,
+	sfxtypes = {
+		explosiongenerators = {
+			[1] = [[custom:muzzle_flare_rocket]],
+			[2] = [[custom:core_rear_muzzle_dark]],
+		},
+        },
 	sounds = {
 		canceldestruct = [[cancel2]],
 		underattack = [[warning1]],
