@@ -339,7 +339,9 @@ function gadget:UnitFinished(uID, uDefID, uTeam)
     local cDefs = convertCapacities[uDefID]
     if cDefs and spValidUnitID(uID) then
 	
-		if not checkTeamList(uTeam, cDefs.e, uID) then Spring.Echo("In UnitFinished"); return end
+		if not teamMMList[uTeam][cDefs.e][uID] then 
+			teamMMList[uTeam][cDefs.e][uID] = {capacity = 0, status = 0, built = false, emped = false}
+		end
 	
         teamMMList[uTeam][cDefs.e][uID].capacity = cDefs.c
 		teamMMList[uTeam][cDefs.e][uID].built = true
