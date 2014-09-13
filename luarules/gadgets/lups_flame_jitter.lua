@@ -91,7 +91,7 @@ else
     particleList[particleCnt] = {
       class        = 'JitterParticles2',
       colormap     = { {1,1,1,1},{1,1,1,1} },
-      count        = 2, --2
+      count        = 3, --3
       life         = weaponRange / 12,
       delaySpread  = 25,
       force        = {0,1.5,0},
@@ -124,9 +124,9 @@ else
                        {0.35, 0.15, 0.15, 0.25},
                        {0.1, 0.035, 0.01, 0.2},
                        {0, 0, 0, 0.01} },
-      count        = 3, --3
+      count        = 5, --5
       life         = weaponRange / 5,
-      delaySpread  = 25,
+      delaySpread  = 18,
 
       force        = {0,1,0},
       --forceExp     = 0.2,
@@ -141,7 +141,7 @@ else
       rotSpread    = 360,
       rotExp       = 9,
 
-      speed        = weaponVelocity / 57,
+      speed        = weaponVelocity / 76,
       speedSpread  = 0,
       speedExp     = 1.5,
 
@@ -152,19 +152,20 @@ else
       --texture     = "bitmaps/smoke/smoke06.tga",
       texture     = "bitmaps/GPL/flame.png",
     }
-    particleCnt = particleCnt + 1
+    --[[
+    particleCnt = particleCnt + 120
 
     particleList[particleCnt] = {
       class        = 'SimpleParticles2',
       colormap     = { {1, 1, 1, 0.01}, {0, 0, 0, 0.01} },
-      count        = 2,
-      --delay        = 20,
+      count        = 0,
+      delay        = 0,
       life         = weaponRange / 7,
       lifeSpread   = 20,
       delaySpread  = 15,
 
       force        = {0,1,0},
-      --forceExp     = 0.2,
+      forceExp     = 0.2,
 
       partpos      = partpos,
       pos          = {posx,posy,posz},
@@ -183,9 +184,10 @@ else
       sizeGrowth   = 4.0,
       sizeExp      = 0.65,
 
-      --texture     = "bitmaps/smoke/smoke06.tga",
-      texture     = "bitmaps/GPL/flame.png",
+      texture     = "bitmaps/smoke/smoke06.tga",
+      --texture     = "bitmaps/GPL/flame.png",
     }
+    --]]
     particleCnt = particleCnt + 1
 
   end
