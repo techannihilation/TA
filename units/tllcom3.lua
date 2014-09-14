@@ -173,6 +173,7 @@ local unitDef = {
 local weaponDefs = {
 	TLL_DISINTEGRATOR1 = {
 		areaOfEffect = 36,
+		avoidFeature = false,
 		avoidFriendly = false,
 		avoidground = false,
 		beamWeapon = true,

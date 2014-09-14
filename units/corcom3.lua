@@ -169,6 +169,7 @@ local unitDef = {
 local weaponDefs = {
 	ARM_DISINTEGRATOR1 = {
 		areaOfEffect = 36,
+		avoidFeature = false,
 		avoidFriendly = false,
 		avoidground = false,
 		beamWeapon = true,

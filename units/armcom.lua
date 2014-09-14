@@ -182,6 +182,7 @@ local weaponDefs = {
 		areaOfEffect = 36,
 		avoidFriendly = false,
 		avoidground = false,
+		avoidFeature = false,
 		beamWeapon = true,
 		commandfire = true,
 		craterBoost = 0,
