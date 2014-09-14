@@ -1,4 +1,4 @@
-----------------------------------------v2.30.2 ---------------------------------------
+---------------------------------------v2.30.4 ---------------------------------------
 
 ----Visual----
 Add glow effect on/off effect for t1.5 core metal maker
@@ -11,6 +11,8 @@ Fix std anti missing nukes at edge of range
 Fix incorrect range shown for anti placement
 Fix lups effcet simpleparticles2 not showing for specs
 Swap build order for tllsham and tllprivate, now inline with arm/core lab buildmenu's
+Fix transport mass for arm t1.5 air trans
+Commander dgun, allow dgun to shoot though feature's/tree's
 
 ----Balance----
 Increase tlldischarge jump height by 20% was 250>300
@@ -38,8 +40,15 @@ Proto Reduce m cost 1934>1834, cloak cost 500>350, cloakcost moving 1500>750
 Remove vaporiser and seperator t2.5 tanks
 Demon remove auto unlock, and add new unit that unlocks via morph
 Reduce morph xp requirements for corgol and armfboy was 0.60 now 0.30
-Rebalance Terroriser, metalcost 1167>1750, hp 3050>4000, damage 1250>1475
-
+Rebalance Terroriser, Reduce metal cost 1750>1120, Reduce energy cost 24945>16945, Reduce buildtime 25956>18956, damage 1250>1475
+Reduce Bertha and Intimidator range 6800>5100
+Cordoom reduce range 1200>1000, Reduce hp 14200>11200
+Pitball reduce hp by 25% 3381>2535
+Viper reduce hp by 25% 3719>2789
+Reduce armguard metal cost by 15% 1645>1400
+Remove pro footballer
+Reduce morph cost for upgraded sumo and fatboy was 0.60>0.30
+Cleanup morph tree, remove all morph to cons from non builder's, corhrk now can morph to corhowie, remove wtf morphs (armsnipe to armjugg, corvroc to corkrog, armmanni to armraz)
 ---Improvements----
 Add new heavy heli's for arm and core
 Update to latest lups version
