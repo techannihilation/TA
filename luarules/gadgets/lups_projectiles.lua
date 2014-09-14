@@ -57,7 +57,7 @@ end
 
 function gadget:Initialize()
 	for weaponID in pairs(weapons) do
-		Spring.Echo("bla", weaponID)
+		Spring.Echo("Lups Projectile for WeaponID: ", weaponID)
 		Script.SetWatchWeapon(weaponID, true)
 	end
 end
