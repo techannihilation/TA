@@ -122,7 +122,7 @@ function gadget:GameFrame(n)
 		local passiveConsPull = {}
 		for unitID in pairs(passiveCons[teamID] or {}) do
 			local builtUnit = spGetUnitIsBuilding(unitID)
-			if builtUnit then
+			if builtUnit and costID[builtUnit] then
 				local targetCosts = costID[builtUnit]
 				local rate = spGetUnitCurrentBuildPower(unitID)/targetCosts.buildTime
 				for _,resName in pairs(resTable) do
