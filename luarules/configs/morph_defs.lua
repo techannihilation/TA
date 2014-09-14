@@ -308,13 +308,6 @@ local morphDefs = {
 		time = 30,
 		xp = 0.6,
 	},
-	{
-		into = 'armack',
-		time = 60,
-		xp = 0.85,
-		metal = 1200,
-		energy = 5000,
-	},
 	},
       corak = {
 		into = 'corak1',
@@ -326,11 +319,6 @@ local morphDefs = {
 		into = 'corstorm1',
 		time = 10,
 		xp = 0.30,
-	},
-    {
-		into = 'corfast',
-		time = 60,
-		xp = 1.10,
 	},
     {
 		into = 'cortermite',
@@ -349,13 +337,6 @@ local morphDefs = {
 		into = 'cormort',
 		time = 30,
 		xp = 0.6,
-	},
-	{
-		into = 'corack',
-		time = 60,
-		xp = 0.85,
-		metal = 1150,
-		energy = 5000,
 	},
 	},
       armflash = {
@@ -396,11 +377,6 @@ local morphDefs = {
 		xp = 0.30,
 	},
 	{
-		into = 'consul',
-		time = 60,
-		xp = 0.80,
-	},
-	{
 		into = 'armorca',
 		time = 30,
 		xp = 0.60,
@@ -411,13 +387,6 @@ local morphDefs = {
 		into = 'armsam1',
 		time = 10,
 		xp = 0.25,
-		},
-		{
-		into = 'armacv',
-		time = 30,
-		xp = 0.90,
-		metal = 1650,
-		energy = 5000,
 		},
 		{
 		into = 'tawf014',
@@ -436,11 +405,6 @@ local morphDefs = {
 		into = 'corlevlr1',
 		time = 10,
 		xp = 0.30,
-	},
-	{
-		into = 'consul1',
-		time = 60,
-		xp = 0.80,
 	},
 	{
 		into = 'corgfbt',
@@ -487,67 +451,39 @@ local morphDefs = {
 		xp = 0.25,
 		},
 		{
-		into = 'coracv',
-		time = 60,
-		xp = 0.90,
-		metal = 1670,
-		energy = 5000,
-		},
-		{
 		into = 'tawf114',
 		time = 30,
 		xp = 0.75,
 		energy = 2500,
 		},
-    },
-    armjeth = {
+	},
+	armjeth = {
 		into = 'armaak',
 		time = 30,
 		xp = 0.20,
 	},
-     corcrash = {
+	corcrash = {
 		into = 'coraak',
 		time = 30,
 		xp = 0.20,
 	},
-	 armwar = {
+	armwar = {
 		into = 'armmav',
 		time = 30,
 		xp = 0.50,
 		energy = 2000,
 	},
-     armmanni = {
-		into = 'armraz',
-		time = 60,
-		xp = 0.75,
-		metal = 2500,
-		energy = 7500,
-	},
-     corvroc = {
-		into = 'corkarg',
-		time = 60,
-		xp = 0.80,
-		metal = 2000,
-		energy = 7500,
-	},
-      armmerl = {
+        armmerl = {
 		into = 'requ1',
 		time = 60,
 		xp = 0.60,
 		metal = 2000,
 		energy = 10000,
 	},
-      armsnipe = {
-		into = 'armjugg',
-		time = 90,
-		xp = 1.50,
-		metal = 6500,
-		energy = 20000,
-	},
        corhrk = {
-		into = 'corjurgen',
+		into = 'corhowie',
 		time = 60,
-		xp = 0.85,
+		xp = 0.75,
 		metal = 1500,
 		energy = 5000,
 	},
@@ -574,7 +510,7 @@ local morphDefs = {
       armshock1 = {
 		into = 'armshock',
 		time = 150,
-		xp = 0.75,
+		xp = 0.70,
 	},
       armraven1 = {
 		into = 'armraven',
