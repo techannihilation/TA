@@ -559,7 +559,7 @@ local morphDefs = {
       corsumo = {
 		into = 'corsumo1',
 		time = 60,
-		xp = 0.60,
+		xp = 0.30,
 	},
       armzeus = {
 		into = 'armzeus1',
@@ -568,7 +568,7 @@ local morphDefs = {
 	},
       armfboy = {
 		into = 'armfboy1',
-		time = 60,
+		time = 30,
 		xp = 0.30,
 	},
       armshock1 = {
