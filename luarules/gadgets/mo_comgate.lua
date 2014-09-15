@@ -44,10 +44,9 @@ function gadget:Initialize()
 		if tsMu then
 
 			teamSkill = tsMu and tonumber(tsMu:match("%d+%.?%d*")) or 1
-			Spring.Echo(teamSkill)
 		end
 		local name = Spring.GetPlayerInfo(pID)
-	        Spring.Echo("look " .. name .. " has ts values of " .. teamSkill)
+	        --Spring.Echo("player " .. name .. " has ts values of " .. teamSkill)
             end
             if teamSkill >= 35 then
                 teamSKILL[tID] = 3
