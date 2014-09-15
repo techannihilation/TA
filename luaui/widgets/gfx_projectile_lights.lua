@@ -103,6 +103,13 @@ listL = glCreateList(function()	-- Laser cannon decal texture
     end)
 end)
 
+function IsTooHigh()
+	local cx, cy, cz = Spring.GetCameraPosition()
+	local smoothheight = Spring.GetSmoothMeshHeight(cx,cz)
+	local toohigh = ((cy-smoothheight)^2 >= 20000000) 
+	return toohigh
+end
+
 function widget:Initialize() -- create lighttable
 --[[	local modOptions = Spring.GetModOptions()
 	if modOptions and modOptions.lowcpu == "1" then
@@ -226,8 +233,8 @@ function widget:DrawWorldPreUnit()
 		end
 
 		if lightparams then	-- there is a light defined for this projectile type
-			x, y, z = spGetProjectilePosition(pID)			
-			if (x and y>0.0) then -- projectile is above water					
+			x, y, z = spGetProjectilePosition(pID)
+			if (x and y>0.0) and ( not IsTooHigh()) then -- projectile is above water					
 				if lightparams[5] and type(lightparams[5])=="boolean" then -- BeamLaser and LightningCannon
 					tx,ty,tz = spGetProjectileVelocity(pID)
 					if tx then
