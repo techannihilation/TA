@@ -131,7 +131,7 @@ local weaponDefs = {
 		noExplode = true,
 		pitchtolerance = 48000,
 		range = 1400,
-		reloadtime = 2,
+		reloadtime = 1.5,
 		renderType = 0,
 		rgbColor = [[0.5 0.4 1.0]],
 		sprayangle = 800,
@@ -147,7 +147,7 @@ local weaponDefs = {
 		weaponType = [[BeamLaser]],
 		weaponVelocity = 600,
 		damage = {
-			default = 10000,
+			default = 15000,
 			subs = 5,
 		},
 	},
