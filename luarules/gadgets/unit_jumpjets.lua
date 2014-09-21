@@ -71,7 +71,7 @@ local SpValidUnitID        = Spring.ValidUnitID
 
 local mcSetRotationVelocity = MoveCtrl.SetRotationVelocity
 --local mcSetLeaveTracks      = MoveCtrl.SetLeaveTracks
-spSetUnitLeaveTracks		= Spring.SetUnitLeaveTracks	--changed in 84.0
+local spSetUnitLeaveTracks  = Spring.SetUnitLeaveTracks	--changed in 84.0
 local mcSetPosition         = MoveCtrl.SetPosition
 local mcSetRotation         = MoveCtrl.SetRotation
 local mcDisable             = MoveCtrl.Disable
@@ -107,16 +107,6 @@ local jumpCmdDesc = {
   action  = 'jump',
   tooltip = 'Jump to selected position.',
 }
-
-local ignore = {
-  [CMD.SET_WANTED_MAX_SPEED] = true,
-}
-
-local accept = {
-  [CMD.MOVE] = true,
-  [CMD_JUMP] = true,
-}
-  
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -308,6 +298,7 @@ end
 function gadget:Initialize()
   Spring.SetCustomCommandDrawData(CMD_JUMP, "Attack", {0, 1, 0, 1})
   gadgetHandler:RegisterCMDID(CMD_JUMP)
+  GG.TechSlaveCommand(CMD_JUMP,"JumpJet")
   for _, unitID in pairs(Spring.GetAllUnits()) do
     gadget:UnitCreated(unitID, Spring.GetUnitDefID(unitID))
   end
