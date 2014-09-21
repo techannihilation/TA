@@ -35,6 +35,7 @@ Spring.SetGameRulesParam("jumpJets",1)
 
 local CMD_JUMP = 38521
 
+local Spring      = Spring
 local MoveCtrl    = Spring.MoveCtrl
 local coroutine   = coroutine
 local Sleep       = coroutine.yield
@@ -67,11 +68,10 @@ local spGetUnitDefID       = Spring.GetUnitDefID
 local spGetUnitTeam        = Spring.GetUnitTeam
 local spDestroyUnit        = Spring.DestroyUnit
 local spCreateUnit         = Spring.CreateUnit
-local SpValidUnitID        = Spring.ValidUnitID
 
 local mcSetRotationVelocity = MoveCtrl.SetRotationVelocity
 --local mcSetLeaveTracks      = MoveCtrl.SetLeaveTracks
-local spSetUnitLeaveTracks  = Spring.SetUnitLeaveTracks	--changed in 84.0
+spSetUnitLeaveTracks		= Spring.SetUnitLeaveTracks	--changed in 84.0
 local mcSetPosition         = MoveCtrl.SetPosition
 local mcSetRotation         = MoveCtrl.SetRotation
 local mcDisable             = MoveCtrl.Disable
@@ -86,7 +86,6 @@ local landBoxSize = 60
 local jumps       = {}
 local precision   = 1
 local jumping     = {}
-local jumpcount   = {}
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -107,6 +106,16 @@ local jumpCmdDesc = {
   action  = 'jump',
   tooltip = 'Jump to selected position.',
 }
+
+local ignore = {
+  [CMD.SET_WANTED_MAX_SPEED] = true,
+}
+
+local accept = {
+  [CMD.MOVE] = true,
+  [CMD_JUMP] = true,
+}
+  
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -174,8 +183,6 @@ end
 local function Jump(unitID, finish)
 
   jumping[unitID]     = true
-  
-  jumpcount[unitID] = true
 
   local start         = {spGetUnitPosition(unitID)}
   local fakeUnitID
@@ -239,14 +246,13 @@ local function Jump(unitID, finish)
   local function JumpLoop()
     local halfJump
     for i=0, 1, step do
-      if (not spGetUnitTeam(unitID)) and SpValidUnitID(unitID) then
+      if (not spGetUnitTeam(unitID)) then
         spDestroyUnit(fakeUnitID, false, true)
         return -- unit died
       end
       local x = start[1] + vector[1]*i
       local y = start[2] + vector[2]*i + (1-(2*i-1)^2)*height -- parabola
       local z = start[3] + vector[3]*i
-      Spring.SetUnitCOBValue(unitID,1029,i * 100)   
       mcSetPosition(unitID, x, y, z)
       if fakeUnitID then mcSetPosition(fakeUnitID, x, y, z) end
       if (not halfJump and step > 0.5) then
@@ -261,7 +267,7 @@ local function Jump(unitID, finish)
     if (fakeUnitID) then spDestroyUnit(fakeUnitID, false, true) end
     spCallCOBScript(unitID, "EndJump", 0)
     jumping[unitID] = nil
-    ReloadQueue(unitID, spGetCommandQueue(unitID,-1), start)
+    ReloadQueue(unitID, spGetCommandQueue(unitID), start)
 
     lastJump[unitID]    = spGetGameSeconds()
 
@@ -273,6 +279,7 @@ local function Jump(unitID, finish)
   end
   
   StartScript(JumpLoop)
+  
 end
 
 
@@ -298,7 +305,6 @@ end
 function gadget:Initialize()
   Spring.SetCustomCommandDrawData(CMD_JUMP, "Attack", {0, 1, 0, 1})
   gadgetHandler:RegisterCMDID(CMD_JUMP)
-  GG.TechSlaveCommand(CMD_JUMP,"JumpJet")
   for _, unitID in pairs(Spring.GetAllUnits()) do
     gadget:UnitCreated(unitID, Spring.GetUnitDefID(unitID))
   end
@@ -317,7 +323,6 @@ end
 
 function gadget:UnitDestroyed(unitID, unitDefID)
   lastJump[unitID]  = nil
-  jumpcount[unitID] = nil
 end
 
 
@@ -344,13 +349,10 @@ function gadget:CommandFallback(unitID, unitDefID, teamID,    -- keeps getting
   local range   = jumpDef.range
   local reload  = jumpDef.reload or 0
   local t       = spGetGameSeconds()
-  local count   = 100/reload
+
 
   if (distSqr < (range*range)) then
-
-    spSetUnitRulesParam(unitID,"jumpReload",count*(t - lastJump[unitID])*0.01) --fix me need to make smoother progress bar
-    if ( (t - lastJump[unitID] >= reload) and (not jumping[unitID]) ) or ( jumpcount[unitID] == nil )then
- 
+    if ( (t - lastJump[unitID] >= reload) and (not jumping[unitID]) ) then
       local coords = table.concat(cmdParams)
       if (not jumps[coords]) then
         Jump(unitID, cmdParams)
