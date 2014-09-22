@@ -364,6 +364,7 @@ local function Jump(unitID, goal, cmdTag, origCmdParams)
 
 			if cob then
 				spCallCOBScript(unitID, "Jumping", 1, i * 100)
+				Spring.SetUnitCOBValue(unitID,1029,i * 100)
 			else
 				Spring.UnitScript.CallAsUnit(unitID,env.jumping, 1, i * 100)
 			end
