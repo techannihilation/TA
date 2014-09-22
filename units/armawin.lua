@@ -53,7 +53,7 @@ local unitDef = {
 	workerTime = 0,
 	yardMap = [[ooooo ooooo ooooo ooooo ooooo]],
 	customParams = {
-		energyMultiplier = 3.5,
+		energyMultiplier = 4,
 	},
 	featureDefs = nil,
 	sounds = {
