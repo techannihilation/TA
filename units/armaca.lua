@@ -81,6 +81,7 @@ local unitDef = {
 		[[armsd]],
 		[[armgate]],
 		[[armflak]],
+		[[armanni]],
 		[[mercury]],
 		[[armemp]],
 		[[armamd]],

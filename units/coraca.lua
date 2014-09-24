@@ -80,6 +80,7 @@ local unitDef = {
 		[[cortarg]],
 		[[corsd]],
 		[[corgate]],
+		[[cordoom]],
 		[[corflak]],
 		[[screamer]],
 		[[cortron]],
