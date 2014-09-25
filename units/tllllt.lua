@@ -102,6 +102,7 @@ local unitDef = {
 local weaponDefs = {
 	SPAM_LIGHTNING = {
 		areaOfEffect = 8,
+		beamttl = 10,
 		beamWeapon = true,
 		burst = 3,
 		burstrate = 0.125,

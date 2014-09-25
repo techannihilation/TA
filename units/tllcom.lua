@@ -217,6 +217,7 @@ local weaponDefs = {
 	},
 	TLLCOM_LIGHTNING = {
 		areaOfEffect = 12,
+		beamttl = 10,
 		beamWeapon = true,
 		craterBoost = 0,
 		craterMult = 0,

@@ -97,6 +97,7 @@ local unitDef = {
 local weaponDefs = {
 	LIGHTNING1 = {
 		areaOfEffect = 8,
+		beamttl = 10,
 		beamWeapon = true,
 		craterBoost = 0,
 		craterMult = 0,

@@ -100,6 +100,7 @@ local weaponDefs = {
 	TLL_Barret = {
 		accuracy = 100,
 		areaOfEffect = 180,
+		beamttl = 10,
 		beamWeapon = true,
 		craterBoost = 0,
 		craterMult = 0,
