@@ -113,6 +113,7 @@ local unitDef = {
 local weaponDefs = {
 	DISCHARGE = {
 		areaOfEffect = 8,
+		beamttl = 10,
 		beamWeapon = true,
 		craterBoost = 0,
 		craterMult = 0,

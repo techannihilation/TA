@@ -101,6 +101,7 @@ local unitDef = {
 local weaponDefs = {
 	ARMKRMI_LIGHT = {
 		areaOfEffect = 8,
+		beamttl = 10,
 		beamWeapon = true,
 		duration = 10,
 		fireStarter = 50,

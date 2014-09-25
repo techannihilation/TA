@@ -112,6 +112,7 @@ local unitDef = {
 local weaponDefs = {
 	ARMKBOT_MISSILE4 = {
 		areaOfEffect = 96,
+		beamttl = 10,
 		cegTag = [[Core_Trail_rocket]],
 		craterBoost = 0,
 		craterMult = 0,

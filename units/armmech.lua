@@ -177,6 +177,7 @@ local weaponDefs = {
 	},
 	ARMMECH_TESLA = {
 		areaOfEffect = 5,
+		beamttl = 10,
 		beamWeapon = true,
 		duration = 10,
 		energypershot = 667,

@@ -140,6 +140,7 @@ local weaponDefs = {
 	},
 	ARMSCPION_LIGHTNING = {
 		areaOfEffect = 8,
+		beamttl = 10,
 		beamWeapon = true,
 		duration = 10,
 		fireStarter = 50,
