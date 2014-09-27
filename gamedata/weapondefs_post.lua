@@ -142,17 +142,24 @@ for id in pairs(WeaponDefs) do
 		WeaponDefs[id].impulseboost = 0
 		WeaponDefs[id].impulsefactor = 0
 	end
-	if WeaponDefs[id].cratermult and WeaponDefs[id].cratermult > 0 then
+	if WeaponDefs[id].cratermult and tonumber(WeaponDefs[id].cratermult) > 0 then
 		--Spring.Echo("crater mult " .. id,WeaponDefs[id].cratermult)
 		WeaponDefs[id].cratermult = WeaponDefs[id].cratermult * 0.4
 	else
 		WeaponDefs[id].cratermult = 0.0
 	end
-	if WeaponDefs[id].craterboost and WeaponDefs[id].craterboost > 0 then
+	if WeaponDefs[id].craterboost and tonumber(WeaponDefs[id].craterboost) > 0 then
 		--Spring.Echo("crater boost " .. id,WeaponDefs[id].craterboost)
 		WeaponDefs[id].craterboost = WeaponDefs[id].craterboost * 0.4
 	else
 		WeaponDefs[id].craterboost = 0
+	end
+	if not WeaponDefs[id].craterareaofeffect then
+		if WeaponDefs[id].areaofeffect and tonumber(WeaponDefs[id].areaofeffect) > 180 then 
+			WeaponDefs[id].craterareaofeffect = (tonumber(WeaponDefs[id].areaofeffect) or 0)
+		else
+			WeaponDefs[id].craterareaofeffect = 0
+		end
 	end
 	if WeaponDefs[id].weapontype == "BeamLaser" then
 		WeaponDefs[id].soundhitdry = ""
