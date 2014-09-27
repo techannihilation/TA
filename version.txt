@@ -1,4 +1,4 @@
----------------------------------------v2.30.4 ---------------------------------------
+---------------------------------------v2.30.5 ---------------------------------------
 
 ----Visual----
 Add glow effect on/off effect for t1.5 core metal maker
@@ -13,6 +13,7 @@ Fix lups effcet simpleparticles2 not showing for specs
 Swap build order for tllsham and tllprivate, now inline with arm/core lab buildmenu's
 Fix transport mass for arm t1.5 air trans
 Commander dgun, allow dgun to shoot though feature's/tree's
+Fix desync with jumpjet gadget
 
 ----Balance----
 Increase tlldischarge jump height by 20% was 250>300
@@ -49,6 +50,12 @@ Reduce armguard metal cost by 15% 1645>1400
 Remove pro footballer
 Reduce morph cost for upgraded sumo and fatboy was 0.60>0.30
 Cleanup morph tree, remove all morph to cons from non builder's, corhrk now can morph to corhowie, remove wtf morphs (armsnipe to armjugg, corvroc to corkrog, armmanni to armraz)
+Rebalance mobile long range plasma cannons, range reduce to 4335
+Increase Upg fatboy increase buildCostEnergy 11193>14550, buildCostMetal 1576>1970
+Increase e output for adv windgen to 4x current wind speed,(was 3.5)
+Move cordoom and armanni from combat engineers to t2 cons, add very heavy laser tower to combat engineers
+
+
 ---Improvements----
 Add new heavy heli's for arm and core
 Update to latest lups version
@@ -57,6 +64,7 @@ Update passive builders with MM metal cost
 Alter teleport beam color depending on players trueskill rank
 Add spark sound for boosted nanos
 Add spark sound for lighning splash damage
+Dont draw projectile light if zoomed out
 
 ---------------------------------------v2.29.1 ---------------------------------------
 ----Visual----
