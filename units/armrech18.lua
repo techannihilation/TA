@@ -36,7 +36,6 @@ local unitDef = {
 	idleTime = 1800,
 	maxDamage = 6000,
 	maxSlope = 10,
-	maxWaterDepth = 0,
 	metalStorage = 0,
 	name = [[Advanced T2 Research Center]],
 	noAutoFire = false,
