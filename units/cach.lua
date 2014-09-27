@@ -92,6 +92,7 @@ local unitDef = {
 		[32] = [[corsilo]],
 		[33] = [[corint]],
 		[34] = [[corbuzz]],
+		[35] = [[corech18]],
 	},
 	featureDefs = nil,
 	sounds = {

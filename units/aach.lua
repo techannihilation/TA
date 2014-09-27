@@ -93,6 +93,7 @@ local unitDef = {
 		[33] = [[armbrtha]],
 		[34] = [[armvulc]],
 		[35] = [[armdf]],
+		[36] = [[armrech18]],
 	},
 	featureDefs = nil,
 	sounds = {
