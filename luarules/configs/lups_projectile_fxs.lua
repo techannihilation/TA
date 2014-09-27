@@ -1,23 +1,17 @@
-local MergeTable = Spring.Utilities.MergeTable
-
-local fx = {
+local lups_effects = {
+   cbrutus_cbrutus_missile = {
+    {class = "Ribbon", options={width=3, size=8, color = {1,0,0,1}}},
+    --{class = "JitterParticles2", options={width=3, size=80,emitVector = {0,0,-1}}},
+    },
 }
+local projectile_effects = {}
 
-
-local tbl = {
-   --armsnipe_armsnipe_weapon = {
-    --{class = "ribbon", options = fx.sonic_blast},
- --},
- 
-}
-local tbl2 = {}
-
-for weaponName, data in pairs(tbl) do
+for weaponName, data in pairs(lups_effects) do
   local weaponDef = WeaponDefNames[weaponName] or {}
   local weaponID = weaponDef.id
   if weaponID then
-    tbl2[weaponID] = data
+    projectile_effects[weaponID] = data
   end
 end
 
-return tbl2
+return projectile_effects
