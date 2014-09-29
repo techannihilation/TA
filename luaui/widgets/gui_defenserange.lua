@@ -666,8 +666,6 @@ function Ismouseover()
   else
     return false
   end
-  return true --testing
-  
 end
 
 function widget:DrawScreen()	
