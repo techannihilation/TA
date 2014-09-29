@@ -230,6 +230,10 @@ colorConfig["enemy"]["nuke"] =  { 1.0, 1.0, 1.0 }
 colorConfig["ally"] = colorConfig["enemy"]
 --end of DEFAULT COLOR CONFIG
 
+local state = {}
+state["screenx"], state["screeny"] = widgetHandler:GetViewSizes()
+state["curModID"] = nil
+state["myPlayerID"] = nil
 
 --Button display configuration
 --position only relevant if no saved config data found
@@ -278,11 +282,6 @@ local updateTimes = {}
 updateTimes["remove"] = 0
 updateTimes["line"] = 0
 updateTimes["removeInterval"] = 1 --configurable: seconds for the ::update loop
-
-local state = {}
-state["screenx"], state["screeny"] = widgetHandler:GetViewSizes()
-state["curModID"] = nil
-state["myPlayerID"] = nil
 
 local lineConfig = {}
 lineConfig["lineWidth"] = 1.0 -- calcs dynamic now
@@ -408,6 +407,7 @@ function widget:Initialize()
 	DetectMod()
 
 	UpdateButtons()
+
 	
 	--Recheck units on widget reload
 	local myAllyTeam = Spring.GetMyAllyTeamID()
@@ -607,6 +607,14 @@ function UpdateButtons()
 	local ButtonYStep = 0 - (buttonConfig["currentHeight"]  + ySpace)
 	local ButtonXStep = 0
 	  
+	buttonConfig["scaleFactor"] = ( buttonConfig["currentWidth"] / buttonConfig["defaultWidth"] )
+	buttonConfig["xSpace"] = buttonConfig["spacingx"] * buttonConfig["scaleFactor"]
+	buttonConfig["ySpace"] = buttonConfig["spacingy"] * buttonConfig["scaleFactor"]
+	buttonConfig["xPosMin"] = ((buttonConfig["posPercRight"]) * state["screenx"]) - buttonConfig["currentWidth"] 
+	buttonConfig["xPosMax"] = buttonConfig["xPosMin"] + 2 * buttonConfig["currentWidth"] + buttonConfig["xSpace"]
+	buttonConfig["yPosMin"] = (buttonConfig["posPercBottom"] * state["screeny"])
+	buttonConfig["yPosMax"] = ( buttonConfig["yPosMin"] - ( buttonConfig["currentHeight"]  ) * 3 - buttonConfig["ySpace"] * 2)
+	 
 	SetButtonOrigin({maxx, maxy}, buttonConfig["currentWidth"], buttonConfig["currentHeight"] , ButtonXStep, ButtonYStep)
 
 	AddButton(1, "LuaUI/Images/tank_icon_32.png", (buttonConfig["currentWidth"] + xSpace), 0)
@@ -645,12 +653,25 @@ end
 function widget:ViewResize(viewSizeX, viewSizeY)
   state["screenx"] = viewSizeX
   state["screeny"] = viewSizeY
-  
   UpdateButtons()
 end
 
+function Ismouseover()
+  local x,y = Spring.GetMouseState()
+  local mouseborder = 10
+    --Spring.Echo(buttonConfig["xPosMin"],buttonConfig["xPosMax"],buttonConfig["yPosMin"],buttonConfig["yPosMax"])
+  if x > (buttonConfig["xPosMin"] - mouseborder) and x < (buttonConfig["xPosMax"] + mouseborder)  and y > (buttonConfig["yPosMax"] - mouseborder) and y < (buttonConfig["yPosMin"] + mouseborder) then
+    --Spring.Echo("hit")
+    return true
+  else
+    return false
+  end
+  return true --testing
+  
+end
+
 function widget:DrawScreen()	
-	if not spIsGUIHidden() then
+	if not spIsGUIHidden() and Ismouseover() then
 		if buttonList then
 			glCallList(buttonList)
 		else
@@ -1267,21 +1288,8 @@ function widget:TweakMouseRelease(x,y,button)
 end
 
 function widget:TweakDrawScreen()
-	--todo: no need to recalc every frame, only on screenResize
-	local scaleFactor = ( buttonConfig["currentWidth"] / buttonConfig["defaultWidth"] )
-	local xSpace = buttonConfig["spacingx"] * scaleFactor
-	local ySpace = buttonConfig["spacingy"] * scaleFactor
-	--
-	
-	local xPosMin = ((buttonConfig["posPercRight"]) * state["screenx"]) - buttonConfig["currentWidth"] 
-	local xPosMax = xPosMin + 2 * buttonConfig["currentWidth"] + xSpace
-
-	
-	local yPosMin = (buttonConfig["posPercBottom"] * state["screeny"])
-	local yPosMax = ( yPosMin - ( buttonConfig["currentHeight"]  ) * 3 - ySpace * 2)
-	
 	glColor(0.0,0.0,1.0,0.5)                                   
-	glRect(xPosMin, yPosMax, xPosMax, yPosMin)
+	glRect(buttonConfig["xPosMin"], buttonConfig["yPosMax"], buttonConfig["xPosMax"], buttonConfig["yPosMin"])
 	glColor(1,1,1,1)
 end
 
