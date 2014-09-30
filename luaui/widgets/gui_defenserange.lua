@@ -824,18 +824,6 @@ function widget:MouseRelease(x, y, button)
   return -1
 end
 
-function CheckSpecState()
-	local playerID = spGetMyPlayerID()
-	local _, _, spec, _, _, _, _, _ = spGetPlayerInfo(playerID)
-		
-	if ( spec == true ) then
-		widgetHandler:RemoveWidget()
-		return false
-	end
-	
-	return true
-end
-
 local darkOpacity = 0
 function SetOpacity(dark,light)
     darkOpacity = dark
@@ -882,10 +870,6 @@ function widget:Update()
 		updateTimes["remove"] = time
 		--do update stuff:
 		
-		if ( CheckSpecState() == false ) then
-			return false
-		end
-	
 		--remove dead units
 		for k, def in pairs(defences) do
 			local udefID = spGetUnitDefID(def["unitId"])
