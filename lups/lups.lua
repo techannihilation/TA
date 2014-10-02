@@ -684,7 +684,8 @@ local function IsUnitFXVisible(fx)
 	local unitID = fx.unit
 	local isIcon = Spring.IsUnitIcon(unitID)
 	local _, specFullView = spGetSpectatingState()
-
+	local Crashing = Spring.GetUnitRulesParam(unitID, "nolups") or 0
+	
 	if fx.onActive then
 		unitActive = spGetUnitIsActive(unitID)
 		if (unitActive == nil) then
@@ -692,7 +693,7 @@ local function IsUnitFXVisible(fx)
 		end
 	end
 
-	if (isIcon) or (IsTooHigh()) then
+	if (isIcon) or (IsTooHigh()) or Crashing == 1 then
 		return false
 	elseif (not fx.onActive)or(unitActive) then
 		if fx.alwaysVisible then

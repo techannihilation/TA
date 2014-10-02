@@ -89,6 +89,7 @@ function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, w
 	--NOTE: strafe airmovetype aircraft DO NOT CRASH, only regular stuff like bombers
 		--Spring.Echo('CRASHING AIRCRAFT',unitID)
 		SetUnitCOBValue(unitID, COB.CRASHING, 1)
+		Spring.SetUnitRulesParam(unitID, "nolups",1)
 		--SetUnitCosts(unitID,{10000,0,0}) this doesnt work either :)
 		SetUnitNoSelect(unitID,true) --cause setting to neutral still allows selection (wtf?)
 		crashing[unitID]=true
