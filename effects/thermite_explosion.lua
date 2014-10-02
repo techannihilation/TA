@@ -1,4 +1,8 @@
 -- thermite_explosion
+-- thermite_spark
+-- thermite_drip
+-- steam
+-- thermite_drip_laser
 
 return {
   ["thermite_explosion"] = {
@@ -87,7 +91,7 @@ return {
         useairlos          = true,
       },
     },
-     waterball2 = {
+    waterball2 = {
       air                = false,
       class              = [[CSimpleParticleSystem]],
       count              = 1,
@@ -116,7 +120,7 @@ return {
         useairlos          = true,
       },
     },
-   Spawner = {
+    Spawner = {
       air                = true,
       class              = [[CExpGenSpawner]],
       count              = 10,
@@ -155,7 +159,7 @@ return {
       },
     },
   }, 
-     ["thermite_spark"] = {
+   ["thermite_spark"] = {
     spark = {
       air                = true,
       class              = [[CSimpleParticleSystem]],
@@ -185,9 +189,9 @@ return {
         useairlos          = true,
       },
     },
-    },
+   },
     ["thermite_drip"] = {
-    spark = {
+     spark = {
       air                = true,
       class              = [[CSimpleParticleSystem]],
       count              = 1,
@@ -216,9 +220,9 @@ return {
         useairlos          = true,
       },
     },
-    },
-     ["steam"] = {
-      steamcloud = {
+   },
+    ["steam"] = {
+     steamcloud = {
       air                = false,
       class              = [[CSimpleParticleSystem]],
       count              = 1,
@@ -247,8 +251,8 @@ return {
         useairlos          = true,
       },
     },
-},
-  ["thermite_drip_laser"] = {
+  },
+   ["thermite_drip_laser"] = {
     spark = {
       air                = true,
       class              = [[CSimpleParticleSystem]],
@@ -278,5 +282,5 @@ return {
         useairlos          = true,
       },
     },
-    },
+  },
 }
