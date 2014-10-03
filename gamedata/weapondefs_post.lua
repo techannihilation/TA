@@ -154,13 +154,18 @@ for id in pairs(WeaponDefs) do
 	else
 		WeaponDefs[id].craterboost = 0
 	end
+	
 	if not WeaponDefs[id].craterareaofeffect then
-		if WeaponDefs[id].areaofeffect and tonumber(WeaponDefs[id].areaofeffect) > 180 then 
-			WeaponDefs[id].craterareaofeffect = (tonumber(WeaponDefs[id].areaofeffect) or 0)
-		else
-			WeaponDefs[id].craterareaofeffect = 0
-		end
+		WeaponDefs[id].craterareaofeffect = (tonumber(WeaponDefs[id].areaofeffect) or 0)
 	end
+	
+	-- don't affect ground for tiny explosions (-> don't cause PFS updates pointlessly)
+	if WeaponDefs[id].craterareaofeffect <= 64 then
+		WeaponDefs[id].craterareaofeffect = 0
+		WeaponDefs[id].cratermult = 0
+		WeaponDefs[id].craterboost = 0
+	end
+    
 	if WeaponDefs[id].weapontype == "BeamLaser" then
 		WeaponDefs[id].soundhitdry = ""
 		WeaponDefs[id].soundtrigger = 1
