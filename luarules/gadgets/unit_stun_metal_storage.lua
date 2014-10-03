@@ -67,7 +67,7 @@ function gadget:GameFrame(n)
 	  if stunned and (storageunits[unitID].paracount == 0) then
 		local currentLevel,totalstorage = Spring.GetTeamResources(Spring.GetUnitTeam(unitID),"metal")
 		local newstoragetotal = totalstorage - storage
-		Spring.Echo("current storage level " .. currentLevel .. "   total storage " .. totalstorage .. "   new storage level " ..newstoragetotal)
+		--Spring.Echo("current storage level " .. currentLevel .. "   total storage " .. totalstorage .. "   new storage level " ..newstoragetotal)
 
 		Spring.SetTeamResource(Spring.GetUnitTeam(unitID), "ms", newstoragetotal)
 		      if currentLevel > (newstoragetotal) then
