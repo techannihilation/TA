@@ -325,6 +325,7 @@ function widget:DrawScreen()
 	glResetMatrices()
 	----
 	
+	glSlaveMiniMap(true)
 	glDrawMiniMap()
 	
 	-- this makes jK rage
