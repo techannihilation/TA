@@ -156,7 +156,7 @@ for id in pairs(WeaponDefs) do
 	end
 	
 	if not WeaponDefs[id].craterareaofeffect then
-		WeaponDefs[id].craterareaofeffect = (tonumber(WeaponDefs[id].areaofeffect) or 0)
+		WeaponDefs[id].craterareaofeffect = tonumber((WeaponDefs[id].areaofeffect) or 0)*1.5
 	end
 	
 	-- don't affect ground for tiny explosions (-> don't cause PFS updates pointlessly)
