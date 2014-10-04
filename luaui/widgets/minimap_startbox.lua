@@ -290,11 +290,7 @@ end
 --------------------------------------------------------------------------------
 
 function widget:DrawWorld()
-  
-   if (Spring.GetGameFrame() > 1) then
-    widgetHandler:RemoveWidget()
-    return
-  end
+
   
   gl.Fog(false)
 
