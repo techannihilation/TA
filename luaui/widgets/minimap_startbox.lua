@@ -32,6 +32,7 @@ end
 
 if (Spring.GetGameFrame() > 1) then
   widgetHandler:RemoveWidget()
+  return
 end
 
 --------------------------------------------------------------------------------
@@ -289,6 +290,12 @@ end
 --------------------------------------------------------------------------------
 
 function widget:DrawWorld()
+  
+   if (Spring.GetGameFrame() > 1) then
+    widgetHandler:RemoveWidget()
+    return
+  end
+  
   gl.Fog(false)
 
   local time = Spring.DiffTimers(Spring.GetTimer(), startTimer)
@@ -349,6 +356,7 @@ function widget:DrawInMiniMap(sx, sz)
   -- only show at the beginning
   if (Spring.GetGameFrame() > 1) then
     widgetHandler:RemoveWidget()
+    return
   end
 
   gl.PushMatrix()
