@@ -76,7 +76,7 @@ local unitDef = {
 		[16] = [[corflak]],
 		[17] = [[cordl]],
 		[18] = [[corck]],
-		[19] = [[corpyro]],
+		[19] = [[corroach]],
 		[20] = [[corsumo]],
 		[21] = [[corcan]],
 	},

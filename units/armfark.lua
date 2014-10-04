@@ -76,7 +76,7 @@ local unitDef = {
 		[16] = [[armflak]],
 		[17] = [[armdl]],
 		[18] = [[armck]],
-		[19] = [[armfast]],
+		[19] = [[armvader]],
 		[20] = [[armfboy]],
 		[21] = [[armsnipe]],
 	},
