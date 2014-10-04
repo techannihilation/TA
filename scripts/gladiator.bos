@@ -694,7 +694,7 @@ AimPrimary(heading, pitch)
 	}
 	Static_Var_6 = 0;
 	turn torso to y-axis heading speed <150.027473>;
-	turn ruparm to x-axis <0.000000> - pitch speed <200.038462>;
+	turn ruparm to x-axis <-0.000000> - pitch speed <200.038462>;
 	wait-for-turn torso around y-axis;
 	wait-for-turn ruparm around x-axis;
 	Static_Var_6 = 1;
@@ -729,8 +729,6 @@ AimSecondary(heading, pitch)
 	{
 		sleep 100;
 	}
-	turn luparm to x-axis <0.000000> - pitch speed <200.038462>;
-	wait-for-turn luparm around x-axis;
 	return (1);
 }
 
