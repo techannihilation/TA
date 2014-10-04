@@ -1,3 +1,4 @@
+-- $Id: lups_shockwaves.lua 3171 2008-11-06 09:06:29Z det $
 
 function gadget:GetInfo()
   return {
@@ -13,16 +14,9 @@ end
 
 
 if (gadgetHandler:IsSyncedCode()) then
-
-  local SHOCK_WEAPONS = {
+  
+local SHOCK_WEAPONS = {
     --Arm
-    ["armcom_arm_disintegrator"] = true,
-    ["armcom1_arm_disintegrator"] = true,
-    ["armcom4_arm_disintegrator1"] = true,
-    ["armcom5_arm_disintegrator2"] = true,
-    ["armcom6_arm_disintegrator2"] = true,
-    ["armcom7_arm_disintegrator2"] = true,
-    --["amortor_mortartillery"] = true, -- to small aoe
     ["armguard_armfixed_gun"] = true,
     ["armguard_armfixed_gun_high"] = true,
     ["armthund_armbomb"] = true,
@@ -35,85 +29,70 @@ if (gadgetHandler:IsSyncedCode()) then
     ["armfboy_arm_fatboy_notalaser"] = true,
     ["armfboy1_arm_fatboy_notalaser1"] = true,
     --Core
-    ["corcom_arm_disintegrator"] = true,
-    ["corcom1_arm_disintegrator"] = true,
-    ["corcom3_arm_disintegrator1"] = true,
-    ["corcom5_arm_disintegrator2"] = true,
-    ["corcom6_arm_disintegrator2"] = true,
-    ["corcom7_arm_disintegrator2"] = true,
+    
     --The Lost Legacy
-    ["tllcom_arm_disintegrator3"] = true,
-    ["tllcom3_tll_disintegrator1"] = true,
-    ["tllcom5_tll_disintegrator2"] = true,
-    ["tllcom6_tll_disintegrator2"] = true,
-    ["tllcom7_tll_disintegrator2"] = true,
     ["tllhtml_tll_gauss2"] = true,
     ["tlldemon_demonslayer_cannon"] = true,
   }
 
+  local hasShockwave = {} -- other gadgets can do Script.SetWatchWeapon and it is a global setting
+
   --// find weapons which cause a shockwave
   for i=1,#WeaponDefs do
     local wd = WeaponDefs[i]
-    if SHOCK_WEAPONS[wd.name] then
+    local customParams = wd.customParams or {}
+    if (SHOCK_WEAPONS[wd.name]) or (wd.type == "DGun") then
+      local speed = 1
+      local life = 1
+      if customParams.lups_explodespeed then
+	    speed = wd.customParams.lups_explodespeed
+      end
+      if wd.customParams.lups_explodelife then
+	    life = wd.customParams.lups_explodelife
+      end
       Script.SetWatchWeapon(wd.id,true)
-      SHOCK_WEAPONS[wd.id] = true
+      hasShockwave[wd.id] = {life = life, speed = speed}
     end
   end
 
   function gadget:Explosion(weaponID, px, py, pz, ownerID)
-    if SHOCK_WEAPONS[weaponID] then
-      local wd = WeaponDefs[weaponID]
+    local wd = WeaponDefs[weaponID]
+    --if (wd.description=="PlasmaImplosionDumpRocket") then --// Liche
+    --  SendToUnsynced("lups_shockwave", px, py, pz, 6.4, 30, 0.13, true)
+    --  return true
+    --else
+	local shockwave = hasShockwave[weaponID]
+	if shockwave then
       if (wd.type == "DGun") then
         SendToUnsynced("lups_shockwave", px, py, pz, 4.0, 18, 0.13, true)
       else
-        local growth = (wd.damageAreaOfEffect*1.1)/20
-        SendToUnsynced("lups_shockwave", px, py, pz, growth, false)
+        --local growth = wd.explosionSpeed
+        --local life = wd.damageAreaOfEffect / wd.explosionSpeed
+        local growth = (wd.damageAreaOfEffect*1.1)/20*shockwave.speed
+        local life = 23*shockwave.life
+        SendToUnsynced("lups_shockwave", px, py, pz, growth, life)
       end
-    end
-    return false
-  end
-  
-  function gadget:RecvLuaMsg(msg, id)
-    if (msg == "lups shutdown") then
-		SendToUnsynced("shockwave_Toggle",false,id)
-	elseif (msg == "lups running") then
-		SendToUnsynced("shockwave_Toggle",true,id)
 	end
+    return false
   end
 
 else
 
-  local enabled = false
-
   local function SpawnShockwave(_,px,py,pz, growth, life, strength, desintergrator)
-    if (enabled) then
-      local Lups = GG['Lups']
-      if (desintergrator) then
-        Lups.AddParticles('SphereDistortion',{pos={px,py,pz}, life=life, strength=strength, growth=growth})
-      else
-        Lups.AddParticles('ShockWave',{pos={px,py,pz}, growth=growth})
-      end
+    local Lups = GG['Lups']
+    if (desintergrator) then
+      Lups.AddParticles('SphereDistortion',{pos={px,py,pz}, life=life, strength=strength, growth=growth})
+    else
+      Lups.AddParticles('ShockWave',{pos={px,py,pz}, growth=growth, life=life})
     end
-  end
-  
-  local function Toggle(_,enable,playerId)
-    if (playerId == Spring.GetMyPlayerID()) then
-      if enable then
-	    enabled = true
-	  else
-	    enabled = false
-	  end
-	end
   end
 
   function gadget:Initialize()
     gadgetHandler:AddSyncAction("lups_shockwave", SpawnShockwave)
-    gadgetHandler:AddSyncAction("shockwave_Toggle", Toggle)
   end
 
   function gadget:Shutdown()
     gadgetHandler.RemoveSyncAction("lups_shockwave")
-    gadgetHandler.RemoveSyncAction("shockwave_Toggle")
   end
 
 end
