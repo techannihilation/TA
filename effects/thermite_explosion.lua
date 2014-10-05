@@ -2,7 +2,6 @@
 -- thermite_spark
 -- thermite_drip
 -- steam
--- thermite_drip_laser
 
 return {
   ["thermite_explosion"] = {
@@ -11,7 +10,7 @@ return {
       class              = [[CSimpleGroundFlash]],
       count              = 4,
       ground             = true,
-      water              = true,
+      water              = false,
       properties = {
         colormap           = [[1 0 0 1    1 0.8 0.15 1     0 0 0 0.1]],
         size               = [[30 r5]],
@@ -63,11 +62,11 @@ return {
       },
     },
     smokecloud = {
-      air                = true,
+      air                = false,
       class              = [[CSimpleParticleSystem]],
       count              = 1,
       ground             = true,
-      underwater         = 0,
+      underwater         = false,
       water              = true,
       properties = {
         airdrag            = 0.83,
@@ -91,39 +90,10 @@ return {
         useairlos          = true,
       },
     },
-    waterball2 = {
-      air                = false,
-      class              = [[CSimpleParticleSystem]],
-      count              = 1,
-      ground             = false,
-      underwater         = 1,
-      water              = true,
-      properties = {
-        airdrag            = 1,
-        colormap           = [[0 0 0 0  0.8 0.8 1 .1     0.9 .9 0.95 .8  	0 0 0 0.01]],
-        directional        = true,
-        emitrot            = 90,
-        emitrotspread      = 0,
-        emitvector         = [[0, 1, 0]],
-        gravity            = [[0, -0.01, 0]],
-        numparticles       = 50,
-        particlelife       = 4,
-        particlelifespread = 20,
-        particlesize       = [[1 r2]],
-        particlesizespread = 0,
-        particlespeed      = [[1 r1]],
-        particlespeedspread = 0,
-        pos                = [[0 r-2 r2,6, 0 r-2 r2]],
-        sizegrowth         = [[0.05]],
-        sizemod            = 1.0,
-        texture            = [[GenericSmokeCloud1]],
-        useairlos          = true,
-      },
-    },
-    Spawner = {
+    Spawner_thermite_spark = {
       air                = true,
       class              = [[CExpGenSpawner]],
-      count              = 10,
+      count              = 10, --10
       ground             = true,
       water              = true,
       unit               = 0,
@@ -133,23 +103,23 @@ return {
         pos                = [[0, 0, 0]],
       },
     }, 
-    Spawner1 = {
-      air                = true,
+    Spawner_thermite_drop = {
+      air                = false, -- will only trigger if spawned on air + unit(check spawn conditions in ceg)
       class              = [[CExpGenSpawner]],
-      count              = 10,
-      ground             = true,
-      water              = true,
-      unit               = 0,
+      count              = 10, --10
+      ground             = false,
+      water              = false,
+      unit               = true,
       properties = {
         delay              = [[2 i2]],
         explosiongenerator = [[custom:thermite_drip]],
         pos                = [[-5 r5,-2 r2,-5 r5]],
       },
     },
-    WaterEffect = {
+    Spawner_Steam = {
       air                = false,
       class              = [[CExpGenSpawner]],
-      count              = 5,
+      count              = 5, --5
       ground             = false,
       water              = true,
       properties = {
@@ -195,8 +165,8 @@ return {
       air                = true,
       class              = [[CSimpleParticleSystem]],
       count              = 1,
-      ground             = true,
-      unit               = 1,
+      ground             = false,
+      unit               = false,
       water              = false,
       properties = {
         airdrag            = 0.70,
@@ -227,7 +197,7 @@ return {
       class              = [[CSimpleParticleSystem]],
       count              = 1,
       ground             = false,
-      underwater         = 0,
+      underwater         = false,
       water              = true,
       properties = {
         airdrag            = 0.83,
@@ -248,37 +218,6 @@ return {
         sizegrowth         = -0.35,
         sizemod            = 1.0,
         texture            = [[clouds2]],
-        useairlos          = true,
-      },
-    },
-  },
-   ["thermite_drip_laser"] = {
-    spark = {
-      air                = true,
-      class              = [[CSimpleParticleSystem]],
-      count              = 1,
-      ground             = true,
-      unit               = 1,
-      water              = false,
-      properties = {
-        airdrag            = 0.70,
-        colormap           = [[1 0.5 0 .01   0.6 .24 0.05 .008  	0 0 0 0.01]],
-        directional        = true,
-        emitrot            = 180,
-        emitrotspread      = [[0 r-360 r360]],
-        emitvector         = [[0, 0.75, 0]],
-        gravity            = [[0, -1.25 r0.15 r1, 0]],
-        numparticles       = 2,
-        particlelife       = 11,
-        particlelifespread = 50,
-        particlesize       = 1,
-        particlesizespread = 2,
-        particlespeed      = 0.6,
-        particlespeedspread = 3,
-        pos                = [[-6 r6,0,-6 r6]],
-        sizegrowth         = [[0.0 r.05]],
-        sizemod            = 1.0,
-        texture            = [[plasma]],
         useairlos          = true,
       },
     },
