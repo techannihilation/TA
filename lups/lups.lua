@@ -701,9 +701,13 @@ local function IsUnitFXVisible(fx)
 		elseif (fx.Visible) and (not specFullView) then
 			return fx:Visible()
 		else
-			local unitRadius = (spGetUnitRadius(unitID) + 40)
-			local r = fx.radius or 0
-			return Spring.IsUnitVisible(unitID, unitRadius + r)
+			if spGetUnitRadius(unitID) then 
+				local unitRadius = (spGetUnitRadius(unitID) + 40)
+				local r = fx.radius or 0
+				return Spring.IsUnitVisible(unitID, unitRadius + r)
+			else
+				return false
+			end
 		end
 	else
 		return fx.alwaysVisible
