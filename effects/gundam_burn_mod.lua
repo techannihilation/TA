@@ -166,13 +166,13 @@ return {
         useairlos          = false,
       },
     },
-   Spawner1 = {
-      air                = true,
+   Spawner_laser_drip = {
+      air                = false,
       class              = [[CExpGenSpawner]],
       count              = 1,
       ground             = false,
       water              = false,
-      unit               = 1,
+      unit               = true,
       properties = {
         delay              = [[2 i2]],
         explosiongenerator = [[custom:thermite_drip_laser]],

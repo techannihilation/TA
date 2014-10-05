@@ -1302,13 +1302,13 @@ return {
         useairlos          = false,
       },
     },
-   Spawner1 = {
-      air                = true,
+   Spawner_laser_drip = {
+      air                = false,
       class              = [[CExpGenSpawner]],
       count              = 1,
-      ground             = true,
-      water              = true,
-      unit               = 0,
+      ground             = false,
+      water              = false,
+      unit               = true,
       properties = {
         delay              = [[2 i2]],
         explosiongenerator = [[custom:thermite_drip_laser]],
@@ -1331,7 +1331,7 @@ return {
 
     ["flash4blue"] = {
     usedefaultexplosions = false,
-  bluelightwater= {
+    bluelightwater= {
       air                = false,
       class              = [[CSimpleGroundFlash]],
       count              = 1,

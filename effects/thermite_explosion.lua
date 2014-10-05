@@ -103,7 +103,7 @@ return {
         pos                = [[0, 0, 0]],
       },
     }, 
-    Spawner_thermite_drop = {
+    Spawner_thermite_drip = {
       air                = false, -- will only trigger if spawned on air + unit(check spawn conditions in ceg)
       class              = [[CExpGenSpawner]],
       count              = 10, --10
