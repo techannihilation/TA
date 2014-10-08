@@ -105,6 +105,7 @@ local unitDef = {
 local weaponDefs = {
 	LIGHTNING = {
 		areaOfEffect = 8,
+		avoidFeature = false,
 		beamttl = 10,
 		beamWeapon = true,
 		craterBoost = 0,
@@ -141,6 +142,7 @@ local weaponDefs = {
 	},
 	TLL_OBLITERATOR = {
 		areaOfEffect = 32,
+		avoidFeature = false,
 		beamttl = 10,
 		beamWeapon = true,
 		craterBoost = 0,

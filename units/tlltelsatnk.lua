@@ -99,6 +99,7 @@ local unitDef = {
 local weaponDefs = {
 	TLLTELSA_CANNON = {
 		areaOfEffect = 30,
+		avoidFeature = false,
 		beamttl = 10,
 		beamWeapon = true,
 		duration = 5,

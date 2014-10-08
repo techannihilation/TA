@@ -103,6 +103,7 @@ local unitDef = {
 local weaponDefs = {
 	ARMAMPH_MISSILE = {
 		areaOfEffect = 48,
+		avoidFeature = false,
 		canattackground = false,
 		cegTag = [[Arm_Def_AA_Rocket]],
 		craterBoost = 0,
