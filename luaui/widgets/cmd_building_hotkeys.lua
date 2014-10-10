@@ -224,7 +224,13 @@ local binds={
 	"bind v buildunit_corsy",
 	"bind shift+v buildunit_corsy",
 	"bind v buildunit_tllsy",
-	"bind shift+v buildunit_tllsy",cc
+	"bind shift+v buildunit_tllsy",
+	
+	"bind ,	buildfacing inc",
+	"bind .	buildfacing dec",
+
+	-- hotfixes for 98.0
+	"bind f6 mutesound",
 }
 local unbinds={
 	"bind any+c controlunit",
@@ -235,6 +241,9 @@ local unbinds={
 	"bind any+z buildspacing inc",
 	"bind z buildspacing inc",
 	"bindaction buildspacing inc",
+	
+	-- hotfixes for 98.0
+	"bind backspace	mousestate",
 
 }
 function widget:Initialize()
