@@ -1,3 +1,27 @@
+---------------------------------------v2.31 ---------------------------------------
+
+----Visual----
+Update animation for upgraded mex's (faster turnrate), retexture core upg mex, fix bug with core upg mex script
+Dont draw lups effects for crashing aircraft
+
+----Bugs----
+Fix t2.5 RC not being buildable on water
+Match cratersize to previous engines
+Fix std mobile anti-nukes
+Fix description for flak resistant helis
+
+----Balance----
+Zeus, Panther, Tlldischarge, Tllroaster weapons now target features/dragon teeth
+Replace armfast and corpyro with crawling bombs in engineers build menus
+Titan remove radar and reduce max speed 1.53>1.30
+Gladiator add impulse to missile, rescale missile and increase projectile speed 220>300
+
+---Improvements----
+Update for latest engine
+Add t2.5 RC to t2 hover con build menus
+Only draw defensive range button is cursor is above them, also enable widget for specs
+
+
 ---------------------------------------v2.30.5 ---------------------------------------
 
 ----Visual----
