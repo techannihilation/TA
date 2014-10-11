@@ -226,12 +226,13 @@ local binds={
 	"bind v buildunit_tllsy",
 	"bind shift+v buildunit_tllsy",
 	
-	"bind ,	buildfacing inc",
-	"bind .	buildfacing dec",
-
-	-- hotfixes for 98.0
-	"bind f6 mutesound",
+    -- hotfixes for 98.0
+    "bind f6 mutesound", --http://springrts.com/mantis/view.php?id=4576
+    "bind ,	buildfacing inc", --because some keyboards don't have [ and ] keys
+    "bind .	buildfacing dec",
+    "bind o buildfacing inc", --apparently some keyboards don't have , and . either...
 }
+    
 local unbinds={
 	"bind any+c controlunit",
 	"bind c controlunit",
@@ -241,10 +242,11 @@ local unbinds={
 	"bind any+z buildspacing inc",
 	"bind z buildspacing inc",
 	"bindaction buildspacing inc",
-	
-	-- hotfixes for 98.0
-	"bind backspace	mousestate",
 
+    -- hotfixes for 98.0
+    "bind backspace	mousestate", --http://springrts.com/mantis/view.php?id=4578
+    --"bind any+` drawlabel",
+    --"bind any+` drawinmap",
 }
 function widget:Initialize()
 	for k,v in ipairs(unbinds) do
@@ -262,4 +264,17 @@ function widget:Shutdown()
 	for k,v in ipairs(unbinds) do
 		Spring.SendCommands(v)
 	end
+end
+
+-- hacky hotfix for http://springrts.com/mantis/view.php?id=4455
+include('keysym.h.lua')
+local BACKQUOTE = KEYSYMS.BACKQUOTE
+local BACKSLASH = KEYSYMS.BACKSLASH
+--local TILDE = -- i have no idea
+local RETURN = KEYSYMS.RETURN
+local wasDrawKey = false
+function widget:KeyPress(key, mods, isRepeat)
+    if key==RETURN and (Spring.GetKeyState(BACKQUOTE) or Spring.GetKeyState(BACKSLASH)) then
+        return true
+    end
 end
