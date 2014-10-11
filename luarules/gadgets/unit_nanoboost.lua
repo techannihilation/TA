@@ -230,7 +230,7 @@ function gadget:Initialize()
 end
 
 function BoostSound(_, x, y, z)
-    Spring.PlaySoundFile("sounds/zapzap.wav", 5, x,y,z)
+    Spring.PlaySoundFile("sounds/lasrhit2.wav", 1.0, x,y,z)
 end
 
 end

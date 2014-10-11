@@ -75,7 +75,7 @@ function gadget:Initialize()
 end
 
 function SplashSound(_, x, y, z)
-    Spring.PlaySoundFile("sounds/zapzap.wav", 2, x,y,z)
+    Spring.PlaySoundFile("sounds/lasrhit2.wav", 2, x,y,z)
 end
 
 end
