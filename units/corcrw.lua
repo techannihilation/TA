@@ -65,6 +65,9 @@ local unitDef = {
 	unitname = [[corcrw]],
 	upright = true,
 	workerTime = 0,
+	customparams = {
+		RequireTech = [[Advanced T2 Unit Research Centre]],
+	},
 	sounds = {
 		canceldestruct = [[cancel2]],
 		underattack = [[warning1]],
