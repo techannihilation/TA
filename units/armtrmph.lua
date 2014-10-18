@@ -63,6 +63,9 @@ local unitDef = {
 	unitname = [[armtrmph]],
 	waterline = 7,
 	featureDefs = nil,
+	customparams = {
+		RequireTech = [[Advanced T3 Unit Research Centre]],
+	},
 	sounds = {
 		canceldestruct = [[cancel2]],
 		underattack = [[warning1]],

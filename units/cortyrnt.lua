@@ -65,6 +65,9 @@ local unitDef = {
 	unitnumber = 27174,
 	waterline = 6,
 	featureDefs = nil,
+	customparams = {
+		RequireTech = [[Advanced T3 Unit Research Centre]],
+	},
 	sounds = {
 		canceldestruct = [[cancel2]],
 		underattack = [[warning1]],
