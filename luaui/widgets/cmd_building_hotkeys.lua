@@ -226,8 +226,9 @@ local binds={
 	"bind v buildunit_tllsy",
 	"bind shift+v buildunit_tllsy",
 	
-    -- hotfixes for 98.0
+   -- hotfixes for 98.0
     "bind f6 mutesound", --http://springrts.com/mantis/view.php?id=4576
+    "bind q drawinmap", --some keyboards don't have ` or \
     "bind ,	buildfacing inc", --because some keyboards don't have [ and ] keys
     "bind .	buildfacing dec",
     "bind o buildfacing inc", --apparently some keyboards don't have , and . either...
@@ -245,9 +246,10 @@ local unbinds={
 
     -- hotfixes for 98.0
     "bind backspace	mousestate", --http://springrts.com/mantis/view.php?id=4578
-    --"bind any+` drawlabel",
-    --"bind any+` drawinmap",
+    "bind , prevmenu",
+    "bind . nextmenu",
 }
+
 function widget:Initialize()
 	for k,v in ipairs(unbinds) do
 		Spring.SendCommands("un"..v)
@@ -267,14 +269,18 @@ function widget:Shutdown()
 end
 
 -- hacky hotfix for http://springrts.com/mantis/view.php?id=4455
+-- see also https://github.com/spring/spring/blob/develop/rts/Game/UI/KeyCodes.cpp and https://github.com/spring/spring/blob/develop/cont/LuaUI/Headers/keysym.h.lua
 include('keysym.h.lua')
 local BACKQUOTE = KEYSYMS.BACKQUOTE
 local BACKSLASH = KEYSYMS.BACKSLASH
---local TILDE = -- i have no idea
+local PAR = KEYSYMS.WORLD_23
+local Q = KEYSYMS.Q 
 local RETURN = KEYSYMS.RETURN
 local wasDrawKey = false
 function widget:KeyPress(key, mods, isRepeat)
-    if key==RETURN and (Spring.GetKeyState(BACKQUOTE) or Spring.GetKeyState(BACKSLASH)) then
+    if key==RETURN and (Spring.GetKeyState(BACKQUOTE) or Spring.GetKeyState(BACKSLASH) or Spring.GetKeyState(PAR) or Spring.GetKeyState(Q)) then
         return true
     end
+end
+
 end
