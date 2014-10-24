@@ -282,5 +282,3 @@ function widget:KeyPress(key, mods, isRepeat)
         return true
     end
 end
-
-end
