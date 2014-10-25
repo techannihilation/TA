@@ -6,25 +6,28 @@ function gadget:GetInfo()
     date      = "June 2014",
     license   = "GNU GPL, v3 or later",
     layer     = 1, --run after game_intial_spawn 
-    enabled   = false  
+    enabled   = true  
   }
 end
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
-if (tonumber(Spring.GetModOptions().mo_noowner) or 0) == 1 then
-	gadgetHandler:RemoveGadget() -- don't run in FFA mode
-end
-
 -----------------------------
 if gadgetHandler:IsSyncedCode() then 
 -----------------------------
+
+-- TS difference required for substitutions 
+-- idealDiff is used if possible, validDiff as fall-back, otherwise no
+local validDiff = 4 
+local idealDiff = 2
 
 local substitutes = {}
 local players = {}
 local absent = {}
 local replaced = false
+local gameStarted = false
+
 
 local gaiaTeamID = Spring.GetGaiaTeamID()
 
@@ -46,29 +49,48 @@ function gadget:RecvLuaMsg(msg, playerID)
         end
         --Spring.Echo("received", playerID, eligible, ts)
     end
+
+    FindSubs(false)    
 end
 
-function gadget:Initialize()
-    -- record a list of which playersIDs are players on which teamID
-    local allyTeamList = Spring.GetAllyTeamList()
-    for _,allyTeamID in pairs(allyTeamList) do
-        local teamList = Spring.GetTeamList(allyTeamID)
-        for _,teamID in pairs(teamList) do
-        if teamID~=gaiaTeamID then
-            local playerList = Spring.GetPlayerList(teamID)
-            for _,playerID in pairs(playerList) do
-                local _,_,spec = Spring.GetPlayerInfo(playerID)
-                if not spec then
-                    players[playerID] = teamID
-                end
-            end
-        end
-        end
+function gadget:PlayerChanged()
+    if not gameStarted then
+        FindSubs(false)
     end
 end
 
+function gadget:Initialize()
+    if (tonumber(Spring.GetModOptions().mo_noowner) or 0) == 1 then
+        gadgetHandler:RemoveGadget() -- don't run in FFA mode
+        return 
+    end
 
-function gadget:GameStart()
+    -- record a list of which playersIDs are players on which teamID
+    local teamList = Spring.GetTeamList()
+    for _,teamID in pairs(teamList) do
+    if teamID~=gaiaTeamID then
+        local playerList = Spring.GetPlayerList(teamID)
+        for _,playerID in pairs(playerList) do
+            local _,_,spec = Spring.GetPlayerInfo(playerID)
+            if not spec then
+                players[playerID] = teamID
+            end
+        end
+    end
+    end
+end
+
+function FindSubs(real)
+    -- make a copy of the substitutes table
+    local substitutesLocal = {}
+    local i = 0
+    for k,v in pairs(substitutes) do
+        substitutesLocal[k] = v
+        i = i + 1
+    end
+    absent = {}
+    --Spring.Echo("subs: " .. i)
+    
     -- make a list of absent players (only ones with valid ts)
     for playerID,_ in pairs(players) do
         local _,active,spec = Spring.GetPlayerInfo(playerID)
@@ -83,85 +105,103 @@ function gadget:GameStart()
             end
         end
     end
+    --Spring.Echo("absent: " .. #absent)
     
     -- for each one, try and find a suitable replacement & substitute if so
     for playerID,ts in pairs(absent) do
+        -- construct a table of who is ideal/valid 
+        local idealSubs = {}
         local validSubs = {}
-        for subID,subts in pairs(substitutes) do
+        for subID,subts in pairs(substitutesLocal) do
             local _,active,spec = Spring.GetPlayerInfo(subID)
-            if active and spec and math.abs(ts-subts)<=4.5 then 
-                validSubs[#validSubs+1] = subID
+            if active and spec then
+                if  math.abs(ts-subts)<=validDiff then 
+                    validSubs[#validSubs+1] = subID
+                end
+				if math.abs(ts-subts)<=idealDiff then
+                    idealSubs[#idealSubs+1] = subID 
+                end
             end
         end
+        --Spring.Echo("ideal: " .. #idealSubs .. " for pID " .. playerID)
+        --Spring.Echo("valid: " .. #validSubs .. " for pID " .. playerID)
+
+        local willSub = false
         if #validSubs>0 then
-            local sID = validSubs[math.random(1,#validSubs)]
-            local teamID = players[playerID]
-            Spring.AssignPlayerToTeam(sID, teamID)
-            substitutes[sID] = nil
-            replaced = true
+            -- choose who
+            local sID
+            if #idealSubs>0 then
+                sID = (#idealSubs>1) and idealSubs[math.random(1,#idealSubs)] or idealSubs[1]
+            else
+                sID = (#validSubs>1) and validSubs[math.random(1,#validSubs)] or validSubs[1]
+            end
             
-            local incoming,_ = Spring.GetPlayerInfo(sID)
-            local outgoing,_ = Spring.GetPlayerInfo(playerID)            
-            Spring.Echo("Player " .. incoming .. " was substituted in for " .. outgoing)
+            if real then
+                -- do the replacement 
+                local teamID = players[playerID]
+                Spring.AssignPlayerToTeam(sID, teamID)
+                replaced = true
+                
+                local incoming,_ = Spring.GetPlayerInfo(sID)
+                local outgoing,_ = Spring.GetPlayerInfo(playerID)            
+                Spring.Echo("Player " .. incoming .. " was substituted in for " .. outgoing)
+            end
+            substitutesLocal[sID] = nil
+            willSub = true
+        end
+        --Spring.Echo("willSub: " .. (sID or "-1") .. " for pID " .. playerID)
+        
+        if not real then
+            -- tell luaui who we would substitute if the game started now
+            Spring.SetGameRulesParam("Player" .. playerID .. "willSub", willSub and 1 or 0)
         end
     end
 
-    if replaced then
-        Spring.Echo("Revealing start positions to all")
-    end
 end
 
+function gadget:GameStart()
+    gameStarted = true
+    FindSubs(true)
+end
 function gadget:GameFrame(n)
     if n~=1 then return end
 
-   -- if at least one player was replaced, reveal startpoints to all
     if replaced then
-        local coopStartPoints = GG.coopStartPoints or {}
+        -- if at least one player was replaced, reveal startpoints to all
+        Spring.Echo("Revealing start points to all")
+       
+        local coopStartPoints = GG.coopStartPoints or {} 
         local revealed = {}
-        for pID,p in pairs(coopStartPoints) do
-            local name,_ = Spring.GetPlayerInfo(pID)
-            Spring.MarkerAddPoint(p[1], p[2], p[3], name, true)
+        for pID,p in pairs(coopStartPoints) do --first do the coop starts
+            local name,_,tID = Spring.GetPlayerInfo(pID)
+            SendToUnsynced("MarkStartPoint", p[1], p[2], p[3], name, tID)
             revealed[pID] = true
         end
-        
+            
         local teamStartPoints = GG.teamStartPoints or {}
         for tID,p in pairs(teamStartPoints) do
             p = teamStartPoints[tID]
             local playerList = Spring.GetPlayerList(tID)
             local name = ""
-            for _,pID in pairs(playerList) do --get all pIDs for this team which were not coop starts
+            for _,pID in pairs(playerList) do --now do all pIDs for this team which were not coop starts
                 if not revealed[pID] then
-                    local pName,_ = Spring.GetPlayerInfo(pID) 
-                    if pName and absent[pID]==nil then -- AIs might not have a name, don't write the name of the dropped player
+                    local pName,active,spec = Spring.GetPlayerInfo(pID) 
+                    if pName and absent[pID]==nil and active and not spec then --AIs might not have a name, don't write the name of the dropped player
                         name = name .. pName .. ", "
                         revealed[pID] = true
                     end
                 end
             end
-            name = string.sub(name, 1, math.max(string.len(name)-2,1)) --remove final ", "
-            Spring.MarkerAddPoint(p[1], p[2], p[3], colorNames(tID) .. name, true)
+            if name ~= "" then
+                name = string.sub(name, 1, math.max(string.len(name)-2,1)) --remove final ", "
+            end
+            SendToUnsynced("MarkStartPoint", p[1], p[2], p[3], name, tID)
         end
     end
-
+    
     gadgetHandler:RemoveGadget()
+    return
 end
-
-function colourNames(teamID)
-    	nameColourR,nameColourG,nameColourB,nameColourA = Spring.GetTeamColor(teamID)
-		R255 = math.floor(nameColourR*255)  
-        G255 = math.floor(nameColourG*255)
-        B255 = math.floor(nameColourB*255)
-        if ( R255%10 == 0) then
-                R255 = R255+1
-        end
-        if( G255%10 == 0) then
-                G255 = G255+1
-        end
-        if ( B255%10 == 0) then
-                B255 = B255+1
-        end
-	return "\255"..string.char(R255)..string.char(G255)..string.char(B255) --works thanks to zwzsg
-end 
 
 -----------------------------
 else -- begin unsynced section
@@ -171,14 +211,9 @@ local x = 500
 local y = 500
 
 local myPlayerID = Spring.GetMyPlayerID()
-local spec = Spring.GetSpectatingState()
+local spec,_ = Spring.GetSpectatingState()
 
-local customtable = select(10,Spring.GetPlayerInfo(myPlayerID)) -- player custom table
-local tsMu = customtable.skill 
-local tsSigma = customtable.skilluncertainty
-ts = tsMu and tonumber(tsMu:match("%d+%.?%d*"))
-tsSigma = tonumber(tsSigma)
-local eligible = tsMu and tsSigma and (tsSigma<=2) and (not string.find(tsMu, ")")) and spec
+local eligible
 
 local vsx, vsy = Spring.GetViewGeometry()
 function gadget:ViewResize()
@@ -197,6 +232,23 @@ local imgTexCoordY = 1	--image texture coordinate Y -- enter values other than 1
 local button = "luarules/images/glossy_button_blank_black_rectangle.png"
 local monofont = gl.LoadFont("luaui/fonts/instruction.ttf",72, 1.9, 40)
 
+function Initialize()
+    if (tonumber(Spring.GetModOptions().mo_noowner) or 0) == 1 then
+        gadgetHandler:RemoveGadget() -- don't run in FFA mode
+        return 
+    end
+
+    gadgetHandler:AddSyncAction("MarkStartPoint", MarkStartPoint)
+    
+    local customtable = select(10,Spring.GetPlayerInfo(myPlayerID)) -- player custom table
+    local tsMu = customtable.skill 
+	local tsSigma = customtable.skilluncertainty
+    ts = tsMu and tonumber(tsMu:match("%d+%.?%d*"))
+    tsSigma = tonumber(tsSigma)
+    eligible = tsMu and tsSigma and (tsSigma<=2) and (not string.find(tsMu, ")")) and spec
+    
+    MakeButton()
+end
 
 function MakeButton()
 	subsButton = gl.CreateList(function()
@@ -263,13 +315,39 @@ function gadget:MousePress(sx,sy)
 end
 
 function gadget:MouseRelease(x,y)
-	return false
 end
 
-function gadget:GameStart()
-    gadgetHandler:RemoveGadget()
+function MarkStartPoint(_,x,y,z,name,tID)
+    local _,_,spec = Spring.GetPlayerInfo(myPlayerID)
+    if not spec then
+        Spring.MarkerAddPoint(x, y, z, colourNames(tID) .. name, true)
+    end
 end
 
+function colourNames(teamID)
+    	nameColourR,nameColourG,nameColourB,nameColourA = Spring.GetTeamColor(teamID)
+		R255 = math.floor(nameColourR*255)  
+        G255 = math.floor(nameColourG*255)
+        B255 = math.floor(nameColourB*255)
+        if ( R255%10 == 0) then
+                R255 = R255+1
+        end
+        if( G255%10 == 0) then
+                G255 = G255+1
+        end
+        if ( B255%10 == 0) then
+                B255 = B255+1
+        end
+	return "\255"..string.char(R255)..string.char(G255)..string.char(B255) --works thanks to zwzsg
+end 
+
+function gadget:GameFrame(n)
+    if n>=5 then
+        gadgetHandler:RemoveSyncAction("MarkStartPoint")
+        gadgetHandler:RemoveGadget()
+        return
+    end
+end
 
 -----------------------------
 end -- end unsynced section
