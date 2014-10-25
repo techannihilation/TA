@@ -351,7 +351,8 @@ for i=1,#teamList do
   teamTechLevel[teamID] = 0
 end
 
-local CMD_PASSIVE = 34571
+CMD_PASSIVE = 34571
+CMD_NANOBOOST = 33456
 
 local morphCmdDesc = {
 --  id     = CMD_MORPH, -- added by the calling function because there is now more than one option
@@ -509,7 +510,7 @@ local function StartMorph(unitID, unitDefID, teamID, morphDef, cmdp)
   for _,playerId in ipairs(Spring.GetPlayerList(teamID,true)) do
     local _,_,spectator=Spring.GetPlayerInfo(playerId)
     if not spectator and #Spring.GetTeamUnits(teamID) > (MAXunits * 0.95) then
-      Spring.Echo("\255\255\255\001Warning Unit Limit Approching - Morph May Stall Reduce Unit Count")
+      Spring.SendMessageToTeam(teamID,"\255\255\255\001Warning Unit Limit Approching - Morph May Stall Reduce Unit Count")
     end
   end
   
@@ -517,6 +518,9 @@ local function StartMorph(unitID, unitDefID, teamID, morphDef, cmdp)
   SpSetUnitHealth(unitID, { paralyze = 1.0e9 })    --// turns mexes and mm off (paralyze the unit)
   SpSetUnitResourcing(unitID,"e",0)                --// turns solars off
   SpGiveOrderToUnit(unitID, CMD_ONOFF, { 0 }, { "alt" }) --// turns radars/jammers off
+  Spring.GiveOrderToUnit(unitID, CMD_NANOBOOST, { 0 }, { "alt" }) --// turns off nano boost mode
+
+  
 
   morphUnits[unitID] = {
     def = morphDef,
