@@ -1,0 +1,206 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, beam, baseb, basec, plat, wave1, wave2, nano,
+       haut;
+
+static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging;
+
+// Signal definitions
+#define SIG_MOVE			2
+
+
+activatescr()
+{
+	if( TRUE )
+	{
+		show nano;
+		move haut to z-axis [4.000000] speed [5.000000];
+		wait-for-move haut along z-axis;
+		move plat to y-axis [6.000000] speed [5.000000];
+		sleep 621;
+	}
+	sleep 20;
+	return (0);
+	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		move plat to y-axis [0.000000] speed [5.000000];
+		wait-for-move plat along y-axis;
+		move haut to z-axis [0.000000] speed [5.000000];
+		wait-for-move haut along z-axis;
+		hide nano;
+		sleep 621;
+	}
+	sleep 20;
+}
+
+StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	while( TRUE )
+	{
+		emit-sfx 256 | 3 from wave1;
+		emit-sfx 256 | 3 from wave2;
+		sleep 150;
+	}
+}
+
+StopMoving()
+{
+	signal SIG_MOVE;
+}
+
+Go()
+{
+	call-script activatescr();
+	turn nano to y-axis Static_Var_1 speed <100.000000>;
+	wait-for-turn nano around y-axis;
+	set INBUILDSTANCE to 1;
+}
+
+Stop()
+{
+	set INBUILDSTANCE to 0;
+	turn nano to y-axis <0.000000> speed <100.000000>;
+	wait-for-turn nano around y-axis;
+	call-script deactivatescr();
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+Create()
+{
+	hide nano;
+	Static_Var_1 = 0;
+	call-script InitState();
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+StartBuilding(Func_Var_1)
+{
+	Static_Var_1 = Func_Var_1;
+	start-script RequestState(0);
+}
+
+StopBuilding()
+{
+	start-script RequestState(1);
+}
+
+QueryNanoPiece(piecenum)
+{
+	piecenum = beam;
+}
+
+TargetHeading(Func_Var_1)
+{
+	Static_Var_1 = 0 - Func_Var_1;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = baseb;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode nano type BITMAPONLY | BITMAP1;
+		explode base type BITMAPONLY | BITMAP2;
+		explode beam type BITMAPONLY | BITMAP3;
+		explode baseb type BITMAPONLY | BITMAP4;
+		explode basec type BITMAPONLY | BITMAP5;
+		explode wave1 type BITMAPONLY | BITMAP4;
+		explode wave2 type BITMAPONLY | BITMAP5;
+		explode plat type BITMAPONLY | BITMAP1;
+		explode haut type BITMAPONLY | BITMAP2;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode nano type FALL | EXPLODE_ON_HIT | BITMAP1;
+		explode base type BITMAPONLY | BITMAP2;
+		explode beam type FALL | EXPLODE_ON_HIT | BITMAP3;
+		explode baseb type SHATTER | EXPLODE_ON_HIT | BITMAP4;
+		explode basec type SHATTER | EXPLODE_ON_HIT | BITMAP5;
+		explode wave1 type FALL | EXPLODE_ON_HIT | BITMAP4;
+		explode wave2 type FALL | EXPLODE_ON_HIT | BITMAP5;
+		explode plat type BITMAPONLY | BITMAP1;
+		explode haut type BITMAPONLY | BITMAP2;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode nano type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode base type BITMAPONLY | BITMAP2;
+		explode beam type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode baseb type SHATTER | EXPLODE_ON_HIT | BITMAP4;
+		explode basec type SHATTER | EXPLODE_ON_HIT | BITMAP5;
+		explode wave1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode wave2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode plat type BITMAPONLY | BITMAP1;
+		explode haut type BITMAPONLY | BITMAP2;
+		return (0);
+	}
+	corpsetype = 3;
+	explode nano type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode base type BITMAPONLY | BITMAP2;
+	explode beam type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode baseb type SHATTER | EXPLODE_ON_HIT | BITMAP4;
+	explode basec type SHATTER | EXPLODE_ON_HIT | BITMAP5;
+	explode wave1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode wave2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode plat type BITMAPONLY | BITMAP1;
+	explode haut type BITMAPONLY | BITMAP2;
+}
