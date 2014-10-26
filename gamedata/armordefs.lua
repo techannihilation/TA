@@ -172,6 +172,7 @@ subs = {
            "tawf009",
            "armacsub",
            "armrecl",
+	   "tllsr",
 },
 experimental_ships = {
            "armtrmph",
