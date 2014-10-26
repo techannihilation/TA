@@ -48,11 +48,12 @@ local unitDef = {
 	yardMap = [[wCCCCCCw CCCCCCCC wCCCCCCC wCCCCCCC wCCCCCCC wCCCCCCC CCCCCCCC wCCCCCCw]],
 	buildoptions = {
 		[1] = [[tllcs]],
-		[2] = [[tllplunger]],
-		[3] = [[tllotter]],
-		[4] = [[tllboat2]],
-		[5] = [[tllviolator]],
-		[6] = [[tllambassador]],
+		[2] = [[tllsr]],
+		[3] = [[tllplunger]],
+		[4] = [[tllotter]],
+		[5] = [[tllboat2]],
+		[6] = [[tllviolator]],
+		[7] = [[tllambassador]],
 	},
 	featureDefs = nil,
 	sounds = {
