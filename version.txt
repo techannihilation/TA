@@ -1,4 +1,4 @@
- --------------------------------------- v2.31 ---------------------------------------
+--------------------------------------- v2.31.3 ---------------------------------------
 
 ----Visual----
 Update animation for upgraded mex's (faster turnrate), retexture core upg mex, fix bug with core upg mex script
@@ -9,14 +9,22 @@ Fix t2.5 RC not being buildable on water
 Match cratersize to previous engines
 Fix std mobile anti-nukes
 Fix description for flak resistant helis
+Fix ceg placement on corhrk missile
+Turn Nanos Boost mode off when morph is started, Closes #480
 
 ----Balance----
+Tech lock Specter by t1.5RC
+Tech lock Atomic Bomber and Krow by t2.5
+Tech lock Super Battleships by t3.5
+Move all rez sub to t1 labs
 Zeus, Panther, Tlldischarge, Tllroaster weapons now target features/dragon teeth
 Replace armfast and corpyro with crawling bombs in engineers build menus
 Titan remove radar and reduce max speed 1.53>1.30
 Gladiator add impulse to missile, rescale missile and increase projectile speed 220>300
 
 ---Improvements----
+Add new t1 rez sub for tll
+Match icon size for all fusion to power level and nano
 Update for latest engine
 Add t2.5 RC to t2 hover con build menus
 Only draw defensive range button is cursor is above them, also enable widget for specs
