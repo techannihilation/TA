@@ -168,6 +168,36 @@ local MAXunits = tonumber(Spring.GetModOptions().maxunits) or 500
 local morphPenalty = 1.0
 local MAX_MORPH = 0 --// will increase dynamically
 
+local nanos = {
+  --Arm
+  [UnitDefNames["armnanotc"].id] = true,
+  [UnitDefNames["armnanotc1"].id] = true,
+  [UnitDefNames["armnanotc2"].id] = true,
+  [UnitDefNames["armnanotc3"].id] = true,
+  [UnitDefNames["ananotower"].id] = true,
+  [UnitDefNames["armfnanotc"].id] = true,
+  [UnitDefNames["armfnanotc1"].id] = true,
+  [UnitDefNames["armfnanotc2"].id] = true,
+  [UnitDefNames["armfnanotc3"].id] = true,
+  --Core
+  [UnitDefNames["cornanotc"].id] = true,
+  [UnitDefNames["cornanotc1"].id] = true,
+  [UnitDefNames["cornanotc2"].id] = true,
+  [UnitDefNames["cornanotc3"].id] = true,
+  [UnitDefNames["cnanotower"].id] = true,
+  [UnitDefNames["corfnanotc"].id] = true,
+  [UnitDefNames["corfnanotc1"].id] = true,
+  [UnitDefNames["corfnanotc2"].id] = true,
+  [UnitDefNames["corfnanotc3"].id] = true,
+  --Tll
+  [UnitDefNames["tllnanotc"].id] = true,
+  [UnitDefNames["tllnanotc1"].id] = true,
+  [UnitDefNames["tllnanotc2"].id] = true,
+  [UnitDefNames["tllfnanotc"].id] = true,
+  [UnitDefNames["tllfnanotc1"].id] = true,
+  [UnitDefNames["tllfnanotc2"].id] = true,
+}
+
 --------------------------------------------------------------------------------
 --  COMMON
 --------------------------------------------------------------------------------
@@ -477,6 +507,11 @@ end
 
 
 local function ReAssignAssists(newUnit,oldUnit)
+  
+  local unitDefID = SpGetUnitDefID(oldUnit)
+  if unitDefID and not nanos[unitDefID] then return end
+  -- for now only reassign command to nanos
+    
   local ally = SpGetUnitAllyTeam(newUnit)
   local alliedTeams = SpGetTeamList(ally)
   for n=1,#alliedTeams do
@@ -484,7 +519,7 @@ local function ReAssignAssists(newUnit,oldUnit)
     local alliedUnits = SpGetTeamUnits(teamID)
     for i=1,#alliedUnits do
       local unitID = alliedUnits[i]
-      local cmds = SpGetCommandQueue(unitID,-1)
+      local cmds = SpGetCommandQueue(unitID,20)
       for j=1,#cmds do
         local cmd = cmds[j]
         if (cmd.id == CMD_GUARD)and(cmd.params[1] == oldUnit) then
@@ -518,7 +553,10 @@ local function StartMorph(unitID, unitDefID, teamID, morphDef, cmdp)
   SpSetUnitHealth(unitID, { paralyze = 1.0e9 })    --// turns mexes and mm off (paralyze the unit)
   SpSetUnitResourcing(unitID,"e",0)                --// turns solars off
   SpGiveOrderToUnit(unitID, CMD_ONOFF, { 0 }, { "alt" }) --// turns radars/jammers off
-  Spring.GiveOrderToUnit(unitID, CMD_NANOBOOST, { 0 }, { "alt" }) --// turns off nano boost mode
+  
+  if nanos[unitDefID] then
+    SpGiveOrderToUnit(unitID, CMD_NANOBOOST, { 0 }, { "alt" }) --// turn boost mode off for nanos
+  end
 
   
 
@@ -670,11 +708,14 @@ local function FinishMorph(unitID, morphData)
     { CMD_TRAJECTORY, { states.trajectory and 1 or 0 }, { } },
   })
   
-  Spring.GiveOrderToUnit(newUnit, CMD_PASSIVE, { nanoState }, {})
+  local unitDefID = SpGetUnitDefID(newUnit)
+  if nanos[unitDefID] then
+    Spring.GiveOrderToUnit(newUnit, CMD_PASSIVE, { nanoState }, {})
+  end
 
   
   --//copy command queue
-  local cmds = SpGetUnitCommands(unitID,4) --only copy last 3 command as first is skipped 
+  local cmds = SpGetUnitCommands(unitID,4) --only copy last 4 command as first is skipped 
   for i = 2, #cmds do  -- skip the first command (CMD_MORPH)
     local cmd = cmds[i]
     SpGiveOrderToUnit(newUnit, cmd.id, cmd.params, cmd.options.coded)
