@@ -38,7 +38,6 @@ local spArmor = Spring.GetUnitArmored
 local spActive = Spring.GetUnitIsActive
 local pairs = pairs	
 
-
 if (gadgetHandler:IsSyncedCode()) then
 
 	--Process all initial map features
@@ -102,6 +101,8 @@ if (gadgetHandler:IsSyncedCode()) then
 	--for S3O models it's not needed and will in fact result in wrong collision volume
 	--also handles per piece collision volume definitions
 	function gadget:UnitCreated(unitID, unitDefID, unitTeam)
+		local uDef = UnitDefs[unitDefID]
+	  	--Spring.Echo("Units Armor Class is : " .. (Game.armorTypes[uDef.armorType] or ""))
 		if (pieceCollisionVolume[UnitDefs[unitDefID].name]) then
 			local t = pieceCollisionVolume[UnitDefs[unitDefID].name]
 			for pieceIndex=0, #spGetPieceList(unitID)-1 do
@@ -111,6 +112,10 @@ if (gadgetHandler:IsSyncedCode()) then
 				else
 					spSetPieceCollisionData(unitID, pieceIndex, false, 1, 1, 1, 0, 0, 0, 1, 1)
 				end
+			end
+			if t.offsets then
+				p = t.offsets
+				Spring.SetUnitMidAndAimPos(unitID, 0, spGetUnitHeight(unitID)/2, 0, p[1], p[2], p[3],true)
 			end
 		elseif dynamicPieceCollisionVolume[UnitDefs[unitDefID].name] then
 			local t = dynamicPieceCollisionVolume[UnitDefs[unitDefID].name].on
@@ -122,7 +127,7 @@ if (gadgetHandler:IsSyncedCode()) then
 					spSetPieceCollisionData(unitID, pieceIndex, false, 1, 1, 1, 0, 0, 0, 1, 1)
 				end
 			end
-		elseif UnitDefs[unitDefID].model.type=="3do" and not sublist[unitDefID] then
+		elseif UnitDefs[unitDefID].model.type=="3do" and not (Game.armorTypes[uDef.armorType] =="subs") then
 			local rs, hs, ws, ars, ahs
 			if (spGetUnitRadius(unitID)>47 and not UnitDefs[unitDefID].canFly) then
 				rs, hs, ws = 0.59, 0.59, 0.59
@@ -151,10 +156,10 @@ if (gadgetHandler:IsSyncedCode()) then
 				spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*ars, spGetUnitHeight(unitID)*ahs)
 			end
 		end
-		if UnitDefs[unitDefID].model.type=="3do" and sublist[unitDefID] then
+		if UnitDefs[unitDefID].model.type=="3do" and (Game.armorTypes[uDef.armorType] =="subs") then
 			spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*0.45, spGetUnitHeight(unitID)*0.45)
 		end
-		if UnitDefs[unitDefID].model.type=="3do" and isship[unitDefID] then
+		if UnitDefs[unitDefID].model.type=="3do" and (Game.armorTypes[uDef.armorType] =="ships") and (Game.armorTypes[uDef.armorType] =="experimental_ships") then 
 			local bx,by,bz,mx,my,mz,ax,ay,az = Spring.GetUnitPosition(unitID,true,true) --basepoint,midpoint,aimpoint
 			local h = Spring.GetUnitHeight(unitID)
 			if by <= 0 and by + h >= 0 then
@@ -168,7 +173,7 @@ if (gadgetHandler:IsSyncedCode()) then
 			--Spring.Echo("Aimpoint Waterline: Set aimpoint of " .. unitID .. " torp ".. ay)
 			Spring.SetUnitMidAndAimPos(unitID,mx,my,mz,ax,2,az)
 		end
-		--Set aimsphere to ground level for some popup units (popup control in gadget does no kickin until unit is finished)
+		--Set aimsphere to ground level for some popup units (popup control does no start until unit is finished)
 		if UnitDefs[unitDefID].name == "corvipe" or UnitDefs[unitDefID].name == "corsd"then
 			local bx,by,bz,mx,my,mz,ax,ay,az = Spring.GetUnitPosition(unitID,true,true) --basepoint,midpoint,aimpoint
 			--Spring.Echo("Aimpoint Waterline: Set aimpoint of " .. unitID .. " torp ".. ay)

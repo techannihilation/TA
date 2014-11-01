@@ -76,89 +76,14 @@ local unitCollisionVolume = {}			--dynamic collision volume definitions
 local pieceCollisionVolume = {}			--per piece collision volume definitions
 local dynamicPieceCollisionVolume = {}	--dynamic per piece collision volume definitions
 
-local sublist = {
-    [UnitDefNames["tllwhale"].id] = true, --hmm
-    [UnitDefNames["tllacsub"].id] = true,
-    [UnitDefNames["coracsub"].id] = true,
-    [UnitDefNames["armacsub"].id] = true,
-    [UnitDefNames["tllorc"].id] = true,
-    [UnitDefNames["armrecl"].id] = true,
-    [UnitDefNames["uppercut"].id] = true,
-    [UnitDefNames["tllsquid"].id] = true,
-    [UnitDefNames["tllshark"].id] = true,
-    [UnitDefNames["tllplunger"].id] = true,
-    [UnitDefNames["corssub"].id] = true,
-    [UnitDefNames["corsub"].id] = true,
-    [UnitDefNames["tllmanta"].id] = true,
-    [UnitDefNames["tllcsub"].id] = true,
-    [UnitDefNames["armsub"].id] = true,
-    [UnitDefNames["correcl"].id] = true,
-    [UnitDefNames["armsubk"].id] = true,
-    [UnitDefNames["tawf009"].id] = true,
-    [UnitDefNames["corshark"].id] = true,
-}
-
-local isship = {
-       [UnitDefNames['armaas'].id] = true,
-       [UnitDefNames['armbats'].id] = true,
-       [UnitDefNames['armbc'].id] = true,
-       [UnitDefNames['armcarry'].id] = true,
-       [UnitDefNames['armcrus'].id] = true,
-       [UnitDefNames['armcs'].id] = true,
-       [UnitDefNames['armhcar'].id] = true,
-       [UnitDefNames['armhls'].id] = true,
-       [UnitDefNames['armmls'].id] = true,
-       [UnitDefNames['armmship'].id] = true,
-       [UnitDefNames['armpt'].id] = true,
-       [UnitDefNames['armroy'].id] = true,
-       [UnitDefNames['armsjam'].id] = true,
-       [UnitDefNames['armtrmph'].id] = true,
-       [UnitDefNames['armtship'].id] = true,
-       [UnitDefNames['aseadragon'].id] = true,
-       [UnitDefNames['corarch'].id] = true,
-       [UnitDefNames['corasship'].id] = true,
-       [UnitDefNames['corbats'].id] = true,
-       [UnitDefNames['corblackhy'].id] = true,
-       [UnitDefNames['corcarry'].id] = true,
-       [UnitDefNames['corcrus'].id] = true,
-       [UnitDefNames['corcs'].id] = true,
-       [UnitDefNames['coresupp'].id] = true,
-       [UnitDefNames['corhcar'].id] = true,
-       [UnitDefNames['cormls'].id] = true,
-       [UnitDefNames['cormship'].id] = true,
-       [UnitDefNames['corpt'].id] = true,
-       [UnitDefNames['corroy'].id] = true,
-       [UnitDefNames['corsjam'].id] = true,
-       [UnitDefNames['cortship'].id] = true,
-       [UnitDefNames['cortyrnt'].id] = true,
-       [UnitDefNames['decade'].id] = true,
-       [UnitDefNames['tllacs'].id] = true,
-       [UnitDefNames['tllambassador'].id] = true,
-       [UnitDefNames['tllasship'].id] = true,
-       [UnitDefNames['tllbats2'].id] = true,
-       [UnitDefNames['tllboat2'].id] = true,
-       [UnitDefNames['tllcs'].id] = true,
-       [UnitDefNames['tllequalizer'].id] = true,
-       [UnitDefNames['tllgiant'].id] = true,
-       [UnitDefNames['tllmixer'].id] = true,
-       [UnitDefNames['tllotter'].id] = true,
-       [UnitDefNames['tllsting'].id] = true,
-       [UnitDefNames['tllviking'].id] = true,
-       [UnitDefNames['tllviolator'].id] = true,
-       [UnitDefNames['tllvisitor'].id] = true,
-       --add two tll units fo decade fix until next engine release
-       [UnitDefNames['tllwmconv'].id] = true,
-       [UnitDefNames['tllasonar'].id] = true,
-       [UnitDefNames['tllsonar'].id] = true,
-}
 
 	unitCollisionVolume["armason"] = {
 		on={57,60,57,0,-7,0,1,1,1},    --{Xscale,Yscale,Zscale, Xoffset,Yoffset,Zoffset, vType,tType,axis}
 		off={24,34,24,0,10,0,1,1,1},
 	}
 	unitCollisionVolume["armamb"] = {
-		on={49,45,49,0,-6,0,1,1,1,0,0,-6},
-		off={49,20,49,0,-6,0,1,1,1,0,10,-6},
+		on={49,45,49,0,-6,0,1,1,1,0,16,0},
+		off={49,20,49,0,-6,0,1,1,1,0,5,0},
 	}
 	unitCollisionVolume["corsd"] = {
 		on={75,21,75,0,-15,0,2,1,0,0,12,0},
@@ -173,20 +98,20 @@ local isship = {
 		off={95,22,95,0,-1,0,1,1,1},
 	}
 	unitCollisionVolume["armclaw"] = {
-		on={32,39,32,0,-6,0,1,1,1},
-		off={32,32,32,0,-13.5,0,0,1,1},
+		on={32,60,32,0,-2,0,1,1,1,0,25,0},
+		off={32,32,32,0,-13.5,0,0,1,1,0,6,0},
 	}
 	unitCollisionVolume["armmmkr"] = {
 		on={60,70,60,0,7,0,1,1,1},
 		off={60,50,60,0,-4,0,1,1,1},
 	}
 	unitCollisionVolume["armpb"] = {
-		on={39,78,39,0,-11,0,1,1,1},
+		on={39,78,39,0,-11,0,1,1,1,0,25,0},
 		off={39,40,39,0,-20,0,1,1,1,0,10,0},
 	}
 	unitCollisionVolume["armplat"] = {
-		on={105,66,105,0,33,0,2,1,0},
-		off={105,44,105,0,0,0,2,1,0},
+		on={105,66,105,0,33,0,2,1,0,0,40,0},
+		off={105,44,105,0,0,0,2,1,0,0,30,0},
 	}
 	unitCollisionVolume["armsolar"] = {
 		on={83,76,83,0,-18,1,1,1,1},
@@ -209,8 +134,8 @@ local isship = {
 		off={48,43,48,0,-16,0,1,1,1},
 	}
 	unitCollisionVolume["cormaw"] = {
-		on={32,39,32,0,-6,0,1,1,1},
-		off={32,32,32,0,-13,0,0,1,1},
+		on={32,60,32,0,-6,0,1,1,1,0,24,0},
+		off={32,32,32,0,-13,0,0,1,1,0,6,0},
 	}
 	unitCollisionVolume["cormexp"] = {
 		on={83,77,83,0,-27,0,1,1,1},
@@ -233,8 +158,8 @@ local isship = {
 		off={38,20,38,0,0,0,1,1,1},
 	}
 	unitCollisionVolume["packo"] = {
-		on={49,51,49,-0.5,-10,0,1,1,1},
-		off={49,23,49,-0.5,-10,0,1,1,1},
+		on={49,51,49,-0.5,-10,0,1,1,1,0,16,0},
+		off={49,23,49,-0.5,-10,0,1,1,1,0,6,0},
 	}
 	unitCollisionVolume["shiva"] = {
 		on={50,50,50,0,2,-1,1,1,1},
@@ -272,14 +197,17 @@ local isship = {
 			["0"]={32,80,32,0,20,0,1,1},
 			["2"]={30,30,70,0,0,14,1,2},
 			["3"]={8,8,42,0,1,94,1,2},
+			offsets={0,50,0}
 	}
 	pieceCollisionVolume["corint"] = {
 			["0"]={73,103,73,0,50,0,1,1},
 			["2"]={13,13,48,0,1,55,1,2},
+			offsets={0,50,0}
 	}		
 	pieceCollisionVolume["arm_big_bertha"] = {
 			["0"]={28,74,28,0,34,0,1,1},
 			["2"]={15,15,113,0,0,30,1,2},
+			offsets={0,40,0}
 	}
 	pieceCollisionVolume["armveil"] = {
 			["0"]={25,58,25,0,30,0,1,1},
@@ -315,6 +243,7 @@ local isship = {
 		on = {
 			["1"]={44,23,44,0,0,0,2,0},
 			["7"]={10,10,60,0,3,13,1,2},
+			offsets={0,16,0}
 		},
 		off = {
 			["1"]={44,12,44,0,0,0,2,0},
@@ -326,10 +255,12 @@ local isship = {
 		on = {
 			["0"]={40,12,30,0,0,0,2,0},
 			["5"]={25,46,25,0,25,0,1,1},
+			offsets={0,20,0}
+
 		},
 		off = {
 			["0"]={40,12,30,0,0,0,2,0},
 			offsets={0,3,0}
 		}
 	}
-return unitCollisionVolume, pieceCollisionVolume, dynamicPieceCollisionVolume, sublist, isship
+return unitCollisionVolume, pieceCollisionVolume, dynamicPieceCollisionVolume
