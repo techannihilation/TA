@@ -42,6 +42,7 @@ local unitDef = {
 	idleTime = 1800,
 	isAirBase = true,
 	maneuverleashlength = 640,
+	mass = 10000,
 	maxDamage = 7950,
 	maxVelocity = 2.64,
 	metalStorage = 1500,

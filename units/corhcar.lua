@@ -46,6 +46,7 @@ local unitDef = {
 	isAirBase = true,
 	isTargetingUpgrade = true,
 	maneuverleashlength = 640,
+	mass = 30000,
 	maxDamage = 15500,
 	maxVelocity = 1.75,
 	metalStorage = 2000,
