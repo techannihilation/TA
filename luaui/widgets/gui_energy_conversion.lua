@@ -204,9 +204,11 @@ function widget:GameFrame(n)
 end
 
 function widget:DrawScreen()
-	
+
 	if not hasData then refreshData() end
 
+	if curCapacity <= 0 then return end
+	
     -- Positioning
     glPushMatrix()
 	glTranslate(px, py, 0)
