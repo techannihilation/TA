@@ -24,7 +24,15 @@ local options={
        desc="Tech Annihilation - Options",
        type="section",
     },
-	{
+    {
+	key    = "mo_preventcombomb",
+	name   = "1v1 Mode (Prevent Combombs)",
+	desc   = "Commanders survive DGuns and other commanders explosions",
+	type   = "bool",
+	def    = false,
+	section= "ta_modes",
+    },
+    {
 	key    = "mo_comgate",
 	name   = "Commander Teleport Effect",
 	desc   = "Commanders warp in at gamestart with a shiny teleport effect\nAutoHost USage :- mo_comgate",
