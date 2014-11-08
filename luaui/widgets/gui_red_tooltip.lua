@@ -18,8 +18,8 @@ local CanvasX,CanvasY = 1272,734 --resolution in which the widget was made (for 
 
 local Config = {
 	tooltip = {
-		px = 0,py = CanvasY-(12*6+5*2), --default start position
-		sx = 300,sy = 12*6+5*2, --background size
+		px = 0,py = CanvasY-(12*6+6*3), --default start position
+		sx = 300,sy = 12*6+6*3, --background size
 		
 		fontsize = 12,
 		
