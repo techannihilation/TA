@@ -40,6 +40,18 @@ local textSize = 12.0
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 --
+--  Callins
+--
+
+function widget:Initialize()
+    local _, _, spec = Spring.GetPlayerInfo(Spring.GetMyPlayerID())
+    if spec then
+        widgetHandler:RemoveWidget()
+	return false
+    end
+end
+
+--
 --  Rendering
 --
 

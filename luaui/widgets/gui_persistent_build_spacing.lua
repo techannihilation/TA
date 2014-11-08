@@ -23,6 +23,14 @@ local spGetBuildSpacing = Spring.GetBuildSpacing
 local spSetBuildSpacing = Spring.SetBuildSpacing
 
 -- Callins
+function widget:Initialize()
+    local _, _, spec = Spring.GetPlayerInfo(Spring.GetMyPlayerID())
+    if spec then
+        widgetHandler:RemoveWidget()
+	return false
+    end
+end
+
 function widget:Update()
     
     local _, cmdID = spGetActiveCommand()

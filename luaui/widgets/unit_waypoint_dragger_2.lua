@@ -50,7 +50,7 @@ local selWayPtsTbl = {}
 
 function widget:GetInfo()
 	return {
-		name      = "BA Waypoint Dragger",
+		name      = "Waypoint Dragger",
 		desc      = "Enables Waypoint Dragging",
 		author    = "Kloot",
 		date      = "Aug. 8, 2007 [updated Aug. 14, 2009]",
@@ -61,6 +61,11 @@ function widget:GetInfo()
 end
 
 function widget:Initialize()
+	local _, _, spec = Spring.GetPlayerInfo(Spring.GetMyPlayerID())
+	if spec then
+		widgetHandler:RemoveWidget()
+		return false
+	end
 end
 
 function widget:Shutdown()

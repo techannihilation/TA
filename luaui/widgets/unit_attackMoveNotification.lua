@@ -113,7 +113,7 @@ end
 --changing teams, rejoin, becoming spec etc
 function widget:PlayerChanged(playerID)
     setTeamId()
-	CheckSpecState()
+    CheckSpecState()
 end
 
 
