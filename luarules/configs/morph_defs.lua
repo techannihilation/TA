@@ -482,10 +482,8 @@ local morphDefs = {
 	},
        corhrk = {
 		into = 'corhowie',
-		time = 60,
-		xp = 0.75,
-		metal = 1500,
-		energy = 5000,
+		time = 150,
+		xp = 0.70,
 	},
       corgol = {
 		into = 'corgol1',
