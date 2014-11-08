@@ -195,7 +195,11 @@ local x2, y2 = Game.mapSizeX, Game.mapSizeZ
 local x, y, z, dx, dz, nx, ny, nz, ang
 local a, f, h = {}, {}, {}
 function widget:DrawWorldPreUnit()
-
+	
+	if IsTooHigh() then 
+		return
+	end
+	
 	if frame < spGetGameFrame() then
 		frame = spGetGameFrame()
 		plist = spGetVisibleProjectiles(-1)
@@ -234,7 +238,7 @@ function widget:DrawWorldPreUnit()
 
 		if lightparams then	-- there is a light defined for this projectile type
 			x, y, z = spGetProjectilePosition(pID)
-			if (x and y>0.0) and ( not IsTooHigh()) then -- projectile is above water					
+			if (x and y>0.0) then -- projectile is above water					
 				if lightparams[5] and type(lightparams[5])=="boolean" then -- BeamLaser and LightningCannon
 					tx,ty,tz = spGetProjectileVelocity(pID)
 					if tx then
