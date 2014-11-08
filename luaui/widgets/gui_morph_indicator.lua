@@ -154,6 +154,7 @@ end
 
 local function SetUnitRank(unitID)
   local ud = UnitDefs[GetUnitDefID(unitID)]
+  local teamID = Spring.GetUnitTeam(unitID)
   local rankIndex = 0
   local i, v
   if (ud == nil) then
@@ -188,10 +189,16 @@ local function SetUnitRank(unitID)
 
   alliedUnits[unitID] = {}
     if (rankTex ~= nil) then 
-      smallList[unitID] = { rankTex, ud.height + iconoffset, message, humanName}
+      smallList[unitID] = { rankTex, ud.height + iconoffset, message, humanName, teamID, messagesent = false}
     end
 end
 
+function IsTooHigh()
+  local cx, cy, cz = Spring.GetCameraPosition()
+  local smoothheight = Spring.GetSmoothMeshHeight(cx,cz)
+  local toohigh = ((cy-smoothheight)^2 >= MiMaxDist) 
+  return toohigh
+end
 
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
@@ -232,10 +239,10 @@ function widget:GameFrame(frame)
   if frame%129==0 then
     for unitID,v in pairs(smallList) do
       local myteam = Spring.GetMyTeamID()
-      local unitsteam = Spring.GetUnitTeam(unitID)
-      if v[3] == 0 and sentmessage[unitID] == nil and myteam == unitsteam then
+      --local unitsteam = Spring.GetUnitTeam(unitID)
+      if v[3] == 0 and v[6] == false and myteam == v[5] then
         Spring.Echo(v[4] .. " Is Ready For Morph")
-        sentmessage[unitID] = true
+        smallList[unitID][6] = true
       end
     end
   end
@@ -254,7 +261,7 @@ end
 function widget:UnitDestroyed(unitID, unitDefID, unitTeam)
   alliedUnits[unitID] = nil
   smallList[unitID] = nil
-  sentmessage[unitID] = nil
+  --sentmessage[unitID] = nil
 end
 
 
@@ -264,7 +271,7 @@ function widget:UnitGiven(unitID, unitDefID, oldTeam, newTeam)
   else
     alliedUnits[unitID] = nil
     smallList[unitID] = nil
-    sentmessage[unitID] = nil
+    --sentmessage[unitID] = nil
   end
 end
 
@@ -280,6 +287,10 @@ end
 
 
 function widget:DrawWorld()
+  if IsTooHigh() then 
+    return
+  end
+  
   if Spring.IsGUIHidden() == false then 
     --if (next(smallList) == nil) then
     --  return -- avoid unnecessary GL calls
@@ -290,19 +301,11 @@ function widget:DrawWorld()
     glDepthMask(true)
     glDepthTest(true)
     glAlphaTest(GL_GREATER, 0.01)
-    local cx, cy, cz = Spring.GetCameraPosition()
     for unitID, rankTexHeight in pairs(smallList) do
-      local ux,uy,uz = GetUnitViewPosition(unitID)
-      if ux~=nil then
-        local dx, dy, dz = ux-cx, uy-cy, uz-cz
-        local dist = dx*dx + dy*dy + dz*dz
-	   if dist < MiMaxDist then 
-	        glTexture(rankTexHeight[1])
-	        glDrawFuncAtUnit(unitID, false, DrawUnitFunc, rankTexHeight[2])
-           end
-       end
+      glTexture(rankTexHeight[1])
+      glDrawFuncAtUnit(unitID, false, DrawUnitFunc, rankTexHeight[2])
     end
-    
+       
     glTexture(false)
     glAlphaTest(false)
     glDepthTest(false)

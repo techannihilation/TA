@@ -175,12 +175,17 @@ local function GetTeamColorSet(teamID)
   return colors
 end
 
-
+function IsTooHigh()
+  local cx, cy, cz = Spring.GetCameraPosition()
+  local smoothheight = Spring.GetSmoothMeshHeight(cx,cz)
+  local toohigh = ((cy-smoothheight)^2 >= TpMaxDist) 
+  return toohigh
+end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
 function widget:DrawWorldPreUnit()
-    if Spring.IsGUIHidden() == true then 
+    if Spring.IsGUIHidden() == true or IsTooHigh() then 
       return  -- avoid unnecessary GL calls
     end
     
@@ -194,15 +199,7 @@ function widget:DrawWorldPreUnit()
    local visibleUnits = spGetVisibleUnits()
    if #visibleUnits then
     for i=1, #visibleUnits do
-    unitID = visibleUnits[i]    
-    local cx, cy, cz = Spring.GetCameraPosition()
-    local ux,uy,uz = Spring.GetUnitViewPosition(unitID)
-     if ux~=nil then
-     local dx, dy, dz = ux-cx, uy-cy, uz-cz
-     local dist = dx*dx + dy*dy + dz*dz
-      if dist < TpMaxDist then 
-      
-      
+    unitID = visibleUnits[i]      
       local teamID = spGetUnitTeam(unitID)
       if (teamID and teamID~=GetGaiaTeamID) then	--+++
         local udid = spGetUnitDefID(unitID)
@@ -223,8 +220,6 @@ function widget:DrawWorldPreUnit()
                              radius, 1.0, radius)
          end
         end
-      end
-     end
    end
  end
 end
@@ -247,29 +242,20 @@ end
   local teamID = spGetUnitTeam(unitID)
   local colors  = GetTeamColorSet(teamID)
   glColor(colors[1],colors[2],colors[3], alpha)
-    local cx, cy, cz = Spring.GetCameraPosition()
-    local ux,uy,uz = Spring.GetUnitViewPosition(unitID)
-     if ux~=nil then
-     local dx, dy, dz = ux-cx, uy-cy, uz-cz
-     local dist = dx*dx + dy*dy + dz*dz
-      if dist < TpMaxDist then 
-        local udid = spGetUnitDefID(unitID)
-        local radius = GetUnitDefRealRadius(udid)
-          if (radius) then
-            if (trackSlope and (not UnitDefs[udid].canFly)) then
-            local x, y, z = spGetUnitBasePosition(unitID)
-            local gx, gy, gz = spGetGroundNormal(x, z)
-            local degrot = acos(gy) * 180 / pi
-            glDrawListAtUnit(unitID, circleLines, false,
-                           radius, 1.0, radius,
-                           degrot, gz, 0, -gx)
-            else
-            glDrawListAtUnit(unitID, circleLines, false,
-                         radius, 1.0, radius)
-            end
-	 end
-      end
-      
+  local udid = spGetUnitDefID(unitID)
+  local radius = GetUnitDefRealRadius(udid)
+    if (radius) then
+      if (trackSlope and (not UnitDefs[udid].canFly)) then
+      local x, y, z = spGetUnitBasePosition(unitID)
+      local gx, gy, gz = spGetGroundNormal(x, z)
+      local degrot = acos(gy) * 180 / pi
+      glDrawListAtUnit(unitID, circleLines, false,
+                       radius, 1.0, radius,
+                       degrot, gz, 0, -gx)
+     else
+     glDrawListAtUnit(unitID, circleLines, false,
+                      radius, 1.0, radius)
+     end
     end
   end
   glLineWidth(1.0)
