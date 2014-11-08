@@ -118,7 +118,7 @@ end
 
 
 function CheckSpecState()
-	if ( spGetSpectatingState() == tue ) then
+	if ( spGetSpectatingState() == true ) then
 		widgetHandler:RemoveWidget()
 		return false
 	end
