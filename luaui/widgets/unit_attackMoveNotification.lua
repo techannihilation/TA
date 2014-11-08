@@ -21,21 +21,42 @@ local spDiffTimers                  = Spring.DiffTimers
 local spIsUnitInView                = Spring.IsUnitInView
 local spGetUnitPosition             = Spring.GetUnitPosition
 local spSetLastMessagePosition      = Spring.SetLastMessagePosition
-local spGetSpectatingState   		= Spring.GetSpectatingState
+local spGetSpectatingState          = Spring.GetSpectatingState
 local random                        = math.random
 ----------------------------------------------------------------------------
 local lastAlarmTime                 = nil
 local lastCommanderAlarmTime        = nil
 local localTeamID                   = nil
 ----------------------------------------------------------------------------
-local armcomID=UnitDefNames["armcom"].id
-local corcomID=UnitDefNames["corcom"].id
 
+local COMMANDER = {
+  --Core
+  [UnitDefNames["corcom"].id] = true,
+  [UnitDefNames["corcom1"].id] = true,
+  [UnitDefNames["corcom3"].id] = true,
+  [UnitDefNames["corcom5"].id] = true,
+  [UnitDefNames["corcom6"].id] = true,
+  [UnitDefNames["corcom7"].id] = true,
+  --Arm 
+  [UnitDefNames["armcom"].id] = true,
+  [UnitDefNames["armcom1"].id] = true,
+  [UnitDefNames["armcom4"].id] = true,
+  [UnitDefNames["armcom5"].id] = true,
+  [UnitDefNames["armcom6"].id] = true,
+  [UnitDefNames["armcom7"].id] = true,
+  --The lost legacy
+  [UnitDefNames["tllcom"].id] = true,
+  [UnitDefNames["tllcom3"].id] = true,
+  [UnitDefNames["tllcom5"].id] = true,
+  [UnitDefNames["tllcom6"].id] = true,
+  [UnitDefNames["tllcom7"].id] = true,
+}
 
 function widget:Initialize()
+    CheckSpecState()
     setTeamId()    
     lastAlarmTime = spGetTimer()
-	lastCommanderAlarmTime =  spGetTimer()
+    lastCommanderAlarmTime =  spGetTimer()
     math.randomseed( os.time() )
 end
 
@@ -45,7 +66,7 @@ function widget:UnitDamaged (unitID, unitDefID, unitTeam, damage, paralyzer, wea
 	end
 	--Spring.Echo(corcomID, unitID)
 	local now = spGetTimer()
-	if (unitDefID==corcomID or unitDefID==armcomID) then --commander under attack must always be played! (10 sec retrigger alert though)
+	if COMMANDER[unitDefID] then --commander under attack must always be played! (10 sec retrigger alert though)
 		--Spring.Echo("Commander under attack!")
 		if ( spDiffTimers( now, lastCommanderAlarmTime ) < alarmInterval ) then
 			return
