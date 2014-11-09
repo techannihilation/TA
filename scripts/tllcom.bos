@@ -8,7 +8,7 @@ piece  torso, ruparm, luparm, rlowarm, llowarm, nano, pelvis, rflare,
        base, head, teleport;
 
 static-var  bMoving, bAiming, Static_Var_3, Static_Var_4, Static_Var_5,
-			Static_Var_6, counter, ceg;
+			Static_Var_6, counter, ceg, weaponnum;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -415,6 +415,24 @@ Shield()
 	Static_Var_6 = !Static_Var_6;
 }
 
+FireworkControl()
+{
+	if( Static_Var_4 == 0 )
+	{
+		weaponnum = get UNKNOWN_UNIT_VALUE(1028);
+		//get PRINT (weaponnum);
+		sleep 400;
+		turn ruparm to x-axis <-140.000000> speed <90.000000>;
+		turn rflare to x-axis <-80.000000> now;
+		turn rflare to z-axis <20.000000> now;
+		wait-for-turn ruparm around x-axis;
+		emit-sfx 2048 + weaponnum from rflare;
+		sleep 3000;
+		turn ruparm to x-axis <0.000000> speed <45.000000>;
+		wait-for-turn ruparm around x-axis;
+		}
+}
+
 TeleportControl()
 {
 	sleep 100;
@@ -452,6 +470,7 @@ Create()
 	Static_Var_4 = 0;
 	start-script MotionControl();
 	//call-script TeleportControl();
+	//call-script FireworkControl();
 }
 
 StartMoving()

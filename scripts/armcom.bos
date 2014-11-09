@@ -8,7 +8,7 @@ piece  torso, ruparm, luparm, rbigflash, nanospray, pelvis, lfirept, head,
 
 static-var  bMoving, bAiming, Static_Var_3, Static_Var_4, Static_Var_6, 
 			justfired, building, buildx, buildy, moveSpeed, currentSpeed,
-			counter, ceg;
+			counter, ceg, weaponnum;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -437,6 +437,25 @@ TeleportControl()
 	move teleport to y-axis [0.000000] now;
 }
 
+FireworkControl()
+{
+	if( Static_Var_4 == 0 )
+	{
+		weaponnum = get UNKNOWN_UNIT_VALUE(1028);
+	 //get PRINT (weaponnum);
+		sleep 400;
+		turn ruparm to x-axis <-110.000000> speed <90.000000>;
+		turn rbigflash to x-axis <70.000000> speed <90000.000000>;
+	
+		wait-for-turn ruparm around x-axis;
+		wait-for-turn rbigflash around x-axis;
+		emit-sfx 2048 + weaponnum from rbigflash;
+		sleep 3000;
+		turn ruparm to x-axis <0.000000> speed <45.000000>;
+		wait-for-turn ruparm around x-axis;
+		}
+}
+
 Create()
 {
 	hide teleport;
@@ -460,6 +479,7 @@ Create()
 	move teleport to y-axis [700.000000] now;
 	turn teleport to x-axis <90.000000> now;
 	//call-script TeleportControl();
+	//call-script FireworkControl();
 	sleep 8000 / currentSpeed;
 	turn nanolath to x-axis <-42.000000> speed <220.000000>;
 	turn biggun to x-axis <-63.000000> speed <160.000000>;
