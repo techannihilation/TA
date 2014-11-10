@@ -1,0 +1,199 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, stall1, land1, stall2, land2, stall3, land3,
+       stall4, land4, terminal1, radar1, beam1, terminal2, radar2, beam2,
+       bldg1, bldg2, targ, light, silo, missile, doodad1, doodad2,
+       smb, fp, wake1, wake2, wake3, wake4, wake5, wake6;
+
+static-var  Static_Var_1, Static_Var_2, spray;
+
+// Signal definitions
+#define SIG_AIM_3			2
+#define SIG_AIM				4
+#define SIG_MOVE			32
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+			emit-sfx smoketype from doodad1;
+			emit-sfx smoketype from doodad2;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	set ARMORED to 1;
+	Static_Var_1 = 0;
+	Static_Var_2 = 1;
+	spray = base;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 1000;
+	}
+	start-script SmokeUnit();
+	spin radar1 around y-axis speed <60.005495>;
+	spin radar2 around y-axis speed <-60.005495>;
+}
+
+Activate()
+{
+	dont-cache light;
+	spin radar1 around y-axis speed <60.005495>;
+	spin radar2 around y-axis speed <-60.005495>;
+}
+
+Deactivate()
+{
+	stop-spin radar1 around y-axis;
+	stop-spin radar2 around y-axis;
+	cache light;
+}
+
+StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	while( TRUE )
+	{
+		emit-sfx 2 from wake1;
+		emit-sfx 2 from wake2;
+		emit-sfx 2 from wake3;
+		emit-sfx 2 from wake4;
+		emit-sfx 2 from wake5;
+		emit-sfx 2 from wake6;
+		sleep 300;
+	}
+}
+
+StopMoving()
+{
+	signal SIG_MOVE;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+QueryLandingPad(Func_Var_1, Func_Var_2, Func_Var_3, Func_Var_4)
+{
+	Func_Var_1 = 3;
+	Func_Var_2 = 5;
+	Func_Var_3 = 7;
+	Func_Var_4 = 9;
+}
+
+QueryNanoPiece(piecenum)
+{
+	if( spray == 0 )
+	{
+		piecenum = beam1;
+	}
+	if( spray != 0 )
+	{
+		piecenum = beam2;
+	}
+	spray = !spray;
+}
+
+AimTertiary(heading, pitch)
+{
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
+	return (1);
+}
+
+AimFromTertiary(piecenum)
+{
+	piecenum = radar2;
+}
+
+QueryTertiary(piecenum)
+{
+	piecenum = missile;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	return (1);
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = fp;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type BITMAPONLY | BITMAP1;
+		explode radar1 type BITMAPONLY | BITMAP2;
+		explode doodad1 type BITMAPONLY | BITMAP3;
+		explode doodad2 type BITMAPONLY | BITMAP4;
+		explode silo type BITMAPONLY | BITMAP3;
+		explode terminal2 type BITMAPONLY | BITMAP4;
+		explode bldg1 type BITMAPONLY | BITMAP5;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type BITMAPONLY | BITMAP1;
+		explode radar1 type SHATTER | BITMAP2;
+		explode doodad1 type FALL | BITMAP3;
+		explode doodad2 type FALL | BITMAP4;
+		explode silo type SHATTER | BITMAP3;
+		explode terminal2 type FALL | BITMAP4;
+		explode bldg1 type FALL | BITMAP5;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type BITMAPONLY | BITMAP1;
+		explode radar1 type SHATTER | BITMAP2;
+		explode doodad1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode doodad2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode silo type SHATTER | BITMAP2;
+		explode terminal2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode bldg1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		return (0);
+	}
+	corpsetype = 3;
+	explode base type BITMAPONLY | BITMAP1;
+	explode radar1 type SHATTER | EXPLODE_ON_HIT | BITMAP2;
+	explode doodad1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode doodad2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode silo type SHATTER | BITMAP2;
+	explode terminal2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode bldg1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+}
