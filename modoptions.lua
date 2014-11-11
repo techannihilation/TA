@@ -141,6 +141,30 @@ local options={
 		section= 'ta_options',
     },
     {
+		key="mo_transportenemy",
+		name="Enemy Transporting",
+		desc="Toggle which enemy units you can kidnap with an air transport\nAutoHost Usage :- mo_transportenemy",
+		type="list",
+		def="none",
+		section="ta_options",
+		items={
+			{key="notcoms", name="All But Commanders", desc="Only commanders are immune to napping"},
+			{key="none", name="Disallow All", desc="No enemy units can be napped"},
+		}
+    },
+    {
+		key="mo_transportown",
+		name="Allow Commanders in Transport's",
+		desc="Toggle Transport of own Commanders\nAutoHost Usage :- mo_transportown",
+		type="list",
+		def="allowed",
+		section="ta_options",
+		items={
+			{key="allowed", name="All Commanders", desc="Commanders allowed to be transported"},
+			{key="not", name="Disallow All", desc="No enemy units can be napped"},
+		}
+    },
+    {
 		key    = "mo_nowrecks",
 		name   = "No Unit Wrecks",
 		desc   = "Removes all unit wrecks from the game\nAutoHost Usage :- mo_nowrecks",

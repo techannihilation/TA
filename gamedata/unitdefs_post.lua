@@ -762,7 +762,7 @@ for _, ud in pairs(UnitDefs) do
         ud.customparams = {}
     end
  end
-
+ 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 --
@@ -815,6 +815,35 @@ end
 --------------------------------------------------------------------------------
 ----Set com options
 --------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--
+
+if (modOptions.mo_transportenemy == "notcoms") then
+  for name,ud in pairs(UnitDefs) do  
+    if Commanders[ud.unitname] then
+      ud.transportbyenemy = false
+    end
+  end
+  elseif (modOptions.mo_transportenemy == "none") then
+    for name, ud in pairs(UnitDefs) do  
+      ud.transportbyenemy = false
+    end
+end  
+
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--
+
+if (modOptions.mo_transportown == "not") then
+  for name,ud in pairs(UnitDefs) do  
+    if Commanders[ud.unitname] then
+      ud.cantbetransported = false
+    end
+  end
+end
 
    if (modOptions.mo_storageowner == "com") then
     for name, ud in pairs(UnitDefs) do  
