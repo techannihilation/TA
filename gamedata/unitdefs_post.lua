@@ -840,7 +840,7 @@ end
 if (modOptions.mo_transportown == "not") then
   for name,ud in pairs(UnitDefs) do  
     if Commanders[ud.unitname] then
-      ud.cantbetransported = false
+      ud.cantbetransported =true
     end
   end
 end
