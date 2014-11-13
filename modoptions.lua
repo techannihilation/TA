@@ -153,16 +153,16 @@ local options={
 		}
     },
     {
-		key="mo_transportown",
-		name="Allow Commanders in Transport's",
-		desc="Toggle Transport of own Commanders\nAutoHost Usage :- mo_transportown",
-		type="list",
-		def="allowed",
+		key="mo_comtranslock",
+		name="Locktime for Commanders in Transport's",
+		desc="Sets time lock for Transport of own Commanders\nAutoHost Usage :- comtranslock",
 		section="ta_options",
-		items={
-			{key="allowed", name="All Commanders", desc="Commanders allowed to be transported"},
-			{key="not", name="Disallow All", desc="No enemy units can be napped"},
-		}
+		type   = "number",
+		def    = 10,
+		min    = 0,
+		max    = 25,
+		step   = 1,  -- quantization is aligned to the def value
+                    -- (step <= 0) means that there is no quantization
     },
     {
 		key    = "mo_nowrecks",

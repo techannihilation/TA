@@ -837,14 +837,6 @@ end
 --------------------------------------------------------------------------------
 --
 
-if (modOptions.mo_transportown == "not") then
-  for name,ud in pairs(UnitDefs) do  
-    if Commanders[ud.unitname] then
-      ud.cantbetransported = false
-    end
-  end
-end
-
    if (modOptions.mo_storageowner == "com") then
     for name, ud in pairs(UnitDefs) do  
      if (name == "armcom" or name == "corcom" or name =="tllcom") then
