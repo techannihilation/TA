@@ -142,6 +142,17 @@ local function checkTeamList(uTeam, e, uID)
 	return true
 end
 
+local function SetMMRulesParams()
+    -- make convertCapacities accessible to all
+    for uDID,conv in pairs(convertCapacities) do
+        local unitName = UnitDefs[uDID].name or ""
+        local capacity = conv.c
+        local ratio = conv.e
+        Spring.SetGameRulesParam(unitName .. "_mm_capacity", capacity)
+        Spring.SetGameRulesParam(unitName .. "_mm_ratio", ratio)        
+    end
+end
+
 ----------------------------------------------------------------
 -- Pseudo Callins
 ----------------------------------------------------------------
@@ -235,6 +246,7 @@ end
 -- Callins
 ----------------------------------------------------------------
 function gadget:Initialize()
+    SetMMRulesParams() 
     local i = 1
     for defid, defs in pairs(convertCapacities) do
 		local inTable = false
