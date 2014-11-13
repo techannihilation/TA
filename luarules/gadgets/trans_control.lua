@@ -15,8 +15,11 @@ end
 
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
-local unlocktime = tonumber(Spring.GetModOptions().mo_comtranslock)*60 or 0
+local unlocktime = tonumber(Spring.GetModOptions().mo_comtranslock) or 0
 
+if unlocktime then
+  unlocktime = unlocktime * 60
+end
 
 if (not gadgetHandler:IsSyncedCode()) then
 	return false
