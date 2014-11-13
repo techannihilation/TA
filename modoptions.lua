@@ -238,13 +238,5 @@ local options={
        step   = 1,  -- quantization is aligned to the def value
                     -- (step <= 0) means that there is no quantization
 	},
-	{
-	key    = "Superunits",
-	name   = "Re-enablle Superunits",
-	desc   = "Re-enable's all game end weapons and superships\nAutoHost Usage :- mo_superunits",
-	type   = "bool",
-	def    = false,
-	section= "ta_modes",
-	},
 }
 return options

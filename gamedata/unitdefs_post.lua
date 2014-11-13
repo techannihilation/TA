@@ -780,37 +780,9 @@ end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
-local function disableunits(unitlist)
-  for name, ud in pairs(UnitDefs) do
-    if (ud.buildoptions) then
-      for _, toremovename in ipairs(unitlist) do
-        for index, unitname in pairs(ud.buildoptions) do
-          if (unitname == toremovename) then
-	    --Spring.Echo("Unit removed :-  " .. toremovename)
-            table.remove(ud.buildoptions, index)
-          end
-        end
-      end
-    end
-  end
-end
-
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
 
 if (Spring.GetModOptions) then
 	local modOptions = Spring.GetModOptions()
-	
---------------------------------------------------------------------------------
-----Disable superunits
---------------------------------------------------------------------------------
-if (modOptions and not (modOptions.superunits)) then
-  disableunits({
-	"corflu", "tllion", "armtabi",
-	"abroadside", "cdevastator", "tllvaliant",
-	"ashipyardlvl4","cshipyardlvl4"
-  })
-end
 	
 --------------------------------------------------------------------------------
 ----Set com options
