@@ -57,6 +57,9 @@ local unitDef = {
 	useBuildingGroundDecal = true,
 	workerTime = 600,
 	yardMap = [[oooooooooooooooooooocccccoooocccccoooocccccoooocccccoooocccccoooocccccoooocccccoo]],
+	customparams = {
+		providetech = [[T3 Factory]],
+	},
 	buildoptions = {
 		[1] = [[armbanth]],
 		[2] = [[marauder]],

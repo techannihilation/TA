@@ -55,6 +55,9 @@ local unitDef = {
 	useBuildingGroundDecal = true,
 	workerTime = 600,
 	yardMap = [[oooooooooooooooooo oooooooooooooooooo oooooooooooooooooo oooooooooooooooooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo]],
+	customparams = {
+		providetech = [[T4 Factory]],
+	},
 	buildoptions = {
 		[1] = [[corkrog1]],
 		[2] = [[corkarg1]],

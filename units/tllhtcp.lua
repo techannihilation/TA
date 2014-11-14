@@ -56,6 +56,9 @@ local unitDef = {
 	useBuildingGroundDecal = true,
 	workerTime = 980,
 	yardMap = [[ooccccccoo ooccccccoo ooccccccoo cccccccccc cccccccccc cccccccccc ooccccccoo ooccccccoo ooccccccoo ooccccccoo ]],
+	customparams = {
+		providetech = [[T3 Factory]],
+	},
 	buildoptions = {
 		[1] = [[tllhtcb]],
 		[2] = [[tllhtml]],

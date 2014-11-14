@@ -60,6 +60,9 @@ local unitDef = {
 	useBuildingGroundDecal = true,
 	workerTime = 400,
 	yardMap = [[occcccoocccccoocccccoocccccoocccccooccccco]],
+	customparams = {
+		providetech = [[T2 Factory]],
+	},
 	buildoptions = {
 		[1] = [[armacv]],
 		[2] = [[consul]],

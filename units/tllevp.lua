@@ -53,6 +53,9 @@ local unitDef = {
 	unitnumber = 30007,
 	workerTime = 850,
 	yardMap = [[oooccccccooo oooccccccooo oooccccccooo oooccccccooo oooccccccooo oooccccccooo oooccccccooo oooccccccooo]],
+	customparams = {
+		providetech = [[T3 Factory]],
+	},
 	buildoptions = {
 		[1] = [[tlltelsatnk]],
 		[2] = [[tllmlrpc]],

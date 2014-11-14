@@ -54,6 +54,9 @@ local unitDef = {
 	useBuildingGroundDecal = true,
 	workerTime = 400,
 	yardMap = [[ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo]],
+	customparams = {
+		providetech = [[T2 Factory]],
+	},
 	buildoptions = {
 		[1] = [[cach]],
 		[2] = [[cormatch]],

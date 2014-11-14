@@ -54,6 +54,9 @@ local unitDef = {
 	waterline = 32,
 	workerTime = 600,
 	yardMap = [[wCCCCCCCCCCwCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCwCCCCCCCCCCw]],
+	customparams = {
+		providetech = [[T2 Factory]],
+	},
 	buildoptions = {
 		[1] = [[coracsub]],
 		[2] = [[cormls]],

@@ -12,7 +12,7 @@ local unitDef = {
 	brakeRate = 0,
 	blocking = false,
 	buildCostEnergy = 8000,
-	buildCostMetal = 1000,
+	buildCostMetal = 500,
 	builder = false,
 	buildingGroundDecalDecaySpeed = 30,
 	buildingGroundDecalSizeX = 3,
@@ -63,7 +63,7 @@ local unitDef = {
 	useBuildingGroundDecal = true,
 	workerTime = 0,
 	customparams = {
-		RequireTech = [[Advanced T2 Unit Research Centre]],
+		RequireTech = [[T2 Factory]],
 	},
 	sounds = {
 		canceldestruct = [[cancel2]],

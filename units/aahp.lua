@@ -54,6 +54,9 @@ local unitDef = {
 	useBuildingGroundDecal = true,
 	workerTime = 400,
 	yardMap = [[ooccccccoo ooccccccoo ooccccccoo ooccccccoo ooccccccoo ooccccccoo ooccccccoo ooccccccoo]],
+	customparams = {
+		providetech = [[T2 Factory]],
+	},
 	buildoptions = {
 		[1] = [[aach]],
 		[2] = [[armhplasma]],

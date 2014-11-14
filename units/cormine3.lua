@@ -66,6 +66,9 @@ local unitDef = {
 	unitname = [[cormine3]],
 	useBuildingGroundDecal = true,
 	yardMap = [[o]],
+	customparams = {
+		RequireTech = [[Advanced T1 Unit Research Centre]],
+	},
 	sounds = {
 		canceldestruct = [[cancel2]],
 		underattack = [[warning1]],

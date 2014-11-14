@@ -56,6 +56,9 @@ local unitDef = {
 	usePieceCollisionVolumes = 1,
 	workerTime = 600,
 	yardMap = [[oooooooooooooooooo occccccco occccccco occccccco occccccco occccccco occccccco occccccco]],
+	customparams = {
+		providetech = [[T3 Factory]],
+	},
 	buildoptions = {
 		[1] = [[troman]],
 		[2] = [[shiva]],

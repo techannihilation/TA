@@ -51,6 +51,9 @@ local unitDef = {
 	useBuildingGroundDecal = true,
 	workerTime = 400,
 	yardMap = [[ooccccoo ooccccoo ooccccoo ooccccoo ooccccoo ooccccoo ooccccoo]],
+	customparams = {
+		providetech = [[T2 Factory]],
+	},
 	buildoptions = {
 		[1] = [[tllack]],
 		[2] = [[tllburner]],

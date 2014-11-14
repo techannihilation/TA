@@ -105,6 +105,14 @@ effectUnitDefs = {
     {class='SimpleParticles2', options=MergeTable({pos={-12,60,-37}, delay=15, lifeSpread=30},sparksr3)},
     {class='SimpleParticles2', options=MergeTable({pos={-12,75,-37}, delay=30, lifeSpread=30},sparksr3)},
     {class='SimpleParticles2', options=MergeTable({pos={-12,90,-37}, delay=45, lifeSpread=30},sparksr3)},
+  }, 
+ cjuno = {
+    {class='ShieldSphere',options=junoShieldSphere},
+    {class='GroundFlash',options=groundFlashJuno},
+  },
+ ajuno = {
+    {class='ShieldSphere',options=junoShieldSphere},
+    {class='GroundFlash',options=groundFlashJuno},
   },
   --// ENERGY STORAGE //--------------------
   

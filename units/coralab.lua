@@ -59,6 +59,9 @@ local unitDef = {
 	useBuildingGroundDecal = true,
 	workerTime = 400,
 	yardMap = [[ooooooooooooooocccccoccccccccccccccccccccc]],
+	customparams = {
+		providetech = [[T2 Factory]],
+	},
 	buildoptions = {
 		[1] = [[corack]],
 		[2] = [[corfast]],

@@ -52,6 +52,9 @@ local unitDef = {
 	useBuildingGroundDecal = true,
 	workerTime = 220,
 	yardMap = [[ooccccoo ooccccoo ooccccoo ooccccoo ooccccoo ooccccoo]],
+	customparams = {
+		providetech = [[T1 Factory]],
+	},
 	buildoptions = {
 		[1] = [[tllcv]],
 		[2] = [[tllgladius]],
