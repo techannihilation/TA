@@ -57,6 +57,9 @@ local unitDef = {
 	useBuildingGroundDecal = true,
 	workerTime = 200,
 	yardMap = [[occccccooccccccooccccccooccccccooccccccooccccccoocccccco]],
+	customparams = {
+		providetech = [[T1 Factory]],
+	},
 	buildoptions = {
 		[1] = [[corch]],
 		[2] = [[corsh]],

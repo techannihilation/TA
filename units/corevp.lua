@@ -57,6 +57,9 @@ local unitDef = {
 	useBuildingGroundDecal = true,
 	workerTime = 250,
 	yardMap = [[cccccccc cccccccc cccccccc cccccccc cccccccc cccccccc cccccccc cccccccc]],
+	customparams = {
+		providetech = [[T3 Factory]],
+	},
 	buildoptions = {
 		[1] = [[clb]],
 		[2] = [[champ]],

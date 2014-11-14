@@ -67,6 +67,9 @@ local unitDef = {
 	unitname = [[armmine3]],
 	useBuildingGroundDecal = true,
 	workerTime = 0,
+	customparams = {
+		RequireTech = [[Advanced T1 Unit Research Centre]],
+	},
 	sounds = {
 		canceldestruct = [[cancel2]],
 		underattack = [[warning1]],

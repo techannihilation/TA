@@ -48,6 +48,9 @@ local unitDef = {
 	waterline = 15,
 	workerTime = 400,
 	yardMap = [[wCCCCCCCCw CCCCCCCCCC CCCCCCCCCC CCCCCCCCCC CCCCCCCCCC CCCCCCCCCC CCCCCCCCCC wCCCCCCCCw]],
+	customparams = {
+		providetech = [[T2 Factory]],
+	},
 	buildoptions = {
 		[1] = [[aach]],
 		[2] = [[armhplasma]],

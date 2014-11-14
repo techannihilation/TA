@@ -54,6 +54,9 @@ local unitDef = {
 	useBuildingGroundDecal = true,
 	workerTime = 200,
 	yardMap = [[oooooo occcco occcco occcco occcco occcco yyyyyy yyyyyy]], -- Replace some part with i latter on
+	customparams = {
+		providetech = [[T1 Factory]],
+	},
 	buildoptions = {
 		[1] = [[armmlspd]],
 		[2] = [[armtick]],

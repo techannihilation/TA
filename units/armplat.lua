@@ -51,6 +51,9 @@ local unitDef = {
 	waterline = 40,
 	workerTime = 200,
 	yardMap = [[wwwwwwwwCCCCCwwCCCCCwwCCCCCwwCCCCCwwCCCCCwwwwwwww]],
+	customparams = {
+		providetech = [[T2 Factory]],
+	},
 	buildoptions = {
 		[1] = [[armcsa]],
 		[2] = [[armsehak]],

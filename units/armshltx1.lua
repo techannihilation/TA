@@ -58,6 +58,9 @@ local unitDef = {
 	useBuildingGroundDecal = true,
 	workerTime = 600,
 	yardMap = [[oooooooooooooooooo oooooooooooooooooo oooooooooooooooooo oooooooooooooooooo ooooccccccccccoooo ooooccccccccccoooo ooooccccccccccoooo ooooccccccccccoooo ooooccccccccccoooo ooooccccccccccoooo ooooccccccccccoooo ooooccccccccccoooo ooooccccccccccoooo ooooccccccccccoooo ooooccccccccccoooo ooooccccccccccoooo ooooccccccccccoooo ooooccccccccccoooo]],
+	customparams = {
+		providetech = [[T4 Factory]],
+	},
 	buildoptions = {
 		[1] = [[armbanth1]],
 		[2] = [[armraz1]],

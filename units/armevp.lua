@@ -56,6 +56,9 @@ local unitDef = {
 	useBuildingGroundDecal = true,
 	workerTime = 250,
 	yardMap = [[occoocco occcccco occcccco occcccco occcccco occcccco occcccco]],
+	customparams = {
+		providetech = [[T3 Factory]],
+	},
 	buildoptions = {
 		[1] = [[avtr]],
 		[2] = [[armsiege]],

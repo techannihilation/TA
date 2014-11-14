@@ -53,6 +53,9 @@ local unitDef = {
 	waterline = 28,
 	workerTime = 250,
 	yardMap = [[wCCCCCCwCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCwCCCCCCw]],
+	customparams = {
+		providetech = [[T1 Factory]],
+	},
 	buildoptions = {
 		[1] = [[corcs]],
 		[2] = [[correcl]],
