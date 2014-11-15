@@ -10,7 +10,7 @@ function gadget:GetInfo()
 	}
 end
 
-local maxIdleTreshold = 60 --in seconds
+local maxIdleTreshold = 300 --in seconds
 local maxPing = 30 -- in seconds
 local finishedResumingPing = 2 --in seconds
 local maxInitialQueueSlack = 120 -- in seconds

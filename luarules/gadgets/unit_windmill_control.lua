@@ -58,22 +58,19 @@ local pairs = pairs
 
 function gadget:GameFrame(n)
   if (((n+16) % 32) < 0.1) then
-    local _, _, _, strength, x, _, z = GetWind()
-    local heading = GetHeadingFromVector(-x, -z)
-		
+  local _, _, _, strength, x, _, z = GetWind()
+  local heading = GetHeadingFromVector(-x, -z)
     for unitID, scriptIDs in pairs(windmills) do
-      
-	  local uDefID = GetUnitDefID(unitID) ; if not uDefID then break end
-	  local uDef = uDefs[uDefID]
-	  
-	  local mult = 2.5 -- DEFAULT
-	  if uDef.customParams then
-		mult = uDef.customParams.energymultiplier or mult
-	  end
-	  
-      AddUnitResource(unitID, "e", strength * (mult - 1))
+    local uDefID = GetUnitDefID(unitID) ; if not uDefID then break end
+    local uDef = uDefs[uDefID]
+    local mult = 2.5 -- DEFAULT
+      if uDef.customParams then
+        mult = uDef.customParams.energymultiplier or mult
+      end
+      if not Spring.GetUnitIsStunned(unitID) then
+        AddUnitResource(unitID, "e", strength * (mult - 1))
+      end
       local speed = strength * mult * COBSCALE * 0.010
-
       CallCOBScript(unitID, scriptIDs.speed, 0, speed)
       CallCOBScript(unitID, scriptIDs.dir,   0, heading)
     end
@@ -109,16 +106,16 @@ end
 
 
 function gadget:UnitTaken(unitID, unitDefID, unitTeam)
-	if (windDefs[unitDefID]) then 
-		SetupUnit(unitID)
-	end
+  if (windDefs[unitDefID]) then 
+    SetupUnit(unitID)
+  end
 end
 
 
 function gadget:UnitDestroyed(unitID, unitDefID, unitTeam)
-	if (windDefs[unitDefID]) then 
-		windmills[unitID] = nil
-	end
+  if (windDefs[unitDefID]) then 
+    windmills[unitID] = nil
+  end
 end
 
 
