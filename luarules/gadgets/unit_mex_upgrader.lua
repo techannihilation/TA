@@ -123,14 +123,17 @@ function determine(ud, wd)
 end 
 
 function processMexData(mexDefID, mexDef, upgradePairs)  
-  for defID, def in pairs(mexDefs) do 
+  for defID, def in pairs(mexDefs) do
+    for i,v in pairs(def) do
+    --Spring.Echo(defID,i,v)
+      end
     if (ignoreStealth or mexDef.stealth == def.stealth) and (ignoreWeapons or mexDef.armed == def.armed) then      
-    
+      --Spring.Echo(mexDef.extractsMetal , def.extractsMetal)
       if mexDef.extractsMetal > def.extractsMetal then 
         if not upgradePairs then 
           upgradePairs = {} 
         end 
-        local upgrader = upgradePairs[defID] 
+        local upgrader = upgradePairs[defID]
         if not upgrader or mexDef.extractsMetal > mexDefs[upgrader].extractsMetal then                
           upgradePairs[defID] = mexDefID 
         end 
