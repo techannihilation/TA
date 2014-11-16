@@ -122,7 +122,7 @@ local weaponDefs = {
 		noGap = true,
 		nogap = 1,
 		paralyzer = true,
-		paralyzeTime = 16,
+		paralyzeTime = 12,
 		range = 6750,
 		reloadtime = 15.67,
 		renderType = 4,
@@ -141,7 +141,7 @@ local weaponDefs = {
 		weaponType = [[Cannon]],
 		weaponVelocity = 1100,
 		damage = {
-			default = 1900,
+			default = 5000,
 			subs = 5,
 		},
 	},
