@@ -178,7 +178,7 @@ local function UnitTakingDamage(uID, uDefID, uTeam, notEmpDamage)
 		AdjustTeamCapacity(uTeam, -cDefs.c, cDefs.e)
 		if notEmpDamage == true then
 		    teamMMList[uTeam][cDefs.e][uID].damaged = true
-		    Spring.Echo("Closes due to damage ",unitID)
+		    --Spring.Echo(currentFrameStamp, "  Closes due to damage ", unitID)
 		    spSetUnitCOBValue(uID,1024,0)
 		end
         end
@@ -196,7 +196,7 @@ local function UnitDamageOver(uID, uDefID, uTeam, notEmpDamage)
 			AdjustTeamCapacity(uTeam, cDefs.c, cDefs.e)
 			if teamMMList[uTeam][cDefs.e][uID].damaged == true then
 			    teamMMList[uTeam][cDefs.e][uID].damaged = false
-	  		    --Spring.Echo("Reopened from damage ",unitID)
+	  		    --Spring.Echo(currentFrameStamp, "  Reopened from damage ", unitID)
 			    spSetUnitCOBValue(uID,1024,1)
 		        end
 		end
@@ -386,7 +386,7 @@ function gadget:UnitFinished(uID, uDefID, uTeam)
 end
 
 
-function gadget:UnitDamaged(uID, uDefID, uTeam, damage, paralyzer)
+function gadget:UnitDamaged(uID, uDefID, uTeam, damage, paralyzer, weaponDefID)
     local cDefs = convertCapacities[uDefID]
     
     if paralyzer and cDefs then
@@ -396,7 +396,7 @@ function gadget:UnitDamaged(uID, uDefID, uTeam, damage, paralyzer)
             Damagedvector:push(uID, currentFrameStamp + ceil(relativeParDmg / (maxHealth / paralysisRelRate)),false)
 	end
     elseif (damage and not paralyzer) and cDefs then
-        if (damage > 0) and weaponDefID == -1 then 
+        if (damage > 0) and  == -1 then 
 	    Damagedvector:push(uID, currentFrameStamp+5,true)
 	elseif (damage > 0) then
 	    Damagedvector:push(uID, currentFrameStamp+20,true)
