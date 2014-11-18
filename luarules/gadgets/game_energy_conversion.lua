@@ -396,7 +396,7 @@ function gadget:UnitDamaged(uID, uDefID, uTeam, damage, paralyzer, weaponDefID)
             Damagedvector:push(uID, currentFrameStamp + ceil(relativeParDmg / (maxHealth / paralysisRelRate)),false)
 	end
     elseif (damage and not paralyzer) and cDefs then
-        if (damage > 0) and  == -1 then 
+        if (damage > 0) and weaponDefID == -1 then 
 	    Damagedvector:push(uID, currentFrameStamp+5,true)
 	elseif (damage > 0) then
 	    Damagedvector:push(uID, currentFrameStamp+20,true)
