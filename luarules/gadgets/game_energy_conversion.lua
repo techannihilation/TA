@@ -80,12 +80,11 @@ local CMD_ARMORED = 34590
 
 local metalMakerStateCmdDesc = {
   id      = CMD_ARMORED,
-  type    = CMDTYPE.ICON_MODE,
+  type    = CMDTYPE.ICON,
   name    = 'Armored',
   cursor  = 'Armored',
   action  = 'Armored',
-  tooltip = 'Set Unit Armored For A Short Period',
-  params  = { '0', 'Armored' , ''}
+  tooltip = 'Set Metal Maker In Armored For A Short Period',
 }
 ----------------------------------------------------------------
 -- Functions
@@ -458,17 +457,16 @@ end
 
 function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOptions, cmdTag, synced)
     -- track which cons are set to passive
-  local cDefs = convertCapacities[unitDefID]
+    local cDefs = convertCapacities[unitDefID]
     if cDefs then
-    if cmdID == CMD_ARMORED and teamMMList[teamID][cDefs.e][unitID] and teamMMList[teamID][cDefs.e][unitID].damaged == false then --Check if already damaged (stops reseting of start damage frame)
-        if cmdParams[1] == 1 then --
-            Damagedvector:push(unitID, currentFrameStamp+30,true)
+        if cmdID == CMD_ARMORED and teamMMList[teamID][cDefs.e][unitID] and teamMMList[teamID][cDefs.e][unitID].damaged == false then --Check if already damaged (stops reseting of start damage frame)
+            if #cmdParams == 0 then
+                Damagedvector:push(unitID, currentFrameStamp+30,true)
+            end
         end
-        return false -- Allowing command causes command queue to be lost if command is unshifted
+        return false
     end
-
     return true
-    end
 end
 
 function gadget:RecvLuaMsg(msg, playerID)
