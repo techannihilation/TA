@@ -76,7 +76,17 @@ local spUseUnitResource = Spring.UseUnitResource
 local spSetUnitResourcing = Spring.SetUnitResourcing
 local spValidUnitID = Spring.ValidUnitID
 
+local CMD_ARMORED = 34590
 
+local metalMakerStateCmdDesc = {
+  id      = CMD_ARMORED,
+  type    = CMDTYPE.ICON_MODE,
+  name    = 'Armored',
+  cursor  = 'Armored',
+  action  = 'Armored',
+  tooltip = 'Set Unit Armored For A Short Period',
+  params  = { '0', 'Armored' , ''}
+}
 ----------------------------------------------------------------
 -- Functions
 ----------------------------------------------------------------
@@ -157,51 +167,61 @@ end
 -- Pseudo Callins
 ----------------------------------------------------------------
 
-local function UnitParalysed(uID, uDefID, uTeam)
-	local cDefs = convertCapacities[uDefID]
+local function UnitTakingDamage(uID, uDefID, uTeam, notEmpDamage)
+    local cDefs = convertCapacities[uDefID]
     if cDefs then
 		
-		if not checkTeamList(uTeam, cDefs.e, uID) then Spring.Echo("In UnitParalysed"); return end
+		if not checkTeamList(uTeam, cDefs.e, uID) then Spring.Echo("In UnitTakingDamage"); return end
 		
         if teamMMList[uTeam][cDefs.e][uID].built then
-			teamMMList[uTeam][cDefs.e][uID].emped = true
-            AdjustTeamCapacity(uTeam, -cDefs.c, cDefs.e)
+		teamMMList[uTeam][cDefs.e][uID].emped = true
+		AdjustTeamCapacity(uTeam, -cDefs.c, cDefs.e)
+		if notEmpDamage == true then
+		    teamMMList[uTeam][cDefs.e][uID].damaged = true
+		    Spring.Echo("Closes due to damage ",unitID)
+		    spSetUnitCOBValue(uID,1024,0)
+		end
         end
     end
 end
 
-local function UnitParalysisOver(uID, uDefID, uTeam)
-	local cDefs = convertCapacities[uDefID]
+local function UnitDamageOver(uID, uDefID, uTeam, notEmpDamage)
+    local cDefs = convertCapacities[uDefID]
     if cDefs then
 	
-		if not checkTeamList(uTeam, cDefs.e, uID) then Spring.Echo("In UnitParalysisOver"); return end
+		if not checkTeamList(uTeam, cDefs.e, uID) then Spring.Echo("In UnitDamageOver"); return end
 	
-		if teamMMList[uTeam][cDefs.e][uID].built then
+		if teamMMList[uTeam][cDefs.e][uID].built then        
 			teamMMList[uTeam][cDefs.e][uID].emped = false
 			AdjustTeamCapacity(uTeam, cDefs.c, cDefs.e)
+			if teamMMList[uTeam][cDefs.e][uID].damaged == true then
+			    teamMMList[uTeam][cDefs.e][uID].damaged = false
+	  		    --Spring.Echo("Reopened from damage ",unitID)
+			    spSetUnitCOBValue(uID,1024,1)
+		        end
 		end
     end
 end
 
 ----------------------------------------------------------------
--- EmpedVector Methods
+-- Damagedvector Methods
 ----------------------------------------------------------------
-local EmpedVector = {unitBuffer={}}
+local Damagedvector = {unitBuffer={}}
 local tableInsert = table.insert
 
-function EmpedVector:push(uID, frameID)
+function Damagedvector:push(uID, frameID, notEmpDamage)
 	if self.unitBuffer[uID] then
 		self.unitBuffer[uID] = frameID
 	else
 		tableInsert(self.unitBuffer, uID, frameID)
-		UnitParalysed(uID, spGetUnitDefID(uID), spGetUnitTeam(uID))
+		UnitTakingDamage(uID, spGetUnitDefID(uID), spGetUnitTeam(uID), notEmpDamage)
 	end
 end
 
-function EmpedVector:process(currentFrame)
+function Damagedvector:process(currentFrame)
 	for uID, frameID in pairs(self.unitBuffer) do
 		if (currentFrame >= frameID) then
-			UnitParalysisOver(uID, spGetUnitDefID(uID), spGetUnitTeam(uID))
+			UnitDamageOver(uID, spGetUnitDefID(uID), spGetUnitTeam(uID))
 			
 			self.unitBuffer[uID] = nil
 		end
@@ -278,7 +298,7 @@ function gadget:Initialize()
         spSetTeamRulesParam(tID, mmLevelParamName, 0.75)
         spSetTeamRulesParam(tID, mmCapacityParamName, 0)
         spSetTeamRulesParam(tID, mmUseParamName, 0)
-		spSetTeamRulesParam(tID, mmAvgEffiParamName, teamEfficiencies[tID]:avg())
+	spSetTeamRulesParam(tID, mmAvgEffiParamName, teamEfficiencies[tID]:avg())
 
     end
     splitMMUpdate = math.floor(math.max((frameRate / #teamList),1))
@@ -290,7 +310,7 @@ function gadget:GameFrame(n)
 	-- process emped in the least likely used frame by the actual per team maker computations
 	if (n % resourceRefreshRate == resourceRefreshRate - 1) then
 		currentFrameStamp = currentFrameStamp + 1
-		EmpedVector:process(currentFrameStamp)
+		Damagedvector:process(currentFrameStamp)
 	end
 
 	-- process a team in each gameframe so that all teams are process exactly once in every 16 gameframes
@@ -338,11 +358,10 @@ end
 
 function gadget:UnitCreated(uID, uDefID, uTeam, builderID)
 	local cDefs = convertCapacities[uDefID]
-    if cDefs then
-	
+	if cDefs then
 		if not checkTeamList(uTeam, cDefs.e, false) then Spring.Echo("In UnitCreated"); return end
-	
-	    teamMMList[uTeam][cDefs.e][uID] = {capacity = 0, status = 0, built = false, emped = false}
+		Spring.InsertUnitCmdDesc(uID, metalMakerStateCmdDesc)
+		teamMMList[uTeam][cDefs.e][uID] = {capacity = 0, status = 0, built = false, emped = false, damaged = false}
     end
 end
 
@@ -352,7 +371,7 @@ function gadget:UnitFinished(uID, uDefID, uTeam)
     if cDefs and spValidUnitID(uID) then
 	
 		if not teamMMList[uTeam][cDefs.e][uID] then 
-			teamMMList[uTeam][cDefs.e][uID] = {capacity = 0, status = 0, built = false, emped = false}
+		    teamMMList[uTeam][cDefs.e][uID] = {capacity = 0, status = 0, built = false, emped = false, damaged = false}
 		end
 	
         teamMMList[uTeam][cDefs.e][uID].capacity = cDefs.c
@@ -368,14 +387,20 @@ end
 
 
 function gadget:UnitDamaged(uID, uDefID, uTeam, damage, paralyzer)
-	local cDefs = convertCapacities[uDefID]
-
+    local cDefs = convertCapacities[uDefID]
+    
     if paralyzer and cDefs then
-		local _, maxHealth, paralyzeDamage, _ ,_ = spGetUnitHealth(uID)
-		local relativeParDmg = paralyzeDamage -  maxHealth
-		if (relativeParDmg > 0) then 
-			EmpedVector:push(uID, currentFrameStamp + ceil(relativeParDmg / (maxHealth / paralysisRelRate)))
-		end
+        local _, maxHealth, paralyzeDamage, _ ,_ = spGetUnitHealth(uID)
+	local relativeParDmg = paralyzeDamage -  maxHealth
+	if (relativeParDmg > 0) then
+            Damagedvector:push(uID, currentFrameStamp + ceil(relativeParDmg / (maxHealth / paralysisRelRate)),false)
+	end
+    elseif (damage and not paralyzer) and cDefs then
+        if (damage > 0) and weaponDefID == -1 then 
+	    Damagedvector:push(uID, currentFrameStamp+5,true)
+	elseif (damage > 0) then
+	    Damagedvector:push(uID, currentFrameStamp+20,true)
+        end
     end
 end
 
@@ -421,12 +446,28 @@ function gadget:UnitGiven(uID, uDefID, newTeam, oldTeam)
 			teamMMList[newTeam][cDefs.e][uID].capacity = teamMMList[oldTeam][cDefs.e][uID].capacity
 			teamMMList[newTeam][cDefs.e][uID].status = teamMMList[oldTeam][cDefs.e][uID].status
 			teamMMList[newTeam][cDefs.e][uID].emped = teamMMList[oldTeam][cDefs.e][uID].emped
+			teamMMList[newTeam][cDefs.e][uID].damaged  = teamMMList[oldTeam][cDefs.e][uID].damaged
 			teamMMList[newTeam][cDefs.e][uID].built  = teamMMList[oldTeam][cDefs.e][uID].built
 			
             teamMMList[oldTeam][cDefs.e][uID] = nil
 	    AdjustTeamCapacity(oldTeam, -cDefs.c, cDefs.e)
 	    AdjustTeamCapacity(newTeam,  cDefs.c, cDefs.e)
         end
+    end
+end
+
+function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOptions, cmdTag, synced)
+    -- track which cons are set to passive
+  local cDefs = convertCapacities[unitDefID]
+    if cDefs then
+    if cmdID == CMD_ARMORED and teamMMList[teamID][cDefs.e][unitID] and teamMMList[teamID][cDefs.e][unitID].damaged == false then --Check if already damaged (stops reseting of start damage frame)
+        if cmdParams[1] == 1 then --
+            Damagedvector:push(unitID, currentFrameStamp+30,true)
+        end
+        return false -- Allowing command causes command queue to be lost if command is unshifted
+    end
+
+    return true
     end
 end
 
