@@ -458,13 +458,14 @@ end
 function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOptions, cmdTag, synced)
     -- track which cons are set to passive
     local cDefs = convertCapacities[unitDefID]
-    if cDefs then
-        if cmdID == CMD_ARMORED and teamMMList[teamID][cDefs.e][unitID] and teamMMList[teamID][cDefs.e][unitID].damaged == false then --Check if already damaged (stops reseting of start damage frame)
-            if #cmdParams == 0 then
+    if cDefs and cmdID == CMD_ARMORED and teamMMList[teamID][cDefs.e][unitID] then
+        if teamMMList[teamID][cDefs.e][unitID].damaged == true then --Check if already damaged (stops reseting of start damage frame)
+            return false
+	end
+	if #cmdParams == 0 then
                 Damagedvector:push(unitID, currentFrameStamp+30,true)
-            end
         end
-        return false
+	return true
     end
     return true
 end
