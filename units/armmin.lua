@@ -1,4 +1,4 @@
--- UNITDEF -- ARMMIN --
+ -- UNITDEF -- ARMMIN --
 --------------------------------------------------------------------------------
 
 local unitName = "armmin"
@@ -73,7 +73,7 @@ local unitDef = {
 		[4] = [[armmine2]],
 		[5] = [[armmine3]],
 		[6] = [[armmine5]],
-		[7] = [[armmine7]],
+		[9] = [[armmine7]],
 		[8] = [[armmine6]],
 		[9] = [[armfdrag]],
 		[10] = [[armfmine3]],
@@ -120,7 +120,7 @@ local weaponDefs = {
 		craterBoost = 0,
 		craterMult = 0,
 		edgeEffectiveness = 1,
-		energypershot = 1500,
+		energypershot = 200,
 		explosionGenerator = [[custom:MINESWEEP]],
 		fireStarter = 0,
 		flightTime = 10,
@@ -128,12 +128,12 @@ local weaponDefs = {
 		impulseBoost = 0,
 		impulseFactor = 0,
 		lineOfSight = true,
-		metalpershot = 0,
+		metalpershot = 50,
 		model = [[missile]],
 		name = [[MineSweeper]],
 		noautorange = 1,
 		noSelfDamage = true,
-		range = 300,
+		range = 700,
 		reloadtime = 2,
 		renderType = 1,
 		selfprop = true,
