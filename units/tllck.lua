@@ -86,6 +86,7 @@ local unitDef = {
 		[27] = [[tlldcsta]],
 		[28] = [[tlljam]],
 		[29] = [[tllshoretorp]],
+		[30] = [[tlljuno]],
 	},
 	featureDefs = nil,
 	sounds = {

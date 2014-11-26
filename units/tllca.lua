@@ -91,6 +91,7 @@ local unitDef = {
 		[28] = [[tlljam]],
 		[29] = [[tllshoretorp]],
 		[30] = [[tllsolarns]],
+		[31] = [[tlljuno]],
 	},
 	sounds = {
 		build = [[nanlath1]],

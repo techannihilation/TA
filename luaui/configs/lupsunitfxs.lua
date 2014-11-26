@@ -114,6 +114,10 @@ effectUnitDefs = {
     {class='ShieldSphere',options=junoShieldSphere},
     {class='GroundFlash',options=groundFlashJuno},
   },
+ tlljuno = {
+    {class='ShieldSphere',options=tlljunoShieldSphere},
+    {class='GroundFlash',options=groundFlashJuno},
+  },
   --// ENERGY STORAGE //--------------------
   
  corestor = {
