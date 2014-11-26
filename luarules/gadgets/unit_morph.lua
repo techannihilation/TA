@@ -1374,6 +1374,12 @@ local function ProgMph(cmd, unitID, prog)
   end
 end
 
+function IsTooHigh()
+  local cx, cy, cz = Spring.GetCameraPosition()
+  local smoothheight = Spring.GetSmoothMeshHeight(cx,cz)
+  local toohigh = ((cy-smoothheight)^2 >= 2500000) 
+  return toohigh
+end
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -1517,8 +1523,11 @@ local function DrawMorphUnit(unitID, morphData, localTeamID)
   end
 end
 
-
 function gadget:DrawWorld()
+  if IsTooHigh() then 
+    return
+  end
+  
   if (not morphUnits) then
     if (not morphUnits) then return end
   end
@@ -1543,10 +1552,7 @@ function gadget:DrawWorld()
 
   CallAsTeam({ ['read'] = readTeam }, function()
     for unitID, morphData in pairs(morphUnits) do
-    local cx, cy, cz = Spring.GetCameraPosition()
-    local smoothheight = Spring.GetSmoothMeshHeight(cx,cz)
-	local toohigh = ((cy-smoothheight)^2 >= 2500000) 
-          if (unitID and morphData)and(IsUnitVisible(unitID) and not (toohigh)) then
+          if (unitID and morphData)and(IsUnitVisible(unitID)) then
           DrawMorphUnit(unitID, morphData,readTeam)
       end
     end

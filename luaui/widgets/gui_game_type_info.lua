@@ -38,7 +38,7 @@ local glTranslate      = gl.Translate
 local spGetGameSeconds = Spring.GetGameSeconds
 
 local message = ""
-
+local othermessage = ""
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -60,6 +60,9 @@ function widget:Initialize()
   elseif Spring.GetModOptions().deathmode=="neverend" then
     widgetHandler:RemoveWidget()
   end
+  if Spring.GetModOptions().mo_greenfields=="true" then
+    othermessage = "Warning Greenfield's mode enabled, Get ready to fall asleep"
+  end
 end
 
 function widget:DrawScreen()
@@ -73,7 +76,13 @@ function widget:DrawScreen()
   local msg = colorString .. string.format("%s%s", "Gametype: ",  message)
     tackyfont:Begin()
     tackyfont:Print(msg, vsx , vsy , 46, "oc")
+    
+    if othermessage ~= "" then
+      tackyfont:Print(othermessage, vsx , vsy - 80 , 24, "oc")
+    end
+    
     tackyfont:End()
+    
 end
 
 function widget:GameOver()

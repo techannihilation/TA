@@ -186,8 +186,9 @@ local dynamicPieceCollisionVolume = {}	--dynamic per piece collision volume defi
 		off={152,66,123,0,18,0,2,1,0,0,24,0},
 	}
 	unitCollisionVolume["uppercut"] = {
-		on={31,31,156,0,45,0,1,1,2,0,0,0},
-		off={31,31,156,0,0,0,1,1,2,0,0,0},
+		on={31,31,156,0,45,0,1,1,2,0,60,0},
+		off={31,31,156,0,0,0,1,1,2,0,20,0},
+	
 	}
 	pieceCollisionVolume["armbrtha"] = {
 			["0"]={32,80,32,0,20,0,1,1},

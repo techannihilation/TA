@@ -12,7 +12,7 @@ local unitDef = {
 	brakeRate = 0.55,
 	buildCostEnergy = 1031,
 	buildCostMetal = 53,
-	buildDistance = 28,
+	buildDistance = 96,
 	builder = true,
 	buildPic = [[ARMMLV.png]],
 	buildTime = 3519,
@@ -77,8 +77,9 @@ local unitDef = {
 		[4] = [[armmine2]],
 		[5] = [[armmine3]],
 		[6] = [[armmine5]],
-		[7] = [[armmine7]],
-		[8] = [[armmine6]],
+		[7] = [[armmine6]],
+		[8] = [[armmine7]],
+
 	},
 	featureDefs = nil,
 	sounds = {

@@ -39,7 +39,6 @@ local unitDef = {
 	maxDamage = 10,
 	maxSlope = 40,
 	maxVelocity = 0,
-	maxWaterDepth = 10,
 	metalStorage = 0,
 	minCloakDistance = 8,
 	minWaterDepth = 0,
