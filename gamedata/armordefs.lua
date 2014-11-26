@@ -331,6 +331,12 @@ mines = {
            "cormine7",
            "armfmine3",
            "corfmine3",
+	   "tllmine1",
+           "tllmine2",
+           "tllmine3",
+           "tllmine4",
+           "tllmine5",
+	   "tllmine6",
 },
 minelayers = {
            "armmlv",
