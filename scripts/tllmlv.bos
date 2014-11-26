@@ -1,0 +1,217 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, p1, nano, spray, door, wheels1, wheels2;
+
+static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging;
+
+// Signal definitions
+#define SIG_MOVE	2
+#define SIG_BUILD	4
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from body;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+activatescr()
+{
+	if( TRUE )
+	{
+		turn door to x-axis <-90.000000> speed <180.000000>;
+		sleep 500;
+	}
+	if( TRUE )
+	{
+		move p1 to y-axis [3.000000] speed [7.000000];
+		turn nano to y-axis <0.000000> speed <120.000000>;
+		sleep 100;
+	}
+	sleep 100;
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		turn nano to y-axis <90.000000> speed <150.000000>;
+		sleep 500;
+		move p1 to y-axis [0.000000] speed [10.000000];
+	}
+	if( TRUE )
+	{
+		turn door to x-axis <0.000000> speed <180.000000>;
+	}
+	sleep 10;
+}
+/*
+Go()
+{
+	call-script activatescr();
+	turn nano to y-axis Static_Var_1 speed <190.000000>;
+	wait-for-turn nano around y-axis;
+	set INBUILDSTANCE to 1;
+}
+
+Stop()
+{
+	set INBUILDSTANCE to 0;
+	turn nano to y-axis <0.000000> speed <190.000000>;
+	wait-for-turn nano around y-axis;
+	call-script deactivatescr();
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+*/
+
+Create()
+{
+	Static_Var_1 = 0;
+	//turn nano to y-axis <90.000000> now;
+	//call-script InitState();
+	start-script SmokeUnit();
+}
+
+StartMoving()
+{
+	//signal SIG_MOVE;
+	//set-signal-mask SIG_MOVE;
+	spin wheels1 around x-axis speed <150.000000>;
+	spin wheels2 around x-axis speed <150.000000>;
+	sleep 300;
+	spin wheels1 around x-axis speed <250.000000>;
+	spin wheels2 around x-axis speed <250.000000>;
+}
+
+StopMoving()
+{
+	//signal SIG_MOVE;
+	stop-spin wheels1 around x-axis;
+	stop-spin wheels2 around x-axis;
+}
+/*
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+*/
+
+StartBuilding(heading, pitch)
+{
+	signal SIG_BUILD;
+	call-script activatescr();
+	turn nano to y-axis heading speed <160.000000>;
+	wait-for-turn nano around y-axis;
+	set INBUILDSTANCE to 1;
+}
+
+StopBuilding()
+{
+	signal SIG_BUILD;	
+	set-signal-mask SIG_BUILD;
+	sleep 6000;
+	call-script deactivatescr();
+	set-signal-mask 0;
+	signal SIG_BUILD;	
+	set INBUILDSTANCE to 0;
+	turn nano to y-axis <0.000000> speed <160.000000>;
+	wait-for-turn nano around y-axis;
+}
+QueryNanoPiece(piecenum)
+{
+	piecenum = spray;
+}
+
+TargetHeading(Func_Var_1)
+{
+	Static_Var_1 = 0 - Func_Var_1;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = body;
+}
+
+Killed(severity, corpsetype)
+{
+	explode door type BITMAPONLY | BITMAP5;
+	explode body type BITMAPONLY | BITMAP3;
+	explode p1 type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+	explode nano type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		return (0);
+	}
+	explode body type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
+	explode door type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
+	explode p1 type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
+	explode nano type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		return (0);
+	}
+	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+	corpsetype = 3;
+}
