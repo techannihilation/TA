@@ -39,13 +39,11 @@ function widget:GameFrame(frame)
     -- Check command is to build a mex
     local _, cmdID = spGetActiveCommand()
     if (cmdID and isMex[-cmdID]) then
-      Spring.Echo(Overlayenabled)
       if Overlayenabled == false then
         Spring.SendCommands ("toggleinfo metal")
         Overlayenabled = true
       end
     else 
-      Spring.Echo(Overlayenabled)
       if Overlayenabled == true then
         Spring.SendCommands ("toggleinfo metal")
         Overlayenabled = false
