@@ -100,7 +100,10 @@ function determine(ud, wd)
         else	
           mexDef.armed = #unitDef.weapons > 0
 	end	
-        mexDef.stealth = unitDef.stealth 
+        mexDef.stealth = unitDef.stealth
+	
+	mexDef.name = unitDef.name 
+
         mexDef.water = unitDef.minWaterDepth >= 0        
         mexDefs[unitDefID] = mexDef 
       end 
@@ -124,17 +127,28 @@ end
 
 function processMexData(mexDefID, mexDef, upgradePairs)  
   for defID, def in pairs(mexDefs) do
-    for i,v in pairs(def) do
-    --Spring.Echo(defID,i,v)
-      end
-    if (ignoreStealth or mexDef.stealth == def.stealth) and (ignoreWeapons or mexDef.armed == def.armed) then      
+    if (ignoreStealth or mexDef.stealth == def.stealth) and (ignoreWeapons or mexDef.armed == def.armed) and mexDef.water == true and def.water == true then      
       --Spring.Echo(mexDef.extractsMetal , def.extractsMetal)
       if mexDef.extractsMetal > def.extractsMetal then 
         if not upgradePairs then 
           upgradePairs = {} 
         end 
         local upgrader = upgradePairs[defID]
-        if not upgrader or mexDef.extractsMetal > mexDefs[upgrader].extractsMetal then                
+        if not upgrader or mexDef.extractsMetal > mexDefs[upgrader].extractsMetal and mexDef.water == true and mexDefs[upgrader].water == true then    
+	    Spring.Echo("pair ",defID,mexDefID)
+          upgradePairs[defID] = mexDefID 
+        end 
+      end      
+    end
+    if (ignoreStealth or mexDef.stealth == def.stealth) and (ignoreWeapons or mexDef.armed == def.armed) and mexDef.water == false and def.water == false then      
+      --Spring.Echo(mexDef.extractsMetal , def.extractsMetal)
+      if mexDef.extractsMetal > def.extractsMetal then 
+        if not upgradePairs then 
+          upgradePairs = {} 
+        end 
+        local upgrader = upgradePairs[defID]
+        if not upgrader or mexDef.extractsMetal > mexDefs[upgrader].extractsMetal and mexDef.water == false and mexDefs[upgrader].water == false then    
+	    Spring.Echo("pair ",defID,mexDefID)
           upgradePairs[defID] = mexDefID 
         end 
       end      
