@@ -19,6 +19,15 @@ if (gadgetHandler:IsSyncedCode()) then --SYNCED
 local StartMViewtogged = nil
 
 function gadget:Initialize()
+  if not GG.metalSpots then
+    gadgetHandler:RemoveGadget()
+    return
+  end
+  local metalSpots = GG.metalSpots
+  if #metalSpots < 6 then
+    gadgetHandler:RemoveGadget()
+    return
+  end
   Spring.SendCommands("unbind any+f4 showmetalmap")
   Spring.SendCommands("toggleinfo metal")
   StartMViewtogged = true
