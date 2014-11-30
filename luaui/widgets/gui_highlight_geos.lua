@@ -29,30 +29,26 @@ local glBeginEnd = gl.BeginEnd
 local spGetMapDrawMode = Spring.GetMapDrawMode
 local SpGetSelectedUnits = Spring.GetSelectedUnits
 
-local tll_geo = UnitDefNames.tllgeo.id
-local tll_mohogeo = UnitDefNames.tllmohogeo.id
-local am_geo = UnitDefNames.amgeo.id
-local arm_for = UnitDefNames.armfor.id
-local arm_geo = UnitDefNames.armgeo.id
-local arm_gmm = UnitDefNames.armgmm.id
-local cm_geo = UnitDefNames.cmgeo.id
-local corbhmth_geo = UnitDefNames.corbhmth.id
-local corbhmth1_geo = UnitDefNames.corbhmth1.id
-local cor_geo = UnitDefNames.corgeo.id
+local isGeo = {}
 
-
-
-
-
+for uDefID, uDef in pairs(UnitDefs) do
+  if uDef.needGeo then --Should only seletect real radar units
+    isGeo[uDefID] = true
+  end
+end
 
 ----------------------------------------------------------------
 -- Functions
 ----------------------------------------------------------------
 local function PillarVerts(x, y, z)
 	glColor(1, 1, 0, 1)
-	glVertex(x, y, z)
+	glVertex(x, y +500, z)
 	glColor(1, 1, 0, 0)
-	glVertex(x, y + 1000, z)
+	glVertex(x, y +1000, z)
+	glColor(1, 1, 0, 1)
+	glVertex(x, y +500 , z)
+	glColor(1, 1, 0, 0)
+	glVertex(x, y, z)
 end
 
 local function HighlightGeos()
@@ -69,25 +65,24 @@ end
 ----------------------------------------------------------------
 -- Callins
 ----------------------------------------------------------------
-function widget:Shutdown()
-	if geoDisplayList then
-		gl.DeleteList(geoDisplayList)
-	end
-end
 
 function widget:DrawWorld()
-    local _, cmdID = Spring.GetActiveCommand()
-	if spGetMapDrawMode() == 'metal' or cmdID == -tll_geo or cmdID == -tll_mohogeo or cmdID == -am_geo or cmdID == -arm_for or cmdID == -arm_geo or cmdID == -cm_geo
-	or cmdID == -corbhmth_geo or cmdID == -corbhmth1_geo or cmdID == -cor_geo or cmdID == -arm_gmm then
-		
+
+	local _, cmdID = Spring.GetActiveCommand()
+	if spGetMapDrawMode() == 'metal' or (cmdID and isGeo[-cmdID]) then
 		if not geoDisplayList then
 			geoDisplayList = gl.CreateList(HighlightGeos)
 		end
-		
-		glLineWidth(20)
-		glDepthTest(true)
-		glCallList(geoDisplayList)
-        glColor(1, 1, 1, 1)
-		glLineWidth(1)
+	glLineWidth(20)
+	glDepthTest(true)
+	glCallList(geoDisplayList)
+	glColor(1, 1, 1, 1)
+	glLineWidth(1)
+	end
+end
+
+function widget:Shutdown()
+	if geoDisplayList then
+		gl.DeleteList(geoDisplayList)
 	end
 end
