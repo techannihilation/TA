@@ -16,7 +16,30 @@ local CanvasX,CanvasY = 1272,734 --resolution in which the widget was made (for 
 local SoundIncomingChat  = 'sounds/beep4.wav'
 local SoundIncomingChatVolume = 1.0
 
+local gameOver = false
+
 --todo: dont cut words apart when clipping text 
+
+
+local clock = os.clock
+local slen = string.len
+local ssub = string.sub
+local sgsub = string.gsub
+local sfind = string.find
+local sformat = string.format
+local schar = string.char
+local sgsub = string.gsub
+local mfloor = math.floor
+local sbyte = string.byte
+local sreverse = string.reverse
+local mmax = math.max
+local glGetTextWidth = gl.GetTextWidth
+local sGetPlayerRoster = Spring.GetPlayerRoster
+local sGetTeamColor = Spring.GetTeamColor
+local sGetMyAllyTeamID = Spring.GetMyAllyTeamID
+local sGetModKeyState = Spring.GetModKeyState
+local spPlaySoundFile = Spring.PlaySoundFile
+
 
 local Config = {
 	console = {
@@ -58,22 +81,6 @@ local Config = {
 	},
 }
 
-local clock = os.clock
-local slen = string.len
-local ssub = string.sub
-local sfind = string.find
-local sformat = string.format
-local schar = string.char
-local sgsub = string.gsub
-local mfloor = math.floor
-local sbyte = string.byte
-local mmax = math.max
-local glGetTextWidth = gl.GetTextWidth
-local sGetPlayerRoster = Spring.GetPlayerRoster
-local sGetTeamColor = Spring.GetTeamColor
-local sGetMyAllyTeamID = Spring.GetMyAllyTeamID
-local sGetModKeyState = Spring.GetModKeyState
-local spPlaySoundFile = Spring.PlaySoundFile
 
 local function IncludeRedUIFrameworkFunctions()
 	New = WG.Red.New(widget)
@@ -283,23 +290,58 @@ local function createconsole(r)
 	}
 end
 
+local function lineColour(prevline) -- search prevline and find the final instance of a colour code
+
+	local prevlineReverse = sreverse(prevline)
+	local newlinecolour = ""
+	
+	local colourCodePosReverse = sfind(prevlineReverse, "\255") --search string from back to front
+
+	if colourCodePosReverse then
+		for i = 0,2 do
+			if ssub(prevlineReverse, colourCodePosReverse + 3 - i, colourCodePosReverse + 3 - i) == "\255" then
+				colourCodePosReverse = colourCodePosReverse + 3 - i
+				break
+			end
+		end
+
+		local colourCodePos = slen(prevline) - colourCodePosReverse + 1 	
+		if slen(ssub(prevline, colourCodePos)) >= 4 then
+			newlinecolour = ssub(prevline, colourCodePos, colourCodePos+3)
+		end
+	end	
+
+	return newlinecolour
+end
+
 local function clipLine(line,fontsize,maxwidth)
 	local clipped = {}
 		
 	local firstclip = line:len()
 	local firstpass = true
-	while (1) do
+	while (1) do --loops over lines
 		local linelen = slen(line)
 		local i=1
-		while (1) do
+		while (1) do -- loop through potential positions where we might need to clip
 			if (glGetTextWidth(ssub(line,1,i+1))*fontsize > maxwidth) then
+				local test = line
+				local newlinecolour = ""
+				
+				-- set colour of new clipped line
+				if firstpass == nil then
+					newlinecolour = lineColour(clipped[#clipped])
+				end
+				
+				local newline = newlinecolour .. ssub(test,1,i)
+				
+				clipped[#clipped+1] = newline
+				line = ssub(line,i+1)
+	
 				if (firstpass) then
 					firstclip = i
 					firstpass = nil
 				end
-				local test = line
-				clipped[#clipped+1] = ssub(test,1,i)
-				line = ssub(line,i+1)
+				
 				break
 			end
 			i=i+1
@@ -308,12 +350,20 @@ local function clipLine(line,fontsize,maxwidth)
 			end
 		end
 		
+		-- check if we need to clip again
 		local width = glGetTextWidth(line)*fontsize
 		if (width <= maxwidth) then
 			break
 		end
 	end
-	clipped[#clipped+1] = line
+	
+	-- put remainder of line into final clipped line
+	local newlinecolour = ""
+	if #clipped > 0 then 
+		newlinecolour = lineColour(clipped[#clipped])
+	end
+	clipped[#clipped+1] = newlinecolour .. line
+	
 	return clipped,firstclip
 end
 
@@ -364,6 +414,18 @@ local function processLine(line,g,cfg,newlinecolor)
 	g.vars.nextupdate = 0
 
 	local roster = sGetPlayerRoster()
+	--[[DEBUG
+	for i,el in pairs(roster) do
+		if i==1 then
+			Spring.Echo(#el)
+			for j,val in pairs(el) do
+				Spring.Echo(j,val)
+			end
+		end
+		Spring.Echo(i,el)
+	end
+	--]]
+	
 	local names = {}
 	for i=1,#roster do
 		names[roster[i][1]] = {roster[i][4],roster[i][5],roster[i][3]}
@@ -372,6 +434,8 @@ local function processLine(line,g,cfg,newlinecolor)
 	local name = ""
 	local text = ""
 	local linetype = 0 --other
+	
+	local ignoreThisMessage = false
 	
 	if (not newlinecolor) then
 		if (names[ssub(line,2,(sfind(line,"> ") or 1)-1)] ~= nil) then
@@ -394,10 +458,30 @@ local function processLine(line,g,cfg,newlinecolor)
 			linetype = 4 --gamemessage
 			text = ssub(line,3)
 		end		
+    end
+	
+	if linetype==0 then
+		--filter out some engine messages; 
+		--2 lines (instead of 4) appears when player connects
+		if sfind(line,'-> Version') or sfind(line,'ClientReadNet') or sfind(line,'Address') then
+			ignoreThisMessage = true
+		end
+
+        if sfind(line,"Wrong network version") then
+            local n,_ = sfind(line,"Message")
+            line = ssub(line,1,n-3) --shorten so as these messages don't get clipped and can be detected as duplicates
+        end
+		
+		if gameOver then
+			if sfind(line,'left the game') then
+				ignoreThisMessage = true
+			end
+		end
 	end
-	--mute--
-	local ignoreThisMessage = false
-	if (mutedPlayers[name]) then 
+	
+	
+	--ignore messages from muted--
+	if WG.ignoredPlayers and WG.ignoredPlayers[name] then 
 		ignoreThisMessage = true 
 		--Spring.Echo ("blocked message by " .. name)
 	end
@@ -451,19 +535,19 @@ local function processLine(line,g,cfg,newlinecolor)
 		local c = cfg.cspectext
 		local namecolor = convertColor(c[1],c[2],c[3])
 		
-		local spectator = 1
+		local spectator = true
 		if (names[name] ~= nil) then
 			spectator = names[name][2]
 		end
-		if (spectator == 0) then
-			local r,g,b,a = sGetTeamColor(names[name][3])
-			namecolor =  convertColor(r,g,b)
-		elseif (spectator == 1) then
-			name = "(s) "..name
+		if (spectator) then
+            name = "(s) "..name
+		else
+            local r,g,b,a = sGetTeamColor(names[name][3])
+            namecolor =  convertColor(r,g,b)
 		end
 		
 		c = cfg.cotherallytext
-		if (spectator == 1) then
+		if (spectator) then
 			c = cfg.cspectext
 		elseif (names[name][1] == MyAllyTeamID) then
 			c = cfg.callytext
@@ -481,7 +565,7 @@ local function processLine(line,g,cfg,newlinecolor)
 		line = textcolor.."> "..text
 	else --every other message
 		local c = cfg.cmisctext
-		textcolor = newlinecolor or convertColor(c[1],c[2],c[3])
+		textcolor = convertColor(c[1],c[2],c[3])
 		
 		line = textcolor..line
 	end
@@ -490,7 +574,8 @@ local function processLine(line,g,cfg,newlinecolor)
 		g.vars.consolehistory = {}
 	end
 	local history = g.vars.consolehistory	
-	
+
+
 	if (not ignoreThisMessage) then		--mute--
 		local lineID = #history+1	
 		history[#history+1] = {line,clock(),lineID,textcolor,linetype}
@@ -620,7 +705,12 @@ function widget:Initialize()
 	
 	console = createconsole(Config.console)
 	Spring.SendCommands("console 0")
+	Spring.SendCommands('inputtextgeo 0.26 0.73 0.02 0.028')
 	AutoResizeObjects()
+end
+
+function widget:GameOver()
+	gameOver = true
 end
 
 function widget:Shutdown()
@@ -657,49 +747,4 @@ function widget:SetConfigData(data) --load config
 		Config.console.px = data.Config.console.px
 		Config.console.py = data.Config.console.py
 	end
-end
-
---mute--
-function widget:TextCommand(s)     
-     local token = {}
-	 local n = 0
-	 --for w in string.gmatch(s, "%a+") do
-	 for w in string.gmatch(s, "%S+") do
-		n = n +1
-		token[n] = w		
-     end
-	 
-	--for i = 1,n do Spring.Echo (token[i]) end
-	 
-	 if (token[1] == "mute") then
-		--Spring.Echo ("geht ums muten")
-		 for i = 2,n do
-			mutePlayer (token[i])
-			Spring.Echo ("*muting " .. token[i] .. "*")
-		end
-	end
-	
-	if (token[1] == "unmute") then
-		--Spring.Echo ("geht ums UNmuten")
-		 for i = 2,n do
-			unmutePlayer (token[i])
-			Spring.Echo ("*unmuting " .. token[i] .."*")
-		end
-		if (n==1) then unmuteAll() Spring.Echo ("unmuting everybody") end
-	end
-	
-end
-
---mute
-mutedPlayers = {}
-function mutePlayer (playername)
-	mutedPlayers[playername] = true
-end
-
-function unmutePlayer (playername)
-	mutedPlayers[playername] = nil
-end
-
-function unmuteAll ()
-	mutedPlayers = {}
 end
