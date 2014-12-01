@@ -128,6 +128,13 @@ end
 
 --------------------------------------------------------------------------------
 
+function IsTooHigh()
+  local cx, cy, cz = Spring.GetCameraPosition()
+  local smoothheight = Spring.GetSmoothMeshHeight(cx,cz)
+  local toohigh = ((cy-smoothheight)^2 >= 30000000)
+  return toohigh
+end
+
 local QSIZE = 12
 
 local function DrawGroundquad(wx,gy,wz)
@@ -183,7 +190,11 @@ end
 
 
 function widget:DrawWorldPreUnit()
-    if Spring.IsGUIHidden() == false then 
+	if IsTooHigh() then 
+		return
+	end
+	
+	if Spring.IsGUIHidden() == false  then 
 
 	glDepthTest(GL_ALWAYS)
 	glTexture('LuaUI/Images/AlliedCursors.png')
@@ -207,15 +218,10 @@ function widget:DrawWorldPreUnit()
 				--draw a cursor
 				gy = GetGroundHeight(wx,wz)
 	
-				local cx, cy, cz = Spring.GetCameraPosition()
 				if (IsSphereInView(wx,gy,wz,QSIZE)) then
-				    local dx, dy, dz = wx-cx, gy-cy, wz-cz
-				    local dist = dx*dx + dy*dy + dz*dz
-				     if dist < AcMaxDist then
 					SetTeamColor(teamID,playerID,n)
 					glBeginEnd(GL_QUADS,DrawGroundquad,wx,gy,wz)
 				     
-				     end
 				end
 			else
 				--mark a player as notIdle as soon as they move (and keep them always set notIdle after this)
