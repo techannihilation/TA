@@ -341,6 +341,7 @@ mines = {
 minelayers = {
            "armmlv",
            "cormlv",
+	   "tllmlv",
 },
 commanders = {
            "armcom",
