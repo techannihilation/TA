@@ -102,6 +102,8 @@ local weaponDefs = {
 		duration = 10,
 		energypershot = 5,
 		explosionGenerator = [[custom:LIGHTNING_FLASH]],
+				fireSubmersed=true,
+
 		fireStarter = 50,
 		impactonly = 1,
 		impulseBoost = 0.234,
