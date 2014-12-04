@@ -73,9 +73,10 @@ local rankTextures = {
 local sentmessage = {}
 
 local morphRankMax = #rankTextures
-local MiMaxDist = 1750000 -- max dist at which to draw ETA
+local CantDraw = true
 
 local message = 0
+
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
 
@@ -124,6 +125,8 @@ local function getAllUnitsMorphXpValuesArray()
 end
 
 function widget:Initialize()
+  widgetHandler:RegisterGlobal('GetHeight_morphindicator', IsTooHigh)
+
   if (UnitDefs[1].height == nil) then
     for udid, ud in ipairs(UnitDefs) do
       -- this cause a lag on loading, but it is a huge performance improvment!
@@ -144,6 +147,8 @@ function widget:Initialize()
 end
 
 function widget:Shutdown()
+  widgetHandler:DeregisterGlobal('GetHeight_morphindicator', IsTooHigh)
+
   for _,rankTexture in ipairs(rankTextures) do
     glDeleteTexture(rankTexture)
   end
@@ -191,13 +196,6 @@ local function SetUnitRank(unitID)
     if (rankTex ~= nil) then 
       smallList[unitID] = { rankTex, ud.height + iconoffset, message, humanName, teamID, messagesent = false}
     end
-end
-
-function IsTooHigh()
-  local cx, cy, cz = Spring.GetCameraPosition()
-  local smoothheight = Spring.GetSmoothMeshHeight(cx,cz)
-  local toohigh = ((cy-smoothheight)^2 >= MiMaxDist) 
-  return toohigh
 end
 
 -------------------------------------------------------------------------------------
@@ -248,6 +246,9 @@ function widget:GameFrame(frame)
   end
 end
 
+function IsTooHigh(toohigh)
+    CantDraw = toohigh
+end
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
 
@@ -287,7 +288,7 @@ end
 
 
 function widget:DrawWorld()
-  if IsTooHigh() then 
+  if CantDraw then 
     return
   end
   

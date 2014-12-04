@@ -51,6 +51,7 @@ local atan2				= math.atan2
 local acos, cos			= math.acos, math.cos
 local abs				= math.abs
 local DegToRad			= 57.295779513082320876798
+local CantDraw = true
 
 local list      
 local plighttable = {}
@@ -103,14 +104,12 @@ listL = glCreateList(function()	-- Laser cannon decal texture
     end)
 end)
 
-function IsTooHigh()
-	local cx, cy, cz = Spring.GetCameraPosition()
-	local smoothheight = Spring.GetSmoothMeshHeight(cx,cz)
-	local toohigh = ((cy-smoothheight)^2 >= 20000000) 
-	return toohigh
+function IsTooHigh(toohigh)
+    CantDraw = toohigh
 end
 
 function widget:Initialize() -- create lighttable
+    widgetHandler:RegisterGlobal('GetHeight_projectilelights', IsTooHigh)
 --[[	local modOptions = Spring.GetModOptions()
 	if modOptions and modOptions.lowcpu == "1" then
 		Spring.Echo('Low performance mode is on, removing "Projectile lights" widget')
@@ -188,6 +187,10 @@ function widget:Initialize() -- create lighttable
 	end
 end
 
+function widget:Shutdown()
+  widgetHandler:DeregisterGlobal('GetHeight_projectilelights', IsTooHigh)
+end
+
 local plist = {}
 local frame = 0
 local x1, y1 = 0, 0
@@ -196,7 +199,7 @@ local x, y, z, dx, dz, nx, ny, nz, ang
 local a, f, h = {}, {}, {}
 function widget:DrawWorldPreUnit()
 	
-	if IsTooHigh() then 
+	if CantDraw then 
 		return
 	end
 	

@@ -59,17 +59,21 @@ local GL_QUADS				= GL.QUADS
 
 local clock					= os.clock
 
-local AcMaxDist = 12000000
+local CantDraw = true
 
 local alliedCursorsPos = {}
 
 
 function widget:Initialize()
+
+	widgetHandler:RegisterGlobal('GetHeight_allycursors', IsTooHigh)
 	widgetHandler:RegisterGlobal('MouseCursorEvent', MouseCursorEvent)
 end
 
 
 function widget:Shutdown()
+
+	widgetHandler:DeregisterGlobal('GetHeight_allycursors', IsTooHigh)
 	widgetHandler:DeregisterGlobal('MouseCursorEvent')
 end
 
@@ -83,6 +87,9 @@ local function CubicInterpolate2(x0,x1,mix)
 	return x0*(2*mix3-3*mix2+1) + x1*(3*mix2-2*mix3);
 end
 
+function IsTooHigh(toohigh)
+    CantDraw = toohigh
+end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 local playerPos = {}
@@ -127,13 +134,6 @@ function MouseCursorEvent(playerID,x,z,click)
 end
 
 --------------------------------------------------------------------------------
-
-function IsTooHigh()
-  local cx, cy, cz = Spring.GetCameraPosition()
-  local smoothheight = Spring.GetSmoothMeshHeight(cx,cz)
-  local toohigh = ((cy-smoothheight)^2 >= 30000000)
-  return toohigh
-end
 
 local QSIZE = 12
 
@@ -190,7 +190,7 @@ end
 
 
 function widget:DrawWorldPreUnit()
-	if IsTooHigh() then 
+	if CantDraw then 
 		return
 	end
 	
