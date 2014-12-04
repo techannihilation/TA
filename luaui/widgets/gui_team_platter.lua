@@ -60,8 +60,6 @@ local cos                    = math.cos
 local pi                     = math.pi
 local acos                   = math.acos
 
-local TpMaxDist = 8000000 -- max dist at which to draw ETA
-
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -95,10 +93,13 @@ local circleOffset = 0
 
 local startTimer = spGetTimer()
 
+local CantDraw = true
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
 function widget:Initialize()
+  widgetHandler:RegisterGlobal('GetHeight_teamplatter', IsTooHigh)
+
   circleLines = glCreateList(function()
     glBeginEnd(GL_LINE_LOOP, function()
       local radstep = (2.0 * pi) / circleDivs
@@ -124,6 +125,8 @@ end
 
 
 function widget:Shutdown()
+  widgetHandler:DeregisterGlobal('GetHeight_teamplatter', IsTooHigh)
+
   glDeleteList(circleLines)
   glDeleteList(circlePolys)
 
@@ -133,6 +136,10 @@ end
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
+
+function IsTooHigh(toohigh)
+    CantDraw = toohigh
+end
 
 local realRadii = {}
 
@@ -175,17 +182,11 @@ local function GetTeamColorSet(teamID)
   return colors
 end
 
-function IsTooHigh()
-  local cx, cy, cz = Spring.GetCameraPosition()
-  local smoothheight = Spring.GetSmoothMeshHeight(cx,cz)
-  local toohigh = ((cy-smoothheight)^2 >= TpMaxDist) 
-  return toohigh
-end
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
 function widget:DrawWorldPreUnit()
-    if Spring.IsGUIHidden() == true or IsTooHigh() then 
+    if Spring.IsGUIHidden() == true or CantDraw then 
       return  -- avoid unnecessary GL calls
     end
     
