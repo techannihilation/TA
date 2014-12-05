@@ -64,10 +64,11 @@ local acos                   = math.acos
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
-local GetGaiaTeamID = Spring.GetGaiaTeamID () --+++
-function widget:PlayerChanged() --+++
-	GetGaiaTeamID = Spring.GetGaiaTeamID () --+++
-end --+++
+local GetGaiaTeamID = Spring.GetGaiaTeamID()
+
+function widget:PlayerChanged()
+  GetGaiaTeamID = Spring.GetGaiaTeamID () 
+end 
 
 local function SetupCommandColors(state)
   local alpha = state and 1 or 0
@@ -244,7 +245,7 @@ end
 --------------------------------------------------------------------------------
 
 function widget:DrawWorldPreUnit()
-    if Spring.IsGUIHidden() == true or CantDraw then 
+    if Spring.IsGUIHidden() == true or CantDraw == false then 
       return  -- avoid unnecessary GL calls
     end
     
@@ -256,15 +257,16 @@ function widget:DrawWorldPreUnit()
 
   local lastColorSet = nil
    if #visibleUnits then
-    for i=1, #visibleUnits do
+    for i=1, #v do
     unitID = visibleUnits[i] 
-    if Unitlist[unitID] then
-      local teamID = Unitlist[unitID].team
+    currentUnit = Unitlist[unitID]
+    if currentUnit then
+      local teamID = currentUnit.team
       if (teamID and teamID~=GetGaiaTeamID) then
-	local radius = Unitlist[unitID].radius 
+	local radius = currentUnit.radius 
         if (radius) then
-          local colorSet  = Unitlist[unitID].teamcolor
-	  local canfly = Unitlist[unitID].canfly
+          local colorSet  = currentUnit.teamcolor
+	  local canfly = currentUnit.canfly
           if (trackSlope and (not canfly)) then
             local x, y, z = spGetUnitBasePosition(unitID)
             local gx, gy, gz = spGetGroundNormal(x, z)
@@ -299,11 +301,12 @@ end
   local alpha = 1.0 * math.abs(0.5 - (diffTime * 3.0 % 1.0))
 
   for _,unitID in ipairs(spGetSelectedUnits()) do
-  local colors  = Unitlist[unitID].teamcolor
+  currentUnit = Unitlist[unitID]
+  local colors  = currentUnit.teamcolor
   glColor(colors[1],colors[2],colors[3], alpha)
-  local radius = Unitlist[unitID].radius
+  local radius = currentUnit.radius
     if (radius) then
-      local canfly = Unitlist[unitID].canfly
+      local canfly = currentUnit.canfly
       if (trackSlope and (not canfly)) then
       local x, y, z = spGetUnitBasePosition(unitID)
       local gx, gy, gz = spGetGroundNormal(x, z)
