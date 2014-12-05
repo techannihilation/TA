@@ -20,7 +20,7 @@ end
 
 local SpGetCameraPosition = Spring.GetCameraPosition
 local SpGetSmoothMeshHeight = Spring.GetSmoothMeshHeight
-local MaxDist = 175000000
+local MaxDist = 13000000
 
 function IsTooHigh() 
   local cx, cy, cz = SpGetCameraPosition()
