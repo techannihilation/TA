@@ -26,7 +26,7 @@ local weaponDef = {
 	tolerance = 7000,
 	turret = 1,
 	damage = {
-		default = 1500,
+		default = 2250,
 		minelayers = 25,
 		mines = 0.5,
 	},

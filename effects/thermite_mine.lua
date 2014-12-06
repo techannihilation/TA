@@ -12,25 +12,25 @@ return {
       ground             = true,
       water              = false,
       properties = {
-        colormap           = [[1 0 0 1    1 0.8 0.15 1     0 0 0 0.1]],
-        size               = [[30 r5]],
-        sizegrowth         = [[2 r-3]],
+        colormap           = [[1 0.8 0.3 1    1 0.8 0.15 1     0 0 0 0.1]],
+        size               = [[16 r0.15]],
+        sizegrowth         = [[0 r-0.15]],
         texture            = [[groundflash]],
-        ttl                = [[20 r4 r-4]],
+        ttl                = [[150 r4 r-4]],
       },
-    },
-    fakering = {
+    },  
+    fakelight1 = {
       air                = false,
       class              = [[CSimpleGroundFlash]],
       count              = 4,
       ground             = true,
       water              = false,
       properties = {
-        colormap           = [[1 1 0.3 1      0 0 0 0.1]],
-        size               = 11,
-        sizegrowth         = [[3 r-3]],
-        texture            = [[groundring]],
-        ttl                = 12,
+        colormap           = [[1 0.8 0.3 1    1 0.8 0.15 1     0 0 0 0.1]],
+        size               = [[23 r0.15]],
+        sizegrowth         = [[0 r-0.25]],
+        texture            = [[groundflash]],
+        ttl                = [[100 r4 r-4]],
       },
     },
     smokecloud = {
@@ -65,7 +65,7 @@ return {
     Spawner_thermite_smoke = {
       air                = true,
       class              = [[CExpGenSpawner]],
-      count              = 15, --10
+      count              = 20, --10
       ground             = true,
       water              = true,
       unit               = 0,
@@ -78,7 +78,7 @@ return {
     Spawner_thermite_glow = {
       air                = true,
       class              = [[CExpGenSpawner]],
-      count              = 15, --10
+      count              = 20, --10
       ground             = true,
       water              = true,
       unit               = 0,
@@ -91,7 +91,7 @@ return {
     Spawner_thermite_spark = {
       air                = true,
       class              = [[CExpGenSpawner]],
-      count              = 60, --10
+      count              = 80, --10
       ground             = true,
       water              = true,
       unit               = 0,
@@ -104,7 +104,7 @@ return {
     Spawner_thermite_drip = {
       air                = false, -- will only trigger if spawned on air + unit(check spawn conditions in ceg)
       class              = [[CExpGenSpawner]],
-      count              = 30, --10
+      count              = 38, --10
       ground             = false,
       water              = false,
       unit               = true,
@@ -117,7 +117,7 @@ return {
     Spawner_Steam = {
       air                = false,
       class              = [[CExpGenSpawner]],
-      count              = 15, --5
+      count              = 20, --5
       ground             = false,
       water              = true,
       properties = {
