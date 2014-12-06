@@ -62,7 +62,7 @@ local unitDef = {
 	useBuildingGroundDecal = true,
 	workerTime = 0,
 	customparams = {
-		RequireTech = [[Advanced T3 Unit Research Centre]],
+		RequireTech = [[T2 Factory]],
 	},
 	sounds = {
 		canceldestruct = [[cancel2]],
