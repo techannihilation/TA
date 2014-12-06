@@ -20,6 +20,7 @@ local unitDef = {
 	canPatrol = true,
 	canstop = 1,
 	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
+	corpse = [[DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[Rocket Kbot]],
 	explodeAs = [[MECH_BLAST]],

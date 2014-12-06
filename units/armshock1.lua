@@ -20,6 +20,7 @@ local unitDef = {
 	canPatrol = true,
 	canstop = 1,
 	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
+	corpse = [[DEAD]],
 	defaultmissiontype = [[Standby]],
 	description = [[Heavy Plasma Cannon]],
 	explodeAs = [[SHOCKER]],
