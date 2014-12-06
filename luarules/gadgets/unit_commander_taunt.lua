@@ -61,7 +61,7 @@ function gadget:UnitDestroyed(unitID , unitDefID, unitTeam, attackerID, attacker
 	local commanderID = Spring.GetUnitDefID(uID)
 	Spring.SetUnitCOBValue(uID, 1028, COMMANDER[commanderID])
 	Spring.CallCOBScript(uID, "FireworkControl", 0)
-        Spring.Echo(uID, teamID, attackerTeam, COMMANDER[commanderID])
+        --Spring.Echo(uID, teamID, attackerTeam, COMMANDER[commanderID])
       end
     end
   end
