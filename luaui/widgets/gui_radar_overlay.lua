@@ -29,6 +29,7 @@ end
 
 local Overlayenabled = false
 local MouseOver = false
+local Selected = false
 ------------------------------------------------------------
 -- Callins
 ------------------------------------------------------------
@@ -37,17 +38,13 @@ local MouseOver = false
 function widget:GameFrame(frame)
   if ((frame%8)<1) then
     
-    if spGetMapDrawMode() == 'los' and Overlayenabled == false and MouseOver == false then --Disable if player play's with los view on
-      return
-    end
-    
     --Enable los view for mouse over
     local x, y = Spring.GetMouseState()
     local isunit, unitID = Spring.TraceScreenRay(x, y)
     if (isunit == "unit") then
       local unitDefID = Spring.GetUnitDefID(unitID)
       if isRadar[unitDefID] then
-        if MouseOver == false then
+        if MouseOver == false and spGetMapDrawMode() ~= 'los' then
           Spring.SendCommands ("toggleinfo los")
           MouseOver = true
 	end
@@ -62,13 +59,12 @@ function widget:GameFrame(frame)
 	  Spring.SendCommands ("toggleinfo los")
           MouseOver = false
         end
-	
     end
     
     --Enable los viwe while placing radar towers
     local _, cmdID = spGetActiveCommand()
     if (cmdID and isRadar[-cmdID]) then
-      if Overlayenabled == false then
+      if Overlayenabled == false and spGetMapDrawMode() ~= 'los' then
         Spring.SendCommands ("toggleinfo los")
         Overlayenabled = true
       end
@@ -79,4 +75,26 @@ function widget:GameFrame(frame)
       end
     end
   end
+  
+  --Enable for Single unit selection only
+      local selectedUnits = Spring.GetSelectedUnits()
+    if #selectedUnits == 1 then
+      local unitDefID = Spring.GetUnitDefID(selectedUnits[1])
+      if isRadar[unitDefID] then
+	if Selected == false and spGetMapDrawMode() ~= 'los' then
+          Spring.SendCommands ("toggleinfo los")
+          Selected = true
+	end
+      else
+	if Selected == true then
+	  Spring.SendCommands ("toggleinfo los")
+          Selected = false
+        end
+      end
+    elseif #selectedUnits == 0 then
+     if Selected == true then
+	  Spring.SendCommands ("toggleinfo los")
+          Selected = false
+        end
+    end
 end
