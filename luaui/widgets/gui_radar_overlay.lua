@@ -19,7 +19,12 @@ end
 local spGetActiveCommand = Spring.GetActiveCommand
 local spGetMapDrawMode = Spring.GetMapDrawMode
 
-local isRadar = {}
+local isRadar = {
+  [UnitDefNames["coreyes"].id] = true,
+  [UnitDefNames["armeyes"].id] = true,
+  [UnitDefNames["tlltower"].id] = true,
+}
+
 
 for uDefID, uDef in pairs(UnitDefs) do
   if uDef.radarRadius > 1300 then --Should only seletect real radar units
