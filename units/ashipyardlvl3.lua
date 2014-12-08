@@ -6,8 +6,8 @@ local unitName = "ashipyardlvl3"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	buildCostEnergy = 99000,
-	buildCostMetal = 21200,
+	buildCostEnergy = 1200000,
+	buildCostMetal = 100000,
 	builder = true,
 	buildingGroundDecalDecaySpeed = 30,
 	buildingGroundDecalSizeX = 33,
