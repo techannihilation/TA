@@ -39,6 +39,7 @@ local spGetGameSeconds = Spring.GetGameSeconds
 
 local message = ""
 local othermessage = ""
+local xmasmessage = "Merry Christmas Everyone -- Battlecom's for all at xmas"
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -74,14 +75,17 @@ function widget:DrawScreen()
   colorString = "\255\255\255\255"
 
   local msg = colorString .. string.format("%s%s", "Gametype: ",  message)
-    tackyfont:Begin()
-    tackyfont:Print(msg, vsx , vsy , 46, "oc")
     
-    if othermessage ~= "" then
-      tackyfont:Print(othermessage, vsx , vsy - 80 , 24, "oc")
-    end
+  tackyfont:Begin()
+  tackyfont:Print(msg, vsx , vsy , 46, "oc")
     
-    tackyfont:End()
+  if othermessage ~= "" then
+    tackyfont:Print(othermessage, vsx , vsy - 80 , 24, "oc")
+  end
+    
+  tackyfont:Print("\255\255\0\0" .. xmasmessage, vsx , vsy -200, 24, "oc")
+
+  tackyfont:End()
     
 end
 

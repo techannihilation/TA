@@ -24,20 +24,20 @@ local COMMANDER = {
   --Core
   [UnitDefNames["corcom"].id] = 7, --Set weapon number here 
   [UnitDefNames["corcom1"].id] = 4,
-  [UnitDefNames["corcom3"].id] = 4,
+  [UnitDefNames["corcom3"].id] = 7,
   [UnitDefNames["corcom5"].id] = 4,
   [UnitDefNames["corcom6"].id] = 4,
   [UnitDefNames["corcom7"].id] = 4,
   --Arm 
   [UnitDefNames["armcom"].id] = 7,
   [UnitDefNames["armcom1"].id] = 4,
-  [UnitDefNames["armcom4"].id] = 4,
+  [UnitDefNames["armcom4"].id] = 7,
   [UnitDefNames["armcom5"].id] = 4,
   [UnitDefNames["armcom6"].id] = 4,
   [UnitDefNames["armcom7"].id] = 4,
   --The lost legacy
   [UnitDefNames["tllcom"].id] = 7,
-  [UnitDefNames["tllcom3"].id] = 4,
+  [UnitDefNames["tllcom3"].id] = 7,
   [UnitDefNames["tllcom5"].id] = 4,
   [UnitDefNames["tllcom6"].id] = 4,
   [UnitDefNames["tllcom7"].id] = 4,

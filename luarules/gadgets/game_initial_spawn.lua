@@ -40,9 +40,9 @@ local startUnitParamName = 'startUnit'
 ----------------------------------------------------------------
 -- Vars
 ----------------------------------------------------------------
-local armcomDefID = UnitDefNames.armcom.id
-local corcomDefID = UnitDefNames.corcom.id
-local tllcomDefID = UnitDefNames.tllcom.id
+local armcomDefID = UnitDefNames.armcom4.id
+local corcomDefID = UnitDefNames.corcom3.id
+local tllcomDefID = UnitDefNames.tllcom3.id
 
 local validStartUnits = {
     [armcomDefID] = true,

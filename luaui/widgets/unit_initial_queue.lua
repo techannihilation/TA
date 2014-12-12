@@ -40,9 +40,9 @@ local buildColor = '\255\128\255\128' -- Light green
 local whiteColor = '\255\255\255\255' -- White
 
 -- Building ids
-local ARMCOM = UnitDefNames["armcom"].id
-local CORCOM = UnitDefNames["corcom"].id
-local TLLCOM = UnitDefNames["tllcom"].id
+local ARMCOM = UnitDefNames["armcom4"].id
+local CORCOM = UnitDefNames["corcom3"].id
+local TLLCOM = UnitDefNames["tllcom3"].id
 
 local ARMMEX = UnitDefNames["armmex"].id
 local CORMEX = UnitDefNames["cormex"].id
