@@ -120,6 +120,7 @@ local unitDef = {
 		[29] = [[corfhlt]],
 		[30] = [[cbuilderlvl2]],
 		[31] = [[corgen]],
+		[32] = [[corpcan]],
 	},
 	customParams = {
 		providetech = [[Battle Commander,Assault Commander]],

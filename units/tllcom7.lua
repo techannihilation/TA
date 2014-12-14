@@ -124,6 +124,7 @@ local unitDef = {
 		[32] = [[corupmex]],
 		[33] = [[tllion]],
 		[34] = [[tllvaliant]],
+		[35] = [[tllpcan]],
 	},
 	customParams = {
 		providetech = [[Battle Commander,Assault Commander,Star Commander,Supreme Commander]],
