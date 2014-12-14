@@ -1,7 +1,7 @@
--- UNITDEF -- ARMPCAN --
+-- UNITDEF -- CORPCAN --
 --------------------------------------------------------------------------------
 
-local unitName = "armpcan"
+local unitName = "corpcan"
 
 --------------------------------------------------------------------------------
 
@@ -15,12 +15,13 @@ local unitDef = {
 	buildCostMetal = 900,
 	builder = false,
 	buildTime = 85185,
+	buildPic = [[armpcan.png]],
 	canAttack = true,
 	canstop = 1,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	corpse = [[DEAD]],
 	defaultmissiontype = [[GUARD_NOMOVE]],
-	description = [[PeeWee Cannon]],
+	description = [[A.K. Cannon]],
 	energyMake = 0,
 	energyStorage = 0,
 	energyUse = 0,
@@ -36,16 +37,17 @@ local unitDef = {
 	maxVelocity = 0,
 	maxWaterDepth = 0,
 	metalStorage = 0,
-	name = [[PeeWee Cannon]],
+	name = [[A.K. Cannon]],
 	noChaseCategory = [[ALL]],
 	objectName = [[ARMPCAN]],
+	script = [[ARMPCAN.COB]],
 	seismicSignature = 0,
 	selfDestructAs = [[ATOMIC_BLAST]],
 	side = [[ARM]],
 	sightDistance = 273,
 	standingfireorder = 0,
 	turnRate = 0,
-	unitname = [[armpcan]],
+	unitname = [[corpcan]],
 	workerTime = 0,
 	yardMap = [[oooooooooooooooo]],
 	sfxtypes = {
@@ -104,15 +106,15 @@ local weaponDefs = {
 		collideFriendly = false,
 		craterBoost = 0.15,
 		craterMult = 0.15,
-		energypershot = 897,
+		energypershot = 826,
 		explosionGenerator = [[custom:DIRT3]],
 		gravityaffected = [[false]],
 		holdtime = 1,
 		impulseBoost = 0.1,
 		impulseFactor = 0.1,
-		metalpershot = 45,
-		model = [[armpw_bomb]],
-		name = [[PeeWee Cannon]],
+		metalpershot = 34,
+		model = [[corak_bomb]],
+		name = [[A.K. Cannon]],
 		noSelfDamage = true,
 		range = 3000,
 		reloadtime = 7,
@@ -152,7 +154,7 @@ local featureDefs = {
 		height = 40,
 		hitdensity = 100,
 		metal = 0.8000 * unitDef.buildCostMetal,
-		object = [[ARMPCAN_DEAD]],
+		object = [[CORPCAN_DEAD]],
 		reclaimable = true,
 		seqnamereclamate = [[TREE1RECLAMATE]],
 		world = [[All Worlds]],

@@ -5,6 +5,9 @@
 
 local spawn_defs = {
 	armpcan_peewee_cannon = {name = "armpw", cost = 0, expire = 0},
+	corpcan_peewee_cannon = {name = "corak", cost = 0, expire = 0},
+	tllpcan_peewee_cannon = {name = "tllprivate", cost = 0, expire = 0},
+
 }
 
 local shieldCollide = { -- unitDefs as the shield hit callin is setup really strangely
