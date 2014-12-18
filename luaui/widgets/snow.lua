@@ -11,10 +11,10 @@
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
-function gadget:GetInfo()
+function widget:GetInfo()
   return {
     name      = "Xmas Snow, v0.3",
-    desc      = "Precipitation shader gadget",
+    desc      = "Precipitation shader widget",
     author    = "trepan, and others",
     date      = "August 27, 2009",
     license   = "GNU GPL, v2 or later",
@@ -25,10 +25,6 @@ end
 
 -------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-if (gadgetHandler:IsSyncedCode()) then
-	return false
-else
-
 local particleType = 2 -- 1 for rain, 2 for snow, 3 for clouds (when they finally work)
 --local particleDensity = 50 * 1024  -- how many particles?  Limit for performance!
 
@@ -123,7 +119,7 @@ local camX,camY,camZ
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-function gadget:Shutdown()
+function widget:Shutdown()
 	--glDeleteList(particleOneSubList)
 	glDeleteList(particleOneList)
 end
@@ -274,10 +270,10 @@ end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
-function gadget:Initialize()
+function widget:Initialize()
 	if (glCreateShader == nil) then
 		Spring.Echo("[Weather Particles:Initialize] no shader support")
-		gadgetHandler:RemoveGadget()
+		widgetHandler:RemoveGadget()
 		return
     end	
     
@@ -348,21 +344,21 @@ cloudshader = glCreateShader({
 	if (shader == nil) then
 		Spring.Echo("[Weather Particles:Initialize] particle shader compilation failed")
 		Spring.Echo(glGetShaderLog())
-		gadgetHandler:RemoveGadget()
+		widgetHandler:RemoveGadget()
 		return
 	end
 
 	if (rainshader == nil) then
 		Spring.Echo("[Weather Particles:Initialize] rain shader compilation failed")
 		Spring.Echo(glGetShaderLog())
-		gadgetHandler:RemoveGadget()
+		widgetHandler:RemoveGadget()
 		return
 	end
 
 	if (cloudshader == nil) then
 		Spring.Echo("[Weather Particles:Initialize] cloud shader compilation failed")
 		Spring.Echo(glGetShaderLog())
-		gadgetHandler:RemoveGadget()
+		widgetHandler:RemoveGadget()
 		return
 	end
 	
@@ -387,7 +383,7 @@ end
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-function gadget:DrawWorld()
+function widget:DrawWorld()
 	if (not enabled) then
 		--return
 	end
@@ -481,8 +477,6 @@ function gadget:DrawWorld()
 	gl.PointSprite(false, false)
 	glResetState()
 	glUseShader(0)
-end
-
 end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
