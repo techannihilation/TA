@@ -13,7 +13,7 @@
 
 function gadget:GetInfo()
   return {
-    name      = "Precipitation, v0.3",
+    name      = "Xmas Snow, v0.3",
     desc      = "Precipitation shader gadget",
     author    = "trepan, and others",
     date      = "August 27, 2009",
@@ -280,7 +280,7 @@ function gadget:Initialize()
 		gadgetHandler:RemoveGadget()
 		return
     end	
-
+    
 	shader = glCreateShader({
 
     vertex = [[
