@@ -39,7 +39,7 @@ local spGetGameSeconds = Spring.GetGameSeconds
 
 local message = ""
 local othermessage = ""
-local xmasmessage = "Merry Christmas Everyone -- Battlecom's for all at xmas"
+local xmasmessage = "Merry Christmas Everyone -- Free Morph E/M Cost for Eco or Battlecom"
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
