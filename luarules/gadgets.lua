@@ -1772,6 +1772,12 @@ function gadgetHandler:GetTooltip(x, y)
   return ''
 end
 
+function gadgetHandler:UnsyncedHeightMapUpdate(x1, z1, x2, z2)
+  for _,g in ipairs(self.UnsyncedHeightMapUpdateList) do
+    g:UnsyncedHeightMapUpdate(x1, z1, x2, z2)
+  end
+  return
+end
 
 function gadgetHandler:MapDrawCmd(playerID, cmdType, px, py, pz, labelText)
   for _,g in ipairs(self.MapDrawCmdList) do
