@@ -134,8 +134,8 @@ local perimeterEdgeCost = {
 -- cost of shraka pyramid point = volumeCost*diffHeight
 
 --ramp dimensions
-local maxTotalRampLength = 3000
-local maxTotalRampWidth = 800
+local maxTotalRampLength = 1000
+local maxTotalRampWidth = 400
 local minTotalRampLength = 32
 local minTotalRampWidth = 24
 
