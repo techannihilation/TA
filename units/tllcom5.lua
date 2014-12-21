@@ -122,7 +122,6 @@ local unitDef = {
 		[30] = [[tllfireraiser]],
 		[31] = [[corupmex]],
 		[32] = [[tllpcan]],
-		[33] = [[irritator]],
 	},
 	customParams = {
 		providetech = [[Battle Commander,Assault Commander]],

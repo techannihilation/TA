@@ -121,7 +121,6 @@ local unitDef = {
 		[30] = [[abuilderlvl2]],
 		[31] = [[armgen]],
 		[32] = [[armpcan]],
-		[33] = [[armpraet]],
 	},
 	customParams = {
 		providetech = [[Battle Commander,Assault Commander]],
