@@ -125,6 +125,7 @@ local unitDef = {
 		[33] = [[tllion]],
 		[34] = [[tllvaliant]],
 		[35] = [[tllpcan]],
+		[36] = [[irritator]],
 	},
 	customParams = {
 		providetech = [[Battle Commander,Assault Commander,Star Commander,Supreme Commander]],

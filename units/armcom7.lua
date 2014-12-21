@@ -122,6 +122,7 @@ local unitDef = {
 		[31] = [[armgen]],
 		[32] = [[armshltx1]],
 		[33] = [[armpcan]],
+		[34] = [[armpraet]],
 	},
 	customParams = {
 		providetech = [[Battle Commander,Assault Commander,Star Commander,Supreme Commander]],

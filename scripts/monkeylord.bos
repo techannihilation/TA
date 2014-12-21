@@ -4,12 +4,9 @@
 #include "exptype.h"
 
 piece  base, cephalotorax, poupe, berceau, tourelle, ovale, canon, aiguille,
-       bouche, cartouche, pattes, patteLF0, patteLF1, patteLF2, patteLF3, patteLF4,
-       patteLF5, patteRF0, patteRF1, patteRF2, patteRF3, patteRF4, patteRF5, patteLM0,
-       patteLM1, patteLM2, patteLM3, patteLM4, patteLM5, patteRM0, patteRM1, patteRM2,
-       patteRM3, patteRM4, patteRM5, patteLB0, patteLB1, patteLB2, patteLB3, patteLB4,
-       patteLB5, patteRB0, patteRB1, patteRB2, patteRB3, patteRB4, patteRB5, ecraseur_epaule,
-       ecraseur_bras, load_shoulder, load_arm, unload_shoulder, unload_arm, goal_shoulder, goal_arm;
+       bouche, cartouche, pattes, ecraseur_epaule,
+       ecraseur_bras,leg1, leg2, leg3, leg4, leg5,
+       leg6, load_shoulder, load_arm, unload_shoulder, unload_arm, goal_shoulder, goal_arm;
 
 static-var  bMoving, gun_1, restore_delay, Static_Var_4, Static_Var_5;
 
@@ -19,745 +16,117 @@ static-var  bMoving, gun_1, restore_delay, Static_Var_4, Static_Var_5;
 #define SIG_AIM_3			8
 
 
-HexapodTrueWalk(Func_Var_1, Func_Var_2, Func_Var_3, Func_Var_4, Func_Var_5, Func_Var_6, Func_Var_7, Func_Var_8, Func_Var_9)
+HexapodTrueWalk()
 {
-	Func_Var_1 = 3;
-	Func_Var_2 = 3;
-	Func_Var_3 = 3;
-	Func_Var_4 = 3;
-	Func_Var_5 = 3;
-	Func_Var_6 = 3;
-	while( TRUE )
+	while( bMoving )
 	{
-		move ecraseur_epaule to y-axis [0.000000] - [6553.599991] now;
-		while( !bMoving )
+		if( bMoving )
 		{
+			turn leg1 to y-axis <43.005495> speed <40.000000>;
+			turn leg1 to y-axis <0.000000> speed <40.000000>;
+			turn leg1 to z-axis <0.000000> speed <40.000000>;
+			turn leg1 to z-axis <0.000000> speed <40.000000>;
+			turn leg2 to z-axis <0.000000> speed <40.000000>;
+			turn leg2 to z-axis <31.005495> speed <40.000000>;
+			turn leg3 to y-axis <34.005495> speed <40.000000>;
+			turn leg3 to y-axis <34.005495> speed <40.000000>;
+			turn leg3 to z-axis <31.005495> speed <40.000000>;
+			turn leg3 to z-axis <0.000000> speed <40.000000>;
+			turn leg4 to y-axis <-40.005495> speed <40.000000>;
+			turn leg4 to y-axis <-40.005495> speed <40.000000>;
+			turn leg4 to z-axis <-31.005495> speed <40.000000>;
+			turn leg4 to z-axis <0.000000> speed <40.000000>;
+			turn leg5 to y-axis <-37.005495> speed <40.000000>;
+			turn leg5 to y-axis <0.000000> speed <40.000000>;
+			turn leg5 to z-axis <0.000000> speed <40.000000>;
+			turn leg5 to z-axis <0.000000> speed <40.000000>;
+			turn leg6 to y-axis <0.000000> speed <40.000000>;
+			turn leg6 to y-axis <-30.005495> speed <40.000000>;
+			turn leg6 to z-axis <-45.010989> speed <40.000000>;
 			sleep 200;
 		}
-		while( TRUE )
+		if( bMoving )
 		{
-			turn cephalotorax to x-axis <0.000000> now;
-			turn cephalotorax to z-axis <0.000000> now;
-			move load_shoulder to x-axis [300.000000] now;
-			move unload_shoulder to x-axis [300.000000] now;
-			turn cephalotorax to z-axis <0.000000> now;
-			move load_shoulder to x-axis [0.000000] now;
-			move unload_shoulder to x-axis [0.000000] now;
-			move load_shoulder to z-axis [300.000000] now;
-			move unload_shoulder to z-axis [300.000000] now;
-			turn cephalotorax to x-axis <0.000000> now;
-			move load_shoulder to z-axis [0.000000] now;
-			move unload_shoulder to z-axis [0.000000] now;
-			if( TRUE )
-			{
-				Func_Var_7 = 16384;
-				while( FALSE )
-				{
-					Func_Var_7 = 65536;
-				}
-				while( TRUE )
-				{
-					Func_Var_7 = 65536;
-				}
-				if( TRUE )
-				{
-					Func_Var_1 = 1;
-				}
-				Func_Var_7 = 0;
-				while( FALSE )
-				{
-					Func_Var_7 = 65536;
-				}
-				while( TRUE )
-				{
-					Func_Var_7 = 65536;
-				}
-				if( FALSE )
-				{
-					Func_Var_1 = 1;
-				}
-				if( TRUE )
-				{
-					turn patteLF0 to y-axis <90.021978> now;
-					Func_Var_7 = 0;
-					Func_Var_8 = 8192;
-					while( FALSE )
-					{
-						turn patteLF1 to z-axis <60.016484> now;
-						turn patteLF2 to z-axis <100.021978> now;
-						turn patteLF3 to z-axis <30.005495> now;
-						turn patteLF4 to z-axis <20.000000> now;
-						if( FALSE )
-						{
-							Func_Var_7 = Func_Var_8;
-						}
-						Func_Var_8 = 2;
-					}
-					if( TRUE )
-					{
-						Func_Var_1 = 1;
-					}
-				}
-			}
-			if( TRUE )
-			{
-				Func_Var_7 = 0;
-				while( FALSE )
-				{
-					Func_Var_7 = 65536;
-				}
-				while( TRUE )
-				{
-					Func_Var_7 = 65536;
-				}
-				if( FALSE )
-				{
-					turn patteLF0 to y-axis <90.021978> now;
-				}
-				if( Func_Var_9 )
-				{
-					move ecraseur_epaule to y-axis [6553.599991] now;
-				}
-				turn patteLF1 to z-axis <60.016484> speed <-60.000000>;
-				if( TRUE )
-				{
-					turn patteLF2 to z-axis <100.021978> speed <0.000000>;
-					turn patteLF3 to z-axis <30.005495> speed <0.000000>;
-					if( TRUE )
-					{
-						Func_Var_1 = 2;
-					}
-				}
-			}
-			if( TRUE )
-			{
-				turn patteLF0 to y-axis <50.000000> speed <1.000000>;
-				Func_Var_7 = 0;
-				if( TRUE )
-				{
-					Func_Var_7 = 65536;
-				}
-				if( TRUE )
-				{
-					Func_Var_1 = 3;
-				}
-			}
-			if( TRUE )
-			{
-				turn patteLF1 to z-axis <60.016484> speed <-45.000000>;
-				turn patteLF2 to z-axis <100.021978> speed <0.000000>;
-				turn patteLF3 to z-axis <30.005495> speed <0.000000>;
-				turn patteLF4 to z-axis <20.000000> speed <0.000000>;
-				if( TRUE )
-				{
-					Func_Var_1 = 0;
-					Func_Var_1 = 0;
-					if( TRUE )
-					{
-						Func_Var_1 = 65536;
-					}
-					move ecraseur_epaule to y-axis [0.000000] now;
-					Func_Var_9 = Func_Var_1;
-				}
-			}
-			if( TRUE )
-			{
-				Func_Var_7 = 16384;
-				while( FALSE )
-				{
-					Func_Var_7 = 65536;
-				}
-				while( TRUE )
-				{
-					Func_Var_7 = 65536;
-				}
-				if( TRUE )
-				{
-					Func_Var_4 = 1;
-				}
-				Func_Var_7 = 0;
-				while( FALSE )
-				{
-					Func_Var_7 = 65536;
-				}
-				while( TRUE )
-				{
-					Func_Var_7 = 65536;
-				}
-				if( FALSE )
-				{
-					Func_Var_4 = 1;
-				}
-				if( TRUE )
-				{
-					turn patteRF0 to y-axis <90.021978> now;
-					Func_Var_7 = 0;
-					Func_Var_8 = 8192;
-					while( FALSE )
-					{
-						turn patteRF1 to z-axis <60.016484> now;
-						turn patteRF2 to z-axis <100.021978> now;
-						turn patteRF3 to z-axis <30.005495> now;
-						turn patteRF4 to z-axis <20.000000> now;
-						if( FALSE )
-						{
-							Func_Var_7 = Func_Var_8;
-						}
-						Func_Var_8 = 2;
-					}
-					if( TRUE )
-					{
-						Func_Var_4 = 1;
-					}
-				}
-			}
-			if( TRUE )
-			{
-				Func_Var_7 = 0;
-				while( FALSE )
-				{
-					Func_Var_7 = 65536;
-				}
-				while( TRUE )
-				{
-					Func_Var_7 = 65536;
-				}
-				if( FALSE )
-				{
-					turn patteRF0 to y-axis <90.021978> now;
-				}
-				if( Func_Var_9 )
-				{
-					move ecraseur_epaule to y-axis [6553.599991] now;
-				}
-				turn patteRF1 to z-axis <60.016484> speed <60.000000>;
-				if( TRUE )
-				{
-					turn patteRF2 to z-axis <100.021978> speed <0.000000>;
-					turn patteRF3 to z-axis <30.005495> speed <0.000000>;
-					if( TRUE )
-					{
-						Func_Var_4 = 2;
-					}
-				}
-			}
-			if( TRUE )
-			{
-				turn patteRF0 to y-axis <50.000000> speed <1.000000>;
-				Func_Var_7 = 0;
-				if( TRUE )
-				{
-					Func_Var_7 = 65536;
-				}
-				if( TRUE )
-				{
-					Func_Var_4 = 3;
-				}
-			}
-			if( TRUE )
-			{
-				turn patteRF1 to z-axis <60.016484> speed <45.000000>;
-				turn patteRF2 to z-axis <100.021978> speed <0.000000>;
-				turn patteRF3 to z-axis <30.005495> speed <0.000000>;
-				turn patteRF4 to z-axis <20.000000> speed <0.000000>;
-				if( TRUE )
-				{
-					Func_Var_4 = 0;
-					Func_Var_4 = 0;
-					if( TRUE )
-					{
-						Func_Var_4 = 65536;
-					}
-					move ecraseur_epaule to y-axis [0.000000] now;
-					Func_Var_9 = Func_Var_4;
-				}
-			}
-			if( TRUE )
-			{
-				Func_Var_7 = 16384;
-				while( FALSE )
-				{
-					Func_Var_7 = 65536;
-				}
-				while( TRUE )
-				{
-					Func_Var_7 = 65536;
-				}
-				if( TRUE )
-				{
-					Func_Var_3 = 1;
-				}
-				if( TRUE )
-				{
-					turn patteLB0 to y-axis <90.021978> now;
-					Func_Var_7 = 0;
-					Func_Var_8 = 8192;
-					while( FALSE )
-					{
-						turn patteLB1 to z-axis <60.016484> now;
-						turn patteLB2 to z-axis <100.021978> now;
-						turn patteLB3 to z-axis <30.005495> now;
-						turn patteLB4 to z-axis <20.000000> now;
-						if( FALSE )
-						{
-							Func_Var_7 = Func_Var_8;
-						}
-						Func_Var_8 = 2;
-					}
-					if( TRUE )
-					{
-						Func_Var_3 = 1;
-					}
-				}
-			}
-			if( TRUE )
-			{
-				if( Func_Var_9 )
-				{
-					move ecraseur_epaule to y-axis [6553.599991] now;
-				}
-				turn patteLB1 to z-axis <60.016484> speed <-60.000000>;
-				if( TRUE )
-				{
-					turn patteLB2 to z-axis <100.021978> speed <0.000000>;
-					turn patteLB3 to z-axis <30.005495> speed <0.000000>;
-					if( TRUE )
-					{
-						Func_Var_3 = 2;
-					}
-				}
-			}
-			if( TRUE )
-			{
-				turn patteLB0 to y-axis <10.000000> speed <1.000000>;
-				Func_Var_7 = 0;
-				if( TRUE )
-				{
-					Func_Var_7 = 65536;
-				}
-				if( TRUE )
-				{
-					Func_Var_3 = 3;
-				}
-				Func_Var_7 = 0;
-				while( FALSE )
-				{
-					Func_Var_7 = 65536;
-				}
-				while( TRUE )
-				{
-					Func_Var_7 = 65536;
-				}
-				if( TRUE )
-				{
-					Func_Var_3 = 3;
-				}
-			}
-			if( TRUE )
-			{
-				Func_Var_7 = 0;
-				while( FALSE )
-				{
-					Func_Var_7 = 65536;
-				}
-				while( TRUE )
-				{
-					Func_Var_7 = 65536;
-				}
-				if( TRUE )
-				{
-					turn patteLB0 to y-axis <90.021978> now;
-				}
-				turn patteLB1 to z-axis <60.016484> speed <-45.000000>;
-				turn patteLB2 to z-axis <100.021978> speed <0.000000>;
-				turn patteLB3 to z-axis <30.005495> speed <0.000000>;
-				turn patteLB4 to z-axis <20.000000> speed <0.000000>;
-				if( TRUE )
-				{
-					Func_Var_3 = 0;
-					Func_Var_3 = 0;
-					if( TRUE )
-					{
-						Func_Var_3 = 65536;
-					}
-					move ecraseur_epaule to y-axis [0.000000] now;
-					Func_Var_9 = Func_Var_3;
-				}
-			}
-			if( TRUE )
-			{
-				Func_Var_7 = 16384;
-				while( FALSE )
-				{
-					Func_Var_7 = 65536;
-				}
-				while( TRUE )
-				{
-					Func_Var_7 = 65536;
-				}
-				if( TRUE )
-				{
-					Func_Var_6 = 1;
-				}
-				if( TRUE )
-				{
-					turn patteRB0 to y-axis <90.021978> now;
-					Func_Var_7 = 0;
-					Func_Var_8 = 8192;
-					while( FALSE )
-					{
-						turn patteRB1 to z-axis <60.016484> now;
-						turn patteRB2 to z-axis <100.021978> now;
-						turn patteRB3 to z-axis <30.005495> now;
-						turn patteRB4 to z-axis <20.000000> now;
-						if( FALSE )
-						{
-							Func_Var_7 = Func_Var_8;
-						}
-						Func_Var_8 = 2;
-					}
-					if( TRUE )
-					{
-						Func_Var_6 = 1;
-					}
-				}
-			}
-			if( TRUE )
-			{
-				if( Func_Var_9 )
-				{
-					move ecraseur_epaule to y-axis [6553.599991] now;
-				}
-				turn patteRB1 to z-axis <60.016484> speed <60.000000>;
-				if( TRUE )
-				{
-					turn patteRB2 to z-axis <100.021978> speed <0.000000>;
-					turn patteRB3 to z-axis <30.005495> speed <0.000000>;
-					if( TRUE )
-					{
-						Func_Var_6 = 2;
-					}
-				}
-			}
-			if( TRUE )
-			{
-				turn patteRB0 to y-axis <10.000000> speed <1.000000>;
-				Func_Var_7 = 0;
-				if( TRUE )
-				{
-					Func_Var_7 = 65536;
-				}
-				if( TRUE )
-				{
-					Func_Var_6 = 3;
-				}
-				Func_Var_7 = 0;
-				while( FALSE )
-				{
-					Func_Var_7 = 65536;
-				}
-				while( TRUE )
-				{
-					Func_Var_7 = 65536;
-				}
-				if( TRUE )
-				{
-					Func_Var_6 = 3;
-				}
-			}
-			if( TRUE )
-			{
-				Func_Var_7 = 0;
-				while( FALSE )
-				{
-					Func_Var_7 = 65536;
-				}
-				while( TRUE )
-				{
-					Func_Var_7 = 65536;
-				}
-				if( TRUE )
-				{
-					turn patteRB0 to y-axis <90.021978> now;
-				}
-				turn patteRB1 to z-axis <60.016484> speed <45.000000>;
-				turn patteRB2 to z-axis <100.021978> speed <0.000000>;
-				turn patteRB3 to z-axis <30.005495> speed <0.000000>;
-				turn patteRB4 to z-axis <20.000000> speed <0.000000>;
-				if( TRUE )
-				{
-					Func_Var_6 = 0;
-					Func_Var_6 = 0;
-					if( TRUE )
-					{
-						Func_Var_6 = 65536;
-					}
-					move ecraseur_epaule to y-axis [0.000000] now;
-					Func_Var_9 = Func_Var_6;
-				}
-			}
-			if( TRUE )
-			{
-				Func_Var_7 = 16384;
-				while( FALSE )
-				{
-					Func_Var_7 = 65536;
-				}
-				while( TRUE )
-				{
-					Func_Var_7 = 65536;
-				}
-				if( TRUE )
-				{
-					Func_Var_2 = 1;
-				}
-				Func_Var_7 = 0;
-				while( FALSE )
-				{
-					Func_Var_7 = 65536;
-				}
-				while( TRUE )
-				{
-					Func_Var_7 = 65536;
-				}
-				if( FALSE )
-				{
-					Func_Var_2 = 1;
-				}
-				if( TRUE )
-				{
-					turn patteLM0 to y-axis <90.021978> now;
-					Func_Var_7 = 0;
-					Func_Var_8 = 8192;
-					while( FALSE )
-					{
-						turn patteLM1 to z-axis <60.016484> now;
-						turn patteLM2 to z-axis <100.021978> now;
-						turn patteLM3 to z-axis <30.005495> now;
-						turn patteLM4 to z-axis <20.000000> now;
-						if( FALSE )
-						{
-							Func_Var_7 = Func_Var_8;
-						}
-						Func_Var_8 = 2;
-					}
-					if( TRUE )
-					{
-						Func_Var_2 = 1;
-					}
-				}
-			}
-			if( TRUE )
-			{
-				if( Func_Var_9 )
-				{
-					move ecraseur_epaule to y-axis [6553.599991] now;
-				}
-				turn patteLM1 to z-axis <60.016484> speed <-60.000000>;
-				if( TRUE )
-				{
-					turn patteLM2 to z-axis <100.021978> speed <0.000000>;
-					turn patteLM3 to z-axis <30.005495> speed <0.000000>;
-					if( TRUE )
-					{
-						Func_Var_2 = 2;
-					}
-				}
-			}
-			if( TRUE )
-			{
-				turn patteLM0 to y-axis <30.000000> speed <1.000000>;
-				Func_Var_7 = 0;
-				if( TRUE )
-				{
-					Func_Var_7 = 65536;
-				}
-				if( TRUE )
-				{
-					Func_Var_2 = 3;
-				}
-			}
-			if( TRUE )
-			{
-				turn patteLM1 to z-axis <60.016484> speed <-45.000000>;
-				turn patteLM2 to z-axis <100.021978> speed <0.000000>;
-				turn patteLM3 to z-axis <30.005495> speed <0.000000>;
-				turn patteLM4 to z-axis <20.000000> speed <0.000000>;
-				if( TRUE )
-				{
-					Func_Var_2 = 0;
-					Func_Var_2 = 0;
-					if( TRUE )
-					{
-						Func_Var_2 = 65536;
-					}
-					move ecraseur_epaule to y-axis [0.000000] now;
-					Func_Var_9 = Func_Var_2;
-				}
-			}
-			if( TRUE )
-			{
-				Func_Var_7 = 16384;
-				while( FALSE )
-				{
-					Func_Var_7 = 65536;
-				}
-				while( TRUE )
-				{
-					Func_Var_7 = 65536;
-				}
-				if( TRUE )
-				{
-					Func_Var_5 = 1;
-				}
-				Func_Var_7 = 0;
-				while( FALSE )
-				{
-					Func_Var_7 = 65536;
-				}
-				while( TRUE )
-				{
-					Func_Var_7 = 65536;
-				}
-				if( FALSE )
-				{
-					Func_Var_5 = 1;
-				}
-				if( TRUE )
-				{
-					turn patteRM0 to y-axis <90.021978> now;
-					Func_Var_7 = 0;
-					Func_Var_8 = 8192;
-					while( FALSE )
-					{
-						turn patteRM1 to z-axis <60.016484> now;
-						turn patteRM2 to z-axis <100.021978> now;
-						turn patteRM3 to z-axis <30.005495> now;
-						turn patteRM4 to z-axis <20.000000> now;
-						if( FALSE )
-						{
-							Func_Var_7 = Func_Var_8;
-						}
-						Func_Var_8 = 2;
-					}
-					if( TRUE )
-					{
-						Func_Var_5 = 1;
-					}
-				}
-			}
-			if( TRUE )
-			{
-				if( Func_Var_9 )
-				{
-					move ecraseur_epaule to y-axis [6553.599991] now;
-				}
-				turn patteRM1 to z-axis <60.016484> speed <60.000000>;
-				if( TRUE )
-				{
-					turn patteRM2 to z-axis <100.021978> speed <0.000000>;
-					turn patteRM3 to z-axis <30.005495> speed <0.000000>;
-					if( TRUE )
-					{
-						Func_Var_5 = 2;
-					}
-				}
-			}
-			if( TRUE )
-			{
-				turn patteRM0 to y-axis <30.000000> speed <1.000000>;
-				Func_Var_7 = 0;
-				if( TRUE )
-				{
-					Func_Var_7 = 65536;
-				}
-				if( TRUE )
-				{
-					Func_Var_5 = 3;
-				}
-			}
-			if( TRUE )
-			{
-				turn patteRM1 to z-axis <60.016484> speed <45.000000>;
-				turn patteRM2 to z-axis <100.021978> speed <0.000000>;
-				turn patteRM3 to z-axis <30.005495> speed <0.000000>;
-				turn patteRM4 to z-axis <20.000000> speed <0.000000>;
-				if( TRUE )
-				{
-					Func_Var_5 = 0;
-					Func_Var_5 = 0;
-					if( TRUE )
-					{
-						Func_Var_5 = 65536;
-					}
-					move ecraseur_epaule to y-axis [0.000000] now;
-					Func_Var_9 = Func_Var_5;
-				}
-			}
-			turn ecraseur_epaule to y-axis <0.000000> now;
-			move ecraseur_bras to z-axis [0.000000] now;
-			move ecraseur_bras to y-axis [0.000000] now;
-			move ecraseur_bras to y-axis [0.000000] now;
-			turn cephalotorax to x-axis <0.000000> now;
-			turn cephalotorax to z-axis <0.000000> now;
-			move load_shoulder to x-axis [300.000000] now;
-			move unload_shoulder to x-axis [300.000000] now;
-			Func_Var_8 = 0;
-			move load_shoulder to x-axis [0.000000] now;
-			move unload_shoulder to x-axis [0.000000] now;
-			move load_shoulder to z-axis [300.000000] now;
-			move unload_shoulder to z-axis [300.000000] now;
-			Func_Var_7 = 0;
-			move load_shoulder to z-axis [0.000000] now;
-			move unload_shoulder to z-axis [0.000000] now;
-			turn cephalotorax to x-axis <0.000000> now;
-			turn cephalotorax to z-axis <0.000000> now;
-			move load_shoulder to x-axis [10.000000] now;
-			move unload_shoulder to x-axis [10.000000] now;
-			turn cephalotorax to z-axis <0.000000> now;
-			move load_shoulder to x-axis [0.000000] now;
-			move unload_shoulder to x-axis [0.000000] now;
-			move load_shoulder to z-axis [20.000000] now;
-			move unload_shoulder to z-axis [20.000000] now;
-			turn cephalotorax to x-axis <0.000000> now;
-			move load_shoulder to z-axis [0.000000] now;
-			move unload_shoulder to z-axis [0.000000] now;
-			sleep 1;
+			turn leg1 to z-axis <31.005495> speed <40.000000>;
+			turn leg2 to y-axis <34.005495> speed <40.000000>;
+			turn leg2 to z-axis <31.005495> speed <40.000000>;
+			turn leg3 to y-axis <0.000000> speed <40.000000>;
+			turn leg3 to z-axis <0.000000> speed <40.000000>;
+			turn leg4 to y-axis <0.000000> speed <40.000000>;
+			turn leg5 to z-axis <-31.005495> speed <40.000000>;
+			turn leg6 to z-axis <2.000000> speed <40.000000>;
+			sleep 200;
 		}
+		if( bMoving )
+		{
+			turn leg1 to y-axis <55.010989> speed <40.000000>;
+			turn leg1 to z-axis <31.005495> speed <40.000000>;
+			turn leg2 to y-axis <34.005495> speed <40.000000>;
+			turn leg2 to z-axis <0.000000> speed <40.000000>;
+			turn leg3 to z-axis <31.005495> speed <40.000000>;
+			turn leg4 to y-axis <0.000000> speed <40.000000>;
+			turn leg4 to z-axis <-31.005495> speed <40.000000>;
+			turn leg5 to y-axis <-31.005495> speed <40.000000>;
+			turn leg5 to z-axis <-31.005495> speed <40.000000>;
+			turn leg6 to y-axis <3.000000> speed <40.000000>;
+			sleep 200;
+		}
+		turn leg1 to y-axis <43.005495> speed <40.000000>;
+		turn leg1 to z-axis <0.000000> speed <40.000000>;
+		turn leg2 to y-axis <0.000000> speed <40.000000>;
+		turn leg2 to z-axis <0.000000> speed <40.000000>;
+		turn leg3 to y-axis <34.005495> speed <40.000000>;
+		turn leg3 to z-axis <31.005495> speed <40.000000>;
+		turn leg4 to y-axis <-40.005495> speed <40.000000>;
+		turn leg4 to z-axis <-31.005495> speed <40.000000>;
+		turn leg5 to y-axis <-37.005495> speed <40.000000>;
+		turn leg5 to z-axis <0.000000> speed <40.000000>;
+		turn leg6 to y-axis <0.000000> speed <40.000000>;
+		turn leg6 to z-axis <-45.010989> speed <40.000000>;
+		sleep 200;
 	}
-	return (0);
 }
 
 StartMoving()
 {
 	bMoving = TRUE;
-	return (0);
 }
 
 StopMoving()
 {
 	bMoving = FALSE;
-	return (0);
 }
 
-EmbeddedSpringTest()
+MotionControl(Func_Var_1)
 {
-	wait-for-move base along x-axis;
-	wait-for-move base along y-axis;
-	wait-for-move base along z-axis;
-	wait-for-turn base around x-axis;
-	wait-for-turn base around y-axis;
-	wait-for-turn base around z-axis;
-	Static_Var_5 = 0;
-	return (0);
+	while( TRUE )
+	{
+		Func_Var_1 = bMoving;
+		if( Func_Var_1 )
+		{
+			call-script HexapodTrueWalk();
+		}
+		if( !Func_Var_1 )
+		{
+			sleep 100;
+			turn leg1 to y-axis <0.000000> speed <100.000000>;
+			turn leg1 to z-axis <0.000000> speed <100.000000>;
+			turn leg2 to y-axis <0.000000> speed <100.000000>;
+			turn leg2 to z-axis <0.000000> speed <100.000000>;
+			turn leg3 to y-axis <0.000000> speed <100.000000>;
+			turn leg3 to z-axis <0.000000> speed <100.000000>;
+			turn leg4 to y-axis <0.000000> speed <100.000000>;
+			turn leg4 to z-axis <0.000000> speed <100.000000>;
+			turn leg5 to y-axis <0.000000> speed <100.000000>;
+			turn leg5 to z-axis <0.000000> speed <100.000000>;
+			turn leg6 to y-axis <0.000000> speed <100.000000>;
+			turn leg6 to z-axis <0.000000> speed <100.000000>;
+		}
+	}
 }
 
 Create()
 {
-	turn patteLF0 to y-axis <-45.000000> now;
-	turn patteRF0 to y-axis <45.000000> now;
-	turn patteLB0 to y-axis <45.000000> now;
-	turn patteRB0 to y-axis <-45.000000> now;
 	bMoving = FALSE;
 	gun_1 = base;
 	restore_delay = 10;
@@ -765,21 +134,18 @@ Create()
 	set ARMORED to 1;
 	set ACTIVATION to 1;
 	Static_Var_5 = 1;
-	move ecraseur_epaule to y-axis [6553.599991] now;
+	move ecraseur_epaule to y-axis [13107.199982] now;
 	hide cartouche;
 	hide bouche;
 	dont-cache bouche;
-	start-script HexapodTrueWalk();
-	start-script EmbeddedSpringTest();
+	start-script MotionControl();
 	sleep 1;
 	Static_Var_5 = 1;
-	return (0);
 }
 
 SetMaxReloadTime(Func_Var_1)
 {
 	restore_delay = 20000;
-	return (0);
 }
 
 RetourTourelle()
@@ -787,13 +153,11 @@ RetourTourelle()
 	sleep restore_delay;
 	turn berceau to y-axis <0.000000> speed <25.000000>;
 	turn tourelle to x-axis <0.000000> speed <10.000000>;
-	return (0);
 }
 
 AimFromPrimary(piecenum)
 {
 	piecenum = berceau;
-	return (0);
 }
 
 AimPrimary(heading, pitch)
@@ -821,7 +185,6 @@ AimPrimary(heading, pitch)
 QueryPrimary(piecenum)
 {
 	piecenum = bouche;
-	return (0);
 }
 
 FirePrimary()
@@ -846,7 +209,6 @@ FirePrimary()
 AimFromSecondary(piecenum)
 {
 	piecenum = ecraseur_bras;
-	return (0);
 }
 
 AimSecondary(heading, pitch)
@@ -867,7 +229,6 @@ AimSecondary(heading, pitch)
 QuerySecondary(piecenum)
 {
 	piecenum = ecraseur_bras;
-	return (0);
 }
 
 FireSecondary(Func_Var_1)
@@ -878,7 +239,6 @@ FireSecondary(Func_Var_1)
 AimFromTertiary(piecenum)
 {
 	piecenum = cephalotorax;
-	return (0);
 }
 
 AimTertiary(heading, pitch)
@@ -895,7 +255,6 @@ AimTertiary(heading, pitch)
 QueryTertiary(piecenum)
 {
 	piecenum = cephalotorax;
-	return (0);
 }
 
 FireTertiary(Func_Var_1)
@@ -906,7 +265,6 @@ FireTertiary(Func_Var_1)
 SweetSpot(piecenum)
 {
 	piecenum = cephalotorax;
-	return (0);
 }
 
 Killed(severity, corpsetype)
@@ -923,21 +281,12 @@ Killed(severity, corpsetype)
 	explode cartouche type BITMAP3;
 	explode cartouche type BITMAP4;
 	explode cartouche type BITMAP5;
-	explode patteLF0 type BITMAP1;
-	explode patteRM0 type BITMAP3;
-	explode patteLB0 type BITMAP3;
-	explode patteRF1 type BITMAP3;
-	explode patteLM1 type BITMAP3;
-	explode patteRB1 type BITMAP1;
-	explode patteLF2 type BITMAP1;
-	explode patteRM2 type BITMAP4;
-	explode patteLB2 type BITMAP3;
-	explode patteRF3 type BITMAP5;
-	explode patteLM3 type BITMAP3;
-	explode patteRB3 type BITMAP4;
-	explode patteLF4 type BITMAP4;
-	explode patteRM4 type BITMAP4;
-	explode patteLB4 type BITMAP5;
+    explode leg1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode leg2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode leg3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode leg4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode leg5 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode leg6 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	corpsetype = 1;
 	return (2);
 }

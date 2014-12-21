@@ -122,6 +122,7 @@ local unitDef = {
 		[31] = [[corgen]],
 		[32] = [[corgant1]],
 		[33] = [[corpcan]],
+		[34] = [[monkeylord]],
 	},
 	customParams = {
 		providetech = [[Battle Commander,Assault Commander,Star Commander,Supreme Commander]],
