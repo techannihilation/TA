@@ -4,9 +4,9 @@
 #include "exptype.h"
 
 piece  RayTurret, raygun, RayMount, RayFocus, LMFront, RMFront, LMBack, RMBack,
-       RayFire, Flare, Body, rlleg, rfoot, llleg, lfoot, lupleg,
-       rupleg, base, LMF, RMF, LMB, RMB, MGTurret, MGBarrels,
-       MGFlare, LArm, RArm;
+       RayFire, Flare, Body, rlleg, rfoot, llleg, lfoot, lupleg, rupleg, base,
+       LMF, RMF, LMB, RMB, LMFFlare, RMFFlare, LMBFlare, RMBFlare, MGTurret,
+       MGBarrels, MGFlare, LArm, RArm, Spark_emit, Emit1, Emit2, Emit3, Emit4;
 
 static-var  bMoving, bAiming, Static_Var_3, gun_3, Firstep;
 
@@ -44,6 +44,28 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		sleep sleeptime;
 	}
 }
+
+Sparks()
+{
+	while( TRUE )
+	{
+		while( !bAiming )
+		{
+			sleep 100;
+		}
+		emit-sfx 1024 + 1 from Emit1;
+		sleep 5;
+		emit-sfx 1024 + 1 from Emit2;
+		sleep 5;
+		emit-sfx 1024 + 1 from Emit3;
+		sleep 5;
+		emit-sfx 1024 + 1 from Emit4;
+		sleep 5;
+		emit-sfx 1024 + 1 from Spark_emit;
+		sleep 200;
+	}
+}
+
 
 MotionControl()
 {
@@ -163,6 +185,7 @@ Create()
 	gun_3 = 0;
 	firstep = 1;
 	start-script SmokeUnit();
+	start-script Sparks();
 }
 
 RestoreAfterDelay()
@@ -320,19 +343,19 @@ QueryTertiary(piecenum)
 {
 	if( gun_3 == 0 )
 	{
-		piecenum = LMF;
+		piecenum = LMFFlare;
 	}
 	if( gun_3 == 1 )
 	{
-		piecenum = RMF;
+		piecenum = RMFFlare;
 	}
 	if( gun_3 == 2 )
 	{
-		piecenum = LMB;
+		piecenum = LMBFlare;
 	}
 	if( gun_3 == 3 )
 	{
-		piecenum = RMB;
+		piecenum = RMBFlare;
 	}
 }
 

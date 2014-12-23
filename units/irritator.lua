@@ -75,7 +75,7 @@ local unitDef = {
 		sfxtypes = {
 		explosiongenerators = {
 			[1] = [[custom:tllroaster_muzzle]],
-			[2] = [[custom:tlluber_glow]],
+			[2] = [[custom:lightning_muzzle_spark]],
 			[3] = [[custom:heli_muzzle]],
 		},
 	},
@@ -164,7 +164,7 @@ local weaponDefs = {
 		areaOfEffect = 125,
 		craterBoost = 0,
 		craterMult = 0,
-		id = 244,
+		explosionGenerator = [[custom:small_bullet_fx]],
 		impulseBoost = 0.6,
 		impulseFactor = 0.6,
 		lineOfSight = true,
