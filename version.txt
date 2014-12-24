@@ -1,5 +1,35 @@
----------------------------------------- v2.31.5 ---------------------------------------
-Changelog to follow
+---------------------------------------- v2.32.0 ---------------------------------------
+
+******* Added Special Xmas Presents *******
+
+----Visual----
+Many weapon visuals bug fixed
+New weapon effect for many units
+
+----Bugs----
+Fix upppercut not getting hit by torpedo bombers
+Fix mine layer builddistance, Closes #491
+Fix python not firing while on water, Closes #464
+Change movement class for demon and akmech, they will now crush t1 walls, closes #501
+Increase absolutor movement speed, Closes #496
+Reduce buildtime for jumpdrive, Closes #515
+Added wreaks for t1.5 raven and vanguard
+Fix tll t3 sniper weapon, increase range 1350>1550, Closes #504
+
+----Balance----
+Reworked mines
+Increase howie morph cost, metal and energy cost are now set as a different between original unit cost and howies cost, xp 0.75 > 0.70, time 60 > 150
+Rebalance t3 navel carriers -- Added Fast nukes
+Tech lock t2 battle sub and battleships
+Increase tll t2 constructor metal cost by x2
+Increase arm/core navel t1.5 antiswarm ship damage by 25%, Closes #483
+Increase arm hero lab metal cost 21200>100000, energycost 99000>1200000, Increaes core hero lab metalcost 20000>110000, energycost 94000>1000000
+Increase tllvaliant metalcost 201250>175000, energycost 220000>253000, Reduce tllion cannon aoe 300>150
+
+---Improvements----
+Added Mines to tll faction
+Add updated Metal Maker Control gadget, Add old behivour back MM now close when attacked and add button to temporary close Metal Maker
+Added widget to enabled los view while placing radar tower or if unit is selected (ie same behivor as mex placement) needs spring 0.99+
 
 ---------------------------------------- v2.31.4 ---------------------------------------
 
