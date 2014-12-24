@@ -5,7 +5,8 @@
 
 piece  base, pelvis, torso, lshoulder, larm, lcannon, leftfirepoint, rshoulder,
        rarm, rcannon, rightfirepoint, lupleg, llowleg, lfoot, lftoe, lbtoe1,
-       rupleg, rlowleg, rfoot, rftoe, rbtoe1, plasmacannon, barrel, firepoint;
+       rupleg, rlowleg, rfoot, rftoe, rbtoe1, plasmacannon, barrel, firepoint,
+       emit1, emit2;
 
 static-var  gun_1, bMoving, bAiming, Static_Var_4, Static_Var_5,
             Static_Var_6, Static_Var_7, Static_Var_8, Static_Var_9, Static_Var_10,
@@ -206,6 +207,21 @@ StopMoving()
 
 RestorePrimary()
 {
+	set-signal-mask SIG_AIM_2;
+	sleep 6500;
+	Static_Var_8 = 0;
+	Static_Var_5 = 0;
+	if( bAiming == 1 )
+	{
+		if( !Static_Var_4 AND !Static_Var_6 )
+		{
+			bAiming = FALSE;
+		}
+	}
+}
+
+RestoreSecondary()
+{
 	set-signal-mask SIG_AIM;
 	sleep 6000;
 	Static_Var_9 = 0;
@@ -226,21 +242,6 @@ RestorePrimary()
 		{
 			bAiming = FALSE;
 			return (0);
-		}
-	}
-}
-
-RestoreSecondary()
-{
-	set-signal-mask SIG_AIM_2;
-	sleep 6500;
-	Static_Var_8 = 0;
-	Static_Var_5 = 0;
-	if( bAiming == 1 )
-	{
-		if( !Static_Var_4 AND !Static_Var_6 )
-		{
-			bAiming = FALSE;
 		}
 	}
 }
@@ -266,7 +267,7 @@ Create()
 	Static_Var_12 = 0;
 	Static_Var_13 = 1;
 	set ARMORED to 1;
-	start-script RestoreSecondary();
+	start-script RestorePrimary();
 	while( get BUILD_PERCENT_LEFT )
 	{
 		sleep 1000;
@@ -279,82 +280,18 @@ SweetSpot(piecenum)
 	piecenum = torso;
 }
 
+
 QueryPrimary(piecenum)
-{
-	if( gun_1 )
-	{
-		piecenum = leftfirepoint;
-	}
-	if( !gun_1 )
-	{
-		piecenum = rightfirepoint;
-	}
-}
-
-AimFromPrimary(piecenum)
-{
-	piecenum = torso;
-}
-
-AimPrimary(heading, pitch)
-{
-	signal SIG_AIM;
-	set-signal-mask SIG_AIM;
-	bAiming = TRUE;
-	Static_Var_4 = 1;
-	Static_Var_9 = heading;
-	Static_Var_10 = 0 - pitch;
-	turn torso to y-axis heading speed <60.000000>;
-	turn larm to x-axis <0.000000> - pitch speed <50.000000>;
-	turn rarm to x-axis <0.000000> - pitch speed <50.000000>;
-	Static_Var_10 = 0 - pitch;
-	if( Static_Var_10 <= -32768 )
-	{
-		turn rcannon to y-axis Static_Var_10 speed <55.000000>;
-		turn lcannon to y-axis <0.000000> - Static_Var_10 speed <55.000000>;
-	}
-	if( Static_Var_10 > -32768 )
-	{
-		turn rcannon to y-axis <0.000000> speed <55.000000>;
-		turn lcannon to y-axis <0.000000> speed <55.000000>;
-	}
-	wait-for-turn torso around y-axis;
-	wait-for-turn lshoulder around x-axis;
-	wait-for-turn rshoulder around x-axis;
-	wait-for-turn rcannon around x-axis;
-	wait-for-turn lcannon around x-axis;
-	start-script RestorePrimary();
-	return (1);
-}
-
-FirePrimary()
-{
-	if( gun_1 )
-	{
-	//	move leftfirepoint to z-axis [-4.500000] speed [300.000000];
-		sleep 150;
-	//	move leftfirepoint to z-axis [0.000000] speed [3.500000];
-	}
-	if( !gun_1 )
-	{
-	//	move rightfirepoint to z-axis [-4.500000] speed [300.000000];
-		sleep 150;
-	//	move rightfirepoint to z-axis [0.000000] speed [3.500000];
-	}
-	gun_1 = !gun_1;
-}
-
-QuerySecondary(piecenum)
 {
 	piecenum = firepoint;
 }
 
-AimFromSecondary(piecenum)
+AimFromPrimary(piecenum)
 {
 	piecenum = plasmacannon;
 }
 
-AimSecondary(heading, pitch)
+AimPrimary(heading, pitch)
 {
 	signal SIG_AIM_2;
 	set-signal-mask SIG_AIM_2;
@@ -383,16 +320,85 @@ AimSecondary(heading, pitch)
 	}
 	turn plasmacannon to y-axis heading speed <30.000000>;
 	wait-for-turn plasmacannon around y-axis;
+	start-script RestorePrimary();
+	return (1);
+}
+
+FirePrimary()
+{
+	emit-sfx 1024 + 1 from firepoint;
+	emit-sfx 1024 + 2 from emit1;
+	emit-sfx 1024 + 3 from emit2;
+	move barrel to z-axis [-10.700000] speed [20.000000];
+	sleep 500;
+	move barrel to z-axis [0.000000] speed [1.200000];
+}
+
+QuerySecondary(piecenum)
+{
+	if( gun_1 )
+	{
+		piecenum = leftfirepoint;
+	}
+	if( !gun_1 )
+	{
+		piecenum = rightfirepoint;
+	}
+}
+
+AimFromSecondary(piecenum)
+{
+	piecenum = torso;
+}
+
+AimSecondary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	bAiming = TRUE;
+	Static_Var_4 = 1;
+	Static_Var_9 = heading;
+	Static_Var_10 = 0 - pitch;
+	turn torso to y-axis heading speed <60.000000>;
+	turn larm to x-axis <0.000000> - pitch speed <50.000000>;
+	turn rarm to x-axis <0.000000> - pitch speed <50.000000>;
+	Static_Var_10 = 0 - pitch;
+	if( Static_Var_10 <= -32768 )
+	{
+		turn rcannon to y-axis Static_Var_10 speed <55.000000>;
+		turn lcannon to y-axis <0.000000> - Static_Var_10 speed <55.000000>;
+	}
+	if( Static_Var_10 > -32768 )
+	{
+		turn rcannon to y-axis <0.000000> speed <55.000000>;
+		turn lcannon to y-axis <0.000000> speed <55.000000>;
+	}
+	wait-for-turn torso around y-axis;
+	wait-for-turn lshoulder around x-axis;
+	wait-for-turn rshoulder around x-axis;
+	wait-for-turn rcannon around x-axis;
+	wait-for-turn lcannon around x-axis;
 	start-script RestoreSecondary();
 	return (1);
 }
 
 FireSecondary()
 {
-	explode firepoint type BITMAPONLY | BITMAP5;
-	move barrel to z-axis [-10.700000] speed [20.000000];
-	sleep 500;
-	move barrel to z-axis [0.000000] speed [1.200000];
+	if( gun_1 )
+	{
+		emit-sfx 1024 + 0 from leftfirepoint;
+		move lcannon to z-axis [-4.500000] speed [300.000000];
+		sleep 150;
+		move lcannon to z-axis [0.000000] speed [3.500000];
+	}
+	if( !gun_1 )
+	{
+		emit-sfx 1024 + 0 from rightfirepoint;
+		move rcannon to z-axis [-4.500000] speed [300.000000];
+		sleep 150;
+		move rcannon to z-axis [0.000000] speed [3.500000];
+	}
+	gun_1 = !gun_1;
 }
 
 Killed(severity, corpsetype)
