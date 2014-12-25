@@ -251,6 +251,8 @@ experimental_land = {
            "tllvaliant",
            -- _experimental_
            "armpraet",
+	   "monkeylord",
+	   "irritator",
 },
 flamethrowers = {
            "corpyro",
