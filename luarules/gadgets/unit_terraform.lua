@@ -237,6 +237,7 @@ local rampCmdDesc = {
   name    = 'Ramp',
   cursor  = 'Repair', 
   action  = 'rampground',
+  texture = 'luarules/images/commands/ramp.png',
   tooltip = 'Build a Ramp between 2 positions, click 2 times: start and end of ramp',
 }
 
@@ -246,6 +247,7 @@ local levelCmdDesc = {
   name    = 'Level',
   cursor  = 'Repair', 
   action  = 'levelground',
+  texture = 'luarules/images/commands/level.png',
   tooltip = 'Levels the ground in an area - draw a line or shape while holding mouse',
 }
 
@@ -255,6 +257,7 @@ local raiseCmdDesc = {
   name    = 'Raise',
   cursor  = 'Repair', 
   action  = 'raiseground',
+  texture = 'luarules/images/commands/raise.png',
   tooltip = 'Raises/Lowers the ground in an area',
 }
 
@@ -264,6 +267,7 @@ local smoothCmdDesc = {
   name    = 'Smooth',
   cursor  = 'Repair', 
   action  = 'smoothground',
+  texture = 'luarules/images/commands/smooth.png',
   tooltip = 'Smooths the ground in an area',
 }
 
@@ -273,6 +277,7 @@ local restoreCmdDesc = {
   name    = 'Restore',
   cursor  = 'Repair', 
   action  = 'restoreground',
+  texture = 'luarules/images/commands/restore.png',
   tooltip = 'Restores the ground to origional height',
 }
 
@@ -282,6 +287,7 @@ local bumpyCmdDesc = {
   name    = 'Bumpify',
   cursor  = 'Repair', 
   action  = 'bumpifyground',
+  texture = 'luarules/images/commands/bumpy.png',
   tooltip = 'Makes the ground bumpy',
 }
 
