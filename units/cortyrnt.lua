@@ -25,7 +25,6 @@ local unitDef = {
 	collisionvolumetest = 1,
 	collisionvolumetype = [[Ell]],
 	corpse = [[dead]],
-	damageModifier = 0.5,
 	defaultmissiontype = [[Standby]],
 	description = [[Super Battleship]],
 	designation = [[SB-AS9U]],

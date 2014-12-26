@@ -222,7 +222,6 @@ close()
 
 Go()
 { bAiming = TRUE;
-  set ARMORED to 0;
   call-script open();
   ready=1;
  }
@@ -230,7 +229,6 @@ Go()
 Stop()
 { ready=0;
   call-script close();
-  set ARMORED to 1;
   bAiming = FALSE;
  }
 

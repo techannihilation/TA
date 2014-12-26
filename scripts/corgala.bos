@@ -266,7 +266,6 @@ Create()
 	unitviewer = FALSE;
 	Static_Var_12 = 0;
 	Static_Var_13 = 1;
-	set ARMORED to 1;
 	start-script RestorePrimary();
 	while( get BUILD_PERCENT_LEFT )
 	{

@@ -22,7 +22,6 @@ local unitDef = {
 	canstop = 1,
 	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	corpse = [[irritator_dead]],
-	damageModifier = 1,
 	defaultmissiontype = [[Standby]],
 	description = [[Experimental Siege Unit]],
 	designation = [[Dino Siege Kbot]],

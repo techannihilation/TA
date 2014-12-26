@@ -25,7 +25,6 @@ local unitDef = {
 	collisionVolumeScales = [[180.02865600586 262.02865600586 129.02865600586]],
 	collisionVolumeTest = 1,
 	collisionVolumeType = [[ellipsoid]],
-	damageModifier = 1,
 	defaultmissiontype = [[Standby]],
 	description = [[Very Heavy Demolition Mech]],
 	energyMake = 0.8,

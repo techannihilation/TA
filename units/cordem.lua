@@ -20,7 +20,6 @@ local unitDef = {
 	canstop = 1,
 	category = [[ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	corpse = [[dead]],
-	damageModifier = 0.5,
 	defaultmissiontype = [[Standby]],
 	description = [[Experimental Flame Kbot]],
 	designation = [[COR-DMN]],

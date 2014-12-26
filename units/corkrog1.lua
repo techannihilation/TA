@@ -25,7 +25,6 @@ local unitDef = {
 	collisionvolumetest = 1,
 	collisionvolumetype = [[Ell]],
 	corpse = [[DEAD]],
-	damageModifier = 1,
 	defaultmissiontype = [[Standby]],
 	description = [[Prototype Super-Heavy Assault Kbot]],
 	energyStorage = 3000,

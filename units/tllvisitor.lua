@@ -21,7 +21,6 @@ local unitDef = {
 	canstop = 1,
 	category = [[ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTVTOL WEAPON]],
 	corpse = [[dead]],
-	damageModifier = 0.5,
 	defaultmissiontype = [[Standby]],
 	description = [[Missile Ship]],
 	designation = [[]],

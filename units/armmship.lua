@@ -25,7 +25,6 @@ local unitDef = {
 	collisionVolumeOffsets = [[0 -5 -3]],
 	collisionVolumeType = [[CylZ]],
 	corpse = [[DEAD]],
-	damageModifier = 0.5,
 	defaultmissiontype = [[Standby]],
 	description = [[Cruise Missile Ship]],
 	energyMake = 0.8,

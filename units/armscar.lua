@@ -20,7 +20,6 @@ local unitDef = {
 	canstop = 1,
 	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	corpse = [[dead]],
-	damageModifier = 0.8,
 	defaultmissiontype = [[Standby]],
 	description = [[Fusilage Combat Tank]],
 	designation = [[MAD-ASC]],

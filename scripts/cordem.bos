@@ -3,84 +3,87 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, pelvis, torso, spines, neck, spikes, rtubes, ltubes, head, horns, shoulders, luparm, lloarm, lflamegun, lflame, ruparm, rloarm, rflamegun, rflame, pack, rthigh, rleg, rfoot, lthigh, lleg, lfoot,
-		smoke1, smoke2, smoke3, smoke4;
+piece  base, pelvis, torso, spines, neck, spikes, rtubes, ltubes,
+       head, horns, shoulders, luparm, lloarm, lflamegun, lflame, ruparm,
+       rloarm, rflamegun, rflame, pack, rthigh, rleg, rfoot, lthigh,
+       lleg, lfoot, smoke1, smoke2, smoke3, smoke4;
 
-static-var  restore_delay, Static_Var_9, bmoving, baiming;
+static-var  Static_Var_1, gun_1, bMoving, bAiming;
 
 // Signal definitions
 #define SIG_MOVE			2
 #define SIG_AIM				4
-#define SIG_LOCK 			8
 
-lua_FlameShot(weapon) //Distortion and lups flame effect
+
+lua_FlameShot(Func_Var_1)
 {
-  return 0;
 }
 
-walk(smoketype)
+walk(Func_Var_1)
 {
-	smoketype = 256 | 2;
-	if( bmoving )
+	Func_Var_1 = 256 | 2;
+	if( bMoving )
 	{
-		turn lleg to x-axis <15.> speed <110>; 		turn lfoot to x-axis <-15.> speed <110>;
-		
-		turn lthigh to x-axis <20.> speed <60>;
-		turn rthigh to x-axis <-20.> speed <55>;
-		turn rleg to x-axis <-15.> speed <115>;		turn rfoot to x-axis <15.> speed <115>;
-			emit-sfx smoketype from smoke1;
-		    emit-sfx smoketype from smoke4;
-		    emit-sfx smoketype from smoke1;
-		    emit-sfx smoketype from smoke4;
+		turn lleg to x-axis <15.000000> speed <110.000000>;
+		turn lfoot to x-axis <-15.000000> speed <110.000000>;
+		turn lthigh to x-axis <20.000000> speed <60.000000>;
+		turn rthigh to x-axis <-20.000000> speed <55.000000>;
+		turn rleg to x-axis <-15.000000> speed <115.000000>;
+		turn rfoot to x-axis <15.000000> speed <115.000000>;
+		emit-sfx Func_Var_1 from smoke1;
+		emit-sfx Func_Var_1 from smoke4;
+		emit-sfx Func_Var_1 from smoke1;
+		emit-sfx Func_Var_1 from smoke4;
 		sleep 500;
-		    emit-sfx smoketype from smoke2;
-		    emit-sfx smoketype from smoke3;
-		turn rleg to x-axis <15.> speed <105>;		turn rfoot to x-axis <-15.> speed <105>;
-	
+		emit-sfx Func_Var_1 from smoke2;
+		emit-sfx Func_Var_1 from smoke3;
+		turn rleg to x-axis <15.000000> speed <105.000000>;
+		turn rfoot to x-axis <-15.000000> speed <105.000000>;
 		sleep 200;
-		    emit-sfx smoketype from smoke2;
-		    emit-sfx smoketype from smoke3;
+		emit-sfx Func_Var_1 from smoke2;
+		emit-sfx Func_Var_1 from smoke3;
 	}
-	while( bmoving )
+	while( bMoving )
 	{
-		if( bmoving )
+		if( bMoving )
 		{
-			turn rthigh to x-axis <30.> speed <55>;
-			turn lthigh to x-axis <-30.> speed <60>;
-			turn lleg to x-axis <-20.> speed <110>;			turn lfoot to x-axis <20.> speed <110>;
-			emit-sfx smoketype from smoke1;
-		    emit-sfx smoketype from smoke2;
-		    emit-sfx smoketype from smoke3;
-		    emit-sfx smoketype from smoke4;
-		    emit-sfx smoketype from smoke1;
-		    emit-sfx smoketype from smoke2;
-		    emit-sfx smoketype from smoke3;
-		    emit-sfx smoketype from smoke4;
+			turn rthigh to x-axis <30.000000> speed <55.000000>;
+			turn lthigh to x-axis <-30.000000> speed <60.000000>;
+			turn lleg to x-axis <-20.000000> speed <110.000000>;
+			turn lfoot to x-axis <20.000000> speed <110.000000>;
+			emit-sfx Func_Var_1 from smoke1;
+			emit-sfx Func_Var_1 from smoke2;
+			emit-sfx Func_Var_1 from smoke3;
+			emit-sfx Func_Var_1 from smoke4;
+			emit-sfx Func_Var_1 from smoke1;
+			emit-sfx Func_Var_1 from smoke2;
+			emit-sfx Func_Var_1 from smoke3;
+			emit-sfx Func_Var_1 from smoke4;
 			sleep 700;
-			emit-sfx smoketype from smoke1;
-		    emit-sfx smoketype from smoke2;
-			turn lleg to x-axis <20.> speed <110>;			turn lfoot to x-axis <-20.> speed <110>;
-			
+			emit-sfx Func_Var_1 from smoke1;
+			emit-sfx Func_Var_1 from smoke2;
+			turn lleg to x-axis <20.000000> speed <110.000000>;
+			turn lfoot to x-axis <-20.000000> speed <110.000000>;
 			sleep 400;
-		    emit-sfx smoketype from smoke1;
-		    emit-sfx smoketype from smoke2;
+			emit-sfx Func_Var_1 from smoke1;
+			emit-sfx Func_Var_1 from smoke2;
 		}
-		if( bmoving )
+		if( bMoving )
 		{
-			turn lthigh to x-axis <30.> speed <60>;
-			turn rthigh to x-axis <-30.> speed <55>;
-			turn rleg to x-axis <-20.> speed <115>;			turn rfoot to x-axis <20.> speed <115>;
-		    emit-sfx smoketype from smoke3;
-		    emit-sfx smoketype from smoke3;
+			turn lthigh to x-axis <30.000000> speed <60.000000>;
+			turn rthigh to x-axis <-30.000000> speed <55.000000>;
+			turn rleg to x-axis <-20.000000> speed <115.000000>;
+			turn rfoot to x-axis <20.000000> speed <115.000000>;
+			emit-sfx Func_Var_1 from smoke3;
+			emit-sfx Func_Var_1 from smoke3;
 			sleep 700;
-		    emit-sfx smoketype from smoke4;
-			turn rleg to x-axis <20.> speed <105>;			turn rfoot to x-axis <-20.> speed <105>;
-
+			emit-sfx Func_Var_1 from smoke4;
+			turn rleg to x-axis <20.000000> speed <105.000000>;
+			turn rfoot to x-axis <-20.000000> speed <105.000000>;
 			sleep 400;
-		    emit-sfx smoketype from smoke4;
+			emit-sfx Func_Var_1 from smoke4;
 		}
 	}
-	return (0);
 }
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -110,82 +113,81 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-IdleCheck(smoketype)
+IdleCheck(Func_Var_1)
 {
-	while (1)
+	while( TRUE )
 	{
 		sleep 3000;
-			emit-sfx smoketype from smoke1;
-		    emit-sfx smoketype from smoke2;
-		    emit-sfx smoketype from smoke3;
-		    emit-sfx smoketype from smoke4;
-		    emit-sfx smoketype from smoke1;
-		    emit-sfx smoketype from smoke2;
-		    emit-sfx smoketype from smoke3;
-		    emit-sfx smoketype from smoke4;
+		emit-sfx Func_Var_1 from smoke1;
+		emit-sfx Func_Var_1 from smoke2;
+		emit-sfx Func_Var_1 from smoke3;
+		emit-sfx Func_Var_1 from smoke4;
+		emit-sfx Func_Var_1 from smoke1;
+		emit-sfx Func_Var_1 from smoke2;
+		emit-sfx Func_Var_1 from smoke3;
+		emit-sfx Func_Var_1 from smoke4;
 		sleep 100;
-			emit-sfx smoketype from smoke1;
-		    emit-sfx smoketype from smoke2;
-		    emit-sfx smoketype from smoke3;
-		    emit-sfx smoketype from smoke4;
+		emit-sfx Func_Var_1 from smoke1;
+		emit-sfx Func_Var_1 from smoke2;
+		emit-sfx Func_Var_1 from smoke3;
+		emit-sfx Func_Var_1 from smoke4;
 		sleep 6000;
-			emit-sfx smoketype from smoke1;
-		    emit-sfx smoketype from smoke2;
-		    emit-sfx smoketype from smoke3;
-		    emit-sfx smoketype from smoke4;
-		    emit-sfx smoketype from smoke1;
-		    emit-sfx smoketype from smoke2;
-		    emit-sfx smoketype from smoke3;
-		    emit-sfx smoketype from smoke4;
+		emit-sfx Func_Var_1 from smoke1;
+		emit-sfx Func_Var_1 from smoke2;
+		emit-sfx Func_Var_1 from smoke3;
+		emit-sfx Func_Var_1 from smoke4;
+		emit-sfx Func_Var_1 from smoke1;
+		emit-sfx Func_Var_1 from smoke2;
+		emit-sfx Func_Var_1 from smoke3;
+		emit-sfx Func_Var_1 from smoke4;
 		sleep 100;
-			emit-sfx smoketype from smoke1;
-		    emit-sfx smoketype from smoke2;
-		    emit-sfx smoketype from smoke3;
-		    emit-sfx smoketype from smoke4;
+		emit-sfx Func_Var_1 from smoke1;
+		emit-sfx Func_Var_1 from smoke2;
+		emit-sfx Func_Var_1 from smoke3;
+		emit-sfx Func_Var_1 from smoke4;
 		sleep 3000;
-		if (!bMoving AND !bAiming)
+		if( !bMoving AND !bAiming )
 		{
-			smoketype = 256 | 2;
-		    emit-sfx smoketype from smoke1;
-		    emit-sfx smoketype from smoke2;
-		    emit-sfx smoketype from smoke3;
-		    emit-sfx smoketype from smoke4;
-			turn neck to y-axis <7.5> speed <10>;
-			turn head to y-axis <7.5> speed <50>;
+			Func_Var_1 = 256 | 2;
+			emit-sfx Func_Var_1 from smoke1;
+			emit-sfx Func_Var_1 from smoke2;
+			emit-sfx Func_Var_1 from smoke3;
+			emit-sfx Func_Var_1 from smoke4;
+			turn neck to y-axis <7.500000> speed <10.000000>;
+			turn head to y-axis <7.500000> speed <50.000000>;
 			wait-for-turn neck around y-axis;
 			wait-for-turn head around y-axis;
-		    emit-sfx smoketype from smoke1;
-		    emit-sfx smoketype from smoke2;
-		    emit-sfx smoketype from smoke3;
-		    emit-sfx smoketype from smoke4;
-			turn neck to y-axis <-7.5> speed <10>;
-			turn head to y-axis <-7.5> speed <50>;
-		    emit-sfx smoketype from smoke1;
-		    emit-sfx smoketype from smoke2;
-		    emit-sfx smoketype from smoke3;
-		    emit-sfx smoketype from smoke4;
+			emit-sfx Func_Var_1 from smoke1;
+			emit-sfx Func_Var_1 from smoke2;
+			emit-sfx Func_Var_1 from smoke3;
+			emit-sfx Func_Var_1 from smoke4;
+			turn neck to y-axis <-7.500000> speed <10.000000>;
+			turn head to y-axis <-7.500000> speed <50.000000>;
+			emit-sfx Func_Var_1 from smoke1;
+			emit-sfx Func_Var_1 from smoke2;
+			emit-sfx Func_Var_1 from smoke3;
+			emit-sfx Func_Var_1 from smoke4;
 			wait-for-turn neck around y-axis;
 			wait-for-turn head around y-axis;
-			turn neck to y-axis <0> speed <10>;
-			turn head to y-axis <0> speed <10>;
+			turn neck to y-axis <0.000000> speed <10.000000>;
+			turn head to y-axis <0.000000> speed <10.000000>;
 			wait-for-turn neck around y-axis;
 			wait-for-turn head around y-axis;
-		    emit-sfx smoketype from smoke1;
-		    emit-sfx smoketype from smoke2;
-		    emit-sfx smoketype from smoke3;
-		    emit-sfx smoketype from smoke4;
-			
+			emit-sfx Func_Var_1 from smoke1;
+			emit-sfx Func_Var_1 from smoke2;
+			emit-sfx Func_Var_1 from smoke3;
+			emit-sfx Func_Var_1 from smoke4;
 		}
-		turn neck to y-axis <0> speed <10>;
-		turn head to y-axis <0> speed <7>;
+		turn neck to y-axis <0.000000> speed <10.000000>;
+		turn head to y-axis <0.000000> speed <7.000000>;
 		wait-for-turn neck around y-axis;
-		emit-sfx smoketype from smoke1;
-		emit-sfx smoketype from smoke2;
-		emit-sfx smoketype from smoke3;
-		emit-sfx smoketype from smoke4;
-		emit-sfx smoketype from smoke4;
+		emit-sfx Func_Var_1 from smoke1;
+		emit-sfx Func_Var_1 from smoke2;
+		emit-sfx Func_Var_1 from smoke3;
+		emit-sfx Func_Var_1 from smoke4;
+		emit-sfx Func_Var_1 from smoke4;
 		wait-for-turn head around y-axis;
-		emit-sfx smoketype from smoke4;
+		emit-sfx Func_Var_1 from smoke4;
 		sleep 10;
 	}
 }
@@ -194,11 +196,10 @@ Create()
 {
 	hide rflame;
 	hide lflame;
-	bMoving = 0;
-	baiming = 0;
-	Static_Var_9 = 0;
-	restore_delay = 5000;
-	set ARMORED to TRUE;
+	bMoving = FALSE;
+	bAiming = FALSE;
+	gun_1 = base;
+	Static_Var_1 = 5000;
 	while( get BUILD_PERCENT_LEFT )
 	{
 		sleep 400;
@@ -209,7 +210,7 @@ Create()
 
 StartMoving()
 {
-	bMoving = 1;
+	bMoving = TRUE;
 	signal SIG_MOVE;
 	set-signal-mask SIG_MOVE;
 	start-script walk();
@@ -217,100 +218,90 @@ StartMoving()
 
 StopMoving()
 {
-	bMoving = 0;
+	bMoving = FALSE;
 	signal SIG_MOVE;
-	turn lthigh to x-axis <0.> speed <100.>;
-	turn rthigh to x-axis <0.> speed <100.>;
-	turn lleg to x-axis <0.> speed <200.>;
-	turn rleg to x-axis <0.> speed <200.>;
-	
-	turn lthigh to z-axis <0.> speed <100.>;
-	turn rthigh to z-axis <0.> speed <100.>;
-	turn lleg to z-axis <0.> speed <200.>;
-	turn rleg to z-axis <0.> speed <200.>;
-	
-	move pelvis to y-axis [0.] speed [40.];
-	turn pelvis to z-axis <0.> now;
-	
-	turn rfoot to x-axis <0.> speed <200.>;
-	turn lfoot to x-axis <0.> speed <200.>;	
-	turn rfoot to z-axis <0.> speed <200.>;
-	turn lfoot to z-axis <0.> speed <200.>;
+	turn lthigh to x-axis <0.000000> speed <100.000000>;
+	turn rthigh to x-axis <0.000000> speed <100.000000>;
+	turn lleg to x-axis <0.000000> speed <200.000000>;
+	turn rleg to x-axis <0.000000> speed <200.000000>;
+	turn lthigh to z-axis <0.000000> speed <100.000000>;
+	turn rthigh to z-axis <0.000000> speed <100.000000>;
+	turn lleg to z-axis <0.000000> speed <200.000000>;
+	turn rleg to z-axis <0.000000> speed <200.000000>;
+	move pelvis to y-axis [0.000000] speed [40.000000];
+	turn pelvis to z-axis <0.000000> now;
+	turn rfoot to x-axis <0.000000> speed <200.000000>;
+	turn lfoot to x-axis <0.000000> speed <200.000000>;
+	turn rfoot to z-axis <0.000000> speed <200.000000>;
+	turn lfoot to z-axis <0.000000> speed <200.000000>;
 }
 
 RestoreAfterDelay()
 {
-    sleep 500;
+	sleep 500;
 	stop-spin lflamegun around z-axis decelerate <3.000000>;
 	stop-spin rflamegun around z-axis decelerate <3.000000>;
-	sleep restore_delay;
-	
-
-	turn torso to y-axis <0.000000> speed <80>;
-	turn torso to x-axis <0.000000> speed <80>;
+	sleep Static_Var_1;
+	turn torso to y-axis <0.000000> speed <80.000000>;
+	turn torso to x-axis <0.000000> speed <80.000000>;
 	wait-for-turn torso around y-axis;
-	baiming = 0;
+	bAiming = FALSE;
 }
 
 AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	baiming = 1;
+	bAiming = TRUE;
 	turn torso to y-axis heading speed <185.000000>;
-	turn torso to x-axis <0.000000> - pitch speed 150;
+	turn torso to x-axis <0.000000> - pitch speed <0.824176>;
 	wait-for-turn torso around y-axis;
 	spin lflamegun around z-axis speed <300.000000> accelerate <35.000000>;
 	spin rflamegun around z-axis speed <300.000000> accelerate <35.000000>;
-	
 	start-script RestoreAfterDelay();
-	
 	return (1);
 }
 
 Shot1()
 {
 	call-script lua_FlameShot(1);
-	return (TRUE);
+	return (1);
 }
 
-FirePrimary(smoketype)
+FirePrimary(Func_Var_1)
 {
-	if( Static_Var_9 == 0 )
+	if( gun_1 == 0 )
 	{
 	}
-	if( Static_Var_9 == 1 )
+	if( gun_1 == 1 )
 	{
 	}
-	Static_Var_9 = !Static_Var_9;
-	
-	smoketype = 256 | 2;
-	emit-sfx smoketype from smoke1;
-	emit-sfx smoketype from smoke2;
-	emit-sfx smoketype from smoke3;
-	emit-sfx smoketype from smoke4;
-
-	     emit-sfx 1024 from rflame;
-		 emit-sfx 1024 from lflame;
-   sleep 1;
-         emit-sfx 1024 from rflame;
-         emit-sfx 1024 from lflame;
-   sleep 8;
-         emit-sfx 1024 from rflame;
-         emit-sfx 1024 from lflame;
-   sleep 16;
-         emit-sfx 1024 from rflame;
-         emit-sfx 1024 from lflame;
-   sleep 24;
-         emit-sfx 1024 from rflame;
-         emit-sfx 1024 from lflame;
-   sleep 32;
-         emit-sfx 1024 from rflame;
-         emit-sfx 1024 from lflame;
-   sleep 40;
-         emit-sfx 1024 from rflame;
-         emit-sfx 1024 from lflame;
-
+	gun_1 = !gun_1;
+	Func_Var_1 = 256 | 2;
+	emit-sfx Func_Var_1 from smoke1;
+	emit-sfx Func_Var_1 from smoke2;
+	emit-sfx Func_Var_1 from smoke3;
+	emit-sfx Func_Var_1 from smoke4;
+	emit-sfx 1024 from rflame;
+	emit-sfx 1024 from lflame;
+	sleep 1;
+	emit-sfx 1024 from rflame;
+	emit-sfx 1024 from lflame;
+	sleep 8;
+	emit-sfx 1024 from rflame;
+	emit-sfx 1024 from lflame;
+	sleep 16;
+	emit-sfx 1024 from rflame;
+	emit-sfx 1024 from lflame;
+	sleep 24;
+	emit-sfx 1024 from rflame;
+	emit-sfx 1024 from lflame;
+	sleep 32;
+	emit-sfx 1024 from rflame;
+	emit-sfx 1024 from lflame;
+	sleep 40;
+	emit-sfx 1024 from rflame;
+	emit-sfx 1024 from lflame;
 }
 
 AimFromPrimary(piecenum)
@@ -320,12 +311,12 @@ AimFromPrimary(piecenum)
 
 QueryPrimary(piecenum)
 {
-	if( Static_Var_9 == 0 )
+	if( gun_1 == 0 )
 	{
 		piecenum = lflame;
 		return (0);
 	}
-	if( Static_Var_9 == 1 )
+	if( gun_1 == 1 )
 	{
 		piecenum = rflame;
 		return (0);
@@ -360,7 +351,6 @@ Killed(severity, corpsetype)
 		explode head type BITMAPONLY | BITMAP4;
 		explode pelvis type BITMAPONLY | BITMAP1;
 		explode lloarm type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-
 		explode lleg type BITMAPONLY | BITMAP1;
 		explode lthigh type BITMAPONLY | BITMAP2;
 		explode luparm type BITMAPONLY | BITMAP1;
@@ -397,6 +387,3 @@ Killed(severity, corpsetype)
 	explode rthigh type BITMAPONLY | BITMAP2;
 	explode ruparm type BITMAPONLY | BITMAP1;
 }
-
-
-

@@ -26,7 +26,6 @@ local unitDef = {
 	collisionvolumetest = 1,
 	collisionvolumetype = [[Ell]],
 	corpse = [[dead]],
-	damageModifier = 1,
 	defaultmissiontype = [[Standby]],
 	description = [[All-Terrain Siege Assault Kbot]],
 	designation = [[ARM-HBM]],

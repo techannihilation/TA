@@ -20,7 +20,6 @@ local unitDef = {
 	canstop = 1,
 	category = [[ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	corpse = [[dead]],
-	damageModifier = 0.125,
 	defaultmissiontype = [[GUARD_NOMOVE]],
 	description = [[Stuner Cannon]],
 	designation = [[T-PC-L]],

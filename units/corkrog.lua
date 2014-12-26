@@ -24,7 +24,6 @@ local unitDef = {
 	collisionvolumescales = [[97 160 97]],
 	collisionvolumetype = [[CylY]],
 	corpse = [[DEAD]],
-	damageModifier = 1,
 	defaultmissiontype = [[Standby]],
 	description = [[Experimental Assault Kbot]],
 	explodeAs = [[NUCLEAR_MISSILE2]],

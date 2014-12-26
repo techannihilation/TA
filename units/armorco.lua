@@ -24,7 +24,6 @@ local unitDef = {
 	collisionvolumescales = [[104 106 68]],
 	collisionvolumetype = [[Ell]],
 	corpse = [[Dead]],
-	damageModifier = 1,
 	defaultmissiontype = [[Standby]],
 	description = [[Experimental Assault Kbot]],
 	energyMake = 35.1,

@@ -26,7 +26,6 @@ local unitDef = {
 	collisionVolumeTest = 1,
 	collisionVolumeType = [[ellipsoid]],
 	corpse = [[dead]],
-	damageModifier = 0.5,
 	defaultmissiontype = [[Standby]],
 	description = [[All-Terrain Kbot Biomechanics]],
 	designation = [[ARM-CRABE]],

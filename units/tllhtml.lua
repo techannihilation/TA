@@ -25,7 +25,6 @@ local unitDef = {
 	collisionVolumeTest = 1,
 	collisionVolumeType = [[ellipsoid]],
 	corpse = [[dead]],
-	damageModifier = 0.75,
 	defaultmissiontype = [[Standby]],
 	description = [[Heavy Combat Mechbot]],
 	designation = [[TL-ML]],

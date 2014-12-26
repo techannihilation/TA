@@ -21,7 +21,6 @@ local unitDef = {
 	canstop = 1,
 	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
 	corpse = [[DEAD]],
-	damageModifier = 0.9,
 	defaultmissiontype = [[Standby]],
 	description = [[Advanced Amphibious Anti-Air Kbot]],
 	designation = [[]],

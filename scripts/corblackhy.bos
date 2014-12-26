@@ -9,8 +9,8 @@ piece  base, body, barrel1a, barrel1b, barrel1c, barrel1d, radar, wake1,
        gun6, flare1a, flare1b, flare1c, flare1d, flare2, flare3a, flare3b,
        flare4a, flare4b, flare5, flare6;
 
-static-var  Static_Var_1, Static_Var_2, Static_Var_3, restore_delay, oldHead,
-			Static_Var_7, Static_Var_8, aimDir;
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, restore_delay, Static_Var_5,
+            Static_Var_6, Static_Var_7, Static_Var_8;
 
 // Signal definitions
 #define SIG_MOVE			128
@@ -18,29 +18,28 @@ static-var  Static_Var_1, Static_Var_2, Static_Var_3, restore_delay, oldHead,
 
 SetDirection(heading)
 {
-	var spd;
-	spd = (get ABS(oldHead) - get ABS(heading)) / 2;
-	turn base to y-axis heading speed spd;
-	turn body to y-axis 0-heading speed spd;
-	oldHead = heading;
+	var Func_Var_2;
+	Func_Var_2 = ( get ABS(Static_Var_5) - get ABS(heading) ) / 2;
+	turn base to y-axis heading speed Func_Var_2;
+	turn body to y-axis <0.000000> - heading speed Func_Var_2;
+	Static_Var_5 = heading;
 }
 
-RockOnWaves()
+RockOnWaves(Func_Var_1, Func_Var_2, Func_Var_3)
 {
-	var rockDir, rockAng, rockSpeed;
-	rockDir = <-0.1>;
-	rockAng = <-0.1>;
+	Func_Var_1 = -18;
+	Func_Var_2 = -18;
 	while( TRUE )
 	{
-		while( get ABS(rockAng) < <1.11> )
+		while( get ABS(Func_Var_2) < 202 )
 		{
-			rockSpeed = <1.25> - get ABS(rockAng);
-			turn base to x-axis rockAng speed rockSpeed*2;
+			Func_Var_3 = 227 - get ABS(Func_Var_2);
+			turn base to x-axis Func_Var_2 speed Func_Var_3 * <0.010989>;
 			wait-for-turn base around x-axis;
-			rockAng = rockAng + rockDir;
+			Func_Var_2 = Func_Var_2 + Func_Var_1;
 		}
-		rockDir = 0 - rockDir;
-		rockAng = rockAng + rockDir + rockDir;
+		Func_Var_1 = 0 - Func_Var_1;
+		Func_Var_2 = Func_Var_2 + Func_Var_1 + Func_Var_1;
 	}
 }
 
@@ -90,23 +89,23 @@ ProjXPW(Func_Var_1, Func_Var_2)
 {
 	if( Func_Var_2 < -21840 )
 	{
-		Static_Var_7 = Func_Var_1 * ( Func_Var_2 + 32760 ) / 10920;
+		Static_Var_6 = Func_Var_1 * ( Func_Var_2 + 32760 ) / 10920;
 	}
 	else if( Func_Var_2 > 21840 )
 	{
-		Static_Var_7 = Func_Var_1 * ( 32760 - Func_Var_2 ) / 10920;
+		Static_Var_6 = Func_Var_1 * ( 32760 - Func_Var_2 ) / 10920;
 	}
 	else if( Func_Var_2 < -10920 )
 	{
-		Static_Var_7 = 0 - Func_Var_1;
+		Static_Var_6 = 0 - Func_Var_1;
 	}
 	else if( Func_Var_2 > 10920 )
 	{
-		Static_Var_7 = Func_Var_1;
+		Static_Var_6 = Func_Var_1;
 	}
 	else
 	{
-		Static_Var_7 = Func_Var_1 * Func_Var_2 / 10920;
+		Static_Var_6 = Func_Var_1 * Func_Var_2 / 10920;
 	}
 }
 
@@ -115,21 +114,20 @@ RockZ(Func_Var_1, Func_Var_2)
 	signal 16;
 	set-signal-mask 16;
 	call-script ProjXPW(10920 / Func_Var_2,Func_Var_1);
-	Static_Var_8 = Static_Var_8 + Static_Var_7;
-	Static_Var_7 = get ABS(Static_Var_8);
-	while( Static_Var_7 > 91 )
+	Static_Var_7 = Static_Var_7 + Static_Var_6;
+	Static_Var_6 = get ABS(Static_Var_7);
+	while( Static_Var_6 > 91 )
 	{
-		turn base to z-axis Static_Var_8 speed Static_Var_7 * 2;
+		turn base to z-axis Static_Var_7 speed Static_Var_6 * <0.010989>;
 		wait-for-turn base around z-axis;
-		Static_Var_8 = Static_Var_8 * -1 / 2;
-		Static_Var_7 = get ABS(Static_Var_8);
+		Static_Var_7 = Static_Var_7 * -1 / 2;
+		Static_Var_6 = get ABS(Static_Var_7);
 	}
-	turn base to z-axis <0.000000> speed <1.5>;
+	turn base to z-axis <0.000000> speed <1.500000>;
 }
 
 Create()
 {
-	set ARMORED to 1;
 	hide flare1a;
 	hide flare1b;
 	hide flare1c;
@@ -181,11 +179,11 @@ waveSplash()
 {
 	while( TRUE )
 	{
-		turn body to x-axis <-1.0> speed <1.0>;
-		move body to y-axis [0.23] speed [0.17];
+		turn body to x-axis <-1.000000> speed <1.000000>;
+		move body to y-axis [0.229999] speed [0.169995];
 		wait-for-turn body around x-axis;
-		turn body to x-axis <0.0> speed <1.0>;
-		move body to y-axis [0.0] speed [0.17];
+		turn body to x-axis <0.000000> speed <1.000000>;
+		move body to y-axis [0.000000] speed [0.169995];
 		wait-for-turn body around x-axis;
 	}
 }
@@ -194,7 +192,7 @@ StartMoving()
 {
 	signal SIG_MOVE;
 	set-signal-mask SIG_MOVE;
-	var waketime;
+	var Func_Var_1;
 	start-script waveSplash();
 	while( TRUE )
 	{
@@ -204,17 +202,20 @@ StartMoving()
 		emit-sfx 2 from wake4;
 		emit-sfx 2 from wake5;
 		emit-sfx 2 from wake6;
-		waketime = (get CURRENT_SPEED) * 100 / get MAX_SPEED;
-		if( waketime < 50 ) waketime = 50;
-		sleep 12000 / waketime;
+		Func_Var_1 = get CURRENT_SPEED * 100 / get MAX_SPEED;
+		if( Func_Var_1 < 50 )
+		{
+			Func_Var_1 = 50;
+		}
+		sleep 12000 / Func_Var_1;
 	}
 }
 
 StopMoving()
 {
 	signal SIG_MOVE;
-	turn body to x-axis <0.0> speed <1.0>;
-	move body to y-axis [0.0] speed [0.17];
+	turn body to x-axis <0.000000> speed <1.000000>;
+	move body to y-axis [0.000000] speed [0.169995];
 }
 
 SweetSpot(piecenum)
@@ -229,7 +230,7 @@ AimFromWeapon1(piecenum)
 
 QueryWeapon1(piecenum)
 {
-	piecenum = flare1a + Static_Var_1;
+	piecenum = 25 + Static_Var_1;
 }
 
 AimWeapon1(heading, pitch)
@@ -240,14 +241,14 @@ AimWeapon1(heading, pitch)
 	turn sleeves1 to x-axis <0.000000> - pitch speed <20.000000>;
 	wait-for-turn tur1 around y-axis;
 	wait-for-turn sleeves1 around x-axis;
-	aimDir = heading;
+	Static_Var_8 = heading;
 	start-script RestoreAfterDelay();
 	return (1);
 }
 
 FireWeapon1()
 {
-	start-script RockZ(-13, aimDir);
+	start-script RockZ(-13,Static_Var_8);
 	if( Static_Var_1 == 0 )
 	{
 		move barrel1a to z-axis [-2.000000] speed [500.000000];
@@ -328,7 +329,7 @@ AimFromWeapon3(piecenum)
 
 QueryWeapon3(piecenum)
 {
-	piecenum = flare3a + Static_Var_2;
+	piecenum = 30 + Static_Var_2;
 }
 
 AimWeapon3(heading, pitch)
@@ -423,7 +424,7 @@ AimFromWeapon6(piecenum)
 
 QueryWeapon6(piecenum)
 {
-	piecenum = flare4a + Static_Var_3;
+	piecenum = 32 + Static_Var_3;
 }
 
 AimWeapon6(heading, pitch)

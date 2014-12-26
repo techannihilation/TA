@@ -25,7 +25,6 @@ local unitDef = {
 	collisionVolumeTest = 1,
 	collisionVolumeType = [[ellipsoid]],
 	corpse = [[hyperion_dead]],
-	damageModifier = 0.5,
 	defaultmissiontype = [[Standby]],
 	description = [[Gigantic Siege Kbot]],
 	designation = [[CORE-EX1292]],

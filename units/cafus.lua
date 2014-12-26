@@ -22,7 +22,6 @@ local unitDef = {
 	buildTime = 260000,
 	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
 	corpse = [[DEAD]],
-	damageModifier = 0.95,
 	description = [[Enhanced Energy Output / Storage]],
 	energyMake = 3200,
 	energyStorage = 51200,

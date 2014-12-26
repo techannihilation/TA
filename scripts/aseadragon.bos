@@ -12,7 +12,7 @@ piece  base, body, wake1, wake2, wake3, wake4, wake5, ponton,
        flare4c, flare5a, flare5b, flare5c, flakflare1a, flakflare1b, flakflare2a, flakflare2b;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
-            Static_Var_6, Static_Var_7, restore_delay, oldHead;
+            Static_Var_6, Static_Var_7, restore_delay, Static_Var_9;
 
 // Signal definitions
 #define SIG_MOVE			256
@@ -20,29 +20,28 @@ static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5
 
 SetDirection(heading)
 {
-	var spd;
-	spd = (get ABS(oldHead) - get ABS(heading)) / 2;
-	turn base to y-axis heading speed spd;
-	turn body to y-axis 0-heading speed spd;
-	oldHead = heading;
+	var Func_Var_2;
+	Func_Var_2 = ( get ABS(Static_Var_9) - get ABS(heading) ) / 2;
+	turn base to y-axis heading speed Func_Var_2;
+	turn body to y-axis <0.000000> - heading speed Func_Var_2;
+	Static_Var_9 = heading;
 }
 
-RockOnWaves()
+RockOnWaves(Func_Var_1, Func_Var_2, Func_Var_3)
 {
-	var rockDir, rockAng, rockSpeed;
-	rockDir = <-0.1>;
-	rockAng = <-0.1>;
+	Func_Var_1 = -18;
+	Func_Var_2 = -18;
 	while( TRUE )
 	{
-		while( get ABS(rockAng) < <1.11> )
+		while( get ABS(Func_Var_2) < 202 )
 		{
-			rockSpeed = <1.25> - get ABS(rockAng);
-			turn base to x-axis rockAng speed rockSpeed*2;
+			Func_Var_3 = 227 - get ABS(Func_Var_2);
+			turn base to x-axis Func_Var_2 speed Func_Var_3 * <0.010989>;
 			wait-for-turn base around x-axis;
-			rockAng = rockAng + rockDir;
+			Func_Var_2 = Func_Var_2 + Func_Var_1;
 		}
-		rockDir = 0 - rockDir;
-		rockAng = rockAng + rockDir + rockDir;
+		Func_Var_1 = 0 - Func_Var_1;
+		Func_Var_2 = Func_Var_2 + Func_Var_1 + Func_Var_1;
 	}
 }
 
@@ -89,7 +88,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
-	set ARMORED to 1;
 	hide flare1a;
 	hide flare2a;
 	hide flare3a;
@@ -152,11 +150,11 @@ waveSplash()
 {
 	while( TRUE )
 	{
-		turn body to x-axis <-1.0> speed <1.0>;
-		move body to y-axis [0.23] speed [0.17];
+		turn body to x-axis <-1.000000> speed <1.000000>;
+		move body to y-axis [0.229999] speed [0.169995];
 		wait-for-turn body around x-axis;
-		turn body to x-axis <0.0> speed <1.0>;
-		move body to y-axis [0.0] speed [0.17];
+		turn body to x-axis <0.000000> speed <1.000000>;
+		move body to y-axis [0.000000] speed [0.169995];
 		wait-for-turn body around x-axis;
 	}
 }
@@ -165,7 +163,7 @@ StartMoving()
 {
 	signal SIG_MOVE;
 	set-signal-mask SIG_MOVE;
-	var waketime;
+	var Func_Var_1;
 	start-script waveSplash();
 	while( TRUE )
 	{
@@ -174,17 +172,20 @@ StartMoving()
 		emit-sfx 2 from wake3;
 		emit-sfx 2 from wake4;
 		emit-sfx 2 from wake5;
-		waketime = (get CURRENT_SPEED) * 100 / get MAX_SPEED;
-		if( waketime < 50 ) waketime = 50;
-		sleep 12000 / waketime;
+		Func_Var_1 = get CURRENT_SPEED * 100 / get MAX_SPEED;
+		if( Func_Var_1 < 50 )
+		{
+			Func_Var_1 = 50;
+		}
+		sleep 12000 / Func_Var_1;
 	}
 }
 
 StopMoving()
 {
 	signal SIG_MOVE;
-	turn body to x-axis <0.0> speed <1.0>;
-	move body to y-axis [0.0] speed [0.17];
+	turn body to x-axis <0.000000> speed <1.000000>;
+	move body to y-axis [0.000000] speed [0.169995];
 }
 
 AimWeapon1(heading, pitch)
@@ -227,7 +228,7 @@ AimFromWeapon1(piecenum)
 
 QueryWeapon1(piecenum)
 {
-	piecenum = flare1a + Static_Var_1;
+	piecenum = 39 + Static_Var_1;
 }
 
 AimWeapon2(heading, pitch)
@@ -282,7 +283,7 @@ AimFromWeapon2(piecenum)
 
 QueryWeapon2(piecenum)
 {
-	piecenum = flare2a + Static_Var_2;
+	piecenum = 41 + Static_Var_2;
 }
 
 AimWeapon3(heading, pitch)
@@ -325,7 +326,7 @@ AimFromWeapon3(piecenum)
 
 QueryWeapon3(piecenum)
 {
-	piecenum = flare3a + Static_Var_3;
+	piecenum = 44 + Static_Var_3;
 }
 
 AimWeapon4(heading, pitch)
@@ -380,7 +381,7 @@ AimFromWeapon4(piecenum)
 
 QueryWeapon4(piecenum)
 {
-	piecenum = flare4a + Static_Var_4;
+	piecenum = 46 + Static_Var_4;
 }
 
 AimWeapon5(heading, pitch)
@@ -435,7 +436,7 @@ AimFromWeapon5(piecenum)
 
 QueryWeapon5(piecenum)
 {
-	piecenum = flare5a + Static_Var_5;
+	piecenum = 49 + Static_Var_5;
 }
 
 AimWeapon6(heading, pitch)
@@ -478,7 +479,7 @@ AimFromWeapon6(piecenum)
 
 QueryWeapon6(piecenum)
 {
-	piecenum = flakflare1a + Static_Var_6;
+	piecenum = 52 + Static_Var_6;
 }
 
 AimWeapon7(heading, pitch)
@@ -521,7 +522,7 @@ AimFromWeapon7(piecenum)
 
 QueryWeapon7(piecenum)
 {
-	piecenum = flakflare2a + Static_Var_7;
+	piecenum = 54 + Static_Var_7;
 }
 
 SweetSpot(piecenum)
