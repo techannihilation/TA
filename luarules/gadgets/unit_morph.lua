@@ -537,7 +537,9 @@ end
 
 
 local function StartMorph(unitID, unitDefID, teamID, morphDef, cmdp)
-
+  if not Spring.ValidUnitID(unitID) then
+    return
+  end
   -- do not allow morph for unfinsihed units
   -- Spring.Echo(unitID,Spring.GetUnitRulesParam(unitID,"jumpReload"))
   if not isFinished(unitID) or (Spring.GetUnitRulesParam(unitID,"jumpReload") == 0) then return true end
@@ -1035,11 +1037,18 @@ end
 function gadget:GameFrame(n)
 
   -- start pending morphs
-  for unitid, data in pairs(morphToStart) do
-    StartMorph(unitid, unpack(data))
+    if (n % 2 == 0) then 
+    local i = 0
+    for unitid, data in pairs(morphToStart) do
+      if i == 5 then break end
+      StartMorph(unitid, unpack(data))
+      morphToStart[unitid] = nil
+      i = i + 1
+    end
   end
-  morphToStart = {}
-
+  --morphToStart = {}
+  --]]
+  
   if ((n+24)%150<1) then
     local unitCount = #XpMorphUnits
     local i = 1
