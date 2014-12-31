@@ -15,12 +15,12 @@ end
 
 function widget:Initialize()
   if not WG.metalSpots then
-    widgetHandler:RemoveGadget()
+    widgetHandler:RemoveWidget()
     return
   end
   local metalSpots = WG.metalSpots
   if #metalSpots < 6 then
-    widgetHandler:RemoveGadget()
+    widgetHandler:RemoveWidget()
     return
   end
   Spring.SendCommands("unbind any+f4 showmetalmap")
@@ -28,10 +28,12 @@ function widget:Initialize()
 end
 
 function widget:GameFrame(frame)
-  if frame >= 5 and Spring.GetMapDrawMode() == 'los' then
+  if frame >= 5 then
     Spring.SendCommands("toggleinfo metal")
-    Spring.SendCommands("bind any+f4 showmetalmap")
-    widgetHandler:RemoveGadget()
+      if Spring.GetMapDrawMode() == 'los' then
+        Spring.SendCommands("bind any+f4 showmetalmap")
+      end
+    widgetHandler:RemoveWidget()
   end
 end
 
