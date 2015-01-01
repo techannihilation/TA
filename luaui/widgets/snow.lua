@@ -271,7 +271,13 @@ end
 --------------------------------------------------------------------------------
 
 function widget:Initialize()
-	if (glCreateShader == nil) then
+    local currentTime = os.date('*t')
+    if (currentTime.month ~= 12) then
+      widgetHandler:RemoveGadget()
+      return
+    end
+    
+    if (glCreateShader == nil) then
 		Spring.Echo("[Weather Particles:Initialize] no shader support")
 		widgetHandler:RemoveGadget()
 		return
