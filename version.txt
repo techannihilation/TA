@@ -1,3 +1,24 @@
+---------------------------------------- v2.32.2 ---------------------------------------
+
+----Visual----
+Only snow for christmas
+
+----Bugs----
+Remove on/off button from tidals, Closes #521
+Fix missing unit limit for armprate
+Remove team color from akmech wreak
+
+----Balance----
+Vengence reblanace, HP 48779>39023, dps 1236>1036
+Gargoyle, Increase HP 7500>12000
+Increase Exxec weapomn energy per shot cost 0 > 30
+
+---Improvements----
+Unit Morph, Limit how many unit can start per frame, current limit is 5 units every 2 frame's, Fixes slowdown on mass morph completion
+Add background image for terraforming buttons
+Remove unused damage modifiers
+Pre start metal view (gadget>widget)
+
 ---------------------------------------- v2.32.1 ---------------------------------------
 
 ******* Added Special Xmas Presents *******
