@@ -49,7 +49,7 @@ function gadget:AllowCommand(unitID, unitDefID, unitTeam, cmdID, cmdParams, cmdO
   return true
 end
 
-function gadget:GameFrame(n)z
+function gadget:GameFrame(n)
   for team,_ in pairs(deathTeams) do
     local teamUnits = Spring.GetTeamUnits(team)
     local realUnits = 0
