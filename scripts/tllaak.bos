@@ -1,329 +1,437 @@
-piece base,pelvis,body,rleg,lleg;
-piece backholder,backbarrels,elevator,holder,barrels,lflare,rflare,ldoor,rdoor;
+#define TA			// This is a TA script
 
-static-var gun,bMoving,bAiming,bCanAim,restore_delay,ready;
-
-#define SMOKEPIECE1 holder
-#define ANIM_VARIABLE TRUE
-#define SIG_AIM1 2
-
-#include "StateChg.h"
-#include "smokeunit.h"
+#include "sfxtype.h"
 #include "exptype.h"
 
+piece  base, pelvis, body, rleg, lleg, backholder, backbarrels, elevator,
+       holder, barrels, lflare, rflare, ldoor, rdoor;
+
+static-var  gun_2, bMoving, Static_Var_3, Static_Var_4, restore_delay,
+            Static_Var_6, statechg_DesiredState, statechg_StateChanging;
+
+// Signal definitions
+#define SIG_AIM				2
+#define SIG_AIM_2			4
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from holder;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
 
 walk()
 {
-		if( TRUE )
-		{
-			move pelvis to y-axis [0.0] now;
-			move lleg to y-axis [0.0] now;
-			move lleg to z-axis [1.8] now;
-			move rleg to y-axis [0.0] now;
-			move rleg to z-axis [-1.6] now;
-			turn pelvis to x-axis <3.0> now;
-			turn lleg to x-axis <-6.0> now;
-			turn rleg to x-axis <0.0> now;
-			sleep 60;
-		}
-		if( TRUE )
-		{
-			move pelvis to y-axis [-0.5] now;
-			move lleg to y-axis [0.5] now;
-			move rleg to y-axis [0.5] now;
-			turn pelvis to x-axis <2> now;
-			turn lleg to x-axis <-4.9> now;
-			turn rleg to x-axis <1.1> now;
-			sleep 30;
-		}
-		if( TRUE )
-		{
-			move pelvis to y-axis [-0.3] now;
-			move lleg to y-axis [0.3] now;
-			move rleg to y-axis [0.3] now;
-			turn pelvis to x-axis <2.1> now;
-			turn lleg to x-axis <-2.1> now;
-			turn rleg to x-axis <2.8> now;
-			sleep 20;
-		}
-		if( TRUE )
-		{
-			move pelvis to y-axis [-0.1] now;
-			move lleg to y-axis [0.1] now;
-			move rleg to y-axis [0.1] now;
-			turn pelvis to x-axis <1.1> now;
-			turn lleg to x-axis <-1.0> now;
-			turn rleg to x-axis <3.2> now;
-			sleep 10;
-		}
-		if( TRUE )
-		{
-			move pelvis to y-axis [0.0] now;
-			move lleg to y-axis [0.0] now;
-			move rleg to y-axis [1.1] now;
-			move rleg to z-axis [-1.9] now;
-			turn pelvis to x-axis <0.0> now;
-			turn lleg to x-axis <0.0> now;
-			turn rleg to x-axis <0.0> now;
-			sleep 60;
-		}
-		if( TRUE )
-		{
-			move lleg to z-axis [1.0] now;
-			move rleg to z-axis [-0.3] now;
-			sleep 60;
-		}
-		if( TRUE )
-		{
-			move lleg to y-axis [0.0] now;
-			move lleg to z-axis [0.0] now;
-			move rleg to z-axis [0.0] now;
-			turn pelvis to x-axis <0.0> now;
-			turn lleg to x-axis <0.0> now;
-			turn rleg to x-axis <0.0> now;
-			sleep 60;
-		}
-		if( TRUE )
-		{
-			move lleg to z-axis [-0.6] now;
-			move rleg to z-axis [0.8] now;
-			turn rleg to x-axis <-9.1> now;
-			sleep 100;
-		}
-		if( TRUE )
-		{
-			move lleg to z-axis [-1.2] now;
-			move rleg to y-axis [0.0] now;
-			turn pelvis to x-axis <3> now;
-			turn rleg to x-axis <-6.0> now;
-			sleep 60;
-		}
-		if( TRUE )
-		{
-			move pelvis to y-axis [-0.5] now;
-			move lleg to y-axis [0.5] now;
-			move rleg to y-axis [0.5] now;
-			turn pelvis to x-axis <2> now;
-			turn lleg to x-axis <0.7> now;
-			turn rleg to x-axis <-4.9> now;
-			sleep 30;
-		}
-		if( TRUE )
-		{
-			move pelvis to y-axis [-0.3] now;
-			move lleg to y-axis [0.3] now;
-			move rleg to y-axis [0.3] now;
-			turn pelvis to x-axis <1.1> now;
-			turn lleg to x-axis <2.8> now;
-			turn rleg to x-axis <-2.1> now;
-			sleep 20;
-		}
-		if( TRUE )
-		{
-			move pelvis to y-axis [-0.1] now;
-			move lleg to y-axis [0.1] now;
-			move rleg to y-axis [0.1] now;
-			turn pelvis to x-axis <1> now;
-			turn lleg to x-axis <2.5> now;
-			turn rleg to x-axis <-1.0> now;
-			sleep 10;
-		}
-		if( TRUE )
-		{
-			move lleg to y-axis [1.1] now;
-			move lleg to z-axis [-1.6] now;
-			move rleg to y-axis [0.1] now;
-			turn pelvis to x-axis <0.0> now;
-			turn lleg to x-axis <0.0> now;
-			turn rleg to x-axis <0.0> now;
-			sleep 60;
-		}
-		if( TRUE )
-		{
-			move lleg to z-axis [-0.7] now;
-			move rleg to z-axis [0.2] now;
-			sleep 60;
-		}
-		if( TRUE )
-		{
-			move lleg to z-axis [0.5] now;
-			move rleg to y-axis [0.0] now;
-			move rleg to z-axis [-0.3] now;
-			turn rleg to x-axis <0.0> now;
-			sleep 60;
-		}
-		move lleg to z-axis [1.0] now;
-		move rleg to y-axis [0.0] now;
-		move rleg to z-axis [-1.3] now;
-		turn lleg to x-axis <-10.2> now;
-		turn rleg to x-axis <0.0> now;
+	if( TRUE )
+	{
+		move pelvis to y-axis [0.000000] now;
+		move lleg to y-axis [0.000000] now;
+		move lleg to z-axis [1.800000] now;
+		move rleg to y-axis [0.000000] now;
+		move rleg to z-axis [-1.600000] now;
+		turn pelvis to x-axis <3.000000> now;
+		turn lleg to x-axis <-6.000000> now;
+		turn rleg to x-axis <0.000000> now;
+		sleep 60;
+	}
+	if( TRUE )
+	{
+		move pelvis to y-axis [-0.500000] now;
+		move lleg to y-axis [0.500000] now;
+		move rleg to y-axis [0.500000] now;
+		turn pelvis to x-axis <2.000000> now;
+		turn lleg to x-axis <-4.890110> now;
+		turn rleg to x-axis <1.093407> now;
+		sleep 30;
+	}
+	if( TRUE )
+	{
+		move pelvis to y-axis [-0.300000] now;
+		move lleg to y-axis [0.300000] now;
+		move rleg to y-axis [0.300000] now;
+		turn pelvis to x-axis <2.093407> now;
+		turn lleg to x-axis <-2.093407> now;
+		turn rleg to x-axis <2.791209> now;
+		sleep 20;
+	}
+	if( TRUE )
+	{
+		move pelvis to y-axis [-0.100000] now;
+		move lleg to y-axis [0.100000] now;
+		move rleg to y-axis [0.100000] now;
+		turn pelvis to x-axis <1.093407> now;
+		turn lleg to x-axis <-1.000000> now;
+		turn rleg to x-axis <3.192308> now;
+		sleep 10;
+	}
+	if( TRUE )
+	{
+		move pelvis to y-axis [0.000000] now;
+		move lleg to y-axis [0.000000] now;
+		move rleg to y-axis [1.100000] now;
+		move rleg to z-axis [-1.900000] now;
+		turn pelvis to x-axis <0.000000> now;
+		turn lleg to x-axis <0.000000> now;
+		turn rleg to x-axis <0.000000> now;
+		sleep 60;
+	}
+	if( TRUE )
+	{
+		move lleg to z-axis [1.000000] now;
+		move rleg to z-axis [-0.300000] now;
+		sleep 60;
+	}
+	if( TRUE )
+	{
+		move lleg to y-axis [0.000000] now;
+		move lleg to z-axis [0.000000] now;
+		move rleg to z-axis [0.000000] now;
+		turn pelvis to x-axis <0.000000> now;
+		turn lleg to x-axis <0.000000> now;
+		turn rleg to x-axis <0.000000> now;
+		sleep 60;
+	}
+	if( TRUE )
+	{
+		move lleg to z-axis [-0.600000] now;
+		move rleg to z-axis [0.800000] now;
+		turn rleg to x-axis <-9.093407> now;
 		sleep 100;
-
+	}
+	if( TRUE )
+	{
+		move lleg to z-axis [-1.200000] now;
+		move rleg to y-axis [0.000000] now;
+		turn pelvis to x-axis <3.000000> now;
+		turn rleg to x-axis <-6.000000> now;
+		sleep 60;
+	}
+	if( TRUE )
+	{
+		move pelvis to y-axis [-0.500000] now;
+		move lleg to y-axis [0.500000] now;
+		move rleg to y-axis [0.500000] now;
+		turn pelvis to x-axis <2.000000> now;
+		turn lleg to x-axis <0.692308> now;
+		turn rleg to x-axis <-4.890110> now;
+		sleep 30;
+	}
+	if( TRUE )
+	{
+		move pelvis to y-axis [-0.300000] now;
+		move lleg to y-axis [0.300000] now;
+		move rleg to y-axis [0.300000] now;
+		turn pelvis to x-axis <1.093407> now;
+		turn lleg to x-axis <2.791209> now;
+		turn rleg to x-axis <-2.093407> now;
+		sleep 20;
+	}
+	if( TRUE )
+	{
+		move pelvis to y-axis [-0.100000] now;
+		move lleg to y-axis [0.100000] now;
+		move rleg to y-axis [0.100000] now;
+		turn pelvis to x-axis <1.000000> now;
+		turn lleg to x-axis <2.500000> now;
+		turn rleg to x-axis <-1.000000> now;
+		sleep 10;
+	}
+	if( TRUE )
+	{
+		move lleg to y-axis [1.100000] now;
+		move lleg to z-axis [-1.600000] now;
+		move rleg to y-axis [0.100000] now;
+		turn pelvis to x-axis <0.000000> now;
+		turn lleg to x-axis <0.000000> now;
+		turn rleg to x-axis <0.000000> now;
+		sleep 60;
+	}
+	if( TRUE )
+	{
+		move lleg to z-axis [-0.700000] now;
+		move rleg to z-axis [0.200000] now;
+		sleep 60;
+	}
+	if( TRUE )
+	{
+		move lleg to z-axis [0.500000] now;
+		move rleg to y-axis [0.000000] now;
+		move rleg to z-axis [-0.300000] now;
+		turn rleg to x-axis <0.000000> now;
+		sleep 60;
+	}
+	move lleg to z-axis [1.000000] now;
+	move rleg to y-axis [0.000000] now;
+	move rleg to z-axis [-1.300000] now;
+	turn lleg to x-axis <-10.192308> now;
+	turn rleg to x-axis <0.000000> now;
+	sleep 100;
 }
 
 stand()
 {
-sleep 250; 
+	sleep 250;
 }
 
-MotionControl()
-{ var moving, aiming;
-  while (TRUE)
-   { moving = bMoving;
-     aiming = bAiming;
-     if (moving)
-      { if (aiming)
-         { bCanAim = TRUE;
-   call-script walk();
-  }
-        if (NOT aiming)
-         { bCanAim = FALSE;
-   call-script walk();
-  }
-       }
-     if (NOT moving)
-      { bCanAim = TRUE;
-        call-script stand();
-       }
-     sleep 60;
-    }
- }
+MotionControl(Func_Var_1, Func_Var_2)
+{
+	while( TRUE )
+	{
+		Func_Var_1 = bMoving;
+		Func_Var_2 = Static_Var_3;
+		if( Func_Var_1 )
+		{
+			if( Func_Var_2 )
+			{
+				Static_Var_4 = 1;
+				call-script walk();
+			}
+			if( !Func_Var_2 )
+			{
+				Static_Var_4 = 0;
+				call-script walk();
+			}
+		}
+		if( !Func_Var_1 )
+		{
+			Static_Var_4 = 1;
+			call-script stand();
+		}
+		sleep 60;
+	}
+}
 
 open()
-{ show holder;
-  show elevator;
-  turn backholder to x-axis <90> speed <90>;
-  turn ldoor to z-axis <-150> speed <90>;
-  turn rdoor to z-axis <150> speed <90>;
-  wait-for-turn ldoor around z-axis;
-  move backbarrels to y-axis [4.25] speed [4];
-  move elevator to y-axis [2.5] speed [3];
-  wait-for-move elevator along y-axis;
-  show barrels;
-  hide backbarrels;
-  turn backholder to x-axis <0> speed <90>;
- }
+{
+	show holder;
+	show elevator;
+	turn backholder to x-axis <90.000000> speed <270.000000>;
+	turn ldoor to z-axis <-150.000000> speed <270.000000>;
+	turn rdoor to z-axis <150.000000> speed <270.000000>;
+	wait-for-turn ldoor around z-axis;
+	move backbarrels to y-axis [4.250000] speed [4.000000];
+	move elevator to y-axis [2.500000] speed [3.000000];
+	wait-for-move elevator along y-axis;
+	show barrels;
+	hide backbarrels;
+	turn backholder to x-axis <0.000000> speed <270.000000>;
+}
 
 close()
-{ turn backholder to x-axis <90> speed <90>;
-  wait-for-turn backholder around x-axis;
-  show backbarrels;
-  hide barrels;
-  move backbarrels to y-axis [0] speed [4];
-  move elevator to y-axis [0] speed [2];
-  wait-for-move elevator along y-axis;
-  turn ldoor to z-axis <0> speed <90>;
-  turn rdoor to z-axis <0> speed <90>;
-  turn backholder to x-axis <0> speed <90>;
-  wait-for-turn ldoor around z-axis;
-  hide elevator;
-  hide holder;
- }
+{
+	turn backholder to x-axis <90.000000> speed <180.000000>;
+	wait-for-turn backholder around x-axis;
+	show backbarrels;
+	hide barrels;
+	move backbarrels to y-axis [0.000000] speed [4.000000];
+	move elevator to y-axis [0.000000] speed [2.000000];
+	wait-for-move elevator along y-axis;
+	turn ldoor to z-axis <0.000000> speed <180.000000>;
+	turn rdoor to z-axis <0.000000> speed <180.000000>;
+	turn backholder to x-axis <0.000000> speed <180.000000>;
+	wait-for-turn ldoor around z-axis;
+	hide elevator;
+	hide holder;
+}
 
 Go()
-{ bAiming = TRUE;
-  call-script open();
-  ready=1;
- }
+{
+	Static_Var_3 = 1;
+	call-script open();
+	Static_Var_6 = 1;
+}
 
 Stop()
-{ ready=0;
-  call-script close();
-  bAiming = FALSE;
- }
+{
+	Static_Var_6 = 0;
+	call-script close();
+	Static_Var_3 = 0;
+}
 
-#define ACTIVATECMD call-script Go();
-#define DEACTIVATECMD call-script Stop();
-#include "StateChg.h"
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
 
 Create()
-{ bMoving = FALSE;
-  bAiming = FALSE;
-  bCanAim = TRUE;
-  ready=0;
-  gun=0;
-  restore_delay=3000;
-  hide barrels;
-  hide elevator;
-  hide holder;
-  call-script InitState();
-  start-script SmokeUnit();
-  start-script MotionControl();
- }
+{
+	bMoving = FALSE;
+	Static_Var_3 = 0;
+	Static_Var_4 = 1;
+	Static_Var_6 = 0;
+	gun_2 = base;
+	restore_delay = 3000;
+	hide barrels;
+	hide elevator;
+	hide holder;
+	call-script InitState();
+	start-script SmokeUnit();
+	start-script MotionControl();
+}
 
-
-SetMaxReloadTime(time)
-{ restore_delay = time * 2;
- }
+SetMaxReloadTime(Func_Var_1)
+{
+	restore_delay = Func_Var_1 * 2;
+}
 
 RestoreAfterDelay()
-{ sleep restore_delay;
-  set-signal-mask 0;
-  turn holder to y-axis <0> speed <120>;
-  turn barrels to x-axis <0> speed <90>;
-  wait-for-turn holder around y-axis;
-  wait-for-turn barrels around x-axis;
-  start-script RequestState( INACTIVE );
- }
+{
+	sleep restore_delay;
+	set-signal-mask 0;
+	turn holder to y-axis <0.000000> speed <120.000000>;
+	turn barrels to x-axis <0.000000> speed <90.000000>;
+	wait-for-turn holder around y-axis;
+	wait-for-turn barrels around x-axis;
+	start-script RequestState(1);
+}
 
-AimPrimary(heading,pitch)
-{ start-script RequestState( ACTIVE );
-  signal SIG_AIM1;
-  set-signal-mask SIG_AIM1;
-  while (!ready)
-   { sleep 250;	}
-  turn holder to y-axis heading speed <120>;
-  turn barrels to x-axis (0-pitch) speed <90>;
-  wait-for-turn holder around y-axis;
-  wait-for-turn barrels around x-axis;
-  start-script RestoreAfterDelay();
-  return(TRUE);
- }
+AimPrimary(heading, pitch)
+{
+	start-script RequestState(0);
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	while( !Static_Var_6 )
+	{
+		sleep 250;
+	}
+	turn holder to y-axis heading speed <120.000000>;
+	turn barrels to x-axis <0.000000> - pitch speed <90.000000>;
+	wait-for-turn holder around y-axis;
+	wait-for-turn barrels around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
 
 FirePrimary()
-{ gun=1-gun;
- }
+{
+	gun_2 = 1 - gun_2;
+}
 
 AimFromPrimary(piecenum)
-{ piecenum=barrels;
- }
+{
+	piecenum = barrels;
+}
 
 QueryPrimary(piecenum)
-{ piecenum=lflare;
-  if (gun) 
-   { piecenum=rflare; }
- }
+{
+	piecenum = lflare;
+}
+
+AimSecondary(heading, pitch)
+{
+	start-script RequestState(0);
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	while( !Static_Var_6 )
+	{
+		sleep 250;
+	}
+	turn holder to y-axis heading speed <120.000000>;
+	turn barrels to x-axis <0.000000> - pitch speed <90.000000>;
+	wait-for-turn holder around y-axis;
+	wait-for-turn barrels around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireSecondary()
+{
+	gun_2 = 1 - gun_2;
+}
+
+AimFromSecondary(piecenum)
+{
+	piecenum = barrels;
+}
+
+QuerySecondary(piecenum)
+{
+	piecenum = rflare;
+}
 
 StartMoving()
-{ bMoving = TRUE;
- }
+{
+	bMoving = TRUE;
+}
 
 StopMoving()
-{ bMoving = FALSE;
- }
+{
+	bMoving = FALSE;
+}
 
 SweetSpot(piecenum)
-{ piecenum=body;
- }
+{
+	piecenum = body;
+}
 
-Killed( severity, corpsetype )
-{ explode pelvis type BITMAPONLY | BITMAP5;
-  explode lleg type BITMAPONLY | BITMAP3;
-  explode rleg type BITMAPONLY | BITMAP3;
-  explode backbarrels type SHATTER | EXPLODE_ON_HIT | BITMAP3;
-  explode holder type SHATTER | EXPLODE_ON_HIT | BITMAP3;
-  if (severity <= 25)
-   { corpsetype = 1;
-     return( 0 );
-    }
-  explode ldoor type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
-  explode rdoor type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
-  explode barrels type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
-  if (severity <= 50)
-   { corpsetype = 2;
-     return( 0 );
-    }
-  explode body type SHATTER | EXPLODE_ON_HIT | BITMAP3;
-  corpsetype = 3;
-  return( 0 );
- }
+Killed(severity, corpsetype)
+{
+	explode pelvis type BITMAPONLY | BITMAP5;
+	explode lleg type BITMAPONLY | BITMAP3;
+	explode rleg type BITMAPONLY | BITMAP3;
+	explode backbarrels type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+	explode holder type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		return (0);
+	}
+	explode ldoor type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
+	explode rdoor type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
+	explode barrels type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		return (0);
+	}
+	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+	corpsetype = 3;
+}
