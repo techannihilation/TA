@@ -23,15 +23,17 @@ function widget:Initialize()
     widgetHandler:RemoveWidget()
     return
   end
-  Spring.SendCommands("unbind any+f4 showmetalmap")
-  Spring.SendCommands("toggleinfo metal")
+  if Spring.GetMapDrawMode() ~= 'metal' then
+    Spring.SendCommands("unbind any+f4 showmetalmap")
+    Spring.SendCommands("toggleinfo metal")
+  end
 end
 
 function widget:GameFrame(frame)
   if frame >= 5 then
-    Spring.SendCommands("toggleinfo metal")
-      if Spring.GetMapDrawMode() == 'los' then
-        Spring.SendCommands("bind any+f4 showmetalmap")
+    Spring.SendCommands("bind any+f4 showmetalmap")
+      if Spring.GetMapDrawMode() == 'metal' then
+        Spring.SendCommands("toggleinfo metal")
       end
     widgetHandler:RemoveWidget()
   end
