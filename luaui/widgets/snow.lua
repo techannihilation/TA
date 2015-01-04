@@ -2,7 +2,7 @@
 --------------------------------------------------------------------------------
 --
 --  file:    precipitation.lua
---  brief:   precipitation shader gadget
+--  brief:   precipitation shader Widget
 --  author:  Dave Rodgers
 --
 --  Copyright (C) 2007.
@@ -273,13 +273,13 @@ end
 function widget:Initialize()
     local currentTime = os.date('*t')
     if (currentTime.month ~= 12) then
-      widgetHandler:RemoveGadget()
+      widgetHandler:RemoveWidget()
       return
     end
     
     if (glCreateShader == nil) then
 		Spring.Echo("[Weather Particles:Initialize] no shader support")
-		widgetHandler:RemoveGadget()
+		widgetHandler:RemoveWidget()
 		return
     end	
     
@@ -350,21 +350,21 @@ cloudshader = glCreateShader({
 	if (shader == nil) then
 		Spring.Echo("[Weather Particles:Initialize] particle shader compilation failed")
 		Spring.Echo(glGetShaderLog())
-		widgetHandler:RemoveGadget()
+		widgetHandler:RemoveWidget()
 		return
 	end
 
 	if (rainshader == nil) then
 		Spring.Echo("[Weather Particles:Initialize] rain shader compilation failed")
 		Spring.Echo(glGetShaderLog())
-		widgetHandler:RemoveGadget()
+		widgetHandler:RemoveWidget()
 		return
 	end
 
 	if (cloudshader == nil) then
 		Spring.Echo("[Weather Particles:Initialize] cloud shader compilation failed")
 		Spring.Echo(glGetShaderLog())
-		widgetHandler:RemoveGadget()
+		widgetHandler:RemoveWidget()
 		return
 	end
 	
