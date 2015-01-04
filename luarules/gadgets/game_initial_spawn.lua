@@ -74,10 +74,20 @@ include("luarules/gadgets/lib_startpoint_guesser.lua") --start point guessing ro
 -- FFA Startpoints (modoption)
 ----------------------------------------------------------------
 
+-- ffaStartPoints is "global"
+local useFFAStartPoints = false
 if (tonumber(Spring.GetModOptions().mo_noowner) or 0) == 1 then
-	if VFS.FileExists("luarules/configs/ffa_startpoints.lua") then
-		include("luarules/configs/ffa_startpoints.lua") --loads the ffaStartPoints table (if map has it)
-	end
+    useFFAStartPoints = true
+end
+
+function GetFFAStartPoints()
+    if VFS.FileExists("luarules/configs/ffa_startpoints.lua") then
+        --load the ffaStartPoints table from the map, if it has it		
+        include("luarules/configs/ffa_startpoints.lua") 
+    else
+        --if not, see if we have a backup table for this map
+        include("luarules/configs/ffa_startpoints/ffa_startpoints.lua")
+    end
 end
 
 ----------------------------------------------------------------
@@ -190,11 +200,6 @@ function gadget:Initialize()
 		nAllyTeams = nAllyTeams + 1
 	end
 	
-	-- make the relevant part of ffaStartPoints accessible to all 
-	if ffaStartPoints then
-		GG.ffaStartPoints = ffaStartPoints[nAllyTeams] -- NOT indexed by allyTeamID
-	end
-
 	-- mark all players as 'not yet placed'	
 	local initState 
 	if Game.startPosType ~= 2 or ffaStartPoints then
@@ -233,18 +238,28 @@ end
 ----------------------------------------------------------------
 
 function gadget:AllowStartPosition(x,y,z,playerID,readyState)
-	-- communicate readyState to all
-	-- 0: unready, 1: ready, 2: game forcestarted & player not ready, 3: game forcestarted & player absent
-	-- for some reason 2 is sometimes used in place of 1 and is always used for the last player to become ready
+    -- readyState:
+	-- 0: player placed a startpoint, is unready 
+    -- 1: game starting, player is ready
+    -- 2: player pressed ready OR game is starting and player is forcibly readied (note: if the player chose a startpoint, reconnected and pressed ready without re-placing, this will have the wrong x,z)
+    -- 3: game forcestarted & player absent
+
 	-- we also add (only used in Initialize) the following
 	-- -1: players will not be allowed to place startpoints; automatically readied once ingame
 	--  4: player has placed a startpoint but is not yet ready
-	if Game.startPosType == 2 then -- choose in game mode
-		Spring.SetGameRulesParam("player_" .. playerID .. "_readyState" , readyState) 
-	end
 	
-	if Game.startPosType == 3 then return true end --choose before game mode
-	if ffaStartPoints then return true end
+	-- communicate readyState to all
+    Spring.SetGameRulesParam("player_" .. playerID .. "_readyState" , readyState) 
+    
+    --[[
+    -- for debugging
+    local name,_,_,tID = Spring.GetPlayerInfo(playerID) 
+    Spring.Echo(name,tID,x,z,readyState, (startPointTable[tID]~=nil))
+    Spring.MarkerAddPoint(x,y,z,name .. " " .. readyState)
+	]]
+    
+	if Game.startPosType ~= 2 then return true end -- accept blindly unless we are in choose-in-game mode
+	if useFFAStartPoints then return true end
 	
 	local _,_,_,teamID,allyTeamID,_,_,_,_,_ = Spring.GetPlayerInfo(playerID)
 	if not teamID or not allyTeamID then return false end --fail
@@ -284,17 +299,20 @@ function gadget:AllowStartPosition(x,y,z,playerID,readyState)
 		
 	-- record table of starting points for startpoint assist to use
 	if readyState == 2 then 
-		startPointTable[teamID]={-5000,-5000} --player readied or game was forced started, but player did not place a startpoint.  make a point far away enough not to bother anything else
-	else		
-		startPointTable[teamID]={x,z} --player placed startpoint but has not clicked ready
-		if readyState ~= 1 then
-			Spring.SetGameRulesParam("player_" .. playerID .. "_readyState" , 4) --made startpoint but didn't click ready
+        -- player pressed ready (we have already recorded their startpoint when they placed it) OR game was force started and player is forcibly readied
+		if not startPointTable[teamID] then
+            startPointTable[teamID]={-5000,-5000} -- if the player was forcibly readied without having placed a startpoint, place an invalid one far away (thats what the StartPointGuesser wants)
+        end
+    else		
+        -- player placed startpoint OR game is starting and player is ready
+        startPointTable[teamID]={x,z} 
+		if readyState ~= 1 then 
+            -- game is not starting (therefore, player cannot yet have pressed ready)
+            Spring.SetGameRulesParam("player_" .. playerID .. "_readyState" , 4) 
+            SendToUnsynced("StartPointChosen", playerID)
 		end
-		SendToUnsynced("StartPointChosen", playerID)
 	end	
 	
-
-
 	return true
 end
 
@@ -305,8 +323,9 @@ end
 
 function gadget:GameStart() 
 	-- ffa mode spawning
-	if ffaStartPoints then
-		if ffaStartPoints[nAllyTeams] and #(ffaStartPoints[nAllyTeams])==nAllyTeams then
+	if useFFAStartPoints then
+        GetFFAStartPoints()		
+        if ffaStartPoints and ffaStartPoints[nAllyTeams] and #(ffaStartPoints[nAllyTeams])==nAllyTeams then
 		-- cycle over ally teams and spawn starting units
 			local allyTeamSpawn = SetFFASpawns()
 			for teamID, allyTeamID in pairs(spawnTeams) do
@@ -376,15 +395,14 @@ function SpawnTeamStartUnit(teamID, allyTeamID)
 	local x,_,z = Spring.GetTeamStartPosition(teamID)
 	local xmin, zmin, xmax, zmax = spGetAllyTeamStartBox(allyTeamID) 
 
-	--pick location 
-	local isAIStartPoint = (Game.startPosType == 3) and ((x>0) or (z>0)) --AIs only place startpoints of their own with choose-before-game mode
-	if not isAIStartPoint then
+	-- if its choose-in-game mode, see if we need to autoplace anyone
+	if Game.startPosType==2 then
 		if ((not startPointTable[teamID]) or (startPointTable[teamID][1] < 0)) then
 			-- guess points for the ones classified in startPointTable as not genuine (newbies will not have a genuine startpoint)
-			x,z=GuessStartSpot(teamID, allyID, xmin, zmin, xmax, zmax)
+			x,z=GuessStartSpot(teamID, allyID, xmin, zmin, xmax, zmax, startPointTable)
 		else
 			--fallback 
-			if (x<=0) or (z<=0) then
+			if x<=0 or z<=0 then
 				x = (xmin + xmax) / 2
 				z = (zmin + zmax) / 2
 			end
@@ -422,38 +440,10 @@ end
 
 
 ----------------------------------------------------------------
---- StartPoint Guessing ---
-----------------------------------------------------------------
-
-function GuessStartSpot(teamID, allyID, xmin, zmin, xmax, zmax)
-	--Sanity check
-	if (xmin >= xmax) or (zmin>=zmax) then return 0,0 end 
-	
-	-- Try our guesses
-	local x,z = GuessOne(teamID, allyID, xmin, zmin, xmax, zmax, startPointTable)
-	if x>=0 and z>=0 then
-		startPointTable[teamID]={x,z} 
-		return x,z 
-	end
-	
-	x,z = GuessTwo(teamID, allyID, xmin, zmin, xmax, zmax, startPointTable)
-	if x>=0 and z>=0 then 
-		startPointTable[teamID]={x,z} 
-		return x,z 
-	end
-	
-	
-	-- GIVE UP, fuuuuuuuuuuuuu --
-	x = (xmin + xmax) / 2
-	z = (zmin + zmax) / 2
-	startPointTable[teamID]={x,z} 
-	return x,z
-end
-
-----------------------------------------------------------------
 -- Unsynced
 else
 ----------------------------------------------------------------
+
 
 local myPlayerID = Spring.GetMyPlayerID()
 local _,_,spec,myTeamID = Spring.GetPlayerInfo(myPlayerID) 
