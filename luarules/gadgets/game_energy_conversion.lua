@@ -81,10 +81,10 @@ local CMD_ARMORED = 34590
 local metalMakerStateCmdDesc = {
   id      = CMD_ARMORED,
   type    = CMDTYPE.ICON,
-  name    = 'Armored',
-  cursor  = 'Armored',
-  action  = 'Armored',
-  tooltip = 'Set Metal Maker In Armored For A Short Period',
+  name    = 'Closed',
+  cursor  = 'Closed',
+  action  = 'Closed',
+  tooltip = 'Set Metal Maker In Closed/Armored For A Short Period',
 }
 ----------------------------------------------------------------
 -- Functions
