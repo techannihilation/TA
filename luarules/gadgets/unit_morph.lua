@@ -544,8 +544,11 @@ local function StartMorph(unitID, unitDefID, teamID, morphDef, cmdp)
   -- Spring.Echo(unitID,Spring.GetUnitRulesParam(unitID,"jumpReload"))
   if not isFinished(unitID) or (Spring.GetUnitRulesParam(unitID,"jumpReload") == 0) then return true end
 
-  if not GetSpectatingState() and #Spring.GetTeamUnits(teamID) > (MAXunits * 0.95) then
-    Spring.SendMessageToTeam(teamID,"\255\255\255\001Warning Unit Limit Approching - Morph May Stall Reduce Unit Count")
+  for _,playerId in ipairs(Spring.GetPlayerList(teamID,true)) do
+    local _,_,spectator=Spring.GetPlayerInfo(playerId)
+    if not spectator and #Spring.GetTeamUnits(teamID) > (MAXunits * 0.95) then
+      Spring.SendMessageToTeam(teamID,"\255\255\255\001Warning Unit Limit Approching - Morph May Stall Reduce Unit Count")
+    end
   end
   
   Spring.SetUnitRulesParam(unitID,"Morphing",1)
