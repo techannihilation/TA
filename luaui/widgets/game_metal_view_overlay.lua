@@ -13,6 +13,10 @@ end
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
 
+local isActive = false
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+
 function widget:Initialize()
   if not WG.metalSpots then
     widgetHandler:RemoveWidget()
@@ -26,18 +30,26 @@ function widget:Initialize()
   if Spring.GetMapDrawMode() ~= 'metal' then
     Spring.SendCommands("unbind any+f4 showmetalmap")
     Spring.SendCommands("toggleinfo metal")
+    isActive = true
   end
 end
 
 function widget:GameFrame(frame)
-  if frame >= 5 then
+  if frame >= 5 and isActive == true then
     Spring.SendCommands("bind any+f4 showmetalmap")
       if Spring.GetMapDrawMode() == 'metal' then
         Spring.SendCommands("toggleinfo metal")
+	isActive = false
       end
     widgetHandler:RemoveWidget()
   end
 end
 
+function widget:Shutdown()
+  if isActive == true then
+    Spring.SendCommands("bind any+f4 showmetalmap")
+    Spring.SendCommands("toggleinfo metal")
+  end
+end
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
