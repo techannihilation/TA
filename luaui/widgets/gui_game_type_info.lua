@@ -83,7 +83,7 @@ function widget:DrawScreen()
     tackyfont:Print(othermessage, vsx , vsy - 80 , 24, "oc")
   end
     
-  tackyfont:Print("\255\255\0\0" .. xmasmessage, vsx , vsy -200, 24, "oc")
+  --tackyfont:Print("\255\255\0\0" .. xmasmessage, vsx , vsy -200, 24, "oc")
 
   tackyfont:End()
     
