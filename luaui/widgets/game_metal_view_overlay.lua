@@ -39,14 +39,14 @@ function widget:GameFrame(frame)
     Spring.SendCommands("bind any+f4 showmetalmap")
       if Spring.GetMapDrawMode() == 'metal' then
         Spring.SendCommands("toggleinfo metal")
-	isActive = false
       end
+    isActive = false
     widgetHandler:RemoveWidget()
   end
 end
 
 function widget:Shutdown()
-  if isActive == true then
+  if isActive == true and Spring.GetMapDrawMode() == 'metal' then
     Spring.SendCommands("bind any+f4 showmetalmap")
     Spring.SendCommands("toggleinfo metal")
   end
