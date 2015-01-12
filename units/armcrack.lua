@@ -112,6 +112,7 @@ local weaponDefs = {
 		edgeEffectiveness = 0.4,
 		explosionGenerator = [[custom:Explosion_Light_Plasma-2]],
 		fireStarter = 20,
+		flightTime = 4.5,
 		impulseBoost = 0.123,
 		impulseFactor = 0.123,
 		lineOfSight = true,
