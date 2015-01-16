@@ -68,7 +68,7 @@ end
 
 function script.AimFromWeapon1()
 
-	return top
+	return flare
 end
 
 function script.QueryWeapon1()
