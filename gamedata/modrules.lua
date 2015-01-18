@@ -9,6 +9,10 @@ local modrules  = {
     allowUnitCollisionDamage = false; -- defaults to false
     allowUnitCollisionOverlap = false,	-- defaults to true
   },
+
+  construction = {
+    constructionDecay      = false; -- defaults to true
+  },
   
   reclaim = {
     multiReclaim  = 1,
