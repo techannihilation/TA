@@ -52,6 +52,7 @@ local copyLightDefs = {
 		--["corint1_core_intimidator1" ] = "berthacannon1",
 		--["armbrtha1_arm_berthacannon1"] = "berthacannon1",
 		["tlldmc_tlldmc"]              = "dark_matter",
+		["corgala_ravagerbeam"  ]      = "galacannon",
 
 		--Dgun
 		["armcom_arm_disintegrator"  ] = "arm_disintegrator",
@@ -460,6 +461,26 @@ local dynLightDefs = {
 					specularColor     = {1.4 * rgbSpecMults[1], 1.2 * rgbSpecMults[2], 0.2 * rgbSpecMults[3]},
 					priority          = 3 * 10 + 1,
 					radius            = 600.0,
+					ttl               = 2 * Game.gameSpeed,
+					decayFunctionType = {0.0, 0.0, 0.0},
+					altitudeOffset    = 150.0,
+				},
+			},
+
+			["galacannon"] = {
+				projectileLightDef = {
+					diffuseColor    = {1.6,                   1.2,                   0.0                  },
+					specularColor   = {1.9 * rgbSpecMults[1], 0.9 * rgbSpecMults[2], 0.0 * rgbSpecMults[3]},
+					priority        = 5 * 10,
+					radius          = 400.0,
+					ttl             = 1000,
+				},
+				
+				explosionLightDef = {
+					diffuseColor      = {1.7,                   1.2,                   0.0                  },
+					specularColor     = {1.7 * rgbSpecMults[1], 1.2 * rgbSpecMults[2], 0.0 * rgbSpecMults[3]},
+					priority          = 3 * 10 + 1,
+					radius            = 700.0,
 					ttl               = 2 * Game.gameSpeed,
 					decayFunctionType = {0.0, 0.0, 0.0},
 					altitudeOffset    = 150.0,
