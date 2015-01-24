@@ -116,4 +116,13 @@ return {
 		params = {'1', 'Surface', 'Dive'},
 	},
   },
+  tlldmc = {
+	{
+		name = "weapon_toggle",
+		cob = "Dive",
+		tooltip = "Toggle rapid fire weapon",
+		type = CMDTYPE.ICON_MODE,
+		params = {'1', 'Rapid', 'Standard'},
+	},
+  },
 }

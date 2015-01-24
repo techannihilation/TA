@@ -5,11 +5,17 @@
 
 piece  base, Turretbase, Turret, Gun, B2, B1, Flare;
 
-static-var  Static_Var_1;
+static-var  Static_Var_1, WeaponToggle;
 
 // Signal definitions
 #define SIG_AIM				2
 
+
+Dive()
+{
+	WeaponToggle = !WeaponToggle;
+	get PRINT(WeaponToggle);
+}
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -40,8 +46,11 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
+
+
 Create()
 {
+	WeaponToggle = 1;
 	hide Flare;
 	Static_Var_1 = 2500;
 	start-script SmokeUnit();
@@ -54,6 +63,7 @@ RestoreAfterDelay()
 
 AimPrimary(heading, pitch)
 {
+    if(!WeaponToggle OR (get WEAPON_RELOADSTATE(2) > get GAME_FRAME)) return 0;
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
 	turn Turret to y-axis heading speed <30.000000>;
@@ -80,6 +90,39 @@ QueryPrimary(piecenum)
 }
 
 AimFromPrimary(piecenum)
+{
+	piecenum = Turret;
+}
+
+AimSecondary(heading, pitch)
+{
+	if(WeaponToggle OR (get WEAPON_RELOADSTATE(1) > get GAME_FRAME)) return 0;
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	turn Turret to y-axis heading speed <30.000000>;
+	turn Gun to x-axis <0.000000> - pitch speed <45.000000>;
+	wait-for-turn Turret around y-axis;
+	wait-for-turn Gun around x-axis;
+	return (1);
+}
+
+FireSecondary()
+{
+	move B1 to z-axis [-7.500000] speed [500.000000];
+	move B2 to z-axis [-4.000000] speed [500.000000];
+	wait-for-move B1 along z-axis;
+	emit-sfx 1024 + 0 from Flare;
+	sleep 200;
+	move B1 to z-axis [0.000000] speed [3.500000];
+	move B2 to z-axis [0.000000] speed [3.500000];
+}
+
+QuerySecondary(piecenum)
+{
+	piecenum = Flare;
+}
+
+AimFromSecondary(piecenum)
 {
 	piecenum = Turret;
 }
