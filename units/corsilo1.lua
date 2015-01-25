@@ -47,6 +47,7 @@ local unitDef = {
 	noChaseCategory = [[ALL]],
 	objectName = [[CORSILO]],
 	radarDistance = 50,
+	script = [[corsilo.cob]],
 	seismicSignature = 0,
 	selfDestructAs = [[NUCLEAR_MISSILE]],
 	side = [[CORE]],
@@ -58,6 +59,11 @@ local unitDef = {
 	workerTime = 0,
 	yardMap = [[ooooooooooooooooooooooooooooooooooooooooooooooooo]],
 	featureDefs = nil,
+	sfxtypes = {
+		explosiongenerators = {
+			[1] = [[custom:launchnuke_small]],
+		},
+        },
 	sounds = {
 		canceldestruct = [[cancel2]],
 		underattack = [[warning1]],

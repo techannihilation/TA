@@ -45,6 +45,7 @@ local unitDef = {
 	noChaseCategory = [[ALL]],
 	objectName = [[ARMSILO]],
 	radarDistance = 50,
+	script = [[armsilo.cob]],
 	seismicSignature = 0,
 	selfDestructAs = [[NUCLEAR_MISSILE]],
 	side = [[ARM]],
@@ -56,6 +57,11 @@ local unitDef = {
 	workerTime = 0,
 	yardMap = [[ooooooooooooooooooooooooooooooooooooooooooooooooo]],
 	featureDefs = nil,
+	sfxtypes = {
+		explosiongenerators = {
+			[1] = [[custom:launchnuke_small]],
+		},
+        },
 	sounds = {
 		canceldestruct = [[cancel2]],
 		underattack = [[warning1]],

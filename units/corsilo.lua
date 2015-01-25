@@ -58,6 +58,11 @@ local unitDef = {
 	workerTime = 0,
 	yardMap = [[ooooooooooooooooooooooooooooooooooooooooooooooooo]],
 	featureDefs = nil,
+	sfxtypes = {
+		explosiongenerators = {
+			[1] = [[custom:launchnuke_small]],
+		},
+        },
 	sounds = {
 		canceldestruct = [[cancel2]],
 		underattack = [[warning1]],
