@@ -31,7 +31,7 @@ local unitDef = {
 	explodeAs = [[SHIPBLAST]],
 	floater = true,
 	footprintX = 13,
-	footprintZ = 12,
+	footprintZ = 10,
 	iconType = [[building]],
 	idleAutoHeal = 6,
 	idleTime = 1800,
@@ -51,7 +51,7 @@ local unitDef = {
 	unitname = [[ccovertopscentre]],
 	useBuildingGroundDecal = true,
 	workerTime = 160,
-	yardMap = [[OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO OCCCCCCCCCCCO]],
+	yardMap = [[OOOOOOOOOOOOO OOOOOOOOOOOOO OOOCCCCCCCOOO OOCCCCCCCCCOO OOCCCCCCCCCOO OOOCCCCCCOOOO OOCCCCCCCCCOO OOCCCCCCCCCOO OOOOOOOOOOOOO OOOOOOOOOOOOO]],
 	buildoptions = {
 		[1] = [[cbuilderlvl3]],
 	},
