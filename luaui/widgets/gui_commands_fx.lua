@@ -59,7 +59,6 @@ local maxCommand = 0
 local unitCommand = {} -- most recent key in command table of order for unitID 
 local setTarget = {} -- set targets of units
 local osClock
-local CantDraw = true
 
 local opacity       = 0.75		
 local duration      = 1.25
@@ -173,7 +172,7 @@ local function DrawDot(size, r,g,b,a, x,y,z)
 end
 
 local function DrawLine(x1,y1,z1, x2,y2,z2, width) -- long thin rectangle
-    local theta = (x1~=x2) and atan((z2-z1)/(x2-x1)) or pi/2 
+    local theta	= (x1~=x2) and atan((z2-z1)/(x2-x1)) or pi/2
     local zOffset = cos(pi-theta) * width / 2
     local xOffset = sin(pi-theta) * width / 2
     
@@ -190,18 +189,6 @@ function RemovePreviousCommand(unitID)
     if unitCommand[unitID] and commands[unitCommand[unitID]] then
         commands[unitCommand[unitID]].draw = false
     end
-end
-
-function widget:Initialize()
-  widgetHandler:RegisterGlobal('GetHeight_command_fx', IsTooHigh)
-end
-
-function widget:Shutdown()
-  widgetHandler:DeregisterGlobal('GetHeight_command_fx', IsTooHigh)
-end
-
-function IsTooHigh(toohigh)
-    CantDraw = toohigh
 end
 
 function widget:UnitCommand(unitID, unitDefID, teamID, cmdID, _, _)
@@ -298,7 +285,7 @@ end
 
 function widget:DrawWorldPreUnit()
     --Spring.Echo(maxCommand-minCommand) --EXPENSIVE! often handling hundreds of command queues at once 
-    if spIsGUIHidden() or CantDraw == true then return end
+    if spIsGUIHidden() then return end
     
     osClock = os.clock()
     gl.Blending(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
@@ -377,7 +364,7 @@ function widget:DrawWorldPreUnit()
 end
 
 function widget:DrawWorld()
-    if spIsGUIHidden() or CantDraw == true then return end
+    if spIsGUIHidden() then return end
 
     -- highlight unit 
     gl.DepthTest(true)

@@ -33,7 +33,6 @@ function IsTooHigh()
   ScriptLuaUICall("GetHeight_projectilelights", toohigh)
   ScriptLuaUICall("GetHeight_morphindicator", toohigh)
   ScriptLuaUICall("GetHeight_allycursors", toohigh)
-  ScriptLuaUICall("GetHeight_command_fx", toohigh)
 end
 
 function ScriptLuaUICall(name, toohigh)
