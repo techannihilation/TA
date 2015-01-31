@@ -447,6 +447,10 @@ function widget:DrawScreen()
 			
 			DrawText("Info:", format("%d range, %d aoe, %d%% edge", uWep.range, uWep.damageAreaOfEffect, 100 * uWep.edgeEffectiveness))
 			
+			if uWep.coverageRange and uWep.stockpile then
+			  	DrawText("Anti:", format("%d Interceptor Range", uWep.coverageRange))
+			end
+			
 			local dmgString
 			if oBurst > 1 then
 				dmgString = format(yellow .. "%d (x%d)" .. white .. " / " .. yellow .. "%.2f" .. white .. " = " .. yellow .. "%.2f", oDmg, oBurst, oRld, oBurst * oDmg / oRld)
