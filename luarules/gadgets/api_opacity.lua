@@ -59,6 +59,9 @@ function SetOpacity()
         -- each widget needs its own Script.LuaUI call :(
         --ScriptLuaUICall("SetOpacity_Comblast_DGun_Range", opacityDark, opacityLight)
         ScriptLuaUICall("SetOpacity_Defense_Range", opacityDark, opacityLight)
+        ScriptLuaUICall("SetOpacity_Highlight_geo", opacityDark, opacityLight)
+        ScriptLuaUICall("SetOpacity_Comblast_DGun_Range", opacityDark, opacityLight)
+
     end
 end
 
