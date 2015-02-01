@@ -184,17 +184,13 @@ function widget:GameFrame(n)
             local wantedOpacity
             -- show if (1) unit is selected (2) com is enemy and we are not a spec (3) com has an enemy unit nearby
 	    
-	    local unitDefID = spGetUnitDefID(unitID)
-	    local deathBlasId = WeaponDefNames[string.lower(UnitDefs[unitDefID]["deathExplosion"])].id
-	    local blastRadius = WeaponDefs[deathBlasId].damageAreaOfEffect
-	    
-            local enemyUnitID = spGetUnitNearestEnemy(unitID,2*blastRadius,false)
+            local enemyUnitID = spGetUnitNearestEnemy(unitID,2*comCenters[unitID].blastRadius,false)
             if spIsUnitSelected(unitID) or (not spec and not spAreTeamAllied(myTeamID,comCenters[unitID].teamID)) then
                 wantedOpacity = 0.8
             elseif enemyUnitID then
                 local ex,ey,ez = spGetUnitPosition(enemyUnitID)
                 local distance = sqrt((x-ex)^2 + (y-ey)^2 + (z-ez)^2)
-                wantedOpacity = 0.8 - 0.8*max(distance-blastRadius,0)/blastRadius
+                wantedOpacity = 0.8 - 0.8*max(distance-comCenters[unitID].blastRadius,0)/comCenters[unitID].blastRadius
             else
                 wantedOpacity = 0
             end
