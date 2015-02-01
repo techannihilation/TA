@@ -117,7 +117,7 @@ function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer,
 			DestroyUnit(attackerID,false,false,unitID)
 			return combombDamage, 0
 		end
-	elseif weaponID == COM_BLAST and COMMANDER[unitDefID] then
+	elseif COM_BLAST[weaponID] and COMMANDER[unitDefID] then
 		if unitID ~= attackerID then
 			--prevent falling damage to the unitID, and lock position
 			MoveCtrl.Enable(unitID)
