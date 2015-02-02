@@ -106,7 +106,7 @@ local unitDef = {
 
 local weaponDefs = {
 	NUKE_HCAR_CORE = {
-		areaOfEffect = 1960,
+		areaOfEffect = 1650,
 		avoidFriendly = false,
 		cegTag = [[Trail_nuke]],
 		collideFriendly = false,
@@ -116,7 +116,7 @@ local weaponDefs = {
 		cruise = 1,
 		edgeEffectiveness = 0.0,
 		energypershot = 307500,
-		explosionGenerator = [[custom:FLASHNUKE1920]],
+		explosionGenerator = [[custom:nuke_explo_1280]],
 		fireStarter = 0,
 		flightTime = 400,
 		guidance = true,
