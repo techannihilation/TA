@@ -1018,3 +1018,32 @@ for name, ud in pairs(UnitDefs) do
 		  ud.customparams.buildpic = ud.buildpic
 		end
 end
+
+for name, ud in pairs(UnitDefs) do
+	if (ud.sfxtypes == nil) then
+		ud.sfxtypes = {}
+	end
+	ud.sfxtypes["pieceExplosionGenerators"] = {}
+	ud.sfxtypes["pieceExplosionGenerators"][1] = [[piecetrail0]]
+	ud.sfxtypes["pieceExplosionGenerators"][2] = [[piecetrail1]]
+	ud.sfxtypes["pieceExplosionGenerators"][3] = [[piecetrail2]]
+	ud.sfxtypes["pieceExplosionGenerators"][4] = [[piecetrail3]]
+	ud.sfxtypes["pieceExplosionGenerators"][5] = [[piecetrail4]]
+	ud.sfxtypes["pieceExplosionGenerators"][6] = [[piecetrail5]]
+end
+
+--[[
+for name, ud in pairs(UnitDefs) do
+	if ud.damagemodifier then
+		  Spring.Echo("## [" .. ud.name .. "](" .. ud.unitname .. ")")
+		  if ud.buildpic then
+			  Spring.Echo("![](https://github.com/n3wm1nd/TA/raw/master/unitpics/" .. string.lower(ud.buildpic) ..")")
+		  else 
+		  	  Spring.Echo("![](https://github.com/n3wm1nd/TA/raw/master/unitpics/" .. ud.unitname ..".png)")
+		  end
+		  Spring.Echo("")
+		  Spring.Echo("Take " .. ud.damagemodifier .. "% of damage when Closed")
+	end
+end
+
+--]]
