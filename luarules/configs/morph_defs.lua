@@ -507,6 +507,7 @@ local morphDefs = {
 	},
        corhrk = {
 		into = 'corhowie',
+		tech = 3,
 		time = 150,
 		xp = 0.70,
 	},
