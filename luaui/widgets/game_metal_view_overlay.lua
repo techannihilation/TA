@@ -14,6 +14,7 @@ end
 -------------------------------------------------------------------------------
 
 local isActive = false
+local IsActive = false
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
 
@@ -27,18 +28,23 @@ function widget:Initialize()
     widgetHandler:RemoveWidget()
     return
   end
-  if Spring.GetMapDrawMode() ~= 'metal' then
+  frame,_ = Spring.GetGameFrame()
+  if Spring.GetMapDrawMode() ~= 'metal' and frame == 0 then
     --Spring.SendCommands("unbind any+f4 showmetalmap")
-    Spring.SendCommands("toggleinfo metal")
+
+    --Spring.SendCommands("toggleinfo metal") -- use toggle for 98+
+    Spring.SendCommands("ShowMetalMap")
     isActive = true
   end
 end
 
-function widget:GameFrame(frame)
-  if frame >= 5 and isActive == true then
+function widget:GameStart()
+  if isActive == true and Spring.GetMapDrawMode() == 'metal' then
     --Spring.SendCommands("bind any+f4 showmetalmap")
       if Spring.GetMapDrawMode() == 'metal' then
-        Spring.SendCommands("toggleinfo metal")
+
+	--Spring.SendCommands("toggleinfo metal") -- use toggle for 98+
+	Spring.SendCommands("ShowMetalMap")
       end
     isActive = false
     widgetHandler:RemoveWidget()
@@ -46,10 +52,13 @@ function widget:GameFrame(frame)
 end
 
 function widget:Shutdown()
-  if isActive == true and Spring.GetMapDrawMode() == 'metal' then
+  if Spring.GetMapDrawMode() == 'metal' then
     --Spring.SendCommands("bind any+f4 showmetalmap")
-    Spring.SendCommands("toggleinfo metal")
+    
+    --Spring.SendCommands("toggleinfo metal") -- use toggle for 98+
+    Spring.SendCommands("ShowMetalMap")
   end
 end
+
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------

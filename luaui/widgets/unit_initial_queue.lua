@@ -365,10 +365,11 @@ end
 local function SetSelDefID(defID)
 
 	selDefID = defID
-
+--[[
 	if (isMex[selDefID] ~= nil) ~= (Spring.GetMapDrawMode() == "metal") then
 		Spring.SendCommands("ShowMetalMap")
 	end
+--]]
 end
 local function GetUnitCanCompleteQueue(uID)
 
