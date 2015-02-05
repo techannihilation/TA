@@ -365,11 +365,12 @@ end
 local function SetSelDefID(defID)
 
 	selDefID = defID
---[[
-	if (isMex[selDefID] ~= nil) ~= (Spring.GetMapDrawMode() == "metal") then
+	local MetalWidget = widgetHandler.knownWidgets['Pre Start Metal View'] or {}
+
+	if (isMex[selDefID] ~= nil) ~= (Spring.GetMapDrawMode() == "metal") and MetalWidget.active == false then
 		Spring.SendCommands("ShowMetalMap")
 	end
---]]
+
 end
 local function GetUnitCanCompleteQueue(uID)
 
