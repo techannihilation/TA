@@ -100,7 +100,6 @@ local weaponDefs = {
 		avoidFriendly = false,
 		cegTag = [[Arm_Trail_rocket_upg]],
 		collideFriendly = false,
-		commandfire = true,
 		craterBoost = 0,
 		craterMult = 0,
 		cruise = 1,
