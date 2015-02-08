@@ -46,6 +46,7 @@ local unitDef = {
 	noAutoFire = false,
 	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMBANTH1]],
+	script = [[armbanth.cob]],
 	seismicSignature = 0,
 	selfDestructAs = [[CRBLMSSL4]],
 	side = [[ARM]],
@@ -82,13 +83,14 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			def = [[ARMBANTHA_FIRE1]],
-			onlyTargetCategory = [[NOTVTOL]],
-		},
-		[2] = {
 			def = [[TEHLAZEROFDEWM1]],
 			onlyTargetCategory = [[NOTVTOL]],
 		},
+		[2] = {
+			def = [[ARMBANTHA_FIRE1]],
+			onlyTargetCategory = [[NOTVTOL]],
+		},
+		
 		[3] = {
 			def = [[BANTHA_ROCKET1]],
 			onlyTargetCategory = [[NOTVTOL]],

@@ -88,11 +88,11 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			def = [[ARMBANTHA_FIRE]],
+			def = [[TEHLAZEROFDEWM]],
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[2] = {
-			def = [[TEHLAZEROFDEWM]],
+			def = [[ARMBANTHA_FIRE]],
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 		[3] = {
@@ -138,7 +138,6 @@ local weaponDefs = {
 	},
 	BANTHA_ROCKET = {
 		areaOfEffect = 96,
-		canattackground = false,
 		cegTag = [[ARMRAVENTRAIL]],
 		craterBoost = 0,
 		craterMult = 0,
