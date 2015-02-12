@@ -26,11 +26,16 @@ local options={
     },
     {
 	key    = "mo_preventcombomb",
-	name   = "1v1 Mode (Prevent Combombs)",
-	desc   = "Commanders survive DGuns and other commanders explosions",
-	type   = "bool",
-	def    = false,
+	name   = "Prevent Combombs",
+	desc   = "Commanders survive DGuns and other commanders explosions\nAutoHost USage :- mo_preventcombomb",
+	type   = "list",
 	section= "ta_modes",
+	def    = "off",
+	items = {
+		{key="hp", name="Health", desc="Commander with greatest hp survives comblast"},
+		{key="1v1", name="1v1", desc="Default Setting for 1v1 games"},
+		{key="off", name="Off", desc="Default engine Control"},
+		}
     },
     {
 	key    = "mo_comgate",
