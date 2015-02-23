@@ -243,7 +243,7 @@ function widget:Initialize()
 end
 
 function widget:Shutdown()
-  widgetHandler:DeRegisterGlobal('DrawManager_healthbars', DrawStatus)
+  widgetHandler:DeregisterGlobal('DrawManager_healthbars', DrawStatus)
 
   --// catch f9
   widgetHandler:RemoveAction("showhealthbars", showhealthbars)
