@@ -65,6 +65,11 @@ local duration      = 1.25
 local lineWidth	    = 6
 local dotRadius     = 28		
 
+local TooHigh = true
+local HighPing = false
+local FPSCount = Spring.GetFPS()
+local FPSLimit = 8
+
 local mapX = Game.mapSizeX
 local mapZ = Game.mapSizeZ
 
@@ -184,7 +189,6 @@ local function DrawLine(x1,y1,z1, x2,y2,z2, width) -- long thin rectangle
 end
 
 ------------------------------------------------------------------------------------
-
 function RemovePreviousCommand(unitID)
     if unitCommand[unitID] and commands[unitCommand[unitID]] then
         commands[unitCommand[unitID]].draw = false
@@ -222,6 +226,20 @@ function ExtractTargetLocation(a,b,c,d,cmdID)
         end
     end
     return x,y,z
+end
+
+function DrawStatus(toohigh,fps,ping)
+    TooHigh = toohigh
+    FPSCount = fps
+    HighPing = ping
+end
+
+function widget:Initialize()
+  widgetHandler:RegisterGlobal('DrawManager_commandfx', DrawStatus)
+end 
+
+function widget:Shutdown()
+  widgetHandler:DeregisterGlobal('DrawManager_commandfx', DrawStatus)
 end
 
 function widget:GameFrame()
@@ -285,7 +303,9 @@ end
 
 function widget:DrawWorldPreUnit()
     --Spring.Echo(maxCommand-minCommand) --EXPENSIVE! often handling hundreds of command queues at once 
-    if spIsGUIHidden() then return end
+    if spIsGUIHidden() or ( TooHigh == true ) or ( FPSCount < FPSLimit ) or ( HighPing == true ) then 
+      return
+    end
     
     osClock = os.clock()
     gl.Blending(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
@@ -364,7 +384,9 @@ function widget:DrawWorldPreUnit()
 end
 
 function widget:DrawWorld()
-    if spIsGUIHidden() then return end
+    if spIsGUIHidden() or ( FPSCount < FPSLimit ) or ( HighPing == true ) then
+      return
+    end
 
     -- highlight unit 
     gl.DepthTest(true)

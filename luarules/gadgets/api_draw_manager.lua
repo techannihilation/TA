@@ -35,10 +35,8 @@ function DrawChecks()
   local cx, cy, cz = SpGetCameraPosition()
   local smoothheight = SpGetSmoothMeshHeight(cx,cz)
   local toohigh = ((cy-smoothheight)^2 >= MaxDist) 
-  
   --Fps speed Check
   local fpscount = SpGetFPS()
-  
   --Ping/Lag Check
   local playerID = SpGetMyPlayerID()
   local _,_,_,_,_,ping = SpGetPlayerInfo(playerID)
@@ -58,8 +56,8 @@ function DrawChecks()
   ScriptLuaUICall("DrawManager_morphindicator", toohigh,fpscount,highping)
   ScriptLuaUICall("DrawManager_allycursors", toohigh,fpscount,highping)
   ScriptLuaUICall("DrawManager_healthbars", toohigh,fpscount,highping)
+  ScriptLuaUICall("DrawManager_commandfx", toohigh,fpscount,highping)
 end
-
 
 function ScriptLuaUICall(name, toohigh,fpscount,highping)
     if Script.LuaUI(name) then
