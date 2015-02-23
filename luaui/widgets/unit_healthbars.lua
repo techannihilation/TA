@@ -46,6 +46,10 @@ local maxFeatureInfoDistance = 250000 --max squared distance at which text it dr
 local maxFeatureDistance = 500000 --max squared distance at which any info is drawn for features
 local maxUnitDistance = 5500000 --max squared distance at which any info is drawn for units  MUST BE LARGER THAN FOR FEATURES!
 
+local HighPing = false
+local FPSCount = Spring.GetFPS()
+local FPSLimit = 6
+
 local drawJumpJet        = Spring.GetGameRulesParam("jumpJets")
 
 local minReloadTime = 4 --// in seconds
@@ -126,6 +130,8 @@ do
 end --//end do
 
 function widget:Initialize()
+  widgetHandler:RegisterGlobal('DrawManager_healthbars', DrawStatus)
+
   --// catch f9
   Spring.SendCommands({"showhealthbars 0"})
   Spring.SendCommands({"showrezbars 0"})
@@ -237,6 +243,8 @@ function widget:Initialize()
 end
 
 function widget:Shutdown()
+  widgetHandler:DeRegisterGlobal('DrawManager_healthbars', DrawStatus)
+
   --// catch f9
   widgetHandler:RemoveAction("showhealthbars", showhealthbars)
   Spring.SendCommands({"unbind f9 luaui"})
@@ -255,6 +263,11 @@ end
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
+function DrawStatus(_,fps,ping)
+    FPSCount = fps
+    HighPing = ping
+end
+
 
 function GetColor(colormap,slider)
   local coln = #colormap
@@ -755,7 +768,11 @@ do
   local glDepthMask          = gl.DepthMask
 
   function widget:DrawWorld()
-  
+  if ( FPSCount < FPSLimit ) or ( HighPing == true ) then 
+    return
+  end
+    
+    
     if (#visibleUnits+#visibleFeatures==0) then
       return
     end

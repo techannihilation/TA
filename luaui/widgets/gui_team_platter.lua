@@ -94,7 +94,10 @@ local circleOffset = 0
 
 local startTimer = spGetTimer()
 
-local CantDraw = true
+local TooHigh = true
+local HighPing = false
+local FPSCount = Spring.GetFPS()
+local FPSLimit = 8
 
 local update = 1.0
 local timeCounter = math.huge -- force the first update
@@ -136,8 +139,7 @@ end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 function widget:Initialize()
-  widgetHandler:RegisterGlobal('GetHeight_teamplatter', IsTooHigh)
-
+  widgetHandler:RegisterGlobal('DrawManager_teamplatter', DrawStatus)
   if (UnitDefs[1].radius == nil) then
     for udid, ud in ipairs(UnitDefs) do
       -- this cause a lag on loading, but it is a huge performance improvment!
@@ -174,7 +176,7 @@ end
 
 
 function widget:Shutdown()
-  widgetHandler:DeregisterGlobal('GetHeight_teamplatter', IsTooHigh)
+  widgetHandler:DeregisterGlobal('DrawManager_teamplatter', DrawStatus)
 
   glDeleteList(circleLines)
   glDeleteList(circlePolys)
@@ -214,12 +216,13 @@ end
 --------------------------------------------------------------------------------
 
 
-function IsTooHigh(toohigh)
-    CantDraw = toohigh
+function DrawStatus(toohigh,fps,ping)
+    TooHigh = toohigh
+    FPSCount = fps
+    HighPing = ping
 end
 
 local realRadii = {}
-
 
 local function GetUnitDefRealRadius(udid)
   local radius = realRadii[udid]
@@ -247,7 +250,9 @@ end
 --------------------------------------------------------------------------------
 
 function widget:DrawWorldPreUnit()
-    if Spring.IsGUIHidden() == true or CantDraw then 
+    --Spring.Echo(TooHigh,FPSCount,HighPing)
+  
+    if Spring.IsGUIHidden() == true or ( TooHigh == true ) or ( FPSCount < FPSLimit ) or ( HighPing == true ) then 
       return  -- avoid unnecessary GL calls
     end
     

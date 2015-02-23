@@ -59,21 +59,24 @@ local GL_QUADS				= GL.QUADS
 
 local clock					= os.clock
 
-local CantDraw = true
+local TooHigh = true
+local HighPing = false
+local FPSCount = Spring.GetFPS()
+local FPSLimit = 8
 
 local alliedCursorsPos = {}
 
 
 function widget:Initialize()
 
-	widgetHandler:RegisterGlobal('GetHeight_allycursors', IsTooHigh)
+	widgetHandler:RegisterGlobal('DrawManager_allycursors', DrawStatus)
 	widgetHandler:RegisterGlobal('MouseCursorEvent', MouseCursorEvent)
 end
 
 
 function widget:Shutdown()
 
-	widgetHandler:DeregisterGlobal('GetHeight_allycursors', IsTooHigh)
+	widgetHandler:DeregisterGlobal('DrawManager_allycursors', DrawStatus)
 	widgetHandler:DeregisterGlobal('MouseCursorEvent')
 end
 
@@ -87,8 +90,10 @@ local function CubicInterpolate2(x0,x1,mix)
 	return x0*(2*mix3-3*mix2+1) + x1*(3*mix2-2*mix3);
 end
 
-function IsTooHigh(toohigh)
-    CantDraw = toohigh
+function DrawStatus(toohigh,fps,ping)
+    TooHigh = toohigh
+    FPSCount = fps
+    HighPing = ping
 end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -190,7 +195,7 @@ end
 
 
 function widget:DrawWorldPreUnit()
-	if CantDraw then 
+	if ( TooHigh == true ) or ( FPSCount < FPSLimit ) or ( HighPing == true ) then 
 		return
 	end
 	

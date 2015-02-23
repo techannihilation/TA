@@ -73,7 +73,11 @@ local rankTextures = {
 local sentmessage = {}
 
 local morphRankMax = #rankTextures
-local CantDraw = true
+
+local TooHigh = true
+local HighPing = false
+local FPSCount = Spring.GetFPS()
+local FPSLimit = 8
 
 local message = 0
 
@@ -125,7 +129,7 @@ local function getAllUnitsMorphXpValuesArray()
 end
 
 function widget:Initialize()
-  widgetHandler:RegisterGlobal('GetHeight_morphindicator', IsTooHigh)
+  widgetHandler:RegisterGlobal('DrawManager_morphindicator', DrawStatus)
 
   if (UnitDefs[1].height == nil) then
     for udid, ud in ipairs(UnitDefs) do
@@ -147,7 +151,7 @@ function widget:Initialize()
 end
 
 function widget:Shutdown()
-  widgetHandler:DeregisterGlobal('GetHeight_morphindicator', IsTooHigh)
+  widgetHandler:DeregisterGlobal('DrawManager_morphindicator', DrawStatus)
 
   for _,rankTexture in ipairs(rankTextures) do
     glDeleteTexture(rankTexture)
@@ -246,8 +250,10 @@ function widget:GameFrame(frame)
   end
 end
 
-function IsTooHigh(toohigh)
-    CantDraw = toohigh
+function DrawStatus(toohigh,fps,ping)
+    TooHigh = toohigh
+    FPSCount = fps
+    HighPing = ping
 end
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
@@ -288,7 +294,7 @@ end
 
 
 function widget:DrawWorld()
-  if CantDraw then 
+  if ( TooHigh == true ) or ( FPSCount < FPSLimit ) or ( HighPing == true ) then 
     return
   end
   

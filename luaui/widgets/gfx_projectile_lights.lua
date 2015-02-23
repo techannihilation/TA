@@ -51,7 +51,11 @@ local atan2				= math.atan2
 local acos, cos			= math.acos, math.cos
 local abs				= math.abs
 local DegToRad			= 57.295779513082320876798
-local CantDraw = true
+
+local TooHigh = true
+local HighPing = false
+local FPSCount = Spring.GetFPS()
+local FPSLimit = 8
 
 local list      
 local plighttable = {}
@@ -104,12 +108,15 @@ listL = glCreateList(function()	-- Laser cannon decal texture
     end)
 end)
 
-function IsTooHigh(toohigh)
-    CantDraw = toohigh
+function DrawStatus(toohigh,fps,ping)
+    TooHigh = toohigh
+    FPSCount = fps
+    HighPing = ping
 end
 
+
 function widget:Initialize() -- create lighttable
-    widgetHandler:RegisterGlobal('GetHeight_projectilelights', IsTooHigh)
+    widgetHandler:RegisterGlobal('DrawManager_projectilelights', DrawStatus)
 --[[	local modOptions = Spring.GetModOptions()
 	if modOptions and modOptions.lowcpu == "1" then
 		Spring.Echo('Low performance mode is on, removing "Projectile lights" widget')
@@ -188,7 +195,7 @@ function widget:Initialize() -- create lighttable
 end
 
 function widget:Shutdown()
-  widgetHandler:DeregisterGlobal('GetHeight_projectilelights', IsTooHigh)
+  widgetHandler:DeregisterGlobal('DrawManager_projectilelights', DrawStatus)
 end
 
 local plist = {}
@@ -199,7 +206,7 @@ local x, y, z, dx, dz, nx, ny, nz, ang
 local a, f, h = {}, {}, {}
 function widget:DrawWorldPreUnit()
 	
-	if CantDraw then 
+	if ( TooHigh == true ) or ( FPSCount < FPSLimit ) or ( HighPing == true ) then 
 		return
 	end
 	
