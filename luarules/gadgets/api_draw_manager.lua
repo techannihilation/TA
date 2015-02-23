@@ -29,6 +29,7 @@ local SpGetMyPlayerID = Spring.GetMyPlayerID
 local SpGetPlayerInfo = Spring.GetPlayerInfo
 local MaxDist = 13000000
 local highping = false
+local a = 0
 
 function DrawChecks()
   --Camera Height Check
@@ -66,7 +67,11 @@ function ScriptLuaUICall(name, toohigh,fpscount,highping)
 end
   
 function gadget:Update()
+  if a == 4 then
     DrawChecks()
+    a = 0
+  end
+  a=a + 1
 end
 
 end
