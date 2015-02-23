@@ -675,8 +675,28 @@ end
 function IsTooHigh()
 	local cx, cy, cz = Spring.GetCameraPosition()
 	local smoothheight = Spring.GetSmoothMeshHeight(cx,cz)
-	local toohigh = ((cy-smoothheight)^2 >= 12500000) 
+	local toohigh = ((cy-smoothheight)^2 >= 12500000)
 	return toohigh
+end
+
+function FPS()
+   local fpscount = Spring.GetFPS()
+   if fpscount > 10 then
+    return false
+  else
+    return true
+  end
+end
+
+function LowPing()
+  local playerID = Spring.GetMyPlayerID()
+  local _,_,_,_,_,ping = Spring.GetPlayerInfo(playerID)
+  ping = ping * 1000
+  if ping > 6000 then
+    return true
+  else
+    return false
+  end
 end
 
 local function IsUnitFXVisible(fx)
@@ -693,7 +713,7 @@ local function IsUnitFXVisible(fx)
 		end
 	end
 
-	if (isIcon) or (IsTooHigh()) or Crashing == 1 then
+	if (isIcon) or Crashing == 1 then
 		return false
 	elseif (not fx.onActive)or(unitActive) then
 		if fx.alwaysVisible then
@@ -731,7 +751,7 @@ end
 
 local function IsWorldFXVisible(fx)
 	local _, specFullView = spGetSpectatingState()
-	if IsTooHigh() then
+	if IsTooHigh() or FPS() or LowPing() then
 		return false
 	elseif fx.alwaysVisible then
 		return true
