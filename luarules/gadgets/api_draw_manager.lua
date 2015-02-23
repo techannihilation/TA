@@ -43,7 +43,7 @@ function DrawChecks()
   local playerID = SpGetMyPlayerID()
   local _,_,_,_,_,ping = SpGetPlayerInfo(playerID)
   ping = ping * 1000
-  if ping > 33 then
+  if ping > 6000 then
     highping = true
   else
     highping = false
