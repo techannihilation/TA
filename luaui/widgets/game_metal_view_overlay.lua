@@ -36,8 +36,9 @@ function widget:Initialize()
   end
 end
 
-function widget:GameStart()
-  if isActive == true and Spring.GetMapDrawMode() == 'metal' then
+function widget:GameFrame(n)
+  if n > 1 then
+    if isActive == true and Spring.GetMapDrawMode() == 'metal' then
     --Spring.SendCommands("bind any+f4 showmetalmap")
       if Spring.GetMapDrawMode() == 'metal' then
 
@@ -46,6 +47,7 @@ function widget:GameStart()
       end
     isActive = false
     widgetHandler:RemoveWidget()
+    end
   end
 end
 
