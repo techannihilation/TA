@@ -713,7 +713,7 @@ local function IsUnitFXVisible(fx)
 		end
 	end
 
-	if (isIcon) or Crashing == 1 then
+	if (isIcon) or Crashing == 1 or FPS() or LowPing() then
 		return false
 	elseif (not fx.onActive)or(unitActive) then
 		if fx.alwaysVisible then
