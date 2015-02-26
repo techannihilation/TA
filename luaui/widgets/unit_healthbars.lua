@@ -768,7 +768,7 @@ do
   local glDepthMask          = gl.DepthMask
 
   function widget:DrawWorld()
-  if ( FPSCount < FPSLimit ) or ( HighPing == true ) then 
+  if ( HighPing == true ) then 
     return
   end
     
@@ -858,7 +858,7 @@ do
     videoFrame = videoFrame+1
     sec1=sec1+dt
 	
-	if IsGUIHidden() == true then 
+	if IsGUIHidden() == true  or ( HighPing == true ) then 
 		return
 	end
 	

@@ -74,7 +74,20 @@ local ResetGl
 local CheckSpecState
 local firstScan = true
 
+local TooHigh = true
+local HighPing = false
+local FPSCount = Spring.GetFPS()
+local FPSLimit = 8
+
 local dontTrackEnemyWrecks = tonumber(Spring.GetModOptions().mo_enemywrecks) or 0
+
+function widget:Initialize()
+	widgetHandler:RegisterGlobal('DrawManager_ghostsite', DrawStatus)
+end
+
+function widget:ShutDown()
+	widgetHandler:DeregisterGlobal('DrawManager_ghostsite', DrawStatus)
+end
 
 function widget:Update()
 	local timef = spGetGameSeconds()
@@ -97,6 +110,11 @@ function widget:Update()
 end
 
 function widget:DrawWorld()
+  
+	if ( TooHigh == true ) or ( FPSCount < FPSLimit ) or ( HighPing == true ) then 
+		return
+	end
+	
 	DrawGhostSites()
 	
 	DrawGhostFeatures()
@@ -121,6 +139,12 @@ function widget:UnitEnteredLos(unitID, allyTeam)
 		
 		ghostSites[unitID] = { unitDefId = spGetUnitDefID(unitID), x=x, y=y, z=z, teamId = allyTeam, angle = angle }
 	end
+end
+
+function DrawStatus(toohigh,fps,ping)
+	    TooHigh = toohigh
+	    FPSCount = fps
+	    HighPing = ping
 end
 
 function DrawGhostFeatures()

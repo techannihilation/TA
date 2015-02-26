@@ -366,6 +366,11 @@ local UnitDetected
 local GetColorByDps
 local CheckDrawTodo
 local DrawRanges
+
+local TooHigh = true
+local HighPing = false
+local FPSCount = Spring.GetFPS()
+local FPSLimit = 8
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -403,6 +408,7 @@ function widget:Initialize()
 	state["myPlayerID"] = spGetLocalTeamID()
 
     widgetHandler:RegisterGlobal('SetOpacity_Defense_Range', SetOpacity)
+    widgetHandler:RegisterGlobal('DrawManager_defense_range', DrawStatus)
 
 	DetectMod()
 
@@ -421,6 +427,7 @@ end
 
 function widget:ShutDown()
     widgetHandler:DeregisterGlobal('SetOpacity_Defense_Range', SetOpacity)
+    widgetHandler:DeregisterGlobal('DrawManager_defense_range', DrawStatus)
 end
 
 function widget:UnitCreated( unitID,  unitDefID,  unitTeam)	
@@ -829,6 +836,11 @@ function SetOpacity(dark,light)
     darkOpacity = dark
 end
 
+function DrawStatus(toohigh,fps,ping)
+    TooHigh = toohigh
+    FPSCount = fps
+    HighPing = ping
+end
 
 function widget:Update()
 	local timef = spGetGameSeconds()
@@ -1144,7 +1156,7 @@ function UpdateCircleList()
 end
 
 function widget:DrawWorld()
-	if not spIsGUIHidden() then
+	if not spIsGUIHidden() or ( TooHigh == false ) or ( FPSCount > FPSLimit ) or ( HighPing == false ) then
 		if rangeCircleList then
 			glCallList(rangeCircleList)
 		else

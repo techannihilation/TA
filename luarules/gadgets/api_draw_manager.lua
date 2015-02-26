@@ -29,6 +29,7 @@ local SpGetMyPlayerID = Spring.GetMyPlayerID
 local SpGetPlayerInfo = Spring.GetPlayerInfo
 local MaxDist = 13000000
 local highping = false
+local oldfps = SpGetFPS()
 local a = 0
 
 function DrawChecks()
@@ -38,6 +39,9 @@ function DrawChecks()
   local toohigh = ((cy-smoothheight)^2 >= MaxDist) 
   --Fps speed Check
   local fpscount = SpGetFPS()
+  fpscount = (fpscount + oldfps) / 2 -- fixme make a nicer way to smooth out values
+  oldfps = fpscount
+  
   --Ping/Lag Check
   local playerID = SpGetMyPlayerID()
   local _,_,_,_,_,ping = SpGetPlayerInfo(playerID)
@@ -58,6 +62,8 @@ function DrawChecks()
   ScriptLuaUICall("DrawManager_allycursors", toohigh,fpscount,highping)
   ScriptLuaUICall("DrawManager_healthbars", toohigh,fpscount,highping)
   ScriptLuaUICall("DrawManager_commandfx", toohigh,fpscount,highping)
+  ScriptLuaUICall("DrawManager_defense_range", toohigh,fpscount,highping)
+  ScriptLuaUICall("DrawManager_ghostsite", toohigh,fpscount,highping)
 end
 
 function ScriptLuaUICall(name, toohigh,fpscount,highping)
