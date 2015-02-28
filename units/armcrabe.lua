@@ -65,9 +65,6 @@ local unitDef = {
 	unitname = [[armcrabe]],
 	unitnumber = 100003,
 	workerTime = 0,
-	customparams = {
-		RequireTech = [[Advanced T3 Unit Research Centre]],
-	},
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],
