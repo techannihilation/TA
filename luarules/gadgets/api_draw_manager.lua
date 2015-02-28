@@ -64,6 +64,7 @@ function DrawChecks()
   ScriptLuaUICall("DrawManager_commandfx", toohigh,fpscount,highping)
   ScriptLuaUICall("DrawManager_defense_range", toohigh,fpscount,highping)
   ScriptLuaUICall("DrawManager_ghostsite", toohigh,fpscount,highping)
+  ScriptLuaUICall("DrawManager_anti_ranges", toohigh,fpscount,highping)
 end
 
 function ScriptLuaUICall(name, toohigh,fpscount,highping)
