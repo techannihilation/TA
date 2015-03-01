@@ -39,7 +39,9 @@ jumpCategory = {
 	supremecom = {
 		range = 1250, height = 150, speed = 5,  reload = 15,  aaShootMe = false, delay = 0, cobscript = true, rotateMidAir = true, limitHeight=false},
 	jumpbot = {
-		range = 250, height = 300, speed = 3,  reload = 15,  aaShootMe = false, delay = 0, cobscript = true, rotateMidAir = true, limitHeight=false},			
+		range = 250, height = 300, speed = 3,  reload = 15,  aaShootMe = false, delay = 0, cobscript = true, rotateMidAir = true, limitHeight=false},
+	longjumpbot = {
+		range = 400, height = 200, speed = 6,  reload = 20,  aaShootMe = false, delay = 0, cobscript = true, rotateMidAir = true, limitHeight=false},		
 }
 
 jumpClassGroups = {
@@ -61,6 +63,10 @@ jumpClassGroups = {
 	jumpbot = {
 	"tlldischarge",
 	},
+	longjumpbot = {
+	"armkrmi",
+	},
+	
 }
 
 for name,data in pairs(UnitDefNames) do
