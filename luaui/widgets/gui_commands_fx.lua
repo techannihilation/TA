@@ -307,7 +307,7 @@ function widget:DrawWorldPreUnit()
       return
     end
     
-    osClock = os.clock()
+    osClock = os.clock() or 0
     gl.Blending(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
     gl.DepthTest(false)
         
