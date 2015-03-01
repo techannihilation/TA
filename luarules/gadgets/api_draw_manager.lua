@@ -31,12 +31,15 @@ local MaxDist = 13000000
 local highping = false
 local oldfps = SpGetFPS()
 local a = 0
+local serverframe
+local gameframe
 
 function DrawChecks()
   --Camera Height Check
   local cx, cy, cz = SpGetCameraPosition()
   local smoothheight = SpGetSmoothMeshHeight(cx,cz)
-  local toohigh = ((cy-smoothheight)^2 >= MaxDist) 
+  local toohigh = ((cy-smoothheight)^2 >= MaxDist)
+  
   --Fps speed Check
   local fpscount = SpGetFPS()
   fpscount = (fpscount + oldfps) / 2 -- fixme make a nicer way to smooth out values
@@ -52,6 +55,7 @@ function DrawChecks()
     highping = false
   end
   
+  Spring.Echo("serverframe is :",serverframe )
   --Spring.Echo("DrawManager Status",toohigh,fpscount,highping)
   
   -- each widget needs its own Script.LuaUI call :(
@@ -79,6 +83,10 @@ function gadget:Update()
     a = 0
   end
   a=a + 1
+end
+
+function gadget:GameProgress(sfn)
+  serverframe = sfn
 end
 
 end
