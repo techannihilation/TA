@@ -842,6 +842,12 @@ function gadgetHandler:GameFrame(frameNum)
   return
 end
 
+function gadgetHandler:GameProgress(serverframenum)
+  for _,g in ipairs(self.GameProgressList) do
+    g:GameProgress(serverframenum)
+  end
+  return
+end
 
 function gadgetHandler:RecvFromSynced(...)
   if (actionHandler.RecvFromSynced(...)) then

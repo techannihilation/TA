@@ -17,6 +17,8 @@ end
 
 if gadgetHandler:IsSyncedCode() then
   
+  
+
 --SYNCED
 else
 --UNSYNCED 
@@ -79,6 +81,10 @@ function gadget:Update()
     a = 0
   end
   a=a + 1
+end
+
+function gadget:GameProgress(serverframenum)
+  Spring.Echo(serverframenum)
 end
 
 end
