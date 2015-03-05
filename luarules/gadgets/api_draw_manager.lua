@@ -84,7 +84,8 @@ function gadget:Update()
 end
 
 function gadget:GameProgress(serverframenum)
-  Spring.Echo(serverframenum)
+  local frame = Spring.GetGameFrame()
+  Spring.Echo("Server frame num: ",serverframenum, "            GameFrame num : ",frame)
 end
 
 end
