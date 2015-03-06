@@ -27,10 +27,8 @@ else
 local SpGetCameraPosition = Spring.GetCameraPosition
 local SpGetSmoothMeshHeight = Spring.GetSmoothMeshHeight
 local SpGetFPS = Spring.GetFPS
-local SpGetMyPlayerID = Spring.GetMyPlayerID
-local SpGetPlayerInfo = Spring.GetPlayerInfo
 local MaxDist = 13000000
-local highping = false
+local IsBehind = false
 local oldfps = SpGetFPS()
 local a = 0
 
@@ -44,34 +42,24 @@ function DrawChecks()
   fpscount = (fpscount + oldfps) / 2 -- fixme make a nicer way to smooth out values
   oldfps = fpscount
   
-  --Ping/Lag Check
-  local playerID = SpGetMyPlayerID()
-  local _,_,_,_,_,ping = SpGetPlayerInfo(playerID)
-  ping = ping * 1000
-  if ping > 6000 then
-    highping = true
-  else
-    highping = false
-  end
-  
-  --Spring.Echo("DrawManager Status",toohigh,fpscount,highping)
+  --Spring.Echo("DrawManager Status",toohigh,fpscount,IsBehind)
   
   -- each widget needs its own Script.LuaUI call :(
   -- ScriptLuaUICall("GetHeight_teamplatter", toohigh)
-  ScriptLuaUICall("DrawManager_teamplatter", toohigh,fpscount,highping)
-  ScriptLuaUICall("DrawManager_projectilelights", toohigh,fpscount,highping)
-  ScriptLuaUICall("DrawManager_morphindicator", toohigh,fpscount,highping)
-  ScriptLuaUICall("DrawManager_allycursors", toohigh,fpscount,highping)
-  ScriptLuaUICall("DrawManager_healthbars", toohigh,fpscount,highping)
-  ScriptLuaUICall("DrawManager_commandfx", toohigh,fpscount,highping)
-  ScriptLuaUICall("DrawManager_defense_range", toohigh,fpscount,highping)
-  ScriptLuaUICall("DrawManager_ghostsite", toohigh,fpscount,highping)
-  ScriptLuaUICall("DrawManager_anti_ranges", toohigh,fpscount,highping)
+  ScriptLuaUICall("DrawManager_teamplatter", toohigh,fpscount,IsBehind)
+  ScriptLuaUICall("DrawManager_projectilelights", toohigh,fpscount,IsBehind)
+  ScriptLuaUICall("DrawManager_morphindicator", toohigh,fpscount,IsBehind)
+  ScriptLuaUICall("DrawManager_allycursors", toohigh,fpscount,IsBehind)
+  ScriptLuaUICall("DrawManager_healthbars", toohigh,fpscount,IsBehind)
+  ScriptLuaUICall("DrawManager_commandfx", toohigh,fpscount,IsBehind)
+  ScriptLuaUICall("DrawManager_defense_range", toohigh,fpscount,IsBehind)
+  ScriptLuaUICall("DrawManager_ghostsite", toohigh,fpscount,IsBehind)
+  ScriptLuaUICall("DrawManager_anti_ranges", toohigh,fpscount,IsBehind)
 end
 
-function ScriptLuaUICall(name, toohigh,fpscount,highping)
+function ScriptLuaUICall(name, toohigh,fpscount,IsBehind)
     if Script.LuaUI(name) then
-        Script.LuaUI[name](toohigh,fpscount,highping)
+        Script.LuaUI[name](toohigh,fpscount,IsBehind)
     end
 end
   
@@ -85,7 +73,13 @@ end
 
 function gadget:GameProgress(serverframenum)
   local frame = Spring.GetGameFrame()
-  Spring.Echo("Server frame num: ",serverframenum, "            GameFrame num : ",frame)
+  Spring.Echo("Server frame num: ",serverframenum ,"  ----  GameFrame num: ",frame)
+  if frame > (serverframenum-300) then
+    IsBehind = true
+  else
+    IsBehind = false
+  end
+  DrawChecks()
 end
 
 end
