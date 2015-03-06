@@ -31,7 +31,7 @@ local MaxDist = 13000000
 local IsBehind = false
 local oldfps = SpGetFPS()
 local a = 0
-
+local maxframelag = 90
 function DrawChecks()
   --Camera Height Check
   local cx, cy, cz = SpGetCameraPosition()
@@ -73,12 +73,12 @@ end
 
 function gadget:GameProgress(serverframenum)
   local frame = Spring.GetGameFrame()
-  if frame > (serverframenum-150) then
+  if frame > (serverframenum-maxframelag) then
     IsBehind = false
   else
     IsBehind = true
   end
-  Spring.Echo("Server frame num: ",(serverframenum-150) ,"  ----  GameFrame num: ",frame,"    ",IsBehind)
+  Spring.Echo("Server frame num: ",(serverframenum-maxframelag) ,"  ----  GameFrame num: ",frame,"    ",IsBehind)
   DrawChecks()
 end
 
