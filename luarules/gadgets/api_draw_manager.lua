@@ -73,12 +73,12 @@ end
 
 function gadget:GameProgress(serverframenum)
   local frame = Spring.GetGameFrame()
-  Spring.Echo("Server frame num: ",serverframenum ,"  ----  GameFrame num: ",frame)
-  if frame > (serverframenum-300) then
+  if frame < (serverframenum-150) then
     IsBehind = true
   else
     IsBehind = false
   end
+  Spring.Echo("Server frame num: ",serverframenum ,"  ----  GameFrame num: ",frame,"    ",IsBehind)
   DrawChecks()
 end
 
