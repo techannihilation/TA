@@ -53,23 +53,16 @@ effectUnitDefs = {
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={-31,55,-10}, size=12, precision=22, repeatEffect=true}},
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={31,55,-10}, size=12, precision=22, repeatEffect=true}},
   },
+  
   --// SHIELDS //--------------------------
-
   corshieldgen = {
     {class='ShieldSphere',options=corshieldgenShieldSphere},
     {class='SimpleParticles2', options=MergeTable({piece="sphere", delay=20, lifeSpread=300},shield)},
     {class='SimpleParticles2', options=MergeTable({piece="sphere", delay=40, lifeSpread=300},shield)},
     {class='SimpleParticles2', options=MergeTable({piece="sphere", delay=60, lifeSpread=300},shield)},
   },
-   corshieldgen_static = {
-    {class='ShieldSphere',options=corshieldgen_staticShieldSphere},
-    {class='SimpleParticles2', options=MergeTable({piece="sphere", delay=20, lifeSpread=300},shield)},
-    {class='SimpleParticles2', options=MergeTable({piece="sphere", delay=40, lifeSpread=300},shield)},
-    {class='SimpleParticles2', options=MergeTable({piece="sphere", delay=60, lifeSpread=300},shield)},
-  },
-  
+ 
   --// OTHER //--------------------------
-  
  armmex1 = {
     {class='SimpleParticles2', options=MergeTable({pos={-6,15,0}, delay=10, lifeSpread=300},sparks)},
   },
