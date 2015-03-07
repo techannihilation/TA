@@ -1267,6 +1267,11 @@ local GL_COLOR_BUFFER_BIT = GL.COLOR_BUFFER_BIT
 
 local headingToDegree = (360 / 65535)
 local MdMaxDist = 1500000  -- max dist at which to draw ETA
+
+local IsTooHigh = false
+local HighPing = false
+local pfscount = Spring.GetFPS()
+
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -1282,6 +1287,13 @@ local MAX_MORPH = 0 --// will increase dynamically
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
+
+function DrawStatus(toohigh,fps,ping)
+	--Spring.Echo(toohigh,fps,ping)
+	IsTooHigh = toohigh
+	pfscount = fps
+	HighPing = pingend
+end
 
 --//synced -> unsynced actions
 
@@ -1383,13 +1395,14 @@ local function ProgMph(cmd, unitID, prog)
   end
 end
 
+--[[
 function IsTooHigh()
   local cx, cy, cz = Spring.GetCameraPosition()
   local smoothheight = Spring.GetSmoothMeshHeight(cx,cz)
   local toohigh = ((cy-smoothheight)^2 >= 2500000) 
   return toohigh
 end
-
+--]]
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -1405,6 +1418,8 @@ function gadget:Initialize()
   gadgetHandler:AddSyncAction("mph_str", StartMph)
   gadgetHandler:AddSyncAction("mph_stp", StopMph)
   gadgetHandler:AddSyncAction("mph_prg", ProgMph)
+  gadgetHandler:RegisterGlobal('DrawManager_morph', DrawStatus)
+
 end
 
 
@@ -1415,6 +1430,8 @@ function gadget:Shutdown()
   gadgetHandler:RemoveSyncAction("mph_str")
   gadgetHandler:RemoveSyncAction("mph_stp")
   gadgetHandler:RemoveSyncAction("mph_prg")
+  gadgetHandler:DeregisterGlobal('DrawManager_morph', DrawStatus)
+
 end
 
 function gadget:Update()
@@ -1533,7 +1550,7 @@ local function DrawMorphUnit(unitID, morphData, localTeamID)
 end
 
 function gadget:DrawWorld()
-  if IsTooHigh() then 
+  if IsTooHigh or HighPing or pfscount < 8 then 
     return
   end
   

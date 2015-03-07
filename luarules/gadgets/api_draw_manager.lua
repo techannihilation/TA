@@ -32,6 +32,7 @@ local IsBehind = false
 local oldfps = SpGetFPS()
 local a = 0
 local maxframelag = 90
+
 function DrawChecks()
   --Camera Height Check
   local cx, cy, cz = SpGetCameraPosition()
@@ -55,6 +56,10 @@ function DrawChecks()
   ScriptLuaUICall("DrawManager_defense_range", toohigh,fpscount,IsBehind)
   ScriptLuaUICall("DrawManager_ghostsite", toohigh,fpscount,IsBehind)
   ScriptLuaUICall("DrawManager_anti_ranges", toohigh,fpscount,IsBehind)
+  
+  --Gadgets
+  ScriptLuaRulesCall("DrawManager_morph", toohigh,fpscount,IsBehind)
+
 end
 
 function ScriptLuaUICall(name, toohigh,fpscount,IsBehind)
@@ -63,6 +68,12 @@ function ScriptLuaUICall(name, toohigh,fpscount,IsBehind)
     end
 end
   
+function ScriptLuaRulesCall(name, toohigh,fpscount,IsBehind)
+    if Script.LuaRules(name) then
+        Script.LuaRules[name](toohigh,fpscount,IsBehind)
+    end
+end
+
 function gadget:Update()
   if a == 4 then
     DrawChecks()
