@@ -672,13 +672,6 @@ function IsPosInAirLos(x,y,z)
 	return Spring.IsPosInAirLos(x,y,z, LocalAllyTeamID)
 end
 
-function IsTooHigh()
-	local cx, cy, cz = Spring.GetCameraPosition()
-	local smoothheight = Spring.GetSmoothMeshHeight(cx,cz)
-	local toohigh = ((cy-smoothheight)^2 >= 12500000)
-	return toohigh
-end
-
 function FPS()
    local fpscount = Spring.GetFPS()
    if fpscount > 10 then
@@ -688,16 +681,6 @@ function FPS()
   end
 end
 
-function LowPing()
-  local playerID = Spring.GetMyPlayerID()
-  local _,_,_,_,_,ping = Spring.GetPlayerInfo(playerID)
-  ping = ping * 1000
-  if ping > 6000 then
-    return true
-  else
-    return false
-  end
-end
 
 local function IsUnitFXVisible(fx)
 	local unitActive = true
@@ -705,7 +688,10 @@ local function IsUnitFXVisible(fx)
 	local isIcon = Spring.IsUnitIcon(unitID)
 	local _, specFullView = spGetSpectatingState()
 	local Crashing = Spring.GetUnitRulesParam(unitID, "nolups") or 0
-	
+	local Ping = Spring.GetGameRulesParam("ping") or 0
+	local TooHigh = Spring.GetGameRulesParam("toohigh") or 0
+
+
 	if fx.onActive then
 		unitActive = spGetUnitIsActive(unitID)
 		if (unitActive == nil) then
@@ -713,7 +699,7 @@ local function IsUnitFXVisible(fx)
 		end
 	end
 
-	if (isIcon) or Crashing == 1 or FPS() or LowPing() then
+	if (isIcon) or Crashing == 1 or FPS() or (Ping == 1) or (TooHigh == 1) then
 		return false
 	elseif (not fx.onActive)or(unitActive) then
 		if fx.alwaysVisible then
@@ -750,8 +736,11 @@ local function IsProjectileFXVisible(fx)
 end
 
 local function IsWorldFXVisible(fx)
+  	local TooHigh = Spring.GetGameRulesParam("toohigh") or 0
+	local Ping = Spring.GetGameRulesParam("ping") or 0
+
 	local _, specFullView = spGetSpectatingState()
-	if IsTooHigh() or FPS() or LowPing() then
+	if TooHigh == 1 or FPS() or Ping == 1 then
 		return false
 	elseif fx.alwaysVisible then
 		return true
@@ -1069,6 +1058,11 @@ local function Shutdown()
   gl.DeleteList(nilDispList)
 end
 
+function RecvLuaMsg(msg, playerID)
+	if msg:find("DRAWSTATUS:",1,true) then
+		Spring.Echo(msg)
+	end	
+end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 

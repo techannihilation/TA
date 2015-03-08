@@ -16,10 +16,28 @@ end
 ]]
 
 if gadgetHandler:IsSyncedCode() then
-  
-  
+   
+function gadget:RecvLuaMsg(msg, playerID)
+	if msg:find("ping",1,true) then
+		local data = msg:sub(5)
+		if data == "1" then
+			Spring.SetGameRulesParam("ping",1)
+		else
+			Spring.SetGameRulesParam("ping",0)
+		end
+	end
+	if msg:find("toohigh",1,true) then
+		local data = msg:sub(8)
+		if data == "1" then
+			Spring.SetGameRulesParam("toohigh",1)
+		else
+			Spring.SetGameRulesParam("toohigh",0)
+		end
+	end
+end
 
 --SYNCED
+
 else
 --UNSYNCED 
   
@@ -56,7 +74,8 @@ function DrawChecks()
   ScriptLuaUICall("DrawManager_defense_range", toohigh,fpscount,IsBehind)
   ScriptLuaUICall("DrawManager_ghostsite", toohigh,fpscount,IsBehind)
   ScriptLuaUICall("DrawManager_anti_ranges", toohigh,fpscount,IsBehind)
-  
+  ScriptLuaUICall("DrawManager_lups", toohigh,fpscount,IsBehind)
+
   --Gadgets
   ScriptLuaRulesCall("DrawManager_morph", toohigh,fpscount,IsBehind)
 
