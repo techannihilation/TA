@@ -49,7 +49,7 @@ local MaxDist = 13000000
 local IsBehind = false
 local oldfps = SpGetFPS()
 local a = 0
-local maxframelag = 90
+local maxframelag = 120
 
 function DrawChecks()
   --Camera Height Check
@@ -61,6 +61,7 @@ function DrawChecks()
   fpscount = (fpscount + oldfps) / 2 -- fixme make a nicer way to smooth out values
   oldfps = fpscount
   
+  IsBehind = true --testing
   --Spring.Echo("DrawManager Status",toohigh,fpscount,IsBehind)
   
   -- each widget needs its own Script.LuaUI call :(
@@ -75,7 +76,8 @@ function DrawChecks()
   ScriptLuaUICall("DrawManager_ghostsite", toohigh,fpscount,IsBehind)
   ScriptLuaUICall("DrawManager_anti_ranges", toohigh,fpscount,IsBehind)
   ScriptLuaUICall("DrawManager_lups", toohigh,fpscount,IsBehind)
-
+  ScriptLuaUICall("DrawManager_redui_drawing", toohigh,fpscount,IsBehind)
+  
   --Gadgets
   ScriptLuaRulesCall("DrawManager_morph", toohigh,fpscount,IsBehind)
 
@@ -109,7 +111,7 @@ function gadget:GameProgress(serverframenum)
     IsBehind = true
   end
   --Spring.Echo("Server frame num: ",(serverframenum-maxframelag) ,"  ----  GameFrame num: ",frame,"    ",IsBehind)
-  DrawChecks()
+  --DrawChecks()
 end
 
 end

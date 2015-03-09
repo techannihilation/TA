@@ -51,6 +51,12 @@ local GL_COLOR_BUFFER_BIT = GL.COLOR_BUFFER_BIT
 local GL_PROJECTION = GL.PROJECTION
 local GL_MODELVIEW = GL.MODELVIEW
 
+local HighPing = false
+
+function DrawStatus(toohigh,fps,ping)
+    HighPing = ping
+end
+
 local function Color(c)
 	glColor(c[1],c[2],c[3],c[4])
 end
@@ -137,6 +143,7 @@ function widget:ViewResize(viewSizeX, viewSizeY)
 end
 
 function widget:Initialize()
+        widgetHandler:RegisterGlobal('DrawManager_redui_drawing', DrawStatus)
 	vsx,vsy = widgetHandler:GetViewSizes()
 	CreateStartList()
 	
@@ -168,6 +175,9 @@ function widget:Initialize()
 end
 
 function widget:DrawScreen()
+  if HighPing then 
+    return
+  end
 	glResetState()
 	glResetMatrices()
 	
@@ -193,6 +203,7 @@ function widget:Update()
 end
 
 function widget:Shutdown()
+        widgetHandler:DeregisterGlobal('DrawManager_redui_drawing', DrawStatus)
 	glDeleteList(StartList)
 	
 	if (WG[TN].LastWidget) then
