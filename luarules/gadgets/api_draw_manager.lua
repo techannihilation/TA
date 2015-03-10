@@ -61,7 +61,7 @@ function DrawChecks()
   fpscount = (fpscount + oldfps) / 2 -- fixme make a nicer way to smooth out values
   oldfps = fpscount
   
-  IsBehind = true --testing
+  --IsBehind = true --testing
   --Spring.Echo("DrawManager Status",toohigh,fpscount,IsBehind)
   
   -- each widget needs its own Script.LuaUI call :(
@@ -105,13 +105,14 @@ end
 
 function gadget:GameProgress(serverframenum)
   local frame = Spring.GetGameFrame()
+
   if frame > (serverframenum-maxframelag) then
     IsBehind = false
   else
     IsBehind = true
   end
   --Spring.Echo("Server frame num: ",(serverframenum-maxframelag) ,"  ----  GameFrame num: ",frame,"    ",IsBehind)
-  --DrawChecks()
+  DrawChecks()
 end
 
 end
