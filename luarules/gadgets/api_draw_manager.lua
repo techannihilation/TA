@@ -49,7 +49,7 @@ local MaxDist = 13000000
 local IsBehind = false
 local oldfps = SpGetFPS()
 local a = 0
-local maxframelag = 120
+local maxframelag = 300 -- no less than 300 or ui could be missing for player
 
 function DrawChecks()
   --Camera Height Check
@@ -77,7 +77,8 @@ function DrawChecks()
   ScriptLuaUICall("DrawManager_anti_ranges", toohigh,fpscount,IsBehind)
   ScriptLuaUICall("DrawManager_lups", toohigh,fpscount,IsBehind)
   ScriptLuaUICall("DrawManager_redui_drawing", toohigh,fpscount,IsBehind)
-  
+  ScriptLuaUICall("DrawManager_combblast", toohigh,fpscount,IsBehind)
+
   --Gadgets
   ScriptLuaRulesCall("DrawManager_morph", toohigh,fpscount,IsBehind)
 
@@ -111,7 +112,7 @@ function gadget:GameProgress(serverframenum)
   else
     IsBehind = true
   end
-  Spring.Echo("Server frame num: ",(serverframenum-maxframelag) ,"  ----  GameFrame num: ",frame,"    ",IsBehind)
+  --Spring.Echo("Server frame num: ",(serverframenum-maxframelag) ,"  ----  GameFrame num: ",frame,"    ",IsBehind)
   DrawChecks()
 end
 

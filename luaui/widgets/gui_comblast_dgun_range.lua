@@ -51,14 +51,24 @@ function widget:PlayerChanged()
     myTeamID = Spring.GetMyTeamID()    
 end
 
+local TooHigh = true
+local HighPing = false
+local FPSCount = Spring.GetFPS()
+local FPSLimit = 8
+
 -- track coms --
 
 function widget:Initialize()
     widgetHandler:RegisterGlobal('SetOpacity_Comblast_DGun_Range', SetOpacity)
+    widgetHandler:RegisterGlobal('DrawManager_morphindicator', DrawStatus)
 
     checkComs()
     checkSpecView()
     return true
+end
+
+function DrawStatus(ping)
+    HighPing = ping
 end
 
 function addCom(unitID)
@@ -133,6 +143,7 @@ end
 
 function widget:GameOver()
     widgetHandler:DeregisterGlobal('SetOpacity_Comblast_DGun_Range', SetOpacity)
+    widgetHandler:DeregisterGlobal('DrawManager_morphindicator', DrawStatus)
     widgetHandler:RemoveWidget()
 end
 
@@ -226,7 +237,7 @@ end
 
 -- draw circles
 function widget:DrawWorldPreUnit()
-    if spIsGUIHidden() then return end
+    if spIsGUIHidden() or HighPing then return end
     glDepthTest(true)
     for _,center in pairs(comCenters) do
         if center.draw then
