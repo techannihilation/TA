@@ -207,7 +207,7 @@ function gadget:GameFrame(n)
   scheduledBuilders = {} 
 
   for unitID, _ in pairs(addFakeReclaim) do 
-    local commands = GetCommandQueue(unitID,-1) 
+    local commands = GetCommandQueue(unitID,20) 
     for i, cmd in ipairs(commands) do 
       if cmd.id == CMD_UPGRADEMEX and not (commands[i+1] and commands[i+1].id == CMD_RECLAIM) then 
         GiveOrderToUnit(unitID, CMD_INSERT, {i, CMD_RECLAIM, CMD_OPT_INTERNAL+1, cmd.params[1]}, {"alt"}) 
@@ -418,15 +418,16 @@ function getDistance(unitID, mexID, teamID)
   local x1, _, y1 = GetUnitPosition(unitID) 
   local mex = mexes[teamID][mexID] 
   local x2, y2 = mex.x, mex.z 
+  if not (x1 and y1 and x2 and y2) then return math.huge end --hack
   return math.sqrt((x1-x2)^2 + (y1-y2)^2) 
 end 
 
 function getDistanceFromPosition(x1, y1, mexID, teamID) 
   local mex = mexes[teamID][mexID] 
   local x2, y2 = mex.x, mex.z 
+  if not (x2 and y2) then return math.huge end --hack
   return math.sqrt((x1-x2)^2 + (y1-y2)^2) 
 end 
-
 
 function getUnitPhase(unitID, teamID) 
 
@@ -536,7 +537,11 @@ function gadget:CommandFallback(unitID, unitDefID, teamID, cmdID, cmdParams, cmd
     return false 
   end 
   
-  local builder = builders[teamID][unitID] 
+  local builder = builders[teamID][unitID]
+  if not builder then
+    return false
+  end
+  
   if not cmdParams[2] then 
     -- Unit 
     if not builder.orderTaken then 
