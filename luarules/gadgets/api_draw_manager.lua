@@ -124,7 +124,7 @@ function gadget:GameProgress(serverframenum)
     			Spring.SetGameRulesParam("ping",1)
 
   end
-  --Spring.Echo("Server frame num: ",(serverframenum-maxframelag) ,"  ----  GameFrame num: ",frame,"    ",IsBehind)
+  Spring.Echo("Server frame num: ",(serverframenum-maxframelag) ,"  ----  GameFrame num: ",frame,"    ",IsBehind)
   DrawChecks()
 end
 
