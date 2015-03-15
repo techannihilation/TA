@@ -1213,7 +1213,7 @@ function DrawPlayer(playerID, leader, vOffset, mouseX, mouseY)
 		end
 		gl_Color(red,green,blue,1)	
 		if m_name.active == true then
-			DrawName(name, team, posY, dark)
+			DrawName(name, team, playerID, posY, dark)
 		end
 	else -- spectator
 		gl_Color(1,1,1,1)	
@@ -1396,8 +1396,17 @@ function colourNames(teamID)
 	return "\255"..string.char(R255)..string.char(G255)..string.char(B255) --works thanks to zwzsg
 end 
 
-function DrawName(name, team, posY, dark)
-	gl_Text(colourNames(team) .. name, m_name.posX + widgetPosX + 3, posY + 3, 15, "o") -- draws name
+function DrawName(name, team, playerID, posY, dark)
+    local willSub = ""
+    if not gameStarted then 
+        if playerID>=64 then
+            willSub = (Spring.GetGameRulesParam("Player" .. (playerID-64) .. "willSub")==1) and " (sub)" or "" --pID-64 because apl uses dummy playerIDs for absent players
+        else
+            willSub = (Spring.GetGameRulesParam("Player" .. (playerID) .. "willSub")==1) and " (sub)" or "" 
+        end
+    end
+    local nameText = name .. willSub    
+	gl_Text(colourNames(team) .. nameText, m_name.posX + widgetPosX + 3, posY + 3, 15, "o") -- draws name
 	gl_Color(1,1,1)
 end
 
@@ -1614,6 +1623,7 @@ function widget:MousePress(x,y,button) --super ugly code here
 	local clickedPlayer
 	local posY
 	if button == 1 then
+        local alt,ctrl,meta,shift = Spring.GetModKeyState()
 		sliderPosition = 0
 		amountEM = 0
 		if mySpecStatus == true then
@@ -1630,6 +1640,10 @@ function widget:MousePress(x,y,button) --super ugly code here
 							return true
 						end
 					end
+                    if m_name.active and ctrl and IsOnRect(x, y, m_name.posX + widgetPosX +1, posY, m_name.posX + widgetPosX + m_name.width, posY+16) and clickedPlayer.name ~= absentName then
+                        Spring_SendCommands{"toggleignore "..clickedPlayer.name}
+                        return true
+                    end
 				end
 				
 				if i == -1 then
@@ -1655,6 +1669,14 @@ function widget:MousePress(x,y,button) --super ugly code here
 							end
 						end
 					end
+                    if m_name.active and ctrl and i>-1 and i<64 then 
+                        clickedPlayer = player[i]
+                        posY = widgetPosY + widgetHeight - clickedPlayer.posY
+                        if IsOnRect(x, y, m_name.posX + widgetPosX +1, posY, m_name.posX + widgetPosX + m_name.width, posY+16) and clickedPlayer.name ~= absentName then
+                            Spring_SendCommands{"toggleignore "..clickedPlayer.name}
+                            return true
+                        end
+                    end
 				end
 			end
 		else
@@ -1710,6 +1732,10 @@ function widget:MousePress(x,y,button) --super ugly code here
 								return true
 							end
 						end
+                        if m_name.active and ctrl and IsOnRect(x, y, m_name.posX + widgetPosX +1, posY, m_name.posX + widgetPosX + m_name.width, posY+12) and clickedPlayer.name ~= absentName then
+                            Spring_SendCommands{"toggleignore "..clickedPlayer.name}
+                            return true
+                        end
 					end
 				end
 				if i == -1 then
@@ -1742,6 +1768,14 @@ function widget:MousePress(x,y,button) --super ugly code here
 								end
 							end
 						end
+                        if m_name.active and ctrl and i>-1 and i<64 then 
+                            clickedPlayer = player[i]
+                            posY = widgetPosY + widgetHeight - clickedPlayer.posY
+                            if IsOnRect(x, y, m_name.posX + widgetPosX +1, posY, m_name.posX + widgetPosX + m_name.width, posY+12) and clickedPlayer.name ~= absentName then
+                                Spring_SendCommands{"toggleignore "..clickedPlayer.name}
+                                return true
+                            end
+                        end
 					end
 				end
 			end
