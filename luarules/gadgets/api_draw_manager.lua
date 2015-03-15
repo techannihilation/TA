@@ -17,21 +17,13 @@ end
 
 if gadgetHandler:IsSyncedCode() then
 
-  function gadget:GameProgress(serverframenum)
-  Spring.Echo("Synced gameprogress  ", serverframenum)
-end
-
-function gadget:gameFrame()
-  Spring.Echo(Spring.GetGameRulesParam("ping"))
-end
-
 function gadget:RecvLuaMsg(msg, playerID)
 	if msg:find("ping",1,true) then
 		local data = msg:sub(5)
 		if data == "1" then
-			--Spring.SetGameRulesParam("ping",1)
+			Spring.SetGameRulesParam("ping",1)
 		else
-			--Spring.SetGameRulesParam("ping",0)
+			Spring.SetGameRulesParam("ping",0)
 		end
 	end
 	if msg:find("toohigh",1,true) then
@@ -117,14 +109,10 @@ function gadget:GameProgress(serverframenum)
 
   if frame > (serverframenum-maxframelag) then
     IsBehind = false
-    			Spring.SetGameRulesParam("ping",1)
-
   else
     IsBehind = true
-    			Spring.SetGameRulesParam("ping",1)
-
   end
-  Spring.Echo("Server frame num: ",(serverframenum-maxframelag) ,"  ----  GameFrame num: ",frame,"    ",IsBehind)
+  --Spring.Echo("Server frame num: ",(serverframenum-maxframelag) ,"  ----  GameFrame num: ",frame,"    ",IsBehind)
   DrawChecks()
 end
 
