@@ -178,6 +178,7 @@ end
  
 -- map out what to draw
 function widget:GameFrame(n)
+   if spIsGUIHidden() or HighPing then return end
     -- check if we are in spec full view
     local spec,specFullView,_ = spGetSpectatingState()
     if specFullView ~= inSpecFullView then
