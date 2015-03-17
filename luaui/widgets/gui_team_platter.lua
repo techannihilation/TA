@@ -316,16 +316,19 @@ if #selectedUnits then
     if (radius) then
       local canfly = Unitlist[unitID].canfly
       if (trackSlope and (not canfly)) then
-      local x, y, z = spGetUnitBasePosition(unitID)
-      local gx, gy, gz = spGetGroundNormal(x, z)
-      local degrot = acos(gy) * 180 / pi
-      glDrawListAtUnit(unitID, circleLines, false,
+        local x, y, z = spGetUnitBasePosition(unitID)
+	if x or y ~= nil then 
+          local gx, gy, gz = spGetGroundNormal(x, z)
+          local degrot = acos(gy) * 180 / pi
+          glDrawListAtUnit(unitID, circleLines, false,
                        radius, 1.0, radius,
                        degrot, gz, 0, -gx)
+	end
      else
-     glDrawListAtUnit(unitID, circleLines, false,
+          glDrawListAtUnit(unitID, circleLines, false,
                       radius, 1.0, radius)
      end
+     
     end
       end
     end
