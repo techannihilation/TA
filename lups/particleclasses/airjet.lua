@@ -360,6 +360,9 @@ function AirJet:Visible()
   if (self.unit and not self.worldspace) then
     losState = (spGetUnitLosState(self.unit, LocalAllyTeamID) or {}).los or false
     local ux,uy,uz = spGetUnitViewPosition(self.unit)
+    if ux == nil then 
+      return false
+    end
     posX,posY,posZ = posX+ux,posY+uy,posZ+uz
     radius = radius + spGetUnitRadius(self.unit)
   end
