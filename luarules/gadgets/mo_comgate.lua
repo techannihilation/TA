@@ -100,7 +100,6 @@ local myPlayerID = Spring.GetMyPlayerID()
 local _,_,spec,_ = Spring.GetPlayerInfo(myPlayerID) 
 local vsx,vsy = Spring.GetViewGeometry()
 local GateInfo
-local GateInfo2
 
 local tackyfont = gl.LoadFont("luarules/fonts/LCD2U___.TTF",72, 1.9, 40)
 local msg = ""
@@ -110,22 +109,10 @@ local colorString2 = "\255\100\001\001"
 
 function gadget:DrawScreen()
     if not spec then 
-	if Spring.GetGameFrame() > 20 then 
+	if Spring.GetGameRulesParam("player_" .. tostring(myPlayerID) .. "_readyState") == 2 then 
 		if GateInfo then 
 			gl.DeleteList(GateInfo)
 		end
-	end
-	
-	if Spring.GetGameFrame() > 170 then 
-		if GateInfo2 then 
-			gl.DeleteList(GateInfo2)
-		end
-		gadgetHandler:RemoveGadget()
-		return
-	end
-	
-	if Spring.GetGameFrame() > 140 and GateInfo2 then
-		--gl.CallList(GateInfo2)
 	end
 	if Spring.GetGameFrame() < 130 and GateInfo then --use frame 10
 		gl.CallList(GateInfo)
@@ -136,7 +123,6 @@ end
 function gadget:GameOver()
 		if GateInfo then 
 			gl.DeleteList(GateInfo)
-			gl.DeleteList(GateInfo2)
 		end
 		gadgetHandler:RemoveGadget()	
 end
@@ -145,14 +131,6 @@ function gadget:Initialize()
 	local textSize = 72
 	local dx = vsx*0.5
 	local dy = vsy*0.72
-	GateInfo2 = gl.CreateList(function()
-	
-		-- First message
-		msg = "Teleport Complete"
-		tackyfont:Begin()
-		tackyfont:Print(colorString2 .. msg, dx, dy, 72,'cb')
-		tackyfont:End()
-	end)
 	GateInfo = gl.CreateList(function()
 	
 		-- Second Message
