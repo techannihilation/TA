@@ -544,11 +544,13 @@ local function StartMorph(unitID, unitDefID, teamID, morphDef, cmdp)
   -- Spring.Echo(unitID,Spring.GetUnitRulesParam(unitID,"jumpReload"))
   if not isFinished(unitID) or (Spring.GetUnitRulesParam(unitID,"jumpReload") == 0) then return true end
 
-  for _,playerId in ipairs(Spring.GetPlayerList(teamID,true)) do
-    local _,_,spectator=Spring.GetPlayerInfo(playerId)
-    if not spectator and #Spring.GetTeamUnits(teamID) > (MAXunits * 0.95) then
-      Spring.Echo("\255\255\255\001Warning Unit Limit Approching - Morph May Stall Reduce Unit Count")
-    end
+  
+  local teamsize = #Spring.GetTeamUnits(teamID)
+  
+    --local _,_,spectator=Spring.GetPlayerInfo(playerId)
+    if teamsize > (MAXunits * 0.95) then
+      SendToUnsynced("unit_morph_stalled", teamID, teamsize)
+      --Spring.Echo("\255\255\255\001Warning Unit Limit Approching - Morph May Stall Reduce Unit Count")
   end
   
   Spring.SetUnitRulesParam(unitID,"Morphing",1)
@@ -1395,6 +1397,13 @@ local function ProgMph(cmd, unitID, prog)
   end
 end
 
+local function StalledMph(cmd, teamID, teamsize)
+  local readTeam, spec, specFullView = nil,GetSpectatingState() 
+  if not spec then
+    Spring.Echo("\255\255\255\001Warning Unit Limit Approching - Morph May Stall Reduce Unit Count")
+  end
+end
+
 --[[
 function IsTooHigh()
   local cx, cy, cz = Spring.GetCameraPosition()
@@ -1418,6 +1427,7 @@ function gadget:Initialize()
   gadgetHandler:AddSyncAction("mph_str", StartMph)
   gadgetHandler:AddSyncAction("mph_stp", StopMph)
   gadgetHandler:AddSyncAction("mph_prg", ProgMph)
+  gadgetHandler:AddSyncAction("unit_morph_stalled", StalledMph)
   gadgetHandler:RegisterGlobal('DrawManager_morph', DrawStatus)
 
 end
@@ -1430,7 +1440,8 @@ function gadget:Shutdown()
   gadgetHandler:RemoveSyncAction("mph_str")
   gadgetHandler:RemoveSyncAction("mph_stp")
   gadgetHandler:RemoveSyncAction("mph_prg")
-  gadgetHandler:DeregisterGlobal('DrawManager_morph', DrawStatus)
+  gadgetHandler:RemoveSyncAction("unit_morph_stalled")
+  gadgetHandler:DeregisterGlobal('DrawManager_morph')
 
 end
 
