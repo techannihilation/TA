@@ -67,8 +67,9 @@ function widget:Initialize()
     return true
 end
 
-function DrawStatus(ping)
+function DrawStatus(toohigh,fps,ping)
     HighPing = ping
+    TooHigh = toohigh
 end
 
 function addCom(unitID)
@@ -178,7 +179,7 @@ end
  
 -- map out what to draw
 function widget:GameFrame(n)
-   if spIsGUIHidden() or HighPing then return end
+   if spIsGUIHidden() or HighPing or TooHigh then return end
     -- check if we are in spec full view
     local spec,specFullView,_ = spGetSpectatingState()
     if specFullView ~= inSpecFullView then
@@ -238,7 +239,7 @@ end
 
 -- draw circles
 function widget:DrawWorldPreUnit()
-    if spIsGUIHidden() or HighPing then return end
+    if spIsGUIHidden() or HighPing or TooHigh then return end
     glDepthTest(true)
     for _,center in pairs(comCenters) do
         if center.draw then
