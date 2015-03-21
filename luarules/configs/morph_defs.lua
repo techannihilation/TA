@@ -414,7 +414,7 @@ local morphDefs = {
 		xp = 0.25,
 		},
 		{
-		into = 'tawf014',
+		into = 'corhorg',
 		time = 60,
 		xp = 0.75,
 		energy = 2500,
