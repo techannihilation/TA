@@ -204,7 +204,6 @@ experimental_land = {
            "clb",
            "armtigre2",
            "armmcv",
-           "rockblack",
            "corbt",
            "cormachn",
            -- arm t3 vehs
