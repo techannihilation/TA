@@ -576,11 +576,13 @@ end
 local hookedtodrawing = false
 local fc = 0 --framecount
 function widget:Update()
+	--[[
 	local Ping = Spring.GetGameRulesParam("ping") or 0
 	if Ping == 1 then 
 		return
 	end
-	
+	--]]
+  
 	Main.tooltip = nil
 	handleMouse()
 	
