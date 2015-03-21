@@ -688,9 +688,6 @@ local function IsUnitFXVisible(fx)
 	local isIcon = Spring.IsUnitIcon(unitID)
 	local _, specFullView = spGetSpectatingState()
 	local Crashing = Spring.GetUnitRulesParam(unitID, "nolups") or 0
-	local Ping = Spring.GetGameRulesParam("ping") or 0
-	local TooHigh = Spring.GetGameRulesParam("toohigh") or 0
-
 
 	if fx.onActive then
 		unitActive = spGetUnitIsActive(unitID)
@@ -699,7 +696,7 @@ local function IsUnitFXVisible(fx)
 		end
 	end
 
-	if (isIcon) or Crashing == 1 or FPS() or (Ping == 1) or (TooHigh == 1) then
+	if (isIcon) or Crashing == 1 or FPS() then
 		return false
 	elseif (not fx.onActive)or(unitActive) then
 		if fx.alwaysVisible then
@@ -736,11 +733,8 @@ local function IsProjectileFXVisible(fx)
 end
 
 local function IsWorldFXVisible(fx)
-  	local TooHigh = Spring.GetGameRulesParam("toohigh") or 0
-	local Ping = Spring.GetGameRulesParam("ping") or 0
-
 	local _, specFullView = spGetSpectatingState()
-	if TooHigh == 1 or FPS() or Ping == 1 then
+	if FPS() then
 		return false
 	elseif fx.alwaysVisible then
 		return true

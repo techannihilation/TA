@@ -17,6 +17,7 @@ end
 
 if gadgetHandler:IsSyncedCode() then
 
+  --[[
 function gadget:RecvLuaMsg(msg, playerID)
 	if msg:find("ping",1,true) then
 		local data = msg:sub(5)
@@ -35,7 +36,8 @@ function gadget:RecvLuaMsg(msg, playerID)
 		end
 	end
 end
-
+--]]
+  
 --SYNCED
 
 else
@@ -82,6 +84,8 @@ function DrawChecks()
   ScriptLuaUICall("DrawManager_energygui", toohigh,fpscount,IsBehind)
   ScriptLuaUICall("DrawManager_allyrez", toohigh,fpscount,IsBehind)
 
+  ScriptLuaUICall("DrawManager_red", toohigh,fpscount,IsBehind)
+
   --Gadgets
   ScriptLuaRulesCall("DrawManager_morph", toohigh,fpscount,IsBehind)
 
@@ -111,7 +115,7 @@ function gadget:GameProgress(serverframenum)
   local frame = Spring.GetGameFrame()
 
   if frame > (serverframenum-maxframelag) then
-    IsBehind = false
+    IsBehind = true
   else
     IsBehind = true
   end

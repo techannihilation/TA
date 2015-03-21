@@ -6,7 +6,7 @@ function widget:GetInfo()
 	date      = "Mar 2015",
 	license   = "GNU GPL, v3 or later",
 	layer     = 5,
-	enabled   = true,
+	enabled   = false,
 	}
 end
 local oldtoohighstatus = false
