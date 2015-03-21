@@ -1,8 +1,24 @@
----------------------------------------- v2.33.5 ---------------------------------------
+---------------------------------------- v2.33.7 ---------------------------------------
+----Visual----
+Update armgor visuals
 
-Faster Resync
+----Bugs----
+Replace tll shockwave mine with medium mine,Closes #541
+Swap techlock on armjag to armcrabe, Closes #576
+Increase Bantha ImpulsionBlaster range 465>500, Closes #572
+Reduce overchanged mex energy usage 50>22, Closes #575
+Replace tll shockwave mine with medium mine,Closes #541
+Fix Atmoic bomber
 
-will add here later
+----Balance----
+Tllbug increase reloadtime 0.7>0.9
+Rework krally, now has laser weapon only and can jump
+
+---Improvements----
+Add new anti combomb options, if commander has greater hp than commander used to combomb it will survive
+Optmize anti range widget 
+Faster Resync -- Many widget will auto disable while a player is resyncing
+Repalce terroriser with new unit horge
 
 ---------------------------------------- v2.33.3 ---------------------------------------
 
