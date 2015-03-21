@@ -1,7 +1,7 @@
 function gadget:GetInfo()
   return {
     name      = "Substitution",
-    desc      = "Allows players absent at gamestart to be replaced by specs",
+    desc      = "Allows players absent at gamestart to be replaced by specs\nPrevents joinas to non-empty teams",
     author    = "Bluestone",
     date      = "June 2014",
     license   = "GNU GPL, v3 or later",
@@ -29,6 +29,8 @@ local replaced = false
 local gameStarted = false
 
 local gaiaTeamID = Spring.GetGaiaTeamID()
+local SpGetPlayerList = Spring.GetPlayerList
+local SpIsCheatingEnabled = Spring.IsCheatingEnabled
 
 function gadget:RecvLuaMsg(msg, playerID)
     local checkChange = (msg=='\144' or msg=='\145')
@@ -57,13 +59,6 @@ function gadget:RecvLuaMsg(msg, playerID)
     end
 end
 
-function gadget:PlayerChanged()
-    if not gameStarted then
-        --Spring.Echo("FindSubs", "PlayerChanged")
-        FindSubs(false)
-    end
-end
-
 function gadget:AllowStartPosition(x,y,z,playerID,readyState)
     FindSubs(false)
     return true
@@ -71,11 +66,6 @@ end
 
 
 function gadget:Initialize()
-    if (tonumber(Spring.GetModOptions().mo_noowner) or 0) == 1 then
-        gadgetHandler:RemoveGadget(self) -- don't run in FFA mode
-        return 
-    end
-
     -- record a list of which playersIDs are players on which teamID
     local teamList = Spring.GetTeamList()
     for _,teamID in pairs(teamList) do
@@ -122,6 +112,10 @@ function FindSubs(real)
                 --Spring.Echo("absent:", playerID, ts)
             end
         end
+        -- if present, tell LuaUI that won't be substituted
+        if not absent[playerID] then
+            Spring.SetGameRulesParam("Player" .. playerID .. "willSub", 0)
+        end
     end
     --Spring.Echo("#absent: " .. #absent)
     
@@ -144,7 +138,7 @@ function FindSubs(real)
         --Spring.Echo("ideal: " .. #idealSubs .. " for pID " .. playerID)
         --Spring.Echo("valid: " .. #validSubs .. " for pID " .. playerID)
 
-        local willSub = false
+        local willSub = false --are we going to substitute anyone (for real)
         if #validSubs>0 then
             -- choose who
             local sID
@@ -161,6 +155,7 @@ function FindSubs(real)
                 -- do the replacement 
                 local teamID = players[playerID]
                 Spring.AssignPlayerToTeam(sID, teamID)
+                players[sID] = teamID
                 replaced = true
                 
                 local incoming,_ = Spring.GetPlayerInfo(sID)
@@ -169,13 +164,12 @@ function FindSubs(real)
             end
             substitutesLocal[sID] = nil
             willSub = true
-        end
-        --Spring.Echo("willSub: " .. (sID or "-1") .. " for pID " .. playerID)
-        
-        if not real then
-            -- tell luaui who we would substitute if the game started now
+
+            -- tell luaui that we would substitute if the game started now
+            --Spring.Echo("wouldSub: " .. (sID or "-1") .. " for pID " .. playerID)
             Spring.SetGameRulesParam("Player" .. playerID .. "willSub", willSub and 1 or 0)
         end
+
     end
 
 end
@@ -186,9 +180,7 @@ function gadget:GameStart()
 end
 
 function gadget:GameFrame(n)
-    if n~=1 then return end
-
-    if replaced then
+    if n==1 and replaced then
         -- if at least one player was replaced, reveal startpoints to all       
         local coopStartPoints = GG.coopStartPoints or {} 
         local revealed = {}
@@ -219,13 +211,45 @@ function gadget:GameFrame(n)
         end
     end
     
-    -- TODO? check if any coms still don't have owners, if so try to find a suitable one & auto-give 
-    
-    gadgetHandler:RemoveGadget(self)
-    return
+    if n%5==0 then
+        CheckJoined() -- there is no PlayerChanged or PlayerAdded in synced code
+    end
 end
 
--- block unit transfer until we've done our stuff
+
+--------------------------- 
+
+function CheckJoined()
+    local pList = SpGetPlayerList(true)
+    local cheatsOn = SpIsCheatingEnabled() 
+    if cheatsOn then return end
+    
+    for _,pID in ipairs(pList) do
+        if not players[pID] then
+            local _,active,spec,_,aID = Spring.GetPlayerInfo(pID)
+            if active and not spec then 
+                --Spring.Echo("handle join", pID, active, spec)
+                HandleJoinedPlayer(pID,aID)
+            end
+        end
+    end
+end
+
+function HandleJoinedPlayer(jID, aID)
+    -- see if we can find a missing player to sub in for within the joined ally team, force spec if not
+    local playerList = Spring.GetPlayerList()
+    for _,pID in ipairs(playerList) do
+        local _,active,spec,teamID,allyTeamID = Spring.GetPlayerInfo(pID)
+        if aID==allyTeamID and jID~=pID and (not active or spec) and gameStarted then
+            Spring.AssignPlayerToTeam(jID, teamID) 
+            --Spring.Echo("allow joinas", jID, tID)
+            players[jID] = teamID
+            return
+        end
+    end
+    --Spring.Echo("deny joinas", jID)
+    SendToUnsynced("ForceSpec", jID)
+end
 
 -----------------------------
 else -- begin unsynced section
@@ -245,26 +269,27 @@ function gadget:ViewResize()
 end
 
 local subsButton
-local bX = vsx * 0.8
-local bY = vsy * 0.8 
-local bH = 30
-local bW = 140
+local bH = 60
+local bW = 400
+local bX = vsx - 7 - (bW)
+local bY = vsy * 0.84 - (bH/2)
 local offer = false
+
+local imgTexCoordX = 1  --image texture coordinate X -- textures image's dimension is a power of 2 (i use 0.625 cause my image has a width of 256, but region to use is only 160 pixel -> 160 / 256 = 0.625 )
+local imgTexCoordY = 1	--image texture coordinate Y -- enter values other than 1.0 to use just a region of the texture image
+local button = "luarules/images/glossy_button_blank_black_rectangle.png"
+local monofont = gl.LoadFont("luaui/fonts/instruction.ttf",72, 1.9, 40)
 
 function MakeButton()
 	subsButton = gl.CreateList(function()
-		-- draws background rectangle
-		gl.Color(0.1,0.1,.45,0.18)                              
-		gl.Rect(bX,bY+bH, bX+bW, bY)
-	
-		-- draws black border
-		gl.Color(0,0,0,1)
-		gl.BeginEnd(GL.LINE_LOOP, function()
-			gl.Vertex(bX,bY)
-			gl.Vertex(bX,bY+bH)
-			gl.Vertex(bX+bW,bY+bH)
-			gl.Vertex(bX+bW,bY)
-		end)
+		-- draws background image
+		gl.Color(1,1,1,0.6)
+		gl.Texture( ":c:" .. button )
+		gl.PushMatrix()
+		gl.TexRect( bX , bY , bX + bW , bY + bH , 0.0, 0.0, imgTexCoordX, imgTexCoordY )
+		gl.PopMatrix()
+
+		gl.Texture(false)
 		gl.Color(1,1,1,1)
 	end)
 end
@@ -276,6 +301,7 @@ function Initialize()
     end
 
     gadgetHandler:AddSyncAction("MarkStartPoint", MarkStartPoint)
+    gadgetHandler:AddSyncAction("ForceSpec", ForceSpec)
     
     -- match the equivalent check in synced
     local customtable = select(10,Spring.GetPlayerInfo(myPlayerID)) 
@@ -298,9 +324,9 @@ function gadget:DrawScreen()
 		-- text
 		local x,y = Spring.GetMouseState()
 		if x > bX and x < bX+bW and y > bY and y < bY+bH then
-			colorString = "\255\255\230\0"
+			colorString = "\255\127\127\127"
 		else
-			colorString = "\255\255\255\255"
+			colorString = "\255\001\001\001"
 		end
         local textString
         if not offer then
@@ -308,8 +334,11 @@ function gadget:DrawScreen()
         else
             textString = "Withdraw offer"
         end
-		gl.Text(colorString .. textString, bX+10, bY+9, 20, "o")
+		monofont:Print(colorString .. textString, bX+8, bY+12, 52, "o")
+		--gl.Text(colorString .. textString, bX+10, bY+9, 40, "o")
 		gl.Color(1,1,1,1)
+    else
+        gadgetHandler:RemoveCallIn("DrawScreen") -- no need to waste cycles
     end
 end
 
@@ -339,6 +368,11 @@ end
 function gadget:MouseRelease(x,y)
 end
 
+function gadget:GameStart()
+    eligible = false -- no substitutions after game start
+end
+
+
 local revealed = false
 function MarkStartPoint(_,x,y,z,name,tID)
     local _,_,spec = Spring.GetPlayerInfo(myPlayerID)
@@ -366,14 +400,25 @@ function colourNames(teamID)
 end 
 
 function gadget:GameFrame(n)
-    if n>=5 then
-        if revealed then    
-            Spring.Echo("Substitution occurred, revealed start positions to all")
-        end
-        gadgetHandler:RemoveSyncAction("MarkStartPoint")
-        gadgetHandler:RemoveGadget(self)
-        return
+    if n~=5 then return end
+    
+    if revealed then    
+        Spring.Echo("Substitution occurred, revealed start positions to all")
     end
+  
+    gadgetHandler:RemoveCallIn("GameFrame")
+end
+
+function ForceSpec(_,pID)
+    local myID = Spring.GetMyPlayerID()
+    if pID==myID then
+        Spring.SendCommands("spectator")
+    end
+end
+
+function gadget:ShutDown()
+    gadgetHandler:RemoveSyncAction("MarkStartPoint")
+    gadgetHandler:RemoveSyncAction("ForceSpec")
 end
 
 -----------------------------
