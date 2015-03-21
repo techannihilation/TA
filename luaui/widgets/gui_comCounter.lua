@@ -82,6 +82,8 @@ local comDefs = {
   [UnitDefNames["tllcom7"].id] = true,
 }
 
+local HighPing = false
+
 ---------------------------------------------------------------------------------------------------
 --  Counting
 ---------------------------------------------------------------------------------------------------
@@ -173,6 +175,7 @@ end
 -- BA does not allow sharing to enemy, so no need to check Given, Taken, etc
 
 function widget:Initialize()
+         widgetHandler:RegisterGlobal('DrawManager_comcounter', DrawStatus)
 	--recount needed in case GameStart not called
 	if Spring.GetGameFrame() > 0 then
 		Recount()
@@ -220,12 +223,19 @@ function widget:GameOver()
 	inProgress = false
 end
 
+function widget:Shutdown()
+  widgetHandler:DeregisterGlobal('DrawManager_comcounter', DrawStatus)
+end
 ---------------------------------------------------------------------------------------------------
 --  GUI
 ---------------------------------------------------------------------------------------------------
 
+function DrawStatus(toohigh,fps,ping)
+    HighPing = ping
+end
+
 function widget:DrawScreen()
-	if widgetHandler:InTweakMode() then
+	if widgetHandler:InTweakMode() or HighPing then
 		return
 	end
 	if not inProgress then

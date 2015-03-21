@@ -97,6 +97,7 @@ local capacityColor
 local mProducedColor
 local relativeCapacity
 local hasData = false
+local HighPing = false
 local min = math.min
 local max = math.max
 local floor = math.floor
@@ -179,10 +180,15 @@ local function refreshData()
 	
 	hasData = true
 end
+
+function DrawStatus(toohigh,fps,ping)
+    HighPing = ping
+end
 --------------------------------------------------------------------------------
 -- Callins
 --------------------------------------------------------------------------------
 function widget:Initialize()
+         widgetHandler:RegisterGlobal('DrawManager_energygui', DrawStatus)
 
 	WG.energyConversion = {convertCapacities = convertCapacities}
 		
@@ -196,6 +202,9 @@ function widget:Initialize()
 	
 end
 
+function widget:Shutdown()
+	widgetHandler:DeregisterGlobal('DrawManager_energygui', DrawStatus)
+end
 
 function widget:GameFrame(n)
 	if (n % resourceRefreshRate == 1) then
@@ -207,7 +216,7 @@ function widget:DrawScreen()
 
 	if not hasData then refreshData() end
 
-	if curCapacity <= 0 then return end
+	if curCapacity <= 0 or HighPing then return end
 	
     -- Positioning
     glPushMatrix()

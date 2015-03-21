@@ -49,7 +49,7 @@ local MaxDist = 13000000
 local IsBehind = false
 local oldfps = SpGetFPS()
 local a = 0
-local maxframelag = 300 -- no less than 300 or ui could be missing for player
+local maxframelag = 400 -- no less than 300 or ui could be missing for player
 
 function DrawChecks()
   --Camera Height Check
@@ -78,6 +78,9 @@ function DrawChecks()
   ScriptLuaUICall("DrawManager_lups", toohigh,fpscount,IsBehind)
   ScriptLuaUICall("DrawManager_redui_drawing", toohigh,fpscount,IsBehind)
   ScriptLuaUICall("DrawManager_combblast", toohigh,fpscount,IsBehind)
+  ScriptLuaUICall("DrawManager_comcounter", toohigh,fpscount,IsBehind)
+  ScriptLuaUICall("DrawManager_energygui", toohigh,fpscount,IsBehind)
+  ScriptLuaUICall("DrawManager_allyrez", toohigh,fpscount,IsBehind)
 
   --Gadgets
   ScriptLuaRulesCall("DrawManager_morph", toohigh,fpscount,IsBehind)

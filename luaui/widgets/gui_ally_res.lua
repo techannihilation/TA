@@ -84,6 +84,7 @@ local prevHeight = nil
 local myID
 local posLoaded = false
 local needUpdate = false
+local HighPing = false
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -103,6 +104,7 @@ local function getTeamNames()
 end
 
 function widget:Initialize()
+  widgetHandler:RegisterGlobal('DrawManager_allyrez', DrawStatus)
   viewSizeX, viewSizeY = gl.GetViewSizes()
   if not posLoaded then
     x1 = (viewSizeX - w)
@@ -112,7 +114,12 @@ function widget:Initialize()
 end
 
 function widget:Shutdown()
+  widgetHandler:DeregisterGlobal('DrawManager_allyrez', DrawStatus)
   gl.DeleteList(displayList)
+end
+
+function DrawStatus(toohigh,fps,ping)
+    HighPing = ping
 end
 
 local function setUpTeam()
@@ -380,7 +387,7 @@ function widget:GameStart()
 end 
 
 function widget:DrawScreen()
-  if enabled and (not IsGUIHidden()) then
+  if enabled and (not IsGUIHidden()) or not HighPing then
       if needUpdate then
         updateStatics()
         updateBars()
