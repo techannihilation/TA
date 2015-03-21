@@ -1057,12 +1057,6 @@ local function Shutdown()
 
   gl.DeleteList(nilDispList)
 end
-
-function RecvLuaMsg(msg, playerID)
-	if msg:find("DRAWSTATUS:",1,true) then
-		Spring.Echo(msg)
-	end	
-end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
