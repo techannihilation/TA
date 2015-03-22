@@ -115,7 +115,7 @@ function gadget:GameProgress(serverframenum)
   local frame = Spring.GetGameFrame()
 
   if frame > (serverframenum-maxframelag) then
-    IsBehind = true
+    IsBehind = false
   else
     IsBehind = true
   end
