@@ -1,7 +1,7 @@
--- UNITDEF -- GORHORG --
+-- UNITDEF -- ARMHORG --
 --------------------------------------------------------------------------------
 
-local unitName = "corhorg"
+local unitName = "armhorg"
 
 --------------------------------------------------------------------------------
 
@@ -42,17 +42,17 @@ local unitDef = {
 	name = [[Horgue]],
 	noAutoFire = false,
 	noChaseCategory = [[SUB VTOL]],
-	objectName = [[corhorg]],
-	radarDistance = 0,
+	objectName = [[armhorg]],
+	radarDistance = 960,
 	selfDestructAs = [[BIG_UNIT]],
 	shootme = 1,
 	side = [[ARM]],
-	sightDistance = 300,
+	sightDistance = 680,
 	standingfireorder = 2,
 	standingmoveorder = 1,
 	steeringmode = 1,
 	turnRate = 450,
-	unitname = [[corhorg]],
+	unitname = [[armhorg]],
 	unitnumber = 66,
 	workerTime = 0,
 	featureDefs = nil,
@@ -88,7 +88,7 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			def = [[GORHORG_weapon]],
+			def = [[armhorg_weapon]],
 			mainDir = [[0 0 1]],
 			maxAngleDif = 270,
 			badTargetCategory = [[VTOL]],
@@ -100,7 +100,7 @@ local unitDef = {
 --------------------------------------------------------------------------------
 
 local weaponDefs = {
-	GORHORG_weapon = {
+	armhorg_weapon = {
 		accuracy = 200,
 		areaOfEffect = 120,
 		avoidFeature = false,
@@ -171,7 +171,7 @@ local featureDefs = {
 		height = 29,
 		hitdensity = 100,
 		metal = 0.8000 * unitDef.buildCostMetal,
-		object = [[GORHORG_dead]],
+		object = [[armhorg_dead]],
 		reclaimable = true,
 		seqnamereclamate = [[tree1reclamate]],
 		world = [[All Worlds]],

@@ -84,7 +84,7 @@ local unitDef = {
 		[17] = [[armdl]],
 		[18] = [[armcv]],
 		[19] = [[armbull]],
-		[20] = [[corhorg]],
+		[20] = [[armhorg]],
 		[21] = [[armlatnk]],
 	},
 	featureDefs = nil,
