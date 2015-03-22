@@ -58,7 +58,7 @@ local maxCommand = 0
 
 local unitCommand = {} -- most recent key in command table of order for unitID 
 local setTarget = {} -- set targets of units
-local osClock
+local osClock = os.clock()
 
 local opacity       = 0.75		
 local duration      = 1.25
@@ -307,7 +307,7 @@ function widget:DrawWorldPreUnit()
       return
     end
     
-    osClock = os.clock() or 0
+    osClock = os.clock()
     gl.Blending(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
     gl.DepthTest(false)
         
