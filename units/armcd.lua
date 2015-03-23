@@ -6,7 +6,7 @@ local unitName = "armcd"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.1,
+	acceleration = 0.12,
 	bmcode = 1,
 	brakeRate = 0.25,
 	buildCostEnergy = 8928,
@@ -39,7 +39,7 @@ local unitDef = {
 	maneuverleashlength = 490,
 	maxDamage = 2350,
 	maxSlope = 13,
-	maxVelocity = 0.75,
+	maxVelocity = 1.1,
 	maxWaterDepth = 12,
 	metalStorage = 0,
 	mobilestandorders = 1,
@@ -56,7 +56,7 @@ local unitDef = {
 	standingfireorder = 2,
 	standingmoveorder = 1,
 	steeringmode = 2,
-	turnRate = 409,
+	turnRate = 480,
 	unitname = [[armcd]],
 	unitnumber = 2109,
 	upright = true,
