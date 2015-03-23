@@ -437,7 +437,6 @@ local function Jump(unitID, goal, cmdTag, origCmdParams)
 			local stunnedOrInbuild = spGetUnitIsStunned(unitID)
 			local reloadFactor = (stunnedOrInbuild and 0) or spGetUnitRulesParam(unitID, "totalReloadSpeedChange") or 1
 			reloadAmount = reloadAmount + reloadSpeed*reloadFactor
-			Spring.Echo(reloadAmount)
 			spSetUnitRulesParam(unitID,"jumpReload",reloadAmount)
 			Sleep()
 		end
@@ -580,9 +579,6 @@ function gadget:CommandFallback(unitID, unitDefID, teamID, cmdID, cmdParams, cmd
 	if (distSqr < (range*range)) then
 
 		local cmdTag = spGetCommandQueue(unitID,1)[1].tag
-		--Spring.Echo(count*(t - lastJump[unitID])*0.01)
-		--spSetUnitRulesParam(unitID,"jumpReload",count*(t - lastJump[unitID])*0.01) --fix me need to make smoother progress bar
-
 		if (lastJump[unitID] and (t - lastJump[unitID]) >= reload) then
 			local coords = table.concat(cmdParams)
 			local currFrame = spGetGameFrame()
