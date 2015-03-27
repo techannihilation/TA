@@ -53,6 +53,11 @@ local unitDef = {
 	unitname = [[tllariman]],
 	unitnumber = 827,
 	featureDefs = nil,
+	sfxtypes = {
+		explosiongenerators = {
+			[1] = [[custom:Generic_Muzzle]],
+		},
+        },
 	sounds = {
 		canceldestruct = [[cancel2]],
 		underattack = [[warning1]],
@@ -87,7 +92,7 @@ local unitDef = {
 
 local weaponDefs = {
 	LIGHT_CANNON = {
-		areaOfEffect = 48,
+		areaOfEffect = 12,
 		avoidFeature = false,
 		ballistic = true,
 		cegTag = [[Trail_cannon]],
