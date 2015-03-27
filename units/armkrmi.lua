@@ -60,6 +60,7 @@ local unitDef = {
 	workerTime = 0,
 	customparams = {
 		RequireTech = [[Advanced T2 Unit Research Centre]],
+		canjump   = [[1]],
 	},
 	featureDefs = nil,
 	sounds = {
