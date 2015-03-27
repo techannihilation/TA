@@ -36,6 +36,8 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		}
 		sleep sleeptime;
 	}
+	return (0);
+	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
 }
 
 RockUnit(anglex, anglez)
@@ -120,7 +122,7 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode barrel type SHATTER | BITMAP1;
+		explode barrel type BITMAPONLY | BITMAP1;
 		explode base type BITMAPONLY | BITMAP2;
 		explode flare type BITMAPONLY | BITMAP3;
 		explode sleeve type BITMAPONLY | BITMAP4;
