@@ -61,6 +61,11 @@ local unitDef = {
 	unitname = [[corraid1]],
 	workerTime = 0,
 	featureDefs = nil,
+	sfxtypes = {
+		explosiongenerators = {
+			[1] = [[custom:Generic_Muzzle]],
+		},
+        },
 	sounds = {
 		canceldestruct = [[cancel2]],
 		underattack = [[warning1]],
