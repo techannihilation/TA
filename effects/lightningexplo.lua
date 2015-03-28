@@ -33,7 +33,7 @@ return {
     },
     smogcone6 = {
       air                = true,
-a      class              = [[CSimpleParticleSystem]],
+      class              = [[CSimpleParticleSystem]],
       count              = 1,
       ground             = true,
       water              = true,
