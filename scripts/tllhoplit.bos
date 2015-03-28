@@ -1,94 +1,137 @@
-piece base ,body ,turret ,sleeve ,flare;
-static-var restore_delay;
+#define TA			// This is a TA script
 
-#define SIG_NUM1 	2
-#define SMOKEPIECE1 	body
-#include "smokeunit.h"
+#include "sfxtype.h"
 #include "exptype.h"
-#include "Hitweap.h"
 
+piece  base, body, turret, sleeve, flare;
+
+static-var  restore_delay;
+
+// Signal definitions
+#define SIG_AIM				2
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from body;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+HitByWeapon(anglex, anglez)
+{
+	turn base to z-axis anglez speed <105.000000>;
+	turn base to x-axis anglex speed <105.000000>;
+	wait-for-turn base around z-axis;
+	wait-for-turn base around x-axis;
+	turn base to z-axis <0.000000> speed <30.000000>;
+	turn base to x-axis <0.000000> speed <30.000000>;
+}
 
 Create()
-	{
-	HIDE flare;
+{
+	hide flare;
 	restore_delay = 3000;
-	}
+}
 
-SetMaxReloadTime(time)
-	{
-	restore_delay = time * 2;
-	}
+SetMaxReloadTime(Func_Var_1)
+{
+	restore_delay = Func_Var_1 * 2;
+}
 
 RestoreAfterDelay()
-	{
-	SLEEP restore_delay;
-    	TURN turret to y-axis <0> SPEED <50>;
-    	TURN sleeve to x-axis <0> SPEED <30>;
-	}
+{
+	sleep restore_delay;
+	turn turret to y-axis <0.000000> speed <50.000000>;
+	turn sleeve to x-axis <0.000000> speed <30.000000>;
+}
 
-AimPrimary(heading,pitch)
-	{
-	SIGNAL SIG_NUM1;
-    	SET-SIGNAL-MASK SIG_NUM1;
-    	TURN turret to y-axis heading SPEED <150>;
-    	TURN sleeve to x-axis (0-pitch) SPEED <90>;
-    	WAIT-FOR-TURN turret around y-axis;
-    	WAIT-FOR-TURN sleeve around x-axis;
-    	START-SCRIPT RestoreAfterDelay();
-    	RETURN ( TRUE );
-   	}
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	turn turret to y-axis heading speed <150.000000>;
+	turn sleeve to x-axis <0.000000> - pitch speed <90.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn sleeve around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+Shot1()
+{
+	emit-sfx 1024 from flare;
+}
 
 FirePrimary()
-  	{
-	SHOW flare;
-	SLEEP 150;
-	HIDE flare;
-   	}
+{
+	sleep 150;
+}
 
 QueryPrimary(piecenum)
-  	{
-      	piecenum=flare;
-      	}
+{
+	piecenum = flare;
+}
 
 AimFromPrimary(piecenum)
-  	{ 
-	piecenum=turret;
-   	}
+{
+	piecenum = turret;
+}
 
 SweetSpot(piecenum)
-  	{ 
-	piecenum=body;
-   	}
+{
+	piecenum = body;
+}
 
-Killed(severity,corpsetype)
-  	{ 
-    	IF (severity <= 25)
-		{ 
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
 		corpsetype = 1;
-       		EXPLODE body type BITMAPONLY | BITMAP4;
-       		EXPLODE sleeve type BITMAPONLY | BITMAP1;
-       		EXPLODE turret type BITMAPONLY | BITMAP2;
-       		RETURN ( TRUE );
-      		} 
-    	IF (severity <= 50)
-     		{ 
+		explode body type BITMAPONLY | BITMAP4;
+		explode sleeve type BITMAPONLY | BITMAP1;
+		explode turret type BITMAPONLY | BITMAP2;
+		return (1);
+	}
+	if( severity <= 50 )
+	{
 		corpsetype = 2;
-       		EXPLODE body type BITMAPONLY | BITMAP4;
-       		EXPLODE sleeve type FALL | EXPLODE_ON_HIT | BITMAP1;
-       		EXPLODE turret type SHATTER | BITMAP2;
-		RETURN ( TRUE );
-      		} 
-    	IF (severity <= 99)
-     		{
+		explode body type BITMAPONLY | BITMAP4;
+		explode sleeve type FALL | EXPLODE_ON_HIT | BITMAP1;
+		explode turret type SHATTER | BITMAP2;
+		return (1);
+	}
+	if( severity <= 99 )
+	{
 		corpsetype = 3;
-       		EXPLODE body type BITMAPONLY | BITMAP4;
-       		EXPLODE sleeve type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
-       		EXPLODE turret type SHATTER | BITMAP2;
-       		RETURN ( TRUE );
-      		} 
-    	corpsetype = 3;
-    	EXPLODE body type BITMAPONLY | BITMAP5;
-    	EXPLODE sleeve type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
-    	EXPLODE turret type SHATTER | BITMAP3;
-    	RETURN ( TRUE );
-   }
+		explode body type BITMAPONLY | BITMAP4;
+		explode sleeve type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
+		explode turret type SHATTER | BITMAP2;
+		return (1);
+	}
+	corpsetype = 3;
+	explode body type BITMAPONLY | BITMAP5;
+	explode sleeve type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
+	explode turret type SHATTER | BITMAP3;
+	return (1);
+}
