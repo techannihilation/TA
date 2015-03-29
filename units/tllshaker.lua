@@ -1,0 +1,177 @@
+-- UNITDEF -- TLLSHAKER --
+--------------------------------------------------------------------------------
+
+local unitName = "tllshaker"
+
+--------------------------------------------------------------------------------
+
+local unitDef = {
+	acceleration = 0.011,
+	bmcode = 1,
+	brakeRate = 0.0099,
+	buildCostEnergy = 1553,
+	buildCostMetal = 206,
+	builder = false,
+	buildPic = [[TLLSHAKER.png]],
+	buildTime = 3904,
+	canAttack = true,
+	canGuard = true,
+	canMove = true,
+	canPatrol = true,
+	canstop = 1,
+	category = [[ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON]],
+	corpse = [[DEAD]],
+	defaultmissiontype = [[Standby]],
+	description = [[Light Mobile Artillery]],
+	energyMake = 0.5,
+	energyStorage = 0,
+	energyUse = 0.5,
+	explodeAs = [[BIG_UNITEX]],
+	firestandorders = 1,
+	footprintX = 2,
+	footprintZ = 2,
+	highTrajectory = 1,
+	idleAutoHeal = 5,
+	idleTime = 1800,
+	leaveTracks = true,
+	maneuverleashlength = 650,
+	maxDamage = 550,
+	maxSlope = 10,
+	maxVelocity = 1.87,
+	maxWaterDepth = 8,
+	metalStorage = 0,
+	mobilestandorders = 1,
+	movementClass = [[TANK2]],
+	name = [[Earth Shaker]],
+	noAutoFire = false,
+	noChaseCategory = [[SUB VTOL]],
+	objectName = [[TLLSHAKER]],
+	pushResistant = true,
+	seismicSignature = 0,
+	selfDestructAs = [[BIG_UNIT]],
+	side = [[TLL]],
+	sightDistance = 299,
+	standingfireorder = 2,
+	standingmoveorder = 1,
+	steeringmode = 1,
+	trackOffset = 6,
+	trackStrength = 5,
+	trackStretch = 1,
+	trackType = [[StdTank]],
+	trackWidth = 30,
+	turnRate = 466,
+	unitname = [[tllshaker]],
+	workerTime = 0,
+	sfxtypes = {
+		explosiongenerators = {
+			[1] = "custom:muzzle_flare_rocket_arty",
+		},
+	},
+	customparams = {
+		canareaattack = 1,
+	},
+	featureDefs = nil,
+	sounds = {
+		canceldestruct = [[cancel2]],
+		underattack = [[warning1]],
+		cant = {
+			[1] = [[cantdo4]],
+		},
+		count = {
+			[1] = [[count6]],
+			[2] = [[count5]],
+			[3] = [[count4]],
+			[4] = [[count3]],
+			[5] = [[count2]],
+			[6] = [[count1]],
+		},
+		ok = {
+			[1] = [[tarmmove]],
+		},
+		select = {
+			[1] = [[tarmsel]],
+		},
+	},
+	weaponDefs = nil,
+	weapons = {
+		[1] = {
+			def = [[TLLSHAKER_GUN]],
+			mainDir = [[0 0 1]],
+			maxAngleDif = 180,
+			onlyTargetCategory = [[NOTVTOL]],
+		},
+	},
+}
+
+--------------------------------------------------------------------------------
+
+local weaponDefs = {
+	TLLSHAKER_GUN = {
+		accuracy = 300,
+		areaOfEffect = 68,
+		ballistic = true,
+		cegTag = [[Trail_cannon]],
+		craterBoost = 0,
+		craterMult = 0,
+		explosionGenerator = [[custom:FLASH4]],
+		gravityaffected = [[TRUE]],
+		hightrajectory = 1,
+		impulseBoost = 0.123,
+		impulseFactor = 0.123,
+		name = [[LightArtillery]],
+		nogap = 1,
+		noSelfDamage = true,
+		range = 710,
+		reloadtime = 3.5,
+		renderType = 4,
+		rgbColor = [[0.84 0.59 0]],
+		separation = 0.45,
+		size = 1.57,
+		sizedecay = -0.15,
+		soundHitDry = [[xplomed2]],
+		soundStart = [[cannhvy3]],
+		stages = 20,
+		startsmoke = 1,
+		turret = true,
+		weaponType = [[Cannon]],
+		weaponVelocity = 365,
+		damage = {
+			default = 180,
+			subs = 5,
+		},
+	},
+}
+unitDef.weaponDefs = weaponDefs
+
+
+--------------------------------------------------------------------------------
+
+local featureDefs = {
+	DEAD = {
+		blocking = true,
+		category = [[corpses]],
+		collisionvolumeoffsets = [[0.947448730469 -6.45624659424 -0.712127685547]],
+		collisionvolumescales = [[26.1215209961 9.12510681152 48.7677612305]],
+		collisionvolumetype = [[Box]],
+		damage = 0.6000 * unitDef.maxDamage,
+		description = unitDef.name .. [[ Wreckage]],
+		energy = 0,
+		featurereclamate = [[SMUDGE01]],
+		footprintX = 2,
+		footprintZ = 2,
+		height = 0,
+		hitdensity = 100,
+		metal = 0.8000 * unitDef.buildCostMetal,
+		object = [[TLLSHAKER_DEAD]],
+		reclaimable = true,
+		seqnamereclamate = [[TREE1RECLAMATE]],
+		world = [[all]],
+	},
+}
+unitDef.featureDefs = featureDefs
+
+--------------------------------------------------------------------------------
+
+return lowerkeys({[unitName] = unitDef})
+
+--------------------------------------------------------------------------------

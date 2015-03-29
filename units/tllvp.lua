@@ -63,8 +63,9 @@ local unitDef = {
 		[5] = [[tllsalamander]],
 		[6] = [[tllariman]],
 		[7] = [[tllriot]],
-		[8] = [[tllannouncer]],
-		[9] = [[tllhoplit]],
+		[8] = [[tllshaker]],
+		[9] = [[tllannouncer]],
+		[10] = [[tllhoplit]],
 	},
 	featureDefs = nil,
 	sounds = {
