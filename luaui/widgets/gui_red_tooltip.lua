@@ -18,8 +18,8 @@ local CanvasX,CanvasY = 1272,734 --resolution in which the widget was made (for 
 
 local Config = {
 	tooltip = {
-		px = 0,py = CanvasY-(12*6+6*3), --default start position
-		sx = 300,sy = 12*6+6*3, --background size
+		px = 0,py = CanvasY-(12*6+5*2), --default start position
+		sx = 300,sy = 12*6+5*2, --background size
 		
 		fontsize = 12,
 		
@@ -37,8 +37,6 @@ local Config = {
 
 local sGetCurrentTooltip = Spring.GetCurrentTooltip
 local sGetSelectedUnitsCount = Spring.GetSelectedUnitsCount
-local sSendCommands = Spring.SendCommands
-local sSetDrawSelectionInfo = Spring.SetDrawSelectionInfo
 
 local function IncludeRedUIFrameworkFunctions()
 	New = WG.Red.New(widget)
@@ -115,6 +113,23 @@ local function AutoResizeObjects() --autoresize v2
 	end
 end
 
+local function getEditedCurrentTooltip()
+	local text = sGetCurrentTooltip()
+	--extract the exp value with regexp
+	local expPattern = "Experience (%d+%.%d%d)"
+	local currentExp = tonumber(text:match(expPattern))
+	local limExp = currentExp and currentExp/(1+currentExp) or 1
+	--replace with limexp: exp/(1+exp) since all spring exp effects are linear in limexp, multiply by 10 because people like big numbers instead of [0,1]
+	text = currentExp and text:gsub(expPattern,string.format("Experience %.2f", 10*limExp) ) or text
+	if text:find("Maverick") then --special hack to show mav updated maxrange
+		local rangePattern = "Range (%d+)"
+		local currentRange = tonumber(text:match(rangePattern))
+		--replace with limexp: exp/(1+exp) since all spring exp effects are linear in limexp, multiply by 10 because people like big numbers instead of [0,1]
+		text = currentExp and currentRange and text:gsub(rangePattern,string.format("Range %d", currentRange*(1+limExp)) ) or text
+	end
+	return text
+end
+
 local function createtooltip(r)
 	local text = {"text",
 		px=r.px+r.margin,py=r.py+r.margin,
@@ -133,7 +148,7 @@ local function createtooltip(r)
 			if (self._mouseoverself) then
 				self.caption = self.caption..r.tooltip.background
 			else
-				self.caption = self.caption..(GetSetTooltip() or sGetCurrentTooltip())
+				self.caption = self.caption..(getEditedCurrentTooltip() or sGetCurrentTooltip())
 			end
 		end
 	}
@@ -196,13 +211,13 @@ function widget:Initialize()
 	
 	tooltip = createtooltip(Config.tooltip)
 		
-	sSetDrawSelectionInfo(false) --disables springs default display of selected units count
-	sSendCommands("tooltip 0")
+	Spring.SetDrawSelectionInfo(false) --disables springs default display of selected units count
+	Spring.SendCommands("tooltip 0")
 	AutoResizeObjects()
 end
 
 function widget:Shutdown()
-	sSendCommands("tooltip 1")
+	Spring.SendCommands("tooltip 1")
 end
 
 function widget:Update()
