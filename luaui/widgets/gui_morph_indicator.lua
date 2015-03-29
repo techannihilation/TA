@@ -128,8 +128,15 @@ local function getAllUnitsMorphXpValuesArray()
 	return result
 end
 
+function DrawStatus(toohigh,fps,ping)
+    TooHigh = toohigh
+    FPSCount = fps
+    HighPing = ping
+end
+
 function widget:Initialize()
-  widgetHandler:RegisterGlobal('DrawManager_morphindicator', DrawStatus)
+    widgetHandler:RegisterGlobal('DrawManager_mphi', DrawStatus)
+
 
   if (UnitDefs[1].height == nil) then
     for udid, ud in ipairs(UnitDefs) do
@@ -151,7 +158,7 @@ function widget:Initialize()
 end
 
 function widget:Shutdown()
-  widgetHandler:DeregisterGlobal('DrawManager_morphindicator', DrawStatus)
+  widgetHandler:DeregisterGlobal('DrawManager_mphi', DrawStatus)
 
   for _,rankTexture in ipairs(rankTextures) do
     glDeleteTexture(rankTexture)
@@ -250,11 +257,6 @@ function widget:GameFrame(frame)
   end
 end
 
-function DrawStatus(toohigh,fps,ping)
-    TooHigh = toohigh
-    FPSCount = fps
-    HighPing = ping
-end
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
 
@@ -294,7 +296,7 @@ end
 
 
 function widget:DrawWorld()
-  if ( TooHigh == true ) or ( FPSCount < FPSLimit ) or ( HighPing == true ) then 
+  if TooHigh or HighPing then 
     return
   end
   
