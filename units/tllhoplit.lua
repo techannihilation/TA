@@ -53,7 +53,7 @@ local unitDef = {
 	unitname = [[tllhoplit]],
 	unitnumber = 874,
 	featureDefs = nil,
-		sfxtypes = {
+	sfxtypes = {
 		explosiongenerators = {
 			[1] = "custom:muzzle_flare_rocket_AA",
 		},
