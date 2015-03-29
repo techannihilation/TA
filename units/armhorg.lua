@@ -147,6 +147,7 @@ local weaponDefs = {
 		weaponTimer = 5,
 		weaponType = [[MissileLauncher]],
 		weaponVelocity = 310,
+		wobble = 1800,
 		damage = {
 			default = 75,
 			subs = 5,
