@@ -4,7 +4,7 @@
 #include "exptype.h"
 
 piece  base, body, turret, holder, launcher, flare1, flare2, flare3,
-       roues;
+       rflare1, rflare2, rflare3, roues;
 
 static-var  restore_delay, gun_1, wheelSpeed, currentSpeed, moveSpeed;
 
@@ -123,23 +123,23 @@ FirePrimary()
 {
 	if( gun_1 == 0 )
 	{
-		show flare1;
+		emit-sfx 1024 from flare1;
+		emit-sfx 1025 from rflare1;
 		sleep 200;
-		hide flare1;
 		gun_1 = body;
 		return (0);
 	}
 	if( gun_1 == 1 )
 	{
-		show flare2;
+		emit-sfx 1024 from flare2;
+		emit-sfx 1025 from rflare2;
 		sleep 200;
-		hide flare2;
 		gun_1 = turret;
 		return (0);
 	}
-	show flare3;
+	emit-sfx 1024 from flare3;
+	emit-sfx 1025 from rflare3;
 	sleep 200;
-	hide flare3;
 	gun_1 = base;
 }
 

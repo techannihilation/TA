@@ -53,6 +53,12 @@ local unitDef = {
 	unitname = [[tllannouncer]],
 	unitnumber = 831,
 	featureDefs = nil,
+	sfxtypes = {
+		explosiongenerators = {
+  			[1] = [[custom:muzzle_front_ring]],
+			[2] = [[custom:muzzle_flare_tll_rear]],
+		},
+	},
 	sounds = {
 		canceldestruct = [[cancel2]],
 		underattack = [[warning1]],
