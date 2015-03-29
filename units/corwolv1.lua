@@ -69,6 +69,7 @@ local unitDef = {
 		explosiongenerators = {
 			[1] = "custom:muzzle_flare_arty",
 		},
+	},
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],
