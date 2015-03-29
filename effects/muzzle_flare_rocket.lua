@@ -145,7 +145,7 @@ return {
       },
     },
   },
-   ["muzzle_flare_rocket_arty"] = {
+   ["muzzle_flare_arty"] = {
     usedefaultexplosions = true,
     muzzle_puff_ring = {
       air                = true,

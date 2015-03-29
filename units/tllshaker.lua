@@ -35,7 +35,7 @@ local unitDef = {
 	idleTime = 1800,
 	leaveTracks = true,
 	maneuverleashlength = 650,
-	maxDamage = 550,
+	maxDamage = 605,
 	maxSlope = 10,
 	maxVelocity = 1.87,
 	maxWaterDepth = 8,
@@ -64,7 +64,7 @@ local unitDef = {
 	workerTime = 0,
 	sfxtypes = {
 		explosiongenerators = {
-			[1] = "custom:muzzle_flare_rocket_arty",
+			[1] = "custom:muzzle_flare_arty",
 		},
 	},
 	customparams = {

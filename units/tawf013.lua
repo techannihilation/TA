@@ -68,6 +68,11 @@ local unitDef = {
 	customparams = {
 		canareaattack = 1,
 	},
+	sfxtypes = {
+		explosiongenerators = {
+			[1] = "custom:muzzle_flare_arty",
+		},
+	},
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],
