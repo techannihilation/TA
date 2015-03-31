@@ -33,6 +33,7 @@ Spring.SetGameRulesParam("jumpJets",1)
 --
 
 local CMD_JUMP = 38521
+local CMD_MORPH = 31410
 
 local Spring    = Spring
 local MoveCtrl  = Spring.MoveCtrl
@@ -532,7 +533,7 @@ function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOpt
 		goalSet[unitID] = nil
 	end	
 	-- do no allow morphing while jumping
-	if (jumping[unitID]) then
+	if (jumping[unitID]) and (cmdID == CMD_MORPH) then
 		-- allow to queue
 		if cmdOptions.shift then
 			return true
