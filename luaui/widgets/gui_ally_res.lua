@@ -83,11 +83,13 @@ local lastFrame  = -1
 local prevHeight = nil
 local myID
 local posLoaded = false
-local needUpdate = false
 local HighPing = false
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
+local function DrawStatus(toohigh,fps,ping)
+    HighPing = ping
+end
 
 local function getTeamNames()
   local teamNames = {}
@@ -116,10 +118,6 @@ end
 function widget:Shutdown()
   widgetHandler:DeregisterGlobal('DrawManager_allyrez', DrawStatus)
   gl.DeleteList(displayList)
-end
-
-function DrawStatus(toohigh,fps,ping)
-    HighPing = ping
 end
 
 local function setUpTeam()
@@ -263,7 +261,8 @@ end
 function widget:TeamDied(teamID)
   deadTeams[teamID] = true
   if setUpTeam() then
-    needUpdate = true
+    updateStatics()
+    updateBars()
   end
 end
 
@@ -271,7 +270,8 @@ function widget:UnitCreated(unitID, unitDefID, unitTeam)
   if deadTeams[unitTeam] then
     deadTeams[unitTeam] = nil
     if setUpTeam() then
-      needUpdate = true
+      updateStatics()
+      updateBars()
     end
   end
 end
@@ -316,7 +316,7 @@ end
 
 function widget:Update()
   if (gameFrame ~= lastFrame) then
-    if enabled then
+    if enabled or (not HighPing) then
 	  lastFrame = gameFrame
 	  updateBars()
 	  if transferTeam then
@@ -387,13 +387,7 @@ function widget:GameStart()
 end 
 
 function widget:DrawScreen()
-  if enabled and (not IsGUIHidden()) or not HighPing then
-      if needUpdate then
-        updateStatics()
-        updateBars()
-        needUpdate = false
-      end
-
+  if enabled and (not IsGUIHidden()) or (not HighPing) then
       gl.CallList(staticList)
       gl.CallList(displayList)
       if (labelText[1]) then
@@ -408,6 +402,7 @@ function widget:DrawScreen()
   end
 end
 
+--]]
 function widget:MouseMove(x, y, dx, dy, button)
   if (enabled) then
     if moving then
