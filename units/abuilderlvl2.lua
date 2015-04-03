@@ -19,6 +19,7 @@ local unitDef = {
 	canMove = true,
 	canPatrol = true,
 	canReclaim = true,
+	canSubmerge = true,
 	canstop = 1,
 	category = [[ALL CONSTR MEDIUMVTOL MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTWEAPON VTOL]],
 	collide = false,
