@@ -113,9 +113,9 @@ local unitDef = {
 		[20] = [[corfdrag]],
 		[21] = [[corllt]],
 		[22] = [[cortl]],
-		[23] = [[corrl]],
-		[24] = [[corfrt]],
-		[25] = [[cordl]],
+		[23] = [[cordl]],
+		[24] = [[corrl]],
+		[25] = [[corfrt]],
 	},
 	customParams = {
 		iscommander = true,

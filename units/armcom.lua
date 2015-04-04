@@ -115,9 +115,10 @@ local unitDef = {
 		[20] = [[armfdrag]],
 		[21] = [[armllt]],
 		[22] = [[armtl]],
-		[23] = [[armrl]],
-		[24] = [[armfrt]],
-		[25] = [[armdl]],
+		[23] = [[armdl]],
+		[24] = [[armrl]],
+		[25] = [[armfrt]],
+		[26] = [[armdl]],
 	},
 	customParams = {
 		iscommander = true,
