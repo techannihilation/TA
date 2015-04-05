@@ -3,13 +3,15 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  fire1, fire2, base, launcher, body, turret;
+piece  base, wheel1, loader, turret, launcher, rocket1, rocket2, rocket3,
+       rocket4, rocket5, rocket6, smokybit1, smokybit2, smokybit3, smokybit4, smokybit5,
+       smokybit6, wheel2, wheel3, wheel4, door1, door2;
 
-static-var  restore_delay, gun_1;
+static-var  restore_delay, Static_Var_2, Static_Var_3, gun_1, Static_Var_5,
+            Static_Var_6, Static_Var_7;
 
 // Signal definitions
 #define SIG_AIM				2
-
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -36,155 +38,297 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		}
 		sleep sleeptime;
 	}
-	return (0);
-	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
 }
 
-HitByWeapon(Func_Var_1, Func_Var_2)
+HitByWeapon(anglex, anglez)
 {
-	turn base to z-axis Func_Var_2 speed <105.000000>;
-	turn base to x-axis Func_Var_1 speed <105.000000>;
-	wait-for-turn base around z-axis;
-	wait-for-turn base around x-axis;
-	turn base to z-axis <0.000000> speed <30.000000>;
-	turn base to x-axis <0.000000> speed <30.000000>;
-	return (0);
+	Static_Var_6 = get HEALTH;
+	if( Static_Var_6 <= Static_Var_7 - 2 )
+	{
+		turn base to z-axis anglez speed <105.000000>;
+		turn base to x-axis anglex speed <105.000000>;
+		wait-for-turn base around z-axis;
+		wait-for-turn base around x-axis;
+		turn base to z-axis <0.000000> speed <30.000000>;
+		turn base to x-axis <0.000000> speed <30.000000>;
+	}
+	Static_Var_7 = get HEALTH;
+}
+
+StartMoving()
+{
+	spin wheel1 around x-axis speed <80.000000> accelerate <15.000000>;
+	spin wheel2 around x-axis speed <80.000000> accelerate <15.000000>;
+	spin wheel3 around x-axis speed <80.000000> accelerate <15.000000>;
+	spin wheel4 around x-axis speed <80.000000> accelerate <15.000000>;
+}
+
+StopMoving()
+{
+	stop-spin wheel1 around x-axis;
+	stop-spin wheel2 around x-axis;
+	stop-spin wheel3 around x-axis;
+	stop-spin wheel4 around x-axis;
 }
 
 Create()
 {
-	hide fire1;
-	hide fire2;
-	gun_1 = fire1;
 	restore_delay = 2000;
+	Static_Var_3 = 0;
+	Static_Var_2 = 0;
+	Static_Var_7 = 100;
+	Static_Var_5 = 0;
+	gun_1 = wheel1;
 	start-script SmokeUnit();
-	return (0);
 }
 
 SetMaxReloadTime(Func_Var_1)
 {
-	restore_delay = Func_Var_1 * 2;
-	return (0);
+	//restore_delay = Func_Var_1 * 2;
+}
+
+Reload()
+{
+	Static_Var_2 = 0;
+	turn turret to y-axis <0.000000> speed <120.000000>;
+	wait-for-turn turret around y-axis;
+	turn launcher to x-axis <0.000000> speed <90.000000>;
+	wait-for-turn launcher around x-axis;
+	move loader to y-axis [0.000000] speed [10.000000];
+	sleep 1000;
+	move door1 to y-axis [0.000000] speed [30.000000];
+	move door2 to y-axis [0.000000] speed [30.000000];
+	wait-for-move door2 along y-axis;
+	turn door1 to z-axis <0.000000> speed <60.000000>;
+	turn door2 to z-axis <0.000000> speed <60.000000>;
+	wait-for-turn door2 around z-axis;
+
+	Static_Var_5 = 1;
+	show rocket1;
+	show rocket2;
+	show rocket3;
+	show rocket4;
+	show rocket5;
+	show rocket6;
+	sleep 1000;
+	Static_Var_3 = 0;
+	Static_Var_5 = 0;
+	gun_1 = 1;
+}
+
+Launch()
+{
+	turn door1 to z-axis <90.000000> speed <60.000000>;
+	turn door2 to z-axis <-90.000000> speed <60.000000>;
+	wait-for-turn door2 around z-axis;
+	move door1 to y-axis [-7.000000] speed [30.000000];
+	move door2 to y-axis [-7.000000] speed [30.000000];
+	sleep 200;
+	move loader to y-axis [5.500000] speed [12.000000];
+	wait-for-move loader along y-axis;
+	Static_Var_2 = 1;
 }
 
 RestoreAfterDelay()
 {
+	set-signal-mask SIG_AIM;
 	sleep restore_delay;
-	turn turret to y-axis <0.000000> speed <5.000000>;
-	turn launcher to x-axis <0.000000> speed <6.000000>;
-	move turret to y-axis [0.000000] speed [35.000000];
-	return (0);
+	start-script Reload();
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+QueryPrimary(piecenum)
+{
+	if( gun_1 == 1 )
+	{
+		piecenum = rocket1;
+	}
+	if( gun_1 == 2 )
+	{
+		piecenum = rocket2;
+	}
+	if( gun_1 == 3 )
+	{
+		piecenum = rocket3;
+	}
+	if( gun_1 == 4 )
+	{
+		piecenum = rocket4;
+	}
+	if( gun_1 == 5 )
+	{
+		piecenum = rocket5;
+	}
+	if( gun_1 == 6 )
+	{
+		piecenum = rocket6;
+	}
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = turret;
 }
 
 AimPrimary(heading, pitch)
 {
+	while( Static_Var_3 == 1 )
+	{
+		sleep 400;
+	}
+	while( Static_Var_5 == 1 )
+	{
+		sleep 400;
+	}
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	turn turret to y-axis heading speed <45.000000>;
-	turn launcher to x-axis <0.000000> - pitch speed <40.000000>;
+	if( Static_Var_2 == 0 )
+	{
+		start-script Launch();
+	}
+	while( Static_Var_2 == 0 )
+	{
+		sleep 100;
+	}
+	turn turret to y-axis heading speed <50.000000>;
+	turn launcher to x-axis <0.000000> - pitch speed <30.000000>;
 	wait-for-turn turret around y-axis;
 	wait-for-turn launcher around x-axis;
 	start-script RestoreAfterDelay();
 	return (1);
 }
 
-FirePrimary()
+Shot1()
 {
-	if( gun_1 == 0 )
-	{
-		show fire1;
-		emit-sfx 257 from fire1;
-		sleep 30;
-		emit-sfx 257 from fire1;
-		sleep 30;
-		emit-sfx 257 from fire1;
-		sleep 30;
-		emit-sfx 257 from fire1;
-		sleep 30;
-		emit-sfx 257 from fire1;
-		sleep 30;
-		emit-sfx 257 from fire1;
-		sleep 150;
-		hide fire1;
-	}
 	if( gun_1 == 1 )
 	{
-		show fire2;
-		emit-sfx 257 from fire2;
-		sleep 30;
-		emit-sfx 257 from fire2;
-		sleep 30;
-		emit-sfx 257 from fire2;
-		sleep 30;
-		emit-sfx 257 from fire2;
-		sleep 30;
-		emit-sfx 257 from fire2;
-		sleep 30;
-		emit-sfx 257 from fire2;
-		sleep 150;
-		hide fire2;
+		hide rocket1;
+		emit-sfx 1024 from smokybit1;
+		gun_1 = 2;
+		return (0);
 	}
-	gun_1 = !gun_1;
-	return (0);
-}
-
-AimFromPrimary(piecenum)
-{
-	piecenum = turret;
-	return (0);
-}
-
-QueryPrimary(piecenum)
-{
-	piecenum = gun_1;
-	return (0);
-}
-
-SweetSpot(piecenum)
-{
-	piecenum = base;
-	return (0);
+	if( gun_1 == 2 )
+	{
+		hide rocket2;
+		emit-sfx 1024 from smokybit2;
+		gun_1 = 3;
+		return (0);
+	}
+	if( gun_1 == 3 )
+	{
+		hide rocket3;
+		emit-sfx 1024 from smokybit3;
+		gun_1 = 4;
+		return (0);
+	}
+	if( gun_1 == 4 )
+	{
+		hide rocket4;
+		emit-sfx 1024 from smokybit4;
+		gun_1 = 5;
+		return (0);
+	}
+	if( gun_1 == 5 )
+	{
+		hide rocket5;
+		emit-sfx 1024 from smokybit5;
+		gun_1 = 6;
+		return (0);
+	}
+	if( gun_1 == 6 )
+	{
+		hide rocket6;
+		emit-sfx 1024 from smokybit6;
+		start-script Reload();
+		Static_Var_3 = 1;
+		return (0);
+	}
 }
 
 Killed(severity, corpsetype)
 {
-	hide fire1;
-	hide fire2;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
 		explode base type BITMAPONLY | BITMAP1;
-		explode fire1 type BITMAPONLY | BITMAP2;
-		explode fire2 type BITMAPONLY | BITMAP3;
-		explode launcher type BITMAPONLY | BITMAP4;
-		explode turret type BITMAPONLY | BITMAP4;
+		explode wheel1 type BITMAPONLY | BITMAP1;
+		explode loader type BITMAPONLY | BITMAP1;
+		explode turret type BITMAPONLY | BITMAP1;
+		explode launcher type BITMAPONLY | BITMAP1;
+		explode rocket1 type BITMAPONLY | BITMAP1;
+		explode rocket2 type BITMAPONLY | BITMAP1;
+		explode rocket3 type BITMAPONLY | BITMAP1;
+		explode rocket4 type BITMAPONLY | BITMAP1;
+		explode rocket5 type BITMAPONLY | BITMAP1;
+		explode rocket6 type BITMAPONLY | BITMAP1;
+		explode wheel2 type BITMAPONLY | BITMAP1;
+		explode wheel3 type BITMAPONLY | BITMAP1;
+		explode wheel4 type BITMAPONLY | BITMAP1;
+		explode door1 type BITMAPONLY | BITMAP1;
+		explode door2 type BITMAPONLY | BITMAP1;
 		return (0);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type BITMAPONLY | BITMAP1;
-		explode fire1 type FALL | BITMAP2;
-		explode fire2 type FALL | BITMAP3;
+		explode base type SHATTER | BITMAP4;
+		explode wheel1 type SHATTER | BITMAP4;
+		explode loader type SHATTER | BITMAP4;
+		explode turret type SHATTER | BITMAP4;
 		explode launcher type SHATTER | BITMAP4;
-		explode turret type BITMAPONLY | BITMAP4;
+		explode rocket1 type SHATTER | BITMAP4;
+		explode rocket2 type SHATTER | BITMAP4;
+		explode rocket3 type SHATTER | BITMAP4;
+		explode rocket4 type SHATTER | BITMAP4;
+		explode rocket5 type SHATTER | BITMAP4;
+		explode rocket6 type SHATTER | BITMAP4;
+		explode wheel2 type SHATTER | BITMAP4;
+		explode wheel3 type SHATTER | BITMAP4;
+		explode wheel4 type SHATTER | BITMAP4;
+		explode door1 type SHATTER | BITMAP4;
+		explode door2 type SHATTER | BITMAP4;
 		return (0);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type BITMAPONLY | BITMAP1;
-		explode fire1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode fire2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		explode launcher type SHATTER | BITMAP4;
-		explode turret type SHATTER | BITMAP4;
+		explode base type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode wheel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode loader type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode launcher type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode rocket1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode rocket2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode rocket3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode rocket4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode rocket5 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode rocket6 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode wheel2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode wheel3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode wheel4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode door1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode door2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 		return (0);
 	}
 	corpsetype = 3;
-	explode base type BITMAPONLY | BITMAP1;
-	explode fire1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode fire2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-	explode launcher type SHATTER | EXPLODE_ON_HIT | BITMAP4;
-	explode turret type SHATTER | BITMAP4;
-	return (0);
+	explode base type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode wheel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode loader type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode launcher type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode rocket1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode rocket2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode rocket3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode rocket4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode rocket5 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode rocket6 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode wheel2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode wheel3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode wheel4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode door1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode door2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 }

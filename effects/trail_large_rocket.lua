@@ -56,7 +56,7 @@ return {
         directional        = true,
         emitrot            = 0,
         emitrotspread      = [[0 r360]],
-        emitvector         = [[0, 1, 0]],
+        emitvector         = [[0, 0.2, 0]],
         gravity            = [[0, 0, 0]],
         numparticles       = 8,
         particlelife       = 4,
@@ -73,6 +73,26 @@ return {
       },
     },
   },
-
+ ["trail_large_rocket_new"] = {
+      engine = {
+      air                = true,
+      class              = [[CBitmapMuzzleFlame]],
+      count              = 1,
+      ground             = true,
+      underwater         = 1,
+      water              = true,
+      properties = {
+        colormap           = [[1.0 0.8 0.2 0.01		1.0 0.2 0.1 0.01	0.6 0.1 0.1 0.01]],
+        dir                = [[dir]],
+        frontoffset        = 0,
+        fronttexture       = [[none]],
+        length             = 52,
+        sidetexture        = [[flashside1]],
+        size               = 6.0,
+        sizegrowth         = 0.74,
+        ttl                = 2,
+      },
+    },
+  },
 }
 

@@ -45,7 +45,7 @@ local unitDef = {
 	metalStorage = 0,
 	mobilestandorders = 1,
 	movementClass = [[htank4]],
-	name = [[M270 MLRS]],
+	name = [[MLRS]],
 	noAutoFire = false,
 	noChaseCategory = [[SUB VTOL]],
 	objectName = [[ARMMLRS]],
@@ -61,6 +61,11 @@ local unitDef = {
 	unitname = [[armmlrs]],
 	unitnumber = 1876,
 	workerTime = 0,
+	sfxtypes = {
+		explosiongenerators = {
+			[1] = "custom:muzzle_flare_very_heavy_rocket",
+		},
+	},
 	customparams = {
 		RequireTech = [[Advanced T3 Unit Research Centre]],
 	},
@@ -89,7 +94,7 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			badTargetCategory = [[SMALL TINY]],
-			def = [[227mm_rockets3]],
+			def = [[BARRAGE]],
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
@@ -98,12 +103,12 @@ local unitDef = {
 --------------------------------------------------------------------------------
 
 local weaponDefs = {
-	['227mm_rockets3'] = {
+	BARRAGE = {
 		areaOfEffect = 326,
 		burnblow = true,
-		burst = 2,
-		burstrate = 0.5,
-		cegTag = [[Trail_Large_Rocket]],
+		burst = 3,
+		burstrate = 1.1,
+		cegTag = [[Trail_Large_Rocket_New]],
 		cruisealt = 120,
 		explosionGenerator = [[custom:Explosion_VeryHeavy_Rocket-nix]],
 		fireStarter = 80,
@@ -111,8 +116,8 @@ local weaponDefs = {
 		guidance = true,
 		lineOfSight = true,
 		metalpershot = 0,
-		model = [[227mmrock]],
-		name = [[227mm rockets3]],
+		model = [[rocketo]],
+		name = [[Barrarge]],
 		proximityPriority = -1,
 		range = 2000,
 		reloadtime = 30,
@@ -126,17 +131,21 @@ local weaponDefs = {
 		sprayAngle = 1024,
 		startsmoke = 1,
 		startVelocity = 150,
+		texture1 = [[null]],
+		texture2 = [[null]],
+		texture3 = [[null]],
+		texture4 = [[null]],
 		tolerance = 1000,
 		tracks = false,
-		trajectoryHeight = 2,
+		trajectoryHeight = 1.65,
 		turnRate = 5000,
 		turret = true,
-		weaponAcceleration = 120,
+		weaponAcceleration = 110,
 		weaponTimer = 15,
 		weaponType = [[MissileLauncher]],
-		weaponVelocity = 900,
+		weaponVelocity = 700,
 		damage = {
-			default = 3000,
+			default = 2000,
 			subs = 5,
 		},
 	},
