@@ -843,6 +843,10 @@ function DrawStatus(toohigh,fps,ping)
 end
 
 function widget:Update()
+	if TooHigh or HighPing then
+		return
+	end
+	
 	local timef = spGetGameSeconds()
 	local time = floor(timef)
 
@@ -1155,13 +1159,16 @@ function UpdateCircleList()
 	end)
 end
 
+
 function widget:DrawWorld()
-	if not spIsGUIHidden() or ( TooHigh == false ) or ( FPSCount > FPSLimit ) or ( HighPing == false ) then
-		if rangeCircleList then
-			glCallList(rangeCircleList)
-		else
-			UpdateCircleList()
-		end
+  	if spIsGUIHidden() or HighPing then
+		return
+	end
+	
+	if rangeCircleList then
+		glCallList(rangeCircleList)
+	else
+		UpdateCircleList()
 	end
 end
 
