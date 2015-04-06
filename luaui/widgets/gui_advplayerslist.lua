@@ -477,6 +477,12 @@ function widget:GameStart()
 	SortList()
 end
 
+function widget:Shutdown()
+	if (Spring.GetConfigInt("ShowPlayerInfo")==0) then
+		Spring.SendCommands("info 1")
+	end
+end
+
 function SetSidePics() 
 	--record readyStates
 	playerList = Spring.GetPlayerList()
