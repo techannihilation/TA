@@ -42,6 +42,23 @@ local dots = {}
 local lastTime
 local updateInt = 2 --seconds for the ::update loop
 
+local TooHigh = false
+local HighPing = false
+
+function widget:Initialize()
+	widgetHandler:RegisterGlobal('DrawManager_ghost', DrawStatus)
+end
+
+function widget:Shutdown()
+	widgetHandler:DeregisterGlobal('DrawManager_ghost', DrawStatus)
+end
+
+function DrawStatus(toohigh,fps,ping)
+    --Spring.Echo(toohigh,fps,ping)
+    TooHigh = toohigh
+    HighPing = ping
+end
+
 function widget:UnitEnteredRadar(unitID, allyTeam)
 	if ( dots[unitID] ~= nil ) then
 		dots[unitID]["radar"] = true
@@ -93,6 +110,11 @@ end
 
 
 function widget:DrawWorld()
+	--Spring.Echo(TooHigh,HighPing)
+	if TooHigh or HighPing then 
+		return
+	end
+	
 	glColor(1.0, 1.0, 1.0, 0.35 )
 	glDepthTest(true)
 
