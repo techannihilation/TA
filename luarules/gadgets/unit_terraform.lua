@@ -115,13 +115,13 @@ local maxRampLegth = 200 -- maximun length of ramp segment
 local maxHeightDifference = 30 -- max difference of height around terraforming, Makes Shraka Pyramids
 local maxRampGradient = 5
 
-local volumeCost = 0.10
-local pointExtraAreaCost = 0.4 
+local volumeCost = 0.0128
+local pointExtraAreaCost = 0--.027
 local pointExtraAreaCostDepth = 6
 local pointExtraPerimeterCost = 0.1
 local pointExtraPerimeterCostDepth = 6
 local baseTerraunitCost = 12
-local inbuiltCostMult = 1
+local inbuiltCostMult = 0.5
 
 local perimeterEdgeCost = {
 	[0] = 0,
@@ -134,8 +134,8 @@ local perimeterEdgeCost = {
 -- cost of shraka pyramid point = volumeCost*diffHeight
 
 --ramp dimensions
-local maxTotalRampLength = 1000
-local maxTotalRampWidth = 400
+local maxTotalRampLength = 3000
+local maxTotalRampWidth = 800
 local minTotalRampLength = 32
 local minTotalRampWidth = 24
 
@@ -145,7 +145,7 @@ local decayCheckFrequency = 90 -- frequency of terraform decay checks
 
 local structureCheckLoopFrames = 300 -- frequency of slow update for building deformation check
 
-local terraUnitLimit = 500 -- limit on terraunits per player
+local terraUnitLimit = 250 -- limit on terraunits per player
 
 local terraUnitLeash = 100 -- how many elmos a terraunit is allowed to roam
 
@@ -217,6 +217,9 @@ local allowedArray = {
   [UnitDefNames["tllcom5"].id] = true,
   [UnitDefNames["tllcom6"].id] = true,
   [UnitDefNames["tllcom7"].id] = true,
+  
+  [UnitDefNames["armca"].id] = true,
+
 }
 
 --------------------------------------------------------------------------------
@@ -3497,7 +3500,7 @@ function gadget:UnitCreated(unitID, unitDefID)
 
 	local ud = UnitDefs[unitDefID]
 	-- add terraform commands to builders
-	if (ud.isBuilder and allowedArray[unitDefID]) and not ud.isFactory then
+	if (ud.isBuilder) and not ud.isFactory then
 		for _, cmdDesc in ipairs(cmdDescsArray) do
 			spInsertUnitCmdDesc(unitID, cmdDesc)
 		end
