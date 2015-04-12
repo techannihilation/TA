@@ -102,11 +102,11 @@ for i = 0, 64, 8 do
 	end
 end
 
-local maxAreaSize = 2000 -- max X or Z bound of area terraform
+local maxAreaSize = 4000 -- max X or Z bound of area terraform
 local updateFrequency = 30 -- how many frames to update
-local areaSegMaxSize = 200 -- max width and height of terraform squares
+local areaSegMaxSize = 400 -- max width and height of terraform squares
 
-local maxWallPoints = 700 -- max points that can makeup a wall
+local maxWallPoints = 1400 -- max points that can makeup a wall
 local wallSegmentLength = 14 -- how many points are part of a wall segment (points are seperated 8 elmos orthagonally)
 
 local maxRampWidth = 200 -- maximun width of ramp segment
@@ -152,7 +152,7 @@ local terraUnitLeash = 100 -- how many elmos a terraunit is allowed to roam
 local TOOLTIP_SPENT = "Spent: "
 local TOOLTIP_COST = "Estimated Cost: "
 
-local costMult = 1
+local costMult = 3
 local modOptions = Spring.GetModOptions()
 if modOptions.terracostmult then
 	costMult = modOptions.terracostmult
