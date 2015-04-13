@@ -1619,6 +1619,12 @@ function widgetHandler:GameFrame(frameNum)
   return
 end
 
+function widgetHandler:GameProgress(serverframenum)
+  for _,w in ipairs(self.GameProgressList) do
+    w:GameProgress(serverframenum)
+  end
+  return
+end
 
 function widgetHandler:ShockFront(power, dx, dy, dz)
   for _,w in ipairs(self.ShockFrontList) do
