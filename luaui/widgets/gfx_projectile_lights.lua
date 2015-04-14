@@ -206,7 +206,7 @@ local x, y, z, dx, dz, nx, ny, nz, ang
 local a, f, h = {}, {}, {}
 function widget:DrawWorldPreUnit()
 	
-	if ( TooHigh == true ) or ( FPSCount < FPSLimit ) or ( HighPing == true ) then 
+	if TooHigh or (FPSCount < FPSLimit) or HighPing then 
 		return
 	end
 	

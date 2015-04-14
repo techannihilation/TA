@@ -303,7 +303,7 @@ end
 
 function widget:DrawWorldPreUnit()
     --Spring.Echo(maxCommand-minCommand) --EXPENSIVE! often handling hundreds of command queues at once 
-    if spIsGUIHidden() or ( TooHigh == true ) or ( FPSCount < FPSLimit ) or ( HighPing == true ) then 
+    if spIsGUIHidden() or TooHigh or (FPSCount < FPSLimit) or HighPing then 
       return
     end
     
@@ -384,8 +384,8 @@ function widget:DrawWorldPreUnit()
 end
 
 function widget:DrawWorld()
-    if spIsGUIHidden() or ( FPSCount < FPSLimit ) or ( HighPing == true ) then
-      return
+    if spIsGUIHidden() or (FPSCount < FPSLimi ) or HighPing then
+        return
     end
 
     -- highlight unit 
