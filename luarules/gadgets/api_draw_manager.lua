@@ -52,7 +52,7 @@ local IsBehind = false
 local fpscount = SpGetFPS()
 local oldfps = fpscount
 local a = 0
-local maxframelag = 400 -- no less than 300 or ui could be missing for player
+local maxframelag = 750 -- no less than 300 or ui could be missing for player
 
 function DrawChecks()
   --Camera Height Check
