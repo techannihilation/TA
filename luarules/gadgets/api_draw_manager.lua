@@ -49,7 +49,8 @@ local SpGetSmoothMeshHeight = Spring.GetSmoothMeshHeight
 local SpGetFPS = Spring.GetFPS
 local MaxDist = 13000000
 local IsBehind = false
-local oldfps = SpGetFPS()
+local fpscount = SpGetFPS()
+local oldfps = fpscount
 local a = 0
 local maxframelag = 400 -- no less than 300 or ui could be missing for player
 
@@ -58,10 +59,6 @@ function DrawChecks()
   local cx, cy, cz = SpGetCameraPosition()
   local smoothheight = SpGetSmoothMeshHeight(cx,cz)
   local toohigh = ((cy-smoothheight)^2 >= MaxDist) 
-  --Fps speed Check
-  local fpscount = SpGetFPS()
-  fpscount = (fpscount + oldfps) / 2 -- fixme make a nicer way to smooth out values
-  oldfps = fpscount
   
   --IsBehind = true --testing
   --Spring.Echo("DrawManager Status",toohigh,fpscount,IsBehind)
@@ -101,6 +98,16 @@ function ScriptLuaRulesCall(name, toohigh,fpscount,IsBehind)
         Script.LuaRules[name](toohigh,fpscount,IsBehind)
     end
 end
+
+function gadget:GameFrame(f)
+    if f%93==0 then 
+        fpscount = SpGetFPS()
+        fpscount = math.floor((fpscount + oldfps) / 2)
+	--Spring.Echo("AVG sps ", fpscount, " framenumber ", f)
+        oldfps = fpscount
+    end
+end
+    
 
 function gadget:Update()
   if a == 4 then
