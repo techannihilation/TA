@@ -107,6 +107,7 @@ local flexCallIns = {
   'GameOver',
   'GamePaused',
   'GameFrame',
+  'GameProgress',
   'GameSetup',
   'TeamDied',
   'TeamChanged',
@@ -185,7 +186,6 @@ local callInLists = {
   'TweakIsAbove',
   'TweakGetTooltip',
   'RecvFromSynced',
-  'GameProgress',
 
 -- these use mouseOwner instead of lists
 --  'MouseMove',
