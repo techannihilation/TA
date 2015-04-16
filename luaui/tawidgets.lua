@@ -1620,6 +1620,13 @@ function widgetHandler:GameFrame(frameNum)
   return
 end
 
+function widgetHandler:GameProgress(frame)
+  for _,w in ipairs(self.GameProgressList) do
+    w:GameProgress(frame)
+  end
+  return
+end
+
 function widgetHandler:ShockFront(power, dx, dy, dz)
   for _,w in ipairs(self.ShockFrontList) do
     w:ShockFront(power, dx, dy, dz)
@@ -1921,13 +1928,6 @@ function widgetHandler:StockpileChanged(unitID, unitDefID, unitTeam,
   return
 end
 
-
-function widgetHandler:GameProgress(frame)
-  for _,w in ipairs(self.GameProgressList) do
-    w:GameProgress(frame)
-  end
-  return
-end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
