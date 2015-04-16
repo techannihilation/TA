@@ -12,9 +12,9 @@
 --------------------------------------------------------------------------------
 
 LUAUI_VERSION = "LuaUI v0.3"
-LUAUI_DIRNAME = 'LuaUI/'
+LUAUI_DIRNAME = 'luaui/'
 VFS.DEF_MODE = VFS.RAW_FIRST
-local STARTUP_FILENAME = LUAUI_DIRNAME .. 'main.lua'
+local STARTUP_FILENAME = LUAUI_DIRNAME .. 'bamain.lua'
 
 
 --------------------------------------------------------------------------------
@@ -24,7 +24,7 @@ do
   -- use a versionned directory name if it exists
   local sansslash = string.sub(LUAUI_DIRNAME, 1, -2)
   local versiondir = sansslash .. '-' .. Game.version .. '/'
-  if (VFS.FileExists(versiondir  .. 'main.lua', VFS.RAW_ONLY)) then
+  if (VFS.FileExists(versiondir  .. 'main.lua', VFS.ZIP)) then
     LUAUI_DIRNAME = versiondir
   end
 end
@@ -39,7 +39,7 @@ Spring.Echo('Using LUAUI_DIRNAME = ' .. LUAUI_DIRNAME)
 --
 
 do
-  local text = VFS.LoadFile(STARTUP_FILENAME, VFS.RAW_ONLY)
+  local text = VFS.LoadFile(STARTUP_FILENAME, VFS.ZIP)
   if (text == nil) then
     Script.Kill('Failed to load ' .. STARTUP_FILENAME)
   end
