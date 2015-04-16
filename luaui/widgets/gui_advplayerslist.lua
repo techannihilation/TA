@@ -2309,9 +2309,6 @@ function widget:Update(delta) --handles takes & related messages
 	end
 end
 
-function widget:GameProgress(serverFrameNum)
-	Spring.Echo(serverFrameNum)
-end
 ---------------------------------------------------------------------------------------------------
 --  Other callins
 ---------------------------------------------------------------------------------------------------
