@@ -185,6 +185,7 @@ local callInLists = {
   'TweakIsAbove',
   'TweakGetTooltip',
   'RecvFromSynced',
+  'GameProgress',
 
 -- these use mouseOwner instead of lists
 --  'MouseMove',
@@ -1921,6 +1922,12 @@ function widgetHandler:StockpileChanged(unitID, unitDefID, unitTeam,
 end
 
 
+function widgetHandler:GameProgress(frame)
+  for _,w in ipairs(self.GameProgressList) do
+    w:GameProgress(frame)
+  end
+  return
+end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
