@@ -118,7 +118,6 @@ function gadget:Update()
 end
 
 function gadget:GameProgress(serverframenum)
-  Spring.Echo(serverframenum)
   local frame = Spring.GetGameFrame()
 
   if frame > (serverframenum-maxframelag) then

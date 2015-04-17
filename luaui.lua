@@ -29,7 +29,6 @@ do
   end
 end
 
-Spring.Echo('Nix ba works wtf')
 Spring.Echo('Using LUAUI_DIRNAME = ' .. LUAUI_DIRNAME)
 
 
