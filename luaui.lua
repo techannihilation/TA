@@ -12,9 +12,9 @@
 --------------------------------------------------------------------------------
 
 LUAUI_VERSION = "LuaUI v0.3"
-LUAUI_DIRNAME = 'luaui/'
+LUAUI_DIRNAME = 'LuaUI/'
 VFS.DEF_MODE = VFS.RAW_FIRST
-local STARTUP_FILENAME = LUAUI_DIRNAME .. 'bamain.lua'
+local STARTUP_FILENAME = LUAUI_DIRNAME .. 'main.lua'
 
 
 --------------------------------------------------------------------------------
@@ -29,6 +29,7 @@ do
   end
 end
 
+Spring.Echo('Nix ba works wtf')
 Spring.Echo('Using LUAUI_DIRNAME = ' .. LUAUI_DIRNAME)
 
 
