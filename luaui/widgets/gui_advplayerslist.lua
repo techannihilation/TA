@@ -144,7 +144,8 @@ local blink           = true
 local lastTime        = 0
 local blinkTime       = 0
 local now             = 0
-
+local PlayerIsBehind  = false
+local maxframelag     = 750 -- High value so it Re-enables ui before players has synced
 
 --------------------------------------------------------------------------------
 -- Tooltip
@@ -946,11 +947,18 @@ local MainList
 local Background
 local ShareSlider
 
+function widget:GameProgress(serverframenum)
+	local frame = Spring.GetGameFrame()
+	if frame > (serverframenum-maxframelag) then
+		PlayerIsBehind = false
+	else
+		PlayerIsBehind = true
+	end
+end
+
 function widget:DrawScreen()
-
-
 	-- cancels the drawing if GUI is hidden
-	if Spring_IsGUIHidden() then
+	if Spring_IsGUIHidden() or PlayerIsBehind then
 		return
 	end
 
@@ -2253,6 +2261,11 @@ local updateRatePreStart = 0.25
 local lastTakeMsg = -120
 
 function widget:Update(delta) --handles takes & related messages 
+
+	if Spring_IsGUIHidden() or PlayerIsBehind then
+		return
+	end
+	
 	timeCounter = timeCounter + delta
 	curFrame = Spring_GetGameFrame()
 
