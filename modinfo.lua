@@ -5,8 +5,6 @@ return {
   version='$VERSION',
   mutator='',
   game='',
-  shortGame='',
+  shortGame='TA',
   modtype=1,
-  depend = {
-     }, 
   }
