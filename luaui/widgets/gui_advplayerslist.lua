@@ -129,11 +129,11 @@ local readyTexture = ":n:"..LUAUI_DIRNAME.."Images/Advplayerslist/blob_small.png
 --------------------------------------------------------------------------------
 
 local pingCpuColors   = {
-	[1] = {r = 0, g = 1, b = 0},
-	[2] = {r = 0.7, g = 1, b = 0},
-	[3] = {r = 1, g = 1, b = 0},
-	[4] = {r = 1, g = 0.6, b = 0},
-	[5] = {r = 1, g = 0, b = 0}
+	[1] = {r = 0.11, g = 0.82, b = 0.11},
+	[2] = {r = 0.4, g = 0.75, b = 0.2},
+	[3] = {r = 0.72, g = 0.72, b = 0.2},
+	[4] = {r = 0.82, g = 0.27, b = 0.18},
+	[5] = {r = 1, g = 0.15, b = 0.3}
 }
 
 --------------------------------------------------------------------------------
@@ -206,7 +206,7 @@ local widgetTop                                  = 0
 local widgetRight                                = 1
 local widgetHeight                               = 0
 local widgetWidth                                = 0
-local widgetPosX                                 = vsx-200
+local widgetPosX                                 = vsx
 local widgetPosY                                 = 0
 
 local expandDown                                 = false
@@ -1026,11 +1026,10 @@ function CreateBackground()
 	
 	Background = gl_CreateList(function()	
 	-- draws background rectangle
-	gl_Color(0.1,0.1,.45,0.18)                              
+	gl_Color(0,0,0,0.5)
 	gl_Rect(widgetPosX,widgetPosY, widgetPosX + widgetWidth, widgetPosY + widgetHeight - 1)
-	
 	-- draws black border
-	gl_Color(0,0,0,1)
+	gl_Color(0.44,0.44,0.44,0.38)	
 	gl_Rect(widgetPosX,widgetPosY, widgetPosX + widgetWidth, widgetPosY+1)
 	gl_Rect(widgetPosX,widgetPosY + widgetHeight  - 2, widgetPosX + widgetWidth, widgetPosY + widgetHeight  - 1)
 	gl_Rect(widgetPosX , widgetPosY, widgetPosX + 1, widgetPosY + widgetHeight  - 1)
