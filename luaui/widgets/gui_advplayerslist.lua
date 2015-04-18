@@ -1029,7 +1029,7 @@ function CreateBackground()
 	gl_Color(0,0,0,0.5)
 	gl_Rect(widgetPosX,widgetPosY, widgetPosX + widgetWidth, widgetPosY + widgetHeight - 1)
 	-- draws black border
-	gl_Color(0.44,0.44,0.44,0.38)	
+	gl_Color(0,0,0,1)	
 	gl_Rect(widgetPosX,widgetPosY, widgetPosX + widgetWidth, widgetPosY+1)
 	gl_Rect(widgetPosX,widgetPosY + widgetHeight  - 2, widgetPosX + widgetWidth, widgetPosY + widgetHeight  - 1)
 	gl_Rect(widgetPosX , widgetPosY, widgetPosX + 1, widgetPosY + widgetHeight  - 1)
