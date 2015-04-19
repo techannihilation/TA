@@ -80,7 +80,6 @@ local FPSCount = Spring.GetFPS()
 local FPSLimit = 8
 
 local message = 0
-
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
 
@@ -205,7 +204,7 @@ local function SetUnitRank(unitID)
 
   alliedUnits[unitID] = {}
     if (rankTex ~= nil) then 
-      smallList[unitID] = { rankTex, ud.height + iconoffset, message, humanName, teamID, messagesent = false}
+      smallList[unitID] = { rankTex, ud.height + iconoffset, message, humanName, teamID, false}
     end
 end
 
@@ -248,10 +247,9 @@ function widget:GameFrame(frame)
   if frame%129==0 then
     for unitID,v in pairs(smallList) do
       local myteam = Spring.GetMyTeamID()
-      --local unitsteam = Spring.GetUnitTeam(unitID)
-      if v[3] == 0 and v[6] == false and myteam == v[5] then
-        Spring.Echo(v[4] .. " Is Ready For Morph")
-        smallList[unitID][6] = true
+        if v[3] == 0 and sentmessage[unitID] == nil and myteam == v[5] then
+        Spring.Echo("\255\255\225\001" .. v[4] .. " Is Ready For Morph")
+        sentmessage[unitID] = true
       end
     end
   end
@@ -270,7 +268,7 @@ end
 function widget:UnitDestroyed(unitID, unitDefID, unitTeam)
   alliedUnits[unitID] = nil
   smallList[unitID] = nil
-  --sentmessage[unitID] = nil
+  sentmessage[unitID] = nil
 end
 
 
@@ -280,7 +278,7 @@ function widget:UnitGiven(unitID, unitDefID, oldTeam, newTeam)
   else
     alliedUnits[unitID] = nil
     smallList[unitID] = nil
-    --sentmessage[unitID] = nil
+    sentmessage[unitID] = nil
   end
 end
 
