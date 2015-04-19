@@ -249,7 +249,7 @@ function upgradeClosestMex(unitID, teamID, mexesInRange)
   local mexID = getClosestMex(unitID, upgradePairs, teamID, mexesInRange) 
 
   if not mexID then 
-    SendMessageToTeam(teamID, builder.humanName .. ": No mexes to upgrade")
+    SendToUnsynced("messages",unitID, teamID, builder.humanName)
     return false 
   end 
     
@@ -521,7 +521,7 @@ function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, _)
     tooltip = ONTooltip 
     status = ON 
   end 
-  autoMexCmdDesc.params[1] = status 
+  autoMexCmdDesc.params[1] = status
   EditUnitCmdDesc(unitID, cmdDescID, { 
     params  = autoMexCmdDesc.params, 
     tooltip = tooltip 
@@ -584,9 +584,16 @@ function gadget:CommandFallback(unitID, unitDefID, teamID, cmdID, cmdParams, cmd
   end 
 end 
 
+
+--Unsynced
 else 
 
 local bDefs = {} 
+local count = 0
+local CMD_AUTOMEX = 31143 
+
+local GetSpectatingState = Spring.GetSpectatingState
+local GetMyTeamID = Spring.GetMyTeamID
 
 local function RegisterUpgradePairs(_, val)
     if Script.LuaUI("registerUpgradePairs") then
@@ -595,6 +602,20 @@ local function RegisterUpgradePairs(_, val)
     return true
 end
 
+local function Messages(_, unitID, teamID, humanName)
+	local myTeamID = GetMyTeamID()
+	if myTeamID == teamID and not GetSpectatingState() then 
+		if (((count) % 10) < 0.1) then
+			Spring.Echo("\255\255\255\001" ..humanName .. " No Mexes to Upgrade")
+		end
+		if count == 150 then
+		-- Todo disable after 150 warning
+		--	Spring.GiveOrderToUnit(unitID, CMD_AUTOMEX, { 0 }, {"alt"})
+		end
+		count = count + 1
+	end
+end
+  
 function gadget:Initialize()
 	determine(UnitDefs, WeaponDefs)
 
@@ -607,10 +628,12 @@ function gadget:Initialize()
 	end
 
 	gadgetHandler:AddChatAction("registerUpgradePairs", RegisterUpgradePairs, "toggles registerUpgradePairs setting")
+	gadgetHandler:AddSyncAction("messages", Messages)
 end
 
 function gadget:Shutdown()
 	gadgetHandler:RemoveChatAction("registerUpgradePairs")
+	gadgetHandler.RemoveSyncAction("Messages")
 end
 
 end
