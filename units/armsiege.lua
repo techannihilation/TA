@@ -6,10 +6,10 @@ local unitName = "armsiege"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.01,
+	acceleration = 0.02,
 	antiweapons = 1,
 	bmcode = 1,
-	brakeRate = 0.01,
+	brakeRate = 0.03,
 	buildCostEnergy = 125898,
 	buildCostMetal = 6465,
 	builder = false,
@@ -129,7 +129,7 @@ local weaponDefs = {
 		weaponType = [[Cannon]],
 		weaponVelocity = 450,
 		damage = {
-			default = 2025,
+			default = 2325,
 			subs = 5,
 		},
 	},
