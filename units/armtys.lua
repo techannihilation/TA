@@ -101,6 +101,7 @@ local weaponDefs = {
 		craterMult = 0,
 		explosionGenerator = [[custom:Explosion_Medium_VLight]],
 		fireStarter = 70,
+		flightTime = 2.5,
 		guidance = true,
 		id = 235,
 		lineOfSight = true,
