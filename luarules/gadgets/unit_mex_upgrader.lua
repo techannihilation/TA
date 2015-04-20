@@ -34,7 +34,7 @@ local GetUnitIsDead = Spring.GetUnitIsDead
 
 local builderDefs = {} 
 local mexDefs = {} 
-
+local messageCount = {}
 local mexes = {} 
 local builders = {} 
 
@@ -248,8 +248,13 @@ function upgradeClosestMex(unitID, teamID, mexesInRange)
   
   local mexID = getClosestMex(unitID, upgradePairs, teamID, mexesInRange) 
 
-  if not mexID then 
-    SendToUnsynced("messages",unitID, teamID, builder.humanName)
+  if not mexID then
+    SendToUnsynced("messages", false, teamID, builder.humanName, messageCount[unitID])
+    if messageCount[unitID] == 250 then
+      SendToUnsynced("messages", true, teamID, builder.humanName, messageCount[unitID])
+      Spring.GiveOrderToUnit(unitID, CMD_AUTOMEX, { 0 }, {"alt"})
+    end
+      messageCount[unitID] = messageCount[unitID] + 1
     return false 
   end 
     
@@ -340,7 +345,7 @@ function unregisterUnit(unitID, unitDefID, unitTeam, destroyed)
         upgradeClosestMex(builderID, unitTeam) 
       end 
     end 
-    
+    messageCount[unitID] = nil
     mexes[unitTeam][unitID] = nil 
   elseif builder then 
     if getUnitPhase(unitID, unitTeam) == RECLAIMING then 
@@ -361,7 +366,8 @@ function registerUnit(unitID, unitDefID, unitTeam)
   if builderDefs[unitDefID] then 
     local builder = {} 
     local unitDef = UnitDefs[unitDefID] 
-  
+    
+    messageCount[unitID] = 0
     builder.unitDefID = unitDefID    
     builder.autoUpgrade = false 
     builder.buildDistance = unitDef.buildDistance 
@@ -602,17 +608,16 @@ local function RegisterUpgradePairs(_, val)
     return true
 end
 
-local function Messages(_, unitID, teamID, humanName)
+local function Messages(_, AutoOffMessage, teamID, humanName, Count)
 	local myTeamID = GetMyTeamID()
 	if myTeamID == teamID and not GetSpectatingState() then 
-		if (((count) % 10) < 0.1) then
+		if AutoOffMessage then
+			Spring.Echo("\255\255\255\001" ..humanName .. " AutoUpgrade mex Disabled")
+		end
+		if (Count%10 == 0) and not AutoOffMessage then
 			Spring.Echo("\255\255\255\001" ..humanName .. " No Mexes to Upgrade")
 		end
-		if count == 150 then
-		-- Todo disable after 150 warning
-		--	Spring.GiveOrderToUnit(unitID, CMD_AUTOMEX, { 0 }, {"alt"})
-		end
-		count = count + 1
+		
 	end
 end
   
