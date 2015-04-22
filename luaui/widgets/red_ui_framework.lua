@@ -16,7 +16,7 @@ local TN = "Red"
 local DrawingTN = "Red_Drawing" --WG name for drawing function list
 local version = 8
 local PlayerIsBehind  = false
-local maxframelag     = 750 -- High value so it Re-enables ui before players has synced
+local maxframelag     = 1000 -- High value so it Re-enables ui before players has synced
 
 local clock = os.clock
 local glGetTextWidth = gl.GetTextWidth

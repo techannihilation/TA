@@ -145,7 +145,7 @@ local lastTime        = 0
 local blinkTime       = 0
 local now             = 0
 local PlayerIsBehind  = false
-local maxframelag     = 750 -- High value so it Re-enables ui before players has synced
+local maxframelag     = 1000 -- High value so it Re-enables ui before players has synced
 
 --------------------------------------------------------------------------------
 -- Tooltip

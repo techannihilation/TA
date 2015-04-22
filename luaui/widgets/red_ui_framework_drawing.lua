@@ -13,6 +13,8 @@ end
 
 local TN = "Red_Drawing" --WG name for function list
 local version = 8
+local PlayerIsBehind  = false
+local maxframelag     = 1000 -- High value so it Re-enables ui before players has synced
 
 local vsx,vsy = widgetHandler:GetViewSizes()
 if (vsx == 1) then --hax for windowed mode
@@ -175,7 +177,7 @@ function widget:Initialize()
 end
 
 function widget:DrawScreen()
-  if HighPing then 
+  if PlayerIsBehind then 
     return
   end
 	glResetState()
@@ -192,6 +194,15 @@ function widget:DrawScreen()
 	glResetMatrices()
 	
 	CleanedTodo = true
+end
+
+function widget:GameProgress(serverframenum)
+	local frame = Spring.GetGameFrame()
+	if frame > (serverframenum-maxframelag) then
+		PlayerIsBehind = false
+	else
+		PlayerIsBehind = true
+	end
 end
 
 function widget:Update()

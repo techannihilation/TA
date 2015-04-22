@@ -17,27 +17,6 @@ end
 
 if gadgetHandler:IsSyncedCode() then
 
-  --[[
-function gadget:RecvLuaMsg(msg, playerID)
-	if msg:find("ping",1,true) then
-		local data = msg:sub(5)
-		if data == "1" then
-			Spring.SetGameRulesParam("ping",1)
-		else
-			Spring.SetGameRulesParam("ping",0)
-		end
-	end
-	if msg:find("toohigh",1,true) then
-		local data = msg:sub(8)
-		if data == "1" then
-			Spring.SetGameRulesParam("toohigh",1)
-		else
-			Spring.SetGameRulesParam("toohigh",0)
-		end
-	end
-end
---]]
-  
 --SYNCED
 
 else
@@ -52,7 +31,7 @@ local IsBehind = false
 local fpscount = SpGetFPS()
 local oldfps = fpscount
 local a = 0
-local maxframelag = 750 -- no less than 300 or ui could be missing for player
+local maxframelag = 350 -- no less than 300 or ui could be missing for player
 
 function DrawChecks()
   --Camera Height Check
@@ -75,7 +54,6 @@ function DrawChecks()
   ScriptLuaUICall("DrawManager_ghostsite", toohigh,fpscount,IsBehind)
   ScriptLuaUICall("DrawManager_anti_ranges", toohigh,fpscount,IsBehind)
   ScriptLuaUICall("DrawManager_lups", toohigh,fpscount,IsBehind)
-  ScriptLuaUICall("DrawManager_redui_drawing", toohigh,fpscount,IsBehind)
   ScriptLuaUICall("DrawManager_combblast", toohigh,fpscount,IsBehind)
   ScriptLuaUICall("DrawManager_comcounter", toohigh,fpscount,IsBehind)
   ScriptLuaUICall("DrawManager_energygui", toohigh,fpscount,IsBehind)
