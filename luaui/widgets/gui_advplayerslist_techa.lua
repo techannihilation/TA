@@ -11,7 +11,7 @@
 
 function widget:GetInfo()
 	return {
-		name      = "AdvPlayersList",
+		name      = "AdvPlayersList (TechA)",
 		desc      = "Players list with useful information / shortcuts. Use tweakmode (ctrl+F11) to customize.",
 		author    = "Marmoth.",
 		date      = "11.06.2013",

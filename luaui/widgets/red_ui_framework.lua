@@ -17,7 +17,7 @@ local DrawingTN = "Red_Drawing" --WG name for drawing function list
 local version = 8
 local PlayerIsBehind  = false
 local ServerFrame = nil
-local maxframelag = 300 -- High value so it Re-enables ui before players has synced
+local maxframelag = 750 -- High value so it Re-enables ui before players has synced
 local GameFrameDistance = 9000
 
 local clock = os.clock
