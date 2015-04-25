@@ -1,3 +1,29 @@
+---------------------------------------- v2.34.5 ---------------------------------------
+----Visual----
+Match apl background color with redui color
+
+----Bugs----
+Only dissallow morphing when jumping
+Fix lua error in ally rez widget
+Armpers, fix projectile missing target
+Fix alert message for morphable unit
+Add correct flightime for tyson missile
+
+----Balance----
+Crabe increase cost by 33%, reduce main cannon aoe by 77%
+Increse bumblebee explosion sizes/damages, Closes #588
+T1 eco con can now be build underwater
+Remove free energy give by mobile anti (its now a constant drain -75 for std mobile and -100 for upg) and remove energy needed for missile stockpile (7500>6500 for std, and 9000>8000)
+Increase max area of terraforming x2
+Armsiege, Increase brakerate 0.01>0.03, Increase acceleration 0.01>002, Increase damage 2025>2325
+
+---Improvements----
+Re-order buildmenus for commanders, Add heavy laser tower and hardened missile battery's to supreme commanders 
+Add replacement model for armmlrs and rework weapon trails,flares
+Apl auto renables /info on shutdown
+Some widget now autoDisable on catchup or if fps is too low, UI will now only disable if game progress is 5 mins or above
+Mex upgrade, now show less messages, message text improvment and not shown for specs, also auto disables after a set amount of messages (too reduce console spam)
+
 ---------------------------------------- v2.34.3 ---------------------------------------
 ----Visual----
 Update armgor visuals
