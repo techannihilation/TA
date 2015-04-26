@@ -84,9 +84,9 @@ local prevHeight = nil
 local myID
 local posLoaded = false
 local HighPing = false
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
 local function DrawStatus(toohigh,fps,ping)
     HighPing = ping
 end
@@ -316,7 +316,7 @@ end
 
 function widget:Update()
   if (gameFrame ~= lastFrame) then
-    if enabled or (not HighPing) then
+    if enabled then
 	  lastFrame = gameFrame
 	  updateBars()
 	  if transferTeam then
@@ -402,7 +402,6 @@ function widget:DrawScreen()
   end
 end
 
---]]
 function widget:MouseMove(x, y, dx, dy, button)
   if (enabled) then
     if moving then

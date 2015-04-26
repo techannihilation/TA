@@ -15,7 +15,7 @@ local TN = "Red_Drawing" --WG name for function list
 local version = 8
 local PlayerIsBehind  = false
 local ServerFrame = nil
-local maxframelag = 750 -- High value so it Re-enables ui before players has synced
+local maxframelag = 1800 -- High value so it Re-enables ui before players has synced
 local GameFrameDistance = 9000
 
 local vsx,vsy = widgetHandler:GetViewSizes()
