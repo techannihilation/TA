@@ -252,13 +252,14 @@ local spec,_ = Spring.GetSpectatingState()
 local eligible
 
 local vsx, vsy = Spring.GetViewGeometry()
+
 function gadget:ViewResize()
   vsx,vsy = Spring.GetViewGeometry()
 end
 
 local subsButton
 local bH = 60
-local bW = 400
+local bW = 435
 local bX = vsx - 7 - (bW)
 local bY = vsy * 0.84 - (bH/2)
 local offer = false
@@ -282,7 +283,7 @@ function MakeButton()
 	end)
 end
 
-function Initialize()
+function gadget:Initialize()
     if (tonumber(Spring.GetModOptions().mo_noowner) or 0) == 1 then
         gadgetHandler:RemoveGadget() -- don't run in FFA mode
         return 
@@ -338,14 +339,14 @@ function gadget:MousePress(sx,sy)
             Spring.SendLuaRulesMsg('\144')
             Spring.Echo("If player(s) are afk when the game starts, you might be used as a substitute")
             offer = true
-            bW = 160
+            bW = 435
             MakeButton()
             return true
         else
             Spring.SendLuaRulesMsg('\145')
             Spring.Echo("Your offer to substitute has been withdrawn")
             offer = false
-            bW = 140
+            bW = 400
             MakeButton()
             return true
         end
@@ -393,7 +394,6 @@ function gadget:GameFrame(n)
     if revealed then    
         Spring.Echo("Substitution occurred, revealed start positions to all")
     end
-  
     gadgetHandler:RemoveCallIn("GameFrame")
 end
 
