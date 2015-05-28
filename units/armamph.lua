@@ -137,7 +137,7 @@ local weaponDefs = {
 		weaponType = [[MissileLauncher]],
 		weaponVelocity = 850,
 		damage = {
-			default = 85,
+			default = 105,
 			subs = 5,
 		},
 	},
@@ -169,7 +169,7 @@ local weaponDefs = {
 		weaponType = [[BeamLaser]],
 		weaponVelocity = 500,
 		damage = {
-			default = 70,
+			default = 90,
 			subs = 5,
 		},
 	},
