@@ -207,19 +207,25 @@ local allowedArray = {
   [UnitDefNames["corcom5"].id] = true,
   [UnitDefNames["corcom6"].id] = true,
   [UnitDefNames["corcom7"].id] = true,
-  
+  [UnitDefNames["cbuilderlvl1"].id] = true,
+  [UnitDefNames["corassis"].id] = true,
+  [UnitDefNames["corfast"].id] = true,
+
   --Arm 
   [UnitDefNames["armcom5"].id] = true,
   [UnitDefNames["armcom6"].id] = true,
   [UnitDefNames["armcom7"].id] = true,
-  
+  [UnitDefNames["abuilderlvl1"].id] = true,
+  [UnitDefNames["consul"].id] = true,
+  [UnitDefNames["armfark"].id] = true,
+
   --The lost legacy
   [UnitDefNames["tllcom5"].id] = true,
   [UnitDefNames["tllcom6"].id] = true,
   [UnitDefNames["tllcom7"].id] = true,
-  
-  [UnitDefNames["armca"].id] = true,
-
+  [UnitDefNames["tllaca"].id] = true,
+  [UnitDefNames["tllacv"].id] = true,
+  [UnitDefNames["tllack"].id] = true,
 }
 
 --------------------------------------------------------------------------------
@@ -3445,6 +3451,7 @@ function gadget:UnitDestroyed(unitID, unitDefID)
 						maxDiff = heightMap[ix][iz+8]-newHeight 
 					end
 					
+	
 					if maxDiff < maxHeightDifference then
 						points = points + 1
 						point[points] = {x = ix, y = newHeight, z = iz}
@@ -3465,6 +3472,7 @@ function gadget:UnitDestroyed(unitID, unitDefID)
 		--spAdjustHeightMap(ux-64, uz-64, ux+64, uz+64 , 0)
 	end
 	--]]
+	
 	if constructor[unitID] then
 		local index = constructor[unitID].index
 		if index ~= constructors then
@@ -3500,7 +3508,7 @@ function gadget:UnitCreated(unitID, unitDefID)
 
 	local ud = UnitDefs[unitDefID]
 	-- add terraform commands to builders
-	if (ud.isBuilder) and not ud.isFactory then
+	if (ud.isBuilder and allowedArray[unitDefID]) and not ud.isFactory then
 		for _, cmdDesc in ipairs(cmdDescsArray) do
 			spInsertUnitCmdDesc(unitID, cmdDesc)
 		end
