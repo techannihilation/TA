@@ -77,7 +77,7 @@ local unitDef = {
 		[17] = [[cordl]],
 		[18] = [[corck]],
 		[19] = [[corroach]],
-		[20] = [[corsumo]],
+		[20] = [[cormort]],
 		[21] = [[corcan]],
 	},
 	featureDefs = nil,
