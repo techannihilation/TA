@@ -396,11 +396,9 @@ local morphDefs = {
 	},
 	},
       armjanus = {
-	{
 		into = 'armjanus1',
 		time = 10,
 		xp = 0.10,
-	
 	},	
       armsam = {
              {
