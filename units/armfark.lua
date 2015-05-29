@@ -77,7 +77,7 @@ local unitDef = {
 		[17] = [[armdl]],
 		[18] = [[armck]],
 		[19] = [[armvader]],
-		[20] = [[armfboy]],
+		[20] = [[armfast]],
 		[21] = [[armsnipe]],
 	},
 	featureDefs = nil,
