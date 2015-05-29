@@ -449,8 +449,6 @@ function gadget:UnitGiven(uID, uDefID, newTeam, oldTeam)
 			teamMMList[newTeam][cDefs.e][uID].built  = teamMMList[oldTeam][cDefs.e][uID].built
 			
             teamMMList[oldTeam][cDefs.e][uID] = nil
-	    AdjustTeamCapacity(oldTeam, -cDefs.c, cDefs.e)
-	    AdjustTeamCapacity(newTeam,  cDefs.c, cDefs.e)
         end
     end
 end
