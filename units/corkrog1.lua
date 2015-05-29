@@ -48,6 +48,7 @@ local unitDef = {
 	noAutoFire = false,
 	noChaseCategory = [[SUB VTOL]],
 	objectName = [[CORKROG1]],
+	script = [[corkrog.cob]],
 	seismicSignature = 0,
 	selfDestructAs = [[CRBLMSSL4]],
 	side = [[CORE]],
@@ -101,8 +102,10 @@ local unitDef = {
 		},
 		[4] = {
 			def = [[KROGCRUSH1]],
-			mainDir = [[0 0 1]],
-			maxAngleDif = 200,
+			onlyTargetCategory = [[NOTVTOL]],
+		},
+		[5] = {
+			def = [[KROGCRUSH1]],
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
@@ -246,7 +249,7 @@ local weaponDefs = {
 		weaponType = [[Cannon]],
 		weaponVelocity = 650,
 		damage = {
-			default = 500,
+			default = 1500,
 			subs = 5,
 		},
 	},
