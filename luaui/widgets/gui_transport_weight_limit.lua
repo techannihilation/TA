@@ -26,10 +26,11 @@ function widget:Initialize()
                 end
         end
 end
+
 function widget:GameFrame(n)
-        local unitcount = 0
-	if (n % 4 == 1) then
-        unitstodraw = {}
+    local unitcount = 0
+	if (n % 2 == 1) then
+    unitstodraw = {}
 	local _,cmdID,_ = Spring.GetActiveCommand()
 	local selectedUnits = Spring.GetSelectedUnits()
 	if #selectedUnits == 1 then
@@ -74,10 +75,10 @@ function widget:GameFrame(n)
 				local ud = UnitDefs[visableID]
 				local passengerMass = ud.mass
                                 local passengerX = ud.xsize/2
-                                if (passengerMass <= transMassLimit) and (passengerX <= transportSize) and not ud.cantBeTransported then 
+                                if (passengerMass <= transMassLimit) and (passengerX <= transportSize) and not ud.cantBeTransported and not Spring.IsUnitIcon(unitID) then 
                                     local x, y, z = Spring.GetUnitBasePosition(unitID)
                                     if (x) then
-                                         unitstodraw[unitID] = {pos = {x,y,z},size = (passengerX*22)}
+                                         unitstodraw[unitID] = {pos = {x,y,z},size = (passengerX*24)}
                                     end
                                 end
                                end
@@ -85,12 +86,12 @@ function widget:GameFrame(n)
 			end
 		end
 	end
-        end
+    end
 end
 
 function widget:DrawWorldPreUnit()
-    gl.LineWidth(5)
-    gl.Color(0, 0.7, 0, 0.6)
+    gl.LineWidth(6)
+    gl.Color(0, 0.8, 0, 0.37)
     for unitID,_ in pairs(unitstodraw) do
         local pos = unitstodraw[unitID].pos
         local size = unitstodraw[unitID].size
