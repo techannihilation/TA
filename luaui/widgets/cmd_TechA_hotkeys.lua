@@ -1,17 +1,46 @@
 function widget:GetInfo()
 	return {
-		name = "Building Hotkeys",
-		desc = "Enables Building Hotkeys for ZXCV" ,
+		name = "TechA Hotkeys",
+		desc = "Enables TechA Hotkeys, including ZXCV,BN,YJ,O,Q" ,
 		author = "Beherith",
 		date = "23 march 2012",
 		license = "GNU LGPL, v2.1 or later",
 		layer = 1,
-		enabled = true
+		enabled = true,
+        handler = true,
 	}
 end
 
-local binds={
-	"bind any+b buildspacing inc",
+
+-- table of stuff that we unbind on load
+local unbinds={
+    "bind any+c controlunit",
+    "bind c controlunit",
+    "bind any+x  buildspacing dec",
+    "bind x  buildspacing dec",
+    "bindaction buildspacing dec",
+    "bind any+z buildspacing inc",
+    "bind z buildspacing inc",
+    "bindaction buildspacing inc",
+
+    "bind , prevmenu",
+    "bind . nextmenu",
+    
+    -- hotfixes for 98.0
+    "bind backspace	mousestate", --http://springrts.com/mantis/view.php?id=4578
+}
+
+-- table of stuff that we bind on load
+local binds = {}
+function MakeBindsTable (swapYZ)
+    -- handle swapping YZ, its very awkward to have them the 'wrong' way around on AZERTY keyboards
+    if swapYZ==nil then swapYZ=false end
+    local Y = swapYZ and "z" or "y"
+    local Z = swapYZ and "y" or "z"
+    
+    local _binds = {
+        -- building hotkeys
+        "bind any+b buildspacing inc",
 	"bind any+n buildspacing dec",
 	"bind any+q controlunit",
 	"bind z buildunit_armmex",
@@ -179,7 +208,7 @@ local binds={
 	"bind c buildunit_corsonar",
 	"bind shift+c buildunit_corsonar",
 	"bind c buildunit_tllsonar",
-	"bind shift+c buildunit_rllsonar",
+	"bind shift+c buildunit_tllsonar",
 	
 	"bind c buildunit_armfrad",
 	"bind shift+c buildunit_armfrad",
@@ -225,60 +254,77 @@ local binds={
 	"bind shift+v buildunit_corsy",
 	"bind v buildunit_tllsy",
 	"bind shift+v buildunit_tllsy",
-	
-   -- hotfixes for 98.0
-    "bind f6 mutesound", --http://springrts.com/mantis/view.php?id=4576
-    "bind q drawinmap", --some keyboards don't have ` or \
-    "bind ,	buildfacing inc", --because some keyboards don't have [ and ] keys
-    "bind .	buildfacing dec",
-    "bind o buildfacing inc", --apparently some keyboards don't have , and . either...
-}
+        
+        -- build spacing
+        "bind any+b buildspacing inc",
+        "bind any+n buildspacing dec",    
+        
+        -- numpad movement
+        "bind numpad2 moveback",
+        "bind numpad6 moveright",
+        "bind numpad4 moveleft",
+        "bind numpad8 moveforward",
+        "bind numpad9 moveup",
+        "bind numpad3 movedown",
+        "bind numpad1 movefast",
+        
+        -- set target
+        "bind "..Y.." settarget",
+        "bind j canceltarget",
+        
+        "bind q drawinmap", --some ke"..Y.."boards don't have ` or \
+        "bind ,	buildfacing inc", --because some ke"..Y.."boards don't have [ and ] ke"..Y.."s
+        "bind .	buildfacing dec",
+        "bind o buildfacing inc", --apparentl"..Y.." some ke"..Y.."boards don't have , and . either...
+
+        -- hotfixes for 98.0
+        "bind f6 mutesound", --http://springrts.com/mantis/view.php?id=4576        
+    }
     
-local unbinds={
-	"bind any+c controlunit",
-	"bind c controlunit",
-	"bind Any+x  buildspacing dec",
-	"bind x  buildspacing dec",
-	"bindaction buildspacing dec",
-	"bind any+z buildspacing inc",
-	"bind z buildspacing inc",
-	"bindaction buildspacing inc",
+    binds = _binds
+end
 
-    -- hotfixes for 98.0
-    "bind backspace	mousestate", --http://springrts.com/mantis/view.php?id=4578
-    "bind , prevmenu",
-    "bind . nextmenu",
-}
+-----------
 
-function widget:Initialize()
+function LoadBindings()
 	for k,v in ipairs(unbinds) do
 		Spring.SendCommands("un"..v)
 	end
+    
+    MakeBindsTable(WG.swapYZbinds) -- in case Y/Z swap has changed since last load
+    
 	for k,v in ipairs(binds) do
 		Spring.SendCommands(v)
 	end
+end
+
+function UnloadBindings()
+	for k,v in ipairs(binds) do
+		Spring.SendCommands("un"..v)
+	end
+
+	for k,v in ipairs(unbinds) do
+		Spring.SendCommands(v)
+	end
+end
+
+function ReloadBindings()
+    UnloadBindings()
+    LoadBindings()
+end
+
+function widget:Initialize()
+    MakeBindsTable(WG.swapYZbinds)    
+    LoadBindings()
+    
+    WG.Reload_BA_Hotkeys = ReloadBindings
 end
 
 function widget:Shutdown()
-	for k,v in ipairs(binds) do
-		Spring.SendCommands("un"..v)
-	end
-	for k,v in ipairs(unbinds) do
-		Spring.SendCommands(v)
-	end
-end
+    UnloadBindings()
+    WG.Reload_BA_Hotkeys = nil
 
--- hacky hotfix for http://springrts.com/mantis/view.php?id=4455
--- see also https://github.com/spring/spring/blob/develop/rts/Game/UI/KeyCodes.cpp and https://github.com/spring/spring/blob/develop/cont/LuaUI/Headers/keysym.h.lua
-include('keysym.h.lua')
-local BACKQUOTE = KEYSYMS.BACKQUOTE
-local BACKSLASH = KEYSYMS.BACKSLASH
-local PAR = KEYSYMS.WORLD_23
-local Q = KEYSYMS.Q 
-local RETURN = KEYSYMS.RETURN
-local wasDrawKey = false
-function widget:KeyPress(key, mods, isRepeat)
-    if key==RETURN and (Spring.GetKeyState(BACKQUOTE) or Spring.GetKeyState(BACKSLASH) or Spring.GetKeyState(PAR) or Spring.GetKeyState(Q)) then
-        return true
+    if widgetHandler.orderList and (widgetHandler.orderList["TechA Hotkeys -- swap YZ"] or 0) > 0 then
+        widgetHandler:DisableWidget("TechA Hotkeys -- swap YZ")
     end
 end
