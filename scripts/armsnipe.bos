@@ -8,7 +8,8 @@ piece  flash, torso, head, hip, rupleg, rleg, lleg, lupleg,
        barrel, scope;
 
 static-var  Static_Var_1, bMoving, Static_Var_3, Static_Var_4, restore_delay,
-            statechg_DesiredState, statechg_StateChanging, moveSpeed, currentSpeed;
+            statechg_DesiredState, statechg_StateChanging, moveSpeed, currentSpeed,
+            bAiming;
 
 // Signal definitions
 #define SIG_AIM				4
@@ -1032,6 +1033,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 Create()
 {
 	bMoving = FALSE;
+	bAiming = FALSE;
 	Static_Var_3 = 0;
 	Static_Var_4 = 1;
 	Static_Var_1 = 0;
@@ -1062,6 +1064,7 @@ StopMoving()
 RestoreAfterDelay()
 {
 	sleep restore_delay;
+	bAiming = FALSE;
 	set-signal-mask 0;
 	turn torso to y-axis <0.000000> speed <200.000000>;
 	start-script RequestState(1);
@@ -1072,6 +1075,7 @@ AimPrimary(heading, pitch)
 	start-script RequestState(0);
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
+	bAiming = TRUE;
 	while( !Static_Var_1 )
 	{
 		sleep 200;
@@ -1105,6 +1109,30 @@ QueryPrimary(piecenum)
 {
 	piecenum = flash;
 }
+
+AimFromSecondary(piecenum)
+{
+	piecenum = torso;
+}
+
+QuerySecondary(piecenum)
+{
+	piecenum = flash;
+}
+
+FireSecondary()
+{
+}
+
+AimSecondary(heading, pitch)
+{
+	while( !bAiming )
+	{
+		sleep 200;
+	}
+	return (1);
+}
+
 
 SweetSpot(piecenum)
 {
