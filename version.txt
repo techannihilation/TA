@@ -1,4 +1,19 @@
-test commit
+---------------------------------------- v2.3x.x ---------------------------------------
+----Visual----
+
+
+----Bugs----
+Fix units allowed to terraform, Closes #615
+Fix superkrog crushweapon, Closes #607
+Fix unit cannon range issue's, Closes #605
+
+----Balance----
+
+
+---Improvements----
+Add new widget which hi-light's unit's which are transportable (size/mass/etc) once load button is pressed
+Sniper weapon now have a fake laser sight, unit's which are under attack have a small red dot drawn on them
+
 ---------------------------------------- v2.34.5 ---------------------------------------
 ----Visual----
 Match apl background color with redui color
