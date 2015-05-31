@@ -786,10 +786,10 @@ AimPrimary(heading, pitch)
 
 AimTertiary(heading, pitch)
 {
-	signal SIG_AIM_3;
-	set-signal-mask SIG_AIM_3;
-	bAiming = TRUE;
-	start-script RestoreAfterDelay();
+	while( !bAiming )
+	{
+		sleep 200;
+	}
 	return (1);
 }
 
@@ -830,16 +830,6 @@ FirePrimary()
 
 FireTertiary()
 {
-	if( gun_3 == 1 )
-	{
-		gun_3 = hips;
-		return (0);
-	}
-	if( gun_3 == 2 )
-	{
-		gun_3 = torso;
-		return (0);
-	}
 }
 
 AimFromPrimary(piecenum)
@@ -854,7 +844,7 @@ AimFromSecondary(piecenum)
 
 AimFromTertiary(piecenum)
 {
-	piecenum = mpack;
+	piecenum = torso;
 }
 
 QuerySecondary(piecenum)
@@ -876,14 +866,7 @@ QueryPrimary(piecenum)
 
 QueryTertiary(piecenum)
 {
-	if( gun_3 == 1 )
-	{
-		piecenum = rmispoint;
-	}
-	if( gun_3 == 2 )
-	{
-		piecenum = lmispoint;
-	}
+	piecenum = eyeflare;
 }
 
 SweetSpot(piecenum)

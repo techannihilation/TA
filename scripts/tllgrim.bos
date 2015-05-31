@@ -597,6 +597,36 @@ QuerySecondary(piecenum)
 	}
 }
 
+AimFromTertiary(piecenum)
+{
+	piecenum = torso;
+}
+
+QueryTertiary(piecenum)
+{
+	if( gun_1 == 1 )
+	{
+		piecenum = lflare1;
+	}
+	if( gun_1 == 2 )
+	{
+		piecenum = lflare2;
+	}
+}
+
+FireTertiary()
+{
+}
+
+AimTertiary(heading, pitch)
+{
+	while( !bAiming )
+	{
+		sleep 200;
+	}
+	return (1);
+}
+
 SweetSpot(piecenum)
 {
 	piecenum = torso;

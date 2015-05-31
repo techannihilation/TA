@@ -457,6 +457,29 @@ QueryPrimary(piecenum)
 	piecenum = flare;
 }
 
+AimFromSecondary(piecenum)
+{
+	piecenum = axe;
+}
+
+QuerySecondary(piecenum)
+{
+	piecenum = flare;
+}
+
+FireSecondary()
+{
+}
+
+AimSecondary(heading, pitch)
+{
+	while( !bAiming )
+	{
+		sleep 200;
+	}
+	return (1);
+}
+
 SweetSpot(piecenum)
 {
 	piecenum = base;
