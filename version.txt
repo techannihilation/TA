@@ -8,18 +8,16 @@ Fix superkrog crushweapon, Closes #607
 Fix unit cannon range issue's, Closes #605
 
 ----Balance----
-Blade increase Ho to 20% 
-Champion incease Hp to 150%, Metalcost to 33%, decrease Canon damage to 15%.
-Protos range decrease to 1050 (1200 before), HP decrease to 10%, Damage decrease to 10%.
+Blade increase Hp by 20% 
+Champion incease Hp by 150%, Metalcost by 33%, decrease cannon damage by 15%.
+Protos range decrease to 1050 (1200 before), HP decrease by 10%, Damage decrease by 10%.
 Menacer (artillery kbot), increase damage & range & HP. Decrease Metal & time cost.
 Pelican damage increase (laser & AA missile) by 15%.
-T3 Sniper & Experimental Canon Anti T3/T4 increase damage vs defaut armor class by 100% (T3&T4 unit take defaut damage x 
-
-2 vs x 4 before). 
-Hyperion. His weapon take 1500 energy by second (15000 e/s before).
-Horgue increase damage 100% & reload 100%. Hp decrease to 50%.
-Arm Engineerer Combat : Can construct Zipper that remplace Fatboy.
-Core Engineerer Combat : Can construct Morty that remplace Sumo.
+T3 Sniper & Experimental Cannon Anti T3/T4 increase damage vs default armor class by 100% (T3&T4 unit take defaut damage X 2 vs x 4 before). 
+Hyperion reduce energy per second to 1500 (15000 e/s before).
+Horgue increase damage by 100% & reload 100%. Hp decrease by 50%.
+Arm Engineerer Combat : Can construct Zipper that replaces Fatboy.
+Core Engineerer Combat : Can construct Morty that replaces Sumo.
 
 
 ---Improvements----
