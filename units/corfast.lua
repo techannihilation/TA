@@ -77,8 +77,9 @@ local unitDef = {
 		[17] = [[cordl]],
 		[18] = [[corck]],
 		[19] = [[corroach]],
-		[20] = [[cormort]],
-		[21] = [[corcan]],
+		[20] = [[corsktl]],
+		[21] = [[cormort]],
+		[22] = [[corcan]],
 	},
 	featureDefs = nil,
 	sounds = {
