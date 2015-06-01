@@ -7,15 +7,15 @@ local unitName = "spiderlab"
 
 local unitDef = {
 	bmcode = 0,
-	buildAngle = 1950,
-	buildCostEnergy = 10986,
-	buildCostMetal = 1938,
+	buildAngle = 950,
+	buildCostEnergy = 3900,
+	buildCostMetal = 935,
 	builder = true,
 	buildingGroundDecalDecaySpeed = 30,
 	buildingGroundDecalSizeX = 10,
 	buildingGroundDecalSizeY = 10,
 	buildingGroundDecalType = [[spiderlab_aoplane.dds]],
-	buildTime = 15930,
+	buildTime = 13900,
 	canMove = true,
 	canPatrol = true,
 	canstop = 1,
@@ -65,7 +65,6 @@ local unitDef = {
 		[5] = [[armaaspd]],
 		[6] = [[armsptk]],
 		[7] = [[armspid]],
-		[8] = [[armvader]],
 	},
 	featureDefs = nil,
 	sounds = {
