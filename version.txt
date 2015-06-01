@@ -8,6 +8,8 @@ Fix superkrog crushweapon, Closes #607
 Fix unit cannon range issue's, Closes #605
 
 ----Balance----
+T2.5 Hover balance : Adonnis & tempest. Damage increase by 100%
+Lock Halberd (t1 core hover) with T1 Tech Center Increase HP & Range.
 Spider & Copter Lab decrease energy & metal cost by 100%. (Same cost than Hover Lab).
 All crawling bomb can be construct with combat engineerer (tech lvl 2). They have been deleted from Spider Lab.
 Blade increase Hp by 20% 
