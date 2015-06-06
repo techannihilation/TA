@@ -56,7 +56,7 @@ local unitDef = {
 	unitname = [[nsaclash]],
 	workerTime = 0,
 	customparams = {
-		RequireTech = [[Advanced T1 Research Center]],
+		RequireTech = [[Advanced T1 Unit Research Center]],
 	},
 	featureDefs = nil,
 	sounds = {
