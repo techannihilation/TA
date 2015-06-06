@@ -7,7 +7,7 @@ piece  torso, mlasflsh, bigflsh, nanospray, nanogun, luparm, ruparm, pelvis,
        rthigh, lthigh, biggun, lleg, lfoot, rleg, rfoot, head, teleport;
 
 static-var  bMoving, bAiming, Static_Var_3, Static_Var_4, justfired, shield_state,
-			building, buildx, buildy, moveSpeed, currentSpeed, counter, ceg, weaponnum;
+			building, buildx, buildy, moveSpeed, currentSpeed, counter, ceg;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -449,28 +449,9 @@ Shield()
 	shield_state = !shield_state;
 }
 
-FireworkControl()
-{
-	if( Static_Var_4 == 0 )
-	{
-		weaponnum = get UNKNOWN_UNIT_VALUE(1028);
-		//get PRINT (weaponnum);
-		sleep 400;
-		turn biggun to x-axis <-10.000000> speed <60.000000>;
-		turn ruparm to x-axis <-90.000000> speed <90.000000>;
-		turn bigflsh to z-axis <90.000000> now;
-		wait-for-turn biggun around x-axis;
-		wait-for-turn ruparm around x-axis;
-		emit-sfx 2048 + weaponnum from bigflsh;
-		sleep 3000;
-		turn ruparm to x-axis <0.000000> speed <110.000000>;
-		turn biggun to x-axis <0.000000> speed <90.000000>;
-		wait-for-turn ruparm around x-axis;
-		}
-}
-
 TeleportControl()
 {
+
 	sleep 100;
 	ceg = get UNKNOWN_UNIT_VALUE(1029);
 	emit-sfx 1025 from teleport;
@@ -509,7 +490,6 @@ Create()
 	move teleport to y-axis [700.000000] now;
 	turn teleport to x-axis <90.000000> now;
 	//call-script TeleportControl();
-	//call-script FireworkControl();
 }
 
 StartMoving()
