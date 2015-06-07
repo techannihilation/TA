@@ -8,6 +8,9 @@ Fix superkrog crushweapon, Closes #607
 Fix unit cannon range issue's, Closes #605
 
 ----Balance----
+Totalitarian : Decrease metal & energy cost by 25%. Range decrease (1650) & damage increase. Goal : same cost than tankanator & same range than horgue.
+T2 vehicule Lab : Totalitarian in last in order position
+Gargoyle : MetalCost & Damage & Range increase (blue laser). Change a green laser by a red laser (less range & damage).
 T2.5 Hover balance : Adonnis & tempest. Damage increase by 100%
 Lock Halberd (t1 core hover) with T1 Tech Center Increase HP & Range.
 Spider & Copter Lab decrease energy & metal cost by 100%. (Same cost than Hover Lab).
@@ -19,9 +22,10 @@ Menacer (artillery kbot), increase damage & range & HP. Decrease Metal & time co
 Pelican damage increase (laser & AA missile) by 15%.
 T3 Sniper & Experimental Cannon Anti T3/T4 increase damage vs default armor class by 100% (T3&T4 unit take defaut damage X 2 vs x 4 before). 
 Hyperion reduce energy per second to 1500 (15000 e/s before).
-Horgue increase damage by 100% & reload 100%. Hp decrease by 50%.
+Horgue increase damage by 100% & reload 100%. Hp decrease by 40% (2500Hp). range increase by 5%.
 Arm Engineerer Combat : Can construct Zipper that replaces Fatboy.
 Core Engineerer Combat : Can construct Morty that replaces Sumo.
+Valiant (Hero TLL) : Primary weapon damage + 20 % & Aoe - 150%. Laser (36s reload) : damage + 100%
 
 
 ---Improvements----
