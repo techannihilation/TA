@@ -73,8 +73,9 @@ local unitDef = {
 
 local weaponDefs = {
 	asm = {
-		areaOfEffect = 424,
+		areaOfEffect = 300,
 		burnblow = true,
+		burst = 4,
 		cegTag = [[Core_Howie_Rocket]],
 		cruisealt = 120,
 		explosionGenerator = [[custom:Explosion_VeryHeavy_Rocket-nix]],
@@ -86,7 +87,7 @@ local weaponDefs = {
 		model = [[TAWF114a]],
 		name = [[Antiship missile]],
 		range = 2090,
-		reloadtime = 27,
+		reloadtime = 30,
 		renderType = 1,
 		selfprop = true,
 		smokedelay = 0.02,
@@ -110,7 +111,7 @@ local weaponDefs = {
 		weaponType = [[MissileLauncher]],
 		weaponVelocity = 900,
 		damage = {
-			default = 7500,
+			default = 2500,
 			subs = 5,
 		},
 	},
