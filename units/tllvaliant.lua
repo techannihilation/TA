@@ -129,7 +129,7 @@ local unitDef = {
 local weaponDefs = {
 	['750MW'] = {
 		accuracy = 500,
-		areaOfEffect = 100,
+		areaOfEffect = 130,
 		beamWeapon = true,
 		burnblow = false,
 		coreThickness = 1.2,
@@ -215,7 +215,7 @@ local weaponDefs = {
 	},
 	miniion = {
 		alwaysVisible = true,
-		areaOfEffect = 70,
+		areaOfEffect = 130,
 		avoidFeature = false,
 		avoidFriendly = false,
 		beamlaser = 1,
