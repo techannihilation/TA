@@ -107,7 +107,7 @@ local unitDef = {
 local weaponDefs = {
 	CORADON_MISSILE = {
 		areaOfEffect = 110,
-		burst = 2,
+		burst = 1,
 		burstrate = 0.6,
 		craterBoost = 0,
 		craterMult = 0,
@@ -123,7 +123,7 @@ local weaponDefs = {
 		name = [[Burst Missiles]],
 		pitchtolerance = 18000,
 		range = 700,
-		reloadtime = 5,
+		reloadtime = 2,
 		renderType = 1,
 		rgbColor = [[1.000 0.000 0.000]],
 		selfprop = true,
@@ -143,7 +143,7 @@ local weaponDefs = {
 		weaponType = [[MissileLauncher]],
 		weaponVelocity = 700,
 		damage = {
-			default = 850,
+			default = 750,
 			subs = 5,
 		},
 	},
