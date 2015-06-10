@@ -11,7 +11,7 @@ local unitDef = {
 	bmcode = 1,
 	brakeRate = 0.25,
 	buildAngle = 16384,
-	buildCostEnergy = 8805,
+	buildCostEnergy = 13800,
 	buildCostMetal = 1745,
 	builder = false,
 	buildTime = 19901,
@@ -134,7 +134,7 @@ local weaponDefs = {
 		weaponType = [[BeamLaser]],
 		weaponVelocity = 700,
 		damage = {
-			default = 140,
+			default = 165,
 			subs = 5,
 		},
 	},
@@ -169,7 +169,7 @@ local weaponDefs = {
 		weaponType = [[TorpedoLauncher]],
 		weaponVelocity = 200,
 		damage = {
-			default = 120,
+			default = 140
 		},
 	},
 }
