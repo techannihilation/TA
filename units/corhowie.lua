@@ -74,6 +74,7 @@ local unitDef = {
 local weaponDefs = {
 	asm = {
 		areaOfEffect = 300,
+		accuracy = 300,
 		burnblow = true,
 		burst = 4,
 		burstrate = 0.8,
