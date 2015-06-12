@@ -80,9 +80,9 @@ local unitDef = {
 		[14] = [[armmark]],
 		[15] = [[armcav]],
 		[16] = [[taipan]],
-		[17] = [[akmech]],
-		[18] = [[armhdpw]],
-		[19] = [[armmech]],
+		[17] = [[armhdpw]],
+		[18] = [[armmech]],
+		[19] = [[akmech]],
 	},
 	featureDefs = nil,
 	sounds = {
