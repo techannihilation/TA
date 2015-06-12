@@ -8,6 +8,9 @@ Fix superkrog crushweapon, Closes #607
 Fix unit cannon range issue's, Closes #605
 
 ----Balance----
+Jaguar => Remplace red laser by blue laser. Decrease range for missile starburst & canon plasma.
+Cavalier => Decrease resources cost.  The main Lighting increase range. Remplace missile by a second lighting (like zeus).
+Dauber => Add Green Laser & increase range.
 TllCopter : Increase EnergyCost 2000 => 8000
 Totalitarian : Decrease metal & energy cost by 25%. Range decrease (1650) & damage increase. Goal : same cost than tankanator & same range than horgue.
 T2 vehicule Lab : Totalitarian in last in order position
