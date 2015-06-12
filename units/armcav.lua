@@ -143,7 +143,7 @@ local weaponDefs = {
 		weaponType = [[LightningCannon]],
 		weaponVelocity = 400,
 		damage = {
-			commanders = 110
+			commanders = 110, 
 			default = 220,
 			subs = 5,
 		},
