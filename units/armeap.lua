@@ -53,12 +53,11 @@ local unitDef = {
 	workerTime = 600,
 	yardMap = [[oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo]],
 	buildoptions = {
-		[1] = [[tawf015]],
-		[2] = [[airwolf3g]],
-		[3] = [[armpers]],
+		[1] = [[airwolf3g]],
+		[2] = [[armpers]],
+		[3] = [[armor]],
 		[4] = [[armorion]],
 		[5] = [[armcyclone]],
-		[6] = [[armor]],
 	},
 	featureDefs = nil,
 	sounds = {
