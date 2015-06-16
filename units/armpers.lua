@@ -92,7 +92,6 @@ local unitDef = {
 --------------------------------------------------------------------------------
 
 local weaponDefs = {
-	local weaponDefs = {
 	ARM_EMCC3 = {
 		areaOfEffect = 8,
 		burst = 4,
@@ -100,7 +99,7 @@ local weaponDefs = {
 		id = 229,
 		lineOfSight = true,
 		name = [[Electro-Magnetic Compression Cannon]],
-		range = 750,
+		range = 600,
 		reloadtime = 0.15,
 		renderType = 4,
 		rgbColor = [[1.0 0.5 0.0]],
