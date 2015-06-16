@@ -86,7 +86,7 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
-			def = [[Vtol_Sabot5]],
+			def = [[VTOL_SABOT]],
 			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
@@ -109,7 +109,7 @@ local weaponDefs = {
 		name = [[Sabotrocket]],
 		noSelfDamage = true,
 		pitchtolerance = 18000,
-		range = 750,
+		range = 600,
 		reloadtime = 0.5,
 		renderType = 1,
 		selfprop = true,
