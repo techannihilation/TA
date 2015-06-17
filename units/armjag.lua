@@ -109,7 +109,7 @@ local unitDef = {
 
 local weaponDefs = {
 	ARMJAG_GAUSS = {
-		areaOfEffect = 100,
+		areaOfEffect = 150,
 		ballistic = true,
 		cegTag = [[Trail_cannon]],
 		gravityaffected = true,
@@ -162,7 +162,7 @@ local weaponDefs = {
 		weaponType = [[BeamLaser]],
 		weaponVelocity = 1500,
 		damage = {
-			commanders = 1000,
+			commanders = 1750,
 			default = 3500,
 			subs = 5,
 		},
