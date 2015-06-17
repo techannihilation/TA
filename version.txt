@@ -8,6 +8,14 @@ Fix superkrog crushweapon, Closes #607
 Fix unit cannon range issue's, Closes #605
 
 ----Balance----
+Deleted : T3 Copter. TTLaser Ship.
+Killer : rempace Missile weapon by Corpyrox Missile. Decrease HP & damage. Decrease reload for plasma & Lighting.
+Command Vehicule : Decrease Reload 0.9 => 0.35. Decrease Damage.
+Air ANTI T3/T4 => Add new visual weapon with same damage.
+Juggernaut (Fast Experimental T3.5 Unit) => Increase Speed 1.7 => 2.33. Add New laser.
+Antarion => Increase Metal & Energy Cost. Remplace Missiles by Crab Missile (1200 range & 6 burst)
+Crabe => Decrease Metal & Energy Cost & Damage/second
+T1.5 Ship Core & Arm => Increase Damage & HP
 Jaguar => Remplace red laser by blue laser. Decrease range for missile starburst & canon plasma.
 Cavalier => Decrease resources cost.  The main Lighting increase range. Remplace missile by a second lighting (like zeus).
 Dauber => Add Green Laser & increase range.
@@ -31,7 +39,6 @@ Arm Engineerer Combat : Can construct Zipper that replaces Fatboy.
 Core Engineerer Combat : Can construct Morty that replaces Sumo.
 Valiant (Hero TLL) : Primary weapon damage + 20 % & Aoe - 150%. Laser (36s reload) : damage + 100%
 BattleShip Core : Increase damage in decreasing reload (1.1 => 0.6).
-Deleted TTLaser Ship.
 Tllequalizer (cruiser) : Decrease damage (torpedo & laser canon) 
 
 
