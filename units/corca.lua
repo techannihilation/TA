@@ -93,8 +93,7 @@ local unitDef = {
 		[29] = [[cordl]],
 		[30] = [[corjamt]],
 		[31] = [[cjuno]],
-		[32] = [[cmortor]],
-		[33] = [[corech3]],
+		[32] = [[corech3]],
 	},
 	sounds = {
 		build = [[nanlath2]],
