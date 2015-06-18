@@ -8,20 +8,38 @@ Fix superkrog crushweapon, Closes #607
 Fix unit cannon range issue's, Closes #605
 
 ----Balance----
+Deleted : T3 Copter. TTLaser Ship.
+Killer : rempace Missile weapon by Corpyrox Missile. Decrease HP & damage. Decrease reload for plasma & Lighting.
+Command Vehicule : Decrease Reload 0.9 => 0.35. Decrease Damage.
+Air ANTI T3/T4 => Add new visual weapon with same damage.
+Juggernaut (Fast Experimental T3.5 Unit) => Increase Speed 1.7 => 2.33. Add New laser.
+Antarion => Increase Metal & Energy Cost. Remplace Missiles by Crab Missile (1200 range & 6 burst)
+Crabe => Decrease Metal & Energy Cost & Damage/second
+T1.5 Ship Core & Arm => Increase Damage & HP
+Jaguar => Remplace red laser by blue laser. Decrease range for missile starburst & canon plasma.
+Cavalier => Decrease resources cost.  The main Lighting increase range. Remplace missile by a second lighting (like zeus).
+Dauber => Add Green Laser & increase range.
+TllCopter : Increase EnergyCost 2000 => 8000
+Totalitarian : Decrease metal & energy cost by 25%. Range decrease (1650) & damage increase. Goal : same cost than tankanator & same range than horgue.
+T2 vehicule Lab : Totalitarian in last in order position
+Gargoyle : MetalCost & Damage & Range increase (blue laser). Change a green laser by a red laser (less range & damage).
 T2.5 Hover balance : Adonnis & tempest. Damage increase by 100%
 Lock Halberd (t1 core hover) with T1 Tech Center Increase HP & Range.
 Spider & Copter Lab decrease energy & metal cost by 100%. (Same cost than Hover Lab).
 All crawling bomb can be construct with combat engineerer (tech lvl 2). They have been deleted from Spider Lab.
-Blade increase Hp by 20% 
+Blade increase Hp (1800 => 2300) & decrease energy & Metal Cost (20000 => 12000 & 1200 => 800)
 Champion incease Hp by 150%, Metalcost by 33%, decrease cannon damage by 15%.
 Protos range decrease to 1050 (1200 before), HP decrease by 10%, Damage decrease by 10%.
 Menacer (artillery kbot), increase damage & range & HP. Decrease Metal & time cost.
 Pelican damage increase (laser & AA missile) by 15%.
 T3 Sniper & Experimental Cannon Anti T3/T4 increase damage vs default armor class by 100% (T3&T4 unit take defaut damage X 2 vs x 4 before). 
 Hyperion reduce energy per second to 1500 (15000 e/s before).
-Horgue increase damage by 100% & reload 100%. Hp decrease by 50%.
+Horgue increase damage by 100% & reload 100%. Hp decrease by 40% (2500Hp). range increase by 5%.
 Arm Engineerer Combat : Can construct Zipper that replaces Fatboy.
 Core Engineerer Combat : Can construct Morty that replaces Sumo.
+Valiant (Hero TLL) : Primary weapon damage + 20 % & Aoe - 150%. Laser (36s reload) : damage + 100%
+BattleShip Core : Increase damage in decreasing reload (1.1 => 0.6).
+Tllequalizer (cruiser) : Decrease damage (torpedo & laser canon) 
 
 
 ---Improvements----

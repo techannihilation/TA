@@ -104,7 +104,7 @@ local unitDef = {
 
 local weaponDefs = {
 	BARRAGE = {
-		areaOfEffect = 326,
+		areaOfEffect = 350,
 		burnblow = true,
 		burst = 3,
 		burstrate = 1.1,
@@ -145,7 +145,7 @@ local weaponDefs = {
 		weaponType = [[MissileLauncher]],
 		weaponVelocity = 700,
 		damage = {
-			default = 2000,
+			default = 3150,
 			subs = 5,
 		},
 	},

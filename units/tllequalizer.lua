@@ -11,7 +11,7 @@ local unitDef = {
 	bmcode = 1,
 	brakeRate = 0.25,
 	buildAngle = 16384,
-	buildCostEnergy = 8805,
+	buildCostEnergy = 13800,
 	buildCostMetal = 1745,
 	builder = false,
 	buildTime = 19901,
@@ -123,7 +123,7 @@ local weaponDefs = {
 		name = [[HighEnergyLaser]],
 		noSelfDamage = true,
 		range = 785,
-		reloadtime = 0.73,
+		reloadtime = 1,
 		renderType = 0,
 		rgbColor = [[0 1 0]],
 		soundHitDry = [[lasrhit1]],
@@ -134,7 +134,7 @@ local weaponDefs = {
 		weaponType = [[BeamLaser]],
 		weaponVelocity = 700,
 		damage = {
-			default = 185,
+			default = 165,
 			subs = 5,
 		},
 	},
@@ -169,7 +169,7 @@ local weaponDefs = {
 		weaponType = [[TorpedoLauncher]],
 		weaponVelocity = 200,
 		damage = {
-			default = 280
+			default = 140
 		},
 	},
 }

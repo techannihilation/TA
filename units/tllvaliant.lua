@@ -51,7 +51,7 @@ local unitDef = {
 	idleTime = 1800,
 	immunetoparalyzer = 1,
 	maxDamage = 450000,
-	maxVelocity = 1.34,
+	maxVelocity = 1.30,
 	maxWaterDepth = 0,
 	metalMake = 2.5,
 	metalStorage = 10000,
@@ -129,7 +129,7 @@ local unitDef = {
 local weaponDefs = {
 	['750MW'] = {
 		accuracy = 500,
-		areaOfEffect = 260,
+		areaOfEffect = 130,
 		beamWeapon = true,
 		burnblow = false,
 		coreThickness = 1.2,
@@ -161,8 +161,8 @@ local weaponDefs = {
 		weaponType = [[LaserCannon]],
 		weaponVelocity = 650,
 		damage = {
-			commanders = 900,
-			default = 5000,
+			commanders = 1000,
+			default = 6000,
 			subs = 5,
 		},
 	},
@@ -215,7 +215,7 @@ local weaponDefs = {
 	},
 	miniion = {
 		alwaysVisible = true,
-		areaOfEffect = 150,
+		areaOfEffect = 130,
 		avoidFeature = false,
 		avoidFriendly = false,
 		beamlaser = 1,
@@ -225,7 +225,7 @@ local weaponDefs = {
 		craterMult = 0.0,
 		duration = 2,
 		edgeEffectiveness = 0,
-		energypershot = 60000,
+		energypershot = 20000,
 		explosionGenerator = [[custom:Explosion_Huge_Tesla]],
 		fallOffRate = 0,
 		fireStarter = 0,
@@ -259,8 +259,8 @@ local weaponDefs = {
 		weaponType = [[BeamLaser]],
 		weaponVelocity = 2500,
 		damage = {
-			commanders = 2200,
-			default = 10000,
+			commanders = 3000,
+			default = 20000,
 			subs = 5,
 		},
 	},
