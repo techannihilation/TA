@@ -87,14 +87,14 @@ local unitDef = {
 	},
 	weaponDefs = nil,
 	weapons = {
-		[1] = {
-			def = [[MACROSS_FIRE]],
-			onlyTargetCategory = [[NOTVTOL]],
-		},
---		[2] = {
---			def = [[MACROSS_ARM_GUN]],
+--		[1] = {
+--			def = [[MACROSS_FIRE]],
 --			onlyTargetCategory = [[NOTVTOL]],
 --		},
+		[2] = {
+			def = [[MACROSS_ARM_GUN]],
+			onlyTargetCategory = [[NOTVTOL]],
+		},
 		[3] = {
 			def = [[MACROSS_MISSILE]],
 			onlyTargetCategory = [[NOTVTOL]],
