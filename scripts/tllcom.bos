@@ -618,6 +618,35 @@ FireWeapon4()
 	sleep 400;
 }
 
+AimFromWeapon5(piecenum)
+{
+	piecenum = torso;
+}
+
+QueryWeapon5(piecenum)
+{
+	piecenum = torso;
+}
+
+AimFromWeapon6(piecenum)
+{
+	piecenum = torso;
+}
+
+QueryWeapon6(piecenum)
+{
+	piecenum = torso;
+}
+
+AimFromWeapon7(piecenum)
+{
+	piecenum = torso;
+}
+
+QueryWeapon7(piecenum)
+{
+	piecenum = torso;
+}
 
 StartBuilding(Func_Var_1, Func_Var_2)
 {
