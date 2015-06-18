@@ -99,10 +99,10 @@ local unitDef = {
 			def = [[arm_FAST7]],
 			onlyTargetCategory = [[NOTVTOL]],
 		},
-		[3] = {
-			def = [[CORKBOT_ROCKET7]],
-			onlyTargetCategory = [[NOTVTOL]],
-		},
+--		[3] = {
+--			def = [[CORKBOT_ROCKET7]],
+--			onlyTargetCategory = [[NOTVTOL]],
+--		},
 	},
 }
 
@@ -130,7 +130,7 @@ local weaponDefs = {
 		weaponType = [[LaserCannon]],
 		weaponVelocity = 400,
 		damage = {
-			default = 135,
+			default = 160,
 			subs = 5,
 		},
 	},
