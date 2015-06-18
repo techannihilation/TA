@@ -107,7 +107,6 @@ local unitDef = {
 --------------------------------------------------------------------------------
 
 local weaponDefs = {
-	local weaponDefs = {
 	CORLEVLR_WEAPON = {
 		areaOfEffect = 160,
 		burnblow = true,
