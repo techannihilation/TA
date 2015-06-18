@@ -91,8 +91,7 @@ local unitDef = {
 		[29] = [[armdl]],
 		[30] = [[armjamt]],
 		[31] = [[ajuno]],
-		[32] = [[amortor]],
-		[33] = [[armrech3]],
+		[32] = [[armrech3]],
 	},
 	featureDefs = nil,
 	sounds = {
