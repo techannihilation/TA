@@ -87,10 +87,6 @@ local unitDef = {
 	},
 	weaponDefs = nil,
 	weapons = {
---		[1] = {
---			def = [[MACROSS_FIRE]],
---			onlyTargetCategory = [[NOTVTOL]],
---		},
 		[2] = {
 			def = [[MACROSS_ARM_GUN]],
 			onlyTargetCategory = [[NOTVTOL]],
@@ -106,7 +102,7 @@ local unitDef = {
 
 local weaponDefs = {
 	MACROSS_ARM_GUN = {
-		areaOfEffect = 75,
+		areaOfEffect = 80,
 		id = 142,
 		lineOfSight = true,
 		minbarrelangle = -15,
@@ -125,13 +121,13 @@ local weaponDefs = {
 		weaponType = [[Cannon]],
 		weaponVelocity = 500,
 		damage = {
-			default = 1500,
+			default = 1800,
 			subs = 5,
 		},
 	},
 
 	MACROSS_MISSILE = {
-		areaOfEffect = 148,
+		areaOfEffect = 150,
 		fireStarter = 70,
 		guidance = true,
 		id = 170,
@@ -157,7 +153,7 @@ local weaponDefs = {
 		weaponAcceleration = 150,
 		weaponTimer = 30,
 		weaponType = [[MissileLauncher]],
-		weaponVelocity = 440,
+		weaponVelocity = 380,
 		damage = {
 			default = 500,
 			subs = 5,
