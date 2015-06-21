@@ -64,8 +64,9 @@ local unitDef = {
 		[1] = [[clb]],
 		[2] = [[champ]],
 		[3] = [[armmcv]],
-		[4] = [[corbt]],
-		[5] = [[armtigre2]],
+		[4] = [[armtigre2]],
+		[5] = [[corbt]],
+
 	},
 	featureDefs = nil,
 	sounds = {
