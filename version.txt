@@ -8,6 +8,7 @@ Fix superkrog crushweapon, Closes #607
 Fix unit cannon range issue's, Closes #605
 
 ----Balance----
+Delete Mortar. T1 plasma canon structure can morph into T2 plasma canon structure
 arm_furie => Increase HP & Metal & energy Cost
 armbanth => More damage for starburst
 armorco => Increase HP & increase damage
