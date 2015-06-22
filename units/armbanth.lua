@@ -97,7 +97,6 @@ local unitDef = {
 		},
 		[3] = {
 			def = [[BANTHA_ROCKET]],
-			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }
@@ -149,7 +148,7 @@ local weaponDefs = {
 		noSelfDamage = true,
 		proximityPriority = -1,
 		range = 1050,
-		reloadtime = 2.5,
+		reloadtime = 2,
 		renderType = 1,
 		selfprop = true,
 		smokedelay = 0.1,
