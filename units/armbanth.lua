@@ -97,7 +97,6 @@ local unitDef = {
 		},
 		[3] = {
 			def = [[BANTHA_ROCKET]],
-			onlyTargetCategory = [[NOTVTOL]],
 		},
 	},
 }
