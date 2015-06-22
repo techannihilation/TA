@@ -9,8 +9,8 @@ local unitDef = {
 	acceleration = 0.09,
 	bmcode = 1,
 	brakeRate = 0.01,
-	buildCostEnergy = 92567,
-	buildCostMetal = 4260,
+	buildCostEnergy = 90000,
+	buildCostMetal = 4500,
 	builder = false,
 	buildTime = 76193,
 	canAttack = true,
@@ -36,7 +36,7 @@ local unitDef = {
 	idleTime = 1800,
 	maneuverleashlength = 640,
 	mass = 200000,
-	maxDamage = 16850,
+	maxDamage = 18250,
 	maxSlope = 12,
 	maxVelocity = 1.1,
 	maxWaterDepth = 255,
@@ -51,7 +51,7 @@ local unitDef = {
 	selfDestructAs = [[NUCLEAR_BLAST]],
 	shootme = 1,
 	side = [[ARM]],
-	sightDistance = 755,
+	sightDistance = 600,
 	sonarDistance = 0,
 	standingfireorder = 2,
 	standingmoveorder = 1,
@@ -90,8 +90,6 @@ local unitDef = {
 		},
 		[3] = {
 			def = [[CORKROG_ROCKET]],
-			badTargetCategory = [[VTOL]],
-			onlyTargetCategory = [[ALL]],
 		},
 	},
 }
@@ -100,7 +98,7 @@ local unitDef = {
 
 local weaponDefs = {
 	COR_GOL1 = {
-		areaOfEffect = 372,
+		areaOfEffect = 300,
 		ballistic = true,
 		cegTag = [[Trail_cannon]],
 		craterBoost = 0,
@@ -126,7 +124,7 @@ local weaponDefs = {
 		weaponType = [[Cannon]],
 		weaponVelocity = 328.63354492188,
 		damage = {
-			commanders = 750,
+			commanders = 1100,
 			default = 2200,
 			subs = 5,
 		},
@@ -147,7 +145,7 @@ local weaponDefs = {
 		name = [[HeavyRockets]],
 		noSelfDamage = true,
 		proximityPriority = -1,
-		range = 800,
+		range = 1050,
 		reloadtime = 2,
 		renderType = 1,
 		selfprop = true,
@@ -171,7 +169,7 @@ local weaponDefs = {
 		weaponType = [[StarburstLauncher]],
 		weaponVelocity = 4000,
 		damage = {
-			default = 560,
+			default = 500,
 			subs = 5,
 		},
 	},
