@@ -64,7 +64,8 @@ local unitDef = {
 		[2] = [[armsiege]],
 		[3] = [[corerex]],
 		[4] = [[armantar]],
-		[5] = [[armmlrs]],		[6] = [[nsaagriz]],
+		[5] = [[armmlrs]],		
+		[6] = [[nsaagriz]],
 	},
 	featureDefs = nil,
 	sounds = {
