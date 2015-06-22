@@ -60,9 +60,6 @@ local unitDef = {
 	unitname = [[armtigre2]],
 	unitnumber = 5698,
 	workerTime = 0,
-	customparams = {
-		RequireTech = [[Advanced T3 Unit Research Centre]],
-	},
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],

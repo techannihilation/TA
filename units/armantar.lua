@@ -25,7 +25,7 @@ local unitDef = {
 	collisionVolumeType = [[CylZ]],
 	corpse = [[dead]],
 	defaultmissiontype = [[Standby]],
-	description = [[Heavy Assault Tank]],
+	description = [[Experimantal Hunter Tank]],
 	designation = [[ARM-TER]],
 	energyMake = 1,
 	energyStorage = 0,
@@ -60,9 +60,6 @@ local unitDef = {
 	unitname = [[armantar]],
 	unitnumber = 954568,
 	workerTime = 0,
-	customparams = {
-		RequireTech = [[Advanced T3 Unit Research Centre]],
-	},
 	featureDefs = nil,
 	sounds = {
 		canceldestruct = [[cancel2]],
@@ -90,10 +87,14 @@ local unitDef = {
 		[1] = {
 			def = [[ARMANTAR_LASER]],
 			onlyTargetCategory = [[NOTVTOL]],
+			mainDir = [[1 0 4]],
+			maxAngleDif = 150,
 		},
 		[2] = {
 			def = [[ARMANTAR_LASER]],
 			onlyTargetCategory = [[NOTVTOL]],
+			mainDir = [[-1 0 4]],
+			maxAngleDif = 150,
 		},
 		[3] = {
 			def = [[ARMANTAR_MISSILE]],
@@ -129,6 +130,8 @@ local weaponDefs = {
 		damage = {
 			commanders = 150,
 			default = 375,
+			experimental_land = 500,
+			experimental_ships = 500,
 			subs = 5,
 		},
 	},
