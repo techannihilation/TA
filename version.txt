@@ -13,6 +13,7 @@ armbanth => More damage for starburst
 armorco => Increase HP & increase damage
 armtigre2 => balance with corerex
 corerex => balance with armtigre2
+Gladiator => Add 4 rockets burst & delete missile (for same damage).
 krogoth => Damage decrease & => Metal & energy Cost increase
 Juggernault (T3.5 Core) => Metal & energy Cost
 hyperion.lua => HP increase. Reduce energy per second to 1500 (15000 e/s before).
@@ -21,7 +22,7 @@ Killer : rempace Missile weapon by Corpyrox Missile. Decrease HP & damage. Decre
 Command Vehicule : Decrease Reload 0.9 => 0.35. Decrease Damage.
 Air ANTI T3/T4 => Add new visual weapon with same damage.
 Juggernaut (Arm Fast Experimental T3.5 Unit) => Increase Speed 1.7 => 2.33. Add New laser.
-Antarion => Increase Metal & Energy Cost. Remplace Missiles by Crab Missile (1200 range & 6 burst)
+Antarion => Increase Metal & Energy Cost. Remplace Missiles by Crab Missile (1200 range & 6 burst). Bonus vs T3/T4. Unlock with T3 lab (no needtech center 3).
 Crabe => Decrease Metal & Energy Cost & Damage/second
 T1.5 Ship Core & Arm => Increase Damage & HP
 Jaguar => Remplace red laser by blue laser. Decrease range for missile starburst & canon plasma.
@@ -36,7 +37,7 @@ Lock Halberd (t1 core hover) with T1 Tech Center Increase HP & Range.
 Spider & Copter Lab decrease energy & metal cost by 100%. (Same cost than Hover Lab).
 All crawling bomb can be construct with combat engineerer (tech lvl 2). They have been deleted from Spider Lab.
 Blade increase Hp (1800 => 2300) & decrease energy & Metal Cost (20000 => 12000 & 1200 => 800)
-Champion incease Hp by 150%, Metalcost by 33%, decrease cannon damage by 15%.
+Champion incease Hp by 150%, Metalcost by 33%, decrease cannon damage by 15%. remplace plasma by Gausscanon. Bonus vs T3/T4 unit.
 Protos range decrease to 1050 (1200 before), HP decrease by 10%, Damage decrease by 10%.
 Menacer (artillery kbot), increase damage & range & HP. Decrease Metal & time cost.
 Pelican damage increase (laser & AA missile) by 15%.
