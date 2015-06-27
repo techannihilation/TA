@@ -6,9 +6,9 @@ local unitName = "armcrabe"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.552587891,
+	acceleration = 0.55,
 	bmcode = 1,
-	brakeRate = 0.252587891,
+	brakeRate = 0.25,
 	buildCostEnergy = 119500,
 	buildCostMetal = 11200,
 	builder = false,
@@ -57,7 +57,7 @@ local unitDef = {
 	selfDestructCountdown = 10,
 	shootme = 1,
 	side = [[ARM]],
-	sightDistance = 950,
+	sightDistance = 600,
 	standingfireorder = 2,
 	standingmoveorder = 1,
 	steeringmode = 1,
