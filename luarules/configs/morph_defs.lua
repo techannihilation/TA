@@ -124,10 +124,12 @@ local morphDefs = {
       corrl = {
 		into = 'corrl1',
 		time = 10,
+		xp = 0.01,
 	},
       armrl = {
 		into = 'armrl1',
 		time = 10,
+		xp = 0.01,
 	},
       armllt = {
 		into = 'armllt1',
@@ -172,13 +174,11 @@ local morphDefs = {
       armguard= {
 		into = 'armamb',
 		time = 30,
-		metal = 650,
 		xp = 0.50,
 	},
       corpun= {
 		into = 'cortoast',
 		time = 30,
-		metal = 650,
 		xp = 0.50,
 	},
       armamd = {
@@ -229,10 +229,12 @@ local morphDefs = {
       armcir = {
 		into = 'armcir1',
 		time = 60,
+		xp = 0.05,
 	},
       corerad = {
 		into = 'corerad1',
 		time = 60,
+		xp = 0.05,
 	},
       armgmm = {
 		into = 'armfor',
