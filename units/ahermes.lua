@@ -104,8 +104,8 @@ local unitDef = {
 local weaponDefs = {
 	GA2 = {
 		areaOfEffect = 64,
-		burst = 2,
-		burstrate = 0.4,
+		burst = 4,
+		burstrate = 0.25,
 		canattackground = false,
 		craterBoost = 0,
 		craterMult = 0,
@@ -140,11 +140,11 @@ local weaponDefs = {
 		weaponType = [[MissileLauncher]],
 		weaponVelocity = 820,
 		damage = {
-			bombers = 50,
+			bombers = 25,
 			default = 5,
-			fighters = 50,
-			flak_resistant = 50,
-			unclassed_air = 50,
+			fighters = 25,
+			flak_resistant = 25,
+			unclassed_air = 25,
 		},
 	},
 }
