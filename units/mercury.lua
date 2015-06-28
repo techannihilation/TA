@@ -76,7 +76,8 @@ local unitDef = {
 	weapons = {
 		[1] = {
 			def = [[CORE_ADVSAM]],
-			badTargetCategory = [[MEDIUMVTOL SMALLVTOL TINYVTOL]],			onlyTargetCategory = [[VTOL]],
+			badTargetCategory = [[MEDIUMVTOL SMALLVTOL TINYVTOL]],
+			onlyTargetCategory = [[VTOL]],
 		},
 	},
 }
