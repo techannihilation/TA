@@ -121,7 +121,7 @@ local unitDef = {
 		[30] = [[corfast1]],
 		[31] = [[cbuilderlvl2]],
 		[32] = [[corpcan]],
-		[33] = [[monkeylord]],
+		[33] = [[cnanotower]],
 	},
 	customParams = {
 		providetech = [[Battle Commander,Assault Commander,Star Commander]],

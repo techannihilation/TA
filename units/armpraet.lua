@@ -66,7 +66,6 @@ local unitDef = {
 	steeringmode = 2,
 	turnRate = 225,
 	unitname = [[armpraet]],
-	unitRestricted = 1,
 	upright = true,
 	workerTime = 0,
 	sounds = {
