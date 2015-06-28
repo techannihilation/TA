@@ -65,7 +65,6 @@ local unitDef = {
 	threed = 1,
 	turnRate = 225,
 	unitname = [[irritator]],
-	unitRestricted = 1,
 	upright = true,
 	version = 1,
 	workerTime = 0,
