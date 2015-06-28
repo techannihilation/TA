@@ -86,8 +86,7 @@ local unitDef = {
 		[28] = [[cordl]],
 		[29] = [[corjamt]],
 		[30] = [[cjuno]],
-		[31] = [[cmortor]],
-		[32] = [[corech3]],
+		[31] = [[corech3]],
 	},
 	featureDefs = nil,
 	sounds = {
