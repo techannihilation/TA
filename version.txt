@@ -8,6 +8,10 @@ Fix superkrog crushweapon, Closes #607
 Fix unit cannon range issue's, Closes #605
 
 ----Balance----
+TLLStunter : Range : 1050. Decrease reload & cost. Time Emp : 10s.
+All AA mobile & structure have been balanced
+All StarBurst launcher have been upgrade. 2 main types : range 1050 damage 500 & reload 2 or 2.5 seconds /// range 1200 damage 700 reload 1s
+Tllion (command center) => replace old weapon by a emp laser. Same range & Aoe => 1200. Damage = 500000. Duration emp : 2s. Reload : 2s.
 Delete Mortar. T1 plasma canon structure can morph into T2 plasma canon structure
 experimental Flammer T3 Kbot => Increase damage 100%. HP 62000 => 69000. Velocity 1.7 => 1.6
 arm_furie => Increase HP & Metal & energy Cost
