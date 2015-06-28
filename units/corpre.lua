@@ -79,6 +79,7 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
+			badTargetCategory = [[MEDIUMVTOL SMALLVTOL TINYVTOL]],
 			def = [[ADVFLAK]],
 			onlyTargetCategory = [[VTOL SUPERSHIP]],
 		},

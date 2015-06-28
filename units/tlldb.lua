@@ -80,6 +80,7 @@ local unitDef = {
 	weaponDefs = nil,
 	weapons = {
 		[1] = {
+			badTargetCategory = [[MEDIUMVTOL SMALLVTOL TINYVTOL]],
 			def = [[DRAGON_BREATH_GUN]],
 			onlyTargetCategory = [[VTOL]],
 		},
