@@ -11,7 +11,7 @@ local unitDef = {
 	bmcode = 0,
 	brakeRate = 0,
 	buildAngle = 16384,
-	buildCostEnergy = 21781,
+	buildCostEnergy = 33000,
 	buildCostMetal = 2200,
 	builder = false,
 	buildPic = [[TLLFFLAK.png]],
@@ -86,7 +86,7 @@ local unitDef = {
 
 local weaponDefs = {
 	TLLFLAK_GUN = {
-			accuracy = 1000,
+		accuracy = 1000,
 		areaOfEffect = 192,
 		ballistic = true,
 		burnblow = true,
@@ -102,8 +102,8 @@ local weaponDefs = {
 		minbarrelangle = -24,
 		name = [[FlakCannon]],
 		noSelfDamage = true,
-		range = 985,
-		reloadtime = 0.225,
+		range = 1000,
+		reloadtime = 0.2,
 		renderType = 4,
 		rgbColor = [[1.0 0.5 0.0]],
 		size = 5,
@@ -116,11 +116,11 @@ local weaponDefs = {
 		weaponType = [[Cannon]],
 		weaponVelocity = 1550,
 		damage = {
-			bombers = 600,
+			bombers = 500,
 			default = 5,
-			fighters = 600,
-			flak_resistant = 200,
-			unclassed_air = 600,
+			fighters = 500,
+			flak_resistant = 175,
+			unclassed_air = 500,
 		},
 	},
 }
