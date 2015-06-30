@@ -8,6 +8,8 @@ Fix superkrog crushweapon, Closes #607
 Fix unit cannon range issue's, Closes #605
 
 ----Balance----
+Add Hardener Nano => Can build T2.5 structure (nuke1, tachion1, shield1, shield bot, rapid bertha, bertha1)
+Arm/Core Change panel menu for All adv Constructor. Decrease choice for units number. All weapon structure except Anti t3/t4, Nuke, Tactical Nuke & Bertha take place in engineerer panel menu. (except hover).
 TLLStunter : Range : 1050. Decrease reload & cost. Time Emp : 10s.
 All AA mobile & structure have been balanced
 All StarBurst launcher have been upgrade. 2 main types : range 1050 damage 500 & reload 2 or 2.5 seconds /// range 1200 damage 700 reload 1s
