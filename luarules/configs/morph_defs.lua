@@ -133,7 +133,7 @@ local morphDefs = {
 	},
       tlllmt = {
 		into = 'tlllmt1',
-		time = 30,
+		time = 10,
 		xp = 0.01,
 	},
       armllt = {
