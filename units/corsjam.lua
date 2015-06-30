@@ -81,47 +81,8 @@ local unitDef = {
 			[1] = [[radjam2]],
 		},
 	},
-	weaponDefs = nil,
-	weapons = {
-		[1] = {
-			def = [[BOGUS_GROUND_MISSILE]],
-			onlyTargetCategory = [[NOTVTOL]],
-		},
-	},
 }
-
 --------------------------------------------------------------------------------
-
-local weaponDefs = {
-	BOGUS_GROUND_MISSILE = {
-		areaOfEffect = 48,
-		craterBoost = 0,
-		craterMult = 0,
-		impulseBoost = 0,
-		impulseFactor = 0,
-		lineOfSight = true,
-		metalpershot = 0,
-		name = [[Missiles]],
-		range = 800,
-		reloadtime = 0.5,
-		renderType = 1,
-		startVelocity = 450,
-		tolerance = 9000,
-		turnRate = 33000,
-		turret = true,
-		weaponAcceleration = 101,
-		weaponTimer = 0.1,
-		weaponType = [[Cannon]],
-		weaponVelocity = 650,
-		damage = {
-			default = 0,
-			subs = 5,
-		},
-	},
-}
-unitDef.weaponDefs = weaponDefs
-
-
 --------------------------------------------------------------------------------
 
 local featureDefs = {
