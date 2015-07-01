@@ -58,11 +58,13 @@ local unitDef = {
 	unitnumber = 11004,
 	workerTime = 560,
 	buildoptions = {
-		[1] = [[cormoho]],
-		[2] = [[coruwmme]],
-		[3] = [[corfus]],
-		[4] = [[coruwfus]],
-		[5] = [[crnns]],
+
+
+		[1] = [[corfus]],
+		[2] = [[coruwfus]],
+		[3] = [[crnns]],
+		[4] = [[cormoho]],
+		[5] = [[coruwmme]],
 		[6] = [[cormmkr]],
 		[7] = [[coruwmmm]],
 		[8] = [[coruwadves]],

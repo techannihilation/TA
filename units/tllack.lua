@@ -57,9 +57,10 @@ local unitDef = {
 	upright = true,
 	workerTime = 240,
 	buildoptions = {
-		[1] = [[tllamex]],
-		[2] = [[tllmedfusion]],
-		[3] = [[tllmohogeo]],
+
+		[1] = [[tllmedfusion]],
+		[2] = [[tllmohogeo]],
+		[3] = [[tllamex]],
 		[4] = [[tllammaker]],
 		[5] = [[tllemstor]],
 		[6] = [[tlladt]],

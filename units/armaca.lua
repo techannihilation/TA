@@ -63,12 +63,13 @@ local unitDef = {
 	unitname = [[armaca]],
 	workerTime = 180,
 	buildoptions = {
-		[[armmoho]],
+		
 		[[armfus]],
 		[[armckfus]],
 		[[armdf]],
 		[[amgeo]],
 		[[armgmm]],
+		[[armmoho]],
 		[[armmmkr]],
 		[[armckmakr]],
 		[[armuwadves]],

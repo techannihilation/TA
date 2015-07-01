@@ -58,12 +58,14 @@ local unitDef = {
 	upright = true,
 	workerTime = 290,
 	buildoptions = {
-		[1] = [[cormoho]],
-		[2] = [[cormexp]],
-		[3] = [[corfus]],
-		[4] = [[corsfus]],
-		[5] = [[cmgeo]],
-		[6] = [[corbhmth]],
+
+
+		[1] = [[corfus]],
+		[2] = [[corsfus]],
+		[3] = [[cmgeo]],
+		[4] = [[corbhmth]],
+		[5] = [[cormoho]],
+		[6] = [[cormexp]],
 		[7] = [[cormmkr]],
 		[8] = [[corhmakr]],
 		[9] = [[coruwadves]],
