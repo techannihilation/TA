@@ -81,10 +81,11 @@ local unitDef = {
 		[18] = [[tllsilo]],
 		[19] = [[tlllrpt]],
 		[20] = [[tllrlrpc]],
-		[21] = [[tllasp]],
-		[22] = [[tllap]],
-		[23] = [[tllaap]],
-		[24] = [[tlldmc]],
+		[21] = [[tlldmc]],
+		[22] = [[tllasp]],
+		[23] = [[tllap]],
+		[24] = [[tllaap]],
+		
 	},
 	sounds = {
 		build = [[nanlath1]],
