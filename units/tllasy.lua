@@ -7,7 +7,7 @@ local unitName = "tllasy"
 
 local unitDef = {
 	bmcode = 0,
-	buildCostEnergy = 11240,
+	buildCostEnergy = 35240,
 	buildCostMetal = 4200,
 	builder = true,
 	buildTime = 13590,
@@ -27,7 +27,7 @@ local unitDef = {
 	iconType = [[building]],
 	idleAutoHeal = 5,
 	idleTime = 1800,
-	maxDamage = 2901,
+	maxDamage = 4500,
 	metalMake = 1,
 	metalStorage = 200,
 	minWaterDepth = 30,
