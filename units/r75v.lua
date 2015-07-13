@@ -1,7 +1,7 @@
--- UNITDEF -- R75-V --
+-- UNITDEF -- R75V --
 --------------------------------------------------------------------------------
 
-local unitName = "r75-v"
+local unitName = "r75v"
 
 --------------------------------------------------------------------------------
 
@@ -46,7 +46,7 @@ local unitDef = {
 	name = [[Detector]],
 	noAutoFire = false,
 	noChaseCategory = [[VTOL]],
-	objectName = [[R75-V]],
+	objectName = [[R75V]],
 	onoffable = true,
 	radarDistance = 1490,
 	selfDestructAs = [[BIG_UNIT]],
@@ -58,7 +58,7 @@ local unitDef = {
 	standingmoveorder = 1,
 	steeringmode = 1,
 	turnRate = 310,
-	unitname = [[r75-v]],
+	unitname = [[r75v]],
 	unitnumber = 162,
 	upright = true,
 	workerTime = 0,
