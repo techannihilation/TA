@@ -1,8 +1,8 @@
 return {
 	armmarv = {
-		acceleration = 0.025,
+		acceleration = 0.05,
 		bmcode = 1,
-		brakerate = 0.1375,
+		brakerate = 0.825,
 		buildcostenergy = 5400,
 		buildcostmetal = 868,
 		builddistance = 122,
@@ -54,6 +54,9 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 31,
+		turninplace = 1,
+		turninplaceanglelimit = 60,
+		turninplacespeedlimit = 1.287,
 		turnrate = 635,
 		unitname = "armmarv",
 		workertime = 250,

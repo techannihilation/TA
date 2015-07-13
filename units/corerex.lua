@@ -2,7 +2,7 @@ return {
 	corerex = {
 		acceleration = 0.05,
 		bmcode = 1,
-		brakerate = 0.04,
+		brakerate = 0.12,
 		buildcostenergy = 94000,
 		buildcostmetal = 4770,
 		builder = false,
@@ -52,6 +52,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.726,
 		turnrate = 256,
 		unitname = "corerex",
 		unitnumber = 325,

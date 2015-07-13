@@ -2,7 +2,7 @@ return {
 	armbats = {
 		acceleration = 0.036,
 		bmcode = 1,
-		brakerate = 0.031,
+		brakerate = 0.093,
 		buildangle = 16384,
 		buildcostenergy = 20731,
 		buildcostmetal = 5181,
@@ -54,6 +54,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.9008,
 		turnrate = 310,
 		unitname = "armbats",
 		workertime = 0,

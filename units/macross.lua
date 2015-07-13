@@ -2,7 +2,7 @@ return {
 	macross = {
 		acceleration = 0.3,
 		bmcode = 1,
-		brakerate = 0.32,
+		brakerate = 0.96,
 		buildcostenergy = 142500,
 		buildcostmetal = 11400,
 		builder = false,
@@ -52,6 +52,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.122,
 		turnrate = 205,
 		unitname = "macross",
 		unitnumber = 29675,

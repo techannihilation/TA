@@ -2,7 +2,7 @@ return {
 	corvroc = {
 		acceleration = 0.0209,
 		bmcode = 1,
-		brakerate = 0.0418,
+		brakerate = 0.1254,
 		buildcostenergy = 6270,
 		buildcostmetal = 827,
 		builder = false,
@@ -56,6 +56,9 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 38,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.6171,
 		turnrate = 520.29999,
 		unitname = "corvroc",
 		workertime = 0,

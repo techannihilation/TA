@@ -2,7 +2,7 @@ return {
 	cormatch = {
 		acceleration = 0.11,
 		bmcode = 1,
-		brakerate = 0.105,
+		brakerate = 0.315,
 		buildcostenergy = 3665,
 		buildcostmetal = 348,
 		builder = false,
@@ -48,6 +48,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.848,
 		turnrate = 230,
 		unitname = "cormatch",
 		unitnumber = 6144,

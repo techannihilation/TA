@@ -2,7 +2,7 @@ return {
 	tllroaster = {
 		acceleration = 0.03,
 		bmcode = 1,
-		brakerate = 0.09,
+		brakerate = 0.27,
 		buildcostenergy = 8797,
 		buildcostmetal = 1355,
 		builder = false,
@@ -43,6 +43,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 0,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.056,
 		turnrate = 200,
 		unitname = "tllroaster",
 		unitnumber = 871,

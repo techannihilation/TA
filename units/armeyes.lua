@@ -46,6 +46,8 @@ return {
 		side = "ARM",
 		sightdistance = 560,
 		stealth = true,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "armeyes",
 		waterline = 5,

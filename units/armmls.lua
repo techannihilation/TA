@@ -2,7 +2,7 @@ return {
 	armmls = {
 		acceleration = 0.05,
 		bmcode = 1,
-		brakerate = 0.07,
+		brakerate = 0.21,
 		buildcostenergy = 3725,
 		buildcostmetal = 255,
 		builddistance = 212,
@@ -49,6 +49,8 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		terraformspeed = 1200,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.584,
 		turnrate = 388,
 		unitname = "armmls",
 		workertime = 250,

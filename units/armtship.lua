@@ -2,7 +2,7 @@ return {
 	armtship = {
 		acceleration = 0.067,
 		bmcode = 1,
-		brakerate = 0.09,
+		brakerate = 0.27,
 		buildangle = 16384,
 		buildcostenergy = 4639,
 		buildcostmetal = 919,
@@ -57,6 +57,8 @@ return {
 		steeringmode = 1,
 		transportcapacity = 40,
 		transportsize = 4,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 2.2044,
 		turnrate = 361,
 		unitname = "armtship",
 		waterline = 10,

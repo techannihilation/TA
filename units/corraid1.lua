@@ -2,7 +2,7 @@ return {
 	corraid1 = {
 		acceleration = 0.0243,
 		bmcode = 1,
-		brakerate = 0.0254,
+		brakerate = 0.0762,
 		buildcostenergy = 2799,
 		buildcostmetal = 365,
 		builder = false,
@@ -52,6 +52,9 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 30,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.6368,
 		turnrate = 429.79999,
 		unitname = "corraid1",
 		workertime = 0,

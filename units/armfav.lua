@@ -2,7 +2,7 @@ return {
 	armfav = {
 		acceleration = 0.12,
 		bmcode = 1,
-		brakerate = 0.165,
+		brakerate = 0.495,
 		buildcostenergy = 342,
 		buildcostmetal = 29,
 		builder = false,
@@ -52,6 +52,9 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 25,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 4.224,
 		turnrate = 1144,
 		unitname = "armfav",
 		unitrestricted = 150,

@@ -2,7 +2,7 @@ return {
 	speeder = {
 		acceleration = 0.1,
 		bmcode = 1,
-		brakerate = 0.09,
+		brakerate = 0.27,
 		buildcostenergy = 19864,
 		buildcostmetal = 1168,
 		builder = false,
@@ -51,6 +51,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.716,
 		turnrate = 350,
 		unitname = "speeder",
 		unitnumber = 902,

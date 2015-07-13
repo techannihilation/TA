@@ -49,6 +49,8 @@ return {
 		side = "ARM",
 		sightdistance = 475,
 		standingfireorder = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "tawf001",
 		usebuildinggrounddecal = true,

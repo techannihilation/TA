@@ -45,6 +45,8 @@ return {
 		side = "ARM",
 		sightdistance = 201,
 		standingfireorder = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "armamd2",
 		unitrestricted = 8,

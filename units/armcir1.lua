@@ -47,6 +47,8 @@ return {
 		side = "ARM",
 		sightdistance = 750,
 		standingfireorder = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "armcir1",
 		usebuildinggrounddecal = true,

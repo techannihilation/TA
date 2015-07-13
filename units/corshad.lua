@@ -1,10 +1,10 @@
 return {
 	corshad = {
-		acceleration = 0.084,
+		acceleration = 0.02772,
 		altfromsealevel = 1,
 		attackrunlength = 170,
 		bmcode = 1,
-		brakerate = 5.5,
+		brakerate = 0.055,
 		buildcostenergy = 5595,
 		buildcostmetal = 146,
 		builder = false,
@@ -50,6 +50,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 5.313,
 		turnrate = 807,
 		unitname = "corshad",
 		workertime = 0,

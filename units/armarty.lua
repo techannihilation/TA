@@ -2,7 +2,7 @@ return {
 	armarty = {
 		acceleration = 0.016,
 		bmcode = 1,
-		brakerate = 0.01,
+		brakerate = 0.03,
 		buildcostenergy = 2546,
 		buildcostmetal = 395,
 		builder = false,
@@ -49,6 +49,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.924,
 		turnrate = 450,
 		unitname = "armarty",
 		unitnumber = 3524,

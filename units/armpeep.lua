@@ -1,9 +1,9 @@
 return {
 	armpeep = {
-		acceleration = 0.6,
+		acceleration = 0.198,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 11.25,
+		brakerate = 0.1125,
 		buildcostenergy = 1475,
 		buildcostmetal = 30,
 		builder = false,
@@ -48,6 +48,8 @@ return {
 		sightdistance = 865,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 9.108,
 		turnrate = 880,
 		unitname = "armpeep",
 		workertime = 0,

@@ -2,7 +2,7 @@ return {
 	tllloki = {
 		acceleration = 0.012,
 		bmcode = 1,
-		brakerate = 0.01,
+		brakerate = 0.03,
 		buildcostenergy = 1351,
 		buildcostmetal = 482,
 		builder = false,
@@ -43,6 +43,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 0,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.924,
 		turnrate = 350,
 		unitname = "tllloki",
 		unitnumber = 836,

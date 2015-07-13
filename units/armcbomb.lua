@@ -1,10 +1,10 @@
 return {
 	armcbomb = {
-		acceleration = 0.085,
+		acceleration = 0.02805,
 		attackrunlength = 170,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.35,
+		brakerate = 0.0035,
 		buildcostenergy = 6537,
 		buildcostmetal = 291,
 		buildtime = 17814,
@@ -50,6 +50,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 8.448,
 		turnrate = 390,
 		unitname = "armcbomb",
 		unitnumber = 120,

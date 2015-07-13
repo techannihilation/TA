@@ -1,8 +1,8 @@
 return {
 	armch = {
-		acceleration = 0.072,
+		acceleration = 0.144,
 		bmcode = 1,
-		brakerate = 0.075,
+		brakerate = 0.45,
 		buildcostenergy = 2523,
 		buildcostmetal = 136,
 		builddistance = 160,
@@ -52,6 +52,9 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		terraformspeed = 330,
+		turninplace = 1,
+		turninplaceanglelimit = 60,
+		turninplacespeedlimit = 1.6698,
 		turnrate = 425,
 		unitname = "armch",
 		workertime = 150,

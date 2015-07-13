@@ -1,7 +1,7 @@
 return {
 	cornanotc2 = {
 		acceleration = 0,
-		brakerate = 1.5,
+		brakerate = 4.5,
 		buildcostenergy = 72000,
 		buildcostmetal = 2300,
 		builddistance = 680,
@@ -50,6 +50,8 @@ return {
 		side = "CORE",
 		sightdistance = 380,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 1,
 		unitname = "cornanotc2",
 		upright = true,

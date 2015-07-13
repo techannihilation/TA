@@ -2,7 +2,7 @@ return {
 	armacsub = {
 		acceleration = 0.038,
 		bmcode = 1,
-		brakerate = 0.25,
+		brakerate = 0.75,
 		buildcostenergy = 37500,
 		buildcostmetal = 3195,
 		builddistance = 300,
@@ -51,6 +51,8 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		terraformspeed = 900,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.518,
 		turnrate = 382,
 		unitname = "armacsub",
 		waterline = 30,

@@ -2,7 +2,7 @@ return {
 	armsh = {
 		acceleration = 0.132,
 		bmcode = 1,
-		brakerate = 0.112,
+		brakerate = 0.336,
 		buildcostenergy = 1344,
 		buildcostmetal = 87,
 		builder = false,
@@ -50,6 +50,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 2.9634,
 		turnrate = 640,
 		unitname = "armsh",
 		workertime = 0,

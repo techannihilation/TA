@@ -40,6 +40,8 @@ return {
 		side = "CORE",
 		sightdistance = 585,
 		standingfireorder = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "coratl",
 		waterline = 10,

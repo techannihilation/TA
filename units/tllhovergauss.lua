@@ -2,7 +2,7 @@ return {
 	tllhovergauss = {
 		acceleration = 0.075,
 		bmcode = 1,
-		brakerate = 0.1,
+		brakerate = 0.3,
 		buildcostenergy = 2793,
 		buildcostmetal = 215,
 		builder = false,
@@ -49,6 +49,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.65,
 		turnrate = 280,
 		unitname = "tllhovergauss",
 		unitnumber = 17403,

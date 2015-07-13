@@ -1,12 +1,12 @@
 return {
 	armsehak = {
-		acceleration = 0.102,
+		acceleration = 0.03366,
 		altfromsealevel = 1,
 		amphibious = 1,
 		attackrunlength = 120,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 5,
+		brakerate = 0.05,
 		buildcostenergy = 6624,
 		buildcostmetal = 119,
 		builder = false,
@@ -56,6 +56,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 7.4382,
 		turnrate = 402,
 		unitname = "armsehak",
 		workertime = 0,

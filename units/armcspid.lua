@@ -2,7 +2,7 @@ return {
 	armcspid = {
 		acceleration = 0.15,
 		bmcode = 1,
-		brakerate = 0.15,
+		brakerate = 0.45,
 		buildcostenergy = 2865,
 		buildcostmetal = 117,
 		builddistance = 102,
@@ -46,6 +46,8 @@ return {
 		sightdistance = 235,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.957,
 		turnrate = 1020,
 		unitname = "armcspid",
 		unitnumber = 4333,

@@ -2,7 +2,7 @@ return {
 	krogtaar = {
 		acceleration = 0.144,
 		bmcode = 1,
-		brakerate = 0.238,
+		brakerate = 0.714,
 		buildcostenergy = 50499,
 		buildcostmetal = 6784,
 		builder = false,
@@ -51,6 +51,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.8778,
 		turnrate = 1058,
 		unitname = "krogtaar",
 		unitnumber = 12323,

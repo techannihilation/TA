@@ -1,8 +1,8 @@
 return {
 	armfark = {
-		acceleration = 0.22,
+		acceleration = 0.44,
 		bmcode = 1,
-		brakerate = 0.75,
+		brakerate = 4.5,
 		buildcostenergy = 2700,
 		buildcostmetal = 200,
 		builddistance = 112,
@@ -48,6 +48,9 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		terraformspeed = 360,
+		turninplace = 1,
+		turninplaceanglelimit = 60,
+		turninplacespeedlimit = 1.7424,
 		turnrate = 1100,
 		unitname = "armfark",
 		upright = true,

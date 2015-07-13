@@ -2,7 +2,7 @@ return {
 	tllsham = {
 		acceleration = 0.5,
 		bmcode = 1,
-		brakerate = 0.5,
+		brakerate = 1.5,
 		buildcostenergy = 1500,
 		buildcostmetal = 120,
 		builddistance = 102,
@@ -56,6 +56,8 @@ return {
 		sightdistance = 500,
 		standingmoveorder = 2,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.452,
 		turnrate = 1000,
 		unitname = "tllsham",
 		unitnumber = 256,

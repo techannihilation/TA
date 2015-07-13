@@ -2,7 +2,7 @@ return {
 	helepolis = {
 		acceleration = 1.2,
 		bmcode = 1,
-		brakerate = 1,
+		brakerate = 3,
 		buildcostenergy = 100000,
 		buildcostmetal = 12000,
 		builder = false,
@@ -60,6 +60,8 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 2,
 		tedclass = "KBOT",
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.495,
 		turnrate = 600,
 		unitname = "helepolis",
 		unitnumber = 269,

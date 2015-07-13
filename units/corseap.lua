@@ -1,11 +1,11 @@
 return {
 	corseap = {
-		acceleration = 0.312,
+		acceleration = 0.10296,
 		amphibious = 1,
 		attackrunlength = 100,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 4.75,
+		brakerate = 0.0475,
 		buildcostenergy = 6785,
 		buildcostmetal = 234,
 		builder = false,
@@ -54,6 +54,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 5.8542,
 		turnrate = 575,
 		unitname = "corseap",
 		workertime = 0,

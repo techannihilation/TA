@@ -43,6 +43,8 @@ return {
 		selfdestructas = "LARGE_BUILDING",
 		side = "ARM",
 		sightdistance = 273,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "armtarg",
 		usebuildinggrounddecal = true,

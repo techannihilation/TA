@@ -2,7 +2,7 @@ return {
 	armsonic = {
 		acceleration = 0.81,
 		bmcode = 1,
-		brakerate = 0.19,
+		brakerate = 0.57,
 		buildcostenergy = 9500,
 		buildcostmetal = 420,
 		builder = false,
@@ -54,6 +54,9 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 30,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.0824,
 		turnrate = 220,
 		unitname = "armsonic",
 		unitnumber = 6303,

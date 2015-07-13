@@ -1,9 +1,9 @@
 return {
 	armmin = {
-		acceleration = 0.06,
+		acceleration = 0.0198,
 		bankscale = 1.5,
 		bmcode = 1,
-		brakerate = 1.2,
+		brakerate = 0.012,
 		buildcostenergy = 1500,
 		buildcostmetal = 40,
 		builddistance = 160,
@@ -55,6 +55,8 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		tedclass = "CNSTR",
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 2.838,
 		turnrate = 248,
 		unitname = "armmin",
 		workertime = 10,

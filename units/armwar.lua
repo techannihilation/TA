@@ -2,7 +2,7 @@ return {
 	armwar = {
 		acceleration = 0.072,
 		bmcode = 1,
-		brakerate = 0.238,
+		brakerate = 0.714,
 		buildcostenergy = 2944,
 		buildcostmetal = 248,
 		builder = false,
@@ -51,6 +51,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.99,
 		turnrate = 770,
 		unitname = "armwar",
 		upright = true,

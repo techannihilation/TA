@@ -2,7 +2,7 @@ return {
 	corsktl = {
 		acceleration = 0.12,
 		bmcode = 1,
-		brakerate = 0.188,
+		brakerate = 0.564,
 		buildcostenergy = 24723,
 		buildcostmetal = 506,
 		builder = false,
@@ -53,6 +53,8 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.891,
 		turnrate = 1122,
 		unitname = "corsktl",
 		upright = true,

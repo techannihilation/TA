@@ -48,6 +48,8 @@ return {
 		selfdestructas = "CRBLMSSL",
 		side = "ARM",
 		sightdistance = 273,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "aafus",
 		usebuildinggrounddecal = true,

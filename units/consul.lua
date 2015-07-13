@@ -1,8 +1,8 @@
 return {
 	consul = {
-		acceleration = 0.08,
+		acceleration = 0.16,
 		bmcode = 1,
-		brakerate = 0.1375,
+		brakerate = 0.825,
 		buildcostenergy = 4020,
 		buildcostmetal = 230,
 		builddistance = 136,
@@ -56,6 +56,9 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 31,
+		turninplace = 1,
+		turninplaceanglelimit = 60,
+		turninplacespeedlimit = 1.782,
 		turnrate = 635,
 		unitname = "consul",
 		workertime = 150,

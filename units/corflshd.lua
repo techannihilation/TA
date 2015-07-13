@@ -37,6 +37,8 @@ return {
 		selfdestructas = "CRAWL_BLAST",
 		side = "CORE",
 		sightdistance = 273,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "corflshd",
 		waterline = 0,

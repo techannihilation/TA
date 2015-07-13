@@ -1,8 +1,8 @@
 return {
 	corck = {
-		acceleration = 0.228,
+		acceleration = 0.456,
 		bmcode = 1,
-		brakerate = 0.475,
+		brakerate = 2.85,
 		buildcostenergy = 1622,
 		buildcostmetal = 113,
 		builddistance = 197,
@@ -50,6 +50,9 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		terraformspeed = 270,
+		turninplace = 1,
+		turninplaceanglelimit = 60,
+		turninplacespeedlimit = 0.759,
 		turnrate = 1045,
 		unitname = "corck",
 		upright = true,

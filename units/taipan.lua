@@ -2,7 +2,7 @@ return {
 	taipan = {
 		acceleration = 0.06,
 		bmcode = 1,
-		brakerate = 0.21,
+		brakerate = 0.63,
 		buildcostenergy = 20234,
 		buildcostmetal = 464,
 		builder = false,
@@ -56,6 +56,8 @@ return {
 		standingmoveorder = 1,
 		stealth = true,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.254,
 		turnrate = 1005,
 		unitname = "taipan",
 		unitnumber = 345665,

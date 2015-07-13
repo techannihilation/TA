@@ -2,7 +2,7 @@ return {
 	armbull = {
 		acceleration = 0.0396,
 		bmcode = 1,
-		brakerate = 0.055,
+		brakerate = 0.165,
 		buildcostenergy = 14593,
 		buildcostmetal = 844,
 		builder = false,
@@ -55,6 +55,9 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 40,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.34442,
 		turnrate = 378,
 		unitname = "armbull",
 		workertime = 0,

@@ -1,10 +1,10 @@
 return {
 	corhurc = {
-		acceleration = 0.06,
+		acceleration = 0.0198,
 		altfromsealevel = 1,
 		attackrunlength = 300,
 		bmcode = 1,
-		brakerate = 3.5,
+		brakerate = 0.035,
 		buildcostenergy = 14365,
 		buildcostmetal = 313,
 		builder = false,
@@ -50,6 +50,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 5.9598,
 		turnrate = 220,
 		unitname = "corhurc",
 		workertime = 0,

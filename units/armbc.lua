@@ -2,7 +2,7 @@ return {
 	armbc = {
 		acceleration = 0.005,
 		bmcode = 1,
-		brakerate = 0.015,
+		brakerate = 0.045,
 		buildangle = 16384,
 		buildcostenergy = 69731,
 		buildcostmetal = 7604,
@@ -52,6 +52,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.99,
 		turnrate = 60,
 		unitname = "armbc",
 		unitnumber = 14001,

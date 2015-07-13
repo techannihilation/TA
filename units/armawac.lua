@@ -1,10 +1,10 @@
 return {
 	armawac = {
-		acceleration = 0.114,
+		acceleration = 0.03762,
 		altfromsealevel = 1,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 5,
+		brakerate = 0.05,
 		buildcostenergy = 8062,
 		buildcostmetal = 165,
 		builder = false,
@@ -50,6 +50,8 @@ return {
 		sonardistance = 1200,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 6.9828,
 		turnrate = 392,
 		unitname = "armawac",
 		workertime = 0,

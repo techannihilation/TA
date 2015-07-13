@@ -2,7 +2,7 @@ return {
 	tllmlrpc = {
 		acceleration = 0.036,
 		bmcode = 1,
-		brakerate = 0.05,
+		brakerate = 0.15,
 		buildcostenergy = 84140,
 		buildcostmetal = 6080,
 		builder = false,
@@ -57,6 +57,9 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 45,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.594,
 		turnrate = 176,
 		unitname = "avtr",
 		unitnumber = 999,

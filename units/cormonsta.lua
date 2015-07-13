@@ -2,7 +2,7 @@ return {
 	cormonsta = {
 		acceleration = 0.65259,
 		bmcode = 1,
-		brakerate = 0.35259,
+		brakerate = 1.05777,
 		buildcostenergy = 27415,
 		buildcostmetal = 2574,
 		builder = false,
@@ -50,6 +50,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.561,
 		turnrate = 340,
 		unitname = "cormonsta",
 		unitnumber = 852741,

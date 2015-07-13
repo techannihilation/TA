@@ -2,7 +2,7 @@ return {
 	nsacskv = {
 		acceleration = 0.1,
 		bmcode = 1,
-		brakerate = 0.1,
+		brakerate = 0.3,
 		buildcostenergy = 9452,
 		buildcostmetal = 474,
 		builder = false,
@@ -50,6 +50,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.815,
 		turnrate = 511,
 		unitname = "nsacskv",
 		unitnumber = 1414,

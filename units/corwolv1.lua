@@ -2,7 +2,7 @@ return {
 	corwolv1 = {
 		acceleration = 0.011,
 		bmcode = 1,
-		brakerate = 0.0099,
+		brakerate = 0.0297,
 		buildcostenergy = 3219,
 		buildcostmetal = 299,
 		builder = false,
@@ -54,6 +54,9 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 30,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.4982,
 		turnrate = 466,
 		unitname = "corwolv1",
 		workertime = 0,

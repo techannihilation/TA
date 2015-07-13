@@ -1,9 +1,9 @@
 return {
 	cormin = {
-		acceleration = 0.05,
+		acceleration = 0.0165,
 		bankscale = 1.5,
 		bmcode = 1,
-		brakerate = 1.2,
+		brakerate = 0.012,
 		buildcostenergy = 1500,
 		buildcostmetal = 40,
 		builddistance = 160,
@@ -55,6 +55,8 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		tedclass = "CNSTR",
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 2.64,
 		turnrate = 256,
 		unitname = "cormin",
 		workertime = 10,

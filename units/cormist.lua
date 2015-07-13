@@ -2,7 +2,7 @@ return {
 	cormist = {
 		acceleration = 0.0352,
 		bmcode = 1,
-		brakerate = 0.0165,
+		brakerate = 0.0495,
 		buildcostenergy = 2177,
 		buildcostmetal = 146,
 		builder = false,
@@ -54,6 +54,9 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 30,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.04544,
 		turnrate = 498,
 		unitname = "cormist",
 		workertime = 0,

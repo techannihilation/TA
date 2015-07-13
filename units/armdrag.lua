@@ -36,6 +36,8 @@ return {
 		seismicsignature = 0,
 		side = "ARM",
 		sightdistance = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "armdrag",
 		upright = false,

@@ -2,7 +2,7 @@ return {
 	cormort = {
 		acceleration = 0.132,
 		bmcode = 1,
-		brakerate = 0.225,
+		brakerate = 0.675,
 		buildcostenergy = 2065,
 		buildcostmetal = 382,
 		builder = false,
@@ -52,6 +52,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.1616,
 		turnrate = 1099,
 		unitname = "cormort",
 		upright = true,

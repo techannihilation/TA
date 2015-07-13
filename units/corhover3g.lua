@@ -2,7 +2,7 @@ return {
 	corhover3g = {
 		acceleration = 0.09,
 		bmcode = 1,
-		brakerate = 0.11,
+		brakerate = 0.33,
 		buildcostenergy = 14162,
 		buildcostmetal = 1211,
 		builder = false,
@@ -53,6 +53,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.452,
 		turnrate = 250,
 		unitname = "corhover3g",
 		unitnumber = 4313,

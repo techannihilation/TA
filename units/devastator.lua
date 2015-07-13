@@ -2,7 +2,7 @@ return {
 	devastator = {
 		acceleration = 0.11,
 		bmcode = 1,
-		brakerate = 0.07,
+		brakerate = 0.21,
 		buildcostenergy = 11596,
 		buildcostmetal = 1218,
 		builder = false,
@@ -55,6 +55,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.9702,
 		turnrate = 250,
 		unitname = "devastator",
 		unitnumber = 1234,

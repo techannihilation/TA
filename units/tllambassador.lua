@@ -2,7 +2,7 @@ return {
 	tllambassador = {
 		acceleration = 0.09,
 		bmcode = 1,
-		brakerate = 0.182,
+		brakerate = 0.546,
 		buildangle = 16384,
 		buildcostenergy = 4950,
 		buildcostmetal = 945,
@@ -51,6 +51,8 @@ return {
 		steeringmode = 1,
 		transportcapacity = 20,
 		transportsize = 3,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.881,
 		turnrate = 310,
 		unitname = "tllambassador",
 		unitnumber = 943,

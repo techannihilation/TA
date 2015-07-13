@@ -1,11 +1,11 @@
 return {
 	armpnix = {
-		acceleration = 0.072,
+		acceleration = 0.02376,
 		altfromsealevel = 1,
 		attackrunlength = 300,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 3.5,
+		brakerate = 0.035,
 		buildcostenergy = 10624,
 		buildcostmetal = 229,
 		builder = false,
@@ -50,6 +50,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 6.1842,
 		turnrate = 402,
 		unitname = "armpnix",
 		workertime = 0,

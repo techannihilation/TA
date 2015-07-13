@@ -1,10 +1,10 @@
 return {
 	airwolf3g = {
-		acceleration = 3.345,
+		acceleration = 1.10385,
 		airsightdistance = 900,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 7,
+		brakerate = 0.07,
 		buildcostenergy = 55000,
 		buildcostmetal = 580,
 		buildtime = 18942,
@@ -51,6 +51,8 @@ return {
 		standingmoveorder = 1,
 		stealth = true,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 9.9,
 		turnrate = 1220,
 		unitname = "airwolf3g",
 		unitnumber = 10148,

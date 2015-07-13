@@ -52,6 +52,8 @@ return {
 		standingfireorder = 2,
 		stealth = true,
 		tedclass = "SPECIAL",
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "cormine7",
 		usebuildinggrounddecal = true,

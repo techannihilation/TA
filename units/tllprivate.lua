@@ -2,7 +2,7 @@ return {
 	tllprivate = {
 		acceleration = 0.24,
 		bmcode = 1,
-		brakerate = 0.4,
+		brakerate = 1.2,
 		buildcostenergy = 535,
 		buildcostmetal = 60,
 		builder = false,
@@ -49,6 +49,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 2,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.881,
 		turnrate = 1120,
 		unitname = "tllprivate",
 		unitnumber = 815,

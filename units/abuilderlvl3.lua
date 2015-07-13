@@ -2,7 +2,7 @@ return {
 	abuilderlvl3 = {
 		acceleration = 0.015,
 		airhoverfactor = 0,
-		brakerate = 3.5,
+		brakerate = 0.35,
 		buildcostenergy = 500000,
 		buildcostmetal = 24500,
 		builddistance = 180,
@@ -45,6 +45,8 @@ return {
 		selfdestructas = "SHIPBLAST",
 		side = "ARM",
 		sightdistance = 400,
+		turninplaceanglelimit = 360,
+		turninplacespeedlimit = 2.112,
 		turnrate = 199.5,
 		unitname = "abuilderlvl3",
 		workertime = 2000,

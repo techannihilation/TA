@@ -47,6 +47,8 @@ return {
 		sightdistance = 494,
 		standingfireorder = 2,
 		stealth = true,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "tlljuno",
 		workertime = 0,

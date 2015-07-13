@@ -49,6 +49,8 @@ return {
 		side = "ARM",
 		sightdistance = 357.5,
 		sortbias = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "armasp",
 		usebuildinggrounddecal = true,

@@ -1,11 +1,11 @@
 return {
 	corsb = {
-		acceleration = 0.084,
+		acceleration = 0.02772,
 		altfromsealevel = 1,
 		amphibious = 1,
 		attackrunlength = 260,
 		bmcode = 1,
-		brakerate = 1.5,
+		brakerate = 0.015,
 		buildcostenergy = 7936,
 		buildcostmetal = 182,
 		builder = false,
@@ -54,6 +54,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 5.7486,
 		turnrate = 368,
 		unitname = "corsb",
 		workertime = 0,

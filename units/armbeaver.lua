@@ -1,8 +1,8 @@
 return {
 	armbeaver = {
-		acceleration = 0.0132,
+		acceleration = 0.0264,
 		bmcode = 1,
-		brakerate = 0.1166,
+		brakerate = 0.6996,
 		buildcostenergy = 2928,
 		buildcostmetal = 141,
 		builddistance = 182,
@@ -53,6 +53,9 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 31,
+		turninplace = 1,
+		turninplaceanglelimit = 60,
+		turninplacespeedlimit = 0.9834,
 		turnrate = 311,
 		unitname = "armbeaver",
 		workertime = 120,

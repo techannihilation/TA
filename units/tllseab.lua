@@ -1,11 +1,11 @@
 return {
 	tllseab = {
-		acceleration = 0.37,
+		acceleration = 0.1221,
 		amphibious = 1,
 		attackrunlength = 100,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 4,
+		brakerate = 0.04,
 		buildcostenergy = 2000,
 		buildcostmetal = 400,
 		builder = false,
@@ -55,6 +55,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 6.534,
 		turnrate = 452,
 		unitname = "tllseab",
 		unitnumber = 920,

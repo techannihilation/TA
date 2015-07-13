@@ -1,7 +1,7 @@
 return {
 	tllfnanotc2 = {
 		acceleration = 0,
-		brakerate = 1.5,
+		brakerate = 4.5,
 		buildcostenergy = 60000,
 		buildcostmetal = 4400,
 		builddistance = 900,
@@ -45,6 +45,8 @@ return {
 		side = "CORE",
 		sightdistance = 380,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 1,
 		unitname = "tllfnanotc2",
 		upright = true,

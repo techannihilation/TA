@@ -39,6 +39,8 @@ return {
 		sightdistance = 130,
 		tedclass = "WATER",
 		tidalgenerator = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "armatidal",
 		waterline = 16,

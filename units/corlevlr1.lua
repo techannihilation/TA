@@ -2,7 +2,7 @@ return {
 	corlevlr1 = {
 		acceleration = 0.0364,
 		bmcode = 1,
-		brakerate = 0.3618,
+		brakerate = 1.0854,
 		buildcostenergy = 3187,
 		buildcostmetal = 448,
 		builder = false,
@@ -52,6 +52,9 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 30,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.94149,
 		turnrate = 366.20001,
 		unitname = "corlevlr1",
 		workertime = 0,

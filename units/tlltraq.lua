@@ -2,7 +2,7 @@ return {
 	tlltraq = {
 		acceleration = 0.06,
 		bmcode = 1,
-		brakerate = 0.21,
+		brakerate = 0.63,
 		buildcostenergy = 11234,
 		buildcostmetal = 764,
 		builder = false,
@@ -56,6 +56,8 @@ return {
 		standingmoveorder = 1,
 		stealth = true,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.99,
 		turnrate = 1005,
 		unitname = "tlltraq",
 		unitnumber = 345665,

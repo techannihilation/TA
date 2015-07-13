@@ -2,7 +2,7 @@ return {
 	coredauber = {
 		acceleration = 0.11,
 		bmcode = 1,
-		brakerate = 0.18311,
+		brakerate = 0.54933,
 		buildcostenergy = 8250,
 		buildcostmetal = 610,
 		builder = false,
@@ -50,6 +50,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.759,
 		turnrate = 999,
 		unitname = "coredauber",
 		unitnumber = 205,

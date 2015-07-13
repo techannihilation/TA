@@ -2,7 +2,7 @@ return {
 	armhdpw = {
 		acceleration = 0.12,
 		bmcode = 1,
-		brakerate = 0.19,
+		brakerate = 0.57,
 		buildcostenergy = 20446,
 		buildcostmetal = 1824,
 		builder = false,
@@ -53,6 +53,8 @@ return {
 		standingmoveorder = 1,
 		stealth = true,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.155,
 		turnrate = 1050,
 		unitname = "armhdpw",
 		unitnumber = 14017,

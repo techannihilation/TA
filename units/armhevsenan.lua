@@ -1,7 +1,7 @@
 return {
 	armhevsenan = {
 		acceleration = 0,
-		brakerate = 1.5,
+		brakerate = 4.5,
 		buildcostenergy = 6578,
 		buildcostmetal = 299,
 		builddistance = 600,
@@ -44,6 +44,8 @@ return {
 		side = "ARM",
 		sightdistance = 420,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 1,
 		unitname = "armhevsenan",
 		upright = true,

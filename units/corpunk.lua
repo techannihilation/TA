@@ -2,7 +2,7 @@ return {
 	corpunk = {
 		acceleration = 0.5,
 		bmcode = 1,
-		brakerate = 0.5,
+		brakerate = 1.5,
 		buildcostenergy = 350,
 		buildcostmetal = 16,
 		builder = false,
@@ -48,6 +48,8 @@ return {
 		stealth = true,
 		steeringmode = 2,
 		tedclass = "KBOT",
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 2.904,
 		turnrate = 1672,
 		unitname = "corpunk",
 		workertime = 0,

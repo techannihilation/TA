@@ -1,9 +1,9 @@
 return {
 	armsfig = {
-		acceleration = 0.48,
+		acceleration = 0.1584,
 		amphibious = 1,
 		bmcode = 1,
-		brakerate = 10,
+		brakerate = 0.1,
 		buildcostenergy = 6000,
 		buildcostmetal = 150,
 		builder = false,
@@ -52,6 +52,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 6.93,
 		turnrate = 1625,
 		unitname = "armsfig",
 		workertime = 0,

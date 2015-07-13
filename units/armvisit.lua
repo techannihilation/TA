@@ -2,7 +2,7 @@ return {
 	armvisit = {
 		acceleration = 0.1,
 		bmcode = 1,
-		brakerate = 0.09,
+		brakerate = 0.27,
 		buildcostenergy = 2828,
 		buildcostmetal = 208,
 		builder = false,
@@ -49,6 +49,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.914,
 		turnrate = 260,
 		unitname = "armvisit",
 		unitnumber = 1740,

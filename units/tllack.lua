@@ -1,8 +1,8 @@
 return {
 	tllack = {
-		acceleration = 0.48,
+		acceleration = 0.96,
 		bmcode = 1,
-		brakerate = 0.6,
+		brakerate = 3.6,
 		buildcostenergy = 23450,
 		buildcostmetal = 1250,
 		builddistance = 225,
@@ -48,6 +48,9 @@ return {
 		sightdistance = 250,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplace = 1,
+		turninplaceanglelimit = 60,
+		turninplacespeedlimit = 0.561,
 		turnrate = 800,
 		unitname = "tllack",
 		unitnumber = 819,

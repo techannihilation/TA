@@ -2,7 +2,7 @@ return {
 	corsnap = {
 		acceleration = 0.078,
 		bmcode = 1,
-		brakerate = 0.1,
+		brakerate = 0.3,
 		buildcostenergy = 3106,
 		buildcostmetal = 296,
 		builder = false,
@@ -50,6 +50,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.518,
 		turnrate = 500,
 		unitname = "corsnap",
 		workertime = 0,

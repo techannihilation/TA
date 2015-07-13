@@ -48,6 +48,8 @@ return {
 		side = "TLL",
 		sightdistance = 494,
 		standingfireorder = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "tllllt",
 		workertime = 0,

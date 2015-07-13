@@ -2,7 +2,7 @@ return {
 	corhrk = {
 		acceleration = 0.11,
 		bmcode = 1,
-		brakerate = 0.188,
+		brakerate = 0.564,
 		buildcostenergy = 5507,
 		buildcostmetal = 560,
 		builder = false,
@@ -46,6 +46,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.188,
 		turnrate = 1103,
 		unitname = "corhrk",
 		upright = true,

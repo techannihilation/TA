@@ -1,8 +1,8 @@
 return {
 	aach = {
-		acceleration = 0.12,
+		acceleration = 0.24,
 		bmcode = 1,
-		brakerate = 0.004,
+		brakerate = 0.024,
 		buildcostenergy = 18370,
 		buildcostmetal = 2390,
 		builddistance = 225,
@@ -48,6 +48,9 @@ return {
 		sightdistance = 270,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplace = 1,
+		turninplaceanglelimit = 60,
+		turninplacespeedlimit = 1.056,
 		turnrate = 220,
 		unitname = "aach",
 		unitnumber = 11000,

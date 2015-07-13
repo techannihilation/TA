@@ -49,6 +49,8 @@ return {
 		side = "CORE",
 		sightdistance = 676,
 		standingfireorder = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "cormexp",
 		usebuildinggrounddecal = true,

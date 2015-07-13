@@ -2,7 +2,7 @@ return {
 	armorco = {
 		acceleration = 0.108,
 		bmcode = 1,
-		brakerate = 0.238,
+		brakerate = 0.714,
 		buildcostenergy = 352000,
 		buildcostmetal = 24300,
 		builder = false,
@@ -55,6 +55,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.8184,
 		turnrate = 396,
 		unitname = "armorco",
 		unitnumber = 263,

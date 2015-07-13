@@ -39,6 +39,8 @@ return {
 		side = "ARM",
 		sightdistance = 0,
 		stealth = true,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "terraunit",
 		upright = false,

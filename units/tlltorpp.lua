@@ -1,9 +1,9 @@
 return {
 	tlltorpp = {
-		acceleration = 0.25,
+		acceleration = 0.0825,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 6.5,
+		brakerate = 0.065,
 		buildcostenergy = 2200,
 		buildcostmetal = 500,
 		builder = false,
@@ -50,6 +50,8 @@ return {
 		standingfireorder = 0,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 6.369,
 		turnrate = 590,
 		unitname = "tlltorpp",
 		unitnumber = 929,

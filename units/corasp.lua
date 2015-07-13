@@ -49,6 +49,8 @@ return {
 		side = "CORE",
 		sightdistance = 357.5,
 		sortbias = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "corasp",
 		usebuildinggrounddecal = true,

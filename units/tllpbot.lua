@@ -2,7 +2,7 @@ return {
 	tllpbot = {
 		acceleration = 0.21,
 		bmcode = 1,
-		brakerate = 0.23,
+		brakerate = 0.69,
 		buildcostenergy = 975,
 		buildcostmetal = 270,
 		builder = false,
@@ -50,6 +50,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 0,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.056,
 		turnrate = 1020,
 		unitname = "tllpbot",
 		unitnumber = 823,

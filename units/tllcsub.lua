@@ -2,7 +2,7 @@ return {
 	tllcsub = {
 		acceleration = 0.082,
 		bmcode = 1,
-		brakerate = 0.12,
+		brakerate = 0.36,
 		buildcostenergy = 2568,
 		buildcostmetal = 295,
 		builddistance = 252,
@@ -50,6 +50,8 @@ return {
 		sonardistance = 200,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.419,
 		turnrate = 356,
 		unitname = "tllcsub",
 		unitnumber = 887,

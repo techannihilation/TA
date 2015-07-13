@@ -49,6 +49,8 @@ return {
 		sightdistance = 234,
 		standingfireorder = 2,
 		standingmoveorder = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "asubpen",
 		usebuildinggrounddecal = true,

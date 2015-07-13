@@ -1,11 +1,11 @@
 return {
 	tllabomber = {
-		acceleration = 0.03,
+		acceleration = 0.0099,
 		altfromsealevel = 1,
 		attackrunlength = 220,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.4,
+		brakerate = 0.004,
 		buildcostenergy = 4455,
 		buildcostmetal = 280,
 		builder = false,
@@ -48,6 +48,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 6.732,
 		turnrate = 245,
 		unitname = "tllabomber",
 		unitnumber = 889,

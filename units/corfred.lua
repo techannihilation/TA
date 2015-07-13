@@ -1,8 +1,8 @@
 return {
 	corfred = {
-		acceleration = 0.02,
+		acceleration = 0.04,
 		bmcode = 1,
-		brakerate = 0.1375,
+		brakerate = 0.825,
 		buildcostenergy = 4365,
 		buildcostmetal = 850,
 		builddistance = 122,
@@ -54,6 +54,9 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 31,
+		turninplace = 1,
+		turninplaceanglelimit = 60,
+		turninplacespeedlimit = 1.254,
 		turnrate = 635,
 		unitname = "corfred",
 		workertime = 250,

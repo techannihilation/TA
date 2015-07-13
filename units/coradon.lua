@@ -2,7 +2,7 @@ return {
 	coradon = {
 		acceleration = 0.09,
 		bmcode = 1,
-		brakerate = 0.045,
+		brakerate = 0.135,
 		buildcostenergy = 34500,
 		buildcostmetal = 6550,
 		builder = false,
@@ -54,6 +54,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.858,
 		turnrate = 290,
 		unitname = "coradon",
 		unitnumber = 501,

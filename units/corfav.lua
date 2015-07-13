@@ -2,7 +2,7 @@ return {
 	corfav = {
 		acceleration = 0.11,
 		bmcode = 1,
-		brakerate = 0.145,
+		brakerate = 0.435,
 		buildcostenergy = 256,
 		buildcostmetal = 24,
 		builder = false,
@@ -52,6 +52,9 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 27,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 3.2274,
 		turnrate = 1097,
 		unitname = "corfav",
 		unitrestricted = 150,

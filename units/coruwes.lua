@@ -40,6 +40,8 @@ return {
 		selfdestructas = "ESTOR_BUILDING",
 		side = "CORE",
 		sightdistance = 169,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "coruwes",
 		usebuildinggrounddecal = true,

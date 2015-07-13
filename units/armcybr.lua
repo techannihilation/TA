@@ -1,9 +1,9 @@
 return {
 	armcybr = {
-		acceleration = 0.396,
+		acceleration = 0.13068,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 5,
+		brakerate = 0.05,
 		buildcostenergy = 40371,
 		buildcostmetal = 2103,
 		builder = false,
@@ -50,6 +50,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 6.831,
 		turnrate = 535,
 		unitname = "armcybr",
 		workertime = 0,

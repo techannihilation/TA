@@ -2,7 +2,7 @@ return {
 	armshock1 = {
 		acceleration = 0.023,
 		bmcode = 1,
-		brakerate = 0.1,
+		brakerate = 0.3,
 		buildcostenergy = 44739,
 		buildcostmetal = 1620,
 		builder = false,
@@ -47,6 +47,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 0,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.462,
 		turnrate = 231,
 		unitname = "armshock1",
 		featuredefs = {

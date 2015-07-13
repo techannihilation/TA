@@ -2,7 +2,7 @@ return {
 	tllariman = {
 		acceleration = 0.055,
 		bmcode = 1,
-		brakerate = 0.04,
+		brakerate = 0.12,
 		buildcostenergy = 1106,
 		buildcostmetal = 267,
 		builder = false,
@@ -44,6 +44,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 0,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.716,
 		turnrate = 625,
 		unitname = "tllariman",
 		unitnumber = 827,

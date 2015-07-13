@@ -2,7 +2,7 @@ return {
 	tllconvincer = {
 		acceleration = 0.016,
 		bmcode = 1,
-		brakerate = 0.03,
+		brakerate = 0.09,
 		buildcostenergy = 1887,
 		buildcostmetal = 950,
 		builder = false,
@@ -41,6 +41,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 0,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.693,
 		turnrate = 400,
 		unitname = "tllconvincer",
 		unitnumber = 872,

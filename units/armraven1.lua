@@ -2,7 +2,7 @@ return {
 	armraven1 = {
 		acceleration = 0.108,
 		bmcode = 1,
-		brakerate = 0.188,
+		brakerate = 0.564,
 		buildcostenergy = 45625,
 		buildcostmetal = 1551,
 		builder = false,
@@ -45,6 +45,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.726,
 		turnrate = 979,
 		unitname = "armraven1",
 		upright = true,

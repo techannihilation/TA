@@ -2,7 +2,7 @@ return {
 	corstorm = {
 		acceleration = 0.108,
 		bmcode = 1,
-		brakerate = 0.188,
+		brakerate = 0.564,
 		buildcostenergy = 853,
 		buildcostmetal = 81,
 		builder = false,
@@ -49,6 +49,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.089,
 		turnrate = 1103,
 		unitname = "corstorm",
 		upright = true,

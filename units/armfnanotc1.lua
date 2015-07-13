@@ -1,7 +1,7 @@
 return {
 	armfnanotc1 = {
 		acceleration = 0,
-		brakerate = 1.5,
+		brakerate = 4.5,
 		buildcostenergy = 20000,
 		buildcostmetal = 680,
 		builddistance = 600,
@@ -45,6 +45,8 @@ return {
 		side = "ARM",
 		sightdistance = 380,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 1,
 		unitname = "armfnanotc1",
 		upright = true,

@@ -46,6 +46,8 @@ return {
 		side = "ARM",
 		sightdistance = 273,
 		standingfireorder = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "armvulc",
 		usebuildinggrounddecal = true,

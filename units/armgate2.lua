@@ -45,6 +45,8 @@ return {
 		selfdestructas = "MINE_NUKE",
 		side = "ARM",
 		sightdistance = 273,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "armgate2",
 		usebuildinggrounddecal = true,

@@ -2,7 +2,7 @@ return {
 	tankanotor = {
 		acceleration = 0.012,
 		bmcode = 1,
-		brakerate = 0.01,
+		brakerate = 0.03,
 		buildcostenergy = 19602,
 		buildcostmetal = 3902,
 		builder = false,
@@ -53,6 +53,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.858,
 		turnrate = 450,
 		unitname = "tankanotor",
 		unitnumber = 7066,

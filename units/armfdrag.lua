@@ -35,6 +35,8 @@ return {
 		seismicsignature = 0,
 		side = "ARM",
 		sightdistance = 130,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "armfdrag",
 		waterline = 22,

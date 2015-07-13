@@ -2,7 +2,7 @@ return {
 	akmech = {
 		acceleration = 0.07,
 		bmcode = 1,
-		brakerate = 0.18,
+		brakerate = 0.54,
 		buildcostenergy = 113247,
 		buildcostmetal = 8850,
 		builder = false,
@@ -56,6 +56,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.66,
 		turnrate = 444,
 		unitname = "akmech",
 		unitnumber = 388,

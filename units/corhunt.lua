@@ -1,11 +1,11 @@
 return {
 	corhunt = {
-		acceleration = 0.106,
+		acceleration = 0.03498,
 		altfromsealevel = 1,
 		amphibious = 1,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 3.75,
+		brakerate = 0.0375,
 		buildcostenergy = 6421,
 		buildcostmetal = 122,
 		builder = false,
@@ -55,6 +55,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 7.1346,
 		turnrate = 450,
 		unitname = "corhunt",
 		workertime = 0,

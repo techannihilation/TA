@@ -1,9 +1,9 @@
 return {
 	corfink = {
-		acceleration = 0.48,
+		acceleration = 0.1584,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 12.5,
+		brakerate = 0.125,
 		buildcostenergy = 1369,
 		buildcostmetal = 26,
 		builder = false,
@@ -49,6 +49,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 8.349,
 		turnrate = 770,
 		unitname = "corfink",
 		workertime = 0,

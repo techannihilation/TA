@@ -2,7 +2,7 @@ return {
 	tllwhale = {
 		acceleration = 0.02,
 		bmcode = 1,
-		brakerate = 0.01,
+		brakerate = 0.03,
 		buildcostenergy = 24500,
 		buildcostmetal = 4350,
 		builder = false,
@@ -52,6 +52,8 @@ return {
 		standingmoveorder = 1,
 		stealth = true,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.561,
 		turnrate = 75,
 		unitname = "tllwhale",
 		unitnumber = 9201,

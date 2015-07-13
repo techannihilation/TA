@@ -2,7 +2,7 @@ return {
 	armfark1 = {
 		acceleration = 0.216,
 		bmcode = 1,
-		brakerate = 0.75,
+		brakerate = 2.25,
 		buildcostenergy = 2793,
 		buildcostmetal = 401,
 		builddistance = 112,
@@ -48,6 +48,8 @@ return {
 		sightdistance = 377,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.7424,
 		turnrate = 1100,
 		unitname = "armfark1",
 		upright = true,

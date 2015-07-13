@@ -1,10 +1,10 @@
 return {
 	shrike = {
-		acceleration = 4.45,
+		acceleration = 1.4685,
 		airsightdistance = 900,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 9,
+		brakerate = 0.09,
 		buildcostenergy = 66000,
 		buildcostmetal = 450,
 		buildtime = 17285,
@@ -48,6 +48,8 @@ return {
 		standingmoveorder = 1,
 		stealth = true,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 9.9,
 		turnrate = 1280,
 		unitname = "shrike",
 		unitnumber = 551,

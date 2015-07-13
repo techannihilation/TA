@@ -2,7 +2,7 @@ return {
 	armlatnk = {
 		acceleration = 0.125,
 		bmcode = 1,
-		brakerate = 0.125,
+		brakerate = 0.375,
 		buildcostenergy = 7000,
 		buildcostmetal = 307,
 		builder = false,
@@ -55,6 +55,9 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 30,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 2.19516,
 		turnrate = 550,
 		unitname = "armlatnk",
 		workertime = 0,

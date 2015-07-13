@@ -38,6 +38,8 @@ return {
 		seismicsignature = 0,
 		side = "CORE",
 		sightdistance = 130,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "cordrag",
 		usebuildinggrounddecal = true,

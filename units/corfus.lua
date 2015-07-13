@@ -43,6 +43,8 @@ return {
 		selfdestructas = "MINE_NUKE_CORE",
 		side = "CORE",
 		sightdistance = 273,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "corfus",
 		usebuildinggrounddecal = true,

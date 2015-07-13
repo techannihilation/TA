@@ -2,7 +2,7 @@ return {
 	tllamphibot = {
 		acceleration = 0.1,
 		bmcode = 1,
-		brakerate = 0.15,
+		brakerate = 0.45,
 		buildcostenergy = 1680,
 		buildcostmetal = 680,
 		builder = false,
@@ -52,6 +52,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.99,
 		turnrate = 400,
 		unitname = "tllamphibot",
 		unitnumber = 176,

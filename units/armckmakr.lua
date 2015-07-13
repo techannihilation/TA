@@ -46,6 +46,8 @@ return {
 		selfdestructas = "ARMESTOR_BUILDING",
 		side = "ARM",
 		sightdistance = 273,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "armckmakr",
 		usebuildinggrounddecal = true,

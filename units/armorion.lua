@@ -1,11 +1,11 @@
 return {
 	armorion = {
-		acceleration = 0.45,
+		acceleration = 0.1485,
 		altfromsealevel = 1,
 		attackrunlength = 290,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 1.5,
+		brakerate = 0.015,
 		buildcostenergy = 45000,
 		buildcostmetal = 2500,
 		builder = false,
@@ -52,6 +52,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 7.854,
 		turnrate = 100,
 		unitname = "armorion",
 		workertime = 0,

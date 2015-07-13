@@ -1,9 +1,9 @@
 return {
 	corsfig = {
-		acceleration = 0.456,
+		acceleration = 0.15048,
 		amphibious = 1,
 		bmcode = 1,
-		brakerate = 7.5,
+		brakerate = 0.075,
 		buildcostenergy = 6900,
 		buildcostmetal = 140,
 		builder = false,
@@ -52,6 +52,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 7.128,
 		turnrate = 1547,
 		unitname = "corsfig",
 		workertime = 0,

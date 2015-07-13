@@ -42,6 +42,8 @@ return {
 		selfdestructas = "ATOMIC_BLAST",
 		side = "CORE",
 		sightdistance = 273,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "corgeo",
 		usebuildinggrounddecal = true,

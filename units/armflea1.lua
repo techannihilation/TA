@@ -2,7 +2,7 @@ return {
 	armflea1 = {
 		acceleration = 0.5,
 		bmcode = 1,
-		brakerate = 0.5,
+		brakerate = 1.5,
 		buildcostenergy = 322,
 		buildcostmetal = 14,
 		builder = false,
@@ -46,6 +46,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 2.904,
 		turnrate = 1672,
 		unitname = "armflea1",
 		unitrestricted = 150,

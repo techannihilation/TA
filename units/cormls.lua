@@ -2,7 +2,7 @@ return {
 	cormls = {
 		acceleration = 0.046,
 		bmcode = 1,
-		brakerate = 0.06,
+		brakerate = 0.18,
 		buildcostenergy = 3902,
 		buildcostmetal = 289,
 		builddistance = 212,
@@ -49,6 +49,8 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		terraformspeed = 1200,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.386,
 		turnrate = 377,
 		unitname = "cormls",
 		workertime = 250,

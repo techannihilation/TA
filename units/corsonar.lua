@@ -46,6 +46,8 @@ return {
 		side = "CORE",
 		sightdistance = 485,
 		sonardistance = 1200,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "corsonar",
 		usebuildinggrounddecal = true,

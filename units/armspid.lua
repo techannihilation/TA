@@ -2,7 +2,7 @@ return {
 	armspid = {
 		acceleration = 0.18,
 		bmcode = 1,
-		brakerate = 0.188,
+		brakerate = 0.564,
 		buildcostenergy = 3170,
 		buildcostmetal = 166,
 		builder = false,
@@ -45,6 +45,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.749,
 		turnrate = 1122,
 		unitname = "armspid",
 		workertime = 0,

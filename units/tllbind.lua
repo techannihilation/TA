@@ -2,7 +2,7 @@ return {
 	tllbind = {
 		acceleration = 0.06,
 		bmcode = 1,
-		brakerate = 0.133,
+		brakerate = 0.399,
 		buildcostenergy = 12400,
 		buildcostmetal = 2985,
 		builder = false,
@@ -46,6 +46,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.5412,
 		turnrate = 250,
 		unitname = "tllbind",
 		unitnumber = 8301,

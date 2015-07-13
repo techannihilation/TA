@@ -2,7 +2,7 @@ return {
 	corkrog1 = {
 		acceleration = 0.108,
 		bmcode = 1,
-		brakerate = 0.238,
+		brakerate = 0.714,
 		buildcostenergy = 1577039,
 		buildcostmetal = 157182,
 		builder = false,
@@ -52,6 +52,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.32,
 		turnrate = 340,
 		unitname = "corkrog1",
 		upright = true,

@@ -2,7 +2,7 @@ return {
 	armbull2 = {
 		acceleration = 0.2,
 		bmcode = 1,
-		brakerate = 0.3,
+		brakerate = 0.9,
 		buildcostenergy = 23541,
 		buildcostmetal = 2540,
 		builder = false,
@@ -47,6 +47,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.056,
 		turnrate = 350,
 		unitname = "armbull2",
 		unitnumber = 229,

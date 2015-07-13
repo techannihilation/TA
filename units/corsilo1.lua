@@ -50,6 +50,8 @@ return {
 		side = "CORE",
 		sightdistance = 455,
 		standingfireorder = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "corsilo1",
 		usebuildinggrounddecal = true,

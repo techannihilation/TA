@@ -1,8 +1,8 @@
 return {
 	armack = {
-		acceleration = 0.22,
+		acceleration = 0.44,
 		bmcode = 1,
-		brakerate = 0.45,
+		brakerate = 2.7,
 		buildcostenergy = 33080,
 		buildcostmetal = 2500,
 		builddistance = 225,
@@ -48,6 +48,9 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		terraformspeed = 1220,
+		turninplace = 1,
+		turninplaceanglelimit = 60,
+		turninplacespeedlimit = 0.759,
 		turnrate = 990,
 		unitname = "armack",
 		upright = true,

@@ -2,7 +2,7 @@ return {
 	cbrutus = {
 		acceleration = 0.019,
 		bmcode = 1,
-		brakerate = 0.018,
+		brakerate = 0.054,
 		buildcostenergy = 10960,
 		buildcostmetal = 570,
 		builder = false,
@@ -53,6 +53,9 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 28,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.924,
 		turnrate = 343,
 		unitname = "cbrutus",
 		unitnumber = 8887656448,

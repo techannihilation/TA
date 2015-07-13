@@ -38,6 +38,8 @@ return {
 		selfdestructas = "NUCLEAR_MISSILE1",
 		side = "ARM",
 		sightdistance = 143,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "armuwfus1",
 		waterline = 20,

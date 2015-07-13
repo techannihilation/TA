@@ -1,10 +1,10 @@
 return {
 	armhawk = {
-		acceleration = 0.48,
+		acceleration = 0.1584,
 		airsightdistance = 800,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 11.25,
+		brakerate = 0.1125,
 		buildcostenergy = 16000,
 		buildcostmetal = 125,
 		buildpic = "ARMHAWK.png",
@@ -48,6 +48,8 @@ return {
 		standingmoveorder = 1,
 		stealth = true,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 7.8936,
 		turnrate = 1425,
 		unitname = "armhawk",
 		unitrestricted = 150,

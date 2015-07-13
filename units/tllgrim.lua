@@ -2,7 +2,7 @@ return {
 	tllgrim = {
 		acceleration = 0.21,
 		bmcode = 1,
-		brakerate = 0.15,
+		brakerate = 0.45,
 		buildcostenergy = 350000,
 		buildcostmetal = 22000,
 		builder = false,
@@ -54,6 +54,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.528,
 		turnrate = 1016,
 		unitname = "tllgrim",
 		unitnumber = 65200,

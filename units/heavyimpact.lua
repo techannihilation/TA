@@ -1,7 +1,7 @@
 return {
 	heavyimpact = {
 		acceleration = 0.06,
-		brakerate = 0.1,
+		brakerate = 0.3,
 		buildcostenergy = 72090,
 		buildcostmetal = 7000,
 		builder = false,
@@ -51,6 +51,8 @@ return {
 		standingmoveorder = 0,
 		steeringmode = 1,
 		tedclass = "KBOT",
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.726,
 		turnrate = 400,
 		unitname = "heavyimpact",
 		upright = true,

@@ -2,7 +2,7 @@ return {
 	tawf013 = {
 		acceleration = 0.0154,
 		bmcode = 1,
-		brakerate = 0.0154,
+		brakerate = 0.0462,
 		buildcostenergy = 2016,
 		buildcostmetal = 142,
 		builder = false,
@@ -57,6 +57,9 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 30,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.29228,
 		turnrate = 393.79999,
 		unitname = "tawf013",
 		workertime = 0,

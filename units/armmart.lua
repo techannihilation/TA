@@ -2,7 +2,7 @@ return {
 	armmart = {
 		acceleration = 0.0184,
 		bmcode = 1,
-		brakerate = 0.1232,
+		brakerate = 0.3696,
 		buildcostenergy = 6240,
 		buildcostmetal = 254,
 		builder = false,
@@ -53,6 +53,9 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 35,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.1946,
 		turnrate = 402,
 		unitname = "armmart",
 		workertime = 0,

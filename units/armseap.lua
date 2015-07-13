@@ -1,11 +1,11 @@
 return {
 	armseap = {
-		acceleration = 0.324,
+		acceleration = 0.10692,
 		amphibious = 1,
 		attackrunlength = 100,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 5,
+		brakerate = 0.05,
 		buildcostenergy = 6619,
 		buildcostmetal = 243,
 		builder = false,
@@ -54,6 +54,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 5.9664,
 		turnrate = 597,
 		unitname = "armseap",
 		workertime = 0,

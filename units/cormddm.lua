@@ -2,7 +2,7 @@ return {
 	cormddm = {
 		acceleration = 0.006,
 		bmcode = 1,
-		brakerate = 0.04,
+		brakerate = 0.12,
 		buildcostenergy = 17500,
 		buildcostmetal = 2710,
 		builder = false,
@@ -46,6 +46,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 0,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.726,
 		turnrate = 200,
 		unitname = "cormddm",
 		unitnumber = 2032,

@@ -2,7 +2,7 @@ return {
 	cormena = {
 		acceleration = 0.07629,
 		bmcode = 1,
-		brakerate = 0.07629,
+		brakerate = 0.22887,
 		buildcostenergy = 70341,
 		buildcostmetal = 3328,
 		builder = false,
@@ -55,6 +55,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.50351,
 		turnrate = 510,
 		unitname = "cormena",
 		unitnumber = 20000,

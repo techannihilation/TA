@@ -1,9 +1,9 @@
 return {
 	cortitan = {
-		acceleration = 0.18,
+		acceleration = 0.0594,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 7.25,
+		brakerate = 0.0725,
 		buildcostenergy = 6788,
 		buildcostmetal = 318,
 		builder = false,
@@ -50,6 +50,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 6.9828,
 		turnrate = 450,
 		unitname = "cortitan",
 		workertime = 0,

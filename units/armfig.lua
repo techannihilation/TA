@@ -1,10 +1,10 @@
 return {
 	armfig = {
-		acceleration = 2.5,
+		acceleration = 0.825,
 		airsightdistance = 700,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 7.5,
+		brakerate = 0.075,
 		buildcostenergy = 2000,
 		buildcostmetal = 80,
 		buildpic = "ARMFIG.png",
@@ -50,6 +50,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 6.336,
 		turnrate = 891,
 		unitname = "armfig",
 		unitrestricted = 200,

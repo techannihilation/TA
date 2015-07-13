@@ -47,6 +47,8 @@ return {
 		side = "ARM",
 		sightdistance = 215,
 		sonardistance = 2400,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "armason",
 		usebuildinggrounddecal = true,

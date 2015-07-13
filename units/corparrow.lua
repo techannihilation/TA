@@ -2,7 +2,7 @@ return {
 	corparrow = {
 		acceleration = 0.015,
 		bmcode = 1,
-		brakerate = 0.0715,
+		brakerate = 0.2145,
 		buildcostenergy = 26854,
 		buildcostmetal = 988,
 		builder = false,
@@ -55,6 +55,9 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 45,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.287,
 		turnrate = 400,
 		unitname = "corparrow",
 		workertime = 0,

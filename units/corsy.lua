@@ -45,6 +45,8 @@ return {
 		sightdistance = 276.89999,
 		standingfireorder = 2,
 		standingmoveorder = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "corsy",
 		waterline = 28,

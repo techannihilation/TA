@@ -2,7 +2,7 @@ return {
 	tlllasbot = {
 		acceleration = 0.21,
 		bmcode = 1,
-		brakerate = 0.18,
+		brakerate = 0.54,
 		buildcostenergy = 1251,
 		buildcostmetal = 255,
 		builder = false,
@@ -54,6 +54,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.452,
 		turnrate = 816,
 		unitname = "tlllasbot",
 		unitnumber = 925,

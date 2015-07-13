@@ -1,10 +1,10 @@
 return {
 	tllbomber = {
-		acceleration = 0.12,
+		acceleration = 0.0396,
 		attackrunlength = 120,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.7,
+		brakerate = 0.007,
 		buildcostenergy = 2661,
 		buildcostmetal = 171,
 		builder = false,
@@ -50,6 +50,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 2,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 4.158,
 		turnrate = 356,
 		unitname = "tllbomber",
 		unitnumber = 918,

@@ -1,10 +1,10 @@
 return {
 	tlladvfight = {
-		acceleration = 0.6,
+		acceleration = 0.198,
 		airsightdistance = 800,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 9,
+		brakerate = 0.09,
 		buildcostenergy = 2500,
 		buildcostmetal = 380,
 		buildtime = 8854,
@@ -48,6 +48,8 @@ return {
 		standingmoveorder = 1,
 		stealth = true,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 9.108,
 		turnrate = 1400,
 		unitname = "tlladvfight",
 		unitnumber = 886,

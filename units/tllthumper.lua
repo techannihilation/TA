@@ -2,7 +2,7 @@ return {
 	tllthumper = {
 		acceleration = 0.03,
 		bmcode = 1,
-		brakerate = 0.02,
+		brakerate = 0.06,
 		buildcostenergy = 9020,
 		buildcostmetal = 3080,
 		builder = false,
@@ -42,6 +42,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.5148,
 		turnrate = 200,
 		unitname = "tllthumper",
 		unitnumber = 834,

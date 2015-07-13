@@ -2,7 +2,7 @@ return {
 	cormart = {
 		acceleration = 0.0204,
 		bmcode = 1,
-		brakerate = 0.1232,
+		brakerate = 0.3696,
 		buildcostenergy = 5505,
 		buildcostmetal = 263,
 		builder = false,
@@ -56,6 +56,9 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 31,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.287,
 		turnrate = 445,
 		unitname = "cormart",
 		workertime = 0,

@@ -1,7 +1,7 @@
 return {
 	cbuilderlvl2 = {
 		acceleration = 0.0266,
-		brakerate = 3.5295,
+		brakerate = 0.35295,
 		buildcostenergy = 3358,
 		buildcostmetal = 654,
 		builddistance = 100,
@@ -46,6 +46,8 @@ return {
 		selfdestructas = "BIG_UNIT_VTOL",
 		side = "CORE",
 		sightdistance = 270,
+		turninplaceanglelimit = 360,
+		turninplacespeedlimit = 4.74012,
 		turnrate = 353.78,
 		unitname = "cbuilderlvl2",
 		workertime = 100,

@@ -2,7 +2,7 @@ return {
 	armscar = {
 		acceleration = 0.012,
 		bmcode = 1,
-		brakerate = 0.0085,
+		brakerate = 0.0255,
 		buildcostenergy = 3500,
 		buildcostmetal = 490,
 		builder = false,
@@ -44,6 +44,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 0,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.891,
 		turnrate = 340,
 		unitname = "armscar",
 		unitnumber = 760,

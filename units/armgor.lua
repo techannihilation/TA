@@ -2,7 +2,7 @@ return {
 	armgor = {
 		acceleration = 0.09,
 		bmcode = 1,
-		brakerate = 0.19,
+		brakerate = 0.57,
 		buildcostenergy = 160000,
 		buildcostmetal = 14500,
 		builder = false,
@@ -51,6 +51,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.122,
 		turnrate = 960,
 		unitname = "armgor",
 		unitnumber = 231,

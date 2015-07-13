@@ -1,11 +1,11 @@
 return {
 	tllsonpl = {
-		acceleration = 0.09,
+		acceleration = 0.0297,
 		altfromsealevel = 1,
 		amphibious = 1,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 4.6,
+		brakerate = 0.046,
 		buildcostenergy = 7941,
 		buildcostmetal = 151,
 		builder = false,
@@ -52,6 +52,8 @@ return {
 		sonardistance = 1550,
 		standingmoveorder = 2,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 6.369,
 		turnrate = 455,
 		unitname = "tllsonpl",
 		unitnumber = 928,

@@ -2,7 +2,7 @@ return {
 	marauder = {
 		acceleration = 0.22,
 		bmcode = 1,
-		brakerate = 0.238,
+		brakerate = 0.714,
 		buildcostenergy = 25500,
 		buildcostmetal = 1350,
 		builder = false,
@@ -45,6 +45,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.815,
 		turnrate = 1056,
 		unitname = "marauder",
 		upright = true,

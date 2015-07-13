@@ -2,7 +2,7 @@ return {
 	armmlrs = {
 		acceleration = 0.34,
 		bmcode = 1,
-		brakerate = 0.00977,
+		brakerate = 0.02931,
 		buildcostenergy = 89460,
 		buildcostmetal = 6240,
 		builder = false,
@@ -51,6 +51,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.6996,
 		turnrate = 250,
 		unitname = "armmlrs",
 		unitnumber = 1876,

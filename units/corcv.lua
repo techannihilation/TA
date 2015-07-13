@@ -1,8 +1,8 @@
 return {
 	corcv = {
-		acceleration = 0.0572,
+		acceleration = 0.1144,
 		bmcode = 1,
-		brakerate = 0.1782,
+		brakerate = 1.0692,
 		buildcostenergy = 1979,
 		buildcostmetal = 134,
 		builddistance = 162,
@@ -54,6 +54,9 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 32,
+		turninplace = 1,
+		turninplaceanglelimit = 60,
+		turninplacespeedlimit = 1.1979,
 		turnrate = 421,
 		unitname = "corcv",
 		workertime = 90,

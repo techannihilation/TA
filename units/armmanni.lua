@@ -2,7 +2,7 @@ return {
 	armmanni = {
 		acceleration = 0.0132,
 		bmcode = 1,
-		brakerate = 0.1375,
+		brakerate = 0.4125,
 		buildcostenergy = 12477,
 		buildcostmetal = 1129,
 		builder = false,
@@ -57,6 +57,9 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 37,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.00188,
 		turnrate = 151,
 		unitname = "armmanni",
 		workertime = 0,

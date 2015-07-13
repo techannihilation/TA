@@ -2,7 +2,7 @@ return {
 	armrottweiler = {
 		acceleration = 0.01,
 		bmcode = 1,
-		brakerate = 0.015,
+		brakerate = 0.045,
 		buildcostenergy = 5220,
 		buildcostmetal = 650,
 		builder = false,
@@ -56,6 +56,9 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 34,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.518,
 		turnrate = 375,
 		unitname = "armrottweiler",
 		unitnumber = 6625,

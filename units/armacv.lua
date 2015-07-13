@@ -1,8 +1,8 @@
 return {
 	armacv = {
-		acceleration = 0.036,
+		acceleration = 0.072,
 		bmcode = 1,
-		brakerate = 0.15,
+		brakerate = 0.9,
 		buildcostenergy = 52060,
 		buildcostmetal = 2930,
 		builddistance = 225,
@@ -57,6 +57,9 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 34,
+		turninplace = 1,
+		turninplaceanglelimit = 60,
+		turninplacespeedlimit = 1.2342,
 		turnrate = 399,
 		unitname = "armacv",
 		workertime = 350,

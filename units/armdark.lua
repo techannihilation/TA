@@ -2,7 +2,7 @@ return {
 	armdark = {
 		acceleration = 0.01,
 		bmcode = 1,
-		brakerate = 0.00763,
+		brakerate = 0.02289,
 		buildcostenergy = 4994,
 		buildcostmetal = 267,
 		builder = false,
@@ -53,6 +53,9 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 34,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.726,
 		turnrate = 300,
 		unitname = "armdark",
 		unitnumber = 2541,

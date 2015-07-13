@@ -2,7 +2,7 @@ return {
 	armrock = {
 		acceleration = 0.12,
 		bmcode = 1,
-		brakerate = 0.188,
+		brakerate = 0.564,
 		buildcostenergy = 944,
 		buildcostmetal = 97,
 		builder = false,
@@ -49,6 +49,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.1484,
 		turnrate = 1106,
 		unitname = "armrock",
 		upright = true,

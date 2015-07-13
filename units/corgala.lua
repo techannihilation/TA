@@ -2,7 +2,7 @@ return {
 	corgala = {
 		acceleration = 0.08,
 		bmcode = 1,
-		brakerate = 0.21,
+		brakerate = 0.63,
 		buildcostenergy = 1000000,
 		buildcostmetal = 40000,
 		builder = false,
@@ -53,6 +53,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 0,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.2408,
 		turnrate = 320,
 		unitname = "corgala",
 		upright = true,

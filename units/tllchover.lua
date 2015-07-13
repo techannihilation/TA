@@ -2,7 +2,7 @@ return {
 	tllchover = {
 		acceleration = 0.045,
 		bmcode = 1,
-		brakerate = 0.08,
+		brakerate = 0.24,
 		buildcostenergy = 3501,
 		buildcostmetal = 187,
 		builddistance = 197,
@@ -48,6 +48,9 @@ return {
 		sightdistance = 310,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.3992,
 		turnrate = 400,
 		unitname = "tllchover",
 		unitnumber = 18701,

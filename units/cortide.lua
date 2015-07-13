@@ -37,6 +37,8 @@ return {
 		side = "CORE",
 		sightdistance = 130,
 		tidalgenerator = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "cortide",
 		waterline = 13,

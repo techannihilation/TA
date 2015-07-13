@@ -2,7 +2,7 @@ return {
 	tllriot = {
 		acceleration = 0.15,
 		bmcode = 1,
-		brakerate = 0.17,
+		brakerate = 0.51,
 		buildcostenergy = 1450,
 		buildcostmetal = 325,
 		builder = false,
@@ -48,6 +48,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.858,
 		turnrate = 210,
 		unitname = "tllriot",
 		workertime = 0,

@@ -2,7 +2,7 @@ return {
 	armcs = {
 		acceleration = 0.05,
 		bmcode = 1,
-		brakerate = 0.05,
+		brakerate = 0.15,
 		buildcostenergy = 2130,
 		buildcostmetal = 255,
 		builddistance = 262,
@@ -52,6 +52,8 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		terraformspeed = 750,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.6698,
 		turnrate = 448,
 		unitname = "armcs",
 		waterline = 1,

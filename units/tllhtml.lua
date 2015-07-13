@@ -2,7 +2,7 @@ return {
 	tllhtml = {
 		acceleration = 0.22,
 		bmcode = 1,
-		brakerate = 0.027,
+		brakerate = 0.081,
 		buildcostenergy = 180000,
 		buildcostmetal = 15950,
 		builder = false,
@@ -55,6 +55,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.891,
 		turnrate = 390,
 		unitname = "tllhtml",
 		unitnumber = 942,

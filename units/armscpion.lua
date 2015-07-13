@@ -2,7 +2,7 @@ return {
 	armscpion = {
 		acceleration = 0.01,
 		bmcode = 1,
-		brakerate = 0.00763,
+		brakerate = 0.02289,
 		buildcostenergy = 9994,
 		buildcostmetal = 1500,
 		builder = false,
@@ -58,6 +58,9 @@ return {
 		standingmoveorder = 1,
 		stealth = true,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.7194,
 		turnrate = 350,
 		unitname = "armscpion",
 		unitnumber = 100001,

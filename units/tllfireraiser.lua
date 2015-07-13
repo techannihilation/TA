@@ -2,7 +2,7 @@ return {
 	tllfireraiser = {
 		acceleration = 0.17,
 		bmcode = 1,
-		brakerate = 0.21,
+		brakerate = 0.63,
 		buildcostenergy = 841,
 		buildcostmetal = 155,
 		builder = false,
@@ -47,6 +47,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.056,
 		turnrate = 1005,
 		unitname = "tllfireraiser",
 		unitnumber = 821,

@@ -2,7 +2,7 @@ return {
 	armthovr = {
 		acceleration = 0.043,
 		bmcode = 1,
-		brakerate = 0.062,
+		brakerate = 0.186,
 		buildangle = 16384,
 		buildcostenergy = 7938,
 		buildcostmetal = 665,
@@ -59,6 +59,9 @@ return {
 		transportcapacity = 20,
 		transportmaxunits = 8,
 		transportsize = 3,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.3662,
 		turnrate = 395,
 		unitname = "armthovr",
 		waterline = 14,

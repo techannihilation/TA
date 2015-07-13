@@ -2,7 +2,7 @@ return {
 	armham1 = {
 		acceleration = 0.12,
 		bmcode = 1,
-		brakerate = 0.225,
+		brakerate = 0.675,
 		buildcostenergy = 2131,
 		buildcostmetal = 248,
 		builder = false,
@@ -50,6 +50,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.924,
 		turnrate = 1094,
 		unitname = "armham1",
 		upright = true,

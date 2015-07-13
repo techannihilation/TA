@@ -42,6 +42,8 @@ return {
 		side = "ARM",
 		sightdistance = 273,
 		standingfireorder = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "corpcan",
 		workertime = 0,

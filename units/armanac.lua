@@ -2,7 +2,7 @@ return {
 	armanac = {
 		acceleration = 0.084,
 		bmcode = 1,
-		brakerate = 0.112,
+		brakerate = 0.336,
 		buildcostenergy = 2444,
 		buildcostmetal = 269,
 		builder = false,
@@ -47,6 +47,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.6698,
 		turnrate = 525,
 		unitname = "armanac",
 		workertime = 0,

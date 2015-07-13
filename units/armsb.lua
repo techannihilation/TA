@@ -1,12 +1,12 @@
 return {
 	armsb = {
-		acceleration = 0.096,
+		acceleration = 0.03168,
 		altfromsealevel = 1,
 		amphibious = 1,
 		attackrunlength = 260,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.5,
+		brakerate = 0.005,
 		buildcostenergy = 7544,
 		buildcostmetal = 169,
 		builder = false,
@@ -56,6 +56,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 5.8806,
 		turnrate = 392,
 		unitname = "armsb",
 		workertime = 0,

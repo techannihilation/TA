@@ -46,6 +46,8 @@ return {
 		selfdestructas = "BIG_UNIT",
 		side = "CORE",
 		sightdistance = 104,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "corjamt",
 		usebuildinggrounddecal = true,

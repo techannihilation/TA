@@ -2,7 +2,7 @@ return {
 	correap = {
 		acceleration = 0.044,
 		bmcode = 1,
-		brakerate = 0.066,
+		brakerate = 0.198,
 		buildcostenergy = 11348,
 		buildcostmetal = 589,
 		builder = false,
@@ -55,6 +55,9 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 33,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.5015,
 		turnrate = 434,
 		unitname = "correap",
 		workertime = 0,

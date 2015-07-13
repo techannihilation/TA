@@ -2,7 +2,7 @@ return {
 	cordem = {
 		acceleration = 0.1,
 		bmcode = 1,
-		brakerate = 0.15,
+		brakerate = 0.45,
 		buildcostenergy = 169000,
 		buildcostmetal = 10600,
 		builder = false,
@@ -49,6 +49,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.924,
 		turnrate = 590,
 		unitname = "cordem",
 		unitnumber = 25001,

@@ -2,7 +2,7 @@ return {
 	tllbug = {
 		acceleration = 0.4,
 		bmcode = 1,
-		brakerate = 0.4,
+		brakerate = 1.2,
 		buildcostenergy = 112,
 		buildcostmetal = 31,
 		builder = false,
@@ -48,6 +48,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 2,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 2.97,
 		turnrate = 1300,
 		unitname = "tllbug",
 		unitnumber = 824,

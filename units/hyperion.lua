@@ -2,7 +2,7 @@ return {
 	hyperion = {
 		acceleration = 0.08,
 		bmcode = 1,
-		brakerate = 0.024,
+		brakerate = 0.072,
 		buildcostenergy = 110000,
 		buildcostmetal = 66400,
 		builder = false,
@@ -56,6 +56,8 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 2,
 		tedclass = "KBOT",
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.254,
 		turnrate = 480,
 		unitname = "hyperion",
 		unitnumber = 764,

@@ -2,7 +2,7 @@ return {
 	ananotower = {
 		acceleration = 0.2394,
 		bmcode = 1,
-		brakerate = 0.798,
+		brakerate = 2.394,
 		buildcostenergy = 305000,
 		buildcostmetal = 14500,
 		builddistance = 900,
@@ -54,6 +54,8 @@ return {
 		sightdistance = 900,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 1.33,
 		unitname = "ananotower",
 		usebuildinggrounddecal = true,

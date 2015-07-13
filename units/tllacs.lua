@@ -2,7 +2,7 @@ return {
 	tllacs = {
 		acceleration = 0.11,
 		bmcode = 1,
-		brakerate = 0.3,
+		brakerate = 0.9,
 		buildcostenergy = 7951,
 		buildcostmetal = 1996,
 		builddistance = 222,
@@ -47,6 +47,8 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.32,
 		turnrate = 450,
 		unitname = "tllacs",
 		unitnumber = 864,

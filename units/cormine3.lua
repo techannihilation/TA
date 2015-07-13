@@ -57,6 +57,8 @@ return {
 		sightdistance = 83.2,
 		standingfireorder = 0,
 		stealth = true,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "cormine3",
 		usebuildinggrounddecal = true,

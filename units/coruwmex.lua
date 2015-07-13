@@ -41,6 +41,8 @@ return {
 		selfdestructcountdown = 1,
 		side = "CORE",
 		sightdistance = 169,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "coruwmex",
 		usebuildinggrounddecal = true,

@@ -2,7 +2,7 @@ return {
 	cortotal = {
 		acceleration = 0.013,
 		bmcode = 1,
-		brakerate = 0.02,
+		brakerate = 0.06,
 		buildcostenergy = 21000,
 		buildcostmetal = 3850,
 		builder = false,
@@ -46,6 +46,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.726,
 		turnrate = 400,
 		unitname = "cortotal",
 		unitnumber = 5365,

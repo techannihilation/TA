@@ -2,7 +2,7 @@ return {
 	armraptor = {
 		acceleration = 0.21,
 		bmcode = 1,
-		brakerate = 0.21,
+		brakerate = 0.63,
 		buildcostenergy = 364500,
 		buildcostmetal = 13450,
 		builder = false,
@@ -56,6 +56,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.122,
 		turnrate = 1080,
 		unitname = "armraptor",
 		unitnumber = 1201,

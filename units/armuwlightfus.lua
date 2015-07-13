@@ -36,6 +36,8 @@ return {
 		selfdestructas = "CRAWL_BLAST",
 		side = "ARM",
 		sightdistance = 143,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "armuwlightfus",
 		workertime = 0,

@@ -2,7 +2,7 @@ return {
 	tllarchnano = {
 		acceleration = 0.36,
 		bmcode = 1,
-		brakerate = 0.07,
+		brakerate = 0.21,
 		buildcostenergy = 2636,
 		buildcostmetal = 357,
 		builddistance = 212,
@@ -48,6 +48,8 @@ return {
 		sonardistance = 100,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.98,
 		turnrate = 1020,
 		unitname = "tllarchnano",
 		unitnumber = 877,

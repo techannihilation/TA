@@ -2,7 +2,7 @@ return {
 	coracsub = {
 		acceleration = 0.035,
 		bmcode = 1,
-		brakerate = 0.212,
+		brakerate = 0.636,
 		buildcostenergy = 37900,
 		buildcostmetal = 3190,
 		builddistance = 310,
@@ -51,6 +51,8 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		terraformspeed = 900,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.32,
 		turnrate = 364,
 		unitname = "coracsub",
 		waterline = 30,

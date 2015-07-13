@@ -1,7 +1,7 @@
 return {
 	corfnanotc3 = {
 		acceleration = 0,
-		brakerate = 1.5,
+		brakerate = 4.5,
 		buildcostenergy = 200000,
 		buildcostmetal = 6800,
 		builddistance = 900,
@@ -45,6 +45,8 @@ return {
 		side = "CORE",
 		sightdistance = 380,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 1,
 		unitname = "corfnanotc3",
 		upright = true,

@@ -2,7 +2,7 @@ return {
 	corak1 = {
 		acceleration = 0.384,
 		bmcode = 1,
-		brakerate = 0.25,
+		brakerate = 0.75,
 		buildcostenergy = 826,
 		buildcostmetal = 64,
 		builder = false,
@@ -49,6 +49,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.716,
 		turnrate = 1210,
 		unitname = "corak1",
 		upright = true,

@@ -2,7 +2,7 @@ return {
 	armlaspd = {
 		acceleration = 0.12,
 		bmcode = 1,
-		brakerate = 0.15,
+		brakerate = 0.45,
 		buildcostenergy = 7568,
 		buildcostmetal = 872,
 		builder = false,
@@ -47,6 +47,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.8512,
 		turnrate = 1020,
 		unitname = "armlaspd",
 		unitnumber = 6517,

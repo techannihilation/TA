@@ -2,7 +2,7 @@ return {
 	armjanus = {
 		acceleration = 0.0198,
 		bmcode = 1,
-		brakerate = 0.055,
+		brakerate = 0.165,
 		buildcostenergy = 2361,
 		buildcostmetal = 271,
 		builder = false,
@@ -52,6 +52,9 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 24,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.29228,
 		turnrate = 338.79999,
 		unitname = "armjanus",
 		workertime = 0,

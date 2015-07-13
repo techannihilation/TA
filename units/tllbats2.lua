@@ -2,7 +2,7 @@ return {
 	tllbats2 = {
 		acceleration = 0.015,
 		bmcode = 1,
-		brakerate = 0.12,
+		brakerate = 0.36,
 		buildangle = 16384,
 		buildcostenergy = 27540,
 		buildcostmetal = 5181,
@@ -51,6 +51,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.353,
 		turnrate = 362,
 		unitname = "tllbats2",
 		unitnumber = 930,

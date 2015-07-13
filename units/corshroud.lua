@@ -46,6 +46,8 @@ return {
 		selfdestructas = "SMALL_BUILDING",
 		side = "CORE",
 		sightdistance = 155,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "corshroud",
 		usebuildinggrounddecal = true,

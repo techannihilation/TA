@@ -1,10 +1,10 @@
 return {
 	tllseaf = {
-		acceleration = 0.6,
+		acceleration = 0.198,
 		airsightdistance = 700,
 		amphibious = 1,
 		bmcode = 1,
-		brakerate = 4.2,
+		brakerate = 0.042,
 		buildcostenergy = 2000,
 		buildcostmetal = 275,
 		builder = false,
@@ -52,6 +52,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 2,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 7.59,
 		turnrate = 512,
 		unitname = "tllseaf",
 		unitnumber = 919,

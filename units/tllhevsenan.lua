@@ -1,7 +1,7 @@
 return {
 	tllhevsenan = {
 		acceleration = 0,
-		brakerate = 1.5,
+		brakerate = 4.5,
 		buildcostenergy = 2389,
 		buildcostmetal = 523,
 		builddistance = 600,
@@ -44,6 +44,8 @@ return {
 		side = "TLL",
 		sightdistance = 420,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 1,
 		unitname = "armhevsenan",
 		upright = true,

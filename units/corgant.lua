@@ -47,6 +47,8 @@ return {
 		sightdistance = 273,
 		standingfireorder = 2,
 		standingmoveorder = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "corgant",
 		usebuildinggrounddecal = true,

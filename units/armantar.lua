@@ -2,7 +2,7 @@ return {
 	armantar = {
 		acceleration = 0.01,
 		bmcode = 1,
-		brakerate = 0.05629,
+		brakerate = 0.16887,
 		buildcostenergy = 141550,
 		buildcostmetal = 15550,
 		builder = false,
@@ -53,6 +53,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.056,
 		turnrate = 280,
 		unitname = "armantar",
 		unitnumber = 954568,

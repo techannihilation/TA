@@ -53,6 +53,8 @@ return {
 		selfdestructas = "BIG_UNIT",
 		side = "ARM",
 		sightdistance = 195,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "armjamt",
 		usebuildinggrounddecal = true,

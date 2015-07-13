@@ -2,7 +2,7 @@ return {
 	armkrmi = {
 		acceleration = 0.2,
 		bmcode = 1,
-		brakerate = 0.19,
+		brakerate = 0.57,
 		buildcostenergy = 18560,
 		buildcostmetal = 1512,
 		builder = false,
@@ -50,6 +50,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.98,
 		turnrate = 960,
 		unitname = "armkrmi",
 		unitnumber = 9521,

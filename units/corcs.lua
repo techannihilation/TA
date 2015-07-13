@@ -2,7 +2,7 @@ return {
 	corcs = {
 		acceleration = 0.04,
 		bmcode = 1,
-		brakerate = 0.04,
+		brakerate = 0.12,
 		buildcostenergy = 2375,
 		buildcostmetal = 260,
 		builddistance = 262,
@@ -52,6 +52,8 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		terraformspeed = 750,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.518,
 		turnrate = 426,
 		unitname = "corcs",
 		waterline = 1,

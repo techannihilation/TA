@@ -2,7 +2,7 @@ return {
 	clb = {
 		acceleration = 0.036,
 		bmcode = 1,
-		brakerate = 0.05,
+		brakerate = 0.15,
 		buildcostenergy = 92460,
 		buildcostmetal = 5060,
 		builder = false,
@@ -57,6 +57,8 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 60,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.858,
 		turnrate = 132,
 		unitname = "clb",
 		unitnumber = 995,

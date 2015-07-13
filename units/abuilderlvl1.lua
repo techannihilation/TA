@@ -1,7 +1,7 @@
 return {
 	abuilderlvl1 = {
 		acceleration = 0.03,
-		brakerate = 4,
+		brakerate = 0.4,
 		buildcostenergy = 12595,
 		buildcostmetal = 350,
 		builddistance = 100,
@@ -44,6 +44,8 @@ return {
 		selfdestructas = "SMALL_UNIT_VTOL",
 		side = "ARM",
 		sightdistance = 270,
+		turninplaceanglelimit = 360,
+		turninplacespeedlimit = 6.6,
 		turnrate = 513,
 		unitname = "abuilderlvl1",
 		workertime = 150,

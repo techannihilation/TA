@@ -48,6 +48,8 @@ return {
 		selfdestructcountdown = 1,
 		side = "ARM",
 		sightdistance = 273,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "armmex1",
 		usebuildinggrounddecal = true,

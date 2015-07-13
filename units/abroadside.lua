@@ -3,7 +3,7 @@ return {
 		acceleration = 0.00931,
 		airhoverfactor = 0,
 		airstrafe = false,
-		brakerate = 0.399,
+		brakerate = 0.0399,
 		buildcostenergy = 1610000,
 		buildcostmetal = 276600,
 		builder = false,
@@ -49,6 +49,8 @@ return {
 		selfdestructas = "MEGA_BLAST1",
 		side = "ARM",
 		sightdistance = 800,
+		turninplaceanglelimit = 360,
+		turninplacespeedlimit = 0.6567,
 		turnrate = 86.45,
 		unitname = "abroadside",
 		featuredefs = {

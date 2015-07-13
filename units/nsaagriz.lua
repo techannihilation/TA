@@ -2,7 +2,7 @@ return {
 	nsaagriz = {
 		acceleration = 0.041,
 		bmcode = 1,
-		brakerate = 0.095,
+		brakerate = 0.285,
 		buildcostenergy = 791817,
 		buildcostmetal = 25892,
 		builder = false,
@@ -61,6 +61,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.594,
 		turnrate = 600,
 		unitname = "nsaagriz",
 		unitnumber = 1413,

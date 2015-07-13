@@ -47,6 +47,8 @@ return {
 		selfdestructas = "MEDIUM_BUILDING",
 		side = "ARM",
 		sightdistance = 210,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "armdf",
 		usebuildinggrounddecal = true,

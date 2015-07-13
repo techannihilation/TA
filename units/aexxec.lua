@@ -2,7 +2,7 @@ return {
 	aexxec = {
 		acceleration = 0.4,
 		bmcode = 1,
-		brakerate = 0.25,
+		brakerate = 0.75,
 		buildcostenergy = 5311,
 		buildcostmetal = 675,
 		builder = false,
@@ -52,6 +52,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.693,
 		turnrate = 700,
 		unitname = "aexxec",
 		unitnumber = 901,

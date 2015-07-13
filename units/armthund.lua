@@ -1,11 +1,11 @@
 return {
 	armthund = {
-		acceleration = 0.096,
+		acceleration = 0.03168,
 		altfromsealevel = 1,
 		attackrunlength = 170,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 5,
+		brakerate = 0.05,
 		buildcostenergy = 5075,
 		buildcostmetal = 145,
 		builder = false,
@@ -52,6 +52,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 5.544,
 		turnrate = 829,
 		unitname = "armthund",
 		workertime = 0,

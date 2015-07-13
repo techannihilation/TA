@@ -2,7 +2,7 @@ return {
 	armjugg = {
 		acceleration = 0.09,
 		bmcode = 1,
-		brakerate = 0.19,
+		brakerate = 0.57,
 		buildcostenergy = 119000,
 		buildcostmetal = 13400,
 		builder = false,
@@ -51,6 +51,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.617,
 		turnrate = 960,
 		unitname = "armjugg",
 		unitnumber = 20003,

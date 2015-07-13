@@ -48,6 +48,8 @@ return {
 		side = "ARM",
 		sightdistance = 286,
 		stealth = true,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "armamex",
 		usebuildinggrounddecal = true,

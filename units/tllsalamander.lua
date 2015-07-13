@@ -2,7 +2,7 @@ return {
 	tllsalamander = {
 		acceleration = 0.08,
 		bmcode = 1,
-		brakerate = 0.18,
+		brakerate = 0.54,
 		buildcostenergy = 14250,
 		buildcostmetal = 428,
 		builder = false,
@@ -42,6 +42,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 0,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.023,
 		turnrate = 880,
 		unitname = "tllsalamander",
 		unitnumber = 837,

@@ -2,7 +2,7 @@ return {
 	armhplasma = {
 		acceleration = 0.06,
 		bmcode = 1,
-		brakerate = 0.09,
+		brakerate = 0.27,
 		buildcostenergy = 13494,
 		buildcostmetal = 887,
 		builder = false,
@@ -49,6 +49,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.716,
 		turnrate = 300,
 		unitname = "armhplasma",
 		unitnumber = 18703,

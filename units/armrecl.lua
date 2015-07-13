@@ -2,7 +2,7 @@ return {
 	armrecl = {
 		acceleration = 0.048,
 		bmcode = 1,
-		brakerate = 0.25,
+		brakerate = 0.75,
 		buildcostenergy = 6911,
 		buildcostmetal = 413,
 		builddistance = 112,
@@ -50,6 +50,8 @@ return {
 		sightdistance = 156,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.5576,
 		turnrate = 282,
 		unitname = "armrecl",
 		waterline = 30,

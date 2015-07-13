@@ -2,7 +2,7 @@ return {
 	dao = {
 		acceleration = 0.031,
 		bmcode = 1,
-		brakerate = 0.00763,
+		brakerate = 0.02289,
 		buildcostenergy = 2848,
 		buildcostmetal = 373,
 		builder = false,
@@ -53,6 +53,9 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 26,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.65,
 		turnrate = 400,
 		unitname = "dao",
 		unitnumber = 176,

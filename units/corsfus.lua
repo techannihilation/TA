@@ -48,6 +48,8 @@ return {
 		selfdestructas = "CRBLMSSL_CORE",
 		side = "CORE",
 		sightdistance = 273,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "corsfus",
 		usebuildinggrounddecal = true,

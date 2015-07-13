@@ -2,7 +2,7 @@ return {
 	nsaclash = {
 		acceleration = 0.072,
 		bmcode = 1,
-		brakerate = 0.075,
+		brakerate = 0.225,
 		buildcostenergy = 9200,
 		buildcostmetal = 650,
 		builder = false,
@@ -47,6 +47,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.9768,
 		turnrate = 410,
 		unitname = "nsaclash",
 		workertime = 0,

@@ -2,7 +2,7 @@ return {
 	tllhoverlight = {
 		acceleration = 0.15,
 		bmcode = 1,
-		brakerate = 0.05,
+		brakerate = 0.15,
 		buildcostenergy = 1099,
 		buildcostmetal = 70,
 		builder = false,
@@ -49,6 +49,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 2.508,
 		turnrate = 425,
 		unitname = "tllhoverlight",
 		unitnumber = 28303,

@@ -1,8 +1,8 @@
 return {
 	tllacv = {
-		acceleration = 0.018,
+		acceleration = 0.036,
 		bmcode = 1,
-		brakerate = 0.46,
+		brakerate = 2.76,
 		buildcostenergy = 34400,
 		buildcostmetal = 1830,
 		builddistance = 225,
@@ -47,6 +47,9 @@ return {
 		sightdistance = 230,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplace = 1,
+		turninplaceanglelimit = 60,
+		turninplacespeedlimit = 1.089,
 		turnrate = 450,
 		unitname = "tllacv",
 		unitnumber = 835,

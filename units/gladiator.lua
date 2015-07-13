@@ -2,7 +2,7 @@ return {
 	gladiator = {
 		acceleration = 0.06,
 		bmcode = 1,
-		brakerate = 0.19,
+		brakerate = 0.57,
 		buildcostenergy = 7450,
 		buildcostmetal = 520,
 		builder = false,
@@ -53,6 +53,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.825,
 		turnrate = 700,
 		unitname = "gladiator",
 		unitnumber = 162,

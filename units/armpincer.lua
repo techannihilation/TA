@@ -2,7 +2,7 @@ return {
 	armpincer = {
 		acceleration = 0.011,
 		bmcode = 1,
-		brakerate = 0.011,
+		brakerate = 0.033,
 		buildcostenergy = 1921,
 		buildcostmetal = 187,
 		builder = false,
@@ -52,6 +52,9 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 30,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.485,
 		turnrate = 398,
 		unitname = "armpincer",
 		workertime = 0,

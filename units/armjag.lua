@@ -2,7 +2,7 @@ return {
 	armjag = {
 		acceleration = 0.4,
 		bmcode = 1,
-		brakerate = 0.22,
+		brakerate = 0.66,
 		buildcostenergy = 212000,
 		buildcostmetal = 18800,
 		builder = false,
@@ -56,6 +56,8 @@ return {
 		standingfireorder = 0,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.858,
 		turnrate = 450,
 		unitname = "armjag",
 		unitnumber = 23174,

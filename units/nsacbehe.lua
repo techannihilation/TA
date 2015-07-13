@@ -2,7 +2,7 @@ return {
 	nsacbehe = {
 		acceleration = 0.03,
 		bmcode = 1,
-		brakerate = 0.23,
+		brakerate = 0.69,
 		buildcostenergy = 15360,
 		buildcostmetal = 1691,
 		builder = false,
@@ -52,6 +52,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.089,
 		turnrate = 169,
 		unitname = "nsacbehe",
 		unitnumber = 1408,

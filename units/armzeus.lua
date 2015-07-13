@@ -2,7 +2,7 @@ return {
 	armzeus = {
 		acceleration = 0.12,
 		bmcode = 1,
-		brakerate = 0.25,
+		brakerate = 0.75,
 		buildcostenergy = 5900,
 		buildcostmetal = 420,
 		builder = false,
@@ -47,6 +47,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.0428,
 		turnrate = 1056,
 		unitname = "armzeus",
 		upright = true,

@@ -2,7 +2,7 @@ return {
 	corthud = {
 		acceleration = 0.113,
 		bmcode = 1,
-		brakerate = 0.225,
+		brakerate = 0.675,
 		buildcostenergy = 1061,
 		buildcostmetal = 132,
 		builder = false,
@@ -49,6 +49,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.99,
 		turnrate = 1099,
 		unitname = "corthud",
 		upright = true,

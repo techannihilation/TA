@@ -51,6 +51,8 @@ return {
 		sortbias = 0,
 		standingfireorder = 2,
 		standingmoveorder = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "coravp",
 		usebuildinggrounddecal = true,

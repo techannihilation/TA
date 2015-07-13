@@ -2,7 +2,7 @@ return {
 	tllartybot = {
 		acceleration = 0.4,
 		bmcode = 1,
-		brakerate = 0.18,
+		brakerate = 0.54,
 		buildcostenergy = 2161,
 		buildcostmetal = 947,
 		builder = false,
@@ -50,6 +50,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.122,
 		turnrate = 512,
 		unitname = "tllartybot",
 		unitnumber = 924,

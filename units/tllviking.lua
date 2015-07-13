@@ -2,7 +2,7 @@ return {
 	tllviking = {
 		acceleration = 0.09,
 		bmcode = 1,
-		brakerate = 0.18,
+		brakerate = 0.54,
 		buildangle = 16384,
 		buildcostenergy = 25311,
 		buildcostmetal = 4712,
@@ -46,6 +46,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 0,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.6302,
 		turnrate = 307,
 		unitname = "tllviking",
 		unitnumber = 902,

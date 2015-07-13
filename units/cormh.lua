@@ -2,7 +2,7 @@ return {
 	cormh = {
 		acceleration = 0.072,
 		bmcode = 1,
-		brakerate = 0.112,
+		brakerate = 0.336,
 		buildcostenergy = 3107,
 		buildcostmetal = 183,
 		builder = false,
@@ -50,6 +50,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.5972,
 		turnrate = 455,
 		unitname = "cormh",
 		workertime = 0,

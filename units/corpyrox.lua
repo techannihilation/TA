@@ -1,7 +1,7 @@
 return {
 	corpyrox = {
 		acceleration = 0.1,
-		brakerate = 0.18,
+		brakerate = 0.54,
 		buildcostenergy = 20000,
 		buildcostmetal = 3000,
 		builder = false,
@@ -50,6 +50,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.188,
 		turnrate = 950,
 		unitname = "corpyrox",
 		upright = true,

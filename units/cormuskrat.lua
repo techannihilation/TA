@@ -1,8 +1,8 @@
 return {
 	cormuskrat = {
-		acceleration = 0.0154,
+		acceleration = 0.0308,
 		bmcode = 1,
-		brakerate = 0.1166,
+		brakerate = 0.6996,
 		buildcostenergy = 3216,
 		buildcostmetal = 161,
 		builddistance = 172,
@@ -53,6 +53,9 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 24,
+		turninplace = 1,
+		turninplaceanglelimit = 60,
+		turninplacespeedlimit = 0.9504,
 		turnrate = 300,
 		unitname = "cormuskrat",
 		workertime = 120,

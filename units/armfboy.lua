@@ -2,7 +2,7 @@ return {
 	armfboy = {
 		acceleration = 0.12,
 		bmcode = 1,
-		brakerate = 0.125,
+		brakerate = 0.375,
 		buildcostenergy = 11193,
 		buildcostmetal = 1418,
 		builder = false,
@@ -52,6 +52,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.66,
 		turnrate = 320,
 		unitname = "armfboy",
 		upright = false,

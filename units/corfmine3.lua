@@ -48,6 +48,8 @@ return {
 		sightdistance = 71.5,
 		standingfireorder = 2,
 		stealth = true,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "corfmine3",
 		waterline = 0,

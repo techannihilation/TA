@@ -44,6 +44,8 @@ return {
 		selfdestructas = "SMALL_BUILDING",
 		side = "CORE",
 		sightdistance = 740,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "tllradarns",
 		waterline = 0,

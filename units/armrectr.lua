@@ -2,7 +2,7 @@ return {
 	armrectr = {
 		acceleration = 0.2,
 		bmcode = 1,
-		brakerate = 0.25,
+		brakerate = 0.75,
 		buildcostenergy = 1400,
 		buildcostmetal = 102,
 		builddistance = 112,
@@ -52,6 +52,8 @@ return {
 		standingmoveorder = 1,
 		stealth = true,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.716,
 		turnrate = 1122,
 		unitname = "armrectr",
 		upright = true,

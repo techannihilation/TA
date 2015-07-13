@@ -44,6 +44,8 @@ return {
 		side = "CORE",
 		sightdistance = 195,
 		standingfireorder = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "corfmd1",
 		usebuildinggrounddecal = true,

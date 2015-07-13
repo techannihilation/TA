@@ -2,7 +2,7 @@ return {
 	corsh = {
 		acceleration = 0.12,
 		bmcode = 1,
-		brakerate = 0.112,
+		brakerate = 0.336,
 		buildcostenergy = 1439,
 		buildcostmetal = 71,
 		builder = false,
@@ -47,6 +47,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 2.8116,
 		turnrate = 615,
 		unitname = "corsh",
 		workertime = 0,

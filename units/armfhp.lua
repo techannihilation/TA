@@ -40,6 +40,8 @@ return {
 		sightdistance = 286,
 		standingfireorder = 2,
 		standingmoveorder = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "armfhp",
 		waterline = 7,

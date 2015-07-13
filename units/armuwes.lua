@@ -40,6 +40,8 @@ return {
 		selfdestructas = "ESTOR_BUILDING",
 		side = "ARM",
 		sightdistance = 182,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "armuwes",
 		usebuildinggrounddecal = true,

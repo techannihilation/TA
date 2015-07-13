@@ -2,7 +2,7 @@ return {
 	troman = {
 		acceleration = 0.17,
 		bmcode = 1,
-		brakerate = 0.5,
+		brakerate = 1.5,
 		buildcostenergy = 80800,
 		buildcostmetal = 4150,
 		builder = false,
@@ -50,6 +50,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.66,
 		turnrate = 777,
 		unitname = "troman",
 		unitnumber = 673,

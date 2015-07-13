@@ -2,7 +2,7 @@ return {
 	gorg = {
 		acceleration = 0.048,
 		bmcode = 1,
-		brakerate = 0.125,
+		brakerate = 0.375,
 		buildcostenergy = 585000,
 		buildcostmetal = 34000,
 		builder = false,
@@ -48,6 +48,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.627,
 		turnrate = 109,
 		unitname = "gorg",
 		workertime = 0,

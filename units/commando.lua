@@ -1,7 +1,7 @@
 return {
 	commando = {
 		acceleration = 0.1,
-		brakerate = 0.15,
+		brakerate = 0.45,
 		buildcostenergy = 11040,
 		buildcostmetal = 618,
 		builddistance = 137,
@@ -55,6 +55,8 @@ return {
 		standingmoveorder = 1,
 		stealth = true,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.99,
 		turnrate = 1016,
 		unitname = "commando",
 		upright = true,

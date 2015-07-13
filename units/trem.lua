@@ -2,7 +2,7 @@ return {
 	trem = {
 		acceleration = 0.0528,
 		bmcode = 1,
-		brakerate = 0.11,
+		brakerate = 0.33,
 		buildcostenergy = 45350,
 		buildcostmetal = 1951,
 		builder = false,
@@ -58,6 +58,9 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 28,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.95832,
 		turnrate = 169.39999,
 		unitname = "trem",
 		workertime = 0,

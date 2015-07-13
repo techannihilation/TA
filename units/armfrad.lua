@@ -46,6 +46,8 @@ return {
 		selfdestructas = "SMALL_BUILDING",
 		side = "ARM",
 		sightdistance = 760,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "armfrad",
 		waterline = 5,

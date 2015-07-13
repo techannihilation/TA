@@ -2,7 +2,7 @@ return {
 	tllares = {
 		acceleration = 0.08,
 		bmcode = 1,
-		brakerate = 0.1,
+		brakerate = 0.3,
 		buildcostenergy = 221,
 		buildcostmetal = 148,
 		builder = false,
@@ -44,6 +44,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 2,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.947,
 		turnrate = 775,
 		unitname = "tllares",
 		unitnumber = 828,

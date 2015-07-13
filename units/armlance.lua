@@ -1,9 +1,9 @@
 return {
 	armlance = {
-		acceleration = 0.24,
+		acceleration = 0.0792,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 7.5,
+		brakerate = 0.075,
 		buildcostenergy = 6598,
 		buildcostmetal = 306,
 		builder = false,
@@ -50,6 +50,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 7.2072,
 		turnrate = 462,
 		unitname = "armlance",
 		workertime = 0,

@@ -2,7 +2,7 @@ return {
 	intruder = {
 		acceleration = 0.33,
 		bmcode = 1,
-		brakerate = 0.165,
+		brakerate = 0.495,
 		buildangle = 16384,
 		buildcostenergy = 15010,
 		buildcostmetal = 1264,
@@ -63,6 +63,9 @@ return {
 		trackwidth = 42,
 		transportcapacity = 20,
 		transportsize = 4,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.24872,
 		turnrate = 215.60001,
 		unitname = "intruder",
 		unloadspread = 4,

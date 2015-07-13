@@ -2,7 +2,7 @@ return {
 	armflash1 = {
 		acceleration = 0.15,
 		bmcode = 1,
-		brakerate = 0.1,
+		brakerate = 0.3,
 		buildcostenergy = 1480,
 		buildcostmetal = 199,
 		builder = false,
@@ -56,6 +56,9 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 22,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 2.838,
 		turnrate = 720,
 		unitname = "armflash1",
 		workertime = 0,

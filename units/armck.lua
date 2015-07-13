@@ -1,8 +1,8 @@
 return {
 	armck = {
-		acceleration = 0.24,
+		acceleration = 0.48,
 		bmcode = 1,
-		brakerate = 0.5,
+		brakerate = 3,
 		buildcostenergy = 1521,
 		buildcostmetal = 102,
 		builddistance = 197,
@@ -50,6 +50,9 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		terraformspeed = 270,
+		turninplace = 1,
+		turninplaceanglelimit = 60,
+		turninplacespeedlimit = 0.792,
 		turnrate = 1100,
 		unitname = "armck",
 		upright = true,

@@ -2,7 +2,7 @@ return {
 	corprot = {
 		acceleration = 0.5,
 		bmcode = 1,
-		brakerate = 0.15,
+		brakerate = 0.45,
 		buildcostenergy = 31250,
 		buildcostmetal = 1690,
 		builder = false,
@@ -57,6 +57,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.825,
 		turnrate = 1019,
 		unitname = "corprot",
 		unitnumber = 25003,

@@ -2,7 +2,7 @@ return {
 	requ1 = {
 		acceleration = 0.024,
 		bmcode = 1,
-		brakerate = 0.008,
+		brakerate = 0.024,
 		buildcostenergy = 43467,
 		buildcostmetal = 3901,
 		builder = false,
@@ -54,6 +54,9 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 50,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.5478,
 		turnrate = 165,
 		unitname = "requ1",
 		unitnumber = 323,

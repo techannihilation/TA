@@ -2,7 +2,7 @@ return {
 	armcrabe = {
 		acceleration = 0.55,
 		bmcode = 1,
-		brakerate = 0.25,
+		brakerate = 0.75,
 		buildcostenergy = 119500,
 		buildcostmetal = 11200,
 		builder = false,
@@ -58,6 +58,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.594,
 		turnrate = 100,
 		unitname = "armcrabe",
 		unitnumber = 100003,

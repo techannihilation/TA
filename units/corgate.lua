@@ -47,6 +47,8 @@ return {
 		selfdestructas = "MINE_NUKE",
 		side = "CORE",
 		sightdistance = 273,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "corgate",
 		usebuildinggrounddecal = true,

@@ -2,7 +2,7 @@ return {
 	vaporiser = {
 		acceleration = 0.06,
 		bmcode = 1,
-		brakerate = 0.01379,
+		brakerate = 0.04137,
 		buildcostenergy = 8435,
 		buildcostmetal = 850,
 		builder = false,
@@ -51,6 +51,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.98,
 		turnrate = 399,
 		unitname = "vaporiser",
 		unitnumber = 543,

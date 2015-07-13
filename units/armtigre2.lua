@@ -2,7 +2,7 @@ return {
 	armtigre2 = {
 		acceleration = 0.09,
 		bmcode = 1,
-		brakerate = 0.01,
+		brakerate = 0.03,
 		buildcostenergy = 90000,
 		buildcostmetal = 4500,
 		builder = false,
@@ -52,6 +52,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.726,
 		turnrate = 180,
 		unitname = "armtigre2",
 		unitnumber = 5698,

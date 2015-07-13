@@ -2,7 +2,7 @@ return {
 	tllhplasma = {
 		acceleration = 0.075,
 		bmcode = 1,
-		brakerate = 0.1,
+		brakerate = 0.3,
 		buildcostenergy = 5150,
 		buildcostmetal = 535,
 		builder = false,
@@ -48,6 +48,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.518,
 		turnrate = 280,
 		unitname = "tllhplasma",
 		unitnumber = 17404,

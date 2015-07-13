@@ -2,7 +2,7 @@ return {
 	corpyro = {
 		acceleration = 0.45,
 		bmcode = 1,
-		brakerate = 0.65,
+		brakerate = 1.95,
 		buildcostenergy = 2783,
 		buildcostmetal = 189,
 		builder = false,
@@ -49,6 +49,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.782,
 		turnrate = 1145,
 		unitname = "corpyro",
 		upright = true,

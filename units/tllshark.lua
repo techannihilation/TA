@@ -2,7 +2,7 @@ return {
 	tllshark = {
 		acceleration = 0.02,
 		bmcode = 1,
-		brakerate = 0.1,
+		brakerate = 0.3,
 		buildcostenergy = 5643,
 		buildcostmetal = 90,
 		builder = false,
@@ -52,6 +52,8 @@ return {
 		standingfireorder = 0,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 2.541,
 		turnrate = 400,
 		unitname = "tllshark",
 		unitnumber = 906,

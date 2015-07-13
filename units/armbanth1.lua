@@ -2,7 +2,7 @@ return {
 	armbanth1 = {
 		acceleration = 0.103,
 		bmcode = 1,
-		brakerate = 0.218,
+		brakerate = 0.654,
 		buildcostenergy = 967949,
 		buildcostmetal = 80691,
 		builder = false,
@@ -50,6 +50,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.9372,
 		turnrate = 1056,
 		unitname = "armbanth1",
 		upright = true,

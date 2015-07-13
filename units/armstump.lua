@@ -2,7 +2,7 @@ return {
 	armstump = {
 		acceleration = 0.0287,
 		bmcode = 1,
-		brakerate = 0.0298,
+		brakerate = 0.0894,
 		buildcostenergy = 1746,
 		buildcostmetal = 201,
 		builder = false,
@@ -53,6 +53,9 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 24,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.914,
 		turnrate = 484,
 		unitname = "armstump",
 		workertime = 0,

@@ -1,10 +1,10 @@
 return {
 	tllrsplane = {
-		acceleration = 0.095,
+		acceleration = 0.03135,
 		altfromsealevel = 10,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 4.5,
+		brakerate = 0.045,
 		buildcostenergy = 1822,
 		buildcostmetal = 315,
 		builder = false,
@@ -49,6 +49,8 @@ return {
 		standingmoveorder = 1,
 		stealth = true,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 7.392,
 		turnrate = 340,
 		unitname = "tllrsplane",
 		unitnumber = 899,

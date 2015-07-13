@@ -2,7 +2,7 @@ return {
 	corgator = {
 		acceleration = 0.055,
 		bmcode = 1,
-		brakerate = 0.055,
+		brakerate = 0.165,
 		buildcostenergy = 1042,
 		buildcostmetal = 118,
 		builder = false,
@@ -52,6 +52,9 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 21,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.98,
 		turnrate = 484,
 		unitname = "corgator",
 		workertime = 0,

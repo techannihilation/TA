@@ -2,7 +2,7 @@ return {
 	tllcrawlb = {
 		acceleration = 0.3,
 		bmcode = 1,
-		brakerate = 0.12,
+		brakerate = 0.36,
 		buildcostenergy = 1741,
 		buildcostmetal = 372,
 		builder = false,
@@ -50,6 +50,8 @@ return {
 		standingfireorder = 0,
 		standingmoveorder = 0,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.32,
 		turnrate = 512,
 		unitname = "tllcrawlb",
 		unitnumber = 927,

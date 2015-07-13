@@ -2,7 +2,7 @@ return {
 	corjurgen = {
 		acceleration = 0.4,
 		bmcode = 1,
-		brakerate = 0.15,
+		brakerate = 0.45,
 		buildcostenergy = 36114,
 		buildcostmetal = 3162,
 		builddistance = 112,
@@ -59,6 +59,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		stealth = false,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.848,
 		turnrate = 900,
 		unitname = "corjurgen",
 		upright = true,

@@ -46,6 +46,8 @@ return {
 		sightdistance = 299,
 		standingfireorder = 2,
 		standingmoveorder = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "armasy",
 		waterline = 6,

@@ -1,10 +1,10 @@
 return {
 	corawac = {
-		acceleration = 0.096,
+		acceleration = 0.03168,
 		altfromsealevel = 1,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 3.75,
+		brakerate = 0.0375,
 		buildcostenergy = 7824,
 		buildcostmetal = 169,
 		builder = false,
@@ -50,6 +50,8 @@ return {
 		sonardistance = 1200,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 7.062,
 		turnrate = 402,
 		unitname = "corawac",
 		workertime = 0,

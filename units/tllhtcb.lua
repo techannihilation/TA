@@ -1,8 +1,8 @@
 return {
 	tllhtcb = {
-		acceleration = 0.018,
+		acceleration = 0.036,
 		bmcode = 1,
-		brakerate = 0.36,
+		brakerate = 2.16,
 		buildcostenergy = 29448,
 		buildcostmetal = 5436,
 		builddistance = 197,
@@ -46,6 +46,9 @@ return {
 		sightdistance = 230,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplace = 1,
+		turninplaceanglelimit = 60,
+		turninplacespeedlimit = 1.089,
 		turnrate = 550,
 		unitname = "tllhtcb",
 		unitnumber = 835,

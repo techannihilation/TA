@@ -50,6 +50,8 @@ return {
 		sightdistance = 287.29999,
 		standingfireorder = 2,
 		standingmoveorder = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "corlab",
 		usebuildinggrounddecal = true,

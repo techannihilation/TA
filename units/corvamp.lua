@@ -1,10 +1,10 @@
 return {
 	corvamp = {
-		acceleration = 0.492,
+		acceleration = 0.16236,
 		airsightdistance = 800,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 8.75,
+		brakerate = 0.0875,
 		buildcostenergy = 15000,
 		buildcostmetal = 120,
 		buildpic = "CORVAMP.png",
@@ -48,6 +48,8 @@ return {
 		standingmoveorder = 1,
 		stealth = true,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 8.382,
 		turnrate = 1337,
 		unitname = "corvamp",
 		unitrestricted = 150,

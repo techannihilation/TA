@@ -46,6 +46,8 @@ return {
 		side = "CORE",
 		sightdistance = 540,
 		stealth = true,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "coreyes",
 		waterline = 5,

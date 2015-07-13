@@ -1,11 +1,11 @@
 return {
 	armblz = {
-		acceleration = 0.09,
+		acceleration = 0.0297,
 		altfromsealevel = 1,
 		attackrunlength = 180,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 4,
+		brakerate = 0.04,
 		buildcostenergy = 7245,
 		buildcostmetal = 298,
 		builder = false,
@@ -53,6 +53,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 7.59,
 		turnrate = 420,
 		unitname = "armblz",
 		unitnumber = 53,

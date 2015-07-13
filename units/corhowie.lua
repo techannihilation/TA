@@ -2,7 +2,7 @@ return {
 	corhowie = {
 		acceleration = 0.108,
 		bmcode = 1,
-		brakerate = 0.188,
+		brakerate = 0.564,
 		buildcostenergy = 72750,
 		buildcostmetal = 7070,
 		builder = false,

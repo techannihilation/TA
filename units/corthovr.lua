@@ -2,7 +2,7 @@ return {
 	corthovr = {
 		acceleration = 0.036,
 		bmcode = 1,
-		brakerate = 0.062,
+		brakerate = 0.186,
 		buildangle = 16384,
 		buildcostenergy = 7541,
 		buildcostmetal = 650,
@@ -59,6 +59,9 @@ return {
 		transportcapacity = 20,
 		transportmaxunits = 8,
 		transportsize = 3,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.4388,
 		turnrate = 370,
 		unitname = "corthovr",
 		waterline = 10,

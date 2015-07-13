@@ -46,6 +46,8 @@ return {
 		side = "CORE",
 		sightdistance = 210,
 		sonardistance = 2400,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "corason",
 		usebuildinggrounddecal = true,

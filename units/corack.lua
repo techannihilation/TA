@@ -1,8 +1,8 @@
 return {
 	corack = {
-		acceleration = 0.2,
+		acceleration = 0.4,
 		bmcode = 1,
-		brakerate = 0.425,
+		brakerate = 2.55,
 		buildcostenergy = 30340,
 		buildcostmetal = 2510,
 		builddistance = 225,
@@ -50,6 +50,9 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		terraformspeed = 1240,
+		turninplace = 1,
+		turninplaceanglelimit = 60,
+		turninplacespeedlimit = 0.726,
 		turnrate = 935,
 		unitname = "corack",
 		upright = true,

@@ -1,8 +1,8 @@
 return {
 	corsbomb = {
-		acceleration = 0.1,
+		acceleration = 0.033,
 		bmcode = 1,
-		brakerate = 1.5,
+		brakerate = 0.015,
 		buildcostenergy = 95000,
 		buildcostmetal = 2900,
 		builder = false,
@@ -56,6 +56,8 @@ return {
 		stealth = true,
 		steeringmode = 1,
 		tedclass = "VTOL",
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 4.29,
 		turnradius = 1500,
 		turnrate = 140,
 		unitname = "corsbomb",

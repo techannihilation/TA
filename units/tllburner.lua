@@ -2,7 +2,7 @@ return {
 	tllburner = {
 		acceleration = 0.35,
 		bmcode = 1,
-		brakerate = 0.18311,
+		brakerate = 0.54933,
 		buildcostenergy = 2400,
 		buildcostmetal = 375,
 		builder = false,
@@ -46,6 +46,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.221,
 		turnrate = 1150,
 		unitname = "tllburner",
 		unitnumber = 830,

@@ -2,7 +2,7 @@ return {
 	corrock = {
 		acceleration = 0.108,
 		bmcode = 1,
-		brakerate = 0.188,
+		brakerate = 0.564,
 		buildcostenergy = 2500,
 		buildcostmetal = 220,
 		builder = false,
@@ -51,6 +51,8 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 2,
 		tedclass = "KBOT",
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.089,
 		turnrate = 1103,
 		unitname = "corrock",
 		upright = true,

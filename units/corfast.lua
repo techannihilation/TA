@@ -1,8 +1,8 @@
 return {
 	corfast = {
-		acceleration = 0.12,
+		acceleration = 0.24,
 		bmcode = 1,
-		brakerate = 0.25,
+		brakerate = 1.5,
 		buildcostenergy = 3580,
 		buildcostmetal = 195,
 		builddistance = 110,
@@ -50,6 +50,9 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 2,
 		terraformspeed = 450,
+		turninplace = 1,
+		turninplaceanglelimit = 60,
+		turninplacespeedlimit = 1.98,
 		turnrate = 1210,
 		unitname = "corfast",
 		upright = true,

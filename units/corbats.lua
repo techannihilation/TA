@@ -2,7 +2,7 @@ return {
 	corbats = {
 		acceleration = 0.03,
 		bmcode = 1,
-		brakerate = 0.025,
+		brakerate = 0.075,
 		buildangle = 16384,
 		buildcostenergy = 21941,
 		buildcostmetal = 5404,
@@ -53,6 +53,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.7424,
 		turnrate = 306,
 		unitname = "corbats",
 		workertime = 0,

@@ -37,6 +37,8 @@ return {
 		selfdestructas = "LARGE_BUILDING",
 		side = "CORE",
 		sightdistance = 273,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "corfatf",
 		waterline = 8,

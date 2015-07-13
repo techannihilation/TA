@@ -2,7 +2,7 @@ return {
 	corgol1 = {
 		acceleration = 0.0242,
 		bmcode = 1,
-		brakerate = 0.0495,
+		brakerate = 0.1485,
 		buildcostenergy = 22892,
 		buildcostmetal = 2367,
 		builder = false,
@@ -58,6 +58,9 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 49,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.957,
 		turnrate = 220,
 		unitname = "corgol1",
 		workertime = 0,

@@ -2,7 +2,7 @@ return {
 	armsam1 = {
 		acceleration = 0.0396,
 		bmcode = 1,
-		brakerate = 0.0165,
+		brakerate = 0.0495,
 		buildcostenergy = 3227,
 		buildcostmetal = 290,
 		builder = false,
@@ -52,6 +52,9 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 32,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.0593,
 		turnrate = 497,
 		unitname = "armsam1",
 		workertime = 0,

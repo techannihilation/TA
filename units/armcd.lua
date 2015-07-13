@@ -2,7 +2,7 @@ return {
 	armcd = {
 		acceleration = 0.12,
 		bmcode = 1,
-		brakerate = 0.25,
+		brakerate = 0.75,
 		buildcostenergy = 8928,
 		buildcostmetal = 1992,
 		builder = false,
@@ -51,6 +51,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.726,
 		turnrate = 480,
 		unitname = "armcd",
 		unitnumber = 2109,

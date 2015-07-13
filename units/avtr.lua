@@ -2,7 +2,7 @@ return {
 	avtr = {
 		acceleration = 0.036,
 		bmcode = 1,
-		brakerate = 0.05,
+		brakerate = 0.15,
 		buildcostenergy = 84140,
 		buildcostmetal = 4864,
 		builder = false,
@@ -57,6 +57,9 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 35,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.792,
 		turnrate = 176,
 		unitname = "avtr",
 		unitnumber = 999,

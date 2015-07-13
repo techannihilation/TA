@@ -1,10 +1,10 @@
 return {
 	corgripn = {
-		acceleration = 0.48,
+		acceleration = 0.1584,
 		attackrunlength = 180,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 4,
+		brakerate = 0.04,
 		buildcostenergy = 16366,
 		buildcostmetal = 162,
 		buildpic = "CORGRIPN.png",
@@ -51,6 +51,8 @@ return {
 		standingmoveorder = 2,
 		stealth = true,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 7.9728,
 		turnrate = 396,
 		unitname = "corgripn",
 		sounds = {

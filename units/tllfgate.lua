@@ -37,6 +37,8 @@ return {
 		selfdestructas = "MINE_NUKE",
 		side = "TLL",
 		sightdistance = 273,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "tllfgate",
 		waterline = 0,

@@ -2,7 +2,7 @@ return {
 	tllannouncer = {
 		acceleration = 0.13,
 		bmcode = 1,
-		brakerate = 0.12,
+		brakerate = 0.36,
 		buildcostenergy = 835,
 		buildcostmetal = 162,
 		builder = false,
@@ -44,6 +44,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 2,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.023,
 		turnrate = 625,
 		unitname = "tllannouncer",
 		unitnumber = 831,

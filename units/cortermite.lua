@@ -2,7 +2,7 @@ return {
 	cortermite = {
 		acceleration = 0.171,
 		bmcode = 1,
-		brakerate = 0.175,
+		brakerate = 0.525,
 		buildcostenergy = 12605,
 		buildcostmetal = 805,
 		builder = false,
@@ -46,6 +46,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.0626,
 		turnrate = 1056,
 		unitname = "cortermite",
 		workertime = 0,

@@ -2,7 +2,7 @@ return {
 	tllhovermissile = {
 		acceleration = 0.06,
 		bmcode = 1,
-		brakerate = 0.09,
+		brakerate = 0.27,
 		buildcostenergy = 4200,
 		buildcostmetal = 180,
 		builder = false,
@@ -49,6 +49,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 2.112,
 		turnrate = 320,
 		unitname = "tllhovermissile",
 		unitnumber = 28703,

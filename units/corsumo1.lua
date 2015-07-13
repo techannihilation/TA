@@ -2,7 +2,7 @@ return {
 	corsumo1 = {
 		acceleration = 0.048,
 		bmcode = 1,
-		brakerate = 0.125,
+		brakerate = 0.375,
 		buildcostenergy = 33562,
 		buildcostmetal = 2420,
 		builder = false,
@@ -48,6 +48,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.627,
 		turnrate = 320,
 		unitname = "corsumo1",
 		upright = false,

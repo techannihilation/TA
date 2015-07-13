@@ -1,8 +1,8 @@
 return {
 	corch = {
-		acceleration = 0.06,
+		acceleration = 0.12,
 		bmcode = 1,
-		brakerate = 0.062,
+		brakerate = 0.372,
 		buildcostenergy = 2771,
 		buildcostmetal = 154,
 		builddistance = 160,
@@ -52,6 +52,9 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		terraformspeed = 330,
+		turninplace = 1,
+		turninplaceanglelimit = 60,
+		turninplacespeedlimit = 1.518,
 		turnrate = 410,
 		unitname = "corch",
 		workertime = 150,

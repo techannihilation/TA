@@ -1,9 +1,9 @@
 return {
 	tllprob = {
-		acceleration = 0.5,
+		acceleration = 0.165,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 10,
+		brakerate = 0.1,
 		buildcostenergy = 821,
 		buildcostmetal = 36,
 		builder = false,
@@ -46,6 +46,8 @@ return {
 		sightdistance = 750,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 7.92,
 		turnrate = 800,
 		unitname = "tllprob",
 		unitnumber = 916,

@@ -2,7 +2,7 @@ return {
 	arm_furie = {
 		acceleration = 0.09,
 		bmcode = 1,
-		brakerate = 0.2,
+		brakerate = 0.6,
 		buildcostenergy = 525000,
 		buildcostmetal = 42500,
 		builder = false,
@@ -56,6 +56,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.726,
 		turnrate = 560,
 		unitname = "arm_furie",
 		unitnumber = 7218,

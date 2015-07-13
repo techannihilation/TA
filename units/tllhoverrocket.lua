@@ -2,7 +2,7 @@ return {
 	tllhoverrocket = {
 		acceleration = 0.04,
 		bmcode = 1,
-		brakerate = 0.09,
+		brakerate = 0.27,
 		buildcostenergy = 3412,
 		buildcostmetal = 305,
 		builder = false,
@@ -49,6 +49,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.419,
 		turnrate = 360,
 		unitname = "tllhoverrocket",
 		unitnumber = 28803,

@@ -2,7 +2,7 @@ return {
 	armhorg = {
 		acceleration = 0.017,
 		bmcode = 1,
-		brakerate = 0.015,
+		brakerate = 0.045,
 		buildcostenergy = 14200,
 		buildcostmetal = 1220,
 		builder = false,
@@ -46,6 +46,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.056,
 		turnrate = 450,
 		unitname = "armhorg",
 		unitnumber = 66,

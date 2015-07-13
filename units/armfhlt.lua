@@ -41,6 +41,8 @@ return {
 		side = "ARM",
 		sightdistance = 624,
 		standingfireorder = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "armfhlt",
 		waterline = 8,

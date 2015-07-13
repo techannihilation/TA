@@ -48,6 +48,8 @@ return {
 		sightdistance = 617,
 		sonardistance = 515,
 		standingfireorder = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "armdl",
 		usebuildinggrounddecal = true,

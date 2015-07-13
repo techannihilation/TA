@@ -2,7 +2,7 @@ return {
 	armfast = {
 		acceleration = 0.36,
 		bmcode = 1,
-		brakerate = 0.375,
+		brakerate = 1.125,
 		buildcostenergy = 4382,
 		buildcostmetal = 177,
 		builder = false,
@@ -47,6 +47,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 2.3826,
 		turnrate = 1430,
 		unitname = "armfast",
 		upright = true,

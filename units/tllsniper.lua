@@ -2,7 +2,7 @@ return {
 	tllsniper = {
 		acceleration = 0.1,
 		bmcode = 1,
-		brakerate = 0.15,
+		brakerate = 0.45,
 		buildcostenergy = 26105,
 		buildcostmetal = 1350,
 		builder = false,
@@ -53,6 +53,8 @@ return {
 		standingfireorder = 0,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.825,
 		turnrate = 1216,
 		unitname = "tllsniper",
 		unitnumber = 931,

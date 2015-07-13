@@ -1,10 +1,10 @@
 return {
 	corveng = {
-		acceleration = 2.5,
+		acceleration = 0.825,
 		airsightdistance = 700,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 6.5,
+		brakerate = 0.065,
 		buildcostenergy = 1900,
 		buildcostmetal = 85,
 		buildpic = "CORVENG.png",
@@ -50,6 +50,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 6.6,
 		turnrate = 839,
 		unitname = "corveng",
 		unitrestricted = 200,

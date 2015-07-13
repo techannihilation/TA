@@ -1,8 +1,8 @@
 return {
 	corassis = {
-		acceleration = 0.0825,
+		acceleration = 0.165,
 		bmcode = 1,
-		brakerate = 0.1375,
+		brakerate = 0.825,
 		buildcostenergy = 5028,
 		buildcostmetal = 216,
 		builddistance = 92,
@@ -52,6 +52,9 @@ return {
 		trackstretch = 1,
 		tracktype = "StdTank",
 		trackwidth = 31,
+		turninplace = 1,
+		turninplaceanglelimit = 60,
+		turninplacespeedlimit = 1.83678,
 		turnrate = 635,
 		unitname = "corassis",
 		workertime = 150,

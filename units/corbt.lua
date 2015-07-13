@@ -2,7 +2,7 @@ return {
 	corbt = {
 		acceleration = 0.03,
 		bmcode = 1,
-		brakerate = 0.03,
+		brakerate = 0.09,
 		buildcostenergy = 201900,
 		buildcostmetal = 17500,
 		builder = false,
@@ -53,6 +53,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.792,
 		turnrate = 80,
 		unitname = "corbt",
 		unitnumber = 317,

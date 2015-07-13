@@ -2,7 +2,7 @@ return {
 	armpw1 = {
 		acceleration = 0.36,
 		bmcode = 1,
-		brakerate = 0.2,
+		brakerate = 0.6,
 		buildcostenergy = 897,
 		buildcostmetal = 85,
 		builder = false,
@@ -50,6 +50,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.716,
 		turnrate = 1056,
 		unitname = "armpw1",
 		upright = true,

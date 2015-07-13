@@ -2,7 +2,7 @@ return {
 	cortship = {
 		acceleration = 0.062,
 		bmcode = 1,
-		brakerate = 0.085,
+		brakerate = 0.255,
 		buildangle = 16384,
 		buildcostenergy = 4786,
 		buildcostmetal = 887,
@@ -57,6 +57,8 @@ return {
 		steeringmode = 1,
 		transportcapacity = 40,
 		transportsize = 4,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 2.1252,
 		turnrate = 373,
 		unitname = "cortship",
 		waterline = 2,

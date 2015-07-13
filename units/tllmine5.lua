@@ -57,6 +57,8 @@ return {
 		standingfireorder = 2,
 		stealth = true,
 		tedclass = "SPECIAL",
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "tllmine5",
 		workertime = 0,

@@ -2,7 +2,7 @@ return {
 	armraz1 = {
 		acceleration = 0.206,
 		bmcode = 1,
-		brakerate = 0.262,
+		brakerate = 0.786,
 		buildcostenergy = 333286,
 		buildcostmetal = 11577,
 		builder = false,
@@ -51,6 +51,8 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.584,
 		turnrate = 534,
 		unitname = "armraz1",
 		upright = true,

@@ -2,7 +2,7 @@ return {
 	armmedt = {
 		acceleration = 0.033,
 		bmcode = 1,
-		brakerate = 0.029,
+		brakerate = 0.087,
 		buildcostenergy = 3120,
 		buildcostmetal = 416,
 		builder = false,
@@ -47,6 +47,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 1.914,
 		turnrate = 375,
 		unitname = "armmedt",
 		unitnumber = 6625,

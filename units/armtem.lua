@@ -2,7 +2,7 @@ return {
 	armtem = {
 		acceleration = 0.035,
 		bmcode = 1,
-		brakerate = 0.05,
+		brakerate = 0.15,
 		buildcostenergy = 27500,
 		buildcostmetal = 5425,
 		builder = false,
@@ -52,6 +52,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 0.99,
 		turnrate = 250,
 		unitname = "armtem",
 		unitnumber = 500,

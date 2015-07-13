@@ -2,7 +2,7 @@ return {
 	tllgladius = {
 		acceleration = 0.8,
 		bmcode = 1,
-		brakerate = 0.23,
+		brakerate = 0.69,
 		buildcostenergy = 168,
 		buildcostmetal = 41,
 		builder = false,
@@ -44,6 +44,9 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 2,
 		steeringmode = 1,
+		turninplace = 0,
+		turninplaceanglelimit = 140,
+		turninplacespeedlimit = 3.234,
 		turnrate = 1050,
 		unitname = "tllgladius",
 		unitnumber = 8260,
