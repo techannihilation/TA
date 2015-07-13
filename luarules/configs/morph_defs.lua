@@ -222,8 +222,23 @@ local morphDefs = {
 	},
       cordoom = {
 		into = 'cordoom1',
-		time = 140,
+		time = 120,
 		xp = 1.07,
+	},
+      corflak = {
+		into = 'corpre',
+		time = 120,
+		xp = 1.07,
+	},
+      armflak = {
+		into = 'armhys',
+		time = 120,
+		xp = 1.07,
+	},
+      tllflak = {
+		into = 'tlldb',
+		time = 120,
+		xp = 1.17,
 	},
       armsilo = {
 		into = 'armsilo1',

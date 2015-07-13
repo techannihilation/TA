@@ -68,9 +68,10 @@ local unitDef = {
 			[1] = [[armpraet]],
 			[2] = [[armgate1]],
 			[3] = [[armanni1]],
-			[4] = [[armsilo1]],
-			[5] = [[armbrtha1]],
-			[6] = [[armvulc2]],
+			[4] = [[armhys]],
+			[5] = [[armsilo1]],
+			[6] = [[armbrtha1]],
+			[7] = [[armvulc2]],
 		},
 	featureDefs = nil,
 	sounds = {

@@ -67,9 +67,10 @@ local unitDef = {
 		[1] = [[monkeylord]],
 		[2] = [[corgate1]],
 		[3] = [[cordoom1]],
-		[4] = [[corsilo1]],
-		[5] = [[corint1]],
-		[6] = [[corbuzz2]],
+		[4] = [[corpre]],
+		[5] = [[corsilo1]],
+		[6] = [[corint1]],
+		[7] = [[corbuzz2]],
 	},
 	featureDefs = nil,
 	sounds = {
