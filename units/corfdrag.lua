@@ -1,76 +1,60 @@
--- UNITDEF -- CORFDRAG --
---------------------------------------------------------------------------------
-
-local unitName = "corfdrag"
-
---------------------------------------------------------------------------------
-
-local unitDef = {
-	acceleration = 0,
-	bmcode = 0,
-	brakeRate = 0,
-	buildAngle = 8192,
-	buildCostEnergy = 630,
-	buildCostMetal = 20,
-	builder = false,
-	buildPic = [[CORFDRAG.png]],
-	buildTime = 1000,
-	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
-	corpse = [[FLOATINGTEETH_CORE]],
-	description = [[Perimeter Defense]],
-	energyMake = 0,
-	energyStorage = 0,
-	energyUse = 0,
-	footprintX = 2,
-	footprintZ = 2,
-	idleAutoHeal = 5,
-	idleTime = 1800,
-	isFeature = true,
-	maxDamage = 50,
-	maxSlope = 32,
-	maxVelocity = 0,
-	metalStorage = 0,
-	minWaterDepth = 1,
-	name = [[Shark's Teeth]],
-	noAutoFire = false,
-	noChaseCategory = [[ALL]],
-	objectName = [[CORFDRAG]],
-	seismicSignature = 0,
-	side = [[CORE]],
-	sightDistance = 130,
-	turnRate = 0,
-	unitname = [[corfdrag]],
-	waterline = 10,
-	workerTime = 0,
-	yardMap = [[wwww]],
-	featureDefs = nil,
-}
-
---------------------------------------------------------------------------------
-
-local featureDefs = {
-	FLOATINGTEETH_CORE = {
-		autoreclaimable = 0,
-		blocking = true,
-		category = [[dragonteeth]],
-		damage = 2500,
-		description = [[Shark's Teeth]],
-		floating = true,
-		footprintX = 2,
-		footprintZ = 2,
-		height = 75,
-		hitdensity = 100,
-		metal = 16,
-		nodrawundergray = true,
-		object = [[corfdrag]],
-		reclaimable = true,
-		world = [[allworld]],
+return {
+	corfdrag = {
+		acceleration = 0,
+		bmcode = 0,
+		brakerate = 0,
+		buildangle = 8192,
+		buildcostenergy = 630,
+		buildcostmetal = 20,
+		builder = false,
+		buildpic = "CORFDRAG.png",
+		buildtime = 1000,
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
+		corpse = "FLOATINGTEETH_CORE",
+		description = "Perimeter Defense",
+		energymake = 0,
+		energystorage = 0,
+		energyuse = 0,
+		footprintx = 2,
+		footprintz = 2,
+		idleautoheal = 5,
+		idletime = 1800,
+		isfeature = true,
+		maxdamage = 50,
+		maxslope = 32,
+		maxvelocity = 0,
+		metalstorage = 0,
+		minwaterdepth = 1,
+		name = "Shark's Teeth",
+		noautofire = false,
+		nochasecategory = "ALL",
+		objectname = "CORFDRAG",
+		seismicsignature = 0,
+		side = "CORE",
+		sightdistance = 130,
+		turnrate = 0,
+		unitname = "corfdrag",
+		waterline = 10,
+		workertime = 0,
+		yardmap = "wwww",
+		featuredefs = {
+			floatingteeth_core = {
+				autoreclaimable = 0,
+				blocking = true,
+				category = "dragonteeth",
+				damage = 2500,
+				description = "Shark's Teeth",
+				floating = true,
+				footprintx = 2,
+				footprintz = 2,
+				height = 75,
+				hitdensity = 100,
+				metal = 16,
+				nodrawundergray = true,
+				object = "corfdrag",
+				reclaimable = true,
+				world = "allworld",
+			},
+		},
 	},
 }
-unitDef.featureDefs = featureDefs
-
---------------------------------------------------------------------------------
-
-return lowerkeys({[unitName] = unitDef})
-
---------------------------------------------------------------------------------

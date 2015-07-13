@@ -1,96 +1,80 @@
--- UNITDEF -- ARMGEN --
---------------------------------------------------------------------------------
-
-local unitName = "armgen"
-
---------------------------------------------------------------------------------
-
-local unitDef = {
-	activateWhenBuilt = true,
-	bmcode = 0,
-	buildAngle = 0,
-	buildCostEnergy = 7750,
-	buildCostMetal = 366,
-	builder = false,
-	buildingGroundDecalDecaySpeed = 30,
-	buildingGroundDecalSizeX = 5,
-	buildingGroundDecalSizeY = 5,
-	buildingGroundDecalType = [[armgen_aoplane.dds]],
-	buildPic = [[ARMGEN.png]],
-	buildTime = 7800,
-	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
-	corpse = [[heap]],
-	description = [[Hybrid Energy Producer/Metal Maker]],
-	energyMake = 100,
-	energyStorage = 150,
-	explodeAs = [[MEDIUM_BUILDINGEX]],
-	footprintX = 3,
-	footprintZ = 3,
-	iconType = [[building]],
-	idleAutoHeal = 5,
-	idleTime = 1800,
-	maxDamage = 1420,
-	maxSlope = 10,
-	maxWaterDepth = 0,
-	name = [[Energy Driller]],
-	noAutoFire = false,
-	objectName = [[armgen]],
-	selfDestructAs = [[LIGHTSHIPBLAST]],
-	side = [[ARM]],
-	sightDistance = 550,
-	TEDClass = [[ENERGY]],
-	unitname = [[armgen]],
-	unitnumber = 2415,
-	useBuildingGroundDecal = true,
-	workerTime = 0,
-	yardMap = [[ooo ooo ooo]],
-	featureDefs = nil,
-	sfxtypes = {
-		explosiongenerators = {
-			[1] = [[custom:reactor_sfx_new_other]],
+return {
+	armgen = {
+		activatewhenbuilt = true,
+		bmcode = 0,
+		buildangle = 0,
+		buildcostenergy = 7750,
+		buildcostmetal = 366,
+		builder = false,
+		buildinggrounddecaldecayspeed = 30,
+		buildinggrounddecalsizex = 5,
+		buildinggrounddecalsizey = 5,
+		buildinggrounddecaltype = "armgen_aoplane.dds",
+		buildpic = "ARMGEN.png",
+		buildtime = 7800,
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
+		corpse = "heap",
+		description = "Hybrid Energy Producer/Metal Maker",
+		energymake = 100,
+		energystorage = 150,
+		explodeas = "MEDIUM_BUILDINGEX",
+		footprintx = 3,
+		footprintz = 3,
+		icontype = "building",
+		idleautoheal = 5,
+		idletime = 1800,
+		maxdamage = 1420,
+		maxslope = 10,
+		maxwaterdepth = 0,
+		name = "Energy Driller",
+		noautofire = false,
+		objectname = "armgen",
+		selfdestructas = "LIGHTSHIPBLAST",
+		side = "ARM",
+		sightdistance = 550,
+		tedclass = "ENERGY",
+		unitname = "armgen",
+		unitnumber = 2415,
+		usebuildinggrounddecal = true,
+		workertime = 0,
+		yardmap = "ooo ooo ooo",
+		featuredefs = {
+			heap = {
+				blocking = false,
+				category = "heaps",
+				damage = 50.978,
+				description = "Wreckage",
+				featurereclamate = "smudge01",
+				footprintx = 3,
+				footprintz = 3,
+				height = 4,
+				hitdensity = 100,
+				metal = 69.174,
+				object = "3x3d",
+				reclaimable = true,
+				seqnamereclamate = "tree1reclamate",
+				world = "All Worlds",
+			},
 		},
-        },
-	sounds = {
-		canceldestruct = [[cancel2]],
-		underattack = [[warning1]],
-		count = {
-			[1] = [[count6]],
-			[2] = [[count5]],
-			[3] = [[count4]],
-			[4] = [[count3]],
-			[5] = [[count2]],
-			[6] = [[count1]],
+		sfxtypes = {
+			explosiongenerators = {
+				[1] = "custom:reactor_sfx_new_other",
+			},
 		},
-		select = {
-			[1] = [[geothrm1]],
+		sounds = {
+			canceldestruct = "cancel2",
+			underattack = "warning1",
+			count = {
+				[1] = "count6",
+				[2] = "count5",
+				[3] = "count4",
+				[4] = "count3",
+				[5] = "count2",
+				[6] = "count1",
+			},
+			select = {
+				[1] = "geothrm1",
+			},
 		},
 	},
 }
-
---------------------------------------------------------------------------------
-
-local featureDefs = {
-	heap = {
-		blocking = false,
-		category = [[heaps]],
-		damage = 0.0359 * unitDef.maxDamage,
-		description = [[Wreckage]],
-		featurereclamate = [[smudge01]],
-		footprintX = 3,
-		footprintZ = 3,
-		height = 4,
-		hitdensity = 100,
-		metal = 0.1890 * unitDef.buildCostMetal,
-		object = [[3x3d]],
-		reclaimable = true,
-		seqnamereclamate = [[tree1reclamate]],
-		world = [[All Worlds]],
-	},
-}
-unitDef.featureDefs = featureDefs
-
---------------------------------------------------------------------------------
-
-return lowerkeys({[unitName] = unitDef})
-
---------------------------------------------------------------------------------

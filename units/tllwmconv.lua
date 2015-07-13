@@ -1,89 +1,73 @@
--- UNITDEF -- TLLWMCONV --
---------------------------------------------------------------------------------
-
-local unitName = "tllwmconv"
-
---------------------------------------------------------------------------------
-
-local unitDef = {
-	activateWhenBuilt = true,
-	bmcode = 0,
-	buildAngle = 8192,
-	buildCostEnergy = 274,
-	buildCostMetal = 27,
-	builder = false,
-	buildTime = 2200,
-	category = [[ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON]],
-	corpse = [[dead]],
-	description = [[Converts upto 100 Energy into Metal]],
-	designation = [[WM-CONV]],
-	explodeAs = [[SMALL_BUILDINGEX]],
-	footprintX = 3,
-	footprintZ = 3,
-	iconType = [[building]],
-	idleAutoHeal = 5,
-	idleTime = 1800,
-	maxDamage = 120,
-	maxSlope = 10,
-	minWaterDepth = 10,
-	name = [[Metal Producer]],
-	noAutoFire = false,
-	noChaseCategory = [[ALL]],
-	noshadow = 1,
-	objectName = [[tllWMconv]],
-	ovradjust = 1,
-	selfDestructAs = [[SMALL_BUILDING]],
-	side = [[TLL]],
-	sightDistance = 200,
-	unitname = [[tllwmconv]],
-	unitnumber = 870,
-	waterline = 5,
-	yardMap = [[wwwwwwwww]],
-	featureDefs = nil,
-	sounds = {
-		activate = [[metlon1]],
-		canceldestruct = [[cancel2]],
-		deactivate = [[metloff1]],
-		underattack = [[warning1]],
-		working = [[metlrun1]],
-		count = {
-			[1] = [[count6]],
-			[2] = [[count5]],
-			[3] = [[count4]],
-			[4] = [[count3]],
-			[5] = [[count2]],
-			[6] = [[count1]],
+return {
+	tllwmconv = {
+		activatewhenbuilt = true,
+		bmcode = 0,
+		buildangle = 8192,
+		buildcostenergy = 274,
+		buildcostmetal = 27,
+		builder = false,
+		buildtime = 2200,
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
+		corpse = "dead",
+		description = "Converts upto 100 Energy into Metal",
+		designation = "WM-CONV",
+		explodeas = "SMALL_BUILDINGEX",
+		footprintx = 3,
+		footprintz = 3,
+		icontype = "building",
+		idleautoheal = 5,
+		idletime = 1800,
+		maxdamage = 120,
+		maxslope = 10,
+		minwaterdepth = 10,
+		name = "Metal Producer",
+		noautofire = false,
+		nochasecategory = "ALL",
+		noshadow = 1,
+		objectname = "tllWMconv",
+		ovradjust = 1,
+		selfdestructas = "SMALL_BUILDING",
+		side = "TLL",
+		sightdistance = 200,
+		unitname = "tllwmconv",
+		unitnumber = 870,
+		waterline = 5,
+		yardmap = "wwwwwwwww",
+		featuredefs = {
+			dead = {
+				blocking = true,
+				category = "tll_corpses",
+				damage = 72,
+				description = "Wreckage",
+				featurereclamate = "smudge01",
+				footprintx = 3,
+				footprintz = 3,
+				height = 12,
+				hitdensity = 102,
+				metal = 21.6,
+				object = "tllWMconv_dead",
+				reclaimable = true,
+				seqnamereclamate = "tree1reclamate",
+				world = "all",
+			},
 		},
-		select = {
-			[1] = [[metlon1]],
+		sounds = {
+			activate = "metlon1",
+			canceldestruct = "cancel2",
+			deactivate = "metloff1",
+			underattack = "warning1",
+			working = "metlrun1",
+			count = {
+				[1] = "count6",
+				[2] = "count5",
+				[3] = "count4",
+				[4] = "count3",
+				[5] = "count2",
+				[6] = "count1",
+			},
+			select = {
+				[1] = "metlon1",
+			},
 		},
 	},
 }
-
---------------------------------------------------------------------------------
-
-local featureDefs = {
-	dead = {
-		blocking = true,
-		category = [[tll_corpses]],
-		damage = 0.6000 * unitDef.maxDamage,
-		description = [[Wreckage]],
-		featurereclamate = [[smudge01]],
-		footprintX = 3,
-		footprintZ = 3,
-		height = 12,
-		hitdensity = 102,
-		metal = 0.8000 * unitDef.buildCostMetal,
-		object = [[tllWMconv_dead]],
-		reclaimable = true,
-		seqnamereclamate = [[tree1reclamate]],
-		world = [[all]],
-	},
-}
-unitDef.featureDefs = featureDefs
-
---------------------------------------------------------------------------------
-
-return lowerkeys({[unitName] = unitDef})
-
---------------------------------------------------------------------------------
