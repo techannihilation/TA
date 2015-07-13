@@ -6,11 +6,11 @@ local unitName = "armfark"
 --------------------------------------------------------------------------------
 
 local unitDef = {
-	acceleration = 0.216,
+	acceleration = 0.22,
 	bmcode = 1,
 	brakeRate = 0.75,
-	buildCostEnergy = 2793,
-	buildCostMetal = 201,
+	buildCostEnergy = 2700,
+	buildCostMetal = 200,
 	buildDistance = 112,
 	builder = true,
 	buildPic = [[ARMFARK.png]],

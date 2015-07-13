@@ -11,8 +11,8 @@ local unitDef = {
 	bmcode = 1,
 	brakeRate = 0.13,
 	buildAngle = 16384,
-	buildCostEnergy = 15112,
-	buildCostMetal = 1126,
+	buildCostEnergy = 15100,
+	buildCostMetal = 1250,
 	buildTime = 23300,
 	canAttack = true,
 	canGuard = true,
@@ -129,7 +129,8 @@ local weaponDefs = {
 		weaponType = [[TorpedoLauncher]],
 		weaponVelocity = 200,
 		damage = {
-			default = 350,
+			default = 250,
+			subs = 500,
 		},
 	},
 }

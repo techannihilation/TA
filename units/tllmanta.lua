@@ -10,8 +10,8 @@ local unitDef = {
 	activateWhenBuilt = true,
 	bmcode = 1,
 	brakeRate = 0.22,
-	buildCostEnergy = 5818,
-	buildCostMetal = 1831,
+	buildCostEnergy = 12800,
+	buildCostMetal = 1150,
 	builder = false,
 	buildTime = 19250,
 	canAttack = true,
@@ -130,8 +130,8 @@ local weaponDefs = {
 		weaponType = [[TorpedoLauncher]],
 		weaponVelocity = 200,
 		damage = {
-			default = 800,
-			subs = 1600,
+			default = 425,
+			subs = 850,
 		},
 	},
 }
