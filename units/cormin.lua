@@ -35,6 +35,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		maneuverleashlength = 1280,
+		mass = 81.66666,
 		maxdamage = 490,
 		maxslope = 10,
 		maxvelocity = 4,
@@ -71,6 +72,11 @@ return {
 		},
 		customparams = {
 			customstock = true,
+		},
+		nanocolor = {
+			[1] = 0.308,
+			[2] = 0.308,
+			[3] = 0.308,
 		},
 		sounds = {
 			build = "nanlath2",

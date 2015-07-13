@@ -32,6 +32,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		maneuverleashlength = 1280,
+		mass = 105,
 		maxdamage = 140,
 		maxslope = 10,
 		maxvelocity = 7.94,
@@ -87,6 +88,11 @@ return {
 			[30] = "armjamt",
 			[31] = "ajuno",
 			[32] = "armrech3",
+		},
+		nanocolor = {
+			[1] = 0.036,
+			[2] = 0.436,
+			[3] = 0.036,
 		},
 		sounds = {
 			build = "nanlath1",

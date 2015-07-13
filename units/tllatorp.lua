@@ -24,6 +24,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 20.45194,
+		mass = 2190,
 		maxdamage = 808,
 		minwaterdepth = 5,
 		name = "Advanced Torpedo Launcher",

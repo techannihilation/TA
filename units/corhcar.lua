@@ -40,7 +40,7 @@ return {
 		istargetingupgrade = true,
 		losemitheight = 36.10609,
 		maneuverleashlength = 640,
-		mass = 30000,
+		mass = 16278,
 		maxdamage = 15500,
 		maxvelocity = 1.75,
 		metalstorage = 2000,
@@ -80,6 +80,11 @@ return {
 				seqnamereclamate = "tree1reclamate",
 				world = "All Worlds",
 			},
+		},
+		nanocolor = {
+			[1] = 0.4,
+			[2] = 0.75,
+			[3] = 0.75,
 		},
 		sounds = {
 			canceldestruct = "cancel2",

@@ -33,6 +33,7 @@ return {
 		immunetoparalyzer = 1,
 		losemitheight = 38.07438,
 		maneuverleashlength = 640,
+		mass = 618,
 		maxdamage = 3000,
 		maxslope = 20,
 		maxvelocity = 1.5,
@@ -58,6 +59,11 @@ return {
 		unitname = "commando",
 		upright = true,
 		workertime = 2000,
+		nanocolor = {
+			[1] = 0.8,
+			[2] = 1,
+			[3] = 1,
+		},
 		sounds = {
 			build = "nanlath2",
 			canceldestruct = "cancel2",

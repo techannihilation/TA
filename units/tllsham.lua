@@ -35,6 +35,7 @@ return {
 		idletime = 1800,
 		losemitheight = 22.78125,
 		maneuverleashlength = 640,
+		mass = 120,
 		maxdamage = 250,
 		maxslope = 14,
 		maxvelocity = 2.2,
@@ -94,6 +95,11 @@ return {
 				seqnamereclamate = "tree1reclamate",
 				world = "All Worlds",
 			},
+		},
+		nanocolor = {
+			[1] = 0.5244,
+			[2] = 0.5244,
+			[3] = 0.1744,
 		},
 		sounds = {
 			canceldestruct = "cancel2",

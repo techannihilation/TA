@@ -156,6 +156,11 @@ return {
 				world = "All Worlds",
 			},
 		},
+		nanocolor = {
+			[1] = 0.34,
+			[2] = 0.74,
+			[3] = 0.34,
+		},
 		sfxtypes = {
 			explosiongenerators = {
 				[1] = "custom:com_sea_laser_bubbles",

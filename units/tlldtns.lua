@@ -21,6 +21,7 @@ return {
 		footprintx = 2,
 		footprintz = 2,
 		isfeature = true,
+		mass = 616.66669,
 		maxdamage = 3700,
 		maxslope = 32,
 		metalstorage = 0,

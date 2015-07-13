@@ -34,6 +34,7 @@ return {
 		idletime = 1800,
 		initcloaked = false,
 		losemitheight = 74.52775,
+		mass = 226,
 		maxangledif1 = 1,
 		maxdamage = 712,
 		maxslope = 32,

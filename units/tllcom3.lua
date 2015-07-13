@@ -151,6 +151,11 @@ return {
 				world = "All Worlds",
 			},
 		},
+		nanocolor = {
+			[1] = 0.61,
+			[2] = 0.61,
+			[3] = 0.26,
+		},
 		sfxtypes = {
 			explosiongenerators = {
 				[1] = "custom:tllroaster1_muzzle",

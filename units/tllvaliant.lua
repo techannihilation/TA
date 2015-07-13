@@ -43,6 +43,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		immunetoparalyzer = 1,
+		mass = 201250,
 		maxdamage = 450000,
 		maxvelocity = 1.3,
 		maxwaterdepth = 0,
@@ -67,6 +68,11 @@ return {
 		turnrate = 100,
 		unitname = "tllvaliant",
 		workertime = 400,
+		nanocolor = {
+			[1] = 0.56,
+			[2] = 0.56,
+			[3] = 0.56,
+		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",

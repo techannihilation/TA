@@ -20,6 +20,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		isfeature = true,
+		mass = 20,
 		maxdamage = 50,
 		maxslope = 32,
 		maxvelocity = 0,

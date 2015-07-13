@@ -27,6 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 42.82903,
+		mass = 795,
 		maxdamage = 2818,
 		maxslope = 10,
 		maxwaterdepth = 0,
@@ -113,6 +114,11 @@ return {
 				seqnamereclamate = "tree1reclamate",
 				world = "All Worlds",
 			},
+		},
+		nanocolor = {
+			[1] = 0.526,
+			[2] = 0.526,
+			[3] = 0.176,
 		},
 		sounds = {
 			build = "pvehwork",

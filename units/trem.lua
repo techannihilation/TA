@@ -33,6 +33,7 @@ return {
 		leavetracks = true,
 		losemitheight = 37.4916,
 		maneuverleashlength = 640,
+		mass = 1951,
 		maxdamage = 2045,
 		maxslope = 14,
 		maxvelocity = 1.452,

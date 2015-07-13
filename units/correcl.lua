@@ -31,6 +31,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		maneuverleashlength = 640,
+		mass = 416,
 		maxdamage = 621,
 		maxvelocity = 2.47,
 		metalstorage = 0,
@@ -52,6 +53,11 @@ return {
 		unitname = "correcl",
 		waterline = 30,
 		workertime = 450,
+		nanocolor = {
+			[1] = 0.28,
+			[2] = 0.63,
+			[3] = 0.63,
+		},
 		sounds = {
 			build = "nanlath1",
 			canceldestruct = "cancel2",

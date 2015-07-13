@@ -31,6 +31,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		maneuverleashlength = 1280,
+		mass = 125,
 		maxdamage = 305,
 		maxslope = 10,
 		maxvelocity = 7,
@@ -86,6 +87,11 @@ return {
 			[29] = "tllshoretorp",
 			[30] = "tllsolarns",
 			[31] = "tlljuno",
+		},
+		nanocolor = {
+			[1] = 0.394,
+			[2] = 0.394,
+			[3] = 0.044,
 		},
 		sounds = {
 			build = "nanlath1",

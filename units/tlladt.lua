@@ -22,6 +22,7 @@ return {
 		footprintz = 2,
 		isfeature = true,
 		losemitheight = 61.21377,
+		mass = 29,
 		maxdamage = 100,
 		maxslope = 24,
 		maxwaterdepth = 0,

@@ -29,6 +29,7 @@ return {
 		idletime = 1800,
 		leavetracks = true,
 		maneuverleashlength = 640,
+		mass = 242,
 		maxdamage = 930,
 		maxslope = 15,
 		maxvelocity = 2.158,

@@ -25,7 +25,7 @@ return {
 		kamikazedistance = 0,
 		kamikazeuselos = true,
 		levelground = false,
-		mass = 500000,
+		mass = 166666.67188,
 		maxdamage = 1000000,
 		maxslope = 255,
 		maxvelocity = 0,

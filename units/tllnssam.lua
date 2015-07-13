@@ -24,6 +24,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 37.04251,
+		mass = 420,
 		maxdamage = 1455,
 		minwaterdepth = 20,
 		name = "NS Wiper",

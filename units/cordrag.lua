@@ -25,6 +25,7 @@ return {
 		idletime = 1800,
 		isfeature = true,
 		levelground = false,
+		mass = 16.66667,
 		maxdamage = 100,
 		maxslope = 64,
 		maxvelocity = 0,

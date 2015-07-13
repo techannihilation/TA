@@ -32,6 +32,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 25.68485,
+		mass = 15400,
 		maxdamage = 14575,
 		maxslope = 10,
 		maxwaterdepth = 0,
@@ -112,6 +113,11 @@ return {
 				seqnamereclamate = "tree1reclamate",
 				world = "all",
 			},
+		},
+		nanocolor = {
+			[1] = 0.842,
+			[2] = 0.842,
+			[3] = 0.492,
 		},
 		sounds = {
 			activate = "gantok2",

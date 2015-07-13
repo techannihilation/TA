@@ -32,6 +32,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		maneuverleashlength = 640,
+		mass = 413,
 		maxdamage = 670,
 		maxvelocity = 2.36,
 		metalstorage = 0,
@@ -53,6 +54,11 @@ return {
 		unitname = "armrecl",
 		waterline = 30,
 		workertime = 450,
+		nanocolor = {
+			[1] = 0.28,
+			[2] = 0.68,
+			[3] = 0.28,
+		},
 		sounds = {
 			build = "nanlath1",
 			canceldestruct = "cancel2",

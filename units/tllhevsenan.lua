@@ -27,7 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		maneuverleashlength = 380,
-		mass = 999999995904,
+		mass = 523,
 		maxdamage = 600,
 		maxslope = 10,
 		maxvelocity = 0,
@@ -49,5 +49,10 @@ return {
 		upright = true,
 		waterline = 7,
 		workertime = 350,
+		nanocolor = {
+			[1] = 0.54,
+			[2] = 0.54,
+			[3] = 0.54,
+		},
 	},
 }

@@ -27,6 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 50.96772,
+		mass = 1350,
 		maxdamage = 1650,
 		maxslope = 15,
 		maxvelocity = 0,

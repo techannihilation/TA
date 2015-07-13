@@ -30,6 +30,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 36.00118,
+		mass = 860,
 		maxdamage = 2400,
 		maxslope = 10,
 		maxvelocity = 0,
@@ -84,6 +85,11 @@ return {
 				seqnamereclamate = "TREE1RECLAMATE",
 				world = "All Worlds",
 			},
+		},
+		nanocolor = {
+			[1] = 0.12,
+			[2] = 0.52,
+			[3] = 0.12,
 		},
 		sounds = {
 			build = "pvehwork",

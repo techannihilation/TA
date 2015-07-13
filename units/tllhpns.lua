@@ -22,6 +22,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
+		mass = 1033,
 		maxdamage = 3888,
 		metalstorage = 200,
 		minwaterdepth = 30,
@@ -85,6 +86,11 @@ return {
 				seqnamereclamate = "tree1reclamate",
 				world = "All Worlds",
 			},
+		},
+		nanocolor = {
+			[1] = 0.65,
+			[2] = 0.65,
+			[3] = 0.3,
 		},
 		sounds = {
 			build = "hoverok1",

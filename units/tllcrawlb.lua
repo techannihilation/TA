@@ -28,6 +28,7 @@ return {
 		kamikaze = true,
 		kamikazedistance = 42,
 		maneuverleashlength = 640,
+		mass = 372,
 		maxdamage = 655,
 		maxslope = 32,
 		maxvelocity = 2,

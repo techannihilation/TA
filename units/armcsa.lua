@@ -35,6 +35,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		maneuverleashlength = 1280,
+		mass = 2154,
 		maxdamage = 135,
 		maxslope = 10,
 		maxvelocity = 8.97,
@@ -73,6 +74,11 @@ return {
 			[13] = "armatl",
 			[14] = "armmine2",
 			[15] = "armflosh",
+		},
+		nanocolor = {
+			[1] = 0.128,
+			[2] = 0.528,
+			[3] = 0.128,
 		},
 		sounds = {
 			build = "nanlath1",

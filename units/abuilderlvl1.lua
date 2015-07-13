@@ -29,6 +29,7 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
+		mass = 350,
 		maxdamage = 949.59998,
 		maxslope = 10,
 		maxvelocity = 10,
@@ -69,6 +70,11 @@ return {
 			[20] = "armpnix",
 			[21] = "armhawk",
 			[22] = "armaca",
+		},
+		nanocolor = {
+			[1] = 0.12,
+			[2] = 0.52,
+			[3] = 0.12,
 		},
 	},
 }

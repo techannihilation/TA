@@ -29,6 +29,7 @@ return {
 		initcloaked = true,
 		levelground = false,
 		losemitheight = 27.45,
+		mass = 41.66667,
 		maxdamage = 250,
 		maxslope = 24,
 		maxvelocity = 0,

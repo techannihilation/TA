@@ -31,6 +31,7 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
+		mass = 668,
 		maxdamage = 235,
 		maxslope = 10,
 		maxvelocity = 8.379,
@@ -55,6 +56,11 @@ return {
 			[5] = "armlightfus",
 			[6] = "armatidal",
 			[7] = "armuwlightfus",
+		},
+		nanocolor = {
+			[1] = 0.08,
+			[2] = 0.48,
+			[3] = 0.08,
 		},
 		sounds = {
 			canceldestruct = "cancel2",

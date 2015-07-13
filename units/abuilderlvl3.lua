@@ -31,6 +31,7 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
+		mass = 24500,
 		maxdamage = 7000,
 		maxslope = 10,
 		maxvelocity = 3.2,
@@ -82,6 +83,11 @@ return {
 				seqnamereclamate = "tree1reclamate",
 				world = "All Worlds",
 			},
+		},
+		nanocolor = {
+			[1] = 0.8,
+			[2] = 1,
+			[3] = 0.8,
 		},
 		sounds = {
 			canceldestruct = "cancel2",

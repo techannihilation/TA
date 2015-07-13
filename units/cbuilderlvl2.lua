@@ -31,6 +31,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 20.7,
+		mass = 654,
 		maxdamage = 231,
 		maxslope = 10,
 		maxvelocity = 7.182,
@@ -56,6 +57,11 @@ return {
 			[5] = "corlightfus",
 			[6] = "coratidal",
 			[7] = "coruwlightfus",
+		},
+		nanocolor = {
+			[1] = 0.08,
+			[2] = 0.43,
+			[3] = 0.43,
 		},
 		sounds = {
 			canceldestruct = "cancel2",

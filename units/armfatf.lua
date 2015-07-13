@@ -23,6 +23,7 @@ return {
 		idletime = 1800,
 		istargetingupgrade = true,
 		losemitheight = 32.62497,
+		mass = 756,
 		maxdamage = 1451,
 		maxslope = 10,
 		maxvelocity = 0,

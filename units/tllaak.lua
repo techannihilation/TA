@@ -25,6 +25,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		maneuverleashlength = 320,
+		mass = 750,
 		maxdamage = 1140,
 		maxslope = 14,
 		maxvelocity = 1.65,

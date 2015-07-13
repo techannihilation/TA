@@ -37,7 +37,7 @@ return {
 		isairbase = true,
 		losemitheight = 36.83016,
 		maneuverleashlength = 640,
-		mass = 10000,
+		mass = 1572,
 		maxdamage = 7640,
 		maxvelocity = 2.76,
 		metalstorage = 1500,
@@ -98,6 +98,11 @@ return {
 				seqnamereclamate = "TREE1RECLAMATE",
 				world = "All Worlds",
 			},
+		},
+		nanocolor = {
+			[1] = 0.5,
+			[2] = 0.9,
+			[3] = 0.5,
 		},
 		sounds = {
 			canceldestruct = "cancel2",

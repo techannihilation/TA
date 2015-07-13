@@ -28,6 +28,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 50.96963,
+		mass = 4460,
 		maxdamage = 3520,
 		maxslope = 15,
 		maxvelocity = 0,
@@ -101,6 +102,11 @@ return {
 				seqnamereclamate = "TREE1RECLAMATE",
 				world = "All Worlds",
 			},
+		},
+		nanocolor = {
+			[1] = 0.26,
+			[2] = 0.61,
+			[3] = 0.61,
 		},
 		sfxtypes = {
 			explosiongenerators = {

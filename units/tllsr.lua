@@ -32,6 +32,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		maneuverleashlength = 640,
+		mass = 563,
 		maxdamage = 670,
 		maxvelocity = 2.36,
 		metalstorage = 0,
@@ -53,6 +54,11 @@ return {
 		unitname = "tllsr",
 		waterline = 30,
 		workertime = 450,
+		nanocolor = {
+			[1] = 0.58,
+			[2] = 0.58,
+			[3] = 0.58,
+		},
 		sounds = {
 			build = "nanlath1",
 			canceldestruct = "cancel2",

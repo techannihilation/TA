@@ -31,6 +31,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		maneuverleashlength = 640,
+		mass = 223.5,
 		maxdamage = 1341,
 		maxslope = 16,
 		maxvelocity = 2.3,
@@ -138,6 +139,11 @@ return {
 				seqnamereclamate = "TREE1RECLAMATE",
 				world = "All Worlds",
 			},
+		},
+		nanocolor = {
+			[1] = 0.12,
+			[2] = 0.47,
+			[3] = 0.47,
 		},
 		sounds = {
 			build = "nanlath1",

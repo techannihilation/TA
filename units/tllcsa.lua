@@ -34,6 +34,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		maneuverleashlength = 1280,
+		mass = 1950,
 		maxdamage = 175,
 		maxslope = 10,
 		maxvelocity = 6.4,
@@ -78,6 +79,11 @@ return {
 			[18] = "tlltrid",
 			[19] = "tllfgate",
 			[20] = "tlldtns",
+		},
+		nanocolor = {
+			[1] = 0.394,
+			[2] = 0.394,
+			[3] = 0.044,
 		},
 		sounds = {
 			build = "nanlath1",

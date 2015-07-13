@@ -33,6 +33,7 @@ return {
 		idletime = 1800,
 		isairbase = true,
 		maneuverleashlength = 1280,
+		mass = 132.5,
 		maxdamage = 795,
 		maxslope = 10,
 		maxvelocity = 11.2,

@@ -23,6 +23,7 @@ return {
 		idletime = 1800,
 		isairbase = true,
 		losemitheight = 47.48,
+		mass = 489,
 		maxdamage = 680,
 		maxslope = 10,
 		minwaterdepth = 15,
@@ -77,6 +78,11 @@ return {
 				seqnamereclamate = "tree1reclamate",
 				world = "All Worlds",
 			},
+		},
+		nanocolor = {
+			[1] = 1,
+			[2] = 1,
+			[3] = 0.8,
 		},
 		sounds = {
 			build = "pairwork",

@@ -33,6 +33,7 @@ return {
 		idleautoheal = 10,
 		idletime = 300,
 		initcloaked = true,
+		mass = 25,
 		maxdamage = 10,
 		maxslope = 40,
 		maxvelocity = 0,

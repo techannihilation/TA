@@ -34,6 +34,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 27,
+		mass = 345,
 		maxdamage = 705.59998,
 		maxslope = 10,
 		maxvelocity = 10,
@@ -75,6 +76,11 @@ return {
 			[20] = "corhurc",
 			[21] = "corvamp",
 			[22] = "coraca",
+		},
+		nanocolor = {
+			[1] = 0.12,
+			[2] = 0.47,
+			[3] = 0.47,
 		},
 	},
 }

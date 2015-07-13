@@ -34,7 +34,7 @@ return {
 		idletime = 1800,
 		leavetracks = true,
 		maneuverleashlength = 640,
-		mass = 1500,
+		mass = 57,
 		maxdamage = 155,
 		maxslope = 16,
 		maxvelocity = 2.458,
@@ -113,6 +113,11 @@ return {
 				seqnamereclamate = "TREE1RECLAMATE",
 				world = "All Worlds",
 			},
+		},
+		nanocolor = {
+			[1] = 0.032,
+			[2] = 0.382,
+			[3] = 0.382,
 		},
 		sounds = {
 			build = "nanlath2",

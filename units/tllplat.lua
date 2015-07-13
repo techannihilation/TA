@@ -24,6 +24,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 47.062,
+		mass = 3650,
 		maxdamage = 2121,
 		metalmake = 1,
 		metalstorage = 850,
@@ -91,6 +92,11 @@ return {
 				seqnamereclamate = "tree1reclamate",
 				world = "All Worlds",
 			},
+		},
+		nanocolor = {
+			[1] = 0.618,
+			[2] = 0.618,
+			[3] = 0.268,
 		},
 		sounds = {
 			build = "seaplok1",

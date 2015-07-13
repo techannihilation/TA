@@ -20,6 +20,7 @@ return {
 		idletime = 1800,
 		losemitheight = 20.08067,
 		maneuverleashlength = 640,
+		mass = 600,
 		maxdamage = 1280,
 		maxvelocity = 1.15,
 		movementclass = "AKBOT2",

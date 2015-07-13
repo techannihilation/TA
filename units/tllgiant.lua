@@ -30,6 +30,7 @@ return {
 		isairbase = true,
 		losemitheight = 48.92156,
 		maneuverleashlength = 1640,
+		mass = 1395,
 		maxdamage = 3700,
 		maxvelocity = 2.35,
 		minwaterdepth = 30,
@@ -89,6 +90,11 @@ return {
 				seqnamereclamate = "tree1reclamate",
 				world = "All Worlds",
 			},
+		},
+		nanocolor = {
+			[1] = 0.526,
+			[2] = 0.526,
+			[3] = 0.176,
 		},
 		sounds = {
 			canceldestruct = "cancel2",

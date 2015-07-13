@@ -26,6 +26,7 @@ return {
 		icontype = "shield",
 		idleautoheal = 5,
 		idletime = 1800,
+		mass = 2370,
 		maxdamage = 2905,
 		maxslope = 10,
 		maxvelocity = 0,

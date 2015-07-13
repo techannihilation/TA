@@ -21,6 +21,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 38.89189,
+		mass = 690,
 		maxdamage = 2510,
 		metalmake = 0.5,
 		metalstorage = 100,
@@ -105,6 +106,11 @@ return {
 				seqnamereclamate = "tree1reclamate",
 				world = "All Worlds",
 			},
+		},
+		nanocolor = {
+			[1] = 0.518,
+			[2] = 0.518,
+			[3] = 0.168,
 		},
 		sounds = {
 			build = "pshpwork",
