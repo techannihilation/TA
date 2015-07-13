@@ -7,7 +7,7 @@ local unitName = "tllplasma"
 
 local unitDef = {
 	bmcode = 0,
-	buildAngle = 8192,
+	buildAngle = 8200,
 	buildCostEnergy = 14880,
 	buildCostMetal = 2100,
 	builder = false,

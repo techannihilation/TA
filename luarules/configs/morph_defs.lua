@@ -522,15 +522,29 @@ local morphDefs = {
 		tech = 3,
 		time = 120,
 		xp = 0.60,
-		metal = 2000,
-		energy = 10000,
+		metal = 3000,
+		energy = 20000,
 	},
        corhrk = {
 		into = 'corhowie',
 		tech = 3,
 		time = 120,
 		xp = 0.60,
-		metal = 2000,
+		metal = 3000,
+		energy = 20000,
+	},
+        clb = {
+		into = 'cormart',
+		time = 120,
+		xp = 0.60,
+		metal = 1500,
+		energy = 10000,
+	},
+        armmart = {
+		into = 'avtr',
+		time = 120,
+		xp = 0.60,
+		metal = 1500,
 		energy = 10000,
 	},
       corgol = {
@@ -680,6 +694,11 @@ local morphDefs = {
 		into = 'corpyrox1',
 		time = 30,
 		xp = 0.15,
+	},
+      armamph = {
+		into = 'marauder',
+		time = 60,
+		xp = 0.5,
 	},
 }
 

@@ -9,7 +9,7 @@ local unitDef = {
 	acceleration = 0.02,
 	bmcode = 1,
 	brakeRate = 0.01,
-	buildCostEnergy = 24574,
+	buildCostEnergy = 24500,
 	buildCostMetal = 4350,
 	builder = false,
 	buildTime = 37565,
@@ -94,7 +94,7 @@ local unitDef = {
 
 local weaponDefs = {
 	WHALE_VPULSE = {
-		areaOfEffect = 126,
+		areaOfEffect = 125,
 		cegTag = [[TLLRAVENTRAIL]],
 		fireStarter = 100,
 		fireSubmersed = true,
@@ -106,8 +106,8 @@ local weaponDefs = {
 		model = [[vpulse]],
 		name = [[Vpulse2]],
 		noautorange = 1,
-		range = 1300,
-		reloadtime = 12,
+		range = 1550,
+		reloadtime = 1.1,
 		renderType = 1,
 		selfprop = true,
 		smokedelay = 0.5,
@@ -128,7 +128,7 @@ local weaponDefs = {
 		weaponType = [[StarburstLauncher]],
 		weaponVelocity = 400,
 		damage = {
-			default = 550,
+			default = 500,
 		},
 	},
 }
