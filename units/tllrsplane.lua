@@ -1,10 +1,10 @@
 return {
 	tllrsplane = {
-		acceleration = 0.03135,
+		acceleration = 0.01035,
 		altfromsealevel = 10,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.045,
+		brakerate = 0.00045,
 		buildcostenergy = 1822,
 		buildcostmetal = 315,
 		builder = false,

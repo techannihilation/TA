@@ -4,7 +4,7 @@ return {
 		activatewhenbuilt = true,
 		amphibious = 1,
 		bmcode = 1,
-		brakerate = 0.525,
+		brakerate = 1.575,
 		buildcostenergy = 11452,
 		buildcostmetal = 156,
 		builder = false,
@@ -57,6 +57,9 @@ return {
 		unitname = "corspy",
 		upright = true,
 		workertime = 0,
+		customparams = {
+			buildpic = "CORSPY.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

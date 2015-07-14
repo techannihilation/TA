@@ -4,7 +4,7 @@ return {
 		activatewhenbuilt = true,
 		airsightdistance = 900,
 		bmcode = 1,
-		brakerate = 0.057,
+		brakerate = 0.171,
 		buildangle = 16384,
 		buildcostenergy = 252321,
 		buildcostmetal = 34585,
@@ -47,6 +47,7 @@ return {
 		noautofire = false,
 		nochasecategory = "VTOL",
 		objectname = "CORBLACKHY",
+		pushresistant = true,
 		radardistance = 1510,
 		radaremitheight = 42.29497,
 		scale = 100,
@@ -62,6 +63,9 @@ return {
 		turnrate = 260,
 		unitname = "corblackhy",
 		waterline = 5,
+		customparams = {
+			buildpic = "CORBLACKHY.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

@@ -66,6 +66,9 @@ return {
 			[10] = "corgripn",
 			[11] = "armcybr",
 		},
+		customparams = {
+			buildpic = "ARMAAP.png",
+		},
 		featuredefs = {
 			dead1 = {
 				blocking = true,

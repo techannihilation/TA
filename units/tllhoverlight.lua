@@ -2,7 +2,7 @@ return {
 	tllhoverlight = {
 		acceleration = 0.15,
 		bmcode = 1,
-		brakerate = 0.15,
+		brakerate = 0.45,
 		buildcostenergy = 1099,
 		buildcostmetal = 70,
 		builder = false,

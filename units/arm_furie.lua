@@ -2,7 +2,7 @@ return {
 	arm_furie = {
 		acceleration = 0.09,
 		bmcode = 1,
-		brakerate = 0.6,
+		brakerate = 1.8,
 		buildcostenergy = 525000,
 		buildcostmetal = 42500,
 		builder = false,
@@ -46,6 +46,7 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "ARM_FURIE",
+		pushresistant = true,
 		radardistance = 0,
 		radaremitheight = 45.50796,
 		selfdestructas = "NUCLEAR_MISSILE1",

@@ -2,7 +2,7 @@ return {
 	armjanus1 = {
 		acceleration = 0.0198,
 		bmcode = 1,
-		brakerate = 0.165,
+		brakerate = 0.495,
 		buildcostenergy = 3261,
 		buildcostmetal = 466,
 		builder = false,
@@ -58,6 +58,9 @@ return {
 		turnrate = 338.79999,
 		unitname = "armjanus1",
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMJANUS1.png",
+		},
 		featuredefs = {
 			armjanus_dead = {
 				blocking = true,

@@ -2,7 +2,7 @@ return {
 	cortship = {
 		acceleration = 0.062,
 		bmcode = 1,
-		brakerate = 0.255,
+		brakerate = 0.765,
 		buildangle = 16384,
 		buildcostenergy = 4786,
 		buildcostmetal = 887,
@@ -63,6 +63,9 @@ return {
 		unitname = "cortship",
 		waterline = 2,
 		workertime = 0,
+		customparams = {
+			buildpic = "CORTSHIP.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

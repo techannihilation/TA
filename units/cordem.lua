@@ -2,7 +2,7 @@ return {
 	cordem = {
 		acceleration = 0.1,
 		bmcode = 1,
-		brakerate = 0.45,
+		brakerate = 1.35,
 		buildcostenergy = 169000,
 		buildcostmetal = 10600,
 		builder = false,
@@ -40,6 +40,7 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "CORDEM",
+		pushresistant = true,
 		radardistance = 0,
 		radaremitheight = 51.95421,
 		selfdestructas = "BANTHA_NUKE",

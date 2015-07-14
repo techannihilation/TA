@@ -44,6 +44,9 @@ return {
 		unitname = "corsd",
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooooooooooo",
+		customparams = {
+			buildpic = "CORSD.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

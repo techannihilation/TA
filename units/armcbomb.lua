@@ -1,10 +1,10 @@
 return {
 	armcbomb = {
-		acceleration = 0.02805,
+		acceleration = 0.00926,
 		attackrunlength = 170,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.0035,
+		brakerate = 0.00004,
 		buildcostenergy = 6537,
 		buildcostmetal = 291,
 		buildtime = 17814,

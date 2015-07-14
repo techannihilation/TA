@@ -2,7 +2,7 @@ return {
 	armmart = {
 		acceleration = 0.0184,
 		bmcode = 1,
-		brakerate = 0.3696,
+		brakerate = 1.1088,
 		buildcostenergy = 6240,
 		buildcostmetal = 254,
 		builder = false,
@@ -60,6 +60,7 @@ return {
 		unitname = "armmart",
 		workertime = 0,
 		customparams = {
+			buildpic = "ARMMART.png",
 			canareaattack = 1,
 		},
 		featuredefs = {

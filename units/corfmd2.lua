@@ -53,6 +53,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "oooooo oooooo oooooo oooooo oooooo oooooo",
+		customparams = {
+			buildpic = "CORFMD.png",
+		},
 		featuredefs = {
 			corfmd1_dead = {
 				blocking = true,

@@ -5,7 +5,7 @@ return {
 		ai_weight = "weight CHOPPER 3",
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.6,
+		brakerate = 0.06,
 		buildcostenergy = 14249,
 		buildcostmetal = 880,
 		builder = false,

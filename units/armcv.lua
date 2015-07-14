@@ -1,8 +1,8 @@
 return {
 	armcv = {
-		acceleration = 0.121,
+		acceleration = 0.242,
 		bmcode = 1,
-		brakerate = 1.2408,
+		brakerate = 7.4448,
 		buildcostenergy = 1802,
 		buildcostmetal = 128,
 		builddistance = 172,
@@ -92,6 +92,9 @@ return {
 			[29] = "armjamt",
 			[30] = "ajuno",
 			[31] = "armrech3",
+		},
+		customparams = {
+			buildpic = "ARMCV.png",
 		},
 		featuredefs = {
 			dead = {

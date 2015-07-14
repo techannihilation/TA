@@ -53,6 +53,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "ooo ooo ooo ooo",
+		customparams = {
+			buildpic = "armckmakr.png",
+		},
 		sounds = {
 			activate = "metlon1",
 			canceldestruct = "cancel2",

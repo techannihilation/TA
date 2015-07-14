@@ -2,7 +2,7 @@ return {
 	armshock1 = {
 		acceleration = 0.023,
 		bmcode = 1,
-		brakerate = 0.3,
+		brakerate = 0.9,
 		buildcostenergy = 44739,
 		buildcostmetal = 1620,
 		builder = false,
@@ -51,6 +51,9 @@ return {
 		turninplacespeedlimit = 0.462,
 		turnrate = 231,
 		unitname = "armshock1",
+		customparams = {
+			buildpic = "ARMSHOCK.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

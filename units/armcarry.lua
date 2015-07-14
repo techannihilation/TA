@@ -4,7 +4,7 @@ return {
 		activatewhenbuilt = true,
 		antiweapons = 1,
 		bmcode = 1,
-		brakerate = 0.072,
+		brakerate = 0.216,
 		buildangle = 16384,
 		buildcostenergy = 71257,
 		buildcostmetal = 1572,
@@ -63,6 +63,9 @@ return {
 		turnrate = 210,
 		unitname = "armcarry",
 		workertime = 1000,
+		customparams = {
+			buildpic = "ARMCARRY.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

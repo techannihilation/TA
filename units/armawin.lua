@@ -52,6 +52,7 @@ return {
 		workertime = 0,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo",
 		customparams = {
+			buildpic = "armawin.png",
 			energymultiplier = 4,
 		},
 		featuredefs = {

@@ -2,7 +2,7 @@ return {
 	armzeus = {
 		acceleration = 0.12,
 		bmcode = 1,
-		brakerate = 0.75,
+		brakerate = 2.25,
 		buildcostenergy = 5900,
 		buildcostmetal = 420,
 		builder = false,
@@ -53,6 +53,9 @@ return {
 		unitname = "armzeus",
 		upright = true,
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMZEUS.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

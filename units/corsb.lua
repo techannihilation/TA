@@ -1,11 +1,11 @@
 return {
 	corsb = {
-		acceleration = 0.02772,
+		acceleration = 0.00915,
 		altfromsealevel = 1,
 		amphibious = 1,
 		attackrunlength = 260,
 		bmcode = 1,
-		brakerate = 0.015,
+		brakerate = 0.00015,
 		buildcostenergy = 7936,
 		buildcostmetal = 182,
 		builder = false,
@@ -59,6 +59,9 @@ return {
 		turnrate = 368,
 		unitname = "corsb",
 		workertime = 0,
+		customparams = {
+			buildpic = "CORSB.png",
+		},
 		sounds = {
 			build = "nanlath1",
 			canceldestruct = "cancel2",

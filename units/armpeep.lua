@@ -1,9 +1,9 @@
 return {
 	armpeep = {
-		acceleration = 0.198,
+		acceleration = 0.06534,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.1125,
+		brakerate = 0.00112,
 		buildcostenergy = 1475,
 		buildcostmetal = 30,
 		builder = false,
@@ -53,6 +53,9 @@ return {
 		turnrate = 880,
 		unitname = "armpeep",
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMPEEP.png",
+		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",

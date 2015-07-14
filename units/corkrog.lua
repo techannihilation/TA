@@ -2,7 +2,7 @@ return {
 	corkrog = {
 		acceleration = 0.108,
 		bmcode = 1,
-		brakerate = 0.714,
+		brakerate = 2.142,
 		buildcostenergy = 377000,
 		buildcostmetal = 25500,
 		builder = false,
@@ -41,6 +41,7 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "CORKROG",
+		pushresistant = true,
 		radaremitheight = 100.18369,
 		seismicsignature = 0,
 		selfdestructas = "CRBLMSSL",
@@ -57,6 +58,7 @@ return {
 		upright = true,
 		workertime = 0,
 		customparams = {
+			buildpic = "CORKROG.png",
 			requiretech = "Advanced T3 Unit Research Centre",
 		},
 		featuredefs = {

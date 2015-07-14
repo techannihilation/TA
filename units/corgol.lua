@@ -2,7 +2,7 @@ return {
 	corgol = {
 		acceleration = 0.0242,
 		bmcode = 1,
-		brakerate = 0.1485,
+		brakerate = 0.4455,
 		buildcostenergy = 19892,
 		buildcostmetal = 2067,
 		builder = false,
@@ -60,6 +60,9 @@ return {
 		turnrate = 220,
 		unitname = "corgol",
 		workertime = 0,
+		customparams = {
+			buildpic = "CORGOL.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

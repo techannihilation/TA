@@ -2,7 +2,7 @@ return {
 	tllarchnano = {
 		acceleration = 0.36,
 		bmcode = 1,
-		brakerate = 0.21,
+		brakerate = 0.63,
 		buildcostenergy = 2636,
 		buildcostmetal = 357,
 		builddistance = 212,

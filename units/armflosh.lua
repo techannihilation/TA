@@ -44,6 +44,9 @@ return {
 		waterline = 2,
 		workertime = 0,
 		yardmap = "oooooooooooooooo",
+		customparams = {
+			buildpic = "armflosh.png",
+		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",

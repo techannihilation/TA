@@ -1,13 +1,13 @@
 return {
 	armcyclone = {
-		acceleration = 0.0495,
+		acceleration = 0.01634,
 		ai_limit = "limit B-52G 6",
 		ai_weight = "weight B-52G 4",
 		altfromsealevel = 1,
 		attackrunlength = 305,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.033,
+		brakerate = 0.00033,
 		buildcostenergy = 85342,
 		buildcostmetal = 7350,
 		builder = false,
@@ -64,6 +64,7 @@ return {
 		upright = true,
 		workertime = 0,
 		customparams = {
+			buildpic = "armcyclone.png",
 			requiretech = "Advanced T3 Unit Research Centre",
 		},
 		sounds = {

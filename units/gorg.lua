@@ -2,7 +2,7 @@ return {
 	gorg = {
 		acceleration = 0.048,
 		bmcode = 1,
-		brakerate = 0.375,
+		brakerate = 1.125,
 		buildcostenergy = 585000,
 		buildcostmetal = 34000,
 		builder = false,
@@ -40,6 +40,7 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "GORG",
+		pushresistant = true,
 		radaremitheight = 52.21936,
 		seismicsignature = 0,
 		selfdestructas = "CRBLMSSL2",
@@ -54,6 +55,7 @@ return {
 		unitname = "gorg",
 		workertime = 0,
 		customparams = {
+			buildpic = "GORG.png",
 			requiretech = "Advanced T3 Unit Research Centre",
 		},
 		featuredefs = {

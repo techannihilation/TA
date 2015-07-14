@@ -3,7 +3,7 @@ return {
 		acceleration = 0.072,
 		bankscale = 1.5,
 		bmcode = 1,
-		brakerate = 0.4275,
+		brakerate = 0.04275,
 		buildcostenergy = 4320,
 		buildcostmetal = 105,
 		builddistance = 40,
@@ -90,6 +90,9 @@ return {
 			[30] = "armjamt",
 			[31] = "ajuno",
 			[32] = "armrech3",
+		},
+		customparams = {
+			buildpic = "ARMCA.png",
 		},
 		nanocolor = {
 			[1] = 0.036,

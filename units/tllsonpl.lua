@@ -1,11 +1,11 @@
 return {
 	tllsonpl = {
-		acceleration = 0.0297,
+		acceleration = 0.0098,
 		altfromsealevel = 1,
 		amphibious = 1,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.046,
+		brakerate = 0.00046,
 		buildcostenergy = 7941,
 		buildcostmetal = 151,
 		builder = false,

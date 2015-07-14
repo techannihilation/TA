@@ -2,7 +2,7 @@ return {
 	tllpbot = {
 		acceleration = 0.21,
 		bmcode = 1,
-		brakerate = 0.69,
+		brakerate = 2.07,
 		buildcostenergy = 975,
 		buildcostmetal = 270,
 		builder = false,

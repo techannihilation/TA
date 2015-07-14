@@ -47,6 +47,9 @@ return {
 		windgenerator = 185,
 		workertime = 0,
 		yardmap = "oooooooooooooooo",
+		customparams = {
+			buildpic = "core_wind_generator.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

@@ -53,6 +53,7 @@ return {
 		workertime = 0,
 		yardmap = "ooooooooooooooooooooooooo",
 		customparams = {
+			buildpic = "CORINT.png",
 			canareaattack = 1,
 		},
 		featuredefs = {

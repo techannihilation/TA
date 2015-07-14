@@ -3,7 +3,7 @@ return {
 		acceleration = 0.048,
 		antiweapons = 1,
 		bmcode = 1,
-		brakerate = 0.132,
+		brakerate = 0.396,
 		buildcostenergy = 188000,
 		buildcostmetal = 2437,
 		builder = false,
@@ -52,6 +52,9 @@ return {
 		turnrate = 473,
 		unitname = "armscab1",
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMSCAB.png",
+		},
 		featuredefs = {
 			armscab_dead = {
 				blocking = true,

@@ -3,7 +3,7 @@ return {
 		acceleration = 0.096,
 		airsightdistance = 740,
 		bmcode = 1,
-		brakerate = 0.336,
+		brakerate = 1.008,
 		buildcostenergy = 3900,
 		buildcostmetal = 215,
 		builder = false,
@@ -55,6 +55,9 @@ return {
 		turnrate = 490,
 		unitname = "armah",
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMAH.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

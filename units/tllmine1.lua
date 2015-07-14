@@ -62,6 +62,9 @@ return {
 		turnrate = 0,
 		unitname = "tllmine1",
 		workertime = 0,
+		customparams = {
+			buildpic = "TLLMINE1.png",
+		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",

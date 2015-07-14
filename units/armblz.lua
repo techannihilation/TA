@@ -1,11 +1,11 @@
 return {
 	armblz = {
-		acceleration = 0.0297,
+		acceleration = 0.0098,
 		altfromsealevel = 1,
 		attackrunlength = 180,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.04,
+		brakerate = 0.0004,
 		buildcostenergy = 7245,
 		buildcostmetal = 298,
 		builder = false,

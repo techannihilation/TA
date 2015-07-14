@@ -2,7 +2,7 @@ return {
 	corsh = {
 		acceleration = 0.12,
 		bmcode = 1,
-		brakerate = 0.336,
+		brakerate = 1.008,
 		buildcostenergy = 1439,
 		buildcostmetal = 71,
 		builder = false,
@@ -53,6 +53,9 @@ return {
 		turnrate = 615,
 		unitname = "corsh",
 		workertime = 0,
+		customparams = {
+			buildpic = "CORSH.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

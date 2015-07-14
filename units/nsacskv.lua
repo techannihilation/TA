@@ -2,7 +2,7 @@ return {
 	nsacskv = {
 		acceleration = 0.1,
 		bmcode = 1,
-		brakerate = 0.3,
+		brakerate = 0.9,
 		buildcostenergy = 9452,
 		buildcostmetal = 474,
 		builder = false,

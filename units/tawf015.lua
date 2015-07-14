@@ -3,7 +3,7 @@ return {
 		acceleration = 0.2,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.5,
+		brakerate = 0.05,
 		buildcostenergy = 35500,
 		buildcostmetal = 1050,
 		builder = false,
@@ -58,6 +58,9 @@ return {
 		unitname = "tawf015",
 		workertime = 0,
 		wter_badtargetcategory = "NOTAIR",
+		customparams = {
+			buildpic = "TAWF015.png",
+		},
 		sfxtypes = {
 			explosiongenerators = {
 				[1] = "custom:heli_muzzle",

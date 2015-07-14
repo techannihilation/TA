@@ -4,7 +4,7 @@ return {
 		amphibious = 1,
 		bankscale = 1.5,
 		bmcode = 1,
-		brakerate = 0.4275,
+		brakerate = 0.04275,
 		buildcostenergy = 19072,
 		buildcostmetal = 2154,
 		builddistance = 60,
@@ -76,6 +76,9 @@ return {
 			[13] = "armatl",
 			[14] = "armmine2",
 			[15] = "armflosh",
+		},
+		customparams = {
+			buildpic = "ARMCSA.png",
 		},
 		nanocolor = {
 			[1] = 0.128,

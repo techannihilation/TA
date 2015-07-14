@@ -40,6 +40,9 @@ return {
 		waterline = 3,
 		workertime = 0,
 		yardmap = "wwwwwwwww",
+		customparams = {
+			buildpic = "ARMFMKR.png",
+		},
 		sounds = {
 			activate = "metlon1",
 			canceldestruct = "cancel2",

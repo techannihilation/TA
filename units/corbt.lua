@@ -2,7 +2,7 @@ return {
 	corbt = {
 		acceleration = 0.03,
 		bmcode = 1,
-		brakerate = 0.09,
+		brakerate = 0.27,
 		buildcostenergy = 201900,
 		buildcostmetal = 17500,
 		builder = false,
@@ -44,6 +44,7 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "CORBT",
+		pushresistant = true,
 		radardistance = 0,
 		radaremitheight = 34.65334,
 		selfdestructas = "BIG_UNIT",

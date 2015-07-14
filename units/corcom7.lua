@@ -5,7 +5,7 @@ return {
 		amphibious = 1,
 		autoheal = 12,
 		bmcode = 1,
-		brakerate = 1.215,
+		brakerate = 3.645,
 		buildcostenergy = 1000000,
 		buildcostmetal = 90000,
 		builddistance = 362,
@@ -118,6 +118,7 @@ return {
 			[34] = "corgant1",
 		},
 		customparams = {
+			buildpic = "CORCOM.png",
 			canjump = "1",
 			iscommander = true,
 			providetech = "Battle Commander,Assault Commander,Star Commander,Supreme Commander",

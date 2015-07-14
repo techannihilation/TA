@@ -4,7 +4,7 @@ return {
 		activatewhenbuilt = true,
 		airsightdistance = 1075,
 		bmcode = 1,
-		brakerate = 0.063,
+		brakerate = 0.189,
 		buildangle = 16384,
 		buildcostenergy = 238406,
 		buildcostmetal = 32122,
@@ -47,6 +47,7 @@ return {
 		noautofire = false,
 		nochasecategory = "VTOL",
 		objectname = "ASEADRAGON",
+		pushresistant = true,
 		radardistance = 1530,
 		radaremitheight = 36.75956,
 		scale = 10,
@@ -62,6 +63,9 @@ return {
 		turnrate = 272,
 		unitname = "aseadragon",
 		waterline = 8,
+		customparams = {
+			buildpic = "ASEADRAGON.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

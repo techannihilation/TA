@@ -50,6 +50,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "oooooooooooooooo",
+		customparams = {
+			buildpic = "ARMAMAKER.png",
+		},
 		sfxtypes = {
 			explosiongenerators = {
 				[1] = "custom:maker_sfx",

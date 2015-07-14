@@ -2,7 +2,7 @@ return {
 	armsptk = {
 		acceleration = 0.18,
 		bmcode = 1,
-		brakerate = 0.564,
+		brakerate = 1.692,
 		buildcostenergy = 4200,
 		buildcostmetal = 375,
 		builder = false,
@@ -52,6 +52,9 @@ return {
 		turnrate = 1122,
 		unitname = "armsptk",
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMSPTK.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

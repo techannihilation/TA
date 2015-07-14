@@ -70,6 +70,7 @@ return {
 			[10] = "gladiator",
 		},
 		customparams = {
+			buildpic = "CORLAB.png",
 			providetech = "T1 Factory",
 		},
 		featuredefs = {

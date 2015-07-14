@@ -63,6 +63,7 @@ return {
 			[6] = "armthovr",
 		},
 		customparams = {
+			buildpic = "ARMHP.png",
 			providetech = "T1 Factory",
 		},
 		featuredefs = {

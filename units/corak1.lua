@@ -2,7 +2,7 @@ return {
 	corak1 = {
 		acceleration = 0.384,
 		bmcode = 1,
-		brakerate = 0.75,
+		brakerate = 2.25,
 		buildcostenergy = 826,
 		buildcostmetal = 64,
 		builder = false,
@@ -56,6 +56,7 @@ return {
 		upright = true,
 		workertime = 0,
 		customparams = {
+			buildpic = "CORAK1.png",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},
 		featuredefs = {

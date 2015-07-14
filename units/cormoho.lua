@@ -51,6 +51,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "ooooooooooooooooooooooooo",
+		customparams = {
+			buildpic = "CORMOHO.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

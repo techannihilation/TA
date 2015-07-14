@@ -2,7 +2,7 @@ return {
 	corparrow = {
 		acceleration = 0.015,
 		bmcode = 1,
-		brakerate = 0.2145,
+		brakerate = 0.6435,
 		buildcostenergy = 26854,
 		buildcostmetal = 988,
 		builder = false,
@@ -61,6 +61,9 @@ return {
 		turnrate = 400,
 		unitname = "corparrow",
 		workertime = 0,
+		customparams = {
+			buildpic = "CORPARROW.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

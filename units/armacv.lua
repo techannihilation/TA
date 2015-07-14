@@ -1,8 +1,8 @@
 return {
 	armacv = {
-		acceleration = 0.072,
+		acceleration = 0.144,
 		bmcode = 1,
-		brakerate = 0.9,
+		brakerate = 5.4,
 		buildcostenergy = 52060,
 		buildcostmetal = 2930,
 		builddistance = 225,
@@ -88,6 +88,9 @@ return {
 			[22] = "armavp",
 			[23] = "armevp",
 			[24] = "nebraska",
+		},
+		customparams = {
+			buildpic = "ARMACV.png",
 		},
 		featuredefs = {
 			["1_dead"] = {

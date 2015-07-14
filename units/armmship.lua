@@ -3,7 +3,7 @@ return {
 		acceleration = 0.024,
 		activatewhenbuilt = true,
 		bmcode = 1,
-		brakerate = 0.084,
+		brakerate = 0.252,
 		buildcostenergy = 9804,
 		buildcostmetal = 2648,
 		builder = false,
@@ -59,6 +59,9 @@ return {
 		turnrate = 347,
 		unitname = "armmship",
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMMSHIP.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

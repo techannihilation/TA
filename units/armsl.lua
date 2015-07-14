@@ -3,7 +3,7 @@ return {
 		acceleration = 0.15,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.5,
+		brakerate = 0.05,
 		buildcostenergy = 10090,
 		buildcostmetal = 504,
 		builder = false,
@@ -69,6 +69,9 @@ return {
 		unitname = "armsl",
 		upright = true,
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMSL.png",
+		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",

@@ -5,7 +5,7 @@ return {
 		ai_limit = "limit armcav 3",
 		ai_weight = "weight armcav 3.6",
 		bmcode = 1,
-		brakerate = 1.5,
+		brakerate = 4.5,
 		buildcostenergy = 14100,
 		buildcostmetal = 1750,
 		builder = false,

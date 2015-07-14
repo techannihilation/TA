@@ -63,6 +63,7 @@ return {
 			[3] = "armraptor",
 		},
 		customparams = {
+			buildpic = "ARMSHLTX.png",
 			providetech = "T4 Factory",
 		},
 		featuredefs = {

@@ -2,7 +2,7 @@ return {
 	coracsub = {
 		acceleration = 0.035,
 		bmcode = 1,
-		brakerate = 0.636,
+		brakerate = 1.908,
 		buildcostenergy = 37900,
 		buildcostmetal = 3190,
 		builddistance = 310,
@@ -75,6 +75,9 @@ return {
 			[15] = "coratl",
 			[16] = "coresy",
 			[17] = "corech18",
+		},
+		customparams = {
+			buildpic = "CORACSUB.png",
 		},
 		featuredefs = {
 			["1_dead"] = {

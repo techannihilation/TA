@@ -3,7 +3,7 @@ return {
 		acceleration = 0.12,
 		activatewhenbuilt = false,
 		bmcode = 1,
-		brakerate = 1.125,
+		brakerate = 3.375,
 		buildcostenergy = 5849,
 		buildcostmetal = 253,
 		builder = false,
@@ -55,6 +55,9 @@ return {
 		unitname = "armfido",
 		upright = false,
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMFIDO.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

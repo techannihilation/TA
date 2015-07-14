@@ -1,12 +1,12 @@
 return {
 	armsehak = {
-		acceleration = 0.03366,
+		acceleration = 0.01111,
 		altfromsealevel = 1,
 		amphibious = 1,
 		attackrunlength = 120,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.05,
+		brakerate = 0.0005,
 		buildcostenergy = 6624,
 		buildcostmetal = 119,
 		builder = false,
@@ -61,6 +61,9 @@ return {
 		turnrate = 402,
 		unitname = "armsehak",
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMSEHAK.png",
+		},
 		sounds = {
 			build = "nanlath1",
 			canceldestruct = "cancel2",

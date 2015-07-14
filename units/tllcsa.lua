@@ -4,7 +4,7 @@ return {
 		amphibious = 1,
 		bankscale = 1.5,
 		bmcode = 1,
-		brakerate = 0.36,
+		brakerate = 0.036,
 		buildcostenergy = 22000,
 		buildcostmetal = 1950,
 		builddistance = 180,

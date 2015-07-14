@@ -3,7 +3,7 @@ return {
 		acceleration = 0.03,
 		activatewhenbuilt = true,
 		bmcode = 1,
-		brakerate = 0.036,
+		brakerate = 0.108,
 		buildcostenergy = 1209,
 		buildcostmetal = 86,
 		builder = false,
@@ -66,6 +66,9 @@ return {
 		unitname = "corvrad",
 		unitnumber = 151,
 		workertime = 0,
+		customparams = {
+			buildpic = "corvrad.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

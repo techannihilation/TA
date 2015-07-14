@@ -3,7 +3,7 @@ return {
 		acceleration = 0.02,
 		antiweapons = 1,
 		bmcode = 1,
-		brakerate = 0.09,
+		brakerate = 0.27,
 		buildcostenergy = 125898,
 		buildcostmetal = 6465,
 		builder = false,

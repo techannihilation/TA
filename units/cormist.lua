@@ -2,7 +2,7 @@ return {
 	cormist = {
 		acceleration = 0.0352,
 		bmcode = 1,
-		brakerate = 0.0495,
+		brakerate = 0.1485,
 		buildcostenergy = 2177,
 		buildcostmetal = 146,
 		builder = false,
@@ -60,6 +60,9 @@ return {
 		turnrate = 498,
 		unitname = "cormist",
 		workertime = 0,
+		customparams = {
+			buildpic = "CORMIST.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

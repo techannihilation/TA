@@ -2,7 +2,7 @@ return {
 	armsam = {
 		acceleration = 0.0396,
 		bmcode = 1,
-		brakerate = 0.0495,
+		brakerate = 0.1485,
 		buildcostenergy = 2027,
 		buildcostmetal = 140,
 		builder = false,
@@ -58,6 +58,9 @@ return {
 		turnrate = 497,
 		unitname = "armsam",
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMSAM.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

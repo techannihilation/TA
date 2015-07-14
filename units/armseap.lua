@@ -1,11 +1,11 @@
 return {
 	armseap = {
-		acceleration = 0.10692,
+		acceleration = 0.03528,
 		amphibious = 1,
 		attackrunlength = 100,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.05,
+		brakerate = 0.0005,
 		buildcostenergy = 6619,
 		buildcostmetal = 243,
 		builder = false,
@@ -59,6 +59,9 @@ return {
 		turnrate = 597,
 		unitname = "armseap",
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMSEAP.png",
+		},
 		sounds = {
 			build = "nanlath1",
 			canceldestruct = "cancel2",

@@ -3,7 +3,7 @@ return {
 		acceleration = 0.066,
 		bankscale = 1.5,
 		bmcode = 1,
-		brakerate = 0.4275,
+		brakerate = 0.04275,
 		buildcostenergy = 28800,
 		buildcostmetal = 2730,
 		builddistance = 225,
@@ -85,6 +85,9 @@ return {
 			[24] = "coreap",
 			[25] = "corasp",
 			[26] = "corboucher",
+		},
+		customparams = {
+			buildpic = "CORACA.png",
 		},
 		featuredefs = {
 			["1_dead"] = {

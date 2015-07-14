@@ -3,7 +3,7 @@ return {
 		acceleration = 0.12,
 		airsightdistance = 770,
 		bmcode = 1,
-		brakerate = 0.564,
+		brakerate = 1.692,
 		buildcostenergy = 1100,
 		buildcostmetal = 185,
 		builder = false,
@@ -55,6 +55,9 @@ return {
 		unitname = "corcrash",
 		upright = true,
 		workertime = 0,
+		customparams = {
+			buildpic = "CORCRASH.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

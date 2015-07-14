@@ -5,7 +5,7 @@ return {
 		amphibious = 1,
 		autoheal = 8,
 		bmcode = 1,
-		brakerate = 1.155,
+		brakerate = 3.465,
 		buildcostenergy = 8500,
 		buildcostmetal = 3300,
 		builddistance = 147,
@@ -110,6 +110,7 @@ return {
 			[27] = "corfast1",
 		},
 		customparams = {
+			buildpic = "CORCOM.png",
 			iscommander = true,
 			providetech = "Battle Commander",
 		},

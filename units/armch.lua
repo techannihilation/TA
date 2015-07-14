@@ -1,8 +1,8 @@
 return {
 	armch = {
-		acceleration = 0.144,
+		acceleration = 0.288,
 		bmcode = 1,
-		brakerate = 0.45,
+		brakerate = 2.7,
 		buildcostenergy = 2523,
 		buildcostmetal = 136,
 		builddistance = 160,
@@ -104,6 +104,9 @@ return {
 			[43] = "armfrt",
 			[44] = "armtl",
 			[45] = "ajuno",
+		},
+		customparams = {
+			buildpic = "ARMCH.png",
 		},
 		featuredefs = {
 			dead = {

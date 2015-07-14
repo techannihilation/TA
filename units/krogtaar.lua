@@ -2,7 +2,7 @@ return {
 	krogtaar = {
 		acceleration = 0.144,
 		bmcode = 1,
-		brakerate = 0.714,
+		brakerate = 2.142,
 		buildcostenergy = 50499,
 		buildcostmetal = 6784,
 		builder = false,
@@ -59,6 +59,7 @@ return {
 		upright = true,
 		workertime = 0,
 		customparams = {
+			buildpic = "krogtaar.png",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {

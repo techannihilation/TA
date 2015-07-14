@@ -2,7 +2,7 @@ return {
 	tawf114 = {
 		acceleration = 0.0209,
 		bmcode = 1,
-		brakerate = 0.0594,
+		brakerate = 0.1782,
 		buildcostenergy = 20701,
 		buildcostmetal = 939,
 		builder = false,
@@ -61,6 +61,9 @@ return {
 		turnrate = 375.10001,
 		unitname = "tawf114",
 		workertime = 0,
+		customparams = {
+			buildpic = "TAWF114.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

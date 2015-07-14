@@ -2,7 +2,7 @@ return {
 	corraid1 = {
 		acceleration = 0.0243,
 		bmcode = 1,
-		brakerate = 0.0762,
+		brakerate = 0.2286,
 		buildcostenergy = 2799,
 		buildcostmetal = 365,
 		builder = false,
@@ -58,6 +58,9 @@ return {
 		turnrate = 429.79999,
 		unitname = "corraid1",
 		workertime = 0,
+		customparams = {
+			buildpic = "CORRAID1.png",
+		},
 		featuredefs = {
 			corraid_dead = {
 				blocking = true,

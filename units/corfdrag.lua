@@ -40,6 +40,9 @@ return {
 		waterline = 10,
 		workertime = 0,
 		yardmap = "wwww",
+		customparams = {
+			buildpic = "CORFDRAG.png",
+		},
 		featuredefs = {
 			floatingteeth_core = {
 				autoreclaimable = 0,

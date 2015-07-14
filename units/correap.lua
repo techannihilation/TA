@@ -2,7 +2,7 @@ return {
 	correap = {
 		acceleration = 0.044,
 		bmcode = 1,
-		brakerate = 0.198,
+		brakerate = 0.594,
 		buildcostenergy = 11348,
 		buildcostmetal = 589,
 		builder = false,
@@ -61,6 +61,9 @@ return {
 		turnrate = 434,
 		unitname = "correap",
 		workertime = 0,
+		customparams = {
+			buildpic = "CORREAP.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

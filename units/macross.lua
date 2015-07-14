@@ -2,7 +2,7 @@ return {
 	macross = {
 		acceleration = 0.3,
 		bmcode = 1,
-		brakerate = 0.96,
+		brakerate = 2.88,
 		buildcostenergy = 142500,
 		buildcostmetal = 11400,
 		builder = false,
@@ -42,6 +42,7 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "macross5",
+		pushresistant = true,
 		radardistance = 0,
 		radaremitheight = 55.36954,
 		selfdestructas = "NUCLEAR_MISSILE",

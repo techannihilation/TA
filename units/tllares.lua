@@ -2,7 +2,7 @@ return {
 	tllares = {
 		acceleration = 0.08,
 		bmcode = 1,
-		brakerate = 0.3,
+		brakerate = 0.9,
 		buildcostenergy = 221,
 		buildcostmetal = 148,
 		builder = false,

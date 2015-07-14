@@ -2,7 +2,7 @@ return {
 	armfboy = {
 		acceleration = 0.12,
 		bmcode = 1,
-		brakerate = 0.375,
+		brakerate = 1.125,
 		buildcostenergy = 11193,
 		buildcostmetal = 1418,
 		builder = false,
@@ -58,6 +58,9 @@ return {
 		unitname = "armfboy",
 		upright = false,
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMFBOY.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

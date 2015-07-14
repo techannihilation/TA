@@ -2,7 +2,7 @@ return {
 	tllannouncer = {
 		acceleration = 0.13,
 		bmcode = 1,
-		brakerate = 0.36,
+		brakerate = 1.08,
 		buildcostenergy = 835,
 		buildcostmetal = 162,
 		builder = false,

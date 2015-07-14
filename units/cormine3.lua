@@ -64,6 +64,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "o",
 		customparams = {
+			buildpic = "CORMINE3.png",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},
 		sounds = {

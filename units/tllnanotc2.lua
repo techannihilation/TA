@@ -1,7 +1,7 @@
 return {
 	tllnanotc2 = {
 		acceleration = 0,
-		brakerate = 4.5,
+		brakerate = 13.5,
 		buildcostenergy = 60000,
 		buildcostmetal = 4400,
 		builddistance = 900,
@@ -57,6 +57,9 @@ return {
 		upright = true,
 		usebuildinggrounddecal = true,
 		workertime = 1200,
+		customparams = {
+			buildpic = "CORNANOTC.png",
+		},
 		nanocolor = {
 			[1] = 0.88,
 			[2] = 0.88,

@@ -1,8 +1,8 @@
 return {
 	corassis = {
-		acceleration = 0.165,
+		acceleration = 0.33,
 		bmcode = 1,
-		brakerate = 0.825,
+		brakerate = 4.95,
 		buildcostenergy = 5028,
 		buildcostmetal = 216,
 		builddistance = 92,
@@ -81,6 +81,9 @@ return {
 			[20] = "correap",
 			[21] = "corgol",
 			[22] = "corseal",
+		},
+		customparams = {
+			buildpic = "CORASSIS.png",
 		},
 		featuredefs = {
 			dead = {

@@ -49,6 +49,7 @@ return {
 		workertime = 0,
 		yardmap = "oooooooooooooooo",
 		customparams = {
+			buildpic = "armpcan.png",
 			canareaattack = 1,
 		},
 		featuredefs = {

@@ -3,7 +3,7 @@ return {
 		acceleration = 0.12,
 		activatewhenbuilt = true,
 		bmcode = 1,
-		brakerate = 0.45,
+		brakerate = 1.35,
 		buildcostenergy = 9300,
 		buildcostmetal = 2370,
 		builder = false,
@@ -54,6 +54,9 @@ return {
 		unitname = "corshieldgen",
 		upright = true,
 		workertime = 0,
+		customparams = {
+			buildpic = "corshieldgen.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

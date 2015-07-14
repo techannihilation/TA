@@ -45,6 +45,9 @@ return {
 		waterline = 20,
 		workertime = 0,
 		yardmap = "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
+		customparams = {
+			buildpic = "ARMUWFUS.png",
+		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",

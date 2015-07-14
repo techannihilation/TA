@@ -3,7 +3,7 @@ return {
 		acceleration = 0.06,
 		amphibious = 1,
 		bmcode = 1,
-		brakerate = 0.714,
+		brakerate = 2.142,
 		buildcostenergy = 80800,
 		buildcostmetal = 3250,
 		builder = false,
@@ -52,6 +52,9 @@ return {
 		unitname = "shiva",
 		upright = true,
 		workertime = 0,
+		customparams = {
+			buildpic = "SHIVA.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

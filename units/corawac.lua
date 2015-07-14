@@ -1,10 +1,10 @@
 return {
 	corawac = {
-		acceleration = 0.03168,
+		acceleration = 0.01045,
 		altfromsealevel = 1,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.0375,
+		brakerate = 0.00038,
 		buildcostenergy = 7824,
 		buildcostmetal = 169,
 		builder = false,
@@ -55,6 +55,9 @@ return {
 		turnrate = 402,
 		unitname = "corawac",
 		workertime = 0,
+		customparams = {
+			buildpic = "CORAWAC.png",
+		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",

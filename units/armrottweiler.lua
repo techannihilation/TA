@@ -2,7 +2,7 @@ return {
 	armrottweiler = {
 		acceleration = 0.01,
 		bmcode = 1,
-		brakerate = 0.045,
+		brakerate = 0.135,
 		buildcostenergy = 5220,
 		buildcostmetal = 650,
 		builder = false,

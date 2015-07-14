@@ -2,7 +2,7 @@ return {
 	armcd = {
 		acceleration = 0.12,
 		bmcode = 1,
-		brakerate = 0.75,
+		brakerate = 2.25,
 		buildcostenergy = 8928,
 		buildcostmetal = 1992,
 		builder = false,

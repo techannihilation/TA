@@ -1,10 +1,10 @@
 return {
 	corvamp = {
-		acceleration = 0.16236,
+		acceleration = 0.05358,
 		airsightdistance = 800,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.0875,
+		brakerate = 0.00087,
 		buildcostenergy = 15000,
 		buildcostmetal = 120,
 		buildpic = "CORVAMP.png",
@@ -53,6 +53,9 @@ return {
 		turnrate = 1337,
 		unitname = "corvamp",
 		unitrestricted = 150,
+		customparams = {
+			buildpic = "CORVAMP.png",
+		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",

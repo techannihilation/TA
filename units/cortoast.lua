@@ -54,6 +54,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "ooooooooo",
+		customparams = {
+			buildpic = "CORTOAST.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

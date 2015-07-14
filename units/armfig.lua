@@ -1,10 +1,10 @@
 return {
 	armfig = {
-		acceleration = 0.825,
+		acceleration = 0.27225,
 		airsightdistance = 700,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.075,
+		brakerate = 0.00075,
 		buildcostenergy = 2000,
 		buildcostmetal = 80,
 		buildpic = "ARMFIG.png",
@@ -55,6 +55,9 @@ return {
 		turnrate = 891,
 		unitname = "armfig",
 		unitrestricted = 200,
+		customparams = {
+			buildpic = "ARMFIG.png",
+		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",

@@ -56,6 +56,9 @@ return {
 		upright = true,
 		usebuildinggrounddecal = true,
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMCLAW.png",
+		},
 		featuredefs = {
 			dead = {
 				autoreclaimable = 0,

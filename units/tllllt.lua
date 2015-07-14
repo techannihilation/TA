@@ -54,6 +54,9 @@ return {
 		unitname = "tllllt",
 		workertime = 0,
 		yardmap = "oooo",
+		customparams = {
+			buildpic = "TLLLLT.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

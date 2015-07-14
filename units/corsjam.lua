@@ -3,7 +3,7 @@ return {
 		acceleration = 0.096,
 		activatewhenbuilt = true,
 		bmcode = 1,
-		brakerate = 0.06,
+		brakerate = 0.18,
 		buildcostenergy = 2255,
 		buildcostmetal = 135,
 		builder = false,
@@ -56,6 +56,9 @@ return {
 		turnrate = 512,
 		unitname = "corsjam",
 		workertime = 0,
+		customparams = {
+			buildpic = "CORSJAM.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

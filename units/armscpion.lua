@@ -2,7 +2,7 @@ return {
 	armscpion = {
 		acceleration = 0.01,
 		bmcode = 1,
-		brakerate = 0.02289,
+		brakerate = 0.06867,
 		buildcostenergy = 9994,
 		buildcostmetal = 1500,
 		builder = false,

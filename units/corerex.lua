@@ -2,7 +2,7 @@ return {
 	corerex = {
 		acceleration = 0.05,
 		bmcode = 1,
-		brakerate = 0.12,
+		brakerate = 0.36,
 		buildcostenergy = 94000,
 		buildcostmetal = 4770,
 		builder = false,

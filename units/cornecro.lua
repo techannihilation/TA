@@ -2,7 +2,7 @@ return {
 	cornecro = {
 		acceleration = 0.2,
 		bmcode = 1,
-		brakerate = 0.75,
+		brakerate = 2.25,
 		buildcostenergy = 1400,
 		buildcostmetal = 102,
 		builddistance = 112,
@@ -60,6 +60,9 @@ return {
 		unitname = "cornecro",
 		upright = true,
 		workertime = 200,
+		customparams = {
+			buildpic = "CORNECRO.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

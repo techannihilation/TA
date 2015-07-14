@@ -3,7 +3,7 @@ return {
 		acceleration = 0.096,
 		airsightdistance = 600,
 		bmcode = 1,
-		brakerate = 0.714,
+		brakerate = 2.142,
 		buildcostenergy = 58750,
 		buildcostmetal = 2860,
 		builder = false,
@@ -52,6 +52,9 @@ return {
 		unitname = "corkarg",
 		upright = true,
 		workertime = 0,
+		customparams = {
+			buildpic = "CORKARG.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

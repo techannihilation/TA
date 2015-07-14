@@ -2,7 +2,7 @@ return {
 	tllriot = {
 		acceleration = 0.15,
 		bmcode = 1,
-		brakerate = 0.51,
+		brakerate = 1.53,
 		buildcostenergy = 1450,
 		buildcostmetal = 325,
 		builder = false,

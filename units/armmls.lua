@@ -2,7 +2,7 @@ return {
 	armmls = {
 		acceleration = 0.05,
 		bmcode = 1,
-		brakerate = 0.21,
+		brakerate = 0.63,
 		buildcostenergy = 3725,
 		buildcostmetal = 255,
 		builddistance = 212,
@@ -75,6 +75,9 @@ return {
 			[18] = "armsub",
 			[19] = "armbeaver",
 			[20] = "armbats",
+		},
+		customparams = {
+			buildpic = "ARMMLS.png",
 		},
 		featuredefs = {
 			dead = {

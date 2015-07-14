@@ -4,7 +4,7 @@ return {
 		activatewhenbuilt = true,
 		amphibious = 1,
 		bmcode = 1,
-		brakerate = 0.6,
+		brakerate = 1.8,
 		buildcostenergy = 8219,
 		buildcostmetal = 128,
 		builder = false,
@@ -57,6 +57,9 @@ return {
 		unitname = "armspy",
 		upright = true,
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMSPY.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

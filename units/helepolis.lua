@@ -2,7 +2,7 @@ return {
 	helepolis = {
 		acceleration = 1.2,
 		bmcode = 1,
-		brakerate = 3,
+		brakerate = 9,
 		buildcostenergy = 100000,
 		buildcostmetal = 12000,
 		builder = false,
@@ -50,6 +50,7 @@ return {
 		objectname = "helepolis.3do",
 		piecetrailcegrange = 4,
 		piecetrailcegtag = "Debree",
+		pushresistant = true,
 		radardistance = 0,
 		radaremitheight = 32.913,
 		selfdestructas = "CRBLMSSL1",
@@ -67,6 +68,9 @@ return {
 		unitnumber = 269,
 		upright = false,
 		workertime = 0,
+		customparams = {
+			buildpic = "helepolis.png",
+		},
 		sfxtypes = {
 			explosiongenerators = {
 				[2] = "custom:unitfire",

@@ -2,7 +2,7 @@ return {
 	tllhoverrocket = {
 		acceleration = 0.04,
 		bmcode = 1,
-		brakerate = 0.27,
+		brakerate = 0.81,
 		buildcostenergy = 3412,
 		buildcostmetal = 305,
 		builder = false,

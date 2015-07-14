@@ -2,7 +2,7 @@ return {
 	cormort = {
 		acceleration = 0.132,
 		bmcode = 1,
-		brakerate = 0.675,
+		brakerate = 2.025,
 		buildcostenergy = 2065,
 		buildcostmetal = 382,
 		builder = false,
@@ -58,6 +58,9 @@ return {
 		unitname = "cormort",
 		upright = true,
 		workertime = 0,
+		customparams = {
+			buildpic = "CORMORT.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

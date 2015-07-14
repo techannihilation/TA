@@ -1,8 +1,8 @@
 return {
 	armack = {
-		acceleration = 0.44,
+		acceleration = 0.88,
 		bmcode = 1,
-		brakerate = 2.7,
+		brakerate = 16.2,
 		buildcostenergy = 33080,
 		buildcostmetal = 2500,
 		builddistance = 225,
@@ -80,6 +80,9 @@ return {
 			[22] = "armalab",
 			[23] = "armshltx",
 			[24] = "nebraska",
+		},
+		customparams = {
+			buildpic = "ARMACK.png",
 		},
 		featuredefs = {
 			["1_dead"] = {

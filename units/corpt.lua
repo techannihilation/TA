@@ -3,7 +3,7 @@ return {
 		acceleration = 0.096,
 		airsightdistance = 600,
 		bmcode = 1,
-		brakerate = 0.075,
+		brakerate = 0.225,
 		buildcostenergy = 917,
 		buildcostmetal = 95,
 		builder = false,
@@ -57,6 +57,9 @@ return {
 		unitname = "corpt",
 		waterline = 1,
 		workertime = 0,
+		customparams = {
+			buildpic = "CORPT.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

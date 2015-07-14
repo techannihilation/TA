@@ -2,7 +2,7 @@ return {
 	armantar = {
 		acceleration = 0.01,
 		bmcode = 1,
-		brakerate = 0.16887,
+		brakerate = 0.50661,
 		buildcostenergy = 141550,
 		buildcostmetal = 15550,
 		builder = false,
@@ -45,6 +45,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMANTAR",
 		onoffable = true,
+		pushresistant = true,
 		radaremitheight = 34.46392,
 		selfdestructas = "NUCLEAR_MISSILE",
 		shootme = 1,

@@ -3,7 +3,7 @@ return {
 		acceleration = 0.096,
 		airsightdistance = 720,
 		bmcode = 1,
-		brakerate = 0.075,
+		brakerate = 0.225,
 		buildcostenergy = 985,
 		buildcostmetal = 100,
 		builder = false,
@@ -57,6 +57,9 @@ return {
 		unitname = "armpt",
 		waterline = 1,
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMPT.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

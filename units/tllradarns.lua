@@ -51,6 +51,9 @@ return {
 		waterline = 0,
 		workertime = 0,
 		yardmap = "wwwwwwwww",
+		customparams = {
+			buildpic = "TLLRADARNS.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

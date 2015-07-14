@@ -2,7 +2,7 @@ return {
 	corcs = {
 		acceleration = 0.04,
 		bmcode = 1,
-		brakerate = 0.12,
+		brakerate = 0.36,
 		buildcostenergy = 2375,
 		buildcostmetal = 260,
 		builddistance = 262,
@@ -80,6 +80,9 @@ return {
 			[19] = "corplat",
 			[20] = "corfnanotc",
 			[21] = "corech3",
+		},
+		customparams = {
+			buildpic = "CORCS.png",
 		},
 		featuredefs = {
 			dead = {

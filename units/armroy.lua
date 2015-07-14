@@ -3,7 +3,7 @@ return {
 		acceleration = 0.054,
 		activatewhenbuilt = true,
 		bmcode = 1,
-		brakerate = 0.39,
+		brakerate = 1.17,
 		buildangle = 16384,
 		buildcostenergy = 5670,
 		buildcostmetal = 980,
@@ -62,6 +62,9 @@ return {
 		unitname = "armroy",
 		waterline = 1,
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMROY.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

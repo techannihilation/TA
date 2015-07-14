@@ -3,7 +3,7 @@ return {
 		acceleration = 0.042,
 		activatewhenbuilt = true,
 		bmcode = 1,
-		brakerate = 0.186,
+		brakerate = 0.558,
 		buildangle = 16384,
 		buildcostenergy = 13551,
 		buildcostmetal = 1794,
@@ -61,6 +61,9 @@ return {
 		turnrate = 448,
 		unitname = "corcrus",
 		workertime = 0,
+		customparams = {
+			buildpic = "CORCRUS.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

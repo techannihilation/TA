@@ -2,7 +2,7 @@ return {
 	corwolv1 = {
 		acceleration = 0.011,
 		bmcode = 1,
-		brakerate = 0.0297,
+		brakerate = 0.0891,
 		buildcostenergy = 3219,
 		buildcostmetal = 299,
 		builder = false,
@@ -61,6 +61,7 @@ return {
 		unitname = "corwolv1",
 		workertime = 0,
 		customparams = {
+			buildpic = "CORWOLV1.png",
 			canareaattack = 1,
 		},
 		featuredefs = {

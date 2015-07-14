@@ -63,6 +63,7 @@ return {
 			[8] = "corasship",
 		},
 		customparams = {
+			buildpic = "CORSY.png",
 			providetech = "T1 Factory",
 		},
 		featuredefs = {

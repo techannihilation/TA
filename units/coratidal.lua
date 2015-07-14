@@ -47,6 +47,7 @@ return {
 		workertime = 0,
 		yardmap = "wwwwww wwwwww wwwwww wwwwww wwwwww wwwwww",
 		customparams = {
+			buildpic = "CORATIDAL.png",
 			energymultiplier = 5,
 		},
 		featuredefs = {

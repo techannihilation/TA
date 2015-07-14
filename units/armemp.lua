@@ -52,6 +52,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "oooooooooooooooo",
+		customparams = {
+			buildpic = "ARMEMP.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

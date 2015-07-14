@@ -2,7 +2,7 @@ return {
 	corhrk = {
 		acceleration = 0.11,
 		bmcode = 1,
-		brakerate = 0.564,
+		brakerate = 1.692,
 		buildcostenergy = 5507,
 		buildcostmetal = 560,
 		builder = false,
@@ -52,6 +52,9 @@ return {
 		unitname = "corhrk",
 		upright = true,
 		workertime = 0,
+		customparams = {
+			buildpic = "CORHRK.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

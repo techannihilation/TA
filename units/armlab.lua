@@ -69,6 +69,7 @@ return {
 			[11] = "aexxec",
 		},
 		customparams = {
+			buildpic = "ARMLAB.png",
 			providetech = "T1 Factory",
 		},
 		featuredefs = {

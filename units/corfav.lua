@@ -2,7 +2,7 @@ return {
 	corfav = {
 		acceleration = 0.11,
 		bmcode = 1,
-		brakerate = 0.435,
+		brakerate = 1.305,
 		buildcostenergy = 256,
 		buildcostmetal = 24,
 		builder = false,
@@ -59,6 +59,9 @@ return {
 		unitname = "corfav",
 		unitrestricted = 150,
 		workertime = 0,
+		customparams = {
+			buildpic = "CORFAV.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

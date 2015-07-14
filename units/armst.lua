@@ -2,7 +2,7 @@ return {
 	armst = {
 		acceleration = 0.0264,
 		bmcode = 1,
-		brakerate = 0.165,
+		brakerate = 0.495,
 		buildcostenergy = 3480,
 		buildcostmetal = 212,
 		builder = false,
@@ -63,6 +63,9 @@ return {
 		turnrate = 701.79999,
 		unitname = "armst",
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMST.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

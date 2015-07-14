@@ -42,6 +42,9 @@ return {
 		waterline = 22,
 		workertime = 0,
 		yardmap = "wwww",
+		customparams = {
+			buildpic = "ARMFDRAG.png",
+		},
 		featuredefs = {
 			floatingteeth = {
 				autoreclaimable = 0,

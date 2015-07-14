@@ -2,7 +2,7 @@ return {
 	corsumo1 = {
 		acceleration = 0.048,
 		bmcode = 1,
-		brakerate = 0.375,
+		brakerate = 1.125,
 		buildcostenergy = 33562,
 		buildcostmetal = 2420,
 		builder = false,
@@ -54,6 +54,9 @@ return {
 		unitname = "corsumo1",
 		upright = false,
 		workertime = 0,
+		customparams = {
+			buildpic = "CORSUMO1.png",
+		},
 		featuredefs = {
 			corsumo_dead = {
 				blocking = true,

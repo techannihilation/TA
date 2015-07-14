@@ -4,7 +4,7 @@ return {
 		ai_limit = "limit ARMmlSPD 2",
 		ai_weight = "weight ARMmlSPD 0",
 		bmcode = 1,
-		brakerate = 0.45,
+		brakerate = 1.35,
 		buildcostenergy = 1389,
 		buildcostmetal = 152,
 		builddistance = 117,

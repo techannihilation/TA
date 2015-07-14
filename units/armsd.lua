@@ -44,6 +44,9 @@ return {
 		unitname = "armsd",
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooooooooooo",
+		customparams = {
+			buildpic = "ARMSD.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

@@ -2,7 +2,7 @@ return {
 	armjag = {
 		acceleration = 0.4,
 		bmcode = 1,
-		brakerate = 0.66,
+		brakerate = 1.98,
 		buildcostenergy = 212000,
 		buildcostmetal = 18800,
 		builder = false,
@@ -45,6 +45,7 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMJAG",
+		pushresistant = true,
 		radardistance = 0,
 		radardistancejam = 0,
 		radaremitheight = 54.70392,
@@ -64,6 +65,7 @@ return {
 		upright = true,
 		workertime = 0,
 		customparams = {
+			buildpic = "armjag.png",
 			requiretech = "Advanced T3 Unit Research Centre",
 		},
 		featuredefs = {

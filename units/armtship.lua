@@ -2,7 +2,7 @@ return {
 	armtship = {
 		acceleration = 0.067,
 		bmcode = 1,
-		brakerate = 0.27,
+		brakerate = 0.81,
 		buildangle = 16384,
 		buildcostenergy = 4639,
 		buildcostmetal = 919,
@@ -63,6 +63,9 @@ return {
 		unitname = "armtship",
 		waterline = 10,
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMTSHIP.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

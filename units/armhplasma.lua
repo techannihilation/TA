@@ -2,7 +2,7 @@ return {
 	armhplasma = {
 		acceleration = 0.06,
 		bmcode = 1,
-		brakerate = 0.27,
+		brakerate = 0.81,
 		buildcostenergy = 13494,
 		buildcostmetal = 887,
 		builder = false,

@@ -2,7 +2,7 @@ return {
 	tllcsub = {
 		acceleration = 0.082,
 		bmcode = 1,
-		brakerate = 0.36,
+		brakerate = 1.08,
 		buildcostenergy = 2568,
 		buildcostmetal = 295,
 		builddistance = 252,

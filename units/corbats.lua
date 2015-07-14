@@ -2,7 +2,7 @@ return {
 	corbats = {
 		acceleration = 0.03,
 		bmcode = 1,
-		brakerate = 0.075,
+		brakerate = 0.225,
 		buildangle = 16384,
 		buildcostenergy = 21941,
 		buildcostmetal = 5404,
@@ -59,6 +59,7 @@ return {
 		unitname = "corbats",
 		workertime = 0,
 		customparams = {
+			buildpic = "CORBATS.png",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {

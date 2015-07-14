@@ -80,6 +80,7 @@ return {
 			[19] = "cormddm",
 		},
 		customparams = {
+			buildpic = "CORAVP.png",
 			providetech = "T2 Factory",
 		},
 		featuredefs = {

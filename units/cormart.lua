@@ -2,7 +2,7 @@ return {
 	cormart = {
 		acceleration = 0.0204,
 		bmcode = 1,
-		brakerate = 0.3696,
+		brakerate = 1.1088,
 		buildcostenergy = 5505,
 		buildcostmetal = 263,
 		builder = false,
@@ -63,6 +63,7 @@ return {
 		unitname = "cormart",
 		workertime = 0,
 		customparams = {
+			buildpic = "CORMART.png",
 			canareaattack = 1,
 		},
 		featuredefs = {

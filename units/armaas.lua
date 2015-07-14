@@ -3,7 +3,7 @@ return {
 		acceleration = 0.048,
 		airsightdistance = 800,
 		bmcode = 1,
-		brakerate = 0.18,
+		brakerate = 0.54,
 		buildangle = 16384,
 		buildcostenergy = 9500,
 		buildcostmetal = 850,
@@ -59,6 +59,9 @@ return {
 		turnrate = 416,
 		unitname = "armaas",
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMAAS.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

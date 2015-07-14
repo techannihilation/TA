@@ -2,7 +2,7 @@ return {
 	cormddm = {
 		acceleration = 0.006,
 		bmcode = 1,
-		brakerate = 0.12,
+		brakerate = 0.36,
 		buildcostenergy = 17500,
 		buildcostmetal = 2710,
 		builder = false,

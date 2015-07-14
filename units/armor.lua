@@ -4,7 +4,7 @@ return {
 		antiweapons = 1,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.625,
+		brakerate = 0.0625,
 		buildcostenergy = 40000,
 		buildcostmetal = 2500,
 		builder = false,
@@ -64,6 +64,9 @@ return {
 		turnrate = 420,
 		unitname = "armor",
 		workertime = 0,
+		customparams = {
+			buildpic = "armor.png",
+		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",

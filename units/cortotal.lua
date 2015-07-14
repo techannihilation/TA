@@ -2,7 +2,7 @@ return {
 	cortotal = {
 		acceleration = 0.013,
 		bmcode = 1,
-		brakerate = 0.06,
+		brakerate = 0.18,
 		buildcostenergy = 21000,
 		buildcostmetal = 3850,
 		builder = false,

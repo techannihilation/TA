@@ -2,7 +2,7 @@ return {
 	tllgrim = {
 		acceleration = 0.21,
 		bmcode = 1,
-		brakerate = 0.45,
+		brakerate = 1.35,
 		buildcostenergy = 350000,
 		buildcostmetal = 22000,
 		builder = false,
@@ -45,6 +45,7 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "TLLGRIM",
+		pushresistant = true,
 		radardistance = 0,
 		radaremitheight = 78.51393,
 		selfdestructas = "NUCLEAR_MISSILE",

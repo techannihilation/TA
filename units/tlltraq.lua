@@ -2,7 +2,7 @@ return {
 	tlltraq = {
 		acceleration = 0.06,
 		bmcode = 1,
-		brakerate = 0.63,
+		brakerate = 1.89,
 		buildcostenergy = 11234,
 		buildcostmetal = 764,
 		builder = false,

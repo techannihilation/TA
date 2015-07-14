@@ -1,10 +1,10 @@
 return {
 	armawac = {
-		acceleration = 0.03762,
+		acceleration = 0.01241,
 		altfromsealevel = 1,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.05,
+		brakerate = 0.0005,
 		buildcostenergy = 8062,
 		buildcostmetal = 165,
 		builder = false,
@@ -55,6 +55,9 @@ return {
 		turnrate = 392,
 		unitname = "armawac",
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMAWAC.png",
+		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",

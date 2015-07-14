@@ -2,7 +2,7 @@ return {
 	tllburner = {
 		acceleration = 0.35,
 		bmcode = 1,
-		brakerate = 0.54933,
+		brakerate = 1.64799,
 		buildcostenergy = 2400,
 		buildcostmetal = 375,
 		builder = false,

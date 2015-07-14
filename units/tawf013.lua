@@ -2,7 +2,7 @@ return {
 	tawf013 = {
 		acceleration = 0.0154,
 		bmcode = 1,
-		brakerate = 0.0462,
+		brakerate = 0.1386,
 		buildcostenergy = 2016,
 		buildcostmetal = 142,
 		builder = false,
@@ -64,6 +64,7 @@ return {
 		unitname = "tawf013",
 		workertime = 0,
 		customparams = {
+			buildpic = "TAWF013.png",
 			canareaattack = 1,
 		},
 		featuredefs = {

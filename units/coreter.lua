@@ -3,7 +3,7 @@ return {
 		acceleration = 0.0407,
 		activatewhenbuilt = true,
 		bmcode = 1,
-		brakerate = 0.06,
+		brakerate = 0.18,
 		buildcostenergy = 1750,
 		buildcostmetal = 100,
 		builder = false,
@@ -62,6 +62,9 @@ return {
 		turnrate = 619.29999,
 		unitname = "coreter",
 		workertime = 0,
+		customparams = {
+			buildpic = "CORETER.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

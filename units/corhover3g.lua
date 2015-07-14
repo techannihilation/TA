@@ -2,7 +2,7 @@ return {
 	corhover3g = {
 		acceleration = 0.09,
 		bmcode = 1,
-		brakerate = 0.33,
+		brakerate = 0.99,
 		buildcostenergy = 14162,
 		buildcostmetal = 1211,
 		builder = false,

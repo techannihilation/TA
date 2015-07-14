@@ -2,7 +2,7 @@ return {
 	requ1 = {
 		acceleration = 0.024,
 		bmcode = 1,
-		brakerate = 0.024,
+		brakerate = 0.072,
 		buildcostenergy = 43467,
 		buildcostmetal = 3901,
 		builder = false,
@@ -62,6 +62,7 @@ return {
 		unitnumber = 323,
 		workertime = 0,
 		customparams = {
+			buildpic = "REQU1.png",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		sounds = {

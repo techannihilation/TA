@@ -49,6 +49,7 @@ return {
 		workertime = 0,
 		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo",
 		customparams = {
+			buildpic = "corech3.png",
 			providetech = "Advanced T1 Unit Research Centre",
 		},
 		sounds = {

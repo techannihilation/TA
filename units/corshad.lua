@@ -1,10 +1,10 @@
 return {
 	corshad = {
-		acceleration = 0.02772,
+		acceleration = 0.00915,
 		altfromsealevel = 1,
 		attackrunlength = 170,
 		bmcode = 1,
-		brakerate = 0.055,
+		brakerate = 0.00055,
 		buildcostenergy = 5595,
 		buildcostmetal = 146,
 		builder = false,
@@ -55,6 +55,9 @@ return {
 		turnrate = 807,
 		unitname = "corshad",
 		workertime = 0,
+		customparams = {
+			buildpic = "CORSHAD.png",
+		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",

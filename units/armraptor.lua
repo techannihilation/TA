@@ -2,7 +2,7 @@ return {
 	armraptor = {
 		acceleration = 0.21,
 		bmcode = 1,
-		brakerate = 0.63,
+		brakerate = 1.89,
 		buildcostenergy = 364500,
 		buildcostmetal = 13450,
 		builder = false,
@@ -47,6 +47,7 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMRAPTOR",
+		pushresistant = true,
 		radardistance = 40,
 		radaremitheight = 89.04876,
 		selfdestructas = "ATOMIC_BLAST",
@@ -63,6 +64,9 @@ return {
 		unitnumber = 1201,
 		upright = true,
 		workertime = 0,
+		customparams = {
+			buildpic = "armraptor.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

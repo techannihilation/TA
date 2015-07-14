@@ -46,6 +46,9 @@ return {
 		unitname = "cortl",
 		waterline = 11,
 		yardmap = "wwwwwwwww",
+		customparams = {
+			buildpic = "CORTL.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

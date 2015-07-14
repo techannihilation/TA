@@ -2,7 +2,7 @@ return {
 	armdark = {
 		acceleration = 0.01,
 		bmcode = 1,
-		brakerate = 0.02289,
+		brakerate = 0.06867,
 		buildcostenergy = 4994,
 		buildcostmetal = 267,
 		builder = false,

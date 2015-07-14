@@ -52,6 +52,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "ooo ooo ooo",
+		customparams = {
+			buildpic = "CORGATE.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

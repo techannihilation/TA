@@ -1,11 +1,11 @@
 return {
 	corhunt = {
-		acceleration = 0.03498,
+		acceleration = 0.01154,
 		altfromsealevel = 1,
 		amphibious = 1,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.0375,
+		brakerate = 0.00038,
 		buildcostenergy = 6421,
 		buildcostmetal = 122,
 		builder = false,
@@ -60,6 +60,9 @@ return {
 		turnrate = 450,
 		unitname = "corhunt",
 		workertime = 0,
+		customparams = {
+			buildpic = "CORHUNT.png",
+		},
 		sounds = {
 			build = "nanlath1",
 			canceldestruct = "cancel2",

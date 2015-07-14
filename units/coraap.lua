@@ -64,6 +64,9 @@ return {
 			[8] = "armsl",
 			[9] = "corcrw",
 		},
+		customparams = {
+			buildpic = "CORAAP.png",
+		},
 		featuredefs = {
 			dead1 = {
 				blocking = true,

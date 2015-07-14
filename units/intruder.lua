@@ -2,7 +2,7 @@ return {
 	intruder = {
 		acceleration = 0.33,
 		bmcode = 1,
-		brakerate = 0.495,
+		brakerate = 1.485,
 		buildangle = 16384,
 		buildcostenergy = 15010,
 		buildcostmetal = 1264,
@@ -70,6 +70,9 @@ return {
 		unitname = "intruder",
 		unloadspread = 4,
 		workertime = 0,
+		customparams = {
+			buildpic = "INTRUDER.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

@@ -2,7 +2,7 @@ return {
 	armmanni = {
 		acceleration = 0.0132,
 		bmcode = 1,
-		brakerate = 0.4125,
+		brakerate = 1.2375,
 		buildcostenergy = 12477,
 		buildcostmetal = 1129,
 		builder = false,
@@ -63,6 +63,9 @@ return {
 		turnrate = 151,
 		unitname = "armmanni",
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMMANNI.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

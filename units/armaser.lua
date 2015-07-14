@@ -3,7 +3,7 @@ return {
 		acceleration = 0.12,
 		activatewhenbuilt = true,
 		bmcode = 1,
-		brakerate = 0.45,
+		brakerate = 1.35,
 		buildcostenergy = 1320,
 		buildcostmetal = 75,
 		builder = false,
@@ -55,6 +55,9 @@ return {
 		turnrate = 1045,
 		unitname = "armaser",
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMASER.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

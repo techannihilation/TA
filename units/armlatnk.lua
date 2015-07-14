@@ -2,7 +2,7 @@ return {
 	armlatnk = {
 		acceleration = 0.125,
 		bmcode = 1,
-		brakerate = 0.375,
+		brakerate = 1.125,
 		buildcostenergy = 7000,
 		buildcostmetal = 307,
 		builder = false,
@@ -61,6 +61,9 @@ return {
 		turnrate = 550,
 		unitname = "armlatnk",
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMLATNK.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

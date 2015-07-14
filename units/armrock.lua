@@ -2,7 +2,7 @@ return {
 	armrock = {
 		acceleration = 0.12,
 		bmcode = 1,
-		brakerate = 0.564,
+		brakerate = 1.692,
 		buildcostenergy = 944,
 		buildcostmetal = 97,
 		builder = false,
@@ -55,6 +55,9 @@ return {
 		unitname = "armrock",
 		upright = true,
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMROCK.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

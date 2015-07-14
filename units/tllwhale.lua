@@ -2,7 +2,7 @@ return {
 	tllwhale = {
 		acceleration = 0.02,
 		bmcode = 1,
-		brakerate = 0.03,
+		brakerate = 0.09,
 		buildcostenergy = 24500,
 		buildcostmetal = 4350,
 		builder = false,

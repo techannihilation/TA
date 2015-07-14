@@ -3,7 +3,7 @@ return {
 		acceleration = 0.12,
 		activatewhenbuilt = true,
 		bmcode = 1,
-		brakerate = 0.45,
+		brakerate = 1.35,
 		buildcostenergy = 5471,
 		buildcostmetal = 65,
 		builder = false,
@@ -54,6 +54,9 @@ return {
 		turnrate = 1507,
 		unitname = "corroach",
 		workertime = 0,
+		customparams = {
+			buildpic = "CORROACH.png",
+		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",

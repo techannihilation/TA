@@ -49,6 +49,9 @@ return {
 		unitnumber = 806,
 		usebuildinggrounddecal = true,
 		yardmap = "oooo",
+		customparams = {
+			buildpic = "TLLLMT.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

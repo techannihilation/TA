@@ -1,7 +1,7 @@
 return {
 	armfnanotc2 = {
 		acceleration = 0,
-		brakerate = 4.5,
+		brakerate = 13.5,
 		buildcostenergy = 72000,
 		buildcostmetal = 2300,
 		builddistance = 900,
@@ -52,6 +52,9 @@ return {
 		upright = true,
 		waterline = 1,
 		workertime = 800,
+		customparams = {
+			buildpic = "CORFNANOTC2.png",
+		},
 		nanocolor = {
 			[1] = 0.42,
 			[2] = 0.82,

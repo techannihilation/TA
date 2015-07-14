@@ -1,9 +1,9 @@
 return {
 	armmin = {
-		acceleration = 0.0198,
+		acceleration = 0.00653,
 		bankscale = 1.5,
 		bmcode = 1,
-		brakerate = 0.012,
+		brakerate = 0.00012,
 		buildcostenergy = 1500,
 		buildcostmetal = 40,
 		builddistance = 160,
@@ -73,6 +73,7 @@ return {
 			[10] = "armfmine3",
 		},
 		customparams = {
+			buildpic = "armmin.png",
 			customstock = true,
 		},
 		nanocolor = {

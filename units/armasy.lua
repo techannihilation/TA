@@ -66,6 +66,7 @@ return {
 			[10] = "armbats",
 		},
 		customparams = {
+			buildpic = "ARMASY.png",
 			providetech = "T2 Factory",
 		},
 		featuredefs = {

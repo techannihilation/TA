@@ -3,7 +3,7 @@ return {
 		acceleration = 0.1,
 		activatewhenbuilt = true,
 		bmcode = 1,
-		brakerate = 0.36,
+		brakerate = 1.08,
 		buildcostenergy = 1450,
 		buildcostmetal = 70,
 		builder = false,
@@ -53,6 +53,9 @@ return {
 		unitname = "corspec",
 		upright = true,
 		workertime = 0,
+		customparams = {
+			buildpic = "corspec.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

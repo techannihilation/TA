@@ -5,7 +5,7 @@ return {
 		amphibious = 1,
 		autoheal = 11,
 		bmcode = 1,
-		brakerate = 1.2,
+		brakerate = 3.6,
 		buildcostenergy = 400000,
 		buildcostmetal = 30000,
 		builddistance = 312,
@@ -118,6 +118,7 @@ return {
 			[34] = "irritator",
 		},
 		customparams = {
+			buildpic = "TLLCOM.png",
 			canjump = "1",
 			iscommander = true,
 			providetech = "Battle Commander,Assault Commander,Star Commander",

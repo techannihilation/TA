@@ -2,7 +2,7 @@ return {
 	armpw = {
 		acceleration = 0.36,
 		bmcode = 1,
-		brakerate = 0.6,
+		brakerate = 1.8,
 		buildcostenergy = 897,
 		buildcostmetal = 45,
 		builder = false,
@@ -56,6 +56,9 @@ return {
 		unitrestricted = 125,
 		upright = true,
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMPW.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

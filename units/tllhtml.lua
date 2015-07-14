@@ -2,7 +2,7 @@ return {
 	tllhtml = {
 		acceleration = 0.22,
 		bmcode = 1,
-		brakerate = 0.081,
+		brakerate = 0.243,
 		buildcostenergy = 180000,
 		buildcostmetal = 15950,
 		builder = false,
@@ -46,6 +46,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "TLLHTML",
 		ovradjust = 1,
+		pushresistant = true,
 		radardistance = 0,
 		radaremitheight = 50.05284,
 		selfdestructas = "MINE_NUKE",

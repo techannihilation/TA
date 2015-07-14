@@ -2,7 +2,7 @@ return {
 	corgator = {
 		acceleration = 0.055,
 		bmcode = 1,
-		brakerate = 0.165,
+		brakerate = 0.495,
 		buildcostenergy = 1042,
 		buildcostmetal = 118,
 		builder = false,
@@ -58,6 +58,9 @@ return {
 		turnrate = 484,
 		unitname = "corgator",
 		workertime = 0,
+		customparams = {
+			buildpic = "CORGATOR.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

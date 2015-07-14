@@ -1,7 +1,7 @@
 return {
 	armnanotc1 = {
 		acceleration = 0,
-		brakerate = 4.5,
+		brakerate = 13.5,
 		buildcostenergy = 20000,
 		buildcostmetal = 680,
 		builddistance = 600,
@@ -57,6 +57,9 @@ return {
 		upright = true,
 		usebuildinggrounddecal = true,
 		workertime = 400,
+		customparams = {
+			buildpic = "ARMNANOTC1.png",
+		},
 		nanocolor = {
 			[1] = 0.26,
 			[2] = 0.66,

@@ -2,7 +2,7 @@ return {
 	akmech = {
 		acceleration = 0.07,
 		bmcode = 1,
-		brakerate = 0.54,
+		brakerate = 1.62,
 		buildcostenergy = 113247,
 		buildcostmetal = 8850,
 		builder = false,

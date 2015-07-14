@@ -44,6 +44,9 @@ return {
 		waterline = 8,
 		workertime = 0,
 		yardmap = "wwwwwwwwwwwwwwww",
+		customparams = {
+			buildpic = "CORFATF.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

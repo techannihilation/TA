@@ -1,9 +1,9 @@
 return {
 	cortitan = {
-		acceleration = 0.0594,
+		acceleration = 0.0196,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.0725,
+		brakerate = 0.00072,
 		buildcostenergy = 6788,
 		buildcostmetal = 318,
 		builder = false,
@@ -55,6 +55,9 @@ return {
 		turnrate = 450,
 		unitname = "cortitan",
 		workertime = 0,
+		customparams = {
+			buildpic = "CORTITAN.png",
+		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",

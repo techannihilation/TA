@@ -51,6 +51,9 @@ return {
 		windgenerator = 120,
 		workertime = 0,
 		yardmap = "ooooooooo",
+		customparams = {
+			buildpic = "CORWIN.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

@@ -1,9 +1,9 @@
 return {
 	armlance = {
-		acceleration = 0.0792,
+		acceleration = 0.02614,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.075,
+		brakerate = 0.00075,
 		buildcostenergy = 6598,
 		buildcostmetal = 306,
 		builder = false,
@@ -55,6 +55,9 @@ return {
 		turnrate = 462,
 		unitname = "armlance",
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMLANCE.png",
+		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",

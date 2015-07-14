@@ -41,6 +41,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "ooo ooo ooo",
+		customparams = {
+			buildpic = "ARMGEN.png",
+		},
 		featuredefs = {
 			heap = {
 				blocking = false,

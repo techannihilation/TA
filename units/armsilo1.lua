@@ -55,6 +55,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "ooooooooooooooooooooooooooooooooooooooooooooooooo",
+		customparams = {
+			buildpic = "ARMSILO.png",
+		},
 		featuredefs = {
 			armsilo_dead = {
 				blocking = true,

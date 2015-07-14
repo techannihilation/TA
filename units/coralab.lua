@@ -80,6 +80,7 @@ return {
 			[19] = "krogtaar",
 		},
 		customparams = {
+			buildpic = "CORALAB.png",
 			providetech = "T2 Factory",
 		},
 		featuredefs = {

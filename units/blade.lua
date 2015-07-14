@@ -3,7 +3,7 @@ return {
 		acceleration = 0.6,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.35,
+		brakerate = 0.035,
 		buildcostenergy = 16315,
 		buildcostmetal = 892,
 		builder = false,
@@ -56,6 +56,9 @@ return {
 		turnrate = 720,
 		unitname = "blade",
 		workertime = 0,
+		customparams = {
+			buildpic = "BLADE.png",
+		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",

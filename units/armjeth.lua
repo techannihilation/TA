@@ -3,7 +3,7 @@ return {
 		acceleration = 0.12,
 		airsightdistance = 820,
 		bmcode = 1,
-		brakerate = 0.564,
+		brakerate = 1.692,
 		buildcostenergy = 1200,
 		buildcostmetal = 180,
 		builder = false,
@@ -57,6 +57,9 @@ return {
 		unitname = "armjeth",
 		upright = true,
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMJETH.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

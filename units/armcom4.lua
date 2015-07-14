@@ -5,7 +5,7 @@ return {
 		amphibious = 1,
 		autoheal = 9,
 		bmcode = 1,
-		brakerate = 1.17,
+		brakerate = 3.51,
 		buildcostenergy = 7500,
 		buildcostmetal = 3500,
 		builddistance = 152,
@@ -110,6 +110,7 @@ return {
 			[27] = "armfark1",
 		},
 		customparams = {
+			buildpic = "ARMCOM.png",
 			iscommander = true,
 			providetech = "Battle Commander",
 		},

@@ -46,6 +46,9 @@ return {
 		waterline = 9,
 		workertime = 0,
 		yardmap = "wwwwwwwwwwwwwwww",
+		customparams = {
+			buildpic = "ARMFATF.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

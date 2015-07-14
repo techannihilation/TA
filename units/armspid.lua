@@ -2,7 +2,7 @@ return {
 	armspid = {
 		acceleration = 0.18,
 		bmcode = 1,
-		brakerate = 0.564,
+		brakerate = 1.692,
 		buildcostenergy = 3170,
 		buildcostmetal = 166,
 		builder = false,
@@ -50,6 +50,9 @@ return {
 		turnrate = 1122,
 		unitname = "armspid",
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMSPID.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

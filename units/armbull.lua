@@ -2,7 +2,7 @@ return {
 	armbull = {
 		acceleration = 0.0396,
 		bmcode = 1,
-		brakerate = 0.165,
+		brakerate = 0.495,
 		buildcostenergy = 14593,
 		buildcostmetal = 844,
 		builder = false,
@@ -61,6 +61,9 @@ return {
 		turnrate = 378,
 		unitname = "armbull",
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMBULL.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

@@ -3,7 +3,7 @@ return {
 		acceleration = 0.09,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.25,
+		brakerate = 0.025,
 		buildcostenergy = 1347,
 		buildcostmetal = 69,
 		builder = false,
@@ -66,6 +66,9 @@ return {
 		turnrate = 550,
 		unitname = "corvalk",
 		workertime = 0,
+		customparams = {
+			buildpic = "CORVALK.png",
+		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",

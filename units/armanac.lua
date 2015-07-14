@@ -2,7 +2,7 @@ return {
 	armanac = {
 		acceleration = 0.084,
 		bmcode = 1,
-		brakerate = 0.336,
+		brakerate = 1.008,
 		buildcostenergy = 2444,
 		buildcostmetal = 269,
 		builder = false,
@@ -53,6 +53,9 @@ return {
 		turnrate = 525,
 		unitname = "armanac",
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMANAC.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

@@ -3,7 +3,7 @@ return {
 		acceleration = 0.049,
 		activatewhenbuilt = true,
 		bmcode = 1,
-		brakerate = 0.045,
+		brakerate = 0.135,
 		buildcostenergy = 1283,
 		buildcostmetal = 93,
 		builder = false,
@@ -53,6 +53,9 @@ return {
 		turnrate = 583,
 		unitname = "corvoyr",
 		workertime = 0,
+		customparams = {
+			buildpic = "CORVOYR.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

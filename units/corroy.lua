@@ -3,7 +3,7 @@ return {
 		acceleration = 0.05,
 		activatewhenbuilt = true,
 		bmcode = 1,
-		brakerate = 0.3,
+		brakerate = 0.9,
 		buildangle = 16384,
 		buildcostenergy = 5900,
 		buildcostmetal = 1020,
@@ -60,6 +60,9 @@ return {
 		unitname = "corroy",
 		waterline = 1,
 		workertime = 0,
+		customparams = {
+			buildpic = "CORROY.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

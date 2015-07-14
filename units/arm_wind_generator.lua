@@ -47,6 +47,9 @@ return {
 		windgenerator = 185,
 		workertime = 0,
 		yardmap = "oooooooooooooooo",
+		customparams = {
+			buildpic = "arm_wind_generator.png",
+		},
 		featuredefs = {
 			core_wind_generator_heap = {
 				blocking = false,

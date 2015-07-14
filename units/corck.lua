@@ -1,8 +1,8 @@
 return {
 	corck = {
-		acceleration = 0.456,
+		acceleration = 0.912,
 		bmcode = 1,
-		brakerate = 2.85,
+		brakerate = 17.1,
 		buildcostenergy = 1622,
 		buildcostmetal = 113,
 		builddistance = 197,
@@ -90,6 +90,9 @@ return {
 			[30] = "corjamt",
 			[31] = "cjuno",
 			[32] = "corech3",
+		},
+		customparams = {
+			buildpic = "CORCK.png",
 		},
 		featuredefs = {
 			dead = {

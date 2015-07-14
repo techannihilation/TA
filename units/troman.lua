@@ -2,7 +2,7 @@ return {
 	troman = {
 		acceleration = 0.17,
 		bmcode = 1,
-		brakerate = 1.5,
+		brakerate = 4.5,
 		buildcostenergy = 80800,
 		buildcostmetal = 4150,
 		builder = false,

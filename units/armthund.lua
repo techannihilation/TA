@@ -1,11 +1,11 @@
 return {
 	armthund = {
-		acceleration = 0.03168,
+		acceleration = 0.01045,
 		altfromsealevel = 1,
 		attackrunlength = 170,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.05,
+		brakerate = 0.0005,
 		buildcostenergy = 5075,
 		buildcostmetal = 145,
 		builder = false,
@@ -57,6 +57,9 @@ return {
 		turnrate = 829,
 		unitname = "armthund",
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMTHUND.png",
+		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",

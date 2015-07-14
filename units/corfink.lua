@@ -1,9 +1,9 @@
 return {
 	corfink = {
-		acceleration = 0.1584,
+		acceleration = 0.05227,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.125,
+		brakerate = 0.00125,
 		buildcostenergy = 1369,
 		buildcostmetal = 26,
 		builder = false,
@@ -54,6 +54,9 @@ return {
 		turnrate = 770,
 		unitname = "corfink",
 		workertime = 0,
+		customparams = {
+			buildpic = "CORFINK.png",
+		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",

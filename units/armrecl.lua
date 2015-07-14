@@ -2,7 +2,7 @@ return {
 	armrecl = {
 		acceleration = 0.048,
 		bmcode = 1,
-		brakerate = 0.75,
+		brakerate = 2.25,
 		buildcostenergy = 6911,
 		buildcostmetal = 413,
 		builddistance = 112,
@@ -56,6 +56,9 @@ return {
 		unitname = "armrecl",
 		waterline = 30,
 		workertime = 450,
+		customparams = {
+			buildpic = "ARMRECL.png",
+		},
 		nanocolor = {
 			[1] = 0.28,
 			[2] = 0.68,

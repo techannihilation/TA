@@ -2,7 +2,7 @@ return {
 	corthud1 = {
 		acceleration = 0.113,
 		bmcode = 1,
-		brakerate = 0.675,
+		brakerate = 2.025,
 		buildcostenergy = 1961,
 		buildcostmetal = 272,
 		builder = false,
@@ -56,6 +56,9 @@ return {
 		unitname = "corthud1",
 		upright = true,
 		workertime = 0,
+		customparams = {
+			buildpic = "CORTHUD1.png",
+		},
 		featuredefs = {
 			corthud_dead = {
 				blocking = true,

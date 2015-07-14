@@ -2,7 +2,7 @@ return {
 	armpincer = {
 		acceleration = 0.011,
 		bmcode = 1,
-		brakerate = 0.033,
+		brakerate = 0.099,
 		buildcostenergy = 1921,
 		buildcostmetal = 187,
 		builder = false,
@@ -58,6 +58,9 @@ return {
 		turnrate = 398,
 		unitname = "armpincer",
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMPINCER.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

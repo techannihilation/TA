@@ -2,7 +2,7 @@ return {
 	speeder = {
 		acceleration = 0.1,
 		bmcode = 1,
-		brakerate = 0.27,
+		brakerate = 0.81,
 		buildcostenergy = 19864,
 		buildcostmetal = 1168,
 		builder = false,

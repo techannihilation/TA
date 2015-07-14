@@ -2,7 +2,7 @@ return {
 	armacsub = {
 		acceleration = 0.038,
 		bmcode = 1,
-		brakerate = 0.75,
+		brakerate = 2.25,
 		buildcostenergy = 37500,
 		buildcostmetal = 3195,
 		builddistance = 300,
@@ -75,6 +75,9 @@ return {
 			[15] = "armfflak",
 			[16] = "armatl",
 			[17] = "armrech18",
+		},
+		customparams = {
+			buildpic = "ARMACSUB.png",
 		},
 		featuredefs = {
 			["1_dead"] = {

@@ -1,11 +1,11 @@
 return {
 	armpnix = {
-		acceleration = 0.02376,
+		acceleration = 0.00784,
 		altfromsealevel = 1,
 		attackrunlength = 300,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.035,
+		brakerate = 0.00035,
 		buildcostenergy = 10624,
 		buildcostmetal = 229,
 		builder = false,
@@ -55,6 +55,9 @@ return {
 		turnrate = 402,
 		unitname = "armpnix",
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMPNIX.png",
+		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",

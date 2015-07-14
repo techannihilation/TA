@@ -2,7 +2,7 @@ return {
 	cormh = {
 		acceleration = 0.072,
 		bmcode = 1,
-		brakerate = 0.336,
+		brakerate = 1.008,
 		buildcostenergy = 3107,
 		buildcostmetal = 183,
 		builder = false,
@@ -56,6 +56,9 @@ return {
 		turnrate = 455,
 		unitname = "cormh",
 		workertime = 0,
+		customparams = {
+			buildpic = "CORMH.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

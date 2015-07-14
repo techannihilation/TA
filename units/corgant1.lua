@@ -60,6 +60,7 @@ return {
 			[3] = "corgala",
 		},
 		customparams = {
+			buildpic = "CORGANT.png",
 			providetech = "T4 Factory",
 		},
 		featuredefs = {

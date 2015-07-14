@@ -3,7 +3,7 @@ return {
 		acceleration = 0.1121,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.211,
+		brakerate = 0.0211,
 		buildcostenergy = 27600,
 		buildcostmetal = 3850,
 		builder = false,
@@ -59,6 +59,9 @@ return {
 		unitname = "blackdawn",
 		unitnumber = 8387,
 		workertime = 0,
+		customparams = {
+			buildpic = "blackdawn.png",
+		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",

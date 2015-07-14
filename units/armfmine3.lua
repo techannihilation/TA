@@ -57,6 +57,9 @@ return {
 		unitname = "armfmine3",
 		waterline = 0,
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMFMINE3.png",
+		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",

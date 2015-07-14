@@ -1,8 +1,8 @@
 return {
 	cormuskrat = {
-		acceleration = 0.0308,
+		acceleration = 0.0616,
 		bmcode = 1,
-		brakerate = 0.6996,
+		brakerate = 4.1976,
 		buildcostenergy = 3216,
 		buildcostmetal = 161,
 		builddistance = 172,
@@ -102,6 +102,9 @@ return {
 			[40] = "corfrt",
 			[41] = "cortl",
 			[42] = "cjuno",
+		},
+		customparams = {
+			buildpic = "CORMUSKRAT.png",
 		},
 		featuredefs = {
 			dead = {

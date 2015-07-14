@@ -3,7 +3,7 @@ return {
 		acceleration = 0.06,
 		bankscale = 1.5,
 		bmcode = 1,
-		brakerate = 0.4125,
+		brakerate = 0.04125,
 		buildcostenergy = 4580,
 		buildcostmetal = 110,
 		builddistance = 40,
@@ -91,6 +91,9 @@ return {
 			[30] = "corjamt",
 			[31] = "cjuno",
 			[32] = "corech3",
+		},
+		customparams = {
+			buildpic = "CORCA.png",
 		},
 		nanocolor = {
 			[1] = 0.044,

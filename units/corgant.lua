@@ -67,6 +67,7 @@ return {
 			[10] = "corkrog",
 		},
 		customparams = {
+			buildpic = "CORGANT.png",
 			providetech = "T3 Factory",
 		},
 		featuredefs = {

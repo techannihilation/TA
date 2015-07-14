@@ -2,7 +2,7 @@ return {
 	armcs = {
 		acceleration = 0.05,
 		bmcode = 1,
-		brakerate = 0.15,
+		brakerate = 0.45,
 		buildcostenergy = 2130,
 		buildcostmetal = 255,
 		builddistance = 262,
@@ -80,6 +80,9 @@ return {
 			[19] = "armplat",
 			[20] = "armfnanotc",
 			[21] = "armrech3",
+		},
+		customparams = {
+			buildpic = "ARMCS.png",
 		},
 		featuredefs = {
 			dead = {

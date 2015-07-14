@@ -2,7 +2,7 @@ return {
 	armraz1 = {
 		acceleration = 0.206,
 		bmcode = 1,
-		brakerate = 0.786,
+		brakerate = 2.358,
 		buildcostenergy = 333286,
 		buildcostmetal = 11577,
 		builder = false,
@@ -42,6 +42,7 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMRAZ1",
+		pushresistant = true,
 		radaremitheight = 80.18577,
 		script = "armraz.cob",
 		seismicsignature = 0,
@@ -57,6 +58,9 @@ return {
 		unitname = "armraz1",
 		upright = true,
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMRAZ.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

@@ -45,6 +45,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "ffff",
+		customparams = {
+			buildpic = "CORDRAG.png",
+		},
 		featuredefs = {
 			dragonsteeth_core = {
 				autoreclaimable = 0,

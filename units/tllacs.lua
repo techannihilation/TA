@@ -2,7 +2,7 @@ return {
 	tllacs = {
 		acceleration = 0.11,
 		bmcode = 1,
-		brakerate = 0.9,
+		brakerate = 2.7,
 		buildcostenergy = 7951,
 		buildcostmetal = 1996,
 		builddistance = 222,

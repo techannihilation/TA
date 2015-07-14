@@ -1,8 +1,8 @@
 return {
 	corfast = {
-		acceleration = 0.24,
+		acceleration = 0.48,
 		bmcode = 1,
-		brakerate = 1.5,
+		brakerate = 9,
 		buildcostenergy = 3580,
 		buildcostmetal = 195,
 		builddistance = 110,
@@ -81,6 +81,9 @@ return {
 			[21] = "corsktl",
 			[22] = "cormort",
 			[23] = "corcan",
+		},
+		customparams = {
+			buildpic = "CORFAST.png",
 		},
 		featuredefs = {
 			dead = {

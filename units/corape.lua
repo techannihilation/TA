@@ -3,7 +3,7 @@ return {
 		acceleration = 0.152,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.3563,
+		brakerate = 0.03563,
 		buildcostenergy = 7186,
 		buildcostmetal = 345,
 		builder = false,
@@ -56,6 +56,9 @@ return {
 		turnrate = 594,
 		unitname = "corape",
 		workertime = 0,
+		customparams = {
+			buildpic = "CORAPE.png",
+		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",

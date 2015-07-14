@@ -46,6 +46,9 @@ return {
 		unitname = "armtl",
 		waterline = 11,
 		yardmap = "wwwwwwwww",
+		customparams = {
+			buildpic = "ARMTL.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

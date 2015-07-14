@@ -3,7 +3,7 @@ return {
 		acceleration = 0.096,
 		airsightdistance = 700,
 		bmcode = 1,
-		brakerate = 0.336,
+		brakerate = 1.008,
 		buildcostenergy = 4000,
 		buildcostmetal = 230,
 		builder = false,
@@ -58,6 +58,9 @@ return {
 		turnrate = 470,
 		unitname = "corah",
 		workertime = 0,
+		customparams = {
+			buildpic = "CORAH.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

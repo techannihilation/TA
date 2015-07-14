@@ -2,7 +2,7 @@ return {
 	corlevlr = {
 		acceleration = 0.0364,
 		bmcode = 1,
-		brakerate = 1.0854,
+		brakerate = 3.2562,
 		buildcostenergy = 2387,
 		buildcostmetal = 258,
 		builder = false,
@@ -58,6 +58,9 @@ return {
 		turnrate = 366.20001,
 		unitname = "corlevlr",
 		workertime = 0,
+		customparams = {
+			buildpic = "CORLEVLR.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

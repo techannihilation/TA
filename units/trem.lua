@@ -2,7 +2,7 @@ return {
 	trem = {
 		acceleration = 0.0528,
 		bmcode = 1,
-		brakerate = 0.33,
+		brakerate = 0.99,
 		buildcostenergy = 45350,
 		buildcostmetal = 1951,
 		builder = false,
@@ -64,6 +64,9 @@ return {
 		turnrate = 169.39999,
 		unitname = "trem",
 		workertime = 0,
+		customparams = {
+			buildpic = "TREM.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

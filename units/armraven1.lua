@@ -2,7 +2,7 @@ return {
 	armraven1 = {
 		acceleration = 0.108,
 		bmcode = 1,
-		brakerate = 0.564,
+		brakerate = 1.692,
 		buildcostenergy = 45625,
 		buildcostmetal = 1551,
 		builder = false,
@@ -51,6 +51,9 @@ return {
 		unitname = "armraven1",
 		upright = true,
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMRAVEN.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

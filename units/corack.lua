@@ -1,8 +1,8 @@
 return {
 	corack = {
-		acceleration = 0.4,
+		acceleration = 0.8,
 		bmcode = 1,
-		brakerate = 2.55,
+		brakerate = 15.3,
 		buildcostenergy = 30340,
 		buildcostmetal = 2510,
 		builddistance = 225,
@@ -82,6 +82,9 @@ return {
 			[22] = "coralab",
 			[23] = "corgant",
 			[24] = "corboucher",
+		},
+		customparams = {
+			buildpic = "CORACK.png",
 		},
 		featuredefs = {
 			["1_dead"] = {

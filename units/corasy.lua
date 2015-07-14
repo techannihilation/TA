@@ -66,6 +66,7 @@ return {
 			[10] = "corbats",
 		},
 		customparams = {
+			buildpic = "CORASY.png",
 			providetech = "T2 Factory",
 		},
 		featuredefs = {

@@ -5,7 +5,7 @@ return {
 		amphibious = 1,
 		autoheal = 11,
 		bmcode = 1,
-		brakerate = 1.125,
+		brakerate = 3.375,
 		buildcostenergy = 2500,
 		buildcostmetal = 2500,
 		builddistance = 132,
@@ -108,6 +108,7 @@ return {
 			[27] = "tllsolarns",
 		},
 		customparams = {
+			buildpic = "TLLCOM.png",
 			iscommander = true,
 		},
 		featuredefs = {

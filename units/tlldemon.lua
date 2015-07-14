@@ -3,7 +3,7 @@ return {
 		acceleration = 0.6,
 		badtargetcategory = "VTOL",
 		bmcode = 1,
-		brakerate = 1.8,
+		brakerate = 5.4,
 		buildcostenergy = 70000,
 		buildcostmetal = 6000,
 		builder = false,

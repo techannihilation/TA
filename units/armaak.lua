@@ -3,7 +3,7 @@ return {
 		acceleration = 0.12,
 		airsightdistance = 800,
 		bmcode = 1,
-		brakerate = 0.564,
+		brakerate = 1.692,
 		buildcostenergy = 6200,
 		buildcostmetal = 580,
 		buildpic = "ARMAAK.png",
@@ -39,6 +39,9 @@ return {
 		turnrate = 1021,
 		unitname = "armaak",
 		upright = true,
+		customparams = {
+			buildpic = "ARMAAK.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

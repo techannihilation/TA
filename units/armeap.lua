@@ -56,6 +56,9 @@ return {
 			[4] = "armorion",
 			[5] = "armcyclone",
 		},
+		customparams = {
+			buildpic = "ARMEAP.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

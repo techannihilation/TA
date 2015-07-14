@@ -2,7 +2,7 @@ return {
 	nsaagriz = {
 		acceleration = 0.041,
 		bmcode = 1,
-		brakerate = 0.285,
+		brakerate = 0.855,
 		buildcostenergy = 791817,
 		buildcostmetal = 25892,
 		builder = false,
@@ -52,6 +52,7 @@ return {
 		objectname = "NSAAGRIZ",
 		onoffable = true,
 		ovradjust = 1,
+		pushresistant = true,
 		radardistance = 1000,
 		radaremitheight = 47.62268,
 		selfdestructas = "BIG_UNIT",
@@ -69,6 +70,7 @@ return {
 		unitnumber = 1413,
 		workertime = 0,
 		customparams = {
+			buildpic = "krypto-blaster.png",
 			requiretech = "Advanced T3 Unit Research Centre",
 		},
 		featuredefs = {

@@ -59,6 +59,9 @@ return {
 		upright = true,
 		usebuildinggrounddecal = true,
 		workertime = 0,
+		customparams = {
+			buildpic = "CORMAW.png",
+		},
 		featuredefs = {
 			dead = {
 				autoreclaimable = 0,

@@ -3,7 +3,7 @@ return {
 		acceleration = 0.072,
 		activatewhenbuilt = true,
 		bmcode = 1,
-		brakerate = 0.057,
+		brakerate = 0.171,
 		buildangle = 16384,
 		buildcostenergy = 1912,
 		buildcostmetal = 367,
@@ -59,6 +59,9 @@ return {
 		unitname = "coresupp",
 		waterline = 1,
 		workertime = 0,
+		customparams = {
+			buildpic = "CORESUPP.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

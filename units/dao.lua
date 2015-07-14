@@ -2,7 +2,7 @@ return {
 	dao = {
 		acceleration = 0.031,
 		bmcode = 1,
-		brakerate = 0.02289,
+		brakerate = 0.06867,
 		buildcostenergy = 2848,
 		buildcostmetal = 373,
 		builder = false,

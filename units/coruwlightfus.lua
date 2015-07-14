@@ -42,6 +42,9 @@ return {
 		unitname = "coruwlightfus",
 		workertime = 0,
 		yardmap = "ooooo ooooo ooooo ooooo",
+		customparams = {
+			buildpic = "CORUWLIGHTFUS.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

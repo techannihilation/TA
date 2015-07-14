@@ -2,7 +2,7 @@ return {
 	armbc = {
 		acceleration = 0.005,
 		bmcode = 1,
-		brakerate = 0.045,
+		brakerate = 0.135,
 		buildangle = 16384,
 		buildcostenergy = 69731,
 		buildcostmetal = 7604,

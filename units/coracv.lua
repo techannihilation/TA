@@ -1,8 +1,8 @@
 return {
 	coracv = {
-		acceleration = 0.06,
+		acceleration = 0.12,
 		bmcode = 1,
-		brakerate = 0.825,
+		brakerate = 4.95,
 		buildcostenergy = 55010,
 		buildcostmetal = 2850,
 		builddistance = 225,
@@ -88,6 +88,9 @@ return {
 			[22] = "coravp",
 			[23] = "corevp",
 			[24] = "corboucher",
+		},
+		customparams = {
+			buildpic = "CORACV.png",
 		},
 		featuredefs = {
 			["1_dead"] = {

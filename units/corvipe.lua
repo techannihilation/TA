@@ -53,6 +53,9 @@ return {
 		unitname = "corvipe",
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooooo",
+		customparams = {
+			buildpic = "CORVIPE.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

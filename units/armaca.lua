@@ -3,7 +3,7 @@ return {
 		acceleration = 0.08,
 		bankscale = 1.5,
 		bmcode = 1,
-		brakerate = 0.4275,
+		brakerate = 0.04275,
 		buildcostenergy = 29090,
 		buildcostmetal = 2720,
 		builddistance = 225,
@@ -86,6 +86,9 @@ return {
 			[24] = "armeap",
 			[25] = "nebraska",
 			[26] = "armasp",
+		},
+		customparams = {
+			buildpic = "ARMACA.png",
 		},
 		featuredefs = {
 			["1_dead"] = {

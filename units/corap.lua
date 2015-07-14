@@ -69,6 +69,9 @@ return {
 			[8] = "corfiend",
 			[9] = "corfalc",
 		},
+		customparams = {
+			buildpic = "CORAP.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

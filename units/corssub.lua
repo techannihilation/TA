@@ -3,7 +3,7 @@ return {
 		acceleration = 0.028,
 		activatewhenbuilt = true,
 		bmcode = 1,
-		brakerate = 0.564,
+		brakerate = 1.692,
 		buildcostenergy = 11940,
 		buildcostmetal = 1750,
 		builder = false,
@@ -59,6 +59,7 @@ return {
 		waterline = 30,
 		workertime = 0,
 		customparams = {
+			buildpic = "CORSSUB.png",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {

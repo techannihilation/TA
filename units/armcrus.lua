@@ -3,7 +3,7 @@ return {
 		acceleration = 0.048,
 		activatewhenbuilt = true,
 		bmcode = 1,
-		brakerate = 0.186,
+		brakerate = 0.558,
 		buildangle = 16384,
 		buildcostenergy = 13608,
 		buildcostmetal = 1719,
@@ -61,6 +61,9 @@ return {
 		turnrate = 454,
 		unitname = "armcrus",
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMCRUS.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

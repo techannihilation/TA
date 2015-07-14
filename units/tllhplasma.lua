@@ -2,7 +2,7 @@ return {
 	tllhplasma = {
 		acceleration = 0.075,
 		bmcode = 1,
-		brakerate = 0.3,
+		brakerate = 0.9,
 		buildcostenergy = 5150,
 		buildcostmetal = 535,
 		builder = false,

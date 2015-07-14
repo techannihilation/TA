@@ -1,7 +1,7 @@
 return {
 	corpyrox1 = {
 		acceleration = 0.1,
-		brakerate = 0.54,
+		brakerate = 1.62,
 		buildcostenergy = 22000,
 		buildcostmetal = 3300,
 		builder = false,
@@ -56,6 +56,7 @@ return {
 		upright = true,
 		workertime = 0,
 		customparams = {
+			buildpic = "corpyrox.png",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {

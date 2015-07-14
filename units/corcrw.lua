@@ -4,7 +4,7 @@ return {
 		activatewhenbuilt = true,
 		bankscale = 0.5,
 		bmcode = 1,
-		brakerate = 0.375,
+		brakerate = 0.0375,
 		buildcostenergy = 68088,
 		buildcostmetal = 6000,
 		builder = false,
@@ -65,6 +65,7 @@ return {
 		upright = true,
 		workertime = 0,
 		customparams = {
+			buildpic = "CORCRW.png",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		sounds = {

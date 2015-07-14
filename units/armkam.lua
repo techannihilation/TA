@@ -3,7 +3,7 @@ return {
 		acceleration = 0.154,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.375,
+		brakerate = 0.0375,
 		buildcostenergy = 2226,
 		buildcostmetal = 125,
 		builder = false,
@@ -56,6 +56,9 @@ return {
 		turnrate = 693,
 		unitname = "armkam",
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMKAM.png",
+		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",

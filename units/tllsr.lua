@@ -2,7 +2,7 @@ return {
 	tllsr = {
 		acceleration = 0.048,
 		bmcode = 1,
-		brakerate = 0.75,
+		brakerate = 2.25,
 		buildcostenergy = 3234,
 		buildcostmetal = 563,
 		builddistance = 112,
@@ -56,6 +56,9 @@ return {
 		unitname = "tllsr",
 		waterline = 30,
 		workertime = 450,
+		customparams = {
+			buildpic = "TLLSR.png",
+		},
 		nanocolor = {
 			[1] = 0.58,
 			[2] = 0.58,

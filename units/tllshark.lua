@@ -2,7 +2,7 @@ return {
 	tllshark = {
 		acceleration = 0.02,
 		bmcode = 1,
-		brakerate = 0.3,
+		brakerate = 0.9,
 		buildcostenergy = 5643,
 		buildcostmetal = 90,
 		builder = false,

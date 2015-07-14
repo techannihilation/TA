@@ -4,7 +4,7 @@ return {
 		antiweapons = 1,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.625,
+		brakerate = 0.0625,
 		buildcostenergy = 38500,
 		buildcostmetal = 3250,
 		builder = false,
@@ -64,6 +64,9 @@ return {
 		turnrate = 420,
 		unitname = "corbtrans",
 		workertime = 0,
+		customparams = {
+			buildpic = "corbtrans.png",
+		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",

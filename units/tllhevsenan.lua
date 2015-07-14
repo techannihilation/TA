@@ -1,7 +1,7 @@
 return {
 	tllhevsenan = {
 		acceleration = 0,
-		brakerate = 4.5,
+		brakerate = 13.5,
 		buildcostenergy = 2389,
 		buildcostmetal = 523,
 		builddistance = 600,
@@ -51,6 +51,9 @@ return {
 		upright = true,
 		waterline = 7,
 		workertime = 350,
+		customparams = {
+			buildpic = "armhevsenan.png",
+		},
 		nanocolor = {
 			[1] = 0.54,
 			[2] = 0.54,

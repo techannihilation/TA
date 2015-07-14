@@ -2,7 +2,7 @@ return {
 	coradon = {
 		acceleration = 0.09,
 		bmcode = 1,
-		brakerate = 0.135,
+		brakerate = 0.405,
 		buildcostenergy = 34500,
 		buildcostmetal = 6550,
 		builder = false,

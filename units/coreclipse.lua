@@ -1,13 +1,13 @@
 return {
 	coreclipse = {
-		acceleration = 0.0627,
+		acceleration = 0.02069,
 		ai_limit = "limit Tu95-A 6",
 		ai_weight = "weight Tu95-A 4",
 		altfromsealevel = 1,
 		attackrunlength = 302,
 		bankscale = 1.3,
 		bmcode = 1,
-		brakerate = 0.045,
+		brakerate = 0.00045,
 		buildcostenergy = 80342,
 		buildcostmetal = 6810,
 		builder = false,
@@ -63,6 +63,7 @@ return {
 		upright = true,
 		workertime = 0,
 		customparams = {
+			buildpic = "coreclipse.png",
 			requiretech = "Advanced T3 Unit Research Centre",
 		},
 		sounds = {

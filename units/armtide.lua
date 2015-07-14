@@ -44,6 +44,9 @@ return {
 		waterline = 7,
 		workertime = 0,
 		yardmap = "wwwwwwwww",
+		customparams = {
+			buildpic = "ARMTIDE.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

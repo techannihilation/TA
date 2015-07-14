@@ -2,7 +2,7 @@ return {
 	armjugg = {
 		acceleration = 0.09,
 		bmcode = 1,
-		brakerate = 0.57,
+		brakerate = 1.71,
 		buildcostenergy = 119000,
 		buildcostmetal = 13400,
 		builder = false,
@@ -42,6 +42,7 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMJUGG",
+		pushresistant = true,
 		radardistance = 0,
 		radaremitheight = 49.86745,
 		selfdestructas = "BANTHA_NUKE",

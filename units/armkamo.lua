@@ -3,7 +3,7 @@ return {
 		acceleration = 0.2,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.6,
+		brakerate = 0.06,
 		buildcostenergy = 29249,
 		buildcostmetal = 2870,
 		builder = false,

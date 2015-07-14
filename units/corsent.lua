@@ -3,7 +3,7 @@ return {
 		acceleration = 0.0528,
 		airsightdistance = 800,
 		bmcode = 1,
-		brakerate = 0.4125,
+		brakerate = 1.2375,
 		buildcostenergy = 7100,
 		buildcostmetal = 450,
 		builder = false,
@@ -65,6 +65,9 @@ return {
 		unitname = "corsent",
 		upright = false,
 		workertime = 0,
+		customparams = {
+			buildpic = "CORSENT.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

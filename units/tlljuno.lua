@@ -53,6 +53,9 @@ return {
 		unitname = "tlljuno",
 		workertime = 0,
 		yardmap = "oooooooooooooooo",
+		customparams = {
+			buildpic = "TLLJUNO.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

@@ -4,7 +4,7 @@ return {
 		amphibious = 1,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.4613,
+		brakerate = 0.04613,
 		buildcostenergy = 5984,
 		buildcostmetal = 192,
 		builder = false,
@@ -60,6 +60,9 @@ return {
 		turnrate = 931,
 		unitname = "armsaber",
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMSABER.png",
+		},
 		sounds = {
 			build = "nanlath1",
 			canceldestruct = "cancel2",

@@ -2,7 +2,7 @@ return {
 	armpw1 = {
 		acceleration = 0.36,
 		bmcode = 1,
-		brakerate = 0.6,
+		brakerate = 1.8,
 		buildcostenergy = 897,
 		buildcostmetal = 85,
 		builder = false,
@@ -57,6 +57,7 @@ return {
 		upright = true,
 		workertime = 0,
 		customparams = {
+			buildpic = "ARMPW1.png",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},
 		featuredefs = {

@@ -3,7 +3,7 @@ return {
 		acceleration = 0.0396,
 		airsightdistance = 1000,
 		bmcode = 1,
-		brakerate = 0.3795,
+		brakerate = 1.1385,
 		buildcostenergy = 5400,
 		buildcostmetal = 525,
 		builder = false,
@@ -62,6 +62,9 @@ return {
 		turnrate = 618.20001,
 		unitname = "armyork",
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMYORK.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

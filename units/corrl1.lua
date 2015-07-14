@@ -55,6 +55,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "ooooooooo",
+		customparams = {
+			buildpic = "CORRL.png",
+		},
 		featuredefs = {
 			corrl_dead = {
 				blocking = true,

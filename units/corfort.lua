@@ -47,6 +47,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "ffff",
+		customparams = {
+			buildpic = "CORFORT.png",
+		},
 		featuredefs = {
 			fortification_core = {
 				autoreclaimable = 0,

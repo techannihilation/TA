@@ -2,7 +2,7 @@ return {
 	armfast = {
 		acceleration = 0.36,
 		bmcode = 1,
-		brakerate = 1.125,
+		brakerate = 3.375,
 		buildcostenergy = 4382,
 		buildcostmetal = 177,
 		builder = false,
@@ -53,6 +53,9 @@ return {
 		unitname = "armfast",
 		upright = true,
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMFAST.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

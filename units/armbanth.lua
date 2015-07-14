@@ -3,7 +3,7 @@ return {
 		acceleration = 0.103,
 		airsightdistance = 800,
 		bmcode = 1,
-		brakerate = 0.654,
+		brakerate = 1.962,
 		buildcostenergy = 168000,
 		buildcostmetal = 9700,
 		builder = false,
@@ -41,6 +41,7 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMBANTH",
+		pushresistant = true,
 		radaremitheight = 49.04171,
 		seismicsignature = 0,
 		selfdestructas = "BANTHA_NUKE",
@@ -56,6 +57,9 @@ return {
 		unitname = "armbanth",
 		upright = true,
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMBANTH.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

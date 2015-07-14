@@ -3,7 +3,7 @@ return {
 		acceleration = 0.071,
 		activatewhenbuilt = true,
 		bmcode = 1,
-		brakerate = 1.65,
+		brakerate = 4.95,
 		buildcostenergy = 900,
 		buildcostmetal = 193,
 		builddistance = 96,
@@ -76,6 +76,9 @@ return {
 			[6] = "tllmine5",
 			[7] = "tllmine4",
 			[8] = "tllmine6",
+		},
+		customparams = {
+			buildpic = "TLLMLV.png",
 		},
 		featuredefs = {
 			dead = {

@@ -67,6 +67,9 @@ return {
 			[8] = "intruder",
 			[9] = "corsub",
 		},
+		customparams = {
+			buildpic = "CSUBPEN.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

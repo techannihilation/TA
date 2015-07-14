@@ -2,7 +2,7 @@ return {
 	coredauber = {
 		acceleration = 0.11,
 		bmcode = 1,
-		brakerate = 0.54933,
+		brakerate = 1.64799,
 		buildcostenergy = 8250,
 		buildcostmetal = 610,
 		builder = false,

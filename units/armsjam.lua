@@ -3,7 +3,7 @@ return {
 		acceleration = 0.09,
 		activatewhenbuilt = true,
 		bmcode = 1,
-		brakerate = 0.06,
+		brakerate = 0.18,
 		buildcostenergy = 1920,
 		buildcostmetal = 130,
 		builder = false,
@@ -56,6 +56,9 @@ return {
 		turnrate = 540,
 		unitname = "armsjam",
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMSJAM.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

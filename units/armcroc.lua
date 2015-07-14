@@ -3,7 +3,7 @@ return {
 		acceleration = 0.0528,
 		amphibious = 1,
 		bmcode = 1,
-		brakerate = 0.0627,
+		brakerate = 0.1881,
 		buildcostenergy = 11512,
 		buildcostmetal = 467,
 		builder = false,
@@ -62,6 +62,9 @@ return {
 		turnrate = 433,
 		unitname = "armcroc",
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMCROC.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

@@ -2,7 +2,7 @@ return {
 	armham = {
 		acceleration = 0.12,
 		bmcode = 1,
-		brakerate = 0.675,
+		brakerate = 2.025,
 		buildcostenergy = 1231,
 		buildcostmetal = 121,
 		builder = false,
@@ -55,6 +55,9 @@ return {
 		unitname = "armham",
 		upright = true,
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMHAM.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

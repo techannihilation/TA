@@ -4,7 +4,7 @@ return {
 		activatewhenbuilt = true,
 		antiweapons = 1,
 		bmcode = 1,
-		brakerate = 0.069,
+		brakerate = 0.207,
 		buildangle = 16384,
 		buildcostenergy = 74715,
 		buildcostmetal = 1579,
@@ -63,6 +63,9 @@ return {
 		turnrate = 210,
 		unitname = "corcarry",
 		workertime = 1000,
+		customparams = {
+			buildpic = "CORCARRY.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

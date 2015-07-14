@@ -2,7 +2,7 @@ return {
 	consul1 = {
 		acceleration = 0.0825,
 		bmcode = 1,
-		brakerate = 0.4125,
+		brakerate = 1.2375,
 		buildcostenergy = 5028,
 		buildcostmetal = 216,
 		builddistance = 136,
@@ -82,6 +82,9 @@ return {
 			[19] = "correap",
 			[20] = "corgol",
 			[21] = "corseal",
+		},
+		customparams = {
+			buildpic = "CONSUL.png",
 		},
 		featuredefs = {
 			dead = {

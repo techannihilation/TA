@@ -77,6 +77,7 @@ return {
 			[16] = "cbrutus",
 		},
 		customparams = {
+			buildpic = "CORVP.png",
 			providetech = "T1 Factory",
 		},
 		featuredefs = {

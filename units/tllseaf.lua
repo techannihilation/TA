@@ -1,10 +1,10 @@
 return {
 	tllseaf = {
-		acceleration = 0.198,
+		acceleration = 0.06534,
 		airsightdistance = 700,
 		amphibious = 1,
 		bmcode = 1,
-		brakerate = 0.042,
+		brakerate = 0.00042,
 		buildcostenergy = 2000,
 		buildcostmetal = 275,
 		builder = false,

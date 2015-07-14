@@ -5,7 +5,7 @@ return {
 		amphibious = 1,
 		autoheal = 6,
 		bmcode = 1,
-		brakerate = 1.125,
+		brakerate = 3.375,
 		buildcostenergy = 5000,
 		buildcostmetal = 3000,
 		builddistance = 137,
@@ -111,6 +111,7 @@ return {
 			[28] = "cbuilderlvl2",
 		},
 		customparams = {
+			buildpic = "CORCOM.png",
 			iscommander = true,
 		},
 		featuredefs = {

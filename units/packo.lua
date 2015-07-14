@@ -58,6 +58,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "ooooooooo",
+		customparams = {
+			buildpic = "PACKO.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

@@ -50,6 +50,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "oooooooooooo",
+		customparams = {
+			buildpic = "CORMAKR.png",
+		},
 		sounds = {
 			activate = "metlon2",
 			canceldestruct = "cancel2",

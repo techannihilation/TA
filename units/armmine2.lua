@@ -64,6 +64,9 @@ return {
 		unitname = "armmine2",
 		usebuildinggrounddecal = true,
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMMINE2.png",
+		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",

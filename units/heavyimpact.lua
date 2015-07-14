@@ -1,7 +1,7 @@
 return {
 	heavyimpact = {
 		acceleration = 0.06,
-		brakerate = 0.3,
+		brakerate = 0.9,
 		buildcostenergy = 72090,
 		buildcostmetal = 7000,
 		builder = false,
@@ -57,6 +57,7 @@ return {
 		unitname = "heavyimpact",
 		upright = true,
 		customparams = {
+			buildpic = "heavyimpact.png",
 			canareaattack = 1,
 		},
 		featuredefs = {

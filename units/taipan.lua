@@ -2,7 +2,7 @@ return {
 	taipan = {
 		acceleration = 0.06,
 		bmcode = 1,
-		brakerate = 0.63,
+		brakerate = 1.89,
 		buildcostenergy = 20234,
 		buildcostmetal = 464,
 		builder = false,

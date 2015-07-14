@@ -1,9 +1,9 @@
 return {
 	armcybr = {
-		acceleration = 0.13068,
+		acceleration = 0.04312,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.05,
+		brakerate = 0.0005,
 		buildcostenergy = 40371,
 		buildcostmetal = 2103,
 		builder = false,
@@ -56,6 +56,7 @@ return {
 		unitname = "armcybr",
 		workertime = 0,
 		customparams = {
+			buildpic = "ARMCYBR.png",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		sounds = {

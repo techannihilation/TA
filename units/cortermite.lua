@@ -2,7 +2,7 @@ return {
 	cortermite = {
 		acceleration = 0.171,
 		bmcode = 1,
-		brakerate = 0.525,
+		brakerate = 1.575,
 		buildcostenergy = 12605,
 		buildcostmetal = 805,
 		builder = false,
@@ -51,6 +51,9 @@ return {
 		turnrate = 1056,
 		unitname = "cortermite",
 		workertime = 0,
+		customparams = {
+			buildpic = "CORTERMITE.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

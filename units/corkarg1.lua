@@ -3,7 +3,7 @@ return {
 		acceleration = 0.096,
 		airsightdistance = 1100,
 		bmcode = 1,
-		brakerate = 0.714,
+		brakerate = 2.142,
 		buildcostenergy = 334764,
 		buildcostmetal = 13560,
 		builder = false,
@@ -39,6 +39,7 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "CORKARG1",
+		pushresistant = true,
 		radaremitheight = 73.47349,
 		script = "corkarg.cob",
 		seismicsignature = 0,
@@ -54,6 +55,9 @@ return {
 		unitname = "corkarg1",
 		upright = true,
 		workertime = 0,
+		customparams = {
+			buildpic = "CORKARG.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

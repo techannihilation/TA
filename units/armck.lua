@@ -1,8 +1,8 @@
 return {
 	armck = {
-		acceleration = 0.48,
+		acceleration = 0.96,
 		bmcode = 1,
-		brakerate = 3,
+		brakerate = 18,
 		buildcostenergy = 1521,
 		buildcostmetal = 102,
 		builddistance = 197,
@@ -90,6 +90,9 @@ return {
 			[30] = "armjamt",
 			[31] = "ajuno",
 			[32] = "armrech3",
+		},
+		customparams = {
+			buildpic = "ARMCK.png",
 		},
 		featuredefs = {
 			dead = {

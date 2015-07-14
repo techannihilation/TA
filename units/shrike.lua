@@ -1,10 +1,10 @@
 return {
 	shrike = {
-		acceleration = 1.4685,
+		acceleration = 0.48461,
 		airsightdistance = 900,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.09,
+		brakerate = 0.0009,
 		buildcostenergy = 66000,
 		buildcostmetal = 450,
 		buildtime = 17285,

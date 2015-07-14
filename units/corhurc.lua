@@ -1,10 +1,10 @@
 return {
 	corhurc = {
-		acceleration = 0.0198,
+		acceleration = 0.00653,
 		altfromsealevel = 1,
 		attackrunlength = 300,
 		bmcode = 1,
-		brakerate = 0.035,
+		brakerate = 0.00035,
 		buildcostenergy = 14365,
 		buildcostmetal = 313,
 		builder = false,
@@ -55,6 +55,9 @@ return {
 		turnrate = 220,
 		unitname = "corhurc",
 		workertime = 0,
+		customparams = {
+			buildpic = "CORHURC.png",
+		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",

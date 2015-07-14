@@ -3,7 +3,7 @@ return {
 		acceleration = 0.03,
 		activatewhenbuilt = true,
 		bmcode = 1,
-		brakerate = 0.75,
+		brakerate = 2.25,
 		buildcostenergy = 3902,
 		buildcostmetal = 679,
 		builder = false,
@@ -58,6 +58,9 @@ return {
 		upright = true,
 		waterline = 30,
 		workertime = 0,
+		customparams = {
+			buildpic = "CORSUB.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

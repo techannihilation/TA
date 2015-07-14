@@ -1,9 +1,9 @@
 return {
 	cormin = {
-		acceleration = 0.0165,
+		acceleration = 0.00545,
 		bankscale = 1.5,
 		bmcode = 1,
-		brakerate = 0.012,
+		brakerate = 0.00012,
 		buildcostenergy = 1500,
 		buildcostmetal = 40,
 		builddistance = 160,
@@ -73,6 +73,7 @@ return {
 			[10] = "corfmine3",
 		},
 		customparams = {
+			buildpic = "cormin.png",
 			customstock = true,
 		},
 		nanocolor = {

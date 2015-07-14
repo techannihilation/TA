@@ -2,7 +2,7 @@ return {
 	corpunk = {
 		acceleration = 0.5,
 		bmcode = 1,
-		brakerate = 1.5,
+		brakerate = 4.5,
 		buildcostenergy = 350,
 		buildcostmetal = 16,
 		builder = false,
@@ -54,6 +54,9 @@ return {
 		unitname = "corpunk",
 		workertime = 0,
 		wpri_badtargetcategory = "ANTIGATOR",
+		customparams = {
+			buildpic = "CORPUNK.png",
+		},
 		featuredefs = {
 			armflea_dead = {
 				blocking = false,

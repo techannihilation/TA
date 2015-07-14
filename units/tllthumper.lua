@@ -2,7 +2,7 @@ return {
 	tllthumper = {
 		acceleration = 0.03,
 		bmcode = 1,
-		brakerate = 0.06,
+		brakerate = 0.18,
 		buildcostenergy = 9020,
 		buildcostmetal = 3080,
 		builder = false,

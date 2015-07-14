@@ -44,6 +44,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "oooooooooooooooo",
+		customparams = {
+			buildpic = "CORUWADVMS.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

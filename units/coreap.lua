@@ -56,6 +56,9 @@ return {
 			[4] = "corsbomb",
 			[5] = "coreclipse",
 		},
+		customparams = {
+			buildpic = "COREAP.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

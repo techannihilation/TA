@@ -2,7 +2,7 @@ return {
 	tllcrawlb = {
 		acceleration = 0.3,
 		bmcode = 1,
-		brakerate = 0.36,
+		brakerate = 1.08,
 		buildcostenergy = 1741,
 		buildcostmetal = 372,
 		builder = false,

@@ -2,7 +2,7 @@ return {
 	corvroc = {
 		acceleration = 0.0209,
 		bmcode = 1,
-		brakerate = 0.1254,
+		brakerate = 0.3762,
 		buildcostenergy = 6270,
 		buildcostmetal = 827,
 		builder = false,
@@ -62,6 +62,9 @@ return {
 		turnrate = 520.29999,
 		unitname = "corvroc",
 		workertime = 0,
+		customparams = {
+			buildpic = "CORVROC.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

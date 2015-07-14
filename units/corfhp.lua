@@ -57,6 +57,7 @@ return {
 			[7] = "nsaclash",
 		},
 		customparams = {
+			buildpic = "CORFHP.png",
 			providetech = "T1 Factory",
 		},
 		featuredefs = {

@@ -2,7 +2,7 @@ return {
 	corgala = {
 		acceleration = 0.08,
 		bmcode = 1,
-		brakerate = 0.63,
+		brakerate = 1.89,
 		buildcostenergy = 1000000,
 		buildcostmetal = 40000,
 		builder = false,
@@ -45,6 +45,7 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "CORGALA",
+		pushresistant = true,
 		radaremitheight = 137.92717,
 		selfdestructas = "NUCLEAR_MISSILE",
 		shootme = 1,
@@ -58,6 +59,9 @@ return {
 		turnrate = 320,
 		unitname = "corgala",
 		upright = true,
+		customparams = {
+			buildpic = "corgala.png",
+		},
 		sfxtypes = {
 			explosiongenerators = {
 				[1] = "custom:BERTHAFLARE",

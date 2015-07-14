@@ -2,7 +2,7 @@ return {
 	tllchover = {
 		acceleration = 0.045,
 		bmcode = 1,
-		brakerate = 0.24,
+		brakerate = 0.72,
 		buildcostenergy = 3501,
 		buildcostmetal = 187,
 		builddistance = 197,

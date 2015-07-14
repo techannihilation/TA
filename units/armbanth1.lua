@@ -2,7 +2,7 @@ return {
 	armbanth1 = {
 		acceleration = 0.103,
 		bmcode = 1,
-		brakerate = 0.654,
+		brakerate = 1.962,
 		buildcostenergy = 967949,
 		buildcostmetal = 80691,
 		builder = false,
@@ -41,6 +41,7 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMBANTH1",
+		pushresistant = true,
 		radaremitheight = 147.12512,
 		script = "armbanth.cob",
 		seismicsignature = 0,
@@ -56,6 +57,9 @@ return {
 		unitname = "armbanth1",
 		upright = true,
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMBANTH.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

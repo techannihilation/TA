@@ -1,8 +1,8 @@
 return {
 	armmarv = {
-		acceleration = 0.05,
+		acceleration = 0.1,
 		bmcode = 1,
-		brakerate = 0.825,
+		brakerate = 4.95,
 		buildcostenergy = 5400,
 		buildcostmetal = 868,
 		builddistance = 122,
@@ -78,6 +78,7 @@ return {
 			[15] = "armtl",
 		},
 		customparams = {
+			buildpic = "armmarv.png",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},
 		featuredefs = {

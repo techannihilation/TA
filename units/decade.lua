@@ -3,7 +3,7 @@ return {
 		acceleration = 0.084,
 		activatewhenbuilt = true,
 		bmcode = 1,
-		brakerate = 0.057,
+		brakerate = 0.171,
 		buildangle = 16384,
 		buildcostenergy = 2200,
 		buildcostmetal = 395,
@@ -59,6 +59,9 @@ return {
 		unitname = "decade",
 		waterline = 1,
 		workertime = 0,
+		customparams = {
+			buildpic = "DECADE.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

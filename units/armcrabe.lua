@@ -2,7 +2,7 @@ return {
 	armcrabe = {
 		acceleration = 0.55,
 		bmcode = 1,
-		brakerate = 0.75,
+		brakerate = 2.25,
 		buildcostenergy = 119500,
 		buildcostmetal = 11200,
 		builder = false,
@@ -47,6 +47,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMCRABE",
 		onoffable = true,
+		pushresistant = true,
 		radardistance = 0,
 		radaremitheight = 42.75285,
 		seismicsigniture = 2500,
@@ -64,6 +65,9 @@ return {
 		unitname = "armcrabe",
 		unitnumber = 100003,
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMCRABE.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

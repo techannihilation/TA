@@ -2,7 +2,7 @@ return {
 	corjurgen = {
 		acceleration = 0.4,
 		bmcode = 1,
-		brakerate = 0.45,
+		brakerate = 1.35,
 		buildcostenergy = 36114,
 		buildcostmetal = 3162,
 		builddistance = 112,
@@ -70,6 +70,7 @@ return {
 			[2] = "corsktl",
 		},
 		customparams = {
+			buildpic = "corjurgen.png",
 			requiretech = "Advanced T3 Unit Research Centre",
 		},
 		featuredefs = {

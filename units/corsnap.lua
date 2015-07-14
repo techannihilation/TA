@@ -2,7 +2,7 @@ return {
 	corsnap = {
 		acceleration = 0.078,
 		bmcode = 1,
-		brakerate = 0.3,
+		brakerate = 0.9,
 		buildcostenergy = 3106,
 		buildcostmetal = 296,
 		builder = false,
@@ -56,6 +56,9 @@ return {
 		turnrate = 500,
 		unitname = "corsnap",
 		workertime = 0,
+		customparams = {
+			buildpic = "CORSNAP.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

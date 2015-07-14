@@ -4,7 +4,7 @@ return {
 		activatewhenbuilt = true,
 		ai_limit = "limit ARMMARK 0",
 		bmcode = 1,
-		brakerate = 0.054,
+		brakerate = 0.162,
 		buildcostenergy = 1152,
 		buildcostmetal = 95,
 		builder = false,
@@ -58,6 +58,9 @@ return {
 		unitname = "armmark",
 		unitnumber = 168,
 		workertime = 0,
+		customparams = {
+			buildpic = "armmark.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

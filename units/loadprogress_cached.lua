@@ -1,3 +1,3 @@
 return {
-	DeltaSiegeX = 11.951801300049,
+	DeltaSiegeX = 16.44161605835,
 }

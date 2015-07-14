@@ -1,7 +1,7 @@
 return {
 	corhevsenan = {
 		acceleration = 0,
-		brakerate = 4.5,
+		brakerate = 13.5,
 		buildcostenergy = 6578,
 		buildcostmetal = 299,
 		builddistance = 600,
@@ -51,6 +51,9 @@ return {
 		upright = true,
 		waterline = 1,
 		workertime = 300,
+		customparams = {
+			buildpic = "corhevsenan.png",
+		},
 		nanocolor = {
 			[1] = 0.52,
 			[2] = 0.52,

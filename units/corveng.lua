@@ -1,10 +1,10 @@
 return {
 	corveng = {
-		acceleration = 0.825,
+		acceleration = 0.27225,
 		airsightdistance = 700,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.065,
+		brakerate = 0.00065,
 		buildcostenergy = 1900,
 		buildcostmetal = 85,
 		buildpic = "CORVENG.png",
@@ -55,6 +55,9 @@ return {
 		turnrate = 839,
 		unitname = "corveng",
 		unitrestricted = 200,
+		customparams = {
+			buildpic = "CORVENG.png",
+		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",

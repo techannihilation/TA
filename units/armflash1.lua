@@ -2,7 +2,7 @@ return {
 	armflash1 = {
 		acceleration = 0.15,
 		bmcode = 1,
-		brakerate = 0.3,
+		brakerate = 0.9,
 		buildcostenergy = 1480,
 		buildcostmetal = 199,
 		builder = false,
@@ -62,6 +62,9 @@ return {
 		turnrate = 720,
 		unitname = "armflash1",
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMFLASH1.png",
+		},
 		featuredefs = {
 			armflash_dead = {
 				blocking = true,

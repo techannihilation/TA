@@ -65,6 +65,9 @@ return {
 			[6] = "armaak",
 			[7] = "armsub",
 		},
+		customparams = {
+			buildpic = "ASUBPEN.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

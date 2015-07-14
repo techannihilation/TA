@@ -81,6 +81,7 @@ return {
 			[19] = "akmech",
 		},
 		customparams = {
+			buildpic = "ARMALAB.png",
 			providetech = "T2 Factory",
 		},
 		featuredefs = {

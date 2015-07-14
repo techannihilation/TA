@@ -1,8 +1,8 @@
 return {
 	corsbomb = {
-		acceleration = 0.033,
+		acceleration = 0.01089,
 		bmcode = 1,
-		brakerate = 0.015,
+		brakerate = 0.00015,
 		buildcostenergy = 95000,
 		buildcostmetal = 2900,
 		builder = false,
@@ -63,6 +63,7 @@ return {
 		unitname = "corsbomb",
 		workertime = 0,
 		customparams = {
+			buildpic = "corsbomb.png",
 			requiretech = "Advanced T3 Unit Research Centre",
 		},
 		sounds = {

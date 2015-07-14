@@ -46,5 +46,8 @@ return {
 		upright = false,
 		workertime = 0,
 		yardmap = "yyyy",
+		customparams = {
+			buildpic = "levelterra.png",
+		},
 	},
 }

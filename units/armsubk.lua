@@ -3,7 +3,7 @@ return {
 		acceleration = 0.034,
 		activatewhenbuilt = true,
 		bmcode = 1,
-		brakerate = 1.35,
+		brakerate = 4.05,
 		buildcostenergy = 9950,
 		buildcostmetal = 1050,
 		builder = false,
@@ -58,6 +58,9 @@ return {
 		upright = true,
 		waterline = 30,
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMSUBK.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

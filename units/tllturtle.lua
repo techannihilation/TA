@@ -4,7 +4,7 @@ return {
 		amphibious = 1,
 		antiweapons = 1,
 		bmcode = 1,
-		brakerate = 0.081,
+		brakerate = 0.243,
 		buildcostenergy = 44500,
 		buildcostmetal = 2185,
 		builder = false,

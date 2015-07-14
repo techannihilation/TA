@@ -2,7 +2,7 @@ return {
 	corpyro = {
 		acceleration = 0.45,
 		bmcode = 1,
-		brakerate = 1.95,
+		brakerate = 5.85,
 		buildcostenergy = 2783,
 		buildcostmetal = 189,
 		builder = false,
@@ -55,6 +55,9 @@ return {
 		unitname = "corpyro",
 		upright = true,
 		workertime = 0,
+		customparams = {
+			buildpic = "CORPYRO.png",
+		},
 		featuredefs = {
 			heap = {
 				blocking = false,

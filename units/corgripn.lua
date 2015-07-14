@@ -1,10 +1,10 @@
 return {
 	corgripn = {
-		acceleration = 0.1584,
+		acceleration = 0.05227,
 		attackrunlength = 180,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.04,
+		brakerate = 0.0004,
 		buildcostenergy = 16366,
 		buildcostmetal = 162,
 		buildpic = "CORGRIPN.png",
@@ -55,6 +55,9 @@ return {
 		turninplacespeedlimit = 7.9728,
 		turnrate = 396,
 		unitname = "corgripn",
+		customparams = {
+			buildpic = "CORGRIPN.png",
+		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",

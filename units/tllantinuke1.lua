@@ -48,6 +48,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "oooo oooo oooo oooo",
+		customparams = {
+			buildpic = "tllantinuke.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

@@ -1,9 +1,9 @@
 return {
 	corsfig = {
-		acceleration = 0.15048,
+		acceleration = 0.04966,
 		amphibious = 1,
 		bmcode = 1,
-		brakerate = 0.075,
+		brakerate = 0.00075,
 		buildcostenergy = 6900,
 		buildcostmetal = 140,
 		builder = false,
@@ -57,6 +57,9 @@ return {
 		turnrate = 1547,
 		unitname = "corsfig",
 		workertime = 0,
+		customparams = {
+			buildpic = "CORSFIG.png",
+		},
 		sounds = {
 			build = "nanlath1",
 			canceldestruct = "cancel2",

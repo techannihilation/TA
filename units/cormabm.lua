@@ -3,7 +3,7 @@ return {
 		acceleration = 0.0198,
 		antiweapons = 1,
 		bmcode = 1,
-		brakerate = 0.1122,
+		brakerate = 0.3366,
 		buildcostenergy = 92321,
 		buildcostmetal = 1508,
 		builder = false,
@@ -59,6 +59,9 @@ return {
 		turnrate = 520.29999,
 		unitname = "cormabm",
 		workertime = 0,
+		customparams = {
+			buildpic = "CORMABM.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

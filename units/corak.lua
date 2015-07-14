@@ -2,7 +2,7 @@ return {
 	corak = {
 		acceleration = 0.384,
 		bmcode = 1,
-		brakerate = 0.75,
+		brakerate = 2.25,
 		buildcostenergy = 826,
 		buildcostmetal = 34,
 		builder = false,
@@ -56,6 +56,9 @@ return {
 		unitrestricted = 125,
 		upright = true,
 		workertime = 0,
+		customparams = {
+			buildpic = "CORAK.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

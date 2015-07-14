@@ -80,6 +80,7 @@ return {
 			[18] = "armcd",
 		},
 		customparams = {
+			buildpic = "ARMAVP.png",
 			providetech = "T2 Factory",
 		},
 		featuredefs = {

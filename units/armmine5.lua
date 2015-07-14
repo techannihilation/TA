@@ -60,6 +60,7 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		customparams = {
+			buildpic = "ARMMINE5.png",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},
 		sounds = {

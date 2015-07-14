@@ -50,6 +50,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "oooooo oooooo oooooo oooooo",
+		customparams = {
+			buildpic = "tllgate.png",
+		},
 		featuredefs = {
 			heap = {
 				blocking = false,

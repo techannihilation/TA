@@ -44,6 +44,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "ffff",
+		customparams = {
+			buildpic = "ARMDRAG.png",
+		},
 		featuredefs = {
 			dragonsteeth = {
 				autoreclaimable = 0,

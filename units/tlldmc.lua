@@ -49,6 +49,7 @@ return {
 		workertime = 0,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo",
 		customparams = {
+			buildpic = "tlldmc.png",
 			canareaattack = 1,
 			requiretech = "Star Commander",
 		},

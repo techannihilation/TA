@@ -3,7 +3,7 @@ return {
 		acceleration = 0.24,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.441,
+		brakerate = 0.0441,
 		buildcostenergy = 5778,
 		buildcostmetal = 294,
 		builder = false,
@@ -56,6 +56,9 @@ return {
 		turnrate = 792,
 		unitname = "armbrawl",
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMBRAWL.png",
+		},
 		sfxtypes = {
 			explosiongenerators = {
 				[1] = "custom:muendungsfeuer",

@@ -1,8 +1,8 @@
 return {
 	armbeaver = {
-		acceleration = 0.0264,
+		acceleration = 0.0528,
 		bmcode = 1,
-		brakerate = 0.6996,
+		brakerate = 4.1976,
 		buildcostenergy = 2928,
 		buildcostmetal = 141,
 		builddistance = 182,
@@ -102,6 +102,9 @@ return {
 			[40] = "armfrt",
 			[41] = "armtl",
 			[42] = "ajuno",
+		},
+		customparams = {
+			buildpic = "ARMBEAVER.png",
 		},
 		featuredefs = {
 			dead = {

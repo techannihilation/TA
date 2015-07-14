@@ -2,7 +2,7 @@ return {
 	armwar = {
 		acceleration = 0.072,
 		bmcode = 1,
-		brakerate = 0.714,
+		brakerate = 2.142,
 		buildcostenergy = 2944,
 		buildcostmetal = 248,
 		builder = false,
@@ -57,6 +57,9 @@ return {
 		unitname = "armwar",
 		upright = true,
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMWAR.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

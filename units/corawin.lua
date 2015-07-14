@@ -51,6 +51,7 @@ return {
 		workertime = 0,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo",
 		customparams = {
+			buildpic = "CORAWIN.png",
 			energymultiplier = 4,
 		},
 		featuredefs = {

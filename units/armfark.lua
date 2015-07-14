@@ -1,8 +1,8 @@
 return {
 	armfark = {
-		acceleration = 0.44,
+		acceleration = 0.88,
 		bmcode = 1,
-		brakerate = 4.5,
+		brakerate = 27,
 		buildcostenergy = 2700,
 		buildcostmetal = 200,
 		builddistance = 112,
@@ -78,6 +78,9 @@ return {
 			[20] = "armvader",
 			[21] = "armfast",
 			[22] = "armsnipe",
+		},
+		customparams = {
+			buildpic = "ARMFARK.png",
 		},
 		featuredefs = {
 			dead = {

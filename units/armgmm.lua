@@ -47,6 +47,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "ooooo ooooo ooGoo ooooo ooooo",
+		customparams = {
+			buildpic = "ARMGMM.png",
+		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",

@@ -3,7 +3,7 @@ return {
 		acceleration = 0.24,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.441,
+		brakerate = 0.0441,
 		buildcostenergy = 35500,
 		buildcostmetal = 1050,
 		builder = false,
@@ -56,6 +56,9 @@ return {
 		turnrate = 720,
 		unitname = "corrag",
 		workertime = 0,
+		customparams = {
+			buildpic = "corrag.png",
+		},
 		weapondefs = {
 			sonicwave = {
 				accuracy = 150,

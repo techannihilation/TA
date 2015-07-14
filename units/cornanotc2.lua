@@ -1,7 +1,7 @@
 return {
 	cornanotc2 = {
 		acceleration = 0,
-		brakerate = 4.5,
+		brakerate = 13.5,
 		buildcostenergy = 72000,
 		buildcostmetal = 2300,
 		builddistance = 680,
@@ -57,6 +57,9 @@ return {
 		upright = true,
 		usebuildinggrounddecal = true,
 		workertime = 1200,
+		customparams = {
+			buildpic = "CORNANOTC2.png",
+		},
 		nanocolor = {
 			[1] = 0.56,
 			[2] = 0.88,

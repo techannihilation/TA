@@ -2,7 +2,7 @@ return {
 	clb = {
 		acceleration = 0.036,
 		bmcode = 1,
-		brakerate = 0.15,
+		brakerate = 0.45,
 		buildcostenergy = 92460,
 		buildcostmetal = 5060,
 		builder = false,
@@ -64,6 +64,9 @@ return {
 		unitnumber = 995,
 		upright = true,
 		workertime = 0,
+		customparams = {
+			buildpic = "clb.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

@@ -1,8 +1,8 @@
 return {
 	consul = {
-		acceleration = 0.16,
+		acceleration = 0.32,
 		bmcode = 1,
-		brakerate = 0.825,
+		brakerate = 4.95,
 		buildcostenergy = 4020,
 		buildcostmetal = 230,
 		builddistance = 136,
@@ -85,6 +85,9 @@ return {
 			[20] = "armbull",
 			[21] = "armhorg",
 			[22] = "armlatnk",
+		},
+		customparams = {
+			buildpic = "CONSUL.png",
 		},
 		featuredefs = {
 			dead = {

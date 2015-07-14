@@ -4,7 +4,7 @@ return {
 		amphibious = 1,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.3938,
+		brakerate = 0.03938,
 		buildcostenergy = 5897,
 		buildcostmetal = 220,
 		builder = false,
@@ -60,6 +60,9 @@ return {
 		turnrate = 828,
 		unitname = "corcut",
 		workertime = 0,
+		customparams = {
+			buildpic = "CORCUT.png",
+		},
 		sounds = {
 			build = "nanlath1",
 			canceldestruct = "cancel2",

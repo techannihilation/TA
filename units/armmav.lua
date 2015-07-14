@@ -3,7 +3,7 @@ return {
 		acceleration = 0.12,
 		autoheal = 50,
 		bmcode = 1,
-		brakerate = 0.375,
+		brakerate = 1.125,
 		buildcostenergy = 12180,
 		buildcostmetal = 655,
 		builder = false,
@@ -55,6 +55,9 @@ return {
 		unitname = "armmav",
 		upright = true,
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMMAV.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

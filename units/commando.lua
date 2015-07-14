@@ -1,7 +1,7 @@
 return {
 	commando = {
 		acceleration = 0.1,
-		brakerate = 0.45,
+		brakerate = 1.35,
 		buildcostenergy = 11040,
 		buildcostmetal = 618,
 		builddistance = 137,
@@ -61,6 +61,9 @@ return {
 		unitname = "commando",
 		upright = true,
 		workertime = 2000,
+		customparams = {
+			buildpic = "COMMANDO.png",
+		},
 		nanocolor = {
 			[1] = 0.8,
 			[2] = 1,

@@ -1,8 +1,8 @@
 return {
 	corch = {
-		acceleration = 0.12,
+		acceleration = 0.24,
 		bmcode = 1,
-		brakerate = 0.372,
+		brakerate = 2.232,
 		buildcostenergy = 2771,
 		buildcostmetal = 154,
 		builddistance = 160,
@@ -104,6 +104,9 @@ return {
 			[43] = "corfrt",
 			[44] = "cortl",
 			[45] = "cjuno",
+		},
+		customparams = {
+			buildpic = "CORCH.png",
 		},
 		featuredefs = {
 			dead = {

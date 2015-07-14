@@ -42,6 +42,9 @@ return {
 		waterline = 21,
 		workertime = 0,
 		yardmap = "wwwwwwwww",
+		customparams = {
+			buildpic = "CORFMKR.png",
+		},
 		sounds = {
 			activate = "metlon2",
 			canceldestruct = "cancel2",

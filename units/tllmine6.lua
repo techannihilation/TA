@@ -63,6 +63,7 @@ return {
 		unitname = "tllmine6",
 		workertime = 0,
 		customparams = {
+			buildpic = "TLLMINE6.png",
 			requiretech = "T2 Factory",
 		},
 		sounds = {

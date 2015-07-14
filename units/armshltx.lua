@@ -68,6 +68,7 @@ return {
 			[9] = "arm_furie",
 		},
 		customparams = {
+			buildpic = "ARMSHLTX.png",
 			providetech = "T3 Factory",
 		},
 		featuredefs = {

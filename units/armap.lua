@@ -70,6 +70,9 @@ return {
 			[9] = "armdragf",
 			[10] = "armjade",
 		},
+		customparams = {
+			buildpic = "ARMAP.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

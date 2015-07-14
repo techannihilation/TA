@@ -52,6 +52,7 @@ return {
 		workertime = 0,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo",
 		customparams = {
+			buildpic = "core_intimidator.png",
 			canareaattack = 1,
 		},
 		featuredefs = {

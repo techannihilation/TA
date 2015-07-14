@@ -55,6 +55,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "ooooooooo",
+		customparams = {
+			buildpic = "CORMEX.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

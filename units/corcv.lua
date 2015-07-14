@@ -1,8 +1,8 @@
 return {
 	corcv = {
-		acceleration = 0.1144,
+		acceleration = 0.2288,
 		bmcode = 1,
-		brakerate = 1.0692,
+		brakerate = 6.4152,
 		buildcostenergy = 1979,
 		buildcostmetal = 134,
 		builddistance = 162,
@@ -92,6 +92,9 @@ return {
 			[29] = "corjamt",
 			[30] = "cjuno",
 			[31] = "corech3",
+		},
+		customparams = {
+			buildpic = "CORCV.png",
 		},
 		featuredefs = {
 			dead = {

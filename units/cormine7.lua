@@ -59,6 +59,7 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		customparams = {
+			buildpic = "CORMINE7.png",
 			requiretech = "T2 Factory",
 		},
 		sounds = {

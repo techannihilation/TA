@@ -53,6 +53,9 @@ return {
 		waterline = 9,
 		workertime = 0,
 		yardmap = "wwwwwwwww",
+		customparams = {
+			buildpic = "CORFRAD.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

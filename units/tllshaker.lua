@@ -2,7 +2,7 @@ return {
 	tllshaker = {
 		acceleration = 0.011,
 		bmcode = 1,
-		brakerate = 0.0297,
+		brakerate = 0.0891,
 		buildcostenergy = 1553,
 		buildcostmetal = 206,
 		builder = false,
@@ -61,6 +61,7 @@ return {
 		unitname = "tllshaker",
 		workertime = 0,
 		customparams = {
+			buildpic = "TLLSHAKER.png",
 			canareaattack = 1,
 		},
 		featuredefs = {

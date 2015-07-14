@@ -3,7 +3,7 @@ return {
 		acceleration = 0.071,
 		activatewhenbuilt = true,
 		bmcode = 1,
-		brakerate = 1.65,
+		brakerate = 4.95,
 		buildcostenergy = 1031,
 		buildcostmetal = 53,
 		builddistance = 96,
@@ -76,6 +76,9 @@ return {
 			[6] = "armmine5",
 			[7] = "armmine6",
 			[8] = "armmine7",
+		},
+		customparams = {
+			buildpic = "ARMMLV.png",
 		},
 		featuredefs = {
 			dead = {

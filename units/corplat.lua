@@ -59,6 +59,7 @@ return {
 			[6] = "corsb",
 		},
 		customparams = {
+			buildpic = "CORPLAT.png",
 			providetech = "T2 Factory",
 		},
 		featuredefs = {

@@ -2,7 +2,7 @@ return {
 	corgarp = {
 		acceleration = 0.011,
 		bmcode = 1,
-		brakerate = 0.033,
+		brakerate = 0.099,
 		buildcostenergy = 2441,
 		buildcostmetal = 206,
 		builder = false,
@@ -58,6 +58,9 @@ return {
 		turnrate = 387,
 		unitname = "corgarp",
 		workertime = 0,
+		customparams = {
+			buildpic = "CORGARP.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

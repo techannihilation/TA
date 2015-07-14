@@ -2,7 +2,7 @@ return {
 	armorco = {
 		acceleration = 0.108,
 		bmcode = 1,
-		brakerate = 0.714,
+		brakerate = 2.142,
 		buildcostenergy = 352000,
 		buildcostmetal = 24300,
 		builder = false,
@@ -45,6 +45,7 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMORCO",
+		pushresistant = true,
 		radardistance = 0,
 		radaremitheight = 63.78354,
 		selfdestructas = "CRBLMSSL",
@@ -63,6 +64,7 @@ return {
 		upright = true,
 		workertime = 0,
 		customparams = {
+			buildpic = "ARMORCO.png",
 			requiretech = "Advanced T3 Unit Research Centre",
 		},
 		featuredefs = {

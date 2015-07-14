@@ -2,7 +2,7 @@ return {
 	armfav = {
 		acceleration = 0.12,
 		bmcode = 1,
-		brakerate = 0.495,
+		brakerate = 1.485,
 		buildcostenergy = 342,
 		buildcostmetal = 29,
 		builder = false,
@@ -59,6 +59,9 @@ return {
 		unitname = "armfav",
 		unitrestricted = 150,
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMFAV.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

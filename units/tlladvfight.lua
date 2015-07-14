@@ -1,10 +1,10 @@
 return {
 	tlladvfight = {
-		acceleration = 0.198,
+		acceleration = 0.06534,
 		airsightdistance = 800,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.09,
+		brakerate = 0.0009,
 		buildcostenergy = 2500,
 		buildcostmetal = 380,
 		buildtime = 8854,

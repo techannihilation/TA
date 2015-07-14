@@ -46,6 +46,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "oooooooooooo",
+		customparams = {
+			buildpic = "coramaker.png",
+		},
 		sfxtypes = {
 			explosiongenerators = {
 				[1] = "custom:maker_sfx",

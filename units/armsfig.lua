@@ -1,9 +1,9 @@
 return {
 	armsfig = {
-		acceleration = 0.1584,
+		acceleration = 0.05227,
 		amphibious = 1,
 		bmcode = 1,
-		brakerate = 0.1,
+		brakerate = 0.001,
 		buildcostenergy = 6000,
 		buildcostmetal = 150,
 		builder = false,
@@ -57,6 +57,9 @@ return {
 		turnrate = 1625,
 		unitname = "armsfig",
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMSFIG.png",
+		},
 		sounds = {
 			build = "nanlath1",
 			canceldestruct = "cancel2",

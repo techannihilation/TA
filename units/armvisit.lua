@@ -2,7 +2,7 @@ return {
 	armvisit = {
 		acceleration = 0.1,
 		bmcode = 1,
-		brakerate = 0.27,
+		brakerate = 0.81,
 		buildcostenergy = 2828,
 		buildcostmetal = 208,
 		builder = false,

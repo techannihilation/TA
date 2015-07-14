@@ -3,7 +3,7 @@ return {
 		acceleration = 0.07,
 		activatewhenbuilt = true,
 		bmcode = 1,
-		brakerate = 1.65,
+		brakerate = 4.95,
 		buildcostenergy = 1217,
 		buildcostmetal = 57,
 		builddistance = 96,
@@ -76,6 +76,9 @@ return {
 			[6] = "cormine5",
 			[7] = "cormine6",
 			[8] = "cormine7",
+		},
+		customparams = {
+			buildpic = "CORMLV.png",
 		},
 		featuredefs = {
 			dead = {

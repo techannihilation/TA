@@ -2,7 +2,7 @@ return {
 	armgor = {
 		acceleration = 0.09,
 		bmcode = 1,
-		brakerate = 0.57,
+		brakerate = 1.71,
 		buildcostenergy = 160000,
 		buildcostmetal = 14500,
 		builder = false,
@@ -42,6 +42,7 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMGOR",
+		pushresistant = true,
 		radardistance = 0,
 		radaremitheight = 59.05159,
 		selfdestructas = "BANTHA_NUKE",

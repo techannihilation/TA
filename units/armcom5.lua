@@ -5,7 +5,7 @@ return {
 		amphibious = 1,
 		autoheal = 10,
 		bmcode = 1,
-		brakerate = 1.185,
+		brakerate = 3.555,
 		buildcostenergy = 100000,
 		buildcostmetal = 11000,
 		builddistance = 212,
@@ -116,6 +116,7 @@ return {
 			[32] = "armpcan",
 		},
 		customparams = {
+			buildpic = "ARMCOM.png",
 			canjump = "1",
 			iscommander = true,
 			providetech = "Battle Commander,Assault Commander",

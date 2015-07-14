@@ -2,7 +2,7 @@ return {
 	armbats = {
 		acceleration = 0.036,
 		bmcode = 1,
-		brakerate = 0.093,
+		brakerate = 0.279,
 		buildangle = 16384,
 		buildcostenergy = 20731,
 		buildcostmetal = 5181,
@@ -60,6 +60,7 @@ return {
 		unitname = "armbats",
 		workertime = 0,
 		customparams = {
+			buildpic = "ARMBATS.png",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {

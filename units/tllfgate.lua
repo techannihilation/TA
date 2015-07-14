@@ -44,6 +44,9 @@ return {
 		waterline = 0,
 		workertime = 0,
 		yardmap = "oooooo oooooo oooooo oooooo",
+		customparams = {
+			buildpic = "tllfgate.png",
+		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",

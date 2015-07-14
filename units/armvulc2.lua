@@ -53,6 +53,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
+		customparams = {
+			buildpic = "ARMVULC.png",
+		},
 		featuredefs = {
 			armvulc_heap = {
 				blocking = false,

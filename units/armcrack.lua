@@ -2,7 +2,7 @@ return {
 	armcrack = {
 		acceleration = 0.108,
 		bmcode = 1,
-		brakerate = 0.564,
+		brakerate = 1.692,
 		buildcostenergy = 2460,
 		buildcostmetal = 215,
 		builder = false,
@@ -60,6 +60,7 @@ return {
 		upright = true,
 		workertime = 0,
 		customparams = {
+			buildpic = "armcrack.png",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},
 		featuredefs = {

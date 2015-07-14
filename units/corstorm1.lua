@@ -2,7 +2,7 @@ return {
 	corstorm1 = {
 		acceleration = 0.108,
 		bmcode = 1,
-		brakerate = 0.564,
+		brakerate = 1.692,
 		buildcostenergy = 1253,
 		buildcostmetal = 161,
 		builder = false,
@@ -55,6 +55,9 @@ return {
 		unitname = "corstorm1",
 		upright = true,
 		workertime = 0,
+		customparams = {
+			buildpic = "CORSTORM1.png",
+		},
 		featuredefs = {
 			corstorm_dead = {
 				blocking = true,

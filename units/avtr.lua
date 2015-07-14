@@ -2,7 +2,7 @@ return {
 	avtr = {
 		acceleration = 0.036,
 		bmcode = 1,
-		brakerate = 0.15,
+		brakerate = 0.45,
 		buildcostenergy = 84140,
 		buildcostmetal = 4864,
 		builder = false,
@@ -64,6 +64,9 @@ return {
 		unitname = "avtr",
 		unitnumber = 999,
 		workertime = 0,
+		customparams = {
+			buildpic = "avtr.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

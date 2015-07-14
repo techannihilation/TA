@@ -3,7 +3,7 @@ return {
 		acceleration = 0.12,
 		activatewhenbuilt = true,
 		bmcode = 1,
-		brakerate = 2.97,
+		brakerate = 8.91,
 		buildcostenergy = 260000,
 		buildcostmetal = 18000,
 		builder = false,
@@ -45,6 +45,7 @@ return {
 		objectname = "monkeylord",
 		onoffable = true,
 		ovradjust = 1,
+		pushresistant = true,
 		radardistance = 0,
 		script = "monkeylord.cob",
 		seismicsignature = 100,
@@ -65,6 +66,9 @@ return {
 		version = 1,
 		workertime = 0,
 		zbuffer = 1,
+		customparams = {
+			buildpic = "ML_Rampage_Wotan.png",
+		},
 		featuredefs = {
 			monkeylord_dead = {
 				blocking = false,

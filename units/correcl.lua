@@ -2,7 +2,7 @@ return {
 	correcl = {
 		acceleration = 0.038,
 		bmcode = 1,
-		brakerate = 0.75,
+		brakerate = 2.25,
 		buildcostenergy = 6568,
 		buildcostmetal = 416,
 		builddistance = 112,
@@ -55,6 +55,9 @@ return {
 		unitname = "correcl",
 		waterline = 30,
 		workertime = 450,
+		customparams = {
+			buildpic = "CORRECL.png",
+		},
 		nanocolor = {
 			[1] = 0.28,
 			[2] = 0.63,

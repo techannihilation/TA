@@ -2,7 +2,7 @@ return {
 	nsaclash = {
 		acceleration = 0.072,
 		bmcode = 1,
-		brakerate = 0.225,
+		brakerate = 0.675,
 		buildcostenergy = 9200,
 		buildcostmetal = 650,
 		builder = false,
@@ -54,6 +54,7 @@ return {
 		unitname = "nsaclash",
 		workertime = 0,
 		customparams = {
+			buildpic = "NSACLASH.png",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},
 		featuredefs = {

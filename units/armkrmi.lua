@@ -2,7 +2,7 @@ return {
 	armkrmi = {
 		acceleration = 0.2,
 		bmcode = 1,
-		brakerate = 0.57,
+		brakerate = 1.71,
 		buildcostenergy = 18560,
 		buildcostmetal = 1512,
 		builder = false,

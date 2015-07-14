@@ -1,7 +1,7 @@
 return {
 	tllfnanotc1 = {
 		acceleration = 0,
-		brakerate = 4.5,
+		brakerate = 13.5,
 		buildcostenergy = 20000,
 		buildcostmetal = 1250,
 		builddistance = 600,
@@ -52,6 +52,9 @@ return {
 		upright = true,
 		waterline = 1,
 		workertime = 600,
+		customparams = {
+			buildpic = "CORFNANOTC.png",
+		},
 		nanocolor = {
 			[1] = 0.69,
 			[2] = 0.69,

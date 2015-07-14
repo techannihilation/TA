@@ -5,7 +5,7 @@ return {
 		altfromsealevel = 56,
 		bankscale = 1.64,
 		bmcode = 1,
-		brakerate = 0.55,
+		brakerate = 0.055,
 		buildcostenergy = 1200,
 		buildcostmetal = 54,
 		builder = false,
@@ -59,6 +59,9 @@ return {
 		unitname = "bladew",
 		upright = true,
 		workertime = 0,
+		customparams = {
+			buildpic = "BLADEW.png",
+		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",

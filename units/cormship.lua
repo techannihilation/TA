@@ -3,7 +3,7 @@ return {
 		acceleration = 0.02,
 		activatewhenbuilt = true,
 		bmcode = 1,
-		brakerate = 0.066,
+		brakerate = 0.198,
 		buildcostenergy = 9628,
 		buildcostmetal = 2583,
 		builder = false,
@@ -61,6 +61,9 @@ return {
 		turnrate = 341,
 		unitname = "cormship",
 		workertime = 0,
+		customparams = {
+			buildpic = "CORMSHIP.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

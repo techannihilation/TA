@@ -2,7 +2,7 @@ return {
 	corthovr = {
 		acceleration = 0.036,
 		bmcode = 1,
-		brakerate = 0.186,
+		brakerate = 0.558,
 		buildangle = 16384,
 		buildcostenergy = 7541,
 		buildcostmetal = 650,
@@ -66,6 +66,9 @@ return {
 		unitname = "corthovr",
 		waterline = 10,
 		workertime = 0,
+		customparams = {
+			buildpic = "CORTHOVR.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

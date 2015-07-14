@@ -57,6 +57,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "ooooooooooooooooooooooooooooooooooooooooooooooooo",
+		customparams = {
+			buildpic = "CORSILO.png",
+		},
 		featuredefs = {
 			corsilo_dead = {
 				blocking = true,

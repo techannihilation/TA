@@ -3,7 +3,7 @@ return {
 		acceleration = 0.042,
 		airsightdistance = 800,
 		bmcode = 1,
-		brakerate = 0.18,
+		brakerate = 0.54,
 		buildangle = 16384,
 		buildcostenergy = 11050,
 		buildcostmetal = 970,
@@ -59,6 +59,9 @@ return {
 		turnrate = 400,
 		unitname = "corarch",
 		workertime = 0,
+		customparams = {
+			buildpic = "CORARCH.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

@@ -2,7 +2,7 @@ return {
 	tllviking = {
 		acceleration = 0.09,
 		bmcode = 1,
-		brakerate = 0.54,
+		brakerate = 1.62,
 		buildangle = 16384,
 		buildcostenergy = 25311,
 		buildcostmetal = 4712,

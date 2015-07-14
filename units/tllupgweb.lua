@@ -52,6 +52,9 @@ return {
 		unitnumber = 80802,
 		usebuildinggrounddecal = true,
 		yardmap = "oooo",
+		customparams = {
+			buildpic = "tllweb.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

@@ -2,7 +2,7 @@ return {
 	tllhovermissile = {
 		acceleration = 0.06,
 		bmcode = 1,
-		brakerate = 0.27,
+		brakerate = 0.81,
 		buildcostenergy = 4200,
 		buildcostmetal = 180,
 		builder = false,

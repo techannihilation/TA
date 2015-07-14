@@ -2,7 +2,7 @@ return {
 	armsh = {
 		acceleration = 0.132,
 		bmcode = 1,
-		brakerate = 0.336,
+		brakerate = 1.008,
 		buildcostenergy = 1344,
 		buildcostmetal = 87,
 		builder = false,
@@ -56,6 +56,9 @@ return {
 		turnrate = 640,
 		unitname = "armsh",
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMSH.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

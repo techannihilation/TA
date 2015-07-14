@@ -2,7 +2,7 @@ return {
 	armraz = {
 		acceleration = 0.206,
 		bmcode = 1,
-		brakerate = 0.786,
+		brakerate = 2.358,
 		buildcostenergy = 112344,
 		buildcostmetal = 3577,
 		builder = false,
@@ -54,6 +54,9 @@ return {
 		unitname = "armraz",
 		upright = true,
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMRAZ.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

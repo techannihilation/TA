@@ -4,7 +4,7 @@ return {
 		amphibious = 1,
 		bankscale = 1.5,
 		bmcode = 1,
-		brakerate = 0.4275,
+		brakerate = 0.04275,
 		buildcostenergy = 19047,
 		buildcostmetal = 2256,
 		builddistance = 60,
@@ -77,6 +77,9 @@ return {
 			[13] = "coratl",
 			[14] = "cormine2",
 			[15] = "corflshd",
+		},
+		customparams = {
+			buildpic = "CORCSA.png",
 		},
 		nanocolor = {
 			[1] = 0.128,

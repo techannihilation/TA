@@ -3,7 +3,7 @@ return {
 		acceleration = 0.2,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.625,
+		brakerate = 0.0625,
 		buildcostenergy = 6250,
 		buildcostmetal = 298,
 		builder = false,
@@ -69,6 +69,9 @@ return {
 		turnrate = 420,
 		unitname = "armdfly",
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMDFLY.png",
+		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",

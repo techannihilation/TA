@@ -2,7 +2,7 @@ return {
 	corcan = {
 		acceleration = 0.12,
 		bmcode = 1,
-		brakerate = 0.564,
+		brakerate = 1.692,
 		buildcostenergy = 8722,
 		buildcostmetal = 522,
 		builder = false,
@@ -57,6 +57,9 @@ return {
 		unitname = "corcan",
 		upright = true,
 		workertime = 0,
+		customparams = {
+			buildpic = "CORCAN.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

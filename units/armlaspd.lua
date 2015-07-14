@@ -2,7 +2,7 @@ return {
 	armlaspd = {
 		acceleration = 0.12,
 		bmcode = 1,
-		brakerate = 0.45,
+		brakerate = 1.35,
 		buildcostenergy = 7568,
 		buildcostmetal = 872,
 		builder = false,

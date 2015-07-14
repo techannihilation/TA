@@ -2,7 +2,7 @@ return {
 	tllmlrpc = {
 		acceleration = 0.036,
 		bmcode = 1,
-		brakerate = 0.15,
+		brakerate = 0.45,
 		buildcostenergy = 84140,
 		buildcostmetal = 6080,
 		builder = false,
@@ -64,6 +64,9 @@ return {
 		unitname = "avtr",
 		unitnumber = 999,
 		workertime = 0,
+		customparams = {
+			buildpic = "tllmlrpc.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

@@ -1,10 +1,10 @@
 return {
 	tllfight = {
-		acceleration = 0.1485,
+		acceleration = 0.04901,
 		airsightdistance = 700,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.04,
+		brakerate = 0.0004,
 		buildcostenergy = 500,
 		buildcostmetal = 150,
 		buildtime = 9585,

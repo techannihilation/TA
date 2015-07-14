@@ -1,8 +1,8 @@
 return {
 	corfred = {
-		acceleration = 0.04,
+		acceleration = 0.08,
 		bmcode = 1,
-		brakerate = 0.825,
+		brakerate = 4.95,
 		buildcostenergy = 4365,
 		buildcostmetal = 850,
 		builddistance = 122,
@@ -78,6 +78,7 @@ return {
 			[15] = "cortl",
 		},
 		customparams = {
+			buildpic = "corfred.png",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},
 		featuredefs = {

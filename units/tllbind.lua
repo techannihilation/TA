@@ -2,7 +2,7 @@ return {
 	tllbind = {
 		acceleration = 0.06,
 		bmcode = 1,
-		brakerate = 0.399,
+		brakerate = 1.197,
 		buildcostenergy = 12400,
 		buildcostmetal = 2985,
 		builder = false,

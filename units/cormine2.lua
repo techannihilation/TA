@@ -64,6 +64,9 @@ return {
 		unitname = "cormine2",
 		usebuildinggrounddecal = true,
 		workertime = 0,
+		customparams = {
+			buildpic = "CORMINE2.png",
+		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",

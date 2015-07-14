@@ -2,7 +2,7 @@ return {
 	armmerl = {
 		acceleration = 0.0198,
 		bmcode = 1,
-		brakerate = 0.1122,
+		brakerate = 0.3366,
 		buildcostenergy = 6146,
 		buildcostmetal = 862,
 		builder = false,
@@ -62,6 +62,9 @@ return {
 		turnrate = 520.29999,
 		unitname = "armmerl",
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMMERL.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

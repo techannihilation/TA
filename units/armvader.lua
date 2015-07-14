@@ -3,7 +3,7 @@ return {
 		acceleration = 0.132,
 		activatewhenbuilt = true,
 		bmcode = 1,
-		brakerate = 0.486,
+		brakerate = 1.458,
 		buildcostenergy = 5473,
 		buildcostmetal = 61,
 		builder = false,
@@ -55,6 +55,9 @@ return {
 		turnrate = 1540,
 		unitname = "armvader",
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMVADER.png",
+		},
 		featuredefs = {
 			corpse = {
 				blocking = true,

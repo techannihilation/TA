@@ -2,7 +2,7 @@ return {
 	armflea = {
 		acceleration = 0.5,
 		bmcode = 1,
-		brakerate = 1.5,
+		brakerate = 4.5,
 		buildcostenergy = 322,
 		buildcostmetal = 14,
 		builder = false,
@@ -52,6 +52,9 @@ return {
 		unitname = "armflea",
 		unitrestricted = 150,
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMFLEA.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,

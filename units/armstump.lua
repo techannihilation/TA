@@ -2,7 +2,7 @@ return {
 	armstump = {
 		acceleration = 0.0287,
 		bmcode = 1,
-		brakerate = 0.0894,
+		brakerate = 0.2682,
 		buildcostenergy = 1746,
 		buildcostmetal = 201,
 		builder = false,
@@ -59,6 +59,9 @@ return {
 		turnrate = 484,
 		unitname = "armstump",
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMSTUMP.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

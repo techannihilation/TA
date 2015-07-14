@@ -2,7 +2,7 @@ return {
 	hyperion = {
 		acceleration = 0.08,
 		bmcode = 1,
-		brakerate = 0.072,
+		brakerate = 0.216,
 		buildcostenergy = 110000,
 		buildcostmetal = 66400,
 		builder = false,
@@ -47,6 +47,7 @@ return {
 		noautofire = false,
 		nochasecategory = "VTOL",
 		objectname = "hyperion",
+		pushresistant = true,
 		radardistance = 1100,
 		radaremitheight = 73.71844,
 		selfdestructas = "NUCLEAR_MISSILE1",

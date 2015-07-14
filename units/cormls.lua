@@ -2,7 +2,7 @@ return {
 	cormls = {
 		acceleration = 0.046,
 		bmcode = 1,
-		brakerate = 0.18,
+		brakerate = 0.54,
 		buildcostenergy = 3902,
 		buildcostmetal = 289,
 		builddistance = 212,
@@ -75,6 +75,9 @@ return {
 			[18] = "corsub",
 			[19] = "cormuskrat",
 			[20] = "corbats",
+		},
+		customparams = {
+			buildpic = "CORMLS.png",
 		},
 		featuredefs = {
 			dead = {

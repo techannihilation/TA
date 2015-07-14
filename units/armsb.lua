@@ -1,12 +1,12 @@
 return {
 	armsb = {
-		acceleration = 0.03168,
+		acceleration = 0.01045,
 		altfromsealevel = 1,
 		amphibious = 1,
 		attackrunlength = 260,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.005,
+		brakerate = 0.00005,
 		buildcostenergy = 7544,
 		buildcostmetal = 169,
 		builder = false,
@@ -61,6 +61,9 @@ return {
 		turnrate = 392,
 		unitname = "armsb",
 		workertime = 0,
+		customparams = {
+			buildpic = "ARMSB.png",
+		},
 		sounds = {
 			build = "nanlath1",
 			canceldestruct = "cancel2",

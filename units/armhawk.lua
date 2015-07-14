@@ -1,10 +1,10 @@
 return {
 	armhawk = {
-		acceleration = 0.1584,
+		acceleration = 0.05227,
 		airsightdistance = 800,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.1125,
+		brakerate = 0.00112,
 		buildcostenergy = 16000,
 		buildcostmetal = 125,
 		buildpic = "ARMHAWK.png",
@@ -53,6 +53,9 @@ return {
 		turnrate = 1425,
 		unitname = "armhawk",
 		unitrestricted = 150,
+		customparams = {
+			buildpic = "ARMHAWK.png",
+		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",

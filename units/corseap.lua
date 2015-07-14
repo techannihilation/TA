@@ -1,11 +1,11 @@
 return {
 	corseap = {
-		acceleration = 0.10296,
+		acceleration = 0.03398,
 		amphibious = 1,
 		attackrunlength = 100,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.0475,
+		brakerate = 0.00047,
 		buildcostenergy = 6785,
 		buildcostmetal = 234,
 		builder = false,
@@ -59,6 +59,9 @@ return {
 		turnrate = 575,
 		unitname = "corseap",
 		workertime = 0,
+		customparams = {
+			buildpic = "CORSEAP.png",
+		},
 		sounds = {
 			build = "nanlath1",
 			canceldestruct = "cancel2",

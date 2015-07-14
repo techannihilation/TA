@@ -2,7 +2,7 @@ return {
 	marauder = {
 		acceleration = 0.22,
 		bmcode = 1,
-		brakerate = 0.714,
+		brakerate = 2.142,
 		buildcostenergy = 25500,
 		buildcostmetal = 1350,
 		builder = false,
@@ -52,6 +52,9 @@ return {
 		unitname = "marauder",
 		upright = true,
 		workertime = 0,
+		customparams = {
+			buildpic = "MARAUDER.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

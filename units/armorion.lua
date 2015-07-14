@@ -1,11 +1,11 @@
 return {
 	armorion = {
-		acceleration = 0.1485,
+		acceleration = 0.04901,
 		altfromsealevel = 1,
 		attackrunlength = 290,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.015,
+		brakerate = 0.00015,
 		buildcostenergy = 45000,
 		buildcostmetal = 2500,
 		builder = false,
@@ -58,6 +58,7 @@ return {
 		unitname = "armorion",
 		workertime = 0,
 		customparams = {
+			buildpic = "armorion.png",
 			requiretech = "Advanced T3 Unit Research Centre",
 		},
 		sounds = {

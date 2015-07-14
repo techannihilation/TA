@@ -56,6 +56,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "oooooooooooooooo",
+		customparams = {
+			buildpic = "CJUNO.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

@@ -49,6 +49,9 @@ return {
 		unitname = "corshieldgen_static",
 		workertime = 0,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo",
+		customparams = {
+			buildpic = "corshieldgen_static.png",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
