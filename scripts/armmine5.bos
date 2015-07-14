@@ -28,3 +28,27 @@ FireWeapon1()
 	sleep 500;
 	emit-sfx 4096 + 1 from base;
 }
+
+QueryWeapon1(piecenum)
+{
+	piecenum = base;
+}
+
+AimFromWeapon1(piecenum)
+{
+	piecenum = base;
+}
+
+QueryWeapon2(piecenum)
+{
+	piecenum = base;
+}
+
+AimFromWeapon2(piecenum)
+{
+	piecenum = base;
+}
+
+FireWeapon2()
+{
+}
