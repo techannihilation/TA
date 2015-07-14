@@ -11,8 +11,6 @@ Create()
 	dont-shade base;
 	dont-cache base;
 	set ARMORED to 0;
-	return (0);
-	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
 }
 
 Activate()
@@ -25,10 +23,32 @@ Deactivate()
 	set ARMORED to 0;
 }
 
-
 FireWeapon1()
 {
-	sleep 500; //A slight delay
-	emit-sfx 4096 + 1 from dummy_emit; //Weapon2 detonates the mine once weapon1 fires
+	sleep 500;
+	emit-sfx 4096 + 1 from dummy_emit;
 }
 
+QueryWeapon1(piecenum)
+{
+	piecenum = base;
+}
+
+AimFromWeapon1(piecenum)
+{
+	piecenum = base;
+}
+
+QueryWeapon2(piecenum)
+{
+	piecenum = base;
+}
+
+AimFromWeapon2(piecenum)
+{
+	piecenum = base;
+}
+
+FireWeapon2()
+{
+}
