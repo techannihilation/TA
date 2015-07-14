@@ -274,6 +274,7 @@ AimFromSecondary(piecenum)
 
 AimFromTertiary(piecenum)
 {
+	piecenum = turret;
 }
 
 QueryPrimary(piecenum)
