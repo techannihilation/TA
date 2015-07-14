@@ -2,8 +2,8 @@ return {
 	spiderlab = {
 		bmcode = 0,
 		buildangle = 950,
-		buildcostenergy = 3900,
-		buildcostmetal = 935,
+		buildcostenergy = 4160,
+		buildcostmetal = 997,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 10,

@@ -1,8 +1,8 @@
 return {
 	tllplat = {
 		bmcode = 0,
-		buildcostenergy = 17903,
-		buildcostmetal = 3650,
+		buildcostenergy = 19097,
+		buildcostmetal = 3893,
 		builder = true,
 		buildtime = 21483,
 		canmove = true,

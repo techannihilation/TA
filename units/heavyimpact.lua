@@ -2,8 +2,8 @@ return {
 	heavyimpact = {
 		acceleration = 0.06,
 		brakerate = 0.9,
-		buildcostenergy = 72090,
-		buildcostmetal = 7000,
+		buildcostenergy = 76896,
+		buildcostmetal = 7467,
 		builder = false,
 		buildpic = "heavyimpact.png",
 		buildtime = 14600,

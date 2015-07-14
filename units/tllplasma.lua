@@ -2,8 +2,8 @@ return {
 	tllplasma = {
 		bmcode = 0,
 		buildangle = 8200,
-		buildcostenergy = 14880,
-		buildcostmetal = 2100,
+		buildcostenergy = 15872,
+		buildcostmetal = 2240,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 5,

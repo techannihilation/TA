@@ -2,8 +2,8 @@ return {
 	tllupgweb = {
 		bmcode = 0,
 		buildangle = 4768,
-		buildcostenergy = 5943,
-		buildcostmetal = 267,
+		buildcostenergy = 6339,
+		buildcostmetal = 285,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 4,

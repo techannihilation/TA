@@ -2,8 +2,8 @@ return {
 	core_immolator = {
 		bmcode = 0,
 		buildangle = 8192,
-		buildcostenergy = 115165,
-		buildcostmetal = 1650,
+		buildcostenergy = 122843,
+		buildcostmetal = 1760,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,

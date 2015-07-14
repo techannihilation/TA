@@ -2,8 +2,8 @@ return {
 	tllsilo = {
 		bmcode = 0,
 		buildangle = 8192,
-		buildcostenergy = 45000,
-		buildcostmetal = 12500,
+		buildcostenergy = 48000,
+		buildcostmetal = 13333,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 8,

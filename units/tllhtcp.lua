@@ -2,8 +2,8 @@ return {
 	tllhtcp = {
 		bmcode = 0,
 		buildangle = 1024,
-		buildcostenergy = 61000,
-		buildcostmetal = 15400,
+		buildcostenergy = 65067,
+		buildcostmetal = 16427,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 13,

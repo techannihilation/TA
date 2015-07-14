@@ -2,8 +2,8 @@ return {
 	tllweb = {
 		bmcode = 0,
 		buildangle = 4768,
-		buildcostenergy = 3233,
-		buildcostmetal = 292,
+		buildcostenergy = 3449,
+		buildcostmetal = 311,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 4,

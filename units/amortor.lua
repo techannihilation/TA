@@ -2,8 +2,8 @@ return {
 	amortor = {
 		bmcode = 0,
 		buildangle = 4096,
-		buildcostenergy = 29342,
-		buildcostmetal = 2010,
+		buildcostenergy = 31298,
+		buildcostmetal = 2144,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,

@@ -2,8 +2,8 @@ return {
 	tllavp = {
 		bmcode = 0,
 		buildangle = 1024,
-		buildcostenergy = 23650,
-		buildcostmetal = 4345,
+		buildcostenergy = 25227,
+		buildcostmetal = 4635,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 10,

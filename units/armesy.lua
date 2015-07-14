@@ -1,8 +1,8 @@
 return {
 	armesy = {
 		bmcode = 0,
-		buildcostenergy = 82000,
-		buildcostmetal = 22000,
+		buildcostenergy = 87467,
+		buildcostmetal = 23467,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 18,

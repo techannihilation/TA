@@ -1,8 +1,8 @@
 return {
 	coreap = {
 		bmcode = 0,
-		buildcostenergy = 150000,
-		buildcostmetal = 18700,
+		buildcostenergy = 160000,
+		buildcostmetal = 19947,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 13,

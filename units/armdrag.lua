@@ -2,8 +2,8 @@ return {
 	armdrag = {
 		acceleration = 0,
 		brakerate = 0,
-		buildcostenergy = 150,
-		buildcostmetal = 10,
+		buildcostenergy = 160,
+		buildcostmetal = 11,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 4,

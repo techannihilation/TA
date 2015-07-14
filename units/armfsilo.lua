@@ -2,8 +2,8 @@ return {
 	armfsilo = {
 		bmcode = 0,
 		buildangle = 8192,
-		buildcostenergy = 989475,
-		buildcostmetal = 153890,
+		buildcostenergy = 1055440,
+		buildcostmetal = 164149,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 19,

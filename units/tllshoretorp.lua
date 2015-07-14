@@ -2,8 +2,8 @@ return {
 	tllshoretorp = {
 		bmcode = 0,
 		buildangle = 32768,
-		buildcostenergy = 5724,
-		buildcostmetal = 602,
+		buildcostenergy = 6106,
+		buildcostmetal = 642,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 5,

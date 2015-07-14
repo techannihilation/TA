@@ -1,7 +1,7 @@
 return {
 	ashipyardlvl3 = {
-		buildcostenergy = 1200000,
-		buildcostmetal = 100000,
+		buildcostenergy = 1280000,
+		buildcostmetal = 106667,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 33,

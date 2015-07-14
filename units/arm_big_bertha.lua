@@ -2,8 +2,8 @@ return {
 	arm_big_bertha = {
 		bmcode = 0,
 		buildangle = 4096,
-		buildcostenergy = 45530,
-		buildcostmetal = 4076,
+		buildcostenergy = 48565,
+		buildcostmetal = 4348,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 8,

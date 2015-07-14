@@ -2,8 +2,8 @@ return {
 	coruwadves = {
 		bmcode = 0,
 		buildangle = 7822,
-		buildcostenergy = 10032,
-		buildcostmetal = 690,
+		buildcostenergy = 10701,
+		buildcostmetal = 736,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 8,

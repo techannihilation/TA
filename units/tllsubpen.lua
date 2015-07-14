@@ -1,8 +1,8 @@
 return {
 	tllsubpen = {
 		bmcode = 0,
-		buildcostenergy = 2500,
-		buildcostmetal = 2000,
+		buildcostenergy = 2667,
+		buildcostmetal = 2133,
 		builder = true,
 		buildtime = 6520,
 		canguard = true,

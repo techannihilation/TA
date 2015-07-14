@@ -1,8 +1,8 @@
 return {
 	tllsy = {
 		bmcode = 0,
-		buildcostenergy = 790,
-		buildcostmetal = 690,
+		buildcostenergy = 843,
+		buildcostmetal = 736,
 		builder = true,
 		buildtime = 6090,
 		canmove = true,

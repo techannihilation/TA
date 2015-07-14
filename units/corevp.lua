@@ -2,8 +2,8 @@ return {
 	corevp = {
 		bmcode = 0,
 		buildangle = 1024,
-		buildcostenergy = 320000,
-		buildcostmetal = 15200,
+		buildcostenergy = 341333,
+		buildcostmetal = 16213,
 		builder = true,
 		buildinggrounddecaldecayspeed = 3000,
 		buildinggrounddecalsizex = 10,

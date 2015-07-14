@@ -2,8 +2,8 @@ return {
 	armrech21 = {
 		activatewhenbuilt = true,
 		bmcode = 0,
-		buildcostenergy = 500000,
-		buildcostmetal = 30000,
+		buildcostenergy = 533333,
+		buildcostmetal = 32000,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 10,

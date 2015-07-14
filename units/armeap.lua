@@ -1,8 +1,8 @@
 return {
 	armeap = {
 		bmcode = 0,
-		buildcostenergy = 145000,
-		buildcostmetal = 19200,
+		buildcostenergy = 154667,
+		buildcostmetal = 20480,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 13,

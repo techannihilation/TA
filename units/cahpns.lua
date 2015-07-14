@@ -1,8 +1,8 @@
 return {
 	cahpns = {
 		bmcode = 0,
-		buildcostenergy = 38135,
-		buildcostmetal = 4600,
+		buildcostenergy = 40677,
+		buildcostmetal = 4907,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 12,

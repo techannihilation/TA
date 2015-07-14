@@ -2,8 +2,8 @@ return {
 	tlllbt = {
 		bmcode = 0,
 		buildangle = 8192,
-		buildcostenergy = 3431,
-		buildcostmetal = 2179,
+		buildcostenergy = 3660,
+		buildcostmetal = 2324,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 5,

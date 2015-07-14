@@ -2,8 +2,8 @@ return {
 	corhevsenan = {
 		acceleration = 0,
 		brakerate = 13.5,
-		buildcostenergy = 6578,
-		buildcostmetal = 299,
+		buildcostenergy = 7017,
+		buildcostmetal = 319,
 		builddistance = 600,
 		builder = true,
 		buildpic = "corhevsenan.png",

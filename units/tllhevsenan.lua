@@ -2,8 +2,8 @@ return {
 	tllhevsenan = {
 		acceleration = 0,
 		brakerate = 13.5,
-		buildcostenergy = 2389,
-		buildcostmetal = 523,
+		buildcostenergy = 2548,
+		buildcostmetal = 558,
 		builddistance = 600,
 		builder = true,
 		buildpic = "armhevsenan.png",

@@ -2,8 +2,8 @@ return {
 	tawf010 = {
 		bmcode = 0,
 		buildangle = 8192,
-		buildcostenergy = 42468,
-		buildcostmetal = 2122,
+		buildcostenergy = 45299,
+		buildcostmetal = 2263,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 5,

@@ -2,8 +2,8 @@ return {
 	tllfnanotc1 = {
 		acceleration = 0,
 		brakerate = 13.5,
-		buildcostenergy = 20000,
-		buildcostmetal = 1250,
+		buildcostenergy = 21333,
+		buildcostmetal = 1333,
 		builddistance = 600,
 		builder = true,
 		buildpic = "CORFNANOTC.png",

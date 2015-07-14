@@ -2,8 +2,8 @@ return {
 	tllpulaser = {
 		bmcode = 0,
 		buildangle = 8192,
-		buildcostenergy = 1875,
-		buildcostmetal = 661,
+		buildcostenergy = 2000,
+		buildcostmetal = 705,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 5,

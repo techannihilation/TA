@@ -2,8 +2,8 @@ return {
 	corfsilo = {
 		bmcode = 0,
 		buildangle = 8192,
-		buildcostenergy = 989624,
-		buildcostmetal = 152460,
+		buildcostenergy = 1055599,
+		buildcostmetal = 162624,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 19,

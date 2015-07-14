@@ -2,8 +2,8 @@ return {
 	tllnanotc2 = {
 		acceleration = 0,
 		brakerate = 13.5,
-		buildcostenergy = 60000,
-		buildcostmetal = 4400,
+		buildcostenergy = 64000,
+		buildcostmetal = 4693,
 		builddistance = 900,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,

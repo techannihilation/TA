@@ -2,8 +2,8 @@ return {
 	tlldtns = {
 		bmcode = 0,
 		buildangle = 8192,
-		buildcostenergy = 650,
-		buildcostmetal = 25,
+		buildcostenergy = 693,
+		buildcostmetal = 27,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 4,

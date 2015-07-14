@@ -1,8 +1,8 @@
 return {
 	acovertopscentre = {
 		activatewhenbuilt = true,
-		buildcostenergy = 10000000,
-		buildcostmetal = 75000,
+		buildcostenergy = 10666667,
+		buildcostmetal = 80000,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 15,

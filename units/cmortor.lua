@@ -2,8 +2,8 @@ return {
 	cmortor = {
 		bmcode = 0,
 		buildangle = 4096,
-		buildcostenergy = 31342,
-		buildcostmetal = 1987,
+		buildcostenergy = 33431,
+		buildcostmetal = 2119,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,

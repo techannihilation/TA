@@ -2,8 +2,8 @@ return {
 	commando = {
 		acceleration = 0.1,
 		brakerate = 1.35,
-		buildcostenergy = 11040,
-		buildcostmetal = 618,
+		buildcostenergy = 11776,
+		buildcostmetal = 659,
 		builddistance = 137,
 		builder = true,
 		buildpic = "COMMANDO.png",

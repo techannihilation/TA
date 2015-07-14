@@ -1,8 +1,8 @@
 return {
 	tllhp = {
 		bmcode = 0,
-		buildcostenergy = 1531,
-		buildcostmetal = 1155,
+		buildcostenergy = 1633,
+		buildcostmetal = 1232,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 10,

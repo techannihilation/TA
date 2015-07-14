@@ -2,8 +2,8 @@ return {
 	corboucher = {
 		bmcode = 0,
 		buildangle = 8192,
-		buildcostenergy = 120680,
-		buildcostmetal = 20740,
+		buildcostenergy = 128725,
+		buildcostmetal = 22123,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 9,

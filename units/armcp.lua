@@ -2,8 +2,8 @@ return {
 	armcp = {
 		activatewhenbuilt = false,
 		bmcode = 0,
-		buildcostenergy = 12250,
-		buildcostmetal = 960,
+		buildcostenergy = 13067,
+		buildcostmetal = 1024,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 9,

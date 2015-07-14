@@ -2,8 +2,8 @@ return {
 	tllhltns = {
 		bmcode = 0,
 		buildangle = 32768,
-		buildcostenergy = 2957,
-		buildcostmetal = 741,
+		buildcostenergy = 3154,
+		buildcostmetal = 790,
 		builder = false,
 		buildtime = 9705,
 		canattack = true,

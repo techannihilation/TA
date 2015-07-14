@@ -1,8 +1,8 @@
 return {
 	core_intimidator = {
 		bmcode = 0,
-		buildcostenergy = 40670,
-		buildcostmetal = 4732,
+		buildcostenergy = 43381,
+		buildcostmetal = 5047,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 8,

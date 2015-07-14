@@ -2,8 +2,8 @@ return {
 	tlltower = {
 		bmcode = 0,
 		buildangle = 8192,
-		buildcostenergy = 950,
-		buildcostmetal = 41,
+		buildcostenergy = 1013,
+		buildcostmetal = 44,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 4,

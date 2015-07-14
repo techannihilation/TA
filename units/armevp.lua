@@ -2,8 +2,8 @@ return {
 	armevp = {
 		bmcode = 0,
 		buildangle = 1024,
-		buildcostenergy = 310000,
-		buildcostmetal = 15300,
+		buildcostenergy = 330667,
+		buildcostmetal = 16320,
 		builder = true,
 		buildinggrounddecaldecayspeed = 3000,
 		buildinggrounddecalsizex = 9,

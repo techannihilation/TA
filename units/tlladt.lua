@@ -2,8 +2,8 @@ return {
 	tlladt = {
 		bmcode = 0,
 		buildangle = 0,
-		buildcostenergy = 695,
-		buildcostmetal = 29,
+		buildcostenergy = 741,
+		buildcostmetal = 31,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 4,

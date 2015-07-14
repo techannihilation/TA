@@ -2,8 +2,8 @@ return {
 	nebraska = {
 		bmcode = 0,
 		buildangle = 8192,
-		buildcostenergy = 199413,
-		buildcostmetal = 18789,
+		buildcostenergy = 212707,
+		buildcostmetal = 20042,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 11,

@@ -1,8 +1,8 @@
 return {
 	coresy = {
 		bmcode = 0,
-		buildcostenergy = 80000,
-		buildcostmetal = 22500,
+		buildcostenergy = 85333,
+		buildcostmetal = 24000,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 18,

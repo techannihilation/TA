@@ -2,8 +2,8 @@ return {
 	tllemp = {
 		bmcode = 0,
 		buildangle = 8192,
-		buildcostenergy = 13341,
-		buildcostmetal = 1120,
+		buildcostenergy = 14230,
+		buildcostmetal = 1195,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,

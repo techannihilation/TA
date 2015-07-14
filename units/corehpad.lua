@@ -1,8 +1,8 @@
 return {
 	corehpad = {
 		bmcode = 0,
-		buildcostenergy = 14100,
-		buildcostmetal = 940,
+		buildcostenergy = 15040,
+		buildcostmetal = 1003,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 9,

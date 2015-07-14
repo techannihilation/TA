@@ -2,8 +2,8 @@ return {
 	armblab = {
 		bmcode = 0,
 		buildangle = 4096,
-		buildcostenergy = 4300,
-		buildcostmetal = 945,
+		buildcostenergy = 4587,
+		buildcostmetal = 1008,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 8,

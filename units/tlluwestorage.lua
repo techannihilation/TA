@@ -2,8 +2,8 @@ return {
 	tlluwestorage = {
 		bmcode = 0,
 		buildangle = 8192,
-		buildcostenergy = 1050,
-		buildcostmetal = 292,
+		buildcostenergy = 1120,
+		buildcostmetal = 311,
 		builder = false,
 		buildtime = 6400,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",

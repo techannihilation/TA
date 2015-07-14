@@ -2,8 +2,8 @@ return {
 	tllkrak = {
 		bmcode = 0,
 		buildangle = 32768,
-		buildcostenergy = 25000,
-		buildcostmetal = 4800,
+		buildcostenergy = 26667,
+		buildcostmetal = 5120,
 		builder = false,
 		buildtime = 39000,
 		canattack = true,

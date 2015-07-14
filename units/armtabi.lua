@@ -2,8 +2,8 @@ return {
 	armtabi = {
 		bmcode = 0,
 		buildangle = 4096,
-		buildcostenergy = 5000000,
-		buildcostmetal = 600000,
+		buildcostenergy = 5333334,
+		buildcostmetal = 640000,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 13,

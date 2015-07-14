@@ -1,8 +1,8 @@
 return {
 	ccovertopscentre = {
 		activatewhenbuilt = true,
-		buildcostenergy = 10500000,
-		buildcostmetal = 76000,
+		buildcostenergy = 11200001,
+		buildcostmetal = 81067,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 15,
