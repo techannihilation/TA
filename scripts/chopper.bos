@@ -241,6 +241,21 @@ QueryTertiary(piecenum)
 	piecenum = tailgunl;
 }
 
+AimFromPrimary(piecenum)
+{
+	piecenum = body;
+}
+
+AimFromSecondary(piecenum)
+{
+	piecenum = body;
+}
+
+AimFromTertiary(piecenum)
+{
+	piecenum = body;
+}
+
 HitByWeapon(anglex, anglez)
 {
 	var Func_Var_3;
