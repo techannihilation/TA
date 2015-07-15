@@ -103,7 +103,6 @@ return {
 				soundhitdry = "SabotHit",
 				soundstart = "SabotFire",
 				soundtrigger = true,
-				startsmoke = 1,
 				startvelocity = 700,
 				texture2 = "armsmoketrail",
 				tolerance = 8000,

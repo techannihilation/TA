@@ -143,7 +143,6 @@ return {
 				smoketrail = true,
 				soundhitdry = "junohit2",
 				soundstart = "junofir2",
-				startsmoke = 1,
 				stockpile = true,
 				stockpiletime = 75,
 				targetable = 0,

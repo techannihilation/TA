@@ -133,7 +133,6 @@ return {
 				soundhitdry = "xplomed4",
 				soundstart = "Scargun",
 				stages = 20,
-				startsmoke = 1,
 				turret = true,
 				weapontype = "Cannon",
 				weaponvelocity = 1500,

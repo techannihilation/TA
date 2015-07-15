@@ -120,7 +120,6 @@ return {
 				reloadtime = 0.8,
 				soundhitdry = "xplomed2",
 				soundstart = "cannhvy1",
-				startsmoke = 1,
 				targetmoveerror = 0.1,
 				turret = true,
 				weapontype = "Cannon",

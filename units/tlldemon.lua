@@ -140,7 +140,6 @@ return {
 				smoketrail = true,
 				soundhitdry = "rockhit",
 				soundstart = "rapidrocket3",
-				startsmoke = 1,
 				startvelocity = 500,
 				texture2 = "armsmoketrail",
 				trajectoryheight = 0.5,

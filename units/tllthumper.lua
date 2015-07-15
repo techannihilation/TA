@@ -126,7 +126,6 @@ return {
 				soundhitdry = "xplomed4",
 				soundstart = "cannhvy2",
 				stages = 20,
-				startsmoke = 1,
 				turret = true,
 				weapontype = "Cannon",
 				weaponvelocity = 313.92676,

@@ -102,7 +102,6 @@ return {
 				soundhitdry = "xplomed2",
 				soundstart = "cannhvy5",
 				stages = 20,
-				startsmoke = 1,
 				targetmoveerror = 0.25,
 				turret = true,
 				waterbounce = 0,

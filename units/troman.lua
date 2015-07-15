@@ -128,7 +128,6 @@ return {
 				size = 0.82,
 				soundhitdry = "xplomed2",
 				soundstart = "Mavgun2",
-				startsmoke = 1,
 				tolerance = 4000,
 				turret = true,
 				weapontype = "Cannon",

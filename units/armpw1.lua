@@ -148,7 +148,6 @@ return {
 				size = 1.8,
 				soundstart = "flashemg",
 				sprayangle = 1180,
-				startsmoke = 0,
 				tolerance = 5000,
 				turret = true,
 				weapontimer = 0.1,

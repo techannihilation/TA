@@ -144,7 +144,6 @@ return {
 				soundhitdry = "xplomed3",
 				soundstart = "Mavgun2",
 				sprayangle = 200,
-				startsmoke = 1,
 				tolerance = 10000,
 				turret = true,
 				weapontype = "Cannon",

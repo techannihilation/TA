@@ -137,7 +137,6 @@ return {
 				smokedelay = 1,
 				soundstart = "flamhvy1",
 				sprayangle = 1800,
-				startsmoke = 0,
 				tolerance = 2500,
 				turret = true,
 				unitsonly = 1,

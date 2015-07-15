@@ -120,7 +120,6 @@ return {
 				soundhitdry = "EMGPULS1",
 				soundstart = "cannon1",
 				stages = 20,
-				startsmoke = 1,
 				tolerance = 1000,
 				turret = true,
 				weapontype = "Cannon",

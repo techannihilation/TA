@@ -157,7 +157,6 @@ return {
 				soundhitdry = "TAWF113b",
 				soundstart = "TAWF113a",
 				stages = 20,
-				startsmoke = 1,
 				turret = true,
 				weapontype = "Cannon",
 				weaponvelocity = 370,

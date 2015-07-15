@@ -140,7 +140,6 @@ return {
 				smoketrail = true,
 				soundhitdry = "xplosml2",
 				soundstart = "rocklit1",
-				startsmoke = 1,
 				startvelocity = 450,
 				turret = true,
 				weaponacceleration = 150,

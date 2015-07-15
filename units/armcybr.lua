@@ -114,7 +114,6 @@ return {
 				soundhitdry = "tonukeex",
 				soundstart = "bombdropxx",
 				soundwater = "towaterex",
-				startsmoke = 1,
 				startvelocity = 100,
 				targetable = 0,
 				texture1 = "null",

@@ -159,7 +159,6 @@ return {
 				smoketrail = true,
 				soundhitdry = "SabotHit",
 				soundstart = "SabotFire",
-				startsmoke = 1,
 				startvelocity = 700,
 				targetmoveerror = 0.2,
 				texture2 = "coresmoketrail",

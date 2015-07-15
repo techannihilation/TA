@@ -155,7 +155,6 @@ return {
 				soundstart = "Flamhvy1",
 				soundtrigger = false,
 				sprayangle = 1800,
-				startsmoke = 0,
 				targetmoveerror = 0.001,
 				tolerance = 2500,
 				turret = true,

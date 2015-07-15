@@ -137,7 +137,6 @@ return {
 				soundhitdry = "lashit2",
 				soundstart = "Lghthvy1",
 				soundtrigger = true,
-				startsmoke = 1,
 				texture1 = "strike",
 				thickness = 9,
 				turret = true,

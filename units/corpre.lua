@@ -128,7 +128,6 @@ return {
 				rgbcolor = "1 0.3 0.2",
 				soundhitdry = "flakhit",
 				soundstart = "flakfire",
-				startsmoke = 1,
 				turret = true,
 				unitsonly = 1,
 				weapontimer = 1,

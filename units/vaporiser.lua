@@ -145,7 +145,6 @@ return {
 				soundhitdry = "thunder_clap",
 				soundstart = "arrfire",
 				soundtrigger = true,
-				startsmoke = 1,
 				targetmoveerror = 0.2,
 				texture1 = "Type4Beam",
 				texture2 = "NULL",

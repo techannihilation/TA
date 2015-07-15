@@ -141,7 +141,6 @@ return {
 				soundhitdry = "xplosml1",
 				soundstart = "rockhvy3",
 				soundtrigger = true,
-				startsmoke = 1,
 				startvelocity = 120,
 				targetmoveerror = 0.2,
 				texture2 = "armsmoketrail",

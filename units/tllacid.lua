@@ -143,7 +143,6 @@ return {
 				smoketrail = false,
 				soundhitdry = "xplomed4",
 				soundstart = "misicbm1",
-				startsmoke = 1,
 				stockpile = true,
 				stockpiletime = 90,
 				texture1 = "null",

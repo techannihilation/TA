@@ -92,7 +92,6 @@ return {
 				soundhitdry = "lasrhit1",
 				soundstart = "armsml2",
 				soundtrigger = true,
-				startsmoke = 1,
 				tolerance = 8000,
 				turnrate = 9000,
 				turret = false,

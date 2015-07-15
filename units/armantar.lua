@@ -168,7 +168,6 @@ return {
 				smoketrail = true,
 				soundhitdry = "tankahit",
 				soundstart = "tankafire",
-				startsmoke = 1,
 				startvelocity = 640,
 				tolerance = 12000,
 				tracks = true,

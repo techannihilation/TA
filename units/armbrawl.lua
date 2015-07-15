@@ -109,7 +109,6 @@ return {
 				size = 2.5,
 				soundstart = "brawlemg",
 				sprayangle = 1024,
-				startsmoke = 0,
 				tolerance = 6000,
 				turret = false,
 				weapontimer = 1,

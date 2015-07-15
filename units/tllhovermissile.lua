@@ -137,7 +137,6 @@ return {
 				smoketrail = true,
 				soundhitdry = "xplomed2",
 				soundstart = "rockhvy2",
-				startsmoke = 1,
 				startvelocity = 450,
 				texture2 = "coresmoketrail",
 				tolerance = 10000,

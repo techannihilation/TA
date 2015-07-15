@@ -138,7 +138,6 @@ return {
 				rgbcolor = "1 0.95 0.4",
 				size = 1.5,
 				soundstart = "fastemg",
-				startsmoke = 0,
 				turret = true,
 				weapontimer = 0.6,
 				weapontype = "Cannon",

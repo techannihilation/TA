@@ -140,7 +140,6 @@ return {
 				soundhitdry = "packohit",
 				soundstart = "packolau",
 				soundtrigger = true,
-				startsmoke = 1,
 				startvelocity = 520,
 				texture2 = "armsmoketrail",
 				tolerance = 9950,

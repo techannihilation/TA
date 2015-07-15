@@ -140,7 +140,6 @@ return {
 				smoketrail = true,
 				soundhitdry = "xplosml2",
 				soundstart = "tirhorgue",
-				startsmoke = 1,
 				startvelocity = 450,
 				tolerance = 8000,
 				tracks = true,

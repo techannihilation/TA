@@ -132,7 +132,6 @@ return {
 				smoketrail = true,
 				soundhitdry = "xplomed4",
 				soundstart = "Rockhvy1",
-				startsmoke = 1,
 				stockpile = true,
 				stockpiletime = 100,
 				tolerance = 4000,

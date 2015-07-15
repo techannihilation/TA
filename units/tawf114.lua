@@ -154,7 +154,6 @@ return {
 				smoketrail = true,
 				soundhitdry = "TAWF114b",
 				soundstart = "TAWF114a",
-				startsmoke = 1,
 				startvelocity = 400,
 				texture1 = "null",
 				texture2 = "null",

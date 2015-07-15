@@ -143,7 +143,6 @@ return {
 				soundhitdry = "xplomas4",
 				soundstart = "siege_fire",
 				stages = 20,
-				startsmoke = 1,
 				tolerance = 1000,
 				turret = true,
 				weapontype = "Cannon",

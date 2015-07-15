@@ -140,7 +140,6 @@ return {
 				size = 1.06,
 				soundhitdry = "xplomed2",
 				soundstart = "cannhvy1",
-				startsmoke = 0,
 				targetmoveerror = 0.2,
 				tolerance = 8000,
 				turret = true,

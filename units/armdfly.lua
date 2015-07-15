@@ -119,7 +119,6 @@ return {
 				soundhitdry = "lashit",
 				soundstart = "hackshot",
 				soundtrigger = true,
-				startsmoke = 0,
 				targetmoveerror = 0.3,
 				thickness = 1.25,
 				tolerance = 6000,

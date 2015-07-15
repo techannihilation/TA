@@ -146,7 +146,6 @@ return {
 				soundhitdry = "rockhit",
 				soundstart = "rapidrocket3",
 				sprayangle = 2000,
-				startsmoke = 1,
 				startvelocity = 200,
 				texture1 = "null",
 				texture2 = "coresmoketrail",

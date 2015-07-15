@@ -121,7 +121,6 @@ return {
 				rgbcolor = "1.000 0.047 0.000",
 				soundhitdry = "xplomed2",
 				soundstart = "Krogun1",
-				startsmoke = 1,
 				tolerance = 2400,
 				turret = true,
 				weapontype = "EmgCannon",

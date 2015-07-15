@@ -147,7 +147,6 @@ return {
 				soundtrigger = true,
 				soundwater = "SplsSml",
 				sprayangle = 1024,
-				startsmoke = 1,
 				thickness = 7,
 				turret = true,
 				weapontimer = 4,

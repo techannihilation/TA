@@ -125,7 +125,6 @@ return {
 				size = 1.11,
 				soundhitdry = "xplomed2",
 				soundstart = "tllstuner",
-				startsmoke = 1,
 				thickness = 1.6,
 				tolerance = 500,
 				turret = true,

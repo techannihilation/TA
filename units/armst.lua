@@ -146,7 +146,6 @@ return {
 				size = 0.82,
 				soundhitdry = "xplomed2",
 				soundstart = "cannhvy1",
-				startsmoke = 1,
 				turret = true,
 				weapontype = "Cannon",
 				weaponvelocity = 450,

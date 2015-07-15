@@ -207,7 +207,6 @@ return {
 				smoketrail = true,
 				soundhitdry = "megaboom",
 				soundstart = "misicbm1",
-				startsmoke = 1,
 				stockpile = true,
 				stockpiletime = 105,
 				tolerance = 4000,

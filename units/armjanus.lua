@@ -145,7 +145,6 @@ return {
 				soundhitvolume = 8,
 				soundstart = "rocklit1",
 				soundstartvolume = 7,
-				startsmoke = 1,
 				startvelocity = 190,
 				texture1 = "null",
 				texture2 = "null",

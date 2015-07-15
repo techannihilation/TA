@@ -103,7 +103,6 @@ return {
 				soundhitdry = "explode",
 				soundstart = "rocklit3",
 				soundtrigger = true,
-				startsmoke = 1,
 				startvelocity = 300,
 				tolerance = 8000,
 				turnrate = 9000,

@@ -129,7 +129,6 @@ return {
 				size = 0.88,
 				soundhitdry = "xplomed21",
 				soundstart = "Krogun1",
-				startsmoke = 1,
 				tolerance = 500,
 				turret = true,
 				weapontype = "Cannon",

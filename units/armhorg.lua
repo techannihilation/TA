@@ -149,7 +149,6 @@ return {
 				soundhitdry = "TAWF114b",
 				soundstart = "TAWF114a",
 				sprayangle = 250,
-				startsmoke = 1,
 				startvelocity = 250,
 				texture1 = "null",
 				texture2 = "null",

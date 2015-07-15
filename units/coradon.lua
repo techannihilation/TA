@@ -149,7 +149,6 @@ return {
 				soundstart = "adonis_missile",
 				soundtrigger = true,
 				sprayangle = 4072,
-				startsmoke = 1,
 				startvelocity = 200,
 				tolerance = 9000,
 				tracks = true,

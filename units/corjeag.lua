@@ -127,7 +127,6 @@ return {
 				smoketrail = true,
 				soundhitdry = "xplomed2",
 				soundstart = "JeagerAAMissiles",
-				startsmoke = 1,
 				startvelocity = 820,
 				texture1 = "null",
 				texture2 = "coresmoketrail",

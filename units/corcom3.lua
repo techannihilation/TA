@@ -217,7 +217,6 @@ return {
 				soundhitdry = "xplomas2",
 				soundstart = "disigun1",
 				soundtrigger = true,
-				startsmoke = 1,
 				tolerance = 10000,
 				turret = true,
 				weapontimer = 4.2,

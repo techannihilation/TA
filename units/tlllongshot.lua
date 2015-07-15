@@ -146,7 +146,6 @@ return {
 				soundhitdry = "EMGPULS1",
 				soundstart = "xplonuk4",
 				stages = 20,
-				startsmoke = 1,
 				tolerance = 7000,
 				turret = true,
 				waterbounce = false,

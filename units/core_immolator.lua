@@ -147,7 +147,6 @@ return {
 				soundhitdry = "xplonuk1",
 				soundstart = "xplonuk3",
 				stages = 20,
-				startsmoke = 1,
 				turret = true,
 				weapontype = "Cannon",
 				weaponvelocity = 850,

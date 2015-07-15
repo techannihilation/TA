@@ -118,7 +118,6 @@ return {
 				soundstart = "mlrsfireshort",
 				soundtrigger = true,
 				sprayangle = 1024,
-				startsmoke = 1,
 				startvelocity = 150,
 				texture1 = "null",
 				texture2 = "null",

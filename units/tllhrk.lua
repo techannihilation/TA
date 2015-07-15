@@ -136,7 +136,6 @@ return {
 				smoketrail = false,
 				soundhitdry = "vpulsehit",
 				soundstart = "vpulsefire",
-				startsmoke = false,
 				texture1 = "null",
 				texture2 = "null",
 				texture3 = "null",

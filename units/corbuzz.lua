@@ -154,7 +154,6 @@ return {
 				soundhitdry = "rflrpc3",
 				soundstart = "XPLONUK4",
 				stages = 20,
-				startsmoke = 1,
 				turret = true,
 				weapontimer = 14,
 				weapontype = "Cannon",

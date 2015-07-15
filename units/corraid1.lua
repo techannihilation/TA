@@ -148,7 +148,6 @@ return {
 				soundhitdry = "xplosml3",
 				soundstart = "canlite3",
 				stages = 20,
-				startsmoke = 1,
 				turret = true,
 				weapontype = "Cannon",
 				weaponvelocity = 230,

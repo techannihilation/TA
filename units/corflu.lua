@@ -103,7 +103,6 @@ return {
 				soundhitdry = "bignuke",
 				soundstart = "xplomas2",
 				stages = 20,
-				startsmoke = 1,
 				stockpile = true,
 				stockpiletime = 280,
 				turret = true,

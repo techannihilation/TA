@@ -132,7 +132,6 @@ return {
 				soundhitdry = "lashit",
 				soundstart = "lghthvy1",
 				soundtrigger = true,
-				startsmoke = 1,
 				turret = true,
 				weapontype = "LightningCannon",
 				weaponvelocity = 400,

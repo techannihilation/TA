@@ -143,7 +143,6 @@ return {
 				soundhitdry = "lasrhit1",
 				soundstart = "lasfirerb",
 				soundtrigger = true,
-				startsmoke = 1,
 				thickness = 3.5,
 				tolerance = 20000,
 				turret = true,

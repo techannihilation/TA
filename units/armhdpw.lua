@@ -139,7 +139,6 @@ return {
 				soundstart = "armsml2",
 				soundtrigger = true,
 				sprayangle = 1024,
-				startsmoke = 1,
 				tolerance = 5000,
 				turret = true,
 				weapontimer = 1,

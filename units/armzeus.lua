@@ -142,7 +142,6 @@ return {
 				soundhitdry = "xplomed3",
 				soundstart = "lghthvy1",
 				soundtrigger = true,
-				startsmoke = 1,
 				targetmoveerror = 0.3,
 				texture1 = "lightning",
 				thickness = 10,

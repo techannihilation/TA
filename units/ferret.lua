@@ -96,7 +96,6 @@ return {
 				size = 0.77,
 				soundhitdry = "xplosml3",
 				soundstart = "canlite3",
-				startsmoke = 1,
 				tolerance = 9000,
 				weapontype = "Cannon",
 				weaponvelocity = 700,

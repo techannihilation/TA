@@ -146,7 +146,6 @@ return {
 				selfprop = true,
 				soundhitdry = "rockhit",
 				soundstart = "rapidrocket3",
-				startsmoke = 1,
 				startvelocity = 150,
 				texture1 = "null",
 				texture2 = "null",

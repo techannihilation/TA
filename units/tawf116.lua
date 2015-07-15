@@ -138,7 +138,6 @@ return {
 				soundhitdry = "xplomas2",
 				soundstart = "disigun1",
 				soundtrigger = false,
-				startsmoke = 1,
 				turret = true,
 				weapontimer = 4,
 				weapontype = "DGun",

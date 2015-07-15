@@ -143,7 +143,6 @@ return {
 				size = 5,
 				soundhitdry = "flakhit",
 				soundstart = "flakfire",
-				startsmoke = 1,
 				turret = true,
 				unitsonly = 1,
 				weapontimer = 1,
