@@ -121,7 +121,6 @@ return {
 		weapondefs = {
 			arm_fatboy_notalaser1 = {
 				areaofeffect = 340,
-				ballistic = true,
 				cegtag = "Trail_cannon",
 				craterboost = 0,
 				cratermult = 0,

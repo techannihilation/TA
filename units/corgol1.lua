@@ -133,7 +133,6 @@ return {
 		weapondefs = {
 			cor_gol1 = {
 				areaofeffect = 372,
-				ballistic = true,
 				cegtag = "Trail_cannon",
 				craterboost = 0,
 				cratermult = 0,

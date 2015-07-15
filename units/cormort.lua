@@ -123,7 +123,6 @@ return {
 		weapondefs = {
 			core_mort = {
 				areaofeffect = 36,
-				ballistic = true,
 				cegtag = "Trail_cannon",
 				craterboost = 0,
 				cratermult = 0,

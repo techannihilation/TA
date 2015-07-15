@@ -109,7 +109,6 @@ return {
 			tllflak_spider = {
 				accuracy = 1000,
 				areaofeffect = 140,
-				ballistic = true,
 				burnblow = true,
 				canattackground = false,
 				cegtag = "tllflak-fx",

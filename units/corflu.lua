@@ -82,7 +82,6 @@ return {
 				aimrate = 2500,
 				areaofeffect = 4630,
 				avoidfriendly = false,
-				ballistic = true,
 				cegtag = "Trail_cannon",
 				collidefriendly = false,
 				comandfire = 1,

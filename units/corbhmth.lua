@@ -121,7 +121,6 @@ return {
 			corbhmth_weapon1 = {
 				accuracy = 780,
 				areaofeffect = 192,
-				ballistic = true,
 				cegtag = "Trail_cannon",
 				craterboost = 0,
 				cratermult = 0,

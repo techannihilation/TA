@@ -174,7 +174,6 @@ return {
 			mobileflak = {
 				accuracy = 1000,
 				areaofeffect = 120,
-				ballistic = true,
 				burnblow = true,
 				canattackground = false,
 				craterboost = 0,

@@ -117,7 +117,6 @@ return {
 			cor_total = {
 				accuracy = 200,
 				areaofeffect = 180,
-				ballistic = true,
 				burnblow = true,
 				cegtag = "Trail_cannon",
 				craterboost = 0,

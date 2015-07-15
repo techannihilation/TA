@@ -75,7 +75,6 @@ return {
 				accuracy = 200,
 				alphadecay = 0.3,
 				areaofeffect = 256,
-				ballistic = true,
 				bounceexplosiongenerator = "custom:BERTHASHOT1",
 				bouncerebound = 0.8,
 				bounceslip = 1.01,

@@ -111,7 +111,6 @@ return {
 			advflak = {
 				accuracy = 750,
 				areaofeffect = 256,
-				ballistic = true,
 				burnblow = true,
 				cegtag = "armflak-fx",
 				craterboost = 0,

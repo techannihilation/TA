@@ -122,7 +122,6 @@ return {
 				accuracy = 750,
 				aimrate = 2500,
 				areaofeffect = 239,
-				ballistic = true,
 				burst = 1,
 				burstrate = 1.5,
 				cegtag = "Trail_cannon",

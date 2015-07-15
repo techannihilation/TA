@@ -115,7 +115,6 @@ return {
 			armflak_spider = {
 				accuracy = 1000,
 				areaofeffect = 116,
-				ballistic = true,
 				burnblow = true,
 				canattackground = false,
 				cegtag = "armflak-fx",

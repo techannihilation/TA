@@ -118,7 +118,6 @@ return {
 		weapondefs = {
 			cor_gol2 = {
 				areaofeffect = 210,
-				ballistic = true,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:HPLASMA",

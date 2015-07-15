@@ -132,7 +132,6 @@ return {
 			trem1 = {
 				accuracy = 1400,
 				areaofeffect = 160,
-				ballistic = true,
 				cegtag = "Trail_cannon",
 				craterboost = 0,
 				cratermult = 0,

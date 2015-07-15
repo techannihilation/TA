@@ -98,7 +98,6 @@ return {
 			tllflak_gun = {
 				accuracy = 1000,
 				areaofeffect = 192,
-				ballistic = true,
 				burnblow = true,
 				canattackground = false,
 				cegtag = "tllflak-fx",

@@ -130,7 +130,6 @@ return {
 			arm_batsaftx = {
 				accuracy = 350,
 				areaofeffect = 96,
-				ballistic = true,
 				cegtag = "Trail_cannon",
 				craterboost = 0,
 				cratermult = 0,
@@ -165,7 +164,6 @@ return {
 			seadragonflak = {
 				accuracy = 1000,
 				areaofeffect = 128,
-				ballistic = true,
 				burnblow = true,
 				canattackground = false,
 				cegtag = "armflak-fx",
@@ -203,7 +201,6 @@ return {
 			seadragprime = {
 				accuracy = 350,
 				areaofeffect = 64,
-				ballistic = true,
 				cegtag = "Trail_cannon",
 				craterboost = 0,
 				cratermult = 0,

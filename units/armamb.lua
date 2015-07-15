@@ -147,7 +147,6 @@ return {
 			armamb_gun = {
 				accuracy = 400,
 				areaofeffect = 160,
-				ballistic = true,
 				cegtag = "Trail_cannon",
 				craterboost = 0,
 				cratermult = 0,
@@ -185,7 +184,6 @@ return {
 			armamb_gun_high = {
 				accuracy = 400,
 				areaofeffect = 240,
-				ballistic = true,
 				cegtag = "Trail_cannon",
 				craterboost = 0,
 				cratermult = 0,

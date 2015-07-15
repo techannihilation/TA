@@ -125,7 +125,6 @@ return {
 		weapondefs = {
 			arm_ham1 = {
 				areaofeffect = 54,
-				ballistic = true,
 				cegtag = "Trail_cannon",
 				craterboost = 0,
 				cratermult = 0,

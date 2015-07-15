@@ -127,7 +127,6 @@ return {
 		weapondefs = {
 			armscpion_gauss = {
 				areaofeffect = 48,
-				ballistic = true,
 				cegtag = "Trail_cannon",
 				gravityaffected = true,
 				name = "Plasma Cannon",

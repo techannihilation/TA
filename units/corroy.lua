@@ -126,7 +126,6 @@ return {
 			core_roy = {
 				alphadecay = 0.3,
 				areaofeffect = 64,
-				ballistic = true,
 				cegtag = "Trail_cannon",
 				craterboost = 0,
 				cratermult = 0,

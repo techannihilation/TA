@@ -131,7 +131,6 @@ return {
 			armfixed_gun = {
 				accuracy = 75,
 				areaofeffect = 128,
-				ballistic = true,
 				cegtag = "Trail_cannon",
 				craterboost = 0,
 				cratermult = 0,
@@ -169,7 +168,6 @@ return {
 			armfixed_gun_high = {
 				accuracy = 75,
 				areaofeffect = 192,
-				ballistic = true,
 				cegtag = "Trail_cannon",
 				craterboost = 0,
 				cratermult = 0,

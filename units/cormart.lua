@@ -131,7 +131,6 @@ return {
 			core_artillery = {
 				accuracy = 960,
 				areaofeffect = 129,
-				ballistic = true,
 				cegtag = "Trail_cannon",
 				craterboost = 0,
 				cratermult = 0,

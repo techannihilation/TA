@@ -165,7 +165,6 @@ return {
 				accuracy = 400,
 				alphadecay = 0.3,
 				areaofeffect = 128,
-				ballistic = true,
 				cegtag = "Trail_cannon",
 				craterboost = 0,
 				cratermult = 0,
@@ -196,7 +195,6 @@ return {
 			},
 			hydramiss = {
 				areaofeffect = 64,
-				ballistic = true,
 				burnblow = true,
 				canattackground = false,
 				cegtag = "Trail_cannon",

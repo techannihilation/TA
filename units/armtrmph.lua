@@ -107,7 +107,6 @@ return {
 			cannon_bats_aft = {
 				accuracy = 360,
 				areaofeffect = 64,
-				ballistic = true,
 				cegtag = "Trail_cannon",
 				craterboost = 0,
 				cratermult = 0,
@@ -138,7 +137,6 @@ return {
 			cannon_trmph = {
 				accuracy = 375,
 				areaofeffect = 128,
-				ballistic = true,
 				cegtag = "Trail_cannon",
 				craterboost = 0,
 				cratermult = 0,

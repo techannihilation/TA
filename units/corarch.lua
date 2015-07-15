@@ -174,7 +174,6 @@ return {
 			mobileflak = {
 				accuracy = 1000,
 				areaofeffect = 150,
-				ballistic = true,
 				burnblow = true,
 				canattackground = false,
 				cegtag = "corflak-fx",

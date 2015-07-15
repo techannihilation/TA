@@ -119,7 +119,6 @@ return {
 		weapondefs = {
 			shiva_gun = {
 				areaofeffect = 176,
-				ballistic = true,
 				cegtag = "Trail_cannon",
 				craterboost = 0,
 				cratermult = 0,

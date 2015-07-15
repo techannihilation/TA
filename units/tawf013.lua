@@ -137,7 +137,6 @@ return {
 			tawf113_weapon = {
 				accuracy = 300,
 				areaofeffect = 80,
-				ballistic = true,
 				cegtag = "Trail_cannon",
 				craterboost = 0,
 				cratermult = 0,

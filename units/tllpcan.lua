@@ -124,7 +124,6 @@ return {
 				aimrate = 2200,
 				areaofeffect = 20,
 				avoidfriendly = false,
-				ballistic = true,
 				collidefriendly = false,
 				craterboost = 0.15,
 				cratermult = 0.15,

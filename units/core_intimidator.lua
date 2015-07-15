@@ -124,7 +124,6 @@ return {
 				aimrate = 500,
 				alphadecay = 0.01,
 				areaofeffect = 850,
-				ballistic = true,
 				cegtag = "vulcanfx1",
 				craterboost = 0,
 				cratermult = 0,

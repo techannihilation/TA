@@ -81,7 +81,6 @@ return {
 		weapondefs = {
 			mine_detonator = {
 				areaofeffect = 5,
-				ballistic = true,
 				cegtag = "Trail_cannon",
 				craterboost = 0,
 				cratermult = 0,

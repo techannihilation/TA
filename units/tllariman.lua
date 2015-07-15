@@ -115,7 +115,6 @@ return {
 			light_cannon = {
 				areaofeffect = 12,
 				avoidfeature = false,
-				ballistic = true,
 				cegtag = "Trail_cannon",
 				craterboost = 0,
 				cratermult = 0,

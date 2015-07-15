@@ -115,7 +115,6 @@ return {
 		weapondefs = {
 			arm_bull = {
 				areaofeffect = 140,
-				ballistic = true,
 				cegtag = "Trail_cannon",
 				craterboost = 0,
 				cratermult = 0,

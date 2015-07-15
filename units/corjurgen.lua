@@ -173,7 +173,6 @@ return {
 			corjurgen_weapon = {
 				accuracy = 800,
 				areaofeffect = 512,
-				ballistic = true,
 				cegtag = "Trail_cannon",
 				commandfire = true,
 				craterboost = 0,

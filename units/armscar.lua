@@ -113,7 +113,6 @@ return {
 			arm_scargun = {
 				accuracy = 0,
 				areaofeffect = 90,
-				ballistic = true,
 				burnblow = true,
 				cegtag = "Trail_cannon",
 				craterboost = 0,

@@ -127,7 +127,6 @@ return {
 		weapondefs = {
 			armjag_gauss = {
 				areaofeffect = 150,
-				ballistic = true,
 				cegtag = "Trail_cannon",
 				gravityaffected = true,
 				id = 134,

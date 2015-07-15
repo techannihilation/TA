@@ -127,7 +127,6 @@ return {
 			arm_batsaftx = {
 				accuracy = 350,
 				areaofeffect = 48,
-				ballistic = true,
 				cegtag = "Trail_cannon",
 				craterboost = 0,
 				cratermult = 0,

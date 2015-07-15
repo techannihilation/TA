@@ -107,7 +107,6 @@ return {
 			aakflak = {
 				accuracy = 1000,
 				areaofeffect = 128,
-				ballistic = true,
 				burnblow = true,
 				canattackground = false,
 				cegtag = "armflak-fx",

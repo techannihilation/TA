@@ -119,7 +119,6 @@ return {
 		weapondefs = {
 			arm_roy = {
 				areaofeffect = 32,
-				ballistic = true,
 				cegtag = "Trail_cannon",
 				craterboost = 0,
 				cratermult = 0,

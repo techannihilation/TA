@@ -131,7 +131,6 @@ return {
 			corfixed_gun = {
 				accuracy = 75,
 				areaofeffect = 140,
-				ballistic = true,
 				cegtag = "Trail_cannon",
 				craterboost = 0,
 				cratermult = 0,
@@ -169,7 +168,6 @@ return {
 			corfixed_gun_high = {
 				accuracy = 75,
 				areaofeffect = 208,
-				ballistic = true,
 				cegtag = "Trail_cannon",
 				craterboost = 0,
 				cratermult = 0,

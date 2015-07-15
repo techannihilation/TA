@@ -136,7 +136,6 @@ return {
 				accuracy = 500,
 				aimrate = 2500,
 				areaofeffect = 150,
-				ballistic = true,
 				cegtag = "Trail_cannon",
 				energypershot = 1500,
 				firestarter = 50,

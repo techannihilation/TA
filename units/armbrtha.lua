@@ -128,7 +128,6 @@ return {
 				accuracy = 500,
 				aimrate = 2200,
 				areaofeffect = 192,
-				ballistic = true,
 				cegtag = "Trail_cannon_med",
 				collidefriendly = false,
 				craterboost = 0,

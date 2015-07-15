@@ -120,7 +120,6 @@ return {
 			lvl1_gun = {
 				accuracy = 300,
 				areaofeffect = 72,
-				ballistic = true,
 				cegtag = "Trail_cannon",
 				craterboost = 0,
 				cratermult = 0,

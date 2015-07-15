@@ -122,7 +122,6 @@ return {
 				accuracy = 750,
 				aimrate = 2500,
 				areaofeffect = 500,
-				ballistic = true,
 				energypershot = 200,
 				explosiongenerator = "custom:FLASHNUKE480",
 				flighttime = 4,

@@ -127,7 +127,6 @@ return {
 				accuracy = 700,
 				areaofeffect = 224,
 				avoidground = false,
-				ballistic = true,
 				cegtag = "Trail_cannon",
 				collidefriendly = false,
 				craterboost = 0,

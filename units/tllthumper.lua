@@ -107,7 +107,6 @@ return {
 		weapondefs = {
 			tll_thumper = {
 				areaofeffect = 311,
-				ballistic = true,
 				cegtag = "Trail_cannon",
 				craterboost = 0,
 				cratermult = 0,

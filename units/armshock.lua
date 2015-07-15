@@ -122,7 +122,6 @@ return {
 				areaofeffect = 192,
 				avoidfeature = false,
 				avoidfriendly = false,
-				ballistic = true,
 				cegtag = "Trail_cannon",
 				collidefriendly = false,
 				craterboost = 0,
