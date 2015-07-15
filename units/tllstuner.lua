@@ -105,7 +105,6 @@ return {
 		weapondefs = {
 			tllstuner_gun = {
 				areaofeffect = 28,
-				beamweapon = true,
 				craterboost = 0,
 				cratermult = 0,
 				duration = 0.06,
@@ -113,7 +112,6 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				intensity = 0.88,
-				lineofsight = true,
 				metalpershot = 0,
 				name = "Stuner Cannon",
 				noselfdamage = true,

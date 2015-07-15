@@ -117,7 +117,6 @@ return {
 		weapondefs = {
 			armpaspd = {
 				areaofeffect = 32,
-				beamweapon = true,
 				collidefriendly = false,
 				craterboost = 0,
 				cratermult = 0,
@@ -130,7 +129,6 @@ return {
 				impulserboost = 0,
 				impulserfactor = 0,
 				intensity = 0.75,
-				lineofsight = true,
 				name = "Sub-Zero Weapon",
 				noradar = 1,
 				noselfdamage = true,

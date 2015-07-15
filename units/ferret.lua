@@ -88,7 +88,6 @@ return {
 				areaofeffect = 5,
 				cegtag = "Trail_emg",
 				explosiongenerator = "custom:EMG_HIT",
-				lineofsight = true,
 				name = "Medium Machine Gun",
 				range = 300,
 				reloadtime = 0.35,

@@ -121,7 +121,6 @@ return {
 				flighttime = 10,
 				guidance = true,
 				id = 236,
-				lineofsight = true,
 				metalpershot = 0,
 				model = "vpulse",
 				name = "Vpulse Rocket",

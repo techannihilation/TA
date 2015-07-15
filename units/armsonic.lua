@@ -132,7 +132,6 @@ return {
 				id = 181,
 				impulsefactor = 0,
 				intensity = 1.5,
-				lineofsight = true,
 				minbarrelangle = -25,
 				name = "Sonic Wave Projector",
 				range = 480,

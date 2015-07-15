@@ -122,7 +122,6 @@ return {
 				flighttime = 450,
 				guidance = true,
 				id = 222,
-				lineofsight = true,
 				metalpershot = 16000,
 				model = "fnuke",
 				name = "Ultimate Nuclear Missile",

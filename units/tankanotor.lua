@@ -135,7 +135,6 @@ return {
 				id = 233,
 				impulseboost = 0,
 				impulsefactor = 0,
-				lineofsight = true,
 				model = "missileH2",
 				name = "Heavy Rocket",
 				range = 1060,

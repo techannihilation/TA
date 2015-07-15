@@ -100,7 +100,6 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				laserflaresize = 5,
-				lineofsight = true,
 				name = "Paralyzer",
 				noselfdamage = true,
 				paralyzer = true,

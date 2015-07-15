@@ -121,9 +121,7 @@ return {
 		weapondefs = {
 			hvy_laser_weapon = {
 				areaofeffect = 38,
-				beamweapon = true,
 				id = 99,
-				lineofsight = true,
 				name = "Heavy Laser",
 				range = 450,
 				reloadtime = 0.75,

@@ -120,7 +120,6 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				laserflaresize = 10,
-				lineofsight = true,
 				name = "LightLaser",
 				noselfdamage = true,
 				range = 320,

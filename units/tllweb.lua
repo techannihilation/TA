@@ -119,7 +119,6 @@ return {
 			spray_lightning = {
 				areaofeffect = 8,
 				beamttl = 10,
-				beamweapon = true,
 				craterboost = 0,
 				cratermult = 0,
 				duration = 1.9,
@@ -130,7 +129,6 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				intensity = 12,
-				lineofsight = true,
 				metalpershot = 0,
 				name = "Spray Lightning",
 				noselfdamage = true,

@@ -115,7 +115,6 @@ return {
 				id = 248,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				lineofsight = true,
 				metalpershot = 0,
 				model = "corjeag_missile",
 				name = "Jeager-Missile",

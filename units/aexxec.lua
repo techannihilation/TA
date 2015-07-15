@@ -128,11 +128,9 @@ return {
 		weapondefs = {
 			arm_exxec = {
 				areaofeffect = 8,
-				beamweapon = true,
 				energypershot = 30,
 				explosiongenerator = "custom:exxec",
 				firestarter = 30,
-				lineofsight = true,
 				name = "Annihilator Weapon",
 				range = 255,
 				reloadtime = 0.33,

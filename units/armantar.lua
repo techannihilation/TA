@@ -120,7 +120,6 @@ return {
 		weapondefs = {
 			armantar_laser = {
 				areaofeffect = 8,
-				beamweapon = true,
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 300,
@@ -128,7 +127,6 @@ return {
 				id = 252,
 				impulseboost = 0,
 				impulsefactor = 0,
-				lineofsight = true,
 				name = "Antarion Laser",
 				range = 600,
 				reloadtime = 0.6,
@@ -156,7 +154,6 @@ return {
 				firestarter = 20,
 				guidance = true,
 				id = 233,
-				lineofsight = true,
 				model = "missileH2",
 				name = "Heavy Rocket",
 				range = 1200,

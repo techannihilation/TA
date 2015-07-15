@@ -125,13 +125,11 @@ return {
 		weapondefs = {
 			arm_fast7 = {
 				areaofeffect = 8,
-				beamweapon = true,
 				burstrate = 0.2,
 				duration = 0.02,
 				explosiongenerator = "custom:LASER",
 				firestarter = 50,
 				id = 83,
-				lineofsight = true,
 				name = "Laser",
 				range = 210,
 				reloadtime = 0.8,
@@ -161,7 +159,6 @@ return {
 				guidance = true,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				lineofsight = true,
 				metalpershot = 0,
 				model = "missile",
 				name = "AA2Missile",

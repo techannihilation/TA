@@ -130,7 +130,6 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				interceptor = 4,
-				lineofsight = true,
 				metalpershot = 6780,
 				model = "fmdmisl",
 				name = "Rocket",

@@ -168,7 +168,6 @@ return {
 				guidance = true,
 				impulseboost = 0,
 				impulsefactor = 0,
-				lineofsight = true,
 				metalpershot = 0,
 				model = "titan_missile",
 				name = "TiTan Rocket",

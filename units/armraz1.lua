@@ -130,7 +130,6 @@ return {
 				firestarter = 10,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				lineofsight = true,
 				name = "MechRapidLaser",
 				noselfdamage = true,
 				proximitypriority = 1.5,

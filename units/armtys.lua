@@ -90,7 +90,6 @@ return {
 				flighttime = 2.5,
 				guidance = true,
 				id = 235,
-				lineofsight = true,
 				metalpershot = 0,
 				model = "missile",
 				name = "Guided Missiles",

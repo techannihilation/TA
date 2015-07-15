@@ -138,7 +138,6 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				laserflaresize = 12,
-				lineofsight = true,
 				name = "BeamLaser",
 				noselfdamage = true,
 				range = 900,
@@ -159,7 +158,6 @@ return {
 			},
 			armsnipe_weapon = {
 				areaofeffect = 16,
-				beamweapon = true,
 				collidefriendly = false,
 				craterboost = 0,
 				cratermult = 0,
@@ -170,7 +168,6 @@ return {
 				impulseboost = 0.234,
 				impulsefactor = 0.234,
 				intensity = 0.75,
-				lineofsight = true,
 				name = "SniperWeapon",
 				noradar = 1,
 				noselfdamage = true,

@@ -135,7 +135,6 @@ return {
 				impulsefactor = 12,
 				largebeamlaser = true,
 				laserflaresize = 5,
-				lineofsight = true,
 				name = "Mounted antimatter accelerator",
 				noexplode = false,
 				pitchtolerance = 100,

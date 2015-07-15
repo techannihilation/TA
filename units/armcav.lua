@@ -130,7 +130,6 @@ return {
 		weapondefs = {
 			cav_lighting = {
 				areaofeffect = 8,
-				beamweapon = true,
 				craterboost = 0,
 				cratermult = 0,
 				duration = 10,
@@ -140,7 +139,6 @@ return {
 				id = 93,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				lineofsight = true,
 				name = "High Energy Laser",
 				range = 750,
 				reloadtime = 3,
@@ -165,7 +163,6 @@ return {
 				areaofeffect = 8,
 				avoidfeature = false,
 				beamttl = 10,
-				beamweapon = true,
 				craterboost = 0,
 				cratermult = 0,
 				duration = 10,
@@ -176,7 +173,6 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				intensity = 12,
-				lineofsight = true,
 				name = "LightningGun",
 				noselfdamage = true,
 				range = 280,

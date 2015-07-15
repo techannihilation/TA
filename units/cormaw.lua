@@ -141,7 +141,6 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				intensity = 0.9,
-				lineofsight = true,
 				name = "FlameThrower",
 				noselfdamage = true,
 				proximitypriority = 3,

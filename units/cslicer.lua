@@ -122,7 +122,6 @@ return {
 				burst = 3,
 				burstrate = 0.1,
 				id = 16,
-				lineofsight = true,
 				name = "E.M.G.",
 				range = 180,
 				reloadtime = 0.4,

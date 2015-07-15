@@ -98,7 +98,6 @@ return {
 				impulseboost = 1.723,
 				impulsefactor = 1.75,
 				interceptedbyshieldtype = 16,
-				lineofsight = true,
 				model = "plasmafire",
 				name = "PlasmaImplosionDumpRocket",
 				noautorange = 1,

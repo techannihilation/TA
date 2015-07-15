@@ -149,7 +149,6 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				laserflaresize = 7,
-				lineofsight = true,
 				name = "J11Laser",
 				noselfdamage = true,
 				range = 420,

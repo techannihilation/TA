@@ -109,7 +109,6 @@ return {
 				burstrate = 0.5,
 				guidance = true,
 				id = 219,
-				lineofsight = true,
 				model = "TLLtorpedo",
 				name = "Torpedo Launcher",
 				propeller = 1,

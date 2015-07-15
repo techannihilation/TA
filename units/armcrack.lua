@@ -139,7 +139,6 @@ return {
 				flighttime = 4.5,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				lineofsight = true,
 				model = "exphvyrock",
 				name = "Lightartmissarm",
 				noselfdamage = true,

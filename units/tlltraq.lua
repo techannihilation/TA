@@ -128,7 +128,6 @@ return {
 				energypershot = 120,
 				firestarter = 90,
 				id = 234,
-				lineofsight = true,
 				name = "High Energy Laser",
 				range = 380,
 				reloadtime = 0.8,

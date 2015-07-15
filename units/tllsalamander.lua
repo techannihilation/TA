@@ -114,7 +114,6 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				lineofsight = true,
 				name = "PincerCannon",
 				noselfdamage = true,
 				range = 455,

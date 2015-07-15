@@ -129,7 +129,6 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				laserflaresize = 2,
-				lineofsight = true,
 				name = "Laser",
 				noselfdamage = true,
 				range = 140,

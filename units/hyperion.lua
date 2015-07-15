@@ -146,7 +146,6 @@ return {
 				impulsefactor = 0.2,
 				largebeamlaser = true,
 				laserflaresize = 5,
-				lineofsight = true,
 				name = "Karganeth Siege Cannon",
 				noexplode = true,
 				range = 750,

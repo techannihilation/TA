@@ -96,7 +96,6 @@ return {
 				explosiongenerator = "custom:FLASHSMALLBUILDINGEX",
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				lineofsight = true,
 				name = "RiotCannon",
 				noselfdamage = true,
 				pitchtolerance = 12000,

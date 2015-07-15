@@ -127,7 +127,6 @@ return {
 				guidance = true,
 				impulseboost = 0.023,
 				impulsefactor = 0.023,
-				lineofsight = true,
 				metalpershot = 750,
 				model = "corshiprckt1",
 				name = "Chemical Weapon",

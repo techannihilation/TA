@@ -83,7 +83,6 @@ return {
 				burst = 4,
 				burstrate = 0.05,
 				id = 229,
-				lineofsight = true,
 				name = "Electro-Magnetic Compression Cannon",
 				pitchtolerance = 18000,
 				range = 600,

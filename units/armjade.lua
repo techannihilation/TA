@@ -92,7 +92,6 @@ return {
 				firestarter = 0,
 				id = 241,
 				laserflaresize = 9,
-				lineofsight = true,
 				name = "JadeEagle-Laser",
 				pitchtolerance = 12000,
 				range = 360,

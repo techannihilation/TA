@@ -143,7 +143,6 @@ return {
 				guidance = true,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				lineofsight = true,
 				model = "TAWF114a",
 				name = "Banisher Thermite Rocket",
 				noselfdamage = true,

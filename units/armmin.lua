@@ -119,7 +119,6 @@ return {
 				guidance = true,
 				impulseboost = 0,
 				impulsefactor = 0,
-				lineofsight = true,
 				metalpershot = 50,
 				model = "missile",
 				name = "MineSweeper",

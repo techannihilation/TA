@@ -129,7 +129,6 @@ return {
 				firestarter = 70,
 				guidance = true,
 				id = 234,
-				lineofsight = true,
 				metalpershot = 0,
 				model = "missilehorgue",
 				name = "Guided Missiles",

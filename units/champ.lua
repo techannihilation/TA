@@ -111,7 +111,6 @@ return {
 				areaofeffect = 48,
 				id = 6,
 				impulsefactor = 2,
-				lineofsight = true,
 				minbarrelangle = -50,
 				name = "GaussCannon",
 				noexplode = true,

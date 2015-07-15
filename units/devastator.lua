@@ -118,7 +118,6 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				laserflaresize = 20,
-				lineofsight = true,
 				name = "ATAM",
 				noselfdamage = true,
 				range = 850,

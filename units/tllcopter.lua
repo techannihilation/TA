@@ -91,7 +91,6 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				intensity = 0.8,
-				lineofsight = true,
 				name = "E.M.G.",
 				noselfdamage = true,
 				pitchtolerance = 12000,

@@ -129,7 +129,6 @@ return {
 			spam_lightning = {
 				areaofeffect = 8,
 				beamttl = 10,
-				beamweapon = true,
 				burst = 3,
 				burstrate = 0.125,
 				craterboost = 0,
@@ -142,7 +141,6 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				intensity = 12,
-				lineofsight = true,
 				metalpershot = 0,
 				name = "Spray Lightning",
 				noselfdamage = true,

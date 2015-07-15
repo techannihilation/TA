@@ -151,10 +151,8 @@ return {
 			armscpion_lightning = {
 				areaofeffect = 8,
 				beamttl = 10,
-				beamweapon = true,
 				duration = 10,
 				firestarter = 50,
-				lineofsight = true,
 				name = "Lightning Gun",
 				range = 320,
 				reloadtime = 2,
@@ -174,7 +172,6 @@ return {
 				areaofeffect = 16,
 				burnblow = true,
 				guidance = true,
-				lineofsight = true,
 				model = "torpedo5",
 				name = "Guided Torpedo",
 				propeller = 1,

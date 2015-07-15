@@ -133,7 +133,6 @@ return {
 				flighttime = 6,
 				impulseboost = 0,
 				impulsefactor = 0,
-				lineofsight = true,
 				metalpershot = 0,
 				model = "horguemiss",
 				movingaccuracy = 600,

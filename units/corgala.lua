@@ -127,7 +127,6 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				intensity = 0.75,
-				lineofsight = true,
 				name = "Ravager Cannon",
 				nogap = 1,
 				noselfdamage = true,

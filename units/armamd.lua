@@ -131,7 +131,6 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				interceptor = 1,
-				lineofsight = true,
 				metalpershot = 1100,
 				model = "amdrocket",
 				name = "Rocket",

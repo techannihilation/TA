@@ -134,7 +134,6 @@ return {
 				guidance = true,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				lineofsight = true,
 				model = "missile",
 				name = "ExplosiveRockets",
 				noselfdamage = true,

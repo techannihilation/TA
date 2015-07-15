@@ -90,7 +90,6 @@ return {
 				firestarter = 70,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				lineofsight = true,
 				model = "missile",
 				name = "RiotRocket",
 				noselfdamage = true,

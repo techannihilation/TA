@@ -84,7 +84,6 @@ return {
 				canattackground = false,
 				guidance = true,
 				id = 140,
-				lineofsight = true,
 				model = "tlltorpedo",
 				name = "Torpedo Launcher",
 				propeller = 1,

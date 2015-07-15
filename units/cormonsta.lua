@@ -124,7 +124,6 @@ return {
 			cormonsta_gun = {
 				areaofeffect = 75,
 				explosiongenerator = "custom:Explosion_Light_Plasma-2-Orange",
-				lineofsight = true,
 				minbarrelangle = -15,
 				name = "Tanker Canon",
 				range = 480,
@@ -158,7 +157,6 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				lineofsight = true,
 				model = "missile",
 				name = "AA2Missile",
 				noselfdamage = true,

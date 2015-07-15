@@ -133,7 +133,6 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				intensity = 4,
-				lineofsight = true,
 				model = "bomb2",
 				name = "KrogTaarBlaster",
 				noselfdamage = true,

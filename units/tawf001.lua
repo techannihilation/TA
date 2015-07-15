@@ -138,7 +138,6 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				laserflaresize = 12,
-				lineofsight = true,
 				name = "BeamLaser",
 				noselfdamage = true,
 				range = 535,

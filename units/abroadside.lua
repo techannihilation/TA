@@ -99,7 +99,6 @@ return {
 			["750mw"] = {
 				accuracy = 500,
 				areaofeffect = 180,
-				beamweapon = true,
 				burnblow = false,
 				corethickness = 1.2,
 				craterboost = 0,
@@ -111,7 +110,6 @@ return {
 				id = 232,
 				impulseboost = 0,
 				intensity = 1,
-				lineofsight = true,
 				name = "Heavy plasma cannon",
 				range = 1500,
 				reloadtime = 1,
@@ -136,7 +134,6 @@ return {
 			capitalshipminigun = {
 				accuracy = 10,
 				areaofeffect = 80,
-				beamweapon = true,
 				burnblow = false,
 				burst = 2,
 				burstrate = 0.1,
@@ -150,7 +147,6 @@ return {
 				id = 243,
 				impulseboost = 0,
 				intensity = 1,
-				lineofsight = true,
 				name = "Capital Ship Minigun",
 				range = 900,
 				reloadtime = 0.3,

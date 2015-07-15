@@ -137,7 +137,6 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				laserflaresize = 22,
-				lineofsight = true,
 				name = "ATAD",
 				noselfdamage = true,
 				range = 1200,

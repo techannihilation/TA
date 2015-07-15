@@ -123,7 +123,6 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				intensity = 0.6,
-				lineofsight = true,
 				name = "FlameThroDwer",
 				noselfdamage = true,
 				range = 255,

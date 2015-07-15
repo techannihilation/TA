@@ -131,7 +131,6 @@ return {
 				explosiongenerator = "custom:FLASH2nd",
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				lineofsight = true,
 				name = "GaussCannon",
 				noselfdamage = true,
 				range = 730,

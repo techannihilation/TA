@@ -125,7 +125,6 @@ return {
 				id = 157,
 				impulseboost = 0,
 				impulsefactor = 0,
-				lineofsight = true,
 				name = "FlameThrower",
 				noexplode = true,
 				predictboost = 0,

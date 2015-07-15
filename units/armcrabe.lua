@@ -128,7 +128,6 @@ return {
 			armcrabe_gauss = {
 				areaofeffect = 150,
 				explosiongenerator = "custom:Explosion_Medium_Rocket",
-				lineofsight = true,
 				minbarrelangle = -15,
 				name = "Crabe Cannon",
 				range = 1050,
@@ -155,7 +154,6 @@ return {
 				firestarter = 20,
 				guidance = true,
 				id = 233,
-				lineofsight = true,
 				model = "missileH2",
 				name = "Heavy Rocket",
 				range = 1200,

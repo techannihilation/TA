@@ -104,7 +104,6 @@ return {
 				firestarter = 80,
 				flighttime = 15,
 				guidance = true,
-				lineofsight = true,
 				metalpershot = 0,
 				model = "TAWF114a",
 				name = "Antiship missile",

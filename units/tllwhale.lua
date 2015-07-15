@@ -123,7 +123,6 @@ return {
 				flighttime = 10,
 				guidance = true,
 				id = 243,
-				lineofsight = true,
 				metalpershot = 0,
 				model = "vpulse",
 				name = "Vpulse2",

@@ -131,7 +131,6 @@ return {
 				edgeeffectiveness = 0.75,
 				explosiongenerator = "custom:FLASH64",
 				impulsefactor = 1.5,
-				lineofsight = true,
 				name = "RiotCannon",
 				noselfdamage = true,
 				range = 325,

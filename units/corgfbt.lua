@@ -126,7 +126,6 @@ return {
 		weapondefs = {
 			fireball = {
 				areaofeffect = 168,
-				beamweapon = true,
 				corethinkness = 5,
 				craterboost = 0,
 				cratermult = 0,
@@ -136,7 +135,6 @@ return {
 				id = 41,
 				impulseboost = 0,
 				impulsefactor = 0,
-				lineofsight = true,
 				name = "Grimani's Magnesium Fireball",
 				range = 300,
 				reloadtime = 2.1,

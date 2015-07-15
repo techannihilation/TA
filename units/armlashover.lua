@@ -116,7 +116,6 @@ return {
 			armlatnk_weapon = {
 				areaofeffect = 8,
 				beamttl = 10,
-				beamweapon = true,
 				craterboost = 0,
 				cratermult = 0,
 				duration = 10,
@@ -127,7 +126,6 @@ return {
 				impactonly = 1,
 				impulseboost = 0.234,
 				impulsefactor = 0.234,
-				lineofsight = true,
 				name = "LightningGun",
 				noselfdamage = true,
 				range = 320,

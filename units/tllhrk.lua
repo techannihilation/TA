@@ -123,7 +123,6 @@ return {
 				guidance = true,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				lineofsight = true,
 				metalpershot = 0,
 				model = "vpulse",
 				name = "Vpulse Rocket",

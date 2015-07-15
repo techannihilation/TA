@@ -146,7 +146,6 @@ return {
 				energypershot = 10000,
 				firestarter = 0,
 				largemeamlaser = 1,
-				lineofsight = true,
 				metalpershot = 0,
 				minbarrelangle = 0,
 				name = "Heavy Blaster Doomer's creation",

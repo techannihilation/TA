@@ -106,7 +106,6 @@ return {
 				guidance = true,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				lineofsight = true,
 				model = "Advtorpedo",
 				name = "LongRangeTorpedo",
 				noselfdamage = true,

@@ -127,7 +127,6 @@ return {
 				firestarter = 0,
 				impulsefactor = 0,
 				intensity = 1.5,
-				lineofsight = true,
 				minbarrelangle = -25,
 				name = "Riot Cannon",
 				range = 340,

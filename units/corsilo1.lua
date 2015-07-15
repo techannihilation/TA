@@ -141,7 +141,6 @@ return {
 				guidance = true,
 				impulseboost = 0.5,
 				impulsefactor = 3.9,
-				lineofsight = true,
 				metalpershot = 3000,
 				model = "crblmssl",
 				name = "CoreNuclearMissile",

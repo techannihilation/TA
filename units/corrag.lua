@@ -63,7 +63,6 @@ return {
 			sonicwave = {
 				accuracy = 150,
 				areaofeffect = 150,
-				beamweapon = true,
 				burnblow = false,
 				cegtag = "SONICWAVEREDTRAIL",
 				corethickness = 2.5,
@@ -74,7 +73,6 @@ return {
 				energypershot = 2,
 				impulseboost = 0,
 				intensity = 1,
-				lineofsight = true,
 				name = "Sonic",
 				range = 500,
 				reloadtime = 4,
@@ -112,7 +110,6 @@ return {
 				guidance = true,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				lineofsight = true,
 				model = "quadmissile3g",
 				name = "4 Missiles pack",
 				noselfdamage = true,

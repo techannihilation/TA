@@ -128,7 +128,6 @@ return {
 				impulsefactor = 0.123,
 				intensity = 0.5,
 				laserflaresize = 2,
-				lineofsight = true,
 				name = "Laser",
 				noselfdamage = true,
 				paralyzer = true,

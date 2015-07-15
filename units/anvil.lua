@@ -136,7 +136,6 @@ return {
 				impulsefactor = 0.2,
 				largebeamlaser = true,
 				laserflaresize = 6,
-				lineofsight = true,
 				minintensity = 0.2,
 				name = "Heavy Emp Beam",
 				noexplode = true,

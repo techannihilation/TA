@@ -123,7 +123,6 @@ return {
 			macross_arm_gun = {
 				areaofeffect = 80,
 				id = 142,
-				lineofsight = true,
 				minbarrelangle = -15,
 				model = "macrossbullets",
 				name = "Macross Arm Canon",
@@ -147,7 +146,6 @@ return {
 				firestarter = 70,
 				guidance = true,
 				id = 170,
-				lineofsight = true,
 				metalpershot = 0,
 				model = "macrossmissile",
 				name = "Macross Missiles",

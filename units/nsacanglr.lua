@@ -119,7 +119,6 @@ return {
 				burnblow = true,
 				guidance = true,
 				id = 31,
-				lineofsight = true,
 				model = "DEPTHCHARGE",
 				name = "Depth Charge",
 				propeller = 1,

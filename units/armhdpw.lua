@@ -130,7 +130,6 @@ return {
 				burst = 4,
 				burstrate = 0.05,
 				id = 229,
-				lineofsight = true,
 				name = "Electro-Magnetic Compression Cannon",
 				range = 865,
 				reloadtime = 0.15,

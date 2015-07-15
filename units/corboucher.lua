@@ -116,7 +116,6 @@ return {
 		weapondefs = {
 			core_boucher = {
 				areaofeffect = 30,
-				beamweapon = true,
 				collidefriendly = false,
 				craterboost = 0,
 				cratermult = 0,
@@ -128,7 +127,6 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				intensity = 0.75,
-				lineofsight = true,
 				name = "Cartouche Aluminium",
 				noradar = 1,
 				noselfdamage = true,

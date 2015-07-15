@@ -132,7 +132,6 @@ return {
 				firestarter = 70,
 				guidance = true,
 				impulsefactor = 1,
-				lineofsight = true,
 				model = "megamisl",
 				name = "HeavyRocket",
 				noselfdamage = true,

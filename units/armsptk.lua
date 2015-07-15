@@ -129,7 +129,6 @@ return {
 				flighttime = 2,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				lineofsight = true,
 				model = "shipmissile",
 				name = "HeavyRocket",
 				noselfdamage = true,

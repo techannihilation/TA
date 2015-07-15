@@ -138,7 +138,6 @@ return {
 				guidance = true,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				lineofsight = true,
 				metalpershot = 0,
 				model = "missile",
 				name = "Missiles",
@@ -175,7 +174,6 @@ return {
 			armlatnk_weapon = {
 				areaofeffect = 8,
 				beamttl = 10,
-				beamweapon = true,
 				craterboost = 0,
 				cratermult = 0,
 				duration = 10,
@@ -185,7 +183,6 @@ return {
 				impactonly = 1,
 				impulseboost = 0.234,
 				impulsefactor = 0.234,
-				lineofsight = true,
 				name = "LightningGun",
 				noselfdamage = true,
 				range = 320,

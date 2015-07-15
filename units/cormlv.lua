@@ -159,7 +159,6 @@ return {
 				edgeeffectiveness = 0.25,
 				explosiongenerator = "custom:MINESWEEP",
 				intensity = 0,
-				lineofsight = false,
 				metalpershot = 0,
 				name = "MineSweep",
 				noselfdamage = true,

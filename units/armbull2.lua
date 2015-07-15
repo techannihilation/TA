@@ -149,7 +149,6 @@ return {
 				areaofeffect = 8,
 				burst = 3,
 				id = 243,
-				lineofsight = true,
 				name = "Rogue Gatling Cannon",
 				range = 350,
 				reloadtime = 0.15,

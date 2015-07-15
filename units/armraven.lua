@@ -130,7 +130,6 @@ return {
 				flighttime = 3,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				lineofsight = true,
 				metalpershot = 0,
 				model = "exphvyrock",
 				movingaccuracy = 600,

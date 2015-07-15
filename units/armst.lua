@@ -136,7 +136,6 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				lineofsight = true,
 				minbarrelangle = -15,
 				name = "Gauss",
 				noselfdamage = true,

@@ -145,7 +145,6 @@ return {
 				guidance = true,
 				impulseboost = 0.5,
 				impulsefactor = 2.5,
-				lineofsight = true,
 				metalpershot = 1000,
 				model = "ballmiss",
 				name = "NuclearMissile",

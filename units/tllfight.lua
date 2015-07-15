@@ -91,7 +91,6 @@ return {
 				id = 134,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				lineofsight = true,
 				metalpershot = 0,
 				model = "tllvtolmissile",
 				name = "Guided Missiles",

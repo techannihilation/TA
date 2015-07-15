@@ -136,7 +136,6 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				laserflaresize = 10,
-				lineofsight = true,
 				name = "HighEnergyLaser",
 				noselfdamage = true,
 				range = 620,

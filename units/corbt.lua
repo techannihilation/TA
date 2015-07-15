@@ -136,7 +136,6 @@ return {
 				id = 239,
 				impulseboost = 0.2,
 				impulsefactor = 0.2,
-				lineofsight = true,
 				model = "bomb",
 				name = "Pepper spray",
 				nogap = 1,
