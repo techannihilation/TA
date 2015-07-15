@@ -115,7 +115,6 @@ return {
 				propeller = 1,
 				range = 601,
 				reloadtime = 2.6,
-				selfprop = true,
 				soundhitdry = "SPLASH",
 				soundstart = "torpedo1",
 				sprayangle = 5000,

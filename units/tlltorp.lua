@@ -120,7 +120,6 @@ return {
 				propeller = 1,
 				range = 600,
 				reloadtime = 1.9,
-				selfprop = true,
 				soundhitdry = "xplodep2",
 				soundstart = "torpedo1",
 				startvelocity = 200,

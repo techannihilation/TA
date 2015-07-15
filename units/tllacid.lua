@@ -136,7 +136,6 @@ return {
 				propeller = 1,
 				range = 3000,
 				reloadtime = 2,
-				selfprop = true,
 				shakeduration = 1.5,
 				shakemagnitude = 32,
 				smokedelay = 0.1,

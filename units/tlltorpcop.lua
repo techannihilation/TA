@@ -90,7 +90,6 @@ return {
 				propeller = 1,
 				range = 450,
 				reloadtime = 10,
-				selfprop = true,
 				soundhitdry = "splash",
 				soundstart = "bombrel",
 				sprayangle = 3250,

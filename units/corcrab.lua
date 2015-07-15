@@ -182,7 +182,6 @@ return {
 				range = 575,
 				reloadtime = 3.28,
 				rgbcolor = "1.000 0.000 0.000",
-				selfprop = true,
 				soundhitdry = "xplodep3",
 				soundstart = "torpedo2",
 				startvelocity = 100,

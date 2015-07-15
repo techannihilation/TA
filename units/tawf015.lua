@@ -143,7 +143,6 @@ return {
 				pitchtolerance = 18000,
 				range = 550,
 				reloadtime = 0.45,
-				selfprop = true,
 				smokedelay = 0.1,
 				smoketrail = true,
 				soundhitdry = "xplosml2",

@@ -173,7 +173,6 @@ return {
 				noselfdamage = true,
 				range = 1000,
 				reloadtime = 6,
-				selfprop = true,
 				smokedelay = 0.01,
 				smoketrail = true,
 				soundhitdry = "TAWF114b",

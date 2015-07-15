@@ -147,7 +147,6 @@ return {
 				noselfdamage = true,
 				range = 640,
 				reloadtime = 3.2,
-				selfprop = true,
 				smokedelay = 0.1,
 				smoketrail = true,
 				soundhitdry = "xplomed2",

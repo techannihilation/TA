@@ -211,7 +211,6 @@ return {
 				noselfdamage = true,
 				range = 950,
 				reloadtime = 0.3,
-				selfprop = true,
 				separation = 0.45,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed2",

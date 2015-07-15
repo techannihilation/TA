@@ -154,7 +154,6 @@ return {
 				range = 950,
 				reloadtime = 1,
 				rgbcolor = "1.000 0.000 0.000",
-				selfprop = true,
 				smokedelay = 0.25,
 				smoketrail = true,
 				soundhitdry = "macrossmhit",

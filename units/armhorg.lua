@@ -141,7 +141,6 @@ return {
 				proximitypriority = -1,
 				range = 1650,
 				reloadtime = 8,
-				selfprop = true,
 				shakeduration = 1,
 				shakemagnitude = 10,
 				smokedelay = 0.0091,

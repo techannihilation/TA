@@ -179,7 +179,6 @@ return {
 				noselfdamage = true,
 				range = 1200,
 				reloadtime = 0.5,
-				selfprop = true,
 				smokedelay = 0.5,
 				smoketrail = false,
 				soundhitdry = "vpulsehit",

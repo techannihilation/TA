@@ -138,7 +138,6 @@ return {
 				proximitypriority = -1,
 				range = 1050,
 				reloadtime = 2,
-				selfprop = true,
 				smokedelay = 0.1,
 				smoketrail = false,
 				soundhitdry = "xplosml2",

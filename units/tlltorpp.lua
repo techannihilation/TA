@@ -98,7 +98,6 @@ return {
 				propeller = 1,
 				range = 500,
 				reloadtime = 8,
-				selfprop = true,
 				soundhitdry = "xplodep2",
 				soundstart = "bombrel",
 				startvelocity = 100,

@@ -184,7 +184,6 @@ return {
 				proximitypriority = -1,
 				range = 1500,
 				reloadtime = 0.85,
-				selfprop = true,
 				smokedelay = 0.001,
 				smoketrail = false,
 				soundhitdry = "cent_hit",

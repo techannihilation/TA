@@ -106,7 +106,6 @@ return {
 				pitchtolerance = 16000,
 				range = 500,
 				reloadtime = 8,
-				selfprop = true,
 				shakeduration = 2,
 				shakemagnitude = 18,
 				smokedelay = 0.2,

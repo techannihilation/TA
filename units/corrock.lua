@@ -143,7 +143,6 @@ return {
 				noselfdamage = true,
 				range = 700,
 				reloadtime = 5.5,
-				selfprop = true,
 				soundhitdry = "rockhit",
 				soundstart = "rapidrocket3",
 				startvelocity = 150,

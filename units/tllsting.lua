@@ -127,7 +127,6 @@ return {
 				range = 950,
 				reloadtime = 0.4,
 				rgbcolor = "1.000 0.5 0",
-				selfprop = true,
 				smokedelay = 0.1,
 				smoketrail = true,
 				soundhitdry = "packohit",

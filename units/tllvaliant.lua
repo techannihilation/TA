@@ -160,7 +160,6 @@ return {
 				reloadtime = 0.5,
 				rgbcolor = "1 1 1",
 				rgbcolor2 = "0.5 0.5 0.5",
-				selfprop = true,
 				soundhitdry = "hit-metal-1",
 				soundstart = "MG1",
 				soundstartvolume = 15,

@@ -161,7 +161,6 @@ return {
 				name = "Heavy Rocket",
 				range = 1200,
 				reloadtime = 15,
-				selfprop = true,
 				shakeduration = 1,
 				shakemagnitude = 3,
 				smokedelay = 0.0091,
