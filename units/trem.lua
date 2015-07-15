@@ -146,7 +146,6 @@ return {
 				proximitypriority = -3,
 				range = 1300,
 				reloadtime = 0.4,
-				rendertype = 4,
 				rgbcolor = "0.7 0.37 0",
 				separation = 0.45,
 				size = 2.26,

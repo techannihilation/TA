@@ -133,7 +133,6 @@ return {
 				propeller = 1,
 				range = 600,
 				reloadtime = 2,
-				rendertype = 1,
 				selfprop = true,
 				soundhitdry = "xplodep1",
 				soundstart = "torpedo1",

@@ -134,7 +134,6 @@ return {
 				nogap = 1,
 				range = 1520,
 				reloadtime = 2.5,
-				rendertype = 4,
 				rgbcolor = "1 0.88 0.23",
 				separation = 0.45,
 				size = 1.58,

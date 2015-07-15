@@ -144,7 +144,6 @@ return {
 				projectiles = 30,
 				range = 1150,
 				reloadtime = 10,
-				rendertype = 1,
 				rgbcolor = "0.71 0.39 0",
 				separation = 0.45,
 				shakeduration = 0,

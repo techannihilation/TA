@@ -126,7 +126,6 @@ return {
 				name = "E.M.G.",
 				range = 180,
 				reloadtime = 0.4,
-				rendertype = 4,
 				rgbcolor = "1 0.88 0.26",
 				soundhitdry = "lasrhit1",
 				soundstart = "armsml2",

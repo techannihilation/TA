@@ -115,7 +115,6 @@ return {
 				pitchtolerance = 12000,
 				range = 520,
 				reloadtime = 10,
-				rendertype = 0,
 				rgbcolor = "0.9 0.9 0",
 				soundhitdry = "lashit",
 				soundstart = "hackshot",

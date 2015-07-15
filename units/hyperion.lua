@@ -151,7 +151,6 @@ return {
 				noexplode = true,
 				range = 750,
 				reloadtime = 0.54,
-				rendertype = 0,
 				rgbcolor = "0.10 0.2 1",
 				rgbcolor2 = ".15 .3 1",
 				soundhitdry = "burn02",

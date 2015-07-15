@@ -141,7 +141,6 @@ return {
 				noselfdamage = true,
 				range = 275,
 				reloadtime = 0.8,
-				rendertype = 0,
 				rgbcolor = "0 1 0",
 				soundhitdry = "lasrhit1",
 				soundstart = "lasrhvy3",

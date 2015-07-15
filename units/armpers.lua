@@ -88,7 +88,6 @@ return {
 				pitchtolerance = 18000,
 				range = 600,
 				reloadtime = 0.2,
-				rendertype = 4,
 				rgbcolor = "1.0 0.5 0.0",
 				soundhitdry = "lasrhit1",
 				soundstart = "armsml2",

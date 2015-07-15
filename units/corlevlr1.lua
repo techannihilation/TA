@@ -133,7 +133,6 @@ return {
 				noselfdamage = false,
 				range = 375,
 				reloadtime = 2,
-				rendertype = 4,
 				rgbcolor = "0.7 0.37 0",
 				size = 2.38,
 				soundhitdry = "xplosml3",

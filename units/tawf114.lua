@@ -149,7 +149,6 @@ return {
 				noselfdamage = true,
 				range = 900,
 				reloadtime = 7.5,
-				rendertype = 1,
 				selfprop = true,
 				smokedelay = 0.01,
 				smoketrail = true,

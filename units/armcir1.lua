@@ -141,7 +141,6 @@ return {
 				proximitypriority = -1,
 				range = 1700,
 				reloadtime = 0.4,
-				rendertype = 1,
 				selfprop = true,
 				smokedelay = 0.1,
 				smoketrail = true,

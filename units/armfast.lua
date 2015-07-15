@@ -135,7 +135,6 @@ return {
 				noselfdamage = true,
 				range = 220,
 				reloadtime = 0.5,
-				rendertype = 4,
 				rgbcolor = "1 0.95 0.4",
 				size = 1.5,
 				soundstart = "fastemg",

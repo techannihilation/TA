@@ -100,7 +100,6 @@ return {
 				pitchtolerance = 12000,
 				range = 380,
 				reloadtime = 0.4,
-				rendertype = 4,
 				rgbcolor = "0.86 0.62 0",
 				size = 0.82,
 				soundstart = "brawlemg",

@@ -96,7 +96,6 @@ return {
 				name = "Guided Missiles",
 				range = 310,
 				reloadtime = 1,
-				rendertype = 1,
 				selfprop = true,
 				smokedelay = 0.1,
 				smoketrail = true,

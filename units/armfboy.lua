@@ -139,7 +139,6 @@ return {
 				noselfdamage = true,
 				range = 700,
 				reloadtime = 6.75,
-				rendertype = 4,
 				rgbcolor = "0.75 0.45 0",
 				separation = 0.45,
 				shakeduration = 1,

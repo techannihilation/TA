@@ -90,7 +90,6 @@ return {
 				propeller = 1,
 				range = 450,
 				reloadtime = 10,
-				rendertype = 1,
 				selfprop = true,
 				soundhitdry = "splash",
 				soundstart = "bombrel",

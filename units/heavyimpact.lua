@@ -149,7 +149,6 @@ return {
 				numbounce = 1,
 				range = 1450,
 				reloadtime = 7,
-				rendertype = 4,
 				rgbcolor = "0.67 0.31 0",
 				separation = 0.45,
 				size = 2.75,

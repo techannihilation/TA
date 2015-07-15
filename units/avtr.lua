@@ -144,7 +144,6 @@ return {
 				noselfdamage = true,
 				range = 4335,
 				reloadtime = 7,
-				rendertype = 4,
 				rgbcolor = "0.93 0.74 0",
 				separation = 0.45,
 				size = 2.44,

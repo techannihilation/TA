@@ -113,7 +113,6 @@ return {
 				paralyzetime = 20,
 				range = 425,
 				reloadtime = 5,
-				rendertype = 4,
 				rgbcolor = "0.7 0.9 0.3",
 				separation = 0.45,
 				size = 1.75,

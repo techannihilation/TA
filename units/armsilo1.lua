@@ -147,7 +147,6 @@ return {
 				propeller = 1,
 				range = 72000,
 				reloadtime = 1.5,
-				rendertype = 1,
 				selfprop = true,
 				shakeduration = 3,
 				shakemagnitude = 50,

@@ -133,7 +133,6 @@ return {
 				noselfdamage = true,
 				range = 1850,
 				reloadtime = 5,
-				rendertype = 0,
 				rgbcolor = "0.9 0.6 1",
 				soundhitdry = "xplolrg1",
 				soundstart = "Energy",

@@ -127,7 +127,6 @@ return {
 				name = "Heavy Laser",
 				range = 450,
 				reloadtime = 0.75,
-				rendertype = 0,
 				rgbcolor = "1.000 0.000 0.412",
 				soundhitdry = "lashit",
 				soundstart = "lasrlit1",

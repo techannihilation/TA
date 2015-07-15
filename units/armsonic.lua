@@ -137,7 +137,6 @@ return {
 				name = "Sonic Wave Projector",
 				range = 480,
 				reloadtime = 1.9,
-				rendertype = 3,
 				rgbcolor = "0.9 0.8 1",
 				size = 10,
 				soundhitdry = "debris4",

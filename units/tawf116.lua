@@ -135,7 +135,6 @@ return {
 				noexplode = true,
 				range = 300,
 				reloadtime = 1.5,
-				rendertype = 3,
 				soundhitdry = "xplomas2",
 				soundstart = "disigun1",
 				soundtrigger = false,

@@ -132,7 +132,6 @@ return {
 				name = "High Energy Laser",
 				range = 380,
 				reloadtime = 0.8,
-				rendertype = 0,
 				rgbcolor = "0.000 1.000 0.259",
 				soundhitdry = "lasrhit1",
 				soundstart = "lasrhvy3",

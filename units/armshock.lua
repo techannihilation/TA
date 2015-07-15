@@ -139,7 +139,6 @@ return {
 				predictboost = 1,
 				range = 1350,
 				reloadtime = 6,
-				rendertype = 4,
 				rgbcolor = "0.81 0.54 0",
 				separation = 0.45,
 				size = 2.75,

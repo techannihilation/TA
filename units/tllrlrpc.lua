@@ -150,7 +150,6 @@ return {
 				noselfdamage = true,
 				range = 3700,
 				reloadtime = 0.6,
-				rendertype = 7,
 				rgbcolor = "0.6 0.6 0.9",
 				soundhitdry = "maghit",
 				soundstart = "krypto",

@@ -155,7 +155,6 @@ return {
 				pulsespeed = 4,
 				range = 1400,
 				reloadtime = 1.5,
-				rendertype = 0,
 				rgbcolor = "0.5 0.4 1.0",
 				soundhitdry = "krypton",
 				soundstart = "krypto",

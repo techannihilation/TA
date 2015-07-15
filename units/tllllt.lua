@@ -149,7 +149,6 @@ return {
 				projectiles = 2,
 				range = 350,
 				reloadtime = 1.1,
-				rendertype = 7,
 				rgbcolor = "0.6 0.6 0.9",
 				soundhitdry = "lashit2",
 				soundstart = "Lghthvy1",

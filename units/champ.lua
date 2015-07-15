@@ -118,7 +118,6 @@ return {
 				pitchtolerance = 12000,
 				range = 590,
 				reloadtime = 1,
-				rendertype = 4,
 				rgbcolor = "1.000 0.047 0.000",
 				soundhitdry = "xplomed2",
 				soundstart = "Krogun1",

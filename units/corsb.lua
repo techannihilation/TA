@@ -106,7 +106,6 @@ return {
 				noselfdamage = true,
 				range = 1280,
 				reloadtime = 0.14,
-				rendertype = 6,
 				soundhitdry = "xplomed2",
 				soundstart = "bombrel",
 				weapontype = "AircraftBomb",

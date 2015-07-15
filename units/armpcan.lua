@@ -136,7 +136,6 @@ return {
 				noselfdamage = true,
 				range = 1150,
 				reloadtime = 7,
-				rendertype = 4,
 				soundhitdry = "xplonuk1",
 				soundstart = "xplonuk4",
 				sprayangle = 1200,

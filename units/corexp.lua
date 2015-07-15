@@ -145,7 +145,6 @@ return {
 				proximitypriority = 3,
 				range = 460,
 				reloadtime = 0.52,
-				rendertype = 0,
 				rgbcolor = "1 0 0",
 				soundhitdry = "lasrhit2",
 				soundstart = "lasrfir3",

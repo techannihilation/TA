@@ -136,7 +136,6 @@ return {
 				noselfdamage = true,
 				range = 525,
 				reloadtime = 2.5,
-				rendertype = 1,
 				soundhitdry = "xplodep2",
 				soundstart = "torpedo1",
 				startvelocity = 140,

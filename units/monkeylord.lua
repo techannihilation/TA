@@ -150,7 +150,6 @@ return {
 				noselfdamage = true,
 				range = 800,
 				reloadtime = 1,
-				rendertype = 1,
 				rgbcolor = "1 0 0",
 				soundhitdry = "BFGBANG",
 				soundstart = "BFG__X1B",

@@ -136,7 +136,6 @@ return {
 				paralyzetime = 9,
 				range = 220,
 				reloadtime = 1.75,
-				rendertype = 0,
 				rgbcolor = "1 1 0",
 				soundhitdry = "lashit",
 				soundstart = "hackshot",

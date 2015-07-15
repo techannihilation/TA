@@ -140,7 +140,6 @@ return {
 				name = "Grimani's Magnesium Fireball",
 				range = 300,
 				reloadtime = 2.1,
-				rendertype = 4,
 				rgbcolor = "1.000 0.071 0.000",
 				smoketrail = true,
 				soundhitdry = "Burn02",

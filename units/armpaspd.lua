@@ -138,7 +138,6 @@ return {
 				paralyzetime = 20,
 				range = 900,
 				reloadtime = 10,
-				rendertype = 0,
 				rgbcolor = "1 1 0",
 				soundhitdry = "xplolrg2",
 				soundhitvolume = 12,

@@ -128,7 +128,6 @@ return {
 				noselfdamage = true,
 				range = 365,
 				reloadtime = 0.945,
-				rendertype = 4,
 				soundhitdry = "xplomed2",
 				soundstart = "Mavgun2",
 				startsmoke = 1,

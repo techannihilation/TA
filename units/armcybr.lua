@@ -106,7 +106,6 @@ return {
 				pitchtolerance = 16000,
 				range = 500,
 				reloadtime = 8,
-				rendertype = 1,
 				selfprop = true,
 				shakeduration = 2,
 				shakemagnitude = 18,

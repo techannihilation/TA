@@ -142,7 +142,6 @@ return {
 				noselfdamage = true,
 				range = 1200,
 				reloadtime = 8.5,
-				rendertype = 0,
 				rgbcolor = "0 0 1",
 				soundhitdry = "xplosml3",
 				soundstart = "annigun1",

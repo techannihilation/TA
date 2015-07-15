@@ -137,7 +137,6 @@ return {
 				noselfdamage = true,
 				range = 975,
 				reloadtime = 0.3,
-				rendertype = 4,
 				rgbcolor = "1.0 0.5 0.0",
 				size = 5,
 				soundhitdry = "flakhit",

@@ -147,7 +147,6 @@ return {
 				name = "Heavy Gauss Cannon",
 				range = 700,
 				reloadtime = 0.6,
-				rendertype = 4,
 				rgbcolor = "0.93 0.74 0",
 				size = 2.04,
 				soundhitdry = "xplomed2",

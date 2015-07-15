@@ -92,7 +92,6 @@ return {
 				name = "Medium Machine Gun",
 				range = 300,
 				reloadtime = 0.35,
-				rendertype = 4,
 				rgbcolor = "1 0.95 0.9",
 				size = 0.77,
 				soundhitdry = "xplosml3",

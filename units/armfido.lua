@@ -135,7 +135,6 @@ return {
 				noselfdamage = true,
 				range = 650,
 				reloadtime = 3.2,
-				rendertype = 4,
 				separation = 0.45,
 				size = 1.36,
 				sizedecay = -0.15,

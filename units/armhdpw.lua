@@ -134,7 +134,6 @@ return {
 				name = "Electro-Magnetic Compression Cannon",
 				range = 865,
 				reloadtime = 0.15,
-				rendertype = 4,
 				rgbcolor = "1.0 0.5 0.0",
 				soundhitdry = "lasrhit1",
 				soundstart = "armsml2",

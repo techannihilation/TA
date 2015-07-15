@@ -100,7 +100,6 @@ return {
 				propeller = 1,
 				range = 500,
 				reloadtime = 8,
-				rendertype = 1,
 				selfprop = true,
 				soundhitdry = "xplodep2",
 				soundstart = "bombrel",

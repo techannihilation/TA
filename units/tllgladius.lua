@@ -131,7 +131,6 @@ return {
 				paralyzertime = 10,
 				range = 180,
 				reloadtime = 0.9,
-				rendertype = 0,
 				rgbcolor = "0 0 7",
 				soundhitdry = "lashit",
 				soundstart = "lasrlit1",

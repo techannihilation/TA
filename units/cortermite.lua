@@ -132,7 +132,6 @@ return {
 				noselfdamage = true,
 				range = 340,
 				reloadtime = 1.65,
-				rendertype = 0,
 				rgbcolor = "1 0.8 0",
 				rgbcolor2 = "0.8 0 0",
 				soundstart = "heatray1",

@@ -141,7 +141,6 @@ return {
 				pitchtolerance = 100,
 				range = 500,
 				reloadtime = 4,
-				rendertype = 4,
 				rgbcolor = "1 0 0",
 				soundhitdry = "thunder_clap",
 				soundstart = "arrfire",

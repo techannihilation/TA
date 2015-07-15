@@ -136,7 +136,6 @@ return {
 				name = "Annihilator Weapon",
 				range = 255,
 				reloadtime = 0.33,
-				rendertype = 0,
 				rgbcolor = "0.000 0.012 1.000",
 				soundhitdry = "lasrhvy2",
 				soundstart = "lasrfast",

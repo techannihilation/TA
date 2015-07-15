@@ -144,7 +144,6 @@ return {
 				paralyzetime = 1,
 				range = 1100,
 				reloadtime = 0.5,
-				rendertype = 0,
 				rgbcolor = "0.9 0.75 0",
 				rgbcolor2 = "0 0 0.1",
 				soundhitdry = "burn02",

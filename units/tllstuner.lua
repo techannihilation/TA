@@ -121,7 +121,6 @@ return {
 				paralyzertime = 10,
 				range = 1050,
 				reloadtime = 3.3,
-				rendertype = 0,
 				rgbcolor = "0.0 0.0 0.5",
 				size = 1.11,
 				soundhitdry = "xplomed2",

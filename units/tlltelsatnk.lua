@@ -133,7 +133,6 @@ return {
 				name = "Telsa Energy Weapon",
 				range = 825,
 				reloadtime = 2.5,
-				rendertype = 7,
 				rgbcolor = "0.5 0.5 1",
 				soundhitdry = "lashit2",
 				soundstart = "Lghthvy1",

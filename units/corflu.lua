@@ -98,7 +98,6 @@ return {
 				nogap = 1,
 				range = 9000,
 				reloadtime = 2,
-				rendertype = 4,
 				separation = 0.45,
 				sizedecay = -0.15,
 				soundhitdry = "bignuke",

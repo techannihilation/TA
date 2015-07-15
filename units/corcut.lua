@@ -102,7 +102,6 @@ return {
 				pitchtolerance = 12000,
 				range = 430,
 				reloadtime = 1.3,
-				rendertype = 4,
 				rgbcolor = "0.66 0.29 0",
 				size = 2.06,
 				soundhitdry = "xplosml3",

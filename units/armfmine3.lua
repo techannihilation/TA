@@ -97,7 +97,6 @@ return {
 				nogap = 1,
 				range = 1,
 				reloadtime = 0.1,
-				rendertype = 4,
 				separation = 0.45,
 				sizedecay = -0.15,
 				stages = 20,

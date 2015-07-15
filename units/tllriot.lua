@@ -132,7 +132,6 @@ return {
 				name = "Riot Cannon",
 				range = 340,
 				reloadtime = 1.8,
-				rendertype = 3,
 				rgbcolor = "0.5 0.5 1.0",
 				size = 2.5,
 				soundhitdry = "debris4",

@@ -125,7 +125,6 @@ return {
 				name = "Gauss Cannon",
 				range = 700,
 				reloadtime = 1,
-				rendertype = 4,
 				rgbcolor = "1 0.95 0.9",
 				size = 0.88,
 				soundhitdry = "xplomed21",

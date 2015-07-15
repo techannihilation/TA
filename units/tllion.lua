@@ -142,7 +142,6 @@ return {
 				paralyzetime = 2,
 				range = 32000,
 				reloadtime = 1,
-				rendertype = 0,
 				rgbcolor = "0.2 0.2 1",
 				rgbcolor2 = "0.07 1 1",
 				shakeduration = 1,

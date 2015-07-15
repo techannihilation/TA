@@ -123,7 +123,6 @@ return {
 				randomdecay = 11,
 				range = 9800,
 				reloadtime = 0.5,
-				rendertype = 4,
 				rgbcolor = "0.85 0.6 0",
 				separation = 0.45,
 				size = 4.5,

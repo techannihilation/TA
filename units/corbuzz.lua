@@ -147,7 +147,6 @@ return {
 				randomdecay = 11,
 				range = 7000,
 				reloadtime = 1,
-				rendertype = 4,
 				rgbcolor = "0.85 0.6 0",
 				separation = 0.45,
 				size = 2.75,
