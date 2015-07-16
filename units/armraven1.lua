@@ -139,7 +139,6 @@ return {
 				proximitypriority = -1,
 				range = 920,
 				reloadtime = 20,
-				smokedelay = 0.1,
 				smoketrail = true,
 				soundhitdry = "rockhit",
 				soundstart = "rapidrocket3",

@@ -193,7 +193,6 @@ return {
 				range = 900,
 				reloadtime = 1.1,
 				rgbcolor = "1.000 0.000 0.000",
-				smokedelay = 0.1,
 				smoketrail = true,
 				soundhitdry = "packohit",
 				soundstart = "packolau",

@@ -204,7 +204,6 @@ return {
 				proximitypriority = -1,
 				range = 1600,
 				reloadtime = 1.75,
-				smokedelay = 0.1,
 				smoketrail = false,
 				soundhitdry = "xplosml2",
 				soundstart = "rocklit1",

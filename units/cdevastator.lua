@@ -175,7 +175,6 @@ return {
 				pitchtolerance = 3000,
 				range = 1800,
 				reloadtime = 1.33,
-				smokedelay = 0.1,
 				smoketrail = true,
 				soundhitdry = "DevastatorRocket_hit",
 				soundstart = "DevastatorRocket",

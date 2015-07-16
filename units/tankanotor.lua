@@ -141,7 +141,6 @@ return {
 				reloadtime = 7,
 				shakeduration = 1,
 				shakemagnitude = 3,
-				smokedelay = 0.1,
 				smoketrail = true,
 				soundhitdry = "tankahit",
 				soundstart = "TAWF114a",

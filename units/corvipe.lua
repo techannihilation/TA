@@ -153,7 +153,6 @@ return {
 				noselfdamage = true,
 				range = 730,
 				reloadtime = 1.5,
-				smokedelay = 0.1,
 				smoketrail = true,
 				soundhitdry = "SabotHit",
 				soundstart = "SabotFire",

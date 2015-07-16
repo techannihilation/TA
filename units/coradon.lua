@@ -140,7 +140,6 @@ return {
 				range = 700,
 				reloadtime = 2,
 				rgbcolor = "1.000 0.000 0.000",
-				smokedelay = 0.1,
 				smoketrail = true,
 				soundhitdry = "xplosml1",
 				soundstart = "adonis_missile",

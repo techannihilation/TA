@@ -95,7 +95,6 @@ return {
 				noselfdamage = true,
 				range = 562,
 				reloadtime = 0.85,
-				smokedelay = 0.1,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
 				soundstart = "Rocklit3",

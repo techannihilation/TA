@@ -107,7 +107,6 @@ return {
 				reloadtime = 8,
 				shakeduration = 2,
 				shakemagnitude = 18,
-				smokedelay = 0.2,
 				smoketrail = true,
 				soundhitdry = "tonukeex",
 				soundstart = "bombdropxx",

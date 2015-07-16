@@ -131,7 +131,6 @@ return {
 				proximitypriority = -1.5,
 				range = 3000,
 				reloadtime = 10,
-				smokedelay = 0,
 				smoketrail = true,
 				soundhitdry = "impact",
 				soundstart = "launch",

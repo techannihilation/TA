@@ -134,7 +134,6 @@ return {
 				name = "Guided Missiles",
 				range = 750,
 				reloadtime = 6,
-				smokedelay = 0.1,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
 				soundstart = "tirhorgue",

@@ -104,7 +104,6 @@ return {
 				proximitypriority = -1,
 				range = 2000,
 				reloadtime = 30,
-				smokedelay = 0.02,
 				smoketrail = true,
 				soundhitdry = "mlrsboom",
 				soundstart = "mlrsfireshort",

@@ -142,7 +142,6 @@ return {
 				reloadtime = 8,
 				shakeduration = 1,
 				shakemagnitude = 10,
-				smokedelay = 0.0091,
 				smoketrail = true,
 				soundhitdry = "TAWF114b",
 				soundstart = "TAWF114a",

@@ -96,7 +96,6 @@ return {
 				pitchtolerance = 18000,
 				range = 420,
 				reloadtime = 1.1,
-				smokedelay = 0.1,
 				smoketrail = true,
 				soundhitdry = "SabotHit",
 				soundstart = "SabotFire",

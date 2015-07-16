@@ -166,7 +166,6 @@ return {
 				reloadtime = 12,
 				rgbcolor = "1 0.89 0.38",
 				size = 2.49,
-				smokedelay = 1,
 				smoketrail = true,
 				soundhitdry = "explode3",
 				soundstart = "rockhvy2",

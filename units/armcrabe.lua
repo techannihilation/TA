@@ -160,7 +160,6 @@ return {
 				reloadtime = 12,
 				shakeduration = 1,
 				shakemagnitude = 3,
-				smokedelay = 0.0091,
 				smoketrail = true,
 				soundhitdry = "tankahit",
 				soundstart = "tankafire",

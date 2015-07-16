@@ -201,7 +201,6 @@ return {
 				name = "Wolf Missile",
 				range = 1050,
 				reloadtime = 2,
-				smokedelay = 0.0001,
 				smoketrail = true,
 				soundhitdry = "xplomed2",
 				soundstart = "rocklit1",

@@ -96,7 +96,6 @@ return {
 				pitchtolerance = 18000,
 				range = 410,
 				reloadtime = 1.1,
-				smokedelay = 0.1,
 				smoketrail = true,
 				soundhitdry = "explode",
 				soundstart = "rocklit3",

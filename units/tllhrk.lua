@@ -130,7 +130,6 @@ return {
 				noselfdamage = true,
 				range = 1420,
 				reloadtime = 7,
-				smokedelay = 0.5,
 				smoketrail = false,
 				soundhitdry = "vpulsehit",
 				soundstart = "vpulsefire",

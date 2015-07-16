@@ -150,7 +150,6 @@ return {
 				reloadtime = 1.8,
 				shakeduration = 4,
 				shakemagnitude = 75,
-				smokedelay = 0.1,
 				smoketrail = true,
 				soundhitdry = "xplomed4",
 				soundstart = "misicbm1",

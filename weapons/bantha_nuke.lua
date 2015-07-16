@@ -33,7 +33,6 @@ local weaponDef = {
 	selfprop = 1,
 	shakeduration = 3,
 	shakemagnitude = 50,
-	smokedelay = 0.10000000149012,
 	smoketrail = 1,
 	soundhit = [[xplomed4]],
 	soundstart = [[misicbm1]],

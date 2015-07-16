@@ -134,7 +134,6 @@ return {
 				name = "Guided Rockets",
 				range = 1050,
 				reloadtime = 2.5,
-				smokedelay = 0.1,
 				smoketrail = false,
 				soundhitdry = "xplomed4",
 				soundstart = "temrocket_launch",

@@ -183,7 +183,6 @@ return {
 				proximitypriority = -1,
 				range = 1500,
 				reloadtime = 0.85,
-				smokedelay = 0.001,
 				smoketrail = false,
 				soundhitdry = "cent_hit",
 				soundstart = "mcv_fire1",

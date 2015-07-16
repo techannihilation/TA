@@ -197,7 +197,6 @@ return {
 				reloadtime = 2,
 				shakeduration = 2,
 				shakemagnitude = 32,
-				smokedelay = 0.1,
 				smoketrail = true,
 				soundhitdry = "megaboom",
 				soundstart = "misicbm1",

@@ -140,7 +140,6 @@ return {
 				noautorange = 1,
 				range = 4500,
 				reloadtime = 2,
-				smokedelay = 0.1,
 				smoketrail = true,
 				soundhitdry = "junohit2",
 				soundstart = "junofir2",

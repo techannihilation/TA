@@ -141,7 +141,6 @@ return {
 				proximitypriority = 1,
 				range = 1000,
 				reloadtime = 2.5,
-				smokedelay = 0.1,
 				smoketrail = true,
 				soundhitdry = "packohit",
 				soundstart = "packolau",

@@ -197,7 +197,6 @@ return {
 				name = "Missiles",
 				range = 1000,
 				reloadtime = 0.19,
-				smokedelay = 0.1,
 				smoketrail = true,
 				soundhitdry = "xplomed2",
 				soundstart = "rockhvy2",

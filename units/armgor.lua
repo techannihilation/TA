@@ -141,7 +141,6 @@ return {
 				range = 1050,
 				reloadtime = 1,
 				rgbcolor = "1.000 0.000 0.000",
-				smokedelay = 0.1,
 				smoketrail = false,
 				soundhitdry = "xplosml2",
 				soundstart = "rocklit1",
