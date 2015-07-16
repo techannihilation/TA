@@ -151,7 +151,6 @@ return {
 			},
 			corsumo_weapon = {
 				areaofeffect = 12,
-				beamlaser = 1,
 				beamtime = 0.15,
 				corethickness = 0.3,
 				craterboost = 0,

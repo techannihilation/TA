@@ -126,7 +126,6 @@ return {
 		weapondefs = {
 			adv_decklaser = {
 				areaofeffect = 8,
-				beamlaser = 1,
 				beamtime = 0.1,
 				corethickness = 0.175,
 				craterboost = 0,
@@ -192,7 +191,6 @@ return {
 			},
 			cor_crus = {
 				areaofeffect = 8,
-				beamlaser = 1,
 				beamtime = 0.15,
 				corethickness = 0.2,
 				craterboost = 0,

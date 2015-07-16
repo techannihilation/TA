@@ -118,7 +118,6 @@ return {
 		weapondefs = {
 			armsh_weapon = {
 				areaofeffect = 8,
-				beamlaser = 1,
 				beamtime = 0.1,
 				burstrate = 0.2,
 				craterboost = 0,

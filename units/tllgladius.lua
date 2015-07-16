@@ -109,7 +109,6 @@ return {
 		weapondefs = {
 			tlllight_paralyzer = {
 				areaofeffect = 8,
-				beamlaser = 1,
 				beamtime = 0.1,
 				burstrate = 0.2,
 				corethickness = 0.1,

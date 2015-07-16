@@ -143,7 +143,6 @@ return {
 			},
 			core_lightlaser2 = {
 				areaofeffect = 8,
-				beamlaser = 1,
 				beamtime = 0.08,
 				burnblow = true,
 				energypershot = 10,

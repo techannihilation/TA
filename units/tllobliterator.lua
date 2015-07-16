@@ -126,7 +126,6 @@ return {
 		weapondefs = {
 			atadr = {
 				areaofeffect = 12,
-				beamlaser = 1,
 				beamtime = 0.9,
 				corethickness = 0.3,
 				craterboost = 0,

@@ -127,7 +127,6 @@ return {
 			hllt_bottom = {
 				areaofeffect = 12,
 				avoidfeature = false,
-				beamlaser = 1,
 				beamtime = 0.12,
 				corethickness = 0.125,
 				craterboost = 0,
@@ -163,7 +162,6 @@ return {
 			},
 			hllt_top = {
 				areaofeffect = 12,
-				beamlaser = 1,
 				beamtime = 0.12,
 				corethickness = 0.175,
 				craterboost = 0,

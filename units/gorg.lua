@@ -122,7 +122,6 @@ return {
 		weapondefs = {
 			gorg_bottom = {
 				areaofeffect = 12,
-				beamlaser = 1,
 				beamtime = 0.12,
 				corethickness = 0.175,
 				craterboost = 0,
@@ -156,7 +155,6 @@ return {
 			},
 			gorg_top = {
 				areaofeffect = 12,
-				beamlaser = 1,
 				beamtime = 0.12,
 				corethickness = 0.2,
 				craterboost = 0,

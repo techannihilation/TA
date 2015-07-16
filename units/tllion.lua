@@ -120,7 +120,6 @@ return {
 				areaofeffect = 1200,
 				avoidfeature = false,
 				avoidfriendly = false,
-				beamlaser = 1,
 				corethickness = 0.47,
 				duration = 2,
 				edgeeffectiveness = 0,

@@ -123,7 +123,6 @@ return {
 		weapondefs = {
 			armsnipe_sight = {
 				areaofeffect = 8,
-				beamlaser = 1,
 				beamtime = 0.2,
 				corethickness = 0,
 				craterboost = 0,

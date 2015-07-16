@@ -125,7 +125,6 @@ return {
 		weapondefs = {
 			tawf001_weapon = {
 				areaofeffect = 8,
-				beamlaser = 1,
 				beamtime = 0.15,
 				corethickness = 0.225,
 				craterboost = 0,

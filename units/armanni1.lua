@@ -120,7 +120,6 @@ return {
 			ata10 = {
 				areaofeffect = 46,
 				avoidfeature = false,
-				beamlaser = 1,
 				beamtime = 2.2,
 				corethickness = 0.39,
 				craterboost = 0,

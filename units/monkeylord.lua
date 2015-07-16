@@ -131,7 +131,6 @@ return {
 			cybran_monkeylord_beam = {
 				areaofeffect = 93,
 				avoidfriendly = false,
-				beamlaser = 1,
 				beamtime = 1,
 				corethickness = 0.45,
 				craterboost = 0,

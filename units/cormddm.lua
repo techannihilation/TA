@@ -114,7 +114,6 @@ return {
 		weapondefs = {
 			core_laserh1 = {
 				areaofeffect = 14,
-				beamlaser = 1,
 				beamtime = 0.15,
 				corethickness = 0.2,
 				craterboost = 0,
@@ -146,7 +145,6 @@ return {
 			},
 			core_laserh2 = {
 				areaofeffect = 12,
-				beamlaser = 1,
 				beamtime = 0.12,
 				corethickness = 0.175,
 				craterboost = 0,
@@ -179,7 +177,6 @@ return {
 			},
 			mini_atadr = {
 				areaofeffect = 12,
-				beamlaser = 1,
 				beamtime = 0.7,
 				corethickness = 0.3,
 				craterboost = 0,

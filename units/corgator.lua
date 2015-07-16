@@ -125,7 +125,6 @@ return {
 		weapondefs = {
 			gator_laserx = {
 				areaofeffect = 8,
-				beamlaser = 1,
 				beamtime = 0.1,
 				corethickness = 0.175,
 				craterboost = 0,

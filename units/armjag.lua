@@ -152,7 +152,6 @@ return {
 			},
 			armjag_head = {
 				areaofeffect = 15,
-				beamlaser = 1,
 				beamtime = 0.8,
 				corethickness = 0.5,
 				craterboost = 0,

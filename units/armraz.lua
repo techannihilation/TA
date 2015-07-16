@@ -124,7 +124,6 @@ return {
 				accuracy = 32,
 				areaofeffect = 32,
 				avoidfeature = false,
-				beamlaser = 1,
 				beamtime = 0.14,
 				craterboost = 0,
 				cratermult = 0,

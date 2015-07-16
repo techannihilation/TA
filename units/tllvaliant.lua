@@ -182,7 +182,6 @@ return {
 				areaofeffect = 130,
 				avoidfeature = false,
 				avoidfriendly = false,
-				beamlaser = 1,
 				corethickness = 0.47,
 				craterboost = 0,
 				cratermult = 0,
@@ -227,7 +226,6 @@ return {
 			},
 			tllhplaser = {
 				areaofeffect = 8,
-				beamlaser = 1,
 				beamtime = 0.15,
 				corethickness = 0.2,
 				craterboost = 0,

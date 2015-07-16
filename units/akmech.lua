@@ -189,7 +189,6 @@ return {
 			arm_lightlaser4 = {
 				accuracy = 400,
 				areaofeffect = 8,
-				beamlaser = 1,
 				beamtime = 0.36,
 				burnblow = true,
 				energypershot = 10,

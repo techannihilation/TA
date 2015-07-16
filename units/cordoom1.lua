@@ -118,7 +118,6 @@ return {
 		weapondefs = {
 			adv_decklaser10 = {
 				areaofeffect = 8,
-				beamlaser = 1,
 				beamtime = 0.1,
 				corethickness = 0.2,
 				craterboost = 0,
@@ -150,7 +149,6 @@ return {
 			},
 			atadr10 = {
 				areaofeffect = 52,
-				beamlaser = 1,
 				beamtime = 1.3,
 				corethickness = 0.45,
 				craterboost = 0,
@@ -181,7 +179,6 @@ return {
 			},
 			corsumo_weapon10 = {
 				areaofeffect = 12,
-				beamlaser = 1,
 				beamtime = 0.15,
 				corethickness = 0.38,
 				craterboost = 0,

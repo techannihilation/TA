@@ -150,7 +150,6 @@ return {
 			},
 			coramph_weapon2 = {
 				areaofeffect = 12,
-				beamlaser = 1,
 				beamtime = 0.15,
 				corethickness = 0.2,
 				craterboost = 0,

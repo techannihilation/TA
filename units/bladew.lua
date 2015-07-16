@@ -87,7 +87,6 @@ return {
 			bladewing_lyzer = {
 				areaofeffect = 15,
 				avoidfriendly = false,
-				beamlaser = 1,
 				beamtime = 0.1,
 				collidefriendly = false,
 				corethickness = 0.1,

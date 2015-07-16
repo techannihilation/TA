@@ -107,7 +107,6 @@ return {
 		weapondefs = {
 			mini_atadr = {
 				areaofeffect = 12,
-				beamlaser = 1,
 				beamtime = 0.7,
 				corethickness = 0.3,
 				craterboost = 0,

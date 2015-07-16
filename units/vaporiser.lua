@@ -120,7 +120,6 @@ return {
 		weapondefs = {
 			mountedantimatteraccelerator1 = {
 				areaofeffect = 60,
-				beamlaser = 1,
 				beamtime = 1.5,
 				burnblow = true,
 				corethickness = 0.8,

@@ -162,7 +162,6 @@ return {
 			},
 			coradon_weapon = {
 				areaofeffect = 20,
-				beamlaser = 1,
 				beamtime = 0.7,
 				corethickness = 0.3,
 				craterboost = 0,

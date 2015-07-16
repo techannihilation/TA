@@ -117,7 +117,6 @@ return {
 		weapondefs = {
 			core_termite_laser = {
 				areaofeffect = 42,
-				beamlaser = 1,
 				beamtime = 0.55,
 				corethickness = 0.3,
 				craterboost = 0,

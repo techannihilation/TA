@@ -122,7 +122,6 @@ return {
 			anchorempbeam = {
 				accuracy = 1,
 				areaofeffect = 60,
-				beamlaser = 1,
 				beamtime = 0.5,
 				burnblow = true,
 				corethickness = 0.2,

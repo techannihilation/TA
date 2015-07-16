@@ -155,7 +155,6 @@ return {
 			},
 			core_batslaser = {
 				areaofeffect = 8,
-				beamlaser = 1,
 				beamtime = 0.2,
 				corethickness = 0.2,
 				craterboost = 0,

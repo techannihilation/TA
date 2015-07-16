@@ -129,7 +129,6 @@ return {
 		weapondefs = {
 			hydra_gun = {
 				areaofeffect = 8,
-				beamlaser = 1,
 				beamtime = 0.25,
 				corethickness = 0.4,
 				craterboost = 0,

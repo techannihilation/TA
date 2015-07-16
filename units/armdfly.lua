@@ -96,7 +96,6 @@ return {
 		weapondefs = {
 			armdfly_paralyzer = {
 				areaofeffect = 32,
-				beamlaser = 1,
 				beamtime = 0.1,
 				collidefriendly = false,
 				craterboost = 0,

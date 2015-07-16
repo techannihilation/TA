@@ -122,7 +122,6 @@ return {
 		weapondefs = {
 			ata = {
 				areaofeffect = 16,
-				beamlaser = 1,
 				beamtime = 2,
 				corethickness = 0.2,
 				craterboost = 0,

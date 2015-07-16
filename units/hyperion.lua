@@ -130,7 +130,6 @@ return {
 			karganeth_cannon = {
 				accuracy = 500,
 				areaofeffect = 350,
-				beamlaser = 1,
 				beamtime = 0.55,
 				burnblow = true,
 				cegtag = "bluelight",

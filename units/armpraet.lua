@@ -91,7 +91,6 @@ return {
 		weapondefs = {
 			praetorian_head = {
 				areaofeffect = 14,
-				beamlaser = 1,
 				beamtime = 1.05,
 				corethickness = 0.5,
 				craterboost = 0,

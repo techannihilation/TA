@@ -122,7 +122,6 @@ return {
 		weapondefs = {
 			arm_laserh2 = {
 				areaofeffect = 20,
-				beamlaser = 1,
 				beamtime = 0.6,
 				corethickness = 0.45,
 				craterboost = 0,

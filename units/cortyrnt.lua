@@ -108,7 +108,6 @@ return {
 		weapondefs = {
 			blod_doom = {
 				areaofeffect = 32,
-				beamlaser = 1,
 				beamtime = 0.3,
 				corethickness = 0.3,
 				craterboost = 0,

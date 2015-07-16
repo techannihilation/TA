@@ -168,7 +168,6 @@ return {
 			},
 			gladiator_laser = {
 				areaofeffect = 8,
-				beamlaser = 1,
 				beamtime = 0.08,
 				burnblow = true,
 				energypershot = 10,

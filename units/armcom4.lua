@@ -227,7 +227,6 @@ return {
 			},
 			armcomlaser4 = {
 				areaofeffect = 12,
-				beamlaser = 1,
 				beamtime = 0.1,
 				corethickness = 0.18,
 				craterboost = 0,

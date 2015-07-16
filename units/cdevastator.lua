@@ -197,7 +197,6 @@ return {
 			},
 			mountedantimatteraccelerator = {
 				areaofeffect = 300,
-				beamlaser = 1,
 				beamtime = 1.5,
 				burnblow = true,
 				corethickness = 0.4,

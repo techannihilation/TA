@@ -124,7 +124,6 @@ return {
 			core_lightlaser = {
 				areaofeffect = 12,
 				avoidfeature = false,
-				beamlaser = 1,
 				beamtime = 0.12,
 				corethickness = 0.175,
 				craterboost = 0,

@@ -85,7 +85,6 @@ return {
 		weapondefs = {
 			armjade_laser = {
 				areaofeffect = 15,
-				beamlaser = 1,
 				beamtime = 0.3,
 				corethickness = 0.175,
 				energypershot = 25,

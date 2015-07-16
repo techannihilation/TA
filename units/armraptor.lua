@@ -127,7 +127,6 @@ return {
 			mech_rapidlaser1 = {
 				areaofeffect = 24,
 				avoidfeature = false,
-				beamlaser = 1,
 				beamtime = 0.15,
 				craterboost = 0,
 				cratermult = 0,

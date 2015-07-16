@@ -126,7 +126,6 @@ return {
 		weapondefs = {
 			core_laser = {
 				areaofeffect = 8,
-				beamlaser = 1,
 				beamtime = 0.18,
 				burstrate = 0.2,
 				corethickness = 0.1,

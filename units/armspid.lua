@@ -117,7 +117,6 @@ return {
 		weapondefs = {
 			spider = {
 				areaofeffect = 8,
-				beamlaser = 1,
 				beamtime = 0.1,
 				corethickness = 0.2,
 				craterboost = 0,
