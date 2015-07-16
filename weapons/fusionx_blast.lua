@@ -7,7 +7,6 @@ local weaponName = "fusionx_blast"
 
 local weaponDef = {
 	areaofeffect = 480,
-	ballistic = 1,
 	craterboost = 1.1,
 	cratermult = 1.1,
 	edgeeffectiveness = 0.5,

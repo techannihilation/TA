@@ -7,7 +7,6 @@ local weaponName = "impulse_mine"
 
 local weaponDef = {
 	areaofeffect = 200,
-	ballistic = 1,
 	commandfire = 1,
 	craterboost = 0,
 	cratermult = 0,

@@ -7,7 +7,6 @@ local weaponName = "big_tank"
 
 local weaponDef = {
 	areaofeffect = 64,
-	ballistic = 1,
 	craterboost = 0,
 	cratermult = 0,
 	explosiongenerator = [[custom:Death_Explosion_Medium_Tank]],

@@ -9,7 +9,6 @@ local weaponDef = {
 	areaofeffect = 192,
 	avoidfeature = 0,
 	avoidfriendly = 0,
-	ballistic = 1,
 	collidefriendly = 0,
 	craterboost = 0,
 	cratermult = 0,

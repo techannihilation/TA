@@ -7,7 +7,6 @@ local weaponName = "decoy_commander_blast"
 
 local weaponDef = {
 	areaofeffect = 32,
-	ballistic = 1,
 	craterboost = 0,
 	cratermult = 0,
 	edgeeffectiveness = 0.25,

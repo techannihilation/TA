@@ -7,7 +7,6 @@ local weaponName = "atomic_blast"
 
 local weaponDef = {
 	areaofeffect = 480,
-	ballistic = 1,
 	craterboost = 0,
 	cratermult = 0,
 	explosiongenerator = [[custom:FLASHNUKE480]],

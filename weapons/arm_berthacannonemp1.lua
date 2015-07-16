@@ -10,7 +10,6 @@ local weaponDef = {
 	aimrate = 500,
 	alphaDecay = 0.01,
 	areaOfEffect = 510,
-	ballistic = true,
 	cegTag = [[vulcanfx1]],
 	color = 3,
 	craterBoost = 0,

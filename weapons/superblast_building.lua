@@ -7,7 +7,6 @@ local weaponName = "superblast_building"
 
 local weaponDef = {
 	areaofeffect = 2880,
-	ballistic = 1,
 	craterboost = 1.5,
 	cratermult = 1,
 	edgeeffectiveness = 0.5,

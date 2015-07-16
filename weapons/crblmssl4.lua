@@ -7,7 +7,6 @@ local weaponName = "crblmssl4"
 
 local weaponDef = {
 	areaofeffect = 2720,
-	ballistic = 0,
 	craterboost = 6,
 	cratermult = 3,
 	edgeeffectiveness = 0.25,

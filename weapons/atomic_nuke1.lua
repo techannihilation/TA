@@ -7,7 +7,6 @@ local weaponName = "atomic_nuke1"
 
 local weaponDef = {
 	areaofeffect = 1550,
-	ballistic = 1,
 	craterboost = 0,
 	cratermult = 0,
 	edgeeffectiveness = 0.25,

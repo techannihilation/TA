@@ -7,7 +7,6 @@ local weaponName = "armestor_buildingex"
 
 local weaponDef = {
 	areaofeffect = 210,
-	ballistic = 1,
 	craterboost = 0,
 	cratermult = 0,
 	explosiongenerator = [[custom:FLASHBIGBUILDINGEX]],

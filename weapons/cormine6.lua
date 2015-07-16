@@ -7,7 +7,6 @@ local weaponName = "cormine6"
 
 local weaponDef = {
 	areaofeffect = 480,
-	ballistic = 1,
 	craterboost = 4,
 	cratermult = 1.25,
 	edgeeffectiveness = 0.30000001192093,

@@ -7,7 +7,6 @@ local weaponName = "twilight"
 
 local weaponDef = {
 	areaofeffect = 400,
-	ballistic = 1,
 	commandfire = 1,
 	craterboost = 0,
 	cratermult = 0,

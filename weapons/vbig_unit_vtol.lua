@@ -7,7 +7,6 @@ local weaponName = "vbig_unit_vtol"
 
 local weaponDef = {
 	areaofeffect = 120,
-	ballistic = 1,
 	craterboost = 0,
 	cratermult = 0,
 	explosiongenerator = [[custom:Death_Explosion_Large_Unit]],

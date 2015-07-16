@@ -7,7 +7,6 @@ local weaponName = "estor_building"
 
 local weaponDef = {
 	areaofeffect = 520,
-	ballistic = 1,
 	craterboost = 0,
 	cratermult = 0,
 	explosiongenerator = [[custom:FLASHNUKE480]],

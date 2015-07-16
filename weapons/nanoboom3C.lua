@@ -7,7 +7,6 @@ local weaponName = "nanoboom3C"
 
 local weaponDef = {
 	areaofeffect = 160,
-	ballistic = 1,
 	craterboost = 0,
 	cratermult = 0,
 	edgeeffectiveness = 0.75,

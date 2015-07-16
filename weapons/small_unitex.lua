@@ -7,7 +7,6 @@ local weaponName = "small_unitex"
 
 local weaponDef = {
 	areaofeffect = 32,
-	ballistic = 1,
 	craterboost = 0,
 	cratermult = 0,
 	explosiongenerator = [[custom:FLASHSMALLUNITEX]],

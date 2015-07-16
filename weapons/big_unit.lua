@@ -7,7 +7,6 @@ local weaponName = "big_unit"
 
 local weaponDef = {
 	areaofeffect = 120,
-	ballistic = 1,
 	craterboost = 0,
 	cratermult = 0,
 	explosiongenerator = [[custom:FLASHBIGUNIT]],

@@ -7,7 +7,6 @@ local weaponName = "nuclear_disaster"
 
 local weaponDef = {
 	areaofeffect = 1180,
-	ballistic = 1,
 	craterboost = 0,
 	cratermult = 0,
 	edgeeffectiveness = 0.5,

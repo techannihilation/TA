@@ -7,7 +7,6 @@ local weaponName = "commander_selfd"
 
 local weaponDef = {
 	areaofeffect = 1010,
-	ballistic = 1,
 	craterboost = 6,
 	cratermult = 3,
 	edgeeffectiveness = 0.25,

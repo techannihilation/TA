@@ -7,7 +7,6 @@ local weaponName = "smallship"
 
 local weaponDef = {
 	areaofeffect = 250,
-	ballistic = 1,
 	craterboost = 0,
 	cratermult = 0,
 	edgeeffectiveness = 0.5,

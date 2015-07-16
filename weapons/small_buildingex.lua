@@ -7,7 +7,6 @@ local weaponName = "small_buildingex"
 
 local weaponDef = {
 	areaofeffect = 180,
-	ballistic = 1,
 	craterboost = 0,
 	cratermult = 0,
 	explosiongenerator = [[custom:FLASHSMALLBUILDINGEX]],

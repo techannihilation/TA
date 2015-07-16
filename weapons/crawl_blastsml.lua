@@ -7,7 +7,6 @@ local weaponName = "crawl_blastsml"
 
 local weaponDef = {
 	areaofeffect = 280,
-	ballistic = 1,
 	craterboost = 0,
 	cratermult = 0,
 	edgeeffectiveness = 0.34999999403954,

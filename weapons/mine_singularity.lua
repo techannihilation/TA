@@ -7,7 +7,6 @@ local weaponName = "mine_singularity"
 
 local weaponDef = {
 	areaofeffect = 200,
-	ballistic = 1,
 	craterboost = 10,
 	cratermult = 5,
 	edgeeffectiveness = 0.69999998807907,

@@ -7,7 +7,6 @@ local weaponName = "nanoboom4A"
 
 local weaponDef = {
 	areaofeffect = 192,
-	ballistic = 1,
 	craterboost = 0,
 	cratermult = 0,
 	edgeeffectiveness = 0.75,

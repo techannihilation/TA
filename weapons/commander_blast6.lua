@@ -7,7 +7,6 @@ local weaponName = "commander_blast6"
 
 local weaponDef = {
 	areaofeffect = 820,
-	ballistic = 1,
 	craterboost = 6,
 	cratermult = 3,
 	edgeeffectiveness = 0.25,

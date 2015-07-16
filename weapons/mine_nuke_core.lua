@@ -7,7 +7,6 @@ local weaponName = "mine_nuke_core"
 
 local weaponDef = {
 	areaofeffect = 768,
-	ballistic = 1,
 	craterboost = 5,
 	cratermult = 2.5,
 	edgeeffectiveness = 0.20000000298023,

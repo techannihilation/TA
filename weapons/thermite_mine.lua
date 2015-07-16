@@ -7,7 +7,6 @@ local weaponName = "thermite_mine"
 
 local weaponDef = {
 	areaofeffect = 64,
-	ballistic = 1,
 	commandfire = 1,
 	craterboost = 0,
 	cratermult = 0,

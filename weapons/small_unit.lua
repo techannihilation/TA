@@ -7,7 +7,6 @@ local weaponName = "small_unit"
 
 local weaponDef = {
 	areaofeffect = 60,
-	ballistic = 1,
 	craterboost = 0,
 	cratermult = 0,
 	explosiongenerator = [[custom:FLASHSMALLUNIT]],

@@ -7,7 +7,6 @@ local weaponName = "mine_heavy"
 
 local weaponDef = {
 	areaofeffect = 300,
-	ballistic = 1,
 	craterboost = 0,
 	cratermult = 0,
 	edgeeffectiveness = 0.69999998807907,

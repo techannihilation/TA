@@ -7,7 +7,6 @@ local weaponName = "shipblast"
 
 local weaponDef = {
 	areaofeffect = 350,
-	ballistic = 1,
 	craterboost = 0,
 	cratermult = 0,
 	edgeeffectiveness = 0.5,

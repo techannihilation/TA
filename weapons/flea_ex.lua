@@ -7,7 +7,6 @@ local weaponName = "flea_ex"
 
 local weaponDef = {
 	areaofeffect = 20,
-	ballistic = 1,
 	craterboost = 0,
 	cratermult = 0,
 	explosiongenerator = [[custom:FLASH2]],

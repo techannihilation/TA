@@ -7,7 +7,6 @@ local weaponName = "medium_buildingex"
 
 local weaponDef = {
 	areaofeffect = 260,
-	ballistic = 1,
 	craterboost = 0,
 	cratermult = 0,
 	explosiongenerator = [[custom:FLASHMEDIUMBUILDINGEX]],

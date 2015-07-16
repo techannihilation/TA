@@ -7,7 +7,6 @@ local weaponName = "bantha_death"
 
 local weaponDef = {
 	areaofeffect = 600,
-	ballistic = 1,
 	craterboost = 0,
 	cratermult = 0,
 	edgeeffectiveness = 0.30000001192093,

@@ -7,7 +7,6 @@ local weaponName = "atomic_blast_core"
 
 local weaponDef = {
 	areaofeffect = 480,
-	ballistic = 1,
 	craterboost = 0,
 	cratermult = 0,
 	explosiongenerator = [[custom:CORE_FUSION_EXPLO_480]],
