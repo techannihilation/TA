@@ -131,7 +131,6 @@ return {
 				explosiongenerator = "custom:ARM_FIRE_SMALL",
 				firestarter = 20,
 				flighttime = 3,
-				guidance = true,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				model = "missile",

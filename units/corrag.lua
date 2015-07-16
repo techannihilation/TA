@@ -106,7 +106,6 @@ return {
 				edgeeffectiveness = 0.95,
 				explosiongenerator = "custom:FLASH2",
 				firestarter = 85,
-				guidance = true,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				model = "quadmissile3g",

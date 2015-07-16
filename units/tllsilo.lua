@@ -128,7 +128,6 @@ return {
 				explosiongenerator = "custom:nuke_explo_1280",
 				firestarter = 0,
 				flighttime = 400,
-				guidance = true,
 				impulseboost = 0.5,
 				impulsefactor = 2.9,
 				metalpershot = 1750,

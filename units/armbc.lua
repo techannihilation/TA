@@ -190,7 +190,6 @@ return {
 				canattackground = false,
 				cegtag = "Arm_Def_AA_Rocket",
 				firestarter = 70,
-				guidance = true,
 				id = 253,
 				metalpershot = 0,
 				model = "missile",

@@ -87,7 +87,6 @@ return {
 				craterboost = 0,
 				cratermult = 0,
 				firestarter = 70,
-				guidance = true,
 				id = 134,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,

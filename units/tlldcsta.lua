@@ -111,7 +111,6 @@ return {
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
 				groundbounce = true,
-				guidance = true,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				model = "depthcharge",

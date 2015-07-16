@@ -117,7 +117,6 @@ return {
 			coreheavydepthcharge = {
 				areaofeffect = 16,
 				burnblow = true,
-				guidance = true,
 				id = 31,
 				model = "DEPTHCHARGE",
 				name = "Depth Charge",

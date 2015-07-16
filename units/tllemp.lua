@@ -117,7 +117,6 @@ return {
 				explosiongenerator = "custom:EMPLAUNCHER",
 				firestarter = 0,
 				flighttime = 400,
-				guidance = true,
 				impulseboost = 0,
 				impulsefactor = 0,
 				metalpershot = 750,

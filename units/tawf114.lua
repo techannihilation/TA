@@ -140,7 +140,6 @@ return {
 				edgeeffectiveness = 0.4,
 				explosiongenerator = "custom:thermite_explosion",
 				firestarter = 20,
-				guidance = true,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				model = "TAWF114a",

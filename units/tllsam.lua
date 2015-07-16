@@ -116,7 +116,6 @@ return {
 				explosiongenerator = "custom:FLASH2",
 				firestarter = 72,
 				flighttime = 2,
-				guidance = true,
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,

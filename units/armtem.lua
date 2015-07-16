@@ -126,7 +126,6 @@ return {
 				cratermult = 0,
 				firestarter = 70,
 				flighttime = 6,
-				guidance = true,
 				id = 235,
 				impulseboost = 0,
 				impulsefactor = 0,

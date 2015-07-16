@@ -121,7 +121,6 @@ return {
 				firestarter = 100,
 				firesubmersed = true,
 				flighttime = 10,
-				guidance = true,
 				id = 243,
 				metalpershot = 0,
 				model = "vpulse",

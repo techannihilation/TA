@@ -171,7 +171,6 @@ return {
 			armscpion_torpedo = {
 				areaofeffect = 16,
 				burnblow = true,
-				guidance = true,
 				model = "torpedo5",
 				name = "Guided Torpedo",
 				range = 400,

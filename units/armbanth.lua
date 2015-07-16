@@ -159,7 +159,6 @@ return {
 				cratermult = 0,
 				explosiongenerator = "custom:incendiary_explosion_medium",
 				firestarter = 70,
-				guidance = true,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				model = "exphvyrock",

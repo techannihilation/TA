@@ -124,7 +124,6 @@ return {
 				explosiongenerator = "custom:chemxplo",
 				firestarter = 0,
 				flighttime = 400,
-				guidance = true,
 				impulseboost = 0.023,
 				impulsefactor = 0.023,
 				metalpershot = 750,

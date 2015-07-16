@@ -18,7 +18,6 @@ local weaponDef = {
 	explosiongenerator = [[custom:CORE_FUSION_EXPLO_1280]],
 	firestarter = 0,
 	flighttime = 400,
-	guidance = 1,
 	impulseboost = 0.5,
 	impulsefactor = 0.5,
 	lineofsight = 1,

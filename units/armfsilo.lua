@@ -120,7 +120,6 @@ return {
 				energypershot = 2800000,
 				firestarter = 100,
 				flighttime = 450,
-				guidance = true,
 				id = 222,
 				metalpershot = 16000,
 				model = "fnuke",

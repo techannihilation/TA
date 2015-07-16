@@ -82,7 +82,6 @@ return {
 				burst = 3,
 				burstrate = 0.2,
 				canattackground = false,
-				guidance = true,
 				id = 140,
 				model = "tlltorpedo",
 				name = "Torpedo Launcher",

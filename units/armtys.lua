@@ -88,7 +88,6 @@ return {
 				explosiongenerator = "custom:Explosion_Medium_VLight",
 				firestarter = 70,
 				flighttime = 2.5,
-				guidance = true,
 				id = 235,
 				metalpershot = 0,
 				model = "missile",

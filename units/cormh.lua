@@ -128,7 +128,6 @@ return {
 				firestarter = 100,
 				firesubmersed = true,
 				flighttime = 10,
-				guidance = true,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,

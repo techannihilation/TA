@@ -144,7 +144,6 @@ return {
 			macross_missile = {
 				areaofeffect = 150,
 				firestarter = 70,
-				guidance = true,
 				id = 170,
 				metalpershot = 0,
 				model = "macrossmissile",

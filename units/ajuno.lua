@@ -131,7 +131,6 @@ return {
 				energypershot = 16000,
 				explosiongenerator = "custom:FLASHJUNO",
 				flighttime = 400,
-				guidance = true,
 				impulseboost = 0,
 				impulsefactor = 0,
 				metalpershot = 0,

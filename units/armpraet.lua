@@ -128,7 +128,6 @@ return {
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH4",
 				firestarter = 70,
-				guidance = true,
 				metalpershot = 0,
 				model = "praetorian_missile",
 				name = "HeavyRockets",

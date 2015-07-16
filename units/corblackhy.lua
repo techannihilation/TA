@@ -199,7 +199,6 @@ return {
 				explosiongenerator = "custom:FLASH2",
 				firestarter = 70,
 				gravityaffected = "TRUE",
-				guidance = true,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				minbarrelangle = -24,

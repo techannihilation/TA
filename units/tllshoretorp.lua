@@ -115,7 +115,6 @@ return {
 				explosiongenerator = "custom:FLASH2",
 				flighttime = 2,
 				groundbounce = true,
-				guidance = true,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				model = "tlltorpedo",

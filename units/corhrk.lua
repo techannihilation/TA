@@ -126,7 +126,6 @@ return {
 				explosiongenerator = "custom:incendiary_explosion_small",
 				firestarter = 100,
 				flighttime = 10,
-				guidance = true,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,

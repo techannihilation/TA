@@ -142,7 +142,6 @@ return {
 				duration = 0.04,
 				energypershot = 0,
 				explosiongenerator = "custom:shotgunImpact",
-				guidance = true,
 				id = 243,
 				impulseboost = 0,
 				intensity = 1,

@@ -128,7 +128,6 @@ return {
 				explosiongenerator = "custom:FLASHNUKE480",
 				firestarter = 0,
 				flighttime = 400,
-				guidance = true,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 550,

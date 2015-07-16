@@ -172,7 +172,6 @@ return {
 				explosiongenerator = "custom:ARM_FIRE_SMALL",
 				firestarter = 0,
 				flighttime = 5,
-				guidance = true,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,

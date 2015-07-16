@@ -171,7 +171,6 @@ return {
 			corsmart_torpedo2 = {
 				areaofeffect = 16,
 				burnblow = true,
-				guidance = true,
 				id = 13,
 				model = "torpedo5",
 				name = "Guided Torpedo",

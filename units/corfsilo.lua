@@ -119,7 +119,6 @@ return {
 				energypershot = 3000000,
 				firestarter = 100,
 				flighttime = 450,
-				guidance = true,
 				id = 233,
 				metalpershot = 18000,
 				model = "corfnuke",

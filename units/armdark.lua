@@ -127,7 +127,6 @@ return {
 				cratermult = 0,
 				explosiongenerator = "custom:Explosion_Medium_Rocket",
 				firestarter = 70,
-				guidance = true,
 				id = 234,
 				metalpershot = 0,
 				model = "missilehorgue",

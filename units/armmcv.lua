@@ -165,7 +165,6 @@ return {
 				explosiongenerator = "custom:Explosion_Medium_VLight",
 				fixedlauncher = true,
 				flighttime = 10,
-				guidance = true,
 				impulseboost = 0,
 				impulsefactor = 0,
 				metalpershot = 0,

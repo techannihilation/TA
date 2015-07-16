@@ -127,7 +127,6 @@ return {
 				cratermult = 0,
 				explosiongenerator = "custom:VEHROCKET_EXPLOSION",
 				firestarter = 70,
-				guidance = true,
 				impulsefactor = 1,
 				model = "megamisl",
 				name = "HeavyRocket",

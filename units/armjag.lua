@@ -183,7 +183,6 @@ return {
 				cegtag = "ARMRAVENTRAIL",
 				firestarter = 70,
 				flighttime = 5,
-				guidance = true,
 				id = 137,
 				metalpershot = 0,
 				model = "advmsl",

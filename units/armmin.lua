@@ -116,7 +116,6 @@ return {
 				explosiongenerator = "custom:MINESWEEP",
 				firestarter = 0,
 				flighttime = 10,
-				guidance = true,
 				impulseboost = 0,
 				impulsefactor = 0,
 				metalpershot = 50,

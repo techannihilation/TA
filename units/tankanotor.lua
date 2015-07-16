@@ -131,7 +131,6 @@ return {
 				explosiongenerator = "custom:Explosion_Medium_Rocket",
 				firestarter = 20,
 				flighttime = 5,
-				guidance = true,
 				id = 233,
 				impulseboost = 0,
 				impulsefactor = 0,

@@ -107,7 +107,6 @@ return {
 				burnblow = true,
 				burst = 2,
 				burstrate = 0.5,
-				guidance = true,
 				id = 219,
 				model = "TLLtorpedo",
 				name = "Torpedo Launcher",

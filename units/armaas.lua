@@ -131,7 +131,6 @@ return {
 				energypershot = 0,
 				explosiongenerator = "custom:FLASH2",
 				firestarter = 72,
-				guidance = true,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,

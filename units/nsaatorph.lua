@@ -118,7 +118,6 @@ return {
 			armheavydepthcharge = {
 				areaofeffect = 16,
 				burnblow = true,
-				guidance = true,
 				id = 17,
 				model = "DEPTHCHARGE",
 				name = "Depth Charge",

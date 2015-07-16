@@ -152,7 +152,6 @@ return {
 				explosiongenerator = "custom:FLASHSMALLBUILDINGEX",
 				firestarter = 70,
 				flighttime = 1.3,
-				guidance = true,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 25,

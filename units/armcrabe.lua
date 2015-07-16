@@ -152,7 +152,6 @@ return {
 				cegtag = "Trail_Large_Rocket",
 				explosiongenerator = "custom:Explosion_Light_Plasma-2",
 				firestarter = 20,
-				guidance = true,
 				id = 233,
 				model = "missileH2",
 				name = "Heavy Rocket",

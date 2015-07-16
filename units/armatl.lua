@@ -103,7 +103,6 @@ return {
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH3",
-				guidance = true,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				model = "Advtorpedo",

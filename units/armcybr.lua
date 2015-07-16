@@ -94,7 +94,6 @@ return {
 				explosiongenerator = "custom:nix_mininuke",
 				firestarter = 100,
 				flighttime = 1.5,
-				guidance = true,
 				impulseboost = 1.723,
 				impulsefactor = 1.75,
 				interceptedbyshieldtype = 16,

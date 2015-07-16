@@ -194,7 +194,6 @@ return {
 				explosiongenerator = "custom:incendiary_explosion_medium",
 				firestarter = 100,
 				flighttime = 6,
-				guidance = true,
 				id = 228,
 				metalpershot = 0,
 				model = "missile",

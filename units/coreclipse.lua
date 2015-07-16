@@ -106,7 +106,6 @@ return {
 				firestarter = 100,
 				flighttime = 175,
 				gravityaffected = "true",
-				guidance = false,
 				id = 133,
 				impulseboost = 0.15,
 				impulsefactor = 0.15,
