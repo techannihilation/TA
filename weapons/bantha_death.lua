@@ -16,7 +16,6 @@ local weaponDef = {
 	name = [[BanthaBoom]],
 	range = 450,
 	reloadtime = 3.5999999046326,
-	rendertype = 4,
 	soundhit = [[xplonuk3]],
 	soundstart = [[largegun]],
 	turret = 1,

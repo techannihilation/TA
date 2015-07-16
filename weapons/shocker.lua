@@ -23,7 +23,6 @@ local weaponDef = {
 	predictboost = 0.75,
 	range = 1325,
 	reloadtime = 6,
-	rendertype = 4,
 	size = 5,
 	soundhit = [[xplomed2]],
 	soundstart = [[cannhvy5]],

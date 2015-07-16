@@ -15,7 +15,6 @@ local weaponDef = {
 	name = [[Smalltank]],
 	range = 480,
 	reloadtime = 3.5999999046326,
-	rendertype = 4,
 	soundhit = [[xplomed2]],
 	soundstart = [[largegun]],
 	turret = 1,

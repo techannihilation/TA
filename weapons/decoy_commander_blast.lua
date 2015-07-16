@@ -16,7 +16,6 @@ local weaponDef = {
 	name = [[FakeCommanderExplosion]],
 	range = 380,
 	reloadtime = 3.5999999046326,
-	rendertype = 4,
 	shakeduration = 5,
 	shakemagnitude = 600,
 	soundhit = [[xplolrg3]],

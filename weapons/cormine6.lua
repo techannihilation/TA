@@ -17,7 +17,6 @@ local weaponDef = {
 	noselfdamage = 1,
 	range = 480,
 	reloadtime = 3.5999999046326,
-	rendertype = 4,
 	shakeduration = 0,
 	shakemagnitude = 0,
 	soundhit = [[xplonuk3]],

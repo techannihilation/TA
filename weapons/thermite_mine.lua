@@ -19,7 +19,6 @@ local weaponDef = {
 	name = [[Thermite Blast]],
 	range = 600,
 	reloadtime = 0.30000001192093,
-	rendertype = 4,
 	soundHitDry = [[xplosml3]],
 	soundStart = [[canlite3]],
 	tolerance = 7000,

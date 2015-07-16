@@ -27,7 +27,6 @@ local weaponDef = {
 	noautorange = 1,
 	range = 72000,
 	reloadtime = 180,
-	rendertype = 1,
 	selfprop = 1,
 	shakeduration = 3,
 	shakemagnitude = 50,

@@ -15,7 +15,6 @@ local weaponDef = {
 	name = [[Smallbuilding]],
 	range = 550,
 	reloadtime = 3.5999999046326,
-	rendertype = 4,
 	soundhit = [[xplolrg4]],
 	soundstart = [[largegun]],
 	turret = 1,

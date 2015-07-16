@@ -15,7 +15,6 @@ local weaponDef = {
 	name = [[MediumMine]],
 	range = 480,
 	reloadtime = 3.5999999046326,
-	rendertype = 4,
 	soundhit = [[xplomed1]],
 	soundstart = [[largegun]],
 	weaponvelocity = 250,

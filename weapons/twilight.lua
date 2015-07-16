@@ -21,7 +21,6 @@ local weaponDef = {
 	paralyzetime = 20,
 	range = 600,
 	reloadtime = 0.30000001192093,
-	rendertype = 4,
 	soundhit = [[EMGPULS1]],
 	soundstart = [[bombrel]],
 	tolerance = 7000,

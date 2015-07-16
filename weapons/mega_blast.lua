@@ -16,7 +16,6 @@ local weaponDef = {
 	name = [[Matter/AntimatterExplosion]],
 	range = 1800,
 	reloadtime = 3.6,
-	rendertype = 4,
 	shakeduration = 2.2,
 	shakemagnitude = 5,
 	soundhit = [[explosionbig]],

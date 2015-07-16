@@ -18,7 +18,6 @@ local weaponDef = {
 	name = [[MEX]],
 	range = 128,
 	reloadtime = 3.5999999046326,
-	rendertype = 4,
 	soundhit = [[xplosml3]],
 	soundstart = [[largegun]],
 	turret = 1,
