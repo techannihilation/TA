@@ -194,7 +194,6 @@ return {
 				tolerance = 6000,
 				tracks = true,
 				turnrate = 68000,
-				twophase = true,
 				weaponacceleration = 200,
 				weapontimer = 1,
 				weapontype = "StarburstLauncher",

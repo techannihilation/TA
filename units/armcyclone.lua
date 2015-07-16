@@ -121,7 +121,6 @@ return {
 				startvelocity = 500,
 				targetable = 0,
 				tracks = true,
-				twophase = true,
 				unitsonly = 0,
 				waterweapon = false,
 				weaponacceleration = 500,

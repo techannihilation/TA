@@ -145,7 +145,6 @@ return {
 				targetable = 0,
 				tolerance = 4000,
 				turnrate = 24384,
-				twophase = true,
 				weaponacceleration = 80,
 				weapontimer = 5,
 				weapontype = "StarburstLauncher",

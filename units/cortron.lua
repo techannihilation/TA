@@ -148,7 +148,6 @@ return {
 				stockpiletime = 75,
 				tolerance = 4000,
 				turnrate = 32768,
-				twophase = true,
 				weaponacceleration = 180,
 				weapontimer = 4,
 				weapontype = "StarburstLauncher",

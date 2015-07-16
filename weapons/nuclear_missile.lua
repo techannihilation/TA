@@ -41,7 +41,6 @@ local weaponDef = {
 	targetable = 1,
 	tolerance = 4000,
 	turnrate = 32768,
-	twophase = 1,
 	weaponacceleration = 100,
 	weapontimer = 8,
 	weaponvelocity = 1600,

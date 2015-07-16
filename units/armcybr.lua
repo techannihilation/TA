@@ -120,7 +120,6 @@ return {
 				tolerance = 16000,
 				tracks = true,
 				turnrate = 32768,
-				twophase = true,
 				unitsonly = 0,
 				weaponacceleration = 40,
 				weapontimer = 6,

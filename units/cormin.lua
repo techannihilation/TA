@@ -133,7 +133,6 @@ return {
 				stockpiletime = 5,
 				tolerance = 4000,
 				turnrate = 30000,
-				twophase = true,
 				weaponacceleration = 150,
 				weapontimer = 6,
 				weapontype = "MissileLauncher",
