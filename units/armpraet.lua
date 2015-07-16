@@ -148,7 +148,6 @@ return {
 				tracks = true,
 				turnrate = 96000,
 				twophase = true,
-				vlaunch = true,
 				weaponacceleration = 300,
 				weapontimer = 2,
 				weapontype = "StarburstLauncher",

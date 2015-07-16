@@ -43,7 +43,6 @@ local weaponDef = {
 	tolerance = 4000,
 	turnrate = 32768,
 	twophase = 1,
-	vlaunch = 1,
 	weaponacceleration = 100,
 	weapontimer = 8,
 	weaponvelocity = 1600,

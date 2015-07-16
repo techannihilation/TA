@@ -206,7 +206,6 @@ return {
 				tolerance = 4000,
 				turnrate = 32768,
 				twophase = true,
-				vlaunch = true,
 				waterweapon = true,
 				weaponacceleration = 75,
 				weapontimer = 5,

@@ -171,7 +171,6 @@ return {
 				soundstart = "Rockhvy1",
 				turnrate = 28384,
 				twophase = true,
-				vlaunch = true,
 				weaponacceleration = 100,
 				weapontimer = 2,
 				weapontype = "StarburstLauncher",

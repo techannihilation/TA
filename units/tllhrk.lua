@@ -140,7 +140,6 @@ return {
 				texture4 = "null",
 				turnrate = 24384,
 				twophase = true,
-				vlaunch = true,
 				weaponacceleration = 100,
 				weapontimer = 4,
 				weapontype = "StarburstLauncher",
