@@ -88,7 +88,6 @@ return {
 				cegtag = "Trail_emg_upg",
 				craterboost = 0,
 				cratermult = 0,
-				endsmoke = 0,
 				explosiongenerator = "custom:BRAWLIMPACTS",
 				impactonly = 1,
 				impulseboost = 0.123,

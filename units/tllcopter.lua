@@ -85,7 +85,6 @@ return {
 				burstrate = 0.1,
 				craterboost = 0,
 				cratermult = 0,
-				endsmoke = 0,
 				explosiongenerator = "custom:BRAWLIMPACTS",
 				impactonly = 1,
 				impulseboost = 0.123,

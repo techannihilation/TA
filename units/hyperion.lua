@@ -137,7 +137,6 @@ return {
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.01,
-				endsmoke = 0,
 				energypershot = 1500,
 				explosiongenerator = "custom:bigparticleboom",
 				firestarter = 20,

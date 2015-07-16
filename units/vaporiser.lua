@@ -125,7 +125,6 @@ return {
 				corethickness = 0.8,
 				craterboost = 0,
 				cratermult = 0,
-				endsmoke = 1,
 				energypershot = 0,
 				explosiongenerator = "custom:laser_residuals_sred",
 				firestarter = 20,

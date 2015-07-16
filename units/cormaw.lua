@@ -134,7 +134,6 @@ return {
 				burstrate = 0.01,
 				craterboost = 0,
 				cratermult = 0,
-				endsmoke = 0,
 				firestarter = 100,
 				flamegfxtime = 1.2,
 				groundbounce = true,

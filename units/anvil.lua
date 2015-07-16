@@ -127,7 +127,6 @@ return {
 				corethickness = 0.2,
 				craterboost = 0,
 				cratermult = 0,
-				endsmoke = 0,
 				energypershot = 12500,
 				explosiongenerator = "custom:anvil",
 				firestarter = 20,

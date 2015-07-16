@@ -114,7 +114,6 @@ return {
 				cegtag = "Trail_emg",
 				craterboost = 0,
 				cratermult = 0,
-				endsmoke = 0,
 				explosiongenerator = "custom:EMG_HIT",
 				firestarter = 100,
 				impactonly = 1,

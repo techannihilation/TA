@@ -69,7 +69,6 @@ return {
 				craterboost = 0,
 				cratermult = 0,
 				duration = 1,
-				endsmoke = 1,
 				energypershot = 2,
 				impulseboost = 0,
 				intensity = 1,

@@ -108,7 +108,6 @@ return {
 				craterboost = 0,
 				cratermult = 0,
 				duration = 0.07,
-				endsmoke = 1,
 				energypershot = 100,
 				explosiongenerator = "custom:100RLexplode",
 				id = 232,

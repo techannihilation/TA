@@ -128,7 +128,6 @@ return {
 				burstrate = 0.6,
 				craterboost = 0,
 				cratermult = 0,
-				endsmoke = 1,
 				firestarter = 70,
 				flighttime = 5,
 				guidance = true,

@@ -93,7 +93,6 @@ return {
 				cegtag = "VTOL_EMGTRAIL",
 				craterboost = 0,
 				cratermult = 0,
-				endsmoke = 0,
 				explosiongenerator = "custom:armbrawl_explosion",
 				impactonly = 1,
 				impulseboost = 0.123,

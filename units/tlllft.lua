@@ -118,7 +118,6 @@ return {
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.5,
-				endsmoke = 0,
 				firestarter = 95,
 				flamegfxtime = 1.2,
 				groundbounce = false,

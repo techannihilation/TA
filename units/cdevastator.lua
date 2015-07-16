@@ -202,7 +202,6 @@ return {
 				corethickness = 0.4,
 				craterboost = 0,
 				cratermult = 0,
-				endsmoke = 0,
 				energypershot = 0,
 				explosiongenerator = "custom:RAVAGER",
 				firestarter = 20,
