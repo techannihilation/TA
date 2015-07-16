@@ -96,7 +96,6 @@ return {
 				model = "torpedo",
 				name = "TorpedoLauncher",
 				noselfdamage = true,
-				propeller = 1,
 				range = 500,
 				reloadtime = 8,
 				soundhitdry = "xplodep2",

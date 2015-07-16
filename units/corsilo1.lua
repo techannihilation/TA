@@ -145,7 +145,6 @@ return {
 				model = "crblmssl",
 				name = "CoreNuclearMissile",
 				noautorange = 1,
-				propeller = 1,
 				range = 72000,
 				reloadtime = 1.8,
 				shakeduration = 4,

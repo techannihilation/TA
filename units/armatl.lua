@@ -109,7 +109,6 @@ return {
 				model = "Advtorpedo",
 				name = "LongRangeTorpedo",
 				noselfdamage = true,
-				propeller = 1,
 				range = 915,
 				reloadtime = 3.1,
 				soundhitdry = "xplodep1",

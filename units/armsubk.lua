@@ -136,7 +136,6 @@ return {
 				model = "torpedo",
 				name = "AdvancedTorpedo",
 				noselfdamage = true,
-				propeller = 1,
 				range = 600,
 				reloadtime = 2,
 				soundhitdry = "xplodep1",

@@ -143,7 +143,6 @@ return {
 				model = "ballmiss",
 				name = "NuclearMissile",
 				noautorange = 1,
-				propeller = 1,
 				range = 72000,
 				reloadtime = 1.5,
 				shakeduration = 3,

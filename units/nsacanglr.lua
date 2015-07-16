@@ -121,7 +121,6 @@ return {
 				id = 31,
 				model = "DEPTHCHARGE",
 				name = "Depth Charge",
-				propeller = 1,
 				range = 200,
 				reloadtime = 1,
 				soundhitdry = "xplodep2",

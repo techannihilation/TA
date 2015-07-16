@@ -132,7 +132,6 @@ return {
 				name = "Torpedo",
 				noselfdamage = true,
 				predictboost = 0,
-				propeller = 1,
 				range = 400,
 				reloadtime = 8,
 				soundhitdry = "xplodep2",

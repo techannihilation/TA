@@ -118,7 +118,6 @@ return {
 				name = "DepthCharge",
 				noselfdamage = true,
 				numbounce = 1,
-				propeller = 1,
 				range = 580,
 				reloadtime = 1.8,
 				soundhitdry = "xplodep2",

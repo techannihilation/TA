@@ -125,7 +125,6 @@ return {
 				model = "corfnuke",
 				name = "Ultimate Nuclear Missile",
 				noautorange = 1,
-				propeller = 1,
 				range = 80000,
 				reloadtime = 2,
 				shakeduration = 2.5,

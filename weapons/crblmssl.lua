@@ -26,7 +26,6 @@ local weaponDef = {
 	model = [[crblmssl]],
 	name = [[CoreNuclearMissile]],
 	noautorange = 1,
-	propeller = 1,
 	range = 72000,
 	reloadtime = 180,
 	rendertype = 1,

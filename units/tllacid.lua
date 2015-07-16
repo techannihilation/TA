@@ -132,7 +132,6 @@ return {
 				name = "Chemical Weapon",
 				noautorange = 1,
 				noselfdamage = true,
-				propeller = 1,
 				range = 3000,
 				reloadtime = 2,
 				shakeduration = 1.5,

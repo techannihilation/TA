@@ -174,7 +174,6 @@ return {
 				guidance = true,
 				model = "torpedo5",
 				name = "Guided Torpedo",
-				propeller = 1,
 				range = 400,
 				reloadtime = 3,
 				rgbcolor = "1.000 0.000 0.000",

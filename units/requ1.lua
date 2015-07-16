@@ -105,7 +105,6 @@ return {
 				name = "TacticalNuke",
 				noautorange = 1,
 				noselfdamage = true,
-				propeller = 1,
 				range = 2550,
 				reloadtime = 2,
 				shakeduration = 1.5,

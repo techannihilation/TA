@@ -175,7 +175,6 @@ return {
 				id = 13,
 				model = "torpedo5",
 				name = "Guided Torpedo",
-				propeller = 1,
 				range = 575,
 				reloadtime = 3.28,
 				rgbcolor = "1.000 0.000 0.000",

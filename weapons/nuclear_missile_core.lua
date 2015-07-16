@@ -26,7 +26,6 @@ local weaponDef = {
 	model = [[ballmiss]],
 	name = [[NuclearMissile]],
 	noautorange = 1,
-	propeller = 1,
 	range = 72000,
 	reloadtime = 120,
 	rendertype = 1,

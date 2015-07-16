@@ -111,7 +111,6 @@ return {
 				id = 219,
 				model = "TLLtorpedo",
 				name = "Torpedo Launcher",
-				propeller = 1,
 				range = 601,
 				reloadtime = 2.6,
 				soundhitdry = "SPLASH",

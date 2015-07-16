@@ -133,7 +133,6 @@ return {
 				model = "hcar_nuke1",
 				name = "Operational Nuclear Missile",
 				noautorange = 1,
-				propeller = 1,
 				range = 72000,
 				reloadtime = 3,
 				shakeduration = 4,

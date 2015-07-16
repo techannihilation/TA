@@ -127,7 +127,6 @@ return {
 				noselfdamage = true,
 				paralyzer = true,
 				paralyzetime = 22,
-				propeller = 1,
 				range = 4750,
 				reloadtime = 2,
 				shakeduration = 1.5,
