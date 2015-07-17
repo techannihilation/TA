@@ -4,8 +4,8 @@ return {
 		antiweapons = 1,
 		bmcode = 1,
 		brakerate = 0.27,
-		buildcostenergy = 134291,
-		buildcostmetal = 6896,
+		buildcostenergy = 119000,
+		buildcostmetal = 7400,
 		builder = false,
 		buildtime = 140000,
 		canattack = true,
@@ -120,7 +120,7 @@ return {
 		weapondefs = {
 			cannon_siege = {
 				accuracy = 750,
-				areaofeffect = 239,
+				areaofeffect = 280,
 				burst = 1,
 				burstrate = 1.5,
 				cegtag = "Trail_cannon",
@@ -132,7 +132,7 @@ return {
 				impulsefactor = 0.123,
 				name = "Plasma Cannon",
 				nogap = 1,
-				range = 1120,
+				range = 1350,
 				reloadtime = 4.25,
 				rgbcolor = "0.88 0.65 0",
 				separation = 0.45,
@@ -146,7 +146,8 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 450,
 				damage = {
-					default = 2325,
+					default = 2500,
+					commanders = 1500,
 					subs = 5,
 				},
 			},

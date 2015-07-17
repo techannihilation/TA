@@ -6,7 +6,7 @@ return {
 		bmcode = 1,
 		brakerate = 0.72,
 		buildcostenergy = 143003,
-		buildcostmetal = 8693,
+		buildcostmetal = 8900,
 		builder = false,
 		buildtime = 172624,
 		canattack = true,
