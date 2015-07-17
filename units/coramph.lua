@@ -163,13 +163,14 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "CORAMPH_WEAPON2",
-				onlytargetcategory = "NOTVTOL",
-			},
-			[3] = {
 				def = "CORAMPH_WEAPON1",
 				onlytargetcategory = "NOTHOVERNOTVTOL",
 			},
+			[2] = {
+				def = "CORAMPH_WEAPON2",
+				onlytargetcategory = "NOTVTOL",
+			},
+			
 		},
 	},
 }
