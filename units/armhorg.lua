@@ -167,11 +167,10 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "VTOL",
 				def = "armhorg_weapon",
 				maindir = "0 0 1",
 				maxangledif = 270,
-				onlytargetcategory = "ALL",
+				onlytargetcategory = "NOTVTOL",
 			},
 		},
 	},

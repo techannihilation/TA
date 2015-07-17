@@ -223,6 +223,7 @@ return {
 			[1] = {
 				def = "TEHLAZEROFDEWM",
 				onlytargetcategory = "NOTVTOL",
+				badtargetcategory = "MEDIUM SMALL TINY",
 			},
 			[2] = {
 				def = "ARMBANTHA_FIRE",
