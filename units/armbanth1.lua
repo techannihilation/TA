@@ -46,6 +46,7 @@ return {
 		script = "armbanth.cob",
 		seismicsignature = 0,
 		selfdestructas = "CRBLMSSL4",
+		selfdestructcountdown = 10,
 		side = "ARM",
 		sightdistance = 617,
 		standingfireorder = 2,
