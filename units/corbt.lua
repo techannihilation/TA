@@ -145,8 +145,6 @@ return {
 				reloadtime = 10,
 				rgbcolor = "0.71 0.39 0",
 				separation = 0.45,
-				shakeduration = 0,
-				shakemagnitude = 0,
 				size = 2.54,
 				sizedecay = -0.15,
 				soundhitdry = "explode3",

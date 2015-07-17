@@ -130,7 +130,6 @@ return {
 				energypershot = 1500,
 				firestarter = 50,
 				gravityaffected = "TRUE",
-				holdtime = 1,
 				id = 255,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,

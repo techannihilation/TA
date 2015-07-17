@@ -141,7 +141,6 @@ return {
 				metalpershot = 0,
 				model = "corvrocket",
 				name = "Rocket",
-				noautorange = 1,
 				noselfdamage = true,
 				range = 1400,
 				reloadtime = 20,

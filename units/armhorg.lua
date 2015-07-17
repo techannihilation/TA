@@ -140,8 +140,6 @@ return {
 				proximitypriority = -1,
 				range = 1650,
 				reloadtime = 8,
-				shakeduration = 1,
-				shakemagnitude = 10,
 				smoketrail = true,
 				soundhitdry = "TAWF114b",
 				soundstart = "TAWF114a",

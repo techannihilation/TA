@@ -129,7 +129,6 @@ return {
 				metalpershot = 0,
 				model = "armmhmsl",
 				name = "RocketArtillery",
-				noautorange = 1,
 				noselfdamage = true,
 				range = 710,
 				reloadtime = 6,

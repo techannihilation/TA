@@ -122,7 +122,6 @@ return {
 				areaofeffect = 8,
 				explosiongenerator = "custom:FLASH1",
 				impactonly = 1,
-				minbarrelangle = -15,
 				name = "GaussCannon",
 				noselfdamage = true,
 				range = 365,

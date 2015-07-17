@@ -128,7 +128,6 @@ return {
 			armcrabe_gauss = {
 				areaofeffect = 150,
 				explosiongenerator = "custom:Explosion_Medium_Rocket",
-				minbarrelangle = -15,
 				name = "Crabe Cannon",
 				range = 1050,
 				reloadtime = 3,
@@ -157,8 +156,6 @@ return {
 				name = "Heavy Rocket",
 				range = 1200,
 				reloadtime = 12,
-				shakeduration = 1,
-				shakemagnitude = 3,
 				smoketrail = true,
 				soundhitdry = "tankahit",
 				soundstart = "tankafire",

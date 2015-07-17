@@ -127,7 +127,6 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				laserflaresize = 6,
-				minbarrelangle = 0,
 				name = "Paralyzer",
 				noselfdamage = true,
 				paralyzer = true,

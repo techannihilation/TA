@@ -125,7 +125,6 @@ return {
 				id = 169,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				minbarrelangle = -35,
 				name = "Mortar Cannon",
 				nogap = 1,
 				range = 1520,

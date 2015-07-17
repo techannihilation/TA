@@ -138,8 +138,6 @@ return {
 				name = "Heavy Rocket",
 				range = 1060,
 				reloadtime = 7,
-				shakeduration = 1,
-				shakemagnitude = 3,
 				smoketrail = true,
 				soundhitdry = "tankahit",
 				soundstart = "TAWF114a",

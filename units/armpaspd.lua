@@ -130,7 +130,6 @@ return {
 				impulserfactor = 0,
 				intensity = 0.75,
 				name = "Sub-Zero Weapon",
-				noradar = 1,
 				noselfdamage = true,
 				paralyzer = true,
 				paralyzetime = 20,

@@ -169,7 +169,6 @@ return {
 				impulseboost = 0,
 				model = "DevastatorRocket",
 				name = "DevastatorRockets",
-				noautorange = 1,
 				pitchtolerance = 3000,
 				range = 1800,
 				reloadtime = 1.33,

@@ -161,7 +161,6 @@ return {
 				impactonly = 1,
 				impulseboost = 0,
 				impulsefactor = 0,
-				minbarrelangle = -15,
 				name = "GaussCannon",
 				noselfdamage = true,
 				range = 780,

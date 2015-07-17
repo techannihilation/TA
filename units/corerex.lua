@@ -157,7 +157,6 @@ return {
 				id = 254,
 				impulseboost = 0,
 				impulsefactor = 0,
-				minbarrelangle = -5,
 				name = "Plutonium Shell",
 				noselfdamage = true,
 				range = 800,

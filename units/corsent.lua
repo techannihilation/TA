@@ -143,7 +143,6 @@ return {
 				gravityaffected = true,
 				impulseboost = 0,
 				impulsefactor = 0,
-				minbarrelangle = -24,
 				name = "FlakCannon",
 				noselfdamage = true,
 				range = 775,

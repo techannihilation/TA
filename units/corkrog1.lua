@@ -166,7 +166,6 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				intensity = 4,
-				minbarrelangle = -50,
 				name = "GaussCannon",
 				noselfdamage = true,
 				pitchtolerance = 12000,

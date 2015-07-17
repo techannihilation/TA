@@ -135,7 +135,6 @@ return {
 				id = 229,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				minbarrelangle = -15,
 				name = "AK-Gauss",
 				noselfdamage = true,
 				range = 750,

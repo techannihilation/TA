@@ -105,7 +105,6 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				intensity = 2,
-				minbarrelangle = -35,
 				name = "EMPBlaster",
 				nogap = 1,
 				noselfdamage = true,

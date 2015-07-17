@@ -133,7 +133,6 @@ return {
 				metalpershot = 0,
 				model = "epulse",
 				name = "AntiSignal",
-				noautorange = 1,
 				range = 4500,
 				reloadtime = 2,
 				smoketrail = true,

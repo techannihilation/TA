@@ -130,7 +130,6 @@ return {
 				areaofeffect = 48,
 				id = 6,
 				impulsefactor = 2,
-				minbarrelangle = -50,
 				name = "GaussCannon",
 				noexplode = true,
 				pitchtolerance = 12000,

@@ -128,7 +128,6 @@ return {
 				impulsefactor = 0,
 				intensity = 0.75,
 				name = "Cartouche Aluminium",
-				noradar = 1,
 				noselfdamage = true,
 				range = 2000,
 				reloadtime = 5,

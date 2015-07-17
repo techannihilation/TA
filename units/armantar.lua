@@ -157,8 +157,6 @@ return {
 				name = "Heavy Rocket",
 				range = 1200,
 				reloadtime = 15,
-				shakeduration = 1,
-				shakemagnitude = 3,
 				smoketrail = true,
 				soundhitdry = "tankahit",
 				soundstart = "tankafire",

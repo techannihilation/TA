@@ -133,7 +133,6 @@ return {
 				metalpershot = 0,
 				model = "cormhmsl",
 				name = "Rocket",
-				noautorange = 1,
 				noselfdamage = true,
 				range = 700,
 				reloadtime = 9,

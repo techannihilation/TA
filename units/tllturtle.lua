@@ -128,7 +128,6 @@ return {
 				metalpershot = 225,
 				model = "amdrocket",
 				name = "Rocket",
-				noautorange = 1,
 				noselfdamage = true,
 				range = 72000,
 				reloadtime = 2,

@@ -130,7 +130,6 @@ return {
 				energypershot = 826,
 				explosiongenerator = "custom:DIRT3",
 				gravityaffected = "false",
-				holdtime = 1,
 				impulseboost = 0.1,
 				impulsefactor = 0.1,
 				metalpershot = 34,

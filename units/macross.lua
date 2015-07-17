@@ -123,7 +123,6 @@ return {
 			macross_arm_gun = {
 				areaofeffect = 80,
 				id = 142,
-				minbarrelangle = -15,
 				model = "macrossbullets",
 				name = "Macross Arm Canon",
 				range = 500,

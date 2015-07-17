@@ -126,7 +126,6 @@ return {
 				id = 251,
 				impulseboost = 0,
 				impulsefactor = 0,
-				minbarrelangle = -15,
 				name = "Gauss Cannon",
 				range = 750,
 				reloadtime = 2,

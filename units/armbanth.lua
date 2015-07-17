@@ -135,7 +135,6 @@ return {
 				explosiongenerator = "custom:FLASHBANTHA",
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				minbarrelangle = -15,
 				name = "ImpulsionBlaster",
 				range = 300,
 				reloadtime = 1,

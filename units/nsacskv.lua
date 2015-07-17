@@ -120,7 +120,6 @@ return {
 				areaofeffect = 12,
 				explosiongenerator = "custom:KNIGHT_EXPLOSION_FX",
 				id = 150,
-				minbarrelangle = -15,
 				name = "Gauss Cannon",
 				range = 700,
 				reloadtime = 1,

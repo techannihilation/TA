@@ -119,7 +119,6 @@ return {
 				gravityaffected = true,
 				impulseboost = 0,
 				impulsefactor = 0,
-				minbarrelangle = -24,
 				name = "Dragon Breath Flak Cannon",
 				nogap = 1,
 				noselfdamage = true,

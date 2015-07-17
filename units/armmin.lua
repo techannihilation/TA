@@ -121,7 +121,6 @@ return {
 				metalpershot = 50,
 				model = "missile",
 				name = "MineSweeper",
-				noautorange = 1,
 				noselfdamage = true,
 				range = 700,
 				reloadtime = 2,

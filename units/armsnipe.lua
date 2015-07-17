@@ -168,7 +168,6 @@ return {
 				impulsefactor = 0.234,
 				intensity = 0.75,
 				name = "SniperWeapon",
-				noradar = 1,
 				noselfdamage = true,
 				range = 900,
 				reloadtime = 10,

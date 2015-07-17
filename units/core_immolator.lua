@@ -131,7 +131,6 @@ return {
 				energypershot = 4000,
 				explosiongenerator = "custom:flash140_fakelight",
 				gravityaffected = "TRUE",
-				holdtime = 1,
 				impulseboost = 0,
 				impulsefactor = 0,
 				metalpershot = 1,

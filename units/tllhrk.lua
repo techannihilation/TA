@@ -125,7 +125,6 @@ return {
 				metalpershot = 0,
 				model = "vpulse",
 				name = "Vpulse Rocket",
-				noautorange = 1,
 				noselfdamage = true,
 				range = 1420,
 				reloadtime = 7,

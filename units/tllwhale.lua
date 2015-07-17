@@ -125,7 +125,6 @@ return {
 				metalpershot = 0,
 				model = "vpulse",
 				name = "Vpulse2",
-				noautorange = 1,
 				range = 1550,
 				reloadtime = 1.1,
 				smoketrail = false,

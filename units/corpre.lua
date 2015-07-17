@@ -120,7 +120,6 @@ return {
 				gravityaffected = "TRUE",
 				impulseboost = 0,
 				impulsefactor = 0,
-				minbarrelangle = -24,
 				name = "AdvancedFlakCannon",
 				noselfdamage = true,
 				range = 1050,

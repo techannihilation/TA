@@ -133,7 +133,6 @@ return {
 				gravityaffected = "TRUE",
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				minbarrelangle = -25,
 				name = "BattleshipCannon",
 				nogap = 1,
 				noselfdamage = true,

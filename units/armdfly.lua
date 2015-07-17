@@ -104,7 +104,6 @@ return {
 				explosiongenerator = "custom:EMPFLASH20",
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				minbarrelangle = 0,
 				name = "Paralyzer",
 				noselfdamage = true,
 				paralyzer = true,

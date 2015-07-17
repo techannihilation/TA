@@ -127,7 +127,6 @@ return {
 				impulsefactor = 0,
 				intensity = 0.75,
 				name = "Annihilator Weapon Nebraska",
-				noradar = 1,
 				noselfdamage = true,
 				range = 1850,
 				reloadtime = 5,

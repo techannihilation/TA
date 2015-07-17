@@ -127,7 +127,6 @@ return {
 				id = 119,
 				impulseboost = 0,
 				impulsefactor = 0,
-				minbarrelangle = -10,
 				name = "Light Artillery Cannon",
 				nogap = 1,
 				noselfdamage = true,

@@ -133,7 +133,6 @@ return {
 				firestarter = 50,
 				gravityaffected = true,
 				groundbounce = false,
-				holdtime = 1,
 				id = 72,
 				impulseboost = 0,
 				impulsefactor = 0,

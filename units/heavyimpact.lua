@@ -142,7 +142,6 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				interceptedbyshieldtype = 1,
-				minbarrelangle = -35,
 				name = "HeavyCannon",
 				nogap = 1,
 				noselfdamage = true,

@@ -171,7 +171,6 @@ return {
 				impulsefactor = 0.234,
 				intensity = 0.75,
 				name = "Ball",
-				noradar = 1,
 				noselfdamage = true,
 				range = 1050,
 				reloadtime = 10,

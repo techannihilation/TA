@@ -142,7 +142,6 @@ return {
 				id = 244,
 				impulseboost = 0.6,
 				impulsefactor = 0.6,
-				minbarrelangle = -15,
 				name = "Heavy Gauss Cannon",
 				range = 700,
 				reloadtime = 0.6,

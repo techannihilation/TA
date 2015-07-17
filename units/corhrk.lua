@@ -131,7 +131,6 @@ return {
 				metalpershot = 0,
 				model = "corkbmissl1",
 				name = "HeavyRockets",
-				noautorange = 1,
 				noselfdamage = true,
 				range = 1350,
 				reloadtime = 7,

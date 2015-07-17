@@ -130,7 +130,6 @@ return {
 				heightboostfactor = 1.15,
 				impulseboost = 0.5,
 				impulsefactor = 0.123,
-				minbarrelangle = -35,
 				name = "ShockerHeavyCannon",
 				nogap = 1,
 				noselfdamage = true,

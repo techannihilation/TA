@@ -130,7 +130,6 @@ return {
 				gravityaffected = "TRUE",
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				minbarrelangle = -35,
 				name = "PlasmaCannon",
 				nogap = 1,
 				noselfdamage = true,

@@ -90,7 +90,6 @@ return {
 				explosiongenerator = "custom:ARGHNUKE_FX1",
 				firestarter = 0,
 				gravityaffected = "TRUE",
-				holdtime = 1,
 				id = 140,
 				metalpershot = 160000,
 				model = "obusnuke",

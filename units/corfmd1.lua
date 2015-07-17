@@ -130,7 +130,6 @@ return {
 				metalpershot = 250,
 				model = "fmdmisl",
 				name = "Rocket",
-				noautorange = 1,
 				noselfdamage = true,
 				range = 72000,
 				reloadtime = 2,

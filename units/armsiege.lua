@@ -129,7 +129,6 @@ return {
 				cratermult = 0,
 				energypershot = 0,
 				gravityaffected = "TRUE",
-				holdtime = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				name = "Plasma Cannon",

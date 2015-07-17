@@ -146,8 +146,6 @@ return {
 				cratermult = 0,
 				energypershot = 2500,
 				gravityaffected = "TRUE",
-				holdtime = 1,
-				minbarrelangle = -25,
 				name = "Heavy Plasma Cannon",
 				nogap = 1,
 				range = 4080,

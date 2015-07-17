@@ -124,7 +124,6 @@ return {
 			cormonsta_gun = {
 				areaofeffect = 75,
 				explosiongenerator = "custom:Explosion_Light_Plasma-2-Orange",
-				minbarrelangle = -15,
 				name = "Tanker Canon",
 				range = 480,
 				reloadtime = 0.37,

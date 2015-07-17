@@ -125,7 +125,6 @@ return {
 				id = 211,
 				impulseboost = 0,
 				impulsefactor = 0,
-				minbarrelangle = -25,
 				name = "Totalitarian Cannon",
 				nogap = 1,
 				range = 1650,

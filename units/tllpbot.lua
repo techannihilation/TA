@@ -122,7 +122,6 @@ return {
 				id = 216,
 				impulseboost = 0,
 				impulsefactor = 0,
-				minbarrelangle = -35,
 				name = "Light Gauss",
 				nogap = 1,
 				range = 365,

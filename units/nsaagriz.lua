@@ -147,7 +147,6 @@ return {
 				firestarter = 0,
 				largemeamlaser = 1,
 				metalpershot = 0,
-				minbarrelangle = 0,
 				name = "Heavy Blaster Doomer's creation",
 				noexplode = true,
 				pitchtolerance = 48000,

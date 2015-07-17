@@ -201,7 +201,6 @@ return {
 				gravityaffected = "TRUE",
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				minbarrelangle = -24,
 				model = "missile",
 				name = "RapidSamMissile",
 				nogap = 1,

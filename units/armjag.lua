@@ -130,7 +130,6 @@ return {
 				cegtag = "Trail_cannon",
 				gravityaffected = true,
 				id = 134,
-				minbarrelangle = -35,
 				name = "Advanced Krogoth Plasma Shot",
 				nogap = 1,
 				range = 850,

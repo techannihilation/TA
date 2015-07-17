@@ -126,7 +126,6 @@ return {
 				explosiongenerator = "custom:FLASHNUKE480",
 				flighttime = 4,
 				gravityaffected = "true",
-				holdtime = 1,
 				id = 229,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
