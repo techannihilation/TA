@@ -217,7 +217,9 @@ return {
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 4000,
 				damage = {
+					commanders = 350,
 					default = 700,
+					subs = 5,
 				},
 			},
 			krogcrush = {
