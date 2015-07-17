@@ -52,12 +52,12 @@ return {
 		yardmap = "oooccccccooo oooccccccooo oooccccccooo oooccccccooo oooccccccooo oooccccccooo oooccccccooo oooccccccooo",
 		buildoptions = {
 			[1] = "tllhtcb",
-+			[2] = "tlltelsatnk",
-+			[3] = "tllmlrpc",
-+			[4] = "tlldemon",
-+			[5] = "tllacid",
-+			[6] = "tlllongshot",
-+			[7] = "anvil",
+			[2] = "tlltelsatnk",
+			[3] = "tllmlrpc",
+			[4] = "tlldemon",
+			[5] = "tllacid",
+			[6] = "tlllongshot",
+			[7] = "anvil",
 		},
 		customparams = {
 			providetech = "T3 Factory",
