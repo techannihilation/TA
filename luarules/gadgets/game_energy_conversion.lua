@@ -28,8 +28,8 @@ local mmUseParamName = 'mmUse'
 local mmAvgEfficiencyParamName = 'mmAvgEfficiency'
 local mmAvgEffiParamName = 'mmAvgEffi'
 
-local frameRate = 32
-local resourceRefreshRate = 16 -- In Frames
+local frameRate = 30
+local resourceRefreshRate = 15 -- In Frames
 local resourceFraction = resourceRefreshRate / frameRate
 local resourceUpdatesPerGameSec = frameRate / resourceRefreshRate
 
