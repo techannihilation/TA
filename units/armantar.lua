@@ -19,7 +19,7 @@ return {
 		collisionvolumetype = "CylZ",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Experimantal Hunter Tank",
+		description = "Experimantal Tank - Anti T3/T4",
 		designation = "ARM-TER",
 		energymake = 1,
 		energystorage = 0,
