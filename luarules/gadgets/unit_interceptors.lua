@@ -24,8 +24,12 @@ function gadget:AllowWeaponInterceptTarget(interceptorUnitID, interceptorWeaponI
 	local wd = WeaponDefs[ud.weapons[interceptorWeaponID + 1].weaponDef]
 	local ox, _, oz = Spring.GetUnitPosition(interceptorUnitID)
 	local _, nukeTarget = Spring.GetProjectileTarget(targetProjectileID)
+        if type(nukeTarget)=="table" then
 	local tx, _, tz = unpack(nukeTarget)
 	return (ox - tx) ^ 2 + (oz - tz) ^ 2 < wd.coverageRange ^ 2
+        else
+        return true
+ end
 end
 
 
