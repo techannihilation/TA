@@ -122,6 +122,7 @@ return {
 				soundstart = "rocklit1",
 				soundtrigger = true,
 				startvelocity = 750,
+				sprayangle = 250,
 				texture2 = "coresmoketrail",
 				tolerance = 10000,
 				tracks = true,
@@ -131,6 +132,7 @@ return {
 				weapontimer = 3,
 				weapontype = "MissileLauncher",
 				weaponvelocity = 1500,
+				wobble = 1800,
 				damage = {
 					bombers = 100,
 					default = 5,
