@@ -46,6 +46,7 @@ return {
 		radardistance = 0,
 		radaremitheight = 59.05159,
 		selfdestructas = "BANTHA_NUKE",
+		selfdestructcountdown = 10,
 		shootme = 1,
 		side = "ARMGOR",
 		sightdistance = 855,

@@ -45,7 +45,7 @@ return {
 		pushresistant = true,
 		radardistance = 0,
 		radaremitheight = 55.36954,
-		selfdestructas = "NUCLEAR_MISSILE",
+		selfdestructas = "BANTHA_NUKE",
 		selfdestructcountdown = 10,
 		shootme = 1,
 		side = "CORE",
