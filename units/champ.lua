@@ -20,7 +20,7 @@ return {
 		collisionvolumetype = "box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Experimantal Hunter Tank",
+		description = "Assault Tank - Anti T3/T4",
 		downloadable = 1,
 		energymake = 5.5,
 		energystorage = 0,
