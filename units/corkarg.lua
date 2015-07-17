@@ -157,7 +157,6 @@ return {
 				smoketrail = true,
 				soundhitdry = "xplosml2",
 				soundstart = "rocklit1",
-				soundwater = "SplsSml",
 				startvelocity = 500,
 				tolerance = 15000,
 				tracks = true,

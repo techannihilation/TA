@@ -143,7 +143,6 @@ return {
 				soundhitdry = "Burn02",
 				soundstart = "Mavgun1",
 				soundtrigger = true,
-				soundwater = "SplsSml",
 				sprayangle = 1024,
 				thickness = 7,
 				turret = true,

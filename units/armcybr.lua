@@ -104,7 +104,6 @@ return {
 				smoketrail = true,
 				soundhitdry = "tonukeex",
 				soundstart = "bombdropxx",
-				soundwater = "towaterex",
 				startvelocity = 100,
 				targetable = 0,
 				texture1 = "null",

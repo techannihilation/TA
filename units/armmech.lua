@@ -141,7 +141,6 @@ return {
 				size = 0.88,
 				soundhitdry = "XploMed21",
 				soundstart = "KroGun1",
-				soundwater = "SplsSml",
 				targetmoveerror = 0.15,
 				turret = true,
 				weapontimer = 2,
