@@ -187,6 +187,16 @@ TargetHeading(Func_Var_1)
 	Static_Var_1 = 0 - Func_Var_1;
 }
 
+QueryWeapon1(piecenum)
+{
+	piecenum = base;
+}
+
+AimFromWeapon1(piecenum)
+{
+	piecenum = base;
+}
+
 SweetSpot(piecenum)
 {
 	piecenum = body;
