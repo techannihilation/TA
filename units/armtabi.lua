@@ -79,7 +79,6 @@ return {
 		weapondefs = {
 			arm_tabithacannon = {
 				accuracy = 120,
-				aimrate = 2500,
 				areaofeffect = 4360,
 				avoidfriendly = false,
 				cegtag = "Trail_cannon",

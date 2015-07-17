@@ -117,7 +117,6 @@ return {
 		weapondefs = {
 			emp_artillery = {
 				accuracy = 300,
-				aimrate = 500,
 				alphadecay = 0.01,
 				areaofeffect = 240,
 				cegtag = "vulcanfx1",

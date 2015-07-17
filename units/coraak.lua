@@ -130,7 +130,6 @@ return {
 				soundstartvolume = 7,
 				stages = 20,
 				turret = true,
-				unitsonly = 1,
 				weapontimer = 1,
 				weapontype = "Cannon",
 				weaponvelocity = 1500,

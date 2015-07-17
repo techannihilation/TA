@@ -158,7 +158,6 @@ return {
 				edgeeffectiveness = 1,
 				explosiongenerator = "custom:explosion_medium_rocket-2",
 				firestarter = 1000,
-				manualbombsettings = true,
 				model = "missile10",
 				name = "Pyro Type MLRS rockets",
 				range = 600,

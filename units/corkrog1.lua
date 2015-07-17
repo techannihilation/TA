@@ -168,7 +168,6 @@ return {
 				intensity = 4,
 				name = "GaussCannon",
 				noselfdamage = true,
-				pitchtolerance = 12000,
 				range = 990,
 				reloadtime = 0.7,
 				rgbcolor = "1 0.75 0.25",

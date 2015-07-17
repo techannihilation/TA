@@ -149,7 +149,6 @@ return {
 				metalpershot = 0,
 				name = "Heavy Blaster Doomer's creation",
 				noexplode = true,
-				pitchtolerance = 48000,
 				pulsespeed = 4,
 				range = 1400,
 				reloadtime = 1.5,

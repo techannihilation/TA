@@ -120,7 +120,6 @@ return {
 		weapondefs = {
 			cannon_siege = {
 				accuracy = 750,
-				aimrate = 2500,
 				areaofeffect = 239,
 				burst = 1,
 				burstrate = 1.5,

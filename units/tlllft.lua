@@ -136,7 +136,6 @@ return {
 				sprayangle = 1800,
 				tolerance = 2500,
 				turret = true,
-				unitsonly = 1,
 				weapontimer = 1.625,
 				weapontype = "Flame",
 				weaponvelocity = 300,

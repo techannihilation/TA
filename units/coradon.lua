@@ -135,7 +135,6 @@ return {
 				impulsefactor = 0,
 				model = "adonis_missile",
 				name = "Burst Missiles",
-				pitchtolerance = 18000,
 				range = 700,
 				reloadtime = 2,
 				rgbcolor = "1.000 0.000 0.000",

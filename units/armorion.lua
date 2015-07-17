@@ -101,7 +101,6 @@ return {
 				groundbounce = true,
 				impulsefactor = 0,
 				interceptedbyshieldtype = 16,
-				manualbombsettings = true,
 				model = "bombe",
 				mygravity = 0.2,
 				name = "Heavy Bombs",

@@ -92,7 +92,6 @@ return {
 				id = 241,
 				laserflaresize = 9,
 				name = "JadeEagle-Laser",
-				pitchtolerance = 12000,
 				range = 360,
 				reloadtime = 1,
 				rgbcolor = "0.000 1.000 0.259",

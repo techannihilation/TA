@@ -166,7 +166,6 @@ return {
 				tracks = true,
 				turnrate = 10000,
 				turret = true,
-				unitsonly = 1,
 				weapontimer = 1,
 				weapontype = "LaserCannon",
 				weaponvelocity = 1450,

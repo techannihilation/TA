@@ -79,7 +79,6 @@ return {
 		weapondefs = {
 			cor_flucannon = {
 				accuracy = 150,
-				aimrate = 2500,
 				areaofeffect = 4630,
 				avoidfriendly = false,
 				cegtag = "Trail_cannon",

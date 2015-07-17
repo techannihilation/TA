@@ -84,7 +84,6 @@ return {
 				burstrate = 0.05,
 				id = 229,
 				name = "Electro-Magnetic Compression Cannon",
-				pitchtolerance = 18000,
 				range = 600,
 				reloadtime = 0.2,
 				rgbcolor = "1.0 0.5 0.0",

@@ -93,7 +93,6 @@ return {
 				model = "missile",
 				name = "Sabotrocket",
 				noselfdamage = true,
-				pitchtolerance = 18000,
 				range = 420,
 				reloadtime = 1.1,
 				smoketrail = true,

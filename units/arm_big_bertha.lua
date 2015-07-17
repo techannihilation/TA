@@ -122,7 +122,6 @@ return {
 		weapondefs = {
 			arm_berthacannonemp = {
 				accuracy = 300,
-				aimrate = 500,
 				alphadecay = 0.01,
 				areaofeffect = 360,
 				cegtag = "vulcanfx1",

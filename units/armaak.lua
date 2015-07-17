@@ -127,7 +127,6 @@ return {
 				soundstart = "flakfire",
 				soundstartvolume = 7,
 				turret = true,
-				unitsonly = 1,
 				weapontimer = 1,
 				weapontype = "Cannon",
 				weaponvelocity = 1500,

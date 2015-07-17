@@ -102,7 +102,6 @@ return {
 				impulsefactor = 0.123,
 				name = "HighEnergyLaser",
 				noselfdamage = true,
-				pitchtolerance = 12000,
 				range = 420,
 				reloadtime = 1.05,
 				rgbcolor = "0 1 0",

@@ -99,7 +99,6 @@ return {
 				gravityaffected = "true",
 				id = 254,
 				interceptedbyshieldtype = 16,
-				manualbombsettings = true,
 				model = "bomb",
 				name = "Napalm Bombs",
 				noselfdamage = true,

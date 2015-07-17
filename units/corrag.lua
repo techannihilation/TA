@@ -111,7 +111,6 @@ return {
 				model = "quadmissile3g",
 				name = "4 Missiles pack",
 				noselfdamage = true,
-				pitchtolerance = 18000,
 				range = 550,
 				reloadtime = 0.75,
 				smoketrail = true,

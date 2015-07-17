@@ -135,7 +135,6 @@ return {
 				laserflaresize = 5,
 				name = "Mounted antimatter accelerator",
 				noexplode = false,
-				pitchtolerance = 100,
 				range = 500,
 				reloadtime = 4,
 				rgbcolor = "1 0 0",

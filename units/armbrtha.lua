@@ -126,7 +126,6 @@ return {
 		weapondefs = {
 			arm_berthacannon2 = {
 				accuracy = 500,
-				aimrate = 2200,
 				areaofeffect = 192,
 				cegtag = "Trail_cannon_med",
 				collidefriendly = false,

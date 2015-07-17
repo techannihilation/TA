@@ -121,7 +121,6 @@ return {
 		weapondefs = {
 			core_intimidator1 = {
 				accuracy = 535,
-				aimrate = 3200,
 				areaofeffect = 324,
 				cegtag = "Trail_cannon_large",
 				collidefriendly = false,

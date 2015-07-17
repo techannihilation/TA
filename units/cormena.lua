@@ -122,7 +122,6 @@ return {
 		weapondefs = {
 			menacer = {
 				accuracy = 400,
-				aimrate = 2500,
 				areaofeffect = 96,
 				cegtag = "Trail_cannon",
 				craterboost = 0,

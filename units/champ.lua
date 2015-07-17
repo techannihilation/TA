@@ -113,7 +113,6 @@ return {
 				impulsefactor = 2,
 				name = "GaussCannon",
 				noexplode = true,
-				pitchtolerance = 12000,
 				range = 590,
 				reloadtime = 1,
 				rgbcolor = "1.000 0.047 0.000",

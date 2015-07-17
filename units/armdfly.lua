@@ -108,7 +108,6 @@ return {
 				noselfdamage = true,
 				paralyzer = true,
 				paralyzetime = 20,
-				pitchtolerance = 12000,
 				range = 520,
 				reloadtime = 10,
 				rgbcolor = "0.9 0.9 0",

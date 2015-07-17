@@ -134,7 +134,6 @@ return {
 		weapondefs = {
 			arm_bccannon = {
 				accuracy = 500,
-				aimrate = 2500,
 				areaofeffect = 150,
 				cegtag = "Trail_cannon",
 				energypershot = 1500,

@@ -143,7 +143,6 @@ return {
 				soundhitdry = "flakhit",
 				soundstart = "flakfire",
 				turret = true,
-				unitsonly = 1,
 				weapontimer = 1,
 				weapontype = "Cannon",
 				weaponvelocity = 1550,

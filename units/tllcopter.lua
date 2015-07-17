@@ -92,7 +92,6 @@ return {
 				intensity = 0.8,
 				name = "E.M.G.",
 				noselfdamage = true,
-				pitchtolerance = 12000,
 				range = 380,
 				reloadtime = 0.8,
 				rgbcolor = "1 0.9 0.49",

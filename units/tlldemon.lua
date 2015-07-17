@@ -120,7 +120,6 @@ return {
 		weapondefs = {
 			demonslayer_cannon = {
 				accuracy = 750,
-				aimrate = 2500,
 				areaofeffect = 500,
 				energypershot = 200,
 				explosiongenerator = "custom:FLASHNUKE480",

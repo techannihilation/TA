@@ -121,7 +121,6 @@ return {
 		weapondefs = {
 			peewee_cannon = {
 				accuracy = 500,
-				aimrate = 2200,
 				areaofeffect = 20,
 				avoidfriendly = false,
 				collidefriendly = false,

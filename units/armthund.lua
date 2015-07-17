@@ -99,7 +99,6 @@ return {
 				impulseboost = 0.5,
 				impulsefactor = 0.5,
 				interceptedbyshieldtype = 16,
-				manualbombsettings = true,
 				model = "bomb",
 				name = "Bombs",
 				noselfdamage = true,

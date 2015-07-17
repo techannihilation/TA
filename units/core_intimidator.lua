@@ -121,7 +121,6 @@ return {
 		weapondefs = {
 			core_intimidatoremp = {
 				accuracy = 300,
-				aimrate = 500,
 				alphadecay = 0.01,
 				areaofeffect = 850,
 				cegtag = "vulcanfx1",

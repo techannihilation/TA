@@ -95,7 +95,6 @@ return {
 				gravityaffected = "true",
 				id = 17,
 				interceptedbyshieldtype = 16,
-				manualbombsettings = true,
 				model = "bomb",
 				name = "Advanced Bombs",
 				noselfdamage = true,
