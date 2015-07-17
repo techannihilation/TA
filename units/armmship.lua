@@ -128,7 +128,6 @@ return {
 				cegtag = "ARMRAVENTRAIL",
 				craterboost = 0,
 				cratermult = 0,
-				cruise = 1,
 				explosiongenerator = "custom:FLASHSMALLUNIT",
 				firestarter = 100,
 				flighttime = 15,

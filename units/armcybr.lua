@@ -89,7 +89,6 @@ return {
 				collidefriendly = false,
 				craterboost = 0,
 				cratermult = 0,
-				cruise = 1,
 				edgeeffectiveness = 0.5,
 				explosiongenerator = "custom:nix_mininuke",
 				firestarter = 100,

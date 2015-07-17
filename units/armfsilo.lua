@@ -115,7 +115,6 @@ return {
 				areaofeffect = 2820,
 				cegtag = "Trail_nuke",
 				commandfire = true,
-				cruise = 1,
 				edgeeffectiveness = 0.5,
 				energypershot = 2800000,
 				firestarter = 100,

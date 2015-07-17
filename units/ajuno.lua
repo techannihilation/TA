@@ -126,7 +126,6 @@ return {
 				commandfire = true,
 				craterboost = 0,
 				cratermult = 0,
-				cruise = 1,
 				edgeeffectiveness = 1,
 				energypershot = 16000,
 				explosiongenerator = "custom:FLASHJUNO",

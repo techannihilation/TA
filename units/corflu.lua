@@ -84,7 +84,6 @@ return {
 				cegtag = "Trail_cannon",
 				collidefriendly = false,
 				comandfire = 1,
-				cruise = 1,
 				energypershot = 19720000,
 				explosiongenerator = "custom:ARGHNUKE_FX1",
 				firestarter = 0,

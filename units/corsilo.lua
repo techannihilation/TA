@@ -134,7 +134,6 @@ return {
 				commandfire = true,
 				craterboost = 6,
 				cratermult = 3,
-				cruise = 1,
 				edgeeffectiveness = 0.3,
 				energypershot = 187500,
 				explosiongenerator = "custom:nuke_explo_1280",

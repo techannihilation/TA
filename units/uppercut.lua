@@ -175,7 +175,6 @@ return {
 				commandfire = true,
 				craterboost = 1.5,
 				cratermult = 1,
-				cruise = 1,
 				edgeeffectiveness = 0.35,
 				energypershot = 105000,
 				explosiongenerator = "custom:FLASHNUKE768",
