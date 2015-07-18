@@ -91,14 +91,11 @@ return {
 		weapondefs = {
 			["mk-83"] = {
 				areaofeffect = 100,
-				balistic = 1,
-				burts = 0,
 				cegtag = "Trail_Medium_Rocket_Bomb",
 				collidefriendly = false,
 				commandfire = false,
 				craterboost = 0,
 				cratermult = 0,
-				cruisealt = 220,
 				firestarter = 100,
 				flighttime = 175,
 				gravityaffected = "true",
