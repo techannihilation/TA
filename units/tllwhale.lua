@@ -32,7 +32,7 @@ return {
 		maneuverleashlength = 640,
 		mass = 4350,
 		maxdamage = 3150,
-		maxvelocity = 0.85,
+		maxvelocity = 1,
 		minicloakdistance = 130,
 		minwaterdepth = 20,
 		mobilestandorders = 1,
@@ -116,7 +116,7 @@ return {
 		},
 		weapondefs = {
 			whale_vpulse = {
-				areaofeffect = 125,
+				areaofeffect = 192,
 				cegtag = "TLLRAVENTRAIL",
 				firestarter = 100,
 				firesubmersed = true,
@@ -125,8 +125,8 @@ return {
 				metalpershot = 0,
 				model = "vpulse",
 				name = "Vpulse2",
-				range = 1550,
-				reloadtime = 1.1,
+				range = 1650,
+				reloadtime = 1.5,
 				smoketrail = false,
 				soundhitdry = "vpulsehit",
 				soundstart = "vpulsefire",
@@ -141,7 +141,7 @@ return {
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 400,
 				damage = {
-					default = 500,
+					default = 750,
 				},
 			},
 		},
