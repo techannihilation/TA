@@ -70,16 +70,16 @@ return {
 			[9] = "tllasy",
 			[10] = "tllhpns",
 			[11] = "tllsubpen",
-			[12] = "tllsonar",
-			[13] = "tlldtns",
-			[14] = "tllradarns",
-			[15] = "tlldcsta",
+			[12] = "tllplat",
+			[13] = "tllsonar",
+			[14] = "tlldtns",
+			[15] = "tllradarns",
 			[16] = "tlllmtns",
 			[17] = "tllnssam",
 			[18] = "tllhltns",
 			[19] = "tlltorp",
-			[20] = "tllplat",
-			[21] = "tllsolarns",
+
+			[20] = "tllsolarns",
 		},
 		featuredefs = {
 			dead = {
