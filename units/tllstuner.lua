@@ -116,7 +116,7 @@ return {
 				name = "Stuner Cannon",
 				noselfdamage = true,
 				paralyzer = true,
-				paralyzertime = 10,
+				paralyzetime = 10,
 				range = 1050,
 				reloadtime = 3.3,
 				rgbcolor = "0.0 0.0 0.5",
