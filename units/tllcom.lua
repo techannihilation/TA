@@ -103,7 +103,6 @@ return {
 			[22] = "tlltorp",
 			[23] = "tlllmt",
 			[24] = "tlllmtns",
-			[25] = "tlldcsta",
 			[26] = "tllshoretorp",
 			[27] = "tllsolarns",
 		},
