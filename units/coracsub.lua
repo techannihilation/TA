@@ -5,7 +5,7 @@ return {
 		brakerate = 1.908,
 		buildcostenergy = 40400,
 		buildcostmetal = 3400,
-		builddistance = 225,
+		builddistance = 310,
 		builder = true,
 		buildpic = "CORACSUB.png",
 		buildtime = 57228,
