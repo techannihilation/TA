@@ -378,6 +378,7 @@ for name, ud in pairs(UnitDefs) do
 		end
 end
 --]]
+
 for name, ud in pairs(UnitDefs) do
 	if (ud.sfxtypes == nil) then
 		ud.sfxtypes = {}
