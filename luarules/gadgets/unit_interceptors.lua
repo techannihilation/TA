@@ -2,7 +2,7 @@ function gadget:GetInfo()
 	return {
 		name     = "Don't target flyover nukes",
 		desc     = "bla",
-		author	 = "ashdnazg",
+		author	 = "ashdnazg + [teh]decay",
 		date     = "Too late",
 		license	 = "GNU GPL, v2 or later",
 		layer    = 0,
@@ -10,6 +10,9 @@ function gadget:GetInfo()
 	}
 end
 
+
+-- changelog:
+-- 17 jul 2015 [teh]decay - fixed error: unit_interceptors.lua"]:27: bad argument #1 to 'unpack' (table expected, got number)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -23,9 +26,25 @@ function gadget:AllowWeaponInterceptTarget(interceptorUnitID, interceptorWeaponI
 	local ud = UnitDefs[Spring.GetUnitDefID(interceptorUnitID)]
 	local wd = WeaponDefs[ud.weapons[interceptorWeaponID + 1].weaponDef]
 	local ox, _, oz = Spring.GetUnitPosition(interceptorUnitID)
-	local _, nukeTarget = Spring.GetProjectileTarget(targetProjectileID)
-	local tx, _, tz = unpack(nukeTarget)
-	return (ox - tx) ^ 2 + (oz - tz) ^ 2 < wd.coverageRange ^ 2
+
+    --Spring.GetProjectileTarget( number projectileID ) -> nil | [number targetTypeInt, number targetID | table targetPos = {x, y, z}]
+	local targetType, targetID = Spring.GetProjectileTarget(targetProjectileID)
+
+    if targetType then
+        local tx, ty, tz;
+
+        if targetType == string.byte('u') then -- unit
+            tx, ty,  tz = Spring.GetUnitPosition(targetID)
+        elseif targetType == string.byte('f') then -- feature
+            tx, ty,  tz = Spring.GetFeaturePosition(targetID)
+        elseif targetType == string.byte('p') then --PROJECTILE
+            tx, ty,  tz = Spring.GetProjectilePosition(targetID)
+        elseif targetType == string.byte('g') then -- ground
+            tx, ty, tz = unpack(targetID)
+        end
+
+        return (ox - tx) ^ 2 + (oz - tz) ^ 2 < wd.coverageRange ^ 2
+    end
 end
 
 

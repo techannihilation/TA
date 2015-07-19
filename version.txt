@@ -1,4 +1,4 @@
----------------------------------------- v2.3x.x ---------------------------------------
+----------------------------------------- v2.35.0 ---------------------------------------
 ----Visual----
 
 
@@ -8,6 +8,14 @@ Fix superkrog crushweapon, Closes #607
 Fix unit cannon range issue's, Closes #605
 
 ----Balance----
+Add many count for self destroy for all bantha nuke (cordem, command vehicule, shield bot, hero)
+Corkarg : transmorm 1 missile into 4 burst. Same damage & increase range. Cost increase.
+Corkarg1 : transmorm 1 missile into 4 burst. Same damage & increase range. Cost increase.
+tlltelsatnk : increase damage & velocity.
+Tlldemon => HP 26K => 6.5K. Increase Range (1200 => 1350). Delete metalcost per shot. Increase damage vs experimental units. Increase Reload & cost. Add description : Anti T3/T4.
+TLLAcid => Increase HP. Increase AOE. Increase Reload. Decrease Range.
+TLLong (EMP) => Add emp description. Decrease Metal & Energy Cost to balance with EMP Bertha.
+Anvil => Decrease Cost by second (20KE => 10KE). Increase Range.
 Add Hardener Nano => Can build T2.5 structure (nuke1, tachion1, shield1, shield bot, rapid bertha, bertha1)
 Arm/Core Change panel menu for All adv Constructor. Decrease choice for units number. All weapon structure except Anti t3/t4, Nuke, Tactical Nuke & Bertha take place in engineerer panel menu. (except hover).
 TLLStunter : Range : 1050. Decrease reload & cost. Time Emp : 10s.

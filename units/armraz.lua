@@ -120,7 +120,6 @@ return {
 		},
 		weapondefs = {
 			mech_rapidlaser = {
-				["--falloffrate"] = 0.75,
 				accuracy = 32,
 				areaofeffect = 32,
 				avoidfeature = false,
