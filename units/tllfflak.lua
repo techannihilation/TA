@@ -6,7 +6,7 @@ return {
 		brakerate = 0,
 		buildangle = 16384,
 		buildcostenergy = 35200,
-		buildcostmetal = 2347,
+		buildcostmetal = 2340,
 		builder = false,
 		buildpic = "TLLFFLAK.png",
 		buildtime = 21000,
