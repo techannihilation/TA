@@ -1,11 +1,11 @@
 return {
 	corhunt = {
-		acceleration = 0.01154,
+		acceleration = 0.03808,
 		altfromsealevel = 1,
 		amphibious = 1,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.00038,
+		brakerate = 0.0038,
 		buildcostenergy = 6849,
 		buildcostmetal = 130,
 		builder = false,

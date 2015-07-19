@@ -1,10 +1,10 @@
 return {
 	corveng = {
-		acceleration = 0.27225,
+		acceleration = 0.89843,
 		airsightdistance = 700,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.00065,
+		brakerate = 0.0065,
 		buildcostenergy = 2027,
 		buildcostmetal = 91,
 		buildpic = "CORVENG.png",

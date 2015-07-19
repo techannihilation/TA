@@ -1,9 +1,9 @@
 return {
 	armpeep = {
-		acceleration = 0.06534,
+		acceleration = 0.21562,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.00112,
+		brakerate = 0.0112,
 		buildcostenergy = 1573,
 		buildcostmetal = 32,
 		builder = false,

@@ -148,9 +148,9 @@ return {
 				weaponvelocity = 800,
 				damage = {
 					commanders = 2500,
+					default = 5000,
 					experimental_land = 10000,
 					experimental_ships = 10000,
-					default = 5000,
 					subs = 5,
 				},
 			},

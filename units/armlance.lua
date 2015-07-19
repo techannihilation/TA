@@ -1,9 +1,9 @@
 return {
 	armlance = {
-		acceleration = 0.02614,
+		acceleration = 0.08626,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.00075,
+		brakerate = 0.0075,
 		buildcostenergy = 7038,
 		buildcostmetal = 326,
 		builder = false,

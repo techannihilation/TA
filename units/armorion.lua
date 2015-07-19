@@ -1,11 +1,11 @@
 return {
 	armorion = {
-		acceleration = 0.04901,
+		acceleration = 0.16173,
 		altfromsealevel = 1,
 		attackrunlength = 290,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.00015,
+		brakerate = 0.0015,
 		buildcostenergy = 48000,
 		buildcostmetal = 2667,
 		builder = false,

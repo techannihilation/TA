@@ -1,11 +1,11 @@
 return {
 	tllseab = {
-		acceleration = 0.04029,
+		acceleration = 0.13296,
 		amphibious = 1,
 		attackrunlength = 100,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.0004,
+		brakerate = 0.004,
 		buildcostenergy = 2133,
 		buildcostmetal = 427,
 		builder = false,

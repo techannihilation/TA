@@ -1,10 +1,10 @@
 return {
 	armhawk = {
-		acceleration = 0.05227,
+		acceleration = 0.17249,
 		airsightdistance = 800,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.00112,
+		brakerate = 0.0112,
 		buildcostenergy = 17067,
 		buildcostmetal = 133,
 		buildpic = "ARMHAWK.png",

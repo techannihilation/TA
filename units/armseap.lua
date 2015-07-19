@@ -1,11 +1,11 @@
 return {
 	armseap = {
-		acceleration = 0.03528,
+		acceleration = 0.11642,
 		amphibious = 1,
 		attackrunlength = 100,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.0005,
+		brakerate = 0.005,
 		buildcostenergy = 7060,
 		buildcostmetal = 259,
 		builder = false,

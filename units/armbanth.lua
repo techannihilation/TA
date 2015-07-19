@@ -221,9 +221,9 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "MEDIUM SMALL TINY",
 				def = "TEHLAZEROFDEWM",
 				onlytargetcategory = "NOTVTOL",
-				badtargetcategory = "MEDIUM SMALL TINY",
 			},
 			[2] = {
 				def = "ARMBANTHA_FIRE",

@@ -1,10 +1,10 @@
 return {
 	corawac = {
-		acceleration = 0.01045,
+		acceleration = 0.03449,
 		altfromsealevel = 1,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.00038,
+		brakerate = 0.0038,
 		buildcostenergy = 8346,
 		buildcostmetal = 180,
 		builder = false,

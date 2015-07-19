@@ -242,12 +242,11 @@ return {
 			[1] = {
 				def = "SUPER_MISSILE1",
 				onlytargetcategory = "NOTVTOL",
-				
 			},
 			[2] = {
+				badtargetcategory = "MEDIUM SMALL TINY",
 				def = "TAWF_BANISHER2",
 				onlytargetcategory = "NOTVTOL",
-				badtargetcategory = "MEDIUM SMALL TINY",
 			},
 			[3] = {
 				def = "cor_erad2",

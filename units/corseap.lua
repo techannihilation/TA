@@ -1,11 +1,11 @@
 return {
 	corseap = {
-		acceleration = 0.03398,
+		acceleration = 0.11213,
 		amphibious = 1,
 		attackrunlength = 100,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.00047,
+		brakerate = 0.0047,
 		buildcostenergy = 7237,
 		buildcostmetal = 250,
 		builder = false,

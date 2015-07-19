@@ -1,9 +1,9 @@
 return {
 	corsfig = {
-		acceleration = 0.04966,
+		acceleration = 0.16388,
 		amphibious = 1,
 		bmcode = 1,
-		brakerate = 0.00075,
+		brakerate = 0.0075,
 		buildcostenergy = 7360,
 		buildcostmetal = 149,
 		builder = false,

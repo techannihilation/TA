@@ -1,13 +1,13 @@
 return {
 	coreclipse = {
-		acceleration = 0.02069,
+		acceleration = 0.06828,
 		ai_limit = "limit Tu95-A 6",
 		ai_weight = "weight Tu95-A 4",
 		altfromsealevel = 1,
 		attackrunlength = 302,
 		bankscale = 1.3,
 		bmcode = 1,
-		brakerate = 0.00045,
+		brakerate = 0.0045,
 		buildcostenergy = 85698,
 		buildcostmetal = 7264,
 		builder = false,

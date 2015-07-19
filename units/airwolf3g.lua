@@ -1,10 +1,10 @@
 return {
 	airwolf3g = {
-		acceleration = 0.36427,
+		acceleration = 1.20209,
 		airsightdistance = 900,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.0007,
+		brakerate = 0.007,
 		buildcostenergy = 58667,
 		buildcostmetal = 619,
 		buildtime = 18942,

@@ -1,10 +1,10 @@
 return {
 	corfiend = {
-		acceleration = 0.00926,
+		acceleration = 0.03056,
 		attackrunlength = 170,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.00004,
+		brakerate = 0.0004,
 		buildcostenergy = 6973,
 		buildcostmetal = 310,
 		buildtime = 17814,

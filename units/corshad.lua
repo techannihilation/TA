@@ -1,10 +1,10 @@
 return {
 	corshad = {
-		acceleration = 0.00915,
+		acceleration = 0.0302,
 		altfromsealevel = 1,
 		attackrunlength = 170,
 		bmcode = 1,
-		brakerate = 0.00055,
+		brakerate = 0.0055,
 		buildcostenergy = 5968,
 		buildcostmetal = 156,
 		builder = false,

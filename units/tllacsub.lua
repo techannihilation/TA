@@ -67,7 +67,6 @@ return {
 			[5] = "tllsy",
 			[6] = "tllasy",
 			[7] = "tllsubpen",
-
 			[8] = "tllnssam",
 			[9] = "tllfflak",
 			[10] = "tllatorp",

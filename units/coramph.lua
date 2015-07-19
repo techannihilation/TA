@@ -170,7 +170,6 @@ return {
 				def = "CORAMPH_WEAPON2",
 				onlytargetcategory = "NOTVTOL",
 			},
-			
 		},
 	},
 }

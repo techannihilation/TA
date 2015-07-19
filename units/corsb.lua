@@ -1,11 +1,11 @@
 return {
 	corsb = {
-		acceleration = 0.00915,
+		acceleration = 0.0302,
 		altfromsealevel = 1,
 		amphibious = 1,
 		attackrunlength = 260,
 		bmcode = 1,
-		brakerate = 0.00015,
+		brakerate = 0.0015,
 		buildcostenergy = 8465,
 		buildcostmetal = 194,
 		builder = false,

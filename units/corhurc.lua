@@ -1,10 +1,10 @@
 return {
 	corhurc = {
-		acceleration = 0.00653,
+		acceleration = 0.02155,
 		altfromsealevel = 1,
 		attackrunlength = 300,
 		bmcode = 1,
-		brakerate = 0.00035,
+		brakerate = 0.0035,
 		buildcostenergy = 15323,
 		buildcostmetal = 334,
 		builder = false,

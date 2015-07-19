@@ -1,6 +1,6 @@
 return {
 	corfink = {
-		acceleration = 0.16,
+		acceleration = 0.2,
 		brakerate = 0.0125,
 		buildcostenergy = 1460,
 		buildcostmetal = 28,

@@ -1,9 +1,9 @@
 return {
 	armsfig = {
-		acceleration = 0.05227,
+		acceleration = 0.17249,
 		amphibious = 1,
 		bmcode = 1,
-		brakerate = 0.001,
+		brakerate = 0.01,
 		buildcostenergy = 6400,
 		buildcostmetal = 160,
 		builder = false,

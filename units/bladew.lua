@@ -5,7 +5,7 @@ return {
 		altfromsealevel = 56,
 		bankscale = 1.64,
 		bmcode = 1,
-		brakerate = 0.055,
+		brakerate = 5.5,
 		buildcostenergy = 1280,
 		buildcostmetal = 58,
 		builder = false,

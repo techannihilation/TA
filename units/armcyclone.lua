@@ -1,13 +1,13 @@
 return {
 	armcyclone = {
-		acceleration = 0.01634,
+		acceleration = 0.05392,
 		ai_limit = "limit B-52G 6",
 		ai_weight = "weight B-52G 4",
 		altfromsealevel = 1,
 		attackrunlength = 305,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.00033,
+		brakerate = 0.0033,
 		buildcostenergy = 91031,
 		buildcostmetal = 7840,
 		builder = false,

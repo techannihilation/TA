@@ -1,12 +1,12 @@
 return {
 	armsehak = {
-		acceleration = 0.01111,
+		acceleration = 0.03666,
 		altfromsealevel = 1,
 		amphibious = 1,
 		attackrunlength = 120,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.0005,
+		brakerate = 0.005,
 		buildcostenergy = 7066,
 		buildcostmetal = 127,
 		builder = false,

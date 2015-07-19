@@ -1,11 +1,11 @@
 return {
 	armthund = {
-		acceleration = 0.01045,
+		acceleration = 0.03449,
 		altfromsealevel = 1,
 		attackrunlength = 170,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.0005,
+		brakerate = 0.005,
 		buildcostenergy = 5413,
 		buildcostmetal = 155,
 		builder = false,

@@ -139,9 +139,9 @@ return {
 				damage = {
 					commanders = 300,
 					default = 600,
-					subs = 5,
 					experimental_land = 1200,
 					experimental_ships = 1200,
+					subs = 5,
 				},
 			},
 			cor_gol = {
@@ -168,8 +168,8 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 310,
 				damage = {
-					default = 1200,
 					commanders = 600,
+					default = 1200,
 					subs = 5,
 				},
 			},

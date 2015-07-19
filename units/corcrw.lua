@@ -4,7 +4,7 @@ return {
 		activatewhenbuilt = true,
 		bankscale = 0.5,
 		bmcode = 1,
-		brakerate = 0.0375,
+		brakerate = 3.75,
 		buildcostenergy = 72627,
 		buildcostmetal = 6400,
 		builder = false,

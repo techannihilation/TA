@@ -1,10 +1,10 @@
 return {
 	corgripn = {
-		acceleration = 0.05227,
+		acceleration = 0.17249,
 		attackrunlength = 180,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.0004,
+		brakerate = 0.004,
 		buildcostenergy = 17457,
 		buildcostmetal = 173,
 		buildpic = "CORGRIPN.png",

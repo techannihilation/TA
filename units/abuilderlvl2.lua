@@ -2,7 +2,7 @@ return {
 	abuilderlvl2 = {
 		acceleration = 0.0266,
 		activatewhenbuilt = true,
-		brakerate = 0.03596,
+		brakerate = 3.596,
 		buildcostenergy = 3860,
 		buildcostmetal = 713,
 		builddistance = 100,

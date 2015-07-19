@@ -1,11 +1,11 @@
 return {
 	armpnix = {
-		acceleration = 0.00784,
+		acceleration = 0.02587,
 		altfromsealevel = 1,
 		attackrunlength = 300,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.00035,
+		brakerate = 0.0035,
 		buildcostenergy = 11332,
 		buildcostmetal = 244,
 		builder = false,

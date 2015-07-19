@@ -1,12 +1,12 @@
 return {
 	armsb = {
-		acceleration = 0.01045,
+		acceleration = 0.03449,
 		altfromsealevel = 1,
 		amphibious = 1,
 		attackrunlength = 260,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.00005,
+		brakerate = 0.0005,
 		buildcostenergy = 8047,
 		buildcostmetal = 180,
 		builder = false,

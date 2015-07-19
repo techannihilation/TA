@@ -39,7 +39,7 @@ return {
 		objectname = "ARMAMD",
 		radardistance = 50,
 		radaremitheight = 41.53499,
-                script = "armamd.cob",
+		script = "armamd.cob",
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
 		side = "ARM",

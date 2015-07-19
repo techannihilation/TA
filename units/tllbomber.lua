@@ -1,10 +1,10 @@
 return {
 	tllbomber = {
-		acceleration = 0.01307,
+		acceleration = 0.04313,
 		attackrunlength = 120,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.00007,
+		brakerate = 0.0007,
 		buildcostenergy = 2838,
 		buildcostmetal = 182,
 		builder = false,
