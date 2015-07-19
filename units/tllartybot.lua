@@ -2,7 +2,7 @@ return {
 	tllartybot = {
 		acceleration = 0.4,
 		bmcode = 1,
-		brakerate = 1.62,
+		brakerate = 0.54,
 		buildcostenergy = 2305,
 		buildcostmetal = 1010,
 		builder = false,

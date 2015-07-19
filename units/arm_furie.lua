@@ -2,7 +2,7 @@ return {
 	arm_furie = {
 		acceleration = 0.09,
 		bmcode = 1,
-		brakerate = 1.8,
+		brakerate = 0.6,
 		buildcostenergy = 560000,
 		buildcostmetal = 39500,
 		builder = false,

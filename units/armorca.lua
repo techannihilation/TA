@@ -4,7 +4,7 @@ return {
 		ai_limit = "limit ARMORCA 6",
 		ai_weight = "weight ARMORCA 2",
 		bmcode = 1,
-		brakerate = 0.09,
+		brakerate = 0.03,
 		buildcostenergy = 4405,
 		buildcostmetal = 605,
 		builder = false,

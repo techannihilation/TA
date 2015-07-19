@@ -2,7 +2,7 @@ return {
 	armantar = {
 		acceleration = 0.01,
 		bmcode = 1,
-		brakerate = 0.50661,
+		brakerate = 0.16887,
 		buildcostenergy = 150987,
 		buildcostmetal = 16587,
 		builder = false,

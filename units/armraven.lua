@@ -2,7 +2,7 @@ return {
 	armraven = {
 		acceleration = 0.108,
 		bmcode = 1,
-		brakerate = 1.692,
+		brakerate = 0.564,
 		buildcostenergy = 80667,
 		buildcostmetal = 4854,
 		builder = false,

@@ -2,7 +2,7 @@ return {
 	tllambassador = {
 		acceleration = 0.09,
 		bmcode = 1,
-		brakerate = 1.638,
+		brakerate = 0.546,
 		buildangle = 16384,
 		buildcostenergy = 5280,
 		buildcostmetal = 1008,

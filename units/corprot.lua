@@ -2,7 +2,7 @@ return {
 	corprot = {
 		acceleration = 0.5,
 		bmcode = 1,
-		brakerate = 1.35,
+		brakerate = 0.45,
 		buildcostenergy = 33333,
 		buildcostmetal = 1803,
 		builder = false,

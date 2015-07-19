@@ -2,7 +2,7 @@ return {
 	armjugg = {
 		acceleration = 0.09,
 		bmcode = 1,
-		brakerate = 1.71,
+		brakerate = 0.57,
 		buildcostenergy = 126900,
 		buildcostmetal = 14690,
 		builder = false,

@@ -2,7 +2,7 @@ return {
 	tllgrim = {
 		acceleration = 0.21,
 		bmcode = 1,
-		brakerate = 1.35,
+		brakerate = 0.45,
 		buildcostenergy = 373333,
 		buildcostmetal = 23467,
 		builder = false,

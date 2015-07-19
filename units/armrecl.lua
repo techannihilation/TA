@@ -2,7 +2,7 @@ return {
 	armrecl = {
 		acceleration = 0.048,
 		bmcode = 1,
-		brakerate = 2.25,
+		brakerate = 0.75,
 		buildcostenergy = 7372,
 		buildcostmetal = 441,
 		builddistance = 112,

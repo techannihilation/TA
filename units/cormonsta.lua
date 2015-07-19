@@ -2,7 +2,7 @@ return {
 	cormonsta = {
 		acceleration = 0.65259,
 		bmcode = 1,
-		brakerate = 3.17331,
+		brakerate = 1.05777,
 		buildcostenergy = 29243,
 		buildcostmetal = 2746,
 		builder = false,

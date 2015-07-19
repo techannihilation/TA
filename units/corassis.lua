@@ -2,7 +2,7 @@ return {
 	corassis = {
 		acceleration = 0.33,
 		bmcode = 1,
-		brakerate = 4.95,
+		brakerate = 1.65,
 		buildcostenergy = 5363,
 		buildcostmetal = 230,
 		builddistance = 92,

@@ -2,7 +2,7 @@ return {
 	tllbats2 = {
 		acceleration = 0.015,
 		bmcode = 1,
-		brakerate = 1.08,
+		brakerate = 0.36,
 		buildangle = 16384,
 		buildcostenergy = 29376,
 		buildcostmetal = 5526,

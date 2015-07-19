@@ -2,7 +2,7 @@ return {
 	cormena = {
 		acceleration = 0.07629,
 		bmcode = 1,
-		brakerate = 0.68661,
+		brakerate = 0.22887,
 		buildcostenergy = 75030,
 		buildcostmetal = 3550,
 		builder = false,

@@ -3,7 +3,7 @@ return {
 		acceleration = 0.12,
 		autoheal = 50,
 		bmcode = 1,
-		brakerate = 1.125,
+		brakerate = 0.375,
 		buildcostenergy = 12992,
 		buildcostmetal = 699,
 		builder = false,

@@ -2,7 +2,7 @@ return {
 	armstump = {
 		acceleration = 0.0287,
 		bmcode = 1,
-		brakerate = 0.2682,
+		brakerate = 0.0894,
 		buildcostenergy = 1862,
 		buildcostmetal = 214,
 		builder = false,

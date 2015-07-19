@@ -2,7 +2,7 @@ return {
 	armjanus = {
 		acceleration = 0.0198,
 		bmcode = 1,
-		brakerate = 0.495,
+		brakerate = 0.165,
 		buildcostenergy = 2518,
 		buildcostmetal = 289,
 		builder = false,

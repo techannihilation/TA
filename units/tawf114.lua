@@ -2,7 +2,7 @@ return {
 	tawf114 = {
 		acceleration = 0.0209,
 		bmcode = 1,
-		brakerate = 0.1782,
+		brakerate = 0.0594,
 		buildcostenergy = 22081,
 		buildcostmetal = 1002,
 		builder = false,

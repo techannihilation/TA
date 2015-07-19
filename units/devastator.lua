@@ -2,7 +2,7 @@ return {
 	devastator = {
 		acceleration = 0.11,
 		bmcode = 1,
-		brakerate = 0.63,
+		brakerate = 0.21,
 		buildcostenergy = 12369,
 		buildcostmetal = 1299,
 		builder = false,

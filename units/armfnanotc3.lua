@@ -1,7 +1,7 @@
 return {
 	armfnanotc3 = {
 		acceleration = 0,
-		brakerate = 13.5,
+		brakerate = 4.5,
 		buildcostenergy = 213333,
 		buildcostmetal = 7253,
 		builddistance = 1200,

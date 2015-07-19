@@ -2,7 +2,7 @@ return {
 	armraptor = {
 		acceleration = 0.21,
 		bmcode = 1,
-		brakerate = 1.89,
+		brakerate = 0.63,
 		buildcostenergy = 388800,
 		buildcostmetal = 14347,
 		builder = false,

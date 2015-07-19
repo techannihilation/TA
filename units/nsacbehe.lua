@@ -2,7 +2,7 @@ return {
 	nsacbehe = {
 		acceleration = 0.03,
 		bmcode = 1,
-		brakerate = 2.07,
+		brakerate = 0.69,
 		buildcostenergy = 16384,
 		buildcostmetal = 1804,
 		builder = false,

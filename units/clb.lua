@@ -2,7 +2,7 @@ return {
 	clb = {
 		acceleration = 0.036,
 		bmcode = 1,
-		brakerate = 0.45,
+		brakerate = 0.15,
 		buildcostenergy = 98624,
 		buildcostmetal = 5397,
 		builder = false,

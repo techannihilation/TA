@@ -2,7 +2,7 @@ return {
 	tllfireraiser = {
 		acceleration = 0.17,
 		bmcode = 1,
-		brakerate = 1.89,
+		brakerate = 0.63,
 		buildcostenergy = 897,
 		buildcostmetal = 165,
 		builder = false,

@@ -2,7 +2,7 @@ return {
 	trem = {
 		acceleration = 0.0528,
 		bmcode = 1,
-		brakerate = 0.99,
+		brakerate = 0.33,
 		buildcostenergy = 48373,
 		buildcostmetal = 2081,
 		builder = false,

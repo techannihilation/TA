@@ -2,7 +2,7 @@ return {
 	armfav = {
 		acceleration = 0.12,
 		bmcode = 1,
-		brakerate = 1.485,
+		brakerate = 0.495,
 		buildcostenergy = 365,
 		buildcostmetal = 31,
 		builder = false,

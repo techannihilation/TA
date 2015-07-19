@@ -1,7 +1,7 @@
 return {
 	corhevsenan = {
 		acceleration = 0,
-		brakerate = 13.5,
+		brakerate = 4.5,
 		buildcostenergy = 7017,
 		buildcostmetal = 319,
 		builddistance = 600,

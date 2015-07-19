@@ -2,7 +2,7 @@ return {
 	armrectr = {
 		acceleration = 0.2,
 		bmcode = 1,
-		brakerate = 2.25,
+		brakerate = 0.75,
 		buildcostenergy = 1493,
 		buildcostmetal = 109,
 		builddistance = 112,

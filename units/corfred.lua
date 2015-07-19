@@ -2,7 +2,7 @@ return {
 	corfred = {
 		acceleration = 0.08,
 		bmcode = 1,
-		brakerate = 4.95,
+		brakerate = 1.65,
 		buildcostenergy = 4656,
 		buildcostmetal = 907,
 		builddistance = 122,

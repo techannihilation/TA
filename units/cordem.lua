@@ -2,7 +2,7 @@ return {
 	cordem = {
 		acceleration = 0.1,
 		bmcode = 1,
-		brakerate = 1.35,
+		brakerate = 0.45,
 		buildcostenergy = 180200,
 		buildcostmetal = 11300,
 		builder = false,

@@ -2,7 +2,7 @@ return {
 	ananotower = {
 		acceleration = 0.2,
 		bmcode = 1,
-		brakerate = 7,
+		brakerate = 2.33333,
 		buildcostenergy = 320000,
 		buildcostmetal = 14000,
 		builddistance = 1000,

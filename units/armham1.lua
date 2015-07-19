@@ -2,7 +2,7 @@ return {
 	armham1 = {
 		acceleration = 0.12,
 		bmcode = 1,
-		brakerate = 2.025,
+		brakerate = 0.675,
 		buildcostenergy = 2273,
 		buildcostmetal = 265,
 		builder = false,

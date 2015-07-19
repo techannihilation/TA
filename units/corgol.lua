@@ -2,7 +2,7 @@ return {
 	corgol = {
 		acceleration = 0.0242,
 		bmcode = 1,
-		brakerate = 0.4455,
+		brakerate = 0.1485,
 		buildcostenergy = 21218,
 		buildcostmetal = 2205,
 		builder = false,

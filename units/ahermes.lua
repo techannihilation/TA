@@ -5,7 +5,7 @@ return {
 		ai_weight = "weight ahermes 0.3",
 		airsightdistance = 775,
 		bmcode = 1,
-		brakerate = 0.108,
+		brakerate = 0.036,
 		buildcostenergy = 1920,
 		buildcostmetal = 160,
 		builder = false,

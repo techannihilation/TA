@@ -2,7 +2,7 @@ return {
 	cormatch = {
 		acceleration = 0.11,
 		bmcode = 1,
-		brakerate = 0.945,
+		brakerate = 0.315,
 		buildcostenergy = 3909,
 		buildcostmetal = 371,
 		builder = false,

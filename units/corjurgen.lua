@@ -2,7 +2,7 @@ return {
 	corjurgen = {
 		acceleration = 0.4,
 		bmcode = 1,
-		brakerate = 1.35,
+		brakerate = 0.45,
 		buildcostenergy = 38522,
 		buildcostmetal = 3373,
 		builddistance = 112,

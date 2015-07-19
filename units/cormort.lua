@@ -2,7 +2,7 @@ return {
 	cormort = {
 		acceleration = 0.132,
 		bmcode = 1,
-		brakerate = 2.025,
+		brakerate = 0.675,
 		buildcostenergy = 2203,
 		buildcostmetal = 407,
 		builder = false,

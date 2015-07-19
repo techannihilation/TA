@@ -2,7 +2,7 @@ return {
 	armflash1 = {
 		acceleration = 0.15,
 		bmcode = 1,
-		brakerate = 0.9,
+		brakerate = 0.3,
 		buildcostenergy = 1579,
 		buildcostmetal = 212,
 		builder = false,

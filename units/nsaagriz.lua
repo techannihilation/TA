@@ -2,7 +2,7 @@ return {
 	nsaagriz = {
 		acceleration = 0.041,
 		bmcode = 1,
-		brakerate = 0.855,
+		brakerate = 0.285,
 		buildcostenergy = 844605,
 		buildcostmetal = 27618,
 		builder = false,

@@ -2,7 +2,7 @@ return {
 	corvroc = {
 		acceleration = 0.0209,
 		bmcode = 1,
-		brakerate = 0.3762,
+		brakerate = 0.1254,
 		buildcostenergy = 6688,
 		buildcostmetal = 882,
 		builder = false,

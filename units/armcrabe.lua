@@ -2,7 +2,7 @@ return {
 	armcrabe = {
 		acceleration = 0.55,
 		bmcode = 1,
-		brakerate = 2.25,
+		brakerate = 0.75,
 		buildcostenergy = 127467,
 		buildcostmetal = 11947,
 		builder = false,

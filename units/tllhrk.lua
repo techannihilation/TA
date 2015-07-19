@@ -2,7 +2,7 @@ return {
 	tllhrk = {
 		acceleration = 0.11,
 		bmcode = 1,
-		brakerate = 1.35,
+		brakerate = 0.45,
 		buildcostenergy = 1461,
 		buildcostmetal = 685,
 		builder = false,

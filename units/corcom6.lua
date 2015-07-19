@@ -5,7 +5,7 @@ return {
 		amphibious = 1,
 		autoheal = 11,
 		bmcode = 1,
-		brakerate = 3.6,
+		brakerate = 1.2,
 		buildcostenergy = 426667,
 		buildcostmetal = 32000,
 		builddistance = 312,

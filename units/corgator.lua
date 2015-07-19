@@ -2,7 +2,7 @@ return {
 	corgator = {
 		acceleration = 0.055,
 		bmcode = 1,
-		brakerate = 0.495,
+		brakerate = 0.165,
 		buildcostenergy = 1111,
 		buildcostmetal = 126,
 		builder = false,

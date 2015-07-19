@@ -1,7 +1,7 @@
 return {
 	tllhevsenan = {
 		acceleration = 0,
-		brakerate = 13.5,
+		brakerate = 4.5,
 		buildcostenergy = 2548,
 		buildcostmetal = 558,
 		builddistance = 600,

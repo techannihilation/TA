@@ -2,7 +2,7 @@ return {
 	cormls = {
 		acceleration = 0.046,
 		bmcode = 1,
-		brakerate = 0.54,
+		brakerate = 0.18,
 		buildcostenergy = 4162,
 		buildcostmetal = 308,
 		builddistance = 212,

@@ -3,7 +3,7 @@ return {
 		acceleration = 0.04,
 		airsightdistance = 1000,
 		bmcode = 1,
-		brakerate = 0.9,
+		brakerate = 0.3,
 		buildcostenergy = 17067,
 		buildcostmetal = 960,
 		builder = false,

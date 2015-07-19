@@ -2,7 +2,7 @@ return {
 	corlevlr1 = {
 		acceleration = 0.0364,
 		bmcode = 1,
-		brakerate = 3.2562,
+		brakerate = 1.0854,
 		buildcostenergy = 3399,
 		buildcostmetal = 478,
 		builder = false,

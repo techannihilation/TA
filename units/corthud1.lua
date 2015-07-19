@@ -2,7 +2,7 @@ return {
 	corthud1 = {
 		acceleration = 0.113,
 		bmcode = 1,
-		brakerate = 2.025,
+		brakerate = 0.675,
 		buildcostenergy = 2092,
 		buildcostmetal = 290,
 		builder = false,

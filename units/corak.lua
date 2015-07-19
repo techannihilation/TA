@@ -2,7 +2,7 @@ return {
 	corak = {
 		acceleration = 0.384,
 		bmcode = 1,
-		brakerate = 2.25,
+		brakerate = 0.75,
 		buildcostenergy = 881,
 		buildcostmetal = 36,
 		builder = false,

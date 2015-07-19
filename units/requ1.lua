@@ -2,7 +2,7 @@ return {
 	requ1 = {
 		acceleration = 0.024,
 		bmcode = 1,
-		brakerate = 0.072,
+		brakerate = 0.024,
 		buildcostenergy = 46365,
 		buildcostmetal = 4161,
 		builder = false,

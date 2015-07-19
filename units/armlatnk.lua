@@ -2,7 +2,7 @@ return {
 	armlatnk = {
 		acceleration = 0.125,
 		bmcode = 1,
-		brakerate = 1.125,
+		brakerate = 0.375,
 		buildcostenergy = 7467,
 		buildcostmetal = 327,
 		builder = false,

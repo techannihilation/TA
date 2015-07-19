@@ -2,7 +2,7 @@ return {
 	armorco = {
 		acceleration = 0.108,
 		bmcode = 1,
-		brakerate = 2.142,
+		brakerate = 0.714,
 		buildcostenergy = 375400,
 		buildcostmetal = 25920,
 		builder = false,

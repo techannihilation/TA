@@ -1,7 +1,7 @@
 return {
 	tllfnanotc1 = {
 		acceleration = 0,
-		brakerate = 13.5,
+		brakerate = 4.5,
 		buildcostenergy = 21333,
 		buildcostmetal = 1333,
 		builddistance = 600,

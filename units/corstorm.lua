@@ -2,7 +2,7 @@ return {
 	corstorm = {
 		acceleration = 0.108,
 		bmcode = 1,
-		brakerate = 1.692,
+		brakerate = 0.564,
 		buildcostenergy = 910,
 		buildcostmetal = 86,
 		builder = false,

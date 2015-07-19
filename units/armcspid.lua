@@ -2,7 +2,7 @@ return {
 	armcspid = {
 		acceleration = 0.15,
 		bmcode = 1,
-		brakerate = 1.35,
+		brakerate = 0.45,
 		buildcostenergy = 3056,
 		buildcostmetal = 125,
 		builddistance = 102,

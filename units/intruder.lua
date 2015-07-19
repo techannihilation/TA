@@ -2,7 +2,7 @@ return {
 	intruder = {
 		acceleration = 0.33,
 		bmcode = 1,
-		brakerate = 1.485,
+		brakerate = 0.495,
 		buildangle = 16384,
 		buildcostenergy = 16011,
 		buildcostmetal = 1348,

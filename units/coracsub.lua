@@ -2,7 +2,7 @@ return {
 	coracsub = {
 		acceleration = 0.035,
 		bmcode = 1,
-		brakerate = 1.908,
+		brakerate = 0.636,
 		buildcostenergy = 40400,
 		buildcostmetal = 3400,
 		builddistance = 310,

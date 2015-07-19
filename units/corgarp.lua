@@ -2,7 +2,7 @@ return {
 	corgarp = {
 		acceleration = 0.011,
 		bmcode = 1,
-		brakerate = 0.099,
+		brakerate = 0.033,
 		buildcostenergy = 2604,
 		buildcostmetal = 220,
 		builder = false,

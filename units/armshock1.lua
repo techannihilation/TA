@@ -2,7 +2,7 @@ return {
 	armshock1 = {
 		acceleration = 0.023,
 		bmcode = 1,
-		brakerate = 0.9,
+		brakerate = 0.3,
 		buildcostenergy = 47722,
 		buildcostmetal = 1728,
 		builder = false,

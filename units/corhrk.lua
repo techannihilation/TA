@@ -2,7 +2,7 @@ return {
 	corhrk = {
 		acceleration = 0.11,
 		bmcode = 1,
-		brakerate = 1.692,
+		brakerate = 0.564,
 		buildcostenergy = 5874,
 		buildcostmetal = 597,
 		builder = false,

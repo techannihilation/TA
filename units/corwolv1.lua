@@ -2,7 +2,7 @@ return {
 	corwolv1 = {
 		acceleration = 0.011,
 		bmcode = 1,
-		brakerate = 0.0891,
+		brakerate = 0.0297,
 		buildcostenergy = 3434,
 		buildcostmetal = 319,
 		builder = false,

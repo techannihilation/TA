@@ -1,7 +1,7 @@
 return {
 	cornanotc = {
 		acceleration = 0,
-		brakerate = 13.5,
+		brakerate = 4.5,
 		buildcostenergy = 9600,
 		buildcostmetal = 320,
 		builddistance = 400,

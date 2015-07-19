@@ -2,7 +2,7 @@ return {
 	tllshaker = {
 		acceleration = 0.011,
 		bmcode = 1,
-		brakerate = 0.0891,
+		brakerate = 0.0297,
 		buildcostenergy = 1657,
 		buildcostmetal = 220,
 		builder = false,

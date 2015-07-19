@@ -2,7 +2,7 @@ return {
 	corfav = {
 		acceleration = 0.11,
 		bmcode = 1,
-		brakerate = 1.305,
+		brakerate = 0.435,
 		buildcostenergy = 273,
 		buildcostmetal = 26,
 		builder = false,

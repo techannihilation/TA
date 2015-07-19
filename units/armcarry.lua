@@ -4,7 +4,7 @@ return {
 		activatewhenbuilt = true,
 		antiweapons = 1,
 		bmcode = 1,
-		brakerate = 0.216,
+		brakerate = 0.072,
 		buildangle = 16384,
 		buildcostenergy = 76000,
 		buildcostmetal = 1650,

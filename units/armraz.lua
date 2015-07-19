@@ -2,7 +2,7 @@ return {
 	armraz = {
 		acceleration = 0.206,
 		bmcode = 1,
-		brakerate = 2.358,
+		brakerate = 0.786,
 		buildcostenergy = 119000,
 		buildcostmetal = 3810,
 		builder = false,

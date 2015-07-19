@@ -2,7 +2,7 @@ return {
 	armmarv = {
 		acceleration = 0.1,
 		bmcode = 1,
-		brakerate = 4.95,
+		brakerate = 1.65,
 		buildcostenergy = 5760,
 		buildcostmetal = 926,
 		builddistance = 122,

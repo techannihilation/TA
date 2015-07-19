@@ -2,7 +2,7 @@ return {
 	hyperion = {
 		acceleration = 0.08,
 		bmcode = 1,
-		brakerate = 0.216,
+		brakerate = 0.072,
 		buildcostenergy = 117333,
 		buildcostmetal = 70827,
 		builder = false,

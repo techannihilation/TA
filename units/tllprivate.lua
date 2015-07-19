@@ -2,7 +2,7 @@ return {
 	tllprivate = {
 		acceleration = 0.24,
 		bmcode = 1,
-		brakerate = 3.6,
+		brakerate = 1.2,
 		buildcostenergy = 571,
 		buildcostmetal = 64,
 		builder = false,

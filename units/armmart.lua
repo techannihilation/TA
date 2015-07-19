@@ -2,7 +2,7 @@ return {
 	armmart = {
 		acceleration = 0.0184,
 		bmcode = 1,
-		brakerate = 1.1088,
+		brakerate = 0.3696,
 		buildcostenergy = 6656,
 		buildcostmetal = 271,
 		builder = false,

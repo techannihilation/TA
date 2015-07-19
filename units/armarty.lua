@@ -2,7 +2,7 @@ return {
 	armarty = {
 		acceleration = 0.016,
 		bmcode = 1,
-		brakerate = 0.09,
+		brakerate = 0.03,
 		buildcostenergy = 2716,
 		buildcostmetal = 421,
 		builder = false,

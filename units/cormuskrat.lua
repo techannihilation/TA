@@ -2,7 +2,7 @@ return {
 	cormuskrat = {
 		acceleration = 0.0616,
 		bmcode = 1,
-		brakerate = 4.1976,
+		brakerate = 1.3992,
 		buildcostenergy = 3430,
 		buildcostmetal = 172,
 		builddistance = 172,

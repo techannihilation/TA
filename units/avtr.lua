@@ -2,7 +2,7 @@ return {
 	avtr = {
 		acceleration = 0.036,
 		bmcode = 1,
-		brakerate = 0.45,
+		brakerate = 0.15,
 		buildcostenergy = 89749,
 		buildcostmetal = 5188,
 		builder = false,

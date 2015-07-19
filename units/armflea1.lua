@@ -2,7 +2,7 @@ return {
 	armflea1 = {
 		acceleration = 0.5,
 		bmcode = 1,
-		brakerate = 4.5,
+		brakerate = 1.5,
 		buildcostenergy = 343,
 		buildcostmetal = 15,
 		builder = false,

@@ -4,7 +4,7 @@ return {
 		activatewhenbuilt = true,
 		airsightdistance = 1000,
 		bmcode = 1,
-		brakerate = 0.99,
+		brakerate = 0.33,
 		buildangle = 16384,
 		buildcostenergy = 3093,
 		buildcostmetal = 416,

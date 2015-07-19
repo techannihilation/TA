@@ -4,7 +4,7 @@ return {
 		ai_limit = "limit ARMLASHOVER 8",
 		ai_weight = "weight ARMLASHOVER 2",
 		bmcode = 1,
-		brakerate = 0.72,
+		brakerate = 0.24,
 		buildcostenergy = 3787,
 		buildcostmetal = 352,
 		builder = false,

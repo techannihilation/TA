@@ -2,7 +2,7 @@ return {
 	corpunk = {
 		acceleration = 0.5,
 		bmcode = 1,
-		brakerate = 4.5,
+		brakerate = 1.5,
 		buildcostenergy = 373,
 		buildcostmetal = 17,
 		builder = false,

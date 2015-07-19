@@ -2,7 +2,7 @@ return {
 	armrock = {
 		acceleration = 0.12,
 		bmcode = 1,
-		brakerate = 1.692,
+		brakerate = 0.564,
 		buildcostenergy = 1007,
 		buildcostmetal = 103,
 		builder = false,

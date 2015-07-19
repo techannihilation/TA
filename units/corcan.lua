@@ -2,7 +2,7 @@ return {
 	corcan = {
 		acceleration = 0.12,
 		bmcode = 1,
-		brakerate = 1.692,
+		brakerate = 0.564,
 		buildcostenergy = 9303,
 		buildcostmetal = 557,
 		builder = false,

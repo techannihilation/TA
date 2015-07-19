@@ -2,7 +2,7 @@ return {
 	armbats = {
 		acceleration = 0.036,
 		bmcode = 1,
-		brakerate = 0.279,
+		brakerate = 0.093,
 		buildangle = 16384,
 		buildcostenergy = 22113,
 		buildcostmetal = 5526,

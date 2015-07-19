@@ -2,7 +2,7 @@ return {
 	tankanotor = {
 		acceleration = 0.012,
 		bmcode = 1,
-		brakerate = 0.09,
+		brakerate = 0.03,
 		buildcostenergy = 20909,
 		buildcostmetal = 4162,
 		builder = false,

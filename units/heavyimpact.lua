@@ -1,7 +1,7 @@
 return {
 	heavyimpact = {
 		acceleration = 0.06,
-		brakerate = 0.9,
+		brakerate = 0.3,
 		buildcostenergy = 86000,
 		buildcostmetal = 7450,
 		builder = false,

@@ -3,7 +3,7 @@ return {
 		acceleration = 0.11,
 		activatewhenbuilt = true,
 		bmcode = 1,
-		brakerate = 1.8,
+		brakerate = 0.6,
 		buildcostenergy = 562,
 		buildcostmetal = 189,
 		builder = false,

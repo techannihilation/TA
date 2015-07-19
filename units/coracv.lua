@@ -2,7 +2,7 @@ return {
 	coracv = {
 		acceleration = 0.12,
 		bmcode = 1,
-		brakerate = 4.95,
+		brakerate = 1.65,
 		buildcostenergy = 58677,
 		buildcostmetal = 3040,
 		builddistance = 225,

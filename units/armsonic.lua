@@ -2,7 +2,7 @@ return {
 	armsonic = {
 		acceleration = 0.81,
 		bmcode = 1,
-		brakerate = 1.71,
+		brakerate = 0.57,
 		buildcostenergy = 10133,
 		buildcostmetal = 448,
 		builder = false,

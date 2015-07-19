@@ -2,7 +2,7 @@ return {
 	tllhtml = {
 		acceleration = 0.22,
 		bmcode = 1,
-		brakerate = 0.243,
+		brakerate = 0.081,
 		buildcostenergy = 245000,
 		buildcostmetal = 17250,
 		builder = false,

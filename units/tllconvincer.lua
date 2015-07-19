@@ -2,7 +2,7 @@ return {
 	tllconvincer = {
 		acceleration = 0.016,
 		bmcode = 1,
-		brakerate = 0.27,
+		brakerate = 0.09,
 		buildcostenergy = 2013,
 		buildcostmetal = 1013,
 		builder = false,

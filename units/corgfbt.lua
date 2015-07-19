@@ -5,7 +5,7 @@ return {
 		ai_limit = "limit corGFBT 12",
 		ai_weight = "weight corGFBT 1.6",
 		bmcode = 1,
-		brakerate = 0.18,
+		brakerate = 0.06,
 		buildcostenergy = 10647,
 		buildcostmetal = 694,
 		builder = false,

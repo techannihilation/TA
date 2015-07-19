@@ -1,7 +1,7 @@
 return {
 	corpyrox1 = {
 		acceleration = 0.1,
-		brakerate = 1.62,
+		brakerate = 0.54,
 		buildcostenergy = 23467,
 		buildcostmetal = 3520,
 		builder = false,

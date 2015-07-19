@@ -2,7 +2,7 @@ return {
 	armpincer = {
 		acceleration = 0.011,
 		bmcode = 1,
-		brakerate = 0.099,
+		brakerate = 0.033,
 		buildcostenergy = 2049,
 		buildcostmetal = 199,
 		builder = false,

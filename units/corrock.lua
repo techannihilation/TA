@@ -2,7 +2,7 @@ return {
 	corrock = {
 		acceleration = 0.108,
 		bmcode = 1,
-		brakerate = 1.692,
+		brakerate = 0.564,
 		buildcostenergy = 2667,
 		buildcostmetal = 235,
 		builder = false,
