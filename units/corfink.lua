@@ -1,9 +1,7 @@
 return {
 	corfink = {
-		acceleration = 0.05227,
-		bankscale = 1,
-		bmcode = 1,
-		brakerate = 0.00125,
+		acceleration = 0.16,
+		brakerate = 0.0125,
 		buildcostenergy = 1460,
 		buildcostmetal = 28,
 		builder = false,
