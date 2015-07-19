@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  flare1, flare2, base, turret, wake1, wake2, barrel1, barrel2, ground;
+piece  flare1, flare2, base, turret, wake1, wake2, barrel1, barrel2, ground, flareb;
 
 static-var  gun_1, restore_delay, aimDir, Static_Var_4, Static_Var_5, oldHead;
 
@@ -180,7 +180,7 @@ AimFromSecondary(piecenum)
 
 QuerySecondary(piecenum)
 {
-	piecenum = base;
+	piecenum = flareb;
 }
 
 AimPrimary(heading, pitch)
