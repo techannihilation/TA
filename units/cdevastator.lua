@@ -6,7 +6,7 @@ return {
 		airstrafe = false,
 		bankscale = 0.5,
 		bmcode = 1,
-		brakerate = 0.399,
+		brakerate = 0.0399,
 		buildcostenergy = 1780000,
 		buildcostmetal = 303000,
 		builder = false,

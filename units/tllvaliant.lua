@@ -7,7 +7,7 @@ return {
 		autoheal = 5,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 3.75,
+		brakerate = 0.375,
 		buildcostenergy = 269867,
 		buildcostmetal = 214667,
 		builder = true,

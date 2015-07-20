@@ -1,7 +1,7 @@
 return {
 	cbuilderlvl2 = {
 		acceleration = 0.0266,
-		brakerate = 3.53,
+		brakerate = 0.353,
 		buildcostenergy = 3582,
 		buildcostmetal = 698,
 		builddistance = 100,

@@ -4,7 +4,7 @@ return {
 		attackrunlength = 170,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.0004,
+		brakerate = 0.004,
 		buildcostenergy = 6973,
 		buildcostmetal = 310,
 		buildtime = 17814,

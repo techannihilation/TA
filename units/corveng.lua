@@ -4,7 +4,7 @@ return {
 		airsightdistance = 700,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.0065,
+		brakerate = 0.065,
 		buildcostenergy = 2027,
 		buildcostmetal = 91,
 		buildpic = "CORVENG.png",

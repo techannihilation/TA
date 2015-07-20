@@ -4,7 +4,7 @@ return {
 		attackrunlength = 180,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.004,
+		brakerate = 0.04,
 		buildcostenergy = 17457,
 		buildcostmetal = 173,
 		buildpic = "CORGRIPN.png",

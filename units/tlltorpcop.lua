@@ -5,7 +5,7 @@ return {
 		amphibious = 1,
 		attackrunlength = 250,
 		bmcode = 1,
-		brakerate = 1,
+		brakerate = 0.1,
 		buildcostenergy = 7307,
 		buildcostmetal = 421,
 		builder = false,

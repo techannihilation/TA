@@ -2,7 +2,7 @@ return {
 	corsbomb = {
 		acceleration = 0.03594,
 		bmcode = 1,
-		brakerate = 0.0015,
+		brakerate = 0.015,
 		buildcostenergy = 101333,
 		buildcostmetal = 3093,
 		builder = false,

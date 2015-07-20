@@ -4,7 +4,7 @@ return {
 		airsightdistance = 900,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.009,
+		brakerate = 0.09,
 		buildcostenergy = 70400,
 		buildcostmetal = 480,
 		buildtime = 17285,

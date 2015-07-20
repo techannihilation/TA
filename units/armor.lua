@@ -4,7 +4,7 @@ return {
 		antiweapons = 1,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 6.25,
+		brakerate = 0.625,
 		buildcostenergy = 42667,
 		buildcostmetal = 2667,
 		builder = false,

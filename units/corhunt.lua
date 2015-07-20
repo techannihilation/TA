@@ -5,7 +5,7 @@ return {
 		amphibious = 1,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.0038,
+		brakerate = 0.038,
 		buildcostenergy = 6849,
 		buildcostmetal = 130,
 		builder = false,

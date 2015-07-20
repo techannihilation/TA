@@ -4,7 +4,7 @@ return {
 		airsightdistance = 700,
 		amphibious = 1,
 		bmcode = 1,
-		brakerate = 0.0042,
+		brakerate = 0.042,
 		buildcostenergy = 2133,
 		buildcostmetal = 293,
 		builder = false,
