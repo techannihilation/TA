@@ -285,6 +285,7 @@ end
 end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
+--[[
 for name, ud in pairs(UnitDefs) do
 	if (ud.brakerate) then 
 		if ud.canfly then
@@ -303,7 +304,7 @@ end
 
 --VFS.Include("gamedata/unitdefs_post_save_to_customparams.lua")
 
---]]
+
 
         
         --[[
