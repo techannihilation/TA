@@ -700,6 +700,16 @@ local morphDefs = {
 		time = 60,
 		xp = 0.5,
 	},
+      armanac = {
+		into = 'armhplasma',
+		time = 30,
+		xp = 0.5,
+	},
+      corsnap = {
+		into = 'nsacbehe',
+		time = 60,
+		xp = 0.75,
+	},
 }
 
 

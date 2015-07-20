@@ -255,7 +255,7 @@ if (Spring.GetModOptions) then
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 --
-
+--[[
 if (modOptions.mo_transportenemy == "notcoms") then
   for name,ud in pairs(UnitDefs) do  
     if Commanders[ud.unitname] then
@@ -281,10 +281,28 @@ end
      end
     end
    end
+        --]]
 end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-        
+for name, ud in pairs(UnitDefs) do
+	if (ud.brakerate) then 
+		if ud.canfly then
+			if ud.hoverattack then
+                                Spring.Echo(ud.objectname .. " hover brakerate := " .. ud.brakerate .."  New brakerate := ".. ud.brakerate * 0.1)
+				--ud.brakerate = ud.brakerate * 0.1
+			else
+                                Spring.Echo(ud.objectname .. " Aircraft brakerate := " .. ud.brakerate .." New brakerate := ".. ud.brakerate * 10)
+				--ud.brakerate = ud.brakerate * 10
+			end
+		else 
+			--ud.brakerate = ud.brakerate * 3.0
+		end
+	end
+end
+
+--VFS.Include("gamedata/unitdefs_post_save_to_customparams.lua")
+
 --]]
 
         
