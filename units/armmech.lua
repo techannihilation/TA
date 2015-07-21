@@ -4,15 +4,9 @@ return {
 		ai_limit = "limit armMech 6",
 		ai_weight = "weight armMech 2.2",
 		bmcode = 1,
-<<<<<<< HEAD
 		brakerate = 0.54,
-		buildcostenergy = 20046,
-		buildcostmetal = 1893,
-=======
-		brakerate = 1.62,
 		buildcostenergy = 22000,
 		buildcostmetal = 1950,
->>>>>>> ccbb9aa26d19f75327f3ac5570a61332769aec3e
 		builder = false,
 		buildtime = 26000,
 		canattack = true,
