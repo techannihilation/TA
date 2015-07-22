@@ -16,7 +16,7 @@ return {
 		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
 		corpse = "DEAD",
 		defaultmissiontype = "Standby",
-		description = "EMP All-Terrain Unit",
+		description = "All-Terrain EMP Spider",
 		energymake = 0,
 		energystorage = 0,
 		energyuse = 0,

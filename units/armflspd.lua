@@ -16,7 +16,7 @@ return {
 		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Anti-Air Flak All-Terrain Unit",
+		description = "All-Terrain Anti-Air Flak Spider",
 		designation = "ARM-FLSPD",
 		downloadable = 1,
 		energymake = 0,

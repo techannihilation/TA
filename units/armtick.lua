@@ -20,7 +20,7 @@ return {
 		category = "ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SMALL",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "All-Terrain Resurrection Kbot",
+		description = "All-Terrain Resurrection Spider",
 		designation = "ARM-PASPD2",
 		downloadable = 1,
 		energystorage = 0,
