@@ -4,7 +4,7 @@ return {
 		autoheal = 50,
 		bmcode = 1,
 		brakerate = 0.375,
-		buildcostenergy = 13000,
+		buildcostenergy = 8500,
 		buildcostmetal = 650,
 		builder = false,
 		buildpic = "ARMMAV.png",
