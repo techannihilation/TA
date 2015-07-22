@@ -19,7 +19,7 @@ return {
 		cloakcostmoving = 120,
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Paralysis Sniper",
+		description = "All-Terrain Paralysis Sniper Unit",
 		designation = "ARM-PASPD",
 		energymake = 0,
 		energystorage = 0,
