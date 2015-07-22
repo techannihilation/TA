@@ -55,10 +55,10 @@ return {
 			[1] = "armmlspd",
 			[2] = "armtick",
 			[3] = "armjaspd",
-			[4] = "armlaspd",
-			[5] = "armaaspd",
+			[4] = "armaaspd",
+			[5] = "armspid",
 			[6] = "armsptk",
-			[7] = "armspid",
+			[7] = "armlaspd",
 			[8] = "armcav",
 		},
 		customparams = {
