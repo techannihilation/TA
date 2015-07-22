@@ -15,7 +15,7 @@ return {
 		category = "ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Defiler All-Terrain Assault Unit",
+		description = "All-Terrain Assault Unit",
 		designation = "ATAS",
 		energymake = 0,
 		energystorage = 0,
