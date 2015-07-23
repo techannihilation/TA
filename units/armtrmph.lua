@@ -134,7 +134,7 @@ return {
 			},
 			cannon_trmph = {
 				accuracy = 375,
-				areaofeffect = 128,
+				areaofeffect = 172,
 				cegtag = "Trail_cannon",
 				craterboost = 0,
 				cratermult = 0,
@@ -142,7 +142,7 @@ return {
 				gravityaffected = "TRUE",
 				name = "Heavy Plasma Cannon",
 				nogap = 1,
-				range = 3650,
+				range = 3450,
 				reloadtime = 1,
 				rgbcolor = "0.91 0.71 0",
 				separation = 0.45,
@@ -176,7 +176,7 @@ return {
 				name = "Heavy Guided Rockets",
 				noselfdamage = true,
 				proximitypriority = -1,
-				range = 1050,
+				range = 1400,
 				reloadtime = 1,
 				smoketrail = false,
 				soundhitdry = "cent_hit",
@@ -192,7 +192,7 @@ return {
 				weaponacceleration = 200,
 				weapontimer = 1,
 				weapontype = "StarburstLauncher",
-				weaponvelocity = 1000,
+				weaponvelocity = 600,
 				damage = {
 					commanders = 250,
 					default = 500,
@@ -219,7 +219,6 @@ return {
 			},
 			[5] = {
 				def = "ROCKET_MCV",
-				onlytargetcategory = "NOTVTOL",
 			},
 		},
 	},
