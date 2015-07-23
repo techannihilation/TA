@@ -1,8 +1,8 @@
 return {
 	coresy = {
 		bmcode = 0,
-		buildcostenergy = 85333,
-		buildcostmetal = 24000,
+		buildcostenergy = 200000,
+		buildcostmetal = 16000,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 18,
@@ -52,10 +52,10 @@ return {
 		workertime = 400,
 		yardmap = "wCCCCCCCCCCCCCwcCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCc",
 		buildoptions = {
-			[1] = "cortyrnt",
-			[2] = "corhcar",
-			[3] = "uppercut",
-			[4] = "corblackhy",
+			[1] = "corhcar",
+			[2] = "uppercut",
+			[3] = "corblackhy",
+			[4] = "cortyrnt",
 		},
 		customparams = {
 			providetech = "T3 Factory",
