@@ -191,7 +191,6 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "VTOL",
 				def = "ROCKET_KROG",
 			},
 			[3] = {
