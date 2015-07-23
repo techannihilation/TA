@@ -118,9 +118,10 @@ local function getEditedCurrentTooltip()
 	--extract the exp value with regexp
 	local expPattern = "Experience (%d+%.%d%d)"
 	local currentExp = tonumber(text:match(expPattern))
+
 	local limExp = currentExp and currentExp/(1+currentExp) or 1
 	--replace with limexp: exp/(1+exp) since all spring exp effects are linear in limexp, multiply by 10 because people like big numbers instead of [0,1]
-	text = currentExp and text:gsub(expPattern,string.format("Experience %.2f", 10*limExp) ) or text
+	text = currentExp and text:gsub(expPattern,string.format("Experience %.2f", currentExp) ) or text
 	return text
 end
 
