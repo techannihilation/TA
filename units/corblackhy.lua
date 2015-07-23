@@ -53,6 +53,7 @@ return {
 		scale = 100,
 		seismicsignature = 0,
 		selfdestructas = "BANTHA_NUKE",
+		selfdestructcountdown = 10,
 		side = "CORE",
 		sightdistance = 650,
 		standingfireorder = 2,
