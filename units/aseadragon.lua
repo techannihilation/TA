@@ -37,7 +37,7 @@ return {
 		losemitheight = 36,
 		maneuverleashlength = 640,
 		mass = 32122,
-		maxdamage = 70000,
+		maxdamage = 68000,
 		maxvelocity = 1.8,
 		metalstorage = 0,
 		minwaterdepth = 15,
@@ -48,7 +48,7 @@ return {
 		nochasecategory = "VTOL",
 		objectname = "ASEADRAGON",
 		pushresistant = true,
-		radardistance = 1530,
+		radardistance = 1500,
 		radaremitheight = 36,
 		scale = 10,
 		seismicsignature = 0,
@@ -129,7 +129,7 @@ return {
 		weapondefs = {
 			arm_batsaftx = {
 				accuracy = 350,
-				areaofeffect = 96,
+				areaofeffect = 64,
 				cegtag = "Trail_cannon",
 				craterboost = 0,
 				cratermult = 0,
