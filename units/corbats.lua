@@ -137,7 +137,7 @@ return {
 				nogap = 1,
 				noselfdamage = true,
 				range = 1500,
-				reloadtime = 0.4,
+				reloadtime = 0.5,
 				separation = 0.45,
 				size = 1,
 				sizedecay = -0.15,
