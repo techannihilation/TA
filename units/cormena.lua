@@ -20,7 +20,7 @@ return {
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "All-Terrain Long Range Plasma Cannon Kbot",
+		description = "All-Terrain LRPC Spider",
 		designation = "COR-MENA",
 		downloadable = 1,
 		energymake = 10,

@@ -1,10 +1,10 @@
 return {
 	armstump1 = {
-		acceleration = 0.0287,
+		acceleration = 0.03,
 		bmcode = 1,
-		brakerate = 0.0894,
-		buildcostenergy = 2522,
-		buildcostmetal = 366,
+		brakerate = 0.09,
+		buildcostenergy = 2550,
+		buildcostmetal = 365,
 		builder = false,
 		buildpic = "ARMSTUMP1.png",
 		buildtime = 2904,
@@ -66,7 +66,7 @@ return {
 			armstump_dead = {
 				blocking = true,
 				category = "corpses",
-				damage = 1584.00012,
+				damage = 1584,
 				description = "Sturdy Stumpy Wreckage",
 				energy = 0,
 				featuredead = "ARMSTUMP_HEAP",
@@ -75,7 +75,7 @@ return {
 				footprintz = 2,
 				height = 20,
 				hitdensity = 100,
-				metal = 274.39999,
+				metal = 274,
 				object = "ARMSTUMP_DEAD",
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",

@@ -16,7 +16,7 @@ return {
 		category = "ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL SMALL WEAPON",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "All-terrain Anti-Air Kbot",
+		description = "All-terrain Anti-Air Spider",
 		designation = "ARM-AKML",
 		downloadable = 1,
 		energymake = 0,

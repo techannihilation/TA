@@ -34,7 +34,7 @@ return {
 		metalstorage = 65,
 		mobilestandorders = 1,
 		movementclass = "TKBOT3",
-		name = "All-Terrain Construction Kbot",
+		name = "All-Terrain Construction Spider",
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMCSPID",
