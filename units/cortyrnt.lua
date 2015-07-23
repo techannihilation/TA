@@ -133,7 +133,7 @@ return {
 				weaponvelocity = 1000,
 				damage = {
 					commanders = 750,
-					default = 2500,
+					default = 3000,
 					subs = 5,
 				},
 			},
@@ -148,7 +148,7 @@ return {
 				gravityaffected = "TRUE",
 				name = "Heavy Plasma Cannon",
 				nogap = 1,
-				range = 3500,
+				range = 3250,
 				reloadtime = 0.5,
 				separation = 0.45,
 				size = 1,
@@ -182,7 +182,7 @@ return {
 				name = "Heavy Rockets",
 				noselfdamage = true,
 				proximitypriority = -1,
-				range = 1050,
+				range = 1400,
 				reloadtime = 1,
 				smoketrail = false,
 				soundhitdry = "xplosml2",
@@ -198,7 +198,7 @@ return {
 				weaponacceleration = 200,
 				weapontimer = 1,
 				weapontype = "StarburstLauncher",
-				weaponvelocity = 800,
+				weaponvelocity = 600,
 				damage = {
 					commanders = 250,
 					default = 500,
@@ -213,7 +213,6 @@ return {
 			},
 			[2] = {
 				def = "ROCKET_KROG",
-				onlytargetcategory = "NOTVTOL",
 			},
 			[3] = {
 				def = "BLOD_DOOM",
