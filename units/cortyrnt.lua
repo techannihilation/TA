@@ -51,6 +51,7 @@ return {
 		radardistance = 2000,
 		radaremitheight = 57,
 		selfdestructas = "CRBLMSSL",
+		selfdestructcountdown = 10,
 		side = "CORE",
 		sightdistance = 1050,
 		sonardistance = 0,
