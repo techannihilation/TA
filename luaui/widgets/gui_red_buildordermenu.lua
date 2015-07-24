@@ -26,8 +26,8 @@ local Config = {
 	buildmenu = {
 		px = 0,py = CanvasY -(12*6+5*2) -(35*8+0*7+5*2) -5, --default start position
 		
-		isx = 50,isy = 35, --icon size
-		ix = 4,iy = 7, --icons x/y
+		isx = 45,isy = 31, --icon size
+		ix = 5,iy = 7, --icons x/y
 		ispreadx=0,ispready=0, --space between icons
 		
 		margin = 5, --distance from background border
@@ -48,8 +48,8 @@ local Config = {
 	ordermenu = {
 		px = 0,py = CanvasY -(12*6+5*2) -(35*8+0*7+5*2) -5 -(35*5+0*4+5*2) -5,
 		
-		isx = 50,isy = 35,
-		ix = 4,iy = 4,
+		isx = 45,isy = 31,
+		ix = 5,iy = 4,
 		
 		ispreadx=0,ispready=0,
 		
