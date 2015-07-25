@@ -145,7 +145,7 @@ return {
 				cegtag = "Trail_cannon",
 				craterboost = 0,
 				cratermult = 0,
-				energypershot = 1000,
+				energypershot = 1500,
 				gravityaffected = "TRUE",
 				name = "Heavy Plasma Cannon",
 				nogap = 1,
