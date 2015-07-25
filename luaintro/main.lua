@@ -56,6 +56,7 @@ include "LuaHandler/handler.lua"
 
 --// print Lua & LuaUI version
 Spring.Log(LUA_NAME, "info", LUA_VERSION .. " (" .. _VERSION .. ")")
+Spring.Log(LUA_NAME, "info","Nix main loaded")
 
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
