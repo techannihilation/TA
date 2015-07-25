@@ -1,8 +1,8 @@
 return {
 	armesy = {
 		bmcode = 0,
-		buildcostenergy = 87467,
-		buildcostmetal = 23467,
+		buildcostenergy = 190000,
+		buildcostmetal = 15900,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 18,
@@ -52,11 +52,11 @@ return {
 		workertime = 400,
 		yardmap = "wCCCCCCCCCCCCCwcCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCc",
 		buildoptions = {
-			[1] = "armtrmph",
-			[2] = "armhcar",
-			[3] = "aseadragon",
-			[4] = "uppercut",
-			[5] = "armbc",
+			[1] = "armbc",
+			[2] = "uppercut",
+			[3] = "armhcar",
+			[4] = "aseadragon",
+			[5] = "armtrmph",
 		},
 		customparams = {
 			providetech = "T3 Factory",

@@ -8,7 +8,12 @@ Fix superkrog crushweapon, Closes #607
 Fix unit cannon range issue's, Closes #605
 
 ----Balance----
-Add many count for self destroy for all bantha nuke (cordem, command vehicule, shield bot, hero)
+Balance All spider. TimeBuild & energy cost decrease.
+Dauber : Maxdamage 7100 => 2500. Range 400 => 600. Velocity 1.15 => 1.5
+Less range for T3 Ship (Super BatleShip & FlagShip)
+FlagShip : Decrease cost.
+BattleShip (T2.5) => Increase range & cost. Decrease velocity.
+Add many count for self destroy for all bantha nuke (cordem, command vehicule, shield bot, hero, T3 Ship : Flag, Super BattleShip, Nuke Ship)
 Corkarg : transmorm 1 missile into 4 burst. Same damage & increase range. Cost increase.
 Corkarg1 : transmorm 1 missile into 4 burst. Same damage & increase range. Cost increase.
 tlltelsatnk : increase damage & velocity.

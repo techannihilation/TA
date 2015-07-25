@@ -5,7 +5,7 @@ return {
 		bmcode = 0,
 		brakerate = 0,
 		buildangle = 2048,
-		buildcostenergy = 31141,
+		buildcostenergy = 53000,
 		buildcostmetal = 3893,
 		builder = false,
 		buildpic = "corflosh.png",
