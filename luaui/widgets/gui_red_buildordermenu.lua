@@ -26,18 +26,18 @@ local Config = {
 	buildmenu = {
 		px = 0,py = CanvasY -(12*6+5*2) -(35*8+0*7+5*2) -5, --default start position
 		
-		isx = 45,isy = 31, --icon size
-		ix = 5,iy = 7, --icons x/y
+		isx = 43,isy = 29, --icon size
+		ix = 5,iy = 6, --icons x/y
 		ispreadx=0,ispready=0, --space between icons
 		
-		margin = 5, --distance from background border
+		margin = 0, --distance from background border
 		
-		fadetime = 0.25, --fade effect time, in seconds
+		fadetime = 0.15, --fade effect time, in seconds
 		
-		ctext = {1,1,1,1}, --color {r,g,b,alpha}
+		ctext = {1,1,1,0.9}, --color {r,g,b,alpha}
 		cbackground = {0,0,0,0.5},
 		cborder = {0,0,0,1},
-		cbuttonbackground = {0.1,0.1,0.1,1},
+		cbuttonbackground = {0.1,0.1,0.1,0.6},
 		
 		dragbutton = {2}, --middle mouse button
 		tooltip = {
@@ -48,19 +48,19 @@ local Config = {
 	ordermenu = {
 		px = 0,py = CanvasY -(12*6+5*2) -(35*8+0*7+5*2) -5 -(35*5+0*4+5*2) -5,
 		
-		isx = 45,isy = 31,
+		isx = 43,isy = 29,
 		ix = 5,iy = 4,
 		
 		ispreadx=0,ispready=0,
 		
-		margin = 5,
+		margin = 0,
 		
-		fadetime = 0.25,
+		fadetime = 0.15,
 		
-		ctext = {1,1,1,1},
+		ctext = {1,1,1,0.9},
 		cbackground = {0,0,0,0.5},
 		cborder = {0,0,0,1},
-		cbuttonbackground={0.1,0.1,0.1,1},
+		cbuttonbackground={0.1,0.1,0.1,0.6},
 		
 		dragbutton = {2}, --middle mouse button
 		tooltip = {
@@ -342,9 +342,9 @@ local function UpdateGrid(g,cmds,ordertype)
 			end
 		end
 		if (cmd.disabled) then
-			icon.texturecolor = {0.5,0.5,0.5,1}	
+			icon.texturecolor = {0.55,0.55,0.55,0.75}
 		else
-			icon.texturecolor = {1,1,1,1}
+			icon.texturecolor = {1,1,1,0.95}
 		end
 		
 		icon.mouseclick = {
