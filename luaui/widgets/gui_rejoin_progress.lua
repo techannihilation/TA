@@ -13,7 +13,6 @@ function widget:GetInfo()
 end
 
 local customScale			= 1
-local bgcorner				= ":n:"..LUAUI_DIRNAME.."Images/bgcorner.png"
 local barbg					= ":n:"..LUAUI_DIRNAME.."Images/resbar.dds"
 
 local bgmargin				= 0.22
@@ -97,25 +96,8 @@ local forceDisplay = nil
  
 
 function RectRound(px,py,sx,sy,cs)
-	local px,py,sx,sy,cs = math.floor(px),math.floor(py),math.ceil(sx),math.ceil(sy),math.floor(cs)
-	
-	glRect(px+cs, py, sx-cs, sy)
-	glRect(sx-cs, py+cs, sx, sy-cs)
-	glRect(px+cs, py+cs, px, sy-cs)
-	
-	if py <= 0 or px <= 0 then glTexture(false) else glTexture(bgcorner) end
-	glTexRect(px, py+cs, px+cs, py)		-- top left
-	
-	if py <= 0 or sx >= vsx then glTexture(false) else glTexture(bgcorner) end
-	glTexRect(sx, py+cs, sx-cs, py)		-- top right
-	
-	if sy >= vsy or px <= 0 then glTexture(false) else glTexture(bgcorner) end
-	glTexRect(px, sy-cs, px+cs, sy)		-- bottom left
-	
-	if sy >= vsy or sx >= vsx then glTexture(false) else glTexture(bgcorner) end
-	glTexRect(sx, sy-cs, sx-cs, sy)		-- bottom right
-	
-	glTexture(false)
+	local px,py,sx,sy = math.floor(px),math.floor(py),math.ceil(sx),math.ceil(sy)
+	glRect(px, py, sx, sy)
 end
 
 local function ActivateGUI_n_TTS (frameDistanceToFinish, ui_active, altThreshold)
