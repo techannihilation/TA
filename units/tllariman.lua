@@ -113,7 +113,7 @@ return {
 		},
 		weapondefs = {
 			light_cannon = {
-				areaofeffect = 12,
+				areaofeffect = 48,
 				avoidfeature = false,
 				cegtag = "Trail_cannon",
 				craterboost = 0,
