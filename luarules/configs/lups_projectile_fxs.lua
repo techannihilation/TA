@@ -1,7 +1,9 @@
 local lups_effects = {
    cbrutus_cbrutus_missile = {
-    {class = "Ribbon", options={width=3, size=8, color = {1,0,0,1}}},
-    --{class = "JitterParticles2", options={width=3, size=80,emitVector = {0,0,-1}}},
+    {class = "Ribbon", options={width=3, size=8, color = {1,0,0,1}},},
+    },
+   arm_furie_arm_furie_fire = {
+    {class = "Ribbon", options={width=3, size=4, color = {1,0.3,0.3,1}},},
     },
 }
 local projectile_effects = {}
