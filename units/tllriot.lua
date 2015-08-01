@@ -128,6 +128,7 @@ return {
 				impulsefactor = 0,
 				intensity = 1.5,
 				name = "Riot Cannon",
+				mygravity = 0.001,
 				range = 340,
 				reloadtime = 1.8,
 				rgbcolor = "0.5 0.5 1.0",
