@@ -63,7 +63,7 @@ function gadget:GameFrame(n)
       for unitID, _ in pairs(storageunits) do
  
 	if Spring.GetUnitIsStunned(unitID) then
-	local penatly = storageunits[unitID].storagecap / 300
+	local penatly = storageunits[unitID].storagecap * 0.01 -- would work out 150e for t1 and 750e for t2
 	--Spring.Echo(unitID .. " is stunned  " ..storageunits[unitID].storagecap,penatly,storageunits[unitID].height)
 	local x,y,z = Spring.GetUnitPosition(unitID)
 	local height = storageunits[unitID].height * 0.40
