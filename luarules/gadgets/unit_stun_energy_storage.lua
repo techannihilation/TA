@@ -60,18 +60,17 @@ local pairs = pairs
 
 function gadget:GameFrame(n)
   if (((n+18) % 30) < 0.1) then
-      for unitID, _ in pairs(storageunits) do
+    for unitID, _ in pairs(storageunits) do
  
-	if Spring.GetUnitIsStunned(unitID) then
-	local penatly = storageunits[unitID].storagecap * 0.01 -- would work out 150e for t1 and 750e for t2
-	--Spring.Echo(unitID .. " is stunned  " ..storageunits[unitID].storagecap,penatly,storageunits[unitID].height)
-	local x,y,z = Spring.GetUnitPosition(unitID)
-	local height = storageunits[unitID].height * 0.40
-	Spring.SpawnCEG("ENERGY_STORAGE_LEAK",x,y+height,z,0,0,0)
-	Spring.UseTeamResource(Spring.GetUnitTeam(unitID), "energy", penatly)
-	end
-   end
-
+	   if Spring.GetUnitIsStunned(unitID) then
+	     local penality = storageunits[unitID].storagecap * 0.01 -- would work out 150e for t1 and 750e for t2
+	     --Spring.Echo(unitID .. " is stunned  " ..storageunits[unitID].storagecap,penality,storageunits[unitID].height)
+	     local x,y,z = Spring.GetUnitPosition(unitID)
+	     local height = storageunits[unitID].height * 0.40
+	     Spring.SpawnCEG("ENERGY_STORAGE_LEAK",x,y+height,z,0,0,0)
+	     Spring.UseTeamResource(Spring.GetUnitTeam(unitID), "energy", penality)
+	   end
+    end
   end
 end
 -------------------------------------------------------------------------------------
@@ -80,12 +79,11 @@ end
 local function SetupUnit(unitID,unitDefID)
   local ud = UnitDefs[unitDefID]
   if (ud == nil)or(ud.height == nil) then return nil end
-  
    storageunits[unitID] = {height = ud.height,storagecap = ud.energyStorage}
 end
 
 --[[
-function gadget:Initialize()
+function gadget:Initialize() --for tesing only
   for _, unitID in ipairs(SpGetAllUnits()) do
     local unitDefID = GetUnitDefID(unitID)
     if (storageDefs[unitDefID]) then
@@ -110,7 +108,7 @@ end
 
 function gadget:UnitDestroyed(unitID, unitDefID, unitTeam)
 	if (storageDefs[unitDefID]) then 
-	   storageunits[unitID]= nil
+	 storageunits[unitID]= nil
 	end
 end
 
