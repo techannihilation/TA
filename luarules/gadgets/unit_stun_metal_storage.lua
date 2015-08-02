@@ -57,7 +57,7 @@ local pairs = pairs
 
 
 function gadget:GameFrame(n)
-  if (((n+18) % 32) < 0.1) then
+  if (((n+18) % 30) < 0.1) then
     for unitID, _ in pairs(storageunits) do
 	    local uDefID = GetUnitDefID(unitID) ; if not uDefID then break end
 	    local uDef = uDefs[uDefID]
@@ -101,7 +101,7 @@ end
 
 --testing only
 --[[
-function gadget:Initialize()
+function gadget:Initialize() --testing only
   for _, unitID in ipairs(SpGetAllUnits()) do
     local unitDefID = GetUnitDefID(unitID)
     if (storageDefs[unitDefID]) then
