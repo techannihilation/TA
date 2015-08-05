@@ -15,7 +15,7 @@ return {
 		category = "ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Salvo Fire Artillery",
+		description = "Long Range Plasma Artillery",
 		designation = "by-cool-man",
 		energymake = 5,
 		energystorage = 0,

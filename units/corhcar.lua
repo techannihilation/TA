@@ -22,7 +22,7 @@ return {
 		collisionvolumetype = "Ell",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Command Carrier",
+		description = "Aircraft Carrier with Advanced Nuclear ICBM",
 		designation = "SB-3-VT",
 		energymake = 250,
 		energystorage = 3000,

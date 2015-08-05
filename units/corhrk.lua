@@ -3,8 +3,8 @@ return {
 		acceleration = 0.11,
 		bmcode = 1,
 		brakerate = 0.564,
-		buildcostenergy = 5874,
-		buildcostmetal = 597,
+		buildcostenergy = 5850,
+		buildcostmetal = 590,
 		builder = false,
 		buildpic = "CORHRK.png",
 		buildtime = 6591,
@@ -147,6 +147,7 @@ return {
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 800,
 				damage = {
+					commanders = 350,
 					default = 750,
 					subs = 5,
 				},

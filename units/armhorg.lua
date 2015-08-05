@@ -2,7 +2,7 @@ return {
 	armhorg = {
 		acceleration = 0.017,
 		bmcode = 1,
-		brakerate = 0.045,
+		brakerate = 0.045.
 		buildcostenergy = 13500,
 		buildcostmetal = 1300,
 		builder = false,
@@ -15,7 +15,7 @@ return {
 		category = "ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Very Heavy Missile Tank",
+		description = "Long Range Missile Vehicle",
 		energymake = 0,
 		energystorage = 20,
 		energyuse = 0,
@@ -119,8 +119,8 @@ return {
 		},
 		weapondefs = {
 			armhorg_weapon = {
-				accuracy = 200,
-				areaofeffect = 120,
+				accuracy = 100,
+				areaofeffect = 80,
 				avoidfeature = false,
 				burst = 8,
 				burstrate = 0.22,

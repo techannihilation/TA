@@ -155,7 +155,7 @@ return {
 				id = 233,
 				model = "missileH2",
 				name = "Heavy Rocket",
-				range = 1200,
+				range = 1050,
 				reloadtime = 15,
 				smoketrail = true,
 				soundhitdry = "tankahit",
