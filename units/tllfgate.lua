@@ -12,7 +12,7 @@ return {
 		buildtime = 78000,
 		category = "ALL NOTDEFENSE NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		description = "Floating Plasma Deflector",
-		energystorage = 1800,
+		energystorage = 0,
 		energyuse = 0,
 		explodeas = "CRAWL_BLAST",
 		floater = true,
