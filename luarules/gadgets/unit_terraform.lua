@@ -210,6 +210,7 @@ local allowedArray = {
   [UnitDefNames["cbuilderlvl1"].id] = true,
   [UnitDefNames["corassis"].id] = true,
   [UnitDefNames["corfast"].id] = true,
+  [UnitDefNames["cormls"].id] = true,
 
   --Arm 
   [UnitDefNames["armcom5"].id] = true,
@@ -218,6 +219,8 @@ local allowedArray = {
   [UnitDefNames["abuilderlvl1"].id] = true,
   [UnitDefNames["consul"].id] = true,
   [UnitDefNames["armfark"].id] = true,
+  [UnitDefNames["armmls"].id] = true,
+
 
   --The lost legacy
   [UnitDefNames["tllcom5"].id] = true,
@@ -226,6 +229,8 @@ local allowedArray = {
   [UnitDefNames["tllaca"].id] = true,
   [UnitDefNames["tllacv"].id] = true,
   [UnitDefNames["tllack"].id] = true,
+  [UnitDefNames["tllacsub"].id] = true,
+
 }
 
 --------------------------------------------------------------------------------
