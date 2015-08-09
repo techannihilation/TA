@@ -39,7 +39,7 @@ return {
 		selfdestructas = "ESTOR_BUILDING",
 		shootme = 1,
 		side = "TLL",
-		sightdistance = 6500,
+		sightdistance = 650,
 		standingfireorder = 2,
 		standingmoveorder = 0,
 		steeringmode = 1,
