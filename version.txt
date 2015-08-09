@@ -8,6 +8,7 @@ Fix superkrog crushweapon, Closes #607
 Fix unit cannon range issue's, Closes #605
 
 ----Balance----
+
 Akmech (vengence) => Increase damage for Missile + rework beamlaser into juggernaut laser (same range & damage) + *
 Bertha & Corint => increase reload (7=>8) & damage (same dmg / s)
 Bertha1 & Corint1 => increase reload (6=>8) & damage (same dmg / s)
@@ -38,7 +39,7 @@ Add many count for self destroy for all bantha nuke (cordem, command vehicule, s
 Corkarg : transmorm 1 missile into 4 burst. Same damage & increase range. Cost increase.
 Corkarg1 : transmorm 1 missile into 4 burst. Same damage & increase range. Cost increase.
 tlltelsatnk : increase damage & velocity.
-Tlldemon => HP 26K => 6.5K. Increase Range (1200 => 1350). Delete metalcost per shot. Increase damage vs experimental units. Increase Reload & cost. Add description : Anti T3/T4.
+Tlldemon => HP 26K => 6.5K. Increase Range (1200 => 1300). Delete metalcost per shot. Increase damage vs experimental units. Increase Reload & cost. Add description : Anti T3/T4.
 TLLAcid => Increase HP. Increase AOE. Increase Reload. Decrease Range.
 TLLong (EMP) => Add emp description. Decrease Metal & Energy Cost to balance with EMP Bertha.
 Anvil => Decrease Cost by second (20KE => 10KE). Increase Range.
