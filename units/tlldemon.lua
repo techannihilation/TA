@@ -132,7 +132,7 @@ return {
 				model = "missile10",
 				name = "Anti-Dreadnaught Heavy Cannon",
 				proximitypriority = -1,
-				range = 1400,
+				range = 1300,
 				reloadtime = 10,
 				smoketrail = true,
 				soundhitdry = "rockhit",
