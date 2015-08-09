@@ -119,7 +119,7 @@ return {
 		},
 		weapondefs = {
 			armhorg_weapon = {
-				accuracy = 100,
+				accuracy = 500,
 				areaofeffect = 80,
 				avoidfeature = false,
 				burst = 8,
