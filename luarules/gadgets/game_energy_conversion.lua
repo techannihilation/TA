@@ -141,16 +141,6 @@ local function UpdateMetalMakers(teamID, energyUse)
 	end
 end
 
-
-local function checkTeamList(uTeam, e, uID)
-
-	if not teamMMList[uTeam] then Spring.Echo("teamMMList[uTeam] : nil/false , " .. uTeam .. ", " .. e .. ", " .. uID); return false; end
-	if not teamMMList[uTeam][e] then Spring.Echo("teamMMList[uTeam][e] : nil/false , " .. uTeam .. ", " .. e .. ", " .. uID); return false; end
-	if uID and not teamMMList[uTeam][e][uID] then Spring.Echo("teamMMList[uTeam][e][uID] : nil/false , " .. uTeam .. ", " .. e .. ", " .. uID); return false; end
-	
-	return true
-end
-
 local function SetMMRulesParams()
     -- make convertCapacities accessible to all
     for uDID,conv in pairs(convertCapacities) do
@@ -169,12 +159,9 @@ end
 local function UnitTakingDamage(uID, uDefID, uTeam, notEmpDamage)
     local cDefs = convertCapacities[uDefID]
     if cDefs then
-		
-		if not checkTeamList(uTeam, cDefs.e, uID) then Spring.Echo("In UnitTakingDamage"); return end
-		
         if teamMMList[uTeam][cDefs.e][uID].built then
-		teamMMList[uTeam][cDefs.e][uID].emped = true
-		AdjustTeamCapacity(uTeam, -cDefs.c, cDefs.e)
+			teamMMList[uTeam][cDefs.e][uID].emped = true
+			AdjustTeamCapacity(uTeam, -cDefs.c, cDefs.e)
 		if notEmpDamage == true then
 		    teamMMList[uTeam][cDefs.e][uID].damaged = true
 		    --Spring.Echo(currentFrameStamp, "  Closes due to damage ", unitID)
@@ -187,17 +174,14 @@ end
 local function UnitDamageOver(uID, uDefID, uTeam, notEmpDamage)
     local cDefs = convertCapacities[uDefID]
     if cDefs then
-	
-		if not checkTeamList(uTeam, cDefs.e, uID) then Spring.Echo("In UnitDamageOver"); return end
-	
 		if teamMMList[uTeam][cDefs.e][uID].built then        
 			teamMMList[uTeam][cDefs.e][uID].emped = false
 			AdjustTeamCapacity(uTeam, cDefs.c, cDefs.e)
 			if teamMMList[uTeam][cDefs.e][uID].damaged == true then
-			    teamMMList[uTeam][cDefs.e][uID].damaged = false
-	  		    --Spring.Echo(currentFrameStamp, "  Reopened from damage ", unitID)
-			    spSetUnitCOBValue(uID,1024,1)
-		        end
+		    	teamMMList[uTeam][cDefs.e][uID].damaged = false
+		    	--Spring.Echo(currentFrameStamp, "  Reopened from damage ", unitID)
+		    	spSetUnitCOBValue(uID,1024,1)
+	        end
 		end
     end
 end
@@ -312,10 +296,10 @@ function gadget:GameFrame(n)
 		Damagedvector:process(currentFrameStamp)
 	end
 
-	-- process a team in each gameframe so that all teams are process exactly once in every 16 gameframes
-	-- in case of more than 16 teams ingame, two or more teams are processed in one gameframe
+	-- process a team in each gameframe so that all teams are process exactly once in every 15 gameframes
+	-- in case of more than 15 teams ingame, two or more teams are processed in one gameframe
 
-	if (n % resourceRefreshRate == splitMMPointer) then
+	if (n % resourceRefreshRate == (splitMMPointer-1)) then
 		for i = 0, (ceil(#teamList / resourceRefreshRate) - 1) do
 			local tID
 			local tpos = (splitMMPointer + i * resourceRefreshRate)
@@ -342,15 +326,14 @@ function gadget:GameFrame(n)
 				local tUsage = (resourceUpdatesPerGameSec * teamUsages)
 				UpdateMetalMakers(tID,tUsage)
 				spSetTeamRulesParam(tID, mmUseParamName, tUsage)
-				spSetTeamRulesParam(tID, mmAvgEffiParamName, teamEfficiencies[tID]:avg())	
-			
-				if (splitMMPointer == #teamList) then
-					splitMMPointer = 1
-				else
-					splitMMPointer = splitMMPointer + 1
+				spSetTeamRulesParam(tID, mmAvgEffiParamName, teamEfficiencies[tID]:avg())
 				end
-			end
 		end
+	if (splitMMPointer == resourceRefreshRate) then
+		splitMMPointer = 1
+	else
+		splitMMPointer = splitMMPointer + 1
+	end
 	end
 end
 
@@ -358,7 +341,6 @@ end
 function gadget:UnitCreated(uID, uDefID, uTeam, builderID)
 	local cDefs = convertCapacities[uDefID]
 	if cDefs then
-		if not checkTeamList(uTeam, cDefs.e, false) then Spring.Echo("In UnitCreated"); return end
 		Spring.InsertUnitCmdDesc(uID, metalMakerStateCmdDesc)
 		teamMMList[uTeam][cDefs.e][uID] = {capacity = 0, status = 0, built = false, emped = false, damaged = false}
     end
@@ -389,16 +371,16 @@ function gadget:UnitDamaged(uID, uDefID, uTeam, damage, paralyzer, weaponDefID)
     local cDefs = convertCapacities[uDefID]
     
     if paralyzer and cDefs then
-        local _, maxHealth, paralyzeDamage, _ ,_ = spGetUnitHealth(uID)
-	local relativeParDmg = paralyzeDamage -  maxHealth
-	if (relativeParDmg > 0) then
+    	local _, maxHealth, paralyzeDamage, _ ,_ = spGetUnitHealth(uID)
+		local relativeParDmg = paralyzeDamage -  maxHealth
+		if (relativeParDmg > 0) then
             Damagedvector:push(uID, currentFrameStamp + ceil(relativeParDmg / (maxHealth / paralysisRelRate)),false)
-	end
+		end
     elseif (damage and not paralyzer) and cDefs then
         if (damage > 0) and weaponDefID == -1 then 
-	    Damagedvector:push(uID, currentFrameStamp+5,true)
+	   		 Damagedvector:push(uID, currentFrameStamp+5,true)
 	elseif (damage > 0) then
-	    Damagedvector:push(uID, currentFrameStamp+20,true)
+	   		 Damagedvector:push(uID, currentFrameStamp+20,true)
         end
     end
 end
@@ -407,9 +389,6 @@ end
 function gadget:UnitDestroyed(uID, uDefID, uTeam)
     local cDefs = convertCapacities[uDefID]
     if cDefs and spValidUnitID(uID) then
-		
-		if not checkTeamList(uTeam, cDefs.e, uID) then Spring.Echo("In UnitDestroyed"); return end
-		
         if teamMMList[uTeam][cDefs.e][uID].built then
 			if (teamMMList[uTeam][cDefs.e][uID].status == 1) then
 				teamActiveMM[uTeam] = teamActiveMM[uTeam] - 1
@@ -427,9 +406,6 @@ end
 function gadget:UnitGiven(uID, uDefID, newTeam, oldTeam)
     local cDefs = convertCapacities[uDefID]
     if cDefs then
-		
-		if not checkTeamList(oldTeam, cDefs.e, uID) or not checkTeamList(newTeam, cDefs.e, false) then Spring.Echo("In UnitGiven"); return end
-		
         if teamMMList[oldTeam][cDefs.e][uID].built then
 			
 			if not teamMMList[oldTeam][cDefs.e][uID].emped then
