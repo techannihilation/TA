@@ -8,8 +8,30 @@ Fix superkrog crushweapon, Closes #607
 Fix unit cannon range issue's, Closes #605
 
 ----Balance----
+
+Akmech (vengence) => Increase damage for Missile + rework beamlaser into juggernaut laser (same range & damage) + *
+Bertha & Corint => increase reload (7=>8) & damage (same dmg / s)
+Bertha1 & Corint1 => increase reload (6=>8) & damage (same dmg / s)
+All sea HLT => Same damage than ground HLT.
+Panther (Lighting Tank) => cost for energy weapon 5 => 35 + reload 1.4 => 2 + damage  227 => 320 (same dmg/s) (actually, they kill to easely T1 spam. With less reload, it will be balanced).
+artillery vehicle => balance cost & energy
+All Mobile LRP (except core) => Range => 4500 & damage => 1500 & reload => 8.
+CLB (Core LRP) => Range => 3800 & reload => 5 & damage 800 (less cost too)
+T3 Air  transport => velocity 2.5 => 3.8 & HP 15k => 17k
+T1 medium tank : reload 0.7 => 0.8 & damage 97 => 110
+Hover Tachion => Delete T2 RC to unlock it
+TLL Bind => Balance energy cost. Increase HP 11K => 12.2K. Reload 0.6 => 0.4 + damage 350 => 300
+TLL Burner => Balance energy cost. Velocity 1.85 => 2. Damage 1250 => 1650.
+TLL Coyote (heavy tank) => HP 4655 => 5000 + velocity 1.95 => 2.2. Energy 2293 => 9500. Decrease damage vs air. Ground Reload  0.7 => 0.8
+TLL Crawling bomb => Same explosion than heavy Core crawling bomb. Velocity 2 => 1.8
+Heavy All Terrain rocket Kbot. Range 1420 => 1350 + damage 900 => 700 + Balance energy cost + velocity 1.9 => 1.5
+TLL Roaster (energy weapon t2 tank) => Balance energy cost + HP 2685 => 3250 + velocity 1.6 => 1.5. Weapon => 1000 => 950 + reload time 12 => 8
+TLL sniper => Balance metal & energy with other snipers. (so decrease resources). Range 1100 => 1000. (1050 for corprot & 950 for arm)
+TLL VERY HEAVY TANK => velocity 0.78 => 0.8 + Balance energy 9500 => 35000. Weapon => Range 730 => 765 + reaload 3.4 => 5 + dmg 1000 => 1500
+TLL Turtle (anti nuke) => Balance energy & metal cost with other anti nuke. HP => 1220 => 3000 (it's a turtle). velocity 0.32 => 0.5
+TLL Salaamander (amphibious tank) => energy 15000 => 6200 + metal 457 => 550. weapon => reload 1.5 => 1 + dmg 250 => 165
 Balance All spider. TimeBuild & energy cost decrease.
-Dauber : Maxdamage 7100 => 2500. Range 400 => 600. Velocity 1.15 => 1.5
+Dauber : Maxdamage 7100 => 2600. Range 400 => 600. Velocity 1.15 => 1.4
 Less range for T3 Ship (Super BatleShip & FlagShip)
 FlagShip : Decrease cost.
 BattleShip (T2.5) => Increase range & cost. Decrease velocity.
@@ -17,11 +39,11 @@ Add many count for self destroy for all bantha nuke (cordem, command vehicule, s
 Corkarg : transmorm 1 missile into 4 burst. Same damage & increase range. Cost increase.
 Corkarg1 : transmorm 1 missile into 4 burst. Same damage & increase range. Cost increase.
 tlltelsatnk : increase damage & velocity.
-Tlldemon => HP 26K => 6.5K. Increase Range (1200 => 1350). Delete metalcost per shot. Increase damage vs experimental units. Increase Reload & cost. Add description : Anti T3/T4.
+Tlldemon => HP 26K => 6.5K. Increase Range (1200 => 1300). Delete metalcost per shot. Increase damage vs experimental units. Increase Reload & cost. Add description : Anti T3/T4.
 TLLAcid => Increase HP. Increase AOE. Increase Reload. Decrease Range.
 TLLong (EMP) => Add emp description. Decrease Metal & Energy Cost to balance with EMP Bertha.
 Anvil => Decrease Cost by second (20KE => 10KE). Increase Range.
-Add Hardener Nano => Can build T2.5 structure (nuke1, tachion1, shield1, shield bot, rapid bertha, bertha1)
+Add Hardener Nano => Can build T2.5 structure (nuke1, tachion1, shield1, shield bot, rapid bertha, bertha1). Metal : 12000 & energy 250000
 Arm/Core Change panel menu for All adv Constructor. Decrease choice for units number. All weapon structure except Anti t3/t4, Nuke, Tactical Nuke & Bertha take place in engineerer panel menu. (except hover).
 TLLStunter : Range : 1050. Decrease reload & cost. Time Emp : 10s.
 All AA mobile & structure have been balanced
@@ -43,7 +65,7 @@ Killer : rempace Missile weapon by Corpyrox Missile. Decrease HP & damage. Decre
 Command Vehicule : Decrease Reload 0.9 => 0.35. Decrease Damage.
 Air ANTI T3/T4 => Add new visual weapon with same damage.
 Juggernaut (Arm Fast Experimental T3.5 Unit) => Increase Speed 1.7 => 2.33. Add New laser.
-Antarion => Increase Metal & Energy Cost. Remplace Missiles by Crab Missile (1200 range & 6 burst). Bonus vs T3/T4. Unlock with T3 lab (no needtech center 3).
+Antarion => Increase Metal & Energy Cost. Remplace Missiles by Crab Missile (1050 range & 6 burst). Bonus vs T3/T4. Unlock with T3 lab (no needtech center 3).
 Crabe => Decrease Metal & Energy Cost & Damage/second
 T1.5 Ship Core & Arm => Increase Damage & HP
 Jaguar => Remplace red laser by blue laser. Decrease range for missile starburst & canon plasma.
@@ -57,13 +79,13 @@ T2.5 Hover balance : Adonnis & tempest. Damage increase by 100%
 Lock Halberd (t1 core hover) with T1 Tech Center Increase HP & Range.
 Spider & Copter Lab decrease energy & metal cost by 100%. (Same cost than Hover Lab).
 All crawling bomb can be construct with combat engineerer (tech lvl 2). They have been deleted from Spider Lab.
-Blade increase Hp (1800 => 2300) & decrease energy & Metal Cost (20000 => 12000 & 1200 => 800)
+Blade increase Hp (1800 => 2300) & decrease energy & Metal Cost (20000 => 12000 & 1200 => 800). Lock with T2 RC.
 Champion incease Hp by 150%, Metalcost by 33%, decrease cannon damage by 15%. remplace plasma by Gausscanon. Bonus vs T3/T4 unit.
 Protos range decrease to 1050 (1200 before), HP decrease by 10%, Damage decrease by 10%.
 Menacer (artillery kbot), increase damage & range & HP. Decrease Metal & time cost.
 Pelican damage increase (laser & AA missile) by 15%.
 T3 Sniper & Experimental Cannon Anti T3/T4 increase damage vs default armor class by 100% (T3&T4 unit take defaut damage X 2 vs x 4 before). 
-Horgue increase damage by 100% & reload 100%. Hp decrease by 40% (2500Hp). range increase by 5%.
+Horgue increase damage by 100% & reload 100%. Hp decrease by 40% (2500Hp). range 1650. Less Aoe + accuracy 200 => 500 (less accuracy)
 Arm Engineerer Combat : Can construct Zipper that replaces Fatboy.
 Core Engineerer Combat : Can construct Morty that replaces Sumo.
 Valiant (Hero TLL) : Primary weapon damage + 20 % & Aoe - 150%. Laser (36s reload) : damage + 100%
@@ -92,7 +114,7 @@ Increse bumblebee explosion sizes/damages, Closes #588
 T1 eco con can now be build underwater
 Remove free energy give by mobile anti (its now a constant drain -75 for std mobile and -100 for upg) and remove energy needed for missile stockpile (7500>6500 for std, and 9000>8000)
 Increase max area of terraforming x2
-Armsiege, Increase brakerate 0.01>0.03, Increase acceleration 0.01>002, Increase damage 2025>2325
+Armsiege, Increase brakerate 0.01>0.03, Increase acceleration 0.01>002, Increase damage 2025>2325. Range 1300.
 
 ---Improvements----
 Re-order buildmenus for commanders, Add heavy laser tower and hardened missile battery's to supreme commanders 
