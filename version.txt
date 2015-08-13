@@ -6,6 +6,7 @@ rework Armsaber (sea plane Arm gunship) => Replace green laser into plasma Gun
 ----Bugs----
 
 ----Balance----
+Tllpbot => Decrease Metal Cost & TimeBuild
 Armsaber (sea plane Arm gunship) => increase cost & HP & power & timebuild by 2
 Corcut (sea plane Arm gunship) => increase cost & HP & power & timebuild by 3
 Brawler (gunship plane) => Increase HP 1030 => 1150. Decrease Damage 130 => 120
