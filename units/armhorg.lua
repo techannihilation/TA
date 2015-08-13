@@ -127,7 +127,7 @@ return {
 				avoidfeature = false,
 				burst = 8,
 				burstrate = 0.22,
-				cegtag = "Arm_Trail_rocket",
+				cegtag = "Core_Def_AA_Rocket",
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 0,
