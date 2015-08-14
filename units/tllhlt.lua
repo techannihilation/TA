@@ -2,8 +2,8 @@ return {
 	tllhlt = {
 		bmcode = 0,
 		buildangle = 32768,
-		buildcostenergy = 2906,
-		buildcostmetal = 663,
+		buildcostenergy = 5950,
+		buildcostmetal = 675,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 4,
@@ -136,8 +136,8 @@ return {
 				weapontype = "BeamLaser",
 				weaponvelocity = 2250,
 				damage = {
-					commanders = 800,
-					default = 530,
+					commanders = 675,
+					default = 525,
 					subs = 5,
 				},
 			},
