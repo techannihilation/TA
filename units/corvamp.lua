@@ -6,7 +6,7 @@ return {
 		bmcode = 1,
 		brakerate = 0.087,
 		buildcostenergy = 16000,
-		buildcostmetal = 128,
+		buildcostmetal = 150,
 		buildpic = "CORVAMP.png",
 		buildtime = 9055,
 		canattack = true,
