@@ -1,11 +1,16 @@
 ----------------------------------------- v2.XX.X ---------------------------------------
 ----Visual----
 Rework Horgue Cegtag & Explosion
-rework Armsaber (sea plane Arm gunship) => Replace green laser into plasma Gun
-
+Rework Banisher weapon texture
+Rework Armsaber (sea plane Arm gunship) => Replace green laser into plasma Gun
+Rework TLL Sea Coper => to be confirmed by nixtux
 ----Bugs----
 
 ----Balance----
+Horgue => Add radar (1000 range)
+Seaplane Arm/Core/TLL => Balance Metal/Energy stats (+/-10%). Balance Timebuild too.
+Fighter Seaplane => Increase HP by 50%.
+Torpedo TLL Seaplane => Increase Cost +20%. Increase AA damage vs Air. Decrease Torpedo damage vs Naval.
 Tllpbot => Decrease Metal Cost & TimeBuild
 Armsaber (sea plane Arm gunship) => increase cost & HP & power & timebuild by 2
 Corcut (sea plane Arm gunship) => increase cost & HP & power & timebuild by 3
