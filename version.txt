@@ -1,6 +1,23 @@
------------------------------------------ v2.35.0 ---------------------------------------
+----------------------------------------- v2.XX.X ---------------------------------------
 ----Visual----
+Rework Horgue Cegtag & Explosion
+rework Armsaber (sea plane Arm gunship) => Replace green laser into plasma Gun
 
+----Bugs----
+
+----Balance----
+Tllpbot => Decrease Metal Cost & TimeBuild
+Armsaber (sea plane Arm gunship) => increase cost & HP & power & timebuild by 2
+Corcut (sea plane Arm gunship) => increase cost & HP & power & timebuild by 3
+Brawler (gunship plane) => Increase HP 1030 => 1150. Decrease Damage 130 => 120
+Corrap (gunship plane) => Increase HP 900 => 1200. Increase Damage 110 => 120. Decrease Cost 360M => 320 & 7600E => 5800E (higher than Brawler)
+
+
+---Improvements----
+
+
+----------------------------------------- v2.35.9 ---------------------------------------
+----Visual----
 
 ----Bugs----
 Fix units allowed to terraform, Closes #615
@@ -8,7 +25,6 @@ Fix superkrog crushweapon, Closes #607
 Fix unit cannon range issue's, Closes #605
 
 ----Balance----
-
 Akmech (vengence) => Increase damage for Missile + rework beamlaser into juggernaut laser (same range & damage) + *
 Bertha & Corint => increase reload (7=>8) & damage (same dmg / s)
 Bertha1 & Corint1 => increase reload (6=>8) & damage (same dmg / s)

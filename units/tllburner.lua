@@ -122,7 +122,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				intensity = 0.6,
-				name = "FlameThroDwer",
+				name = "Flame",
 				noselfdamage = true,
 				range = 255,
 				reloadtime = 1.1,
