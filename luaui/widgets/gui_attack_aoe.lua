@@ -59,6 +59,7 @@ local CMD_ATTACK             = CMD.ATTACK
 local CMD_MANUALFIRE         = CMD.MANUALFIRE
 local g                      = Game.gravity
 local GAME_SPEED             = 30
+local SLOW_UPDATE            = 15
 local g_f                    = g / GAME_SPEED / GAME_SPEED
 local glBeginEnd             = gl.BeginEnd
 local glCallList             = gl.CallList
@@ -208,11 +209,11 @@ local function SetupUnitDef(unitDefID, unitDef)
       turnRate = maxWeaponDef.turnRate
     end
     if (maxWeaponDef.wobble > turnRate * 1.4) then
-      scatter = (maxWeaponDef.wobble - maxWeaponDef.turnRate) * maxWeaponDef.projectilespeed * GAME_SPEED * 16
+      scatter = (maxWeaponDef.wobble - maxWeaponDef.turnRate) * maxWeaponDef.projectilespeed * GAME_SPEED * SLOW_UPDATE
       local rangeScatter = (8 * maxWeaponDef.wobble - maxWeaponDef.turnRate)
       aoeDefInfo[unitDefID] = {type = "wobble", scatter = scatter, rangeScatter = rangeScatter, range = maxWeaponDef.range}
     elseif (maxWeaponDef.wobble > turnRate) then
-      scatter = (maxWeaponDef.wobble - maxWeaponDef.turnRate) * maxWeaponDef.projectilespeed * GAME_SPEED * 16
+      scatter = (maxWeaponDef.wobble - maxWeaponDef.turnRate) * maxWeaponDef.projectilespeed * GAME_SPEED * SLOW_UPDATE
       aoeDefInfo[unitDefID] = {type = "wobble", scatter = scatter}
     elseif (maxWeaponDef.tracks) then
       aoeDefInfo[unitDefID] = {type = "tracking"}
@@ -603,13 +604,14 @@ function widget:DrawWorld()
     local fx, fy, fz = GetUnitPosition(dgunUnitID)   
     if (not fx) then return end
     local angle = math.atan2(fx-tx,fz-tz) + (math.pi/2.1)
-    local dx = fx+(sin(angle)*13)
-    local dz = fz+(cos(angle)*13)
-    local angle2 = math.atan2(dx-tx,dz-tz)
-    DrawNoExplode(info.aoe, dx, fy, dz, dx-(sin(angle2)*125), ty,dz-(cos(angle2)*125), info.range)
+	local offset_x = (sin(angle)*13)
+	local offset_z = (cos(angle)*13)
+	local dx = fx + offset_x
+	local dz = fz + offset_z
+	DrawNoExplode(info.aoe, dx, fy, dz, tx + offset_x, ty, tz + offset_z, info.range)
     glColor(1, 0, 0, 0.75)
     glLineWidth(1)
-    glDrawGroundCircle(dx, fy, dz, info.range, circleDivs)
+	glDrawGroundCircle(fx, fy, fz, info.range, circleDivs)
     glColor(1,1,1,1)
     return
   end
