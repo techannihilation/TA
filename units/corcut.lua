@@ -109,12 +109,10 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 700,
 				damage = {
-					bombers = 5,
+					subs = 5,
 					commanders = 150,
 					default = 300,
-					fighters = 5,
-					flak_resistant = 5,
-					unclassed_air = 5,
+
 				},
 			},
 		},
