@@ -4,7 +4,7 @@ return {
 		amphibious = 1,
 		bmcode = 1,
 		brakerate = 0.075,
-		buildcostenergy = 10000,
+		buildcostenergy = 6000,
 		buildcostmetal = 150,
 		builder = false,
 		buildpic = "CORSFIG.png",

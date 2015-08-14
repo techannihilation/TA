@@ -4,7 +4,7 @@ return {
 		amphibious = 1,
 		bmcode = 1,
 		brakerate = 0.1,
-		buildcostenergy = 11000,
+		buildcostenergy = 7500,
 		buildcostmetal = 160,
 		builder = false,
 		buildpic = "ARMSFIG.png",
