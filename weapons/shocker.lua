@@ -17,7 +17,6 @@ local weaponDef = {
 	heightboostfactor = 2.7999999523163,
 	impulseboost = 0.5,
 	impulsefactor = 0.5,
-	minbarrelangle = -35,
 	name = [[ShockerHeavyCannon]],
 	noselfdamage = 1,
 	predictboost = 0.75,

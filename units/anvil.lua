@@ -146,7 +146,7 @@ return {
 				soundhitdry = "burn02",
 				soundstart = "build2",
 				soundtrigger = true,
-				targetmoveerrorr = 0.1,
+				targetmoveerror = 0.1,
 				texture1 = "Type4Beam",
 				texture3 = "beamrifle",
 				thickness = 7,
