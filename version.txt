@@ -1,10 +1,15 @@
------------------------------------------ v2.XX.X ---------------------------------------
+----------------------------------------- v2.35.10 ---------------------------------------
 ----Visual----
 Rework Horgue Cegtag & Explosion
 Rework Banisher weapon texture
 Rework Armsaber (sea plane Arm gunship) => Replace green laser into plasma Gun
-Rework TLL Sea Coper => to be confirmed by nixtux
+Rework TLL Sea Coper => Now a Gunship
+Redo Arm Furie cannon visuals
+
 ----Bugs----
+Fix game energy converter now working with more than 15 player's
+Add terrform command to navel engineers and tll t2 construction sub
+tllriot fix's weapon fire falling short of range was less than half expected range
 
 ----Balance----
 Horgue => Add radar (1000 range)
@@ -16,10 +21,11 @@ Armsaber (sea plane Arm gunship) => increase cost & HP & power & timebuild by 2
 Corcut (sea plane Arm gunship) => increase cost & HP & power & timebuild by 3
 Brawler (gunship plane) => Increase HP 1030 => 1150. Decrease Damage 130 => 120
 Corrap (gunship plane) => Increase HP 900 => 1200. Increase Damage 110 => 120. Decrease Cost 360M => 320 & 7600E => 5800E (higher than Brawler)
-
+Set storage leakage when stunned to 0.01% capacity (150e for t1 and 750e for t2)
+Ariman increase aoe 12>48
 
 ---Improvements----
-
+Tll floating hlt, increase height to match arm/core counterpart
 
 ----------------------------------------- v2.35.9 ---------------------------------------
 ----Visual----
