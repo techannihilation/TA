@@ -2933,7 +2933,7 @@ function gadget:GameFrame(n)
 	--end
 	
 	if n == 60 and costMult ~= 1 then
-		Spring.Echo("Terraform cost multipler = " .. costMult)
+		--Spring.Echo("Terraform cost multipler = " .. costMult)
 	end
 	
 	local i = 1
