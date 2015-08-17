@@ -135,7 +135,7 @@ local function getEditedCurrentTooltip()
     end
 	if tooltipID then
 		local ud=UnitDefs[Spring.GetUnitDefID(tooltipID)]
-		local armorclass = tostring(Game.armorTypes[UnitDefs[Spring.GetUnitDefID(tooltipID)].armorType]) or "" 
+		local armorclass = "fix me nix" --tostring(Game.armorTypes[UnitDefs[Spring.GetUnitDefID(tooltipID)].armorType]) or "" 
 		text = text .. "\255\255\255\255\nArmorclass: \255\255\255\000" .. armorclass
 	end
 	return text
