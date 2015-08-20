@@ -2,8 +2,6 @@ return {
 	corgfbt = {
 		acceleration = 0.025,
 		activatewhenbuilt = true,
-		ai_limit = "limit corGFBT 12",
-		ai_weight = "weight corGFBT 1.6",
 		bmcode = 1,
 		brakerate = 0.06,
 		buildcostenergy = 10647,
@@ -126,7 +124,6 @@ return {
 		weapondefs = {
 			fireball = {
 				areaofeffect = 168,
-				corethinkness = 5,
 				craterboost = 0,
 				cratermult = 0,
 				duration = 0.06,

@@ -99,7 +99,6 @@ return {
 				burst = 4,
 				burstrate = 0.8,
 				cegtag = "Core_Howie_Rocket",
-				cruisealt = 120,
 				explosiongenerator = "custom:Explosion_VeryHeavy_Rocket-nix",
 				firestarter = 80,
 				flighttime = 15,

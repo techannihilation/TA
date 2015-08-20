@@ -145,7 +145,6 @@ return {
 				duration = 1.79,
 				energypershot = 10000,
 				firestarter = 0,
-				largemeamlaser = 1,
 				metalpershot = 0,
 				name = "Heavy Blaster Doomer's creation",
 				noexplode = true,

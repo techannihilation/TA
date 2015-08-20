@@ -120,7 +120,7 @@ return {
 		weapondefs = {
 			cor_behegoli = {
 				areaofeffect = 292,
-				canatackground = 1,
+				canattackground = 1,
 				cegtag = "Trail_cannon",
 				craterboost = 0,
 				cratermult = 0,
