@@ -93,7 +93,6 @@ return {
 				burst = 3,
 				burstrate = 1.1,
 				cegtag = "Trail_Large_Rocket_New",
-				cruisealt = 120,
 				explosiongenerator = "custom:Explosion_VeryHeavy_Rocket-nix",
 				firestarter = 80,
 				flighttime = 15,
