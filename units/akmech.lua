@@ -153,7 +153,6 @@ return {
 			},
 			akmech_rocket = {
 				areaofeffect = 192,
-				balistic = 1,
 				cegtag = "Core_Trail_rocket",
 				edgeeffectiveness = 1,
 				explosiongenerator = "custom:explosion_medium_rocket-2",
