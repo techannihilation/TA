@@ -90,7 +90,6 @@ return {
 		weapondefs = {
 			fab500 = {
 				areaofeffect = 200,
-				balistic = 1,
 				burst = 8,
 				burstrate = 0.3,
 				cegtag = "Trail_Medium_Rocket_Bomb",
@@ -98,7 +97,6 @@ return {
 				commandfire = false,
 				craterboost = 0,
 				cratermult = 0,
-				cruisealt = 220,
 				edgeeffectiveness = 0.9,
 				explosiongenerator = "custom:gdheavyrocket",
 				firestarter = 100,
