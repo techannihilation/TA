@@ -158,7 +158,7 @@ return {
 				soundhitdry = "lasrhit2",
 				soundstart = "lasrfir3",
 				soundtrigger = true,
-				targetmoveerro = 0.2,
+				targetmoveerror = 0.2,
 				tolerance = 700,
 				turret = true,
 				weapontype = "BeamLaser",
