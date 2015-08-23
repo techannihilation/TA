@@ -47,6 +47,7 @@ return {
 		pushresistant = true,
 		radardistance = 0,
 		radaremitheight = 63.78354,
+		seismicsignature = 64,
 		selfdestructas = "CRBLMSSL",
 		selfdestructcountdown = 10,
 		side = "ARM",
