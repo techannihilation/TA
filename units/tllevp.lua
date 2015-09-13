@@ -3,7 +3,7 @@ return {
 		bmcode = 0,
 		buildangle = 1024,
 		buildcostenergy = 150200,
-		buildcostmetal = 155550,
+		buildcostmetal = 15555,
 		builder = true,
 		buildtime = 110000,
 		canmove = true,
