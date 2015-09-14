@@ -32,7 +32,7 @@ return {
 		maxvelocity = 2.2,
 		maxwaterdepth = 100,
 		mobilestandorders = 1,
-		movementclass = "TANK3",
+		movementclass = "HTANK3",
 		name = "Coyote",
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
