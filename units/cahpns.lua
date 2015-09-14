@@ -1,8 +1,8 @@
 return {
 	cahpns = {
 		bmcode = 0,
-		buildcostenergy = 40677,
-		buildcostmetal = 4907,
+		buildcostenergy = 41000,
+		buildcostmetal = 4950,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 12,
@@ -18,7 +18,6 @@ return {
 		designation = "COR-HNS",
 		downloadable = 1,
 		energystorage = 300,
-		energyuse = 50,
 		explodeas = "LARGE_BUILDINGEX",
 		firestandorders = 1,
 		footprintx = 12,
@@ -53,12 +52,12 @@ return {
 		buildoptions = {
 			[1] = "cach",
 			[2] = "cormatch",
-			[3] = "corhover3g",
-			[4] = "nsacanglr",
-			[5] = "corfrog",
-			[6] = "watcher",
-			[7] = "blotter",
-			[8] = "nsacbehe",
+			[3] = "nsacanglr",
+			[4] = "corhover3g",
+			[5] = "nsacbehe",
+			[6] = "corfrog",
+			[7] = "watcher",
+			[8] = "blotter",
 			[9] = "coradon",
 		},
 		customparams = {
