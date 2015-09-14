@@ -67,7 +67,7 @@ return {
 		script = "tllcom.cob",
 		seismicsignature = 0,
 		selfdestructas = "COMMANDER_SELFD",
-		selfdestructcountdown = 20,
+		selfdestructcountdown = 10,
 		showplayername = true,
 		side = "TLL",
 		sightdistance = 850,
