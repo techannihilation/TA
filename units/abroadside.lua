@@ -1,6 +1,6 @@
 return {
 	abroadside = {
-		acceleration = 0.00931,
+		acceleration = 0.009,
 		airhoverfactor = 0,
 		airstrafe = false,
 		brakerate = 0.0399,
@@ -105,7 +105,7 @@ return {
 				craterboost = 0,
 				cratermult = 0,
 				duration = 0.07,
-				energypershot = 100,
+				energypershot = 2000,
 				explosiongenerator = "custom:100RLexplode",
 				id = 232,
 				impulseboost = 0,
@@ -167,8 +167,11 @@ return {
 				weapontype = "LaserCannon",
 				weaponvelocity = 1450,
 				damage = {
-					default = 30,
-					subs = 5,
+					bombers = 135,
+					default = 5,
+					fighters = 135,
+					flak_resistant = 67.5,
+					unclassed_air = 135,
 				},
 			},
 		},
@@ -195,11 +198,13 @@ return {
 				def = "CapitalShipMinigun",
 				maindir = "1 0 0",
 				maxangledif = 170,
+				onlytargetcategory = "VTOL",
 			},
 			[5] = {
 				def = "CapitalShipMinigun",
 				maindir = "-1 0 0",
 				maxangledif = 170,
+				onlytargetcategory = "VTOL",
 			},
 			[6] = {
 				def = "750MW",
