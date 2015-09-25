@@ -99,7 +99,7 @@ return {
 		weapondefs = {
 			["750mw"] = {
 				accuracy = 500,
-				areaofeffect = 180,
+				areaofeffect = 160,
 				burnblow = false,
 				corethickness = 1.2,
 				craterboost = 0,
@@ -147,7 +147,7 @@ return {
 				impulseboost = 0,
 				intensity = 1,
 				name = "Capital Ship Minigun",
-				range = 900,
+				range = 1000,
 				reloadtime = 0.3,
 				rgbcolor = "1 1 1",
 				rgbcolor2 = "0.5 0.5 0.5",
@@ -165,12 +165,12 @@ return {
 				turret = true,
 				weapontimer = 1,
 				weapontype = "LaserCannon",
-				weaponvelocity = 1450,
+				weaponvelocity = 1550,
 				damage = {
 					bombers = 135,
 					default = 5,
 					fighters = 135,
-					flak_resistant = 67.5,
+					flak_resistant = 90,
 					unclassed_air = 135,
 				},
 			},
