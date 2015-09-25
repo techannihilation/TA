@@ -1,12 +1,12 @@
 return {
 	cdevastator = {
-		acceleration = 0.00931,
+		acceleration = 0.009,
 		activatewhenbuilt = true,
 		airhoverfactor = 0,
 		airstrafe = false,
 		bankscale = 0.5,
 		bmcode = 1,
-		brakerate = 0.0399,
+		brakerate = 0.04,
 		buildcostenergy = 1780000,
 		buildcostmetal = 303000,
 		builder = false,
@@ -61,7 +61,7 @@ return {
 		selfdestructas = "MEGA_BLAST1",
 		selfdestructcountdown = 10,
 		side = "CORE",
-		sightdistance = 494,
+		sightdistance = 1000,
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
@@ -158,7 +158,7 @@ return {
 				},
 			},
 			devastatorrockets = {
-				areaofeffect = 182,
+				areaofeffect = 250,
 				burnblow = true,
 				craterboost = 0,
 				cratermult = 0,
