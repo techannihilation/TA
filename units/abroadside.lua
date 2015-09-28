@@ -111,6 +111,7 @@ return {
 				impulseboost = 0,
 				intensity = 1,
 				name = "Heavy plasma cannon",
+				noselfdamage = true,
 				range = 1500,
 				reloadtime = 1,
 				rgbcolor = "0.95 0.95 0.8",
