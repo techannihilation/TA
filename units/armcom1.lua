@@ -66,7 +66,7 @@ return {
 		script = "armcom.cob",
 		seismicsignature = 0,
 		selfdestructas = "COMMANDER_blast1",
-		selfdestructcountdown = 20,
+		selfdestructcountdown = 10,
 		showplayername = true,
 		side = "ARM",
 		sightdistance = 500,
