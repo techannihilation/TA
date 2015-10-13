@@ -1,8 +1,8 @@
 return {
 	tllhpns = {
 		bmcode = 0,
-		buildcostenergy = 627,
-		buildcostmetal = 1102,
+		buildcostenergy = 2300,
+		buildcostmetal = 1300,
 		builder = true,
 		buildtime = 11007,
 		canmove = true,
@@ -23,7 +23,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		mass = 1033,
-		maxdamage = 3888,
+		maxdamage = 3500,
 		metalstorage = 200,
 		minwaterdepth = 30,
 		mobilestandorders = 1,
@@ -46,11 +46,10 @@ return {
 		buildoptions = {
 			[1] = "tllchover",
 			[2] = "tllhoverlight",
-			[3] = "tllhplasma",
+			[3] = "tllhovergauss",
 			[4] = "tllhoverrocket",
 			[5] = "tllhovermissile",
-			[6] = "tllhovergauss",
-			[7] = "tllsalamander",
+			[6] = "tllhplasma",
 		},
 		featuredefs = {
 			dead = {
