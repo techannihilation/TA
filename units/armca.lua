@@ -90,6 +90,7 @@ return {
 			[30] = "armjamt",
 			[31] = "ajuno",
 			[32] = "armrech3",
+			[33] = "armasp",
 		},
 		customparams = {
 			buildpic = "ARMCA.png",

@@ -2,7 +2,7 @@ return {
 	armjugg = {
 		acceleration = 0.09,
 		bmcode = 1,
-		brakerate = 0.57,
+		brakerate = 0.6,
 		buildcostenergy = 126900,
 		buildcostmetal = 14690,
 		builder = false,
@@ -33,7 +33,7 @@ return {
 		mass = 13400,
 		maxdamage = 42900,
 		maxslope = 17,
-		maxvelocity = 2.45,
+		maxvelocity = 2.5,
 		maxwaterdepth = 12,
 		metalstorage = 0,
 		mobilestandorders = 1,
