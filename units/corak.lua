@@ -149,6 +149,7 @@ return {
 				weapontype = "BeamLaser",
 				weaponvelocity = 1000,
 				damage = {
+					raider_resistant = 17.5,
 					default = 35,
 					subs = 5,
 				},
