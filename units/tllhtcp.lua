@@ -20,7 +20,7 @@ return {
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		damagemodifier = 0.75,
-		description = "Produces High Tech Units",
+		description = "Produces Heavy T3 Units",
 		designation = "",
 		energystorage = 0,
 		energyuse = 0,
