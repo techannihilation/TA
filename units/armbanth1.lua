@@ -207,7 +207,7 @@ return {
 				weapontype = "BeamLaser",
 				weaponvelocity = 1500,
 				damage = {
-					commanders = 999,
+					commanders = 1500,
 					default = 15000,
 					subs = 5,
 				},
@@ -215,6 +215,7 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "MEDIUM SMALL TINY",
 				def = "TEHLAZEROFDEWM1",
 				onlytargetcategory = "NOTVTOL",
 			},
@@ -224,7 +225,6 @@ return {
 			},
 			[3] = {
 				def = "BANTHA_ROCKET1",
-				onlytargetcategory = "NOTVTOL",
 			},
 		},
 	},
