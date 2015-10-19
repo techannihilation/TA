@@ -2,7 +2,7 @@ return {
 	ananotower = {
 		acceleration = 0.2,
 		bmcode = 1,
-		brakerate = 2.33333,
+		brakerate = 2,
 		buildcostenergy = 250000,
 		buildcostmetal = 12000,
 		builddistance = 1000,
@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "ananotower_aoplane.dds",
-		buildtime = 85000,
+		buildtime = 100000,
 		canassist = true,
 		canguard = true,
 		canmove = false,
