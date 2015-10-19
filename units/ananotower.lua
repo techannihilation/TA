@@ -25,7 +25,6 @@ return {
 		defaultmissiontype = "patrol",
 		description = "Experimental Nanotower",
 		designation = "A-MT1",
-		energyuse = 100,
 		explodeas = "NANOBOOM3A",
 		floater = true,
 		footprintx = 2,
