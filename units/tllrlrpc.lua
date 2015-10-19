@@ -15,7 +15,7 @@ return {
 		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
-		description = "Rapid-Fire Long Range Laser Cannon",
+		description = "Rapid-Fire Long Range Lighting Beam",
 		designation = "TL-RLRC",
 		downloadable = 1,
 		energymake = 200,
