@@ -7,7 +7,7 @@ return {
 		buildcostmetal = 2250,
 		builder = false,
 		buildpic = "ARMFBOY1.png",
-		buildtime = 22397,
+		buildtime = 22400,
 		canattack = true,
 		canguard = true,
 		canmove = true,
@@ -120,7 +120,7 @@ return {
 		},
 		weapondefs = {
 			arm_fatboy_notalaser1 = {
-				areaofeffect = 300,
+				areaofeffect = 320,
 				cegtag = "Trail_cannon",
 				craterboost = 0,
 				cratermult = 0,
@@ -133,7 +133,7 @@ return {
 				name = "HeavyPlasma",
 				nogap = 1,
 				noselfdamage = true,
-				range = 900,
+				range = 850,
 				reloadtime = 8,
 				rgbcolor = "0.79 0.51 0",
 				separation = 0.45,
@@ -146,8 +146,8 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 390,
 				damage = {
-					commanders = 600,
-					default = 1200,
+					commanders = 800,
+					default = 1600,
 					subs = 5,
 				},
 			},
