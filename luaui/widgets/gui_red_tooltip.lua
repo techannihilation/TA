@@ -13,16 +13,17 @@ end
 local NeededFrameworkVersion = 8
 local CanvasX,CanvasY = 1272,734 --resolution in which the widget was made (for 1:1 size)
 --1272,734 == 1280,768 windowed
-local fontsize = 11
+
 --todo: sy adjustment
 
 local Config = {
 	tooltip = {
-		fontsize = fontsize,
-		px = 0,py = CanvasY-(fontsize*8+5*2), --default start position
-		sx = 245,sy = fontsize*8+5*4, --background size
-				
-		margin = 3, --distance from background border
+		px = 0,py = CanvasY-(12*6+5*2), --default start position
+		sx = 300,sy = 12*6+5*2, --background size
+		
+		fontsize = 12,
+		
+		margin = 5, --distance from background border
 		
 		cbackground = {0,0,0,0.5}, --color {r,g,b,alpha}
 		cborder = {0,0,0,1},
@@ -121,23 +122,6 @@ local function getEditedCurrentTooltip()
 	local limExp = currentExp and currentExp/(1+currentExp) or 1
 	--replace with limexp: exp/(1+exp) since all spring exp effects are linear in limexp, multiply by 10 because people like big numbers instead of [0,1]
 	text = currentExp and text:gsub(expPattern,string.format("Experience %.2f", currentExp) ) or text
-	local mx,my,gx,gy,gz,tooltipID
-    mx,my = Spring.GetMouseState()
-    if mx and my then
-    local _,pos = Spring.TraceScreenRay(mx,my,true,true)
-        if pos then
-            gx,gy,gz=unpack(pos)
-        end
-        local kind,var1 = Spring.TraceScreenRay(mx,my,false,true)
-        if kind=="unit" then
-            tooltipID = var1
-        end
-    end
-	if tooltipID then
-		local ud=UnitDefs[Spring.GetUnitDefID(tooltipID)]
-		local armorclass = "fix me nix" --tostring(Game.armorTypes[UnitDefs[Spring.GetUnitDefID(tooltipID)].armorType]) or "" 
-		text = text .. "\255\255\255\255\nArmorclass: \255\255\255\000" .. armorclass
-	end
 	return text
 end
 
