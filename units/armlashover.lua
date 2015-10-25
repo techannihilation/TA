@@ -46,7 +46,7 @@ return {
 		selfdestructas = "BIG_UNIT",
 		shootme = 1,
 		side = "ARM",
-		sightdistance = 270,
+		sightdistance = 350,
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
