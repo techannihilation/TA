@@ -117,13 +117,13 @@ return {
 		weapondefs = {
 			tll_ion_cannon = {
 				alwaysvisible = true,
-				areaofeffect = 1200,
+				areaofeffect = 650,
 				avoidfeature = false,
 				avoidfriendly = false,
 				corethickness = 0.47,
 				duration = 2,
 				edgeeffectiveness = 0,
-				energypershot = 60000,
+				energypershot = 24000,
 				explosiongenerator = "custom:Explosion_Huge_Tesla",
 				falloffrate = 0,
 				firestarter = 0,
@@ -154,8 +154,8 @@ return {
 				weapontype = "BeamLaser",
 				weaponvelocity = 2500,
 				damage = {
-					commanders = 1000,
-					default = 100000,
+					commanders = 1500,
+					default = 150000,
 					subs = 5,
 				},
 			},
