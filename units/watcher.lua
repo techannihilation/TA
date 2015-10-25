@@ -46,7 +46,7 @@ return {
 		selfdestructas = "BIG_UNIT",
 		shootme = 1,
 		side = "CORE",
-		sightdistance = 250,
+		sightdistance = 400,
 		sonardistance = 1240,
 		standingfireorder = 2,
 		standingmoveorder = 1,
