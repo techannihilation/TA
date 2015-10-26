@@ -47,7 +47,7 @@ return {
 		seismicsignature = 0,
 		selfdestructas = "MEDIUM_BUILDING",
 		side = "ARM",
-		sightdistance = 494,
+		sightdistance = 500,
 		standingfireorder = 2,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,
@@ -151,7 +151,7 @@ return {
 				weaponvelocity = 2250,
 				damage = {
 					commanders = 800,
-					default = 550,
+					default = 540,
 					subs = 5,
 				},
 			},
