@@ -150,11 +150,11 @@ return {
 				weapontype = "LaserCannon",
 				weaponvelocity = 1550,
 				damage = {
-					bombers = 135,
+					bombers = 250,
 					default = 5,
-					fighters = 135,
-					flak_resistant = 90,
-					unclassed_air = 135,
+					fighters = 250,
+					flak_resistant = 125,
+					unclassed_air = 250,
 				},
 			},
 			devastatorrockets = {
