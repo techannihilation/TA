@@ -336,9 +336,19 @@ if (gadgetHandler:IsSyncedCode()) then
 	end
 
 
+	local function IsReclaimed(u)
+		local health,maxHealth,paralyzeDamage,captureProgress,buildProgress=Spring.GetUnitHealth(u)
+		if (buildProgress and buildProgress == 0) and health == 0 then --If died due to recalim units will have 0 health and buildprogress
+			return true
+		else
+			return false
+		end
+	end
+
+
 	local function isComplete(u)
 		local health,maxHealth,paralyzeDamage,captureProgress,buildProgress=Spring.GetUnitHealth(u)
-		if (buildProgress and buildProgress>=1) or health == 0 then
+		if (buildProgress and buildProgress>=1) then
 			return true
 		else
 			return false
@@ -361,7 +371,7 @@ if (gadgetHandler:IsSyncedCode()) then
 
 
 	local function UnitLost(u,ud,team)
-		if isComplete(u) and ProviderTable[ud] then
+		if (isComplete(u) or IsReclaimed(u)) and ProviderTable[ud] then
 			for _,tech in ipairs(ProviderTable[ud]) do
 				TechTable[tech].ProviderCount[team]=TechTable[tech].ProviderCount[team]-1
 				Spring.SetTeamRulesParam(team,"technology:"..tech,TechTable[tech].ProviderCount[team])
