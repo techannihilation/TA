@@ -99,7 +99,7 @@ function gadget:UnitFinished(unitID, unitDefID, unitTeam)
   end
 end
 
-function gadget:UnitTaken(unitID, unitDefID, unitTeam)
+function gadget:UnitGiven(unitID, unitDefID, newTeam, oldTeam)
 	if (storageDefs[unitDefID]) then 
 		SetupUnit(unitID,unitDefID)
 	end
