@@ -38,7 +38,7 @@ return {
 		minwaterdepth = 15,
 		mobilestandorders = 1,
 		movementclass = "BOAT4",
-		name = "Valiant",
+		name = "Steadfast",
 		noautofire = false,
 		nochasecategory = "VTOL",
 		objectname = "ARMMLS",
