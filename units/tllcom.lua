@@ -198,7 +198,7 @@ return {
 				commandfire = true,
 				craterboost = 0,
 				cratermult = 0,
-				energypershot = 650,
+				energypershot = 500,
 				explosiongenerator = "custom:DGUNTRACE",
 				firestarter = 100,
 				impulseboost = 0,

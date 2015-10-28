@@ -566,9 +566,9 @@ AimTertiary(heading, pitch)
 	Static_Var_4 = 1;
 	bAiming = TRUE;
 	turn torso to y-axis heading speed <300.000000>;
-	turn ruparm to x-axis <-45.000000> speed <65.000000>;
-	turn rlowarm to x-axis <-45.000000> speed <65.000000>;
-	turn rlowarm to z-axis <0.000000> speed <45.000000>;
+	turn ruparm to x-axis <-45.000000> speed <135.000000>;
+	turn rlowarm to x-axis <-45.000000> speed <135.000000>;
+	turn rlowarm to z-axis <0.000000> speed <90.000000>;
 	wait-for-turn torso around y-axis;
 	wait-for-turn ruparm around x-axis;
 	wait-for-turn rlowarm around x-axis;
