@@ -49,8 +49,6 @@ return {
 		onoffable = true,
 		radardistance = 640,
 		radaremitheight = 21,
-		radardistance = 
-		radaremitheight = 21,
 		selfdestructas = "BIG_UNIT",
 		shootme = 1,
 		side = "ARM",
