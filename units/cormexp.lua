@@ -182,6 +182,7 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "TINY",
 				def = "CORSUMO_WEAPON",
 				onlytargetcategory = "NOTVTOL",
 			},
