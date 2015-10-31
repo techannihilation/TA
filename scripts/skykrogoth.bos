@@ -9,9 +9,9 @@ piece  base, body, neck1, neck2, neck3, neck4, head, mouth,
        wing2c, chakr2, ffoot1a, ffoot1b, ffoot1c, ffoot2a, ffoot2b, ffoot2c,
        rfoot1a, rfoot1b, rfoot1c, rpad1, rfoot2a, rfoot2b, rfoot2c, rpad2,
        firept1, firept2a, firept2b, firept2c, firept2d, firept2, dragun2, firepath,
-       way;
+       way, link;
 
-static-var  gun_3, statechg_DesiredState, statechg_StateChanging;
+static-var  gun_3, statechg_DesiredState, statechg_StateChanging, isTaxi;
 
 // Signal definitions
 #define SIG_MOVE			2
@@ -233,6 +233,7 @@ RequestState(requestedstate, currentstate)
 
 Create()
 {
+	isTaxi = FALSE;
 	move body to z-axis [12.000000] now;
 	turn body to x-axis <-70.016484> now;
 	move body to y-axis [7.000000] now;
@@ -483,7 +484,7 @@ AimSecondary(heading, pitch)
 }
 
 AimFromSecondary(piecenum)
-{
+{	
 	piecenum = body;
 }
 
@@ -526,6 +527,48 @@ QueryTertiary(piecenum)
 FireTertiary()
 {
 	gun_3 = !gun_3;
+}
+
+AimFromWeapon4(piecenum)
+{
+	piecenum = body;
+}
+
+QueryWeapon4(piecenum)
+{
+	piecenum = firept1;
+}
+
+AimWeapon4(heading, pitch)
+{
+	if( isTaxi )
+	{
+		return (1);
+	}
+	return (0);
+}
+
+FireWeapon4()
+{
+	show firept1;
+	sleep 100;
+	hide firept1;
+}
+
+
+QueryTransport(Func_Var_1)
+{
+	Func_Var_1 = link;
+}
+
+BeginTransport(Func_Var_1)
+{
+	isTaxi = TRUE;
+}
+
+EndTransport()
+{
+	isTaxi = FALSE;
 }
 
 SweetSpot(piecenum)
