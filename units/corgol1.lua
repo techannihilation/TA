@@ -1,6 +1,6 @@
 return {
 	corgol1 = {
-		acceleration = 0.0242,
+		acceleration = 0.025,
 		bmcode = 1,
 		brakerate = 0.15,
 		buildcostenergy = 35000,
@@ -143,7 +143,7 @@ return {
 				name = "HeavyCannon",
 				nogap = 1,
 				noselfdamage = true,
-				range = 650,
+				range = 600,
 				reloadtime = 1.5,
 				rgbcolor = "0.75 0.45 0",
 				separation = 0.45,
