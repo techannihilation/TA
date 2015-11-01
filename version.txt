@@ -1,14 +1,16 @@
 ----------------------------------------- v2.36.8 ---------------------------------------
 ----Visual----
 Gladiator => 2 burst for missile launcher
-Praetorian Shield Bot => Remplace Plasma Canon by Scar Weapon. (Same Balance)
+Praetorian Shield Bot => Replace Plasma Canon by Scar Weapon. (Same Balance)
 
 ----Bugs----
 Defiler can pass over Lab. (Was blocked)
+Fix provided tech after Tech Ceneter reclaim, Closes #836
+Fix redui tooltips crashing
 
 ----Balance----
-- Delete ArmBull2 From Vehicle Lab Arm T2. Add Morph for ArmBull.
-- TllStunner => Range fixed to 900
+- Delete ArmBull2 From Vehicle Lab Arm T2 ~Now Morphable for ArmBull.
+- TllStunner => Range Reduced to 900
 - Add Boosted TLL tesla for combat Commander TLL. Add Morph for TLL tesla.
 - Helper => Decrease cost (same than engineerer). Decrease HP. Decrease Build Speed & RepairSpeed
 - Tll Tower => Increase Range.
@@ -127,15 +129,15 @@ krogoth => Damage decrease & => Metal & energy Cost increase
 Juggernault (T3.5 Core) => Metal & energy Cost
 hyperion.lua => HP increase. Reduce energy per second to 1500 (15000 e/s before).
 Deleted : T3 Copter. TTLaser Ship.
-Killer : rempace Missile weapon by Corpyrox Missile. Decrease HP & damage. Decrease reload for plasma & Lighting.
+Killer : replace Missile weapon by Corpyrox Missile. Decrease HP & damage. Decrease reload for plasma & Lighting.
 Command Vehicule : Decrease Reload 0.9 => 0.35. Decrease Damage.
 Air ANTI T3/T4 => Add new visual weapon with same damage.
 Juggernaut (Arm Fast Experimental T3.5 Unit) => Increase Speed 1.7 => 2.33. Add New laser.
-Antarion => Increase Metal & Energy Cost. Remplace Missiles by Crab Missile (1050 range & 6 burst). Bonus vs T3/T4. Unlock with T3 lab (no needtech center 3).
+Antarion => Increase Metal & Energy Cost. Replace Missiles by Crab Missile (1050 range & 6 burst). Bonus vs T3/T4. Unlock with T3 lab (no needtech center 3).
 Crabe => Decrease Metal & Energy Cost & Damage/second
 T1.5 Ship Core & Arm => Increase Damage & HP
-Jaguar => Remplace red laser by blue laser. Decrease range for missile starburst & canon plasma.
-Cavalier => Decrease resources cost.  The main Lighting increase range. Remplace missile by a second lighting (like zeus).
+Jaguar => Replace red laser by blue laser. Decrease range for missile starburst & canon plasma.
+Cavalier => Decrease resources cost.  The main Lighting increase range. Replace missile by a second lighting (like zeus).
 Dauber => Add Green Laser & increase range.
 TllCopter : Increase EnergyCost 2000 => 8000
 Totalitarian : Decrease metal & energy cost by 25%. Range decrease (1650) & damage increase. Goal : same cost than tankanator & same range than horgue.
@@ -146,7 +148,7 @@ Lock Halberd (t1 core hover) with T1 Tech Center Increase HP & Range.
 Spider & Copter Lab decrease energy & metal cost by 100%. (Same cost than Hover Lab).
 All crawling bomb can be construct with combat engineerer (tech lvl 2). They have been deleted from Spider Lab.
 Blade increase Hp (1800 => 2300) & decrease energy & Metal Cost (20000 => 12000 & 1200 => 800). Lock with T2 RC.
-Champion incease Hp by 150%, Metalcost by 33%, decrease cannon damage by 15%. remplace plasma by Gausscanon. Bonus vs T3/T4 unit.
+Champion incease Hp by 150%, Metalcost by 33%, decrease cannon damage by 15%. Replace plasma by Gausscanon. Bonus vs T3/T4 unit.
 Protos range decrease to 1050 (1200 before), HP decrease by 10%, Damage decrease by 10%.
 Menacer (artillery kbot), increase damage & range & HP. Decrease Metal & time cost.
 Pelican damage increase (laser & AA missile) by 15%.
