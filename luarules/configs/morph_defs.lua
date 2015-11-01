@@ -177,6 +177,11 @@ local morphDefs = {
 		time = 30,
 		xp = 0.50,
 	},
+      tllweb = {
+		into = 'tllupgweb',
+		time = 30,
+		xp = 0.50,
+	},
       armguard= {
 		into = 'armamb',
 		time = 30,
