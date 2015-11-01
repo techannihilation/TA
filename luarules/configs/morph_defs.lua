@@ -715,6 +715,11 @@ local morphDefs = {
 		time = 60,
 		xp = 0.75,
 	},
+      armbull = {
+		into = 'armbull2',
+		time = 60,
+		xp = 0.2,
+	},
 }
 
 

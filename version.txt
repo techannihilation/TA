@@ -1,5 +1,41 @@
 ----------------------------------------- v2.36.8 ---------------------------------------
-wip 
+----Visual----
+Gladiator => 2 burst for missile launcher
+Praetorian Shield Bot => Remplace Plasma Canon by Scar Weapon. (Same Balance)
+
+----Bugs----
+Defiler can pass over Lab. (Was blocked)
+
+----Balance----
+- Delete ArmBull2 From Vehicle Lab Arm T2. Add Morph for ArmBull.
+- TllStunner => Range fixed to 900
+- Add Boosted TLL tesla for combat Commander TLL. Add Morph for TLL tesla.
+- Helper => Decrease cost (same than engineerer). Decrease HP. Decrease Build Speed & RepairSpeed
+- Tll Tower => Increase Range.
+- Hero (Arm / Core / TLL) => CapitalGunShip can only shoot Planes. Balance units (Cost, Range, Damage).
+- Tllion => Decrease AOE 1200 -> 650. Increase MetalCost & energy/s to shoot.
+- ArmVulcain &  CorBuzz T4  => Decrease Energy / S. (~55000kE / Shot)
+- CorGala (T4 Kbot Core Unit) => Increase Metal&Energy Cost (x2~3). Increase HP (160K -> 275K). Increase Damage (40K/Shot 80k vs T3/T4)
+- Horgue => Range 1600 -> 1500. HP 1900 -> 1500
+- Totalitarian => Range 1650 -> 1750
+- TLL Hover => Increase stats & cost for tllhplasma. Increase stats & cost for laserHover (same balance than T1 plasma Core/Arm)
+- All Hover => Increase SightDistance.
+- CorProt Core Sniper => Range 1050 -> 1100. (We have Arm Sniper 950 range, TLL Sniper 1050, Core Sniper 1100) (On previous balance, the original range was 1200)
+- TLL Adv Fusion => Increase Metal & Energy Cost : 30KE & 13.9KM for 1000E/S & 21M/S. (originaly : 10.7KM & 32KE)
+- Tllammaker => Increase Metalcost 563 -> 1100. (balanced with Arm/core faction)
+- armarty (t1.5 arm artillerty) => Decrease MetalCost. Range fixed to 900.
+- Artillery (Arm/ Core, TLL) => Increase range 710 => 750. Increase damage. ~45dmg/s -> 60dmg/s.
+- T1.5 Artillery (Arm/ Core) => Increase range (800) & damage (80dmg/s)
+- Heavy HLT => Decrease range to 650 (Arm) & 660 (Core)
+- LLT Boosted => Decrease Range (510 -> 500) & decrease damage (-10%)
+- Cormexp (Core Extractor T2) => damage modifier 0.25 (on 100 damage, it takes only 25) => 0.75. Increase HP 2000 -> 3500. Increase Metal&Energy cost.
+- Tllpulaser (T2 Laser Pop-up) => Increase MetalEnergy Cost. Increase damage (balanced now with Arm/Core)
+- Add explosioncount for selfdestroy (hyperion corgala, raptor, razorback1)
+- Furie => Decrease HP 275K -> 245K
+
+ 
+---Improvements----
+/
 
 ----------------------------------------- v2.36.0 ---------------------------------------
 ----Visual----
