@@ -1,6 +1,6 @@
 ----------------------------------------- v2.36.8 ---------------------------------------
 ----Visual----
-Gladiator => 2 burst for missile launcher
+Gladiator reduce burst from 4 to 2 for missile launcher
 Praetorian Shield Bot => Replace Plasma Canon by Scar Weapon. (Same Balance)
 
 ----Bugs----
