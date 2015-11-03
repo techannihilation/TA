@@ -3,7 +3,7 @@
 Gladiator reduce burst from 4 to 2 for missile launcher
 Praetorian Shield Bot => Replace Plasma Canon by Scar Weapon. (Same Balance)
 
-----Bugs----
+----Bugs---- 
 Defiler can pass over Lab. (Was blocked)
 Fix provided tech after Tech Ceneter reclaim, Closes #836
 Fix redui tooltips crashing
