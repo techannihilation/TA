@@ -141,7 +141,7 @@ return {
 				model = "missile",
 				name = "Missiles",
 				noselfdamage = true,
-				range = 640,
+				range = 635,
 				reloadtime = 4,
 				smoketrail = true,
 				soundhitdry = "xplomed2",
