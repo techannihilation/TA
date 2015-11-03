@@ -720,6 +720,16 @@ local morphDefs = {
 		time = 60,
 		xp = 0.2,
 	},
+      ahermes = {
+		into = 'armyork',
+		time = 30,
+		xp = 0.2,
+	},
+      corjeag = {
+     		into = 'corsent',
+		time = 30,
+		xp = 0.2,
+	},
 }
 
 
