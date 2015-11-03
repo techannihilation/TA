@@ -1,6 +1,6 @@
 return {
 	speeder = {
-		acceleration = 0.1,
+		acceleration = 0.09,
 		bmcode = 1,
 		brakerate = 0.27,
 		buildcostenergy = 21188,
@@ -33,7 +33,7 @@ return {
 		mass = 1168,
 		maxdamage = 4300,
 		maxslope = 16,
-		maxvelocity = 2.6,
+		maxvelocity = 2.35,
 		maxwaterdepth = 0,
 		metalstorage = 0,
 		mobilestandorders = 1,
