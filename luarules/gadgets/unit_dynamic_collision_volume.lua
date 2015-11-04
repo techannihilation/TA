@@ -48,12 +48,7 @@ if (gadgetHandler:IsSyncedCode()) then
 			for _, featID in pairs(Spring.GetAllFeatures()) do
 				local featureModel = FeatureDefs[Spring.GetFeatureDefID(featID)].modelname:lower()
 				if featureModel:len() > 4 then
-					local featureModelTrim
-					if Game.version > "91.0" then
-						featureModelTrim = featureModel:match("/.*"):sub(2)
-					else
-						featureModelTrim = featureModel:sub(1,-5)
-					end
+					local featureModelTrim = featureModel:match("/.*"):sub(2)
 					if mapFeatures[featureModelTrim] then
 						local p = mapFeatures[featureModelTrim]
 						spSetFeatureCollisionData(featID, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9])
@@ -180,12 +175,8 @@ if (gadgetHandler:IsSyncedCode()) then
 	function gadget:FeatureCreated(featureID, allyTeam)
 		local featureModel = FeatureDefs[Spring.GetFeatureDefID(featureID)].modelname:lower()
 		if featureModel == "" then return end	--geovents or engine trees have no models
-		local featureModelTrim
-		if Game.version > "91.0" then
-			featureModelTrim = featureModel:match("/.*"):sub(2)
-		else
-			featureModelTrim = featureModel:sub(1,-5)
-		end
+		Spring.Echo(featureModel)
+		local featureModelTrim = featureModel:match("/.*"):sub(2)
 		if mapFeatures[featureModelTrim] then	-- it just might happen that some map features can have corpses
 			local p = mapFeatures[featureModelTrim]
 			spSetFeatureCollisionData(featureID, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9])
@@ -195,11 +186,11 @@ if (gadgetHandler:IsSyncedCode()) then
 			if (spGetFeatureRadius(featureID)>47) then
 				rs, hs = 0.68, 0.68
 			else
-				rs, hs = 0.58, 0.58
+				rs, hs = 0.50, 0.50
 			end
 			local xs, ys, zs, xo, yo, zo, vtype, htype, axis, _ = spGetFeatureCollisionData(featureID)
 			if (vtype>=3 and xs==ys and ys==zs) then
-				spSetFeatureCollisionData(featureID, xs*rs, ys*hs, zs*rs,  xo, yo-ys*0.09, zo,  vtype, htype, axis)
+				spSetFeatureCollisionData(featureID, xs*rs, ys*hs, zs*rs,  xo, yo-ys*0.08, zo,  vtype, htype, axis)
 			end
 			spSetFeatureRadiusAndHeight(featureID, spGetFeatureRadius(featureID)*rs, spGetFeatureHeight(featureID)*hs)
 		end
