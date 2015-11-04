@@ -41,7 +41,7 @@ return {
 		metalstorage = 0,
 		mobilestandorders = 1,
 		movementclass = "KBOT2",
-		name = "Iguana",
+		name = "Lizard",
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "TLLLASBOT",
