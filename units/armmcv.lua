@@ -44,7 +44,7 @@ return {
 		metalstorage = 0,
 		mobilestandorders = 1,
 		movementclass = "VHTANK5",
-		name = "Titan",
+		name = "Kronos",
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMMCV",
