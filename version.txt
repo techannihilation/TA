@@ -1,3 +1,19 @@
+----------------------------------------- v2.37.2 ---------------------------------------
+----Visual----
+
+----Bugs---- 
+Tllconviner fix script error/warning
+Fix oversize hitsphere's for wreaks/features
+Rename tlllasbot Iguana>Lizard, Closes #788
+Rename armmcv Titan>Cronos, Closes #805
+
+----Balance----
+Mini Vanguard Reduce max speed by %10, reduce hp by %20, reduce range 820<720
+Increase weapon range for t1 missile tanks 570>605, T1.5 increase range 620>635
+
+---Improvements----
+Add morph for Missile Anti-Air Vehicle (Arm/core) into Flak Vehicle.
+
 ----------------------------------------- v2.36.8 ---------------------------------------
 ----Visual----
 Gladiator reduce burst from 4 to 2 for missile launcher
