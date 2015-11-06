@@ -175,7 +175,6 @@ if (gadgetHandler:IsSyncedCode()) then
 	function gadget:FeatureCreated(featureID, allyTeam)
 		local featureModel = FeatureDefs[Spring.GetFeatureDefID(featureID)].modelname:lower()
 		if featureModel == "" then return end	--geovents or engine trees have no models
-		Spring.Echo(featureModel)
 		local featureModelTrim = featureModel:match("/.*"):sub(2)
 		if mapFeatures[featureModelTrim] then	-- it just might happen that some map features can have corpses
 			local p = mapFeatures[featureModelTrim]
