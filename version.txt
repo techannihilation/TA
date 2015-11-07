@@ -1,4 +1,4 @@
------------------------------------------ v2.37.2 ---------------------------------------
+----------------------------------------- v2.37.5 ---------------------------------------
 ----Visual----
  
 ----Bugs---- 
@@ -10,7 +10,7 @@ Rename armmcv Titan>Cronos, Closes #805
 ----Balance----
 Mini Vanguard Reduce max speed by %10, reduce hp by %20, reduce range 820<720
 Increase weapon range for t1 missile tanks 570>605, T1.5 increase range 620>635
-
+Revert tllion OP paralyze weapon (Back to BeamLaser)
 ---Improvements----
 Add morph for Missile Anti-Air Vehicle (Arm/core) into Flak Vehicle.
 
