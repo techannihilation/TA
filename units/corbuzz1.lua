@@ -139,7 +139,7 @@ return {
 				weaponvelocity = 1350,
 				damage = {
 					commanders = 1000,
-					default = 6000,
+					default = 6200,
 					experimental_ships = 10000,
 					ships = 10000,
 					subs = 5,
