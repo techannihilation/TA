@@ -136,7 +136,7 @@ return {
 				name = "Spray Lightning",
 				noselfdamage = true,
 				range = 530,
-				reloadtime = 0.5,
+				reloadtime = 1,
 				rgbcolor = "0.6 0.6 0.9",
 				soundhitdry = "lashit2",
 				soundstart = "Lghthvy1",
