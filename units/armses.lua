@@ -16,7 +16,7 @@ return {
 		buildtime = 90000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "DEAD",
-		description = "Increase Energy Storage (1M)",
+		description = "Increases Energy Storage (1M)",
 		energystorage = 1000000,
 		energyuse = 0,
 		explodeas = "ESTOR_BUILDINGEX",
