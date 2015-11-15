@@ -11,15 +11,14 @@
 
 function widget:GetInfo()
 	return {
-		name      = "AdvPlayersList",
-		desc      = "Players list with useful information / shortcuts. Use tweakmode (ctrl+F11) to customize.",
+		name      = "AdvPlayersList (TechA)",
+		desc      = "Players list with useful information / shortcuts. Use tweakmode (ctrl+F11) to customize. '/cputext' displays cpu %",
 		author    = "Marmoth. (spiced up by Floris)",
 		date      = "25 april 2015",
 		version   = "14.0",
 		license   = "GNU GPL, v2 or later",
 		layer     = -4,
 		enabled   = true,  --  loaded by default?
-		handler   = true,
 	}
 end
 
@@ -36,6 +35,7 @@ end
 -- v12   (Floris): Restyled looks + added imageDirectory var + HD-ified rank and some other icons
 -- v13   (Floris): Added scale buttons. Added grey cpu/ping icons for spectators. Resized elements. Textured bg. Spec label click to unfold/fold. Added guishader. Lockcamera on doubleclick. Ping in ms/sec/min. Shows dot icon in front of tracked player. HD-ified lots of other icons. Speccing/dead player keep their color. Improved e/m share gui responsiveness. + removed the m_spec option
 -- v14   (Floris): Added country flags + Added camera icons for locked camera + specs show bright when they are broadcasting new lockcamera positions + bugfixed lockcamera for specs. Added small gaps between in tweakui icons. Auto scales with resolution changes.
+-- v15   (Floris): Integrated LockCamers widget code
 
 --------------------------------------------------------------------------------
 -- Widget Scale
@@ -45,6 +45,7 @@ local customScale			= 1
 local customScaleStep		= 0.025
 local pointDuration    		= 40
 local showTeamsizeVersus	= true		-- not implemented yet
+local cpuText				= false
 
 --------------------------------------------------------------------------------
 -- SPEED UPS
@@ -75,6 +76,10 @@ local Spring_GetDrawFrame		 = Spring.GetDrawFrame
 local Spring_GetGameFrame		 = Spring.GetGameFrame
 local Spring_GetTeamColor		 = Spring.GetTeamColor
 local Spring_GetMyTeamID		 = Spring.GetMyTeamID
+
+local GetCameraState = Spring.GetCameraState
+local SetCameraState = Spring.SetCameraState
+local GetCameraNames = Spring.GetCameraNames
 
 local gl_Texture          = gl.Texture
 local gl_Rect             = gl.Rect
@@ -177,6 +182,23 @@ local maxframelag     = 1800 -- High value so it Re-enables ui before players
 local PlayerIsBehind  = false
 
 --------------------------------------------------------------------------------
+-- LockCamera variables
+--------------------------------------------------------------------------------
+
+local transitionTime	= 2 --how long it takes the camera to move
+local listTime			= 15 --how long back to look for recent broadcasters
+
+local myPlayerID = Spring.GetMyPlayerID()
+local lockPlayerID
+
+local lastBroadcasts = {}
+local recentBroadcasters = {}
+local newBroadcaster = false
+local totalTime = 0
+
+local myLastCameraState
+
+--------------------------------------------------------------------------------
 -- Tooltip
 --------------------------------------------------------------------------------
 
@@ -254,7 +276,6 @@ local specOffset 	 	= 12
 local drawList       	= {}
 local teamN	
 local prevClickTime  	= os.clock()
-local broadcasters   	= {}
 local allycursorTimes	= {}
 specListShow = true
 
@@ -368,7 +389,7 @@ m_skill = {
 	spec      = true,
 	play      = true,
 	active    = true,
-	width     = 29,
+	width     = 20,
 	position  = position,
 	posX      = 0,
 	pic       = tsPic,		
@@ -563,10 +584,75 @@ function GeometryChange()
 end
 
 ---------------------------------------------------------------------------------------------------
+--  LockCamera stuff
+---------------------------------------------------------------------------------------------------
+
+local function UpdateRecentBroadcasters()
+	recentBroadcasters = {}
+	local i = 1
+	for playerID, info in pairs(lastBroadcasts) do
+		lastTime = info[1]
+		if (totalTime - lastTime <= listTime or playerID == lockPlayerID) then
+			if (totalTime - lastTime <= listTime) then
+				recentBroadcasters[playerID] = totalTime - lastTime
+			end
+			i = i + 1
+		end
+	end
+end
+
+local function LockCamera(playerID)
+	if playerID and playerID ~= myPlayerID and playerID ~= lockPlayerID then
+		lockPlayerID = playerID
+		myLastCameraState = myLastCameraState or GetCameraState()
+		local info = lastBroadcasts[lockPlayerID]
+		if info then
+			SetCameraState(info[2], transitionTime)
+		end
+	else
+		if myLastCameraState then
+			SetCameraState(myLastCameraState, transitionTime)
+			myLastCameraState = nil
+		end
+		lockPlayerID = nil
+	end
+	UpdateRecentBroadcasters()
+end
+
+
+function CameraBroadcastEvent(playerID,cameraState)
+
+	--if cameraState is empty then transmission has stopped
+	if not cameraState then
+		if lastBroadcasts[playerID] then
+			lastBroadcasts[playerID] = nil
+			newBroadcaster = true
+		end
+		if lockPlayerID == playerID then
+			LockCamera()
+		end
+		return
+	end
+	
+	if not lastBroadcasts[playerID] and not newBroadcaster then
+		newBroadcaster = true
+	end
+	
+	lastBroadcasts[playerID] = {totalTime, cameraState}
+	
+	if playerID == lockPlayerID then
+		SetCameraState(cameraState, transitionTime)
+	end
+end
+
+---------------------------------------------------------------------------------------------------
 --  Init/GameStart (creating players)
 ---------------------------------------------------------------------------------------------------
 
 function widget:Initialize()
+	widgetHandler:RegisterGlobal('CameraBroadcastEvent', CameraBroadcastEvent)
+	UpdateRecentBroadcasters()
+	
 	if (Spring.GetConfigInt("ShowPlayerInfo")==1) then
 		Spring.SendCommands("info 0")
 	end
@@ -610,9 +696,12 @@ end
 
 
 function widget:Shutdown()
+	Spring.SendCommands("info 1")
+
 	if (WG['guishader_api'] ~= nil) then
 		WG['guishader_api'].RemoveRect('advplayerlist')
 	end
+	widgetHandler:DeregisterGlobal('CameraBroadcastEvent')
 end
 
 
@@ -1080,7 +1169,6 @@ function SortSpecs(vOffset)
 end
 
 
-
 ---------------------------------------------------------------------------------------------------
 --  Draw control
 ---------------------------------------------------------------------------------------------------
@@ -1156,21 +1244,16 @@ function widget:DrawScreen()
 end
 
 function CreateLists()
-	
-	broadcasters = {}
-	lockedPlayerID = nil
-	
+
 	CheckTime() --this also calls CheckPlayers
 	
-	if WG['lockcamera_api'] ~= nil then
-		lockedPlayerID = WG['lockcamera_api'].GetLockedPlayer()
-		broadcasters = WG['lockcamera_api'].GetBroadcasters()
-	end
+	UpdateRecentBroadcasters()
+	
 	if WG['allycursor_api'] ~= nil then
 		allycursorTimes = WG['allycursor_api'].GetCursorTimes()
 	end
 	
-	UpdateRessources()
+	UpdateResources()
 	
 	--Create lists
 	CreateBackground()
@@ -1272,7 +1355,7 @@ function CreateBackground()
 		gl_Color(0,0,0,0.5)
 		
 		RectRound(BLcornerX,BLcornerY,TRcornerX,TRcornerY,6)
-		--gl_TexRect(BLcornerX,BLcornerY,TRcornerX,TRcornerY)
+		--DrawRect(BLcornerX,BLcornerY,TRcornerX,TRcornerY)
 		
 		-- draws highlight (top and left sides)
 		--gl_Color(0.44,0.44,0.44,0.38)	
@@ -1288,7 +1371,7 @@ end
 ---------------------------------------------------------------------------------------------------
 
 
-function UpdateRessources()
+function UpdateResources()
 	if energyPlayer ~= nil then
 		if energyPlayer.team == myTeamID then
 			local current,storage = Spring_GetTeamResources(myTeamID,"energy")
@@ -1378,7 +1461,7 @@ function CreateMainList(tip)
 			DrawLabel(" Enemies", drawListOffset[i], true)
 		elseif drawObject == -2 then
 			DrawLabel(" Allies", drawListOffset[i], true)
-			if WG['lockcamera_api'] ~= nil and Spring.GetGameFrame() <= 0 then
+			if Spring.GetGameFrame() <= 0 then
 				DrawLabelTip("(dbl-click playername to track)", drawListOffset[i], 46)
 			end
 			if showTeamsizeVersus then
@@ -1473,21 +1556,17 @@ function DrawPlayer(playerID, leader, vOffset, mouseX, mouseY)
 	if mySpecStatus then
 		local alphaCursor = 1
 		if WG['allycursor_api'] ~= nil then
-			if allycursorTimes[playerID] ~= nil and type(broadcasters[playerID]) == "number" then
+			if allycursorTimes[playerID] ~= nil and type(recentBroadcasters[playerID]) == "number" then
 				alphaCursor = (10 - math.floor(now-allycursorTimes[playerID])) / 7
 				if alphaCursor > 1 then alphaCursor = 1 end
 				if alphaCursor <= 0.5 then alphaCursor = 0.5 end
 			end
 		end
-		if WG['lockcamera_api'] ~= nil and broadcasters[playerID] ~= nil and type(broadcasters[playerID]) == "number" or WG['lockcamera_api'] == nil then
-			if WG['lockcamera_api'] ~= nil then
-				local alphaCam = (15 - math.floor(broadcasters[playerID])) / 10
-				if alphaCam > 1 then alphaCam = 1 end
-				alpha = 0.7 * alphaCam
-				if alpha < 0.5 then alpha = 0.5 end
-			else
-				alpha = 0.5*alphaCursor
-			end
+		if recentBroadcasters[playerID] ~= nil and type(recentBroadcasters[playerID]) == "number" then
+			local alphaCam = (15 - math.floor(recentBroadcasters[playerID])) / 10
+			if alphaCam > 1 then alphaCam = 1 end
+			alpha = 0.7 * alphaCam
+			if alpha < 0.5 then alpha = 0.5 end
 		else
 			alpha = 0.5*alphaCursor
 		end
@@ -1499,11 +1578,8 @@ function DrawPlayer(playerID, leader, vOffset, mouseX, mouseY)
 	if mouseY >= tipPosY and mouseY <= tipPosY + (16*widgetScale) then tipY = true end
 	
 	
-	if WG['lockcamera_api'] ~= nil then
-	
-		if (lockedPlayerID ~= nil and lockedPlayerID == playerID) then -- active
-			DrawCamera(posY, true)
-		end
+	if (lockPlayerID ~= nil and lockPlayerID == playerID) then -- active
+		DrawCamera(posY, true)
 	end
 
 	if spec == false then --player
@@ -1554,8 +1630,8 @@ function DrawPlayer(playerID, leader, vOffset, mouseX, mouseY)
 		gl_Color(1,1,1,1)
 		if specListShow == true and m_name.active == true then
 		
-			if WG['lockcamera_api'] ~= nil and playerSpecs[playerID] ~= nil and (lockedPlayerID ~= nil and lockedPlayerID ~= playerID or lockedPlayerID == nil) then 
-				if broadcasters[playerID] ~= nil and type(broadcasters[playerID]) == "number" then
+			if playerSpecs[playerID] ~= nil and (lockPlayerID ~= nil and lockPlayerID ~= playerID or lockPlayerID == nil) then 
+				if recentBroadcasters[playerID] ~= nil and type(recentBroadcasters[playerID]) == "number" then
 					DrawCamera(posY, false)
 				end
 			end
@@ -1565,7 +1641,7 @@ function DrawPlayer(playerID, leader, vOffset, mouseX, mouseY)
 	
 	if m_cpuping.active == true then
 		if cpuLvl ~= nil then                              -- draws CPU usage and ping icons (except AI and ghost teams)
-			DrawPingCpu(pingLvl,cpuLvl,posY,spec,alpha)
+			DrawPingCpu(pingLvl,cpuLvl,posY,spec,1,cpu)
 			if tipY == true then PingCpuTip(mouseX, ping, cpu, spec) end
 		end
 	end
@@ -1601,18 +1677,18 @@ function DrawTakeSignal(posY)
 		if right == true then
 			gl_Color(0.7,0.7,0.7)
 			gl_Texture(arrowPic)
-			gl_TexRect(widgetPosX - 14, posY, widgetPosX, posY + 16)
+			DrawRect(widgetPosX - 14, posY, widgetPosX, posY + 16)
 			gl_Color(1,1,1)
 			gl_Texture(takePic)
-			gl_TexRect(widgetPosX - 57, posY - 15, widgetPosX - 12, posY + 32)
+			DrawRect(widgetPosX - 57, posY - 15, widgetPosX - 12, posY + 32)
 		else
 			local leftPosX = widgetPosX + widgetWidth
 			gl_Color(0.7,0.7,0.7)
 			gl_Texture(arrowPic)
-			gl_TexRect(leftPosX + 14, posY, leftPosX, posY + 16)
+			DrawRect(leftPosX + 14, posY, leftPosX, posY + 16)
 			gl_Color(1,1,1)
 			gl_Texture(takePic)
-			gl_TexRect(leftPosX + 12, posY - 15, leftPosX + 57, posY + 32)
+			DrawRect(leftPosX + 12, posY - 15, leftPosX + 57, posY + 32)
 		end
 	end	
 end
@@ -1620,17 +1696,17 @@ end
 function DrawShareButtons(posY, needm, neede)
 	gl_Color(1,1,1,1)
 	gl_Texture(unitsPic)                       -- Share UNIT BUTTON
-	gl_TexRect(m_share.posX + widgetPosX  + 1, posY, m_share.posX + widgetPosX  + 17, posY + 16)
+	DrawRect(m_share.posX + widgetPosX  + 1, posY, m_share.posX + widgetPosX  + 17, posY + 16)
 	gl_Texture(energyPic)                      -- share ENERGY BUTTON
-	gl_TexRect(m_share.posX + widgetPosX  + 17, posY, m_share.posX + widgetPosX  + 33, posY + 16)
+	DrawRect(m_share.posX + widgetPosX  + 17, posY, m_share.posX + widgetPosX  + 33, posY + 16)
 	gl_Texture(metalPic)                       -- share METAL BUTTON
-	gl_TexRect(m_share.posX + widgetPosX  + 33, posY, m_share.posX + widgetPosX  + 49, posY + 16)
+	DrawRect(m_share.posX + widgetPosX  + 33, posY, m_share.posX + widgetPosX  + 49, posY + 16)
 	gl_Texture(lowPic)
 	if needm == true then
-		gl_TexRect(m_share.posX + widgetPosX  + 33, posY, m_share.posX + widgetPosX  + 49, posY + 16)
+		DrawRect(m_share.posX + widgetPosX  + 33, posY, m_share.posX + widgetPosX  + 49, posY + 16)
 	end
 	if neede == true then
-		gl_TexRect(m_share.posX + widgetPosX  + 17, posY, m_share.posX + widgetPosX  + 33, posY + 16)	
+		DrawRect(m_share.posX + widgetPosX  + 17, posY, m_share.posX + widgetPosX  + 33, posY + 16)	
 	end
 	gl_Texture(false)
 end
@@ -1638,7 +1714,7 @@ end
 
 function DrawChatButton(posY)
 	gl_Texture(chatPic)
-	gl_TexRect(m_chat.posX + widgetPosX  + 1, posY, m_chat.posX + widgetPosX  + 17, posY + 16)	
+	DrawRect(m_chat.posX + widgetPosX  + 1, posY, m_chat.posX + widgetPosX  + 17, posY + 16)	
 end
 
 function DrawSidePic(team, playerID, posY, leader, dark, ai)
@@ -1648,7 +1724,7 @@ function DrawSidePic(team, playerID, posY, leader, dark, ai)
 		else
 			gl_Texture(notFirstPic)                          -- sets image for not leader of team players
 		end
-		gl_TexRect(m_side.posX + widgetPosX  + 2, posY+1, m_side.posX + widgetPosX  + 16, posY + 15) -- draws side image
+		DrawRect(m_side.posX + widgetPosX  + 2, posY+1, m_side.posX + widgetPosX  + 16, posY + 15) -- draws side image
 		--[[if dark == true then	-- draws outline if player color is dark
 			gl_Color(1,1,1)
 			if leader == true then
@@ -1656,7 +1732,7 @@ function DrawSidePic(team, playerID, posY, leader, dark, ai)
 			else
 				gl_Texture(notFirstPicWO)
 			end
-			gl_TexRect(m_side.posX + widgetPosX + 2, posY+1,m_side.posX + widgetPosX + 16, posY + 15)
+			DrawRect(m_side.posX + widgetPosX + 2, posY+1,m_side.posX + widgetPosX + 16, posY + 15)
 			gl_Texture(false)
 		end
 		]]--
@@ -1692,21 +1768,38 @@ end
 function DrawRankImage(rankImage, posY)
 	gl_Color(1,1,1)
 	gl_Texture(rankImage)
-	gl_TexRect(m_rank.posX + widgetPosX + 3, posY+1, m_rank.posX + widgetPosX + 17, posY + 15)
+	DrawRect(m_rank.posX + widgetPosX + 3, posY+1, m_rank.posX + widgetPosX + 17, posY + 15)
+end
+
+
+local function RectQuad(px,py,sx,sy)
+	local o = 0.008		-- texture offset, because else grey line might show at the edges
+	gl.TexCoord(o,1-o)
+	gl.Vertex(px, py, 0)
+	gl.TexCoord(1-o,1-o)
+	gl.Vertex(sx, py, 0)
+	gl.TexCoord(1-o,o)
+	gl.Vertex(sx, sy, 0)
+	gl.TexCoord(o,o)
+	gl.Vertex(px, sy, 0)
+end
+function DrawRect(px,py,sx,sy)
+	--local px,py,sx,sy,cs = math.floor(px),math.floor(py),math.ceil(sx),math.ceil(sy),math.floor(cs)
+	gl.BeginEnd(GL.QUADS, RectQuad, px,py,sx,sy)
 end
 
 function DrawCountry(country, posY)
 	if country ~= nil then
 		gl_Texture(flagsDirectory..string.upper(country)..".dds")
 		gl_Color(1,1,1)
-		gl_TexRect(m_country.posX + widgetPosX + 3, posY+1, m_country.posX + widgetPosX + 17, posY + 15)
+		DrawRect(m_country.posX + widgetPosX + 3, posY+1, m_country.posX + widgetPosX + 17, posY + 15)
 	end
 end
 
 function DrawDot(posY)
 	gl_Color(1,1,1,0.70)
 	gl_Texture(currentPic)
-	gl_TexRect(m_indent.posX + widgetPosX-1 , posY+3, m_indent.posX + widgetPosX + 7, posY + 11)
+	DrawRect(m_indent.posX + widgetPosX-1 , posY+3, m_indent.posX + widgetPosX + 7, posY + 11)
 end
 
 function DrawCamera(posY,active)
@@ -1716,7 +1809,7 @@ function DrawCamera(posY,active)
 		gl_Color(1,1,1,0.13)
 	end
 	gl_Texture(cameraPic)
-	gl_TexRect(m_indent.posX + widgetPosX-1.5 , posY+2, m_indent.posX + widgetPosX + 9, posY + 12.4)
+	DrawRect(m_indent.posX + widgetPosX-1.5 , posY+2, m_indent.posX + widgetPosX + 9, posY + 12.4)
 end
 
 function colourNames(teamID)
@@ -1754,7 +1847,7 @@ function DrawState(playerID, posX, posY)
 		end
 	end
 	gl_Texture(readyTexture)
-	gl_TexRect(posX, posY - 1 , posX + 16, posY + 16)			
+	DrawRect(posX, posY - 1 , posX + 16, posY + 16)			
 	gl_Color(1,1,1,1)
 end
 
@@ -1843,25 +1936,45 @@ function DrawSkill(skill, posY, dark)
 	gl_Color(1,1,1)
 end
 
-function DrawPingCpu(pingLvl, cpuLvl, posY, spec, alpha)
+function DrawPingCpu(pingLvl, cpuLvl, posY, spec, alpha, cpu)
 	gl_Texture(pingPic)
 	if spec then
 		local grayvalue = 0.25 + ((5 - pingLvl) / 7)
 		gl_Color(grayvalue,grayvalue,grayvalue,0.75*alpha)
-		gl_TexRect(m_cpuping.posX + widgetPosX  + 12, posY+1, m_cpuping.posX + widgetPosX  + 21, posY + 14)
+		DrawRect(m_cpuping.posX + widgetPosX  + 12, posY+1, m_cpuping.posX + widgetPosX  + 21, posY + 14)
 	else
 		gl_Color(pingCpuColors[pingLvl].r,pingCpuColors[pingLvl].g,pingCpuColors[pingLvl].b)
-		gl_TexRect(m_cpuping.posX + widgetPosX  + 12, posY+1, m_cpuping.posX + widgetPosX  + 24, posY + 15)
+		DrawRect(m_cpuping.posX + widgetPosX  + 12, posY+1, m_cpuping.posX + widgetPosX  + 24, posY + 15)
 	end
 	
-	gl_Texture(cpuPic)
-	if spec then
-		grayvalue = 0.45 + ((5 - cpuLvl) / 9)
-		gl_Color(grayvalue,grayvalue,grayvalue,0.75*alpha)
-		gl_TexRect(m_cpuping.posX + widgetPosX + 2 , posY+1, m_cpuping.posX + widgetPosX  + 13, posY + 14)
+	grayvalue = 0.7 + (cpu/135)
+	if cpuText ~= nil and cpuText then
+		if type(cpu) == "number" then
+			if cpu > 99 then
+				cpu = 99
+			end
+			if spec then
+				gl_Color(0,0,0,0.1+(grayvalue*0.4))
+				gl_Text(cpu, m_cpuping.posX + widgetPosX+11, posY + 4.3, 9, "r")
+				gl_Color(grayvalue,grayvalue,grayvalue,0.66*alpha*grayvalue)
+				gl_Text(cpu, m_cpuping.posX + widgetPosX+11, posY + 5.3, 9, "r")
+			else
+				gl_Color(0,0,0,0.12+(grayvalue*0.44))
+				gl_Text(cpu, m_cpuping.posX + widgetPosX+11, posY + 4.3, 9.5, "r")
+				gl_Color(grayvalue,grayvalue,grayvalue,0.8*alpha*grayvalue)
+				gl_Text(cpu, m_cpuping.posX + widgetPosX+11, posY + 5.3, 9.5, "r")
+			end
+			gl_Color(1,1,1)
+		end
 	else
-		gl_Color(pingCpuColors[cpuLvl].r,pingCpuColors[cpuLvl].g,pingCpuColors[cpuLvl].b)
-		gl_TexRect(m_cpuping.posX + widgetPosX  + 1, posY+1, m_cpuping.posX + widgetPosX  + 14, posY + 15)
+		gl_Texture(cpuPic)
+		if spec then
+			gl_Color(grayvalue,grayvalue,grayvalue,0.75*alpha)
+			DrawRect(m_cpuping.posX + widgetPosX + 2 , posY+1, m_cpuping.posX + widgetPosX  + 13, posY + 14)
+		else
+			gl_Color(pingCpuColors[cpuLvl].r,pingCpuColors[cpuLvl].g,pingCpuColors[cpuLvl].b)
+			DrawRect(m_cpuping.posX + widgetPosX  + 1, posY+1, m_cpuping.posX + widgetPosX  + 14, posY + 15)
+		end
 	end
 end
 
@@ -1869,18 +1982,18 @@ function DrawPoint(posY,pointtime)
 	if right == true then
 		gl_Color(1,0,0,pointtime/pointDuration)
 		gl_Texture(arrowPic)
-		gl_TexRect(widgetPosX - 18, posY, widgetPosX - 2, posY+ 14)
+		DrawRect(widgetPosX - 18, posY, widgetPosX - 2, posY+ 14)
 		gl_Color(1,1,1,pointtime/pointDuration)
 		gl_Texture(pointPic)
-		gl_TexRect(widgetPosX - 33, posY-1, widgetPosX - 17, posY + 15)
+		DrawRect(widgetPosX - 33, posY-1, widgetPosX - 17, posY + 15)
 	else
 		leftPosX = widgetPosX + widgetWidth
 		gl_Color(1,0,0,pointtime/pointDuration)
 		gl_Texture(arrowPic)
-		gl_TexRect(leftPosX + 158, posY, leftPosX + 2, posY + 14)
+		DrawRect(leftPosX + 158, posY, leftPosX + 2, posY + 14)
 		gl_Color(1,1,1,pointtime/pointDuration)
 		gl_Texture(pointPic)
-		gl_TexRect(leftPosX + 33, posY-1, leftPosX + 17, posY + 15)	
+		DrawRect(leftPosX + 33, posY-1, leftPosX + 17, posY + 15)	
 	end
 	gl_Color(1,1,1,1)
 end
@@ -1994,32 +2107,32 @@ function CreateShareSlider()
 	if energyPlayer ~= nil then
 		posY = widgetPosY + widgetHeight - energyPlayer.posY
 		gl_Texture(barPic)
-		gl_TexRect(m_share.posX + widgetPosX  + 16,posY-3,m_share.posX + widgetPosX  + 34,posY+58)
+		DrawRect(m_share.posX + widgetPosX  + 16,posY-3,m_share.posX + widgetPosX  + 34,posY+58)
 		gl_Texture(energyPic)
-		gl_TexRect(m_share.posX + widgetPosX  + 17,posY+sliderPosition,m_share.posX + widgetPosX  + 33,posY+16+sliderPosition)
+		DrawRect(m_share.posX + widgetPosX  + 17,posY+sliderPosition,m_share.posX + widgetPosX  + 33,posY+16+sliderPosition)
 		gl_Texture(amountPic)
 		if right == true then
-			gl_TexRect(m_share.posX + widgetPosX  - 28,posY-1+sliderPosition, m_share.posX + widgetPosX  + 19,posY+17+sliderPosition)
+			DrawRect(m_share.posX + widgetPosX  - 28,posY-1+sliderPosition, m_share.posX + widgetPosX  + 19,posY+17+sliderPosition)
 			gl_Texture(false)
 			gl_Text(amountEM.."", m_share.posX + widgetPosX  - 5,posY+3+sliderPosition)
 		else
-			gl_TexRect(m_share.posX + widgetPosX  + 76,posY-1+sliderPosition, m_share.posX + widgetPosX  + 31,posY+17+sliderPosition)
+			DrawRect(m_share.posX + widgetPosX  + 76,posY-1+sliderPosition, m_share.posX + widgetPosX  + 31,posY+17+sliderPosition)
 			gl_Texture(false)
 			gl_Text(amountEM.."", m_share.posX + widgetPosX  + 55,posY+3+sliderPosition)				
 		end
 	elseif metalPlayer ~= nil then
 		posY = widgetPosY + widgetHeight - metalPlayer.posY
 		gl_Texture(barPic)
-		gl_TexRect(m_share.posX + widgetPosX  + 32,posY-3,m_share.posX + widgetPosX  + 50,posY+58)
+		DrawRect(m_share.posX + widgetPosX  + 32,posY-3,m_share.posX + widgetPosX  + 50,posY+58)
 		gl_Texture(metalPic)
-		gl_TexRect(m_share.posX + widgetPosX  + 33, posY+sliderPosition,m_share.posX + widgetPosX  + 49,posY+16+sliderPosition)
+		DrawRect(m_share.posX + widgetPosX  + 33, posY+sliderPosition,m_share.posX + widgetPosX  + 49,posY+16+sliderPosition)
 		gl_Texture(amountPic)
 		if right == true then
-			gl_TexRect(m_share.posX + widgetPosX  - 12,posY-1+sliderPosition, m_share.posX + widgetPosX  + 35,posY+17+sliderPosition)
+			DrawRect(m_share.posX + widgetPosX  - 12,posY-1+sliderPosition, m_share.posX + widgetPosX  + 35,posY+17+sliderPosition)
 			gl_Texture(false)
 			gl_Text(amountEM.."", m_share.posX + widgetPosX  + 11,posY+3+sliderPosition)
 		else
-			gl_TexRect(m_share.posX + widgetPosX  + 88,posY-1+sliderPosition, m_share.posX + widgetPosX  + 47,posY+17+sliderPosition)
+			DrawRect(m_share.posX + widgetPosX  + 88,posY-1+sliderPosition, m_share.posX + widgetPosX  + 47,posY+17+sliderPosition)
 			gl_Texture(false)
 			gl_Text(amountEM.."", m_share.posX + widgetPosX  + 71,posY+3+sliderPosition)
 		end
@@ -2119,9 +2232,7 @@ function widget:MousePress(x,y,button) --super ugly code here
 							return true 
 						end
 						if clickTime - prevClickTime < dblclickPeriod and clickedName == prevClickedName then 
-							if WG['lockcamera_api'] ~= nil then
-								WG['lockcamera_api'].LockCamera(i)
-							end
+							LockCamera(i)
 							prevClickedName = ''
 							if not clickedPlayer.spec then 
 								Spring_SendCommands{"specteam "..i}
@@ -2220,9 +2331,7 @@ function widget:MousePress(x,y,button) --super ugly code here
 								return true 
 							end
 							if clickTime - prevClickTime < dblclickPeriod and clickedName == prevClickedName then 
-								if WG['lockcamera_api'] ~= nil then
-									WG['lockcamera_api'].LockCamera(clickedPlayer.team)
-								end
+								LockCamera(clickedPlayer.team)
 								prevClickedName = ''
 								if not clickedPlayer.spec then
 									Spring_SendCommands{"specteam "..clickedPlayer.team}
@@ -2251,7 +2360,7 @@ function widget:MouseMove(x,y,dx,dy,button)
 		if sliderPosition < 0 then sliderPosition = 0 end
 		if sliderPosition > 39 then sliderPosition = 39 end
 		
-		UpdateRessources()
+		UpdateResources()
 	end
 end
 
@@ -2335,10 +2444,10 @@ end
 
 local function DrawTweakButton(module,  localLeft, localOffset, localBottom)
 	gl_Texture(module.pic)
-	gl_TexRect(localLeft + localOffset, localBottom + 11, localLeft + localOffset + 16, localBottom + 27)
+	DrawRect(localLeft + localOffset, localBottom + 11, localLeft + localOffset + 16, localBottom + 27)
 	if module.active ~= true and module.alwaysActive == nil then
 		gl_Texture(crossPic)
-		gl_TexRect(localLeft + localOffset, localBottom + 11, localLeft + localOffset + 16, localBottom + 27)
+		DrawRect(localLeft + localOffset, localBottom + 11, localLeft + localOffset + 16, localBottom + 27)
 	end
 end
 
@@ -2372,15 +2481,15 @@ local function DrawArrows()
 	gl_Color(1,1,1,0.4)
 	gl_Texture(arrowdPic)
 	if expandDown == true then
-		gl_TexRect(widgetPosX, widgetPosY - 15, widgetRight, widgetPosY - 1)
+		DrawRect(widgetPosX, widgetPosY - 15, widgetRight, widgetPosY - 1)
 	else
-		gl_TexRect(widgetPosX, widgetTop + 15, widgetRight, widgetTop + 1)
+		DrawRect(widgetPosX, widgetTop + 15, widgetRight, widgetTop + 1)
 	end
 		gl_Texture(arrowPic)
 	if expandLeft == true then
-		gl_TexRect(widgetPosX - 1, widgetPosY, widgetPosX - 15, widgetTop)
+		DrawRect(widgetPosX - 1, widgetPosY, widgetPosX - 15, widgetTop)
 	else
-		gl_TexRect(widgetRight + 1, widgetPosY, widgetRight + 15, widgetTop)
+		DrawRect(widgetRight + 1, widgetPosY, widgetRight + 15, widgetTop)
 	end
 	gl_Color(1,1,1,1)
 	gl_Texture(false)
@@ -2537,7 +2646,8 @@ function widget:GetConfigData(data)      -- save
 			m_takeActive       = m_take.active,
 			m_seespecActive    = m_seespec.active,
 			--modules
-			m_active_Table	   = m_active_Table
+			m_active_Table	   = m_active_Table,
+			cpuText            = cpuText
 		}
 		
 		return settings
@@ -2581,6 +2691,11 @@ function widget:SetConfigData(data)      -- load
 			widgetPosX  = data.widgetPosX --align left of widget to left of screen
 		end
 	end
+	
+	if data.cpuText ~= nil then
+		cpuText = data.cpuText
+	end
+	
 	--not technically modules
 	m_point.active         = SetDefault(data.m_pointActive, m_point.default)
 	m_take.active          = SetDefault(data.m_takeActive, m_take.default)
@@ -2598,6 +2713,12 @@ function widget:SetConfigData(data)      -- load
 	end
 		
 	SetModulesPositionX()
+end
+
+function widget:TextCommand(command)
+	if (string.find(command, "cputext") == 1  and  string.len(command) == 7) then 
+		cpuText = not cpuText
+	end
 end
 
 function SetDefault(value, default)
@@ -2753,7 +2874,9 @@ function IsTakeable(teamID)
 		return false					
 	end
 end
-		
+
+
+
 --timers
 local timeCounter = 0
 local updateRate = 0.75
@@ -2761,13 +2884,15 @@ local updateRatePreStart = 0.25
 local lastTakeMsg = -120
 
 function widget:Update(delta) --handles takes & related messages
-	
+
 	if Spring_IsGUIHidden() or PlayerIsBehind then
 		return
 	end
 
+	totalTime = totalTime + delta 
 	timeCounter = timeCounter + delta
 	curFrame = Spring_GetGameFrame()
+	
 	
 	if energyPlayer ~= nil or metalPlayer ~= nil then
 		CreateShareSlider()
