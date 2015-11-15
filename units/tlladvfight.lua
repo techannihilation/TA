@@ -5,7 +5,7 @@ return {
 		bankscale = 1,
 		bmcode = 1,
 		brakerate = 0.09,
-		buildcostenergy = 7000,
+		buildcostenergy = 4200,
 		buildcostmetal = 405,
 		buildtime = 10500,
 		canattack = true,

@@ -5,7 +5,7 @@ return {
 		bankscale = 1,
 		bmcode = 1,
 		brakerate = 0.112,
-		buildcostenergy = 17000,
+		buildcostenergy = 10200,
 		buildcostmetal = 140,
 		buildpic = "ARMHAWK.png",
 		buildtime = 11685,
