@@ -31,7 +31,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		metalstorage = 0,
-		name = "T4 Energy Storage",
+		name = "T3 Energy Storage",
 		noautofire = false,
 		objectname = "corses",
 		seismicsignature = 0,
