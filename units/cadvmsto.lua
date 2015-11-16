@@ -28,7 +28,7 @@ return {
 		maxdamage = 66000,
 		maxslope = 10,
 		maxwaterdepth = 0,
-		metalstorage = 100000,
+		metalstorage = 350000,
 		name = "T3 Metal Storage",
 		noautofire = false,
 		nochasecategory = "ALL",
