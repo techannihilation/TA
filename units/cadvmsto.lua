@@ -13,7 +13,7 @@ return {
 		buildtime = 66125,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "dead",
-		description = "Increase Metal Storage (100000)",
+		description = "Increase Metal Storage (350000)",
 		designation = "CMS-1",
 		downloadable = 1,
 		energystorage = 0,
