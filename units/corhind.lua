@@ -120,12 +120,9 @@ return {
 				weapontype = "BeamLaser",
 				weaponvelocity = 800,
 				damage = {
-					bombers = 5,
 					commanders = 200,
 					default = 400,
-					fighters = 5,
-					flak_resistant = 5,
-					unclassed_air = 5,
+					subs = 5,
 				},
 			},
 			heli_cannon = {
@@ -155,6 +152,7 @@ return {
 				damage = {
 					commanders = 200,
 					default = 300,
+					subs = 5,
 				},
 			},
 			vtol_rocket5 = {
