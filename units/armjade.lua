@@ -102,12 +102,12 @@ return {
 				weapontype = "BeamLaser",
 				weaponvelocity = 800,
 				damage = {
-					bombers = 5,
 					commanders = 70,
 					default = 140,
 					fighters = 0,
 					flak_resistant = 0,
 					unclassed_air = 0,
+					subs = 5,
 				},
 			},
 		},

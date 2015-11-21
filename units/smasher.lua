@@ -111,12 +111,9 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 450,
 				damage = {
-					bombers = 5,
 					commanders = 20,
 					default = 40,
-					fighters = 5,
-					flak_resistant = 5,
-					unclassed_air = 5,
+					subs = 5,
 				},
 			},
 			vtol_rocket5 = {
@@ -144,13 +141,9 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 320,
 				damage = {
-					bombers = 5,
 					commanders = 60,
 					default = 120,
-					fighters = 5,
-					flak_resistant = 5,
 					subs = 5,
-					unclassed_air = 5,
 				},
 			},
 		},

@@ -61,7 +61,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "CORMINE6.png",
-			requiretech = "T2 Factory",
+			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		sounds = {
 			canceldestruct = "cancel2",
