@@ -1,3 +1,21 @@
+----------------------------------------- v2.37.6 ---------------------------------------
+----Visual----
+ 
+----Bugs---- 
+Fix armjade going wandering while attacking
+Fix bladewing's going wandering while attacking
+Upgraded vulcan/upg buzzsaw no longer reflect off t2 shields
+
+----Balance----
+High Power Mines Lock/unlock with RC now
+Balance T4 Storage Metal & Energy Cost's
+Reduce energy cost for t2 fighter by 40%
+Increase tll telsa+charged telsa reloadtime 0.5>1s
+Longtom Reduce max speed 2.35>1.52
+Legendary Increase HP 240000>2700000
+
+---Improvements----
+Update advanced player list
 ----------------------------------------- v2.37.5 ---------------------------------------
 ----Visual----
  
