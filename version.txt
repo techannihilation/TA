@@ -1,10 +1,11 @@
------------------------------------------ v2.37.6 ---------------------------------------
+----------------------------------------- v2.37.9 ---------------------------------------
 ----Visual----
  
 ----Bugs---- 
 Fix armjade going wandering while attacking
 Fix bladewing's going wandering while attacking
 Upgraded vulcan/upg buzzsaw no longer reflect off t2 shields
+Gadget fixes
 
 ----Balance----
 High Power Mines Lock/unlock with RC now
