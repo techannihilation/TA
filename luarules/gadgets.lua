@@ -842,6 +842,13 @@ function gadgetHandler:GameFrame(frameNum)
   return
 end
 
+function gadgetHandler:GamePaused(playerID,paused)
+  for _,g in ipairs(self.GamePausedList) do
+    g:GamePaused(playerID,paused)
+  end
+  return
+end
+
 function gadgetHandler:GameProgress(serverframenum)
   for _,g in ipairs(self.GameProgressList) do
     g:GameProgress(serverframenum)
@@ -1360,6 +1367,14 @@ function gadgetHandler:UnitGiven(unitID, unitDefID, unitTeam, oldTeam)
 end
 
 
+function gadgetHandler:UnitCommand(unitID, unitDefID, unitTeam, cmdId, cmdOpts, cmdParams, cmdTag)
+  for _,g in ipairs(self.UnitCommandList) do
+    g:UnitCommand(unitID, unitDefID, unitTeam, cmdId, cmdOpts, cmdParams, cmdTag)
+  end
+  return
+end
+
+
 function gadgetHandler:UnitEnteredRadar(unitID, unitTeam, allyTeam, unitDefID)
   for _,g in ipairs(self.UnitEnteredRadarList) do
     g:UnitEnteredRadar(unitID, unitTeam, allyTeam, unitDefID)
@@ -1586,9 +1601,9 @@ end
 --  Draw call-ins
 --
 
-function gadgetHandler:Update()
+function gadgetHandler:Update(deltaTime)
   for _,g in ipairs(self.UpdateList) do
-    g:Update()
+    g:Update(deltaTime)
   end
   return
 end
