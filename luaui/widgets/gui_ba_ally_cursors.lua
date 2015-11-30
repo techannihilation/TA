@@ -100,7 +100,6 @@ end
 local playerPos = {}
 function MouseCursorEvent(playerID,x,z,click)
 	if GetMyPlayerID() == playerID then
-		Spring.Echo(GetMyPlayerID,playerID)
         return true
     end
 	local playerPosList = playerPos[playerID] or {}
@@ -210,8 +209,6 @@ function widget:DrawWorldPreUnit()
 	glPolygonOffset(-7,-10)
 	time = clock()
 	for playerID,data in pairs(alliedCursorsPos) do
-		Spring.Echo(GetMyPlayerID,playerID)
-
 		teamID = data[#data]
 		for n=0,numTrails do
 			wx,wz = data[1],data[2]
