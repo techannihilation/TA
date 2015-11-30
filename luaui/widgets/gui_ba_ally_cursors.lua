@@ -99,9 +99,11 @@ end
 --------------------------------------------------------------------------------
 local playerPos = {}
 function MouseCursorEvent(playerID,x,z,click)
+
 	if GetMyPlayerID() == playerID then
         return true
     end
+    
 	local playerPosList = playerPos[playerID] or {}
 	playerPosList[#playerPosList+1] = {x=x,z=z,click=click}
 	playerPos[playerID] = playerPosList
