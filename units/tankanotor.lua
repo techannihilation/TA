@@ -136,6 +136,7 @@ return {
 				impulsefactor = 0,
 				model = "missileH2",
 				name = "Heavy Rocket",
+				noselfdamage = true,
 				range = 1060,
 				reloadtime = 7,
 				smoketrail = true,
