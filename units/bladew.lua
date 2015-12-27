@@ -113,7 +113,7 @@ return {
 				weaponvelocity = 800,
 				damage = {
 					bombers = 5,
-					commanders = 200,
+					commanders = 30,
 					default = 400,
 					fighters = 5,
 					flak_resistant = 5,
