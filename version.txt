@@ -1,3 +1,15 @@
+----------------------------------------- v2.38.0 ---------------------------------------
+----Visual----
+Monkeylord Add smoke visuals from vents
+
+----Bugs---- 
+Fix Typo in Mercury metal cost 16000>1650
+Fix rare lua error in air_transports
+Fix monkeylord aim issues, Closes #887
+
+----Balance----
+Bladewing reduce damage to commanders 200>30
+
 ----------------------------------------- v2.37.9 ---------------------------------------
 ----Visual----
  
