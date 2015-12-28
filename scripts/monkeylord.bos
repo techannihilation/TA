@@ -3,12 +3,13 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, cephalotorax, poupe, berceau, tourelle, ovale, canon, aiguille,
-       bouche, cartouche, pattes, ecraseur_epaule,
-       ecraseur_bras,leg1, leg2, leg3, leg4, leg5,
-       leg6, load_shoulder, load_arm, unload_shoulder, unload_arm, goal_shoulder, goal_arm;
+piece  base, cephalotorax, poupe, berceau, canon, 
+	   bouche, pattes, ecraseur_epaule, ecraseur_bras,
+	   leg1, leg2, leg3, leg4, leg5, leg6, load_shoulder,
+	   load_arm, unload_shoulder, unload_arm, goal_shoulder,
+	   goal_arm, smoke1, smoke2, smoke3, smoke4, smoke5;
 
-static-var  bMoving, gun_1, restore_delay, Static_Var_4, Static_Var_5;
+static-var  bMoving, bAiming, gun_1, restore_delay, Static_Var_4, Static_Var_5, smokey;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -125,9 +126,133 @@ MotionControl(Func_Var_1)
 	}
 }
 
+IdleControl()
+{
+	while( TRUE )
+	{
+		smokey = 256 | 2;
+		if( !bMoving AND !bAiming )
+		{
+			sleep 150;
+			emit-sfx smokey from smoke1;
+			emit-sfx smokey from smoke2;
+			emit-sfx smokey from smoke3;
+			emit-sfx smokey from smoke4;
+			emit-sfx smokey from smoke5;
+			emit-sfx smokey from smoke1;
+			emit-sfx smokey from smoke2;
+			emit-sfx smokey from smoke3;
+			emit-sfx smokey from smoke4;
+			emit-sfx smokey from smoke5;
+			sleep 1050;
+			emit-sfx smokey from smoke1;
+			emit-sfx smokey from smoke2;
+			emit-sfx smokey from smoke3;
+			emit-sfx smokey from smoke4;
+			emit-sfx smokey from smoke5;
+			emit-sfx smokey from smoke1;
+			emit-sfx smokey from smoke2;
+			emit-sfx smokey from smoke3;
+			emit-sfx smokey from smoke4;
+			emit-sfx smokey from smoke5;
+			sleep 1050;
+			emit-sfx smokey from smoke1;
+			emit-sfx smokey from smoke2;
+			emit-sfx smokey from smoke3;
+			emit-sfx smokey from smoke4;
+			emit-sfx smokey from smoke5;
+			emit-sfx smokey from smoke1;
+			emit-sfx smokey from smoke2;
+			emit-sfx smokey from smoke3;
+			emit-sfx smokey from smoke4;
+			emit-sfx smokey from smoke5;
+			sleep 1050;
+			emit-sfx smokey from smoke1;
+			emit-sfx smokey from smoke2;
+			emit-sfx smokey from smoke3;
+			emit-sfx smokey from smoke4;
+			emit-sfx smokey from smoke5;
+			emit-sfx smokey from smoke1;
+			emit-sfx smokey from smoke2;
+			emit-sfx smokey from smoke3;
+			emit-sfx smokey from smoke4;
+			emit-sfx smokey from smoke5;
+			sleep 1050;
+			emit-sfx smokey from smoke1;
+			emit-sfx smokey from smoke2;
+			emit-sfx smokey from smoke3;
+			emit-sfx smokey from smoke4;
+			emit-sfx smokey from smoke5;
+			emit-sfx smokey from smoke1;
+			emit-sfx smokey from smoke2;
+			emit-sfx smokey from smoke3;
+			emit-sfx smokey from smoke4;
+			emit-sfx smokey from smoke5;
+			sleep 10;
+		}
+			sleep 150;
+			emit-sfx smokey from smoke1;
+			emit-sfx smokey from smoke2;
+			emit-sfx smokey from smoke3;
+			emit-sfx smokey from smoke4;
+			emit-sfx smokey from smoke5;
+			emit-sfx smokey from smoke1;
+			emit-sfx smokey from smoke2;
+			emit-sfx smokey from smoke3;
+			emit-sfx smokey from smoke4;
+			emit-sfx smokey from smoke5;
+			sleep 1050;
+			emit-sfx smokey from smoke1;
+			emit-sfx smokey from smoke2;
+			emit-sfx smokey from smoke3;
+			emit-sfx smokey from smoke4;
+			emit-sfx smokey from smoke5;
+			emit-sfx smokey from smoke1;
+			emit-sfx smokey from smoke2;
+			emit-sfx smokey from smoke3;
+			emit-sfx smokey from smoke4;
+			emit-sfx smokey from smoke5;
+			sleep 1050;
+			emit-sfx smokey from smoke1;
+			emit-sfx smokey from smoke2;
+			emit-sfx smokey from smoke3;
+			emit-sfx smokey from smoke4;
+			emit-sfx smokey from smoke5;
+			emit-sfx smokey from smoke1;
+			emit-sfx smokey from smoke2;
+			emit-sfx smokey from smoke3;
+			emit-sfx smokey from smoke4;
+			emit-sfx smokey from smoke5;
+			sleep 1050;
+			emit-sfx smokey from smoke1;
+			emit-sfx smokey from smoke2;
+			emit-sfx smokey from smoke3;
+			emit-sfx smokey from smoke4;
+			emit-sfx smokey from smoke5;
+			emit-sfx smokey from smoke1;
+			emit-sfx smokey from smoke2;
+			emit-sfx smokey from smoke3;
+			emit-sfx smokey from smoke4;
+			emit-sfx smokey from smoke5;
+			sleep 1050;
+			emit-sfx smokey from smoke1;
+			emit-sfx smokey from smoke2;
+			emit-sfx smokey from smoke3;
+			emit-sfx smokey from smoke4;
+			emit-sfx smokey from smoke5;
+			emit-sfx smokey from smoke1;
+			emit-sfx smokey from smoke2;
+			emit-sfx smokey from smoke3;
+			emit-sfx smokey from smoke4;
+			emit-sfx smokey from smoke5;
+			sleep 10;
+	}
+}
+
 Create()
 {
 	bMoving = FALSE;
+	bAiming = FALSE;
 	gun_1 = base;
 	restore_delay = 10;
 	Static_Var_4 = 0;
@@ -135,9 +260,9 @@ Create()
 	set ACTIVATION to 1;
 	Static_Var_5 = 1;
 	move ecraseur_epaule to y-axis [13107.199982] now;
-	hide cartouche;
 	hide bouche;
 	dont-cache bouche;
+	start-script IdleControl();
 	start-script MotionControl();
 	sleep 1;
 	Static_Var_5 = 1;
@@ -145,39 +270,79 @@ Create()
 
 SetMaxReloadTime(Func_Var_1)
 {
-	restore_delay = 20000;
+	restore_delay = 5000;
 }
 
 RetourTourelle()
 {
 	sleep restore_delay;
-	turn berceau to y-axis <0.000000> speed <25.000000>;
-	turn tourelle to x-axis <0.000000> speed <10.000000>;
+	bAiming = FALSE;
+	turn berceau to y-axis <0.000000> speed <50.000000>;
+	//VENT GAGES
+	emit-sfx smokey from smoke1;
+	emit-sfx smokey from smoke2;
+	emit-sfx smokey from smoke3;
+	emit-sfx smokey from smoke4;
+	emit-sfx smokey from smoke5;
+	sleep 150;
+	emit-sfx smokey from smoke1;
+	emit-sfx smokey from smoke2;
+	emit-sfx smokey from smoke3;
+	emit-sfx smokey from smoke4;
+	emit-sfx smokey from smoke5;
+	sleep 150;
+	emit-sfx smokey from smoke1;
+	emit-sfx smokey from smoke2;
+	emit-sfx smokey from smoke3;
+	emit-sfx smokey from smoke4;
+	emit-sfx smokey from smoke5;
+	sleep 150;
+	emit-sfx smokey from smoke1;
+	emit-sfx smokey from smoke2;
+	emit-sfx smokey from smoke3;
+	emit-sfx smokey from smoke4;
+	emit-sfx smokey from smoke5;
+	sleep 150;
+	emit-sfx smokey from smoke1;
+	emit-sfx smokey from smoke2;
+	emit-sfx smokey from smoke3;
+	emit-sfx smokey from smoke4;
+	emit-sfx smokey from smoke5;
+	sleep 150;
+	emit-sfx smokey from smoke1;
+	emit-sfx smokey from smoke2;
+	emit-sfx smokey from smoke3;
+	emit-sfx smokey from smoke4;
+	emit-sfx smokey from smoke5;
+	sleep 150;
+	emit-sfx smokey from smoke1;
+	emit-sfx smokey from smoke2;
+	emit-sfx smokey from smoke3;
+	emit-sfx smokey from smoke4;
+	emit-sfx smokey from smoke5;
+	sleep 150;
+	emit-sfx smokey from smoke1;
+	emit-sfx smokey from smoke2;
+	emit-sfx smokey from smoke3;
+	emit-sfx smokey from smoke4;
+	emit-sfx smokey from smoke5;
+	sleep 150;
 }
 
 AimFromPrimary(piecenum)
 {
-	piecenum = berceau;
+	piecenum = canon;
 }
 
 AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	while( FALSE )
-	{
-	}
+	bAiming = TRUE;
 	turn berceau to y-axis heading speed <150.000000>;
-	if( TRUE )
-	{
-		turn tourelle to x-axis pitch speed <0.000000>;
-	}
-	if( TRUE )
-	{
-		turn tourelle to x-axis <30.000000> speed <40.000000>;
-	}
+	turn canon to x-axis pitch + <8.000000> speed <40.000000>;
 	wait-for-turn berceau around y-axis;
-	wait-for-turn tourelle around x-axis;
+	wait-for-turn canon around x-axis;
 	start-script RetourTourelle();
 	return (1);
 }
@@ -189,21 +354,6 @@ QueryPrimary(piecenum)
 
 FirePrimary()
 {
-	gun_1 = cephalotorax;
-	dont-cache canon;
-	show bouche;
-	spin canon around z-axis speed <180.000000> accelerate <360.000000>;
-	hide bouche;
-	stop-spin canon around z-axis decelerate <20.000000>;
-	Static_Var_4 = 16384;
-	if( TRUE )
-	{
-		Static_Var_4 = 65536;
-	}
-	turn ovale to z-axis Static_Var_4 speed <45.010989>;
-	cache canon;
-	gun_1 = base;
-	return (Static_Var_4);
 }
 
 AimFromSecondary(piecenum)
@@ -272,15 +422,7 @@ Killed(severity, corpsetype)
 	explode cephalotorax type BITMAP2;
 	explode poupe type BITMAP2;
 	explode berceau type BITMAP2;
-	explode tourelle type BITMAP1;
-	explode ovale type BITMAP2;
 	explode canon type BITMAP3;
-	explode aiguille type BITMAP4;
-	explode cartouche type BITMAP1;
-	explode cartouche type BITMAP2;
-	explode cartouche type BITMAP3;
-	explode cartouche type BITMAP4;
-	explode cartouche type BITMAP5;
     explode leg1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode leg2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 	explode leg3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
