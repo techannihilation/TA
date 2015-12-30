@@ -98,7 +98,7 @@ return {
 				noselfdamage = true,
 				paralyzer = true,
 				paralyzetime = 7,
-				range = 410,
+				range = 350,
 				reloadtime = 1.2,
 				rgbcolor = "1 1 0",
 				soundhitdry = "lashit",
