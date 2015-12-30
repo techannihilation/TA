@@ -10,7 +10,7 @@ piece  base, body, barrel1a, barrel1b, barrel1c, barrel1d, radar, wake1,
        flare4a, flare4b, flare5, flare6;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3, restore_delay, Static_Var_5,
-            Static_Var_6, Static_Var_7, Static_Var_8;
+            Static_Var_6, Static_Var_7, Static_Var_8, movespeed;
 
 // Signal definitions
 #define SIG_MOVE			128
@@ -139,6 +139,7 @@ Create()
 	hide flare2;
 	hide flare5;
 	hide flare6;
+	moveSpeed = get MAX_SPEED;
 	Static_Var_1 = 0;
 	Static_Var_3 = 0;
 	Static_Var_2 = 0;
@@ -202,7 +203,7 @@ StartMoving()
 		emit-sfx 2 from wake4;
 		emit-sfx 2 from wake5;
 		emit-sfx 2 from wake6;
-		Func_Var_1 = get CURRENT_SPEED * 100 / get MAX_SPEED;
+		Func_Var_1 = (get CURRENT_SPEED) * 100 / moveSpeed;
 		if( Func_Var_1 < 50 )
 		{
 			Func_Var_1 = 50;
