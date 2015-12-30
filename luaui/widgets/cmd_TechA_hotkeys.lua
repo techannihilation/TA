@@ -39,8 +39,8 @@ function MakeBindsTable (swapYZ)
     local Z = swapYZ and "y" or "z"
     
     local _binds = {
-        -- building hotkeys
-        "bind any+b buildspacing inc",
+    -- building hotkeys
+    "bind any+b buildspacing inc",
 	"bind any+n buildspacing dec",
 	"bind any+q controlunit",
 	"bind z buildunit_armmex",
@@ -275,7 +275,8 @@ function MakeBindsTable (swapYZ)
         "bind q drawinmap", --some ke"..Y.."boards don't have ` or \
         "bind ,	buildfacing inc", --because some ke"..Y.."boards don't have [ and ] ke"..Y.."s
         "bind .	buildfacing dec",
-        "bind o buildfacing inc", --apparentl"..Y.." some ke"..Y.."boards don't have , and . either...   
+        "bind o buildfacing inc", --apparentl"..Y.." some ke"..Y.."boards don't have , and . either...
+        "bind shift+j jump"
     }
     
     binds = _binds
