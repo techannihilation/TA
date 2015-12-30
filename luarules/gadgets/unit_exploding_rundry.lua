@@ -178,6 +178,12 @@ end
 
 
 function gadget:Initialize()
+  for i=1,#UnitDefs do
+  local unitDefID = UnitDefs[i]
+    if (unitDefID.minWaterDepth and unitDefID.minWaterDepth> 0) and unitDefID.waterline then
+      tideDefs[i] = true
+    end
+  end
   for _, unitID in ipairs(SpGetAllUnits()) do
     local unitDefID = GetUnitDefID(unitID)
     if (tideDefs[unitDefID]) then
