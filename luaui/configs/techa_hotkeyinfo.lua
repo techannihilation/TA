@@ -53,7 +53,7 @@ Units_I_II = {
     {"f",   "fight"},
     {"p",   "patrol"},
     {"k",   "cloak"},
-    {"shift + j", "jump"}
+    {"shift + j", "jump"},
     {blankLine=true},    
     {"s",   "stop (clears order queue)"},
     {"w",   "wait (pause current command)"},
