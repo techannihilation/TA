@@ -139,11 +139,11 @@ return {
 				soundhitdry = "xplomed4",
 				soundstart = "cannhvy2",
 				stages = 20,
-				turret = true,
+				turret = false,
 				weapontype = "Cannon",
 				weaponvelocity = 410,
 				damage = {
-					default = 80,
+					default = 60,
 					subs = 5,
 				},
 			},
