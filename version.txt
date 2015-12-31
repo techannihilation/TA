@@ -1,4 +1,4 @@
------------------------------------------ v2.38.1 ---------------------------------------
+----------------------------------------- v2.38.2 ---------------------------------------
 ----Visual----
 
 
@@ -6,7 +6,7 @@
 Fix script error in epoch and black hydra
 Make ships explode if they are out of water, Closes #895
 Reduce all mobile lrpc hp by %20
-Reduce all lol cannon range by %20 to %15, and t3 rapid fire cannons increase explosion/selfd radius and damage
+Reduce std and rapid lol cannon range by %20 to %15, and all lol cannons increase explosion/selfd radius and damage
 
 ----Balance----
 Bladewing reduce range by %15, range 410>350
