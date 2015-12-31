@@ -63,27 +63,30 @@ function gadget:GameFrame(n)
           local uDef = uDefs[uDefID]
           local storage = storageunits[unitID].storage
           local _,stunned = Spring.GetUnitIsStunned(unitID)
+          local teamID = storageunits[unitID].teamID
+          if teamID == nil then return end
 
           if stunned and (storageunits[unitID].isEMPed == false) then
-            local currentLevel,totalstorage = Spring.GetTeamResources(Spring.GetUnitTeam(unitID),"metal")
+            local currentLevel,totalstorage = Spring.GetTeamResources(teamID,"metal")
             local newstoragetotal = totalstorage - storage
             --Spring.Echo("current storage level " .. currentLevel .. "   total storage " .. totalstorage .. "   new storage level " ..newstoragetotal)
-              Spring.SetTeamResource(Spring.GetUnitTeam(unitID), "ms", newstoragetotal)
+              Spring.SetTeamResource(teamID, "ms", newstoragetotal)
             if currentLevel > (newstoragetotal) then
             local x,y,z = Spring.GetUnitPosition(unitID)
-            local height = storageunits[unitID].height * 0.70
+            local height = storageunits[unitID].height
             Spring.SpawnCEG("METAL_STORAGE_LEAK",x,y+height,z,0,0,0)
             end
             storageunits[unitID].isEMPed = true
             stunnedstorage[unitID] = true 
           end
         end
+
         for unitID,_ in pairs(stunnedstorage) do
           local _,stunned = Spring.GetUnitIsStunned(unitID)
           local storage = storageunits[unitID].storage
           if not stunned then
-              local _,totalstorage = Spring.GetTeamResources(Spring.GetUnitTeam(unitID),"metal")
-              Spring.SetTeamResource(Spring.GetUnitTeam(unitID), "ms", totalstorage+storage)
+              local _,totalstorage = Spring.GetTeamResources(teamID,"metal")
+              Spring.SetTeamResource(teamID, "ms", totalstorage+storage)
               stunnedstorage[unitID] = nil
               storageunits[unitID].isEMPed = false
           end
@@ -93,10 +96,15 @@ end
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
 
-local function SetupUnit(unitID,unitDefID)
+local function SetupUnit(unitID, unitDefID, unitTeam)
     local ud = UnitDefs[unitDefID]
     if (ud == nil)or(ud.height == nil) then return nil end
-    storageunits[unitID] = {isEMPed = false, height = ud.height, storage = ud.metalStorage}
+    storageunits[unitID] = {
+    isEMPed = false,
+    height = (ud.height * 0.70),
+    storage = ud.metalStorage,
+    teamID = unitTeam
+}
 end
 
 --testing only
@@ -105,7 +113,8 @@ function gadget:Initialize() --testing only
     for _, unitID in ipairs(SpGetAllUnits()) do
     local unitDefID = GetUnitDefID(unitID)
         if (storageDefs[unitDefID]) then
-        SetupUnit(unitID,unitDefID)
+            local unitTeam = Spring.GetUnitTeam(unitID)
+            SetupUnit(unitID, unitDefID, unitTeam)
         end
     end
 end
@@ -113,12 +122,13 @@ end
 
 function gadget:UnitFinished(unitID, unitDefID, unitTeam)
     if (storageDefs[unitDefID]) then
-        SetupUnit(unitID,unitDefID)
+        SetupUnit(unitID, unitDefID, unitTeam)
     end
 end
 
 function gadget:UnitGiven(unitID, unitDefID, newTeam, oldTeam)
   if (storageunits[unitID]) and storageunits[unitID].isEMPed == true then
+  	storageunits[unitID].teamID = newTeam
     local storage = storageunits[unitID].storage
     local _,totalstorage = Spring.GetTeamResources(oldTeam,"metal")
     Spring.SetTeamResource(oldTeam, "ms", totalstorage + storage)
