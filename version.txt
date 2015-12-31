@@ -1,3 +1,24 @@
+----------------------------------------- v2.38.1 ---------------------------------------
+----Visual----
+
+
+----Bugs---- 
+Fix script error in epoch and black hydra
+Make ships explode if they are out of water, Closes #895
+Reduce all mobile lrpc hp by %20
+Reduce all lol cannon range by %20 to %15, and t3 rapid fire cannons increase explosion/selfd radius and damage
+
+----Balance----
+Bladewing reduce range by %15, range 410>350
+Upg Vanguard increase range by 10% 720>790
+Gladius reduce damage 80>60, unit will now not fire when moving backwards
+
+----Improvements-----
+Bind jump command to shift+j
+Add heatmap modoption default on (better pathfinding)
+
+----Optimization----
+Update stunned energy storage gadget (safeguard v lua error, and micro optmize) less maths in gameframe
 ----------------------------------------- v2.38.0 ---------------------------------------
 ----Visual----
 Monkeylord Add smoke visuals from vents
