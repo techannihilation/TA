@@ -64,7 +64,6 @@ function gadget:GameFrame(n)
  
 	   if Spring.GetUnitIsStunned(unitID) then
        local teamID = storageunits[unitID].teamID
-       Spring.Echo(teamID)
        if teamID == nil then return end
 	     local penality = storageunits[unitID].storagecap
 	     --Spring.Echo(unitID .. " is stunned  " ..storageunits[unitID].storagecap,penality,storageunits[unitID].height)
@@ -81,7 +80,6 @@ end
 
 local function SetupUnit(unitID, unitDefID, unitTeam)
   local ud = UnitDefs[unitDefID]
-  Spring.Echo(1,unitTeam)
   if (ud == nil)or(ud.height == nil) then return nil end
    storageunits[unitID] = {
    height = (ud.height * 0.40),
