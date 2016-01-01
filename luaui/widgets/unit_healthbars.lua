@@ -43,8 +43,8 @@ local featureHpThreshold = 0.85
 
 local infoDistance = 450000 --max squared distance at which text it drawn for healthbars
 local maxFeatureInfoDistance = 45000 --max squared distance at which text it drawn for features
-local maxFeatureDistance = 1200000 --max squared distance at which any info is drawn for features
-local maxUnitDistance = 1750000 --max squared distance at which any info is drawn for units  MUST BE LARGER THAN FOR FEATURES!
+local maxFeatureDistance = 1500000 --max squared distance at which any info is drawn for features
+local maxUnitDistance = 5000000 --max squared distance at which any info is drawn for units  MUST BE LARGER THAN FOR FEATURES!
 
 local HighPing = false
 local FPSCount = Spring.GetFPS()
