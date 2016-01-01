@@ -55,18 +55,12 @@ local pairs = pairs
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
 
-
 function gadget:GameFrame(n)
   if (((n+16) % 32) < 0.1) then
   local _, _, _, strength, x, _, z = GetWind()
   local heading = GetHeadingFromVector(-x, -z)
     for unitID, scriptIDs in pairs(windmills) do
-    local uDefID = GetUnitDefID(unitID) ; if not uDefID then break end
-    local uDef = uDefs[uDefID]
-    local mult = 2.5 -- DEFAULT
-      if uDef.customParams then
-        mult = uDef.customParams.energymultiplier or mult
-      end
+      local mult = scriptIDs.mult
       if not Spring.GetUnitIsStunned(unitID) then
         AddUnitResource(unitID, "e", strength * (mult - 1))
       end
@@ -84,6 +78,13 @@ local function SetupUnit(unitID)
   local scriptIDs = {}
   scriptIDs.speed = GetCOBScriptID(unitID, "LuaSetSpeed")
   scriptIDs.dir   = GetCOBScriptID(unitID, "LuaSetDirection")
+  local uDefID = GetUnitDefID(unitID) ; if not uDefID then return end
+  local uDef = uDefs[uDefID]
+  local mult = 2.5 -- DEFAULT
+  if uDef.customParams then
+    mult = uDef.customParams.energymultiplier or mult
+  end
+  scriptIDs.mult = mult
   windmills[unitID] = scriptIDs
 end
 

@@ -141,12 +141,9 @@ local Buffer = 2
 
 function gadget:GameFrame(n)
   if (((n+18) % 32) < 0.1) then
-      for unitID, scriptIDs in pairs(tidals) do
-		 
-	  local uDefID = GetUnitDefID(unitID) ; if not uDefID then break end
-	  local uDef = uDefs[uDefID]
-	  local minwater = uDef.minWaterDepth
-	  local mass = uDef.mass
+    for unitID, _ in pairs(tidals) do
+	  local minwater = tidals[unitID].minwaterdepth
+	  local mass = tidals[unitID].mass
 	  local x, y, z = GetUnitBasePosition(unitID)
 	  local groundy = GetGroundHeight(x, z)
 	--  Spring.Echo("minlwaterline:- " .. minwater)
@@ -163,7 +160,6 @@ function gadget:GameFrame(n)
 	    end
 	    SpDestroyUnit(unitID, true, false)
 	  end
-     
     end
   end
 end
@@ -172,8 +168,9 @@ end
 -------------------------------------------------------------------------------------
 
 local function SetupUnit(unitID)
-  local scriptIDs = {}
-   tidals[unitID] = scriptIDs
+  local uDefID = GetUnitDefID(unitID) ; if not uDefID then return end
+  local uDef = uDefs[uDefID]
+  tidals[unitID] = {minwaterdepth = uDef.minWaterDepth,mass = uDef.mass}
 end
 
 
