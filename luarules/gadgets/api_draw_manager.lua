@@ -78,7 +78,7 @@ function ScriptLuaRulesCall(name, toohigh,fpscount,IsBehind)
 end
 
 function gadget:GameFrame(f)
-    if f%93==0 then 
+    if f%151==0 then 
         fpscount = SpGetFPS()
         fpscount = math.floor((fpscount + oldfps) / 2)
 	--Spring.Echo("AVG sps ", fpscount, " framenumber ", f)
@@ -88,7 +88,7 @@ end
     
 
 function gadget:Update()
-  if a == 4 then
+  if a == 16 then
     DrawChecks()
     a = 0
   end
