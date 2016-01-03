@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "tllhlt_aoplane.dds",
-		buildtime = 9911,
+		buildtime = 13875,
 		canattack = true,
 		canguard = true,
 		canstop = 1,
