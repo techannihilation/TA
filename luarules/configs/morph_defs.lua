@@ -532,14 +532,14 @@ local morphDefs = {
 	},
        corhrk = {
 		into = 'corhowie',
-		tech = 3,
+		tech = 2,
 		time = 120,
 		xp = 0.60,
 		metal = 3000,
 		energy = 20000,
 	},
-        clb = {
-		into = 'cormart',
+        cormart = {
+		into = 'clb',
 		time = 120,
 		xp = 0.60,
 		metal = 1500,
