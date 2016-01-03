@@ -1,4 +1,4 @@
------------------------------------------ v2.38.4 ---------------------------------------
+----------------------------------------- v2.38.5 ---------------------------------------
 ----Visual----
 
 
@@ -7,12 +7,14 @@ Fix script error in epoch and black hydra
 Make ships explode if they are out of water, Closes #895
 Reduce all mobile lrpc hp by %20
 Reduce std and rapid lol cannon range by %20 to %15, and all lol cannons increase explosion/selfd radius and damage
+Fix t3 arty morph to t2, unlock howie with t3 not t4
 
 ----Balance----
 Bladewing reduce range by %15, range 410>350
 Upg Vanguard increase range by 10% 720>790
 Gladius reduce damage 80>60, unit will now not fire when moving backwards
 Make T1.5 Anti-Air Vehicle T1 Units
+Increase Heavy laser towers and very heavy laser tower buildtime by %50
 
 ----Improvements-----
 Bind jump command to shift+j
