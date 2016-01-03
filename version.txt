@@ -1,4 +1,4 @@
------------------------------------------ v2.38.3 ---------------------------------------
+----------------------------------------- v2.38.4 ---------------------------------------
 ----Visual----
 
 
@@ -12,10 +12,13 @@ Reduce std and rapid lol cannon range by %20 to %15, and all lol cannons increas
 Bladewing reduce range by %15, range 410>350
 Upg Vanguard increase range by 10% 720>790
 Gladius reduce damage 80>60, unit will now not fire when moving backwards
+Make T1.5 Anti-Air Vehicle T1 Units
 
 ----Improvements-----
 Bind jump command to shift+j
 Add heatmap modoption default on (better pathfinding)
+Draw Reduce healthbar cut off point (ie more visable when zoomed out)
+Add los color widget
 
 ----Optimization----
 Update stunned energy storage gadget (safeguard v lua error, and micro optmize) less maths in gameframe
