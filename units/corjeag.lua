@@ -61,9 +61,6 @@ return {
 		unitname = "corjeag",
 		unitnumber = 707,
 		workertime = 0,
-		customparams = {
-			requiretech = "Advanced T1 Unit Research Centre",
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

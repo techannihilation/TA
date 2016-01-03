@@ -63,9 +63,6 @@ return {
 		unitname = "ahermes",
 		unitnumber = 655,
 		workertime = 0,
-		customparams = {
-			requiretech = "Advanced T1 Unit Research Centre",
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,
