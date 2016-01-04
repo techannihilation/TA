@@ -5,7 +5,7 @@ return {
 		brakerate = 1.65,
 		buildcostenergy = 5363,
 		buildcostmetal = 230,
-		builddistance = 92,
+		builddistance = 136,
 		builder = true,
 		buildpic = "CORASSIS.png",
 		buildtime = 6193,
