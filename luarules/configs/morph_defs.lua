@@ -695,10 +695,21 @@ local morphDefs = {
 		metal = 2700,
 		energy = 33000,
 	},
+  	corpyro = {
+		into = 'corpyrox',
+		time = 20,
+		xp = 0.30,
+	},
       corpyrox = {
 		into = 'corpyrox1',
 		time = 30,
 		xp = 0.15,
+	},
+	  corpyrox1 = {
+		into = 'cordem',
+		tech = 2,
+		time = 60,
+		xp = 0.60,
 	},
       armamph = {
 		into = 'marauder',
@@ -726,9 +737,20 @@ local morphDefs = {
 		xp = 0.2,
 	},
       corjeag = {
-     		into = 'corsent',
+     	into = 'corsent',
 		time = 30,
 		xp = 0.2,
+	},
+	  krogtaar = {
+        into = 'corkrog',
+		time = 30,
+		xp = 0.60,
+	},
+	  corkrog = {
+        into = 'corkrog1',
+        tech = 2,
+		time = 80,
+		xp = 0.90,
 	},
 }
 
