@@ -143,6 +143,7 @@ return {
 				reloadtime = 0.1,
 				rgbcolor = "0 0 0",
 				soundhitdry = "null",
+				soundhitvolume = 0,
 				soundstart = "null",
 				soundtrigger = true,
 				targetmoveerror = 0.05,

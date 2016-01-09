@@ -138,6 +138,12 @@ local Sounds = {
        pitchmod = 0.05,
        maxconcurrent = 4,	  
       },
+      null = {
+       file = "sounds/beep6.wav",
+       pitch = 1,
+       pitchmod = 0.05,
+       maxconcurrent = 0,	  
+      },
    },
 }
 
