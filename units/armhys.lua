@@ -122,7 +122,7 @@ return {
 				impulsefactor = 0,
 				name = "AdvancedFlakCannon",
 				noselfdamage = true,
-				range = 1200,
+				range = 1300,
 				reloadtime = 0.25,
 				rgbcolor = "0.2 0.3 0.9",
 				soundhitdry = "flakhit",
@@ -132,7 +132,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 1550,
 				damage = {
-					bombers = 1600,
+					bombers = 2500,
 					default = 5,
 					fighters = 1600,
 					flak_resistant = 550,
