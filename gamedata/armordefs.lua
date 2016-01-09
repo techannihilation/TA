@@ -269,8 +269,11 @@ sniper_resistant = {
 raider_resistant = {
            "tllthumper",
            "corsumo",
+           "corsumo1",
            "corgol",
+           "corgol1",
            "armfboy",
+           "armfboy1",
            "cormexp",
            "corgfbt",
            "aexxec",
@@ -278,6 +281,7 @@ raider_resistant = {
            "armwar",
            "corexp",
            "corlevlr",
+           "corlevlr1",
            "tllriot",
 },
 -- TODO bombresistant
