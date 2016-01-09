@@ -564,7 +564,7 @@ local morphDefs = {
 	},
       armzeus = {
 		into = 'armzeus1',
-		time = 30,
+		time = 20,
 		xp = 0.10,
 	},
       armfboy = {
