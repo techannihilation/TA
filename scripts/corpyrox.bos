@@ -91,59 +91,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-StatusControl()
-{
-	while( TRUE )
-	{
-		Static_Var_6 = get VETERAN_LEVEL;
-		if( Static_Var_7 == 0 )
-		{
-			if( Static_Var_6 > 5 )
-			{
-				emit-sfx 1024 + 0 from horns;
-				Static_Var_7 = 1;
-				show horns;
-				show rflame2;
-				show lflame2;
-				show ltubes;
-				show rtubes;
-				dont-cache rflame2;
-				dont-cache lflame2;
-				show lslide1;
-				show lslide2;
-				show rslide1;
-				show rslide2;
-				hide rflame;
-				hide lflame;
-				Static_Var_9 = 0;
-				sleep 1000;
-			}
-		}
-		if( Static_Var_7 == 1 )
-		{
-			if( Static_Var_6 > 10 )
-			{
-				emit-sfx 1024 + 0 from launcher;
-				Static_Var_7 = 2;
-				show launcher;
-				show door1;
-				show door2;
-				show flip1;
-				show flip2;
-				show spines;
-				show eyegun;
-				dont-cache eyegun;
-				set ARMORED to 1;
-				sleep 1000;
-			}
-		}
-		if( Static_Var_7 == 2 )
-		{
-			sleep 1000;
-		}
-		sleep 1000;
-	}
-}
 
 
 PilotLight(Func_Var_1)
@@ -226,7 +173,6 @@ Create()
 	{
 		sleep 400;
 	}
-	start-script StatusControl();
 	start-script SmokeUnit();
 	start-script PilotLight();
 	start-script RestoreAfterDelay();
