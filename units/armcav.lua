@@ -1,7 +1,7 @@
 return {
 	armcav = {
 		acceleration = 0.65,
-		activatewhenbuilt = false,
+		activatewhenbuilt = true,
 		ai_limit = "limit armcav 3",
 		ai_weight = "weight armcav 3.6",
 		bmcode = 1,
@@ -23,7 +23,7 @@ return {
 		downloadable = 1,
 		energymake = 5,
 		energystorage = 0,
-		energyuse = 25,
+		energyuse = 10,
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
 		footprintx = 3,
