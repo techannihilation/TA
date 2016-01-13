@@ -159,7 +159,7 @@ end
 local function UnitTakingDamage(uID, uDefID, uTeam, notEmpDamage)
     local cDefs = convertCapacities[uDefID]
     if cDefs then
-        if teamMMList[uTeam][cDefs.e][uID].built then
+        if teamMMList[uTeam][cDefs.e][uID] and teamMMList[uTeam][cDefs.e][uID].built then
 			teamMMList[uTeam][cDefs.e][uID].emped = true
 			AdjustTeamCapacity(uTeam, -cDefs.c, cDefs.e)
 		if notEmpDamage == true then
@@ -174,7 +174,7 @@ end
 local function UnitDamageOver(uID, uDefID, uTeam, notEmpDamage)
     local cDefs = convertCapacities[uDefID]
     if cDefs then
-		if teamMMList[uTeam][cDefs.e][uID].built then        
+		if teamMMList[uTeam][cDefs.e][uID] and teamMMList[uTeam][cDefs.e][uID].built then        
 			teamMMList[uTeam][cDefs.e][uID].emped = false
 			AdjustTeamCapacity(uTeam, cDefs.c, cDefs.e)
 			if teamMMList[uTeam][cDefs.e][uID].damaged == true then
@@ -406,7 +406,7 @@ end
 function gadget:UnitGiven(uID, uDefID, newTeam, oldTeam)
     local cDefs = convertCapacities[uDefID]
     if cDefs then
-        if teamMMList[oldTeam][cDefs.e][uID].built then
+        if teamMMList[oldTeam][cDefs.e][uID] and teamMMList[oldTeam][cDefs.e][uID].built then
 			
 			if not teamMMList[oldTeam][cDefs.e][uID].emped then
 				AdjustTeamCapacity(oldTeam, -cDefs.c, cDefs.e)
