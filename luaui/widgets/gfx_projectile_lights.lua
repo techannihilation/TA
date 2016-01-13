@@ -213,9 +213,11 @@ function widget:DrawWorldPreUnit()
 	if frame < spGetGameFrame() then
 		frame = spGetGameFrame()
 		plist = spGetVisibleProjectiles(-1)
+		plistlength = #plist
+		--Spring.Echo(plistlength)
 	end
 
-	if #plist == 0 then
+	if plistlength == 0 or plistlength > 400 then  --limits memory usage (laser/lightcannons eat memory for breakfast)
 		--dont do anything if there are no projectiles in range of view
 		return
 	end
@@ -236,7 +238,7 @@ function widget:DrawWorldPreUnit()
 	-- AND NOW FOR THE FUN STUFF!
 	local stpX, stpY, stpZ, r,g,b,al, w,nf	-- step in x,y,z axis for beam traversing,  RGBA values of lightparams,  light width, noize factor
 	local tx,ty,tz,px,py,pz,bx,bz, fa	-- target's x,y,z coordiantes,  x,y,z Position along the beam,  x,z position from iteration Before, alpha factor
-	for i=1, #plist do
+	for i=1, plistlength do
 		local pID = plist[i]
 		local wproj, pproj = spGetProjectileType(pID)
 
