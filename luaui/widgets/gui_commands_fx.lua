@@ -384,7 +384,7 @@ function widget:DrawWorldPreUnit()
 end
 
 function widget:DrawWorld()
-    if spIsGUIHidden() or (FPSCount < FPSLimi ) or HighPing then
+    if spIsGUIHidden() or (FPSCount < FPSLimit ) or HighPing then
         return
     end
 
