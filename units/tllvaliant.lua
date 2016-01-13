@@ -62,6 +62,7 @@ return {
 		radardistance = 0,
 		reclaimable = true,
 		selfdestructas = "MEGA_BLAST1",
+		selfdestructcountdown = 10,
 		shootme = 1,
 		showplayername = true,
 		side = "tll",
