@@ -174,7 +174,7 @@ if (gadgetHandler:IsSyncedCode()) then
 	-- Same as for 3DO units, but for features
 	function gadget:FeatureCreated(featureID, allyTeam)
 		local featureModel = FeatureDefs[Spring.GetFeatureDefID(featureID)].modelname:lower()
-		if featureModel == "" then return end	--geovents or engine trees have no models
+		if featureModel == "" or nil then return end	--geovents or engine trees have no models
 		local featureModelTrim = featureModel:match("/.*"):sub(2)
 		if mapFeatures[featureModelTrim] then	-- it just might happen that some map features can have corpses
 			local p = mapFeatures[featureModelTrim]
