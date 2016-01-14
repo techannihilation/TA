@@ -204,6 +204,7 @@ local x1, y1 = 0, 0
 local x2, y2 = Game.mapSizeX, Game.mapSizeZ
 local x, y, z, dx, dz, nx, ny, nz, ang
 local a, f, h = {}, {}, {}
+
 function widget:DrawWorldPreUnit()
 	
 	if TooHigh or (FPSCount < FPSLimit) or HighPing then 
@@ -222,8 +223,8 @@ function widget:DrawWorldPreUnit()
 		return
 	end
 
-	if plistlength >= 500 then  --limits memory usage (laser/lightcannons eat memory for breakfast)
-		plistlength = 500
+	if plistlength >= 250 then  --limits memory usage (laser/lightcannons eat memory for breakfast)
+		plistlength = 250
 	end
 
 
