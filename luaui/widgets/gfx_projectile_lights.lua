@@ -217,10 +217,15 @@ function widget:DrawWorldPreUnit()
 		--Spring.Echo(plistlength)
 	end
 
-	if plistlength == 0 or plistlength > 400 then  --limits memory usage (laser/lightcannons eat memory for breakfast)
+	if plistlength == 0 then 
 		--dont do anything if there are no projectiles in range of view
 		return
 	end
+
+	if plistlength >= 500 then  --limits memory usage (laser/lightcannons eat memory for breakfast)
+		plistlength = 500
+	end
+
 
 	--enabling both test and mask means they wont be drawn over cliffs when obscured
 	--but also means that they will flicker cause of z-fighting when scrolling around...
