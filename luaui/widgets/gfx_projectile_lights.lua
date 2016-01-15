@@ -204,6 +204,7 @@ local x1, y1 = 0, 0
 local x2, y2 = Game.mapSizeX, Game.mapSizeZ
 local x, y, z, dx, dz, nx, ny, nz, ang
 local a, f, h = {}, {}, {}
+local effectsDisabled = false
 
 function widget:DrawWorldPreUnit()
 	
@@ -223,8 +224,14 @@ function widget:DrawWorldPreUnit()
 		return
 	end
 
-	if plistlength >= 250 then  --limits memory usage (laser/lightcannons eat memory for breakfast)
-		plistlength = 250
+	if plistlength >= 650 then  --limits memory usage (laser/lightcannons eat memory for breakfast)
+		plistlength = 650
+	end
+
+	if plistlength > 250 then
+		effectsDisabled = true  --disable debree and lighning/laser effect
+	else
+		effectsDisabled = false
 	end
 
 
@@ -249,8 +256,12 @@ function widget:DrawWorldPreUnit()
 		local wproj, pproj = spGetProjectileType(pID)
 
 		if pproj then
-			lightparams = {1.0, 0.8, 0.4, 0.3} -- debree from explosions
-		elseif wproj then
+			if effectsDisabled == false then
+				lightparams = {1.0, 0.8, 0.4, 0.3} -- debree from explosions
+			end
+		elseif wproj and plighttable[spGetProjectileDefID(pID)][5] == true and effectsDisabled == false then
+			lightparams = plighttable[spGetProjectileDefID(pID)] -- beamlaser/lightningcannons projectile
+		elseif wproj and plighttable[spGetProjectileDefID(pID)][5] == nil then
 			lightparams = plighttable[spGetProjectileDefID(pID)] -- weapon projectile
 		end
 
