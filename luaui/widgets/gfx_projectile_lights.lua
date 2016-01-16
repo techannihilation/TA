@@ -199,6 +199,7 @@ function widget:Shutdown()
 end
 
 local plist = {}
+local plistlength = 0
 local frame = 0
 local x1, y1 = 0, 0
 local x2, y2 = Game.mapSizeX, Game.mapSizeZ
