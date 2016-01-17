@@ -260,9 +260,9 @@ function widget:DrawWorldPreUnit()
 			if effectsDisabled == false then
 				lightparams = {1.0, 0.8, 0.4, 0.3} -- debree from explosions
 			end
-		elseif wproj and plighttable[spGetProjectileDefID(pID)][5] == true and effectsDisabled == false then
+		elseif wproj and plighttable[spGetProjectileDefID(pID)] and plighttable[spGetProjectileDefID(pID)][5] == true and effectsDisabled == false then
 			lightparams = plighttable[spGetProjectileDefID(pID)] -- beamlaser/lightningcannons projectile
-		elseif wproj and plighttable[spGetProjectileDefID(pID)][5] == nil then
+		elseif wproj and plighttable[spGetProjectileDefID(pID)] and plighttable[spGetProjectileDefID(pID)][5] == nil then
 			lightparams = plighttable[spGetProjectileDefID(pID)] -- weapon projectile
 		end
 
