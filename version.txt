@@ -1,3 +1,32 @@
+----------------------------------------- v2.38.8 ---------------------------------------
+----Visual----
+
+
+----Bugs---- 
+Fix lua error in stunned metal converter gadget
+Fix ships exploding near shore line
+Keep raider_resistant armorclass after morph
+Fred, Marv remove uwmex (Overcharged is already dual role)
+Cavalier active radar after built it
+Fix some start camera issues
+Update corpyrox script, Closes #885
+
+----Balance----
+Increase Mole buildrange 92>136
+T3 Flaks increase dmg vs bombers & increase range
+Wrathful Zeus Increase hp 5000>5300 increase range 300>320 and dps
+Add selfdestructcountdown = 10 to Valiant
+Add adv Torpedo & Flak for naval engineerer
+Tankanator missile's will only target ground units
+Balance Rimpler 
+
+----Improvements-----
+Hopefully reduce the chance of projectile light widget eating too much memory
+
+----Optimization----
+
+----------------------------------------- v2.38.0 ---------------------------------------
+
 ----------------------------------------- v2.35.7 ---------------------------------------
 ----Visual----
 
