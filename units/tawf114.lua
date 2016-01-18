@@ -24,8 +24,7 @@ return {
 		energystorage = 22,
 		energyuse = 1.1,
 		explodeas = "BIG_UNITEX",
-     		firestandorders = 1
-                flighttime = 3,
+     		firestandorders = 1,
 		footprintx = 4,
 		footprintz = 4,
 		idleautoheal = 5,
@@ -141,6 +140,7 @@ return {
 				edgeeffectiveness = 0.4,
 				explosiongenerator = "custom:thermite_explosion",
 				firestarter = 20,
+                                flighttime = 3, 
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				model = "TAWF114a",
