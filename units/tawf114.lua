@@ -24,7 +24,8 @@ return {
 		energystorage = 22,
 		energyuse = 1.1,
 		explodeas = "BIG_UNITEX",
-		firestandorders = 1,
+     		firestandorders = 1
+                flighttime = 3,
 		footprintx = 4,
 		footprintz = 4,
 		idleautoheal = 5,
