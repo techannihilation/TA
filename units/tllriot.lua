@@ -128,6 +128,7 @@ return {
 				impulsefactor = 0,
 				intensity = 1.5,
 				name = "Riot Cannon",
+				noselfdamage = true,
 				mygravity = 0.001,
 				range = 340,
 				reloadtime = 1.8,
@@ -140,7 +141,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 150,
 				damage = {
-					commanders = 20,
+					commanders = 40,
 					default = 80,
 					subs = 5,
 				},
