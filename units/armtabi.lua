@@ -16,7 +16,7 @@ return {
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
 		collisionspherescale = 0.7,
 		defaultmissiontype = "GUARD_NOMOVE",
-		description = "Total Annihilation TSAR bomber (ARMS)",
+		description = "Total Annihilation TSAR bomber (ARM)",
 		designation = "ARM-LRNC",
 		energymake = 0,
 		energystorage = 0,

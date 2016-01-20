@@ -28,7 +28,7 @@ return {
 		makesmetal = 7,
 		mass = 1710,
 		maxdamage = 1950,
-		maxslope = 10,
+		maxslope = 20,
 		maxwaterdepth = 0,
 		metalstorage = 600,
 		name = "Geothermal Foundry",
