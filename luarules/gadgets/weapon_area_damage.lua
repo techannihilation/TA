@@ -20,6 +20,8 @@ local DAMAGE_PERIOD ,weaponInfo = include("LuaRules/Configs/area_damage_defs.lua
 local SpAddUnitDamage = Spring.AddUnitDamage
 local SpGetUnitsInSphere = Spring.GetUnitsInSphere
 local SpGetUnitPosition = Spring.GetUnitPosition
+local SpGetUnitTeam = Spring.GetUnitTeam
+local SpGetUnitAllyTeam = Spring.GetUnitAllyTeam
 local sqrt = math.sqrt
 local pairs = pairs
 local ipairs = ipairs
@@ -52,10 +54,23 @@ function gadget:GameFrame(f)
 				for _,u in ipairs(ulist) do
 					local ux, uy, uz = SpGetUnitPosition(u)
 					local damage = w.damage
+					local allyScale = w.allyScale or 1.0
+					local teamScale = w.teamScale or 1.0
 					if w.rangeFall ~= 0 then
 						damage = damage - damage*w.rangeFall*sqrt((ux-w.pos.x)^2 + (uy-w.pos.y)^2 + (uz-w.pos.z)^2)/w.radius
 					end
-					SpAddUnitDamage(u, damage, 0, w.owner, w.id, 0, 0, 0)
+					-- Scale team and allyteam damage
+					if (SpGetUnitTeam(w.id) == SpGetUnitTeam(w.owner)) {
+					   damage = damage * teamScale
+					}
+					if (SpGetUnitAllyTeam(w.id) == SpGetUnitAllyTeam(w.owner)) {
+					   damage = damage * allyScale
+					}
+					
+					-- Avoid damage to self altogether
+					if (w.id != nil and w.owner != nil and w.id != w.owner) {
+					   SpAddUnitDamage(u, damage, 0, w.owner, w.id, 0, 0, 0)
+					}
 				end
 			end
 			w.damage = w.damage - w.timeLoss
