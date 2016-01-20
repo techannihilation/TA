@@ -33,11 +33,11 @@ Jumping()
 		//get PRINT(jumpPercent);
 		emit-sfx 1024 + 0 from l_jetpk;
 		emit-sfx 1024 + 0 from r_jetpk;
-		sleep 11;
+		sleep 444;
 		}
-		sleep 11;
+		sleep 1200;
 	}
-	sleep 11;
+	sleep 1200;
 }
 
 BeginJump()
