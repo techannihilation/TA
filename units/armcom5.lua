@@ -104,7 +104,7 @@ return {
 			[20] = "armdrag",
 			[21] = "armfdrag",
 			[22] = "armvhlt",
-			[23] = " armllt1",
+			[23] = "armllt1",
 			[24] = "armfhlt",
 			[25] = "armtl",
 			[26] = "armdl",
