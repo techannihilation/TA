@@ -100,7 +100,7 @@ return {
 			[16] = "armrech18",
 			[17] = "armfort",
 			[18] = "armarad",
-			[19] = "corason",
+			[19] = "armason",
 			[20] = "armpb",
 			[21] = "armfhlt",
 			[22] = "armatl",	
