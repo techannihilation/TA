@@ -22,6 +22,7 @@ local SpGetUnitsInSphere = Spring.GetUnitsInSphere
 local SpGetUnitPosition = Spring.GetUnitPosition
 local SpGetUnitTeam = Spring.GetUnitTeam
 local SpGetUnitAllyTeam = Spring.GetUnitAllyTeam
+local SpEcho = Spring.Echo
 local sqrt = math.sqrt
 local pairs = pairs
 local ipairs = ipairs
@@ -60,17 +61,17 @@ function gadget:GameFrame(f)
 						damage = damage - damage*w.rangeFall*sqrt((ux-w.pos.x)^2 + (uy-w.pos.y)^2 + (uz-w.pos.z)^2)/w.radius
 					end
 					-- Scale team and allyteam damage
-					if (SpGetUnitTeam(w.id) == SpGetUnitTeam(w.owner)) {
+					if (SpGetUnitTeam(w.id) == SpGetUnitTeam(w.owner)) then
 					   damage = damage * teamScale
-					}
-					if (SpGetUnitAllyTeam(w.id) == SpGetUnitAllyTeam(w.owner)) {
+					end
+					if (SpGetUnitAllyTeam(w.id) == SpGetUnitAllyTeam(w.owner)) then
 					   damage = damage * allyScale
-					}
+					end
 					
 					-- Avoid damage to self altogether
-					if (w.id != nil and w.owner != nil and w.id != w.owner) {
+					if (w.id ~= nil and w.owner ~= nil and w.id ~= w.owner) then
 					   SpAddUnitDamage(u, damage, 0, w.owner, w.id, 0, 0, 0)
-					}
+					end
 				end
 			end
 			w.damage = w.damage - w.timeLoss
