@@ -173,7 +173,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "MEDIUM SMALL TINY",
+				badtargetcategory = "SMALL TINY",
 				def = "TAWF_BANISHER",
 				maindir = "0 0 1",
 				maxangledif = 270,
