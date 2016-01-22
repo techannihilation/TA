@@ -241,7 +241,7 @@ function widget:DrawScreen()
 		local avgCR = 0.015
 		if(makerTemp) then 
 			DrawText(orange .. "Metal maker properties", '')
-			DrawText("M-Capac.:", makerTemp.c)
+			DrawText("M-             .:", makerTemp.c)
 			DrawText("M-Effi.:", format('%.2f m / 1000 e', makerTemp.e * 1000))
 			cY = cY - fontSize
 		end
@@ -489,7 +489,7 @@ function widget:DrawScreen()
 			local radius = weaponInfo[wDefId].radius
 			local damage = weaponInfo[wDefId].damage
 			local duration = weaponInfo[wDefId].duration
-			DrawText("Area Dmg:", format(white .. "%d aoe, %d dps , %d seconds", radius, damage * 30 / DAMAGE_PERIOD, duration / 30 ))
+			DrawText("Area Dmg:", format(white .. "%d aoe, %d max damage per second , %d seconds", radius, damage * 30 / DAMAGE_PERIOD, duration / 30 ))
 		end
 	end
 end
