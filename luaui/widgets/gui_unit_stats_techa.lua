@@ -31,6 +31,7 @@ local yOffset = 200
 
 local cX, cY
 
+local DAMAGE_PERIOD ,weaponInfo = VFS.Include('LuaRules/Configs/area_damage_defs.lua', nil, VFS.RAW_FIRST)
 
 local pplants = {
 	["aafus"] = true,
@@ -483,6 +484,12 @@ function widget:DrawScreen()
 			end
 			
 			cY = cY - fontSize
+		end
+		if (weaponInfo[wDefId]) then
+			local radius = weaponInfo[wDefId].radius
+			local damage = weaponInfo[wDefId].damage
+			local duration = weaponInfo[wDefId].duration
+			DrawText("Area Dmg:", format(white .. "%d aoe, %d dps , %d seconds", radius, damage * 30 / DAMAGE_PERIOD, duration / 30 ))
 		end
 	end
 end
