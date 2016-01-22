@@ -50,6 +50,7 @@ local spSetHeightMapFunc    = Spring.SetHeightMapFunc
 local spRevertHeightMap     = Spring.RevertHeightMap
 local spEditUnitCmdDesc     = Spring.EditUnitCmdDesc
 local spFindUnitCmdDesc     = Spring.FindUnitCmdDesc
+local spRemoveUnitCmdDesc 	= Spring.RemoveUnitCmdDesc
 local spGetActiveCommand	= Spring.GetActiveCommand
 local spSpawnCEG     		= Spring.SpawnCEG
 local spCreateUnit			= Spring.CreateUnit
@@ -3516,6 +3517,10 @@ function gadget:UnitCreated(unitID, unitDefID)
 	if (ud.isBuilder and allowedArray[unitDefID]) and not ud.isFactory then
 		for _, cmdDesc in ipairs(cmdDescsArray) do
 			spInsertUnitCmdDesc(unitID, cmdDesc)
+			local cmdDescID = spFindUnitCmdDesc(unitID, CMD.RESTORE)
+			if (cmdDescID) then
+				spRemoveUnitCmdDesc(unitID, cmdDescID)
+			end
 		end
 		
 		local aTeam = spGetUnitAllyTeam(unitID)
