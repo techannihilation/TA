@@ -18,7 +18,7 @@ local barbg					= ":n:"..LUAUI_DIRNAME.."Images/resbar.dds"
 local bgmargin				= 0.22
 
 local customPanelWidth 		= 105
-local customPanelHeight 	= 39
+local customPanelHeight 	= 43
 
 local xRelPos, yRelPos		= 0.92, 0.963
 local vsx, vsy				= gl.GetViewSizes()
@@ -198,7 +198,7 @@ function widget:GameFrame(n)
 end
 
 function widget:DrawScreen()
-	 if ui_active_G and myGameFrame_G ~= nil and myGameFrame_G > 1 and serverFrameNum1_G ~= nil then
+	if ui_active_G and myGameFrame_G ~= nil and myGameFrame_G > 1 and serverFrameNum1_G ~= nil then
 		glPushMatrix()
 			glColor(0,0,0,0.6)
 			glCallList(backgroundList)
@@ -245,7 +245,9 @@ function createBackgroundList()
 		RectRound(xPos,yPos,xPos+panelWidth,yPos+panelHeight,6)
 		local text = 'Catching up...'
 		local width = glGetTextWidth(text)*(panelHeight/3)
-		glText('\255\255\255\255'..text, xPos+(panelHeight*bgmargin), yPos+(panelHeight*bgmargin), panelHeight/3, 'o')
+		glText('\255\255\255\255'..text, xPos+(panelHeight*bgmargin), yPos+(panelHeight*bgmargin)*1.6, panelHeight/3, 'o')
+		text = 'UI Disabled'
+		glText('\255\255\255\255'..text, xPos+(panelHeight*bgmargin), yPos+(panelHeight*bgmargin)*0.2, panelHeight/3, 'o')
 	end)
 end
 
