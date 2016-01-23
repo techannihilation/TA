@@ -174,11 +174,11 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "VTOL",
+				badtargetcategory = "SMALL TINY",
 				def = "TAWF_BANISHER",
 				maindir = "0 0 1",
 				maxangledif = 270,
-				onlytargetcategory = "ALL",
+				onlytargetcategory = "NOTVTOL",
 			},
 		},
 	},
