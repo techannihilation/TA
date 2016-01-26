@@ -164,12 +164,6 @@ return {
 				def = "ARMSNIPE_WEAPON",
 				onlytargetcategory = "NOTVTOL",
 			},
-			[2] = {
-				badtargetcategory = "SMALL TINY",
-				def = "ARMSNIPE_SIGHT",
-				onlytargetcategory = "NOTVTOL",
-				slaveto = 1,
-			},
 		},
 	},
 }
