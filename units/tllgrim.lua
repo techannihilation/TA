@@ -182,7 +182,7 @@ return {
 					default = 20000,
 					experimental_land = 40000,
 					experimental_ships = 40000,
-					sniper_resistant = 7500,
+					sniper_resistant = 9200,
 					subs = 5,
 				},
 			},

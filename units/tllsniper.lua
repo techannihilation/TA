@@ -179,7 +179,7 @@ return {
 				damage = {
 					commanders = 1350,
 					default = 3500,
-					sniper_resistant = 1150,
+					sniper_resistant = 1610,
 					subs = 5,
 				},
 			},
