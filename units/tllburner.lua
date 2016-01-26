@@ -1,6 +1,6 @@
 return {
 	tllburner = {
-		acceleration = 0.35,
+		acceleration = 0.43,
 		bmcode = 1,
 		brakerate = 0.54933,
 		buildcostenergy = 5850,
@@ -30,7 +30,7 @@ return {
 		mass = 375,
 		maxdamage = 1650,
 		maxslope = 17,
-		maxvelocity = 2,
+		maxvelocity = 2.4,
 		maxwaterdepth = 25,
 		mobilestandorders = 1,
 		movementclass = "KBOT2",
@@ -48,7 +48,7 @@ return {
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 1.221,
-		turnrate = 1150,
+		turnrate = 1250,
 		unitname = "tllburner",
 		unitnumber = 830,
 		upright = true,
