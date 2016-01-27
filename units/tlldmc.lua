@@ -51,7 +51,7 @@ return {
 		customparams = {
 			buildpic = "tlldmc.png",
 			canareaattack = 1,
-			requiretech = "Star Commander",
+			requiretech = "T3 Factory",
 		},
 		featuredefs = {
 			dead = {
