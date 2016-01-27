@@ -1,8 +1,8 @@
 return {
 	cormonsta = {
-		acceleration = 0.65259,
+		acceleration = 0.65,
 		bmcode = 1,
-		brakerate = 1.05777,
+		brakerate = 1.05,
 		buildcostenergy = 32000,
 		buildcostmetal = 2750,
 		builder = false,
@@ -160,7 +160,7 @@ return {
 				name = "AA2Missile",
 				noselfdamage = true,
 				proximitypriority = 1,
-				range = 800,
+				range = 650,
 				reloadtime = 2,
 				smoketrail = true,
 				soundhitdry = "packohit",
