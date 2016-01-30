@@ -553,10 +553,10 @@ MotionControl(Func_Var_1)
 			Static_Var_3 = 1;
 			if( Func_Var_1 )
 			{
-				move body to x-axis [0.000000] speed [1.000000];
-				turn rleg to x-axis <0.000000> speed <200.043956>;
+				move body to x-axis [0.000000] speed [600.000000];
+				turn rleg to x-axis <0.000000> speed <700.043956>;
 				turn rfoot to x-axis <0.000000> speed <200.043956>;
-				turn lleg to x-axis <0.000000> speed <200.043956>;
+				turn lleg to x-axis <0.000000> speed <700.043956>;
 				turn lfoot to x-axis <0.000000> speed <200.043956>;
 				Func_Var_1 = 0;
 			}
@@ -569,7 +569,7 @@ UnitSpeed()
 {
 	while(TRUE)
 	{
-		currentSpeed = (get CURRENT_SPEED)*20/moveSpeed;	// determine in 1/20ths how fast we're going
+		currentSpeed = (get CURRENT_SPEED)*50/moveSpeed;	// determine in 1/50ths how fast we're going
 		if (currentSpeed<4) currentSpeed=4;					// prevent infinite timing
 		/*	Unit animation speed notes:
 
