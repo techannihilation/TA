@@ -14,10 +14,10 @@
 
 function widget:GetInfo()
   return {
-    name      = "GameTypeInfo",
-    desc      = "informs players of the game type at start",
-    author    = "Teutooni",
-    date      = "Jul 6, 2008",
+    name      = "PreGameInfo",
+    desc      = "Informs players of the game some setting before start",
+    author    = "Nixtux",
+    date      = "Feb 2, 2016",
     license   = "GNU GPL, v2 or later",
     layer     = 0,
     enabled   = true  --  loaded by default?
@@ -40,6 +40,9 @@ local spGetGameSeconds = Spring.GetGameSeconds
 local message = ""
 local othermessage = ""
 local xmasmessage = "Merry Christmas Everyone -- Free Morph E/M Cost for Eco or Battlecom"
+local startenergy = 0
+local startmetal = 0
+local DisableMapDamage = false
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -54,16 +57,26 @@ function widget:ViewResize(viewSizeX, viewSizeY)
 end
 
 function widget:Initialize()
-  if Spring.GetModOptions().deathmode=="com" then
+  if Spring.GetModOptions().deathmode == "com" then
     message = "Kill all enemy Commanders"
-  elseif Spring.GetModOptions().deathmode=="killall" then
+  elseif Spring.GetModOptions().deathmode == "killall" then
     message = "Kill all enemy units"
-  elseif Spring.GetModOptions().deathmode=="neverend" then
+  elseif Spring.GetModOptions().deathmode == "neverend" then
     widgetHandler:RemoveWidget()
   end
-  if Spring.GetModOptions().mo_greenfields=="true" then
+  if Spring.GetModOptions().mo_greenfields == "true" then
     othermessage = "Warning Greenfield's mode enabled, Get ready to fall asleep"
   end
+  if Spring.GetModOptions().startenergy ~= nil then
+  	startenergy = tostring(Spring.GetModOptions().startenergy)
+  end
+  if Spring.GetModOptions().startmetal ~= nil then
+  	startmetal = tostring(Spring.GetModOptions().startmetal)
+  end
+  if Spring.GetModOptions().DisableMapDamage == true then
+  	DisableMapDamage = true
+  end
+
 end
 
 function widget:DrawScreen()
@@ -84,6 +97,15 @@ function widget:DrawScreen()
   end
     
   --tackyfont:Print("\255\255\0\0" .. xmasmessage, vsx , vsy -200, 24, "oc")
+  if startenergy ~= "1000" or startmetal ~= "1000" then
+    res_message = "StartMetal set to " ..startmetal.."  StartEnergy set to "..startenergy
+    tackyfont:Print(res_message, vsx , vsy*0.4 , 40, "oc")
+  end
+
+  if DisableMapDamage then
+  	dmd_message = "Map is Undeformable"
+  	tackyfont:Print(dmd_message, vsx , vsy*0.3 , 40, "oc")
+  end
 
   tackyfont:End()
     
