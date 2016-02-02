@@ -51,13 +51,14 @@ local buffer = 2
 function gadget:GameFrame(n)
   if (((n+18) % 30) < 0.1) then
     for unitID, _ in pairs(tidals) do
-	  local minwater = tidals[unitID].minwaterdepth
+	local minwater = tidals[unitID].minwaterdepth
     local canMove = tidals[unitID].canmove
-	  local mass = tidals[unitID].mass
+	local mass = tidals[unitID].mass
     local rx, baseposy, rz = GetUnitPosition(unitID)
     local elevation = GetGroundHeight(rx, rz)
-    --Spring.Echo( elevation, baseposy)
-	  if ((elevation + minwater) > ( 0 +  buffer ) and canMove == false ) or (( elevation >= baseposy ) and canMove ) then 
+    local isFactory = tidals[unitID].isfactory
+    --Spring.Echo( elevation, minwater)
+	  if ((elevation + minwater) > ( 0 +  buffer ) and canMove == false ) or ((elevation >= baseposy ) and canMove and not isFactory) then 
 	    if mass < 601 then
 	      SpSpawnCEG("Death_Explosion_Tidal_Small", rx, 0, rz)
 	    elseif mass >= 601 and mass <= 4000 then
@@ -77,7 +78,7 @@ end
 local function SetupUnit(unitID)
   local uDefID = GetUnitDefID(unitID) ; if not uDefID then return end
   local uDef = uDefs[uDefID]
-  tidals[unitID] = {minwaterdepth = uDef.minWaterDepth, mass = uDef.mass, canmove = uDef.canMove}
+  tidals[unitID] = {minwaterdepth = uDef.minWaterDepth, mass = uDef.mass, canmove = uDef.canMove, isfactory = uDef.isFactory}
 end
 
 
@@ -85,10 +86,8 @@ function gadget:Initialize()
   for i=1,#UnitDefs do
   local unitDefID = UnitDefs[i]
     if (unitDefID.minWaterDepth and unitDefID.minWaterDepth> 0) and unitDefID.waterline then
-      Spring.Echo(i,unitDefID.name, unitDefID.tooltip, unitDefID.canMove)
-      if unitDefID.canMove then
-        tideDefs[i] = true
-      end
+      --Spring.Echo(i,unitDefID.name, unitDefID.tooltip, unitDefID.canMove)
+      tideDefs[i] = true
     end
   end
   for _, unitID in ipairs(SpGetAllUnits()) do
