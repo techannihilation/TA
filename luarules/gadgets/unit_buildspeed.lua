@@ -10,7 +10,7 @@ function gadget:GetInfo()
     date      = "Oct 20, 2007",
     license   = "GNU GPL, v2 or later",
     layer     = 0,
-    enabled   = true  --  loaded by default?
+    enabled   = false  --  loaded by default?
   }
 end
 
@@ -124,22 +124,13 @@ end
 --------------------------------------------------------------------------------
 
 function gadget:Initialize()
-	if modOptions and modOptions.buildspeed and modOptions.buildspeed == '0' then
-		gadgetHandler:RemoveGadget()
-		return
-	end
-	
 	for uDefID, uDef in pairs(UnitDefs) do
 		requiresMetal[uDefID] = (uDef.metalCost > 1) -- T1 metal makers cost 1 metal.
 		requiresEnergy[uDefID] = (uDef.energyCost > 0) -- T1 solars cost 0 energy.
 		
-		if (uDef.isBuilder==true and #uDef.buildOptions>0 or uDef.name:find("_nano_tower",1,true)) then
+		if (uDef.isBuilder==true and #uDef.buildOptions>0) then
 			if not excludeUnits[uDefID] then
 				builderSpeeds[uDefID] = uDef.buildSpeed
-				
-				if uDef.name:find("_nano_tower",1,true) then
-					nanoTurretDefs[uDefID] = true
-				end
 			end
 		end	
 	end
@@ -154,9 +145,8 @@ function gadget:Initialize()
 end
 
 function gadget:UnitCreated(unitID, unitDefID, teamID, builderID)
-	
 	if builderSpeeds[unitDefID] then
-		local stMode = (nanoTurretDefs[unitDefID] and 0) or 4
+		local stMode =  4
 		buildspeedlist[unitID]={speed=builderSpeeds[unitDefID], mode=stMode}
 		AddBuildspeedCmdDesc(unitID)
 		UpdateButton(unitID, stMode)
@@ -168,7 +158,7 @@ function gadget:UnitDestroyed(unitID, _, teamID)
 end
 
 function gadget:GameFrame(n)
-	if n % 16 == 0 then
+	if n % 15 == 0 then
 		for i = 1, #teamList do
 			local teamID = teamList[i]
 			local mCur, mStor, mPull, mInc, mExp, mShare, mSent, mRec, mExc = spGetTeamResources(teamID, 'metal')
