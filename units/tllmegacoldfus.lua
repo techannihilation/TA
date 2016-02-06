@@ -16,7 +16,7 @@ return {
 		description = "Produces Metal and Energy/ Storage",
 		designation = "TL-CF",
 		downloadable = 1,
-		energymake = 14500,
+		energymake = 16000,
 		energystorage = 29000,
 		energyuse = 11500,
 		explodeas = "SUPERBLAST_BUILDING",
