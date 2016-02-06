@@ -50,7 +50,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooo",
 		customparams = {
-			requiretech = "Assault Commander",
+			requiretech = "Battle Commander",
 		},
 		featuredefs = {
 			dead = {
