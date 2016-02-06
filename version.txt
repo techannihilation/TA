@@ -1,3 +1,38 @@
+----------------------------------------- v2.38.9 ---------------------------------------
+----Visual----
+Fix ultra expensive jumpjet effect, Closes #943
+
+----Bugs---- 
+Update explosing subpens, Closes #983
+Fix zergon not being able to load units
+Remove restore button for units that can terramorph, Closes #699
+Remove laser sight from sniper (fixes sound issue)
+Arm's Advanced Antimater Fusion is now an underwater unit, also rename to Arm's Advanced Underwater Antimater Fusion, Closes #966
+Match metal output to energy inline with arm/core for tll t1 underwater mex
+Fix typo in TSAR cannon
+Fix banisher missile flight time, Closes #932
+Tllgeo fix max slope, Closes #934
+Tll adv con sub increase hp 375>1775
+
+----Balance----
+Rework Assault commander and above build menus
+-Added : Adv Solar, Adv Wind, Adv Tidal, Adv HLT, SAM, T2 Tech Center
+-Deleted : Solar, Tidal, Wind, Tidal, T1 Tech Center
+-Tll commanders : T2 cons replace's T1 Cons. TllBurner replace's Rockos
+Dark Matter Converter increase energy output 3000>4500
+
+Flame tower now requires Battle Commander #947
+Tllburner increase maneuverability and top speed
+Tlltrid rebalance buildcostenergy 35000>28000, buildcostmetal 3650>2920, buildtime 9705>42010, Closes #974
+Change require Tech level for tll dark matter cannon construction (t3 lab now required)
+Area damage does zero damage to origin unit. ie armsonic and tllroit 
+
+----Improvements-----
+Rework game type info, now pre game info
+Unit stats areadamage, replace dps with max damage per frame
+
+----------------------------------------- v2.38.0 ---------------------------------------
+
 ----------------------------------------- v2.38.8 ---------------------------------------
 ----Visual----
 
