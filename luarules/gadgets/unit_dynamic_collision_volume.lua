@@ -114,7 +114,7 @@ if (gadgetHandler:IsSyncedCode()) then
 			end
 		elseif dynamicPieceCollisionVolume[UnitDefs[unitDefID].name] then
 			local t = dynamicPieceCollisionVolume[UnitDefs[unitDefID].name].on
-			for pieceIndex=0, #spGetPieceList(unitID)-1 do
+			for pieceIndex=1, #spGetPieceList(unitID) do
 				local p = t[tostring(pieceIndex)]
 				if p then
 					spSetPieceCollisionData(unitID, pieceIndex, true, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8])
@@ -203,7 +203,7 @@ if (gadgetHandler:IsSyncedCode()) then
 		if unitCollisionVolume[un] then
 			popupUnits[unitID]={name=un, state=-1, perPiece=false}
 		elseif dynamicPieceCollisionVolume[un] then
-			popupUnits[unitID]={name=un, state=-1, perPiece=true, numPieces = #spGetPieceList(unitID)-1}
+			popupUnits[unitID]={name=un, state=-1, perPiece=true, numPieces = #spGetPieceList(unitID)}
 		end
 	end
 
