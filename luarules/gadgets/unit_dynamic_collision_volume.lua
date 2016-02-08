@@ -46,7 +46,7 @@ if (gadgetHandler:IsSyncedCode()) then
 		if VFS.FileExists(mapConfig) then
 			mapFeatures = VFS.Include(mapConfig)
 			for _, featID in pairs(Spring.GetAllFeatures()) do
-				local featureModel = FeatureDefs[Spring.GetFeatureDefID(featID)].modelname:lower()
+				local featureModel = FeatureDefs[Spring.GetFeatureDefID(featID)].model.path:lower()
 				if featureModel:len() > 4 then
 					local featureModelTrim = featureModel:match("/.*"):sub(2)
 					if mapFeatures[featureModelTrim] then
@@ -68,7 +68,7 @@ if (gadgetHandler:IsSyncedCode()) then
 			end			
 		else
 			for _, featID in pairs(Spring.GetAllFeatures()) do
-				local featureModel = FeatureDefs[Spring.GetFeatureDefID(featID)].modelname:lower()
+				local featureModel = FeatureDefs[Spring.GetFeatureDefID(featID)].model.path:lower()
 				if featureModel:find(".3do") then
 					local rs, hs
 					if (spGetFeatureRadius(featID)>47) then
@@ -100,7 +100,7 @@ if (gadgetHandler:IsSyncedCode()) then
 	  	--Spring.Echo("Units Armor Class is : " .. (Game.armorTypes[uDef.armorType] or ""))
 		if (pieceCollisionVolume[UnitDefs[unitDefID].name]) then
 			local t = pieceCollisionVolume[UnitDefs[unitDefID].name]
-			for pieceIndex=0, #spGetPieceList(unitID)-1 do
+			for pieceIndex=1, #spGetPieceList(unitID) do
 				local p = t[tostring(pieceIndex)]
 				if p then
 					spSetPieceCollisionData(unitID, pieceIndex, true, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8])
@@ -173,7 +173,7 @@ if (gadgetHandler:IsSyncedCode()) then
 
 	-- Same as for 3DO units, but for features
 	function gadget:FeatureCreated(featureID, allyTeam)
-		local featureModel = FeatureDefs[Spring.GetFeatureDefID(featureID)].modelname:lower()
+		local featureModel = FeatureDefs[Spring.GetFeatureDefID(featureID)].model.path:lower()
 		if featureModel == "" or nil then return end	--geovents or engine trees have no models
 		local featureModelTrim = featureModel:match("/.*"):sub(2)
 		if mapFeatures[featureModelTrim] then	-- it just might happen that some map features can have corpses
