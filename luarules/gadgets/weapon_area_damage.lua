@@ -61,15 +61,14 @@ function gadget:GameFrame(f)
 						damage = damage - damage*w.rangeFall*sqrt((ux-w.pos.x)^2 + (uy-w.pos.y)^2 + (uz-w.pos.z)^2)/w.radius
 					end
 					-- Scale team and allyteam damage
-					if (SpGetUnitTeam(w.id) == SpGetUnitTeam(w.owner)) then
+					if (SpGetUnitTeam(u) == SpGetUnitTeam(w.owner)) then
 					   damage = damage * teamScale
-					end
-					if (SpGetUnitAllyTeam(w.id) == SpGetUnitAllyTeam(w.owner)) then
+					elseif (SpGetUnitAllyTeam(u) == SpGetUnitAllyTeam(w.owner)) then
 					   damage = damage * allyScale
 					end
 					
 					-- Avoid damage to self altogether
-					if (w.id ~= nil and w.owner ~= nil and w.id ~= w.owner) then
+					if (u ~= nil and w.owner ~= nil and u ~= w.owner) then
 					   SpAddUnitDamage(u, damage, 0, w.owner, w.id, 0, 0, 0)
 					end
 				end
