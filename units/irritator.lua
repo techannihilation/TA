@@ -252,6 +252,7 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "MEDIUM SMALL TINY",
 				def = "TLL_Mini_Barret",
 				onlytargetcategory = "NOTVTOL",
 			},
@@ -261,7 +262,6 @@ return {
 			},
 			[3] = {
 				def = "IRRITATOR_ROCKET",
-				onlytargetcategory = "NOTVTOL",
 			},
 			[4] = {
 				def = "Irritator_Shield",
