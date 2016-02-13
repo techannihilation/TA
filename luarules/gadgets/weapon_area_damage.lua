@@ -29,6 +29,7 @@ local pairs = pairs
 local ipairs = ipairs
 
 function gadget:Explosion(weaponID, px, py, pz, ownerID)
+	if ownerID==nil then return end
 	if (weaponInfo[weaponID]) then
 		local w = {
 			radius = weaponInfo[weaponID].radius,
@@ -39,6 +40,8 @@ function gadget:Explosion(weaponID, px, py, pz, ownerID)
 			id = weaponID,
 			pos = {x = px, y = py, z = pz},
 			owner=ownerID,
+			teamID=SpGetUnitTeam(ownerID),
+			allyID=SpGetUnitAllyTeam(ownerID)
 		}
 		table.insert(explosionList,w)
 	end
@@ -62,12 +65,10 @@ function gadget:GameFrame(f)
 						damage = damage - damage*w.rangeFall*sqrt((ux-w.pos.x)^2 + (uy-w.pos.y)^2 + (uz-w.pos.z)^2)/w.radius
 					end
 					-- Scale team and allyteam damage
-					if SpValidUnitID(u) and SpValidUnitID(w.owner) then
-						if (SpGetUnitTeam(u) == SpGetUnitTeam(w.owner)) then
-					   		damage = damage * teamScale
-						elseif (SpGetUnitAllyTeam(u) == SpGetUnitAllyTeam(w.owner)) then
-					   		damage = damage * allyScale
-						end
+					if (SpGetUnitTeam(u) == SpGetUnitTeam(w.owner)) then
+				   		damage = damage * teamScale
+					elseif (SpGetUnitAllyTeam(u) == w.allyID) then
+				   		damage = damage * allyScale
 					end
 					
 					-- Avoid damage to self altogether
