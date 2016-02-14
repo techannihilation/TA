@@ -31,7 +31,6 @@ return {
 		hoverattack = true,
 		idleautoheal = 5,
 		idletime = 1800,
-		isairbase = true,
 		maneuverleashlength = 1280,
 		mass = 132.5,
 		maxdamage = 795,
