@@ -1,3 +1,20 @@
+----------------------------------------- v2.38.11 ---------------------------------------
+----Visual----
+
+----Bugs---- 
+Fix lua errors spam, Closes #993
+
+----Balance----
+Increase pyrox morph cost 0.30xp > 0.45xp
+Add area damage to juno weapon, very short period/damage only usefull for killing flea spam etc
+
+----Improvements-----
+Add new t3 unit for tll faction, Hailstorm rapid fire plasma kbot
+
+
+----------------------------------------- v2.38.0 ---------------------------------------
+
+
 ----------------------------------------- v2.38.10 ---------------------------------------
 ----Visual----
 Fix ultra expensive jumpjet effect, Closes #943
