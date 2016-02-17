@@ -52,7 +52,7 @@ function AddAirBase(unitID)
    local airBasePads = {}
    local pieceMap = Spring.GetUnitPieceMap(unitID)
    for pieceName, pieceNum in pairs(pieceMap) do
-      if pieceName:find("land") then
+      if pieceName:find("airstrip") then
          airBasePads[pieceNum] = false
       end
    end
@@ -123,7 +123,8 @@ end
 function NeedsRepair(unitID)
    local health, maxHealth = Spring.GetUnitHealth(unitID)
    local landAtState = Spring.GetUnitStates(unitID).autorepairlevel
-   return health < maxHealth * landAtState;
+   Spring.Echo(health < maxHealth * landAtState,health , maxHealth ,landAtState)
+   return health < maxHealth * landAtState
 end
 
 
@@ -231,12 +232,14 @@ function gadget:GameFrame()
       local px, py, pz = Spring.GetUnitPiecePosDir(airbaseID, padPieceNum)
       local ux, uy, uz = Spring.GetUnitPosition(unitID)
       local dx, dy ,dz = ux - px, uy - py, uz - pz
+      if ux or uy or uz == nil then return end --fix nil error on unit death
       local r = Spring.GetUnitRadius(unitID)
       local dist = dx * dx + dy * dy + dz * dz
       -- check if we're close enough
       if dist < 4 * r * r then
          Spring.GiveOrderToUnit(unitID, CMD.STOP,{},{})
          Spring.UnitAttach(airbaseID, unitID, padPieceNum)
+         Spring.GiveOrderToUnit(airbaseID,CMD.INSERT,{1,CMD.REPAIR,CMD.OPT_SHIFT,unitID},{"alt"})
          landingPlanes[unitID] = nil
          landedPlanes[unitID] = true
       else
@@ -259,6 +262,7 @@ function gadget:Initialize()
    for unitDefID, unitDef in pairs(UnitDefs) do
       if unitDef.isAirBase then
          airbaseDefIDs[unitDefID] = true
+         Spring.Echo(unitDef.name)
       end
    end
 
