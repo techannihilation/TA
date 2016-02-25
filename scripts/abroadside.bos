@@ -98,7 +98,7 @@ Create()
 	turn turret3 to y-axis <180.000000> speed <500.000000>;
 	start-script SmokeUnit();
 	set ARMORED to 1;
-	while( get 17 > 0 )
+	while((get BUILD_PERCENT_LEFT) > 0 )
 	{
 		sleep 250;
 	}
