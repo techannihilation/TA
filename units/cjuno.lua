@@ -21,7 +21,7 @@ return {
 		collisionvolumetype = "ellipsoid",
 		corpse = "DEAD",
 		defaultmissiontype = "GUARD_NOMOVE",
-		description = "Anti Minefield Weapon",
+		description = "Anti Minefield Energy Pulse Weapon",
 		energystorage = 0,
 		energyuse = 0,
 		explodeas = "ESTOR_BUILDINGEX",

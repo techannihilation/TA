@@ -58,7 +58,8 @@ return {
 			[2] = "heavyimpact",
 			[3] = "tllhtml",
 			[4] = "tllgrim",
-			[5] = "hyperion",
+			[5] = "tllhailstorm",
+			[6] = "hyperion",
 		},
 		customparams = {
 			providetech = "T3 Factory",

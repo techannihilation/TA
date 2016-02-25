@@ -698,7 +698,7 @@ local morphDefs = {
   	corpyro = {
 		into = 'corpyrox',
 		time = 20,
-		xp = 0.30,
+		xp = 0.45,
 	},
       corpyrox = {
 		into = 'corpyrox1',
