@@ -297,7 +297,7 @@ function DrawUnitDefModel(unitDefID, iconPos, count)
     glColor(0,0,0,1)
   end
 
-  glUnitShape(unitDefID, spGetMyTeamID())
+  glUnitShape(unitDefID, spGetMyTeamID(), true, true, false)
 
   if (scribe) then
 --    glLineWidth(0.1)

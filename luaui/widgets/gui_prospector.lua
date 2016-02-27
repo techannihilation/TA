@@ -217,7 +217,7 @@ function widget:DrawWorld()
 			glPushMatrix()
 				glColor(1, 1, 1, 0.25)
 				glTranslate(centerX, coords[2], centerZ)
-				glUnitShape(defaultDefID, myTeamID)
+				glUnitShape(defaultDefID, myTeamID, true, false, false)
 			glPopMatrix()
 		end
 		glColor(1, 1, 1, 1)

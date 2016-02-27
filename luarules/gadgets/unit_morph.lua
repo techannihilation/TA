@@ -1503,7 +1503,7 @@ local function InitializeUnitShape(unitDefID,unitTeam)
 
   glPushMatrix()
   gl.ColorMask(false)
-  glUnitShape(unitDefID, unitTeam)
+  --glUnitShape(unitDefID, unitTeam, true, false , true)
   gl.ColorMask(true)
   glPopMatrix()
   if (alreadyInit[unitTeam]==nil) then alreadyInit[unitTeam] = {} end
@@ -1537,7 +1537,7 @@ local function DrawMorphUnit(unitID, morphData, localTeamID)
   glPushMatrix()
   glTranslate(px, py, pz)
   glRotate(angle, 0, 1, 0)
-  glUnitShape(morphData.def.into, unitTeam)
+  glUnitShape(morphData.def.into, unitTeam, true, false , true)
   glPopMatrix()
 
   --// cheesy progress indicator

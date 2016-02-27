@@ -203,7 +203,7 @@ function DrawGhostSites()
 			glTranslate( x, y, z)
 			glRotate(ghost.angle,0,y,0)
 			
-			gl.UnitShape(ghost["unitDefId"], ghost["teamId"] )
+			gl.UnitShape(ghost["unitDefId"], ghost["teamId"], true, false, false)
 			      
 			glPopMatrix()
 		end
