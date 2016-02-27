@@ -3,8 +3,8 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, wake1, wake2, wake3, pad1, pad2, radar ,anti,
-       nano;
+piece  base, body, wake1, wake2, wake3, pad1, pad2, land1, land2, radar,
+       anti, nano;
 
 static-var  Static_Var_1;
 
@@ -146,15 +146,16 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		return (0);
+		return (corpsetype);
 	}
 	explode radar type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
 	explode radar type SHATTER | EXPLODE_ON_HIT | BITMAP1;
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP1;
+	return (corpsetype);
 }
