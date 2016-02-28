@@ -222,13 +222,13 @@ if (gadgetHandler:IsSyncedCode()) then
 		if (n%15 ~= 0) then
 			return
 		end
-		local p, t
+		local p, t 
 		for unitID,defs in pairs(popupUnits) do
 			if spArmor(unitID) then
 				if (defs.state ~= 0) then
 					if defs.perPiece then
 						t = dynamicPieceCollisionVolume[defs.name].off
-						for pieceIndex=0, defs.numPieces do
+						for pieceIndex=1, defs.numPieces do
 							p = t[tostring(pieceIndex)]
 							if p then
 								spSetPieceCollisionData(unitID, pieceIndex, true, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8])
@@ -253,7 +253,7 @@ if (gadgetHandler:IsSyncedCode()) then
 				if (defs.state ~= 1) then
 					if defs.perPiece then
 						t = dynamicPieceCollisionVolume[defs.name].on
-						for pieceIndex=0, defs.numPieces do
+						for pieceIndex=1, defs.numPieces do
 							p = t[tostring(pieceIndex)]
 							if p then
 								spSetPieceCollisionData(unitID, pieceIndex, true, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8])
