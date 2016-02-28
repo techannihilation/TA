@@ -50,6 +50,7 @@ return {
 		unitname = "arm_big_bertha",
 		unitnumber = 16,
 		usebuildinggrounddecal = true,
+		usepiececollisionvolumes = 1,
 		workertime = 0,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo",
 		customparams = {

@@ -50,6 +50,7 @@ return {
 		turnrate = 0,
 		unitname = "corint",
 		usebuildinggrounddecal = true,
+		usepiececollisionvolumes = 1,
 		workertime = 0,
 		yardmap = "ooooooooooooooooooooooooo",
 		customparams = {

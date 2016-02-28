@@ -52,6 +52,7 @@ return {
 		turnrate = 0,
 		unitname = "armarad",
 		usebuildinggrounddecal = true,
+		usepiececollisionvolumes = 1,
 		workertime = 0,
 		yardmap = "oooo",
 		customparams = {

@@ -52,6 +52,7 @@ return {
 		turnrate = 0,
 		unitname = "cortoast",
 		usebuildinggrounddecal = true,
+		usepiececollisionvolumes = 1,
 		workertime = 0,
 		yardmap = "ooooooooo",
 		customparams = {

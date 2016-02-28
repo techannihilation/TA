@@ -51,6 +51,7 @@ return {
 		turnrate = 0,
 		unitname = "armveil",
 		usebuildinggrounddecal = true,
+		usepiececollisionvolumes = 1,
 		workertime = 0,
 		yardmap = "oooo",
 		customparams = {
