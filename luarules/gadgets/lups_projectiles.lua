@@ -81,6 +81,18 @@ local SYNCED = SYNCED
 
 local projectiles = {}
 
+function CopyTable(tableToCopy, deep)
+	local copy = {}
+	for key, value in pairs(tableToCopy) do
+		if (deep and type(value) == "table") then
+			copy[key] = Spring.Utilities.CopyTable(value, true)
+		else
+			copy[key] = value
+		end
+	end
+	return copy
+end
+
 local function AddProjectile(_, proID, proOwnerID, weaponID)
   if (not Lups) then Lups = GG['Lups']; LupsAddParticles = Lups.AddParticles end
   projectiles[proID] = {}
@@ -88,7 +100,7 @@ local function AddProjectile(_, proID, proOwnerID, weaponID)
   for i=1,#def do
     local fxTable = projectiles[proID]
     local fx = def[i]
-    local options = Spring.Utilities.CopyTable(fx.options)
+    local options = CopyTable(fx.options)
     --options.unit = proOwnerID
     options.projectile = proID
     options.weapon = weaponID
