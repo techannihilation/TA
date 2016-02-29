@@ -57,8 +57,8 @@ function gadget:AllowFeatureBuildStep(builderID, builderTeam, featureID, feature
         featureDefs = featureList[featureDefID]
       end
       local x,y,z = GetFeaturePosition(featureID)
-      x = x + random(featureDefs.model.minX,featureDefs.model.maxX)
-      z = z + random(featureDefs.model.minZ,featureDefs.model.maxZ)
+      x = x + random(featureDefs.minX,featureDefs.maxX)
+      z = z + random(featureDefs.minZ,featureDefs.maxZ)
       y = y + featureDefs.y
       cegList[featureID] = {ceg = cegs[random(1,3)],xs=x,ys=y,zs=z,enabled=true}
     end
