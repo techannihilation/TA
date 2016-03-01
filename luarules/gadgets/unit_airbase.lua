@@ -242,6 +242,8 @@ function HealUnit(unitID, airbaseID, resourceFrames, h, mh)
    local healthGain = timeToBuild / resourceFrames 
    local newHealth = math.min(h+healthGain, mh)
    Spring.SetUnitHealth(unitID, newHealth)
+   local ux, uy, uz = Spring.GetUnitPosition(unitID)
+   Spring.SpawnCEG("repairpad_effect", ux, uy, uz)
 end
 
 function RemoveOrderFromQueue(unitID, cmdID)
