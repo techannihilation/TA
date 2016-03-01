@@ -64,6 +64,10 @@ local startPointTable = {} --temporary, only for use within this gadget & its li
 local nAllyTeams
 local allyTeams = {} --allyTeams[allyTeamID] is non-nil if this allyTeam will spawn at least one starting unit
 
+local mapBlackList = {
+	"Senna",
+	}
+
 ----------------------------------------------------------------
 -- Start Point Guesser
 ----------------------------------------------------------------
@@ -162,6 +166,12 @@ end
 -- Initialize
 ----------------------------------------------------------------
 function gadget:Initialize()
+	for _,mapname in ipairs(mapBlackList) do
+		if (Game.mapName:find(mapname)) then
+			Spring.Echo("Illegal map, shutting game down")
+	 		Spring.GameOver({nil})
+		end
+	end
 	local gaiaTeamID = Spring.GetGaiaTeamID()
 	local teamList = Spring.GetTeamList()
 	for i = 1, #teamList do
