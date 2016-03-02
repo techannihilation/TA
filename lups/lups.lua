@@ -70,7 +70,7 @@ if not Script.IsEngineMinVersion(101, 1) then
                     return { los = true, radar = true, typed = true }
                 end
             end
-            return origFunc(unitID,nil,raw)
+            return origFunc(unitID,allyTeam,raw)
         end
     end
     local function CreatePosWrapper(origFunc)
