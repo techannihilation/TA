@@ -106,7 +106,7 @@ StartMoving()
 	{
 		emit-sfx 2 from wake1;
 		emit-sfx 2 from wake2;
-		Func_Var_1 = get 29 * 100 / get MAX_SPEED;
+		Func_Var_1 = (get CURRENT_SPEED) * 100 / (get MAX_SPEED);
 		if( Func_Var_1 < 50 )
 		{
 			Func_Var_1 = 50;
