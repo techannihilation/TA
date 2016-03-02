@@ -676,3 +676,9 @@ StopBuilding()
 	turn head to y-axis <0.000000> speed <90.000000>;
 	call-script RestorePosition();
 }
+
+Killed( severity, corpsetype ) 
+{
+	corpsetype = 1;
+	return(corpsetype);
+}

@@ -727,3 +727,9 @@ StopBuilding()
 	set-signal-mask SIG_AIM;
 	call-script RestorePosition();
 }
+
+Killed( severity, corpsetype ) 
+{
+	corpsetype = 1;
+	return(corpsetype);
+}
