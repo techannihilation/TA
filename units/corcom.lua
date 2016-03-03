@@ -58,7 +58,7 @@ return {
 		name = "Commander",
 		nochasecategory = "ALL SUB",
 		norestrict = 1,
-		objectname = "CORCOM",
+		objectname = "CORCOM.3DO",
 		radardistance = 700,
 		radaremitheight = 30.74673,
 		reclaimable = false,
