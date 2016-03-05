@@ -581,8 +581,7 @@ function widget:DrawWorld()
 	if startChosen then
 		-- Correction for start positions in the air
 		sy = Spring.GetGroundHeight(sx, sz)
-		Spring.Echo(sDef.id)
-		--
+
 		-- Draw the starting unit at start position
 		if sDef.id == ARMCOM then
 			sDefID = sDef.id
