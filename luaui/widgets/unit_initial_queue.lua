@@ -347,7 +347,7 @@ local function DrawUnitDef(uDefID, uTeam, ux, uy, uz)
 
 	gl.PushMatrix()
 		gl.Translate(ux, uy, uz)
-		gl.UnitShape(uDefID, uTeam)
+		gl.UnitShape(uDefID, uTeam, false, true , false)
 	gl.PopMatrix()
 
 	gl.Lighting(false)
@@ -576,11 +576,22 @@ function widget:DrawWorld()
 	local myTeamID = Spring.GetMyTeamID()
 	local sx, sy, sz = Spring.GetTeamStartPosition(myTeamID) -- Returns -100, -100, -100 when none chosen
 	local startChosen = (sx ~= -100)
+
+
 	if startChosen then
 		-- Correction for start positions in the air
 		sy = Spring.GetGroundHeight(sx, sz)
-
+		Spring.Echo(sDef.id)
+		--
 		-- Draw the starting unit at start position
+		if sDef.id == ARMCOM then
+			sDefID = sDef.id
+		elseif sDef.id == CORCOM then
+			sDefID = sDef.id
+		else 
+			sDefID = sDef.id
+		end
+
 		DrawUnitDef(sDefID, myTeamID, sx, sy, sz)
 
 		-- Draw start units build radius
@@ -619,7 +630,6 @@ function widget:DrawWorld()
                 buildData[1] = Armtotll[buildDataId]
                 buildQueue[b] = buildData
             end
-	    
         end
     end
 
