@@ -54,7 +54,8 @@ end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
-if not Script.IsEngineMinVersion(101, 1) then
+--if not Script.IsEngineMinVersion(101, 1) then
+	Spring.Echo("!!!!!!!!!!!!!!!!!!working!!!!!!!!!!!!!!!!!!!!!!!")
     local origGetUnitLosState     = Spring.GetUnitLosState
     local origGetPositionLosState = Spring.GetPositionLosState
     local origIsPosInLos          = Spring.IsPosInLos
@@ -85,7 +86,7 @@ if not Script.IsEngineMinVersion(101, 1) then
     Spring.IsPosInLos          = CreatePosWrapper(origIsPosInLos);
     Spring.IsPosInRadar        = CreatePosWrapper(origIsPosInRadar);
     Spring.IsPosInAirLos       = CreatePosWrapper(origIsPosInAirLos);
-end
+--end
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -697,6 +698,7 @@ local DrawScreenEffectsVisibleFx
 local DrawInMiniMapVisibleFx
 
 function IsPosInLos(x,y,z)
+	--Spring.Echo(LocalAllyTeamID)
 	return Spring.IsPosInLos(x,y,z, LocalAllyTeamID)
 end
 
