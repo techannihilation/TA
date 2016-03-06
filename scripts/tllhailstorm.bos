@@ -345,7 +345,6 @@ MotionControl(Func_Var_1, Func_Var_2)
 		}
 		if( !Func_Var_1 )
 		{
-			get PRINT(9);
 			Static_Var_3 = 1;
 			call-script stand();
 		}
