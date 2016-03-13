@@ -1417,7 +1417,7 @@ end
 
 function gadget:Initialize()
   --// get the morphDefs
-  morphDefs = include("LuaRules/Configs/morph_defs.lua")
+  morphDefs = include("LuaRules/Configs/morph_defs_techa.lua")
   if (not morphDefs) then gadgetHandler:RemoveGadget(); return; end
   morphDefs = ValidateMorphDefs(morphDefs)
 
