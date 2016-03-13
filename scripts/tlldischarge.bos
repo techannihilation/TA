@@ -15,13 +15,9 @@ static-var  bMoving, bAiming, Static_Var_3, restore_delay, gun_1, gun_3, Bjumpin
 #define SIG_MOVE            8
 #define SIG_WALK            16
 
-JumpControl()
+JumpControl(Percent)
 {
-	while (TRUE)
-	{
-		jumpPercent = get UNKNOWN_UNIT_VALUE(1029);
-		sleep 300;
-	}	
+	jumpPercent = Percent;
 }
 
 Jumping()
@@ -504,7 +500,6 @@ Create()
 	restore_delay = 3000;
 	start-script MotionControl();
 	start-script SmokeUnit();
-	start-script JumpControl();
 	}
 
 
