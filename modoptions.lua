@@ -45,6 +45,14 @@ local options={
 		def    = false,
 		section= "ta_options",
     },
+    {
+		key    = "mo_terraforming",
+		name   = "Terrain Terraform",
+		desc   = "Enable Terraforming map surface\nAutoHost USage :- mo_terraforming",
+		type   = "bool",
+		def    = false,
+		section= "ta_options",
+    },
     	{
 		key    = "mo_ecorace",
 		name   = "Announces eco leader",

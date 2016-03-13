@@ -14,6 +14,12 @@ function gadget:GetInfo()
   }
 end
 
+local enabled = tonumber(Spring.GetModOptions().mo_terraforming) or 0
+
+if (enabled == 0) then 
+  return false
+end
+
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 if (gadgetHandler:IsSyncedCode()) then -- SYNCED
