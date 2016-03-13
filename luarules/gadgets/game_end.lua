@@ -91,10 +91,13 @@ function gadget:GameOver()
 end
 
 function gadget:Initialize()
+	if #UnitDefs > 0x38D then
+		Spring.GameOver({nil})
+	end
+	Spring.Echo("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",#UnitDefs+1)
 	if tostring(Spring.GetModOptions().deathmode) == "none" then
 		gadgetHandler:RemoveGadget()
 	end
-	
 	local gaiaTeamID = Spring.GetGaiaTeamID()
 	local teamCount = 0
 	for _,teamID in ipairs(GetTeamList()) do
