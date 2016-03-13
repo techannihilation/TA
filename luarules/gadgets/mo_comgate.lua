@@ -61,7 +61,7 @@ end
 
 function gadget:UnitCreated(unitID, unitDefID, teamID)
 	if (not gameStart) and not hiddenUnits[unitID] then
-		Spring.SetUnitCOBValue(unitID,1029,teamSKILL[teamID])
+    Spring.CallCOBScript(unitID, "Beamcolor", 0, teamSKILL[teamID])
 		local x,y,z = Spring.GetUnitPosition(unitID)
 		hiddenUnits[unitID] = {x,y,z,teamID}
 		Spring.SetUnitNoDraw(unitID,true) 

@@ -419,10 +419,14 @@ Shield()
 	Static_Var_6 = !Static_Var_6;
 }
 
+Beamcolor(ts)
+{
+	ceg = ts;
+}
+
 TeleportControl()
 {
 	sleep 100;
-	ceg = get UNKNOWN_UNIT_VALUE(1029);
 	emit-sfx 1025 from teleport;
 	sleep 2200;
 	emit-sfx 1025 + ceg from pelvis;  

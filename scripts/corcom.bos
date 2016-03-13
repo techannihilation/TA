@@ -449,11 +449,15 @@ Shield()
 	shield_state = !shield_state;
 }
 
+Beamcolor(ts)
+{
+	ceg = ts;
+}
+
 TeleportControl()
 {
 
 	sleep 100;
-	ceg = get UNKNOWN_UNIT_VALUE(1029);
 	emit-sfx 1025 from teleport;
 	sleep 2200;
 	emit-sfx 1025 + ceg from pelvis;

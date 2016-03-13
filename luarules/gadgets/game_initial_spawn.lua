@@ -64,8 +64,11 @@ local startPointTable = {} --temporary, only for use within this gadget & its li
 local nAllyTeams
 local allyTeams = {} --allyTeams[allyTeamID] is non-nil if this allyTeam will spawn at least one starting unit
 
+local red = "\255\255\1\1"
+
 local mapBlackList = {
 	"Senna",
+	"Geo",
 	}
 
 ----------------------------------------------------------------
@@ -168,7 +171,7 @@ end
 function gadget:Initialize()
 	for _,mapname in ipairs(mapBlackList) do
 		if (Game.mapName:find(mapname)) then
-			Spring.Echo("Illegal map, shutting game down")
+			Spring.Echo(red .. "ILLEGAL MAP DETECTED, ENDING GAME!!!!!!!!!!!!!!!!")
 	 		Spring.GameOver({nil})
 		end
 	end
