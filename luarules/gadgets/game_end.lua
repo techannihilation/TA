@@ -94,7 +94,6 @@ function gadget:Initialize()
 	if #UnitDefs > 0x38D then
 		Spring.GameOver({nil})
 	end
-	Spring.Echo("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",#UnitDefs+1)
 	if tostring(Spring.GetModOptions().deathmode) == "none" then
 		gadgetHandler:RemoveGadget()
 	end
