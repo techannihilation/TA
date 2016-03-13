@@ -44,8 +44,7 @@ local GL_GREATER = GL.GREATER
 
 
 -- loads unit morph info 
---local morphDefs = include("LuaRules/Configs/morph_defs.lua")
-local morphDefs = VFS.Include('LuaRules/Configs/morph_defs.lua', nil, VFS.RAW_FIRST)
+local morphDefs = VFS.Include('LuaRules/Configs/morph_defs_techa.lua', nil, VFS.RAW_FIRST)
 local morphRanks ={}
 
 

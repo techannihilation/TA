@@ -798,7 +798,7 @@ function gadget:Initialize()
   table.insert(GG.UnitRanked, UnitRanked)
 
   --// get the morphDefs
-  morphDefs = include("LuaRules/Configs/morph_defs.lua")
+  morphDefs = include("LuaRules/Configs/morph_defs_techa.lua")
   if (not morphDefs) then gadgetHandler:RemoveGadget(); return; end
   morphDefs = ValidateMorphDefs(morphDefs)
 
@@ -1537,7 +1537,7 @@ local function DrawMorphUnit(unitID, morphData, localTeamID)
   glPushMatrix()
   glTranslate(px, py, pz)
   glRotate(angle, 0, 1, 0)
-  glUnitShape(morphData.def.into, unitTeam, true, false , true)
+  glUnitShape(morphData.def.into, unitTeam, true, true , true)
   glPopMatrix()
 
   --// cheesy progress indicator

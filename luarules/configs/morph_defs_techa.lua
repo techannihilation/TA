@@ -267,9 +267,35 @@ local morphDefs = {
 		time = 60,
 		xp = 0.05,
 	},
+	  armgeo = {
+	  	into = 'amgeo',
+	  	time = 60,
+	  	tech = 1,
+	},
+      amgeo = {
+		into = 'armgmm',
+		time = 180,
+		tech = 1,
+	},
       armgmm = {
 		into = 'armfor',
 		time = 180,
+	},
+      corgeo = {
+		into = 'cmgeo',
+	  	time = 60,
+	  	tech = 1,
+	},
+	  cmgeo = {
+		into = 'corbhmth',
+	  	time = 60,
+	  	metal = 1000,
+		energy = 2000,
+	},
+	  tllgeo = {
+		into = 'tllmohogeo',
+	  	time = 60,
+	  	tech = 1,
 	},
       armgate = {
 		into = 'armgate1',
@@ -326,9 +352,17 @@ local morphDefs = {
 		xp = 0.50,
 	},
       corbhmth = {
+      {
 		into = 'corbhmth1',
 		time = 110,
 		xp = 0.30,
+	  },
+	  {
+		into = 'cmgeo',
+	  	time = 60,
+	  	metal = 1000,
+		energy = 2000,
+	  },
 	},
       armpw = {
 		into = 'armpw1',
