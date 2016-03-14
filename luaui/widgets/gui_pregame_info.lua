@@ -43,6 +43,7 @@ local xmasmessage = "Merry Christmas Everyone -- Free Morph E/M Cost for Eco or 
 local startenergy = 0
 local startmetal = 0
 local DisableMapDamage = false
+local terraforming = false
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -76,7 +77,9 @@ function widget:Initialize()
   if Spring.GetModOptions().DisableMapDamage == true then
   	DisableMapDamage = true
   end
-
+  if Spring.GetModOptions().mo_terraforming == true then
+    terraforming = true
+  end
 end
 
 function widget:DrawScreen()
@@ -106,6 +109,12 @@ function widget:DrawScreen()
   	dmd_message = "Map is Undeformable"
   	tackyfont:Print(dmd_message, vsx , vsy*0.3 , 40, "oc")
   end
+  
+  if DisableMapDamage then
+    t_message = "Terraforming Enabled"
+    tackyfont:Print(t_message, vsx , vsy*0.2 , 40, "oc")
+  end
+
 
   tackyfont:End()
     
