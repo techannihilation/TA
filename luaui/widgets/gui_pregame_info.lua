@@ -110,7 +110,7 @@ function widget:DrawScreen()
   	tackyfont:Print(dmd_message, vsx , vsy*0.3 , 40, "oc")
   end
   
-  if DisableMapDamage then
+  if terraforming then
     t_message = "Terraforming Enabled"
     tackyfont:Print(t_message, vsx , vsy*0.2 , 40, "oc")
   end
