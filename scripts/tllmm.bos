@@ -1,17 +1,87 @@
-piece base,body,lights, p, light;
+#define TA			// This is a TA script
 
-#define SMOKEPIECE1 body
-#define EXPLODEPIECE1 p
-#define EXPLODEPIECE2 p
+#include "sfxtype.h"
+#include "exptype.h"
 
-#include "StateChg.h"
-#include "explodepartsnorock.h"
+piece  base, body, lights, p, light;
+
+static-var  Static_Var_1, Static_Var_2, mmState, Active, Static_Var_4, Static_Var_5;
+
+
+HitByWeapon(anglex, anglez)
+{
+	var Func_Var_3;
+	Func_Var_3 = get HEALTH;
+	if( Func_Var_3 <= 60 )
+	{
+		if( Static_Var_4 == 0 )
+		{
+			Static_Var_4 = 1;
+			hide p;
+			explode p type FALL | SHATTER | SMOKE | BITMAP2;
+		}
+	}
+	if( Func_Var_3 <= 50 )
+	{
+		if( Static_Var_5 == 0 )
+		{
+			Static_Var_5 = 1;
+			hide p;
+			explode p type FALL | SHATTER | SMOKE | BITMAP2;
+		}
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	Static_Var_4 = 0;
+	Static_Var_5 = 0;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent >= 60 )
+		{
+			if( Static_Var_5 == 1 )
+			{
+				Static_Var_5 = 0;
+				show p;
+			}
+		}
+		if( healthpercent >= 75 )
+		{
+			if( Static_Var_4 == 1 )
+			{
+				Static_Var_4 = 0;
+				show p;
+			}
+		}
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from body;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
 
 activatescr()
 {
 	if( TRUE )
 	{
-	move lights to y-axis [4] speed [5];
+		move lights to y-axis [4.000000] speed [5.000000];
 	}
 	sleep 19;
 }
@@ -20,66 +90,91 @@ deactivatescr()
 {
 	if( TRUE )
 	{
-	move lights to y-axis [0] speed [5];
+		move lights to y-axis [0.000000] speed [5.000000];
 	}
-sleep 32;
+	sleep 32;
 }
 
 Go()
-{ 
- 	  call-script activatescr();
-	  dont-cache lights;
-  	  dont-cache light;
-	  set ARMORED to FALSE;
- }
+{
+	call-script activatescr();
+	dont-cache lights;
+	dont-cache light;
+	set ARMORED to 0;
+}
 
 Stop()
-{ 
- 	call-script deactivatescr();
+{
+	call-script deactivatescr();
 	cache lights;
 	cache light;
 	set ARMORED to 1;
- }
+}
 
-#define ACTIVATECMD call-script Go();
-#define DEACTIVATECMD call-script Stop();
-#include "StateChg.h"
+MMStatus(State)
+{
+	Active = State;
+	//get PRINT(Active);
+}
+
+ImAMetalMaker()
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 150;
+	}
+	mmState = -1;
+	while( TRUE )
+	{	
+		if (Active == 1)
+		{
+			if (mmState != 1) {
+				call-script Go();
+				mmState = 1;
+			}
+		}
+		else
+		{
+			if (mmState != 0) {
+				call-script Stop();
+				mmState = 0;
+			}
+		}
+		sleep 1000;
+	}
+}
 
 Create()
-{ 
-  dont-shade lights;
-  dont-shade body;
-  call-script InitState();
-  start-script SmokeUnit();
- }
-
-Activate()
-{ start-script RequestState( ACTIVE );
- }
-
-Deactivate()
-{ start-script RequestState( INACTIVE );
- }
+{
+	dont-shade lights;
+	dont-shade body;
+	start-script ImAMetalMaker();
+	start-script SmokeUnit();
+}
 
 SweetSpot(piecenum)
-{ piecenum=base;
- }
+{
+	piecenum = base;
+}
 
-Killed( severity, corpsetype )
-{ if (severity <= 25)
-   { corpsetype = 1;
-     explode body type BITMAPONLY | BITMAP1;
-     explode lights type BITMAPONLY | BITMAP3;
-     return( 0 );
-    }
-  if (severity <= 50)
-   { corpsetype = 2;
-     explode body type BITMAPONLY | BITMAP3;
-     explode lights type SHATTER | BITMAP2;
-     return( 0 );
-    }
-  corpsetype = 3;
-  explode body type BITMAPONLY | BITMAP3;
-  explode lights type SHATTER | EXPLODE_ON_HIT | BITMAP1;
-  return( 0 );
- }
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode body type BITMAPONLY | BITMAP1;
+		explode lights type BITMAPONLY | BITMAP3;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode body type BITMAPONLY | BITMAP3;
+		explode lights type SHATTER | BITMAP2;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode body type BITMAPONLY | BITMAP3;
+	explode lights type SHATTER | EXPLODE_ON_HIT | BITMAP1;
+	return (corpsetype);
+}

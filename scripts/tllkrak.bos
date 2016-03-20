@@ -9,7 +9,7 @@ piece  base, fan1, fan2, fan3, fan4, turret, sleeve, barrel1,
        wake14, wake15, wake16, wake17, wake18, wake19, wake20;
 
 static-var  Static_Var_1, restore_delay, gun_1, Static_Var_4, Static_Var_5,
-            statechg_DesiredState, statechg_StateChanging, diving, tidal_Spd;
+            statechg_DesiredState, statechg_StateChanging, diving;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -111,17 +111,22 @@ Stop()
 
 Tangue()
 {
-	tidal_Spd = get UNKNOWN_UNIT_VALUE(1030);
+	var rockDir, rockAng, rockSpeed;
+	rockDir = <-0.1>;
+	rockAng = <-0.1>;
 	while( TRUE )
 	{
-	   	turn base to x-axis <1.000000> * tidal_Spd speed <1.000000> * tidal_Spd;
-		turn base to z-axis <1.000000> * tidal_Spd speed <1.000000> * tidal_Spd;
-		wait-for-turn base around x-axis;
-		turn base to x-axis <-1.000000> * tidal_Spd speed <1.000000> * tidal_Spd;
-		turn base to z-axis <-1.000000> * tidal_Spd speed  <1.000000> * tidal_Spd;
-		wait-for-turn base around x-axis;
-		turn base to x-axis <0.000000> speed <1.000000> * tidal_Spd;
-		turn base to z-axis <0.000000> speed <1.000000> * tidal_Spd;
+		while( get ABS(rockAng) < <1.31> )
+		{
+			rockSpeed = <1.45> - get ABS(rockAng);
+			turn base to x-axis rockAng speed rockSpeed*5;
+			turn base to z-axis rockAng speed rockSpeed*5;
+			wait-for-turn base around x-axis;
+			wait-for-turn base around z-axis;
+			rockAng = rockAng + rockDir;
+		}
+		rockDir = 0 - rockDir;
+		rockAng = rockAng + rockDir + rockDir;
 	}
 }
 

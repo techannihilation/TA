@@ -7,24 +7,29 @@ piece  base, body, pad, doors, door1, door2, door3, door4,
        arms, arm1, arm2, arm3, arm4, flo1, flo2, flo3,
        flo4, nano1, nano2, wake1, wake2, wake3, wake4;
 
-static-var  spray, unitviewer, statechg_DesiredState, statechg_StateChanging, tidal_Spd;
+static-var  spray, unitviewer, statechg_DesiredState, statechg_StateChanging;
 
 // Signal definitions
 #define SIG_ACTIVATE			2
 
 Tangue()
 {
-	tidal_Spd = get UNKNOWN_UNIT_VALUE(1030);
+	var rockDir, rockAng, rockSpeed;
+	rockDir = <-0.1>;
+	rockAng = <-0.1>;
 	while( TRUE )
 	{
-	   	turn body to x-axis <1.000000> * tidal_Spd speed <0.400000> * tidal_Spd;
-		turn body to z-axis <1.000000> * tidal_Spd speed <0.400000> * tidal_Spd;
-		wait-for-turn body around x-axis;
-		turn body to x-axis <-1.000000> * tidal_Spd speed <0.400000> * tidal_Spd;
-		turn body to z-axis <-1.000000> * tidal_Spd speed  <0.400000> * tidal_Spd;
-		wait-for-turn body around x-axis;
-		turn body to x-axis <0.000000> speed <0.400000> * tidal_Spd;
-		turn body to z-axis <0.000000> speed <0.400000> * tidal_Spd;
+		while( get ABS(rockAng) < <1.31> )
+		{
+			rockSpeed = <1.45> - get ABS(rockAng);
+			turn base to x-axis rockAng speed rockSpeed*5;
+			turn base to z-axis rockAng speed rockSpeed*5;
+			wait-for-turn base around x-axis;
+			wait-for-turn base around z-axis;
+			rockAng = rockAng + rockDir;
+		}
+		rockDir = 0 - rockDir;
+		rockAng = rockAng + rockDir + rockDir;
 	}
 }
 

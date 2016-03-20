@@ -3,10 +3,10 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, rotor, engine, door1, door2, door3, wake1,
-       wake2, wake3, wake4;
+piece  base, rotor, engine, door1, door2, door3, wake1, wake2,
+       wake3, wake4;
 
-static-var  Static_Var_1, Static_Var_2, Static_Var_3;
+static-var  Static_Var_1, Active, mmState;
 
 
 activatescr()
@@ -93,13 +93,13 @@ Go()
 	dont-cache engine;
 	dont-cache rotor;
 	set ARMORED to 0;
-	while (TRUE)
+	while( TRUE )
 	{
-	emit-sfx 256 | 3 from wake1;
-	emit-sfx 256 | 3 from wake2;
-	emit-sfx 256 | 3 from wake3;
-	emit-sfx 256 | 3 from wake4;
-	sleep 128;
+		emit-sfx 256 | 3 from wake1;
+		emit-sfx 256 | 3 from wake2;
+		emit-sfx 256 | 3 from wake3;
+		emit-sfx 256 | 3 from wake4;
+		sleep 128;
 	}
 }
 
@@ -140,18 +140,28 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Tangue()
 {
-	Static_Var_3 = get UNKNOWN_UNIT_VALUE(1030);
+	var rockDir, rockAng, rockSpeed;
+	rockDir = <-0.1>;
+	rockAng = <-0.1>;
 	while( TRUE )
 	{
-		turn base to x-axis <1.000000> * Static_Var_3 speed <1.000000> * Static_Var_3;
-		turn base to z-axis <1.000000> * Static_Var_3 speed <1.000000> * Static_Var_3;
-		wait-for-turn base around x-axis;
-		turn base to x-axis <-1.000000> * Static_Var_3 speed <1.000000> * Static_Var_3;
-		turn base to z-axis <-1.000000> * Static_Var_3 speed <1.000000> * Static_Var_3;
-		wait-for-turn base around x-axis;
-		turn base to x-axis <0.000000> speed <1.000000> * Static_Var_3;
-		turn base to z-axis <0.000000> speed <1.000000> * Static_Var_3;
+		while( get ABS(rockAng) < <1.31> )
+		{
+			rockSpeed = <1.45> - get ABS(rockAng);
+			turn base to x-axis rockAng speed rockSpeed*5;
+			turn base to z-axis rockAng speed rockSpeed*5;
+			wait-for-turn base around x-axis;
+			wait-for-turn base around z-axis;
+			rockAng = rockAng + rockDir;
+		}
+		rockDir = 0 - rockDir;
+		rockAng = rockAng + rockDir + rockDir;
 	}
+}
+MMStatus(State)
+{
+	Active = State;
+	//get PRINT(Active);
 }
 
 ImAMetalMaker()
@@ -160,25 +170,27 @@ ImAMetalMaker()
 	{
 		sleep 150;
 	}
-	Static_Var_2 = -1;
+	mmState = -1;
 	while( TRUE )
-	{
-		if( get UNKNOWN_UNIT_VALUE(1024) == 1 )
+	{	
+		if (Active == 1)
 		{
-			if( Static_Var_2 != 1 )
-			{
+			if (mmState != 1) {
 				call-script Go();
-				Static_Var_2 = 1;
+				mmState = 1;
 			}
 		}
-		else if( Static_Var_2 != 0 )
+		else
 		{
-			call-script Stop();
-			Static_Var_2 = 0;
+			if (mmState != 0) {
+				call-script Stop();
+				mmState = 0;
+			}
 		}
 		sleep 1000;
 	}
 }
+
 
 Create()
 {
@@ -201,15 +213,16 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 1;
 		explode rotor type BITMAPONLY | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
 		explode rotor type SHATTER | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode rotor type SHATTER | EXPLODE_ON_HIT | BITMAP1;
 	explode door1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	return (corpsetype);
 }
