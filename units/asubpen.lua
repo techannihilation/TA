@@ -63,7 +63,7 @@ return {
 			[4] = "armaak",
 			[5] = "armpincer",
 			[6] = "armcroc",
-			[7] = "armscpion.lua",
+			[7] = "armscpion",
 		},
 		customparams = {
 			buildpic = "ASUBPEN.png",
