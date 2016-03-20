@@ -5,7 +5,7 @@
 
 piece  base, flap2, flap3, flap4, flap1, topcap, glowingthing;
 
-static-var  Static_Var_1, Active, mmState;
+static-var  Active, mmState;
 
 activatescr()
 {
@@ -15,48 +15,46 @@ activatescr()
 		move flap3 to z-axis [0.000000] now;
 		move flap4 to x-axis [0.000000] now;
 		turn flap3 to z-axis <0.000000> now;
-		turn flap3 to z-axis <-69.016484> speed <261.000000>;
+		turn flap3 to z-axis <-69.340659> speed <261.664835>;
 		sleep 265;
 	}
 	if( TRUE )
 	{
-		turn flap2 to x-axis <-4.000000> speed <18.000000>;
-		turn flap4 to x-axis <-86.016484> speed <324.000000>;
+		turn flap2 to x-axis <-4.862637> speed <18.291209>;
+		turn flap4 to x-axis <-86.368132> speed <324.703297>;
 		sleep 266;
 	}
 	if( TRUE )
 	{
-		turn flap2 to z-axis <69.016484> speed <260.000000>;
+		turn flap2 to z-axis <69.340659> speed <260.681319>;
 		sleep 266;
 	}
 	if( TRUE )
 	{
-		turn flap1 to x-axis <89.016484> speed <336.000000>;
+		turn flap1 to x-axis <89.412088> speed <336.137363>;
 		sleep 266;
 	}
 	if( TRUE )
 	{
-		turn topcap to y-axis <45.010989> speed <169.000000>;
+		turn topcap to y-axis <45.010989> speed <169.208791>;
 		sleep 266;
 	}
 	if( TRUE )
 	{
-		move topcap to y-axis [-16.050000] speed [60.000000];
+		move topcap to y-axis [-16.050006] speed [60.112384];
 		sleep 267;
 	}
 	if( TRUE )
 	{
-		turn topcap to z-axis <-180.043956> speed <676.000000>;
+		turn topcap to z-axis <-180.043956> speed <676.851648>;
 		sleep 266;
 	}
 	if( TRUE )
 	{
-		move topcap to y-axis [-0.700000] speed [57.000000];
+		move topcap to y-axis [-0.700006] speed [57.706769];
 		sleep 266;
 	}
 	sleep 266;
-	return (0);
-	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
 }
 
 deactivatescr()
@@ -66,54 +64,107 @@ deactivatescr()
 		move flap2 to z-axis [0.000000] now;
 		move flap3 to z-axis [0.000000] now;
 		move flap4 to x-axis [0.000000] now;
-		move topcap to y-axis [-0.700000] now;
-		move topcap to y-axis [-16.050000] speed [57.000000];
-		turn flap1 to x-axis <89.406593> now;
-		turn flap2 to x-axis <-4.857143> now;
-		turn flap2 to z-axis <69.324176> now;
-		turn flap3 to z-axis <-69.324176> now;
-		turn flap4 to x-axis <-86.357143> now;
+		move topcap to y-axis [-0.700006] now;
+		move topcap to y-axis [-16.050006] speed [57.924530];
+		turn flap1 to x-axis <89.412088> now;
+		turn flap2 to x-axis <-4.862637> now;
+		turn flap2 to z-axis <69.340659> now;
+		turn flap3 to z-axis <-69.340659> now;
+		turn flap4 to x-axis <-86.368132> now;
 		turn topcap to y-axis <45.010989> now;
 		turn topcap to z-axis <-180.043956> now;
 		sleep 265;
 	}
 	if( TRUE )
 	{
-		turn topcap to z-axis <0.000000> speed <676.000000>;
+		turn topcap to z-axis <0.000000> speed <676.851648>;
 		sleep 266;
 	}
 	if( TRUE )
 	{
-		move topcap to y-axis [0.000000] speed [60.000000];
+		move topcap to y-axis [0.000000] speed [60.338373];
 		sleep 266;
 	}
 	if( TRUE )
 	{
-		turn topcap to y-axis <0.000000> speed <169.000000>;
+		turn topcap to y-axis <0.000000> speed <169.208791>;
 		sleep 266;
 	}
 	if( TRUE )
 	{
-		turn flap1 to x-axis <0.000000> speed <334.000000>;
+		turn flap1 to x-axis <0.000000> speed <334.879121>;
 		sleep 267;
 	}
 	if( TRUE )
 	{
-		turn flap2 to z-axis <0.000000> speed <260.000000>;
+		turn flap2 to z-axis <0.000000> speed <260.681319>;
 		sleep 266;
 	}
 	if( TRUE )
 	{
-		turn flap2 to x-axis <0.000000> speed <18.000000>;
-		turn flap4 to x-axis <0.000000> speed <324.000000>;
+		turn flap2 to x-axis <0.000000> speed <18.291209>;
+		turn flap4 to x-axis <0.000000> speed <324.703297>;
 		sleep 266;
 	}
 	if( TRUE )
 	{
-		turn flap3 to z-axis <0.000000> speed <260.000000>;
+		turn flap3 to z-axis <0.000000> speed <260.681319>;
 		sleep 266;
 	}
 	sleep 266;
+}
+
+
+Go()
+{
+	dont-cache flap1;
+	dont-cache flap2;
+	dont-cache flap3;
+	dont-cache flap4;
+	dont-cache topcap;
+	call-script activatescr();
+}
+
+Stop()
+{
+	call-script deactivatescr();
+	cache flap1;
+	cache flap2;
+	cache flap3;
+	cache flap4;
+	cache topcap;
+}
+
+MMStatus(State)
+{
+	Active = State;
+	//get PRINT(Active);
+}
+
+ImAMetalMaker()
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 150;
+	}
+	mmState = -1;
+	while( TRUE )
+	{
+		if( Active == 1 )
+		{
+			if( mmState != 1 )
+			{
+				call-script Go();
+				mmState = 1;
+			}
+		}
+		else if( mmState != 0 )
+		{
+			call-script Stop();
+			mmState = 0;
+		}
+		sleep 1000;
+	}
 }
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -122,6 +173,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	{
 		sleep 400;
 	}
+	start-script ImAMetalMaker();
 	while( TRUE )
 	{
 		healthpercent = get HEALTH;
@@ -143,68 +195,10 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-Go()
-{
-	dont-cache flap1;
-	dont-cache flap2;
-	dont-cache flap3;
-	dont-cache flap4;
-	dont-cache topcap;
-	dont-cache glowingthing;
-	call-script activatescr();
-	set ARMORED to 0;
-}
-
-Stop()
-{
-	set ARMORED to 1;
-	call-script deactivatescr();
-	cache flap1;
-	cache flap2;
-	cache flap3;
-	cache flap4;
-	cache topcap;
-	cache glowingthing;
-}
-
-MMStatus(State)
-{
-	Active = State;
-	//get PRINT(Active);
-}
-
-ImAMetalMaker()
-{
-	while( get BUILD_PERCENT_LEFT )
-	{
-		sleep 150;
-	}
-	mmState = -1;
-	while( TRUE )
-	{	
-		if (Active == 1)
-		{
-			if (mmState != 1) {
-				call-script Go();
-				mmState = 1;
-			}
-		}
-		else
-		{
-			if (mmState != 0) {
-				call-script Stop();
-				mmState = 0;
-			}
-		}
-		sleep 1000;
-	}
-}
-
-
 Create()
 {
 	dont-shade glowingthing;
-	cache glowingthing;
+	dont-cache glowingthing;
 	dont-shade base;
 	dont-shade flap1;
 	dont-shade flap2;
@@ -212,13 +206,6 @@ Create()
 	dont-shade flap4;
 	dont-shade topcap;
 	start-script SmokeUnit();
-	Static_Var_1 = 0;
-	while( get BUILD_PERCENT_LEFT )
-	{
-		sleep 1000;
-	}
-	start-script ImAMetalMaker();
-	set ARMORED to 1;
 }
 
 SweetSpot(piecenum)
@@ -238,7 +225,7 @@ Killed(severity, corpsetype)
 		explode flap3 type BITMAPONLY | BITMAP5;
 		explode flap4 type BITMAPONLY | BITMAP1;
 		explode topcap type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -250,7 +237,7 @@ Killed(severity, corpsetype)
 		explode flap3 type FALL | BITMAP5;
 		explode flap4 type FALL | BITMAP1;
 		explode topcap type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -262,7 +249,7 @@ Killed(severity, corpsetype)
 		explode flap3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 		explode flap4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 		explode topcap type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP1;
@@ -272,4 +259,5 @@ Killed(severity, corpsetype)
 	explode flap3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 	explode flap4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 	explode topcap type BITMAPONLY | BITMAP2;
+	return (corpsetype);
 }

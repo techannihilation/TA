@@ -3,9 +3,9 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, pipe, glow, metal, emit;
+piece  base, glow, plug;
 
-static-var  Static_Var_1, Effects, Active, mmState;
+static-var  Static_Var_1, Active, mmState;
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -37,20 +37,19 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Go()
 {
-	Effects = 1;
-	cache glow;
-	hide glow;
-	show metal;
-	dont-cache metal;
+	dont-cache glow;
+	turn plug to z-axis <0.000000> speed <50.005495>;
+	wait-for-turn plug around z-axis;
+	cache plug;
 }
 
 Stop()
 {
-	Effects = 0;
-	cache metal;
-	hide metal;
-	show glow;
-	dont-cache glow;
+	cache plug;
+	turn plug to z-axis <180.038462> speed <50.005495>;
+	wait-for-turn plug around z-axis;
+	cache plug;
+	cache glow;
 }
 
 MMStatus(State)
@@ -67,46 +66,32 @@ ImAMetalMaker()
 	}
 	mmState = -1;
 	while( TRUE )
-	{
-		if( Active == 1 )
+	{	
+		if (Active == 1)
 		{
-			if( mmState != 1 )
-			{
+			if (mmState != 1) {
 				call-script Go();
 				mmState = 1;
 			}
 		}
-		else if( mmState != 0 )
+		else
 		{
-			call-script Stop();
-			mmState = 0;
+			if (mmState != 0) {
+				call-script Stop();
+				mmState = 0;
+			}
 		}
 		sleep 1000;
 	}
 }
 
-EffectWatch()
-{
-	while(TRUE)
-	{
-		while( Effects  == 1)
-		{
-			emit-sfx 1024 + 0 from emit;
-			sleep 1600;
-		}
-	sleep 333;
-	}
-}
-
 Create()
 {
-	Effects = 0;
-	hide metal;
-	dont-shade metal;
+	dont-shade plug;
+	dont-shade glow;
 	dont-cache glow;
 	start-script SmokeUnit();
 	start-script ImAMetalMaker();
-	start-script EffectWatch();
 }
 
 SweetSpot(piecenum)
@@ -120,23 +105,29 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 1;
 		explode base type BITMAPONLY | BITMAP1;
-		explode body type SHATTER | EXPLODE_ON_HIT | BITMAP2;
+		explode glow type BITMAPONLY | BITMAP2;
+		explode plug type BITMAPONLY | BITMAP3;
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
 		explode base type BITMAPONLY | BITMAP1;
-		explode body type SHATTER | EXPLODE_ON_HIT | BITMAP2;
-		return (0);
+		explode glow type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode plug type BITMAPONLY | BITMAP3;
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
 		explode base type BITMAPONLY | BITMAP1;
-		explode body type SHATTER | EXPLODE_ON_HIT | BITMAP2;
-		return (0);
+		explode glow type SHATTER | BITMAP2;
+		explode plug type BITMAPONLY | BITMAP3;
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP1;
-	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP2;
+	explode glow type SHATTER | EXPLODE_ON_HIT | BITMAP2;
+	explode plug type BITMAPONLY | BITMAP3;
+	return (corpsetype);
 }

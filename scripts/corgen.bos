@@ -5,7 +5,7 @@
 
 piece  base, body, towers, holo, lights, metal, emit;
 
-static-var  Static_Var_1, Effects;
+static-var  mmState, Active, Effects;
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -35,7 +35,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-go()
+Go()
 {
 	Effects = 1;
 	cache lights;
@@ -44,7 +44,7 @@ go()
 	dont-cache metal;
 }
 
-stop()
+Stop()
 {
 	Effects = 0;
 	cache metal;
@@ -53,27 +53,34 @@ stop()
 	dont-cache lights;
 }
 
+MMStatus(State)
+{
+	Active = State;
+	//get PRINT(Active);
+}
+
 ImAMetalMaker()
 {
 	while( get BUILD_PERCENT_LEFT )
 	{
 		sleep 150;
 	}
-	Static_Var_1 = -1;
+	mmState = -1;
 	while( TRUE )
-	{
-		if( get UNKNOWN_UNIT_VALUE(1024) == 1 )
+	{	
+		if (Active == 1)
 		{
-			if( Static_Var_1 != 1 )
-			{
-				call-script go();
-				Static_Var_1 = 1;
+			if (mmState != 1) {
+				call-script Go();
+				mmState = 1;
 			}
 		}
-		else if( Static_Var_1 != 0 )
+		else
 		{
-			call-script stop();
-			Static_Var_1 = 0;
+			if (mmState != 0) {
+				call-script Stop();
+				mmState = 0;
+			}
 		}
 		sleep 1000;
 	}

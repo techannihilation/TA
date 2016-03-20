@@ -5,9 +5,7 @@
 
 piece  base2, lid2, lid3, mmakercore, lid1, lid4, glowingthing;
 
-static-var  Static_Var_1;
-
-#define WHAT_DO 1024
+static-var  Static_Var_1, Active;
 
 activatescr()
 {
@@ -125,6 +123,12 @@ Stop()
 	cache glowingthing;
 }
 
+MMStatus(State)
+{
+	Active = State;
+	//get PRINT(Active);
+}
+
 static-var  mmState;
 ImAMetalMaker()
 {
@@ -134,8 +138,8 @@ ImAMetalMaker()
 	}
 	mmState = -1;
 	while( TRUE )
-	{
-		if ((get WHAT_DO) == 1)
+	{	
+		if (Active == 1)
 		{
 			if (mmState != 1) {
 				call-script Go();

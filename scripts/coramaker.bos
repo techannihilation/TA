@@ -6,7 +6,7 @@
 piece  base, lift, con2, con1, maker, shell2, shell1, con3,
        con4, emit_maker;
 
-static-var  Static_Var_2, Effects;
+static-var  Effects, Active, mmState;
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -84,27 +84,33 @@ Stop()
 	}
 }
 
+MMStatus(State)
+{
+	Active = State;
+	//get PRINT(Active);
+}
+
 ImAMetalMaker()
 {
 	while( get BUILD_PERCENT_LEFT )
 	{
 		sleep 150;
 	}
-	Static_Var_2 = -1;
+	mmState = -1;
 	while( TRUE )
 	{
-		if( get UNKNOWN_UNIT_VALUE(1024) == 1 )
+		if( Active == 1 )
 		{
-			if( Static_Var_2 != 1 )
+			if( mmState != 1 )
 			{
 				call-script Go();
-				Static_Var_2 = 1;
+				mmState = 1;
 			}
 		}
-		else if( Static_Var_2 != 0 )
+		else if( mmState != 0 )
 		{
 			call-script Stop();
-			Static_Var_2 = 0;
+			mmState = 0;
 		}
 		sleep 1000;
 	}
