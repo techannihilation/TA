@@ -1,0 +1,125 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  bottomCover, bottomBody, topCover, outerPistle, insides, innerPistle, pistleCover, topBody;
+
+static-var  mmState, Active;
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 500;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 258;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 257;
+			}
+			emit-sfx smoketype from bottomBody;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+MMStatus(State)
+{
+	Active = State;
+	//get PRINT(Active);
+}
+
+ImAMetalMaker()
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 150;
+	}
+	mmState = -1;
+	while( TRUE )
+	{
+		if (Active == 1)
+		{
+			if (mmState != 1) {
+				move  innerPistle to  y-axis [14.000000] speed [60.000000];
+				sleep 500;
+
+				move outerPistle to y-axis [14.000000] speed [60.000000];
+				sleep 500;
+
+				move bottomCover to y-axis [12.000000] speed [50.000000];
+				move topCover to y-axis [12.000000] speed [50.000000];
+				move topBody to y-axis [12.000000] speed [50.000000];
+				move insides to y-axis [12.000000] speed [50.000000];
+				move pistleCover to y-axis [12.000000] speed [50.000000];
+				sleep 500;
+				
+				move bottomCover to y-axis [6.000000] speed [60.000000];
+				move topCover to y-axis [19.000000] speed [30.000000];
+				move innerPistle to y-axis [14.000000] speed [60.000000];
+				move outerPistle to y-axis [14.000000] speed [60.000000];
+				sleep 500;
+			
+				mmState = 1;
+			}
+		}
+		else
+		{
+			if (mmState != 0) {
+				move bottomCover to y-axis [0.000000] speed [60.000000];
+				move topCover to y-axis [0.000000] speed [30.000000];
+				move innerPistle to y-axis [0.000000] speed [60.000000];
+				move outerPistle to y-axis [0.000000] speed [60.000000];
+				sleep 500;
+				
+				move bottomCover to y-axis [0.000000] speed [50.000000];
+				move topCover to y-axis [0.000000] speed [50.000000];
+				move topBody to y-axis [0.000000] speed [50.000000];
+				move insides to y-axis [0.000000] speed [50.000000];
+				move pistleCover to y-axis [0.000000] speed [50.000000];
+				sleep 500;
+			
+				move outerPistle to y-axis [0.000000] speed [60.000000];
+				sleep 500;
+			
+				move  innerPistle to  y-axis [0.000000] speed [60.000000];
+				sleep 500;
+				
+				mmState = 0;
+			}
+		}
+		sleep 1000;
+	}
+}
+
+Create()
+{
+	start-script SmokeUnit();
+	start-script ImAMetalMaker();
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = bottomBody;
+}
+
+Killed(severity, corpsetype)
+{
+	corpsetype = 3;
+	explode bottomBody type SHATTER ;
+	explode topCover type SHATTER ;
+	explode bottomCover type SHATTER ;
+	explode topBody type SHATTER ;
+	return corpsetype;
+}

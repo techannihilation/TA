@@ -39,7 +39,6 @@ return {
 		nochasecategory = "ALL",
 		objectname = "corhmakr.s3o",
 		radaremitheight = 126,
-		script = "corhmakr.lua",
 		seismicsignature = 0,
 		selfdestructas = "ATOMIC_BLAST",
 		side = "CORE",

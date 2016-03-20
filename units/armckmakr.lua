@@ -41,7 +41,6 @@ return {
 		nochasecategory = "ALL",
 		objectname = "armckmakr",
 		radaremitheight = 31.18465,
-		script = "armckmakr.lua",
 		seismicsignature = 0,
 		selfdestructas = "ARMESTOR_BUILDING",
 		side = "ARM",

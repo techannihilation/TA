@@ -68,7 +68,6 @@ local spGetTeamResources = Spring.GetTeamResources
 local spUseTeamResource = Spring.UseTeamResource
 local spAddTeamResource = Spring.AddTeamResource
 local spGetUnitHealth = Spring.GetUnitHealth
-local spSetUnitCOBValue = Spring.SetUnitCOBValue
 local spGetUnitTeam = Spring.GetUnitTeam
 local spGetUnitDefID = Spring.GetUnitDefID
 local spAddUnitResource = Spring.AddUnitResource
@@ -122,7 +121,6 @@ local function UpdateMetalMakers(teamID, energyUse)
 					updateUnitCoversion(unitID, amount, eSteps[j])
 					
 					if (defs.status == 0) then
-						--spSetUnitCOBValue(unitID,1024,1)
 						Spring.CallCOBScript(unitID,"MMStatus",0,1)
 						defs.status = 1
 						teamActiveMM[teamID] = (teamActiveMM[teamID] + 1)
@@ -131,7 +129,6 @@ local function UpdateMetalMakers(teamID, energyUse)
 					if (teamActiveMM[teamID] == 0) then break end
 					if (defs.status == 1) then
 						updateUnitCoversion(unitID, 0, 0)
-						--spSetUnitCOBValue(unitID,1024,0)
 						Spring.CallCOBScript(unitID,"MMStatus",0,0)
 						defs.status = 0
 						teamActiveMM[teamID] = (teamActiveMM[teamID] - 1)
@@ -167,7 +164,7 @@ local function UnitTakingDamage(uID, uDefID, uTeam, notEmpDamage)
 		if notEmpDamage == true then
 		    teamMMList[uTeam][cDefs.e][uID].damaged = true
 		    --Spring.Echo(currentFrameStamp, "  Closes due to damage ", unitID)
-		    spSetUnitCOBValue(uID,1024,0)
+		    Spring.CallCOBScript(uID,"MMStatus",0,0)
 		end
         end
     end
@@ -181,8 +178,8 @@ local function UnitDamageOver(uID, uDefID, uTeam, notEmpDamage)
 			AdjustTeamCapacity(uTeam, cDefs.c, cDefs.e)
 			if teamMMList[uTeam][cDefs.e][uID].damaged == true then
 		    	teamMMList[uTeam][cDefs.e][uID].damaged = false
-		    	--Spring.Echo(currentFrameStamp, "  Reopened from damage ", unitID)
-		    	spSetUnitCOBValue(uID,1024,1)
+		    	--Spring.Echo(currentFrameStamp, "  Reopened from damage ", unitID)Z
+			    Spring.CallCOBScript(uID,"MMStatus",0,0)
 	        end
 		end
     end
@@ -362,7 +359,7 @@ function gadget:UnitFinished(uID, uDefID, uTeam)
 		if not teamMMList[uTeam][cDefs.e][uID].emped then
 			teamMMList[uTeam][cDefs.e][uID].status = 1
 			teamActiveMM[uTeam] = teamActiveMM[uTeam] + 1
-			spSetUnitCOBValue(uID,1024,1)
+			Spring.CallCOBScript(uID,"MMStatus",0,1)
 			AdjustTeamCapacity(uTeam, cDefs.c, cDefs.e)
 		end
     end
