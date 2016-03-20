@@ -122,7 +122,8 @@ local function UpdateMetalMakers(teamID, energyUse)
 					updateUnitCoversion(unitID, amount, eSteps[j])
 					
 					if (defs.status == 0) then
-						spSetUnitCOBValue(unitID,1024,1)
+						--spSetUnitCOBValue(unitID,1024,1)
+						Spring.CallCOBScript(unitID,"MMStatus",0,1)
 						defs.status = 1
 						teamActiveMM[teamID] = (teamActiveMM[teamID] + 1)
 					end
@@ -130,7 +131,8 @@ local function UpdateMetalMakers(teamID, energyUse)
 					if (teamActiveMM[teamID] == 0) then break end
 					if (defs.status == 1) then
 						updateUnitCoversion(unitID, 0, 0)
-						spSetUnitCOBValue(unitID,1024,0)
+						--spSetUnitCOBValue(unitID,1024,0)
+						Spring.CallCOBScript(unitID,"MMStatus",0,0)
 						defs.status = 0
 						teamActiveMM[teamID] = (teamActiveMM[teamID] - 1)
 					end
