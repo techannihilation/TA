@@ -52,7 +52,7 @@ return {
 		selfdestructas = "CRBLMSSL",
 		selfdestructcountdown = 10,
 		side = "ARM",
-		sightdistance = 1024,
+		sightdistance = 700,
 		sonardistance = 0,
 		standingfireorder = 2,
 		standingmoveorder = 1,
