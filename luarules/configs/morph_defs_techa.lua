@@ -786,6 +786,45 @@ local morphDefs = {
 		time = 80,
 		xp = 0.90,
 	},
+	arm_immolator  = {
+		into = 'armbrtha',
+		time = 30,
+		xp = 0.20,
+	},
+	core_immolator  = {
+		into = 'corint',
+		time = 30,
+		xp = 0.20,
+	},
+	armmav = {
+		into = 'armraz',
+		time = 60,
+		xp = 2.00,
+	},
+	corgarp = {
+	{
+		into = 'corseal',
+        	time = 30,
+		xp = 0.25,
+	},
+	{
+		into = 'corparrow',
+        	time = 60,
+		xp = 0.50,
+	},
+	},
+	armpincer = {
+		into = 'armcroc',
+        	time = 30,
+		xp = 0.30,
+	},
+	armcroc = {
+		into = 'armscpion',
+        	time = 60,
+		xp = 0.20,
+	},
+
+
 }
 
 
