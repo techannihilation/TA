@@ -197,6 +197,7 @@ return {
 			},
 			[3] = {
 				def = "TAWF_BANISHER2",
+				onlytargetcategory = "NOTVTOL",
 			},
 		},
 	},
