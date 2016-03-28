@@ -69,7 +69,7 @@ return {
 				height = 40,
 				hitdensity = 100,
 				metal = 720,
-				object = "TLLPCAN_DEAD",
+				object = "ARMPCAN_DEAD",
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",
 				world = "All Worlds",
