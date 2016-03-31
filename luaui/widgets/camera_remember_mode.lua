@@ -21,6 +21,9 @@ end
 
 function widget:SetConfigData(data)
     camName = data and data.name or defaultCamName
+    if camName == 'ov' then
+    	camName = defaultCamName
+    end
 end
 
 function widget:Initialize()
