@@ -1,11 +1,11 @@
 return {
 	tllabomber = {
-		acceleration = 0.01079,
+		acceleration = 0.01790,
 		altfromsealevel = 1,
 		attackrunlength = 220,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.004,
+		brakerate = 0.030,
 		buildcostenergy = 4752,
 		buildcostmetal = 299,
 		builder = false,
