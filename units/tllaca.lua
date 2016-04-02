@@ -1,6 +1,6 @@
 return {
 	tllaca = {
-		acceleration = 0.035,
+		acceleration = 0.075,
 		bankscale = 1.5,
 		bmcode = 1,
 		brakerate = 0.35,

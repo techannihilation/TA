@@ -1,10 +1,10 @@
 return {
 	tllfight = {
-		acceleration = 0.16173,
+		acceleration = 0.76173,
 		airsightdistance = 700,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.04,
+		brakerate = 0.08,
 		buildcostenergy = 900,
 		buildcostmetal = 175,
 		buildtime = 6000,
@@ -52,7 +52,7 @@ return {
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 6.072,
-		turnrate = 750,
+		turnrate = 850,
 		unitname = "tllfight",
 		unitnumber = 917,
 		upright = true,

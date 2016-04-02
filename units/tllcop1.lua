@@ -53,7 +53,7 @@ return {
 		steeringmode = 1,
 		turninplaceanglelimit = 360,
 		turninplacespeedlimit = 4.158,
-		turnrate = 372,
+		turnrate = 900,
 		unitname = "tllcop1",
 		unitnumber = 21101,
 		workertime = 0,
