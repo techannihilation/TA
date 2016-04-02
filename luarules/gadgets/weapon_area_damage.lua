@@ -43,7 +43,7 @@ function gadget:Explosion(weaponID, px, py, pz, ownerID)
 			teamID=SpGetUnitTeam(ownerID),
 			allyID=SpGetUnitAllyTeam(ownerID),
 			allyScale=weaponInfo[weaponID].allyScale or 1.0,
-			teamScale=weaponInfo[weaponID].teamScale or 1.0
+			teamScale=teamScale or 1.0
 		}
 		table.insert(explosionList,w)
 	end
@@ -63,20 +63,15 @@ function gadget:GameFrame(f)
 					local damage = w.damage
 					local allyScale = w.allyScale
 					local teamScale = w.teamScale
-					Spring.Echo(w.teamScale)
 					if w.rangeFall ~= 0 then
 						damage = damage - damage*w.rangeFall*sqrt((ux-w.pos.x)^2 + (uy-w.pos.y)^2 + (uz-w.pos.z)^2)/w.radius
 					end
-					Spring.Echo("start Damage",damage)
 					-- Scale team and allyteam damage
 					if (SpGetUnitTeam(u) == SpGetUnitTeam(w.owner)) then
 				   		damage = damage * teamScale
-				   		Spring.Echo("team")
 					elseif (SpGetUnitAllyTeam(u) == w.allyID) then
 				   		damage = damage * allyScale
-				   		Spring.Echo("ally")
 					end
-					Spring.Echo("end damage",damage)
 					-- Avoid damage to self altogether
 					if (u ~= nil and w.owner ~= nil and u ~= w.owner) then
 					   SpAddUnitDamage(u, damage, 0, w.owner, w.id, 0, 0, 0)
