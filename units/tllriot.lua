@@ -139,7 +139,7 @@ return {
 				tolerance = 2000,
 				turret = true,
 				weapontype = "Cannon",
-				weaponvelocity = 150,
+				weaponvelocity = 450,
 				damage = {
 					commanders = 40,
 					default = 80,
