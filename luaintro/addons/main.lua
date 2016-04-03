@@ -2,7 +2,7 @@
 if addon.InGetInfo then
 	return {
 		name    = "Main",
-		desc    = "displays a simplae loadbar",
+		desc    = "displays a simple loadbar",
 		author  = "jK",
 		date    = "2012,2013",
 		license = "GPL2",
@@ -15,7 +15,40 @@ end
 ------------------------------------------
 
 local lastLoadMessage = ""
+local infoMessage = {}
 
+if Spring.GetModOptions() then 
+	if Spring.GetModOptions().deathmode then
+		if Spring.GetModOptions().deathmode == "com" then
+    		message = "Game Objective Destory All Enemy Commanders To Win"
+  		elseif Spring.GetModOptions().deathmode == "killall" then
+	    	message = "Game Objective Destory All Enemy Units To Win"
+  		elseif Spring.GetModOptions().deathmode == "neverend" then
+			message = "No Game Objective The Game Never Ends"
+		end
+	table.insert(infoMessage, message)
+	end
+	if Spring.GetModOptions().startenergy ~= nil then
+  		startenergy = tostring(Spring.GetModOptions().startenergy)
+	end
+	if Spring.GetModOptions().startmetal ~= nil then
+  		startmetal = tostring(Spring.GetModOptions().startmetal)
+  	end
+  	if (startenergy and startenergy ~= "1000") or (startmetal and startmetal ~= "1000") then
+  		message = "Each Player will start with "..startmetal.." Metal and "..startenergy.." Energy Units"
+  		table.insert(infoMessage, message)
+  	end
+  	if Spring.GetModOptions().mo_greenfields == "1" then
+    	message = "Metal Extractors Disabled"
+    	table.insert(infoMessage, message)
+	end
+	if Spring.GetModOptions().mo_terraforming == "1" then
+  		message = "Terraforming Enabled"
+  		table.insert(infoMessage, message)
+	end
+end
+
+--Spring.Echo ("Message length == ",#infoMessage)
 function addon.LoadProgress(message, replaceLastLine)
 	lastLoadMessage = message
 end
@@ -23,13 +56,14 @@ end
 ------------------------------------------
 
 local font = gl.LoadFont("FreeSansBold.otf", 50, 20, 1.95)
+local font2 = gl.LoadFont("luaui/fonts/instruction_bold.ttf", 60, 8, 3)
+
 
 function addon.DrawLoadScreen()
 	local loadProgress = SG.GetLoadProgress()
 
 	local vsx, vsy = gl.GetViewSizes()
-
-
+	local xDiv, yDiv, texy, ar = SG.GetDiv()
 	
 	-- draw progressbar
 	local hbw = 3.5/vsx
@@ -165,8 +199,17 @@ function addon.DrawLoadScreen()
 	-- progressbar text
 	gl.PushMatrix()
 	gl.Scale(1/vsx,1/vsy,1)
-		local barTextSize = vsy * (0.05 - 0.015)
-
+		local barTextSize = vsy * (0.07 - 0.015)
+		local tipTextSize = vsy * (0.08 - 0.005)
+		
+		local posy = 0.5 * (vsy-vsx/ar)
+		
+		local y0 = vsy * 0.222 + posy -- vsy-texy > 300 and vsy-texy or vsy * 0.25
+		local y1 = y0 + vsy * 0.3
+		local dy = 4
+		
+		--Spring.Echo("XY:",yDiv,vsy * 0.2,yDiv > 0.1,y0,y1,yDiv*vsy,vsx/ar,posy)
+		
 		--font:Print(lastLoadMessage, vsx * 0.5, vsy * 0.3, 50, "sc")
 		--font:Print(Game.gameName, vsx * 0.5, vsy * 0.95, vsy * 0.07, "sca")
 		font:Print(lastLoadMessage, vsx * 0.2, vsy * 0.14, barTextSize, "sa")
@@ -175,6 +218,33 @@ function addon.DrawLoadScreen()
 		else
 			font:Print("Loading...", vsx * 0.5, vsy * 0.165, barTextSize, "oc")
 		end
+
+		--Spring.Echo("XY:",vsx,vsy)
+		--Pre Game Info
+		gl.Color(0.0,0.0,0.0,0.6)
+		
+		gl.Rect(0,y0+dy,4*vsx,y1-dy)
+		
+		gl.Color(0,0,0,0.1)
+		gl.Rect(0,y1-dy,4*vsx,y1)
+		gl.Rect(0,y0,4*vsx,y0+dy)
+		
+		gl.Color(1,1,1,0.5)
+		gl.Rect(0,y1+1,4*vsx,y1+dy)
+		gl.Rect(0,y0-dy,4*vsx,y0)
+		
+		gl.Color(1,1,1,1)
+		
+		font2:Begin()
+		font2:SetTextColor({1, 1, 1, 0.9 })
+		--Spring.Echo("infoMessage:",#infoMessage)
+		local y2 = #infoMessage == 1 and y1 - vsy * 0.05 or y1 - vsy * 0.02
+		local ls = vsy * 0.07
+		for line, text in pairs(infoMessage) do
+			font2:Print(text,vsx * 0.2,y2 - (line - 0.65 ) * ls ,tipTextSize,'vo')
+		end
+		font2:End()
+		
 	gl.PopMatrix()
 	
 	gl.PopMatrix()
