@@ -11,8 +11,8 @@ local modrules  = {
   },
 
   construction = {
-    constructionDecay      = false; -- defaults to true
-  },
+    constructionDecay = (Spring.GetModOptions() and (Spring.GetModOptions().mo_terraforming == "0") and 1) or 0,
+      },
   
   reclaim = {
     multiReclaim  = 1,
