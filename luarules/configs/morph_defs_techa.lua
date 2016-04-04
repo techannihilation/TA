@@ -18,39 +18,39 @@ local morphDefs = {				--beginig of morphDefs
 local devolution = (-1 > 0)
 
 local morphDefs = {
-      armcom = {
-	{
-		into = 'armcom4',
-		time = 30,
+    armcom = {
+		{
+			into = 'armcom4',
+			time = 30,
 		
-		--metal = 0,
-		--energy = 0,
-		--Free For Xmas
+			--metal = 0,
+			--energy = 0,
+			--Free For Xmas
 		
-		metal = 1350,
-		energy = 12000,
+			metal = 1350,
+			energy = 12000,
+		},
+		{
+			into = 'armcom1',
+			time = 30,
+		
+			--metal = 0,
+			--energy = 0,
+			--Free For Xmas
+		
+			metal = 1100,
+			energy = 24500,
+		},
 	},
-	{
-		into = 'armcom1',
-		time = 30,
-		
-		--metal = 0,
-		--energy = 0,
-		--Free For Xmas
-		
-		metal = 1100,
-		energy = 24500,
-	},
-	},
-      armcom1 = {
+    armcom1 = {
 		into = 'armcom5',
-            time = 90,
+        time = 90,
 	},
-      armcom4 = {
+    armcom4 = {
 		into = 'armcom5',
-            time = 60,
+        time = 60,
 	},
-      armcom5 = {
+    armcom5 = {
 		into = 'armcom6',
 		time = 120,
 	},
@@ -59,46 +59,46 @@ local morphDefs = {
 		time = 180,
 	},
       corcom = {
-	{
-		into = 'corcom3',
-		time = 30,
+		{
+			into = 'corcom3',
+			time = 30,
 		
-		--metal = 0,
-		--energy = 0,
-		--Free For Xmas
+			--metal = 0,
+			--energy = 0,
+			--Free For Xmas
 		
-		metal = 1350,
-		energy = 12000,
+			metal = 1350,
+			energy = 12000,
+		},
+		{	
+			into = 'corcom1',
+			time = 30,
+		
+			--metal = 0,
+			--energy = 0,
+			--Free For Xmas
+		
+			metal = 1100,
+			energy = 24500,
+		},
 	},
-	{
-		into = 'corcom1',
-		time = 30,
-		
-		--metal = 0,
-		--energy = 0,
-		--Free For Xmas
-		
-		metal = 1100,
-		energy = 24500,
-	},
-	},
-      corcom1 = {
+    corcom1 = {
 		into = 'corcom5',
 		time = 90,
 	},
-      corcom3 = {
+    corcom3 = {
 		into = 'corcom5',
 		time = 60,
 	},
-      corcom5 = {
+    corcom5 = {
 		into = 'corcom6',
 		time = 120,
 	},
-      corcom6 = {
+    corcom6 = {
 		into = 'corcom7',
 		time = 120,
 	},
-      tllcom = {
+    tllcom = {
 		into = 'tllcom3',
 		time = 30,
 		
@@ -109,431 +109,426 @@ local morphDefs = {
 		metal = 1350,
 		energy = 12000,
 	},
-      tllcom3 = {
+    tllcom3 = {
 		into = 'tllcom5',
 		time = 60,
 	},
-      tllcom5 = {
+    tllcom5 = {
 		into = 'tllcom6',
 		time = 120,
 	},
-      tllcom6 = {
+    tllcom6 = {
 		into = 'tllcom7',
 		time = 180,
 	},
-      corrl = {
+    corrl = {
 		into = 'corrl1',
 		time = 10,
 		xp = 0.01,
 	},
-      armrl = {
+    armrl = {
 		into = 'armrl1',
 		time = 10,
 		xp = 0.01,
 	},
-      tlllmt = {
+    tlllmt = {
 		into = 'tlllmt1',
 		time = 10,
 		xp = 0.01,
 	},
-      armllt = {
+    armllt = {
 		into = 'armllt1',
 		time = 15,
 		metal = 65,
 		xp = 0.50,
 	},
-      corllt = {
+    corllt = {
 		into = 'corllt1',
 		time = 15,
 		metal = 70,
 		xp = 0.50,
 	},
       armhlt = {
-	{
-		into = 'armvhlt',
-		time = 20,
-		xp = 0.30,
+		{
+			into = 'armvhlt',
+			time = 20,
+			xp = 0.30,
+		},
+		{		
+			into = 'armpb',
+			time = 30,
+			xp = 0.60,
+		},
 	},
-	{
-		into = 'armpb',
-		time = 30,
-		xp = 0.60,
+    corhlt= {
+		{
+			into = 'corvhlt',
+			time = 20,
+			xp = 0.30,
+		},
+		{
+			into = 'corvipe',
+			time = 30,
+			xp = 0.60,
+		},
 	},
-	},
-      corhlt= {
-	{
-		into = 'corvhlt',
-		time = 20,
-		xp = 0.30,
-	},
-	{
-		into = 'corvipe',
-		time = 30,
-		xp = 0.60,
-	},
-	},
-      tllhlt = {
+    tllhlt = {
 		into = 'tllpulaser',
 		time = 30,
 		xp = 0.50,
 	},
-      tllweb = {
+    tllweb = {
 		into = 'tllupgweb',
 		time = 30,
 		xp = 0.50,
 	},
-      armguard= {
+    armguard= {
 		into = 'armamb',
 		time = 30,
 		xp = 0.50,
 	},
-      corpun= {
+    corpun= {
 		into = 'cortoast',
 		time = 30,
 		xp = 0.50,
 	},
-      tlllbt = {
+    tlllbt = {
 		into = 'tllplasma',
 		time = 30,
 		xp = 0.50,
 	},
-      armamd = {
+    armamd = {
 		into = 'armamd1',
 		time = 40,
 		tech=2,
 	},
-      corfmd = {
+    corfmd = {
 		into = 'corfmd1',
 		time = 40,
-		tech = 2,
+		tech=2,
 	},
-      armscab = {
+    armscab = {
 		into = 'armscab1',
 		time = 80,
 	},
-      cormabm = {
+    cormabm = {
 		into = 'cormabm1',
 		time = 80,
 	},
-      tllantinuke = {
+    tllantinuke = {
 		into = 'tllantinuke1',
 		time = 40,
-		tech = 2,
+		tech=2,
 	},
-      armanni = {
+    armanni = {
 		into = 'armanni1',
 		time = 120,
-		xp = 1.00,
+		xp = 1.07,
 	},
-      cordoom = {
+    cordoom = {
 		into = 'cordoom1',
 		time = 120,
-		xp = 1.00,
+		xp = 1.07,
 	},
-      corflak = {
+    corflak = {
 		into = 'corpre',
 		time = 120,
-		xp = 1.00,
+		xp = 1.07,
 	},
-      armflak = {
+    armflak = {
 		into = 'armhys',
 		time = 120,
-		xp = 1.00,
+		xp = 1.07,
 	},
-      tllflak = {
+    tllflak = {
 		into = 'tlldb',
 		time = 120,
-		xp = 1.00,
+		xp = 1.17,
 	},
-      armsilo = {
+    armsilo = {
 		into = 'armsilo1',
-		tech = 2,
+		tech=2,
 		time = 30,
 		xp = 0.15,
 	},
-      corsilo = {
+    corsilo = {
 		into = 'corsilo1',
-		tech = 2,
+		tech=2,
 		time = 30,
 		xp = 0.15,
 	},
-      armcir = {
+    armcir = {
 		into = 'armcir1',
 		time = 60,
 		xp = 0.05,
 	},
-      corerad = {
+    corerad = {
 		into = 'corerad1',
 		time = 60,
 		xp = 0.05,
 	},
-      armgeo = {
-      	{
+	armgeo = {
 	  	into = 'amgeo',
-	  	time = 120,
+	  	time = 60,
 	  	tech = 1,
 	},
-        {
+    amgeo = {
 		into = 'armgmm',
-		time = 120,
+		time = 180,
 		tech = 1,
 	},
-	},
-      armgmm = {
+    armgmm = {
 		into = 'armfor',
 		time = 180,
 	},
-      corgeo = {
-      	{
+    corgeo = {
 		into = 'cmgeo',
-	  	time = 120,
+	  	time = 60,
 	  	tech = 1,
 	},
-        {
+	cmgeo = {
 		into = 'corbhmth',
-	  	time = 120,
-	  	tech = 1,
+	  	time = 60,
+	  	metal = 1000,
+		energy = 2000,
 	},
-	},
-      tllgeo = {
+	tllgeo = {
 		into = 'tllmohogeo',
-	  	time = 120,
+	  	time = 60,
 	  	tech = 1,
 	},
-      armgate = {
+    armgate = {
 		into = 'armgate1',
 		time = 120,
 		tech = 2,
 	},
-      corgate = {
+    corgate = {
 		into = 'corgate1',
 		time = 120,
 		tech = 2,
 	},
-      corech3 = {
+    corech3 = {
 		into = 'corech18',
 		time = 45,
 	},
-      corech18 = {
+    corech18 = {
 		into = 'corech21',
 		time = 60,
 	},
-      corech21 = {
+    corech21 = {
 		into = 'CCovertOpsCentre',
 		time = 240,
 	},
-      armrech3 = {
+    armrech3 = {
 		into = 'armrech18',
 		time = 45,
 	},
-      armrech18 = {
+    armrech18 = {
 		into = 'armrech21',
 		time = 60,
 	},
-      armrech21 = {
+    armrech21 = {
 		into = 'ACovertOpsCentre',
 		time = 240,
 	},
-      armvulc = {
+    armvulc = {
 		into = 'armvulc2',
 		time = 30,
 		xp = 0.14,
 	},
-      corbuzz = {
+    corbuzz = {
 		into = 'corbuzz2',
 		time = 30,
 		xp = 0.14,
 	},
-      armbrtha = {
+    armbrtha = {
 		into = 'armbrtha1',
 		time = 30,
 		xp = 0.50,
 	},
-      corint= {
+    corint= {
 		into = 'corint1',
 		time = 30,
 		xp = 0.50,
 	},
-      corbhmth = {
-       {
+    corbhmth = {
 		into = 'corbhmth1',
 		time = 110,
 		xp = 0.30,
-	},
-      armpw = {
+  	},
+    armpw = {
 		into = 'armpw1',
 		time = 10,
 		xp = 0.01,
 	},
-      armrock = {
-              {
-		into = 'armrock1',
-		time = 10,
-		xp = 0.05,
-	},
-	{
-		into = 'armfark',
-		time = 60,
-		xp = 1.10,
-	},
-	{
-		into = 'armsptk',
-		time = 30,
-		xp = 0.60,
-		energy = 3000,
-	},
+    armrock = {
+        {
+			into = 'armrock1',
+			time = 10,
+			xp = 0.05,
+		},
+		{
+			into = 'armfark',
+			time = 60,
+			xp = 1.10,
+		},
+		{
+			into = 'armsptk',
+			time = 30,
+			xp = 0.60,
+			energy = 3000,
+		},
     },
-      armham = {
-	{
-		into = 'armham1',
-		time = 10,
-		xp = 0.05,
+    armham = {
+		{
+			into = 'armham1',
+			time = 10,
+			xp = 0.05,
+		},
+		{
+			into = 'armfido',
+			time = 30,
+			xp = 0.6,
+		},
 	},
-	{
-		into = 'armfido',
-		time = 30,
-		xp = 0.6,
-	},
-	},
-      corak = {
+    corak = {
 		into = 'corak1',
 		time = 10,
 		xp = 0.01,
 	},
-      corstorm = {
-               {
-		into = 'corstorm1',
-		time = 10,
-		xp = 0.05,
-	},
-    {
-		into = 'cortermite',
-		time = 30,
-		xp = 0.60,
-		energy = 3000,
-	},
+    corstorm = {
+        {
+			into = 'corstorm1',
+			time = 10,
+			xp = 0.05,
+		},
+    	{
+			into = 'cortermite',
+			time = 30,
+			xp = 0.60,
+			energy = 3000,
+		},
     },
-      corthud = {
-	{
-		into = 'corthud1',
-		time = 10,
-		xp = 0.05,
+    corthud = {
+		{
+			into = 'corthud1',
+			time = 10,
+			xp = 0.05,
+		},
+		{
+			into = 'cormort',
+			time = 30,
+			xp = 0.60,
+		},
 	},
-	{
-		into = 'cormort',
-		time = 30,
-		xp = 0.60,
-	},
-	},
-      armflash = {
+    armflash = {
 		into = 'armflash1',
 		time = 10,
 		xp = 0.05
 	},
-      armstump = {
-	{
-		into = 'armstump1',
-		time = 15,
-		xp = 0.10,
-
+    armstump = {
+		{
+			into = 'armstump1',
+			time = 15,
+			xp = 0.10,
+		},
+		{
+			into = 'armbull',
+			time = 30,
+			xp = 0.60,
+			energy = 2000,
+		},
 	},
-	{
-		into = 'armbull',
-		time = 30,
-		xp = 0.60,
-		energy = 2000,
+    tawf013 = {
+		{
+			into = 'tawf0131',
+			time = 10,
+			xp = 0.05,
+		},
+		{
+			into = 'armmart',
+			time = 30,
+			xp = 0.60,
+		},
 	},
-	},
-      tawf013 = {
-	{
-		into = 'tawf0131',
-		time = 10,
-		xp = 0.05,
-	},
-	{
-		into = 'armmart',
-		time = 30,
-		xp = 0.60,
-	},
-	},
-      armjanus = {
+    armjanus = {
 		into = 'armjanus1',
 		time = 10,
 		xp = 0.10,
 	},	
-      armsam = {
-             {
-		into = 'armsam1',
-		time = 10,
-		xp = 0.05,
+    armsam = {
+        {
+			into = 'armsam1',
+			time = 10,
+			xp = 0.05,
 		},
 		{
-		into = 'armhorg',
-		time = 60,
-		xp = 0.75,
-		energy = 2500,
+			into = 'armhorg',
+			time = 60,
+			xp = 0.75,
+			energy = 2500,
 		},
     },
-      corgator = {
+    corgator = {
 		into = 'corgator1',
 		time = 10,
 		xp = 0.05
 	},
-      corlevlr = {
-	{
-		into = 'corlevlr1',
-		time = 10,
-		xp = 0.10,
-	},
-	{
-		into = 'corgfbt',
-		time = 30,
-		xp = 0.60,
-		energy = 2000,
-	},
-	},
-      corraid = {
-	{
-		into = 'corraid1',
-		time = 15,
-		xp = 0.10,
-	},
-	{
-		into = 'correap',
-		time = 30,
-		xp = 0.60,
-		energy = 2000,
-	},
-	},
-      corwolv = {
+    corlevlr = {
 		{
-		into = 'corwolv1',
-		time = 10,
-		xp = 0.05,
+			into = 'corlevlr1',
+			time = 10,
+			xp = 0.10,
 		},
 		{
-		into = 'cormart',
-		time = 30,
-		xp = 0.60,
-		},
-		{
-		into = 'trem',
-		time = 60,
-		xp = 0.75,
-		energy = 2500,
+			into = 'corgfbt',
+			time = 30,
+			xp = 0.60,
+			energy = 2000,
 		},
 	},
-      cormist = {
+    corraid = {
 		{
-		into = 'cormist1',
-		time = 10,
-		xp = 0.05,
+			into = 'corraid1',
+			time = 15,
+			xp = 0.10,
 		},
 		{
-		into = 'tawf114',
-		time = 30,
-		xp = 0.75,
-		energy = 2500,
+			into = 'correap',
+			time = 30,
+			xp = 0.60,
+			energy = 2000,
+		},
+	},
+    corwolv = {
+		{
+			into = 'corwolv1',
+			time = 10,
+			xp = 0.05,
+		},
+		{
+			into = 'cormart',
+			time = 30,
+			xp = 0.60,
+		},
+		{
+			into = 'trem',
+			time = 60,
+			xp = 0.75,
+			energy = 2500,
+		},
+	},
+    cormist = {
+		{
+			into = 'cormist1',
+			time = 10,
+			xp = 0.05,
+		},
+		{
+			into = 'tawf114',
+			time = 30,
+			xp = 0.75,
+			energy = 2500,
 		},
 	},
 	armjeth = {
@@ -552,291 +547,235 @@ local morphDefs = {
 		xp = 0.50,
 		energy = 2000,
 	},
-        armmerl = {
+    armmerl = {
 		into = 'armmlrs',
+		tech = 3,
 		time = 120,
 		xp = 0.60,
 		metal = 3000,
 		energy = 20000,
 	},
-       corhrk = {
+    corhrk = {
 		into = 'corhowie',
+		tech = 2,
 		time = 120,
 		xp = 0.60,
 		metal = 3000,
 		energy = 20000,
 	},
-        cormart = {
+    cormart = {
 		into = 'clb',
 		time = 120,
 		xp = 0.60,
 		metal = 1500,
 		energy = 10000,
 	},
-        armmart = {
+    armmart = {
 		into = 'avtr',
 		time = 120,
 		xp = 0.60,
 		metal = 1500,
 		energy = 10000,
 	},
-      corgol = {
+    corgol = {
 		into = 'corgol1',
 		time = 60,
 		xp = 0.20,
 	},
-      corsumo = {
+    corsumo = {
 		into = 'corsumo1',
 		time = 60,
 		xp = 0.20,
 	},
-      armzeus = {
+    armzeus = {
 		into = 'armzeus1',
 		time = 20,
 		xp = 0.10,
 	},
-      armfboy = {
+    armfboy = {
 		into = 'armfboy1',
 		time = 60,
 		xp = 0.20,
 	},
-      armshock1 = {
+    armshock1 = {
 		into = 'armshock',
 		time = 150,
 		xp = 0.70,
 	},
-      armraven1 = {
+    armraven1 = {
 		into = 'armraven',
 		time = 150,
 		xp = 0.70,
 	},
-      armnanotc = {
-		 
+    armnanotc = {	 
 		into = 'armnanotc1',
 		time = 30,
 		tech = 1,
 		metal = 380,
 		energy = 11000,
 	},
-      armnanotc1 = {
+    armnanotc1 = {
 		into = 'armnanotc2',
 		tech = 2,
 		time = 60,
 		metal = 1320,
 		energy = 43000,
 	},
-      armnanotc2 = {
+    armnanotc2 = {
 		into = 'armnanotc3',
 		tech = 3,
 		time = 120,
 		metal = 3520,
 		energy = 99000,
 	},
-      armfnanotc = {
+    armfnanotc = {
 		into = 'armfnanotc1',
 		time = 30,
 		tech = 1,
 		metal = 380,
 		energy = 11000,
 	},
-      armfnanotc1 = {
+    armfnanotc1 = {
 		into = 'armfnanotc2',
 		tech = 2,
 		time = 60,
 		metal = 1320,
 		energy = 43000,
 	},
-      armfnanotc2 = {
+    armfnanotc2 = {
 		into = 'armfnanotc3',
 		tech = 3,
 		time = 120,
 		metal = 3520,
 		energy = 99000,
 	},
-      cornanotc = {
+    cornanotc = {
 		into = 'cornanotc1',
 		tech = 1,
 		time = 30,
 		metal = 680,
 		energy = 11000,
 	},
-      cornanotc1 = {
+    cornanotc1 = {
 		into = 'cornanotc2',
 		tech = 2,
 		time = 60,
 		metal = 1320,
 		energy = 43000,
 	},
-      cornanotc2 = {
+    cornanotc2 = {
 		into = 'cornanotc3',
 		tech = 3,
 		time = 120,
 		metal = 3520,
 		energy = 99000,
 	},
-      corfnanotc = {
+    corfnanotc = {
 		into = 'corfnanotc1',
 		tech = 1,
 		time = 30,
 		metal = 680,
 		energy = 11000,
 	},
-      corfnanotc1 = {
+    corfnanotc1 = {
 		into = 'corfnanotc2',
 		tech = 2,
 		time = 60,
 		metal = 1320,
 		energy = 43000,
 	},
-      corfnanotc2 = {
+    corfnanotc2 = {
 		into = 'corfnanotc3',
 		tech = 3,
 		time = 120,
 		metal = 3520,
 		energy = 99000,
-      },
-      tllnanotc = {
+    },
+    tllnanotc = {
 		into = 'tllnanotc1',
 		tech = 1,
 		time = 30,
 		metal = 800,
 		energy = 13000,
 	},
-      tllnanotc1 = {
+    tllnanotc1 = {
 		into = 'tllnanotc2',
 		tech = 2,
 		time = 60,
 		metal = 2700,
 		energy = 33000,
 	},
-      tllfnanotc = {
+    tllfnanotc = {
 		into = 'tllfnanotc1',
 		tech = 1,
 		time = 30,
 		metal = 800,
 		energy = 13000,
 	},
-      tllfnanotc1 = {
+    tllfnanotc1 = {
 		into = 'tllfnanotc2',
 		tech = 2,
 		time = 60,
 		metal = 2700,
 		energy = 33000,
 	},
-      corpyro = {
+  	corpyro = {
 		into = 'corpyrox',
 		time = 20,
 		xp = 0.45,
 	},
-      corpyrox = {
+    corpyrox = {
 		into = 'corpyrox1',
 		time = 30,
 		xp = 0.15,
 	},
-      corpyrox1 = {
+	corpyrox1 = {
 		into = 'cordem',
+		tech = 2,
 		time = 60,
 		xp = 0.60,
 	},
-      armamph = {
+    armamph = {
 		into = 'marauder',
 		time = 60,
 		xp = 0.5,
 	},
-      armanac = {
+    armanac = {
 		into = 'armhplasma',
 		time = 30,
 		xp = 0.5,
 	},
-      corsnap = {
+    corsnap = {
 		into = 'nsacbehe',
 		time = 60,
 		xp = 0.75,
 	},
-      armbull = {
+    armbull = {
 		into = 'armbull2',
 		time = 60,
 		xp = 0.2,
 	},
-      ahermes = {
+    ahermes = {
 		into = 'armyork',
 		time = 30,
 		xp = 0.2,
 	},
-      corjeag = {
-     		into = 'corsent',
+    corjeag = {
+     	into = 'corsent',
 		time = 30,
 		xp = 0.2,
 	},
-      krogtaar = {
-        	into = 'corkrog',
-		time = 120,
+	krogtaar = {
+        into = 'corkrog',
+		time = 30,
 		xp = 0.60,
 	},
-      corkrog = {
-        	into = 'corkrog1',
-        	time = 240,
-		xp = 1.00,
+	corkrog = {
+        into = 'corkrog1',
+        tech = 2,
+		time = 80,
+		xp = 0.90,
 	},
-      armbanth = {
-        	into = 'armbanth1',
-        	time = 240,
-		xp = 1.00,
-	},
-      akmech = {
-        	into = 'armorco',
-        	time = 120,
-		xp = 0.60,
-	},
-	arm_immolator  = {
-		into = 'armbrtha',
-		time = 30,
-		xp = 0.20,
-	},
-	core_immolator  = {
-		into = 'corint',
-		time = 30,
-		xp = 0.20,
-	},
-	armmav = {
-		into = 'armraz',
-		time = 60,
-		xp = 2.00,
-	},
-	corgarp = {
-	{
-		into = 'corseal',
-        	time = 30,
-		xp = 0.25,
-	},
-	{
-		into = 'corparrow',
-        	time = 60,
-		xp = 0.50,
-	},
-	},
-	armpincer = {
-		into = 'armcroc',
-        	time = 30,
-		xp = 0.30,
-	},
-	armcroc = {
-		into = 'armscpion',
-        	time = 60,
-		xp = 0.20,
-	},
-	armraz  = {
-		into = 'armraz1',
-        	time = 120,
-		xp = 1.00,
-	},
-	corkarg = {
-		into = 'corkarg1',
-        	time = 120,
-		xp = 1.00,
-	},
-
-
 }
 
 
