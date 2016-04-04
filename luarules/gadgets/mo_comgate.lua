@@ -95,7 +95,7 @@ end
 
 --unsynced
 else
-
+--[[
 local myPlayerID = Spring.GetMyPlayerID()
 local _,_,spec,_ = Spring.GetPlayerInfo(myPlayerID) 
 local vsx,vsy = Spring.GetViewGeometry()
@@ -105,7 +105,6 @@ local tackyfont = gl.LoadFont("luarules/fonts/LCD2U___.TTF",72, 1.9, 40)
 local msg = ""
 local colorString = "\255\255\255\255"
 local colorString2 = "\255\100\001\001"
-
 
 function gadget:DrawScreen()
     if not spec then 
@@ -140,5 +139,5 @@ function gadget:Initialize()
 		tackyfont:End()
 	end)
 end
-
+--]]
 end

@@ -39,11 +39,19 @@ if Spring.GetModOptions() then
   		table.insert(infoMessage, message)
   	end
   	if Spring.GetModOptions().mo_greenfields == "1" then
-    	message = "Metal Extractors Disabled"
+    	message = "Metal Extraction Disabled"
     	table.insert(infoMessage, message)
 	end
 	if Spring.GetModOptions().mo_terraforming == "1" then
-  		message = "Terraforming Enabled"
+  		message = "Advanced Planetary Terraforming Enabled"
+  		table.insert(infoMessage, message)
+	end
+	if Spring.GetModOptions().disablemapdamage == "1" then
+  		message = "Weapon Deformation Dampeners Enabled"
+  		table.insert(infoMessage, message)
+	end
+	if Spring.GetModOptions().mo_comgate == "1" then
+  		message = "Trans-Dimensional Wormhole Teleport Beam Active"
   		table.insert(infoMessage, message)
 	end
 end
@@ -221,6 +229,7 @@ function addon.DrawLoadScreen()
 
 		--Spring.Echo("XY:",vsx,vsy)
 		--Pre Game Info
+		--Todo Scale bar to depening on massage count
 		gl.Color(0.0,0.0,0.0,0.6)
 		
 		gl.Rect(0,y0+dy,4*vsx,y1-dy)
