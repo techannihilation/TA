@@ -262,6 +262,7 @@ return {
 			},
 			[3] = {
 				def = "IRRITATOR_ROCKET",
+				onlytargetcategory = "NOTVTOL",
 			},
 			[4] = {
 				def = "Irritator_Shield",
