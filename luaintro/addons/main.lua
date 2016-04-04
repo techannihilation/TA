@@ -50,8 +50,8 @@ if Spring.GetModOptions() then
   		message = "Weapon Deformation Dampeners Enabled"
   		table.insert(infoMessage, message)
 	end
-	if Spring.GetModOptions().mo_comgate == "1" then
-  		message = "Trans-Dimensional Wormhole Teleport Beam Active"
+	if Spring.GetModOptions().mo_comgate == "1" then 
+  		message = "Trans-Dimensional Phase Shifting Matter Tranfer Beam Actived"
   		table.insert(infoMessage, message)
 	end
 end
