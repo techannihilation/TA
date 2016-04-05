@@ -50,7 +50,7 @@ if Spring.GetModOptions() then
   		message = "Weapon Deformation Dampeners Enabled"
   		table.insert(infoMessage, message)
 	end
-	if Spring.GetModOptions().mo_comgate == "1" then 
+	if Spring.GetModOptions().mo_comgate == "1" then
   		message = "Trans-Dimensional Phase Shifting Matter Tranfer Beam Actived"
   		table.insert(infoMessage, message)
 	end
@@ -208,7 +208,7 @@ function addon.DrawLoadScreen()
 	gl.PushMatrix()
 	gl.Scale(1/vsx,1/vsy,1)
 		local barTextSize = vsy * (0.07 - 0.015)
-		local tipTextSize = vsy * (0.08 - 0.005)
+		local InfoTextSize = vsy * (0.08 - 0.005)
 		
 		local posy = 0.5 * (vsy-vsx/ar)
 		
@@ -231,26 +231,24 @@ function addon.DrawLoadScreen()
 		--Pre Game Info
 		--Todo Scale bar to depening on massage count
 		gl.Color(0.0,0.0,0.0,0.6)
-		
-		gl.Rect(0,y0+dy,4*vsx,y1-dy)
-		
-		gl.Color(0,0,0,0.1)
-		gl.Rect(0,y1-dy,4*vsx,y1)
-		gl.Rect(0,y0,4*vsx,y0+dy)
-		
-		gl.Color(1,1,1,0.5)
-		gl.Rect(0,y1+1,4*vsx,y1+dy)
-		gl.Rect(0,y0-dy,4*vsx,y0)
+		local vsy_depth = (InfoTextSize *1.02) * #infoMessage 
+		Spring.Echo(0,vsy/2,vsx,vsy+vsy_depth, "hmm", #infoMessage,vsy_depth)
+		gl.Rect(0,vsy/2,vsx*4,vsy/2+vsy_depth)
+	
+		--gl.Color(1,1,1,0.5)
+		--gl.Rect(0,vsy/2,4*vsx,vsy/2+2)
+		--gl.Rect(0,vsy/2+(,4*vsx,vsy/2+vsy_depth)
 		
 		gl.Color(1,1,1,1)
 		
 		font2:Begin()
 		font2:SetTextColor({1, 1, 1, 0.9 })
 		--Spring.Echo("infoMessage:",#infoMessage)
-		local y2 = #infoMessage == 1 and y1 - vsy * 0.05 or y1 - vsy * 0.02
+		local y2 = (vsy/2)
 		local ls = vsy * 0.07
 		for line, text in pairs(infoMessage) do
-			font2:Print(text,vsx * 0.2,y2 - (line - 0.65 ) * ls ,tipTextSize,'vo')
+			Spring.Echo(InfoTextSize)
+			font2:Print(text,vsx * 0.2,y2 + ((line-1)*InfoTextSize)+((InfoTextSize/2)+2),InfoTextSize,'vo')
 		end
 		font2:End()
 		
