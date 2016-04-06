@@ -15,7 +15,7 @@ return {
 		cantbetransported = true,
 		category = "ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
 		collisionvolumeoffsets = "0 -5 -3",
-		collisionvolumescales = "47 58 28",
+		collisionvolumescales = "70 87 42",
 		collisionvolumetype = "Box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
