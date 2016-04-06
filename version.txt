@@ -1,3 +1,36 @@
+----------------------------------------- v2.38.xx ---------------------------------------
+----Visual----
+----Bugs---- 
+----Balance----
+SonicTank (T1.5 Arm Tank) : Decrease buildcostenergy (-5000), Range (-80) & buildtime (-2000) & Maxdamage (-300).
+TLL Geo Hazardous : Increase Energy cost for (9800 => 29800)
+Hyperion : Increase Energy Cost (+150K) & Metal (+2K) & Increase speed (+0.1) & MaxDamage (+62K). Decrease a little Dmg/S & Aoe. Add special damage for commander (/2) & experimental unit (x2)
+Irritator : Add onlytargetcategory = "NOTVTOL" for rocket
+Dao (Core T1.5 medium Tank) : Increase Speed (+0.15) & damage (+9/s) & HP (+150)
+Raptor (t4 arm all terrain kbot) : Add onlytargetcategory = "NOTVTOL" for rocket
+Scorpion (T2.5 Amphibious tank arm) : increase MaxDamage (+950) & increase damage (Plasma Cannon +50dmg/s) (torpedo : +50 range et damage) & Speed + 0.1
+Adv TLL Tidal : Less damage when they explode. Less chain damage.
+T3.5 Ship : Less Sight (1000 => 750)
+
+
+
+----Improvements-----
+Add Morph for razorback into mega razorback T4
+Add Morph for kargareth into megaTron T4
+Add Morph for Bantha into Bantha T4 (to balance with krogoth T4)
+Add Morph for AXX (Vengence) into Orcone (T3.5) (to balance with KrogTsar into Krogoth)
+Add morph immolator (Arm & Cor) into Bertha & Corint (T2 Plasma Canon)
+Add Morph maverick into razorback
+Add Morph All T1 Amphibious Tank (Arm & Core) into T2 amphibious Tank.
+Add Morph All T2 amphibious Tank (Arm & Core) into T2.5 Amphibious Tank. (ex : scorpion).
+Delete T3 Lab to morph merl into T3.5 Rocket Launcher (armmlrs). 
+Delete T3 Lab to morph Dominator into T3.5 Rocket Launcher (Howie). 
+Change Morph for Geo (Arm/Core/TLL) => More time (120s into Hazardous geo). 
+Delete morph geo behemoth & Safe into Hazardous geo
+Add many units for Amphibious Lab (Arm & Core) like T2.5 amphibious Tank.
+Delete T2.5 Core amphibious Tank (Orca) from Arm T2 Lab.
+
+
 ----------------------------------------- v2.38.11 ---------------------------------------
 ----Visual----
 
