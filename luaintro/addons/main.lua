@@ -232,7 +232,6 @@ function addon.DrawLoadScreen()
 		--Todo Scale bar to depening on massage count
 		gl.Color(0.0,0.0,0.0,0.6)
 		local vsy_depth = (InfoTextSize *1.02) * #infoMessage 
-		Spring.Echo(0,vsy/2,vsx,vsy+vsy_depth, "hmm", #infoMessage,vsy_depth)
 		gl.Rect(0,vsy/2,vsx*4,vsy/2+vsy_depth)
 	
 		--gl.Color(1,1,1,0.5)
