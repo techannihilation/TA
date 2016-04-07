@@ -29,13 +29,13 @@ local name
   
 jumpCategory = { 
 	assaultcom = {
-		range = 950, height = 100, speed = 3,  reload = 40,  aaShootMe = false, delay = 0, cobscript = true, rotateMidAir = true, limitHeight=false},	
+		range = 750, height = 100, speed = 3,  reload = 40,  aaShootMe = false, delay = 0, cobscript = true, rotateMidAir = true, limitHeight=false},	
 		
 	-- category containining only optional tags for testing error code only.
 	-- iammissingstuff ={
 	-- 	reload	= 10, aaShootMe	= false, },	
 	starcom = {
-		range = 1100, height = 150, speed = 4,  reload = 30,  aaShootMe = false, delay = 0, cobscript = true, rotateMidAir = true, limitHeight=false},
+		range = 1000, height = 150, speed = 4,  reload = 30,  aaShootMe = false, delay = 0, cobscript = true, rotateMidAir = true, limitHeight=false},
 	supremecom = {
 		range = 1250, height = 150, speed = 5,  reload = 20,  aaShootMe = false, delay = 0, cobscript = true, rotateMidAir = true, limitHeight=false},
 	jumpbot = {
