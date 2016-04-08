@@ -1,6 +1,14 @@
 ----------------------------------------- v2.38.xx ---------------------------------------
-----Visual----
+----Visual 
+Move pre-game Info to loadscreen (mod options)
+
 ----Bugs---- 
+Fix combomb full damage gadget not working
+Fix buildtime for tllhailstorm
+Fix core/tllpcan feature def errors
+Fixed area damage gadget not reducing damage for own team + ally teams
+Only disable nanoframe decay is terrforming is disabled
+
 ----Balance----
 SonicTank (T1.5 Arm Tank) : Decrease buildcostenergy (-5000), Range (-80) & buildtime (-2000) & Maxdamage (-300).
 TLL Geo Hazardous : Increase Energy cost for (9800 => 29800)
@@ -11,10 +19,16 @@ Raptor (t4 arm all terrain kbot) : Add onlytargetcategory = "NOTVTOL" for rocket
 Scorpion (T2.5 Amphibious tank arm) : increase MaxDamage (+950) & increase damage (Plasma Cannon +50dmg/s) (torpedo : +50 range et damage) & Speed + 0.1
 Adv TLL Tidal : Less damage when they explode. Less chain damage.
 T3.5 Ship : Less Sight (1000 => 750)
-
+Tll T1 Aircraft improvments more agile by increase brakerate/turnrate/acceleration
+Tllriot Increase turret turnrate 100>145, Increase weapon velocity 150>450, Increased areadamage aoe 80>105, decrease duration 45>35
+Scorpion add sane vales for acceleration/brakerate
 
 
 ----Improvements-----
+Give arm_furie a power up mushroom (now 50% larger)
+Tlldischarge and core jumpbot no longer need jumpdrive, emp weapon is now manualfire (you need to micro)
+Commander jumpdrive now has a provided range 
+Update game from spring 102
 Add Morph for razorback into mega razorback T4
 Add Morph for kargareth into megaTron T4
 Add Morph for Bantha into Bantha T4 (to balance with krogoth T4)
