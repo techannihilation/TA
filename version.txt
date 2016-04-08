@@ -22,7 +22,7 @@ T3.5 Ship : Less Sight (1000 => 750)
 Tll T1 Aircraft improvments more agile by increase brakerate/turnrate/acceleration
 Tllriot Increase turret turnrate 100>145, Increase weapon velocity 150>450, Increased areadamage aoe 80>105, decrease duration 45>35
 Scorpion add sane vales for acceleration/brakerate
-
+Demon (TLL T3 Tank) Decrease Range 1300 => 1150.
 
 ----Improvements-----
 Give arm_furie a power up mushroom (now 50% larger)
