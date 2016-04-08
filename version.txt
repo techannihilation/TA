@@ -11,6 +11,7 @@ Raptor (t4 arm all terrain kbot) : Add onlytargetcategory = "NOTVTOL" for rocket
 Scorpion (T2.5 Amphibious tank arm) : increase MaxDamage (+950) & increase damage (Plasma Cannon +50dmg/s) (torpedo : +50 range et damage) & Speed + 0.1
 Adv TLL Tidal : Less damage when they explode. Less chain damage.
 T3.5 Ship : Less Sight (1000 => 750)
+Demon (TLL T3 Tank) Decrease Range 1300 => 1150.
 
 
 
