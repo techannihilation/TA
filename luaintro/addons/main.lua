@@ -246,7 +246,7 @@ function addon.DrawLoadScreen()
 		local y2 = (vsy/2)
 		local ls = vsy * 0.07
 		for line, text in pairs(infoMessage) do
-			Spring.Echo(InfoTextSize)
+			--Spring.Echo(InfoTextSize)
 			font2:Print(text,vsx * 0.2,y2 + ((line-1)*InfoTextSize)+((InfoTextSize/2)+2),InfoTextSize,'vo')
 		end
 		font2:End()
