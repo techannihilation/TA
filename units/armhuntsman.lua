@@ -1,5 +1,5 @@
 return {
-	armaaspd = {
+	armhuntsman = {
 		acceleration = 0.165,
 		airsightdistance = 720,
 		bmcode = 1,
@@ -37,10 +37,10 @@ return {
 		metalstorage = 0,
 		mobilestandorders = 1,
 		movementclass = "TKBOT3",
-		name = "Ra",
+		name = "Huntsman",
 		noautofire = false,
 		nochasecategory = "ALL SUB",
-		objectname = "ARMAASPD",
+		objectname = "armhuntsman",
 		ovradjust = 1,
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT",
@@ -53,7 +53,7 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0.9636,
 		turnrate = 1020,
-		unitname = "armaaspd",
+		unitname = "armhuntsman",
 		unitnumber = 6981,
 		workertime = 0,
 		featuredefs = {
@@ -69,7 +69,7 @@ return {
 				height = 40,
 				hitdensity = 100,
 				metal = 120,
-				object = "armaaspd_dead",
+				object = "armhuntsman_dead",
 				reclaimable = true,
 				seqnamereclamate = "tree1reclamate",
 				world = "All Worlds",

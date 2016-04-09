@@ -1,5 +1,5 @@
 return {
-	armjaspd = {
+	armorbweaver = {
 		acceleration = 0.15,
 		activatewhenbuilt = true,
 		bmcode = 1,
@@ -34,10 +34,10 @@ return {
 		metalstorage = 0,
 		mobilestandorders = 1,
 		movementclass = "TKBOT3",
-		name = "Difuser",
+		name = "Orbweaver",
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
-		objectname = "ARMJASPD",
+		objectname = "armorbweaver",
 		onoffable = true,
 		ovradjust = 1,
 		radardistance = 0,
@@ -51,7 +51,7 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0.759,
 		turnrate = 950,
-		unitname = "armjaspd",
+		unitname = "armorbweaver",
 		unitnumber = 6343,
 		workertime = 0,
 		featuredefs = {
@@ -67,7 +67,7 @@ return {
 				height = 40,
 				hitdensity = 100,
 				metal = 51.2,
-				object = "armjaspd_dead",
+				object = "armorbweaver_dead",
 				reclaimable = true,
 				seqnamereclamate = "tree1reclamate",
 				world = "All Worlds",

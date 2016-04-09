@@ -1,12 +1,12 @@
 return {
-	armsptk = {
+	armtarantula = {
 		acceleration = 0.18,
 		bmcode = 1,
 		brakerate = 0.564,
 		buildcostenergy = 4480,
 		buildcostmetal = 400,
 		builder = false,
-		buildpic = "ARMSPTK.png",
+		buildpic = "armtarantula.png",
 		buildtime = 4500,
 		canattack = true,
 		canguard = true,
@@ -35,10 +35,10 @@ return {
 		metalstorage = 0,
 		mobilestandorders = 1,
 		movementclass = "TKBOT3",
-		name = "Recluse",
+		name = "Tarantula",
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
-		objectname = "ARMSPTK",
+		objectname = "armtarantula",
 		radaremitheight = 20,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -50,10 +50,10 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 1.1,
 		turnrate = 1122,
-		unitname = "armsptk",
+		unitname = "armtarantula",
 		workertime = 0,
 		customparams = {
-			buildpic = "ARMSPTK.png",
+			buildpic = "armtarantula.png",
 		},
 		featuredefs = {
 			dead = {
@@ -72,7 +72,7 @@ return {
 				height = 40,
 				hitdensity = 100,
 				metal = 300,
-				object = "ARMSPTK_DEAD",
+				object = "armtarantula_DEAD",
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",
 				world = "All Worlds",

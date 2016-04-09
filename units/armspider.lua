@@ -1,12 +1,12 @@
 return {
-	armspid = {
+	armspider = {
 		acceleration = 0.18,
 		bmcode = 1,
 		brakerate = 0.564,
 		buildcostenergy = 3000,
 		buildcostmetal = 180,
 		builder = false,
-		buildpic = "ARMSPID.png",
+		buildpic = "armspider.png",
 		buildtime = 4300,
 		canattack = true,
 		canguard = true,
@@ -37,7 +37,7 @@ return {
 		name = "Spider",
 		noautofire = false,
 		nochasecategory = "ALL SUB",
-		objectname = "ARMSPID",
+		objectname = "armspider",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
 		side = "ARM",
@@ -48,10 +48,10 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 1.749,
 		turnrate = 1122,
-		unitname = "armspid",
+		unitname = "armspider",
 		workertime = 0,
 		customparams = {
-			buildpic = "ARMSPID.png",
+			buildpic = "armspider.png",
 		},
 		featuredefs = {
 			dead = {
@@ -70,7 +70,7 @@ return {
 				height = 40,
 				hitdensity = 100,
 				metal = 132.8,
-				object = "ARMSPID_DEAD",
+				object = "armspider_DEAD",
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",
 				world = "All Worlds",

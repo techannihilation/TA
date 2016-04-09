@@ -1,5 +1,5 @@
 return {
-	armlaspd = {
+	armhobo = {
 		acceleration = 0.12,
 		bmcode = 1,
 		brakerate = 0.45,
@@ -37,7 +37,7 @@ return {
 		name = "Hobo",
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
-		objectname = "ARMLASPD",
+		objectname = "armhobo",
 		ovradjust = 1,
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT",
@@ -50,7 +50,7 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0.8512,
 		turnrate = 1020,
-		unitname = "armlaspd",
+		unitname = "armhobo",
 		unitnumber = 6517,
 		workertime = 0,
 		featuredefs = {
@@ -66,7 +66,7 @@ return {
 				height = 40,
 				hitdensity = 100,
 				metal = 697.60004,
-				object = "armlaspd_dead",
+				object = "armhobo_dead",
 				reclaimable = true,
 				seqnamereclamate = "tree1reclamate",
 				world = "All Worlds",
