@@ -17,6 +17,8 @@ end
 local lastLoadMessage = ""
 local infoMessage = {}
 
+table.insert(infoMessage, "Spring Engine version 101.0.1-201 or above is needed for this version")
+
 if Spring.GetModOptions() then 
 	if Spring.GetModOptions().deathmode then
 		if Spring.GetModOptions().deathmode == "com" then
