@@ -207,7 +207,7 @@ function addon.DrawLoadScreen()
 	-- progressbar text
 	gl.PushMatrix()
 	gl.Scale(1/vsx,1/vsy,1)
-		local barTextSize = vsy * (0.07 - 0.015)
+		local barTextSize = vsy * (0.05 - 0.015)
 		local InfoTextSize = vsy * (0.08 - 0.005)
 		
 		local posy = 0.5 * (vsy-vsx/ar)
