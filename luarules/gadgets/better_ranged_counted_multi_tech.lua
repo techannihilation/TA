@@ -309,7 +309,7 @@ if (gadgetHandler:IsSyncedCode()) then
 	local RecheckUnits={}
 
 	local UnitsWithScripts={}
-	local ignorerangedunits={
+	local ignoredunits={
  		[UnitDefNames["tlldischarge"].id] = true,
  		[UnitDefNames["armkrmi"].id] = true,
 	}
@@ -676,6 +676,11 @@ if (gadgetHandler:IsSyncedCode()) then
 		ud=ud or Spring.GetUnitDefID(u)
 		team=team or Spring.GetUnitTeam(u)
 
+
+		if ignoredunits[ud] then
+			return 
+		end
+		
 		-- Sub-functions
 		local function GrantingToolTip(u,ucd,cmd)
 			if not GrantDesc[cmd] then
@@ -896,7 +901,7 @@ if (gadgetHandler:IsSyncedCode()) then
 
 
 	function gadget:AllowCommand(u,ud,team,cmd,param,opt,synced)
-				if ignorerangedunits[ud] and cmd == 38521 then
+				if ignoredunits[ud] and cmd == 38521 then
 					return true
                 elseif param and cmd<0 and #param==4 then
                     return CheckCmd(cmd,team,param[1],param[2],param[3])
