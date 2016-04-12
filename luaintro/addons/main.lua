@@ -53,7 +53,7 @@ if Spring.GetModOptions() then
   		table.insert(infoMessage, message)
 	end
 	if Spring.GetModOptions().mo_comgate == "1" then
-  		message = "Trans-Dimensional Phase Shifting Matter Tranfer Beam Actived"
+  		message = "Trans-Dimensional Phase Shifting Matter Transfer Beam Actived"
   		table.insert(infoMessage, message)
 	end
 end
