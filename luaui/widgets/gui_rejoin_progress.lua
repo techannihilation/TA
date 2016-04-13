@@ -243,11 +243,12 @@ function createBackgroundList()
 	end
 	backgroundList = glCreateList( function()
 		RectRound(xPos,yPos,xPos+panelWidth,yPos+panelHeight,6)
+		local borderPadding = 3.5
+		glColor(1,1,1,0.022)
+		RectRound(xPos+borderPadding,yPos+borderPadding,xPos+panelWidth-borderPadding,yPos+panelHeight-borderPadding,5)
 		local text = 'Catching up...'
 		local width = glGetTextWidth(text)*(panelHeight/3)
-		glText('\255\255\255\255'..text, xPos+(panelHeight*bgmargin), yPos+(panelHeight*bgmargin)*1.6, panelHeight/3, 'o')
-		text = 'UI Disabled'
-		glText('\255\255\255\255'..text, xPos+(panelHeight*bgmargin), yPos+(panelHeight*bgmargin)*0.2, panelHeight/3, 'o')
+		glText('\255\255\255\255'..text, xPos+(panelHeight*bgmargin), yPos+(panelHeight*bgmargin), panelHeight/3, 'o')
 	end)
 end
 

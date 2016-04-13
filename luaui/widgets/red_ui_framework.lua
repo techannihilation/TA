@@ -15,10 +15,6 @@ end
 local TN = "Red"
 local DrawingTN = "Red_Drawing" --WG name for drawing function list
 local version = 8
-local PlayerIsBehind  = false
-local ServerFrame = nil
-local maxframelag = 1800 -- High value so it Re-enables ui before players has synced
-local GameFrameDistance = 9000
 
 local clock = os.clock
 local glGetTextWidth = gl.GetTextWidth
@@ -581,9 +577,6 @@ local hookedtodrawing = false
 local fc = 0 --framecount
 function widget:Update()
 
-        if PlayerIsBehind then 	-- Disable while player is catching up
-		return
-	end
   
 	Main.tooltip = nil
 	handleMouse()
@@ -688,20 +681,6 @@ function widget:Update()
 			for i=1,#dellst do
 				table.remove(objlst,dellst[i])
 			end
-		end
-	end
-end
-
-function widget:GameProgress(serverframenum)
-	if ServerFrame == nil then
-		ServerFrame = serverframenum
-	end
-	if ServerFrame >= GameFrameDistance then -- Only disabled UI if game is over 5 mins infront of player
-		local frame = Spring.GetGameFrame()
-		if frame > (serverframenum-maxframelag) then
-			PlayerIsBehind = false
-		else
-			PlayerIsBehind = true
 		end
 	end
 end
