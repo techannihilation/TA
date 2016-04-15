@@ -92,12 +92,14 @@ function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOpt
       EditUnitCmdDesc(unitID, cmdDescID, landCmd)
       plantList[unitID].landAt = cmdParams[1]
       landCmd.params[1] = 1
+      return false
     elseif (cmdID == 34570) then
       local cmdDescID = FindUnitCmdDesc(unitID, 34570)
       airCmd.params[1] = cmdParams[1]
       EditUnitCmdDesc(unitID, cmdDescID, airCmd)
       plantList[unitID].repairAt = cmdParams[1]
       airCmd.params[1] = 1
+      return false
     end
   end
   return true
