@@ -1,3 +1,15 @@
+----------------------------------------- v2.38.24 ---------------------------------------
+----Balance----
+Dreadnaught Increase reload time for high enegy laser 1.5>2.5, Reduce range of plasmacannon 750>650
+
+----Bugs---- 
+Fix forgoten state commands for air labs
+Fix lua error in no combomb damage gadget
+Really fix jumpdriver only needed for commanders
+
+----Improvements----
+Dont disable ui on catchup
+
 ----------------------------------------- v2.38.23 ---------------------------------------
 ----Visual 
 Move pre-game Info to loadscreen (mod options)
