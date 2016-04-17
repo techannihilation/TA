@@ -41,13 +41,12 @@ return {
 		sightdistance = 273,
 		unitname = "corupmex",
 		unitnumber = 48,
-		unitrestricted = 1,
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "ooooooooo",
 		customparams = {
 			providetech = "Jumpjet",
-			providetechrange = 2000,
+			providetechrange = 2500,
 		},
 		featuredefs = {
 			dead = {
