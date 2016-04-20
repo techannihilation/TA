@@ -54,39 +54,38 @@ end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
---if not Script.IsEngineMinVersion(101, 1) then
-	Spring.Echo("!!!!!!!!!!!!!!!!!!working!!!!!!!!!!!!!!!!!!!!!!!")
-    local origGetUnitLosState     = Spring.GetUnitLosState
-    local origGetPositionLosState = Spring.GetPositionLosState
-    local origIsPosInLos          = Spring.IsPosInLos
-    local origIsPosInRadar        = Spring.IsPosInRadar
-    local origIsPosInAirLos       = Spring.IsPosInAirLos
-    
-    local function CreateUnitWrapper(origFunc)
-        return function(unitID,allyTeam,raw)
-            if ((allyTeam or 0) < 0) then
-                if (raw) then
-                    return 0xFFFFFF
-                else
-                    return { los = true, radar = true, typed = true }
-                end
+--Fixes los states in engine 100+
+local origGetUnitLosState     = Spring.GetUnitLosState
+local origGetPositionLosState = Spring.GetPositionLosState
+local origIsPosInLos          = Spring.IsPosInLos
+local origIsPosInRadar        = Spring.IsPosInRadar
+local origIsPosInAirLos       = Spring.IsPosInAirLos
+  
+local function CreateUnitWrapper(origFunc)
+    return function(unitID,allyTeam,raw)
+        if ((allyTeam or 0) < 0) then
+            if (raw) then
+                return 0xFFFFFF
+            else
+                return { los = true, radar = true, typed = true }
             end
-            return origFunc(unitID,allyTeam,raw)
         end
+        return origFunc(unitID,allyTeam,raw)
     end
-    local function CreatePosWrapper(origFunc)
-        return function(x,y,z,allyTeam)
-            if ((allyTeam or 0) < 0) then return true, true, true, true end
-            return origFunc(x,y,z)
-        end
-    end
+end
 
-    Spring.GetUnitLosState     = CreateUnitWrapper(origGetUnitLosState);
-    Spring.GetPositionLosState = CreatePosWrapper(origGetPositionLosState);
-    Spring.IsPosInLos          = CreatePosWrapper(origIsPosInLos);
-    Spring.IsPosInRadar        = CreatePosWrapper(origIsPosInRadar);
-    Spring.IsPosInAirLos       = CreatePosWrapper(origIsPosInAirLos);
---end
+local function CreatePosWrapper(origFunc)
+    return function(x,y,z,allyTeam)
+        if ((allyTeam or 0) < 0) then return true, true, true, true end
+        return origFunc(x,y,z)
+    end
+end
+
+Spring.GetUnitLosState     = CreateUnitWrapper(origGetUnitLosState);
+Spring.GetPositionLosState = CreatePosWrapper(origGetPositionLosState);
+Spring.IsPosInLos          = CreatePosWrapper(origIsPosInLos);
+Spring.IsPosInRadar        = CreatePosWrapper(origIsPosInRadar);
+Spring.IsPosInAirLos       = CreatePosWrapper(origIsPosInAirLos);
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
