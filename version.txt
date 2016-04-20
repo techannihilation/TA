@@ -1,3 +1,13 @@
+----------------------------------------- v2.38.25 ---------------------------------------
+----Bugs---- 
+Fix combomb gadget not loading
+Fix script warnings for corerad
+
+----Balance----
+Unlock unitlimit of jumpdrive, increase provided range 2000>2500
+Increse HP for t3 trans by 150%, Fix descriptions (wrong mass limit)
+Rebalance barret, buildcost reduced metal 46490>34867, energy 249546>164700, aoe reduce 45,range reduced 3700>2650,damage 1600>1440,cost per shot 12000>9600, Improved weapon effect
+
 ----------------------------------------- v2.38.24 ---------------------------------------
 ----Balance----
 Dreadnaught Increase reload time for high enegy laser 1.5>2.5, Reduce range of plasmacannon 750>650
