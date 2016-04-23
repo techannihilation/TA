@@ -4,7 +4,7 @@ local DAMAGE_PERIOD = 2 -- how often damage is applied
 
 local weapons = {
 	tllacid_acidrain_rocket = { radius = 400, damage = 100, duration = 625, rangeFall = 0.6, timeFall = 0.5},
-	armsonic_sonic_cannon = { radius = 95, damage = 200, duration = 120, rangeFall = 0.25, timeFall = 0.8, allyScale = 0.5, teamScale = 0.25},
+	armsonic_sonic_cannon = { radius = 95, damage = 300, duration = 45, rangeFall = 0.25, timeFall = 0.8, allyScale = 0.5, teamScale = 0.25},
 	tllriot_tllriot_cannon = { radius = 105, damage = 250, duration = 35, rangeFall = 0.25, timeFall = 0.6, allyScale = 0.5 },
 	thermite_mine = { radius = 64, damage = 750, duration = 130, rangeFall = 0.25, timeFall = 0.6},
 
