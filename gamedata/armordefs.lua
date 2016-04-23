@@ -44,8 +44,8 @@ flak_resistant = {
            "chopper",
            "smasher",
            "tllcopter",
-	   "corhind",
-	   "armkamo",
+		   "corhind",
+		   "armkamo",
 },
 unclassed_air = {
 -- Builders 
@@ -107,6 +107,7 @@ unclassed_air = {
            "corrag",
            "armmin",
            "cormin",
+           "skykrogoth",
 },
 --### SEA ###
 ships = {
@@ -172,7 +173,7 @@ subs = {
            "tawf009",
            "armacsub",
            "armrecl",
-	   "tllsr",
+	 	   "tllsr",
 },
 experimental_ships = {
            "armtrmph",
@@ -250,8 +251,8 @@ experimental_land = {
            "tllvaliant",
            -- _experimental_
            "armpraet",
-	   "monkeylord",
-	   "irritator",
+		   "monkeylord",
+		   "irritator",
 },
 flamethrowers = {
            "corpyro",
