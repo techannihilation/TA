@@ -1,4 +1,4 @@
------------------------------------------ v2.38.26 ---------------------------------------
+----------------------------------------- v2.38.27 ---------------------------------------
 ----Improvements----
 Add New Unit skykrogoth only buildable from Supreme Commander
 Add holdfire fix widget (Holdfire holds fire immediately)
@@ -12,7 +12,7 @@ Balance Brutus unit (decrease timebuild 18000 => 13000 & decrease energy (#1010)
 Balance Troman. (#1035) Sniper Weapon +50 Range. +460 dmg / s (before was 400)
 Tllrsplane increase radar distance 1850>2100, Increase sightdistance 350>1150, Increase turnrate 340>370
 Armjag Decrease Beam Laser => same then bantha (= decrease like 350dmg/s & range 950 => 800),Replace gauss canon by a Multi Gauss with 6 burst. (350dmg/s => 1100 dmg/s with 900 => 625 range)
-Increase tll flak turnrate by x5
+Increase tll flak turnrate by x56
 
 ----Bugs----
 Fix telsa tank brakerate (increase stats to account for issue) fix wrong cats
