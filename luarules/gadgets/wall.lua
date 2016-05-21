@@ -13,6 +13,11 @@ function gadget:GetInfo()
   }
 end
 
+local enabled = tonumber(Spring.GetModOptions().mo_wall) or 0
+if (enabled == 0) then --or wallHeight > mapHeight then
+  return false
+end
+
 --local gl.Vertex = gl.Vertex
 local SpringGetUnitBasePosition = Spring.GetUnitBasePosition   
 local SpringGetUnitTeam = Spring.GetUnitTeam
@@ -34,11 +39,6 @@ _G.walls = walls
 _G.wallActive = wallActive
 --_G.wallTime = wallTime
 _G.wallText = "ready up!"
-
-local enabled = tonumber(Spring.GetModOptions().mo_wall) or 0
-if (enabled == 0) then --or wallHeight > mapHeight then
-  return false
-end
 
 function gadget:Initialize()
 	local minutes = Spring.GetModOptions()["wall_time"] or 10
