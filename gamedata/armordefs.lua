@@ -44,8 +44,9 @@ flak_resistant = {
            "chopper",
            "smasher",
            "tllcopter",
-		   "corhind",
-		   "armkamo",
+	   "corhind",
+	   "armkamo",
+           "skykrogoth",
 },
 unclassed_air = {
 -- Builders 
@@ -107,7 +108,6 @@ unclassed_air = {
            "corrag",
            "armmin",
            "cormin",
-           "skykrogoth",
 },
 --### SEA ###
 ships = {
