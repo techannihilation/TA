@@ -1,3 +1,27 @@
+----------------------------------------- v2.38.26 ---------------------------------------
+----Improvements----
+Add New Unit skykrogoth only buildable from Supreme Commander
+Add holdfire fix widget (Holdfire holds fire immediately)
+Add command insert widget,factory queue widget and factory repeat widget
+Add emp decloak range widget
+
+----Balance----
+Rebalance armsonic area damage, damagetime 120>45,damage 200>300
+Balance gorg (juggernaut) (#1038)
+Balance Brutus unit (decrease timebuild 18000 => 13000 & decrease energy (#1010)
+Balance Troman. (#1035) Sniper Weapon +50 Range. +460 dmg / s (before was 400)
+Tllrsplane increase radar distance 1850>2100, Increase sightdistance 350>1150, Increase turnrate 340>370
+Armjag Decrease Beam Laser => same then bantha (= decrease like 350dmg/s & range 950 => 800),Replace gauss canon by a Multi Gauss with 6 burst. (350dmg/s => 1100 dmg/s with 900 => 625 range)
+Increase tll flak turnrate by x5
+
+----Bugs----
+Fix telsa tank brakerate (increase stats to account for issue) fix wrong cats
+Revert howie to single shot weapon, fixes particle cost/failed weapon targeting, Closes #1043
+Remove on/off button for armscrpion
+Fix lups shader errors (jitterparticles)
+Set onlytargetcategory = "NOTVTOL", for Missile (Crabe & Antarion) (#1039)
+Tllgrim Last TLL unit with StarburstLauncher Replaced by Vpulse and add NotVtol category.
+
 ----------------------------------------- v2.38.25 ---------------------------------------
 ----Bugs---- 
 Fix combomb gadget not loading
