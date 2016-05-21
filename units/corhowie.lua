@@ -98,7 +98,7 @@ return {
 				cegTag = [[Core_Howie_Rocket]],
 				explosionGenerator = [[custom:Explosion_VeryHeavy_Rocket-nix]],
 				fireStarter = 80,
-				flightTime = 15,
+				flightTime = 6,
 				metalpershot = 0,
 				model = [[TAWF114a]],
 				name = [[Antiship missile]],

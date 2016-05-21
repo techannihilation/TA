@@ -95,7 +95,7 @@ return {
 				cegtag = "Trail_Large_Rocket_New",
 				explosiongenerator = "custom:Explosion_VeryHeavy_Rocket-nix",
 				firestarter = 80,
-				flighttime = 15,
+				flighttime = 6,
 				metalpershot = 0,
 				model = "rocketo",
 				name = "Barrarge",
