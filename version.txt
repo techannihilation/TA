@@ -1,6 +1,7 @@
------------------------------------------ v2.38.27 ---------------------------------------
+----------------------------------------- v2.39.0 ---------------------------------------
 ----Improvements----
-Add New Unit skykrogoth only buildable from Supreme Commander
+Add Grace wall
+Add New Unit skykrogoth only buildable from Supreme Commander also now inherents HP+XP from Supreme Commander only (27500 default hp now)
 Add holdfire fix widget (Holdfire holds fire immediately)
 Add command insert widget,factory queue widget and factory repeat widget
 Add emp decloak range widget
@@ -15,6 +16,7 @@ Armjag Decrease Beam Laser => same then bantha (= decrease like 350dmg/s & range
 Increase tll flak turnrate by x56
 
 ----Bugs----
+Fix flighttime for howie and MLRS units (no more FPS hax)
 Fix telsa tank brakerate (increase stats to account for issue) fix wrong cats
 Revert howie to single shot weapon, fixes particle cost/failed weapon targeting, Closes #1043
 Remove on/off button for armscrpion
