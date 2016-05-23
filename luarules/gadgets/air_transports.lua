@@ -36,7 +36,7 @@ function updateAllowedSpeed(transportId, transportUnitDef)
 		-- currentCapacityUsage = currentCapacityUsage + tUd.xsize 
 		currentMassUsage = currentMassUsage + tUd.mass
 	end
-	massUsageFraction = (currentMassUsage / transportUnitDef.transportMass)
+	massUsageFraction = (currentMassUsage / (transportUnitDef.transportMass or 5000)
 	allowedSpeed = transportUnitDef.speed * (1 - massUsageFraction * TRANSPORTED_MASS_SPEED_PENALTY) / FRAMES_PER_SECOND 
 	--Spring.Echo("unit "..transportUnitDef.name.." is air transport at  "..(massUsageFraction*100).."%".." load, curSpeed="..vw.." allowedSpeed="..allowedSpeed)
 
