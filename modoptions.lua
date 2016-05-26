@@ -275,7 +275,7 @@ local options={
 	{
 		key     = 'wall_time',
 		name    = 'Wall Time',
-		desc    = 'How many minutes will the wall divide the teams?',
+		desc    = 'How many minutes will the wall divide the teams?\nAutoHost Usage :- wall_time',
 		section = 'ta_wall_options',
 		type    = 'number',
 		min     = 0,
@@ -287,7 +287,7 @@ local options={
 	{
 		key     = 'wall_size',
 		name    = 'Wall Size',
-		desc    = 'How many percent of the map will each team get at start?',
+		desc    = 'How many percent of the map will each team get at start?\nAutoHost Usage :- wall_size',
 		section = 'ta_wall_options',
 		type    = 'number',
 		min     = 10,
@@ -297,9 +297,9 @@ local options={
 	},
 	
 	{
-		key     = 'los',
+		key     = 'wall_los',
 		name    = 'Line of Sight',
-		desc    = 'Can you see past the wall?',
+		desc    = 'Can you see past the wall?\nAutoHost Usage :- wall_los',
 		section = 'ta_wall_options',	type    = 'list',
 		def     = '1',
 		items   = 
@@ -323,9 +323,9 @@ local options={
 	},
 
 	{
-		key     = 'weapons',
+		key     = 'wall_weapons',
 		name    = 'Cease-Fire',
-		desc    = 'Are weapons blocked as long as the wall remains?',
+		desc    = 'Are weapons blocked as long as the wall remains?\nAutoHost Usage :- wall_weapons',
 		section = 'ta_wall_options',
 		type    = 'list',
 		def     = '1',
