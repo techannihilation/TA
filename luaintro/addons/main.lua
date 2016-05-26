@@ -57,7 +57,7 @@ if Spring.GetModOptions() then
   		table.insert(infoMessage, message)
 	end
 	if Spring.GetModOptions().mo_wall == "1" then
-  		message = "Peace Time Wal Activated, Timer set to " .. tostring(Spring.GetModOptions().wall_time) .. " mins"
+  		message = "Peace Time Wal Activated, Countdown Timer set to " .. tostring(Spring.GetModOptions().wall_time) .. " mins"
   		table.insert(infoMessage, message)
 	end
 end
