@@ -75,10 +75,13 @@ function gadget:GameFrame (f)
 			UnlockWeapons()
 			gadgetHandler:RemoveGadget()
 		end
-		_G.wallText = SecondsToClock (wallTime)
+		--_G.wallText = SecondsToClock (wallTime)
+
 		--sec2Min (wallTime)
-		_G.wallActive = wallActive
+		--_G.wallActive = wallActive
 		--_G.wallTime = wallTime
+
+		SendToUnsynced("wallStatus",SecondsToClock (wallTime),wallActive)
 	end	
 end
 
@@ -168,18 +171,18 @@ else --- UNSYCNED:
 local wallText, wallActive, walls
 
 function gadget:Initialize()
+	gadgetHandler:AddSyncAction("wallStatus",wallstatus)
+
 	walls = SYNCED.walls
-	walls_z_half = walls[1].z/1.6
-	wallActive = SYNCED.wallActive
-	wallText = SYNCED.wallText
+	walls_z_half = (walls[1].z)
 end
 
-function gadget:GameFrame(frame)
-	--if frame%10==0 then
-		wallActive = SYNCED.wallActive
-		wallText = SYNCED.wallText
-	--end
+
+function wallstatus(_, walltext, wallactive)
+	wallText = walltext
+	wallActive = wallactive
 end
+
 
 function gadget:DrawWorld ()
 	if (not wallActive) then return end
