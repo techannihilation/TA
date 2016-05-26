@@ -1,5 +1,6 @@
 -- flashbantha
 -- banthablaster
+-- krogtaarblaster
 -- banthamuzzle
 
 return {
@@ -234,6 +235,62 @@ return {
         dir                = [[-4 r8,-4 r8,-4 r8]],
         length             = 1,
         width              = 3,
+      },
+    },
+  },
+
+["krogtaarblaster"] = {
+    sparkles = {
+      air                = true,
+      class              = [[CSimpleParticleSystem]],
+      count              = 1,
+      ground             = true,
+      unit               = 1,
+      water              = true,
+      properties = {
+        airdrag            = 0.95,
+        colormap           = [[0 0 0 0  1.0 0.2 0.2 0.2   0.8 0.1 0.1 0.4   0.3 0.13 0.13 0.2   0.1 0.1 0.1 0.1   0 0 0 0.01]],
+        directional        = true,
+        emitrot            = 0,
+        emitrotspread      = 360,
+        emitvector         = [[0, 0.10, 0]],
+        gravity            = [[0,0,0]],
+        numparticles       = 2,
+        particlelife       = 1,
+        particlelifespread = 5,
+        particlesize       = 1,
+        particlesizespread = 7,
+        particlespeed      = 1,
+        particlespeedspread = 2,
+        pos                = [[0, 0, 0]],
+        sizegrowth         = 1.0,
+        sizemod            = -1.0,
+        texture            = [[lightb2]],
+      },
+    },
+    splashes = {
+      air                = true,
+      class              = [[CSimpleParticleSystem]],
+      ground             = true,
+      properties = {
+        airdrag            = .80,
+        colormap           = [[1.0 0.25 0.2 0.01   0.95 0.3 0.2 0.01   0.8 0.34 0.3 0]],
+        directional        = false,
+        emitrot            = 0,
+        emitrotspread      = 30,
+        emitvector         = [[0, 1, 0]],
+        gravity            = [[0, 0, 0]],
+        numparticles       = 2,
+        particlelife       = 1,
+        particlelifespread = 1,
+        particlesize       = 12,
+        particlesizespread = 4,
+        particlespeed      = 1,
+        particlespeedspread = 2,
+        pos                = [[0, 1.0, 0]],
+        sizegrowth         = -.2,
+        sizemod            = 1,
+        texture            = [[lightningball_new]],
       },
     },
   },

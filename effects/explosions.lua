@@ -1045,34 +1045,6 @@ return {
     },
   },
 
-  ["krogtaarblaster"] = {
-    splashes = {
-      air                = true,
-      class              = [[CSimpleParticleSystem]],
-      ground             = true,
-      properties = {
-        airdrag            = .96,
-        colormap           = [[0.7 0.0 0.0 0.9   0.6 0.5 0.0 0.3   0.4 0.0 0.0 0.001]],
-        directional        = false,
-        emitrot            = 0,
-        emitrotspread      = 30,
-        emitvector         = [[1, 0, 0]],
-        gravity            = [[0, 0, 0]],
-        numparticles       = 2,
-        particlelife       = 1,
-        particlelifespread = 1,
-        particlesize       = 2,
-        particlesizespread = 2,
-        particlespeed      = 1,
-        particlespeedspread = 2,
-        pos                = [[-3, -1, 0]],
-        sizegrowth         = -.2,
-        sizemod            = 1,
-        texture            = [[brightblueexplo]],
-      },
-    },
-  },
-
   ["flash1nd"] = {
     usedefaultexplosions = false,
     groundflash = {
