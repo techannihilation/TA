@@ -1,3 +1,20 @@
+----------------------------------------- v2.39.1 ---------------------------------------
+----Improvements----
+Add information about wall setting to loadscreen, and cleanup option names
+Fix buildmenu order in arm advance vehicle plant
+
+----Balance----
+KrogTaar, Reduce hp 40000>32500, Reduce maxvelocity 1.33>1.20, 
+Tankanotor, Reduce metalcost 4060>3740
+
+----Bugs----
+Fix air_transport gadget not loading
+
+----Visual----
+KrogTaar, Add new weapon effect
+
+
+
 ----------------------------------------- v2.39.0 ---------------------------------------
 ----Improvements----
 Add Grace wall
