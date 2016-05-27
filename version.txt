@@ -1,4 +1,4 @@
------------------------------------------ v2.39.1 ---------------------------------------
+----------------------------------------- v2.39.1 --------------------------------------- 
 ----Improvements----
 Add information about wall setting to loadscreen, and cleanup option names
 Fix buildmenu order in arm advance vehicle plant
