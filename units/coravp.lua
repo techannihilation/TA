@@ -74,10 +74,9 @@ return {
 			[13] = "cormabm",
 			[14] = "coreter",
 			[15] = "corvrad",
-			[16] = "nsacskv",
-			[17] = "requ1",
-			[18] = "cortotal",
-			[19] = "cormddm",
+			[16] = "requ1",
+			[17] = "cortotal",
+			[18] = "cormddm",
 		},
 		customparams = {
 			buildpic = "CORAVP.png",
