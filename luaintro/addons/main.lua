@@ -22,9 +22,9 @@ table.insert(infoMessage, "Spring Engine version 101.0.1-201 or above is needed 
 if Spring.GetModOptions() then 
 	if Spring.GetModOptions().deathmode then
 		if Spring.GetModOptions().deathmode == "com" then
-    		message = "Game Objective Destory All Enemy Commanders To Win"
+    		message = "Game Objective Destroy All Enemy Commanders To Win"
   		elseif Spring.GetModOptions().deathmode == "killall" then
-	    	message = "Game Objective Destory All Enemy Units To Win"
+	    	message = "Game Objective Destroy All Enemy Units To Win"
   		elseif Spring.GetModOptions().deathmode == "neverend" then
 			message = "No Game Objective The Game Never Ends"
 		end

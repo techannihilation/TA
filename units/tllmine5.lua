@@ -45,7 +45,7 @@ return {
 		maxwaterdepth = 0,
 		metalstorage = 0,
 		mincloakdistance = 8,
-		name = "Stopper",
+		name = "Crippler",
 		noautofire = false,
 		objectname = "TLLMINE5",
 		onoffable = false,

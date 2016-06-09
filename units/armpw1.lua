@@ -38,7 +38,7 @@ return {
 		metalstorage = 0,
 		mobilestandorders = 1,
 		movementclass = "KBOT2",
-		name = "Steel-plated Peewee",
+		name = "Carbyne-plated Peewee",
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMPW1",
