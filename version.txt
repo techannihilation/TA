@@ -1,3 +1,19 @@
+----------------------------------------- v2.39.3 --------------------------------------- 
+
+----Improvements----
+Add new widget default off, blacklily will auto cloak when given an attack command
+
+----Bugs----
+Fix tll commanders dgun not hitting small units
+Fix typo in loadscreen
+Upgraded peewee's rename steel>carbyne
+Fix tll mine name, Closes #1056
+
+----Balance----
+Delete nsacskv from t2.5 Core (#1060)
+Balance Hyperion (#1059), reduce maxvelocity 2.0>1.6, range 750>625, hp 275000>255000, metal cost 72000>73500
+
+
 ----------------------------------------- v2.39.1 --------------------------------------- 
 ----Improvements----
 Add information about wall setting to loadscreen, and cleanup option names
