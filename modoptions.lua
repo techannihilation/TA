@@ -199,6 +199,14 @@ local options={
 		def    = false,
 		section= "ta_options",
     },
+    {
+		key    = "mo_nanoframedecay",
+		name   = "Disable nana frame decay",
+		desc   = "Stop nanoframe decaying over time\nAutoHost Usage :- mo_nanoframedecay",
+		type   = "bool",
+		def    = false,
+		section= "ta_options",
+    },
        	{
 		key="mo_storageowner",
 		name="Team Storage Owner",

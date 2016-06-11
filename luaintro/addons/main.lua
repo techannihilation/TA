@@ -60,6 +60,10 @@ if Spring.GetModOptions() then
   		message = "Peace Time Wal Activated, Countdown Timer set to " .. tostring(Spring.GetModOptions().wall_time) .. " mins"
   		table.insert(infoMessage, message)
 	end
+	if Spring.GetModOptions().mo_nanoframedecay == "1" then
+  		message = "Nano frames Decay disabled"
+  		table.insert(infoMessage, message)
+	end
 end
 
 --Spring.Echo ("Message length == ",#infoMessage)

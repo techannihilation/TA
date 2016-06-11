@@ -11,7 +11,8 @@ local modrules  = {
   },
 
   construction = {
-    constructionDecay = (Spring.GetModOptions() and (Spring.GetModOptions().mo_terraforming == "0") and 1) or 0,
+    constructionDecay = (Spring.GetModOptions() and (Spring.GetModOptions().mo_terraforming == "0") and 1)
+    and (Spring.GetModOptions() and (Spring.GetModOptions().mo_nanoframedecay == "0") and 1) or 0,
       },
   
   reclaim = {
