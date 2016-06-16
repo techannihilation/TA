@@ -56,10 +56,6 @@ if Spring.GetModOptions() then
   		message = "Trans-Dimensional Phase Shifting Matter Transfer Beam Actived"
   		table.insert(infoMessage, message)
 	end
-	if Spring.GetModOptions().mo_wall == "1" then
-  		message = "Peace Time Wal Activated, Countdown Timer set to " .. tostring(Spring.GetModOptions().wall_time) .. " mins"
-  		table.insert(infoMessage, message)
-	end
 	if Spring.GetModOptions().mo_nanoframedecay == "1" then
   		message = "Nano frames Decay disabled"
   		table.insert(infoMessage, message)
