@@ -38,7 +38,7 @@ return {
 		maxwaterdepth = 21,
 		metalstorage = 0,
 		mobilestandorders = 1,
-		movementclass = "KBOT2",
+		movementclass = "HKBOT3",
 		name = "Can",
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
