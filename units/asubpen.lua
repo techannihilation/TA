@@ -66,6 +66,7 @@ return {
 			[7] = "armpincer",
 			[8] = "armcroc",
 			[9] = "armscpion",
+			[10] = "armmech",
 		},
 		customparams = {
 			buildpic = "ASUBPEN.png",
