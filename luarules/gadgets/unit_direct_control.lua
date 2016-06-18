@@ -37,26 +37,27 @@ end
 
 local enabled = true
 
-local badUnitDefs = {
-	UnitDefNames['cormexp'].id,
-	UnitDefNames['corvipe'].id,
-	UnitDefNames['armraven'].id,
-	UnitDefNames['armsptk'].id,
-	UnitDefNames['cortron'].id,
-	UnitDefNames['cortl'].id,
-	UnitDefNames['armtl'].id,
-	UnitDefNames['cormship'].id,
-	UnitDefNames['armmship'].id,
-	UnitDefNames['corhurc'].id,
-	UnitDefNames['corvroc'].id,
-	UnitDefNames['cormship'].id,
-	UnitDefNames['corhowie'].id,
-	UnitDefNames['armmlrs'].id,
-	UnitDefNames['armhys'].id,
-	UnitDefNames['corpre'].id,
-	UnitDefNames['tlldb'].id,
-	UnitDefNames['tawf116'].id,
-}
+local badUnitDefs = {}
+local weaponDefTable = WeaponDefs
+
+for i=1,#UnitDefs do
+local unitDefID = UnitDefs[i]
+  if #unitDefID.weapons and #unitDefID.weapons >= 1 then
+  	if unitDefID.canFly then
+  		--Spring.Echo("Aircraft Detected Direct Control Disabled")
+  		badUnitDefs[i] = true
+  	end
+  	for v=1, #unitDefID.weapons do
+  	  weaponDef = weaponDefTable[ unitDefID.weapons[v].weaponDef]
+  	  --Spring.Echo(UnitDefs[i].name," type",weaponDef.type," numb.weapon :" ,#unitDefID.weapons)
+  	  if weaponDef.type == "MissileLauncher" or weaponDef.type == "StarburstLauncher" then
+  	   --Spring.Echo("Disabled Direct Control for ",UnitDefs[i].name," with weapon type",weaponDef.type)
+       badUnitDefs[i] = true
+      end
+	end
+  end
+end
+
 
 
 --------------------------------------------------------------------------------
