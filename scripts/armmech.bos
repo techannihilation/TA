@@ -1,0 +1,517 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  ground, hips, luparm, lloarm, lhand, fingerla, fingerlb, thumbl,
+       ruparm, rloarm, rhand, fingerra, fingerrb, thumbr, body, arml,
+       cannonl, flarel, shellb, armr, cannonr, flarer, shella, missileflare,
+       light, turret, flash, aimpointa;
+
+static-var  Static_Var_1, gun_2, bMoving, Current_depth;
+
+// Signal definitions
+#define SIG_MOVE			2
+#define SIG_AIM				4
+#define SIG_AIM_2			8
+#define SIG_AIM_3			32
+
+#define LASER_DEPTH			-3214400
+#define TORPEDO_DEPTH		-3026700
+#define CANNON_DEPTH 		-2140025
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from hips;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+	return (0);
+	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
+}
+
+walk()
+{
+	if( TRUE )
+	{
+		turn arml to x-axis <20.000000> speed <9.000000>;
+		turn armr to x-axis <-20.000000> speed <18.000000>;
+		turn luparm to x-axis <40.005495> speed <50.000000>;
+		turn ruparm to x-axis <-40.005495> speed <50.000000>;
+		turn lhand to x-axis <-30.005495> speed <70.000000>;
+		turn rhand to x-axis <10.000000> speed <50.000000>;
+		turn rloarm to x-axis <-20.000000> speed <70.000000>;
+		turn body to x-axis <6.000000> speed <5.000000>;
+		sleep 505;
+		turn lhand to x-axis <40.005495> speed <100.000000>;
+		turn rhand to x-axis <20.000000> speed <50.000000>;
+		turn rloarm to x-axis <40.005495> speed <100.000000>;
+		turn fingerla to x-axis <45.010989> speed <100.000000>;
+		turn fingerlb to x-axis <45.010989> speed <100.000000>;
+		turn thumbl to x-axis <-45.010989> speed <100.000000>;
+		turn fingerra to x-axis <0.000000> speed <100.000000>;
+		turn fingerrb to x-axis <0.000000> speed <100.000000>;
+		sleep 600;
+		turn thumbr to x-axis <0.000000> speed <100.000000>;
+		move hips to y-axis [2.000000] speed [2.000000];
+		turn hips to z-axis <7.000000> speed <3.000000>;
+	}
+	if( TRUE )
+	{
+		turn arml to x-axis <-20.000000> speed <20.000000>;
+		turn armr to x-axis <20.000000> speed <20.000000>;
+		turn luparm to x-axis <-40.005495> speed <50.000000>;
+		turn ruparm to x-axis <40.005495> speed <50.000000>;
+		turn rhand to x-axis <-40.005495> speed <130.000000>;
+		turn lloarm to x-axis <-40.005495> speed <100.000000>;
+		sleep 1050;
+		turn rhand to x-axis <40.005495> speed <100.000000>;
+		turn lloarm to x-axis <40.005495> speed <100.000000>;
+		move hips to y-axis [0.000000] speed [2.000000];
+		turn fingerla to x-axis <0.000000> speed <100.000000>;
+		turn fingerlb to x-axis <0.000000> speed <100.000000>;
+		turn fingerra to x-axis <45.010989> speed <100.000000>;
+		turn fingerrb to x-axis <45.010989> speed <100.000000>;
+		turn thumbr to x-axis <-45.010989> speed <100.000000>;
+		sleep 600;
+		turn thumbl to x-axis <0.000000> speed <100.000000>;
+		move hips to y-axis [2.000000] speed [2.000000];
+		turn hips to z-axis <-7.000000> speed <8.000000>;
+		turn arml to x-axis <0.000000> speed <14.000000>;
+		turn armr to x-axis <0.000000> speed <14.000000>;
+	}
+	while( TRUE )
+	{
+		if( TRUE )
+		{
+			turn body to y-axis <-10.000000> speed <12.000000>;
+			turn body to x-axis <-5.000000> speed <6.000000>;
+			turn luparm to x-axis <40.005495> speed <50.000000>;
+			turn ruparm to x-axis <-40.005495> speed <50.000000>;
+			turn lhand to x-axis <-40.005495> speed <130.000000>;
+			turn rloarm to x-axis <-40.005495> speed <100.000000>;
+			sleep 1050;
+			turn lhand to x-axis <40.005495> speed <100.000000>;
+			turn rhand to x-axis <40.005495> speed <70.000000>;
+			turn rloarm to x-axis <40.005495> speed <100.000000>;
+			move hips to y-axis [0.000000] speed [2.000000];
+			turn fingerla to x-axis <45.010989> speed <100.000000>;
+			turn fingerlb to x-axis <45.010989> speed <100.000000>;
+			turn thumbl to x-axis <-45.010989> speed <100.000000>;
+			turn fingerra to x-axis <0.000000> speed <100.000000>;
+			turn fingerrb to x-axis <0.000000> speed <100.000000>;
+			sleep 600;
+			turn thumbr to x-axis <0.000000> speed <100.000000>;
+			move hips to y-axis [2.000000] speed [2.000000];
+			turn hips to z-axis <7.000000> speed <8.000000>;
+		}
+		if( TRUE )
+		{
+			turn body to y-axis <10.000000> speed <12.000000>;
+			turn body to x-axis <6.000000> speed <6.000000>;
+			turn luparm to x-axis <-40.005495> speed <50.000000>;
+			turn ruparm to x-axis <40.005495> speed <50.000000>;
+			turn rhand to x-axis <-40.005495> speed <130.000000>;
+			turn lloarm to x-axis <-40.005495> speed <100.000000>;
+			sleep 1050;
+			turn rhand to x-axis <40.005495> speed <100.000000>;
+			turn lloarm to x-axis <40.005495> speed <100.000000>;
+			move hips to y-axis [0.000000] speed [2.000000];
+			turn fingerla to x-axis <0.000000> speed <100.000000>;
+			turn fingerlb to x-axis <0.000000> speed <100.000000>;
+			turn fingerra to x-axis <45.010989> speed <100.000000>;
+			turn fingerrb to x-axis <45.010989> speed <100.000000>;
+			turn thumbr to x-axis <-45.010989> speed <100.000000>;
+			sleep 600;
+			turn thumbl to x-axis <0.000000> speed <100.000000>;
+			move hips to y-axis [2.000000] speed [2.000000];
+			turn hips to z-axis <-7.000000> speed <8.000000>;
+		}
+	}
+}
+
+stop()
+{
+	turn luparm to x-axis <0.000000> speed <50.000000>;
+	turn ruparm to x-axis <0.000000> speed <50.000000>;
+	turn lloarm to x-axis <0.000000> speed <100.000000>;
+	turn rloarm to x-axis <0.000000> speed <100.000000>;
+	turn body to y-axis <0.000000> speed <100.000000>;
+	turn body to x-axis <0.000000> speed <20.000000>;
+	move hips to y-axis [0.000000] speed [20.000000];
+	turn hips to z-axis <0.000000> speed <20.000000>;
+	turn fingerra to x-axis <0.000000> speed <100.000000>;
+	turn fingerrb to x-axis <0.000000> speed <100.000000>;
+	turn thumbr to x-axis <0.000000> speed <100.000000>;
+	turn fingerla to x-axis <0.000000> speed <100.000000>;
+	turn fingerlb to x-axis <0.000000> speed <100.000000>;
+	turn thumbl to x-axis <0.000000> speed <100.000000>;
+	turn rhand to x-axis <0.000000> speed <100.000000>;
+	turn lhand to x-axis <0.000000> speed <100.000000>;
+	wait-for-turn body around x-axis;
+	turn body to x-axis <10.000000> speed <48.000000>;
+	turn arml to x-axis <-10.000000> speed <48.000000>;
+	turn armr to x-axis <-10.000000> speed <48.000000>;
+	wait-for-turn body around x-axis;
+	turn body to x-axis <-3.000000> speed <48.000000>;
+	wait-for-turn body around x-axis;
+	turn body to x-axis <0.000000> speed <48.000000>;
+	turn arml to x-axis <0.000000> speed <48.000000>;
+	turn armr to x-axis <0.000000> speed <48.000000>;
+	wait-for-turn body around x-axis;
+	bMoving = TRUE;
+	sleep 20;
+}
+
+Create()
+{
+	hide flarel;
+	hide shellb;
+	hide flarer;
+	hide shella;
+	hide missileflare;
+	hide flash;
+	hide aimpointa;
+	cache arml;
+	cache lloarm;
+	cache lhand;
+	cache fingerla;
+	cache fingerlb;
+	cache thumbl;
+	cache armr;
+	cache rloarm;
+	cache rhand;
+	cache fingerra;
+	cache fingerrb;
+	cache thumbr;
+	cache body;
+	dont-shade flarel;
+	dont-shade shellb;
+	dont-shade flarer;
+	dont-shade shella;
+	dont-shade missileflare;
+	dont-shade light;
+	dont-shade flash;
+	dont-cache light;
+	gun_2 = ground;
+	bMoving = TRUE;
+	Static_Var_1 = 4000;
+	start-script SmokeUnit();
+}
+
+StartMoving()
+{
+	bMoving = TRUE;
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	start-script walk();
+}
+
+StopMoving()
+{
+	bMoving = TRUE;
+	signal SIG_MOVE;
+	start-script stop();
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = hips;
+}
+
+RestoreAfterDelay()
+{
+	sleep Static_Var_1;
+	turn turret to y-axis <0.000000> speed <225.000000>;
+	turn body to y-axis <0.000000> speed <100.000000>;
+	turn arml to x-axis <0.000000> speed <20.000000>;
+	turn armr to x-axis <0.000000> speed <20.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn body around y-axis;
+	wait-for-turn arml around x-axis;
+	wait-for-turn armr around x-axis;
+	bMoving = TRUE;
+}
+
+AimPrimary(heading, pitch)
+{
+	Current_Depth = get GROUND_WATER_HEIGHT(get UNIT_XZ);
+	//get PRINT( Current_Depth );
+	if ( Current_Depth < LASER_DEPTH )
+    {
+     	return (0);
+    }
+	bMoving = TRUE;
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	turn turret to y-axis heading speed <450.000000>;
+	wait-for-turn turret around y-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FirePrimary()
+{
+	show flash;
+	sleep 150;
+	hide flash;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = flash;
+}
+
+AimSecondary(heading, pitch)
+{
+	Current_Depth = get GROUND_WATER_HEIGHT(get UNIT_XZ);
+	//get PRINT( Current_Depth );
+	if ( Current_Depth < CANNON_DEPTH )
+    {
+     	return (0);
+    }
+	bMoving = FALSE;
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	turn body to y-axis heading speed <150.000000>;
+	turn arml to x-axis <0.000000> - pitch speed <40.000000>;
+	turn armr to x-axis <0.000000> - pitch speed <40.000000>;
+	turn turret to y-axis heading speed <450.000000>;
+	wait-for-turn body around y-axis;
+	wait-for-turn arml around x-axis;
+	wait-for-turn armr around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireSecondary()
+{
+	if( gun_2 == 0 )
+	{
+		move cannonl to z-axis [-2.289996] now;
+		show flarel;
+		sleep 150;
+		explode shellb type FALL;
+		hide flarel;
+		move cannonl to z-axis [0.000000] speed [5.000000];
+	}
+	if( gun_2 == 1 )
+	{
+		move cannonr to z-axis [-2.289996] now;
+		show flarer;
+		sleep 150;
+		explode shella type FALL;
+		hide flarer;
+		move cannonr to z-axis [0.000000] speed [5.000000];
+	}
+	gun_2 = !gun_2;
+	bMoving = TRUE;
+}
+
+QuerySecondary(piecenum)
+{
+	if( gun_2 == 0 )
+	{
+		piecenum = flarel;
+	}
+	if( gun_2 == 1 )
+	{
+		piecenum = flarer;
+	}
+}
+
+AimTertiary(heading, pitch)
+{
+	Current_Depth = get GROUND_WATER_HEIGHT(get UNIT_XZ);
+	//get PRINT( Current_Depth );
+	if ( Current_Depth > TORPEDO_DEPTH )
+    {
+     	return (0);
+    }
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
+	bMoving = TRUE;
+	while( !bMoving )
+	{
+		sleep 300;
+	}
+	turn body to y-axis heading speed <150.000000>;
+	turn turret to y-axis heading speed <450.000000>;
+	wait-for-turn body around y-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireTertiary()
+{
+	show missileflare;
+	sleep 150;
+	hide missileflare;
+}
+
+QueryTertiary(piecenum)
+{
+	piecenum = missileflare;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = flash;
+}
+
+AimFromSecondary(piecenum)
+{
+	if( gun_2 == 0 )
+	{
+		piecenum = aimpointa;
+	}
+	if( gun_2 == 1 )
+	{
+		piecenum = aimpointa;
+	}
+}
+
+AimFromTertiary(piecenum)
+{
+	piecenum = missileflare;
+}
+
+Killed(severity, corpsetype)
+{
+	hide flash;
+	hide flarel;
+	hide flarer;
+	hide missileflare;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode hips type BITMAPONLY | BITMAP1;
+		explode luparm type BITMAPONLY | BITMAP2;
+		explode lloarm type BITMAPONLY | BITMAP3;
+		explode lhand type BITMAPONLY | BITMAP4;
+		explode fingerla type BITMAPONLY | BITMAP5;
+		explode fingerlb type BITMAPONLY | BITMAP1;
+		explode thumbl type BITMAPONLY | BITMAP2;
+		explode ruparm type BITMAPONLY | BITMAP3;
+		explode rloarm type BITMAPONLY | BITMAP4;
+		explode rhand type BITMAPONLY | BITMAP5;
+		explode fingerra type BITMAPONLY | BITMAP1;
+		explode fingerrb type BITMAPONLY | BITMAP2;
+		explode thumbr type BITMAPONLY | BITMAP3;
+		explode body type BITMAPONLY | BITMAP4;
+		explode arml type BITMAPONLY | BITMAP5;
+		explode cannonl type BITMAPONLY | BITMAP1;
+		explode flarel type BITMAPONLY | BITMAP2;
+		explode armr type BITMAPONLY | BITMAP3;
+		explode cannonr type BITMAPONLY | BITMAP4;
+		explode flarer type BITMAPONLY | BITMAP5;
+		explode missileflare type BITMAPONLY | BITMAP1;
+		explode light type BITMAPONLY | BITMAP2;
+		explode turret type BITMAPONLY | BITMAP3;
+		explode flash type BITMAPONLY | BITMAP4;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode hips type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode luparm type FALL | BITMAP2;
+		explode lloarm type FALL | BITMAP3;
+		explode lhand type FALL | BITMAP4;
+		explode fingerla type FALL | BITMAP5;
+		explode fingerlb type FALL | BITMAP1;
+		explode thumbl type FALL | BITMAP2;
+		explode ruparm type FALL | BITMAP3;
+		explode rloarm type FALL | BITMAP4;
+		explode rhand type FALL | BITMAP5;
+		explode fingerra type FALL | BITMAP1;
+		explode fingerrb type FALL | BITMAP2;
+		explode thumbr type FALL | BITMAP3;
+		explode body type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode arml type FALL | BITMAP5;
+		explode cannonl type FALL | BITMAP1;
+		explode flarel type FALL | BITMAP2;
+		explode armr type FALL | BITMAP3;
+		explode cannonr type FALL | BITMAP4;
+		explode flarer type FALL | BITMAP5;
+		explode missileflare type FALL | BITMAP1;
+		explode light type SHATTER | BITMAP2;
+		explode turret type FALL | BITMAP3;
+		explode flash type FALL | BITMAP4;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode hips type SHATTER | BITMAP1;
+		explode luparm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode lloarm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode lhand type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode fingerla type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode fingerlb type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode thumbl type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode ruparm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode rloarm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode rhand type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode fingerra type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode fingerrb type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode thumbr type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode body type SHATTER | BITMAP4;
+		explode arml type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode cannonl type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode flarel type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode armr type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode cannonr type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode flarer type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode missileflare type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode light type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
+		explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode flash type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode hips type SHATTER | EXPLODE_ON_HIT | BITMAP1;
+	explode luparm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode lloarm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode lhand type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode fingerla type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode fingerlb type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode thumbl type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode ruparm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode rloarm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode rhand type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode fingerra type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode fingerrb type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode thumbr type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP4;
+	explode arml type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode cannonl type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode flarel type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode armr type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode cannonr type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode flarer type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode missileflare type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode light type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
+	explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode flash type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	return (corpsetype);
+}
