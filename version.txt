@@ -1,3 +1,14 @@
+----------------------------------------- v2.39.5 --------------------------------------- 
+
+----Improvements----
+Lock down direct control
+Rework armmech (killer) into an amphibious unit	
+Remove grace wall
+
+----Balance----
+Increase Speed for Cavalier
+Update corcan can now crush T1 walls
+
 ----------------------------------------- v2.39.4 --------------------------------------- 
 
 ----Improvements----
