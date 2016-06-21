@@ -27,7 +27,7 @@ return {
 		category = "ALL HUGE MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTVTOL SUPERSHIP WEAPON",
 		collide = false,
 		collisionvolumeoffsets = "28 -10 -5",
-		collisionvolumescales = "89 51 134",
+		collisionvolumescales = "110 70 190",
 		collisionvolumetest = 1,
 		collisionvolumetype = "Box",
 		cruisealt = 20,
