@@ -14,7 +14,7 @@ end
 ----------------------------------------------------------------
 -- Synced only
 ----------------------------------------------------------------
-if not gadgetHandler:IsSyncedCode() then
+if not gadgetHandler:IsSyncedCode() or #UnitDefs > 0x38D then
     return false
 end
 
