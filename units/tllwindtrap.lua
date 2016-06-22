@@ -28,7 +28,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 38.90006,
-		mass = 37.33333,
+		mass = 39,
 		maxdamage = 224,
 		maxslope = 10,
 		maxwaterdepth = 0,

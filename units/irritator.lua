@@ -31,7 +31,7 @@ return {
 		idletime = 30,
 		immunetoparalyzer = 1,
 		maneuverleashlength = 1250,
-		mass = 21100,
+		mass = 22500,
 		maxdamage = 86000,
 		maxslope = 36,
 		maxvelocity = 1,

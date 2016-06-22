@@ -29,7 +29,7 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
-		mass = 350,
+		mass = 373,
 		maxdamage = 949.59998,
 		maxslope = 10,
 		maxvelocity = 10,

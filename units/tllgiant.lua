@@ -30,7 +30,7 @@ return {
 		isairbase = true,
 		losemitheight = 48,
 		maneuverleashlength = 1640,
-		mass = 1395,
+		mass = 1800,
 		maxdamage = 7500,
 		maxvelocity = 2.7,
 		minwaterdepth = 30,

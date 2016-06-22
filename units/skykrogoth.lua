@@ -29,7 +29,7 @@ return {
 		footprintx = 3,
 		footprintz = 6,
 		hoverattack = true,
-		mass = 200000,
+		mass = 30000,
 		maxdamage = 27500,
 		maxslope = 17,
 		maxvelocity = 3.5,

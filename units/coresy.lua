@@ -29,7 +29,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 93,
-		mass = 22500,
+		mass = 16000,
 		maxdamage = 10598,
 		metalmake = 2,
 		metalstorage = 400,

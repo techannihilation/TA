@@ -32,7 +32,7 @@ return {
 		idletime = 1800,
 		immunetoparalyzer = 1,
 		losemitheight = 66.94913,
-		mass = 4076,
+		mass = 4300,
 		maxdamage = 4950,
 		maxslope = 10,
 		maxwaterdepth = 33,

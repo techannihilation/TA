@@ -21,7 +21,7 @@ return {
 		idletime = 1800,
 		isfeature = true,
 		losemitheight = 38.30805,
-		mass = 20,
+		mass = 21,
 		maxdamage = 50,
 		maxslope = 32,
 		maxvelocity = 0,

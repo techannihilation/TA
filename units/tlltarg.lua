@@ -27,7 +27,7 @@ return {
 		idletime = 1800,
 		istargetingupgrade = true,
 		losemitheight = 39.19695,
-		mass = 7305,
+		mass = 7792,
 		maxdamage = 3455,
 		maxslope = 10,
 		maxwaterdepth = 0,

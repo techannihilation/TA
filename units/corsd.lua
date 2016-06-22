@@ -26,7 +26,7 @@ return {
 		idletime = 1800,
 		levelground = false,
 		losemitheight = 59.43452,
-		mass = 698,
+		mass = 745,
 		maxdamage = 2500,
 		maxslope = 36,
 		maxwaterdepth = 0,

@@ -33,7 +33,7 @@ return {
 		immunetoparalyzer = 1,
 		losemitheight = 28.8,
 		maneuverleashlength = 1280,
-		mass = 650,
+		mass = 693,
 		maxdamage = 2775,
 		maxslope = 10,
 		maxvelocity = 8.5,

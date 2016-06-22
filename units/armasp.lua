@@ -32,7 +32,7 @@ return {
 		idletime = 1800,
 		isairbase = true,
 		losemitheight = 28.8,
-		mass = 609,
+		mass = 750,
 		maxdamage = 2500,
 		maxslope = 10,
 		maxvelocity = 0,

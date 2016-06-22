@@ -26,7 +26,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		istargetingupgrade = true,
-		mass = 749,
+		mass = 799,
 		maxdamage = 1800,
 		maxslope = 10,
 		maxvelocity = 0,

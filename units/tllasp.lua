@@ -27,7 +27,7 @@ return {
 		idletime = 1800,
 		isairbase = true,
 		losemitheight = 47.48,
-		mass = 451,
+		mass = 450,
 		maxdamage = 650,
 		maxslope = 10,
 		maxwaterdepth = 1,

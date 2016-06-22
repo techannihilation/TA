@@ -31,7 +31,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		maneuverleashlength = 640,
-		mass = 108,
+		mass = 115,
 		maxdamage = 456,
 		maxvelocity = 1.49,
 		maxwaterdepth = 24,

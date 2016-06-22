@@ -38,7 +38,7 @@ return {
 		idletime = 300,
 		initcloaked = true,
 		levelground = false,
-		mass = 44,
+		mass = 47,
 		maxdamage = 10,
 		maxslope = 40,
 		maxvelocity = 0,

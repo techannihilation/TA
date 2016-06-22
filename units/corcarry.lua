@@ -37,7 +37,7 @@ return {
 		isairbase = true,
 		losemitheight = 33.1541,
 		maneuverleashlength = 640,
-		mass = 1579,
+		mass = 1684,
 		maxdamage = 7950,
 		maxvelocity = 2.64,
 		metalstorage = 1500,

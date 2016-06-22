@@ -24,7 +24,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 61.64065,
-		mass = 204,
+		mass = 218,
 		maxdamage = 1200,
 		minwaterdepth = 5,
 		name = "Depth Charge Station",

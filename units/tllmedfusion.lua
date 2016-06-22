@@ -24,7 +24,7 @@ return {
 		idletime = 2000,
 		losemitheight = 44.94469,
 		makesmetal = 4.2,
-		mass = 3450,
+		mass = 3680,
 		maxdamage = 4680,
 		maxslope = 20,
 		maxwaterdepth = 0,

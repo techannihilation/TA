@@ -40,7 +40,7 @@ return {
 		istargetingupgrade = true,
 		losemitheight = 46,
 		maneuverleashlength = 640,
-		mass = 16389,
+		mass = 14500,
 		maxdamage = 15280,
 		maxvelocity = 1.8,
 		metalstorage = 2000,
