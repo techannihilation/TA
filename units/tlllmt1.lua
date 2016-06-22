@@ -113,8 +113,8 @@ return {
 		weapondefs = {
 			armrl_missile = {
 				areaofeffect = 48,
-				burstrate = 0.6,
 				burst = 2,
+				burstrate = 0.6,
 				canattackground = false,
 				cegtag = "Tll_Def_AA_Rocket",
 				craterboost = 0,

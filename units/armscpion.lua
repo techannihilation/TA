@@ -43,7 +43,6 @@ return {
 		mobilestandorders = 1,
 		movementclass = "ATANK3",
 		name = "Scorpion",
-		--noautofire = false,
 		nochasecategory = "VTOL",
 		objectname = "ARMSCPION",
 		ovradjust = 1,

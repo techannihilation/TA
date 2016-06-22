@@ -143,7 +143,7 @@ return {
 				name = "peewee",
 				noselfdamage = true,
 				range = 180,
-				reloadtime = 0.30,
+				reloadtime = 0.3,
 				rgbcolor = "0.83 0.57 0",
 				size = 1.75,
 				soundstart = "flashemg",

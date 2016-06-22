@@ -69,7 +69,7 @@ return {
 				footprintz = 14,
 				height = 20,
 				hitdensity = 100,
-				metal = 218475.20312,
+				metal = 218475.20313,
 				object = "ARMVULC1_DEAD",
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",

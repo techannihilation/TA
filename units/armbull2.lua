@@ -54,8 +54,6 @@ return {
 		unitname = "armbull2",
 		unitnumber = 229,
 		workertime = 0,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -147,7 +145,6 @@ return {
 			},
 			armrogue_cannon = {
 				areaofeffect = 8,
-
 				id = 243,
 				name = "Rogue Gatling Cannon",
 				range = 350,

@@ -211,7 +211,7 @@ return {
 				nogap = 1,
 				noselfdamage = true,
 				range = 800,
-				reloadtime = 0.20,
+				reloadtime = 0.2,
 				separation = 0.45,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed2",

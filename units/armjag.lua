@@ -72,7 +72,7 @@ return {
 			dead = {
 				blocking = true,
 				category = "core_corpses",
-				damage = 40147.20312,
+				damage = 40147.20313,
 				description = "Jaguar Wreckage",
 				featuredead = "heap",
 				featurereclamate = "smudge01",
@@ -143,8 +143,8 @@ return {
 				soundhitdry = "xplomed2",
 				soundstart = "cannhvy5",
 				sprayangle = 2000,
-				tolerance = 5000,
 				stages = 20,
+				tolerance = 5000,
 				turret = true,
 				weapontype = "Cannon",
 				weaponvelocity = 700,

@@ -28,7 +28,7 @@ return {
 		mass = 27000,
 		maxdamage = 41000,
 		maxslope = 14,
-		maxvelocity = 1.0,
+		maxvelocity = 1,
 		maxwaterdepth = 12,
 		mobilestandorders = 1,
 		movementclass = "VKBOT4",
@@ -83,6 +83,11 @@ return {
 				world = "All Worlds",
 			},
 		},
+		sfxtypes = {
+			explosiongenerators = {
+				[1] = "custom:mediumflare",
+			},
+		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "tllwarning",
@@ -104,16 +109,11 @@ return {
 				[1] = "tllunitok",
 			},
 		},
-		sfxtypes = {
-			explosiongenerators = {
-				[1] = "custom:mediumflare",
-			},
-		},
 		weapondefs = {
 			tll_hailstorm = {
 				accuracy = 3000,
-				areaofeffect = 325,
 				alphadecay = 0.3,
+				areaofeffect = 325,
 				cegtag = "vulcanfx_lowp",
 				craterboost = 0,
 				cratermult = 0,
@@ -129,9 +129,9 @@ return {
 				separation = 0.45,
 				size = 2.25,
 				sizedecay = -0.15,
-				stages = 10,
 				soundhitdry = "xplomed4",
 				soundstart = "cannhvy2",
+				stages = 10,
 				tolerance = 500,
 				turret = true,
 				weapontype = "Cannon",

@@ -57,8 +57,8 @@ return {
 		unitname = "blade",
 		workertime = 0,
 		customparams = {
-			requiretech = "Advanced T2 Unit Research Centre",
 			buildpic = "BLADE.png",
+			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		sounds = {
 			canceldestruct = "cancel2",

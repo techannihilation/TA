@@ -22,7 +22,7 @@ return {
 		description = "Master Assault Tank",
 		energymake = 2,
 		energystorage = 0,
-		energyuse =2,
+		energyuse = 2,
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
 		footprintx = 4,
