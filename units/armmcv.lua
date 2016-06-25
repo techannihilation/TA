@@ -1,10 +1,10 @@
 return {
 	armmcv = {
-		acceleration = 0.09,
+		acceleration = 0.07,
 		activatewhenbuilt = true,
 		amphibious = 1,
 		bmcode = 1,
-		brakerate = 0.24,
+		brakerate = 0.18,
 		buildcostenergy = 185000,
 		buildcostmetal = 9600,
 		builder = false,
@@ -63,7 +63,7 @@ return {
 		turninplace = 0,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0.858,
-		turnrate = 128,
+		turnrate = 310,
 		unitname = "armmcv",
 		unitnumber = 22134,
 		workertime = 0,
