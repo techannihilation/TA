@@ -37,7 +37,7 @@ return {
 		selfdestructas = "SMALL_BUILDING",
 		side = "TLL",
 		sightdistance = 175,
-		sonardistancejam = 750,
+		sonardistancejam = 275,
 		unitname = "tlluwjam",
 		unitnumber = 869,
 		waterline = 7,
