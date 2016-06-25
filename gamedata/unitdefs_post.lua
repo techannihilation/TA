@@ -234,13 +234,13 @@ local Nanos = {
 --------------------------------------------------------------------------------
 --
 -- ud.customparams IS NEVER NIL
-
+--[[
 for _, ud in pairs(UnitDefs) do
     if not ud.customparams then
         ud.customparams = {}
     end
  end
- 
+ --]]
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -255,7 +255,7 @@ if (Spring.GetModOptions) then
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 --
---[[
+
 if (modOptions.mo_transportenemy == "notcoms") then
   for name,ud in pairs(UnitDefs) do  
     if Commanders[ud.unitname] then
@@ -267,7 +267,6 @@ if (modOptions.mo_transportenemy == "notcoms") then
       ud.transportbyenemy = false
     end
 end  
-
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -281,32 +280,21 @@ end
      end
     end
    end
-        --]]
-end
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
---[[
-for name, ud in pairs(UnitDefs) do
-	if (ud.brakerate) then 
-		if ud.canfly then
-			if ud.hoverattack then
-                                Spring.Echo(ud.objectname .. " hover brakerate := " .. ud.brakerate .."  New brakerate := ".. ud.brakerate * 0.1)
-				--ud.brakerate = ud.brakerate * 0.1
-			else
-                                Spring.Echo(ud.objectname .. " Aircraft brakerate := " .. ud.brakerate .." New brakerate := ".. ud.brakerate * 10)
-				--ud.brakerate = ud.brakerate * 10
-			end
-		else 
-			--ud.brakerate = ud.brakerate * 3.0
+
+	for name, ud in pairs(UnitDefs) do  
+		if (not Commanders[ud.unitname]) then
+			ud.mass = math.max(ud.maxdamage / 6.0, ud.buildcostmetal)
 		end
 	end
-end
 
 --VFS.Include("gamedata/unitdefs_post_save_to_customparams.lua")
 
+end
 
-
-        
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--[[
+      
         --[[
 
 local WorkerTimeThresholds = { 
@@ -395,6 +383,13 @@ for name, ud in pairs(UnitDefs) do
 		if ud.buildpic then
 		  ud.customparams.buildpic = ud.buildpic
 		end
+end
+
+
+for name, ud in pairs(UnitDefs) do
+	if ud.turnrate and (ud.movementclass and (ud.movementclass:find("TANK",1,true))) and ud.turnrate < 250 then
+		Spring.Echo("low turnate in unit ",name,ud.turnrate)
+	end
 end
 --]]
 
