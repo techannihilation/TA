@@ -123,6 +123,7 @@ return {
 			arm_laserh2 = {
 				areaofeffect = 20,
 				beamtime = 0.6,
+				collideFriendly = false,
 				corethickness = 0.45,
 				craterboost = 0,
 				cratermult = 0,

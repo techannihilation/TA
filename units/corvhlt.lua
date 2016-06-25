@@ -122,6 +122,7 @@ return {
 			core_laserh2 = {
 				areaofeffect = 16,
 				beamtime = 0.2,
+				collideFriendly = false,
 				corethickness = 0.2,
 				craterboost = 0,
 				cratermult = 0,
