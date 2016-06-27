@@ -423,7 +423,7 @@ if (gadgetHandler:IsSyncedCode()) then
 
 	local function isComplete(u)
 		local health,maxHealth,paralyzeDamage,captureProgress,buildProgress=Spring.GetUnitHealth(u)
-		if buildProgress and buildProgress>=1 then
+                if (buildProgress and buildProgress>=1) or health == 0 then
 			return true
 		else
 			return false
