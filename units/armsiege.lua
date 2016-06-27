@@ -1,6 +1,6 @@
 return {
 	armsiege = {
-		acceleration = 0.02,
+		acceleration = 0.037,
 		antiweapons = 1,
 		bmcode = 1,
 		brakerate = 0.09,
@@ -57,7 +57,7 @@ return {
 		turninplace = 0,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 1.122,
-		turnrate = 192,
+		turnrate = 288,
 		unitname = "armsiege",
 		unitnumber = 46,
 		workertime = 0,

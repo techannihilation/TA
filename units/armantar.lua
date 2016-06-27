@@ -1,6 +1,6 @@
 return {
 	armantar = {
-		acceleration = 0.01,
+		acceleration = 0.03,
 		bmcode = 1,
 		brakerate = 0.16887,
 		buildcostenergy = 150980,

@@ -54,7 +54,7 @@ return {
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0.726,
-		turnrate = 180,
+		turnrate = 340,
 		unitname = "armtigre2",
 		unitnumber = 5698,
 		workertime = 0,
