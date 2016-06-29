@@ -23,7 +23,7 @@ return {
 		category = "ALL COMMANDER CONSTR LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
 		cloakcost = 120,
 		cloakcostmoving = 1100,
-		collisionvolumeoffsets = "0 -12 -3",
+		collisionvolumeoffsets = "-5 1 0",
 		collisionvolumescales = "40 48 30",
 		collisionvolumetest = 1,
 		collisionvolumetype = "Ell",
