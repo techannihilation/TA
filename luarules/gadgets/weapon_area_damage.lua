@@ -27,6 +27,8 @@ local SpEcho = Spring.Echo
 local sqrt = math.sqrt
 local pairs = pairs
 local ipairs = ipairs
+local junoCanDamage = {}
+
 
 function gadget:Explosion(weaponID, px, py, pz, ownerID)
 	if ownerID==nil then return end
@@ -43,7 +45,9 @@ function gadget:Explosion(weaponID, px, py, pz, ownerID)
 			teamID=SpGetUnitTeam(ownerID),
 			allyID=SpGetUnitAllyTeam(ownerID),
 			allyScale=weaponInfo[weaponID].allyScale or 1.0,
-			teamScale=teamScale or 1.0
+			teamScale=teamScale or 1.0,
+			isjuno=isjuno or false
+
 		}
 		table.insert(explosionList,w)
 	end
@@ -73,6 +77,11 @@ function gadget:GameFrame(f)
 				   		damage = damage * allyScale
 					end
 					-- Avoid damage to self altogether
+					if w.isjuno and (u ~= nil and w.owner ~= nil and u ~= w.owner) then
+						if junoCanDamage[SpGetUnitDefID(u)] then
+							SpAddUnitDamage(u, damage, 0, w.owner, w.id, 0, 0, 0)
+						end
+					end
 					if (u ~= nil and w.owner ~= nil and u ~= w.owner) then
 					   SpAddUnitDamage(u, damage, 0, w.owner, w.id, 0, 0, 0)
 					end
@@ -87,6 +96,13 @@ function gadget:GameFrame(f)
 end
 
 function gadget:Initialize()
+	for i=1,#UnitDefs do
+  local unitDefID = UnitDefs[i]
+    if unitDefID.canMove and unitDefID.health < 1500 then
+      Spring.Echo(i,unitDefID.name, unitDefID.health, unitDefID.canMove)
+      junoCanDamage[i] = true
+   end
+  end
 	for w,_ in pairs(weaponInfo) do
 		Script.SetWatchWeapon(w, true)
 	end

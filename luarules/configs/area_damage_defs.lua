@@ -9,9 +9,9 @@ local weapons = {
 	thermite_mine = { radius = 64, damage = 750, duration = 130, rangeFall = 0.25, timeFall = 0.6},
 
 	--junos
-	ajuno_juno_pulse = { radius = 950, damage = 20, duration = 90, rangeFall = 0.8, timeFall = 0.1},
-	cjuno_juno_pulse = { radius = 950, damage = 20, duration = 90, rangeFall = 0.8, timeFall = 0.1},
-	tlljuno_juno_pulse = { radius = 950, damage = 20, duration = 90, rangeFall = 0.8, timeFall = 0.1}
+	ajuno_juno_pulse = { radius = 950, damage = 20, duration = 90, rangeFall = 0.8, timeFall = 0.1, isjuno = true},
+	cjuno_juno_pulse = { radius = 950, damage = 20, duration = 90, rangeFall = 0.8, timeFall = 0.1, isjuno = true},
+	tlljuno_juno_pulse = { radius = 950, damage = 20, duration = 90, rangeFall = 0.8, timeFall = 0.1, isjuno = true}
 
 }
 
