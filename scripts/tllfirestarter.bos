@@ -18,53 +18,53 @@ walk2()
 	{
 		if( bMoving )
 		{
-			turn leg1 to y-axis <43.796703> now;
+			turn leg1 to y-axis <43.791209> now;
 			turn leg1 to y-axis <0.000000> speed <219.000000>;
-			turn leg1 to z-axis <0.598901> now;
+			turn leg1 to z-axis <0.593407> now;
 			turn leg1 to z-axis <0.000000> speed <3.000000>;
-			turn leg3 to y-axis <30.697802> now;
-			turn leg3 to y-axis <20.098901> speed <3.000000>;
-			turn leg3 to z-axis <20.598901> now;
-			turn leg3 to z-axis <0.598901> speed <155.098901>;
-			turn leg4 to y-axis <-40.098901> now;
-			turn leg4 to y-axis <-40.098901> speed <0.000000>;
+			turn leg3 to y-axis <30.692308> now;
+			turn leg3 to y-axis <20.093407> speed <3.000000>;
+			turn leg3 to z-axis <20.593407> now;
+			turn leg3 to z-axis <0.593407> speed <155.093407>;
+			turn leg4 to y-axis <-40.093407> now;
+			turn leg4 to y-axis <-40.093407> speed <0.000000>;
 			turn leg4 to z-axis <-31.000000> now;
-			turn leg4 to z-axis <-0.598901> speed <152.098901>;
+			turn leg4 to z-axis <-0.593407> speed <152.093407>;
 			turn leg6 to y-axis <0.000000> now;
-			turn leg6 to y-axis <-30.395604> speed <152.098901>;
-			turn leg6 to z-axis <-20.000000> speed <79.838710>;
+			turn leg6 to y-axis <-30.390110> speed <152.093407>;
+			turn leg6 to z-axis <-20.000000> speed <79.835165>;
 			turn body to x-axis <5.000000> speed <25.000000>;
 			sleep 200;
 		}
 		if( bMoving )
 		{
-			turn leg1 to z-axis <20.598901> speed <158.098901>;
-			turn leg3 to y-axis <0.000000> speed <170.296703>;
+			turn leg1 to z-axis <20.593407> speed <158.093407>;
+			turn leg3 to y-axis <0.000000> speed <170.291209>;
 			turn leg3 to z-axis <0.000000> speed <3.000000>;
-			turn leg4 to y-axis <0.000000> speed <200.697802>;
-			turn leg6 to z-axis <2.395604> speed <237.197802>;
+			turn leg4 to y-axis <0.000000> speed <200.692308>;
+			turn leg6 to z-axis <2.390110> speed <237.192308>;
 			turn body to x-axis <0.000000> speed <25.000000>;
 			sleep 200;
 		}
 		if( bMoving )
 		{
-			turn leg1 to y-axis <45.000000> speed <279.796703>;
+			turn leg1 to y-axis <45.000000> speed <279.791209>;
 			turn leg1 to z-axis <30.000000> speed <3.000000>;
-			turn leg3 to z-axis <20.598901> speed <158.098901>;
-			turn leg4 to y-axis <-0.598901> speed <3.000000>;
-			turn leg4 to z-axis <-31.000000> speed <152.098901>;
-			turn leg6 to y-axis <3.000000> speed <167.296703>;
+			turn leg3 to z-axis <20.593407> speed <158.093407>;
+			turn leg4 to y-axis <-0.593407> speed <3.000000>;
+			turn leg4 to z-axis <-31.000000> speed <152.093407>;
+			turn leg6 to y-axis <3.000000> speed <167.291209>;
 			turn body to x-axis <-5.000000> speed <25.000000>;
 			sleep 200;
 		}
-		turn leg1 to y-axis <43.796703> speed <60.796703>;
-		turn leg1 to z-axis <0.598901> speed <152.098901>;
-		turn leg3 to y-axis <34.697802> speed <173.395604>;
-		turn leg3 to z-axis <20.598901> speed <0.000000>;
-		turn leg4 to y-axis <-40.098901> speed <197.697802>;
+		turn leg1 to y-axis <43.791209> speed <60.791209>;
+		turn leg1 to z-axis <0.593407> speed <152.093407>;
+		turn leg3 to y-axis <34.692308> speed <173.390110>;
+		turn leg3 to z-axis <20.593407> speed <0.000000>;
+		turn leg4 to y-axis <-40.093407> speed <197.692308>;
 		turn leg4 to z-axis <-31.000000> speed <0.000000>;
-		turn leg6 to y-axis <0.000000> speed <15.197802>;
-		turn leg6 to z-axis <-20.000000> speed <237.197802>;
+		turn leg6 to y-axis <0.000000> speed <15.192308>;
+		turn leg6 to z-axis <-20.000000> speed <237.192308>;
 		turn body to x-axis <0.000000> speed <25.000000>;
 		sleep 200;
 	}
@@ -157,8 +157,8 @@ AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	turn turret to y-axis heading speed <90.000000>;
-	turn sleeve to x-axis <0.000000> - pitch speed <90.000000>;
+	turn turret to y-axis heading speed <280.000000>;
+	turn sleeve to x-axis <0.000000> - pitch speed <280.000000>;
 	wait-for-turn turret around y-axis;
 	wait-for-turn sleeve around x-axis;
 	start-script RestoreAfterDelay();
@@ -213,7 +213,7 @@ Killed(severity, corpsetype)
 		explode leg4 type BITMAPONLY | BITMAP4;
 		explode leg6 type BITMAPONLY | BITMAP1;
 		explode turret type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -226,7 +226,7 @@ Killed(severity, corpsetype)
 		explode leg4 type FALL | BITMAP4;
 		explode leg6 type FALL | BITMAP1;
 		explode turret type SHATTER | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -239,7 +239,7 @@ Killed(severity, corpsetype)
 		explode leg4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 		explode leg6 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 		explode turret type SHATTER | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode body type BITMAPONLY | BITMAP3;
@@ -250,4 +250,5 @@ Killed(severity, corpsetype)
 	explode leg4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 	explode leg6 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 	explode turret type SHATTER | EXPLODE_ON_HIT | BITMAP2;
+	return (corpsetype);
 }
