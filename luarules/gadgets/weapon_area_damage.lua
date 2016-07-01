@@ -99,7 +99,7 @@ function gadget:Initialize()
 	for i=1,#UnitDefs do
   local unitDefID = UnitDefs[i]
     if unitDefID.canMove and unitDefID.health < 1500 then
-      Spring.Echo(i,unitDefID.name, unitDefID.health, unitDefID.canMove)
+      --Spring.Echo(i,unitDefID.name, unitDefID.health, unitDefID.canMove)
       junoCanDamage[i] = true
    end
   end
