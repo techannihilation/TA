@@ -226,12 +226,12 @@ open()
 {
 	show holder;
 	show elevator;
-	turn backholder to x-axis <90.000000> speed <270.000000>;
-	turn ldoor to z-axis <-150.000000> speed <270.000000>;
-	turn rdoor to z-axis <150.000000> speed <270.000000>;
+	turn backholder to x-axis <90.000000> speed <370.000000>;
+	turn ldoor to z-axis <-150.000000> speed <370.000000>;
+	turn rdoor to z-axis <150.000000> speed <370.000000>;
 	wait-for-turn ldoor around z-axis;
-	move backbarrels to y-axis [4.250000] speed [4.000000];
-	move elevator to y-axis [2.500000] speed [3.000000];
+	move backbarrels to y-axis [4.250000] speed [120.000000];
+	move elevator to y-axis [2.500000] speed [90.000000];
 	wait-for-move elevator along y-axis;
 	show barrels;
 	hide backbarrels;
@@ -244,8 +244,8 @@ close()
 	wait-for-turn backholder around x-axis;
 	show backbarrels;
 	hide barrels;
-	move backbarrels to y-axis [0.000000] speed [4.000000];
-	move elevator to y-axis [0.000000] speed [2.000000];
+	move backbarrels to y-axis [0.000000] speed [40.000000];
+	move elevator to y-axis [0.000000] speed [30.000000];
 	wait-for-move elevator along y-axis;
 	turn ldoor to z-axis <0.000000> speed <180.000000>;
 	turn rdoor to z-axis <0.000000> speed <180.000000>;
@@ -308,7 +308,7 @@ Create()
 	Static_Var_4 = 1;
 	Static_Var_6 = 0;
 	gun_2 = base;
-	restore_delay = 3000;
+	restore_delay = 6000;
 	hide barrels;
 	hide elevator;
 	hide holder;
@@ -319,7 +319,7 @@ Create()
 
 SetMaxReloadTime(Func_Var_1)
 {
-	restore_delay = Func_Var_1 * 2;
+	//restore_delay = Func_Var_1 * 2;
 }
 
 RestoreAfterDelay()
@@ -342,8 +342,8 @@ AimPrimary(heading, pitch)
 	{
 		sleep 250;
 	}
-	turn holder to y-axis heading speed <120.000000>;
-	turn barrels to x-axis <0.000000> - pitch speed <90.000000>;
+	turn holder to y-axis heading speed <260.000000>;
+	turn barrels to x-axis <0.000000> - pitch speed <350.000000>;
 	wait-for-turn holder around y-axis;
 	wait-for-turn barrels around x-axis;
 	start-script RestoreAfterDelay();
@@ -374,8 +374,8 @@ AimSecondary(heading, pitch)
 	{
 		sleep 250;
 	}
-	turn holder to y-axis heading speed <120.000000>;
-	turn barrels to x-axis <0.000000> - pitch speed <90.000000>;
+	turn holder to y-axis heading speed <260.000000>;
+	turn barrels to x-axis <0.000000> - pitch speed <350.000000>;
 	wait-for-turn holder around y-axis;
 	wait-for-turn barrels around x-axis;
 	start-script RestoreAfterDelay();
@@ -422,7 +422,7 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		return (0);
+		return (corpsetype);
 	}
 	explode ldoor type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
 	explode rdoor type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
@@ -430,8 +430,9 @@ Killed(severity, corpsetype)
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		return (0);
+		return (corpsetype);
 	}
 	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP3;
 	corpsetype = 3;
+	return (corpsetype);
 }
