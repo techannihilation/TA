@@ -138,7 +138,7 @@ return {
 				weaponacceleration = 164,
 				weapontimer = 3,
 				weapontype = "StarburstLauncher",
-				weaponvelocity = 4400,
+				weaponvelocity = 3600,
 				damage = {
 					default = 15000,
 					subs = 5,
