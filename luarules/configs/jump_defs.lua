@@ -39,7 +39,7 @@ jumpCategory = {
 	supremecom = {
 		range = 1250, height = 150, speed = 5,  reload = 20,  aaShootMe = false, delay = 0, cobscript = true, rotateMidAir = true, limitHeight=false},
 	jumpbot = {
-		range = 750, height = 300, speed = 2,  reload = 20,  aaShootMe = false, delay = 0, cobscript = true, rotateMidAir = true, limitHeight=false},
+		range = 600, height = 300, speed = 2,  reload = 20,  aaShootMe = false, delay = 0, cobscript = true, rotateMidAir = true, limitHeight=false},
 	longjumpbot = {
 		range = 400, height = 200, speed = 6,  reload = 20,  aaShootMe = false, delay = 0, cobscript = true, rotateMidAir = true, limitHeight=false},		
 }
