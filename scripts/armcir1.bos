@@ -7,7 +7,7 @@ piece  flare1, flare6, flare5, flare4, flare3, flare2, base, turret,
        barrel1, barrel2, barrel3, barrel4, barrel5, barrel6, sleeve12, sleeve34,
        sleeve56, spindle;
 
-static-var  gun_1, bAiming, Static_Var_3;
+static-var  gun_1, Static_Var_2, bAiming;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -75,14 +75,14 @@ Create()
 	hide flare5;
 	hide flare6;
 	gun_1 = flare1;
-	Static_Var_3 = 1;
+	Static_Var_2 = 1;
 	start-script SmokeUnit();
 }
 
 RestoreAfterDelay()
 {
 	sleep 1000;
-	Static_Var_3 = 1;
+	Static_Var_2 = 1;
 }
 
 AimPrimary(heading, pitch)
@@ -155,6 +155,7 @@ FirePrimary()
 	if( gun_1 == 6 )
 	{
 		gun_1 = flare1;
+		Static_Var_2 = 1;
 	}
 }
 
