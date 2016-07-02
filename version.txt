@@ -4,6 +4,7 @@
 Remove endgame weapon (TZAR)
 Rework t3 tanks brakerate/turnrates
 Fix some hitsphere issues (e.g. tracker not fring when close to antinukes)
+Fix morphed anti's hitting hills 
 
 ----Bugs----
 Add damage stats widget/gadget combo, Closes #1074
@@ -15,10 +16,15 @@ Very heavy laser towers allow beam to passthrough frienldy units (Fix's friendly
 Fix some broken mod option
 Fix losing tech on reclaim
 Rework tllares (now onpar with arm/core counterparts)
-Fix morphed anti's hitting hills 
 Tllroit, area damage reduced 250>200, aoe 105>75
 Fix tll static AA and mobile units have slow turret turnrates
 Fix troll slow turret turnrate
+nsaagriz => reloadtime 1.5 => 1.2 (20000dmg/s => 250000dmg/s)
+tankanator : Fix buildcostenergy 20909 => 32900 & buildcostmetal 3740 => 3540,
+cortatal (totalitatian t2.5) : Fix buildcostenergy 22000 => 32000 & buildcostmetal 3650 => 3450,
+tllpulaser : Balance Metalcost 1025 => 1325
+armscpion (t3.5 arm Amphibious Vehicle) : Increase M&E cost (+4KE & +150M), damage/s (250=>320), decrease HP (9750=>9250)
+Gargoyle (T2.5 Vehicle Core) : Increase energy cost 19KE => 31KE. Add same explosion when destruct than Mobile Tachyon
 
 ----------------------------------------- v2.39.5 --------------------------------------- 
 
