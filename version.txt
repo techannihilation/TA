@@ -1,3 +1,25 @@
+----------------------------------------- v2.39.6 --------------------------------------- 
+
+----Improvements----
+Remove endgame weapon (TZAR)
+Rework t3 tanks brakerate/turnrates
+Fix some hitsphere issues (e.g. tracker not fring when close to antinukes)
+
+----Bugs----
+Add damage stats widget/gadget combo, Closes #1074
+Juno area damage now only effect mobile unit with max HP less than 1500, Closes #1089
+Hyperion Increase brakerate and turnrate, Closes #1080
+
+----Balance----
+Very heavy laser towers allow beam to passthrough frienldy units (Fix's friendly fire damage)
+Fix some broken mod option
+Fix losing tech on reclaim
+Rework tllares (now onpar with arm/core counterparts)
+Fix morphed anti's hitting hills 
+Tllroit, area damage reduced 250>200, aoe 105>75
+Fix tll static AA and mobile units have slow turret turnrates
+Fix troll slow turret turnrate
+
 ----------------------------------------- v2.39.5 --------------------------------------- 
 
 ----Improvements----
