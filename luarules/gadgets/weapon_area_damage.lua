@@ -81,8 +81,7 @@ function gadget:GameFrame(f)
 						if junoCanDamage[SpGetUnitDefID(u)] then
 							SpAddUnitDamage(u, damage, 0, w.owner, w.id, 0, 0, 0)
 						end
-					end
-					if (u ~= nil and w.owner ~= nil and u ~= w.owner) then
+					elseif (not w.isjuno) and (u ~= nil and w.owner ~= nil and u ~= w.owner) then
 					   SpAddUnitDamage(u, damage, 0, w.owner, w.id, 0, 0, 0)
 					end
 				end
