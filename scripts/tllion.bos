@@ -3,51 +3,28 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, fusee, fum1, fum2, fum3, flare1, flare2,
-       antenne, arm, target, lights, aimer;
+piece  base, body, fusee, antenne, door1, door2, door3, door4, silo;
 
-static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
-            Static_Var_6, Static_Var_7, Static_Var_8, Static_Var_9, Static_Var_10;
+static-var  gun_1, restore_delay, statechg_DesiredState, statechg_StateChanging;
 
 // Signal definitions
 #define SIG_AIM				2
 
-
-HitByWeapon(anglex, anglez)
-{
-	var Func_Var_3;
-	Func_Var_3 = get HEALTH;
-	if( Func_Var_3 <= 60 )
-	{
-		if( !Static_Var_5 )
-		{
-			Static_Var_5 = 1;
-			hide arm;
-			explode arm type FALL | SHATTER | SMOKE | BITMAP2;
-		}
-	}
-}
-
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
-	Static_Var_5 = 0;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
 	while( TRUE )
 	{
 		healthpercent = get HEALTH;
-		if( healthpercent >= 75 )
-		{
-			if( Static_Var_5 )
-			{
-				Static_Var_5 = 0;
-				show arm;
-			}
-		}
 		if( healthpercent < 66 )
 		{
-			smoketype = 258;
+			smoketype = 256 | 2;
 			if( Rand( 1, 66 ) < healthpercent )
 			{
-				smoketype = 257;
+				smoketype = 256 | 1;
 			}
 			emit-sfx smoketype from base;
 		}
@@ -60,117 +37,173 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-Debu()
+Activatescr()
 {
-	while ( TRUE )
+	if( TRUE )
 	{
-		emit-sfx 1024 + 0 from target;
-		sleep 50;
+		move door1 to y-axis [0.000000] now;
+		move door1 to y-axis [-3.000000] speed [8.000000];
+		move door2 to y-axis [0.000000] now;
+		move door2 to y-axis [-3.000000] speed [8.000000];
+		move door3 to y-axis [0.000000] now;
+		move door3 to y-axis [-3.000000] speed [8.000000];
+		move door4 to y-axis [0.000000] now;
+		move door4 to y-axis [-3.000000] speed [8.000000];
+		//move turret to y-axis [0.000000] speed [25.000000];
+		turn door1 to x-axis <90.016484> now;
+		turn door1 to x-axis <0.000000> speed <225.000000>;
+		turn door2 to z-axis <-90.016484> now;
+		turn door2 to z-axis <0.000000> speed <225.000000>;
+		turn door3 to x-axis <-90.016484> now;
+		turn door3 to x-axis <0.000000> speed <225.000000>;
+		turn door4 to z-axis <90.016484> now;
+		turn door4 to z-axis <0.000000> speed <225.000000>;
+		//move turret to y-axis [4.000000] speed [15.000000];
+		sleep 400;
 	}
+	sleep 25;
 }
 
-fum()
+Deactivatescr()
 {
-	while( Static_Var_2 )
+	if( TRUE )
 	{
-		emit-sfx 1024 + 0 from flare2;
-		//explode fusee type BITMAPONLY | BITMAP3;
-		emit-sfx 257 from fum1;
-		emit-sfx 257 from fum2;
-		emit-sfx 257 from fum3;
-		sleep Static_Var_6;
+		move door1 to y-axis [0.000000] now;
+		move door1 to y-axis [0.000000] speed [0.000000];
+		move door2 to y-axis [0.000000] now;
+		move door2 to y-axis [0.000000] speed [0.000000];
+		move door3 to y-axis [0.000000] now;
+		move door3 to y-axis [0.000000] speed [0.000000];
+		move door4 to y-axis [0.000000] now;
+		move door4 to y-axis [0.000000] speed [0.000000];
+		//turn launcher to x-axis <0.000000> speed <80.000000>;
+		//turn launcher to y-axis <0.000000> speed <100.000000>;
+		//wait-for-turn launcher around x-axis;
+		//wait-for-turn launcher around y-axis;
+		//move turret to y-axis [-15.000000] speed [22.000000];
+		turn door1 to x-axis <90.016484> speed <225.000000>;
+		turn door2 to z-axis <-90.016484> speed <225.000000>;
+		turn door3 to x-axis <-90.016484> speed <225.000000>;
+		turn door4 to z-axis <90.016484> speed <225.000000>;
+		sleep 300;
 	}
+	sleep 15;
 }
 
-Launchsequence()
+Go()
 {
-	sleep 2500;
-	turn arm to y-axis <90.000000> speed <60.000000>;
-	while( Static_Var_9 )
+	gun_1 = body;
+	show fusee;
+	call-script activatescr();
+}
+
+Stop()
+{
+	gun_1 = fusee;
+	sleep 4000;
+	call-script deactivatescr();
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
 	{
-		emit-sfx 257 from fum2;
-		emit-sfx 258 from fum3;
-		sleep 33;
-		--Static_Var_9;
+		statechg_DesiredState = requestedstate;
+		return (0);
 	}
-	Static_Var_9 = 45;
-	Static_Var_2 = 1;
-	Static_Var_6 = 85;
-	Static_Var_7 = [20.000000];
-	Static_Var_8 = [8.000000];
-	start-script fum();
-	while( Static_Var_7 <= [480.000000] )
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
 	{
-		move fusee to y-axis Static_Var_7 speed Static_Var_8;
-		wait-for-move fusee along y-axis;
-		Static_Var_6 = Static_Var_6 - 3;
-		Static_Var_7 = Static_Var_7 + [20.000000];
-		Static_Var_8 = Static_Var_8 + [8.000000];
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
 	}
-	Static_Var_6 = 10;
-	move fusee to y-axis [800.000000] speed [200.000000];
-	wait-for-move fusee along y-axis;
-	Static_Var_6 = 6;
-	move fusee to y-axis [1600.000000] speed [260.000000];
-	wait-for-move fusee along y-axis;
-	Static_Var_2 = 0;
-	hide fusee;
-	sleep 1000;
-	spin antenne around y-axis speed <50.000000>;
-	move fusee to y-axis [-0.650000] now;
-	sleep 5000;
-	Static_Var_10 = 0;
+	statechg_StateChanging = FALSE;
 }
 
 Create()
 {
-	dont-cache flare1;
-	dont-cache flare2;
-	dont-cache fusee;
-	hide flare1;
-	hide flare2;
-	move aimer to y-axis [8000.000000] now;
-	Static_Var_2 = 0;
-	Static_Var_9 = 45;
-	Static_Var_10 = 1;
+	hide fusee;
+	call-script deactivatescr();
+	gun_1 = base;
+	restore_delay = 3000;
 	while( get BUILD_PERCENT_LEFT )
 	{
 		sleep 500;
 	}
-	start-script Launchsequence();
+	spin antenne around y-axis speed <50.000000>;
+	call-script InitState();
 	start-script SmokeUnit();
-	start-script Debu();
 }
 
-AimFromPrimary(piecenum)
+Activate()
 {
-	piecenum = aimer;
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+SetMaxReloadTime(Func_Var_1)
+{
+	restore_delay = Func_Var_1 * 2;
+}
+
+RestoreAfterDelay()
+{
+	sleep restore_delay;
+	set-signal-mask 0;
+	start-script RequestState(1);
 }
 
 AimPrimary(heading, pitch)
 {
-	if( Static_Var_10 )
-	{
-		return (0);
-	}
+	start-script RequestState(0);
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	var radius;
-	turn aimer to y-axis heading now;
-	radius = get ABS(get KTAN(<90>+pitch))*1280000;
-	move target to z-axis radius now;
-	sleep 1;
+	while( !gun_1 )
+	{
+		sleep 250;
+	}
+	start-script RestoreAfterDelay();
 	return (1);
 }
 
 FirePrimary()
 {
-	sleep 150;
+	emit-sfx 1024 from silo;
+	sleep 2000;
+	hide fusee;
+	gun_1 = base;
+	start-script RequestState(1);
+}
+
+AimFromPrimary(piecenum)
+{
+		piecenum = antenne;
 }
 
 QueryPrimary(piecenum)
 {
-	piecenum = target;
+	piecenum = fusee;
 }
 
 SweetSpot(piecenum)
@@ -185,31 +218,23 @@ Killed(severity, corpsetype)
 		corpsetype = 1;
 		explode antenne type BITMAPONLY | BITMAP1;
 		explode body type BITMAPONLY | BITMAP2;
-		explode arm type BITMAPONLY | BITMAP4;
-		explode flare1 type BITMAPONLY | BITMAP5;
-		explode flare2 type BITMAPONLY | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
 		explode body type SHATTER | BITMAP1;
-		explode arm type FALL | BITMAP4;
-		explode lights type FALL | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
 		explode body type SHATTER | BITMAP1;
 		explode antenne type BITMAPONLY | BITMAP2;
-		explode arm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-		explode lights type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP1;
-	explode lights type BITMAPONLY | BITMAP2;
 	explode antenne type SHATTER | EXPLODE_ON_HIT | BITMAP1;
-	explode arm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	return (corpsetype);
 }
