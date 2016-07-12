@@ -19,7 +19,7 @@ return {
 		collisionvolumetype = "ellipsoid",
 		corpse = "HEAVYIMPACT_DEAD",
 		defaultmissiontype = "Standby",
-		description = "Heavy Artillery Mech",
+		description = "Heavy Artillery Amphibious Mech",
 		explodeas = "BIG_UNIT",
 		firestandorders = 1,
 		footprintx = 5,
