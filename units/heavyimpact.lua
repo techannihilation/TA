@@ -44,7 +44,7 @@ return {
 		piecetrailcegtag = "Debree",
 		radaremitheight = 42.49054,
 		seismicsignature = 0,
-		selfdestructas = "SMALL_BUILDING",
+		selfdestructas = "CRAWL_BLAST",
 		side = "CORE",
 		sightdistance = 400,
 		standingfireorder = 2,
