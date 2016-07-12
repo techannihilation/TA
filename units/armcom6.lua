@@ -86,7 +86,7 @@ return {
 			[2] = "armlightfus",
 			[3] = "armuwlightfus",
 			[4] = "armatidal",
-			[5] = "armamaker",
+			[5] = "armmmkr",
 			[6] = "armuwmmm",
 			[7] = "armuwadves",
 			[8] = "armuwadvms",
