@@ -1,9 +1,9 @@
 return {
 	armdragf = {
-		acceleration = 0.1,
+		acceleration = 0.2,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.28,
+		brakerate = 0.84,
 		buildcostenergy = 1926,
 		buildcostmetal = 103,
 		builder = false,

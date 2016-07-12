@@ -1,9 +1,9 @@
 return {
 	tllrobber = {
-		acceleration = 0.2,
+		acceleration = 0.4,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.55,
+		brakerate = 1.1,
 		buildcostenergy = 8605,
 		buildcostmetal = 693,
 		builder = false,

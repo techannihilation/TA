@@ -1,10 +1,10 @@
 return {
 	corbtrans = {
-		acceleration = 0.2,
+		acceleration = 0.4,
 		antiweapons = 1,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.625,
+		brakerate = 1.25,
 		buildcostenergy = 65000,
 		buildcostmetal = 3000,
 		builder = false,

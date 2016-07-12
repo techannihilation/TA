@@ -1,9 +1,9 @@
 return {
 	tlltplane = {
-		acceleration = 0.09,
+		acceleration = 0.18,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.29,
+		brakerate = 0.87,
 		buildcostenergy = 1378,
 		buildcostmetal = 71,
 		builder = false,
@@ -19,7 +19,6 @@ return {
 		cruisealt = 70,
 		defaultmissiontype = "VTOL_standby",
 		description = "Air Transport",
-		designation = "TL-TP",
 		energymake = 0.6,
 		energyuse = 0.6,
 		explodeas = "SMALL_UNITEX",

@@ -1,9 +1,9 @@
 return {
 	corvalk = {
-		acceleration = 0.09,
+		acceleration = 0.18,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 0.25,
+		brakerate = 0.75,
 		buildcostenergy = 1437,
 		buildcostmetal = 74,
 		builder = false,
