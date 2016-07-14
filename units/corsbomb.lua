@@ -41,7 +41,7 @@ return {
 		maxvelocity = 6.5,
 		maxwaterdepth = 0,
 		metalstorage = 0,
-		mincloakdistance = 400,
+		mincloakdistance = 100, -- at least that value with current cruisealt
 		mobilestandorders = 1,
 		name = "Black Lily",
 		noautofire = false,
@@ -58,7 +58,6 @@ return {
 		tedclass = "VTOL",
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 4.29,
-		turnradius = 1500,
 		turnrate = 140,
 		unitname = "corsbomb",
 		workertime = 0,
