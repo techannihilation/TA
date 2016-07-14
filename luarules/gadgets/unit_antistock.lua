@@ -23,19 +23,21 @@ end
 local isAnti = {
 		[UnitDefNames['armamd'].id] = true, -- Protector
 		[UnitDefNames['armamd1'].id] = true, -- Adv Protector
-		--[UnitDefNames['armscab'].id] = true, -- Mobile Anti
-		--[UnitDefNames['armscab1'].id] = true, -- Mobile Anti
+		[UnitDefNames['armamd2'].id] = true, -- T3 Antinuke
+		--[UnitDefNames['armscab'].id] = true, -- Mobile Antinuke
+		--[UnitDefNames['armscab1'].id] = true, -- Mobile Antinuke
 		[UnitDefNames['armcarry'].id] = true, -- Colossus (Arm carrier)
 		
 		[UnitDefNames['corfmd'].id] = true, -- Fortitude
 		[UnitDefNames['corfmd1'].id] = true, -- Adv Fortitude
-		[UnitDefNames['corfmd2'].id] = true, -- T3 Anti
-		--[UnitDefNames['cormabm'].id] = true, -- Mobile Anti
-		--[UnitDefNames['cormabm1'].id] = true, -- Mobile Anti
+		[UnitDefNames['corfmd2'].id] = true, -- T3 Antinuke
+		--[UnitDefNames['cormabm'].id] = true, -- Mobile Antinuke
+		--[UnitDefNames['cormabm1'].id] = true, -- Mobile Antinuke
 		[UnitDefNames['corcarry'].id] = true, -- Hive (Core carrier)
 
 		[UnitDefNames['tllantinuke'].id] = true, -- Antinuke
-		--[UnitDefNames['tllturtle'].id] = true, -- Mobile Anti
+		[UnitDefNames['tllgazelle'].id] = true, -- T3 Antinuke
+		--[UnitDefNames['tllturtle'].id] = true, -- Mobile Antinuke
                 [UnitDefNames['tllgiant'].id] = true, -- Giant (Tll carrier)
 	}
 
