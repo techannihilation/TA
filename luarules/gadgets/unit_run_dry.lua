@@ -3,8 +3,8 @@
 
 function gadget:GetInfo()
   return {
-    name      = "Water platform rundry vontrol",
-    desc      = "Explodes Water platform's that exceed there min waterline",
+    name      = "Run Dry Control",
+    desc      = "Explodes water units that are on land",
     author    = "Nixtux",
     date      = "April 29, 20012",
     license   = "GNU GPL, v2 or later",
