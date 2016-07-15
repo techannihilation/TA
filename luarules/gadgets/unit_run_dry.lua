@@ -50,6 +50,7 @@ local buffer = 2
 
 function gadget:GameFrame(n)
   if (((n+18) % 30) < 0.1) then
+    if Spring.IsCheatingEnabled() then return end
     for unitID, _ in pairs(tidals) do
 	local minwater = tidals[unitID].minwaterdepth
     local canMove = tidals[unitID].canmove
