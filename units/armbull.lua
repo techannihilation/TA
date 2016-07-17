@@ -57,7 +57,7 @@ return {
 		trackwidth = 40,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.3,
+		turninplacespeedlimit = 1.32,
 		turnrate = 378,
 		unitname = "armbull",
 		workertime = 0,

@@ -52,7 +52,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.551,
+		turninplacespeedlimit = 1.782,
 		turnrate = 72,
 		unitname = "tllgiant",
 		unitnumber = 907,

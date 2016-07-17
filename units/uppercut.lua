@@ -59,7 +59,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.188,
+		turninplacespeedlimit = 1.122,
 		turnrate = 200,
 		unitname = "uppercut",
 		waterline = 70,

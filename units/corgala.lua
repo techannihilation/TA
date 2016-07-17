@@ -56,7 +56,7 @@ return {
 		standingmoveorder = 0,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.2,
+		turninplacespeedlimit = 0.924,
 		turnrate = 320,
 		unitname = "corgala",
 		upright = true,

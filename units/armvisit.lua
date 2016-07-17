@@ -51,7 +51,7 @@ return {
 		steeringmode = 1,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.914,
+		turninplacespeedlimit = 2.178,
 		turnrate = 260,
 		unitname = "armvisit",
 		unitnumber = 1740,

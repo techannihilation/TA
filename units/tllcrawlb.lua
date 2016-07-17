@@ -51,7 +51,7 @@ return {
 		standingmoveorder = 0,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.32,
+		turninplacespeedlimit = 1.188,
 		turnrate = 512,
 		unitname = "tllcrawlb",
 		unitnumber = 927,

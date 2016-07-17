@@ -56,7 +56,7 @@ return {
 		trackwidth = 50,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.5478,
+		turninplacespeedlimit = 0.561,
 		turnrate = 165,
 		unitname = "requ1",
 		unitnumber = 323,

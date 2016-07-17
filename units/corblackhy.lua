@@ -60,7 +60,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.2936,
+		turninplacespeedlimit = 1.32,
 		turnrate = 260,
 		unitname = "corblackhy",
 		waterline = 5,

@@ -47,7 +47,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1,
+		turninplacespeedlimit = 1.056,
 		turnrate = 1056,
 		unitname = "cortermite",
 		workertime = 0,

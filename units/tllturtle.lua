@@ -49,7 +49,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.2112,
+		turninplacespeedlimit = 0.33,
 		turnrate = 430,
 		unitname = "tllturtle",
 		unitnumber = 31903,

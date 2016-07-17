@@ -49,7 +49,7 @@ return {
 		steeringmode = 1,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.056,
+		turninplacespeedlimit = 1.188,
 		turnrate = 350,
 		unitname = "armbull2",
 		unitnumber = 229,

@@ -59,7 +59,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.8216,
+		turninplacespeedlimit = 1.782,
 		turnrate = 210,
 		unitname = "armcarry",
 		workertime = 1000,

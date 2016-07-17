@@ -127,7 +127,7 @@ return {
 			},
 		},
 		weapondefs = {
-			arm_exxec = {
+			exxec_weapon = {
 				areaofeffect = 8,
 				energypershot = 20,
 				explosiongenerator = "custom:exxec",
@@ -151,7 +151,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "ARM_EXXEC",
+				def = "exxec_weapon",
 				onlytargetcategory = "NOTVTOL",
 			},
 		},

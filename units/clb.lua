@@ -58,7 +58,7 @@ return {
 		tracktype = "StdTank",
 		trackwidth = 60,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.858,
+		turninplacespeedlimit = 0.924,
 		turnrate = 132,
 		unitname = "clb",
 		unitnumber = 995,

@@ -56,7 +56,7 @@ return {
 		trackwidth = 30,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1,
+		turninplacespeedlimit = 1.056,
 		turnrate = 220,
 		unitname = "armsonic",
 		unitnumber = 6303,

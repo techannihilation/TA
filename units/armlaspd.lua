@@ -48,7 +48,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.8512,
+		turninplacespeedlimit = 0.924,
 		turnrate = 1020,
 		unitname = "armlaspd",
 		unitnumber = 6517,

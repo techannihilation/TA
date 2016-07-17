@@ -47,7 +47,7 @@ return {
 		standingmoveorder = 0,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.6302,
+		turninplacespeedlimit = 1.32,
 		turnrate = 307,
 		unitname = "tllviking",
 		unitnumber = 902,

@@ -59,7 +59,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 360,
-		turninplacespeedlimit = 2.5,
+		turninplacespeedlimit = 2.508,
 		turnrate = 297,
 		unitname = "corcrw",
 		upright = true,

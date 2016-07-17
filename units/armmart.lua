@@ -55,7 +55,7 @@ return {
 		trackwidth = 35,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.1946,
+		turninplacespeedlimit = 1.155,
 		turnrate = 402,
 		unitname = "armmart",
 		workertime = 0,

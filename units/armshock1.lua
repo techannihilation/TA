@@ -48,7 +48,7 @@ return {
 		standingmoveorder = 0,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.462,
+		turninplacespeedlimit = 0.4158,
 		turnrate = 231,
 		unitname = "armshock1",
 		customparams = {

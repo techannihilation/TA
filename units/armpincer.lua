@@ -54,7 +54,7 @@ return {
 		trackwidth = 30,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.485,
+		turninplacespeedlimit = 1.683,
 		turnrate = 398,
 		unitname = "armpincer",
 		workertime = 0,

@@ -47,7 +47,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.5412,
+		turninplacespeedlimit = 0.528,
 		turnrate = 250,
 		unitname = "tllbind",
 		unitnumber = 8301,

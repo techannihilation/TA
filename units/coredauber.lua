@@ -51,7 +51,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.759,
+		turninplacespeedlimit = 0.924,
 		turnrate = 999,
 		unitname = "coredauber",
 		unitnumber = 205,

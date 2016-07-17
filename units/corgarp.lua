@@ -54,7 +54,7 @@ return {
 		trackwidth = 30,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.386,
+		turninplacespeedlimit = 1.65,
 		turnrate = 387,
 		unitname = "corgarp",
 		workertime = 0,

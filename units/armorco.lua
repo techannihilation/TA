@@ -56,7 +56,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.8184,
+		turninplacespeedlimit = 0.825,
 		turnrate = 396,
 		unitname = "armorco",
 		unitnumber = 263,

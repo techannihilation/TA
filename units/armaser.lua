@@ -51,7 +51,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.0626,
+		turninplacespeedlimit = 1.056,
 		turnrate = 1045,
 		unitname = "armaser",
 		workertime = 0,

@@ -56,7 +56,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 360,
-		turninplacespeedlimit = 3.3528,
+		turninplacespeedlimit = 3.3,
 		turnrate = 828,
 		unitname = "corcut",
 		workertime = 0,

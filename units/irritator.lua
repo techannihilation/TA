@@ -60,7 +60,7 @@ return {
 		steeringmode = 2,
 		threed = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.6534,
+		turninplacespeedlimit = 0.66,
 		turnrate = 225,
 		unitname = "irritator",
 		upright = true,

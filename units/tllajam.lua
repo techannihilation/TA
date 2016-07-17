@@ -25,7 +25,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 66,
-		mass = 162,
+		mass = 1032,
 		maxdamage = 3128,
 		maxslope = 12,
 		maxwaterdepth = 0,
@@ -39,10 +39,9 @@ return {
 		radaremitheight = 66,
 		selfdestructas = "BIG_UNIT",
 		side = "TLL",
-		stealth = true,
 		sightdistance = 620,
+		stealth = true,
 		unitname = "tllajam",
-		--usebuildinggrounddecal = true,
 		workertime = 0,
 		featuredefs = {
 			dead = {

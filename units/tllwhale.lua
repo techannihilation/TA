@@ -53,7 +53,7 @@ return {
 		stealth = true,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.561,
+		turninplacespeedlimit = 0.66,
 		turnrate = 75,
 		unitname = "tllwhale",
 		unitnumber = 9201,

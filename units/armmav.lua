@@ -50,7 +50,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.089,
+		turninplacespeedlimit = 1.155,
 		turnrate = 1118,
 		unitname = "armmav",
 		upright = true,

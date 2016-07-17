@@ -64,7 +64,6 @@ return {
 			[11] = "armbrtha1",
 			[12] = "armvulc1",
 			[13] = "armfsilo",
-			--[14] = "armtabi",
 			[14] = "armshltx1",
 			[15] = "ashipyardlvl3",
 		},

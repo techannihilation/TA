@@ -51,7 +51,7 @@ return {
 		steeringmode = 1,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.716,
+		turninplacespeedlimit = 1.452,
 		turnrate = 300,
 		unitname = "armhplasma",
 		unitnumber = 18703,

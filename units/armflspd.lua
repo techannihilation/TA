@@ -50,7 +50,7 @@ return {
 		standingmoveorder = 0,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.0824,
+		turninplacespeedlimit = 1.089,
 		turnrate = 1020,
 		unitname = "armflspd",
 		unitnumber = 6518,

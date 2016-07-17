@@ -60,7 +60,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.518,
+		turninplacespeedlimit = 1.188,
 		turnrate = 272,
 		unitname = "aseadragon",
 		waterline = 8,

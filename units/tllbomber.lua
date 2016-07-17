@@ -52,7 +52,7 @@ return {
 		standingmoveorder = 2,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 4.158,
+		turninplacespeedlimit = 5.28,
 		turnrate = 925,
 		unitname = "tllbomber",
 		unitnumber = 918,

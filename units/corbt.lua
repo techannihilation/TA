@@ -53,7 +53,7 @@ return {
 		sightdistance = 800,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.792,
+		turninplacespeedlimit = 0.924,
 		turnrate = 242,
 		unitname = "corbt",
 		workertime = 0,

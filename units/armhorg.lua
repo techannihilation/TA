@@ -51,7 +51,7 @@ return {
 		steeringmode = 1,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.056,
+		turninplacespeedlimit = 0.858,
 		turnrate = 450,
 		unitname = "armhorg",
 		unitnumber = 66,

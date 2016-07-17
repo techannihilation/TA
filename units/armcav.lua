@@ -57,7 +57,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.792,
+		turninplacespeedlimit = 0.924,
 		turnrate = 550,
 		unitname = "armcav",
 		unitnumber = 800,

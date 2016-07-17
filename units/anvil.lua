@@ -58,7 +58,7 @@ return {
 		tedclass = "TANK",
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.528,
+		turninplacespeedlimit = 0.726,
 		turnrate = 300,
 		unitname = "anvil",
 		unitnumber = 30121,

@@ -55,7 +55,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.9008,
+		turninplacespeedlimit = 1.32,
 		turnrate = 310,
 		unitname = "armbats",
 		workertime = 0,

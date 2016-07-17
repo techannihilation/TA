@@ -71,7 +71,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 360,
-		turninplacespeedlimit = 0.858,
+		turninplacespeedlimit = 0.726,
 		turnrate = 100,
 		unitname = "tllvaliant",
 		workertime = 400,

@@ -54,7 +54,7 @@ return {
 		steeringmode = 1,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1,
+		turninplacespeedlimit = 0.99,
 		turnrate = 250,
 		unitname = "armtem",
 		unitnumber = 500,

@@ -54,7 +54,7 @@ return {
 		steeringmode = 1,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.089,
+		turninplacespeedlimit = 0.924,
 		turnrate = 169,
 		unitname = "nsacbehe",
 		unitnumber = 1408,

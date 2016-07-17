@@ -58,7 +58,7 @@ return {
 		trackwidth = 34,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.518,
+		turninplacespeedlimit = 0.99,
 		turnrate = 375,
 		unitname = "armrottweiler",
 		unitnumber = 6625,

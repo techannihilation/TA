@@ -59,7 +59,7 @@ return {
 		trackwidth = 30,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.29228,
+		turninplacespeedlimit = 1.32,
 		turnrate = 393.79999,
 		unitname = "tawf013",
 		workertime = 0,

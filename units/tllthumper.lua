@@ -44,7 +44,7 @@ return {
 		steeringmode = 1,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.5148,
+		turninplacespeedlimit = 0.528,
 		turnrate = 200,
 		unitname = "tllthumper",
 		unitnumber = 834,

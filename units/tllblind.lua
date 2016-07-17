@@ -56,7 +56,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.6534,
+		turninplacespeedlimit = 0.726,
 		turnrate = 950,
 		unitname = "tllblind",
 		unitnumber = 9103,

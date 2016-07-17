@@ -60,7 +60,7 @@ return {
 		transportmass = 16000,
 		transportsize = 25,
 		turninplaceanglelimit = 360,
-		turninplacespeedlimit = 1.65,
+		turninplacespeedlimit = 2.508,
 		turnrate = 420,
 		unitname = "corbtrans",
 		workertime = 0,

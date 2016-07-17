@@ -68,7 +68,6 @@ return {
 			[11] = "corint1",
 			[12] = "corbuzz1",
 			[13] = "corfsilo",
-			--[14] = "corflu",
 			[14] = "corgant1",
 			[15] = "cshipyardlvl4",
 		},

@@ -54,7 +54,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.7424,
+		turninplacespeedlimit = 1.452,
 		turnrate = 306,
 		unitname = "corbats",
 		workertime = 0,

@@ -49,7 +49,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.716,
+		turninplacespeedlimit = 1.65,
 		turnrate = 668,
 		unitname = "armraz",
 		upright = true,

@@ -54,7 +54,7 @@ return {
 		trackwidth = 30,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.83678,
+		turninplacespeedlimit = 1.848,
 		turnrate = 459.79999,
 		unitname = "corraid",
 		workertime = 0,

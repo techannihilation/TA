@@ -52,7 +52,7 @@ return {
 		steeringmode = 1,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 2.112,
+		turninplacespeedlimit = 2.244,
 		turnrate = 520,
 		unitname = "armlashover",
 		unitnumber = 8812,

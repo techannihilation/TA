@@ -50,7 +50,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 360,
-		turninplacespeedlimit = 5.94,
+		turninplacespeedlimit = 4.62,
 		turnrate = 885,
 		unitname = "tlltorpcop",
 		unitnumber = 885,

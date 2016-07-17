@@ -49,7 +49,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.99,
+		turninplacespeedlimit = 1.32,
 		turnrate = 1015,
 		unitname = "armamspd",
 		unitnumber = 6522,

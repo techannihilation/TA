@@ -51,7 +51,7 @@ return {
 		steeringmode = 1,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.518,
+		turninplacespeedlimit = 1.188,
 		turnrate = 280,
 		unitname = "tllhplasma",
 		unitnumber = 17404,

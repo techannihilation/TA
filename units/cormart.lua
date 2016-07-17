@@ -58,7 +58,7 @@ return {
 		trackwidth = 31,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.287,
+		turninplacespeedlimit = 1.221,
 		turnrate = 445,
 		unitname = "cormart",
 		workertime = 0,

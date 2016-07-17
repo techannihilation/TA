@@ -45,7 +45,7 @@ return {
 		steeringmode = 1,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.924,
+		turninplacespeedlimit = 1.122,
 		turnrate = 350,
 		unitname = "tllloki",
 		unitnumber = 836,

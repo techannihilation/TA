@@ -52,7 +52,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.8778,
+		turninplacespeedlimit = 0.792,
 		turnrate = 1058,
 		unitname = "krogtaar",
 		unitnumber = 12323,

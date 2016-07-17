@@ -49,7 +49,7 @@ return {
 		steeringmode = 1,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.98,
+		turninplacespeedlimit = 1.023,
 		turnrate = 410,
 		unitname = "nsaclash",
 		workertime = 0,

@@ -65,7 +65,7 @@ return {
 		steeringmode = 2,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.594,
+		turninplacespeedlimit = 0.66,
 		turnrate = 600,
 		unitname = "nsaagriz",
 		unitnumber = 1413,

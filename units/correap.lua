@@ -57,7 +57,7 @@ return {
 		trackwidth = 33,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.5015,
+		turninplacespeedlimit = 1.518,
 		turnrate = 434,
 		unitname = "correap",
 		workertime = 0,

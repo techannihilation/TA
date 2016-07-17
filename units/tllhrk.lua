@@ -49,7 +49,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.254,
+		turninplacespeedlimit = 0.99,
 		turnrate = 658,
 		unitname = "tllhrk",
 		unitnumber = 932,

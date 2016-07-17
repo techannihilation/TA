@@ -56,7 +56,7 @@ return {
 		trackwidth = 49,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.76,
+		turninplacespeedlimit = 0.759,
 		turnrate = 220,
 		unitname = "corgol",
 		workertime = 0,

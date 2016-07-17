@@ -51,7 +51,7 @@ return {
 		steeringmode = 1,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.65,
+		turninplacespeedlimit = 1.716,
 		turnrate = 280,
 		unitname = "tllhovergauss",
 		unitnumber = 17403,

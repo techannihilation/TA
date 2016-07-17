@@ -47,7 +47,7 @@ return {
 		steeringmode = 1,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.287,
+		turninplacespeedlimit = 1.452,
 		turnrate = 320,
 		unitname = "tllcoyote",
 		unitnumber = 8330,

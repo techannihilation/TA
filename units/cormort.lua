@@ -53,7 +53,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.1616,
+		turninplacespeedlimit = 1.122,
 		turnrate = 1099,
 		unitname = "cormort",
 		upright = true,

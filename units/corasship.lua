@@ -58,7 +58,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.716,
+		turninplacespeedlimit = 2.046,
 		turnrate = 244,
 		unitname = "corasship",
 		unitnumber = 33101,

@@ -31,7 +31,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 52.25849,
-		mass = 23582,
+		mass = 30656,
 		maxdamage = 18280,
 		maxslope = 10,
 		maxvelocity = 0,
@@ -52,14 +52,13 @@ return {
 		turnrate = 0,
 		unitname = "tllgazelle",
 		unitrestricted = 8,
-		--usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "oooooo oooooo oooooo oooooo oooooo oooooo",
 		customparams = {
 			buildpic = "TLLGAZELLE.png",
 		},
 		featuredefs = {
-			DEAD = {
+			dead = {
 				blocking = true,
 				category = "corpses",
 				damage = 10968,
@@ -77,7 +76,7 @@ return {
 				seqnamereclamate = "TREE1RECLAMATE",
 				world = "All Worlds",
 			},
-			HEAP = {
+			heap = {
 				blocking = false,
 				category = "heaps",
 				damage = 6580.80029,

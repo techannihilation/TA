@@ -41,7 +41,7 @@ return {
 		maxvelocity = 6.5,
 		maxwaterdepth = 0,
 		metalstorage = 0,
-		mincloakdistance = 100, -- at least that value with current cruisealt
+		mincloakdistance = 100,
 		mobilestandorders = 1,
 		name = "Black Lily",
 		noautofire = false,

@@ -58,7 +58,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.188,
+		turninplacespeedlimit = 0.99,
 		turnrate = 96,
 		unitname = "armtrmph",
 		waterline = 7,

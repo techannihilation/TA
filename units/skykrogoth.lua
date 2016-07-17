@@ -55,6 +55,8 @@ return {
 		transportcapacity = 1,
 		transportmass = 5000,
 		transportsize = 3,
+		turninplaceanglelimit = 360,
+		turninplacespeedlimit = 2.31,
 		turnrate = 650,
 		unitname = "skykrogoth",
 		unitnumber = 88001,

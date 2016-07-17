@@ -54,7 +54,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.617,
+		turninplacespeedlimit = 1.65,
 		turnrate = 960,
 		unitname = "armjugg",
 		unitnumber = 20003,

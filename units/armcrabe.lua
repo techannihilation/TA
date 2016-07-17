@@ -60,7 +60,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.594,
+		turninplacespeedlimit = 0.627,
 		turnrate = 100,
 		unitname = "armcrabe",
 		unitnumber = 100003,

@@ -51,7 +51,7 @@ return {
 		steeringmode = 1,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.5246,
+		turninplacespeedlimit = 1.518,
 		turnrate = 1540,
 		unitname = "armvader",
 		workertime = 0,

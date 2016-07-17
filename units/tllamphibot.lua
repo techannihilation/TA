@@ -53,7 +53,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.99,
+		turninplacespeedlimit = 1.089,
 		turnrate = 400,
 		unitname = "tllamphibot",
 		unitnumber = 176,

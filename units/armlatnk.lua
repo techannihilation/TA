@@ -57,7 +57,7 @@ return {
 		trackwidth = 30,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 2.19516,
+		turninplacespeedlimit = 2.178,
 		turnrate = 550,
 		unitname = "armlatnk",
 		workertime = 0,

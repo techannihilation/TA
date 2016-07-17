@@ -45,7 +45,7 @@ return {
 		steeringmode = 1,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.056,
+		turninplacespeedlimit = 0.99,
 		turnrate = 200,
 		unitname = "tllroaster",
 		unitnumber = 871,

@@ -56,7 +56,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.93,
+		turninplacespeedlimit = 0.924,
 		turnrate = 1056,
 		unitname = "armbanth1",
 		upright = true,

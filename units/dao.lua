@@ -55,7 +55,7 @@ return {
 		trackwidth = 26,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.65,
+		turninplacespeedlimit = 1.749,
 		turnrate = 400,
 		unitname = "dao",
 		unitnumber = 176,

@@ -51,7 +51,7 @@ return {
 		sightdistance = 400,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.759,
+		turninplacespeedlimit = 0.858,
 		turnrate = 444,
 		unitname = "armmech",
 		upright = true,

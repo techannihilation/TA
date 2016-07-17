@@ -46,7 +46,7 @@ return {
 		steeringmode = 1,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.8976,
+		turninplacespeedlimit = 1.2144,
 		turnrate = 495,
 		unitname = "tlltelsatnk",
 		workertime = 0,

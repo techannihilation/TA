@@ -56,7 +56,7 @@ return {
 		trackwidth = 30,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.2342,
+		turninplacespeedlimit = 1.254,
 		turnrate = 466,
 		unitname = "tllshaker",
 		workertime = 0,

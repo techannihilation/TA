@@ -53,7 +53,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.99,
+		turninplacespeedlimit = 1.188,
 		turnrate = 60,
 		unitname = "armbc",
 		unitnumber = 14001,

@@ -52,7 +52,7 @@ return {
 		steeringmode = 1,
 		terraformspeed = 900,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.518,
+		turninplacespeedlimit = 1.32,
 		turnrate = 382,
 		unitname = "armacsub",
 		waterline = 30,

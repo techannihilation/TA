@@ -52,7 +52,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 360,
-		turninplacespeedlimit = 3.4254,
+		turninplacespeedlimit = 3.432,
 		turnrate = 594,
 		unitname = "corape",
 		workertime = 0,

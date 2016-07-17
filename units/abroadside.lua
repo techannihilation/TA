@@ -51,7 +51,7 @@ return {
 		side = "ARM",
 		sightdistance = 1000,
 		turninplaceanglelimit = 360,
-		turninplacespeedlimit = 0.65,
+		turninplacespeedlimit = 0.627,
 		turnrate = 86.45,
 		unitname = "abroadside",
 		featuredefs = {

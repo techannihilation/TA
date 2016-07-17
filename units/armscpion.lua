@@ -58,7 +58,7 @@ return {
 		steeringmode = 1,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.7194,
+		turninplacespeedlimit = 1.056,
 		turnrate = 350,
 		unitname = "armscpion",
 		unitnumber = 100001,

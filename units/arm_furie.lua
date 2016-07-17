@@ -58,7 +58,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.726,
+		turninplacespeedlimit = 0.66,
 		turnrate = 560,
 		unitname = "arm_furie",
 		unitnumber = 7218,

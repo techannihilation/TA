@@ -53,7 +53,7 @@ return {
 		steeringmode = 1,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.716,
+		turninplacespeedlimit = 1.0032,
 		turnrate = 350,
 		unitname = "speeder",
 		unitnumber = 902,

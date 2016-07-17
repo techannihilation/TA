@@ -66,7 +66,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 360,
-		turninplacespeedlimit = 0.65,
+		turninplacespeedlimit = 0.66,
 		turnrate = 66.5,
 		unitname = "cdevastator",
 		upright = true,

@@ -60,7 +60,7 @@ return {
 		transportmass = 15000,
 		transportsize = 25,
 		turninplaceanglelimit = 360,
-		turninplacespeedlimit = 1.683,
+		turninplacespeedlimit = 2.64,
 		turnrate = 420,
 		unitname = "armor",
 		workertime = 0,

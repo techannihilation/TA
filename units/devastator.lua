@@ -57,7 +57,7 @@ return {
 		steeringmode = 1,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.97,
+		turninplacespeedlimit = 1.056,
 		turnrate = 250,
 		unitname = "devastator",
 		unitnumber = 1234,

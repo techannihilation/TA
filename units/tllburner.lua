@@ -47,7 +47,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.221,
+		turninplacespeedlimit = 1.584,
 		turnrate = 1250,
 		unitname = "tllburner",
 		unitnumber = 830,

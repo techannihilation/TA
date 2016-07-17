@@ -56,7 +56,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 6.534,
+		turninplacespeedlimit = 6.6,
 		turnrate = 452,
 		unitname = "tllseab",
 		unitnumber = 920,

@@ -56,7 +56,7 @@ return {
 		steeringmode = 1,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.122,
+		turninplacespeedlimit = 0.858,
 		turnrate = 288,
 		unitname = "armsiege",
 		unitnumber = 46,

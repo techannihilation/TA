@@ -51,7 +51,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.561,
+		turninplacespeedlimit = 0.594,
 		turnrate = 340,
 		unitname = "cormonsta",
 		unitnumber = 852741,

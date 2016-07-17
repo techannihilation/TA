@@ -50,7 +50,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.85,
+		turninplacespeedlimit = 1.848,
 		turnrate = 1210,
 		unitname = "corak",
 		unitrestricted = 125,

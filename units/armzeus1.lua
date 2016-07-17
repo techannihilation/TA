@@ -49,7 +49,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.3,
+		turninplacespeedlimit = 1.155,
 		turnrate = 1056,
 		unitname = "armzeus1",
 		upright = true,
