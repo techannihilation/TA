@@ -280,16 +280,88 @@ end
      end
     end
    end
-
+--[[
 	for name, ud in pairs(UnitDefs) do  
 		if (not Commanders[ud.unitname]) then
 			ud.mass = math.max(ud.maxdamage / 6.0, ud.buildcostmetal)
 		end
 	end
 
---VFS.Include("gamedata/unitdefs_post_save_to_customparams.lua")
+local cons = {
+	['armcv'] = true,
+	['armacv']  = true,
+	['consul'] = true,
+	['armbeaver'] = true,
+	['armch'] = true,
+	['armmarv'] = true,
+	['aach'] = true,
 
+	['corcv'] = true,
+	['coracv'] = true,
+	['cormuskrat'] = true,
+	['corch'] = true,
+	['corfred'] = true,
+	['corassis'] = true,
+	['cach'] = true,
+
+	
+	['tllcv'] = true,
+	['tllacv'] = true,
+	['tllhtcb'] = true,
+	}
+local turninplacebots= {
+	['corck'] = true,
+	['corack'] = true,
+	['corfast'] = true,
+	['armck'] = true,
+	['armack'] = true,
+	['armfark'] = true,
+	['tllck'] = true,
+	['tllack'] = true,
+	}
+	
+	
+
+for name, ud in pairs(UnitDefs) do
+
+	if (ud.maxvelocity) then 
+		ud.turninplacespeedlimit = (ud.maxvelocity*0.66) or 0
+		ud.turninplaceanglelimit = 140
+	end
+	
+	--todo: build these into the unitdefs
+	if (ud.hoverattack) then
+		ud.turninplaceanglelimit = 360
+	end
+	
+	if ud.movementclass and (ud.movementclass:find("TANK",1,true) or ud.movementclass:find("HOVER",1,true)) then
+		--Spring.Echo('tank or hover:',ud.name,ud.movementclass)
+		if cons[name] then
+			--Spring.Echo('tank or hover con:',ud.name,ud.moveData)
+			ud.turninplace=1
+			ud.turninplaceanglelimit=60
+		elseif (ud.maxvelocity) then 
+			ud.turninplace = 0
+			ud.turninplacespeedlimit = (ud.maxvelocity*0.66) or 0
+		end
+	elseif ud.movementclass and (ud.movementclass:find("KBOT",1,true)) then
+		if turninplacebots[name] then
+			--Spring.Echo('turninplacekbot:',ud.name)
+			ud.turninplace=1
+			ud.turninplaceanglelimit=60
+		elseif (ud.maxvelocity) then 
+			ud.turninplaceanglelimit = 140
+		end
+	end
 end
+
+VFS.Include("gamedata/unitdefs_post_save_to_customparams.lua")
+
+
+--]]
+end
+
+
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
