@@ -1,6 +1,26 @@
 ----------------------------------------- v2.39.8 --------------------------------------- 
 ----Improvements----
 Add t2 jammer (aka jinx) to TLL faction
+Add t3 nuke/anti nukes system for TLL faction, Rework t3 nukes/anti speed, fix t3 anti auto stockpiling 1 missile
+Increase transport planes maneuverability  --Reduce dancing air trans
+
+
+----Bugs----
+Fix lua error spam, Closes #1100
+Add armamker (t2 metal maker) for star com (#1106)
+Catapult weapon range not match shoot range (#1112) 
+Update heavyimpact description (#1111)
+Black Lily decloak fix and turnradius (#1122)
+Fix version warning
+
+----Balance----
+Corsumo1 : Balance Range : 800>725 (#1110)
+HeavyImpact : Add Larger Explosion for autodestroy (#1114)
+Nerf upg fatboy range 900>800
+ArmFido : Increase HP + 75 & DMG/S +5 (+600e) (#1087) 
+Rework t1 kbot AA same dps, reload slower
+Thumper : Balance energy cost (#1066)
+Larger explosion for destroy & autodestroy for T4 corkarg(#1108)
 
 ----------------------------------------- v2.39.7 --------------------------------------- 
  
