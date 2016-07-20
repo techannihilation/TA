@@ -37,38 +37,39 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		}
 		sleep sleeptime;
 	}
-	return (0);
 }
 
 Go()
 {
 	set ARMORED to 0;
-	move lock to x-axis [-4.000000] speed [25.000000];
+	move lock to x-axis [-4.000000] speed [100.000000];
 	wait-for-move lock along x-axis;
-	turn door1 to z-axis <90.021978> speed <75.000000>;
-	turn door2 to z-axis <-90.021978> speed <75.000000>;
+	turn door1 to z-axis <90.016484> speed <300.000000>;
+	turn door2 to z-axis <-90.016484> speed <300.000000>;
 	wait-for-turn door1 around z-axis;
 	wait-for-turn door2 around z-axis;
-	move door1 to y-axis [-4.000000] speed [25.000000];
-	move door2 to y-axis [-4.000000] speed [25.000000];
+	move door1 to y-axis [-4.000000] speed [100.000000];
+	move door2 to y-axis [-4.000000] speed [100.000000];
 	wait-for-move door1 along y-axis;
 	wait-for-move door2 along y-axis;
+	sleep 1500;
 	Static_Var_1 = 1;
 }
 
 Stop()
 {
 	Static_Var_1 = 0;
-	move door1 to y-axis [0.000000] speed [25.000000];
-	move door2 to y-axis [0.000000] speed [25.000000];
+	move door1 to y-axis [0.000000] speed [100.000000];
+	move door2 to y-axis [0.000000] speed [100.000000];
 	wait-for-move door1 along y-axis;
 	wait-for-move door2 along y-axis;
-	turn door1 to z-axis <0.000000> speed <75.000000>;
-	turn door2 to z-axis <0.000000> speed <75.000000>;
+	turn door1 to z-axis <0.000000> speed <300.000000>;
+	turn door2 to z-axis <0.000000> speed <300.000000>;
 	wait-for-turn door1 around z-axis;
 	wait-for-turn door2 around z-axis;
-	move lock to x-axis [0.000000] speed [25.000000];
+	move lock to x-axis [0.000000] speed [100.000000];
 	wait-for-move lock along x-axis;
+	sleep 1500;
 	set ARMORED to 1;
 }
 
@@ -111,7 +112,7 @@ Create()
 	dont-shade door2;
 	restore_delay = 3000;
 	Static_Var_1 = 0;
-	gun_1 = 1;
+	gun_1 = door1;
 	while( get BUILD_PERCENT_LEFT )
 	{
 		sleep 250;
@@ -162,7 +163,7 @@ FirePrimary()
 	++gun_1;
 	if( gun_1 == 5 )
 	{
-		gun_1 = 1;
+		gun_1 = door1;
 	}
 }
 
