@@ -59,9 +59,6 @@ return {
 		unitname = "nsacbehe",
 		unitnumber = 1408,
 		workertime = 0,
-		customparams = {
-			requiretech = "Advanced T2 Unit Research Centre",
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,
