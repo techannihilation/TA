@@ -4,8 +4,8 @@ return {
 		activatewhenbuilt = true,
 		bmcode = 1,
 		brakerate = 0.045,
-		buildcostenergy = 12500,
-		buildcostmetal = 1250,
+		buildcostenergy = 13000,
+		buildcostmetal = 990,
 		builder = false,
 		buildtime = 18956,
 		canattack = true,
@@ -123,7 +123,7 @@ return {
 		weapondefs = {
 			armhorg_weapon = {
 				accuracy = 500,
-				areaofeffect = 80,
+				areaofeffect = 160,
 				avoidfeature = false,
 				burst = 8,
 				burstrate = 0.22,
@@ -141,7 +141,7 @@ return {
 				movingaccuracy = 600,
 				name = "Banisher",
 				proximitypriority = -1,
-				range = 1500,
+				range = 1550,
 				reloadtime = 8,
 				smoketrail = true,
 				soundhitdry = "TAWF114b",
@@ -163,6 +163,7 @@ return {
 				weaponvelocity = 310,
 				wobble = 1800,
 				damage = {
+					commanders = 55,
 					default = 110,
 					subs = 5,
 				},
