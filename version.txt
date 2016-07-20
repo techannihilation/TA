@@ -1,4 +1,4 @@
------------------------------------------ v2.39.9 --------------------------------------- 
+----------------------------------------- v2.39.10 --------------------------------------- 
 ----Improvements----
 Remove tllion
 Add t2 jammer (aka jinx) to TLL faction
@@ -22,6 +22,7 @@ ArmFido : Increase HP + 75 & DMG/S +5 (+600e) (#1087)
 Rework t1 kbot AA same dps, reload slower
 Thumper : Balance energy cost (#1066)
 Larger explosion for destroy & autodestroy for T4 corkarg(#1108)
+Delete require Tech for Goliath Hover (T2.5 Core actually) (#1046)
 
 ----------------------------------------- v2.39.7 --------------------------------------- 
  
