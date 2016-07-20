@@ -1,5 +1,6 @@
------------------------------------------ v2.39.8 --------------------------------------- 
+----------------------------------------- v2.39.9 --------------------------------------- 
 ----Improvements----
+Remove tllion
 Add t2 jammer (aka jinx) to TLL faction
 Add t3 nuke/anti nukes system for TLL faction, Rework t3 nukes/anti speed, fix t3 anti auto stockpiling 1 missile
 Increase transport planes maneuverability  --Reduce dancing air trans
