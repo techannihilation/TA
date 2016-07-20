@@ -42,24 +42,25 @@ Activatescr()
 	if( TRUE )
 	{
 		move door1 to y-axis [0.000000] now;
-		move door1 to y-axis [-3.000000] speed [8.000000];
+		move door1 to y-axis [-3.000000] speed [1.000000];
 		move door2 to y-axis [0.000000] now;
-		move door2 to y-axis [-3.000000] speed [8.000000];
+		move door2 to y-axis [-3.000000] speed [1.000000];
 		move door3 to y-axis [0.000000] now;
-		move door3 to y-axis [-3.000000] speed [8.000000];
+		move door3 to y-axis [-3.000000] speed [1.000000];
 		move door4 to y-axis [0.000000] now;
-		move door4 to y-axis [-3.000000] speed [8.000000];
+		move door4 to y-axis [-3.000000] speed [1.000000];
 		//move turret to y-axis [0.000000] speed [25.000000];
 		turn door1 to x-axis <90.016484> now;
-		turn door1 to x-axis <0.000000> speed <225.000000>;
+		turn door1 to x-axis <0.000000> speed <5.000000>;
 		turn door2 to z-axis <-90.016484> now;
-		turn door2 to z-axis <0.000000> speed <225.000000>;
+		turn door2 to z-axis <0.000000> speed <5.000000>;
 		turn door3 to x-axis <-90.016484> now;
-		turn door3 to x-axis <0.000000> speed <225.000000>;
+		turn door3 to x-axis <0.000000> speed <5.000000>;
 		turn door4 to z-axis <90.016484> now;
-		turn door4 to z-axis <0.000000> speed <225.000000>;
+		turn door4 to z-axis <0.000000> speed <5.000000>;
 		//move turret to y-axis [4.000000] speed [15.000000];
-		sleep 400;
+		sleep 15000;
+		gun_1 = TRUE;
 	}
 	sleep 25;
 }
@@ -68,6 +69,7 @@ Deactivatescr()
 {
 	if( TRUE )
 	{
+		gun_1 = FALSE;
 		move door1 to y-axis [0.000000] now;
 		move door1 to y-axis [0.000000] speed [0.000000];
 		move door2 to y-axis [0.000000] now;
@@ -81,25 +83,24 @@ Deactivatescr()
 		//wait-for-turn launcher around x-axis;
 		//wait-for-turn launcher around y-axis;
 		//move turret to y-axis [-15.000000] speed [22.000000];
-		turn door1 to x-axis <90.016484> speed <225.000000>;
-		turn door2 to z-axis <-90.016484> speed <225.000000>;
-		turn door3 to x-axis <-90.016484> speed <225.000000>;
-		turn door4 to z-axis <90.016484> speed <225.000000>;
+		turn door1 to x-axis <90.016484> speed <25.000000>;
+		turn door2 to z-axis <-90.016484> speed <25.000000>;
+		turn door3 to x-axis <-90.016484> speed <25.000000>;
+		turn door4 to z-axis <90.016484> speed <25.000000>;
 		sleep 300;
+		
 	}
 	sleep 15;
 }
 
 Go()
 {
-	gun_1 = body;
 	show fusee;
 	call-script activatescr();
 }
 
 Stop()
 {
-	gun_1 = fusee;
 	sleep 4000;
 	call-script deactivatescr();
 }
@@ -141,7 +142,7 @@ Create()
 {
 	hide fusee;
 	call-script deactivatescr();
-	gun_1 = base;
+	gun_1 = FALSE;
 	restore_delay = 3000;
 	while( get BUILD_PERCENT_LEFT )
 	{
@@ -179,7 +180,7 @@ AimPrimary(heading, pitch)
 	start-script RequestState(0);
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	while( !gun_1 )
+	while( gun_1 == FALSE)
 	{
 		sleep 250;
 	}
@@ -192,7 +193,7 @@ FirePrimary()
 	emit-sfx 1024 from silo;
 	sleep 2000;
 	hide fusee;
-	gun_1 = base;
+	gun_1 = FALSE;
 	start-script RequestState(1);
 }
 
