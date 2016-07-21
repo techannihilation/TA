@@ -1,4 +1,4 @@
------------------------------------------ v2.39.10 --------------------------------------- 
+----------------------------------------- v2.39.11 --------------------------------------- 
 ----Improvements----
 Remove tllion
 Add t2 jammer (aka jinx) to TLL faction
@@ -15,6 +15,10 @@ Black Lily decloak fix and turnradius (#1122)
 Fix version warning
 
 ----Balance----
+Increase cost for tll t3 nuke silo
+Balance t3.5 orion bomber (#1105)
+Actually 13200 dmg / shot at 12 speed. (so need 2 bombers to destroy adv fusion)
+Goal : 600dmg/bomb => 400dmg to have 8k dmg for a shot.
 Corsumo1 : Balance Range : 800>725 (#1110)
 HeavyImpact : Add Larger Explosion for autodestroy (#1114)
 Nerf upg fatboy range 900>800
