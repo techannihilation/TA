@@ -423,7 +423,18 @@ if (gadgetHandler:IsSyncedCode()) then
 
 	local function isComplete(u)
 		local health,maxHealth,paralyzeDamage,captureProgress,buildProgress=Spring.GetUnitHealth(u)
-                if (buildProgress and buildProgress>=1) or health == 0 then
+                if (buildProgress and buildProgress>=1) then
+			return true
+		else
+			return false
+		end
+	end
+
+
+	local function isReclaimed(u)
+		local health,maxHealth,paralyzeDamage,captureProgress,buildProgress=Spring.GetUnitHealth(u)
+		--Spring.Echo(health,maxHealth,paralyzeDamage,captureProgress,buildProgress)
+                if (buildProgress and buildProgress==0 and health ==0) then  --good guess unit died from beign reclaimed
 			return true
 		else
 			return false
@@ -822,7 +833,7 @@ if (gadgetHandler:IsSyncedCode()) then
 		RecheckUnits[u]=nil
 		if ProviderTable[ud] then
 			for _,pt in pairs(ProviderTable[ud]) do
-				if (isComplete(u) or (pt.quantity or 1)<0) then
+				if (isComplete(u) or (pt.quantity or 1)<0) or (isReclaimed(u) or (pt.quantity or 1)<0) then
 					if not pt.range then
 						TechTable[pt.tech].ProviderSum[team]=TechTable[pt.tech].ProviderSum[team]-(pt.quantity or 1)
 						Spring.SetTeamRulesParam(team,"technology:"..pt.tech,TechTable[pt.tech].ProviderSum[team])
