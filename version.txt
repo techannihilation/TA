@@ -1,5 +1,8 @@
+---------------------------------------- v2.40.3 ---------------------------------------
+Add modoption to revert to old mip levels (new levels should increase performance but has a lower los resolution) default on
+
 ---------------------------------------- v2.40.2 --------------------------------------- 
-nerf tll t3 nuke costs
+Nerf tll t3 nuke costs
 
 ---------------------------------------- v2.39.11 --------------------------------------- 
 ----Improvements----
