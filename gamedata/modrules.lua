@@ -1,5 +1,4 @@
- --------------------------- TechA Config --------------------------- 
-
+ --------------------------- TechA Config ---------------------------
 local modrules  = {
 
   movement = {
@@ -22,11 +21,10 @@ local modrules  = {
 
   sensors = {   
     los = {
-      losMipLevel = 3, 
-      losMul      = 1,
-      airMipLevel = 4,
-      airMul      = 1,
-    },
+      losMipLevel = 3 + tonumber((Spring.GetModOptions() and (Spring.GetModOptions().miplevel == "1") and 1) or 0),
+      airMipLevel = 4 + tonumber((Spring.GetModOptions() and (Spring.GetModOptions().miplevel == "1") and 1) or 0),
+      radarMipLevel = 3 + tonumber((Spring.GetModOptions() and (Spring.GetModOptions().miplevel == "1") and 1) or 0),
+     },
   },
 
   fireAtDead = {
