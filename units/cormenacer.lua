@@ -1,5 +1,5 @@
 return {
-	cormena = {
+	cormenacer = {
 		acceleration = 0.07629,
 		bmcode = 1,
 		brakerate = 0.22887,
@@ -45,7 +45,7 @@ return {
 		name = "Menacer",
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
-		objectname = "CORMENA",
+		objectname = "CORMENACER",
 		radardistance = 0,
 		radaremitheight = 28.5965,
 		selfdestructas = "BIG_UNIT",
@@ -58,7 +58,7 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0.50351,
 		turnrate = 510,
-		unitname = "cormena",
+		unitname = "cormenacer",
 		unitnumber = 20000,
 		upright = false,
 		workertime = 0,
@@ -92,7 +92,7 @@ return {
 				height = 20,
 				hitdensity = 100,
 				metal = 2129.91992,
-				object = "cormena_dead",
+				object = "cormenacer_dead",
 				reclaimable = true,
 				seqnamereclamate = "tree1reclamate",
 				world = "All Worlds",
