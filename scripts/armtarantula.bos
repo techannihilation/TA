@@ -4,15 +4,14 @@
 #include "exptype.h"
 
 piece  base, pivot, body, rupleg3, rleg3, rupleg2, rleg2, rupleg1,
-	   rleg1, lupleg3, lleg3, lupleg2, lleg2, lupleg1, lleg1,
-       sleeve3, flare3a, flare3b, flare3c, tur3;
+       rleg1, lupleg3, lleg3, lupleg2, lleg2, lupleg1, lleg1, sleeve3,
+       flare3a, flare3b, flare3c, tur3;
 
 static-var  bMoving, bAiming, gun_1, restore_delay, Static_Var_5,
-            Static_Var_6, Static_Var_7;
+            Static_Var_6, Static_Var_7 ;
 
 // Signal definitions
 #define SIG_AIM				2
-#define SIG_AIM_3			4
 #define SIG_MOVE			8
 
 
@@ -21,8 +20,8 @@ RestoreAfterDelay()
 	sleep restore_delay;
 	if( !Static_Var_5 )
 	{
-	turn tur3 to y-axis <0.000000> speed <150.000000>;
-	turn sleeve3 to x-axis <0.000000> speed <150.000000>;
+		turn tur3 to y-axis <0.000000> speed <150.000000>;
+		turn sleeve3 to x-axis <0.000000> speed <150.000000>;
 	}
 }
 
@@ -57,7 +56,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
-	gun_1 = base;
+	gun_1 = 0;
 	hide flare3a;
 	hide flare3b;
 	hide flare3c;
@@ -127,10 +126,10 @@ StartMoving()
 			turn lupleg2 to y-axis <0.000000> speed <95.000000>;
 			turn lupleg3 to y-axis <12.500000> speed <115.000000>;
 			turn lupleg3 to z-axis <-16.247253> speed <77.000000>;
-			turn rleg2 to z-axis <-8.120879> speed <77.000000>;
-			turn rleg3 to z-axis <-8.120879> speed <77.000000>;
-			turn lleg1 to z-axis <8.120879> speed <77.000000>;
-			turn lleg3 to z-axis <8.120879> speed <77.000000>;
+			turn rleg2 to z-axis <-8.115385> speed <77.000000>;
+			turn rleg3 to z-axis <-8.115385> speed <77.000000>;
+			turn lleg1 to z-axis <8.115385> speed <77.000000>;
+			turn lleg3 to z-axis <8.115385> speed <77.000000>;
 			sleep 210;
 		}
 		if( bMoving )
@@ -170,10 +169,10 @@ StartMoving()
 			turn lupleg2 to z-axis <-16.247253> speed <77.000000>;
 			turn lupleg3 to y-axis <-12.500000> speed <95.000000>;
 			turn lupleg3 to z-axis <-16.247253> speed <87.000000>;
-			turn rleg1 to z-axis <-8.120879> speed <77.000000>;
-			turn rleg2 to z-axis <-8.120879> speed <77.000000>;
-			turn lleg2 to z-axis <8.120879> speed <77.000000>;
-			turn lleg3 to z-axis <8.120879> speed <77.000000>;
+			turn rleg1 to z-axis <-8.115385> speed <77.000000>;
+			turn rleg2 to z-axis <-8.115385> speed <77.000000>;
+			turn lleg2 to z-axis <8.115385> speed <77.000000>;
+			turn lleg3 to z-axis <8.115385> speed <77.000000>;
 			sleep 210;
 		}
 		if( bMoving )
@@ -216,10 +215,10 @@ StartMoving()
 			turn lupleg2 to y-axis <-12.500000> speed <115.000000>;
 			turn lupleg2 to z-axis <-16.247253> speed <87.000000>;
 			turn lupleg3 to y-axis <0.000000> speed <115.000000>;
-			turn rleg1 to z-axis <-8.120879> speed <77.000000>;
-			turn rleg3 to z-axis <-8.120879> speed <77.000000>;
-			turn lleg1 to z-axis <8.120879> speed <77.000000>;
-			turn lleg2 to z-axis <8.120879> speed <77.000000>;
+			turn rleg1 to z-axis <-8.115385> speed <77.000000>;
+			turn rleg3 to z-axis <-8.115385> speed <77.000000>;
+			turn lleg1 to z-axis <8.115385> speed <77.000000>;
+			turn lleg2 to z-axis <8.115385> speed <77.000000>;
 			sleep 210;
 		}
 	}
@@ -271,28 +270,28 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-if( gun_1 == 0 )
-	{
-		show flare3a;
-		sleep 150;
-		hide flare3a;
-	}
-	else if( gun_1 == 1 )
-	{
-		show flare3b;
-		sleep 150;
-		hide flare3b;
-	}
-	else if( gun_1 == 2 )
-	{
-		show flare3c;
-		sleep 150;
-		hide flare3c;
-		//Static_Var_1 = 0;
-		//call-script Reload();
-	}
 	++gun_1;
-	if (gun_1 > 2) gun_1 = 0;
+	if( gun_1 >= 3 )
+	{
+		gun_1 = 0;
+	}
+	sleep 150;
+}
+
+Shot1()
+{
+	if(gun_1==0)
+	{
+		emit-sfx 1024+0 from flare3c;	
+	}
+	if(gun_1==1)
+	{
+		emit-sfx 1024+0 from flare3b;
+	}
+	if(gun_1==2)
+	{
+		emit-sfx 1024+0 from flare3a;
+	}
 }
 
 AimFromPrimary(piecenum)
@@ -302,7 +301,18 @@ AimFromPrimary(piecenum)
 
 QueryPrimary(piecenum)
 {
-	piecenum = flare3a + gun_1;
+	if( gun_1 == 0 )
+	{
+		piecenum=flare3c;	
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum=flare3b;
+	}
+	if( gun_1 == 2 )
+	{
+		piecenum=flare3a;
+	}
 }
 
 SweetSpot(piecenum)

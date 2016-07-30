@@ -95,6 +95,11 @@ return {
 				world = "All Worlds",
 			},
 		},
+		sfxtypes = {
+			explosiongenerators = {
+				[1] = "custom:muzzle_flare_rocket",
+			},
+		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
@@ -121,6 +126,7 @@ return {
 				areaofeffect = 72,
 				burst = 3,
 				burstrate = 0.3,
+				cegtag = "Arm_Trail_rocket",
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.5,
@@ -140,7 +146,10 @@ return {
 				soundtrigger = true,
 				startvelocity = 120,
 				targetmoveerror = 0.2,
-				texture2 = "armsmoketrail",
+				texture1 = "null",
+				texture2 = "null",
+				texture3 = "null",
+				texture4 = "null",
 				trajectoryheight = 1,
 				turnrate = 2000,
 				turret = true,
