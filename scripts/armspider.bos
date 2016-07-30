@@ -1,0 +1,400 @@
+#define TAK			// This is a TAK script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, turret, barrel1, barrel2, flare1, flare2, leg1, leg2,
+       leg3, leg4, leg5, leg6, glowsource, shinesource;
+
+static-var  Static_Var_1, restore_delay, Static_Var_3, Static_Var_4, Static_Var_5,
+            Static_Var_6;
+
+
+ON()
+{
+	while( Static_Var_4 > 0 AND Static_Var_4 < 5 )
+	{
+		if( Static_Var_4 >= 1 )
+		{
+			emit-sfx 1024 from shinesource;
+			if( Static_Var_4 >= 2 )
+			{
+				emit-sfx 1025 from shinesource;
+				if( Static_Var_4 >= 3 )
+				{
+					emit-sfx 1026 from shinesource;
+					if( Static_Var_4 == 4 )
+					{
+						emit-sfx 1024 from shinesource;
+						emit-sfx 1025 from shinesource;
+						emit-sfx 1026 from shinesource;
+					}
+				}
+			}
+		}
+		sleep 33;
+	}
+}
+
+Overload()
+{
+	set-signal-mask 0;
+	if( Static_Var_4 == 0 )
+	{
+		set-signal-mask 16;
+		Static_Var_4 = 1;
+		set MAX_SPEED to 1;
+		start-script ON();
+		sleep 333;
+		Static_Var_4 = 2;
+		sleep 333;
+		Static_Var_4 = 3;
+		sleep 333;
+		Static_Var_4 = 4;
+		set-signal-mask 0;
+		sleep 100;
+		Static_Var_4 = 5;
+		emit-sfx 4098 from shinesource;
+		emit-sfx 4097 from shinesource;
+		sleep 10000;
+		Static_Var_4 = 0;
+		set MAX_SPEED to Static_Var_6;
+		return;
+	}
+	if( Static_Var_4 > 0 AND Static_Var_4 < 4 )
+	{
+		signal 16;
+		Static_Var_4 = 0;
+		set MAX_SPEED to Static_Var_6;
+	}
+}
+
+walk2()
+{
+	if( Static_Var_1 )
+	{
+		turn leg1 to y-axis <43.791209> now;
+		turn leg1 to y-axis <0.000000> speed <372.296703>;
+		turn leg1 to z-axis <0.593407> now;
+		turn leg1 to z-axis <0.000000> speed <5.098901>;
+		turn leg2 to z-axis <0.000000> now;
+		turn leg2 to z-axis <31.000000> speed <263.653846>;
+		turn leg3 to y-axis <34.692308> now;
+		turn leg3 to y-axis <34.093407> speed <5.098901>;
+		turn leg3 to z-axis <31.593407> now;
+		turn leg3 to z-axis <0.593407> speed <263.653846>;
+		turn leg4 to y-axis <-40.093407> now;
+		turn leg4 to y-axis <-40.093407> speed <0.000000>;
+		turn leg4 to z-axis <-31.000000> now;
+		turn leg4 to z-axis <-0.593407> speed <258.554945>;
+		turn leg5 to y-axis <-37.093407> now;
+		turn leg5 to y-axis <0.000000> speed <315.346154>;
+		turn leg5 to z-axis <0.000000> now;
+		turn leg5 to z-axis <0.000000> speed <0.000000>;
+		turn leg6 to y-axis <0.000000> now;
+		turn leg6 to y-axis <-30.390110> speed <258.554945>;
+		turn leg6 to z-axis <-45.000000> now;
+		sleep 118;
+	}
+	if( Static_Var_1 )
+	{
+		turn leg1 to z-axis <31.593407> speed <268.758242>;
+		turn leg2 to y-axis <34.692308> speed <294.758242>;
+		turn leg2 to z-axis <31.000000> speed <0.000000>;
+		turn leg3 to y-axis <0.000000> speed <289.494505>;
+		turn leg3 to z-axis <0.000000> speed <5.098901>;
+		turn leg4 to y-axis <0.000000> speed <341.175824>;
+		turn leg5 to z-axis <-31.000000> speed <263.653846>;
+		turn leg6 to z-axis <2.390110> speed <403.225275>;
+		sleep 118;
+	}
+	if( Static_Var_1 )
+	{
+		turn leg1 to y-axis <56.000000> speed <475.642857>;
+		turn leg1 to z-axis <31.000000> speed <5.098901>;
+		turn leg2 to y-axis <34.692308> speed <0.000000>;
+		turn leg2 to z-axis <0.593407> speed <258.554945>;
+		turn leg3 to z-axis <31.593407> speed <268.758242>;
+		turn leg4 to y-axis <-0.593407> speed <5.098901>;
+		turn leg4 to z-axis <-31.000000> speed <258.554945>;
+		turn leg5 to y-axis <-31.593407> speed <268.758242>;
+		turn leg5 to z-axis <-31.000000> speed <0.000000>;
+		turn leg6 to y-axis <3.000000> speed <284.390110>;
+		sleep 118;
+	}
+	if( Static_Var_1 )
+	{
+		turn leg1 to y-axis <43.791209> speed <103.340659>;
+		turn leg1 to z-axis <0.593407> speed <258.554945>;
+		turn leg2 to y-axis <0.000000> speed <294.758242>;
+		turn leg2 to z-axis <0.000000> speed <5.098901>;
+		turn leg3 to y-axis <34.692308> speed <294.758242>;
+		turn leg3 to z-axis <31.593407> speed <0.000000>;
+		turn leg4 to y-axis <-40.093407> speed <336.071429>;
+		turn leg4 to z-axis <-31.000000> speed <0.000000>;
+		turn leg5 to y-axis <-37.093407> speed <46.560440>;
+		turn leg5 to z-axis <0.000000> speed <263.653846>;
+		turn leg6 to y-axis <0.000000> speed <25.824176>;
+		turn leg6 to z-axis <-45.000000> speed <403.225275>;
+		sleep 118;
+	}
+}
+
+stand()
+{
+	turn leg1 to z-axis <0.000000> speed <340.000000>;
+	turn leg1 to y-axis <0.000000> speed <340.000000>;
+	turn leg1 to x-axis <0.000000> speed <340.000000>;
+	turn leg2 to z-axis <0.000000> speed <340.000000>;
+	turn leg2 to y-axis <0.000000> speed <340.000000>;
+	turn leg2 to x-axis <0.000000> speed <340.000000>;
+	turn leg3 to z-axis <0.000000> speed <340.000000>;
+	turn leg3 to y-axis <0.000000> speed <340.000000>;
+	turn leg3 to x-axis <0.000000> speed <340.000000>;
+	turn leg4 to z-axis <0.000000> speed <340.000000>;
+	turn leg4 to y-axis <0.000000> speed <340.000000>;
+	turn leg4 to x-axis <0.000000> speed <340.000000>;
+	turn leg5 to z-axis <0.000000> speed <340.000000>;
+	turn leg5 to y-axis <0.000000> speed <340.000000>;
+	turn leg5 to x-axis <0.000000> speed <340.000000>;
+	turn leg6 to z-axis <0.000000> speed <340.000000>;
+	turn leg6 to y-axis <0.000000> speed <340.000000>;
+	turn leg6 to x-axis <0.000000> speed <340.000000>;
+}
+
+MotionControl()
+{
+	var Func_Var_1;
+	while( TRUE )
+	{
+		Func_Var_1 = Static_Var_1;
+		if( Func_Var_1 )
+		{
+			if( !Static_Var_4 )
+			{
+				call-script walk2();
+			}
+			else
+			{
+				sleep 100;
+			}
+		}
+		else if( Static_Var_5 )
+		{
+			call-script stand();
+			Static_Var_5 = 0;
+		}
+		sleep 100;
+	}
+}
+
+SmokeUnit(Func_Var_1, Func_Var_2, Func_Var_3)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 500;
+	}
+	start-script MotionControl();
+	while( TRUE )
+	{
+		Func_Var_1 = get HEALTH;
+		if( Func_Var_1 < 66 )
+		{
+			Func_Var_3 = 258;
+			if( Rand( 1, 66 ) < Func_Var_1 )
+			{
+				Func_Var_3 = 257;
+			}
+			emit-sfx Func_Var_3 from base;
+		}
+		Func_Var_2 = Func_Var_1 * 50;
+		if( Func_Var_2 < 200 )
+		{
+			Func_Var_2 = 200;
+		}
+		sleep Func_Var_2;
+	}
+}
+
+Create()
+{
+	hide flare1;
+	hide flare2;
+	Static_Var_1 = 0;
+	Static_Var_5 = 0;
+	Static_Var_6 = get MAX_SPEED;
+	Static_Var_3 = 0;
+	restore_delay = 3000;
+	start-script SmokeUnit();
+}
+
+StartMoving()
+{
+	Static_Var_1 = 1;
+}
+
+StopMoving()
+{
+	Static_Var_1 = 0;
+	Static_Var_5 = 1;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+SetMaxReloadTime(time)
+{
+	restore_delay = time * 2;
+}
+
+RestoreAfterDelay()
+{
+	sleep restore_delay;
+	turn turret to y-axis <0.000000> speed <90.000000>;
+	turn turret to x-axis <0.000000> speed <90.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn turret around x-axis;
+}
+
+AimPrimary(Func_Var_1, Func_Var_2)
+{
+	signal 2;
+	set-signal-mask 2;
+	while( Static_Var_4 )
+	{
+		sleep 100;
+	}
+	turn turret to y-axis Func_Var_1 speed <225.000000>;
+	turn turret to x-axis <0.000000> - Func_Var_2 speed <90.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn turret around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FirePrimary()
+{
+	if( Static_Var_3 )
+	{
+		move barrel2 to z-axis [-1.300000] speed [500.000000];
+		wait-for-move barrel2 along z-axis;
+		move barrel2 to z-axis [0.000000] speed [3.000000];
+	}
+	else
+	{
+		move barrel1 to z-axis [-1.300000] speed [500.000000];
+		wait-for-move barrel1 along z-axis;
+		move barrel1 to z-axis [0.000000] speed [3.000000];
+	}
+	Static_Var_3 = !Static_Var_3;
+}
+
+AimFromPrimary(Func_Var_1)
+{
+	Func_Var_1 = 1;
+}
+
+QueryPrimary(Func_Var_1)
+{
+	Func_Var_1 = 4 + Static_Var_3;
+}
+
+AimSecondary(Func_Var_1, Func_Var_2)
+{
+}
+
+AimFromSecondary(Func_Var_1)
+{
+	Func_Var_1 = 1;
+}
+
+QuerySecondary(Func_Var_1)
+{
+	Func_Var_1 = 4 + Static_Var_3;
+}
+
+AimTertiary(Func_Var_1, Func_Var_2)
+{
+}
+
+AimFromTertiary(Func_Var_1)
+{
+	Func_Var_1 = 1;
+}
+
+QueryTertiary(Func_Var_1)
+{
+	Func_Var_1 = 4 + Static_Var_3;
+}
+
+Killed(Func_Var_1, Func_Var_2)
+{
+	hide flare1;
+	hide flare2;
+	if( Func_Var_1 <= 25 )
+	{
+		Func_Var_2 = 1;
+		explode barrel1 type BITMAPONLY | EXPTYPE_SMALLEXPLOSION;
+		explode barrel2 type BITMAPONLY | EXPTYPE_MEDIUMEXPLOSION;
+		explode base type BITMAPONLY | EXPTYPE_LARGEEXPLOSION;
+		explode flare1 type BITMAPONLY | EXPTYPE_XLARGEEXPLOSION;
+		explode flare2 type BITMAPONLY | EXPTYPE_BLOODEXPLOSION;
+		explode leg1 type BITMAPONLY | EXPTYPE_SMALLEXPLOSION;
+		explode leg2 type BITMAPONLY | EXPTYPE_MEDIUMEXPLOSION;
+		explode leg3 type BITMAPONLY | EXPTYPE_LARGEEXPLOSION;
+		explode leg4 type BITMAPONLY | EXPTYPE_XLARGEEXPLOSION;
+		explode leg5 type BITMAPONLY | EXPTYPE_BLOODEXPLOSION;
+		explode leg6 type BITMAPONLY | EXPTYPE_SMALLEXPLOSION;
+		explode turret type BITMAPONLY | EXPTYPE_MEDIUMEXPLOSION;
+		return (0);
+	}
+	if( Func_Var_1 <= 50 )
+	{
+		Func_Var_2 = 2;
+		explode barrel1 type FALL | EXPTYPE_SMALLEXPLOSION;
+		explode barrel2 type FALL | EXPTYPE_MEDIUMEXPLOSION;
+		explode base type BITMAPONLY | EXPTYPE_LARGEEXPLOSION;
+		explode flare1 type FALL | EXPTYPE_XLARGEEXPLOSION;
+		explode flare2 type FALL | EXPTYPE_BLOODEXPLOSION;
+		explode leg1 type FALL | EXPTYPE_SMALLEXPLOSION;
+		explode leg2 type FALL | EXPTYPE_MEDIUMEXPLOSION;
+		explode leg3 type FALL | EXPTYPE_LARGEEXPLOSION;
+		explode leg4 type FALL | EXPTYPE_XLARGEEXPLOSION;
+		explode leg5 type FALL | EXPTYPE_BLOODEXPLOSION;
+		explode leg6 type FALL | EXPTYPE_SMALLEXPLOSION;
+		explode turret type 1 | EXPTYPE_MEDIUMEXPLOSION;
+		return (0);
+	}
+	if( Func_Var_1 <= 99 )
+	{
+		Func_Var_2 = 3;
+		explode barrel1 type FALL | 8 | 16 | 2 | EXPTYPE_SMALLEXPLOSION;
+		explode barrel2 type FALL | 8 | 16 | 2 | EXPTYPE_MEDIUMEXPLOSION;
+		explode base type BITMAPONLY | EXPTYPE_LARGEEXPLOSION;
+		explode flare1 type FALL | 8 | 16 | 2 | EXPTYPE_XLARGEEXPLOSION;
+		explode flare2 type FALL | 8 | 16 | 2 | EXPTYPE_BLOODEXPLOSION;
+		explode leg1 type FALL | 8 | 16 | 2 | EXPTYPE_SMALLEXPLOSION;
+		explode leg2 type FALL | 8 | 16 | 2 | EXPTYPE_MEDIUMEXPLOSION;
+		explode leg3 type FALL | 8 | 16 | 2 | EXPTYPE_LARGEEXPLOSION;
+		explode leg4 type FALL | 8 | 16 | 2 | EXPTYPE_XLARGEEXPLOSION;
+		explode leg5 type FALL | 8 | 16 | 2 | EXPTYPE_BLOODEXPLOSION;
+		explode leg6 type FALL | 8 | 16 | 2 | EXPTYPE_SMALLEXPLOSION;
+		explode turret type 1 | EXPTYPE_MEDIUMEXPLOSION;
+		return (0);
+	}
+	Func_Var_2 = 3;
+	explode barrel1 type FALL | 8 | 16 | 2 | EXPTYPE_SMALLEXPLOSION;
+	explode barrel2 type FALL | 8 | 16 | 2 | EXPTYPE_MEDIUMEXPLOSION;
+	explode base type BITMAPONLY | EXPTYPE_LARGEEXPLOSION;
+	explode flare1 type FALL | 8 | 16 | 2 | EXPTYPE_XLARGEEXPLOSION;
+	explode flare2 type FALL | 8 | 16 | 2 | EXPTYPE_BLOODEXPLOSION;
+	explode leg1 type FALL | 8 | 16 | 2 | EXPTYPE_SMALLEXPLOSION;
+	explode leg2 type FALL | 8 | 16 | 2 | EXPTYPE_MEDIUMEXPLOSION;
+	explode leg3 type FALL | 8 | 16 | 2 | EXPTYPE_LARGEEXPLOSION;
+	explode leg4 type FALL | 8 | 16 | 2 | EXPTYPE_XLARGEEXPLOSION;
+	explode leg5 type FALL | 8 | 16 | 2 | EXPTYPE_BLOODEXPLOSION;
+	explode leg6 type FALL | 8 | 16 | 2 | EXPTYPE_SMALLEXPLOSION;
+	explode turret type 1 | 2 | EXPTYPE_MEDIUMEXPLOSION;
+}
