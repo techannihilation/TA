@@ -33,7 +33,7 @@ return {
 		metalstorage = 65,
 		mobilestandorders = 1,
 		movementclass = "TKBOT3",
-		name = "All-Terrain Construction Spider",
+		name = "All-Terrain Construction Tortoise",
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "CORCT",

@@ -17,7 +17,7 @@ return {
 		cloakcostmoving = 120,
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "All-Terrain Paralysis Spider",
+		description = "All-Terrain Paralysis Tortoise",
 		energymake = 0,
 		energystorage = 0,
 		energyuse = 0,

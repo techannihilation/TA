@@ -52,13 +52,13 @@ return {
 		yardmap = "ooooo occco occco occco occco",
 		buildoptions = {
 			[1] = "corct",
-			--[2] = "armrezspd",  --todo
-			[2] = "coreslingshot",
-			[3] = "corehingeback",
-			[4] = "coretnt",
-			[5] = "coreavalanche",
-			[6] = "corechelonian",
-			[7] = "cormenacer",
+			[2] = "coreleopard",
+			[3] = "coreslingshot",
+			[4] = "corehingeback",
+			[5] = "coretnt",
+			[6] = "coreavalanche",
+			[7] = "corechelonian",
+			[8] = "cormenacer",
 			--[8] = "cormonsta",  --turtles only
 		},
 		customparams = {
