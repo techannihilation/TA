@@ -2,7 +2,7 @@ return {
 	tllion = {
 		bmcode = 0,
 		buildangle = 1700,
-		buildcostenergy = 1855440,
+		buildcostenergy = 9804352,
 		buildcostmetal = 289000,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
