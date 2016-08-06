@@ -77,7 +77,7 @@ return {
 			[19] = "armck",
 			[20] = "armvader",
 			[21] = "armfast",
-			[22] = "armsnipe",
+			[22] = "armfido",
 		},
 		customparams = {
 			buildpic = "ARMFARK.png",

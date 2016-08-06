@@ -79,8 +79,8 @@ return {
 			[19] = "corck",
 			[20] = "corroach",
 			[21] = "corsktl",
-			[22] = "cormort",
-			[23] = "corcan",
+			[22] = "corpyro",
+			[23] = "cormort",
 		},
 		customparams = {
 			buildpic = "CORFAST.png",
