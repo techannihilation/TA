@@ -1,5 +1,15 @@
+---------------------------------------- v2.40.6 ---------------------------------------
+----Balance----
+Rework cost for tll t3 nuke/anti
+Core Hardened Missile Battery smaller explosion
+Replace Sniper with Fido / Replace Corcan by CorPyro in engineeres build menu
+Tll Missile Truck remove 3x burst replace with 1 shot per 1.3s ,180>190 metal for unit ,dps increased 18.75>20
+Venom reduce top speed 2.2>1.8 and range 620>600
+Speeder reduce sightdistance 500>450, range 700>650 ,reloadtime 0.6>0.8 damage 237>220
+
 ---------------------------------------- v2.40.5 ---------------------------------------
 DeSync fix (opps)
+
 ---------------------------------------- v2.40.3 ---------------------------------------
 Add modoption to revert to old mip levels (new levels should increase performance but has a lower los resolution) default on
 
