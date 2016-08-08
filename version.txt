@@ -2,6 +2,24 @@
 ----Bugs----
 Fix dont break cloak widget
 
+
+----Balance----
+Speeder (T2.5 Hover Arm), decrease HP 4400=>2150, Increase Damage ~ 400dmg/S, Increase Range at 700, Decrease Cost & Speed (1.5) (= damage dealer hover)
+Mobile Tachyion => Decrease Speed (1.5 =>1.4)
+Mobile Hover Tachyon => Decrease Speed (1.6 => 1.5) & Sight (650 => 450)
+Mumba (Bulldog hover) => Increase HP 3900 => 4200 (= tank hover)
+Corgol Hover => Decrease Sight 650 => 450
+Laser T2 Core Hover (corhover3g or venon) => decrease cost, increase speed, decrease damage (= tank hover)
+Tremor => Increase HP 2000 => 3000, Decrease speed 1.5 => 1.4
+valliant => Increase damage with laser 1500 => 3000 (only ground unit with limit -30° +30° in front), decrease Beamlaser 1700 => 1600
+LRPC TLL => Delete metal / Shot
+Delete Core & Arm Air Transport T1.5
+Increase XP for Merl & Dominator to morph into T3.5 Long Range Missile. (0.50 => 0.75 for Merl & 0.50 => 1.00 for Howie)
+Maverick => Add Razorback for morph (0.50 xp & 60s)
+
+----Visual----
+Speeder (T2.5 Hover Arm), replace green by Blue Beam effect
+
 ---------------------------------------- v2.40.7 ---------------------------------------
 ----Balance----
 Rework cost for tll t3 nuke/anti
