@@ -4,7 +4,7 @@ return {
 		bmcode = 1,
 		brakerate = 0.714,
 		buildcostenergy = 74900,
-		buildcostmetal = 6850,
+		buildcostmetal = 6150,
 		builder = false,
 		buildpic = "krogtaar.png",
 		buildtime = 101125,
