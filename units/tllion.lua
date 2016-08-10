@@ -2,8 +2,8 @@ return {
 	tllion = {
 		bmcode = 0,
 		buildangle = 1700,
-		buildcostenergy = 6740492,  --cost for rc to builder 11200000
-		buildcostmetal = 324338,  --cost for rc to builder 106133
+		buildcostenergy = 4700000,  --cost for rc to builder 11200000
+		buildcostmetal = 322000,  --cost for rc to builder 106133
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 19,
