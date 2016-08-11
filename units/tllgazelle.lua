@@ -5,8 +5,8 @@ return {
 		bmcode = 0,
 		brakerate = 0,
 		buildangle = 4096,
-		buildcostenergy = 6021034,  --cost for rc to builder 11200000
-		buildcostmetal = 155438,  --cost for rc to builder 106133
+		buildcostenergy = 2210000,  --cost for rc to builder 11200000
+		buildcostmetal = 65430,  --cost for rc to builder 106133
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 9,

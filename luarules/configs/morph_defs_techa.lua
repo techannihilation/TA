@@ -553,14 +553,14 @@ local morphDefs = {
     armmerl = {
 		into = 'armmlrs',
 		time = 120,
-		xp = 0.60,
+		xp = 0.75,
 		metal = 3000,
 		energy = 20000,
 	},
     corhrk = {
 		into = 'corhowie',
 		time = 120,
-		xp = 0.60,
+		xp = 1.00,
 		metal = 3000,
 		energy = 20000,
 	},
@@ -796,7 +796,11 @@ local morphDefs = {
          	time = 120,
          	xp = 0.50,
          },
-
+    armmav = {
+     		into = 'armraz',
+		time = 60,
+		xp = 0.5,
+	},
 }
 
 

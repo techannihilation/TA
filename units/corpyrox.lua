@@ -43,7 +43,7 @@ return {
 		nochasecategory = "VTOL",
 		objectname = "CORPYROX",
 		radaremitheight = 43.06264,
-		selfdestructas = "BIG_UNIT",
+		selfdestructas = "CRAWL_BLAST",
 		shootme = 1,
 		side = "CORE",
 		sightdistance = 540,
