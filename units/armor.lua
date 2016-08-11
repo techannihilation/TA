@@ -1,10 +1,10 @@
 return {
 	armor = {
-		acceleration = 0.4,
+		acceleration = 0.2,
 		antiweapons = 1,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 1.25,
+		brakerate = 0.625,
 		buildcostenergy = 60000,
 		buildcostmetal = 2600,
 		builder = false,

@@ -1,9 +1,9 @@
 return {
 	armdfly = {
-		acceleration = 0.4,
+		acceleration = 0.2,
 		bankscale = 1,
 		bmcode = 1,
-		brakerate = 1.25,
+		brakerate = 0.625,
 		buildcostenergy = 6667,
 		buildcostmetal = 318,
 		builder = false,
