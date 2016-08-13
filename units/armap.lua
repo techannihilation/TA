@@ -67,7 +67,8 @@ return {
 			[6] = "armatlas",
 			[7] = "armkam",
 			[8] = "armblz",
-			[9] = "armjade",
+			[9] = "armdragf",
+			[10] = "armjade",
 		},
 		customparams = {
 			buildpic = "ARMAP.png",
