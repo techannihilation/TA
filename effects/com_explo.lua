@@ -2,7 +2,6 @@
 return {
   ["com_explo"] = {
      usedefaultexplosions = false,
-
     fakelight = {
       air                = false,
       class              = [[CSimpleGroundFlash]],
@@ -39,7 +38,6 @@ return {
       water              = true,
       properties = {
         airdrag            = 1,
-        alwaysvisible      = true,
         colormap           = [[1 1 1 0.4    1 1 1 0.4              0 0 0 0.01]],
         directional        = true,
         emitrot            = 0,
@@ -57,6 +55,7 @@ return {
         sizegrowth         = 0,
         sizemod            = 1.0,
         texture            = [[diamondstar1]],
+        useairlos          = true,
       },
     },
       smokecloud = {
