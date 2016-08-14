@@ -144,13 +144,13 @@ for id in pairs(WeaponDefs) do
 	end
 	if WeaponDefs[id].cratermult and tonumber(WeaponDefs[id].cratermult) > 0 then
 		--Spring.Echo("crater mult " .. id,WeaponDefs[id].cratermult)
-		WeaponDefs[id].cratermult = WeaponDefs[id].cratermult * 0.4
+		WeaponDefs[id].cratermult = WeaponDefs[id].cratermult * 0.12
 	else
 		WeaponDefs[id].cratermult = 0.0
 	end
 	if WeaponDefs[id].craterboost and tonumber(WeaponDefs[id].craterboost) > 0 then
 		--Spring.Echo("crater boost " .. id,WeaponDefs[id].craterboost)
-		WeaponDefs[id].craterboost = WeaponDefs[id].craterboost * 0.4
+		WeaponDefs[id].craterboost = WeaponDefs[id].craterboost * 0.12
 	else
 		WeaponDefs[id].craterboost = 0
 	end
