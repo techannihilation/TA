@@ -1,3 +1,9 @@
+---------------------------------------- v2.40.9 ---------------------------------------
+----Bugs----
+Fix cratersize for spring 103
+Revert speed increae for all air trans
+Add t1.5 trans back, Reduce hp by 0.70%
+
 ---------------------------------------- v2.40.8 ---------------------------------------
 ----Bugs----
 Fix dont break cloak widget
