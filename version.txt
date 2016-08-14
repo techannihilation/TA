@@ -3,7 +3,7 @@
 Fix some explosion being visable
 Fix cratersize for spring 103
 Revert speed increae for all air trans
-Add t1.5 trans back, Reduce hp by 0.70%
+Add t1.5 trans back, Reduce hp by 0.30%
 
 ---------------------------------------- v2.40.8 ---------------------------------------
 ----Bugs----
