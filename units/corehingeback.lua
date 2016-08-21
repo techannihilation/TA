@@ -35,7 +35,7 @@ return {
 		metalstorage = 0,
 		mincloakdistance = 140,
 		mobilestandorders = 1,
-		movementclass = "TKBOT3",
+		movementclass = "AMPTBOT",
 		name = "Hingeback",
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
