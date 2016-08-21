@@ -215,14 +215,12 @@ MotionControl(Func_Var_1)
 }
 
 Go()
-{	
-	sleep 1000;
+{
 	set INBUILDSTANCE to 1;
 }
 
 Stop()
 {
-	sleep 1000;
 	set INBUILDSTANCE to 0;
 }
 
@@ -302,6 +300,7 @@ StopBuilding()
 {
 	start-script RequestState(1);
 }
+
 
 setSFXoccupy(state)
 {
