@@ -113,7 +113,9 @@ return {
 		weapondefs = {
 			tll_ultimate_nuke = {
 				areaofeffect = 2820,
+				avoidfriendly = false,
 				cegtag = "Trail_nuke",
+				collidefriendly = false,
 				commandfire = true,
 				edgeeffectiveness = 0.5,
 				energypershot = 4200000,

@@ -113,7 +113,9 @@ return {
 		weapondefs = {
 			armfsilo_weapon = {
 				areaofeffect = 2820,
+				avoidfriendly = false,
 				cegtag = "Trail_nuke",
+				collidefriendly = false,
 				commandfire = true,
 				edgeeffectiveness = 0.5,
 				energypershot = 2800000,

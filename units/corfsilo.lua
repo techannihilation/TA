@@ -112,7 +112,9 @@ return {
 		weapondefs = {
 			corfsilo_weapon = {
 				areaofeffect = 3020,
+				avoidfriendly = false,
 				cegtag = "Trail_nuke",
+				collidefriendly = false,
 				commandfire = true,
 				edgeeffectiveness = 0.5,
 				energypershot = 3000000,
