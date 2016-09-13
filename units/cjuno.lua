@@ -132,7 +132,7 @@ return {
 				flighttime = 400,
 				impulseboost = 0,
 				impulsefactor = 0,
-				metalpershot = 60,
+				metalpershot = 160,
 				model = "epulse",
 				name = "AntiSignal",
 				range = 5500,
