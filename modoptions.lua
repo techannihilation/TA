@@ -135,14 +135,6 @@ local options={
 			{key="qtpfs", name="QTPFS", desc="Quick/Tesellating Path Finding System"},
 		}
     },
-	{
-		key="miplevel",
-		name="New Los mip level",
-		desc="Select new (faster) or old miplevel\nAutoHost Usage :- miplevel",
-		type   = "bool",
-		def    = true,
-		section= "ta_options",
-    },
         {
 		key    = "mo_dynamic",
 		name   = "Dynamic Lighting",
