@@ -1,3 +1,16 @@
+---------------------------------------- v2.41.1 ---------------------------------------
+----Bugs----
+Fix t3 nukes hitting ally units
+Revert just los mip level back to original setting
+
+----Improvements----
+Update airbase gadget
+
+----Balance----
+Tll moho mex reduce metal cost 578>538
+Increase juno metal per shot cost for arm/core 100, tll juno by 125
+
+
 ---------------------------------------- v2.41.0 ---------------------------------------
 ----Bugs----
 Fix some explosion being visable
