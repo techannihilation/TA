@@ -1,0 +1,379 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, turret, Rlauncher, Rlauncherbase, fire1, fire2, fire3,
+       fire4, Llauncher, Llauncherbase, fire5, fire6, fire7, fire8, turrettop;
+
+static-var  gun_1, Static_Var_2, Static_Var_3, Static_Var_4, bAiming;
+
+// Signal definitions
+#define SIG_AIM				2
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Spinny()
+{
+	spin turret around y-axis speed <25.000000>;
+}
+
+Create()
+{
+	gun_1 = body;
+	Static_Var_2 = 0;
+	Static_Var_3 = 0;
+	Static_Var_4 = 1;
+	dont-shade base;
+	dont-shade body;
+	dont-shade turret;
+	dont-shade Rlauncher;
+	dont-shade Rlauncherbase;
+	dont-shade fire1;
+	dont-shade fire2;
+	dont-shade fire3;
+	dont-shade fire4;
+	dont-shade Llauncher;
+	dont-shade Llauncherbase;
+	dont-shade fire5;
+	dont-shade fire6;
+	dont-shade fire7;
+	dont-shade fire8;
+	dont-shade turrettop;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 2000;
+	}
+	start-script SmokeUnit();
+	turn Llauncher to x-axis <-55.000000> speed <60.000000>;
+	turn Rlauncher to x-axis <-55.000000> speed <60.000000>;
+	wait-for-turn Llauncher around x-axis;
+	wait-for-turn Rlauncher around x-axis;
+	dont-cache turrettop;
+	start-script Spinny();
+}
+
+OkYouCanGoOnNow()
+{
+	turn turret to y-axis <0.000000> speed <90.000000>;
+	turn Llauncher to x-axis <-55.000000> speed <60.000000>;
+	turn Rlauncher to x-axis <-55.000000> speed <60.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn Llauncher around x-axis;
+	wait-for-turn Rlauncher around x-axis;
+	start-script Spinny();
+}
+
+CheckEnvironment()
+{
+	Static_Var_3 = Rand( 1, 4 );
+	if( Static_Var_3 == 1 )
+	{
+		turn turret to y-axis <-165.000000> speed <90.000000>;
+		turn Llauncher to x-axis <-30.000000> speed <20.000000>;
+		turn Rlauncher to x-axis <-30.000000> speed <20.000000>;
+		sleep 2300;
+		turn turret to y-axis <35.000000> speed <90.000000>;
+		turn Llauncher to x-axis <-75.000000> speed <25.000000>;
+		turn Rlauncher to x-axis <-75.000000> speed <25.000000>;
+		sleep 2300;
+	}
+	if( Static_Var_3 == 2 )
+	{
+		turn turret to y-axis <75.000000> speed <50.000000>;
+		turn Llauncher to x-axis <-10.000000> speed <6.000000>;
+		turn Rlauncher to x-axis <-10.000000> speed <6.000000>;
+		sleep 2600;
+		turn turret to y-axis <155.000000> speed <50.000000>;
+		turn Llauncher to x-axis <-80.000000> speed <35.000000>;
+		turn Rlauncher to x-axis <-80.000000> speed <35.000000>;
+		sleep 2600;
+	}
+	if( Static_Var_3 == 3 )
+	{
+		turn turret to y-axis <-45.000000> speed <20.000000>;
+		turn Llauncher to x-axis <-50.000000> speed <25.000000>;
+		turn Rlauncher to x-axis <-50.000000> speed <25.000000>;
+		sleep 2300;
+		turn turret to y-axis <95.000000> speed <90.000000>;
+		turn Llauncher to x-axis <-35.000000> speed <15.000000>;
+		turn Rlauncher to x-axis <-35.000000> speed <15.000000>;
+		sleep 2300;
+	}
+	if( Static_Var_3 == 4 )
+	{
+		turn turret to y-axis <175.000000> speed <100.000000>;
+		turn Llauncher to x-axis <-75.000000> speed <35.000000>;
+		turn Rlauncher to x-axis <-75.000000> speed <35.000000>;
+		sleep 2300;
+		turn turret to y-axis <-25.000000> speed <90.000000>;
+		turn Llauncher to x-axis <-60.000000> speed <9.000000>;
+		turn Rlauncher to x-axis <-60.000000> speed <9.000000>;
+		sleep 2300;
+	}
+	start-script OkYouCanGoOnNow();
+}
+
+Reload()
+{
+	sleep 2500;
+	Static_Var_2 = 0;
+	Static_Var_4 = 1;
+}
+
+RestoreAfterDelay()
+{
+	set-signal-mask SIG_AIM;
+	sleep 5500;
+	turn turret to y-axis <0.000000> speed <90.000000>;
+	turn Llauncher to x-axis <0.000000> speed <60.000000>;
+	turn Rlauncher to x-axis <0.000000> speed <60.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn Llauncher around x-axis;
+	wait-for-turn Rlauncher around x-axis;
+	sleep 400;
+	start-script CheckEnvironment();
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+QueryPrimary(piecenum)
+{
+	if( gun_1 == 1 )
+	{
+		piecenum = fire1;
+		return (0);
+	}
+	if( gun_1 == 2 )
+	{
+		piecenum = fire2;
+		return (0);
+	}
+	if( gun_1 == 3 )
+	{
+		piecenum = fire3;
+		return (0);
+	}
+	if( gun_1 == 4 )
+	{
+		piecenum = fire4;
+		return (0);
+	}
+	if( gun_1 == 5 )
+	{
+		piecenum = fire5;
+		return (0);
+	}
+	if( gun_1 == 6 )
+	{
+		piecenum = fire6;
+		return (0);
+	}
+	if( gun_1 == 7 )
+	{
+		piecenum = fire7;
+		return (0);
+	}
+	if( gun_1 == 8 )
+	{
+		piecenum = fire8;
+		return (0);
+	}
+}
+
+AimFromPrimary(piecenum)
+{
+	if( gun_1 <= 4 )
+	{
+		piecenum = Rlauncher;
+		return (0);
+	}
+	if( gun_1 > 4 )
+	{
+		piecenum = Llauncher;
+		return (0);
+	}
+}
+
+AimPrimary(heading, pitch)
+{
+	if( Static_Var_4 == 1 )
+	{
+		bAiming = Rand( 1, 1000 );
+		sleep bAiming;
+		Static_Var_4 = 0;
+		set CHANGE_TARGET to 1;
+		return (0);
+	}
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	turn turret to y-axis heading speed <245.000000>;
+	turn Llauncher to x-axis <0.000000> - pitch speed <185.000000>;
+	turn Rlauncher to x-axis <0.000000> - pitch speed <185.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn Rlauncher around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FirePrimary()
+{
+	if( gun_1 == 1 )
+	{
+		gun_1 = turret;
+		return (0);
+	}
+	if( gun_1 == 2 )
+	{
+		gun_1 = Rlauncher;
+		return (0);
+	}
+	if( gun_1 == 3 )
+	{
+		gun_1 = Rlauncherbase;
+		return (0);
+	}
+	if( gun_1 == 4 )
+	{
+		gun_1 = fire1;
+		Static_Var_2 = 1;
+		start-script Reload();
+		return (0);
+	}
+	if( gun_1 == 5 )
+	{
+		gun_1 = fire2;
+		return (0);
+	}
+	if( gun_1 == 6 )
+	{
+		gun_1 = fire3;
+		return (0);
+	}
+	if( gun_1 == 7 )
+	{
+		gun_1 = fire4;
+		return (0);
+	}
+	if( gun_1 == 8 )
+	{
+		gun_1 = body;
+		Static_Var_2 = 1;
+		start-script Reload();
+		return (0);
+	}
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type BITMAPONLY | BITMAP1;
+		explode body type BITMAPONLY | BITMAP1;
+		explode turret type BITMAPONLY | BITMAP1;
+		explode Rlauncher type BITMAPONLY | BITMAP1;
+		explode Rlauncherbase type BITMAPONLY | BITMAP1;
+		explode fire1 type BITMAPONLY | BITMAP1;
+		explode fire2 type BITMAPONLY | BITMAP1;
+		explode fire3 type BITMAPONLY | BITMAP1;
+		explode fire4 type BITMAPONLY | BITMAP1;
+		explode Llauncher type BITMAPONLY | BITMAP1;
+		explode Llauncherbase type BITMAPONLY | BITMAP1;
+		explode fire5 type BITMAPONLY | BITMAP1;
+		explode fire6 type BITMAPONLY | BITMAP1;
+		explode fire7 type BITMAPONLY | BITMAP1;
+		explode fire8 type BITMAPONLY | BITMAP1;
+		explode turrettop type BITMAPONLY | BITMAP1;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type SHATTER | BITMAP4;
+		explode body type SHATTER | BITMAP4;
+		explode turret type SHATTER | BITMAP4;
+		explode Rlauncher type SHATTER | BITMAP4;
+		explode Rlauncherbase type SHATTER | BITMAP4;
+		explode fire1 type SHATTER | BITMAP4;
+		explode fire2 type SHATTER | BITMAP4;
+		explode fire3 type SHATTER | BITMAP4;
+		explode fire4 type SHATTER | BITMAP4;
+		explode Llauncher type SHATTER | BITMAP4;
+		explode Llauncherbase type SHATTER | BITMAP4;
+		explode fire5 type SHATTER | BITMAP4;
+		explode fire6 type SHATTER | BITMAP4;
+		explode fire7 type SHATTER | BITMAP4;
+		explode fire8 type SHATTER | BITMAP4;
+		explode turrettop type SHATTER | BITMAP4;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode body type SHATTER | BITMAP4;
+		explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode Rlauncher type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode Rlauncherbase type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode fire1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode fire2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode fire3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode fire4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode Llauncher type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode Llauncherbase type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode fire5 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode fire6 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode fire7 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode fire8 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode turrettop type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode body type SHATTER | BITMAP4;
+	explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode Rlauncher type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode Rlauncherbase type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode fire1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode fire2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode fire3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode fire4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode Llauncher type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode Llauncherbase type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode fire5 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode fire6 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode fire7 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode fire8 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode turrettop type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	return (corpsetype);
+}

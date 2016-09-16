@@ -242,6 +242,20 @@ local moveDatas = {
 		maxslope = 80,	
 		maxwaterdepth = 180,
 	},
+	AMPTBOT = {
+		crushstrength = 250,
+		depthmodparams = {
+			minheight = 1,
+			linearcoeff = 0.03,
+			maxscale = 1,
+           		constantcoeff = 0.015,
+	    	},
+		footprintx = 3,
+		footprintz = 3,
+		maxslope = 80,	
+		maxwaterdepth = 15000,
+		
+	},
 }
 		
 --------------------------------------------------------------------------------
@@ -250,8 +264,8 @@ local moveDatas = {
 local defs = {}
 
 for moveName, moveData in pairs(moveDatas) do
-
- 	moveData.heatmapping = (Spring.GetModOptions() and tonumber(Spring.GetModOptions().mo_heatmap) and (tonumber(Spring.GetModOptions().mo_heatmap) ~= 0))
+	Spring.Echo("********** ",tonumber((Spring.GetModOptions() and (Spring.GetModOptions().mo_heatmap == "1") and 1) or 0))
+	moveData.heatmapping = (Spring.GetModOptions() and tonumber(Spring.GetModOptions().mo_heatmap) and (tonumber(Spring.GetModOptions().mo_heatmap) ~= 0) or 1)
 	moveData.name = moveName
 	defs[#defs + 1] = moveData
 end
