@@ -54,6 +54,9 @@ return {
 		unitname = "tllturtle",
 		unitnumber = 31903,
 		workertime = 0,
+		customparams = {
+			requiretech = "T2 Factory",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
