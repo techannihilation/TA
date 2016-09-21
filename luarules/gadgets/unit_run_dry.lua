@@ -44,6 +44,13 @@ local ipairs = ipairs
 local pairs = pairs
 
 local buffer = 2
+
+local excludedUnit = {
+  [UnitDefNames["corthovr"].id] = true,
+  [UnitDefNames["armthovr"].id] = true,
+}
+
+
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
 
@@ -87,10 +94,13 @@ function gadget:Initialize()
   for i=1,#UnitDefs do
   local unitDefID = UnitDefs[i]
     if (unitDefID.minWaterDepth and unitDefID.minWaterDepth> 0) and unitDefID.waterline then
-      --Spring.Echo(i,unitDefID.name, unitDefID.tooltip, unitDefID.canMove)
-      tideDefs[i] = true
-    end
+      if not excludedUnit[i] then
+        --Spring.Echo(i,unitDefID.name, unitDefID.tooltip, unitDefID.canMove)
+        tideDefs[i] = true
+      end
+     end
   end
+
   for _, unitID in ipairs(SpGetAllUnits()) do
     local unitDefID = GetUnitDefID(unitID)
     if (tideDefs[unitDefID]) then
