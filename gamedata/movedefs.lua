@@ -247,7 +247,7 @@ local moveDatas = {
 		depthmodparams = {
 			minheight = 1,
 			linearcoeff = 0.03,
-			maxscale = 1,
+			maxscale = 0.75,
            		constantcoeff = 0.015,
 	    	},
 		footprintx = 3,
