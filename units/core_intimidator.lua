@@ -127,7 +127,7 @@ return {
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 50,
-				energypershot = 10000,
+				energypershot = 5000,
 				explosiongenerator = "custom:EMPFLASH240",
 				firestarter = 50,
 				gravityaffected = true,
