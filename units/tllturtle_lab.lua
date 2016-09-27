@@ -50,7 +50,7 @@ return {
 		yardmap = "occccooccccooccccooccccooccccoocccco",
 		buildoptions = {
 			[1] = "tllmusk",
-			[2] = "tllsideneck",
+			--[2] = "tllsideneck",
 			[3] = "tllsnakeneck",
 			[4] = "tllmatamata",
 			[5] = "tllloggerhead",
