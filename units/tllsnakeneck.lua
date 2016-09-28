@@ -6,6 +6,7 @@ return {
 		buildcostmetal = 590,
 		builder = false,
 		buildtime = 7280,
+		canattack = true,
 		canguard = true,
 		canmove = true,
 		canpatrol = true,
