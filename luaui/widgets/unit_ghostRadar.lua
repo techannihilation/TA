@@ -124,7 +124,7 @@ function widget:DrawWorld()
 			if x and ( spIsUnitInView(unitID) ) then
 				glPushMatrix()
 				glTranslate( x, y + 5 , z)
-				glUnitShape( dot["unitDefId"], dot["teamId"], true, false, false)					      
+				glUnitShape( dot["unitDefId"], dot["teamId"], false, true, false)					      
 				glPopMatrix()
 			end
 		end
