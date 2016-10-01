@@ -55,10 +55,10 @@ return {
 			[2] = "coreleopard",
 			[3] = "coreslingshot",
 			[4] = "corehingeback",
-			[5] = "coretnt",
-			[6] = "coreavalanche",
-			[7] = "corechelonian",
-			[8] = "cormenacer",
+			[5] = "coreavalanche",
+			[6] = "corechelonian",
+			[7] = "cormenacer",
+			[8] = "coretnt",
 			--[8] = "cormonsta",  --turtles only
 		},
 		customparams = {
