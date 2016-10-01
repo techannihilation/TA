@@ -4,7 +4,7 @@ return {
 		bmcode = 1,
 		brakerate = 0.564,
 		buildcostenergy = 32000,
-		buildcostmetal = 900,
+		buildcostmetal = 400,
 		builder = false,
 		buildpic = "CORSKTL.png",
 		buildtime = 16975,
