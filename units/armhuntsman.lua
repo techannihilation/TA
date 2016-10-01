@@ -129,7 +129,7 @@ return {
 				name = "Missiles",
 				noselfdamage = true,
 				range = 765,
-				reloadtime = 1.7,
+				reloadtime = 3.4,
 				smoketrail = true,
 				soundhitdry = "xplomed2",
 				soundstart = "rockhvy2",
@@ -157,6 +157,10 @@ return {
 		},
 		weapons = {
 			[1] = {
+				def = "ARMRL_MISSILE",
+				onlytargetcategory = "VTOL",
+			},
+			[2] = {
 				def = "ARMRL_MISSILE",
 				onlytargetcategory = "VTOL",
 			},
