@@ -112,7 +112,7 @@ return {
 			[28] = "cbuilderlvl2",
 			[29] = "corupmex",
 			[30] = "corpcan",
-			[31] = "skykrogoth",
+			--[31] = "skykrogoth", -- Christmas Edition
 		},
 		customparams = {
 			buildpic = "CORCOM.png",

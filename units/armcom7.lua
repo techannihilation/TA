@@ -112,7 +112,7 @@ return {
 			[28] = "abuilderlvl2",
 			[29] = "corupmex",
 			[30] = "armpcan",
-			[31] = "skykrogoth",
+			--[31] = "skykrogoth",  --Christmas Edition
 		},
 		customparams = {
 			buildpic = "ARMCOM.png",
