@@ -1,3 +1,26 @@
+---------------------------------------- v2.5 ---------------------------------------
+----Bugs----
+
+----Improvements----
+Delete All Spider Core units. 
+Add turtoise Allterrain for Core Units (T1 & T1.5 technology).
+Add Turtle amphibious & AllTerrain for Tll units (T2 technology)
+Delete Dragons 
+Lock Assault Spider with T1.5 RC (armhobo)
+
+----Balance----
+Rebalance All Spider units (Arm faction)
+armhobo (spider aussaut) => Increase speed & Cost & Dmg/s (weapon Panther)
+armtarantula (rocket spider) => Increase range. Decrease damage / s. Decrease Cost.
+Acid Rain Unit (T3 TLL) Increase HP 1850 => 3450
+EMP Bertha Decrease EnergyCost per Shoot 10KE => 5KE
+Balance Armani1 (T3 Tachyon). decrease Cost 17KM => 13KM. Increase range 1750 => 2150. Increase reload 5s => 10s (1800 dmg/s)
+Balance Cordoom1 (T3). decrease damage for red laser (150 => 120). Increase Blue beam laser 1450 => 1750. decrease damage 3200dmg/s => 1500dmg/s.
+CorPyrox => add selfdestruct CRAWL_BLAST effect. delete damage modfier.  Add Autorepair 25 (50 for maverick). decrease HP 18000 => 15000
+CorPyrox1 => add selfdestruct CRAWL_BLAST effect. Delete Missiles. Add Autorepair 100. (50 for maverick). Increase flames range 400 => 450. decrease HP 22000 => 18000. delete damage modfier.
+
+
+
 ---------------------------------------- v2.41.1 ---------------------------------------
 ----Bugs----
 Fix t3 nukes hitting ally units
