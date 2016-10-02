@@ -2,8 +2,8 @@ return {
 	tllmatamata = {
 		acceleration = 0.025,
 		brakerate = 0.101,
-		buildcostenergy = 21500,
-		buildcostmetal = 2450,
+		buildcostenergy = 11500,
+		buildcostmetal = 2650,
 		builder = false,
 		buildtime = 16000,
 		canattack = true,
