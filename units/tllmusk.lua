@@ -70,7 +70,7 @@ return {
 			[11] = "tllsy",
 			[12] = "tllasy",
 			[13] = "tllsubpen",
-			[14] = "tllturtle_lab"
+			[14] = "tllturtle_lab",
 			[15] = "tlladt",
 			[16] = "tllarad",
 			[17] = "tllasonar",
