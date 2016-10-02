@@ -59,7 +59,7 @@ return {
 			[6] = "corechelonian",
 			[7] = "cormenacer",
 			[8] = "coretnt",
-			--[8] = "cormonsta",  --turtles only
+			[9] = "core_riptide",
 		},
 		customparams = {
 			providetech = "T1 Factory",

@@ -59,7 +59,7 @@ return {
 			[5] = "armspider",
 			[6] = "armtarantula",
 			[7] = "armhobo",
-			--[8] = "armcav",
+			[8] = "armweaver",
 		},
 		customparams = {
 			providetech = "T1 Factory",

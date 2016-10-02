@@ -60,7 +60,7 @@ return {
 			[8] = "tllsoftshell",
 		},
 		customparams = {
-			providetech = "T1 Factory",
+			providetech = "T2 Factory",
 		},
 		featuredefs = {
 			dead = {
