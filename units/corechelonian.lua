@@ -115,7 +115,7 @@ return {
 			},
 		},
 		weapondefs = {
-			corlevlr_weapon1 = {
+			corlevlr_weapon = {
 				areaofeffect = 180,
 				burnblow = true,
 				craterboost = 0,
@@ -143,7 +143,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "CORE_CHELONIAN_LASER",
+				def = "CORLEVLR_WEAPON",
 				onlytargetcategory = "NOTVTOL",
 			},
 		},
