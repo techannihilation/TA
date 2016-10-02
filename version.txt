@@ -18,7 +18,9 @@ Balance Armani1 (T3 Tachyon). decrease Cost 17KM => 13KM. Increase range 1750 =>
 Balance Cordoom1 (T3). decrease damage for red laser (150 => 120). Increase Blue beam laser 1450 => 1750. decrease damage 3200dmg/s => 1500dmg/s.
 CorPyrox => add selfdestruct CRAWL_BLAST effect. delete damage modfier.  Add Autorepair 25 (50 for maverick). decrease HP 18000 => 15000
 CorPyrox1 => add selfdestruct CRAWL_BLAST effect. Delete Missiles. Add Autorepair 100. (50 for maverick). Increase flames range 400 => 450. decrease HP 22000 => 18000. delete damage modfier.
-
+thumper => decrease energy cost 31KE => 17KE
+Torpedo TLL => Balance Ratio E/M
+HailStorm (T3 TLL Kbot) => transform it in Rapid Long Range Plasma Canon. 525 dmg/s at 3800 Range. decrease Metal & Energy Cost at 14KM & 210KE. decrease HP 40K => 12K. Decrease Velocity 1.0 => 0.8
 
 
 ---------------------------------------- v2.41.1 ---------------------------------------
