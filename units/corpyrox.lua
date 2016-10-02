@@ -1,6 +1,7 @@
 return {
 	corpyrox = {
 		acceleration = 0.1,
+		autoheal = 25,
 		brakerate = 0.54,
 		buildcostenergy = 25000,
 		buildcostmetal = 3200,
@@ -17,7 +18,7 @@ return {
 		collisionvolumetype = "box",
 		corpse = "HEAP",
 		defaultmissiontype = "Standby",
-		description = "Hell Fire Captain",
+		description = "Hell Fire Captain (Auto-Repair 25)",
 		energymake = 2.1,
 		energystorage = 0,
 		energyuse = 2.1,
@@ -30,9 +31,9 @@ return {
 		losemitheight = 43.06264,
 		maneuverleashlength = 640,
 		mass = 3200,
-		maxdamage = 18000,
+		maxdamage = 13500,
 		maxslope = 17,
-		maxvelocity = 1.8,
+		maxvelocity = 1.85,
 		maxwaterdepth = 25,
 		metalstorage = 0,
 		mobilestandorders = 1,
