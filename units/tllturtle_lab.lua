@@ -58,6 +58,7 @@ return {
 			[6] = "tllturtle",
 			[7] = "tllhickatee",
 			[8] = "tllsoftshell",
+			[9] = "tllom",
 		},
 		customparams = {
 			providetech = "T2 Factory",

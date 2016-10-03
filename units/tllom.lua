@@ -58,7 +58,7 @@ return {
 		upright = false,
 		workertime = 0,
 		customparams = {
-			requiretech = "Advanced T2 Unit Research Centre",
+			requiretech = "T3 Factory",
 		},
 		featuredefs = {
 			heap = {
