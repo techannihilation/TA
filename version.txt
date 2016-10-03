@@ -1,3 +1,10 @@
+--------------------------------------- v2.42.2 ---------------------------------------
+----Balance----
+Increase metal (+2000) for Tachyon, Cordoom & Obligator
+Increase cost Moho Exploter armed
+Add T3 TLL Turtle
+
+
 --------------------------------------- v2.42.1 ---------------------------------------
 ----Bugs----
 Fix exploding hover trans
