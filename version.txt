@@ -2,8 +2,9 @@
 ----Balance----
 Increase metal (+2000) for Tachyon, Cordoom & Obligator
 Increase cost Moho Exploter armed
+Replace core spiders with core turtle
 Add T3 TLL Turtle
-
+Add Add new counterpart for arm/core spy to tll faction
 
 --------------------------------------- v2.42.1 ---------------------------------------
 ----Bugs----
