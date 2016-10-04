@@ -66,9 +66,14 @@ local udefTab				= UnitDefs
 local selfdTag = "selfDExplosion"
 local aoeTag = "damageAreaOfEffect"
 
-local coreSpyId = UnitDefNames["corspy"].id
-local armSpyId = UnitDefNames["armspy"].id
+local spies  = {
+    [UnitDefNames.armspy.id] = true,
+    [UnitDefNames.corspy.id] = true,
+    [UnitDefNames.tllspy.id] = true,
+}
+
 local armGremlinId = UnitDefNames["armst"].id
+
 
 local units = {}
 
@@ -86,7 +91,7 @@ function processGremlin(unitID)
 end
 
 function isSpy(unitDefID)
-    if unitDefID == coreSpyId or armSpyId == unitDefID then
+    if spies[unitDefID] then
         return true
     end
     return false
