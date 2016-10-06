@@ -152,14 +152,14 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode body type BITMAPONLY | BITMAP1;
-		explode engine type BITMAPONLY | BITMAP2;
+		explode body type BITMAP1;
+		explode engine type BITMAP2;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode body type BITMAPONLY | BITMAP1;
+		explode body type BITMAP1;
 		explode engine type SHATTER | EXPLODE_ON_HIT | BITMAP2;
 		explode door1 type SHATTER | EXPLODE_ON_HIT | BITMAP1;
 		explode door2 type SHATTER | EXPLODE_ON_HIT | BITMAP2;
@@ -171,7 +171,7 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 3;
 		explode body type SHATTER | EXPLODE_ON_HIT | BITMAP1;
-		explode engine type BITMAPONLY | BITMAP2;
+		explode engine type BITMAP2;
 		return (corpsetype);
 	}
 	corpsetype = 3;

@@ -107,26 +107,26 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode sonar type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode sonar type NOHEATCLOUD | BITMAP1;
+		explode base type NOHEATCLOUD | BITMAP2;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode sonar type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode sonar type NOHEATCLOUD | BITMAP1;
+		explode base type NOHEATCLOUD | BITMAP2;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode sonar type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode sonar type NOHEATCLOUD | BITMAP1;
+		explode base type NOHEATCLOUD | BITMAP2;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode sonar type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-	explode base type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+	explode sonar type NOHEATCLOUD | BITMAP1;
+	explode base type NOHEATCLOUD | BITMAP2;
 	return (corpsetype);
 }

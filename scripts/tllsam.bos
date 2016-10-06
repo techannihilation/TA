@@ -148,9 +148,9 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode body type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode turret type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode sleeves type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+		explode body type NOHEATCLOUD | BITMAP1;
+		explode turret type NOHEATCLOUD | BITMAP2;
+		explode sleeves type NOHEATCLOUD | BITMAP5;
 		return (corpsetype);
 	}
 	if( severity <= 50 )

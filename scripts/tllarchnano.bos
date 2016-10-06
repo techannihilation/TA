@@ -296,7 +296,7 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 1;
 	}
-	explode body type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+	explode body type NOHEATCLOUD | BITMAP3;
 	explode legl3 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 	explode legl4 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 	explode legr1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;

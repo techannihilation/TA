@@ -299,60 +299,60 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode building1 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode base type NOHEATCLOUD | BITMAP1;
+		explode building1 type NOHEATCLOUD | BITMAP2;
 		explode lights type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode nano2 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode nanobox1 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode pad type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-		explode radar type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode beam2 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode nano2 type NOHEATCLOUD | BITMAP1;
+		explode nanobox1 type NOHEATCLOUD | BITMAP2;
+		explode pad type NOHEATCLOUD | BITMAP4;
+		explode radar type NOHEATCLOUD | BITMAP5;
+		explode beam2 type NOHEATCLOUD | BITMAP1;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode building1 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode building2 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode base type NOHEATCLOUD | BITMAP1;
+		explode building1 type NOHEATCLOUD | BITMAP2;
+		explode building2 type NOHEATCLOUD | BITMAP3;
 		explode lights type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode nano1 type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode nano2 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode nanobox1 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode nanobox2 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode pad type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-		explode radar type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode beam1 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode nano1 type NOHEATCLOUD | BITMAP5;
+		explode nano2 type NOHEATCLOUD | BITMAP1;
+		explode nanobox1 type NOHEATCLOUD | BITMAP2;
+		explode nanobox2 type NOHEATCLOUD | BITMAP3;
+		explode pad type NOHEATCLOUD | BITMAP4;
+		explode radar type NOHEATCLOUD | BITMAP5;
+		explode beam1 type NOHEATCLOUD | BITMAP1;
 		explode beam2 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP2;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode building1 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode building2 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode base type NOHEATCLOUD | BITMAP1;
+		explode building1 type NOHEATCLOUD | BITMAP2;
+		explode building2 type NOHEATCLOUD | BITMAP3;
 		explode lights type NOHEATCLOUD | SHATTER | BITMAP5;
 		explode nano1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP5;
-		explode nano2 type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode nanobox1 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode nanobox2 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode pad type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+		explode nano2 type NOHEATCLOUD | BITMAP5;
+		explode nanobox1 type NOHEATCLOUD | BITMAP2;
+		explode nanobox2 type NOHEATCLOUD | BITMAP3;
+		explode pad type NOHEATCLOUD | BITMAP4;
 		explode radar type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
 		explode beam1 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
 		explode beam2 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-	explode building1 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-	explode building2 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+	explode base type NOHEATCLOUD | BITMAP1;
+	explode building1 type NOHEATCLOUD | BITMAP2;
+	explode building2 type NOHEATCLOUD | BITMAP3;
 	explode lights type NOHEATCLOUD | SHATTER | BITMAP5;
 	explode nano1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP5;
-	explode nano2 type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-	explode nanobox1 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-	explode nanobox2 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-	explode pad type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+	explode nano2 type NOHEATCLOUD | BITMAP5;
+	explode nanobox1 type NOHEATCLOUD | BITMAP2;
+	explode nanobox2 type NOHEATCLOUD | BITMAP3;
+	explode pad type NOHEATCLOUD | BITMAP4;
 	explode radar type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
 	explode beam1 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
 	explode beam2 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;

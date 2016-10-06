@@ -261,9 +261,9 @@ Killed(severity, corpsetype)
 	explode arm1b type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
 	explode arm2a type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
 	explode pad type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
-	explode body type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-	explode arm1a type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-	explode arm2a type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+	explode body type NOHEATCLOUD | BITMAP5;
+	explode arm1a type NOHEATCLOUD | BITMAP4;
+	explode arm2a type NOHEATCLOUD | BITMAP4;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;

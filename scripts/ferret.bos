@@ -154,21 +154,21 @@ Killed(severity, corpsetype)
 {
 	if( severity <= 25 )
 	{
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode body type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode middle type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode forwardhelo type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode frontwings type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rearwings type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode end type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rearhelo type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode turret type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode gun1 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode flare1 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode gun2 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode flare2 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode gun3 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode flare3 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode base type NOHEATCLOUD | BITMAP1;
+		explode body type NOHEATCLOUD | BITMAP1;
+		explode middle type NOHEATCLOUD | BITMAP1;
+		explode forwardhelo type NOHEATCLOUD | BITMAP1;
+		explode frontwings type NOHEATCLOUD | BITMAP1;
+		explode rearwings type NOHEATCLOUD | BITMAP1;
+		explode end type NOHEATCLOUD | BITMAP1;
+		explode rearhelo type NOHEATCLOUD | BITMAP1;
+		explode turret type NOHEATCLOUD | BITMAP1;
+		explode gun1 type NOHEATCLOUD | BITMAP1;
+		explode flare1 type NOHEATCLOUD | BITMAP1;
+		explode gun2 type NOHEATCLOUD | BITMAP1;
+		explode flare2 type NOHEATCLOUD | BITMAP1;
+		explode gun3 type NOHEATCLOUD | BITMAP1;
+		explode flare3 type NOHEATCLOUD | BITMAP1;
 		return (corpsetype);
 	}
 	if( severity <= 50 )

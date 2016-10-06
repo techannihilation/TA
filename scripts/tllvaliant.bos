@@ -326,7 +326,7 @@ Killed(severity, corpsetype)
 	explode barrel4 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT | BITMAP3;
 	explode barrel5 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT | BITMAP5;
 	explode barrel6 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT | BITMAP1;
-	explode base type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+	explode base type NOHEATCLOUD | BITMAP2;
 	explode sleeve1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP4;
 	explode sleeve2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP5;
 	explode sleeves1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
@@ -344,7 +344,7 @@ Killed(severity, corpsetype)
 	explode barrel4 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT | BITMAP3;
 	explode barrel5 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT | BITMAP5;
 	explode barrel6 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT | BITMAP1;
-	explode base type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+	explode base type NOHEATCLOUD | BITMAP2;
 	explode sleeve1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP4;
 	explode sleeve2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP5;
 	explode sleeves1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;

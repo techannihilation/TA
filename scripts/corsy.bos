@@ -260,16 +260,16 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode beama type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode beamb type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode blink type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-		explode guna type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode gunb type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode turreta type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode turretb type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode explodpt1 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode explodpt2 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode base type NOHEATCLOUD | BITMAP1;
+		explode beama type NOHEATCLOUD | BITMAP2;
+		explode beamb type NOHEATCLOUD | BITMAP3;
+		explode blink type NOHEATCLOUD | BITMAP4;
+		explode guna type NOHEATCLOUD | BITMAP5;
+		explode gunb type NOHEATCLOUD | BITMAP1;
+		explode turreta type NOHEATCLOUD | BITMAP2;
+		explode turretb type NOHEATCLOUD | BITMAP3;
+		explode explodpt1 type NOHEATCLOUD | BITMAP2;
+		explode explodpt2 type NOHEATCLOUD | BITMAP3;
 		return (corpsetype);
 	}
 	if( severity <= 50 )

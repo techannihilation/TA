@@ -144,27 +144,27 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode floater1 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode floater2 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode floater3 type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-		explode floater4 type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode centerlight type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode dome type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode lightl type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode lightr type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-		explode lightt type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode lightb type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode arml type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode armr type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode armt type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-		explode armb type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+		explode base type NOHEATCLOUD | BITMAP5;
+		explode floater1 type NOHEATCLOUD | BITMAP2;
+		explode floater2 type NOHEATCLOUD | BITMAP3;
+		explode floater3 type NOHEATCLOUD | BITMAP4;
+		explode floater4 type NOHEATCLOUD | BITMAP5;
+		explode centerlight type NOHEATCLOUD | BITMAP2;
+		explode dome type NOHEATCLOUD | BITMAP2;
+		explode lightl type NOHEATCLOUD | BITMAP3;
+		explode lightr type NOHEATCLOUD | BITMAP4;
+		explode lightt type NOHEATCLOUD | BITMAP5;
+		explode lightb type NOHEATCLOUD | BITMAP1;
+		explode arml type NOHEATCLOUD | BITMAP2;
+		explode armr type NOHEATCLOUD | BITMAP3;
+		explode armt type NOHEATCLOUD | BITMAP4;
+		explode armb type NOHEATCLOUD | BITMAP5;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+		explode base type NOHEATCLOUD | BITMAP5;
 		explode floater1 type NOHEATCLOUD | FALL | BITMAP2;
 		explode floater2 type NOHEATCLOUD | FALL | BITMAP3;
 		explode floater3 type NOHEATCLOUD | FALL | BITMAP4;
@@ -176,15 +176,15 @@ Killed(severity, corpsetype)
 		explode lightt type NOHEATCLOUD | FALL | BITMAP5;
 		explode lightb type NOHEATCLOUD | FALL | BITMAP1;
 		explode arml type NOHEATCLOUD | SHATTER | BITMAP2;
-		explode armr type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode armt type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-		explode armb type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+		explode armr type NOHEATCLOUD | BITMAP3;
+		explode armt type NOHEATCLOUD | BITMAP4;
+		explode armb type NOHEATCLOUD | BITMAP5;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+		explode base type NOHEATCLOUD | BITMAP5;
 		explode floater1 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP2;
 		explode floater2 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP3;
 		explode floater3 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP4;
@@ -196,13 +196,13 @@ Killed(severity, corpsetype)
 		explode lightt type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
 		explode lightb type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP1;
 		explode arml type NOHEATCLOUD | SHATTER | BITMAP2;
-		explode armr type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode armt type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-		explode armb type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+		explode armr type NOHEATCLOUD | BITMAP3;
+		explode armt type NOHEATCLOUD | BITMAP4;
+		explode armb type NOHEATCLOUD | BITMAP5;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+	explode base type NOHEATCLOUD | BITMAP5;
 	explode floater1 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP2;
 	explode floater2 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP3;
 	explode floater3 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP4;
@@ -214,8 +214,8 @@ Killed(severity, corpsetype)
 	explode lightt type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
 	explode lightb type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP1;
 	explode arml type NOHEATCLOUD | SHATTER | BITMAP2;
-	explode armr type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-	explode armt type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-	explode armb type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+	explode armr type NOHEATCLOUD | BITMAP3;
+	explode armt type NOHEATCLOUD | BITMAP4;
+	explode armb type NOHEATCLOUD | BITMAP5;
 	return (corpsetype);
 }

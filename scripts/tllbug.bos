@@ -164,9 +164,9 @@ Killed(severity, corpsetype)
 {
 	explode llegf type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
 	explode llegf type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-	explode rlegb type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-	explode rlegf type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-	explode body type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+	explode rlegb type NOHEATCLOUD | BITMAP3;
+	explode rlegf type NOHEATCLOUD | BITMAP3;
+	explode body type NOHEATCLOUD | BITMAP4;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;

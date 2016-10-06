@@ -297,29 +297,29 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode base type NOHEATCLOUD | BITMAP1;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode base type NOHEATCLOUD | BITMAP1;
 		explode door2b type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP2;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode base type NOHEATCLOUD | BITMAP1;
 		explode door1b type NOHEATCLOUD | SHATTER | BITMAP5;
 		explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP5;
 		explode door2b type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+	explode base type NOHEATCLOUD | BITMAP1;
 	explode door3a type NOHEATCLOUD | SHATTER | BITMAP5;
 	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP5;
-	explode pad type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+	explode pad type NOHEATCLOUD | BITMAP4;
 	return (corpsetype);
 }

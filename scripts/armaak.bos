@@ -399,17 +399,17 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode ground type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode pelvis type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode rthigh type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode rleg type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-		explode lthigh type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode lleg type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode torso type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode turret type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-		explode flak type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode rmiss type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode lmiss type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode ground type NOHEATCLOUD | BITMAP1;
+		explode pelvis type NOHEATCLOUD | BITMAP2;
+		explode rthigh type NOHEATCLOUD | BITMAP3;
+		explode rleg type NOHEATCLOUD | BITMAP4;
+		explode lthigh type NOHEATCLOUD | BITMAP5;
+		explode lleg type NOHEATCLOUD | BITMAP1;
+		explode torso type NOHEATCLOUD | BITMAP2;
+		explode turret type NOHEATCLOUD | BITMAP4;
+		explode flak type NOHEATCLOUD | BITMAP5;
+		explode rmiss type NOHEATCLOUD | BITMAP1;
+		explode lmiss type NOHEATCLOUD | BITMAP2;
 		return (corpsetype);
 	}
 	if( severity <= 50 )

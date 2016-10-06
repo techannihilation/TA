@@ -179,8 +179,8 @@ Killed(severity, corpsetype)
 	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
 	explode llauncher type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
 	explode rlauncher type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-	explode lbase type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-	explode rbase type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+	explode lbase type NOHEATCLOUD | BITMAP3;
+	explode rbase type NOHEATCLOUD | BITMAP3;
 	explode boosters type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
 	explode rotor1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
 	explode rotor2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;

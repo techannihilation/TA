@@ -482,15 +482,15 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode ground type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode pelvis type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode lleg type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode rleg type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-		explode turret type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode gunbase type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rmiss type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode lmiss type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode flak type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+		explode ground type NOHEATCLOUD | BITMAP1;
+		explode pelvis type NOHEATCLOUD | BITMAP2;
+		explode lleg type NOHEATCLOUD | BITMAP3;
+		explode rleg type NOHEATCLOUD | BITMAP4;
+		explode turret type NOHEATCLOUD | BITMAP5;
+		explode gunbase type NOHEATCLOUD | BITMAP1;
+		explode rmiss type NOHEATCLOUD | BITMAP2;
+		explode lmiss type NOHEATCLOUD | BITMAP3;
+		explode flak type NOHEATCLOUD | BITMAP4;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
@@ -501,9 +501,9 @@ Killed(severity, corpsetype)
 		explode lleg type NOHEATCLOUD | FALL | BITMAP3;
 		explode rleg type NOHEATCLOUD | FALL | BITMAP4;
 		explode turret type NOHEATCLOUD | FALL | BITMAP5;
-		explode gunbase type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode gunbase type NOHEATCLOUD | BITMAP1;
 		explode lmiss type NOHEATCLOUD | FALL | BITMAP2;
-		explode rmiss type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode rmiss type NOHEATCLOUD | BITMAP3;
 		explode flak type NOHEATCLOUD | FALL | BITMAP4;
 		return (corpsetype);
 	}
@@ -515,9 +515,9 @@ Killed(severity, corpsetype)
 		explode lleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode rleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 		explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-		explode gunbase type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode gunbase type NOHEATCLOUD | BITMAP1;
 		explode rmiss type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode lmiss type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode lmiss type NOHEATCLOUD | BITMAP3;
 		explode flak type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 		return (corpsetype);
 	}
@@ -529,7 +529,7 @@ Killed(severity, corpsetype)
 	explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 	explode gunbase type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
 	explode rmiss type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode lmiss type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+	explode lmiss type NOHEATCLOUD | BITMAP3;
 	explode flak type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 	return (corpsetype);
 }

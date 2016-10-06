@@ -227,46 +227,46 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode glowingthing type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode flap1 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode flap2 type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-		explode flap3 type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode flap4 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode topcap type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode base type NOHEATCLOUD | BITMAP1;
+		explode glowingthing type NOHEATCLOUD | BITMAP2;
+		explode flap1 type NOHEATCLOUD | BITMAP3;
+		explode flap2 type NOHEATCLOUD | BITMAP4;
+		explode flap3 type NOHEATCLOUD | BITMAP5;
+		explode flap4 type NOHEATCLOUD | BITMAP1;
+		explode topcap type NOHEATCLOUD | BITMAP2;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode base type NOHEATCLOUD | BITMAP1;
 		explode glowingthing type NOHEATCLOUD | SHATTER | BITMAP2;
 		explode flap1 type NOHEATCLOUD | FALL | BITMAP3;
 		explode flap2 type NOHEATCLOUD | FALL | BITMAP4;
 		explode flap3 type NOHEATCLOUD | FALL | BITMAP5;
 		explode flap4 type NOHEATCLOUD | FALL | BITMAP1;
-		explode topcap type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode topcap type NOHEATCLOUD | BITMAP2;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode base type NOHEATCLOUD | BITMAP1;
 		explode glowingthing type NOHEATCLOUD | SHATTER | BITMAP2;
 		explode flap1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode flap2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 		explode flap3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 		explode flap4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-		explode topcap type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode topcap type NOHEATCLOUD | BITMAP2;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+	explode base type NOHEATCLOUD | BITMAP1;
 	explode glowingthing type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP2;
 	explode flap1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode flap2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 	explode flap3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 	explode flap4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-	explode topcap type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+	explode topcap type NOHEATCLOUD | BITMAP2;
 	return (corpsetype);
 }

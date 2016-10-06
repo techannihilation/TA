@@ -179,8 +179,8 @@ StopMoving()
 
 Killed(severity, corpsetype)
 {
-	explode bearing type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-	explode body type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+	explode bearing type NOHEATCLOUD | BITMAP5;
+	explode body type NOHEATCLOUD | BITMAP3;
 	explode bearing type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP3;
 	explode nano type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
 	if( severity <= 25 )

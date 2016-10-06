@@ -125,7 +125,7 @@ Killed(severity, corpsetype)
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode rear type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode rear type NOHEATCLOUD | BITMAP1;
 		explode body type NOHEATCLOUD | SHATTER | BITMAP2;
 		explode front type NOHEATCLOUD | SHATTER | BITMAP3;
 		return (corpsetype);
@@ -133,13 +133,13 @@ Killed(severity, corpsetype)
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode rear type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode rear type NOHEATCLOUD | BITMAP1;
 		explode body type NOHEATCLOUD | SHATTER | BITMAP2;
 		explode front type NOHEATCLOUD | SHATTER | BITMAP3;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode rear type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+	explode rear type NOHEATCLOUD | BITMAP1;
 	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP2;
 	explode front type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP3;
 	return (corpsetype);

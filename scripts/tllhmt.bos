@@ -153,7 +153,7 @@ Killed(severity, corpsetype)
 	explode ammo2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
 	explode ammo3 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
 	explode turret type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP2;
-	explode foundation type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+	explode foundation type NOHEATCLOUD | BITMAP4;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;

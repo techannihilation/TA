@@ -492,7 +492,7 @@ AimSecondary(heading, pitch)
 
 FireSecondary()
 {
-	explode fire type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+	explode fire type NOHEATCLOUD | BITMAP5;
 	move plasmasprayer to z-axis [-0.800000] speed [20.000000];
 	move cap to z-axis [2.400000] speed [26.000000];
 	sleep 500;
@@ -572,43 +572,43 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode pelvis type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode base type NOHEATCLOUD | BITMAP1;
+		explode pelvis type NOHEATCLOUD | BITMAP1;
 		explode rcannon type NOHEATCLOUD | SHATTER | BITMAP4;
 		explode rbarrel1 type NOHEATCLOUD | SHATTER | BITMAP4;
 		explode lshoulder type NOHEATCLOUD | SHATTER | BITMAP4;
 		explode rarm type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode torso type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode stick type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode torso type NOHEATCLOUD | BITMAP1;
+		explode stick type NOHEATCLOUD | BITMAP1;
 		explode plasmasprayer type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode larm type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode lcannon type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode lbarrel1 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode lfire1 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode lbarrel2 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode lfire2 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode launcher type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode glowybit type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rocketfire1 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rocketfire2 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rshoulder type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rfire1 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rbarrel2 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rfire2 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode cellholder type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode nrgycells type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode lupleg type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode llowleg type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode lfoot type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode lftoe type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode lleftoe type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode lrightoe type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rupleg type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rlowleg type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rfoot type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rftoe type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rleftoe type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rrightoe type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode larm type NOHEATCLOUD | BITMAP1;
+		explode lcannon type NOHEATCLOUD | BITMAP1;
+		explode lbarrel1 type NOHEATCLOUD | BITMAP1;
+		explode lfire1 type NOHEATCLOUD | BITMAP1;
+		explode lbarrel2 type NOHEATCLOUD | BITMAP1;
+		explode lfire2 type NOHEATCLOUD | BITMAP1;
+		explode launcher type NOHEATCLOUD | BITMAP1;
+		explode glowybit type NOHEATCLOUD | BITMAP1;
+		explode rocketfire1 type NOHEATCLOUD | BITMAP1;
+		explode rocketfire2 type NOHEATCLOUD | BITMAP1;
+		explode rshoulder type NOHEATCLOUD | BITMAP1;
+		explode rfire1 type NOHEATCLOUD | BITMAP1;
+		explode rbarrel2 type NOHEATCLOUD | BITMAP1;
+		explode rfire2 type NOHEATCLOUD | BITMAP1;
+		explode cellholder type NOHEATCLOUD | BITMAP1;
+		explode nrgycells type NOHEATCLOUD | BITMAP1;
+		explode lupleg type NOHEATCLOUD | BITMAP1;
+		explode llowleg type NOHEATCLOUD | BITMAP1;
+		explode lfoot type NOHEATCLOUD | BITMAP1;
+		explode lftoe type NOHEATCLOUD | BITMAP1;
+		explode lleftoe type NOHEATCLOUD | BITMAP1;
+		explode lrightoe type NOHEATCLOUD | BITMAP1;
+		explode rupleg type NOHEATCLOUD | BITMAP1;
+		explode rlowleg type NOHEATCLOUD | BITMAP1;
+		explode rfoot type NOHEATCLOUD | BITMAP1;
+		explode rftoe type NOHEATCLOUD | BITMAP1;
+		explode rleftoe type NOHEATCLOUD | BITMAP1;
+		explode rrightoe type NOHEATCLOUD | BITMAP1;
 		return (corpsetype);
 	}
 	if( severity <= 50 )

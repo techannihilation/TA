@@ -81,29 +81,29 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode bouy type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode light type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode base type NOHEATCLOUD | BITMAP1;
+		explode bouy type NOHEATCLOUD | BITMAP2;
+		explode light type NOHEATCLOUD | BITMAP3;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode bouy type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode light type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode base type NOHEATCLOUD | BITMAP1;
+		explode bouy type NOHEATCLOUD | BITMAP2;
+		explode light type NOHEATCLOUD | BITMAP3;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode base type NOHEATCLOUD | BITMAP1;
 		explode bouy type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP2;
-		explode light type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode light type NOHEATCLOUD | BITMAP3;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-	explode light type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+	explode base type NOHEATCLOUD | BITMAP5;
+	explode light type NOHEATCLOUD | BITMAP3;
 	return (corpsetype);
 }

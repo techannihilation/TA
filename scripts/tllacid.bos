@@ -247,11 +247,11 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode rotplat1 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rotplat2 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode rock1 type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-		explode rock2 type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+		explode rotplat1 type NOHEATCLOUD | BITMAP1;
+		explode rotplat2 type NOHEATCLOUD | BITMAP2;
+		explode base type NOHEATCLOUD | BITMAP3;
+		explode rock1 type NOHEATCLOUD | BITMAP4;
+		explode rock2 type NOHEATCLOUD | BITMAP5;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
@@ -259,8 +259,8 @@ Killed(severity, corpsetype)
 		corpsetype = 2;
 		explode rotplat1 type NOHEATCLOUD | FALL | BITMAP1;
 		explode rotplat2 type NOHEATCLOUD | FALL | BITMAP2;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode rock1 type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+		explode base type NOHEATCLOUD | BITMAP3;
+		explode rock1 type NOHEATCLOUD | BITMAP4;
 		explode rock2 type NOHEATCLOUD | SHATTER | BITMAP5;
 		return (corpsetype);
 	}
@@ -269,16 +269,16 @@ Killed(severity, corpsetype)
 		corpsetype = 3;
 		explode rotplat1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 		explode rotplat2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode rock1 type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+		explode base type NOHEATCLOUD | BITMAP3;
+		explode rock1 type NOHEATCLOUD | BITMAP4;
 		explode rock2 type NOHEATCLOUD | SHATTER | BITMAP5;
 		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode rotplat1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 	explode rotplat2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode base type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-	explode rock1 type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+	explode base type NOHEATCLOUD | BITMAP3;
+	explode rock1 type NOHEATCLOUD | BITMAP4;
 	explode rock2 type NOHEATCLOUD | SHATTER | BITMAP5;
 	return (corpsetype);
 }

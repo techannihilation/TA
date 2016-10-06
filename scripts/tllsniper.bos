@@ -880,17 +880,17 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode gun type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode head type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode hip type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-		explode larm type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode lleg type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode luparm type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode lupleg type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-		explode rleg type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode ruparm type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode rupleg type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode torso type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+		explode gun type NOHEATCLOUD | BITMAP2;
+		explode head type NOHEATCLOUD | BITMAP3;
+		explode hip type NOHEATCLOUD | BITMAP4;
+		explode larm type NOHEATCLOUD | BITMAP5;
+		explode lleg type NOHEATCLOUD | BITMAP2;
+		explode luparm type NOHEATCLOUD | BITMAP3;
+		explode lupleg type NOHEATCLOUD | BITMAP4;
+		explode rleg type NOHEATCLOUD | BITMAP1;
+		explode ruparm type NOHEATCLOUD | BITMAP2;
+		explode rupleg type NOHEATCLOUD | BITMAP3;
+		explode torso type NOHEATCLOUD | BITMAP5;
 		return (corpsetype);
 	}
 	if( severity <= 50 )

@@ -194,17 +194,17 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 1;
 		explode base type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode lwingc type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode lwingm type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode lwingf type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode light1 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode missile1 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rwingc type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rwingm type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rwingf type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode light2 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode missile2 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode drop type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode lwingc type NOHEATCLOUD | BITMAP1;
+		explode lwingm type NOHEATCLOUD | BITMAP1;
+		explode lwingf type NOHEATCLOUD | BITMAP1;
+		explode light1 type NOHEATCLOUD | BITMAP1;
+		explode missile1 type NOHEATCLOUD | BITMAP1;
+		explode rwingc type NOHEATCLOUD | BITMAP1;
+		explode rwingm type NOHEATCLOUD | BITMAP1;
+		explode rwingf type NOHEATCLOUD | BITMAP1;
+		explode light2 type NOHEATCLOUD | BITMAP1;
+		explode missile2 type NOHEATCLOUD | BITMAP1;
+		explode drop type NOHEATCLOUD | BITMAP1;
 		return (corpsetype);
 	}
 	if( severity <= 50 )

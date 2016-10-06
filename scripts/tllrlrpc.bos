@@ -213,10 +213,10 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode socle type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode body type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode boule type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode p1 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode socle type NOHEATCLOUD | BITMAP1;
+		explode body type NOHEATCLOUD | BITMAP3;
+		explode boule type NOHEATCLOUD | BITMAP5;
+		explode p1 type NOHEATCLOUD | BITMAP1;
 		return (corpsetype);
 	}
 	if( severity <= 50 )

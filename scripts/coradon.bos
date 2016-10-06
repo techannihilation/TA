@@ -200,12 +200,12 @@ Killed(severity, corpsetype)
 		if( severity <= 25 )
 		{
 			corpsetype = 1;
-			explode cannon type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-			explode base type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-			explode support type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-			explode rlauncher type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-			explode llauncher type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-			explode turret type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+			explode cannon type NOHEATCLOUD | BITMAP1;
+			explode base type NOHEATCLOUD | BITMAP2;
+			explode support type NOHEATCLOUD | BITMAP3;
+			explode rlauncher type NOHEATCLOUD | BITMAP3;
+			explode llauncher type NOHEATCLOUD | BITMAP3;
+			explode turret type NOHEATCLOUD | BITMAP4;
 			return (corpsetype);
 		}
 	}
@@ -213,10 +213,10 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 2;
 		explode cannon type NOHEATCLOUD | FALL | BITMAP1;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode support type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode rlauncher type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode llauncher type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode base type NOHEATCLOUD | BITMAP2;
+		explode support type NOHEATCLOUD | BITMAP3;
+		explode rlauncher type NOHEATCLOUD | BITMAP3;
+		explode llauncher type NOHEATCLOUD | BITMAP3;
 		explode turret type NOHEATCLOUD | SHATTER | BITMAP4;
 		return (corpsetype);
 	}
@@ -224,7 +224,7 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 3;
 		explode cannon type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode base type NOHEATCLOUD | BITMAP2;
 		explode body type NOHEATCLOUD | SHATTER | BITMAP4;
 		explode support type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode rlauncher type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
@@ -234,7 +234,7 @@ Killed(severity, corpsetype)
 	}
 	corpsetype = 3;
 	explode cannon type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-	explode base type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+	explode base type NOHEATCLOUD | BITMAP2;
 	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP4;
 	explode support type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode rlauncher type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;

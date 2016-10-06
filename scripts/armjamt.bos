@@ -112,7 +112,7 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode base type NOHEATCLOUD | BITMAP1;
 		explode turret type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP3;
 		explode spinner type NOHEATCLOUD | FALL | EXPLODE_ON_HIT | BITMAP3;
 		return (corpsetype);
@@ -120,7 +120,7 @@ Killed(severity, corpsetype)
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode base type NOHEATCLOUD | BITMAP1;
 		explode turret type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP3;
 		explode spinner type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
 		return (corpsetype);

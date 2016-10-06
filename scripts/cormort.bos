@@ -428,25 +428,25 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode ground type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode Barrel type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode Foot1 type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-		explode Foot2 type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode Forearm type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode Leg1 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode Leg2 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode Shoulder type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-		explode support type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode Thigh1 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode Thigh2 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode Torso type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+		explode ground type NOHEATCLOUD | BITMAP1;
+		explode Barrel type NOHEATCLOUD | BITMAP2;
+		explode Foot1 type NOHEATCLOUD | BITMAP4;
+		explode Foot2 type NOHEATCLOUD | BITMAP5;
+		explode Forearm type NOHEATCLOUD | BITMAP1;
+		explode Leg1 type NOHEATCLOUD | BITMAP2;
+		explode Leg2 type NOHEATCLOUD | BITMAP3;
+		explode Shoulder type NOHEATCLOUD | BITMAP4;
+		explode support type NOHEATCLOUD | BITMAP5;
+		explode Thigh1 type NOHEATCLOUD | BITMAP1;
+		explode Thigh2 type NOHEATCLOUD | BITMAP2;
+		explode Torso type NOHEATCLOUD | BITMAP5;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
 		explode ground type NOHEATCLOUD | FALL | BITMAP1;
-		explode Barrel type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode Barrel type NOHEATCLOUD | BITMAP2;
 		explode Foot1 type NOHEATCLOUD | FALL | BITMAP3;
 		explode Foot2 type NOHEATCLOUD | FALL | BITMAP4;
 		explode Forearm type NOHEATCLOUD | FALL | BITMAP5;
@@ -463,7 +463,7 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 3;
 		explode ground type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-		explode Barrel type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode Barrel type NOHEATCLOUD | BITMAP2;
 		explode Foot1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode Foot2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 		explode Forearm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
@@ -478,7 +478,7 @@ Killed(severity, corpsetype)
 	}
 	corpsetype = 3;
 	explode ground type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-	explode Barrel type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+	explode Barrel type NOHEATCLOUD | BITMAP2;
 	explode Foot1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode Foot2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 	explode Forearm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;

@@ -119,7 +119,7 @@ FirePrimary()
 {
 	show flare;
 	move barrel to z-axis [-4.000000] speed [200.000000];
-	explode flare type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+	explode flare type NOHEATCLOUD | BITMAP5;
 	sleep 150;
 	hide flare;
 	wait-for-move barrel along z-axis;
@@ -147,16 +147,16 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode flare type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode barrel type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-		explode turret type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode base type NOHEATCLOUD | BITMAP2;
+		explode flare type NOHEATCLOUD | BITMAP3;
+		explode barrel type NOHEATCLOUD | BITMAP4;
+		explode turret type NOHEATCLOUD | BITMAP3;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode base type NOHEATCLOUD | BITMAP2;
 		explode flare type NOHEATCLOUD | FALL | BITMAP3;
 		explode barrel type NOHEATCLOUD | SHATTER | BITMAP4;
 		explode turret type NOHEATCLOUD | FALL | BITMAP3;
@@ -165,14 +165,14 @@ Killed(severity, corpsetype)
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode base type NOHEATCLOUD | BITMAP2;
 		explode flare type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode barrel type NOHEATCLOUD | SHATTER | BITMAP4;
 		explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+	explode base type NOHEATCLOUD | BITMAP2;
 	explode flare type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode barrel type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP4;
 	explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;

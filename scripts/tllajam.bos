@@ -120,9 +120,9 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode body type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rotor type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode rotor1 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode body type NOHEATCLOUD | BITMAP1;
+		explode rotor type NOHEATCLOUD | BITMAP2;
+		explode rotor1 type NOHEATCLOUD | BITMAP2;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
@@ -137,8 +137,8 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 3;
 		explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
-		explode rotor type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode rotor1 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode rotor type NOHEATCLOUD | BITMAP2;
+		explode rotor1 type NOHEATCLOUD | BITMAP2;
 		return (corpsetype);
 	}
 	corpsetype = 3;

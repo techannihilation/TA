@@ -152,8 +152,8 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 1;
 		explode body type NOHEATCLOUD | SHATTER | BITMAP5;
-		explode wing2 type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode wing1 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode wing2 type NOHEATCLOUD | BITMAP5;
+		explode wing1 type NOHEATCLOUD | BITMAP1;
 		return (corpsetype);
 	}
 	if( severity <= 50 )

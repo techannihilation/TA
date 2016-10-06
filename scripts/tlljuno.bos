@@ -118,7 +118,7 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-	explode flare1 type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+	explode flare1 type NOHEATCLOUD | BITMAP5;
 	gun_1 = base;
 	start-script RequestState(1);
 }
@@ -148,7 +148,7 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode base type NOHEATCLOUD | BITMAP1;
 		return (corpsetype);
 	}
 	if( severity <= 50 )

@@ -302,51 +302,51 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode holders type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode leg1 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode leg2 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode foot1 type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-		explode foot2 type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode turret1 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode turret2 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode barrel1 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode base type NOHEATCLOUD | BITMAP1;
+		explode holders type NOHEATCLOUD | BITMAP1;
+		explode leg1 type NOHEATCLOUD | BITMAP2;
+		explode leg2 type NOHEATCLOUD | BITMAP3;
+		explode foot1 type NOHEATCLOUD | BITMAP4;
+		explode foot2 type NOHEATCLOUD | BITMAP5;
+		explode turret1 type NOHEATCLOUD | BITMAP1;
+		explode turret2 type NOHEATCLOUD | BITMAP2;
+		explode barrel1 type NOHEATCLOUD | BITMAP3;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode holders type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode leg1 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode leg2 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode foot1 type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-		explode foot2 type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode turret1 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode turret2 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode base type NOHEATCLOUD | BITMAP1;
+		explode holders type NOHEATCLOUD | BITMAP1;
+		explode leg1 type NOHEATCLOUD | BITMAP2;
+		explode leg2 type NOHEATCLOUD | BITMAP3;
+		explode foot1 type NOHEATCLOUD | BITMAP4;
+		explode foot2 type NOHEATCLOUD | BITMAP5;
+		explode turret1 type NOHEATCLOUD | BITMAP1;
+		explode turret2 type NOHEATCLOUD | BITMAP2;
 		explode barrel1 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT | BITMAP3;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode holders type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode leg1 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode leg2 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode foot1 type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+		explode base type NOHEATCLOUD | BITMAP1;
+		explode holders type NOHEATCLOUD | BITMAP1;
+		explode leg1 type NOHEATCLOUD | BITMAP2;
+		explode leg2 type NOHEATCLOUD | BITMAP3;
+		explode foot1 type NOHEATCLOUD | BITMAP4;
 		explode foot2 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT | BITMAP5;
 		explode turret1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
-		explode turret2 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode turret2 type NOHEATCLOUD | BITMAP2;
 		explode barrel1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-	explode holders type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-	explode leg1 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+	explode base type NOHEATCLOUD | BITMAP1;
+	explode holders type NOHEATCLOUD | BITMAP1;
+	explode leg1 type NOHEATCLOUD | BITMAP2;
 	explode leg2 type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP3;
-	explode foot1 type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+	explode foot1 type NOHEATCLOUD | BITMAP4;
 	explode foot2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 	explode turret1 type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP1;
 	explode turret2 type NOHEATCLOUD | SHATTER | FIRE | EXPLODE_ON_HIT | BITMAP2;

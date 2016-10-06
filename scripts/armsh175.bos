@@ -135,46 +135,46 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode fuselage type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode base type NOHEATCLOUD | BITMAP1;
+		explode fuselage type NOHEATCLOUD | BITMAP2;
 		explode rotor1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 		explode rotor2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-		explode rearrotor type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode turret type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode barrel type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+		explode rearrotor type NOHEATCLOUD | BITMAP1;
+		explode turret type NOHEATCLOUD | BITMAP3;
+		explode barrel type NOHEATCLOUD | BITMAP4;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode fuselage type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode base type NOHEATCLOUD | BITMAP1;
+		explode fuselage type NOHEATCLOUD | BITMAP2;
 		explode rotor1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 		explode rotor2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 		explode rearrotor type NOHEATCLOUD | FALL | BITMAP1;
-		explode turret type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode barrel type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+		explode turret type NOHEATCLOUD | BITMAP3;
+		explode barrel type NOHEATCLOUD | BITMAP4;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode fuselage type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode base type NOHEATCLOUD | BITMAP1;
+		explode fuselage type NOHEATCLOUD | BITMAP2;
 		explode rotor1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 		explode rotor2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 		explode rearrotor type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-		explode turret type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode barrel type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+		explode turret type NOHEATCLOUD | BITMAP3;
+		explode barrel type NOHEATCLOUD | BITMAP4;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-	explode fuselage type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+	explode base type NOHEATCLOUD | BITMAP1;
+	explode fuselage type NOHEATCLOUD | BITMAP2;
 	explode rotor1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 	explode rotor2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 	explode rearrotor type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-	explode turret type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-	explode barrel type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+	explode turret type NOHEATCLOUD | BITMAP3;
+	explode barrel type NOHEATCLOUD | BITMAP4;
 	return (corpsetype);
 }

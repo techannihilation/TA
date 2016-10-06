@@ -253,22 +253,22 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode wheel1 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode loader type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode turret type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode launcher type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rocket1 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rocket2 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rocket3 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rocket4 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rocket5 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rocket6 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode wheel2 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode wheel3 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode wheel4 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode door1 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode door2 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode base type NOHEATCLOUD | BITMAP1;
+		explode wheel1 type NOHEATCLOUD | BITMAP1;
+		explode loader type NOHEATCLOUD | BITMAP1;
+		explode turret type NOHEATCLOUD | BITMAP1;
+		explode launcher type NOHEATCLOUD | BITMAP1;
+		explode rocket1 type NOHEATCLOUD | BITMAP1;
+		explode rocket2 type NOHEATCLOUD | BITMAP1;
+		explode rocket3 type NOHEATCLOUD | BITMAP1;
+		explode rocket4 type NOHEATCLOUD | BITMAP1;
+		explode rocket5 type NOHEATCLOUD | BITMAP1;
+		explode rocket6 type NOHEATCLOUD | BITMAP1;
+		explode wheel2 type NOHEATCLOUD | BITMAP1;
+		explode wheel3 type NOHEATCLOUD | BITMAP1;
+		explode wheel4 type NOHEATCLOUD | BITMAP1;
+		explode door1 type NOHEATCLOUD | BITMAP1;
+		explode door2 type NOHEATCLOUD | BITMAP1;
 		return (corpsetype);
 	}
 	if( severity <= 50 )

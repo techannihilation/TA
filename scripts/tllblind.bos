@@ -738,12 +738,12 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode hand type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode lthigh type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode luparm type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode rfoot type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode rleg type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rthigh type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode hand type NOHEATCLOUD | BITMAP5;
+		explode lthigh type NOHEATCLOUD | BITMAP1;
+		explode luparm type NOHEATCLOUD | BITMAP2;
+		explode rfoot type NOHEATCLOUD | BITMAP5;
+		explode rleg type NOHEATCLOUD | BITMAP1;
+		explode rthigh type NOHEATCLOUD | BITMAP3;
 		return (corpsetype);
 	}
 	if( severity <= 50 )

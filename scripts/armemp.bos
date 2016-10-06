@@ -267,29 +267,29 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode Door1 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode Door2 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode dummy type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-		explode Frame1 type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode Frame2 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode Frame3 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode Frame4 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode Cover1 type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-		explode Cover2 type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode launch type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode base type NOHEATCLOUD | BITMAP1;
+		explode Door1 type NOHEATCLOUD | BITMAP2;
+		explode Door2 type NOHEATCLOUD | BITMAP3;
+		explode dummy type NOHEATCLOUD | BITMAP4;
+		explode Frame1 type NOHEATCLOUD | BITMAP5;
+		explode Frame2 type NOHEATCLOUD | BITMAP1;
+		explode Frame3 type NOHEATCLOUD | BITMAP2;
+		explode Frame4 type NOHEATCLOUD | BITMAP3;
+		explode Cover1 type NOHEATCLOUD | BITMAP4;
+		explode Cover2 type NOHEATCLOUD | BITMAP5;
+		explode launch type NOHEATCLOUD | BITMAP1;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode Door1 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode Door2 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode dummy type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-		explode Frame1 type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode Frame2 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode Frame3 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode base type NOHEATCLOUD | BITMAP1;
+		explode Door1 type NOHEATCLOUD | BITMAP2;
+		explode Door2 type NOHEATCLOUD | BITMAP3;
+		explode dummy type NOHEATCLOUD | BITMAP4;
+		explode Frame1 type NOHEATCLOUD | BITMAP5;
+		explode Frame2 type NOHEATCLOUD | BITMAP1;
+		explode Frame3 type NOHEATCLOUD | BITMAP2;
 		explode Frame4 type NOHEATCLOUD | SHATTER | BITMAP3;
 		explode Cover1 type NOHEATCLOUD | FALL | BITMAP4;
 		explode Cover2 type NOHEATCLOUD | FALL | BITMAP5;
@@ -299,13 +299,13 @@ Killed(severity, corpsetype)
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode Door1 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode Door2 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode dummy type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-		explode Frame1 type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode Frame2 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode Frame3 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode base type NOHEATCLOUD | BITMAP1;
+		explode Door1 type NOHEATCLOUD | BITMAP2;
+		explode Door2 type NOHEATCLOUD | BITMAP3;
+		explode dummy type NOHEATCLOUD | BITMAP4;
+		explode Frame1 type NOHEATCLOUD | BITMAP5;
+		explode Frame2 type NOHEATCLOUD | BITMAP1;
+		explode Frame3 type NOHEATCLOUD | BITMAP2;
 		explode Frame4 type NOHEATCLOUD | SHATTER | BITMAP3;
 		explode Cover1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 		explode Cover2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
@@ -313,13 +313,13 @@ Killed(severity, corpsetype)
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-	explode Door1 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-	explode Door2 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-	explode dummy type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-	explode Frame1 type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-	explode Frame2 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-	explode Frame3 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+	explode base type NOHEATCLOUD | BITMAP1;
+	explode Door1 type NOHEATCLOUD | BITMAP2;
+	explode Door2 type NOHEATCLOUD | BITMAP3;
+	explode dummy type NOHEATCLOUD | BITMAP4;
+	explode Frame1 type NOHEATCLOUD | BITMAP5;
+	explode Frame2 type NOHEATCLOUD | BITMAP1;
+	explode Frame3 type NOHEATCLOUD | BITMAP2;
 	explode Frame4 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP3;
 	explode Cover1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 	explode Cover2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;

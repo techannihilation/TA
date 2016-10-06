@@ -233,28 +233,28 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+		explode base type NOHEATCLOUD | BITMAP4;
 		explode fuse type NOHEATCLOUD | SHATTER | BITMAP5;
-		explode cockpit type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode stab_l type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode stab_r type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-		explode fin_l type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode fin_r type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode root_l type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode root_r type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode wing_lf type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-		explode wing_rf type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode engine_l type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode engine_r type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-		explode turret type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode bar_l type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode bar_r type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+		explode cockpit type NOHEATCLOUD | BITMAP1;
+		explode stab_l type NOHEATCLOUD | BITMAP3;
+		explode stab_r type NOHEATCLOUD | BITMAP4;
+		explode fin_l type NOHEATCLOUD | BITMAP5;
+		explode fin_r type NOHEATCLOUD | BITMAP1;
+		explode root_l type NOHEATCLOUD | BITMAP2;
+		explode root_r type NOHEATCLOUD | BITMAP3;
+		explode wing_lf type NOHEATCLOUD | BITMAP4;
+		explode wing_rf type NOHEATCLOUD | BITMAP1;
+		explode engine_l type NOHEATCLOUD | BITMAP3;
+		explode engine_r type NOHEATCLOUD | BITMAP4;
+		explode turret type NOHEATCLOUD | BITMAP2;
+		explode bar_l type NOHEATCLOUD | BITMAP3;
+		explode bar_r type NOHEATCLOUD | BITMAP4;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+		explode base type NOHEATCLOUD | BITMAP4;
 		explode fuse type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
 		explode cockpit type NOHEATCLOUD | FALL | BITMAP1;
 		explode stab_l type NOHEATCLOUD | FALL | BITMAP3;
@@ -275,7 +275,7 @@ Killed(severity, corpsetype)
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+		explode base type NOHEATCLOUD | BITMAP4;
 		explode fuse type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 		explode cockpit type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 		explode stab_l type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
@@ -294,7 +294,7 @@ Killed(severity, corpsetype)
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+	explode base type NOHEATCLOUD | BITMAP4;
 	explode fuse type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 	explode cockpit type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 	explode stab_l type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;

@@ -330,7 +330,7 @@ Killed(severity, corpsetype)
 			corpsetype = 2;
 			explode arm1 type NOHEATCLOUD | FALL | BITMAP1;
 			explode arm2 type NOHEATCLOUD | FALL | BITMAP1;
-			explode base type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+			explode base type NOHEATCLOUD | BITMAP2;
 			explode lmispoint type NOHEATCLOUD | FALL | BITMAP3;
 			explode rmispoint type NOHEATCLOUD | FALL | BITMAP3;
 			explode launcher type NOHEATCLOUD | SHATTER | BITMAP4;
@@ -339,7 +339,7 @@ Killed(severity, corpsetype)
 		corpsetype = 3;
 		explode arm1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 		explode arm2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode base type NOHEATCLOUD | BITMAP2;
 		explode lmispoint type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode rmispoint type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode launcher type NOHEATCLOUD | SHATTER | BITMAP4;
@@ -352,7 +352,7 @@ Killed(severity, corpsetype)
 			corpsetype = 2;
 			explode arm1 type NOHEATCLOUD | FALL | BITMAP1;
 			explode arm2 type NOHEATCLOUD | FALL | BITMAP1;
-			explode base type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+			explode base type NOHEATCLOUD | BITMAP2;
 			explode lmispoint type NOHEATCLOUD | FALL | BITMAP3;
 			explode rmispoint type NOHEATCLOUD | FALL | BITMAP3;
 			explode launcher type NOHEATCLOUD | SHATTER | BITMAP4;
@@ -361,7 +361,7 @@ Killed(severity, corpsetype)
 		corpsetype = 3;
 		explode arm1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 		explode arm2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode base type NOHEATCLOUD | BITMAP2;
 		explode lmispoint type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode rmispoint type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode launcher type NOHEATCLOUD | SHATTER | BITMAP4;
@@ -370,12 +370,12 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode arm1 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode arm2 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode lmispoint type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode rmispoint type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode launcher type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+		explode arm1 type NOHEATCLOUD | BITMAP1;
+		explode arm2 type NOHEATCLOUD | BITMAP1;
+		explode base type NOHEATCLOUD | BITMAP2;
+		explode lmispoint type NOHEATCLOUD | BITMAP3;
+		explode rmispoint type NOHEATCLOUD | BITMAP3;
+		explode launcher type NOHEATCLOUD | BITMAP4;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
@@ -383,7 +383,7 @@ Killed(severity, corpsetype)
 		corpsetype = 2;
 		explode arm1 type NOHEATCLOUD | FALL | BITMAP1;
 		explode arm2 type NOHEATCLOUD | FALL | BITMAP1;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode base type NOHEATCLOUD | BITMAP2;
 		explode lmispoint type NOHEATCLOUD | FALL | BITMAP3;
 		explode rmispoint type NOHEATCLOUD | FALL | BITMAP3;
 		explode launcher type NOHEATCLOUD | SHATTER | BITMAP4;
@@ -394,7 +394,7 @@ Killed(severity, corpsetype)
 		corpsetype = 3;
 		explode arm1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 		explode arm2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode base type NOHEATCLOUD | BITMAP2;
 		explode lmispoint type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode rmispoint type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode launcher type NOHEATCLOUD | SHATTER | BITMAP4;
@@ -403,7 +403,7 @@ Killed(severity, corpsetype)
 	corpsetype = 3;
 	explode arm1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 	explode arm2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-	explode base type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+	explode base type NOHEATCLOUD | BITMAP2;
 	explode lmispoint type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode rmispoint type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode launcher type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP4;

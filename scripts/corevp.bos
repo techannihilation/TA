@@ -278,46 +278,46 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode piece1 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode piece2 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode piece42 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode nano1 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode plate type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode piece31 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode base type NOHEATCLOUD | BITMAP1;
+		explode piece1 type NOHEATCLOUD | BITMAP2;
+		explode piece2 type NOHEATCLOUD | BITMAP3;
+		explode piece42 type NOHEATCLOUD | BITMAP1;
+		explode nano1 type NOHEATCLOUD | BITMAP1;
+		explode plate type NOHEATCLOUD | BITMAP2;
+		explode piece31 type NOHEATCLOUD | BITMAP2;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode piece4 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode nano4 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode nano3 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode piece41 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode plate type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode piece32 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode base type NOHEATCLOUD | BITMAP1;
+		explode piece4 type NOHEATCLOUD | BITMAP2;
+		explode nano4 type NOHEATCLOUD | BITMAP3;
+		explode nano3 type NOHEATCLOUD | BITMAP1;
+		explode piece41 type NOHEATCLOUD | BITMAP1;
+		explode plate type NOHEATCLOUD | BITMAP2;
+		explode piece32 type NOHEATCLOUD | BITMAP2;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode plate type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode piece1 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode piece2 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode piece4 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode piece41 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode piece11 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode base type NOHEATCLOUD | BITMAP1;
+		explode plate type NOHEATCLOUD | BITMAP2;
+		explode piece1 type NOHEATCLOUD | BITMAP3;
+		explode piece2 type NOHEATCLOUD | BITMAP1;
+		explode piece4 type NOHEATCLOUD | BITMAP1;
+		explode piece41 type NOHEATCLOUD | BITMAP2;
+		explode piece11 type NOHEATCLOUD | BITMAP2;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-	explode piece42 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-	explode piece22 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-	explode piece4 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-	explode piece12 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-	explode piece21 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-	explode plate type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+	explode base type NOHEATCLOUD | BITMAP1;
+	explode piece42 type NOHEATCLOUD | BITMAP2;
+	explode piece22 type NOHEATCLOUD | BITMAP3;
+	explode piece4 type NOHEATCLOUD | BITMAP1;
+	explode piece12 type NOHEATCLOUD | BITMAP1;
+	explode piece21 type NOHEATCLOUD | BITMAP2;
+	explode plate type NOHEATCLOUD | BITMAP2;
 	return (corpsetype);
 }

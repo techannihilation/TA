@@ -204,14 +204,14 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode body type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rpinza type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode base type NOHEATCLOUD | BITMAP1;
+		explode body type NOHEATCLOUD | BITMAP1;
+		explode rpinza type NOHEATCLOUD | BITMAP3;
 		explode rrwheel type NOHEATCLOUD | SHATTER | SMOKE | EXPLODE_ON_HIT | BITMAP5;
 		explode lfwheel type NOHEATCLOUD | SHATTER | SMOKE | EXPLODE_ON_HIT | BITMAP5;
 		explode rfwheel type NOHEATCLOUD | SHATTER | SMOKE | EXPLODE_ON_HIT | BITMAP5;
 		explode lrwheel type NOHEATCLOUD | SHATTER | SMOKE | EXPLODE_ON_HIT | BITMAP5;
-		explode lpinza type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode lpinza type NOHEATCLOUD | BITMAP3;
 		explode rnanopoint type NOHEATCLOUD | SHATTER | SMOKE | BITMAP4;
 		explode lnanopoint type NOHEATCLOUD | SHATTER | SMOKE | BITMAP4;
 		explode nanopoint type NOHEATCLOUD | SHATTER | SMOKE | BITMAP5;
@@ -220,14 +220,14 @@ Killed(severity, corpsetype)
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode body type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rpinza type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode base type NOHEATCLOUD | BITMAP1;
+		explode body type NOHEATCLOUD | BITMAP1;
+		explode rpinza type NOHEATCLOUD | BITMAP3;
 		explode rrwheel type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 		explode lfwheel type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 		explode rfwheel type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 		explode lrwheel type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-		explode lpinza type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode lpinza type NOHEATCLOUD | BITMAP3;
 		explode rnanopoint type NOHEATCLOUD | SHATTER | SMOKE | BITMAP4;
 		explode lnanopoint type NOHEATCLOUD | SHATTER | SMOKE | BITMAP4;
 		explode nanopoint type NOHEATCLOUD | SHATTER | SMOKE | FIRE | BITMAP5;
@@ -236,28 +236,28 @@ Killed(severity, corpsetype)
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode body type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rpinza type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode base type NOHEATCLOUD | BITMAP1;
+		explode body type NOHEATCLOUD | BITMAP1;
+		explode rpinza type NOHEATCLOUD | BITMAP3;
 		explode rrwheel type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 		explode lfwheel type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 		explode rfwheel type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 		explode lrwheel type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-		explode lpinza type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode lpinza type NOHEATCLOUD | BITMAP3;
 		explode rnanopoint type NOHEATCLOUD | SHATTER | SMOKE | FIRE | BITMAP4;
 		explode lnanopoint type NOHEATCLOUD | SHATTER | SMOKE | FIRE | BITMAP4;
 		explode nanopoint type NOHEATCLOUD | SHATTER | SMOKE | FIRE | BITMAP5;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-	explode body type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-	explode rpinza type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+	explode base type NOHEATCLOUD | BITMAP1;
+	explode body type NOHEATCLOUD | BITMAP1;
+	explode rpinza type NOHEATCLOUD | BITMAP2;
 	explode rrwheel type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 	explode lfwheel type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 	explode rfwheel type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 	explode lrwheel type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-	explode lpinza type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+	explode lpinza type NOHEATCLOUD | BITMAP2;
 	explode rnanopoint type NOHEATCLOUD | SHATTER | SMOKE | FIRE | BITMAP4;
 	explode lnanopoint type NOHEATCLOUD | SHATTER | SMOKE | FIRE | BITMAP4;
 	explode nanopoint type NOHEATCLOUD | SHATTER | SMOKE | FIRE | BITMAP5;

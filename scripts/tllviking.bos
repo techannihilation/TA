@@ -300,14 +300,14 @@ Killed(severity, corpsetype)
 	explode barrel1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
 	explode barrel6 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
 	explode barrel3 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-	explode body type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-	explode turret1 type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-	explode turret3 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-	explode wake1 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-	explode wake2 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-	explode flare1 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-	explode flare2 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-	explode flare6 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+	explode body type NOHEATCLOUD | BITMAP5;
+	explode turret1 type NOHEATCLOUD | BITMAP4;
+	explode turret3 type NOHEATCLOUD | BITMAP3;
+	explode wake1 type NOHEATCLOUD | BITMAP3;
+	explode wake2 type NOHEATCLOUD | BITMAP3;
+	explode flare1 type NOHEATCLOUD | BITMAP3;
+	explode flare2 type NOHEATCLOUD | BITMAP3;
+	explode flare6 type NOHEATCLOUD | BITMAP3;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;

@@ -239,18 +239,18 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode turret type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode pitchturret type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode base type NOHEATCLOUD | BITMAP5;
+		explode turret type NOHEATCLOUD | BITMAP5;
+		explode pitchturret type NOHEATCLOUD | BITMAP1;
 		explode centerpiece type NOHEATCLOUD | SHATTER | BITMAP3;
-		explode lsleeve type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode rsleeve type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode lbarrel type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode lbarrel2 type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode rbarrel type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode rbarrel2 type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode lsupport type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode rsupport type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+		explode lsleeve type NOHEATCLOUD | BITMAP5;
+		explode rsleeve type NOHEATCLOUD | BITMAP5;
+		explode lbarrel type NOHEATCLOUD | BITMAP2;
+		explode lbarrel2 type NOHEATCLOUD | BITMAP5;
+		explode rbarrel type NOHEATCLOUD | BITMAP2;
+		explode rbarrel2 type NOHEATCLOUD | BITMAP5;
+		explode lsupport type NOHEATCLOUD | BITMAP5;
+		explode rsupport type NOHEATCLOUD | BITMAP5;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
@@ -258,30 +258,30 @@ Killed(severity, corpsetype)
 		corpsetype = 2;
 		explode base type NOHEATCLOUD | SHATTER | BITMAP2;
 		explode turret type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP2;
-		explode pitchturret type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode centerpiece type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode lsleeve type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rsleeve type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode lbarrel type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode pitchturret type NOHEATCLOUD | BITMAP5;
+		explode centerpiece type NOHEATCLOUD | BITMAP5;
+		explode lsleeve type NOHEATCLOUD | BITMAP1;
+		explode rsleeve type NOHEATCLOUD | BITMAP1;
+		explode lbarrel type NOHEATCLOUD | BITMAP2;
 		explode lbarrel2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
-		explode rbarrel type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode rbarrel type NOHEATCLOUD | BITMAP2;
 		explode rbarrel2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
-		explode lsupport type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode rsupport type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+		explode lsupport type NOHEATCLOUD | BITMAP5;
+		explode rsupport type NOHEATCLOUD | BITMAP5;
 		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP2;
 	explode turret type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP2;
-	explode pitchturret type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-	explode centerpiece type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-	explode lsleeve type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-	explode rsleeve type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-	explode lbarrel type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+	explode pitchturret type NOHEATCLOUD | BITMAP5;
+	explode centerpiece type NOHEATCLOUD | BITMAP5;
+	explode lsleeve type NOHEATCLOUD | BITMAP1;
+	explode rsleeve type NOHEATCLOUD | BITMAP1;
+	explode lbarrel type NOHEATCLOUD | BITMAP2;
 	explode lbarrel2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-	explode rbarrel type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+	explode rbarrel type NOHEATCLOUD | BITMAP2;
 	explode rbarrel2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-	explode lsupport type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-	explode rsupport type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+	explode lsupport type NOHEATCLOUD | BITMAP5;
+	explode rsupport type NOHEATCLOUD | BITMAP5;
 	return (corpsetype);
 }

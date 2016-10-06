@@ -117,19 +117,19 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 1;
 		explode barrel type NOHEATCLOUD | FALL | EXPLODE_ON_HIT | BITMAP1;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode reartreads type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-		explode turret type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-		explode fronttread type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode base type NOHEATCLOUD | BITMAP2;
+		explode reartreads type NOHEATCLOUD | BITMAP4;
+		explode turret type NOHEATCLOUD | BITMAP4;
+		explode fronttread type NOHEATCLOUD | BITMAP3;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
 		explode barrel type NOHEATCLOUD | FALL | EXPLODE_ON_HIT | BITMAP1;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode reartreads type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode fronttread type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode base type NOHEATCLOUD | BITMAP2;
+		explode reartreads type NOHEATCLOUD | BITMAP3;
+		explode fronttread type NOHEATCLOUD | BITMAP3;
 		explode turret type NOHEATCLOUD | SHATTER | BITMAP4;
 		return (corpsetype);
 	}
@@ -137,17 +137,17 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 3;
 		explode barrel type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode reartreads type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-		explode fronttread type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+		explode base type NOHEATCLOUD | BITMAP2;
+		explode reartreads type NOHEATCLOUD | BITMAP4;
+		explode fronttread type NOHEATCLOUD | BITMAP4;
 		explode turret type NOHEATCLOUD | SHATTER | BITMAP4;
 		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode barrel type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-	explode base type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-	explode reartreads type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-	explode fronttread type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+	explode base type NOHEATCLOUD | BITMAP2;
+	explode reartreads type NOHEATCLOUD | BITMAP4;
+	explode fronttread type NOHEATCLOUD | BITMAP4;
 	explode turret type NOHEATCLOUD | SHATTER | BITMAP4;
 	return (corpsetype);
 }

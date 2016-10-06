@@ -508,10 +508,10 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode body type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode mouth type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode neck2 type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+		explode base type NOHEATCLOUD | BITMAP3;
+		explode body type NOHEATCLOUD | BITMAP5;
+		explode mouth type NOHEATCLOUD | BITMAP3;
+		explode neck2 type NOHEATCLOUD | BITMAP5;
 		explode neck4 type NOHEATCLOUD | SHATTER | BITMAP4;
 		explode wing1b type NOHEATCLOUD | SHATTER | BITMAP3;
 		explode ffoot1a type NOHEATCLOUD | SHATTER | BITMAP1;
@@ -524,10 +524,10 @@ Killed(severity, corpsetype)
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode body type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode rfoot1a type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode neck1 type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+		explode base type NOHEATCLOUD | BITMAP3;
+		explode body type NOHEATCLOUD | BITMAP5;
+		explode rfoot1a type NOHEATCLOUD | BITMAP3;
+		explode neck1 type NOHEATCLOUD | BITMAP5;
 		explode neck3 type NOHEATCLOUD | SHATTER | BITMAP4;
 		explode tail5 type NOHEATCLOUD | SHATTER | BITMAP2;
 		explode wing1b type NOHEATCLOUD | SHATTER | BITMAP3;
@@ -542,10 +542,10 @@ Killed(severity, corpsetype)
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode body type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode rfoot1a type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode neck1 type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+		explode base type NOHEATCLOUD | BITMAP3;
+		explode body type NOHEATCLOUD | BITMAP5;
+		explode rfoot1a type NOHEATCLOUD | BITMAP3;
+		explode neck1 type NOHEATCLOUD | BITMAP5;
 		explode neck3 type NOHEATCLOUD | SHATTER | BITMAP4;
 		explode tail5 type NOHEATCLOUD | SHATTER | BITMAP2;
 		explode tail2 type NOHEATCLOUD | SHATTER | BITMAP2;
@@ -561,10 +561,10 @@ Killed(severity, corpsetype)
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-	explode body type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-	explode rfoot1a type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-	explode neck1 type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+	explode base type NOHEATCLOUD | BITMAP3;
+	explode body type NOHEATCLOUD | BITMAP5;
+	explode rfoot1a type NOHEATCLOUD | BITMAP3;
+	explode neck1 type NOHEATCLOUD | BITMAP5;
 	explode neck3 type NOHEATCLOUD | SHATTER | BITMAP4;
 	explode tail5 type NOHEATCLOUD | SHATTER | BITMAP2;
 	explode tail2 type NOHEATCLOUD | SHATTER | BITMAP2;

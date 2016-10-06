@@ -144,15 +144,15 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode wheels type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode turret type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode lsleeve type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode lbarrel type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode lflare type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rsleeve type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rbarrel type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rflare type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode base type NOHEATCLOUD | BITMAP1;
+		explode wheels type NOHEATCLOUD | BITMAP1;
+		explode turret type NOHEATCLOUD | BITMAP1;
+		explode lsleeve type NOHEATCLOUD | BITMAP1;
+		explode lbarrel type NOHEATCLOUD | BITMAP1;
+		explode lflare type NOHEATCLOUD | BITMAP1;
+		explode rsleeve type NOHEATCLOUD | BITMAP1;
+		explode rbarrel type NOHEATCLOUD | BITMAP1;
+		explode rflare type NOHEATCLOUD | BITMAP1;
 		return (corpsetype);
 	}
 	if( severity <= 50 )

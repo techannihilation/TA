@@ -170,23 +170,23 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode boom type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode door1 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode door2 type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-		explode exhaust type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode flare type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode gun type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode neck type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode base type NOHEATCLOUD | BITMAP1;
+		explode boom type NOHEATCLOUD | BITMAP2;
+		explode door1 type NOHEATCLOUD | BITMAP3;
+		explode door2 type NOHEATCLOUD | BITMAP4;
+		explode exhaust type NOHEATCLOUD | BITMAP5;
+		explode flare type NOHEATCLOUD | BITMAP1;
+		explode gun type NOHEATCLOUD | BITMAP2;
+		explode neck type NOHEATCLOUD | BITMAP3;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode base type NOHEATCLOUD | BITMAP1;
 		explode boom type NOHEATCLOUD | FALL | BITMAP2;
-		explode door1 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode door2 type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+		explode door1 type NOHEATCLOUD | BITMAP3;
+		explode door2 type NOHEATCLOUD | BITMAP4;
 		explode exhaust type NOHEATCLOUD | FALL | BITMAP5;
 		explode flare type NOHEATCLOUD | FALL | BITMAP1;
 		explode gun type NOHEATCLOUD | FALL | BITMAP2;
@@ -196,10 +196,10 @@ Killed(severity, corpsetype)
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode base type NOHEATCLOUD | BITMAP1;
 		explode boom type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-		explode door1 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode door2 type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+		explode door1 type NOHEATCLOUD | BITMAP3;
+		explode door2 type NOHEATCLOUD | BITMAP4;
 		explode exhaust type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
 		explode flare type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP1;
 		explode gun type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP2;
@@ -207,10 +207,10 @@ Killed(severity, corpsetype)
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+	explode base type NOHEATCLOUD | BITMAP1;
 	explode boom type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-	explode door1 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-	explode door2 type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+	explode door1 type NOHEATCLOUD | BITMAP3;
+	explode door2 type NOHEATCLOUD | BITMAP4;
 	explode exhaust type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
 	explode flare type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP1;
 	explode gun type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP2;

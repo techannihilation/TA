@@ -546,14 +546,14 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode ground type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode lleg type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode arms type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode lthigh type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode pelvis type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-		explode rleg type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode rthigh type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-		explode torso type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode ground type NOHEATCLOUD | BITMAP1;
+		explode lleg type NOHEATCLOUD | BITMAP5;
+		explode arms type NOHEATCLOUD | BITMAP1;
+		explode lthigh type NOHEATCLOUD | BITMAP2;
+		explode pelvis type NOHEATCLOUD | BITMAP4;
+		explode rleg type NOHEATCLOUD | BITMAP2;
+		explode rthigh type NOHEATCLOUD | BITMAP4;
+		explode torso type NOHEATCLOUD | BITMAP1;
 		return (corpsetype);
 	}
 	if( severity <= 50 )

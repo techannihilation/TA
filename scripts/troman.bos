@@ -881,27 +881,27 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode eyeflare type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode eyegun type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode head type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode hips type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-		explode larm type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode lgunflare type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode lheel type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode lleg type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode lmispoint type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-		explode lthigh type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode luparm type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode mpack type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode rarm type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode rgunflare type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-		explode rheel type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode rleg type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rmispoint type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode rthigh type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode rtoes type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-		explode ruparm type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode torso type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode eyeflare type NOHEATCLOUD | BITMAP1;
+		explode eyegun type NOHEATCLOUD | BITMAP2;
+		explode head type NOHEATCLOUD | BITMAP3;
+		explode hips type NOHEATCLOUD | BITMAP4;
+		explode larm type NOHEATCLOUD | BITMAP5;
+		explode lgunflare type NOHEATCLOUD | BITMAP1;
+		explode lheel type NOHEATCLOUD | BITMAP2;
+		explode lleg type NOHEATCLOUD | BITMAP3;
+		explode lmispoint type NOHEATCLOUD | BITMAP4;
+		explode lthigh type NOHEATCLOUD | BITMAP5;
+		explode luparm type NOHEATCLOUD | BITMAP1;
+		explode mpack type NOHEATCLOUD | BITMAP2;
+		explode rarm type NOHEATCLOUD | BITMAP3;
+		explode rgunflare type NOHEATCLOUD | BITMAP4;
+		explode rheel type NOHEATCLOUD | BITMAP5;
+		explode rleg type NOHEATCLOUD | BITMAP1;
+		explode rmispoint type NOHEATCLOUD | BITMAP2;
+		explode rthigh type NOHEATCLOUD | BITMAP3;
+		explode rtoes type NOHEATCLOUD | BITMAP4;
+		explode ruparm type NOHEATCLOUD | BITMAP5;
+		explode torso type NOHEATCLOUD | BITMAP1;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
@@ -927,7 +927,7 @@ Killed(severity, corpsetype)
 		explode rthigh type NOHEATCLOUD | FALL | BITMAP3;
 		explode rtoes type NOHEATCLOUD | FALL | BITMAP4;
 		explode ruparm type NOHEATCLOUD | FALL | BITMAP5;
-		explode torso type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode torso type NOHEATCLOUD | BITMAP1;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
@@ -953,7 +953,7 @@ Killed(severity, corpsetype)
 		explode rthigh type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode rtoes type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 		explode ruparm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-		explode torso type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode torso type NOHEATCLOUD | BITMAP1;
 		return (corpsetype);
 	}
 	corpsetype = 3;
@@ -977,6 +977,6 @@ Killed(severity, corpsetype)
 	explode rthigh type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode rtoes type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 	explode ruparm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-	explode torso type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+	explode torso type NOHEATCLOUD | BITMAP1;
 	return (corpsetype);
 }

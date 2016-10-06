@@ -303,31 +303,31 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode body type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode lhigear type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode llogear type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rhigear type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rlogear type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode lturretex type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode lturret type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode lbarrel type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode lflare type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rturretex type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rturret type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rbarrel type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rflare type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode FLholderA type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode FLholderB type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode FLturbine type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode FRholderA type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode FRholderB type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode FRturbine type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode BLholderA type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode BLholderB type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode BLturbine type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode BRholderA type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode BRholderB type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode BRturbine type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode body type NOHEATCLOUD | BITMAP1;
+		explode lhigear type NOHEATCLOUD | BITMAP1;
+		explode llogear type NOHEATCLOUD | BITMAP1;
+		explode rhigear type NOHEATCLOUD | BITMAP1;
+		explode rlogear type NOHEATCLOUD | BITMAP1;
+		explode lturretex type NOHEATCLOUD | BITMAP1;
+		explode lturret type NOHEATCLOUD | BITMAP1;
+		explode lbarrel type NOHEATCLOUD | BITMAP1;
+		explode lflare type NOHEATCLOUD | BITMAP1;
+		explode rturretex type NOHEATCLOUD | BITMAP1;
+		explode rturret type NOHEATCLOUD | BITMAP1;
+		explode rbarrel type NOHEATCLOUD | BITMAP1;
+		explode rflare type NOHEATCLOUD | BITMAP1;
+		explode FLholderA type NOHEATCLOUD | BITMAP1;
+		explode FLholderB type NOHEATCLOUD | BITMAP1;
+		explode FLturbine type NOHEATCLOUD | BITMAP1;
+		explode FRholderA type NOHEATCLOUD | BITMAP1;
+		explode FRholderB type NOHEATCLOUD | BITMAP1;
+		explode FRturbine type NOHEATCLOUD | BITMAP1;
+		explode BLholderA type NOHEATCLOUD | BITMAP1;
+		explode BLholderB type NOHEATCLOUD | BITMAP1;
+		explode BLturbine type NOHEATCLOUD | BITMAP1;
+		explode BRholderA type NOHEATCLOUD | BITMAP1;
+		explode BRholderB type NOHEATCLOUD | BITMAP1;
+		explode BRturbine type NOHEATCLOUD | BITMAP1;
 		return (corpsetype);
 	}
 	if( severity <= 50 )

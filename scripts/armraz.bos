@@ -666,7 +666,7 @@ FireTertiary()
 {
 	start-script SmokeGun();
 	show flare;
-	explode emit type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+	explode emit type NOHEATCLOUD | BITMAP5;
 	explode exploder type NOHEATCLOUD | FALL;
 	explode exploder type NOHEATCLOUD | FALL;
 	explode exploder type NOHEATCLOUD | FALL;
@@ -685,30 +685,30 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode barrel type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode turret type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode hips type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode luparm type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode lloarm type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode lhand type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode fingerla type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode fingerlb type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode thumbl type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode ruparm type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rloarm type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode rhand type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode fingerra type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode fingerrb type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode thumbr type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode body type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode arml type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode cannonl type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode flareb type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode canonbarrel1 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode armr type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode cannonr type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode flarea type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode canonbarrel2 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode barrel type NOHEATCLOUD | BITMAP1;
+		explode turret type NOHEATCLOUD | BITMAP1;
+		explode hips type NOHEATCLOUD | BITMAP1;
+		explode luparm type NOHEATCLOUD | BITMAP1;
+		explode lloarm type NOHEATCLOUD | BITMAP1;
+		explode lhand type NOHEATCLOUD | BITMAP1;
+		explode fingerla type NOHEATCLOUD | BITMAP1;
+		explode fingerlb type NOHEATCLOUD | BITMAP1;
+		explode thumbl type NOHEATCLOUD | BITMAP1;
+		explode ruparm type NOHEATCLOUD | BITMAP1;
+		explode rloarm type NOHEATCLOUD | BITMAP1;
+		explode rhand type NOHEATCLOUD | BITMAP1;
+		explode fingerra type NOHEATCLOUD | BITMAP1;
+		explode fingerrb type NOHEATCLOUD | BITMAP1;
+		explode thumbr type NOHEATCLOUD | BITMAP1;
+		explode body type NOHEATCLOUD | BITMAP1;
+		explode arml type NOHEATCLOUD | BITMAP1;
+		explode cannonl type NOHEATCLOUD | BITMAP1;
+		explode flareb type NOHEATCLOUD | BITMAP1;
+		explode canonbarrel1 type NOHEATCLOUD | BITMAP1;
+		explode armr type NOHEATCLOUD | BITMAP1;
+		explode cannonr type NOHEATCLOUD | BITMAP1;
+		explode flarea type NOHEATCLOUD | BITMAP1;
+		explode canonbarrel2 type NOHEATCLOUD | BITMAP1;
 		return (corpsetype);
 	}
 	if( severity <= 50 )

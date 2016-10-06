@@ -149,8 +149,8 @@ Killed(severity, corpsetype)
 {
 	hide flare1;
 	hide flare2;
-	explode base type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-	explode body type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+	explode base type NOHEATCLOUD | BITMAP3;
+	explode body type NOHEATCLOUD | BITMAP4;
 	if( severity < 25 )
 	{
 		corpsetype = 1;
@@ -167,8 +167,8 @@ Killed(severity, corpsetype)
 	}
 	explode sleeve type NOHEATCLOUD | FALL | EXPLODE_ON_HIT | BITMAP1;
 	explode sleeve type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP2;
-	explode flare1 type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-	explode sleeve type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+	explode flare1 type NOHEATCLOUD | BITMAP4;
+	explode sleeve type NOHEATCLOUD | BITMAP5;
 	corpsetype = 3;
 	return (corpsetype);
 }

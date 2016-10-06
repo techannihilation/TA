@@ -78,34 +78,34 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode drawer type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode dummy type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode wedge type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+		explode base type NOHEATCLOUD | BITMAP1;
+		explode drawer type NOHEATCLOUD | BITMAP2;
+		explode dummy type NOHEATCLOUD | BITMAP3;
+		explode wedge type NOHEATCLOUD | BITMAP4;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode base type NOHEATCLOUD | BITMAP1;
 		explode drawer type NOHEATCLOUD | SHATTER | BITMAP2;
-		explode dummy type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode dummy type NOHEATCLOUD | BITMAP3;
 		explode wedge type NOHEATCLOUD | FALL | BITMAP4;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode base type NOHEATCLOUD | BITMAP1;
 		explode drawer type NOHEATCLOUD | SHATTER | BITMAP2;
-		explode dummy type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode dummy type NOHEATCLOUD | BITMAP3;
 		explode wedge type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+	explode base type NOHEATCLOUD | BITMAP1;
 	explode drawer type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP2;
-	explode dummy type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+	explode dummy type NOHEATCLOUD | BITMAP3;
 	explode wedge type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 	return (corpsetype);
 }

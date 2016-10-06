@@ -187,23 +187,23 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode beam1 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode beam2 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode ramps type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-		explode rim type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode nano_cover type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode nano_support type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode nano_gun1 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		explode nano_gun2 type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-		explode pad_x type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode pad_quad type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode base type NOHEATCLOUD | BITMAP1;
+		explode beam1 type NOHEATCLOUD | BITMAP2;
+		explode beam2 type NOHEATCLOUD | BITMAP3;
+		explode ramps type NOHEATCLOUD | BITMAP4;
+		explode rim type NOHEATCLOUD | BITMAP5;
+		explode nano_cover type NOHEATCLOUD | BITMAP1;
+		explode nano_support type NOHEATCLOUD | BITMAP2;
+		explode nano_gun1 type NOHEATCLOUD | BITMAP3;
+		explode nano_gun2 type NOHEATCLOUD | BITMAP4;
+		explode pad_x type NOHEATCLOUD | BITMAP5;
+		explode pad_quad type NOHEATCLOUD | BITMAP1;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode base type NOHEATCLOUD | BITMAP1;
 		explode beam1 type NOHEATCLOUD | FALL | BITMAP2;
 		explode beam2 type NOHEATCLOUD | FALL | BITMAP3;
 		explode ramps type NOHEATCLOUD | FALL | FIRE | BITMAP4;
@@ -219,7 +219,7 @@ Killed(severity, corpsetype)
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode base type NOHEATCLOUD | BITMAP1;
 		explode beam1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 		explode beam2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode ramps type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
@@ -233,7 +233,7 @@ Killed(severity, corpsetype)
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+	explode base type NOHEATCLOUD | BITMAP1;
 	explode beam1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 	explode beam2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode ramps type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;

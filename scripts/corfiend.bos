@@ -110,15 +110,15 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode fuselage type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode wing1 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode wing2 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode fuselage type NOHEATCLOUD | BITMAP1;
+		explode wing1 type NOHEATCLOUD | BITMAP2;
+		explode wing2 type NOHEATCLOUD | BITMAP3;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode fuselage type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode fuselage type NOHEATCLOUD | BITMAP1;
 		explode wing1 type NOHEATCLOUD | FALL | BITMAP2;
 		explode wing2 type NOHEATCLOUD | FALL | BITMAP3;
 		return (corpsetype);
@@ -126,13 +126,13 @@ Killed(severity, corpsetype)
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode fuselage type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode fuselage type NOHEATCLOUD | BITMAP1;
 		explode wing1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 		explode wing2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode fuselage type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+	explode fuselage type NOHEATCLOUD | BITMAP1;
 	explode wing1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 	explode wing2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	return (corpsetype);

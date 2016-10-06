@@ -185,8 +185,8 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
-	explode body type NOHEATCLOUD | BITMAPONLY | BITMAP4;
-	explode base type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+	explode body type NOHEATCLOUD | BITMAP4;
+	explode base type NOHEATCLOUD | BITMAP5;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;

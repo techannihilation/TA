@@ -104,7 +104,7 @@ Killed(severity, corpsetype)
 	explode barrel type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
 	explode gun type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
 	explode sleeves type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP2;
-	explode turret type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+	explode turret type NOHEATCLOUD | BITMAP4;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;

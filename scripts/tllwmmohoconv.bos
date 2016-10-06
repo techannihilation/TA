@@ -209,7 +209,7 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode rotor type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode rotor type NOHEATCLOUD | BITMAP3;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
