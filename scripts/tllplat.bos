@@ -280,62 +280,62 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode body type NOHEATCLOUD | BITMAP1;
-		explode arm1 type NOHEATCLOUD | BITMAP2;
-		explode arm2 type NOHEATCLOUD | BITMAP3;
-		explode door1 type NOHEATCLOUD | BITMAP4;
-		explode door2 type NOHEATCLOUD | BITMAP5;
-		explode nano1 type NOHEATCLOUD | BITMAP1;
-		explode nano2 type NOHEATCLOUD | BITMAP2;
-		explode pad type NOHEATCLOUD | BITMAP3;
-		explode arm3 type NOHEATCLOUD | BITMAP4;
-		explode arm4 type NOHEATCLOUD | BITMAP5;
-		explode flo3 type NOHEATCLOUD | BITMAP1;
+		explode body type NOHEATCLOUD;
+		explode arm1 type NOHEATCLOUD;
+		explode arm2 type NOHEATCLOUD;
+		explode door1 type NOHEATCLOUD;
+		explode door2 type NOHEATCLOUD;
+		explode nano1 type NOHEATCLOUD;
+		explode nano2 type NOHEATCLOUD;
+		explode pad type NOHEATCLOUD;
+		explode arm3 type NOHEATCLOUD;
+		explode arm4 type NOHEATCLOUD;
+		explode flo3 type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode body type NOHEATCLOUD | BITMAP1;
-		explode arm1 type NOHEATCLOUD | BITMAP2;
-		explode arm2 type NOHEATCLOUD | BITMAP3;
-		explode door1 type NOHEATCLOUD | BITMAP4;
-		explode door2 type NOHEATCLOUD | BITMAP5;
-		explode nano1 type NOHEATCLOUD | BITMAP1;
-		explode nano2 type NOHEATCLOUD | BITMAP2;
-		explode pad type NOHEATCLOUD | BITMAP3;
-		explode arm3 type NOHEATCLOUD | BITMAP4;
-		explode arm4 type NOHEATCLOUD | BITMAP5;
-		explode flo4 type NOHEATCLOUD | BITMAP1;
+		explode body type NOHEATCLOUD;
+		explode arm1 type NOHEATCLOUD;
+		explode arm2 type NOHEATCLOUD;
+		explode door1 type NOHEATCLOUD;
+		explode door2 type NOHEATCLOUD;
+		explode nano1 type NOHEATCLOUD;
+		explode nano2 type NOHEATCLOUD;
+		explode pad type NOHEATCLOUD;
+		explode arm3 type NOHEATCLOUD;
+		explode arm4 type NOHEATCLOUD;
+		explode flo4 type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode body type NOHEATCLOUD | BITMAP1;
-		explode arm1 type NOHEATCLOUD | BITMAP2;
-		explode arm2 type NOHEATCLOUD | BITMAP3;
-		explode door1 type NOHEATCLOUD | BITMAP4;
-		explode door2 type NOHEATCLOUD | BITMAP5;
-		explode nano1 type NOHEATCLOUD | BITMAP1;
-		explode nano2 type NOHEATCLOUD | BITMAP2;
-		explode pad type NOHEATCLOUD | BITMAP3;
-		explode arm3 type NOHEATCLOUD | BITMAP4;
-		explode arm4 type NOHEATCLOUD | BITMAP5;
-		explode flo3 type NOHEATCLOUD | BITMAP1;
+		explode body type NOHEATCLOUD;
+		explode arm1 type NOHEATCLOUD;
+		explode arm2 type NOHEATCLOUD;
+		explode door1 type NOHEATCLOUD;
+		explode door2 type NOHEATCLOUD;
+		explode nano1 type NOHEATCLOUD;
+		explode nano2 type NOHEATCLOUD;
+		explode pad type NOHEATCLOUD;
+		explode arm3 type NOHEATCLOUD;
+		explode arm4 type NOHEATCLOUD;
+		explode flo3 type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode body type NOHEATCLOUD | BITMAP1;
-	explode arm1 type NOHEATCLOUD | BITMAP2;
-	explode arm2 type NOHEATCLOUD | BITMAP3;
-	explode door1 type NOHEATCLOUD | BITMAP4;
-	explode door2 type NOHEATCLOUD | BITMAP5;
-	explode nano1 type NOHEATCLOUD | BITMAP1;
-	explode nano2 type NOHEATCLOUD | BITMAP2;
-	explode pad type NOHEATCLOUD | BITMAP3;
-	explode arm3 type NOHEATCLOUD | BITMAP4;
-	explode arm4 type NOHEATCLOUD | BITMAP5;
-	explode flo1 type NOHEATCLOUD | BITMAP1;
+	explode body type NOHEATCLOUD;
+	explode arm1 type NOHEATCLOUD;
+	explode arm2 type NOHEATCLOUD;
+	explode door1 type NOHEATCLOUD;
+	explode door2 type NOHEATCLOUD;
+	explode nano1 type NOHEATCLOUD;
+	explode nano2 type NOHEATCLOUD;
+	explode pad type NOHEATCLOUD;
+	explode arm3 type NOHEATCLOUD;
+	explode arm4 type NOHEATCLOUD;
+	explode flo1 type NOHEATCLOUD;
 	return (corpsetype);
 }

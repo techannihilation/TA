@@ -64,66 +64,66 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode tower type NOHEATCLOUD | BITMAP3;
-		explode post type NOHEATCLOUD | SHATTER | BITMAP5;
-		explode gun1 type NOHEATCLOUD | BITMAP4;
-		explode gun2 type NOHEATCLOUD | BITMAP3;
-		explode gun3 type NOHEATCLOUD | BITMAP4;
-		explode gun4 type NOHEATCLOUD | BITMAP3;
-		explode pad1 type NOHEATCLOUD | BITMAP4;
-		explode pad2 type NOHEATCLOUD | BITMAP3;
-		explode pad3 type NOHEATCLOUD | BITMAP4;
-		explode pad4 type NOHEATCLOUD | BITMAP3;
-		explode nano type NOHEATCLOUD | BITMAP5;
+		explode base type NOHEATCLOUD;
+		explode tower type NOHEATCLOUD;
+		explode post type NOHEATCLOUD | SHATTER;
+		explode gun1 type NOHEATCLOUD;
+		explode gun2 type NOHEATCLOUD;
+		explode gun3 type NOHEATCLOUD;
+		explode gun4 type NOHEATCLOUD;
+		explode pad1 type NOHEATCLOUD;
+		explode pad2 type NOHEATCLOUD;
+		explode pad3 type NOHEATCLOUD;
+		explode pad4 type NOHEATCLOUD;
+		explode nano type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode tower type NOHEATCLOUD | BITMAP3;
-		explode post type NOHEATCLOUD | SHATTER | BITMAP5;
-		explode gun1 type NOHEATCLOUD | FALL | BITMAP5;
-		explode gun2 type NOHEATCLOUD | FALL | BITMAP4;
-		explode gun3 type NOHEATCLOUD | FALL | BITMAP3;
-		explode gun4 type NOHEATCLOUD | FALL | BITMAP4;
-		explode pad1 type NOHEATCLOUD | BITMAP3;
-		explode pad2 type NOHEATCLOUD | BITMAP4;
-		explode pad3 type NOHEATCLOUD | BITMAP3;
-		explode pad4 type NOHEATCLOUD | BITMAP4;
-		explode nano type NOHEATCLOUD | FALL | BITMAP5;
+		explode base type NOHEATCLOUD;
+		explode tower type NOHEATCLOUD;
+		explode post type NOHEATCLOUD | SHATTER;
+		explode gun1 type NOHEATCLOUD | FALL;
+		explode gun2 type NOHEATCLOUD | FALL;
+		explode gun3 type NOHEATCLOUD | FALL;
+		explode gun4 type NOHEATCLOUD | FALL;
+		explode pad1 type NOHEATCLOUD;
+		explode pad2 type NOHEATCLOUD;
+		explode pad3 type NOHEATCLOUD;
+		explode pad4 type NOHEATCLOUD;
+		explode nano type NOHEATCLOUD | FALL;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode tower type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP5;
-		explode tower type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-		explode pad1 type NOHEATCLOUD | BITMAP4;
-		explode pad2 type NOHEATCLOUD | BITMAP4;
-		explode pad3 type NOHEATCLOUD | BITMAP4;
-		explode pad4 type NOHEATCLOUD | BITMAP4;
-		explode nano type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-		explode gun1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-		explode gun2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		explode gun3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode gun4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode base type NOHEATCLOUD;
+		explode tower type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode tower type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode pad1 type NOHEATCLOUD;
+		explode pad2 type NOHEATCLOUD;
+		explode pad3 type NOHEATCLOUD;
+		explode pad4 type NOHEATCLOUD;
+		explode nano type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode gun1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode gun2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode gun3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode gun4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | BITMAP1;
-	explode tower type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP5;
-	explode tower type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-	explode pad1 type NOHEATCLOUD | BITMAP4;
-	explode pad2 type NOHEATCLOUD | BITMAP4;
-	explode pad3 type NOHEATCLOUD | BITMAP4;
-	explode pad4 type NOHEATCLOUD | BITMAP4;
-	explode nano type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-	explode gun1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-	explode gun2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-	explode gun3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode gun4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode base type NOHEATCLOUD;
+	explode tower type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode tower type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode pad1 type NOHEATCLOUD;
+	explode pad2 type NOHEATCLOUD;
+	explode pad3 type NOHEATCLOUD;
+	explode pad4 type NOHEATCLOUD;
+	explode nano type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode gun1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode gun2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode gun3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode gun4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

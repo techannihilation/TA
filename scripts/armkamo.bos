@@ -176,16 +176,16 @@ FireSecondary()
 
 Killed(severity, corpsetype)
 {
-	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
-	explode llauncher type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-	explode rlauncher type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-	explode lbase type NOHEATCLOUD | BITMAP3;
-	explode rbase type NOHEATCLOUD | BITMAP3;
-	explode boosters type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-	explode rotor1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-	explode rotor2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-	explode chaingun type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-	explode gunbarrels type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
+	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode llauncher type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode rlauncher type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode lbase type NOHEATCLOUD;
+	explode rbase type NOHEATCLOUD;
+	explode boosters type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode rotor1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode rotor2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode chaingun type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode gunbarrels type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;

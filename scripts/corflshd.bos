@@ -101,7 +101,7 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-	explode base type NOHEATCLOUD | FALL | BITMAP3;
+	explode base type NOHEATCLOUD | FALL;
 	sleep 100;
 }
 
@@ -128,7 +128,7 @@ AimSecondary(heading, pitch)
 
 FireSecondary()
 {
-	explode base type NOHEATCLOUD | FALL | BITMAP3;
+	explode base type NOHEATCLOUD | FALL;
 	sleep 100;
 }
 
@@ -147,22 +147,22 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAP2;
+		explode base type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | BITMAP2;
+		explode base type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD | BITMAP2;
+		explode base type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | BITMAP2;
+	explode base type NOHEATCLOUD;
 	return (corpsetype);
 }

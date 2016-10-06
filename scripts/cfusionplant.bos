@@ -48,34 +48,34 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAP4;
-		explode tower1 type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP3;
-		explode tower2 type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP4;
-		explode tower3 type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
+		explode base type NOHEATCLOUD;
+		explode tower1 type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT;
+		explode tower2 type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT;
+		explode tower3 type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | BITMAP4;
-		explode tower1 type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP3;
-		explode tower2 type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP4;
-		explode tower3 type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
+		explode base type NOHEATCLOUD;
+		explode tower1 type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT;
+		explode tower2 type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT;
+		explode tower3 type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD | BITMAP4;
-		explode tower1 type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP3;
-		explode tower2 type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP4;
-		explode tower3 type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
+		explode base type NOHEATCLOUD;
+		explode tower1 type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT;
+		explode tower2 type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT;
+		explode tower3 type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP1;
-	explode tower1 type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP3;
-	explode tower2 type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP4;
-	explode tower3 type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
+	explode base type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT;
+	explode tower1 type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT;
+	explode tower2 type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT;
+	explode tower3 type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

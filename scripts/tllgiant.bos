@@ -137,25 +137,25 @@ AimFromPrimary(piecenum)
 
 Killed(severity, corpsetype)
 {
-	explode body type NOHEATCLOUD | BITMAP5;
-	explode pad1 type NOHEATCLOUD | BITMAP4;
-	explode radar type NOHEATCLOUD | BITMAP3;
-	explode wake1 type NOHEATCLOUD | BITMAP3;
-	explode wake2 type NOHEATCLOUD | BITMAP3;
-	explode pad1 type NOHEATCLOUD | BITMAP3;
+	explode body type NOHEATCLOUD;
+	explode pad1 type NOHEATCLOUD;
+	explode radar type NOHEATCLOUD;
+	explode wake1 type NOHEATCLOUD;
+	explode wake2 type NOHEATCLOUD;
+	explode pad1 type NOHEATCLOUD;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
 		return (corpsetype);
 	}
-	explode radar type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-	explode radar type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
+	explode radar type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode radar type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
+	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

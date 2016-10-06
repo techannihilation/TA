@@ -149,58 +149,58 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode flare1 type NOHEATCLOUD | BITMAP2;
-		explode flare2 type NOHEATCLOUD | BITMAP3;
-		explode gun1 type NOHEATCLOUD | BITMAP4;
-		explode gun2 type NOHEATCLOUD | BITMAP5;
-		explode thrusta type NOHEATCLOUD | BITMAP1;
-		explode thrustb1 type NOHEATCLOUD | BITMAP2;
-		explode thrustb2 type NOHEATCLOUD | BITMAP3;
-		explode winga type NOHEATCLOUD | BITMAP4;
-		explode wingb type NOHEATCLOUD | BITMAP5;
+		explode base type NOHEATCLOUD;
+		explode flare1 type NOHEATCLOUD;
+		explode flare2 type NOHEATCLOUD;
+		explode gun1 type NOHEATCLOUD;
+		explode gun2 type NOHEATCLOUD;
+		explode thrusta type NOHEATCLOUD;
+		explode thrustb1 type NOHEATCLOUD;
+		explode thrustb2 type NOHEATCLOUD;
+		explode winga type NOHEATCLOUD;
+		explode wingb type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode flare1 type NOHEATCLOUD | FALL | BITMAP2;
-		explode flare2 type NOHEATCLOUD | FALL | BITMAP3;
-		explode gun1 type NOHEATCLOUD | FALL | BITMAP4;
-		explode gun2 type NOHEATCLOUD | FALL | BITMAP5;
-		explode thrusta type NOHEATCLOUD | FALL | BITMAP1;
-		explode thrustb1 type NOHEATCLOUD | FALL | BITMAP2;
-		explode thrustb2 type NOHEATCLOUD | FALL | BITMAP3;
-		explode winga type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode wingb type NOHEATCLOUD | BITMAP5;
+		explode base type NOHEATCLOUD;
+		explode flare1 type NOHEATCLOUD | FALL;
+		explode flare2 type NOHEATCLOUD | FALL;
+		explode gun1 type NOHEATCLOUD | FALL;
+		explode gun2 type NOHEATCLOUD | FALL;
+		explode thrusta type NOHEATCLOUD | FALL;
+		explode thrustb1 type NOHEATCLOUD | FALL;
+		explode thrustb2 type NOHEATCLOUD | FALL;
+		explode winga type NOHEATCLOUD | SHATTER;
+		explode wingb type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode flare1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode flare2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		explode gun1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-		explode gun2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-		explode thrusta type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-		explode thrustb1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode thrustb2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		explode winga type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode wingb type NOHEATCLOUD | BITMAP5;
+		explode base type NOHEATCLOUD;
+		explode flare1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode flare2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode gun1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode gun2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode thrusta type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode thrustb1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode thrustb2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode winga type NOHEATCLOUD | SHATTER;
+		explode wingb type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | BITMAP1;
-	explode flare1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode flare2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-	explode gun1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-	explode gun2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-	explode thrusta type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-	explode thrustb1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode thrustb2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-	explode winga type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP4;
-	explode wingb type NOHEATCLOUD | BITMAP5;
+	explode base type NOHEATCLOUD;
+	explode flare1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode flare2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode gun1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode gun2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode thrusta type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode thrustb1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode thrustb2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode winga type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode wingb type NOHEATCLOUD;
 	return (corpsetype);
 }

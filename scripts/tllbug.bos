@@ -162,24 +162,24 @@ QueryPrimary(piecenum)
 
 Killed(severity, corpsetype)
 {
-	explode llegf type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-	explode llegf type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-	explode rlegb type NOHEATCLOUD | BITMAP3;
-	explode rlegf type NOHEATCLOUD | BITMAP3;
-	explode body type NOHEATCLOUD | BITMAP4;
+	explode llegf type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode llegf type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode rlegb type NOHEATCLOUD;
+	explode rlegf type NOHEATCLOUD;
+	explode body type NOHEATCLOUD;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
 		return (corpsetype);
 	}
-	explode barrel type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-	explode turret type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
+	explode barrel type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode turret type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP2;
+	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

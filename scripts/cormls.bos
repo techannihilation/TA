@@ -217,46 +217,46 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode Base type NOHEATCLOUD | BITMAP1;
-		explode Body type NOHEATCLOUD | BITMAP1;
-		explode NanoDoor1 type NOHEATCLOUD | BITMAP1;
-		explode NanoDoor2 type NOHEATCLOUD | BITMAP1;
-		explode Boom type NOHEATCLOUD | BITMAP1;
-		explode Neck type NOHEATCLOUD | BITMAP1;
-		explode NanoGun type NOHEATCLOUD | BITMAP1;
+		explode Base type NOHEATCLOUD;
+		explode Body type NOHEATCLOUD;
+		explode NanoDoor1 type NOHEATCLOUD;
+		explode NanoDoor2 type NOHEATCLOUD;
+		explode Boom type NOHEATCLOUD;
+		explode Neck type NOHEATCLOUD;
+		explode NanoGun type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode Base type NOHEATCLOUD | BITMAP1;
-		explode Body type NOHEATCLOUD | BITMAP1;
-		explode NanoDoor1 type NOHEATCLOUD | BITMAP1;
-		explode NanoDoor2 type NOHEATCLOUD | BITMAP1;
-		explode Boom type NOHEATCLOUD | BITMAP1;
-		explode Neck type NOHEATCLOUD | BITMAP1;
-		explode NanoGun type NOHEATCLOUD | BITMAP1;
+		explode Base type NOHEATCLOUD;
+		explode Body type NOHEATCLOUD;
+		explode NanoDoor1 type NOHEATCLOUD;
+		explode NanoDoor2 type NOHEATCLOUD;
+		explode Boom type NOHEATCLOUD;
+		explode Neck type NOHEATCLOUD;
+		explode NanoGun type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode Base type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode Body type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode NanoDoor1 type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode NanoDoor2 type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode Boom type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode Neck type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode NanoGun type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode Base type NOHEATCLOUD | SHATTER;
+		explode Body type NOHEATCLOUD | SHATTER;
+		explode NanoDoor1 type NOHEATCLOUD | SHATTER;
+		explode NanoDoor2 type NOHEATCLOUD | SHATTER;
+		explode Boom type NOHEATCLOUD | SHATTER;
+		explode Neck type NOHEATCLOUD | SHATTER;
+		explode NanoGun type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode Base type NOHEATCLOUD | SHATTER | BITMAP4;
-	explode Body type NOHEATCLOUD | SHATTER | BITMAP4;
-	explode NanoDoor1 type NOHEATCLOUD | SHATTER | BITMAP4;
-	explode NanoDoor2 type NOHEATCLOUD | SHATTER | BITMAP4;
-	explode Boom type NOHEATCLOUD | SHATTER | BITMAP4;
-	explode Neck type NOHEATCLOUD | SHATTER | BITMAP4;
-	explode NanoGun type NOHEATCLOUD | SHATTER | BITMAP4;
+	explode Base type NOHEATCLOUD | SHATTER;
+	explode Body type NOHEATCLOUD | SHATTER;
+	explode NanoDoor1 type NOHEATCLOUD | SHATTER;
+	explode NanoDoor2 type NOHEATCLOUD | SHATTER;
+	explode Boom type NOHEATCLOUD | SHATTER;
+	explode Neck type NOHEATCLOUD | SHATTER;
+	explode NanoGun type NOHEATCLOUD | SHATTER;
 	return (corpsetype);
 }

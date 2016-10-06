@@ -138,34 +138,34 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode dish type NOHEATCLOUD | BITMAP2;
-		explode fork1 type NOHEATCLOUD | BITMAP3;
-		explode fork2 type NOHEATCLOUD | BITMAP4;
+		explode base type NOHEATCLOUD;
+		explode dish type NOHEATCLOUD;
+		explode fork1 type NOHEATCLOUD;
+		explode fork2 type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode dish type NOHEATCLOUD | SHATTER | BITMAP2;
-		explode fork1 type NOHEATCLOUD | FALL | BITMAP3;
-		explode fork2 type NOHEATCLOUD | FALL | BITMAP4;
+		explode base type NOHEATCLOUD;
+		explode dish type NOHEATCLOUD | SHATTER;
+		explode fork1 type NOHEATCLOUD | FALL;
+		explode fork2 type NOHEATCLOUD | FALL;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode dish type NOHEATCLOUD | SHATTER | BITMAP2;
-		explode fork1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		explode fork2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode base type NOHEATCLOUD;
+		explode dish type NOHEATCLOUD | SHATTER;
+		explode fork1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode fork2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | BITMAP1;
-	explode dish type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP2;
-	explode fork1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-	explode fork2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode base type NOHEATCLOUD;
+	explode dish type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode fork1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode fork2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

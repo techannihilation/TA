@@ -169,58 +169,58 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode beam type NOHEATCLOUD | BITMAP2;
-		explode Door1 type NOHEATCLOUD | BITMAP3;
-		explode launcher type NOHEATCLOUD | BITMAP3;
-		explode Door2 type NOHEATCLOUD | BITMAP4;
-		explode Gun type NOHEATCLOUD | BITMAP5;
-		explode Stand type NOHEATCLOUD | BITMAP1;
-		explode Turret type NOHEATCLOUD | BITMAP2;
-		explode wheel1 type NOHEATCLOUD | BITMAP3;
-		explode wheel2 type NOHEATCLOUD | BITMAP4;
+		explode base type NOHEATCLOUD;
+		explode beam type NOHEATCLOUD;
+		explode Door1 type NOHEATCLOUD;
+		explode launcher type NOHEATCLOUD;
+		explode Door2 type NOHEATCLOUD;
+		explode Gun type NOHEATCLOUD;
+		explode Stand type NOHEATCLOUD;
+		explode Turret type NOHEATCLOUD;
+		explode wheel1 type NOHEATCLOUD;
+		explode wheel2 type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode beam type NOHEATCLOUD | BITMAP2;
-		explode Door1 type NOHEATCLOUD | FALL | BITMAP3;
-		explode launcher type NOHEATCLOUD | FALL | BITMAP3;
-		explode Door2 type NOHEATCLOUD | FALL | BITMAP4;
-		explode Gun type NOHEATCLOUD | SHATTER | BITMAP5;
-		explode Stand type NOHEATCLOUD | FALL | BITMAP1;
-		explode Turret type NOHEATCLOUD | FALL | BITMAP2;
-		explode wheel1 type NOHEATCLOUD | FALL | BITMAP3;
-		explode wheel2 type NOHEATCLOUD | FALL | BITMAP4;
+		explode base type NOHEATCLOUD;
+		explode beam type NOHEATCLOUD;
+		explode Door1 type NOHEATCLOUD | FALL;
+		explode launcher type NOHEATCLOUD | FALL;
+		explode Door2 type NOHEATCLOUD | FALL;
+		explode Gun type NOHEATCLOUD | SHATTER;
+		explode Stand type NOHEATCLOUD | FALL;
+		explode Turret type NOHEATCLOUD | FALL;
+		explode wheel1 type NOHEATCLOUD | FALL;
+		explode wheel2 type NOHEATCLOUD | FALL;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode beam type NOHEATCLOUD | BITMAP2;
-		explode Door1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		explode launcher type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		explode Door2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-		explode Gun type NOHEATCLOUD | SHATTER | BITMAP5;
-		explode Stand type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-		explode Turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode wheel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		explode wheel2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode base type NOHEATCLOUD;
+		explode beam type NOHEATCLOUD;
+		explode Door1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode launcher type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode Door2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode Gun type NOHEATCLOUD | SHATTER;
+		explode Stand type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode Turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode wheel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode wheel2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | BITMAP1;
-	explode beam type NOHEATCLOUD | BITMAP2;
-	explode Door1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-	explode launcher type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-	explode Door2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-	explode Gun type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP5;
-	explode Stand type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-	explode Turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode wheel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-	explode wheel2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode base type NOHEATCLOUD;
+	explode beam type NOHEATCLOUD;
+	explode Door1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode launcher type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode Door2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode Gun type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode Stand type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode Turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode wheel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode wheel2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

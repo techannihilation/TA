@@ -63,30 +63,30 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode body type NOHEATCLOUD | BITMAP1;
-		explode Lwing type NOHEATCLOUD | BITMAP5;
-		explode Rwing type NOHEATCLOUD | BITMAP1;
+		explode body type NOHEATCLOUD;
+		explode Lwing type NOHEATCLOUD;
+		explode Rwing type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode body type NOHEATCLOUD | BITMAP1;
-		explode Lwing type NOHEATCLOUD | SHATTER | BITMAP5;
-		explode Rwing type NOHEATCLOUD | SHATTER | BITMAP1;
+		explode body type NOHEATCLOUD;
+		explode Lwing type NOHEATCLOUD | SHATTER;
+		explode Rwing type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode body type NOHEATCLOUD | BITMAP1;
-		explode Lwing type NOHEATCLOUD | SHATTER | BITMAP5;
-		explode Rwing type NOHEATCLOUD | SHATTER | BITMAP1;
+		explode body type NOHEATCLOUD;
+		explode Lwing type NOHEATCLOUD | SHATTER;
+		explode Rwing type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode body type NOHEATCLOUD | BITMAP1;
-	explode Lwing type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP5;
-	explode Rwing type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
+	explode body type NOHEATCLOUD;
+	explode Lwing type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode Rwing type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

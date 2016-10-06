@@ -477,66 +477,66 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode dingle1 type NOHEATCLOUD | BITMAP2;
-		explode dingle2 type NOHEATCLOUD | BITMAP3;
-		explode rotary type NOHEATCLOUD | BITMAP4;
-		explode shell type NOHEATCLOUD | BITMAP5;
-		explode stands type NOHEATCLOUD | BITMAP1;
-		explode turret1 type NOHEATCLOUD | BITMAP3;
-		explode sleeve1 type NOHEATCLOUD | BITMAP2;
-		explode barrel1 type NOHEATCLOUD | BITMAP2;
-		explode barrel2 type NOHEATCLOUD | BITMAP2;
-		explode turret2 type NOHEATCLOUD | BITMAP2;
-		explode rocketbox type NOHEATCLOUD | BITMAP2;
+		explode base type NOHEATCLOUD;
+		explode dingle1 type NOHEATCLOUD;
+		explode dingle2 type NOHEATCLOUD;
+		explode rotary type NOHEATCLOUD;
+		explode shell type NOHEATCLOUD;
+		explode stands type NOHEATCLOUD;
+		explode turret1 type NOHEATCLOUD;
+		explode sleeve1 type NOHEATCLOUD;
+		explode barrel1 type NOHEATCLOUD;
+		explode barrel2 type NOHEATCLOUD;
+		explode turret2 type NOHEATCLOUD;
+		explode rocketbox type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode dingle1 type NOHEATCLOUD | FALL | BITMAP2;
-		explode dingle2 type NOHEATCLOUD | FALL | BITMAP3;
-		explode rotary type NOHEATCLOUD | FALL | BITMAP4;
-		explode shell type NOHEATCLOUD | BITMAP5;
-		explode stands type NOHEATCLOUD | SHATTER | BITMAP1;
-		explode turret1 type NOHEATCLOUD | BITMAP3;
-		explode sleeve1 type NOHEATCLOUD | SHATTER | BITMAP2;
-		explode barrel1 type NOHEATCLOUD | BITMAP2;
-		explode barrel2 type NOHEATCLOUD | BITMAP2;
-		explode turret2 type NOHEATCLOUD | BITMAP2;
-		explode rocketbox type NOHEATCLOUD | FALL | BITMAP2;
+		explode base type NOHEATCLOUD;
+		explode dingle1 type NOHEATCLOUD | FALL;
+		explode dingle2 type NOHEATCLOUD | FALL;
+		explode rotary type NOHEATCLOUD | FALL;
+		explode shell type NOHEATCLOUD;
+		explode stands type NOHEATCLOUD | SHATTER;
+		explode turret1 type NOHEATCLOUD;
+		explode sleeve1 type NOHEATCLOUD | SHATTER;
+		explode barrel1 type NOHEATCLOUD;
+		explode barrel2 type NOHEATCLOUD;
+		explode turret2 type NOHEATCLOUD;
+		explode rocketbox type NOHEATCLOUD | FALL;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode dingle1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode dingle2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		explode rotary type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-		explode shell type NOHEATCLOUD | BITMAP5;
-		explode stands type NOHEATCLOUD | SHATTER | BITMAP2;
-		explode turret1 type NOHEATCLOUD | BITMAP3;
-		explode sleeve1 type NOHEATCLOUD | SHATTER | BITMAP2;
-		explode barrel1 type NOHEATCLOUD | BITMAP2;
-		explode barrel2 type NOHEATCLOUD | BITMAP4;
-		explode turret2 type NOHEATCLOUD | BITMAP5;
-		explode rocketbox type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode base type NOHEATCLOUD;
+		explode dingle1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode dingle2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode rotary type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode shell type NOHEATCLOUD;
+		explode stands type NOHEATCLOUD | SHATTER;
+		explode turret1 type NOHEATCLOUD;
+		explode sleeve1 type NOHEATCLOUD | SHATTER;
+		explode barrel1 type NOHEATCLOUD;
+		explode barrel2 type NOHEATCLOUD;
+		explode turret2 type NOHEATCLOUD;
+		explode rocketbox type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | BITMAP1;
-	explode dingle1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode dingle2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-	explode rotary type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-	explode shell type NOHEATCLOUD | BITMAP5;
-	explode stands type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP2;
-	explode turret1 type NOHEATCLOUD | BITMAP3;
-	explode sleeve1 type NOHEATCLOUD | SHATTER | BITMAP2;
-	explode barrel1 type NOHEATCLOUD | BITMAP2;
-	explode barrel2 type NOHEATCLOUD | BITMAP4;
-	explode turret2 type NOHEATCLOUD | BITMAP5;
-	explode rocketbox type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode base type NOHEATCLOUD;
+	explode dingle1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode dingle2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rotary type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode shell type NOHEATCLOUD;
+	explode stands type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode turret1 type NOHEATCLOUD;
+	explode sleeve1 type NOHEATCLOUD | SHATTER;
+	explode barrel1 type NOHEATCLOUD;
+	explode barrel2 type NOHEATCLOUD;
+	explode turret2 type NOHEATCLOUD;
+	explode rocketbox type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

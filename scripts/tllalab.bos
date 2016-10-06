@@ -258,33 +258,33 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
-	explode arm1b type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-	explode arm2a type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-	explode pad type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
-	explode body type NOHEATCLOUD | BITMAP5;
-	explode arm1a type NOHEATCLOUD | BITMAP4;
-	explode arm2a type NOHEATCLOUD | BITMAP4;
+	explode arm1b type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode arm2a type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode pad type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode body type NOHEATCLOUD;
+	explode arm1a type NOHEATCLOUD;
+	explode arm2a type NOHEATCLOUD;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
 		return (corpsetype);
 	}
-	explode arm1a type NOHEATCLOUD | FALL | BITMAP2;
-	explode arm2b type NOHEATCLOUD | FALL | BITMAP3;
-	explode arm1b type NOHEATCLOUD | FALL | BITMAP2;
-	explode pad type NOHEATCLOUD | FALL | BITMAP3;
+	explode arm1a type NOHEATCLOUD | FALL;
+	explode arm2b type NOHEATCLOUD | FALL;
+	explode arm1b type NOHEATCLOUD | FALL;
+	explode pad type NOHEATCLOUD | FALL;
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode arm2b type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-	explode arm1a type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-	explode pad type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP4;
-	explode arm2a type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
-	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP3;
-	explode arm1b type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
-	explode arm3a type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP2;
+	explode arm2b type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode arm1a type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode pad type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode arm2a type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode arm1b type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode arm3a type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

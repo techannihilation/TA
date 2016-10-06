@@ -128,30 +128,30 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode body type NOHEATCLOUD | BITMAP1;
-		explode rotor type NOHEATCLOUD | BITMAP2;
-		explode light type NOHEATCLOUD | BITMAP3;
+		explode body type NOHEATCLOUD;
+		explode rotor type NOHEATCLOUD;
+		explode light type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode body type NOHEATCLOUD | BITMAP1;
-		explode rotor type NOHEATCLOUD | BITMAP2;
-		explode light type NOHEATCLOUD | BITMAP3;
+		explode body type NOHEATCLOUD;
+		explode rotor type NOHEATCLOUD;
+		explode light type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode rotor type NOHEATCLOUD | BITMAP1;
-		explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP2;
-		explode light type NOHEATCLOUD | BITMAP3;
+		explode rotor type NOHEATCLOUD;
+		explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode light type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode rotor type NOHEATCLOUD | BITMAP5;
-	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP2;
-	explode light type NOHEATCLOUD | BITMAP3;
+	explode rotor type NOHEATCLOUD;
+	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode light type NOHEATCLOUD;
 	return (corpsetype);
 }

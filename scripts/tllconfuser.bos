@@ -516,26 +516,26 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
-	explode pelvis type NOHEATCLOUD | BITMAP5;
-	explode lthigh type NOHEATCLOUD | BITMAP3;
-	explode rthigh type NOHEATCLOUD | BITMAP3;
-	explode jammer type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP3;
-	explode torso type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP3;
+	explode pelvis type NOHEATCLOUD;
+	explode lthigh type NOHEATCLOUD;
+	explode rthigh type NOHEATCLOUD;
+	explode jammer type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode torso type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
 		return (corpsetype);
 	}
-	explode rdoor type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
-	explode rthigh type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
-	explode lleg type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
+	explode rdoor type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode rthigh type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode lleg type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
 		return (corpsetype);
 	}
-	explode lleg type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP3;
-	explode torso type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP3;
+	explode lleg type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode torso type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	corpsetype = 3;
 	return (corpsetype);
 }

@@ -210,25 +210,25 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode antenne type NOHEATCLOUD | BITMAP1;
-		explode body type NOHEATCLOUD | BITMAP2;
+		explode antenne type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode body type NOHEATCLOUD | SHATTER | BITMAP1;
+		explode body type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode body type NOHEATCLOUD | SHATTER | BITMAP1;
-		explode antenne type NOHEATCLOUD | BITMAP2;
+		explode body type NOHEATCLOUD | SHATTER;
+		explode antenne type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
-	explode antenne type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
+	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode antenne type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

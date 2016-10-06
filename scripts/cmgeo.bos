@@ -67,37 +67,37 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode smoke type NOHEATCLOUD | BITMAP2;
-		explode dingle1 type NOHEATCLOUD | BITMAP2;
-		explode dingle2 type NOHEATCLOUD | BITMAP2;
-		explode spinner type NOHEATCLOUD | BITMAP2;
+		explode base type NOHEATCLOUD;
+		explode smoke type NOHEATCLOUD;
+		explode dingle1 type NOHEATCLOUD;
+		explode dingle2 type NOHEATCLOUD;
+		explode spinner type NOHEATCLOUD;
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode smoke type NOHEATCLOUD | FALL | BITMAP2;
-		explode dingle1 type NOHEATCLOUD | FALL | BITMAP2;
-		explode dingle2 type NOHEATCLOUD | FALL | BITMAP2;
-		explode spinner type NOHEATCLOUD | BITMAP2;
+		explode base type NOHEATCLOUD;
+		explode smoke type NOHEATCLOUD | FALL;
+		explode dingle1 type NOHEATCLOUD | FALL;
+		explode dingle2 type NOHEATCLOUD | FALL;
+		explode spinner type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode smoke type NOHEATCLOUD | FALL | BITMAP2;
-		explode dingle1 type NOHEATCLOUD | FALL | BITMAP2;
-		explode dingle2 type NOHEATCLOUD | FALL | BITMAP2;
-		explode spinner type NOHEATCLOUD | SHATTER | BITMAP2;
+		explode base type NOHEATCLOUD;
+		explode smoke type NOHEATCLOUD | FALL;
+		explode dingle1 type NOHEATCLOUD | FALL;
+		explode dingle2 type NOHEATCLOUD | FALL;
+		explode spinner type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | BITMAP1;
+	explode base type NOHEATCLOUD;
 	explode smoke type NOHEATCLOUD | FALL;
-	explode dingle1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP2;
-	explode dingle2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP2;
-	explode spinner type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP2;
+	explode dingle1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode dingle2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode spinner type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

@@ -139,32 +139,32 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode arms type NOHEATCLOUD | BITMAP1;
-		explode base type NOHEATCLOUD | BITMAP2;
+		explode arms type NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode arms type NOHEATCLOUD | FALL | BITMAP1;
-		explode hand1 type NOHEATCLOUD | SHATTER | BITMAP1;
-		explode hand2 type NOHEATCLOUD | SHATTER | BITMAP1;
-		explode hand3 type NOHEATCLOUD | SHATTER | BITMAP1;
-		explode base type NOHEATCLOUD | BITMAP2;
+		explode arms type NOHEATCLOUD | FALL;
+		explode hand1 type NOHEATCLOUD | SHATTER;
+		explode hand2 type NOHEATCLOUD | SHATTER;
+		explode hand3 type NOHEATCLOUD | SHATTER;
+		explode base type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode arms type NOHEATCLOUD | FALL | BITMAP1;
-		explode hand1 type NOHEATCLOUD | SHATTER | BITMAP1;
-		explode hand2 type NOHEATCLOUD | FALL | BITMAP1;
-		explode hand3 type NOHEATCLOUD | SHATTER | BITMAP1;
-		explode base type NOHEATCLOUD | BITMAP2;
+		explode arms type NOHEATCLOUD | FALL;
+		explode hand1 type NOHEATCLOUD | SHATTER;
+		explode hand2 type NOHEATCLOUD | FALL;
+		explode hand3 type NOHEATCLOUD | SHATTER;
+		explode base type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode arms type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
-	explode base type NOHEATCLOUD | BITMAP2;
+	explode arms type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode base type NOHEATCLOUD;
 	return (corpsetype);
 }

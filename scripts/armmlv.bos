@@ -181,58 +181,58 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode beam type NOHEATCLOUD | BITMAP2;
-		explode launcher type NOHEATCLOUD | BITMAP3;
-		explode gun type NOHEATCLOUD | BITMAP5;
-		explode plate type NOHEATCLOUD | BITMAP1;
-		explode post type NOHEATCLOUD | BITMAP2;
-		explode tire1 type NOHEATCLOUD | BITMAP3;
-		explode tire2 type NOHEATCLOUD | BITMAP4;
-		explode tire3 type NOHEATCLOUD | BITMAP5;
-		explode tire4 type NOHEATCLOUD | BITMAP1;
+		explode base type NOHEATCLOUD;
+		explode beam type NOHEATCLOUD;
+		explode launcher type NOHEATCLOUD;
+		explode gun type NOHEATCLOUD;
+		explode plate type NOHEATCLOUD;
+		explode post type NOHEATCLOUD;
+		explode tire1 type NOHEATCLOUD;
+		explode tire2 type NOHEATCLOUD;
+		explode tire3 type NOHEATCLOUD;
+		explode tire4 type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode beam type NOHEATCLOUD | FALL | BITMAP2;
-		explode launcher type NOHEATCLOUD | BITMAP3;
-		explode gun type NOHEATCLOUD | SHATTER | BITMAP5;
-		explode plate type NOHEATCLOUD | BITMAP1;
-		explode post type NOHEATCLOUD | FALL | BITMAP2;
-		explode tire1 type NOHEATCLOUD | FALL | BITMAP3;
-		explode tire2 type NOHEATCLOUD | FALL | BITMAP4;
-		explode tire3 type NOHEATCLOUD | FALL | BITMAP5;
-		explode tire4 type NOHEATCLOUD | FALL | BITMAP1;
+		explode base type NOHEATCLOUD;
+		explode beam type NOHEATCLOUD | FALL;
+		explode launcher type NOHEATCLOUD;
+		explode gun type NOHEATCLOUD | SHATTER;
+		explode plate type NOHEATCLOUD;
+		explode post type NOHEATCLOUD | FALL;
+		explode tire1 type NOHEATCLOUD | FALL;
+		explode tire2 type NOHEATCLOUD | FALL;
+		explode tire3 type NOHEATCLOUD | FALL;
+		explode tire4 type NOHEATCLOUD | FALL;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode beam type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-		explode launcher type NOHEATCLOUD | BITMAP3;
-		explode gun type NOHEATCLOUD | SHATTER | BITMAP5;
-		explode plate type NOHEATCLOUD | BITMAP1;
-		explode post type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-		explode tire1 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP3;
-		explode tire2 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP4;
-		explode tire3 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
-		explode tire4 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP1;
+		explode base type NOHEATCLOUD;
+		explode beam type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+		explode launcher type NOHEATCLOUD;
+		explode gun type NOHEATCLOUD | SHATTER;
+		explode plate type NOHEATCLOUD;
+		explode post type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+		explode tire1 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+		explode tire2 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+		explode tire3 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+		explode tire4 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | BITMAP1;
-	explode beam type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-	explode launcher type NOHEATCLOUD | BITMAP3;
-	explode gun type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP5;
-	explode plate type NOHEATCLOUD | BITMAP1;
-	explode post type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-	explode tire1 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP3;
-	explode tire2 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP4;
-	explode tire3 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
-	explode tire4 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP1;
+	explode base type NOHEATCLOUD;
+	explode beam type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+	explode launcher type NOHEATCLOUD;
+	explode gun type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode plate type NOHEATCLOUD;
+	explode post type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+	explode tire1 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+	explode tire2 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+	explode tire3 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+	explode tire4 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

@@ -125,53 +125,53 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode body type NOHEATCLOUD | BITMAP1;
-		explode frontpads type NOHEATCLOUD | BITMAP2;
-		explode rearpads type NOHEATCLOUD | BITMAP3;
-		explode cockpit type NOHEATCLOUD | BITMAP4;
-		explode radarbase type NOHEATCLOUD | BITMAP5;
-		explode radardish type NOHEATCLOUD | BITMAP1;
-		explode engines type NOHEATCLOUD | BITMAP2;
+		explode body type NOHEATCLOUD;
+		explode frontpads type NOHEATCLOUD;
+		explode rearpads type NOHEATCLOUD;
+		explode cockpit type NOHEATCLOUD;
+		explode radarbase type NOHEATCLOUD;
+		explode radardish type NOHEATCLOUD;
+		explode engines type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode body type NOHEATCLOUD | BITMAP1;
-		explode frontpads type NOHEATCLOUD | BITMAP2;
-		explode rearpads type NOHEATCLOUD | BITMAP3;
-		explode cockpit type NOHEATCLOUD | FALL | BITMAP4;
-		explode radarbase type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-		explode radardish type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
-		explode engines type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode body type NOHEATCLOUD;
+		explode frontpads type NOHEATCLOUD;
+		explode rearpads type NOHEATCLOUD;
+		explode cockpit type NOHEATCLOUD | FALL;
+		explode radarbase type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode radardish type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode engines type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode body type NOHEATCLOUD | BITMAP1;
-		explode frontpads type NOHEATCLOUD | BITMAP2;
-		explode rearpads type NOHEATCLOUD | BITMAP3;
-		explode cockpit type NOHEATCLOUD | FALL | BITMAP4;
-		explode radarbase type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-		explode radardish type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
-		explode engines type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP2;
-		explode wake1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		explode wake2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-		explode wake3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-		explode wake4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode body type NOHEATCLOUD;
+		explode frontpads type NOHEATCLOUD;
+		explode rearpads type NOHEATCLOUD;
+		explode cockpit type NOHEATCLOUD | FALL;
+		explode radarbase type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode radardish type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode engines type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode wake1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode wake2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode wake3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode wake4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
-	explode body type NOHEATCLOUD | BITMAP1;
-	explode frontpads type NOHEATCLOUD | BITMAP2;
-	explode rearpads type NOHEATCLOUD | BITMAP3;
-	explode cockpit type NOHEATCLOUD | FALL | BITMAP4;
-	explode radarbase type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-	explode radardish type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
-	explode engines type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP2;
-	explode wake1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-	explode wake2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-	explode wake3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-	explode wake4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode body type NOHEATCLOUD;
+	explode frontpads type NOHEATCLOUD;
+	explode rearpads type NOHEATCLOUD;
+	explode cockpit type NOHEATCLOUD | FALL;
+	explode radarbase type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode radardish type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode engines type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode wake1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode wake2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode wake3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode wake4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

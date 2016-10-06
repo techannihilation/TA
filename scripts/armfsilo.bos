@@ -245,46 +245,46 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode tower type NOHEATCLOUD | BITMAP1;
-		explode base type NOHEATCLOUD | BITMAP2;
-		explode holder type NOHEATCLOUD | BITMAP3;
-		explode roof1 type NOHEATCLOUD | BITMAP4;
-		explode roof2 type NOHEATCLOUD | BITMAP5;
-		explode fnuke type NOHEATCLOUD | BITMAP1;
-		explode deck type NOHEATCLOUD | BITMAP2;
+		explode tower type NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
+		explode holder type NOHEATCLOUD;
+		explode roof1 type NOHEATCLOUD;
+		explode roof2 type NOHEATCLOUD;
+		explode fnuke type NOHEATCLOUD;
+		explode deck type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode tower type NOHEATCLOUD | SHATTER | BITMAP1;
-		explode base type NOHEATCLOUD | BITMAP2;
-		explode holder type NOHEATCLOUD | BITMAP3;
-		explode roof1 type NOHEATCLOUD | FALL | BITMAP4;
-		explode roof2 type NOHEATCLOUD | FALL | BITMAP5;
-		explode fnuke type NOHEATCLOUD | BITMAP1;
-		explode deck type NOHEATCLOUD | BITMAP2;
+		explode tower type NOHEATCLOUD | SHATTER;
+		explode base type NOHEATCLOUD;
+		explode holder type NOHEATCLOUD;
+		explode roof1 type NOHEATCLOUD | FALL;
+		explode roof2 type NOHEATCLOUD | FALL;
+		explode fnuke type NOHEATCLOUD;
+		explode deck type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode tower type NOHEATCLOUD | SHATTER | BITMAP1;
-		explode base type NOHEATCLOUD | BITMAP2;
-		explode holder type NOHEATCLOUD | BITMAP3;
-		explode roof1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-		explode roof2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-		explode fnuke type NOHEATCLOUD | BITMAP1;
-		explode deck type NOHEATCLOUD | BITMAP2;
+		explode tower type NOHEATCLOUD | SHATTER;
+		explode base type NOHEATCLOUD;
+		explode holder type NOHEATCLOUD;
+		explode roof1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode roof2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode fnuke type NOHEATCLOUD;
+		explode deck type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode tower type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
-	explode base type NOHEATCLOUD | BITMAP2;
-	explode holder type NOHEATCLOUD | BITMAP3;
-	explode roof1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-	explode roof2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-	explode fnuke type NOHEATCLOUD | BITMAP1;
-	explode deck type NOHEATCLOUD | BITMAP2;
+	explode tower type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode base type NOHEATCLOUD;
+	explode holder type NOHEATCLOUD;
+	explode roof1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode roof2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode fnuke type NOHEATCLOUD;
+	explode deck type NOHEATCLOUD;
 	return (corpsetype);
 }

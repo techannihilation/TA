@@ -260,31 +260,31 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
-	explode base type NOHEATCLOUD | BITMAP1;
-	explode door1 type NOHEATCLOUD | BITMAP2;
-	explode door2 type NOHEATCLOUD | BITMAP3;
-	explode flare1a type NOHEATCLOUD | BITMAP4;
-	explode flare4 type NOHEATCLOUD | BITMAP5;
-	explode wake1 type NOHEATCLOUD | BITMAP3;
-	explode wake2 type NOHEATCLOUD | BITMAP4;
+	explode base type NOHEATCLOUD;
+	explode door1 type NOHEATCLOUD;
+	explode door2 type NOHEATCLOUD;
+	explode flare1a type NOHEATCLOUD;
+	explode flare4 type NOHEATCLOUD;
+	explode wake1 type NOHEATCLOUD;
+	explode wake2 type NOHEATCLOUD;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
 		return (corpsetype);
 	}
-	explode l1 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT | BITMAP4;
-	explode door2 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT | BITMAP5;
-	explode door1 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT | BITMAP5;
-	explode launcher type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP5;
-	explode turret type NOHEATCLOUD | SHATTER | BITMAP2;
+	explode l1 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT;
+	explode door2 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT;
+	explode door1 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT;
+	explode launcher type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode turret type NOHEATCLOUD | SHATTER;
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode l1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP2;
-	explode l2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP2;
-	explode door1 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT | BITMAP5;
+	explode l1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode l2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode door1 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

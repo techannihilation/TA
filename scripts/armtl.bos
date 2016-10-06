@@ -72,30 +72,30 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode flare type NOHEATCLOUD | BITMAP2;
-		explode gun type NOHEATCLOUD | BITMAP3;
+		explode base type NOHEATCLOUD;
+		explode flare type NOHEATCLOUD;
+		explode gun type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode flare type NOHEATCLOUD | BITMAP2;
-		explode gun type NOHEATCLOUD | SHATTER | BITMAP3;
+		explode base type NOHEATCLOUD;
+		explode flare type NOHEATCLOUD;
+		explode gun type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode flare type NOHEATCLOUD | BITMAP2;
-		explode gun type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP3;
+		explode base type NOHEATCLOUD;
+		explode flare type NOHEATCLOUD;
+		explode gun type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | BITMAP1;
-	explode flare type NOHEATCLOUD | BITMAP2;
-	explode gun type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP3;
+	explode base type NOHEATCLOUD;
+	explode flare type NOHEATCLOUD;
+	explode gun type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

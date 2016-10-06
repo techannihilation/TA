@@ -144,30 +144,30 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAP2;
-		explode lwing type NOHEATCLOUD | BITMAP4;
-		explode rwing type NOHEATCLOUD | BITMAP5;
+		explode base type NOHEATCLOUD;
+		explode lwing type NOHEATCLOUD;
+		explode rwing type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode body type NOHEATCLOUD | BITMAP2;
-		explode lwing type NOHEATCLOUD | BITMAP4;
-		explode rwing type NOHEATCLOUD | BITMAP5;
+		explode body type NOHEATCLOUD;
+		explode lwing type NOHEATCLOUD;
+		explode rwing type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode body type NOHEATCLOUD | BITMAP2;
-		explode rwing type NOHEATCLOUD | BITMAP4;
-		explode lwing type NOHEATCLOUD | BITMAP5;
+		explode body type NOHEATCLOUD;
+		explode rwing type NOHEATCLOUD;
+		explode lwing type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode body type NOHEATCLOUD | BITMAP2;
-	explode lwing type NOHEATCLOUD | BITMAP4;
-	explode rwing type NOHEATCLOUD | BITMAP5;
+	explode body type NOHEATCLOUD;
+	explode lwing type NOHEATCLOUD;
+	explode rwing type NOHEATCLOUD;
 	return (corpsetype);
 }

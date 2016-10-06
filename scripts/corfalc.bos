@@ -231,42 +231,42 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode Link type NOHEATCLOUD | BITMAP2;
-		explode Wing1a type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode Wing1b type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode Wing2a type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode Wing2b type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode base type NOHEATCLOUD;
+		explode Link type NOHEATCLOUD;
+		explode Wing1a type NOHEATCLOUD | SHATTER;
+		explode Wing1b type NOHEATCLOUD | SHATTER;
+		explode Wing2a type NOHEATCLOUD | SHATTER;
+		explode Wing2b type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode Link type NOHEATCLOUD | FALL | BITMAP2;
-		explode Wing1a type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode Wing1b type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode Wing2a type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode Wing2b type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode base type NOHEATCLOUD;
+		explode Link type NOHEATCLOUD | FALL;
+		explode Wing1a type NOHEATCLOUD | SHATTER;
+		explode Wing1b type NOHEATCLOUD | SHATTER;
+		explode Wing2a type NOHEATCLOUD | SHATTER;
+		explode Wing2b type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode Link type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode Wing1a type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode Wing1b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode Wing2a type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode Wing2b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode base type NOHEATCLOUD;
+		explode Link type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode Wing1a type NOHEATCLOUD | SHATTER;
+		explode Wing1b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode Wing2a type NOHEATCLOUD | SHATTER;
+		explode Wing2b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | BITMAP1;
-	explode Link type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode Wing1a type NOHEATCLOUD | SHATTER | BITMAP4;
-	explode Wing1b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode Wing2a type NOHEATCLOUD | SHATTER | BITMAP4;
-	explode Wing2b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode base type NOHEATCLOUD;
+	explode Link type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode Wing1a type NOHEATCLOUD | SHATTER;
+	explode Wing1b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode Wing2a type NOHEATCLOUD | SHATTER;
+	explode Wing2b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

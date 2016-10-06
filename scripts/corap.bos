@@ -301,54 +301,54 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode beama type NOHEATCLOUD | BITMAP2;
-		explode beamb type NOHEATCLOUD | BITMAP3;
-		explode dish type NOHEATCLOUD | BITMAP4;
-		explode guna type NOHEATCLOUD | BITMAP5;
-		explode gunb type NOHEATCLOUD | BITMAP1;
-		explode pad type NOHEATCLOUD | BITMAP2;
-		explode section1 type NOHEATCLOUD | BITMAP3;
-		explode section2 type NOHEATCLOUD | BITMAP4;
+		explode base type NOHEATCLOUD;
+		explode beama type NOHEATCLOUD;
+		explode beamb type NOHEATCLOUD;
+		explode dish type NOHEATCLOUD;
+		explode guna type NOHEATCLOUD;
+		explode gunb type NOHEATCLOUD;
+		explode pad type NOHEATCLOUD;
+		explode section1 type NOHEATCLOUD;
+		explode section2 type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode beama type NOHEATCLOUD | FALL | BITMAP2;
-		explode beamb type NOHEATCLOUD | FALL | BITMAP3;
-		explode dish type NOHEATCLOUD | FALL | BITMAP4;
-		explode guna type NOHEATCLOUD | FALL | BITMAP5;
-		explode gunb type NOHEATCLOUD | FALL | BITMAP1;
-		explode pad type NOHEATCLOUD | BITMAP2;
-		explode section1 type NOHEATCLOUD | BITMAP3;
-		explode section2 type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode base type NOHEATCLOUD;
+		explode beama type NOHEATCLOUD | FALL;
+		explode beamb type NOHEATCLOUD | FALL;
+		explode dish type NOHEATCLOUD | FALL;
+		explode guna type NOHEATCLOUD | FALL;
+		explode gunb type NOHEATCLOUD | FALL;
+		explode pad type NOHEATCLOUD;
+		explode section1 type NOHEATCLOUD;
+		explode section2 type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode beama type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode beamb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		explode dish type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-		explode guna type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-		explode gunb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-		explode pad type NOHEATCLOUD | BITMAP2;
-		explode section1 type NOHEATCLOUD | BITMAP3;
-		explode section2 type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode base type NOHEATCLOUD;
+		explode beama type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode beamb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode dish type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode guna type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode gunb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode pad type NOHEATCLOUD;
+		explode section1 type NOHEATCLOUD;
+		explode section2 type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | BITMAP1;
-	explode beama type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode beamb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-	explode dish type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-	explode guna type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-	explode gunb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-	explode pad type NOHEATCLOUD | BITMAP2;
-	explode section1 type NOHEATCLOUD | BITMAP3;
-	explode section2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP4;
+	explode base type NOHEATCLOUD;
+	explode beama type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode beamb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode dish type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode guna type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode gunb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode pad type NOHEATCLOUD;
+	explode section1 type NOHEATCLOUD;
+	explode section2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

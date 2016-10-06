@@ -75,26 +75,26 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode miner type NOHEATCLOUD | BITMAP1;
-		explode base type NOHEATCLOUD | BITMAP2;
+		explode miner type NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode miner type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP5;
-		explode base type NOHEATCLOUD | BITMAP2;
+		explode miner type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode base type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode miner type NOHEATCLOUD | SHATTER | SMOKE | EXPLODE_ON_HIT | BITMAP5;
-		explode base type NOHEATCLOUD | BITMAP2;
+		explode miner type NOHEATCLOUD | SHATTER | SMOKE | EXPLODE_ON_HIT;
+		explode base type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode miner type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | SMOKE | FIRE | BITMAP5;
-	explode base type NOHEATCLOUD | BITMAP2;
+	explode miner type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | SMOKE | FIRE;
+	explode base type NOHEATCLOUD;
 	return (corpsetype);
 }

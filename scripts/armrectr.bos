@@ -746,24 +746,24 @@ SweetSpot(piecenum)
 Killed(severity, corpsetype)
 {
 	corpsetype = 3;
-	explode head type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
-	explode hips type NOHEATCLOUD | FALL | FIRE | SMOKE | BITMAP2;
-	explode Larm type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP3;
-	explode Lfoot type NOHEATCLOUD | FALL | FIRE | SMOKE | BITMAP4;
-	explode llathe type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
-	explode llathepoint type NOHEATCLOUD | FALL | FIRE | SMOKE | BITMAP1;
-	explode Lleg type NOHEATCLOUD | FALL | FIRE | SMOKE | BITMAP2;
-	explode Lshoulder type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP3;
-	explode Rarm type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP4;
-	explode Rfoot type NOHEATCLOUD | FALL | FIRE | SMOKE | BITMAP5;
-	explode rlathe type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP1;
-	explode rlathepoint type NOHEATCLOUD | FALL | FIRE | SMOKE | BITMAP2;
-	explode Rleg type NOHEATCLOUD | FALL | FIRE | SMOKE | BITMAP3;
-	explode Rshoulder type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP4;
-	explode shield1 type NOHEATCLOUD | BITMAP5;
-	explode shield2 type NOHEATCLOUD | BITMAP1;
-	explode shield3 type NOHEATCLOUD | BITMAP2;
-	explode shield4 type NOHEATCLOUD | BITMAP3;
-	explode torso type NOHEATCLOUD | BITMAP4;
+	explode head type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode hips type NOHEATCLOUD | FALL | FIRE | SMOKE;
+	explode Larm type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+	explode Lfoot type NOHEATCLOUD | FALL | FIRE | SMOKE;
+	explode llathe type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+	explode llathepoint type NOHEATCLOUD | FALL | FIRE | SMOKE;
+	explode Lleg type NOHEATCLOUD | FALL | FIRE | SMOKE;
+	explode Lshoulder type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+	explode Rarm type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+	explode Rfoot type NOHEATCLOUD | FALL | FIRE | SMOKE;
+	explode rlathe type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+	explode rlathepoint type NOHEATCLOUD | FALL | FIRE | SMOKE;
+	explode Rleg type NOHEATCLOUD | FALL | FIRE | SMOKE;
+	explode Rshoulder type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+	explode shield1 type NOHEATCLOUD;
+	explode shield2 type NOHEATCLOUD;
+	explode shield3 type NOHEATCLOUD;
+	explode shield4 type NOHEATCLOUD;
+	explode torso type NOHEATCLOUD;
 	return (corpsetype);
 }

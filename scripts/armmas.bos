@@ -152,27 +152,27 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode arm1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP4;
-		explode arm3 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP4;
-		explode arm7 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
+		explode arm1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode arm3 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode arm7 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode arm1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP4;
-		explode arm2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP4;
-		explode arm3 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
+		explode arm1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode arm2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode arm3 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode arm1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP4;
-		explode arm2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP4;
-		explode arm3 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
+		explode arm1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode arm2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode arm3 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	}
 	corpsetype = 3;
-	explode arm1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP4;
-	explode arm2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP4;
-	explode arm3 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
+	explode arm1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode arm2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode arm3 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

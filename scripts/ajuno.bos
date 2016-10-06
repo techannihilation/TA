@@ -205,7 +205,7 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-	explode flare1 type NOHEATCLOUD | BITMAP5;
+	explode flare1 type NOHEATCLOUD;
 	gun_1 = base;
 	start-script RequestState(1);
 }
@@ -225,42 +225,42 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode collar type NOHEATCLOUD | BITMAP2;
-		explode gear type NOHEATCLOUD | BITMAP3;
-		explode tower type NOHEATCLOUD | BITMAP5;
+		explode base type NOHEATCLOUD;
+		explode collar type NOHEATCLOUD;
+		explode gear type NOHEATCLOUD;
+		explode tower type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode collar type NOHEATCLOUD | BITMAP2;
-		explode gear type NOHEATCLOUD | BITMAP3;
-		explode tower type NOHEATCLOUD | BITMAP5;
+		explode base type NOHEATCLOUD;
+		explode collar type NOHEATCLOUD;
+		explode gear type NOHEATCLOUD;
+		explode tower type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode collar type NOHEATCLOUD | BITMAP2;
-		explode gear type NOHEATCLOUD | BITMAP3;
-		explode tower type NOHEATCLOUD | BITMAP5;
-		explode emit1 type NOHEATCLOUD | FALL | SMOKE | BITMAP5;
-		explode emit2 type NOHEATCLOUD | FALL | SMOKE | BITMAP5;
-		explode emit3 type NOHEATCLOUD | FALL | SMOKE | BITMAP5;
-		explode emit4 type NOHEATCLOUD | FALL | SMOKE | BITMAP5;
+		explode base type NOHEATCLOUD;
+		explode collar type NOHEATCLOUD;
+		explode gear type NOHEATCLOUD;
+		explode tower type NOHEATCLOUD;
+		explode emit1 type NOHEATCLOUD | FALL | SMOKE;
+		explode emit2 type NOHEATCLOUD | FALL | SMOKE;
+		explode emit3 type NOHEATCLOUD | FALL | SMOKE;
+		explode emit4 type NOHEATCLOUD | FALL | SMOKE;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | BITMAP1;
-	explode collar type NOHEATCLOUD | BITMAP2;
-	explode gear type NOHEATCLOUD | BITMAP3;
-	explode tower type NOHEATCLOUD | BITMAP5;
-	explode emit1 type NOHEATCLOUD | SHATTER | SMOKE | FIRE | BITMAP5;
-	explode emit2 type NOHEATCLOUD | SHATTER | SMOKE | FIRE | BITMAP5;
-	explode emit3 type NOHEATCLOUD | SHATTER | SMOKE | FIRE | BITMAP5;
-	explode emit4 type NOHEATCLOUD | SHATTER | SMOKE | FIRE | BITMAP5;
+	explode base type NOHEATCLOUD;
+	explode collar type NOHEATCLOUD;
+	explode gear type NOHEATCLOUD;
+	explode tower type NOHEATCLOUD;
+	explode emit1 type NOHEATCLOUD | SHATTER | SMOKE | FIRE;
+	explode emit2 type NOHEATCLOUD | SHATTER | SMOKE | FIRE;
+	explode emit3 type NOHEATCLOUD | SHATTER | SMOKE | FIRE;
+	explode emit4 type NOHEATCLOUD | SHATTER | SMOKE | FIRE;
 	return (corpsetype);
 }

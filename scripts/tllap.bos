@@ -23,7 +23,7 @@ HitByWeapon(anglex, anglez)
 		{
 			Static_Var_5 = 1;
 			hide door2b;
-			explode door2b type NOHEATCLOUD | FALL | SHATTER | SMOKE | BITMAP2;
+			explode door2b type NOHEATCLOUD | FALL | SHATTER | SMOKE;
 		}
 	}
 	if( Func_Var_3 <= 50 )
@@ -32,7 +32,7 @@ HitByWeapon(anglex, anglez)
 		{
 			Static_Var_6 = 1;
 			hide door3b;
-			explode door3b type NOHEATCLOUD | FALL | SHATTER | SMOKE | BITMAP2;
+			explode door3b type NOHEATCLOUD | FALL | SHATTER | SMOKE;
 		}
 	}
 }
@@ -297,29 +297,29 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAP1;
+		explode base type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode door2b type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP2;
+		explode base type NOHEATCLOUD;
+		explode door2b type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode door1b type NOHEATCLOUD | SHATTER | BITMAP5;
-		explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP5;
-		explode door2b type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
+		explode base type NOHEATCLOUD;
+		explode door1b type NOHEATCLOUD | SHATTER;
+		explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode door2b type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | BITMAP1;
-	explode door3a type NOHEATCLOUD | SHATTER | BITMAP5;
-	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP5;
-	explode pad type NOHEATCLOUD | BITMAP4;
+	explode base type NOHEATCLOUD;
+	explode door3a type NOHEATCLOUD | SHATTER;
+	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode pad type NOHEATCLOUD;
 	return (corpsetype);
 }

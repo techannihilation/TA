@@ -52,38 +52,38 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode glowpart type NOHEATCLOUD | BITMAP2;
-		explode box type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP3;
-		explode glow type NOHEATCLOUD | SHATTER | BITMAP3;
-		explode towers type NOHEATCLOUD | BITMAP4;
+		explode base type NOHEATCLOUD;
+		explode glowpart type NOHEATCLOUD;
+		explode box type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode glow type NOHEATCLOUD | SHATTER;
+		explode towers type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode glowpart type NOHEATCLOUD | SHATTER | BITMAP2;
-		explode box type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP4;
-		explode glow type NOHEATCLOUD | SHATTER | BITMAP3;
-		explode towers type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP3;
+		explode base type NOHEATCLOUD;
+		explode glowpart type NOHEATCLOUD | SHATTER;
+		explode box type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode glow type NOHEATCLOUD | SHATTER;
+		explode towers type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode glowpart type NOHEATCLOUD | SHATTER | BITMAP2;
-		explode box type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP3;
-		explode glow type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP3;
-		explode towers type NOHEATCLOUD | SHATTER | BITMAP5;
+		explode base type NOHEATCLOUD;
+		explode glowpart type NOHEATCLOUD | SHATTER;
+		explode box type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode glow type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode towers type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | BITMAP1;
-	explode glowpart type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP2;
-	explode box type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP3;
-	explode glow type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP3;
-	explode towers type NOHEATCLOUD | SHATTER | BITMAP5;
+	explode base type NOHEATCLOUD;
+	explode glowpart type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode box type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode glow type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode towers type NOHEATCLOUD | SHATTER;
 	return (corpsetype);
 }

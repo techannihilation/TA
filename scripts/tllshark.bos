@@ -75,30 +75,30 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode body type NOHEATCLOUD | BITMAP1;
-		explode wake1 type NOHEATCLOUD | BITMAP1;
+		explode base type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		explode wake1 type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode body type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode wake1 type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode base type NOHEATCLOUD | SHATTER;
+		explode body type NOHEATCLOUD | SHATTER;
+		explode wake1 type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode body type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode wake1 type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode base type NOHEATCLOUD | SHATTER;
+		explode body type NOHEATCLOUD | SHATTER;
+		explode wake1 type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | SHATTER | BITMAP4;
-	explode body type NOHEATCLOUD | SHATTER | BITMAP4;
-	explode wake1 type NOHEATCLOUD | SHATTER | BITMAP4;
+	explode base type NOHEATCLOUD | SHATTER;
+	explode body type NOHEATCLOUD | SHATTER;
+	explode wake1 type NOHEATCLOUD | SHATTER;
 	return (corpsetype);
 }

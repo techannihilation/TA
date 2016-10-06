@@ -154,23 +154,23 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode globe type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP4;
-		explode gear type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP4;
+		explode globe type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode gear type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode globe type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP4;
-		explode gear type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
+		explode globe type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode gear type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode globe type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP4;
-		explode gear type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
+		explode globe type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode gear type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	}
 	corpsetype = 3;
-	explode globe type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP4;
-	explode gear type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
+	explode globe type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode gear type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

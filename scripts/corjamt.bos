@@ -111,34 +111,34 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode towers type NOHEATCLOUD | BITMAP2;
-		explode turret type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP3;
-		explode fork type NOHEATCLOUD | FALL | EXPLODE_ON_HIT | BITMAP3;
+		explode base type NOHEATCLOUD;
+		explode towers type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode fork type NOHEATCLOUD | FALL | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode towers type NOHEATCLOUD | BITMAP2;
-		explode turret type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP3;
-		explode fork type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
+		explode base type NOHEATCLOUD;
+		explode towers type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode fork type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
-		explode towers type NOHEATCLOUD | BITMAP2;
-		explode turret type NOHEATCLOUD | SHATTER | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		explode fork type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
+		explode base type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode towers type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD | SHATTER | FIRE | EXPLODE_ON_HIT;
+		explode fork type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | SHATTER | FIRE | EXPLODE_ON_HIT | BITMAP1;
-	explode towers type NOHEATCLOUD | BITMAP2;
-	explode turret type NOHEATCLOUD | SHATTER | FIRE | EXPLODE_ON_HIT | BITMAP3;
-	explode fork type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP3;
+	explode base type NOHEATCLOUD | SHATTER | FIRE | EXPLODE_ON_HIT;
+	explode towers type NOHEATCLOUD;
+	explode turret type NOHEATCLOUD | SHATTER | FIRE | EXPLODE_ON_HIT;
+	explode fork type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

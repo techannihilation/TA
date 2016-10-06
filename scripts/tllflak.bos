@@ -101,10 +101,10 @@ SweetSpot(piecenum)
 Killed(severity, corpsetype)
 {
 	hide flare;
-	explode barrel type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
-	explode gun type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
-	explode sleeves type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP2;
-	explode turret type NOHEATCLOUD | BITMAP4;
+	explode barrel type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode gun type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode sleeves type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode turret type NOHEATCLOUD;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;

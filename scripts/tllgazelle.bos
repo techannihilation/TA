@@ -207,37 +207,37 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode lock type NOHEATCLOUD | BITMAP1;
-		explode base type NOHEATCLOUD | BITMAP3;
-		explode door1 type NOHEATCLOUD | BITMAP2;
-		explode door2 type NOHEATCLOUD | BITMAP2;
-		explode rocket type NOHEATCLOUD | BITMAP1;
+		explode lock type NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
+		explode door1 type NOHEATCLOUD;
+		explode door2 type NOHEATCLOUD;
+		explode rocket type NOHEATCLOUD;
 		return (0);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode lock type NOHEATCLOUD | BITMAP1;
-		explode base type NOHEATCLOUD | SHATTER | BITMAP1;
-		explode door1 type NOHEATCLOUD | BITMAP2;
-		explode door2 type NOHEATCLOUD | BITMAP2;
-		explode rocket type NOHEATCLOUD | FALL | BITMAP1;
+		explode lock type NOHEATCLOUD;
+		explode base type NOHEATCLOUD | SHATTER;
+		explode door1 type NOHEATCLOUD;
+		explode door2 type NOHEATCLOUD;
+		explode rocket type NOHEATCLOUD | FALL;
 		return (0);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode lock type NOHEATCLOUD | BITMAP2;
-		explode base type NOHEATCLOUD | SHATTER | BITMAP3;
-		explode door1 type NOHEATCLOUD | BITMAP2;
-		explode door2 type NOHEATCLOUD | BITMAP2;
-		explode rocket type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode lock type NOHEATCLOUD;
+		explode base type NOHEATCLOUD | SHATTER;
+		explode door1 type NOHEATCLOUD;
+		explode door2 type NOHEATCLOUD;
+		explode rocket type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		return (0);
 	}
 	corpsetype = 3;
-	explode lock type NOHEATCLOUD | BITMAP2;
-	explode base type NOHEATCLOUD | SHATTER | BITMAP3;
-	explode door1 type NOHEATCLOUD | BITMAP2;
-	explode door2 type NOHEATCLOUD | BITMAP2;
-	explode rocket type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode lock type NOHEATCLOUD;
+	explode base type NOHEATCLOUD | SHATTER;
+	explode door1 type NOHEATCLOUD;
+	explode door2 type NOHEATCLOUD;
+	explode rocket type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 }

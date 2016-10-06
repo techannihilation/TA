@@ -75,12 +75,12 @@ Killed(severity, corpsetype)
 	if( severity <= 50 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAP2;
+		explode base type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | SHATTER | BITMAP1;
-	explode box type NOHEATCLOUD | SHATTER | BITMAP4;
-	explode Box03 type NOHEATCLOUD | SHATTER | BITMAP5;
+	explode base type NOHEATCLOUD | SHATTER;
+	explode box type NOHEATCLOUD | SHATTER;
+	explode Box03 type NOHEATCLOUD | SHATTER;
 	return (corpsetype);
 }

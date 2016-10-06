@@ -232,46 +232,46 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode halll type NOHEATCLOUD | BITMAP2;
-		explode pad type NOHEATCLOUD | BITMAP3;
-		explode hallr type NOHEATCLOUD | BITMAP1;
-		explode front2 type NOHEATCLOUD | BITMAP1;
-		explode front1 type NOHEATCLOUD | BITMAP2;
-		explode pad type NOHEATCLOUD | BITMAP2;
+		explode base type NOHEATCLOUD;
+		explode halll type NOHEATCLOUD;
+		explode pad type NOHEATCLOUD;
+		explode hallr type NOHEATCLOUD;
+		explode front2 type NOHEATCLOUD;
+		explode front1 type NOHEATCLOUD;
+		explode pad type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode halll type NOHEATCLOUD | BITMAP2;
-		explode hallr type NOHEATCLOUD | BITMAP3;
-		explode front1 type NOHEATCLOUD | BITMAP1;
-		explode front2 type NOHEATCLOUD | BITMAP1;
-		explode pad type NOHEATCLOUD | BITMAP2;
-		explode doorr type NOHEATCLOUD | BITMAP2;
+		explode base type NOHEATCLOUD;
+		explode halll type NOHEATCLOUD;
+		explode hallr type NOHEATCLOUD;
+		explode front1 type NOHEATCLOUD;
+		explode front2 type NOHEATCLOUD;
+		explode pad type NOHEATCLOUD;
+		explode doorr type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode doorr type NOHEATCLOUD | BITMAP2;
-		explode front1 type NOHEATCLOUD | BITMAP3;
-		explode front2 type NOHEATCLOUD | BITMAP1;
-		explode halll type NOHEATCLOUD | BITMAP1;
-		explode hallr type NOHEATCLOUD | BITMAP2;
-		explode pad type NOHEATCLOUD | BITMAP2;
+		explode base type NOHEATCLOUD;
+		explode doorr type NOHEATCLOUD;
+		explode front1 type NOHEATCLOUD;
+		explode front2 type NOHEATCLOUD;
+		explode halll type NOHEATCLOUD;
+		explode hallr type NOHEATCLOUD;
+		explode pad type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | BITMAP1;
-	explode halll type NOHEATCLOUD | BITMAP2;
-	explode hallr type NOHEATCLOUD | BITMAP3;
-	explode front1 type NOHEATCLOUD | BITMAP1;
-	explode front2 type NOHEATCLOUD | BITMAP1;
-	explode doorl type NOHEATCLOUD | BITMAP2;
-	explode pad type NOHEATCLOUD | BITMAP2;
+	explode base type NOHEATCLOUD;
+	explode halll type NOHEATCLOUD;
+	explode hallr type NOHEATCLOUD;
+	explode front1 type NOHEATCLOUD;
+	explode front2 type NOHEATCLOUD;
+	explode doorl type NOHEATCLOUD;
+	explode pad type NOHEATCLOUD;
 	return (corpsetype);
 }

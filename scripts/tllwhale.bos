@@ -156,26 +156,26 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
-	explode missile1 type NOHEATCLOUD | BITMAP2;
-	explode missile2 type NOHEATCLOUD | BITMAP3;
-	explode wake1 type NOHEATCLOUD | BITMAP4;
-	explode wake2 type NOHEATCLOUD | BITMAP4;
-	explode base type NOHEATCLOUD | BITMAP4;
+	explode missile1 type NOHEATCLOUD;
+	explode missile2 type NOHEATCLOUD;
+	explode wake1 type NOHEATCLOUD;
+	explode wake2 type NOHEATCLOUD;
+	explode base type NOHEATCLOUD;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
 		return (corpsetype);
 	}
-	explode ldoor1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-	explode rdoor1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-	explode ldoor2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-	explode rdoor2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
+	explode ldoor1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode rdoor1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode ldoor2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode rdoor2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
 		return (corpsetype);
 	}
-	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
+	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	corpsetype = 3;
 	return (corpsetype);
 }

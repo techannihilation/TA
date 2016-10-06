@@ -207,7 +207,7 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-	explode boompt type NOHEATCLOUD | BITMAP3;
+	explode boompt type NOHEATCLOUD;
 	hide missile;
 	gun_1 = base;
 	start-script RequestState(1);
@@ -228,54 +228,54 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode arm type NOHEATCLOUD | BITMAP1;
-		explode base type NOHEATCLOUD | BITMAP2;
-		explode panel1 type NOHEATCLOUD | BITMAP4;
-		explode panel2a type NOHEATCLOUD | BITMAP5;
-		explode panel2b type NOHEATCLOUD | BITMAP4;
-		explode panel3a type NOHEATCLOUD | BITMAP3;
-		explode panel3b type NOHEATCLOUD | BITMAP5;
-		explode missile type NOHEATCLOUD | BITMAP1;
-		explode light type NOHEATCLOUD | BITMAP3;
+		explode arm type NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
+		explode panel1 type NOHEATCLOUD;
+		explode panel2a type NOHEATCLOUD;
+		explode panel2b type NOHEATCLOUD;
+		explode panel3a type NOHEATCLOUD;
+		explode panel3b type NOHEATCLOUD;
+		explode missile type NOHEATCLOUD;
+		explode light type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode arm type NOHEATCLOUD | SHATTER | BITMAP1;
-		explode base type NOHEATCLOUD | BITMAP2;
-		explode panel1 type NOHEATCLOUD | BITMAP4;
-		explode panel2a type NOHEATCLOUD | FALL | BITMAP5;
-		explode panel2b type NOHEATCLOUD | FALL | BITMAP4;
-		explode panel3a type NOHEATCLOUD | FALL | BITMAP3;
-		explode panel3b type NOHEATCLOUD | BITMAP5;
-		explode missile type NOHEATCLOUD | BITMAP1;
-		explode light type NOHEATCLOUD | BITMAP3;
+		explode arm type NOHEATCLOUD | SHATTER;
+		explode base type NOHEATCLOUD;
+		explode panel1 type NOHEATCLOUD;
+		explode panel2a type NOHEATCLOUD | FALL;
+		explode panel2b type NOHEATCLOUD | FALL;
+		explode panel3a type NOHEATCLOUD | FALL;
+		explode panel3b type NOHEATCLOUD;
+		explode missile type NOHEATCLOUD;
+		explode light type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode arm type NOHEATCLOUD | SHATTER | BITMAP1;
-		explode base type NOHEATCLOUD | SHATTER | BITMAP2;
-		explode light type NOHEATCLOUD | BITMAP3;
-		explode panel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-		explode panel2a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-		explode panel2b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-		explode panel3a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-		explode panel3b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-		explode missile type NOHEATCLOUD | BITMAP1;
+		explode arm type NOHEATCLOUD | SHATTER;
+		explode base type NOHEATCLOUD | SHATTER;
+		explode light type NOHEATCLOUD;
+		explode panel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode panel2a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode panel2b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode panel3a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode panel3b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode missile type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode arm type NOHEATCLOUD | SHATTER | BITMAP1;
-	explode base type NOHEATCLOUD | SHATTER | BITMAP2;
-	explode light type NOHEATCLOUD | BITMAP3;
-	explode panel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-	explode panel2a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-	explode panel2b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-	explode panel3a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-	explode panel3b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-	explode missile type NOHEATCLOUD | BITMAP1;
+	explode arm type NOHEATCLOUD | SHATTER;
+	explode base type NOHEATCLOUD | SHATTER;
+	explode light type NOHEATCLOUD;
+	explode panel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode panel2a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode panel2b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode panel3a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode panel3b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode missile type NOHEATCLOUD;
 	return (corpsetype);
 }

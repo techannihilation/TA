@@ -212,54 +212,54 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode arm1 type NOHEATCLOUD | BITMAP1;
-		explode arm2 type NOHEATCLOUD | BITMAP2;
-		explode arm3 type NOHEATCLOUD | BITMAP3;
-		explode base type NOHEATCLOUD | BITMAP4;
-		explode link type NOHEATCLOUD | BITMAP5;
-		explode thrust1 type NOHEATCLOUD | BITMAP1;
-		explode thrust2 type NOHEATCLOUD | BITMAP2;
-		explode thrust3 type NOHEATCLOUD | BITMAP3;
-		explode thrust4 type NOHEATCLOUD | BITMAP4;
+		explode arm1 type NOHEATCLOUD;
+		explode arm2 type NOHEATCLOUD;
+		explode arm3 type NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
+		explode link type NOHEATCLOUD;
+		explode thrust1 type NOHEATCLOUD;
+		explode thrust2 type NOHEATCLOUD;
+		explode thrust3 type NOHEATCLOUD;
+		explode thrust4 type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode arm1 type NOHEATCLOUD | SHATTER | BITMAP1;
-		explode arm2 type NOHEATCLOUD | BITMAP2;
-		explode arm3 type NOHEATCLOUD | BITMAP3;
-		explode base type NOHEATCLOUD | BITMAP4;
-		explode link type NOHEATCLOUD | FALL | BITMAP5;
-		explode thrust1 type NOHEATCLOUD | FALL | BITMAP1;
-		explode thrust2 type NOHEATCLOUD | FALL | BITMAP2;
-		explode thrust3 type NOHEATCLOUD | FALL | BITMAP3;
-		explode thrust4 type NOHEATCLOUD | FALL | BITMAP4;
+		explode arm1 type NOHEATCLOUD | SHATTER;
+		explode arm2 type NOHEATCLOUD;
+		explode arm3 type NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
+		explode link type NOHEATCLOUD | FALL;
+		explode thrust1 type NOHEATCLOUD | FALL;
+		explode thrust2 type NOHEATCLOUD | FALL;
+		explode thrust3 type NOHEATCLOUD | FALL;
+		explode thrust4 type NOHEATCLOUD | FALL;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode arm1 type NOHEATCLOUD | SHATTER | BITMAP1;
-		explode arm2 type NOHEATCLOUD | BITMAP2;
-		explode arm3 type NOHEATCLOUD | BITMAP3;
-		explode base type NOHEATCLOUD | BITMAP4;
-		explode link type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-		explode thrust1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-		explode thrust2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode thrust3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		explode thrust4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode arm1 type NOHEATCLOUD | SHATTER;
+		explode arm2 type NOHEATCLOUD;
+		explode arm3 type NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
+		explode link type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode thrust1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode thrust2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode thrust3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode thrust4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode arm1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
-	explode arm2 type NOHEATCLOUD | BITMAP2;
-	explode arm3 type NOHEATCLOUD | BITMAP3;
-	explode base type NOHEATCLOUD | BITMAP4;
-	explode link type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-	explode thrust1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-	explode thrust2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode thrust3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-	explode thrust4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode arm1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode arm2 type NOHEATCLOUD;
+	explode arm3 type NOHEATCLOUD;
+	explode base type NOHEATCLOUD;
+	explode link type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode thrust1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode thrust2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode thrust3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode thrust4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

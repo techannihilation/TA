@@ -193,66 +193,66 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode lwingc type NOHEATCLOUD | BITMAP1;
-		explode lwingm type NOHEATCLOUD | BITMAP1;
-		explode lwingf type NOHEATCLOUD | BITMAP1;
-		explode light1 type NOHEATCLOUD | BITMAP1;
-		explode missile1 type NOHEATCLOUD | BITMAP1;
-		explode rwingc type NOHEATCLOUD | BITMAP1;
-		explode rwingm type NOHEATCLOUD | BITMAP1;
-		explode rwingf type NOHEATCLOUD | BITMAP1;
-		explode light2 type NOHEATCLOUD | BITMAP1;
-		explode missile2 type NOHEATCLOUD | BITMAP1;
-		explode drop type NOHEATCLOUD | BITMAP1;
+		explode base type NOHEATCLOUD | SHATTER;
+		explode lwingc type NOHEATCLOUD;
+		explode lwingm type NOHEATCLOUD;
+		explode lwingf type NOHEATCLOUD;
+		explode light1 type NOHEATCLOUD;
+		explode missile1 type NOHEATCLOUD;
+		explode rwingc type NOHEATCLOUD;
+		explode rwingm type NOHEATCLOUD;
+		explode rwingf type NOHEATCLOUD;
+		explode light2 type NOHEATCLOUD;
+		explode missile2 type NOHEATCLOUD;
+		explode drop type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode lwingc type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode lwingm type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode lwingf type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode light1 type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode missile1 type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode rwingc type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode rwingm type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode rwingf type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode light2 type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode missile2 type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode drop type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode base type NOHEATCLOUD | SHATTER;
+		explode lwingc type NOHEATCLOUD | SHATTER;
+		explode lwingm type NOHEATCLOUD | SHATTER;
+		explode lwingf type NOHEATCLOUD | SHATTER;
+		explode light1 type NOHEATCLOUD | SHATTER;
+		explode missile1 type NOHEATCLOUD | SHATTER;
+		explode rwingc type NOHEATCLOUD | SHATTER;
+		explode rwingm type NOHEATCLOUD | SHATTER;
+		explode rwingf type NOHEATCLOUD | SHATTER;
+		explode light2 type NOHEATCLOUD | SHATTER;
+		explode missile2 type NOHEATCLOUD | SHATTER;
+		explode drop type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode lwingc type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode lwingm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode lwingf type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode light1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode missile1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode rwingc type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode rwingm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode rwingf type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode light2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode missile2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode drop type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode base type NOHEATCLOUD | SHATTER;
+		explode lwingc type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode lwingm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode lwingf type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode light1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode missile1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode rwingc type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode rwingm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode rwingf type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode light2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode missile2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode drop type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | SHATTER | BITMAP4;
-	explode lwingc type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode lwingm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode lwingf type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode light1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode missile1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode rwingc type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode rwingm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode rwingf type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode light2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode missile2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode drop type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode base type NOHEATCLOUD | SHATTER;
+	explode lwingc type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lwingm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lwingf type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode light1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode missile1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rwingc type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rwingm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rwingf type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode light2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode missile2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode drop type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

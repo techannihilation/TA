@@ -334,46 +334,46 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode body type NOHEATCLOUD | BITMAP1;
-		explode FLFoot type NOHEATCLOUD | BITMAP1;
-		explode FRFoot type NOHEATCLOUD | BITMAP2;
-		explode leftchunk type NOHEATCLOUD | BITMAP5;
-		explode rightchunk type NOHEATCLOUD | BITMAP1;
-		explode RLFoot type NOHEATCLOUD | BITMAP2;
-		explode RRFoot type NOHEATCLOUD | BITMAP3;
+		explode body type NOHEATCLOUD;
+		explode FLFoot type NOHEATCLOUD;
+		explode FRFoot type NOHEATCLOUD;
+		explode leftchunk type NOHEATCLOUD;
+		explode rightchunk type NOHEATCLOUD;
+		explode RLFoot type NOHEATCLOUD;
+		explode RRFoot type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode body type NOHEATCLOUD | BITMAP1;
-		explode FLFoot type NOHEATCLOUD | BITMAP1;
-		explode FRFoot type NOHEATCLOUD | BITMAP2;
-		explode leftchunk type NOHEATCLOUD | BITMAP5;
-		explode rightchunk type NOHEATCLOUD | BITMAP1;
-		explode RLFoot type NOHEATCLOUD | BITMAP2;
-		explode RRFoot type NOHEATCLOUD | BITMAP3;
+		explode body type NOHEATCLOUD;
+		explode FLFoot type NOHEATCLOUD;
+		explode FRFoot type NOHEATCLOUD;
+		explode leftchunk type NOHEATCLOUD;
+		explode rightchunk type NOHEATCLOUD;
+		explode RLFoot type NOHEATCLOUD;
+		explode RRFoot type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode body type NOHEATCLOUD | SHATTER | BITMAP1;
-		explode FLFoot type NOHEATCLOUD | BITMAP1;
-		explode FRFoot type NOHEATCLOUD | BITMAP2;
-		explode leftchunk type NOHEATCLOUD | BITMAP5;
-		explode rightchunk type NOHEATCLOUD | BITMAP1;
-		explode RLFoot type NOHEATCLOUD | BITMAP2;
-		explode RRFoot type NOHEATCLOUD | BITMAP3;
+		explode body type NOHEATCLOUD | SHATTER;
+		explode FLFoot type NOHEATCLOUD;
+		explode FRFoot type NOHEATCLOUD;
+		explode leftchunk type NOHEATCLOUD;
+		explode rightchunk type NOHEATCLOUD;
+		explode RLFoot type NOHEATCLOUD;
+		explode RRFoot type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
-	explode FLFoot type NOHEATCLOUD | BITMAP1;
-	explode FRFoot type NOHEATCLOUD | BITMAP2;
-	explode leftchunk type NOHEATCLOUD | BITMAP5;
-	explode rightchunk type NOHEATCLOUD | BITMAP1;
-	explode RLFoot type NOHEATCLOUD | BITMAP2;
-	explode RRFoot type NOHEATCLOUD | BITMAP3;
+	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode FLFoot type NOHEATCLOUD;
+	explode FRFoot type NOHEATCLOUD;
+	explode leftchunk type NOHEATCLOUD;
+	explode rightchunk type NOHEATCLOUD;
+	explode RLFoot type NOHEATCLOUD;
+	explode RRFoot type NOHEATCLOUD;
 	return (corpsetype);
 }

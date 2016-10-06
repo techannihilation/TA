@@ -50,26 +50,26 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode body type NOHEATCLOUD | BITMAP1;
-		explode lights type NOHEATCLOUD | BITMAP2;
+		explode body type NOHEATCLOUD;
+		explode lights type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode body type NOHEATCLOUD | BITMAP1;
-		explode lights type NOHEATCLOUD | SHATTER | BITMAP2;
+		explode body type NOHEATCLOUD;
+		explode lights type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode body type NOHEATCLOUD | BITMAP1;
-		explode lights type NOHEATCLOUD | SHATTER | BITMAP2;
+		explode body type NOHEATCLOUD;
+		explode lights type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode lights type NOHEATCLOUD | BITMAP1;
-	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP2;
+	explode lights type NOHEATCLOUD;
+	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	return (corpsetype);
 }
