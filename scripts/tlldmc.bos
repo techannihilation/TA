@@ -5,7 +5,7 @@
 
 piece  base, Turretbase, Turret, Gun, B2, B1, Flare;
 
-static-var  Static_Var_1, Static_Var_2;
+static-var  Static_Var_1, WeaponToggle;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -39,9 +39,15 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
+Dive()
+{
+	WeaponToggle = !WeaponToggle;
+	//get PRINT(WeaponToggle);
+}
+
 Create()
 {
-	Static_Var_2 = 1;
+	WeaponToggle = 1;
 	hide Flare;
 	Static_Var_1 = 2500;
 	start-script SmokeUnit();
@@ -54,10 +60,7 @@ RestoreAfterDelay()
 
 AimPrimary(heading, pitch)
 {
-	if( !Static_Var_2 OR get WEAPON_RELOADSTATE(2) > get GAME_FRAME )
-	{
-		return (0);
-	}
+    if(!WeaponToggle OR (get WEAPON_RELOADSTATE(2) > get GAME_FRAME)) return 0;
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
 	turn Turret to y-axis heading speed <30.000000>;
@@ -90,10 +93,7 @@ AimFromPrimary(piecenum)
 
 AimSecondary(heading, pitch)
 {
-	if( Static_Var_2 OR get WEAPON_RELOADSTATE(1) > get GAME_FRAME )
-	{
-		return (0);
-	}
+	if(WeaponToggle OR (get WEAPON_RELOADSTATE(1) > get GAME_FRAME)) return 0;
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
 	turn Turret to y-axis heading speed <30.000000>;
