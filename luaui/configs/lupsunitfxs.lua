@@ -315,6 +315,22 @@ effectUnitDefs = {
     {class='AirJet',options={color={0,0,1}, width=3, length=24, piece="lthrust", onActive=true}},
     {class='AirJet',options={color={0,0,1}, width=3, length=24, piece="llthrust", onActive=true}},
  },
+ tllshu = {
+    {class='AirJet',options={color={0.3,0.1,0}, width=8, length=65, piece="rearthrust", onActive=true}},
+ },
+ tllnuada = {
+    {class='AirJet',options={color={0.1,0.4,0.6}, width=5, length=40, piece="rearthrust", onActive=true}},
+ },
+ tllanhur = {
+    {class='AirJet',options={color={1,1,1}, width=5, length=38, piece="rthrust", onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=5, length=38, piece="lthrust", onActive=true}},
+ },
+ tllaether = {
+    {class='AirJet',options={color={0,0,1}, width=3, length=34, piece="rthrust", onActive=true}},
+    {class='AirJet',options={color={0,0,1}, width=3, length=34, piece="rrthrust", onActive=true}},
+    {class='AirJet',options={color={0,0,1}, width=3, length=34, piece="lthrust", onActive=true}},
+    {class='AirJet',options={color={0,0,1}, width=3, length=34, piece="llthrust", onActive=true}},
+ },
  tllvaliant = {
     {class='AirJet',options={color={0.6,0.1,0}, width=17, length=30, piece="rthrust", onActive=true}},
     {class='AirJet',options={color={0.6,0.1,0}, width=17, length=30, piece="lthrust", onActive=true}},
