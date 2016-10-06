@@ -17,7 +17,7 @@ return {
 		corpse = "dead",
 		--damagemodifier = 0.75,
 		defaultmissiontype = "Standby",
-		description = "Mobile Radar Turtle",
+		description = "Mobile Radar/Sonar Turtle",
 		designation = "",
 		energymake = 10,
 		energyuse = 80,
