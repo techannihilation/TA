@@ -65,7 +65,7 @@ return {
 				height = 20,
 				hitdensity = 120,
 				metal = 233.60001,
-				object = "tllsoftshell_dead",
+				object = "tllturtle_dead",
 				reclaimable = true,
 				seqnamereclamate = "tree1reclamate",
 				world = "All Worlds",
