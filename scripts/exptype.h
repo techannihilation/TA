@@ -29,6 +29,8 @@
 #define FIRE			16		// A fire trail will follow the piece through the air
 #define BITMAPONLY		32		// The piece will not fly off or shatter or anything.  Only a bitmap explosion will be rendered.
 #define NOCEGTRAIL		64		// Disables the cegtrail for the specific piece (defined in the unit fbi)
+#define NOHEATCLOUD		128		// No engine explosion (There frugly anyways)
+#define RECURSIVE		16384	// (OTA-inherited COB scripts map [1<<8, 1<<13] to BITMAP* explosions)
 #define BITMAP			10000001
 
 // Bitmap Explosion Types
@@ -48,14 +50,16 @@
 
 //Customized effects (in FBI/TDF/LUA)
 // Explosion generators
-#define UNIT_SFX1		1024
-#define UNIT_SFX2		1025
-#define UNIT_SFX3		1026
-#define UNIT_SFX4		1027
-#define UNIT_SFX5		1028
-#define UNIT_SFX6		1029
-#define UNIT_SFX7		1030
-#define UNIT_SFX8		1031
+#define UNIT_SFX0		1024
+#define UNIT_SFX1		1025
+#define UNIT_SFX2		1026
+#define UNIT_SFX3		1027
+#define UNIT_SFX4		1028
+#define UNIT_SFX5		1029
+#define UNIT_SFX6		1030
+#define UNIT_SFX7		1031
+#define UNIT_SFX8		1032
+#define UNIT_SFX9		1033
 
 // Weapons
 #define FIRE_W1			2048
@@ -66,6 +70,7 @@
 #define FIRE_W6			2053
 #define FIRE_W7			2054
 #define FIRE_W8			2055
+#define FIRE_W9			2056
 
 #define DETO_W1			4096
 #define DETO_W2			4097
@@ -75,6 +80,7 @@
 #define DETO_W6			4101
 #define DETO_W7			4102
 #define DETO_W8			4103
+#define DETO_W9			4104
 
 
 // COB constants

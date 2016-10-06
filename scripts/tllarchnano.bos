@@ -50,7 +50,7 @@ HitByWeapon(anglex, anglez)
 		{
 			Static_Var_3 = 1;
 			hide legl2;
-			explode legl2 type FALL | SMOKE | BITMAP2;
+			explode legl2 type NOHEATCLOUD | FALL | SMOKE | BITMAP2;
 		}
 	}
 	if( Func_Var_3 <= 30 )
@@ -59,7 +59,7 @@ HitByWeapon(anglex, anglez)
 		{
 			Static_Var_4 = 1;
 			hide legr3;
-			explode legr3 type FALL | SMOKE | BITMAP2;
+			explode legr3 type NOHEATCLOUD | FALL | SMOKE | BITMAP2;
 		}
 	}
 	if( Func_Var_3 <= 15 )
@@ -68,7 +68,7 @@ HitByWeapon(anglex, anglez)
 		{
 			Static_Var_5 = 1;
 			hide legr1;
-			explode legr1 type FALL | SMOKE | BITMAP2;
+			explode legr1 type NOHEATCLOUD | FALL | SMOKE | BITMAP2;
 		}
 	}
 }
@@ -296,12 +296,12 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 1;
 	}
-	explode body type BITMAPONLY | BITMAP3;
-	explode legl3 type FALL | SMOKE | EXPLODE_ON_HIT;
-	explode legl4 type FALL | SMOKE | EXPLODE_ON_HIT;
-	explode legr1 type FALL | SMOKE | EXPLODE_ON_HIT;
-	explode legr3 type FALL | SMOKE | EXPLODE_ON_HIT;
-	explode nano1 type FALL | SMOKE | EXPLODE_ON_HIT;
-	explode nano2 type FALL | SMOKE | EXPLODE_ON_HIT;
+	explode body type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+	explode legl3 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode legl4 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode legr1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode legr3 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode nano1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode nano2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

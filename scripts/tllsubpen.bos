@@ -212,30 +212,30 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode body type BITMAPONLY | BITMAP1;
-		explode rnano type BITMAPONLY | BITMAP1;
-		explode rdoor type BITMAPONLY | BITMAP2;
+		explode body type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode rnano type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode rdoor type NOHEATCLOUD | BITMAPONLY | BITMAP2;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode body type BITMAPONLY | BITMAP1;
-		explode rdoor type BITMAPONLY | BITMAP1;
-		explode ldoor type BITMAPONLY | BITMAP2;
+		explode body type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode rdoor type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode ldoor type NOHEATCLOUD | BITMAPONLY | BITMAP2;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode body type BITMAPONLY | BITMAP1;
-		explode ldoor type BITMAPONLY | BITMAP1;
-		explode rdoor type BITMAPONLY | BITMAP2;
+		explode body type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode ldoor type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode rdoor type NOHEATCLOUD | BITMAPONLY | BITMAP2;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode body type BITMAPONLY | BITMAP1;
-	explode rdoor type BITMAPONLY | BITMAP1;
-	explode ldoor type BITMAPONLY | BITMAP2;
+	explode body type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+	explode rdoor type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+	explode ldoor type NOHEATCLOUD | BITMAPONLY | BITMAP2;
 	return (corpsetype);
 }

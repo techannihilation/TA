@@ -213,37 +213,37 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode socle type BITMAPONLY | BITMAP1;
-		explode body type BITMAPONLY | BITMAP3;
-		explode boule type BITMAPONLY | BITMAP5;
-		explode p1 type BITMAPONLY | BITMAP1;
+		explode socle type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode body type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode boule type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+		explode p1 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode socle type FALL | BITMAP1;
-		explode boule type SHATTER | BITMAP3;
-		explode ring type SHATTER | BITMAP4;
-		explode zap1 type FALL | BITMAP5;
-		explode zap2 type FALL | BITMAP5;
+		explode socle type NOHEATCLOUD | FALL | BITMAP1;
+		explode boule type NOHEATCLOUD | SHATTER | BITMAP3;
+		explode ring type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode zap1 type NOHEATCLOUD | FALL | BITMAP5;
+		explode zap2 type NOHEATCLOUD | FALL | BITMAP5;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode socle type SHATTER | BITMAP2;
-		explode boule type SHATTER | BITMAP3;
-		explode ring type SHATTER | BITMAP4;
-		explode zap1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-		explode p1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode socle type NOHEATCLOUD | SHATTER | BITMAP2;
+		explode boule type NOHEATCLOUD | SHATTER | BITMAP3;
+		explode ring type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode zap1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode p1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode socle type SHATTER | BITMAP5;
-	explode boule type SHATTER | BITMAP3;
-	explode ring type SHATTER | EXPLODE_ON_HIT | BITMAP4;
-	explode zap1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-	explode p1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode socle type NOHEATCLOUD | SHATTER | BITMAP5;
+	explode boule type NOHEATCLOUD | SHATTER | BITMAP3;
+	explode ring type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP4;
+	explode zap1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode p1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 	return (corpsetype);
 }

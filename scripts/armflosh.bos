@@ -103,7 +103,7 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-	explode turret type FALL | BITMAP3;
+	explode turret type NOHEATCLOUD | FALL | BITMAP3;
 	sleep 100;
 }
 
@@ -125,7 +125,7 @@ AimSecondary(heading, pitch)
 
 FireSecondary()
 {
-	explode turret type FALL | BITMAP3;
+	explode turret type NOHEATCLOUD | FALL | BITMAP3;
 	sleep 100;
 }
 
@@ -149,22 +149,22 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type BITMAPONLY | BITMAP2;
+		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP2;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type BITMAPONLY | BITMAP2;
+		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP2;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type BITMAPONLY | BITMAP2;
+		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP2;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type BITMAPONLY | BITMAP2;
+	explode base type NOHEATCLOUD | BITMAPONLY | BITMAP2;
 	return (corpsetype);
 }

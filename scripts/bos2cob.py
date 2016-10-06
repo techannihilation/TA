@@ -389,8 +389,9 @@ PARSER_DICT = {
 	'_opterm' : (('_op', '_term',),),
 	'_op' : (('=', '=',), ('<' , '=',), ('>', '=',), ('!', '=',), ('|', '|',), ('&', '&',), ('+',), ('-',), ('*',), ('/',), ('&',), ('|',), ('<',), ('>',), ('OR',), ('AND',),),
 	'_unaryOp' : (('!',), ('NOT',),),
-	'_constant' : (('<', '_signedFloatConstant', '>',), ('[', '_signedFloatConstant', ']',), ('_signedFloatConstant',),),
+	'_constant' : (('<', '_signedFloatConstant', '>',), ('[', '_signedFloatConstant', ']',), ('_signedFloatConstant',), ('_signedIntegerConstant',), ),
 	'_signedFloatConstant' : (('-', '_floatConstant',), ('_floatConstant',),),
+	'_signedIntegerConstant' : (('-', '_integerConstant',), ('_integerConstant',),),
 }
 
 AXES = ('x', 'y', 'z')

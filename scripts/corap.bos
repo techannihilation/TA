@@ -301,54 +301,54 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type BITMAPONLY | BITMAP1;
-		explode beama type BITMAPONLY | BITMAP2;
-		explode beamb type BITMAPONLY | BITMAP3;
-		explode dish type BITMAPONLY | BITMAP4;
-		explode guna type BITMAPONLY | BITMAP5;
-		explode gunb type BITMAPONLY | BITMAP1;
-		explode pad type BITMAPONLY | BITMAP2;
-		explode section1 type BITMAPONLY | BITMAP3;
-		explode section2 type BITMAPONLY | BITMAP4;
+		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode beama type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode beamb type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode dish type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+		explode guna type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+		explode gunb type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode pad type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode section1 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode section2 type NOHEATCLOUD | BITMAPONLY | BITMAP4;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type BITMAPONLY | BITMAP1;
-		explode beama type FALL | BITMAP2;
-		explode beamb type FALL | BITMAP3;
-		explode dish type FALL | BITMAP4;
-		explode guna type FALL | BITMAP5;
-		explode gunb type FALL | BITMAP1;
-		explode pad type BITMAPONLY | BITMAP2;
-		explode section1 type BITMAPONLY | BITMAP3;
-		explode section2 type SHATTER | BITMAP4;
+		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode beama type NOHEATCLOUD | FALL | BITMAP2;
+		explode beamb type NOHEATCLOUD | FALL | BITMAP3;
+		explode dish type NOHEATCLOUD | FALL | BITMAP4;
+		explode guna type NOHEATCLOUD | FALL | BITMAP5;
+		explode gunb type NOHEATCLOUD | FALL | BITMAP1;
+		explode pad type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode section1 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode section2 type NOHEATCLOUD | SHATTER | BITMAP4;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type BITMAPONLY | BITMAP1;
-		explode beama type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode beamb type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		explode dish type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-		explode guna type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-		explode gunb type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-		explode pad type BITMAPONLY | BITMAP2;
-		explode section1 type BITMAPONLY | BITMAP3;
-		explode section2 type SHATTER | BITMAP4;
+		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode beama type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode beamb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode dish type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode guna type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode gunb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode pad type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode section1 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode section2 type NOHEATCLOUD | SHATTER | BITMAP4;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type BITMAPONLY | BITMAP1;
-	explode beama type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode beamb type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-	explode dish type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-	explode guna type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-	explode gunb type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-	explode pad type BITMAPONLY | BITMAP2;
-	explode section1 type BITMAPONLY | BITMAP3;
-	explode section2 type SHATTER | EXPLODE_ON_HIT | BITMAP4;
+	explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+	explode beama type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode beamb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode dish type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode guna type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode gunb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode pad type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+	explode section1 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+	explode section2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP4;
 	return (corpsetype);
 }

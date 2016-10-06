@@ -342,18 +342,18 @@ Killed(severity, corpsetype)
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode body type BITMAPONLY | BITMAP2;
-		explode leg1 type BITMAPONLY | BITMAP2;
-		explode leg2 type BITMAPONLY | BITMAP2;
-		explode leg3 type BITMAPONLY | BITMAP2;
-		explode leg4 type BITMAPONLY | BITMAP2;
+		explode body type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode leg1 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode leg2 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode leg3 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode leg4 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode body type BITMAPONLY | BITMAP2;
-	explode leg1 type FALL | EXPLODE_ON_HIT | SMOKE | FIRE | BITMAP2;
-	explode leg2 type FALL | EXPLODE_ON_HIT | SMOKE | FIRE | BITMAP2;
-	explode leg3 type FALL | EXPLODE_ON_HIT | SMOKE | FIRE | BITMAP2;
-	explode leg4 type FALL | EXPLODE_ON_HIT | SMOKE | FIRE | BITMAP2;
+	explode body type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+	explode leg1 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT | SMOKE | FIRE | BITMAP2;
+	explode leg2 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT | SMOKE | FIRE | BITMAP2;
+	explode leg3 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT | SMOKE | FIRE | BITMAP2;
+	explode leg4 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT | SMOKE | FIRE | BITMAP2;
 	return (corpsetype);
 }

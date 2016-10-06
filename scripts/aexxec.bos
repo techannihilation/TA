@@ -127,50 +127,50 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode canon1 type 288;
-		explode canon2 type 1056;
-		explode canon3 type 2080;
-		explode canon4 type 2080;
-		explode box1 type 288;
-		explode box2 type 1056;
-		explode body type 544;
-		explode chassis type 2080;
+		explode canon1 type NOHEATCLOUD | 288;
+		explode canon2 type NOHEATCLOUD | 1056;
+		explode canon3 type NOHEATCLOUD | 2080;
+		explode canon4 type NOHEATCLOUD | 2080;
+		explode box1 type NOHEATCLOUD | 288;
+		explode box2 type NOHEATCLOUD | 1056;
+		explode body type NOHEATCLOUD | 544;
+		explode chassis type NOHEATCLOUD | 2080;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode canon1 type 260;
-		explode canon2 type 257;
-		explode canon3 type 2080;
-		explode canon4 type 2080;
-		explode box1 type 257;
-		explode box2 type 30;
-		explode body type 544;
-		explode chassis type 2080;
+		explode canon1 type NOHEATCLOUD | 260;
+		explode canon2 type NOHEATCLOUD | 257;
+		explode canon3 type NOHEATCLOUD | 2080;
+		explode canon4 type NOHEATCLOUD | 2080;
+		explode box1 type NOHEATCLOUD | 257;
+		explode box2 type NOHEATCLOUD | 30;
+		explode body type NOHEATCLOUD | 544;
+		explode chassis type NOHEATCLOUD | 2080;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode canon1 type 30;
-		explode canon2 type 257;
-		explode canon3 type 2080;
-		explode canon4 type 14;
-		explode box1 type 257;
-		explode box2 type 30;
-		explode body type 30;
-		explode chassis type 30;
+		explode canon1 type NOHEATCLOUD | 30;
+		explode canon2 type NOHEATCLOUD | 257;
+		explode canon3 type NOHEATCLOUD | 2080;
+		explode canon4 type NOHEATCLOUD | 14;
+		explode box1 type NOHEATCLOUD | 257;
+		explode box2 type NOHEATCLOUD | 30;
+		explode body type NOHEATCLOUD | 30;
+		explode chassis type NOHEATCLOUD | 30;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode canon1 type 30;
-	explode canon2 type 257;
-	explode canon3 type 2080;
-	explode canon4 type 14;
-	explode box1 type 257;
-	explode box2 type 30;
-	explode body type 30;
-	explode chassis type 30;
+	explode canon1 type NOHEATCLOUD | 30;
+	explode canon2 type NOHEATCLOUD | 257;
+	explode canon3 type NOHEATCLOUD | 2080;
+	explode canon4 type NOHEATCLOUD | 14;
+	explode box1 type NOHEATCLOUD | 257;
+	explode box2 type NOHEATCLOUD | 30;
+	explode body type NOHEATCLOUD | 30;
+	explode chassis type NOHEATCLOUD | 30;
 	return (corpsetype);
 }

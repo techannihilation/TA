@@ -139,30 +139,30 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode body type BITMAPONLY | BITMAP1;
-		explode rotor type BITMAPONLY | BITMAP2;
-		explode dish1 type BITMAPONLY | BITMAP3;
+		explode body type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode rotor type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode dish1 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode body type BITMAPONLY | BITMAP1;
-		explode rotor type BITMAPONLY | BITMAP2;
-		explode dish2 type BITMAPONLY | BITMAP3;
+		explode body type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode rotor type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode dish2 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode rotor type BITMAPONLY | BITMAP1;
-		explode body type SHATTER | EXPLODE_ON_HIT | BITMAP2;
-		explode dish2 type BITMAPONLY | BITMAP3;
+		explode rotor type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP2;
+		explode dish2 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode rotor type BITMAPONLY | BITMAP5;
-	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP2;
-	explode dish1 type BITMAPONLY | BITMAP3;
+	explode rotor type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP2;
+	explode dish1 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
 	return (corpsetype);
 }

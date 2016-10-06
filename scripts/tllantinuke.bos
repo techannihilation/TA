@@ -67,7 +67,7 @@ HitByWeapon(anglex, anglez)
 		{
 			Static_Var_5 = 1;
 			hide door1;
-			explode door1 type FALL | SHATTER | SMOKE | BITMAP2;
+			explode door1 type NOHEATCLOUD | FALL | SHATTER | SMOKE | BITMAP2;
 		}
 	}
 	if( Func_Var_3 <= 50 )
@@ -76,7 +76,7 @@ HitByWeapon(anglex, anglez)
 		{
 			Static_Var_6 = 1;
 			hide door3;
-			explode door3 type FALL | SHATTER | SMOKE | BITMAP2;
+			explode door3 type NOHEATCLOUD | FALL | SHATTER | SMOKE | BITMAP2;
 		}
 	}
 }
@@ -260,42 +260,42 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode body type BITMAPONLY | BITMAP1;
-		explode plat type BITMAPONLY | BITMAP2;
-		explode door1 type BITMAPONLY | BITMAP3;
-		explode door2 type BITMAPONLY | BITMAP4;
-		explode gun type BITMAPONLY | BITMAP2;
+		explode body type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode plat type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode door1 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode door2 type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+		explode gun type NOHEATCLOUD | BITMAPONLY | BITMAP2;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode plat type BITMAPONLY | BITMAP1;
-		explode body type SHATTER | BITMAP2;
-		explode door1 type FALL | BITMAP3;
-		explode door2 type FALL | BITMAP4;
-		explode gun type BITMAPONLY | BITMAP2;
+		explode plat type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode body type NOHEATCLOUD | SHATTER | BITMAP2;
+		explode door1 type NOHEATCLOUD | FALL | BITMAP3;
+		explode door2 type NOHEATCLOUD | FALL | BITMAP4;
+		explode gun type NOHEATCLOUD | BITMAPONLY | BITMAP2;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode plat type BITMAPONLY | BITMAP1;
-		explode body type SHATTER | BITMAP2;
-		explode door1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		explode door2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-		explode door3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode door4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		explode gun type BITMAPONLY | BITMAP2;
+		explode plat type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode body type NOHEATCLOUD | SHATTER | BITMAP2;
+		explode door1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode door2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode door3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode door4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode gun type NOHEATCLOUD | BITMAPONLY | BITMAP2;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode plat type BITMAPONLY | BITMAP1;
-	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP2;
-	explode door1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-	explode door2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-	explode door3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode door4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-	explode gun type BITMAPONLY | BITMAP2;
+	explode plat type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP2;
+	explode door1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode door2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode door3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode door4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode gun type NOHEATCLOUD | BITMAPONLY | BITMAP2;
 	return (corpsetype);
 }

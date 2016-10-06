@@ -859,60 +859,60 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode ssbody type BITMAPONLY | BITMAP5;
-		explode turret1 type BITMAPONLY | BITMAP3;
-		explode turret2 type BITMAPONLY | BITMAP2;
-		explode turret3 type BITMAPONLY | BITMAP1;
-		explode gun1 type BITMAPONLY | BITMAP4;
-		explode gun2 type BITMAPONLY | BITMAP4;
+		explode ssbody type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+		explode turret1 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode turret2 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode turret3 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode gun1 type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+		explode gun2 type NOHEATCLOUD | BITMAPONLY | BITMAP4;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode ssbody type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-		explode turret1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode turret2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-		explode turret3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		explode gun1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-		explode gun2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-		explode sstoparm1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		explode sstoparm2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		explode sstoparm3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-		explode sstoparm4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		explode sstoparm5 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		explode sstoparm6 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode ssbody type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode turret1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode turret2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode turret3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode gun1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode gun2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode sstoparm1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode sstoparm2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode sstoparm3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode sstoparm4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode sstoparm5 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode sstoparm6 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode ssbody type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-		explode turret1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode turret2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-		explode turret3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		explode gun1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-		explode gun2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-		explode sstoparm1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		explode sstoparm2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		explode sstoparm3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-		explode sstoparm4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		explode sstoparm5 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		explode sstoparm6 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode ssbody type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode turret1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode turret2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode turret3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode gun1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode gun2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode sstoparm1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode sstoparm2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode sstoparm3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode sstoparm4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode sstoparm5 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode sstoparm6 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode ssbody type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-	explode turret1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode turret2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-	explode turret3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-	explode gun1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-	explode gun2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-	explode sstoparm1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-	explode sstoparm2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-	explode sstoparm3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-	explode sstoparm4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-	explode sstoparm5 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-	explode sstoparm6 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode ssbody type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode turret1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode turret2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode turret3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode gun1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode gun2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode sstoparm1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode sstoparm2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode sstoparm3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode sstoparm4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode sstoparm5 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode sstoparm6 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 	return (corpsetype);
 }

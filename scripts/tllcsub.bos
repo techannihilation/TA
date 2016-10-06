@@ -179,24 +179,24 @@ StopMoving()
 
 Killed(severity, corpsetype)
 {
-	explode bearing type BITMAPONLY | BITMAP5;
-	explode body type BITMAPONLY | BITMAP3;
-	explode bearing type SHATTER | EXPLODE_ON_HIT | BITMAP3;
-	explode nano type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
+	explode bearing type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+	explode body type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+	explode bearing type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP3;
+	explode nano type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
 		return (corpsetype);
 	}
-	explode turret type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
-	explode rdoor type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
-	explode ldoor type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
+	explode turret type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
+	explode rdoor type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
+	explode ldoor type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
 		return (corpsetype);
 	}
-	explode turret type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+	explode turret type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP3;
 	corpsetype = 3;
 	return (corpsetype);
 }

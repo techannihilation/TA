@@ -101,39 +101,39 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type 288;
-		explode flare1 type 7;
-		explode flare2 type 7;
-		explode turret type 30;
-		explode hull type 288;
+		explode base type NOHEATCLOUD | 288;
+		explode flare1 type NOHEATCLOUD | 7;
+		explode flare2 type NOHEATCLOUD | 7;
+		explode turret type NOHEATCLOUD | 30;
+		explode hull type NOHEATCLOUD | 288;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type 288;
-		explode flare1 type 7;
-		explode flare2 type 7;
-		explode turret type 30;
-		explode hull type 288;
+		explode base type NOHEATCLOUD | 288;
+		explode flare1 type NOHEATCLOUD | 7;
+		explode flare2 type NOHEATCLOUD | 7;
+		explode turret type NOHEATCLOUD | 30;
+		explode hull type NOHEATCLOUD | 288;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type 288;
-		explode flare1 type 7;
-		explode flare2 type 7;
-		explode turret type 30;
-		explode hull type 30;
+		explode base type NOHEATCLOUD | 288;
+		explode flare1 type NOHEATCLOUD | 7;
+		explode flare2 type NOHEATCLOUD | 7;
+		explode turret type NOHEATCLOUD | 30;
+		explode hull type NOHEATCLOUD | 30;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type 288;
-	explode flare1 type 7;
-	explode flare2 type 7;
-	explode turret type 30;
-	explode hull type 30;
+	explode base type NOHEATCLOUD | 288;
+	explode flare1 type NOHEATCLOUD | 7;
+	explode flare2 type NOHEATCLOUD | 7;
+	explode turret type NOHEATCLOUD | 30;
+	explode hull type NOHEATCLOUD | 30;
 	return (corpsetype);
 	return (corpsetype);
 }

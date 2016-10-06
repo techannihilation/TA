@@ -202,11 +202,11 @@ Killed(severity, corpsetype)
 	hide flare2;
 	hide flare3;
 	hide flare4;
-	explode barrel1 type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
-	explode barrel2 type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
-	explode barrel3 type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
-	explode barrel4 type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
-	explode turret type SHATTER | EXPLODE_ON_HIT | BITMAP4;
+	explode barrel1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
+	explode barrel2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
+	explode barrel3 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
+	explode barrel4 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
+	explode turret type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP4;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;

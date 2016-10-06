@@ -63,6 +63,6 @@ Killed(severity, corpsetype)
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type SHATTER | BITMAP2;
+	explode base type NOHEATCLOUD | SHATTER | BITMAP2;
 	return (corpsetype);
 }

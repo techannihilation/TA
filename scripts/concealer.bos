@@ -126,66 +126,66 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type BITMAPONLY | BITMAP1;
-		explode cockpit type BITMAPONLY | BITMAP2;
-		explode leftpad type BITMAPONLY | BITMAP3;
-		explode rightpad type BITMAPONLY | BITMAP4;
-		explode leftbit type BITMAPONLY | BITMAP5;
-		explode rightbit type BITMAPONLY | BITMAP1;
-		explode jammerbase type BITMAPONLY | BITMAP2;
-		explode jammerfork type BITMAPONLY | BITMAP3;
-		explode engineleft type BITMAPONLY | BITMAP4;
-		explode engineright type BITMAPONLY | BITMAP5;
+		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode cockpit type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode leftpad type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode rightpad type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+		explode leftbit type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+		explode rightbit type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode jammerbase type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode jammerfork type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode engineleft type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+		explode engineright type NOHEATCLOUD | BITMAPONLY | BITMAP5;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type BITMAPONLY | BITMAP1;
-		explode cockpit type FALL | BITMAPONLY | BITMAP2;
-		explode leftpad type BITMAPONLY | BITMAP3;
-		explode rightpad type BITMAPONLY | BITMAP4;
-		explode leftbit type FALL | BITMAPONLY | BITMAP5;
-		explode rightbit type FALL | BITMAPONLY | BITMAP1;
-		explode jammerbase type SHATTER | BITMAPONLY | BITMAP2;
-		explode jammerfork type SHATTER | BITMAPONLY | BITMAP3;
-		explode engineleft type BITMAPONLY | BITMAP4;
-		explode engineright type BITMAPONLY | BITMAP5;
+		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode cockpit type NOHEATCLOUD | FALL | BITMAPONLY | BITMAP2;
+		explode leftpad type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode rightpad type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+		explode leftbit type NOHEATCLOUD | FALL | BITMAPONLY | BITMAP5;
+		explode rightbit type NOHEATCLOUD | FALL | BITMAPONLY | BITMAP1;
+		explode jammerbase type NOHEATCLOUD | SHATTER | BITMAPONLY | BITMAP2;
+		explode jammerfork type NOHEATCLOUD | SHATTER | BITMAPONLY | BITMAP3;
+		explode engineleft type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+		explode engineright type NOHEATCLOUD | BITMAPONLY | BITMAP5;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type BITMAPONLY | BITMAP1;
-		explode cockpit type FALL | BITMAPONLY | BITMAP2;
-		explode leftpad type BITMAPONLY | BITMAP3;
-		explode rightpad type BITMAPONLY | BITMAP4;
-		explode leftbit type FALL | BITMAPONLY | BITMAP5;
-		explode rightbit type FALL | BITMAPONLY | BITMAP1;
-		explode jammerbase type SHATTER | EXPLODE_ON_HIT | BITMAP2;
-		explode jammerfork type SHATTER | EXPLODE_ON_HIT | BITMAP3;
-		explode engineleft type BITMAPONLY | BITMAP4;
-		explode engineright type BITMAPONLY | BITMAP5;
-		explode wake1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-		explode wake2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode wake3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		explode wake4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode cockpit type NOHEATCLOUD | FALL | BITMAPONLY | BITMAP2;
+		explode leftpad type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode rightpad type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+		explode leftbit type NOHEATCLOUD | FALL | BITMAPONLY | BITMAP5;
+		explode rightbit type NOHEATCLOUD | FALL | BITMAPONLY | BITMAP1;
+		explode jammerbase type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP2;
+		explode jammerfork type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP3;
+		explode engineleft type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+		explode engineright type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+		explode wake1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode wake2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode wake3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode wake4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type BITMAPONLY | BITMAP1;
-	explode cockpit type FALL | BITMAPONLY | BITMAP2;
-	explode leftpad type BITMAPONLY | BITMAP3;
-	explode rightpad type BITMAPONLY | BITMAP4;
-	explode leftbit type FALL | BITMAPONLY | BITMAP5;
-	explode rightbit type FALL | BITMAPONLY | BITMAP1;
-	explode jammerbase type SHATTER | EXPLODE_ON_HIT | BITMAP2;
-	explode jammerfork type SHATTER | EXPLODE_ON_HIT | BITMAP3;
-	explode engineleft type BITMAPONLY | BITMAP4;
-	explode engineright type BITMAPONLY | BITMAP5;
-	explode wake1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-	explode wake2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode wake3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-	explode wake4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+	explode cockpit type NOHEATCLOUD | FALL | BITMAPONLY | BITMAP2;
+	explode leftpad type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+	explode rightpad type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+	explode leftbit type NOHEATCLOUD | FALL | BITMAPONLY | BITMAP5;
+	explode rightbit type NOHEATCLOUD | FALL | BITMAPONLY | BITMAP1;
+	explode jammerbase type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP2;
+	explode jammerfork type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP3;
+	explode engineleft type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+	explode engineright type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+	explode wake1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode wake2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode wake3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode wake4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 	return (corpsetype);
 }

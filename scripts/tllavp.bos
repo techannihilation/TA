@@ -232,24 +232,24 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
-	explode rdoor type BITMAPONLY | BITMAP4;
-	explode ldoor type BITMAPONLY | BITMAP4;
-	explode body type BITMAPONLY | BITMAP4;
-	explode nano1 type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+	explode rdoor type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+	explode ldoor type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+	explode body type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+	explode nano1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP3;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
 		return (corpsetype);
 	}
-	explode nano1 type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-	explode rdoor type SHATTER | EXPLODE_ON_HIT | BITMAP3;
-	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+	explode nano1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
+	explode rdoor type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP3;
+	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP3;
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP3;
 	return (corpsetype);
 }

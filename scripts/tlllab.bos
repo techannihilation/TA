@@ -22,7 +22,7 @@ HitByWeapon(anglex, anglez)
 		{
 			Static_Var_4 = 1;
 			hide rdoor;
-			explode rdoor type FALL | SHATTER | SMOKE | BITMAP2;
+			explode rdoor type NOHEATCLOUD | FALL | SHATTER | SMOKE | BITMAP2;
 		}
 	}
 }
@@ -232,11 +232,11 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
-	explode lpiece type BITMAPONLY | BITMAP4;
-	explode rpiece type BITMAPONLY | BITMAP4;
-	explode pad type BITMAPONLY | BITMAP4;
-	explode ldoor type SHATTER | EXPLODE_ON_HIT | BITMAP3;
-	explode lnano type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+	explode lpiece type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+	explode rpiece type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+	explode pad type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+	explode ldoor type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP3;
+	explode lnano type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP3;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
@@ -245,17 +245,17 @@ Killed(severity, corpsetype)
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode rnano type FALL | BITMAP2;
-		explode lnano type FALL | BITMAP3;
-		explode ldoor type FALL | BITMAP4;
-		explode rdoor type FALL | BITMAP5;
+		explode rnano type NOHEATCLOUD | FALL | BITMAP2;
+		explode lnano type NOHEATCLOUD | FALL | BITMAP3;
+		explode ldoor type NOHEATCLOUD | FALL | BITMAP4;
+		explode rdoor type NOHEATCLOUD | FALL | BITMAP5;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode ldoor type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-	explode rdoor type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
-	explode rpiece type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP4;
-	explode rnano type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
-	explode pad type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+	explode ldoor type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
+	explode rdoor type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
+	explode rpiece type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP4;
+	explode rnano type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
+	explode pad type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP3;
 	return (corpsetype);
 }

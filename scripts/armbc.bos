@@ -303,32 +303,32 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
-	explode barrel1a type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
-	explode barrel2b type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-	explode barrel2c type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-	explode base type BITMAPONLY | BITMAP5;
-	explode tur1 type BITMAPONLY | BITMAP4;
-	explode tur3 type BITMAPONLY | BITMAP3;
-	explode wake1 type BITMAPONLY | BITMAP3;
-	explode wake2 type BITMAPONLY | BITMAP3;
-	explode flare1a type BITMAPONLY | BITMAP3;
-	explode flare2b type BITMAPONLY | BITMAP3;
-	explode flare3b type BITMAPONLY | BITMAP3;
+	explode barrel1a type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
+	explode barrel2b type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
+	explode barrel2c type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
+	explode base type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+	explode tur1 type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+	explode tur3 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+	explode wake1 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+	explode wake2 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+	explode flare1a type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+	explode flare2b type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+	explode flare3b type NOHEATCLOUD | BITMAPONLY | BITMAP3;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
 		return (corpsetype);
 	}
-	explode tur1 type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-	explode barrel2a type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-	explode tur3 type SHATTER | EXPLODE_ON_HIT | BITMAP1;
-	explode barrel1a type SHATTER | EXPLODE_ON_HIT | BITMAP1;
+	explode tur1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
+	explode barrel2a type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
+	explode tur3 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
+	explode barrel1a type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP1;
+	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
 	return (corpsetype);
 }

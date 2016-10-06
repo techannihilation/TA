@@ -240,7 +240,7 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-	explode flare type BITMAPONLY | BITMAP5;
+	explode flare type NOHEATCLOUD | BITMAPONLY | BITMAP5;
 	move barrel to z-axis [-4.000000] speed [500.000000];
 	turn arms to y-axis <-50.016484> speed <500.115385>;
 	turn sleeve to y-axis <50.016484> speed <500.115385>;
@@ -299,9 +299,9 @@ Killed(severity, corpsetype)
 	var Func_Var_3, Func_Var_4;
 	hide flare;
 	corpsetype = 2 - ( 0 == Rand( 0, 4 ) );
-	explode turret type BITMAPONLY | BITMAP1;
-	explode barrel type BITMAPONLY | BITMAP2;
-	explode flare type BITMAPONLY | BITMAP1;
-	explode sleeve type BITMAPONLY | BITMAP5;
+	explode turret type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+	explode barrel type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+	explode flare type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+	explode sleeve type NOHEATCLOUD | BITMAPONLY | BITMAP5;
 	return (corpsetype);
 }
