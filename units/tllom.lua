@@ -58,7 +58,7 @@ return {
 		upright = false,
 		workertime = 0,
 		customparams = {
-			requiretech = "T3 Factory",
+			--requiretech = "T3 Factory",
 		},
 		featuredefs = {
 			heap = {

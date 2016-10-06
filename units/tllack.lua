@@ -81,7 +81,8 @@ return {
 			[22] = "tlldmc",
 			[23] = "tlllab",
 			[24] = "tllalab",
-			[25] = "tllhtcp",
+			[25] = "tllturtle_lab",
+			[26] = "tllhtcp",
 		},
 		featuredefs = {
 			dead = {
