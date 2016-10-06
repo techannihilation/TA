@@ -24,12 +24,12 @@ walk()
 		move foot2 to z-axis [0.000000] now;
 		move foot1 to x-axis [0.000000] now;
 		move foot1 to z-axis [0.000000] now;
-		turn thigh1 to x-axis <16.895604> now;
-		turn thigh2 to x-axis <-45.697802> now;
-		turn torso to x-axis <1.796703> now;
-		turn torso to z-axis <-0.697802> now;
-		turn shoulder to x-axis <-6.296703> now;
-		turn forearm to x-axis <-15.796703> now;
+		turn thigh1 to x-axis <16.890110> now;
+		turn thigh2 to x-axis <-45.692308> now;
+		turn torso to x-axis <1.791209> now;
+		turn torso to z-axis <-0.692308> now;
+		turn shoulder to x-axis <-6.291209> now;
+		turn forearm to x-axis <-15.791209> now;
 		turn leg2 to x-axis <51.000000> now;
 		turn foot1 to x-axis <-16.500000> now;
 		sleep 100;
@@ -37,85 +37,85 @@ walk()
 	if( TRUE )
 	{
 		move torso to y-axis [0.000000] now;
-		turn thigh1 to x-axis <24.296703> now;
-		turn thigh2 to x-axis <-41.098901> now;
-		turn torso to x-axis <0.395604> now;
-		turn torso to z-axis <-0.395604> now;
+		turn thigh1 to x-axis <24.291209> now;
+		turn thigh2 to x-axis <-41.093407> now;
+		turn torso to x-axis <0.390110> now;
+		turn torso to z-axis <-0.390110> now;
 		turn shoulder to x-axis <-13.000000> now;
-		turn forearm to x-axis <-22.895604> now;
-		turn leg2 to x-axis <43.197802> now;
+		turn forearm to x-axis <-22.890110> now;
+		turn leg2 to x-axis <43.192308> now;
 		turn foot1 to x-axis <-12.000000> now;
 		sleep 102;
 	}
 	if( TRUE )
 	{
-		turn thigh1 to x-axis <37.598901> now;
-		turn thigh2 to x-axis <-26.395604> now;
+		turn thigh1 to x-axis <37.593407> now;
+		turn thigh2 to x-axis <-26.390110> now;
 		turn torso to x-axis <0.000000> now;
 		turn torso to z-axis <0.000000> now;
-		turn shoulder to x-axis <-19.296703> now;
+		turn shoulder to x-axis <-19.291209> now;
 		turn forearm to x-axis <-21.500000> now;
-		turn leg2 to x-axis <26.395604> now;
-		turn leg1 to x-axis <8.395604> now;
+		turn leg2 to x-axis <26.390110> now;
+		turn leg1 to x-axis <8.390110> now;
 		sleep 104;
 	}
 	if( TRUE )
 	{
 		move torso to y-axis [-0.300000] now;
-		turn thigh1 to x-axis <22.098901> now;
+		turn thigh1 to x-axis <22.093407> now;
 		turn thigh2 to x-axis <-12.000000> now;
 		turn torso to x-axis <0.000000> now;
-		turn shoulder to x-axis <-17.895604> now;
-		turn forearm to x-axis <-5.296703> now;
-		turn leg2 to x-axis <11.598901> now;
-		turn leg1 to x-axis <27.395604> now;
+		turn shoulder to x-axis <-17.890110> now;
+		turn forearm to x-axis <-5.291209> now;
+		turn leg2 to x-axis <11.593407> now;
+		turn leg1 to x-axis <27.390110> now;
 		sleep 102;
 	}
 	if( TRUE )
 	{
 		move torso to y-axis [-0.300000] now;
-		turn thigh1 to x-axis <3.197802> now;
+		turn thigh1 to x-axis <3.192308> now;
 		turn thigh2 to x-axis <7.000000> now;
-		turn torso to x-axis <1.796703> now;
-		turn torso to z-axis <1.395604> now;
-		turn shoulder to x-axis <-5.296703> now;
+		turn torso to x-axis <1.791209> now;
+		turn torso to z-axis <1.390110> now;
+		turn shoulder to x-axis <-5.291209> now;
 		turn forearm to x-axis <0.000000> now;
-		turn leg2 to x-axis <-1.098901> now;
-		turn foot2 to x-axis <-6.296703> now;
+		turn leg2 to x-axis <-1.093407> now;
+		turn foot2 to x-axis <-6.291209> now;
 		turn leg1 to x-axis <53.500000> now;
 		sleep 102;
 	}
 	if( TRUE )
 	{
 		move torso to y-axis [-0.100000] now;
-		turn thigh1 to x-axis <-20.697802> now;
-		turn thigh2 to x-axis <20.697802> now;
+		turn thigh1 to x-axis <-20.692308> now;
+		turn thigh2 to x-axis <20.692308> now;
 		turn torso to x-axis <2.500000> now;
-		turn torso to z-axis <0.697802> now;
+		turn torso to z-axis <0.692308> now;
 		turn shoulder to x-axis <2.500000> now;
-		turn foot2 to x-axis <-19.697802> now;
-		turn leg1 to x-axis <60.796703> now;
+		turn foot2 to x-axis <-19.692308> now;
+		turn leg1 to x-axis <60.791209> now;
 		sleep 103;
 	}
 	if( TRUE )
 	{
 		move torso to y-axis [-0.100000] now;
-		turn thigh1 to x-axis <-39.395604> now;
+		turn thigh1 to x-axis <-39.390110> now;
 		turn thigh2 to x-axis <28.500000> now;
-		turn torso to x-axis <0.697802> now;
-		turn shoulder to x-axis <1.395604> now;
-		turn foot2 to x-axis <-27.098901> now;
+		turn torso to x-axis <0.692308> now;
+		turn shoulder to x-axis <1.390110> now;
+		turn foot2 to x-axis <-27.093407> now;
 		sleep 103;
 	}
 	if( TRUE )
 	{
 		move torso to y-axis [0.000000] now;
 		turn thigh1 to x-axis <-44.000000> now;
-		turn thigh2 to x-axis <34.796703> now;
-		turn torso to x-axis <0.395604> now;
-		turn torso to z-axis <0.395604> now;
-		turn shoulder to x-axis <1.098901> now;
-		turn foot2 to x-axis <-20.395604> now;
+		turn thigh2 to x-axis <34.791209> now;
+		turn torso to x-axis <0.390110> now;
+		turn torso to z-axis <0.390110> now;
+		turn shoulder to x-axis <1.093407> now;
+		turn foot2 to x-axis <-20.390110> now;
 		turn leg1 to x-axis <44.000000> now;
 		turn foot1 to x-axis <0.000000> now;
 		sleep 103;
@@ -123,44 +123,44 @@ walk()
 	if( TRUE )
 	{
 		turn thigh1 to x-axis <-32.000000> now;
-		turn thigh2 to x-axis <35.895604> now;
+		turn thigh2 to x-axis <35.890110> now;
 		turn torso to x-axis <0.000000> now;
 		turn torso to z-axis <0.000000> now;
 		turn shoulder to x-axis <0.000000> now;
-		turn leg2 to x-axis <16.197802> now;
-		turn foot2 to x-axis <-13.697802> now;
-		turn leg1 to x-axis <32.395604> now;
+		turn leg2 to x-axis <16.192308> now;
+		turn foot2 to x-axis <-13.692308> now;
+		turn leg1 to x-axis <32.390110> now;
 		sleep 103;
 	}
 	if( TRUE )
 	{
 		move torso to y-axis [-0.300000] now;
-		turn thigh1 to x-axis <-23.598901> now;
-		turn thigh2 to x-axis <23.598901> now;
-		turn leg2 to x-axis <40.395604> now;
-		turn leg1 to x-axis <24.296703> now;
+		turn thigh1 to x-axis <-23.593407> now;
+		turn thigh2 to x-axis <23.593407> now;
+		turn leg2 to x-axis <40.390110> now;
+		turn leg1 to x-axis <24.291209> now;
 		sleep 103;
 	}
 	if( TRUE )
 	{
 		move torso to y-axis [-0.200000] now;
-		turn thigh1 to x-axis <-1.395604> now;
-		turn thigh2 to x-axis <-14.395604> now;
-		turn torso to x-axis <2.098901> now;
-		turn torso to z-axis <-2.098901> now;
-		turn shoulder to x-axis <-0.697802> now;
-		turn leg2 to x-axis <69.296703> now;
+		turn thigh1 to x-axis <-1.390110> now;
+		turn thigh2 to x-axis <-14.390110> now;
+		turn torso to x-axis <2.093407> now;
+		turn torso to z-axis <-2.093407> now;
+		turn shoulder to x-axis <-0.692308> now;
+		turn leg2 to x-axis <69.291209> now;
 		turn leg1 to x-axis <2.500000> now;
 		sleep 103;
 	}
 	move torso to y-axis [-0.100000] now;
-	turn thigh1 to x-axis <11.598901> now;
-	turn thigh2 to x-axis <-35.197802> now;
-	turn torso to z-axis <-1.098901> now;
+	turn thigh1 to x-axis <11.593407> now;
+	turn thigh2 to x-axis <-35.192308> now;
+	turn torso to z-axis <-1.093407> now;
 	turn shoulder to x-axis <-2.500000> now;
-	turn forearm to x-axis <-4.197802> now;
-	turn leg2 to x-axis <76.697802> now;
-	turn foot1 to x-axis <-14.098901> now;
+	turn forearm to x-axis <-4.192308> now;
+	turn leg2 to x-axis <76.692308> now;
+	turn foot1 to x-axis <-14.093407> now;
 	sleep 103;
 }
 
@@ -168,65 +168,65 @@ walklegs()
 {
 	if( TRUE )
 	{
-		turn thigh1 to x-axis <16.895604> now;
-		turn thigh2 to x-axis <-45.697802> now;
+		turn thigh1 to x-axis <16.890110> now;
+		turn thigh2 to x-axis <-45.692308> now;
 		turn leg2 to x-axis <51.000000> now;
 		turn foot1 to x-axis <-16.500000> now;
 		sleep 100;
 	}
 	if( TRUE )
 	{
-		turn thigh1 to x-axis <24.296703> now;
-		turn thigh2 to x-axis <-41.098901> now;
-		turn leg2 to x-axis <43.197802> now;
+		turn thigh1 to x-axis <24.291209> now;
+		turn thigh2 to x-axis <-41.093407> now;
+		turn leg2 to x-axis <43.192308> now;
 		turn foot1 to x-axis <-12.000000> now;
 		sleep 100;
 	}
 	if( TRUE )
 	{
-		turn thigh1 to x-axis <37.598901> now;
-		turn thigh2 to x-axis <-26.395604> now;
-		turn leg2 to x-axis <26.395604> now;
-		turn leg1 to x-axis <8.395604> now;
+		turn thigh1 to x-axis <37.593407> now;
+		turn thigh2 to x-axis <-26.390110> now;
+		turn leg2 to x-axis <26.390110> now;
+		turn leg1 to x-axis <8.390110> now;
 		sleep 100;
 	}
 	if( TRUE )
 	{
-		turn thigh1 to x-axis <22.098901> now;
+		turn thigh1 to x-axis <22.093407> now;
 		turn thigh2 to x-axis <-12.000000> now;
-		turn leg2 to x-axis <11.598901> now;
-		turn leg1 to x-axis <27.395604> now;
+		turn leg2 to x-axis <11.593407> now;
+		turn leg1 to x-axis <27.390110> now;
 		sleep 100;
 	}
 	if( TRUE )
 	{
-		turn thigh1 to x-axis <3.197802> now;
+		turn thigh1 to x-axis <3.192308> now;
 		turn thigh2 to x-axis <7.000000> now;
-		turn leg2 to x-axis <-1.098901> now;
-		turn foot2 to x-axis <-6.296703> now;
+		turn leg2 to x-axis <-1.093407> now;
+		turn foot2 to x-axis <-6.291209> now;
 		turn leg1 to x-axis <53.500000> now;
 		sleep 100;
 	}
 	if( TRUE )
 	{
-		turn thigh1 to x-axis <-20.697802> now;
-		turn thigh2 to x-axis <20.697802> now;
-		turn foot2 to x-axis <-19.697802> now;
-		turn leg1 to x-axis <60.796703> now;
+		turn thigh1 to x-axis <-20.692308> now;
+		turn thigh2 to x-axis <20.692308> now;
+		turn foot2 to x-axis <-19.692308> now;
+		turn leg1 to x-axis <60.791209> now;
 		sleep 100;
 	}
 	if( TRUE )
 	{
-		turn thigh1 to x-axis <-39.395604> now;
+		turn thigh1 to x-axis <-39.390110> now;
 		turn thigh2 to x-axis <28.500000> now;
-		turn foot2 to x-axis <-27.098901> now;
+		turn foot2 to x-axis <-27.093407> now;
 		sleep 100;
 	}
 	if( TRUE )
 	{
 		turn thigh1 to x-axis <-44.000000> now;
-		turn thigh2 to x-axis <34.796703> now;
-		turn foot2 to x-axis <-20.395604> now;
+		turn thigh2 to x-axis <34.791209> now;
+		turn foot2 to x-axis <-20.390110> now;
 		turn leg1 to x-axis <44.000000> now;
 		turn foot1 to x-axis <0.000000> now;
 		sleep 100;
@@ -234,32 +234,32 @@ walklegs()
 	if( TRUE )
 	{
 		turn thigh1 to x-axis <-32.000000> now;
-		turn thigh2 to x-axis <35.895604> now;
-		turn leg2 to x-axis <16.197802> now;
-		turn foot2 to x-axis <-13.697802> now;
-		turn leg1 to x-axis <32.395604> now;
+		turn thigh2 to x-axis <35.890110> now;
+		turn leg2 to x-axis <16.192308> now;
+		turn foot2 to x-axis <-13.692308> now;
+		turn leg1 to x-axis <32.390110> now;
 		sleep 100;
 	}
 	if( TRUE )
 	{
-		turn thigh1 to x-axis <-23.598901> now;
-		turn thigh2 to x-axis <23.598901> now;
-		turn leg2 to x-axis <40.395604> now;
-		turn leg1 to x-axis <24.296703> now;
+		turn thigh1 to x-axis <-23.593407> now;
+		turn thigh2 to x-axis <23.593407> now;
+		turn leg2 to x-axis <40.390110> now;
+		turn leg1 to x-axis <24.291209> now;
 		sleep 100;
 	}
 	if( TRUE )
 	{
-		turn thigh1 to x-axis <-1.395604> now;
-		turn thigh2 to x-axis <-14.395604> now;
-		turn leg2 to x-axis <69.296703> now;
+		turn thigh1 to x-axis <-1.390110> now;
+		turn thigh2 to x-axis <-14.390110> now;
+		turn leg2 to x-axis <69.291209> now;
 		turn leg1 to x-axis <2.500000> now;
 		sleep 100;
 	}
-	turn thigh1 to x-axis <11.598901> now;
-	turn thigh2 to x-axis <-35.197802> now;
-	turn leg2 to x-axis <76.697802> now;
-	turn foot1 to x-axis <-14.098901> now;
+	turn thigh1 to x-axis <11.593407> now;
+	turn thigh2 to x-axis <-35.192308> now;
+	turn leg2 to x-axis <76.692308> now;
+	turn foot1 to x-axis <-14.093407> now;
 	sleep 100;
 }
 
@@ -454,7 +454,7 @@ Killed(severity, corpsetype)
 		explode thigh2 type BITMAPONLY | BITMAP1;
 		explode leg2 type BITMAPONLY | BITMAP1;
 		explode foot2 type BITMAPONLY | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -474,7 +474,7 @@ Killed(severity, corpsetype)
 		explode thigh2 type SHATTER | BITMAP4;
 		explode leg2 type SHATTER | BITMAP4;
 		explode foot2 type SHATTER | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -494,7 +494,7 @@ Killed(severity, corpsetype)
 		explode thigh2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 		explode leg2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 		explode foot2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode groundplate type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
@@ -512,4 +512,5 @@ Killed(severity, corpsetype)
 	explode thigh2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 	explode leg2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 	explode foot2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	return (corpsetype);
 }

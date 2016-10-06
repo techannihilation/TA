@@ -37,8 +37,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		}
 		sleep sleeptime;
 	}
-	return (0);
-	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
 }
 
 HitByWeapon(anglex, anglez)
@@ -102,8 +100,8 @@ FirePrimary()
 	emit-sfx 1024 from flare;
 	move barrel to z-axis [-4.000000] speed [500.000000];
 	move sk_barrel to z-axis [-3.000000] speed [200.000000];
-	turn arms to y-axis <-50.010989> speed <500.000000>;
-	turn sleeve to y-axis <50.010989> speed <500.000000>;
+	turn arms to y-axis <-50.005495> speed <500.000000>;
+	turn sleeve to y-axis <50.005495> speed <500.000000>;
 	sleep 100;
 	move barrel to z-axis [0.000000] speed [2.000000];
 	move sk_barrel to z-axis [0.000000] speed [3.000000];
@@ -137,7 +135,7 @@ Killed(severity, corpsetype)
 		explode sleeve type SHATTER | EXPLODE_ON_HIT | BITMAP3;
 		explode sk_barrel type SHATTER | EXPLODE_ON_HIT | BITMAP3;
 		explode barrel type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -148,7 +146,7 @@ Killed(severity, corpsetype)
 		explode sleeve type SHATTER | SMOKE | EXPLODE_ON_HIT | BITMAP3;
 		explode sk_barrel type SHATTER | EXPLODE_ON_HIT | BITMAP3;
 		explode barrel type SHATTER | EXPLODE_ON_HIT | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -159,7 +157,7 @@ Killed(severity, corpsetype)
 		explode sleeve type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode sk_barrel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode barrel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP2;
@@ -168,4 +166,5 @@ Killed(severity, corpsetype)
 	explode sleeve type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode sk_barrel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode barrel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	return (corpsetype);
 }

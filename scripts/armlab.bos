@@ -6,7 +6,7 @@
 piece  base, pad, beam1, beam2, door4A, door3A, door2A, door1A,
        stand1, stand2, nano2, nano1, door1, door2, door3, door4;
 
-static-var  spray, unitviewer, statechg_DesiredState, statechg_StateChanging;
+static-var  spray, Static_Var_2, Static_Var_3, Static_Var_4;
 
 // Signal definitions
 #define SIG_ACTIVATE			2
@@ -15,13 +15,13 @@ static-var  spray, unitviewer, statechg_DesiredState, statechg_StateChanging;
 activatescr()
 {
 	move door4A to z-axis [0.000000] now;
-	move door4A to z-axis [-24.000000] speed [24.048050];
+	move door4A to z-axis [-9.600000] speed [9.619220];
 	move door3A to z-axis [0.000000] now;
-	move door3A to z-axis [-23.750000] speed [23.797592];
+	move door3A to z-axis [-9.500000] speed [9.519031];
 	move door2A to z-axis [0.000000] now;
-	move door2A to z-axis [25.000000] speed [25.050095];
+	move door2A to z-axis [10.000000] speed [10.020038];
 	move door1A to z-axis [0.000000] now;
-	move door1A to z-axis [24.750000] speed [24.799545];
+	move door1A to z-axis [9.900000] speed [9.919812];
 	turn stand1 to z-axis <0.000000> now;
 	turn stand1 to z-axis <35.104396> speed <35.170330>;
 	turn stand2 to z-axis <0.000000> now;
@@ -31,40 +31,38 @@ activatescr()
 	turn nano1 to z-axis <0.000000> now;
 	turn nano1 to z-axis <-100.824176> speed <101.016484>;
 	sleep 1000;
-
 	set ARMORED to 0;
-	move door1 to x-axis [23.750000] speed [18.750000];
-	move door2 to x-axis [-26.250000] speed [18.750000];
-	move door3 to x-axis [23.750000] speed [18.750000];
-	move door4 to x-axis [-26.250000] speed [18.750000];
+	move door1 to x-axis [9.500000] speed [7.500000];
+	move door2 to x-axis [-10.500000] speed [7.500000];
+	move door3 to x-axis [9.500000] speed [7.500000];
+	move door4 to x-axis [-10.500000] speed [7.500000];
 	sleep 1000;
 }
 
 deactivatescr()
 {
-	move door1 to x-axis [23.750000] now;
-	move door1 to x-axis [0.000000] speed [18.750000];
-	move door2 to x-axis [-26.250000] now;
-	move door2 to x-axis [0.000000] speed [18.750000];
-	move door3 to x-axis [23.750000] now;
-	move door3 to x-axis [0.000000] speed [18.750000];
-	move door4 to x-axis [-26.250000] now;
-	move door4 to x-axis [0.000000] speed [18.750000];
-	move door4A to z-axis [-24.000000] now;
-	move door3A to z-axis [-23.750000] now;
-	move door2A to z-axis [25.000000] now;
-	move door1A to z-axis [24.750000] now;
+	move door1 to x-axis [9.500000] now;
+	move door1 to x-axis [0.000000] speed [7.500000];
+	move door2 to x-axis [-10.500000] now;
+	move door2 to x-axis [0.000000] speed [7.500000];
+	move door3 to x-axis [9.500000] now;
+	move door3 to x-axis [0.000000] speed [7.500000];
+	move door4 to x-axis [-10.500000] now;
+	move door4 to x-axis [0.000000] speed [7.500000];
+	move door4A to z-axis [-9.600000] now;
+	move door3A to z-axis [-9.500000] now;
+	move door2A to z-axis [10.000000] now;
+	move door1A to z-axis [9.900000] now;
 	turn stand1 to z-axis <35.104396> now;
 	turn stand2 to z-axis <-35.549451> now;
 	turn nano2 to z-axis <102.170330> now;
 	turn nano1 to z-axis <-100.824176> now;
 	sleep 1000;
-
 	set ARMORED to 1;
-	move door4A to z-axis [0.000000] speed [23.809525];
-	move door3A to z-axis [0.000000] speed [23.561462];
-	move door2A to z-axis [0.000000] speed [24.801575];
-	move door1A to z-axis [0.000000] speed [24.553513];
+	move door4A to z-axis [0.000000] speed [9.523810];
+	move door3A to z-axis [0.000000] speed [9.424579];
+	move door2A to z-axis [0.000000] speed [9.920630];
+	move door1A to z-axis [0.000000] speed [9.821405];
 	turn stand1 to z-axis <0.000000> speed <34.824176>;
 	turn stand2 to z-axis <0.000000> speed <35.269231>;
 	turn nano2 to z-axis <0.000000> speed <101.357143>;
@@ -169,17 +167,17 @@ Stop()
 
 RequestState(requestedstate, currentstate)
 {
-	if( statechg_StateChanging )
+	if( Static_Var_4 )
 	{
-		statechg_DesiredState = requestedstate;
+		Static_Var_3 = requestedstate;
 		return (0);
 	}
-	statechg_StateChanging = TRUE;
-	currentstate = statechg_DesiredState;
-	statechg_DesiredState = requestedstate;
-	while( statechg_DesiredState != currentstate )
+	Static_Var_4 = 1;
+	currentstate = Static_Var_3;
+	Static_Var_3 = requestedstate;
+	while( Static_Var_3 != currentstate )
 	{
-		if( statechg_DesiredState )
+		if( Static_Var_3 )
 		{
 			call-script Stop();
 			currentstate = 1;
@@ -190,7 +188,7 @@ RequestState(requestedstate, currentstate)
 			currentstate = 0;
 		}
 	}
-	statechg_StateChanging = FALSE;
+	Static_Var_4 = 0;
 }
 
 Create()
@@ -210,17 +208,17 @@ Create()
 	dont-shade pad;
 	dont-shade stand1;
 	dont-shade stand2;
-	unitviewer = FALSE;
+	Static_Var_2 = 0;
 	spray = base;
 	set ARMORED to 1;
-	statechg_DesiredState = TRUE;
-	statechg_StateChanging = FALSE;
+	Static_Var_3 = 1;
+	Static_Var_4 = 0;
 	start-script SmokeUnit();
 }
 
 QueryNanoPiece(piecenum)
 {
-	piecenum = beam1 + spray;
+	piecenum = 2 + spray;
 	spray = !spray;
 }
 
@@ -234,7 +232,7 @@ Deactivate()
 {
 	signal SIG_ACTIVATE;
 	set-signal-mask SIG_ACTIVATE;
-	if( !unitviewer )
+	if( !Static_Var_2 )
 	{
 		sleep 5000;
 	}
@@ -283,7 +281,7 @@ Killed(severity, corpsetype)
 		explode pad type BITMAPONLY | BITMAP4;
 		explode stand1 type BITMAPONLY | BITMAP5;
 		explode stand2 type BITMAPONLY | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -304,7 +302,7 @@ Killed(severity, corpsetype)
 		explode pad type BITMAPONLY | BITMAP4;
 		explode stand1 type BITMAPONLY | BITMAP5;
 		explode stand2 type BITMAPONLY | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -325,7 +323,7 @@ Killed(severity, corpsetype)
 		explode pad type BITMAPONLY | BITMAP4;
 		explode stand1 type BITMAPONLY | BITMAP5;
 		explode stand2 type BITMAPONLY | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type SHATTER | EXPLODE_ON_HIT | BITMAP1;
@@ -344,4 +342,5 @@ Killed(severity, corpsetype)
 	explode pad type BITMAPONLY | BITMAP4;
 	explode stand1 type BITMAPONLY | BITMAP5;
 	explode stand2 type BITMAPONLY | BITMAP1;
+	return (corpsetype);
 }

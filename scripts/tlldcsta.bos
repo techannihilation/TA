@@ -5,6 +5,7 @@
 
 piece  base, body, lights, flare1, flare2;
 
+
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
 	while( get BUILD_PERCENT_LEFT )
@@ -32,24 +33,23 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-Tangue()
+Tangue(Func_Var_1, Func_Var_2, Func_Var_3)
 {
-	var rockDir, rockAng, rockSpeed;
-	rockDir = <-0.1>;
-	rockAng = <-0.1>;
+	Func_Var_1 = -18;
+	Func_Var_2 = -18;
 	while( TRUE )
 	{
-		while( get ABS(rockAng) < <1.31> )
+		while( get ABS(Func_Var_2) < 238 )
 		{
-			rockSpeed = <1.45> - get ABS(rockAng);
-			turn base to x-axis rockAng speed rockSpeed*5;
-			turn base to z-axis rockAng speed rockSpeed*5;
+			Func_Var_3 = 263 - get ABS(Func_Var_2);
+			turn base to x-axis Func_Var_2 speed Func_Var_3 * <0.027473>;
+			turn base to z-axis Func_Var_2 speed Func_Var_3 * <0.027473>;
 			wait-for-turn base around x-axis;
 			wait-for-turn base around z-axis;
-			rockAng = rockAng + rockDir;
+			Func_Var_2 = Func_Var_2 + Func_Var_1;
 		}
-		rockDir = 0 - rockDir;
-		rockAng = rockAng + rockDir + rockDir;
+		Func_Var_1 = 0 - Func_Var_1;
+		Func_Var_2 = Func_Var_2 + Func_Var_1 + Func_Var_1;
 	}
 }
 
@@ -89,23 +89,24 @@ Killed(severity, corpsetype)
 		corpsetype = 1;
 		explode body type BITMAPONLY | BITMAP1;
 		explode flare1 type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
 		explode flare1 type BITMAPONLY | BITMAP2;
 		explode body type SHATTER | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
 		explode flare1 type BITMAPONLY | BITMAP2;
 		explode body type SHATTER | EXPLODE_ON_HIT | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode flare1 type BITMAPONLY | BITMAP2;
 	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+	return (corpsetype);
 }

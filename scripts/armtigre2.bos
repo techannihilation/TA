@@ -9,34 +9,33 @@ piece  base, baseb, turret, canon1, canon2, flare1, flare2, laser,
        roued3b, shell1, shell2;
 
 static-var  restore_delay, Static_Var_2, Static_Var_3, gun_1, gun_2,
-            Static_Var_6, Static_Var_7, turnClock, turnCounter, wheelSpeed,
-            currentSpeed, moveSpeed;
+            gun_3, Static_Var_7, Static_Var_8, Static_Var_9, Static_Var_10,
+            Static_Var_11, Static_Var_12;
 
 // Signal definitions
 #define SIG_AIM				2
 #define SIG_AIM_2			4
 #define SIG_AIM_3			8
 
-TurnControl()
+
+TurnControl(Func_Var_1, Func_Var_2, Func_Var_3)
 {
-	var lastHeading, currHeading, diffHeading;
-	lastHeading = GET HEADING;
-	while (TRUE)
+	Func_Var_1 = get HEADING;
+	while( TRUE )
 	{
-		currHeading = GET HEADING;
-		diffHeading = currHeading - lastHeading;
-		// Set Values for differential system
-		turnClock = <0.015>;
-		turnCounter = <0.015>;	
-		if (diffHeading >= 500)
-			{
-			turnClock = <0.009>;
-			}
-		if (diffHeading <= -500)
-			{
-			turnCounter = <0.009>;
-			}
-		lastHeading = currHeading;
+		Func_Var_2 = get HEADING;
+		Func_Var_3 = Func_Var_2 - Func_Var_1;
+		Static_Var_8 = 2;
+		Static_Var_9 = 2;
+		if( Func_Var_3 >= 500 )
+		{
+			Static_Var_8 = 1;
+		}
+		if( Func_Var_3 <= -500 )
+		{
+			Static_Var_9 = 1;
+		}
+		Func_Var_1 = Func_Var_2;
 		sleep 67;
 	}
 }
@@ -44,25 +43,23 @@ TurnControl()
 WheelControl()
 {
 	sleep 33;
-	while(TRUE)
+	while( TRUE )
 	{
-		currentSpeed = (get CURRENT_SPEED)*20/moveSpeed;
-		wheelSpeed = currentSpeed * 6;
-		if (currentSpeed<4) currentSpeed=4;	// prevent infinite timing
-		//left wheels
-		spin roueg1 around x-axis speed (<1.000000> * wheelSpeed ) * turnClock accelerate <3.000000> * currentSpeed;
-		spin roueg2 around x-axis speed (<1.000000> * wheelSpeed ) * turnClock accelerate <3.000000> * currentSpeed;
-		spin roueg3 around x-axis speed (<1.000000> * wheelSpeed ) * turnClock accelerate <3.000000> * currentSpeed;
-			
-		//right wheels
-		spin roued1 around x-axis speed (<1.000000> * wheelSpeed ) * turnCounter accelerate <3.000000> * currentSpeed;
-		spin roued2 around x-axis speed (<1.000000> * wheelSpeed ) * turnCounter accelerate <3.000000> * currentSpeed;
-		spin roued3 around x-axis speed (<1.000000> * wheelSpeed ) * turnCounter accelerate <3.000000> * currentSpeed;
-			
+		Static_Var_11 = get CURRENT_SPEED * 20 / Static_Var_12;
+		Static_Var_10 = Static_Var_11 * 6;
+		if( Static_Var_11 < 4 )
+		{
+			Static_Var_11 = 4;
+		}
+		spin roueg1 around x-axis speed <1.000000> * Static_Var_10 * Static_Var_8 accelerate <3.000000> * Static_Var_11;
+		spin roueg2 around x-axis speed <1.000000> * Static_Var_10 * Static_Var_8 accelerate <3.000000> * Static_Var_11;
+		spin roueg3 around x-axis speed <1.000000> * Static_Var_10 * Static_Var_8 accelerate <3.000000> * Static_Var_11;
+		spin roued1 around x-axis speed <1.000000> * Static_Var_10 * Static_Var_9 accelerate <3.000000> * Static_Var_11;
+		spin roued2 around x-axis speed <1.000000> * Static_Var_10 * Static_Var_9 accelerate <3.000000> * Static_Var_11;
+		spin roued3 around x-axis speed <1.000000> * Static_Var_10 * Static_Var_9 accelerate <3.000000> * Static_Var_11;
 		sleep 67;
 	}
 }
-
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -91,8 +88,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		}
 		sleep sleeptime;
 	}
-	return (0);
-	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
 }
 
 HitByWeapon(anglex, anglez)
@@ -126,9 +121,9 @@ Create()
 	hide shell2;
 	gun_1 = baseb;
 	gun_2 = baseb;
-	Static_Var_6 = 1;
+	gun_3 = baseb;
 	Static_Var_7 = 1;
-	moveSpeed = get MAX_SPEED;
+	Static_Var_12 = get MAX_SPEED;
 	restore_delay = 3000;
 }
 
@@ -207,7 +202,6 @@ FirePrimary()
 		move canon1 to z-axis [-2.000000] speed [20.000000];
 		show flare1;
 		show shell1;
-		//explode shell1 type FALL;
 		sleep 150;
 		hide flare1;
 		move canon1 to z-axis [0.000000] speed [10.000000];
@@ -219,7 +213,6 @@ FirePrimary()
 		move canon2 to z-axis [-2.000000] speed [20.000000];
 		show flare2;
 		show shell2;
-		//explode shell2 type FALL;
 		sleep 150;
 		hide flare2;
 		move canon2 to z-axis [0.000000] speed [10.000000];
@@ -250,14 +243,14 @@ FireSecondary()
 
 FireTertiary()
 {
-	if( Static_Var_6 == 1 )
+	if( gun_3 == 1 )
 	{
-		Static_Var_6 = 2;
+		gun_3 = turret;
 		return (0);
 	}
-	if( Static_Var_6 == 2 )
+	if( gun_3 == 2 )
 	{
-		Static_Var_6 = 1;
+		gun_3 = baseb;
 		return (0);
 	}
 }
@@ -303,11 +296,11 @@ QuerySecondary(piecenum)
 
 QueryTertiary(piecenum)
 {
-	if( Static_Var_6 == 1 )
+	if( gun_3 == 1 )
 	{
 		piecenum = miss1;
 	}
-	if( Static_Var_6 == 2 )
+	if( gun_3 == 2 )
 	{
 		piecenum = miss2;
 	}
@@ -350,7 +343,7 @@ Killed(severity, corpsetype)
 		explode roued3b type BITMAPONLY | BITMAP3;
 		explode shell1 type BITMAPONLY | BITMAP2;
 		explode shell2 type BITMAPONLY | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -382,7 +375,7 @@ Killed(severity, corpsetype)
 		explode roued3b type BITMAPONLY | BITMAP3;
 		explode shell1 type BITMAPONLY | BITMAP2;
 		explode shell2 type BITMAPONLY | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -414,7 +407,7 @@ Killed(severity, corpsetype)
 		explode roued3b type BITMAPONLY | BITMAP3;
 		explode shell1 type BITMAPONLY | BITMAP2;
 		explode shell2 type BITMAPONLY | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode baseb type BITMAPONLY | BITMAP5;
@@ -444,4 +437,5 @@ Killed(severity, corpsetype)
 	explode roued3b type BITMAPONLY | BITMAP3;
 	explode shell1 type BITMAPONLY | BITMAP2;
 	explode shell2 type BITMAPONLY | BITMAP3;
+	return (corpsetype);
 }

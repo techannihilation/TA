@@ -5,7 +5,8 @@
 
 piece  base, sphere;
 
-static-var  mmState, Active;
+static-var  Static_Var_1, Static_Var_2;
+
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -34,10 +35,9 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-MMStatus(State)
+MMStatus(Func_Var_1)
 {
-	Active = State;
-	//get PRINT(Active);
+	Static_Var_2 = Func_Var_1;
 }
 
 ImAMetalMaker()
@@ -46,22 +46,21 @@ ImAMetalMaker()
 	{
 		sleep 150;
 	}
-	mmState = -1;
+	Static_Var_1 = -1;
 	while( TRUE )
 	{
-		if (Active == 1)
+		if( Static_Var_2 == 1 )
 		{
-			if (mmState != 1) {
+			if( Static_Var_1 != 1 )
+			{
 				move sphere to y-axis [0.000000] speed [1.600000];
-				mmState = 1;
+				Static_Var_1 = 1;
 			}
 		}
-		else
+		else if( Static_Var_1 != 0 )
 		{
-			if (mmState != 0) {
-				move sphere to y-axis [-4.100000] speed [1.600000];
-				mmState = 0;
-			}
+			move sphere to y-axis [-4.100000] speed [1.600000];
+			Static_Var_1 = 0;
 		}
 		sleep 1000;
 	}
@@ -105,5 +104,5 @@ Killed(severity, corpsetype)
 	corpsetype = 3;
 	explode base type SHATTER | EXPLODE_ON_HIT | BITMAP1;
 	explode sphere type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	return corpsetype;
+	return (corpsetype);
 }

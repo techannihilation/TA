@@ -79,9 +79,9 @@ StopMoving()
 	sleep 150;
 }
 
-setSFXoccupy(Func_Var_1)
+setSFXoccupy(state)
 {
-	Static_Var_1 = Func_Var_1;
+	Static_Var_1 = state;
 }
 
 SweetSpot(piecenum)
@@ -214,7 +214,7 @@ BoomToPad()
 TransportPickup(unitid)
 {
 	call-script BoomCalc(get UNIT_XZ(unitid),get UNIT_Y(unitid) + get UNIT_HEIGHT(unitid));
-	if( Static_Var_5 AND get UNKNOWN_UNIT_VALUE(74)(unitid) == get UNKNOWN_UNIT_VALUE(74)(get UNKNOWN_UNIT_VALUE(71)) )
+	if( Static_Var_5 AND get UNIT_ALLIED(unitid) == get UNIT_ALLIED(get MY_ID) )
 	{
 		set BUSY to 1;
 		call-script BoomExtend();
@@ -258,7 +258,7 @@ Killed(severity, corpsetype)
 		explode turret1 type BITMAPONLY | BITMAP2;
 		explode wake1 type BITMAPONLY | BITMAP3;
 		explode wake2 type BITMAPONLY | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -273,7 +273,7 @@ Killed(severity, corpsetype)
 		explode turret1 type BITMAPONLY | BITMAP2;
 		explode wake1 type FALL | BITMAP3;
 		explode wake2 type FALL | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -288,7 +288,7 @@ Killed(severity, corpsetype)
 		explode turret1 type BITMAPONLY | BITMAP2;
 		explode wake1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode wake2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode boom1 type BITMAPONLY | BITMAP1;
@@ -301,4 +301,5 @@ Killed(severity, corpsetype)
 	explode turret1 type BITMAPONLY | BITMAP2;
 	explode wake1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode wake2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	return (corpsetype);
 }

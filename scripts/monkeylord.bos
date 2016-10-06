@@ -3,13 +3,13 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, cephalotorax, poupe, berceau, canon, 
-	   bouche, pattes, ecraseur_epaule, ecraseur_bras,
-	   leg1, leg2, leg3, leg4, leg5, leg6, load_shoulder,
-	   load_arm, unload_shoulder, unload_arm, goal_shoulder,
-	   goal_arm, smoke1, smoke2, smoke3, smoke4, smoke5;
+piece  base, cephalotorax, poupe, berceau, canon, bouche, pattes, ecraseur_epaule,
+       ecraseur_bras, leg1, leg2, leg3, leg4, leg5, leg6, load_shoulder,
+       load_arm, unload_shoulder, unload_arm, goal_shoulder, goal_arm, smoke1, smoke2, smoke3,
+       smoke4, smoke5;
 
-static-var  bMoving, bAiming, gun_1, restore_delay, Static_Var_4, Static_Var_5, smokey;
+static-var  bMoving, bAiming, Static_Var_3, restore_delay, Static_Var_5,
+            Static_Var_6, Static_Var_7;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -43,7 +43,7 @@ HexapodTrueWalk()
 			turn leg5 to z-axis <0.000000> speed <40.000000>;
 			turn leg6 to y-axis <0.000000> speed <40.000000>;
 			turn leg6 to y-axis <-30.005495> speed <40.000000>;
-			turn leg6 to z-axis <-45.010989> speed <40.000000>;
+			turn leg6 to z-axis <-45.005495> speed <40.000000>;
 			sleep 200;
 		}
 		if( bMoving )
@@ -60,7 +60,7 @@ HexapodTrueWalk()
 		}
 		if( bMoving )
 		{
-			turn leg1 to y-axis <55.010989> speed <40.000000>;
+			turn leg1 to y-axis <55.005495> speed <40.000000>;
 			turn leg1 to z-axis <31.005495> speed <40.000000>;
 			turn leg2 to y-axis <34.005495> speed <40.000000>;
 			turn leg2 to z-axis <0.000000> speed <40.000000>;
@@ -83,7 +83,7 @@ HexapodTrueWalk()
 		turn leg5 to y-axis <-37.005495> speed <40.000000>;
 		turn leg5 to z-axis <0.000000> speed <40.000000>;
 		turn leg6 to y-axis <0.000000> speed <40.000000>;
-		turn leg6 to z-axis <-45.010989> speed <40.000000>;
+		turn leg6 to z-axis <-45.005495> speed <40.000000>;
 		sleep 200;
 	}
 }
@@ -130,122 +130,122 @@ IdleControl()
 {
 	while( TRUE )
 	{
-		smokey = 256 | 2;
+		Static_Var_7 = 256 | 2;
 		if( !bMoving AND !bAiming )
 		{
 			sleep 150;
-			emit-sfx smokey from smoke1;
-			emit-sfx smokey from smoke2;
-			emit-sfx smokey from smoke3;
-			emit-sfx smokey from smoke4;
-			emit-sfx smokey from smoke5;
-			emit-sfx smokey from smoke1;
-			emit-sfx smokey from smoke2;
-			emit-sfx smokey from smoke3;
-			emit-sfx smokey from smoke4;
-			emit-sfx smokey from smoke5;
+			emit-sfx Static_Var_7 from smoke1;
+			emit-sfx Static_Var_7 from smoke2;
+			emit-sfx Static_Var_7 from smoke3;
+			emit-sfx Static_Var_7 from smoke4;
+			emit-sfx Static_Var_7 from smoke5;
+			emit-sfx Static_Var_7 from smoke1;
+			emit-sfx Static_Var_7 from smoke2;
+			emit-sfx Static_Var_7 from smoke3;
+			emit-sfx Static_Var_7 from smoke4;
+			emit-sfx Static_Var_7 from smoke5;
 			sleep 1050;
-			emit-sfx smokey from smoke1;
-			emit-sfx smokey from smoke2;
-			emit-sfx smokey from smoke3;
-			emit-sfx smokey from smoke4;
-			emit-sfx smokey from smoke5;
-			emit-sfx smokey from smoke1;
-			emit-sfx smokey from smoke2;
-			emit-sfx smokey from smoke3;
-			emit-sfx smokey from smoke4;
-			emit-sfx smokey from smoke5;
+			emit-sfx Static_Var_7 from smoke1;
+			emit-sfx Static_Var_7 from smoke2;
+			emit-sfx Static_Var_7 from smoke3;
+			emit-sfx Static_Var_7 from smoke4;
+			emit-sfx Static_Var_7 from smoke5;
+			emit-sfx Static_Var_7 from smoke1;
+			emit-sfx Static_Var_7 from smoke2;
+			emit-sfx Static_Var_7 from smoke3;
+			emit-sfx Static_Var_7 from smoke4;
+			emit-sfx Static_Var_7 from smoke5;
 			sleep 1050;
-			emit-sfx smokey from smoke1;
-			emit-sfx smokey from smoke2;
-			emit-sfx smokey from smoke3;
-			emit-sfx smokey from smoke4;
-			emit-sfx smokey from smoke5;
-			emit-sfx smokey from smoke1;
-			emit-sfx smokey from smoke2;
-			emit-sfx smokey from smoke3;
-			emit-sfx smokey from smoke4;
-			emit-sfx smokey from smoke5;
+			emit-sfx Static_Var_7 from smoke1;
+			emit-sfx Static_Var_7 from smoke2;
+			emit-sfx Static_Var_7 from smoke3;
+			emit-sfx Static_Var_7 from smoke4;
+			emit-sfx Static_Var_7 from smoke5;
+			emit-sfx Static_Var_7 from smoke1;
+			emit-sfx Static_Var_7 from smoke2;
+			emit-sfx Static_Var_7 from smoke3;
+			emit-sfx Static_Var_7 from smoke4;
+			emit-sfx Static_Var_7 from smoke5;
 			sleep 1050;
-			emit-sfx smokey from smoke1;
-			emit-sfx smokey from smoke2;
-			emit-sfx smokey from smoke3;
-			emit-sfx smokey from smoke4;
-			emit-sfx smokey from smoke5;
-			emit-sfx smokey from smoke1;
-			emit-sfx smokey from smoke2;
-			emit-sfx smokey from smoke3;
-			emit-sfx smokey from smoke4;
-			emit-sfx smokey from smoke5;
+			emit-sfx Static_Var_7 from smoke1;
+			emit-sfx Static_Var_7 from smoke2;
+			emit-sfx Static_Var_7 from smoke3;
+			emit-sfx Static_Var_7 from smoke4;
+			emit-sfx Static_Var_7 from smoke5;
+			emit-sfx Static_Var_7 from smoke1;
+			emit-sfx Static_Var_7 from smoke2;
+			emit-sfx Static_Var_7 from smoke3;
+			emit-sfx Static_Var_7 from smoke4;
+			emit-sfx Static_Var_7 from smoke5;
 			sleep 1050;
-			emit-sfx smokey from smoke1;
-			emit-sfx smokey from smoke2;
-			emit-sfx smokey from smoke3;
-			emit-sfx smokey from smoke4;
-			emit-sfx smokey from smoke5;
-			emit-sfx smokey from smoke1;
-			emit-sfx smokey from smoke2;
-			emit-sfx smokey from smoke3;
-			emit-sfx smokey from smoke4;
-			emit-sfx smokey from smoke5;
+			emit-sfx Static_Var_7 from smoke1;
+			emit-sfx Static_Var_7 from smoke2;
+			emit-sfx Static_Var_7 from smoke3;
+			emit-sfx Static_Var_7 from smoke4;
+			emit-sfx Static_Var_7 from smoke5;
+			emit-sfx Static_Var_7 from smoke1;
+			emit-sfx Static_Var_7 from smoke2;
+			emit-sfx Static_Var_7 from smoke3;
+			emit-sfx Static_Var_7 from smoke4;
+			emit-sfx Static_Var_7 from smoke5;
 			sleep 10;
 		}
-			sleep 150;
-			emit-sfx smokey from smoke1;
-			emit-sfx smokey from smoke2;
-			emit-sfx smokey from smoke3;
-			emit-sfx smokey from smoke4;
-			emit-sfx smokey from smoke5;
-			emit-sfx smokey from smoke1;
-			emit-sfx smokey from smoke2;
-			emit-sfx smokey from smoke3;
-			emit-sfx smokey from smoke4;
-			emit-sfx smokey from smoke5;
-			sleep 1050;
-			emit-sfx smokey from smoke1;
-			emit-sfx smokey from smoke2;
-			emit-sfx smokey from smoke3;
-			emit-sfx smokey from smoke4;
-			emit-sfx smokey from smoke5;
-			emit-sfx smokey from smoke1;
-			emit-sfx smokey from smoke2;
-			emit-sfx smokey from smoke3;
-			emit-sfx smokey from smoke4;
-			emit-sfx smokey from smoke5;
-			sleep 1050;
-			emit-sfx smokey from smoke1;
-			emit-sfx smokey from smoke2;
-			emit-sfx smokey from smoke3;
-			emit-sfx smokey from smoke4;
-			emit-sfx smokey from smoke5;
-			emit-sfx smokey from smoke1;
-			emit-sfx smokey from smoke2;
-			emit-sfx smokey from smoke3;
-			emit-sfx smokey from smoke4;
-			emit-sfx smokey from smoke5;
-			sleep 1050;
-			emit-sfx smokey from smoke1;
-			emit-sfx smokey from smoke2;
-			emit-sfx smokey from smoke3;
-			emit-sfx smokey from smoke4;
-			emit-sfx smokey from smoke5;
-			emit-sfx smokey from smoke1;
-			emit-sfx smokey from smoke2;
-			emit-sfx smokey from smoke3;
-			emit-sfx smokey from smoke4;
-			emit-sfx smokey from smoke5;
-			sleep 1050;
-			emit-sfx smokey from smoke1;
-			emit-sfx smokey from smoke2;
-			emit-sfx smokey from smoke3;
-			emit-sfx smokey from smoke4;
-			emit-sfx smokey from smoke5;
-			emit-sfx smokey from smoke1;
-			emit-sfx smokey from smoke2;
-			emit-sfx smokey from smoke3;
-			emit-sfx smokey from smoke4;
-			emit-sfx smokey from smoke5;
-			sleep 10;
+		sleep 150;
+		emit-sfx Static_Var_7 from smoke1;
+		emit-sfx Static_Var_7 from smoke2;
+		emit-sfx Static_Var_7 from smoke3;
+		emit-sfx Static_Var_7 from smoke4;
+		emit-sfx Static_Var_7 from smoke5;
+		emit-sfx Static_Var_7 from smoke1;
+		emit-sfx Static_Var_7 from smoke2;
+		emit-sfx Static_Var_7 from smoke3;
+		emit-sfx Static_Var_7 from smoke4;
+		emit-sfx Static_Var_7 from smoke5;
+		sleep 1050;
+		emit-sfx Static_Var_7 from smoke1;
+		emit-sfx Static_Var_7 from smoke2;
+		emit-sfx Static_Var_7 from smoke3;
+		emit-sfx Static_Var_7 from smoke4;
+		emit-sfx Static_Var_7 from smoke5;
+		emit-sfx Static_Var_7 from smoke1;
+		emit-sfx Static_Var_7 from smoke2;
+		emit-sfx Static_Var_7 from smoke3;
+		emit-sfx Static_Var_7 from smoke4;
+		emit-sfx Static_Var_7 from smoke5;
+		sleep 1050;
+		emit-sfx Static_Var_7 from smoke1;
+		emit-sfx Static_Var_7 from smoke2;
+		emit-sfx Static_Var_7 from smoke3;
+		emit-sfx Static_Var_7 from smoke4;
+		emit-sfx Static_Var_7 from smoke5;
+		emit-sfx Static_Var_7 from smoke1;
+		emit-sfx Static_Var_7 from smoke2;
+		emit-sfx Static_Var_7 from smoke3;
+		emit-sfx Static_Var_7 from smoke4;
+		emit-sfx Static_Var_7 from smoke5;
+		sleep 1050;
+		emit-sfx Static_Var_7 from smoke1;
+		emit-sfx Static_Var_7 from smoke2;
+		emit-sfx Static_Var_7 from smoke3;
+		emit-sfx Static_Var_7 from smoke4;
+		emit-sfx Static_Var_7 from smoke5;
+		emit-sfx Static_Var_7 from smoke1;
+		emit-sfx Static_Var_7 from smoke2;
+		emit-sfx Static_Var_7 from smoke3;
+		emit-sfx Static_Var_7 from smoke4;
+		emit-sfx Static_Var_7 from smoke5;
+		sleep 1050;
+		emit-sfx Static_Var_7 from smoke1;
+		emit-sfx Static_Var_7 from smoke2;
+		emit-sfx Static_Var_7 from smoke3;
+		emit-sfx Static_Var_7 from smoke4;
+		emit-sfx Static_Var_7 from smoke5;
+		emit-sfx Static_Var_7 from smoke1;
+		emit-sfx Static_Var_7 from smoke2;
+		emit-sfx Static_Var_7 from smoke3;
+		emit-sfx Static_Var_7 from smoke4;
+		emit-sfx Static_Var_7 from smoke5;
+		sleep 10;
 	}
 }
 
@@ -253,19 +253,19 @@ Create()
 {
 	bMoving = FALSE;
 	bAiming = FALSE;
-	gun_1 = base;
+	Static_Var_3 = 0;
 	restore_delay = 10;
-	Static_Var_4 = 0;
+	Static_Var_5 = 0;
 	set ARMORED to 1;
 	set ACTIVATION to 1;
-	Static_Var_5 = 1;
+	Static_Var_6 = 1;
 	move ecraseur_epaule to y-axis [13107.199982] now;
 	hide bouche;
 	dont-cache bouche;
 	start-script IdleControl();
 	start-script MotionControl();
 	sleep 1;
-	Static_Var_5 = 1;
+	Static_Var_6 = 1;
 }
 
 SetMaxReloadTime(Func_Var_1)
@@ -278,54 +278,53 @@ RetourTourelle()
 	sleep restore_delay;
 	bAiming = FALSE;
 	turn berceau to y-axis <0.000000> speed <50.000000>;
-	//VENT GAGES
-	emit-sfx smokey from smoke1;
-	emit-sfx smokey from smoke2;
-	emit-sfx smokey from smoke3;
-	emit-sfx smokey from smoke4;
-	emit-sfx smokey from smoke5;
+	emit-sfx Static_Var_7 from smoke1;
+	emit-sfx Static_Var_7 from smoke2;
+	emit-sfx Static_Var_7 from smoke3;
+	emit-sfx Static_Var_7 from smoke4;
+	emit-sfx Static_Var_7 from smoke5;
 	sleep 150;
-	emit-sfx smokey from smoke1;
-	emit-sfx smokey from smoke2;
-	emit-sfx smokey from smoke3;
-	emit-sfx smokey from smoke4;
-	emit-sfx smokey from smoke5;
+	emit-sfx Static_Var_7 from smoke1;
+	emit-sfx Static_Var_7 from smoke2;
+	emit-sfx Static_Var_7 from smoke3;
+	emit-sfx Static_Var_7 from smoke4;
+	emit-sfx Static_Var_7 from smoke5;
 	sleep 150;
-	emit-sfx smokey from smoke1;
-	emit-sfx smokey from smoke2;
-	emit-sfx smokey from smoke3;
-	emit-sfx smokey from smoke4;
-	emit-sfx smokey from smoke5;
+	emit-sfx Static_Var_7 from smoke1;
+	emit-sfx Static_Var_7 from smoke2;
+	emit-sfx Static_Var_7 from smoke3;
+	emit-sfx Static_Var_7 from smoke4;
+	emit-sfx Static_Var_7 from smoke5;
 	sleep 150;
-	emit-sfx smokey from smoke1;
-	emit-sfx smokey from smoke2;
-	emit-sfx smokey from smoke3;
-	emit-sfx smokey from smoke4;
-	emit-sfx smokey from smoke5;
+	emit-sfx Static_Var_7 from smoke1;
+	emit-sfx Static_Var_7 from smoke2;
+	emit-sfx Static_Var_7 from smoke3;
+	emit-sfx Static_Var_7 from smoke4;
+	emit-sfx Static_Var_7 from smoke5;
 	sleep 150;
-	emit-sfx smokey from smoke1;
-	emit-sfx smokey from smoke2;
-	emit-sfx smokey from smoke3;
-	emit-sfx smokey from smoke4;
-	emit-sfx smokey from smoke5;
+	emit-sfx Static_Var_7 from smoke1;
+	emit-sfx Static_Var_7 from smoke2;
+	emit-sfx Static_Var_7 from smoke3;
+	emit-sfx Static_Var_7 from smoke4;
+	emit-sfx Static_Var_7 from smoke5;
 	sleep 150;
-	emit-sfx smokey from smoke1;
-	emit-sfx smokey from smoke2;
-	emit-sfx smokey from smoke3;
-	emit-sfx smokey from smoke4;
-	emit-sfx smokey from smoke5;
+	emit-sfx Static_Var_7 from smoke1;
+	emit-sfx Static_Var_7 from smoke2;
+	emit-sfx Static_Var_7 from smoke3;
+	emit-sfx Static_Var_7 from smoke4;
+	emit-sfx Static_Var_7 from smoke5;
 	sleep 150;
-	emit-sfx smokey from smoke1;
-	emit-sfx smokey from smoke2;
-	emit-sfx smokey from smoke3;
-	emit-sfx smokey from smoke4;
-	emit-sfx smokey from smoke5;
+	emit-sfx Static_Var_7 from smoke1;
+	emit-sfx Static_Var_7 from smoke2;
+	emit-sfx Static_Var_7 from smoke3;
+	emit-sfx Static_Var_7 from smoke4;
+	emit-sfx Static_Var_7 from smoke5;
 	sleep 150;
-	emit-sfx smokey from smoke1;
-	emit-sfx smokey from smoke2;
-	emit-sfx smokey from smoke3;
-	emit-sfx smokey from smoke4;
-	emit-sfx smokey from smoke5;
+	emit-sfx Static_Var_7 from smoke1;
+	emit-sfx Static_Var_7 from smoke2;
+	emit-sfx Static_Var_7 from smoke3;
+	emit-sfx Static_Var_7 from smoke4;
+	emit-sfx Static_Var_7 from smoke5;
 	sleep 150;
 }
 
@@ -370,7 +369,7 @@ AimSecondary(heading, pitch)
 	{
 		while( TRUE )
 		{
-			sleep [21.972656];
+			sleep [21.972650];
 		}
 	}
 	return (1);
@@ -383,7 +382,7 @@ QuerySecondary(piecenum)
 
 FireSecondary(Func_Var_1)
 {
-	return (Static_Var_5);
+	return (Static_Var_6);
 }
 
 AimFromTertiary(piecenum)
@@ -409,7 +408,7 @@ QueryTertiary(piecenum)
 
 FireTertiary(Func_Var_1)
 {
-	return (Static_Var_4);
+	return (Static_Var_5);
 }
 
 SweetSpot(piecenum)
@@ -423,7 +422,7 @@ Killed(severity, corpsetype)
 	explode poupe type BITMAP2;
 	explode berceau type BITMAP2;
 	explode canon type BITMAP3;
-    explode leg1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode leg1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode leg2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 	explode leg3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 	explode leg4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;

@@ -85,7 +85,7 @@ FirePrimary()
 		show flare1;
 		sleep 200;
 		hide flare1;
-		turn turret to y-axis <270.060440> speed <450.043956>;
+		turn turret to y-axis <270.060440> speed <450.038462>;
 		gun_1 = tower;
 		return (0);
 	}
@@ -94,7 +94,7 @@ FirePrimary()
 		show flare2;
 		sleep 200;
 		hide flare2;
-		turn turret to y-axis <180.038462> speed <450.043956>;
+		turn turret to y-axis <180.038462> speed <450.038462>;
 		gun_1 = bearing;
 		return (0);
 	}
@@ -103,7 +103,7 @@ FirePrimary()
 		show flare3;
 		sleep 200;
 		hide flare3;
-		turn turret to y-axis <90.016484> speed <450.043956>;
+		turn turret to y-axis <90.016484> speed <450.038462>;
 		gun_1 = turret;
 		return (0);
 	}
@@ -112,7 +112,7 @@ FirePrimary()
 		show flare4;
 		sleep 200;
 		hide flare4;
-		turn turret to y-axis <0.000000> speed <450.043956>;
+		turn turret to y-axis <0.000000> speed <450.038462>;
 		gun_1 = base;
 		return (0);
 	}

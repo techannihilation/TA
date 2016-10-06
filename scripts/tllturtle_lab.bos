@@ -3,9 +3,9 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, na1, na2, nng, ns, nj,ea1,
-	   ea2, eng, es, wa1, wa2,
-       wng, ws, ej, wj, np, shadow;
+piece  base, na1, na2, nng, ns, nj, ea1, ea2,
+       eng, es, wa1, wa2, wng, ws, ej, wj,
+       np, shadow;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3;
 

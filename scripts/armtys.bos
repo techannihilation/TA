@@ -3,9 +3,9 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, rotor, wing_lf, wing_rf, turret, bar_l, bar_r,
-	   flare_l, flare_r, r_1, r_2, blank, fuse,
-	   cockpit, stab_l, stab_r, fin_l, fin_r, root_l, root_r, engine_l, engine_r;
+piece  base, rotor, wing_lf, wing_rf, turret, bar_l, bar_r, flare_l,
+       flare_r, r_1, r_2, blank, fuse, cockpit, stab_l, stab_r,
+       fin_l, fin_r, root_l, root_r, engine_l, engine_r;
 
 static-var  gun_2, gun_1, restore_delay, statechg_DesiredState, statechg_StateChanging;
 
@@ -92,8 +92,8 @@ Create()
 	move turret to z-axis [-5.000000] now;
 	hide flare_l;
 	hide flare_r;
-	gun_2 = 1;
-	gun_1 = 1;
+	gun_2 = rotor;
+	gun_1 = rotor;
 	restore_delay = 3000;
 	call-script InitState();
 	start-script SmokeUnit();
@@ -152,7 +152,7 @@ FireSecondary()
 		show r_1;
 		sleep 150;
 		hide r_1;
-		gun_2 = 2;
+		gun_2 = wing_lf;
 		return (0);
 	}
 	if( gun_2 == 2 )
@@ -160,10 +160,9 @@ FireSecondary()
 		show r_2;
 		sleep 150;
 		hide r_2;
-		gun_2 = 1;
+		gun_2 = rotor;
 		return (0);
 	}
-
 }
 
 QuerySecondary(piecenum)
@@ -196,7 +195,7 @@ FirePrimary()
 		show flare_l;
 		sleep 150;
 		hide flare_l;
-		gun_1 = 2;
+		gun_1 = wing_lf;
 		return (0);
 	}
 	if( gun_1 == 2 )
@@ -207,7 +206,7 @@ FirePrimary()
 		show flare_r;
 		sleep 150;
 		hide flare_r;
-		gun_1 = 1;
+		gun_1 = rotor;
 		return (0);
 	}
 }
@@ -250,7 +249,7 @@ Killed(severity, corpsetype)
 		explode turret type BITMAPONLY | BITMAP2;
 		explode bar_l type BITMAPONLY | BITMAP3;
 		explode bar_r type BITMAPONLY | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -271,7 +270,7 @@ Killed(severity, corpsetype)
 		explode turret type FALL | BITMAP2;
 		explode bar_l type SHATTER | BITMAP3;
 		explode bar_r type FALL | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -292,7 +291,7 @@ Killed(severity, corpsetype)
 		explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 		explode bar_l type SHATTER | EXPLODE_ON_HIT | BITMAP3;
 		explode bar_r type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP4;
@@ -311,4 +310,5 @@ Killed(severity, corpsetype)
 	explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 	explode bar_l type SHATTER | EXPLODE_ON_HIT | BITMAP3;
 	explode bar_r type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	return (corpsetype);
 }

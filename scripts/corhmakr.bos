@@ -5,7 +5,8 @@
 
 piece  bottomCover, bottomBody, topCover, outerPistle, insides, innerPistle, pistleCover, topBody;
 
-static-var  mmState, Active;
+static-var  Static_Var_1, Static_Var_2;
+
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -34,10 +35,9 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-MMStatus(State)
+MMStatus(Func_Var_1)
 {
-	Active = State;
-	//get PRINT(Active);
+	Static_Var_2 = Func_Var_1;
 }
 
 ImAMetalMaker()
@@ -46,58 +46,49 @@ ImAMetalMaker()
 	{
 		sleep 150;
 	}
-	mmState = -1;
+	Static_Var_1 = -1;
 	while( TRUE )
 	{
-		if (Active == 1)
+		if( Static_Var_2 == 1 )
 		{
-			if (mmState != 1) {
-				move  innerPistle to  y-axis [14.000000] speed [60.000000];
+			if( Static_Var_1 != 1 )
+			{
+				move innerPistle to y-axis [14.000000] speed [60.000000];
 				sleep 500;
-
 				move outerPistle to y-axis [14.000000] speed [60.000000];
 				sleep 500;
-
 				move bottomCover to y-axis [12.000000] speed [50.000000];
 				move topCover to y-axis [12.000000] speed [50.000000];
 				move topBody to y-axis [12.000000] speed [50.000000];
 				move insides to y-axis [12.000000] speed [50.000000];
 				move pistleCover to y-axis [12.000000] speed [50.000000];
 				sleep 500;
-				
 				move bottomCover to y-axis [6.000000] speed [60.000000];
 				move topCover to y-axis [19.000000] speed [30.000000];
 				move innerPistle to y-axis [14.000000] speed [60.000000];
 				move outerPistle to y-axis [14.000000] speed [60.000000];
 				sleep 500;
-			
-				mmState = 1;
+				Static_Var_1 = 1;
 			}
 		}
-		else
+		else if( Static_Var_1 != 0 )
 		{
-			if (mmState != 0) {
-				move bottomCover to y-axis [0.000000] speed [60.000000];
-				move topCover to y-axis [0.000000] speed [30.000000];
-				move innerPistle to y-axis [0.000000] speed [60.000000];
-				move outerPistle to y-axis [0.000000] speed [60.000000];
-				sleep 500;
-				
-				move bottomCover to y-axis [0.000000] speed [50.000000];
-				move topCover to y-axis [0.000000] speed [50.000000];
-				move topBody to y-axis [0.000000] speed [50.000000];
-				move insides to y-axis [0.000000] speed [50.000000];
-				move pistleCover to y-axis [0.000000] speed [50.000000];
-				sleep 500;
-			
-				move outerPistle to y-axis [0.000000] speed [60.000000];
-				sleep 500;
-			
-				move  innerPistle to  y-axis [0.000000] speed [60.000000];
-				sleep 500;
-				
-				mmState = 0;
-			}
+			move bottomCover to y-axis [0.000000] speed [60.000000];
+			move topCover to y-axis [0.000000] speed [30.000000];
+			move innerPistle to y-axis [0.000000] speed [60.000000];
+			move outerPistle to y-axis [0.000000] speed [60.000000];
+			sleep 500;
+			move bottomCover to y-axis [0.000000] speed [50.000000];
+			move topCover to y-axis [0.000000] speed [50.000000];
+			move topBody to y-axis [0.000000] speed [50.000000];
+			move insides to y-axis [0.000000] speed [50.000000];
+			move pistleCover to y-axis [0.000000] speed [50.000000];
+			sleep 500;
+			move outerPistle to y-axis [0.000000] speed [60.000000];
+			sleep 500;
+			move innerPistle to y-axis [0.000000] speed [60.000000];
+			sleep 500;
+			Static_Var_1 = 0;
 		}
 		sleep 1000;
 	}
@@ -117,9 +108,9 @@ SweetSpot(piecenum)
 Killed(severity, corpsetype)
 {
 	corpsetype = 3;
-	explode bottomBody type SHATTER ;
-	explode topCover type SHATTER ;
-	explode bottomCover type SHATTER ;
-	explode topBody type SHATTER ;
-	return corpsetype;
+	explode bottomBody type SHATTER;
+	explode topCover type SHATTER;
+	explode bottomCover type SHATTER;
+	explode topBody type SHATTER;
+	return (corpsetype);
 }

@@ -3,15 +3,14 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, stilo, radar, ruparm, Rarm, Rhand, 
-       luparm, Larm, Lhand, pelvis, Rhileg, Rleg,
-       Rfoot, Lhileg, Lleg, Lfoot, head, Lfire;
+piece  base, body, stilo, radar, ruparm, Rarm, Rhand, luparm,
+       Larm, Lhand, pelvis, Rhileg, Rleg, Rfoot, Lhileg, Lleg,
+       Lfoot, head, Lfire;
 
-static-var  bMoving, Static_Var_2, gun_1, Static_Var_4, bAiming,
+static-var  bMoving, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
             Static_Var_6, Static_Var_7, Static_Var_8;
 
 // Signal definitions
-#define SIG_AIM				2
 #define SIG_AIM_2			4
 
 
@@ -74,145 +73,145 @@ Walk()
 	{
 		turn Lhileg to x-axis <0.000000> now;
 		sleep 32;
-		if( !bAiming )
+		if( !Static_Var_5 )
 		{
 			turn body to x-axis <0.500000> now;
 		}
 		move body to y-axis [0.100000] now;
 		turn Rhileg to x-axis <3.000000> now;
-		turn Lhileg to x-axis <-3.697802> now;
-		turn Lleg to x-axis <3.197802> now;
+		turn Lhileg to x-axis <-3.692308> now;
+		turn Lleg to x-axis <3.192308> now;
 		sleep 33;
-		if( !bAiming )
+		if( !Static_Var_5 )
 		{
 			turn body to y-axis <0.500000> now;
 			turn body to x-axis <1.000000> now;
 			turn body to z-axis <0.000000> now;
-			turn luparm to x-axis <2.697802> now;
-			turn Lhand to x-axis <-3.197802> now;
+			turn luparm to x-axis <2.692308> now;
+			turn Lhand to x-axis <-3.192308> now;
 		}
 		move body to y-axis [0.200000] now;
-		turn luparm to x-axis <2.697802> now;
-		turn Lhand to x-axis <-3.197802> now;
+		turn luparm to x-axis <2.692308> now;
+		turn Lhand to x-axis <-3.192308> now;
 		turn Rhileg to x-axis <5.500000> now;
 		turn Rfoot to x-axis <-1.000000> now;
 		turn Lhileg to x-axis <-7.000000> now;
 		turn Lleg to x-axis <8.500000> now;
 		sleep 37;
-		if( !bAiming )
+		if( !Static_Var_5 )
 		{
-			turn body to y-axis <0.697802> now;
+			turn body to y-axis <0.692308> now;
 			turn luparm to x-axis <4.500000> now;
-			turn Lhand to x-axis <-9.197802> now;
+			turn Lhand to x-axis <-9.192308> now;
 		}
 		turn body to x-axis <1.500000> now;
 		move body to y-axis [0.300000] now;
-		turn Rhileg to x-axis <10.197802> now;
-		turn Rleg to x-axis <-2.697802> now;
+		turn Rhileg to x-axis <10.192308> now;
+		turn Rleg to x-axis <-2.692308> now;
 		turn Rfoot to x-axis <-5.500000> now;
-		turn Lhileg to x-axis <-11.697802> now;
+		turn Lhileg to x-axis <-11.692308> now;
 		turn Lleg to x-axis <13.000000> now;
 		sleep 28;
-		if( !bAiming )
+		if( !Static_Var_5 )
 		{
-			turn body to y-axis <1.197802> now;
-			turn luparm to x-axis <10.197802> now;
-			turn Lhand to x-axis <-18.197802> now;
+			turn body to y-axis <1.192308> now;
+			turn luparm to x-axis <10.192308> now;
+			turn Lhand to x-axis <-18.192308> now;
 		}
 		move body to y-axis [0.400000] now;
-		turn Rhileg to x-axis <13.697802> now;
-		turn Rleg to x-axis <-6.197802> now;
-		turn Lhileg to x-axis <-15.697802> now;
+		turn Rhileg to x-axis <13.692308> now;
+		turn Rleg to x-axis <-6.192308> now;
+		turn Lhileg to x-axis <-15.692308> now;
 		turn Lleg to x-axis <16.000000> now;
 		sleep 31;
-		if( !bAiming )
+		if( !Static_Var_5 )
 		{
-			turn body to y-axis <1.697802> now;
+			turn body to y-axis <1.692308> now;
 			turn luparm to x-axis <13.500000> now;
-			turn Lhand to x-axis <-23.697802> now;
+			turn Lhand to x-axis <-23.692308> now;
 		}
 		move body to y-axis [0.500000] now;
-		turn Rhileg to x-axis <17.197802> now;
+		turn Rhileg to x-axis <17.192308> now;
 		turn Rleg to x-axis <-8.000000> now;
-		turn Rfoot to x-axis <-8.197802> now;
+		turn Rfoot to x-axis <-8.192308> now;
 		turn Lhileg to x-axis <-21.500000> now;
 		turn Lleg to x-axis <19.500000> now;
 		sleep 28;
-		if( !bAiming )
+		if( !Static_Var_5 )
 		{
-			turn body to y-axis <3.197802> now;
+			turn body to y-axis <3.192308> now;
 			turn luparm to x-axis <16.000000> now;
 		}
 		move body to y-axis [0.600000] now;
-		turn Rhileg to x-axis <21.697802> now;
+		turn Rhileg to x-axis <21.692308> now;
 		turn Lhileg to x-axis <-27.500000> now;
-		turn Lleg to x-axis <24.197802> now;
+		turn Lleg to x-axis <24.192308> now;
 		sleep 33;
-		if( !bAiming )
+		if( !Static_Var_5 )
 		{
 			turn body to y-axis <4.500000> now;
-			turn luparm to x-axis <17.697802> now;
-			turn Lhand to x-axis <-29.697802> now;
+			turn luparm to x-axis <17.692308> now;
+			turn Lhand to x-axis <-29.692308> now;
 		}
 		move body to y-axis [0.700000] now;
-		turn Rhileg to x-axis <26.197802> now;
+		turn Rhileg to x-axis <26.192308> now;
 		turn Rfoot to x-axis <-12.500000> now;
-		turn Lhileg to x-axis <-33.697802> now;
+		turn Lhileg to x-axis <-33.692308> now;
 		turn Lleg to x-axis <23.000000> now;
 		sleep 35;
-		if( !bAiming )
+		if( !Static_Var_5 )
 		{
 			turn body to y-axis <5.500000> now;
-			turn luparm to x-axis <21.197802> now;
+			turn luparm to x-axis <21.192308> now;
 		}
 		move body to y-axis [0.800000] now;
-		turn Rhileg to x-axis <30.697802> now;
-		turn Rleg to x-axis <-9.697802> now;
-		turn Lhileg to x-axis <-36.197802> now;
-		turn Lleg to x-axis <12.197802> now;
+		turn Rhileg to x-axis <30.692308> now;
+		turn Rleg to x-axis <-9.692308> now;
+		turn Lhileg to x-axis <-36.192308> now;
+		turn Lleg to x-axis <12.192308> now;
 		sleep 35;
-		if( !bAiming )
+		if( !Static_Var_5 )
 		{
 			turn body to y-axis <6.000000> now;
-			turn luparm to x-axis <24.197802> now;
+			turn luparm to x-axis <24.192308> now;
 		}
 		move body to y-axis [0.900000] now;
 		turn Rhileg to x-axis <37.500000> now;
-		turn Rleg to x-axis <-12.197802> now;
-		turn Lhileg to x-axis <-40.697802> now;
+		turn Rleg to x-axis <-12.192308> now;
+		turn Lhileg to x-axis <-40.692308> now;
 		turn Lleg to x-axis <8.500000> now;
 		sleep 39;
-		if( !bAiming )
+		if( !Static_Var_5 )
 		{
-			turn body to y-axis <6.197802> now;
+			turn body to y-axis <6.192308> now;
 			turn luparm to x-axis <30.000000> now;
-			turn Lhand to x-axis <-34.197802> now;
+			turn Lhand to x-axis <-34.192308> now;
 		}
 		move body to y-axis [1.000000] now;
 		turn luparm to x-axis <30.000000> now;
-		turn Lhand to x-axis <-34.197802> now;
-		turn Rhileg to x-axis <42.197802> now;
-		turn Lhileg to x-axis <-44.197802> now;
-		turn Lleg to x-axis <4.197802> now;
+		turn Lhand to x-axis <-34.192308> now;
+		turn Rhileg to x-axis <42.192308> now;
+		turn Lhileg to x-axis <-44.192308> now;
+		turn Lleg to x-axis <4.192308> now;
 		sleep 36;
-		if( !bAiming )
+		if( !Static_Var_5 )
 		{
-			turn body to y-axis <6.697802> now;
-			turn luparm to x-axis <34.697802> now;
-			turn Lhand to x-axis <-36.697802> now;
+			turn body to y-axis <6.692308> now;
+			turn luparm to x-axis <34.692308> now;
+			turn Lhand to x-axis <-36.692308> now;
 		}
 		move body to y-axis [1.100000] now;
-		turn Rhileg to x-axis <51.197802> now;
-		turn Rfoot to x-axis <-3.197802> now;
-		turn Lhileg to x-axis <-47.197802> now;
-		turn Lleg to x-axis <0.697802> now;
+		turn Rhileg to x-axis <51.192308> now;
+		turn Rfoot to x-axis <-3.192308> now;
+		turn Lhileg to x-axis <-47.192308> now;
+		turn Lleg to x-axis <0.692308> now;
 		sleep 33;
-		if( !bAiming )
+		if( !Static_Var_5 )
 		{
-			turn body to y-axis <6.197802> now;
+			turn body to y-axis <6.192308> now;
 			turn body to x-axis <1.000000> now;
-			turn luparm to x-axis <28.697802> now;
-			turn Lhand to x-axis <-26.197802> now;
+			turn luparm to x-axis <28.692308> now;
+			turn Lhand to x-axis <-26.192308> now;
 		}
 		move body to y-axis [1.000000] now;
 		turn Rhileg to x-axis <47.000000> now;
@@ -220,19 +219,19 @@ Walk()
 		turn Lhileg to x-axis <-41.500000> now;
 		turn Lleg to x-axis <-4.500000> now;
 		sleep 29;
-		if( !bAiming )
+		if( !Static_Var_5 )
 		{
 			turn body to y-axis <6.000000> now;
 			turn body to x-axis <0.500000> now;
 			turn luparm to x-axis <21.500000> now;
 		}
 		move body to y-axis [0.900000] now;
-		turn Rhileg to x-axis <42.697802> now;
+		turn Rhileg to x-axis <42.692308> now;
 		turn Rfoot to x-axis <2.500000> now;
-		turn Lhileg to x-axis <-34.197802> now;
-		turn Lleg to x-axis <-7.697802> now;
+		turn Lhileg to x-axis <-34.192308> now;
+		turn Lleg to x-axis <-7.692308> now;
 		sleep 31;
-		if( !bAiming )
+		if( !Static_Var_5 )
 		{
 			turn body to y-axis <5.500000> now;
 			turn body to x-axis <0.000000> now;
@@ -242,51 +241,51 @@ Walk()
 		turn Rhileg to x-axis <37.500000> now;
 		turn Rleg to x-axis <2.000000> now;
 		turn Rfoot to x-axis <6.500000> now;
-		turn Lhileg to x-axis <-25.697802> now;
+		turn Lhileg to x-axis <-25.692308> now;
 		sleep 28;
 		move body to y-axis [0.700000] now;
-		if( !bAiming )
+		if( !Static_Var_5 )
 		{
-			turn luparm to x-axis <11.697802> now;
+			turn luparm to x-axis <11.692308> now;
 			turn Lhand to x-axis <-17.500000> now;
 		}
-		turn Rhileg to x-axis <29.697802> now;
+		turn Rhileg to x-axis <29.692308> now;
 		turn Rleg to x-axis <15.500000> now;
-		turn Lhileg to x-axis <-19.197802> now;
+		turn Lhileg to x-axis <-19.192308> now;
 		sleep 31;
-		if( !bAiming )
+		if( !Static_Var_5 )
 		{
 			turn body to y-axis <5.000000> now;
-			turn luparm to x-axis <8.697802> now;
+			turn luparm to x-axis <8.692308> now;
 			turn Lhand to x-axis <-9.000000> now;
 		}
 		move body to y-axis [0.600000] now;
 		turn Rhileg to x-axis <23.500000> now;
-		turn Rleg to x-axis <19.197802> now;
+		turn Rleg to x-axis <19.192308> now;
 		turn Lhileg to x-axis <-11.500000> now;
 		sleep 29;
-		if( !bAiming )
+		if( !Static_Var_5 )
 		{
 			turn body to y-axis <4.500000> now;
-			turn luparm to x-axis <5.697802> now;
+			turn luparm to x-axis <5.692308> now;
 			turn Lhand to x-axis <-5.500000> now;
 		}
 		move body to y-axis [0.500000] now;
-		turn Rhileg to x-axis <16.697802> now;
+		turn Rhileg to x-axis <16.692308> now;
 		turn Rleg to x-axis <25.500000> now;
-		turn Lhileg to x-axis <-5.197802> now;
+		turn Lhileg to x-axis <-5.192308> now;
 		sleep 26;
-		if( !bAiming )
+		if( !Static_Var_5 )
 		{
 			turn body to y-axis <3.500000> now;
-			turn luparm to x-axis <3.197802> now;
-			turn Lhand to x-axis <-2.697802> now;
+			turn luparm to x-axis <3.192308> now;
+			turn Lhand to x-axis <-2.692308> now;
 		}
 		move body to y-axis [0.400000] now;
-		turn Rhileg to x-axis <10.697802> now;
+		turn Rhileg to x-axis <10.692308> now;
 		turn Lhileg to x-axis <0.000000> now;
 		sleep 32;
-		if( !bAiming )
+		if( !Static_Var_5 )
 		{
 			turn body to y-axis <3.000000> now;
 			turn luparm to x-axis <0.000000> now;
@@ -294,222 +293,222 @@ Walk()
 		move body to y-axis [0.300000] now;
 		turn Rhileg to x-axis <4.500000> now;
 		turn Rleg to x-axis <23.500000> now;
-		turn Lhileg to x-axis <6.197802> now;
+		turn Lhileg to x-axis <6.192308> now;
 		sleep 36;
-		if( !bAiming )
+		if( !Static_Var_5 )
 		{
 			turn body to y-axis <3.000000> now;
-			turn luparm to x-axis <-2.197802> now;
-			turn Lhand to x-axis <-1.197802> now;
+			turn luparm to x-axis <-2.192308> now;
+			turn Lhand to x-axis <-1.192308> now;
 		}
 		move body to y-axis [0.200000] now;
 		turn Rhileg to x-axis <0.000000> now;
-		turn Rleg to x-axis <29.197802> now;
-		turn Lhileg to x-axis <8.697802> now;
+		turn Rleg to x-axis <29.192308> now;
+		turn Lhileg to x-axis <8.692308> now;
 		sleep 35;
-		if( !bAiming )
+		if( !Static_Var_5 )
 		{
 			turn body to y-axis <2.500000> now;
 			turn luparm to x-axis <-7.000000> now;
-			turn Lhand to x-axis <-1.197802> now;
+			turn Lhand to x-axis <-1.192308> now;
 		}
 		move body to y-axis [0.100000] now;
 		turn Rhileg to x-axis <-5.500000> now;
 		turn Rleg to x-axis <35.500000> now;
-		turn Rfoot to x-axis <-6.197802> now;
-		turn Lhileg to x-axis <13.197802> now;
-		turn Lfoot to x-axis <-5.197802> now;
+		turn Rfoot to x-axis <-6.192308> now;
+		turn Lhileg to x-axis <13.192308> now;
+		turn Lfoot to x-axis <-5.192308> now;
 		sleep 25;
-		if( !bAiming )
+		if( !Static_Var_5 )
 		{
 			turn body to y-axis <1.500000> now;
-			turn luparm to x-axis <-8.697802> now;
+			turn luparm to x-axis <-8.692308> now;
 			turn Lhand to x-axis <0.000000> now;
 		}
-		turn Rhileg to x-axis <-11.197802> now;
+		turn Rhileg to x-axis <-11.192308> now;
 		turn Rfoot to x-axis <-8.000000> now;
 		turn Lhileg to x-axis <19.000000> now;
-		turn Lfoot to x-axis <-7.697802> now;
+		turn Lfoot to x-axis <-7.692308> now;
 		sleep 27;
-		if( !bAiming )
+		if( !Static_Var_5 )
 		{
 			turn body to y-axis <0.000000> now;
 			turn luparm to x-axis <-10.500000> now;
 		}
 		move body to y-axis [0.200000] now;
 		turn Rhileg to x-axis <-16.500000> now;
-		turn Rfoot to x-axis <-7.197802> now;
-		turn Lhileg to x-axis <21.197802> now;
-		turn Lfoot to x-axis <-9.697802> now;
+		turn Rfoot to x-axis <-7.192308> now;
+		turn Lhileg to x-axis <21.192308> now;
+		turn Lfoot to x-axis <-9.692308> now;
 		sleep 25;
-		if( !bAiming )
+		if( !Static_Var_5 )
 		{
-			turn luparm to x-axis <-13.697802> now;
+			turn luparm to x-axis <-13.692308> now;
 		}
 		move body to y-axis [0.300000] now;
-		turn Rhileg to x-axis <-18.697802> now;
-		turn Rfoot to x-axis <-9.197802> now;
-		turn Lhileg to x-axis <27.197802> now;
+		turn Rhileg to x-axis <-18.692308> now;
+		turn Rfoot to x-axis <-9.192308> now;
+		turn Lhileg to x-axis <27.192308> now;
 		turn Lfoot to x-axis <-12.500000> now;
 		sleep 28;
-		if( !bAiming )
+		if( !Static_Var_5 )
 		{
-			turn body to y-axis <-0.197802> now;
-			turn luparm to x-axis <-14.697802> now;
+			turn body to y-axis <-0.192308> now;
+			turn luparm to x-axis <-14.692308> now;
 		}
 		move body to y-axis [0.400000] now;
 		turn Rhileg to x-axis <-20.500000> now;
-		turn Rfoot to x-axis <-6.697802> now;
+		turn Rfoot to x-axis <-6.692308> now;
 		turn Lhileg to x-axis <32.000000> now;
-		turn Lfoot to x-axis <-14.697802> now;
+		turn Lfoot to x-axis <-14.692308> now;
 		sleep 31;
-		if( !bAiming )
+		if( !Static_Var_5 )
 		{
-			turn body to y-axis <-0.697802> now;
+			turn body to y-axis <-0.692308> now;
 			turn luparm to x-axis <-16.000000> now;
 		}
 		move body to y-axis [0.500000] now;
-		turn Rhileg to x-axis <-23.197802> now;
+		turn Rhileg to x-axis <-23.192308> now;
 		turn Rfoot to x-axis <-6.000000> now;
-		turn Lhileg to x-axis <36.197802> now;
+		turn Lhileg to x-axis <36.192308> now;
 		turn Lfoot to x-axis <-19.000000> now;
 		sleep 25;
-		if( !bAiming )
+		if( !Static_Var_5 )
 		{
-			turn body to y-axis <-1.098901> now;
+			turn body to y-axis <-1.093407> now;
 			turn luparm to x-axis <-17.500000> now;
 		}
 		move body to y-axis [0.600000] now;
-		turn Rhileg to x-axis <-29.197802> now;
+		turn Rhileg to x-axis <-29.192308> now;
 		turn Rleg to x-axis <33.500000> now;
 		turn Rfoot to x-axis <2.500000> now;
 		turn Lhileg to x-axis <41.000000> now;
-		turn Lfoot to x-axis <-6.697802> now;
+		turn Lfoot to x-axis <-6.692308> now;
 		sleep 31;
-		if( !bAiming )
+		if( !Static_Var_5 )
 		{
-			turn body to y-axis <-2.098901> now;
+			turn body to y-axis <-2.093407> now;
 			turn luparm to x-axis <-18.500000> now;
 		}
 		move body to y-axis [0.700000] now;
 		turn Rhileg to x-axis <-34.500000> now;
 		turn Rleg to x-axis <29.000000> now;
 		turn Rfoot to x-axis <0.000000> now;
-		turn Lhileg to x-axis <45.697802> now;
-		turn Lfoot to x-axis <0.697802> now;
+		turn Lhileg to x-axis <45.692308> now;
+		turn Lfoot to x-axis <0.692308> now;
 		sleep 25;
-		if( !bAiming )
+		if( !Static_Var_5 )
 		{
-			turn body to y-axis <-2.598901> now;
-			turn luparm to x-axis <-20.197802> now;
+			turn body to y-axis <-2.593407> now;
+			turn luparm to x-axis <-20.192308> now;
 		}
 		move body to y-axis [0.800000] now;
 		turn Rhileg to x-axis <-40.500000> now;
 		turn Rleg to x-axis <21.000000> now;
-		turn Lhileg to x-axis <49.697802> now;
+		turn Lhileg to x-axis <49.692308> now;
 		turn Lfoot to x-axis <12.000000> now;
 		sleep 26;
-		if( !bAiming )
+		if( !Static_Var_5 )
 		{
-			turn body to y-axis <-3.098901> now;
-			turn luparm to x-axis <-23.197802> now;
+			turn body to y-axis <-3.093407> now;
+			turn luparm to x-axis <-23.192308> now;
 		}
 		move body to y-axis [0.900000] now;
 		turn Rhileg to x-axis <-46.000000> now;
 		turn Rleg to x-axis <11.000000> now;
 		turn Lhileg to x-axis <56.500000> now;
-		turn Lfoot to x-axis <18.197802> now;
+		turn Lfoot to x-axis <18.192308> now;
 		sleep 36;
-		if( !bAiming )
+		if( !Static_Var_5 )
 		{
-			turn body to y-axis <-3.796703> now;
-			turn luparm to x-axis <-22.197802> now;
+			turn body to y-axis <-3.791209> now;
+			turn luparm to x-axis <-22.192308> now;
 		}
 		move body to y-axis [1.000000] now;
 		turn Rhileg to x-axis <-44.500000> now;
 		turn Rleg to x-axis <1.000000> now;
 		turn Lhileg to x-axis <47.000000> now;
-		turn Lleg to x-axis <-0.697802> now;
+		turn Lleg to x-axis <-0.692308> now;
 		sleep 37;
-		if( !bAiming )
+		if( !Static_Var_5 )
 		{
-			turn body to y-axis <-3.098901> now;
+			turn body to y-axis <-3.093407> now;
 			turn luparm to x-axis <-15.000000> now;
 		}
 		move body to y-axis [0.900000] now;
-		turn Rhileg to x-axis <-36.197802> now;
+		turn Rhileg to x-axis <-36.192308> now;
 		turn Rleg to x-axis <-6.000000> now;
-		turn Lhileg to x-axis <38.697802> now;
+		turn Lhileg to x-axis <38.692308> now;
 		turn Lleg to x-axis <8.000000> now;
 		sleep 38;
-		if( !bAiming )
+		if( !Static_Var_5 )
 		{
-			turn body to y-axis <-2.598901> now;
-			turn luparm to x-axis <-15.197802> now;
+			turn body to y-axis <-2.593407> now;
+			turn luparm to x-axis <-15.192308> now;
 		}
 		move body to y-axis [0.800000] now;
 		turn Rhileg to x-axis <-29.000000> now;
-		turn Rleg to x-axis <-14.197802> now;
-		turn Lhileg to x-axis <30.697802> now;
+		turn Rleg to x-axis <-14.192308> now;
+		turn Lhileg to x-axis <30.692308> now;
 		turn Lleg to x-axis <21.000000> now;
 		turn Lfoot to x-axis <11.000000> now;
 		sleep 29;
-		if( !bAiming )
+		if( !Static_Var_5 )
 		{
-			turn body to y-axis <-2.098901> now;
-			turn luparm to x-axis <-9.197802> now;
+			turn body to y-axis <-2.093407> now;
+			turn luparm to x-axis <-9.192308> now;
 		}
 		move body to y-axis [0.700000] now;
-		turn Rhileg to x-axis <-21.197802> now;
-		turn Lhileg to x-axis <21.697802> now;
+		turn Rhileg to x-axis <-21.192308> now;
+		turn Lhileg to x-axis <21.692308> now;
 		turn Lleg to x-axis <29.000000> now;
 		turn Lfoot to x-axis <10.000000> now;
 		sleep 29;
-		if( !bAiming )
+		if( !Static_Var_5 )
 		{
-			turn body to y-axis <-1.796703> now;
-			turn luparm to x-axis <-10.697802> now;
+			turn body to y-axis <-1.791209> now;
+			turn luparm to x-axis <-10.692308> now;
 		}
 		move body to y-axis [0.600000] now;
 		turn Rhileg to x-axis <-12.000000> now;
-		turn Lhileg to x-axis <18.697802> now;
+		turn Lhileg to x-axis <18.692308> now;
 		turn Lleg to x-axis <27.000000> now;
 		turn Lfoot to x-axis <0.000000> now;
 		sleep 26;
-		if( !bAiming )
+		if( !Static_Var_5 )
 		{
-			turn body to y-axis <-1.296703> now;
+			turn body to y-axis <-1.291209> now;
 			turn luparm to x-axis <-9.000000> now;
 		}
 		move body to y-axis [0.500000] now;
-		turn Rhileg to x-axis <-3.697802> now;
+		turn Rhileg to x-axis <-3.692308> now;
 		turn Rleg to x-axis <-9.000000> now;
-		turn Lhileg to x-axis <13.197802> now;
-		turn Lleg to x-axis <21.197802> now;
+		turn Lhileg to x-axis <13.192308> now;
+		turn Lleg to x-axis <21.192308> now;
 		sleep 28;
-		if( !bAiming )
+		if( !Static_Var_5 )
 		{
-			turn body to y-axis <-0.697802> now;
+			turn body to y-axis <-0.692308> now;
 			turn luparm to x-axis <-4.500000> now;
 		}
 		move body to y-axis [0.400000] now;
 		turn Rhileg to x-axis <-2.500000> now;
-		turn Rleg to x-axis <-3.697802> now;
-		turn Lhileg to x-axis <8.197802> now;
+		turn Rleg to x-axis <-3.692308> now;
+		turn Lhileg to x-axis <8.192308> now;
 		turn Lleg to x-axis <17.000000> now;
 		sleep 23;
-		if( !bAiming )
+		if( !Static_Var_5 )
 		{
 			turn body to y-axis <0.500000> now;
-			turn luparm to x-axis <-2.197802> now;
+			turn luparm to x-axis <-2.192308> now;
 		}
 		move body to y-axis [0.300000] now;
 		turn Rhileg to x-axis <-2.000000> now;
 		turn Rleg to x-axis <-2.500000> now;
-		turn Lhileg to x-axis <3.197802> now;
+		turn Lhileg to x-axis <3.192308> now;
 		turn Lleg to x-axis <12.500000> now;
 		sleep 34;
-		if( !bAiming )
+		if( !Static_Var_5 )
 		{
 			turn body to y-axis <0.000000> now;
 			turn luparm to x-axis <0.000000> now;
@@ -537,7 +536,7 @@ StopMoving()
 {
 	signal 8;
 	bMoving = FALSE;
-	if( !bAiming )
+	if( !Static_Var_5 )
 	{
 		turn body to y-axis <0.000000> speed <20.000000>;
 		turn luparm to x-axis <0.000000> speed <70.000000>;
@@ -567,9 +566,9 @@ Create()
 {
 	bMoving = FALSE;
 	Static_Var_2 = 0;
-	gun_1 = base;
+	Static_Var_3 = 0;
 	Static_Var_4 = 0;
-	bAiming = FALSE;
+	Static_Var_5 = 0;
 	Static_Var_6 = 0;
 	Static_Var_7 = 0;
 	Static_Var_8 = 0;
@@ -578,9 +577,9 @@ Create()
 
 RestoreAfterDelay()
 {
-	set-signal-mask SIG_AIM;
+	set-signal-mask 2;
 	sleep 3500;
-	gun_1 = base;
+	Static_Var_3 = 0;
 	sleep 11500;
 	Static_Var_2 = 0;
 	if( !Static_Var_4 )
@@ -592,7 +591,7 @@ RestoreAfterDelay()
 	wait-for-turn ruparm around x-axis;
 	if( !Static_Var_2 )
 	{
-		bAiming = FALSE;
+		Static_Var_5 = 0;
 	}
 }
 
@@ -612,7 +611,7 @@ RestoreSecondary()
 	wait-for-turn Larm around x-axis;
 	if( !Static_Var_2 )
 	{
-		bAiming = FALSE;
+		Static_Var_5 = 0;
 	}
 }
 
@@ -620,7 +619,6 @@ SweetSpot(piecenum)
 {
 	piecenum = base;
 }
-
 
 AimFromSecondary(piecenum)
 {
@@ -631,11 +629,11 @@ AimSecondary(heading, pitch)
 {
 	signal SIG_AIM_2;
 	set-signal-mask SIG_AIM_2;
-	while( gun_1 )
+	while( Static_Var_3 )
 	{
 		sleep 500;
 	}
-	bAiming = TRUE;
+	Static_Var_5 = 1;
 	Static_Var_4 = 1;
 	Static_Var_8 = 1;
 	turn body to x-axis <0.000000> speed <5.000000>;

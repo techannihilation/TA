@@ -180,8 +180,8 @@ Create()
 	bMoving = FALSE;
 	bAiming = FALSE;
 	Static_Var_10 = 1;
-	gun_1 = 0;
-	gun_3 = 0;
+	gun_1 = TurretBase;
+	gun_3 = TurretBase;
 	Static_Var_7 = 0;
 	Static_Var_6 = 0;
 	Static_Var_8 = 0;
@@ -213,7 +213,7 @@ Restore2()
 	bAiming = FALSE;
 	if( !Static_Var_8 )
 	{
-		gun_3 = 0;
+		gun_3 = TurretBase;
 	}
 }
 
@@ -270,7 +270,6 @@ AimPrimary(heading, pitch)
 	turn TurretBase to x-axis <0.000000> - pitch speed <45.000000>;
 	wait-for-turn TurretBase around y-axis;
 	wait-for-turn TurretBase around x-axis;
-
 	start-script RestoreAfterDelay();
 	return (1);
 }
@@ -284,7 +283,7 @@ FirePrimary()
 		move howitzer to z-axis [-1.500000] speed [200.000000];
 		sleep 140;
 		hide fire1;
-		gun_1 = 1;
+		gun_1 = howitzer;
 		wait-for-move howitzer along z-axis;
 		move howitzer to z-axis [0.000000] speed [2.000000];
 		move HowitzerBack to z-axis [0.000000] speed [1.000000];
@@ -297,7 +296,7 @@ FirePrimary()
 		move howitzer to z-axis [-1.500000] speed [200.000000];
 		sleep 140;
 		hide fire2;
-		gun_1 = 2;
+		gun_1 = fire1;
 		wait-for-move howitzer along z-axis;
 		move howitzer to z-axis [0.000000] speed [2.000000];
 		move HowitzerBack to z-axis [0.000000] speed [1.000000];
@@ -310,7 +309,7 @@ FirePrimary()
 		move howitzer to z-axis [-1.500000] speed [200.000000];
 		sleep 140;
 		hide fire3;
-		gun_1 = 3;
+		gun_1 = fire2;
 		wait-for-move howitzer along z-axis;
 		move howitzer to z-axis [0.000000] speed [2.000000];
 		move HowitzerBack to z-axis [0.000000] speed [1.000000];
@@ -324,7 +323,7 @@ FirePrimary()
 		move howitzer to z-axis [-1.500000] speed [200.000000];
 		sleep 140;
 		hide fire4;
-		gun_1 = 0;
+		gun_1 = TurretBase;
 		wait-for-move howitzer along z-axis;
 		move howitzer to z-axis [0.000000] speed [2.000000];
 		move HowitzerBack to z-axis [0.000000] speed [1.000000];
@@ -391,7 +390,7 @@ FireTertiary()
 		sleep 140;
 		hide lfire1;
 		wait-for-move l1 along z-axis;
-		gun_3 = 1;
+		gun_3 = howitzer;
 		move l1 to z-axis [0.000000] speed [1.000000];
 		return (0);
 	}
@@ -402,7 +401,7 @@ FireTertiary()
 		sleep 140;
 		hide lfire2;
 		wait-for-move l2 along z-axis;
-		gun_3 = 2;
+		gun_3 = fire1;
 		move l2 to z-axis [0.000000] speed [1.000000];
 		return (0);
 	}
@@ -413,7 +412,7 @@ FireTertiary()
 		sleep 140;
 		hide lfire3;
 		wait-for-move l3 along z-axis;
-		gun_3 = 3;
+		gun_3 = fire2;
 		move l3 to z-axis [0.000000] speed [1.000000];
 		return (0);
 	}
@@ -425,7 +424,7 @@ FireTertiary()
 		sleep 140;
 		hide lfire4;
 		wait-for-move l4 along z-axis;
-		gun_3 = 0;
+		gun_3 = TurretBase;
 		move l4 to z-axis [0.000000] speed [1.000000];
 		return (0);
 	}
@@ -479,7 +478,7 @@ Killed(severity, corpsetype)
 		explode rleg type BITMAPONLY | BITMAP1;
 		explode rupleg type BITMAPONLY | BITMAP2;
 		explode TurretBase type BITMAPONLY | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -498,7 +497,7 @@ Killed(severity, corpsetype)
 		explode rleg type BITMAPONLY | BITMAP1;
 		explode rupleg type BITMAPONLY | BITMAP2;
 		explode TurretBase type BITMAPONLY | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -517,7 +516,7 @@ Killed(severity, corpsetype)
 		explode rleg type BITMAPONLY | BITMAP1;
 		explode rupleg type BITMAPONLY | BITMAP2;
 		explode TurretBase type BITMAPONLY | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
@@ -534,4 +533,5 @@ Killed(severity, corpsetype)
 	explode rleg type BITMAPONLY | BITMAP1;
 	explode rupleg type BITMAPONLY | BITMAP2;
 	explode TurretBase type SHATTER | BITMAP5;
+	return (corpsetype);
 }

@@ -7,7 +7,7 @@ piece  base, body, turret1, turret2, sleeve1, sleeve2, barrel1, barrel2,
        barrel3, barrel4, flare1, flare2, flare3, flare4, flare5, flare6,
        wake1, wake2, wake3;
 
-static-var  gun_1, Static_Var_2, bAiming, restore_delay;
+static-var  gun_1, gun_2, bAiming, restore_delay;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -49,7 +49,7 @@ Create()
 	hide flare3;
 	hide flare4;
 	gun_1 = base;
-	Static_Var_2 = 0;
+	gun_2 = base;
 	bAiming = FALSE;
 	restore_delay = 3000;
 	start-script SmokeUnit();
@@ -92,113 +92,110 @@ AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-		bAiming = FALSE;
-		turn turret1 to y-axis heading speed <60.000000>;
-		turn sleeve1 to x-axis <0.000000> - pitch speed <35.000000>;
-		wait-for-turn turret1 around y-axis;
-		wait-for-turn sleeve1 around x-axis;
-		start-script RestoreAfterDelay();
-		return (1);
+	bAiming = FALSE;
+	turn turret1 to y-axis heading speed <60.000000>;
+	turn sleeve1 to x-axis <0.000000> - pitch speed <35.000000>;
+	wait-for-turn turret1 around y-axis;
+	wait-for-turn sleeve1 around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
 }
 
 AimSecondary(heading, pitch)
 {
 	signal SIG_AIM_2;
 	set-signal-mask SIG_AIM_2;
-		bAiming = TRUE;
-		turn turret2 to y-axis <180.000000> + heading speed <60.000000>;
-		turn sleeve2 to x-axis pitch speed <35.000000>;
-		wait-for-turn turret2 around y-axis;
-		wait-for-turn sleeve2 around x-axis;
-		start-script RestoreAfterDelay();
-		return (1);
-
+	bAiming = TRUE;
+	turn turret2 to y-axis <180.000000> + heading speed <60.000000>;
+	turn sleeve2 to x-axis pitch speed <35.000000>;
+	wait-for-turn turret2 around y-axis;
+	wait-for-turn sleeve2 around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
 }
 
 FirePrimary()
 {
-		if( gun_1 == 0 )
-		{
-			move barrel1 to z-axis [-1.000000] speed [500.000000];
-			show flare1;
-			sleep 150;
-			hide flare1;
-			move barrel1 to z-axis [0.000000] speed [3.000000];
-			gun_1 = body;
-			return (0);
-		}
-		if( gun_1 == 1 )
-		{
-			move barrel2 to z-axis [-1.000000] speed [500.000000];
-			show flare2;
-			sleep 150;
-			hide flare2;
-			move barrel2 to z-axis [0.000000] speed [3.000000];
-			gun_1 = base;
-			return (0);
-		}
+	if( gun_1 == 0 )
+	{
+		move barrel1 to z-axis [-1.000000] speed [500.000000];
+		show flare1;
+		sleep 150;
+		hide flare1;
+		move barrel1 to z-axis [0.000000] speed [3.000000];
+		gun_1 = body;
+		return (0);
+	}
+	if( gun_1 == 1 )
+	{
+		move barrel2 to z-axis [-1.000000] speed [500.000000];
+		show flare2;
+		sleep 150;
+		hide flare2;
+		move barrel2 to z-axis [0.000000] speed [3.000000];
+		gun_1 = base;
+		return (0);
+	}
 }
-	
-FireSecondary()	
+
+FireSecondary()
 {
-		if( Static_Var_2 == 0 )
-		{
-			move barrel3 to z-axis [1.000000] speed [500.000000];
-			show flare3;
-			sleep 150;
-			hide flare3;
-			move barrel3 to z-axis [0.000000] speed [3.000000];
-			Static_Var_2 = 1;
-			return (0);
-		}
-		if( Static_Var_2 == 1 )
-		{
-			move barrel4 to z-axis [1.000000] speed [500.000000];
-			show flare4;
-			sleep 150;
-			hide flare4;
-			move barrel4 to z-axis [0.000000] speed [3.000000];
-			Static_Var_2 = 0;
-			return (0);
-		}
+	if( gun_2 == 0 )
+	{
+		move barrel3 to z-axis [1.000000] speed [500.000000];
+		show flare3;
+		sleep 150;
+		hide flare3;
+		move barrel3 to z-axis [0.000000] speed [3.000000];
+		gun_2 = body;
+		return (0);
+	}
+	if( gun_2 == 1 )
+	{
+		move barrel4 to z-axis [1.000000] speed [500.000000];
+		show flare4;
+		sleep 150;
+		hide flare4;
+		move barrel4 to z-axis [0.000000] speed [3.000000];
+		gun_2 = base;
+		return (0);
+	}
 }
 
 AimFromPrimary(piecenum)
 {
-		piecenum = turret1;
+	piecenum = turret1;
 }
 
 AimFromSecondary(piecenum)
 {
-		piecenum = turret2;
+	piecenum = turret2;
 }
 
 QueryPrimary(piecenum)
 {
-		if( gun_1 == 0 )
-		{
-			piecenum = flare1;
-		}
-		if( gun_1 == 1 )
-		{
-			piecenum = flare2;
-		}
+	if( gun_1 == 0 )
+	{
+		piecenum = flare1;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = flare2;
+	}
 }
 
 QuerySecondary(piecenum)
 {
-		if( Static_Var_2 == 0 )
-		{
-			piecenum = flare3;
-		}
-		if( Static_Var_2 == 1 )
-		{
-			piecenum = flare4;
-		}
+	if( gun_2 == 0 )
+	{
+		piecenum = flare3;
+	}
+	if( gun_2 == 1 )
+	{
+		piecenum = flare4;
+	}
 }
 
-		
-		
 QueryWeapon3(piecenum)
 {
 	piecenum = flare5;
@@ -228,6 +225,7 @@ FireWeapon4()
 {
 	sleep 150;
 }
+
 SweetSpot(piecenum)
 {
 	piecenum = base;
@@ -254,7 +252,7 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		return (0);
+		return (corpsetype);
 	}
 	explode turret1 type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
 	explode sleeve2 type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
@@ -263,10 +261,11 @@ Killed(severity, corpsetype)
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode turret2 type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
 	explode sleeve1 type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
 	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP1;
+	return (corpsetype);
 }

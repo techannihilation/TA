@@ -6,7 +6,7 @@
 piece  ground, base, cap, glowingthing, pylon1, pylon2, pylon3, pylon4,
        bubble1, bubble2, bubble3, bubble4, bubble5, bubble6, bubble7, bubble8;
 
-static-var  Static_Var_1, mmState, Active;
+static-var  Static_Var_1, Static_Var_2, Static_Var_3;
 
 
 activatescr()
@@ -193,10 +193,9 @@ Stop()
 	cache glowingthing;
 }
 
-MMStatus(State)
+MMStatus(Func_Var_1)
 {
-	Active = State;
-	//get PRINT(Active);
+	Static_Var_3 = Func_Var_1;
 }
 
 ImAMetalMaker()
@@ -205,21 +204,21 @@ ImAMetalMaker()
 	{
 		sleep 150;
 	}
-	mmState = -1;
+	Static_Var_2 = -1;
 	while( TRUE )
 	{
-		if( Active == 1 )
+		if( Static_Var_3 == 1 )
 		{
-			if( mmState != 1 )
+			if( Static_Var_2 != 1 )
 			{
 				call-script Go();
-				mmState = 1;
+				Static_Var_2 = 1;
 			}
 		}
-		else if( mmState != 0 )
+		else if( Static_Var_2 != 0 )
 		{
 			call-script Stop();
-			mmState = 0;
+			Static_Var_2 = 0;
 		}
 		sleep 1000;
 	}

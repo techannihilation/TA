@@ -18,101 +18,101 @@ walk()
 	if( bMoving )
 	{
 		turn hips to x-axis <10.000000> speed <10.000000>;
-		turn rupleg to x-axis <10.000000> speed <39.919355>;
-		turn rlowleg to x-axis <10.000000> speed <39.919355>;
-		turn rfoot to x-axis <-20.000000> speed <79.838710>;
-		turn lupleg to x-axis <-20.000000> speed <79.838710>;
-		turn llowleg to x-axis <-10.000000> speed <39.919355>;
-		turn lfoot to x-axis <10.000000> speed <39.919355>;
+		turn rupleg to x-axis <10.000000> speed <39.917582>;
+		turn rlowleg to x-axis <10.000000> speed <39.917582>;
+		turn rfoot to x-axis <-20.000000> speed <79.835165>;
+		turn lupleg to x-axis <-20.000000> speed <79.835165>;
+		turn llowleg to x-axis <-10.000000> speed <39.917582>;
+		turn lfoot to x-axis <10.000000> speed <39.917582>;
 		sleep 200;
 	}
 	if( bMoving )
 	{
-		turn rupleg to x-axis <15.000000> speed <33.221477>;
-		turn rlowleg to x-axis <25.000000> speed <99.664430>;
-		turn rfoot to x-axis <-40.000000> speed <132.885906>;
-		turn lupleg to x-axis <-40.000000> speed <132.885906>;
-		turn llowleg to x-axis <10.000000> speed <132.885906>;
-		turn ltoe to x-axis <20.000000> speed <132.885906>;
+		turn rupleg to x-axis <15.000000> speed <33.219780>;
+		turn rlowleg to x-axis <25.000000> speed <99.659341>;
+		turn rfoot to x-axis <-40.000000> speed <132.884615>;
+		turn lupleg to x-axis <-40.000000> speed <132.884615>;
+		turn llowleg to x-axis <10.000000> speed <132.884615>;
+		turn ltoe to x-axis <20.000000> speed <132.884615>;
 		sleep 125;
 	}
 	if( bMoving )
 	{
-		turn rlowleg to x-axis <10.000000> speed <99.664430>;
-		turn rfoot to x-axis <-30.000000> speed <66.442953>;
-		turn rtoe to x-axis <5.000000> speed <33.221477>;
-		turn lupleg to x-axis <-35.000000> speed <33.221477>;
+		turn rlowleg to x-axis <10.000000> speed <99.659341>;
+		turn rfoot to x-axis <-30.000000> speed <66.439560>;
+		turn rtoe to x-axis <5.000000> speed <33.219780>;
+		turn lupleg to x-axis <-35.000000> speed <33.219780>;
 		turn llowleg to x-axis <10.000000> now;
-		turn lfoot to x-axis <25.000000> speed <99.664430>;
-		turn ltoe to x-axis <0.000000> speed <132.885906>;
+		turn lfoot to x-axis <25.000000> speed <99.659341>;
+		turn ltoe to x-axis <0.000000> speed <132.884615>;
 		sleep 125;
 	}
 	if( bMoving )
 	{
-		turn rupleg to x-axis <0.000000> speed <99.664430>;
-		turn rlowleg to x-axis <-10.000000> speed <132.885906>;
-		turn rfoot to x-axis <5.000000> speed <232.550336>;
-		turn rtoe to x-axis <15.000000> speed <66.442953>;
-		turn lupleg to x-axis <-20.000000> speed <99.664430>;
-		turn llowleg to x-axis <0.000000> speed <66.442953>;
-		turn lfoot to x-axis <20.000000> speed <33.221477>;
+		turn rupleg to x-axis <0.000000> speed <99.659341>;
+		turn rlowleg to x-axis <-10.000000> speed <132.884615>;
+		turn rfoot to x-axis <5.000000> speed <232.549451>;
+		turn rtoe to x-axis <15.000000> speed <66.439560>;
+		turn lupleg to x-axis <-20.000000> speed <99.659341>;
+		turn llowleg to x-axis <0.000000> speed <66.439560>;
+		turn lfoot to x-axis <20.000000> speed <33.219780>;
 		sleep 125;
 	}
 	if( bMoving )
 	{
-		turn rupleg to x-axis <-10.000000> speed <66.442953>;
-		turn lupleg to x-axis <0.000000> speed <132.885906>;
-		turn lfoot to x-axis <0.000000> speed <132.885906>;
+		turn rupleg to x-axis <-10.000000> speed <66.439560>;
+		turn lupleg to x-axis <0.000000> speed <132.884615>;
+		turn lfoot to x-axis <0.000000> speed <132.884615>;
 		sleep 125;
 	}
 	if( bMoving )
 	{
 		turn hips to x-axis <0.000000> speed <10.000000>;
-		turn rupleg to x-axis <-20.000000> speed <66.442953>;
+		turn rupleg to x-axis <-20.000000> speed <66.439560>;
 		turn rlowleg to x-axis <-10.000000> now;
-		turn rfoot to x-axis <10.000000> speed <33.221477>;
-		turn lupleg to x-axis <10.000000> speed <66.442953>;
-		turn llowleg to x-axis <10.000000> speed <66.442953>;
-		turn lfoot to x-axis <-20.000000> speed <132.885906>;
+		turn rfoot to x-axis <10.000000> speed <33.219780>;
+		turn lupleg to x-axis <10.000000> speed <66.439560>;
+		turn llowleg to x-axis <10.000000> speed <66.439560>;
+		turn lfoot to x-axis <-20.000000> speed <132.884615>;
 		sleep 125;
 	}
 	if( bMoving )
 	{
-		turn lupleg to x-axis <15.000000> speed <33.221477>;
-		turn llowleg to x-axis <25.000000> speed <99.664430>;
-		turn lfoot to x-axis <-40.000000> speed <132.885906>;
-		turn rupleg to x-axis <-40.000000> speed <132.885906>;
-		turn rlowleg to x-axis <10.000000> speed <132.885906>;
-		turn rtoe to x-axis <20.000000> speed <33.221477>;
+		turn lupleg to x-axis <15.000000> speed <33.219780>;
+		turn llowleg to x-axis <25.000000> speed <99.659341>;
+		turn lfoot to x-axis <-40.000000> speed <132.884615>;
+		turn rupleg to x-axis <-40.000000> speed <132.884615>;
+		turn rlowleg to x-axis <10.000000> speed <132.884615>;
+		turn rtoe to x-axis <20.000000> speed <33.219780>;
 		sleep 125;
 	}
 	if( bMoving )
 	{
-		turn llowleg to x-axis <10.000000> speed <99.664430>;
-		turn lfoot to x-axis <-30.000000> speed <66.442953>;
-		turn ltoe to x-axis <5.000000> speed <33.221477>;
-		turn rupleg to x-axis <-35.000000> speed <33.221477>;
+		turn llowleg to x-axis <10.000000> speed <99.659341>;
+		turn lfoot to x-axis <-30.000000> speed <66.439560>;
+		turn ltoe to x-axis <5.000000> speed <33.219780>;
+		turn rupleg to x-axis <-35.000000> speed <33.219780>;
 		turn rlowleg to x-axis <10.000000> now;
-		turn rfoot to x-axis <25.000000> speed <99.664430>;
-		turn rtoe to x-axis <0.000000> speed <132.885906>;
+		turn rfoot to x-axis <25.000000> speed <99.659341>;
+		turn rtoe to x-axis <0.000000> speed <132.884615>;
 		sleep 125;
 	}
 	if( bMoving )
 	{
-		turn lupleg to x-axis <0.000000> speed <99.664430>;
-		turn llowleg to x-axis <-10.000000> speed <132.885906>;
-		turn lfoot to x-axis <5.000000> speed <232.550336>;
-		turn ltoe to x-axis <15.000000> speed <66.442953>;
-		turn rupleg to x-axis <-20.000000> speed <99.664430>;
-		turn rlowleg to x-axis <0.000000> speed <66.442953>;
-		turn rfoot to x-axis <20.000000> speed <33.221477>;
+		turn lupleg to x-axis <0.000000> speed <99.659341>;
+		turn llowleg to x-axis <-10.000000> speed <132.884615>;
+		turn lfoot to x-axis <5.000000> speed <232.549451>;
+		turn ltoe to x-axis <15.000000> speed <66.439560>;
+		turn rupleg to x-axis <-20.000000> speed <99.659341>;
+		turn rlowleg to x-axis <0.000000> speed <66.439560>;
+		turn rfoot to x-axis <20.000000> speed <33.219780>;
 		sleep 125;
 	}
 	if( bMoving )
 	{
-		turn lupleg to x-axis <-10.000000> speed <66.442953>;
-		turn rupleg to x-axis <0.000000> speed <132.885906>;
-		turn rfoot to x-axis <0.000000> speed <132.885906>;
+		turn lupleg to x-axis <-10.000000> speed <66.439560>;
+		turn rupleg to x-axis <0.000000> speed <132.884615>;
+		turn rfoot to x-axis <0.000000> speed <132.884615>;
 		sleep 125;
 	}
 }
@@ -121,100 +121,100 @@ walklegs()
 {
 	if( bMoving )
 	{
-		turn rupleg to x-axis <10.000000> speed <66.442953>;
-		turn rlowleg to x-axis <10.000000> speed <66.442953>;
-		turn rfoot to x-axis <-20.000000> speed <132.885906>;
-		turn lupleg to x-axis <-20.000000> speed <66.442953>;
+		turn rupleg to x-axis <10.000000> speed <66.439560>;
+		turn rlowleg to x-axis <10.000000> speed <66.439560>;
+		turn rfoot to x-axis <-20.000000> speed <132.884615>;
+		turn lupleg to x-axis <-20.000000> speed <66.439560>;
 		turn llowleg to x-axis <-10.000000> now;
-		turn lfoot to x-axis <10.000000> speed <33.221477>;
+		turn lfoot to x-axis <10.000000> speed <33.219780>;
 		sleep 125;
 	}
 	if( bMoving )
 	{
-		turn rupleg to x-axis <15.000000> speed <33.221477>;
-		turn rlowleg to x-axis <25.000000> speed <99.664430>;
-		turn rfoot to x-axis <-40.000000> speed <132.885906>;
-		turn lupleg to x-axis <-40.000000> speed <132.885906>;
-		turn llowleg to x-axis <10.000000> speed <132.885906>;
-		turn ltoe to x-axis <20.000000> speed <33.221477>;
+		turn rupleg to x-axis <15.000000> speed <33.219780>;
+		turn rlowleg to x-axis <25.000000> speed <99.659341>;
+		turn rfoot to x-axis <-40.000000> speed <132.884615>;
+		turn lupleg to x-axis <-40.000000> speed <132.884615>;
+		turn llowleg to x-axis <10.000000> speed <132.884615>;
+		turn ltoe to x-axis <20.000000> speed <33.219780>;
 		sleep 125;
 	}
 	if( bMoving )
 	{
-		turn rlowleg to x-axis <10.000000> speed <99.664430>;
-		turn rfoot to x-axis <-30.000000> speed <66.442953>;
-		turn rtoe to x-axis <5.000000> speed <33.221477>;
-		turn lupleg to x-axis <-35.000000> speed <33.221477>;
+		turn rlowleg to x-axis <10.000000> speed <99.659341>;
+		turn rfoot to x-axis <-30.000000> speed <66.439560>;
+		turn rtoe to x-axis <5.000000> speed <33.219780>;
+		turn lupleg to x-axis <-35.000000> speed <33.219780>;
 		turn llowleg to x-axis <10.000000> now;
-		turn lfoot to x-axis <25.000000> speed <99.664430>;
-		turn ltoe to x-axis <0.000000> speed <132.885906>;
+		turn lfoot to x-axis <25.000000> speed <99.659341>;
+		turn ltoe to x-axis <0.000000> speed <132.884615>;
 		sleep 125;
 	}
 	if( bMoving )
 	{
-		turn rupleg to x-axis <0.000000> speed <99.664430>;
-		turn rlowleg to x-axis <-10.000000> speed <132.885906>;
-		turn rfoot to x-axis <5.000000> speed <232.550336>;
-		turn rtoe to x-axis <15.000000> speed <66.442953>;
-		turn lupleg to x-axis <-20.000000> speed <99.664430>;
-		turn llowleg to x-axis <0.000000> speed <66.442953>;
-		turn lfoot to x-axis <20.000000> speed <33.221477>;
+		turn rupleg to x-axis <0.000000> speed <99.659341>;
+		turn rlowleg to x-axis <-10.000000> speed <132.884615>;
+		turn rfoot to x-axis <5.000000> speed <232.549451>;
+		turn rtoe to x-axis <15.000000> speed <66.439560>;
+		turn lupleg to x-axis <-20.000000> speed <99.659341>;
+		turn llowleg to x-axis <0.000000> speed <66.439560>;
+		turn lfoot to x-axis <20.000000> speed <33.219780>;
 		sleep 125;
 	}
 	if( bMoving )
 	{
-		turn rupleg to x-axis <-10.000000> speed <66.442953>;
-		turn lupleg to x-axis <0.000000> speed <132.885906>;
-		turn lfoot to x-axis <0.000000> speed <132.885906>;
+		turn rupleg to x-axis <-10.000000> speed <66.439560>;
+		turn lupleg to x-axis <0.000000> speed <132.884615>;
+		turn lfoot to x-axis <0.000000> speed <132.884615>;
 		sleep 125;
 	}
 	if( bMoving )
 	{
-		turn rupleg to x-axis <-20.000000> speed <66.442953>;
+		turn rupleg to x-axis <-20.000000> speed <66.439560>;
 		turn rlowleg to x-axis <-10.000000> now;
-		turn rfoot to x-axis <10.000000> speed <33.221477>;
-		turn lupleg to x-axis <10.000000> speed <66.442953>;
-		turn llowleg to x-axis <10.000000> speed <66.442953>;
-		turn lfoot to x-axis <-20.000000> speed <132.885906>;
+		turn rfoot to x-axis <10.000000> speed <33.219780>;
+		turn lupleg to x-axis <10.000000> speed <66.439560>;
+		turn llowleg to x-axis <10.000000> speed <66.439560>;
+		turn lfoot to x-axis <-20.000000> speed <132.884615>;
 		sleep 125;
 	}
 	if( bMoving )
 	{
-		turn lupleg to x-axis <15.000000> speed <33.221477>;
-		turn llowleg to x-axis <25.000000> speed <99.664430>;
-		turn lfoot to x-axis <-40.000000> speed <132.885906>;
-		turn rupleg to x-axis <-40.000000> speed <132.885906>;
-		turn rlowleg to x-axis <10.000000> speed <132.885906>;
-		turn rtoe to x-axis <20.000000> speed <33.221477>;
+		turn lupleg to x-axis <15.000000> speed <33.219780>;
+		turn llowleg to x-axis <25.000000> speed <99.659341>;
+		turn lfoot to x-axis <-40.000000> speed <132.884615>;
+		turn rupleg to x-axis <-40.000000> speed <132.884615>;
+		turn rlowleg to x-axis <10.000000> speed <132.884615>;
+		turn rtoe to x-axis <20.000000> speed <33.219780>;
 		sleep 125;
 	}
 	if( bMoving )
 	{
-		turn llowleg to x-axis <10.000000> speed <99.664430>;
-		turn lfoot to x-axis <-30.000000> speed <66.442953>;
-		turn ltoe to x-axis <5.000000> speed <33.221477>;
-		turn rupleg to x-axis <-35.000000> speed <33.221477>;
+		turn llowleg to x-axis <10.000000> speed <99.659341>;
+		turn lfoot to x-axis <-30.000000> speed <66.439560>;
+		turn ltoe to x-axis <5.000000> speed <33.219780>;
+		turn rupleg to x-axis <-35.000000> speed <33.219780>;
 		turn rlowleg to x-axis <10.000000> now;
-		turn rfoot to x-axis <25.000000> speed <99.664430>;
-		turn rtoe to x-axis <0.000000> speed <132.885906>;
+		turn rfoot to x-axis <25.000000> speed <99.659341>;
+		turn rtoe to x-axis <0.000000> speed <132.884615>;
 		sleep 125;
 	}
 	if( bMoving )
 	{
-		turn lupleg to x-axis <0.000000> speed <99.664430>;
-		turn llowleg to x-axis <-10.000000> speed <132.885906>;
-		turn lfoot to x-axis <5.000000> speed <232.550336>;
-		turn ltoe to x-axis <15.000000> speed <66.442953>;
-		turn rupleg to x-axis <-20.000000> speed <99.664430>;
-		turn rlowleg to x-axis <0.000000> speed <66.442953>;
-		turn rfoot to x-axis <20.000000> speed <33.221477>;
+		turn lupleg to x-axis <0.000000> speed <99.659341>;
+		turn llowleg to x-axis <-10.000000> speed <132.884615>;
+		turn lfoot to x-axis <5.000000> speed <232.549451>;
+		turn ltoe to x-axis <15.000000> speed <66.439560>;
+		turn rupleg to x-axis <-20.000000> speed <99.659341>;
+		turn rlowleg to x-axis <0.000000> speed <66.439560>;
+		turn rfoot to x-axis <20.000000> speed <33.219780>;
 		sleep 125;
 	}
 	if( bMoving )
 	{
-		turn lupleg to x-axis <-10.000000> speed <66.442953>;
-		turn rupleg to x-axis <0.000000> speed <132.885906>;
-		turn rfoot to x-axis <0.000000> speed <132.885906>;
+		turn lupleg to x-axis <-10.000000> speed <66.439560>;
+		turn rupleg to x-axis <0.000000> speed <132.884615>;
+		turn rfoot to x-axis <0.000000> speed <132.884615>;
 		sleep 125;
 	}
 }
@@ -432,7 +432,7 @@ Killed(severity, corpsetype)
 		explode rlowleg type BITMAPONLY | BITMAP1;
 		explode rupleg type BITMAPONLY | BITMAP2;
 		explode torso type BITMAPONLY | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -451,7 +451,7 @@ Killed(severity, corpsetype)
 		explode rupleg type FALL | BITMAP1;
 		explode rlowleg type FALL | BITMAP2;
 		explode torso type BITMAPONLY | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -470,7 +470,7 @@ Killed(severity, corpsetype)
 		explode rupleg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 		explode rlowleg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 		explode torso type BITMAPONLY | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode hips type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
@@ -487,4 +487,5 @@ Killed(severity, corpsetype)
 	explode rupleg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 	explode rlowleg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 	explode torso type BITMAPONLY | BITMAP5;
+	return (corpsetype);
 }

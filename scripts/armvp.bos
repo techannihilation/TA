@@ -6,7 +6,7 @@
 piece  base, pad, beam1, beam2, side1, side2, doo2, door1,
        plate2, plate1, nano2, nano1, post1, post2;
 
-static-var  Static_Var_1, Static_Var_2, statechg_DesiredState, statechg_StateChanging;
+static-var  spray, Static_Var_2, Static_Var_3, Static_Var_4;
 
 // Signal definitions
 #define SIG_ACTIVATE			2
@@ -20,19 +20,15 @@ activatescr()
 	turn side2 to z-axis <89.016484> speed <116.000000>;
 	set ARMORED to 0;
 	sleep 766;
-
 	turn doo2 to z-axis <90.016484> speed <210.000000>;
 	turn door1 to z-axis <-90.016484> speed <211.000000>;
 	sleep 428;
-
-	move doo2 to x-axis [-17.500000] speed [40.000000];
-	move door1 to x-axis [17.750000] speed [40.000000];
+	move doo2 to x-axis [-7.000000] speed [16.000000];
+	move door1 to x-axis [7.100000] speed [16.000000];
 	sleep 428;
-
-	move plate2 to x-axis [14.625000] speed [32.500000];
-	move plate1 to x-axis [-16.250000] speed [37.500000];
+	move plate2 to x-axis [5.850000] speed [13.000000];
+	move plate1 to x-axis [-6.500000] speed [15.000000];
 	sleep 429;
-
 	turn nano2 to z-axis <-37.005495> speed <86.000000>;
 	turn nano1 to z-axis <41.005495> speed <97.000000>;
 	sleep 431;
@@ -40,10 +36,10 @@ activatescr()
 
 deactivatescr()
 {
-	move plate2 to x-axis [14.625000] now;
-	move doo2 to x-axis [-17.500000] now;
-	move plate1 to x-axis [-16.250000] now;
-	move door1 to x-axis [17.750000] now;
+	move plate2 to x-axis [5.850000] now;
+	move doo2 to x-axis [-7.000000] now;
+	move plate1 to x-axis [-6.500000] now;
+	move door1 to x-axis [7.100000] now;
 	turn side1 to z-axis <-89.560440> now;
 	turn side2 to z-axis <89.560440> now;
 	turn doo2 to z-axis <90.016484> now;
@@ -53,19 +49,15 @@ deactivatescr()
 	turn nano1 to z-axis <41.846154> now;
 	turn nano1 to z-axis <0.000000> speed <100.000000>;
 	sleep 418;
-
-	move plate2 to x-axis [0.000000] speed [32.500000];
-	move plate1 to x-axis [0.000000] speed [37.500000];
+	move plate2 to x-axis [0.000000] speed [13.000000];
+	move plate1 to x-axis [0.000000] speed [15.000000];
 	sleep 426;
-
-	move doo2 to x-axis [0.000000] speed [40.000000];
-	move door1 to x-axis [0.000000] speed [40.000000];
+	move doo2 to x-axis [0.000000] speed [16.000000];
+	move door1 to x-axis [0.000000] speed [16.000000];
 	sleep 428;
-
 	turn doo2 to z-axis <0.000000> speed <209.000000>;
 	turn door1 to z-axis <0.000000> speed <210.000000>;
 	sleep 430;
-
 	turn side1 to z-axis <0.000000> speed <122.000000>;
 	turn side2 to z-axis <0.000000> speed <122.000000>;
 	set ARMORED to 1;
@@ -161,17 +153,17 @@ Stop()
 
 RequestState(requestedstate, currentstate)
 {
-	if( statechg_StateChanging )
+	if( Static_Var_4 )
 	{
-		statechg_DesiredState = requestedstate;
+		Static_Var_3 = requestedstate;
 		return (0);
 	}
-	statechg_StateChanging = TRUE;
-	currentstate = statechg_DesiredState;
-	statechg_DesiredState = requestedstate;
-	while( statechg_DesiredState != currentstate )
+	Static_Var_4 = 1;
+	currentstate = Static_Var_3;
+	Static_Var_3 = requestedstate;
+	while( Static_Var_3 != currentstate )
 	{
-		if( statechg_DesiredState )
+		if( Static_Var_3 )
 		{
 			call-script Stop();
 			currentstate = 1;
@@ -182,7 +174,7 @@ RequestState(requestedstate, currentstate)
 			currentstate = 0;
 		}
 	}
-	statechg_StateChanging = FALSE;
+	Static_Var_4 = 0;
 }
 
 Create()
@@ -199,17 +191,17 @@ Create()
 	dont-shade side1;
 	dont-shade side2;
 	Static_Var_2 = 0;
-	Static_Var_1 = 0;
+	spray = base;
 	set ARMORED to 1;
-	statechg_DesiredState = TRUE;
-	statechg_StateChanging = FALSE;
+	Static_Var_3 = 1;
+	Static_Var_4 = 0;
 	start-script SmokeUnit();
 }
 
 QueryNanoPiece(piecenum)
 {
-	piecenum = beam1 + Static_Var_1;
-	Static_Var_1 = !Static_Var_1;
+	piecenum = 2 + spray;
+	spray = !spray;
 }
 
 Activate()
@@ -267,7 +259,7 @@ Killed(severity, corpsetype)
 		explode post2 type BITMAPONLY | BITMAP2;
 		explode side1 type BITMAPONLY | BITMAP3;
 		explode side2 type BITMAPONLY | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -284,7 +276,7 @@ Killed(severity, corpsetype)
 		explode post2 type FALL | BITMAP2;
 		explode side1 type BITMAPONLY | BITMAP3;
 		explode side2 type BITMAPONLY | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -301,7 +293,7 @@ Killed(severity, corpsetype)
 		explode post2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 		explode side1 type BITMAPONLY | BITMAP3;
 		explode side2 type BITMAPONLY | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP1;
@@ -316,4 +308,5 @@ Killed(severity, corpsetype)
 	explode post2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 	explode side1 type BITMAPONLY | BITMAP3;
 	explode side2 type BITMAPONLY | BITMAP4;
+	return (corpsetype);
 }

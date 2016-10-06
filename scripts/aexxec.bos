@@ -36,8 +36,6 @@ RestoreAfterDelay()
 {
 	sleep restore_delay;
 	turn body to y-axis <0.000000> speed <80.000000>;
-//	turn box1 to x-axis <0.000000> speed <25.000000>;
-//	turn box2 to x-axis <0.000000> speed <25.000000>;
 }
 
 AimPrimary(heading, pitch)
@@ -45,10 +43,7 @@ AimPrimary(heading, pitch)
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
 	turn body to y-axis heading speed <90.000000>;
-//	turn box1 to x-axis <0.000000> - pitch speed <25.000000>;
-//	turn box2 to x-axis <0.000000> - pitch speed <25.000000>;
 	wait-for-turn body around y-axis;
-//	wait-for-turn box2 around x-axis;
 	start-script RestoreAfterDelay();
 	return (1);
 }
@@ -140,7 +135,7 @@ Killed(severity, corpsetype)
 		explode box2 type 1056;
 		explode body type 544;
 		explode chassis type 2080;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -153,7 +148,7 @@ Killed(severity, corpsetype)
 		explode box2 type 30;
 		explode body type 544;
 		explode chassis type 2080;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -166,7 +161,7 @@ Killed(severity, corpsetype)
 		explode box2 type 30;
 		explode body type 30;
 		explode chassis type 30;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode canon1 type 30;
@@ -177,5 +172,5 @@ Killed(severity, corpsetype)
 	explode box2 type 30;
 	explode body type 30;
 	explode chassis type 30;
-	return (0);
+	return (corpsetype);
 }

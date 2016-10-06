@@ -10,16 +10,12 @@ static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging;
 
 activatescr()
 {
-
 	sleep 44;
-	return (0);
 }
 
 deactivatescr()
 {
-
 	sleep 44;
-	return (0);
 }
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -47,14 +43,12 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		}
 		sleep sleeptime;
 	}
-	return (0);
 }
 
 InitState()
 {
 	statechg_DesiredState = TRUE;
 	statechg_StateChanging = FALSE;
-	return (0);
 }
 
 RequestState(requestedstate, currentstate)
@@ -81,22 +75,20 @@ RequestState(requestedstate, currentstate)
 		}
 	}
 	statechg_StateChanging = FALSE;
-	return (0);
 }
 
 MoveRate2()
 {
-	if( Rand( 1, 10 ) == 1 AND ( !Static_Var_1 ) )
+	if( Rand( 1, 10 ) == 1 AND !Static_Var_1 )
 	{
 		Static_Var_1 = 1;
-		turn base to z-axis <240.054945> speed <120.027473>;
+		turn base to z-axis <240.049451> speed <120.027473>;
 		wait-for-turn base around z-axis;
-		turn base to z-axis <120.027473> speed <180.043956>;
+		turn base to z-axis <120.027473> speed <180.038462>;
 		wait-for-turn base around z-axis;
 		turn base to z-axis <0.000000> speed <120.027473>;
 		Static_Var_1 = 0;
 	}
-	return (0);
 }
 
 Create()
@@ -104,37 +96,31 @@ Create()
 	Static_Var_1 = 0;
 	call-script InitState();
 	start-script SmokeUnit();
-	return (0);
 }
 
 Activate()
 {
 	start-script RequestState(0);
-	return (0);
 }
 
 Deactivate()
 {
 	start-script RequestState(1);
-	return (0);
 }
 
 QueryPrimary(piecenum)
 {
 	piecenum = flare1;
-	return (0);
 }
 
 QuerySecondary(piecenum)
 {
 	piecenum = flare2;
-	return (0);
 }
 
 SweetSpot(piecenum)
 {
 	piecenum = base;
-	return (0);
 }
 
 Killed(severity, corpsetype)
@@ -146,7 +132,7 @@ Killed(severity, corpsetype)
 		explode flare1 type BITMAPONLY | BITMAP2;
 		explode flare2 type BITMAPONLY | BITMAP3;
 		explode rearthrust type BITMAPONLY | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -154,8 +140,8 @@ Killed(severity, corpsetype)
 		explode base type BITMAPONLY | BITMAP1;
 		explode flare1 type FALL | BITMAP2;
 		explode flare2 type FALL | BITMAP3;
-		explode rearthrust type FALL | BITMAP4;;
-		return (0);
+		explode rearthrust type FALL | BITMAP4;
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -164,12 +150,12 @@ Killed(severity, corpsetype)
 		explode flare1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 		explode flare2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode rearthrust type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP1;
 	explode flare1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 	explode flare2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode rearthrust type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-	return (0);
+	return (corpsetype);
 }

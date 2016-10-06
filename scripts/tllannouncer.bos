@@ -6,21 +6,25 @@
 piece  base, body, turret, holder, launcher, flare1, flare2, flare3,
        rflare1, rflare2, rflare3, roues;
 
-static-var  restore_delay, gun_1, wheelSpeed, currentSpeed, moveSpeed;
+static-var  restore_delay, gun_1, Static_Var_3, Static_Var_4, Static_Var_5;
 
 // Signal definitions
 #define SIG_AIM				2
 #define SIG_MOVE			4
 
+
 WheelControl()
 {
 	sleep 33;
-	while(TRUE)
+	while( TRUE )
 	{
-		currentSpeed = (get CURRENT_SPEED)*20/moveSpeed;
-		wheelSpeed = currentSpeed * 6;
-		if (currentSpeed<5) currentSpeed=5;	// prevent infinite timing
-		spin roues around x-axis speed (<1.000000> * wheelSpeed ) * <0.015> accelerate <5.000000> * currentSpeed;
+		Static_Var_4 = get CURRENT_SPEED * 20 / Static_Var_5;
+		Static_Var_3 = Static_Var_4 * 6;
+		if( Static_Var_4 < 5 )
+		{
+			Static_Var_4 = 5;
+		}
+		spin roues around x-axis speed <1.000000> * Static_Var_3 * <0.010989> accelerate <5.000000> * Static_Var_4;
 		sleep 67;
 	}
 }
@@ -83,7 +87,7 @@ Create()
 	hide flare3;
 	gun_1 = base;
 	restore_delay = 3000;
-	moveSpeed = get MAX_SPEED;
+	Static_Var_5 = get MAX_SPEED;
 	start-script SmokeUnit();
 }
 
@@ -177,16 +181,17 @@ Killed(severity, corpsetype)
 		corpsetype = 1;
 		explode launcher type BITMAPONLY | BITMAP4;
 		explode holder type BITMAPONLY | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	explode launcher type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 	explode holder type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode turret type SHATTER | EXPLODE_ON_HIT | BITMAP2;
 	explode holder type SHATTER | EXPLODE_ON_HIT | BITMAP2;
+	return (corpsetype);
 }

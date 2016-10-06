@@ -103,8 +103,8 @@ AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	turn turret to y-axis heading speed <229.554945>;
-	turn sleeves to x-axis <0.000000> - pitch speed <229.554945>;
+	turn turret to y-axis heading speed <229.549451>;
+	turn sleeves to x-axis <0.000000> - pitch speed <229.549451>;
 	wait-for-turn sleeves around x-axis;
 	wait-for-turn turret around y-axis;
 	start-script RestoreAfterDelay();
@@ -124,7 +124,6 @@ AimTertiary(heading, pitch)
 	set-signal-mask SIG_AIM_3;
 	return (1);
 }
-
 
 FirePrimary()
 {
@@ -220,7 +219,7 @@ Killed(severity, corpsetype)
 		explode sleeves type BITMAPONLY | BITMAP5;
 		explode barrel1 type BITMAPONLY | BITMAP1;
 		explode barrel2 type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -232,7 +231,7 @@ Killed(severity, corpsetype)
 		explode barrel2 type BITMAPONLY | BITMAP2;
 		explode barrel3 type BITMAPONLY | BITMAP1;
 		explode barrel4 type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -244,7 +243,7 @@ Killed(severity, corpsetype)
 		explode barrel1 type BITMAPONLY | BITMAP2;
 		explode barrel3 type BITMAPONLY | BITMAP1;
 		explode barrel4 type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode turret type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
@@ -254,4 +253,5 @@ Killed(severity, corpsetype)
 	explode barrel1 type BITMAPONLY | BITMAP2;
 	explode barrel3 type BITMAPONLY | BITMAP1;
 	explode barrel4 type BITMAPONLY | BITMAP2;
+	return (corpsetype);
 }

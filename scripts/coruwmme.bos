@@ -13,11 +13,11 @@ static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, statechg_Des
 #define SIG_ACTIVATE			2
 
 
-fixGo()
+Go()
 {
 	spin drive around y-axis speed Static_Var_1 accelerate Static_Var_2;
-	move doors1 to y-axis [-5.000000] speed [5.000000];
-	move doors2 to y-axis [-5.000000] speed [5.000000];
+	move doors1 to y-axis [-2.000000] speed [2.000000];
+	move doors2 to y-axis [-2.000000] speed [2.000000];
 	wait-for-move doors1 along y-axis;
 	wait-for-move doors2 along y-axis;
 	turn doors1 to y-axis <30.005495> speed <60.000000>;
@@ -36,8 +36,8 @@ Stop()
 	wait-for-turn doors1 around y-axis;
 	wait-for-turn doors2 around y-axis;
 	set ARMORED to 1;
-	move doors1 to y-axis [0.000000] speed [10.000000];
-	move doors2 to y-axis [0.000000] speed [10.000000];
+	move doors1 to y-axis [0.000000] speed [4.000000];
+	move doors2 to y-axis [0.000000] speed [4.000000];
 }
 
 InitState()
@@ -60,7 +60,7 @@ RequestState(requestedstate, currentstate)
 	{
 		if( statechg_DesiredState == 0 )
 		{
-			call-script fixGo();
+			call-script Go();
 			currentstate = 0;
 		}
 		if( statechg_DesiredState == 1 )
@@ -138,7 +138,7 @@ Killed(severity, corpsetype)
 		explode base type BITMAPONLY | BITMAP2;
 		explode doors1 type BITMAPONLY | BITMAP3;
 		explode doors2 type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -147,7 +147,7 @@ Killed(severity, corpsetype)
 		explode base type BITMAPONLY | BITMAP2;
 		explode doors1 type BITMAPONLY | BITMAP3;
 		explode doors2 type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -156,11 +156,12 @@ Killed(severity, corpsetype)
 		explode base type BITMAPONLY | BITMAP2;
 		explode doors1 type BITMAPONLY | BITMAP3;
 		explode doors2 type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode drive type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 	explode base type SHATTER | EXPLODE_ON_HIT | BITMAP2;
 	explode doors1 type BITMAPONLY | BITMAP3;
 	explode doors2 type BITMAPONLY | BITMAP2;
+	return (corpsetype);
 }

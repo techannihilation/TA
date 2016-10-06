@@ -3,8 +3,8 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  missilea, missileb, base, winga,  wingb, jet, thrusta1, thrusta2, thrustb, piece1,
-        thrusters;
+piece  missilea, missileb, base, winga, wingb, jet, thrusta1, thrusta2,
+       thrustb, piece1, thrusters;
 
 static-var  statechg_DesiredState, statechg_StateChanging;
 
@@ -14,17 +14,13 @@ activatescr()
 	if( TRUE )
 	{
 		turn winga to z-axis <0.000000> now;
-		turn winga to z-axis <-111.021978> speed <76.000000>;
+		turn winga to z-axis <-111.016484> speed <76.000000>;
 		turn wingb to z-axis <0.000000> now;
-		turn wingb to z-axis <111.021978> speed <76.000000>;
-		//move thrusters to y-axis [0.000000] now;
-		//move thrusters to y-axis [3.000000] speed [3.000000];
+		turn wingb to z-axis <111.016484> speed <76.000000>;
 		set ARMORED to 0;
 		sleep 1400;
 	}
 	sleep 40;
-	return (0);
-	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
 }
 
 deactivatescr()
@@ -32,12 +28,10 @@ deactivatescr()
 	if( TRUE )
 	{
 		set ARMORED to 1;
-		turn winga to z-axis <-111.021978> now;
+		turn winga to z-axis <-111.016484> now;
 		turn winga to z-axis <0.000000> speed <76.000000>;
-		turn wingb to z-axis <111.021978> now;
+		turn wingb to z-axis <111.016484> now;
 		turn wingb to z-axis <0.000000> speed <76.000000>;
-		//move thrusters to y-axis [3.000000] now;
-		//move thrusters to y-axis [0.000000] speed [3.000000];
 		sleep 1400;
 	}
 	sleep 40;

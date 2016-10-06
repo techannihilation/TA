@@ -4,7 +4,7 @@
 #include "exptype.h"
 
 piece  base, ramps, rim, Pad, pad_quad, pad_x, Nanolathe, beam1,
-       beam2, nano_gun1, nano_gun2, nano_cover, nano_support ,buildpoint;
+       beam2, nano_gun1, nano_gun2, nano_cover, nano_support, buildpoint;
 
 static-var  spray, unitviewer, statechg_DesiredState, statechg_StateChanging;
 
@@ -37,8 +37,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		}
 		sleep sleeptime;
 	}
-	return (0);
-	// Build by COBBLER Ver3.0 beta2 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.netzine.ml.org/DCS   
 }
 
 OpenYard()
@@ -64,6 +62,7 @@ CloseYard()
 	}
 	set BUGGER_OFF to 0;
 }
+
 OpenNano()
 {
 	move nano_cover to z-axis [6.500000] speed [5.000000];
@@ -80,6 +79,7 @@ CloseNano()
 	move nano_cover to x-axis [0.000000] speed [5.000000];
 	move nano_cover to z-axis [0.000000] speed [5.000000];
 }
+
 Go()
 {
 	dont-cache pad_x;
@@ -127,8 +127,6 @@ RequestState(requestedstate, currentstate)
 	}
 	statechg_StateChanging = FALSE;
 }
-
-
 
 Create()
 {
@@ -200,7 +198,7 @@ Killed(severity, corpsetype)
 		explode nano_gun2 type BITMAPONLY | BITMAP4;
 		explode pad_x type BITMAPONLY | BITMAP5;
 		explode pad_quad type BITMAPONLY | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -216,7 +214,7 @@ Killed(severity, corpsetype)
 		explode nano_gun2 type FALL | BITMAP4;
 		explode pad_x type FALL | BITMAP5;
 		explode pad_quad type FALL | FIRE | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -232,7 +230,7 @@ Killed(severity, corpsetype)
 		explode nano_gun2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 		explode pad_x type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 		explode pad_quad type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP1;
@@ -246,4 +244,5 @@ Killed(severity, corpsetype)
 	explode nano_gun2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 	explode pad_x type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 	explode pad_quad type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	return (corpsetype);
 }

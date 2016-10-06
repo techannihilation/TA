@@ -8,8 +8,8 @@ piece  base, body, turret, misturret, mlaunch1, mlaunch2, mlaunch3, gunboxes,
        legs, leg1, leg2, leg3, leg4, leg5, leg6, leg7,
        leg8, mlauncher, gunaim, misaim;
 
-static-var  bMoving, restore_delay, Static_Var_3, Static_Var_4, Static_Var_5,
-            Static_Var_6;
+static-var  bMoving, restore_delay, Static_Var_3, gun_1, Static_Var_5,
+            gun_2;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -174,8 +174,8 @@ Create()
 	restore_delay = 3000;
 	Static_Var_3 = 0;
 	Static_Var_5 = 0;
-	Static_Var_4 = 12;
-	Static_Var_6 = 4;
+	gun_1 = fire1;
+	gun_2 = mlaunch1;
 	start-script MotionControl();
 	start-script SmokeUnit();
 }
@@ -228,7 +228,7 @@ FirePrimary()
 {
 	if( Static_Var_3 == 0 )
 	{
-		Static_Var_4 = 12;
+		gun_1 = fire1;
 		move barrel1 to z-axis [-2.000000] now;
 		emit-sfx 1024 + 0 from fire1;
 		sleep 50;
@@ -236,7 +236,7 @@ FirePrimary()
 	}
 	else if( Static_Var_3 == 1 )
 	{
-		Static_Var_4 = 13;
+		gun_1 = fire2;
 		move barrel2 to z-axis [-2.000000] now;
 		emit-sfx 1024 + 0 from fire2;
 		sleep 50;
@@ -244,8 +244,7 @@ FirePrimary()
 	}
 	else if( Static_Var_3 == 2 )
 	{
-		Static_Var_4 = 14;
-
+		gun_1 = fire3;
 		move barrel3 to z-axis [-2.000000] now;
 		emit-sfx 1024 + 0 from fire3;
 		sleep 50;
@@ -253,16 +252,18 @@ FirePrimary()
 	}
 	else if( Static_Var_3 == 3 )
 	{
-		Static_Var_4 = 15;
+		gun_1 = fire4;
 		Static_Var_3 = 0;
 		move barrel4 to z-axis [-2.000000] now;
 		emit-sfx 1024 + 0 from fire4;
 		sleep 50;
 		move barrel4 to z-axis [0.000000] speed [10.000000];
 	}
-		++Static_Var_3;
-		if( Static_Var_3 > 3 )
+	++Static_Var_3;
+	if( Static_Var_3 > 3 )
+	{
 		Static_Var_3 = 1;
+	}
 }
 
 AimFromPrimary(piecenum)
@@ -272,7 +273,7 @@ AimFromPrimary(piecenum)
 
 QueryPrimary(piecenum)
 {
-	piecenum = Static_Var_4;
+	piecenum = gun_1;
 }
 
 AimSecondary(heading, pitch)
@@ -291,17 +292,17 @@ FireSecondary()
 {
 	if( Static_Var_5 == 0 )
 	{
-		Static_Var_6 = 4;
+		gun_2 = mlaunch1;
 		++Static_Var_5;
 	}
 	else if( Static_Var_5 == 1 )
 	{
-		Static_Var_6 = 5;
+		gun_2 = mlaunch2;
 		++Static_Var_5;
 	}
 	else if( Static_Var_5 == 2 )
 	{
-		Static_Var_6 = 6;
+		gun_2 = mlaunch3;
 		Static_Var_5 = 0;
 	}
 }
@@ -313,7 +314,7 @@ AimFromSecondary(piecenum)
 
 QuerySecondary(piecenum)
 {
-	piecenum = Static_Var_6;
+	piecenum = gun_2;
 }
 
 Killed(severity, corpsetype)

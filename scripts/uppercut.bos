@@ -121,7 +121,7 @@ Create()
 	}
 	sleep 7000;
 	set ARMORED to 1;
-	move base to y-axis [0.000000] speed <3000.000000>;
+	move base to y-axis [0.000000] speed [3.332520];
 }
 
 SetMaxReloadTime(Func_Var_1)
@@ -223,7 +223,7 @@ Killed(severity, corpsetype)
 		explode rocket1 type BITMAPONLY | BITMAP3;
 		explode wake1 type BITMAPONLY | BITMAP2;
 		explode wake2 type BITMAPONLY | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -232,7 +232,7 @@ Killed(severity, corpsetype)
 		explode rocket1 type FALL | BITMAP3;
 		explode wake1 type FALL | BITMAP2;
 		explode wake2 type FALL | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -241,11 +241,12 @@ Killed(severity, corpsetype)
 		explode rocket1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode wake1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 		explode wake2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP1;
 	explode rocket1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode wake1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 	explode wake2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	return (corpsetype);
 }

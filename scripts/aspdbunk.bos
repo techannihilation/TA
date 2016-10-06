@@ -1,0 +1,346 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, paraturret1, barrel1, condenser1, fp1, flare1, paraturret2,
+       barrel2, condenser2, fp2, flare2, hvyturret, cannon, fp3, flare3;
+
+static-var  restore_delay, Static_Var_2, statechg_DesiredState, statechg_StateChanging;
+
+// Signal definitions
+#define SIG_AIM				2
+#define SIG_AIM_2			4
+#define SIG_AIM_3			8
+
+
+activatescr()
+{
+	if( TRUE )
+	{
+		move cannon to y-axis [0.000000] speed [8.000000];
+		move hvyturret to y-axis [-3.000000] speed [8.000000];
+		move paraturret1 to y-axis [-3.000000] speed [8.000000];
+		move paraturret2 to y-axis [-3.000000] speed [8.000000];
+		move barrel1 to z-axis [-4.000000] speed [3.000000];
+		move barrel2 to z-axis [-4.000000] speed [3.000000];
+		sleep 337;
+	}
+	if( TRUE )
+	{
+		move hvyturret to y-axis [0.000000] speed [6.000000];
+		move paraturret1 to y-axis [0.000000] speed [8.000000];
+		move paraturret2 to y-axis [0.000000] speed [8.000000];
+		turn cannon to x-axis <0.000000> speed <60.000000>;
+		move barrel1 to z-axis [0.000000] speed [7.000000];
+		move barrel2 to z-axis [0.000000] speed [7.000000];
+		sleep 337;
+	}
+	sleep 22;
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		turn cannon to x-axis <-90.000000> speed <62.000000>;
+		move barrel1 to z-axis [-4.000000] speed [14.000000];
+		move barrel2 to z-axis [-4.000000] speed [14.000000];
+		sleep 337;
+	}
+	if( TRUE )
+	{
+		move cannon to y-axis [-2.000000] speed [6.000000];
+		move barrel1 to z-axis [-9.000000] speed [16.000000];
+		move barrel2 to z-axis [-9.000000] speed [16.000000];
+		move hvyturret to y-axis [-2.000000] speed [6.000000];
+		move paraturret1 to y-axis [-2.000000] speed [8.000000];
+		move paraturret2 to y-axis [-2.000000] speed [8.000000];
+		sleep 337;
+	}
+	if( TRUE )
+	{
+		move cannon to y-axis [-4.000000] speed [8.000000];
+		move barrel1 to z-axis [-10.000000] speed [17.000000];
+		move barrel2 to z-axis [-10.000000] speed [17.000000];
+		move hvyturret to y-axis [-5.000000] speed [8.000000];
+		move paraturret1 to y-axis [-5.000000] speed [8.000000];
+		move paraturret2 to y-axis [-5.000000] speed [8.000000];
+		sleep 337;
+	}
+	sleep 27;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Go()
+{
+	call-script activatescr();
+	set ARMORED to 0;
+	Static_Var_2 = 1;
+}
+
+Stop()
+{
+	Static_Var_2 = 0;
+	set ARMORED to 1;
+	call-script deactivatescr();
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+Create()
+{
+	hide flare1;
+	hide flare2;
+	hide flare3;
+	call-script InitState();
+	Static_Var_2 = 0;
+	restore_delay = 2000;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 250;
+	}
+	set ARMORED to 1;
+	start-script SmokeUnit();
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	signal SIG_AIM;
+	signal SIG_AIM_2;
+	signal SIG_AIM_3;
+	start-script RequestState(1);
+}
+
+SetMaxReloadTime(Func_Var_1)
+{
+	restore_delay = Func_Var_1 * 4;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	while( !Static_Var_2 )
+	{
+		sleep 250;
+	}
+	turn hvyturret to y-axis heading speed <200.000000>;
+	turn cannon to x-axis <0.000000> - pitch speed <200.000000>;
+	wait-for-turn hvyturret around y-axis;
+	wait-for-turn cannon around x-axis;
+	return (1);
+}
+
+AimSecondary(Func_Var_1)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	while( !Static_Var_2 )
+	{
+		sleep 250;
+	}
+	turn paraturret2 to y-axis Func_Var_1 speed <90.000000>;
+	wait-for-turn paraturret2 around y-axis;
+	return (1);
+}
+
+AimTertiary(Func_Var_1)
+{
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
+	while( !Static_Var_2 )
+	{
+		sleep 250;
+	}
+	turn paraturret1 to y-axis Func_Var_1 speed <90.000000>;
+	wait-for-turn paraturret1 around y-axis;
+	return (1);
+}
+
+FirePrimary()
+{
+	show flare3;
+	sleep 150;
+	hide flare3;
+}
+
+FireSecondary()
+{
+	show flare2;
+	sleep 150;
+	hide flare2;
+}
+
+FireTertiary()
+{
+	show flare1;
+	sleep 150;
+	hide flare1;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = hvyturret;
+}
+
+AimFromSecondary(piecenum)
+{
+	piecenum = paraturret2;
+}
+
+AimFromTertiary(piecenum)
+{
+	piecenum = paraturret1;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = flare3;
+}
+
+QuerySecondary(piecenum)
+{
+	piecenum = flare2;
+}
+
+QueryTertiary(piecenum)
+{
+	piecenum = flare1;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type BITMAPONLY | BITMAP1;
+		explode body type BITMAPONLY | BITMAP1;
+		explode paraturret1 type BITMAPONLY | BITMAP2;
+		explode barrel1 type BITMAPONLY | BITMAP4;
+		explode fp1 type BITMAPONLY | BITMAP5;
+		explode condenser1 type BITMAPONLY | BITMAP4;
+		explode paraturret2 type BITMAPONLY | BITMAP3;
+		explode barrel2 type BITMAPONLY | BITMAP2;
+		explode fp2 type BITMAPONLY | BITMAP5;
+		explode condenser2 type BITMAPONLY | BITMAP3;
+		explode hvyturret type BITMAPONLY | BITMAP1;
+		explode fp3 type BITMAPONLY | BITMAP5;
+		explode cannon type BITMAPONLY | BITMAP3;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type BITMAPONLY | BITMAP1;
+		explode body type BITMAPONLY | BITMAP1;
+		explode paraturret1 type BITMAPONLY | BITMAP2;
+		explode barrel1 type BITMAPONLY | BITMAP4;
+		explode condenser1 type SHATTER | BITMAP4;
+		explode fp1 type SHATTER | BITMAP5;
+		explode paraturret2 type BITMAPONLY | BITMAP2;
+		explode barrel2 type BITMAPONLY | BITMAP4;
+		explode condenser2 type SHATTER | BITMAP4;
+		explode fp2 type SHATTER | BITMAP4;
+		explode hvyturret type BITMAPONLY | BITMAP1;
+		explode cannon type BITMAPONLY | BITMAP3;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type BITMAPONLY | BITMAP1;
+		explode body type BITMAPONLY | BITMAP1;
+		explode paraturret1 type BITMAPONLY | BITMAP2;
+		explode barrel1 type BITMAPONLY | BITMAP4;
+		explode condenser1 type SHATTER | BITMAP3;
+		explode fp1 type SHATTER | BITMAP4;
+		explode paraturret2 type BITMAPONLY | BITMAP3;
+		explode barrel2 type BITMAPONLY | BITMAP4;
+		explode condenser2 type SHATTER | BITMAP4;
+		explode fp2 type SHATTER | BITMAP4;
+		explode hvyturret type BITMAPONLY | BITMAP2;
+		explode cannon type BITMAPONLY | BITMAP4;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type BITMAPONLY | BITMAP1;
+	explode body type BITMAPONLY | BITMAP1;
+	explode paraturret1 type BITMAPONLY | BITMAP2;
+	explode barrel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode condenser1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode fp1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode paraturret2 type BITMAPONLY | BITMAP3;
+	explode barrel2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode condenser2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode fp2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode hvyturret type BITMAPONLY | BITMAP1;
+	explode cannon type BITMAPONLY | BITMAP3;
+	return (corpsetype);
+}

@@ -8,12 +8,12 @@ piece  base, body, turret1, turret2, turret3, sleeve1, sleeve2, sleeve3,
        barrel6, barrel7, flare1, flare2, flare3, flare4, flare5, flare6,
        flare7;
 
-static-var  gun_1, gun_2, gun_3, restore_delay;
+static-var  gun_3, gun_2, gun_1, restore_delay;
 
 // Signal definitions
-#define SIG_AIM				2
+#define SIG_AIM_3			2
 #define SIG_AIM_2			4
-#define SIG_AIM_3			8
+#define SIG_AIM				8
 #define SIG_MOVE			16
 
 
@@ -53,9 +53,9 @@ Create()
 	hide flare2;
 	hide flare6;
 	hide flare7;
-	gun_1 = base;
-	gun_2 = base;
 	gun_3 = base;
+	gun_2 = base;
+	gun_1 = base;
 	restore_delay = 3000;
 	start-script SmokeUnit();
 }
@@ -106,8 +106,8 @@ StopMoving()
 
 AimTertiary(heading, pitch)
 {
-	signal SIG_AIM;
-	set-signal-mask SIG_AIM;
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
 	if( heading > 20020 AND heading < 45500 )
 	{
 		return (0);
@@ -138,8 +138,8 @@ AimSecondary(heading, pitch)
 
 AimPrimary(heading, pitch)
 {
-	signal SIG_AIM_3;
-	set-signal-mask SIG_AIM_3;
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
 	turn turret3 to y-axis heading speed <30.000000>;
 	turn sleeve3 to x-axis <0.000000> - pitch speed <15.000000>;
 	wait-for-turn turret3 around y-axis;
@@ -150,24 +150,24 @@ AimPrimary(heading, pitch)
 
 FireTertiary()
 {
-	if( gun_1 == 0 )
+	if( gun_3 == 0 )
 	{
 		move barrel1 to z-axis [-1.000000] speed [500.000000];
 		show flare1;
 		sleep 150;
 		move barrel1 to z-axis [0.000000] speed [3.000000];
 		hide flare1;
-		gun_1 = body;
+		gun_3 = body;
 		return (0);
 	}
-	if( gun_1 == 1 )
+	if( gun_3 == 1 )
 	{
 		move barrel2 to z-axis [-1.000000] speed [500.000000];
 		show flare2;
 		sleep 150;
 		move barrel2 to z-axis [0.000000] speed [3.000000];
 		hide flare2;
-		gun_1 = base;
+		gun_3 = base;
 		return (0);
 	}
 }
@@ -198,34 +198,34 @@ FireSecondary()
 
 FirePrimary()
 {
-	if( gun_3 == 0 )
+	if( gun_1 == 0 )
 	{
 		move barrel5 to z-axis [-1.000000] speed [500.000000];
 		show flare5;
 		sleep 150;
 		move barrel5 to z-axis [0.000000] speed [3.000000];
 		hide flare5;
-		gun_3 = body;
+		gun_1 = body;
 		return (0);
 	}
-	if( gun_3 == 1 )
+	if( gun_1 == 1 )
 	{
 		move barrel6 to z-axis [-1.000000] speed [500.000000];
 		show flare6;
 		sleep 150;
 		move barrel6 to z-axis [0.000000] speed [3.000000];
 		hide flare6;
-		gun_3 = turret1;
+		gun_1 = turret1;
 		return (0);
 	}
-	if( gun_3 == 2 )
+	if( gun_1 == 2 )
 	{
 		move barrel7 to z-axis [-1.000000] speed [500.000000];
 		show flare7;
 		sleep 150;
 		move barrel7 to z-axis [0.000000] speed [3.000000];
 		hide flare7;
-		gun_3 = base;
+		gun_1 = base;
 		return (0);
 	}
 }
@@ -247,11 +247,11 @@ AimFromPrimary(piecenum)
 
 QueryTertiary(piecenum)
 {
-	if( gun_1 == 0 )
+	if( gun_3 == 0 )
 	{
 		piecenum = flare1;
 	}
-	if( gun_1 == 1 )
+	if( gun_3 == 1 )
 	{
 		piecenum = flare2;
 	}
@@ -271,15 +271,15 @@ QuerySecondary(piecenum)
 
 QueryPrimary(piecenum)
 {
-	if( gun_3 == 0 )
+	if( gun_1 == 0 )
 	{
 		piecenum = flare5;
 	}
-	if( gun_3 == 1 )
+	if( gun_1 == 1 )
 	{
 		piecenum = flare6;
 	}
-	if( gun_3 == 2 )
+	if( gun_1 == 2 )
 	{
 		piecenum = flare7;
 	}
@@ -311,7 +311,7 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		return (0);
+		return (corpsetype);
 	}
 	explode turret1 type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
 	explode barrel3 type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
@@ -320,8 +320,9 @@ Killed(severity, corpsetype)
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP1;
+	return (corpsetype);
 }

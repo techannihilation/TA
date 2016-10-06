@@ -5,15 +5,40 @@
 
 piece  base, body, ring, Turret1, Turret2, Turret3, bladestop, bladesbottom,
        wing1, wing2, wing3, wing2top, wing3top, sphere1, sphere2, sphere3,
-       flash1, flash2, flash3, engine, thrust;
+       flash1, flash2, flash3, engine;
 
-static-var  restore_delay;
+static-var  restore_delay, statechg_DesiredState, statechg_StateChanging;
 
 // Signal definitions
 #define SIG_AIM				4
 #define SIG_AIM_2			8
 #define SIG_AIM_3			16
 
+
+activatescr()
+{
+	if( TRUE )
+	{
+		spin bladestop around y-axis speed <600.351648> accelerate <50.005495>;
+		spin bladesbottom around y-axis speed <-600.351648> accelerate <50.005495>;
+		turn wing2top to z-axis <90.016484> speed <30.000000>;
+		turn wing3top to z-axis <-90.016484> speed <30.000000>;
+		sleep 1000;
+	}
+	sleep 102;
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		stop-spin bladestop around y-axis decelerate <20.005495>;
+		stop-spin bladesbottom around y-axis decelerate <20.005495>;
+		turn wing2top to z-axis <0.000000> speed <30.000000>;
+		turn wing3top to z-axis <0.000000> speed <30.000000>;
+	}
+	sleep 71;
+}
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -42,13 +67,55 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script activatescr();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script deactivatescr();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
 Create()
 {
 	start-script SmokeUnit();
-	sleep 1500;
+	call-script InitState();
 	hide flash1;
 	hide flash2;
 	hide flash3;
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
 }
 
 SweetSpot(piecenum)
@@ -74,32 +141,6 @@ QueryTertiary(piecenum)
 SetMaxReloadTime(Func_Var_1)
 {
 	restore_delay = Func_Var_1 * 2;
-}
-
-RestoreAfterDelay()
-{
-	sleep restore_delay;
-	turn base to y-axis <0.000000> speed <250.000000>;
-	turn base to x-axis <0.000000> speed <250.000000>;
-	turn body to y-axis <0.000000> speed <150.000000>;
-	turn body to x-axis <0.000000> speed <150.000000>;
-}
-
-StartMoving()
-{
-	spin bladestop around y-axis speed <600.357143> accelerate <50.005495>;
-	spin bladesbottom around y-axis speed <-600.357143> accelerate <50.005495>;
-	turn wing2top to z-axis <90.016484> speed <30.000000>;
-	turn wing3top to z-axis <-90.016484> speed <30.000000>;
-	sleep 1000;
-}
-
-StopMoving()
-{
-	stop-spin bladestop around y-axis decelerate <20.005495>;
-	stop-spin bladesbottom around y-axis decelerate <20.005495>;
-	turn wing2top to z-axis <0.000000> speed <30.000000>;
-	turn wing3top to z-axis <0.000000> speed <30.000000>;
 }
 
 AimPrimary(heading, pitch)
@@ -173,7 +214,7 @@ Killed(severity, corpsetype)
 		explode Turret3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAPNUKE;
 		explode bladestop type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAPNUKE;
 		explode bladesbottom type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAPNUKE;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAPNUKE;
@@ -191,4 +232,5 @@ Killed(severity, corpsetype)
 	explode Turret3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAPNUKE;
 	explode bladestop type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAPNUKE;
 	explode bladesbottom type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAPNUKE;
+	return (corpsetype);
 }

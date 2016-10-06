@@ -21,16 +21,14 @@ activatescr()
 		turn tail2 to z-axis <0.000000> speed <30.005495>;
 		sleep 500;
 	}
-	return (0);
-	// Build by COBBLER Ver3.0 beta2 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.netzine.ml.org/DCS   
 }
 
 deactivatescr()
 {
 	if( TRUE )
 	{
-		turn leftvent to z-axis <45.010989> speed <10.000000>;
-		turn rightvent to z-axis <-45.010989> speed <10.000000>;
+		turn leftvent to z-axis <45.005495> speed <10.000000>;
+		turn rightvent to z-axis <-45.005495> speed <10.000000>;
 		move weapon1 to x-axis [5.000000] speed [5.000000];
 		move weapon2 to x-axis [-5.000000] speed [5.000000];
 		turn tail1 to z-axis <120.027473> speed <30.005495>;
@@ -170,7 +168,7 @@ Killed(severity, corpsetype)
 		explode weapon2 type BITMAPONLY | BITMAP4;
 		explode wing1 type BITMAPONLY | BITMAP5;
 		explode wing2 type BITMAPONLY | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -186,7 +184,7 @@ Killed(severity, corpsetype)
 		explode weapon2 type SHATTER | BITMAP4;
 		explode wing1 type BITMAPONLY | BITMAP5;
 		explode wing2 type BITMAPONLY | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -202,7 +200,7 @@ Killed(severity, corpsetype)
 		explode weapon2 type SHATTER | EXPLODE_ON_HIT | BITMAP4;
 		explode wing1 type BITMAPONLY | BITMAP5;
 		explode wing2 type BITMAPONLY | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP1;
@@ -216,4 +214,5 @@ Killed(severity, corpsetype)
 	explode weapon2 type SHATTER | EXPLODE_ON_HIT | BITMAP4;
 	explode wing1 type BITMAPONLY | BITMAP5;
 	explode wing2 type BITMAPONLY | BITMAP1;
+	return (corpsetype);
 }

@@ -26,6 +26,7 @@ Standby()
 	sleep 50;
 	start-script Standby();
 }
+
 activatescr()
 {
 	if( TRUE )
@@ -38,14 +39,14 @@ activatescr()
 	}
 	if( TRUE )
 	{
-		move turreta to y-axis [6.949982] speed [0.069238];
-		move turretb to y-axis [6.950000] speed [0.000018];
-		turn turreta to y-axis <-33.989011> speed <47.076923>;
+		move turreta to y-axis [6.949982] speed [0.069232];
+		move turretb to y-axis [6.950000] speed [0.000012];
+		turn turreta to y-axis <-33.989011> speed <47.071429>;
 		turn turretb to y-axis <-43.016484> speed <59.582418>;
-		turn gunb to x-axis <-71.697802> speed <99.302198>;
-		turn gunb to z-axis <28.675824> speed <39.719780>;
-		turn guna to x-axis <66.917582> speed <92.681319>;
-		turn guna to z-axis <-28.675824> speed <39.719780>;
+		turn gunb to x-axis <-71.692308> speed <99.302198>;
+		turn gunb to z-axis <28.670330> speed <39.714286>;
+		turn guna to x-axis <66.912088> speed <92.681319>;
+		turn guna to z-axis <-28.670330> speed <39.714286>;
 		sleep 722;
 	}
 	sleep 11;
@@ -56,27 +57,27 @@ deactivatescr()
 	if( TRUE )
 	{
 		move turreta to y-axis [6.949982] now;
-		move turreta to y-axis [6.899988] speed [0.073950];
+		move turreta to y-axis [6.899988] speed [0.073944];
 		move turretb to y-axis [6.950000] now;
-		move turretb to y-axis [6.949982] speed [0.000018];
+		move turretb to y-axis [6.949982] speed [0.000012];
 		turn turreta to y-axis <-33.989011> now;
 		turn turreta to y-axis <0.000000> speed <50.280220>;
 		turn turretb to y-axis <-43.016484> now;
 		turn turretb to y-axis <0.000000> speed <63.637363>;
-		turn gunb to x-axis <-71.697802> now;
+		turn gunb to x-axis <-71.692308> now;
 		turn gunb to x-axis <0.000000> speed <106.060440>;
-		turn gunb to z-axis <28.675824> now;
+		turn gunb to z-axis <28.670330> now;
 		turn gunb to z-axis <0.000000> speed <42.423077>;
-		turn guna to x-axis <66.917582> now;
+		turn guna to x-axis <66.912088> now;
 		turn guna to x-axis <0.000000> speed <98.989011>;
-		turn guna to z-axis <-28.675824> now;
+		turn guna to z-axis <-28.670330> now;
 		turn guna to z-axis <0.000000> speed <42.423077>;
 		sleep 676;
 	}
 	if( TRUE )
 	{
-		move turreta to y-axis [0.000000] speed [5.646472];
-		move turretb to y-axis [0.000000] speed [5.687384];
+		move turreta to y-axis [0.000000] speed [5.646466];
+		move turretb to y-axis [0.000000] speed [5.687378];
 		sleep 1222;
 	}
 	sleep 7;
@@ -269,7 +270,7 @@ Killed(severity, corpsetype)
 		explode turretb type BITMAPONLY | BITMAP3;
 		explode explodpt1 type BITMAPONLY | BITMAP2;
 		explode explodpt2 type BITMAPONLY | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -284,7 +285,7 @@ Killed(severity, corpsetype)
 		explode turretb type FALL | BITMAP3;
 		explode explodpt1 type FALL | BITMAP2;
 		explode explodpt2 type FALL | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -299,7 +300,7 @@ Killed(severity, corpsetype)
 		explode turretb type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode explodpt1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 		explode explodpt2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type SHATTER | EXPLODE_ON_HIT | BITMAP1;
@@ -312,4 +313,5 @@ Killed(severity, corpsetype)
 	explode turretb type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode explodpt1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 	explode explodpt2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	return (corpsetype);
 }

@@ -8,7 +8,7 @@ piece  base, flarea, flareb, flarec1, flarec2, turreta, hatch, shell1a,
        turretc, hatchc, sleevec, hatchb, barrelc1, barrelc2, collarb, barrelb,
        barrela, sleevea, sleeveb;
 
-static-var  gun_3, restore_delay, Static_Var_3, statechg_DesiredState, statechg_StateChanging;
+static-var  gun_3, restore_delay, Static_Var_3, Static_Var_4, Static_Var_5;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -20,54 +20,45 @@ activatescr()
 {
 	turn hatch to z-axis <-31.005495> speed <94.000000>;
 	sleep 150;
-
 	move hatch to x-axis [4.000000] speed [10.000000];
 	move hatch to y-axis [-4.562500] speed [12.500000];
 	turn hatch to z-axis <-49.005495> speed <52.000000>;
 	sleep 150;
-
 	move shell4b to x-axis [-5.150000] speed [15.000000];
 	move shell3b to z-axis [-5.150000] speed [15.000000];
 	move shell2b to x-axis [5.150000] speed [15.000000];
 	move shell1b to z-axis [5.150000] speed [15.000000];
 	sleep 150;
-
 	move shell1a to x-axis [5.000000] speed [10.000000];
 	move shell2a to z-axis [-5.000000] speed [10.000000];
 	move shell3a to x-axis [-5.000000] speed [10.000000];
 	move shell4a to z-axis [5.000000] speed [10.000000];
 	sleep 250;
-
 	move shell1a to y-axis [-20.250000] speed [42.500000];
 	move shell2a to y-axis [-20.250000] speed [42.500000];
 	move shell3a to y-axis [-20.250000] speed [40.000000];
 	move shell4a to y-axis [-20.250000] speed [40.000000];
 	sleep 250;
-
 	move turreta to y-axis [9.062500] speed [15.000000];
 	move turretb to y-axis [5.000000] speed [15.000000];
 	sleep 300;
-
 	move turreta to y-axis [11.000000] speed [10.000000];
 	move turretb to y-axis [8.625000] speed [7.500000];
 	move turretc to y-axis [3.312500] speed [7.500000];
 	sleep 150;
-
 	move hatchc to y-axis [2.125000] speed [5.000000];
-	move hatchc to z-axis [-0.862469] speed [2.500000];
+	move hatchc to z-axis [-0.862463] speed [2.500000];
 	sleep 150;
-
-	move sleevec to z-axis [5.112469] speed [15.000000];
+	move sleevec to z-axis [5.112463] speed [15.000000];
 	move hatchb to x-axis [3.687500] speed [10.000000];
 	move hatchb to z-axis [-4.187500] speed [10.000000];
 	turn hatchb to y-axis <-46.005495> speed <137.000000>;
 	sleep 150;
-
 	move barrelc1 to z-axis [3.937500] speed [20.000000];
-	move barrelc2 to z-axis [3.924969] speed [20.000000];
+	move barrelc2 to z-axis [3.924963] speed [20.000000];
 	move collarb to z-axis [4.250000] speed [20.000000];
 	move barrelb to z-axis [4.375000] speed [25.000000];
-	move barrela to z-axis [4.549969] speed [25.000000];
+	move barrela to z-axis [4.549963] speed [25.000000];
 	sleep 120;
 }
 
@@ -79,49 +70,40 @@ deactivatescr()
 	move barrelc2 to z-axis [0.000000] speed [10.000000];
 	move collarb to z-axis [0.000000] speed [10.000000];
 	sleep 150;
-
 	move sleevec to z-axis [0.000000] speed [15.000000];
 	move hatchb to x-axis [0.000000] speed [10.000000];
 	move hatchb to z-axis [0.000000] speed [10.000000];
 	turn hatchb to y-axis <0.000000> speed <137.000000>;
 	sleep 150;
-
 	move hatchc to y-axis [0.000000] speed [5.000000];
 	move hatchc to z-axis [0.000000] speed [2.500000];
 	sleep 150;
-
 	move turreta to y-axis [11.062500] speed [10.000000];
 	move turretb to y-axis [5.562500] speed [10.000000];
 	move turretc to y-axis [0.000000] speed [10.000000];
 	sleep 150;
-
 	move turreta to y-axis [0.000000] speed [15.000000];
 	move turretb to y-axis [0.000000] speed [15.000000];
 	sleep 400;
-
 	move shell1a to y-axis [0.000000] speed [42.500000];
 	move shell2a to y-axis [0.000000] speed [42.500000];
 	move shell3a to y-axis [0.000000] speed [42.500000];
 	move shell4a to y-axis [0.000000] speed [42.500000];
 	sleep 300;
-
 	move shell1a to x-axis [0.000000] speed [12.500000];
 	move shell2a to z-axis [0.000000] speed [12.500000];
 	move shell3a to x-axis [0.000000] speed [12.500000];
 	move shell4a to z-axis [0.000000] speed [12.500000];
 	sleep 150;
-
 	move shell4b to x-axis [0.000000] speed [15.000000];
 	move shell3b to z-axis [0.000000] speed [15.000000];
 	move shell2b to x-axis [0.000000] speed [15.000000];
 	move shell1b to z-axis [0.000000] speed [15.000000];
 	sleep 150;
-
 	move hatch to x-axis [0.000000] speed [10.000000];
 	move hatch to y-axis [0.000000] speed [12.500000];
 	turn hatch to z-axis <-31.005495> speed <53.000000>;
 	sleep 150;
-
 	turn hatch to z-axis <0.000000> speed <96.000000>;
 	sleep 150;
 }
@@ -224,17 +206,17 @@ Stop()
 
 RequestState(requestedstate, currentstate)
 {
-	if( statechg_StateChanging )
+	if( Static_Var_5 )
 	{
-		statechg_DesiredState = requestedstate;
+		Static_Var_4 = requestedstate;
 		return (0);
 	}
-	statechg_StateChanging = TRUE;
-	currentstate = statechg_DesiredState;
-	statechg_DesiredState = requestedstate;
-	while( statechg_DesiredState != currentstate )
+	Static_Var_5 = 1;
+	currentstate = Static_Var_4;
+	Static_Var_4 = requestedstate;
+	while( Static_Var_4 != currentstate )
 	{
-		if( statechg_DesiredState )
+		if( Static_Var_4 )
 		{
 			call-script Stop();
 			currentstate = 1;
@@ -245,7 +227,7 @@ RequestState(requestedstate, currentstate)
 			currentstate = 0;
 		}
 	}
-	statechg_StateChanging = FALSE;
+	Static_Var_5 = 0;
 }
 
 Create()
@@ -280,9 +262,9 @@ Create()
 	dont-shade turreta;
 	dont-shade turretb;
 	dont-shade turretc;
-	gun_3 = 0;
-	statechg_DesiredState = TRUE;
-	statechg_StateChanging = FALSE;
+	gun_3 = base;
+	Static_Var_4 = 1;
+	Static_Var_5 = 0;
 	Static_Var_3 = 0;
 	restore_delay = 2000;
 	start-script SmokeUnit();
@@ -409,7 +391,7 @@ QuerySecondary(piecenum)
 
 QueryTertiary(piecenum)
 {
-	piecenum = flarec1 + gun_3;
+	piecenum = 3 + gun_3;
 }
 
 SweetSpot(piecenum)
@@ -453,7 +435,7 @@ Killed(severity, corpsetype)
 		explode turreta type BITMAPONLY | BITMAP5;
 		explode turretb type BITMAPONLY | BITMAP1;
 		explode turretc type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -485,7 +467,7 @@ Killed(severity, corpsetype)
 		explode turreta type BITMAPONLY | BITMAP5;
 		explode turretb type BITMAPONLY | BITMAP1;
 		explode turretc type SHATTER | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -517,7 +499,7 @@ Killed(severity, corpsetype)
 		explode turreta type BITMAPONLY | BITMAP5;
 		explode turretb type BITMAPONLY | BITMAP1;
 		explode turretc type SHATTER | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode barrela type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
@@ -547,4 +529,5 @@ Killed(severity, corpsetype)
 	explode turreta type BITMAPONLY | BITMAP5;
 	explode turretb type BITMAPONLY | BITMAP1;
 	explode turretc type SHATTER | EXPLODE_ON_HIT | BITMAP2;
+	return (corpsetype);
 }

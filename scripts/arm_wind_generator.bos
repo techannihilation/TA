@@ -1,0 +1,276 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, blades, post;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, statechg_DesiredState, statechg_StateChanging;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Go()
+{
+	spin blades around z-axis speed Static_Var_2;
+	turn post to y-axis Static_Var_3 speed <20.000000>;
+}
+
+Stop()
+{
+	spin blades around z-axis speed <0.000000>;
+	turn post to y-axis Static_Var_3 speed <0.000000>;
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+Create()
+{
+	dont-cache blades;
+	dont-cache post;
+	dont-shade blades;
+	dont-shade post;
+	Static_Var_2 = 1820;
+	Static_Var_3 = 0;
+	call-script InitState();
+	start-script SmokeUnit();
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+SetSpeed(Func_Var_1)
+{
+	if( get BUILD_PERCENT_LEFT == 0 )
+	{
+		Static_Var_2 = Func_Var_1;
+		spin blades around z-axis speed Func_Var_1;
+	}
+}
+
+SetDirection(heading)
+{
+	if( get BUILD_PERCENT_LEFT == 0 )
+	{
+		Static_Var_3 = heading;
+		turn post to y-axis heading speed <20.000000>;
+	}
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type BITMAPONLY | BITMAP1;
+		explode blades type BITMAPONLY | BITMAP2;
+		explode post type BITMAPONLY | BITMAP3;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type BITMAPONLY | BITMAP1;
+		explode blades type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode post type BITMAPONLY | BITMAP3;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type BITMAPONLY | BITMAP1;
+		explode blades type SHATTER | BITMAP2;
+		explode post type BITMAPONLY | BITMAP3;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type BITMAPONLY | BITMAP1;
+	explode blades type SHATTER | BITMAP2;
+	explode post type BITMAPONLY | BITMAP3;
+	return (corpsetype);
+	var Func_Var_3, Func_Var_4, Func_Var_5;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		severity = get HEALTH;
+		if( severity < 66 )
+		{
+			Func_Var_3 = 256 | 2;
+			if( Rand( 1, 66 ) < severity )
+			{
+				Func_Var_3 = 256 | 1;
+			}
+			emit-sfx Func_Var_3 from base;
+		}
+		corpsetype = severity * 50;
+		if( corpsetype < 200 )
+		{
+			corpsetype = 200;
+		}
+		sleep corpsetype;
+	}
+	return (corpsetype);
+	spin blades around z-axis speed Static_Var_2;
+	turn post to y-axis Static_Var_3 speed <20.000000>;
+	return (corpsetype);
+	spin blades around z-axis speed <0.000000>;
+	turn post to y-axis Static_Var_3 speed <0.000000>;
+	return (corpsetype);
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+	return (corpsetype);
+	var Func_Var_6, Func_Var_7;
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = severity;
+		return (corpsetype);
+	}
+	statechg_StateChanging = TRUE;
+	corpsetype = statechg_DesiredState;
+	statechg_DesiredState = severity;
+	while( statechg_DesiredState != corpsetype )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			corpsetype = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			corpsetype = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+	return (corpsetype);
+	dont-cache blades;
+	dont-cache post;
+	dont-shade blades;
+	dont-shade post;
+	Static_Var_2 = 1820;
+	Static_Var_3 = 0;
+	call-script InitState();
+	start-script SmokeUnit();
+	return (corpsetype);
+	start-script RequestState(0);
+	return (corpsetype);
+	start-script RequestState(1);
+	return (corpsetype);
+	var Func_Var_8;
+	if( get BUILD_PERCENT_LEFT == 0 )
+	{
+		Static_Var_2 = severity;
+		spin blades around z-axis speed severity;
+	}
+	return (corpsetype);
+	var Func_Var_9;
+	if( get BUILD_PERCENT_LEFT == 0 )
+	{
+		Static_Var_3 = severity;
+		turn post to y-axis severity speed <20.000000>;
+	}
+	return (corpsetype);
+	var Func_Var_10;
+	severity = 0;
+	return (corpsetype);
+	var Func_Var_11, Func_Var_12;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type BITMAPONLY | BITMAP1;
+		explode blades type BITMAPONLY | BITMAP2;
+		explode post type BITMAPONLY | BITMAP3;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type BITMAPONLY | BITMAP1;
+		explode blades type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode post type BITMAPONLY | BITMAP3;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type BITMAPONLY | BITMAP1;
+		explode blades type SHATTER | BITMAP2;
+		explode post type BITMAPONLY | BITMAP3;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type BITMAPONLY | BITMAP1;
+	explode blades type SHATTER | BITMAP2;
+	explode post type BITMAPONLY | BITMAP3;
+	return (corpsetype);
+}

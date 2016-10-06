@@ -3,8 +3,8 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  body, turret, flare, barrel, leg4, leg3, leg1, head,
-       leg2, foot1, foot2, foot3, foot4, base;
+piece  body, turret, sleeve, spindle, flare, barrel, leg4, leg3,
+       leg1, head, leg2, foot1, foot2, foot3, foot4, base;
 
 static-var  bMoving, bAiming, Static_Var_3, gun_1;
 
@@ -60,24 +60,24 @@ MotionControl()
 			move leg3 to y-axis [1.000000] speed [1.000000];
 			move leg2 to y-axis [0.000000] speed [1.000000];
 			turn head to x-axis <-8.000000> speed <13.000000>;
-			turn leg4 to y-axis <45.000000> speed <70.000000>;
-			turn leg3 to y-axis <-30.000000> speed <124.000000>;
+			turn leg4 to y-axis <45.000000> speed <60.000000>;
+			turn leg3 to y-axis <-30.000000> speed <100.000000>;
 			turn leg2 to y-axis <0.000000> speed <80.000000>;
 			turn leg1 to y-axis <0.000000> speed <35.000000>;
 			turn foot1 to x-axis <20.000000> speed <50.000000>;
-			turn foot2 to x-axis <-20.000000> speed <140.000000>;
+			turn foot2 to x-axis <-20.000000> speed <110.000000>;
 			turn foot3 to x-axis <-30.000000> speed <80.000000>;
 			turn foot4 to x-axis <0.000000> speed <60.000000>;
 			sleep 500;
 			move leg4 to y-axis [1.000000] speed [1.000000];
 			move leg3 to y-axis [0.000000] speed [1.000000];
 			turn head to x-axis <8.000000> speed <13.000000>;
-			turn leg4 to y-axis <15.000000> speed <124.000000>;
+			turn leg4 to y-axis <15.000000> speed <100.000000>;
 			turn leg3 to y-axis <-45.000000> speed <80.000000>;
 			turn leg2 to y-axis <-45.000000> speed <35.000000>;
-			turn leg1 to y-axis <0.000000> speed <70.000000>;
+			turn leg1 to y-axis <0.000000> speed <60.000000>;
 			turn foot2 to x-axis <20.000000> speed <50.000000>;
-			turn foot3 to x-axis <-20.000000> speed <140.000000>;
+			turn foot3 to x-axis <-20.000000> speed <110.000000>;
 			turn foot4 to x-axis <-30.000000> speed <80.000000>;
 			turn foot1 to x-axis <0.000000> speed <60.000000>;
 			sleep 500;
@@ -86,8 +86,8 @@ MotionControl()
 			turn head to x-axis <-8.000000> speed <13.000000>;
 			turn leg4 to y-axis <0.000000> speed <80.000000>;
 			turn leg3 to y-axis <0.000000> speed <35.000000>;
-			turn leg2 to y-axis <-45.000000> speed <70.000000>;
-			turn leg1 to y-axis <30.000000> speed <124.000000>;
+			turn leg2 to y-axis <-45.000000> speed <60.000000>;
+			turn leg1 to y-axis <30.000000> speed <100.000000>;
 			turn foot3 to x-axis <20.000000> speed <50.000000>;
 			turn foot4 to x-axis <-20.000000> speed <110.000000>;
 			turn foot1 to x-axis <-30.000000> speed <80.000000>;
@@ -97,11 +97,11 @@ MotionControl()
 			move leg1 to y-axis [0.000000] speed [1.000000];
 			turn head to x-axis <8.000000> speed <13.000000>;
 			turn leg4 to y-axis <45.000000> speed <35.000000>;
-			turn leg3 to y-axis <0.000000> speed <70.000000>;
-			turn leg2 to y-axis <-15.000000> speed <124.000000>;
+			turn leg3 to y-axis <0.000000> speed <60.000000>;
+			turn leg2 to y-axis <-15.000000> speed <100.000000>;
 			turn leg1 to y-axis <45.000000> speed <80.000000>;
 			turn foot4 to x-axis <20.000000> speed <50.000000>;
-			turn foot1 to x-axis <-20.000000> speed <140.000000>;
+			turn foot1 to x-axis <-20.000000> speed <110.000000>;
 			turn foot2 to x-axis <-30.000000> speed <80.000000>;
 			turn foot3 to x-axis <0.000000> speed <60.000000>;
 		}
@@ -112,12 +112,12 @@ MotionControl()
 			move leg2 to y-axis [0.000000] speed [1.000000];
 			turn head to x-axis <-8.000000> speed <13.000000>;
 			turn body to z-axis <-5.000000> speed <9.000000>;
-			turn leg4 to y-axis <45.000000> speed <70.000000>;
-			turn leg3 to y-axis <-30.000000> speed <124.000000>;
+			turn leg4 to y-axis <45.000000> speed <60.000000>;
+			turn leg3 to y-axis <-30.000000> speed <100.000000>;
 			turn leg2 to y-axis <0.000000> speed <80.000000>;
 			turn leg1 to y-axis <0.000000> speed <35.000000>;
 			turn foot1 to x-axis <20.000000> speed <50.000000>;
-			turn foot2 to x-axis <-20.000000> speed <140.000000>;
+			turn foot2 to x-axis <-20.000000> speed <110.000000>;
 			turn foot3 to x-axis <-30.000000> speed <80.000000>;
 			turn foot4 to x-axis <0.000000> speed <60.000000>;
 			sleep 500;
@@ -125,12 +125,12 @@ MotionControl()
 			move leg3 to y-axis [0.000000] speed [1.000000];
 			turn head to x-axis <8.000000> speed <13.000000>;
 			turn body to z-axis <0.000000> speed <9.000000>;
-			turn leg4 to y-axis <15.000000> speed <124.000000>;
+			turn leg4 to y-axis <15.000000> speed <100.000000>;
 			turn leg3 to y-axis <-45.000000> speed <80.000000>;
 			turn leg2 to y-axis <-45.000000> speed <35.000000>;
-			turn leg1 to y-axis <0.000000> speed <70.000000>;
+			turn leg1 to y-axis <0.000000> speed <60.000000>;
 			turn foot2 to x-axis <20.000000> speed <50.000000>;
-			turn foot3 to x-axis <-20.000000> speed <140.000000>;
+			turn foot3 to x-axis <-20.000000> speed <110.000000>;
 			turn foot4 to x-axis <-30.000000> speed <80.000000>;
 			turn foot1 to x-axis <0.000000> speed <60.000000>;
 			sleep 500;
@@ -140,10 +140,10 @@ MotionControl()
 			turn body to z-axis <5.000000> speed <9.000000>;
 			turn leg4 to y-axis <0.000000> speed <80.000000>;
 			turn leg3 to y-axis <0.000000> speed <35.000000>;
-			turn leg2 to y-axis <-45.000000> speed <70.000000>;
-			turn leg1 to y-axis <30.000000> speed <124.000000>;
+			turn leg2 to y-axis <-45.000000> speed <60.000000>;
+			turn leg1 to y-axis <30.000000> speed <100.000000>;
 			turn foot3 to x-axis <20.000000> speed <50.000000>;
-			turn foot4 to x-axis <-20.000000> speed <140.000000>;
+			turn foot4 to x-axis <-20.000000> speed <110.000000>;
 			turn foot1 to x-axis <-30.000000> speed <80.000000>;
 			turn foot2 to x-axis <0.000000> speed <60.000000>;
 			sleep 500;
@@ -152,11 +152,11 @@ MotionControl()
 			turn head to x-axis <8.000000> speed <13.000000>;
 			turn body to z-axis <0.000000> speed <9.000000>;
 			turn leg4 to y-axis <45.000000> speed <35.000000>;
-			turn leg3 to y-axis <0.000000> speed <70.000000>;
-			turn leg2 to y-axis <-15.000000> speed <124.000000>;
+			turn leg3 to y-axis <0.000000> speed <60.000000>;
+			turn leg2 to y-axis <-15.000000> speed <100.000000>;
 			turn leg1 to y-axis <45.000000> speed <80.000000>;
 			turn foot4 to x-axis <20.000000> speed <50.000000>;
-			turn foot1 to x-axis <-20.000000> speed <140.000000>;
+			turn foot1 to x-axis <-20.000000> speed <110.000000>;
 			turn foot2 to x-axis <-30.000000> speed <80.000000>;
 			turn foot3 to x-axis <0.000000> speed <60.000000>;
 		}
@@ -213,10 +213,10 @@ RestoreAfterDelay()
 {
 	sleep 8000;
 	set-signal-mask 0;
-	turn turret to y-axis <0.000000> speed <36.000000>;
-	turn barrel to x-axis <0.000000> speed <30.000000>;
+	turn spindle to x-axis <0.000000> speed <36.000000>;
+	turn turret to y-axis <0.000000> speed <30.000000>;
+	wait-for-turn spindle around x-axis;
 	wait-for-turn turret around y-axis;
-	wait-for-turn barrel around x-axis;
 	bAiming = FALSE;
 }
 
@@ -240,10 +240,10 @@ AimPrimary(heading, pitch)
 	{
 		sleep 400;
 	}
-	turn turret to y-axis heading speed <30.000000>;
-	turn barrel to x-axis <0.000000> - pitch speed <45.000000>;
+	turn turret to y-axis heading speed <40.000000>;
+	turn spindle to x-axis <0.000000> - pitch speed <35.000000>;
 	wait-for-turn turret around y-axis;
-	wait-for-turn barrel around x-axis;
+	wait-for-turn spindle around x-axis;
 	while( gun_1 )
 	{
 		sleep 250;
@@ -279,7 +279,7 @@ Killed(severity, corpsetype)
 		explode leg4 type BITMAPONLY | BITMAP3;
 		explode turret type BITMAPONLY | BITMAP2;
 		explode head type BITMAPONLY | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -297,7 +297,7 @@ Killed(severity, corpsetype)
 		explode foot4 type BITMAPONLY | BITMAP3;
 		explode turret type SHATTER | BITMAP3;
 		explode head type FALL | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -315,7 +315,7 @@ Killed(severity, corpsetype)
 		explode foot4 type BITMAPONLY | BITMAP3;
 		explode turret type SHATTER | SMOKE | EXPLODE_ON_HIT | BITMAP2;
 		explode head type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP4;
@@ -331,4 +331,5 @@ Killed(severity, corpsetype)
 	explode foot4 type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
 	explode turret type BITMAPONLY | BITMAP2;
 	explode head type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	return (corpsetype);
 }

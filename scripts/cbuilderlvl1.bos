@@ -3,7 +3,8 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, thorax, abdomen, cylinder, engine_r, engine_l, engineExR, engineExl, caput, nano, streben;
+piece  base, thorax, abdomen, cylinder, engine_r, engine_l, engineExR, engineExl,
+       caput, nano, streben;
 
 static-var  Static_Var_1;
 
@@ -38,7 +39,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 Create()
 {
 	hide engineExR;
-	hide engineExL;
+	hide engineExl;
 	Static_Var_1 = 5000;
 	set ARMORED to 1;
 	start-script SmokeUnit();
@@ -82,4 +83,5 @@ Killed(severity, corpsetype)
 	corpsetype = 3;
 	explode base type SHATTER | BITMAP2;
 	explode thorax type SHATTER | SMOKE | FIRE | BITMAP5;
+	return (corpsetype);
 }

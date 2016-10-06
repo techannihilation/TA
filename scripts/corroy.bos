@@ -6,13 +6,11 @@
 piece  flarea1, flarea2, flareb, base, turret, sleeves, wake1, wake2,
        barrel1, barrel2, ground;
 
-static-var  gun_1, restore_delay, aimDir, Static_Var_4, Static_Var_5, oldHead;
+static-var  Static_Var_1, restore_delay, Static_Var_3, Static_Var_4, Static_Var_5,
+            Static_Var_6;
 
 // Signal definitions
-#define SIG_AIM			2
-#define SIG_AIM2		4
-#define SIG_MOVE		8
-#define SIG_ROCK		16
+#define SIG_MOVE			8
 
 
 ProjXPW(Func_Var_1, Func_Var_2)
@@ -41,8 +39,8 @@ ProjXPW(Func_Var_1, Func_Var_2)
 
 RockZ(Func_Var_1, Func_Var_2)
 {
-	signal SIG_ROCK;
-	set-signal-mask SIG_ROCK;
+	signal 16;
+	set-signal-mask 16;
 	call-script ProjXPW(10920 / Func_Var_2,Func_Var_1);
 	Static_Var_5 = Static_Var_5 + Static_Var_4;
 	Static_Var_4 = get ABS(Static_Var_5);
@@ -53,34 +51,33 @@ RockZ(Func_Var_1, Func_Var_2)
 		Static_Var_5 = Static_Var_5 * -1 / 2;
 		Static_Var_4 = get ABS(Static_Var_5);
 	}
-	turn base to z-axis <0.000000> speed <1.5>;
+	turn base to z-axis <0.000000> speed <1.500000>;
 }
 
 SetDirection(heading)
 {
-	var spd;
-	spd = (get ABS(oldHead) - get ABS(heading)) / 2;
-	turn ground to y-axis heading speed spd;
-	turn base to y-axis 0-heading speed spd;
-	oldHead = heading;
+	var Func_Var_2;
+	Func_Var_2 = ( get ABS(Static_Var_6) - get ABS(heading) ) / 2;
+	turn ground to y-axis heading speed Func_Var_2;
+	turn base to y-axis <0.000000> - heading speed Func_Var_2;
+	Static_Var_6 = heading;
 }
 
-RockOnWaves()
+RockOnWaves(Func_Var_1, Func_Var_2, Func_Var_3)
 {
-	var rockDir, rockAng, rockSpeed;
-	rockDir = <-0.1>;
-	rockAng = <-0.1>;
+	Func_Var_1 = -18;
+	Func_Var_2 = -18;
 	while( TRUE )
 	{
-		while( get ABS(rockAng) < <1.31> )
+		while( get ABS(Func_Var_2) < 238 )
 		{
-			rockSpeed = <1.45> - get ABS(rockAng);
-			turn ground to x-axis rockAng speed rockSpeed*4;
+			Func_Var_3 = 263 - get ABS(Func_Var_2);
+			turn ground to x-axis Func_Var_2 speed Func_Var_3 * <0.021978>;
 			wait-for-turn ground around x-axis;
-			rockAng = rockAng + rockDir;
+			Func_Var_2 = Func_Var_2 + Func_Var_1;
 		}
-		rockDir = 0 - rockDir;
-		rockAng = rockAng + rockDir + rockDir;
+		Func_Var_1 = 0 - Func_Var_1;
+		Func_Var_2 = Func_Var_2 + Func_Var_1 + Func_Var_1;
 	}
 }
 
@@ -117,7 +114,7 @@ Create()
 	hide flarea1;
 	hide flarea2;
 	hide flareb;
-	gun_1 = 0;
+	Static_Var_1 = 0;
 	Static_Var_5 = 0;
 	restore_delay = 3000;
 	start-script SmokeUnit();
@@ -139,8 +136,8 @@ waveSplash()
 {
 	while( TRUE )
 	{
-		turn base to x-axis <-3.0> speed <3.0>;
-		move base to y-axis [0.32] speed [0.32];
+		turn base to x-axis <-3.000000> speed <3.000000>;
+		move base to y-axis [0.319995] speed [0.319995];
 		wait-for-turn base around x-axis;
 		wait-for-turn base around x-axis;
 	}
@@ -150,50 +147,53 @@ StartMoving()
 {
 	signal SIG_MOVE;
 	set-signal-mask SIG_MOVE;
-	var waketime;
+	var Func_Var_1;
 	start-script waveSplash();
 	while( TRUE )
 	{
 		emit-sfx 2 from wake1;
 		emit-sfx 4 from wake2;
-		waketime = (get CURRENT_SPEED) * 100 / get MAX_SPEED;
-		if( waketime < 50 ) waketime = 50;
-		sleep 10000 / waketime;
+		Func_Var_1 = get CURRENT_SPEED * 100 / get MAX_SPEED;
+		if( Func_Var_1 < 50 )
+		{
+			Func_Var_1 = 50;
+		}
+		sleep 10000 / Func_Var_1;
 	}
 }
 
 StopMoving()
 {
 	signal SIG_MOVE;
-	turn base to x-axis <0.0> speed <3.0>;
-	move base to y-axis [0.0] speed [0.32];
+	turn base to x-axis <0.000000> speed <3.000000>;
+	move base to y-axis [0.000000] speed [0.319995];
 }
 
 AimWeapon1(heading, pitch)
 {
-	signal SIG_AIM;
-	set-signal-mask SIG_AIM;
+	signal 2;
+	set-signal-mask 2;
 	turn turret to y-axis heading speed <70.000000>;
 	turn sleeves to x-axis <0.000000> - pitch speed <40.000000>;
 	wait-for-turn turret around y-axis;
 	wait-for-turn sleeves around x-axis;
-	aimDir = heading;
+	Static_Var_3 = heading;
 	start-script RestoreAfterDelay();
 	return (1);
 }
 
 AimWeapon2(heading, pitch)
 {
-	signal SIG_AIM2;
-	set-signal-mask SIG_AIM2;
+	signal 4;
+	set-signal-mask 4;
 	start-script RestoreAfterDelay();
 	return (1);
 }
 
 FireWeapon1()
 {
-	start-script RockZ(-9,aimDir);
-	if( gun_1 )
+	start-script RockZ(-9,Static_Var_3);
+	if( Static_Var_1 )
 	{
 		move barrel2 to z-axis [-2.000000] speed [500.000000];
 		wait-for-move barrel2 along z-axis;
@@ -211,7 +211,7 @@ FireWeapon1()
 		sleep 150;
 		hide flarea1;
 	}
-	gun_1 = !gun_1;
+	Static_Var_1 = !Static_Var_1;
 }
 
 FireWeapon2()
@@ -228,7 +228,7 @@ AimFromWeapon1(piecenum)
 
 QueryWeapon1(piecenum)
 {
-	piecenum = gun_1;
+	piecenum = Static_Var_1;
 }
 
 AimFromWeapon2(piecenum)
@@ -264,7 +264,7 @@ Killed(severity, corpsetype)
 		explode turret type BITMAPONLY | BITMAP1;
 		explode wake1 type BITMAPONLY | BITMAP3;
 		explode wake2 type BITMAPONLY | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -279,7 +279,7 @@ Killed(severity, corpsetype)
 		explode turret type BITMAPONLY | BITMAP1;
 		explode wake1 type FALL | BITMAP3;
 		explode wake2 type FALL | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -294,7 +294,7 @@ Killed(severity, corpsetype)
 		explode turret type BITMAPONLY | BITMAP1;
 		explode wake1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode wake2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode barrel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
@@ -307,4 +307,5 @@ Killed(severity, corpsetype)
 	explode turret type BITMAPONLY | BITMAP1;
 	explode wake1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode wake2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	return (corpsetype);
 }

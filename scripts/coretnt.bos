@@ -322,7 +322,6 @@ Create()
 	start-script MotionControl();
 }
 
-
 SweetSpot(piecenum)
 {
 	piecenum = body;

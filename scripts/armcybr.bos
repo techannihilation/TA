@@ -112,7 +112,7 @@ RequestState(requestedstate, currentstate)
 
 MoveRate2()
 {
-	if( Rand( 1, 10 ) == 1 AND ( !Static_Var_1 ) )
+	if( Rand( 1, 10 ) == 1 AND !Static_Var_1 )
 	{
 		Static_Var_1 = 1;
 		turn base to z-axis <240.049451> speed <120.027473>;
@@ -170,7 +170,7 @@ Killed(severity, corpsetype)
 		explode wingthrust1 type BITMAPONLY | BITMAP1;
 		explode wing2 type BITMAPONLY | BITMAP2;
 		explode wingthrust2 type BITMAPONLY | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -183,7 +183,7 @@ Killed(severity, corpsetype)
 		explode wingthrust1 type FALL | BITMAP1;
 		explode wing2 type BITMAPONLY | BITMAP2;
 		explode wingthrust2 type FALL | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -196,7 +196,7 @@ Killed(severity, corpsetype)
 		explode wingthrust1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 		explode wing2 type BITMAPONLY | BITMAP2;
 		explode wingthrust2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP1;
@@ -207,4 +207,5 @@ Killed(severity, corpsetype)
 	explode wingthrust1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 	explode wing2 type BITMAPONLY | BITMAP2;
 	explode wingthrust2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	return (corpsetype);
 }

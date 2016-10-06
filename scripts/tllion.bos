@@ -3,12 +3,14 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, fusee, antenne, door1, door2, door3, door4, silo;
+piece  base, body, fusee, antenne, door1, door2, door3, door4,
+       silo;
 
 static-var  gun_1, restore_delay, statechg_DesiredState, statechg_StateChanging;
 
 // Signal definitions
 #define SIG_AIM				2
+
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -49,7 +51,6 @@ Activatescr()
 		move door3 to y-axis [-3.000000] speed [1.000000];
 		move door4 to y-axis [0.000000] now;
 		move door4 to y-axis [-3.000000] speed [1.000000];
-		//move turret to y-axis [0.000000] speed [25.000000];
 		turn door1 to x-axis <90.016484> now;
 		turn door1 to x-axis <0.000000> speed <5.000000>;
 		turn door2 to z-axis <-90.016484> now;
@@ -58,9 +59,8 @@ Activatescr()
 		turn door3 to x-axis <0.000000> speed <5.000000>;
 		turn door4 to z-axis <90.016484> now;
 		turn door4 to z-axis <0.000000> speed <5.000000>;
-		//move turret to y-axis [4.000000] speed [15.000000];
 		sleep 15000;
-		gun_1 = TRUE;
+		gun_1 = body;
 	}
 	sleep 25;
 }
@@ -69,7 +69,7 @@ Deactivatescr()
 {
 	if( TRUE )
 	{
-		gun_1 = FALSE;
+		gun_1 = base;
 		move door1 to y-axis [0.000000] now;
 		move door1 to y-axis [0.000000] speed [0.000000];
 		move door2 to y-axis [0.000000] now;
@@ -78,17 +78,11 @@ Deactivatescr()
 		move door3 to y-axis [0.000000] speed [0.000000];
 		move door4 to y-axis [0.000000] now;
 		move door4 to y-axis [0.000000] speed [0.000000];
-		//turn launcher to x-axis <0.000000> speed <80.000000>;
-		//turn launcher to y-axis <0.000000> speed <100.000000>;
-		//wait-for-turn launcher around x-axis;
-		//wait-for-turn launcher around y-axis;
-		//move turret to y-axis [-15.000000] speed [22.000000];
 		turn door1 to x-axis <90.016484> speed <25.000000>;
 		turn door2 to z-axis <-90.016484> speed <25.000000>;
 		turn door3 to x-axis <-90.016484> speed <25.000000>;
 		turn door4 to z-axis <90.016484> speed <25.000000>;
 		sleep 300;
-		
 	}
 	sleep 15;
 }
@@ -96,13 +90,13 @@ Deactivatescr()
 Go()
 {
 	show fusee;
-	call-script activatescr();
+	call-script Activatescr();
 }
 
 Stop()
 {
 	sleep 4000;
-	call-script deactivatescr();
+	call-script Deactivatescr();
 }
 
 InitState()
@@ -110,7 +104,6 @@ InitState()
 	statechg_DesiredState = TRUE;
 	statechg_StateChanging = FALSE;
 }
-
 
 RequestState(requestedstate, currentstate)
 {
@@ -141,8 +134,8 @@ RequestState(requestedstate, currentstate)
 Create()
 {
 	hide fusee;
-	call-script deactivatescr();
-	gun_1 = FALSE;
+	call-script Deactivatescr();
+	gun_1 = base;
 	restore_delay = 3000;
 	while( get BUILD_PERCENT_LEFT )
 	{
@@ -180,7 +173,7 @@ AimPrimary(heading, pitch)
 	start-script RequestState(0);
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	while( gun_1 == FALSE)
+	while( gun_1 == 0 )
 	{
 		sleep 250;
 	}
@@ -193,13 +186,13 @@ FirePrimary()
 	emit-sfx 1024 from silo;
 	sleep 2000;
 	hide fusee;
-	gun_1 = FALSE;
+	gun_1 = base;
 	start-script RequestState(1);
 }
 
 AimFromPrimary(piecenum)
 {
-		piecenum = antenne;
+	piecenum = antenne;
 }
 
 QueryPrimary(piecenum)

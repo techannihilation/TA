@@ -6,7 +6,7 @@
 piece  base, pad, beam1, beam2, platform, door1, door2, post1,
        post2, nano2, nano1;
 
-static-var  spray, unitviewer, statechg_DesiredState, statechg_StateChanging;
+static-var  spray, Static_Var_2, Static_Var_3, Static_Var_4;
 
 // Signal definitions
 #define SIG_ACTIVATE			2
@@ -15,56 +15,48 @@ static-var  spray, unitviewer, statechg_DesiredState, statechg_StateChanging;
 activatescr()
 {
 	move platform to y-axis [0.000000] now;
-	move platform to y-axis [19.125000] speed [25.000000];
+	move platform to y-axis [7.650000] speed [10.000000];
 	sleep 735;
 	set ARMORED to 0;
-
-	move platform to y-axis [19.000000] speed [1.000000];
-	turn door1 to z-axis <-90.021978> speed <159.000000>;
-	turn door2 to z-axis <90.021978> speed <159.000000>;
+	move platform to y-axis [7.600000] speed [0.400000];
+	turn door1 to z-axis <-90.016484> speed <159.000000>;
+	turn door2 to z-axis <90.016484> speed <159.000000>;
 	sleep 565;
-
-	move door1 to y-axis [-11.250000] speed [17.500000];
-	move door2 to y-axis [-11.125000] speed [17.500000];
+	move door1 to y-axis [-4.500000] speed [7.000000];
+	move door2 to y-axis [-4.450000] speed [7.000000];
 	sleep 570;
-
-	move post1 to y-axis [31.000000] speed [52.500000];
-	move post2 to y-axis [31.000000] speed [52.500000];
+	move post1 to y-axis [12.400000] speed [21.000000];
+	move post2 to y-axis [12.400000] speed [21.000000];
 	sleep 571;
-
-	turn nano2 to z-axis <99.021978> speed <173.000000>;
-	turn nano1 to z-axis <-99.021978> speed <174.000000>;
+	turn nano2 to z-axis <99.016484> speed <173.000000>;
+	turn nano1 to z-axis <-99.016484> speed <174.000000>;
 	sleep 571;
 }
 
 deactivatescr()
 {
-	move platform to y-axis [19.000000] now;
-	move post1 to y-axis [31.000000] now;
-	move door1 to y-axis [-11.250000] now;
-	move post2 to y-axis [31.000000] now;
-	move door2 to y-axis [-11.125000] now;
-	turn door1 to z-axis <-90.021978> now;
-	turn door2 to z-axis <90.021978> now;
-	turn nano2 to z-axis <99.340659> now;
+	move platform to y-axis [7.600000] now;
+	move post1 to y-axis [12.400000] now;
+	move door1 to y-axis [-4.500000] now;
+	move post2 to y-axis [12.400000] now;
+	move door2 to y-axis [-4.450000] now;
+	turn door1 to z-axis <-90.016484> now;
+	turn door2 to z-axis <90.016484> now;
+	turn nano2 to z-axis <99.335165> now;
 	turn nano2 to z-axis <0.000000> speed <175.000000>;
 	turn nano1 to z-axis <-99.890110> now;
 	turn nano1 to z-axis <0.000000> speed <176.000000>;
 	sleep 565;
-
-	move post1 to y-axis [0.000000] speed [52.500000];
-	move post2 to y-axis [0.000000] speed [52.500000];
+	move post1 to y-axis [0.000000] speed [21.000000];
+	move post2 to y-axis [0.000000] speed [21.000000];
 	sleep 570;
-
-	move door1 to y-axis [0.000000] speed [17.500000];
-	move door2 to y-axis [0.000000] speed [17.500000];
+	move door1 to y-axis [0.000000] speed [7.000000];
+	move door2 to y-axis [0.000000] speed [7.000000];
 	sleep 571;
-
 	turn door1 to z-axis <0.000000> speed <157.000000>;
 	turn door2 to z-axis <0.000000> speed <157.000000>;
 	sleep 571;
-
-	move platform to y-axis [0.000000] speed [25.000000];
+	move platform to y-axis [0.000000] speed [10.000000];
 	sleep 738;
 	set ARMORED to 1;
 }
@@ -144,17 +136,17 @@ Stop()
 
 RequestState(requestedstate, currentstate)
 {
-	if( statechg_StateChanging )
+	if( Static_Var_4 )
 	{
-		statechg_DesiredState = requestedstate;
+		Static_Var_3 = requestedstate;
 		return (0);
 	}
-	statechg_StateChanging = TRUE;
-	currentstate = statechg_DesiredState;
-	statechg_DesiredState = requestedstate;
-	while( statechg_DesiredState != currentstate )
+	Static_Var_4 = 1;
+	currentstate = Static_Var_3;
+	Static_Var_3 = requestedstate;
+	while( Static_Var_3 != currentstate )
 	{
-		if( statechg_DesiredState )
+		if( Static_Var_3 )
 		{
 			call-script Stop();
 			currentstate = 1;
@@ -165,7 +157,7 @@ RequestState(requestedstate, currentstate)
 			currentstate = 0;
 		}
 	}
-	statechg_StateChanging = FALSE;
+	Static_Var_4 = 0;
 }
 
 Create()
@@ -176,17 +168,17 @@ Create()
 	dont-shade nano2;
 	dont-shade pad;
 	dont-shade platform;
-	unitviewer = FALSE;
+	Static_Var_2 = 0;
 	spray = base;
 	set ARMORED to 1;
-	move base to y-axis [5.000000] now;
-	statechg_DesiredState = TRUE;
-	statechg_StateChanging = FALSE;
+	move base to y-axis [2.000000] now;
+	Static_Var_3 = 1;
+	Static_Var_4 = 0;
 	while( get BUILD_PERCENT_LEFT )
 	{
 		sleep 1000;
 	}
-	move base to y-axis [0.000000] speed [10.000000];
+	move base to y-axis [0.000000] speed [4.000000];
 	start-script SmokeUnit();
 }
 
@@ -213,7 +205,7 @@ Deactivate()
 {
 	signal SIG_ACTIVATE;
 	set-signal-mask SIG_ACTIVATE;
-	if( !unitviewer )
+	if( !Static_Var_2 )
 	{
 		sleep 5000;
 	}
@@ -257,7 +249,7 @@ Killed(severity, corpsetype)
 		explode platform type BITMAPONLY | BITMAP4;
 		explode post1 type BITMAPONLY | BITMAP5;
 		explode post2 type BITMAPONLY | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -273,7 +265,7 @@ Killed(severity, corpsetype)
 		explode platform type BITMAPONLY | BITMAP4;
 		explode post1 type FALL | BITMAP5;
 		explode post2 type FALL | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -289,7 +281,7 @@ Killed(severity, corpsetype)
 		explode platform type BITMAPONLY | BITMAP4;
 		explode post1 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
 		explode post2 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP1;
@@ -303,4 +295,5 @@ Killed(severity, corpsetype)
 	explode platform type BITMAPONLY | BITMAP4;
 	explode post1 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
 	explode post2 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP1;
+	return (corpsetype);
 }

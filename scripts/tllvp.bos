@@ -173,13 +173,11 @@ Deactivate()
 
 StartBuilding()
 {
-//	spin pad around y-axis speed <30.000000> accelerate <2.000000>;
 	dont-cache pad;
 }
 
 StopBuilding()
 {
-//	stop-spin pad around y-axis decelerate <2.000000>;
 	cache pad;
 }
 
@@ -203,7 +201,7 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -212,7 +210,7 @@ Killed(severity, corpsetype)
 		explode lnano type FALL | BITMAP3;
 		explode rnano type FALL | BITMAP4;
 		explode lights type FALL | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode lnano type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
@@ -221,4 +219,5 @@ Killed(severity, corpsetype)
 	explode lights type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
 	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP3;
 	explode arms type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+	return (corpsetype);
 }

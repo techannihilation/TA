@@ -5,7 +5,7 @@
 
 piece  lwing, rwing, flare1, flare2, base, wake1, wake2, bombdrop;
 
-static-var  gun_3, Static_Var_2, statechg_DesiredState, statechg_StateChanging;
+static-var  Static_Var_1, Static_Var_2, statechg_DesiredState, statechg_StateChanging;
 
 // Signal definitions
 #define SIG_MOVE			2
@@ -16,9 +16,9 @@ activatescr()
 	if( TRUE )
 	{
 		turn rwing to y-axis <0.000000> now;
-		turn rwing to y-axis <24.527473> speed <17.554945>;
+		turn rwing to y-axis <24.527473> speed <17.549451>;
 		turn lwing to y-axis <0.000000> now;
-		turn lwing to y-axis <-24.065934> speed <17.225275>;
+		turn lwing to y-axis <-24.060440> speed <17.225275>;
 		sleep 1397;
 	}
 	sleep 55;
@@ -37,8 +37,8 @@ deactivatescr()
 		move flare1 to z-axis [6.618451] now;
 		move flare2 to x-axis [-5.194684] now;
 		move flare2 to y-axis [0.650000] now;
-		move flare2 to z-axis [6.480786] now;
-		turn lwing to y-axis <-24.065934> now;
+		move flare2 to z-axis [6.480780] now;
+		turn lwing to y-axis <-24.060440> now;
 		turn lwing to y-axis <0.000000> speed <16.505495>;
 		turn rwing to y-axis <24.527473> now;
 		turn rwing to y-axis <0.000000> speed <16.824176>;
@@ -108,7 +108,7 @@ RequestState(requestedstate, currentstate)
 
 Create()
 {
-	gun_3 = lwing;
+	Static_Var_1 = 0;
 	call-script InitState();
 	start-script SmokeUnit();
 }
@@ -181,7 +181,7 @@ Killed(severity, corpsetype)
 		explode rwing type BITMAPONLY | BITMAP1;
 		explode wake1 type BITMAPONLY | BITMAP2;
 		explode wake2 type BITMAPONLY | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -194,7 +194,7 @@ Killed(severity, corpsetype)
 		explode rwing type BITMAPONLY | BITMAP1;
 		explode wake1 type FALL | BITMAP2;
 		explode wake2 type FALL | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -207,7 +207,7 @@ Killed(severity, corpsetype)
 		explode rwing type BITMAPONLY | BITMAP1;
 		explode wake1 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP2;
 		explode wake2 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP1;
@@ -218,6 +218,7 @@ Killed(severity, corpsetype)
 	explode rwing type BITMAPONLY | BITMAP1;
 	explode wake1 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP2;
 	explode wake2 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP3;
+	return (corpsetype);
 }
 
 setSFXoccupy(state)

@@ -3,133 +3,144 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  m1, m2, intake1,intake2, mount1, mount2, base, airframe, wing1, wing2, tail, ex, drop;
+piece  m1, m2, intake1, intake2, mount1, mount2, base, airframe,
+       wing1, wing2, tail, ex, drop;
 
-static-var  Restore_Delay, laser, InStateChange, LastWantedState;
+static-var  Static_Var_1, gun_2, statechg_StateChanging, statechg_DesiredState;
 
 // Signal definitions
 #define SIG_AIM_2			2
 
-#define SMOKEPIECE1 base
-
-#include "StateChg.h"
 
 activatescr()
 {
 	if( TRUE )
 	{
-		turn wing1 to z-axis <0.0> speed <25.0>;
-		turn wing2 to z-axis <0.0> speed <25.0>;
+		turn wing1 to z-axis <0.000000> speed <25.000000>;
+		turn wing2 to z-axis <0.000000> speed <25.000000>;
 		wait-for-turn wing1 around z-axis;
 		wait-for-turn wing2 around z-axis;
 		sleep 150;
 	}
 	sleep 44;
-	return (0);
 }
 
 deactivatescr()
 {
 	if( TRUE )
 	{
-		turn wing1 to z-axis <95.0> speed <10.0>;
-		turn wing2 to z-axis <-95.0> speed <10.0>;
+		turn wing1 to z-axis <95.000000> speed <10.000000>;
+		turn wing2 to z-axis <-95.000000> speed <10.000000>;
 		wait-for-turn wing1 around z-axis;
 		wait-for-turn wing2 around z-axis;
 	}
 	sleep 44;
-	return (0);
 }
 
 InitState()
 {
-	LastWantedState = 1;
-	InStateChange = 0;
-	return (0);
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
 }
 
 RequestState(requestedstate, currentstate)
 {
-	if( InStateChange )
+	if( statechg_StateChanging )
 	{
-		LastWantedState = requestedstate;
+		statechg_DesiredState = requestedstate;
 		return (0);
 	}
-	InStateChange = 1;
-	currentstate = LastWantedState;
-	LastWantedState = requestedstate;
-	while( LastWantedState != currentstate )
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
 	{
-		if( LastWantedState == 0 )
+		if( statechg_DesiredState == 0 )
 		{
 			call-script activatescr();
 			currentstate = 0;
 		}
-		if( LastWantedState == 1 )
+		if( statechg_DesiredState == 1 )
 		{
 			call-script deactivatescr();
 			currentstate = 1;
 		}
 	}
-	InStateChange = 0;
-	return (0);
+	statechg_StateChanging = FALSE;
 }
 
-#include "SmokeUnit.h"
-#define ACTIVATECMD			call-script activatescr();
-#define DEACTIVATECMD		call-script deactivatescr();
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
 
 Create()
 {
 	hide m1;
 	hide m2;
-	laser = 1;
-	Restore_Delay = 3000;
+	gun_2 = m2;
+	Static_Var_1 = 3000;
 	call-script InitState();
-	call-script DeactivateScr();
+	call-script deactivatescr();
 	start-script SmokeUnit();
-	return (0);
 }
 
 Activate()
 {
 	start-script RequestState(0);
-	return (0);
 }
 
 Deactivate()
 {
 	start-script RequestState(1);
-	return (0);
 }
 
 RestoreAfterDelay()
 {
-	sleep Restore_Delay;
-	turn mount1 to y-axis <0.000000> speed <90.021978>;
-	turn mount1 to x-axis <0.000000> speed <50.010989>;
-	turn mount2 to y-axis <0.000000> speed <90.021978>;
-	turn mount2 to x-axis <0.000000> speed <50.010989>;
-	return (0);
+	sleep Static_Var_1;
+	turn mount1 to y-axis <0.000000> speed <90.016484>;
+	turn mount1 to x-axis <0.000000> speed <50.005495>;
+	turn mount2 to y-axis <0.000000> speed <90.016484>;
+	turn mount2 to x-axis <0.000000> speed <50.005495>;
 }
 
 QueryPrimary(piecenum)
 {
 	piecenum = drop;
-	return (0);
 }
 
 QuerySecondary(piecenum)
 {
-    if( laser == 0)
-    {
-	  piecenum = mount1;
+	if( gun_2 == 0 )
+	{
+		piecenum = mount1;
 	}
-    if( laser == 1)
-    {
-	  piecenum = mount2;
+	if( gun_2 == 1 )
+	{
+		piecenum = mount2;
 	}
-	return (0);
 }
 
 AimSecondary(heading, pitch)
@@ -150,41 +161,38 @@ AimSecondary(heading, pitch)
 
 FireSecondary()
 {
-	laser = !laser;
-	if( laser == 0 )
+	gun_2 = !gun_2;
+	if( gun_2 == 0 )
 	{
 		show m1;
 		sleep 150;
 		hide m1;
 		return (0);
 	}
-	if( laser == 1 )
+	if( gun_2 == 1 )
 	{
 		show m2;
 		sleep 150;
 		hide m2;
 		return (0);
 	}
-	
 }
 
 AimFromSecondary(piecenum)
 {
-    if( laser == 0)
-    {
-	  piecenum = mount1;
+	if( gun_2 == 0 )
+	{
+		piecenum = mount1;
 	}
-    if( laser == 1)
-    {
-	  piecenum = mount2;
+	if( gun_2 == 1 )
+	{
+		piecenum = mount2;
 	}
-	return (0);
 }
 
 SweetSpot(piecenum)
 {
 	piecenum = base;
-	return (0);
 }
 
 Killed(severity, corpsetype)
@@ -202,7 +210,7 @@ Killed(severity, corpsetype)
 		explode ex type FALL | BITMAP1;
 		explode wing1 type SHATTER | BITMAP2;
 		explode wing2 type SHATTER | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -215,7 +223,7 @@ Killed(severity, corpsetype)
 		explode ex type FALL | BITMAP1;
 		explode wing1 type SHATTER | BITMAP2;
 		explode wing2 type SHATTER | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -228,7 +236,7 @@ Killed(severity, corpsetype)
 		explode ex type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 		explode wing1 type SHATTER | BITMAP2;
 		explode wing2 type SHATTER | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP1;
@@ -239,5 +247,5 @@ Killed(severity, corpsetype)
 	explode ex type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 	explode wing1 type SHATTER | EXPLODE_ON_HIT | BITMAP2;
 	explode wing2 type SHATTER | EXPLODE_ON_HIT | BITMAP3;
-	return (0);
+	return (corpsetype);
 }

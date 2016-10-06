@@ -10,6 +10,7 @@ static-var  restore_delay;
 // Signal definitions
 #define SIG_AIM				2
 
+
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
 	while( get BUILD_PERCENT_LEFT )
@@ -37,10 +38,10 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-HitByWeapon(Func_Var_1, Func_Var_2)
+HitByWeapon(anglex, anglez)
 {
-	turn base to z-axis Func_Var_2 speed <105.000000>;
-	turn base to x-axis Func_Var_1 speed <105.000000>;
+	turn base to z-axis anglez speed <105.000000>;
+	turn base to x-axis anglex speed <105.000000>;
 	wait-for-turn base around z-axis;
 	wait-for-turn base around x-axis;
 	turn base to z-axis <0.000000> speed <30.000000>;
@@ -121,7 +122,7 @@ Killed(severity, corpsetype)
 		explode base type BITMAPONLY | BITMAP3;
 		explode turret type BITMAPONLY | BITMAP2;
 		explode treads type BITMAPONLY | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -131,7 +132,7 @@ Killed(severity, corpsetype)
 		explode base type BITMAPONLY | BITMAP3;
 		explode turret type FALL | EXPLODE_ON_HIT | BITMAP2;
 		explode treads type BITMAPONLY | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -141,7 +142,7 @@ Killed(severity, corpsetype)
 		explode base type BITMAPONLY | BITMAP3;
 		explode turret type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 		explode treads type BITMAPONLY | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode barrel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
@@ -149,4 +150,5 @@ Killed(severity, corpsetype)
 	explode base type BITMAPONLY | BITMAP3;
 	explode turret type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 	explode treads type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	return (corpsetype);
 }

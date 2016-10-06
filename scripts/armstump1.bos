@@ -40,8 +40,8 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 RockUnit(anglex, anglez)
 {
-	turn base to x-axis anglex speed <50.010989>;
-	turn base to z-axis anglez speed <50.010989>;
+	turn base to x-axis anglex speed <50.005495>;
+	turn base to z-axis anglez speed <50.005495>;
 	wait-for-turn base around z-axis;
 	wait-for-turn base around x-axis;
 	turn base to z-axis <0.000000> speed <20.000000>;
@@ -50,8 +50,8 @@ RockUnit(anglex, anglez)
 
 HitByWeapon(anglex, anglez)
 {
-	turn base to z-axis anglez speed <105.021978>;
-	turn base to x-axis anglex speed <105.021978>;
+	turn base to z-axis anglez speed <105.016484>;
+	turn base to x-axis anglex speed <105.016484>;
 	wait-for-turn base around z-axis;
 	wait-for-turn base around x-axis;
 	turn base to z-axis <0.000000> speed <30.005495>;
@@ -73,16 +73,16 @@ SetMaxReloadTime(Func_Var_1)
 RestoreAfterDelay()
 {
 	sleep restore_delay;
-	turn turret to y-axis <0.000000> speed <90.021978>;
-	turn barrel to x-axis <0.000000> speed <50.010989>;
+	turn turret to y-axis <0.000000> speed <90.016484>;
+	turn barrel to x-axis <0.000000> speed <50.005495>;
 }
 
 AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	turn turret to y-axis heading speed <90.021978>;
-	turn barrel to x-axis <0.000000> - pitch speed <50.010989>;
+	turn turret to y-axis heading speed <90.016484>;
+	turn barrel to x-axis <0.000000> - pitch speed <50.005495>;
 	wait-for-turn turret around y-axis;
 	wait-for-turn barrel around x-axis;
 	start-script RestoreAfterDelay();
@@ -123,7 +123,7 @@ Killed(severity, corpsetype)
 		explode base type BITMAPONLY | BITMAP2;
 		explode flare type BITMAPONLY | BITMAP3;
 		explode turret type BITMAPONLY | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -132,7 +132,7 @@ Killed(severity, corpsetype)
 		explode base type BITMAPONLY | BITMAP2;
 		explode flare type FALL | BITMAP3;
 		explode turret type SHATTER | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -141,11 +141,12 @@ Killed(severity, corpsetype)
 		explode base type BITMAPONLY | BITMAP2;
 		explode flare type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode turret type SHATTER | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode barrel type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 	explode base type BITMAPONLY | BITMAP2;
 	explode flare type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode turret type SHATTER | EXPLODE_ON_HIT | BITMAP4;
+	return (corpsetype);
 }

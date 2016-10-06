@@ -7,8 +7,8 @@ piece  gauss, turret, flash, torso, ruparm, luparm, pelvis, lthigh,
        rthigh, rleg, rfoot, lleg, lfoot, lloarm, lhand, rloarm,
        rhand, ground;
 
-static-var  restore_delay, Static_Var_2, gun_2, statechg_DesiredState,
-			statechg_StateChanging, moveSpeed, currentSpeed, animSpeed;
+static-var  restore_delay, Static_Var_2, gun_2, Static_Var_4, Static_Var_5,
+            Static_Var_6, Static_Var_7, Static_Var_8;
 
 // Signal definitions
 #define SIG_MOVE			2
@@ -23,158 +23,154 @@ walk()
 		move torso to y-axis [0.000000] now;
 		move ruparm to y-axis [0.000000] now;
 		move ruparm to z-axis [0.000000] now;
-		move luparm to y-axis [-0.300000] speed [3.578313] *  currentSpeed / 100;
-		move luparm to z-axis [0.300000] speed [3.578313] *  currentSpeed / 100;
-		turn pelvis to z-axis <-3.582418> speed <42.730046> *  currentSpeed / 100;
-		turn torso to z-axis <5.390110> speed <64.291673> *  currentSpeed / 100;
-		turn lthigh to x-axis <33.758242> speed <402.658549> *  currentSpeed / 100;
+		move luparm to y-axis [-0.119995] speed [1.431323] * Static_Var_7 / [0.000610];
+		move luparm to z-axis [0.119995] speed [1.431323] * Static_Var_7 / [0.000610];
+		turn pelvis to z-axis <-3.582418> speed <42.725275> * Static_Var_7 / <0.549451>;
+		turn torso to z-axis <5.390110> speed <64.291209> * Static_Var_7 / <0.549451>;
+		turn lthigh to x-axis <33.758242> speed <402.653846> * Static_Var_7 / <0.549451>;
 		turn rthigh to x-axis <0.000000> now;
-		turn rleg to x-axis <42.747253> speed <509.876873> *  currentSpeed / 100;
-		turn rfoot to x-axis <-31.945055> speed <381.031379> *  currentSpeed / 100;
-		turn lleg to x-axis <7.181319> speed <85.656697> *  currentSpeed / 100;
-		turn lfoot to x-axis <-11.692308> speed <139.462469> *  currentSpeed / 100;
-		turn ruparm to x-axis <22.945055> speed <273.681981> *  currentSpeed / 100;
-		turn luparm to x-axis <-51.302198> speed <611.917783> *  currentSpeed / 100;
-		turn lloarm to x-axis <21.137363> speed <252.120354> *  currentSpeed / 100;
-		turn lhand to x-axis <36.445055> speed <434.706078> *  currentSpeed / 100;
+		turn rleg to x-axis <42.747253> speed <509.873626> * Static_Var_7 / <0.549451>;
+		turn rfoot to x-axis <-31.945055> speed <381.027473> * Static_Var_7 / <0.549451>;
+		turn lleg to x-axis <7.181319> speed <85.653846> * Static_Var_7 / <0.549451>;
+		turn lfoot to x-axis <-11.692308> speed <139.461538> * Static_Var_7 / <0.549451>;
+		turn ruparm to x-axis <22.945055> speed <273.681319> * Static_Var_7 / <0.549451>;
+		turn luparm to x-axis <-51.302198> speed <611.917582> * Static_Var_7 / <0.549451>;
+		turn lloarm to x-axis <21.137363> speed <252.115385> * Static_Var_7 / <0.549451>;
+		turn lhand to x-axis <36.445055> speed <434.703297> * Static_Var_7 / <0.549451>;
 		turn rloarm to x-axis <0.000000> now;
-		turn rhand to x-axis <-5.835165> speed <69.600161> *  currentSpeed / 100;
-		sleep animSpeed;
-
-		move torso to y-axis [0.150000] speed [1.789157] *  currentSpeed / 100;
-		move ruparm to y-axis [0.600000] speed [7.156627] *  currentSpeed / 100;
-		move ruparm to z-axis [-0.350000] speed [4.174699] *  currentSpeed / 100;
-		move luparm to y-axis [0.000000] speed [3.578313] *  currentSpeed / 100;
-		move luparm to z-axis [0.200000] speed [1.192771] *  currentSpeed / 100;
-		turn pelvis to z-axis <-2.236264> speed <16.056536> *  currentSpeed / 100;
-		turn torso to z-axis <2.236264> speed <37.618163> *  currentSpeed / 100;
-		turn lthigh to x-axis <47.247253> speed <160.893023> *  currentSpeed / 100;
-		turn rthigh to x-axis <6.736264> speed <80.348209> *  currentSpeed / 100;
-		turn rleg to x-axis <-28.791209> speed <853.290089> *  currentSpeed / 100;
-		turn rfoot to x-axis <16.637363> speed <579.477034> *  currentSpeed / 100;
-		turn lleg to x-axis <-5.835165> speed <155.256857> *  currentSpeed / 100;
-		turn lfoot to x-axis <0.000000> speed <139.462469> *  currentSpeed / 100;
-		turn ruparm to x-axis <7.181319> speed <188.025285> *  currentSpeed / 100;
-		turn luparm to x-axis <-29.236264> speed <263.196080> *  currentSpeed / 100;
-		turn lloarm to x-axis <13.489011> speed <91.227331> *  currentSpeed / 100;
-		turn lhand to x-axis <16.192308> speed <241.568910> *  currentSpeed / 100;
-		turn rloarm to x-axis <3.582418> speed <42.730046> *  currentSpeed / 100;
-		turn rhand to x-axis <106.214286> speed <1336.493452> *  currentSpeed / 100;
-		sleep animSpeed;
-
-		move torso to y-axis [0.350000] speed [2.385542] *  currentSpeed / 100;
-		move ruparm to z-axis [-0.100000] speed [2.981928] *  currentSpeed / 100;
-		move luparm to z-axis [0.000000] speed [2.385542] *  currentSpeed / 100;
-		turn pelvis to z-axis <-0.890110> speed <16.056536> *  currentSpeed / 100;
-		turn torso to z-axis <-1.335165> speed <42.598972> *  currentSpeed / 100;
-		turn lthigh to x-axis <51.302198> speed <48.366211> *  currentSpeed / 100;
-		turn rthigh to x-axis <9.434066> speed <32.178602> *  currentSpeed / 100;
-		turn rleg to x-axis <10.791209> speed <472.127636> *  currentSpeed / 100;
-		turn rfoot to x-axis <-10.335165> speed <321.720515> *  currentSpeed / 100;
-		turn lleg to x-axis <0.000000> speed <69.600161> *  currentSpeed / 100;
-		turn lfoot to x-axis <21.137363> speed <252.120354> *  currentSpeed / 100;
-		turn luparm to x-axis <0.000000> speed <348.721703> *  currentSpeed / 100;
-		turn lloarm to x-axis <0.000000> speed <160.893023> *  currentSpeed / 100;
-		turn lhand to x-axis <0.000000> speed <193.137168> *  currentSpeed / 100;
-		turn rloarm to x-axis <-40.945055> speed <531.110823> *  currentSpeed / 100;
-		turn rhand to x-axis <143.115385> speed <440.145639> *  currentSpeed / 100;
-		sleep animSpeed;
-
-		move torso to y-axis [0.200000] speed [1.789157] *  currentSpeed / 100;
-		move ruparm to z-axis [0.100000] speed [2.385542] *  currentSpeed / 100;
-		turn pelvis to z-axis <2.236264> speed <37.290485> *  currentSpeed / 100;
-		turn torso to z-axis <-4.934066> speed <42.926650> *  currentSpeed / 100;
-		turn lthigh to x-axis <0.890110> speed <601.300809> *  currentSpeed / 100;
-		turn rthigh to x-axis <20.692308> speed <134.285055> *  currentSpeed / 100;
-		turn rleg to x-axis <3.582418> speed <85.984375> *  currentSpeed / 100;
-		turn rfoot to x-axis <-14.835165> speed <53.674699> *  currentSpeed / 100;
-		turn lleg to x-axis <55.802198> speed <665.592482> *  currentSpeed / 100;
-		turn lfoot to x-axis <0.890110> speed <241.503379> *  currentSpeed / 100;
-		turn ruparm to x-axis <-17.978022> speed <300.093344> *  currentSpeed / 100;
-		turn luparm to x-axis <17.978022> speed <214.436648> *  currentSpeed / 100;
-		turn lloarm to x-axis <-3.137363> speed <37.421559> *  currentSpeed / 100;
-		turn lhand to x-axis <-5.390110> speed <64.291673> *  currentSpeed / 100;
-		sleep animSpeed;
-
-		move torso to y-axis [0.000000] speed [2.385542] *  currentSpeed / 100;
-		move ruparm to y-axis [-0.150000] speed [8.945783] *  currentSpeed / 100;
-		move ruparm to z-axis [0.200000] speed [1.192771] *  currentSpeed / 100;
-		turn pelvis to z-axis <3.582418> speed <16.056536> *  currentSpeed / 100;
-		turn torso to z-axis <-4.489011> speed <5.308487> *  currentSpeed / 100;
-		turn lthigh to x-axis <-16.192308> speed <203.754142> *  currentSpeed / 100;
-		turn rthigh to x-axis <35.538462> speed <177.080632> *  currentSpeed / 100;
-		turn rfoot to x-axis <-8.989011> speed <69.731234> *  currentSpeed / 100;
-		turn lleg to x-axis <54.901099> speed <10.748048> *  currentSpeed / 100;
-		turn lfoot to x-axis <-21.593407> speed <268.176890> *  currentSpeed / 100;
-		turn ruparm to x-axis <-48.593407> speed <365.171460> *  currentSpeed / 100;
-		turn luparm to x-axis <20.225275> speed <26.804584> *  currentSpeed / 100;
-		turn lloarm to x-axis <8.989011> speed <144.639883> *  currentSpeed / 100;
-		turn lhand to x-axis <-17.093407> speed <139.593543> *  currentSpeed / 100;
-		turn rloarm to x-axis <14.390110> speed <660.021848> *  currentSpeed / 100;
-		turn rhand to x-axis <46.346154> speed <1154.235406> *  currentSpeed / 100;
-		sleep animSpeed;
-
-		move torso to y-axis [0.150000] speed [1.789157] *  currentSpeed / 100;
-		move ruparm to z-axis [0.200000] now;
-		move luparm to y-axis [0.600000] speed [7.156627] *  currentSpeed / 100;
-		turn pelvis to z-axis <2.236264> speed <16.056536> *  currentSpeed / 100;
-		turn torso to z-axis <-2.236264> speed <26.870115> *  currentSpeed / 100;
-		turn lthigh to x-axis <0.000000> speed <193.137168> *  currentSpeed / 100;
-		turn rthigh to x-axis <46.346154> speed <128.911025> *  currentSpeed / 100;
-		turn rfoot to x-axis <5.835165> speed <176.818485> *  currentSpeed / 100;
-		turn lleg to x-axis <0.000000> speed <654.844434> *  currentSpeed / 100;
-		turn lfoot to x-axis <0.000000> speed <257.559915> *  currentSpeed / 100;
-		turn ruparm to x-axis <-33.758242> speed <176.949558> *  currentSpeed / 100;
-		turn luparm to x-axis <11.247253> speed <107.087250> *  currentSpeed / 100;
-		turn lloarm to x-axis <0.000000> speed <107.218324> *  currentSpeed / 100;
-		turn lhand to x-axis <116.560440> speed <1594.184440> *  currentSpeed / 100;
-		turn rhand to x-axis <20.225275> speed <311.562292> *  currentSpeed / 100;
-		sleep animSpeed;
-
-		move torso to y-axis [0.350000] speed [2.385542] *  currentSpeed / 100;
-		move ruparm to z-axis [0.100000] speed [1.192771] *  currentSpeed / 100;
-		move luparm to y-axis [0.600000] now;
-		turn pelvis to z-axis <0.890110> speed <16.056536> *  currentSpeed / 100;
-		turn torso to z-axis <1.335165> speed <42.598972> *  currentSpeed / 100;
-		turn lthigh to x-axis <11.247253> speed <134.153982> *  currentSpeed / 100;
-		turn rthigh to x-axis <60.302198> speed <166.463657> *  currentSpeed / 100;
-		turn rfoot to x-axis <10.791209> speed <59.114260> *  currentSpeed / 100;
-		turn lleg to x-axis <13.038462> speed <155.519005> *  currentSpeed / 100;
-		turn lfoot to x-axis <-14.835165> speed <176.949558> *  currentSpeed / 100;
-		turn ruparm to x-axis <5.390110> speed <466.950223> *  currentSpeed / 100;
-		turn luparm to x-axis <-8.989011> speed <241.372306> *  currentSpeed / 100;
-		turn lloarm to x-axis <-28.791209> speed <343.413216> *  currentSpeed / 100;
-		turn lhand to x-axis <148.967033> speed <386.536471> *  currentSpeed / 100;
-		turn rloarm to x-axis <-5.835165> speed <241.241232> *  currentSpeed / 100;
-		turn rhand to x-axis <6.736264> speed <160.893023> *  currentSpeed / 100;
-		sleep animSpeed;
-
-		move torso to y-axis [0.200000] speed [1.789157] *  currentSpeed / 100;
-		move ruparm to z-axis [0.000000] speed [1.192771] *  currentSpeed / 100;
-		move luparm to y-axis [0.000000] speed [7.156627] *  currentSpeed / 100;
-		turn pelvis to z-axis <-1.780220> speed <31.850924> *  currentSpeed / 100;
-		turn torso to z-axis <5.390110> speed <48.366211> *  currentSpeed / 100;
-		turn lthigh to x-axis <36.890110> speed <305.860583> *  currentSpeed / 100;
-		turn rthigh to x-axis <26.989011> speed <397.350062> *  currentSpeed / 100;
-		turn rleg to x-axis <39.148352> speed <424.220177> *  currentSpeed / 100;
-		turn lleg to x-axis <-0.434066> speed <160.696418> *  currentSpeed / 100;
-		turn lfoot to x-axis <-17.093407> speed <26.935658> *  currentSpeed / 100;
-		turn luparm to x-axis <-21.137363> speed <144.902030> *  currentSpeed / 100;
-		turn lloarm to x-axis <-40.489011> speed <139.528000> *  currentSpeed / 100;
-		turn lhand to x-axis <90.016484> speed <703.145103> *  currentSpeed / 100;
-		turn rloarm to x-axis <4.038462> speed <117.769768> *  currentSpeed / 100;
-		turn rhand to x-axis <-9.890110> speed <198.314581> *  currentSpeed / 100;
-		sleep animSpeed;
+		turn rhand to x-axis <-5.835165> speed <69.598901> * Static_Var_7 / <0.549451>;
+		sleep Static_Var_8;
+		move torso to y-axis [0.059998] speed [0.715662] * Static_Var_7 / [0.000610];
+		move ruparm to y-axis [0.239996] speed [2.862646] * Static_Var_7 / [0.000610];
+		move ruparm to z-axis [-0.139996] speed [1.669879] * Static_Var_7 / [0.000610];
+		move luparm to y-axis [0.000000] speed [1.431323] * Static_Var_7 / [0.000610];
+		move luparm to z-axis [0.079999] speed [0.477106] * Static_Var_7 / [0.000610];
+		turn pelvis to z-axis <-2.236264> speed <16.054945> * Static_Var_7 / <0.549451>;
+		turn torso to z-axis <2.236264> speed <37.615385> * Static_Var_7 / <0.549451>;
+		turn lthigh to x-axis <47.247253> speed <160.890110> * Static_Var_7 / <0.549451>;
+		turn rthigh to x-axis <6.736264> speed <80.346154> * Static_Var_7 / <0.549451>;
+		turn rleg to x-axis <-28.791209> speed <853.285714> * Static_Var_7 / <0.549451>;
+		turn rfoot to x-axis <16.637363> speed <579.472527> * Static_Var_7 / <0.549451>;
+		turn lleg to x-axis <-5.835165> speed <155.252747> * Static_Var_7 / <0.549451>;
+		turn lfoot to x-axis <0.000000> speed <139.461538> * Static_Var_7 / <0.549451>;
+		turn ruparm to x-axis <7.181319> speed <188.021978> * Static_Var_7 / <0.549451>;
+		turn luparm to x-axis <-29.236264> speed <263.192308> * Static_Var_7 / <0.549451>;
+		turn lloarm to x-axis <13.489011> speed <91.225275> * Static_Var_7 / <0.549451>;
+		turn lhand to x-axis <16.192308> speed <241.565934> * Static_Var_7 / <0.549451>;
+		turn rloarm to x-axis <3.582418> speed <42.725275> * Static_Var_7 / <0.549451>;
+		turn rhand to x-axis <106.214286> speed <1336.489011> * Static_Var_7 / <0.549451>;
+		sleep Static_Var_8;
+		move torso to y-axis [0.139996] speed [0.954211] * Static_Var_7 / [0.000610];
+		move ruparm to z-axis [-0.039996] speed [1.192767] * Static_Var_7 / [0.000610];
+		move luparm to z-axis [0.000000] speed [0.954211] * Static_Var_7 / [0.000610];
+		turn pelvis to z-axis <-0.890110> speed <16.054945> * Static_Var_7 / <0.549451>;
+		turn torso to z-axis <-1.335165> speed <42.598901> * Static_Var_7 / <0.549451>;
+		turn lthigh to x-axis <51.302198> speed <48.362637> * Static_Var_7 / <0.549451>;
+		turn rthigh to x-axis <9.434066> speed <32.175824> * Static_Var_7 / <0.549451>;
+		turn rleg to x-axis <10.791209> speed <472.126374> * Static_Var_7 / <0.549451>;
+		turn rfoot to x-axis <-10.335165> speed <321.719780> * Static_Var_7 / <0.549451>;
+		turn lleg to x-axis <0.000000> speed <69.598901> * Static_Var_7 / <0.549451>;
+		turn lfoot to x-axis <21.137363> speed <252.115385> * Static_Var_7 / <0.549451>;
+		turn luparm to x-axis <0.000000> speed <348.719780> * Static_Var_7 / <0.549451>;
+		turn lloarm to x-axis <0.000000> speed <160.890110> * Static_Var_7 / <0.549451>;
+		turn lhand to x-axis <0.000000> speed <193.131868> * Static_Var_7 / <0.549451>;
+		turn rloarm to x-axis <-40.945055> speed <531.109890> * Static_Var_7 / <0.549451>;
+		turn rhand to x-axis <143.115385> speed <440.142857> * Static_Var_7 / <0.549451>;
+		sleep Static_Var_8;
+		move torso to y-axis [0.079999] speed [0.715662] * Static_Var_7 / [0.000610];
+		move ruparm to z-axis [0.039996] speed [0.954211] * Static_Var_7 / [0.000610];
+		turn pelvis to z-axis <2.236264> speed <37.285714> * Static_Var_7 / <0.549451>;
+		turn torso to z-axis <-4.934066> speed <42.923077> * Static_Var_7 / <0.549451>;
+		turn lthigh to x-axis <0.890110> speed <601.296703> * Static_Var_7 / <0.549451>;
+		turn rthigh to x-axis <20.692308> speed <134.280220> * Static_Var_7 / <0.549451>;
+		turn rleg to x-axis <3.582418> speed <85.983516> * Static_Var_7 / <0.549451>;
+		turn rfoot to x-axis <-14.835165> speed <53.670330> * Static_Var_7 / <0.549451>;
+		turn lleg to x-axis <55.802198> speed <665.587912> * Static_Var_7 / <0.549451>;
+		turn lfoot to x-axis <0.890110> speed <241.500000> * Static_Var_7 / <0.549451>;
+		turn ruparm to x-axis <-17.978022> speed <300.087912> * Static_Var_7 / <0.549451>;
+		turn luparm to x-axis <17.978022> speed <214.434066> * Static_Var_7 / <0.549451>;
+		turn lloarm to x-axis <-3.137363> speed <37.417582> * Static_Var_7 / <0.549451>;
+		turn lhand to x-axis <-5.390110> speed <64.291209> * Static_Var_7 / <0.549451>;
+		sleep Static_Var_8;
+		move torso to y-axis [0.000000] speed [0.954211] * Static_Var_7 / [0.000610];
+		move ruparm to y-axis [-0.059998] speed [3.578308] * Static_Var_7 / [0.000610];
+		move ruparm to z-axis [0.079999] speed [0.477106] * Static_Var_7 / [0.000610];
+		turn pelvis to z-axis <3.582418> speed <16.054945> * Static_Var_7 / <0.549451>;
+		turn torso to z-axis <-4.489011> speed <5.307692> * Static_Var_7 / <0.549451>;
+		turn lthigh to x-axis <-16.192308> speed <203.752747> * Static_Var_7 / <0.549451>;
+		turn rthigh to x-axis <35.538462> speed <177.076923> * Static_Var_7 / <0.549451>;
+		turn rfoot to x-axis <-8.989011> speed <69.730769> * Static_Var_7 / <0.549451>;
+		turn lleg to x-axis <54.901099> speed <10.747253> * Static_Var_7 / <0.549451>;
+		turn lfoot to x-axis <-21.593407> speed <268.175824> * Static_Var_7 / <0.549451>;
+		turn ruparm to x-axis <-48.593407> speed <365.170330> * Static_Var_7 / <0.549451>;
+		turn luparm to x-axis <20.225275> speed <26.802198> * Static_Var_7 / <0.549451>;
+		turn lloarm to x-axis <8.989011> speed <144.637363> * Static_Var_7 / <0.549451>;
+		turn lhand to x-axis <-17.093407> speed <139.593407> * Static_Var_7 / <0.549451>;
+		turn rloarm to x-axis <14.390110> speed <660.016484> * Static_Var_7 / <0.549451>;
+		turn rhand to x-axis <46.346154> speed <1154.230769> * Static_Var_7 / <0.549451>;
+		sleep Static_Var_8;
+		move torso to y-axis [0.059998] speed [0.715662] * Static_Var_7 / [0.000610];
+		move ruparm to z-axis [0.079999] now;
+		move luparm to y-axis [0.239996] speed [2.862646] * Static_Var_7 / [0.000610];
+		turn pelvis to z-axis <2.236264> speed <16.054945> * Static_Var_7 / <0.549451>;
+		turn torso to z-axis <-2.236264> speed <26.868132> * Static_Var_7 / <0.549451>;
+		turn lthigh to x-axis <0.000000> speed <193.131868> * Static_Var_7 / <0.549451>;
+		turn rthigh to x-axis <46.346154> speed <128.906593> * Static_Var_7 / <0.549451>;
+		turn rfoot to x-axis <5.835165> speed <176.813187> * Static_Var_7 / <0.549451>;
+		turn lleg to x-axis <0.000000> speed <654.840659> * Static_Var_7 / <0.549451>;
+		turn lfoot to x-axis <0.000000> speed <257.554945> * Static_Var_7 / <0.549451>;
+		turn ruparm to x-axis <-33.758242> speed <176.945055> * Static_Var_7 / <0.549451>;
+		turn luparm to x-axis <11.247253> speed <107.082418> * Static_Var_7 / <0.549451>;
+		turn lloarm to x-axis <0.000000> speed <107.214286> * Static_Var_7 / <0.549451>;
+		turn lhand to x-axis <116.560440> speed <1594.181319> * Static_Var_7 / <0.549451>;
+		turn rhand to x-axis <20.225275> speed <311.560440> * Static_Var_7 / <0.549451>;
+		sleep Static_Var_8;
+		move torso to y-axis [0.139996] speed [0.954211] * Static_Var_7 / [0.000610];
+		move ruparm to z-axis [0.039996] speed [0.477106] * Static_Var_7 / [0.000610];
+		move luparm to y-axis [0.239996] now;
+		turn pelvis to z-axis <0.890110> speed <16.054945> * Static_Var_7 / <0.549451>;
+		turn torso to z-axis <1.335165> speed <42.598901> * Static_Var_7 / <0.549451>;
+		turn lthigh to x-axis <11.247253> speed <134.153846> * Static_Var_7 / <0.549451>;
+		turn rthigh to x-axis <60.302198> speed <166.461538> * Static_Var_7 / <0.549451>;
+		turn rfoot to x-axis <10.791209> speed <59.109890> * Static_Var_7 / <0.549451>;
+		turn lleg to x-axis <13.038462> speed <155.516484> * Static_Var_7 / <0.549451>;
+		turn lfoot to x-axis <-14.835165> speed <176.945055> * Static_Var_7 / <0.549451>;
+		turn ruparm to x-axis <5.390110> speed <466.945055> * Static_Var_7 / <0.549451>;
+		turn luparm to x-axis <-8.989011> speed <241.368132> * Static_Var_7 / <0.549451>;
+		turn lloarm to x-axis <-28.791209> speed <343.412088> * Static_Var_7 / <0.549451>;
+		turn lhand to x-axis <148.967033> speed <386.532967> * Static_Var_7 / <0.549451>;
+		turn rloarm to x-axis <-5.835165> speed <241.236264> * Static_Var_7 / <0.549451>;
+		turn rhand to x-axis <6.736264> speed <160.890110> * Static_Var_7 / <0.549451>;
+		sleep Static_Var_8;
+		move torso to y-axis [0.079999] speed [0.715662] * Static_Var_7 / [0.000610];
+		move ruparm to z-axis [0.000000] speed [0.477106] * Static_Var_7 / [0.000610];
+		move luparm to y-axis [0.000000] speed [2.862646] * Static_Var_7 / [0.000610];
+		turn pelvis to z-axis <-1.780220> speed <31.846154> * Static_Var_7 / <0.549451>;
+		turn torso to z-axis <5.390110> speed <48.362637> * Static_Var_7 / <0.549451>;
+		turn lthigh to x-axis <36.890110> speed <305.857143> * Static_Var_7 / <0.549451>;
+		turn rthigh to x-axis <26.989011> speed <397.346154> * Static_Var_7 / <0.549451>;
+		turn rleg to x-axis <39.148352> speed <424.219780> * Static_Var_7 / <0.549451>;
+		turn lleg to x-axis <-0.434066> speed <160.692308> * Static_Var_7 / <0.549451>;
+		turn lfoot to x-axis <-17.093407> speed <26.934066> * Static_Var_7 / <0.549451>;
+		turn luparm to x-axis <-21.137363> speed <144.901099> * Static_Var_7 / <0.549451>;
+		turn lloarm to x-axis <-40.489011> speed <139.527473> * Static_Var_7 / <0.549451>;
+		turn lhand to x-axis <90.016484> speed <703.142857> * Static_Var_7 / <0.549451>;
+		turn rloarm to x-axis <4.038462> speed <117.769231> * Static_Var_7 / <0.549451>;
+		turn rhand to x-axis <-9.890110> speed <198.313187> * Static_Var_7 / <0.549451>;
+		sleep Static_Var_8;
 	}
 }
 
 UnitSpeed()
 {
-	while(TRUE)
+	while( TRUE )
 	{
-		currentSpeed = (get CURRENT_SPEED)*100/moveSpeed;
-		if (currentSpeed<20) currentSpeed=20;
-		animSpeed = 11000 / currentSpeed;
+		Static_Var_7 = get CURRENT_SPEED * 100 / Static_Var_6;
+		if( Static_Var_7 < 20 )
+		{
+			Static_Var_7 = 20;
+		}
+		Static_Var_8 = 11000 / Static_Var_7;
 		sleep 142;
 	}
 }
@@ -209,17 +205,17 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 RequestState(requestedstate, currentstate)
 {
-	if( statechg_StateChanging )
+	if( Static_Var_5 )
 	{
-		statechg_DesiredState = requestedstate;
+		Static_Var_4 = requestedstate;
 		return (0);
 	}
-	statechg_StateChanging = TRUE;
-	currentstate = statechg_DesiredState;
-	statechg_DesiredState = requestedstate;
-	while( statechg_DesiredState != currentstate )
+	Static_Var_5 = 1;
+	currentstate = Static_Var_4;
+	Static_Var_4 = requestedstate;
+	while( Static_Var_4 != currentstate )
 	{
-		if( statechg_DesiredState )
+		if( Static_Var_4 )
 		{
 			Static_Var_2 = 0;
 			currentstate = 1;
@@ -230,7 +226,7 @@ RequestState(requestedstate, currentstate)
 			currentstate = 0;
 		}
 	}
-	statechg_StateChanging = FALSE;
+	Static_Var_5 = 0;
 }
 
 Create()
@@ -240,10 +236,10 @@ Create()
 	restore_delay = 3000;
 	Static_Var_2 = 0;
 	gun_2 = gauss;
-	statechg_DesiredState = TRUE;
-	statechg_StateChanging = FALSE;
-	moveSpeed = get MAX_SPEED;
-	animSpeed = 110;
+	Static_Var_4 = 1;
+	Static_Var_5 = 0;
+	Static_Var_6 = get MAX_SPEED;
+	Static_Var_8 = 110;
 	start-script SmokeUnit();
 }
 
@@ -397,7 +393,7 @@ Killed(severity, corpsetype)
 		explode ruparm type BITMAPONLY | BITMAP1;
 		explode torso type BITMAPONLY | BITMAP2;
 		explode turret type BITMAPONLY | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -420,7 +416,7 @@ Killed(severity, corpsetype)
 		explode ruparm type FALL | BITMAP1;
 		explode torso type BITMAPONLY | BITMAP2;
 		explode turret type BITMAPONLY | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -443,7 +439,7 @@ Killed(severity, corpsetype)
 		explode ruparm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 		explode torso type BITMAPONLY | BITMAP2;
 		explode turret type BITMAPONLY | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode flash type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
@@ -464,4 +460,5 @@ Killed(severity, corpsetype)
 	explode ruparm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 	explode torso type BITMAPONLY | BITMAP2;
 	explode turret type BITMAPONLY | BITMAP3;
+	return (corpsetype);
 }

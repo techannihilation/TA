@@ -6,7 +6,7 @@
 piece  base, hinge1, hinge2, hinge3, hinge4, dish4, dish3, dish2,
        dish1, wheel, light;
 
-static-var  statechg_DesiredState, statechg_StateChanging;
+static-var  Static_Var_1, Static_Var_2;
 
 
 activatescr()
@@ -20,11 +20,11 @@ activatescr()
 	turn hinge4 to z-axis <0.000000> now;
 	turn hinge4 to z-axis <-130.027473> speed <67.000000>;
 	turn dish4 to y-axis <0.000000> now;
-	turn dish4 to y-axis <-180.043956> speed <93.000000>;
+	turn dish4 to y-axis <-180.038462> speed <93.000000>;
 	turn dish3 to y-axis <0.000000> now;
 	turn dish3 to y-axis <-172.038462> speed <88.000000>;
 	turn dish2 to y-axis <0.000000> now;
-	turn dish2 to y-axis <-182.043956> speed <93.000000>;
+	turn dish2 to y-axis <-182.038462> speed <93.000000>;
 	turn dish1 to y-axis <0.000000> now;
 	turn dish1 to y-axis <-178.038462> speed <92.000000>;
 	sleep 1939;
@@ -37,17 +37,17 @@ deactivatescr()
 	turn hinge1 to x-axis <0.000000> speed <68.000000>;
 	turn hinge2 to x-axis <-132.857143> now;
 	turn hinge2 to x-axis <0.000000> speed <68.000000>;
-	turn hinge3 to z-axis <130.686813> now;
+	turn hinge3 to z-axis <130.681319> now;
 	turn hinge3 to z-axis <0.000000> speed <67.000000>;
 	turn hinge4 to z-axis <-130.247253> now;
 	turn hinge4 to z-axis <0.000000> speed <67.000000>;
-	turn dish4 to y-axis <-180.461538> now;
+	turn dish4 to y-axis <-180.456044> now;
 	turn dish4 to y-axis <0.000000> speed <93.000000>;
 	turn dish3 to y-axis <-172.247253> now;
 	turn dish3 to y-axis <0.000000> speed <88.000000>;
 	turn dish2 to y-axis <-182.192308> now;
 	turn dish2 to y-axis <0.000000> speed <94.000000>;
-	turn dish1 to y-axis <-178.730769> now;
+	turn dish1 to y-axis <-178.725275> now;
 	turn dish1 to y-axis <0.000000> speed <92.000000>;
 	sleep 1938;
 	set ARMORED to 1;
@@ -66,7 +66,7 @@ Go()
 	dont-cache hinge4;
 	dont-cache wheel;
 	call-script activatescr();
-	spin wheel around y-axis speed <60.010989>;
+	spin wheel around y-axis speed <60.005495>;
 }
 
 Stop()
@@ -87,17 +87,17 @@ Stop()
 
 RequestState(requestedstate, currentstate)
 {
-	if( statechg_StateChanging )
+	if( Static_Var_2 )
 	{
-		statechg_DesiredState = requestedstate;
+		Static_Var_1 = requestedstate;
 		return (0);
 	}
-	statechg_StateChanging = TRUE;
-	currentstate = statechg_DesiredState;
-	statechg_DesiredState = requestedstate;
-	while( statechg_DesiredState != currentstate )
+	Static_Var_2 = 1;
+	currentstate = Static_Var_1;
+	Static_Var_1 = requestedstate;
+	while( Static_Var_1 != currentstate )
 	{
-		if( statechg_DesiredState)
+		if( Static_Var_1 )
 		{
 			call-script Stop();
 			currentstate = 1;
@@ -108,7 +108,7 @@ RequestState(requestedstate, currentstate)
 			currentstate = 0;
 		}
 	}
-	statechg_StateChanging = FALSE;
+	Static_Var_2 = 0;
 }
 
 Create()
@@ -125,8 +125,8 @@ Create()
 	dont-shade hinge3;
 	dont-shade hinge4;
 	dont-shade wheel;
-	statechg_DesiredState = TRUE;
-	statechg_StateChanging = FALSE;
+	Static_Var_1 = 1;
+	Static_Var_2 = 0;
 }
 
 Activate()
@@ -160,7 +160,7 @@ Killed(severity, corpsetype)
 		explode hinge4 type BITMAPONLY | BITMAP4;
 		explode light type SHATTER | BITMAP5;
 		explode wheel type SHATTER | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -176,7 +176,7 @@ Killed(severity, corpsetype)
 		explode hinge4 type BITMAPONLY | BITMAP4;
 		explode light type SHATTER | BITMAP5;
 		explode wheel type SHATTER | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -192,7 +192,7 @@ Killed(severity, corpsetype)
 		explode hinge4 type BITMAPONLY | BITMAP4;
 		explode light type SHATTER | EXPLODE_ON_HIT | BITMAP5;
 		explode wheel type SHATTER | EXPLODE_ON_HIT | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
@@ -206,4 +206,5 @@ Killed(severity, corpsetype)
 	explode hinge4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 	explode light type SHATTER | EXPLODE_ON_HIT | BITMAP5;
 	explode wheel type SHATTER | EXPLODE_ON_HIT | BITMAP1;
+	return (corpsetype);
 }

@@ -5,7 +5,7 @@
 
 piece  base, wing1, wing2;
 
-static-var  statechg_DesiredState, statechg_StateChanging, building;
+static-var  statechg_DesiredState, statechg_StateChanging, Static_Var_3;
 
 
 activatescr()
@@ -85,11 +85,11 @@ RequestState(requestedstate, currentstate)
 			currentstate = 0;
 		}
 		if( statechg_DesiredState == 1 )
-		{	
-			if ( building == 0 )
+		{
+			if( Static_Var_3 == 0 )
 			{
-			call-script deactivatescr();
-			currentstate = 1;
+				call-script deactivatescr();
+				currentstate = 1;
 			}
 			sleep 100;
 		}
@@ -99,7 +99,7 @@ RequestState(requestedstate, currentstate)
 
 Create()
 {
-	building =0;
+	Static_Var_3 = 0;
 	call-script InitState();
 	start-script SmokeUnit();
 }
@@ -116,13 +116,13 @@ Deactivate()
 
 StartBuilding()
 {
-	building =1;
+	Static_Var_3 = 1;
 	set INBUILDSTANCE to 1;
 }
 
 StopBuilding()
 {
-	building =0 ;
+	Static_Var_3 = 0;
 	set INBUILDSTANCE to 0;
 }
 
@@ -144,7 +144,7 @@ Killed(severity, corpsetype)
 		explode base type BITMAPONLY | BITMAP2;
 		explode wing1 type BITMAPONLY | BITMAP4;
 		explode wing2 type BITMAPONLY | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -152,7 +152,7 @@ Killed(severity, corpsetype)
 		explode base type BITMAPONLY | BITMAP2;
 		explode wing1 type BITMAPONLY | BITMAP4;
 		explode wing2 type BITMAPONLY | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -160,10 +160,11 @@ Killed(severity, corpsetype)
 		explode base type BITMAPONLY | BITMAP2;
 		explode wing1 type BITMAPONLY | BITMAP4;
 		explode wing2 type BITMAPONLY | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP2;
 	explode wing1 type BITMAPONLY | BITMAP4;
 	explode wing2 type BITMAPONLY | BITMAP5;
+	return (corpsetype);
 }

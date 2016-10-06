@@ -10,15 +10,12 @@ static-var  statechg_DesiredState, statechg_StateChanging;
 
 activatescr()
 {
-
 	sleep 17;
-	return (0);
 }
 
 deactivatescr()
 {
 	sleep 28;
-	return (0);
 }
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -46,14 +43,12 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		}
 		sleep sleeptime;
 	}
-	return (0);
 }
 
 InitState()
 {
 	statechg_DesiredState = TRUE;
 	statechg_StateChanging = FALSE;
-	return (0);
 }
 
 RequestState(requestedstate, currentstate)
@@ -80,32 +75,27 @@ RequestState(requestedstate, currentstate)
 		}
 	}
 	statechg_StateChanging = FALSE;
-	return (0);
 }
 
 Create()
 {
 	call-script InitState();
 	start-script SmokeUnit();
-	return (0);
 }
 
 Activate()
 {
 	start-script RequestState(0);
-	return (0);
 }
 
 Deactivate()
 {
 	start-script RequestState(1);
-	return (0);
 }
 
 SweetSpot(piecenum)
 {
 	piecenum = base;
-	return (0);
 }
 
 Killed(severity, corpsetype)
@@ -115,24 +105,24 @@ Killed(severity, corpsetype)
 		corpsetype = 1;
 		explode base type BITMAPONLY | BITMAP1;
 		explode thrustb type BITMAPONLY | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
 		explode base type BITMAPONLY | BITMAP1;
 		explode thrustb type FALL | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
 		explode base type BITMAPONLY | BITMAP1;
 		explode thrustb type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP1;
 	explode thrustb type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-	return (0);
+	return (corpsetype);
 }

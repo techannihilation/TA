@@ -3,9 +3,8 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, collar, gear, clamp1, clamp2, clamp3,
-       clamp4, clamp5, clamp6, tower, emit1, emit2, emit3, emit4,
-       flare1;
+piece  base, collar, gear, clamp1, clamp2, clamp3, clamp4, clamp5,
+       clamp6, tower, emit1, emit2, emit3, emit4, flare1;
 
 static-var  gun_1, restore_delay, statechg_DesiredState, statechg_StateChanging;
 
@@ -230,7 +229,7 @@ Killed(severity, corpsetype)
 		explode collar type BITMAPONLY | BITMAP2;
 		explode gear type BITMAPONLY | BITMAP3;
 		explode tower type BITMAPONLY | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -239,7 +238,7 @@ Killed(severity, corpsetype)
 		explode collar type BITMAPONLY | BITMAP2;
 		explode gear type BITMAPONLY | BITMAP3;
 		explode tower type BITMAPONLY | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -252,7 +251,7 @@ Killed(severity, corpsetype)
 		explode emit2 type FALL | SMOKE | BITMAP5;
 		explode emit3 type FALL | SMOKE | BITMAP5;
 		explode emit4 type FALL | SMOKE | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP1;
@@ -263,4 +262,5 @@ Killed(severity, corpsetype)
 	explode emit2 type SHATTER | SMOKE | FIRE | BITMAP5;
 	explode emit3 type SHATTER | SMOKE | FIRE | BITMAP5;
 	explode emit4 type SHATTER | SMOKE | FIRE | BITMAP5;
+	return (corpsetype);
 }

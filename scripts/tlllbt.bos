@@ -58,7 +58,7 @@ Create()
 	cache barrel2;
 	cache holder;
 	gun_1 = base;
-	turn bearing to x-axis <50.010989> now;
+	turn bearing to x-axis <50.005495> now;
 	start-script SmokeUnit();
 }
 
@@ -66,8 +66,8 @@ AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	turn turret to y-axis heading speed <100.021978>;
-	turn axis to x-axis <0.000000> - pitch speed <60.010989>;
+	turn turret to y-axis heading speed <100.016484>;
+	turn axis to x-axis <0.000000> - pitch speed <60.005495>;
 	wait-for-turn turret around y-axis;
 	wait-for-turn axis around x-axis;
 	return (1);
@@ -82,7 +82,7 @@ FirePrimary()
 		sleep 200;
 		hide flare1;
 		move barrel1 to z-axis [0.000000] speed [5.000000];
-		turn holder to x-axis <-50.010989> speed <20.000000>;
+		turn holder to x-axis <-50.005495> speed <20.000000>;
 		gun_1 = tower;
 		return (0);
 	}
@@ -144,12 +144,13 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
+	return (corpsetype);
 }

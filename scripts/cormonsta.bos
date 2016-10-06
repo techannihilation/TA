@@ -40,7 +40,7 @@ walk2()
 			turn leg5 to z-axis <0.000000> speed <40.000000>;
 			turn leg6 to y-axis <0.000000> speed <40.000000>;
 			turn leg6 to y-axis <-30.005495> speed <40.000000>;
-			turn leg6 to z-axis <-45.010989> speed <40.000000>;
+			turn leg6 to z-axis <-45.005495> speed <40.000000>;
 			sleep 200;
 		}
 		if( bMoving )
@@ -57,7 +57,7 @@ walk2()
 		}
 		if( bMoving )
 		{
-			turn leg1 to y-axis <55.010989> speed <40.000000>;
+			turn leg1 to y-axis <55.005495> speed <40.000000>;
 			turn leg1 to z-axis <31.005495> speed <40.000000>;
 			turn leg2 to y-axis <34.005495> speed <40.000000>;
 			turn leg2 to z-axis <0.000000> speed <40.000000>;
@@ -80,11 +80,9 @@ walk2()
 		turn leg5 to y-axis <-37.005495> speed <40.000000>;
 		turn leg5 to z-axis <0.000000> speed <40.000000>;
 		turn leg6 to y-axis <0.000000> speed <40.000000>;
-		turn leg6 to z-axis <-45.010989> speed <40.000000>;
+		turn leg6 to z-axis <-45.005495> speed <40.000000>;
 		sleep 200;
 	}
-	return (0);
-	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
 }
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -155,7 +153,7 @@ Create()
 	restore_delay = 6000;
 	start-script SmokeUnit();
 	start-script MotionControl();
-	spin radar around y-axis speed <100.021978>;
+	spin radar around y-axis speed <100.016484>;
 }
 
 StartMoving()
@@ -312,7 +310,7 @@ Killed(severity, corpsetype)
 		explode turret2 type BITMAPONLY | BITMAP5;
 		explode radar type BITMAPONLY | BITMAP1;
 		explode rocket type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -334,7 +332,7 @@ Killed(severity, corpsetype)
 		explode turret2 type SHATTER | BITMAP5;
 		explode radar type SHATTER | BITMAP1;
 		explode rocket type SHATTER | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -356,7 +354,7 @@ Killed(severity, corpsetype)
 		explode turret2 type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 		explode radar type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 		explode rocket type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode barrel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
@@ -376,4 +374,5 @@ Killed(severity, corpsetype)
 	explode turret2 type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 	explode radar type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 	explode rocket type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	return (corpsetype);
 }

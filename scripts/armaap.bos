@@ -27,7 +27,6 @@ Standby()
 	}
 	sleep 50;
 	start-script Standby();
-	return (0);
 }
 
 activatescr()
@@ -53,7 +52,6 @@ activatescr()
 		sleep 519;
 	}
 	sleep 26;
-	return (0);
 }
 
 deactivatescr()
@@ -83,7 +81,6 @@ deactivatescr()
 		sleep 519;
 	}
 	sleep 26;
-	return (0);
 }
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -124,7 +121,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		}
 		sleep sleeptime;
 	}
-	return (0);
 }
 
 OpenYard()
@@ -137,7 +133,6 @@ OpenYard()
 		set YARD_OPEN to 1;
 	}
 	set BUGGER_OFF to 0;
-	return (0);
 }
 
 CloseYard()
@@ -150,7 +145,6 @@ CloseYard()
 		set YARD_OPEN to 0;
 	}
 	set BUGGER_OFF to 0;
-	return (0);
 }
 
 Go()
@@ -167,7 +161,6 @@ Go()
 	call-script activatescr();
 	call-script OpenYard();
 	set INBUILDSTANCE to 1;
-	return (0);
 }
 
 Stop()
@@ -184,14 +177,12 @@ Stop()
 	cache nanobox1;
 	cache nanobox2;
 	cache pad;
-	return (0);
 }
 
 InitState()
 {
 	statechg_DesiredState = TRUE;
 	statechg_StateChanging = FALSE;
-	return (0);
 }
 
 RequestState(requestedstate, currentstate)
@@ -218,7 +209,6 @@ RequestState(requestedstate, currentstate)
 		}
 	}
 	statechg_StateChanging = FALSE;
-	return (0);
 }
 
 Create()
@@ -246,7 +236,6 @@ Create()
 		sleep 1000;
 	}
 	spin radar around y-axis speed <150.027473>;
-	return (0);
 }
 
 QueryNanoPiece(piecenum)
@@ -260,20 +249,17 @@ QueryNanoPiece(piecenum)
 		piecenum = beam2;
 	}
 	spray = !spray;
-	return (0);
 }
 
 Demo()
 {
 	unitviewer = TRUE;
-	return (0);
 }
 
 Activate()
 {
 	signal SIG_ACTIVATE;
 	start-script RequestState(0);
-	return (0);
 }
 
 Deactivate()
@@ -286,31 +272,26 @@ Deactivate()
 	}
 	set-signal-mask 0;
 	start-script RequestState(1);
-	return (0);
 }
 
 StartBuilding()
 {
 	spin pad around y-axis speed <30.005495>;
-	return (0);
 }
 
 StopBuilding()
 {
 	stop-spin pad around y-axis;
-	return (0);
 }
 
 QueryBuildInfo(piecenum)
 {
 	piecenum = pad;
-	return (0);
 }
 
 SweetSpot(piecenum)
 {
 	piecenum = base;
-	return (0);
 }
 
 Killed(severity, corpsetype)
@@ -326,7 +307,7 @@ Killed(severity, corpsetype)
 		explode pad type BITMAPONLY | BITMAP4;
 		explode radar type BITMAPONLY | BITMAP5;
 		explode beam2 type BITMAPONLY | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -343,7 +324,7 @@ Killed(severity, corpsetype)
 		explode radar type BITMAPONLY | BITMAP5;
 		explode beam1 type BITMAPONLY | BITMAP1;
 		explode beam2 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -360,7 +341,7 @@ Killed(severity, corpsetype)
 		explode radar type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
 		explode beam1 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
 		explode beam2 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP1;
@@ -375,5 +356,5 @@ Killed(severity, corpsetype)
 	explode radar type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
 	explode beam1 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
 	explode beam2 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
-	return (0);
+	return (corpsetype);
 }

@@ -6,7 +6,7 @@
 piece  flarer, flarel, emittera, emitterb, base, boxb, boxa, turret2,
        turreta, turretb, wakel, waker, guns, guns2, ground;
 
-static-var  gun_3, restore_delay, gun_2, oldHead;
+static-var  gun_3, restore_delay, gun_2, Static_Var_4;
 
 // Signal definitions
 #define SIG_MOVE			2
@@ -16,29 +16,28 @@ static-var  gun_3, restore_delay, gun_2, oldHead;
 
 SetDirection(heading)
 {
-	var spd;
-	spd = (get ABS(oldHead) - get ABS(heading)) / 2;
-	turn ground to y-axis heading speed spd;
-	turn base to y-axis 0-heading speed spd;
-	oldHead = heading;
+	var Func_Var_2;
+	Func_Var_2 = ( get ABS(Static_Var_4) - get ABS(heading) ) / 2;
+	turn ground to y-axis heading speed Func_Var_2;
+	turn base to y-axis <0.000000> - heading speed Func_Var_2;
+	Static_Var_4 = heading;
 }
 
-RockOnWaves()
+RockOnWaves(Func_Var_1, Func_Var_2, Func_Var_3)
 {
-	var rockDir, rockAng, rockSpeed;
-	rockDir = <-0.1>;
-	rockAng = <-0.1>;
+	Func_Var_1 = -18;
+	Func_Var_2 = -18;
 	while( TRUE )
 	{
-		while( get ABS(rockAng) < <1.31> )
+		while( get ABS(Func_Var_2) < 238 )
 		{
-			rockSpeed = <1.45> - get ABS(rockAng);
-			turn ground to x-axis rockAng speed rockSpeed*4;
+			Func_Var_3 = 263 - get ABS(Func_Var_2);
+			turn ground to x-axis Func_Var_2 speed Func_Var_3 * <0.021978>;
 			wait-for-turn ground around x-axis;
-			rockAng = rockAng + rockDir;
+			Func_Var_2 = Func_Var_2 + Func_Var_1;
 		}
-		rockDir = 0 - rockDir;
-		rockAng = rockAng + rockDir + rockDir;
+		Func_Var_1 = 0 - Func_Var_1;
+		Func_Var_2 = Func_Var_2 + Func_Var_1 + Func_Var_1;
 	}
 }
 
@@ -101,11 +100,11 @@ waveSplash()
 {
 	while( TRUE )
 	{
-		turn base to x-axis <-3.0> speed <3.0>;
-		move base to y-axis [0.23] speed [0.23];
+		turn base to x-axis <-3.000000> speed <3.000000>;
+		move base to y-axis [0.229999] speed [0.229999];
 		wait-for-turn base around x-axis;
-		turn base to x-axis <0.0> speed <3.0>;
-		move base to y-axis [0.0] speed [0.23];
+		turn base to x-axis <0.000000> speed <3.000000>;
+		move base to y-axis [0.000000] speed [0.229999];
 		wait-for-turn base around x-axis;
 	}
 }
@@ -114,23 +113,26 @@ StartMoving()
 {
 	signal SIG_MOVE;
 	set-signal-mask SIG_MOVE;
-	var waketime;
+	var Func_Var_1;
 	start-script waveSplash();
 	while( TRUE )
 	{
 		emit-sfx 4 from wakel;
 		emit-sfx 2 from waker;
-		waketime = (get CURRENT_SPEED) * 100 / get MAX_SPEED;
-		if( waketime < 50 ) waketime = 50;
-		sleep 12000 / waketime;
+		Func_Var_1 = get CURRENT_SPEED * 100 / get MAX_SPEED;
+		if( Func_Var_1 < 50 )
+		{
+			Func_Var_1 = 50;
+		}
+		sleep 12000 / Func_Var_1;
 	}
 }
 
 StopMoving()
 {
 	signal SIG_MOVE;
-	turn base to x-axis <0.0> speed <3.0>;
-	move base to y-axis [0.0] speed [0.23];
+	turn base to x-axis <0.000000> speed <3.000000>;
+	move base to y-axis [0.000000] speed [0.229999];
 }
 
 AimSecondary(heading, pitch)
@@ -202,7 +204,7 @@ AimFromPrimary(piecenum)
 
 AimFromSecondary(piecenum)
 {
-	piecenum = turreta + gun_2;
+	piecenum = 8 + gun_2;
 }
 
 AimFromTertiary(piecenum)
@@ -217,36 +219,13 @@ QueryPrimary(piecenum)
 
 QuerySecondary(piecenum)
 {
-	piecenum = emittera + gun_2;
+	piecenum = 2 + gun_2;
 }
 
 QueryTertiary(piecenum)
 {
 	piecenum = gun_3;
 }
-
-/*
-AimWeapon4(heading, pitch)
-{
-	sleep 100;
-	return (1);
-}
-
-FireWeapon4()
-{
-	sleep 100;
-}
-
-QueryWeapon4(piecenum)
-{
-	sleep 100;
-}
-
-AimFromWeapon4(piecenum)
-{
-	piecenum = base;
-}
-*/
 
 SweetSpot(piecenum)
 {
@@ -270,7 +249,7 @@ Killed(severity, corpsetype)
 		explode turret2 type BITMAPONLY | BITMAP2;
 		explode turreta type BITMAPONLY | BITMAP3;
 		explode turretb type BITMAPONLY | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -287,7 +266,7 @@ Killed(severity, corpsetype)
 		explode turret2 type BITMAPONLY | BITMAP2;
 		explode turreta type FALL | BITMAP3;
 		explode turretb type FALL | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -304,7 +283,7 @@ Killed(severity, corpsetype)
 		explode turret2 type BITMAPONLY | BITMAP2;
 		explode turreta type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP3;
 		explode turretb type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP1;
@@ -319,4 +298,5 @@ Killed(severity, corpsetype)
 	explode turret2 type BITMAPONLY | BITMAP2;
 	explode turreta type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP3;
 	explode turretb type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP4;
+	return (corpsetype);
 }

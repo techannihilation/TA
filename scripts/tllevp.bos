@@ -1,0 +1,338 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, pad, nanogun1, nanogun2, nanogun3, nanogun4, spray1, spray2,
+       spray3, spray4, extra1, extra2, extra3, extra4, spin1, spin2,
+       spin3, spin4;
+
+static-var  Static_Var_1, unitviewer, statechg_DesiredState, statechg_StateChanging;
+
+// Signal definitions
+#define SIG_ACTIVATE			2
+
+
+activatescr()
+{
+	if( TRUE )
+	{
+		move nanogun1 to z-axis [6.000000] speed [50.000000];
+		move nanogun2 to z-axis [6.000000] speed [50.000000];
+		move nanogun3 to z-axis [-6.000000] speed [50.000000];
+		move nanogun4 to z-axis [-6.000000] speed [50.000000];
+		sleep 200;
+	}
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		sleep 20;
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+OpenYard()
+{
+	set YARD_OPEN to 1;
+	while( !get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 1;
+	}
+	set BUGGER_OFF to 0;
+}
+
+CloseYard()
+{
+	set YARD_OPEN to 0;
+	while( get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 0;
+	}
+	set BUGGER_OFF to 0;
+}
+
+Go()
+{
+	dont-cache spray1;
+	dont-cache spray2;
+	dont-cache spray3;
+	dont-cache spray4;
+	dont-cache nanogun1;
+	dont-cache nanogun2;
+	dont-cache nanogun3;
+	dont-cache nanogun4;
+	call-script activatescr();
+	call-script OpenYard();
+	set INBUILDSTANCE to 1;
+}
+
+Stop()
+{
+	set INBUILDSTANCE to 0;
+}
+
+SCRIPT()
+{
+	move nanogun1 to z-axis [0.000000] speed [50.000000];
+	move nanogun2 to z-axis [0.000000] speed [50.000000];
+	move nanogun3 to z-axis [0.000000] speed [50.000000];
+	move nanogun4 to z-axis [0.000000] speed [50.000000];
+	sleep 200;
+	cache spray1;
+	cache spray2;
+	cache spray3;
+	cache spray4;
+	cache nanogun1;
+	cache nanogun2;
+	cache nanogun3;
+	cache nanogun4;
+	sleep 250;
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+Create()
+{
+	hide pad;
+	dont-cache pad;
+	unitviewer = FALSE;
+	Static_Var_1 = 0;
+	move spray1 to z-axis [11.000000] now;
+	move spray2 to z-axis [11.000000] now;
+	move spray3 to z-axis [-11.000000] now;
+	move spray4 to z-axis [-11.000000] now;
+	call-script InitState();
+	start-script SmokeUnit();
+}
+
+QueryNanoPiece(piecenum)
+{
+	if( Static_Var_1 == 0 )
+	{
+		piecenum = spray1;
+	}
+	if( Static_Var_1 == 1 )
+	{
+		piecenum = spray2;
+	}
+	if( Static_Var_1 == 2 )
+	{
+		piecenum = spray3;
+	}
+	if( Static_Var_1 == 3 )
+	{
+		piecenum = spray4;
+	}
+	++Static_Var_1;
+	if( Static_Var_1 == 4 )
+	{
+		Static_Var_1 = 0;
+	}
+}
+
+Demo()
+{
+	unitviewer = TRUE;
+}
+
+Activate()
+{
+	signal SIG_ACTIVATE;
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	signal SIG_ACTIVATE;
+	set-signal-mask SIG_ACTIVATE;
+	if( unitviewer == 1 )
+	{
+		sleep 5000;
+	}
+	set-signal-mask 0;
+	start-script RequestState(1);
+}
+
+StartBuilding()
+{
+	spin spin1 around y-axis speed <150.027473>;
+	spin spin2 around y-axis speed <150.027473>;
+	spin spin3 around y-axis speed <150.027473>;
+	spin spin4 around y-axis speed <150.027473>;
+	sleep 10;
+}
+
+StopBuilding()
+{
+	stop-spin spin1 around y-axis decelerate <5.000000>;
+	stop-spin spin2 around y-axis decelerate <5.000000>;
+	stop-spin spin3 around y-axis decelerate <5.000000>;
+	stop-spin spin4 around y-axis decelerate <5.000000>;
+	sleep 10;
+}
+
+QueryBuildInfo(piecenum)
+{
+	piecenum = pad;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type BITMAPONLY | BITMAP1;
+		explode spray1 type BITMAPONLY | BITMAP2;
+		explode spray2 type BITMAPONLY | BITMAP3;
+		explode spray3 type BITMAPONLY | BITMAP4;
+		explode spray4 type BITMAPONLY | BITMAP5;
+		explode nanogun1 type BITMAPONLY | BITMAP1;
+		explode nanogun2 type BITMAPONLY | BITMAP2;
+		explode nanogun3 type BITMAPONLY | BITMAP3;
+		explode nanogun4 type BITMAPONLY | BITMAP4;
+		explode pad type BITMAPONLY | BITMAP5;
+		explode extra1 type BITMAPONLY | BITMAP1;
+		explode extra2 type BITMAPONLY | BITMAP2;
+		explode extra3 type BITMAPONLY | BITMAP3;
+		explode extra4 type BITMAPONLY | BITMAP4;
+		explode spin1 type BITMAPONLY | BITMAP5;
+		explode spin2 type BITMAPONLY | BITMAP1;
+		explode spin3 type BITMAPONLY | BITMAP2;
+		explode spin4 type BITMAPONLY | BITMAP3;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type BITMAPONLY | BITMAP1;
+		explode spray1 type FALL | BITMAP2;
+		explode spray2 type FALL | BITMAP3;
+		explode spray3 type FALL | BITMAP4;
+		explode spray4 type FALL | BITMAP5;
+		explode nanogun1 type SHATTER | BITMAP1;
+		explode nanogun2 type SHATTER | BITMAP2;
+		explode nanogun3 type SHATTER | BITMAP3;
+		explode nanogun4 type SHATTER | BITMAP4;
+		explode pad type BITMAPONLY | BITMAP5;
+		explode extra1 type BITMAPONLY | BITMAP1;
+		explode extra2 type BITMAPONLY | BITMAP2;
+		explode extra3 type BITMAPONLY | BITMAP3;
+		explode extra4 type BITMAPONLY | BITMAP4;
+		explode spin1 type SHATTER | BITMAP5;
+		explode spin2 type SHATTER | BITMAP1;
+		explode spin3 type SHATTER | BITMAP2;
+		explode spin4 type SHATTER | BITMAP3;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type BITMAPONLY | BITMAP1;
+		explode spray1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode spray2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode spray3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode spray4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode nanogun1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode nanogun2 type SHATTER | BITMAP2;
+		explode nanogun3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode nanogun4 type SHATTER | BITMAP4;
+		explode pad type BITMAPONLY | BITMAP5;
+		explode extra1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode extra2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode extra3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode extra4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode spin1 type SHATTER | BITMAP5;
+		explode spin2 type SHATTER | BITMAP1;
+		explode spin3 type SHATTER | BITMAP2;
+		explode spin4 type SHATTER | BITMAP3;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type BITMAPONLY | BITMAP1;
+	explode spray1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode spray2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode spray3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode spray4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode nanogun1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode nanogun2 type SHATTER | BITMAP2;
+	explode nanogun3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode nanogun4 type SHATTER | BITMAP4;
+	explode pad type BITMAPONLY | BITMAP5;
+	explode extra1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode extra2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode extra3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode extra4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode spin1 type SHATTER | BITMAP5;
+	explode spin2 type SHATTER | BITMAP1;
+	explode spin3 type SHATTER | BITMAP2;
+	explode spin4 type SHATTER | BITMAP3;
+	return (corpsetype);
+}

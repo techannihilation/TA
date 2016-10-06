@@ -5,7 +5,7 @@
 
 piece  flare, base, turret, barrel;
 
-static-var  Aiming, restore_delay;
+static-var  bMoving, restore_delay;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -62,7 +62,7 @@ Dgungen()
 {
 	while( TRUE )
 	{
-		while( Aiming )
+		while( bMoving )
 		{
 			sleep 100;
 		}
@@ -90,7 +90,7 @@ Create()
 
 StartMoving()
 {
-	Aiming = FALSE;
+	bMoving = FALSE;
 }
 
 SetMaxReloadTime(Func_Var_1)
@@ -108,7 +108,7 @@ AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	Aiming = TRUE;
+	bMoving = TRUE;
 	turn turret to y-axis heading speed <135.000000>;
 	wait-for-turn turret around y-axis;
 	start-script RestoreAfterDelay();
@@ -151,7 +151,7 @@ Killed(severity, corpsetype)
 		explode flare type BITMAPONLY | BITMAP3;
 		explode barrel type BITMAPONLY | BITMAP4;
 		explode turret type BITMAPONLY | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -160,7 +160,7 @@ Killed(severity, corpsetype)
 		explode flare type FALL | BITMAP3;
 		explode barrel type SHATTER | BITMAP4;
 		explode turret type FALL | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -169,11 +169,12 @@ Killed(severity, corpsetype)
 		explode flare type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode barrel type SHATTER | BITMAP4;
 		explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP2;
 	explode flare type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode barrel type SHATTER | EXPLODE_ON_HIT | BITMAP4;
 	explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	return (corpsetype);
 }

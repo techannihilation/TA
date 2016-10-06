@@ -14,8 +14,8 @@ Create()
 
 FireWeapon1()
 {
-	sleep 500; //A slight delay
-	emit-sfx 4096 + 1 from base; //Weapon2 detonates the mine once weapon1 fires
+	sleep 500;
+	emit-sfx 4096 + 1 from base;
 }
 
 QueryWeapon1(piecenum)

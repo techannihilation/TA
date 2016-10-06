@@ -47,7 +47,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 MoveRate2()
 {
-	if( Rand( 1, 10 ) == 1 AND ( !Static_Var_1 ) )
+	if( Rand( 1, 10 ) == 1 AND !Static_Var_1 )
 	{
 		Static_Var_1 = 1;
 		turn base to z-axis <240.000000> speed <120.000000>;
@@ -65,8 +65,8 @@ Create()
 	gun_3 = Flare1;
 	hide missle1;
 	hide missle2;
-	move wing1 to x-axis [-0.004431] now;
-	move wing2 to x-axis [0.004431] now;
+	move wing1 to x-axis [-0.004425] now;
+	move wing2 to x-axis [0.004425] now;
 	while( get BUILD_PERCENT_LEFT )
 	{
 		sleep 400;
@@ -168,7 +168,7 @@ Killed(severity, corpsetype)
 		explode missle2 type FALL | EXPLODE_ON_HIT | BITMAP3;
 		explode jet1 type BITMAPONLY | BITMAP2;
 		explode jet2 type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -182,7 +182,7 @@ Killed(severity, corpsetype)
 		explode missle2 type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
 		explode jet1 type FALL | SMOKE | FIRE | BITMAP2;
 		explode jet2 type FALL | SMOKE | FIRE | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	if( severity <= 99 )
@@ -196,7 +196,7 @@ Killed(severity, corpsetype)
 		explode missle2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode jet1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 		explode jet2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	explode Flare1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 	explode base type BITMAPONLY | BITMAP3;
@@ -207,4 +207,5 @@ Killed(severity, corpsetype)
 	explode missle2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode jet1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 	explode jet2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	return (corpsetype);
 }

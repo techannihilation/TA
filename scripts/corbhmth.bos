@@ -61,7 +61,6 @@ SmokeVents()
 		emit-sfx 256 from vent2;
 		sleep 800;
 	}
-	
 }
 
 Go()
@@ -266,7 +265,7 @@ Killed(severity, corpsetype)
 		explode barrel1 type BITMAPONLY | BITMAP2;
 		explode barrel2 type BITMAPONLY | BITMAP2;
 		explode barrel3 type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -280,7 +279,7 @@ Killed(severity, corpsetype)
 		explode barrel1 type BITMAPONLY | BITMAP3;
 		explode barrel2 type BITMAPONLY | BITMAP3;
 		explode barrel3 type BITMAPONLY | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -294,7 +293,7 @@ Killed(severity, corpsetype)
 		explode barrel1 type BITMAPONLY | BITMAP3;
 		explode barrel2 type BITMAPONLY | BITMAP3;
 		explode barrel3 type BITMAPONLY | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type SHATTER | BITMAP3;
@@ -306,4 +305,5 @@ Killed(severity, corpsetype)
 	explode barrel1 type BITMAPONLY | BITMAP3;
 	explode barrel2 type BITMAPONLY | BITMAP3;
 	explode barrel3 type BITMAPONLY | BITMAP3;
+	return (corpsetype);
 }

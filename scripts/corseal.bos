@@ -12,16 +12,14 @@ static-var  restore_delay, gun_1, Static_Var_3, bMoving;
 #define SIG_AIM				2
 
 
-HitByWeapon(Func_Var_1, Func_Var_2)
+HitByWeapon(anglex, anglez)
 {
-	turn base to z-axis Func_Var_2 speed <105.000000>;
-	turn base to x-axis Func_Var_1 speed <105.000000>;
+	turn base to z-axis anglez speed <105.000000>;
+	turn base to x-axis anglex speed <105.000000>;
 	wait-for-turn base around z-axis;
 	wait-for-turn base around x-axis;
 	turn base to z-axis <0.000000> speed <30.000000>;
 	turn base to x-axis <0.000000> speed <30.000000>;
-	return (0);
-	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
 }
 
 RockUnit(anglex, anglez)
@@ -151,7 +149,7 @@ Killed(severity, corpsetype)
 		explode sleeve1 type BITMAPONLY | BITMAP1;
 		explode sleeve2 type BITMAPONLY | BITMAP2;
 		explode turret type BITMAPONLY | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -164,7 +162,7 @@ Killed(severity, corpsetype)
 		explode sleeve1 type SHATTER | BITMAP1;
 		explode sleeve2 type BITMAPONLY | BITMAP2;
 		explode turret type FALL | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -177,7 +175,7 @@ Killed(severity, corpsetype)
 		explode sleeve1 type SHATTER | BITMAP1;
 		explode sleeve2 type BITMAPONLY | BITMAP2;
 		explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP1;
@@ -188,4 +186,5 @@ Killed(severity, corpsetype)
 	explode sleeve1 type SHATTER | EXPLODE_ON_HIT | BITMAP1;
 	explode sleeve2 type BITMAPONLY | BITMAP2;
 	explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	return (corpsetype);
 }

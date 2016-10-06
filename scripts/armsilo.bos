@@ -26,8 +26,8 @@ activatescr()
 	}
 	if( TRUE )
 	{
-		move door1 to y-axis [-6.099994] speed [3.128198];
-		move door2 to y-axis [-6.100000] speed [3.128198];
+		move door1 to y-axis [-6.099994] speed [3.128192];
+		move door2 to y-axis [-6.100000] speed [3.128192];
 		sleep 1950;
 	}
 	if( TRUE )
@@ -61,7 +61,7 @@ deactivatescr()
 	}
 	if( TRUE )
 	{
-		move plate to y-axis [0.000000] speed [4.081622];
+		move plate to y-axis [0.000000] speed [4.081616];
 		sleep 1960;
 	}
 	if( TRUE )
@@ -241,7 +241,7 @@ Killed(severity, corpsetype)
 		explode door2 type BITMAPONLY | BITMAP5;
 		explode missile type BITMAPONLY | BITMAP1;
 		explode plate type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -253,7 +253,7 @@ Killed(severity, corpsetype)
 		explode door2 type FALL | BITMAP5;
 		explode missile type BITMAPONLY | BITMAP1;
 		explode plate type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -265,7 +265,7 @@ Killed(severity, corpsetype)
 		explode door2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 		explode missile type BITMAPONLY | BITMAP1;
 		explode plate type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode arm type SHATTER | EXPLODE_ON_HIT | BITMAP1;
@@ -275,4 +275,5 @@ Killed(severity, corpsetype)
 	explode door2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 	explode missile type BITMAPONLY | BITMAP1;
 	explode plate type BITMAPONLY | BITMAP2;
+	return (corpsetype);
 }

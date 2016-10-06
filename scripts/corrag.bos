@@ -1,0 +1,167 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, firec1, firec2, firem;
+
+static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from body;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+activatescr()
+{
+}
+
+deactivatescr()
+{
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script activatescr();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script deactivatescr();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+MoveRate2()
+{
+	if( Rand( 1, 10 ) == 1 AND Static_Var_1 )
+	{
+		Static_Var_1 = 1;
+		turn base to z-axis <240.049451> speed <120.000000>;
+		wait-for-turn base around z-axis;
+		turn base to z-axis <120.027473> speed <180.000000>;
+		wait-for-turn base around z-axis;
+		turn base to z-axis <0.000000> speed <120.000000>;
+		Static_Var_1 = 0;
+	}
+}
+
+Create()
+{
+	Static_Var_1 = 0;
+	call-script InitState();
+	start-script SmokeUnit();
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+AimPrimary()
+{
+	return (1);
+}
+
+AimSecondary()
+{
+	return (1);
+}
+
+AimTertiary()
+{
+	return (1);
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = firec1;
+}
+
+QuerySecondary(piecenum)
+{
+	piecenum = firec2;
+}
+
+QueryTertiary(piecenum)
+{
+	piecenum = firem;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode body type BITMAPONLY | BITMAP1;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode body type BITMAPONLY | BITMAP1;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode body type BITMAPONLY | BITMAP1;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode body type BITMAPONLY | BITMAP1;
+	return (corpsetype);
+}

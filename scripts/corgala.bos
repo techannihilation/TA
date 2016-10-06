@@ -8,13 +8,13 @@ piece  base, pelvis, torso, lshoulder, larm, lcannon, leftfirepoint, rshoulder,
        rupleg, rlowleg, rfoot, rftoe, rbtoe1, plasmacannon, barrel, firepoint,
        emit1, emit2;
 
-static-var  gun_1, bMoving, bAiming, Static_Var_4, Static_Var_5,
+static-var  gun_2, bMoving, Static_Var_3, Static_Var_4, bAiming,
             Static_Var_6, Static_Var_7, Static_Var_8, Static_Var_9, Static_Var_10,
             unitviewer, Static_Var_12, Static_Var_13;
 
 // Signal definitions
-#define SIG_AIM				2
-#define SIG_AIM_2			4
+#define SIG_AIM_2			2
+#define SIG_AIM				4
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -79,7 +79,7 @@ StartMoving()
 		}
 		if( !Static_Var_13 )
 		{
-			if( !bAiming )
+			if( !Static_Var_3 )
 			{
 				move torso to y-axis [1.500000] speed [2.500000];
 				turn torso to z-axis <2.500000> speed <1.000000>;
@@ -99,12 +99,12 @@ StartMoving()
 		turn lftoe to x-axis <-20.000000> speed <15.000000>;
 		turn lfoot to x-axis <-30.000000> speed <22.500000>;
 		sleep 1250;
-		if( !bAiming )
+		if( !Static_Var_3 )
 		{
 			move torso to y-axis [0.000000] speed [1.000000];
 			move plasmacannon to y-axis [1.500000] speed [0.800000];
 			move lshoulder to y-axis [0.000000] speed [0.450000];
-			move rshoulder to y-axis [0.000000] speed [0.219989];
+			move rshoulder to y-axis [0.000000] speed [0.219983];
 		}
 		turn rupleg to x-axis <0.000000> speed <68.000000>;
 		turn rlowleg to x-axis <-10.000000> speed <17.000000>;
@@ -116,7 +116,7 @@ StartMoving()
 		turn lfoot to x-axis <20.000000> speed <40.000000>;
 		turn lbtoe1 to x-axis <-30.000000> speed <45.000000>;
 		sleep 550;
-		if( !bAiming )
+		if( !Static_Var_3 )
 		{
 			move torso to y-axis [1.500000] speed [2.500000];
 			turn torso to z-axis <-2.500000> speed <1.000000>;
@@ -140,12 +140,12 @@ StartMoving()
 		turn llowleg to x-axis <0.000000> speed <26.247253>;
 		turn lfoot to x-axis <10.000000> speed <30.000000>;
 		sleep 1250;
-		if( !bAiming )
+		if( !Static_Var_3 )
 		{
 			move torso to y-axis [0.000000] speed [1.000000];
 			move plasmacannon to y-axis [1.500000] speed [0.800000];
 			move lshoulder to y-axis [0.000000] speed [0.450000];
-			move rshoulder to y-axis [0.000000] speed [0.219989];
+			move rshoulder to y-axis [0.000000] speed [0.219983];
 		}
 		turn lupleg to x-axis <0.000000> speed <68.000000>;
 		turn llowleg to x-axis <-10.000000> speed <17.000000>;
@@ -165,7 +165,7 @@ StopMoving()
 	signal 16;
 	bMoving = FALSE;
 	Static_Var_13 = 1;
-	if( !bAiming )
+	if( !Static_Var_3 )
 	{
 		turn torso to y-axis <0.000000> speed <40.000000>;
 	}
@@ -176,12 +176,12 @@ StopMoving()
 		turn lcannon to y-axis <0.000000> speed <20.000000>;
 		turn rcannon to y-axis <0.000000> speed <20.000000>;
 	}
-	if( !Static_Var_5 )
+	if( !bAiming )
 	{
 		turn plasmacannon to y-axis <0.000000> speed <20.000000>;
 		move plasmacannon to y-axis [0.000000] speed [1.000000];
 	}
-	if( Static_Var_5 )
+	if( bAiming )
 	{
 		if( !Static_Var_12 )
 		{
@@ -207,22 +207,22 @@ StopMoving()
 
 RestorePrimary()
 {
-	set-signal-mask SIG_AIM_2;
+	set-signal-mask SIG_AIM;
 	sleep 6500;
 	Static_Var_8 = 0;
-	Static_Var_5 = 0;
-	if( bAiming == 1 )
+	bAiming = FALSE;
+	if( Static_Var_3 == 1 )
 	{
 		if( !Static_Var_4 AND !Static_Var_6 )
 		{
-			bAiming = FALSE;
+			Static_Var_3 = 0;
 		}
 	}
 }
 
 RestoreSecondary()
 {
-	set-signal-mask SIG_AIM;
+	set-signal-mask SIG_AIM_2;
 	sleep 6000;
 	Static_Var_9 = 0;
 	Static_Var_10 = 0;
@@ -236,11 +236,11 @@ RestoreSecondary()
 	wait-for-turn rarm around x-axis;
 	wait-for-turn rcannon around y-axis;
 	Static_Var_4 = 0;
-	if( bAiming == 1 )
+	if( Static_Var_3 == 1 )
 	{
-		if( Static_Var_5 == 0 AND Static_Var_6 == 0 )
+		if( bAiming == 0 AND Static_Var_6 == 0 )
 		{
-			bAiming = FALSE;
+			Static_Var_3 = 0;
 			return (0);
 		}
 	}
@@ -253,13 +253,13 @@ Demo()
 
 Create()
 {
-	gun_1 = base;
+	gun_2 = base;
 	Static_Var_8 = 0;
 	Static_Var_4 = 0;
-	Static_Var_5 = 0;
+	bAiming = FALSE;
 	Static_Var_6 = 0;
 	bMoving = FALSE;
-	bAiming = FALSE;
+	Static_Var_3 = 0;
 	Static_Var_9 = 0;
 	Static_Var_10 = 0;
 	Static_Var_9 = 0;
@@ -279,7 +279,6 @@ SweetSpot(piecenum)
 	piecenum = torso;
 }
 
-
 QueryPrimary(piecenum)
 {
 	piecenum = firepoint;
@@ -292,10 +291,10 @@ AimFromPrimary(piecenum)
 
 AimPrimary(heading, pitch)
 {
-	signal SIG_AIM_2;
-	set-signal-mask SIG_AIM_2;
-	Static_Var_5 = 1;
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
 	bAiming = TRUE;
+	Static_Var_3 = 1;
 	if( Static_Var_8 == 0 )
 	{
 		if( !bMoving )
@@ -335,11 +334,11 @@ FirePrimary()
 
 QuerySecondary(piecenum)
 {
-	if( gun_1 )
+	if( gun_2 )
 	{
 		piecenum = leftfirepoint;
 	}
-	if( !gun_1 )
+	if( !gun_2 )
 	{
 		piecenum = rightfirepoint;
 	}
@@ -352,9 +351,9 @@ AimFromSecondary(piecenum)
 
 AimSecondary(heading, pitch)
 {
-	signal SIG_AIM;
-	set-signal-mask SIG_AIM;
-	bAiming = TRUE;
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	Static_Var_3 = 1;
 	Static_Var_4 = 1;
 	Static_Var_9 = heading;
 	Static_Var_10 = 0 - pitch;
@@ -383,21 +382,21 @@ AimSecondary(heading, pitch)
 
 FireSecondary()
 {
-	if( gun_1 )
+	if( gun_2 )
 	{
 		emit-sfx 1024 + 0 from leftfirepoint;
 		move lcannon to z-axis [-4.500000] speed [300.000000];
 		sleep 150;
 		move lcannon to z-axis [0.000000] speed [3.500000];
 	}
-	if( !gun_1 )
+	if( !gun_2 )
 	{
 		emit-sfx 1024 + 0 from rightfirepoint;
 		move rcannon to z-axis [-4.500000] speed [300.000000];
 		sleep 150;
 		move rcannon to z-axis [0.000000] speed [3.500000];
 	}
-	gun_1 = !gun_1;
+	gun_2 = !gun_2;
 }
 
 Killed(severity, corpsetype)
@@ -423,7 +422,7 @@ Killed(severity, corpsetype)
 		explode rlowleg type BITMAPONLY | BITMAP1;
 		explode rfoot type BITMAPONLY | BITMAP1;
 		explode rftoe type BITMAPONLY | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -446,7 +445,7 @@ Killed(severity, corpsetype)
 		explode rlowleg type SHATTER | BITMAP4;
 		explode rfoot type SHATTER | BITMAP4;
 		explode rftoe type SHATTER | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -469,7 +468,7 @@ Killed(severity, corpsetype)
 		explode rlowleg type SHATTER | BITMAP4;
 		explode rfoot type SHATTER | BITMAP4;
 		explode rftoe type SHATTER | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
@@ -490,4 +489,5 @@ Killed(severity, corpsetype)
 	explode rlowleg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 	explode rfoot type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 	explode rftoe type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	return (corpsetype);
 }

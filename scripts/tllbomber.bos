@@ -3,7 +3,8 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, bombbay2, bombbay3, lthrust, rthrust, rwing, lwing, engines;
+piece  base, body, bombbay2, bombbay3, lthrust, rthrust, rwing, lwing,
+       engines;
 
 static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging;
 
@@ -141,20 +142,21 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 1;
 		explode body type BITMAPONLY | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
 		explode body type SHATTER | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
 		explode body type SHATTER | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP2;
+	return (corpsetype);
 }

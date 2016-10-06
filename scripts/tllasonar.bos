@@ -35,24 +35,23 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-Tangue()
+Tangue(Func_Var_1, Func_Var_2, Func_Var_3)
 {
-var rockDir, rockAng, rockSpeed;
-	rockDir = <-0.1>;
-	rockAng = <-0.1>;
+	Func_Var_1 = -18;
+	Func_Var_2 = -18;
 	while( TRUE )
 	{
-		while( get ABS(rockAng) < <1.31> )
+		while( get ABS(Func_Var_2) < 238 )
 		{
-			rockSpeed = <1.45> - get ABS(rockAng);
-			turn base to x-axis rockAng speed rockSpeed*5;
-			turn base to z-axis rockAng speed rockSpeed*5;
+			Func_Var_3 = 263 - get ABS(Func_Var_2);
+			turn base to x-axis Func_Var_2 speed Func_Var_3 * <0.027473>;
+			turn base to z-axis Func_Var_2 speed Func_Var_3 * <0.027473>;
 			wait-for-turn base around x-axis;
 			wait-for-turn base around z-axis;
-			rockAng = rockAng + rockDir;
+			Func_Var_2 = Func_Var_2 + Func_Var_1;
 		}
-		rockDir = 0 - rockDir;
-		rockAng = rockAng + rockDir + rockDir;
+		Func_Var_1 = 0 - Func_Var_1;
+		Func_Var_2 = Func_Var_2 + Func_Var_1 + Func_Var_1;
 	}
 }
 
@@ -144,7 +143,7 @@ Killed(severity, corpsetype)
 		explode body type BITMAPONLY | BITMAP1;
 		explode rotor type BITMAPONLY | BITMAP2;
 		explode lights type BITMAPONLY | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -152,7 +151,7 @@ Killed(severity, corpsetype)
 		explode body type BITMAPONLY | BITMAP1;
 		explode rotor type BITMAPONLY | BITMAP2;
 		explode lights type BITMAPONLY | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -160,10 +159,11 @@ Killed(severity, corpsetype)
 		explode rotor type BITMAPONLY | BITMAP1;
 		explode body type SHATTER | EXPLODE_ON_HIT | BITMAP2;
 		explode lights type BITMAPONLY | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode rotor type BITMAPONLY | BITMAP5;
 	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP2;
 	explode lights type BITMAPONLY | BITMAP3;
+	return (corpsetype);
 }

@@ -270,7 +270,7 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		return (0);
+		return (corpsetype);
 	}
 	explode l1 type FALL | EXPLODE_ON_HIT | BITMAP4;
 	explode door2 type FALL | EXPLODE_ON_HIT | BITMAP5;
@@ -280,10 +280,11 @@ Killed(severity, corpsetype)
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode l1 type SHATTER | EXPLODE_ON_HIT | BITMAP2;
 	explode l2 type SHATTER | EXPLODE_ON_HIT | BITMAP2;
 	explode door1 type FALL | EXPLODE_ON_HIT | BITMAP5;
+	return (corpsetype);
 }

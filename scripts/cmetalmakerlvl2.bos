@@ -5,7 +5,8 @@
 
 piece  base, flap2, flap3, flap4, flap1, topcap, glowingthing;
 
-static-var  Active, mmState;
+static-var  Static_Var_1, Static_Var_2;
+
 
 activatescr()
 {
@@ -15,18 +16,18 @@ activatescr()
 		move flap3 to z-axis [0.000000] now;
 		move flap4 to x-axis [0.000000] now;
 		turn flap3 to z-axis <0.000000> now;
-		turn flap3 to z-axis <-69.340659> speed <261.664835>;
+		turn flap3 to z-axis <-69.335165> speed <261.659341>;
 		sleep 265;
 	}
 	if( TRUE )
 	{
-		turn flap2 to x-axis <-4.862637> speed <18.291209>;
+		turn flap2 to x-axis <-4.857143> speed <18.291209>;
 		turn flap4 to x-axis <-86.368132> speed <324.703297>;
 		sleep 266;
 	}
 	if( TRUE )
 	{
-		turn flap2 to z-axis <69.340659> speed <260.681319>;
+		turn flap2 to z-axis <69.335165> speed <260.681319>;
 		sleep 266;
 	}
 	if( TRUE )
@@ -36,22 +37,22 @@ activatescr()
 	}
 	if( TRUE )
 	{
-		turn topcap to y-axis <45.010989> speed <169.208791>;
+		turn topcap to y-axis <45.005495> speed <169.203297>;
 		sleep 266;
 	}
 	if( TRUE )
 	{
-		move topcap to y-axis [-16.050006] speed [60.112384];
+		move topcap to y-axis [-16.050000] speed [60.112378];
 		sleep 267;
 	}
 	if( TRUE )
 	{
-		turn topcap to z-axis <-180.043956> speed <676.851648>;
+		turn topcap to z-axis <-180.038462> speed <676.846154>;
 		sleep 266;
 	}
 	if( TRUE )
 	{
-		move topcap to y-axis [-0.700006] speed [57.706769];
+		move topcap to y-axis [-0.700000] speed [57.706769];
 		sleep 266;
 	}
 	sleep 266;
@@ -64,20 +65,20 @@ deactivatescr()
 		move flap2 to z-axis [0.000000] now;
 		move flap3 to z-axis [0.000000] now;
 		move flap4 to x-axis [0.000000] now;
-		move topcap to y-axis [-0.700006] now;
-		move topcap to y-axis [-16.050006] speed [57.924530];
+		move topcap to y-axis [-0.700000] now;
+		move topcap to y-axis [-16.050000] speed [57.924524];
 		turn flap1 to x-axis <89.412088> now;
-		turn flap2 to x-axis <-4.862637> now;
-		turn flap2 to z-axis <69.340659> now;
-		turn flap3 to z-axis <-69.340659> now;
+		turn flap2 to x-axis <-4.857143> now;
+		turn flap2 to z-axis <69.335165> now;
+		turn flap3 to z-axis <-69.335165> now;
 		turn flap4 to x-axis <-86.368132> now;
-		turn topcap to y-axis <45.010989> now;
-		turn topcap to z-axis <-180.043956> now;
+		turn topcap to y-axis <45.005495> now;
+		turn topcap to z-axis <-180.038462> now;
 		sleep 265;
 	}
 	if( TRUE )
 	{
-		turn topcap to z-axis <0.000000> speed <676.851648>;
+		turn topcap to z-axis <0.000000> speed <676.846154>;
 		sleep 266;
 	}
 	if( TRUE )
@@ -87,7 +88,7 @@ deactivatescr()
 	}
 	if( TRUE )
 	{
-		turn topcap to y-axis <0.000000> speed <169.208791>;
+		turn topcap to y-axis <0.000000> speed <169.203297>;
 		sleep 266;
 	}
 	if( TRUE )
@@ -114,7 +115,6 @@ deactivatescr()
 	sleep 266;
 }
 
-
 Go()
 {
 	dont-cache flap1;
@@ -135,10 +135,9 @@ Stop()
 	cache topcap;
 }
 
-MMStatus(State)
+MMStatus(Func_Var_1)
 {
-	Active = State;
-	//get PRINT(Active);
+	Static_Var_1 = Func_Var_1;
 }
 
 ImAMetalMaker()
@@ -147,21 +146,21 @@ ImAMetalMaker()
 	{
 		sleep 150;
 	}
-	mmState = -1;
+	Static_Var_2 = -1;
 	while( TRUE )
 	{
-		if( Active == 1 )
+		if( Static_Var_1 == 1 )
 		{
-			if( mmState != 1 )
+			if( Static_Var_2 != 1 )
 			{
 				call-script Go();
-				mmState = 1;
+				Static_Var_2 = 1;
 			}
 		}
-		else if( mmState != 0 )
+		else if( Static_Var_2 != 0 )
 		{
 			call-script Stop();
-			mmState = 0;
+			Static_Var_2 = 0;
 		}
 		sleep 1000;
 	}

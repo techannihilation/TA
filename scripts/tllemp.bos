@@ -16,14 +16,14 @@ activatescr()
 {
 	if( TRUE )
 	{
-		turn arm1 to z-axis <55.010989> speed <50.010989>;
-		turn arm2 to z-axis <-55.010989> speed <50.010989>;
-		turn arm3 to x-axis <-55.010989> speed <50.010989>;
-		turn arm4 to x-axis <55.010989> speed <50.010989>;
-		turn box1 to z-axis <85.016484> speed <50.010989>;
-		turn box2 to z-axis <-85.016484> speed <50.010989>;
-		turn box3 to x-axis <-85.016484> speed <50.010989>;
-		turn box4 to x-axis <85.016484> speed <50.010989>;
+		turn arm1 to z-axis <55.005495> speed <50.005495>;
+		turn arm2 to z-axis <-55.005495> speed <50.005495>;
+		turn arm3 to x-axis <-55.005495> speed <50.005495>;
+		turn arm4 to x-axis <55.005495> speed <50.005495>;
+		turn box1 to z-axis <85.016484> speed <50.005495>;
+		turn box2 to z-axis <-85.016484> speed <50.005495>;
+		turn box3 to x-axis <-85.016484> speed <50.005495>;
+		turn box4 to x-axis <85.016484> speed <50.005495>;
 		sleep 1200;
 	}
 	if( TRUE )
@@ -37,21 +37,21 @@ activatescr()
 		sleep 250;
 		spin barrel around y-axis speed <40.005495>;
 		sleep 250;
-		spin barrel around y-axis speed <60.010989>;
+		spin barrel around y-axis speed <60.005495>;
 		sleep 250;
 		spin barrel around y-axis speed <90.016484>;
 		sleep 250;
 		spin barrel around y-axis speed <120.027473>;
 		sleep 250;
-		spin barrel around y-axis speed <150.032967>;
+		spin barrel around y-axis speed <150.027473>;
 		sleep 250;
-		spin barrel around y-axis speed <190.043956>;
+		spin barrel around y-axis speed <190.038462>;
 		sleep 250;
 		spin barrel around y-axis speed <250.060440>;
 		sleep 250;
-		spin barrel around y-axis speed <370.087912>;
+		spin barrel around y-axis speed <370.082418>;
 		sleep 250;
-		spin barrel around y-axis speed <500.120879>;
+		spin barrel around y-axis speed <500.115385>;
 		sleep 250;
 	}
 	sleep 500;
@@ -63,9 +63,9 @@ deactivatescr()
 	{
 		spin barrel around y-axis speed <400.093407>;
 		sleep 550;
-		spin barrel around y-axis speed <320.076923>;
+		spin barrel around y-axis speed <320.071429>;
 		sleep 550;
-		spin barrel around y-axis speed <200.043956>;
+		spin barrel around y-axis speed <200.038462>;
 		sleep 750;
 		turn barrel to y-axis <0.000000> speed <90.016484>;
 		sleep 1000;
@@ -77,14 +77,14 @@ deactivatescr()
 	}
 	if( TRUE )
 	{
-		turn arm3 to x-axis <0.000000> speed <50.010989>;
-		turn arm4 to x-axis <0.000000> speed <50.010989>;
-		turn arm1 to z-axis <0.000000> speed <50.010989>;
-		turn arm2 to z-axis <0.000000> speed <50.010989>;
-		turn box3 to x-axis <0.000000> speed <50.010989>;
-		turn box4 to x-axis <0.000000> speed <50.010989>;
-		turn box1 to z-axis <0.000000> speed <50.010989>;
-		turn box2 to z-axis <0.000000> speed <50.010989>;
+		turn arm3 to x-axis <0.000000> speed <50.005495>;
+		turn arm4 to x-axis <0.000000> speed <50.005495>;
+		turn arm1 to z-axis <0.000000> speed <50.005495>;
+		turn arm2 to z-axis <0.000000> speed <50.005495>;
+		turn box3 to x-axis <0.000000> speed <50.005495>;
+		turn box4 to x-axis <0.000000> speed <50.005495>;
+		turn box1 to z-axis <0.000000> speed <50.005495>;
+		turn box2 to z-axis <0.000000> speed <50.005495>;
 	}
 }
 
@@ -182,7 +182,6 @@ Create()
 	dont-cache arm4;
 	dont-cache barrel;
 	hide flare;
-	//turn lights to y-axis <45.005495> now;
 	restore_delay = 3000;
 	start-script SmokeUnit();
 }
@@ -255,7 +254,7 @@ Killed(severity, corpsetype)
 		explode arm3 type BITMAPONLY | BITMAP2;
 		explode arm4 type BITMAPONLY | BITMAP3;
 		explode barrel type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -266,7 +265,7 @@ Killed(severity, corpsetype)
 		explode arm3 type FALL | BITMAP2;
 		explode arm4 type FALL | BITMAP3;
 		explode barrel type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -277,7 +276,7 @@ Killed(severity, corpsetype)
 		explode arm3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 		explode arm4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode barrel type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP2;
@@ -286,4 +285,5 @@ Killed(severity, corpsetype)
 	explode arm3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 	explode arm4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode barrel type BITMAPONLY | BITMAP2;
+	return (corpsetype);
 }

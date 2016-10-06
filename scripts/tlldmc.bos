@@ -5,17 +5,10 @@
 
 piece  base, Turretbase, Turret, Gun, B2, B1, Flare;
 
-static-var  Static_Var_1, WeaponToggle;
+static-var  Static_Var_1, Static_Var_2;
 
 // Signal definitions
 #define SIG_AIM				2
-
-
-Dive()
-{
-	WeaponToggle = !WeaponToggle;
-	get PRINT(WeaponToggle);
-}
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -46,11 +39,9 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-
-
 Create()
 {
-	WeaponToggle = 1;
+	Static_Var_2 = 1;
 	hide Flare;
 	Static_Var_1 = 2500;
 	start-script SmokeUnit();
@@ -63,7 +54,10 @@ RestoreAfterDelay()
 
 AimPrimary(heading, pitch)
 {
-    if(!WeaponToggle OR (get WEAPON_RELOADSTATE(2) > get GAME_FRAME)) return 0;
+	if( !Static_Var_2 OR get WEAPON_RELOADSTATE(2) > get GAME_FRAME )
+	{
+		return (0);
+	}
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
 	turn Turret to y-axis heading speed <30.000000>;
@@ -96,7 +90,10 @@ AimFromPrimary(piecenum)
 
 AimSecondary(heading, pitch)
 {
-	if(WeaponToggle OR (get WEAPON_RELOADSTATE(1) > get GAME_FRAME)) return 0;
+	if( Static_Var_2 OR get WEAPON_RELOADSTATE(1) > get GAME_FRAME )
+	{
+		return (0);
+	}
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
 	turn Turret to y-axis heading speed <30.000000>;
@@ -143,7 +140,7 @@ Killed(severity, corpsetype)
 		explode Flare type BITMAPONLY | BITMAP3;
 		explode Gun type BITMAPONLY | BITMAP4;
 		explode Turret type BITMAPONLY | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -153,7 +150,7 @@ Killed(severity, corpsetype)
 		explode Flare type FALL | BITMAP3;
 		explode Gun type SHATTER | BITMAP4;
 		explode Turret type FALL | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -163,7 +160,7 @@ Killed(severity, corpsetype)
 		explode Flare type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode Gun type SHATTER | BITMAP4;
 		explode Turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode B1 type BITMAPONLY | BITMAP1;
@@ -171,4 +168,5 @@ Killed(severity, corpsetype)
 	explode Flare type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode Gun type SHATTER | EXPLODE_ON_HIT | BITMAP4;
 	explode Turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	return (corpsetype);
 }

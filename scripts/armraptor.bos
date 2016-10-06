@@ -1,0 +1,720 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  Huefte, Stange, loSchenkel, luSchenkel, lFuss, l1Finger, l2Finger, lDaumen,
+       roSchenkel, ruSchenkel, rFuss, r1Finger, r2Finger, rDaumen, Torso, Achse,
+       lSchulter, lArm, lKanone, l1Lauf, l1Blitz, l2Lauf, l2Blitz, rSchulter,
+       rArm, rKanone, r1Lauf, r1Blitz, r2Lauf, r2Blitz, Punkt, RakTurm,
+       ruRakWerf, rmRakWerf, rRakBlitz, luRakWerf, lmRakWerf, lRakBlitz, Koerper, Schwanz,
+       Lower, loRakWerf, roRakWerf, RechenArm, RechenBlitz, RechenPunkt, RauchArm, RauchPunkt,
+       lBlinker, rBlinker, wake1, wake2;
+
+static-var  gun_1, bMoving, Static_Var_3, bAiming, gun_3,
+            Static_Var_6, Static_Var_7, unitviewer, Static_Var_9, Static_Var_10;
+
+// Signal definitions
+#define SIG_MOVE			2
+#define SIG_AIM				4
+#define SIG_AIM_3			8
+
+
+EmitSFX()
+{
+	while( TRUE )
+	{
+		if( bMoving )
+		{
+			if( Static_Var_10 == 3 )
+			{
+				emit-sfx 259 from wake1;
+				emit-sfx 259 from wake2;
+			}
+		}
+		sleep 250;
+	}
+}
+
+StartWalk()
+{
+	if( TRUE )
+	{
+		if( Static_Var_3 )
+		{
+			turn rArm to x-axis <18.000000> speed <9.000000>;
+			turn lArm to x-axis <-18.000000> speed <18.000000>;
+		}
+		turn roSchenkel to x-axis <38.000000> speed <50.000000>;
+		turn loSchenkel to x-axis <-38.000000> speed <50.000000>;
+		turn rFuss to x-axis <-28.000000> speed <70.000000>;
+		turn lFuss to x-axis <8.000000> speed <50.000000>;
+		turn luSchenkel to x-axis <-30.000000> speed <80.000000>;
+		turn Torso to x-axis <4.000000> speed <5.000000>;
+		sleep 505;
+		turn rFuss to x-axis <38.000000> speed <100.000000>;
+		turn lFuss to x-axis <18.000000> speed <50.000000>;
+		turn luSchenkel to x-axis <38.000000> speed <100.000000>;
+		turn r1Finger to x-axis <45.000000> speed <100.000000>;
+		turn r2Finger to x-axis <45.000000> speed <100.000000>;
+		turn rDaumen to x-axis <-45.000000> speed <100.000000>;
+		turn l1Finger to x-axis <0.000000> speed <100.000000>;
+		turn l2Finger to x-axis <0.000000> speed <100.000000>;
+		sleep 450;
+		turn lDaumen to x-axis <0.000000> speed <100.000000>;
+		move Huefte to y-axis [1.000000] speed [1.000000];
+		turn Huefte to z-axis <3.000000> speed <3.000000>;
+	}
+	if( TRUE )
+	{
+		if( Static_Var_3 )
+		{
+			turn rArm to x-axis <-18.000000> speed <20.000000>;
+			turn lArm to x-axis <18.000000> speed <20.000000>;
+		}
+		turn roSchenkel to x-axis <-38.000000> speed <50.000000>;
+		turn loSchenkel to x-axis <38.000000> speed <50.000000>;
+		turn lFuss to x-axis <-38.000000> speed <130.000000>;
+		turn ruSchenkel to x-axis <-30.000000> speed <80.000000>;
+		sleep 1050;
+		turn lFuss to x-axis <38.000000> speed <100.000000>;
+		turn ruSchenkel to x-axis <30.000000> speed <80.000000>;
+		move Huefte to y-axis [0.000000] speed [2.000000];
+		turn r1Finger to x-axis <0.000000> speed <100.000000>;
+		turn r2Finger to x-axis <0.000000> speed <100.000000>;
+		turn l1Finger to x-axis <45.000000> speed <100.000000>;
+		turn l2Finger to x-axis <45.000000> speed <100.000000>;
+		turn lDaumen to x-axis <-45.000000> speed <100.000000>;
+		sleep 450;
+		turn rDaumen to x-axis <0.000000> speed <100.000000>;
+		move Huefte to y-axis [2.000000] speed [2.000000];
+		turn Huefte to z-axis <-5.000000> speed <8.000000>;
+		turn lArm to x-axis <0.000000> speed <14.000000>;
+		turn rArm to x-axis <0.000000> speed <14.000000>;
+	}
+}
+
+Walk()
+{
+	if( TRUE )
+	{
+		if( Static_Var_3 )
+		{
+			turn rArm to x-axis <18.000000> speed <18.000000>;
+			turn lArm to x-axis <-18.000000> speed <18.000000>;
+			turn Torso to y-axis <-8.000000> speed <12.000000>;
+			turn Punkt to y-axis <8.000000> speed <12.000000>;
+			Static_Var_6 = -6;
+			if( !Static_Var_7 )
+			{
+				turn RakTurm to y-axis <-8.000000> speed <12.000000>;
+			}
+		}
+		turn Torso to x-axis <-3.000000> speed <6.000000>;
+		turn roSchenkel to x-axis <38.000000> speed <50.000000>;
+		turn loSchenkel to x-axis <-38.000000> speed <50.000000>;
+		turn rFuss to x-axis <-38.000000> speed <130.000000>;
+		turn luSchenkel to x-axis <-30.000000> speed <80.000000>;
+		sleep 1050;
+		turn rFuss to x-axis <38.000000> speed <100.000000>;
+		turn lFuss to x-axis <38.000000> speed <70.000000>;
+		turn luSchenkel to x-axis <30.000000> speed <100.000000>;
+		move Huefte to y-axis [0.000000] speed [2.000000];
+		turn r1Finger to x-axis <45.000000> speed <100.000000>;
+		turn r2Finger to x-axis <45.000000> speed <100.000000>;
+		turn rDaumen to x-axis <-45.000000> speed <100.000000>;
+		turn l1Finger to x-axis <0.000000> speed <100.000000>;
+		turn l2Finger to x-axis <0.000000> speed <100.000000>;
+		sleep 450;
+		turn lDaumen to x-axis <0.000000> speed <100.000000>;
+		move Huefte to y-axis [1.000000] speed [1.000000];
+		turn Huefte to z-axis <3.000000> speed <7.000000>;
+	}
+	if( TRUE )
+	{
+		if( Static_Var_3 )
+		{
+			turn rArm to x-axis <-18.000000> speed <20.000000>;
+			turn lArm to x-axis <18.000000> speed <20.000000>;
+			turn Torso to y-axis <8.000000> speed <12.000000>;
+			turn Punkt to y-axis <-8.000000> speed <12.000000>;
+			Static_Var_6 = 6;
+			if( !Static_Var_7 )
+			{
+				turn RakTurm to y-axis <8.000000> speed <12.000000>;
+			}
+		}
+		turn Torso to x-axis <4.000000> speed <6.000000>;
+		turn roSchenkel to x-axis <-38.000000> speed <50.000000>;
+		turn loSchenkel to x-axis <38.000000> speed <50.000000>;
+		turn lFuss to x-axis <-38.000000> speed <130.000000>;
+		turn ruSchenkel to x-axis <-30.000000> speed <100.000000>;
+		sleep 1050;
+		turn lFuss to x-axis <38.000000> speed <100.000000>;
+		turn ruSchenkel to x-axis <30.000000> speed <80.000000>;
+		move Huefte to y-axis [0.000000] speed [2.000000];
+		turn r1Finger to x-axis <0.000000> speed <100.000000>;
+		turn r2Finger to x-axis <0.000000> speed <100.000000>;
+		turn l1Finger to x-axis <45.000000> speed <100.000000>;
+		turn l2Finger to x-axis <45.000000> speed <100.000000>;
+		turn lDaumen to x-axis <-45.000000> speed <100.000000>;
+		sleep 450;
+		turn rDaumen to x-axis <0.000000> speed <100.000000>;
+		move Huefte to y-axis [1.000000] speed [1.000000];
+		turn Huefte to z-axis <-3.000000> speed <7.000000>;
+	}
+}
+
+StopWalk()
+{
+	if( TRUE )
+	{
+		turn roSchenkel to x-axis <0.000000> speed <50.000000>;
+		turn loSchenkel to x-axis <0.000000> speed <50.000000>;
+		turn ruSchenkel to x-axis <0.000000> speed <100.000000>;
+		turn luSchenkel to x-axis <0.000000> speed <100.000000>;
+		turn Torso to x-axis <0.000000> speed <20.000000>;
+		move Huefte to y-axis [0.000000] speed [20.000000];
+		turn Huefte to z-axis <0.000000> speed <20.000000>;
+		turn l1Finger to x-axis <0.000000> speed <100.000000>;
+		turn l2Finger to x-axis <0.000000> speed <100.000000>;
+		turn lDaumen to x-axis <0.000000> speed <100.000000>;
+		turn r1Finger to x-axis <0.000000> speed <100.000000>;
+		turn r2Finger to x-axis <0.000000> speed <100.000000>;
+		turn rDaumen to x-axis <0.000000> speed <100.000000>;
+		turn lFuss to x-axis <0.000000> speed <100.000000>;
+		turn rFuss to x-axis <0.000000> speed <100.000000>;
+		turn Torso to x-axis <8.000000> speed <48.000000>;
+		if( Static_Var_3 )
+		{
+			turn rArm to x-axis <-8.000000> speed <48.000000>;
+			turn lArm to x-axis <-8.000000> speed <48.000000>;
+		}
+		wait-for-turn Torso around x-axis;
+		turn Torso to x-axis <-1.000000> speed <48.000000>;
+		wait-for-turn Torso around x-axis;
+		turn Torso to x-axis <0.000000> speed <48.000000>;
+		wait-for-turn Torso around x-axis;
+		if( Static_Var_3 )
+		{
+			turn rArm to x-axis <0.000000> speed <48.000000>;
+			turn lArm to x-axis <0.000000> speed <48.000000>;
+		}
+		wait-for-turn lArm around x-axis;
+		wait-for-turn rArm around x-axis;
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from RauchPunkt;
+		}
+		sleeptime = healthpercent * 30;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+HitByWeapon(anglex, anglez)
+{
+	var Func_Var_3;
+	Func_Var_3 = get HEALTH;
+	if( Static_Var_9 - Func_Var_3 >= 5 )
+	{
+		turn Achse to z-axis anglez speed <150.000000>;
+		turn Achse to x-axis anglex speed <150.000000>;
+		wait-for-turn Achse around z-axis;
+		turn Achse to z-axis <0.000000> speed <30.000000>;
+		turn Achse to x-axis <0.000000> speed <30.000000>;
+	}
+	Static_Var_9 = get HEALTH;
+}
+
+Create()
+{
+	hide l1Blitz;
+	hide l2Blitz;
+	hide r1Blitz;
+	hide r2Blitz;
+	hide lRakBlitz;
+	hide rRakBlitz;
+	hide lmRakWerf;
+	hide rmRakWerf;
+	dont-cache lBlinker;
+	dont-shade lBlinker;
+	dont-cache rBlinker;
+	dont-shade rBlinker;
+	turn Stange to x-axis <-64.000000> now;
+	Static_Var_10 = 4;
+	unitviewer = FALSE;
+	bMoving = FALSE;
+	bAiming = FALSE;
+	gun_1 = Stange;
+	gun_3 = Huefte;
+	Static_Var_3 = 1;
+	Static_Var_6 = 0;
+	Static_Var_9 = get HEALTH;
+	spin RauchArm around y-axis speed <300.000000>;
+	set ARMORED to 1;
+	start-script SmokeUnit();
+}
+
+Demo()
+{
+	unitviewer = TRUE;
+}
+
+setSFXoccupy(state)
+{
+	Static_Var_10 = state;
+}
+
+StartMoving()
+{
+	bMoving = TRUE;
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	if( !bAiming )
+	{
+		turn Torso to y-axis <0.000000> speed <60.000000>;
+		turn Punkt to y-axis <0.000000> speed <60.000000>;
+		if( !Static_Var_7 )
+		{
+			turn RakTurm to y-axis <0.000000> speed <60.000000>;
+		}
+	}
+	call-script StartWalk();
+	while( TRUE )
+	{
+		call-script Walk();
+	}
+}
+
+StopMoving()
+{
+	bMoving = FALSE;
+	signal SIG_MOVE;
+	start-script StopWalk();
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = Torso;
+}
+
+RestoreAfterDelay(Func_Var_1)
+{
+	sleep 3500;
+	Func_Var_1 = bMoving;
+	turn lKanone to y-axis <0.000000> speed <15.000000>;
+	turn rKanone to y-axis <0.000000> speed <15.000000>;
+	if( Func_Var_1 )
+	{
+		turn Torso to y-axis <0.000000> speed <60.000000>;
+		turn Punkt to y-axis <0.000000> speed <60.000000>;
+		if( !Static_Var_7 )
+		{
+			turn RakTurm to y-axis <0.000000> speed <15.000000>;
+		}
+		wait-for-turn Torso around y-axis;
+		Static_Var_6 = 0;
+	}
+	if( !Func_Var_1 )
+	{
+		turn rArm to x-axis <0.000000> speed <20.000000>;
+		turn lArm to x-axis <0.000000> speed <20.000000>;
+		wait-for-turn lArm around x-axis;
+	}
+	wait-for-turn lKanone around y-axis;
+	Static_Var_3 = 1;
+	bAiming = FALSE;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = Torso;
+}
+
+QueryPrimary(piecenum)
+{
+	if( gun_1 == 1 )
+	{
+		piecenum = l1Blitz;
+	}
+	if( gun_1 == 2 )
+	{
+		piecenum = r1Blitz;
+	}
+	if( gun_1 == 3 )
+	{
+		piecenum = l2Blitz;
+	}
+	if( gun_1 == 4 )
+	{
+		piecenum = r2Blitz;
+	}
+}
+
+AimPrimary(heading, pitch)
+{
+	var Func_Var_3, Func_Var_4, Func_Var_5;
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	bAiming = TRUE;
+	Static_Var_3 = 0;
+	if( !unitviewer )
+	{
+		turn RechenArm to x-axis <0.000000> - pitch now;
+		Func_Var_4 = get PIECE_Y(RechenPunkt);
+		Func_Var_3 = get PIECE_Y(RechenBlitz);
+		if( Func_Var_4 >= Func_Var_3 )
+		{
+			Func_Var_5 = ( Func_Var_4 - Func_Var_3 ) / 250 + 360;
+			turn lKanone to y-axis Func_Var_5 speed <40.000000>;
+			turn rKanone to y-axis <0.000000> - Func_Var_5 speed <40.000000>;
+		}
+		if( Func_Var_4 < Func_Var_3 )
+		{
+			turn rKanone to y-axis <0.000000> speed <40.000000>;
+			turn lKanone to y-axis <0.000000> speed <40.000000>;
+		}
+	}
+	turn Torso to y-axis heading speed <110.000000>;
+	turn Punkt to y-axis <0.000000> - heading speed <110.000000>;
+	if( !Static_Var_7 )
+	{
+		turn RakTurm to y-axis heading speed <110.000000>;
+	}
+	turn lArm to x-axis <0.000000> - pitch speed <40.000000>;
+	turn rArm to x-axis <0.000000> - pitch speed <40.000000>;
+	wait-for-turn Torso around y-axis;
+	wait-for-turn rArm around x-axis;
+	wait-for-turn lArm around x-axis;
+	wait-for-turn rKanone around y-axis;
+	Static_Var_6 = heading;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FirePrimary()
+{
+	turn Achse to x-axis <4.000000> speed <60.000000>;
+	if( gun_1 == 1 )
+	{
+		turn lSchulter to x-axis <15.000000> speed <400.000000>;
+		turn lKanone to x-axis <-18.000000> speed <400.000000>;
+		move l1Lauf to z-axis [-3.000000] speed [300.000000];
+		turn Achse to y-axis <-1.000000> speed <40.000000>;
+		show l1Blitz;
+		sleep 100;
+		hide l1Blitz;
+		move l1Lauf to z-axis [0.000000] speed [3.000000];
+		turn lSchulter to x-axis <0.000000> speed <30.000000>;
+		turn lKanone to x-axis <0.000000> speed <30.000000>;
+		turn Achse to x-axis <0.000000> speed <6.000000>;
+		turn Achse to y-axis <0.000000> speed <4.000000>;
+		gun_1 = loSchenkel;
+		return (0);
+	}
+	if( gun_1 == 2 )
+	{
+		turn rSchulter to x-axis <15.000000> speed <400.000000>;
+		turn rKanone to x-axis <-18.000000> speed <400.000000>;
+		show r1Blitz;
+		move r1Lauf to z-axis [-3.000000] speed [300.000000];
+		turn Achse to y-axis <1.000000> speed <40.000000>;
+		sleep 100;
+		move r1Lauf to z-axis [0.000000] speed [3.000000];
+		hide r1Blitz;
+		turn rSchulter to x-axis <0.000000> speed <30.000000>;
+		turn rKanone to x-axis <0.000000> speed <30.000000>;
+		turn Achse to x-axis <0.000000> speed <6.000000>;
+		turn Achse to y-axis <0.000000> speed <4.000000>;
+		gun_1 = luSchenkel;
+		return (0);
+	}
+	if( gun_1 == 3 )
+	{
+		turn lSchulter to x-axis <15.000000> speed <400.000000>;
+		turn lKanone to x-axis <-18.000000> speed <400.000000>;
+		show l2Blitz;
+		move l2Lauf to z-axis [-3.000000] speed [300.000000];
+		turn Achse to y-axis <-1.000000> speed <40.000000>;
+		sleep 100;
+		move l2Lauf to z-axis [0.000000] speed [3.000000];
+		hide l2Blitz;
+		turn lSchulter to x-axis <0.000000> speed <30.000000>;
+		turn lKanone to x-axis <0.000000> speed <30.000000>;
+		turn Achse to x-axis <0.000000> speed <6.000000>;
+		turn Achse to y-axis <0.000000> speed <4.000000>;
+		gun_1 = lFuss;
+		return (0);
+	}
+	if( gun_1 == 4 )
+	{
+		turn rSchulter to x-axis <15.000000> speed <400.000000>;
+		turn rKanone to x-axis <-18.000000> speed <400.000000>;
+		show r2Blitz;
+		move r2Lauf to z-axis [-3.000000] speed [300.000000];
+		turn Achse to y-axis <1.000000> speed <40.000000>;
+		sleep 100;
+		move r2Lauf to z-axis [0.000000] speed [3.000000];
+		hide r2Blitz;
+		turn rSchulter to x-axis <0.000000> speed <30.000000>;
+		turn rKanone to x-axis <0.000000> speed <30.000000>;
+		turn Achse to x-axis <0.000000> speed <6.000000>;
+		turn Achse to y-axis <0.000000> speed <4.000000>;
+		gun_1 = Stange;
+		return (0);
+	}
+}
+
+RestoreTertiary()
+{
+	sleep 5000;
+	Static_Var_7 = 0;
+	turn RakTurm to y-axis Static_Var_6 speed <80.000000>;
+	wait-for-turn Punkt around y-axis;
+	wait-for-turn RakTurm around y-axis;
+	turn lmRakWerf to x-axis <0.000000> speed <50.000000>;
+	turn rmRakWerf to x-axis <0.000000> speed <50.000000>;
+	wait-for-turn lmRakWerf around x-axis;
+	move luRakWerf to z-axis [0.000000] speed [4.000000];
+	move ruRakWerf to z-axis [0.000000] speed [4.000000];
+	turn Stange to x-axis <-64.000000> speed <80.000000>;
+	move Punkt to z-axis [0.000000] speed [4.000000];
+	wait-for-move luRakWerf along z-axis;
+	wait-for-turn Stange around x-axis;
+	wait-for-move Punkt along z-axis;
+	turn loRakWerf to x-axis <0.000000> speed <60.000000>;
+	turn roRakWerf to x-axis <0.000000> speed <60.000000>;
+	wait-for-turn loRakWerf around x-axis;
+	hide lmRakWerf;
+	hide rmRakWerf;
+}
+
+AimFromTertiary(piecenum)
+{
+	piecenum = RakTurm;
+}
+
+QueryTertiary(piecenum)
+{
+	if( gun_3 == 0 )
+	{
+		piecenum = lRakBlitz;
+	}
+	if( gun_3 == 1 )
+	{
+		piecenum = rRakBlitz;
+	}
+}
+
+AimTertiary(heading, pitch)
+{
+	Static_Var_7 = 1;
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
+	show lmRakWerf;
+	show rmRakWerf;
+	turn loRakWerf to x-axis <-30.000000> speed <60.000000>;
+	turn roRakWerf to x-axis <-30.000000> speed <60.000000>;
+	wait-for-turn loRakWerf around x-axis;
+	turn Stange to x-axis <0.000000> speed <80.000000>;
+	move Punkt to z-axis [3.000000] speed [4.000000];
+	move luRakWerf to z-axis [3.000000] speed [4.000000];
+	move ruRakWerf to z-axis [3.000000] speed [4.000000];
+	wait-for-turn Stange around x-axis;
+	wait-for-move Punkt along z-axis;
+	wait-for-move luRakWerf along z-axis;
+	turn lmRakWerf to x-axis <-25.000000> speed <50.000000>;
+	turn rmRakWerf to x-axis <-25.000000> speed <50.000000>;
+	wait-for-turn lmRakWerf around x-axis;
+	turn RakTurm to y-axis heading speed <200.000000>;
+	wait-for-turn RakTurm around y-axis;
+	wait-for-turn Punkt around y-axis;
+	start-script RestoreTertiary();
+	return (1);
+}
+
+FireTertiary()
+{
+	if( gun_3 == 0 )
+	{
+		show lRakBlitz;
+		sleep 150;
+		hide lRakBlitz;
+		gun_3 = Stange;
+		return (0);
+	}
+	if( gun_3 == 1 )
+	{
+		show rRakBlitz;
+		sleep 150;
+		hide rRakBlitz;
+		gun_3 = Huefte;
+		return (0);
+	}
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode Huefte type BITMAPONLY | BITMAP1;
+		explode loSchenkel type BITMAPONLY | BITMAP1;
+		explode luSchenkel type BITMAPONLY | BITMAP1;
+		explode lFuss type BITMAPONLY | BITMAP1;
+		explode l1Finger type BITMAPONLY | BITMAP1;
+		explode l2Finger type BITMAPONLY | BITMAP1;
+		explode lDaumen type BITMAPONLY | BITMAP1;
+		explode roSchenkel type BITMAPONLY | BITMAP1;
+		explode ruSchenkel type BITMAPONLY | BITMAP1;
+		explode rFuss type BITMAPONLY | BITMAP1;
+		explode r1Finger type BITMAPONLY | BITMAP1;
+		explode r2Finger type BITMAPONLY | BITMAP1;
+		explode rDaumen type BITMAPONLY | BITMAP1;
+		explode lArm type BITMAPONLY | BITMAP1;
+		explode lKanone type BITMAPONLY | BITMAP1;
+		explode l2Lauf type BITMAPONLY | BITMAP1;
+		explode l1Lauf type BITMAPONLY | BITMAP1;
+		explode rArm type BITMAPONLY | BITMAP1;
+		explode rKanone type BITMAPONLY | BITMAP1;
+		explode r2Lauf type BITMAPONLY | BITMAP1;
+		explode r1Lauf type BITMAPONLY | BITMAP1;
+		explode RakTurm type BITMAPONLY | BITMAP1;
+		explode Stange type BITMAPONLY | BITMAP1;
+		explode ruRakWerf type BITMAPONLY | BITMAP1;
+		explode rmRakWerf type BITMAPONLY | BITMAP1;
+		explode luRakWerf type BITMAPONLY | BITMAP1;
+		explode lmRakWerf type BITMAPONLY | BITMAP1;
+		explode Koerper type BITMAPONLY | BITMAP1;
+		explode Schwanz type BITMAPONLY | BITMAP1;
+		explode loRakWerf type BITMAPONLY | BITMAP1;
+		explode roRakWerf type BITMAPONLY | BITMAP1;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode Huefte type SHATTER | BITMAP4;
+		explode loSchenkel type SHATTER | BITMAP4;
+		explode luSchenkel type SHATTER | BITMAP4;
+		explode lFuss type SHATTER | BITMAP4;
+		explode l1Finger type SHATTER | BITMAP4;
+		explode l2Finger type SHATTER | BITMAP4;
+		explode lDaumen type SHATTER | BITMAP4;
+		explode roSchenkel type SHATTER | BITMAP4;
+		explode ruSchenkel type SHATTER | BITMAP4;
+		explode rFuss type SHATTER | BITMAP4;
+		explode r1Finger type SHATTER | BITMAP4;
+		explode r2Finger type SHATTER | BITMAP4;
+		explode rDaumen type SHATTER | BITMAP4;
+		explode lArm type SHATTER | BITMAP4;
+		explode lKanone type SHATTER | BITMAP4;
+		explode l2Lauf type SHATTER | BITMAP4;
+		explode l1Lauf type SHATTER | BITMAP4;
+		explode rArm type SHATTER | BITMAP4;
+		explode rKanone type SHATTER | BITMAP4;
+		explode r2Lauf type SHATTER | BITMAP4;
+		explode r1Lauf type SHATTER | BITMAP4;
+		explode RakTurm type SHATTER | BITMAP4;
+		explode Stange type SHATTER | BITMAP4;
+		explode ruRakWerf type SHATTER | BITMAP4;
+		explode rmRakWerf type SHATTER | BITMAP4;
+		explode luRakWerf type SHATTER | BITMAP4;
+		explode lmRakWerf type SHATTER | BITMAP4;
+		explode Koerper type SHATTER | BITMAP4;
+		explode Schwanz type SHATTER | BITMAP4;
+		explode loRakWerf type SHATTER | BITMAP4;
+		explode roRakWerf type SHATTER | BITMAP4;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode Huefte type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode loSchenkel type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode luSchenkel type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode lFuss type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode l1Finger type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode l2Finger type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode lDaumen type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode roSchenkel type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode ruSchenkel type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode rFuss type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode r1Finger type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode r2Finger type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode rDaumen type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode lArm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode lKanone type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode l2Lauf type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode l1Lauf type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode rArm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode rKanone type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode r2Lauf type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode r1Lauf type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode RakTurm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode Stange type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode ruRakWerf type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode rmRakWerf type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode luRakWerf type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode lmRakWerf type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode Koerper type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode Schwanz type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode loRakWerf type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode roRakWerf type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode Huefte type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode loSchenkel type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode luSchenkel type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode lFuss type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode l1Finger type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode l2Finger type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode lDaumen type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode roSchenkel type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode ruSchenkel type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode rFuss type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode r1Finger type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode r2Finger type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode rDaumen type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode lArm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode lKanone type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode l2Lauf type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode l1Lauf type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode rArm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode rKanone type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode r2Lauf type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode r1Lauf type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode RakTurm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode Stange type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode ruRakWerf type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode rmRakWerf type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode luRakWerf type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode lmRakWerf type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode Koerper type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode Schwanz type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode loRakWerf type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode roRakWerf type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	return (corpsetype);
+}

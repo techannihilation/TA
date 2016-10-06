@@ -1,1033 +1,876 @@
-piece Base, Body, gunport, berceau, tourelle, ovale, canon, aiguille, bouche, patte10, patte11, patte12, shld1, patte13, patte14, patte20,terfirea ,terfireb  ,terfirea2 ,terfirea3 ,terfirea4 ,terfirea5 ,terfirea6 ,terfirea7 ,terfirea8 ,terfireb2 ,terfireb3 ,terfireb4 ,terfireb5 ,terfireb6 ,terfireb7 ,terfireb8,  patte21, patte22, shld2, patte23, patte24, patte50, patte51, patte52, shld3, patte53, patte54, patte60, patte61, patte62, shld12, patte63, patte64, patte40, patte41, patte42, patte43, patte44, patte30, patte31, patte32, patte33, patte34, headport, head,  eye, fg, turretgen, Mpod, flare1, Mpod2, flare2;
+#define TA			// This is a TA script
 
-static-var restore_delay, unitview, Gun_0, Gun_1, firing,fire_1, moving;
-#define	SIG_AIM1	2
-#define	SIG_AIM2	4
-#define	SIG_AIM3	8
-#define SMOKEPIECE1 base
-#include "smokeunit.h"
-#include "exptype.h"
-
-#include "exptype.h"
 #include "sfxtype.h"
-#DEFINE SIG_NUM1	2
-#define signal_primaire 2
-#define signal_secondary 4
-#define signal_tertiary 8
-#define SIG_AIM		4
-#define SIG_AIM2		6
+#include "exptype.h"
+
+piece  Base, Body, gunport, berceau, tourelle, ovale, canon, aiguille,
+       bouche, patte10, patte11, patte12, shld1, patte13, patte14, patte20,
+       terfirea, terfireb, terfirea2, terfirea3, terfirea4, terfirea5, terfirea6, terfirea7,
+       terfirea8, terfireb2, terfireb3, terfireb4, terfireb5, terfireb6, terfireb7, terfireb8,
+       patte21, patte22, shld2, patte23, patte24, patte50, patte51, patte52,
+       shld3, patte53, patte54, patte60, patte61, patte62, shld12, patte63,
+       patte64, patte40, patte41, patte42, patte43, patte44, patte30, patte31,
+       patte32, patte33, patte34, headport, head, eye, fg, turretgen,
+       Mpod, flare1, Mpod2, flare2;
+
+static-var  restore_delay, unitviewer, Static_Var_3, gun_1, gun_2,
+            Static_Var_6, bMoving, Static_Var_8;
+
+// Signal definitions
+#define SIG_AIM				2
+#define SIG_AIM_2			4
+#define SIG_AIM_3			8
 
 
-
-
-#define vitesse_sol_patte <15>
-#define vitesse_retour_patte <60>
-#define vitesse_descente_patte <40>
-#define vitesse_montee_patte <40>
-#define tiers_angle_montee_patte <20>
-
-
-#define scripted_stomp FALSE // ** TRUE/FALSE ** //
-#define total_max_number_of_units 500*10 //supposing unitlimit=500, ten players
-#define stomp_radius [20] //radius around each feet inside which mobile units are stomped
-#define stomp_max_kbot_height 2500000
-#define stomp_max_veh_height  1500000
-
-#define stompxcounter (0 - [20])
-
-
-//Some reference heights:
-
-// 2621439 arm commander
-// 2512790 core commander
-// 4487010 core krogoth
-//11178536 cybran monkeylord
-//13828096 core beelzebub
-
-
-// 1817725 arm cons kbot
-// 1729457 arm peewee
-// 1736707 arm rocko
-// 1716539 arm hammer 
-// 1867775 arm jethro
-// 2025059 arm warrior
-//  991762 arm flea
-
-// 1739980 arm veh cons
-//  868352 arm jeffy
-//  557056 arm flash
-//  856884 arm stumpy
-// 1351679 arm samson
-// 1328742 arm minelayer
-
-// 1865469 arm adv cons kbot
-// 2376559 arm zeus
-// 1852701 arm fido
-//  430225 arm flea
-// 2114530 arm eraser (jammer kbot)
-// 2024837 arm zipper (fast attack kbot)
-// 2359294 arm maverick
-// 1507327 arm marky (mobile radar kbot)
-// 1782100 arm pelican
-// 2513859 arm shooter (sniper kbot
-// 1540094 arm spy
-// 2621439 arm com decoy
-// 1651506 arm fark
-
-// 1654784 arm adv veh cons
-// 1061683 arm triton
-// 1310720 arm bulldog
-// 1108476 arm jammer veh
-// 1753087 arm luger (mobile artillery)
-// 1458175 arm spider
-// 1318909 arm seer (mobile radar veh)
-// 1171456 arm merl
-// 2498556 arm penetrator
-// 1481441 arm phalanx
-// 1334476 arm scarab
-// 1097561 arm panther
-
-
-
-	
-TexasRanger()
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
 	{
-	var unit_ID, relative_xz;
-	while(!moving){sleep 100;}
-	while(TRUE)//g1 d3 g2 d1 g3 d2
-		{
-		turn patte60 to y-axis <-1> speed vitesse_sol_patte;//long
-		turn patte50 to y-axis <45> speed vitesse_sol_patte;
-		turn patte40 to y-axis <-16> speed vitesse_sol_patte;
-		turn patte10 to y-axis <-14> speed vitesse_sol_patte;
-		turn patte21 to z-axis tiers_angle_montee_patte speed vitesse_montee_patte;
-		turn patte22 to z-axis tiers_angle_montee_patte speed vitesse_montee_patte;
-		turn patte23 to z-axis tiers_angle_montee_patte speed vitesse_montee_patte;
-		sleep 500;
-		while(!moving){sleep 100;}
-			
-		turn patte31 to z-axis 0 speed vitesse_descente_patte;
-		turn patte32 to z-axis 0 speed vitesse_descente_patte;
-		turn patte33 to z-axis 0 speed vitesse_descente_patte;
-		turn patte20 to y-axis <45> speed vitesse_retour_patte;//x2
-		sleep 500;
-		#if scripted_stomp
-		for(unit_ID=1;unit_ID<=total_max_number_of_units;++unit_ID)
-			{
-			if (get UNIT_XZ(unit_ID)!=0)
-				{
-				if (get XZ_HYPOT(get UNIT_XZ(unit_ID) - get PIECE_XZ())<stomp_radius)
-					{
-					if (get UNIT_Y(unit_ID) < stomp_radius + get PIECE_Y())
-						{
-						if (((get UNIT_Y(unit_ID)==get GROUND_HEIGHT(get UNIT_XZ(unit_ID))) && get UNIT_HEIGHT(unit_id)<=stomp_max_kbot_height) || ((get UNIT_Y(unit_ID)!=get GROUND_HEIGHT(get UNIT_XZ(unit_ID))) && get UNIT_HEIGHT(unit_id)<=stomp_max_veh_height))
-							{
-							attach-unit unit_ID to 0 - 1;
-							explode  type BITMAPONLY | BITMAP2;
-							}
-						}
-					}
-				}
-			}
-		#endif
-		while(!moving){sleep 100;}
-		
-		
-		turn patte30 to y-axis <-14> speed vitesse_sol_patte;//long
-		turn patte60 to y-axis <-16> speed vitesse_sol_patte;
-		turn patte40 to y-axis <-30> speed vitesse_sol_patte;
-		turn patte10 to y-axis <1> speed vitesse_sol_patte;
-		turn patte51 to z-axis 0 - tiers_angle_montee_patte speed vitesse_montee_patte;
-		turn patte52 to z-axis 0 - tiers_angle_montee_patte speed vitesse_montee_patte;
-		turn patte53 to z-axis 0 - tiers_angle_montee_patte speed vitesse_montee_patte;
-		sleep 500;
-		while(!moving){sleep 100;}
-		
-	
-			
-		
-		turn patte21 to z-axis 0 speed vitesse_descente_patte;
-		turn patte22 to z-axis 0 speed vitesse_descente_patte;
-		turn patte23 to z-axis 0 speed vitesse_descente_patte;
-		turn patte50 to y-axis <-15> speed vitesse_retour_patte;//x2
-		sleep 500;
-		#if scripted_stomp
-		for(unit_ID=1;unit_ID<=total_max_number_of_units;++unit_ID)
-			{
-			if (get UNIT_XZ(unit_ID)!=0)
-				{
-				if (get XZ_HYPOT(get UNIT_XZ(unit_ID) - get PIECE_XZ())<stomp_radius)
-					{
-					if (get UNIT_Y(unit_ID) < stomp_radius + get PIECE_Y())
-						{
-						if (((get UNIT_Y(unit_ID)==get GROUND_HEIGHT(get UNIT_XZ(unit_ID))) && get UNIT_HEIGHT(unit_id)<=stomp_max_kbot_height) || ((get UNIT_Y(unit_ID)!=get GROUND_HEIGHT(get UNIT_XZ(unit_ID))) && get UNIT_HEIGHT(unit_id)<=stomp_max_veh_height))
-							{
-							attach-unit unit_ID to 0 - 1;
-							explode  type BITMAPONLY | BITMAP2;
-							}
-						}
-					}
-				}
-			}
-		#endif
-		while(!moving){sleep 100;}
-		
-		
-		turn patte20 to y-axis <29> speed vitesse_sol_patte;//long
-		turn patte60 to y-axis <-31> speed vitesse_sol_patte;
-		turn patte30 to y-axis <1> speed vitesse_sol_patte;
-		turn patte10 to y-axis <15> speed vitesse_sol_patte;
-		turn patte41 to z-axis tiers_angle_montee_patte speed vitesse_montee_patte;
-		turn patte42 to z-axis tiers_angle_montee_patte speed vitesse_montee_patte;
-		turn patte43 to z-axis tiers_angle_montee_patte speed vitesse_montee_patte;
-		sleep 500;
-		while(!moving){sleep 100;}
-		
-	
-
-		turn patte51 to z-axis 0 speed vitesse_descente_patte;
-		turn patte52 to z-axis 0 speed vitesse_descente_patte;
-		turn patte53 to z-axis 0 speed vitesse_descente_patte;
-		turn patte40 to y-axis <30> speed vitesse_retour_patte;//x2
-		sleep 500;
-		#if scripted_stomp
-		for(unit_ID=1;unit_ID<=total_max_number_of_units;++unit_ID)
-			{
-			if (get UNIT_XZ(unit_ID)!=0)
-				{
-				if (get XZ_HYPOT(get UNIT_XZ(unit_ID) - get PIECE_XZ())<stomp_radius)
-					{
-					if (get UNIT_Y(unit_ID) < stomp_radius + get PIECE_Y())
-						{
-						if (((get UNIT_Y(unit_ID)==get GROUND_HEIGHT(get UNIT_XZ(unit_ID))) && get UNIT_HEIGHT(unit_id)<=stomp_max_kbot_height) || ((get UNIT_Y(unit_ID)!=get GROUND_HEIGHT(get UNIT_XZ(unit_ID))) && get UNIT_HEIGHT(unit_id)<=stomp_max_veh_height))
-							{
-							attach-unit unit_ID to 0 - 1;
-							explode  type BITMAPONLY | BITMAP2;
-							}
-						}
-					}
-				}
-			}
-		#endif
-		while(!moving){sleep 100;}
-		
-		
-		turn patte50 to y-axis <1> speed vitesse_sol_patte;//long
-		turn patte60 to y-axis <-45> speed vitesse_sol_patte;
-		turn patte30 to y-axis <16> speed vitesse_sol_patte;
-		turn patte20 to y-axis <14> speed vitesse_sol_patte;
-		turn patte11 to z-axis 0 - tiers_angle_montee_patte speed vitesse_montee_patte;
-		turn patte12 to z-axis 0 - tiers_angle_montee_patte speed vitesse_montee_patte;
-		turn patte13 to z-axis 0 - tiers_angle_montee_patte speed vitesse_montee_patte;
-		sleep 500;
-		while(!moving){sleep 100;}
-		
-
-		turn patte41 to z-axis 0 speed vitesse_descente_patte;
-		turn patte42 to z-axis 0 speed vitesse_descente_patte;
-		turn patte43 to z-axis 0 speed vitesse_descente_patte;
-		turn patte10 to y-axis <-45> speed vitesse_retour_patte;//x2
-		sleep 500;
-		#if scripted_stomp
-		for(unit_ID=1;unit_ID<=total_max_number_of_units;++unit_ID)
-			{
-			if (get UNIT_XZ(unit_ID)!=0)
-				{
-				if (get XZ_HYPOT(get UNIT_XZ(unit_ID) - get PIECE_XZ())<stomp_radius)
-					{
-					if (get UNIT_Y(unit_ID) < stomp_radius + get PIECE_Y())
-						{
-						if (((get UNIT_Y(unit_ID)==get GROUND_HEIGHT(get UNIT_XZ(unit_ID))) && get UNIT_HEIGHT(unit_id)<=stomp_max_kbot_height) || ((get UNIT_Y(unit_ID)!=get GROUND_HEIGHT(get UNIT_XZ(unit_ID))) && get UNIT_HEIGHT(unit_id)<=stomp_max_veh_height))
-							{
-							attach-unit unit_ID to 0 - 1;
-							explode  type BITMAPONLY | BITMAP2;
-							}
-						}
-					}
-				}
-			}
-		#endif
-		while(!moving){sleep 100;}
-		
-		turn patte40 to y-axis <14> speed vitesse_sol_patte;//long
-		turn patte30 to y-axis <30> speed vitesse_sol_patte;
-		turn patte20 to y-axis <-1> speed vitesse_sol_patte;
-		turn patte50 to y-axis <16> speed vitesse_sol_patte;
-		turn patte61 to z-axis tiers_angle_montee_patte speed vitesse_montee_patte;
-		turn patte62 to z-axis tiers_angle_montee_patte speed vitesse_montee_patte;
-		turn patte63 to z-axis tiers_angle_montee_patte speed vitesse_montee_patte;
-		sleep 500;
-		while(!moving){sleep 100;}
-		
-	
-		
-		turn patte11 to z-axis 0 speed vitesse_descente_patte;
-		turn patte12 to z-axis 0 speed vitesse_descente_patte;
-		turn patte13 to z-axis 0 speed vitesse_descente_patte;
-		turn patte60 to y-axis <15> speed vitesse_retour_patte;//x2
-		sleep 500;
-		#if scripted_stomp
-		for(unit_ID=1;unit_ID<=total_max_number_of_units;++unit_ID)
-			{
-			if (get UNIT_XZ(unit_ID)!=0)
-				{
-				if (get XZ_HYPOT(get UNIT_XZ(unit_ID) - get PIECE_XZ())<stomp_radius)
-					{
-					if (get UNIT_Y(unit_ID) < stomp_radius + get PIECE_Y())
-						{
-						if (((get UNIT_Y(unit_ID)==get GROUND_HEIGHT(get UNIT_XZ(unit_ID))) && get UNIT_HEIGHT(unit_id)<=stomp_max_kbot_height) || ((get UNIT_Y(unit_ID)!=get GROUND_HEIGHT(get UNIT_XZ(unit_ID))) && get UNIT_HEIGHT(unit_id)<=stomp_max_veh_height))
-							{
-							attach-unit unit_ID to 0 - 1;
-							explode  type BITMAPONLY | BITMAP2;
-							}
-						}
-					}
-				}
-			}
-		#endif
-		while(!moving){sleep 100;}
-		
-		
-		turn patte10 to y-axis <-29> speed vitesse_sol_patte;//long
-		turn patte20 to y-axis <-15> speed vitesse_sol_patte;
-		turn patte50 to y-axis <31> speed vitesse_sol_patte;
-		turn patte40 to y-axis <-1> speed vitesse_sol_patte;
-		turn patte31 to z-axis 0 - tiers_angle_montee_patte speed vitesse_montee_patte;
-		turn patte32 to z-axis 0 - tiers_angle_montee_patte speed vitesse_montee_patte;
-		turn patte33 to z-axis 0 - tiers_angle_montee_patte speed vitesse_montee_patte;
-		sleep 500;
-		while(!moving){sleep 100;}
-		
-	
-		turn patte61 to z-axis 0 speed vitesse_descente_patte;
-		turn patte62 to z-axis 0 speed vitesse_descente_patte;
-		turn patte63 to z-axis 0 speed vitesse_descente_patte;
-		turn patte30 to y-axis <-30> speed vitesse_retour_patte;//x2
-		sleep 500;
-		#if scripted_stomp
-		for(unit_ID=1;unit_ID<=total_max_number_of_units;++unit_ID)
-			{
-			if (get UNIT_XZ(unit_ID)!=0)
-				{
-				if (get XZ_HYPOT(get UNIT_XZ(unit_ID) - get PIECE_XZ())<stomp_radius)
-					{
-					if (get UNIT_Y(unit_ID) < stomp_radius + get PIECE_Y())
-						{
-						if (((get UNIT_Y(unit_ID)==get GROUND_HEIGHT(get UNIT_XZ(unit_ID))) && get UNIT_HEIGHT(unit_id)<=stomp_max_kbot_height) || ((get UNIT_Y(unit_ID)!=get GROUND_HEIGHT(get UNIT_XZ(unit_ID))) && get UNIT_HEIGHT(unit_id)<=stomp_max_veh_height))
-							{
-							attach-unit unit_ID to 0 - 1;
-							explode  type BITMAPONLY | BITMAP2;
-							}
-						}
-					}
-				}
-			}
-		#endif
-		while(!moving){sleep 100;}
-		
-		
-		}
-	
-	// A comple leg movement last 6 seconds:
-	// 0.5 seconds to move the leg up
-	// 1 seconds to move the leg front
-	// 0.5 seconds to move the leg down
-	// 4 seconds to move the leg back
-	// So every 1 seconds a new leg must be launched
-	// That falls in the middle of the going front of the previous leg
-	// The rest of the code is not executed but kept as a reference, for it has non-mixed leg movement
-	// The above is the same as below, but with leg movement intermixed
-				
-			
-			turn patte21 to z-axis tiers_angle_montee_patte speed vitesse_montee_patte;
-			turn patte22 to z-axis tiers_angle_montee_patte speed vitesse_montee_patte;
-			turn patte23 to z-axis tiers_angle_montee_patte speed vitesse_montee_patte;
-			wait-for-turn patte23 around z-axis;
-			turn patte20 to y-axis <45> speed vitesse_retour_patte;//x2
-			wait-for-turn patte20 around y-axis;
-			turn patte21 to z-axis 0 speed vitesse_descente_patte;
-			turn patte22 to z-axis 0 speed vitesse_descente_patte;
-			turn patte23 to z-axis 0 speed vitesse_descente_patte;
-			wait-for-turn patte23 around z-axis;
-			turn patte20 to y-axis <-15> speed vitesse_sol_patte;//long
-
-
-
-
-			turn patte51 to z-axis 0 - tiers_angle_montee_patte speed vitesse_montee_patte;
-			turn patte52 to z-axis 0 - tiers_angle_montee_patte speed vitesse_montee_patte;
-			turn patte53 to z-axis 0 - tiers_angle_montee_patte speed vitesse_montee_patte;
-			wait-for-turn patte53 around z-axis;
-			turn patte50 to y-axis <-15> speed vitesse_retour_patte;//x2
-			wait-for-turn patte50 around y-axis;
-			turn patte51 to z-axis 0 speed vitesse_descente_patte;
-			turn patte52 to z-axis 0 speed vitesse_descente_patte;
-			turn patte53 to z-axis 0 speed vitesse_descente_patte;
-			wait-for-turn patte53 around z-axis;
-			turn patte50 to y-axis <45> speed vitesse_sol_patte;//long
-
-
-
-			turn patte41 to z-axis tiers_angle_montee_patte speed vitesse_montee_patte;
-			turn patte42 to z-axis tiers_angle_montee_patte speed vitesse_montee_patte;
-			turn patte43 to z-axis tiers_angle_montee_patte speed vitesse_montee_patte;
-			wait-for-turn patte43 around z-axis;
-			turn patte40 to y-axis <30> speed vitesse_retour_patte;//x2
-			wait-for-turn patte40 around y-axis;
-			turn patte41 to z-axis 0 speed vitesse_descente_patte;
-			turn patte42 to z-axis 0 speed vitesse_descente_patte;
-			turn patte43 to z-axis 0 speed vitesse_descente_patte;
-			wait-for-turn patte43 around z-axis;
-			turn patte40 to y-axis <-30> speed vitesse_sol_patte;//long
-
-
-
-			turn patte11 to z-axis 0 - tiers_angle_montee_patte speed vitesse_montee_patte;
-			turn patte12 to z-axis 0 - tiers_angle_montee_patte speed vitesse_montee_patte;
-			turn patte13 to z-axis 0 - tiers_angle_montee_patte speed vitesse_montee_patte;
-			wait-for-turn patte13 around z-axis;
-			turn patte10 to y-axis <-45> speed vitesse_retour_patte;//x2
-			wait-for-turn patte10 around y-axis;
-			turn patte11 to z-axis 0 speed vitesse_descente_patte;
-			turn patte12 to z-axis 0 speed vitesse_descente_patte;
-			turn patte13 to z-axis 0 speed vitesse_descente_patte;
-			wait-for-turn patte13 around z-axis;
-			turn patte10 to y-axis <15> speed vitesse_sol_patte;//long
-
-
-
-			turn patte61 to z-axis tiers_angle_montee_patte speed vitesse_montee_patte;
-			turn patte62 to z-axis tiers_angle_montee_patte speed vitesse_montee_patte;
-			turn patte63 to z-axis tiers_angle_montee_patte speed vitesse_montee_patte;
-			wait-for-turn patte63 around z-axis;
-			turn patte60 to y-axis <15> speed vitesse_retour_patte;//x2
-			wait-for-turn patte60 around y-axis;
-			turn patte61 to z-axis 0 speed vitesse_descente_patte;
-			turn patte62 to z-axis 0 speed vitesse_descente_patte;
-			turn patte63 to z-axis 0 speed vitesse_descente_patte;
-			wait-for-turn patte63 around z-axis;
-			turn patte60 to y-axis <-45> speed vitesse_sol_patte;//long
-
-
-
-			turn patte31 to z-axis 0 - tiers_angle_montee_patte speed vitesse_montee_patte;
-			turn patte32 to z-axis 0 - tiers_angle_montee_patte speed vitesse_montee_patte;
-			turn patte33 to z-axis 0 - tiers_angle_montee_patte speed vitesse_montee_patte;
-			wait-for-turn patte33 around z-axis;
-			turn patte30 to y-axis <-30> speed vitesse_retour_patte;//x2
-			wait-for-turn patte30 around y-axis;
-			turn patte31 to z-axis 0 speed vitesse_descente_patte;
-			turn patte32 to z-axis 0 speed vitesse_descente_patte;
-			turn patte33 to z-axis 0 speed vitesse_descente_patte;
-			wait-for-turn patte33 around z-axis;
-			turn patte30 to y-axis <30> speed vitesse_sol_patte;//long
-			
+		sleep 400;
 	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from Base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+TexasRanger(Func_Var_1, Func_Var_2)
+{
+	while( !bMoving )
+	{
+		sleep 100;
+	}
+	while( TRUE )
+	{
+		turn patte60 to y-axis <-1.000000> speed <15.000000>;
+		turn patte50 to y-axis <45.000000> speed <15.000000>;
+		turn patte40 to y-axis <-16.000000> speed <15.000000>;
+		turn patte10 to y-axis <-14.000000> speed <15.000000>;
+		turn patte21 to z-axis <20.000000> speed <40.000000>;
+		turn patte22 to z-axis <20.000000> speed <40.000000>;
+		turn patte23 to z-axis <20.000000> speed <40.000000>;
+		sleep 500;
+		while( !bMoving )
+		{
+			sleep 100;
+		}
+		turn patte31 to z-axis <0.000000> speed <40.000000>;
+		turn patte32 to z-axis <0.000000> speed <40.000000>;
+		turn patte33 to z-axis <0.000000> speed <40.000000>;
+		turn patte20 to y-axis <45.000000> speed <60.000000>;
+		sleep 500;
+		while( !bMoving )
+		{
+			sleep 100;
+		}
+		turn patte30 to y-axis <-14.000000> speed <15.000000>;
+		turn patte60 to y-axis <-16.000000> speed <15.000000>;
+		turn patte40 to y-axis <-30.000000> speed <15.000000>;
+		turn patte10 to y-axis <1.000000> speed <15.000000>;
+		turn patte51 to z-axis <0.000000> - <20.000000> speed <40.000000>;
+		turn patte52 to z-axis <0.000000> - <20.000000> speed <40.000000>;
+		turn patte53 to z-axis <0.000000> - <20.000000> speed <40.000000>;
+		sleep 500;
+		while( !bMoving )
+		{
+			sleep 100;
+		}
+		turn patte21 to z-axis <0.000000> speed <40.000000>;
+		turn patte22 to z-axis <0.000000> speed <40.000000>;
+		turn patte23 to z-axis <0.000000> speed <40.000000>;
+		turn patte50 to y-axis <-15.000000> speed <60.000000>;
+		sleep 500;
+		while( !bMoving )
+		{
+			sleep 100;
+		}
+		turn patte20 to y-axis <29.000000> speed <15.000000>;
+		turn patte60 to y-axis <-31.000000> speed <15.000000>;
+		turn patte30 to y-axis <1.000000> speed <15.000000>;
+		turn patte10 to y-axis <15.000000> speed <15.000000>;
+		turn patte41 to z-axis <20.000000> speed <40.000000>;
+		turn patte42 to z-axis <20.000000> speed <40.000000>;
+		turn patte43 to z-axis <20.000000> speed <40.000000>;
+		sleep 500;
+		while( !bMoving )
+		{
+			sleep 100;
+		}
+		turn patte51 to z-axis <0.000000> speed <40.000000>;
+		turn patte52 to z-axis <0.000000> speed <40.000000>;
+		turn patte53 to z-axis <0.000000> speed <40.000000>;
+		turn patte40 to y-axis <30.000000> speed <60.000000>;
+		sleep 500;
+		while( !bMoving )
+		{
+			sleep 100;
+		}
+		turn patte50 to y-axis <1.000000> speed <15.000000>;
+		turn patte60 to y-axis <-45.000000> speed <15.000000>;
+		turn patte30 to y-axis <16.000000> speed <15.000000>;
+		turn patte20 to y-axis <14.000000> speed <15.000000>;
+		turn patte11 to z-axis <0.000000> - <20.000000> speed <40.000000>;
+		turn patte12 to z-axis <0.000000> - <20.000000> speed <40.000000>;
+		turn patte13 to z-axis <0.000000> - <20.000000> speed <40.000000>;
+		sleep 500;
+		while( !bMoving )
+		{
+			sleep 100;
+		}
+		turn patte41 to z-axis <0.000000> speed <40.000000>;
+		turn patte42 to z-axis <0.000000> speed <40.000000>;
+		turn patte43 to z-axis <0.000000> speed <40.000000>;
+		turn patte10 to y-axis <-45.000000> speed <60.000000>;
+		sleep 500;
+		while( !bMoving )
+		{
+			sleep 100;
+		}
+		turn patte40 to y-axis <14.000000> speed <15.000000>;
+		turn patte30 to y-axis <30.000000> speed <15.000000>;
+		turn patte20 to y-axis <-1.000000> speed <15.000000>;
+		turn patte50 to y-axis <16.000000> speed <15.000000>;
+		turn patte61 to z-axis <20.000000> speed <40.000000>;
+		turn patte62 to z-axis <20.000000> speed <40.000000>;
+		turn patte63 to z-axis <20.000000> speed <40.000000>;
+		sleep 500;
+		while( !bMoving )
+		{
+			sleep 100;
+		}
+		turn patte11 to z-axis <0.000000> speed <40.000000>;
+		turn patte12 to z-axis <0.000000> speed <40.000000>;
+		turn patte13 to z-axis <0.000000> speed <40.000000>;
+		turn patte60 to y-axis <15.000000> speed <60.000000>;
+		sleep 500;
+		while( !bMoving )
+		{
+			sleep 100;
+		}
+		turn patte10 to y-axis <-29.000000> speed <15.000000>;
+		turn patte20 to y-axis <-15.000000> speed <15.000000>;
+		turn patte50 to y-axis <31.000000> speed <15.000000>;
+		turn patte40 to y-axis <-1.000000> speed <15.000000>;
+		turn patte31 to z-axis <0.000000> - <20.000000> speed <40.000000>;
+		turn patte32 to z-axis <0.000000> - <20.000000> speed <40.000000>;
+		turn patte33 to z-axis <0.000000> - <20.000000> speed <40.000000>;
+		sleep 500;
+		while( !bMoving )
+		{
+			sleep 100;
+		}
+		turn patte61 to z-axis <0.000000> speed <40.000000>;
+		turn patte62 to z-axis <0.000000> speed <40.000000>;
+		turn patte63 to z-axis <0.000000> speed <40.000000>;
+		turn patte30 to y-axis <-30.000000> speed <60.000000>;
+		sleep 500;
+		while( !bMoving )
+		{
+			sleep 100;
+		}
+	}
+	turn patte21 to z-axis <20.000000> speed <40.000000>;
+	turn patte22 to z-axis <20.000000> speed <40.000000>;
+	turn patte23 to z-axis <20.000000> speed <40.000000>;
+	wait-for-turn patte23 around z-axis;
+	turn patte20 to y-axis <45.000000> speed <60.000000>;
+	wait-for-turn patte20 around y-axis;
+	turn patte21 to z-axis <0.000000> speed <40.000000>;
+	turn patte22 to z-axis <0.000000> speed <40.000000>;
+	turn patte23 to z-axis <0.000000> speed <40.000000>;
+	wait-for-turn patte23 around z-axis;
+	turn patte20 to y-axis <-15.000000> speed <15.000000>;
+	turn patte51 to z-axis <0.000000> - <20.000000> speed <40.000000>;
+	turn patte52 to z-axis <0.000000> - <20.000000> speed <40.000000>;
+	turn patte53 to z-axis <0.000000> - <20.000000> speed <40.000000>;
+	wait-for-turn patte53 around z-axis;
+	turn patte50 to y-axis <-15.000000> speed <60.000000>;
+	wait-for-turn patte50 around y-axis;
+	turn patte51 to z-axis <0.000000> speed <40.000000>;
+	turn patte52 to z-axis <0.000000> speed <40.000000>;
+	turn patte53 to z-axis <0.000000> speed <40.000000>;
+	wait-for-turn patte53 around z-axis;
+	turn patte50 to y-axis <45.000000> speed <15.000000>;
+	turn patte41 to z-axis <20.000000> speed <40.000000>;
+	turn patte42 to z-axis <20.000000> speed <40.000000>;
+	turn patte43 to z-axis <20.000000> speed <40.000000>;
+	wait-for-turn patte43 around z-axis;
+	turn patte40 to y-axis <30.000000> speed <60.000000>;
+	wait-for-turn patte40 around y-axis;
+	turn patte41 to z-axis <0.000000> speed <40.000000>;
+	turn patte42 to z-axis <0.000000> speed <40.000000>;
+	turn patte43 to z-axis <0.000000> speed <40.000000>;
+	wait-for-turn patte43 around z-axis;
+	turn patte40 to y-axis <-30.000000> speed <15.000000>;
+	turn patte11 to z-axis <0.000000> - <20.000000> speed <40.000000>;
+	turn patte12 to z-axis <0.000000> - <20.000000> speed <40.000000>;
+	turn patte13 to z-axis <0.000000> - <20.000000> speed <40.000000>;
+	wait-for-turn patte13 around z-axis;
+	turn patte10 to y-axis <-45.000000> speed <60.000000>;
+	wait-for-turn patte10 around y-axis;
+	turn patte11 to z-axis <0.000000> speed <40.000000>;
+	turn patte12 to z-axis <0.000000> speed <40.000000>;
+	turn patte13 to z-axis <0.000000> speed <40.000000>;
+	wait-for-turn patte13 around z-axis;
+	turn patte10 to y-axis <15.000000> speed <15.000000>;
+	turn patte61 to z-axis <20.000000> speed <40.000000>;
+	turn patte62 to z-axis <20.000000> speed <40.000000>;
+	turn patte63 to z-axis <20.000000> speed <40.000000>;
+	wait-for-turn patte63 around z-axis;
+	turn patte60 to y-axis <15.000000> speed <60.000000>;
+	wait-for-turn patte60 around y-axis;
+	turn patte61 to z-axis <0.000000> speed <40.000000>;
+	turn patte62 to z-axis <0.000000> speed <40.000000>;
+	turn patte63 to z-axis <0.000000> speed <40.000000>;
+	wait-for-turn patte63 around z-axis;
+	turn patte60 to y-axis <-45.000000> speed <15.000000>;
+	turn patte31 to z-axis <0.000000> - <20.000000> speed <40.000000>;
+	turn patte32 to z-axis <0.000000> - <20.000000> speed <40.000000>;
+	turn patte33 to z-axis <0.000000> - <20.000000> speed <40.000000>;
+	wait-for-turn patte33 around z-axis;
+	turn patte30 to y-axis <-30.000000> speed <60.000000>;
+	wait-for-turn patte30 around y-axis;
+	turn patte31 to z-axis <0.000000> speed <40.000000>;
+	turn patte32 to z-axis <0.000000> speed <40.000000>;
+	turn patte33 to z-axis <0.000000> speed <40.000000>;
+	wait-for-turn patte33 around z-axis;
+	turn patte30 to y-axis <30.000000> speed <15.000000>;
+}
 
 StartMoving()
-	{
-	moving=TRUE;
-
-
-	}
+{
+	bMoving = TRUE;
+}
 
 StopMoving()
-	{
-	moving=FALSE;
-		
-
-	}
-	
-
+{
+	bMoving = FALSE;
+}
 
 Create()
-	{
-	unitview = FALSE;
+{
+	unitviewer = FALSE;
 	restore_delay = 2000;
-	moving = FALSE;
-	Gun_0 = 0;
-	Gun_1 = 0;
-	firing = FALSE;
-	Hide flare1;
+	bMoving = FALSE;
+	Static_Var_3 = 0;
+	gun_1 = Base;
+	gun_2 = Base;
+	hide flare1;
 	hide flare2;
 	dont-cache eye;
 	start-script SmokeUnit();
 	start-script TexasRanger();
-	}
+}
 
-SetMaxReloadTime(time)
-	{
-	restore_delay = time * 2;
-	}
+SetMaxReloadTime(Func_Var_1)
+{
+	restore_delay = Func_Var_1 * 2;
+}
 
 RestoreAfterDelay()
-	{
+{
 	sleep restore_delay;
-	turn turretgen to x-axis <0>  speed <90>;
-	turn headport to y-axis <0> speed <90>;
-	turn berceau to y-axis <0>  speed <90>;
-	turn ovale to x-axis <0> speed <90>;
-	return 0;
-	}
+	turn turretgen to x-axis <0.000000> speed <90.000000>;
+	turn headport to y-axis <0.000000> speed <90.000000>;
+	turn berceau to y-axis <0.000000> speed <90.000000>;
+	turn ovale to x-axis <0.000000> speed <90.000000>;
+}
 
 Demo()
-	{
-	unitview = TRUE;
-	}
-
-SweetSpot (piecenum)
-	{
-	piecenum = base;
-	}
-
-QueryPrimary (piecenum)
 {
-	IF (gun_1 == 0 )
-			{
-			piecenum = terfirea;
-			RETURN ( 0 );
-			}
-		IF (gun_1 == 1 )
-			{
-			piecenum = terfirea2;
-			RETURN ( 0 );
-			}
-		IF (gun_1 == 2 )
-			{
-			piecenum = terfirea3;
-			RETURN ( 0 );
-			}
-		IF (gun_1 == 3 )
-			{
-			piecenum = terfirea4;
-			RETURN ( 0 );
-			}
-		IF (gun_1 == 4 )
-			{
-			piecenum = terfireb;
-			RETURN ( 0 );
-			}
-		IF (gun_1 == 5 )
-			{
-			piecenum = terfireb2;
-			RETURN ( 0 );
-			}
-		IF (gun_1 == 6 )
-			{
-			piecenum = terfireb3;
-			RETURN ( 0 );
-			}
-		IF (gun_1 == 7 )
-			{
-			piecenum = terfireb4;
-			RETURN ( 0 );
-			}
-		IF (gun_1 == 8 )
-			{
-			piecenum = terfirea5;
-			RETURN ( 0 );
-			}
-		IF (gun_1 == 9 )
-			{
-			piecenum = terfirea6;
-			RETURN ( 0 );
-			}
-		IF (gun_1 == 10 )
-			{
-			piecenum = terfirea7;
-			RETURN ( 0 );
-			}
-		IF (gun_1 == 11 )
-			{
-			piecenum = terfirea8;
-			RETURN ( 0 );
-			}
-		IF (gun_1 == 12 )
-			{
-			piecenum = terfireb5;
-			RETURN ( 0 );
-			}
-		IF (gun_1 == 13 )
-			{
-			piecenum = terfireb6;
-			RETURN ( 0 );
-			}
-		IF (gun_1 == 14 )
-			{
-			piecenum = terfireb7;
-			RETURN ( 0 );
-			}
-		IF (gun_1 == 15 )
-			{
-			piecenum = terfireb8;
-			RETURN ( 0 );
-			}
-	}
-AimFromPrimary (piecenum)
+	unitviewer = TRUE;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = Base;
+}
+
+QueryPrimary(piecenum)
+{
+	if( gun_1 == 0 )
 	{
-	piecenum = turretgen;
+		piecenum = terfirea;
+		return (0);
 	}
+	if( gun_1 == 1 )
+	{
+		piecenum = terfirea2;
+		return (0);
+	}
+	if( gun_1 == 2 )
+	{
+		piecenum = terfirea3;
+		return (0);
+	}
+	if( gun_1 == 3 )
+	{
+		piecenum = terfirea4;
+		return (0);
+	}
+	if( gun_1 == 4 )
+	{
+		piecenum = terfireb;
+		return (0);
+	}
+	if( gun_1 == 5 )
+	{
+		piecenum = terfireb2;
+		return (0);
+	}
+	if( gun_1 == 6 )
+	{
+		piecenum = terfireb3;
+		return (0);
+	}
+	if( gun_1 == 7 )
+	{
+		piecenum = terfireb4;
+		return (0);
+	}
+	if( gun_1 == 8 )
+	{
+		piecenum = terfirea5;
+		return (0);
+	}
+	if( gun_1 == 9 )
+	{
+		piecenum = terfirea6;
+		return (0);
+	}
+	if( gun_1 == 10 )
+	{
+		piecenum = terfirea7;
+		return (0);
+	}
+	if( gun_1 == 11 )
+	{
+		piecenum = terfirea8;
+		return (0);
+	}
+	if( gun_1 == 12 )
+	{
+		piecenum = terfireb5;
+		return (0);
+	}
+	if( gun_1 == 13 )
+	{
+		piecenum = terfireb6;
+		return (0);
+	}
+	if( gun_1 == 14 )
+	{
+		piecenum = terfireb7;
+		return (0);
+	}
+	if( gun_1 == 15 )
+	{
+		piecenum = terfireb8;
+		return (0);
+	}
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = turretgen;
+}
 
 AimPrimary(heading, pitch)
-	{
-	signal SIG_AIM1;
-	set-signal-mask SIG_AIM1;
-	turn headport to y-axis heading speed <100>;
-	Turn turretgen to x-axis (0 - pitch) speed <100>;
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	turn headport to y-axis heading speed <100.000000>;
+	turn turretgen to x-axis <0.000000> - pitch speed <100.000000>;
 	wait-for-turn turretgen around x-axis;
 	sleep 100;
 	start-script RestoreAfterDelay();
-	return(TRUE);
-	}
+	return (1);
+}
 
 FirePrimary()
-
+{
+	if( gun_1 == 0 )
 	{
-		IF (gun_1 == 0 )
-			{
-			gun_1 = 1;
-				show flare2;
-	sleep 150;
-	hide flare2;
-			RETURN ( 0 );
-			}
-		IF (gun_1 == 1 )
-			{
-			gun_1 = 2;
-				show flare2;
-	sleep 150;
-	hide flare2;
-			RETURN ( 0 );
-			}
-		IF (gun_1 == 2 )
-			{
-			gun_1 = 3;
-				show flare2;
-	sleep 150;
-	hide flare2;
-			RETURN ( 0 );
-			}
-		IF (gun_1 == 3 )
-			{
-			gun_1 = 4;
-				show flare2;
-	sleep 150;
-	hide flare2;
-			fire_1 = 1;
-			RETURN ( 0 );
-			}
-		IF (gun_1 == 4 )
-			{
-			gun_1 = 5;
-				show flare1;
-	sleep 150;
-	hide flare1;
-			RETURN ( 0 );
-			}
-		IF (gun_1 == 5 )
-			{
-			gun_1 = 6;
-				show flare1;
-	sleep 150;
-	hide flare1;
-			RETURN ( 0 );
-			}
-		IF (gun_1 == 6 )
-			{
-			gun_1 = 7;
-				show flare1;
-	sleep 150;
-	hide flare1;
-			RETURN ( 0 );
-			}
-		IF (gun_1 == 7 )
-			{
-			gun_1 = 8;
-				show flare1;
-	sleep 150;
-	hide flare1;
-			fire_1 = 1;
-			RETURN ( 0 );
-			}
-		IF (gun_1 == 8 )
-			{
-			gun_1 = 9;
-				show flare2;
-	sleep 150;
-	hide flare2;
-			RETURN ( 0 );
-			}
-		IF (gun_1 == 9 )
-			{
-			gun_1 = 10;
-				show flare2;
-	sleep 150;
-	hide flare2;
-			RETURN ( 0 );
-			}
-		IF (gun_1 == 10 )
-			{
-			gun_1 = 11;
-				show flare2;
-	sleep 150;
-	hide flare2;
-			RETURN ( 0 );
-			}
-		IF (gun_1 == 11 )
-			{
-			gun_1 = 12;
-				show flare2;
-	sleep 150;
-	hide flare2;
-			fire_1 = 1;
-			RETURN ( 0 );
-			}
-		IF (gun_1 == 12 )
-			{
-			gun_1 = 13;
-				show flare1;
-	sleep 150;
-	hide flare1;
-			RETURN ( 0 );
-			}
-		IF (gun_1 == 13 )
-			{
-			gun_1 = 14;
-				show flare1;
-	sleep 150;
-	hide flare1;
-			RETURN ( 0 );
-			}
-		IF (gun_1 == 14 )
-			{
-			gun_1 = 15;
-				show flare1;
-	sleep 150;
-	hide flare1;
-			RETURN ( 0 );
-			}
-		IF (gun_1 == 15 )
-			{
-			gun_1 = 0;
-				show flare1;
-	sleep 150;
-	hide flare1;
-			fire_1 = 1;
-			RETURN ( 0 );
-			}
+		gun_1 = Body;
+		show flare2;
+		sleep 150;
+		hide flare2;
+		return (0);
 	}
-
-
-AimFromSecondary(piece_name)
+	if( gun_1 == 1 )
 	{
-	piece_name=tourelle;
+		gun_1 = gunport;
+		show flare2;
+		sleep 150;
+		hide flare2;
+		return (0);
 	}
-
-
-AimSecondary(heading,pitch)
+	if( gun_1 == 2 )
 	{
-	signal SIG_AIM3;//kill any other self
-	set-signal-mask SIG_AIM3;//be killeable
-	while(firing)
-		{
+		gun_1 = berceau;
+		show flare2;
+		sleep 150;
+		hide flare2;
+		return (0);
+	}
+	if( gun_1 == 3 )
+	{
+		gun_1 = tourelle;
+		show flare2;
+		sleep 150;
+		hide flare2;
+		Static_Var_6 = 1;
+		return (0);
+	}
+	if( gun_1 == 4 )
+	{
+		gun_1 = ovale;
+		show flare1;
+		sleep 150;
+		hide flare1;
+		return (0);
+	}
+	if( gun_1 == 5 )
+	{
+		gun_1 = canon;
+		show flare1;
+		sleep 150;
+		hide flare1;
+		return (0);
+	}
+	if( gun_1 == 6 )
+	{
+		gun_1 = aiguille;
+		show flare1;
+		sleep 150;
+		hide flare1;
+		return (0);
+	}
+	if( gun_1 == 7 )
+	{
+		gun_1 = bouche;
+		show flare1;
+		sleep 150;
+		hide flare1;
+		Static_Var_6 = 1;
+		return (0);
+	}
+	if( gun_1 == 8 )
+	{
+		gun_1 = patte10;
+		show flare2;
+		sleep 150;
+		hide flare2;
+		return (0);
+	}
+	if( gun_1 == 9 )
+	{
+		gun_1 = patte11;
+		show flare2;
+		sleep 150;
+		hide flare2;
+		return (0);
+	}
+	if( gun_1 == 10 )
+	{
+		gun_1 = patte12;
+		show flare2;
+		sleep 150;
+		hide flare2;
+		return (0);
+	}
+	if( gun_1 == 11 )
+	{
+		gun_1 = shld1;
+		show flare2;
+		sleep 150;
+		hide flare2;
+		Static_Var_6 = 1;
+		return (0);
+	}
+	if( gun_1 == 12 )
+	{
+		gun_1 = patte13;
+		show flare1;
+		sleep 150;
+		hide flare1;
+		return (0);
+	}
+	if( gun_1 == 13 )
+	{
+		gun_1 = patte14;
+		show flare1;
+		sleep 150;
+		hide flare1;
+		return (0);
+	}
+	if( gun_1 == 14 )
+	{
+		gun_1 = patte20;
+		show flare1;
+		sleep 150;
+		hide flare1;
+		return (0);
+	}
+	if( gun_1 == 15 )
+	{
+		gun_1 = Base;
+		show flare1;
+		sleep 150;
+		hide flare1;
+		Static_Var_6 = 1;
+		return (0);
+	}
+}
+
+AimFromSecondary(piecenum)
+{
+	piecenum = tourelle;
+}
+
+AimSecondary(heading, pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	while( gun_2 )
+	{
 		sleep 200;
-		}
-	while( pitch >= <40> AND pitch <= <320> )
-		{
+	}
+	while( pitch >= 7280 AND pitch <= 58240 )
+	{
 		sleep 25;
-		}
-	turn berceau to y-axis (heading - 32500)  speed <60>;
-
+	}
+	turn berceau to y-axis heading - <178.571429> speed <60.000000>;
 	wait-for-turn berceau around y-axis;
 	wait-for-turn ovale around x-axis;
 	sleep 360;
-	return(TRUE);
-	}
+	return (1);
+}
 
-
-QuerySecondary(piece_name)
-	{
-	piece_name=bouche;
-	}
-
+QuerySecondary(piecenum)
+{
+	piecenum = bouche;
+}
 
 FireSecondary()
-	{
-	firing=TRUE;
+{
+	gun_2 = Body;
 	dont-cache canon;
-	spin canon around z-axis speed <180> accelerate <360>;
-	move canon to z-axis [5] speed [150];
+	spin canon around z-axis speed <180.000000> accelerate <360.000000>;
+	move canon to z-axis [5.000000] speed [150.000000];
 	explode bouche type BITMAPONLY | BITMAP5;
 	sleep 500;
-	stop-spin canon around z-axis decelerate <20>;
-	move canon to z-axis [0] speed [14];
-	
+	stop-spin canon around z-axis decelerate <20.000000>;
+	move canon to z-axis [0.000000] speed [14.000000];
 	cache canon;
-	firing=FALSE;
-	return;
+	gun_2 = Base;
+}
+
+AimFromTertiary(piecenum)
+{
+	piecenum = Body;
+}
+
+AimTertiary(heading, pitch)
+{
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
+	if( get ACTIVATION )
+	{
+		return (1);
 	}
+	if( !get ACTIVATION )
+	{
+		return (0);
+	}
+}
+
+QueryTertiary(piecenum)
+{
+	piecenum = Body;
+}
+
+FireTertiary(Func_Var_1)
+{
+	return (Static_Var_8);
+}
 
 Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
 	{
-	if (severity <= 25)
-		{
 		corpsetype = 1;
-		explode Base type	BITMAPONLY | BITMAP1;
-		explode Body type	BITMAPONLY | BITMAP1;
-		explode gunport type	BITMAPONLY | BITMAP1;
-		explode berceau type	BITMAPONLY | BITMAP1;
-		explode tourelle type	BITMAPONLY | BITMAP1;
-		explode ovale type	BITMAPONLY | BITMAP1;
-		explode canon type	BITMAPONLY | BITMAP1;
-		explode aiguille type	BITMAPONLY | BITMAP1;
-		explode bouche type	BITMAPONLY | BITMAP1;
-		explode patte10 type	BITMAPONLY | BITMAP1;
-		explode patte11 type	BITMAPONLY | BITMAP1;
-		explode patte12 type	BITMAPONLY | BITMAP1;
-		explode shld1 type	BITMAPONLY | BITMAP1;
-		explode patte13 type	BITMAPONLY | BITMAP1;
-		explode patte14 type	BITMAPONLY | BITMAP1;
-		explode patte20 type	BITMAPONLY | BITMAP1;
-		explode patte21 type	BITMAPONLY | BITMAP1;
-		explode patte22 type	BITMAPONLY | BITMAP1;
-		explode shld2 type	BITMAPONLY | BITMAP1;
-		explode patte23 type	BITMAPONLY | BITMAP1;
-		explode patte24 type	BITMAPONLY | BITMAP1;
-		explode patte50 type	BITMAPONLY | BITMAP1;
-		explode patte51 type	BITMAPONLY | BITMAP1;
-		explode patte52 type	BITMAPONLY | BITMAP1;
-		explode shld3 type	BITMAPONLY | BITMAP1;
-		explode patte53 type	BITMAPONLY | BITMAP1;
-		explode patte54 type	BITMAPONLY | BITMAP1;
-		explode patte60 type	BITMAPONLY | BITMAP1;
-		explode patte61 type	BITMAPONLY | BITMAP1;
-		explode patte62 type	BITMAPONLY | BITMAP1;
-		explode shld12 type	BITMAPONLY | BITMAP1;
-		explode patte63 type	BITMAPONLY | BITMAP1;
-		explode patte64 type	BITMAPONLY | BITMAP1;
-		explode patte40 type	BITMAPONLY | BITMAP1;
-		explode patte41 type	BITMAPONLY | BITMAP1;
-		explode patte42 type	BITMAPONLY | BITMAP1;
-		explode patte43 type	BITMAPONLY | BITMAP1;
-		explode patte44 type	BITMAPONLY | BITMAP1;
-		explode patte30 type	BITMAPONLY | BITMAP1;
-		explode patte31 type	BITMAPONLY | BITMAP1;
-		explode patte32 type	BITMAPONLY | BITMAP1;
-		explode patte33 type	BITMAPONLY | BITMAP1;
-		explode patte34 type	BITMAPONLY | BITMAP1;
-		explode headport type	BITMAPONLY | BITMAP1;
-		explode head type	BITMAPONLY | BITMAP1;
-		explode head type	BITMAPONLY | BITMAP1;
-		explode head type	BITMAPONLY | BITMAP1;
-		explode head type	BITMAPONLY | BITMAP1;
-		explode head type	BITMAPONLY | BITMAP1;
-		explode head type	BITMAPONLY | BITMAP1;
-		explode head type	BITMAPONLY | BITMAP1;
-		explode head type	BITMAPONLY | BITMAP1;
-		explode head type	BITMAPONLY | BITMAP1;
-		explode head type	BITMAPONLY | BITMAP1;
-		explode eye type	BITMAPONLY | BITMAP1;
-		explode fg type	BITMAPONLY | BITMAP1;
-		explode turretgen type	BITMAPONLY | BITMAP1;
-		explode Mpod type	BITMAPONLY | BITMAP1;
-		explode flare1 type	BITMAPONLY | BITMAP1;
-		explode Mpod2 type	BITMAPONLY | BITMAP1;
-		explode flare2 type	BITMAPONLY | BITMAP1;
-		return(0);
-		}
-	if (severity <= 50)
-		{
-		corpsetype = 2;
-		explode Base type	SHATTER | BITMAP4;
-		explode Body type	SHATTER | BITMAP4;
-		explode gunport type	SHATTER | BITMAP4;
-		explode berceau type	SHATTER | BITMAP4;
-		explode tourelle type	SHATTER | BITMAP4;
-		explode ovale type	SHATTER | BITMAP4;
-		explode canon type	SHATTER | BITMAP4;
-		explode aiguille type	SHATTER | BITMAP4;
-		explode bouche type	SHATTER | BITMAP4;
-		explode patte10 type	SHATTER | BITMAP4;
-		explode patte11 type	SHATTER | BITMAP4;
-		explode patte12 type	SHATTER | BITMAP4;
-		explode shld1 type	SHATTER | BITMAP4;
-		explode patte13 type	SHATTER | BITMAP4;
-		explode patte14 type	SHATTER | BITMAP4;
-		explode patte20 type	SHATTER | BITMAP4;
-		explode patte21 type	SHATTER | BITMAP4;
-		explode patte22 type	SHATTER | BITMAP4;
-		explode shld2 type	SHATTER | BITMAP4;
-		explode patte23 type	SHATTER | BITMAP4;
-		explode patte24 type	SHATTER | BITMAP4;
-		explode patte50 type	SHATTER | BITMAP4;
-		explode patte51 type	SHATTER | BITMAP4;
-		explode patte52 type	SHATTER | BITMAP4;
-		explode shld3 type	SHATTER | BITMAP4;
-		explode patte53 type	SHATTER | BITMAP4;
-		explode patte54 type	SHATTER | BITMAP4;
-		explode patte60 type	SHATTER | BITMAP4;
-		explode patte61 type	SHATTER | BITMAP4;
-		explode patte62 type	SHATTER | BITMAP4;
-		explode shld12 type	SHATTER | BITMAP4;
-		explode patte63 type	SHATTER | BITMAP4;
-		explode patte64 type	SHATTER | BITMAP4;
-		explode patte40 type	SHATTER | BITMAP4;
-		explode patte41 type	SHATTER | BITMAP4;
-		explode patte42 type	SHATTER | BITMAP4;
-		explode patte43 type	SHATTER | BITMAP4;
-		explode patte44 type	SHATTER | BITMAP4;
-		explode patte30 type	SHATTER | BITMAP4;
-		explode patte31 type	SHATTER | BITMAP4;
-		explode patte32 type	SHATTER | BITMAP4;
-		explode patte33 type	SHATTER | BITMAP4;
-		explode patte34 type	SHATTER | BITMAP4;
-		explode headport type	SHATTER | BITMAP4;
-		explode head type	SHATTER | BITMAP4;
-		explode head type	SHATTER | BITMAP4;
-		explode head type	SHATTER | BITMAP4;
-		explode head type	SHATTER | BITMAP4;
-		explode head type	SHATTER | BITMAP4;
-		explode head type	SHATTER | BITMAP4;
-		explode head type	SHATTER | BITMAP4;
-		explode head type	SHATTER | BITMAP4;
-		explode head type	SHATTER | BITMAP4;
-		explode head type	SHATTER | BITMAP4;
-		explode eye type	SHATTER | BITMAP4;
-		explode fg type	SHATTER | BITMAP4;
-		explode turretgen type	SHATTER | BITMAP4;
-		explode Mpod type	SHATTER | BITMAP4;
-		explode flare1 type	SHATTER | BITMAP4;
-		explode Mpod2 type	SHATTER | BITMAP4;
-		explode flare2 type	SHATTER | BITMAP4;
-		return(0);
-		}
-	if (severity <= 99)
-		{
-		corpsetype = 3;
-		explode Base type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode Body type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode gunport type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode berceau type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode tourelle type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode ovale type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode canon type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode aiguille type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode bouche type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode patte10 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode patte11 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode patte12 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode shld1 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode patte13 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode patte14 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode patte20 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode patte21 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode patte22 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode shld2 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode patte23 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode patte24 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode patte50 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode patte51 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode patte52 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode shld3 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode patte53 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode patte54 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode patte60 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode patte61 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode patte62 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode shld12 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode patte63 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode patte64 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode patte40 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode patte41 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode patte42 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode patte43 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode patte44 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode patte30 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode patte31 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode patte32 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode patte33 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode patte34 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode headport type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode head type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode head type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode head type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode head type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode head type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode head type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode head type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode head type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode head type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode head type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode eye type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode fg type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode turretgen type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode Mpod type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode flare1 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode Mpod2 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode flare2 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		return(0);
-		}
-	corpsetype = 3;
-	explode Base type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode Body type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode gunport type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode berceau type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode tourelle type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode ovale type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode canon type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode aiguille type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode bouche type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode patte10 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode patte11 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode patte12 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode shld1 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode patte13 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode patte14 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode patte20 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode patte21 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode patte22 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode shld2 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode patte23 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode patte24 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode patte50 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode patte51 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode patte52 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode shld3 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode patte53 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode patte54 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode patte60 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode patte61 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode patte62 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode shld12 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode patte63 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode patte64 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode patte40 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode patte41 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode patte42 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode patte43 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode patte44 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode patte30 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode patte31 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode patte32 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode patte33 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode patte34 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode headport type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode head type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode head type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode head type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode head type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode head type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode head type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode head type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode head type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode head type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode head type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode eye type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode fg type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode turretgen type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode Mpod type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode flare1 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode Mpod2 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode flare2 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	return(0);
+		explode Base type BITMAPONLY | BITMAP1;
+		explode Body type BITMAPONLY | BITMAP1;
+		explode gunport type BITMAPONLY | BITMAP1;
+		explode berceau type BITMAPONLY | BITMAP1;
+		explode tourelle type BITMAPONLY | BITMAP1;
+		explode ovale type BITMAPONLY | BITMAP1;
+		explode canon type BITMAPONLY | BITMAP1;
+		explode aiguille type BITMAPONLY | BITMAP1;
+		explode bouche type BITMAPONLY | BITMAP1;
+		explode patte10 type BITMAPONLY | BITMAP1;
+		explode patte11 type BITMAPONLY | BITMAP1;
+		explode patte12 type BITMAPONLY | BITMAP1;
+		explode shld1 type BITMAPONLY | BITMAP1;
+		explode patte13 type BITMAPONLY | BITMAP1;
+		explode patte14 type BITMAPONLY | BITMAP1;
+		explode patte20 type BITMAPONLY | BITMAP1;
+		explode patte21 type BITMAPONLY | BITMAP1;
+		explode patte22 type BITMAPONLY | BITMAP1;
+		explode shld2 type BITMAPONLY | BITMAP1;
+		explode patte23 type BITMAPONLY | BITMAP1;
+		explode patte24 type BITMAPONLY | BITMAP1;
+		explode patte50 type BITMAPONLY | BITMAP1;
+		explode patte51 type BITMAPONLY | BITMAP1;
+		explode patte52 type BITMAPONLY | BITMAP1;
+		explode shld3 type BITMAPONLY | BITMAP1;
+		explode patte53 type BITMAPONLY | BITMAP1;
+		explode patte54 type BITMAPONLY | BITMAP1;
+		explode patte60 type BITMAPONLY | BITMAP1;
+		explode patte61 type BITMAPONLY | BITMAP1;
+		explode patte62 type BITMAPONLY | BITMAP1;
+		explode shld12 type BITMAPONLY | BITMAP1;
+		explode patte63 type BITMAPONLY | BITMAP1;
+		explode patte64 type BITMAPONLY | BITMAP1;
+		explode patte40 type BITMAPONLY | BITMAP1;
+		explode patte41 type BITMAPONLY | BITMAP1;
+		explode patte42 type BITMAPONLY | BITMAP1;
+		explode patte43 type BITMAPONLY | BITMAP1;
+		explode patte44 type BITMAPONLY | BITMAP1;
+		explode patte30 type BITMAPONLY | BITMAP1;
+		explode patte31 type BITMAPONLY | BITMAP1;
+		explode patte32 type BITMAPONLY | BITMAP1;
+		explode patte33 type BITMAPONLY | BITMAP1;
+		explode patte34 type BITMAPONLY | BITMAP1;
+		explode headport type BITMAPONLY | BITMAP1;
+		explode head type BITMAPONLY | BITMAP1;
+		explode head type BITMAPONLY | BITMAP1;
+		explode head type BITMAPONLY | BITMAP1;
+		explode head type BITMAPONLY | BITMAP1;
+		explode head type BITMAPONLY | BITMAP1;
+		explode head type BITMAPONLY | BITMAP1;
+		explode head type BITMAPONLY | BITMAP1;
+		explode head type BITMAPONLY | BITMAP1;
+		explode head type BITMAPONLY | BITMAP1;
+		explode head type BITMAPONLY | BITMAP1;
+		explode eye type BITMAPONLY | BITMAP1;
+		explode fg type BITMAPONLY | BITMAP1;
+		explode turretgen type BITMAPONLY | BITMAP1;
+		explode Mpod type BITMAPONLY | BITMAP1;
+		explode flare1 type BITMAPONLY | BITMAP1;
+		explode Mpod2 type BITMAPONLY | BITMAP1;
+		explode flare2 type BITMAPONLY | BITMAP1;
+		return (corpsetype);
 	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode Base type SHATTER | BITMAP4;
+		explode Body type SHATTER | BITMAP4;
+		explode gunport type SHATTER | BITMAP4;
+		explode berceau type SHATTER | BITMAP4;
+		explode tourelle type SHATTER | BITMAP4;
+		explode ovale type SHATTER | BITMAP4;
+		explode canon type SHATTER | BITMAP4;
+		explode aiguille type SHATTER | BITMAP4;
+		explode bouche type SHATTER | BITMAP4;
+		explode patte10 type SHATTER | BITMAP4;
+		explode patte11 type SHATTER | BITMAP4;
+		explode patte12 type SHATTER | BITMAP4;
+		explode shld1 type SHATTER | BITMAP4;
+		explode patte13 type SHATTER | BITMAP4;
+		explode patte14 type SHATTER | BITMAP4;
+		explode patte20 type SHATTER | BITMAP4;
+		explode patte21 type SHATTER | BITMAP4;
+		explode patte22 type SHATTER | BITMAP4;
+		explode shld2 type SHATTER | BITMAP4;
+		explode patte23 type SHATTER | BITMAP4;
+		explode patte24 type SHATTER | BITMAP4;
+		explode patte50 type SHATTER | BITMAP4;
+		explode patte51 type SHATTER | BITMAP4;
+		explode patte52 type SHATTER | BITMAP4;
+		explode shld3 type SHATTER | BITMAP4;
+		explode patte53 type SHATTER | BITMAP4;
+		explode patte54 type SHATTER | BITMAP4;
+		explode patte60 type SHATTER | BITMAP4;
+		explode patte61 type SHATTER | BITMAP4;
+		explode patte62 type SHATTER | BITMAP4;
+		explode shld12 type SHATTER | BITMAP4;
+		explode patte63 type SHATTER | BITMAP4;
+		explode patte64 type SHATTER | BITMAP4;
+		explode patte40 type SHATTER | BITMAP4;
+		explode patte41 type SHATTER | BITMAP4;
+		explode patte42 type SHATTER | BITMAP4;
+		explode patte43 type SHATTER | BITMAP4;
+		explode patte44 type SHATTER | BITMAP4;
+		explode patte30 type SHATTER | BITMAP4;
+		explode patte31 type SHATTER | BITMAP4;
+		explode patte32 type SHATTER | BITMAP4;
+		explode patte33 type SHATTER | BITMAP4;
+		explode patte34 type SHATTER | BITMAP4;
+		explode headport type SHATTER | BITMAP4;
+		explode head type SHATTER | BITMAP4;
+		explode head type SHATTER | BITMAP4;
+		explode head type SHATTER | BITMAP4;
+		explode head type SHATTER | BITMAP4;
+		explode head type SHATTER | BITMAP4;
+		explode head type SHATTER | BITMAP4;
+		explode head type SHATTER | BITMAP4;
+		explode head type SHATTER | BITMAP4;
+		explode head type SHATTER | BITMAP4;
+		explode head type SHATTER | BITMAP4;
+		explode eye type SHATTER | BITMAP4;
+		explode fg type SHATTER | BITMAP4;
+		explode turretgen type SHATTER | BITMAP4;
+		explode Mpod type SHATTER | BITMAP4;
+		explode flare1 type SHATTER | BITMAP4;
+		explode Mpod2 type SHATTER | BITMAP4;
+		explode flare2 type SHATTER | BITMAP4;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode Base type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode Body type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode gunport type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode berceau type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode tourelle type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode ovale type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode canon type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode aiguille type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode bouche type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode patte10 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode patte11 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode patte12 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode shld1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode patte13 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode patte14 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode patte20 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode patte21 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode patte22 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode shld2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode patte23 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode patte24 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode patte50 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode patte51 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode patte52 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode shld3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode patte53 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode patte54 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode patte60 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode patte61 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode patte62 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode shld12 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode patte63 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode patte64 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode patte40 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode patte41 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode patte42 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode patte43 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode patte44 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode patte30 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode patte31 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode patte32 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode patte33 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode patte34 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode headport type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode head type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode head type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode head type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode head type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode head type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode head type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode head type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode head type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode head type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode head type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode eye type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode fg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode turretgen type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode Mpod type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode flare1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode Mpod2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode flare2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode Base type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode Body type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode gunport type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode berceau type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode tourelle type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode ovale type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode canon type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode aiguille type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode bouche type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode patte10 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode patte11 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode patte12 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode shld1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode patte13 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode patte14 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode patte20 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode patte21 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode patte22 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode shld2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode patte23 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode patte24 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode patte50 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode patte51 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode patte52 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode shld3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode patte53 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode patte54 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode patte60 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode patte61 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode patte62 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode shld12 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode patte63 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode patte64 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode patte40 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode patte41 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode patte42 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode patte43 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode patte44 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode patte30 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode patte31 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode patte32 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode patte33 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode patte34 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode headport type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode head type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode head type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode head type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode head type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode head type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode head type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode head type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode head type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode head type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode head type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode eye type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode fg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode turretgen type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode Mpod type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode flare1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode Mpod2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode flare2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	return (corpsetype);
+}

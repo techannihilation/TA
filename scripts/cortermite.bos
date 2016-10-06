@@ -38,8 +38,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		}
 		sleep sleeptime;
 	}
-	return (0);
-	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
 }
 
 walk2()
@@ -48,13 +46,13 @@ walk2()
 	{
 		turn sect2 to y-axis <0.000000> speed <50.000000>;
 		turn sect3 to y-axis <0.000000> speed <50.000000>;
-		turn leg1 to y-axis <43.796703> now;
+		turn leg1 to y-axis <43.791209> now;
 		turn leg1 to y-axis <0.000000> speed <218.000000>;
-		turn leg1 to z-axis <0.598901> now;
+		turn leg1 to z-axis <0.593407> now;
 		turn leg1 to z-axis <0.000000> speed <3.000000>;
 		turn leg2 to z-axis <0.000000> now;
 		turn leg2 to z-axis <31.005495> speed <155.000000>;
-		turn leg3 to y-axis <34.653846> now;
+		turn leg3 to y-axis <34.648352> now;
 		turn leg3 to y-axis <34.005495> speed <3.000000>;
 		turn leg3 to z-axis <31.626374> now;
 		turn leg3 to z-axis <0.000000> speed <155.000000>;
@@ -62,7 +60,7 @@ walk2()
 		turn leg4 to y-axis <-40.005495> speed <0.000000>;
 		turn leg4 to z-axis <-31.016484> now;
 		turn leg4 to z-axis <0.000000> speed <152.000000>;
-		turn leg5 to y-axis <-37.098901> now;
+		turn leg5 to y-axis <-37.093407> now;
 		turn leg5 to y-axis <0.000000> speed <185.000000>;
 		turn leg5 to z-axis <0.000000> now;
 		turn leg5 to z-axis <0.000000> speed <0.000000>;
@@ -89,7 +87,7 @@ walk2()
 	{
 		turn sect2 to y-axis <0.000000> speed <50.000000>;
 		turn sect3 to y-axis <0.000000> speed <50.000000>;
-		turn leg1 to y-axis <55.010989> speed <279.000000>;
+		turn leg1 to y-axis <55.005495> speed <279.000000>;
 		turn leg1 to z-axis <31.005495> speed <3.000000>;
 		turn leg2 to y-axis <34.005495> speed <0.000000>;
 		turn leg2 to z-axis <0.000000> speed <152.000000>;
@@ -114,7 +112,7 @@ walk2()
 	turn leg5 to y-axis <-37.005495> speed <27.000000>;
 	turn leg5 to z-axis <0.000000> speed <155.000000>;
 	turn leg6 to y-axis <0.000000> speed <15.000000>;
-	turn leg6 to z-axis <-45.010989> speed <237.000000>;
+	turn leg6 to z-axis <-45.005495> speed <237.000000>;
 	sleep 200;
 }
 
@@ -305,7 +303,7 @@ Killed(severity, corpsetype)
 		explode leg5 type FALL | EXPLODE_ON_HIT | BITMAP3;
 		explode leg6 type BITMAPONLY | BITMAP5;
 		explode turretholder type BITMAPONLY | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -326,7 +324,7 @@ Killed(severity, corpsetype)
 		explode leg5 type FALL | EXPLODE_ON_HIT | BITMAP3;
 		explode leg6 type BITMAPONLY | BITMAP5;
 		explode turretholder type BITMAPONLY | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -347,7 +345,7 @@ Killed(severity, corpsetype)
 		explode leg5 type FALL | EXPLODE_ON_HIT | BITMAP3;
 		explode leg6 type BITMAPONLY | BITMAP5;
 		explode turretholder type BITMAPONLY | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP3;
@@ -366,4 +364,5 @@ Killed(severity, corpsetype)
 	explode leg5 type FALL | EXPLODE_ON_HIT | BITMAP3;
 	explode leg6 type BITMAPONLY | BITMAP5;
 	explode turretholder type BITMAPONLY | BITMAP5;
+	return (corpsetype);
 }

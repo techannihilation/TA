@@ -28,14 +28,15 @@ Standby()
 	sleep 50;
 	start-script Standby();
 }
+
 activatescr()
 {
 	if( TRUE )
 	{
 		turn gun1 to z-axis <0.000000> now;
-		turn gun1 to z-axis <-89.752747> speed <60.071429>;
+		turn gun1 to z-axis <-89.747253> speed <60.071429>;
 		turn gun2 to z-axis <0.000000> now;
-		turn gun2 to z-axis <89.752747> speed <60.071429>;
+		turn gun2 to z-axis <89.747253> speed <60.071429>;
 		sleep 1494;
 	}
 	sleep 8;
@@ -45,9 +46,9 @@ deactivatescr()
 {
 	if( TRUE )
 	{
-		turn gun1 to z-axis <-89.752747> now;
+		turn gun1 to z-axis <-89.747253> now;
 		turn gun1 to z-axis <0.000000> speed <60.357143>;
-		turn gun2 to z-axis <89.752747> now;
+		turn gun2 to z-axis <89.747253> now;
 		turn gun2 to z-axis <0.000000> speed <60.357143>;
 		sleep 1487;
 	}
@@ -236,7 +237,7 @@ Killed(severity, corpsetype)
 		explode explodpt2 type BITMAPONLY | BITMAP2;
 		explode explodpt3 type BITMAPONLY | BITMAP3;
 		explode explodpt4 type BITMAPONLY | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -251,7 +252,7 @@ Killed(severity, corpsetype)
 		explode explodpt2 type FALL | BITMAP2;
 		explode explodpt3 type FALL | BITMAP3;
 		explode explodpt4 type FALL | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -266,7 +267,7 @@ Killed(severity, corpsetype)
 		explode explodpt2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 		explode explodpt3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode explodpt4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type SHATTER | EXPLODE_ON_HIT | BITMAP1;
@@ -279,4 +280,5 @@ Killed(severity, corpsetype)
 	explode explodpt2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 	explode explodpt3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode explodpt4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	return (corpsetype);
 }

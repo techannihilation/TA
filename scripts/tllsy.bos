@@ -38,24 +38,23 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-Tangue()
+Tangue(Func_Var_1, Func_Var_2, Func_Var_3)
 {
-	var rockDir, rockAng, rockSpeed;
-	rockDir = <-0.1>;
-	rockAng = <-0.1>;
+	Func_Var_1 = -18;
+	Func_Var_2 = -18;
 	while( TRUE )
 	{
-		while( get ABS(rockAng) < <1.31> )
+		while( get ABS(Func_Var_2) < 238 )
 		{
-			rockSpeed = <1.45> - get ABS(rockAng);
-			turn base to x-axis rockAng speed rockSpeed*5;
-			turn base to z-axis rockAng speed rockSpeed*5;
+			Func_Var_3 = 263 - get ABS(Func_Var_2);
+			turn base to x-axis Func_Var_2 speed Func_Var_3 * <0.027473>;
+			turn base to z-axis Func_Var_2 speed Func_Var_3 * <0.027473>;
 			wait-for-turn base around x-axis;
 			wait-for-turn base around z-axis;
-			rockAng = rockAng + rockDir;
+			Func_Var_2 = Func_Var_2 + Func_Var_1;
 		}
-		rockDir = 0 - rockDir;
-		rockAng = rockAng + rockDir + rockDir;
+		Func_Var_1 = 0 - Func_Var_1;
+		Func_Var_2 = Func_Var_2 + Func_Var_1 + Func_Var_1;
 	}
 }
 
@@ -142,7 +141,6 @@ RequestState(requestedstate, currentstate)
 		{
 			call-script Stop();
 			currentstate = 1;
-			
 		}
 	}
 	statechg_StateChanging = FALSE;
@@ -212,18 +210,19 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		return (0);
+		return (corpsetype);
 	}
 	explode nanos type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
 	explode arm1 type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode arm1 type SHATTER | EXPLODE_ON_HIT | BITMAP3;
 	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP3;
 	explode nanos type SHATTER | EXPLODE_ON_HIT | BITMAP3;
 	explode arm2 type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+	return (corpsetype);
 }

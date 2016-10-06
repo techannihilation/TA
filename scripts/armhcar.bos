@@ -147,7 +147,7 @@ Killed(severity, corpsetype)
 		explode silo type BITMAPONLY | BITMAP3;
 		explode terminal type BITMAPONLY | BITMAP4;
 		explode case type BITMAPONLY | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -159,7 +159,7 @@ Killed(severity, corpsetype)
 		explode silo type SHATTER | BITMAP3;
 		explode terminal type FALL | BITMAP4;
 		explode case type FALL | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -171,7 +171,7 @@ Killed(severity, corpsetype)
 		explode silo type SHATTER | BITMAP2;
 		explode terminal type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode case type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP1;
@@ -181,4 +181,5 @@ Killed(severity, corpsetype)
 	explode silo type SHATTER | BITMAP2;
 	explode terminal type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode case type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	return (corpsetype);
 }

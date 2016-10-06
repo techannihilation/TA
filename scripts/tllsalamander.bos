@@ -40,8 +40,8 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 HitByWeapon(anglex, anglez)
 {
-	turn base to z-axis anglez speed <105.021978>;
-	turn base to x-axis anglex speed <105.021978>;
+	turn base to z-axis anglez speed <105.016484>;
+	turn base to x-axis anglex speed <105.016484>;
 	wait-for-turn base around z-axis;
 	wait-for-turn base around x-axis;
 	turn base to z-axis <0.000000> speed <30.005495>;
@@ -64,8 +64,8 @@ RestoreAfterDelay()
 {
 	set-signal-mask SIG_AIM;
 	sleep restore_delay;
-	turn turret to y-axis <0.000000> speed <50.010989>;
-	turn sleeve to x-axis <0.000000> speed <50.010989>;
+	turn turret to y-axis <0.000000> speed <50.005495>;
+	turn sleeve to x-axis <0.000000> speed <50.005495>;
 	wait-for-turn turret around y-axis;
 	wait-for-turn sleeve around x-axis;
 }
@@ -114,15 +114,16 @@ Killed(severity, corpsetype)
 		corpsetype = 1;
 		explode sleeve type BITMAPONLY | BITMAP4;
 		explode turret type BITMAPONLY | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	explode sleeve type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 	explode barrel type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode turret type SHATTER | EXPLODE_ON_HIT | BITMAP2;
+	return (corpsetype);
 }

@@ -189,7 +189,7 @@ FirePrimary()
 	emit-sfx 1024 + 0 from emit;
 	emit-sfx 1024 + 1 from emit;
 	emit-sfx 1024 + 1 from emit;
-		sleep 33;
+	sleep 33;
 	emit-sfx 1024 + 1 from emit;
 }
 

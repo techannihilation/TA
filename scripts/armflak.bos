@@ -64,8 +64,8 @@ AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	turn Xturret to y-axis heading speed <1200.000000>;
-	turn Yturret to x-axis <0.000000> - pitch speed <950.000000>;
+	turn Xturret to y-axis heading speed <700.000000>;
+	turn Yturret to x-axis <0.000000> - pitch speed <550.000000>;
 	wait-for-turn Xturret around y-axis;
 	wait-for-turn Yturret around x-axis;
 	return (1);
@@ -75,21 +75,21 @@ FirePrimary()
 {
 	if( gun_1 == 0 )
 	{
-		move barrel1 to z-axis [-10.000000] now;
+		move barrel1 to z-axis [-4.000000] now;
 		show flare1;
 		sleep 150;
 		hide flare1;
-		move barrel1 to z-axis [0.000000] speed [37.500000];
+		move barrel1 to z-axis [0.000000] speed [15.000000];
 		gun_1 = flare2;
 		return (0);
 	}
 	if( gun_1 == 1 )
 	{
-		move barrel2 to z-axis [-10.000000] now;
+		move barrel2 to z-axis [-4.000000] now;
 		show flare2;
 		sleep 150;
 		hide flare2;
-		move barrel2 to z-axis [0.000000] speed [37.500000];
+		move barrel2 to z-axis [0.000000] speed [15.000000];
 		gun_1 = flare1;
 	}
 }
@@ -130,7 +130,7 @@ Killed(severity, corpsetype)
 		explode flare1 type BITMAPONLY | BITMAP5;
 		explode Yturret type BITMAPONLY | BITMAP1;
 		explode Xturret type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -142,7 +142,7 @@ Killed(severity, corpsetype)
 		explode flare1 type FALL | BITMAP5;
 		explode Yturret type SHATTER | BITMAP1;
 		explode Xturret type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -154,7 +154,7 @@ Killed(severity, corpsetype)
 		explode flare1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 		explode Yturret type SHATTER | BITMAP1;
 		explode Xturret type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode barrel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
@@ -164,4 +164,5 @@ Killed(severity, corpsetype)
 	explode flare1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 	explode Yturret type SHATTER | EXPLODE_ON_HIT | BITMAP1;
 	explode Xturret type BITMAPONLY | BITMAP2;
+	return (corpsetype);
 }

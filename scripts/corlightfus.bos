@@ -1,0 +1,68 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, globetop;
+
+static-var  Static_Var_1;
+
+
+ON()
+{
+	if( Static_Var_1 > 0 )
+	{
+		emit-sfx 1024 + 0 from globetop;
+		sleep 200;
+		start-script ON();
+	}
+}
+
+Intro()
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	if( TRUE )
+	{
+		start-script ON();
+		emit-sfx 1024 + 0 from globetop;
+		sleep 5000;
+		Static_Var_1 = 1;
+	}
+}
+
+Create()
+{
+	dont-shade base;
+	start-script Intro();
+	Static_Var_1 = 1;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type SHATTER | BITMAP2;
+	return (corpsetype);
+}

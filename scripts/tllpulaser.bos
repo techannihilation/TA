@@ -6,11 +6,12 @@
 piece  base, body, turret, door1, door2, sleeve, barrel1, barrel2,
        flare1, flare2;
 
-static-var  Static_Var_1, restore_delay, gun_1, bAiming, statechg_DesiredState,
+static-var  Static_Var_1, Static_Var_2, gun_1, Static_Var_4, statechg_DesiredState,
             statechg_StateChanging, Static_Var_7;
 
 // Signal definitions
 #define SIG_AIM				2
+
 
 activatescr()
 {
@@ -160,13 +161,13 @@ RequestState(requestedstate, currentstate)
 
 RestoreAfterDelay()
 {
-	sleep restore_delay;
+	sleep Static_Var_2;
 	set-signal-mask 0;
-	if( bAiming == 0 )
+	if( Static_Var_4 == 0 )
 	{
 		turn turret to y-axis <0.000000> speed <200.000000>;
 	}
-	if( bAiming == 1 )
+	if( Static_Var_4 == 1 )
 	{
 		turn turret to y-axis <180.000000> speed <200.000000>;
 	}
@@ -186,8 +187,8 @@ Create()
 	hide flare2;
 	Static_Var_1 = 1;
 	gun_1 = body;
-	bAiming = FALSE;
-	restore_delay = 4000;
+	Static_Var_4 = 0;
+	Static_Var_2 = 4000;
 	call-script InitState();
 	start-script SmokeUnit();
 	start-script RequestState(0);
@@ -298,7 +299,7 @@ Killed(severity, corpsetype)
 		explode barrel1 type FALL | BITMAP5;
 		explode barrel2 type FALL | BITMAP1;
 		explode sleeve type BITMAPONLY | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -317,7 +318,7 @@ Killed(severity, corpsetype)
 		explode barrel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 		explode barrel2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 		explode sleeve type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 4;
 	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP1;
@@ -327,4 +328,5 @@ Killed(severity, corpsetype)
 	explode barrel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 	explode barrel2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 	explode sleeve type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	return (corpsetype);
 }

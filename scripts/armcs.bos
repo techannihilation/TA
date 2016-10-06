@@ -3,13 +3,10 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-#define SIG_BUILD		4	
-
 piece  base, beam, plate, arm, nano, door1, door2, wake1,
        wake2, turret, ground;
 
-static-var  statechg_DesiredState, statechg_StateChanging,
-			notBuilding, oldHead;
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4;
 
 // Signal definitions
 #define SIG_MOVE			2
@@ -27,14 +24,11 @@ activatescr()
 	turn door2 to z-axis <0.000000> now;
 	turn door2 to z-axis <71.016484> speed <184.000000>;
 	sleep 388;
-
 	move door1 to y-axis [-3.550000] speed [9.000000];
 	move door2 to y-axis [-3.550000] speed [9.000000];
 	sleep 389;
-
 	move plate to y-axis [3.700000] speed [9.000000];
 	sleep 389;
-
 	turn arm to x-axis <89.016484> speed <229.000000>;
 	turn nano to x-axis <-69.016484> speed <178.000000>;
 	sleep 410;
@@ -45,7 +39,6 @@ deactivatescr()
 	set INBUILDSTANCE to 0;
 	turn turret to y-axis <0.000000> speed <160.000000>;
 	wait-for-turn turret around y-axis;
-
 	move plate to y-axis [3.700000] now;
 	move plate to z-axis [0.000000] now;
 	move door1 to y-axis [-3.550000] now;
@@ -54,21 +47,18 @@ deactivatescr()
 	move nano to y-axis [0.000000] now;
 	move beam to x-axis [0.000000] now;
 	move beam to z-axis [0.000000] now;
-	turn door1 to z-axis <-70.653846> now;
-	turn door2 to z-axis <71.554945> now;
+	turn door1 to z-axis <-70.648352> now;
+	turn door2 to z-axis <71.549451> now;
 	turn arm to x-axis <89.560440> now;
 	turn arm to x-axis <0.000000> speed <230.000000>;
-	turn nano to x-axis <-69.741758> now;
+	turn nano to x-axis <-69.736264> now;
 	turn nano to x-axis <0.000000> speed <179.000000>;
 	sleep 388;
-
 	move plate to y-axis [0.000000] speed [9.000000];
 	sleep 389;
-
 	move door1 to y-axis [0.000000] speed [9.000000];
 	move door2 to y-axis [0.000000] speed [9.000000];
 	sleep 389;
-
 	turn door1 to z-axis <0.000000> speed <181.000000>;
 	turn door2 to z-axis <0.000000> speed <183.000000>;
 	sleep 410;
@@ -76,29 +66,28 @@ deactivatescr()
 
 SetDirection(heading)
 {
-	var spd;
-	spd = (get ABS(oldHead) - get ABS(heading)) / 2;
-	turn ground to y-axis heading speed spd;
-	turn base to y-axis 0-heading speed spd;
-	oldHead = heading;
+	var Func_Var_2;
+	Func_Var_2 = ( get ABS(Static_Var_4) - get ABS(heading) ) / 2;
+	turn ground to y-axis heading speed Func_Var_2;
+	turn base to y-axis <0.000000> - heading speed Func_Var_2;
+	Static_Var_4 = heading;
 }
 
-RockOnWaves()
+RockOnWaves(Func_Var_1, Func_Var_2, Func_Var_3)
 {
-	var rockDir, rockAng, rockSpeed;
-	rockDir = <-0.1>;
-	rockAng = <-0.1>;
+	Func_Var_1 = -18;
+	Func_Var_2 = -18;
 	while( TRUE )
 	{
-		while( get ABS(rockAng) < <1.31> )
+		while( get ABS(Func_Var_2) < 238 )
 		{
-			rockSpeed = <1.45> - get ABS(rockAng);
-			turn ground to x-axis rockAng speed rockSpeed*4;
+			Func_Var_3 = 263 - get ABS(Func_Var_2);
+			turn ground to x-axis Func_Var_2 speed Func_Var_3 * <0.021978>;
 			wait-for-turn ground around x-axis;
-			rockAng = rockAng + rockDir;
+			Func_Var_2 = Func_Var_2 + Func_Var_1;
 		}
-		rockDir = 0 - rockDir;
-		rockAng = rockAng + rockDir + rockDir;
+		Func_Var_1 = 0 - Func_Var_1;
+		Func_Var_2 = Func_Var_2 + Func_Var_1 + Func_Var_1;
 	}
 }
 
@@ -134,11 +123,11 @@ waveSplash()
 {
 	while( TRUE )
 	{
-		turn base to x-axis <-3.0> speed <3.0>;
-		move base to y-axis [0.23] speed [0.23];
+		turn base to x-axis <-3.000000> speed <3.000000>;
+		move base to y-axis [0.229999] speed [0.229999];
 		wait-for-turn base around x-axis;
-		turn base to x-axis <0.0> speed <3.0>;
-		move base to y-axis [0.0] speed [0.23];
+		turn base to x-axis <0.000000> speed <3.000000>;
+		move base to y-axis [0.000000] speed [0.229999];
 		wait-for-turn base around x-axis;
 	}
 }
@@ -147,58 +136,61 @@ StartMoving()
 {
 	signal SIG_MOVE;
 	set-signal-mask SIG_MOVE;
-	var waketime;
+	var Func_Var_1;
 	start-script waveSplash();
 	while( TRUE )
 	{
-		emit-sfx 2 from Wake1;
-		emit-sfx 2 from Wake2;
-		waketime = (get CURRENT_SPEED) * 100 / get MAX_SPEED;
-		if( waketime < 50 ) waketime = 50;
-		sleep 15000 / waketime;
+		emit-sfx 2 from wake1;
+		emit-sfx 2 from wake2;
+		Func_Var_1 = get CURRENT_SPEED * 100 / get MAX_SPEED;
+		if( Func_Var_1 < 50 )
+		{
+			Func_Var_1 = 50;
+		}
+		sleep 15000 / Func_Var_1;
 	}
 }
 
 StopMoving()
 {
 	signal SIG_MOVE;
-	turn base to x-axis <0.0> speed <3.0>;
-	move base to y-axis [0.0] speed [0.23];
+	turn base to x-axis <0.000000> speed <3.000000>;
+	move base to y-axis [0.000000] speed [0.229999];
 }
 
 RequestState(requestedstate, currentstate)
 {
-	if( statechg_StateChanging )
+	if( Static_Var_2 )
 	{
-		statechg_DesiredState = requestedstate;
+		Static_Var_1 = requestedstate;
 		return (0);
 	}
-	statechg_StateChanging = TRUE;
-	currentstate = statechg_DesiredState;
-	statechg_DesiredState = requestedstate;
-	while( statechg_DesiredState != currentstate )
+	Static_Var_2 = 1;
+	currentstate = Static_Var_1;
+	Static_Var_1 = requestedstate;
+	while( Static_Var_1 != currentstate )
 	{
-		if( statechg_DesiredState )
+		if( Static_Var_1 )
 		{
 			call-script deactivatescr();
-			notBuilding = 1;
+			Static_Var_3 = 1;
 			currentstate = 1;
 		}
 		else
 		{
 			call-script activatescr();
-			notBuilding = 0;
+			Static_Var_3 = 0;
 			currentstate = 0;
 		}
 	}
-	statechg_StateChanging = FALSE;
+	Static_Var_2 = 0;
 }
 
 Create()
 {
-	notBuilding = 1;
-	statechg_DesiredState = TRUE;
-	statechg_StateChanging = FALSE;
+	Static_Var_3 = 1;
+	Static_Var_1 = 1;
+	Static_Var_2 = 0;
 	start-script SmokeUnit();
 }
 
@@ -212,23 +204,26 @@ Deactivate()
 	start-script RequestState(1);
 }
 
-StartBuilding(heading, pitch)
+StartBuilding(Func_Var_1, Func_Var_2)
 {
 	start-script RequestState(0);
-	while( notBuilding ) sleep 100;
-	signal SIG_BUILD;
-	turn turret to y-axis heading speed <160.000000>;
+	while( Static_Var_3 )
+	{
+		sleep 100;
+	}
+	signal 4;
+	turn turret to y-axis Func_Var_1 speed <160.000000>;
 	wait-for-turn turret around y-axis;
 	set INBUILDSTANCE to 1;
 }
 
 StopBuilding()
 {
-	signal SIG_BUILD;	
-	set-signal-mask SIG_BUILD;
+	signal 4;
+	set-signal-mask 4;
 	sleep 6000;
 	set-signal-mask 0;
-	signal SIG_BUILD;	
+	signal 4;
 	start-script RequestState(1);
 }
 
@@ -236,13 +231,6 @@ QueryNanoPiece(piecenum)
 {
 	piecenum = beam;
 }
-
-/*
-TargetHeading(Func_Var_1)
-{
-	Static_Var_1 = 0 - Func_Var_1;
-}
-*/
 
 SweetSpot(piecenum)
 {
@@ -264,7 +252,7 @@ Killed(severity, corpsetype)
 		explode turret type BITMAPONLY | BITMAP3;
 		explode wake1 type BITMAPONLY | BITMAP4;
 		explode wake2 type BITMAPONLY | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -279,7 +267,7 @@ Killed(severity, corpsetype)
 		explode turret type FALL | EXPLODE_ON_HIT | BITMAP3;
 		explode wake1 type FALL | EXPLODE_ON_HIT | BITMAP4;
 		explode wake2 type FALL | EXPLODE_ON_HIT | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -294,7 +282,7 @@ Killed(severity, corpsetype)
 		explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode wake1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 		explode wake2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode arm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
@@ -307,4 +295,5 @@ Killed(severity, corpsetype)
 	explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode wake1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 	explode wake2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	return (corpsetype);
 }

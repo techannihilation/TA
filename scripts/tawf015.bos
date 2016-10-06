@@ -3,19 +3,19 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  flare1, flare2, gun, base, thrusters, bigflare, lemit, remit, blemit, bremit;
+piece  flare1, flare2, gun, base, thrusters, bigflare, lemit, remit,
+       blemit, bremit;
 
-static-var  gun_1, statechg_DesiredState, statechg_StateChanging, bMoving;
+static-var  gun_1, statechg_DesiredState, statechg_StateChanging, Static_Var_4;
+
 
 activatescr()
 {
 	if( TRUE )
 	{
 		turn thrusters to x-axis <0.000000> speed <30.000000>;
-		bMoving = TRUE;
+		Static_Var_4 = 1;
 	}
-	return (0);
-	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
 }
 
 deactivatescr()
@@ -23,24 +23,24 @@ deactivatescr()
 	if( TRUE )
 	{
 		turn thrusters to x-axis <-75.016484> speed <30.000000>;
-		bMoving = FALSE;
+		Static_Var_4 = 0;
 	}
 }
 
 flames(Func_Var_1)
 {
 	Func_Var_1 = 0;
-	while (TRUE)
+	while( TRUE )
 	{
-		while( bMoving )
+		while( Static_Var_4 )
 		{
-		emit-sfx 1024+2 from lemit;
-		emit-sfx 1024+2 from remit;
-		emit-sfx 1024+2 from blemit;
-		emit-sfx 1024+2 from bremit;
-		sleep 30;
+			emit-sfx 1024 + 2 from lemit;
+			emit-sfx 1024 + 2 from remit;
+			emit-sfx 1024 + 2 from blemit;
+			emit-sfx 1024 + 2 from bremit;
+			sleep 30;
 		}
-	sleep 300;
+		sleep 300;
 	}
 }
 
@@ -104,8 +104,6 @@ RequestState(requestedstate, currentstate)
 	statechg_StateChanging = FALSE;
 }
 
-
-
 Create()
 {
 	turn thrusters to x-axis <-75.016484> speed <8000.000000>;
@@ -137,13 +135,13 @@ FirePrimary()
 	gun_1 = !gun_1;
 	if( gun_1 == 0 )
 	{
-		emit-sfx 1024+1 from flare1;
+		emit-sfx 1024 + 1 from flare1;
 		sleep 150;
 		return (0);
 	}
 	if( gun_1 == 1 )
 	{
-		emit-sfx 1024+1 from flare2;
+		emit-sfx 1024 + 1 from flare2;
 		sleep 150;
 		return (0);
 	}
@@ -156,7 +154,7 @@ QuerySecondary(piecenum)
 
 FireSecondary()
 {
-	emit-sfx 1024+0 from bigflare;
+	emit-sfx 1024 + 0 from bigflare;
 }
 
 SweetSpot(piecenum)
@@ -176,7 +174,7 @@ Killed(severity, corpsetype)
 		explode flare2 type FALL | BITMAP4;
 		explode gun type SHATTER | BITMAP5;
 		explode thrusters type SHATTER | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -186,7 +184,7 @@ Killed(severity, corpsetype)
 		explode flare2 type FALL | BITMAP4;
 		explode gun type SHATTER | BITMAP5;
 		explode thrusters type SHATTER | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -196,7 +194,7 @@ Killed(severity, corpsetype)
 		explode flare2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 		explode gun type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 		explode thrusters type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP1;
@@ -204,4 +202,5 @@ Killed(severity, corpsetype)
 	explode flare2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 	explode gun type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 	explode thrusters type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	return (corpsetype);
 }

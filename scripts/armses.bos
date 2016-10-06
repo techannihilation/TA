@@ -7,6 +7,7 @@ piece  base, body, energy, cover, beams, glow;
 
 static-var  Static_Var_1;
 
+
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
 	while( get BUILD_PERCENT_LEFT )
@@ -65,7 +66,7 @@ Killed(severity, corpsetype)
 		explode energy type SHATTER | EXPLODE_ON_HIT | BITMAP2;
 		explode cover type SHATTER | EXPLODE_ON_HIT | BITMAP3;
 		explode beams type SHATTER | EXPLODE_ON_HIT | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -74,7 +75,7 @@ Killed(severity, corpsetype)
 		explode energy type SHATTER | EXPLODE_ON_HIT | BITMAP2;
 		explode cover type SHATTER | EXPLODE_ON_HIT | BITMAP3;
 		explode beams type SHATTER | EXPLODE_ON_HIT | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -83,11 +84,12 @@ Killed(severity, corpsetype)
 		explode energy type SHATTER | EXPLODE_ON_HIT | BITMAP2;
 		explode cover type SHATTER | EXPLODE_ON_HIT | BITMAP3;
 		explode beams type SHATTER | EXPLODE_ON_HIT | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP1;
 	explode energy type SHATTER | EXPLODE_ON_HIT | BITMAP2;
 	explode cover type SHATTER | EXPLODE_ON_HIT | BITMAP3;
 	explode beams type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+	return (corpsetype);
 }

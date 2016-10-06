@@ -5,11 +5,12 @@
 
 piece  flare1, flare2, turret, base, sleeves, barrel1, barrel2;
 
-static-var  restore_delay, gun_1;
+static-var  restore_delay, Static_Var_2;
 
 // Signal definitions
 #define SIG_AIM				2
 #define SIG_AIM_2			4
+
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -38,10 +39,10 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-HitByWeapon(Func_Var_1, Func_Var_2)
+HitByWeapon(anglex, anglez)
 {
-	turn base to z-axis Func_Var_2 speed <105.000000>;
-	turn base to x-axis Func_Var_1 speed <105.000000>;
+	turn base to z-axis anglez speed <105.000000>;
+	turn base to x-axis anglex speed <105.000000>;
 	wait-for-turn base around z-axis;
 	wait-for-turn base around x-axis;
 	turn base to z-axis <0.000000> speed <30.000000>;
@@ -52,7 +53,7 @@ Create()
 {
 	hide flare1;
 	hide flare2;
-	gun_1 = flare1;
+	Static_Var_2 = 0;
 	restore_delay = 3000;
 	start-script SmokeUnit();
 }
@@ -83,7 +84,6 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-
 }
 
 AimFromSecondary(piecenum)
@@ -110,7 +110,6 @@ AimSecondary(heading, pitch)
 
 FireSecondary()
 {
-
 }
 
 AimFromPrimary(piecenum)
@@ -142,7 +141,7 @@ Killed(severity, corpsetype)
 		explode flare2 type BITMAPONLY | BITMAP3;
 		explode sleeves type BITMAPONLY | BITMAP4;
 		explode turret type BITMAPONLY | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -154,7 +153,7 @@ Killed(severity, corpsetype)
 		explode flare2 type FALL | BITMAP3;
 		explode sleeves type SHATTER | BITMAP4;
 		explode turret type FALL | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -166,7 +165,7 @@ Killed(severity, corpsetype)
 		explode flare2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode sleeves type SHATTER | BITMAP4;
 		explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode barrel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
@@ -176,4 +175,5 @@ Killed(severity, corpsetype)
 	explode flare2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode sleeves type SHATTER | EXPLODE_ON_HIT | BITMAP4;
 	explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	return (corpsetype);
 }

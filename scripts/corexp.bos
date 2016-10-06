@@ -39,7 +39,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-fixGo()
+Go()
 {
 	spin arms around y-axis speed Static_Var_3 accelerate Static_Var_4;
 	spin ear1 around x-axis speed Static_Var_3 accelerate Static_Var_4;
@@ -73,7 +73,7 @@ RequestState(requestedstate, currentstate)
 	{
 		if( statechg_DesiredState == 0 )
 		{
-			call-script fixGo();
+			call-script Go();
 			currentstate = 0;
 		}
 		if( statechg_DesiredState == 1 )
@@ -205,7 +205,7 @@ Killed(severity, corpsetype)
 		explode base type BITMAPONLY | BITMAP2;
 		explode turret type BITMAPONLY | BITMAP2;
 		explode sleeve type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -216,7 +216,7 @@ Killed(severity, corpsetype)
 		explode base type BITMAPONLY | BITMAP3;
 		explode turret type BITMAPONLY | BITMAP2;
 		explode sleeve type FALL | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -227,7 +227,7 @@ Killed(severity, corpsetype)
 		explode base type BITMAPONLY | BITMAP2;
 		explode turret type SHATTER | BITMAP3;
 		explode sleeve type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode arms type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
@@ -236,4 +236,5 @@ Killed(severity, corpsetype)
 	explode base type BITMAPONLY | BITMAP2;
 	explode turret type SHATTER | BITMAP3;
 	explode sleeve type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	return (corpsetype);
 }

@@ -47,16 +47,16 @@ walk()
 		turn sstoparm5 to z-axis <-1.000000> speed <36.000000>;
 		turn sstoparm6 to z-axis <-12.258242> now;
 		turn sstoparm6 to z-axis <-17.000000> speed <109.000000>;
-		turn ssmidarm6 to y-axis <10.620879> now;
+		turn ssmidarm6 to y-axis <10.615385> now;
 		turn ssmidarm6 to y-axis <-3.000000> speed <263.000000>;
 		turn ssbotarm6 to z-axis <2.846154> now;
 		turn ssbotarm6 to z-axis <-5.000000> speed <168.000000>;
-		turn ssmidarm5 to y-axis <-31.076923> now;
+		turn ssmidarm5 to y-axis <-31.071429> now;
 		turn ssmidarm5 to y-axis <-22.000000> speed <131.000000>;
 		turn ssbotarm5 to z-axis <-22.505495> now;
 		turn ssbotarm5 to z-axis <-10.000000> speed <204.000000>;
-		turn ssmidarm4 to y-axis <60.543956> now;
-		turn ssmidarm4 to y-axis <59.010989> speed <0.000000>;
+		turn ssmidarm4 to y-axis <60.538462> now;
+		turn ssmidarm4 to y-axis <59.005495> speed <0.000000>;
 		turn ssmidarm3 to y-axis <6.527473> now;
 		turn ssmidarm3 to y-axis <0.000000> speed <94.000000>;
 		turn ssmidarm2 to y-axis <-58.093407> now;
@@ -65,13 +65,13 @@ walk()
 		turn ssbotarm2 to y-axis <0.000000> speed <0.000000>;
 		turn ssbotarm2 to z-axis <-3.670330> now;
 		turn ssbotarm2 to z-axis <-10.000000> speed <138.000000>;
-		turn sstoes2 to z-axis <-20.032967> now;
+		turn sstoes2 to z-axis <-20.027473> now;
 		turn sstoes2 to z-axis <-19.000000> speed <7.000000>;
-		turn ssmidarm1 to y-axis <45.395604> now;
+		turn ssmidarm1 to y-axis <45.390110> now;
 		turn ssmidarm1 to y-axis <37.005495> speed <127.000000>;
-		turn ssbotarm1 to z-axis <44.576923> now;
+		turn ssbotarm1 to z-axis <44.571429> now;
 		turn ssbotarm1 to z-axis <32.005495> speed <199.000000>;
-		turn sstoes1 to z-axis <-30.252747> now;
+		turn sstoes1 to z-axis <-30.247253> now;
 		turn sstoes1 to z-axis <-18.000000> speed <189.000000>;
 		sleep 56;
 	}
@@ -87,7 +87,7 @@ walk()
 		turn ssbotarm6 to z-axis <-30.005495> speed <423.000000>;
 		turn ssmidarm5 to y-axis <-5.000000> speed <296.000000>;
 		turn ssbotarm5 to z-axis <0.000000> speed <190.000000>;
-		turn ssmidarm4 to y-axis <57.010989> speed <35.000000>;
+		turn ssmidarm4 to y-axis <57.005495> speed <35.000000>;
 		turn ssmidarm3 to y-axis <-13.000000> speed <275.000000>;
 		turn ssmidarm2 to y-axis <-9.000000> speed <402.000000>;
 		turn ssbotarm2 to z-axis <-1.000000> speed <148.000000>;
@@ -125,12 +125,12 @@ walk()
 		turn sstoparm2 to z-axis <23.005495> speed <104.000000>;
 		turn sstoparm4 to z-axis <-11.000000> speed <48.000000>;
 		turn sstoparm6 to z-axis <-11.000000> speed <104.000000>;
-		turn ssmidarm6 to y-axis <-45.010989> speed <152.000000>;
+		turn ssmidarm6 to y-axis <-45.005495> speed <152.000000>;
 		turn ssbotarm6 to z-axis <-32.005495> speed <187.000000>;
 		turn ssmidarm5 to y-axis <13.000000> speed <270.000000>;
 		turn ssmidarm4 to y-axis <9.000000> speed <395.000000>;
 		turn ssbotarm4 to z-axis <7.000000> speed <83.000000>;
-		turn ssmidarm3 to y-axis <-59.010989> speed <388.000000>;
+		turn ssmidarm3 to y-axis <-59.005495> speed <388.000000>;
 		turn ssmidarm2 to y-axis <18.000000> speed <256.000000>;
 		turn ssbotarm2 to z-axis <30.005495> speed <416.000000>;
 		turn ssmidarm1 to y-axis <5.000000> speed <294.000000>;
@@ -149,7 +149,7 @@ walk()
 		turn ssmidarm5 to y-axis <36.005495> speed <381.000000>;
 		turn ssmidarm4 to y-axis <-3.000000> speed <249.000000>;
 		turn ssbotarm4 to z-axis <1.000000> speed <110.000000>;
-		turn ssmidarm3 to y-axis <-59.010989> speed <0.000000>;
+		turn ssmidarm3 to y-axis <-59.005495> speed <0.000000>;
 		turn ssmidarm2 to y-axis <34.005495> speed <284.000000>;
 		turn ssbotarm2 to z-axis <43.005495> speed <228.000000>;
 		turn sstoes2 to z-axis <-34.005495> speed <83.000000>;
@@ -165,12 +165,12 @@ walk()
 		turn sstoparm6 to z-axis <-4.000000> speed <63.000000>;
 		turn ssmidarm6 to y-axis <-30.005495> speed <126.000000>;
 		turn ssbotarm6 to z-axis <-10.000000> speed <190.000000>;
-		turn ssmidarm5 to y-axis <59.010989> speed <395.000000>;
+		turn ssmidarm5 to y-axis <59.005495> speed <395.000000>;
 		turn ssmidarm4 to y-axis <-18.000000> speed <261.000000>;
 		turn ssbotarm4 to z-axis <-5.000000> speed <155.000000>;
-		turn ssmidarm3 to y-axis <-57.010989> speed <28.000000>;
+		turn ssmidarm3 to y-axis <-57.005495> speed <28.000000>;
 		turn ssbotarm3 to z-axis <-8.000000> speed <162.000000>;
-		turn ssmidarm2 to y-axis <45.010989> speed <155.000000>;
+		turn ssmidarm2 to y-axis <45.005495> speed <155.000000>;
 		turn ssbotarm2 to z-axis <43.005495> speed <0.000000>;
 		turn sstoes2 to z-axis <-29.005495> speed <84.000000>;
 		turn ssmidarm1 to y-axis <-13.000000> speed <271.000000>;
@@ -185,7 +185,7 @@ walk()
 		turn sstoparm6 to z-axis <-1.000000> speed <49.000000>;
 		turn ssmidarm6 to y-axis <-22.000000> speed <126.000000>;
 		turn ssbotarm6 to z-axis <0.000000> speed <197.000000>;
-		turn ssmidarm5 to y-axis <59.010989> speed <0.000000>;
+		turn ssmidarm5 to y-axis <59.005495> speed <0.000000>;
 		turn ssmidarm4 to y-axis <-34.005495> speed <289.000000>;
 		turn ssbotarm4 to z-axis <-30.005495> speed <416.000000>;
 		turn ssmidarm3 to y-axis <-32.005495> speed <423.000000>;
@@ -205,16 +205,16 @@ walk()
 		turn sstoparm5 to z-axis <-2.000000> speed <57.000000>;
 		turn sstoparm6 to z-axis <0.000000> speed <43.000000>;
 		turn ssmidarm6 to y-axis <-5.000000> speed <301.000000>;
-		turn ssmidarm5 to y-axis <57.010989> speed <35.000000>;
+		turn ssmidarm5 to y-axis <57.005495> speed <35.000000>;
 		turn ssbotarm5 to z-axis <2.000000> speed <64.000000>;
-		turn ssmidarm4 to y-axis <-45.010989> speed <165.000000>;
+		turn ssmidarm4 to y-axis <-45.005495> speed <165.000000>;
 		turn ssbotarm4 to z-axis <-43.005495> speed <236.000000>;
 		turn ssmidarm3 to y-axis <-9.000000> speed <416.000000>;
 		turn ssbotarm3 to z-axis <-1.000000> speed <150.000000>;
 		turn ssmidarm2 to y-axis <30.005495> speed <129.000000>;
 		turn ssbotarm2 to z-axis <20.000000> speed <208.000000>;
 		turn sstoes2 to z-axis <-7.000000> speed <186.000000>;
-		turn ssmidarm1 to y-axis <-59.010989> speed <398.000000>;
+		turn ssmidarm1 to y-axis <-59.005495> speed <398.000000>;
 		sleep 57;
 	}
 	if( TRUE )
@@ -254,7 +254,7 @@ walk()
 		turn ssmidarm2 to y-axis <5.000000> speed <306.000000>;
 		turn ssbotarm2 to z-axis <0.000000> speed <204.000000>;
 		turn sstoes2 to z-axis <0.000000> speed <80.000000>;
-		turn ssmidarm1 to y-axis <-57.010989> speed <25.000000>;
+		turn ssmidarm1 to y-axis <-57.005495> speed <25.000000>;
 		turn ssbotarm1 to z-axis <-2.000000> speed <65.000000>;
 		sleep 56;
 	}
@@ -285,12 +285,12 @@ walk()
 		turn sstoparm3 to z-axis <11.000000> speed <107.000000>;
 		turn sstoparm4 to z-axis <0.000000> speed <43.000000>;
 		turn sstoparm5 to z-axis <-23.005495> speed <107.000000>;
-		turn ssmidarm6 to y-axis <59.010989> speed <409.000000>;
+		turn ssmidarm6 to y-axis <59.005495> speed <409.000000>;
 		turn ssmidarm5 to y-axis <-18.000000> speed <265.000000>;
 		turn ssbotarm5 to z-axis <-5.000000> speed <150.000000>;
 		turn ssmidarm4 to y-axis <-5.000000> speed <301.000000>;
 		turn ssbotarm4 to z-axis <0.000000> speed <193.000000>;
-		turn ssmidarm3 to y-axis <45.010989> speed <165.000000>;
+		turn ssmidarm3 to y-axis <45.005495> speed <165.000000>;
 		turn ssbotarm3 to z-axis <43.005495> speed <0.000000>;
 		turn ssmidarm2 to y-axis <-13.000000> speed <279.000000>;
 		turn ssmidarm1 to y-axis <-9.000000> speed <409.000000>;
@@ -322,14 +322,14 @@ walk()
 		turn sstoparm3 to z-axis <4.000000> speed <63.000000>;
 		turn sstoparm5 to z-axis <-11.000000> speed <105.000000>;
 		turn sstoparm6 to z-axis <-2.000000> speed <56.000000>;
-		turn ssmidarm6 to y-axis <57.010989> speed <35.000000>;
+		turn ssmidarm6 to y-axis <57.005495> speed <35.000000>;
 		turn ssbotarm6 to z-axis <2.000000> speed <63.000000>;
-		turn ssmidarm5 to y-axis <-45.010989> speed <162.000000>;
+		turn ssmidarm5 to y-axis <-45.005495> speed <162.000000>;
 		turn ssbotarm5 to z-axis <-43.005495> speed <218.000000>;
 		turn ssmidarm4 to y-axis <13.000000> speed <275.000000>;
 		turn ssmidarm3 to y-axis <30.005495> speed <126.000000>;
 		turn ssbotarm3 to z-axis <21.000000> speed <190.000000>;
-		turn ssmidarm2 to y-axis <-59.010989> speed <402.000000>;
+		turn ssmidarm2 to y-axis <-59.005495> speed <402.000000>;
 		turn ssmidarm1 to y-axis <18.000000> speed <257.000000>;
 		turn ssbotarm1 to z-axis <5.000000> speed <149.000000>;
 		turn sstoes1 to z-axis <-39.005495> speed <3.000000>;
@@ -349,7 +349,7 @@ walk()
 		turn ssmidarm4 to y-axis <36.005495> speed <368.000000>;
 		turn ssmidarm3 to y-axis <22.000000> speed <120.000000>;
 		turn ssbotarm3 to z-axis <10.000000> speed <187.000000>;
-		turn ssmidarm2 to y-axis <-59.010989> speed <0.000000>;
+		turn ssmidarm2 to y-axis <-59.005495> speed <0.000000>;
 		turn ssmidarm1 to y-axis <34.005495> speed <275.000000>;
 		turn ssbotarm1 to z-axis <30.005495> speed <409.000000>;
 		turn sstoes1 to z-axis <-34.005495> speed <80.000000>;
@@ -367,21 +367,19 @@ walk()
 		turn ssbotarm6 to z-axis <1.000000> speed <140.000000>;
 		turn ssmidarm5 to y-axis <-30.005495> speed <120.000000>;
 		turn ssbotarm5 to z-axis <-21.000000> speed <181.000000>;
-		turn ssmidarm4 to y-axis <59.010989> speed <382.000000>;
+		turn ssmidarm4 to y-axis <59.005495> speed <382.000000>;
 		turn ssmidarm3 to y-axis <5.000000> speed <281.000000>;
 		turn ssbotarm3 to z-axis <0.000000> speed <181.000000>;
-		turn ssmidarm2 to y-axis <-57.010989> speed <33.000000>;
+		turn ssmidarm2 to y-axis <-57.005495> speed <33.000000>;
 		turn ssbotarm2 to y-axis <0.000000> speed <0.000000>;
 		turn ssbotarm2 to z-axis <-2.000000> speed <60.000000>;
 		turn sstoes2 to z-axis <-19.000000> speed <328.000000>;
-		turn ssmidarm1 to y-axis <45.010989> speed <154.000000>;
+		turn ssmidarm1 to y-axis <45.005495> speed <154.000000>;
 		turn ssbotarm1 to z-axis <43.005495> speed <221.000000>;
 		turn sstoes1 to z-axis <-29.005495> speed <80.000000>;
 		sleep 61;
 	}
 	sleep 1;
-	return (0);
-	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
 }
 
 activatescr()
@@ -491,9 +489,9 @@ deactivatescr()
 		move sstoes1 to y-axis [0.000000] now;
 		turn sstoparm1 to z-axis <-8.489011> now;
 		turn sstoparm4 to z-axis <8.489011> now;
-		turn ssmidarm4 to z-axis <-19.351648> now;
+		turn ssmidarm4 to z-axis <-19.346154> now;
 		turn ssbotarm4 to z-axis <12.269231> now;
-		turn ssmidarm1 to z-axis <19.351648> now;
+		turn ssmidarm1 to z-axis <19.346154> now;
 		turn ssbotarm1 to z-axis <-12.269231> now;
 		sleep 50;
 	}
@@ -867,7 +865,7 @@ Killed(severity, corpsetype)
 		explode turret3 type BITMAPONLY | BITMAP1;
 		explode gun1 type BITMAPONLY | BITMAP4;
 		explode gun2 type BITMAPONLY | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -884,7 +882,7 @@ Killed(severity, corpsetype)
 		explode sstoparm4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode sstoparm5 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode sstoparm6 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -901,7 +899,7 @@ Killed(severity, corpsetype)
 		explode sstoparm4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode sstoparm5 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode sstoparm6 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode ssbody type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
@@ -916,4 +914,5 @@ Killed(severity, corpsetype)
 	explode sstoparm4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode sstoparm5 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode sstoparm6 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	return (corpsetype);
 }

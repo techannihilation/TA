@@ -308,17 +308,17 @@ MotionControl()
 		if( !bMoving )
 		{
 			turn Leg1 to y-axis <0.000000> speed <288.000000>;
-			move Leg1 to x-axis [0.000000] speed <1152.000000>;
-			move Leg1 to z-axis [0.000000] speed <1152.000000>;
+			move Leg1 to x-axis [0.000000] speed [1.279688];
+			move Leg1 to z-axis [0.000000] speed [1.279688];
 			turn Leg2 to y-axis <0.000000> speed <288.000000>;
-			move Leg2 to x-axis [0.000000] speed <1152.000000>;
-			move Leg2 to z-axis [0.000000] speed <1152.000000>;
+			move Leg2 to x-axis [0.000000] speed [1.279688];
+			move Leg2 to z-axis [0.000000] speed [1.279688];
 			turn Leg3 to y-axis <0.000000> speed <288.000000>;
-			move Leg3 to x-axis [0.000000] speed <1152.000000>;
-			move Leg3 to z-axis [0.000000] speed <1152.000000>;
+			move Leg3 to x-axis [0.000000] speed [1.279688];
+			move Leg3 to z-axis [0.000000] speed [1.279688];
 			turn Leg4 to y-axis <0.000000> speed <288.000000>;
-			move Leg4 to x-axis [0.000000] speed <1152.000000>;
-			move Leg4 to z-axis [0.000000] speed <1152.000000>;
+			move Leg4 to x-axis [0.000000] speed [1.279688];
+			move Leg4 to z-axis [0.000000] speed [1.279688];
 			turn Foot1 to y-axis <0.000000> speed <288.000000>;
 			turn Foot2 to y-axis <0.000000> speed <288.000000>;
 			turn Foot3 to y-axis <0.000000> speed <288.000000>;

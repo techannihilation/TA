@@ -3,8 +3,8 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, rotor1, mispod1, misflash1, ducts, mispod2,
-       misflash2, lndg1, lndg2, lndg3, gunpod, gunflash;
+piece  base, body, rotor1, mispod1, misflash1, ducts, mispod2, misflash2,
+       lndg1, lndg2, lndg3, gunpod, gunflash;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3, restore_delay, statechg_DesiredState,
             statechg_StateChanging;
@@ -21,9 +21,7 @@ HitByWeapon(anglex, anglez)
 	wait-for-turn base around x-axis;
 	turn base to z-axis <0.000000> speed <30.000000>;
 	turn base to x-axis <0.000000> speed <30.000000>;
-	return (0);
 }
-
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -59,7 +57,7 @@ activatescr()
 		turn lndg1 to x-axis <0.000000> speed <20.000000>;
 		turn lndg2 to x-axis <0.000000> speed <20.000000>;
 		turn lndg3 to x-axis <0.000000> speed <20.000000>;
-		spin rotor1 around y-axis speed <777.043956>;
+		spin rotor1 around y-axis speed <777.038462>;
 	}
 }
 
@@ -67,9 +65,9 @@ deactivatescr()
 {
 	if( TRUE )
 	{
-		turn lndg1 to x-axis <90.021978> speed <30.000000>;
-		turn lndg2 to x-axis <45.010989> speed <30.000000>;
-		turn lndg3 to x-axis <45.010989> speed <30.000000>;
+		turn lndg1 to x-axis <90.016484> speed <30.000000>;
+		turn lndg2 to x-axis <45.005495> speed <30.000000>;
+		turn lndg3 to x-axis <45.005495> speed <30.000000>;
 		stop-spin rotor1 around y-axis decelerate <2.000000>;
 		turn gunflash to y-axis <0.000000> speed <50.000000>;
 		turn gunflash to x-axis <0.000000> speed <50.000000>;
@@ -108,6 +106,7 @@ RequestState(requestedstate, currentstate)
 	}
 	statechg_StateChanging = FALSE;
 }
+
 Create()
 {
 	Static_Var_1 = 1;
@@ -136,7 +135,6 @@ AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	//turn gunflash to y-axis heading speed <80.000000>;
 	turn gunflash to x-axis <0.000000> - pitch speed <80.000000>;
 	wait-for-turn gunflash around y-axis;
 	wait-for-turn gunflash around x-axis;
@@ -161,7 +159,7 @@ AimFromTertiary(piecenum)
 
 FirePrimary()
 {
-    show gunflash;
+	show gunflash;
 	sleep 200;
 	hide gunflash;
 }
@@ -198,15 +196,15 @@ QuerySecondary(piecenum)
 	}
 }
 
-FireSecondary(piecenum)
+FireSecondary(Func_Var_1)
 {
 	if( Static_Var_1 == 1 )
 	{
-		emit-sfx 1024+1 from misflash1;
+		emit-sfx 1024 + 1 from misflash1;
 	}
 	if( Static_Var_1 == 2 )
 	{
-		emit-sfx 1024+1 from misflash2;
+		emit-sfx 1024 + 1 from misflash2;
 	}
 }
 
@@ -250,7 +248,7 @@ Killed(severity, corpsetype)
 		explode lndg2 type BITMAPONLY | BITMAP4;
 		explode lndg3 type BITMAPONLY | BITMAP3;
 		explode rotor1 type BITMAPONLY | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -268,7 +266,7 @@ Killed(severity, corpsetype)
 		explode lndg2 type BITMAPONLY | BITMAP4;
 		explode lndg3 type SHATTER | BITMAP3;
 		explode rotor1 type SHATTER | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -286,7 +284,7 @@ Killed(severity, corpsetype)
 		explode lndg2 type BITMAPONLY | BITMAP4;
 		explode lndg3 type SHATTER | BITMAP3;
 		explode rotor1 type SHATTER | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP1;
@@ -302,4 +300,5 @@ Killed(severity, corpsetype)
 	explode lndg2 type BITMAPONLY | BITMAP4;
 	explode lndg3 type SHATTER | EXPLODE_ON_HIT | BITMAP3;
 	explode rotor1 type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+	return (corpsetype);
 }

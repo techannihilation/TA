@@ -167,7 +167,7 @@ Killed(severity, corpsetype)
 	if( severity < 25 )
 	{
 		corpsetype = 1;
-		return (0);
+		return (corpsetype);
 	}
 	explode sleeve type FALL | EXPLODE_ON_HIT | BITMAP1;
 	explode turret type FALL | EXPLODE_ON_HIT | BITMAP2;
@@ -175,7 +175,7 @@ Killed(severity, corpsetype)
 	if( severity < 50 )
 	{
 		corpsetype = 2;
-		return (0);
+		return (corpsetype);
 	}
 	explode barrel1 type FALL | EXPLODE_ON_HIT | BITMAP1;
 	explode barrel2 type FALL | EXPLODE_ON_HIT | BITMAP2;
@@ -183,4 +183,5 @@ Killed(severity, corpsetype)
 	explode turret type BITMAPONLY | BITMAP4;
 	explode body type BITMAPONLY | BITMAP4;
 	corpsetype = 3;
+	return (corpsetype);
 }

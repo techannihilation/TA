@@ -8,7 +8,7 @@ piece  base, pivot, body, rupleg3, rleg3, rupleg2, rleg2, rupleg1,
        flare3a, flare3b, flare3c, tur3;
 
 static-var  bMoving, bAiming, gun_1, restore_delay, Static_Var_5,
-            Static_Var_6, Static_Var_7 ;
+            Static_Var_6, Static_Var_7;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -56,7 +56,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
-	gun_1 = 0;
+	gun_1 = base;
 	hide flare3a;
 	hide flare3b;
 	hide flare3c;
@@ -273,24 +273,24 @@ FirePrimary()
 	++gun_1;
 	if( gun_1 >= 3 )
 	{
-		gun_1 = 0;
+		gun_1 = base;
 	}
 	sleep 150;
 }
 
 Shot1()
 {
-	if(gun_1==0)
+	if( gun_1 == 0 )
 	{
-		emit-sfx 1024+0 from flare3c;	
+		emit-sfx 1024 + 0 from flare3c;
 	}
-	if(gun_1==1)
+	if( gun_1 == 1 )
 	{
-		emit-sfx 1024+0 from flare3b;
+		emit-sfx 1024 + 0 from flare3b;
 	}
-	if(gun_1==2)
+	if( gun_1 == 2 )
 	{
-		emit-sfx 1024+0 from flare3a;
+		emit-sfx 1024 + 0 from flare3a;
 	}
 }
 
@@ -303,15 +303,15 @@ QueryPrimary(piecenum)
 {
 	if( gun_1 == 0 )
 	{
-		piecenum=flare3c;	
+		piecenum = flare3c;
 	}
 	if( gun_1 == 1 )
 	{
-		piecenum=flare3b;
+		piecenum = flare3b;
 	}
 	if( gun_1 == 2 )
 	{
-		piecenum=flare3a;
+		piecenum = flare3a;
 	}
 }
 
@@ -338,7 +338,7 @@ Killed(severity, corpsetype)
 		explode rupleg1 type BITMAPONLY | BITMAP3;
 		explode rupleg2 type BITMAPONLY | BITMAP4;
 		explode rupleg3 type BITMAPONLY | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -356,7 +356,7 @@ Killed(severity, corpsetype)
 		explode rupleg1 type FALL | BITMAP3;
 		explode rupleg2 type FALL | BITMAP4;
 		explode rupleg3 type FALL | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode body type BITMAPONLY | BITMAP3;
@@ -372,4 +372,5 @@ Killed(severity, corpsetype)
 	explode rupleg1 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP3;
 	explode rupleg2 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP4;
 	explode rupleg3 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
+	return (corpsetype);
 }

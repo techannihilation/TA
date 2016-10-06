@@ -11,34 +11,34 @@ piece  base, body, neck1, neck2, neck3, neck4, head, mouth,
        firept1, firept2a, firept2b, firept2c, firept2d, firept2, dragun2, firepath,
        way, link;
 
-static-var  gun_3, statechg_DesiredState, statechg_StateChanging, isTaxi;
+static-var  gun_3, statechg_DesiredState, statechg_StateChanging, Static_Var_4;
 
 // Signal definitions
 #define SIG_MOVE			2
 
-lua_FlameShot(weapon) //Distortion and lups flame effect
+
+lua_FlameShot(Func_Var_1)
 {
-  return 0;
 }
 
 attackstance()
 {
 	turn body to x-axis <-25.005495> speed <125.000000>;
 	turn neck2 to x-axis <25.005495> speed <125.000000>;
-	turn ffoot1a to x-axis <60.010989> speed <135.000000>;
-	turn ffoot2a to x-axis <60.010989> speed <135.000000>;
-	turn ffoot1b to x-axis <45.010989> speed <135.000000>;
-	turn ffoot2b to x-axis <45.010989> speed <135.000000>;
+	turn ffoot1a to x-axis <60.005495> speed <135.000000>;
+	turn ffoot2a to x-axis <60.005495> speed <135.000000>;
+	turn ffoot1b to x-axis <45.005495> speed <135.000000>;
+	turn ffoot2b to x-axis <45.005495> speed <135.000000>;
 	turn ffoot1c to x-axis <30.005495> speed <135.000000>;
 	turn ffoot2c to x-axis <30.005495> speed <135.000000>;
-	turn rfoot1b to x-axis <50.010989> speed <135.000000>;
-	turn rfoot2b to x-axis <50.010989> speed <135.000000>;
+	turn rfoot1b to x-axis <50.005495> speed <135.000000>;
+	turn rfoot2b to x-axis <50.005495> speed <135.000000>;
 	turn rfoot1c to x-axis <175.038462> speed <135.000000>;
 	turn rfoot2c to x-axis <175.038462> speed <135.000000>;
-	turn rfoot1a to x-axis <45.010989> speed <135.000000>;
-	turn rfoot2a to x-axis <45.010989> speed <135.000000>;
-	turn rfoot1b to x-axis <45.010989> speed <135.000000>;
-	turn rfoot2b to x-axis <45.010989> speed <135.000000>;
+	turn rfoot1a to x-axis <45.005495> speed <135.000000>;
+	turn rfoot2a to x-axis <45.005495> speed <135.000000>;
+	turn rfoot1b to x-axis <45.005495> speed <135.000000>;
+	turn rfoot2b to x-axis <45.005495> speed <135.000000>;
 	turn rfoot1c to x-axis <30.005495> speed <135.000000>;
 	turn rfoot2c to x-axis <30.005495> speed <135.000000>;
 	sleep 3000;
@@ -53,10 +53,10 @@ attackstance()
 	turn rfoot2b to y-axis <-30.005495> speed <45.000000>;
 	turn rfoot1c to x-axis <0.000000> speed <45.000000>;
 	turn rfoot2c to x-axis <0.000000> speed <45.000000>;
-	turn ffoot1a to x-axis <95.021978> speed <45.000000>;
-	turn ffoot2a to x-axis <95.021978> speed <45.000000>;
-	turn ffoot1b to x-axis <50.010989> speed <45.000000>;
-	turn ffoot2b to x-axis <50.010989> speed <45.000000>;
+	turn ffoot1a to x-axis <95.016484> speed <45.000000>;
+	turn ffoot2a to x-axis <95.016484> speed <45.000000>;
+	turn ffoot1b to x-axis <50.005495> speed <45.000000>;
+	turn ffoot2b to x-axis <50.005495> speed <45.000000>;
 	turn ffoot1c to x-axis <0.000000> speed <45.000000>;
 	turn ffoot2c to x-axis <0.000000> speed <45.000000>;
 	turn neck2 to x-axis <0.000000> speed <45.000000>;
@@ -70,12 +70,12 @@ activatescr()
 		turn head to x-axis <-10.000000> speed <35.000000>;
 		turn mouth to x-axis <20.000000> speed <35.000000>;
 		wait-for-turn mouth around y-axis;
-		turn body to x-axis <-50.010989> speed <25.000000>;
+		turn body to x-axis <-50.005495> speed <25.000000>;
 		move body to y-axis [20.000000] speed [55.000000];
 		turn rfoot1a to x-axis <70.016484> speed <35.000000>;
 		turn rfoot2a to x-axis <70.016484> speed <35.000000>;
-		turn ffoot1a to x-axis <45.010989> speed <35.000000>;
-		turn ffoot2a to x-axis <45.010989> speed <35.000000>;
+		turn ffoot1a to x-axis <45.005495> speed <35.000000>;
+		turn ffoot2a to x-axis <45.005495> speed <35.000000>;
 		turn ffoot1b to x-axis <15.000000> speed <35.000000>;
 		turn ffoot2b to x-axis <15.000000> speed <35.000000>;
 		turn rfoot1b to x-axis <-20.000000> speed <35.000000>;
@@ -96,8 +96,8 @@ activatescr()
 		turn tailbase1 to x-axis <15.000000> speed <15.000000>;
 		turn tailbase2 to x-axis <0.000000> speed <35.000000>;
 		turn tailbase4 to x-axis <-5.000000> speed <55.000000>;
-		turn rfoot1a to x-axis <110.021978> speed <35.000000>;
-		turn rfoot2a to x-axis <110.021978> speed <25.000000>;
+		turn rfoot1a to x-axis <110.016484> speed <35.000000>;
+		turn rfoot2a to x-axis <110.016484> speed <25.000000>;
 		turn rfoot1c to x-axis <-5.000000> speed <25.000000>;
 		turn rfoot2c to x-axis <-5.000000> speed <25.000000>;
 		turn rpad1 to x-axis <30.005495> speed <25.000000>;
@@ -125,12 +125,12 @@ activatescr()
 		turn rfoot2c to x-axis <0.000000> speed <45.000000>;
 		turn rpad1 to x-axis <125.027473> speed <45.000000>;
 		turn rpad2 to x-axis <125.027473> speed <45.000000>;
-		turn ffoot1a to x-axis <95.021978> speed <45.000000>;
-		turn ffoot2a to x-axis <95.021978> speed <45.000000>;
-		turn ffoot1b to x-axis <50.010989> speed <45.000000>;
-		turn ffoot2b to x-axis <50.010989> speed <45.000000>;
-		turn ffoot1c to x-axis <50.010989> speed <45.000000>;
-		turn ffoot2c to x-axis <50.010989> speed <45.000000>;
+		turn ffoot1a to x-axis <95.016484> speed <45.000000>;
+		turn ffoot2a to x-axis <95.016484> speed <45.000000>;
+		turn ffoot1b to x-axis <50.005495> speed <45.000000>;
+		turn ffoot2b to x-axis <50.005495> speed <45.000000>;
+		turn ffoot1c to x-axis <50.005495> speed <45.000000>;
+		turn ffoot2c to x-axis <50.005495> speed <45.000000>;
 		turn neck4 to x-axis <0.000000> speed <45.000000>;
 		turn head to x-axis <-5.000000> speed <45.000000>;
 		turn mouth to x-axis <-5.000000> speed <75.000000>;
@@ -139,8 +139,6 @@ activatescr()
 		sleep 150;
 		sleep 200;
 	}
-	return (0);
-	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
 }
 
 deactivatescr()
@@ -150,7 +148,7 @@ deactivatescr()
 		turn neck3 to x-axis <5.000000> speed <35.000000>;
 		turn neck4 to x-axis <5.000000> speed <25.000000>;
 		turn head to x-axis <10.000000> speed <25.000000>;
-		turn body to x-axis <-45.010989> speed <20.000000>;
+		turn body to x-axis <-45.005495> speed <20.000000>;
 		move body to y-axis [5.000000] speed [25.000000];
 		turn rfoot1a to x-axis <40.005495> speed <35.000000>;
 		turn rfoot2a to x-axis <40.005495> speed <35.000000>;
@@ -233,7 +231,7 @@ RequestState(requestedstate, currentstate)
 
 Create()
 {
-	isTaxi = FALSE;
+	Static_Var_4 = 0;
 	move body to z-axis [12.000000] now;
 	turn body to x-axis <-70.016484> now;
 	move body to y-axis [7.000000] now;
@@ -251,8 +249,8 @@ Create()
 	turn rfoot1a to x-axis <70.016484> now;
 	turn ffoot1a to x-axis <70.016484> now;
 	turn ffoot2a to x-axis <70.016484> now;
-	turn rfoot1c to x-axis <50.010989> now;
-	turn rfoot2c to x-axis <50.010989> now;
+	turn rfoot1c to x-axis <50.005495> now;
+	turn rfoot2c to x-axis <50.005495> now;
 	while( get BUILD_PERCENT_LEFT )
 	{
 		sleep 1000;
@@ -469,7 +467,7 @@ AimPrimary(heading, pitch)
 Shot1()
 {
 	call-script lua_FlameShot(1);
-	return (TRUE);
+	return (1);
 }
 
 FirePrimary()
@@ -484,7 +482,7 @@ AimSecondary(heading, pitch)
 }
 
 AimFromSecondary(piecenum)
-{	
+{
 	piecenum = body;
 }
 
@@ -541,11 +539,10 @@ QueryWeapon4(piecenum)
 
 AimWeapon4(heading, pitch)
 {
-	if( isTaxi )
+	if( Static_Var_4 )
 	{
 		return (1);
 	}
-	return (0);
 }
 
 FireWeapon4()
@@ -555,20 +552,19 @@ FireWeapon4()
 	hide firept1;
 }
 
-
 QueryTransport(Func_Var_1)
 {
-	Func_Var_1 = link;
+	Func_Var_1 = 49;
 }
 
 BeginTransport(Func_Var_1)
 {
-	isTaxi = TRUE;
+	Static_Var_4 = 1;
 }
 
 EndTransport()
 {
-	isTaxi = FALSE;
+	Static_Var_4 = 0;
 }
 
 SweetSpot(piecenum)
@@ -592,7 +588,7 @@ Killed(severity, corpsetype)
 		explode head type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP4;
 		explode wing1c type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
 		explode neck3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -610,7 +606,7 @@ Killed(severity, corpsetype)
 		explode head type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP4;
 		explode wing1c type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
 		explode tail3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -631,7 +627,7 @@ Killed(severity, corpsetype)
 		explode wing1c type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
 		explode wing2a type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
 		explode tail3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP3;
@@ -650,4 +646,5 @@ Killed(severity, corpsetype)
 	explode wing1c type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
 	explode wing2a type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
 	explode tail3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	return (corpsetype);
 }

@@ -11,7 +11,7 @@ static-var  Static_Var_1, Static_Var_2, Static_Var_3, statechg_DesiredState, sta
 #define SIG_ACTIVATE			2
 
 
-fixGo()
+Go()
 {
 	spin drive around y-axis speed Static_Var_1 accelerate Static_Var_2;
 }
@@ -42,7 +42,7 @@ RequestState(requestedstate, currentstate)
 	{
 		if( statechg_DesiredState == 0 )
 		{
-			call-script fixGo();
+			call-script Go();
 			currentstate = 0;
 		}
 		if( statechg_DesiredState == 1 )
@@ -106,23 +106,24 @@ Killed(severity, corpsetype)
 		corpsetype = 1;
 		explode drive type BITMAPONLY | BITMAP1;
 		explode base type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
 		explode drive type SHATTER | BITMAP1;
 		explode base type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
 		explode drive type SHATTER | EXPLODE_ON_HIT | BITMAP1;
 		explode base type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode drive type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 	explode base type SHATTER | EXPLODE_ON_HIT | BITMAP2;
+	return (corpsetype);
 }

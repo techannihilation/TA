@@ -6,7 +6,7 @@
 piece  base, body, middle, forwardhelo, frontwings, rearwings, end, rearhelo,
        turret, gun1, flare1, gun2, flare2, gun3, flare3;
 
-static-var  restore_delay, unitviewer, gun_1;
+static-var  restore_delay, Static_Var_2, gun_1;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -65,14 +65,13 @@ Create()
 	hide flare1;
 	hide flare2;
 	hide flare3;
-	//fix me it's ugly
-	turn flare1 to z-axis <00.000000> now;
-	turn flare1 to x-axis <00.000000> now;
-	turn flare2 to z-axis <00.000000> now;
-	turn flare2 to x-axis <00.000000> now;
-	turn flare3 to z-axis <00.000000> now;
-	turn flare3 to x-axis <00.000000> now;
-	gun_1 = 0;
+	turn flare1 to z-axis <0.000000> now;
+	turn flare1 to x-axis <0.000000> now;
+	turn flare2 to z-axis <0.000000> now;
+	turn flare2 to x-axis <0.000000> now;
+	turn flare3 to z-axis <0.000000> now;
+	turn flare3 to x-axis <0.000000> now;
+	gun_1 = base;
 	start-script SmokeUnit();
 }
 
@@ -136,20 +135,19 @@ FirePrimary()
 {
 	if( gun_1 == 0 )
 	{
-		emit-sfx 1024+0 from flare1;
-		gun_1 = 1;
+		emit-sfx 1024 + 0 from flare1;
+		gun_1 = body;
 	}
 	if( gun_1 == 1 )
 	{
-		emit-sfx 1024+0 from flare2;
-		gun_1 = 2;
+		emit-sfx 1024 + 0 from flare2;
+		gun_1 = middle;
 	}
 	if( gun_1 == 2 )
 	{
-		emit-sfx 1024+0 from flare3;
-		gun_1 = 0;
+		emit-sfx 1024 + 0 from flare3;
+		gun_1 = base;
 	}
-	return (0);
 }
 
 Killed(severity, corpsetype)
@@ -171,7 +169,7 @@ Killed(severity, corpsetype)
 		explode flare2 type BITMAPONLY | BITMAP1;
 		explode gun3 type BITMAPONLY | BITMAP1;
 		explode flare3 type BITMAPONLY | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -190,7 +188,7 @@ Killed(severity, corpsetype)
 		explode flare2 type SHATTER | BITMAP4;
 		explode gun3 type SHATTER | BITMAP4;
 		explode flare3 type SHATTER | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -209,7 +207,7 @@ Killed(severity, corpsetype)
 		explode flare2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 		explode gun3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 		explode flare3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	explode base type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 	explode body type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
@@ -226,4 +224,5 @@ Killed(severity, corpsetype)
 	explode flare2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 	explode gun3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 	explode flare3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	return (corpsetype);
 }

@@ -1,60 +1,96 @@
+#define TA			// This is a TA script
 
-piece base,body,jammer,wake1,wake2,rotor;
-
-
-#define SIG_WAKE 2
-#define SMOKEPIECE1 jammer
-#include "watersmokeunit.h"
+#include "sfxtype.h"
 #include "exptype.h"
-#include "SFXtype.h"
+
+piece  base, body, jammer, wake1, wake2, rotor;
+
+// Signal definitions
+#define SIG_MOVE			2
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 3;
+			emit-sfx smoketype from jammer;
+			emit-sfx smoketype from jammer;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
 
 Create()
-{ start-script SmokeUnit();
- }
+{
+	start-script SmokeUnit();
+}
 
 StartMoving()
-{ signal SIG_WAKE;
-  set-signal-mask SIG_WAKE;
-  spin rotor around z-axis speed <-500> accelerate <-10>;
-  while (TRUE)
-   { emit-sfx SFXTYPE_WAKE1 from wake1;
-     emit-sfx SFXTYPE_WAKE1 from wake2;
-     sleep 200;
-    }
- }
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	spin rotor around z-axis speed <-500.000000> accelerate <-10.000000>;
+	while( TRUE )
+	{
+		emit-sfx 2 from wake1;
+		emit-sfx 2 from wake2;
+		sleep 200;
+	}
+}
 
 StopMoving()
-{ signal SIG_WAKE;
-   stop-spin rotor around z-axis decelerate <-5>;
- }
+{
+	signal SIG_MOVE;
+	stop-spin rotor around z-axis decelerate <-5.000000>;
+}
 
 Activate()
-{ spin jammer around z-axis speed <100> accelerate <3>;
+{
+	spin jammer around z-axis speed <100.000000> accelerate <3.000000>;
 }
 
 Deactivate()
-{ stop-spin jammer around z-axis decelerate <3>;
+{
+	stop-spin jammer around z-axis decelerate <3.000000>;
 }
 
 SweetSpot(piecenum)
-{ piecenum=jammer;
- }
+{
+	piecenum = jammer;
+}
 
-Killed( severity, corpsetype )
-{ explode base type BITMAPONLY | BITMAP3;
-  explode body type BITMAPONLY | BITMAP4;
-  if (severity < 25)
-   { corpsetype = 1;
-     return( 0 );
-    }
-  explode wake1 type BITMAPONLY | BITMAP4;
-  explode wake2 type BITMAPONLY | BITMAP4;
-  explode jammer type FALL | EXPLODE_ON_HIT | BITMAP1;
-  explode jammer type SHATTER | BITMAP1;
-  if (severity < 50)
-   { corpsetype = 2;
-     return( 0 );
-    }
-  explode body type SHATTER | EXPLODE_ON_HIT | BITMAP2;
-  corpsetype = 3;
- }
+Killed(severity, corpsetype)
+{
+	explode base type BITMAPONLY | BITMAP3;
+	explode body type BITMAPONLY | BITMAP4;
+	if( severity < 25 )
+	{
+		corpsetype = 1;
+		return (corpsetype);
+	}
+	explode wake1 type BITMAPONLY | BITMAP4;
+	explode wake2 type BITMAPONLY | BITMAP4;
+	explode jammer type FALL | EXPLODE_ON_HIT | BITMAP1;
+	explode jammer type SHATTER | BITMAP1;
+	if( severity < 50 )
+	{
+		corpsetype = 2;
+		return (corpsetype);
+	}
+	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP2;
+	corpsetype = 3;
+	return (corpsetype);
+}

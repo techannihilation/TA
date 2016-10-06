@@ -3,8 +3,8 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, wake1, wake2, wake3, pad1, pad2, land1, land2, radar,
-       anti, nano;
+piece  base, body, wake1, wake2, wake3, pad1, pad2, land1,
+       land2, radar, anti, nano;
 
 static-var  Static_Var_1;
 

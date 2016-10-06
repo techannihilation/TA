@@ -3,10 +3,10 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, rotor_b, tail, wing_lf, wing_lr, wing_rf, wing_rr,
-       turret, bar_l, bar_r, flare_l, flare_r, r_1, r_2, r_3,
-       r_4, blank, fuse, cockpit, stab_l, stab_r, fin_l, fin_r,
-       root_l, root_r, engine_l, engine_r;
+piece  base, rotor_b, tail, wing_lf, wing_lr, wing_rf, wing_rr, turret,
+       bar_l, bar_r, flare_l, flare_r, r_1, r_2, r_3, r_4,
+       blank, fuse, cockpit, stab_l, stab_r, fin_l, fin_r, root_l,
+       root_r, engine_l, engine_r;
 
 static-var  gun_2, gun_1, restore_delay, statechg_DesiredState, statechg_StateChanging;
 
@@ -297,7 +297,7 @@ Killed(severity, corpsetype)
 		explode turret type BITMAPONLY | BITMAP2;
 		explode bar_l type BITMAPONLY | BITMAP3;
 		explode bar_r type BITMAPONLY | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -322,7 +322,7 @@ Killed(severity, corpsetype)
 		explode turret type FALL | BITMAP2;
 		explode bar_l type SHATTER | BITMAP3;
 		explode bar_r type FALL | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -347,7 +347,7 @@ Killed(severity, corpsetype)
 		explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 		explode bar_l type SHATTER | EXPLODE_ON_HIT | BITMAP3;
 		explode bar_r type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP4;
@@ -370,4 +370,5 @@ Killed(severity, corpsetype)
 	explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 	explode bar_l type SHATTER | EXPLODE_ON_HIT | BITMAP3;
 	explode bar_r type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	return (corpsetype);
 }

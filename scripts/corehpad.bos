@@ -1,0 +1,248 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, ramps, rim, Pad, pad_quad, pad_x, Nanolathe, beam1,
+       beam2, padd, nano_gun1, nano_gun2, nano_cover, nano_support;
+
+static-var  spray, unitviewer, statechg_DesiredState, statechg_StateChanging;
+
+// Signal definitions
+#define SIG_ACTIVATE			2
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+OpenYard()
+{
+	set YARD_OPEN to 1;
+	while( !get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 1;
+	}
+	set BUGGER_OFF to 0;
+}
+
+OpenNano()
+{
+	move nano_cover to z-axis [6.500000] speed [5.000000];
+	move nano_cover to x-axis [-4.000000] speed [3.000000];
+	wait-for-move nano_cover along z-axis;
+	wait-for-move nano_cover along x-axis;
+	move nano_support to y-axis [6.000000] speed [3.000000];
+}
+
+CloseNano()
+{
+	move nano_support to y-axis [0.000000] speed [3.000000];
+	wait-for-move nano_support along y-axis;
+	move nano_cover to x-axis [0.000000] speed [5.000000];
+	move nano_cover to z-axis [0.000000] speed [5.000000];
+}
+
+CloseYard()
+{
+	set YARD_OPEN to 0;
+	while( get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 0;
+	}
+	set BUGGER_OFF to 0;
+}
+
+Go()
+{
+	dont-cache pad_x;
+	call-script OpenNano();
+	call-script OpenYard();
+	set INBUILDSTANCE to 1;
+}
+
+Stop()
+{
+	set INBUILDSTANCE to 0;
+	call-script CloseNano();
+	call-script CloseYard();
+	cache pad_x;
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+Create()
+{
+	unitviewer = TRUE;
+	spray = base;
+	call-script InitState();
+	start-script SmokeUnit();
+}
+
+QueryNanoPiece(piecenum)
+{
+	if( spray == 0 )
+	{
+		piecenum = beam1;
+	}
+	if( spray != 0 )
+	{
+		piecenum = beam2;
+	}
+	spray = !spray;
+}
+
+Demo()
+{
+	unitviewer = TRUE;
+}
+
+Activate()
+{
+	signal SIG_ACTIVATE;
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	signal SIG_ACTIVATE;
+	set-signal-mask SIG_ACTIVATE;
+	if( !unitviewer )
+	{
+		sleep 5000;
+	}
+	set-signal-mask 0;
+	start-script RequestState(1);
+}
+
+QueryBuildInfo(piecenum)
+{
+	piecenum = padd;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type BITMAPONLY | BITMAP1;
+		explode beam1 type BITMAPONLY | BITMAP2;
+		explode beam2 type BITMAPONLY | BITMAP3;
+		explode ramps type BITMAPONLY | BITMAP4;
+		explode rim type BITMAPONLY | BITMAP5;
+		explode nano_cover type BITMAPONLY | BITMAP1;
+		explode nano_support type BITMAPONLY | BITMAP2;
+		explode nano_gun1 type BITMAPONLY | BITMAP3;
+		explode nano_gun2 type BITMAPONLY | BITMAP4;
+		explode pad_x type BITMAPONLY | BITMAP5;
+		explode pad_quad type BITMAPONLY | BITMAP1;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type BITMAPONLY | BITMAP1;
+		explode beam1 type FALL | BITMAP2;
+		explode beam2 type FALL | BITMAP3;
+		explode ramps type FALL | FIRE | BITMAP4;
+		explode rim type FALL | BITMAP5;
+		explode nano_cover type FALL | SMOKE | BITMAP1;
+		explode nano_support type FALL | BITMAP2;
+		explode nano_gun1 type FALL | BITMAP3;
+		explode nano_gun2 type FALL | BITMAP4;
+		explode pad_x type FALL | BITMAP5;
+		explode pad_quad type FALL | FIRE | BITMAP1;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type BITMAPONLY | BITMAP1;
+		explode beam1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode beam2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode ramps type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode rim type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode nano_cover type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode nano_support type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode nano_gun1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode nano_gun2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode pad_x type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode pad_quad type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type BITMAPONLY | BITMAP1;
+	explode beam1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode beam2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode ramps type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode rim type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode nano_cover type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode nano_support type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode nano_gun1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode nano_gun2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode pad_x type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode pad_quad type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	return (corpsetype);
+}

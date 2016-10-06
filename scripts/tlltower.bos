@@ -1,11 +1,14 @@
-piece base,body;
+#define TA			// This is a TA script
 
 #include "sfxtype.h"
 #include "exptype.h"
 
+piece  base, body;
+
+
 Activate()
 {
-		sleep 250;
+	sleep 250;
 }
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -36,11 +39,11 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 }
 
 Create()
-	{
+{
 	dont-shade body;
 	start-script SmokeUnit();
-	}
-	
+}
+
 SweetSpot(piecenum)
 {
 	piecenum = body;
@@ -52,12 +55,13 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
+	return (corpsetype);
 }

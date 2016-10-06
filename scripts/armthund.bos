@@ -3,7 +3,8 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, jets, wing1, wing2, nose, vertjet1, vertjet2, thrust1, thrust2, thrust3, thrust4;
+piece  base, jets, wing1, wing2, nose, vertjet1, vertjet2, thrust1,
+       thrust2, thrust3, thrust4;
 
 static-var  statechg_DesiredState, statechg_StateChanging;
 
@@ -13,27 +14,25 @@ activatescr()
 	if( TRUE )
 	{
 		turn jets to x-axis <0.000000> now;
-		turn jets to x-axis <90.021978> speed <62.000000>;
+		turn jets to x-axis <90.016484> speed <62.000000>;
 		turn wing1 to y-axis <0.000000> now;
-		turn wing1 to y-axis <-90.021978> speed <62.000000>;
+		turn wing1 to y-axis <-90.016484> speed <62.000000>;
 		turn wing2 to y-axis <0.000000> now;
-		turn wing2 to y-axis <90.021978> speed <62.000000>;
+		turn wing2 to y-axis <90.016484> speed <62.000000>;
 		sleep 1457;
 	}
 	sleep 6;
-	return (0);
-	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
 }
 
 deactivatescr()
 {
 	if( TRUE )
 	{
-		turn jets to x-axis <90.021978> now;
+		turn jets to x-axis <90.016484> now;
 		turn jets to x-axis <0.000000> speed <62.000000>;
-		turn wing1 to y-axis <-90.021978> now;
+		turn wing1 to y-axis <-90.016484> now;
 		turn wing1 to y-axis <0.000000> speed <62.000000>;
-		turn wing2 to y-axis <90.021978> now;
+		turn wing2 to y-axis <90.016484> now;
 		turn wing2 to y-axis <0.000000> speed <62.000000>;
 		sleep 1446;
 	}
@@ -101,10 +100,6 @@ RequestState(requestedstate, currentstate)
 
 Create()
 {
-	hide thrust1;
-	hide thrust2;
-	hide thrust3;
-	hide thrust4;
 	call-script InitState();
 	start-script SmokeUnit();
 }
@@ -141,7 +136,7 @@ Killed(severity, corpsetype)
 		explode vertjet2 type BITMAPONLY | BITMAP5;
 		explode wing1 type BITMAPONLY | BITMAP1;
 		explode wing2 type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -153,7 +148,7 @@ Killed(severity, corpsetype)
 		explode vertjet2 type FALL | BITMAP5;
 		explode wing1 type FALL | BITMAP1;
 		explode wing2 type FALL | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -165,7 +160,7 @@ Killed(severity, corpsetype)
 		explode vertjet2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 		explode wing1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 		explode wing2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP1;
@@ -175,4 +170,5 @@ Killed(severity, corpsetype)
 	explode vertjet2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 	explode wing1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 	explode wing2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	return (corpsetype);
 }

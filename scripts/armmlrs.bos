@@ -7,11 +7,12 @@ piece  base, wheel1, loader, turret, launcher, rocket1, rocket2, rocket3,
        rocket4, rocket5, rocket6, smokybit1, smokybit2, smokybit3, smokybit4, smokybit5,
        smokybit6, wheel2, wheel3, wheel4, door1, door2;
 
-static-var  restore_delay, Static_Var_2, Static_Var_3, gun_1, Static_Var_5,
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
             Static_Var_6, Static_Var_7;
 
 // Signal definitions
 #define SIG_AIM				2
+
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -73,18 +74,17 @@ StopMoving()
 
 Create()
 {
-	restore_delay = 2000;
+	Static_Var_1 = 2000;
 	Static_Var_3 = 0;
 	Static_Var_2 = 0;
 	Static_Var_7 = 100;
 	Static_Var_5 = 0;
-	gun_1 = wheel1;
+	Static_Var_4 = 1;
 	start-script SmokeUnit();
 }
 
 SetMaxReloadTime(Func_Var_1)
 {
-	//restore_delay = Func_Var_1 * 2;
 }
 
 Reload()
@@ -102,7 +102,6 @@ Reload()
 	turn door1 to z-axis <0.000000> speed <60.000000>;
 	turn door2 to z-axis <0.000000> speed <60.000000>;
 	wait-for-turn door2 around z-axis;
-
 	Static_Var_5 = 1;
 	show rocket1;
 	show rocket2;
@@ -113,7 +112,7 @@ Reload()
 	sleep 1000;
 	Static_Var_3 = 0;
 	Static_Var_5 = 0;
-	gun_1 = 1;
+	Static_Var_4 = 1;
 }
 
 Launch()
@@ -132,7 +131,7 @@ Launch()
 RestoreAfterDelay()
 {
 	set-signal-mask SIG_AIM;
-	sleep restore_delay;
+	sleep Static_Var_1;
 	start-script Reload();
 }
 
@@ -143,27 +142,27 @@ SweetSpot(piecenum)
 
 QueryPrimary(piecenum)
 {
-	if( gun_1 == 1 )
+	if( Static_Var_4 == 1 )
 	{
 		piecenum = rocket1;
 	}
-	if( gun_1 == 2 )
+	if( Static_Var_4 == 2 )
 	{
 		piecenum = rocket2;
 	}
-	if( gun_1 == 3 )
+	if( Static_Var_4 == 3 )
 	{
 		piecenum = rocket3;
 	}
-	if( gun_1 == 4 )
+	if( Static_Var_4 == 4 )
 	{
 		piecenum = rocket4;
 	}
-	if( gun_1 == 5 )
+	if( Static_Var_4 == 5 )
 	{
 		piecenum = rocket5;
 	}
-	if( gun_1 == 6 )
+	if( Static_Var_4 == 6 )
 	{
 		piecenum = rocket6;
 	}
@@ -204,42 +203,42 @@ AimPrimary(heading, pitch)
 
 Shot1()
 {
-	if( gun_1 == 1 )
+	if( Static_Var_4 == 1 )
 	{
 		hide rocket1;
 		emit-sfx 1024 from smokybit1;
-		gun_1 = 2;
+		Static_Var_4 = 2;
 		return (0);
 	}
-	if( gun_1 == 2 )
+	if( Static_Var_4 == 2 )
 	{
 		hide rocket2;
 		emit-sfx 1024 from smokybit2;
-		gun_1 = 3;
+		Static_Var_4 = 3;
 		return (0);
 	}
-	if( gun_1 == 3 )
+	if( Static_Var_4 == 3 )
 	{
 		hide rocket3;
 		emit-sfx 1024 from smokybit3;
-		gun_1 = 4;
+		Static_Var_4 = 4;
 		return (0);
 	}
-	if( gun_1 == 4 )
+	if( Static_Var_4 == 4 )
 	{
 		hide rocket4;
 		emit-sfx 1024 from smokybit4;
-		gun_1 = 5;
+		Static_Var_4 = 5;
 		return (0);
 	}
-	if( gun_1 == 5 )
+	if( Static_Var_4 == 5 )
 	{
 		hide rocket5;
 		emit-sfx 1024 from smokybit5;
-		gun_1 = 6;
+		Static_Var_4 = 6;
 		return (0);
 	}
-	if( gun_1 == 6 )
+	if( Static_Var_4 == 6 )
 	{
 		hide rocket6;
 		emit-sfx 1024 from smokybit6;
@@ -270,7 +269,7 @@ Killed(severity, corpsetype)
 		explode wheel4 type BITMAPONLY | BITMAP1;
 		explode door1 type BITMAPONLY | BITMAP1;
 		explode door2 type BITMAPONLY | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -291,7 +290,7 @@ Killed(severity, corpsetype)
 		explode wheel4 type SHATTER | BITMAP4;
 		explode door1 type SHATTER | BITMAP4;
 		explode door2 type SHATTER | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -312,7 +311,7 @@ Killed(severity, corpsetype)
 		explode wheel4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 		explode door1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 		explode door2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
@@ -331,4 +330,5 @@ Killed(severity, corpsetype)
 	explode wheel4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 	explode door1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 	explode door2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	return (corpsetype);
 }

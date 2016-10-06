@@ -5,27 +5,25 @@
 
 piece  base, flare, exhaust, door1, door2, boom, neck, gun;
 
-static-var  notBuilding, statechg_DesiredState, statechg_StateChanging;
+static-var  Static_Var_1, Static_Var_2, Static_Var_3;
 
 // Signal definitions
-#define SIG_MOVE		2
-#define SIG_BUILD		4	
+#define SIG_MOVE			2
 
 
 activatescr()
 {
-	move exhaust to y-axis [-0.403192] now;
+	move exhaust to y-axis [-0.403186] now;
 	move exhaust to z-axis [3.775989] now;
 	move flare to y-axis [0.172803] now;
 	move flare to z-axis [-1.375995] now;
 	turn door1 to z-axis <0.000000> now;
-	turn door1 to z-axis <-227.868132> speed <209.241758>;
+	turn door1 to z-axis <-227.868132> speed <209.236264>;
 	turn door2 to z-axis <0.000000> now;
-	turn door2 to z-axis <227.516484> speed <208.917582>;
+	turn door2 to z-axis <227.516484> speed <208.912088>;
 	sleep 1089;
-
-	turn boom to x-axis <39.384615> speed <42.994505>;
-	turn neck to x-axis <-39.027473> speed <42.609890>;
+	turn boom to x-axis <39.379121> speed <42.989011>;
+	turn neck to x-axis <-39.027473> speed <42.604396>;
 	sleep 916;
 }
 
@@ -34,21 +32,19 @@ deactivatescr()
 	set INBUILDSTANCE to 0;
 	turn neck to y-axis <0.000000> speed <160.038462>;
 	wait-for-turn neck around y-axis;
-
-	move exhaust to y-axis [-0.403192] now;
+	move exhaust to y-axis [-0.403186] now;
 	move exhaust to z-axis [3.775989] now;
 	move flare to y-axis [0.172803] now;
 	move flare to z-axis [-1.375995] now;
-	turn boom to x-axis <39.384615> now;
-	turn boom to x-axis <0.000000> speed <51.818681>;
+	turn boom to x-axis <39.379121> now;
+	turn boom to x-axis <0.000000> speed <51.813187>;
 	turn door1 to z-axis <-227.868132> now;
 	turn door2 to z-axis <227.516484> now;
 	turn neck to x-axis <-39.027473> now;
 	turn neck to x-axis <0.000000> speed <51.357143>;
 	sleep 760;
-
 	turn door1 to z-axis <0.000000> speed <185.258242>;
-	turn door2 to z-axis <0.000000> speed <184.972527>;
+	turn door2 to z-axis <0.000000> speed <184.967033>;
 	sleep 1230;
 }
 
@@ -70,37 +66,37 @@ StopMoving()
 
 RequestState(requestedstate, currentstate)
 {
-	if( statechg_StateChanging )
+	if( Static_Var_3 )
 	{
-		statechg_DesiredState = requestedstate;
+		Static_Var_2 = requestedstate;
 		return (0);
 	}
-	statechg_StateChanging = TRUE;
-	currentstate = statechg_DesiredState;
-	statechg_DesiredState = requestedstate;
-	while( statechg_DesiredState != currentstate )
+	Static_Var_3 = 1;
+	currentstate = Static_Var_2;
+	Static_Var_2 = requestedstate;
+	while( Static_Var_2 != currentstate )
 	{
-		if( statechg_DesiredState )
+		if( Static_Var_2 )
 		{
 			call-script deactivatescr();
-			notBuilding = 1;
+			Static_Var_1 = 1;
 			currentstate = 1;
 		}
 		else
 		{
 			call-script activatescr();
-			notBuilding = 0;
+			Static_Var_1 = 0;
 			currentstate = 0;
 		}
 	}
-	statechg_StateChanging = FALSE;
+	Static_Var_3 = 0;
 }
 
 Create()
 {
-	notBuilding = 1;
-	statechg_DesiredState = TRUE;
-	statechg_StateChanging = FALSE;
+	Static_Var_1 = 1;
+	Static_Var_2 = 1;
+	Static_Var_3 = 0;
 }
 
 Activate()
@@ -113,23 +109,26 @@ Deactivate()
 	start-script RequestState(1);
 }
 
-StartBuilding(heading, pitch)
+StartBuilding(Func_Var_1, Func_Var_2)
 {
 	start-script RequestState(0);
-	while( notBuilding ) sleep 100;
-	signal SIG_BUILD;
-	turn neck to y-axis heading speed <160.038462>;
+	while( Static_Var_1 )
+	{
+		sleep 100;
+	}
+	signal 4;
+	turn neck to y-axis Func_Var_1 speed <160.038462>;
 	wait-for-turn neck around y-axis;
 	set INBUILDSTANCE to 1;
 }
 
 StopBuilding()
 {
-	signal SIG_BUILD;	
-	set-signal-mask SIG_BUILD;
+	signal 4;
+	set-signal-mask 4;
 	sleep 6000;
 	set-signal-mask 0;
-	signal SIG_BUILD;	
+	signal 4;
 	start-script RequestState(1);
 }
 
@@ -137,13 +136,6 @@ QueryNanoPiece(piecenum)
 {
 	piecenum = flare;
 }
-
-/*
-TargetHeading(Func_Var_1)
-{
-	Static_Var_1 = 0 - Func_Var_1;
-}
-*/
 
 SweetSpot(piecenum)
 {
@@ -163,7 +155,7 @@ Killed(severity, corpsetype)
 		explode flare type BITMAPONLY | BITMAP1;
 		explode gun type BITMAPONLY | BITMAP2;
 		explode neck type BITMAPONLY | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -176,7 +168,7 @@ Killed(severity, corpsetype)
 		explode flare type FALL | BITMAP1;
 		explode gun type FALL | BITMAP2;
 		explode neck type FALL | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -189,7 +181,7 @@ Killed(severity, corpsetype)
 		explode flare type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP1;
 		explode gun type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP2;
 		explode neck type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP1;
@@ -200,4 +192,5 @@ Killed(severity, corpsetype)
 	explode flare type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP1;
 	explode gun type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP2;
 	explode neck type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP3;
+	return (corpsetype);
 }

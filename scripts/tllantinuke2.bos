@@ -1,0 +1,281 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, missile, arm, panel1, panel2a, panel2b, panel3a, panel3b,
+       light, boompt;
+
+static-var  gun_1, restore_delay, statechg_DesiredState, statechg_StateChanging;
+
+// Signal definitions
+#define SIG_AIM				2
+
+
+activatescr()
+{
+	if( TRUE )
+	{
+		turn arm to z-axis <0.000000> now;
+		turn panel1 to x-axis <0.000000> now;
+		move panel2a to x-axis [0.000000] now;
+		move panel3a to x-axis [0.000000] now;
+		turn panel1 to x-axis <-102.021978> speed <52.010989>;
+		sleep 2050;
+	}
+	if( TRUE )
+	{
+		turn panel2b to z-axis <0.000000> now;
+		turn panel2b to z-axis <181.043956> speed <68.016484>;
+		turn panel3b to z-axis <0.000000> now;
+		turn panel3b to z-axis <-181.043956> speed <68.016484>;
+		sleep 2400;
+	}
+	if( TRUE )
+	{
+		move panel2a to x-axis [6.000000] speed [7.900000];
+		move panel3a to x-axis [-6.000000] speed [7.900000];
+		sleep 1850;
+	}
+	if( TRUE )
+	{
+		turn arm to z-axis <-90.016484> speed <55.560440>;
+		sleep 1874;
+	}
+	sleep 114;
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		turn panel1 to x-axis <0.000000> speed <52.010989>;
+		turn arm to z-axis <0.000000> speed <50.230769>;
+		sleep 1870;
+	}
+	if( TRUE )
+	{
+		move panel2a to x-axis [0.000000] speed [4.500000];
+		move panel3a to x-axis [0.000000] speed [4.500000];
+		sleep 1650;
+	}
+	if( TRUE )
+	{
+		turn panel2b to z-axis <0.000000> speed <50.010989>;
+		turn panel3b to z-axis <0.000000> speed <50.010989>;
+		sleep 3550;
+	}
+	if( TRUE )
+	{
+		show missile;
+	}
+	sleep 114;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+go()
+{
+	dont-cache missile;
+	dont-cache arm;
+	dont-cache base;
+	dont-cache panel1;
+	dont-cache panel2a;
+	dont-cache panel2b;
+	dont-cache panel3a;
+	dont-cache panel3b;
+	cache light;
+	show missile;
+	call-script activatescr();
+	gun_1 = missile;
+}
+
+stop()
+{
+	gun_1 = base;
+	sleep 4000;
+	call-script deactivatescr();
+	dont-cache light;
+	cache panel1;
+	cache panel2a;
+	cache panel2b;
+	cache panel3a;
+	cache panel3b;
+	cache missile;
+	cache arm;
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+Create()
+{
+	gun_1 = base;
+	restore_delay = 3000;
+	call-script InitState();
+	start-script SmokeUnit();
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+SetMaxReloadTime(Func_Var_1)
+{
+	restore_delay = Func_Var_1 * 2;
+}
+
+RestoreAfterDelay()
+{
+	sleep restore_delay;
+	set-signal-mask 0;
+	start-script RequestState(1);
+}
+
+AimPrimary(heading, pitch)
+{
+	start-script RequestState(0);
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	while( !gun_1 )
+	{
+		sleep 250;
+	}
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FirePrimary()
+{
+	explode boompt type BITMAPONLY | BITMAP3;
+	hide missile;
+	gun_1 = base;
+	start-script RequestState(1);
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = missile;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode arm type BITMAPONLY | BITMAP1;
+		explode base type BITMAPONLY | BITMAP2;
+		explode panel1 type BITMAPONLY | BITMAP4;
+		explode panel2a type BITMAPONLY | BITMAP5;
+		explode panel2b type BITMAPONLY | BITMAP4;
+		explode panel3a type BITMAPONLY | BITMAP3;
+		explode panel3b type BITMAPONLY | BITMAP5;
+		explode missile type BITMAPONLY | BITMAP1;
+		explode light type BITMAPONLY | BITMAP3;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode arm type SHATTER | BITMAP1;
+		explode base type BITMAPONLY | BITMAP2;
+		explode panel1 type BITMAPONLY | BITMAP4;
+		explode panel2a type FALL | BITMAP5;
+		explode panel2b type FALL | BITMAP4;
+		explode panel3a type FALL | BITMAP3;
+		explode panel3b type BITMAPONLY | BITMAP5;
+		explode missile type BITMAPONLY | BITMAP1;
+		explode light type BITMAPONLY | BITMAP3;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode arm type SHATTER | BITMAP1;
+		explode base type SHATTER | BITMAP2;
+		explode light type BITMAPONLY | BITMAP3;
+		explode panel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode panel2a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode panel2b type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode panel3a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode panel3b type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode missile type BITMAPONLY | BITMAP1;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode arm type SHATTER | BITMAP1;
+	explode base type SHATTER | BITMAP2;
+	explode light type BITMAPONLY | BITMAP3;
+	explode panel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode panel2a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode panel2b type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode panel3a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode panel3b type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode missile type BITMAPONLY | BITMAP1;
+	return (corpsetype);
+}

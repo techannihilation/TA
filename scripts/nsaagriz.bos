@@ -3,11 +3,11 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, torso, point, blaster, caisson, caisson1, caisson2,
-       roue1, roue2, roue3, roue4, roue5,
-       roue6, roue7, roue8, bearing, corp;
+piece  base, torso, point, blaster, caisson, caisson1, caisson2, roue1,
+       roue2, roue3, roue4, roue5, roue6, roue7, roue8, bearing,
+       corp;
 
-static-var  restore_delay, Static_Var_12, Static_Var_13, statechg_DesiredState, statechg_StateChanging;
+static-var  restore_delay, Static_Var_2, Static_Var_3, statechg_DesiredState, statechg_StateChanging;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -38,10 +38,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		}
 		sleep sleeptime;
 	}
-	return (0);
-	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
 }
-
 
 HitByWeapon(anglex, anglez)
 {
@@ -55,7 +52,7 @@ HitByWeapon(anglex, anglez)
 
 Go()
 {
-	Static_Var_13 = 2;
+	Static_Var_3 = 2;
 	turn caisson1 to z-axis <-70.016484> speed <30.000000>;
 	turn caisson2 to z-axis <70.016484> speed <30.000000>;
 	turn caisson to x-axis <-70.016484> speed <45.000000>;
@@ -70,7 +67,7 @@ Go()
 
 Stop()
 {
-	Static_Var_13 = 1;
+	Static_Var_3 = 1;
 	set BUSY to 1;
 	turn blaster to y-axis <0.000000> speed <30.000000>;
 	wait-for-turn blaster around y-axis;
@@ -131,7 +128,7 @@ Create()
 {
 	set ARMORED to 1;
 	call-script InitState();
-	Static_Var_13 = 1;
+	Static_Var_3 = 1;
 	restore_delay = 10000;
 	start-script SmokeUnit();
 }
@@ -167,12 +164,12 @@ SetMaxReloadTime(Func_Var_1)
 
 RestoreAfterDelay()
 {
-	if( Static_Var_13 == 1 )
+	if( Static_Var_3 == 1 )
 	{
 		wait-for-turn blaster around y-axis;
 		sleep restore_delay;
 	}
-	if( Static_Var_12 == 2 )
+	if( Static_Var_2 == 2 )
 	{
 		wait-for-turn blaster around y-axis;
 		sleep restore_delay;
@@ -182,7 +179,7 @@ RestoreAfterDelay()
 
 AimPrimary(heading, pitch)
 {
-	if( Static_Var_13 == 2 )
+	if( Static_Var_3 == 2 )
 	{
 		signal SIG_AIM;
 		set-signal-mask SIG_AIM;
@@ -195,7 +192,7 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-	if( Static_Var_13 == 2 )
+	if( Static_Var_3 == 2 )
 	{
 		emit-sfx 1024 + 0 from point;
 		sleep 170;
@@ -210,7 +207,7 @@ AimFromPrimary(piecenum)
 
 QueryPrimary(piecenum)
 {
-	if( Static_Var_13 == 2 )
+	if( Static_Var_3 == 2 )
 	{
 		piecenum = point;
 	}
@@ -231,7 +228,7 @@ Killed(severity, corpsetype)
 		explode corp type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode caisson1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 		explode caisson2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -241,7 +238,7 @@ Killed(severity, corpsetype)
 		explode corp type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode caisson1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 		explode caisson2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -251,7 +248,7 @@ Killed(severity, corpsetype)
 		explode corp type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode caisson1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 		explode caisson2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
@@ -259,4 +256,5 @@ Killed(severity, corpsetype)
 	explode corp type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode caisson1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 	explode caisson2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	return (corpsetype);
 }

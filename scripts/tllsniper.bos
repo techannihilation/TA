@@ -22,15 +22,15 @@ walk()
 		move rleg to y-axis [0.300000] now;
 		move lleg to y-axis [0.700000] now;
 		move head to y-axis [0.000000] now;
-		turn hip to x-axis <2.098901> now;
-		turn torso to y-axis <4.697802> now;
+		turn hip to x-axis <2.093407> now;
+		turn torso to y-axis <4.692308> now;
 		turn lupleg to x-axis <-3.500000> now;
-		turn rupleg to x-axis <19.197802> now;
-		turn rleg to x-axis <-21.098901> now;
-		turn lleg to x-axis <31.098901> now;
-		turn ruparm to x-axis <-20.895604> now;
-		turn head to y-axis <-5.098901> now;
-		turn luparm to x-axis <14.796703> now;
+		turn rupleg to x-axis <19.192308> now;
+		turn rleg to x-axis <-21.093407> now;
+		turn lleg to x-axis <31.093407> now;
+		turn ruparm to x-axis <-20.890110> now;
+		turn head to y-axis <-5.093407> now;
+		turn luparm to x-axis <14.791209> now;
 		sleep 50;
 	}
 	if( TRUE )
@@ -40,14 +40,14 @@ walk()
 		move rupleg to y-axis [-0.300000] now;
 		move rleg to y-axis [0.200000] now;
 		move lleg to y-axis [0.300000] now;
-		turn hip to x-axis <1.098901> now;
-		turn torso to y-axis <7.098901> now;
-		turn lupleg to x-axis <-9.796703> now;
-		turn rupleg to x-axis <28.895604> now;
-		turn rleg to x-axis <-22.296703> now;
-		turn lleg to x-axis <10.796703> now;
-		turn ruparm to x-axis <-27.895604> now;
-		turn head to y-axis <-7.598901> now;
+		turn hip to x-axis <1.093407> now;
+		turn torso to y-axis <7.093407> now;
+		turn lupleg to x-axis <-9.791209> now;
+		turn rupleg to x-axis <28.890110> now;
+		turn rleg to x-axis <-22.291209> now;
+		turn lleg to x-axis <10.791209> now;
+		turn ruparm to x-axis <-27.890110> now;
+		turn head to y-axis <-7.593407> now;
 		turn luparm to x-axis <21.500000> now;
 		sleep 50;
 	}
@@ -60,70 +60,70 @@ walk()
 		move lleg to y-axis [0.000000] now;
 		turn hip to x-axis <0.000000> now;
 		turn torso to y-axis <9.500000> now;
-		turn lupleg to x-axis <-16.197802> now;
-		turn rupleg to x-axis <38.697802> now;
-		turn rleg to x-axis <-23.598901> now;
+		turn lupleg to x-axis <-16.192308> now;
+		turn rupleg to x-axis <38.692308> now;
+		turn rleg to x-axis <-23.593407> now;
 		turn lleg to x-axis <-9.500000> now;
-		turn ruparm to x-axis <-34.796703> now;
-		turn head to y-axis <-10.197802> now;
-		turn luparm to x-axis <28.098901> now;
-		turn larm to x-axis <-40.796703> now;
+		turn ruparm to x-axis <-34.791209> now;
+		turn head to y-axis <-10.192308> now;
+		turn luparm to x-axis <28.093407> now;
+		turn larm to x-axis <-40.791209> now;
 		sleep 50;
 	}
 	if( TRUE )
 	{
-		turn hip to x-axis <1.697802> now;
+		turn hip to x-axis <1.692308> now;
 		turn torso to y-axis <8.500000> now;
-		turn lupleg to x-axis <-13.395604> now;
-		turn rupleg to x-axis <41.098901> now;
+		turn lupleg to x-axis <-13.390110> now;
+		turn rupleg to x-axis <41.093407> now;
 		turn rleg to x-axis <-10.000000> now;
-		turn lleg to x-axis <-7.598901> now;
+		turn lleg to x-axis <-7.593407> now;
 		turn ruparm to x-axis <-30.500000> now;
 		turn head to y-axis <-9.000000> now;
 		turn luparm to x-axis <23.000000> now;
-		turn larm to x-axis <-36.395604> now;
+		turn larm to x-axis <-36.390110> now;
 		sleep 50;
 	}
 	if( TRUE )
 	{
-		turn hip to x-axis <3.296703> now;
-		turn torso to y-axis <7.598901> now;
+		turn hip to x-axis <3.291209> now;
+		turn torso to y-axis <7.593407> now;
 		turn lupleg to x-axis <-10.500000> now;
-		turn rupleg to x-axis <43.598901> now;
+		turn rupleg to x-axis <43.593407> now;
 		turn rleg to x-axis <3.500000> now;
-		turn lleg to x-axis <-5.796703> now;
-		turn ruparm to x-axis <-26.197802> now;
-		turn head to y-axis <-7.895604> now;
-		turn luparm to x-axis <17.895604> now;
+		turn lleg to x-axis <-5.791209> now;
+		turn ruparm to x-axis <-26.192308> now;
+		turn head to y-axis <-7.890110> now;
+		turn luparm to x-axis <17.890110> now;
 		turn larm to x-axis <-32.000000> now;
 		sleep 35;
 	}
 	if( TRUE )
 	{
 		turn hip to x-axis <5.000000> now;
-		turn torso to y-axis <6.598901> now;
-		turn lupleg to x-axis <-7.697802> now;
-		turn rupleg to x-axis <46.098901> now;
-		turn rleg to x-axis <14.598901> now;
+		turn torso to y-axis <6.593407> now;
+		turn lupleg to x-axis <-7.692308> now;
+		turn rupleg to x-axis <46.093407> now;
+		turn rleg to x-axis <14.593407> now;
 		turn lleg to x-axis <-4.000000> now;
-		turn ruparm to x-axis <-21.895604> now;
-		turn head to y-axis <-6.796703> now;
-		turn luparm to x-axis <13.895604> now;
-		turn larm to x-axis <-27.598901> now;
+		turn ruparm to x-axis <-21.890110> now;
+		turn head to y-axis <-6.791209> now;
+		turn luparm to x-axis <13.890110> now;
+		turn larm to x-axis <-27.593407> now;
 		sleep 35;
 	}
 	if( TRUE )
 	{
-		turn hip to x-axis <6.697802> now;
-		turn torso to y-axis <5.598901> now;
-		turn lupleg to x-axis <-4.895604> now;
+		turn hip to x-axis <6.692308> now;
+		turn torso to y-axis <5.593407> now;
+		turn lupleg to x-axis <-4.890110> now;
 		turn rupleg to x-axis <48.500000> now;
-		turn rleg to x-axis <25.697802> now;
-		turn lleg to x-axis <-2.098901> now;
-		turn ruparm to x-axis <-17.598901> now;
-		turn head to y-axis <-5.598901> now;
-		turn luparm to x-axis <9.796703> now;
-		turn larm to x-axis <-23.197802> now;
+		turn rleg to x-axis <25.692308> now;
+		turn lleg to x-axis <-2.093407> now;
+		turn ruparm to x-axis <-17.593407> now;
+		turn head to y-axis <-5.593407> now;
+		turn luparm to x-axis <9.791209> now;
+		turn larm to x-axis <-23.192308> now;
 		sleep 35;
 	}
 	if( TRUE )
@@ -132,16 +132,16 @@ walk()
 		move lupleg to y-axis [-0.400000] now;
 		move rupleg to y-axis [0.100000] now;
 		move lleg to y-axis [0.100000] now;
-		turn hip to x-axis <5.697802> now;
-		turn torso to y-axis <4.197802> now;
-		turn lupleg to x-axis <0.697802> now;
-		turn rupleg to x-axis <31.598901> now;
-		turn rleg to x-axis <31.796703> now;
-		turn lleg to x-axis <-6.796703> now;
-		turn ruparm to x-axis <-13.697802> now;
-		turn head to y-axis <-4.197802> now;
-		turn luparm to x-axis <4.895604> now;
-		turn larm to x-axis <-18.395604> now;
+		turn hip to x-axis <5.692308> now;
+		turn torso to y-axis <4.192308> now;
+		turn lupleg to x-axis <0.692308> now;
+		turn rupleg to x-axis <31.593407> now;
+		turn rleg to x-axis <31.791209> now;
+		turn lleg to x-axis <-6.791209> now;
+		turn ruparm to x-axis <-13.692308> now;
+		turn head to y-axis <-4.192308> now;
+		turn luparm to x-axis <4.890110> now;
+		turn larm to x-axis <-18.390110> now;
 		sleep 35;
 	}
 	if( TRUE )
@@ -150,14 +150,14 @@ walk()
 		move lupleg to y-axis [-0.400000] now;
 		move rupleg to y-axis [0.300000] now;
 		move lleg to y-axis [0.100000] now;
-		turn hip to x-axis <4.697802> now;
-		turn torso to y-axis <2.796703> now;
-		turn lupleg to x-axis <6.296703> now;
-		turn rupleg to x-axis <14.796703> now;
+		turn hip to x-axis <4.692308> now;
+		turn torso to y-axis <2.791209> now;
+		turn lupleg to x-axis <6.291209> now;
+		turn rupleg to x-axis <14.791209> now;
 		turn rleg to x-axis <38.000000> now;
-		turn lleg to x-axis <-11.395604> now;
-		turn ruparm to x-axis <-9.796703> now;
-		turn head to y-axis <-2.796703> now;
+		turn lleg to x-axis <-11.390110> now;
+		turn ruparm to x-axis <-9.791209> now;
+		turn head to y-axis <-2.791209> now;
 		turn luparm to x-axis <0.000000> now;
 		turn larm to x-axis <-13.500000> now;
 		sleep 50;
@@ -168,16 +168,16 @@ walk()
 		move lupleg to y-axis [-0.500000] now;
 		move rupleg to y-axis [0.500000] now;
 		move lleg to y-axis [0.200000] now;
-		turn hip to x-axis <3.796703> now;
-		turn torso to y-axis <1.395604> now;
-		turn lupleg to x-axis <10.197802> now;
-		turn rupleg to x-axis <-2.098901> now;
-		turn rleg to x-axis <44.098901> now;
-		turn lleg to x-axis <-14.197802> now;
+		turn hip to x-axis <3.791209> now;
+		turn torso to y-axis <1.390110> now;
+		turn lupleg to x-axis <10.192308> now;
+		turn rupleg to x-axis <-2.093407> now;
+		turn rleg to x-axis <44.093407> now;
+		turn lleg to x-axis <-14.192308> now;
 		turn ruparm to x-axis <-6.000000> now;
-		turn head to y-axis <-1.395604> now;
-		turn luparm to x-axis <-2.598901> now;
-		turn larm to x-axis <-8.697802> now;
+		turn head to y-axis <-1.390110> now;
+		turn luparm to x-axis <-2.593407> now;
+		turn larm to x-axis <-8.692308> now;
 		sleep 50;
 	}
 	if( TRUE )
@@ -186,16 +186,16 @@ walk()
 		move lupleg to y-axis [-0.700000] now;
 		move rupleg to y-axis [0.600000] now;
 		move lleg to y-axis [0.300000] now;
-		turn hip to x-axis <2.796703> now;
+		turn hip to x-axis <2.791209> now;
 		turn torso to y-axis <0.000000> now;
-		turn lupleg to x-axis <14.098901> now;
+		turn lupleg to x-axis <14.093407> now;
 		turn rupleg to x-axis <-19.000000> now;
-		turn rleg to x-axis <50.296703> now;
-		turn lleg to x-axis <-16.895604> now;
-		turn ruparm to x-axis <-2.098901> now;
+		turn rleg to x-axis <50.291209> now;
+		turn lleg to x-axis <-16.890110> now;
+		turn ruparm to x-axis <-2.093407> now;
 		turn head to y-axis <0.000000> now;
-		turn luparm to x-axis <-5.296703> now;
-		turn larm to x-axis <-3.895604> now;
+		turn luparm to x-axis <-5.291209> now;
+		turn larm to x-axis <-3.890110> now;
 		sleep 65;
 	}
 	if( TRUE )
@@ -203,16 +203,16 @@ walk()
 		move hip to y-axis [0.200000] now;
 		move lupleg to y-axis [-0.600000] now;
 		move rupleg to y-axis [0.500000] now;
-		turn hip to x-axis <2.098901> now;
-		turn torso to y-axis <-1.296703> now;
+		turn hip to x-axis <2.093407> now;
+		turn torso to y-axis <-1.291209> now;
 		turn lupleg to x-axis <20.000000> now;
-		turn rupleg to x-axis <-20.697802> now;
-		turn rleg to x-axis <35.895604> now;
-		turn lleg to x-axis <-22.098901> now;
-		turn ruparm to x-axis <1.098901> now;
+		turn rupleg to x-axis <-20.692308> now;
+		turn rleg to x-axis <35.890110> now;
+		turn lleg to x-axis <-22.093407> now;
+		turn ruparm to x-axis <1.093407> now;
 		turn head to y-axis <1.000000> now;
-		turn luparm to x-axis <-8.296703> now;
-		turn larm to x-axis <-7.098901> now;
+		turn luparm to x-axis <-8.291209> now;
+		turn larm to x-axis <-7.093407> now;
 		sleep 65;
 	}
 	if( TRUE )
@@ -220,16 +220,16 @@ walk()
 		move hip to y-axis [0.100000] now;
 		move lupleg to y-axis [-0.500000] now;
 		move rupleg to y-axis [0.300000] now;
-		turn hip to x-axis <1.395604> now;
-		turn torso to y-axis <-2.598901> now;
+		turn hip to x-axis <1.390110> now;
+		turn torso to y-axis <-2.593407> now;
 		turn lupleg to x-axis <26.000000> now;
 		turn rupleg to x-axis <-22.500000> now;
-		turn rleg to x-axis <21.395604> now;
-		turn lleg to x-axis <-27.395604> now;
-		turn ruparm to x-axis <4.395604> now;
-		turn head to y-axis <1.895604> now;
-		turn luparm to x-axis <-11.296703> now;
-		turn larm to x-axis <-10.395604> now;
+		turn rleg to x-axis <21.390110> now;
+		turn lleg to x-axis <-27.390110> now;
+		turn ruparm to x-axis <4.390110> now;
+		turn head to y-axis <1.890110> now;
+		turn luparm to x-axis <-11.291209> now;
+		turn larm to x-axis <-10.390110> now;
 		sleep 55;
 	}
 	if( TRUE )
@@ -237,16 +237,16 @@ walk()
 		move hip to y-axis [0.100000] now;
 		move lupleg to y-axis [-0.200000] now;
 		move rupleg to y-axis [0.100000] now;
-		turn hip to x-axis <0.697802> now;
+		turn hip to x-axis <0.692308> now;
 		turn torso to y-axis <-4.000000> now;
-		turn lupleg to x-axis <34.098901> now;
-		turn rupleg to x-axis <-24.296703> now;
+		turn lupleg to x-axis <34.093407> now;
+		turn rupleg to x-axis <-24.291209> now;
 		turn rleg to x-axis <7.000000> now;
-		turn lleg to x-axis <-26.197802> now;
-		turn ruparm to x-axis <7.598901> now;
-		turn head to y-axis <2.895604> now;
-		turn luparm to x-axis <-11.598901> now;
-		turn larm to x-axis <-13.598901> now;
+		turn lleg to x-axis <-26.192308> now;
+		turn ruparm to x-axis <7.593407> now;
+		turn head to y-axis <2.890110> now;
+		turn luparm to x-axis <-11.593407> now;
+		turn larm to x-axis <-13.593407> now;
 		sleep 55;
 	}
 	if( TRUE )
@@ -255,77 +255,77 @@ walk()
 		move lupleg to y-axis [0.100000] now;
 		move rupleg to y-axis [0.000000] now;
 		turn hip to x-axis <0.000000> now;
-		turn torso to y-axis <-5.296703> now;
-		turn lupleg to x-axis <42.197802> now;
+		turn torso to y-axis <-5.291209> now;
+		turn lupleg to x-axis <42.192308> now;
 		turn rupleg to x-axis <-26.000000> now;
-		turn rleg to x-axis <-7.395604> now;
+		turn rleg to x-axis <-7.390110> now;
 		turn lleg to x-axis <-25.000000> now;
-		turn ruparm to x-axis <10.895604> now;
-		turn head to y-axis <3.895604> now;
+		turn ruparm to x-axis <10.890110> now;
+		turn head to y-axis <3.890110> now;
 		turn luparm to x-axis <-12.000000> now;
-		turn larm to x-axis <-16.895604> now;
+		turn larm to x-axis <-16.890110> now;
 		sleep 50;
 	}
 	if( TRUE )
 	{
 		move lupleg to y-axis [0.200000] now;
 		move rupleg to y-axis [0.000000] now;
-		turn hip to x-axis <1.697802> now;
-		turn torso to y-axis <-4.598901> now;
+		turn hip to x-axis <1.692308> now;
+		turn torso to y-axis <-4.593407> now;
 		turn lupleg to x-axis <43.000000> now;
 		turn rupleg to x-axis <-22.500000> now;
-		turn rleg to x-axis <-4.098901> now;
-		turn lleg to x-axis <-14.098901> now;
-		turn ruparm to x-axis <13.598901> now;
-		turn head to y-axis <3.395604> now;
-		turn luparm to x-axis <-14.895604> now;
-		turn larm to x-axis <-15.395604> now;
+		turn rleg to x-axis <-4.093407> now;
+		turn lleg to x-axis <-14.093407> now;
+		turn ruparm to x-axis <13.593407> now;
+		turn head to y-axis <3.390110> now;
+		turn luparm to x-axis <-14.890110> now;
+		turn larm to x-axis <-15.390110> now;
 		sleep 50;
 	}
 	if( TRUE )
 	{
 		move lupleg to y-axis [0.300000] now;
 		move rupleg to y-axis [-0.100000] now;
-		turn hip to x-axis <3.296703> now;
-		turn torso to y-axis <-3.895604> now;
-		turn lupleg to x-axis <43.796703> now;
+		turn hip to x-axis <3.291209> now;
+		turn torso to y-axis <-3.890110> now;
+		turn lupleg to x-axis <43.791209> now;
 		turn rupleg to x-axis <-19.000000> now;
-		turn rleg to x-axis <-0.895604> now;
-		turn lleg to x-axis <-3.197802> now;
-		turn ruparm to x-axis <16.296703> now;
+		turn rleg to x-axis <-0.890110> now;
+		turn lleg to x-axis <-3.192308> now;
+		turn ruparm to x-axis <16.291209> now;
 		turn head to y-axis <3.000000> now;
-		turn luparm to x-axis <-17.895604> now;
-		turn larm to x-axis <-13.895604> now;
+		turn luparm to x-axis <-17.890110> now;
+		turn larm to x-axis <-13.890110> now;
 		sleep 35;
 	}
 	if( TRUE )
 	{
 		move rupleg to y-axis [-0.100000] now;
 		turn hip to x-axis <5.000000> now;
-		turn torso to y-axis <-3.197802> now;
-		turn lupleg to x-axis <44.598901> now;
+		turn torso to y-axis <-3.192308> now;
+		turn lupleg to x-axis <44.593407> now;
 		turn rupleg to x-axis <-15.500000> now;
-		turn rleg to x-axis <2.395604> now;
-		turn lleg to x-axis <8.395604> now;
-		turn ruparm to x-axis <19.098901> now;
+		turn rleg to x-axis <2.390110> now;
+		turn lleg to x-axis <8.390110> now;
+		turn ruparm to x-axis <19.093407> now;
 		turn head to y-axis <2.500000> now;
-		turn luparm to x-axis <-14.098901> now;
-		turn larm to x-axis <-12.395604> now;
+		turn luparm to x-axis <-14.093407> now;
+		turn larm to x-axis <-12.390110> now;
 		sleep 35;
 	}
 	if( TRUE )
 	{
 		move rupleg to y-axis [-0.100000] now;
-		turn hip to x-axis <6.697802> now;
+		turn hip to x-axis <6.692308> now;
 		turn torso to y-axis <-2.500000> now;
-		turn lupleg to x-axis <45.395604> now;
+		turn lupleg to x-axis <45.390110> now;
 		turn rupleg to x-axis <-12.000000> now;
-		turn rleg to x-axis <5.598901> now;
+		turn rleg to x-axis <5.593407> now;
 		turn lleg to x-axis <20.000000> now;
-		turn ruparm to x-axis <21.796703> now;
-		turn head to y-axis <2.098901> now;
-		turn luparm to x-axis <-10.197802> now;
-		turn larm to x-axis <-10.895604> now;
+		turn ruparm to x-axis <21.791209> now;
+		turn head to y-axis <2.093407> now;
+		turn luparm to x-axis <-10.192308> now;
+		turn larm to x-axis <-10.890110> now;
 		sleep 35;
 	}
 	if( TRUE )
@@ -334,16 +334,16 @@ walk()
 		move lupleg to y-axis [0.300000] now;
 		move rupleg to y-axis [-0.400000] now;
 		move rleg to y-axis [0.200000] now;
-		turn hip to x-axis <6.098901> now;
-		turn torso to y-axis <-1.796703> now;
-		turn lupleg to x-axis <36.296703> now;
+		turn hip to x-axis <6.093407> now;
+		turn torso to y-axis <-1.791209> now;
+		turn lupleg to x-axis <36.291209> now;
 		turn rupleg to x-axis <-9.000000> now;
-		turn rleg to x-axis <3.395604> now;
-		turn lleg to x-axis <26.598901> now;
-		turn ruparm to x-axis <14.598901> now;
-		turn head to y-axis <1.598901> now;
-		turn luparm to x-axis <-5.098901> now;
-		turn larm to x-axis <-15.395604> now;
+		turn rleg to x-axis <3.390110> now;
+		turn lleg to x-axis <26.593407> now;
+		turn ruparm to x-axis <14.593407> now;
+		turn head to y-axis <1.593407> now;
+		turn luparm to x-axis <-5.093407> now;
+		turn larm to x-axis <-15.390110> now;
 		sleep 35;
 	}
 	if( TRUE )
@@ -353,15 +353,15 @@ walk()
 		move rupleg to y-axis [-0.600000] now;
 		move rleg to y-axis [0.300000] now;
 		turn hip to x-axis <5.500000> now;
-		turn torso to y-axis <-1.197802> now;
-		turn lupleg to x-axis <27.296703> now;
-		turn rupleg to x-axis <-6.197802> now;
-		turn rleg to x-axis <1.197802> now;
-		turn lleg to x-axis <33.197802> now;
-		turn ruparm to x-axis <7.395604> now;
-		turn head to y-axis <1.098901> now;
+		turn torso to y-axis <-1.192308> now;
+		turn lupleg to x-axis <27.291209> now;
+		turn rupleg to x-axis <-6.192308> now;
+		turn rleg to x-axis <1.192308> now;
+		turn lleg to x-axis <33.192308> now;
+		turn ruparm to x-axis <7.390110> now;
+		turn head to y-axis <1.093407> now;
 		turn luparm to x-axis <0.000000> now;
-		turn larm to x-axis <-19.895604> now;
+		turn larm to x-axis <-19.890110> now;
 		sleep 50;
 	}
 	if( TRUE )
@@ -370,16 +370,16 @@ walk()
 		move lupleg to y-axis [0.300000] now;
 		move rupleg to y-axis [-0.800000] now;
 		move rleg to y-axis [0.500000] now;
-		turn hip to x-axis <4.796703> now;
-		turn torso to y-axis <-0.598901> now;
-		turn lupleg to x-axis <18.197802> now;
-		turn rupleg to x-axis <-3.197802> now;
+		turn hip to x-axis <4.791209> now;
+		turn torso to y-axis <-0.593407> now;
+		turn lupleg to x-axis <18.192308> now;
+		turn rupleg to x-axis <-3.192308> now;
 		turn rleg to x-axis <-1.000000> now;
-		turn lleg to x-axis <39.796703> now;
-		turn ruparm to x-axis <0.197802> now;
+		turn lleg to x-axis <39.791209> now;
+		turn ruparm to x-axis <0.192308> now;
 		turn head to y-axis <0.500000> now;
-		turn luparm to x-axis <3.197802> now;
-		turn larm to x-axis <-24.296703> now;
+		turn luparm to x-axis <3.192308> now;
+		turn larm to x-axis <-24.291209> now;
 		sleep 50;
 	}
 	if( TRUE )
@@ -388,16 +388,16 @@ walk()
 		move lupleg to y-axis [0.300000] now;
 		move rupleg to y-axis [-1.000000] now;
 		move rleg to y-axis [0.700000] now;
-		turn hip to x-axis <4.197802> now;
+		turn hip to x-axis <4.192308> now;
 		turn torso to y-axis <0.000000> now;
-		turn lupleg to x-axis <9.098901> now;
-		turn rupleg to x-axis <-0.296703> now;
-		turn rleg to x-axis <-3.197802> now;
-		turn lleg to x-axis <46.395604> now;
+		turn lupleg to x-axis <9.093407> now;
+		turn rupleg to x-axis <-0.291209> now;
+		turn rleg to x-axis <-3.192308> now;
+		turn lleg to x-axis <46.390110> now;
 		turn ruparm to x-axis <-7.000000> now;
 		turn head to y-axis <0.000000> now;
-		turn luparm to x-axis <6.296703> now;
-		turn larm to x-axis <-28.796703> now;
+		turn luparm to x-axis <6.291209> now;
+		turn larm to x-axis <-28.791209> now;
 		sleep 45;
 	}
 	move hip to y-axis [0.200000] now;
@@ -405,16 +405,16 @@ walk()
 	move rupleg to y-axis [-0.800000] now;
 	move rleg to y-axis [0.500000] now;
 	move lleg to y-axis [0.500000] now;
-	turn hip to x-axis <3.197802> now;
-	turn torso to y-axis <2.395604> now;
-	turn lupleg to x-axis <2.796703> now;
-	turn rupleg to x-axis <9.395604> now;
-	turn rleg to x-axis <-12.098901> now;
-	turn lleg to x-axis <38.796703> now;
+	turn hip to x-axis <3.192308> now;
+	turn torso to y-axis <2.390110> now;
+	turn lupleg to x-axis <2.791209> now;
+	turn rupleg to x-axis <9.390110> now;
+	turn rleg to x-axis <-12.093407> now;
+	turn lleg to x-axis <38.791209> now;
 	turn ruparm to x-axis <-14.000000> now;
 	turn head to y-axis <-2.500000> now;
 	turn luparm to x-axis <10.500000> now;
-	turn larm to x-axis <-31.796703> now;
+	turn larm to x-axis <-31.791209> now;
 	sleep 45;
 }
 
@@ -427,10 +427,10 @@ walklegs()
 		move rleg to y-axis [0.300000] now;
 		move lleg to y-axis [0.100000] now;
 		move head to y-axis [0.000000] now;
-		turn hip to x-axis <2.098901> now;
+		turn hip to x-axis <2.093407> now;
 		turn lupleg to x-axis <-3.500000> now;
-		turn rupleg to x-axis <24.395604> now;
-		turn rleg to x-axis <-26.395604> now;
+		turn rupleg to x-axis <24.390110> now;
+		turn rleg to x-axis <-26.390110> now;
 		turn lleg to x-axis <18.500000> now;
 		sleep 50;
 	}
@@ -441,10 +441,10 @@ walklegs()
 		move rupleg to y-axis [-0.200000] now;
 		move rleg to y-axis [0.200000] now;
 		move lleg to y-axis [0.100000] now;
-		turn hip to x-axis <1.098901> now;
-		turn lupleg to x-axis <-9.796703> now;
-		turn rupleg to x-axis <31.598901> now;
-		turn rleg to x-axis <-25.296703> now;
+		turn hip to x-axis <1.093407> now;
+		turn lupleg to x-axis <-9.791209> now;
+		turn rupleg to x-axis <31.593407> now;
+		turn rleg to x-axis <-25.291209> now;
 		turn lleg to x-axis <4.500000> now;
 		sleep 50;
 	}
@@ -456,46 +456,46 @@ walklegs()
 		move rleg to y-axis [0.000000] now;
 		move lleg to y-axis [0.000000] now;
 		turn hip to x-axis <0.000000> now;
-		turn lupleg to x-axis <-16.197802> now;
-		turn rupleg to x-axis <38.697802> now;
-		turn rleg to x-axis <-24.296703> now;
+		turn lupleg to x-axis <-16.192308> now;
+		turn rupleg to x-axis <38.692308> now;
+		turn rleg to x-axis <-24.291209> now;
 		turn lleg to x-axis <-9.500000> now;
 		sleep 50;
 	}
 	if( TRUE )
 	{
-		turn hip to x-axis <1.697802> now;
-		turn lupleg to x-axis <-13.395604> now;
-		turn rupleg to x-axis <41.098901> now;
-		turn rleg to x-axis <-10.395604> now;
-		turn lleg to x-axis <-7.598901> now;
+		turn hip to x-axis <1.692308> now;
+		turn lupleg to x-axis <-13.390110> now;
+		turn rupleg to x-axis <41.093407> now;
+		turn rleg to x-axis <-10.390110> now;
+		turn lleg to x-axis <-7.593407> now;
 		sleep 50;
 	}
 	if( TRUE )
 	{
-		turn hip to x-axis <3.296703> now;
+		turn hip to x-axis <3.291209> now;
 		turn lupleg to x-axis <-10.500000> now;
-		turn rupleg to x-axis <43.598901> now;
+		turn rupleg to x-axis <43.593407> now;
 		turn rleg to x-axis <3.500000> now;
-		turn lleg to x-axis <-5.796703> now;
+		turn lleg to x-axis <-5.791209> now;
 		sleep 50;
 	}
 	if( TRUE )
 	{
 		turn hip to x-axis <5.000000> now;
-		turn lupleg to x-axis <-7.697802> now;
-		turn rupleg to x-axis <46.098901> now;
-		turn rleg to x-axis <14.598901> now;
+		turn lupleg to x-axis <-7.692308> now;
+		turn rupleg to x-axis <46.093407> now;
+		turn rleg to x-axis <14.593407> now;
 		turn lleg to x-axis <-4.000000> now;
 		sleep 50;
 	}
 	if( TRUE )
 	{
-		turn hip to x-axis <6.697802> now;
-		turn lupleg to x-axis <-4.895604> now;
+		turn hip to x-axis <6.692308> now;
+		turn lupleg to x-axis <-4.890110> now;
 		turn rupleg to x-axis <48.500000> now;
-		turn rleg to x-axis <25.697802> now;
-		turn lleg to x-axis <-2.098901> now;
+		turn rleg to x-axis <25.692308> now;
+		turn lleg to x-axis <-2.093407> now;
 		sleep 50;
 	}
 	if( TRUE )
@@ -504,11 +504,11 @@ walklegs()
 		move lupleg to y-axis [-0.400000] now;
 		move rupleg to y-axis [0.100000] now;
 		move lleg to y-axis [0.100000] now;
-		turn hip to x-axis <5.697802> now;
-		turn lupleg to x-axis <1.598901> now;
-		turn rupleg to x-axis <31.598901> now;
-		turn rleg to x-axis <31.796703> now;
-		turn lleg to x-axis <-7.296703> now;
+		turn hip to x-axis <5.692308> now;
+		turn lupleg to x-axis <1.593407> now;
+		turn rupleg to x-axis <31.593407> now;
+		turn rleg to x-axis <31.791209> now;
+		turn lleg to x-axis <-7.291209> now;
 		sleep 50;
 	}
 	if( TRUE )
@@ -517,9 +517,9 @@ walklegs()
 		move lupleg to y-axis [-0.500000] now;
 		move rupleg to y-axis [0.300000] now;
 		move lleg to y-axis [0.100000] now;
-		turn hip to x-axis <4.697802> now;
-		turn lupleg to x-axis <8.098901> now;
-		turn rupleg to x-axis <14.796703> now;
+		turn hip to x-axis <4.692308> now;
+		turn lupleg to x-axis <8.093407> now;
+		turn rupleg to x-axis <14.791209> now;
 		turn rleg to x-axis <38.000000> now;
 		turn lleg to x-axis <-12.500000> now;
 		sleep 50;
@@ -530,11 +530,11 @@ walklegs()
 		move lupleg to y-axis [-0.500000] now;
 		move rupleg to y-axis [0.500000] now;
 		move lleg to y-axis [0.200000] now;
-		turn hip to x-axis <3.796703> now;
-		turn lupleg to x-axis <14.598901> now;
-		turn rupleg to x-axis <-2.098901> now;
-		turn rleg to x-axis <44.098901> now;
-		turn lleg to x-axis <-18.197802> now;
+		turn hip to x-axis <3.791209> now;
+		turn lupleg to x-axis <14.593407> now;
+		turn rupleg to x-axis <-2.093407> now;
+		turn rleg to x-axis <44.093407> now;
+		turn lleg to x-axis <-18.192308> now;
 		sleep 50;
 	}
 	if( TRUE )
@@ -543,11 +543,11 @@ walklegs()
 		move lupleg to y-axis [-0.600000] now;
 		move rupleg to y-axis [0.600000] now;
 		move lleg to y-axis [0.300000] now;
-		turn hip to x-axis <2.796703> now;
-		turn lupleg to x-axis <21.098901> now;
+		turn hip to x-axis <2.791209> now;
+		turn lupleg to x-axis <21.093407> now;
 		turn rupleg to x-axis <-19.000000> now;
-		turn rleg to x-axis <50.296703> now;
-		turn lleg to x-axis <-23.895604> now;
+		turn rleg to x-axis <50.291209> now;
+		turn lleg to x-axis <-23.890110> now;
 		sleep 50;
 	}
 	if( TRUE )
@@ -555,11 +555,11 @@ walklegs()
 		move hip to y-axis [0.200000] now;
 		move lupleg to y-axis [-0.500000] now;
 		move rupleg to y-axis [0.500000] now;
-		turn hip to x-axis <2.098901> now;
-		turn lupleg to x-axis <26.197802> now;
-		turn rupleg to x-axis <-20.697802> now;
-		turn rleg to x-axis <35.895604> now;
-		turn lleg to x-axis <-27.296703> now;
+		turn hip to x-axis <2.093407> now;
+		turn lupleg to x-axis <26.192308> now;
+		turn rupleg to x-axis <-20.692308> now;
+		turn rleg to x-axis <35.890110> now;
+		turn lleg to x-axis <-27.291209> now;
 		sleep 50;
 	}
 	if( TRUE )
@@ -567,11 +567,11 @@ walklegs()
 		move hip to y-axis [0.100000] now;
 		move lupleg to y-axis [-0.400000] now;
 		move rupleg to y-axis [0.300000] now;
-		turn hip to x-axis <1.395604> now;
-		turn lupleg to x-axis <31.296703> now;
+		turn hip to x-axis <1.390110> now;
+		turn lupleg to x-axis <31.291209> now;
 		turn rupleg to x-axis <-22.500000> now;
-		turn rleg to x-axis <21.395604> now;
-		turn lleg to x-axis <-30.598901> now;
+		turn rleg to x-axis <21.390110> now;
+		turn lleg to x-axis <-30.593407> now;
 		sleep 50;
 	}
 	if( TRUE )
@@ -579,9 +579,9 @@ walklegs()
 		move hip to y-axis [0.100000] now;
 		move lupleg to y-axis [-0.100000] now;
 		move rupleg to y-axis [0.100000] now;
-		turn hip to x-axis <0.697802> now;
-		turn lupleg to x-axis <36.697802> now;
-		turn rupleg to x-axis <-24.296703> now;
+		turn hip to x-axis <0.692308> now;
+		turn lupleg to x-axis <36.692308> now;
+		turn rupleg to x-axis <-24.291209> now;
 		turn rleg to x-axis <7.000000> now;
 		turn lleg to x-axis <-28.500000> now;
 		sleep 50;
@@ -592,49 +592,49 @@ walklegs()
 		move lupleg to y-axis [0.300000] now;
 		move rupleg to y-axis [0.000000] now;
 		turn hip to x-axis <0.000000> now;
-		turn lupleg to x-axis <42.197802> now;
+		turn lupleg to x-axis <42.192308> now;
 		turn rupleg to x-axis <-26.000000> now;
-		turn rleg to x-axis <-7.395604> now;
-		turn lleg to x-axis <-26.395604> now;
+		turn rleg to x-axis <-7.390110> now;
+		turn lleg to x-axis <-26.390110> now;
 		sleep 50;
 	}
 	if( TRUE )
 	{
 		move rupleg to y-axis [0.000000] now;
-		turn hip to x-axis <1.697802> now;
+		turn hip to x-axis <1.692308> now;
 		turn lupleg to x-axis <43.000000> now;
 		turn rupleg to x-axis <-22.500000> now;
-		turn rleg to x-axis <-4.098901> now;
-		turn lleg to x-axis <-14.796703> now;
+		turn rleg to x-axis <-4.093407> now;
+		turn lleg to x-axis <-14.791209> now;
 		sleep 50;
 	}
 	if( TRUE )
 	{
 		move rupleg to y-axis [-0.100000] now;
-		turn hip to x-axis <3.296703> now;
-		turn lupleg to x-axis <43.796703> now;
+		turn hip to x-axis <3.291209> now;
+		turn lupleg to x-axis <43.791209> now;
 		turn rupleg to x-axis <-19.000000> now;
-		turn rleg to x-axis <-0.895604> now;
-		turn lleg to x-axis <-3.197802> now;
+		turn rleg to x-axis <-0.890110> now;
+		turn lleg to x-axis <-3.192308> now;
 		sleep 50;
 	}
 	if( TRUE )
 	{
 		move rupleg to y-axis [-0.100000] now;
 		turn hip to x-axis <5.000000> now;
-		turn lupleg to x-axis <44.598901> now;
+		turn lupleg to x-axis <44.593407> now;
 		turn rupleg to x-axis <-15.500000> now;
-		turn rleg to x-axis <2.395604> now;
-		turn lleg to x-axis <8.395604> now;
+		turn rleg to x-axis <2.390110> now;
+		turn lleg to x-axis <8.390110> now;
 		sleep 50;
 	}
 	if( TRUE )
 	{
 		move rupleg to y-axis [-0.100000] now;
-		turn hip to x-axis <6.697802> now;
-		turn lupleg to x-axis <45.395604> now;
+		turn hip to x-axis <6.692308> now;
+		turn lupleg to x-axis <45.390110> now;
 		turn rupleg to x-axis <-12.000000> now;
-		turn rleg to x-axis <5.598901> now;
+		turn rleg to x-axis <5.593407> now;
 		turn lleg to x-axis <20.000000> now;
 		sleep 50;
 	}
@@ -644,11 +644,11 @@ walklegs()
 		move lupleg to y-axis [0.300000] now;
 		move rupleg to y-axis [-0.300000] now;
 		move rleg to y-axis [0.200000] now;
-		turn hip to x-axis <6.098901> now;
-		turn lupleg to x-axis <36.296703> now;
+		turn hip to x-axis <6.093407> now;
+		turn lupleg to x-axis <36.291209> now;
 		turn rupleg to x-axis <-9.000000> now;
-		turn rleg to x-axis <3.395604> now;
-		turn lleg to x-axis <26.598901> now;
+		turn rleg to x-axis <3.390110> now;
+		turn lleg to x-axis <26.593407> now;
 		sleep 50;
 	}
 	if( TRUE )
@@ -658,10 +658,10 @@ walklegs()
 		move rupleg to y-axis [-0.500000] now;
 		move rleg to y-axis [0.300000] now;
 		turn hip to x-axis <5.500000> now;
-		turn lupleg to x-axis <27.296703> now;
-		turn rupleg to x-axis <-6.197802> now;
-		turn rleg to x-axis <1.197802> now;
-		turn lleg to x-axis <33.197802> now;
+		turn lupleg to x-axis <27.291209> now;
+		turn rupleg to x-axis <-6.192308> now;
+		turn rleg to x-axis <1.192308> now;
+		turn lleg to x-axis <33.192308> now;
 		sleep 50;
 	}
 	if( TRUE )
@@ -670,11 +670,11 @@ walklegs()
 		move lupleg to y-axis [0.300000] now;
 		move rupleg to y-axis [-0.700000] now;
 		move rleg to y-axis [0.500000] now;
-		turn hip to x-axis <4.796703> now;
-		turn lupleg to x-axis <18.197802> now;
-		turn rupleg to x-axis <-3.197802> now;
+		turn hip to x-axis <4.791209> now;
+		turn lupleg to x-axis <18.192308> now;
+		turn rupleg to x-axis <-3.192308> now;
 		turn rleg to x-axis <-1.000000> now;
-		turn lleg to x-axis <39.796703> now;
+		turn lleg to x-axis <39.791209> now;
 		sleep 50;
 	}
 	if( TRUE )
@@ -683,11 +683,11 @@ walklegs()
 		move lupleg to y-axis [0.300000] now;
 		move rupleg to y-axis [-0.800000] now;
 		move rleg to y-axis [0.700000] now;
-		turn hip to x-axis <4.197802> now;
-		turn lupleg to x-axis <9.098901> now;
-		turn rupleg to x-axis <-0.296703> now;
-		turn rleg to x-axis <-3.197802> now;
-		turn lleg to x-axis <46.395604> now;
+		turn hip to x-axis <4.192308> now;
+		turn lupleg to x-axis <9.093407> now;
+		turn rupleg to x-axis <-0.291209> now;
+		turn rleg to x-axis <-3.192308> now;
+		turn lleg to x-axis <46.390110> now;
 		sleep 50;
 	}
 	move hip to y-axis [0.200000] now;
@@ -695,11 +695,11 @@ walklegs()
 	move rupleg to y-axis [-0.600000] now;
 	move rleg to y-axis [0.500000] now;
 	move lleg to y-axis [0.200000] now;
-	turn hip to x-axis <3.197802> now;
-	turn lupleg to x-axis <2.796703> now;
+	turn hip to x-axis <3.192308> now;
+	turn lupleg to x-axis <2.791209> now;
 	turn rupleg to x-axis <12.000000> now;
-	turn rleg to x-axis <-14.796703> now;
-	turn lleg to x-axis <32.395604> now;
+	turn rleg to x-axis <-14.791209> now;
+	turn lleg to x-axis <32.390110> now;
 	sleep 50;
 }
 
@@ -847,9 +847,9 @@ QueryPrimary(piecenum)
 	piecenum = flare;
 }
 
-imFromSecondary(piecenum)
+imFromSecondary(Func_Var_1)
 {
-	piecenum = torso;
+	Func_Var_1 = 1;
 }
 
 QuerySecondary(piecenum)
@@ -891,7 +891,7 @@ Killed(severity, corpsetype)
 		explode ruparm type BITMAPONLY | BITMAP2;
 		explode rupleg type BITMAPONLY | BITMAP3;
 		explode torso type BITMAPONLY | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -907,7 +907,7 @@ Killed(severity, corpsetype)
 		explode ruparm type FALL | BITMAP2;
 		explode rupleg type FALL | BITMAP3;
 		explode torso type SHATTER | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -923,7 +923,7 @@ Killed(severity, corpsetype)
 		explode ruparm type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP2;
 		explode rupleg type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP3;
 		explode torso type SHATTER | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode gun type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP2;
@@ -937,4 +937,5 @@ Killed(severity, corpsetype)
 	explode ruparm type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP2;
 	explode rupleg type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP3;
 	explode torso type SHATTER | EXPLODE_ON_HIT | BITMAP5;
+	return (corpsetype);
 }

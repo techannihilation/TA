@@ -7,64 +7,87 @@ piece  base, body, rear, front;
 
 static-var  bMoving;
 
-#define SMOKEPIECE1 base
-
 
 walkscr()
 {
-if( bMoving )
+	if( bMoving )
 	{
-	move front to z-axis [.25] speed [10];	
-	move rear to z-axis [.15] speed [12];
-	sleep 120;
+		move front to z-axis [0.250000] speed [10.000000];
+		move rear to z-axis [0.150000] speed [12.000000];
+		sleep 120;
 	}
-if( bMoving )
+	if( bMoving )
 	{
-	move front to z-axis [.45] speed [10];	
-	move rear to z-axis [-.15] speed [12];
-	sleep 120;
+		move front to z-axis [0.450000] speed [10.000000];
+		move rear to z-axis [-0.150000] speed [12.000000];
+		sleep 120;
 	}
-if( bMoving )
+	if( bMoving )
 	{
-	move front to z-axis [.25] speed [10];	
-	move rear to z-axis [-.35] speed [12];
-	sleep 120;
+		move front to z-axis [0.250000] speed [10.000000];
+		move rear to z-axis [-0.350000] speed [12.000000];
+		sleep 120;
 	}
-if( bMoving )
+	if( bMoving )
 	{
-	move front to z-axis [-.25] speed [10];	
-	move rear to z-axis [-.15] speed [12];
-	sleep 120;
+		move front to z-axis [-0.250000] speed [10.000000];
+		move rear to z-axis [-0.150000] speed [12.000000];
+		sleep 120;
 	}
-if( bMoving )
+	if( bMoving )
 	{
-	move front to z-axis [-.45] speed [10];	
-	move rear to z-axis [.15] speed [12];
-	sleep 120;
+		move front to z-axis [-0.450000] speed [10.000000];
+		move rear to z-axis [0.150000] speed [12.000000];
+		sleep 120;
 	}
-if( bMoving )
+	if( bMoving )
 	{
-	move front to z-axis [-.25] speed [10];	
-	move rear to z-axis [.35] speed [12];
-	sleep 120;
+		move front to z-axis [-0.250000] speed [10.000000];
+		move rear to z-axis [0.350000] speed [12.000000];
+		sleep 120;
 	}
 }
 
-#include "SmokeUnit.h"
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
 
-MotionControl(Moving)
+MotionControl(Func_Var_1)
 {
 	while( TRUE )
 	{
-		Moving = bMoving;
-		if( Moving )
+		Func_Var_1 = bMoving;
+		if( Func_Var_1 )
 		{
 			call-script walkscr();
 		}
-		if( !moving )
+		if( !Func_Var_1 )
 		{
-			move front to z-axis [0] speed [10];	
-			move rear to z-axis [0] speed [12];
+			move front to z-axis [0.000000] speed [10.000000];
+			move rear to z-axis [0.000000] speed [12.000000];
 			sleep 100;
 		}
 	}
@@ -97,7 +120,7 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -105,7 +128,7 @@ Killed(severity, corpsetype)
 		explode rear type BITMAPONLY | BITMAP1;
 		explode body type SHATTER | BITMAP2;
 		explode front type SHATTER | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -113,10 +136,11 @@ Killed(severity, corpsetype)
 		explode rear type BITMAPONLY | BITMAP1;
 		explode body type SHATTER | BITMAP2;
 		explode front type SHATTER | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode rear type BITMAPONLY | BITMAP1;
 	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP2;
 	explode front type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+	return (corpsetype);
 }

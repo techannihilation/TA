@@ -1,0 +1,283 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  n1b, n2b, n1a, n2a, nano1b, nano2b, nano1a, nano2a,
+       arm1c, arm2c, arm1b, arm2b, arm1a, arm2a, pivot1, pivot2,
+       ngon, pad, light, base;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 258;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 257;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+RequestState()
+{
+	while( !Static_Var_4 AND Static_Var_2 != Static_Var_3 )
+	{
+		Static_Var_4 = 1;
+		if( Static_Var_2 AND !Static_Var_3 )
+		{
+			dont-cache arm1a;
+			dont-cache arm2a;
+			dont-cache arm1b;
+			dont-cache arm2b;
+			dont-cache arm1c;
+			dont-cache arm2c;
+			dont-cache pad;
+			dont-cache nano1a;
+			dont-cache nano2a;
+			dont-cache nano1b;
+			dont-cache nano2b;
+			dont-cache ngon;
+			turn arm1a to y-axis <0.000000> now;
+			turn arm1a to y-axis <-45.000000> speed <35.000000>;
+			turn arm2a to y-axis <0.000000> now;
+			turn arm2a to y-axis <45.000000> speed <35.000000>;
+			sleep 250;
+			turn arm1b to y-axis <40.000000> speed <35.000000>;
+			turn arm2b to y-axis <-40.000000> speed <35.000000>;
+			sleep 400;
+			move pivot1 to z-axis [-3.600000] speed [5.600000];
+			move pivot2 to z-axis [-3.600000] speed [5.600000];
+			turn arm1c to z-axis <-80.000000> speed <160.000000>;
+			turn arm2c to z-axis <80.000000> speed <160.000000>;
+			sleep 400;
+			turn nano1a to y-axis <-55.000000> speed <165.000000>;
+			turn nano2a to y-axis <55.000000> speed <165.000000>;
+			move nano1b to y-axis [-2.429999] speed [7.289990];
+			move nano2b to y-axis [-2.429999] speed [7.289990];
+			move ngon to z-axis [3.000000] speed [6.000000];
+			move pad to z-axis [2.000000] speed [4.000000];
+			sleep 500;
+			set YARD_OPEN to 1;
+			while( !get YARD_OPEN )
+			{
+				sleep 1500;
+				set YARD_OPEN to 1;
+			}
+			set INBUILDSTANCE to 1;
+			Static_Var_3 = 1;
+		}
+		if( !Static_Var_2 AND Static_Var_3 )
+		{
+			Static_Var_3 = 0;
+			set INBUILDSTANCE to 0;
+			set YARD_OPEN to 0;
+			while( get YARD_OPEN )
+			{
+				sleep 1500;
+				set YARD_OPEN to 0;
+			}
+			spin pad around y-axis speed <0.000000>;
+			turn pad to y-axis <0.000000> speed <30.000000>;
+			move ngon to z-axis [0.000000] speed [7.500000];
+			turn nano1a to y-axis <0.000000> speed <165.000000>;
+			turn nano2a to y-axis <0.000000> speed <165.000000>;
+			move nano1b to y-axis [0.000000] speed [7.289990];
+			move nano2b to y-axis [0.000000] speed [7.289990];
+			sleep 400;
+			move pad to z-axis [2.000000] speed [4.000000];
+			turn arm1c to z-axis <0.000000> speed <160.000000>;
+			turn arm2c to z-axis <0.000000> speed <160.000000>;
+			turn arm1a to y-axis <0.000000> speed <39.000000>;
+			turn arm2a to y-axis <0.000000> speed <39.000000>;
+			turn arm1b to y-axis <0.000000> speed <35.000000>;
+			turn arm2b to y-axis <0.000000> speed <35.000000>;
+			move pivot1 to z-axis [0.000000] speed [5.600000];
+			move pivot2 to z-axis [0.000000] speed [5.600000];
+			sleep 1285;
+			cache arm1a;
+			cache arm2a;
+			cache arm1b;
+			cache arm2b;
+			cache arm1c;
+			cache arm2c;
+			cache pad;
+			cache nano1a;
+			cache nano2a;
+			cache nano1b;
+			cache nano2b;
+			cache ngon;
+		}
+		Static_Var_4 = 0;
+	}
+}
+
+Create()
+{
+	dont-shade base;
+	dont-shade arm1a;
+	dont-shade arm2a;
+	dont-shade arm1b;
+	dont-shade arm2b;
+	dont-shade arm1c;
+	dont-shade arm2c;
+	dont-shade pad;
+	dont-shade nano1a;
+	dont-shade nano2a;
+	dont-shade nano1b;
+	dont-shade nano2b;
+	dont-shade ngon;
+	dont-shade light;
+	Static_Var_1 = 0;
+	Static_Var_2 = 0;
+	Static_Var_3 = 0;
+	Static_Var_4 = 0;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 500;
+	}
+	dont-cache light;
+	start-script SmokeUnit();
+}
+
+QueryNanoPiece(piecenum)
+{
+	if( !Static_Var_1 )
+	{
+		piecenum = n1a;
+	}
+	if( Static_Var_1 == 1 )
+	{
+		piecenum = n2a;
+	}
+	if( Static_Var_1 == 2 )
+	{
+		piecenum = n1b;
+	}
+	++Static_Var_1;
+	if( Static_Var_1 > 3 )
+	{
+		piecenum = n2b;
+		Static_Var_1 = 0;
+	}
+}
+
+Activate()
+{
+	set BUGGER_OFF to 1;
+	Static_Var_2 = 1;
+	call-script RequestState();
+	set BUGGER_OFF to 0;
+}
+
+Deactivate()
+{
+	set BUGGER_OFF to 1;
+	Static_Var_2 = 0;
+	sleep 8000;
+	if( !Static_Var_2 )
+	{
+		call-script RequestState();
+	}
+	set BUGGER_OFF to 0;
+}
+
+QueryBuildInfo(piecenum)
+{
+	piecenum = pad;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type BITMAPONLY | BITMAP1;
+		explode pad type BITMAPONLY | BITMAP2;
+		explode arm1a type BITMAPONLY | BITMAP3;
+		explode arm2a type BITMAPONLY | BITMAP4;
+		explode arm2c type BITMAPONLY | BITMAP5;
+		explode arm1c type BITMAPONLY | BITMAP1;
+		explode arm1b type BITMAPONLY | BITMAP2;
+		explode arm2b type BITMAPONLY | BITMAP2;
+		explode light type BITMAPONLY | BITMAP3;
+		explode nano2a type BITMAPONLY | BITMAP4;
+		explode nano1a type BITMAPONLY | BITMAP5;
+		explode nano1b type BITMAPONLY | BITMAP1;
+		explode nano2b type BITMAPONLY | BITMAP2;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type BITMAPONLY | BITMAP1;
+		explode pad type BITMAPONLY | BITMAP2;
+		explode arm1a type BITMAPONLY | BITMAP3;
+		explode arm2a type BITMAPONLY | BITMAP4;
+		explode arm2c type FALL | BITMAP5;
+		explode arm1c type FALL | BITMAP1;
+		explode arm1b type BITMAPONLY | BITMAP2;
+		explode arm2b type BITMAPONLY | BITMAP2;
+		explode light type SHATTER | BITMAP3;
+		explode nano2a type FALL | BITMAP4;
+		explode nano1a type FALL | BITMAP5;
+		explode nano1b type FALL | BITMAP1;
+		explode nano2b type FALL | BITMAP2;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	if( severity <= 99 )
+	{
+		explode base type BITMAPONLY | BITMAP1;
+		explode pad type BITMAPONLY | BITMAP2;
+		explode arm1a type BITMAPONLY | BITMAP3;
+		explode arm2a type BITMAPONLY | BITMAP4;
+		explode arm2c type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode arm1c type BITMAPONLY | BITMAP1;
+		explode arm1b type BITMAPONLY | BITMAP2;
+		explode arm1c type BITMAPONLY | BITMAP2;
+		explode light type SHATTER | BITMAP3;
+		explode nano2a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode nano1a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode nano1b type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode nano2b type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		return (corpsetype);
+	}
+	explode base type BITMAPONLY | BITMAP1;
+	explode pad type BITMAPONLY | BITMAP2;
+	explode arm1a type BITMAPONLY | BITMAP3;
+	explode arm2a type BITMAPONLY | BITMAP4;
+	explode arm2c type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode arm1c type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode arm1b type BITMAPONLY | BITMAP2;
+	explode arm2b type BITMAPONLY | BITMAP2;
+	explode light type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+	explode nano2a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode nano1a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode nano1b type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode nano2b type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	return (corpsetype);
+}

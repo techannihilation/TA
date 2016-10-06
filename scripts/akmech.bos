@@ -42,8 +42,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		}
 		sleep sleeptime;
 	}
-	return (0);
-	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
 }
 
 walk()
@@ -62,9 +60,9 @@ walk()
 		turn lhand to x-axis <40.005495> speed <100.000000>;
 		turn rhand to x-axis <20.000000> speed <50.000000>;
 		turn rloarm to x-axis <40.005495> speed <100.000000>;
-		turn fingerla to x-axis <45.010989> speed <100.000000>;
-		turn fingerlb to x-axis <45.010989> speed <100.000000>;
-		turn thumbl to x-axis <-45.010989> speed <100.000000>;
+		turn fingerla to x-axis <45.005495> speed <100.000000>;
+		turn fingerlb to x-axis <45.005495> speed <100.000000>;
+		turn thumbl to x-axis <-45.005495> speed <100.000000>;
 		turn fingerra to x-axis <0.000000> speed <100.000000>;
 		turn fingerrb to x-axis <0.000000> speed <100.000000>;
 		sleep 600;
@@ -86,9 +84,9 @@ walk()
 		move hips to y-axis [0.000000] speed [2.000000];
 		turn fingerla to x-axis <0.000000> speed <100.000000>;
 		turn fingerlb to x-axis <0.000000> speed <100.000000>;
-		turn fingerra to x-axis <45.010989> speed <100.000000>;
-		turn fingerrb to x-axis <45.010989> speed <100.000000>;
-		turn thumbr to x-axis <-45.010989> speed <100.000000>;
+		turn fingerra to x-axis <45.005495> speed <100.000000>;
+		turn fingerrb to x-axis <45.005495> speed <100.000000>;
+		turn thumbr to x-axis <-45.005495> speed <100.000000>;
 		sleep 600;
 		turn thumbl to x-axis <0.000000> speed <100.000000>;
 		move hips to y-axis [2.000000] speed [2.000000];
@@ -111,9 +109,9 @@ walk()
 			turn rhand to x-axis <40.005495> speed <70.000000>;
 			turn rloarm to x-axis <40.005495> speed <100.000000>;
 			move hips to y-axis [0.000000] speed [2.000000];
-			turn fingerla to x-axis <45.010989> speed <100.000000>;
-			turn fingerlb to x-axis <45.010989> speed <100.000000>;
-			turn thumbl to x-axis <-45.010989> speed <100.000000>;
+			turn fingerla to x-axis <45.005495> speed <100.000000>;
+			turn fingerlb to x-axis <45.005495> speed <100.000000>;
+			turn thumbl to x-axis <-45.005495> speed <100.000000>;
 			turn fingerra to x-axis <0.000000> speed <100.000000>;
 			turn fingerrb to x-axis <0.000000> speed <100.000000>;
 			sleep 600;
@@ -135,9 +133,9 @@ walk()
 			move hips to y-axis [0.000000] speed [2.000000];
 			turn fingerla to x-axis <0.000000> speed <100.000000>;
 			turn fingerlb to x-axis <0.000000> speed <100.000000>;
-			turn fingerra to x-axis <45.010989> speed <100.000000>;
-			turn fingerrb to x-axis <45.010989> speed <100.000000>;
-			turn thumbr to x-axis <-45.010989> speed <100.000000>;
+			turn fingerra to x-axis <45.005495> speed <100.000000>;
+			turn fingerrb to x-axis <45.005495> speed <100.000000>;
+			turn thumbr to x-axis <-45.005495> speed <100.000000>;
 			sleep 600;
 			turn thumbl to x-axis <0.000000> speed <100.000000>;
 			move hips to y-axis [2.000000] speed [2.000000];
@@ -292,13 +290,13 @@ FireSecondary()
 {
 	if( gun_2 == 0 )
 	{
-		move cannonl to z-axis [-2.289996] now;
+		move cannonl to z-axis [-2.289990] now;
 		emit-sfx 1024 + 0 from flarel;
 		move cannonl to z-axis [0.000000] speed [5.000000];
 	}
 	if( gun_2 == 1 )
 	{
-		move cannonr to z-axis [-2.289996] now;
+		move cannonr to z-axis [-2.289990] now;
 		emit-sfx 1024 + 0 from flarer;
 		move cannonr to z-axis [0.000000] speed [5.000000];
 	}
@@ -336,9 +334,6 @@ AimTertiary(heading, pitch)
 
 FireTertiary()
 {
-//	show missileflare;
-//	sleep 150;
-//	hide missileflare;
 }
 
 QueryTertiary(piecenum)
@@ -401,7 +396,7 @@ Killed(severity, corpsetype)
 		explode light type BITMAPONLY | BITMAP2;
 		explode turret type BITMAPONLY | BITMAP3;
 		explode flash type BITMAPONLY | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -430,7 +425,7 @@ Killed(severity, corpsetype)
 		explode light type SHATTER | BITMAP2;
 		explode turret type FALL | BITMAP3;
 		explode flash type FALL | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -459,7 +454,7 @@ Killed(severity, corpsetype)
 		explode light type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
 		explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode flash type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode hips type SHATTER | EXPLODE_ON_HIT | BITMAP1;
@@ -486,4 +481,5 @@ Killed(severity, corpsetype)
 	explode light type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
 	explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode flash type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	return (corpsetype);
 }

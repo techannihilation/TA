@@ -3,19 +3,19 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  flare1a, flare1b, flare1c, flare2a, flare2b, flare2c, flare3,
-       flare4, flare5,  flare6,
-       HLT1, HLT2, HLT3, base, body, stand1,
+piece  flare1a, flare1b, flare1c, flare2a, flare2b, flare2c, flare3, flare4,
+       flare5, flare6, HLT1, HLT2, HLT3, base, body, stand1,
        stand2, turret1, turret2, sleeves1, sleeves2, sleeve1, sleeve2, barrel1a,
        barrel1b, barrel1c, barrel2a, barrel2b, barrel2c, barrel3, barrel4, barrel5,
        barrel6, biggun, aimfrom, shots, nano;
 
-static-var  Static_Var_1, gun_1, gun_3, Static_Var_4, gun_2,
+static-var  Static_Var_1, gun_1, Static_Var_3, Static_Var_4, gun_2,
             Static_Var_6, Static_Var_7;
 
 // Signal definitions
 #define SIG_AIM_2			2
 #define SIG_AIM				4
+
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -46,7 +46,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
-//	move body to y-axis [45.000000] now;
 	hide flare1a;
 	hide flare1b;
 	hide flare1c;
@@ -73,14 +72,13 @@ Create()
 	Static_Var_7 = 0;
 	Static_Var_1 = 0;
 	gun_1 = flare3;
-	gun_3 = HLT1;
+	Static_Var_3 = 10;
 	start-script SmokeUnit();
 	set ARMORED to 1;
 	while( get BUILD_PERCENT_LEFT )
 	{
 		sleep 500;
 	}
-//	move body to y-axis [0.000000] speed [10.000000];
 }
 
 RestoreSecondary()
@@ -212,7 +210,6 @@ AimPrimary(heading, pitch)
 	return (1);
 }
 
-
 flare3f()
 {
 	move barrel3 to z-axis [-4.000000] now;
@@ -263,7 +260,7 @@ AimWeapon3(heading, pitch)
 
 FireWeapon3()
 {
-	gun_3 = Rand( 18, 20 );
+	Static_Var_3 = Rand( 18, 20 );
 }
 
 AimFromWeapon3(piecenum)
@@ -273,7 +270,7 @@ AimFromWeapon3(piecenum)
 
 QueryWeapon3(piecenum)
 {
-	piecenum = gun_3;
+	piecenum = Static_Var_3;
 }
 
 AimWeapon4(heading, pitch)
@@ -285,7 +282,6 @@ AimWeapon4(heading, pitch)
 
 FireWeapon4()
 {
-	
 }
 
 AimFromWeapon4(piecenum)
@@ -297,7 +293,6 @@ QueryWeapon4(piecenum)
 {
 	piecenum = shots;
 }
-
 
 SweetSpot(piecenum)
 {
@@ -360,12 +355,13 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
+	return (corpsetype);
 }

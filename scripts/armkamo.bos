@@ -46,8 +46,8 @@ flames(Func_Var_1)
 	Func_Var_1 = 0;
 	while( bMoving )
 	{
-		emit-sfx 1024+2 from ltail;
-		emit-sfx 1024+2 from rtail;
+		emit-sfx 1024 + 2 from ltail;
+		emit-sfx 1024 + 2 from rtail;
 		sleep 30;
 	}
 }
@@ -150,14 +150,14 @@ QuerySecondary(piecenum)
 
 Shot1()
 {
-		emit-sfx 1024+0 from gunfire;
+	emit-sfx 1024 + 0 from gunfire;
 }
 
 FireSecondary()
 {
 	if( gun_2 == 0 )
 	{
-		emit-sfx 1024+1 from flare1;
+		emit-sfx 1024 + 1 from flare1;
 		move llauncher to z-axis [-1.500000] speed [100.000000];
 		sleep 200;
 		move llauncher to z-axis [0.000000] speed [1.000000];
@@ -166,7 +166,7 @@ FireSecondary()
 	}
 	if( gun_2 == 1 )
 	{
-		emit-sfx 1024+1 from flare2;
+		emit-sfx 1024 + 1 from flare2;
 		move rlauncher to z-axis [-1.500000] speed [100.000000];
 		sleep 200;
 		move rlauncher to z-axis [0.000000] speed [1.000000];
@@ -189,12 +189,13 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
+	return (corpsetype);
 }

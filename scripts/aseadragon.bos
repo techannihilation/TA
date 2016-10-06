@@ -12,7 +12,7 @@ piece  base, body, wake1, wake2, wake3, wake4, wake5, ponton,
        flare4c, flare5a, flare5b, flare5c, flakflare1a, flakflare1b, flakflare2a, flakflare2b;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
-            Static_Var_6, Static_Var_7, restore_delay, Static_Var_9, moveSpeed;
+            Static_Var_6, Static_Var_7, restore_delay, Static_Var_9, Static_Var_10;
 
 // Signal definitions
 #define SIG_MOVE			256
@@ -24,7 +24,7 @@ SetDirection(heading)
 	Func_Var_2 = ( get ABS(Static_Var_9) - get ABS(heading) ) / 2;
 	turn base to y-axis heading speed Func_Var_2;
 	turn body to y-axis <0.000000> - heading speed Func_Var_2;
-	/Static_Var_9 = heading;
+	Static_Var_9 = heading;
 }
 
 RockOnWaves(Func_Var_1, Func_Var_2, Func_Var_3)
@@ -36,7 +36,7 @@ RockOnWaves(Func_Var_1, Func_Var_2, Func_Var_3)
 		while( get ABS(Func_Var_2) < 202 )
 		{
 			Func_Var_3 = 227 - get ABS(Func_Var_2);
-			turn base to x-axis Func_Var_2 speed Func_Var_3 * <0.010989>;
+			turn base to x-axis Func_Var_2 speed Func_Var_3 * <0.005495>;
 			wait-for-turn base around x-axis;
 			Func_Var_2 = Func_Var_2 + Func_Var_1;
 		}
@@ -101,7 +101,7 @@ Create()
 	hide flare2c;
 	hide flare4c;
 	hide flare5c;
-	moveSpeed = get MAX_SPEED;
+	Static_Var_10 = get MAX_SPEED;
 	Static_Var_1 = 0;
 	Static_Var_2 = 0;
 	Static_Var_3 = 0;
@@ -152,10 +152,10 @@ waveSplash()
 	while( TRUE )
 	{
 		turn body to x-axis <-1.000000> speed <1.000000>;
-		move body to y-axis [0.229999] speed [0.169995];
+		move body to y-axis [0.229999] speed [0.169989];
 		wait-for-turn body around x-axis;
 		turn body to x-axis <0.000000> speed <1.000000>;
-		move body to y-axis [0.000000] speed [0.169995];
+		move body to y-axis [0.000000] speed [0.169989];
 		wait-for-turn body around x-axis;
 	}
 }
@@ -173,7 +173,7 @@ StartMoving()
 		emit-sfx 2 from wake3;
 		emit-sfx 2 from wake4;
 		emit-sfx 2 from wake5;
-		Func_Var_1 = (get CURRENT_SPEED) * 100 / moveSpeed;
+		Func_Var_1 = get CURRENT_SPEED * 100 / Static_Var_10;
 		if( Func_Var_1 < 50 )
 		{
 			Func_Var_1 = 50;
@@ -186,7 +186,7 @@ StopMoving()
 {
 	signal SIG_MOVE;
 	turn body to x-axis <0.000000> speed <1.000000>;
-	move body to y-axis [0.000000] speed [0.169995];
+	move body to y-axis [0.000000] speed [0.169989];
 }
 
 AimWeapon1(heading, pitch)
@@ -549,7 +549,7 @@ Killed(severity, corpsetype)
 		explode flaktur1 type BITMAPONLY | BITMAP5;
 		explode wake1 type BITMAPONLY | BITMAP1;
 		explode wake2 type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -568,7 +568,7 @@ Killed(severity, corpsetype)
 		explode ponton type SHATTER | BITMAP5;
 		explode wake1 type FALL | EXPLODE_ON_HIT | BITMAP1;
 		explode wake2 type FALL | EXPLODE_ON_HIT | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -587,7 +587,7 @@ Killed(severity, corpsetype)
 		explode tur5 type SHATTER | EXPLODE_ON_HIT | BITMAP5;
 		explode wake1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 		explode wake2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode barrel1a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
@@ -604,4 +604,5 @@ Killed(severity, corpsetype)
 	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP5;
 	explode wake1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 	explode wake2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	return (corpsetype);
 }

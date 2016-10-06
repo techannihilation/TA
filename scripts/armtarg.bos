@@ -6,26 +6,25 @@
 piece  base, post1, post2, post3, post4, light4, light3, light2,
        light1, centerlight;
 
-static-var  statechg_DesiredState, statechg_StateChanging;
+static-var  Static_Var_1, Static_Var_2;
 
 
 activatescr()
 {
 	turn post1 to x-axis <0.000000> now;
-	turn post1 to x-axis <-90.236264> speed <82.329670>;
+	turn post1 to x-axis <-90.236264> speed <82.324176>;
 	turn post2 to x-axis <0.000000> now;
-	turn post2 to x-axis <89.802198> speed <81.939560>;
+	turn post2 to x-axis <89.802198> speed <81.934066>;
 	turn post3 to z-axis <0.000000> now;
-	turn post3 to z-axis <-90.236264> speed <82.329670>;
+	turn post3 to z-axis <-90.236264> speed <82.324176>;
 	turn post4 to z-axis <0.000000> now;
-	turn post4 to z-axis <90.236264> speed <82.329670>;
+	turn post4 to z-axis <90.236264> speed <82.324176>;
 	sleep 1096;
 	set ARMORED to 0;
-
 	move light4 to x-axis [1.900000] speed [1.713251];
 	move light3 to x-axis [-2.050000] speed [1.848511];
-	move light2 to z-axis [-2.000000] speed [1.803424];
-	move light1 to z-axis [2.000000] speed [1.803424];
+	move light2 to z-axis [-2.000000] speed [1.803418];
+	move light1 to z-axis [2.000000] speed [1.803418];
 	sleep 1109;
 }
 
@@ -34,9 +33,9 @@ deactivatescr()
 	move light4 to x-axis [1.900000] now;
 	move light4 to x-axis [0.000000] speed [1.575452];
 	move light3 to x-axis [-2.050000] now;
-	move light3 to x-axis [0.000000] speed [1.699829];
+	move light3 to x-axis [0.000000] speed [1.699823];
 	move light2 to z-axis [-2.000000] now;
-	move light2 to z-axis [0.000000] speed [1.658374];
+	move light2 to z-axis [0.000000] speed [1.658368];
 	move light1 to z-axis [2.000000] now;
 	move light1 to z-axis [0.000000] speed [1.658368];
 	turn post1 to x-axis <-90.236264> now;
@@ -44,11 +43,10 @@ deactivatescr()
 	turn post3 to z-axis <-90.236264> now;
 	turn post4 to z-axis <90.236264> now;
 	sleep 1206;
-
-	turn post1 to x-axis <0.000000> speed <73.961538>;
-	turn post2 to x-axis <0.000000> speed <73.609890>;
-	turn post3 to z-axis <0.000000> speed <73.961538>;
-	turn post4 to z-axis <0.000000> speed <73.961538>;
+	turn post1 to x-axis <0.000000> speed <73.956044>;
+	turn post2 to x-axis <0.000000> speed <73.604396>;
+	turn post3 to z-axis <0.000000> speed <73.956044>;
+	turn post4 to z-axis <0.000000> speed <73.956044>;
 	sleep 1220;
 	set ARMORED to 1;
 }
@@ -82,17 +80,17 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 RequestState(requestedstate, currentstate)
 {
-	if( statechg_StateChanging )
+	if( Static_Var_2 )
 	{
-		statechg_DesiredState = requestedstate;
+		Static_Var_1 = requestedstate;
 		return (0);
 	}
-	statechg_StateChanging = TRUE;
-	currentstate = statechg_DesiredState;
-	statechg_DesiredState = requestedstate;
-	while( statechg_DesiredState != currentstate )
+	Static_Var_2 = 1;
+	currentstate = Static_Var_1;
+	Static_Var_1 = requestedstate;
+	while( Static_Var_1 != currentstate )
 	{
-		if( statechg_DesiredState )
+		if( Static_Var_1 )
 		{
 			call-script deactivatescr();
 			currentstate = 1;
@@ -103,13 +101,13 @@ RequestState(requestedstate, currentstate)
 			currentstate = 0;
 		}
 	}
-	statechg_StateChanging = FALSE;
+	Static_Var_2 = 0;
 }
 
 Create()
 {
-	statechg_DesiredState = TRUE;
-	statechg_StateChanging = FALSE;
+	Static_Var_1 = 1;
+	Static_Var_2 = 0;
 	start-script SmokeUnit();
 }
 
@@ -123,7 +121,7 @@ Deactivate()
 	start-script RequestState(1);
 }
 
-HitByWeapon(Func_Var_1, Func_Var_2)
+HitByWeapon(anglex, anglez)
 {
 	while( get BUILD_PERCENT_LEFT )
 	{
@@ -156,7 +154,7 @@ Killed(severity, corpsetype)
 		explode post2 type BITMAPONLY | BITMAP3;
 		explode post3 type BITMAPONLY | BITMAP4;
 		explode post4 type BITMAPONLY | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -171,7 +169,7 @@ Killed(severity, corpsetype)
 		explode post2 type BITMAPONLY | BITMAP3;
 		explode post3 type BITMAPONLY | BITMAP4;
 		explode post4 type BITMAPONLY | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -186,7 +184,7 @@ Killed(severity, corpsetype)
 		explode post2 type BITMAPONLY | BITMAP3;
 		explode post3 type BITMAPONLY | BITMAP4;
 		explode post4 type BITMAPONLY | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP1;
@@ -199,4 +197,5 @@ Killed(severity, corpsetype)
 	explode post2 type BITMAPONLY | BITMAP3;
 	explode post3 type BITMAPONLY | BITMAP4;
 	explode post4 type BITMAPONLY | BITMAP5;
+	return (corpsetype);
 }

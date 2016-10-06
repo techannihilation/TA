@@ -1,123 +1,202 @@
-// by Nikola Genkov, nikola_g@yahoo.com
+#define TA			// This is a TA script
 
-piece base,body,plate,bearing,turret,nano,spray,rdoor,ldoor,wake1,wake2;
-
-static-var buildheading;
-
-#define SMOKEPIECE1 rdoor
-#define SMOKEPIECE2 ldoor
-#define SIG_NUM1 2
-
-#include "StateChg.h"
-#include "watersmokeunit.h"
+#include "sfxtype.h"
 #include "exptype.h"
 
-Go()
-{ turn rdoor to z-axis <-60> speed <180>;
-  turn ldoor to z-axis <60> speed <180>;
-  wait-for-turn ldoor around z-axis;
-  move plate to y-axis [1] speed [2];
-  move ldoor to y-axis [-2] speed [4];
-  move rdoor to y-axis [-2] speed [4];
-  wait-for-move plate along y-axis;
-  turn turret to x-axis <-90> speed <180>;
-  turn nano to x-axis <90> speed <180>;
-  wait-for-turn turret around x-axis;
-  turn bearing to y-axis buildheading speed <160>;
-  wait-for-turn bearing around y-axis;
-  set INBUILDSTANCE to TRUE;
- }
+piece  base, body, plate, bearing, turret, nano, spray, rdoor,
+       ldoor, wake1, wake2;
 
-Stop()
-{ set INBUILDSTANCE to FALSE;
-  turn bearing to y-axis <0> speed <160>;
-  wait-for-turn bearing around y-axis;
-  turn turret to x-axis <0> speed <180>;
-  turn nano to x-axis <0> speed <180>;
-  wait-for-turn turret around x-axis;
-  move plate to y-axis [0] speed [4];
-  move ldoor to y-axis [0] speed [4];
-  move rdoor to y-axis [0] speed [2];
-  wait-for-move plate along y-axis;
-  turn rdoor to z-axis <0> speed <180>;
-  turn ldoor to z-axis <0> speed <180>;
-  wait-for-turn ldoor around z-axis;
- }
+static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging;
 
-#define ACTIVATECMD call-script Go();
-#define DEACTIVATECMD call-script Stop();
-#include "StateChg.h"
+// Signal definitions
+#define SIG_MOVE			2
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	var Func_Var_4;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 3;
+			Func_Var_4 = Rand( 1, 2 );
+			if( Func_Var_4 == 1 )
+			{
+				emit-sfx smoketype from rdoor;
+				emit-sfx smoketype from rdoor;
+			}
+			if( Func_Var_4 == 2 )
+			{
+				emit-sfx smoketype from ldoor;
+				emit-sfx smoketype from ldoor;
+			}
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+go()
+{
+	turn rdoor to z-axis <-60.010989> speed <180.038462>;
+	turn ldoor to z-axis <60.010989> speed <180.038462>;
+	wait-for-turn ldoor around z-axis;
+	move plate to y-axis [1.000000] speed [2.000000];
+	move ldoor to y-axis [-2.000000] speed [4.000000];
+	move rdoor to y-axis [-2.000000] speed [4.000000];
+	wait-for-move plate along y-axis;
+	turn turret to x-axis <-90.016484> speed <180.038462>;
+	turn nano to x-axis <90.016484> speed <180.038462>;
+	wait-for-turn turret around x-axis;
+	turn bearing to y-axis Static_Var_1 speed <160.038462>;
+	wait-for-turn bearing around y-axis;
+	set INBUILDSTANCE to 1;
+}
+
+stop()
+{
+	set INBUILDSTANCE to 0;
+	turn bearing to y-axis <0.000000> speed <160.038462>;
+	wait-for-turn bearing around y-axis;
+	turn turret to x-axis <0.000000> speed <180.038462>;
+	turn nano to x-axis <0.000000> speed <180.038462>;
+	wait-for-turn turret around x-axis;
+	move plate to y-axis [0.000000] speed [4.000000];
+	move ldoor to y-axis [0.000000] speed [4.000000];
+	move rdoor to y-axis [0.000000] speed [2.000000];
+	wait-for-move plate along y-axis;
+	turn rdoor to z-axis <0.000000> speed <180.038462>;
+	turn ldoor to z-axis <0.000000> speed <180.038462>;
+	wait-for-turn ldoor around z-axis;
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
 
 Create()
-{ buildheading = <0>;
-  call-script InitState();
-  start-script SmokeUnit();
-  start-script MotionControl();
- }
+{
+	Static_Var_1 = 0;
+	call-script InitState();
+	start-script SmokeUnit();
+	start-script SmokeUnit();
+}
 
 Activate()
-{ start-script RequestState( ACTIVE );
- }
+{
+	start-script RequestState(0);
+}
 
 Deactivate()
-{ start-script RequestState( INACTIVE );
- }
+{
+	start-script RequestState(1);
+}
 
-StartBuilding(heading)
-{ buildheading = heading;
-  start-script RequestState( ACTIVE );
- }
+StartBuilding(Func_Var_1)
+{
+	Static_Var_1 = Func_Var_1;
+	start-script RequestState(0);
+}
 
 StopBuilding()
-{ start-script RequestState( INACTIVE );
- }
+{
+	start-script RequestState(1);
+}
 
 QueryNanoPiece(piecenum)
-{ piecenum = spray;
- }
+{
+	piecenum = spray;
+}
 
-TargetHeading( heading )
-{ buildheading = 0 - heading;
- }
+TargetHeading(Func_Var_1)
+{
+	Static_Var_1 = 0 - Func_Var_1;
+}
 
 SweetSpot(piecenum)
-{ piecenum=bearing;
- }
+{
+	piecenum = bearing;
+}
 
 StartMoving()
-{ SIGNAL SIG_NUM1;
-  SET-SIGNAL-MASK SIG_NUM1;
-  spin wake1 around z-axis speed <30> accelerate <2>;
-  spin wake2 around z-axis speed <30> accelerate <2>;
-  WHILE ( TRUE )
-   { EMIT-SFX SFXTYPE_SUBBUBBLES FROM wake1;
-     EMIT-SFX SFXTYPE_SUBBUBBLES FROM wake2;
-     SLEEP 250;
-    }
- }
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	spin wake1 around z-axis speed <30.005495> accelerate <2.000000>;
+	spin wake2 around z-axis speed <30.005495> accelerate <2.000000>;
+	while( TRUE )
+	{
+		emit-sfx 256 | 3 from wake1;
+		emit-sfx 256 | 3 from wake2;
+		sleep 250;
+	}
+}
 
 StopMoving()
-{ SIGNAL SIG_NUM1;
-  stop-spin wake1 around z-axis;
-  stop-spin wake2 around z-axis;
- }
+{
+	signal SIG_MOVE;
+	stop-spin wake1 around z-axis;
+	stop-spin wake2 around z-axis;
+}
 
-Killed( severity, corpsetype )
-{ explode bearing type BITMAPONLY | BITMAP5;
-  explode body type BITMAPONLY | BITMAP3;
-  explode bearing type SHATTER | EXPLODE_ON_HIT | BITMAP3;
-  explode nano type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
-  if (severity <= 25)
-   { corpsetype = 1;
-     return( 0 );
-    }
-  explode turret type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
-  explode rdoor type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
-  explode ldoor type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
-  if (severity <= 50)
-   { corpsetype = 2;
-     return( 0 );
-    }
-  explode turret type SHATTER | EXPLODE_ON_HIT | BITMAP3;
-  corpsetype = 3;
- }
+Killed(severity, corpsetype)
+{
+	explode bearing type BITMAPONLY | BITMAP5;
+	explode body type BITMAPONLY | BITMAP3;
+	explode bearing type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+	explode nano type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		return (corpsetype);
+	}
+	explode turret type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
+	explode rdoor type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
+	explode ldoor type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		return (corpsetype);
+	}
+	explode turret type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+	corpsetype = 3;
+	return (corpsetype);
+}

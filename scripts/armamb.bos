@@ -14,11 +14,11 @@ activatescr()
 	if( TRUE )
 	{
 		move door1 to y-axis [0.000000] now;
-		move door1 to y-axis [-3.400000] speed [8.542706];
+		move door1 to y-axis [-3.400000] speed [8.542700];
 		move door2 to y-axis [0.000000] now;
-		move door2 to y-axis [-3.400000] speed [8.542706];
+		move door2 to y-axis [-3.400000] speed [8.542700];
 		move door3 to y-axis [0.000000] now;
-		move door3 to y-axis [-3.400000] speed [8.542706];
+		move door3 to y-axis [-3.400000] speed [8.542700];
 		move door4 to y-axis [0.000000] now;
 		move door4 to y-axis [-3.450000] speed [8.668335];
 		move stand to y-axis [-5.350000] now;
@@ -41,7 +41,7 @@ activatescr()
 		move door1 to y-axis [-3.399994] speed [0.000000];
 		move door2 to y-axis [-3.399994] speed [0.000000];
 		move door3 to y-axis [-3.400000] speed [0.000000];
-		move door4 to y-axis [-3.400000] speed [0.092755];
+		move door4 to y-axis [-3.400000] speed [0.092749];
 		move stand to y-axis [-1.500000] speed [7.142859];
 		turn stand to y-axis <-180.280220> speed <333.582418>;
 		sleep 539;
@@ -52,7 +52,7 @@ activatescr()
 		move door2 to y-axis [-3.400000] speed [0.000000];
 		move door3 to y-axis [-3.400000] speed [0.000000];
 		move door4 to y-axis [-3.400000] speed [0.000000];
-		move stand to y-axis [0.000000] speed [2.879071];
+		move stand to y-axis [0.000000] speed [2.879065];
 		turn stand to y-axis <0.000000> speed <346.038462>;
 		sleep 521;
 	}
@@ -80,7 +80,7 @@ activatescr()
 		move door2 to y-axis [-3.400000] speed [0.000000];
 		move door3 to y-axis [-3.400000] speed [0.000000];
 		move door4 to y-axis [-3.400000] speed [0.000000];
-		move barrel to z-axis [0.000000] speed [22.443176];
+		move barrel to z-axis [0.000000] speed [22.443170];
 		sleep 352;
 	}
 	sleep 25;
@@ -126,7 +126,7 @@ deactivatescr()
 		move door2 to y-axis [-3.399994] speed [0.000000];
 		move door3 to y-axis [-3.400000] speed [0.000000];
 		move door4 to y-axis [-3.400000] speed [0.000000];
-		move stand to y-axis [-1.500000] speed [3.012042];
+		move stand to y-axis [-1.500000] speed [3.012036];
 		turn stand to y-axis <-180.280220> speed <362.016484>;
 		sleep 498;
 	}
@@ -410,7 +410,7 @@ Killed(severity, corpsetype)
 		explode gun type BITMAPONLY | BITMAP4;
 		explode stand type BITMAPONLY | BITMAP5;
 		explode turret type BITMAPONLY | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -432,7 +432,7 @@ Killed(severity, corpsetype)
 		explode gun type BITMAPONLY | BITMAP4;
 		explode stand type BITMAPONLY | BITMAP5;
 		explode turret type BITMAPONLY | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -454,7 +454,7 @@ Killed(severity, corpsetype)
 		explode gun type BITMAPONLY | BITMAP4;
 		explode stand type BITMAPONLY | BITMAP5;
 		explode turret type BITMAPONLY | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 4;
 	explode barrel type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
@@ -467,4 +467,5 @@ Killed(severity, corpsetype)
 	explode gun type SHATTER | EXPLODE_ON_HIT | BITMAP4;
 	explode stand type BITMAPONLY | BITMAP5;
 	explode turret type BITMAPONLY | BITMAP1;
+	return (corpsetype);
 }

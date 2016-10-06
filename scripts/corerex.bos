@@ -3,8 +3,8 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, turret1, sleeve1, gun1, flare1, turret2,
-       sleeve2, barrel1, barrel2, flare2, flare3;
+piece  base, turret1, sleeve1, gun1, flare1, turret2, sleeve2, barrel1,
+       barrel2, flare2, flare3;
 
 static-var  restore_delay, gun_2;
 

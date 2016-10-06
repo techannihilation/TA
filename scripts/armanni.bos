@@ -7,7 +7,7 @@ piece  base, flare, case5, case6, case1, case2, case4, case3,
        plate1, arm, container1, container2, door1, barrel, energy, door2,
        plate2, radar, gun, turret;
 
-static-var  Static_Var_1, restore_delay, statechg_DesiredState, statechg_StateChanging, shooting;
+static-var  Static_Var_1, restore_delay, statechg_DesiredState, statechg_StateChanging, gun_1;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -65,7 +65,7 @@ activatescr()
 	}
 	if( TRUE )
 	{
-		move container1 to x-axis [2.039984] speed [3.000000];
+		move container1 to x-axis [2.039978] speed [3.000000];
 		move container2 to x-axis [-1.900000] speed [3.000000];
 		sleep 150;
 	}
@@ -76,13 +76,13 @@ activatescr()
 	}
 	if( TRUE )
 	{
-		move door1 to z-axis [-1.639984] speed [3.000000];
+		move door1 to z-axis [-1.639978] speed [3.000000];
 		sleep 150;
 	}
 	if( TRUE )
 	{
-		move barrel to z-axis [9.689984] speed [18.000000];
-		move energy to z-axis [3.239984] speed [6.000000];
+		move barrel to z-axis [9.689978] speed [18.000000];
+		move energy to z-axis [3.239978] speed [6.000000];
 		sleep 150;
 	}
 	if( TRUE )
@@ -120,13 +120,13 @@ deactivatescr()
 		move case5 to y-axis [-7.300000] now;
 		move case6 to y-axis [-7.350000] now;
 		move arm to y-axis [5.600000] now;
-		move barrel to z-axis [9.689984] now;
-		move container1 to x-axis [2.039984] now;
+		move barrel to z-axis [9.689978] now;
+		move container1 to x-axis [2.039978] now;
 		move container2 to x-axis [-1.900000] now;
 		move plate2 to x-axis [-2.350000] now;
 		move door2 to x-axis [1.600000] now;
-		move door1 to z-axis [-1.639984] now;
-		move energy to z-axis [3.239984] now;
+		move door1 to z-axis [-1.639978] now;
+		move energy to z-axis [3.239978] now;
 		turn case1 to z-axis <89.401099> now;
 		turn case2 to z-axis <-90.016484> now;
 		turn case3 to z-axis <-90.016484> now;
@@ -370,7 +370,7 @@ Create()
 	Static_Var_1 = 0;
 	call-script InitState();
 	restore_delay = 3000;
-	shooting = 0;
+	gun_1 = base;
 	while( get BUILD_PERCENT_LEFT )
 	{
 		sleep 250;
@@ -396,7 +396,10 @@ SetMaxReloadTime(Func_Var_1)
 
 AimPrimary(heading, pitch)
 {
-    if (shooting==1) {return(0);}
+	if( gun_1 == 1 )
+	{
+		return (0);
+	}
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
 	while( !Static_Var_1 )
@@ -412,11 +415,11 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-    shooting=1;
+	gun_1 = flare;
 	show flare;
 	sleep 1400;
 	hide flare;
-	shooting=0;
+	gun_1 = base;
 }
 
 AimFromPrimary(piecenum)
@@ -460,7 +463,7 @@ Killed(severity, corpsetype)
 		explode plate2 type BITMAPONLY | BITMAP3;
 		explode radar type BITMAPONLY | BITMAP4;
 		explode turret type BITMAPONLY | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -485,7 +488,7 @@ Killed(severity, corpsetype)
 		explode plate2 type BITMAPONLY | BITMAP3;
 		explode radar type FALL | BITMAP4;
 		explode turret type BITMAPONLY | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -510,7 +513,7 @@ Killed(severity, corpsetype)
 		explode plate2 type BITMAPONLY | BITMAP2;
 		explode radar type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode turret type BITMAPONLY | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode arm type BITMAPONLY | BITMAP1;
@@ -533,4 +536,5 @@ Killed(severity, corpsetype)
 	explode plate2 type BITMAPONLY | BITMAP2;
 	explode radar type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode turret type BITMAPONLY | BITMAP4;
+	return (corpsetype);
 }

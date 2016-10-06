@@ -1,113 +1,185 @@
-piece base,body,arm,nano,spray,door1,door2,wake1,wake2,bearing;
+#define TA			// This is a TA script
 
-static-var	buildheading;
+#include "sfxtype.h"
+#include "exptype.h"
 
-#include "EXPtype.h"
-#include "SFXtype.h"
+piece  base, body, arm, nano, spray, door1, door2, wake1,
+       wake2, bearing;
 
-#define	SIG_WAKE 2
+static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging;
 
-#define SMOKEPIECE1 arm
-#include "smokeunit.h"
-#include "StateChg.h"
+// Signal definitions
+#define SIG_MOVE			2
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from arm;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
 
 StartMoving()
-{ signal SIG_WAKE;
-  set-signal-mask SIG_WAKE;
-  while (TRUE)
-   { emit-sfx SFXTYPE_WAKE1 from wake1;
-     emit-sfx SFXTYPE_WAKE1 from wake2;
-     sleep 200;
-    }
- }
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	while( TRUE )
+	{
+		emit-sfx 2 from wake1;
+		emit-sfx 2 from wake2;
+		sleep 200;
+	}
+}
 
 StopMoving()
-{ signal SIG_WAKE;
- }
+{
+	signal SIG_MOVE;
+}
 
 Go()
-{ turn door1 to z-axis <-90> speed <180>;
-  turn door2 to z-axis <90> speed <180>;
-  sleep 500;
-  turn arm to x-axis <90> speed <90>;
-  turn nano to x-axis <-90> speed <90>;
-  move bearing to z-axis [-4] speed [4];
-  wait-for-turn nano around x-axis;
-  turn bearing to y-axis buildheading speed <160>;
-  wait-for-turn bearing around y-axis;
-  set INBUILDSTANCE to TRUE;
- }
+{
+	turn door1 to z-axis <-90.000000> speed <180.000000>;
+	turn door2 to z-axis <90.000000> speed <180.000000>;
+	sleep 500;
+	turn arm to x-axis <90.000000> speed <90.000000>;
+	turn nano to x-axis <-90.000000> speed <90.000000>;
+	move bearing to z-axis [-4.000000] speed [4.000000];
+	wait-for-turn nano around x-axis;
+	turn bearing to y-axis Static_Var_1 speed <160.000000>;
+	wait-for-turn bearing around y-axis;
+	set INBUILDSTANCE to 1;
+}
 
 Stop()
-{ set INBUILDSTANCE to FALSE;
+{
+	set INBUILDSTANCE to 0;
+	turn bearing to y-axis <0.000000> speed <160.000000>;
+	wait-for-turn bearing around y-axis;
+	move bearing to z-axis [0.000000] speed [5.000000];
+	turn arm to x-axis <0.000000> speed <90.000000>;
+	turn nano to x-axis <0.000000> speed <90.000000>;
+	wait-for-turn nano around x-axis;
+	turn door1 to z-axis <0.000000> speed <180.000000>;
+	turn door2 to z-axis <0.000000> speed <180.000000>;
+	wait-for-turn door1 around z-axis;
+}
 
-  turn bearing to y-axis <0> speed <160>;
-  wait-for-turn bearing around y-axis;
-  move bearing to z-axis [0] speed [5];
-  turn arm to x-axis <0> speed <90>;
-  turn nano to x-axis <0> speed <90>;
-  wait-for-turn nano around x-axis;
-  turn door1 to z-axis <0> speed <180>;
-  turn door2 to z-axis <0> speed <180>;
-  wait-for-turn door1 around z-axis;
- }
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
 
-#define ACTIVATECMD call-script Go();
-#define DEACTIVATECMD call-script Stop();
-#include "StateChg.h"
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
 
 Create()
-{ buildheading = <0>;
-  call-script InitState();
-  start-script SmokeUnit();
- }
+{
+	Static_Var_1 = 0;
+	call-script InitState();
+	start-script SmokeUnit();
+}
 
 Activate()
-{ start-script RequestState( ACTIVE );
- }
+{
+	start-script RequestState(0);
+}
 
 Deactivate()
-{ start-script RequestState( INACTIVE );
- }
+{
+	start-script RequestState(1);
+}
 
-StartBuilding(heading)
-{ buildheading = heading;
-  start-script RequestState( ACTIVE );
- }
+StartBuilding(Func_Var_1)
+{
+	Static_Var_1 = Func_Var_1;
+	start-script RequestState(0);
+}
 
 StopBuilding()
-{ start-script RequestState( INACTIVE );
- }
+{
+	start-script RequestState(1);
+}
 
 QueryNanoPiece(piecenum)
-{ piecenum=spray;
- }
+{
+	piecenum = spray;
+}
 
-TargetHeading( heading )
-{ buildheading = 0 - heading;
- }
+TargetHeading(Func_Var_1)
+{
+	Static_Var_1 = 0 - Func_Var_1;
+}
 
 SweetSpot(piecenum)
-{ piecenum=body;
- }
+{
+	piecenum = body;
+}
 
-Killed( severity, corpsetype )
-{ explode body type BITMAPONLY | BITMAP4;
-  explode arm type BITMAPONLY | BITMAP5;
-  explode door1 type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
-  explode door2 type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
-  if (severity <= 25)
-   { corpsetype = 1;
-     return( 0 );
-    }
-  explode nano type SHATTER | BITMAP2;
-  explode arm type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
-  explode door1 type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
-  if (severity <= 50)
-   { corpsetype = 2;
-     return( 0 );
-    }
-  explode body type SHATTER | BITMAP2;
-  explode nano type BITMAPONLY | BITMAP4;
-  corpsetype = 3;
- }
+Killed(severity, corpsetype)
+{
+	explode body type BITMAPONLY | BITMAP4;
+	explode arm type BITMAPONLY | BITMAP5;
+	explode door1 type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
+	explode door2 type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		return (corpsetype);
+	}
+	explode nano type SHATTER | BITMAP2;
+	explode arm type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
+	explode door1 type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		return (corpsetype);
+	}
+	explode body type SHATTER | BITMAP2;
+	explode nano type BITMAPONLY | BITMAP4;
+	corpsetype = 3;
+	return (corpsetype);
+}

@@ -50,10 +50,10 @@ RockUnit(anglex, anglez)
 	turn base to x-axis <0.000000> speed <20.000000>;
 }
 
-HitByWeapon(Func_Var_1, Func_Var_2)
+HitByWeapon(anglex, anglez)
 {
-	turn base to z-axis Func_Var_2 speed <105.000000>;
-	turn base to x-axis Func_Var_1 speed <105.000000>;
+	turn base to z-axis anglez speed <105.000000>;
+	turn base to x-axis anglex speed <105.000000>;
 	wait-for-turn base around z-axis;
 	wait-for-turn base around x-axis;
 	turn base to z-axis <0.000000> speed <30.000000>;
@@ -113,9 +113,9 @@ StopMoving()
 	sleep 150;
 }
 
-setSFXoccupy(Func_Var_1)
+setSFXoccupy(state)
 {
-	Static_Var_1 = Func_Var_1;
+	Static_Var_1 = state;
 }
 
 Create()
@@ -171,8 +171,6 @@ SweetSpot(piecenum)
 	piecenum = base;
 }
 
-
-
 Killed(severity, corpsetype)
 {
 	if( severity <= 25 )
@@ -185,7 +183,7 @@ Killed(severity, corpsetype)
 		explode wake4 type BITMAPONLY | BITMAP5;
 		explode wake5 type BITMAPONLY | BITMAP1;
 		explode wake6 type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -198,7 +196,7 @@ Killed(severity, corpsetype)
 		explode wake4 type FALL | BITMAP2;
 		explode wake5 type FALL | BITMAP3;
 		explode wake6 type FALL | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -211,7 +209,7 @@ Killed(severity, corpsetype)
 		explode wake4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 		explode wake5 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode wake6 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP2;
@@ -222,4 +220,5 @@ Killed(severity, corpsetype)
 	explode wake4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 	explode wake5 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode wake6 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	return (corpsetype);
 }

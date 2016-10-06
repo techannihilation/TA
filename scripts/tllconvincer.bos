@@ -92,7 +92,7 @@ Create()
 {
 	cache arm;
 	Static_Var_2 = 0;
-	gun_1 = 0;
+	gun_1 = base;
 	restore_delay = 3000;
 	start-script SmokeUnit();
 	call-script InitState();
@@ -158,7 +158,7 @@ FirePrimary()
 	++gun_1;
 	if( gun_1 >= 3 )
 	{
-		gun_1 = 0;
+		gun_1 = base;
 	}
 }
 
@@ -190,7 +190,7 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		return (0);
+		return (corpsetype);
 	}
 	explode flare1 type FALL | BITMAP2;
 	explode door2 type FALL | BITMAP2;
@@ -198,9 +198,10 @@ Killed(severity, corpsetype)
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode body type SHATTER | BITMAP1;
 	explode arm type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP5;
+	return (corpsetype);
 }

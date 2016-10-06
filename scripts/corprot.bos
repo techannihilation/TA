@@ -48,7 +48,7 @@ walk()
 	turn lhand to x-axis <-25.005495> speed <50.000000>;
 	turn larm to x-axis <-25.005495> speed <50.000000>;
 	turn koc to y-axis <3.000000> speed <20.000000>;
-	turn lthigh to x-axis <60.010989> speed <140.000000>;
+	turn lthigh to x-axis <60.005495> speed <140.000000>;
 	turn lfoot to x-axis <-40.005495> speed <150.000000>;
 	turn lleg to x-axis <-20.000000> speed <50.000000>;
 	turn torso to y-axis <-5.000000> speed <20.000000>;
@@ -78,7 +78,7 @@ walk()
 	turn lhand to x-axis <25.005495> speed <50.000000>;
 	turn larm to x-axis <0.000000> speed <50.000000>;
 	turn koc to y-axis <-3.000000> speed <20.000000>;
-	turn rthigh to x-axis <60.010989> speed <140.000000>;
+	turn rthigh to x-axis <60.005495> speed <140.000000>;
 	turn rfoot to x-axis <-40.005495> speed <150.000000>;
 	turn rleg to x-axis <-20.000000> speed <50.000000>;
 	turn torso to y-axis <5.000000> speed <20.000000>;
@@ -98,8 +98,6 @@ walk()
 	move rleg to y-axis [0.000000] speed [15.000000];
 	turn rfoot to x-axis <0.000000> speed <100.000000>;
 	turn rleg to x-axis <0.000000> speed <700.000000>;
-	return (0);
-	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
 }
 
 walklegs()
@@ -118,7 +116,7 @@ walklegs()
 	turn lleg to x-axis <0.000000> speed <20.000000>;
 	sleep 50;
 	turn koc to y-axis <3.000000> speed <20.000000>;
-	turn lthigh to x-axis <60.010989> speed <140.000000>;
+	turn lthigh to x-axis <60.005495> speed <140.000000>;
 	turn lfoot to x-axis <-40.005495> speed <150.000000>;
 	turn lleg to x-axis <-20.000000> speed <50.000000>;
 	turn rthigh to x-axis <-30.005495> speed <225.000000>;
@@ -136,7 +134,7 @@ walklegs()
 	turn rleg to x-axis <0.000000> speed <20.000000>;
 	sleep 50;
 	turn koc to y-axis <-3.000000> speed <20.000000>;
-	turn rthigh to x-axis <60.010989> speed <140.000000>;
+	turn rthigh to x-axis <60.005495> speed <140.000000>;
 	turn rfoot to x-axis <-40.005495> speed <150.000000>;
 	turn rleg to x-axis <-20.000000> speed <50.000000>;
 	sleep 100;
@@ -154,10 +152,10 @@ walklegs()
 ready2()
 {
 	turn lshould to z-axis <30.005495> speed <15.000000>;
-	turn pivot to x-axis <-90.021978> speed <150.000000>;
-	turn rhand to y-axis <90.021978> speed <40.000000>;
+	turn pivot to x-axis <-90.016484> speed <150.000000>;
+	turn rhand to y-axis <90.016484> speed <40.000000>;
 	move barrel to y-axis [-7.000000] speed [8.000000];
-	turn lhand to y-axis <45.010989> speed <35.000000>;
+	turn lhand to y-axis <45.005495> speed <35.000000>;
 	sleep 200;
 	turn head to z-axis <-25.005495> speed <13.000000>;
 	wait-for-turn head around z-axis;
@@ -301,7 +299,7 @@ Create()
 	Static_Var_1 = 0;
 	hide base;
 	hide flare;
-	spin flare around y-axis speed <100.021978>;
+	spin flare around y-axis speed <100.016484>;
 	restore_delay = 2000;
 	call-script InitState();
 	start-script MotionControl();
@@ -403,7 +401,7 @@ FirePrimary()
 		turn head to x-axis <0.000000> speed <30.000000>;
 		move pivot to z-axis [0.000000] speed [6.000000];
 		move barrel to y-axis [-7.000000] speed [20.000000];
-		turn clip to x-axis <-48.010989> speed <50.000000>;
+		turn clip to x-axis <-48.005495> speed <50.000000>;
 	}
 	if( gun_1 == 4 )
 	{
@@ -416,7 +414,7 @@ FirePrimary()
 		turn head to x-axis <0.000000> speed <30.000000>;
 		move pivot to z-axis [0.000000] speed [6.000000];
 		move barrel to y-axis [-7.000000] speed [20.000000];
-		turn clip to x-axis <-59.010989> speed <50.000000>;
+		turn clip to x-axis <-59.005495> speed <50.000000>;
 	}
 	if( gun_1 == 5 )
 	{
@@ -518,7 +516,7 @@ Killed(severity, corpsetype)
 		explode lhand type FALL | BITMAP5;
 		explode clip type SHATTER | BITMAP2;
 		explode shell type SHATTER | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -551,7 +549,7 @@ Killed(severity, corpsetype)
 		explode barrel type FALL | SMOKE | BITMAP3;
 		explode clip type SHATTER | BITMAP2;
 		explode shell type SHATTER | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -584,7 +582,7 @@ Killed(severity, corpsetype)
 		explode barrel type FALL | SMOKE | BITMAP3;
 		explode clip type SHATTER | BITMAP2;
 		explode shell type SHATTER | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP1;
@@ -614,4 +612,5 @@ Killed(severity, corpsetype)
 	explode barrel type FALL | SMOKE | BITMAP3;
 	explode clip type SHATTER | BITMAP2;
 	explode shell type SHATTER | BITMAP4;
+	return (corpsetype);
 }

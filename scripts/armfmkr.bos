@@ -5,7 +5,7 @@
 
 piece  base, dome;
 
-static-var  Static_Var_1, Active;
+static-var  Static_Var_1, Static_Var_2, Static_Var_3;
 
 
 activatescr()
@@ -69,35 +69,32 @@ Stop()
 	cache dome;
 }
 
-MMStatus(State)
+MMStatus(Func_Var_1)
 {
-	Active = State;
-	//get PRINT(Active);
+	Static_Var_2 = Func_Var_1;
 }
 
-static-var  mmState;
 ImAMetalMaker()
 {
 	while( get BUILD_PERCENT_LEFT )
 	{
 		sleep 150;
 	}
-	mmState = -1;
+	Static_Var_3 = -1;
 	while( TRUE )
-	{	
-		if (Active == 1)
+	{
+		if( Static_Var_2 == 1 )
 		{
-			if (mmState != 1) {
+			if( Static_Var_3 != 1 )
+			{
 				call-script Go();
-				mmState = 1;
+				Static_Var_3 = 1;
 			}
 		}
-		else
+		else if( Static_Var_3 != 0 )
 		{
-			if (mmState != 0) {
-				call-script Stop();
-				mmState = 0;
-			}
+			call-script Stop();
+			Static_Var_3 = 0;
 		}
 		sleep 1000;
 	}

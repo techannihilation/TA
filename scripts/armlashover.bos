@@ -4,13 +4,12 @@
 #include "exptype.h"
 
 piece  base, pads, body, engines, cockpit, turntable, guns, barrels,
-       flarea, flareb, wake1, wake2, wake3, wake4,
-       wake5, wake6, wake7, wake8;
+       flarea, flareb, wake1, wake2, wake3, wake4, wake5, wake6,
+       wake7, wake8;
 
 static-var  Static_Var_1, restore_delay;
 
 // Signal definitions
-#define SIG_AIM				2
 #define SIG_MOVE			4
 #define SIG_AIM_2			8
 
@@ -130,8 +129,6 @@ RestoreAfterDelay()
 
 AimPrimary(heading, pitch)
 {
-	//signal SIG_AIM;
-	//set-signal-mask SIG_AIM;
 	turn turntable to y-axis heading speed <175.000000>;
 	wait-for-turn turntable around y-axis;
 	return (1);
@@ -200,7 +197,7 @@ Killed(severity, corpsetype)
 		explode turntable type BITMAPONLY | BITMAP1;
 		explode guns type BITMAPONLY | BITMAP2;
 		explode barrels type BITMAPONLY | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -213,7 +210,7 @@ Killed(severity, corpsetype)
 		explode turntable type BITMAPONLY | BITMAP1;
 		explode guns type BITMAPONLY | BITMAP2;
 		explode barrels type BITMAPONLY | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -230,7 +227,7 @@ Killed(severity, corpsetype)
 		explode wake2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 		explode wake3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode wake4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	explode base type BITMAPONLY | BITMAP1;
 	explode pads type BITMAPONLY | BITMAP2;
@@ -244,4 +241,5 @@ Killed(severity, corpsetype)
 	explode wake2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 	explode wake3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode wake4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	return (corpsetype);
 }

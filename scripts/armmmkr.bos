@@ -5,15 +5,16 @@
 
 piece  base2, lid2, lid3, mmakercore, lid1, lid4, glowingthing;
 
-static-var  Static_Var_1, Active;
+static-var  Static_Var_1, Static_Var_2, Static_Var_3;
+
 
 activatescr()
 {
 	if( TRUE )
 	{
-		turn lid2 to x-axis <0.598901> now;
+		turn lid2 to x-axis <0.593407> now;
 		turn lid2 to x-axis <30.005495> speed <38.000000>;
-		turn lid3 to x-axis <0.598901> now;
+		turn lid3 to x-axis <0.593407> now;
 		turn lid3 to x-axis <-26.005495> speed <35.000000>;
 		turn mmakercore to y-axis <0.000000> now;
 		turn mmakercore to y-axis <-30.005495> speed <39.000000>;
@@ -24,34 +25,32 @@ activatescr()
 		move mmakercore to y-axis [5.050000] speed [6.000000];
 		turn lid1 to x-axis <35.005495> speed <45.000000>;
 		turn lid4 to x-axis <-30.005495> speed <39.000000>;
-		turn lid2 to x-axis <60.010989> speed <39.000000>;
+		turn lid2 to x-axis <60.005495> speed <39.000000>;
 		turn lid3 to x-axis <-74.016484> speed <61.000000>;
-		turn mmakercore to y-axis <-60.010989> speed <39.000000>;
+		turn mmakercore to y-axis <-60.005495> speed <39.000000>;
 		sleep 774;
 	}
 	if( TRUE )
 	{
-		move mmakercore to y-axis [15.839996] speed [13.000000];
-		turn mmakercore to y-axis <-90.021978> speed <37.000000>;
+		move mmakercore to y-axis [15.839990] speed [13.000000];
+		turn mmakercore to y-axis <-90.016484> speed <37.000000>;
 		sleep 775;
 	}
 	sleep 774;
-	return (0);
-	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
 }
 
 deactivatescr()
 {
 	if( TRUE )
 	{
-		move mmakercore to y-axis [15.839996] now;
+		move mmakercore to y-axis [15.839990] now;
 		move mmakercore to y-axis [5.050000] speed [15.000000];
-		turn lid1 to x-axis <35.263736> now;
-		turn lid4 to x-axis <-30.406593> now;
+		turn lid1 to x-axis <35.258242> now;
+		turn lid4 to x-axis <-30.401099> now;
 		turn lid2 to x-axis <60.813187> now;
-		turn lid3 to x-axis <-74.197802> now;
-		turn mmakercore to y-axis <-90.021978> now;
-		turn mmakercore to y-axis <-60.010989> speed <42.000000>;
+		turn lid3 to x-axis <-74.192308> now;
+		turn mmakercore to y-axis <-90.016484> now;
+		turn mmakercore to y-axis <-60.005495> speed <42.000000>;
 		sleep 683;
 	}
 	if( TRUE )
@@ -123,35 +122,32 @@ Stop()
 	cache glowingthing;
 }
 
-MMStatus(State)
+MMStatus(Func_Var_1)
 {
-	Active = State;
-	//get PRINT(Active);
+	Static_Var_2 = Func_Var_1;
 }
 
-static-var  mmState;
 ImAMetalMaker()
 {
 	while( get BUILD_PERCENT_LEFT )
 	{
 		sleep 150;
 	}
-	mmState = -1;
+	Static_Var_3 = -1;
 	while( TRUE )
-	{	
-		if (Active == 1)
+	{
+		if( Static_Var_2 == 1 )
 		{
-			if (mmState != 1) {
+			if( Static_Var_3 != 1 )
+			{
 				call-script Go();
-				mmState = 1;
+				Static_Var_3 = 1;
 			}
 		}
-		else
+		else if( Static_Var_3 != 0 )
 		{
-			if (mmState != 0) {
-				call-script Stop();
-				mmState = 0;
-			}
+			call-script Stop();
+			Static_Var_3 = 0;
 		}
 		sleep 1000;
 	}
@@ -177,7 +173,7 @@ Create()
 	start-script ImAMetalMaker();
 }
 
-HitByWeapon(Func_Var_1, Func_Var_2)
+HitByWeapon(anglex, anglez)
 {
 	if( get ACTIVATION )
 	{
@@ -211,7 +207,7 @@ Killed(severity, corpsetype)
 		explode lid3 type BITMAPONLY | BITMAP5;
 		explode lid4 type BITMAPONLY | BITMAP1;
 		explode mmakercore type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -223,7 +219,7 @@ Killed(severity, corpsetype)
 		explode lid3 type FALL | BITMAP5;
 		explode lid4 type FALL | BITMAP1;
 		explode mmakercore type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -235,7 +231,7 @@ Killed(severity, corpsetype)
 		explode lid3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 		explode lid4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 		explode mmakercore type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base2 type BITMAPONLY | BITMAP1;
@@ -245,4 +241,5 @@ Killed(severity, corpsetype)
 	explode lid3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 	explode lid4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 	explode mmakercore type BITMAPONLY | BITMAP2;
+	return (corpsetype);
 }

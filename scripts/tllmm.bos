@@ -5,7 +5,8 @@
 
 piece  base, body, lights, p, light;
 
-static-var  Static_Var_1, Static_Var_2, mmState, Active, Static_Var_4, Static_Var_5;
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
+            Static_Var_6;
 
 
 HitByWeapon(anglex, anglez)
@@ -14,18 +15,18 @@ HitByWeapon(anglex, anglez)
 	Func_Var_3 = get HEALTH;
 	if( Func_Var_3 <= 60 )
 	{
-		if( Static_Var_4 == 0 )
+		if( Static_Var_5 == 0 )
 		{
-			Static_Var_4 = 1;
+			Static_Var_5 = 1;
 			hide p;
 			explode p type FALL | SHATTER | SMOKE | BITMAP2;
 		}
 	}
 	if( Func_Var_3 <= 50 )
 	{
-		if( Static_Var_5 == 0 )
+		if( Static_Var_6 == 0 )
 		{
-			Static_Var_5 = 1;
+			Static_Var_6 = 1;
 			hide p;
 			explode p type FALL | SHATTER | SMOKE | BITMAP2;
 		}
@@ -34,8 +35,8 @@ HitByWeapon(anglex, anglez)
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
-	Static_Var_4 = 0;
 	Static_Var_5 = 0;
+	Static_Var_6 = 0;
 	while( get BUILD_PERCENT_LEFT )
 	{
 		sleep 400;
@@ -45,17 +46,17 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		healthpercent = get HEALTH;
 		if( healthpercent >= 60 )
 		{
-			if( Static_Var_5 == 1 )
+			if( Static_Var_6 == 1 )
 			{
-				Static_Var_5 = 0;
+				Static_Var_6 = 0;
 				show p;
 			}
 		}
 		if( healthpercent >= 75 )
 		{
-			if( Static_Var_4 == 1 )
+			if( Static_Var_5 == 1 )
 			{
-				Static_Var_4 = 0;
+				Static_Var_5 = 0;
 				show p;
 			}
 		}
@@ -111,10 +112,9 @@ Stop()
 	set ARMORED to 1;
 }
 
-MMStatus(State)
+MMStatus(Func_Var_1)
 {
-	Active = State;
-	//get PRINT(Active);
+	Static_Var_4 = Func_Var_1;
 }
 
 ImAMetalMaker()
@@ -123,22 +123,21 @@ ImAMetalMaker()
 	{
 		sleep 150;
 	}
-	mmState = -1;
+	Static_Var_3 = -1;
 	while( TRUE )
-	{	
-		if (Active == 1)
+	{
+		if( Static_Var_4 == 1 )
 		{
-			if (mmState != 1) {
+			if( Static_Var_3 != 1 )
+			{
 				call-script Go();
-				mmState = 1;
+				Static_Var_3 = 1;
 			}
 		}
-		else
+		else if( Static_Var_3 != 0 )
 		{
-			if (mmState != 0) {
-				call-script Stop();
-				mmState = 0;
-			}
+			call-script Stop();
+			Static_Var_3 = 0;
 		}
 		sleep 1000;
 	}

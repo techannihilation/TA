@@ -5,15 +5,15 @@
 
 piece  base, body, wheel, wake1, wake2, wake3, lights;
 
-static-var  Static_Var_2, Static_Var_1, statechg_DesiredState, statechg_StateChanging;
+static-var  Static_Var_1, Static_Var_2, statechg_DesiredState, statechg_StateChanging;
 
 
-LuaSetSpeed(speed)
+LuaSetSpeed(Func_Var_1)
 {
-	Static_Var_1 = speed;
+	Static_Var_2 = Func_Var_1;
 	if( !get BUILD_PERCENT_LEFT )
 	{
-		spin wheel around z-axis speed Static_Var_1 ;
+		spin wheel around z-axis speed Static_Var_2;
 		set ACTIVATION to 100;
 	}
 }
@@ -47,7 +47,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 wakes()
 {
-	while( Static_Var_2 )
+	while( Static_Var_1 )
 	{
 		emit-sfx 2 from wake1;
 		emit-sfx 2 from wake2;
@@ -58,16 +58,16 @@ wakes()
 
 Go()
 {
-	Static_Var_2 = 1;
+	Static_Var_1 = 1;
 	dont-cache wheel;
 	dont-cache lights;
-	spin wheel around z-axis speed Static_Var_1;
+	spin wheel around z-axis speed Static_Var_2;
 	start-script wakes();
 }
 
 Stop()
 {
-	Static_Var_2 = 0;
+	Static_Var_1 = 0;
 	spin wheel around z-axis speed <0.000000>;
 	cache wheel;
 	cache lights;
@@ -107,8 +107,8 @@ RequestState(requestedstate, currentstate)
 
 Create()
 {
-	Static_Var_2 = 1;
-	Static_Var_1 = 800;
+	Static_Var_1 = 1;
+	Static_Var_2 = 800;
 	turn body to y-axis <45.000000> now;
 	dont-shade body;
 	dont-shade wheel;
@@ -138,23 +138,24 @@ Killed(severity, corpsetype)
 		corpsetype = 1;
 		explode body type BITMAPONLY | BITMAP1;
 		explode wheel type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
 		explode body type BITMAPONLY | BITMAP1;
 		explode wheel type SHATTER | EXPLODE_ON_HIT | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
 		explode body type SHATTER | EXPLODE_ON_HIT | BITMAP1;
 		explode wheel type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP1;
 	explode wheel type SHATTER | EXPLODE_ON_HIT | BITMAP2;
+	return (corpsetype);
 }

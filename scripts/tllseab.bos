@@ -139,15 +139,16 @@ QueryPrimary(piecenum)
 	piecenum = flare1;
 }
 
-QuerySeconday(piecenum)
+QuerySeconday(Func_Var_1)
 {
-	piecenum = flare2;
+	Func_Var_1 = 1;
 }
 
 AimFromWeapon2(piecenum)
 {
 	piecenum = base;
 }
+
 QueryTertiary(piecenum)
 {
 	piecenum = flare3;
@@ -168,7 +169,7 @@ Killed(severity, corpsetype)
 		explode RWing type BITMAPONLY | BITMAP1;
 		explode wake1 type BITMAPONLY | BITMAP2;
 		explode wake2 type BITMAPONLY | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -178,7 +179,7 @@ Killed(severity, corpsetype)
 		explode RWing type BITMAPONLY | BITMAP1;
 		explode wake1 type FALL | BITMAP2;
 		explode wake2 type FALL | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -188,7 +189,7 @@ Killed(severity, corpsetype)
 		explode RWing type BITMAPONLY | BITMAP1;
 		explode wake1 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP2;
 		explode wake2 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP1;
@@ -196,6 +197,7 @@ Killed(severity, corpsetype)
 	explode RWing type BITMAPONLY | BITMAP1;
 	explode wake1 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP2;
 	explode wake2 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP3;
+	return (corpsetype);
 }
 
 setSFXoccupy(state)

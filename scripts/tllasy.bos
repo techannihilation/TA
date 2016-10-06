@@ -6,7 +6,7 @@
 piece  base, body, arm1, arm2, nano1, spray1, spray2, arm3,
        arm4, nano2, spray3, spray4;
 
-static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging, tidal_Spd;
+static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging, Static_Var_4;
 
 // Signal definitions
 #define SIG_ACTIVATE			2
@@ -41,17 +41,17 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Tangue()
 {
-	tidal_Spd = get UNKNOWN_UNIT_VALUE(1030);
+	Static_Var_4 = get UNKNOWN_UNIT_VALUE(1030);
 	while( TRUE )
 	{
-	   	turn body to x-axis <1.000000> * tidal_Spd speed <0.400000> * tidal_Spd;
-		turn body to z-axis <1.000000> * tidal_Spd speed <0.400000> * tidal_Spd;
+		turn body to x-axis <1.000000> * Static_Var_4 speed <0.395604> * Static_Var_4;
+		turn body to z-axis <1.000000> * Static_Var_4 speed <0.395604> * Static_Var_4;
 		wait-for-turn body around x-axis;
-		turn body to x-axis <-1.000000> * tidal_Spd speed <0.400000> * tidal_Spd;
-		turn body to z-axis <-1.000000> * tidal_Spd speed  <0.400000> * tidal_Spd;
+		turn body to x-axis <-1.000000> * Static_Var_4 speed <0.395604> * Static_Var_4;
+		turn body to z-axis <-1.000000> * Static_Var_4 speed <0.395604> * Static_Var_4;
 		wait-for-turn body around x-axis;
-		turn body to x-axis <0.000000> speed <0.400000> * tidal_Spd;
-		turn body to z-axis <0.000000> speed <0.400000> * tidal_Spd;
+		turn body to x-axis <0.000000> speed <0.395604> * Static_Var_4;
+		turn body to z-axis <0.000000> speed <0.395604> * Static_Var_4;
 	}
 }
 
@@ -161,7 +161,6 @@ Create()
 	Static_Var_1 = 0;
 	call-script InitState();
 	start-script SmokeUnit();
-	
 }
 
 QueryNanoPiece(piecenum)
@@ -231,18 +230,19 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		return (0);
+		return (corpsetype);
 	}
 	explode nano2 type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
 	explode arm1 type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode arm1 type SHATTER | EXPLODE_ON_HIT | BITMAP3;
 	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP3;
 	explode nano2 type SHATTER | EXPLODE_ON_HIT | BITMAP3;
 	explode arm2 type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+	return (corpsetype);
 }

@@ -1,0 +1,470 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, turret, body, arma, farma, armb, farmb, turreta,
+       canna, flarea, turretb, cannb, flareb, cdoora, cdoorb, pdoora,
+       pdoorb, aimpa, aimpb, aimpc, aimpd, lighta, lightb, shield,
+       head, eyea, eyeb, tirea, hcapa, tireb, hcapb, tirec,
+       hcapc, tired, hcapd;
+
+static-var  Static_Var_1, gun_1, gun_2;
+
+// Signal definitions
+#define SIG_AIM				2
+#define SIG_AIM_2			4
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+	return (0);
+	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
+}
+
+HitByWeapon(anglex, anglez)
+{
+	turn base to z-axis anglez speed <100.000000>;
+	turn base to x-axis anglex speed <100.000000>;
+	wait-for-turn base around z-axis;
+	wait-for-turn base around x-axis;
+	turn base to z-axis <0.000000> speed <20.000000>;
+	turn base to x-axis <0.000000> speed <20.000000>;
+	show shield;
+	spin shield around y-axis speed <750.181319> accelerate <750.181319>;
+	spin shield around x-axis speed <1000.241758> accelerate <1000.241758>;
+}
+
+Create()
+{
+	hide flarea;
+	hide flareb;
+	hide aimpa;
+	hide aimpb;
+	hide aimpc;
+	hide aimpd;
+	hide shield;
+	cache eyea;
+	cache eyeb;
+	cache lighta;
+	cache lightb;
+	cache shield;
+	dont-cache shield;
+	dont-cache cdoora;
+	dont-cache cdoorb;
+	dont-shade flarea;
+	dont-shade flareb;
+	dont-shade aimpa;
+	dont-shade aimpb;
+	dont-shade aimpc;
+	dont-shade aimpd;
+	dont-shade lighta;
+	dont-shade lightb;
+	gun_1 = base;
+	gun_2 = body;
+	Static_Var_1 = 12000;
+	start-script SmokeUnit();
+}
+
+StartMoving()
+{
+	dont-cache lighta;
+	dont-cache lightb;
+	turn head to x-axis <20.000000> speed <30.000000>;
+	spin tirea around x-axis speed <80.016484>;
+	spin tireb around x-axis speed <80.016484>;
+	spin tirec around x-axis speed <80.016484>;
+	spin tired around x-axis speed <80.016484>;
+	turn base to x-axis <-4.000000> speed <6.000000>;
+	turn arma to x-axis <-30.005495> speed <60.000000>;
+	turn farma to x-axis <40.005495> speed <80.000000>;
+	turn armb to x-axis <-30.005495> speed <60.000000>;
+	turn farmb to x-axis <40.005495> speed <80.000000>;
+	wait-for-turn base around x-axis;
+	turn head to x-axis <0.000000> speed <10.000000>;
+	turn base to x-axis <0.000000> speed <2.000000>;
+	spin tirea around x-axis speed <110.021978>;
+	spin tireb around x-axis speed <110.021978>;
+	spin tirec around x-axis speed <110.021978>;
+	spin tired around x-axis speed <110.021978>;
+}
+
+StopMoving()
+{
+	turn head to x-axis <30.005495> speed <400.000000>;
+	turn arma to x-axis <0.000000> speed <160.000000>;
+	turn farma to x-axis <0.000000> speed <180.000000>;
+	turn armb to x-axis <0.000000> speed <160.000000>;
+	turn farmb to x-axis <0.000000> speed <180.000000>;
+	turn base to x-axis <1.000000> speed <18.000000>;
+	wait-for-turn base around x-axis;
+	stop-spin tirea around x-axis;
+	stop-spin tireb around x-axis;
+	stop-spin tirec around x-axis;
+	stop-spin tired around x-axis;
+	cache lighta;
+	cache lightb;
+	turn head to x-axis <0.000000> speed <40.000000>;
+	turn base to x-axis <0.000000> speed <9.000000>;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = turret;
+}
+
+RestoreAfterDelay()
+{
+	sleep Static_Var_1;
+	turn head to y-axis <0.000000> speed <40.000000>;
+	turn turret to y-axis <0.000000> speed <20.000000>;
+	move canna to z-axis [0.000000] speed [15.000000];
+	move cannb to z-axis [0.000000] speed [15.000000];
+	wait-for-move canna along z-axis;
+	wait-for-move cannb along z-axis;
+	turn turreta to z-axis <0.000000> speed <50.000000>;
+	turn turretb to z-axis <0.000000> speed <50.000000>;
+	turn pdoora to z-axis <0.000000> speed <50.000000>;
+	turn pdoorb to z-axis <0.000000> speed <50.000000>;
+	turn cdoora to z-axis <0.000000> speed <40.000000>;
+	turn cdoorb to z-axis <0.000000> speed <40.000000>;
+	wait-for-turn turreta around z-axis;
+	wait-for-turn turretb around z-axis;
+	wait-for-turn pdoora around z-axis;
+	wait-for-turn pdoorb around z-axis;
+	stop-spin shield around x-axis;
+	stop-spin shield around y-axis;
+	hide shield;
+	turn cdoora to z-axis <0.000000> speed <160.000000>;
+	turn cdoorb to z-axis <0.000000> speed <160.000000>;
+	wait-for-turn cdoora around z-axis;
+	wait-for-turn cdoorb around z-axis;
+	cache eyea;
+	cache eyeb;
+	turn armb to x-axis <0.000000> speed <150.000000>;
+	turn farmb to x-axis <0.000000> speed <180.000000>;
+	wait-for-turn armb around x-axis;
+	turn armb to x-axis <-25.005495> speed <150.000000>;
+	turn farmb to x-axis <-60.010989> speed <250.000000>;
+	wait-for-turn farmb around x-axis;
+	turn farmb to x-axis <-10.000000> speed <250.000000>;
+	wait-for-turn farmb around x-axis;
+	turn farmb to x-axis <-60.010989> speed <250.000000>;
+	wait-for-turn farmb around x-axis;
+	turn farmb to x-axis <-10.000000> speed <250.000000>;
+	wait-for-turn farmb around x-axis;
+	turn farmb to x-axis <-60.010989> speed <250.000000>;
+	wait-for-turn farmb around x-axis;
+	turn farmb to x-axis <-10.000000> speed <250.000000>;
+	wait-for-turn farmb around x-axis;
+	turn farmb to x-axis <-60.010989> speed <250.000000>;
+	wait-for-turn farmb around x-axis;
+	turn farmb to x-axis <-10.000000> speed <250.000000>;
+	wait-for-turn farmb around x-axis;
+	turn armb to x-axis <0.000000> speed <150.000000>;
+	turn farmb to x-axis <0.000000> speed <180.000000>;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	dont-cache eyea;
+	dont-cache eyeb;
+	turn head to y-axis heading speed <120.000000>;
+	turn head to x-axis <0.000000> - pitch speed <80.000000>;
+	turn turret to y-axis heading speed <60.000000>;
+	turn turreta to z-axis <-78.016484> speed <50.000000>;
+	turn turretb to z-axis <78.016484> speed <50.000000>;
+	turn pdoora to z-axis <-78.016484> speed <50.000000>;
+	turn pdoorb to z-axis <78.016484> speed <50.000000>;
+	turn cdoora to z-axis <140.032967> speed <100.000000>;
+	turn cdoorb to z-axis <-140.032967> speed <100.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn turreta around z-axis;
+	wait-for-turn turretb around z-axis;
+	wait-for-turn pdoora around z-axis;
+	wait-for-turn pdoorb around z-axis;
+	wait-for-turn cdoora around z-axis;
+	wait-for-turn cdoorb around z-axis;
+	move canna to z-axis [7.000000] speed [30.000000];
+	move cannb to z-axis [7.000000] speed [30.000000];
+	wait-for-move canna along z-axis;
+	wait-for-move cannb along z-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FirePrimary()
+{
+	if( gun_1 == 0 )
+	{
+		move canna to z-axis [3.000000] now;
+		show flarea;
+		sleep 120;
+		hide flarea;
+		move canna to z-axis [7.000000] speed [7.000000];
+		gun_1 = turret;
+		return (0);
+	}
+	if( gun_1 == 1 )
+	{
+		move cannb to z-axis [3.000000] now;
+		show flareb;
+		sleep 120;
+		hide flareb;
+		move cannb to z-axis [7.000000] speed [7.000000];
+		gun_1 = base;
+		return (0);
+	}
+}
+
+QueryPrimary(piecenum)
+{
+	if( gun_1 == 0 )
+	{
+		piecenum = flarea;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = flareb;
+	}
+}
+
+AimSecondary(heading, pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	dont-cache eyea;
+	dont-cache eyeb;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireSecondary()
+{
+	if( gun_2 == 2 )
+	{
+		show aimpa;
+		sleep 50;
+		hide aimpa;
+		gun_2 = arma;
+		return (0);
+	}
+	if( gun_2 == 3 )
+	{
+		show aimpb;
+		sleep 50;
+		hide aimpb;
+		gun_2 = farma;
+		return (0);
+	}
+	if( gun_2 == 4 )
+	{
+		show aimpc;
+		sleep 50;
+		hide aimpc;
+		gun_2 = armb;
+		return (0);
+	}
+	if( gun_2 == 5 )
+	{
+		show aimpd;
+		sleep 50;
+		hide aimpd;
+		gun_2 = body;
+		return (0);
+	}
+}
+
+QuerySecondary(piecenum)
+{
+	if( gun_2 == 2 )
+	{
+		piecenum = aimpa;
+	}
+	if( gun_2 == 3 )
+	{
+		piecenum = aimpb;
+	}
+	if( gun_2 == 4 )
+	{
+		piecenum = aimpc;
+	}
+	if( gun_2 == 5 )
+	{
+		piecenum = aimpd;
+	}
+}
+
+Killed(severity, corpsetype)
+{
+	hide flarea;
+	hide flareb;
+	hide shield;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type BITMAPONLY | BITMAP1;
+		explode turret type BITMAPONLY | BITMAP2;
+		explode body type BITMAPONLY | BITMAP3;
+		explode arma type BITMAPONLY | BITMAP4;
+		explode farma type BITMAPONLY | BITMAP5;
+		explode armb type BITMAPONLY | BITMAP1;
+		explode farmb type BITMAPONLY | BITMAP2;
+		explode turreta type BITMAPONLY | BITMAP3;
+		explode canna type BITMAPONLY | BITMAP4;
+		explode flarea type BITMAPONLY | BITMAP5;
+		explode turretb type BITMAPONLY | BITMAP1;
+		explode cannb type BITMAPONLY | BITMAP2;
+		explode flareb type BITMAPONLY | BITMAP3;
+		explode cdoora type BITMAPONLY | BITMAP4;
+		explode cdoorb type BITMAPONLY | BITMAP5;
+		explode pdoora type BITMAPONLY | BITMAP1;
+		explode pdoorb type BITMAPONLY | BITMAP2;
+		explode lighta type BITMAPONLY | BITMAP3;
+		explode lightb type BITMAPONLY | BITMAP4;
+		explode shield type BITMAPONLY | BITMAP5;
+		explode head type BITMAPONLY | BITMAP1;
+		explode eyea type BITMAPONLY | BITMAP2;
+		explode eyeb type BITMAPONLY | BITMAP3;
+		explode tirea type BITMAPONLY | BITMAP4;
+		explode hcapa type BITMAPONLY | BITMAP5;
+		explode tireb type BITMAPONLY | BITMAP1;
+		explode hcapb type BITMAPONLY | BITMAP2;
+		explode tirec type BITMAPONLY | BITMAP3;
+		explode hcapc type BITMAPONLY | BITMAP4;
+		explode tired type BITMAPONLY | BITMAP5;
+		explode hcapd type BITMAPONLY | BITMAP1;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type FALL | BITMAP1;
+		explode turret type FALL | BITMAP2;
+		explode body type FALL | BITMAP3;
+		explode arma type FALL | BITMAP4;
+		explode farma type FALL | BITMAP5;
+		explode armb type FALL | BITMAP1;
+		explode farmb type FALL | BITMAP2;
+		explode turreta type FALL | BITMAP3;
+		explode canna type FALL | BITMAP4;
+		explode flarea type FALL | BITMAP5;
+		explode turretb type FALL | BITMAP1;
+		explode cannb type FALL | BITMAP2;
+		explode flareb type FALL | BITMAP3;
+		explode cdoora type FALL | BITMAP4;
+		explode cdoorb type FALL | BITMAP5;
+		explode pdoora type FALL | BITMAP1;
+		explode pdoorb type FALL | BITMAP2;
+		explode lighta type FALL | BITMAP3;
+		explode lightb type FALL | BITMAP4;
+		explode shield type FALL | BITMAP5;
+		explode head type FALL | BITMAP1;
+		explode eyea type FALL | BITMAP2;
+		explode eyeb type FALL | BITMAP3;
+		explode tirea type FALL | BITMAP4;
+		explode hcapa type FALL | BITMAP5;
+		explode tireb type FALL | BITMAP1;
+		explode hcapb type FALL | BITMAP2;
+		explode tirec type FALL | BITMAP3;
+		explode hcapc type FALL | BITMAP4;
+		explode tired type FALL | BITMAP5;
+		explode hcapd type FALL | BITMAP1;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode turret type SHATTER | BITMAP2;
+		explode body type SHATTER | BITMAP3;
+		explode arma type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode farma type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode armb type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode farmb type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode turreta type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode canna type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode flarea type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode turretb type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode cannb type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode flareb type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode cdoora type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode cdoorb type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode pdoora type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode pdoorb type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode lighta type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode lightb type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode shield type SHATTER | BITMAP5;
+		explode head type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode eyea type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode eyeb type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode tirea type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode hcapa type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode tireb type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode hcapb type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode tirec type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode hcapc type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode tired type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode hcapd type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type SHATTER | EXPLODE_ON_HIT | BITMAP1;
+	explode base type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode turret type SHATTER | BITMAP2;
+	explode body type SHATTER | BITMAP3;
+	explode arma type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode farma type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode armb type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode farmb type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode turreta type SHATTER | BITMAP3;
+	explode canna type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode flarea type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode turretb type SHATTER | BITMAP1;
+	explode cannb type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode flareb type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode cdoora type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode cdoorb type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode pdoora type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode pdoorb type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode lighta type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode lightb type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode shield type SHATTER | BITMAP5;
+	explode head type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode eyea type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode eyeb type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode tirea type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode hcapa type SHATTER | BITMAP5;
+	explode tireb type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode hcapb type SHATTER | BITMAP2;
+	explode tirec type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode hcapc type SHATTER | BITMAP4;
+	explode tired type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode hcapd type SHATTER | BITMAP1;
+	return (corpsetype);
+}

@@ -1,0 +1,284 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, turret, rotplat1, rock1, firept1, rotplat2, rock2, firept2;
+
+static-var  Static_Var_1, gun_1, restore_delay, statechg_DesiredState, statechg_StateChanging;
+
+// Signal definitions
+#define SIG_AIM				2
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+	return (0);
+	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
+}
+
+HitByWeapon(anglex, anglez)
+{
+	turn base to z-axis anglez speed <105.000000>;
+	turn base to x-axis anglex speed <105.000000>;
+	wait-for-turn base around z-axis;
+	wait-for-turn base around x-axis;
+	turn base to z-axis <0.000000> speed <30.000000>;
+	turn base to x-axis <0.000000> speed <30.000000>;
+}
+
+activatescr()
+{
+	if( TRUE )
+	{
+		turn rotplat1 to x-axis <90.021978> speed <50.000000>;
+		turn rotplat2 to x-axis <90.021978> speed <50.000000>;
+		sleep 50;
+		wait-for-turn rotplat1 around x-axis;
+		wait-for-turn rotplat2 around x-axis;
+	}
+	sleep 50;
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		turn rotplat2 to x-axis <0.000000> speed <50.000000>;
+		turn rotplat1 to x-axis <0.000000> speed <50.000000>;
+		sleep 220;
+	}
+	sleep 100;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Go()
+{
+	call-script activatescr();
+	Static_Var_1 = 1;
+}
+
+Stop()
+{
+	Static_Var_1 = 0;
+	call-script deactivatescr();
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+Create()
+{
+	dont-shade rotplat1;
+	dont-shade rock1;
+	dont-shade firept1;
+	dont-shade rotplat2;
+	dont-shade rock2;
+	dont-shade firept2;
+	dont-cache rotplat1;
+	dont-cache rock1;
+	dont-cache firept1;
+	dont-cache rotplat2;
+	dont-cache rock2;
+	dont-cache firept2;
+	hide firept1;
+	hide firept2;
+	Static_Var_1 = 0;
+	gun_1 = base;
+	restore_delay = 3000;
+	call-script InitState();
+	start-script SmokeUnit();
+}
+
+SetMaxReloadTime(Func_Var_1)
+{
+	restore_delay = Func_Var_1;
+}
+
+RestoreAfterDelay()
+{
+	sleep restore_delay;
+	set-signal-mask 0;
+	start-script RequestState(1);
+	call-script Stop();
+}
+
+AimPrimary(heading, pitch)
+{
+	start-script RequestState(0);
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	turn turret to y-axis heading speed <150.000000>;
+	wait-for-turn turret around y-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FirePrimary()
+{
+	if( gun_1 == 0 )
+	{
+		show rock2;
+		move rock2 to z-axis [0.000000] speed [15.000000];
+		hide rock1;
+		move rock1 to z-axis [-8.000000] now;
+		show firept1;
+		sleep 80;
+		hide firept1;
+	}
+	if( gun_1 == 1 )
+	{
+		show rock1;
+		move rock1 to z-axis [0.000000] speed [15.000000];
+		hide rock2;
+		move rock2 to z-axis [-8.000000] now;
+		show firept2;
+		sleep 80;
+		hide firept2;
+	}
+	++gun_1;
+	if( gun_1 == 2 )
+	{
+		gun_1 = base;
+	}
+}
+
+QueryPrimary(piecenum)
+{
+	if( gun_1 == 0 )
+	{
+		piecenum = firept1;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = firept2;
+	}
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = rotplat2;
+}
+
+Killed(severity, corpsetype)
+{
+	hide firept1;
+	hide firept1;
+	show rock1;
+	show rock2;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode rotplat1 type BITMAPONLY | BITMAP1;
+		explode rotplat2 type BITMAPONLY | BITMAP2;
+		explode base type BITMAPONLY | BITMAP3;
+		explode rock1 type BITMAPONLY | BITMAP4;
+		explode rock2 type BITMAPONLY | BITMAP5;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode rotplat1 type FALL | BITMAP1;
+		explode rotplat2 type FALL | BITMAP2;
+		explode base type BITMAPONLY | BITMAP3;
+		explode rock1 type BITMAPONLY | BITMAP4;
+		explode rock2 type SHATTER | BITMAP5;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode rotplat1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode rotplat2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode base type BITMAPONLY | BITMAP3;
+		explode rock1 type BITMAPONLY | BITMAP4;
+		explode rock2 type SHATTER | BITMAP5;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode rotplat1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode rotplat2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode base type BITMAPONLY | BITMAP3;
+	explode rock1 type BITMAPONLY | BITMAP4;
+	explode rock2 type SHATTER | BITMAP5;
+	return (corpsetype);
+}

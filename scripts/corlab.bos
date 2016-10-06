@@ -27,6 +27,7 @@ Standby()
 	sleep 50;
 	start-script Standby();
 }
+
 activatescr()
 {
 	if( TRUE )
@@ -40,22 +41,22 @@ activatescr()
 	if( TRUE )
 	{
 		move lower1 to x-axis [8.900000] speed [8.989905];
-		move lower2 to x-axis [-8.950000] speed [9.040399];
+		move lower2 to x-axis [-8.950000] speed [9.040393];
 		sleep 990;
 	}
 	if( TRUE )
 	{
-		move ldoor2 to y-axis [-0.150000] speed [1.851843];
-		move udoor2 to y-axis [0.150000] speed [1.851843];
-		move ldoor1 to y-axis [-0.150000] speed [1.851843];
-		move udoor1 to y-axis [0.150000] speed [1.851843];
+		move ldoor2 to y-axis [-0.150000] speed [1.851837];
+		move udoor2 to y-axis [0.150000] speed [1.851837];
+		move ldoor1 to y-axis [-0.150000] speed [1.851837];
+		move udoor1 to y-axis [0.150000] speed [1.851837];
 		turn udoor1 to y-axis <0.604396> speed <7.505495>;
 		sleep 81;
 	}
 	if( TRUE )
 	{
-		move ldoor2 to x-axis [-3.650000] speed [7.668060];
-		move udoor2 to x-axis [-3.649994] speed [7.668054];
+		move ldoor2 to x-axis [-3.650000] speed [7.668054];
+		move udoor2 to x-axis [-3.649994] speed [7.668048];
 		move ldoor1 to x-axis [3.650000] speed [7.668073];
 		move udoor1 to x-axis [3.699994] speed [7.773102];
 		sleep 476;
@@ -63,16 +64,16 @@ activatescr()
 	if( TRUE )
 	{
 		move pad to z-axis [6.250000] speed [10.888501];
-		move lbox2 to y-axis [4.450000] speed [7.752606];
-		move ubox2 to y-axis [-4.450000] speed [7.752600];
-		move lbox1 to y-axis [4.450000] speed [7.752606];
-		move ubox1 to y-axis [-4.449994] speed [7.752600];
+		move lbox2 to y-axis [4.450000] speed [7.752600];
+		move ubox2 to y-axis [-4.450000] speed [7.752594];
+		move lbox1 to y-axis [4.450000] speed [7.752600];
+		move ubox1 to y-axis [-4.449994] speed [7.752594];
 		sleep 574;
 	}
 	if( TRUE )
 	{
-		move gun2 to z-axis [1.100000] speed [1.933209];
-		move gun1 to z-axis [1.100000] speed [1.933209];
+		move gun2 to z-axis [1.100000] speed [1.933203];
+		move gun1 to z-axis [1.100000] speed [1.933203];
 		turn gun2 to y-axis <90.016484> speed <158.203297>;
 		turn gun1 to y-axis <-90.016484> speed <158.203297>;
 		sleep 569;
@@ -126,7 +127,7 @@ deactivatescr()
 		move ldoor2 to x-axis [0.000000] speed [6.381116];
 		move udoor2 to x-axis [0.000000] speed [6.381116];
 		move ldoor1 to x-axis [0.000000] speed [6.381122];
-		move udoor1 to x-axis [0.000000] speed [6.468518];
+		move udoor1 to x-axis [0.000000] speed [6.468512];
 		sleep 572;
 	}
 	if( TRUE )
@@ -392,7 +393,7 @@ Killed(severity, corpsetype)
 		explode udoor2 type BITMAPONLY | BITMAP5;
 		explode upper1 type BITMAPONLY | BITMAP5;
 		explode upper2 type BITMAPONLY | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -416,7 +417,7 @@ Killed(severity, corpsetype)
 		explode udoor2 type FALL | BITMAP5;
 		explode upper1 type SHATTER | BITMAP5;
 		explode upper2 type BITMAPONLY | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -440,7 +441,7 @@ Killed(severity, corpsetype)
 		explode udoor2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 		explode upper1 type SHATTER | BITMAP5;
 		explode upper2 type BITMAPONLY | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP1;
@@ -462,4 +463,5 @@ Killed(severity, corpsetype)
 	explode udoor2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 	explode upper1 type SHATTER | EXPLODE_ON_HIT | BITMAP5;
 	explode upper2 type BITMAPONLY | BITMAP5;
+	return (corpsetype);
 }

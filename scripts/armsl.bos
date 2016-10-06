@@ -14,13 +14,13 @@ pickupscr()
 	if( TRUE )
 	{
 		turn arm1 to y-axis <0.000000> now;
-		turn arm1 to y-axis <54.741758> speed <70>;
+		turn arm1 to y-axis <54.736264> speed <70.000000>;
 		turn arm2 to y-axis <0.000000> now;
-		turn arm2 to y-axis <-52.307692> speed <70>;
+		turn arm2 to y-axis <-52.302198> speed <70.000000>;
 		turn arm3 to y-axis <0.000000> now;
-		turn arm3 to y-axis <-54.741758> speed <70>;
+		turn arm3 to y-axis <-54.736264> speed <70.000000>;
 		turn arm4 to y-axis <0.000000> now;
-		turn arm4 to y-axis <54.131868> speed <70>;
+		turn arm4 to y-axis <54.126374> speed <70.000000>;
 		sleep 1326;
 	}
 	sleep 11;
@@ -30,23 +30,23 @@ dropoffscr()
 {
 	if( TRUE )
 	{
-		turn arm1 to y-axis <54.741758> now;
-		turn arm1 to y-axis <0.000000> speed <70>;
-		turn arm2 to y-axis <-52.307692> now;
-		turn arm2 to y-axis <0.000000> speed <70>;
-		turn arm3 to y-axis <-54.741758> now;
-		turn arm3 to y-axis <0.000000> speed <70>;
-		turn arm4 to y-axis <54.131868> now;
-		turn arm4 to y-axis <0.000000> speed <70>;
+		turn arm1 to y-axis <54.736264> now;
+		turn arm1 to y-axis <0.000000> speed <70.000000>;
+		turn arm2 to y-axis <-52.302198> now;
+		turn arm2 to y-axis <0.000000> speed <70.000000>;
+		turn arm3 to y-axis <-54.736264> now;
+		turn arm3 to y-axis <0.000000> speed <70.000000>;
+		turn arm4 to y-axis <54.126374> now;
+		turn arm4 to y-axis <0.000000> speed <70.000000>;
 		sleep 1325;
 	}
 	sleep 15;
 }
 
-HitByWeapon(Func_Var_1, Func_Var_2)
+HitByWeapon(anglex, anglez)
 {
-	turn base to z-axis Func_Var_2 speed <105.021978>;
-	turn base to x-axis Func_Var_1 speed <105.021978>;
+	turn base to z-axis anglez speed <105.016484>;
+	turn base to x-axis anglex speed <105.016484>;
 	wait-for-turn base around z-axis;
 	wait-for-turn base around x-axis;
 	turn base to z-axis <0.000000> speed <30.005495>;
@@ -221,7 +221,7 @@ Killed(severity, corpsetype)
 		explode thrust2 type BITMAPONLY | BITMAP2;
 		explode thrust3 type BITMAPONLY | BITMAP3;
 		explode thrust4 type BITMAPONLY | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -235,7 +235,7 @@ Killed(severity, corpsetype)
 		explode thrust2 type FALL | BITMAP2;
 		explode thrust3 type FALL | BITMAP3;
 		explode thrust4 type FALL | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -249,7 +249,7 @@ Killed(severity, corpsetype)
 		explode thrust2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 		explode thrust3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode thrust4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode arm1 type SHATTER | EXPLODE_ON_HIT | BITMAP1;
@@ -261,4 +261,5 @@ Killed(severity, corpsetype)
 	explode thrust2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 	explode thrust3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode thrust4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	return (corpsetype);
 }

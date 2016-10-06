@@ -74,25 +74,25 @@ walk2()
 	if( Static_Var_1 )
 	{
 		turn leg1 to y-axis <43.791209> now;
-		turn leg1 to y-axis <0.000000> speed <372.296703>;
+		turn leg1 to y-axis <0.000000> speed <372.291209>;
 		turn leg1 to z-axis <0.593407> now;
-		turn leg1 to z-axis <0.000000> speed <5.098901>;
+		turn leg1 to z-axis <0.000000> speed <5.093407>;
 		turn leg2 to z-axis <0.000000> now;
-		turn leg2 to z-axis <31.000000> speed <263.653846>;
+		turn leg2 to z-axis <31.000000> speed <263.648352>;
 		turn leg3 to y-axis <34.692308> now;
-		turn leg3 to y-axis <34.093407> speed <5.098901>;
+		turn leg3 to y-axis <34.093407> speed <5.093407>;
 		turn leg3 to z-axis <31.593407> now;
-		turn leg3 to z-axis <0.593407> speed <263.653846>;
+		turn leg3 to z-axis <0.593407> speed <263.648352>;
 		turn leg4 to y-axis <-40.093407> now;
 		turn leg4 to y-axis <-40.093407> speed <0.000000>;
 		turn leg4 to z-axis <-31.000000> now;
-		turn leg4 to z-axis <-0.593407> speed <258.554945>;
+		turn leg4 to z-axis <-0.593407> speed <258.549451>;
 		turn leg5 to y-axis <-37.093407> now;
 		turn leg5 to y-axis <0.000000> speed <315.346154>;
 		turn leg5 to z-axis <0.000000> now;
 		turn leg5 to z-axis <0.000000> speed <0.000000>;
 		turn leg6 to y-axis <0.000000> now;
-		turn leg6 to y-axis <-30.390110> speed <258.554945>;
+		turn leg6 to y-axis <-30.390110> speed <258.549451>;
 		turn leg6 to z-axis <-45.000000> now;
 		sleep 118;
 	}
@@ -101,22 +101,22 @@ walk2()
 		turn leg1 to z-axis <31.593407> speed <268.758242>;
 		turn leg2 to y-axis <34.692308> speed <294.758242>;
 		turn leg2 to z-axis <31.000000> speed <0.000000>;
-		turn leg3 to y-axis <0.000000> speed <289.494505>;
-		turn leg3 to z-axis <0.000000> speed <5.098901>;
-		turn leg4 to y-axis <0.000000> speed <341.175824>;
-		turn leg5 to z-axis <-31.000000> speed <263.653846>;
+		turn leg3 to y-axis <0.000000> speed <289.489011>;
+		turn leg3 to z-axis <0.000000> speed <5.093407>;
+		turn leg4 to y-axis <0.000000> speed <341.170330>;
+		turn leg5 to z-axis <-31.000000> speed <263.648352>;
 		turn leg6 to z-axis <2.390110> speed <403.225275>;
 		sleep 118;
 	}
 	if( Static_Var_1 )
 	{
-		turn leg1 to y-axis <56.000000> speed <475.642857>;
-		turn leg1 to z-axis <31.000000> speed <5.098901>;
+		turn leg1 to y-axis <56.000000> speed <475.637363>;
+		turn leg1 to z-axis <31.000000> speed <5.093407>;
 		turn leg2 to y-axis <34.692308> speed <0.000000>;
-		turn leg2 to z-axis <0.593407> speed <258.554945>;
+		turn leg2 to z-axis <0.593407> speed <258.549451>;
 		turn leg3 to z-axis <31.593407> speed <268.758242>;
-		turn leg4 to y-axis <-0.593407> speed <5.098901>;
-		turn leg4 to z-axis <-31.000000> speed <258.554945>;
+		turn leg4 to y-axis <-0.593407> speed <5.093407>;
+		turn leg4 to z-axis <-31.000000> speed <258.549451>;
 		turn leg5 to y-axis <-31.593407> speed <268.758242>;
 		turn leg5 to z-axis <-31.000000> speed <0.000000>;
 		turn leg6 to y-axis <3.000000> speed <284.390110>;
@@ -124,16 +124,16 @@ walk2()
 	}
 	if( Static_Var_1 )
 	{
-		turn leg1 to y-axis <43.791209> speed <103.340659>;
-		turn leg1 to z-axis <0.593407> speed <258.554945>;
+		turn leg1 to y-axis <43.791209> speed <103.335165>;
+		turn leg1 to z-axis <0.593407> speed <258.549451>;
 		turn leg2 to y-axis <0.000000> speed <294.758242>;
-		turn leg2 to z-axis <0.000000> speed <5.098901>;
+		turn leg2 to z-axis <0.000000> speed <5.093407>;
 		turn leg3 to y-axis <34.692308> speed <294.758242>;
 		turn leg3 to z-axis <31.593407> speed <0.000000>;
 		turn leg4 to y-axis <-40.093407> speed <336.071429>;
 		turn leg4 to z-axis <-31.000000> speed <0.000000>;
 		turn leg5 to y-axis <-37.093407> speed <46.560440>;
-		turn leg5 to z-axis <0.000000> speed <263.653846>;
+		turn leg5 to z-axis <0.000000> speed <263.648352>;
 		turn leg6 to y-axis <0.000000> speed <25.824176>;
 		turn leg6 to z-axis <-45.000000> speed <403.225275>;
 		sleep 118;
@@ -301,7 +301,7 @@ QueryPrimary(Func_Var_1)
 	Func_Var_1 = 4 + Static_Var_3;
 }
 
-AimSecondary(Func_Var_1, Func_Var_2)
+AimSecondary(Func_Var_1, Func_Var_2, Func_Var_3)
 {
 }
 
@@ -315,7 +315,7 @@ QuerySecondary(Func_Var_1)
 	Func_Var_1 = 4 + Static_Var_3;
 }
 
-AimTertiary(Func_Var_1, Func_Var_2)
+AimTertiary(Func_Var_1, Func_Var_2, Func_Var_3)
 {
 }
 
@@ -348,7 +348,7 @@ Killed(Func_Var_1, Func_Var_2)
 		explode leg5 type BITMAPONLY | EXPTYPE_BLOODEXPLOSION;
 		explode leg6 type BITMAPONLY | EXPTYPE_SMALLEXPLOSION;
 		explode turret type BITMAPONLY | EXPTYPE_MEDIUMEXPLOSION;
-		return (0);
+		return (Func_Var_2);
 	}
 	if( Func_Var_1 <= 50 )
 	{
@@ -365,7 +365,7 @@ Killed(Func_Var_1, Func_Var_2)
 		explode leg5 type FALL | EXPTYPE_BLOODEXPLOSION;
 		explode leg6 type FALL | EXPTYPE_SMALLEXPLOSION;
 		explode turret type 1 | EXPTYPE_MEDIUMEXPLOSION;
-		return (0);
+		return (Func_Var_2);
 	}
 	if( Func_Var_1 <= 99 )
 	{
@@ -382,7 +382,7 @@ Killed(Func_Var_1, Func_Var_2)
 		explode leg5 type FALL | 8 | 16 | 2 | EXPTYPE_BLOODEXPLOSION;
 		explode leg6 type FALL | 8 | 16 | 2 | EXPTYPE_SMALLEXPLOSION;
 		explode turret type 1 | EXPTYPE_MEDIUMEXPLOSION;
-		return (0);
+		return (Func_Var_2);
 	}
 	Func_Var_2 = 3;
 	explode barrel1 type FALL | 8 | 16 | 2 | EXPTYPE_SMALLEXPLOSION;

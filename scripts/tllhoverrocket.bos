@@ -1,207 +1,298 @@
-//define TA
-piece base ,body ,arm,door1,door2, flare1,flare2,flare3,wakes ,wake1 ,wake2 ,wake3 ,wake4 ,wake5 ,wake6 ,wake7 ,wake8 ;
-static-var bLevel_0 ,restore_delay,ok,gun_0 ;
-	
-#define SIG_NUM1	2
-#define SIG_NUM2	4
-#define SMOKEPIECE base
+#define TA			// This is a TA script
 
-#include "StateChg.h"
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, arm, door1, door2, flare1, flare2, flare3,
+       wakes, wake1, wake2, wake3, wake4, wake5, wake6, wake7,
+       wake8;
+
+static-var  Static_Var_1, restore_delay, gun_1, statechg_DesiredState, statechg_StateChanging,
+            Static_Var_6;
+
+// Signal definitions
+#define SIG_AIM				2
+#define SIG_MOVE			4
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+HitByWeapon(anglex, anglez)
+{
+	turn base to z-axis anglez speed <105.000000>;
+	turn base to x-axis anglex speed <105.000000>;
+	wait-for-turn base around z-axis;
+	wait-for-turn base around x-axis;
+	turn base to z-axis <0.000000> speed <30.000000>;
+	turn base to x-axis <0.000000> speed <30.000000>;
+}
+
+activatescr()
+{
+	dont-cache arm;
+	turn door1 to x-axis <55.000000> speed <80.000000>;
+	turn door2 to x-axis <-80.000000> speed <100.000000>;
+	wait-for-turn door2 around x-axis;
+}
+
+deactivatescr()
+{
+	turn door1 to x-axis <0.000000> speed <80.000000>;
+	turn door2 to x-axis <0.000000> speed <100.000000>;
+	wait-for-turn door1 around x-axis;
+	cache arm;
+}
 
 Go()
-{ dont-cache arm;
-  turn door1 to x-axis <55> speed <80>;
-  turn door2 to x-axis <-80> speed <100>;
-  wait-for-turn door2 around x-axis;
-  ok=1;
- }
+{
+	if( !Static_Var_1 )
+	{
+		call-script activatescr();
+	}
+	Static_Var_1 = 1;
+}
 
 Stop()
-{ 
-  ok=0;
-  turn door1 to x-axis <0> speed <80>;
-  turn door2 to x-axis <0> speed <100>;
-  wait-for-turn door1 around x-axis;
-  cache arm;
- }
+{
+	Static_Var_1 = 0;
+	call-script deactivatescr();
+}
 
-#define ACTIVATECMD call-script Go();
-#define DEACTIVATECMD call-script Stop();
-#include "StateChg.h"
-#include "SmokeUnit.h"
-#include "Rockunit.h"
-Create()
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
 	{
-		HIDE flare1;
-		ok=0;
-		gun_0=0;
-		restore_delay = 3000;
-		START-SCRIPT SmokeUnit();
-		  call-script InitState();
+		statechg_DesiredState = requestedstate;
+		return (0);
 	}
-
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
 
 StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	while( TRUE )
+	{
+		if( Static_Var_6 == 1 )
 		{
-			SIGNAL SIG_NUM2;
-			SET-SIGNAL-MASK SIG_NUM2;
-			var fl, flb;
-			fl=3; //Wake2;
-			flb=4; //ReverseWake1;
-			While (TRUE)
-			{
-			if ( bLevel_0 ==1 )
-				{
-				EMIT-SFX fl FROM wake1;
-				EMIT-SFX fl FROM wake2;
-				EMIT-SFX fl FROM wake3;
-				EMIT-SFX fl FROM wake4;
-				EMIT-SFX fl FROM wake5;
-				EMIT-SFX fl FROM wake6;
-				EMIT-SFX fl FROM wake7;
-				EMIT-SFX fl FROM wake8;
-				EMIT-SFX flb FROM wake1;
-				EMIT-SFX flb FROM wake2;
-				EMIT-SFX flb FROM wake3;
-				EMIT-SFX flb FROM wake4;
-				EMIT-SFX flb FROM wake5;
-				EMIT-SFX flb FROM wake6;
-				EMIT-SFX flb FROM wake7;
-				EMIT-SFX flb FROM wake8;
-				}
-			if ( bLevel_0 ==2 )
-				{
-				EMIT-SFX fl FROM wake1;
-				EMIT-SFX fl FROM wake2;
-				EMIT-SFX fl FROM wake3;
-				EMIT-SFX fl FROM wake4;
-				EMIT-SFX fl FROM wake5;
-				EMIT-SFX fl FROM wake6;
-				EMIT-SFX fl FROM wake7;
-				EMIT-SFX fl FROM wake8;
-				EMIT-SFX flb FROM wake1;
-				EMIT-SFX flb FROM wake2;
-				EMIT-SFX flb FROM wake3;
-				EMIT-SFX flb FROM wake4;
-				EMIT-SFX flb FROM wake5;
-				EMIT-SFX flb FROM wake6;
-				EMIT-SFX flb FROM wake7;
-				EMIT-SFX flb FROM wake8;
-				}
-			if ( bLevel_0 ==3 )
-				{
-				EMIT-SFX fl FROM wake1;
-				EMIT-SFX fl FROM wake2;
-				EMIT-SFX fl FROM wake3;
-				EMIT-SFX fl FROM wake4;
-				EMIT-SFX fl FROM wake5;
-				EMIT-SFX fl FROM wake6;
-				EMIT-SFX fl FROM wake7;
-				EMIT-SFX fl FROM wake8;
-				EMIT-SFX flb FROM wake1;
-				EMIT-SFX flb FROM wake2;
-				EMIT-SFX flb FROM wake3;
-				EMIT-SFX flb FROM wake4;
-				EMIT-SFX flb FROM wake5;
-				EMIT-SFX flb FROM wake6;
-				EMIT-SFX flb FROM wake7;
-				EMIT-SFX flb FROM wake8;
-				}
-			SLEEP 300;
-			}
+			emit-sfx 5 from wake1;
+			emit-sfx 5 from wake2;
+			emit-sfx 5 from wake3;
+			emit-sfx 5 from wake4;
+			emit-sfx 5 from wake5;
+			emit-sfx 5 from wake6;
+			emit-sfx 5 from wake7;
+			emit-sfx 5 from wake8;
+			emit-sfx 3 from wake1;
+			emit-sfx 3 from wake2;
+			emit-sfx 3 from wake3;
+			emit-sfx 3 from wake4;
+			emit-sfx 3 from wake5;
+			emit-sfx 3 from wake6;
+			emit-sfx 3 from wake7;
+			emit-sfx 3 from wake8;
 		}
+		if( Static_Var_6 == 2 )
+		{
+			emit-sfx 5 from wake1;
+			emit-sfx 5 from wake2;
+			emit-sfx 5 from wake3;
+			emit-sfx 5 from wake4;
+			emit-sfx 5 from wake5;
+			emit-sfx 5 from wake6;
+			emit-sfx 5 from wake7;
+			emit-sfx 5 from wake8;
+			emit-sfx 3 from wake1;
+			emit-sfx 3 from wake2;
+			emit-sfx 3 from wake3;
+			emit-sfx 3 from wake4;
+			emit-sfx 3 from wake5;
+			emit-sfx 3 from wake6;
+			emit-sfx 3 from wake7;
+			emit-sfx 3 from wake8;
+		}
+		sleep 300;
+	}
+}
+
 StopMoving()
-	{
-	}
-setSFXoccupy(level)
-	{
-		bLevel_0 = level;
-	}
+{
+	sleep 100;
+}
 
-Activate()
-{ start-script RequestState(0);
- }
+Create()
+{
+	hide flare1;
+	Static_Var_1 = 0;
+	gun_1 = base;
+	restore_delay = 3000;
+	start-script SmokeUnit();
+	call-script InitState();
+}
 
-Deactivate()
-{ start-script RequestState(1);
- }
+setSFXoccupy(state)
+{
+	Static_Var_6 = state;
+}
 
-SetMaxReloadTime(time)
-{ restore_delay = time * 2;
- }
+SetMaxReloadTime(Func_Var_1)
+{
+	restore_delay = Func_Var_1 * 2;
+}
 
 RestoreAfterDelay()
-{ set-signal-mask SIG_NUM1;
-  sleep restore_delay;
-  set-signal-mask 0;
-  start-script RequestState(1);
+{
+	sleep restore_delay;
+	set-signal-mask 0;
+	start-script RequestState(1);
 }
 
 AimPrimary(heading, pitch)
-{ start-script RequestState(0);
-  signal SIG_NUM1;
-  set-signal-mask SIG_NUM1;
-  while( !ok )
-  { sleep 200;
-    start-script RequestState(0);
-   }
-  start-script RestoreAfterDelay();
-  return (1);
+{
+	start-script RequestState(0);
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	while( !Static_Var_1 )
+	{
+		sleep 200;
+		start-script RequestState(0);
+	}
+	start-script RestoreAfterDelay();
+	return (1);
 }
 
 FirePrimary()
-{ 
-if ( gun_0 == 0 ) { show flare1; sleep 150; hide flare1; }
-if ( gun_0 == 1 ) { show flare2; sleep 150; hide flare2; }
-if ( gun_0 == 2 ) { show flare3; sleep 150; hide flare3; }
-gun_0 = gun_0 +1;
-if ( gun_0 >= 4 ) { gun_0=0; }
- }
+{
+	gun_1 = base;
+	if( gun_1 == 0 )
+	{
+		show flare1;
+		sleep 150;
+		hide flare1;
+	}
+	if( gun_1 == 1 )
+	{
+		show flare2;
+		sleep 150;
+		hide flare2;
+	}
+	if( gun_1 == 2 )
+	{
+		show flare3;
+		sleep 150;
+		hide flare3;
+	}
+	++gun_1;
+	if( gun_1 >= 4 )
+	{
+		gun_1 = base;
+	}
+}
 
 QueryPrimary(piecenum)
-{ 
-if ( gun_0 == 0 ) { piecenum = flare1; }
-if ( gun_0 == 1 ) { piecenum = flare2; }
-if ( gun_0 == 2 ) { piecenum = flare3; }
- }
+{
+	gun_1 = base;
+	if( gun_1 == 0 )
+	{
+		piecenum = flare1;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = flare2;
+	}
+	if( gun_1 == 2 )
+	{
+		piecenum = flare3;
+	}
+}
 
 SweetSpot(piecenum)
+{
+	piecenum = body;
+}
+
+Killed(severity, corpsetype)
+{
+	hide flare1;
+	if( severity <= 25 )
 	{
-		piecenum = body;
+		corpsetype = 1;
+		explode arm type BITMAPONLY | BITMAP1;
+		explode body type BITMAPONLY | BITMAP2;
+		explode door1 type BITMAPONLY | BITMAP3;
+		explode flare1 type BITMAPONLY | BITMAP4;
+		return (corpsetype);
 	}
-Killed(severity,corpsetype)
+	if( severity <= 50 )
 	{
-		HIDE flare1;
-		IF (severity <= 25 )
-			{
-			corpsetype = 1 ;
-			EXPLODE  arm type  	BITMAPONLY | BITMAP1;
-			EXPLODE  body type  	BITMAPONLY | BITMAP2;
-			EXPLODE  door1 type  	BITMAPONLY | BITMAP3;
-			EXPLODE  flare1 type  	BITMAPONLY | BITMAP4;
-			RETURN ( 0 );
-			}
-		IF (severity <= 50 )
-			{
-			corpsetype = 2 ;
-			EXPLODE  arm type  	FALL | BITMAP1;
-			EXPLODE  body type  	BITMAPONLY | BITMAP2;
-			EXPLODE  door1 type  	FALL | BITMAP3;
-			EXPLODE  flare3 type  	SHATTER | BITMAP4;
-			RETURN ( 0 );
-			}
-		IF (severity <= 99 )
-			{
-			corpsetype = 3 ;
-			EXPLODE  door2 type  	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-			EXPLODE  body type  	BITMAPONLY | BITMAP2;
-			EXPLODE  flare1 type  	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-			EXPLODE  arm type  	SHATTER | BITMAP4;
-			RETURN ( 0 );
-			}
-		corpsetype = 3 ;
-		EXPLODE  arm type  	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-		EXPLODE  body type  	SHATTER | EXPLODE_ON_HIT | BITMAP2;
-		EXPLODE  door2 type  	SHATTER | EXPLODE_ON_HIT | BITMAP4;
-		EXPLODE  flare1 type  	SHATTER | EXPLODE_ON_HIT | BITMAP4;
+		corpsetype = 2;
+		explode arm type FALL | BITMAP1;
+		explode body type BITMAPONLY | BITMAP2;
+		explode door1 type FALL | BITMAP3;
+		explode flare3 type SHATTER | BITMAP4;
+		return (corpsetype);
 	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode door2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode body type BITMAPONLY | BITMAP2;
+		explode flare1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode arm type SHATTER | BITMAP4;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode arm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP2;
+	explode door2 type SHATTER | EXPLODE_ON_HIT | BITMAP4;
+	explode flare1 type SHATTER | EXPLODE_ON_HIT | BITMAP4;
+	return (corpsetype);
+}

@@ -4,24 +4,24 @@
 #include "exptype.h"
 
 piece  pelvis, torso, spines, launcher, door1, flip1, door2, flip2,
-       firepoint, rflame, lflame, ruparm, rloarm, rfirept,
-       rflame2, rtubes, rslide1, rslide2, rtop, luparm, lloarm,
-       ltubes, lfirept, lslide1, lslide2, lflame2,
-       ltop, head, horns, eyegun, lthigh, lleg, lfoot, rthigh,
-       rleg, rfoot;
+       firepoint, rflame, lflame, ruparm, rloarm, rfirept, rflame2, rtubes,
+       rslide1, rslide2, rtop, luparm, lloarm, ltubes, lfirept, lslide1,
+       lslide2, lflame2, ltop, head, horns, eyegun, lthigh, lleg,
+       lfoot, rthigh, rleg, rfoot;
 
 static-var  gun_1, bAiming, Static_Var_3, Static_Var_4, Static_Var_5,
-            Static_Var_6, Static_Var_7, Static_Var_9, bMoving;
+            Static_Var_6, Static_Var_7, Static_Var_8, bMoving;
 
 // Signal definitions
 #define SIG_MOVE			2
 #define SIG_AIM				4
 #define SIG_AIM_3			16
 
-lua_FlameShot(weapon) //Distortion and lups flame effect
+
+lua_FlameShot(Func_Var_1)
 {
-  return 0;
 }
+
 walk()
 {
 	if( bMoving )
@@ -99,12 +99,11 @@ PilotLight(Func_Var_1)
 		{
 			sleep 100;
 		}
-			emit-sfx 1024 + 1 from lfirept;
-			emit-sfx 1024 + 1 from rfirept;
+		emit-sfx 1024 + 1 from lfirept;
+		emit-sfx 1024 + 1 from rfirept;
 		sleep 86;
 	}
 }
-
 
 RestoreAfterDelay()
 {
@@ -147,7 +146,6 @@ RestoreAfterDelay1()
 
 Create()
 {
-	
 	Static_Var_4 = get MY_ID;
 	set ARMORED to 0;
 	bMoving = FALSE;
@@ -161,7 +159,7 @@ Create()
 	hide rflame2;
 	hide ltubes;
 	hide rtubes;
-	Static_Var_9 = 200;
+	Static_Var_8 = 200;
 	Static_Var_6 = 0;
 	Static_Var_7 = 0;
 	Static_Var_5 = 0;
@@ -224,7 +222,7 @@ AimPrimary(heading, pitch)
 	while( gun_1 )
 	{
 		set-signal-mask 8;
-		sleep Static_Var_9;
+		sleep Static_Var_8;
 		wait-for-turn torso around y-axis;
 		gun_1 = pelvis;
 	}
@@ -250,7 +248,7 @@ FirePrimary()
 Shot1()
 {
 	call-script lua_FlameShot(1);
-	return (TRUE);
+	return (1);
 }
 
 AimFromPrimary(piecenum)
@@ -318,7 +316,7 @@ Killed(severity, corpsetype)
 		explode rleg type BITMAPONLY | BITMAP1;
 		explode rthigh type BITMAPONLY | BITMAP2;
 		explode ruparm type BITMAPONLY | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -333,7 +331,7 @@ Killed(severity, corpsetype)
 		explode rleg type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP2;
 		explode rthigh type BITMAPONLY | BITMAP2;
 		explode ruparm type BITMAPONLY | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -348,7 +346,7 @@ Killed(severity, corpsetype)
 		explode rleg type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
 		explode rthigh type BITMAPONLY | BITMAP2;
 		explode ruparm type BITMAPONLY | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode head type BITMAPONLY | BITMAP4;
@@ -361,4 +359,5 @@ Killed(severity, corpsetype)
 	explode rleg type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP2;
 	explode rthigh type BITMAPONLY | BITMAP2;
 	explode ruparm type BITMAPONLY | BITMAP1;
+	return (corpsetype);
 }

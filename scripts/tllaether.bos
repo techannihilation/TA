@@ -3,8 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  flare1, flare2, base, wing1, wing2,
-       rearthrust ;
+piece  flare1, flare2, base, wing1, wing2, rearthrust;
 
 static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging;
 
@@ -21,8 +20,6 @@ activatescr()
 		sleep 1000;
 	}
 	sleep 44;
-	return (0);
-	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
 }
 
 deactivatescr()
@@ -103,7 +100,7 @@ MoveRate2()
 	if( Rand( 1, 10 ) == 1 AND Static_Var_1 )
 	{
 		Static_Var_1 = 1;
-		turn base to z-axis <240.054945> speed <120.000000>;
+		turn base to z-axis <240.049451> speed <120.000000>;
 		wait-for-turn base around z-axis;
 		turn base to z-axis <120.027473> speed <180.000000>;
 		wait-for-turn base around z-axis;

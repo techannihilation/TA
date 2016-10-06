@@ -3,13 +3,11 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  pelvis, lleg, lfoot, rleg, rfoot, rthigh, lthigh,
-       lcover, rcover, lnose, rnose, sphere, ground;
+piece  pelvis, lleg, lfoot, rleg, rfoot, rthigh, lthigh, lcover,
+       rcover, lnose, rnose, sphere, ground;
 
-static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging, bMoving, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5;
-
-// Signal definitions
-#define SIG_ACTIVATE			2
+static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging, Static_Var_4, Static_Var_5,
+            Static_Var_6, Static_Var_7, Static_Var_8;
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -83,16 +81,14 @@ RequestState(requestedstate, currentstate)
 
 Create()
 {
-	bMoving = FALSE;
-	Static_Var_2 = FALSE;
-	Static_Var_3 = 1;
+	Static_Var_4 = 0;
+	Static_Var_5 = 0;
+	Static_Var_6 = 1;
 	hide sphere;
 	hide pelvis;
 	start-script SmokeUnit();
 	call-script InitState();
-
 }
-
 
 Activate()
 {
@@ -149,7 +145,7 @@ Killed(severity, corpsetype)
 		explode rthigh type BITMAPONLY | BITMAP5;
 		explode rnose type BITMAPONLY | BITMAP1;
 		explode sphere type BITMAPONLY | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -166,7 +162,7 @@ Killed(severity, corpsetype)
 		explode rthigh type FALL | BITMAP5;
 		explode rnose type FALL | BITMAP1;
 		explode sphere type FALL | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -183,7 +179,7 @@ Killed(severity, corpsetype)
 		explode rthigh type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 		explode rnose type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 		explode sphere type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode ground type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
@@ -198,4 +194,5 @@ Killed(severity, corpsetype)
 	explode rthigh type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 	explode rnose type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 	explode sphere type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	return (corpsetype);
 }

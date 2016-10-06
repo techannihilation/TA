@@ -5,7 +5,8 @@
 
 piece  base, flap2, flap3, flap4, flap1, topcap, glowingthing;
 
-static-var  Static_Var_1, Active, mmState;
+static-var  Static_Var_1, Static_Var_2, Static_Var_3;
+
 
 activatescr()
 {
@@ -36,7 +37,7 @@ activatescr()
 	}
 	if( TRUE )
 	{
-		turn topcap to y-axis <45.010989> speed <169.000000>;
+		turn topcap to y-axis <45.005495> speed <169.000000>;
 		sleep 266;
 	}
 	if( TRUE )
@@ -46,7 +47,7 @@ activatescr()
 	}
 	if( TRUE )
 	{
-		turn topcap to z-axis <-180.043956> speed <676.000000>;
+		turn topcap to z-axis <-180.038462> speed <676.000000>;
 		sleep 266;
 	}
 	if( TRUE )
@@ -55,8 +56,6 @@ activatescr()
 		sleep 266;
 	}
 	sleep 266;
-	return (0);
-	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
 }
 
 deactivatescr()
@@ -68,13 +67,13 @@ deactivatescr()
 		move flap4 to x-axis [0.000000] now;
 		move topcap to y-axis [-0.700000] now;
 		move topcap to y-axis [-16.050000] speed [57.000000];
-		turn flap1 to x-axis <89.406593> now;
+		turn flap1 to x-axis <89.401099> now;
 		turn flap2 to x-axis <-4.857143> now;
 		turn flap2 to z-axis <69.324176> now;
 		turn flap3 to z-axis <-69.324176> now;
 		turn flap4 to x-axis <-86.357143> now;
-		turn topcap to y-axis <45.010989> now;
-		turn topcap to z-axis <-180.043956> now;
+		turn topcap to y-axis <45.005495> now;
+		turn topcap to z-axis <-180.038462> now;
 		sleep 265;
 	}
 	if( TRUE )
@@ -167,10 +166,9 @@ Stop()
 	cache glowingthing;
 }
 
-MMStatus(State)
+MMStatus(Func_Var_1)
 {
-	Active = State;
-	//get PRINT(Active);
+	Static_Var_2 = Func_Var_1;
 }
 
 ImAMetalMaker()
@@ -179,27 +177,25 @@ ImAMetalMaker()
 	{
 		sleep 150;
 	}
-	mmState = -1;
+	Static_Var_3 = -1;
 	while( TRUE )
-	{	
-		if (Active == 1)
+	{
+		if( Static_Var_2 == 1 )
 		{
-			if (mmState != 1) {
+			if( Static_Var_3 != 1 )
+			{
 				call-script Go();
-				mmState = 1;
+				Static_Var_3 = 1;
 			}
 		}
-		else
+		else if( Static_Var_3 != 0 )
 		{
-			if (mmState != 0) {
-				call-script Stop();
-				mmState = 0;
-			}
+			call-script Stop();
+			Static_Var_3 = 0;
 		}
 		sleep 1000;
 	}
 }
-
 
 Create()
 {
@@ -238,7 +234,7 @@ Killed(severity, corpsetype)
 		explode flap3 type BITMAPONLY | BITMAP5;
 		explode flap4 type BITMAPONLY | BITMAP1;
 		explode topcap type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -250,7 +246,7 @@ Killed(severity, corpsetype)
 		explode flap3 type FALL | BITMAP5;
 		explode flap4 type FALL | BITMAP1;
 		explode topcap type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -262,7 +258,7 @@ Killed(severity, corpsetype)
 		explode flap3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 		explode flap4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 		explode topcap type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP1;
@@ -272,4 +268,5 @@ Killed(severity, corpsetype)
 	explode flap3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 	explode flap4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 	explode topcap type BITMAPONLY | BITMAP2;
+	return (corpsetype);
 }

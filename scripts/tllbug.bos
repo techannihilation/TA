@@ -170,15 +170,16 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		return (0);
+		return (corpsetype);
 	}
 	explode barrel type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
 	explode turret type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP2;
+	return (corpsetype);
 }

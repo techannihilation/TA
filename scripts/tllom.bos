@@ -4,17 +4,15 @@
 #include "exptype.h"
 
 piece  base, body, feetparent, FLFoot, FRFoot, RLFoot, RRFoot, rightchunk,
-       leftchunk, hips, turret, sleeve, flare5, flare6, lsleeve,
-       lbarrel, lflare, rsleeve, rbarrel, rflare;
+       leftchunk, hips, turret, sleeve, flare5, flare6, lsleeve, lbarrel,
+       lflare, rsleeve, rbarrel, rflare;
 
-static-var  restore_delay, bMoving, Static_Var_4, statechg_DesiredState,
-            statechg_StateChanging, gun_2;
+static-var  restore_delay, bMoving, Static_Var_3, Static_Var_4, Static_Var_5,
+            gun_2;
 
 // Signal definitions
 #define SIG_AIM				4
-#define SIG_AIM_2			8
-#define SIG_AIM_4			16
-
+#define SIG_AIM_2			16
 
 
 walk()
@@ -34,18 +32,18 @@ walk()
 		move RLFoot to y-axis [0.400000] now;
 		move RLFoot to z-axis [-0.700000] now;
 		move RLFoot to z-axis [-1.300000] speed [4.000000];
-		move RRFoot to x-axis [0.900000] speed [4.895593];
+		move RRFoot to x-axis [0.900000] speed [4.895587];
 		move RRFoot to y-axis [0.400000] speed [2.175824];
 		move RRFoot to z-axis [-1.400000] now;
 		move RRFoot to z-axis [-1.700000] speed [2.100000];
-		move body to y-axis [1.300000] speed [7.071417];
-		move body to z-axis [-0.300000] speed [1.631860];
+		move body to y-axis [1.300000] speed [7.071411];
+		move body to z-axis [-0.300000] speed [1.631854];
 		move rightchunk to x-axis [0.600000] speed [3.263733];
-		move rightchunk to y-axis [1.300000] speed [7.071417];
-		move rightchunk to z-axis [-0.300000] speed [1.631860];
+		move rightchunk to y-axis [1.300000] speed [7.071411];
+		move rightchunk to z-axis [-0.300000] speed [1.631854];
 		move leftchunk to x-axis [-0.600000] speed [3.263733];
-		move leftchunk to y-axis [1.300000] speed [7.071417];
-		move leftchunk to z-axis [-0.300000] speed [1.631860];
+		move leftchunk to y-axis [1.300000] speed [7.071411];
+		move leftchunk to z-axis [-0.300000] speed [1.631854];
 		turn hips to y-axis <-1.500000> now;
 		turn hips to y-axis <3.791209> speed <32.390110>;
 		turn FRFoot to x-axis <-17.890110> now;
@@ -220,7 +218,7 @@ MotionControl(Func_Var_1)
 
 Bubbles()
 {
-	while( Static_Var_4 >= 0 )
+	while( Static_Var_3 >= 0 )
 	{
 		if( bMoving )
 		{
@@ -239,8 +237,8 @@ Create()
 	hide rflare;
 	hide lflare;
 	bMoving = FALSE;
-	Static_Var_4 = 0;
-	gun_2 = 1;
+	Static_Var_3 = 0;
+	gun_2 = body;
 	restore_delay = 3000;
 	start-script SmokeUnit();
 	start-script Bubbles();
@@ -249,7 +247,7 @@ Create()
 
 setSFXoccupy(state)
 {
-	Static_Var_4 = state;
+	Static_Var_3 = state;
 }
 
 StartMoving()
@@ -276,7 +274,7 @@ RestoreAfterDelay()
 
 RestoreAfterDelay1()
 {
-	set-signal-mask SIG_AIM_2;
+	set-signal-mask 8;
 	sleep restore_delay;
 	turn lsleeve to y-axis <0.000000> speed <50.000000>;
 }
@@ -317,8 +315,8 @@ QueryPrimary(piecenum)
 
 AimSecondary(heading, pitch)
 {
-	signal SIG_AIM_4;
-	set-signal-mask SIG_AIM_4;
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
 	turn turret to y-axis heading speed <150.000000>;
 	turn sleeve to x-axis <0.000000> - pitch speed <90.000000>;
 	wait-for-turn turret around y-axis;

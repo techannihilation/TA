@@ -6,7 +6,7 @@
 piece  base, pelvis, body, rleg, lleg, backholder, backbarrels, elevator,
        holder, barrels, lflare, rflare, ldoor, rdoor;
 
-static-var  gun_2, bMoving, Static_Var_3, Static_Var_4, restore_delay,
+static-var  gun_2, bMoving, Static_Var_3, Static_Var_4, Static_Var_5,
             Static_Var_6, statechg_DesiredState, statechg_StateChanging;
 
 // Signal definitions
@@ -308,7 +308,7 @@ Create()
 	Static_Var_4 = 1;
 	Static_Var_6 = 0;
 	gun_2 = base;
-	restore_delay = 6000;
+	Static_Var_5 = 6000;
 	hide barrels;
 	hide elevator;
 	hide holder;
@@ -319,12 +319,11 @@ Create()
 
 SetMaxReloadTime(Func_Var_1)
 {
-	//restore_delay = Func_Var_1 * 2;
 }
 
 RestoreAfterDelay()
 {
-	sleep restore_delay;
+	sleep Static_Var_5;
 	set-signal-mask 0;
 	turn holder to y-axis <0.000000> speed <120.000000>;
 	turn barrels to x-axis <0.000000> speed <90.000000>;

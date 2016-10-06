@@ -5,13 +5,12 @@
 
 piece  base, sphere;
 
-static-var  Static_Var_1, Active;
+static-var  Static_Var_1, Static_Var_2;
 
 
-MMStatus(State)
+MMStatus(Func_Var_1)
 {
-	Active = State;
-	//get PRINT(Active);
+	Static_Var_2 = Func_Var_1;
 }
 
 ImAMetalMaker()
@@ -23,17 +22,17 @@ ImAMetalMaker()
 	Static_Var_1 = -1;
 	while( TRUE )
 	{
-		if( Active == 1 )
+		if( Static_Var_2 == 1 )
 		{
 			if( Static_Var_1 != 1 )
 			{
-				move sphere to y-axis [0.000000] speed [4.010974];
+				move sphere to y-axis [0.000000] speed [4.010968];
 				Static_Var_1 = 1;
 			}
 		}
 		else if( Static_Var_1 != 0 )
 		{
-			move sphere to y-axis [-2.200000] speed [4.010974];
+			move sphere to y-axis [-2.200000] speed [4.010968];
 			Static_Var_1 = 0;
 		}
 		sleep 1000;

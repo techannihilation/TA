@@ -8,8 +8,7 @@ piece  flash, torso, head, hip, rupleg, rleg, lleg, lupleg,
        barrel, scope;
 
 static-var  Static_Var_1, bMoving, Static_Var_3, Static_Var_4, restore_delay,
-            statechg_DesiredState, statechg_StateChanging, moveSpeed, currentSpeed,
-            bAiming;
+            Static_Var_6, Static_Var_7, Static_Var_8, Static_Var_9, bAiming;
 
 // Signal definitions
 #define SIG_AIM				4
@@ -20,807 +19,807 @@ walk()
 	if( bMoving )
 	{
 		move hip to y-axis [0.150000] now;
-		move rupleg to y-axis [-0.519995] now;
-		move rleg to y-axis [0.319995] speed [3.816808] *  currentSpeed / 100;
-		move lleg to y-axis [0.650000] speed [7.753012] *  currentSpeed / 100;
+		move rupleg to y-axis [-0.519989] now;
+		move rleg to y-axis [0.319989] speed [3.816803] * Static_Var_9 / [0.000610];
+		move lleg to y-axis [0.650000] speed [7.753009] * Static_Var_9 / [0.000610];
 		move head to y-axis [0.000000] now;
 		move flash to x-axis [0.000000] now;
-		move flash to y-axis [-0.900000] speed [10.734940] *  currentSpeed / 100;
-		move flash to z-axis [-0.200000] speed [2.385542] *  currentSpeed / 100;
-		turn hip to x-axis <2.098901> speed <25.035084> *  currentSpeed / 100;
-		turn torso to y-axis <4.736264> speed <56.492787> *  currentSpeed / 100;
-		turn lupleg to x-axis <-3.505495> speed <41.812531> *  currentSpeed / 100;
-		turn rupleg to x-axis <19.142857> speed <228.330463> *  currentSpeed / 100;
-		turn rleg to x-axis <-21.093407> speed <251.596059> *  currentSpeed / 100;
-		turn lleg to x-axis <31.104396> speed <371.004241> *  currentSpeed / 100;
-		turn ruparm to x-axis <-20.912088> speed <249.433339> *  currentSpeed / 100;
-		turn head to y-axis <-5.087912> speed <60.687143> *  currentSpeed / 100;
-		turn luparm to x-axis <14.758242> speed <176.032043> *  currentSpeed / 100;
-		turn larm to x-axis <-34.796703> speed <415.045012> *  currentSpeed / 100;
-		turn lhand to x-axis <-14.758242> speed <176.032043> *  currentSpeed / 100;
-		turn rarm to x-axis <0.516484> speed <6.160472> *  currentSpeed / 100;
-		turn gun to x-axis <13.521978> speed <161.286244> *  currentSpeed / 100;
-		sleep 5000 / currentSpeed;
+		move flash to y-axis [-0.900000] speed [10.734937] * Static_Var_9 / [0.000610];
+		move flash to z-axis [-0.200000] speed [2.385541] * Static_Var_9 / [0.000610];
+		turn hip to x-axis <2.093407> speed <25.032967> * Static_Var_9 / <0.549451>;
+		turn torso to y-axis <4.736264> speed <56.489011> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <-3.505495> speed <41.807692> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <19.137363> speed <228.329670> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <-21.093407> speed <251.593407> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <31.104396> speed <371.000000> * Static_Var_9 / <0.549451>;
+		turn ruparm to x-axis <-20.912088> speed <249.428571> * Static_Var_9 / <0.549451>;
+		turn head to y-axis <-5.082418> speed <60.686813> * Static_Var_9 / <0.549451>;
+		turn luparm to x-axis <14.758242> speed <176.027473> * Static_Var_9 / <0.549451>;
+		turn larm to x-axis <-34.791209> speed <415.043956> * Static_Var_9 / <0.549451>;
+		turn lhand to x-axis <-14.758242> speed <176.027473> * Static_Var_9 / <0.549451>;
+		turn rarm to x-axis <0.516484> speed <6.159341> * Static_Var_9 / <0.549451>;
+		turn gun to x-axis <13.516484> speed <161.285714> * Static_Var_9 / <0.549451>;
+		sleep 5000 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		move hip to y-axis [0.700000] speed [8.349398] *  currentSpeed / 100;
-		move lupleg to y-axis [-0.169995] speed [2.027651] *  currentSpeed / 100;
-		move rupleg to y-axis [-0.259998] speed [3.101181] *  currentSpeed / 100;
-		move rleg to y-axis [0.159998] speed [1.908398] *  currentSpeed / 100;
-		move lleg to y-axis [0.319995] speed [3.936204] *  currentSpeed / 100;
-		turn hip to x-axis <1.049451> speed <12.517536> *  currentSpeed / 100;
-		turn torso to y-axis <7.109890> speed <28.311925> *  currentSpeed / 100;
-		turn lupleg to x-axis <-9.840659> speed <75.564004> *  currentSpeed / 100;
-		turn rupleg to x-axis <28.912088> speed <116.524563> *  currentSpeed / 100;
-		turn rleg to x-axis <-22.324176> speed <14.680257> *  currentSpeed / 100;
-		turn lleg to x-axis <10.807692> speed <242.093216> *  currentSpeed / 100;
-		turn ruparm to x-axis <-27.851648> speed <82.773065> *  currentSpeed / 100;
-		turn head to y-axis <-7.637363> speed <30.409114> *  currentSpeed / 100;
-		turn luparm to x-axis <21.445055> speed <79.758372> *  currentSpeed / 100;
-		turn larm to x-axis <-37.796703> speed <35.783133> *  currentSpeed / 100;
-		turn lhand to x-axis <-14.582418> speed <2.097178> *  currentSpeed / 100;
-		turn rarm to x-axis <0.598901> speed <0.983046> *  currentSpeed / 100;
-		turn gun to x-axis <19.412088> speed <70.255529> *  currentSpeed / 100;
-		sleep 5000 / currentSpeed;
+		move hip to y-axis [0.700000] speed [8.349396] * Static_Var_9 / [0.000610];
+		move lupleg to y-axis [-0.169989] speed [2.027649] * Static_Var_9 / [0.000610];
+		move rupleg to y-axis [-0.259998] speed [3.101178] * Static_Var_9 / [0.000610];
+		move rleg to y-axis [0.159998] speed [1.908392] * Static_Var_9 / [0.000610];
+		move lleg to y-axis [0.319989] speed [3.936200] * Static_Var_9 / [0.000610];
+		turn hip to x-axis <1.049451> speed <12.516484> * Static_Var_9 / <0.549451>;
+		turn torso to y-axis <7.104396> speed <28.307692> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <-9.835165> speed <75.560440> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <28.912088> speed <116.521978> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <-22.324176> speed <14.675824> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <10.802198> speed <242.087912> * Static_Var_9 / <0.549451>;
+		turn ruparm to x-axis <-27.846154> speed <82.769231> * Static_Var_9 / <0.549451>;
+		turn head to y-axis <-7.637363> speed <30.406593> * Static_Var_9 / <0.549451>;
+		turn luparm to x-axis <21.445055> speed <79.758242> * Static_Var_9 / <0.549451>;
+		turn larm to x-axis <-37.791209> speed <35.780220> * Static_Var_9 / <0.549451>;
+		turn lhand to x-axis <-14.582418> speed <2.093407> * Static_Var_9 / <0.549451>;
+		turn rarm to x-axis <0.593407> speed <0.978022> * Static_Var_9 / <0.549451>;
+		turn gun to x-axis <19.412088> speed <70.252747> * Static_Var_9 / <0.549451>;
+		sleep 5000 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		move hip to y-axis [0.000000] speed [8.349398] *  currentSpeed / 100;
-		move lupleg to y-axis [-0.350000] speed [2.147048] *  currentSpeed / 100;
-		move rupleg to y-axis [0.000000] speed [3.101181] *  currentSpeed / 100;
-		move rleg to y-axis [0.000000] speed [1.908410] *  currentSpeed / 100;
-		move lleg to y-axis [0.000000] speed [3.816808] *  currentSpeed / 100;
-		turn hip to x-axis <0.000000> speed <12.517548> *  currentSpeed / 100;
-		turn torso to y-axis <9.489011> speed <28.377467> *  currentSpeed / 100;
-		turn lupleg to x-axis <-16.170330> speed <75.498485> *  currentSpeed / 100;
-		turn rupleg to x-axis <38.675824> speed <116.459020> *  currentSpeed / 100;
-		turn rleg to x-axis <-23.554945> speed <14.680257> *  currentSpeed / 100;
-		turn lleg to x-axis <-9.478022> speed <241.962131> *  currentSpeed / 100;
-		turn ruparm to x-axis <-34.796703> speed <82.838608> *  currentSpeed / 100;
-		turn head to y-axis <-10.192308> speed <30.474645> *  currentSpeed / 100;
-		turn luparm to x-axis <28.126374> speed <79.692841> *  currentSpeed / 100;
-		turn larm to x-axis <-40.785714> speed <35.652059> *  currentSpeed / 100;
-		turn lhand to x-axis <-14.412088> speed <2.031647> *  currentSpeed / 100;
-		turn rarm to x-axis <0.697802> speed <1.179663> *  currentSpeed / 100;
-		turn gun to x-axis <25.313187> speed <70.386603> *  currentSpeed / 100;
-		sleep 5000 / currentSpeed;
+		move hip to y-axis [0.000000] speed [8.349396] * Static_Var_9 / [0.000610];
+		move lupleg to y-axis [-0.350000] speed [2.147046] * Static_Var_9 / [0.000610];
+		move rupleg to y-axis [0.000000] speed [3.101178] * Static_Var_9 / [0.000610];
+		move rleg to y-axis [0.000000] speed [1.908405] * Static_Var_9 / [0.000610];
+		move lleg to y-axis [0.000000] speed [3.816803] * Static_Var_9 / [0.000610];
+		turn hip to x-axis <0.000000> speed <12.516484> * Static_Var_9 / <0.549451>;
+		turn torso to y-axis <9.489011> speed <28.373626> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <-16.170330> speed <75.494505> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <38.670330> speed <116.456044> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <-23.549451> speed <14.675824> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <-9.478022> speed <241.961538> * Static_Var_9 / <0.549451>;
+		turn ruparm to x-axis <-34.791209> speed <82.835165> * Static_Var_9 / <0.549451>;
+		turn head to y-axis <-10.192308> speed <30.472527> * Static_Var_9 / <0.549451>;
+		turn luparm to x-axis <28.126374> speed <79.692308> * Static_Var_9 / <0.549451>;
+		turn larm to x-axis <-40.780220> speed <35.648352> * Static_Var_9 / <0.549451>;
+		turn lhand to x-axis <-14.412088> speed <2.027473> * Static_Var_9 / <0.549451>;
+		turn rarm to x-axis <0.692308> speed <1.175824> * Static_Var_9 / <0.549451>;
+		turn gun to x-axis <25.313187> speed <70.384615> * Static_Var_9 / <0.549451>;
+		sleep 5000 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		turn hip to x-axis <1.659341> speed <19.792140> *  currentSpeed / 100;
-		turn torso to y-axis <8.521978> speed <11.534490> *  currentSpeed / 100;
-		turn lupleg to x-axis <-13.351648> speed <33.620424> *  currentSpeed / 100;
-		turn rupleg to x-axis <41.126374> speed <29.229452> *  currentSpeed / 100;
-		turn rleg to x-axis <-10.010989> speed <161.548391> *  currentSpeed / 100;
-		turn lleg to x-axis <-7.637363> speed <21.954848> *  currentSpeed / 100;
-		turn ruparm to x-axis <-30.494505> speed <51.315374> *  currentSpeed / 100;
-		turn head to y-axis <-9.027473> speed <13.893815> *  currentSpeed / 100;
-		turn luparm to x-axis <23.021978> speed <60.883760> *  currentSpeed / 100;
-		turn larm to x-axis <-36.384615> speed <52.495036> *  currentSpeed / 100;
-		turn lhand to x-axis <-11.681319> speed <32.571823> *  currentSpeed / 100;
-		turn rarm to x-axis <-1.659341> speed <28.115320> *  currentSpeed / 100;
-		sleep 5000 / currentSpeed;
+		turn hip to x-axis <1.659341> speed <19.791209> * Static_Var_9 / <0.549451>;
+		turn torso to y-axis <8.516484> speed <11.532967> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <-13.346154> speed <33.615385> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <41.126374> speed <29.225275> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <-10.005495> speed <161.543956> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <-7.637363> speed <21.950549> * Static_Var_9 / <0.549451>;
+		turn ruparm to x-axis <-30.489011> speed <51.313187> * Static_Var_9 / <0.549451>;
+		turn head to y-axis <-9.027473> speed <13.890110> * Static_Var_9 / <0.549451>;
+		turn luparm to x-axis <23.016484> speed <60.879121> * Static_Var_9 / <0.549451>;
+		turn larm to x-axis <-36.379121> speed <52.494505> * Static_Var_9 / <0.549451>;
+		turn lhand to x-axis <-11.681319> speed <32.571429> * Static_Var_9 / <0.549451>;
+		turn rarm to x-axis <-1.659341> speed <28.109890> * Static_Var_9 / <0.549451>;
+		sleep 5000 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		turn hip to x-axis <3.329670> speed <19.923201> *  currentSpeed / 100;
-		turn torso to y-axis <7.549451> speed <11.600021> *  currentSpeed / 100;
-		turn lupleg to x-axis <-10.538462> speed <33.554869> *  currentSpeed / 100;
-		turn rupleg to x-axis <43.598901> speed <29.491587> *  currentSpeed / 100;
-		turn rleg to x-axis <3.505495> speed <161.220713> *  currentSpeed / 100;
-		turn lleg to x-axis <-5.791209> speed <22.020391> *  currentSpeed / 100;
-		turn ruparm to x-axis <-26.181319> speed <51.446435> *  currentSpeed / 100;
-		turn head to y-axis <-7.901099> speed <13.435063> *  currentSpeed / 100;
-		turn luparm to x-axis <17.923077> speed <60.818217> *  currentSpeed / 100;
-		turn larm to x-axis <-31.994505> speed <52.363963> *  currentSpeed / 100;
-		turn lhand to x-axis <-8.961538> speed <32.440761> *  currentSpeed / 100;
-		turn rarm to x-axis <-4.038462> speed <28.377467> *  currentSpeed / 100;
-		sleep 3500 / currentSpeed;
+		turn hip to x-axis <3.324176> speed <19.923077> * Static_Var_9 / <0.549451>;
+		turn torso to y-axis <7.549451> speed <11.598901> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <-10.538462> speed <33.549451> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <43.593407> speed <29.489011> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <3.505495> speed <161.219780> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <-5.791209> speed <22.016484> * Static_Var_9 / <0.549451>;
+		turn ruparm to x-axis <-26.181319> speed <51.445055> * Static_Var_9 / <0.549451>;
+		turn head to y-axis <-7.901099> speed <13.434066> * Static_Var_9 / <0.549451>;
+		turn luparm to x-axis <17.923077> speed <60.813187> * Static_Var_9 / <0.549451>;
+		turn larm to x-axis <-31.989011> speed <52.362637> * Static_Var_9 / <0.549451>;
+		turn lhand to x-axis <-8.956044> speed <32.439560> * Static_Var_9 / <0.549451>;
+		turn rarm to x-axis <-4.038462> speed <28.373626> * Static_Var_9 / <0.549451>;
+		sleep 3500 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		turn hip to x-axis <5.000000> speed <19.923213> *  currentSpeed / 100;
-		turn torso to y-axis <6.587912> speed <11.468959> *  currentSpeed / 100;
-		turn lupleg to x-axis <-7.730769> speed <33.489350> *  currentSpeed / 100;
-		turn rupleg to x-axis <46.049451> speed <29.229452> *  currentSpeed / 100;
-		turn rleg to x-axis <14.582418> speed <132.122335> *  currentSpeed / 100;
-		turn lleg to x-axis <-3.939560> speed <22.085934> *  currentSpeed / 100;
-		turn ruparm to x-axis <-21.884615> speed <51.249843> *  currentSpeed / 100;
-		turn head to y-axis <-6.758242> speed <13.631668> *  currentSpeed / 100;
-		turn luparm to x-axis <13.879121> speed <48.235138> *  currentSpeed / 100;
-		turn larm to x-axis <-27.593407> speed <52.495024> *  currentSpeed / 100;
-		turn lhand to x-axis <-6.230769> speed <32.571823> *  currentSpeed / 100;
-		turn rarm to x-axis <-6.406593> speed <28.246382> *  currentSpeed / 100;
-		sleep 3500 / currentSpeed;
+		turn hip to x-axis <5.000000> speed <19.923077> * Static_Var_9 / <0.549451>;
+		turn torso to y-axis <6.582418> speed <11.467033> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <-7.725275> speed <33.489011> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <46.049451> speed <29.225275> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <14.582418> speed <132.120879> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <-3.934066> speed <22.082418> * Static_Var_9 / <0.549451>;
+		turn ruparm to x-axis <-21.879121> speed <51.247253> * Static_Var_9 / <0.549451>;
+		turn head to y-axis <-6.758242> speed <13.626374> * Static_Var_9 / <0.549451>;
+		turn luparm to x-axis <13.879121> speed <48.230769> * Static_Var_9 / <0.549451>;
+		turn larm to x-axis <-27.593407> speed <52.494505> * Static_Var_9 / <0.549451>;
+		turn lhand to x-axis <-6.225275> speed <32.571429> * Static_Var_9 / <0.549451>;
+		turn rarm to x-axis <-6.401099> speed <28.241758> * Static_Var_9 / <0.549451>;
+		sleep 3500 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		turn hip to x-axis <6.670330> speed <19.923213> *  currentSpeed / 100;
-		turn torso to y-axis <5.620879> speed <11.534490> *  currentSpeed / 100;
-		turn lupleg to x-axis <-4.917582> speed <33.554881> *  currentSpeed / 100;
-		turn rupleg to x-axis <48.516484> speed <29.426056> *  currentSpeed / 100;
-		turn rleg to x-axis <25.653846> speed <132.056792> *  currentSpeed / 100;
-		turn lleg to x-axis <-2.098901> speed <21.954848> *  currentSpeed / 100;
-		turn ruparm to x-axis <-17.571429> speed <51.446435> *  currentSpeed / 100;
-		turn head to y-axis <-5.620879> speed <13.566137> *  currentSpeed / 100;
-		turn luparm to x-axis <9.840659> speed <48.169607> *  currentSpeed / 100;
-		turn larm to x-axis <-23.203297> speed <52.363963> *  currentSpeed / 100;
-		turn lhand to x-axis <-3.505495> speed <32.506280> *  currentSpeed / 100;
-		turn rarm to x-axis <-8.769231> speed <28.180863> *  currentSpeed / 100;
-		sleep 3500 / currentSpeed;
+		turn hip to x-axis <6.670330> speed <19.923077> * Static_Var_9 / <0.549451>;
+		turn torso to y-axis <5.615385> speed <11.532967> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <-4.912088> speed <33.549451> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <48.516484> speed <29.423077> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <25.648352> speed <132.054945> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <-2.093407> speed <21.950549> * Static_Var_9 / <0.549451>;
+		turn ruparm to x-axis <-17.571429> speed <51.445055> * Static_Var_9 / <0.549451>;
+		turn head to y-axis <-5.615385> speed <13.565934> * Static_Var_9 / <0.549451>;
+		turn luparm to x-axis <9.835165> speed <48.164835> * Static_Var_9 / <0.549451>;
+		turn larm to x-axis <-23.203297> speed <52.362637> * Static_Var_9 / <0.549451>;
+		turn lhand to x-axis <-3.505495> speed <32.505495> * Static_Var_9 / <0.549451>;
+		turn rarm to x-axis <-8.769231> speed <28.175824> * Static_Var_9 / <0.549451>;
+		sleep 3500 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		move hip to y-axis [0.700000] speed [8.349398] *  currentSpeed / 100;
-		move lupleg to y-axis [-0.379999] speed [0.357819] *  currentSpeed / 100;
-		move rupleg to y-axis [0.150000] speed [1.789157] *  currentSpeed / 100;
-		move lleg to y-axis [0.700000] speed [8.349398] *  currentSpeed / 100;
-		turn hip to x-axis <5.708791> speed <11.468959> *  currentSpeed / 100;
-		turn torso to y-axis <4.208791> speed <16.842977> *  currentSpeed / 100;
-		turn lupleg to x-axis <0.697802> speed <66.978677> *  currentSpeed / 100;
-		turn rupleg to x-axis <31.642857> speed <201.263744> *  currentSpeed / 100;
-		turn rleg to x-axis <31.813187> speed <73.466838> *  currentSpeed / 100;
-		turn lleg to x-axis <-6.758242> speed <55.575272> *  currentSpeed / 100;
-		turn ruparm to x-axis <-13.703297> speed <46.137960> *  currentSpeed / 100;
-		turn head to y-axis <-4.208791> speed <16.842977> *  currentSpeed / 100;
-		turn luparm to x-axis <4.917582> speed <58.721039> *  currentSpeed / 100;
-		turn larm to x-axis <-18.362637> speed <57.737993> *  currentSpeed / 100;
-		turn lhand to x-axis <-1.659341> speed <22.020391> *  currentSpeed / 100;
-		turn rarm to x-axis <-6.758242> speed <23.986495> *  currentSpeed / 100;
-		turn gun to x-axis <19.412088> speed <70.386603> *  currentSpeed / 100;
-		sleep 3500 / currentSpeed;
+		move hip to y-axis [0.700000] speed [8.349396] * Static_Var_9 / [0.000610];
+		move lupleg to y-axis [-0.379999] speed [0.357819] * Static_Var_9 / [0.000610];
+		move rupleg to y-axis [0.150000] speed [1.789154] * Static_Var_9 / [0.000610];
+		move lleg to y-axis [0.700000] speed [8.349396] * Static_Var_9 / [0.000610];
+		turn hip to x-axis <5.703297> speed <11.467033> * Static_Var_9 / <0.549451>;
+		turn torso to y-axis <4.203297> speed <16.840659> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <0.692308> speed <66.978022> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <31.637363> speed <201.263736> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <31.813187> speed <73.461538> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <-6.758242> speed <55.571429> * Static_Var_9 / <0.549451>;
+		turn ruparm to x-axis <-13.703297> speed <46.137363> * Static_Var_9 / <0.549451>;
+		turn head to y-axis <-4.203297> speed <16.840659> * Static_Var_9 / <0.549451>;
+		turn luparm to x-axis <4.912088> speed <58.719780> * Static_Var_9 / <0.549451>;
+		turn larm to x-axis <-18.357143> speed <57.736264> * Static_Var_9 / <0.549451>;
+		turn lhand to x-axis <-1.659341> speed <22.016484> * Static_Var_9 / <0.549451>;
+		turn rarm to x-axis <-6.758242> speed <23.983516> * Static_Var_9 / <0.549451>;
+		turn gun to x-axis <19.412088> speed <70.384615> * Static_Var_9 / <0.549451>;
+		sleep 3500 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		move hip to y-axis [0.150000] speed [6.560241] *  currentSpeed / 100;
-		move lupleg to y-axis [-0.419995] speed [0.477061] *  currentSpeed / 100;
-		move rupleg to y-axis [0.300000] speed [1.789157] *  currentSpeed / 100;
-		move lleg to y-axis [0.150000] speed [6.560241] *  currentSpeed / 100;
-		turn hip to x-axis <4.736264> speed <11.600021> *  currentSpeed / 100;
-		turn torso to y-axis <2.807692> speed <16.711904> *  currentSpeed / 100;
-		turn lupleg to x-axis <6.318681> speed <67.044219> *  currentSpeed / 100;
-		turn rupleg to x-axis <14.758242> speed <201.394805> *  currentSpeed / 100;
-		turn rleg to x-axis <37.967033> speed <73.401296> *  currentSpeed / 100;
-		turn lleg to x-axis <-11.417582> speed <55.575260> *  currentSpeed / 100;
-		turn ruparm to x-axis <-9.840659> speed <46.072429> *  currentSpeed / 100;
-		turn head to y-axis <-2.807692> speed <16.711904> *  currentSpeed / 100;
-		turn luparm to x-axis <0.000000> speed <58.655496> *  currentSpeed / 100;
-		turn larm to x-axis <-13.521978> speed <57.737981> *  currentSpeed / 100;
-		turn lhand to x-axis <0.164835> speed <21.758244> *  currentSpeed / 100;
-		turn rarm to x-axis <-4.736264> speed <24.117569> *  currentSpeed / 100;
-		turn gun to x-axis <13.521978> speed <70.255529> *  currentSpeed / 100;
-		sleep 5000 / currentSpeed;
+		move hip to y-axis [0.150000] speed [6.560236] * Static_Var_9 / [0.000610];
+		move lupleg to y-axis [-0.419989] speed [0.477057] * Static_Var_9 / [0.000610];
+		move rupleg to y-axis [0.300000] speed [1.789154] * Static_Var_9 / [0.000610];
+		move lleg to y-axis [0.150000] speed [6.560236] * Static_Var_9 / [0.000610];
+		turn hip to x-axis <4.736264> speed <11.598901> * Static_Var_9 / <0.549451>;
+		turn torso to y-axis <2.802198> speed <16.708791> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <6.313187> speed <67.043956> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <14.758242> speed <201.390110> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <37.967033> speed <73.401099> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <-11.412088> speed <55.571429> * Static_Var_9 / <0.549451>;
+		turn ruparm to x-axis <-9.835165> speed <46.071429> * Static_Var_9 / <0.549451>;
+		turn head to y-axis <-2.802198> speed <16.708791> * Static_Var_9 / <0.549451>;
+		turn luparm to x-axis <0.000000> speed <58.653846> * Static_Var_9 / <0.549451>;
+		turn larm to x-axis <-13.516484> speed <57.736264> * Static_Var_9 / <0.549451>;
+		turn lhand to x-axis <0.159341> speed <21.758242> * Static_Var_9 / <0.549451>;
+		turn rarm to x-axis <-4.736264> speed <24.115385> * Static_Var_9 / <0.549451>;
+		turn gun to x-axis <13.516484> speed <70.252747> * Static_Var_9 / <0.549451>;
+		sleep 5000 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		move hip to y-axis [0.219995] speed [0.834880] *  currentSpeed / 100;
-		move lupleg to y-axis [-0.529999] speed [1.312096] *  currentSpeed / 100;
-		move rupleg to y-axis [0.450000] speed [1.789157] *  currentSpeed / 100;
-		move lleg to y-axis [0.219995] speed [0.834880] *  currentSpeed / 100;
-		turn hip to x-axis <3.769231> speed <11.534490> *  currentSpeed / 100;
-		turn torso to y-axis <1.395604> speed <16.842977> *  currentSpeed / 100;
-		turn lupleg to x-axis <10.192308> speed <46.203503> *  currentSpeed / 100;
-		turn rupleg to x-axis <-2.098901> speed <201.067127> *  currentSpeed / 100;
-		turn rleg to x-axis <44.126374> speed <73.466838> *  currentSpeed / 100;
-		turn lleg to x-axis <-14.148352> speed <32.571835> *  currentSpeed / 100;
-		turn ruparm to x-axis <-5.967033> speed <46.203491> *  currentSpeed / 100;
-		turn head to y-axis <-1.395604> speed <16.842977> *  currentSpeed / 100;
-		turn luparm to x-axis <-2.626374> speed <31.326630> *  currentSpeed / 100;
-		turn larm to x-axis <-8.686813> speed <57.672450> *  currentSpeed / 100;
-		turn lhand to x-axis <2.000000> speed <21.889317> *  currentSpeed / 100;
-		turn rarm to x-axis <-2.708791> speed <24.183112> *  currentSpeed / 100;
-		turn gun to x-axis <7.637363> speed <70.189986> *  currentSpeed / 100;
-		sleep 5000 / currentSpeed;
+		move hip to y-axis [0.219989] speed [0.834875] * Static_Var_9 / [0.000610];
+		move lupleg to y-axis [-0.529999] speed [1.312091] * Static_Var_9 / [0.000610];
+		move rupleg to y-axis [0.450000] speed [1.789154] * Static_Var_9 / [0.000610];
+		move lleg to y-axis [0.219989] speed [0.834875] * Static_Var_9 / [0.000610];
+		turn hip to x-axis <3.769231> speed <11.532967> * Static_Var_9 / <0.549451>;
+		turn torso to y-axis <1.390110> speed <16.840659> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <10.192308> speed <46.203297> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <-2.093407> speed <201.065934> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <44.126374> speed <73.461538> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <-14.148352> speed <32.571429> * Static_Var_9 / <0.549451>;
+		turn ruparm to x-axis <-5.967033> speed <46.203297> * Static_Var_9 / <0.549451>;
+		turn head to y-axis <-1.390110> speed <16.840659> * Static_Var_9 / <0.549451>;
+		turn luparm to x-axis <-2.626374> speed <31.324176> * Static_Var_9 / <0.549451>;
+		turn larm to x-axis <-8.681319> speed <57.670330> * Static_Var_9 / <0.549451>;
+		turn lhand to x-axis <2.000000> speed <21.884615> * Static_Var_9 / <0.549451>;
+		turn rarm to x-axis <-2.703297> speed <24.181319> * Static_Var_9 / <0.549451>;
+		turn gun to x-axis <7.637363> speed <70.186813> * Static_Var_9 / <0.549451>;
+		sleep 5000 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		move hip to y-axis [0.300000] speed [0.954277] *  currentSpeed / 100;
-		move lupleg to y-axis [-0.650000] speed [1.431337] *  currentSpeed / 100;
-		move rupleg to y-axis [0.600000] speed [1.789157] *  currentSpeed / 100;
-		move lleg to y-axis [0.300000] speed [0.954277] *  currentSpeed / 100;
-		turn hip to x-axis <2.807692> speed <11.468959> *  currentSpeed / 100;
-		turn torso to y-axis <0.000000> speed <16.646361> *  currentSpeed / 100;
-		turn lupleg to x-axis <14.060440> speed <46.137960> *  currentSpeed / 100;
-		turn rupleg to x-axis <-18.983516> speed <201.394805> *  currentSpeed / 100;
-		turn rleg to x-axis <50.269231> speed <73.270222> *  currentSpeed / 100;
-		turn lleg to x-axis <-16.873626> speed <32.506280> *  currentSpeed / 100;
-		turn ruparm to x-axis <-2.098901> speed <46.137960> *  currentSpeed / 100;
-		turn head to y-axis <0.000000> speed <16.646361> *  currentSpeed / 100;
-		turn luparm to x-axis <-5.269231> speed <31.523234> *  currentSpeed / 100;
-		turn larm to x-axis <-3.857143> speed <57.606907> *  currentSpeed / 100;
-		turn lhand to x-axis <3.857143> speed <22.151465> *  currentSpeed / 100;
-		turn rarm to x-axis <-0.697802> speed <23.986495> *  currentSpeed / 100;
-		turn gun to x-axis <1.747253> speed <70.255529> *  currentSpeed / 100;
-		sleep 6500 / currentSpeed;
+		move hip to y-axis [0.300000] speed [0.954272] * Static_Var_9 / [0.000610];
+		move lupleg to y-axis [-0.650000] speed [1.431335] * Static_Var_9 / [0.000610];
+		move rupleg to y-axis [0.600000] speed [1.789154] * Static_Var_9 / [0.000610];
+		move lleg to y-axis [0.300000] speed [0.954272] * Static_Var_9 / [0.000610];
+		turn hip to x-axis <2.802198> speed <11.467033> * Static_Var_9 / <0.549451>;
+		turn torso to y-axis <0.000000> speed <16.642857> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <14.060440> speed <46.137363> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <-18.978022> speed <201.390110> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <50.269231> speed <73.269231> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <-16.868132> speed <32.505495> * Static_Var_9 / <0.549451>;
+		turn ruparm to x-axis <-2.093407> speed <46.137363> * Static_Var_9 / <0.549451>;
+		turn head to y-axis <0.000000> speed <16.642857> * Static_Var_9 / <0.549451>;
+		turn luparm to x-axis <-5.269231> speed <31.521978> * Static_Var_9 / <0.549451>;
+		turn larm to x-axis <-3.857143> speed <57.604396> * Static_Var_9 / <0.549451>;
+		turn lhand to x-axis <3.857143> speed <22.148352> * Static_Var_9 / <0.549451>;
+		turn rarm to x-axis <-0.692308> speed <23.983516> * Static_Var_9 / <0.549451>;
+		turn gun to x-axis <1.747253> speed <70.252747> * Static_Var_9 / <0.549451>;
+		sleep 6500 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		move hip to y-axis [0.219995] speed [0.954277] *  currentSpeed / 100;
-		move lupleg to y-axis [-0.559998] speed [1.073518] *  currentSpeed / 100;
-		move rupleg to y-axis [0.450000] speed [1.789157] *  currentSpeed / 100;
-		turn hip to x-axis <2.098901> speed <8.454254> *  currentSpeed / 100;
-		turn torso to y-axis <-1.307692> speed <15.597772> *  currentSpeed / 100;
-		turn lupleg to x-axis <20.032967> speed <71.238575> *  currentSpeed / 100;
-		turn rupleg to x-axis <-20.741758> speed <20.971802> *  currentSpeed / 100;
-		turn rleg to x-axis <35.857143> speed <171.903218> *  currentSpeed / 100;
-		turn lleg to x-axis <-22.142857> speed <62.849864> *  currentSpeed / 100;
-		turn ruparm to x-axis <1.115385> speed <38.339074> *  currentSpeed / 100;
-		turn head to y-axis <0.956044> speed <11.403416> *  currentSpeed / 100;
-		turn luparm to x-axis <-8.258242> speed <35.652059> *  currentSpeed / 100;
-		turn larm to x-axis <-7.109890> speed <38.797826> *  currentSpeed / 100;
-		turn rarm to x-axis <-3.939560> speed <38.666752> *  currentSpeed / 100;
-		sleep 6500 / currentSpeed;
+		move hip to y-axis [0.219989] speed [0.954272] * Static_Var_9 / [0.000610];
+		move lupleg to y-axis [-0.559998] speed [1.073517] * Static_Var_9 / [0.000610];
+		move rupleg to y-axis [0.450000] speed [1.789154] * Static_Var_9 / [0.000610];
+		turn hip to x-axis <2.093407> speed <8.450549> * Static_Var_9 / <0.549451>;
+		turn torso to y-axis <-1.302198> speed <15.593407> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <20.027473> speed <71.236264> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <-20.736264> speed <20.967033> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <35.857143> speed <171.901099> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <-22.137363> speed <62.846154> * Static_Var_9 / <0.549451>;
+		turn ruparm to x-axis <1.115385> speed <38.335165> * Static_Var_9 / <0.549451>;
+		turn head to y-axis <0.956044> speed <11.401099> * Static_Var_9 / <0.549451>;
+		turn luparm to x-axis <-8.258242> speed <35.648352> * Static_Var_9 / <0.549451>;
+		turn larm to x-axis <-7.104396> speed <38.796703> * Static_Var_9 / <0.549451>;
+		turn rarm to x-axis <-3.934066> speed <38.664835> * Static_Var_9 / <0.549451>;
+		sleep 6500 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		move hip to y-axis [0.150000] speed [0.834880] *  currentSpeed / 100;
-		move lupleg to y-axis [-0.500000] speed [0.715639] *  currentSpeed / 100;
-		move rupleg to y-axis [0.300000] speed [1.789157] *  currentSpeed / 100;
-		turn hip to x-axis <1.395604> speed <8.388723> *  currentSpeed / 100;
-		turn torso to y-axis <-2.626374> speed <15.728858> *  currentSpeed / 100;
-		turn lupleg to x-axis <26.010989> speed <71.304118> *  currentSpeed / 100;
-		turn rupleg to x-axis <-22.505495> speed <21.037345> *  currentSpeed / 100;
-		turn rleg to x-axis <21.434066> speed <172.034292> *  currentSpeed / 100;
-		turn lleg to x-axis <-27.423077> speed <62.980937> *  currentSpeed / 100;
-		turn ruparm to x-axis <4.379121> speed <38.928899> *  currentSpeed / 100;
-		turn head to y-axis <1.928571> speed <11.600021> *  currentSpeed / 100;
-		turn luparm to x-axis <-11.252747> speed <35.717590> *  currentSpeed / 100;
-		turn larm to x-axis <-10.368132> speed <38.863368> *  currentSpeed / 100;
-		turn rarm to x-axis <-7.197802> speed <38.863368> *  currentSpeed / 100;
-		sleep 5500 / currentSpeed;
+		move hip to y-axis [0.150000] speed [0.834875] * Static_Var_9 / [0.000610];
+		move lupleg to y-axis [-0.500000] speed [0.715637] * Static_Var_9 / [0.000610];
+		move rupleg to y-axis [0.300000] speed [1.789154] * Static_Var_9 / [0.000610];
+		turn hip to x-axis <1.390110> speed <8.384615> * Static_Var_9 / <0.549451>;
+		turn torso to y-axis <-2.626374> speed <15.725275> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <26.005495> speed <71.302198> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <-22.505495> speed <21.032967> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <21.434066> speed <172.032967> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <-27.423077> speed <62.978022> * Static_Var_9 / <0.549451>;
+		turn ruparm to x-axis <4.379121> speed <38.928571> * Static_Var_9 / <0.549451>;
+		turn head to y-axis <1.923077> speed <11.598901> * Static_Var_9 / <0.549451>;
+		turn luparm to x-axis <-11.247253> speed <35.714286> * Static_Var_9 / <0.549451>;
+		turn larm to x-axis <-10.368132> speed <38.862637> * Static_Var_9 / <0.549451>;
+		turn rarm to x-axis <-7.192308> speed <38.862637> * Static_Var_9 / <0.549451>;
+		sleep 5500 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		move hip to y-axis [0.700000] speed [6.560241] *  currentSpeed / 100;
-		move lupleg to y-axis [-0.219995] speed [3.339819] *  currentSpeed / 100;
-		move rupleg to y-axis [0.150000] speed [1.789157] *  currentSpeed / 100;
-		turn hip to x-axis <0.697802> speed <8.323180> *  currentSpeed / 100;
-		turn torso to y-axis <-3.939560> speed <15.663303> *  currentSpeed / 100;
-		turn lupleg to x-axis <34.104396> speed <96.535818> *  currentSpeed / 100;
-		turn rupleg to x-axis <-24.252747> speed <20.840717> *  currentSpeed / 100;
-		turn rleg to x-axis <7.027473> speed <171.837676> *  currentSpeed / 100;
-		turn lleg to x-axis <-26.181319> speed <14.811330> *  currentSpeed / 100;
-		turn ruparm to x-axis <7.637363> speed <38.863368> *  currentSpeed / 100;
-		turn head to y-axis <2.895604> speed <11.534490> *  currentSpeed / 100;
-		turn luparm to x-axis <-11.598901> speed <4.128825> *  currentSpeed / 100;
-		turn larm to x-axis <-13.620879> speed <38.797826> *  currentSpeed / 100;
-		turn rarm to x-axis <-10.450549> speed <38.797826> *  currentSpeed / 100;
-		sleep 5500 / currentSpeed;
+		move hip to y-axis [0.700000] speed [6.560236] * Static_Var_9 / [0.000610];
+		move lupleg to y-axis [-0.219989] speed [3.339813] * Static_Var_9 / [0.000610];
+		move rupleg to y-axis [0.150000] speed [1.789154] * Static_Var_9 / [0.000610];
+		turn hip to x-axis <0.692308> speed <8.318681> * Static_Var_9 / <0.549451>;
+		turn torso to y-axis <-3.934066> speed <15.659341> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <34.104396> speed <96.532967> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <-24.247253> speed <20.840659> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <7.027473> speed <171.835165> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <-26.181319> speed <14.807692> * Static_Var_9 / <0.549451>;
+		turn ruparm to x-axis <7.637363> speed <38.862637> * Static_Var_9 / <0.549451>;
+		turn head to y-axis <2.890110> speed <11.532967> * Static_Var_9 / <0.549451>;
+		turn luparm to x-axis <-11.593407> speed <4.126374> * Static_Var_9 / <0.549451>;
+		turn larm to x-axis <-13.615385> speed <38.796703> * Static_Var_9 / <0.549451>;
+		turn rarm to x-axis <-10.445055> speed <38.796703> * Static_Var_9 / <0.549451>;
+		sleep 5500 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		move hip to y-axis [0.000000] speed [8.349398] *  currentSpeed / 100;
-		move lupleg to y-axis [0.500000] speed [8.587892] *  currentSpeed / 100;
-		move rupleg to y-axis [0.000000] speed [1.789157] *  currentSpeed / 100;
-		turn hip to x-axis <0.000000> speed <8.323180> *  currentSpeed / 100;
-		turn torso to y-axis <-5.269231> speed <15.859931> *  currentSpeed / 100;
-		turn lupleg to x-axis <42.186813> speed <96.404733> *  currentSpeed / 100;
-		turn rupleg to x-axis <-26.010989> speed <20.971802> *  currentSpeed / 100;
-		turn rleg to x-axis <-7.379121> speed <171.837687> *  currentSpeed / 100;
-		turn lleg to x-axis <-24.961538> speed <14.549195> *  currentSpeed / 100;
-		turn ruparm to x-axis <10.890110> speed <38.797826> *  currentSpeed / 100;
-		turn head to y-axis <3.857143> speed <11.468959> *  currentSpeed / 100;
-		turn luparm to x-axis <-11.950549> speed <4.194356> *  currentSpeed / 100;
-		turn larm to x-axis <-16.873626> speed <38.797826> *  currentSpeed / 100;
-		turn rarm to x-axis <-13.708791> speed <38.863368> *  currentSpeed / 100;
-		sleep 5000 / currentSpeed;
+		move hip to y-axis [0.000000] speed [8.349396] * Static_Var_9 / [0.000610];
+		move lupleg to y-axis [0.500000] speed [8.587891] * Static_Var_9 / [0.000610];
+		move rupleg to y-axis [0.000000] speed [1.789154] * Static_Var_9 / [0.000610];
+		turn hip to x-axis <0.000000> speed <8.318681> * Static_Var_9 / <0.549451>;
+		turn torso to y-axis <-5.269231> speed <15.857143> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <42.181319> speed <96.401099> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <-26.005495> speed <20.967033> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <-7.379121> speed <171.835165> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <-24.956044> speed <14.543956> * Static_Var_9 / <0.549451>;
+		turn ruparm to x-axis <10.890110> speed <38.796703> * Static_Var_9 / <0.549451>;
+		turn head to y-axis <3.857143> speed <11.467033> * Static_Var_9 / <0.549451>;
+		turn luparm to x-axis <-11.945055> speed <4.192308> * Static_Var_9 / <0.549451>;
+		turn larm to x-axis <-16.868132> speed <38.796703> * Static_Var_9 / <0.549451>;
+		turn rarm to x-axis <-13.703297> speed <38.862637> * Static_Var_9 / <0.549451>;
+		sleep 5000 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		move lupleg to y-axis [0.169995] speed [3.936204] *  currentSpeed / 100;
-		move rupleg to y-axis [-0.200000] speed [2.385542] *  currentSpeed / 100;
-		turn hip to x-axis <1.659341> speed <19.792140> *  currentSpeed / 100;
-		turn torso to y-axis <-4.565934> speed <8.388723> *  currentSpeed / 100;
-		turn lupleg to x-axis <42.978022> speed <9.437312> *  currentSpeed / 100;
-		turn rupleg to x-axis <-22.505495> speed <41.812519> *  currentSpeed / 100;
-		turn rleg to x-axis <-4.120879> speed <38.863368> *  currentSpeed / 100;
-		turn lleg to x-axis <-14.060440> speed <130.025145> *  currentSpeed / 100;
-		turn ruparm to x-axis <13.620879> speed <32.571823> *  currentSpeed / 100;
-		turn head to y-axis <3.417582> speed <5.242957> *  currentSpeed / 100;
-		turn luparm to x-axis <-14.928571> speed <35.520985> *  currentSpeed / 100;
-		turn larm to x-axis <-15.373626> speed <17.891566> *  currentSpeed / 100;
-		turn rarm to x-axis <-15.818681> speed <25.166158> *  currentSpeed / 100;
-		sleep 5000 / currentSpeed;
+		move lupleg to y-axis [0.169989] speed [3.936200] * Static_Var_9 / [0.000610];
+		move rupleg to y-axis [-0.200000] speed [2.385541] * Static_Var_9 / [0.000610];
+		turn hip to x-axis <1.659341> speed <19.791209> * Static_Var_9 / <0.549451>;
+		turn torso to y-axis <-4.560440> speed <8.384615> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <42.978022> speed <9.434066> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <-22.505495> speed <41.807692> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <-4.115385> speed <38.862637> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <-14.060440> speed <130.021978> * Static_Var_9 / <0.549451>;
+		turn ruparm to x-axis <13.615385> speed <32.571429> * Static_Var_9 / <0.549451>;
+		turn head to y-axis <3.412088> speed <5.241758> * Static_Var_9 / <0.549451>;
+		turn luparm to x-axis <-14.923077> speed <35.516484> * Static_Var_9 / <0.549451>;
+		turn larm to x-axis <-15.368132> speed <17.890110> * Static_Var_9 / <0.549451>;
+		turn rarm to x-axis <-15.813187> speed <25.164835> * Static_Var_9 / <0.549451>;
+		sleep 5000 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		move lupleg to y-axis [0.300000] speed [1.550662] *  currentSpeed / 100;
-		move rupleg to y-axis [-0.500000] speed [3.578313] *  currentSpeed / 100;
-		turn hip to x-axis <3.329670> speed <19.923201> *  currentSpeed / 100;
-		turn torso to y-axis <-3.857143> speed <8.454254> *  currentSpeed / 100;
-		turn lupleg to x-axis <43.769231> speed <9.437312> *  currentSpeed / 100;
-		turn rupleg to x-axis <-18.983516> speed <42.009147> *  currentSpeed / 100;
-		turn rleg to x-axis <-0.868132> speed <38.797826> *  currentSpeed / 100;
-		turn lleg to x-axis <-3.148352> speed <130.156230> *  currentSpeed / 100;
-		turn ruparm to x-axis <16.340659> speed <32.440749> *  currentSpeed / 100;
-		turn head to y-axis <2.978022> speed <5.242945> *  currentSpeed / 100;
-		turn luparm to x-axis <-17.923077> speed <35.717602> *  currentSpeed / 100;
-		turn larm to x-axis <-13.879121> speed <17.826023> *  currentSpeed / 100;
-		turn rarm to x-axis <-17.923077> speed <25.100627> *  currentSpeed / 100;
-		sleep 3500 / currentSpeed;
+		move lupleg to y-axis [0.300000] speed [1.550659] * Static_Var_9 / [0.000610];
+		move rupleg to y-axis [-0.500000] speed [3.578308] * Static_Var_9 / [0.000610];
+		turn hip to x-axis <3.324176> speed <19.923077> * Static_Var_9 / <0.549451>;
+		turn torso to y-axis <-3.857143> speed <8.450549> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <43.769231> speed <9.434066> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <-18.978022> speed <42.005495> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <-0.868132> speed <38.796703> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <-3.148352> speed <130.153846> * Static_Var_9 / <0.549451>;
+		turn ruparm to x-axis <16.335165> speed <32.439560> * Static_Var_9 / <0.549451>;
+		turn head to y-axis <2.978022> speed <5.241758> * Static_Var_9 / <0.549451>;
+		turn luparm to x-axis <-17.923077> speed <35.714286> * Static_Var_9 / <0.549451>;
+		turn larm to x-axis <-13.879121> speed <17.824176> * Static_Var_9 / <0.549451>;
+		turn rarm to x-axis <-17.923077> speed <25.098901> * Static_Var_9 / <0.549451>;
+		sleep 3500 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		move rupleg to y-axis [-0.700000] speed [2.385542] *  currentSpeed / 100;
-		turn hip to x-axis <5.000000> speed <19.923213> *  currentSpeed / 100;
-		turn torso to y-axis <-3.159341> speed <8.323180> *  currentSpeed / 100;
-		turn lupleg to x-axis <44.565934> speed <9.502843> *  currentSpeed / 100;
-		turn rupleg to x-axis <-15.461538> speed <42.009135> *  currentSpeed / 100;
-		turn rleg to x-axis <2.368132> speed <38.601221> *  currentSpeed / 100;
-		turn lleg to x-axis <8.428571> speed <138.086190> *  currentSpeed / 100;
-		turn ruparm to x-axis <19.071429> speed <32.571835> *  currentSpeed / 100;
-		turn head to y-axis <2.538462> speed <5.242945> *  currentSpeed / 100;
-		turn luparm to x-axis <-14.060440> speed <46.072417> *  currentSpeed / 100;
-		turn larm to x-axis <-12.379121> speed <17.891566> *  currentSpeed / 100;
-		turn rarm to x-axis <-20.032967> speed <25.166158> *  currentSpeed / 100;
-		sleep 3500 / currentSpeed;
+		move rupleg to y-axis [-0.700000] speed [2.385541] * Static_Var_9 / [0.000610];
+		turn hip to x-axis <5.000000> speed <19.923077> * Static_Var_9 / <0.549451>;
+		turn torso to y-axis <-3.159341> speed <8.318681> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <44.560440> speed <9.500000> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <-15.456044> speed <42.005495> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <2.368132> speed <38.598901> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <8.423077> speed <138.082418> * Static_Var_9 / <0.549451>;
+		turn ruparm to x-axis <19.071429> speed <32.571429> * Static_Var_9 / <0.549451>;
+		turn head to y-axis <2.538462> speed <5.241758> * Static_Var_9 / <0.549451>;
+		turn luparm to x-axis <-14.060440> speed <46.071429> * Static_Var_9 / <0.549451>;
+		turn larm to x-axis <-12.379121> speed <17.890110> * Static_Var_9 / <0.549451>;
+		turn rarm to x-axis <-20.027473> speed <25.164835> * Static_Var_9 / <0.549451>;
+		sleep 3500 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		move rupleg to y-axis [-0.100000] speed [7.156627] *  currentSpeed / 100;
-		turn hip to x-axis <6.670330> speed <19.923213> *  currentSpeed / 100;
-		turn torso to y-axis <-2.456044> speed <8.388723> *  currentSpeed / 100;
-		turn lupleg to x-axis <45.357143> speed <9.437312> *  currentSpeed / 100;
-		turn rupleg to x-axis <-11.950549> speed <41.878062> *  currentSpeed / 100;
-		turn rleg to x-axis <5.620879> speed <38.797826> *  currentSpeed / 100;
-		turn lleg to x-axis <20.032967> speed <138.413880> *  currentSpeed / 100;
-		turn ruparm to x-axis <21.791209> speed <32.440749> *  currentSpeed / 100;
-		turn head to y-axis <2.098901> speed <5.242957> *  currentSpeed / 100;
-		turn luparm to x-axis <-10.192308> speed <46.137960> *  currentSpeed / 100;
-		turn larm to x-axis <-10.890110> speed <17.760493> *  currentSpeed / 100;
-		turn rarm to x-axis <-22.142857> speed <25.166158> *  currentSpeed / 100;
-		sleep 3500 / currentSpeed;
+		move rupleg to y-axis [-0.100000] speed [7.156622] * Static_Var_9 / [0.000610];
+		turn hip to x-axis <6.670330> speed <19.923077> * Static_Var_9 / <0.549451>;
+		turn torso to y-axis <-2.456044> speed <8.384615> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <45.357143> speed <9.434066> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <-11.945055> speed <41.873626> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <5.615385> speed <38.796703> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <20.027473> speed <138.412088> * Static_Var_9 / <0.549451>;
+		turn ruparm to x-axis <21.791209> speed <32.439560> * Static_Var_9 / <0.549451>;
+		turn head to y-axis <2.093407> speed <5.241758> * Static_Var_9 / <0.549451>;
+		turn luparm to x-axis <-10.192308> speed <46.137363> * Static_Var_9 / <0.549451>;
+		turn larm to x-axis <-10.890110> speed <17.758242> * Static_Var_9 / <0.549451>;
+		turn rarm to x-axis <-22.137363> speed <25.164835> * Static_Var_9 / <0.549451>;
+		sleep 3500 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		move hip to y-axis [0.700000] speed [8.349398] *  currentSpeed / 100;
-		move lupleg to y-axis [0.309998] speed [0.119253] *  currentSpeed / 100;
-		move rupleg to y-axis [-0.359998] speed [3.101181] *  currentSpeed / 100;
-		move rleg to y-axis [0.159998] speed [1.908410] *  currentSpeed / 100;
-		turn hip to x-axis <6.049451> speed <7.405665> *  currentSpeed / 100;
-		turn torso to y-axis <-1.835165> speed <7.405665> *  currentSpeed / 100;
-		turn lupleg to x-axis <36.296703> speed <108.070308> *  currentSpeed / 100;
-		turn rupleg to x-axis <-9.027473> speed <34.865605> *  currentSpeed / 100;
-		turn rleg to x-axis <3.417582> speed <26.280290> *  currentSpeed / 100;
-		turn lleg to x-axis <26.626374> speed <78.644252> *  currentSpeed / 100;
-		turn ruparm to x-axis <14.582418> speed <85.984375> *  currentSpeed / 100;
-		turn head to y-axis <1.565934> speed <6.357076> *  currentSpeed / 100;
-		turn luparm to x-axis <-5.087912> speed <60.883760> *  currentSpeed / 100;
-		turn larm to x-axis <-15.373626> speed <53.478082> *  currentSpeed / 100;
-		turn lhand to x-axis <-0.868132> speed <56.361714> *  currentSpeed / 100;
-		turn rarm to x-axis <-16.521978> speed <67.044219> *  currentSpeed / 100;
-		sleep 3500 / currentSpeed;
+		move hip to y-axis [0.700000] speed [8.349396] * Static_Var_9 / [0.000610];
+		move lupleg to y-axis [0.309998] speed [0.119250] * Static_Var_9 / [0.000610];
+		move rupleg to y-axis [-0.359998] speed [3.101178] * Static_Var_9 / [0.000610];
+		move rleg to y-axis [0.159998] speed [1.908405] * Static_Var_9 / [0.000610];
+		turn hip to x-axis <6.049451> speed <7.401099> * Static_Var_9 / <0.549451>;
+		turn torso to y-axis <-1.835165> speed <7.401099> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <36.291209> speed <108.065934> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <-9.027473> speed <34.862637> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <3.412088> speed <26.280220> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <26.626374> speed <78.642857> * Static_Var_9 / <0.549451>;
+		turn ruparm to x-axis <14.582418> speed <85.983516> * Static_Var_9 / <0.549451>;
+		turn head to y-axis <1.560440> speed <6.351648> * Static_Var_9 / <0.549451>;
+		turn luparm to x-axis <-5.082418> speed <60.879121> * Static_Var_9 / <0.549451>;
+		turn larm to x-axis <-15.368132> speed <53.478022> * Static_Var_9 / <0.549451>;
+		turn lhand to x-axis <-0.868132> speed <56.357143> * Static_Var_9 / <0.549451>;
+		turn rarm to x-axis <-16.516484> speed <67.043956> * Static_Var_9 / <0.549451>;
+		sleep 3500 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		move hip to y-axis [0.150000] speed [6.560241] *  currentSpeed / 100;
-		move lupleg to y-axis [0.319995] speed [0.119241] *  currentSpeed / 100;
-		move rupleg to y-axis [-0.619995] speed [3.101169] *  currentSpeed / 100;
-		move rleg to y-axis [0.319995] speed [1.908398] *  currentSpeed / 100;
-		turn hip to x-axis <5.439560> speed <7.274603> *  currentSpeed / 100;
-		turn torso to y-axis <-1.225275> speed <7.274592> *  currentSpeed / 100;
-		turn lupleg to x-axis <27.241758> speed <108.004766> *  currentSpeed / 100;
-		turn rupleg to x-axis <-6.148352> speed <34.341323> *  currentSpeed / 100;
-		turn rleg to x-axis <1.225275> speed <26.149204> *  currentSpeed / 100;
-		turn lleg to x-axis <33.214286> speed <78.578709> *  currentSpeed / 100;
-		turn ruparm to x-axis <7.379121> speed <85.918844> *  currentSpeed / 100;
-		turn head to y-axis <1.049451> speed <6.160460> *  currentSpeed / 100;
-		turn luparm to x-axis <0.000000> speed <60.687143> *  currentSpeed / 100;
-		turn larm to x-axis <-19.851648> speed <53.412552> *  currentSpeed / 100;
-		turn lhand to x-axis <-5.620879> speed <56.689392> *  currentSpeed / 100;
-		turn rarm to x-axis <-10.890110> speed <67.175293> *  currentSpeed / 100;
-		sleep 5000 / currentSpeed;
+		move hip to y-axis [0.150000] speed [6.560236] * Static_Var_9 / [0.000610];
+		move lupleg to y-axis [0.319989] speed [0.119238] * Static_Var_9 / [0.000610];
+		move rupleg to y-axis [-0.619989] speed [3.101166] * Static_Var_9 / [0.000610];
+		move rleg to y-axis [0.319989] speed [1.908392] * Static_Var_9 / [0.000610];
+		turn hip to x-axis <5.434066> speed <7.269231> * Static_Var_9 / <0.549451>;
+		turn torso to y-axis <-1.225275> speed <7.269231> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <27.236264> speed <108.000000> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <-6.148352> speed <34.340659> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <1.225275> speed <26.148352> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <33.214286> speed <78.576923> * Static_Var_9 / <0.549451>;
+		turn ruparm to x-axis <7.379121> speed <85.917582> * Static_Var_9 / <0.549451>;
+		turn head to y-axis <1.049451> speed <6.159341> * Static_Var_9 / <0.549451>;
+		turn luparm to x-axis <0.000000> speed <60.686813> * Static_Var_9 / <0.549451>;
+		turn larm to x-axis <-19.846154> speed <53.412088> * Static_Var_9 / <0.549451>;
+		turn lhand to x-axis <-5.615385> speed <56.686813> * Static_Var_9 / <0.549451>;
+		turn rarm to x-axis <-10.890110> speed <67.170330> * Static_Var_9 / <0.549451>;
+		sleep 5000 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		move hip to y-axis [0.219995] speed [0.834880] *  currentSpeed / 100;
-		move lupleg to y-axis [0.329999] speed [0.119325] *  currentSpeed / 100;
-		move rupleg to y-axis [-0.809998] speed [2.266301] *  currentSpeed / 100;
-		move rleg to y-axis [0.479999] speed [1.908481] *  currentSpeed / 100;
-		turn hip to x-axis <4.818681> speed <7.405665> *  currentSpeed / 100;
-		turn torso to y-axis <-0.598901> speed <7.471208> *  currentSpeed / 100;
-		turn lupleg to x-axis <18.181319> speed <108.070297> *  currentSpeed / 100;
-		turn rupleg to x-axis <-3.236264> speed <34.734544> *  currentSpeed / 100;
-		turn rleg to x-axis <-0.956044> speed <26.018142> *  currentSpeed / 100;
-		turn lleg to x-axis <39.796703> speed <78.513167> *  currentSpeed / 100;
-		turn ruparm to x-axis <0.164835> speed <86.049917> *  currentSpeed / 100;
-		turn head to y-axis <0.516484> speed <6.357076> *  currentSpeed / 100;
-		turn luparm to x-axis <3.159341> speed <37.683706> *  currentSpeed / 100;
-		turn larm to x-axis <-24.340659> speed <53.543625> *  currentSpeed / 100;
-		turn lhand to x-axis <-10.368132> speed <56.623861> *  currentSpeed / 100;
-		turn rarm to x-axis <-5.269231> speed <67.044219> *  currentSpeed / 100;
-		sleep 5000 / currentSpeed;
+		move hip to y-axis [0.219989] speed [0.834875] * Static_Var_9 / [0.000610];
+		move lupleg to y-axis [0.329999] speed [0.119324] * Static_Var_9 / [0.000610];
+		move rupleg to y-axis [-0.809998] speed [2.266296] * Static_Var_9 / [0.000610];
+		move rleg to y-axis [0.479999] speed [1.908478] * Static_Var_9 / [0.000610];
+		turn hip to x-axis <4.813187> speed <7.401099> * Static_Var_9 / <0.549451>;
+		turn torso to y-axis <-0.593407> speed <7.467033> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <18.181319> speed <108.065934> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <-3.236264> speed <34.730769> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <-0.956044> speed <26.016484> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <39.791209> speed <78.510989> * Static_Var_9 / <0.549451>;
+		turn ruparm to x-axis <0.159341> speed <86.049451> * Static_Var_9 / <0.549451>;
+		turn head to y-axis <0.516484> speed <6.351648> * Static_Var_9 / <0.549451>;
+		turn luparm to x-axis <3.159341> speed <37.681319> * Static_Var_9 / <0.549451>;
+		turn larm to x-axis <-24.335165> speed <53.538462> * Static_Var_9 / <0.549451>;
+		turn lhand to x-axis <-10.368132> speed <56.620879> * Static_Var_9 / <0.549451>;
+		turn rarm to x-axis <-5.269231> speed <67.043956> * Static_Var_9 / <0.549451>;
+		sleep 5000 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		move hip to y-axis [0.300000] speed [0.954277] *  currentSpeed / 100;
-		move lupleg to y-axis [0.350000] speed [0.238566] *  currentSpeed / 100;
-		move rupleg to y-axis [-1.000000] speed [2.266289] *  currentSpeed / 100;
-		move rleg to y-axis [0.650000] speed [2.027723] *  currentSpeed / 100;
-		turn hip to x-axis <4.208791> speed <7.274592> *  currentSpeed / 100;
-		turn torso to y-axis <0.000000> speed <7.143518> *  currentSpeed / 100;
-		turn lupleg to x-axis <9.137363> speed <107.873692> *  currentSpeed / 100;
-		turn rupleg to x-axis <-0.335165> speed <34.603470> *  currentSpeed / 100;
-		turn rleg to x-axis <-3.159341> speed <26.280290> *  currentSpeed / 100;
-		turn lleg to x-axis <46.406593> speed <78.840857> *  currentSpeed / 100;
-		turn ruparm to x-axis <-7.027473> speed <85.787770> *  currentSpeed / 100;
-		turn head to y-axis <0.000000> speed <6.160472> *  currentSpeed / 100;
-		turn luparm to x-axis <6.318681> speed <37.683694> *  currentSpeed / 100;
-		turn larm to x-axis <-28.824176> speed <53.478094> *  currentSpeed / 100;
-		turn lhand to x-axis <-15.109890> speed <56.558318> *  currentSpeed / 100;
-		turn rarm to x-axis <0.335165> speed <66.847615> *  currentSpeed / 100;
-		sleep 4500 / currentSpeed;
+		move hip to y-axis [0.300000] speed [0.954272] * Static_Var_9 / [0.000610];
+		move lupleg to y-axis [0.350000] speed [0.238562] * Static_Var_9 / [0.000610];
+		move rupleg to y-axis [-1.000000] speed [2.266284] * Static_Var_9 / [0.000610];
+		move rleg to y-axis [0.650000] speed [2.027722] * Static_Var_9 / [0.000610];
+		turn hip to x-axis <4.203297> speed <7.269231> * Static_Var_9 / <0.549451>;
+		turn torso to y-axis <0.000000> speed <7.142857> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <9.137363> speed <107.873626> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <-0.335165> speed <34.598901> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <-3.159341> speed <26.280220> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <46.401099> speed <78.840659> * Static_Var_9 / <0.549451>;
+		turn ruparm to x-axis <-7.027473> speed <85.785714> * Static_Var_9 / <0.549451>;
+		turn head to y-axis <0.000000> speed <6.159341> * Static_Var_9 / <0.549451>;
+		turn luparm to x-axis <6.313187> speed <37.681319> * Static_Var_9 / <0.549451>;
+		turn larm to x-axis <-28.824176> speed <53.478022> * Static_Var_9 / <0.549451>;
+		turn lhand to x-axis <-15.104396> speed <56.554945> * Static_Var_9 / <0.549451>;
+		turn rarm to x-axis <0.335165> speed <66.846154> * Static_Var_9 / <0.549451>;
+		sleep 4500 / Static_Var_9;
 	}
-	move hip to y-axis [0.219995] speed [0.954277] *  currentSpeed / 100;
-	move lupleg to y-axis [0.169995] speed [2.147048] *  currentSpeed / 100;
-	move rupleg to y-axis [-0.759998] speed [2.862674] *  currentSpeed / 100;
-	move rleg to y-axis [0.479999] speed [2.027723] *  currentSpeed / 100;
-	move lleg to y-axis [0.469995] speed [2.027651] *  currentSpeed / 100;
-	turn hip to x-axis <3.159341> speed <12.517536> *  currentSpeed / 100;
-	turn torso to y-axis <2.368132> speed <28.246394> *  currentSpeed / 100;
-	turn lupleg to x-axis <2.807692> speed <75.498485> *  currentSpeed / 100;
-	turn rupleg to x-axis <9.401099> speed <116.131342> *  currentSpeed / 100;
-	turn rleg to x-axis <-12.120879> speed <106.890634> *  currentSpeed / 100;
-	turn lleg to x-axis <38.758242> speed <91.227319> *  currentSpeed / 100;
-	turn ruparm to x-axis <-13.961538> speed <82.707522> *  currentSpeed / 100;
-	turn head to y-axis <-2.538462> speed <30.278041> *  currentSpeed / 100;
-	turn luparm to x-axis <10.538462> speed <50.332328> *  currentSpeed / 100;
-	turn larm to x-axis <-31.813187> speed <35.652059> *  currentSpeed / 100;
-	turn lhand to x-axis <-14.928571> speed <2.162721> *  currentSpeed / 100;
-	turn rarm to x-axis <0.428571> speed <1.114120> *  currentSpeed / 100;
-	turn gun to x-axis <7.637363> speed <70.255529> *  currentSpeed / 100;
-	sleep 4500 / currentSpeed;
+	move hip to y-axis [0.219989] speed [0.954272] * Static_Var_9 / [0.000610];
+	move lupleg to y-axis [0.169989] speed [2.147046] * Static_Var_9 / [0.000610];
+	move rupleg to y-axis [-0.759998] speed [2.862671] * Static_Var_9 / [0.000610];
+	move rleg to y-axis [0.479999] speed [2.027722] * Static_Var_9 / [0.000610];
+	move lleg to y-axis [0.469989] speed [2.027649] * Static_Var_9 / [0.000610];
+	turn hip to x-axis <3.159341> speed <12.516484> * Static_Var_9 / <0.549451>;
+	turn torso to y-axis <2.368132> speed <28.241758> * Static_Var_9 / <0.549451>;
+	turn lupleg to x-axis <2.802198> speed <75.494505> * Static_Var_9 / <0.549451>;
+	turn rupleg to x-axis <9.401099> speed <116.126374> * Static_Var_9 / <0.549451>;
+	turn rleg to x-axis <-12.115385> speed <106.890110> * Static_Var_9 / <0.549451>;
+	turn lleg to x-axis <38.758242> speed <91.225275> * Static_Var_9 / <0.549451>;
+	turn ruparm to x-axis <-13.956044> speed <82.703297> * Static_Var_9 / <0.549451>;
+	turn head to y-axis <-2.538462> speed <30.274725> * Static_Var_9 / <0.549451>;
+	turn luparm to x-axis <10.538462> speed <50.329670> * Static_Var_9 / <0.549451>;
+	turn larm to x-axis <-31.813187> speed <35.648352> * Static_Var_9 / <0.549451>;
+	turn lhand to x-axis <-14.923077> speed <2.159341> * Static_Var_9 / <0.549451>;
+	turn rarm to x-axis <0.423077> speed <1.109890> * Static_Var_9 / <0.549451>;
+	turn gun to x-axis <7.637363> speed <70.252747> * Static_Var_9 / <0.549451>;
+	sleep 4500 / Static_Var_9;
 }
 
 walklegs()
 {
 	if( bMoving )
 	{
-		move hip to y-axis [0.150000] speed [0.834880] *  currentSpeed / 100;
-		move rupleg to y-axis [-0.419995] speed [4.055457] *  currentSpeed / 100;
-		move rleg to y-axis [0.319995] speed [1.908481] *  currentSpeed / 100;
-		move lleg to y-axis [0.150000] speed [3.816808] *  currentSpeed / 100;
+		move hip to y-axis [0.150000] speed [0.834875] * Static_Var_9 / [0.000610];
+		move rupleg to y-axis [-0.419989] speed [4.055457] * Static_Var_9 / [0.000610];
+		move rleg to y-axis [0.319989] speed [1.908478] * Static_Var_9 / [0.000610];
+		move lleg to y-axis [0.150000] speed [3.816803] * Static_Var_9 / [0.000610];
 		move head to y-axis [0.000000] now;
 		move flash to x-axis [0.000000] now;
 		move flash to y-axis [-0.900000] now;
 		move flash to z-axis [-0.200000] now;
-		turn hip to x-axis <2.098901> speed <12.648622> *  currentSpeed / 100;
-		turn lupleg to x-axis <-3.505495> speed <75.301869> *  currentSpeed / 100;
-		turn rupleg to x-axis <24.434066> speed <179.308883> *  currentSpeed / 100;
-		turn rleg to x-axis <-26.362637> speed <169.871571> *  currentSpeed / 100;
-		turn lleg to x-axis <18.450549> speed <242.224290> *  currentSpeed / 100;
-		sleep 5000 / currentSpeed;
+		turn hip to x-axis <2.093407> speed <12.648352> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <-3.505495> speed <75.296703> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <24.434066> speed <179.307692> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <-26.357143> speed <169.868132> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <18.445055> speed <242.219780> * Static_Var_9 / <0.549451>;
+		sleep 5000 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		move hip to y-axis [0.700000] speed [6.560241] *  currentSpeed / 100;
-		move lupleg to y-axis [-0.169995] speed [4.055302] *  currentSpeed / 100;
-		move rupleg to y-axis [-0.209998] speed [2.504783] *  currentSpeed / 100;
-		move rleg to y-axis [0.159998] speed [1.908398] *  currentSpeed / 100;
-		move lleg to y-axis [0.700000] speed [6.560241] *  currentSpeed / 100;
-		turn hip to x-axis <1.049451> speed <12.517536> *  currentSpeed / 100;
-		turn lupleg to x-axis <-9.840659> speed <75.564004> *  currentSpeed / 100;
-		turn rupleg to x-axis <31.543956> speed <84.804712> *  currentSpeed / 100;
-		turn rleg to x-axis <-25.313187> speed <12.517536> *  currentSpeed / 100;
-		turn lleg to x-axis <4.478022> speed <166.660262> *  currentSpeed / 100;
-		sleep 5000 / currentSpeed;
+		move hip to y-axis [0.700000] speed [6.560236] * Static_Var_9 / [0.000610];
+		move lupleg to y-axis [-0.169989] speed [4.055298] * Static_Var_9 / [0.000610];
+		move rupleg to y-axis [-0.209998] speed [2.504779] * Static_Var_9 / [0.000610];
+		move rleg to y-axis [0.159998] speed [1.908392] * Static_Var_9 / [0.000610];
+		move lleg to y-axis [0.700000] speed [6.560236] * Static_Var_9 / [0.000610];
+		turn hip to x-axis <1.049451> speed <12.516484> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <-9.835165> speed <75.560440> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <31.538462> speed <84.802198> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <-25.313187> speed <12.516484> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <4.478022> speed <166.659341> * Static_Var_9 / <0.549451>;
+		sleep 5000 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		move hip to y-axis [0.000000] speed [8.349398] *  currentSpeed / 100;
-		move lupleg to y-axis [-0.350000] speed [2.147048] *  currentSpeed / 100;
-		move rupleg to y-axis [0.000000] speed [2.504795] *  currentSpeed / 100;
-		move rleg to y-axis [0.000000] speed [1.908410] *  currentSpeed / 100;
-		move lleg to y-axis [0.000000] speed [8.349398] *  currentSpeed / 100;
-		turn hip to x-axis <0.000000> speed <12.517548> *  currentSpeed / 100;
-		turn lupleg to x-axis <-16.170330> speed <75.498485> *  currentSpeed / 100;
-		turn rupleg to x-axis <38.675824> speed <85.066859> *  currentSpeed / 100;
-		turn rleg to x-axis <-24.252747> speed <12.648622> *  currentSpeed / 100;
-		turn lleg to x-axis <-9.478022> speed <166.463657> *  currentSpeed / 100;
-		sleep 5000 / currentSpeed;
+		move hip to y-axis [0.000000] speed [8.349396] * Static_Var_9 / [0.000610];
+		move lupleg to y-axis [-0.350000] speed [2.147046] * Static_Var_9 / [0.000610];
+		move rupleg to y-axis [0.000000] speed [2.504791] * Static_Var_9 / [0.000610];
+		move rleg to y-axis [0.000000] speed [1.908405] * Static_Var_9 / [0.000610];
+		move lleg to y-axis [0.000000] speed [8.349396] * Static_Var_9 / [0.000610];
+		turn hip to x-axis <0.000000> speed <12.516484> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <-16.170330> speed <75.494505> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <38.670330> speed <85.065934> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <-24.247253> speed <12.648352> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <-9.478022> speed <166.461538> * Static_Var_9 / <0.549451>;
+		sleep 5000 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		turn hip to x-axis <1.659341> speed <19.792140> *  currentSpeed / 100;
-		turn lupleg to x-axis <-13.351648> speed <33.620424> *  currentSpeed / 100;
-		turn rupleg to x-axis <41.126374> speed <29.229452> *  currentSpeed / 100;
-		turn rleg to x-axis <-10.368132> speed <165.611673> *  currentSpeed / 100;
-		turn lleg to x-axis <-7.637363> speed <21.954848> *  currentSpeed / 100;
-		sleep 5000 / currentSpeed;
+		turn hip to x-axis <1.659341> speed <19.791209> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <-13.346154> speed <33.615385> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <41.126374> speed <29.225275> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <-10.368132> speed <165.609890> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <-7.637363> speed <21.950549> * Static_Var_9 / <0.549451>;
+		sleep 5000 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		turn hip to x-axis <3.329670> speed <19.923201> *  currentSpeed / 100;
-		turn lupleg to x-axis <-10.538462> speed <33.554869> *  currentSpeed / 100;
-		turn rupleg to x-axis <43.598901> speed <29.491587> *  currentSpeed / 100;
-		turn rleg to x-axis <3.505495> speed <165.480611> *  currentSpeed / 100;
-		turn lleg to x-axis <-5.791209> speed <22.020391> *  currentSpeed / 100;
-		sleep 5000 / currentSpeed;
+		turn hip to x-axis <3.324176> speed <19.923077> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <-10.538462> speed <33.549451> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <43.593407> speed <29.489011> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <3.505495> speed <165.478022> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <-5.791209> speed <22.016484> * Static_Var_9 / <0.549451>;
+		sleep 5000 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		turn hip to x-axis <5.000000> speed <19.923213> *  currentSpeed / 100;
-		turn lupleg to x-axis <-7.730769> speed <33.489350> *  currentSpeed / 100;
-		turn rupleg to x-axis <46.049451> speed <29.229452> *  currentSpeed / 100;
-		turn rleg to x-axis <14.582418> speed <132.122335> *  currentSpeed / 100;
-		turn lleg to x-axis <-3.939560> speed <22.085934> *  currentSpeed / 100;
-		sleep 5000 / currentSpeed;
+		turn hip to x-axis <5.000000> speed <19.923077> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <-7.725275> speed <33.489011> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <46.049451> speed <29.225275> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <14.582418> speed <132.120879> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <-3.934066> speed <22.082418> * Static_Var_9 / <0.549451>;
+		sleep 5000 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		turn hip to x-axis <6.670330> speed <19.923213> *  currentSpeed / 100;
-		turn lupleg to x-axis <-4.917582> speed <33.554881> *  currentSpeed / 100;
-		turn rupleg to x-axis <48.516484> speed <29.426056> *  currentSpeed / 100;
-		turn rleg to x-axis <25.653846> speed <132.056792> *  currentSpeed / 100;
-		turn lleg to x-axis <-2.098901> speed <21.954848> *  currentSpeed / 100;
-		sleep 5000 / currentSpeed;
+		turn hip to x-axis <6.670330> speed <19.923077> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <-4.912088> speed <33.549451> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <48.516484> speed <29.423077> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <25.648352> speed <132.054945> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <-2.093407> speed <21.950549> * Static_Var_9 / <0.549451>;
+		sleep 5000 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		move hip to y-axis [0.700000] speed [8.349398] *  currentSpeed / 100;
-		move lupleg to y-axis [-0.409998] speed [0.715639] *  currentSpeed / 100;
-		move rupleg to y-axis [0.150000] speed [1.789157] *  currentSpeed / 100;
-		move lleg to y-axis [0.700000] speed [8.349398] *  currentSpeed / 100;
-		turn hip to x-axis <5.708791> speed <11.468959> *  currentSpeed / 100;
-		turn lupleg to x-axis <1.565934> speed <77.333504> *  currentSpeed / 100;
-		turn rupleg to x-axis <31.642857> speed <201.263744> *  currentSpeed / 100;
-		turn rleg to x-axis <31.813187> speed <73.466838> *  currentSpeed / 100;
-		turn lleg to x-axis <-7.291209> speed <61.932348> *  currentSpeed / 100;
-		sleep 5000 / currentSpeed;
+		move hip to y-axis [0.700000] speed [8.349396] * Static_Var_9 / [0.000610];
+		move lupleg to y-axis [-0.409998] speed [0.715637] * Static_Var_9 / [0.000610];
+		move rupleg to y-axis [0.150000] speed [1.789154] * Static_Var_9 / [0.000610];
+		move lleg to y-axis [0.700000] speed [8.349396] * Static_Var_9 / [0.000610];
+		turn hip to x-axis <5.703297> speed <11.467033> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <1.560440> speed <77.329670> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <31.637363> speed <201.263736> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <31.813187> speed <73.461538> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <-7.291209> speed <61.928571> * Static_Var_9 / <0.549451>;
+		sleep 5000 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		move hip to y-axis [0.150000] speed [6.560241] *  currentSpeed / 100;
-		move lupleg to y-axis [-0.469995] speed [0.715627] *  currentSpeed / 100;
-		move rupleg to y-axis [0.300000] speed [1.789157] *  currentSpeed / 100;
-		move lleg to y-axis [0.150000] speed [6.560241] *  currentSpeed / 100;
-		turn hip to x-axis <4.736264> speed <11.600021> *  currentSpeed / 100;
-		turn lupleg to x-axis <8.076923> speed <77.661194> *  currentSpeed / 100;
-		turn rupleg to x-axis <14.758242> speed <201.394805> *  currentSpeed / 100;
-		turn rleg to x-axis <37.967033> speed <73.401296> *  currentSpeed / 100;
-		turn lleg to x-axis <-12.478022> speed <61.866806> *  currentSpeed / 100;
-		sleep 5000 / currentSpeed;
+		move hip to y-axis [0.150000] speed [6.560236] * Static_Var_9 / [0.000610];
+		move lupleg to y-axis [-0.469989] speed [0.715625] * Static_Var_9 / [0.000610];
+		move rupleg to y-axis [0.300000] speed [1.789154] * Static_Var_9 / [0.000610];
+		move lleg to y-axis [0.150000] speed [6.560236] * Static_Var_9 / [0.000610];
+		turn hip to x-axis <4.736264> speed <11.598901> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <8.071429> speed <77.659341> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <14.758242> speed <201.390110> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <37.967033> speed <73.401099> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <-12.478022> speed <61.862637> * Static_Var_9 / <0.549451>;
+		sleep 5000 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		move hip to y-axis [0.219995] speed [0.834880] *  currentSpeed / 100;
-		move lupleg to y-axis [-0.529999] speed [0.715710] *  currentSpeed / 100;
-		move rupleg to y-axis [0.450000] speed [1.789157] *  currentSpeed / 100;
-		move lleg to y-axis [0.219995] speed [0.834880] *  currentSpeed / 100;
-		turn hip to x-axis <3.769231> speed <11.534490> *  currentSpeed / 100;
-		turn lupleg to x-axis <14.582418> speed <77.595663> *  currentSpeed / 100;
-		turn rupleg to x-axis <-2.098901> speed <201.067127> *  currentSpeed / 100;
-		turn rleg to x-axis <44.126374> speed <73.466838> *  currentSpeed / 100;
-		turn lleg to x-axis <-18.181319> speed <68.027277> *  currentSpeed / 100;
-		sleep 5000 / currentSpeed;
+		move hip to y-axis [0.219989] speed [0.834875] * Static_Var_9 / [0.000610];
+		move lupleg to y-axis [-0.529999] speed [0.715704] * Static_Var_9 / [0.000610];
+		move rupleg to y-axis [0.450000] speed [1.789154] * Static_Var_9 / [0.000610];
+		move lleg to y-axis [0.219989] speed [0.834875] * Static_Var_9 / [0.000610];
+		turn hip to x-axis <3.769231> speed <11.532967> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <14.582418> speed <77.593407> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <-2.093407> speed <201.065934> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <44.126374> speed <73.461538> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <-18.181319> speed <68.021978> * Static_Var_9 / <0.549451>;
+		sleep 5000 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		move hip to y-axis [0.300000] speed [0.954277] *  currentSpeed / 100;
-		move lupleg to y-axis [-0.600000] speed [0.834952] *  currentSpeed / 100;
-		move rupleg to y-axis [0.600000] speed [1.789157] *  currentSpeed / 100;
-		move lleg to y-axis [0.300000] speed [0.954277] *  currentSpeed / 100;
-		turn hip to x-axis <2.807692> speed <11.468959> *  currentSpeed / 100;
-		turn lupleg to x-axis <21.093407> speed <77.661194> *  currentSpeed / 100;
-		turn rupleg to x-axis <-18.983516> speed <201.394805> *  currentSpeed / 100;
-		turn rleg to x-axis <50.269231> speed <73.270222> *  currentSpeed / 100;
-		turn lleg to x-axis <-23.901099> speed <68.223882> *  currentSpeed / 100;
-		sleep 5000 / currentSpeed;
+		move hip to y-axis [0.300000] speed [0.954272] * Static_Var_9 / [0.000610];
+		move lupleg to y-axis [-0.600000] speed [0.834949] * Static_Var_9 / [0.000610];
+		move rupleg to y-axis [0.600000] speed [1.789154] * Static_Var_9 / [0.000610];
+		move lleg to y-axis [0.300000] speed [0.954272] * Static_Var_9 / [0.000610];
+		turn hip to x-axis <2.802198> speed <11.467033> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <21.093407> speed <77.659341> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <-18.978022> speed <201.390110> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <50.269231> speed <73.269231> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <-23.901099> speed <68.219780> * Static_Var_9 / <0.549451>;
+		sleep 5000 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		move hip to y-axis [0.219995] speed [0.954277] *  currentSpeed / 100;
-		move lupleg to y-axis [-0.500000] speed [1.192771] *  currentSpeed / 100;
-		move rupleg to y-axis [0.450000] speed [1.789157] *  currentSpeed / 100;
-		turn hip to x-axis <2.098901> speed <8.454254> *  currentSpeed / 100;
-		turn lupleg to x-axis <26.181319> speed <60.687143> *  currentSpeed / 100;
-		turn rupleg to x-axis <-20.741758> speed <20.971802> *  currentSpeed / 100;
-		turn rleg to x-axis <35.857143> speed <171.903218> *  currentSpeed / 100;
-		turn lleg to x-axis <-27.241758> speed <39.846415> *  currentSpeed / 100;
-		sleep 5000 / currentSpeed;
+		move hip to y-axis [0.219989] speed [0.954272] * Static_Var_9 / [0.000610];
+		move lupleg to y-axis [-0.500000] speed [1.192767] * Static_Var_9 / [0.000610];
+		move rupleg to y-axis [0.450000] speed [1.789154] * Static_Var_9 / [0.000610];
+		turn hip to x-axis <2.093407> speed <8.450549> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <26.181319> speed <60.686813> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <-20.736264> speed <20.967033> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <35.857143> speed <171.901099> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <-27.236264> speed <39.846154> * Static_Var_9 / <0.549451>;
+		sleep 5000 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		move hip to y-axis [0.150000] speed [0.834880] *  currentSpeed / 100;
-		move lupleg to y-axis [-0.400000] speed [1.192771] *  currentSpeed / 100;
-		move rupleg to y-axis [0.300000] speed [1.789157] *  currentSpeed / 100;
-		turn hip to x-axis <1.395604> speed <8.388723> *  currentSpeed / 100;
-		turn lupleg to x-axis <31.285714> speed <60.883748> *  currentSpeed / 100;
-		turn rupleg to x-axis <-22.505495> speed <21.037345> *  currentSpeed / 100;
-		turn rleg to x-axis <21.434066> speed <172.034292> *  currentSpeed / 100;
-		turn lleg to x-axis <-30.582418> speed <39.846427> *  currentSpeed / 100;
-		sleep 5000 / currentSpeed;
+		move hip to y-axis [0.150000] speed [0.834875] * Static_Var_9 / [0.000610];
+		move lupleg to y-axis [-0.400000] speed [1.192767] * Static_Var_9 / [0.000610];
+		move rupleg to y-axis [0.300000] speed [1.789154] * Static_Var_9 / [0.000610];
+		turn hip to x-axis <1.390110> speed <8.384615> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <31.280220> speed <60.879121> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <-22.505495> speed <21.032967> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <21.434066> speed <172.032967> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <-30.582418> speed <39.846154> * Static_Var_9 / <0.549451>;
+		sleep 5000 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		move hip to y-axis [0.700000] speed [6.560241] *  currentSpeed / 100;
-		move lupleg to y-axis [-0.500000] speed [1.192771] *  currentSpeed / 100;
-		move rupleg to y-axis [0.150000] speed [1.789157] *  currentSpeed / 100;
-		turn hip to x-axis <0.697802> speed <8.323180> *  currentSpeed / 100;
-		turn lupleg to x-axis <36.725275> speed <64.881511> *  currentSpeed / 100;
-		turn rupleg to x-axis <-24.252747> speed <20.840717> *  currentSpeed / 100;
-		turn rleg to x-axis <7.027473> speed <171.837676> *  currentSpeed / 100;
-		turn lleg to x-axis <-28.472527> speed <25.166170> *  currentSpeed / 100;
-		sleep 5000 / currentSpeed;
+		move hip to y-axis [0.700000] speed [6.560236] * Static_Var_9 / [0.000610];
+		move lupleg to y-axis [-0.500000] speed [1.192767] * Static_Var_9 / [0.000610];
+		move rupleg to y-axis [0.150000] speed [1.789154] * Static_Var_9 / [0.000610];
+		turn hip to x-axis <0.692308> speed <8.318681> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <36.725275> speed <64.879121> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <-24.247253> speed <20.840659> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <7.027473> speed <171.835165> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <-28.467033> speed <25.164835> * Static_Var_9 / <0.549451>;
+		sleep 5000 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		move hip to y-axis [0.000000] speed [8.349398] *  currentSpeed / 100;
-		move lupleg to y-axis [0.300000] speed [9.542169] *  currentSpeed / 100;
-		move rupleg to y-axis [0.000000] speed [1.789157] *  currentSpeed / 100;
-		turn hip to x-axis <0.000000> speed <8.323180> *  currentSpeed / 100;
-		turn lupleg to x-axis <42.186813> speed <65.143646> *  currentSpeed / 100;
-		turn rupleg to x-axis <-26.010989> speed <20.971802> *  currentSpeed / 100;
-		turn rleg to x-axis <-7.379121> speed <171.837687> *  currentSpeed / 100;
-		turn lleg to x-axis <-26.362637> speed <25.166158> *  currentSpeed / 100;
-		sleep 5000 / currentSpeed;
+		move hip to y-axis [0.000000] speed [8.349396] * Static_Var_9 / [0.000610];
+		move lupleg to y-axis [0.300000] speed [9.542163] * Static_Var_9 / [0.000610];
+		move rupleg to y-axis [0.000000] speed [1.789154] * Static_Var_9 / [0.000610];
+		turn hip to x-axis <0.000000> speed <8.318681> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <42.181319> speed <65.142857> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <-26.005495> speed <20.967033> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <-7.379121> speed <171.835165> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <-26.357143> speed <25.164835> * Static_Var_9 / <0.549451>;
+		sleep 5000 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		move rupleg to y-axis [-0.200000] speed [2.385542] *  currentSpeed / 100;
-		turn hip to x-axis <1.659341> speed <19.792140> *  currentSpeed / 100;
-		turn lupleg to x-axis <42.978022> speed <9.437312> *  currentSpeed / 100;
-		turn rupleg to x-axis <-22.505495> speed <41.812519> *  currentSpeed / 100;
-		turn rleg to x-axis <-4.120879> speed <38.863368> *  currentSpeed / 100;
-		turn lleg to x-axis <-14.758242> speed <138.413868> *  currentSpeed / 100;
-		sleep 5000 / currentSpeed;
+		move rupleg to y-axis [-0.200000] speed [2.385541] * Static_Var_9 / [0.000610];
+		turn hip to x-axis <1.659341> speed <19.791209> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <42.978022> speed <9.434066> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <-22.505495> speed <41.807692> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <-4.115385> speed <38.862637> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <-14.758242> speed <138.412088> * Static_Var_9 / <0.549451>;
+		sleep 5000 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		move rupleg to y-axis [-0.500000] speed [3.578313] *  currentSpeed / 100;
-		turn hip to x-axis <3.329670> speed <19.923201> *  currentSpeed / 100;
-		turn lupleg to x-axis <43.769231> speed <9.437312> *  currentSpeed / 100;
-		turn rupleg to x-axis <-18.983516> speed <42.009147> *  currentSpeed / 100;
-		turn rleg to x-axis <-0.868132> speed <38.797826> *  currentSpeed / 100;
-		turn lleg to x-axis <-3.148352> speed <138.479411> *  currentSpeed / 100;
-		sleep 5000 / currentSpeed;
+		move rupleg to y-axis [-0.500000] speed [3.578308] * Static_Var_9 / [0.000610];
+		turn hip to x-axis <3.324176> speed <19.923077> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <43.769231> speed <9.434066> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <-18.978022> speed <42.005495> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <-0.868132> speed <38.796703> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <-3.148352> speed <138.478022> * Static_Var_9 / <0.549451>;
+		sleep 5000 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		move rupleg to y-axis [-0.700000] speed [2.385542] *  currentSpeed / 100;
-		turn hip to x-axis <5.000000> speed <19.923213> *  currentSpeed / 100;
-		turn lupleg to x-axis <44.565934> speed <9.502843> *  currentSpeed / 100;
-		turn rupleg to x-axis <-15.461538> speed <42.009135> *  currentSpeed / 100;
-		turn rleg to x-axis <2.368132> speed <38.601221> *  currentSpeed / 100;
-		turn lleg to x-axis <8.428571> speed <138.086190> *  currentSpeed / 100;
-		sleep 5000 / currentSpeed;
+		move rupleg to y-axis [-0.700000] speed [2.385541] * Static_Var_9 / [0.000610];
+		turn hip to x-axis <5.000000> speed <19.923077> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <44.560440> speed <9.500000> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <-15.456044> speed <42.005495> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <2.368132> speed <38.598901> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <8.423077> speed <138.082418> * Static_Var_9 / <0.549451>;
+		sleep 5000 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		move rupleg to y-axis [-0.100000] speed [7.156627] *  currentSpeed / 100;
-		turn hip to x-axis <6.670330> speed <19.923213> *  currentSpeed / 100;
-		turn lupleg to x-axis <45.357143> speed <9.437312> *  currentSpeed / 100;
-		turn rupleg to x-axis <-11.950549> speed <41.878062> *  currentSpeed / 100;
-		turn rleg to x-axis <5.620879> speed <38.797826> *  currentSpeed / 100;
-		turn lleg to x-axis <20.032967> speed <138.413880> *  currentSpeed / 100;
-		sleep 5000 / currentSpeed;
+		move rupleg to y-axis [-0.100000] speed [7.156622] * Static_Var_9 / [0.000610];
+		turn hip to x-axis <6.670330> speed <19.923077> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <45.357143> speed <9.434066> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <-11.945055> speed <41.873626> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <5.615385> speed <38.796703> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <20.027473> speed <138.412088> * Static_Var_9 / <0.549451>;
+		sleep 5000 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		move hip to y-axis [0.700000] speed [8.349398] *  currentSpeed / 100;
-		move lupleg to y-axis [0.309998] speed [0.119253] *  currentSpeed / 100;
-		move rupleg to y-axis [-0.279999] speed [2.146976] *  currentSpeed / 100;
-		move rleg to y-axis [0.159998] speed [1.908410] *  currentSpeed / 100;
-		turn hip to x-axis <6.049451> speed <7.405665> *  currentSpeed / 100;
-		turn lupleg to x-axis <36.296703> speed <108.070308> *  currentSpeed / 100;
-		turn rupleg to x-axis <-9.027473> speed <34.865605> *  currentSpeed / 100;
-		turn rleg to x-axis <3.417582> speed <26.280290> *  currentSpeed / 100;
-		turn lleg to x-axis <26.626374> speed <78.644252> *  currentSpeed / 100;
-		sleep 5000 / currentSpeed;
+		move hip to y-axis [0.700000] speed [8.349396] * Static_Var_9 / [0.000610];
+		move lupleg to y-axis [0.309998] speed [0.119250] * Static_Var_9 / [0.000610];
+		move rupleg to y-axis [-0.279999] speed [2.146973] * Static_Var_9 / [0.000610];
+		move rleg to y-axis [0.159998] speed [1.908405] * Static_Var_9 / [0.000610];
+		turn hip to x-axis <6.049451> speed <7.401099> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <36.291209> speed <108.065934> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <-9.027473> speed <34.862637> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <3.412088> speed <26.280220> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <26.626374> speed <78.642857> * Static_Var_9 / <0.549451>;
+		sleep 5000 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		move hip to y-axis [0.150000] speed [6.560241] *  currentSpeed / 100;
-		move lupleg to y-axis [0.319995] speed [0.119241] *  currentSpeed / 100;
-		move rupleg to y-axis [-0.469995] speed [2.266217] *  currentSpeed / 100;
-		move rleg to y-axis [0.319995] speed [1.908398] *  currentSpeed / 100;
-		turn hip to x-axis <5.439560> speed <7.274603> *  currentSpeed / 100;
-		turn lupleg to x-axis <27.241758> speed <108.004766> *  currentSpeed / 100;
-		turn rupleg to x-axis <-6.148352> speed <34.341323> *  currentSpeed / 100;
-		turn rleg to x-axis <1.225275> speed <26.149204> *  currentSpeed / 100;
-		turn lleg to x-axis <33.214286> speed <78.578709> *  currentSpeed / 100;
-		sleep 5000 / currentSpeed;
+		move hip to y-axis [0.150000] speed [6.560236] * Static_Var_9 / [0.000610];
+		move lupleg to y-axis [0.319989] speed [0.119238] * Static_Var_9 / [0.000610];
+		move rupleg to y-axis [-0.469989] speed [2.266211] * Static_Var_9 / [0.000610];
+		move rleg to y-axis [0.319989] speed [1.908392] * Static_Var_9 / [0.000610];
+		turn hip to x-axis <5.434066> speed <7.269231> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <27.236264> speed <108.000000> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <-6.148352> speed <34.340659> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <1.225275> speed <26.148352> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <33.214286> speed <78.576923> * Static_Var_9 / <0.549451>;
+		sleep 5000 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		move hip to y-axis [0.219995] speed [0.834880] *  currentSpeed / 100;
-		move lupleg to y-axis [0.329999] speed [0.119325] *  currentSpeed / 100;
-		move rupleg to y-axis [-0.659998] speed [2.266301] *  currentSpeed / 100;
-		move rleg to y-axis [0.479999] speed [1.908481] *  currentSpeed / 100;
-		turn hip to x-axis <4.818681> speed <7.405665> *  currentSpeed / 100;
-		turn lupleg to x-axis <18.181319> speed <108.070297> *  currentSpeed / 100;
-		turn rupleg to x-axis <-3.236264> speed <34.734544> *  currentSpeed / 100;
-		turn rleg to x-axis <-0.956044> speed <26.018142> *  currentSpeed / 100;
-		turn lleg to x-axis <39.796703> speed <78.513167> *  currentSpeed / 100;
-		sleep 5000 / currentSpeed;
+		move hip to y-axis [0.219989] speed [0.834875] * Static_Var_9 / [0.000610];
+		move lupleg to y-axis [0.329999] speed [0.119324] * Static_Var_9 / [0.000610];
+		move rupleg to y-axis [-0.659998] speed [2.266296] * Static_Var_9 / [0.000610];
+		move rleg to y-axis [0.479999] speed [1.908478] * Static_Var_9 / [0.000610];
+		turn hip to x-axis <4.813187> speed <7.401099> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <18.181319> speed <108.065934> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <-3.236264> speed <34.730769> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <-0.956044> speed <26.016484> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <39.791209> speed <78.510989> * Static_Var_9 / <0.549451>;
+		sleep 5000 / Static_Var_9;
 	}
 	if( bMoving )
 	{
-		move hip to y-axis [0.300000] speed [0.954277] *  currentSpeed / 100;
-		move lupleg to y-axis [0.350000] speed [0.238566] *  currentSpeed / 100;
-		move rupleg to y-axis [-0.850000] speed [2.266289] *  currentSpeed / 100;
-		move rleg to y-axis [0.650000] speed [2.027723] *  currentSpeed / 100;
-		turn hip to x-axis <4.208791> speed <7.274592> *  currentSpeed / 100;
-		turn lupleg to x-axis <9.137363> speed <107.873692> *  currentSpeed / 100;
-		turn rupleg to x-axis <-0.335165> speed <34.603470> *  currentSpeed / 100;
-		turn rleg to x-axis <-3.159341> speed <26.280290> *  currentSpeed / 100;
-		turn lleg to x-axis <46.406593> speed <78.840857> *  currentSpeed / 100;
-		sleep 5000 / currentSpeed;
+		move hip to y-axis [0.300000] speed [0.954272] * Static_Var_9 / [0.000610];
+		move lupleg to y-axis [0.350000] speed [0.238562] * Static_Var_9 / [0.000610];
+		move rupleg to y-axis [-0.850000] speed [2.266284] * Static_Var_9 / [0.000610];
+		move rleg to y-axis [0.650000] speed [2.027722] * Static_Var_9 / [0.000610];
+		turn hip to x-axis <4.203297> speed <7.269231> * Static_Var_9 / <0.549451>;
+		turn lupleg to x-axis <9.137363> speed <107.873626> * Static_Var_9 / <0.549451>;
+		turn rupleg to x-axis <-0.335165> speed <34.598901> * Static_Var_9 / <0.549451>;
+		turn rleg to x-axis <-3.159341> speed <26.280220> * Static_Var_9 / <0.549451>;
+		turn lleg to x-axis <46.401099> speed <78.840659> * Static_Var_9 / <0.549451>;
+		sleep 5000 / Static_Var_9;
 	}
-	move hip to y-axis [0.219995] speed [0.954277] *  currentSpeed / 100;
-	move lupleg to y-axis [0.169995] speed [2.147048] *  currentSpeed / 100;
-	move rupleg to y-axis [-0.629999] speed [2.624108] *  currentSpeed / 100;
-	move rleg to y-axis [0.479999] speed [2.027723] *  currentSpeed / 100;
-	move lleg to y-axis [0.219995] speed [0.954277] *  currentSpeed / 100;
-	turn hip to x-axis <3.159341> speed <12.517536> *  currentSpeed / 100;
-	turn lupleg to x-axis <2.807692> speed <75.498485> *  currentSpeed / 100;
-	turn rupleg to x-axis <12.038462> speed <147.589045> *  currentSpeed / 100;
-	turn rleg to x-axis <-14.758242> speed <138.348337> *  currentSpeed / 100;
-	turn lleg to x-axis <32.434066> speed <166.660262> *  currentSpeed / 100;
-	sleep 5000 / currentSpeed;
+	move hip to y-axis [0.219989] speed [0.954272] * Static_Var_9 / [0.000610];
+	move lupleg to y-axis [0.169989] speed [2.147046] * Static_Var_9 / [0.000610];
+	move rupleg to y-axis [-0.629999] speed [2.624103] * Static_Var_9 / [0.000610];
+	move rleg to y-axis [0.479999] speed [2.027722] * Static_Var_9 / [0.000610];
+	move lleg to y-axis [0.219989] speed [0.954272] * Static_Var_9 / [0.000610];
+	turn hip to x-axis <3.159341> speed <12.516484> * Static_Var_9 / <0.549451>;
+	turn lupleg to x-axis <2.802198> speed <75.494505> * Static_Var_9 / <0.549451>;
+	turn rupleg to x-axis <12.038462> speed <147.587912> * Static_Var_9 / <0.549451>;
+	turn rleg to x-axis <-14.758242> speed <138.346154> * Static_Var_9 / <0.549451>;
+	turn lleg to x-axis <32.434066> speed <166.659341> * Static_Var_9 / <0.549451>;
+	sleep 5000 / Static_Var_9;
 }
 
 OpenGun()
 {
 	move head to y-axis [0.000000] now;
 	move larm to y-axis [0.000000] now;
-	move flash to z-axis [-0.100000] speed [0.352313];
+	move flash to z-axis [-0.100000] speed [0.352307];
 	turn torso to x-axis <0.000000> now;
 	turn torso to x-axis <-3.000000> speed <13.000000>;
 	turn ruparm to x-axis <0.000000> now;
 	turn ruparm to x-axis <17.000000> speed <67.000000>;
 	turn rarm to x-axis <0.000000> now;
-	turn rarm to x-axis <-65.010989> speed <252.000000>;
+	turn rarm to x-axis <-65.005495> speed <252.000000>;
 	sleep 260;
 	turn torso to x-axis <-8.000000> speed <18.000000>;
 	turn ruparm to x-axis <-11.000000> speed <104.000000>;
 	turn head to x-axis <-8.000000> speed <30.000000>;
-	turn rarm to x-axis <-97.021978> speed <113.000000>;
+	turn rarm to x-axis <-97.016484> speed <113.000000>;
 	sleep 280;
-	move gun to y-axis [-1.139996] speed [4.000000];
+	move gun to y-axis [-1.139990] speed [4.000000];
 	turn torso to x-axis <-2.000000> speed <24.000000>;
-	turn ruparm to x-axis <-46.010989> speed <132.000000>;
+	turn ruparm to x-axis <-46.005495> speed <132.000000>;
 	turn head to x-axis <-4.000000> speed <13.000000>;
 	turn leftshoulder to y-axis <-10.000000> speed <40.000000>;
-	turn luparm to x-axis <-60.010989> speed <233.000000>;
+	turn luparm to x-axis <-60.005495> speed <233.000000>;
 	turn larm to z-axis <24.005495> speed <96.000000>;
 	turn lhand to z-axis <24.005495> speed <93.000000>;
-	turn rarm to x-axis <-59.010989> speed <147.000000>;
-	turn gun to x-axis <-45.010989> speed <173.000000>;
+	turn rarm to x-axis <-59.005495> speed <147.000000>;
+	turn gun to x-axis <-45.005495> speed <173.000000>;
 	sleep 260;
 	move leftshoulder to z-axis [1.800000] speed [7.000000];
 	move luparm to y-axis [-0.400000] speed [1.000000];
 	move larm to y-axis [-0.450000] speed [1.000000];
 	move gun to z-axis [0.750000] speed [3.000000];
 	turn torso to x-axis <-1.000000> speed <5.000000>;
-	turn ruparm to x-axis <-66.010989> speed <86.000000>;
+	turn ruparm to x-axis <-66.005495> speed <86.000000>;
 	turn head to x-axis <-1.000000> speed <13.000000>;
 	turn leftshoulder to y-axis <-27.005495> speed <68.000000>;
 	turn luparm to x-axis <-89.016484> speed <120.000000>;
 	turn larm to z-axis <34.005495> speed <39.000000>;
 	turn lhand to z-axis <27.005495> speed <13.000000>;
 	turn rarm to x-axis <-23.005495> speed <149.000000>;
-	turn gun to x-axis <-90.021978> speed <187.000000>;
+	turn gun to x-axis <-90.016484> speed <187.000000>;
 	sleep 240;
 	move leftshoulder to z-axis [1.850000] speed [0.000000];
 	move luparm to y-axis [-0.450000] speed [0.000000];
 	move larm to y-axis [-0.450000] speed [0.000000];
 	turn leftshoulder to y-axis <-27.005495> speed <3.000000>;
-	turn luparm to x-axis <-90.021978> speed <3.000000>;
+	turn luparm to x-axis <-90.016484> speed <3.000000>;
 	turn larm to z-axis <35.005495> speed <7.000000>;
 	turn lhand to z-axis <43.005495> speed <161.000000>;
 	sleep 98;
-	turn sleave to x-axis <45.010989> speed <416.000000>;
+	turn sleave to x-axis <45.005495> speed <416.000000>;
 	sleep 108;
-	turn sleave to x-axis <180.043956> speed <2813.000000>;
+	turn sleave to x-axis <180.038462> speed <2813.000000>;
 	sleep 48;
-	move barrel to z-axis [3.639996] speed [46.000000];
+	move barrel to z-axis [3.639990] speed [46.000000];
 	sleep 78;
 	move scope to y-axis [-0.650000] speed [4.000000];
 	turn scope to x-axis <-19.000000> speed <140.000000>;
 	sleep 138;
-	move scope to y-axis [-1.139996] speed [3.000000];
+	move scope to y-axis [-1.139990] speed [3.000000];
 	turn scope to x-axis <0.000000> speed <130.000000>;
 	sleep 148;
 	sleep 18;
@@ -833,29 +832,29 @@ FoldGun()
 	move leftshoulder to z-axis [1.050000] speed [3.000000];
 	move luparm to y-axis [-0.450000] now;
 	move larm to y-axis [-0.450000] now;
-	move gun to y-axis [-1.139996] now;
+	move gun to y-axis [-1.139990] now;
 	move gun to z-axis [0.750000] now;
-	move scope to y-axis [-1.139996] now;
+	move scope to y-axis [-1.139990] now;
 	move scope to y-axis [-0.650000] speed [2.000000];
-	move barrel to z-axis [3.639996] now;
+	move barrel to z-axis [3.639990] now;
 	move barrel to z-axis [0.000000] speed [18.000000];
-	turn torso to x-axis <-1.049451> speed <4.189341>;
+	turn torso to x-axis <-1.049451> speed <4.186813>;
 	turn ruparm to x-axis <-66.802198> now;
 	turn ruparm to x-axis <-40.005495> speed <130.000000>;
-	turn head to x-axis <-1.747253> speed <6.974921>;
+	turn head to x-axis <-1.747253> speed <6.972527>;
 	turn leftshoulder to y-axis <-27.423077> now;
 	turn leftshoulder to y-axis <-6.000000> speed <105.000000>;
-	turn luparm to x-axis <-90.021978> now;
-	turn luparm to x-axis <-59.010989> speed <152.000000>;
-	turn larm to z-axis <35.153846> now;
+	turn luparm to x-axis <-90.016484> now;
+	turn luparm to x-axis <-59.005495> speed <152.000000>;
+	turn larm to z-axis <35.148352> now;
 	turn larm to z-axis <19.000000> speed <79.000000>;
 	turn lhand to z-axis <43.236264> now;
 	turn lhand to z-axis <26.005495> speed <84.000000>;
-	turn rarm to x-axis <-23.203297> speed <92.626065>;
-	turn gun to x-axis <-90.021978> speed <389.849789>;
+	turn rarm to x-axis <-23.203297> speed <92.620879>;
+	turn gun to x-axis <-90.016484> speed <389.846154>;
 	turn scope to x-axis <0.000000> now;
 	turn scope to x-axis <-18.000000> speed <91.000000>;
-	turn sleave to x-axis <180.043956> speed <718.723857>;
+	turn sleave to x-axis <180.038462> speed <718.719780>;
 	sleep 200;
 	move leftshoulder to z-axis [0.000000] speed [5.000000];
 	move larm to y-axis [0.000000] speed [2.000000];
@@ -869,11 +868,11 @@ FoldGun()
 	sleep 200;
 	move luparm to y-axis [0.000000] speed [2.000000];
 	move larm to y-axis [0.000000] speed [0.000000];
-	turn ruparm to x-axis <-48.010989> speed <94.000000>;
+	turn ruparm to x-axis <-48.005495> speed <94.000000>;
 	turn luparm to x-axis <-25.005495> speed <75.000000>;
 	turn larm to z-axis <0.000000> speed <50.000000>;
 	turn lhand to z-axis <0.000000> speed <65.000000>;
-	turn sleave to x-axis <90.021978> speed <450.000000>;
+	turn sleave to x-axis <90.016484> speed <450.000000>;
 	sleep 200;
 	turn ruparm to x-axis <-13.000000> speed <175.000000>;
 	turn luparm to x-axis <-1.000000> speed <123.000000>;
@@ -925,17 +924,17 @@ Stop()
 
 RequestState(requestedstate, currentstate)
 {
-	if( statechg_StateChanging )
+	if( Static_Var_7 )
 	{
-		statechg_DesiredState = requestedstate;
+		Static_Var_6 = requestedstate;
 		return (0);
 	}
-	statechg_StateChanging = TRUE;
-	currentstate = statechg_DesiredState;
-	statechg_DesiredState = requestedstate;
-	while( statechg_DesiredState != currentstate )
+	Static_Var_7 = 1;
+	currentstate = Static_Var_6;
+	Static_Var_6 = requestedstate;
+	while( Static_Var_6 != currentstate )
 	{
-		if( statechg_DesiredState )
+		if( Static_Var_6 )
 		{
 			call-script Stop();
 			currentstate = 1;
@@ -946,7 +945,7 @@ RequestState(requestedstate, currentstate)
 			currentstate = 0;
 		}
 	}
-	statechg_StateChanging = FALSE;
+	Static_Var_7 = 0;
 }
 
 MotionControl(moving, aiming, justmoved)
@@ -993,10 +992,13 @@ MotionControl(moving, aiming, justmoved)
 
 UnitSpeed()
 {
-	while(TRUE)
+	while( TRUE )
 	{
-		currentSpeed = (get CURRENT_SPEED)*100/moveSpeed;
-		if (currentSpeed<20) currentSpeed=20;
+		Static_Var_9 = get CURRENT_SPEED * 100 / Static_Var_8;
+		if( Static_Var_9 < 20 )
+		{
+			Static_Var_9 = 20;
+		}
 		sleep 142;
 	}
 }
@@ -1039,10 +1041,10 @@ Create()
 	Static_Var_1 = 0;
 	hide flash;
 	restore_delay = 2000;
-	statechg_DesiredState = TRUE;
-	statechg_StateChanging = FALSE;
-	moveSpeed = get MAX_SPEED;
-	currentSpeed = 100;
+	Static_Var_6 = 1;
+	Static_Var_7 = 0;
+	Static_Var_8 = get MAX_SPEED;
+	Static_Var_9 = 100;
 	start-script SmokeUnit();
 }
 
@@ -1091,7 +1093,7 @@ AimPrimary(heading, pitch)
 FirePrimary()
 {
 	emit-sfx 1024 + 0 from flash;
-	turn rarm to x-axis <-45.010989> speed <200.000000>;
+	turn rarm to x-axis <-45.005495> speed <200.000000>;
 	sleep 150;
 	turn rarm to x-axis <-23.005495> speed <50.000000>;
 	sleep 1000;
@@ -1133,7 +1135,6 @@ AimSecondary(heading, pitch)
 	return (1);
 }
 
-
 SweetSpot(piecenum)
 {
 	piecenum = torso;
@@ -1160,7 +1161,7 @@ Killed(severity, corpsetype)
 		explode scope type BITMAPONLY | BITMAP4;
 		explode sleave type BITMAPONLY | BITMAP5;
 		explode torso type BITMAPONLY | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -1181,7 +1182,7 @@ Killed(severity, corpsetype)
 		explode scope type FALL | BITMAP4;
 		explode sleave type FALL | BITMAP5;
 		explode torso type SHATTER | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -1202,7 +1203,7 @@ Killed(severity, corpsetype)
 		explode scope type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP4;
 		explode sleave type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
 		explode torso type SHATTER | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode barrel type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP1;
@@ -1221,7 +1222,7 @@ Killed(severity, corpsetype)
 	explode scope type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP4;
 	explode sleave type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
 	explode torso type SHATTER | EXPLODE_ON_HIT | BITMAP5;
-	return (0);
+	return (corpsetype);
 	explode luparm type FALL | BITMAP3;
 	explode lupleg type FALL | BITMAP4;
 	explode rarm type FALL | BITMAP5;
@@ -1231,7 +1232,7 @@ Killed(severity, corpsetype)
 	explode scope type FALL | BITMAP4;
 	explode sleave type FALL | BITMAP5;
 	explode torso type SHATTER | BITMAP5;
-	return (0);
+	return (corpsetype);
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
@@ -1251,7 +1252,7 @@ Killed(severity, corpsetype)
 		explode scope type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP4;
 		explode sleave type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
 		explode torso type SHATTER | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode barrel type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP1;
@@ -1270,14 +1271,14 @@ Killed(severity, corpsetype)
 	explode scope type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP4;
 	explode sleave type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
 	explode torso type SHATTER | EXPLODE_ON_HIT | BITMAP5;
-	return (0);
+	return (corpsetype);
 	explode rleg type FALL | BITMAP1;
 	explode ruparm type FALL | BITMAP2;
 	explode rupleg type FALL | BITMAP3;
 	explode scope type FALL | BITMAP4;
 	explode sleave type FALL | BITMAP5;
 	explode torso type SHATTER | BITMAP5;
-	return (0);
+	return (corpsetype);
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
@@ -1297,7 +1298,7 @@ Killed(severity, corpsetype)
 		explode scope type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP4;
 		explode sleave type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
 		explode torso type SHATTER | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode barrel type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP1;
@@ -1316,7 +1317,7 @@ Killed(severity, corpsetype)
 	explode scope type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP4;
 	explode sleave type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
 	explode torso type SHATTER | EXPLODE_ON_HIT | BITMAP5;
-	return (0);
+	return (corpsetype);
 	explode lupleg type FALL | BITMAP4;
 	explode rarm type FALL | BITMAP5;
 	explode rleg type FALL | BITMAP1;
@@ -1325,7 +1326,7 @@ Killed(severity, corpsetype)
 	explode scope type FALL | BITMAP4;
 	explode sleave type FALL | BITMAP5;
 	explode torso type SHATTER | BITMAP5;
-	return (0);
+	return (corpsetype);
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
@@ -1345,7 +1346,7 @@ Killed(severity, corpsetype)
 		explode scope type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP4;
 		explode sleave type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
 		explode torso type SHATTER | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode barrel type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP1;
@@ -1364,7 +1365,7 @@ Killed(severity, corpsetype)
 	explode scope type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP4;
 	explode sleave type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
 	explode torso type SHATTER | EXPLODE_ON_HIT | BITMAP5;
-	return (0);
+	return (corpsetype);
 	explode luparm type FALL | BITMAP3;
 	explode lupleg type FALL | BITMAP4;
 	explode rarm type FALL | BITMAP5;
@@ -1374,7 +1375,7 @@ Killed(severity, corpsetype)
 	explode scope type FALL | BITMAP4;
 	explode sleave type FALL | BITMAP5;
 	explode torso type SHATTER | BITMAP5;
-	return (0);
+	return (corpsetype);
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
@@ -1394,7 +1395,7 @@ Killed(severity, corpsetype)
 		explode scope type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP4;
 		explode sleave type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
 		explode torso type SHATTER | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode barrel type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP1;
@@ -1413,4 +1414,5 @@ Killed(severity, corpsetype)
 	explode scope type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP4;
 	explode sleave type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
 	explode torso type SHATTER | EXPLODE_ON_HIT | BITMAP5;
+	return (corpsetype);
 }

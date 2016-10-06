@@ -3,27 +3,25 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, link, rengine, lengine, rwing1, lwing1, rwing2, lwing2, jet1, jet2, jet3, body, jet4, jet5, jet6, jet7, jet8,rearengine,lpiv,rpiv,flare1,flare2;
+piece  base, link, rengine, lengine, rwing1, lwing1, rwing2, lwing2,
+       jet1, jet2, jet3, body, jet4, jet5, jet6, jet7,
+       jet8, rearengine, lpiv, rpiv, flare1, flare2;
 
-static-var  Static_Var_1, unitviewer, OK;
+static-var  Static_Var_1, unitviewer, Static_Var_3, statechg_DesiredState, statechg_StateChanging;
 
-#define SMOKEPIECE1 base
-
-#include "StateChg.h"
 
 activatescr()
 {
 	if( TRUE )
 	{
-	OK=1;
-	turn rwing1 to z-axis <-85> speed <57>;
-	turn rwing2 to z-axis <150> speed <100>;
-	turn rpiv to z-axis <-65> speed <50>;
-	turn lwing1 to z-axis <85> speed <57>;
-	turn lwing2 to z-axis <-150> speed <100>;
-	turn lpiv to z-axis <65> speed <50>;
-
-	sleep 1100;
+		Static_Var_3 = 1;
+		turn rwing1 to z-axis <-85.000000> speed <57.000000>;
+		turn rwing2 to z-axis <150.000000> speed <100.000000>;
+		turn rpiv to z-axis <-65.000000> speed <50.000000>;
+		turn lwing1 to z-axis <85.000000> speed <57.000000>;
+		turn lwing2 to z-axis <-150.000000> speed <100.000000>;
+		turn lpiv to z-axis <65.000000> speed <50.000000>;
+		sleep 1100;
 	}
 	sleep 44;
 }
@@ -32,26 +30,81 @@ deactivatescr()
 {
 	if( TRUE )
 	{
-	OK=0;
-	turn rwing1 to z-axis <0> speed <57>;
-	turn rwing2 to z-axis <0> speed <100>;
-	turn rpiv to z-axis <0> speed <50>;
-	turn lwing1 to z-axis <0> speed <57>;
-	turn lwing2 to z-axis <0> speed <100>;
-	turn lpiv to z-axis <0> speed <50>;
+		Static_Var_3 = 0;
+		turn rwing1 to z-axis <0.000000> speed <57.000000>;
+		turn rwing2 to z-axis <0.000000> speed <100.000000>;
+		turn rpiv to z-axis <0.000000> speed <50.000000>;
+		turn lwing1 to z-axis <0.000000> speed <57.000000>;
+		turn lwing2 to z-axis <0.000000> speed <100.000000>;
+		turn lpiv to z-axis <0.000000> speed <50.000000>;
 	}
 	sleep 44;
 }
-#include "SmokeUnit.h"
-#define ACTIVATECMD			call-script activatescr();
-#define DEACTIVATECMD		call-script deactivatescr();
-#include "StateChg.h"
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script activatescr();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script deactivatescr();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
 
 Create()
 {
 	unitviewer = FALSE;
 	Static_Var_1 = 0;
-	OK=0;
+	Static_Var_3 = 0;
 	call-script InitState();
 	start-script SmokeUnit();
 }
@@ -66,9 +119,9 @@ SweetSpot(piecenum)
 	piecenum = base;
 }
 
-QueryTransport(piecenum)
+QueryTransport(Func_Var_1)
 {
-	piecenum = link;
+	Func_Var_1 = 1;
 }
 
 QueryPrimary(piecenum)
@@ -81,7 +134,6 @@ QuerySecondary(piecenum)
 	piecenum = flare2;
 }
 
-
 Activate()
 {
 	if( unitviewer )
@@ -90,9 +142,9 @@ Activate()
 	}
 }
 
-BeginTransport(height)
+BeginTransport(Func_Var_1)
 {
-	move link to y-axis (0 - height) now;
+	move link to y-axis [0.000000] - Func_Var_1 now;
 	start-script RequestState(0);
 }
 
@@ -111,42 +163,41 @@ EndTransport()
 
 ProcessFlames()
 {
-while( TRUE )
+	while( TRUE )
 	{
-	if( Static_Var_1 == 1 OR Static_Var_1 == 2 OR Static_Var_1 == 3 )
+		if( Static_Var_1 == 1 OR Static_Var_1 == 2 OR Static_Var_1 == 3 )
 		{
-		emit-sfx 0 from jet1;
-		emit-sfx 0 from jet2;
-		emit-sfx 0 from jet5;
-		emit-sfx 0 from jet6;
-		if ( OK )
+			emit-sfx 0 from jet1;
+			emit-sfx 0 from jet2;
+			emit-sfx 0 from jet5;
+			emit-sfx 0 from jet6;
+			if( Static_Var_3 )
 			{
-			emit-sfx 0 from jet3;
-			emit-sfx 0 from jet4;
-			emit-sfx 0 from jet7;
-			emit-sfx 0 from jet8;
+				emit-sfx 0 from jet3;
+				emit-sfx 0 from jet4;
+				emit-sfx 0 from jet7;
+				emit-sfx 0 from jet8;
 			}
 		}
-	sleep 100;
+		sleep 100;
 	}
 }
 
 StartMoving()
 {
-	turn rengine to x-axis <30> speed <30>;
-	turn lengine to x-axis <30> speed <30>;
-	turn rearengine to x-axis <70> speed <30>;
+	turn rengine to x-axis <30.000000> speed <30.000000>;
+	turn lengine to x-axis <30.000000> speed <30.000000>;
+	turn rearengine to x-axis <70.000000> speed <30.000000>;
 	sleep 1000;
-
 }
 
 StopMoving()
 {
 	signal 2;
 	Static_Var_1 = 0;
-	turn rengine to x-axis <0> speed <100>;
-	turn lengine to x-axis <0> speed <100>;
-	turn rearengine to x-axis <0> speed <100>;	
+	turn rengine to x-axis <0.000000> speed <100.000000>;
+	turn lengine to x-axis <0.000000> speed <100.000000>;
+	turn rearengine to x-axis <0.000000> speed <100.000000>;
 	sleep 1000;
 }
 
@@ -154,8 +205,8 @@ MoveRate1()
 {
 	signal 2;
 	set-signal-mask 2;
-	turn rengine to x-axis <30> speed <30>;
-	turn lengine to x-axis <30> speed <30>;
+	turn rengine to x-axis <30.000000> speed <30.000000>;
+	turn lengine to x-axis <30.000000> speed <30.000000>;
 	start-script ProcessFlames();
 	Static_Var_1 = 1;
 }
@@ -164,8 +215,8 @@ MoveRate2()
 {
 	signal 2;
 	set-signal-mask 2;
-	turn rengine to x-axis <60> speed <30>;
-	turn lengine to x-axis <60> speed <30>;
+	turn rengine to x-axis <60.000000> speed <30.000000>;
+	turn lengine to x-axis <60.000000> speed <30.000000>;
 	start-script ProcessFlames();
 	Static_Var_1 = 2;
 }
@@ -174,8 +225,8 @@ MoveRate3()
 {
 	signal 2;
 	set-signal-mask 2;
-	turn rengine to x-axis <80> speed <30>;
-	turn lengine to x-axis <80> speed <30>;
+	turn rengine to x-axis <80.000000> speed <30.000000>;
+	turn lengine to x-axis <80.000000> speed <30.000000>;
 	start-script ProcessFlames();
 	Static_Var_1 = 3;
 }
@@ -193,7 +244,7 @@ Killed(severity, corpsetype)
 		explode jet2 type BITMAPONLY | BITMAP1;
 		explode jet3 type BITMAPONLY | BITMAP2;
 		explode lwing2 type BITMAPONLY | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -206,7 +257,7 @@ Killed(severity, corpsetype)
 		explode jet2 type FALL | BITMAP1;
 		explode jet3 type FALL | BITMAP2;
 		explode lwing1 type FALL | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -219,7 +270,7 @@ Killed(severity, corpsetype)
 		explode jet2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 		explode jet3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 		explode rwing2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode rengine type BITMAPONLY | BITMAP1;
@@ -230,4 +281,5 @@ Killed(severity, corpsetype)
 	explode jet2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 	explode jet3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 	explode lwing2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	return (corpsetype);
 }

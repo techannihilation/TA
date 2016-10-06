@@ -5,7 +5,7 @@
 
 piece  base, body, towers, holo, lights, metal, emit;
 
-static-var  mmState, Active, Effects;
+static-var  Static_Var_1, Static_Var_2, Static_Var_3;
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -37,7 +37,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Go()
 {
-	Effects = 1;
+	Static_Var_3 = 1;
 	cache lights;
 	hide lights;
 	show metal;
@@ -46,17 +46,16 @@ Go()
 
 Stop()
 {
-	Effects = 0;
+	Static_Var_3 = 0;
 	cache metal;
 	hide metal;
 	show lights;
 	dont-cache lights;
 }
 
-MMStatus(State)
+MMStatus(Func_Var_1)
 {
-	Active = State;
-	//get PRINT(Active);
+	Static_Var_2 = Func_Var_1;
 }
 
 ImAMetalMaker()
@@ -65,22 +64,21 @@ ImAMetalMaker()
 	{
 		sleep 150;
 	}
-	mmState = -1;
+	Static_Var_1 = -1;
 	while( TRUE )
-	{	
-		if (Active == 1)
+	{
+		if( Static_Var_2 == 1 )
 		{
-			if (mmState != 1) {
+			if( Static_Var_1 != 1 )
+			{
 				call-script Go();
-				mmState = 1;
+				Static_Var_1 = 1;
 			}
 		}
-		else
+		else if( Static_Var_1 != 0 )
 		{
-			if (mmState != 0) {
-				call-script Stop();
-				mmState = 0;
-			}
+			call-script Stop();
+			Static_Var_1 = 0;
 		}
 		sleep 1000;
 	}
@@ -88,20 +86,20 @@ ImAMetalMaker()
 
 EffectWatch()
 {
-	while(TRUE)
+	while( TRUE )
 	{
-		while( Effects  == 1)
+		while( Static_Var_3 == 1 )
 		{
 			emit-sfx 1024 + 0 from emit;
 			sleep 1600;
 		}
-	sleep 333;
+		sleep 333;
 	}
 }
 
 Create()
 {
-    Effects = 0;
+	Static_Var_3 = 0;
 	dont-shade metal;
 	dont-cache lights;
 	start-script SmokeUnit();
@@ -127,16 +125,17 @@ Killed(severity, corpsetype)
 		corpsetype = 2;
 		explode base type BITMAPONLY | BITMAP1;
 		explode body type SHATTER | EXPLODE_ON_HIT | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
 		explode base type BITMAPONLY | BITMAP1;
 		explode body type SHATTER | EXPLODE_ON_HIT | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP1;
 	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP2;
+	return (corpsetype);
 }

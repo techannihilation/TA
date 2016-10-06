@@ -1,0 +1,34 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  body, rtwing, ltwing, bombpt;
+
+
+Create()
+{
+	start-script Create();
+}
+
+Activate()
+{
+	turn rtwing to y-axis <-75.016484> speed <30.005495>;
+	turn ltwing to y-axis <75.016484> speed <30.005495>;
+}
+
+Deactivate()
+{
+	turn rtwing to y-axis <0.000000> speed <30.005495>;
+	turn ltwing to y-axis <0.000000> speed <30.005495>;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = bombpt;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = body;
+}

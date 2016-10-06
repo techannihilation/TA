@@ -7,7 +7,7 @@ piece  flare1, flare2, base, launcher2, door1, door2, plate, wake1,
        wake2, fp11, fp12, fp13, ground;
 
 static-var  Static_Var_1, gun_1, gun_3, restore_delay, Static_Var_5,
-            statechg_DesiredState, statechg_StateChanging, oldHead;
+            Static_Var_6, Static_Var_7, Static_Var_8;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -30,7 +30,6 @@ deactivatescr()
 	move door1 to x-axis [4.000000] now;
 	move door2 to x-axis [-4.000000] now;
 	sleep 750;
-
 	move door1 to x-axis [0.000000] speed [6.000000];
 	move door2 to x-axis [0.000000] speed [7.000000];
 	sleep 600;
@@ -38,29 +37,28 @@ deactivatescr()
 
 SetDirection(heading)
 {
-	var spd;
-	spd = (get ABS(oldHead) - get ABS(heading)) / 2;
-	turn ground to y-axis heading speed spd;
-	turn base to y-axis 0-heading speed spd;
-	oldHead = heading;
+	var Func_Var_2;
+	Func_Var_2 = ( get ABS(Static_Var_8) - get ABS(heading) ) / 2;
+	turn ground to y-axis heading speed Func_Var_2;
+	turn base to y-axis <0.000000> - heading speed Func_Var_2;
+	Static_Var_8 = heading;
 }
 
-RockOnWaves()
+RockOnWaves(Func_Var_1, Func_Var_2, Func_Var_3)
 {
-	var rockDir, rockAng, rockSpeed;
-	rockDir = <-0.1>;
-	rockAng = <-0.1>;
+	Func_Var_1 = -18;
+	Func_Var_2 = -18;
 	while( TRUE )
 	{
-		while( get ABS(rockAng) < <1.31> )
+		while( get ABS(Func_Var_2) < 238 )
 		{
-			rockSpeed = <1.45> - get ABS(rockAng);
-			turn ground to x-axis rockAng speed rockSpeed*4;
+			Func_Var_3 = 263 - get ABS(Func_Var_2);
+			turn ground to x-axis Func_Var_2 speed Func_Var_3 * <0.021978>;
 			wait-for-turn ground around x-axis;
-			rockAng = rockAng + rockDir;
+			Func_Var_2 = Func_Var_2 + Func_Var_1;
 		}
-		rockDir = 0 - rockDir;
-		rockAng = rockAng + rockDir + rockDir;
+		Func_Var_1 = 0 - Func_Var_1;
+		Func_Var_2 = Func_Var_2 + Func_Var_1 + Func_Var_1;
 	}
 }
 
@@ -102,27 +100,22 @@ stop()
 {
 	Static_Var_1 = 0;
 	call-script deactivatescr();
-	/*
-	if( Static_Var_5 )
-	{
-	}
-	*/
 	Static_Var_5 = 0;
 }
 
 RequestState(requestedstate, currentstate)
 {
-	if( statechg_StateChanging )
+	if( Static_Var_7 )
 	{
-		statechg_DesiredState = requestedstate;
+		Static_Var_6 = requestedstate;
 		return (0);
 	}
-	statechg_StateChanging = TRUE;
-	currentstate = statechg_DesiredState;
-	statechg_DesiredState = requestedstate;
-	while( statechg_DesiredState != currentstate )
+	Static_Var_7 = 1;
+	currentstate = Static_Var_6;
+	Static_Var_6 = requestedstate;
+	while( Static_Var_6 != currentstate )
 	{
-		if( statechg_DesiredState )
+		if( Static_Var_6 )
 		{
 			call-script stop();
 			currentstate = 1;
@@ -133,18 +126,18 @@ RequestState(requestedstate, currentstate)
 			currentstate = 0;
 		}
 	}
-	statechg_StateChanging = FALSE;
+	Static_Var_7 = 0;
 }
 
 Create()
 {
 	Static_Var_5 = 0;
-	gun_1 = 0;
-	gun_3 = 0;
+	gun_1 = flare1;
+	gun_3 = flare1;
 	Static_Var_1 = 0;
 	restore_delay = 3000;
-	statechg_DesiredState = TRUE;
-	statechg_StateChanging = FALSE;
+	Static_Var_6 = 1;
+	Static_Var_7 = 0;
 	start-script SmokeUnit();
 }
 
@@ -172,11 +165,11 @@ waveSplash()
 {
 	while( TRUE )
 	{
-		turn base to x-axis <-3.0> speed <3.0>;
-		move base to y-axis [0.35] speed [0.23];
+		turn base to x-axis <-3.000000> speed <3.000000>;
+		move base to y-axis [0.350000] speed [0.229999];
 		wait-for-turn base around x-axis;
-		turn base to x-axis <0.0> speed <3.0>;
-		move base to y-axis [0.0] speed [0.23];
+		turn base to x-axis <0.000000> speed <3.000000>;
+		move base to y-axis [0.000000] speed [0.229999];
 		wait-for-turn base around x-axis;
 	}
 }
@@ -185,23 +178,26 @@ StartMoving()
 {
 	signal SIG_MOVE;
 	set-signal-mask SIG_MOVE;
-	var waketime;
+	var Func_Var_1;
 	start-script waveSplash();
 	while( TRUE )
 	{
 		emit-sfx 2 from wake1;
 		emit-sfx 2 from wake2;
-		waketime = (get CURRENT_SPEED) * 100 / get MAX_SPEED;
-		if( waketime < 50 ) waketime = 50;
-		sleep 12000 / waketime;
+		Func_Var_1 = get CURRENT_SPEED * 100 / get MAX_SPEED;
+		if( Func_Var_1 < 50 )
+		{
+			Func_Var_1 = 50;
+		}
+		sleep 12000 / Func_Var_1;
 	}
 }
 
 StopMoving()
 {
 	signal SIG_MOVE;
-	turn base to x-axis <0.0> speed <3.0>;
-	move base to y-axis [0.0] speed [0.23];
+	turn base to x-axis <0.000000> speed <3.000000>;
+	move base to y-axis [0.000000] speed [0.229999];
 }
 
 AimPrimary(heading, pitch)
@@ -237,7 +233,10 @@ TargetCleared(Func_Var_1)
 FirePrimary()
 {
 	++gun_1;
-	if( gun_1 >= 3 ) gun_1 = 0;
+	if( gun_1 >= 3 )
+	{
+		gun_1 = flare1;
+	}
 }
 
 FireTertiary()
@@ -257,7 +256,7 @@ AimFromTertiary(piecenum)
 
 QueryPrimary(piecenum)
 {
-	piecenum = fp11 + gun_1;
+	piecenum = 9 + gun_1;
 }
 
 QueryTertiary(piecenum)
@@ -284,7 +283,7 @@ Killed(severity, corpsetype)
 		explode plate type BITMAPONLY | BITMAP3;
 		explode wake1 type BITMAPONLY | BITMAP3;
 		explode wake2 type BITMAPONLY | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -298,7 +297,7 @@ Killed(severity, corpsetype)
 		explode plate type BITMAPONLY | BITMAP3;
 		explode wake1 type FALL | EXPLODE_ON_HIT | BITMAP3;
 		explode wake2 type FALL | EXPLODE_ON_HIT | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -312,7 +311,7 @@ Killed(severity, corpsetype)
 		explode plate type BITMAPONLY | BITMAP3;
 		explode wake1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode wake2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP1;
@@ -324,4 +323,5 @@ Killed(severity, corpsetype)
 	explode plate type BITMAPONLY | BITMAP3;
 	explode wake1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode wake2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	return (corpsetype);
 }

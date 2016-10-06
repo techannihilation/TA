@@ -1,0 +1,146 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  flash1, flash2, base, turret, guns;
+
+static-var  gun_1;
+
+// Signal definitions
+#define SIG_AIM				2
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+	return (0);
+	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
+}
+
+Create()
+{
+	hide flash1;
+	hide flash2;
+	dont-cache flash1;
+	dont-cache flash2;
+	dont-cache guns;
+	dont-cache turret;
+	dont-shade flash1;
+	dont-shade flash2;
+	dont-shade guns;
+	dont-shade turret;
+	gun_1 = flash1;
+	start-script SmokeUnit();
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	turn turret to y-axis heading speed <200.000000>;
+	turn guns to x-axis <0.000000> - pitch speed <200.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn guns around x-axis;
+	return (1);
+}
+
+FirePrimary()
+{
+	if( gun_1 == 0 )
+	{
+		gun_1 = flash2;
+		return (0);
+	}
+	if( gun_1 == 1 )
+	{
+		gun_1 = flash1;
+	}
+}
+
+QueryPrimary(piecenum)
+{
+	if( gun_1 == 0 )
+	{
+		piecenum = flash1;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = flash2;
+	}
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = guns;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	hide flash1;
+	hide flash2;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type BITMAPONLY | BITMAP1;
+		explode flash1 type BITMAPONLY | BITMAP2;
+		explode flash2 type BITMAPONLY | BITMAP3;
+		explode guns type BITMAPONLY | BITMAP4;
+		explode turret type BITMAPONLY | BITMAP5;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type BITMAPONLY | BITMAP1;
+		explode flash1 type FALL | BITMAP2;
+		explode flash2 type FALL | BITMAP3;
+		explode guns type BITMAPONLY | BITMAP4;
+		explode turret type SHATTER | BITMAP5;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type BITMAPONLY | BITMAP1;
+		explode flash1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode flash2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode guns type BITMAPONLY | BITMAP4;
+		explode turret type SHATTER | BITMAP5;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type BITMAPONLY | BITMAP1;
+	explode flash1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode flash2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode guns type BITMAPONLY | BITMAP4;
+	explode turret type SHATTER | EXPLODE_ON_HIT | BITMAP5;
+	return (corpsetype);
+}

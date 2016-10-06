@@ -111,12 +111,12 @@ SetSpeed(Func_Var_1)
 	}
 }
 
-SetDirection(Func_Var_1)
+SetDirection(heading)
 {
-	Static_Var_2 = Func_Var_1;
+	Static_Var_2 = heading;
 	if( !get BUILD_PERCENT_LEFT )
 	{
-		turn post to y-axis Func_Var_1 speed <20.000000>;
+		turn post to y-axis heading speed <20.000000>;
 	}
 }
 
@@ -133,7 +133,7 @@ Killed(severity, corpsetype)
 		explode base type BITMAPONLY | BITMAP1;
 		explode blades type BITMAPONLY | BITMAP2;
 		explode post type BITMAPONLY | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -141,7 +141,7 @@ Killed(severity, corpsetype)
 		explode base type BITMAPONLY | BITMAP1;
 		explode blades type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 		explode post type BITMAPONLY | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -149,10 +149,11 @@ Killed(severity, corpsetype)
 		explode base type BITMAPONLY | BITMAP1;
 		explode blades type SHATTER | BITMAP2;
 		explode post type BITMAPONLY | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP1;
 	explode blades type SHATTER | BITMAP2;
 	explode post type BITMAPONLY | BITMAP3;
+	return (corpsetype);
 }

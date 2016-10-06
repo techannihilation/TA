@@ -6,11 +6,11 @@
 piece  base, beam, door1, door2, boom, neck, gun, wake1,
        wake2, wake3, wake4, wake5, wake6, wake7, wake8;
 
-static-var  terrain, notBuilding, statechg_DesiredState, statechg_StateChanging;
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4;
 
 // Signal definitions
-#define SIG_MOVE		2
-#define SIG_BUILD		4	
+#define SIG_MOVE			2
+
 
 activatescr()
 {
@@ -19,7 +19,6 @@ activatescr()
 	turn door2 to z-axis <0.000000> now;
 	turn door2 to z-axis <150.000000> speed <300.000000>;
 	sleep 683;
-
 	turn boom to x-axis <43.000000> speed <62.000000>;
 	turn neck to x-axis <-43.000000> speed <62.000000>;
 	sleep 689;
@@ -30,7 +29,6 @@ deactivatescr()
 	set INBUILDSTANCE to 0;
 	turn gun to y-axis <0.000000> speed <160.000000>;
 	wait-for-turn gun around y-axis;
-
 	turn door1 to z-axis <-150.000000> now;
 	turn door2 to z-axis <150.000000> now;
 	turn boom to x-axis <43.000000> now;
@@ -38,7 +36,6 @@ deactivatescr()
 	turn neck to x-axis <-43.000000> now;
 	turn neck to x-axis <0.000000> speed <64.000000>;
 	sleep 672;
-
 	turn door1 to z-axis <0.000000> speed <300.000000>;
 	turn door2 to z-axis <0.000000> speed <300.000000>;
 	sleep 689;
@@ -73,30 +70,30 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 RequestState(requestedstate, currentstate)
 {
-	if( statechg_StateChanging )
+	if( Static_Var_4 )
 	{
-		statechg_DesiredState = requestedstate;
+		Static_Var_3 = requestedstate;
 		return (0);
 	}
-	statechg_StateChanging = TRUE;
-	currentstate = statechg_DesiredState;
-	statechg_DesiredState = requestedstate;
-	while( statechg_DesiredState != currentstate )
+	Static_Var_4 = 1;
+	currentstate = Static_Var_3;
+	Static_Var_3 = requestedstate;
+	while( Static_Var_3 != currentstate )
 	{
-		if( statechg_DesiredState )
+		if( Static_Var_3 )
 		{
 			call-script deactivatescr();
-			notBuilding = 1;
+			Static_Var_2 = 1;
 			currentstate = 1;
 		}
 		else
 		{
 			call-script activatescr();
-			notBuilding = 0;
+			Static_Var_2 = 0;
 			currentstate = 0;
 		}
 	}
-	statechg_StateChanging = FALSE;
+	Static_Var_4 = 0;
 }
 
 StartMoving()
@@ -105,7 +102,7 @@ StartMoving()
 	set-signal-mask SIG_MOVE;
 	while( TRUE )
 	{
-		if( terrain == 1 OR terrain == 2 )
+		if( Static_Var_1 == 1 OR Static_Var_1 == 2 )
 		{
 			emit-sfx 5 from wake1;
 			emit-sfx 5 from wake2;
@@ -134,14 +131,14 @@ StopMoving()
 
 setSFXoccupy(state)
 {
-	terrain = state;
+	Static_Var_1 = state;
 }
 
 Create()
 {
-	notBuilding = 1;
-	statechg_DesiredState = TRUE;
-	statechg_StateChanging = FALSE;
+	Static_Var_2 = 1;
+	Static_Var_3 = 1;
+	Static_Var_4 = 0;
 	start-script SmokeUnit();
 }
 
@@ -155,23 +152,26 @@ Deactivate()
 	start-script RequestState(1);
 }
 
-StartBuilding(heading, pitch)
+StartBuilding(Func_Var_1, Func_Var_2)
 {
 	start-script RequestState(0);
-	while( notBuilding ) sleep 100;
-	signal SIG_BUILD;
-	turn gun to y-axis heading speed <160.000000>;
+	while( Static_Var_2 )
+	{
+		sleep 100;
+	}
+	signal 4;
+	turn gun to y-axis Func_Var_1 speed <160.000000>;
 	wait-for-turn gun around y-axis;
 	set INBUILDSTANCE to 1;
 }
 
 StopBuilding()
 {
-	signal SIG_BUILD;	
-	set-signal-mask SIG_BUILD;
+	signal 4;
+	set-signal-mask 4;
 	sleep 6000;
 	set-signal-mask 0;
-	signal SIG_BUILD;	
+	signal 4;
 	start-script RequestState(1);
 }
 
@@ -180,13 +180,6 @@ QueryNanoPiece(piecenum)
 	piecenum = beam;
 }
 
-/*
-TargetHeading(Func_Var_1)
-{
-	Static_Var_2 = 0 - Func_Var_1;
-}
-*/
-
 SweetSpot(piecenum)
 {
 	piecenum = base;
@@ -194,7 +187,7 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
-	if( terrain == 1 )
+	if( Static_Var_1 == 1 )
 	{
 		if( severity <= 50 )
 		{
@@ -206,7 +199,7 @@ Killed(severity, corpsetype)
 			explode door2 type BITMAPONLY | BITMAP5;
 			explode gun type SHATTER | BITMAP1;
 			explode neck type FALL | BITMAP2;
-			return (0);
+			return (corpsetype);
 		}
 		corpsetype = 3;
 		explode boom type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
@@ -216,9 +209,9 @@ Killed(severity, corpsetype)
 		explode door2 type BITMAPONLY | BITMAP5;
 		explode gun type SHATTER | BITMAP1;
 		explode neck type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
-	if( terrain == 2 )
+	if( Static_Var_1 == 2 )
 	{
 		if( severity <= 50 )
 		{
@@ -230,7 +223,7 @@ Killed(severity, corpsetype)
 			explode door2 type BITMAPONLY | BITMAP5;
 			explode gun type SHATTER | BITMAP1;
 			explode neck type FALL | BITMAP2;
-			return (0);
+			return (corpsetype);
 		}
 		corpsetype = 3;
 		explode boom type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
@@ -240,7 +233,7 @@ Killed(severity, corpsetype)
 		explode door2 type BITMAPONLY | BITMAP5;
 		explode gun type SHATTER | BITMAP1;
 		explode neck type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 25 )
 	{
@@ -252,7 +245,7 @@ Killed(severity, corpsetype)
 		explode door2 type BITMAPONLY | BITMAP5;
 		explode gun type BITMAPONLY | BITMAP1;
 		explode neck type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -264,7 +257,7 @@ Killed(severity, corpsetype)
 		explode door2 type BITMAPONLY | BITMAP5;
 		explode gun type SHATTER | BITMAP1;
 		explode neck type FALL | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -276,7 +269,7 @@ Killed(severity, corpsetype)
 		explode door2 type BITMAPONLY | BITMAP5;
 		explode gun type SHATTER | BITMAP1;
 		explode neck type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode boom type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
@@ -286,4 +279,5 @@ Killed(severity, corpsetype)
 	explode door2 type BITMAPONLY | BITMAP5;
 	explode gun type SHATTER | EXPLODE_ON_HIT | BITMAP1;
 	explode neck type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	return (corpsetype);
 }

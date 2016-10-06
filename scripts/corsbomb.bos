@@ -4,8 +4,7 @@
 #include "exptype.h"
 
 piece  base, fuselage, eng1, eng2, flare1, sfx3, sfx4, fin,
-       turret1, turret2, fpt1a, fpt1b, fpt2a, fpt2b,
-       ribbon1, ribbon2;
+       turret1, turret2, fpt1a, fpt1b, fpt2a, fpt2b, ribbon1, ribbon2;
 
 static-var  statechg_DesiredState, statechg_StateChanging, gun_1;
 
@@ -87,7 +86,7 @@ RequestState(requestedstate, currentstate)
 }
 
 Create()
-{	
+{
 	hide ribbon1;
 	hide ribbon2;
 	hide eng1;
@@ -154,7 +153,7 @@ Killed(severity, corpsetype)
 		explode eng2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode turret1 type SHATTER | BITMAP2;
 		explode turret2 type SHATTER | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -165,7 +164,7 @@ Killed(severity, corpsetype)
 		explode eng2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode turret1 type SHATTER | BITMAP2;
 		explode turret2 type SHATTER | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -176,7 +175,7 @@ Killed(severity, corpsetype)
 		explode turret1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode eng1 type SHATTER | BITMAP2;
 		explode eng2 type SHATTER | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP3;
@@ -185,4 +184,5 @@ Killed(severity, corpsetype)
 	explode turret1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode eng1 type SHATTER | BITMAP2;
 	explode eng2 type SHATTER | BITMAP2;
+	return (corpsetype);
 }

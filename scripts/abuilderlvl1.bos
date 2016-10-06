@@ -76,10 +76,11 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 1;
 		explode base type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type SHATTER | BITMAP1;
 	explode box type SHATTER | BITMAP4;
 	explode Box03 type SHATTER | BITMAP5;
+	return (corpsetype);
 }

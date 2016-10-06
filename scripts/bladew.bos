@@ -5,7 +5,9 @@
 
 piece  base, flare;
 
+// Signal definitions
 #define SIG_AIM				2
+
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -52,26 +54,26 @@ AimFromPrimary(piecenum)
 
 AimPrimary(heading, pitch)
 {
-    signal SIG_AIM;
+	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	 	while( 255 > heading )
-		{
-			set UNKNOWN_UNIT_VALUE(82) to 0 - 1500 + get UNKNOWN_UNIT_VALUE(82);
-			heading = heading + 1500;
-			sleep 1;
-		}
-		while( heading > 255 )
-		{
-			set UNKNOWN_UNIT_VALUE(82) to 1500 + get UNKNOWN_UNIT_VALUE(82);
-			heading = heading - 1500;
-			sleep 1;
-		}	
+	while( 255 > heading )
+	{
+		set HEADING to 0 - 1500 + get HEADING;
+		heading = heading + 1500;
+		sleep 1;
+	}
+	while( heading > 255 )
+	{
+		set HEADING to 1500 + get HEADING;
+		heading = heading - 1500;
+		sleep 1;
+	}
 	return (1);
 }
 
 PostFire()
 {
-    show flare;
+	show flare;
 	sleep 200;
 	hide flare;
 }
@@ -86,4 +88,5 @@ Killed(severity, corpsetype)
 {
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP1;
+	return (corpsetype);
 }

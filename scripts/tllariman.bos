@@ -66,7 +66,6 @@ RestoreAfterDelay()
 	sleep restore_delay;
 	turn turret to y-axis <0.000000> speed <130.000000>;
 	turn axis to x-axis <0.000000> speed <65.005495>;
-	
 }
 
 AimPrimary(heading, pitch)
@@ -112,15 +111,16 @@ Killed(severity, corpsetype)
 		corpsetype = 1;
 		explode barrel1 type BITMAPONLY | BITMAP2;
 		explode turret type BITMAPONLY | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	explode turret type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
 	explode barrel1 type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+	return (corpsetype);
 }

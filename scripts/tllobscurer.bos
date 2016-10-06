@@ -1,64 +1,109 @@
-piece base,body,turret,w1,w2;
+#define TA			// This is a TA script
 
-#define SIG_MOVE 	2
-#define SMOKEPIECE1 turret
-#include "smokeunit.h"
+#include "sfxtype.h"
 #include "exptype.h"
-#include "hitweap.h"
+
+piece  base, body, turret, w1, w2;
+
+// Signal definitions
+#define SIG_MOVE			2
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from turret;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+HitByWeapon(anglex, anglez)
+{
+	turn base to z-axis anglez speed <105.000000>;
+	turn base to x-axis anglex speed <105.000000>;
+	wait-for-turn base around z-axis;
+	wait-for-turn base around x-axis;
+	turn base to z-axis <0.000000> speed <30.000000>;
+	turn base to x-axis <0.000000> speed <30.000000>;
+}
 
 StartMoving()
-{ signal SIG_MOVE;
-  set-signal-mask SIG_MOVE;
-  spin w1 around x-axis speed <110>;
-  spin w2 around x-axis speed <110>;
-  sleep 400;
-  spin w1 around x-axis speed <200>;
-  spin w2 around x-axis speed <200>;
- }
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	spin w1 around x-axis speed <110.000000>;
+	spin w2 around x-axis speed <110.000000>;
+	sleep 400;
+	spin w1 around x-axis speed <200.000000>;
+	spin w2 around x-axis speed <200.000000>;
+}
 
 StopMoving()
-{ signal SIG_MOVE;
-   stop-spin w1 around x-axis;
-   stop-spin w2 around x-axis;
- }
+{
+	signal SIG_MOVE;
+	stop-spin w1 around x-axis;
+	stop-spin w2 around x-axis;
+}
 
 Create()
-{ start-script SmokeUnit();
- }
+{
+	start-script SmokeUnit();
+}
 
 Activate()
-{ 
- dont-cache turret;
-  spin turret around y-axis speed <100> accelerate <5>;
- }
+{
+	dont-cache turret;
+	spin turret around y-axis speed <100.000000> accelerate <5.000000>;
+}
 
 Deactivate()
-{ 
- stop-spin turret around y-axis;
-  wait-for-turn turret around y-axis;
- cache turret;
- }
+{
+	stop-spin turret around y-axis;
+	wait-for-turn turret around y-axis;
+	cache turret;
+}
 
 SweetSpot(piecenum)
-{ piecenum=turret;
- }
-
-Killed( severity, corpsetype )
 {
-  explode body type BITMAPONLY | BITMAP4;
-  explode turret type BITMAPONLY | BITMAP3;
-  if (severity <= 25)
-   { corpsetype = 1;
-     return( 0 );
-    }
-  explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	piecenum = turret;
+}
 
-  if (severity <= 50)
-   { corpsetype = 2;
-  explode body type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-    return( 0 );
-    }
-  corpsetype = 3;
-  explode body type SHATTER | EXPLODE_ON_HIT | BITMAP2;
-  return( 0 );
- }
+Killed(severity, corpsetype)
+{
+	explode body type BITMAPONLY | BITMAP4;
+	explode turret type BITMAPONLY | BITMAP3;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		return (corpsetype);
+	}
+	explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode body type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP2;
+	return (corpsetype);
+}

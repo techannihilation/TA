@@ -7,16 +7,17 @@ piece  base, body, arm, elights, mlights, steam1, steam2, flames;
 
 static-var  Static_Var_1, Static_Var_2;
 
+
 Steam()
 {
-	while ( TRUE )
+	while( TRUE )
 	{
-		if ( Static_Var_1 == 0 )
+		if( Static_Var_1 == 0 )
 		{
-		emit-sfx 257 from steam2;
-		sleep 200;
+			emit-sfx 257 from steam2;
+			sleep 200;
 		}
-	sleep 1;
+		sleep 1;
 	}
 }
 
@@ -34,20 +35,20 @@ Flamepipe()
 
 Standby()
 {
-	while ( TRUE )
+	while( TRUE )
 	{
-	if( Static_Var_2 == 0 )
-	{
-		turn arm to y-axis <0.000000> speed <30.000000>;
-		wait-for-turn arm around y-axis;
-		Static_Var_1 = 1;
-		sleep 2670;
-		turn arm to y-axis <28.000000> speed <30.000000>;
-		wait-for-turn arm around y-axis;
-		Static_Var_1 = 0;
-		sleep 3670;
-	}
-	sleep 1;
+		if( Static_Var_2 == 0 )
+		{
+			turn arm to y-axis <0.000000> speed <30.000000>;
+			wait-for-turn arm around y-axis;
+			Static_Var_1 = 1;
+			sleep 2670;
+			turn arm to y-axis <28.000000> speed <30.000000>;
+			wait-for-turn arm around y-axis;
+			Static_Var_1 = 0;
+			sleep 3670;
+		}
+		sleep 1;
 	}
 }
 
@@ -57,11 +58,9 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	{
 		sleep 400;
 	}
-	
 	start-script Steam();
 	start-script Flamepipe();
 	start-script Standby();
-	
 	while( TRUE )
 	{
 		healthpercent = get HEALTH;
@@ -126,7 +125,7 @@ Killed(severity, corpsetype)
 		explode body type BITMAPONLY | BITMAP2;
 		explode arm type BITMAPONLY | BITMAP3;
 		explode elights type BITMAPONLY | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -134,10 +133,11 @@ Killed(severity, corpsetype)
 		explode arm type FALL | BITMAP2;
 		explode elights type FALL | BITMAP3;
 		explode body type BITMAPONLY | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP1;
 	explode arm type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP4;
 	explode mlights type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
+	return (corpsetype);
 }

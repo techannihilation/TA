@@ -6,28 +6,29 @@
 piece  base, beam, Door1, Turret, Gun, Door2, Stand, wheel1,
        wheel2, launcher, flare;
 
-static-var  Static_Var_1, gun_2, statechg_DesiredState, statechg_StateChanging,
-			oldHeading, notBuilding;
+static-var  Static_Var_1, gun_2, Static_Var_3, Static_Var_4, Static_Var_5,
+            Static_Var_6;
 
-#define SIG_MOVE	2
-#define SIG_BUILD	4
 
-Steering(heading, steer, currentSpeed)
+Steering(Func_Var_1, Func_Var_2, Func_Var_3)
 {
-	signal SIG_MOVE;
-	set-signal-mask SIG_MOVE;
-	while(1)
+	signal 2;
+	set-signal-mask 2;
+	while( TRUE )
 	{
-		heading = get HEADING;
-		steer = (heading - oldheading)*3;
-		turn wheel1 to y-axis steer speed <180>;	
-		turn wheel2 to y-axis steer speed <180>;	
-		currentSpeed = <4.6> *((get CURRENT_SPEED) * 100 / get MAX_SPEED);
-		if (currentSpeed < <100>) currentSpeed = <100>;
-		spin wheel1 around x-axis speed currentSpeed;
-		spin wheel2 around x-axis speed currentSpeed;
+		Func_Var_1 = get HEADING;
+		Func_Var_2 = ( Func_Var_1 - Static_Var_5 ) * 3;
+		turn wheel1 to y-axis Func_Var_2 speed <180.000000>;
+		turn wheel2 to y-axis Func_Var_2 speed <180.000000>;
+		Func_Var_3 = 837 * get CURRENT_SPEED * 100 / get MAX_SPEED;
+		if( Func_Var_3 < 18200 )
+		{
+			Func_Var_3 = 18200;
+		}
+		spin wheel1 around x-axis speed Func_Var_3;
+		spin wheel2 around x-axis speed Func_Var_3;
 		sleep 66;
-		oldheading = heading;
+		Static_Var_5 = Func_Var_1;
 	}
 }
 
@@ -37,7 +38,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	{
 		sleep 500;
 	}
-	
 	while( TRUE )
 	{
 		healthpercent = get HEALTH;
@@ -59,84 +59,34 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-/*
-Go()
-{
-	return (0);
-}
-
-Stop()
-{
-	return (0);
-}
-
-RequestState(requestedstate, currentstate)
-{
-	if( statechg_StateChanging )
-	{
-		statechg_DesiredState = requestedstate;
-		return (0);
-	}
-	statechg_StateChanging = TRUE;
-	currentstate = statechg_DesiredState;
-	statechg_DesiredState = requestedstate;
-	while( statechg_DesiredState != currentstate )
-	{
-		if( statechg_DesiredState )
-		{
-			call-script Stop();
-			currentstate = 1;
-		}
-		else
-		{
-			call-script Go();
-			currentstate = 0;
-		}
-	}
-	statechg_StateChanging = FALSE;
-}
-*/
-
 Create()
 {
 	hide flare;
 	Static_Var_1 = 0;
 	gun_2 = beam;
-	oldheading = get HEADING;
-	statechg_DesiredState = TRUE;
-	statechg_StateChanging = FALSE;
+	Static_Var_5 = get HEADING;
+	Static_Var_3 = 1;
+	Static_Var_4 = 0;
 	start-script SmokeUnit();
 }
 
-/*
-Activate()
+StartBuilding(Func_Var_1, Func_Var_2)
 {
-	start-script RequestState(0);
-}
-
-Deactivate()
-{
-	start-script RequestState(1);
-}
-*/
-
-StartBuilding(heading, pitch)
-{
-	signal SIG_BUILD;
-	turn Gun to y-axis heading speed <160.>;
+	signal 4;
+	turn Gun to y-axis Func_Var_1 speed <160.000000>;
 	wait-for-turn Gun around y-axis;
 	set INBUILDSTANCE to 1;
 }
 
 StopBuilding()
 {
-	signal SIG_BUILD;	
-	set-signal-mask SIG_BUILD;
+	signal 4;
+	set-signal-mask 4;
 	sleep 6000;
 	set-signal-mask 0;
-	signal SIG_BUILD;	
+	signal 4;
 	set INBUILDSTANCE to 0;
-	turn Gun to y-axis <0.> speed <160.>;
+	turn Gun to y-axis <0.000000> speed <160.000000>;
 	wait-for-turn Gun around y-axis;
 }
 
@@ -147,7 +97,7 @@ StartMoving()
 
 StopMoving()
 {
-	signal SIG_MOVE;
+	signal 2;
 	stop-spin wheel1 around x-axis;
 	stop-spin wheel2 around x-axis;
 }
@@ -156,13 +106,6 @@ QueryNanoPiece(piecenum)
 {
 	piecenum = beam;
 }
-
-/*
-TargetHeading(Func_Var_1)
-{
-	Static_Var_1 = 0 - Func_Var_1;
-}
-*/
 
 SweetSpot(piecenum)
 {
@@ -236,7 +179,7 @@ Killed(severity, corpsetype)
 		explode Turret type BITMAPONLY | BITMAP2;
 		explode wheel1 type BITMAPONLY | BITMAP3;
 		explode wheel2 type BITMAPONLY | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -251,7 +194,7 @@ Killed(severity, corpsetype)
 		explode Turret type FALL | BITMAP2;
 		explode wheel1 type FALL | BITMAP3;
 		explode wheel2 type FALL | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -266,7 +209,7 @@ Killed(severity, corpsetype)
 		explode Turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 		explode wheel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode wheel2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP1;
@@ -279,5 +222,5 @@ Killed(severity, corpsetype)
 	explode Turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 	explode wheel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode wheel2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-	return (0);
+	return (corpsetype);
 }

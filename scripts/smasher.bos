@@ -3,8 +3,8 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  lgun, rgun, rrocket, rflare, lrocket, lflare, base, rotor, rearrotor,
-	   fuselage, rgflare, lgflare;
+piece  lgun, rgun, rrocket, rflare, lrocket, lflare, base, rotor,
+       rearrotor, fuselage, rgflare, lgflare;
 
 static-var  gun_1, gun_2, statechg_DesiredState, statechg_StateChanging;
 
@@ -18,8 +18,6 @@ activatescr()
 		sleep 1454;
 	}
 	sleep 15;
-	return (0);
-	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
 }
 
 deactivatescr()
@@ -102,7 +100,7 @@ RequestState(requestedstate, currentstate)
 }
 
 Create()
-{	
+{
 	hide lgflare;
 	hide rgflare;
 	gun_1 = lgun;
@@ -130,26 +128,23 @@ FirePrimary()
 		{
 			gun_1 = rgun;
 		}
-		
 		move rrocket to z-axis [-1.000000] speed [400.000000];
-		//emit-sfx 1024+0 from rflare;
 		sleep 150;
 		wait-for-move rrocket along z-axis;
 		move rrocket to z-axis [0.000000] speed [2.000000];
 		return (0);
-	if( gun_1 == 1 )
-	{
-		++gun_1;
-		if( gun_1 == 4 )
+		if( gun_1 == 1 )
 		{
-			gun_1 = lgun;
-		}
-		//emit-sfx 1024+0 from rflare;
-		move lrocket to z-axis [-1.000000] speed [400.000000];
-		sleep 150;
-		wait-for-move lrocket along z-axis;
-		move lrocket to z-axis [0.000000] speed [2.000000];
-		return (0);
+			++gun_1;
+			if( gun_1 == 4 )
+			{
+				gun_1 = lgun;
+			}
+			move lrocket to z-axis [-1.000000] speed [400.000000];
+			sleep 150;
+			wait-for-move lrocket along z-axis;
+			move lrocket to z-axis [0.000000] speed [2.000000];
+			return (0);
 		}
 	}
 }
@@ -200,11 +195,11 @@ Shot2()
 {
 	if( gun_2 == 0 )
 	{
-	emit-sfx 1024+0 from rgflare;	
+		emit-sfx 1024 + 0 from rgflare;
 	}
 	if( gun_2 == 1 )
 	{
-	emit-sfx 1024+0 from rgflare;
+		emit-sfx 1024 + 0 from rgflare;
 	}
 }
 
@@ -248,7 +243,7 @@ Killed(severity, corpsetype)
 		explode rearrotor type BITMAPONLY | BITMAP1;
 		explode rgun type BITMAPONLY | BITMAP3;
 		explode lgun type BITMAPONLY | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -261,7 +256,7 @@ Killed(severity, corpsetype)
 		explode rearrotor type FALL | BITMAP1;
 		explode rgun type SHATTER | BITMAP3;
 		explode lgun type BITMAPONLY | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -274,7 +269,7 @@ Killed(severity, corpsetype)
 		explode rearrotor type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 		explode rgun type SHATTER | BITMAP3;
 		explode lgun type BITMAPONLY | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP1;
@@ -285,4 +280,5 @@ Killed(severity, corpsetype)
 	explode rearrotor type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 	explode rgun type SHATTER | EXPLODE_ON_HIT | BITMAP3;
 	explode lgun type BITMAPONLY | BITMAP4;
+	return (corpsetype);
 }

@@ -4,7 +4,8 @@
 #include "exptype.h"
 
 piece  base, body, feetparent, FLFoot, FRFoot, RLFoot, RRFoot, rightchunk,
-       leftchunk, door1, door2, doors, hips, platform, torp1, torp2, torp3, torp4;
+       leftchunk, door1, door2, doors, hips, platform, torp1, torp2,
+       torp3, torp4;
 
 static-var  Static_Var_1, Static_Var_2, bMoving, Static_Var_4, statechg_DesiredState,
             statechg_StateChanging, gun_1;
@@ -30,18 +31,18 @@ walk()
 		move RLFoot to y-axis [0.400000] now;
 		move RLFoot to z-axis [-0.700000] now;
 		move RLFoot to z-axis [-1.300000] speed [4.000000];
-		move RRFoot to x-axis [0.900000] speed [4.895593];
+		move RRFoot to x-axis [0.900000] speed [4.895587];
 		move RRFoot to y-axis [0.400000] speed [2.175824];
 		move RRFoot to z-axis [-1.400000] now;
 		move RRFoot to z-axis [-1.700000] speed [2.100000];
-		move body to y-axis [1.300000] speed [7.071417];
-		move body to z-axis [-0.300000] speed [1.631860];
+		move body to y-axis [1.300000] speed [7.071411];
+		move body to z-axis [-0.300000] speed [1.631854];
 		move rightchunk to x-axis [0.600000] speed [3.263733];
-		move rightchunk to y-axis [1.300000] speed [7.071417];
-		move rightchunk to z-axis [-0.300000] speed [1.631860];
+		move rightchunk to y-axis [1.300000] speed [7.071411];
+		move rightchunk to z-axis [-0.300000] speed [1.631854];
 		move leftchunk to x-axis [-0.600000] speed [3.263733];
-		move leftchunk to y-axis [1.300000] speed [7.071417];
-		move leftchunk to z-axis [-0.300000] speed [1.631860];
+		move leftchunk to y-axis [1.300000] speed [7.071411];
+		move leftchunk to z-axis [-0.300000] speed [1.631854];
 		turn hips to y-axis <-1.500000> now;
 		turn hips to y-axis <3.791209> speed <32.390110>;
 		turn FRFoot to x-axis <-17.890110> now;
@@ -174,8 +175,6 @@ activatescr()
 	{
 		turn doors to y-axis <-90.000000> speed <480.000000>;
 		wait-for-turn doors around y-axis;
-		//move door1 to z-axis [2.500000] speed [90.000000];
-		//move door2 to z-axis [-2.500000] speed [90.000000];
 		wait-for-move door1 along z-axis;
 	}
 	if( TRUE )
@@ -198,8 +197,6 @@ deactivatescr()
 	if( TRUE )
 	{
 		sleep 500;
-		//move door1 to z-axis [0.000000] speed [15.000000];
-		//move door2 to z-axis [0.000000] speed [15.000000];
 		wait-for-move door1 along z-axis;
 		turn doors to y-axis <0.000000> speed <80.000000>;
 		wait-for-turn doors around y-axis;
@@ -313,7 +310,6 @@ Bubbles()
 
 Create()
 {
-	//hide flare;
 	bMoving = FALSE;
 	Static_Var_1 = 0;
 	Static_Var_4 = 0;
@@ -360,7 +356,7 @@ FirePrimary()
 	++gun_1;
 	if( gun_1 >= 4 )
 	{
-		gun_1 = 0;
+		gun_1 = base;
 	}
 	sleep 150;
 }
@@ -369,31 +365,31 @@ QueryPrimary(piecenum)
 {
 	if( gun_1 == 0 )
 	{
-		piecenum=torp1;	
+		piecenum = torp1;
 	}
 	if( gun_1 == 1 )
 	{
-		piecenum=torp2;
+		piecenum = torp2;
 	}
 	if( gun_1 == 2 )
 	{
-		piecenum=torp3;
+		piecenum = torp3;
 	}
 	if( gun_1 == 3 )
 	{
-		piecenum=torp4;
+		piecenum = torp4;
 	}
 }
 
 Shot1()
 {
-	if(gun_1==1)
-	{	
+	if( gun_1 == 1 )
+	{
 		sleep 300;
 		turn platform to y-axis <-180.000000> speed <80.000000>;
 		turn doors to y-axis <-180.000000> speed <80.000000>;
 	}
-	if( gun_1==3 )
+	if( gun_1 == 3 )
 	{
 		sleep 300;
 		turn platform to y-axis <0.000000> speed <80.000000>;

@@ -1,0 +1,323 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, plate, piece1, piece11, piece12, piece2, piece21, piece22,
+       piece3, piece31, piece32, piece4, piece41, piece42, nano1, nano2,
+       nano3, nano4, beam1, beam2, beam3, beam4;
+
+static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging;
+
+// Signal definitions
+#define SIG_ACTIVATE			2
+
+
+activatescr()
+{
+	move piece1 to x-axis [-12.000000] speed [14.000000];
+	move piece1 to z-axis [12.000000] speed [14.000000];
+	move piece2 to x-axis [12.000000] speed [14.000000];
+	move piece2 to z-axis [12.000000] speed [14.000000];
+	move piece3 to x-axis [12.000000] speed [14.000000];
+	move piece3 to z-axis [-12.000000] speed [14.000000];
+	move piece4 to x-axis [-12.000000] speed [14.000000];
+	move piece4 to z-axis [-12.000000] speed [14.000000];
+	sleep 1000;
+	move piece11 to x-axis [12.000000] speed [14.000000];
+	move piece12 to z-axis [-12.000000] speed [14.000000];
+	move piece21 to x-axis [-12.000000] speed [14.000000];
+	move piece22 to z-axis [-12.000000] speed [14.000000];
+	move piece31 to x-axis [-12.000000] speed [14.000000];
+	move piece32 to z-axis [12.000000] speed [14.000000];
+	move piece41 to x-axis [12.000000] speed [14.000000];
+	move piece42 to z-axis [12.000000] speed [14.000000];
+	sleep 800;
+	sleep 100;
+}
+
+deactivatescr()
+{
+	move piece11 to x-axis [0.000000] speed [14.000000];
+	move piece12 to z-axis [0.000000] speed [14.000000];
+	move piece21 to x-axis [0.000000] speed [14.000000];
+	move piece22 to z-axis [0.000000] speed [14.000000];
+	move piece31 to x-axis [0.000000] speed [14.000000];
+	move piece32 to z-axis [0.000000] speed [14.000000];
+	move piece41 to x-axis [0.000000] speed [14.000000];
+	move piece42 to z-axis [0.000000] speed [14.000000];
+	sleep 800;
+	move piece1 to x-axis [0.000000] speed [14.000000];
+	move piece1 to z-axis [0.000000] speed [14.000000];
+	move piece2 to x-axis [0.000000] speed [14.000000];
+	move piece2 to z-axis [0.000000] speed [14.000000];
+	move piece3 to x-axis [0.000000] speed [14.000000];
+	move piece3 to z-axis [0.000000] speed [14.000000];
+	move piece4 to x-axis [0.000000] speed [14.000000];
+	move piece4 to z-axis [0.000000] speed [14.000000];
+	sleep 800;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+OpenYard()
+{
+	set YARD_OPEN to 1;
+	while( !get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 1;
+	}
+	set BUGGER_OFF to 0;
+}
+
+CloseYard()
+{
+	set YARD_OPEN to 0;
+	while( get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 0;
+	}
+	set BUGGER_OFF to 0;
+}
+
+Go()
+{
+	dont-cache plate;
+	dont-cache piece1;
+	dont-cache piece11;
+	dont-cache piece12;
+	dont-cache piece2;
+	dont-cache piece21;
+	dont-cache piece22;
+	dont-cache piece3;
+	dont-cache piece31;
+	dont-cache piece32;
+	dont-cache piece4;
+	dont-cache piece41;
+	dont-cache piece42;
+	dont-cache nano1;
+	dont-cache nano2;
+	dont-cache nano3;
+	dont-cache nano4;
+	call-script activatescr();
+	call-script OpenYard();
+	set INBUILDSTANCE to 1;
+}
+
+Stop()
+{
+	set INBUILDSTANCE to 0;
+	call-script CloseYard();
+	call-script deactivatescr();
+	cache plate;
+	cache piece1;
+	cache piece11;
+	cache piece12;
+	cache piece2;
+	cache piece21;
+	cache piece22;
+	cache piece3;
+	cache piece31;
+	cache piece32;
+	cache piece4;
+	cache piece41;
+	cache piece42;
+	cache nano1;
+	cache nano2;
+	cache nano3;
+	cache nano4;
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+Create()
+{
+	dont-shade base;
+	dont-shade plate;
+	dont-shade piece1;
+	dont-shade piece11;
+	dont-shade piece12;
+	dont-shade piece2;
+	dont-shade piece21;
+	dont-shade piece22;
+	dont-shade piece3;
+	dont-shade piece31;
+	dont-shade piece32;
+	dont-shade piece4;
+	dont-shade piece41;
+	dont-shade piece42;
+	dont-shade nano1;
+	dont-shade nano2;
+	dont-shade nano3;
+	dont-shade nano4;
+	Static_Var_1 = 1;
+	call-script InitState();
+	start-script SmokeUnit();
+}
+
+QueryNanoPiece(piecenum)
+{
+	if( Static_Var_1 == 1 )
+	{
+		piecenum = beam1;
+	}
+	if( Static_Var_1 == 2 )
+	{
+		piecenum = beam2;
+	}
+	if( Static_Var_1 == 3 )
+	{
+		piecenum = beam3;
+	}
+	if( Static_Var_1 == 4 )
+	{
+		piecenum = beam4;
+	}
+	++Static_Var_1;
+	if( Static_Var_1 == 5 )
+	{
+		Static_Var_1 = 1;
+	}
+}
+
+Activate()
+{
+	signal SIG_ACTIVATE;
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	signal SIG_ACTIVATE;
+	set-signal-mask SIG_ACTIVATE;
+	set-signal-mask 0;
+	start-script RequestState(1);
+}
+
+StartBuilding()
+{
+	spin plate around y-axis speed <0.000000>;
+}
+
+StopBuilding()
+{
+	stop-spin plate around y-axis;
+}
+
+QueryBuildInfo(piecenum)
+{
+	piecenum = plate;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type BITMAPONLY | BITMAP1;
+		explode piece1 type BITMAPONLY | BITMAP2;
+		explode piece2 type BITMAPONLY | BITMAP3;
+		explode piece42 type BITMAPONLY | BITMAP1;
+		explode nano1 type BITMAPONLY | BITMAP1;
+		explode plate type BITMAPONLY | BITMAP2;
+		explode piece31 type BITMAPONLY | BITMAP2;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type BITMAPONLY | BITMAP1;
+		explode piece4 type BITMAPONLY | BITMAP2;
+		explode nano4 type BITMAPONLY | BITMAP3;
+		explode nano3 type BITMAPONLY | BITMAP1;
+		explode piece41 type BITMAPONLY | BITMAP1;
+		explode plate type BITMAPONLY | BITMAP2;
+		explode piece32 type BITMAPONLY | BITMAP2;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type BITMAPONLY | BITMAP1;
+		explode plate type BITMAPONLY | BITMAP2;
+		explode piece1 type BITMAPONLY | BITMAP3;
+		explode piece2 type BITMAPONLY | BITMAP1;
+		explode piece4 type BITMAPONLY | BITMAP1;
+		explode piece41 type BITMAPONLY | BITMAP2;
+		explode piece11 type BITMAPONLY | BITMAP2;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type BITMAPONLY | BITMAP1;
+	explode piece42 type BITMAPONLY | BITMAP2;
+	explode piece22 type BITMAPONLY | BITMAP3;
+	explode piece4 type BITMAPONLY | BITMAP1;
+	explode piece12 type BITMAPONLY | BITMAP1;
+	explode piece21 type BITMAPONLY | BITMAP2;
+	explode plate type BITMAPONLY | BITMAP2;
+	return (corpsetype);
+}

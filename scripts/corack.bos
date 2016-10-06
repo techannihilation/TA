@@ -3,94 +3,92 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-#define SIG_BUILD		4	
-
 piece  rnanospray, lnanospray, torso, lforeleg, rforeleg, rcasedoor, lcasedoor, rhindleg,
        lhindleg, lnanocase, rnanocase, rgunjoint, lgunjoint, ground, lnanogun, pelvis,
        rnanogun;
 
-static-var  bMoving, notBuilding, nanoNozzle, currentSpeed, moveSpeed,
-            statechg_DesiredState, statechg_StateChanging;
+static-var  bMoving, Static_Var_2, spray, Static_Var_4, Static_Var_5,
+            Static_Var_6, Static_Var_7;
 
 
 walk()
 {
 	if( bMoving )
 	{
-		move lforeleg to z-axis [1.750000] speed [9.519231] *  currentSpeed / 100;
-		move rforeleg to z-axis [-1.700000] speed [9.247253] *  currentSpeed / 100;
+		move lforeleg to z-axis [0.700000] speed [3.807690] * Static_Var_4 / [0.000610];
+		move rforeleg to z-axis [-0.679999] speed [3.698895] * Static_Var_4 / [0.000610];
 		move torso to y-axis [0.000000] now;
 		move rcasedoor to x-axis [0.000000] now;
 		move lcasedoor to x-axis [0.000000] now;
-		sleep 15000 / currentSpeed;
+		sleep 15000 / Static_Var_4;
 	}
 	if( bMoving )
 	{
-		move lforeleg to z-axis [0.850000] speed [5.979866] *  currentSpeed / 100;
-		move rforeleg to y-axis [0.450000] speed [2.989933] *  currentSpeed / 100;
-		move rforeleg to z-axis [-1.700000] now;
+		move lforeleg to z-axis [0.339996] speed [2.391943] * Static_Var_4 / [0.000610];
+		move rforeleg to y-axis [0.179999] speed [1.195972] * Static_Var_4 / [0.000610];
+		move rforeleg to z-axis [-0.679999] now;
 		move torso to y-axis [0.000000] now;
-		move rhindleg to z-axis [1.500000] speed [9.966443] *  currentSpeed / 100;
-		turn torso to x-axis <-8.076923> speed <53.665462> *  currentSpeed / 100;
-		sleep 13000 / currentSpeed;
+		move rhindleg to z-axis [0.600000] speed [3.986572] * Static_Var_4 / [0.000610];
+		turn torso to x-axis <-8.071429> speed <53.664835> * Static_Var_4 / <0.549451>;
+		sleep 13000 / Static_Var_4;
 	}
 	if( bMoving )
 	{
-		move lforeleg to z-axis [0.000000] speed [5.647651] *  currentSpeed / 100;
-		move rforeleg to y-axis [0.950000] speed [3.322148] *  currentSpeed / 100;
-		move rforeleg to z-axis [-1.650000] speed [0.332215] *  currentSpeed / 100;
+		move lforeleg to z-axis [0.000000] speed [2.259058] * Static_Var_4 / [0.000610];
+		move rforeleg to y-axis [0.379999] speed [1.328857] * Static_Var_4 / [0.000610];
+		move rforeleg to z-axis [-0.659998] speed [0.132886] * Static_Var_4 / [0.000610];
 		move torso to y-axis [0.000000] now;
-		move rhindleg to z-axis [3.150000] speed [10.963087] *  currentSpeed / 100;
-		turn torso to x-axis <-11.950549> speed <25.737515> *  currentSpeed / 100;
-		sleep 11000 / currentSpeed;
+		move rhindleg to z-axis [1.259998] speed [4.385229] * Static_Var_4 / [0.000610];
+		turn torso to x-axis <-11.945055> speed <25.736264> * Static_Var_4 / <0.549451>;
+		sleep 11000 / Static_Var_4;
 	}
 	if( bMoving )
 	{
-		move lforeleg to z-axis [-0.789996] speed [5.248967] *  currentSpeed / 100;
-		move rforeleg to y-axis [0.450000] speed [3.322148] *  currentSpeed / 100;
-		move rforeleg to z-axis [0.000000] speed [10.963087] *  currentSpeed / 100;
+		move lforeleg to z-axis [-0.315997] speed [2.099585] * Static_Var_4 / [0.000610];
+		move rforeleg to y-axis [0.179999] speed [1.328857] * Static_Var_4 / [0.000610];
+		move rforeleg to z-axis [0.000000] speed [4.385229] * Static_Var_4 / [0.000610];
 		move torso to y-axis [0.000000] now;
-		move rhindleg to z-axis [1.500000] speed [10.963087] *  currentSpeed / 100;
-		turn torso to x-axis <-8.076923> speed <25.737515> *  currentSpeed / 100;
-		sleep 13000 / currentSpeed;
+		move rhindleg to z-axis [0.600000] speed [4.385229] * Static_Var_4 / [0.000610];
+		turn torso to x-axis <-8.071429> speed <25.736264> * Static_Var_4 / <0.549451>;
+		sleep 13000 / Static_Var_4;
 	}
 	if( bMoving )
 	{
-		move lforeleg to z-axis [-1.700000] speed [4.950022] *  currentSpeed / 100;
-		move rforeleg to y-axis [0.000000] speed [2.447802] *  currentSpeed / 100;
-		move rforeleg to z-axis [1.600000] speed [8.703297] *  currentSpeed / 100;
+		move lforeleg to z-axis [-0.679999] speed [1.980005] * Static_Var_4 / [0.000610];
+		move rforeleg to y-axis [0.000000] speed [0.979120] * Static_Var_4 / [0.000610];
+		move rforeleg to z-axis [0.639996] speed [3.481317] * Static_Var_4 / [0.000610];
 		move torso to y-axis [0.000000] now;
-		move rhindleg to z-axis [0.000000] speed [8.159341] *  currentSpeed / 100;
-		turn torso to x-axis <0.000000> speed <43.934911> *  currentSpeed / 100;
-		sleep 15000 / currentSpeed;
+		move rhindleg to z-axis [0.000000] speed [3.263733] * Static_Var_4 / [0.000610];
+		turn torso to x-axis <0.000000> speed <43.934066> * Static_Var_4 / <0.549451>;
+		sleep 15000 / Static_Var_4;
 	}
 	if( bMoving )
 	{
-		move lforeleg to y-axis [0.450000] speed [2.989933] *  currentSpeed / 100;
-		move rforeleg to z-axis [0.800000] speed [5.315436] *  currentSpeed / 100;
+		move lforeleg to y-axis [0.179999] speed [1.195972] * Static_Var_4 / [0.000610];
+		move rforeleg to z-axis [0.319995] speed [2.126172] * Static_Var_4 / [0.000610];
 		move torso to y-axis [0.000000] now;
-		move lhindleg to z-axis [1.500000] speed [9.966443] *  currentSpeed / 100;
-		turn torso to x-axis <-8.076923> speed <53.665462> *  currentSpeed / 100;
-		sleep 13000 / currentSpeed;
+		move lhindleg to z-axis [0.600000] speed [3.986572] * Static_Var_4 / [0.000610];
+		turn torso to x-axis <-8.071429> speed <53.664835> * Static_Var_4 / <0.549451>;
+		sleep 13000 / Static_Var_4;
 	}
 	if( bMoving )
 	{
-		move lforeleg to y-axis [0.950000] speed [3.322148] *  currentSpeed / 100;
-		move rforeleg to z-axis [0.000000] speed [5.315436] *  currentSpeed / 100;
+		move lforeleg to y-axis [0.379999] speed [1.328857] * Static_Var_4 / [0.000610];
+		move rforeleg to z-axis [0.000000] speed [2.126172] * Static_Var_4 / [0.000610];
 		move torso to y-axis [0.000000] now;
-		move lhindleg to z-axis [3.100000] speed [10.630872] *  currentSpeed / 100;
-		turn torso to x-axis <-11.950549> speed <25.737515> *  currentSpeed / 100;
-		sleep 11000 / currentSpeed;
+		move lhindleg to z-axis [1.239996] speed [4.252344] * Static_Var_4 / [0.000610];
+		turn torso to x-axis <-11.945055> speed <25.736264> * Static_Var_4 / <0.549451>;
+		sleep 11000 / Static_Var_4;
 	}
 	if( bMoving )
 	{
-		move lforeleg to y-axis [0.450000] speed [3.322148] *  currentSpeed / 100;
-		move lforeleg to z-axis [0.000000] speed [11.295302] *  currentSpeed / 100;
-		move rforeleg to z-axis [-0.839996] speed [5.581181] *  currentSpeed / 100;
+		move lforeleg to y-axis [0.179999] speed [1.328857] * Static_Var_4 / [0.000610];
+		move lforeleg to z-axis [0.000000] speed [4.518115] * Static_Var_4 / [0.000610];
+		move rforeleg to z-axis [-0.335992] speed [2.232471] * Static_Var_4 / [0.000610];
 		move torso to y-axis [0.000000] now;
-		move lhindleg to z-axis [1.500000] speed [10.630872] *  currentSpeed / 100;
-		turn torso to x-axis <-8.076923> speed <25.737515> *  currentSpeed / 100;
-		sleep 13000 / currentSpeed;
+		move lhindleg to z-axis [0.600000] speed [4.252344] * Static_Var_4 / [0.000610];
+		turn torso to x-axis <-8.071429> speed <25.736264> * Static_Var_4 / <0.549451>;
+		sleep 13000 / Static_Var_4;
 	}
 }
 
@@ -98,77 +96,77 @@ walklegs()
 {
 	if( bMoving )
 	{
-		move lforeleg to z-axis [1.750000] speed [9.519231] *  currentSpeed / 100;
-		move rforeleg to z-axis [-1.700000] speed [4.678044] *  currentSpeed / 100;
+		move lforeleg to z-axis [0.700000] speed [3.807690] * Static_Var_4 / [0.000610];
+		move rforeleg to z-axis [-0.679999] speed [1.871216] * Static_Var_4 / [0.000610];
 		move rcasedoor to x-axis [0.000000] now;
 		move lcasedoor to x-axis [0.000000] now;
-		sleep 15000 / currentSpeed;
+		sleep 15000 / Static_Var_4;
 	}
 	if( bMoving )
 	{
-		move lforeleg to z-axis [0.850000] speed [5.979866] *  currentSpeed / 100;
-		move rforeleg to y-axis [0.450000] speed [2.989933] *  currentSpeed / 100;
-		move rforeleg to z-axis [-1.700000] now;
-		move rhindleg to z-axis [1.500000] speed [9.966443] *  currentSpeed / 100;
-		sleep 13000 / currentSpeed;
+		move lforeleg to z-axis [0.339996] speed [2.391943] * Static_Var_4 / [0.000610];
+		move rforeleg to y-axis [0.179999] speed [1.195972] * Static_Var_4 / [0.000610];
+		move rforeleg to z-axis [-0.679999] now;
+		move rhindleg to z-axis [0.600000] speed [3.986572] * Static_Var_4 / [0.000610];
+		sleep 13000 / Static_Var_4;
 	}
 	if( bMoving )
 	{
-		move lforeleg to z-axis [0.000000] speed [5.647651] *  currentSpeed / 100;
-		move rforeleg to y-axis [0.950000] speed [3.322148] *  currentSpeed / 100;
-		move rforeleg to z-axis [-1.650000] speed [0.332215] *  currentSpeed / 100;
-		move rhindleg to z-axis [3.150000] speed [10.963087] *  currentSpeed / 100;
-		sleep 11000 / currentSpeed;
+		move lforeleg to z-axis [0.000000] speed [2.259058] * Static_Var_4 / [0.000610];
+		move rforeleg to y-axis [0.379999] speed [1.328857] * Static_Var_4 / [0.000610];
+		move rforeleg to z-axis [-0.659998] speed [0.132886] * Static_Var_4 / [0.000610];
+		move rhindleg to z-axis [1.259998] speed [4.385229] * Static_Var_4 / [0.000610];
+		sleep 11000 / Static_Var_4;
 	}
 	if( bMoving )
 	{
-		move lforeleg to z-axis [-0.789996] speed [5.248967] *  currentSpeed / 100;
-		move rforeleg to y-axis [0.450000] speed [3.322148] *  currentSpeed / 100;
-		move rforeleg to z-axis [0.000000] speed [10.963087] *  currentSpeed / 100;
-		move rhindleg to z-axis [1.500000] speed [10.963087] *  currentSpeed / 100;
-		sleep 13000 / currentSpeed;
+		move lforeleg to z-axis [-0.315997] speed [2.099585] * Static_Var_4 / [0.000610];
+		move rforeleg to y-axis [0.179999] speed [1.328857] * Static_Var_4 / [0.000610];
+		move rforeleg to z-axis [0.000000] speed [4.385229] * Static_Var_4 / [0.000610];
+		move rhindleg to z-axis [0.600000] speed [4.385229] * Static_Var_4 / [0.000610];
+		sleep 13000 / Static_Var_4;
 	}
 	if( bMoving )
 	{
-		move lforeleg to z-axis [-1.700000] speed [4.950022] *  currentSpeed / 100;
-		move rforeleg to y-axis [0.000000] speed [2.447802] *  currentSpeed / 100;
-		move rforeleg to z-axis [1.600000] speed [8.703297] *  currentSpeed / 100;
-		move rhindleg to z-axis [0.000000] speed [8.159341] *  currentSpeed / 100;
-		sleep 15000 / currentSpeed;
+		move lforeleg to z-axis [-0.679999] speed [1.980005] * Static_Var_4 / [0.000610];
+		move rforeleg to y-axis [0.000000] speed [0.979120] * Static_Var_4 / [0.000610];
+		move rforeleg to z-axis [0.639996] speed [3.481317] * Static_Var_4 / [0.000610];
+		move rhindleg to z-axis [0.000000] speed [3.263733] * Static_Var_4 / [0.000610];
+		sleep 15000 / Static_Var_4;
 	}
 	if( bMoving )
 	{
-		move lforeleg to y-axis [0.450000] now;
-		move rforeleg to z-axis [0.800000] speed [5.315436] *  currentSpeed / 100;
-		move lhindleg to z-axis [1.500000] now;
-		sleep 13000 / currentSpeed;
+		move lforeleg to y-axis [0.179999] now;
+		move rforeleg to z-axis [0.319995] speed [2.126172] * Static_Var_4 / [0.000610];
+		move lhindleg to z-axis [0.600000] now;
+		sleep 13000 / Static_Var_4;
 	}
 	if( bMoving )
 	{
-		move lforeleg to y-axis [0.950000] speed [3.322148] *  currentSpeed / 100;
-		move rforeleg to z-axis [0.000000] speed [5.315436] *  currentSpeed / 100;
-		move lhindleg to z-axis [3.100000] speed [10.630872] *  currentSpeed / 100;
-		sleep 11000 / currentSpeed;
+		move lforeleg to y-axis [0.379999] speed [1.328857] * Static_Var_4 / [0.000610];
+		move rforeleg to z-axis [0.000000] speed [2.126172] * Static_Var_4 / [0.000610];
+		move lhindleg to z-axis [1.239996] speed [4.252344] * Static_Var_4 / [0.000610];
+		sleep 11000 / Static_Var_4;
 	}
 	if( bMoving )
 	{
-		move lforeleg to y-axis [0.450000] speed [3.322148] *  currentSpeed / 100;
-		move lforeleg to z-axis [0.000000] speed [11.295302] *  currentSpeed / 100;
-		move rforeleg to z-axis [-0.839996] speed [5.581181] *  currentSpeed / 100;
-		move lhindleg to z-axis [1.500000] speed [10.630872] *  currentSpeed / 100;
-		sleep 13000 / currentSpeed;
+		move lforeleg to y-axis [0.179999] speed [1.328857] * Static_Var_4 / [0.000610];
+		move lforeleg to z-axis [0.000000] speed [4.518115] * Static_Var_4 / [0.000610];
+		move rforeleg to z-axis [-0.335992] speed [2.232471] * Static_Var_4 / [0.000610];
+		move lhindleg to z-axis [0.600000] speed [4.252344] * Static_Var_4 / [0.000610];
+		sleep 13000 / Static_Var_4;
 	}
 }
 
-MotionControl(moving, building)
+MotionControl(Func_Var_1, Func_Var_2)
 {
 	while( TRUE )
 	{
-		moving = bMoving;
-		building = notBuilding;
-		if( moving )
+		Func_Var_1 = bMoving;
+		Func_Var_2 = Static_Var_2;
+		if( Func_Var_1 )
 		{
-			if( building )
+			if( Func_Var_2 )
 			{
 				call-script walk();
 			}
@@ -177,9 +175,6 @@ MotionControl(moving, building)
 				call-script walklegs();
 			}
 		}
-		else
-		{
-		}
 		sleep 130;
 	}
 }
@@ -187,21 +182,19 @@ MotionControl(moving, building)
 Go()
 {
 	move lnanocase to x-axis [0.000000] now;
-	move lnanocase to x-axis [-2.889996] speed [5.000000];
+	move lnanocase to x-axis [-1.155994] speed [2.000000];
 	move rnanocase to x-axis [0.000000] now;
-	move rnanocase to x-axis [2.800000] speed [5.000000];
+	move rnanocase to x-axis [1.119995] speed [2.000000];
 	move rcasedoor to x-axis [0.000000] now;
 	move lcasedoor to x-axis [0.000000] now;
 	sleep 513;
-
-	turn lnanocase to y-axis <-90.021978> speed <173.000000>;
-	turn rnanocase to y-axis <90.021978> speed <173.000000>;
-	turn rcasedoor to z-axis <-90.021978> speed <173.000000>;
-	turn lcasedoor to z-axis <90.021978> speed <173.000000>;
+	turn lnanocase to y-axis <-90.016484> speed <173.000000>;
+	turn rnanocase to y-axis <90.016484> speed <173.000000>;
+	turn rcasedoor to z-axis <-90.016484> speed <173.000000>;
+	turn lcasedoor to z-axis <90.016484> speed <173.000000>;
 	sleep 518;
-
-	move rgunjoint to x-axis [4.750000] speed [9.000000];
-	move lgunjoint to x-axis [-4.739996] speed [9.000000];
+	move rgunjoint to x-axis [1.900000] speed [3.600000];
+	move lgunjoint to x-axis [-1.895996] speed [3.600000];
 	sleep 520;
 }
 
@@ -210,66 +203,66 @@ Stop()
 	set INBUILDSTANCE to 0;
 	turn torso to y-axis <0.000000> speed <160.000000>;
 	wait-for-turn torso around y-axis;
-
-	move lnanocase to x-axis [-2.889996] now;
-	move rnanocase to x-axis [2.800000] now;
-	move rgunjoint to x-axis [4.750000] now;
-	move rgunjoint to x-axis [0.000000] speed [6.000000];
+	move lnanocase to x-axis [-1.155994] now;
+	move rnanocase to x-axis [1.119995] now;
+	move rgunjoint to x-axis [1.900000] now;
+	move rgunjoint to x-axis [0.000000] speed [2.400000];
 	move rcasedoor to x-axis [0.000000] now;
-	move lgunjoint to x-axis [-4.739996] now;
-	move lgunjoint to x-axis [0.000000] speed [6.000000];
+	move lgunjoint to x-axis [-1.895996] now;
+	move lgunjoint to x-axis [0.000000] speed [2.400000];
 	move lcasedoor to x-axis [0.000000] now;
-	turn lnanocase to y-axis <-90.021978> now;
-	turn rnanocase to y-axis <90.021978> now;
-	turn rcasedoor to z-axis <-90.021978> now;
-	turn lcasedoor to z-axis <90.021978> now;
+	turn lnanocase to y-axis <-90.016484> now;
+	turn rnanocase to y-axis <90.016484> now;
+	turn rcasedoor to z-axis <-90.016484> now;
+	turn lcasedoor to z-axis <90.016484> now;
 	sleep 683;
-
 	turn lnanocase to y-axis <0.000000> speed <130.000000>;
 	turn rnanocase to y-axis <0.000000> speed <130.000000>;
 	turn rcasedoor to z-axis <0.000000> speed <131.000000>;
 	turn lcasedoor to z-axis <0.000000> speed <130.000000>;
 	sleep 689;
-
-	move lnanocase to x-axis [0.000000] speed [4.000000];
-	move rnanocase to x-axis [0.000000] speed [4.000000];
+	move lnanocase to x-axis [0.000000] speed [1.600000];
+	move rnanocase to x-axis [0.000000] speed [1.600000];
 	sleep 691;
 }
 
 RequestState(requestedstate, currentstate)
 {
-	if( statechg_StateChanging )
+	if( Static_Var_7 )
 	{
-		statechg_DesiredState = requestedstate;
+		Static_Var_6 = requestedstate;
 		return (0);
 	}
-	statechg_StateChanging = TRUE;
-	currentstate = statechg_DesiredState;
-	statechg_DesiredState = requestedstate;
-	while( statechg_DesiredState != currentstate )
+	Static_Var_7 = 1;
+	currentstate = Static_Var_6;
+	Static_Var_6 = requestedstate;
+	while( Static_Var_6 != currentstate )
 	{
-		if( statechg_DesiredState )
+		if( Static_Var_6 )
 		{
 			call-script Stop();
-			notBuilding = 1;
+			Static_Var_2 = 1;
 			currentstate = 1;
 		}
 		else
 		{
 			call-script Go();
-			notBuilding = 0;
+			Static_Var_2 = 0;
 			currentstate = 0;
 		}
 	}
-	statechg_StateChanging = FALSE;
+	Static_Var_7 = 0;
 }
 
 UnitSpeed()
 {
-	while(TRUE)
+	while( TRUE )
 	{
-		currentSpeed = (get CURRENT_SPEED)*100/moveSpeed;
-		if (currentSpeed<20) currentSpeed=20;
+		Static_Var_4 = get CURRENT_SPEED * 100 / Static_Var_5;
+		if( Static_Var_4 < 20 )
+		{
+			Static_Var_4 = 20;
+		}
 		sleep 142;
 	}
 }
@@ -306,12 +299,12 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 Create()
 {
 	bMoving = FALSE;
-	nanoNozzle = 0;
-	notBuilding = 1;
-	moveSpeed = get MAX_SPEED;
-	currentSpeed = 100;
-	statechg_DesiredState = TRUE;
-	statechg_StateChanging = FALSE;
+	spray = rnanospray;
+	Static_Var_2 = 1;
+	Static_Var_5 = get MAX_SPEED;
+	Static_Var_4 = 100;
+	Static_Var_6 = 1;
+	Static_Var_7 = 0;
 	start-script SmokeUnit();
 }
 
@@ -325,23 +318,26 @@ Deactivate()
 	start-script RequestState(1);
 }
 
-StartBuilding(heading, pitch)
+StartBuilding(Func_Var_1, Func_Var_2)
 {
 	start-script RequestState(0);
-	while( notBuilding ) sleep 100;
-	signal SIG_BUILD;
-	turn torso to y-axis heading speed <160.000000>;
+	while( Static_Var_2 )
+	{
+		sleep 100;
+	}
+	signal 4;
+	turn torso to y-axis Func_Var_1 speed <160.000000>;
 	wait-for-turn torso around y-axis;
 	set INBUILDSTANCE to 1;
 }
 
 StopBuilding()
 {
-	signal SIG_BUILD;	
-	set-signal-mask SIG_BUILD;
+	signal 4;
+	set-signal-mask 4;
 	sleep 6000;
 	set-signal-mask 0;
-	signal SIG_BUILD;	
+	signal 4;
 	start-script RequestState(1);
 }
 
@@ -357,16 +353,9 @@ StopMoving()
 
 QueryNanoPiece(piecenum)
 {
-	piecenum = nanoNozzle;
-	nanoNozzle = !nanoNozzle;
+	piecenum = spray;
+	spray = !spray;
 }
-
-/*
-TargetHeading(Func_Var_1)
-{
-	Static_Var_1 = 0 - Func_Var_1;
-}
-*/
 
 SweetSpot(piecenum)
 {
@@ -395,7 +384,7 @@ Killed(severity, corpsetype)
 		explode rnanogun type BITMAPONLY | BITMAP5;
 		explode rnanospray type BITMAPONLY | BITMAP1;
 		explode torso type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -417,7 +406,7 @@ Killed(severity, corpsetype)
 		explode rnanogun type FALL | BITMAP5;
 		explode rnanospray type FALL | BITMAP1;
 		explode torso type SHATTER | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -439,7 +428,7 @@ Killed(severity, corpsetype)
 		explode rnanogun type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 		explode rnanospray type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 		explode torso type SHATTER | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode ground type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
@@ -459,4 +448,5 @@ Killed(severity, corpsetype)
 	explode rnanogun type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 	explode rnanospray type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 	explode torso type SHATTER | EXPLODE_ON_HIT | BITMAP2;
+	return (corpsetype);
 }

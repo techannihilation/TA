@@ -1,0 +1,139 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  flare1, flare2, turret, base, hull, chenilles, flash1, flash2;
+
+static-var  restore_delay, gun_1;
+
+// Signal definitions
+#define SIG_AIM				2
+
+
+Create()
+{
+	hide flare1;
+	hide flare2;
+	gun_1 = flare2;
+	restore_delay = 3000;
+}
+
+RockUnit(anglex, anglez)
+{
+	turn base to x-axis anglex speed <50.000000>;
+	turn base to z-axis anglez speed <50.000000>;
+	wait-for-turn base around z-axis;
+	wait-for-turn base around x-axis;
+	turn base to z-axis <0.000000> speed <20.000000>;
+	turn base to x-axis <0.000000> speed <20.000000>;
+}
+
+SetMaxReloadTime(Func_Var_1)
+{
+	restore_delay = Func_Var_1 * 2;
+}
+
+RestoreAfterDelay()
+{
+	sleep restore_delay;
+	turn turret to y-axis <0.000000> speed <90.000000>;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	turn turret to y-axis heading speed <180.000000>;
+	turn turret to x-axis <0.000000> - pitch speed <50.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn turret around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = turret;
+}
+
+FirePrimary()
+{
+	if( gun_1 == 1 )
+	{
+		show flare1;
+		sleep 150;
+		hide flare1;
+		gun_1 = turret;
+		return (0);
+	}
+	if( gun_1 == 2 )
+	{
+		show flare2;
+		sleep 150;
+		hide flare2;
+		gun_1 = flare2;
+		return (0);
+	}
+}
+
+QueryPrimary(piecenum)
+{
+	if( gun_1 == 1 )
+	{
+		piecenum = flash1;
+	}
+	if( gun_1 == 2 )
+	{
+		piecenum = flash2;
+	}
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	hide flare1;
+	hide flare2;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type 288;
+		explode flare1 type 7;
+		explode flare2 type 7;
+		explode turret type 30;
+		explode hull type 288;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type 288;
+		explode flare1 type 7;
+		explode flare2 type 7;
+		explode turret type 30;
+		explode hull type 288;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type 288;
+		explode flare1 type 7;
+		explode flare2 type 7;
+		explode turret type 30;
+		explode hull type 30;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type 288;
+	explode flare1 type 7;
+	explode flare2 type 7;
+	explode turret type 30;
+	explode hull type 30;
+	return (corpsetype);
+	return (corpsetype);
+}

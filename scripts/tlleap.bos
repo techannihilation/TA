@@ -1,0 +1,702 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, rfpost, rflathebox, rflift, rflathe, rfnano, lfpost, lflathepost,
+       lflift, lflathe, lfnano, lbpost, lblathebox, lblift, lblathe, lbnano,
+       rbpost, rblathepost, rblift, rblathe, rbnano, runners, pad, glowy1dull,
+       glowy1, glowy2dull, glowy2, glowy3dull, glowy3, glowy4dull, glowy4, domel5,
+       domel4, domel3, domel2, domel1, domer5, domer4, domer3, domer2,
+       domer1;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5;
+
+// Signal definitions
+#define SIG_ACTIVATE			2
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+CloseYard()
+{
+	set YARD_OPEN to 0;
+	while( get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 0;
+	}
+	set BUGGER_OFF to 0;
+}
+
+Deactivatescr()
+{
+	hide glowy1;
+	hide glowy2;
+	hide glowy3;
+	hide glowy4;
+	show glowy1dull;
+	show glowy2dull;
+	show glowy3dull;
+	show glowy4dull;
+	cache glowy1;
+	cache glowy2;
+	cache glowy3;
+	cache glowy4;
+	if( Static_Var_1 )
+	{
+		turn lblathe to x-axis <0.000000> speed <100.000000>;
+		turn lblathe to z-axis <0.000000> speed <50.000000>;
+		turn lblift to y-axis <0.000000> speed <50.000000>;
+		turn rblathe to x-axis <0.000000> speed <100.000000>;
+		turn rblathe to z-axis <0.000000> speed <50.000000>;
+		turn rblift to y-axis <0.000000> speed <50.000000>;
+		turn lflathe to x-axis <0.000000> speed <100.000000>;
+		turn lflathe to z-axis <0.000000> speed <50.000000>;
+		turn lflift to y-axis <0.000000> speed <50.000000>;
+		turn rflathe to x-axis <0.000000> speed <100.000000>;
+		turn rflathe to z-axis <0.000000> speed <50.000000>;
+		turn rflift to y-axis <0.000000> speed <50.000000>;
+		wait-for-turn rflift around y-axis;
+	}
+	if( Static_Var_1 )
+	{
+		move lflift to y-axis [0.000000] speed [3.500000];
+		move lflathe to y-axis [0.000000] speed [1.800000];
+		move rflift to y-axis [0.000000] speed [3.500000];
+		move rflathe to y-axis [0.000000] speed [1.800000];
+		move lblift to y-axis [0.000000] speed [3.500000];
+		move lblathe to y-axis [0.000000] speed [1.800000];
+		move rblift to y-axis [0.000000] speed [3.500000];
+		move rblathe to y-axis [0.000000] speed [1.800000];
+		wait-for-move rblathe along y-axis;
+	}
+	if( Static_Var_1 )
+	{
+		move lfpost to x-axis [-4.800000] speed [1.400000];
+		move lbpost to x-axis [-4.800000] speed [1.400000];
+		move rfpost to x-axis [4.800000] speed [1.400000];
+		move rbpost to x-axis [4.800000] speed [1.400000];
+		move domel5 to x-axis [-4.800000] speed [1.400000];
+		move domer5 to x-axis [4.800000] speed [1.400000];
+		wait-for-move rbpost along x-axis;
+	}
+	if( Static_Var_1 )
+	{
+		move lfpost to x-axis [-3.800000] speed [3.500000];
+		move lbpost to x-axis [-3.800000] speed [3.500000];
+		move rfpost to x-axis [3.800000] speed [3.500000];
+		move rbpost to x-axis [3.800000] speed [3.500000];
+		move domel5 to x-axis [-3.800000] speed [3.500000];
+		move domer5 to x-axis [3.800000] speed [3.500000];
+		wait-for-move rbpost along x-axis;
+	}
+	if( Static_Var_1 )
+	{
+		move lfpost to x-axis [-1.500000] speed [2.500000];
+		move lbpost to x-axis [-1.500000] speed [2.500000];
+		move rfpost to x-axis [1.500000] speed [2.500000];
+		move rbpost to x-axis [1.500000] speed [2.500000];
+		move domel5 to x-axis [-1.500000] speed [2.500000];
+		move domer5 to x-axis [1.500000] speed [2.500000];
+		wait-for-move rbpost along x-axis;
+	}
+	if( Static_Var_1 )
+	{
+		move lfpost to x-axis [-0.750000] speed [1.700000];
+		move lbpost to x-axis [-0.750000] speed [1.700000];
+		move rfpost to x-axis [0.750000] speed [1.700000];
+		move rbpost to x-axis [0.750000] speed [1.700000];
+		move domel5 to x-axis [-0.750000] speed [1.700000];
+		move domer5 to x-axis [0.750000] speed [1.700000];
+		wait-for-move rbpost along x-axis;
+	}
+	if( Static_Var_1 )
+	{
+		move lfpost to x-axis [0.000000] speed [1.000000];
+		move lbpost to x-axis [0.000000] speed [1.000000];
+		move rfpost to x-axis [0.000000] speed [1.000000];
+		move rbpost to x-axis [0.000000] speed [1.000000];
+		move domel5 to x-axis [-0.600000] speed [1.000000];
+		move domer5 to x-axis [0.600000] speed [1.000000];
+		wait-for-move domer5 along x-axis;
+	}
+	if( Static_Var_1 )
+	{
+		move domel5 to x-axis [0.000000] speed [0.600000];
+		move domer5 to x-axis [0.000000] speed [0.600000];
+		wait-for-move domer5 along x-axis;
+	}
+	if( Static_Var_1 )
+	{
+		turn domel5 to z-axis <0.000000> speed <4.000000>;
+		turn domer5 to z-axis <0.000000> speed <4.000000>;
+		wait-for-turn domel5 around z-axis;
+	}
+	if( Static_Var_1 )
+	{
+		turn domel4 to z-axis <0.000000> speed <6.000000>;
+		turn domer4 to z-axis <0.000000> speed <6.000000>;
+		sleep 1000;
+	}
+	if( Static_Var_1 )
+	{
+		turn domel3 to z-axis <0.000000> speed <7.500000>;
+		turn domer3 to z-axis <0.000000> speed <7.500000>;
+		sleep 700;
+	}
+	if( Static_Var_1 )
+	{
+		turn domel2 to z-axis <0.000000> speed <12.000000>;
+		turn domer2 to z-axis <0.000000> speed <12.000000>;
+		sleep 1000;
+	}
+	if( Static_Var_1 )
+	{
+		turn domel1 to z-axis <13.000000> speed <3.000000>;
+		turn domer1 to z-axis <-13.000000> speed <3.000000>;
+		sleep 667;
+	}
+	if( Static_Var_1 )
+	{
+		turn domel1 to z-axis <10.000000> speed <5.000000>;
+		turn domer1 to z-axis <-10.000000> speed <5.000000>;
+		sleep 600;
+	}
+	if( Static_Var_1 )
+	{
+		turn domel1 to z-axis <5.000000> speed <8.000000>;
+		turn domer1 to z-axis <-5.000000> speed <8.000000>;
+		sleep 625;
+	}
+	if( Static_Var_1 )
+	{
+		turn domel1 to z-axis <3.500000> speed <6.000000>;
+		turn domer1 to z-axis <-3.500000> speed <6.000000>;
+		sleep 250;
+	}
+	if( Static_Var_1 )
+	{
+		turn domel1 to z-axis <2.000000> speed <4.500000>;
+		turn domer1 to z-axis <-2.000000> speed <4.500000>;
+		sleep 333;
+	}
+	if( Static_Var_1 )
+	{
+		turn domel1 to z-axis <1.000000> speed <2.000000>;
+		turn domer1 to z-axis <-1.000000> speed <2.000000>;
+		sleep 500;
+	}
+	if( Static_Var_1 )
+	{
+		turn domel1 to z-axis <0.500000> speed <1.000000>;
+		turn domer1 to z-axis <-0.500000> speed <1.000000>;
+		sleep 500;
+	}
+	if( Static_Var_1 )
+	{
+		turn domel1 to z-axis <0.000000> speed <0.648352>;
+		turn domer1 to z-axis <0.000000> speed <0.648352>;
+		sleep 770;
+		Static_Var_1 = 0;
+		Static_Var_4 = 1;
+	}
+}
+
+Stop()
+{
+	set-signal-mask SIG_ACTIVATE;
+	sleep 16500;
+	set INBUILDSTANCE to 0;
+	set-signal-mask 0;
+	Static_Var_1 = 1;
+	Static_Var_3 = 0;
+	call-script CloseYard();
+	call-script Deactivatescr();
+}
+
+Activatescr()
+{
+	signal SIG_ACTIVATE;
+	Static_Var_4 = 0;
+	show glowy1;
+	show glowy2;
+	show glowy3;
+	show glowy4;
+	hide glowy1dull;
+	hide glowy2dull;
+	hide glowy3dull;
+	hide glowy4dull;
+	dont-cache glowy1;
+	dont-cache glowy2;
+	dont-cache glowy3;
+	dont-cache glowy4;
+	if( Static_Var_2 )
+	{
+		turn domel1 to z-axis <15.000000> speed <15.000000>;
+		turn domer1 to z-axis <-15.000000> speed <15.000000>;
+		sleep 1050;
+	}
+	if( Static_Var_2 )
+	{
+		turn domel2 to z-axis <15.000000> speed <12.000000>;
+		turn domer2 to z-axis <-15.000000> speed <12.000000>;
+		sleep 700;
+	}
+	if( Static_Var_2 )
+	{
+		turn domel3 to z-axis <15.000000> speed <10.000000>;
+		turn domer3 to z-axis <-15.000000> speed <10.000000>;
+		sleep 700;
+	}
+	if( Static_Var_2 )
+	{
+		turn domel4 to z-axis <7.500000> speed <6.000000>;
+		turn domer4 to z-axis <-7.500000> speed <6.000000>;
+		sleep 1200;
+	}
+	if( Static_Var_2 )
+	{
+		turn domel5 to z-axis <4.000000> speed <4.000000>;
+		turn domer5 to z-axis <-4.000000> speed <4.000000>;
+		wait-for-turn domel5 around z-axis;
+	}
+	if( Static_Var_2 )
+	{
+		move lfpost to x-axis [-0.800000] speed [1.000000];
+		move lbpost to x-axis [-0.800000] speed [1.000000];
+		move rfpost to x-axis [0.800000] speed [1.000000];
+		move rbpost to x-axis [0.800000] speed [1.000000];
+		move domel5 to x-axis [-0.800000] speed [1.000000];
+		move domer5 to x-axis [0.800000] speed [1.000000];
+		wait-for-move domer5 along x-axis;
+	}
+	if( Static_Var_2 )
+	{
+		move lfpost to x-axis [-1.500000] speed [2.500000];
+		move lbpost to x-axis [-1.500000] speed [2.500000];
+		move rfpost to x-axis [1.500000] speed [2.500000];
+		move rbpost to x-axis [1.500000] speed [2.500000];
+		move domel5 to x-axis [-1.500000] speed [2.500000];
+		move domer5 to x-axis [1.500000] speed [2.500000];
+		wait-for-move domer5 along x-axis;
+	}
+	if( Static_Var_2 )
+	{
+		move lfpost to x-axis [-3.800000] speed [3.500000];
+		move lbpost to x-axis [-3.800000] speed [3.500000];
+		move rfpost to x-axis [3.800000] speed [3.500000];
+		move rbpost to x-axis [3.800000] speed [3.500000];
+		move domel5 to x-axis [-3.800000] speed [3.500000];
+		move domer5 to x-axis [3.800000] speed [3.500000];
+		wait-for-move domer5 along x-axis;
+	}
+	if( Static_Var_2 )
+	{
+		move lfpost to x-axis [-5.600000] speed [1.400000];
+		move lbpost to x-axis [-4.600000] speed [1.400000];
+		move rfpost to x-axis [5.600000] speed [1.400000];
+		move rbpost to x-axis [5.600000] speed [1.400000];
+		move domel5 to x-axis [-5.600000] speed [1.400000];
+		move domer5 to x-axis [5.600000] speed [1.400000];
+		wait-for-move domer5 along x-axis;
+	}
+	if( Static_Var_2 )
+	{
+		move lfpost to x-axis [-6.000000] speed [0.900000];
+		move lbpost to x-axis [-6.000000] speed [0.900000];
+		move rfpost to x-axis [6.000000] speed [0.900000];
+		move rbpost to x-axis [6.000000] speed [0.900000];
+		move domel5 to x-axis [-9.300000] speed [1.200000];
+		move domer5 to x-axis [9.300000] speed [1.200000];
+		wait-for-move domer5 along x-axis;
+	}
+	if( Static_Var_2 )
+	{
+		move rflift to y-axis [4.000000] speed [5.000000];
+		move rflathe to y-axis [1.500000] speed [2.000000];
+		sleep 300;
+	}
+	if( Static_Var_2 )
+	{
+		move rblift to y-axis [4.000000] speed [5.000000];
+		move rblathe to y-axis [1.500000] speed [2.000000];
+		sleep 300;
+	}
+	if( Static_Var_2 )
+	{
+		move lblift to y-axis [4.000000] speed [5.000000];
+		move lblathe to y-axis [1.500000] speed [2.000000];
+		sleep 280;
+	}
+	if( Static_Var_2 )
+	{
+		move lflift to y-axis [4.000000] speed [5.000000];
+		move lflathe to y-axis [1.500000] speed [2.000000];
+		wait-for-move lflift along y-axis;
+	}
+	if( Static_Var_2 )
+	{
+		turn rflathe to x-axis <-90.000000> speed <100.000000>;
+		turn rflift to y-axis <-60.000000> speed <50.000000>;
+		turn rblathe to x-axis <90.000000> speed <100.000000>;
+		turn rblift to y-axis <60.000000> speed <50.000000>;
+		turn lflathe to x-axis <-90.000000> speed <100.000000>;
+		turn lflift to y-axis <60.000000> speed <50.000000>;
+		turn lblathe to x-axis <90.000000> speed <100.000000>;
+		turn lblift to y-axis <-60.000000> speed <50.000000>;
+		wait-for-turn lblift around y-axis;
+		Static_Var_2 = 0;
+		Static_Var_3 = 1;
+		start-script Stop();
+	}
+}
+
+Create()
+{
+	dont-shade rfpost;
+	dont-shade rflathebox;
+	dont-shade rflift;
+	dont-shade rflathe;
+	dont-shade rfnano;
+	dont-shade lfpost;
+	dont-shade lflathepost;
+	dont-shade lflift;
+	dont-shade lflathe;
+	dont-shade lfnano;
+	dont-shade lbpost;
+	dont-shade lblathebox;
+	dont-shade lblift;
+	dont-shade lblathe;
+	dont-shade lbnano;
+	dont-shade rbpost;
+	dont-shade rblathepost;
+	dont-shade rblift;
+	dont-shade rblathe;
+	dont-shade rbnano;
+	dont-shade runners;
+	dont-shade pad;
+	dont-shade glowy1dull;
+	dont-shade glowy1;
+	dont-shade glowy2dull;
+	dont-shade glowy2;
+	dont-shade glowy3dull;
+	dont-shade glowy3;
+	dont-shade glowy4dull;
+	dont-shade glowy4;
+	dont-shade domel1;
+	dont-shade domel2;
+	dont-shade domel3;
+	dont-shade domel4;
+	dont-shade domel5;
+	dont-shade domer1;
+	dont-shade domer2;
+	dont-shade domer3;
+	dont-shade domer4;
+	dont-shade domer5;
+	Static_Var_5 = 1;
+	Static_Var_1 = 0;
+	Static_Var_2 = 0;
+	Static_Var_3 = 0;
+	Static_Var_4 = 0;
+	start-script SmokeUnit();
+}
+
+OpenYard()
+{
+	set YARD_OPEN to 1;
+	while( !get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 1;
+	}
+	set BUGGER_OFF to 0;
+}
+
+QueryNanoPiece(piecenum)
+{
+	if( Static_Var_5 == 1 )
+	{
+		piecenum = rfnano;
+	}
+	if( Static_Var_5 == 2 )
+	{
+		piecenum = lfnano;
+	}
+	if( Static_Var_5 == 3 )
+	{
+		piecenum = rbnano;
+	}
+	if( Static_Var_5 == 4 )
+	{
+		piecenum = lbnano;
+	}
+	++Static_Var_5;
+	if( Static_Var_5 > 4 )
+	{
+		Static_Var_5 = 1;
+	}
+}
+
+Go()
+{
+	while( Static_Var_2 )
+	{
+		sleep 1000;
+	}
+	while( Static_Var_1 )
+	{
+		sleep 1000;
+	}
+	if( !Static_Var_3 )
+	{
+		if( !Static_Var_2 )
+		{
+			Static_Var_2 = 1;
+			call-script Activatescr();
+		}
+	}
+	while( Static_Var_2 )
+	{
+		sleep 1000;
+	}
+	call-script OpenYard();
+	set INBUILDSTANCE to 1;
+}
+
+QueryBuildInfo(piecenum)
+{
+	piecenum = pad;
+}
+
+Activate()
+{
+	signal SIG_ACTIVATE;
+	start-script Go();
+}
+
+StartBuilding()
+{
+	signal SIG_ACTIVATE;
+}
+
+StopBuilding()
+{
+	start-script Stop();
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type BITMAPONLY | BITMAP1;
+		explode rfpost type BITMAPONLY | BITMAP1;
+		explode rflathebox type BITMAPONLY | BITMAP1;
+		explode rflift type BITMAPONLY | BITMAP1;
+		explode rflathe type BITMAPONLY | BITMAP1;
+		explode rfnano type BITMAPONLY | BITMAP1;
+		explode lfpost type BITMAPONLY | BITMAP1;
+		explode lflathepost type BITMAPONLY | BITMAP1;
+		explode lflift type BITMAPONLY | BITMAP1;
+		explode lflathe type BITMAPONLY | BITMAP1;
+		explode lfnano type BITMAPONLY | BITMAP1;
+		explode lbpost type BITMAPONLY | BITMAP1;
+		explode lblathebox type BITMAPONLY | BITMAP1;
+		explode lblift type BITMAPONLY | BITMAP1;
+		explode lblathe type BITMAPONLY | BITMAP1;
+		explode lbnano type BITMAPONLY | BITMAP1;
+		explode rbpost type BITMAPONLY | BITMAP1;
+		explode rblathepost type BITMAPONLY | BITMAP1;
+		explode rblift type BITMAPONLY | BITMAP1;
+		explode rblathe type BITMAPONLY | BITMAP1;
+		explode rbnano type BITMAPONLY | BITMAP1;
+		explode runners type BITMAPONLY | BITMAP1;
+		explode pad type BITMAPONLY | BITMAP1;
+		explode glowy1dull type BITMAPONLY | BITMAP1;
+		explode glowy1 type BITMAPONLY | BITMAP1;
+		explode glowy2dull type BITMAPONLY | BITMAP1;
+		explode glowy2 type BITMAPONLY | BITMAP1;
+		explode glowy3dull type BITMAPONLY | BITMAP1;
+		explode glowy3 type BITMAPONLY | BITMAP1;
+		explode glowy4dull type BITMAPONLY | BITMAP1;
+		explode glowy4 type BITMAPONLY | BITMAP1;
+		explode domel5 type BITMAPONLY | BITMAP1;
+		explode domel4 type BITMAPONLY | BITMAP1;
+		explode domel3 type BITMAPONLY | BITMAP1;
+		explode domel2 type BITMAPONLY | BITMAP1;
+		explode domel1 type BITMAPONLY | BITMAP1;
+		explode domer5 type BITMAPONLY | BITMAP1;
+		explode domer4 type BITMAPONLY | BITMAP1;
+		explode domer3 type BITMAPONLY | BITMAP1;
+		explode domer2 type BITMAPONLY | BITMAP1;
+		explode domer1 type BITMAPONLY | BITMAP1;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type SHATTER | BITMAP4;
+		explode rfpost type SHATTER | BITMAP4;
+		explode rflathebox type SHATTER | BITMAP4;
+		explode rflift type SHATTER | BITMAP4;
+		explode rflathe type SHATTER | BITMAP4;
+		explode rfnano type SHATTER | BITMAP4;
+		explode lfpost type SHATTER | BITMAP4;
+		explode lflathepost type SHATTER | BITMAP4;
+		explode lflift type SHATTER | BITMAP4;
+		explode lflathe type SHATTER | BITMAP4;
+		explode lfnano type SHATTER | BITMAP4;
+		explode lbpost type SHATTER | BITMAP4;
+		explode lblathebox type SHATTER | BITMAP4;
+		explode lblift type SHATTER | BITMAP4;
+		explode lblathe type SHATTER | BITMAP4;
+		explode lbnano type SHATTER | BITMAP4;
+		explode rbpost type SHATTER | BITMAP4;
+		explode rblathepost type SHATTER | BITMAP4;
+		explode rblift type SHATTER | BITMAP4;
+		explode rblathe type SHATTER | BITMAP4;
+		explode rbnano type SHATTER | BITMAP4;
+		explode runners type SHATTER | BITMAP4;
+		explode pad type SHATTER | BITMAP4;
+		explode glowy1dull type SHATTER | BITMAP4;
+		explode glowy1 type SHATTER | BITMAP4;
+		explode glowy2dull type SHATTER | BITMAP4;
+		explode glowy2 type SHATTER | BITMAP4;
+		explode glowy3dull type SHATTER | BITMAP4;
+		explode glowy3 type SHATTER | BITMAP4;
+		explode glowy4dull type SHATTER | BITMAP4;
+		explode glowy4 type SHATTER | BITMAP4;
+		explode domel5 type SHATTER | BITMAP4;
+		explode domel4 type SHATTER | BITMAP4;
+		explode domel3 type SHATTER | BITMAP4;
+		explode domel2 type SHATTER | BITMAP4;
+		explode domel1 type SHATTER | BITMAP4;
+		explode domer5 type SHATTER | BITMAP4;
+		explode domer4 type SHATTER | BITMAP4;
+		explode domer3 type SHATTER | BITMAP4;
+		explode domer2 type SHATTER | BITMAP4;
+		explode domer1 type SHATTER | BITMAP4;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode rfpost type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode rflathebox type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode rflift type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode rflathe type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode rfnano type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode lfpost type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode lflathepost type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode lflift type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode lflathe type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode lfnano type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode lbpost type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode lblathebox type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode lblift type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode lblathe type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode lbnano type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode rbpost type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode rblathepost type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode rblift type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode rblathe type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode rbnano type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode runners type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode pad type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode glowy1dull type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode glowy1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode glowy2dull type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode glowy2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode glowy3dull type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode glowy3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode glowy4dull type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode glowy4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode domel5 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode domel4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode domel3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode domel2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode domel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode domer5 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode domer4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode domer3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode domer2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode domer1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		return (0);
+	}
+	corpsetype = 3;
+	explode base type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode rfpost type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode rflathebox type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode rflift type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode rflathe type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode rfnano type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode lfpost type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode lflathepost type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode lflift type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode lflathe type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode lfnano type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode lbpost type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode lblathebox type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode lblift type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode lblathe type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode lbnano type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode rbpost type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode rblathepost type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode rblift type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode rblathe type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode rbnano type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode runners type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode pad type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode glowy1dull type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode glowy1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode glowy2dull type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode glowy2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode glowy3dull type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode glowy3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode glowy4dull type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode glowy4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode domel5 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode domel4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode domel3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode domel2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode domel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode domer5 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode domer4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode domer3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode domer2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode domer1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+}

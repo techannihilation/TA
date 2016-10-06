@@ -1,0 +1,176 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, gear, hub1, hub2a, hub2b, piston, globe, shield;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, statechg_DesiredState, statechg_StateChanging;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Go()
+{
+	dont-cache piston;
+	spin hub1 around z-axis speed <75.016484>;
+	spin hub2a around z-axis speed <-75.016484>;
+	spin hub2b around z-axis speed <-75.016484>;
+	spin piston around z-axis speed <75.016484>;
+	spin gear around y-axis speed Static_Var_1 accelerate Static_Var_2;
+	set ARMORED to 1;
+}
+
+Stop()
+{
+	cache piston;
+	turn piston to z-axis <0.000000> speed <75.016484>;
+	turn hub2b to z-axis <0.000000> speed <75.016484>;
+	turn hub2a to z-axis <0.000000> speed <75.016484>;
+	turn hub1 to z-axis <0.000000> speed <75.016484>;
+	stop-spin gear around y-axis decelerate Static_Var_3;
+	set ARMORED to 0;
+	wait-for-turn hub1 around z-axis;
+	wait-for-turn hub2a around z-axis;
+	wait-for-turn hub2b around z-axis;
+	wait-for-turn piston around z-axis;
+	wait-for-turn gear around y-axis;
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+Create()
+{
+	dont-shade piston;
+	dont-shade globe;
+	dont-cache globe;
+	dont-cache gear;
+	cache piston;
+	Static_Var_1 = 0;
+	Static_Var_2 = 100;
+	Static_Var_3 = 500;
+	set ARMORED to 0;
+	call-script InitState();
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 250;
+	}
+	start-script SmokeUnit();
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+SetSpeed(Func_Var_1)
+{
+	Static_Var_1 = Func_Var_1 * 1;
+}
+
+AimWeapon1(heading, pitch)
+{
+	if( get ACTIVATION )
+	{
+		return (1);
+	}
+	if( !get ACTIVATION )
+	{
+		return (0);
+	}
+}
+
+QueryWeapon1(piecenum)
+{
+	piecenum = shield;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode globe type SHATTER | EXPLODE_ON_HIT | BITMAP4;
+		explode gear type SHATTER | EXPLODE_ON_HIT | BITMAP4;
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode globe type SHATTER | EXPLODE_ON_HIT | BITMAP4;
+		explode gear type SHATTER | EXPLODE_ON_HIT | BITMAP1;
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode globe type SHATTER | EXPLODE_ON_HIT | BITMAP4;
+		explode gear type SHATTER | EXPLODE_ON_HIT | BITMAP1;
+	}
+	corpsetype = 3;
+	explode globe type SHATTER | EXPLODE_ON_HIT | BITMAP4;
+	explode gear type SHATTER | EXPLODE_ON_HIT | BITMAP1;
+	return (corpsetype);
+}

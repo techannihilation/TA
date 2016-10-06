@@ -5,12 +5,11 @@
 
 piece  flare1, flare2, turret, base, sleeve, barrel1, barrel2, attach;
 
-static-var  Static_Var_1, bAiming, gun_3, Static_Var_4, Static_Var_5,
+static-var  Static_Var_1, bAiming, Static_Var_3, Static_Var_4, Static_Var_5,
             gun_1;
 
 // Signal definitions
 #define SIG_AIM				2
-#define SIG_AIM_3			8
 #define SIG_MOVE			32
 
 
@@ -58,13 +57,13 @@ RockUnit(anglex, anglez)
 Create()
 {
 	Static_Var_5 = 0;
-    set ARMORED to 1;
+	set ARMORED to 1;
 	hide flare1;
 	hide flare2;
 	dont-cache flare1;
 	dont-cache flare2;
 	bAiming = FALSE;
-	gun_3 = flare1;
+	Static_Var_3 = 0;
 	gun_1 = flare1;
 	start-script SmokeUnit();
 	Static_Var_4 = 0;
@@ -172,7 +171,7 @@ Killed(severity, corpsetype)
 		explode flare2 type BITMAPONLY | BITMAP5;
 		explode sleeve type BITMAPONLY | BITMAP1;
 		explode turret type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -184,7 +183,7 @@ Killed(severity, corpsetype)
 		explode flare2 type FALL | BITMAP5;
 		explode sleeve type SHATTER | BITMAP1;
 		explode turret type FALL | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -196,7 +195,7 @@ Killed(severity, corpsetype)
 		explode flare2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 		explode sleeve type SHATTER | BITMAP1;
 		explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode barrel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
@@ -206,4 +205,5 @@ Killed(severity, corpsetype)
 	explode flare2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 	explode sleeve type SHATTER | EXPLODE_ON_HIT | BITMAP1;
 	explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	return (corpsetype);
 }

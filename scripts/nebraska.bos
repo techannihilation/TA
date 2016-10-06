@@ -36,15 +36,12 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		}
 		sleep sleeptime;
 	}
-	return (0);
-	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
 }
 
 Create()
 {
 	gun_1 = ground;
 	start-script SmokeUnit();
-	return (0);
 }
 
 AimPrimary(heading, pitch)
@@ -77,25 +74,21 @@ FirePrimary()
 	{
 		gun_1 = ground;
 	}
-	return (0);
 }
 
 QueryPrimary(piecenum)
 {
 	piecenum = point;
-	return (0);
 }
 
 AimFromPrimary(piecenum)
 {
 	piecenum = turret;
-	return (0);
 }
 
 SweetSpot(piecenum)
 {
 	piecenum = base;
-	return (0);
 }
 
 Killed(severity, corpsetype)
@@ -108,7 +101,7 @@ Killed(severity, corpsetype)
 		explode canon type BITMAPONLY | BITMAP4;
 		explode barrelA type BITMAPONLY | BITMAP5;
 		explode barrelB type BITMAPONLY | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -118,7 +111,7 @@ Killed(severity, corpsetype)
 		explode canon type FALL | BITMAP4;
 		explode barrelA type FALL | BITMAP5;
 		explode barrelB type FALL | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -128,7 +121,7 @@ Killed(severity, corpsetype)
 		explode canon type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 		explode barrelA type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 		explode barrelB type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode ground type FALL | SMOKE | SHATTER | EXPLODE_ON_HIT | BITMAP1;
@@ -136,5 +129,5 @@ Killed(severity, corpsetype)
 	explode canon type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 	explode barrelA type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 	explode barrelB type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-	return (0);
+	return (corpsetype);
 }

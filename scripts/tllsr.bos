@@ -23,8 +23,6 @@ activatescr()
 		sleep 621;
 	}
 	sleep 20;
-	return (0);
-	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
 }
 
 deactivatescr()
@@ -163,7 +161,7 @@ Killed(severity, corpsetype)
 		explode wave2 type BITMAPONLY | BITMAP5;
 		explode plat type BITMAPONLY | BITMAP1;
 		explode haut type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -177,7 +175,7 @@ Killed(severity, corpsetype)
 		explode wave2 type FALL | EXPLODE_ON_HIT | BITMAP5;
 		explode plat type BITMAPONLY | BITMAP1;
 		explode haut type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -191,7 +189,7 @@ Killed(severity, corpsetype)
 		explode wave2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 		explode plat type BITMAPONLY | BITMAP1;
 		explode haut type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode nano type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
@@ -203,4 +201,5 @@ Killed(severity, corpsetype)
 	explode wave2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 	explode plat type BITMAPONLY | BITMAP1;
 	explode haut type BITMAPONLY | BITMAP2;
+	return (corpsetype);
 }

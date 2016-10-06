@@ -1,0 +1,244 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  rmis, lmis, rlauncher, llauncher, flare, turret, wake1, wake2,
+       wake3, wake4, wake5, wake6, wake7, wake8, support, cannon,
+       body, base;
+
+static-var  Static_Var_1, gun_3, bAiming;
+
+// Signal definitions
+#define SIG_AIM				2
+#define SIG_AIM_3			4
+#define SIG_MOVE			8
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from body;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+HitByWeapon(anglex, anglez)
+{
+	turn base to z-axis anglez / <2.000000> speed <105.000000>;
+	turn base to x-axis anglex / <2.000000> speed <105.000000>;
+	wait-for-turn base around z-axis;
+	wait-for-turn base around x-axis;
+	turn base to z-axis <0.000000> speed <30.000000>;
+	turn base to x-axis <0.000000> speed <30.000000>;
+}
+
+StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	while( TRUE )
+	{
+		if( Static_Var_1 <= 3 )
+		{
+			emit-sfx 5 from wake1;
+			emit-sfx 5 from wake2;
+			emit-sfx 5 from wake3;
+			emit-sfx 5 from wake4;
+			emit-sfx 5 from wake5;
+			emit-sfx 5 from wake6;
+			emit-sfx 3 from wake7;
+			emit-sfx 3 from wake8;
+			emit-sfx 3 from wake1;
+			emit-sfx 3 from wake2;
+			emit-sfx 3 from wake3;
+			emit-sfx 3 from wake4;
+			emit-sfx 3 from wake5;
+			emit-sfx 3 from wake6;
+			emit-sfx 5 from wake7;
+			emit-sfx 5 from wake8;
+		}
+		dont-cache body;
+		sleep 300;
+	}
+}
+
+StopMoving()
+{
+	cache body;
+	sleep 100;
+}
+
+setSFXoccupy(state)
+{
+	Static_Var_1 = state;
+}
+
+Create()
+{
+	hide flare;
+	hide rmis;
+	hide lmis;
+	cache body;
+	cache turret;
+	gun_3 = rmis;
+	bAiming = FALSE;
+	start-script SmokeUnit();
+}
+
+RestoreAfterDelay()
+{
+	sleep 8000;
+	turn turret to y-axis <0.000000> speed <75.000000>;
+	turn support to x-axis <0.000000> speed <50.000000>;
+	cache support;
+	cache cannon;
+	cache turret;
+	bAiming = FALSE;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = flare;
+}
+
+QueryTertiary(piecenum)
+{
+	piecenum = gun_3;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = turret;
+}
+
+AimFromTertiary(piecenum)
+{
+	piecenum = body;
+}
+
+FirePrimary()
+{
+	show flare;
+	move cannon to z-axis [-4.000000] speed [500.000000];
+	sleep 150;
+	hide flare;
+	move cannon to z-axis [0.000000] speed [3.000000];
+}
+
+FireTertiary()
+{
+	if( gun_3 == 0 )
+	{
+		move rlauncher to z-axis [-1.500000] speed [200.000000];
+		sleep 450;
+		move rlauncher to z-axis [0.000000] speed [2.000000];
+	}
+	if( gun_3 == 1 )
+	{
+		move llauncher to z-axis [-1.500000] speed [200.000000];
+		sleep 450;
+		move llauncher to z-axis [0.000000] speed [2.000000];
+	}
+	gun_3 = !gun_3;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	bAiming = TRUE;
+	dont-cache turret;
+	dont-cache support;
+	dont-cache cannon;
+	turn turret to y-axis heading speed <120.000000>;
+	turn support to x-axis <0.000000> - pitch speed <80.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn support around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+AimTertiary(heading, pitch)
+{
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
+	return (1);
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = body;
+}
+
+Killed(severity, corpsetype)
+{
+	hide flare;
+	hide rmis;
+	hide lmis;
+	if( Static_Var_1 >= 4 )
+	{
+		if( severity <= 25 )
+		{
+			corpsetype = 1;
+			explode cannon type BITMAPONLY | BITMAP1;
+			explode base type BITMAPONLY | BITMAP2;
+			explode support type BITMAPONLY | BITMAP3;
+			explode rlauncher type BITMAPONLY | BITMAP3;
+			explode llauncher type BITMAPONLY | BITMAP3;
+			explode turret type BITMAPONLY | BITMAP4;
+			return (corpsetype);
+		}
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode cannon type FALL | BITMAP1;
+		explode base type BITMAPONLY | BITMAP2;
+		explode support type BITMAPONLY | BITMAP3;
+		explode rlauncher type BITMAPONLY | BITMAP3;
+		explode llauncher type BITMAPONLY | BITMAP3;
+		explode turret type SHATTER | BITMAP4;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode cannon type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode base type BITMAPONLY | BITMAP2;
+		explode body type SHATTER | BITMAP4;
+		explode support type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode rlauncher type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode llauncher type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode turret type SHATTER | BITMAP4;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode cannon type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode base type BITMAPONLY | BITMAP2;
+	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP4;
+	explode support type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode rlauncher type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode llauncher type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode turret type SHATTER | EXPLODE_ON_HIT | BITMAP4;
+	return (corpsetype);
+}

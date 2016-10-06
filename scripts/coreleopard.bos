@@ -4,13 +4,9 @@
 #include "exptype.h"
 
 piece  base, body, Leg1, Foot1, Leg2, Foot2, Leg3, Foot3,
-	   Leg4, Foot4, nano;
+       Leg4, Foot4, nano;
 
-static-var  bMoving, statechg_DesiredState, statechg_StateChanging,
-            Heading;
-
-// Signal definitions
-#define SIG_AIM				2
+static-var  bMoving, statechg_DesiredState, statechg_StateChanging, Static_Var_4;
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -57,7 +53,7 @@ Go()
 }
 
 Stop()
-{	
+{
 	sleep 1000;
 	set INBUILDSTANCE to 0;
 }
@@ -376,7 +372,6 @@ MotionControl()
 Create()
 {
 	bMoving = FALSE;
-	
 	while( get BUILD_PERCENT_LEFT )
 	{
 		sleep 400;
@@ -385,7 +380,6 @@ Create()
 	call-script InitState();
 	start-script MotionControl();
 }
-
 
 Activate()
 {
@@ -399,7 +393,7 @@ Deactivate()
 
 StartBuilding(Func_Var_1)
 {
-	Heading = Func_Var_1;
+	Static_Var_4 = Func_Var_1;
 	start-script RequestState(0);
 }
 
@@ -430,7 +424,7 @@ QueryNanoPiece(piecenum)
 
 TargetHeading(Func_Var_1)
 {
-	Heading = 0 - Func_Var_1;
+	Static_Var_4 = 0 - Func_Var_1;
 }
 
 Killed(severity, corpsetype)

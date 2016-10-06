@@ -98,7 +98,7 @@ Create()
 	turn turret3 to y-axis <180.000000> speed <500.000000>;
 	start-script SmokeUnit();
 	set ARMORED to 1;
-	while((get BUILD_PERCENT_LEFT) > 0 )
+	while( get BUILD_PERCENT_LEFT > 0 )
 	{
 		sleep 250;
 	}
@@ -107,7 +107,7 @@ Create()
 	dont-cache barrel3B;
 	dont-cache barrel3C;
 	Static_Var_7 = 0;
-	}
+}
 
 AimWeapon1(heading, pitch)
 {
@@ -214,26 +214,26 @@ FireWeapon1()
 	if( Static_Var_1 == 0 )
 	{
 		show flare1A;
-		move barrel1A to z-axis [-4.000000] speed [500.000000];
+		move barrel1A to z-axis [-1.600000] speed [200.000000];
 		sleep 150;
 		hide flare1A;
-		move barrel1A to z-axis [0.000000] speed [1.000000];
+		move barrel1A to z-axis [0.000000] speed [0.400000];
 	}
 	if( Static_Var_1 == 1 )
 	{
 		show flare1B;
-		move barrel1B to z-axis [-4.000000] speed [500.000000];
+		move barrel1B to z-axis [-1.600000] speed [200.000000];
 		sleep 150;
 		hide flare1B;
-		move barrel1B to z-axis [0.000000] speed [1.000000];
+		move barrel1B to z-axis [0.000000] speed [0.400000];
 	}
 	if( Static_Var_1 == 2 )
 	{
 		show flare1C;
-		move barrel1C to z-axis [-4.000000] speed [500.000000];
+		move barrel1C to z-axis [-1.600000] speed [200.000000];
 		sleep 150;
 		hide flare1C;
-		move barrel1C to z-axis [0.000000] speed [1.000000];
+		move barrel1C to z-axis [0.000000] speed [0.400000];
 	}
 	++Static_Var_1;
 	if( Static_Var_1 == 3 )
@@ -247,26 +247,26 @@ FireWeapon2()
 	if( Static_Var_2 == 0 )
 	{
 		show flare2A;
-		move barrel2A to z-axis [-4.000000] speed [500.000000];
+		move barrel2A to z-axis [-1.600000] speed [200.000000];
 		sleep 150;
 		hide flare2A;
-		move barrel2A to z-axis [0.000000] speed [1.000000];
+		move barrel2A to z-axis [0.000000] speed [0.400000];
 	}
 	if( Static_Var_2 == 1 )
 	{
 		show flare2B;
-		move barrel2B to z-axis [-4.000000] speed [500.000000];
+		move barrel2B to z-axis [-1.600000] speed [200.000000];
 		sleep 150;
 		hide flare2B;
-		move barrel2B to z-axis [0.000000] speed [1.000000];
+		move barrel2B to z-axis [0.000000] speed [0.400000];
 	}
 	if( Static_Var_2 == 2 )
 	{
 		show flare2C;
-		move barrel2C to z-axis [-4.000000] speed [500.000000];
+		move barrel2C to z-axis [-1.600000] speed [200.000000];
 		sleep 150;
 		hide flare2C;
-		move barrel2C to z-axis [0.000000] speed [1.000000];
+		move barrel2C to z-axis [0.000000] speed [0.400000];
 	}
 	++Static_Var_2;
 	if( Static_Var_2 == 3 )
@@ -280,26 +280,26 @@ FireWeapon3()
 	if( Static_Var_3 == 0 )
 	{
 		show flare3A;
-		move barrel3A to z-axis [-4.000000] speed [500.000000];
+		move barrel3A to z-axis [-1.600000] speed [200.000000];
 		sleep 150;
 		hide flare3A;
-		move barrel3A to z-axis [0.000000] speed [1.000000];
+		move barrel3A to z-axis [0.000000] speed [0.400000];
 	}
 	if( Static_Var_3 == 1 )
 	{
 		show flare3B;
-		move barrel3B to z-axis [-4.000000] speed [500.000000];
+		move barrel3B to z-axis [-1.600000] speed [200.000000];
 		sleep 150;
 		hide flare3B;
-		move barrel3B to z-axis [0.000000] speed [1.000000];
+		move barrel3B to z-axis [0.000000] speed [0.400000];
 	}
 	if( Static_Var_3 == 2 )
 	{
 		show flare3C;
-		move barrel3C to z-axis [-4.000000] speed [500.000000];
+		move barrel3C to z-axis [-1.600000] speed [200.000000];
 		sleep 150;
 		hide flare3C;
-		move barrel3C to z-axis [0.000000] speed [1.000000];
+		move barrel3C to z-axis [0.000000] speed [0.400000];
 	}
 	++Static_Var_3;
 	if( Static_Var_3 == 3 )
@@ -387,26 +387,26 @@ FireWeapon6()
 	if( Static_Var_6 == 0 )
 	{
 		show flare6a;
-		move barrel6a to z-axis [-4.000000] speed [500.000000];
+		move barrel6a to z-axis [-1.600000] speed [200.000000];
 		sleep 150;
 		hide flare6a;
-		move barrel6a to z-axis [0.000000] speed [1.000000];
+		move barrel6a to z-axis [0.000000] speed [0.400000];
 	}
 	if( Static_Var_6 == 1 )
 	{
 		show flare6b;
-		move barrel6b to z-axis [-4.000000] speed [500.000000];
+		move barrel6b to z-axis [-1.600000] speed [200.000000];
 		sleep 150;
 		hide flare6b;
-		move barrel6b to z-axis [0.000000] speed [1.000000];
+		move barrel6b to z-axis [0.000000] speed [0.400000];
 	}
 	if( Static_Var_6 == 2 )
 	{
 		show flare6c;
-		move barrel6c to z-axis [-4.000000] speed [500.000000];
+		move barrel6c to z-axis [-1.600000] speed [200.000000];
 		sleep 150;
 		hide flare6c;
-		move barrel6c to z-axis [0.000000] speed [1.000000];
+		move barrel6c to z-axis [0.000000] speed [0.400000];
 	}
 	++Static_Var_6;
 	if( Static_Var_6 == 3 )
@@ -550,7 +550,7 @@ Killed(severity, corpsetype)
 		explode barrel6a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 		explode barrel2B type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 		explode base type BITMAPONLY | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode barrel1A type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
@@ -575,4 +575,5 @@ Killed(severity, corpsetype)
 	explode barrel2B type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 	explode base type BITMAPONLY | BITMAP4;
 	explode base type FALL | EXPLODE_ON_HIT | BITMAP5;
+	return (corpsetype);
 }

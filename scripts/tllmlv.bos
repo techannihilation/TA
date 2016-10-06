@@ -5,11 +5,8 @@
 
 piece  base, body, p1, nano, spray, door, wheels1, wheels2;
 
-static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging;
+static-var  Static_Var_1, Static_Var_2, Static_Var_3;
 
-// Signal definitions
-#define SIG_MOVE	2
-#define SIG_BUILD	4
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -68,69 +65,15 @@ deactivatescr()
 	}
 	sleep 10;
 }
-/*
-Go()
-{
-	call-script activatescr();
-	turn nano to y-axis Static_Var_1 speed <190.000000>;
-	wait-for-turn nano around y-axis;
-	set INBUILDSTANCE to 1;
-}
-
-Stop()
-{
-	set INBUILDSTANCE to 0;
-	turn nano to y-axis <0.000000> speed <190.000000>;
-	wait-for-turn nano around y-axis;
-	call-script deactivatescr();
-}
-
-InitState()
-{
-	statechg_DesiredState = TRUE;
-	statechg_StateChanging = FALSE;
-}
-
-
-RequestState(requestedstate, currentstate)
-{
-	if( statechg_StateChanging )
-	{
-		statechg_DesiredState = requestedstate;
-		return (0);
-	}
-	statechg_StateChanging = TRUE;
-	currentstate = statechg_DesiredState;
-	statechg_DesiredState = requestedstate;
-	while( statechg_DesiredState != currentstate )
-	{
-		if( statechg_DesiredState == 0 )
-		{
-			call-script Go();
-			currentstate = 0;
-		}
-		if( statechg_DesiredState == 1 )
-		{
-			call-script Stop();
-			currentstate = 1;
-		}
-	}
-	statechg_StateChanging = FALSE;
-}
-*/
 
 Create()
 {
 	Static_Var_1 = 0;
-	//turn nano to y-axis <90.000000> now;
-	//call-script InitState();
 	start-script SmokeUnit();
 }
 
 StartMoving()
 {
-	//signal SIG_MOVE;
-	//set-signal-mask SIG_MOVE;
 	spin wheels1 around x-axis speed <150.000000>;
 	spin wheels2 around x-axis speed <150.000000>;
 	sleep 300;
@@ -140,43 +83,32 @@ StartMoving()
 
 StopMoving()
 {
-	//signal SIG_MOVE;
 	stop-spin wheels1 around x-axis;
 	stop-spin wheels2 around x-axis;
 }
-/*
-Activate()
-{
-	start-script RequestState(0);
-}
 
-Deactivate()
+StartBuilding(Func_Var_1, Func_Var_2)
 {
-	start-script RequestState(1);
-}
-*/
-
-StartBuilding(heading, pitch)
-{
-	signal SIG_BUILD;
+	signal 4;
 	call-script activatescr();
-	turn nano to y-axis heading speed <160.000000>;
+	turn nano to y-axis Func_Var_1 speed <160.000000>;
 	wait-for-turn nano around y-axis;
 	set INBUILDSTANCE to 1;
 }
 
 StopBuilding()
 {
-	signal SIG_BUILD;	
-	set-signal-mask SIG_BUILD;
+	signal 4;
+	set-signal-mask 4;
 	sleep 6000;
 	call-script deactivatescr();
 	set-signal-mask 0;
-	signal SIG_BUILD;	
+	signal 4;
 	set INBUILDSTANCE to 0;
 	turn nano to y-axis <0.000000> speed <160.000000>;
 	wait-for-turn nano around y-axis;
 }
+
 QueryNanoPiece(piecenum)
 {
 	piecenum = spray;
@@ -211,7 +143,7 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		return (0);
+		return (corpsetype);
 	}
 	explode body type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
 	explode door type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
@@ -220,8 +152,9 @@ Killed(severity, corpsetype)
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		return (0);
+		return (corpsetype);
 	}
 	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP3;
 	corpsetype = 3;
+	return (corpsetype);
 }

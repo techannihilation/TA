@@ -4,10 +4,10 @@
 #include "exptype.h"
 
 piece  base, pelvis, torso, stick, plasmasprayer, cap, fire, lshoulder,
-       larm, lcannon, lbarrel1, lfire1, lbarrel2, lfire2, launcher,
-       rocketfire1, rocketfire2, rshoulder, rarm, rcannon, rbarrel1, rfire1, rbarrel2,
-       rfire2, lupleg, llowleg, lfoot, lftoe, lleftoe,
-       lrightoe, rupleg, rlowleg, rfoot, rftoe, rleftoe, rrightoe, lbtoe1, lbtoe2, rbtoe1, rbtoe2;
+       larm, lcannon, lbarrel1, lfire1, lbarrel2, lfire2, launcher, rocketfire1,
+       rocketfire2, rshoulder, rarm, rcannon, rbarrel1, rfire1, rbarrel2, rfire2,
+       lupleg, llowleg, lfoot, lftoe, lleftoe, lrightoe, rupleg, rlowleg,
+       rfoot, rftoe, rleftoe, rrightoe, lbtoe1, lbtoe2, rbtoe1, rbtoe2;
 
 static-var  gun_1, bMoving, bAiming, Static_Var_4, Static_Var_5,
             Static_Var_6, gun_3, Static_Var_8, Static_Var_9, Static_Var_10,
@@ -61,7 +61,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		}
 		sleep sleeptime;
 	}
-	return (0);
 }
 
 StartMoving()
@@ -89,19 +88,19 @@ StartMoving()
 		{
 			if( !bAiming )
 			{
-				move torso to y-axis [3.750000] speed [6.250000];
+				move torso to y-axis [1.500000] speed [2.500000];
 				turn torso to z-axis <2.500000> speed <1.000000>;
 				turn torso to y-axis <6.000000> speed <10.000000>;
 				turn stick to y-axis <7.500000> speed <11.000000>;
 				turn larm to x-axis <-22.000000> speed <14.000000>;
 				turn rarm to x-axis <18.000000> speed <14.000000>;
-				move stick to y-axis [6.250000] speed [2.500000];
-				move torso to x-axis [0.500000] speed [0.250000];
+				move stick to y-axis [2.500000] speed [1.000000];
+				move torso to x-axis [0.200000] speed [0.100000];
 				turn lcannon to y-axis <4.000000> speed <2.500000>;
 				turn rcannon to y-axis <-4.000000> speed <2.500000>;
-				move lshoulder to y-axis [1.250000] speed [2.500000];
-				move rshoulder to y-axis [-0.625000] speed [1.250000];
-				move launcher to y-axis [1.000000] speed [2.250000];
+				move lshoulder to y-axis [0.500000] speed [1.000000];
+				move rshoulder to y-axis [-0.250000] speed [0.500000];
+				move launcher to y-axis [0.400000] speed [0.900000];
 			}
 		}
 		turn llowleg to x-axis <20.000000> speed <22.500000>;
@@ -114,11 +113,11 @@ StartMoving()
 		sleep 1250;
 		if( !bAiming )
 		{
-			move torso to y-axis [0.000000] speed [2.500000];
-			move stick to y-axis [3.750000] speed [2.000000];
-			move lshoulder to y-axis [0.000000] speed [1.125000];
-			move rshoulder to y-axis [0.000000] speed [0.549957];
-			move launcher to y-axis [0.000000] speed [1.250000];
+			move torso to y-axis [0.000000] speed [1.000000];
+			move stick to y-axis [1.500000] speed [0.800000];
+			move lshoulder to y-axis [0.000000] speed [0.450000];
+			move rshoulder to y-axis [0.000000] speed [0.219977];
+			move launcher to y-axis [0.000000] speed [0.500000];
 		}
 		turn rupleg to x-axis <0.000000> speed <68.000000>;
 		turn rlowleg to x-axis <-10.000000> speed <17.000000>;
@@ -140,18 +139,18 @@ StartMoving()
 		sleep 550;
 		if( !bAiming )
 		{
-			move torso to y-axis [3.750000] speed [6.250000];
+			move torso to y-axis [1.500000] speed [2.500000];
 			turn torso to z-axis <-2.500000> speed <1.000000>;
 			turn torso to y-axis <-6.000000> speed <10.000000>;
 			turn stick to y-axis <-7.500000> speed <11.000000>;
 			turn larm to x-axis <18.000000> speed <14.000000>;
 			turn rarm to x-axis <-22.000000> speed <14.000000>;
-			move stick to y-axis [7.000000] speed [2.500000];
-			move torso to x-axis [-0.500000] speed [0.250000];
+			move stick to y-axis [2.800000] speed [1.000000];
+			move torso to x-axis [-0.200000] speed [0.100000];
 			turn lcannon to y-axis <-4.000000> speed <2.500000>;
 			turn rcannon to y-axis <4.000000> speed <2.500000>;
-			move lshoulder to y-axis [1.250000] speed [2.500000];
-			move rshoulder to y-axis [-0.625000] speed [1.250000];
+			move lshoulder to y-axis [0.500000] speed [1.000000];
+			move rshoulder to y-axis [-0.250000] speed [0.500000];
 		}
 		turn rupleg to x-axis <30.000000> speed <22.500000>;
 		turn rlowleg to x-axis <20.000000> speed <22.500000>;
@@ -169,10 +168,10 @@ StartMoving()
 		sleep 1250;
 		if( !bAiming )
 		{
-			move torso to y-axis [0.000000] speed [2.500000];
-			move stick to y-axis [3.750000] speed [2.000000];
-			move lshoulder to y-axis [0.000000] speed [1.125000];
-			move rshoulder to y-axis [0.000000] speed [0.549957];
+			move torso to y-axis [0.000000] speed [1.000000];
+			move stick to y-axis [1.500000] speed [0.800000];
+			move lshoulder to y-axis [0.000000] speed [0.450000];
+			move rshoulder to y-axis [0.000000] speed [0.219977];
 		}
 		turn lupleg to x-axis <0.000000> speed <68.000000>;
 		turn llowleg to x-axis <-10.000000> speed <17.000000>;
@@ -193,7 +192,6 @@ StartMoving()
 		turn rbtoe2 to x-axis <-20.000000> speed <30.000000>;
 		sleep 550;
 	}
-	return (0);
 }
 
 StopMoving()
@@ -215,13 +213,13 @@ StopMoving()
 	if( !Static_Var_5 )
 	{
 		turn stick to y-axis <0.000000> speed <20.000000>;
-		move stick to y-axis [0.000000] speed [2.500000];
+		move stick to y-axis [0.000000] speed [1.000000];
 	}
 	if( Static_Var_5 )
 	{
 		if( !Static_Var_12 )
 		{
-			move stick to y-axis [0.000000] speed [2.500000];
+			move stick to y-axis [0.000000] speed [1.000000];
 		}
 	}
 	turn lupleg to x-axis <0.000000> speed <100.000000>;
@@ -245,11 +243,10 @@ StopMoving()
 	turn rbtoe1 to x-axis <0.000000> speed <90.000000>;
 	turn rbtoe2 to x-axis <0.000000> speed <80.000000>;
 	turn torso to z-axis <0.000000> speed <8.000000>;
-	move torso to y-axis [0.000000] speed [10.000000];
-	move torso to x-axis [0.000000] speed [3.000000];
-	move lshoulder to y-axis [0.000000] speed [7.500000];
-	move rshoulder to y-axis [0.000000] speed [7.500000];
-	return (0);
+	move torso to y-axis [0.000000] speed [4.000000];
+	move torso to x-axis [0.000000] speed [1.200000];
+	move lshoulder to y-axis [0.000000] speed [3.000000];
+	move rshoulder to y-axis [0.000000] speed [3.000000];
 }
 
 RestorePrimary()
@@ -285,17 +282,16 @@ RestoreSecondary()
 	turn plasmasprayer to y-axis <0.000000> speed <80.000000>;
 	wait-for-turn plasmasprayer around y-axis;
 	Static_Var_8 = 0;
-	move stick to y-axis [0.000000] speed [2.500000];
+	move stick to y-axis [0.000000] speed [1.000000];
 	wait-for-move stick along y-axis;
 	Static_Var_5 = 0;
 	if( bAiming == 1 )
 	{
-		if( ( !Static_Var_4 ) AND ( !Static_Var_6 ) )
+		if( !Static_Var_4 AND !Static_Var_6 )
 		{
 			bAiming = FALSE;
 		}
 	}
-	return (0);
 }
 
 RestoreTertiary()
@@ -312,13 +308,11 @@ RestoreTertiary()
 			bAiming = FALSE;
 		}
 	}
-	return (0);
 }
 
 Demo()
 {
 	unitviewer = TRUE;
-	return (0);
 }
 
 Create()
@@ -343,13 +337,11 @@ Create()
 		sleep 1000;
 	}
 	start-script SmokeUnit();
-	return (0);
 }
 
 SweetSpot(piecenum)
 {
 	piecenum = torso;
-	return (0);
 }
 
 QueryPrimary(piecenum)
@@ -379,7 +371,6 @@ QueryPrimary(piecenum)
 AimFromPrimary(piecenum)
 {
 	piecenum = torso;
-	return (0);
 }
 
 AimPrimary(heading, pitch)
@@ -422,33 +413,33 @@ FirePrimary()
 	if( gun_1 == 1 )
 	{
 		gun_1 = torso;
-		move rbarrel2 to z-axis [-11.250000] speed [750.000000];
+		move rbarrel2 to z-axis [-4.500000] speed [300.000000];
 		sleep 150;
-		move rbarrel2 to z-axis [0.000000] speed [8.750000];
+		move rbarrel2 to z-axis [0.000000] speed [3.500000];
 		return (0);
 	}
 	if( gun_1 == 2 )
 	{
 		gun_1 = stick;
-		move lbarrel1 to z-axis [-11.250000] speed [750.000000];
+		move lbarrel1 to z-axis [-4.500000] speed [300.000000];
 		sleep 150;
-		move lbarrel1 to z-axis [0.000000] speed [8.750000];
+		move lbarrel1 to z-axis [0.000000] speed [3.500000];
 		return (0);
 	}
 	if( gun_1 == 3 )
 	{
 		gun_1 = plasmasprayer;
-		move rbarrel1 to z-axis [-11.250000] speed [750.000000];
+		move rbarrel1 to z-axis [-4.500000] speed [300.000000];
 		sleep 150;
-		move rbarrel1 to z-axis [0.000000] speed [8.750000];
+		move rbarrel1 to z-axis [0.000000] speed [3.500000];
 		return (0);
 	}
 	if( gun_1 == 4 )
 	{
 		gun_1 = pelvis;
-		move lbarrel2 to z-axis [-11.250000] speed [750.000000];
+		move lbarrel2 to z-axis [-4.500000] speed [300.000000];
 		sleep 150;
-		move lbarrel2 to z-axis [0.000000] speed [8.750000];
+		move lbarrel2 to z-axis [0.000000] speed [3.500000];
 		return (0);
 	}
 }
@@ -456,13 +447,11 @@ FirePrimary()
 QuerySecondary(piecenum)
 {
 	piecenum = fire;
-	return (0);
 }
 
 AimFromSecondary(piecenum)
 {
 	piecenum = plasmasprayer;
-	return (0);
 }
 
 AimSecondary(heading, pitch)
@@ -475,22 +464,22 @@ AimSecondary(heading, pitch)
 	{
 		if( !bMoving )
 		{
-			move stick to y-axis [2.500000] speed [5.000000];
+			move stick to y-axis [1.000000] speed [2.000000];
 			wait-for-move stick along y-axis;
 		}
 		if( bMoving )
 		{
-			move stick to y-axis [7.000000] speed [5.000000];
+			move stick to y-axis [2.800000] speed [2.000000];
 			wait-for-move stick along y-axis;
 		}
 	}
 	if( !bMoving )
 	{
-		move stick to y-axis [2.500000] speed [5.000000];
+		move stick to y-axis [1.000000] speed [2.000000];
 	}
 	if( bMoving )
 	{
-		move stick to y-axis [7.000000] speed [5.000000];
+		move stick to y-axis [2.800000] speed [2.000000];
 	}
 	turn stick to y-axis heading speed <140.000000>;
 	wait-for-turn stick around y-axis;
@@ -501,12 +490,11 @@ AimSecondary(heading, pitch)
 FireSecondary()
 {
 	explode fire type BITMAPONLY | BITMAP5;
-	move plasmasprayer to z-axis [-1.750000] speed [50.000000];
-	move cap to z-axis [6.250000] speed [65.000000];
+	move plasmasprayer to z-axis [-0.700000] speed [20.000000];
+	move cap to z-axis [2.500000] speed [26.000000];
 	sleep 500;
-	move plasmasprayer to z-axis [0.000000] speed [3.000000];
-	move cap to z-axis [0.000000] speed [5.000000];
-	return (0);
+	move plasmasprayer to z-axis [0.000000] speed [1.200000];
+	move cap to z-axis [0.000000] speed [2.000000];
 }
 
 QueryTertiary(piecenum)
@@ -526,7 +514,6 @@ QueryTertiary(piecenum)
 AimFromTertiary(piecenum)
 {
 	piecenum = launcher;
-	return (0);
 }
 
 AimTertiary(heading, pitch)
@@ -539,8 +526,8 @@ AimTertiary(heading, pitch)
 		{
 			turn larm to x-axis <0.000000> speed <50.000000>;
 			turn rarm to x-axis <0.000000> speed <50.000000>;
-			move lshoulder to y-axis [0.000000] speed [7.500000];
-			move rshoulder to y-axis [0.000000] speed [7.500000];
+			move lshoulder to y-axis [0.000000] speed [3.000000];
+			move rshoulder to y-axis [0.000000] speed [3.000000];
 			turn lcannon to y-axis <0.000000> speed <20.000000>;
 			turn rcannon to y-axis <0.000000> speed <20.000000>;
 		}
@@ -616,7 +603,7 @@ Killed(severity, corpsetype)
 		explode rftoe type BITMAPONLY | BITMAP1;
 		explode rleftoe type BITMAPONLY | BITMAP1;
 		explode rrightoe type BITMAPONLY | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -655,7 +642,7 @@ Killed(severity, corpsetype)
 		explode rftoe type SHATTER | BITMAP4;
 		explode rleftoe type SHATTER | BITMAP4;
 		explode rrightoe type SHATTER | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -694,7 +681,7 @@ Killed(severity, corpsetype)
 		explode rftoe type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 		explode rleftoe type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 		explode rrightoe type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
@@ -731,5 +718,5 @@ Killed(severity, corpsetype)
 	explode rftoe type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 	explode rleftoe type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 	explode rrightoe type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	return (0);
+	return (corpsetype);
 }

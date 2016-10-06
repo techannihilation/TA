@@ -21,20 +21,20 @@ activatescr()
 	dont-cache d4;
 	dont-cache pad;
 	dont-cache nano;
-	turn d1 to x-axis <5.000000> speed <100.000000>;
+	turn d1 to z-axis <5.000000> speed <100.000000>;
 	turn d2 to z-axis <5.000000> speed <100.000000>;
 	turn d3 to z-axis <-5.000000> speed <100.000000>;
-	turn d4 to x-axis <-5.000000> speed <100.000000>;
+	turn d4 to z-axis <-5.000000> speed <100.000000>;
 	sleep 75;
-	turn d1 to x-axis <-60.000000> speed <50.000000>;
+	turn d1 to z-axis <-60.000000> speed <50.000000>;
 	turn d2 to z-axis <-60.000000> speed <50.000000>;
 	turn d3 to z-axis <60.000000> speed <50.000000>;
-	turn d4 to x-axis <60.000000> speed <50.000000>;
+	turn d4 to z-axis <60.000000> speed <50.000000>;
 	wait-for-turn d4 around z-axis;
-	turn d1 to x-axis <-80.000000> speed <20.000000>;
+	turn d1 to z-axis <-80.000000> speed <20.000000>;
 	turn d2 to z-axis <-80.000000> speed <20.000000>;
 	turn d3 to z-axis <80.000000> speed <20.000000>;
-	turn d4 to x-axis <80.000000> speed <20.000000>;
+	turn d4 to z-axis <80.000000> speed <20.000000>;
 	sleep 800;
 	wait-for-turn d4 around z-axis;
 	dont-cache lights;
@@ -46,26 +46,26 @@ deactivatescr()
 	cache lights;
 	if( TRUE )
 	{
-		turn d1 to x-axis <-20.000000> speed <50.000000>;
+		turn d1 to z-axis <-20.000000> speed <50.000000>;
 		turn d2 to z-axis <-20.000000> speed <50.000000>;
 		turn d3 to z-axis <20.000000> speed <50.000000>;
-		turn d4 to x-axis <20.000000> speed <50.000000>;
+		turn d4 to z-axis <20.000000> speed <50.000000>;
 		wait-for-turn d4 around z-axis;
 	}
 	if( TRUE )
 	{
-		turn d1 to x-axis <5.000000> speed <20.000000>;
+		turn d1 to z-axis <5.000000> speed <20.000000>;
 		turn d2 to z-axis <5.000000> speed <20.000000>;
 		turn d3 to z-axis <-5.000000> speed <20.000000>;
-		turn d4 to x-axis <5.000000> speed <20.000000>;
+		turn d4 to z-axis <5.000000> speed <20.000000>;
 		wait-for-turn d4 around z-axis;
 	}
 	if( TRUE )
 	{
-		turn d1 to x-axis <0.000000> speed <50.000000>;
+		turn d1 to z-axis <0.000000> speed <50.000000>;
 		turn d2 to z-axis <0.000000> speed <50.000000>;
 		turn d3 to z-axis <0.000000> speed <50.000000>;
-		turn d4 to x-axis <0.000000> speed <50.000000>;
+		turn d4 to z-axis <0.000000> speed <50.000000>;
 		wait-for-turn d4 around z-axis;
 	}
 	cache pad;
@@ -186,7 +186,6 @@ Create()
 	dont-shade lights;
 	dont-shade nano;
 	Static_Var_1 = 0;
-//	turn doors to y-axis <45.000000> now;
 	call-script InitState();
 	start-script SmokeUnit();
 }
@@ -256,7 +255,7 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		return (0);
+		return (corpsetype);
 	}
 	explode pad type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
 	explode nano type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
@@ -265,8 +264,9 @@ Killed(severity, corpsetype)
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP5;
+	return (corpsetype);
 }

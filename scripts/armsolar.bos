@@ -5,7 +5,7 @@
 
 piece  base, dish1, dish2, dish3, dish4;
 
-static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging;
+static-var  Static_Var_1, Static_Var_2, Static_Var_3;
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -19,10 +19,10 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		healthpercent = get HEALTH;
 		if( healthpercent < 66 )
 		{
-			smoketype = SFXTYPE_BLACKSMOKE;
+			smoketype = 256 | 2;
 			if( Rand( 1, 66 ) < healthpercent )
 			{
-				smoketype = SFXTYPE_WHITESMOKE;
+				smoketype = 256 | 1;
 			}
 			emit-sfx smoketype from base;
 		}
@@ -35,32 +35,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-/*
-OpenYard()
-{
-	set YARD_OPEN to 1;
-	while( !get YARD_OPEN )
-	{
-		set BUGGER_OFF to 1;
-		sleep 1000;
-		set YARD_OPEN to 1;
-	}
-	set BUGGER_OFF to 0;
-}
-
-CloseYard()
-{
-	set YARD_OPEN to 0;
-	while( get YARD_OPEN )
-	{
-		set BUGGER_OFF to 1;
-		sleep 1000;
-		set YARD_OPEN to 0;
-	}
-	set BUGGER_OFF to 0;
-}
-*/
-
 Go()
 {
 	if( Static_Var_1 )
@@ -68,7 +42,6 @@ Go()
 		set ACTIVATION to 0;
 		return (0);
 	}
-	//call-script CloseYard();
 	turn dish1 to x-axis <-90.016484> speed <60.000000>;
 	turn dish2 to x-axis <90.016484> speed <60.000000>;
 	turn dish3 to z-axis <-90.016484> speed <60.000000>;
@@ -83,7 +56,6 @@ Go()
 
 Stop()
 {
-	//call-script OpenYard();
 	turn dish1 to x-axis <0.000000> speed <120.000000>;
 	turn dish2 to x-axis <0.000000> speed <120.000000>;
 	turn dish3 to z-axis <0.000000> speed <120.000000>;
@@ -98,17 +70,17 @@ Stop()
 
 RequestState(requestedstate, currentstate)
 {
-	if( statechg_StateChanging )
+	if( Static_Var_3 )
 	{
-		statechg_DesiredState = requestedstate;
+		Static_Var_2 = requestedstate;
 		return (0);
 	}
-	statechg_StateChanging = TRUE;
-	currentstate = statechg_DesiredState;
-	statechg_DesiredState = requestedstate;
-	while( statechg_DesiredState != currentstate )
+	Static_Var_3 = 1;
+	currentstate = Static_Var_2;
+	Static_Var_2 = requestedstate;
+	while( Static_Var_2 != currentstate )
 	{
-		if( statechg_DesiredState )
+		if( Static_Var_2 )
 		{
 			call-script Stop();
 			currentstate = 1;
@@ -119,13 +91,13 @@ RequestState(requestedstate, currentstate)
 			currentstate = 0;
 		}
 	}
-	statechg_StateChanging = FALSE;
+	Static_Var_3 = 0;
 }
 
 Create()
 {
-	statechg_DesiredState = TRUE;
-	statechg_StateChanging = FALSE;
+	Static_Var_2 = 1;
+	Static_Var_3 = 0;
 	start-script SmokeUnit();
 	Static_Var_1 = 0;
 }
@@ -145,7 +117,7 @@ Deactivate()
 	start-script RequestState(1);
 }
 
-HitByWeapon(Func_Var_1, Func_Var_2)
+HitByWeapon(anglex, anglez)
 {
 	if( get ACTIVATION )
 	{
@@ -177,7 +149,7 @@ Killed(severity, corpsetype)
 		explode dish3 type FALL | BITMAP3;
 		explode dish4 type FALL | BITMAP4;
 		explode base type BITMAPONLY | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -187,7 +159,7 @@ Killed(severity, corpsetype)
 		explode dish3 type FALL | BITMAP3;
 		explode dish4 type FALL | BITMAP4;
 		explode base type BITMAPONLY | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -197,7 +169,7 @@ Killed(severity, corpsetype)
 		explode dish3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode dish4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 		explode base type BITMAPONLY | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode dish1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
@@ -205,4 +177,5 @@ Killed(severity, corpsetype)
 	explode dish3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode dish4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 	explode base type SHATTER | EXPLODE_ON_HIT | BITMAP5;
+	return (corpsetype);
 }

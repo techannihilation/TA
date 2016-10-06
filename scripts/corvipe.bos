@@ -3,73 +3,47 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-//-------------------------------------------------------------------------------------------------
-// Pieces
-//-------------------------------------------------------------------------------------------------
 piece  base, turret1, stand, door1, door2, door3, door4, turret2,
        emit1, emit2, emit3, emit4;
 
-//-------------------------------------------------------------------------------------------------
-// Static var
-//-------------------------------------------------------------------------------------------------
-static-var  isFullyOpen, gun_1;
+static-var  Static_Var_1, gun_1;
 
-//-------------------------------------------------------------------------------------------------
 // Signal definitions
-//-------------------------------------------------------------------------------------------------
-#define SIG_AIM	2
-#define SIG_OPENCLOSE 4
+#define SIG_AIM				2
 
-//-------------------------------------------------------------------------------------------------
-// Functions
-//-------------------------------------------------------------------------------------------------
+
 FClose()
 {
-    // Signal guard
-    signal SIG_OPENCLOSE;
-    set-signal-mask SIG_OPENCLOSE;
-
-    // State
-    isFullyOpen = 0;
-
-    // Animation
+	signal 4;
+	set-signal-mask 4;
+	Static_Var_1 = 0;
 	turn turret1 to y-axis <0.000000> speed <200.000000>;
 	turn turret2 to x-axis <90.000000> speed <200.000000>;
 	wait-for-turn turret2 around x-axis;
 	wait-for-turn turret1 around y-axis;
-	move stand to y-axis [-23.389996] speed [41.000000];
+	move stand to y-axis [-23.389990] speed [41.000000];
 	sleep 400;
 	turn door1 to z-axis <-3.000000> speed <309.000000>;
 	turn door2 to z-axis <3.000000> speed <308.000000>;
 	turn door3 to x-axis <-3.000000> speed <309.000000>;
 	turn door4 to x-axis <3.000000> speed <309.000000>;
 	sleep 400;
-	
-	// Fully closed -> Gain armor
 	set ARMORED to 1;
 }
 
 FCloseAfterDelay()
 {
-    // Signals
-    set-signal-mask SIG_OPENCLOSE;
-    
-    // Script
-    sleep 4000;
-    set-signal-mask 0; // To stop FClose from inheriting SIG_OPENCLOSE and killing itself
-    start-script FClose();
+	set-signal-mask 4;
+	sleep 4000;
+	set-signal-mask 0;
+	start-script FClose();
 }
 
 FOpen()
 {
-    // Signals
-    signal SIG_OPENCLOSE;
-    set-signal-mask SIG_OPENCLOSE;
-   
-    // Lose armor immediately
+	signal 4;
+	set-signal-mask 4;
 	set ARMORED to 0;
-	
-	// Animation
 	turn door1 to z-axis <-179.038462> speed <827.000000>;
 	turn door2 to z-axis <178.038462> speed <826.000000>;
 	turn door3 to x-axis <-179.038462> speed <827.000000>;
@@ -77,19 +51,9 @@ FOpen()
 	move stand to y-axis [0.000000] speed [76.000000];
 	wait-for-turn door4 around x-axis;
 	wait-for-move stand along y-axis;
-
-	
-	    // Done
-	isFullyOpen = 1;
-    
-    // Remember to close later
-    start-script FCloseAfterDelay();
+	Static_Var_1 = 1;
+	start-script FCloseAfterDelay();
 }
-
-
-//-------------------------------------------------------------------------------------------------
-// Callins
-//-------------------------------------------------------------------------------------------------
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -120,7 +84,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
-    // Pieces
 	dont-shade door1;
 	dont-shade door2;
 	dont-shade door3;
@@ -136,15 +99,10 @@ Create()
 	dont-cache turret1;
 	dont-cache turret2;
 	gun_1 = turret1;
-	// State (Fully open)
-    isFullyOpen = 1;
-    start-script FCloseAfterDelay();
-
-    // Other threads
+	Static_Var_1 = 1;
+	start-script FCloseAfterDelay();
 	start-script SmokeUnit();
-	
-    // Alignment
-	move turret1 to y-axis [5.0] now;
+	move turret1 to y-axis [5.000000] now;
 	turn door1 to z-axis <-179.038462> now;
 	turn door2 to z-axis <178.038462> now;
 	turn door3 to x-axis <-179.038462> now;
@@ -153,14 +111,10 @@ Create()
 
 AimPrimary(heading, pitch)
 {
-	
-    // Signal guard
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	
-	// Open up
-    start-script FOpen();
-	while(!isFullyOpen)
+	start-script FOpen();
+	while( !Static_Var_1 )
 	{
 		sleep 250;
 	}
@@ -175,22 +129,22 @@ FirePrimary()
 {
 	if( gun_1 == 1 )
 	{
-		gun_1 = 2;
+		gun_1 = stand;
 		return (0);
 	}
 	if( gun_1 == 2 )
 	{
-		gun_1 = 3;
+		gun_1 = door1;
 		return (0);
 	}
 	if( gun_1 == 3 )
 	{
-		gun_1 = 4;
+		gun_1 = door2;
 		return (0);
 	}
 	if( gun_1 == 4 )
 	{
-		gun_1 = 1;
+		gun_1 = turret1;
 	}
 }
 
@@ -218,6 +172,7 @@ QueryPrimary(piecenum)
 		piecenum = emit4;
 	}
 }
+
 SweetSpot(piecenum)
 {
 	piecenum = base;
@@ -227,11 +182,11 @@ Killed(severity, corpsetype)
 {
 	if( severity <= 25 )
 	{
-		if( isFullyOpen )
+		if( Static_Var_1 )
 		{
 			corpsetype = 1;
 		}
-		if( !isFullyOpen )
+		if( !Static_Var_1 )
 		{
 			corpsetype = 2;
 		}
@@ -243,15 +198,15 @@ Killed(severity, corpsetype)
 		explode stand type BITMAPONLY | BITMAP3;
 		explode turret1 type BITMAPONLY | BITMAP4;
 		explode turret2 type BITMAPONLY | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
-		if( isFullyOpen )
+		if( Static_Var_1 )
 		{
 			corpsetype = 2;
 		}
-		if( !isFullyOpen )
+		if( !Static_Var_1 )
 		{
 			corpsetype = 3;
 		}
@@ -263,15 +218,15 @@ Killed(severity, corpsetype)
 		explode stand type BITMAPONLY | BITMAP3;
 		explode turret1 type BITMAPONLY | BITMAP4;
 		explode turret2 type BITMAPONLY | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
-		if( isFullyOpen )
+		if( Static_Var_1 )
 		{
 			corpsetype = 3;
 		}
-		if( !isFullyOpen )
+		if( !Static_Var_1 )
 		{
 			corpsetype = 4;
 		}
@@ -283,7 +238,7 @@ Killed(severity, corpsetype)
 		explode stand type BITMAPONLY | BITMAP1;
 		explode turret1 type BITMAPONLY | BITMAP4;
 		explode turret2 type BITMAPONLY | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 4;
 	explode base type BITMAPONLY | BITMAP2;
@@ -294,4 +249,5 @@ Killed(severity, corpsetype)
 	explode stand type BITMAPONLY | BITMAP3;
 	explode turret1 type BITMAPONLY | BITMAP4;
 	explode turret2 type BITMAPONLY | BITMAP5;
+	return (corpsetype);
 }

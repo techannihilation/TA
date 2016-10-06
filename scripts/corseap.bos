@@ -16,15 +16,15 @@ activatescr()
 	if( TRUE )
 	{
 		turn wing1l to y-axis <0.000000> now;
-		turn wing1l to y-axis <-22.153846> speed <30.346154>;
+		turn wing1l to y-axis <-22.148352> speed <30.346154>;
 		turn wing1r to y-axis <0.000000> now;
 		turn wing1r to y-axis <22.505495> speed <30.824176>;
 		sleep 730;
 	}
 	if( TRUE )
 	{
-		turn wing2L to y-axis <17.230769> speed <33.131868>;
-		turn wing2R to y-axis <-17.582418> speed <33.807692>;
+		turn wing2L to y-axis <17.225275> speed <33.126374>;
+		turn wing2R to y-axis <-17.582418> speed <33.802198>;
 		sleep 520;
 	}
 	sleep 10;
@@ -34,18 +34,18 @@ deactivatescr()
 {
 	if( TRUE )
 	{
-		turn wing1l to y-axis <-22.153846> now;
+		turn wing1l to y-axis <-22.148352> now;
 		turn wing1r to y-axis <22.505495> now;
-		turn wing2L to y-axis <17.230769> now;
-		turn wing2L to y-axis <0.000000> speed <32.818681>;
+		turn wing2L to y-axis <17.225275> now;
+		turn wing2L to y-axis <0.000000> speed <32.813187>;
 		turn wing2R to y-axis <-17.582418> now;
 		turn wing2R to y-axis <0.000000> speed <33.489011>;
 		sleep 525;
 	}
 	if( TRUE )
 	{
-		turn wing1l to y-axis <0.000000> speed <31.329670>;
-		turn wing1r to y-axis <0.000000> speed <31.829670>;
+		turn wing1l to y-axis <0.000000> speed <31.324176>;
+		turn wing1r to y-axis <0.000000> speed <31.824176>;
 		sleep 707;
 	}
 	sleep 12;
@@ -195,7 +195,7 @@ Killed(severity, corpsetype)
 		explode wing1r type BITMAPONLY | BITMAP1;
 		explode wing2L type BITMAPONLY | BITMAP2;
 		explode wing2R type BITMAPONLY | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -208,7 +208,7 @@ Killed(severity, corpsetype)
 		explode wing1r type BITMAPONLY | BITMAP1;
 		explode wing2L type BITMAPONLY | BITMAP2;
 		explode wing2R type BITMAPONLY | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -221,7 +221,7 @@ Killed(severity, corpsetype)
 		explode wing1r type BITMAPONLY | BITMAP1;
 		explode wing2L type BITMAPONLY | BITMAP2;
 		explode wing2R type BITMAPONLY | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP1;
@@ -232,6 +232,7 @@ Killed(severity, corpsetype)
 	explode wing1r type BITMAPONLY | BITMAP1;
 	explode wing2L type BITMAPONLY | BITMAP2;
 	explode wing2R type BITMAPONLY | BITMAP3;
+	return (corpsetype);
 }
 
 setSFXoccupy(state)

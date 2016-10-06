@@ -1,0 +1,258 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, lwingc, lwingm, lwingf, light1, missile1, rwingc, rwingm,
+       rwingf, light2, missile2, drop, smoker1, smoker2, smoker3, smoker4;
+
+static-var  Static_Var_1, bMoving;
+
+// Signal definitions
+#define SIG_MOVE			4
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask 8;
+	bMoving = TRUE;
+	move lwingc to x-axis [0.000000] speed [7.000000];
+	move rwingc to x-axis [0.000000] speed [7.000000];
+	sleep 200;
+	turn lwingm to z-axis <0.000000> speed <40.000000>;
+	turn rwingm to z-axis <0.000000> speed <40.000000>;
+	dont-cache light1;
+	dont-cache light2;
+	sleep 250;
+	move lwingf to x-axis [0.000000] speed [6.000000];
+	move rwingf to x-axis [0.000000] speed [6.000000];
+	move lwingf to z-axis [0.000000] speed [6.000000];
+	move rwingf to z-axis [0.000000] speed [6.000000];
+	sleep 3800;
+	cache light1;
+	cache light2;
+	while( bMoving == 1 )
+	{
+		Static_Var_1 = Rand( 1, 5 );
+		if( Static_Var_1 == 1 )
+		{
+			emit-sfx 256 | 1 from smoker1;
+		}
+		if( Static_Var_1 == 2 )
+		{
+			emit-sfx 256 | 1 from smoker2;
+		}
+		if( Static_Var_1 == 3 )
+		{
+			emit-sfx 256 | 1 from smoker3;
+		}
+		if( Static_Var_1 == 4 )
+		{
+			emit-sfx 256 | 1 from smoker4;
+		}
+		sleep 350;
+	}
+}
+
+StopMoving()
+{
+	signal 8;
+	set-signal-mask SIG_MOVE;
+	bMoving = FALSE;
+	dont-cache light1;
+	dont-cache light2;
+	move lwingc to x-axis [6.000000] speed [7.000000];
+	move rwingc to x-axis [-6.000000] speed [7.000000];
+	sleep 500;
+	move lwingf to x-axis [7.500000] speed [6.000000];
+	move rwingf to x-axis [-7.500000] speed [6.000000];
+	sleep 450;
+	move lwingf to z-axis [3.000000] speed [6.000000];
+	move rwingf to z-axis [3.000000] speed [6.000000];
+	sleep 450;
+	turn lwingm to z-axis <-90.000000> speed <60.000000>;
+	turn rwingm to z-axis <90.000000> speed <60.000000>;
+	sleep 2000;
+	cache light1;
+	cache light2;
+}
+
+Create()
+{
+	Static_Var_1 = 0;
+	bMoving = FALSE;
+	cache light1;
+	cache light2;
+	move lwingc to x-axis [6.000000] now;
+	move rwingc to x-axis [-6.000000] now;
+	move lwingf to x-axis [7.500000] now;
+	move rwingf to x-axis [-7.500000] now;
+	move lwingf to z-axis [3.000000] now;
+	move rwingf to z-axis [3.000000] now;
+	turn lwingm to z-axis <-90.000000> now;
+	turn rwingm to z-axis <90.000000> now;
+	start-script SmokeUnit();
+}
+
+RestoreAfterDelay()
+{
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = drop;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = base;
+}
+
+AimPrimary()
+{
+	return (1);
+}
+
+FirePrimary()
+{
+}
+
+QuerySecondary(piecenum)
+{
+	piecenum = missile1;
+}
+
+AimFromSecondary(piecenum)
+{
+	piecenum = missile1;
+}
+
+AimSecondary(heading, pitch)
+{
+	return (1);
+}
+
+FireSecondary()
+{
+}
+
+QueryTertiary(piecenum)
+{
+	piecenum = missile2;
+}
+
+AimFromTertiary(piecenum)
+{
+	piecenum = missile2;
+}
+
+AimTertiary(heading, pitch)
+{
+	return (1);
+}
+
+FireTertiary()
+{
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type SHATTER | BITMAP4;
+		explode lwingc type BITMAPONLY | BITMAP1;
+		explode lwingm type BITMAPONLY | BITMAP1;
+		explode lwingf type BITMAPONLY | BITMAP1;
+		explode light1 type BITMAPONLY | BITMAP1;
+		explode missile1 type BITMAPONLY | BITMAP1;
+		explode rwingc type BITMAPONLY | BITMAP1;
+		explode rwingm type BITMAPONLY | BITMAP1;
+		explode rwingf type BITMAPONLY | BITMAP1;
+		explode light2 type BITMAPONLY | BITMAP1;
+		explode missile2 type BITMAPONLY | BITMAP1;
+		explode drop type BITMAPONLY | BITMAP1;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type SHATTER | BITMAP4;
+		explode lwingc type SHATTER | BITMAP4;
+		explode lwingm type SHATTER | BITMAP4;
+		explode lwingf type SHATTER | BITMAP4;
+		explode light1 type SHATTER | BITMAP4;
+		explode missile1 type SHATTER | BITMAP4;
+		explode rwingc type SHATTER | BITMAP4;
+		explode rwingm type SHATTER | BITMAP4;
+		explode rwingf type SHATTER | BITMAP4;
+		explode light2 type SHATTER | BITMAP4;
+		explode missile2 type SHATTER | BITMAP4;
+		explode drop type SHATTER | BITMAP4;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type SHATTER | BITMAP4;
+		explode lwingc type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode lwingm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode lwingf type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode light1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode missile1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode rwingc type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode rwingm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode rwingf type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode light2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode missile2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode drop type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type SHATTER | BITMAP4;
+	explode lwingc type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode lwingm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode lwingf type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode light1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode missile1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode rwingc type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode rwingm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode rwingf type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode light2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode missile2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode drop type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	return (corpsetype);
+}

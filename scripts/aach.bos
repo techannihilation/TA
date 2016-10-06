@@ -23,18 +23,16 @@ activatescr()
 	}
 	if( TRUE )
 	{
-		move plate to y-axis [3.989996] speed [5.000000];
+		move plate to y-axis [3.989990] speed [5.000000];
 		sleep 688;
 	}
 	if( TRUE )
 	{
-		turn post to x-axis <90.021978> speed <131.000000>;
-		turn nanogun to x-axis <-90.021978> speed <131.000000>;
+		turn post to x-axis <90.016484> speed <131.000000>;
+		turn nanogun to x-axis <-90.016484> speed <131.000000>;
 		sleep 687;
 	}
 	sleep 39;
-	return (0);
-	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
 }
 
 deactivatescr()
@@ -235,7 +233,7 @@ Killed(severity, corpsetype)
 		explode door2 type BITMAPONLY | BITMAP5;
 		explode nanogun type BITMAPONLY | BITMAP1;
 		explode plate type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -247,7 +245,7 @@ Killed(severity, corpsetype)
 		explode door2 type BITMAPONLY | BITMAP5;
 		explode nanogun type SHATTER | BITMAP1;
 		explode plate type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -259,7 +257,7 @@ Killed(severity, corpsetype)
 		explode door2 type BITMAPONLY | BITMAP5;
 		explode nanogun type SHATTER | BITMAP1;
 		explode plate type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode post type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
@@ -269,4 +267,5 @@ Killed(severity, corpsetype)
 	explode door2 type BITMAPONLY | BITMAP5;
 	explode nanogun type SHATTER | EXPLODE_ON_HIT | BITMAP1;
 	explode plate type BITMAPONLY | BITMAP2;
+	return (corpsetype);
 }

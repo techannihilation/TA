@@ -5,13 +5,12 @@
 
 piece  base, emit;
 
-static-var  power ,Static_Var_1, Effects, Active;
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4;
 
 
-MMStatus(State)
+MMStatus(Func_Var_1)
 {
-	Active = State;
-	//get PRINT(Active);
+	Static_Var_4 = Func_Var_1;
 }
 
 ImAMetalMaker()
@@ -20,21 +19,21 @@ ImAMetalMaker()
 	{
 		sleep 150;
 	}
-	Static_Var_1 = -1;
+	Static_Var_2 = -1;
 	while( TRUE )
 	{
-		if( Active == 1 )
+		if( Static_Var_4 == 1 )
 		{
-			if( Static_Var_1 != 1 )
+			if( Static_Var_2 != 1 )
 			{
-			Effects = 1;
-			Static_Var_1 = 1;
+				Static_Var_3 = 1;
+				Static_Var_2 = 1;
 			}
 		}
-		else if( Static_Var_1 != 0 )
+		else if( Static_Var_2 != 0 )
 		{
-			Effects = 0;
-			Static_Var_1 = 0;
+			Static_Var_3 = 0;
+			Static_Var_2 = 0;
 		}
 		sleep 10;
 	}
@@ -70,21 +69,21 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 EffectWatch()
 {
-	while(TRUE)
+	while( TRUE )
 	{
-		while( Effects  == 1)
+		while( Static_Var_3 == 1 )
 		{
 			emit-sfx 1024 + 0 from emit;
 			sleep 1300;
 		}
-	sleep 333;
+		sleep 333;
 	}
 }
-	
+
 Create()
 {
-    Effects = 0;
-    start-script EffectWatch();
+	Static_Var_3 = 0;
+	start-script EffectWatch();
 	call-script ImAMetalMaker();
 	start-script SmokeUnit();
 }

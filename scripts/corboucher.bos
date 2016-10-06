@@ -162,10 +162,8 @@ Create()
 	hide lflare;
 	dont-shade lsupport;
 	dont-shade centerpiece;
-	gun_1 = 0;
+	gun_1 = base;
 	start-script SmokeUnit();
-//	spin rflare around z-axis speed <3000.000000>;
-//	spin lflare around z-axis speed <-3000.000000>;
 }
 
 AimPrimary(heading, pitch)
@@ -174,7 +172,7 @@ AimPrimary(heading, pitch)
 	set-signal-mask 0;
 	set-signal-mask SIG_AIM;
 	turn turret to y-axis heading speed <90.000000>;
-	turn pitchturret to x-axis <0.000000> - pitch speed <100.00000>;
+	turn pitchturret to x-axis <0.000000> - pitch speed <100.000000>;
 	wait-for-turn turret around y-axis;
 	wait-for-turn pitchturret around x-axis;
 	return (1);
@@ -184,7 +182,7 @@ FirePrimary()
 {
 	if( gun_1 == 0 )
 	{
-		gun_1 = 1;
+		gun_1 = turret;
 		move rsleeve to z-axis [-1.000000] speed [10.000000];
 		move rbarrel to z-axis [-5.000000] speed [120.000000];
 		move rbarrel2 to z-axis [-7.000000] speed [350.000000];
@@ -194,12 +192,11 @@ FirePrimary()
 		move rsleeve to z-axis [0.000000] speed [1.000000];
 		move rbarrel to z-axis [0.000000] speed [3.000000];
 		move rbarrel2 to z-axis [0.000000] speed [2.000000];
-	//	start-script SmokeRight();
 		return (0);
 	}
 	if( gun_1 == 1 )
 	{
-		gun_1 = 0;
+		gun_1 = base;
 		move lsleeve to z-axis [-1.000000] speed [10.000000];
 		move lbarrel to z-axis [-5.000000] speed [120.000000];
 		move lbarrel2 to z-axis [-7.000000] speed [350.000000];
@@ -209,7 +206,6 @@ FirePrimary()
 		move lsleeve to z-axis [0.000000] speed [1.000000];
 		move lbarrel to z-axis [0.000000] speed [3.000000];
 		move lbarrel2 to z-axis [0.000000] speed [2.000000];
-	//	start-script SmokeLeft();
 		return (0);
 	}
 }
@@ -255,7 +251,7 @@ Killed(severity, corpsetype)
 		explode rbarrel2 type BITMAPONLY | BITMAP5;
 		explode lsupport type BITMAPONLY | BITMAP5;
 		explode rsupport type BITMAPONLY | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -272,7 +268,7 @@ Killed(severity, corpsetype)
 		explode rbarrel2 type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP1;
 		explode lsupport type BITMAPONLY | BITMAP5;
 		explode rsupport type BITMAPONLY | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type SHATTER | EXPLODE_ON_HIT | BITMAP2;
@@ -287,4 +283,5 @@ Killed(severity, corpsetype)
 	explode rbarrel2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 	explode lsupport type BITMAPONLY | BITMAP5;
 	explode rsupport type BITMAPONLY | BITMAP5;
+	return (corpsetype);
 }

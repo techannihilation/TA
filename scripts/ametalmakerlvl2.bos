@@ -1,0 +1,242 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base2, lid2, lid3, mmakercore, lid1, lid4, glowingthing;
+
+static-var  statechg_DesiredState, statechg_StateChanging;
+
+
+activatescr()
+{
+	if( TRUE )
+	{
+		turn lid2 to x-axis <0.604396> now;
+		turn lid2 to x-axis <30.412088> speed <38.604396>;
+		turn lid3 to x-axis <0.604396> now;
+		turn lid3 to x-axis <-26.758242> speed <35.450549>;
+		turn mmakercore to y-axis <0.000000> now;
+		turn mmakercore to y-axis <-30.412088> speed <39.390110>;
+		sleep 772;
+	}
+	if( TRUE )
+	{
+		move mmakercore to y-axis [5.050000] speed [6.524542];
+		turn lid1 to x-axis <35.274725> speed <45.576923>;
+		turn lid4 to x-axis <-30.412088> speed <39.291209>;
+		turn lid2 to x-axis <60.824176> speed <39.291209>;
+		turn lid3 to x-axis <-74.203297> speed <61.296703>;
+		turn mmakercore to y-axis <-60.824176> speed <39.291209>;
+		sleep 774;
+	}
+	if( TRUE )
+	{
+		move mmakercore to y-axis [15.849994] speed [13.935480];
+		turn mmakercore to y-axis <-90.021978> speed <37.670330>;
+		sleep 775;
+	}
+	sleep 774;
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		move mmakercore to y-axis [15.849994] now;
+		move mmakercore to y-axis [5.050000] speed [15.812585];
+		turn lid1 to x-axis <35.274725> now;
+		turn lid4 to x-axis <-30.412088> now;
+		turn lid2 to x-axis <60.824176> now;
+		turn lid3 to x-axis <-74.203297> now;
+		turn mmakercore to y-axis <-90.021978> now;
+		turn mmakercore to y-axis <-60.824176> speed <42.741758>;
+		sleep 683;
+	}
+	if( TRUE )
+	{
+		move mmakercore to y-axis [0.000000] speed [7.350800];
+		turn lid1 to x-axis <0.000000> speed <51.351648>;
+		turn lid4 to x-axis <0.000000> speed <44.263736>;
+		turn lid2 to x-axis <30.412088> speed <44.263736>;
+		turn lid3 to x-axis <-26.758242> speed <69.054945>;
+		turn mmakercore to y-axis <-30.412088> speed <44.263736>;
+		sleep 687;
+	}
+	if( TRUE )
+	{
+		turn lid2 to x-axis <0.604396> speed <43.571429>;
+		turn lid3 to x-axis <0.604396> speed <40.016484>;
+		turn mmakercore to y-axis <0.000000> speed <44.461538>;
+		sleep 684;
+	}
+	sleep 688;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base2;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Go()
+{
+	dont-cache lid1;
+	dont-cache lid2;
+	dont-cache lid3;
+	dont-cache lid4;
+	call-script activatescr();
+}
+
+Stop()
+{
+	call-script deactivatescr();
+	cache lid1;
+	cache lid2;
+	cache lid3;
+	cache lid4;
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+Create()
+{
+	dont-shade glowingthing;
+	dont-cache glowingthing;
+	dont-shade base2;
+	dont-shade lid1;
+	dont-shade lid2;
+	dont-shade lid3;
+	dont-shade lid4;
+	dont-shade mmakercore;
+	call-script InitState();
+	start-script SmokeUnit();
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 1000;
+	}
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+HitByWeapon(anglex, anglez)
+{
+	signal 2;
+	set-signal-mask 2;
+	set ACTIVATION to 0;
+	sleep 8000;
+	set ACTIVATION to 1;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base2;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base2 type BITMAPONLY | BITMAP1;
+		explode glowingthing type BITMAPONLY | BITMAP2;
+		explode lid1 type BITMAPONLY | BITMAP3;
+		explode lid2 type BITMAPONLY | BITMAP4;
+		explode lid3 type BITMAPONLY | BITMAP5;
+		explode lid4 type BITMAPONLY | BITMAP1;
+		explode mmakercore type BITMAPONLY | BITMAP2;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base2 type BITMAPONLY | BITMAP1;
+		explode glowingthing type SHATTER | BITMAP2;
+		explode lid1 type FALL | BITMAP3;
+		explode lid2 type FALL | BITMAP4;
+		explode lid3 type FALL | BITMAP5;
+		explode lid4 type FALL | BITMAP1;
+		explode mmakercore type BITMAPONLY | BITMAP2;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base2 type BITMAPONLY | BITMAP1;
+		explode glowingthing type SHATTER | BITMAP2;
+		explode lid1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode lid2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode lid3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode lid4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode mmakercore type BITMAPONLY | BITMAP2;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base2 type BITMAPONLY | BITMAP1;
+	explode glowingthing type SHATTER | EXPLODE_ON_HIT | BITMAP2;
+	explode lid1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode lid2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode lid3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode lid4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode mmakercore type BITMAPONLY | BITMAP2;
+	return (corpsetype);
+}

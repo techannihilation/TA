@@ -8,7 +8,7 @@ piece  ground, hips, luparm, lloarm, lhand, fingerla, fingerlb, thumbl,
        cannonl, flarel, shellb, armr, cannonr, flarer, shella, missileflare,
        light, turret, flash, aimpointa;
 
-static-var  Static_Var_1, gun_2, bMoving, Current_depth;
+static-var  Static_Var_1, gun_2, bMoving, bAiming;
 
 // Signal definitions
 #define SIG_MOVE			2
@@ -16,9 +16,6 @@ static-var  Static_Var_1, gun_2, bMoving, Current_depth;
 #define SIG_AIM_2			8
 #define SIG_AIM_3			32
 
-#define LASER_DEPTH			-3214400
-#define TORPEDO_DEPTH		-3026700
-#define CANNON_DEPTH 		-2140025
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -45,8 +42,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		}
 		sleep sleeptime;
 	}
-	return (0);
-	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
 }
 
 walk()
@@ -65,9 +60,9 @@ walk()
 		turn lhand to x-axis <40.005495> speed <100.000000>;
 		turn rhand to x-axis <20.000000> speed <50.000000>;
 		turn rloarm to x-axis <40.005495> speed <100.000000>;
-		turn fingerla to x-axis <45.010989> speed <100.000000>;
-		turn fingerlb to x-axis <45.010989> speed <100.000000>;
-		turn thumbl to x-axis <-45.010989> speed <100.000000>;
+		turn fingerla to x-axis <45.005495> speed <100.000000>;
+		turn fingerlb to x-axis <45.005495> speed <100.000000>;
+		turn thumbl to x-axis <-45.005495> speed <100.000000>;
 		turn fingerra to x-axis <0.000000> speed <100.000000>;
 		turn fingerrb to x-axis <0.000000> speed <100.000000>;
 		sleep 600;
@@ -89,9 +84,9 @@ walk()
 		move hips to y-axis [0.000000] speed [2.000000];
 		turn fingerla to x-axis <0.000000> speed <100.000000>;
 		turn fingerlb to x-axis <0.000000> speed <100.000000>;
-		turn fingerra to x-axis <45.010989> speed <100.000000>;
-		turn fingerrb to x-axis <45.010989> speed <100.000000>;
-		turn thumbr to x-axis <-45.010989> speed <100.000000>;
+		turn fingerra to x-axis <45.005495> speed <100.000000>;
+		turn fingerrb to x-axis <45.005495> speed <100.000000>;
+		turn thumbr to x-axis <-45.005495> speed <100.000000>;
 		sleep 600;
 		turn thumbl to x-axis <0.000000> speed <100.000000>;
 		move hips to y-axis [2.000000] speed [2.000000];
@@ -114,9 +109,9 @@ walk()
 			turn rhand to x-axis <40.005495> speed <70.000000>;
 			turn rloarm to x-axis <40.005495> speed <100.000000>;
 			move hips to y-axis [0.000000] speed [2.000000];
-			turn fingerla to x-axis <45.010989> speed <100.000000>;
-			turn fingerlb to x-axis <45.010989> speed <100.000000>;
-			turn thumbl to x-axis <-45.010989> speed <100.000000>;
+			turn fingerla to x-axis <45.005495> speed <100.000000>;
+			turn fingerlb to x-axis <45.005495> speed <100.000000>;
+			turn thumbl to x-axis <-45.005495> speed <100.000000>;
 			turn fingerra to x-axis <0.000000> speed <100.000000>;
 			turn fingerrb to x-axis <0.000000> speed <100.000000>;
 			sleep 600;
@@ -138,9 +133,9 @@ walk()
 			move hips to y-axis [0.000000] speed [2.000000];
 			turn fingerla to x-axis <0.000000> speed <100.000000>;
 			turn fingerlb to x-axis <0.000000> speed <100.000000>;
-			turn fingerra to x-axis <45.010989> speed <100.000000>;
-			turn fingerrb to x-axis <45.010989> speed <100.000000>;
-			turn thumbr to x-axis <-45.010989> speed <100.000000>;
+			turn fingerra to x-axis <45.005495> speed <100.000000>;
+			turn fingerrb to x-axis <45.005495> speed <100.000000>;
+			turn thumbr to x-axis <-45.005495> speed <100.000000>;
 			sleep 600;
 			turn thumbl to x-axis <0.000000> speed <100.000000>;
 			move hips to y-axis [2.000000] speed [2.000000];
@@ -254,12 +249,11 @@ RestoreAfterDelay()
 
 AimPrimary(heading, pitch)
 {
-	Current_Depth = get GROUND_WATER_HEIGHT(get UNIT_XZ);
-	//get PRINT( Current_Depth );
-	if ( Current_Depth < LASER_DEPTH )
-    {
-     	return (0);
-    }
+	bAiming = get GROUND_WATER_HEIGHT(get UNIT_XZ);
+	if( bAiming < -3214400 )
+	{
+		return (0);
+	}
 	bMoving = TRUE;
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
@@ -283,12 +277,11 @@ QueryPrimary(piecenum)
 
 AimSecondary(heading, pitch)
 {
-	Current_Depth = get GROUND_WATER_HEIGHT(get UNIT_XZ);
-	//get PRINT( Current_Depth );
-	if ( Current_Depth < CANNON_DEPTH )
-    {
-     	return (0);
-    }
+	bAiming = get GROUND_WATER_HEIGHT(get UNIT_XZ);
+	if( bAiming < -2140025 )
+	{
+		return (0);
+	}
 	bMoving = FALSE;
 	signal SIG_AIM_2;
 	set-signal-mask SIG_AIM_2;
@@ -307,7 +300,7 @@ FireSecondary()
 {
 	if( gun_2 == 0 )
 	{
-		move cannonl to z-axis [-2.289996] now;
+		move cannonl to z-axis [-2.289990] now;
 		show flarel;
 		sleep 150;
 		explode shellb type FALL;
@@ -316,7 +309,7 @@ FireSecondary()
 	}
 	if( gun_2 == 1 )
 	{
-		move cannonr to z-axis [-2.289996] now;
+		move cannonr to z-axis [-2.289990] now;
 		show flarer;
 		sleep 150;
 		explode shella type FALL;
@@ -341,12 +334,11 @@ QuerySecondary(piecenum)
 
 AimTertiary(heading, pitch)
 {
-	Current_Depth = get GROUND_WATER_HEIGHT(get UNIT_XZ);
-	//get PRINT( Current_Depth );
-	if ( Current_Depth > TORPEDO_DEPTH )
-    {
-     	return (0);
-    }
+	bAiming = get GROUND_WATER_HEIGHT(get UNIT_XZ);
+	if( bAiming > -3026700 )
+	{
+		return (0);
+	}
 	signal SIG_AIM_3;
 	set-signal-mask SIG_AIM_3;
 	bMoving = TRUE;

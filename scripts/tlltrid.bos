@@ -9,7 +9,7 @@ piece  base, struts, fan, turret, gun, sleeve, barrel1, barrel2,
        wake12, wake13, wake14, wake15, wake16;
 
 static-var  Static_Var_1, restore_delay, gun_1, Static_Var_4, Static_Var_5,
-            statechg_DesiredState, statechg_StateChanging, diving;
+            statechg_DesiredState, statechg_StateChanging, Static_Var_8;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -40,8 +40,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		}
 		sleep sleeptime;
 	}
-	return (0);
-	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
 }
 
 SpinSlow()
@@ -51,7 +49,7 @@ SpinSlow()
 
 SpinFast()
 {
-	spin fan around y-axis speed <600.142857> accelerate <50.010989>;
+	spin fan around y-axis speed <600.137363> accelerate <50.005495>;
 }
 
 Go()
@@ -102,37 +100,37 @@ Stop()
 	set ARMORED to 1;
 }
 
-Tangue()
+Tangue(Func_Var_1, Func_Var_2, Func_Var_3)
 {
-	var rockDir, rockAng, rockSpeed;
-	rockDir = <-0.1>;
-	rockAng = <-0.1>;
+	Func_Var_1 = -18;
+	Func_Var_2 = -18;
 	while( TRUE )
 	{
-		while( get ABS(rockAng) < <1.31> )
+		while( get ABS(Func_Var_2) < 238 )
 		{
-			rockSpeed = <1.45> - get ABS(rockAng);
-			turn base to x-axis rockAng speed rockSpeed*5;
-			turn base to z-axis rockAng speed rockSpeed*5;
+			Func_Var_3 = 263 - get ABS(Func_Var_2);
+			turn base to x-axis Func_Var_2 speed Func_Var_3 * <0.027473>;
+			turn base to z-axis Func_Var_2 speed Func_Var_3 * <0.027473>;
 			wait-for-turn base around x-axis;
 			wait-for-turn base around z-axis;
-			rockAng = rockAng + rockDir;
+			Func_Var_2 = Func_Var_2 + Func_Var_1;
 		}
-		rockDir = 0 - rockDir;
-		rockAng = rockAng + rockDir + rockDir;
+		Func_Var_1 = 0 - Func_Var_1;
+		Func_Var_2 = Func_Var_2 + Func_Var_1 + Func_Var_1;
 	}
 }
+
 Dive()
 {
-	diving = !diving;
-	if ( diving == 1 )
-		{
+	Static_Var_8 = !Static_Var_8;
+	if( Static_Var_8 == 1 )
+	{
 		call-script Go();
-		}
-	if ( diving == 0 )
-		{
+	}
+	if( Static_Var_8 == 0 )
+	{
 		call-script Stop();
-		}
+	}
 }
 
 InitState()
@@ -314,7 +312,7 @@ Create()
 	gun_1 = base;
 	Static_Var_4 = 0;
 	Static_Var_5 = 0;
-	diving = 1;
+	Static_Var_8 = 1;
 	call-script InitState();
 	start-script SmokeUnit();
 	start-script ShowBubbles();
@@ -325,23 +323,23 @@ Create()
 		sleep 500;
 	}
 	start-script Tangue();
-	spin fan around y-axis speed <600.142857>;
+	spin fan around y-axis speed <600.137363>;
 	set-signal-mask SIG_AIM;
 	start-script RestoreAfterDelay();
 }
 
 RockUnit(anglex, anglez)
 {
-	turn base to x-axis anglex * <0.012363> speed <20.000000>;
-	turn base to z-axis anglez * <0.012363> speed <20.000000>;
+	turn base to x-axis anglex * <0.010989> speed <20.000000>;
+	turn base to z-axis anglez * <0.010989> speed <20.000000>;
 	wait-for-turn base around z-axis;
 	wait-for-turn base around x-axis;
 	turn base to x-axis <0.000000> - anglex speed <16.000000>;
 	turn base to z-axis <0.000000> - anglez speed <16.000000>;
 	wait-for-turn base around z-axis;
 	wait-for-turn base around x-axis;
-	turn base to x-axis anglex / <0.08241> speed <16.000000>;
-	turn base to z-axis anglez / <0.08241> speed <16.000000>;
+	turn base to x-axis anglex / <0.076923> speed <16.000000>;
+	turn base to z-axis anglez / <0.076923> speed <16.000000>;
 	wait-for-turn base around z-axis;
 	wait-for-turn base around x-axis;
 	turn base to x-axis <0.000000> speed <8.000000>;
@@ -368,7 +366,7 @@ AimPrimary(heading, pitch)
 	start-script RequestState(0);
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	while( !diving )
+	while( !Static_Var_8 )
 	{
 		sleep 250;
 	}
@@ -451,7 +449,7 @@ Killed(severity, corpsetype)
 		explode barrel2 type BITMAPONLY | BITMAP2;
 		explode barrel3 type BITMAPONLY | BITMAP1;
 		explode shell type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -466,7 +464,7 @@ Killed(severity, corpsetype)
 		explode barrel2 type BITMAPONLY | BITMAP3;
 		explode barrel3 type BITMAPONLY | BITMAP2;
 		explode shell type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -481,7 +479,7 @@ Killed(severity, corpsetype)
 		explode barrel2 type BITMAPONLY | BITMAP2;
 		explode barrel3 type BITMAPONLY | BITMAP4;
 		explode shell type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP2;
@@ -494,4 +492,5 @@ Killed(severity, corpsetype)
 	explode barrel2 type BITMAPONLY | BITMAP2;
 	explode barrel3 type BITMAPONLY | BITMAP4;
 	explode shell type BITMAPONLY | BITMAP2;
+	return (corpsetype);
 }

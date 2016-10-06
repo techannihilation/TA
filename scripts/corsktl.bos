@@ -33,8 +33,6 @@ MotionControl()
 			sleep 100;
 		}
 	}
-	return (0);
-	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
 }
 
 Create()
@@ -106,6 +104,7 @@ Killed(severity, corpsetype)
 	explode Right_Front_Leg type SHATTER | EXPLODE_ON_HIT | BITMAP5;
 	explode Tail type FALL | EXPLODE_ON_HIT | BITMAP2;
 	explode Hump type FALL | EXPLODE_ON_HIT | BITMAP2;
+	return (corpsetype);
 }
 
 Go()
@@ -118,5 +117,5 @@ Stop()
 
 FireWeapon1()
 {
-	emit-sfx 4096 + 1 from base; //Weapon2 detonates the crawling bomb once weapon1 fires
+	emit-sfx 4096 + 1 from base;
 }

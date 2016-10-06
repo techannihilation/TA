@@ -12,8 +12,9 @@ static-var  spray, statechg_DesiredState, statechg_StateChanging, Static_Var_4;
 #define SIG_ACTIVATE			2
 
 
-HitByWeapon(Func_Var_1, Func_Var_2, Func_Var_3)
+HitByWeapon(anglex, anglez)
 {
+	var Func_Var_3;
 	Func_Var_3 = get HEALTH;
 	if( Func_Var_3 <= 60 )
 	{
@@ -24,7 +25,6 @@ HitByWeapon(Func_Var_1, Func_Var_2, Func_Var_3)
 			explode rdoor type FALL | SHATTER | SMOKE | BITMAP2;
 		}
 	}
-	return (0);
 }
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -61,7 +61,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		}
 		sleep sleeptime;
 	}
-	return (0);
 }
 
 OpenYard()
@@ -74,7 +73,6 @@ OpenYard()
 		set YARD_OPEN to 1;
 	}
 	set BUGGER_OFF to 0;
-	return (0);
 }
 
 CloseYard()
@@ -87,7 +85,6 @@ CloseYard()
 		set YARD_OPEN to 0;
 	}
 	set BUGGER_OFF to 0;
-	return (0);
 }
 
 activatescr()
@@ -108,7 +105,6 @@ activatescr()
 	move lnano to x-axis [-3.000000] speed [5.000000];
 	move rnano to x-axis [3.000000] speed [5.000000];
 	wait-for-move rnano along x-axis;
-	return (0);
 }
 
 deactivatescr()
@@ -129,7 +125,6 @@ deactivatescr()
 	cache ldoor;
 	cache rnano;
 	cache lnano;
-	return (0);
 }
 
 Go()
@@ -137,7 +132,6 @@ Go()
 	call-script activatescr();
 	call-script OpenYard();
 	set INBUILDSTANCE to 1;
-	return (0);
 }
 
 Stop()
@@ -145,14 +139,12 @@ Stop()
 	set INBUILDSTANCE to 0;
 	call-script CloseYard();
 	call-script deactivatescr();
-	return (0);
 }
 
 InitState()
 {
 	statechg_DesiredState = TRUE;
 	statechg_StateChanging = FALSE;
-	return (0);
 }
 
 RequestState(requestedstate, currentstate)
@@ -179,7 +171,6 @@ RequestState(requestedstate, currentstate)
 		}
 	}
 	statechg_StateChanging = FALSE;
-	return (0);
 }
 
 Create()
@@ -194,7 +185,6 @@ Create()
 	spray = base;
 	call-script InitState();
 	start-script SmokeUnit();
-	return (0);
 }
 
 QueryNanoPiece(piecenum)
@@ -205,14 +195,12 @@ QueryNanoPiece(piecenum)
 		piecenum = lspray;
 	}
 	spray = !spray;
-	return (0);
 }
 
 Activate()
 {
 	signal SIG_ACTIVATE;
 	start-script RequestState(0);
-	return (0);
 }
 
 Deactivate()
@@ -222,7 +210,6 @@ Deactivate()
 	sleep 5000;
 	set-signal-mask 0;
 	start-script RequestState(1);
-	return (0);
 }
 
 StartBuilding()
@@ -236,13 +223,11 @@ StopBuilding()
 QueryBuildInfo(piecenum)
 {
 	piecenum = pad;
-	return (0);
 }
 
 SweetSpot(piecenum)
 {
 	piecenum = base;
-	return (0);
 }
 
 Killed(severity, corpsetype)
@@ -255,7 +240,7 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -264,7 +249,7 @@ Killed(severity, corpsetype)
 		explode lnano type FALL | BITMAP3;
 		explode ldoor type FALL | BITMAP4;
 		explode rdoor type FALL | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode ldoor type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
@@ -272,5 +257,5 @@ Killed(severity, corpsetype)
 	explode rpiece type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP4;
 	explode rnano type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
 	explode pad type SHATTER | EXPLODE_ON_HIT | BITMAP3;
-	return (0);
+	return (corpsetype);
 }

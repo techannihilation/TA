@@ -30,18 +30,18 @@ walk()
 		move RLFoot to y-axis [0.400000] now;
 		move RLFoot to z-axis [-0.700000] now;
 		move RLFoot to z-axis [-1.300000] speed [4.000000];
-		move RRFoot to x-axis [0.900000] speed [4.895599];
+		move RRFoot to x-axis [0.900000] speed [4.895593];
 		move RRFoot to y-axis [0.400000] speed [2.175824];
 		move RRFoot to z-axis [-1.400000] now;
 		move RRFoot to z-axis [-1.700000] speed [2.100000];
-		move body to y-axis [1.300000] speed [7.071423];
-		move body to z-axis [-0.300000] speed [1.631866];
+		move body to y-axis [1.300000] speed [7.071417];
+		move body to z-axis [-0.300000] speed [1.631860];
 		move rightchunk to x-axis [0.600000] speed [3.263733];
-		move rightchunk to y-axis [1.300000] speed [7.071423];
-		move rightchunk to z-axis [-0.300000] speed [1.631866];
+		move rightchunk to y-axis [1.300000] speed [7.071417];
+		move rightchunk to z-axis [-0.300000] speed [1.631860];
 		move leftchunk to x-axis [-0.600000] speed [3.263733];
-		move leftchunk to y-axis [1.300000] speed [7.071423];
-		move leftchunk to z-axis [-0.300000] speed [1.631866];
+		move leftchunk to y-axis [1.300000] speed [7.071417];
+		move leftchunk to z-axis [-0.300000] speed [1.631860];
 		turn hips to y-axis <-1.500000> now;
 		turn hips to y-axis <3.791209> speed <32.390110>;
 		turn FRFoot to x-axis <-17.890110> now;
@@ -386,7 +386,7 @@ Killed(severity, corpsetype)
 		explode rightchunk type BITMAPONLY | BITMAP1;
 		explode RLFoot type BITMAPONLY | BITMAP2;
 		explode RRFoot type BITMAPONLY | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -398,7 +398,7 @@ Killed(severity, corpsetype)
 		explode rightchunk type BITMAPONLY | BITMAP1;
 		explode RLFoot type BITMAPONLY | BITMAP2;
 		explode RRFoot type BITMAPONLY | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -410,7 +410,7 @@ Killed(severity, corpsetype)
 		explode rightchunk type BITMAPONLY | BITMAP1;
 		explode RLFoot type BITMAPONLY | BITMAP2;
 		explode RRFoot type BITMAPONLY | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP1;
@@ -420,4 +420,5 @@ Killed(severity, corpsetype)
 	explode rightchunk type BITMAPONLY | BITMAP1;
 	explode RLFoot type BITMAPONLY | BITMAP2;
 	explode RRFoot type BITMAPONLY | BITMAP3;
+	return (corpsetype);
 }

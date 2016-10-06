@@ -3,35 +3,19 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-//-------------------------------------------------------------------------------------------------
-// Pieces
-//-------------------------------------------------------------------------------------------------
-piece base, turret, dome, post, gun, barrel, flare;
+piece  base, turret, dome, post, gun, barrel, flare;
 
-//-------------------------------------------------------------------------------------------------
-// Static var
-//-------------------------------------------------------------------------------------------------
-static-var  isFullyOpen;
+static-var  Static_Var_1;
 
-//-------------------------------------------------------------------------------------------------
 // Signal definitions
-//-------------------------------------------------------------------------------------------------
-#define SIG_AIM 2
-#define SIG_OPENCLOSE 4
+#define SIG_AIM				2
 
-//-------------------------------------------------------------------------------------------------
-// Functions
-//-------------------------------------------------------------------------------------------------
+
 FClose()
 {
-    // Signal guard
-    signal SIG_OPENCLOSE;
-    set-signal-mask SIG_OPENCLOSE;
-    
-    // State
-    isFullyOpen = 0;
-    
-    // Animation
+	signal 4;
+	set-signal-mask 4;
+	Static_Var_1 = 0;
 	turn gun to x-axis <0.000000> speed <90.000000>;
 	move barrel to z-axis [-5.500000] speed [15.000000];
 	move gun to x-axis [0.000000] speed [5.000000];
@@ -42,33 +26,23 @@ FClose()
 	wait-for-move post along y-axis;
 	turn dome to x-axis <0.000000> speed <550.000000>;
 	wait-for-turn dome around x-axis;
-    
-    // Fully closed -> Gain armor
 	set ARMORED to 1;
 }
 
 FCloseAfterDelay()
 {
-    // Signals
-    set-signal-mask SIG_OPENCLOSE;
-    
-    // Script
-    sleep 4000;
-    set-signal-mask 0; // To stop FClose from inheriting SIG_OPENCLOSE and killing itself
-    start-script FClose();
+	set-signal-mask 4;
+	sleep 4000;
+	set-signal-mask 0;
+	start-script FClose();
 }
 
 FOpen()
 {
-    // Signals
-    signal SIG_OPENCLOSE;
-    set-signal-mask SIG_OPENCLOSE;
-    
-    // Lose armor immediately
-    set ARMORED to 0;
-    
-    // Animation
-	turn dome to x-axis <-135.032967> speed <550.000000>;
+	signal 4;
+	set-signal-mask 4;
+	set ARMORED to 0;
+	turn dome to x-axis <-135.027473> speed <550.000000>;
 	wait-for-turn dome around x-axis;
 	move post to y-axis [0.000000] speed [25.000000];
 	move barrel to z-axis [0.000000] speed [15.000000];
@@ -76,17 +50,10 @@ FOpen()
 	wait-for-move post along y-axis;
 	wait-for-move barrel along z-axis;
 	wait-for-move gun along x-axis;
-    
-    // Done
-	isFullyOpen = 1;
-    
-    // Remember to close later
-    start-script FCloseAfterDelay();
+	Static_Var_1 = 1;
+	start-script FCloseAfterDelay();
 }
 
-//-------------------------------------------------------------------------------------------------
-// Callins
-//-------------------------------------------------------------------------------------------------
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
 	while( get BUILD_PERCENT_LEFT )
@@ -116,7 +83,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
-    // Pieces
 	hide flare;
 	dont-cache turret;
 	dont-cache dome;
@@ -130,32 +96,22 @@ Create()
 	dont-shade gun;
 	dont-shade barrel;
 	dont-shade flare;
-    
-    // State (Fully open)
-    isFullyOpen = 1;
-    start-script FCloseAfterDelay();
-    
-    // Other threads
+	Static_Var_1 = 1;
+	start-script FCloseAfterDelay();
 	start-script SmokeUnit();
-    
-    // Alignment
 	turn dome to x-axis <-135.000000> now;
 	move gun to x-axis [1.500000] now;
 }
 
 AimPrimary(heading, pitch)
 {
-    // Signal guard
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-    
-    // Open up
-    start-script FOpen();
-	while(!isFullyOpen)
+	start-script FOpen();
+	while( !Static_Var_1 )
 	{
 		sleep 100;
 	}
-    
 	turn turret to y-axis heading speed <200.000000>;
 	turn gun to x-axis <0.000000> - pitch speed <200.000000>;
 	wait-for-turn turret around y-axis;
@@ -197,7 +153,7 @@ Killed(severity, corpsetype)
 		explode gun type BITMAPONLY | BITMAP3;
 		explode dome type BITMAPONLY | BITMAP1;
 		explode turret type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -208,7 +164,7 @@ Killed(severity, corpsetype)
 		explode base type SHATTER | BITMAP1;
 		explode dome type BITMAPONLY | BITMAP3;
 		explode turret type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -219,7 +175,7 @@ Killed(severity, corpsetype)
 		explode gun type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 		explode dome type SHATTER | BITMAP1;
 		explode turret type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode barrel type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
@@ -228,4 +184,5 @@ Killed(severity, corpsetype)
 	explode gun type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
 	explode dome type SHATTER | BITMAP1;
 	explode turret type BITMAPONLY | BITMAP2;
+	return (corpsetype);
 }

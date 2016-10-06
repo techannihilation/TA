@@ -14,16 +14,17 @@ static-var  bMoving, bAiming, Static_Var_3, restore_delay, gun_1;
 #define SIG_AIM_2			4
 #define SIG_AIM_3			8
 
+
 walk()
 {
 	if( TRUE )
 	{
-		turn lleg to x-axis <50.010989> speed <188.000000>;
+		turn lleg to x-axis <50.005495> speed <188.000000>;
 		turn rleg to x-axis <-70.016484> speed <184.000000>;
 		turn llowleg to x-axis <40.005495> speed <188.000000>;
 		turn rlowleg to x-axis <70.016484> speed <184.000000>;
 		turn lfoot to x-axis <-80.016484> speed <258.000000>;
-		move pivot to y-axis [1.4000000] speed [10.000000];
+		move pivot to y-axis [1.400000] speed [10.000000];
 		sleep 464;
 	}
 	if( TRUE )
@@ -33,13 +34,13 @@ walk()
 		turn llowleg to x-axis <0.000000> speed <184.000000>;
 		turn rlowleg to x-axis <0.000000> speed <188.000000>;
 		turn lfoot to x-axis <0.000000> speed <214.000000>;
-		move pivot to y-axis [0.8000000] speed [10.000000];
+		move pivot to y-axis [0.800000] speed [10.000000];
 		sleep 364;
 	}
 	if( TRUE )
 	{
 		turn lleg to x-axis <-70.016484> speed <184.000000>;
-		turn rleg to x-axis <50.010989> speed <188.000000>;
+		turn rleg to x-axis <50.005495> speed <188.000000>;
 		turn llowleg to x-axis <70.016484> speed <188.000000>;
 		turn rlowleg to x-axis <40.005495> speed <188.000000>;
 		turn rfoot to x-axis <-80.016484> speed <254.000000>;
@@ -53,19 +54,17 @@ walk()
 		turn llowleg to x-axis <0.000000> speed <184.000000>;
 		turn rlowleg to x-axis <0.000000> speed <188.000000>;
 		turn rfoot to x-axis <0.000000> speed <214.000000>;
-		move pivot to y-axis [0.80000] speed [10.000000];
+		move pivot to y-axis [0.800000] speed [10.000000];
 		sleep 364;
 	}
 	move pivot to y-axis [0.000000] speed [10.000000];
-	return (0);
-	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
 }
 
 walklegs()
 {
 	if( TRUE )
 	{
-		turn lleg to x-axis <50.010989> speed <188.000000>;
+		turn lleg to x-axis <50.005495> speed <188.000000>;
 		turn rleg to x-axis <-70.016484> speed <184.000000>;
 		turn llowleg to x-axis <40.005495> speed <188.000000>;
 		turn rlowleg to x-axis <70.016484> speed <184.000000>;
@@ -84,7 +83,7 @@ walklegs()
 	if( TRUE )
 	{
 		turn lleg to x-axis <-70.016484> speed <184.000000>;
-		turn rleg to x-axis <50.010989> speed <188.000000>;
+		turn rleg to x-axis <50.005495> speed <188.000000>;
 		turn llowleg to x-axis <70.016484> speed <188.000000>;
 		turn rlowleg to x-axis <40.005495> speed <188.000000>;
 		turn rfoot to x-axis <-80.016484> speed <254.000000>;
@@ -99,7 +98,6 @@ walklegs()
 		turn rfoot to x-axis <0.000000> speed <214.000000>;
 		sleep 364;
 	}
-	
 }
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -349,7 +347,7 @@ Killed(severity, corpsetype)
 		explode flareb type BITMAPONLY | BITMAP3;
 		explode lleg type BITMAPONLY | BITMAP2;
 		explode rleg type BITMAPONLY | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -370,7 +368,7 @@ Killed(severity, corpsetype)
 		explode flareb type BITMAPONLY | BITMAP3;
 		explode lleg type BITMAPONLY | BITMAP2;
 		explode rleg type BITMAPONLY | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -391,7 +389,7 @@ Killed(severity, corpsetype)
 		explode flareb type BITMAPONLY | BITMAP3;
 		explode lleg type BITMAPONLY | BITMAP2;
 		explode rleg type BITMAPONLY | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP1;
@@ -410,4 +408,5 @@ Killed(severity, corpsetype)
 	explode flareb type BITMAPONLY | BITMAP3;
 	explode lleg type BITMAPONLY | BITMAP2;
 	explode rleg type BITMAPONLY | BITMAP3;
+	return (corpsetype);
 }

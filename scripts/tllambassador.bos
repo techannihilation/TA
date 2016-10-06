@@ -1,233 +1,235 @@
-// Arm Transport ship
+#define TA			// This is a TA script
 
-piece base,turret,arms1,arms2,arms3,arms4,arms5,link,door1,door2,wake1,wake2,wake3,weight,magnet;
+#include "sfxtype.h"
+#include "exptype.h"
 
-static-var boom_len,boom_heading,boom_pitch,boom_ok;
+piece  base, turret, arms1, arms2, arms3, arms4, arms5, link,
+       door1, door2, wake1, wake2, wake3, weight, magnet;
 
-#define	SIG_WAKE 2
-#define SIG_DOORHOLD 4
-#define SMOKEPIECE1 base
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4;
 
-#include "smokeunit.h"
-#include "EXPtype.h"
-#include "SFXtype.h"
+// Signal definitions
+#define SIG_MOVE			2
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
 
 Create()
-	{
-	turn turret to y-axis <180> speed <1000>;
+{
+	turn turret to y-axis <180.000000> speed <1000.000000>;
 	start-script SmokeUnit();
-	}
-
+}
 
 StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	while( TRUE )
 	{
-	signal SIG_WAKE;
-	set-signal-mask SIG_WAKE;
-	while (TRUE)
-		{
-		emit-sfx SFXTYPE_WAKE1 from wake1;
-		emit-sfx SFXTYPE_WAKE1 from wake2;
-		emit-sfx SFXTYPE_WAKE1 from wake3;
+		emit-sfx 2 from wake1;
+		emit-sfx 2 from wake2;
+		emit-sfx 2 from wake3;
 		sleep 300;
-		}
 	}
+}
 
 StopMoving()
-	{
-	signal SIG_WAKE;				// Kill anybody that may be active
-	}
-
+{
+	signal SIG_MOVE;
+}
 
 SweetSpot(piecenum)
-	{
-	piecenum=base;
-	}
+{
+	piecenum = base;
+}
 
 StartDoorOpen()
-	{
-	signal SIG_DOORHOLD;
-	set-signal-mask SIG_DOORHOLD;
-
-	// open the doors
-	turn door1 to z-axis <-90> speed <50>;
-	turn door2 to z-axis <90> speed <50>;
-
-	// wait 5 seconds (this will be reset if someone needs them opened again)
+{
+	signal 4;
+	set-signal-mask 4;
+	turn door1 to z-axis <-90.000000> speed <50.000000>;
+	turn door2 to z-axis <90.000000> speed <50.000000>;
 	sleep 5000;
+	turn door1 to z-axis <0.000000> speed <20.000000>;
+	turn door2 to z-axis <0.000000> speed <20.000000>;
+}
 
-	// close 'em again
-	turn door1 to z-axis <0> speed <20>;
-	turn door2 to z-axis <0> speed <20>;
-	}
-
-
-BoomCalc(posxz,posy)
-	{
-	var dxz,dy,lenxz;
-
-	dxz = get PIECE_XZ(turret) - posxz;
-	dy = posy - get PIECE_Y(turret) - [20];
-	lenxz = get XZ_HYPOT(dxz);
-
-	boom_len = get HYPOT(lenxz,dy) - [20];
-	boom_heading = get XZ_ATAN(dxz);
-	boom_pitch = get ATAN(dy,lenxz);
-	boom_ok = (boom_len < [80]);
-	}
-
+BoomCalc(posxz, posy)
+{
+	var Func_Var_3, Func_Var_4, Func_Var_5;
+	Func_Var_3 = get PIECE_XZ(turret) - posxz;
+	Func_Var_4 = posy - get PIECE_Y(turret) - [20.000000];
+	Func_Var_5 = get XZ_HYPOT(Func_Var_3);
+	Static_Var_1 = get HYPOT(Func_Var_5,Func_Var_4) - [20.000000];
+	Static_Var_2 = get XZ_ATAN(Func_Var_3);
+	Static_Var_3 = get ATAN(Func_Var_4,Func_Var_5);
+	Static_Var_4 = Static_Var_1 < [80.000000];
+}
 
 BoomExtend()
-	{
+{
 	start-script StartDoorOpen();
-
-	turn turret to y-axis boom_heading speed <80>;
-	turn magnet to x-axis boom_pitch speed <40>;
-	turn weight to x-axis boom_pitch speed <40>;
-	turn arms1 to x-axis 0-boom_pitch speed <40>;
-	move arms2 to z-axis boom_len/4 speed [30];
-	move arms3 to z-axis boom_len/4 speed [30];
-	move arms4 to z-axis boom_len/4 speed [30];
-	move arms5 to z-axis boom_len/4 speed [30];
-
+	turn turret to y-axis Static_Var_2 speed <80.000000>;
+	turn magnet to x-axis Static_Var_3 speed <40.000000>;
+	turn weight to x-axis Static_Var_3 speed <40.000000>;
+	turn arms1 to x-axis <0.000000> - Static_Var_3 speed <40.000000>;
+	move arms2 to z-axis Static_Var_1 / [0.000024] speed [30.000000];
+	move arms3 to z-axis Static_Var_1 / [0.000024] speed [30.000000];
+	move arms4 to z-axis Static_Var_1 / [0.000024] speed [30.000000];
+	move arms5 to z-axis Static_Var_1 / [0.000024] speed [30.000000];
 	wait-for-turn turret around y-axis;
 	wait-for-turn arms1 around x-axis;
 	wait-for-move arms2 along z-axis;
 	wait-for-move arms3 along z-axis;
-	}
-
+}
 
 BoomReset()
-	{
-	turn turret to y-axis <180> speed <40>;
-	turn magnet to x-axis <0> speed <30>;
-	turn weight to x-axis <0> speed <30>;
-	turn arms1 to x-axis <0> speed <30>;
-	move arms2 to z-axis [0] speed [25];
-	move arms3 to z-axis [0] speed [25];
-	move arms4 to z-axis [0] speed [25];
-	move arms5 to z-axis [0] speed [25];
-	}
-
+{
+	turn turret to y-axis <180.000000> speed <40.000000>;
+	turn magnet to x-axis <0.000000> speed <30.000000>;
+	turn weight to x-axis <0.000000> speed <30.000000>;
+	turn arms1 to x-axis <0.000000> speed <30.000000>;
+	move arms2 to z-axis [0.000000] speed [25.000000];
+	move arms3 to z-axis [0.000000] speed [25.000000];
+	move arms4 to z-axis [0.000000] speed [25.000000];
+	move arms5 to z-axis [0.000000] speed [25.000000];
+}
 
 BoomToPad()
-	{
+{
 	start-script StartDoorOpen();
-
-	turn turret to y-axis <180> speed <50>;
-	turn magnet to x-axis <0> speed <30>;
-	turn weight to x-axis <0> speed <30>;
-	turn arms1 to x-axis <0> speed <30>;
-	move arms2 to z-axis [0] speed [30];
-	move arms3 to z-axis [0] speed [30];
-	move arms4 to z-axis [0] speed [30];
-	move arms5 to z-axis [0] speed [30];
-
+	turn turret to y-axis <180.000000> speed <50.000000>;
+	turn magnet to x-axis <0.000000> speed <30.000000>;
+	turn weight to x-axis <0.000000> speed <30.000000>;
+	turn arms1 to x-axis <0.000000> speed <30.000000>;
+	move arms2 to z-axis [0.000000] speed [30.000000];
+	move arms3 to z-axis [0.000000] speed [30.000000];
+	move arms4 to z-axis [0.000000] speed [30.000000];
+	move arms5 to z-axis [0.000000] speed [30.000000];
 	wait-for-turn turret around y-axis;
 	wait-for-turn arms1 around x-axis;
 	wait-for-move arms2 along z-axis;
 	wait-for-move arms3 along z-axis;
-
-	turn magnet to x-axis <-30> speed <30>;
-	turn weight to x-axis <-30> speed <30>;
-	turn arms1 to x-axis <30> speed <30>;
+	turn magnet to x-axis <-30.000000> speed <30.000000>;
+	turn weight to x-axis <-30.000000> speed <30.000000>;
+	turn arms1 to x-axis <30.000000> speed <30.000000>;
 	wait-for-turn arms1 around x-axis;
-	}
-
+}
 
 TransportPickup(unitid)
+{
+	call-script BoomCalc(get UNIT_XZ(unitid),get UNIT_Y(unitid) + get UNIT_HEIGHT(unitid));
+	if( Static_Var_4 )
 	{
-	call-script BoomCalc( get UNIT_XZ(unitid),get UNIT_Y(unitid) + get UNIT_HEIGHT(unitid) );
-	if(boom_ok)
-		{
-		set BUSY to TRUE;
+		set BUSY to 1;
 		call-script BoomExtend();
-		move link to y-axis 0-get UNIT_HEIGHT(unitid) now;
+		move link to y-axis [0.000000] - get UNIT_HEIGHT(unitid) now;
 		attach-unit unitid to link;
 		call-script BoomToPad();
-		attach-unit unitid to 0-1;
+		attach-unit unitid to 0 - 1;
 		call-script BoomReset();
-		set BUSY to FALSE;
-		}
+		set BUSY to 0;
 	}
+}
 
-
-TransportDrop(unitid,position)
-	{
+TransportDrop(unitid, position)
+{
 	call-script BoomCalc(position,get GROUND_HEIGHT(position) + get UNIT_HEIGHT(unitid));
-	if(boom_ok)
-		{
-		set BUSY to TRUE;
+	if( Static_Var_4 )
+	{
+		set BUSY to 1;
 		call-script BoomToPad();
-		move link to y-axis 0-get UNIT_HEIGHT(unitid) now;
+		move link to y-axis [0.000000] - get UNIT_HEIGHT(unitid) now;
 		attach-unit unitid to link;
 		call-script BoomExtend();
 		drop-unit unitid;
 		call-script BoomReset();
-		set BUSY to FALSE;
-		}
+		set BUSY to 0;
 	}
+}
 
-
-Killed( severity, corpsetype )
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
 	{
-	if (severity <= 25)
-		{
 		corpsetype = 1;
-		explode arms1 type	BITMAPONLY | BITMAP1;
-		explode arms2 type	BITMAPONLY | BITMAP2;
-		explode arms3 type	BITMAPONLY | BITMAP5;
-		explode base type	BITMAPONLY | BITMAP3;
-		explode door1 type	BITMAPONLY | BITMAP4;
-		explode door2 type	BITMAPONLY | BITMAP5;
-		explode link type	BITMAPONLY | BITMAP1;
-		explode turret type	BITMAPONLY | BITMAP2;
-		explode wake1 type	BITMAPONLY | BITMAP3;
-		explode wake2 type	BITMAPONLY | BITMAP4;
-		return( 0 );
-		}
-
-	if (severity <= 50)
-		{
-		corpsetype = 2;
-		explode arms1 type	BITMAPONLY | BITMAP1;
-		explode arms2 type	SHATTER | BITMAP2;
-		explode arms3 type	SHATTER | BITMAP4;
-		explode base type	BITMAPONLY | BITMAP3;
-		explode door1 type	BITMAPONLY | BITMAP4;
-		explode door2 type	BITMAPONLY | BITMAP5;
-		explode link type	FALL | BITMAP1;
-		explode turret type	BITMAPONLY | BITMAP2;
-		explode wake1 type	FALL | BITMAP3;
-		explode wake2 type	FALL | BITMAP4;
-		return( 0 );
-		}
-
-	if (severity <= 99)
-		{
-		corpsetype = 3;
-		explode arms1 type	BITMAPONLY | BITMAP1;
-		explode arms2 type	SHATTER | BITMAP2;
-		explode arms3 type	SHATTER | BITMAP4;
-		explode base type	BITMAPONLY | BITMAP3;
-		explode door1 type	BITMAPONLY | BITMAP4;
-		explode door2 type	BITMAPONLY | BITMAP5;
-		explode link type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-		explode turret type	BITMAPONLY | BITMAP2;
-		explode wake1 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		explode wake2 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-		return( 0 );
-		}
-
-	corpsetype = 3;
-	explode arms1 type	BITMAPONLY | BITMAP1;
-	explode arms2 type	SHATTER | EXPLODE_ON_HIT | BITMAP2;
-	explode arms3 type	SHATTER | BITMAP4;
-	explode base type	BITMAPONLY | BITMAP3;
-	explode door1 type	BITMAPONLY | BITMAP4;
-	explode door2 type	BITMAPONLY | BITMAP5;
-	explode link type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-	explode turret type	BITMAPONLY | BITMAP2;
-	explode wake1 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-	explode wake2 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-	return( 0 );
+		explode arms1 type BITMAPONLY | BITMAP1;
+		explode arms2 type BITMAPONLY | BITMAP2;
+		explode arms3 type BITMAPONLY | BITMAP5;
+		explode base type BITMAPONLY | BITMAP3;
+		explode door1 type BITMAPONLY | BITMAP4;
+		explode door2 type BITMAPONLY | BITMAP5;
+		explode link type BITMAPONLY | BITMAP1;
+		explode turret type BITMAPONLY | BITMAP2;
+		explode wake1 type BITMAPONLY | BITMAP3;
+		explode wake2 type BITMAPONLY | BITMAP4;
+		return (corpsetype);
 	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode arms1 type BITMAPONLY | BITMAP1;
+		explode arms2 type SHATTER | BITMAP2;
+		explode arms3 type SHATTER | BITMAP4;
+		explode base type BITMAPONLY | BITMAP3;
+		explode door1 type BITMAPONLY | BITMAP4;
+		explode door2 type BITMAPONLY | BITMAP5;
+		explode link type FALL | BITMAP1;
+		explode turret type BITMAPONLY | BITMAP2;
+		explode wake1 type FALL | BITMAP3;
+		explode wake2 type FALL | BITMAP4;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode arms1 type BITMAPONLY | BITMAP1;
+		explode arms2 type SHATTER | BITMAP2;
+		explode arms3 type SHATTER | BITMAP4;
+		explode base type BITMAPONLY | BITMAP3;
+		explode door1 type BITMAPONLY | BITMAP4;
+		explode door2 type BITMAPONLY | BITMAP5;
+		explode link type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode turret type BITMAPONLY | BITMAP2;
+		explode wake1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode wake2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode arms1 type BITMAPONLY | BITMAP1;
+	explode arms2 type SHATTER | EXPLODE_ON_HIT | BITMAP2;
+	explode arms3 type SHATTER | BITMAP4;
+	explode base type BITMAPONLY | BITMAP3;
+	explode door1 type BITMAPONLY | BITMAP4;
+	explode door2 type BITMAPONLY | BITMAP5;
+	explode link type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode turret type BITMAPONLY | BITMAP2;
+	explode wake1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode wake2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	return (corpsetype);
+}

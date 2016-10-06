@@ -40,15 +40,15 @@ Create()
 
 Activate()
 {
-	turn Rwing to z-axis <-90.021978> speed <100.021978>;
-	turn Lwing to z-axis <90.021978> speed <100.021978>;
-	spin radar around y-axis speed <90.021978>;
+	turn Rwing to z-axis <-90.016484> speed <100.016484>;
+	turn Lwing to z-axis <90.016484> speed <100.016484>;
+	spin radar around y-axis speed <90.016484>;
 }
 
 Deactivate()
 {
-	turn Rwing to z-axis <0.000000> speed <100.021978>;
-	turn Lwing to z-axis <0.000000> speed <100.021978>;
+	turn Rwing to z-axis <0.000000> speed <100.016484>;
+	turn Lwing to z-axis <0.000000> speed <100.016484>;
 	stop-spin radar around y-axis;
 }
 
@@ -65,7 +65,7 @@ Killed(severity, corpsetype)
 		explode base type BITMAPONLY | BITMAP1;
 		explode Lwing type BITMAPONLY | BITMAP5;
 		explode Rwing type BITMAPONLY | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -73,7 +73,7 @@ Killed(severity, corpsetype)
 		explode base type BITMAPONLY | BITMAP1;
 		explode Lwing type SHATTER | BITMAP5;
 		explode Rwing type SHATTER | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -81,10 +81,11 @@ Killed(severity, corpsetype)
 		explode base type BITMAPONLY | BITMAP1;
 		explode Lwing type SHATTER | BITMAP5;
 		explode Rwing type SHATTER | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP1;
 	explode Lwing type SHATTER | EXPLODE_ON_HIT | BITMAP5;
 	explode Rwing type SHATTER | EXPLODE_ON_HIT | BITMAP1;
+	return (corpsetype);
 }

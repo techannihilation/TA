@@ -1,0 +1,352 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, centerstrut, centerwing, rightstrut, rightwing, flare1, leftstrut, leftwing,
+       flare3, rcanard, lcanard, flare2;
+
+static-var  Static_Var_1, Static_Var_2, statechg_DesiredState, statechg_StateChanging;
+
+
+activatescr()
+{
+	if( TRUE )
+	{
+		move centerstrut to y-axis [0.000000] now;
+		move centerwing to y-axis [0.000000] now;
+		move centerwing to z-axis [0.000000] now;
+		move centerstrut to y-axis [1.300000] speed [2.000000];
+		move centerwing to y-axis [1.300000] speed [2.000000];
+		move centerwing to z-axis [4.000000] speed [6.000000];
+		move rightstrut to x-axis [0.000000] now;
+		move rightstrut to x-axis [1.700000] speed [2.000000];
+		move rightwing to x-axis [0.000000] now;
+		move rightwing to z-axis [0.000000] now;
+		move rightwing to x-axis [1.700000] speed [2.000000];
+		move rightwing to z-axis [4.000000] speed [5.000000];
+		move leftstrut to x-axis [0.000000] now;
+		move leftstrut to x-axis [-1.700000] speed [2.000000];
+		move leftwing to x-axis [0.000000] now;
+		move leftwing to z-axis [0.000000] now;
+		move leftwing to x-axis [-1.700000] speed [2.000000];
+		move leftwing to z-axis [4.000000] speed [5.000000];
+		move rcanard to x-axis [0.000000] now;
+		move lcanard to x-axis [0.000000] now;
+		move rcanard to x-axis [1.000000] speed [2.000000];
+		move lcanard to x-axis [-1.000000] speed [2.000000];
+		sleep 998;
+	}
+	sleep 44;
+	return (0);
+	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		move centerstrut to y-axis [1.500000] now;
+		move centerwing to y-axis [1.500000] now;
+		move centerwing to z-axis [4.000000] now;
+		move centerstrut to y-axis [0.000000] speed [2.000000];
+		move centerwing to y-axis [0.000000] speed [2.000000];
+		move centerwing to z-axis [0.000000] speed [6.000000];
+		move rightstrut to x-axis [1.700000] now;
+		move rightstrut to x-axis [0.000000] speed [2.000000];
+		move rightwing to x-axis [1.700000] now;
+		move rightwing to z-axis [4.000000] now;
+		move rightwing to x-axis [0.000000] speed [2.000000];
+		move rightwing to z-axis [0.000000] speed [5.000000];
+		move leftstrut to x-axis [-1.700000] now;
+		move leftstrut to x-axis [0.000000] speed [2.000000];
+		move leftwing to x-axis [-1.700000] now;
+		move leftwing to z-axis [4.000000] now;
+		move leftwing to x-axis [0.000000] speed [2.000000];
+		move leftwing to z-axis [0.000000] speed [5.000000];
+		move rcanard to x-axis [1.000000] now;
+		move lcanard to x-axis [-1.000000] now;
+		move rcanard to x-axis [0.000000] speed [2.000000];
+		move lcanard to x-axis [0.000000] speed [2.000000];
+		sleep 998;
+	}
+	sleep 44;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script activatescr();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script deactivatescr();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+MoveRate2()
+{
+	if( !Static_Var_1 )
+	{
+		if( Rand( 1, 5 ) == 1 )
+		{
+			if( Static_Var_2 == 1 )
+			{
+				Static_Var_1 = 1;
+				move centerstrut to y-axis [0.000000] speed [4.000000];
+				move rightstrut to x-axis [0.000000] speed [4.000000];
+				move leftstrut to x-axis [0.000000] speed [2.000000];
+				move centerwing to y-axis [0.000000] speed [4.000000];
+				move centerwing to z-axis [0.000000] speed [12.000000];
+				move rightwing to x-axis [0.000000] speed [4.000000];
+				move rightwing to z-axis [0.000000] speed [10.000000];
+				move leftwing to x-axis [0.000000] speed [4.000000];
+				move leftwing to z-axis [0.000000] speed [10.000000];
+				turn base to z-axis <238.054945> speed <120.000000>;
+				wait-for-turn base around z-axis;
+				turn base to z-axis <118.027473> speed <180.000000>;
+				wait-for-turn base around z-axis;
+				turn base to z-axis <0.000000> speed <120.000000>;
+				move centerstrut to y-axis [1.300000] speed [4.000000];
+				move rightstrut to x-axis [1.700000] speed [4.000000];
+				move leftstrut to x-axis [-1.700000] speed [2.000000];
+				move centerwing to y-axis [1.300000] speed [4.000000];
+				move centerwing to z-axis [4.000000] speed [12.000000];
+				move rightwing to x-axis [1.700000] speed [4.000000];
+				move rightwing to z-axis [4.000000] speed [10.000000];
+				move leftwing to x-axis [-1.700000] speed [4.000000];
+				move leftwing to z-axis [4.000000] speed [10.000000];
+				Static_Var_1 = 0;
+				Static_Var_2 = 2;
+				return (0);
+			}
+			if( Static_Var_2 == 2 )
+			{
+				Static_Var_1 = 1;
+				move centerstrut to y-axis [0.000000] speed [4.000000];
+				move rightstrut to x-axis [0.000000] speed [4.000000];
+				move leftstrut to x-axis [0.000000] speed [2.000000];
+				move centerwing to y-axis [0.000000] speed [4.000000];
+				move centerwing to z-axis [0.000000] speed [12.000000];
+				move rightwing to x-axis [0.000000] speed [4.000000];
+				move rightwing to z-axis [0.000000] speed [10.000000];
+				move leftwing to x-axis [0.000000] speed [4.000000];
+				move leftwing to z-axis [0.000000] speed [10.000000];
+				turn base to z-axis <238.054945> speed <360.000000>;
+				wait-for-turn base around z-axis;
+				turn base to z-axis <118.027473> speed <540.000000>;
+				wait-for-turn base around z-axis;
+				turn base to z-axis <0.000000> speed <360.000000>;
+				wait-for-turn base around z-axis;
+				turn base to z-axis <238.054945> speed <360.000000>;
+				wait-for-turn base around z-axis;
+				turn base to z-axis <118.027473> speed <540.000000>;
+				wait-for-turn base around z-axis;
+				turn base to z-axis <0.000000> speed <360.000000>;
+				move centerstrut to y-axis [1.300000] speed [4.000000];
+				move rightstrut to x-axis [1.700000] speed [4.000000];
+				move leftstrut to x-axis [-1.700000] speed [2.000000];
+				move centerwing to y-axis [1.300000] speed [4.000000];
+				move centerwing to z-axis [4.000000] speed [12.000000];
+				move rightwing to x-axis [1.700000] speed [4.000000];
+				move rightwing to z-axis [4.000000] speed [10.000000];
+				move leftwing to x-axis [-1.700000] speed [4.000000];
+				move leftwing to z-axis [4.000000] speed [10.000000];
+				Static_Var_1 = 0;
+				Static_Var_2 = 3;
+				return (0);
+			}
+			if( Static_Var_2 == 3 )
+			{
+				Static_Var_1 = 1;
+				move centerstrut to y-axis [0.000000] speed [4.000000];
+				move rightstrut to x-axis [0.000000] speed [4.000000];
+				move leftstrut to x-axis [0.000000] speed [2.000000];
+				move centerwing to y-axis [0.000000] speed [4.000000];
+				move centerwing to z-axis [0.000000] speed [12.000000];
+				move rightwing to x-axis [0.000000] speed [4.000000];
+				move rightwing to z-axis [0.000000] speed [10.000000];
+				move leftwing to x-axis [0.000000] speed [4.000000];
+				move leftwing to z-axis [0.000000] speed [10.000000];
+				turn base to z-axis <270.065934> speed <500.000000>;
+				wait-for-turn base around z-axis;
+				sleep 250;
+				turn base to z-axis <180.043956> speed <500.000000>;
+				wait-for-turn base around z-axis;
+				sleep 250;
+				turn base to z-axis <90.021978> speed <500.000000>;
+				wait-for-turn base around z-axis;
+				sleep 250;
+				turn base to z-axis <0.000000> speed <500.000000>;
+				wait-for-turn base around z-axis;
+				sleep 150;
+				move centerstrut to y-axis [1.300000] speed [4.000000];
+				move rightstrut to x-axis [1.700000] speed [4.000000];
+				move leftstrut to x-axis [-1.700000] speed [2.000000];
+				move centerwing to y-axis [1.300000] speed [4.000000];
+				move centerwing to z-axis [4.000000] speed [12.000000];
+				move rightwing to x-axis [1.700000] speed [4.000000];
+				move rightwing to z-axis [4.000000] speed [10.000000];
+				move leftwing to x-axis [-1.700000] speed [4.000000];
+				move leftwing to z-axis [4.000000] speed [10.000000];
+				Static_Var_1 = 0;
+				Static_Var_2 = 1;
+			}
+		}
+	}
+}
+
+Create()
+{
+	Static_Var_2 = 1;
+	Static_Var_1 = 0;
+	call-script InitState();
+	start-script SmokeUnit();
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = flare1;
+}
+
+QuerySecondary(piecenum)
+{
+	piecenum = flare2;
+}
+
+QueryTertiary(piecenum)
+{
+	piecenum = flare3;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode centerwing type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode rightwing type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode leftwing type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode centerstrut type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode rightstrut type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode leftstrut type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode base type BITMAPONLY | BITMAP2;
+		explode rcanard type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode rcanard type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode flare1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode flare2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode flare3 type SHATTER | EXPLODE_ON_HIT | BITMAP5;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode centerwing type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode rightwing type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode leftwing type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode centerstrut type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode rightstrut type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode leftstrut type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode base type BITMAPONLY | BITMAP2;
+		explode rcanard type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode rcanard type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode flare1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode flare2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode flare3 type SHATTER | EXPLODE_ON_HIT | BITMAP5;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode centerwing type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode rightwing type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode leftwing type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode centerstrut type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode rightstrut type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode leftstrut type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode base type BITMAPONLY | BITMAP2;
+		explode rcanard type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode rcanard type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode flare1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode flare2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode flare3 type SHATTER | EXPLODE_ON_HIT | BITMAP5;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode centerwing type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode rightwing type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode leftwing type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode centerstrut type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode rightstrut type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode leftstrut type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode base type BITMAPONLY | BITMAP2;
+	explode rcanard type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode rcanard type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode flare1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode flare2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode flare3 type SHATTER | EXPLODE_ON_HIT | BITMAP5;
+	return (corpsetype);
+}

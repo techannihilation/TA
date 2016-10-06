@@ -7,7 +7,7 @@ piece  flare1, flare6, flare5, flare4, flare3, flare2, base, turret,
        barrel1, barrel2, barrel3, barrel4, barrel5, barrel6, sleeve12, sleeve34,
        sleeve56, spindle;
 
-static-var  gun_1, bAiming, Static_Var_3;
+static-var  gun_1, Static_Var_2, Static_Var_3;
 
 // Signal definitions
 #define SIG_AIM				2

@@ -5,7 +5,7 @@
 
 piece  base, turretx, turrety, cannona, flarea;
 
-static-var  Static_Var_1, gun_1;
+static-var  Static_Var_1, Static_Var_2;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -53,7 +53,7 @@ Create()
 	hide flarea;
 	cache base;
 	dont-shade flarea;
-	gun_1 = base;
+	Static_Var_2 = 0;
 	Static_Var_1 = 3000;
 	start-script SmokeUnit();
 }
@@ -98,17 +98,11 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-//		show flarea;
-//		move cannona to z-axis [-2.000000] now;
-//		sleep 100;
-//		hide flarea;
-//		wait-for-move cannona along z-axis;
-//		move cannona to z-axis [0.000000] speed [6.000000];
 }
 
 QueryPrimary(piecenum)
 {
-		piecenum = flarea;
+	piecenum = flarea;
 }
 
 AimFromPrimary(piecenum)
@@ -127,7 +121,7 @@ Killed(severity, corpsetype)
 		explode turrety type BITMAPONLY | BITMAP5;
 		explode turretx type BITMAPONLY | BITMAP1;
 		explode flarea type BITMAPONLY | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -137,7 +131,7 @@ Killed(severity, corpsetype)
 		explode turrety type FALL | BITMAP5;
 		explode turretx type FALL | BITMAP1;
 		explode flarea type FALL | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -147,7 +141,7 @@ Killed(severity, corpsetype)
 		explode turrety type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 		explode turretx type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 		explode flarea type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type SHATTER | EXPLODE_ON_HIT | BITMAP1;
@@ -155,4 +149,5 @@ Killed(severity, corpsetype)
 	explode turrety type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 	explode turretx type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 	explode flarea type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	return (corpsetype);
 }

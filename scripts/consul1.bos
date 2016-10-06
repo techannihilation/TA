@@ -6,29 +6,28 @@
 piece  base, body, rnanopoint, lnanopoint, rpinza, lpinza, rfwheel, rrwheel,
        lfwheel, lrwheel, nanopoint;
 
-static-var  unitviewer, Static_Var_2, statechg_DesiredState, statechg_StateChanging,
-			turnClock, turnCounter, wheelSpeed, currentSpeed, moveSpeed;
+static-var  Static_Var_1, Static_Var_2, statechg_DesiredState, statechg_StateChanging, Static_Var_5,
+            Static_Var_6, Static_Var_7, Static_Var_8, Static_Var_9;
 
-TurnControl()
+
+TurnControl(Func_Var_1, Func_Var_2, Func_Var_3)
 {
-	var lastHeading, currHeading, diffHeading;
-	lastHeading = GET HEADING;
-	while (TRUE)
+	Func_Var_1 = get HEADING;
+	while( TRUE )
 	{
-		currHeading = GET HEADING;
-		diffHeading = currHeading - lastHeading;
-		// Set Values for differential system
-		turnClock = <0.015>;
-		turnCounter = <0.015>;	
-		if (diffHeading >= 500)
-			{
-			turnClock = <0.009>;
-			}
-		if (diffHeading <= -500)
-			{
-			turnCounter = <0.009>;
-			}
-		lastHeading = currHeading;
+		Func_Var_2 = get HEADING;
+		Func_Var_3 = Func_Var_2 - Func_Var_1;
+		Static_Var_5 = 2;
+		Static_Var_6 = 2;
+		if( Func_Var_3 >= 500 )
+		{
+			Static_Var_5 = 1;
+		}
+		if( Func_Var_3 <= -500 )
+		{
+			Static_Var_6 = 1;
+		}
+		Func_Var_1 = Func_Var_2;
 		sleep 67;
 	}
 }
@@ -36,19 +35,18 @@ TurnControl()
 WheelControl()
 {
 	sleep 33;
-	while(TRUE)
+	while( TRUE )
 	{
-		currentSpeed = (get CURRENT_SPEED)*20/moveSpeed;
-		wheelSpeed = currentSpeed * 6;
-		if (currentSpeed<4) currentSpeed=4;	// prevent infinite timing
-		//left wheels
-		spin lfwheel around x-axis speed (<1.000000> * wheelSpeed ) * turnClock accelerate <3.000000> * currentSpeed;
-		spin lrwheel around x-axis speed (<1.000000> * wheelSpeed ) * turnClock accelerate <3.000000> * currentSpeed;
-				
-		//right wheels
-		spin rfwheel around x-axis speed (<1.000000> * wheelSpeed ) * turnCounter accelerate <3.000000> * currentSpeed;
-		spin rrwheel around x-axis speed (<1.000000> * wheelSpeed ) * turnCounter accelerate <3.000000> * currentSpeed;
-			
+		Static_Var_8 = get CURRENT_SPEED * 20 / Static_Var_9;
+		Static_Var_7 = Static_Var_8 * 6;
+		if( Static_Var_8 < 4 )
+		{
+			Static_Var_8 = 4;
+		}
+		spin lfwheel around x-axis speed <1.000000> * Static_Var_7 * Static_Var_5 accelerate <3.000000> * Static_Var_8;
+		spin lrwheel around x-axis speed <1.000000> * Static_Var_7 * Static_Var_5 accelerate <3.000000> * Static_Var_8;
+		spin rfwheel around x-axis speed <1.000000> * Static_Var_7 * Static_Var_6 accelerate <3.000000> * Static_Var_8;
+		spin rrwheel around x-axis speed <1.000000> * Static_Var_7 * Static_Var_6 accelerate <3.000000> * Static_Var_8;
 		sleep 67;
 	}
 }
@@ -154,7 +152,7 @@ RequestState(requestedstate, currentstate)
 
 Create()
 {
-	moveSpeed = get MAX_SPEED;
+	Static_Var_9 = get MAX_SPEED;
 	Static_Var_2 = 0;
 	call-script InitState();
 	start-script SmokeUnit();
@@ -217,7 +215,7 @@ Killed(severity, corpsetype)
 		explode rnanopoint type SHATTER | SMOKE | BITMAP4;
 		explode lnanopoint type SHATTER | SMOKE | BITMAP4;
 		explode nanopoint type SHATTER | SMOKE | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -233,7 +231,7 @@ Killed(severity, corpsetype)
 		explode rnanopoint type SHATTER | SMOKE | BITMAP4;
 		explode lnanopoint type SHATTER | SMOKE | BITMAP4;
 		explode nanopoint type SHATTER | SMOKE | FIRE | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -249,7 +247,7 @@ Killed(severity, corpsetype)
 		explode rnanopoint type SHATTER | SMOKE | FIRE | BITMAP4;
 		explode lnanopoint type SHATTER | SMOKE | FIRE | BITMAP4;
 		explode nanopoint type SHATTER | SMOKE | FIRE | BITMAP5;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP1;
@@ -263,4 +261,5 @@ Killed(severity, corpsetype)
 	explode rnanopoint type SHATTER | SMOKE | FIRE | BITMAP4;
 	explode lnanopoint type SHATTER | SMOKE | FIRE | BITMAP4;
 	explode nanopoint type SHATTER | SMOKE | FIRE | BITMAP5;
+	return (corpsetype);
 }

@@ -6,28 +6,26 @@
 piece  flare1, flare2, base, body, turret, sleeve, barrels, w1,
        w2;
 
-static-var  restore_delay, gun_1, wheelSpeed, currentSpeed, moveSpeed;
+static-var  restore_delay, gun_1, Static_Var_3, Static_Var_4, Static_Var_5;
 
 // Signal definitions
 #define SIG_AIM				2
 #define SIG_MOVE			4
 
+
 WheelControl()
 {
 	sleep 33;
-	while(TRUE)
+	while( TRUE )
 	{
-		currentSpeed = (get CURRENT_SPEED)*20/moveSpeed;
-		wheelSpeed = currentSpeed * 6;
-		if (currentSpeed<4) currentSpeed=4;	// prevent infinite timing
-		//get PRINT(currentSpeed,turnCounter,turnClock);	
-		//	get PRINT((<6.8> * wheelSpeed ) * turnClock)
-			//left wheels
-		
-			//right wheels
-			
-			spin w1 around x-axis speed (<1.000000> * wheelSpeed ) * <0.035> accelerate <13.000000> * currentSpeed;
-			spin w2 around x-axis speed (<1.000000> * wheelSpeed ) * <0.035> accelerate <13.000000> * currentSpeed;		
+		Static_Var_4 = get CURRENT_SPEED * 20 / Static_Var_5;
+		Static_Var_3 = Static_Var_4 * 6;
+		if( Static_Var_4 < 4 )
+		{
+			Static_Var_4 = 4;
+		}
+		spin w1 around x-axis speed <1.000000> * Static_Var_3 * <0.032967> accelerate <13.000000> * Static_Var_4;
+		spin w2 around x-axis speed <1.000000> * Static_Var_3 * <0.032967> accelerate <13.000000> * Static_Var_4;
 		sleep 67;
 	}
 }
@@ -89,7 +87,7 @@ Create()
 	hide flare2;
 	gun_1 = flare1;
 	restore_delay = 3000;
-	moveSpeed = get MAX_SPEED;
+	Static_Var_5 = get MAX_SPEED;
 	start-script SmokeUnit();
 }
 
@@ -161,7 +159,7 @@ Killed(severity, corpsetype)
 		explode w1 type BITMAPONLY | BITMAP2;
 		explode w2 type BITMAPONLY | BITMAP3;
 		explode turret type BITMAPONLY | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -170,7 +168,7 @@ Killed(severity, corpsetype)
 		explode w1 type FALL | BITMAP2;
 		explode w2 type FALL | BITMAP3;
 		explode body type SHATTER | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -179,11 +177,12 @@ Killed(severity, corpsetype)
 		explode w1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 		explode w2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 		explode body type SHATTER | BITMAP4;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type BITMAPONLY | BITMAP1;
 	explode w1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 	explode w2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP4;
+	return (corpsetype);
 }
