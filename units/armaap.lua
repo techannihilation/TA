@@ -67,6 +67,7 @@ return {
 			[11] = "armcybr",
 		},
 		customparams = {
+			providetech = "T2 Factory",
 			buildpic = "ARMAAP.png",
 		},
 		featuredefs = {

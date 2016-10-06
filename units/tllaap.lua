@@ -59,6 +59,9 @@ return {
 			[6] = "tllrsplane",
 			[7] = "tllrobber",
 		},
+		customparams = {
+			providetech = "T2 Factory",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

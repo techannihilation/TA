@@ -65,6 +65,7 @@ return {
 			[9] = "corcrw",
 		},
 		customparams = {
+			providetech = "T2 Factory",
 			buildpic = "CORAAP.png",
 		},
 		featuredefs = {
