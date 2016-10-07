@@ -496,7 +496,7 @@ class Compiler(object):
 			self._code = ""
 
 		#insert return if necessary
-		elif self._code[-4:] != OPCODES['RETURN']:
+		if self._code[-4:] != OPCODES['RETURN']:
 			self._code += OPCODES['PUSH_CONSTANT'] + get_num(0)
 			self._code += OPCODES['RETURN']
 
@@ -547,22 +547,20 @@ class Compiler(object):
 
 	def parse_keywordStatement(self, node):
 		node = node[0]
+
+		#get result needs to be handled separately and removed from the stack
+		if len(node[0].get_children()) > 0 and node[0][0].get_text() == 'get':
+			self.parse(node)
+			self._code += OPCODES['POP_STACK']
+			return
+
 		keyword = node[0].get_text()
-
-
-
 
 		i = 0
 		#fix split keywords
 		while node[i + 1].get_text() == '-':
 			keyword += '-%s' % (node[i + 2].get_text())
 			i += 2
-
-		#get result needs to be removed from the stack
-		if keyword == 'get':
-			self.parse(node)
-			self._code += OPCODES['POP_STACK']
-			return
 
 		if keyword == 'set' or keyword == 'attach-unit':
 			children = node.get_children()
