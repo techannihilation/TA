@@ -21,7 +21,6 @@ return {
 		cruisealt = 185,
 		defaultmissiontype = "VTOL_standby",
 		description = "Advanced Bomber",
-		designation = "TL-ABMB",
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
 		footprintx = 3,

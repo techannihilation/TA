@@ -21,7 +21,6 @@ return {
 		collide = false,
 		cruisealt = 165,
 		description = "Napalm Bomber",
-		designation = "AFD-BLZ",
 		energymake = 0,
 		energystorage = 0,
 		energyuse = 1.8,

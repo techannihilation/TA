@@ -22,7 +22,6 @@ return {
 		cruisealt = 80,
 		defaultmissiontype = "VTOL_standby",
 		description = "Torpedo & Fighter Seaplane",
-		designation = "TL-SB",
 		downloadable = 1,
 		energymake = 5,
 		energystorage = 0,

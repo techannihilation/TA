@@ -19,7 +19,6 @@ return {
 		cruisealt = 80,
 		defaultmissiontype = "VTOL_standby",
 		description = "Land Attack Helicopter",
-		designation = "HELI-TYSON",
 		downloadable = 1,
 		energymake = 6,
 		energystorage = 0,

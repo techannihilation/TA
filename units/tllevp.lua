@@ -15,7 +15,6 @@ return {
 		collisionvolumetype = "box",
 		corpse = "dead",
 		description = "Produces T3 Vehicles",
-		designation = "none",
 		downloadable = 1,
 		energymake = 0,
 		energystorage = 0,

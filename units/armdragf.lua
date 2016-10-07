@@ -20,7 +20,6 @@ return {
 		cruisealt = 90,
 		defaultmissiontype = "VTOL_standby",
 		description = "Medium Amphibious Air Transport",
-		designation = "ARM-AAT",
 		energymake = 0.5,
 		energystorage = 100,
 		energyuse = 0.5,

@@ -19,7 +19,6 @@ return {
 		cruisealt = 140,
 		defaultmissiontype = "VTOL_standby",
 		description = "Fighter",
-		designation = "TL-fg",
 		energymake = 1,
 		energyuse = 1,
 		explodeas = "SMALL_UNITEX",

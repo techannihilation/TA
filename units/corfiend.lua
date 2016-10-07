@@ -19,7 +19,6 @@ return {
 		cruisealt = 165,
 		defaultmissiontype = "VTOL_standby",
 		description = "Fast Bomber",
-		designation = "ARM-CRPT",
 		energymake = 5,
 		energystorage = 0,
 		energyuse = 5,

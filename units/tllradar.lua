@@ -14,7 +14,6 @@ return {
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "dead",
 		description = "Early Warning System",
-		designation = "",
 		energymake = 5,
 		energyuse = 5,
 		explodeas = "SMALL_BUILDINGEX",

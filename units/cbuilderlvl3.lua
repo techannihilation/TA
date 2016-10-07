@@ -23,7 +23,6 @@ return {
 		corpse = "dead",
 		cruisealt = 180,
 		description = "Cruiser",
-		designation = "COR-SS-SUP",
 		dontland = 0,
 		energymake = 60,
 		energystorage = 750,

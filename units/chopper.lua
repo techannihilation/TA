@@ -21,7 +21,6 @@ return {
 		cruisealt = 70,
 		defaultmissiontype = "VTOL_standby",
 		description = "Heavy Flak Resistant Gunship",
-		designation = "AFD-J17",
 		energymake = 0.8,
 		energystorage = 0,
 		energyuse = 0.8,

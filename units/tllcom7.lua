@@ -44,7 +44,7 @@ return {
 		idleautoheal = 12,
 		idletime = 1100,
 		immunetoparalyzer = 1,
-		losemitheight = 49.06944,
+		losemitheight = 72,
 		maneuverleashlength = 640,
 		mass = 5000,
 		maxdamage = 16000,
@@ -62,7 +62,7 @@ return {
 		objectname = "TLLCOM7",
 		onoffable = true,
 		radardistance = 1120,
-		radaremitheight = 49.06944,
+		radaremitheight = 72,
 		reclaimable = false,
 		script = "tllcom.cob",
 		seismicsignature = 0,
@@ -111,7 +111,6 @@ return {
 			[27] = "tllvaliant",
 			[28] = "tllion",
 			[29] = "tllgazelle",
-			--[30] = "skykrogoth", -- Christmas Edition
 		},
 		customparams = {
 			buildpic = "TLLCOM.png",

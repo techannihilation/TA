@@ -17,7 +17,6 @@ return {
 		damagemodifier = 0.125,
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Pop-Up Heavy Laser",
-		designation = "TL-PUL",
 		digger = 1,
 		downloadable = 1,
 		energystorage = 500,

@@ -21,7 +21,6 @@ return {
 		cruisealt = 75,
 		defaultmissiontype = "VTOL_standby",
 		description = "Seaplane Fighter",
-		designation = "TL-SEAF",
 		downloadable = 1,
 		energymake = 1,
 		energyuse = 1,

@@ -19,7 +19,6 @@ return {
 		cruisealt = 110,
 		defaultmissiontype = "VTOL_standby",
 		description = "Fast Gunship",
-		designation = "TL-cop",
 		energymake = 0.75,
 		energystorage = 0,
 		energyuse = 0.8,

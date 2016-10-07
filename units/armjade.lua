@@ -16,7 +16,6 @@ return {
 		cruisealt = 60,
 		defaultmissiontype = "VTOL_standby",
 		description = "Laser Gunship",
-		designation = "ARM-LG",
 		downloadable = 1,
 		energymake = 1,
 		energystorage = 0,

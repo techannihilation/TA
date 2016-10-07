@@ -21,7 +21,6 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "High-Voltage Lightning Tower",
-		designation = "",
 		energymake = 0,
 		energystorage = 200,
 		energyuse = 0,

@@ -21,7 +21,6 @@ return {
 		cruisealt = 210,
 		defaultmissiontype = "VTOL_standby",
 		description = "Sonar Aircraft",
-		designation = "TL-SONP",
 		downloadable = 1,
 		energymake = 12,
 		energystorage = 0,

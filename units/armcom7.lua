@@ -44,7 +44,7 @@ return {
 		idleautoheal = 12,
 		idletime = 1100,
 		immunetoparalyzer = 1,
-		losemitheight = 36.72389,
+		losemitheight = 48,
 		maneuverleashlength = 640,
 		mass = 5000,
 		maxdamage = 16000,
@@ -62,7 +62,7 @@ return {
 		objectname = "ARMCOM7",
 		onoffable = true,
 		radardistance = 1120,
-		radaremitheight = 36.72389,
+		radaremitheight = 48,
 		reclaimable = false,
 		script = "armcom.cob",
 		seismicsignature = 0,
@@ -112,7 +112,6 @@ return {
 			[28] = "abuilderlvl2",
 			[29] = "corupmex",
 			[30] = "armpcan",
-			--[31] = "skykrogoth",  --Christmas Edition
 		},
 		customparams = {
 			buildpic = "ARMCOM.png",

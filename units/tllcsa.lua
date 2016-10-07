@@ -22,7 +22,6 @@ return {
 		cruisealt = 72,
 		defaultmissiontype = "VTOL_standby",
 		description = "Tech Level 2",
-		designation = "TLL-CSP",
 		energymake = 13,
 		energystorage = 50,
 		energyuse = 0.1,

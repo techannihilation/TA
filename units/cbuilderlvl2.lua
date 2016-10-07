@@ -18,7 +18,6 @@ return {
 		collide = false,
 		cruisealt = 130,
 		description = "Makes Advanced T1 Economy",
-		designation = "GZ-MCA",
 		dontland = 1,
 		energymake = 20,
 		energystorage = 400,

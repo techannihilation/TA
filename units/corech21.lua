@@ -17,7 +17,6 @@ return {
 		collisionvolumetest = 1,
 		collisionvolumetype = "Box",
 		description = "Unlock's Advanced Units",
-		designation = "LAB-01",
 		energymake = 0,
 		energystorage = 0,
 		energyuse = 0,

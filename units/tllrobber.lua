@@ -18,7 +18,6 @@ return {
 		cruisealt = 190,
 		defaultmissiontype = "VTOL_standby",
 		description = "Heavy Armored Air Transport",
-		designation = "",
 		energymake = 3,
 		energystorage = 0,
 		energyuse = 21,

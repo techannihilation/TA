@@ -20,7 +20,6 @@ return {
 		cruisealt = 60,
 		defaultmissiontype = "VTOL_standby",
 		description = "Scout helicopter",
-		designation = "AH-02",
 		energymake = 0.8,
 		energystorage = 0,
 		energyuse = 0,

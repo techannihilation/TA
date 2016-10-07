@@ -19,7 +19,6 @@ return {
 		cruisealt = 150,
 		defaultmissiontype = "VTOL_standby",
 		description = "Torpedo Bomber",
-		designation = "TL-TP",
 		energymake = 0.5,
 		energystorage = 0,
 		energyuse = 0.5,

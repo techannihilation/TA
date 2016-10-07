@@ -19,7 +19,6 @@ return {
 		cruisealt = 120,
 		defaultmissiontype = "VTOL_standby",
 		description = "Super Fighter",
-		designation = "CASF-3g",
 		energymake = 15,
 		energystorage = 0,
 		energyuse = 15,

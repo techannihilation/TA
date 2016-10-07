@@ -19,7 +19,6 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Boosted Light Anti-Air Tower",
-		designation = "",
 		energystorage = 50,
 		energyuse = 0,
 		explodeas = "MEDIUM_BUILDINGEX",

@@ -21,7 +21,6 @@ return {
 		collisionvolumetype = "ellipsoid",
 		cruisealt = 90,
 		description = "Combar Engineer",
-		designation = "GZ-MCA",
 		dontland = 1,
 		energymake = 25,
 		energystorage = 100,

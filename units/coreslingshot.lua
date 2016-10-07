@@ -17,7 +17,6 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "All-Terrain Anti-Air Tortoise",
-		designation = "ARM-FLSPD",
 		downloadable = 1,
 		energymake = 0,
 		energystorage = 0,
@@ -28,6 +27,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 25,
 		maneuverleashlength = 640,
 		mass = 550,
 		maxdamage = 1950,
@@ -42,6 +42,7 @@ return {
 		objectname = "coreslingshot",
 		ovradjust = 1,
 		radardistance = 0,
+		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
 		shootme = 1,
 		side = "CORE",
@@ -113,7 +114,6 @@ return {
 		},
 		weapondefs = {
 			turtoise_missile = {
-
 				areaofeffect = 64,
 				canattackground = false,
 				cegtag = "Core_Def_AA_Rocket",
@@ -151,7 +151,7 @@ return {
 					fighters = 120,
 					flak_resistant = 100,
 					unclassed_air = 120,
-},
+				},
 			},
 		},
 		weapons = {

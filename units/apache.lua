@@ -19,7 +19,6 @@ return {
 		cruisealt = 100,
 		defaultmissiontype = "VTOL_standby",
 		description = "Flak Resistant Gunship",
-		designation = "Apache",
 		energymake = 8,
 		energystorage = 0,
 		energyuse = 7,

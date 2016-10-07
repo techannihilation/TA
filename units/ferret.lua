@@ -19,7 +19,6 @@ return {
 		cruisealt = 60,
 		defaultmissiontype = "VTOL_standby",
 		description = "Land Atack  Helicopter",
-		designation = "MBHR-5",
 		energymake = 0.8,
 		energystorage = 0,
 		energyuse = 1,

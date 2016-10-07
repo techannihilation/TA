@@ -89,7 +89,7 @@ return {
 		weapondefs = {
 			napalm_bomb = {
 				areaofeffect = 300,
-				burst = 2, --the effect is expensive no more than 2 atm
+				burst = 2,
 				burstrate = 0.8,
 				collidefriendly = false,
 				commandfire = false,

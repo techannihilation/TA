@@ -2,15 +2,15 @@ return {
 	tllion = {
 		bmcode = 0,
 		buildangle = 1700,
-		buildcostenergy = 4700000,  --cost for rc to builder 11200000
-		buildcostmetal = 322000,  --cost for rc to builder 106133
+		buildcostenergy = 4700000,
+		buildcostmetal = 322000,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 19,
 		buildinggrounddecalsizey = 19,
 		buildinggrounddecaltype = "tllion_aoplane.dds",
 		buildpic = "tllion.png",
-		buildtime = 1559848,  --buildtime to rc to builder 590000
+		buildtime = 1559848,
 		canattack = true,
 		canstop = 1,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
@@ -28,7 +28,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 180,
+		losemitheight = 300,
 		mass = 229808,
 		maxdamage = 15000,
 		maxslope = 12,
@@ -38,7 +38,7 @@ return {
 		noautofire = false,
 		nochasecategory = "ALL",
 		objectname = "TLLION",
-		radaremitheight = 180,
+		radaremitheight = 300,
 		selfdestructas = "NUCLEAR_DISASTER",
 		side = "TLL",
 		sightdistance = 1200,

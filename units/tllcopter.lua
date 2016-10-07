@@ -19,7 +19,6 @@ return {
 		cruisealt = 55,
 		defaultmissiontype = "VTOL_standby",
 		description = "Flak Resistant Gunship",
-		designation = "tll-cop",
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
 		footprintx = 3,

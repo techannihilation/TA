@@ -16,7 +16,6 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Stuner Cannon",
-		designation = "T-PC-L",
 		downloadable = 1,
 		explodeas = "MEDIUM_BUILDINGEX",
 		firestandorders = 1,

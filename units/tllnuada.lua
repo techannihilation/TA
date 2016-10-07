@@ -20,7 +20,6 @@ return {
 		cruisealt = 55,
 		defaultmissiontype = "VTOL_standby",
 		description = "Advanced Gunship [Anti T3/T4]",
-		designation = "A1-AA-VTOL",
 		downloadable = 1,
 		energymake = 0.8,
 		energystorage = 0,

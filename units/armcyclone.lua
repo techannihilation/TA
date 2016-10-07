@@ -25,7 +25,6 @@ return {
 		cruisealt = 320,
 		defaultmissiontype = "VTOL_standby",
 		description = "Cyclone Precise Bomber",
-		designation = "",
 		downloadable = 1,
 		energymake = 30,
 		energystorage = 0,

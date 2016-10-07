@@ -27,7 +27,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 67.27672,
+		losemitheight = 67,
 		mass = 4699,
 		maxdamage = 3360,
 		maxslope = 15,
@@ -39,7 +39,7 @@ return {
 		noautofire = false,
 		nochasecategory = "ALL",
 		objectname = "ARMAAP",
-		radaremitheight = 67.27672,
+		radaremitheight = 67,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
 		side = "ARM",
@@ -67,8 +67,8 @@ return {
 			[11] = "armcybr",
 		},
 		customparams = {
-			providetech = "T2 Factory",
 			buildpic = "ARMAAP.png",
+			providetech = "T2 Factory",
 		},
 		featuredefs = {
 			dead1 = {

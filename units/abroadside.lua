@@ -22,7 +22,6 @@ return {
 		corpse = "dead",
 		cruisealt = 20,
 		description = "Hero (Arm)",
-		designation = "ALI-002",
 		dontland = 1,
 		energymake = 150,
 		energystorage = 10000,

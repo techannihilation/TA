@@ -20,7 +20,6 @@ return {
 		cruisealt = 72,
 		defaultmissiontype = "VTOL_standby",
 		description = "Tech Level 1",
-		designation = "TL-CA1",
 		energymake = 6,
 		energystorage = 50,
 		energyuse = 0.1,

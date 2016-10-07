@@ -26,7 +26,6 @@ return {
 		cruisealt = 20,
 		defaultmissiontype = "VTOL_standby",
 		description = "Hero (Core)",
-		designation = "CBB-001",
 		dontland = 1,
 		energymake = 170,
 		energystorage = 10000,

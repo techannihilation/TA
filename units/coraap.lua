@@ -27,7 +27,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 50.96963,
+		losemitheight = 50,
 		mass = 4757,
 		maxdamage = 3520,
 		maxslope = 15,
@@ -39,7 +39,7 @@ return {
 		noautofire = false,
 		nochasecategory = "ALL",
 		objectname = "CORAAP",
-		radaremitheight = 50.96963,
+		radaremitheight = 50,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
 		side = "CORE",
@@ -65,8 +65,8 @@ return {
 			[9] = "corcrw",
 		},
 		customparams = {
-			providetech = "T2 Factory",
 			buildpic = "CORAAP.png",
+			providetech = "T2 Factory",
 		},
 		featuredefs = {
 			dead1 = {

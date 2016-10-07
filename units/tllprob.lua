@@ -18,7 +18,6 @@ return {
 		cruisealt = 180,
 		defaultmissiontype = "VTOL_standby",
 		description = "Air Scout",
-		designation = "TL-PB",
 		energymake = 0.1,
 		energystorage = 0,
 		explodeas = "SMALL_UNITEX",

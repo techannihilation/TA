@@ -19,7 +19,6 @@ return {
 		cruisealt = 200,
 		defaultmissiontype = "VTOL_standby",
 		description = "Stealth Fighter",
-		designation = "AFD-J9",
 		energymake = 20,
 		energyuse = 20,
 		explodeas = "BIG_UNITEX",

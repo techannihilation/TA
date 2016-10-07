@@ -17,7 +17,6 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "All-terrain Anti-Air Spider",
-		designation = "ARM-AKML",
 		downloadable = 1,
 		energymake = 1,
 		energystorage = 0,
@@ -28,6 +27,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 25,
 		maneuverleashlength = 640,
 		mass = 160,
 		maxdamage = 630,
@@ -43,6 +43,7 @@ return {
 		objectname = "armhuntsman",
 		ovradjust = 1,
 		radardistance = 0,
+		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
 		shootme = 1,
 		side = "ARM",
@@ -115,7 +116,7 @@ return {
 		weapondefs = {
 			armrl_missile = {
 				areaofeffect = 48,
-				burst = 2, 
+				burst = 2,
 				burstrate = 0.2,
 				canattackground = false,
 				cegtag = "Arm_Def_AA_Rocket",

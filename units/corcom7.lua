@@ -44,7 +44,7 @@ return {
 		idleautoheal = 12,
 		idletime = 1100,
 		immunetoparalyzer = 1,
-		losemitheight = 39.97074,
+		losemitheight = 53,
 		maneuverleashlength = 640,
 		mass = 5000,
 		maxdamage = 16000,
@@ -62,7 +62,7 @@ return {
 		objectname = "CORCOM7",
 		onoffable = true,
 		radardistance = 1120,
-		radaremitheight = 39.97074,
+		radaremitheight = 53,
 		reclaimable = false,
 		script = "corcom.cob",
 		seismicsignature = 0,
@@ -112,7 +112,6 @@ return {
 			[28] = "cbuilderlvl2",
 			[29] = "corupmex",
 			[30] = "corpcan",
-			--[31] = "skykrogoth", -- Christmas Edition
 		},
 		customparams = {
 			buildpic = "CORCOM.png",

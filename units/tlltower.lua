@@ -16,7 +16,6 @@ return {
 		collisionvolumetype = "box",
 		corpse = "dead",
 		description = "Watch Tower",
-		designation = "TL-TWT",
 		energymake = 0,
 		energyuse = 12,
 		explodeas = "SMALL_BUILDINGEX",

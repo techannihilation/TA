@@ -17,7 +17,6 @@ return {
 		collide = false,
 		cruisealt = 90,
 		description = "Combat Engineer",
-		designation = "GZ-MCA",
 		dontland = 1,
 		energymake = 15,
 		energystorage = 100,

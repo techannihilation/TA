@@ -20,7 +20,6 @@ return {
 		cruisealt = 55,
 		defaultmissiontype = "VTOL_standby",
 		description = "Gunship Copter",
-		designation = "TL-TCop",
 		energymake = 1.2,
 		energyuse = 1.2,
 		explodeas = "BIG_UNITEX",
