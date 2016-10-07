@@ -1,7 +1,6 @@
 return {
 	armclaw = {
 		acceleration = 0,
-		bmcode = 1,
 		buildangle = 8192,
 		buildcostenergy = 1649,
 		buildcostmetal = 267,

@@ -1,7 +1,6 @@
 return {
 	corupmex = {
 		activatewhenbuilt = true,
-		bmcode = 0,
 		buildangle = 8192,
 		buildcostenergy = 6435,
 		buildcostmetal = 1133,

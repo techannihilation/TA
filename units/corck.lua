@@ -1,7 +1,6 @@
 return {
 	corck = {
 		acceleration = 0.912,
-		bmcode = 1,
 		brakerate = 5.7,
 		buildcostenergy = 1730,
 		buildcostmetal = 121,

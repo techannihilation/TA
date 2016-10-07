@@ -3,7 +3,6 @@ return {
 		acceleration = 0.025,
 		activatewhenbuilt = true,
 		antiweapons = 1,
-		bmcode = 1,
 		brakerate = 0.069,
 		buildangle = 16384,
 		buildcostenergy = 79696,

@@ -1,7 +1,6 @@
 return {
 	consul1 = {
 		acceleration = 0.0825,
-		bmcode = 1,
 		brakerate = 0.4125,
 		buildcostenergy = 5363,
 		buildcostmetal = 230,

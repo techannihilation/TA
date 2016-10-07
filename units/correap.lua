@@ -1,7 +1,6 @@
 return {
 	correap = {
 		acceleration = 0.044,
-		bmcode = 1,
 		brakerate = 0.198,
 		buildcostenergy = 12000,
 		buildcostmetal = 635,

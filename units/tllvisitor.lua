@@ -2,7 +2,6 @@ return {
 	tllvisitor = {
 		acceleration = 0.042,
 		airsightdistance = 790,
-		bmcode = 1,
 		brakerate = 0.36,
 		buildcostenergy = 10724,
 		buildcostmetal = 2864,

@@ -1,7 +1,6 @@
 return {
 	tllbug = {
 		acceleration = 0.4,
-		bmcode = 1,
 		brakerate = 1.2,
 		buildcostenergy = 130,
 		buildcostmetal = 35,

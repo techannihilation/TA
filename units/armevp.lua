@@ -1,6 +1,5 @@
 return {
 	armevp = {
-		bmcode = 0,
 		buildangle = 1024,
 		buildcostenergy = 300000,
 		buildcostmetal = 16000,

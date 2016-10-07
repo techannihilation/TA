@@ -2,7 +2,6 @@ return {
 	armaak = {
 		acceleration = 0.12,
 		airsightdistance = 800,
-		bmcode = 1,
 		brakerate = 0.564,
 		buildcostenergy = 6613,
 		buildcostmetal = 619,

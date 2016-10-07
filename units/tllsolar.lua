@@ -1,7 +1,6 @@
 return {
 	tllsolar = {
 		activatewhenbuilt = true,
-		bmcode = 0,
 		buildangle = 2192,
 		buildcostenergy = 0,
 		buildcostmetal = 220,

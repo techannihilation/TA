@@ -1,7 +1,6 @@
 return {
 	corpyro = {
 		acceleration = 0.45,
-		bmcode = 1,
 		brakerate = 1.95,
 		buildcostenergy = 2970,
 		buildcostmetal = 205,

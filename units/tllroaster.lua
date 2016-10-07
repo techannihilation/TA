@@ -1,7 +1,6 @@
 return {
 	tllroaster = {
 		acceleration = 0.03,
-		bmcode = 1,
 		brakerate = 0.27,
 		buildcostenergy = 18000,
 		buildcostmetal = 1445,

@@ -1,7 +1,6 @@
 return {
 	tllloki = {
 		acceleration = 0.012,
-		bmcode = 1,
 		brakerate = 0.03,
 		buildcostenergy = 3450,
 		buildcostmetal = 455,

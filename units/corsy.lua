@@ -1,7 +1,6 @@
 return {
 	corsy = {
 		acceleration = 0,
-		bmcode = 0,
 		brakerate = 0,
 		buildcostenergy = 800,
 		buildcostmetal = 640,

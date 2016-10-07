@@ -3,7 +3,6 @@ return {
 		acceleration = 0.18,
 		ai_limit = "limit ARMTICK 0",
 		ai_weight = "weight ARMTICK 0",
-		bmcode = 1,
 		brakerate = 1.8,
 		buildcostenergy = 1500,
 		buildcostmetal = 110,

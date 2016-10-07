@@ -1,6 +1,5 @@
 return {
 	tllkrak = {
-		bmcode = 0,
 		buildangle = 32768,
 		buildcostenergy = 18600,
 		buildcostmetal = 2600,

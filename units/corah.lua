@@ -2,7 +2,6 @@ return {
 	corah = {
 		acceleration = 0.096,
 		airsightdistance = 700,
-		bmcode = 1,
 		brakerate = 0.336,
 		buildcostenergy = 4267,
 		buildcostmetal = 245,

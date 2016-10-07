@@ -1,7 +1,6 @@
 return {
 	armtem = {
 		acceleration = 0.035,
-		bmcode = 1,
 		brakerate = 0.15,
 		buildcostenergy = 37000,
 		buildcostmetal = 5725,

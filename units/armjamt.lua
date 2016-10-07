@@ -2,7 +2,6 @@ return {
 	armjamt = {
 		acceleration = 0,
 		activatewhenbuilt = true,
-		bmcode = 0,
 		brakerate = 0,
 		buildangle = 4382,
 		buildcostenergy = 8475,

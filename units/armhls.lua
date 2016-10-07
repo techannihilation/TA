@@ -2,7 +2,6 @@ return {
 	armhls = {
 		acceleration = 0.12,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 0.05,
 		buildangle = 16000,
 		buildcostenergy = 5900,

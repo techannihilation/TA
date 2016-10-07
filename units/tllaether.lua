@@ -3,10 +3,9 @@ return {
 		acceleration = 0.06828,
 		attackrunlength = 302,
 		bankscale = 1.3,
-		bmcode = 1,
 		brakerate = 0.045,
-		buildcostenergy = 85698,
-		buildcostmetal = 7264,
+		buildcostenergy = 119031,
+		buildcostmetal = 15264,
 		builder = false,
 		buildpic = "tllaether.png",
 		buildtime = 105337,
@@ -61,7 +60,6 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "tllaether.png",
-			requiretech = "Advanced T3 Unit Research Centre",
 		},
 		sounds = {
 			canceldestruct = "cancel2",
@@ -85,7 +83,7 @@ return {
 			},
 		},
 		weapondefs = {
-			fab500 = {
+			thermite_bomb = {
 				areaofeffect = 64,
 				burst = 8,
 				burstrate = 0.15,
@@ -99,8 +97,8 @@ return {
 				flighttime = 175,
 				gravityaffected = "true",
 				id = 133,
-				impulseboost = 0.15,
-				impulsefactor = 0.15,
+				impulseboost = 0,
+				impulsefactor = 0,
 				interceptedbyshieldtype = 16,
 				model = "missile10",
 				name = "ClusterBombs",
@@ -131,7 +129,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "FAB500",
+				def = "THERMITE_BOMB",
 				onlytargetcategory = "NOTVTOL",
 			},
 		},

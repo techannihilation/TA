@@ -1,6 +1,5 @@
 return {
 	armesy = {
-		bmcode = 0,
 		buildcostenergy = 190000,
 		buildcostmetal = 15900,
 		builder = true,

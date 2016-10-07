@@ -2,7 +2,6 @@ return {
 	tllplunger = {
 		acceleration = 0.033,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 0.69,
 		buildcostenergy = 4267,
 		buildcostmetal = 725,

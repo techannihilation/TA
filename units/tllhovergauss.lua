@@ -1,7 +1,6 @@
 return {
 	tllhovergauss = {
 		acceleration = 0.075,
-		bmcode = 1,
 		brakerate = 0.3,
 		buildcostenergy = 1800,
 		buildcostmetal = 275,

@@ -2,7 +2,6 @@ return {
 	corroy = {
 		acceleration = 0.05,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 0.3,
 		buildangle = 16384,
 		buildcostenergy = 6293,

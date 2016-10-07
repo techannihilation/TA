@@ -2,7 +2,6 @@ return {
 	corerad = {
 		acceleration = 0,
 		airsightdistance = 1100,
-		bmcode = 0,
 		brakerate = 0,
 		buildangle = 65536,
 		buildcostenergy = 8688,

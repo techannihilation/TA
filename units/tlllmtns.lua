@@ -1,7 +1,6 @@
 return {
 	tlllmtns = {
 		airsightdistance = 700,
-		bmcode = 0,
 		buildangle = 32768,
 		buildcostenergy = 559,
 		buildcostmetal = 143,

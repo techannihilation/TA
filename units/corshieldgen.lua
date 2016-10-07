@@ -2,7 +2,6 @@ return {
 	corshieldgen = {
 		acceleration = 0.12,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 0.45,
 		buildcostenergy = 9920,
 		buildcostmetal = 2528,

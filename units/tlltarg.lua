@@ -1,7 +1,6 @@
 return {
 	tlltarg = {
 		activatewhenbuilt = true,
-		bmcode = 0,
 		buildangle = 8192,
 		buildcostenergy = 186667,
 		buildcostmetal = 7792,

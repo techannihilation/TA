@@ -1,7 +1,6 @@
 return {
 	armtigre2 = {
 		acceleration = 0.09,
-		bmcode = 1,
 		brakerate = 0.03,
 		buildcostenergy = 106000,
 		buildcostmetal = 6100,

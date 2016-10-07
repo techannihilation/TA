@@ -1,6 +1,5 @@
 return {
 	tlltower = {
-		bmcode = 0,
 		buildangle = 8192,
 		buildcostenergy = 700,
 		buildcostmetal = 160,

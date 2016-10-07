@@ -1,7 +1,6 @@
 return {
 	aspdbunk = {
 		activatewhenbuilt = true,
-		bmcode = 0,
 		buildangle = 7398,
 		buildcostenergy = 9348,
 		buildcostmetal = 765,

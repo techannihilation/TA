@@ -1,7 +1,6 @@
 return {
 	corthovr = {
 		acceleration = 0.036,
-		bmcode = 1,
 		brakerate = 0.186,
 		buildangle = 16384,
 		buildcostenergy = 8044,

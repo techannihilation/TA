@@ -1,6 +1,5 @@
 return {
 	tlllbt = {
-		bmcode = 0,
 		buildangle = 8192,
 		buildcostenergy = 3660,
 		buildcostmetal = 2324,

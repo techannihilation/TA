@@ -1,7 +1,6 @@
 return {
 	tllwmmohoconv = {
 		activatewhenbuilt = true,
-		bmcode = 0,
 		buildangle = 8192,
 		buildcostenergy = 26200,
 		buildcostmetal = 1100,

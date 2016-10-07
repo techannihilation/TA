@@ -2,7 +2,6 @@ return {
 	armkam = {
 		acceleration = 0.154,
 		bankscale = 1,
-		bmcode = 1,
 		brakerate = 0.375,
 		buildcostenergy = 2374,
 		buildcostmetal = 133,

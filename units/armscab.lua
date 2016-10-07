@@ -2,7 +2,6 @@ return {
 	armscab = {
 		acceleration = 0.018,
 		antiweapons = 1,
-		bmcode = 1,
 		brakerate = 0.102,
 		buildcostenergy = 105000,
 		buildcostmetal = 1550,

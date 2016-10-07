@@ -2,7 +2,6 @@ return {
 	armah = {
 		acceleration = 0.096,
 		airsightdistance = 740,
-		bmcode = 1,
 		brakerate = 0.336,
 		buildcostenergy = 4160,
 		buildcostmetal = 229,

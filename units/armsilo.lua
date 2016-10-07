@@ -2,7 +2,6 @@ return {
 	armsilo = {
 		acceleration = 0,
 		antiweapons = 1,
-		bmcode = 0,
 		brakerate = 0,
 		buildangle = 8192,
 		buildcostenergy = 89886,

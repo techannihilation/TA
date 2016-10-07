@@ -1,6 +1,5 @@
 return {
 	tlluwestorage = {
-		bmcode = 0,
 		buildangle = 8192,
 		buildcostenergy = 1120,
 		buildcostmetal = 311,

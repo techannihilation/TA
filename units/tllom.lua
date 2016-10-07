@@ -1,7 +1,6 @@
 return {
 	tllom = {
 		acceleration = 0.07629,
-		bmcode = 1,
 		brakerate = 0.22887,
 		buildcostenergy = 31500,
 		buildcostmetal = 8020,

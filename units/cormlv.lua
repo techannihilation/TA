@@ -2,7 +2,6 @@ return {
 	cormlv = {
 		acceleration = 0.07,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 1.65,
 		buildcostenergy = 1298,
 		buildcostmetal = 61,

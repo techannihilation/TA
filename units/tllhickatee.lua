@@ -2,7 +2,6 @@ return {
 	tllhickatee = {
 		acceleration = 0.05,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 0.16,
 		buildcostenergy = 1050,
 		buildcostmetal = 245,

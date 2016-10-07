@@ -2,7 +2,6 @@ return {
 	corspec = {
 		acceleration = 0.1,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 0.36,
 		buildcostenergy = 1547,
 		buildcostmetal = 75,

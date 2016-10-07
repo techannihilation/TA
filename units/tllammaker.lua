@@ -1,7 +1,6 @@
 return {
 	tllammaker = {
 		activatewhenbuilt = false,
-		bmcode = 0,
 		buildangle = 8192,
 		buildcostenergy = 8000,
 		buildcostmetal = 1150,

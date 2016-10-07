@@ -2,7 +2,6 @@ return {
 	corape = {
 		acceleration = 0.152,
 		bankscale = 1,
-		bmcode = 1,
 		brakerate = 0.3563,
 		buildcostenergy = 5800,
 		buildcostmetal = 320,

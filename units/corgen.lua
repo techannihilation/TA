@@ -1,7 +1,6 @@
 return {
 	corgen = {
 		activatewhenbuilt = true,
-		bmcode = 0,
 		buildangle = 0,
 		buildcostenergy = 7947,
 		buildcostmetal = 526,

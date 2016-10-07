@@ -2,7 +2,6 @@ return {
 	tllasship = {
 		acceleration = 0.0905,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 0.39,
 		buildangle = 16384,
 		buildcostenergy = 16107,

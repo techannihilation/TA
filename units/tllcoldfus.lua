@@ -1,7 +1,6 @@
 return {
 	tllcoldfus = {
 		activatewhenbuilt = true,
-		bmcode = 0,
 		buildangle = 4096,
 		buildcostenergy = 29850,
 		buildcostmetal = 13950,

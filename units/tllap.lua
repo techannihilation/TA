@@ -1,7 +1,6 @@
 return {
 	tllap = {
 		activatewhenbuilt = false,
-		bmcode = 0,
 		buildcostenergy = 1547,
 		buildcostmetal = 939,
 		builder = true,

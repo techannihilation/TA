@@ -1,7 +1,6 @@
 return {
 	tllradar = {
 		activatewhenbuilt = true,
-		bmcode = 0,
 		buildangle = 8192,
 		buildcostenergy = 350,
 		buildcostmetal = 80,

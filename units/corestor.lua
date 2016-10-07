@@ -2,7 +2,6 @@ return {
 	corestor = {
 		acceleration = 0,
 		activatewhenbuilt = true,
-		bmcode = 0,
 		brakerate = 0,
 		buildangle = 8196,
 		buildcostenergy = 1770,

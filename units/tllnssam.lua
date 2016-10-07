@@ -2,7 +2,6 @@ return {
 	tllnssam = {
 		activatewhenbuilt = true,
 		airsightdistance = 950,
-		bmcode = 0,
 		buildangle = 8192,
 		buildcostenergy = 879,
 		buildcostmetal = 448,

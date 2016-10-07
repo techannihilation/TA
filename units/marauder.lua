@@ -1,7 +1,6 @@
 return {
 	marauder = {
 		acceleration = 0.22,
-		bmcode = 1,
 		brakerate = 0.714,
 		buildcostenergy = 27200,
 		buildcostmetal = 1440,

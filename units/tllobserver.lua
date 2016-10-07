@@ -2,7 +2,6 @@ return {
 	tllobserver = {
 		acceleration = 0.045,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 0.054,
 		buildcostenergy = 1076,
 		buildcostmetal = 203,

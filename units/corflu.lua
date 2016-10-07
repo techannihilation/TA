@@ -1,6 +1,5 @@
 return {
 	corflu = {
-		bmcode = 0,
 		buildangle = 4096,
 		buildcostenergy = 5333334,
 		buildcostmetal = 640000,

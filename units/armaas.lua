@@ -2,7 +2,6 @@ return {
 	armaas = {
 		acceleration = 0.048,
 		airsightdistance = 800,
-		bmcode = 1,
 		brakerate = 0.18,
 		buildangle = 16384,
 		buildcostenergy = 10133,

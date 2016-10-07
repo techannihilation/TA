@@ -2,7 +2,6 @@ return {
 	corroach = {
 		acceleration = 0.12,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 0.45,
 		buildcostenergy = 5850,
 		buildcostmetal = 70,

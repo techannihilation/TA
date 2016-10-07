@@ -1,7 +1,6 @@
 return {
 	corfort = {
 		acceleration = 0,
-		bmcode = 0,
 		brakerate = 0,
 		buildangle = 0,
 		buildcostenergy = 653,

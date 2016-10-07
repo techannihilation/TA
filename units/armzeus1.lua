@@ -1,7 +1,6 @@
 return {
 	armzeus1 = {
 		acceleration = 0.12,
-		bmcode = 1,
 		brakerate = 0.75,
 		buildcostenergy = 9500,
 		buildcostmetal = 600,

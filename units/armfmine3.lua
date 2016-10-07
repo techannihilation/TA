@@ -2,7 +2,6 @@ return {
 	armfmine3 = {
 		acceleration = 0,
 		blocking = false,
-		bmcode = 0,
 		brakerate = 0,
 		buildcostenergy = 1600,
 		buildcostmetal = 27,

@@ -1,6 +1,5 @@
 return {
 	tllhp = {
-		bmcode = 0,
 		buildcostenergy = 2250,
 		buildcostmetal = 1250,
 		builder = true,

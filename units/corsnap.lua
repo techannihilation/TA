@@ -1,7 +1,6 @@
 return {
 	corsnap = {
 		acceleration = 0.078,
-		bmcode = 1,
 		brakerate = 0.3,
 		buildcostenergy = 3313,
 		buildcostmetal = 316,

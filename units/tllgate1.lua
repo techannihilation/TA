@@ -1,7 +1,6 @@
 return {
 	tllgate1 = {
 		activatewhenbuilt = true,
-		bmcode = 0,
 		buildangle = 1700,
 		buildcostenergy = 135000,
 		buildcostmetal = 13500,

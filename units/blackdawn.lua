@@ -2,7 +2,6 @@ return {
 	blackdawn = {
 		acceleration = 0.1121,
 		bankscale = 1,
-		bmcode = 1,
 		brakerate = 0.211,
 		buildcostenergy = 29440,
 		buildcostmetal = 4107,

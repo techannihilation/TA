@@ -1,7 +1,6 @@
 return {
 	cormenacer = {
 		acceleration = 0.07629,
-		bmcode = 1,
 		brakerate = 0.22887,
 		buildcostenergy = 15500,
 		buildcostmetal = 2400,

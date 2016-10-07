@@ -1,7 +1,6 @@
 return {
 	tllariman = {
 		acceleration = 0.055,
-		bmcode = 1,
 		brakerate = 0.12,
 		buildcostenergy = 1180,
 		buildcostmetal = 285,

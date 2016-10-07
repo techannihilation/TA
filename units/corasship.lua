@@ -2,7 +2,6 @@ return {
 	corasship = {
 		acceleration = 0.13,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 0.09,
 		buildangle = 16384,
 		buildcostenergy = 9750,

@@ -2,7 +2,6 @@ return {
 	corfrt = {
 		acceleration = 0,
 		airsightdistance = 700,
-		bmcode = 0,
 		brakerate = 0,
 		buildangle = 16384,
 		buildcostenergy = 1124,

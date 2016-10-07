@@ -2,7 +2,6 @@ return {
 	coreter = {
 		acceleration = 0.0407,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 0.06,
 		buildcostenergy = 1867,
 		buildcostmetal = 107,

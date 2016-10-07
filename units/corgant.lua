@@ -1,7 +1,6 @@
 return {
 	corgant = {
 		acceleration = 0,
-		bmcode = 0,
 		brakerate = 0,
 		buildcostenergy = 208000,
 		buildcostmetal = 18133,

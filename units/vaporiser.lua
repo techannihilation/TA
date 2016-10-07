@@ -1,7 +1,6 @@
 return {
 	vaporiser = {
 		acceleration = 0.06,
-		bmcode = 1,
 		brakerate = 0.04137,
 		buildcostenergy = 8997,
 		buildcostmetal = 907,

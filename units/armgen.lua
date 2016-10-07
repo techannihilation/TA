@@ -1,7 +1,6 @@
 return {
 	armgen = {
 		activatewhenbuilt = true,
-		bmcode = 0,
 		buildangle = 0,
 		buildcostenergy = 8267,
 		buildcostmetal = 390,

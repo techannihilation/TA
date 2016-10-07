@@ -1,7 +1,6 @@
 return {
 	tllmohogeo = {
 		activatewhenbuilt = true,
-		bmcode = 0,
 		buildangle = 8192,
 		buildcostenergy = 29800,
 		buildcostmetal = 6200,

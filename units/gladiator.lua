@@ -1,7 +1,6 @@
 return {
 	gladiator = {
 		acceleration = 0.06,
-		bmcode = 1,
 		brakerate = 0.57,
 		buildcostenergy = 8000,
 		buildcostmetal = 555,

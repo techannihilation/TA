@@ -1,7 +1,6 @@
 return {
 	tlltide = {
 		activatewhenbuilt = true,
-		bmcode = 0,
 		buildangle = 8192,
 		buildcostenergy = 517,
 		buildcostmetal = 101,

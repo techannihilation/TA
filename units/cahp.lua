@@ -1,6 +1,5 @@
 return {
 	cahp = {
-		bmcode = 0,
 		buildcostenergy = 40500,
 		buildcostmetal = 4630,
 		builder = true,

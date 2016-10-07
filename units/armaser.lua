@@ -2,7 +2,6 @@ return {
 	armaser = {
 		acceleration = 0.12,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 0.45,
 		buildcostenergy = 1408,
 		buildcostmetal = 80,

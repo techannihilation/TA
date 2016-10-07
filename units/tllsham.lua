@@ -1,7 +1,6 @@
 return {
 	tllsham = {
 		acceleration = 0.5,
-		bmcode = 1,
 		brakerate = 1.5,
 		buildcostenergy = 1600,
 		buildcostmetal = 128,

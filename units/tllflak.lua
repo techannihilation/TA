@@ -1,7 +1,6 @@
 return {
 	tllflak = {
 		airsightdistance = 1100,
-		bmcode = 0,
 		buildangle = 8192,
 		buildcostenergy = 39300,
 		buildcostmetal = 2340,

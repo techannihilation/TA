@@ -1,7 +1,6 @@
 return {
 	armcrack = {
 		acceleration = 0.108,
-		bmcode = 1,
 		brakerate = 0.564,
 		buildcostenergy = 2624,
 		buildcostmetal = 229,

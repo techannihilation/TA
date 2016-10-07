@@ -1,7 +1,6 @@
 return {
 	corplat = {
 		acceleration = 0,
-		bmcode = 0,
 		brakerate = 0,
 		buildcostenergy = 41942,
 		buildcostmetal = 6144,

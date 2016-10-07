@@ -1,7 +1,6 @@
 return {
 	armfhp = {
 		acceleration = 0,
-		bmcode = 0,
 		brakerate = 0,
 		buildcostenergy = 5277,
 		buildcostmetal = 1100,

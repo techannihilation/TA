@@ -2,7 +2,6 @@ return {
 	mercury = {
 		acceleration = 0,
 		airsightdistance = 1200,
-		bmcode = 0,
 		brakerate = 0,
 		buildcostenergy = 58000,
 		buildcostmetal = 1650,

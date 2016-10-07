@@ -2,7 +2,6 @@ return {
 	tllacid = {
 		acceleration = 0.2,
 		badtargetcategory = "VTOL",
-		bmcode = 1,
 		brakerate = 1.2,
 		buildcostenergy = 100000,
 		buildcostmetal = 6100,

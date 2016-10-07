@@ -1,7 +1,6 @@
 return {
 	armpincer = {
 		acceleration = 0.011,
-		bmcode = 1,
 		brakerate = 0.033,
 		buildcostenergy = 1850,
 		buildcostmetal = 200,

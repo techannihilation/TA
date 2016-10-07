@@ -1,7 +1,6 @@
 return {
 	cortship = {
 		acceleration = 0.062,
-		bmcode = 1,
 		brakerate = 0.255,
 		buildangle = 16384,
 		buildcostenergy = 5105,

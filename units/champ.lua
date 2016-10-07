@@ -2,7 +2,6 @@ return {
 	champ = {
 		acceleration = 0.06,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 0.138,
 		buildcostenergy = 86293,
 		buildcostmetal = 5280,

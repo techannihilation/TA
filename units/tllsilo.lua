@@ -1,6 +1,5 @@
 return {
 	tllsilo = {
-		bmcode = 0,
 		buildangle = 8192,
 		buildcostenergy = 48000,
 		buildcostmetal = 13333,

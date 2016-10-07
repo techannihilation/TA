@@ -1,7 +1,6 @@
 return {
 	tllgladius = {
 		acceleration = 0.8,
-		bmcode = 1,
 		brakerate = 0.69,
 		buildcostenergy = 179,
 		buildcostmetal = 44,

@@ -2,7 +2,6 @@ return {
 	armvader = {
 		acceleration = 0.132,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 0.486,
 		buildcostenergy = 5850,
 		buildcostmetal = 65,

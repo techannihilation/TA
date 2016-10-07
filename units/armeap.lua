@@ -1,6 +1,5 @@
 return {
 	armeap = {
-		bmcode = 0,
 		buildcostenergy = 154667,
 		buildcostmetal = 20480,
 		builder = true,

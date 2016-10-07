@@ -4,7 +4,6 @@ return {
 		ai_limit = "limit ahermes 10",
 		ai_weight = "weight ahermes 0.3",
 		airsightdistance = 775,
-		bmcode = 1,
 		brakerate = 0.036,
 		buildcostenergy = 1920,
 		buildcostmetal = 160,

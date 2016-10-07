@@ -2,7 +2,6 @@ return {
 	corcrus = {
 		acceleration = 0.042,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 0.186,
 		buildangle = 16384,
 		buildcostenergy = 14454,

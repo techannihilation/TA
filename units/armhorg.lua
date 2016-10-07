@@ -2,7 +2,6 @@ return {
 	armhorg = {
 		acceleration = 0.017,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 0.045,
 		buildcostenergy = 13000,
 		buildcostmetal = 990,

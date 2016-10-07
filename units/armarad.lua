@@ -2,7 +2,6 @@ return {
 	armarad = {
 		acceleration = 0,
 		activatewhenbuilt = true,
-		bmcode = 0,
 		brakerate = 0,
 		buildangle = 8195,
 		buildcostenergy = 19019,

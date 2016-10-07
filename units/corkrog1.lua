@@ -1,7 +1,6 @@
 return {
 	corkrog1 = {
 		acceleration = 0.108,
-		bmcode = 1,
 		brakerate = 0.714,
 		buildcostenergy = 1680000,
 		buildcostmetal = 167000,

@@ -2,7 +2,6 @@ return {
 	armjam = {
 		acceleration = 0.035,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 0.036,
 		buildcostenergy = 1733,
 		buildcostmetal = 107,

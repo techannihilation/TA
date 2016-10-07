@@ -1,6 +1,5 @@
 return {
 	coruwadves = {
-		bmcode = 0,
 		buildangle = 7822,
 		buildcostenergy = 10701,
 		buildcostmetal = 736,

@@ -1,6 +1,5 @@
 return {
 	arm_immolator = {
-		bmcode = 0,
 		buildangle = 8192,
 		buildcostenergy = 122843,
 		buildcostmetal = 2295,

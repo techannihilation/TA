@@ -2,7 +2,6 @@ return {
 	armsubk = {
 		acceleration = 0.034,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 1.35,
 		buildcostenergy = 10613,
 		buildcostmetal = 1120,

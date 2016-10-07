@@ -2,7 +2,6 @@ return {
 	armmav = {
 		acceleration = 0.12,
 		autoheal = 50,
-		bmcode = 1,
 		brakerate = 0.375,
 		buildcostenergy = 8500,
 		buildcostmetal = 650,

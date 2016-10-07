@@ -2,7 +2,6 @@ return {
 	corwin = {
 		acceleration = 0,
 		activatewhenbuilt = true,
-		bmcode = 0,
 		brakerate = 0,
 		buildcostenergy = 174,
 		buildcostmetal = 45,

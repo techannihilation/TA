@@ -1,7 +1,6 @@
 return {
 	corparrow = {
 		acceleration = 0.015,
-		bmcode = 1,
 		brakerate = 0.2145,
 		buildcostenergy = 28644,
 		buildcostmetal = 1054,

@@ -1,6 +1,5 @@
 return {
 	tlltrid = {
-		bmcode = 0,
 		buildangle = 32768,
 		buildcostenergy = 28000,
 		buildcostmetal = 2920,

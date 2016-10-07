@@ -2,7 +2,6 @@ return {
 	tllsoftshell = {
 		acceleration = 0.042,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 0.018,
 		buildcostenergy = 850,
 		buildcostmetal = 310,

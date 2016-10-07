@@ -1,7 +1,6 @@
 return {
 	armsd = {
 		activatewhenbuilt = true,
-		bmcode = 0,
 		buildangle = 4096,
 		buildcostenergy = 7188,
 		buildcostmetal = 705,

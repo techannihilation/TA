@@ -1,7 +1,6 @@
 return {
 	tllhtcb = {
 		acceleration = 0.072,
-		bmcode = 1,
 		brakerate = 4.32,
 		buildcostenergy = 150000,
 		buildcostmetal = 12500,

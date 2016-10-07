@@ -1,7 +1,6 @@
 return {
 	armbeaver = {
 		acceleration = 0.0528,
-		bmcode = 1,
 		brakerate = 1.3992,
 		buildcostenergy = 3123,
 		buildcostmetal = 150,

@@ -1,7 +1,6 @@
 return {
 	armhdpw = {
 		acceleration = 0.12,
-		bmcode = 1,
 		brakerate = 0.57,
 		buildcostenergy = 21809,
 		buildcostmetal = 1946,

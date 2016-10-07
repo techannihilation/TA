@@ -1,7 +1,6 @@
 return {
 	cortermite = {
 		acceleration = 0.17,
-		bmcode = 1,
 		brakerate = 0.525,
 		buildcostenergy = 9500,
 		buildcostmetal = 890,

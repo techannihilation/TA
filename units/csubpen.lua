@@ -1,7 +1,6 @@
 return {
 	csubpen = {
 		acceleration = 0,
-		bmcode = 0,
 		brakerate = 0,
 		buildcostenergy = 6750,
 		buildcostmetal = 1005,

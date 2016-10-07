@@ -1,7 +1,6 @@
 return {
 	corehingeback = {
 		acceleration = 0.15,
-		bmcode = 1,
 		brakerate = 0.45,
 		buildcostenergy = 3500,
 		buildcostmetal = 240,

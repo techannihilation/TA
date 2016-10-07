@@ -1,7 +1,6 @@
 return {
 	armtarantula = {
 		acceleration = 0.18,
-		bmcode = 1,
 		brakerate = 0.564,
 		buildcostenergy = 4480,
 		buildcostmetal = 325,

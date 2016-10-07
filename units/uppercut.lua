@@ -2,7 +2,6 @@ return {
 	uppercut = {
 		acceleration = 0.015,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 0.54,
 		buildcostenergy = 165500,
 		buildcostmetal = 15500,

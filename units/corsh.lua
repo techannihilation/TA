@@ -1,7 +1,6 @@
 return {
 	corsh = {
 		acceleration = 0.12,
-		bmcode = 1,
 		brakerate = 0.336,
 		buildcostenergy = 1535,
 		buildcostmetal = 76,

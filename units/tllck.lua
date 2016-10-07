@@ -1,7 +1,6 @@
 return {
 	tllck = {
 		acceleration = 0.76,
-		bmcode = 1,
 		brakerate = 5.28,
 		buildcostenergy = 2750,
 		buildcostmetal = 150,

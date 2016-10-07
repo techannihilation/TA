@@ -1,7 +1,6 @@
 return {
 	corbats = {
 		acceleration = 0.03,
-		bmcode = 1,
 		brakerate = 0.075,
 		buildangle = 16384,
 		buildcostenergy = 69000,

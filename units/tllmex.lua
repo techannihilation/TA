@@ -1,7 +1,6 @@
 return {
 	tllmex = {
 		activatewhenbuilt = true,
-		bmcode = 0,
 		buildangle = 8192,
 		buildcostenergy = 233,
 		buildcostmetal = 64,

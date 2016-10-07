@@ -1,7 +1,6 @@
 return {
 	armanac = {
 		acceleration = 0.084,
-		bmcode = 1,
 		brakerate = 0.336,
 		buildcostenergy = 2607,
 		buildcostmetal = 287,

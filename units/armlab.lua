@@ -1,7 +1,6 @@
 return {
 	armlab = {
 		acceleration = 0,
-		bmcode = 0,
 		brakerate = 0,
 		buildangle = 1024,
 		buildcostenergy = 1205,

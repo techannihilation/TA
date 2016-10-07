@@ -1,7 +1,6 @@
 return {
 	armck = {
 		acceleration = 0.96,
-		bmcode = 1,
 		brakerate = 6,
 		buildcostenergy = 1622,
 		buildcostmetal = 109,

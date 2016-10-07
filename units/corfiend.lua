@@ -3,7 +3,6 @@ return {
 		acceleration = 0.03056,
 		attackrunlength = 170,
 		bankscale = 1,
-		bmcode = 1,
 		brakerate = 0.004,
 		buildcostenergy = 6973,
 		buildcostmetal = 310,

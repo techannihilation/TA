@@ -1,6 +1,5 @@
 return {
 	tllasy = {
-		bmcode = 0,
 		buildcostenergy = 37589,
 		buildcostmetal = 4480,
 		builder = true,

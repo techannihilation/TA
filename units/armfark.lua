@@ -1,7 +1,6 @@
 return {
 	armfark = {
 		acceleration = 0.88,
-		bmcode = 1,
 		brakerate = 9,
 		buildcostenergy = 2880,
 		buildcostmetal = 213,

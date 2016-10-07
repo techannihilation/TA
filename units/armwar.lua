@@ -1,7 +1,6 @@
 return {
 	armwar = {
 		acceleration = 0.072,
-		bmcode = 1,
 		brakerate = 0.714,
 		buildcostenergy = 3140,
 		buildcostmetal = 265,

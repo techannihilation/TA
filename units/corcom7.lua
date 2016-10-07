@@ -4,7 +4,6 @@ return {
 		activatewhenbuilt = true,
 		amphibious = 1,
 		autoheal = 12,
-		bmcode = 1,
 		brakerate = 1.215,
 		buildcostenergy = 1066667,
 		buildcostmetal = 96000,

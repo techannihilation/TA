@@ -1,7 +1,6 @@
 return {
 	armpw1 = {
 		acceleration = 0.36,
-		bmcode = 1,
 		brakerate = 0.6,
 		buildcostenergy = 957,
 		buildcostmetal = 91,

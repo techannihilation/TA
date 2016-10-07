@@ -1,7 +1,6 @@
 return {
 	corfhp = {
 		acceleration = 0,
-		bmcode = 0,
 		brakerate = 0,
 		buildcostenergy = 5421,
 		buildcostmetal = 1173,

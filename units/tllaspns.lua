@@ -1,7 +1,6 @@
 return {
 	tllaspns = {
 		activatewhenbuilt = true,
-		bmcode = 0,
 		buildangle = 4096,
 		buildcostenergy = 2100,
 		buildcostmetal = 500,

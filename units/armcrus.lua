@@ -2,7 +2,6 @@ return {
 	armcrus = {
 		acceleration = 0.048,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 0.186,
 		buildangle = 16384,
 		buildcostenergy = 14515,

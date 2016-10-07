@@ -1,7 +1,6 @@
 return {
 	armhobo = {
 		acceleration = 0.12,
-		bmcode = 1,
 		brakerate = 0.45,
 		buildcostenergy = 5900,
 		buildcostmetal = 475,

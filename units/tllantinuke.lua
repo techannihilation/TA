@@ -1,7 +1,6 @@
 return {
 	tllantinuke = {
 		antiweapons = 1,
-		bmcode = 0,
 		buildangle = 4096,
 		buildcostenergy = 58133,
 		buildcostmetal = 2117,

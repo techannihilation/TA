@@ -1,7 +1,6 @@
 return {
 	armspider = {
 		acceleration = 0.18,
-		bmcode = 1,
 		brakerate = 0.564,
 		buildcostenergy = 3000,
 		buildcostmetal = 180,

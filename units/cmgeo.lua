@@ -2,7 +2,6 @@ return {
 	cmgeo = {
 		acceleration = 0,
 		activatewhenbuilt = true,
-		bmcode = 0,
 		brakerate = 0,
 		buildangle = 0,
 		buildcostenergy = 91000,

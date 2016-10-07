@@ -1,6 +1,5 @@
 return {
 	tllalab = {
-		bmcode = 0,
 		buildangle = 2048,
 		buildcostenergy = 42000,
 		buildcostmetal = 4550,

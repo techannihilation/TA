@@ -1,6 +1,5 @@
 return {
 	amortor = {
-		bmcode = 0,
 		buildangle = 4096,
 		buildcostenergy = 31298,
 		buildcostmetal = 2144,

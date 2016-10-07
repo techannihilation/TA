@@ -2,7 +2,6 @@ return {
 	tlldivine = {
 		acceleration = 0.042,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 0.036,
 		buildcostenergy = 379,
 		buildcostmetal = 311,

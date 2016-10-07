@@ -1,7 +1,6 @@
 return {
 	tlllmt1 = {
 		airsightdistance = 700,
-		bmcode = 0,
 		buildangle = 1768,
 		buildcostenergy = 366,
 		buildcostmetal = 186,

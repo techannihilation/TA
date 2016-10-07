@@ -1,7 +1,6 @@
 return {
 	armtship = {
 		acceleration = 0.067,
-		bmcode = 1,
 		brakerate = 0.27,
 		buildangle = 16384,
 		buildcostenergy = 4948,

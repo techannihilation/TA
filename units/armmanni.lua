@@ -1,7 +1,6 @@
 return {
 	armmanni = {
 		acceleration = 0.0132,
-		bmcode = 1,
 		brakerate = 0.4125,
 		buildcostenergy = 13300,
 		buildcostmetal = 1200,

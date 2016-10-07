@@ -2,7 +2,6 @@ return {
 	shiva = {
 		acceleration = 0.06,
 		amphibious = 1,
-		bmcode = 1,
 		brakerate = 0.714,
 		buildcostenergy = 86187,
 		buildcostmetal = 3467,

@@ -1,7 +1,6 @@
 return {
 	tllacv = {
 		acceleration = 0.072,
-		bmcode = 1,
 		brakerate = 5.52,
 		buildcostenergy = 36693,
 		buildcostmetal = 1952,

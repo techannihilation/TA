@@ -1,6 +1,5 @@
 return {
 	aahp = {
-		bmcode = 0,
 		buildcostenergy = 37783,
 		buildcostmetal = 4480,
 		builder = true,

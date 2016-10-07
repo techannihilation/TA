@@ -2,7 +2,6 @@ return {
 	tlldb = {
 		airsightdistance = 1450,
 		badtargetcategory = "NOTAIR",
-		bmcode = 0,
 		buildangle = 9814,
 		buildcostenergy = 90000,
 		buildcostmetal = 13500,

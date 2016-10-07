@@ -1,6 +1,5 @@
 return {
 	tllion = {
-		bmcode = 0,
 		buildangle = 1700,
 		buildcostenergy = 4700000,
 		buildcostmetal = 322000,

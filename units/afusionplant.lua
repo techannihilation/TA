@@ -1,7 +1,6 @@
 return {
 	afusionplant = {
 		activatewhenbuilt = true,
-		bmcode = 0,
 		buildangle = 90096,
 		buildcostenergy = 1226667,
 		buildcostmetal = 59733,

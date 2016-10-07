@@ -2,7 +2,6 @@ return {
 	tllmixer = {
 		acceleration = 0.077,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 0.51,
 		buildcostenergy = 2326,
 		buildcostmetal = 142,

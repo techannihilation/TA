@@ -1,7 +1,6 @@
 return {
 	armshltx1 = {
 		acceleration = 0,
-		bmcode = 0,
 		brakerate = 0,
 		buildcostenergy = 597333,
 		buildcostmetal = 90667,

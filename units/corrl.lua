@@ -2,7 +2,6 @@ return {
 	corrl = {
 		acceleration = 0,
 		airsightdistance = 700,
-		bmcode = 0,
 		brakerate = 0,
 		buildcostenergy = 859,
 		buildcostmetal = 81,

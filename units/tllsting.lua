@@ -2,7 +2,6 @@ return {
 	tllsting = {
 		acceleration = 0.02,
 		airsightdistance = 1000,
-		bmcode = 1,
 		brakerate = 0.6,
 		buildangle = 16380,
 		buildcostenergy = 18219,

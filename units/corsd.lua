@@ -1,7 +1,6 @@
 return {
 	corsd = {
 		activatewhenbuilt = true,
-		bmcode = 0,
 		buildangle = 4096,
 		buildcostenergy = 6787,
 		buildcostmetal = 745,

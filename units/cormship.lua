@@ -2,7 +2,6 @@ return {
 	cormship = {
 		acceleration = 0.02,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 0.066,
 		buildcostenergy = 10270,
 		buildcostmetal = 2755,

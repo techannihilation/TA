@@ -1,6 +1,5 @@
 return {
 	coresy = {
-		bmcode = 0,
 		buildcostenergy = 200000,
 		buildcostmetal = 16000,
 		builder = true,

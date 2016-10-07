@@ -1,7 +1,6 @@
 return {
 	tllares = {
 		acceleration = 0.08,
-		bmcode = 1,
 		brakerate = 0.3,
 		buildcostenergy = 236,
 		buildcostmetal = 158,

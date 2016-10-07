@@ -1,6 +1,5 @@
 return {
 	armuwadves = {
-		bmcode = 0,
 		buildangle = 8192,
 		buildcostenergy = 10767,
 		buildcostmetal = 825,

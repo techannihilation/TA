@@ -3,7 +3,6 @@ return {
 		acceleration = 0.07,
 		activatewhenbuilt = true,
 		amphibious = 1,
-		bmcode = 1,
 		brakerate = 0.18,
 		buildcostenergy = 185000,
 		buildcostmetal = 9600,

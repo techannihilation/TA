@@ -1,7 +1,6 @@
 return {
 	corvp = {
 		acceleration = 0,
-		bmcode = 0,
 		brakerate = 0,
 		buildangle = 2048,
 		buildcostenergy = 1890,

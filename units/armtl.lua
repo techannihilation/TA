@@ -2,7 +2,6 @@ return {
 	armtl = {
 		acceleration = 0,
 		activatewhenbuilt = true,
-		bmcode = 0,
 		brakerate = 0,
 		buildangle = 16384,
 		buildcostenergy = 2195,

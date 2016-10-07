@@ -2,7 +2,6 @@ return {
 	tlltorpp = {
 		acceleration = 0.08986,
 		bankscale = 1,
-		bmcode = 1,
 		brakerate = 0.065,
 		buildcostenergy = 2347,
 		buildcostmetal = 533,

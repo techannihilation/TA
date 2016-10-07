@@ -2,7 +2,6 @@ return {
 	armadvsol = {
 		acceleration = 0,
 		activatewhenbuilt = true,
-		bmcode = 0,
 		brakerate = 0,
 		buildangle = 4096,
 		buildcostenergy = 4992,

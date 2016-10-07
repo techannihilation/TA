@@ -1,6 +1,5 @@
 return {
 	tlluwmstorage = {
-		bmcode = 0,
 		buildangle = 8192,
 		buildcostenergy = 1481,
 		buildcostmetal = 382,

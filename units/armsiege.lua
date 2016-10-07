@@ -2,7 +2,6 @@ return {
 	armsiege = {
 		acceleration = 0.037,
 		antiweapons = 1,
-		bmcode = 1,
 		brakerate = 0.09,
 		buildcostenergy = 119000,
 		buildcostmetal = 7500,

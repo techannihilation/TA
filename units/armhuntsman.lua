@@ -2,7 +2,6 @@ return {
 	armhuntsman = {
 		acceleration = 0.165,
 		airsightdistance = 720,
-		bmcode = 1,
 		brakerate = 0.495,
 		buildcostenergy = 2152,
 		buildcostmetal = 260,

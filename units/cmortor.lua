@@ -1,6 +1,5 @@
 return {
 	cmortor = {
-		bmcode = 0,
 		buildangle = 4096,
 		buildcostenergy = 33431,
 		buildcostmetal = 2119,

@@ -1,7 +1,6 @@
 return {
 	correcl = {
 		acceleration = 0.038,
-		bmcode = 1,
 		brakerate = 0.75,
 		buildcostenergy = 7006,
 		buildcostmetal = 444,

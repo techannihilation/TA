@@ -1,6 +1,5 @@
 return {
 	tllturtle_lab = {
-		bmcode = 0,
 		buildangle = 2096,
 		buildcostenergy = 41400,
 		buildcostmetal = 4400,

@@ -1,7 +1,6 @@
 return {
 	armcspider = {
 		acceleration = 0.15,
-		bmcode = 1,
 		brakerate = 0.45,
 		buildcostenergy = 1440,
 		buildcostmetal = 160,

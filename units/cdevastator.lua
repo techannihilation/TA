@@ -5,7 +5,6 @@ return {
 		airhoverfactor = 0,
 		airstrafe = false,
 		bankscale = 0.5,
-		bmcode = 1,
 		brakerate = 0.04,
 		buildcostenergy = 1780000,
 		buildcostmetal = 303000,

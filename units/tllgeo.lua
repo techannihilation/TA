@@ -1,7 +1,6 @@
 return {
 	tllgeo = {
 		activatewhenbuilt = true,
-		bmcode = 0,
 		buildangle = 8192,
 		buildcostenergy = 3200,
 		buildcostmetal = 1824,

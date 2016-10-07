@@ -2,7 +2,6 @@ return {
 	corfalc = {
 		acceleration = 0.053,
 		bankscale = 1,
-		bmcode = 1,
 		brakerate = 0.24,
 		buildcostenergy = 2101,
 		buildcostmetal = 98,

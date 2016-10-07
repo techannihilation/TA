@@ -1,7 +1,6 @@
 return {
 	cormas = {
 		activatewhenbuilt = true,
-		bmcode = 0,
 		buildangle = 4096,
 		buildcostenergy = 77833,
 		buildcostmetal = 5568,

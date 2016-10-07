@@ -1,7 +1,6 @@
 return {
 	tllmlrpc = {
 		acceleration = 0.036,
-		bmcode = 1,
 		brakerate = 0.15,
 		buildcostenergy = 82000,
 		buildcostmetal = 5500,

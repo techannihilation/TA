@@ -2,7 +2,6 @@ return {
 	corsub = {
 		acceleration = 0.03,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 0.75,
 		buildcostenergy = 4162,
 		buildcostmetal = 724,

@@ -1,7 +1,6 @@
 return {
 	tllbind = {
 		acceleration = 0.06,
-		bmcode = 1,
 		brakerate = 0.4,
 		buildcostenergy = 16000,
 		buildcostmetal = 3250,

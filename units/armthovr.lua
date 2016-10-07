@@ -1,7 +1,6 @@
 return {
 	armthovr = {
 		acceleration = 0.043,
-		bmcode = 1,
 		brakerate = 0.186,
 		buildangle = 16384,
 		buildcostenergy = 8467,

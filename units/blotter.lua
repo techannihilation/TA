@@ -2,7 +2,6 @@ return {
 	blotter = {
 		acceleration = 0.05,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 0.21,
 		buildcostenergy = 2133,
 		buildcostmetal = 107,

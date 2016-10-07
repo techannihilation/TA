@@ -1,7 +1,6 @@
 return {
 	armflash1 = {
 		acceleration = 0.15,
-		bmcode = 1,
 		brakerate = 0.3,
 		buildcostenergy = 1579,
 		buildcostmetal = 212,
@@ -14,8 +13,8 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
-		collisionvolumeoffsets = "0 0 -1",
-		collisionvolumescales = "24 9 31",
+		collisionvolumeoffsets = "0 -2 -1",
+		collisionvolumescales = "24 12 31",
 		collisionvolumetype = "Box",
 		corpse = "ARMFLASH_DEAD",
 		defaultmissiontype = "Standby",

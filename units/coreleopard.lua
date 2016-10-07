@@ -1,7 +1,6 @@
 return {
 	coreleopard = {
 		acceleration = 0.15,
-		bmcode = 1,
 		brakerate = 0.45,
 		buildcostenergy = 1500,
 		buildcostmetal = 155,

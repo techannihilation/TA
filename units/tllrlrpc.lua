@@ -1,6 +1,5 @@
 return {
 	tllrlrpc = {
-		bmcode = 0,
 		buildangle = 2760,
 		buildcostenergy = 164700,
 		buildcostmetal = 34867,

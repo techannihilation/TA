@@ -1,7 +1,6 @@
 return {
 	tawf001 = {
 		acceleration = 0,
-		bmcode = 0,
 		brakerate = 0,
 		buildangle = 32768,
 		buildcostenergy = 3560,

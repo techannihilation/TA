@@ -1,7 +1,6 @@
 return {
 	tllsam = {
 		airsightdistance = 1050,
-		bmcode = 0,
 		buildangle = 8192,
 		buildcostenergy = 3033,
 		buildcostmetal = 511,

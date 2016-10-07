@@ -2,7 +2,6 @@ return {
 	tllca = {
 		acceleration = 0.06,
 		bankscale = 1.5,
-		bmcode = 1,
 		brakerate = 0.345,
 		buildcostenergy = 5088,
 		buildcostmetal = 133,

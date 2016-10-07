@@ -2,7 +2,6 @@ return {
 	watcher = {
 		acceleration = 0.05,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 0.24,
 		buildcostenergy = 671,
 		buildcostmetal = 96,

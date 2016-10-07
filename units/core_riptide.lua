@@ -1,7 +1,6 @@
 return {
 	core_riptide = {
 		acceleration = 0.07629,
-		bmcode = 1,
 		brakerate = 0.22887,
 		buildcostenergy = 59500,
 		buildcostmetal = 4220,

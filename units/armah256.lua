@@ -2,7 +2,6 @@ return {
 	armah256 = {
 		acceleration = 0.2,
 		bankscale = 1,
-		bmcode = 1,
 		brakerate = 0.2,
 		buildcostenergy = 12976,
 		buildcostmetal = 933,

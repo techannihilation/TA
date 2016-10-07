@@ -1,6 +1,5 @@
 return {
 	corehpad = {
-		bmcode = 0,
 		buildcostenergy = 15040,
 		buildcostmetal = 1003,
 		builder = true,

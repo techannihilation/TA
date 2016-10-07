@@ -1,7 +1,6 @@
 return {
 	tllasp = {
 		activatewhenbuilt = true,
-		bmcode = 0,
 		buildangle = 4096,
 		buildcostenergy = 1850,
 		buildcostmetal = 450,

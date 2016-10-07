@@ -1,6 +1,5 @@
 return {
 	corfsilo = {
-		bmcode = 0,
 		buildangle = 8192,
 		buildcostenergy = 1055599,
 		buildcostmetal = 162624,

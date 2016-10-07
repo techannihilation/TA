@@ -1,7 +1,6 @@
 return {
 	corbt = {
 		acceleration = 0.03,
-		bmcode = 1,
 		brakerate = 0.09,
 		buildcostenergy = 215360,
 		buildcostmetal = 18500,

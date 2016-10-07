@@ -2,7 +2,6 @@ return {
 	armwin = {
 		acceleration = 0,
 		activatewhenbuilt = true,
-		bmcode = 0,
 		brakerate = 0,
 		buildcostenergy = 173,
 		buildcostmetal = 37,

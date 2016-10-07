@@ -1,6 +1,5 @@
 return {
 	tllstuner = {
-		bmcode = 0,
 		buildangle = 8192,
 		buildcostenergy = 4550,
 		buildcostmetal = 560,

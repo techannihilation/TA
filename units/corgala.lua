@@ -1,7 +1,6 @@
 return {
 	corgala = {
 		acceleration = 0.08,
-		bmcode = 1,
 		brakerate = 0.63,
 		buildcostenergy = 950000,
 		buildcostmetal = 88000,

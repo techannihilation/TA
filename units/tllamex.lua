@@ -1,7 +1,6 @@
 return {
 	tllamex = {
 		activatewhenbuilt = true,
-		bmcode = 0,
 		buildangle = 2048,
 		buildcostenergy = 6350,
 		buildcostmetal = 538,

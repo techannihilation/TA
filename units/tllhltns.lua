@@ -1,6 +1,5 @@
 return {
 	tllhltns = {
-		bmcode = 0,
 		buildangle = 32768,
 		buildcostenergy = 5800,
 		buildcostmetal = 690,

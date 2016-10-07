@@ -2,7 +2,6 @@ return {
 	coraak = {
 		acceleration = 0.12,
 		airsightdistance = 800,
-		bmcode = 1,
 		brakerate = 0.564,
 		buildcostenergy = 6240,
 		buildcostmetal = 640,

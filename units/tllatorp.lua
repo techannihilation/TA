@@ -1,7 +1,6 @@
 return {
 	tllatorp = {
 		activatewhenbuilt = true,
-		bmcode = 0,
 		buildangle = 16384,
 		buildcostenergy = 6150,
 		buildcostmetal = 1410,

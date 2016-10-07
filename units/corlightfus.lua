@@ -1,7 +1,6 @@
 return {
 	corlightfus = {
 		activatewhenbuilt = true,
-		bmcode = 0,
 		buildangle = 65535,
 		buildcostenergy = 11733,
 		buildcostmetal = 2325,

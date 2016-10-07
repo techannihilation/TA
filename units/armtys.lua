@@ -2,7 +2,6 @@ return {
 	armtys = {
 		acceleration = 0.43756,
 		bankscale = 0.6,
-		bmcode = 1,
 		brakerate = 0.1547,
 		buildcostenergy = 7180,
 		buildcostmetal = 318,

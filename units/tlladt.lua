@@ -1,6 +1,5 @@
 return {
 	tlladt = {
-		bmcode = 0,
 		buildangle = 0,
 		buildcostenergy = 741,
 		buildcostmetal = 31,

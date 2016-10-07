@@ -1,7 +1,6 @@
 return {
 	armrech3 = {
 		activatewhenbuilt = true,
-		bmcode = 0,
 		buildcostenergy = 6827,
 		buildcostmetal = 640,
 		builder = false,

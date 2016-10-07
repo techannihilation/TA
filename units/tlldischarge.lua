@@ -2,7 +2,6 @@ return {
 	tlldischarge = {
 		acceleration = 0.09,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 0.6,
 		buildcostenergy = 5950,
 		buildcostmetal = 650,

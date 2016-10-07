@@ -1,6 +1,5 @@
 return {
 	tllevp = {
-		bmcode = 0,
 		buildangle = 1024,
 		buildcostenergy = 145000,
 		buildcostmetal = 17900,

@@ -1,7 +1,6 @@
 return {
 	armcp = {
 		activatewhenbuilt = false,
-		bmcode = 0,
 		buildcostenergy = 13067,
 		buildcostmetal = 1024,
 		builder = true,

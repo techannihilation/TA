@@ -1,7 +1,6 @@
 return {
 	cbrutus = {
 		acceleration = 0.019,
-		bmcode = 1,
 		brakerate = 0.054,
 		buildcostenergy = 8500,
 		buildcostmetal = 590,

@@ -2,7 +2,6 @@ return {
 	corjamt = {
 		acceleration = 0,
 		activatewhenbuilt = true,
-		bmcode = 0,
 		brakerate = 0,
 		buildangle = 9821,
 		buildcostenergy = 5110,

@@ -1,7 +1,6 @@
 return {
 	armaap = {
 		acceleration = 0,
-		bmcode = 0,
 		brakerate = 0,
 		buildcostenergy = 69318,
 		buildcostmetal = 4699,

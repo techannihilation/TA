@@ -1,7 +1,6 @@
 return {
 	aach = {
 		acceleration = 0.48,
-		bmcode = 1,
 		brakerate = 0.048,
 		buildcostenergy = 19595,
 		buildcostmetal = 2549,

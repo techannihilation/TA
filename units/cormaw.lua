@@ -1,7 +1,6 @@
 return {
 	cormaw = {
 		acceleration = 0,
-		bmcode = 1,
 		buildangle = 8192,
 		buildcostenergy = 1506,
 		buildcostmetal = 291,

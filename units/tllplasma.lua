@@ -1,6 +1,5 @@
 return {
 	tllplasma = {
-		bmcode = 0,
 		buildangle = 8200,
 		buildcostenergy = 15872,
 		buildcostmetal = 2240,

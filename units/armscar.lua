@@ -1,7 +1,6 @@
 return {
 	armscar = {
 		acceleration = 0.012,
-		bmcode = 1,
 		brakerate = 0.0255,
 		buildcostenergy = 3733,
 		buildcostmetal = 523,

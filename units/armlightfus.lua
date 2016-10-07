@@ -1,7 +1,6 @@
 return {
 	armlightfus = {
 		activatewhenbuilt = true,
-		bmcode = 0,
 		buildangle = 65535,
 		buildcostenergy = 10667,
 		buildcostmetal = 1813,

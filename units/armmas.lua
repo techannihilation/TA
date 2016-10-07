@@ -1,7 +1,6 @@
 return {
 	armmas = {
 		activatewhenbuilt = true,
-		bmcode = 0,
 		buildangle = 8192,
 		buildcostenergy = 74240,
 		buildcostmetal = 5792,

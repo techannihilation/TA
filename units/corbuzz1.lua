@@ -2,7 +2,6 @@ return {
 	corbuzz1 = {
 		acceleration = 0,
 		antiweapons = 1,
-		bmcode = 0,
 		brakerate = 0,
 		buildangle = 29096,
 		buildcostenergy = 2000000,

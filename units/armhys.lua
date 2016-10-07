@@ -1,7 +1,6 @@
 return {
 	armhys = {
 		airsightdistance = 1000,
-		bmcode = 0,
 		buildangle = 10000,
 		buildcostenergy = 266667,
 		buildcostmetal = 11200,

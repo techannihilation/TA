@@ -1,7 +1,6 @@
 return {
 	corllt = {
 		acceleration = 0,
-		bmcode = 0,
 		brakerate = 0,
 		buildangle = 32768,
 		buildcostenergy = 695,

@@ -1,6 +1,5 @@
 return {
 	coruwadvms = {
-		bmcode = 0,
 		buildangle = 6093,
 		buildcostenergy = 11093,
 		buildcostmetal = 757,

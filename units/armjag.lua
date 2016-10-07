@@ -1,7 +1,6 @@
 return {
 	armjag = {
 		acceleration = 0.4,
-		bmcode = 1,
 		brakerate = 0.66,
 		buildcostenergy = 226000,
 		buildcostmetal = 20050,

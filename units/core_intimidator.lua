@@ -1,6 +1,5 @@
 return {
 	core_intimidator = {
-		bmcode = 0,
 		buildcostenergy = 62000,
 		buildcostmetal = 5000,
 		builder = false,

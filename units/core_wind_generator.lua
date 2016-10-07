@@ -1,7 +1,6 @@
 return {
 	core_wind_generator = {
 		activatewhenbuilt = true,
-		bmcode = 0,
 		buildangle = 8192,
 		buildcostenergy = 558,
 		buildcostmetal = 48,

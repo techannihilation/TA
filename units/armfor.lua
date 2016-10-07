@@ -1,7 +1,6 @@
 return {
 	armfor = {
 		activatewhenbuilt = true,
-		bmcode = 0,
 		buildangle = 0,
 		buildcostenergy = 145000,
 		buildcostmetal = 5100,

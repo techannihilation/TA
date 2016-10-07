@@ -2,7 +2,6 @@ return {
 	packo = {
 		acceleration = 0,
 		airsightdistance = 1050,
-		bmcode = 0,
 		brakerate = 0,
 		buildangle = 8192,
 		buildcostenergy = 5653,

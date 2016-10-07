@@ -2,7 +2,6 @@ return {
 	armweaver = {
 		acceleration = 0.07629,
 		airsightdistance = 720,
-		bmcode = 1,
 		brakerate = 0.22887,
 		buildcostenergy = 52500,
 		buildcostmetal = 3650,

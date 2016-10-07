@@ -2,7 +2,6 @@ return {
 	decade = {
 		acceleration = 0.084,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 0.057,
 		buildangle = 16384,
 		buildcostenergy = 2347,

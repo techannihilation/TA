@@ -2,7 +2,6 @@ return {
 	armrl1 = {
 		acceleration = 0,
 		airsightdistance = 920,
-		bmcode = 0,
 		brakerate = 0,
 		buildcostenergy = 899,
 		buildcostmetal = 176,

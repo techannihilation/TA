@@ -2,7 +2,6 @@ return {
 	corsolar = {
 		acceleration = 0,
 		activatewhenbuilt = true,
-		bmcode = 0,
 		brakerate = 0,
 		buildangle = 32768,
 		buildcostenergy = 0,

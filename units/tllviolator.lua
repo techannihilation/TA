@@ -2,7 +2,6 @@ return {
 	tllviolator = {
 		acceleration = 0.15,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 0.33,
 		buildangle = 16384,
 		buildcostenergy = 5973,

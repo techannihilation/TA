@@ -1,6 +1,5 @@
 return {
 	corevp = {
-		bmcode = 0,
 		buildangle = 1024,
 		buildcostenergy = 295000,
 		buildcostmetal = 16450,

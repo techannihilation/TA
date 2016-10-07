@@ -1,7 +1,6 @@
 return {
 	corvhlt = {
 		acceleration = 0,
-		bmcode = 0,
 		brakerate = 0,
 		buildangle = 4096,
 		buildcostenergy = 8500,

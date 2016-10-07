@@ -1,7 +1,6 @@
 return {
 	armch = {
 		acceleration = 0.288,
-		bmcode = 1,
 		brakerate = 0.9,
 		buildcostenergy = 2691,
 		buildcostmetal = 145,

@@ -2,7 +2,6 @@ return {
 	corgfbt = {
 		acceleration = 0.025,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 0.06,
 		buildcostenergy = 10647,
 		buildcostmetal = 694,

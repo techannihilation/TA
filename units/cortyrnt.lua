@@ -2,7 +2,6 @@ return {
 	cortyrnt = {
 		acceleration = 0.015,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 0.09,
 		buildangle = 16384,
 		buildcostenergy = 1050000,

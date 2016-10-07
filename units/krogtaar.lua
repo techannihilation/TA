@@ -1,7 +1,6 @@
 return {
 	krogtaar = {
 		acceleration = 0.144,
-		bmcode = 1,
 		brakerate = 0.714,
 		buildcostenergy = 74900,
 		buildcostmetal = 6150,

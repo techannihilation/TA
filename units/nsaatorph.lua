@@ -2,7 +2,6 @@ return {
 	nsaatorph = {
 		acceleration = 0.04,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 0.24,
 		buildcostenergy = 2747,
 		buildcostmetal = 382,

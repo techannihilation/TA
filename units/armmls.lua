@@ -1,7 +1,6 @@
 return {
 	armmls = {
 		acceleration = 0.05,
-		bmcode = 1,
 		brakerate = 0.21,
 		buildcostenergy = 3973,
 		buildcostmetal = 272,

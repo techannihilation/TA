@@ -1,7 +1,6 @@
 return {
 	tllobliterator = {
 		activatewhenbuilt = true,
-		bmcode = 0,
 		buildangle = 4096,
 		buildcostenergy = 35000,
 		buildcostmetal = 5650,

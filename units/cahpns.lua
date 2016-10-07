@@ -1,6 +1,5 @@
 return {
 	cahpns = {
-		bmcode = 0,
 		buildcostenergy = 41000,
 		buildcostmetal = 4950,
 		builder = true,

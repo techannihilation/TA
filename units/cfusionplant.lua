@@ -1,7 +1,6 @@
 return {
 	cfusionplant = {
 		activatewhenbuilt = true,
-		bmcode = 0,
 		buildangle = 90096,
 		buildcostenergy = 1034667,
 		buildcostmetal = 67200,

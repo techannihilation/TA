@@ -1,7 +1,6 @@
 return {
 	corasy = {
 		acceleration = 0,
-		bmcode = 0,
 		brakerate = 0,
 		buildcostenergy = 37268,
 		buildcostmetal = 4864,

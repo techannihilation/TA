@@ -1,7 +1,6 @@
 return {
 	tllsniper = {
 		acceleration = 0.1,
-		bmcode = 1,
 		brakerate = 0.45,
 		buildcostenergy = 11500,
 		buildcostmetal = 1250,

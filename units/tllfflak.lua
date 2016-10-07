@@ -2,7 +2,6 @@ return {
 	tllfflak = {
 		acceleration = 0,
 		airsightdistance = 1000,
-		bmcode = 0,
 		brakerate = 0,
 		buildangle = 16384,
 		buildcostenergy = 35200,

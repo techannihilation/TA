@@ -1,6 +1,5 @@
 return {
 	spiderlab = {
-		bmcode = 0,
 		buildangle = 950,
 		buildcostenergy = 4160,
 		buildcostmetal = 980,

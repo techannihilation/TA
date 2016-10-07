@@ -1,7 +1,6 @@
 return {
 	armfdrag = {
 		acceleration = 0,
-		bmcode = 0,
 		brakerate = 0,
 		buildangle = 8192,
 		buildcostenergy = 640,

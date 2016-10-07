@@ -1,7 +1,6 @@
 return {
 	tlldcsta = {
 		activatewhenbuilt = true,
-		bmcode = 0,
 		buildangle = 16384,
 		buildcostenergy = 595,
 		buildcostmetal = 218,

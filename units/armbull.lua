@@ -1,7 +1,6 @@
 return {
 	armbull = {
 		acceleration = 0.0396,
-		bmcode = 1,
 		brakerate = 0.165,
 		buildcostenergy = 15500,
 		buildcostmetal = 900,

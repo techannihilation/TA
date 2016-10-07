@@ -3,7 +3,6 @@ return {
 		acceleration = 0.5,
 		ai_limit = "limit cslicer 5",
 		ai_weight = "weight cslicer 5",
-		bmcode = 1,
 		brakerate = 0.57,
 		buildcostenergy = 2738,
 		buildcostmetal = 203,

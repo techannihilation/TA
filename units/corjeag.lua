@@ -2,7 +2,6 @@ return {
 	corjeag = {
 		acceleration = 0.028,
 		airsightdistance = 760,
-		bmcode = 1,
 		brakerate = 0.036,
 		buildcostenergy = 2293,
 		buildcostmetal = 187,

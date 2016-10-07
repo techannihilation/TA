@@ -1,7 +1,6 @@
 return {
 	tllatidal = {
 		activatewhenbuilt = true,
-		bmcode = 0,
 		buildangle = 8192,
 		buildcostenergy = 1552,
 		buildcostmetal = 213,

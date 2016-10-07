@@ -4,7 +4,6 @@ return {
 		activatewhenbuilt = true,
 		ai_limit = "limit armcav 3",
 		ai_weight = "weight armcav 3.6",
-		bmcode = 1,
 		brakerate = 1.5,
 		buildcostenergy = 15040,
 		buildcostmetal = 1850,

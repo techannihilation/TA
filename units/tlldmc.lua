@@ -1,6 +1,5 @@
 return {
 	tlldmc = {
-		bmcode = 0,
 		buildangle = 8192,
 		buildcostenergy = 272000,
 		buildcostmetal = 23467,

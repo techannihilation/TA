@@ -1,7 +1,6 @@
 return {
 	crnns = {
 		activatewhenbuilt = true,
-		bmcode = 0,
 		buildangle = 16000,
 		buildcostenergy = 154667,
 		buildcostmetal = 18133,

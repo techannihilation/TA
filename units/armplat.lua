@@ -1,7 +1,6 @@
 return {
 	armplat = {
 		acceleration = 0,
-		bmcode = 0,
 		brakerate = 0,
 		buildcostenergy = 46259,
 		buildcostmetal = 4480,

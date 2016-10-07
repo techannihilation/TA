@@ -2,7 +2,6 @@ return {
 	tlllongshot = {
 		acceleration = 0.5,
 		badtargetcategory = "VTOL",
-		bmcode = 1,
 		brakerate = 1.5,
 		buildcostenergy = 79000,
 		buildcostmetal = 5050,

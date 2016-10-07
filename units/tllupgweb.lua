@@ -1,6 +1,5 @@
 return {
 	tllupgweb = {
-		bmcode = 0,
 		buildangle = 4768,
 		buildcostenergy = 4200,
 		buildcostmetal = 360,

@@ -1,7 +1,6 @@
 return {
 	tlljam = {
 		activatewhenbuilt = true,
-		bmcode = 0,
 		buildangle = 4899,
 		buildcostenergy = 2497,
 		buildcostmetal = 162,

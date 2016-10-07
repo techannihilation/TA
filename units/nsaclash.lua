@@ -1,7 +1,6 @@
 return {
 	nsaclash = {
 		acceleration = 0.072,
-		bmcode = 1,
 		brakerate = 0.225,
 		buildcostenergy = 11800,
 		buildcostmetal = 690,

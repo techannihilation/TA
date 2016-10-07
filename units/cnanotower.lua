@@ -1,7 +1,6 @@
 return {
 	cnanotower = {
 		acceleration = 0.2,
-		bmcode = 1,
 		brakerate = 2,
 		buildcostenergy = 250000,
 		buildcostmetal = 12000,

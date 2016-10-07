@@ -2,7 +2,6 @@ return {
 	monkeylord = {
 		acceleration = 0.12,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 2.97,
 		buildcostenergy = 280000,
 		buildcostmetal = 19200,

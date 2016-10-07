@@ -2,7 +2,6 @@ return {
 	corshark = {
 		acceleration = 0.048,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 0.75,
 		buildcostenergy = 9861,
 		buildcostmetal = 1013,

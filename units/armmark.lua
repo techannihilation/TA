@@ -3,7 +3,6 @@ return {
 		acceleration = 0.045,
 		activatewhenbuilt = true,
 		ai_limit = "limit ARMMARK 0",
-		bmcode = 1,
 		brakerate = 0.054,
 		buildcostenergy = 1229,
 		buildcostmetal = 101,

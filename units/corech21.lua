@@ -1,7 +1,6 @@
 return {
 	corech21 = {
 		activatewhenbuilt = true,
-		bmcode = 0,
 		buildcostenergy = 533333,
 		buildcostmetal = 32000,
 		builder = false,

@@ -2,7 +2,6 @@ return {
 	coratidal = {
 		acceleration = 0,
 		activatewhenbuilt = true,
-		bmcode = 0,
 		brakerate = 0,
 		buildangle = 4096,
 		buildcostenergy = 2224,

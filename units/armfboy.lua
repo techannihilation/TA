@@ -1,7 +1,6 @@
 return {
 	armfboy = {
 		acceleration = 0.12,
-		bmcode = 1,
 		brakerate = 0.375,
 		buildcostenergy = 14000,
 		buildcostmetal = 1550,

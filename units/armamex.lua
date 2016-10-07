@@ -2,7 +2,6 @@ return {
 	armamex = {
 		acceleration = 0,
 		activatewhenbuilt = true,
-		bmcode = 0,
 		brakerate = 0,
 		buildangle = 6092,
 		buildcostenergy = 2220,

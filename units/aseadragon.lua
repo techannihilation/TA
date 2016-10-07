@@ -3,7 +3,6 @@ return {
 		acceleration = 0.028,
 		activatewhenbuilt = true,
 		airsightdistance = 1075,
-		bmcode = 1,
 		brakerate = 0.063,
 		buildangle = 16384,
 		buildcostenergy = 355000,

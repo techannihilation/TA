@@ -1,7 +1,6 @@
 return {
 	armasy = {
 		acceleration = 0,
-		bmcode = 0,
 		brakerate = 0,
 		buildcostenergy = 37659,
 		buildcostmetal = 4917,

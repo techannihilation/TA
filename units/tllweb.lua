@@ -1,6 +1,5 @@
 return {
 	tllweb = {
-		bmcode = 0,
 		buildangle = 4768,
 		buildcostenergy = 2100,
 		buildcostmetal = 260,

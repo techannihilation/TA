@@ -3,7 +3,6 @@ return {
 		acceleration = 0.03416,
 		altfromsealevel = 10,
 		bankscale = 1,
-		bmcode = 1,
 		brakerate = 0.045,
 		buildcostenergy = 1943,
 		buildcostmetal = 336,

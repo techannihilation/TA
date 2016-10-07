@@ -2,7 +2,6 @@ return {
 	armiguana = {
 		acceleration = 0.04,
 		airsightdistance = 1000,
-		bmcode = 1,
 		brakerate = 0.3,
 		buildcostenergy = 14941,
 		buildcostmetal = 1600,

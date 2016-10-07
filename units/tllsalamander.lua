@@ -1,7 +1,6 @@
 return {
 	tllsalamander = {
 		acceleration = 0.08,
-		bmcode = 1,
 		brakerate = 0.54,
 		buildcostenergy = 6300,
 		buildcostmetal = 580,

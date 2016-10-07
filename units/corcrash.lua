@@ -2,7 +2,6 @@ return {
 	corcrash = {
 		acceleration = 0.12,
 		airsightdistance = 770,
-		bmcode = 1,
 		brakerate = 0.564,
 		buildcostenergy = 1173,
 		buildcostmetal = 197,

@@ -1,7 +1,6 @@
 return {
 	macross = {
 		acceleration = 0.3,
-		bmcode = 1,
 		brakerate = 0.96,
 		buildcostenergy = 152000,
 		buildcostmetal = 12160,

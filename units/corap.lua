@@ -2,7 +2,6 @@ return {
 	corap = {
 		acceleration = 0,
 		activatewhenbuilt = false,
-		bmcode = 0,
 		brakerate = 0,
 		buildcostenergy = 1429,
 		buildcostmetal = 885,

@@ -1,6 +1,5 @@
 return {
 	tllshoretorp = {
-		bmcode = 0,
 		buildangle = 32768,
 		buildcostenergy = 6106,
 		buildcostmetal = 642,

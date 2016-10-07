@@ -1,7 +1,6 @@
 return {
 	corraid = {
 		acceleration = 0.0243,
-		bmcode = 1,
 		brakerate = 0.0762,
 		buildcostenergy = 2300,
 		buildcostmetal = 225,

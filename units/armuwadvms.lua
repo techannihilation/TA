@@ -1,6 +1,5 @@
 return {
 	armuwadvms = {
-		bmcode = 0,
 		buildangle = 5049,
 		buildcostenergy = 11193,
 		buildcostmetal = 752,

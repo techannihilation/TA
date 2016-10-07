@@ -1,6 +1,5 @@
 return {
 	cortlab = {
-		bmcode = 0,
 		buildangle = 4096,
 		buildcostenergy = 4800,
 		buildcostmetal = 950,

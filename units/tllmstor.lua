@@ -1,7 +1,6 @@
 return {
 	tllmstor = {
 		activatewhenbuilt = true,
-		bmcode = 0,
 		buildangle = 4096,
 		buildcostenergy = 619,
 		buildcostmetal = 229,

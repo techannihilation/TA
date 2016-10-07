@@ -1,7 +1,6 @@
 return {
 	cormist = {
 		acceleration = 0.0352,
-		bmcode = 1,
 		brakerate = 0.0495,
 		buildcostenergy = 2322,
 		buildcostmetal = 156,

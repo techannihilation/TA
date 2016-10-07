@@ -2,7 +2,6 @@ return {
 	armsl = {
 		acceleration = 0.15,
 		bankscale = 1,
-		bmcode = 1,
 		brakerate = 0.5,
 		buildcostenergy = 10763,
 		buildcostmetal = 538,

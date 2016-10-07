@@ -1,6 +1,5 @@
 return {
 	tllhpns = {
-		bmcode = 0,
 		buildcostenergy = 2300,
 		buildcostmetal = 1300,
 		builder = true,

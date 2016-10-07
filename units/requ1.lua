@@ -1,7 +1,6 @@
 return {
 	requ1 = {
 		acceleration = 0.024,
-		bmcode = 1,
 		brakerate = 0.024,
 		buildcostenergy = 45000,
 		buildcostmetal = 4100,

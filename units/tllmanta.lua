@@ -2,7 +2,6 @@ return {
 	tllmanta = {
 		acceleration = 0.22,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 0.66,
 		buildcostenergy = 13653,
 		buildcostmetal = 1227,

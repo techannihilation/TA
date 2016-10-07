@@ -2,7 +2,6 @@ return {
 	corgate2 = {
 		acceleration = 0,
 		activatewhenbuilt = true,
-		bmcode = 0,
 		brakerate = 0,
 		buildangle = 2048,
 		buildcostenergy = 8533,

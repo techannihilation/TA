@@ -1,7 +1,6 @@
 return {
 	armsnipe = {
 		acceleration = 0.12,
-		bmcode = 1,
 		brakerate = 0.564,
 		buildcostenergy = 15680,
 		buildcostmetal = 680,

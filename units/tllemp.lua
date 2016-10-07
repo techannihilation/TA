@@ -1,6 +1,5 @@
 return {
 	tllemp = {
-		bmcode = 0,
 		buildangle = 8192,
 		buildcostenergy = 14230,
 		buildcostmetal = 1195,

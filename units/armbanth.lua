@@ -2,7 +2,6 @@ return {
 	armbanth = {
 		acceleration = 0.103,
 		airsightdistance = 800,
-		bmcode = 1,
 		brakerate = 0.654,
 		buildcostenergy = 190000,
 		buildcostmetal = 10800,

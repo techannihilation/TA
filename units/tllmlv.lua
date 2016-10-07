@@ -2,7 +2,6 @@ return {
 	tllmlv = {
 		acceleration = 0.071,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 1.65,
 		buildcostenergy = 960,
 		buildcostmetal = 206,

@@ -2,7 +2,6 @@ return {
 	cafus = {
 		acceleration = 0,
 		activatewhenbuilt = false,
-		bmcode = 0,
 		brakerate = 0,
 		buildangle = 4096,
 		buildcostenergy = 90667,

@@ -2,7 +2,6 @@ return {
 	cormstor = {
 		acceleration = 0,
 		activatewhenbuilt = true,
-		bmcode = 0,
 		brakerate = 0,
 		buildcostenergy = 587,
 		buildcostmetal = 341,

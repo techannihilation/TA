@@ -1,6 +1,5 @@
 return {
 	arm_big_bertha = {
-		bmcode = 0,
 		buildangle = 4096,
 		buildcostenergy = 64850,
 		buildcostmetal = 4300,

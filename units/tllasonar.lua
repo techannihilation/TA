@@ -1,7 +1,6 @@
 return {
 	tllasonar = {
 		activatewhenbuilt = true,
-		bmcode = 0,
 		buildangle = 8192,
 		buildcostenergy = 2930,
 		buildcostmetal = 195,

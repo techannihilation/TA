@@ -2,7 +2,6 @@ return {
 	tllorc = {
 		acceleration = 0.04,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 0.057,
 		buildcostenergy = 22400,
 		buildcostmetal = 3733,

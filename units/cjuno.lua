@@ -1,7 +1,6 @@
 return {
 	cjuno = {
 		acceleration = 0,
-		bmcode = 0,
 		brakerate = 0,
 		buildcostenergy = 10800,
 		buildcostmetal = 650,

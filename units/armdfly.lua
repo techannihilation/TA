@@ -2,7 +2,6 @@ return {
 	armdfly = {
 		acceleration = 0.2,
 		bankscale = 1,
-		bmcode = 1,
 		brakerate = 0.625,
 		buildcostenergy = 6667,
 		buildcostmetal = 318,

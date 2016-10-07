@@ -2,7 +2,6 @@ return {
 	armpcan = {
 		acceleration = 0,
 		antiweapons = 1,
-		bmcode = 0,
 		brakerate = 0,
 		buildangle = 32700,
 		buildcostenergy = 8000,

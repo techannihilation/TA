@@ -1,7 +1,6 @@
 return {
 	corgator = {
 		acceleration = 0.055,
-		bmcode = 1,
 		brakerate = 0.165,
 		buildcostenergy = 1111,
 		buildcostmetal = 126,
@@ -14,6 +13,9 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL SMALL WEAPON",
+		collisionvolumeoffsets = "0 -1 -1",
+		collisionvolumescales = "24 15 32",
+		collisionvolumetype = "Box",
 		corpse = "DEAD",
 		defaultmissiontype = "Standby",
 		description = "Light Tank",

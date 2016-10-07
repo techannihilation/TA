@@ -2,7 +2,6 @@ return {
 	tllgazelle = {
 		acceleration = 0,
 		antiweapons = 1,
-		bmcode = 0,
 		brakerate = 0,
 		buildangle = 4096,
 		buildcostenergy = 2210000,

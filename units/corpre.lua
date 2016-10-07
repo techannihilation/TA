@@ -1,7 +1,6 @@
 return {
 	corpre = {
 		airsightdistance = 1000,
-		bmcode = 0,
 		buildangle = 2000,
 		buildcostenergy = 298667,
 		buildcostmetal = 10560,

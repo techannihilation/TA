@@ -1,7 +1,6 @@
 return {
 	corsktl = {
 		acceleration = 0.12,
-		bmcode = 1,
 		brakerate = 0.564,
 		buildcostenergy = 32000,
 		buildcostmetal = 400,

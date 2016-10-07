@@ -1,7 +1,6 @@
 return {
 	tllmusk = {
 		acceleration = 0.068,
-		bmcode = 1,
 		brakerate = 0.12,
 		buildcostenergy = 23000,
 		buildcostmetal = 1450,

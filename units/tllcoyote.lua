@@ -2,7 +2,6 @@ return {
 	tllcoyote = {
 		acceleration = 0.055,
 		airsightdistance = 650,
-		bmcode = 1,
 		brakerate = 0.036,
 		buildcostenergy = 9500,
 		buildcostmetal = 795,

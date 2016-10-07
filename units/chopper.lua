@@ -4,7 +4,6 @@ return {
 		ai_limit = "limit CHOPPER 12",
 		ai_weight = "weight CHOPPER 3",
 		bankscale = 1,
-		bmcode = 1,
 		brakerate = 0.6,
 		buildcostenergy = 15199,
 		buildcostmetal = 939,

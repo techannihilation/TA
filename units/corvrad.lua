@@ -2,7 +2,6 @@ return {
 	corvrad = {
 		acceleration = 0.03,
 		activatewhenbuilt = true,
-		bmcode = 1,
 		brakerate = 0.036,
 		buildcostenergy = 1290,
 		buildcostmetal = 92,

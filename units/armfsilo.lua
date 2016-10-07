@@ -1,6 +1,5 @@
 return {
 	armfsilo = {
-		bmcode = 0,
 		buildangle = 8192,
 		buildcostenergy = 1055440,
 		buildcostmetal = 164149,

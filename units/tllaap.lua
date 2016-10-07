@@ -1,6 +1,5 @@
 return {
 	tllaap = {
-		bmcode = 0,
 		buildcostenergy = 20693,
 		buildcostmetal = 4341,
 		builder = true,

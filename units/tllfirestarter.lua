@@ -2,7 +2,6 @@ return {
 	tllfirestarter = {
 		acceleration = 0.21,
 		airsightdistance = 675,
-		bmcode = 1,
 		brakerate = 0.75,
 		buildcostenergy = 1120,
 		buildcostmetal = 181,

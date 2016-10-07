@@ -2,7 +2,6 @@ return {
 	corkarg1 = {
 		acceleration = 0.096,
 		airsightdistance = 1100,
-		bmcode = 1,
 		brakerate = 0.7,
 		buildcostenergy = 358000,
 		buildcostmetal = 17050,

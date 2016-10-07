@@ -1,7 +1,6 @@
 return {
 	corch = {
 		acceleration = 0.24,
-		bmcode = 1,
 		brakerate = 0.744,
 		buildcostenergy = 2956,
 		buildcostmetal = 164,

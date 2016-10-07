@@ -2,7 +2,6 @@ return {
 	coreslingshot = {
 		acceleration = 0.15,
 		airsightdistance = 800,
-		bmcode = 1,
 		brakerate = 0.45,
 		buildcostenergy = 4500,
 		buildcostmetal = 480,

@@ -1,7 +1,6 @@
 return {
 	tawf0131 = {
 		acceleration = 0.0154,
-		bmcode = 1,
 		brakerate = 0.0462,
 		buildcostenergy = 3000,
 		buildcostmetal = 250,

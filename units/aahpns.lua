@@ -1,6 +1,5 @@
 return {
 	aahpns = {
-		bmcode = 0,
 		buildcostenergy = 37800,
 		buildcostmetal = 4820,
 		builder = true,

@@ -1,7 +1,6 @@
 return {
 	armalab = {
 		acceleration = 0,
-		bmcode = 0,
 		brakerate = 0,
 		buildangle = 1024,
 		buildcostenergy = 72466,

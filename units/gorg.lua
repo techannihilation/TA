@@ -1,7 +1,6 @@
 return {
 	gorg = {
 		acceleration = 0.048,
-		bmcode = 1,
 		brakerate = 0.375,
 		buildcostenergy = 624000,
 		buildcostmetal = 36900,

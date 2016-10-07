@@ -1,7 +1,6 @@
 return {
 	armstump1 = {
 		acceleration = 0.03,
-		bmcode = 1,
 		brakerate = 0.09,
 		buildcostenergy = 2750,
 		buildcostmetal = 365,
