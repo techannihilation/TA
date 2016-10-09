@@ -50,6 +50,8 @@ return {
 		turnrate = 625,
 		unitname = "tllannouncer",
 		unitnumber = 831,
+		customparams = {
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -89,6 +91,14 @@ return {
 			explosiongenerators = {
 				[1] = "custom:muzzle_front_ring",
 				[2] = "custom:muzzle_flare_tll_rear",
+			},
+			pieceexplosiongenerators = {
+				[1] = "piecetrail0",
+				[2] = "piecetrail1",
+				[3] = "piecetrail2",
+				[4] = "piecetrail3",
+				[5] = "piecetrail4",
+				[6] = "piecetrail6",
 			},
 		},
 		sounds = {

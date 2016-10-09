@@ -59,6 +59,8 @@ return {
 		unitname = "armsiege",
 		unitnumber = 46,
 		workertime = 0,
+		customparams = {
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -92,6 +94,16 @@ return {
 				reclaimable = true,
 				seqnamereclamate = "tree1reclamate",
 				world = "All Worlds",
+			},
+		},
+		sfxtypes = {
+			pieceexplosiongenerators = {
+				[1] = "piecetrail0",
+				[2] = "piecetrail1",
+				[3] = "piecetrail2",
+				[4] = "piecetrail3",
+				[5] = "piecetrail4",
+				[6] = "piecetrail6",
 			},
 		},
 		sounds = {

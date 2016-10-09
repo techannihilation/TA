@@ -38,6 +38,8 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "ff ff",
+		customparams = {
+		},
 		featuredefs = {
 			rockteeth = {
 				animating = 0,
@@ -78,6 +80,16 @@ return {
 				reclaimtime = 800,
 				seqnamereclamate = "tree1reclamate",
 				world = "allworld",
+			},
+		},
+		sfxtypes = {
+			pieceexplosiongenerators = {
+				[1] = "piecetrail0",
+				[2] = "piecetrail1",
+				[3] = "piecetrail2",
+				[4] = "piecetrail3",
+				[5] = "piecetrail4",
+				[6] = "piecetrail6",
 			},
 		},
 	},

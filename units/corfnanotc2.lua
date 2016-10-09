@@ -62,6 +62,16 @@ return {
 			[2] = 0.88,
 			[3] = 0.88,
 		},
+		sfxtypes = {
+			pieceexplosiongenerators = {
+				[1] = "piecetrail0",
+				[2] = "piecetrail1",
+				[3] = "piecetrail2",
+				[4] = "piecetrail3",
+				[5] = "piecetrail4",
+				[6] = "piecetrail6",
+			},
+		},
 		sounds = {
 			build = "nanlath2",
 			canceldestruct = "cancel2",

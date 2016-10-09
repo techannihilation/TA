@@ -59,10 +59,22 @@ return {
 			[6] = "coratidal",
 			[7] = "coruwlightfus",
 		},
+		customparams = {
+		},
 		nanocolor = {
 			[1] = 0.08,
 			[2] = 0.43,
 			[3] = 0.43,
+		},
+		sfxtypes = {
+			pieceexplosiongenerators = {
+				[1] = "piecetrail0",
+				[2] = "piecetrail1",
+				[3] = "piecetrail2",
+				[4] = "piecetrail3",
+				[5] = "piecetrail4",
+				[6] = "piecetrail6",
+			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",

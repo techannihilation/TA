@@ -41,6 +41,8 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo",
+		customparams = {
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -63,6 +65,14 @@ return {
 				footprintz = 4,
 				metal = 2208,
 				object = "4x4c",
+			},
+		},
+		sfxtypes = {
+			pieceexplosiongenerators = {
+				[1] = "piecetrail5",
+				[2] = "piecetrail5",
+				[3] = "piecetrail4",
+				[4] = "piecetrail6",
 			},
 		},
 		sounds = {

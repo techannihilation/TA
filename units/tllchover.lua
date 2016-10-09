@@ -102,6 +102,8 @@ return {
 			[44] = "tlltorp",
 			[45] = "tllsolarns",
 		},
+		customparams = {
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -141,6 +143,16 @@ return {
 			[1] = 0.482,
 			[2] = 0.482,
 			[3] = 0.132,
+		},
+		sfxtypes = {
+			pieceexplosiongenerators = {
+				[1] = "piecetrail0",
+				[2] = "piecetrail1",
+				[3] = "piecetrail2",
+				[4] = "piecetrail3",
+				[5] = "piecetrail4",
+				[6] = "piecetrail6",
+			},
 		},
 		sounds = {
 			build = "nanlath1",

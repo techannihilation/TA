@@ -42,6 +42,8 @@ return {
 		unitnumber = 803,
 		usebuildinggrounddecal = true,
 		yardmap = "GGGGGGGGGGGGGGGG",
+		customparams = {
+		},
 		featuredefs = {
 			tllmohogeo_dead = {
 				blocking = true,
@@ -80,6 +82,12 @@ return {
 		sfxtypes = {
 			explosiongenerators = {
 				[1] = "custom:PILOT",
+			},
+			pieceexplosiongenerators = {
+				[1] = "piecetrail5",
+				[2] = "piecetrail5",
+				[3] = "piecetrail4",
+				[4] = "piecetrail6",
 			},
 		},
 		sounds = {

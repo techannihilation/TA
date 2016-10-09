@@ -54,6 +54,8 @@ return {
 		unitname = "tllarchnano",
 		unitnumber = 877,
 		workertime = 280,
+		customparams = {
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -93,6 +95,16 @@ return {
 			[1] = 0.562,
 			[2] = 0.562,
 			[3] = 0.212,
+		},
+		sfxtypes = {
+			pieceexplosiongenerators = {
+				[1] = "piecetrail0",
+				[2] = "piecetrail1",
+				[3] = "piecetrail2",
+				[4] = "piecetrail3",
+				[5] = "piecetrail4",
+				[6] = "piecetrail6",
+			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",

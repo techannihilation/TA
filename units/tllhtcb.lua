@@ -58,6 +58,8 @@ return {
 			[2] = "tllgate1",
 			[3] = "tlldb",
 		},
+		customparams = {
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -97,6 +99,16 @@ return {
 			[1] = 0.578,
 			[2] = 0.578,
 			[3] = 0.228,
+		},
+		sfxtypes = {
+			pieceexplosiongenerators = {
+				[1] = "piecetrail0",
+				[2] = "piecetrail1",
+				[3] = "piecetrail2",
+				[4] = "piecetrail3",
+				[5] = "piecetrail4",
+				[6] = "piecetrail6",
+			},
 		},
 		sounds = {
 			build = "nanlath1",

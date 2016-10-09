@@ -47,6 +47,8 @@ return {
 		buildoptions = {
 			[1] = "abroadside",
 		},
+		customparams = {
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -69,6 +71,16 @@ return {
 			[1] = 0.192,
 			[2] = 0.592,
 			[3] = 0.192,
+		},
+		sfxtypes = {
+			pieceexplosiongenerators = {
+				[1] = "piecetrail0",
+				[2] = "piecetrail1",
+				[3] = "piecetrail2",
+				[4] = "piecetrail3",
+				[5] = "piecetrail4",
+				[6] = "piecetrail6",
+			},
 		},
 		sounds = {
 			build = "hoverok1",

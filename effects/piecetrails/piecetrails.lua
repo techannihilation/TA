@@ -46,7 +46,7 @@ return {
       properties = {
         airdrag            = 0.70,
         alwaysvisible      = false,
-        colormap           = [[0.8 0.6 0.0 0.05   0.5 0.3 0.0 0.05  0 0 0 0.01]],
+        colormap           = [[0.96 0.6 0.0 0.05   0.5 0.3 0.0 0.05  0 0 0 0.01]],
         directional        = true,
         emitrot            = 90,
         emitrotspread      = 0,
@@ -67,7 +67,6 @@ return {
       },
     },
   },
-  
   ["piecetrail1"] = {
     usedefaultexplosions = false,
     fire = {
@@ -109,7 +108,7 @@ return {
       properties = {
         airdrag            = 0.70,
         alwaysvisible      = false,
-        colormap           = [[0.8 0.6 0.0 0.05   0.5 0.3 0.0 0.05   0 0 0 0.25    0 0 0 0.35	0 0 0 0.01]],
+        colormap           = [[1 0.9 1 0.05   0.8 0.8 0.8 0.05   0 0 0 0.25    0 0 0 0.35	0 0 0 0.01]],
         directional        = true,
         emitrot            = 90,
         emitrotspread      = 0,
@@ -140,7 +139,7 @@ return {
       properties = {
         airdrag            = 0.70,
         alwaysvisible      = false,
-        colormap           = [[0.8 0.6 0.0 0.05   0.5 0.3 0.0 0.05   0.2 0.2 0.2 0.25    0.2 0.2 0.2 0.35	0 0 0 0.01]],
+        colormap           = [[0.96 0.9 0.0 0.05   0.9 0.8 0.0 0.05   0.2 0.2 0.2 0.25    0.2 0.2 0.2 0.35	0 0 0 0.01]],
         directional        = true,
         emitrot            = 90,
         emitrotspread      = 0,
@@ -193,6 +192,63 @@ return {
     },
   },
   ["piecetrail5"] = {
+    usedefaultexplosions = false, 
+    sparkles = {
+      air                = true,
+      class              = [[CSimpleParticleSystem]],
+      count              = 1,
+      ground             = true,
+      unit               = 1,
+      water              = true,
+      properties = {
+        airdrag            = 0.95,
+        colormap           = [[0.5 0.5 0.5 0.2	  0.8 0.8 0.8 0.4	  0.3 0.3 0.3 0.2	  0.1 0.1 0.1 0.1	  0 0 0 0.01]],
+        directional        = true,
+        emitrot            = 0,
+        emitrotspread      = 360,
+        emitvector         = [[0, 0.10, 0]],
+        gravity            = [[0,0,0]],
+        numparticles       = 2,
+        particlelife       = 1,
+        particlelifespread = 5,
+        particlesize       = 12,
+        particlesizespread = 7,
+        particlespeed      = 1,
+        particlespeedspread = 2,
+        pos                = [[0, 0, 0]],
+        sizegrowth         = 1.0,
+        sizemod            = -1.0,
+        texture            = [[lightb2]],
+      },
+    },
+    splashes = {
+      air                = true,
+      class              = [[CSimpleParticleSystem]],
+      ground             = true,
+      properties = {
+        airdrag            = .96,
+        colormap           = [[0.1 0.25 0.9 0.01   0.15 0.3 0.8 0.01   0.2 0.34 0.7 0]],
+        directional        = false,
+        emitrot            = 0,
+        emitrotspread      = 30,
+        emitvector         = [[0, 1, 0]],
+        gravity            = [[0, 0, 0]],
+        numparticles       = 2,
+        particlelife       = 1,
+        particlelifespread = 1,
+        particlesize       = 16,
+        particlesizespread = 4,
+        particlespeed      = 1,
+        particlespeedspread = 2,
+        pos                = [[0, 1.0, 0]],
+        sizegrowth         = -.2,
+        sizemod            = 1,
+        texture            = [[lightningball_new]],
+      },
+    },
+  },
+
+ ["piecetrail6"] = {
     usedefaultexplosions = false, 
     black_smoke = {
       air                = true,

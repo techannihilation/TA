@@ -42,6 +42,8 @@ return {
 		unitnumber = 803,
 		usebuildinggrounddecal = true,
 		yardmap = "GGGGGGGGGGGGGGGG",
+		customparams = {
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -75,6 +77,14 @@ return {
 				reclaimable = true,
 				seqnamereclamate = "tree1reclamate",
 				world = "All Worlds",
+			},
+		},
+		sfxtypes = {
+			pieceexplosiongenerators = {
+				[1] = "piecetrail5",
+				[2] = "piecetrail5",
+				[3] = "piecetrail4",
+				[4] = "piecetrail6",
 			},
 		},
 		sounds = {

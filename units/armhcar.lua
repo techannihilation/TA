@@ -65,6 +65,8 @@ return {
 		unitname = "armhcar",
 		waterline = 2,
 		workertime = 750,
+		customparams = {
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,
@@ -87,6 +89,16 @@ return {
 			[1] = 0.4,
 			[2] = 0.8,
 			[3] = 0.4,
+		},
+		sfxtypes = {
+			pieceexplosiongenerators = {
+				[1] = "piecetrail0",
+				[2] = "piecetrail1",
+				[3] = "piecetrail2",
+				[4] = "piecetrail3",
+				[5] = "piecetrail4",
+				[6] = "piecetrail6",
+			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",

@@ -51,6 +51,8 @@ return {
 			[5] = "tllhovermissile",
 			[6] = "tllhplasma",
 		},
+		customparams = {
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -90,6 +92,16 @@ return {
 			[1] = 0.65,
 			[2] = 0.65,
 			[3] = 0.3,
+		},
+		sfxtypes = {
+			pieceexplosiongenerators = {
+				[1] = "piecetrail0",
+				[2] = "piecetrail1",
+				[3] = "piecetrail2",
+				[4] = "piecetrail3",
+				[5] = "piecetrail4",
+				[6] = "piecetrail6",
+			},
 		},
 		sounds = {
 			build = "hoverok1",

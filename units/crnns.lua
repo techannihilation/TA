@@ -44,6 +44,16 @@ return {
 		waterline = 10,
 		workertime = 0,
 		yardmap = "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
+		customparams = {
+		},
+		sfxtypes = {
+			pieceexplosiongenerators = {
+				[1] = "piecetrail5",
+				[2] = "piecetrail5",
+				[3] = "piecetrail4",
+				[4] = "piecetrail6",
+			},
+		},
 		sounds = {
 			activate = "mohorun1",
 			canceldestruct = "cancel2",

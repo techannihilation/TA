@@ -68,6 +68,8 @@ return {
 			[7] = "corint1",
 			[8] = "corbuzz2",
 		},
+		customparams = {
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -90,6 +92,16 @@ return {
 			[1] = 0.46,
 			[2] = 0.81,
 			[3] = 0.81,
+		},
+		sfxtypes = {
+			pieceexplosiongenerators = {
+				[1] = "piecetrail0",
+				[2] = "piecetrail1",
+				[3] = "piecetrail2",
+				[4] = "piecetrail3",
+				[5] = "piecetrail4",
+				[6] = "piecetrail6",
+			},
 		},
 		sounds = {
 			build = "nanlath2",

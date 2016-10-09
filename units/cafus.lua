@@ -92,6 +92,14 @@ return {
 				world = "All Worlds",
 			},
 		},
+		sfxtypes = {
+			pieceexplosiongenerators = {
+				[1] = "piecetrail5",
+				[2] = "piecetrail5",
+				[3] = "piecetrail4",
+				[4] = "piecetrail6",
+			},
+		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",

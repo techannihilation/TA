@@ -41,6 +41,8 @@ return {
 		unitname = "tllkrak",
 		unitnumber = 882,
 		yardmap = "wwww wwww wwww wwww",
+		customparams = {
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -80,6 +82,14 @@ return {
 			explosiongenerators = {
 				[1] = "custom:mediumflare",
 				[2] = "custom:watersplash_large",
+			},
+			pieceexplosiongenerators = {
+				[1] = "piecetrail0",
+				[2] = "piecetrail1",
+				[3] = "piecetrail2",
+				[4] = "piecetrail3",
+				[5] = "piecetrail4",
+				[6] = "piecetrail6",
 			},
 		},
 		sounds = {

@@ -36,6 +36,8 @@ return {
 		unitnumber = 857,
 		workertime = 0,
 		yardmap = "oooooooooooooooo",
+		customparams = {
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -68,6 +70,16 @@ return {
 				reclaimable = true,
 				seqnamereclamate = "tree1reclamate",
 				world = "all",
+			},
+		},
+		sfxtypes = {
+			pieceexplosiongenerators = {
+				[1] = "piecetrail0",
+				[2] = "piecetrail1",
+				[3] = "piecetrail2",
+				[4] = "piecetrail3",
+				[5] = "piecetrail4",
+				[6] = "piecetrail6",
 			},
 		},
 		sounds = {

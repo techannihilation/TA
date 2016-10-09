@@ -59,6 +59,8 @@ return {
 		unitnumber = 165,
 		upright = true,
 		workertime = 0,
+		customparams = {
+		},
 		featuredefs = {
 			corsent_dead = {
 				blocking = true,
@@ -94,6 +96,16 @@ return {
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",
 				world = "All Worlds",
+			},
+		},
+		sfxtypes = {
+			pieceexplosiongenerators = {
+				[1] = "piecetrail0",
+				[2] = "piecetrail1",
+				[3] = "piecetrail2",
+				[4] = "piecetrail3",
+				[5] = "piecetrail4",
+				[6] = "piecetrail6",
 			},
 		},
 		sounds = {

@@ -53,6 +53,8 @@ return {
 		unitname = "tllprivate",
 		unitnumber = 815,
 		upright = true,
+		customparams = {
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -91,6 +93,14 @@ return {
 		sfxtypes = {
 			explosiongenerators = {
 				[1] = "custom:pw_muzzle",
+			},
+			pieceexplosiongenerators = {
+				[1] = "piecetrail0",
+				[2] = "piecetrail1",
+				[3] = "piecetrail2",
+				[4] = "piecetrail3",
+				[5] = "piecetrail4",
+				[6] = "piecetrail6",
 			},
 		},
 		sounds = {

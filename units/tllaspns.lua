@@ -42,6 +42,8 @@ return {
 		waterline = 13,
 		workertime = 2000,
 		yardmap = "wwww wwww wwww wwww",
+		customparams = {
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -81,6 +83,16 @@ return {
 			[1] = 1,
 			[2] = 1,
 			[3] = 0.8,
+		},
+		sfxtypes = {
+			pieceexplosiongenerators = {
+				[1] = "piecetrail0",
+				[2] = "piecetrail1",
+				[3] = "piecetrail2",
+				[4] = "piecetrail3",
+				[5] = "piecetrail4",
+				[6] = "piecetrail6",
+			},
 		},
 		sounds = {
 			build = "pairwork",

@@ -51,6 +51,8 @@ return {
 		turnrate = 495,
 		unitname = "tlltelsatnk",
 		workertime = 0,
+		customparams = {
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -88,6 +90,14 @@ return {
 		sfxtypes = {
 			explosiongenerators = {
 				[1] = "custom:tllroaster_muzzle",
+			},
+			pieceexplosiongenerators = {
+				[1] = "piecetrail0",
+				[2] = "piecetrail1",
+				[3] = "piecetrail2",
+				[4] = "piecetrail3",
+				[5] = "piecetrail4",
+				[6] = "piecetrail6",
 			},
 		},
 		sounds = {
