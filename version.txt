@@ -1,3 +1,14 @@
+---------------------------------------- v2.42.3 ---------------------------------------
+----Balance----
+Corshieldgen (Mobile T2 Shield Bot) => Delete explosion when he dies. Add Craw_Blast explosion when autodestroy. (was impossible to escort units, cause he destroyed all units after dying).
+Dauber => Decrease speed 1.4 => 1.3. Decrease HP 2750 => 1950. 
+Corpyrox => Decrease Metal cost 3200 => 2690. 
+Corpyrox1 => Decrease Metal cost 3500 => 3290. 
+TLLOM => Delete lock by t3 technology
+Furie T3.5 => decrease speed 1 => 0.9
+Gorg T3.5 => decrease speed 0.95 => 0.8
+tllmatamata Turtle => Increase HP 6200 => 10200. Increase damage/s 208 => 275. Range 800 => 750
+
 ---------------------------------------- v2.42.2 ---------------------------------------
 ----Balance----
 Increase metal (+2000) for Tachyon, Cordoom & Obligator
