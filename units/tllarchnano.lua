@@ -54,8 +54,6 @@ return {
 		unitname = "tllarchnano",
 		unitnumber = 877,
 		workertime = 280,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

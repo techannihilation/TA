@@ -49,8 +49,6 @@ return {
 		turnrate = 550,
 		unitname = "tllpuncher",
 		unitnumber = 840,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

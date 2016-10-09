@@ -88,8 +88,6 @@ return {
 			[30] = "tllsolarns",
 			[31] = "tlljuno",
 		},
-		customparams = {
-		},
 		nanocolor = {
 			[1] = 0.394,
 			[2] = 0.394,

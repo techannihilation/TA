@@ -82,8 +82,6 @@ return {
 			[25] = "tllavp",
 			[26] = "tllevp",
 		},
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

@@ -62,8 +62,6 @@ return {
 		unitname = "armtick",
 		unitnumber = 4244,
 		workertime = 200,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

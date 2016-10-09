@@ -52,8 +52,6 @@ return {
 		unitname = "tllboat2",
 		unitnumber = 165,
 		waterline = 6,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

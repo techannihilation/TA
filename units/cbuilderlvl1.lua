@@ -78,8 +78,6 @@ return {
 			[21] = "corvamp",
 			[22] = "coraca",
 		},
-		customparams = {
-		},
 		nanocolor = {
 			[1] = 0.12,
 			[2] = 0.47,

@@ -56,8 +56,6 @@ return {
 		unitname = "tllhovermissile",
 		unitnumber = 28703,
 		workertime = 0,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

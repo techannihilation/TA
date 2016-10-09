@@ -57,8 +57,6 @@ return {
 		unitname = "nsacbehe",
 		unitnumber = 1408,
 		workertime = 0,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

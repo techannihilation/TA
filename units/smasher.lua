@@ -56,8 +56,6 @@ return {
 		unitname = "smasher",
 		unitnumber = 789012,
 		workertime = 0,
-		customparams = {
-		},
 		sfxtypes = {
 			explosiongenerators = {
 				[1] = "custom:heli_muzzle",

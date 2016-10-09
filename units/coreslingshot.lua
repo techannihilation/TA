@@ -55,8 +55,6 @@ return {
 		unitname = "coreslingshot",
 		unitnumber = 6518,
 		workertime = 0,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

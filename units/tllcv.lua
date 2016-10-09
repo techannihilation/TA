@@ -85,8 +85,6 @@ return {
 			[29] = "tllshoretorp",
 			[30] = "tlljuno",
 		},
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

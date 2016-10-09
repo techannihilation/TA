@@ -51,8 +51,6 @@ return {
 		unitname = "tllmixer",
 		unitnumber = 909,
 		waterline = 4,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

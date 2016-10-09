@@ -49,8 +49,6 @@ return {
 		unitname = "tllvisitor",
 		unitnumber = 901,
 		waterline = 6,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

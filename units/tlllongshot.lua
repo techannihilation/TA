@@ -57,8 +57,6 @@ return {
 		unitname = "tlllongshot",
 		unitnumber = 30119,
 		workertime = 0,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

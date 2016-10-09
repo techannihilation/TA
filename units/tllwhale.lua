@@ -56,8 +56,6 @@ return {
 		unitname = "tllwhale",
 		unitnumber = 9201,
 		waterline = 30,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

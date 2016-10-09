@@ -55,8 +55,6 @@ return {
 		unitnumber = 932,
 		upright = false,
 		workertime = 0,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

@@ -56,8 +56,6 @@ return {
 		unitname = "corerex",
 		unitnumber = 325,
 		workertime = 0,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

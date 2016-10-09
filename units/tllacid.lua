@@ -56,8 +56,6 @@ return {
 		unitname = "tllacid",
 		unitnumber = 30132,
 		workertime = 0,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

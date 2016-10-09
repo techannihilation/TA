@@ -50,8 +50,6 @@ return {
 		unitname = "tllcoyote",
 		unitnumber = 8330,
 		upright = true,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

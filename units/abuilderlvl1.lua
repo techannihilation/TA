@@ -72,8 +72,6 @@ return {
 			[21] = "armhawk",
 			[22] = "armaca",
 		},
-		customparams = {
-		},
 		nanocolor = {
 			[1] = 0.12,
 			[2] = 0.52,

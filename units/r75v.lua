@@ -60,8 +60,6 @@ return {
 		unitnumber = 162,
 		upright = true,
 		workertime = 0,
-		customparams = {
-		},
 		featuredefs = {
 			armhplasma_dead = {
 				blocking = true,

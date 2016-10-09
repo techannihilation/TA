@@ -39,8 +39,6 @@ return {
 		waterline = 1,
 		workertime = 0,
 		yardmap = "wwwwwwwww",
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = false,

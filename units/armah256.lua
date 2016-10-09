@@ -56,8 +56,6 @@ return {
 		unitname = "armah256",
 		unitnumber = 75645,
 		workertime = 0,
-		customparams = {
-		},
 		sfxtypes = {
 			explosiongenerators = {
 				[1] = "custom:muzzle_flare_rocket",

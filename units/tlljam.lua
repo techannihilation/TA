@@ -42,8 +42,6 @@ return {
 		unitnumber = 841,
 		usebuildinggrounddecal = true,
 		workertime = 0,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

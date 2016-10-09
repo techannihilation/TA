@@ -55,8 +55,6 @@ return {
 		unitname = "tllcop1",
 		unitnumber = 21101,
 		workertime = 0,
-		customparams = {
-		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",

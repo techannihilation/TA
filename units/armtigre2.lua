@@ -56,8 +56,6 @@ return {
 		unitname = "armtigre2",
 		unitnumber = 5698,
 		workertime = 0,
-		customparams = {
-		},
 		featuredefs = {
 			armtigre_heap = {
 				blocking = false,

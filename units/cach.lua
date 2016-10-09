@@ -92,8 +92,6 @@ return {
 			[34] = "corbuzz",
 			[35] = "corech18",
 		},
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

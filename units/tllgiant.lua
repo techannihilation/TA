@@ -56,8 +56,6 @@ return {
 		unitnumber = 907,
 		waterline = 7,
 		workertime = 220,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

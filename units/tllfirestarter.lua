@@ -55,8 +55,6 @@ return {
 		unitname = "tllfirestarter",
 		unitnumber = 822,
 		upright = true,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

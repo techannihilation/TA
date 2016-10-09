@@ -58,8 +58,6 @@ return {
 			[2] = "tllgate1",
 			[3] = "tlldb",
 		},
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

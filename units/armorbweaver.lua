@@ -54,8 +54,6 @@ return {
 		unitname = "armorbweaver",
 		unitnumber = 6343,
 		workertime = 0,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

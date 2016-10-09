@@ -50,8 +50,6 @@ return {
 		turnrate = 650,
 		unitname = "tllsoftshell",
 		unitnumber = 839,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

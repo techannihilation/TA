@@ -50,8 +50,6 @@ return {
 		turnrate = 350,
 		unitname = "tllsting",
 		unitnumber = 904,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

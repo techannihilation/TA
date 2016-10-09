@@ -59,8 +59,6 @@ return {
 		unitname = "armantar",
 		unitnumber = 954568,
 		workertime = 0,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

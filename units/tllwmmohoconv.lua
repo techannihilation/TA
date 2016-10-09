@@ -33,8 +33,6 @@ return {
 		unitnumber = 870,
 		waterline = 0,
 		yardmap = "wwwww wwwww wwwww wwwww wwwww",
-		customparams = {
-		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",

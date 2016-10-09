@@ -59,8 +59,6 @@ return {
 		unitname = "tllseab",
 		unitnumber = 920,
 		workertime = 0,
-		customparams = {
-		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",

@@ -50,8 +50,6 @@ return {
 		turnrate = 795,
 		unitname = "tllhoplit",
 		unitnumber = 874,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

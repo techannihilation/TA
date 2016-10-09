@@ -59,8 +59,6 @@ return {
 		unitnumber = 906,
 		waterline = 30,
 		workertime = 0,
-		customparams = {
-		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",

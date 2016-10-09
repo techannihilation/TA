@@ -92,8 +92,6 @@ return {
 			[33] = "tllrlrpc",
 			[34] = "tlldmc",
 		},
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

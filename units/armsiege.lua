@@ -59,8 +59,6 @@ return {
 		unitname = "armsiege",
 		unitnumber = 46,
 		workertime = 0,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

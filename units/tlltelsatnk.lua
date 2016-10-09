@@ -51,8 +51,6 @@ return {
 		turnrate = 495,
 		unitname = "tlltelsatnk",
 		workertime = 0,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

@@ -62,8 +62,6 @@ return {
 		unitname = "hyperion",
 		upright = true,
 		workertime = 0,
-		customparams = {
-		},
 		featuredefs = {
 			hyperion_dead = {
 				blocking = true,

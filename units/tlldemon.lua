@@ -55,8 +55,6 @@ return {
 		unitname = "tlldemon",
 		unitnumber = 30001,
 		workertime = 0,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

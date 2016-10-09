@@ -56,8 +56,6 @@ return {
 		unitname = "armhuntsman",
 		unitnumber = 6981,
 		workertime = 0,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

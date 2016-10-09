@@ -46,8 +46,6 @@ return {
 		turnrate = 490,
 		unitname = "tllsnakeneck",
 		unitnumber = 31903,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

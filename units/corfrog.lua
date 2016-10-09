@@ -59,8 +59,6 @@ return {
 		unitnumber = 165,
 		upright = true,
 		workertime = 0,
-		customparams = {
-		},
 		featuredefs = {
 			corsent_dead = {
 				blocking = true,

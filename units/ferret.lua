@@ -55,8 +55,6 @@ return {
 		unitname = "ferret",
 		unitnumber = 260,
 		workertime = 0,
-		customparams = {
-		},
 		sfxtypes = {
 			explosiongenerators = {
 				[1] = "custom:heli_muzzle",

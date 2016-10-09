@@ -51,8 +51,6 @@ return {
 		turnrate = 825,
 		unitname = "tllconfuser",
 		unitnumber = 863,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

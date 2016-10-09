@@ -52,8 +52,6 @@ return {
 		turnrate = 885,
 		unitname = "tlltorpcop",
 		unitnumber = 885,
-		customparams = {
-		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",

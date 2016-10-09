@@ -55,8 +55,6 @@ return {
 		unitname = "tllsquid",
 		upright = true,
 		waterline = 30,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

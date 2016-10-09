@@ -68,8 +68,6 @@ return {
 			[7] = "corint1",
 			[8] = "corbuzz2",
 		},
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

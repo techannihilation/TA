@@ -36,8 +36,6 @@ return {
 		unitnumber = 856,
 		workertime = 0,
 		yardmap = "oooooooooooooooo",
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = false,

@@ -49,8 +49,6 @@ return {
 		turnrate = 200,
 		unitname = "tllroaster",
 		unitnumber = 871,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

@@ -49,8 +49,6 @@ return {
 		unitname = "tllloggerhead",
 		unitnumber = 31903,
 		workertime = 0,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

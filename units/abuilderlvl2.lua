@@ -58,8 +58,6 @@ return {
 			[6] = "armatidal",
 			[7] = "armuwlightfus",
 		},
-		customparams = {
-		},
 		nanocolor = {
 			[1] = 0.08,
 			[2] = 0.48,

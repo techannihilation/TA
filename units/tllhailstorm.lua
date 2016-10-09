@@ -48,8 +48,6 @@ return {
 		turnrate = 210,
 		unitname = "tllpbot",
 		upright = true,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

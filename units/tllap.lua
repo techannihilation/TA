@@ -57,8 +57,6 @@ return {
 			[5] = "tlltplane",
 			[6] = "tllcop1",
 		},
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

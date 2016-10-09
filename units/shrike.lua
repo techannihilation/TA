@@ -52,8 +52,6 @@ return {
 		unitname = "shrike",
 		unitnumber = 551,
 		unitrestricted = 300,
-		customparams = {
-		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",

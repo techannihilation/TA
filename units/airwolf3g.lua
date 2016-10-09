@@ -55,8 +55,6 @@ return {
 		unitname = "airwolf3g",
 		unitnumber = 10148,
 		unitrestricted = 300,
-		customparams = {
-		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",

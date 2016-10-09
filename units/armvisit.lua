@@ -56,8 +56,6 @@ return {
 		unitname = "armvisit",
 		unitnumber = 1740,
 		workertime = 0,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

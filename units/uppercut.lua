@@ -62,8 +62,6 @@ return {
 		unitname = "uppercut",
 		waterline = 70,
 		workertime = 0,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = false,

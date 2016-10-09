@@ -54,8 +54,6 @@ return {
 		unitname = "tllpbot",
 		unitnumber = 823,
 		upright = true,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

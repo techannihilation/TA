@@ -49,8 +49,6 @@ return {
 		unitname = "tllaak",
 		unitnumber = 947,
 		upright = true,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

@@ -50,8 +50,6 @@ return {
 		turnrate = 625,
 		unitname = "tllariman",
 		unitnumber = 827,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

@@ -102,8 +102,6 @@ return {
 			[44] = "tlltorp",
 			[45] = "tllsolarns",
 		},
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

@@ -53,8 +53,6 @@ return {
 		turninplacespeedlimit = 0.627,
 		turnrate = 86.45,
 		unitname = "abroadside",
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

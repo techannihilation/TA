@@ -54,8 +54,6 @@ return {
 		unitname = "tllotter",
 		unitnumber = 891,
 		waterline = 5,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

@@ -56,8 +56,6 @@ return {
 		unitname = "tllhovergauss",
 		unitnumber = 17403,
 		workertime = 0,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

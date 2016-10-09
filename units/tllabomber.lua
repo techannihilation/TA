@@ -52,8 +52,6 @@ return {
 		unitname = "tllabomber",
 		unitnumber = 889,
 		workertime = 0,
-		customparams = {
-		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",

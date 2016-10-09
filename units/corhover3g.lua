@@ -60,8 +60,6 @@ return {
 		unitname = "corhover3g",
 		unitnumber = 4313,
 		workertime = 0,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

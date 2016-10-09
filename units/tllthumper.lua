@@ -48,8 +48,6 @@ return {
 		turnrate = 200,
 		unitname = "tllthumper",
 		unitnumber = 834,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

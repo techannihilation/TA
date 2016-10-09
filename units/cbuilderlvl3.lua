@@ -70,8 +70,6 @@ return {
 			[14] = "corgant1",
 			[15] = "cshipyardlvl4",
 		},
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = false,

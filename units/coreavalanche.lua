@@ -53,8 +53,6 @@ return {
 		unitname = "coreavalanche",
 		unitnumber = 6522,
 		workertime = 0,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = false,

@@ -58,8 +58,6 @@ return {
 		unitname = "watcher",
 		unitnumber = 401,
 		workertime = 0,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

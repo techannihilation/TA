@@ -51,8 +51,6 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "oooo",
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

@@ -51,8 +51,6 @@ return {
 		turnrate = 625,
 		unitname = "tllhickatee",
 		unitnumber = 863,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

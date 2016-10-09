@@ -73,8 +73,6 @@ return {
 		turnrate = 100,
 		unitname = "tllvaliant",
 		workertime = 400,
-		customparams = {
-		},
 		nanocolor = {
 			[1] = 0.56,
 			[2] = 0.56,

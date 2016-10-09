@@ -50,8 +50,6 @@ return {
 		turnrate = 735,
 		unitname = "tllares",
 		unitnumber = 828,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

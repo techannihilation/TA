@@ -53,8 +53,6 @@ return {
 		unitname = "tllprivate",
 		unitnumber = 815,
 		upright = true,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

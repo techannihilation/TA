@@ -56,8 +56,6 @@ return {
 		unitname = "tllseaf",
 		unitnumber = 919,
 		workertime = 0,
-		customparams = {
-		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",

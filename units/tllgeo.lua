@@ -42,8 +42,6 @@ return {
 		unitnumber = 803,
 		usebuildinggrounddecal = true,
 		yardmap = "GGGGGGGGGGGGGGGG",
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

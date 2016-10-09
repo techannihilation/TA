@@ -59,8 +59,6 @@ return {
 			[6] = "coratidal",
 			[7] = "coruwlightfus",
 		},
-		customparams = {
-		},
 		nanocolor = {
 			[1] = 0.08,
 			[2] = 0.43,

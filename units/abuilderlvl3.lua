@@ -66,8 +66,6 @@ return {
 			[14] = "armshltx1",
 			[15] = "ashipyardlvl3",
 		},
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = false,

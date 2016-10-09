@@ -50,8 +50,6 @@ return {
 		turnrate = 625,
 		unitname = "tllannouncer",
 		unitnumber = 831,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

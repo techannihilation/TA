@@ -55,8 +55,6 @@ return {
 		unitname = "cormatch",
 		unitnumber = 6144,
 		workertime = 0,
-		customparams = {
-		},
 		featuredefs = {
 			corsnap_dead = {
 				blocking = false,

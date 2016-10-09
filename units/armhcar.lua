@@ -65,8 +65,6 @@ return {
 		unitname = "armhcar",
 		waterline = 2,
 		workertime = 750,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = false,

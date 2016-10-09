@@ -51,8 +51,6 @@ return {
 			[5] = "tllhovermissile",
 			[6] = "tllhplasma",
 		},
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

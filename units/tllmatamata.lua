@@ -49,8 +49,6 @@ return {
 		turnrate = 530,
 		unitname = "tllmatamata",
 		unitnumber = 31903,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

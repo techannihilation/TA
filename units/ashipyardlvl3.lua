@@ -47,8 +47,6 @@ return {
 		buildoptions = {
 			[1] = "abroadside",
 		},
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

@@ -54,8 +54,6 @@ return {
 		unitname = "armbull2",
 		unitnumber = 229,
 		workertime = 0,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

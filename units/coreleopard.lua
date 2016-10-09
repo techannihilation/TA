@@ -55,8 +55,6 @@ return {
 		unitname = "coreleopard",
 		unitnumber = 4331,
 		workertime = 250,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

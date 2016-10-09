@@ -50,8 +50,6 @@ return {
 		turnrate = 512,
 		unitname = "tllobscurer",
 		unitnumber = 838,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

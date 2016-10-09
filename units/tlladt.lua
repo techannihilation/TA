@@ -38,8 +38,6 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "ff ff",
-		customparams = {
-		},
 		featuredefs = {
 			rockteeth = {
 				animating = 0,

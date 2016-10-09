@@ -52,8 +52,6 @@ return {
 		unitname = "tllequalizer",
 		unitnumber = 896,
 		waterline = 10,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

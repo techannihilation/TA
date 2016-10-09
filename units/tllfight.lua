@@ -54,8 +54,6 @@ return {
 		unitname = "tllfight",
 		unitnumber = 917,
 		upright = true,
-		customparams = {
-		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",

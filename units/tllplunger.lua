@@ -54,8 +54,6 @@ return {
 		unitnumber = 895,
 		upright = true,
 		waterline = 40,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

@@ -52,8 +52,6 @@ return {
 		unitname = "tlladvfight",
 		unitnumber = 886,
 		unitrestricted = 300,
-		customparams = {
-		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",

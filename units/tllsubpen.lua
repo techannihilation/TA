@@ -60,8 +60,6 @@ return {
 			[9] = "tllsalamander",
 			[10] = "tllaak",
 		},
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

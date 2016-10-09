@@ -55,8 +55,6 @@ return {
 		turnrate = 210,
 		unitname = "tllriot",
 		workertime = 0,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

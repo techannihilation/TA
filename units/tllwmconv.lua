@@ -34,8 +34,6 @@ return {
 		unitnumber = 870,
 		waterline = 5,
 		yardmap = "wwwwwwwww",
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

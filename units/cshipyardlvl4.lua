@@ -47,8 +47,6 @@ return {
 		buildoptions = {
 			[1] = "cdevastator",
 		},
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

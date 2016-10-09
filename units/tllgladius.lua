@@ -50,8 +50,6 @@ return {
 		turnrate = 1050,
 		unitname = "tllgladius",
 		unitnumber = 8260,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

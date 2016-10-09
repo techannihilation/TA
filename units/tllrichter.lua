@@ -39,8 +39,6 @@ return {
 		unitname = "tllrichter",
 		usebuildinggrounddecal = true,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo",
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

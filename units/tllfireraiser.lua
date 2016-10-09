@@ -53,8 +53,6 @@ return {
 		unitname = "tllfireraiser",
 		unitnumber = 821,
 		upright = true,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

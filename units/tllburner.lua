@@ -50,8 +50,6 @@ return {
 		unitname = "tllburner",
 		unitnumber = 830,
 		upright = true,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

@@ -41,8 +41,6 @@ return {
 		stealth = true,
 		unitname = "tllajam",
 		workertime = 0,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

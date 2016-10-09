@@ -47,8 +47,6 @@ return {
 		windgenerator = 120,
 		workertime = 0,
 		yardmap = "oooo oooo oooo oooo",
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

@@ -52,8 +52,6 @@ return {
 		unitname = "tllcopter",
 		unitnumber = 890,
 		workertime = 0,
-		customparams = {
-		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",

@@ -54,8 +54,6 @@ return {
 		unitname = "tllbug",
 		unitnumber = 824,
 		upright = true,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

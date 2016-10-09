@@ -48,8 +48,6 @@ return {
 		turnrate = 400,
 		unitname = "tllconvincer",
 		unitnumber = 872,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

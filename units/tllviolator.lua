@@ -56,8 +56,6 @@ return {
 		unitname = "tllviolator",
 		unitnumber = 894,
 		waterline = 8,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

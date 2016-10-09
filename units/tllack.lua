@@ -82,8 +82,6 @@ return {
 			[25] = "tllturtle_lab",
 			[26] = "tllhtcp",
 		},
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

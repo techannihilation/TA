@@ -80,8 +80,6 @@ return {
 			[19] = "tllhltns",
 			[20] = "tlltorp",
 		},
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = false,

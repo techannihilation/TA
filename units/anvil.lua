@@ -61,8 +61,6 @@ return {
 		unitname = "anvil",
 		unitnumber = 30121,
 		workertime = 0,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

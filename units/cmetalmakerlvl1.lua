@@ -38,8 +38,6 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "OOOOOOOOOOOO",
-		customparams = {
-		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",

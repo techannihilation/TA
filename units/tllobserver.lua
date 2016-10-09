@@ -52,8 +52,6 @@ return {
 		turnrate = 750,
 		unitname = "tllobserver",
 		unitnumber = 862,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

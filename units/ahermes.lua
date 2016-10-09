@@ -63,8 +63,6 @@ return {
 		unitname = "ahermes",
 		unitnumber = 655,
 		workertime = 0,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

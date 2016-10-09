@@ -65,8 +65,6 @@ return {
 		unitname = "armmcv",
 		unitnumber = 22134,
 		workertime = 0,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

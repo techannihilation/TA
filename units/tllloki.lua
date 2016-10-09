@@ -49,8 +49,6 @@ return {
 		turnrate = 350,
 		unitname = "tllloki",
 		unitnumber = 836,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

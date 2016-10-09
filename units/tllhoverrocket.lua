@@ -56,8 +56,6 @@ return {
 		unitname = "tllhoverrocket",
 		unitnumber = 28803,
 		workertime = 0,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

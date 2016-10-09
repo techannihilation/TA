@@ -82,8 +82,6 @@ return {
 			[21] = "tllfgate",
 			[22] = "tlldtns",
 		},
-		customparams = {
-		},
 		nanocolor = {
 			[1] = 0.394,
 			[2] = 0.394,

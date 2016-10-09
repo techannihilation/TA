@@ -61,8 +61,6 @@ return {
 		unitname = "skykrogoth",
 		unitnumber = 88001,
 		workertime = 0,
-		customparams = {
-		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",

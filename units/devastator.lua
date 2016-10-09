@@ -60,8 +60,6 @@ return {
 		unitname = "devastator",
 		unitnumber = 1234,
 		workertime = 0,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

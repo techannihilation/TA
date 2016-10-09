@@ -85,8 +85,6 @@ return {
 			[30] = "cjuno",
 			[31] = "corech3",
 		},
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

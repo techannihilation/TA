@@ -50,8 +50,6 @@ return {
 		unitname = "tllviking",
 		unitnumber = 902,
 		waterline = 8,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

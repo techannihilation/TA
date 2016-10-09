@@ -39,8 +39,6 @@ return {
 		waterline = 11,
 		workertime = 0,
 		yardmap = "ww ww",
-		customparams = {
-		},
 		featuredefs = {
 			tllfloatingteeth = {
 				autoreclaimable = 0,

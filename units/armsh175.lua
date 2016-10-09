@@ -57,8 +57,6 @@ return {
 		unitname = "armsh175",
 		unitnumber = 75654,
 		workertime = 0,
-		customparams = {
-		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",

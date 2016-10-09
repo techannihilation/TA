@@ -82,8 +82,6 @@ return {
 			[24] = "tllap",
 			[25] = "tllaap",
 		},
-		customparams = {
-		},
 		nanocolor = {
 			[1] = 0.47,
 			[2] = 0.47,

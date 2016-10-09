@@ -41,8 +41,6 @@ return {
 		unitname = "tllhltns",
 		unitnumber = 882,
 		yardmap = "wwwwwwwww",
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

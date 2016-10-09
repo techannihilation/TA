@@ -55,8 +55,6 @@ return {
 		unitname = "tllambassador",
 		unitnumber = 943,
 		waterline = 6,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

@@ -51,8 +51,6 @@ return {
 		turnrate = 380,
 		unitname = "tlldivine",
 		unitnumber = 839,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

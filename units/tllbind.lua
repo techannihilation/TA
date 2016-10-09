@@ -50,8 +50,6 @@ return {
 		unitname = "tllbind",
 		unitnumber = 8301,
 		upright = true,
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

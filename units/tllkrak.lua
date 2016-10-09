@@ -41,8 +41,6 @@ return {
 		unitname = "tllkrak",
 		unitnumber = 882,
 		yardmap = "wwww wwww wwww wwww",
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,

@@ -57,8 +57,6 @@ return {
 		unitnumber = 1986,
 		upright = true,
 		workertime = 0,
-		customparams = {
-		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",

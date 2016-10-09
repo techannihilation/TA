@@ -74,8 +74,6 @@ return {
 			[17] = "tlluwjam",
 			[18] = "tlldtns",
 		},
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = false,

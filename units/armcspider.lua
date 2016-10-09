@@ -85,8 +85,6 @@ return {
 			[30] = "ajuno",
 			[31] = "armrech3",
 		},
-		customparams = {
-		},
 		featuredefs = {
 			dead = {
 				blocking = true,
