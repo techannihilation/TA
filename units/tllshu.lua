@@ -40,7 +40,7 @@ return {
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		shootme = 1,
-		side = "ARM",
+		side = "TLL",
 		sightdistance = 750,
 		standingfireorder = 2,
 		standingmoveorder = 1,
