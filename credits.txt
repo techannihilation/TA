@@ -1,4 +1,16 @@
+Tech Annihilation
 
+Core Hardened Metal Maker created by [void]finkky who gave full right to [BoS]nixtux of ownership of model, please ask permission before using this model
+Tll Musk, Snakeneck, Matamata, loggerhead, Leatherback, Hickatee, Softshell where crafted by [BoS]nixtux please ask permission before using theses model
+
+butmaps strike.png and lightningball.png where crafted by [BoS]nixtux please ask permission before using theses textures
+
+----------------------------------------------------------------------------------
+
+Credits :-Some Models are in this mod are from TA:Escalation i would like to thanks archdragon,
+boogie ,wootan and the registeredone for letting us use these models
+
+----------------------------------------------------------------------------------
 UNITS MADE BY KROGOTH86:
 
 You may use all of those units in your mods but you have to give proper credits to me...
@@ -22,3 +34,4 @@ Mole (T2 Vehicle Assister)
 Punkie (T1 Scout KBot) (Flea counterpart)
 Thud MK-II (T3 Artillery Mech)
 VHLT (T2 Laser Turret)
+
