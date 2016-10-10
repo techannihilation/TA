@@ -19,7 +19,7 @@ return {
 		collide = false,
 		cruisealt = 70,
 		defaultmissiontype = "VTOL_standby",
-		description = "Seaplane Swarmer",
+		description = "Seaplane Fighter",
 		energymake = 1,
 		energystorage = 0,
 		energyuse = 1,
