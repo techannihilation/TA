@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 10200,
 		buildcostmetal = 140,
 		buildpic = "ARMHAWK.png",
-		buildtime = 11685,
+		buildtime = 9000,
 		canattack = true,
 		canfly = true,
 		canguard = true,
