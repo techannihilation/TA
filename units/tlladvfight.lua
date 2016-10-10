@@ -4,8 +4,8 @@ return {
 		airsightdistance = 800,
 		bankscale = 1,
 		brakerate = 0.09,
-		buildcostenergy = 6200,
-		buildcostmetal = 345,
+		buildcostenergy = 7200,
+		buildcostmetal = 355,
 		buildtime = 10000,
 		canattack = true,
 		canfly = true,
@@ -116,7 +116,7 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 850,
 				damage = {
-					bombers = 600,
+					bombers = 400,
 					default = 5,
 					fighters = 200,
 					flak_resistant = 150,
@@ -152,7 +152,7 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 850,
 				damage = {
-					bombers = 300,
+					bombers = 200,
 					default = 5,
 					fighters = 100,
 					flak_resistant = 80,
