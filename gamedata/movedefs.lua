@@ -264,7 +264,6 @@ local moveDatas = {
 local defs = {}
 
 for moveName, moveData in pairs(moveDatas) do
-	Spring.Echo("********** ",tonumber((Spring.GetModOptions() and (Spring.GetModOptions().mo_heatmap == "1") and 1) or 0))
 	moveData.heatmapping = (Spring.GetModOptions() and tonumber(Spring.GetModOptions().mo_heatmap) and (tonumber(Spring.GetModOptions().mo_heatmap) ~= 0) or 1)
 	moveData.name = moveName
 	defs[#defs + 1] = moveData

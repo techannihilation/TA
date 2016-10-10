@@ -58,7 +58,7 @@ return {
 		trackwidth = 37,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.00188,
+		turninplacespeedlimit = 0.924,
 		turnrate = 151,
 		unitname = "armmanni",
 		workertime = 0,

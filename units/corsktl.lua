@@ -31,7 +31,7 @@ return {
 		initcloaked = false,
 		losemitheight = 25,
 		maneuverleashlength = 140,
-		mass = 900,
+		mass = 533.33331,
 		maxdamage = 3200,
 		maxslope = 255,
 		maxvelocity = 1.35,

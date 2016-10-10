@@ -57,7 +57,7 @@ return {
 		stealth = true,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.188,
+		turninplacespeedlimit = 1.518,
 		turnrate = 925,
 		unitname = "armtick",
 		unitnumber = 4244,

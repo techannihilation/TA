@@ -51,7 +51,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.627,
+		turninplacespeedlimit = 0.528,
 		turnrate = 109,
 		unitname = "gorg",
 		workertime = 0,

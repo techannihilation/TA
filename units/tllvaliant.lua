@@ -45,7 +45,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		immunetoparalyzer = 1,
-		mass = 245000,
+		mass = 213000,
 		maxdamage = 450000,
 		maxvelocity = 1.1,
 		maxwaterdepth = 0,

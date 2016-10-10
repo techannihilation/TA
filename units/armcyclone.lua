@@ -55,7 +55,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 4.95,
+		turninplacespeedlimit = 5.016,
 		turnrate = 185,
 		unitname = "armcyclone",
 		unitnumber = 8016,
