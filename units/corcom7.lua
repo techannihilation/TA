@@ -119,7 +119,7 @@ return {
 			providetech = "Battle Commander,Assault Commander,Star Commander,Supreme Commander",
 		},
 		featuredefs = {
-			corcom5_heap = {
+			heap = {
 				blocking = false,
 				category = "heaps",
 				damage = 25000,
@@ -130,7 +130,7 @@ return {
 				footprintz = 2,
 				height = 4,
 				hitdensity = 100,
-				metal = 50004,
+				metal = 20000,
 				object = "2X2F",
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",
@@ -148,8 +148,8 @@ return {
 				footprintz = 2,
 				height = 20,
 				hitdensity = 100,
-				metal = 19998,
-				object = "CORCOM_DEAD",
+				metal = 50000,
+				object = "DEAD",
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",
 				world = "All Worlds",

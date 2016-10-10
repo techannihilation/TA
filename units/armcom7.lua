@@ -119,7 +119,7 @@ return {
 			providetech = "Battle Commander,Assault Commander,Star Commander,Supreme Commander",
 		},
 		featuredefs = {
-			armcom5_heap = {
+			heap = {
 				blocking = false,
 				category = "heaps",
 				damage = 25000,
@@ -130,7 +130,7 @@ return {
 				footprintz = 2,
 				height = 4,
 				hitdensity = 100,
-				metal = 50004,
+				metal = 20000,
 				object = "2X2F",
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",
@@ -142,13 +142,13 @@ return {
 				damage = 100000,
 				description = "Commander Wreckage",
 				energy = 0,
-				featuredead = "ARMCOM5_HEAP",
+				featuredead = "HEAP",
 				featurereclamate = "SMUDGE01",
 				footprintx = 2,
 				footprintz = 2,
 				height = 20,
 				hitdensity = 100,
-				metal = 19998,
+				metal = 50000,
 				object = "ARMCOM_DEAD",
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",
