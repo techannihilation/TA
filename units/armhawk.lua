@@ -116,7 +116,7 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 850,
 				damage = {
-					bombers = 360,
+					bombers = 240,
 					default = 5,
 					fighters = 120,
 					flak_resistant = 180,
