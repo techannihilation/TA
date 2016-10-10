@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 2130,
 		buildcostmetal = 85,
 		buildpic = "ARMFIG.png",
-		buildtime = 3465,
+		buildtime = 3400,
 		canattack = true,
 		canfly = true,
 		canguard = true,
