@@ -18,7 +18,34 @@ return {
         ttl                = 50,
       },
     },
-
+    spikes_small_unit_death_start = {
+      air                = true,
+      class              = [[CExploSpikeProjectile]],
+      count              = 10,
+      ground             = true,
+      water              = false,
+      properties = {
+        alpha              = 0.8,
+        alphadecay         = [[0.1 r 0.05]],
+        color              = [[1.0,0.6,0.4]],
+        dir                = [[-12 r24,-12 r24,-12 r24]],
+        length             = [[1 r1]],
+        width              = [[0.5 r0.5]],
+      },
+    },
+    windsphere = {
+      air                = true,
+      class              = [[CSpherePartSpawner]],
+      count              = 1,
+      ground             = true,
+      water              = true,
+      properties = {
+        alpha              = 0.22,
+        color              = [[1.0, 0.9, 0.8]],
+        expansionspeed     = [[3 r2]],
+        ttl                = 15,
+      },
+    },
       smokecloud = {
       air                = true,
       class              = [[CSimpleParticleSystem]],
@@ -48,7 +75,6 @@ return {
         useairlos          = true,
       },
     },
-   
    ExpballSpawner = {
       air                = true,
       class              = [[CExpGenSpawner]],
@@ -117,7 +143,50 @@ return {
         useairlos          = true,
       },
     },
-},
+  explosionballglow = {
+       air                = true,
+      class              = [[CSimpleParticleSystem]],
+      count              = 1, --1
+      ground             = true,
+      water              = true,
+      properties = {
+        airdrag            = 0.93,
+        colormap           = [[1 1 1 .2    1 1 1 0.5  0.6 0.3 0 .1   0.1 0.1 0.1 0.3  0 0 0 0.01]],
+        directional        = true,
+        emitrot            = 0,
+        emitrotspread      = 360,
+        emitvector         = [[0, 1, 0]],
+        gravity            = [[0.001 r-0.002, 0.01 r-0.02, 0.001 r-0.002]],
+        numparticles       = 1,
+        particlelife       = 7,
+        particlelifespread = 7,
+        particlesize       = 1,
+        particlesizespread = 30,
+        particlespeed      = 0.2,
+        particlespeedspread = 1.2,
+        pos                = [[0, 0, 0]],
+        sizegrowth         = 0.0,
+        sizemod            = 1.0,
+        texture            = [[smokeorange]],
+      },
+    },
+    spikes_small_unit_death= {
+      air                = true,
+      class              = [[CExploSpikeProjectile]],
+      count              = 2,
+      ground             = true,
+      water              = false,
+      properties = {
+        alpha              = 0.8,
+        alphadecay         = [[0.1 r 0.05]],
+        color              = [[1.0,0.6,0.4]],
+        dir                = [[-6 r12,-6 r12,-6 r12]],
+        length             = [[1 r1]],
+        width              = [[0.5 r0.5]],
+      },
+    },
+  },
+
 ["smoke_small_unit_selfd"] = {
     usedefaultexplosions = false,
        smokecloud = {
