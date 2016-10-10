@@ -2,8 +2,8 @@ return {
 	tllanhur = {
 		acceleration = 0.03594,
 		brakerate = 0.015,
-		buildcostenergy = 101333,
-		buildcostmetal = 3093,
+		buildcostenergy = 71000,
+		buildcostmetal = 4250,
 		builder = false,
 		buildpic = "tllanhur.png",
 		buildtime = 45000,
@@ -99,7 +99,7 @@ return {
 			napalm_bomb = {
 				areaofeffect = 300,
 				burst = 2,
-				burstrate = 0.8,
+				burstrate = 0.9,
 				collidefriendly = false,
 				commandfire = false,
 				craterboost = 0,
@@ -121,10 +121,10 @@ return {
 				targetborder = 0,
 				weapontype = "AircraftBomb",
 				damage = {
-					bomb_resistant = 1300,
+					bomb_resistant = 1250,
 					bombers = 5,
-					commanders = 1300,
-					default = 3900,
+					commanders = 1250,
+					default = 3000,
 					fighters = 5,
 					flak_resistant = 5,
 					unclassed_air = 5,

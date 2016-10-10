@@ -1,7 +1,7 @@
 return {
 	tlleap = {
 		buildcostenergy = 160000,
-		buildcostmetal = 19947,
+		buildcostmetal = 19940,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 13,
@@ -27,7 +27,7 @@ return {
 		idletime = 1800,
 		losemitheight = 64,
 		mass = 19947,
-		maxdamage = 12000,
+		maxdamage = 13000,
 		maxslope = 15,
 		maxwaterdepth = 0,
 		metalstorage = 300,
