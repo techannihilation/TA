@@ -231,21 +231,6 @@ return {
       },
     },
   },
-
-  ["lightning_flash"] = {
-    usedefaultexplosions = true,
-    groundflash = {
-      flashalpha         = 1.2,
-      flashsize          = 28,
-      ttl                = 16,
-      color = {
-        [1]  = 0.55000001192093,
-        [2]  = 0.69999998807907,
-        [3]  = 0.89999997615814,
-      },
-    },
-  },
-
   ["purpleimpact1"] = {
     dirt = {
       count              = 2,

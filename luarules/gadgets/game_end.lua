@@ -91,6 +91,7 @@ function gadget:GameOver()
 end
 
 function gadget:Initialize()
+
 	if #UnitDefs > 0x3A9 then
 		Spring.GameOver({nil})
 	end

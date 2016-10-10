@@ -84,15 +84,18 @@ local pplants = {
 	["coruwlightfus"] = true,
 	["armgen"] = true,
 	["corgen"] = true,
+	["corgeo_mini"] = true,
+	["armgeo_mini"] = true,
+	["tllgeo_mini"] = true,
 }
 
 local negsolar = {
-	["armsolar"] =true,
-	["corsolar"] =true,
-	["crnns"] =true,
-	["tllsolar"] =true,
-	["tllsolarns"] =true,
-	["tlladvsolar"] =true,
+	["armsolar"] = true,
+	["corsolar"] = true,
+	["crnns"] = true,
+	["tllsolar"] = true,
+	["tllsolarns"] = true,
+	["tlladvsolar"] = true,
 }
 
 ------------------------------------------------------------------------------------
