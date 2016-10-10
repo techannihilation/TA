@@ -7,6 +7,7 @@ local weapons = {
 	armsonic_sonic_cannon = { radius = 95, damage = 300, duration = 45, rangeFall = 0.25, timeFall = 0.8, allyScale = 0.5, teamScale = 0.25},
 	tllriot_tllriot_cannon = { radius = 75, damage = 200, duration = 35, rangeFall = 0.25, timeFall = 0.6, allyScale = 0.5 },
 	thermite_mine = { radius = 64, damage = 750, duration = 130, rangeFall = 0.25, timeFall = 0.6},
+	tllaether_thermite_bomb = { radius = 64, damage = 450, duration = 130, rangeFall = 0.25, timeFall = 0.6},
 
 	--junos
 	ajuno_juno_pulse = { radius = 950, damage = 20, duration = 90, rangeFall = 0.8, timeFall = 0.1, isjuno = true},
