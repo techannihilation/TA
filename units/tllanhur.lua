@@ -49,7 +49,7 @@ return {
 		scale = 1,
 		selfdestructas = "BIG_UNIT_VTOL",
 		shootme = 1,
-		side = "CORE",
+		side = "TLL",
 		sightdistance = 400,
 		standingmoveorder = 1,
 		stealth = true,
@@ -62,7 +62,6 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "tllanhur.png",
-			requiretech = "Advanced T3 Unit Research Centre",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

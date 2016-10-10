@@ -46,7 +46,7 @@ return {
 		scale = 1,
 		selfdestructas = "BIG_UNIT_VTOL",
 		shootme = 1,
-		side = "CORE",
+		side = "TLL",
 		sightdistance = 550,
 		standingfireorder = 2,
 		standingmoveorder = 1,

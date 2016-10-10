@@ -47,7 +47,7 @@ return {
 		script = "tllaether.cob",
 		selfdestructas = "VBIG_UNIT_VTOL",
 		shootme = 1,
-		side = "CORE",
+		side = "TLL",
 		sightdistance = 400,
 		standingmoveorder = 1,
 		steeringmode = 1,
