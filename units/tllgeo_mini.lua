@@ -10,6 +10,7 @@ return {
 		buildinggrounddecalsizex = 3.6,
 		buildinggrounddecalsizey = 3.6,
 		buildinggrounddecaltype = "tllgeo_aoplane.dds",
+		buildpic = "TLLGEO.png",
 		buildtime = 7000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "dead",
