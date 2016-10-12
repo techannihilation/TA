@@ -92,6 +92,13 @@ RequestState(requestedstate, currentstate)
 	statechg_StateChanging = FALSE;
 }
 
+RestoreAfterDelay()
+{
+	sleep restore_delay;
+	set-signal-mask 0;
+	start-script RequestState(1);
+}
+
 Create()
 {
 	hide flare;
@@ -124,13 +131,6 @@ SetMaxReloadTime(Func_Var_1)
 	restore_delay = Func_Var_1 * 2;
 }
 
-RestoreAfterDelay()
-{
-	sleep restore_delay;
-	set-signal-mask 0;
-	start-script RequestState(1);
-}
-
 AimPrimary(heading, pitch)
 {
 	start-script RequestState(0);
@@ -150,9 +150,8 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-	show flare;
+	emit-sfx 1024 + 0 from flare;
 	sleep 150;
-	hide flare;
 }
 
 QueryPrimary(piecenum)
