@@ -12,6 +12,8 @@ fighters = {
            "tlladvfight",
            "tllfight",
            "tllseaf",
+           "tllshu",
+},
 },
 bombers = {
            "armblz",
@@ -36,6 +38,8 @@ bombers = {
            "armseap",
            "corsbomb",
            "armorion",
+           "tllanhur",
+           "tllaether",
 },
 flak_resistant = {
            "apache",
@@ -73,6 +77,7 @@ unclassed_air = {
            "armsaber",
            "armtys",
            "blackdawn",
+           "tllnuada",
            "corape",
            "corcrw",
            "corcut",

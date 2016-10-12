@@ -1,7 +1,7 @@
----------------------------------------- v2.42.3 ---------------------------------------
+---------------------------------------- v2.42.5 ---------------------------------------
 ----Improvements----
 Add TLL T3 Aircaft :) => Fighter, Gunship, Torpedo, Bomber
-Add Mini Geo's
+Add Mini Geo's 
 Over 6000 commit's since techa 2.0 (5 years of work)
 Rework some hitsphere (corgator/armflash) needs real testing may improve there chance of being dgunned
 Rework TllBind weapon. Green laser => Lighting weapon.
