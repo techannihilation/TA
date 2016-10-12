@@ -14,7 +14,6 @@ fighters = {
            "tllseaf",
            "tllshu",
 },
-},
 bombers = {
            "armblz",
            "corfiend",
