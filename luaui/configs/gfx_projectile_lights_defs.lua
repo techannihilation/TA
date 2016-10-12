@@ -61,6 +61,7 @@ local BlackList = {
    ["tllriot_tllriot_cannon"] = {0.48,0.48,0.9,0.90},
    ["tllhailstorm_tll_hailstorm"] = {0.8,0.6,0.2,1.20},
    ["krogtaar_cor_taar_rc"] = {0.98,0.28,0.3,0.60},
+   ["armlatnk_armlatnk_weapon"] = {0.08,0.08,0.98,0.45},
 
    }
    local Armtrails = {

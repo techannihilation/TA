@@ -109,6 +109,7 @@ AimTertiary(heading, pitch)
 
 FirePrimary()
 {
+	emit-sfx 1024 + 0 from lflare;
 	sleep 100;
 }
 
