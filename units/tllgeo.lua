@@ -2,8 +2,8 @@ return {
 	tllgeo = {
 		activatewhenbuilt = true,
 		buildangle = 8192,
-		buildcostenergy = 3200,
-		buildcostmetal = 1824,
+		buildcostenergy = 5200,
+		buildcostmetal = 1810,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,
