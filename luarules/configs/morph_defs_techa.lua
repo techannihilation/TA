@@ -801,6 +801,18 @@ local morphDefs = {
 		time = 60,
 		xp = 0.5,
 	},
+    armgeo_mini = {
+     		into = 'armgeo',
+		time = 30,
+	},
+    corgeo_mini = {
+     		into = 'corgeo',
+		time = 30,
+	},
+    tllgeo_mini = {
+     		into = 'tllgeo',
+		time = 30,
+	},
 }
 
 
