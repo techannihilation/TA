@@ -1,4 +1,4 @@
----------------------------------------- v2.42.4 ---------------------------------------
+---------------------------------------- v2.42.3 ---------------------------------------
 ----Improvements----
 Add TLL T3 Aircaft :) => Fighter, Gunship, Torpedo, Bomber
 Add Mini Geo's
@@ -24,7 +24,8 @@ Gorg T3.5 => decrease speed 0.95 => 0.8
 Tllmatamata Turtle => Increase HP 6200 => 10200. Increase damage/s 208 => 275. Range 800 => 750
 T1, T2, T3 Fighter Rebalance All damage. Actually vs Fighter, 120dmg for T1, 300 dmg for t2, 1600 dmg for t3. Vs bomber 240dmg for t1, 600 damage for t2, 3200 dmg for t3 (damage had decreased by 20% for T3. after test, we could decrease again.)
 T2 Transport increase HP 2300 => 7200 for TLL, 4200 => 7500 for Core, 1000 => 4000 for Arm.
-Balance Riot T3 TLL Kbot
+T3 bomber => Decrease damage. Need 3 bombers or 2 heavy bombers to explode an adv fusion, except cyclone. Cyclone 18000 => 12000 / shot.
+Tllblind T3 Riot bot => Decrease energy Cost. Decrease HP 38K => 33K, decrease range for canon 650 => 600, and damage 1200 => 900 (same than goliath). Increase damage for Green Laser /Lighting 240 => 500. Decrease range 500 => 450.
 
 ----Bugs---
 Fix T2 Aircraft Lab not providing the required tech level
