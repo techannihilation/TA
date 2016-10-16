@@ -6,6 +6,7 @@ Over 6000 commit's since techa 2.0 (5 years of work)
 Rework some hitsphere (corgator/armflash) needs real testing may improve there chance of being dgunned
 Rework TLLBind & TllBind weapon. Green laser => Lighting weapon.
 Add Adv Extractor for EcoCom
+Delete Goliath & Pitbull from Engeneerer vehicle. Add Triton form Arm Engeneerer.
 
 ---- Visual ----
 Remove default engine piece explosion
@@ -27,6 +28,9 @@ T1, T2, T3 Fighter Rebalance All damage. Actually vs Fighter, 120dmg for T1, 300
 T2 Transport increase HP 2300 => 7200 for TLL, 4200 => 7500 for Core, 1000 => 4000 for Arm.
 T3 bomber => Decrease damage. Need 3 bombers or 2 heavy bombers to explode an adv fusion, except cyclone. Cyclone 18000 => 12000 / shot.
 Tllblind T3 Riot bot => Decrease energy Cost. Decrease HP 38K => 33K, decrease range for canon 650 => 600, and damage 1200 => 900 (same than goliath). Increase damage for Green Laser /Lighting 240 => 500. Decrease range 500 => 450.
+Commander Jump rebalance. Assaut : Range 900 => 750. Star 1050 => 1000. Supreme 1250 => 1250. reload Assaut 40 star 20 => 30 Supreme 15 => 20.
+TLLJump : Increase Range Jump : 250 => 400
+
 
 ----Bugs---
 Fix T2 Aircraft Lab not providing the required tech level
