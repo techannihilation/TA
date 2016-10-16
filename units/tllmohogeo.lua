@@ -2,8 +2,8 @@ return {
 	tllmohogeo = {
 		activatewhenbuilt = true,
 		buildangle = 8192,
-		buildcostenergy = 29800,
-		buildcostmetal = 6200,
+		buildcostenergy = 30200,
+		buildcostmetal = 6810,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,

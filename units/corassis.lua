@@ -80,8 +80,7 @@ return {
 			[18] = "cordl",
 			[19] = "corcv",
 			[20] = "correap",
-			[21] = "corgol",
-			[22] = "corseal",
+			[21] = "corseal",
 		},
 		customparams = {
 			buildpic = "CORASSIS.png",

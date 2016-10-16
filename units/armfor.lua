@@ -2,8 +2,8 @@ return {
 	armfor = {
 		activatewhenbuilt = true,
 		buildangle = 0,
-		buildcostenergy = 145000,
-		buildcostmetal = 5100,
+		buildcostenergy = 144490,
+		buildcostmetal = 5090,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,

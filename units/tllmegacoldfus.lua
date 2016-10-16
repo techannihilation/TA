@@ -26,7 +26,7 @@ return {
 		losemitheight = 106,
 		makesmetal = 180,
 		mass = 89000,
-		maxdamage = 12000,
+		maxdamage = 28900,
 		maxslope = 10,
 		maxwaterdepth = 0,
 		metalstorage = 0,
