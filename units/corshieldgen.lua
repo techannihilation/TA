@@ -16,7 +16,7 @@ return {
 		category = "ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
 		corpse = "DEAD",
 		defaultmissiontype = "Standby",
-		description = "Safe Shield Kbot",
+		description = "Safe Plasma Deflector Kbot",
 		energymake = 15,
 		energystorage = 1500,
 		energyuse = 15,
