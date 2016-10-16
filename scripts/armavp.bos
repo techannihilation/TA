@@ -16,88 +16,86 @@ activatescr()
 {
 	if( TRUE )
 	{
-		move cylinder1 to x-axis [0.00000] now;
-		move cylinder1 to x-axis [10.12497] speed [88.35495];
-		move cylinder2 to x-axis [0.00000] now;
-		move cylinder2 to x-axis [-8.87497] speed [84.28329];
+		move cylinder1 to x-axis [0.000000] now;
+		move cylinder1 to x-axis [10.849988] speed [35.341980];
+		move cylinder2 to x-axis [0.000000] now;
+		move cylinder2 to x-axis [-10.349988] speed [33.713318];
 		sleep 307;
 	}
 	if( TRUE )
 	{
-		move cylinder3 to x-axis [10.37497] speed [91.55511];
-		move cylinder4 to x-axis [-9.37495] speed [88.21054];
+		move cylinder3 to x-axis [10.949988] speed [36.622046];
+		move cylinder4 to x-axis [-10.549982] speed [35.284216];
 		sleep 299;
 	}
 	if( TRUE )
 	{
-		move cylinder5 to x-axis [10.12498] speed [82.44678];
-		move cylinder6 to x-axis [-9.37500] speed [80.16718];
+		move cylinder5 to x-axis [10.849994] speed [32.978711];
+		move cylinder6 to x-axis [-10.550000] speed [32.066870];
 		sleep 329;
 	}
 	if( TRUE )
 	{
-		move cylinder5 to x-axis [10.24998] speed [0.31248];
-		move cylinder6 to x-axis [-8.87497] speed [1.25005];
-		turn cylinder5 to y-axis <96.76923> speed <241.93407>;
-		turn cylinder6 to y-axis <100.36813> speed <250.93407>;
+		move cylinder5 to x-axis [10.899994] speed [0.124994];
+		move cylinder6 to x-axis [-10.349988] speed [0.500018];
+		turn cylinder5 to y-axis <96.769231> speed <241.934066>;
+		turn cylinder6 to y-axis <100.368132> speed <250.934066>;
 		sleep 400;
 	}
 	if( TRUE )
 	{
-		turn nano2 to z-axis <117.02747> speed <182.28022>;
-		turn nano1 to z-axis <-117.02747> speed <182.28022>;
+		turn nano2 to z-axis <117.027473> speed <182.280220>;
+		turn nano1 to z-axis <-117.027473> speed <182.280220>;
 		sleep 642;
 	}
 	sleep 17;
-	return (0);
 }
 
 deactivatescr()
 {
 	if( TRUE )
 	{
-		move cylinder1 to x-axis [27.12497] now;
-		move cylinder2 to x-axis [-25.87497] now;
-		move cylinder3 to x-axis [27.37497] now;
-		move cylinder4 to x-axis [-26.37495] now;
-		move cylinder5 to x-axis [27.24998] now;
-		move cylinder6 to x-axis [-25.87497] now;
-		turn cylinder5 to y-axis <96.76923> now;
-		turn cylinder6 to y-axis <100.36813> now;
-		turn nano2 to z-axis <117.02747> now;
-		turn nano2 to z-axis <0.00000> speed <301.61538>;
-		turn nano1 to z-axis <-117.02747> now;
-		turn nano1 to z-axis <0.00000> speed <301.61538>;
+		move cylinder1 to x-axis [10.849988] now;
+		move cylinder2 to x-axis [-10.349988] now;
+		move cylinder3 to x-axis [10.949988] now;
+		move cylinder4 to x-axis [-10.549982] now;
+		move cylinder5 to x-axis [10.899994] now;
+		move cylinder6 to x-axis [-10.349988] now;
+		turn cylinder5 to y-axis <96.769231> now;
+		turn cylinder6 to y-axis <100.368132> now;
+		turn nano2 to z-axis <117.027473> now;
+		turn nano2 to z-axis <0.000000> speed <301.615385>;
+		turn nano1 to z-axis <-117.027473> now;
+		turn nano1 to z-axis <0.000000> speed <301.615385>;
 		sleep 388;
 	}
 	if( TRUE )
 	{
-		move cylinder5 to x-axis [27.12498] speed [0.21588];
-		move cylinder6 to x-axis [-26.37500] speed [0.86360];
-		turn cylinder5 to y-axis <0.00000> speed <167.13736>;
-		turn cylinder6 to y-axis <0.00000> speed <173.35714>;
+		move cylinder5 to x-axis [10.849994] speed [0.086353];
+		move cylinder6 to x-axis [-10.550000] speed [0.345441];
+		turn cylinder5 to y-axis <0.000000> speed <167.137363>;
+		turn cylinder6 to y-axis <0.000000> speed <173.357143>;
 		sleep 579;
 	}
 	if( TRUE )
 	{
-		move cylinder1 to x-axis [0.99995] speed [92.97154];
-		move cylinder2 to x-axis [0.87502] speed [95.19574];
+		move cylinder1 to x-axis [0.399982] speed [37.188617];
+		move cylinder2 to x-axis [0.350006] speed [38.078296];
 		sleep 281;
 	}
 	if( TRUE )
 	{
-		move cylinder3 to x-axis [0.74997] speed [98.97774];
-		move cylinder4 to x-axis [0.50003] speed [99.90709];
+		move cylinder3 to x-axis [0.299988] speed [39.591095];
+		move cylinder4 to x-axis [0.200012] speed [39.962836];
 		sleep 269;
 	}
 	if( TRUE )
 	{
-		move cylinder5 to x-axis [0.62498] speed [101.92310];
-		move cylinder6 to x-axis [0.87498] speed [104.80769];
+		move cylinder5 to x-axis [0.249994] speed [40.769238];
+		move cylinder6 to x-axis [0.349994] speed [41.923077];
 		sleep 260;
 	}
 	sleep 20;
-	return (0);
 }
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -125,7 +123,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		}
 		sleep sleeptime;
 	}
-	return (0);
 }
 
 OpenYard()
@@ -138,7 +135,6 @@ OpenYard()
 		set YARD_OPEN to 1;
 	}
 	set BUGGER_OFF to 0;
-	return (0);
 }
 
 CloseYard()
@@ -151,7 +147,6 @@ CloseYard()
 		set YARD_OPEN to 0;
 	}
 	set BUGGER_OFF to 0;
-	return (0);
 }
 
 Go()
@@ -170,7 +165,6 @@ Go()
 	call-script activatescr();
 	call-script OpenYard();
 	set INBUILDSTANCE to 1;
-	return (0);
 }
 
 Stop()
@@ -189,14 +183,12 @@ Stop()
 	cache nano1;
 	cache nano2;
 	cache pad;
-	return (0);
 }
 
 InitState()
 {
 	statechg_DesiredState = TRUE;
 	statechg_StateChanging = FALSE;
-	return (0);
 }
 
 RequestState(requestedstate, currentstate)
@@ -223,7 +215,6 @@ RequestState(requestedstate, currentstate)
 		}
 	}
 	statechg_StateChanging = FALSE;
-	return (0);
 }
 
 Create()
@@ -243,7 +234,6 @@ Create()
 	spray = base;
 	call-script InitState();
 	start-script SmokeUnit();
-	return (0);
 }
 
 QueryNanoPiece(piecenum)
@@ -257,20 +247,17 @@ QueryNanoPiece(piecenum)
 		piecenum = beam2;
 	}
 	spray = !spray;
-	return (0);
 }
 
 Demo()
 {
 	unitviewer = TRUE;
-	return (0);
 }
 
 Activate()
 {
 	signal SIG_ACTIVATE;
 	start-script RequestState(0);
-	return (0);
 }
 
 Deactivate()
@@ -283,31 +270,26 @@ Deactivate()
 	}
 	set-signal-mask 0;
 	start-script RequestState(1);
-	return (0);
 }
 
 StartBuilding()
 {
-	spin pad around y-axis speed <0.00000>;
-	return (0);
+	spin pad around y-axis speed <0.000000>;
 }
 
 StopBuilding()
 {
 	stop-spin pad around y-axis;
-	return (0);
 }
 
 QueryBuildInfo(piecenum)
 {
 	piecenum = pad;
-	return (0);
 }
 
 SweetSpot(piecenum)
 {
 	piecenum = base;
-	return (0);
 }
 
 Killed(severity, corpsetype)
@@ -316,39 +298,65 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 1;
 		explode base type NOHEATCLOUD;
+		explode beam1 type NOHEATCLOUD;
+		explode beam2 type NOHEATCLOUD;
+		explode cylinder1 type NOHEATCLOUD;
+		explode cylinder2 type NOHEATCLOUD;
+		explode cylinder3 type NOHEATCLOUD;
+		explode cylinder4 type NOHEATCLOUD;
+		explode cylinder5 type NOHEATCLOUD;
+		explode cylinder6 type NOHEATCLOUD;
+		explode nano1 type NOHEATCLOUD;
+		explode nano2 type NOHEATCLOUD;
+		explode pad type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
 		explode base type NOHEATCLOUD;
-		explode beam1 type FALL | BITMAP2 | NOHEATCLOUD;
-		explode beam2 type FALL | BITMAP3 | NOHEATCLOUD;
-		explode cylinder5 type SHATTER | BITMAP3 | NOHEATCLOUD;
-		explode cylinder6 type SHATTER | BITMAP4 | NOHEATCLOUD;
-		explode nano1 type FALL | BITMAP5 | NOHEATCLOUD;
-		explode nano2 type FALL | BITMAP1 | NOHEATCLOUD;
+		explode beam1 type NOHEATCLOUD | FALL;
+		explode beam2 type NOHEATCLOUD | FALL;
+		explode cylinder1 type NOHEATCLOUD;
+		explode cylinder2 type NOHEATCLOUD;
+		explode cylinder3 type NOHEATCLOUD;
+		explode cylinder4 type NOHEATCLOUD;
+		explode cylinder5 type NOHEATCLOUD | SHATTER;
+		explode cylinder6 type NOHEATCLOUD | SHATTER;
+		explode nano1 type NOHEATCLOUD | FALL;
+		explode nano2 type NOHEATCLOUD | FALL;
+		explode pad type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
 		explode base type NOHEATCLOUD;
-		explode beam1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2 | NOHEATCLOUD;
-		explode beam2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3 | NOHEATCLOUD;
-		explode cylinder5 type SHATTER | BITMAP3 | NOHEATCLOUD;
-		explode cylinder6 type SHATTER | BITMAP4 | NOHEATCLOUD;
-		explode nano1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5 | NOHEATCLOUD;
-		explode nano2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1 | NOHEATCLOUD;
+		explode beam1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode beam2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode cylinder1 type NOHEATCLOUD;
+		explode cylinder2 type NOHEATCLOUD;
+		explode cylinder3 type NOHEATCLOUD;
+		explode cylinder4 type NOHEATCLOUD;
+		explode cylinder5 type NOHEATCLOUD | SHATTER;
+		explode cylinder6 type NOHEATCLOUD | SHATTER;
+		explode nano1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode nano2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode pad type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type NOHEATCLOUD;
-	explode beam1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2 | NOHEATCLOUD;
-	explode beam2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3 | NOHEATCLOUD;
-	explode cylinder5 type SHATTER | EXPLODE_ON_HIT | BITMAP3 | NOHEATCLOUD;
-	explode cylinder6 type SHATTER | EXPLODE_ON_HIT | BITMAP4 | NOHEATCLOUD;
-	explode nano1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5 | NOHEATCLOUD;
-	explode nano2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1 | NOHEATCLOUD;
+	explode beam1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode beam2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode cylinder1 type NOHEATCLOUD;
+	explode cylinder2 type NOHEATCLOUD;
+	explode cylinder3 type NOHEATCLOUD;
+	explode cylinder4 type NOHEATCLOUD;
+	explode cylinder5 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode cylinder6 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode nano1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode nano2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode pad type NOHEATCLOUD;
 	return (corpsetype);
 }
