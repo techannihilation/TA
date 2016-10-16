@@ -8,7 +8,7 @@ from glob import glob
 import struct
 import cob_file
 
-LINEAR_SCALE = 65536
+LINEAR_SCALE = 163840
 ANGULAR_SCALE = 182
 
 OPCODES = {
