@@ -255,8 +255,8 @@ experimental_land = {
            "tllvaliant",
            -- _experimental_
            "armpraet",
-		   "monkeylord",
-		   "irritator",
+	   "monkeylord",
+	   "irritator",
 },
 flamethrowers = {
            "corpyro",
@@ -300,7 +300,7 @@ bomb_resistant = {
            "mercury",
            "screamer",
            "tllhmt",
-           "corsfus",
+           "--corsfus", --too op
 },
 crawlingbombs = {
            "armvader",
