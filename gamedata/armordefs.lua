@@ -260,10 +260,14 @@ experimental_land = {
 },
 flamethrowers = {
            "corpyro",
+	   "corpyrox",
+	   "corpyrox1",
+	   "cordem",
            "tllburner",
            "tlllft",
            "cormaw",
            "cormatch",
+	   "coreavalanche",
 },
 sniper_resistant = {
            "armzeus",
@@ -296,13 +300,15 @@ bomb_resistant = {
            "mercury",
            "screamer",
            "tllhmt",
-           "--corsfus",
+           "corsfus",
 },
 crawlingbombs = {
            "armvader",
            "corroach",
            "corsktl",
            "tllcrawlb",
+	   "coretnt",
+		
 },
 nanos = {
            "armnanotc",
