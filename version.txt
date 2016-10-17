@@ -1,5 +1,5 @@
 ---------------------------------------- v2.42.8 ---------------------------------------
-----Bugs----
+----Bugs---- 
 Fix broken scripts (nukes and some open/close animations).
 
 ----Balance----
