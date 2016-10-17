@@ -253,26 +253,6 @@ StopMoving()
 	turn lfoot to x-axis <0.000000> speed <150.000000>;
 }
 
-flames(Func_Var_1)
-{
-	while( get BUILD_PERCENT_LEFT )
-	{
-		sleep 500;
-	}
-	while( TRUE )
-	{
-		Func_Var_1 = 300 + Rand( 50, 1000 );
-		sleep Func_Var_1;
-		emit-sfx 1 from flare1;
-		sleep 150;
-		emit-sfx 1 from flare2;
-		sleep 100;
-		emit-sfx 1 from flare2;
-		sleep 150;
-		emit-sfx 1 from flare1;
-	}
-}
-
 Create()
 {
 	hide flare1;
@@ -280,7 +260,7 @@ Create()
 	gun_1 = torso;
 	restore_delay = 3000;
 	start-script StopMoving();
-	start-script flames();
+
 	start-script SmokeUnit();
 }
 

@@ -266,7 +266,6 @@ flamethrowers = {
            "cormatch",
 },
 sniper_resistant = {
-           "tllbind",
            "armzeus",
            "armzeus1",
            "corcan",
@@ -275,6 +274,7 @@ raider_resistant = {
            "tllthumper",
            "corsumo",
            "corsumo1",
+           "tllbind",
            "corgol",
            "corgol1",
            "armfboy",
