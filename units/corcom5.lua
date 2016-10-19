@@ -109,10 +109,8 @@ return {
 			[26] = "cordl",
 			[27] = "madsam",
 			[28] = "corfrt",
-			[29] = "corfast1",
-			[30] = "cbuilderlvl2",
-			[31] = "corupmex",
-			[32] = "corpcan",
+			[29] = "cbuilderlvl2",
+			[30] = "corupmex",
 		},
 		customparams = {
 			buildpic = "CORCOM.png",
