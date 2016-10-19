@@ -80,9 +80,9 @@ return {
 		upright = true,
 		workertime = 350,
 		buildoptions = {
-			[1] = "armsolar",
-			[2] = "armtide",
-			[3] = "armwin",
+			[1] = "armadvsol",
+			[2] = "armawin",
+			[3] = "armatidal",
 			[4] = "armgen",
 			[5] = "armgeo_mini",
 			[6] = "armmstor",
@@ -107,7 +107,6 @@ return {
 			[25] = "armdl",
 			[26] = "armrl",
 			[27] = "armfrt",
-			[28] = "abuilderlvl2",
 		},
 		customparams = {
 			buildpic = "ARMCOM.png",
