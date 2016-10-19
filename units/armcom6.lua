@@ -105,10 +105,8 @@ return {
 			[22] = "armatl",
 			[23] = "armflak",
 			[24] = "armfflak",
-			[25] = "armfark1",
-			[26] = "abuilderlvl2",
-			[27] = "corupmex",
-			[28] = "armpcan",
+			[25] = "abuilderlvl2",
+			[26] = "corupmex",
 		},
 		customparams = {
 			buildpic = "ARMCOM.png",
