@@ -106,7 +106,7 @@ return {
 			[24] = "corrl1",
 			[25] = "cordl",
 			[26] = "corfrt",
-			[27] = "corfast1",
+			[27] = "cbuilderlvl2",
 		},
 		customparams = {
 			buildpic = "CORCOM.png",
