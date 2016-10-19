@@ -80,9 +80,9 @@ return {
 		upright = true,
 		workertime = 350,
 		buildoptions = {
-			[1] = "corsolar",
-			[2] = "cortide",
-			[3] = "corwin",
+			[1] = "coradvsol",
+			[2] = "corawin",
+			[3] = "cortide",
 			[4] = "corgen",
 			[5] = "corgeo_mini",
 			[6] = "cormstor",
@@ -107,7 +107,6 @@ return {
 			[25] = "cordl",
 			[26] = "corrl",
 			[27] = "corfrt",
-			[28] = "cbuilderlvl2",
 		},
 		customparams = {
 			buildpic = "CORCOM.png",
