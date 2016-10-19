@@ -106,7 +106,7 @@ return {
 			[24] = "armdl",
 			[25] = "armrl1",
 			[26] = "armfrt",
-			[27] = "armfark1",
+			[27] = "abuilderlvl2",
 		},
 		customparams = {
 			buildpic = "ARMCOM.png",
