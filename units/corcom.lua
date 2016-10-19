@@ -116,7 +116,7 @@ return {
 				collisionvolumeoffsets = "0 0 0",
 				collisionvolumescales = "35 12 54",
 				collisionvolumetype = "cylY",
-				damage = 99999.90625,
+				damage = 100000,
 				description = "Commander Wreckage",
 				energy = 0,
 				featuredead = "8_HEAP",
@@ -134,7 +134,7 @@ return {
 			["8_heap"] = {
 				blocking = false,
 				category = "heaps",
-				damage = 24999.89844,
+				damage = 25000,
 				description = "Commander Debris",
 				energy = 0,
 				featurereclamate = "SMUDGE01",
