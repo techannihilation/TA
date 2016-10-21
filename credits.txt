@@ -1,10 +1,45 @@
 Tech Annihilation
 
 Core Hardened Metal Maker created by [void]finkky who gave full right to [BoS]nixtux of ownership of model, please ask permission before using this model
-Tll Musk, Snakeneck, Matamata, loggerhead, Leatherback, Hickatee, Softshell where crafted by [BoS]nixtux please ask permission before using theses model
+Tll Musk, Snakeneck, Matamata, loggerhead, Leatherback, Hickatee, Softshell where crafted by [BoS]nixtux please ask permission before using theses model. Units pictures of thses model are copyrighted by [BoS]nixtux also.
 
-butmaps strike.png and lightningball.png where crafted by [BoS]nixtux please ask permission before using theses textures
+Bitmaps strike.png and lightningball.png are copyright by [BoS]nixtux please ask permission before using theses textures.
 
+Unitpictures also owned by [BoS]nixtux
+tlldb
+tlldischarge
+tlldmc
+tllfgate
+tllflak
+tllfgate
+tllhailstorm
+tllmeegacoldfus
+tllmlrpc
+tlltelsatnk
+tllwmmohoconv
+aach
+aahp
+abroadside
+aaph
+abuilderlvl3
+acovertopcentre
+ccovertopcentre
+aexxec
+afusionplant
+ahermes
+amortor
+armcp
+armhorg
+armmex1
+cormex1
+armrech
+armpw1
+armrock1
+armrottweiler
+ashipyardlvl3
+cadvmstor
+coresy
+corfnanotc*
 ----------------------------------------------------------------------------------
 
 Credits :-Some Models are in this mod are from TA:Escalation i would like to thanks archdragon,
