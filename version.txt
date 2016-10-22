@@ -1,3 +1,15 @@
+---------------------------------------- v2.43.1 ---------------------------------------
+
+
+----Balance----
+Eco Commander: 1.1KM => 1.5KM & 24.5KE => 24KE 
+Battle Commander: 1.35KM & 12KE
+Assault Commander : ~ in function of eco or battle Commander : 8KM & 128KE
+Star Commander :  18kM & 280KE
+Supreme Commander: 64KM & 1ME
+Balance commander Wreckage : 1500 for Standar, 2500 for Eco or Battle Com, 6000 for Assault, 12000 for star, 24000 for Supreme.
+
+
 ---------------------------------------- v2.43.0 ---------------------------------------
 ----Bugs---- 
 Fix broken scripts (nukes and some open/close animations).
