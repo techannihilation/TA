@@ -5,6 +5,11 @@ Tll Musk, Snakeneck, Matamata, loggerhead, Leatherback, Hickatee, Softshell wher
 
 Bitmaps strike.png and lightningball.png are copyright by [BoS]nixtux please ask permission before using theses textures.
 
+Unitlogos for tll copyright [BoS]nixtux
+racelogogouraud.tga
+race32dk.tga
+race32lt.tga
+
 Unitpictures also owned by [BoS]nixtux
 tlldb
 tlldischarge
