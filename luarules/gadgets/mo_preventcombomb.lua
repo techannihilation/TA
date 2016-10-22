@@ -71,6 +71,7 @@ local DGUN = {
   [WeaponDefNames['corcom7_arm_disintegrator2'].id] = true,
   --The Lost Legacy
   [WeaponDefNames['tllcom_arm_disintegrator3'].id] = true,
+  [WeaponDefNames['tllcom1_arm_disintegrator'].id] = true,
   [WeaponDefNames['tllcom3_tll_disintegrator1'].id] = true,
   [WeaponDefNames['tllcom5_tll_disintegrator2'].id] = true,
   [WeaponDefNames['tllcom6_tll_disintegrator2'].id] = true,
@@ -94,6 +95,7 @@ local COMMANDER = {
   [UnitDefNames["armcom7"].id] = true,
   --The lost legacy
   [UnitDefNames["tllcom"].id] = true,
+  [UnitDefNames["tllcom1"].id] = true,
   [UnitDefNames["tllcom3"].id] = true,
   [UnitDefNames["tllcom5"].id] = true,
   [UnitDefNames["tllcom6"].id] = true,

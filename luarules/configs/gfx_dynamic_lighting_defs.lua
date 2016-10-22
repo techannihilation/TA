@@ -68,6 +68,7 @@ local copyLightDefs = {
 		["corcom6_arm_disintegrator2"] = "arm_disintegrator",
 		["corcom7_arm_disintegrator2"] = "arm_disintegrator",
 		["tllcom_arm_disintegrator3" ] = "arm_disintegrator",
+		["tllcom1_tll_disintegrator"] = "arm_disintegrator",
 		["tllcom3_tll_disintegrator1"] = "arm_disintegrator",
 		["tllcom5_tll_disintegrator2"] = "arm_disintegrator",
 		["tllcom6_tll_disintegrator2"] = "arm_disintegrator",

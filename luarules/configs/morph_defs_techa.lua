@@ -90,6 +90,7 @@ local morphDefs = {
 		time = 120,
 	},
     tllcom = {
+	     {
 		into = 'tllcom3',
 		time = 30,
 		
@@ -97,7 +98,16 @@ local morphDefs = {
 		--energy = 0,
 		--Free For Xmas
 		
-	},
+	    },
+            {
+		into = 'tllcom1',
+		time = 30,
+		
+		--metal = 0,
+		--energy = 0,
+		--Free For Xmas
+           },
+	 },
     tllcom3 = {
 		into = 'tllcom5',
 		time = 60,

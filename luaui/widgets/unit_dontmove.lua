@@ -49,6 +49,7 @@ local unitArray = {
 
 --The lost legacy
   "tllcom",
+  "tllcom1",
   "tllcom3",
   "tllcom5",
   "tllcom6",

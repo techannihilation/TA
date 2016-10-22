@@ -41,6 +41,7 @@ local isCommander = {
 
 --The lost legacy
   [UnitDefNames["tllcom"].id] = true,
+  [UnitDefNames["tllcom1"].id] = true,
   [UnitDefNames["tllcom3"].id] = true,
   [UnitDefNames["tllcom5"].id] = true,
   [UnitDefNames["tllcom6"].id] = true,
