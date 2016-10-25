@@ -1,7 +1,7 @@
 return {
 	tllupgweb = {
 		buildangle = 4768,
-		buildcostenergy = 4200,
+		buildcostenergy = 2400,
 		buildcostmetal = 360,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "tllupgweb_aoplane.dds",
 		buildpic = "tllweb.png",
-		buildtime = 12000,
+		buildtime = 7500,
 		canattack = true,
 		canguard = true,
 		canstop = 1,
@@ -154,7 +154,7 @@ return {
 				weapontype = "LightningCannon",
 				weaponvelocity = 860,
 				damage = {
-					commanders = 375,
+					commanders = 325,
 					default = 275,
 					subs = 5,
 				},
