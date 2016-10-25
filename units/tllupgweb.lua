@@ -1,7 +1,7 @@
 return {
 	tllupgweb = {
 		buildangle = 4768,
-		buildcostenergy = 2400,
+		buildcostenergy = 3200,
 		buildcostmetal = 360,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
