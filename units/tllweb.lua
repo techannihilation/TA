@@ -151,8 +151,8 @@ return {
 				weapontype = "LightningCannon",
 				weaponvelocity = 860,
 				damage = {
-					commanders = 300,
-					default = 250,
+					commanders = 280,
+					default = 240,
 					subs = 5,
 				},
 			},
