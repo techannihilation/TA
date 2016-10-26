@@ -106,10 +106,9 @@ return {
 			[24] = "tlllmt1",
 			[25] = "tlllmtns",
 			[26] = "tllshoretorp",
-			[27] = "tllsolarns",
-			[28] = "tllhltns",
-			[29] = "tllck",
-			[30] = "tllfireraiser",
+			[27] = "tllck",
+			[28] = "tllfireraiser",
+			[29] = "tllhplasma",
 		},
 		customparams = {
 			buildpic = "tllcom.png",
