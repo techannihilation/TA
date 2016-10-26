@@ -33,7 +33,7 @@ return {
 		maxslope = 18,
 		maxvelocity = 1.9,
 		maxwaterdepth = 18,
-		metalmake = 0.15,
+		metalmake = 0.5,
 		metalstorage = 0,
 		mobilestandorders = 1,
 		movementclass = "ATANK3",
