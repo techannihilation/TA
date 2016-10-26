@@ -104,7 +104,7 @@ return {
 			[24] = "tlllmt",
 			[25] = "tlllmtns",
 			[26] = "tllshoretorp",
-			[27] = "tllsolarns",
+			[27] = "tllhtca",
 		},
 		customparams = {
 			buildpic = "TLLCOM.png",
