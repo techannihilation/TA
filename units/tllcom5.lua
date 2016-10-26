@@ -109,9 +109,8 @@ return {
 			[26] = "tllnssam",
 			[27] = "tllack",
 			[28] = "tllburner",
-			[29] = "tllhtca",
-			[30] = "corupmex",
-			[31] = "tllpcan",
+			[29] = "corupmex",
+			[30] = "tllpcan",
 		},
 		customparams = {
 			buildpic = "TLLCOM.png",
