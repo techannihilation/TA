@@ -112,6 +112,7 @@ unclassed_air = {
            "corrag",
            "armmin",
            "cormin",
+           "tllhtca",
 },
 --### SEA ###
 ships = {
