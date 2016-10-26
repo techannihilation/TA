@@ -87,7 +87,7 @@ return {
 			[6] = "tllestor",
 			[7] = "tlluwmstorage",
 			[8] = "tlluwestorage",
-			[9] = "tllamex",
+			[9] = "tllmex1",
 			[11] = "tllmm",
 			[12] = "tllwmconv",
 			[13] = "tlllab",
@@ -104,7 +104,6 @@ return {
 			[24] = "tlllmt",
 			[25] = "tlllmtns",
 			[26] = "tllshoretorp",
-			[27] = "tllhtca",
 		},
 		customparams = {
 			buildpic = "TLLCOM.png",
