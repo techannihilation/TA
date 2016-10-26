@@ -1,8 +1,8 @@
 return {
 	tllupgweb = {
 		buildangle = 4768,
-		buildcostenergy = 3200,
-		buildcostmetal = 360,
+		buildcostenergy = 3100,
+		buildcostmetal = 390,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 4,
@@ -44,7 +44,7 @@ return {
 		selfdestructas = "MEDIUM_BUILDING",
 		shootme = 1,
 		side = "TLL",
-		sightdistance = 550,
+		sightdistance = 500,
 		standingfireorder = 2,
 		unitname = "tllweb",
 		unitnumber = 80802,
