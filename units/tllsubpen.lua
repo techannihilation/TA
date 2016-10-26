@@ -59,6 +59,7 @@ return {
 			[8] = "tllamphibot",
 			[9] = "tllsalamander",
 			[10] = "tllaak",
+			[11] = "tllleatherback",
 		},
 		featuredefs = {
 			dead = {
