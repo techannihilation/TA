@@ -1,8 +1,8 @@
 return {
 	tllap = {
 		activatewhenbuilt = false,
-		buildcostenergy = 1547,
-		buildcostmetal = 939,
+		buildcostenergy = 1540,
+		buildcostmetal = 940,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 10,
@@ -51,11 +51,12 @@ return {
 		yardmap = "cccooco	cccccco occccco	occccco	occccco occccco	ocoooco",
 		buildoptions = {
 			[1] = "tllca",
-			[2] = "tllprob",
-			[3] = "tllfight",
-			[4] = "tllbomber",
-			[5] = "tlltplane",
-			[6] = "tllcop1",
+			[2] = "tllhtca",
+			[3] = "tllprob",
+			[4] = "tllfight",
+			[5] = "tllbomber",
+			[6] = "tlltplane",
+			[7] = "tllcop1",
 		},
 		featuredefs = {
 			dead = {
