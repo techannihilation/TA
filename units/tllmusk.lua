@@ -2,8 +2,8 @@ return {
 	tllmusk = {
 		acceleration = 0.068,
 		brakerate = 0.12,
-		buildcostenergy = 23000,
-		buildcostmetal = 1450,
+		buildcostenergy = 25070,
+		buildcostmetal = 2710,
 		builddistance = 225,
 		builder = true,
 		buildtime = 14000,

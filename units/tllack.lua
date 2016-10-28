@@ -2,8 +2,8 @@ return {
 	tllack = {
 		acceleration = 1.92,
 		brakerate = 7.2,
-		buildcostenergy = 25013,
-		buildcostmetal = 1333,
+		buildcostenergy = 25010,
+		buildcostmetal = 2690,
 		builddistance = 225,
 		builder = true,
 		buildtime = 15002,
