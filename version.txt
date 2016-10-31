@@ -1,5 +1,12 @@
 ---------------------------------------- v2.43.1 ---------------------------------------
 
+----Improvments----
+Add adv combat cons for core & arm combat commander
+Add adv eco cons air for tll air lab
+Add adv t1 extractor for tll eco commander and adv eco cons air.
+Remplace adv eco cons by adv combat cons
+Delete helper from commander
+
 
 ----Balance----
 Eco Commander: 1.1KM => 1.5KM & 24.5KE => 24KE 
@@ -8,6 +15,11 @@ Assault Commander : ~ in function of eco or battle Commander : 8KM & 128KE
 Star Commander :  18kM & 280KE
 Supreme Commander: 64KM & 1ME
 Balance commander Wreckage : 1500 for Standar, 2500 for Eco or Battle Com, 6000 for Assault, 12000 for star, 24000 for Supreme.
+Add tllplasma hover for tll combat com
+Decrese metalcost for eco adv cons
+Increase metalcost for tllplamahover
+Decrease sight for scar and brutus
+Add torpedo turtle in sub lab tll
 
 
 ---------------------------------------- v2.43.0 ---------------------------------------
