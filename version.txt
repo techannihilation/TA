@@ -1,11 +1,13 @@
 ---------------------------------------- v2.43.1 ---------------------------------------
 
 ----Improvments----
-Add adv combat cons for core & arm combat commander
 Add adv eco cons air for tll air lab
 Add adv t1 extractor for tll eco commander and adv eco cons air.
-Remplace adv eco cons by adv combat cons
-Delete helper from commander
+Delete helper from commander and remplace it by Ditawn (Adv Air Cons)
+Remplace all Ditawn stuffs by helper stuffs
+Add to TLL Repair Bot (T2) All combat Stuffs and transform it into Combat enginereer.
+Delete all combat stuff from T2 Cons.
+Add Tll Enginereer for All Lab except Air.
 
 
 ----Balance----
@@ -20,6 +22,11 @@ Decrese metalcost for eco adv cons
 Increase metalcost for tllplamahover
 Decrease sight for scar and brutus
 Add torpedo turtle in sub lab tll
+Balance Gargoyle : Less HP 12k => 9.5K. Decrease Cost 2800M => 2600. Decrease Damage for red laser.
+Command Vehicle (t3 arm) => Add Amphibious
+Decrease metal & energy for Light Fusion.
+Balance all timebuild for fusion. (decrease time)
+decrease MetalMake for Mini Geo TLL 3.5 => 2
 
 
 ---------------------------------------- v2.43.0 ---------------------------------------
