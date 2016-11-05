@@ -26,7 +26,8 @@ Balance Gargoyle : Less HP 12k => 9.5K. Decrease Cost 2800M => 2600. Decrease Da
 Command Vehicle (t3 arm) => Add Amphibious
 Decrease metal & energy for Light Fusion.
 Balance all timebuild for fusion. (decrease time)
-decrease MetalMake for Mini Geo TLL 3.5 => 2
+Decrease MetalMake for Mini Geo TLL 3.5 => 2
+Decrease MetalMake for Geo TLL 7 => 6
 
 
 ---------------------------------------- v2.43.0 ---------------------------------------
