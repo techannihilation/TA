@@ -2,7 +2,7 @@ return {
 	armgen = {
 		activatewhenbuilt = true,
 		buildangle = 0,
-		buildcostenergy = 8267,
+		buildcostenergy = 5290,
 		buildcostmetal = 390,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
@@ -33,7 +33,7 @@ return {
 		radaremitheight = 32,
 		selfdestructas = "LIGHTSHIPBLAST",
 		side = "ARM",
-		sightdistance = 550,
+		sightdistance = 250,
 		tedclass = "ENERGY",
 		unitname = "armgen",
 		unitnumber = 2415,

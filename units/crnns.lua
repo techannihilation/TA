@@ -2,8 +2,8 @@ return {
 	crnns = {
 		activatewhenbuilt = true,
 		buildangle = 16000,
-		buildcostenergy = 154667,
-		buildcostmetal = 18133,
+		buildcostenergy = 154600,
+		buildcostmetal = 18100,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 11,
