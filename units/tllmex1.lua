@@ -35,7 +35,7 @@ return {
 		name = "Metal Extractor",
 		noautofire = false,
 		nochasecategory = "ALL",
-		objectname = "tllmex",
+		objectname = "tllmex1",
 		onoffable = true,
 		radaremitheight = 70,
 		script = "tllmex.cob",
