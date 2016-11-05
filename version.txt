@@ -1,6 +1,7 @@
----------------------------------------- v2.43.1 ---------------------------------------
+---------------------------------------- v2.44.0 ---------------------------------------
 
 ----Improvments----
+Fix tll faction logo
 Add adv eco cons air for tll air lab
 Add adv t1 extractor for tll eco commander and adv eco cons air.
 Delete helper from commander and remplace it by Ditawn (Adv Air Cons)
