@@ -6,7 +6,7 @@ return {
 		autoheal = 8,
 		brakerate = 1.155,
 		buildcostenergy = 27000,
-		buildcostmetal = 2750,
+		buildcostmetal = 3250,
 		builddistance = 147,
 		builder = true,
 		buildpic = "CORCOM.png",

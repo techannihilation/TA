@@ -6,7 +6,7 @@ return {
 		autoheal = 9,
 		brakerate = 1.17,
 		buildcostenergy = 27000,
-		buildcostmetal = 2750,
+		buildcostmetal = 3250,
 		builddistance = 152,
 		builder = true,
 		buildpic = "ARMCOM.png",
