@@ -145,9 +145,9 @@ return {
 				weapontype = "Flame",
 				weaponvelocity = 265,
 				damage = {
-					default = 18,
-					flamethrowers = 6,
-					raider_resistant = 8,
+					default = 20,
+					flamethrowers = 8,
+					raider_resistant = 10,
 					subs = 5,
 				},
 			},
