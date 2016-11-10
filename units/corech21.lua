@@ -1,8 +1,8 @@
 return {
 	corech21 = {
 		activatewhenbuilt = true,
-		buildcostenergy = 533333,
-		buildcostmetal = 32000,
+		buildcostenergy = 570000,
+		buildcostmetal = 31640,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 10,

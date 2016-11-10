@@ -1,7 +1,7 @@
 return {
 	corech3 = {
 		activatewhenbuilt = true,
-		buildcostenergy = 6827,
+		buildcostenergy = 7000,
 		buildcostmetal = 640,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizey = 10,
 		buildinggrounddecaltype = "corech3_aoplane.dds",
 		buildpic = "corech3.png",
-		buildtime = 5000,
+		buildtime = 7500,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		collisionvolumeoffsets = "-1 -9 -5",
 		collisionvolumescales = "64 70 102",
