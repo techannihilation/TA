@@ -80,9 +80,9 @@ return {
 		workertime = 350,
 		buildoptions = {
 			[1] = "tlladvsolar",
-			[2] = "tllatidal",
-			[3] = "tllwindtrap",
-			[4] = "tllgeo_mini",
+			[2] = "tllwindtrap",
+			[3] = "tllatidal",
+			[4] = "tllgeo",
 			[5] = "tllmstor",
 			[6] = "tllestor",
 			[7] = "tlluwmstorage",

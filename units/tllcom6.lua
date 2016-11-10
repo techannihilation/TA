@@ -83,7 +83,7 @@ return {
 		buildoptions = {
 			[1] = "tllmedfusion",
 			[2] = "tlluwfusion",
-			[3] = "tllatidal",
+			[3] = "tllmohogeo",
 			[4] = "tllammaker",
 			[5] = "tllwmmohoconv",
 			[6] = "tllemstor",
