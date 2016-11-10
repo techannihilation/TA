@@ -65,6 +65,9 @@ return {
 			[13] = "armrock1",
 			[14] = "armroy",
 			[15] = "armshock1",
+			[16] = "coredauber",
+			[17] = "corgol1",
+			[18] = "corkrog",
 		},
 		nanocolor = {
 			[1] = 0.08,
