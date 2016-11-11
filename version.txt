@@ -1,3 +1,27 @@
+---------------------------------------- v2.44.1 ---------------------------------------
+----Improvments----
+Hover & Sea Cons => change menu panel for unit choice 
+All Commander => Add Geo (mini, normal & special for Star & Supreme)
+
+
+----Balance----
+CorDauber => Increase Metal (650 => 900) Cost & Speed (1.3 => 1.5)
+Tll Engineerer => Decrease Speed 3 => 2
+Corpyrox => Increase damage 360 ==> 400 /s
+Decrease Speed 1.3 => 1.2
+Commander Production (Energy & Metal): 
+-Arm / Core
+eco : 250 5
+assault : 500 10
+star : 1000 15
+supreme : 1500 20
+-Tll
+eco : 100 7.5
+assault : 500 10
+star : 1000 15
+supreme : 1500 20
+
+
 ---------------------------------------- v2.44.0 ---------------------------------------
 
 ----Improvments----
