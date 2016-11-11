@@ -176,10 +176,8 @@ return {
 				impulsefactor = 0.123,
 				name = "CruiserCannon",
 				noselfdamage = true,
-				range = 1050,
+				range = 760,
 				reloadtime = 1,
-				rgbcolor = "1 0.95 0.9",
-				size = 0.94,
 				soundhitdry = "xplomed2",
 				soundstart = "cannhvy1",
 				targetmoveerror = 0.1,
@@ -187,9 +185,9 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 550,
 				damage = {
-					default = 150,
+					default = 200,
 					subs = 5,
-				},
+},
 			},
 		},
 		weapons = {
