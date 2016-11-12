@@ -1,5 +1,5 @@
 ---------------------------------------- v2.44.1 ---------------------------------------
-----Improvments----
+----Improvments---- 
 Hover & Sea Cons => change menu panel for unit choice 
 All Commander => Add Geo (mini, normal & special for Star & Supreme)
 
