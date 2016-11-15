@@ -1,10 +1,10 @@
 return {
 	tlltrid = {
 		buildangle = 32768,
-		buildcostenergy = 28000,
-		buildcostmetal = 2920,
+		buildcostenergy = 37000,
+		buildcostmetal = 4750,
 		builder = false,
-		buildtime = 42010,
+		buildtime = 49010,
 		canattack = true,
 		canguard = true,
 		canstop = 1,
@@ -23,7 +23,7 @@ return {
 		idletime = 1800,
 		losemitheight = 42,
 		mass = 2920,
-		maxdamage = 14200,
+		maxdamage = 13200,
 		maxslope = 14,
 		minwaterdepth = 5,
 		name = "Trident",
