@@ -1,0 +1,135 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, top, emit;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Go()
+{
+	move top to y-axis [0.000000] speed [6.000000];
+	move emit to y-axis [0.000000] speed [6.000000];
+	Static_Var_3 = 1;
+}
+
+Stop()
+{
+	move top to y-axis [-12.900000] speed [6.000000];
+	move emit to y-axis [-6.450000] speed [6.000000];
+	Static_Var_3 = 0;
+}
+
+MMStatus(Func_Var_1)
+{
+	Static_Var_2 = Func_Var_1;
+}
+
+ImAMetalMaker()
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 150;
+	}
+	Static_Var_1 = -1;
+	while( TRUE )
+	{
+		if( Static_Var_2 == 1 )
+		{
+			if( Static_Var_1 != 1 )
+			{
+				call-script Go();
+				Static_Var_1 = 1;
+			}
+		}
+		else if( Static_Var_1 != 0 )
+		{
+			call-script Stop();
+			Static_Var_1 = 0;
+		}
+		sleep 1000;
+	}
+}
+
+EffectWatch()
+{
+	while( TRUE )
+	{
+		while( Static_Var_3 == 1 )
+		{
+			emit-sfx 1024 + 0 from emit;
+			sleep 160;
+		}
+		sleep 333;
+	}
+}
+
+Create()
+{
+	Static_Var_3 = 0;
+	start-script SmokeUnit();
+	start-script ImAMetalMaker();
+	start-script EffectWatch();
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type NOHEATCLOUD;
+		explode top type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type NOHEATCLOUD;
+		explode top type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type NOHEATCLOUD;
+		explode top type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type NOHEATCLOUD;
+	explode top type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	return (corpsetype);
+}
