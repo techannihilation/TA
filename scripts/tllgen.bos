@@ -37,8 +37,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Go()
 {
-	move top to y-axis [0.000000] speed [6.000000];
-	move emit to y-axis [0.000000] speed [6.000000];
 	Static_Var_3 = 1;
 }
 
@@ -87,7 +85,24 @@ EffectWatch()
 		while( Static_Var_3 == 1 )
 		{
 			emit-sfx 1024 + 0 from emit;
-			sleep 160;
+			sleep 33;
+		}
+		sleep 333;
+	}
+}
+
+MovementWatch()
+{
+	while( TRUE )
+	{
+		while( Static_Var_3 == 1 )
+		{
+			move top to y-axis [0.000000] speed [6.000000];
+			move emit to y-axis [0.000000] speed [6.000000];
+			sleep 2000;
+			move top to y-axis [-12.900000] speed [6.000000];
+			move emit to y-axis [-12.450000] speed [6.000000];
+			sleep 2000;
 		}
 		sleep 333;
 	}
@@ -99,6 +114,7 @@ Create()
 	start-script SmokeUnit();
 	start-script ImAMetalMaker();
 	start-script EffectWatch();
+	start-script MovementWatch();
 }
 
 SweetSpot(piecenum)
