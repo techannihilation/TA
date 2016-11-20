@@ -30,7 +30,6 @@ return {
 		maxdamage = 800,
 		maxslope = 20,
 		maxwaterdepth = 0,
-		makesmetal = 3,
 		metalstorage = 50,
 		maxwaterdepth = 9999,
 		name = "Geothermal Forge",

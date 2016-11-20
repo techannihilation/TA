@@ -8,7 +8,7 @@ General = {
     {"Menus", title=true},
     {"shift + esc",         "Quit menu"},
     {"f11",                 "Widget list"},
-    {"ctrl + f11",          "Widget teak mode"},  
+    {"ctrl + f11",          "Widget tweak mode"},  
     {"h",                   "Share units / resources"},
     {blankLine=true},
     {"Camera movement", title=true},
