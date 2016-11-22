@@ -1,7 +1,7 @@
 return {
 	tllsy = {
-		buildcostenergy = 843,
-		buildcostmetal = 736,
+		buildcostenergy = 1220,
+		buildcostmetal = 735,
 		builder = true,
 		buildtime = 6090,
 		canmove = true,
@@ -43,13 +43,12 @@ return {
 		yardmap = "wCCCCCCw CCCCCCCC wCCCCCCC wCCCCCCC wCCCCCCC wCCCCCCC CCCCCCCC wCCCCCCw",
 		buildoptions = {
 			[1] = "tllcs",
-			[2] = "tllcsub",
-			[3] = "tllsr",
-			[4] = "tllplunger",
-			[5] = "tllotter",
-			[6] = "tllboat2",
-			[7] = "tllviolator",
-			[8] = "tllambassador",
+			[2] = "tllsr",
+			[3] = "tllplunger",
+			[4] = "tllotter",
+			[5] = "tllboat2",
+			[6] = "tllviolator",
+			[7] = "tllambassador",
 		},
 		customparams = {
 			providetech = "T1 Factory",

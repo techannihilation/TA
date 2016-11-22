@@ -1,6 +1,6 @@
 return {
 	tllasy = {
-		buildcostenergy = 37589,
+		buildcostenergy = 37590,
 		buildcostmetal = 4480,
 		builder = true,
 		buildtime = 13590,
@@ -44,7 +44,7 @@ return {
 		yardmap = "wCCCCCCCw wCCCCCCCw wCCCCCCCw wCCCCCCCw wCCCCCCCw wCCCCCCCw wCCCCCCCw wCCCCCCCw wCCCCCCCw",
 		buildoptions = {
 			[1] = "tllacs",
-			[2] = "tllarchnano",
+			[2] = "tllcsub",
 			[3] = "tllmanta",
 			[4] = "tllasship",
 			[5] = "tllsting",
