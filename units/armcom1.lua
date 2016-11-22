@@ -7,7 +7,7 @@ return {
 		brakerate = 1.125,
 		buildcostenergy = 39000,
 		buildcostmetal = 3000,
-		builddistance = 137,
+		builddistance = 212,
 		builder = true,
 		buildpic = "ARMCOM.png",
 		buildtime = 100000,
