@@ -52,6 +52,7 @@ local convertCapacities = {
 		[UnitDefNames.tllwmmohoconv.id]  = { c = 1000, e = (T5) }, -- Underwater
 		--[UnitDefNames.____.id]  = { c = 10000, e = (T6) }, -- Super
 
+		[UnitDefNames.tllgen.id]  = { c = UnitDefNames.tllgen.energyMake, e = (ACZ) }, -- Corgen Combo fusion
     }
 
 
