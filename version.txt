@@ -1,3 +1,16 @@
+---------------------------------------- v2.44.2 ---------------------------------------
+----Improvments---- 
+Remplace TLL Sub Cons into Engineerer (from T2 Sea Lab)
+abuilderlvl2.lua & cbuilderlvl2.lua => Delete Goliath2 & Bulldog2
+Add TLL Driller
+Increase Range Build for Eco Commanders (135 => 210)
+
+----Balance----
+TLLRID (T2 energy weapon TLL Tower) => MetalCost (2.5=>5K M) 
+Banisher => Decrease Commander damage 750 => 500 (defautlt : 1000)
+MiniGeo TLL => MetalMakes 3 => 2
+
+
 ---------------------------------------- v2.44.1 ---------------------------------------
 ----Improvments---- 
 Hover & Sea Cons => change menu panel for unit choice 
