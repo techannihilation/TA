@@ -81,7 +81,7 @@ return {
 		upright = true,
 		workertime = 550,
 		buildoptions = {
-			[1] = "tlladvsolar",
+			[1] = "tllgen",
 			[2] = "tllatidal",
 			[3] = "tllgeo",
 			[4] = "tllmstor",
