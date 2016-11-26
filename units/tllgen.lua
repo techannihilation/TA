@@ -39,7 +39,7 @@ return {
 		tedclass = "ENERGY",
 		unitname = "tllgen",
 		unitnumber = 2415,
-		usebuildinggrounddecal = true,
+		--usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "ooo ooo ooo",
 		customparams = {
