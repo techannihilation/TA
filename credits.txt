@@ -13,7 +13,11 @@ racelogogouraud.tga
 race32dk.tga
 race32lt.tga
 
+Sidepic
+tll.bmp
+
 Unitpictures also owned by [BoS]nixtux
+All new tll t1 unitpics
 tlldb
 tlldischarge
 tlldmc
