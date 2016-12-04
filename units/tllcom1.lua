@@ -49,7 +49,7 @@ return {
 		maxslope = 20,
 		maxvelocity = 1.1,
 		maxwaterdepth = 35,
-		metalmake = 7.5,
+		metalmake = 7,
 		metalstorage = 5000,
 		mincloakdistance = 50,
 		mobilestandorders = 1,
