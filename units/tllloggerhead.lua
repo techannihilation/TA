@@ -27,7 +27,7 @@ return {
 		mass = 790,
 		maxdamage = 3380,
 		maxslope = 32,
-		maxvelocity = 0.9,
+		maxvelocity = 0.75,
 		maxwaterdepth = 200,
 		mobilestandorders = 1,
 		movementclass = "AMPTBOT",
