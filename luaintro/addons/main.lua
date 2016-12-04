@@ -19,6 +19,9 @@ local infoMessage = {}
 
 --table.insert(infoMessage, "Spring Engine version 101.0.1-201 or above is needed for this version")
 
+	table.insert(infoMessage, "Merry Xmas From TECHA 1st morph is free")
+
+
 if Spring.GetModOptions() then 
 	if Spring.GetModOptions().deathmode then
 		if Spring.GetModOptions().deathmode == "com" then
