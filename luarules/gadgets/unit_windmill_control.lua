@@ -58,7 +58,7 @@ local pairs = pairs
 -------------------------------------------------------------------------------------
 
 function gadget:GameFrame(n)
-  if (((n+16) % 32) < 0.1) then
+  if (((n+15) % 30) < 0.1) then
   local _, _, _, strength, x, _, z = GetWind()
   local heading = GetHeadingFromVector(-x, -z)
     for unitID, scriptIDs in pairs(windmills) do
