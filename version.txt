@@ -1,3 +1,17 @@
+---------------------------------------- v2.44.5 ---------------------------------------
+----Improvments----
+
+----Balance----
+Nerf Hero => -25% Damage with primary weapon.
+Tesla Tank => Delete metalcost per shot
+Tesla Tower v0 & v1 => Decrease Damage 240 => 220
+All Turtle speed fixed at 0.75.
+T1.5 TLL AIR Cons => Decrease MetalCost 1150 => 950
+
+---------------------------------------- v2.44.4 ---------------------------------------
+----Improvments----
+Add Free morph for Eco Commander or Battle Commander.
+
 ---------------------------------------- v2.44.3 ---------------------------------------
 ----Improvments----
 Remplace TLL Sub Cons into Engineerer (from T2 Sea Lab)
