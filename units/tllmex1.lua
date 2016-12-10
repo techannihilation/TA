@@ -2,8 +2,8 @@ return {
 	tllmex1 = {
 		activatewhenbuilt = true,
 		buildangle = 8192,
-		buildcostenergy = 4320,
-		buildcostmetal = 450,
+		buildcostenergy = 4020,
+		buildcostmetal = 425,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 5,
