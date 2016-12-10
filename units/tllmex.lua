@@ -34,7 +34,7 @@ return {
 		name = "Metal Extractor",
 		noautofire = false,
 		nochasecategory = "ALL",
-		objectname = "TLLMEX",
+		objectname = "TLLMEX1",
 		onoffable = true,
 		radaremitheight = 60,
 		selfdestructas = "SMALL_BUILDING",
