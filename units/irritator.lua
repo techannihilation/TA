@@ -181,7 +181,7 @@ return {
 				model = "vpulse",
 				name = "Vpulse Rocket",
 				noselfdamage = true,
-				range = 1200,
+				range = 1050,
 				reloadtime = 0.5,
 				smoketrail = false,
 				soundhitdry = "vpulsehit",
