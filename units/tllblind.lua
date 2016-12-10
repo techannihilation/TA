@@ -127,8 +127,7 @@ return {
 			},
 		},
 		weapondefs = {
-			blind_laser = {
-				tllblind_tesla = {
+			tllblind_tesla = {
 				areaofeffect = 8,
 				beamttl = 10,
 				craterboost = 0,
