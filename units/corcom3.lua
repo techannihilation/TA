@@ -83,7 +83,7 @@ return {
 			[1] = "corsolar",
 			[2] = "cortide",
 			[3] = "corwin",
-			[4] = "corgeo",
+			[4] = "corgeo_mini",
 			[5] = "cormstor",
 			[6] = "corestor",
 			[7] = "coruwms",
