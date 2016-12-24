@@ -31,6 +31,26 @@ local options={
     	type="section",
     },
     {
+		key     = 'randomseed',
+		name    = 'Horse Random Seed',
+		desc    = 'Horse',
+		type    = 'number',
+		section = 'ta_modes',
+		def     = 1,
+		min     = 1,
+		max     = 999,
+		step    = 1,
+	},
+	{
+		key     = 'horsetastic',
+		name    = 'Horse Mutation',
+		desc    = 'Horse',
+		type    = 'bool',
+		section = 'ta_modes',
+		def     = false,
+	},
+
+    {
 		key    = "mo_preventcombomb",
 		name   = "Prevent Combombs",
 		desc   = "Commanders survive DGuns and other commanders explosions\nAutoHost USage :- mo_preventcombomb",
