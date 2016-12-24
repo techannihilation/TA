@@ -1,6 +1,8 @@
 ---------------------------------------- v2.44.5 ---------------------------------------
 ----Improvments----
 
+Random Xmas mode
+
 ----Balance----
 Nerf Hero => -25% Damage with primary weapon.
 Tesla Tank => Delete metalcost per shot
