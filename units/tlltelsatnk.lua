@@ -130,7 +130,6 @@ return {
 				firestarter = 50,
 				id = 119,
 				intensity = 12,
-				metalpershot = 1,
 				name = "Telsa Energy Weapon",
 				range = 825,
 				reloadtime = 2,
