@@ -47,7 +47,7 @@ local options={
 		desc    = 'Horse',
 		type    = 'bool',
 		section = 'ta_modes',
-		def     = false,
+		def     = true,
 	},
 
     {

@@ -64,7 +64,7 @@ if Spring.GetModOptions() then
   		table.insert(infoMessage, message)
 	end
 	if Spring.GetModOptions().horsetastic == "1" then
-  		message = "Random Horse Mode, seed is "..Spring.GetModOptions().randomseed
+  		message = "Xmas Random Game Mode"
   		table.insert(infoMessage, message)
 	end
 end
