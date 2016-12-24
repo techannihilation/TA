@@ -63,6 +63,10 @@ if Spring.GetModOptions() then
   		message = "Nano frames Decay disabled"
   		table.insert(infoMessage, message)
 	end
+	if Spring.GetModOptions().horsetastic == "1" then
+  		message = "Random Horse Mode, seed is "..Spring.GetModOptions().randomseed
+  		table.insert(infoMessage, message)
+	end
 end
 
 --Spring.Echo ("Message length == ",#infoMessage)
