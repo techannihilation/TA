@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 12,
 		metalstorage = 0,
 		mobilestandorders = 1,
-		movementclass = "TKBOT3",
+		movementclass = "AMPTBOT",
 		name = "Om",
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
