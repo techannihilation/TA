@@ -249,7 +249,12 @@ local fragSrc
 --------------------------------------------------------------------------------
 
 function widget:Initialize()
-	if  (Spring.GetConfigString("AllowDeferredMapRendering") == '0' or Spring.GetConfigString("AllowDeferredModelRendering")=='0') then
+
+	--Ugly may remove
+	Spring.SetConfigInt("AllowDeferredMapRendering", 1)
+	Spring.SetConfigInt("AllowDeferredModelRendering", 1)
+
+	if  (Spring.GetConfigString("AllowDeferredMapRendering") == '0' or Spring.GetConfigString("AllowDeferredModelRendering")=='0') or #UnitDefs > 0x3AC then
 		Spring.Echo('Deferred Rendering (gfx_deferred_rendering.lua) requires  AllowDeferredMapRendering and AllowDeferredModelRendering to be enabled in springsettings.cfg!') 
 		widgetHandler:RemoveWidget()
 		return
@@ -438,7 +443,7 @@ function widget:DrawWorld()
 					local explosionflags = spGetPieceProjectileParams(pID)
 					if explosionflags and (explosionflags%32)>15  then --only stuff with the FIRE explode tag gets a light
 						--Spring.Echo('explosionflag=',explosionflags)
-						table.insert(pointlightprojectiles,{r=0.75,g=0.75,b=0.45,radius=100,constant=1,squared=1,linear=0,beam=false,px=x,py=y,pz=z,dx=0,dy=0,dz=0})
+						table.insert(pointlightprojectiles,{r=0.75,g=0.75,b=0.55,radius=100,constant=1,squared=1,linear=0,beam=false,px=x,py=y,pz=z,dx=0,dy=0,dz=0})
 					end
 				else
 					lightparams=projectileLightTypes[spGetProjectileName(pID)]
