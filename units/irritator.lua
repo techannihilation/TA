@@ -48,7 +48,7 @@ return {
 		radardistance = 0,
 		radaremitheight = 130,
 		script = "irritator.cob",
-		seismicsignature = 100,
+		seismicsignature = 48,
 		selfdestructas = "NUCLEAR_Missile",
 		selfdestructcountdown = 10,
 		shootme = 1,
