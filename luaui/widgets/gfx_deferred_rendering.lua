@@ -424,7 +424,7 @@ local function DrawLightType(lights,lighttype) -- point = 0 beam = 1
 	glUseShader(0)
 end
 
-function widget:DrawWorld()
+function widget:DrawScreenEffects()
 	if (GLSLRenderer) then
 		local projectiles=spGetVisibleProjectiles()
 		if #projectiles == 0 then return end
