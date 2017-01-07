@@ -1,3 +1,20 @@
+---------------------------------------- v2.45.0 ---------------------------------------
+----Improvments----
+Remove Xmas Presents.
+Reduce seismicsignature for Monkeylord, Praetorian and Irritator.
+
+----Balance----
+Tll mex nake explosion the same as arm/core countparts.
+Replace Geo by mini Geo for battle Core.
+Armweaver reduce energy cost 52500>49500, metal cost 3650>3350, hp 12650>9750.
+Tll discharge => Increase Speed and height for jump.
+Infiltrator (Tll cloaked kbot) => delete Green laser and replace by Gun (same than Maverick for Arm). Same balance.
+Tllom (turtle) => Can go in water now.
+
+----Bugs----
+Fix tllturtle lab not unlocking nano morph.
+Add custom hitsphere for tlldmc.
+
 ---------------------------------------- v2.44.9 ---------------------------------------
 ----Improvments----
 TllJumpBot => Increase Speed for jump.
