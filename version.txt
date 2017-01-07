@@ -1,6 +1,9 @@
 ---------------------------------------- v2.44.9 ---------------------------------------
 ----Improvments----
-
+TllJumpBot => Increase Speed for jump.
+Infiltrator (TLL KBOT invisible) => delete Green laser and remplace by Gun (same than Maverick for Arm). Same balance.
+TLLOM (turtle) => Can go in water now.
+Remplace Geo by mini Geo for battle Core 
 
 ----Balance----
 Nerf Hero => -25% Damage with primary weapon.
@@ -8,6 +11,8 @@ Tesla Tank => Delete metalcost per shot
 Tesla Tower v0 & v1 => Decrease Damage 240 => 220
 All Turtle speed fixed at 0.75.
 T1.5 TLL AIR Cons => Decrease MetalCost 1150 => 950
+TLLMEX => decrease explosion damage.
+
 
 ---------------------------------------- v2.44.4 ---------------------------------------
 ----Improvments----
