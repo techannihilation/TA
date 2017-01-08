@@ -124,6 +124,7 @@ return {
 		weapondefs = {
 			spray_lightning = {
 				areaofeffect = 17,
+ 				beamttl = 8,
 				craterboost = 0,
 				cratermult = 0,
 				duration = 1.9,
