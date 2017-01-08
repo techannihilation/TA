@@ -127,10 +127,10 @@ return {
 				weapontype = "AircraftBomb",
 				weaponvelocity = 600,
 				damage = {
-					bomb_resistant = 100,
+					bomb_resistant = 200,
 					bombers = 5,
-					commanders = 100,
-					default = 300,
+					commanders = 200,
+					default = 600,
 					fighters = 5,
 					flak_resistant = 5,
 					unclassed_air = 5,
