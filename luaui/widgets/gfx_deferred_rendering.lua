@@ -170,7 +170,7 @@ local function GetLightsFromUnitDefs()
 					elseif (WeaponDefs[weaponID]['type'] == 'DGun') then
 						if verbose then Spring.Echo('DGun',WeaponDefs[weaponID]['name'],'size', WeaponDefs[weaponID]['size']) end
 						--size=WeaponDefs[weaponID]['size']
-						plighttable[WeaponDefs[weaponID]['name']]={r=2,g=2,b=1,radius=300,beam=false}
+						plighttable[WeaponDefs[weaponID]['name']]={r=2,g=2,b=1,radius=450,beam=false}
 						
 					elseif (WeaponDefs[weaponID]['type'] == 'MissileLauncher') then
 						if verbose then Spring.Echo('MissileLauncher',WeaponDefs[weaponID]['name'],'size', WeaponDefs[weaponID]['size']) end
@@ -182,7 +182,7 @@ local function GetLightsFromUnitDefs()
 						elseif Tlltrails[WeaponDefs[weaponID]['name']] then
 							plighttable[WeaponDefs[weaponID]['name']]={r=0.7,g=0.7,b=1,radius=100*size, beam=false}
 						else
-							plighttable[WeaponDefs[weaponID]['name']]={r=1,g=1,b=0.2,radius=100* size, beam=false}
+							plighttable[WeaponDefs[weaponID]['name']]={r=1,g=1,b=0.2,radius=50* size, beam=false}
 						end
 
 					elseif (WeaponDefs[weaponID]['type'] == 'StarburstLauncher') then
@@ -202,7 +202,7 @@ local function GetLightsFromUnitDefs()
 					elseif (WeaponDefs[weaponID]['type'] == 'LightningCannon') then
 						if visualserbose then Spring.Echo('LightningCannon',WeaponDefs[weaponID]['name'],'size', WeaponDefs[weaponID]['size']) end
 						--size=WeaponDefs[weaponID]['size']
-						plighttable[WeaponDefs[weaponID]['name']]={r=0.3,g=0.3,b=1.5,radius=100,beam=true}
+						plighttable[WeaponDefs[weaponID]['name']]={r=0.3,g=0.3,b=1.5,radius=150,beam=true}
 					elseif (WeaponDefs[weaponID]['type'] == 'BeamLaser') then
 						if verbose then Spring.Echo('BeamLaser',WeaponDefs[weaponID]['name'],'rgbcolor', WeaponDefs[weaponID]['visuals']['colorR']) end
 						--size=WeaponDefs[weaponID]['size']

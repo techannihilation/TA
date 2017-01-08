@@ -64,6 +64,14 @@ local BlackList = {
    ["armlatnk_armlatnk_weapon"] = {r=0.08,g=0.08,b=0.98,radius=90,beam=true},
    ["armclaw_dclaw"] = {r=0.08,g=0.08,b=0.98,radius=90,beam=true},
 
+   ["armraven1_exp_heavyrocket1"] = {r=1.2,g=0.2,b=0.2,radius=110,beam=false},
+   ["armraven_exp_heavyrocket"] = {r=1.2,g=0.2,b=0.2,radius=125,beam=false},
+
+   ["corkarg_tawf_banisher1"] = {r=1.2,g=0.2,b=0.2,radius=105,beam=false},
+
+   ["corkarg1_tawf_banisher2"] = {r=1.2,g=0.2,b=0.2,radius=155,beam=false},
+
+
    }
    local Armtrails = {
    ["armrock_arm_kbot_rocket"] = true,

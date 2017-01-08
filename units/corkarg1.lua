@@ -227,7 +227,7 @@ return {
 				sprayangle = 250,
 				startvelocity = 250,
 				texture1 = "null",
-				texture2 = "null",
+				texture2 = "coresmoketrail",
 				texture3 = "null",
 				texture4 = "null",
 				tolerance = 9000,
