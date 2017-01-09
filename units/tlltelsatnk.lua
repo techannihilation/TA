@@ -16,7 +16,7 @@ return {
 		defaultmissiontype = "Standby",
 		description = "Telsa Assault Tank",
 		energymake = 1,
-		energystorage = 0,
+		energystorage = 350,
 		energyuse = 1,
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
