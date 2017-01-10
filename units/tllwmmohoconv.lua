@@ -2,8 +2,8 @@ return {
 	tllwmmohoconv = {
 		activatewhenbuilt = true,
 		buildangle = 8192,
-		buildcostenergy = 22500,
-		buildcostmetal = 1180,
+		buildcostenergy = 32500,
+		buildcostmetal = 1580,
 		builder = false,
 		buildtime = 33000,
 		category = "ALL NOTDEFENSE NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
