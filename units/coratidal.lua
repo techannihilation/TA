@@ -36,7 +36,6 @@ return {
 		selfdestructas = "SMALL_BUILDING",
 		side = "CORE",
 		sightdistance = 130,
-		tedclass = "WATER",
 		tidalgenerator = 1,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,

@@ -36,7 +36,6 @@ return {
 		selfdestructas = "LIGHTSHIPBLAST",
 		side = "TLL",
 		sightdistance = 200,
-		tedclass = "ENERGY",
 		unitname = "tllgen",
 		unitnumber = 2415,
 		--usebuildinggrounddecal = true,

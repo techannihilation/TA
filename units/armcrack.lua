@@ -51,7 +51,6 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
-		tedclass = "KBOT",
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 1.089,
 		turnrate = 1103,

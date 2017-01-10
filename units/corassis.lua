@@ -47,7 +47,6 @@ return {
 		sightdistance = 500,
 		standingmoveorder = 1,
 		steeringmode = 1,
-		tedclass = "CNSTR",
 		trackoffset = 6,
 		trackstrength = 5,
 		trackstretch = 1,

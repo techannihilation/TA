@@ -54,6 +54,19 @@ return {
 		turninplacespeedlimit = 0.65,
 		turnrate = 200,
 		unitname = "armabad",
+		sfxtypes = {
+			explosiongenerators = {
+				[1] = "custom:abaddon_emit",
+			},
+			pieceexplosiongenerators = {
+				[1] = "piecetrail0",
+				[2] = "piecetrail1",
+				[3] = "piecetrail2",
+				[4] = "piecetrail3",
+				[5] = "piecetrail4",
+				[6] = "piecetrail6",
+			},
+		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
@@ -135,8 +148,8 @@ return {
 				impulsefactor = 0,
 				name = "laser",
 				range = 1250,
-				reloadtime = 2.1,
-				rgbcolor = "1.000 0.071 0.000",
+				reloadtime = 6.1,
+				rgbcolor = "0.071 0.071 1.000",
 				smoketrail = true,
 				soundhitdry = "Burn02",
 				soundstart = "Mavgun1",

@@ -55,7 +55,6 @@ return {
 		standingmoveorder = 1,
 		stealth = true,
 		steeringmode = 1,
-		tedclass = "VTOL",
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 4.29,
 		turnrate = 140,

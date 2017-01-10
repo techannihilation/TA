@@ -48,7 +48,6 @@ return {
 		sightdistance = 325,
 		standingmoveorder = 1,
 		steeringmode = 1,
-		tedclass = "CNSTR",
 		terraformspeed = 150,
 		trackoffset = 6,
 		trackstrength = 5,

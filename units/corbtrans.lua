@@ -54,7 +54,6 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
-		tedclass = "VTOL",
 		transportcapacity = 1,
 		transportmass = 16000,
 		transportsize = 25,

@@ -53,7 +53,6 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
-		tedclass = "TANK",
 		turninplace = 0,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0.726,

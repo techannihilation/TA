@@ -53,7 +53,6 @@ return {
 		sightdistance = 83.2,
 		standingfireorder = 2,
 		stealth = true,
-		tedclass = "SPECIAL",
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,
 		turnrate = 0,

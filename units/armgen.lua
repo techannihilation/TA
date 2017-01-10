@@ -34,7 +34,6 @@ return {
 		selfdestructas = "LIGHTSHIPBLAST",
 		side = "ARM",
 		sightdistance = 250,
-		tedclass = "ENERGY",
 		unitname = "armgen",
 		unitnumber = 2415,
 		usebuildinggrounddecal = true,

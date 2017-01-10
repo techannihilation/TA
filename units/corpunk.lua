@@ -48,7 +48,6 @@ return {
 		standingmoveorder = 1,
 		stealth = true,
 		steeringmode = 2,
-		tedclass = "KBOT",
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 2.904,
 		turnrate = 1672,

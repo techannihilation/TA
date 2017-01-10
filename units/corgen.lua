@@ -34,7 +34,6 @@ return {
 		selfdestructas = "LIGHTSHIPBLAST",
 		side = "CORE",
 		sightdistance = 250,
-		tedclass = "ENERGY",
 		unitname = "corgen",
 		unitnumber = 2415,
 		usebuildinggrounddecal = true,

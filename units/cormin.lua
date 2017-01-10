@@ -53,7 +53,6 @@ return {
 		sightdistance = 250,
 		standingmoveorder = 1,
 		steeringmode = 1,
-		tedclass = "CNSTR",
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 2.64,
 		turnrate = 256,

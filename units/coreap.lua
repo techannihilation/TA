@@ -42,7 +42,6 @@ return {
 		sightdistance = 305.5,
 		standingfireorder = 2,
 		standingmoveorder = 1,
-		tedclass = "PLANT",
 		turnrate = 0,
 		unitname = "coreap",
 		usebuildinggrounddecal = true,
