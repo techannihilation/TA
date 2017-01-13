@@ -1329,7 +1329,7 @@ local function SelectSwap(cmd, oldID, newID)
 end
 
 local function StartMorph(cmd, unitID, unitDefID, morphID)
-  if false then --(Script.LuaUI('MorphStart')) then
+  if (Script.LuaUI('MorphStart')) then
     if (useLuaUI) then
       local readTeam, spec, specFullView = nil,GetSpectatingState()
       if (specFullView)
@@ -1346,7 +1346,7 @@ local function StartMorph(cmd, unitID, unitDefID, morphID)
 end
 
 local function StopMorph(cmd, unitID)
-  if false then --(Script.LuaUI('MorphStop')) then
+  if (Script.LuaUI('MorphStop')) then
     if (useLuaUI) then
       local readTeam, spec, specFullView = nil,GetSpectatingState()
       if (specFullView)
@@ -1450,9 +1450,9 @@ function gadget:Update()
   if (frame>oldFrame) then
     oldFrame = frame
     if next(morphUnits) then
-      local useLuaUI_ = false --Script.LuaUI('MorphUpdate')
+      local useLuaUI_ = Script.LuaUI('MorphUpdate')
       if (useLuaUI_~=useLuaUI) then --//Update Callins on change
-        drawProgress = true --not Script.LuaUI('MorphDrawProgress')
+        drawProgress = not Script.LuaUI('MorphDrawProgress')
         useLuaUI     = useLuaUI_
       end
 
@@ -1503,7 +1503,7 @@ local function InitializeUnitShape(unitDefID,unitTeam)
 
   glPushMatrix()
   gl.ColorMask(false)
-  --glUnitShape(unitDefID, unitTeam, true, false , true)
+  glUnitShape(unitDefID, unitTeam, true, false , true)
   gl.ColorMask(true)
   glPopMatrix()
   if (alreadyInit[unitTeam]==nil) then alreadyInit[unitTeam] = {} end

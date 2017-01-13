@@ -85,6 +85,7 @@ local barColors = {
   reload  = { 0.00,0.60,0.60,barAlpha },
   shield  = { 0.20,0.60,0.60,barAlpha },
   jump    = { 0.00,0.90,0.00,barAlpha },
+  stalled = { 0.10,0.10,0.30,barAlpha },
   resurrect = { 1.00,0.50,0.00,featureBarAlpha },
   reclaim   = { 0.75,0.75,0.75,featureBarAlpha },
 }
@@ -92,18 +93,21 @@ local barColors = {
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
-local blink = false;
-local gameFrame = 0;
+local blink = false
+local gameFrame = 0
 
-local empDecline = 1/40;
+local empDecline = 1/40
 
-local cx, cy, cz = 0,0,0;  --// camera pos
+local cx, cy, cz = 0,0,0 --// camera pos
 local smoothheight = 0 -- smoothmesh under camera
-local paraUnits   = {};
+local paraUnits   = {}
 
-local barShader;
-local barDList;
-local barFeatureDList;
+local barShader
+local barDList
+local barFeatureDList
+local UnitMorphs  = {}
+local MAXunits = tonumber(Spring.GetModOptions().maxunits) or 500
+
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -131,6 +135,12 @@ end --//end do
 
 function widget:Initialize()
   widgetHandler:RegisterGlobal('DrawManager_healthbars', DrawStatus)
+  widgetHandler:RegisterGlobal('MorphUpdate', MorphUpdate)
+  widgetHandler:RegisterGlobal('MorphFinished', MorphFinished)
+  widgetHandler:RegisterGlobal('MorphStart', MorphStart)
+  widgetHandler:RegisterGlobal('MorphStop', MorphStop)
+
+  widgetHandler:RegisterGlobal('MorphDrawProgress', function() return true end)
 
   --// catch f9
   Spring.SendCommands({"showhealthbars 0"})
@@ -244,6 +254,12 @@ end
 
 function widget:Shutdown()
   widgetHandler:DeregisterGlobal('DrawManager_healthbars', DrawStatus)
+  widgetHandler:DeregisterGlobal('MorphUpdate', MorphUpdate)
+  widgetHandler:DeregisterGlobal('MorphFinished', MorphFinished)
+  widgetHandler:DeregisterGlobal('MorphStart', MorphStart)
+  widgetHandler:DeregisterGlobal('MorphStop', MorphStop)
+  
+  widgetHandler:DeregisterGlobal('MorphDrawProgress')
 
   --// catch f9
   widgetHandler:RemoveAction("showhealthbars", showhealthbars)
@@ -470,7 +486,7 @@ do
     if (not customInfo[unitDefID]) then
       customInfo[unitDefID] = {
         height        = ud.height+14,
-	canJump       = (ud.customParams.canjump=="1")or(GetUnitRulesParam(unitID,"jumpReload")),
+	      canJump       = (ud.customParams.canjump=="1")or(GetUnitRulesParam(unitID,"jumpReload")),
         maxShield     = ud.shieldPower,
         canStockpile  = ud.canStockpile,
         reloadTime    = ud.reloadTime,
@@ -540,8 +556,20 @@ do
         numStockpiled = false
       end
 
+        --// MORPHING
+      local morph = UnitMorphs[unitID]
+      if morph then
+        local infotext = ''
+        infotext = floor(morph.progress*100)..'%'
+        if (morph.progress >= 1.0) and #Spring.GetTeamUnits(Spring.GetUnitTeam(unitID)) > (MAXunits) then
+          AddBar("Stalled",0.99,"stalled",infotext or '')
+        else
+          AddBar("morph",morph.progress,"build",infotext or '')
+        end
+      end
+
       --// PARALYZE
-      if (emp>0.01)and(hp>0.01)and(emp<1e8) then 
+      if (emp>0.01)and(hp>0.01)and(emp<1e8)and(not morph) then 
         local stunned = GetUnitIsStunned(unitID) 
         local infotext = ""
         if (stunned) then
@@ -895,5 +923,20 @@ do
 
 end --//end do
 
+function MorphUpdate(morphTable)
+  UnitMorphs = morphTable
+end
+
+function MorphStart(unitID,morphDef)
+  --return false
+end
+
+function MorphStop(unitID)
+  UnitMorphs[unitID] = nil
+end
+
+function MorphFinished(unitID)
+  UnitMorphs[unitID] = nil
+end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
