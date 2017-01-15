@@ -54,6 +54,7 @@ return {
 		turnrate = 0,
 		unitname = "corbuzz",
 		usebuildinggrounddecal = true,
+		usepiececollisionvolumes = 1,
 		workertime = 0,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {

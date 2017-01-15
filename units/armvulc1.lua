@@ -51,6 +51,7 @@ return {
 		turnrate = 0,
 		unitname = "armvulc1",
 		usebuildinggrounddecal = true,
+		usepiececollisionvolumes = 1,
 		workertime = 0,
 		yardmap = "oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo ",
 		customparams = {

@@ -217,7 +217,31 @@ local dynamicPieceCollisionVolume = {}	--dynamic per piece collision volume defi
 	pieceCollisionVolume["armrad1"] = {
 			["1"]={22,58,22,0,30,0,1,1},
 			["3"]={60,13,13,11,0,0,1,0},
-	}	
+	}
+	pieceCollisionVolume["armvulc"] = {
+			["3"]={95,154,95,0,32,0,1,1},
+			["7"]={50,50,140,0,0,40,1,2},
+	}
+	pieceCollisionVolume["armvulc2"] = {
+			["3"]={95,154,95,0,32,0,1,1},
+			["7"]={50,50,140,0,0,40,1,2},
+	}
+	pieceCollisionVolume["armvulc1"] = {
+			["3"]={165,350,165,0,32,0,1,1},
+			["5"]={98,98,240,0,0,100,1,2},
+	}
+	pieceCollisionVolume["corbuzz"] = {
+			["3"]={75,145,75,0,32,0,1,1},
+			["5"]={15,15,145,0,0,0,1,0},
+	}
+	pieceCollisionVolume["corbuzz2"] = {
+			["3"]={75,145,75,0,32,0,1,1},
+			["5"]={15,15,145,0,0,0,1,0},
+	}
+	pieceCollisionVolume["corbuzz1"] = {
+			["3"]={155,365,155,0,32,0,1,1},
+			["5"]={30,30,290,0,0,0,1,0},
+	}
 	dynamicPieceCollisionVolume["corgant"] = {
 		on = {
 			["1"]={130,96,130,0,0,0,1,2},

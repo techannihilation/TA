@@ -50,6 +50,7 @@ return {
 		turnrate = 0,
 		unitname = "armvulc",
 		usebuildinggrounddecal = true,
+		usepiececollisionvolumes = 1,
 		workertime = 0,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
