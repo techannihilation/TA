@@ -170,9 +170,9 @@ return {
 				damage = {
 					bomb_resistant = 4500,
 					commanders = 2500,
-					default = 13000,
-					experimental_land = 26000,
-					experimental_ships = 26000,
+					default = 16000,
+					experimental_land = 24000,
+					experimental_ships = 24000,
 					subs = 5,
 				},
 			},
