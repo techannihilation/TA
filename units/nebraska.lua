@@ -1,14 +1,14 @@
 return {
 	nebraska = {
 		buildangle = 8192,
-		buildcostenergy = 212707,
-		buildcostmetal = 20042,
+		buildcostenergy = 326000,
+		buildcostmetal = 31750,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 11,
 		buildinggrounddecalsizey = 11,
 		buildinggrounddecaltype = "nebraska_aoplane.dds",
-		buildtime = 254864,
+		buildtime = 245000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",

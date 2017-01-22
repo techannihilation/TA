@@ -1,15 +1,15 @@
 return {
 	tlldmc = {
 		buildangle = 8192,
-		buildcostenergy = 272000,
-		buildcostmetal = 23467,
+		buildcostenergy = 242000,
+		buildcostmetal = 37190,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "tlldmc_aoplane.dds",
 		buildpic = "tlldmc.png",
-		buildtime = 150000,
+		buildtime = 259000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
