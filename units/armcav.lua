@@ -6,7 +6,7 @@ return {
 		ai_weight = "weight armcav 3.6",
 		brakerate = 1.5,
 		buildcostenergy = 15040,
-		buildcostmetal = 1850,
+		buildcostmetal = 1590,
 		builder = false,
 		buildtime = 16520,
 		canattack = true,
