@@ -60,7 +60,7 @@ local FPSLimit = 8
 
 function widget:Initialize()
     widgetHandler:RegisterGlobal('SetOpacity_Comblast_DGun_Range', SetOpacity)
-    widgetHandler:RegisterGlobal('DrawManager_morphindicator', DrawStatus)
+    widgetHandler:RegisterGlobal('DrawManager_combblast', DrawStatus)
 
     checkComs()
     checkSpecView()
@@ -144,7 +144,7 @@ end
 
 function widget:GameOver()
     widgetHandler:DeregisterGlobal('SetOpacity_Comblast_DGun_Range', SetOpacity)
-    widgetHandler:DeregisterGlobal('DrawManager_morphindicator', DrawStatus)
+    widgetHandler:DeregisterGlobal('DrawManager_combblast', DrawStatus)
     widgetHandler:RemoveWidget()
 end
 
