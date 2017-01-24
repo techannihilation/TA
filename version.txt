@@ -3,10 +3,20 @@
 Update karg weapon effect
 Add morph progress bar to healthbar widget
 Add custom collision volumes for armvulc* and corbuzz*
+Add new production and use for Mtllmegacoldfus. Same balance.
 
 ----Balance----
-TLL T3 Bomber => Damage x 2 for each bomb (300=>600). The Fire doesn't change.
+TLL T3 Bomber => Damage x 2 for each bomb (300=>600). The Fire Damage doesn't change.
 Replace Weapon for T3 Lighting Tank TLL and T3 Riot TLL Kbot. Add Multiple Lighting. (like TLLBIND Sumo TLL)
+MediumFusion TLL : increase Energy 7500 => 20000. Change production. 4.2 M/s => 6 M/s. 500E/s => 300E/s.
+MediumFusion Underwater TLL : decrease Energy 50500 => 21000. decrease metal : 4800 => 4600. Change production. 6M/s => 8M/s. 900E/s => 400E/s.
+All experimental canon cost increase by ~50%. (~ +10KMetal and +100KEnergy)
+ICBM TLL => Decrease Metal Cost 13000 => 11500.
+ICBM V1 ARM/Core => Decrease Damage versus experimental unit by 33%. Now damage is x 2 (before was x 3) vs defaut damage.
+TLL T2 Metal Maker: Increase Energy cost : 8000 => 19500. HP 600 => 900.
+ARM/CORE T2 Metal Maker:Decrease Metal Cost fir underwater metalmaker to balance with TLL
+AKX Vengence : Increase range for canon 500 => 600. Increase Damage +10%. Increase range (+50) and damage for laser : +45%.
+Krogtaar : To be continued
 
 ----Bugs----
 Fix tllweb/upgweb short visual display time, Closes #27
