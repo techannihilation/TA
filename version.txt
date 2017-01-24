@@ -1,4 +1,4 @@
----------------------------------------- v2.45.1 ---------------------------------------
+---------------------------------------- v2.45.2 ---------------------------------------
 ----Improvments----
 Update karg weapon effect
 Add morph progress bar to healthbar widget
@@ -16,7 +16,7 @@ ICBM V1 ARM/Core => Decrease Damage versus experimental unit by 33%. Now damage 
 TLL T2 Metal Maker: Increase Energy cost : 8000 => 19500. HP 600 => 900.
 ARM/CORE T2 Metal Maker:Decrease Metal Cost fir underwater metalmaker to balance with TLL
 AKX Vengence : Increase range for canon 500 => 600. Increase Damage +10%. Increase range (+50) and damage for laser : +45%.
-Krogtaar : To be continued
+Krogtaar : Increase Max Velcity 1.2>1.45
 
 ----Bugs----
 Fix tllweb/upgweb short visual display time, Closes #27
