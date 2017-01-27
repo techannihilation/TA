@@ -62,6 +62,7 @@ jumpClassGroups = {
 	},
 	jumpbot = {
 	"tlldischarge",
+	"armcav",
 	},
 	longjumpbot = {
 	"armkrmi",
