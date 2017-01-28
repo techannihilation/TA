@@ -1,0 +1,286 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, arm1, arm2, arm3, arm4, arm5, arm6, arm7, arm8, nano1, nano2,
+	   nano3, nano4, spray1, spray2, spray3, spray4, spray5, spray6, spray7, spray8;
+
+static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging, Static_Var_4;
+
+// Signal definitions
+#define SIG_ACTIVATE			2
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from body;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Tangue()
+{
+	Static_Var_4 = get UNKNOWN_UNIT_VALUE(1030);
+	while( TRUE )
+	{
+		turn body to x-axis <1.000000> * Static_Var_4 speed <0.395604> * Static_Var_4;
+		turn body to z-axis <1.000000> * Static_Var_4 speed <0.395604> * Static_Var_4;
+		wait-for-turn body around x-axis;
+		turn body to x-axis <-1.000000> * Static_Var_4 speed <0.395604> * Static_Var_4;
+		turn body to z-axis <-1.000000> * Static_Var_4 speed <0.395604> * Static_Var_4;
+		wait-for-turn body around x-axis;
+		turn body to x-axis <0.000000> speed <0.395604> * Static_Var_4;
+		turn body to z-axis <0.000000> speed <0.395604> * Static_Var_4;
+	}
+}
+
+OpenYard()
+{
+	set YARD_OPEN to 1;
+	while( !get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 1;
+	}
+	set BUGGER_OFF to 0;
+	set ARMORED to 1;
+}
+
+CloseYard()
+{
+	set ARMORED to 0;
+	set YARD_OPEN to 0;
+	while( get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 0;
+	}
+	set BUGGER_OFF to 0;
+}
+
+activatescr()
+{
+	turn arm1 to z-axis <40.000000> speed <27.000000>;
+	turn arm2 to z-axis <-60.000000> speed <40.000000>;
+	turn nano1 to z-axis <35.000000> speed <21.000000>;
+	turn arm3 to z-axis <-40.000000> speed <27.000000>;
+	turn arm4 to z-axis <60.000000> speed <40.000000>;
+	turn nano2 to z-axis <-35.000000> speed <21.000000>;
+	turn arm5 to z-axis <40.000000> speed <27.000000>;
+	turn arm6 to z-axis <-60.000000> speed <40.000000>;
+	turn nano3 to z-axis <35.000000> speed <21.000000>;
+	turn arm7 to z-axis <-40.000000> speed <27.000000>;
+	turn arm8 to z-axis <60.000000> speed <40.000000>;
+	turn nano4 to z-axis <-35.000000> speed <21.000000>;
+	wait-for-turn nano1 around z-axis;
+}
+
+deactivatescr()
+{
+	turn arm1 to z-axis <0.000000> speed <20.000000>;
+	turn arm2 to z-axis <0.000000> speed <29.000000>;
+	turn nano1 to z-axis <0.000000> speed <25.000000>;
+	turn arm3 to z-axis <0.000000> speed <20.000000>;
+	turn arm4 to z-axis <0.000000> speed <29.000000>;
+	turn nano2 to z-axis <0.000000> speed <25.000000>;
+	turn arm5 to z-axis <0.000000> speed <20.000000>;
+	turn arm6 to z-axis <0.000000> speed <29.000000>;
+	turn nano3 to z-axis <0.000000> speed <25.000000>;
+	turn arm7 to z-axis <0.000000> speed <20.000000>;
+	turn arm8 to z-axis <0.000000> speed <29.000000>;
+	turn nano4 to z-axis <0.000000> speed <25.000000>;
+	wait-for-turn nano1 around z-axis;
+}
+
+Go()
+{
+	call-script activatescr();
+	call-script OpenYard();
+	set INBUILDSTANCE to 1;
+}
+
+Stop()
+{
+	set INBUILDSTANCE to 0;
+	call-script CloseYard();
+	call-script deactivatescr();
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+Create()
+{
+	Static_Var_1 = 0;
+	call-script InitState();
+	start-script SmokeUnit();
+}
+
+QueryNanoPiece(piecenum)
+{
+	if( Static_Var_1 == 0 )
+	{
+		piecenum = spray1;
+	}
+	if( Static_Var_1 == 1 )
+	{
+		piecenum = spray2;
+	}
+	if( Static_Var_1 == 2 )
+	{
+		piecenum = spray3;
+	}
+	if( Static_Var_1 == 3 )
+	{
+		piecenum = spray4;
+	}
+	if( Static_Var_1 == 4 )
+	{
+		piecenum = spray5;
+	}
+	if( Static_Var_1 == 5 )
+	{
+		piecenum = spray6;
+	}
+	if( Static_Var_1 == 6 )
+	{
+		piecenum = spray7;
+	}
+	if( Static_Var_1 == 7 )
+	{
+		piecenum = spray8;
+	}
+	++Static_Var_1;
+	if( Static_Var_1 >= 8 )
+	{
+		Static_Var_1 = 0;
+	}
+}
+
+Activate()
+{
+	signal SIG_ACTIVATE;
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	signal SIG_ACTIVATE;
+	set-signal-mask SIG_ACTIVATE;
+	sleep 3500;
+	set-signal-mask 0;
+	start-script RequestState(1);
+}
+
+StartBuilding()
+{
+}
+
+StopBuilding()
+{
+}
+
+QueryBuildInfo(piecenum)
+{
+	piecenum = body;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = body;
+}
+
+Killed(severity, corpsetype)
+{
+	explode body type NOHEATCLOUD;
+	explode arm1 type NOHEATCLOUD;
+	explode nano1 type NOHEATCLOUD;
+	explode arm2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode arm3 type NOHEATCLOUD;
+	explode arm4 type NOHEATCLOUD;
+	explode arm5 type NOHEATCLOUD;
+	explode arm6 type NOHEATCLOUD;
+	explode arm7 type NOHEATCLOUD;
+	explode arm8 type NOHEATCLOUD;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		return (corpsetype);
+	}
+	explode nano1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode arm1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode nano2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode arm3 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode nano3 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode arm5 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode nano4 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode arm7 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode arm1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode nano1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode arm3 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode nano2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode arm5 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode nano3 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode arm7 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode nano4 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	return (corpsetype);
+}
