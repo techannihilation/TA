@@ -16,7 +16,7 @@ function gadget:GetInfo()
   return {
     name      = "UnitMorph",
     desc      = "Adds unit morphing",
-    author    = "trepan (improved by jK, Licho, aegis, CarRepairer)",
+    author    = "trepan (improved by jK, Licho, aegis, CarRepairer), nixtux",
     date      = "Jan, 2008",
     license   = "GNU GPL, v2 or later",
     layer     = -1,
@@ -26,6 +26,8 @@ end
 -- Changes for TechA 
 -- Fix Rc not being factory to unlock morph
 -- Fix level output for our needs
+-- Fix failed morph when unit limit is reached, they now stall until unit limit is lowered
+-- Fix all morphs ending on same frame, now they stagger there starting frame
 
 
 -- Changes for "The Cursed"
@@ -1503,7 +1505,7 @@ local function InitializeUnitShape(unitDefID,unitTeam)
 
   glPushMatrix()
   gl.ColorMask(false)
-  glUnitShape(unitDefID, unitTeam, true, false , true)
+  glUnitShape(unitDefID, unitTeam, true, true , true)
   gl.ColorMask(true)
   glPopMatrix()
   if (alreadyInit[unitTeam]==nil) then alreadyInit[unitTeam] = {} end
