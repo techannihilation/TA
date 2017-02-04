@@ -384,15 +384,19 @@ local function DrawLightType(lights,lighttype) -- point = 0 beam = 1
 
 			if lightcolorlocPoint == nil then
 				Spring.Echo("let nix know, lightcolorlocPoint is nil")
+				return
 			end
 			if light.r == nil then
 				Spring.Echo("let nix know, light.r is nil")
+				return
 			end
 			if light.g == nil then
 				Spring.Echo("let nix know, light.g is nil")
+				return
 			end
 			if light.b == nil then
 				Spring.Echo("let nix know, light.b is nil")
+				return
 			end
 
 			glUniform(lightcolorlocPoint, light.r,light.g,light.b, 1) 
