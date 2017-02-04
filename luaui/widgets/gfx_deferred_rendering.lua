@@ -191,7 +191,7 @@ local function GetLightsFromUnitDefs()
 						if Coretrailssb[WeaponDefs[weaponID]['name']] then
 							plighttable[WeaponDefs[weaponID]['name']]={r=1,g=0.2,b=0.2,radius=350, beam=false}
 						elseif Armtrailssb[WeaponDefs[weaponID]['name']] then
-								Spring.Echo("Custom light weapon name :",WeaponDefs[weaponID]['name'])
+							if verbose then Spring.Echo("Custom light weapon name :",WeaponDefs[weaponID]['name']) end
 							plighttable[WeaponDefs[weaponID]['name']]={r=0.5,g=0.5,b=1,radius=350, beam=false}
 						elseif Tlltrailssb[WeaponDefs[weaponID]['name']] then
 							plighttable[WeaponDefs[weaponID]['name']]={r=1,g=1,b=1,radius=350, beam=false}
@@ -381,6 +381,20 @@ local function DrawLightType(lights,lighttype) -- point = 0 beam = 1
 			local dist_sq = (light.px-cx)^2 + (light.py-cy)^2 + (light.pz-cz)^2
 			local ratio= lightradius / math.sqrt(dist_sq) * 1.5
 			glUniform(lightposlocPoint, light.px,light.py,light.pz, light.radius) --in world space
+
+			if lightcolorlocPoint == nil then
+				Spring.Echo("let nix know, lightcolorlocPoint is nil")
+			end
+			if light.r == nil then
+				Spring.Echo("let nix know, light.r is nil")
+			end
+			if light.g == nil then
+				Spring.Echo("let nix know, light.g is nil")
+			end
+			if light.b == nil then
+				Spring.Echo("let nix know, light.b is nil")
+			end
+
 			glUniform(lightcolorlocPoint, light.r,light.g,light.b, 1) 
 			glTexRect(
 				math.max(-1 , (sx-0.5)*2-ratio*screenratio), 
