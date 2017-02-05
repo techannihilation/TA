@@ -1,3 +1,10 @@
+---------------------------------------- v2.45.3 ---------------------------------------
+----Improvments----
+Dont draw lups fame effect is unit is icon
+Add safegard in commands_fx widget
+Add debris gadget
+
+
 ---------------------------------------- v2.45.2 ---------------------------------------
 ----Improvments----
 Update karg weapon effect
