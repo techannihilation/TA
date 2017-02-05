@@ -100,7 +100,7 @@ return {
 				soundtrigger = true,
 				tolerance = 8000,
 				turnrate = 9000,
-				sprayangle = 1100,
+				sprayangle = 1000,
 				turret = false,
 				weapontimer = 1,
 				weapontype = "Cannon",
