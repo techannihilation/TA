@@ -72,7 +72,8 @@ function widget:Initialize()
 	end
 end
 
-function widget:UnitCommand(uID, uDefID, uTeam, cmdID, cmdParams, cmdOpts) 
+function widget:UnitCommand(uID, uDefID, uTeam, cmdID, cmdParams, cmdOpts)
+  if cmdID < 0 then return end
 	if (cmdID == CMD_CLOAK) and isCommander[uDefID] and (uTeam == spGetMyTeamID()) then
         if spGetSpectatingState() then
             widgetHandler:RemoveWidget(self)

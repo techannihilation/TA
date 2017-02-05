@@ -372,6 +372,7 @@ function gadget:UnitCmdDone(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOpti
 end
 
 function gadget:UnitCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOptions)
+   if cmdID < 0 then return end
    -- if a plane is given a command, assume the user wants that command to be actioned and release control
    -- (unless its one of our custom commands, etc)
    if not IsPlane(unitDefID) then return end
