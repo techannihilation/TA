@@ -438,7 +438,7 @@ function widget:UnitCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOpts
         end
         local count = toconstruct[cmdID].count or 0
         toconstruct[cmdID].count = (count + 1)
-        if count < 200 then
+        if count < 51 then
             local el = {ID=cmdID,time=os.clock(),unitID=unitID,draw=false,selected=spIsUnitSelected(unitID),udid=spGetUnitDefID(unitID)} -- command queue is not updated until next gameframe
             maxCommand = maxCommand + 1
             --Spring.Echo("Adding " .. maxCommand)
@@ -471,7 +471,7 @@ function ExtractTargetLocation(a,b,c,d,cmdID)
 end
 
 function getCommandsQueue(i)
-	local q = spGetUnitCommands(commands[i].unitID,10) or {} --limit to prevent mem leak, hax etc
+	local q = spGetUnitCommands(commands[i].unitID,50) or {} --limit to prevent mem leak, hax etc
 	local our_q = {}
 	for _,cmd in ipairs(q) do
 	    if CONFIG[cmd.id] or cmd.id < 0 then
