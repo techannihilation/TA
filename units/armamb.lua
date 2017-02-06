@@ -215,7 +215,6 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 452,
 				damage = {
-					commanders = 1400,
 					default = 800,
 					experimental_ships = 1600,
 					ships = 1200,
