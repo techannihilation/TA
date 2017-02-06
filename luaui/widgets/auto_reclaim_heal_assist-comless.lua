@@ -94,8 +94,7 @@ end
 
 
 --Unregister reclaimer once it is given a command
-function widget:UnitCommand(uID, uDefID, uTeam, cmdID, cmdParams, cmdOpts)
-	if cmdID < 0 then return end
+function widget:UnitCommand(unitID)
 	--echo("Unit "..unitID.." got a command") --¤debug
 	for reclaimerID in pairs(idleReclaimers) do
 		if (reclaimerID==unitID) then 
