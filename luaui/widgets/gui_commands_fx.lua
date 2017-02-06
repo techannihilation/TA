@@ -55,19 +55,16 @@ local drawUnitHighlightSkipFPS	= 5		-- (0 to disable) skip drawing when framerat
 local opacity      				= 1
 local duration     				= 2.6
 
-local lineWidth	   				= 8
-local lineOpacity				= 0.77
+local lineWidth	   				= 7.8
+local lineOpacity				= 0.75
 local lineDuration 				= 1		-- set a value <= 1
-local lineWidthEnd				= 0.82		-- multiplier
+local lineWidthEnd				= 0.85		-- multiplier
 local lineTextureLength 		= 4
 local lineTextureSpeed  		= 2.4
 
 local glowRadius    			= 26
 local glowDuration  			= 0.5
 local glowOpacity   			= 0.11
-
-local TooHigh = true
-local HighPing = false
 
 local glowImg			= ":n:"..LUAUI_DIRNAME.."Images/commandsfx/glow.dds"
 local lineImg			= ":n:"..LUAUI_DIRNAME.."Images/commandsfx/line2.dds"
@@ -176,9 +173,6 @@ local minQueueCommand = 1
 local maxCommand = 0
 
 local unitCommand = {} -- most recent key in command table of order for unitID 
-local toconstruct = {}
-
-local setTarget = {} -- set targets of units
 local osClock
 
 local UNITCONF = {}
@@ -260,13 +254,7 @@ local function setCmdLineColors(alpha)
 	spLoadCmdColorsConfig('deathWatch  0.5  0.5  0.5  '..alpha)
 end
 
-function DrawStatus(toohigh,fps,ping)
-    TooHigh = toohigh
-    HighPing = ping
-end
-
 function widget:Initialize()
-  	widgetHandler:RegisterGlobal('DrawManager_commandfx', DrawStatus)
 	--SetUnitConf()
 	
 	--spLoadCmdColorsConfig('useQueueIcons  0 ')
@@ -277,7 +265,6 @@ function widget:Initialize()
 end
 
 function widget:Shutdown()
-	widgetHandler:DeregisterGlobal('DrawManager_commandfx', DrawStatus)
 
 	--spLoadCmdColorsConfig('useQueueIcons  1 ')
 	spLoadCmdColorsConfig('queueIconScale  1 ')
@@ -429,22 +416,23 @@ function RemovePreviousCommand(unitID)
     end
 end
 
-function widget:UnitCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOpts, cmdTag)
-    -- record that a command was given (note: cmdID is not used, but useful to record for debugging)
+function addUnitCommand(unitID, unitDefID, cmdID)
+	-- record that a command was given (note: cmdID is not used, but useful to record for debugging)
+  if unitID and (CONFIG[cmdID] or cmdID==CMD_INSERT or cmdID<0) then
+    local el = {ID=cmdID,time=os.clock(),unitID=unitID,draw=false,selected=spIsUnitSelected(unitID),udid=spGetUnitDefID(unitID)} -- command queue is not updated until next gameframe
+    maxCommand = maxCommand + 1
+    commands[maxCommand] = el
+  end
+end
 
-    if unitID and (CONFIG[cmdID] or cmdID==CMD_INSERT or cmdID<0) then
-        if not toconstruct[cmdID] then
-            toconstruct[cmdID] = {count = 1}
-        end
-        local count = toconstruct[cmdID].count or 0
-        toconstruct[cmdID].count = (count + 1)
-        if count < 51 then
-            local el = {ID=cmdID,time=os.clock(),unitID=unitID,draw=false,selected=spIsUnitSelected(unitID),udid=spGetUnitDefID(unitID)} -- command queue is not updated until next gameframe
-            maxCommand = maxCommand + 1
-            --Spring.Echo("Adding " .. maxCommand)
-            commands[maxCommand] = el
-        end
-    end
+local newUnitCommands = {}
+function widget:UnitCommand(unitID, unitDefID, teamID, cmdID, _, _)
+		if newUnitCommands[unitID] == nil then		-- only process the first in queue, else when super large queue order is given widget will hog memory and crash
+    	addUnitCommand(unitID, unitDefID, cmdID)
+    	newUnitCommands[unitID] = true
+    else
+			newUnitCommands[unitID] = {unitDefID, cmdID}
+		end
 end
 
 function ExtractTargetLocation(a,b,c,d,cmdID)
@@ -471,32 +459,49 @@ function ExtractTargetLocation(a,b,c,d,cmdID)
 end
 
 function getCommandsQueue(i)
-	local q = spGetUnitCommands(commands[i].unitID,50) or {} --limit to prevent mem leak, hax etc
-	local our_q = {}
-	for _,cmd in ipairs(q) do
-	    if CONFIG[cmd.id] or cmd.id < 0 then
-	        if cmd.id < 0 then
-	            cmd.buildingID = -cmd.id;
-	            cmd.id = BUILD
-	            if not cmd.params[4] then
-	                cmd.params[4] = 0 --sometimes the facing param is missing (wtf)
-	            end
-	        end
-	        our_q[#our_q+1] = cmd
-	    end
+		local q = spGetUnitCommands(commands[i].unitID,50) or {} --limit to prevent mem leak, hax etc
+	  local our_q = {}
+	  for _,cmd in ipairs(q) do
+	      if CONFIG[cmd.id] or cmd.id < 0 then
+	          if cmd.id < 0 then
+	              cmd.buildingID = -cmd.id;
+	              cmd.id = BUILD
+	              if not cmd.params[4] then
+	                  cmd.params[4] = 0 --sometimes the facing param is missing (wtf)
+	              end
+	          end
+	          our_q[#our_q+1] = cmd
+	      end
+	  end
+	  return our_q
+end
+
+local sec = 0
+local echoedSec = 0
+local updaterate = 5  -- 1 == 1 sec,  4 == 250ms,  5 == 200ms
+function widget:Update(dt)
+	sec=sec+dt
+	if math.floor(sec*updaterate)%1 == 0 and math.floor(sec*updaterate) ~= echoedSec then
+		echoedSec = math.floor(sec*updaterate)
+		-- process newly given commands
+		for i, v in pairs(newUnitCommands) do
+			if v ~= true then
+				addUnitCommand(i, v[1], v[2])
+			end
+		end
+		newUnitCommands = {}
 	end
-	return our_q
 end
 
 function widget:GameFrame(gameFrame)
+
+	if gameFrame%2 == 0 then
     if drawFrame == gameframeDrawFrame then 
     	return
     end
 		gameframeDrawFrame = drawFrame
-    
-    toconstruct = {} -- destory table now
 		
-    --Spring.Echo("GameFrame:" .. gameFrame.. " minCommand: " .. minCommand .. " minQueueCommand: " .. minQueueCommand .. " maxCommand: " .. maxCommand)
+    --Spring.Echo("GameFrame: minCommand " .. minCommand .. " minQueueCommand " .. minQueueCommand .. " maxCommand " .. maxCommand)
     local i = minQueueCommand
     while (i <= maxCommand) do
         --Spring.Echo("Processing " .. i) --debug
@@ -536,25 +541,28 @@ function widget:GameFrame(gameFrame)
     end
     
 		-- update queue (in case unit has reached the nearest queue coordinate)
-    for i, qsize in pairs(monitorCommands) do
-	    if commands[i] ~= nil then
-	    	if commands[i].draw == false then
-	    		monitorCommands[i] = nil
-	    	else
-		    	local q = spGetUnitCommands(commands[i].unitID,50) or {}
-		    	if qsize ~= #q then
-		    		local our_q = getCommandsQueue(i)
-		        commands[i].queue = our_q
-		        commands[i].queueSize = #our_q
-		        if qsize > 1 then
-		        	monitorCommands[i] = qsize
-		        else
-		      	  monitorCommands[i] = nil
-		        end
-		    	end
+		if gameFrame%6 == 0 then
+		  for i, qsize in pairs(monitorCommands) do
+		    if commands[i] ~= nil then
+		    	if commands[i].draw == false then
+		    		monitorCommands[i] = nil
+		    	else
+			    	local q = spGetUnitCommands(commands[i].unitID,50) or {}
+			    	if qsize ~= #q then
+			    		local our_q = getCommandsQueue(i)
+			        commands[i].queue = our_q
+			        commands[i].queueSize = #our_q
+			        if qsize > 1 then
+			        	monitorCommands[i] = qsize
+			        else
+			      	  monitorCommands[i] = nil
+			        end
+			    	end
+			    end
 		    end
-	    end
-	  end
+		  end
+		end
+	end
 end
 
 local function IsPointInView(x,y,z)
@@ -569,13 +577,10 @@ local texOffset				= 0
 local prevOsClock = os.clock()
 
 function widget:DrawWorldPreUnit()
-	  drawFrame = drawFrame + 1
+		drawFrame = drawFrame + 1
 	  --Spring.Echo(maxCommand-minCommand) --EXPENSIVE! often handling hundreds of command queues at once 
 	  if spIsGUIHidden() then return end
 		
-	  if (drawUnitHighlightSkipFPS > 0 and spGetFPS() < drawUnitHighlightSkipFPS) or HighPing then return end
-
-
 	  osClock = os.clock()
 	  gl.Blending(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
 	  gl.DepthTest(false)
@@ -591,10 +596,13 @@ function widget:DrawWorldPreUnit()
         local progress = (osClock - commands[i].time) / duration
         local unitID = commands[i].unitID
         
-        if progress > 1 and commands[i].processed then
+        if progress >= 1 and commands[i].processed then
             -- remove when duration has passed (also need to check if it was processed yet, because of pausing)
             --Spring.Echo("Removing " .. i)
             commands[i] = nil
+            unitCommand[unitID] = nil
+            monitorCommands[i] = nil
+            
             minCommand = minCommand + 1
             
         elseif commands[i].draw and (spIsUnitInView(unitID) or IsPointInView(commands[i].x,commands[i].y,commands[i].z)) then 				
@@ -700,7 +708,7 @@ end
 function widget:DrawWorld()
   if spIsGUIHidden() then return end
     
-    if (drawUnitHighlightSkipFPS > 0 and spGetFPS() < drawUnitHighlightSkipFPS) or HighPing then return end
+	if drawUnitHighlightSkipFPS > 0 and spGetFPS() < drawUnitHighlightSkipFPS then return end
 	
     -- highlight unit 
     if drawUnitHighlight then
