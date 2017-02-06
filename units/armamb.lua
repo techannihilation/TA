@@ -12,7 +12,7 @@ return {
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "armamb_aoplane.dds",
 		buildpic = "ARMAMB.png",
-		buildtime = 27072,
+		buildtime = 25000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
