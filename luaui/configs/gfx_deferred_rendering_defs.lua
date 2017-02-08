@@ -55,11 +55,12 @@ local BlackList = {
    local Customlight ={
    ["armpw_emg"] = {r=0.48,g=0.36,b=0,radius=140,beam=false},
    ["armpw1_emg"] = {r=0.48,g=0.36,b=0,radius=160,beam=false},
-   ["armhdpw_arm_emcc3"] = {r=0.48,b=0.36,b=0.1,radius=40,beam=false},
+   ["armhdpw_arm_emcc3"] = {r=0.48,g=0.36,b=0.1,radius=40,beam=false},
    ["armbanth_armbantha_fire"] = {r=0.48,g=0.48,b=0.9,radius=230,beam=false},
    ["armgor_armgor_fire"] = {r=0.48,g=0.48,b=0.9,radius=230,beam=false},
    ["tllriot_tllriot_cannon"] = {r=0.48,g=0.48,b=0.9,radius=180,beam=false},
    ["tllhailstorm_tll_hailstorm"] = {r=0.8,g=0.6,b=0.2,radius=240,beam=false},
+   ["tllasgard_hailstorm"] = {r=0.8,g=0.6,b=0.2,radius=440,beam=false},
    ["krogtaar_cor_taar_rc"] = {r=0.98,g=0.28,b=0.3,radius=120,beam=false},
    ["armlatnk_armlatnk_weapon"] = {r=0.08,g=0.08,b=0.98,radius=90,beam=true},
    ["armclaw_dclaw"] = {r=0.08,g=0.08,b=0.98,radius=90,beam=true},
