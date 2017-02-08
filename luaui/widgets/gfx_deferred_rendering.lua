@@ -381,24 +381,6 @@ local function DrawLightType(lights,lighttype) -- point = 0 beam = 1
 			local dist_sq = (light.px-cx)^2 + (light.py-cy)^2 + (light.pz-cz)^2
 			local ratio= lightradius / math.sqrt(dist_sq) * 1.5
 			glUniform(lightposlocPoint, light.px,light.py,light.pz, light.radius) --in world space
-
-			if lightcolorlocPoint == nil then
-				Spring.Echo("let nix know, lightcolorlocPoint is nil")
-				return
-			end
-			if light.r == nil then
-				Spring.Echo("let nix know, light.r is nil")
-				return
-			end
-			if light.g == nil then
-				Spring.Echo("let nix know, light.g is nil")
-				return
-			end
-			if light.b == nil then
-				Spring.Echo("let nix know, light.b is nil")
-				return
-			end
-
 			glUniform(lightcolorlocPoint, light.r,light.g,light.b, 1) 
 			glTexRect(
 				math.max(-1 , (sx-0.5)*2-ratio*screenratio), 
