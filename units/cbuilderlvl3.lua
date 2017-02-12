@@ -67,8 +67,9 @@ return {
 			[11] = "corint1",
 			[12] = "corbuzz1",
 			[13] = "corfsilo",
-			[14] = "corgant1",
-			[15] = "cshipyardlvl4",
+			[14] = "corflu",
+			[15] = "corgant1",
+			[16] = "cshipyardlvl4",
 		},
 		featuredefs = {
 			dead = {
