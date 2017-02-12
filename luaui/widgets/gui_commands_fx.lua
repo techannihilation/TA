@@ -181,7 +181,11 @@ local minQueueCommand = 1
 local maxCommand = 0
 
 local unitCommand = {} -- most recent key in command table of order for unitID 
-local osClock
+local osClock = os.clock()
+local prevTexOffset	= 0
+local prevOsClock = osClock
+local texOffset	= 0
+
 
 local UNITCONF = {}
 local shapes = {}
@@ -437,7 +441,7 @@ function addUnitCommand(unitID, unitDefID, cmdID)
   if string.sub(UnitDefs[unitDefID].name, 1, 7) == "critter" then return end
   if unitID and (CONFIG[cmdID] or cmdID==CMD_INSERT or cmdID<0) then
     maxCommand = maxCommand + 1
-    commands[maxCommand] = {ID=cmdID,time=os.clock(),unitID=unitID,draw=false,selected=spIsUnitSelected(unitID),udid=unitDefID} -- command queue is not updated until next gameframe
+    commands[maxCommand] = {ID=cmdID,time=osClock,unitID=unitID,draw=false,selected=spIsUnitSelected(unitID),udid=unitDefID} -- command queue is not updated until next gameframe
   end
 end
 
@@ -496,20 +500,29 @@ end
 local sec = 0
 local lastUpdate = 0
 function widget:Update(dt)
+
 	sec = sec + dt
 	if sec > lastUpdate + 0.2 then
-		lastUpdate = sec
+	lastUpdate = sec
 		
-		-- process newly given commands (not done in widget:UnitCommand() because with huge build queue it eats memory and can crash lua)
-		for i, v in pairs(newUnitCommands) do
-			if v ~= true then
-				addUnitCommand(i, v[1], v[2])
-			end
+	osClock = os.clock()
+	if drawLineTexture then
+		texOffset = prevTexOffset - ((osClock - prevOsClock)*lineTextureSpeed)
+		texOffset = texOffset - math.floor(texOffset)
+		prevTexOffset = texOffset
+	end
+	prevOsClock = osClock
+
+	-- process newly given commands (not done in widget:UnitCommand() because with huge build queue it eats memory and can crash lua)
+	for i, v in pairs(newUnitCommands) do
+		if v ~= true then
+			addUnitCommand(i, v[1], v[2])
 		end
-		newUnitCommands = {}
+	end
+	newUnitCommands = {}
   
-		-- update queue (in case unit has reached the nearest queue coordinate)
-	  for i, qsize in pairs(monitorCommands) do
+	-- update queue (in case unit has reached the nearest queue coordinate)
+	for i, qsize in pairs(monitorCommands) do
 	    if commands[i] ~= nil then
 	    	if commands[i].draw == false then
 	    		monitorCommands[i] = nil
@@ -569,7 +582,7 @@ function widget:GameFrame(gameFrame)
 	            commands[i].z = z
 	        end
 	    end
-	    commands[i].time = os.clock()
+	    commands[i].time = osClock
 	    commands[i].processed = true
 	  end
 	end
@@ -583,28 +596,15 @@ local function IsPointInView(x,y,z)
     return false
 end
 
-
-local prevTexOffset			= 0
-local texOffset				= 0
-local prevOsClock = os.clock()
-
-
 function widget:DrawWorldPreUnit()
     
 	drawFrame = drawFrame + 1
-		
+
   	if spIsGUIHidden() or HighPing or TooHigh then return end
-		
-	osClock = os.clock()
+
 	gl.DepthTest(false)
 	gl.Blending(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
-	if drawLineTexture then
-		texOffset = prevTexOffset - ((osClock - prevOsClock)*lineTextureSpeed)
-		texOffset = texOffset - math.floor(texOffset)
-		prevTexOffset = texOffset
-	end
 
-	prevOsClock = os.clock()
 	local groundGlowCount = 0
 	local commandCount = 0
     for i, v in pairs(commands) do
