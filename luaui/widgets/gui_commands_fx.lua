@@ -500,6 +500,7 @@ end
 local sec = 0
 local lastUpdate = 0
 function widget:Update(dt)
+	if spIsGUIHidden() or HighPing or TooHigh then return end
 
 	sec = sec + dt
 	if sec > lastUpdate + 0.2 then
@@ -552,9 +553,11 @@ function widget:GameFrame(gameFrame)
 	end
 	gameframeDrawFrame = drawFrame
 	
+	if spIsGUIHidden() or HighPing or TooHigh then return end
+
 	-- process new commands (cant be done directly because at widget:UnitCommand() the queue isnt updated yet)
-  for i, v in pairs(commands) do
-    if v.processed ~= true then
+    for i, v in pairs(commands) do
+        if v.processed ~= true then
     
 	    RemovePreviousCommand(v.unitID)
 	    unitCommand[v.unitID] = i
