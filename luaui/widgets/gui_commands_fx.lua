@@ -67,6 +67,9 @@ local glowRadius    			= 26
 local glowDuration  			= 0.5
 local glowOpacity   			= 0.11
 
+local TooHigh = true
+local HighPing = false
+
 -- limit amount of effects to keep performance sane
 local maxCommandCount			= 450
 local maxGroundGlowCount  = 80
@@ -260,7 +263,13 @@ local function setCmdLineColors(alpha)
 	spLoadCmdColorsConfig('deathWatch  0.5  0.5  0.5  '..alpha)
 end
 
+function DrawStatus(toohigh,fps,ping)
+    TooHigh = toohigh
+    HighPing = ping
+end
+
 function widget:Initialize()
+	widgetHandler:RegisterGlobal('DrawManager_commandfx', DrawStatus)
 	--SetUnitConf()
 	
 	--spLoadCmdColorsConfig('useQueueIcons  0 ')
@@ -271,6 +280,7 @@ function widget:Initialize()
 end
 
 function widget:Shutdown()
+	widgetHandler:DeregisterGlobal('DrawManager_commandfx', DrawStatus)
 
 	--spLoadCmdColorsConfig('useQueueIcons  1 ')
 	spLoadCmdColorsConfig('queueIconScale  1 ')
@@ -490,7 +500,7 @@ function widget:Update(dt)
 	if sec > lastUpdate + 0.2 then
 		lastUpdate = sec
 		
-		-- process newly given commands (not done in widgetUnitCommand() because with huge build queue it eats memory and can crash lua)
+		-- process newly given commands (not done in widget:UnitCommand() because with huge build queue it eats memory and can crash lua)
 		for i, v in pairs(newUnitCommands) do
 			if v ~= true then
 				addUnitCommand(i, v[1], v[2])
@@ -524,10 +534,9 @@ end
 
 
 function widget:GameFrame(gameFrame)
-
-  if drawFrame == gameframeDrawFrame then 
-  	return
-  end
+    if drawFrame == gameframeDrawFrame then 
+    	return
+	end
 	gameframeDrawFrame = drawFrame
 	
 	-- process new commands (cant be done directly because at widget:UnitCommand() the queue isnt updated yet)
@@ -582,22 +591,22 @@ local prevOsClock = os.clock()
 
 function widget:DrawWorldPreUnit()
     
-		drawFrame = drawFrame + 1
+	drawFrame = drawFrame + 1
 		
-	  if spIsGUIHidden() then return end
+  	if spIsGUIHidden() or HighPing or TooHigh then return end
 		
-	  osClock = os.clock()
-	  gl.DepthTest(false)
-	  gl.Blending(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
-		if drawLineTexture then
-			texOffset = prevTexOffset - ((osClock - prevOsClock)*lineTextureSpeed)
-			texOffset = texOffset - math.floor(texOffset)
-			prevTexOffset = texOffset
-	  end
-		prevOsClock = os.clock()
-		
-		local groundGlowCount = 0
-		local commandCount = 0
+	osClock = os.clock()
+	gl.DepthTest(false)
+	gl.Blending(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
+	if drawLineTexture then
+		texOffset = prevTexOffset - ((osClock - prevOsClock)*lineTextureSpeed)
+		texOffset = texOffset - math.floor(texOffset)
+		prevTexOffset = texOffset
+	end
+
+	prevOsClock = os.clock()
+	local groundGlowCount = 0
+	local commandCount = 0
     for i, v in pairs(commands) do
         local progress = (osClock - commands[i].time) / duration
         local unitID = commands[i].unitID
@@ -638,68 +647,66 @@ function widget:DrawWorldPreUnit()
 		                local validCoord = X and Z and X>=0 and X<=mapX and Z>=0 and Z<=mapZ
 		                -- draw
 		                if X and validCoord then
-		                		commandCount = commandCount + 1
+		               		commandCount = commandCount + 1
 		                    -- lines
 		                    local usedLineWidth = lineWidth - (progress * (lineWidth - (lineWidth * lineWidthEnd)))
 		                    local lineColour = CONFIG[commands[i].queue[j].id].colour
 		                    local lineAlpha = opacity * lineOpacity * (lineColour[4] * 2) * lineAlphaMultiplier
 		                    if lineAlpha > 0 then 
-														gl.Color(lineColour[1],lineColour[2],lineColour[3],lineAlpha)
-														if drawLineTexture then
-															
-							                usedLineWidth = lineWidth - (progress * (lineWidth - (lineWidth * lineWidthEnd)))
-															gl.Texture(lineImg)
-															gl.BeginEnd(GL.QUADS, DrawLineTex, prevX,prevY,prevZ, X, Y, Z, usedLineWidth, lineTextureLength * (lineWidth / usedLineWidth), texOffset)
-															gl.Texture(false)
-														else
-															gl.BeginEnd(GL.QUADS, DrawLine, prevX,prevY,prevZ, X, Y, Z, usedLineWidth)
-														end
-														-- ghost of build queue
-														if drawBuildQueue and commands[i].queue[j].buildingID then
-															gl.PushMatrix()
-															gl.Translate(X,Y+1,Z)
-															gl.Rotate(90 * commands[i].queue[j].params[4], 0, 1, 0)
-															gl.UnitShape(commands[i].queue[j].buildingID, spGetMyTeamID(), true, false, false)
-															gl.Rotate(-90 * commands[i].queue[j].params[4], 0, 1, 0)
-															gl.Translate(-X,-Y-1,-Z)
-															gl.PopMatrix()
-														end
-														if j == 1 and not drawLineTexture then
-															-- draw startpoint rounding
-															gl.Color(lineColour[1],lineColour[2],lineColour[3],lineAlpha)
-															gl.BeginEnd(GL.QUADS, DrawLineEnd, X, Y, Z, prevX,prevY,prevZ, usedLineWidth)
-														end
-												end
+								gl.Color(lineColour[1],lineColour[2],lineColour[3],lineAlpha)
+								if drawLineTexture then
+					                usedLineWidth = lineWidth - (progress * (lineWidth - (lineWidth * lineWidthEnd)))
+									gl.Texture(lineImg)
+									gl.BeginEnd(GL.QUADS, DrawLineTex, prevX,prevY,prevZ, X, Y, Z, usedLineWidth, lineTextureLength * (lineWidth / usedLineWidth), texOffset)
+									gl.Texture(false)
+								else
+									gl.BeginEnd(GL.QUADS, DrawLine, prevX,prevY,prevZ, X, Y, Z, usedLineWidth)
+								end
+								-- ghost of build queue
+								if drawBuildQueue and commands[i].queue[j].buildingID then
+									gl.PushMatrix()
+									gl.Translate(X,Y+1,Z)
+									gl.Rotate(90 * commands[i].queue[j].params[4], 0, 1, 0)
+									gl.UnitShape(commands[i].queue[j].buildingID, spGetMyTeamID(), true, false, false)
+									gl.Rotate(-90 * commands[i].queue[j].params[4], 0, 1, 0)
+									gl.Translate(-X,-Y-1,-Z)
+									gl.PopMatrix()
+								end
+								if j == 1 and not drawLineTexture then
+									-- draw startpoint rounding
+									gl.Color(lineColour[1],lineColour[2],lineColour[3],lineAlpha)
+									gl.BeginEnd(GL.QUADS, DrawLineEnd, X, Y, Z, prevX,prevY,prevZ, usedLineWidth)
+								end
+							end
 		                    if j==commands[i].queueSize then
-									
-														-- draw endpoint rounding
-														if drawLineTexture == false and lineAlpha > 0 then 
-															if drawLineTexture then
-																gl.Texture(lineImg)
-																gl.Color(lineColour[1],lineColour[2],lineColour[3],lineAlpha)
-																gl.BeginEnd(GL.QUADS, DrawLineEndTex, prevX,prevY,prevZ, X, Y, Z, usedLineWidth, lineTextureLength, texOffset)
-																gl.Texture(false)
-															else
-																gl.Color(lineColour[1],lineColour[2],lineColour[3],lineAlpha)
-																gl.BeginEnd(GL.QUADS, DrawLineEnd, prevX,prevY,prevZ, X, Y, Z, usedLineWidth)
-															end
-		                     		end
+
+							-- draw endpoint rounding
+							if drawLineTexture == false and lineAlpha > 0 then 
+								if drawLineTexture then
+									gl.Texture(lineImg)
+									gl.Color(lineColour[1],lineColour[2],lineColour[3],lineAlpha)
+									gl.BeginEnd(GL.QUADS, DrawLineEndTex, prevX,prevY,prevZ, X, Y, Z, usedLineWidth, lineTextureLength, texOffset)
+									gl.Texture(false)
+								else
+									gl.Color(lineColour[1],lineColour[2],lineColour[3],lineAlpha)
+									gl.BeginEnd(GL.QUADS, DrawLineEnd, prevX,prevY,prevZ, X, Y, Z, usedLineWidth)
+									end
+		                   		end
 		                        
-														-- ground glow
-														if groundGlow and groundGlowCount < maxGroundGlowCount then
-															groundGlowCount = groundGlowCount + 1
-								              local size = (glowRadius * CONFIG[commands[i].queue[j].id].sizeMult) + ((glowRadius * CONFIG[commands[i].queue[j].id].endSize - glowRadius * CONFIG[commands[i].queue[j].id].sizeMult) * progress)
-															local glowAlpha = (1 - progress) * glowOpacity * opacity
-															
-															if commands[i].selected then
-																glowAlpha = glowAlpha * 1.5
-															end
-															gl.Color(lineColour[1],lineColour[2],lineColour[3],glowAlpha)
-															gl.Texture(glowImg)
-															gl.BeginEnd(GL.QUADS,DrawGroundquad,X,Y+3,Z,size)
-															gl.Texture(false)
-														end
-									
+								-- ground glow
+							if groundGlow and groundGlowCount < maxGroundGlowCount then
+								groundGlowCount = groundGlowCount + 1
+							    local size = (glowRadius * CONFIG[commands[i].queue[j].id].sizeMult) + ((glowRadius * CONFIG[commands[i].queue[j].id].endSize - glowRadius * CONFIG[commands[i].queue[j].id].sizeMult) * progress)
+								local glowAlpha = (1 - progress) * glowOpacity * opacity
+														
+								if commands[i].selected then
+									glowAlpha = glowAlpha * 1.5
+								end
+								gl.Color(lineColour[1],lineColour[2],lineColour[3],glowAlpha)
+								gl.Texture(glowImg)
+								gl.BeginEnd(GL.QUADS,DrawGroundquad,X,Y+3,Z,size)
+								gl.Texture(false)
+							end		
                         end
                         prevX, prevY, prevZ = X, Y, Z
                     end
@@ -714,7 +721,7 @@ end
 
 
 function widget:DrawWorld()
-  if spIsGUIHidden() then return end
+    if spIsGUIHidden() or HighPing or TooHigh then return end
     
 	if drawUnitHighlightSkipFPS > 0 and spGetFPS() < drawUnitHighlightSkipFPS then return end
 	

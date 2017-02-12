@@ -20,10 +20,13 @@ local GetSelectedUnitsSorted = Spring.GetSelectedUnitsSorted
 local GetUnitStates = Spring.GetUnitStates
 local GetSelectedUnitsCount = Spring.GetSelectedUnitsCount
 local GetPlayerInfo = Spring.GetPlayerInfo
+local myPlayerID = Spring.GetMyPlayerID()
 
 local CMD_MOVE = CMD.MOVE
 
-local myPlayerID = Spring.GetMyPlayerID()
+local spySelected = false
+local sec = 0
+local lastUpdate = 0
 
 function UnloadIfSpec()
 	local _, _, spec, _, _, _, _, _ = GetPlayerInfo(myPlayerID)
@@ -42,18 +45,30 @@ function widget:PlayerChanged()
 	UnloadIfSpec()
 end
 
-function widget:DefaultCommand()
-	local count = GetSelectedUnitsCount()
-	if count==0 or count>10 then return end --we aren't micro-ing spies here...
-	
-	local selectedUnittypes = GetSelectedUnitsSorted()
-	for spyDefID in pairs(spies) do
-		if selectedUnittypes[spyDefID] then
-			for _,unitID in pairs(selectedUnittypes[spyDefID]) do
-				if GetUnitStates(unitID).cloak then
-					return CMD_MOVE
+function widget:Update(dt)
+	sec = sec + dt
+	if sec > lastUpdate + 0.2 then
+		lastUpdate = sec
+		
+		spySelected = false
+		local count = GetSelectedUnitsCount()
+		if count <= 15 then  -- above a little amount we aren't micro-ing spies anymore...
+			local selectedUnittypes = GetSelectedUnitsSorted()
+			for spyDefID in pairs(spies) do
+				if selectedUnittypes[spyDefID] then
+					for _,unitID in pairs(selectedUnittypes[spyDefID]) do
+						if GetUnitStates(unitID).cloak then
+							spySelected = true
+						end
+					end
 				end
 			end
 		end
+	end
+end
+
+function widget:DefaultCommand()
+	if spySelected then
+		return CMD_MOVE
 	end
 end

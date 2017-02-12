@@ -74,6 +74,7 @@ local avgWind = math.floor((maxWind + minWind) / 2)
 local speedTextPosX			= 0
 local avgSpeedTextPosX		= 0
 local avgSpeedTextPosY		= 0
+local windValueDrawList     = {}
 
 
 --------------------------------------------------------------------------------
@@ -145,6 +146,12 @@ function createBackgroundList2()
 	end)
 end
 
+function drawWindValue(value)
+	glText(value, windTextPosX, windTextPosY, textSize*widgetScale, 'oc') -- Wind speed text
+	glColor(1,1,1,0.25)
+    glText(avgWind, -(15*widgetScale)+panelWidth, ((textSize*0.75*widgetScale)/8), textSize*0.75*widgetScale, 'r') -- Wind speed text
+end
+
 function widget:DrawScreen()
 	glCallList(backgroundList)
 	if rotationOn then -- Rotation
@@ -154,11 +161,12 @@ function widget:DrawScreen()
 	end
 	glCallList(backgroundList2)
     if spGetGameFrame() > 1 then
-		glText(printWind, windTextPosX, windTextPosY, textSize*widgetScale, 'oc') -- Wind speed text
-    end
-    glColor(1,1,1,0.25)
-    glText(avgWind, -(15*widgetScale)+panelWidth, ((textSize*0.75*widgetScale)/8), textSize*0.75*widgetScale, 'r') -- Wind speed text
-    glPopMatrix()
+		if windValueDrawList[printWind] == nil then
+			windValueDrawList[printWind] = glCreateList(drawWindValue, printWind)
+		end
+		glCallList(windValueDrawList[printWind])
+	end
+	glPopMatrix()
 end
 
 
@@ -264,5 +272,9 @@ function widget:Shutdown()
 	if backgroundList ~= nil then
 		glDeleteList(backgroundList)
 		glDeleteList(backgroundList2)
+		
+		for value,dlist in pairs(windValueDrawList) do 
+			glDeleteList(windValueDrawList[value])
+		end
 	end
 end

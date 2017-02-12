@@ -171,7 +171,7 @@ end
 function gadget:Initialize()
 	for _,mapname in ipairs(mapBlackList) do
 		if (Game.mapName:find(mapname)) then
-			Spring.Echo(red .. "ILLEGAL MAP DETECTED, ENDING GAME!!!!!!!!!!!!!!!!")
+			Spring.Echo(red .. "ILLEGAL MAP/MOD DETECTED, ENDING GAME!!!!!!!!!!!!!!!!")
 	 		Spring.GameOver({nil})
 		end
 	end
