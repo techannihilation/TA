@@ -39,7 +39,7 @@ return {
 		metalmake = 0,
 		metalstorage = 0,
 		mobilestandorders = 1,
-		movementclass = "AMPHKBOT",
+		movementclass = "HKBOT3",
 		name = "Cavalier",
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
@@ -62,6 +62,7 @@ return {
 		upright = true,
 		workertime = 0,
 		customparams = {
+			canjump = "1",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
