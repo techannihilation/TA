@@ -1,3 +1,12 @@
+---------------------------------------- v2.45.7 ---------------------------------------
+Add jump to cavalier
+Balance tll t2 air trans
+Plasma Canon T1&T2 : Delete Special damage to Commander's
+Add Arm/Core end game weapon's back
+Minor Performace tweaks to some widgets
+Fix crash in deferred rendering widget
+Fix tllom missing wreak
+
 ---------------------------------------- v2.45.6 ---------------------------------------
 ----Improvments----
 Dont draw lups fame effect is unit is icon
