@@ -17,7 +17,7 @@ return {
 		category = "ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "All-Terrain - Multipurpose Assault Kbot",
+		description = "Jump Assault Kbot",
 		downloadable = 1,
 		energymake = 5,
 		energystorage = 0,
