@@ -1,8 +1,8 @@
 return {
 	armmin = {
-		acceleration = 0.02155,
+		acceleration = 0.06,
 		bankscale = 1.5,
-		brakerate = 0.012,
+		brakerate = 0.07,
 		buildcostenergy = 1600,
 		buildcostmetal = 43,
 		builddistance = 160,

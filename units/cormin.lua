@@ -1,8 +1,8 @@
 return {
 	cormin = {
-		acceleration = 0.01799,
+		acceleration = 0.05,
 		bankscale = 1.5,
-		brakerate = 0.012,
+		brakerate = 0.08,
 		buildcostenergy = 1600,
 		buildcostmetal = 43,
 		builddistance = 160,
