@@ -73,6 +73,7 @@ local spGetProjectileName         = Spring.GetProjectileName
 local spGetCameraPosition         = Spring.GetCameraPosition
 local spGetPieceProjectileParams  = Spring.GetPieceProjectileParams 
 local spGetProjectileVelocity     = Spring.GetProjectileVelocity 
+local spIsGUIHidden               = Spring.IsGUIHidden
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -103,7 +104,10 @@ local lightpos2locBeam  = nil
 local lightcolorlocBeam  = nil
 local lightparamslocBeam  = nil
 local uniformEyePosBeam 
-local uniformViewPrjInvBeam 
+local uniformViewPrjInvBeam
+
+local TooHigh = true
+local HighPing = false
 
 local BlackList, Customlight, Armtrails, Coretrails, Tlltrails, Plasmabatts, Tlltrailssb, Armtrailssb, Coretrailssb = include("Configs/gfx_deferred_rendering_defs.lua")	-- weapons that shouldn't use projectile lights
 
@@ -219,6 +223,11 @@ local function GetLightsFromUnitDefs()
 end
 
 --------------------------------------------------------------------------------
+function DrawStatus(toohigh,fps,ping)
+    TooHigh = toohigh
+    HighPing = ping
+end
+--------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
 function widget:ViewResize()
@@ -249,7 +258,7 @@ local fragSrc
 --------------------------------------------------------------------------------
 
 function widget:Initialize()
-
+	widgetHandler:RegisterGlobal('DrawManager_deferredrender', DrawStatus)
 	--Ugly may remove
 	Spring.SetConfigInt("AllowDeferredMapRendering", 1)
 	Spring.SetConfigInt("AllowDeferredModelRendering", 1)
@@ -327,6 +336,7 @@ end
 
 
 function widget:Shutdown()
+  widgetHandler:DeregisterGlobal('DrawManager_deferredrender', DrawStatus)
   if (GLSLRenderer) then
 	if (glDeleteShader) then
 	  glDeleteShader(depthPointShader)
@@ -425,6 +435,7 @@ local function DrawLightType(lights,lighttype) -- point = 0 beam = 1
 end
 
 function widget:DrawScreenEffects()
+	if spIsGUIHidden() or HighPing or TooHigh then return end
 	if (GLSLRenderer) then
 		local projectiles=spGetVisibleProjectiles()
 		if #projectiles == 0 then return end

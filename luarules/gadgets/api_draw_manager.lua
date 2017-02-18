@@ -45,7 +45,7 @@ function DrawChecks()
   -- each widget needs its own Script.LuaUI call :(
   -- ScriptLuaUICall("GetHeight_teamplatter", toohigh)
   ScriptLuaUICall("DrawManager_teamplatter", toohigh,fpscount,IsBehind)
-  ScriptLuaUICall("DrawManager_projectilelights", toohigh,fpscount,IsBehind)
+  ScriptLuaUICall("DrawManager_deferredrender", toohigh,fpscount,IsBehind)
   ScriptLuaUICall("DrawManager_mphi", toohigh,fpscount,IsBehind)
   ScriptLuaUICall("DrawManager_allycursors", toohigh,fpscount,IsBehind)
   ScriptLuaUICall("DrawManager_healthbars", toohigh,fpscount,IsBehind)
