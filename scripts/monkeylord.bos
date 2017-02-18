@@ -16,7 +16,6 @@ static-var  bMoving, bAiming, Static_Var_3, restore_delay, Static_Var_5,
 #define SIG_AIM_2			4
 #define SIG_AIM_3			8
 
-
 HexapodTrueWalk()
 {
 	while( bMoving )
@@ -339,7 +338,7 @@ AimPrimary(heading, pitch)
 	set-signal-mask SIG_AIM;
 	bAiming = TRUE;
 	turn berceau to y-axis heading speed <150.000000>;
-	turn canon to x-axis pitch + <8.000000> speed <40.000000>;
+	turn canon to x-axis <0> - pitch speed <40.000000>;
 	wait-for-turn berceau around y-axis;
 	wait-for-turn canon around x-axis;
 	start-script RetourTourelle();
