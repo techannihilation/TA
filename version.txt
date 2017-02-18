@@ -1,3 +1,16 @@
+---------------------------------------- v2.45.9 ---------------------------------------
+----Improvments----
+Add new Icons for T2 Vehicles and Kbot TLL
+
+----Balance----
+Add Corgol1 and CorSumo1 for Commander Enginereer (Unlock with T2 Tch Center)
+Add AA Weapon for CorHowie (T3.5 Kbot Missile)
+Add SprayAngle for Armpers (T3 Gunship). Decrease by 10% dmg/s for BlackDown (T3 Core Gunship).
+TLLColdFus : Decrease Metal cost 13950 => 13250
+
+
+
+
 ---------------------------------------- v2.45.7 ---------------------------------------
 Add jump to cavalier
 Balance tll t2 air trans
