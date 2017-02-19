@@ -65,6 +65,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "CORGOL1.png",
+			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
 			corgol1_dead = {
