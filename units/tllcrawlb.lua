@@ -7,6 +7,7 @@ return {
 		builder = false,
 		buildtime = 7900,
 		canattack = true,
+		cantBeTransported = true,
 		canguard = true,
 		canmove = true,
 		canpatrol = true,
