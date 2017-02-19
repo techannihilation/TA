@@ -1,9 +1,15 @@
 ---------------------------------------- v2.45.9 ---------------------------------------
 ----Improvments----
 Add new Icons for T2 Vehicles and Kbot TLL
+Disable deferred rendering if cursor is too high or ping is too high
+Set build cost widget, default off
+Add protective guard widget, default off
+Add build queue fast foward widget, default off
+Fix monkeylord's script
+Fix arm/core Anti mine aircraft movements, Closes #61
 
 ----Balance----
-Add Corgol1 and CorSumo1 for Commander Enginereer (Unlock with T2 Tch Center)
+Add Corgol1 and CorSumo1 for Commander Enginereer (Unlock with T2 Tech Center)
 Add AA Weapon for CorHowie (T3.5 Kbot Missile)
 Add SprayAngle for Armpers (T3 Gunship). Decrease by 10% dmg/s for BlackDown (T3 Core Gunship).
 TLLColdFus : Decrease Metal cost 13950 => 13250
