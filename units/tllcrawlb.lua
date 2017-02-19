@@ -9,6 +9,7 @@ return {
 		canattack = true,
 		canguard = true,
 		canmove = true,
+		cantbetransported = true,
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
