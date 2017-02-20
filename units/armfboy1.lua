@@ -59,6 +59,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "ARMFBOY1.png",
+			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
 			armfboy_dead = {
