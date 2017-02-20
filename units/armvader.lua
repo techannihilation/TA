@@ -9,6 +9,7 @@ return {
 		buildpic = "ARMVADER.png",
 		buildtime = 7901,
 		canattack = true,
+		cantBeTransported = true,
 		canguard = true,
 		canmove = true,
 		canpatrol = true,
