@@ -3,8 +3,8 @@ return {
 		acceleration = 0.6,
 		bankscale = 1,
 		brakerate = 0.35,
-		buildcostenergy = 17403,
-		buildcostmetal = 951,
+		buildcostenergy = 19000,
+		buildcostmetal = 1300,
 		builder = false,
 		buildpic = "BLADE.png",
 		buildtime = 30964,
@@ -57,7 +57,6 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "BLADE.png",
-			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
