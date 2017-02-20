@@ -66,7 +66,7 @@ return {
 			[13] = "corstorm1",
 			[14] = "corroy",
 			[15] = "armraven1",
-			[16] = "coredauber",
+			[16] = "corsumo1",
 			[17] = "corgol1",
 			[18] = "corkrog",
 			
