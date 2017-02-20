@@ -9,7 +9,6 @@ return {
 		buildpic = "CORROACH.png",
 		buildtime = 7899,
 		canattack = true,
-		cantBeTransported = true,
 		canguard = true,
 		canmove = true,
 		canpatrol = true,
