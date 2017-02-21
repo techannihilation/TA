@@ -107,7 +107,7 @@ return {
 				edgeeffectiveness = 0.2,
 				explosiongenerator = "custom:ORIONEXPLO",
 				firestarter = 10,
-				groundbounce = true,
+				groundbounce = false,
 				impulsefactor = 0,
 				interceptedbyshieldtype = 16,
 				model = "bombe",
