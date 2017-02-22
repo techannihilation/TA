@@ -91,6 +91,7 @@ return {
 		weapondefs = {
 			corvtol_missile_a2a = {
 				areaofeffect = 35,
+				avoidFriendly = false,
 				collidefriendly = false,
 				craterboost = 0,
 				cratermult = 0,
@@ -112,10 +113,10 @@ return {
 				tolerance = 8000,
 				tracks = true,
 				turnrate = 24000,
-				weaponacceleration = 150,
+				weaponacceleration = 200,
 				weapontimer = 5,
 				weapontype = "MissileLauncher",
-				weaponvelocity = 750,
+				weaponvelocity = 800,
 				damage = {
 					bombers = 120,
 					default = 5,
