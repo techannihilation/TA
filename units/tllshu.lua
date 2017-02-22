@@ -86,6 +86,8 @@ return {
 		weapondefs = {
 			armvtol_advmissile = {
 				areaofeffect = 35,
+				avoidFriendly = false,
+				avoidFeature = false,
 				collidefriendly = false,
 				craterboost = 0,
 				cratermult = 0,
