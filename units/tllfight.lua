@@ -91,6 +91,7 @@ return {
 		weapondefs = {
 			tllvtol_missile = {
 				areaofeffect = 35,
+				avoidFriendly = false,
 				collidefriendly = false,
 				craterboost = 0,
 				cratermult = 0,
@@ -107,15 +108,15 @@ return {
 				smoketrail = true,
 				soundhitdry = "xplosml2",
 				soundstart = "Rocklit3",
-				startvelocity = 420,
+				startvelocity = 600,
 				texture2 = "armsmoketrail",
 				tolerance = 8000,
 				tracks = true,
 				turnrate = 16384,
-				weaponacceleration = 146,
+				weaponacceleration = 200,
 				weapontimer = 5,
 				weapontype = "MissileLauncher",
-				weaponvelocity = 480,
+				weaponvelocity = 800,
 				damage = {
 					bombers = 120,
 					default = 5,
