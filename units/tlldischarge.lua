@@ -20,7 +20,7 @@ return {
 		collisionvolumetype = "CylZ",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "JetPack Kbot",
+		description = "Jump Kbot",
 		downloadable = 1,
 		energymake = 0.4,
 		energystorage = 0,
