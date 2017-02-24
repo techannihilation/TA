@@ -181,7 +181,7 @@ return {
 				impulsefactor = 0,
 				laserflaresize = 10,
 				name = "Light Laser",
-				range = 450,
+				range = 350,
 				reloadtime = 1,
 				rgbcolor = "0.000 1.000 0.612",
 				soundhitdry = "lasrhit2",
