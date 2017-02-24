@@ -55,6 +55,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "CORSUMO1.png",
+			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
 			corsumo_dead = {
