@@ -19,7 +19,7 @@ return {
 		collisionvolumetype = "Ell",
 		corpse = "DEAD",
 		defaultmissiontype = "Standby",
-		description = "Very Heavy Battle Mech",
+		description = "Very Heavy All-Terrain Battle Mech",
 		energymake = 7.5,
 		energystorage = 0,
 		energyuse = 7.5,
