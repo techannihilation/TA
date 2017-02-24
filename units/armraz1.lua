@@ -39,7 +39,7 @@ return {
 		maxvelocity = 2.4,
 		maxwaterdepth = 22,
 		mobilestandorders = 1,
-		movementclass = "HTKBOT7",
+		movementclass = "HKBOT7",
 		name = "Mega Razorback",
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
