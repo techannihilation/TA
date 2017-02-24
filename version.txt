@@ -1,3 +1,24 @@
+---------------------------------------- v2.46.0 ---------------------------------------
+----Improvments----
+Arm/Core T1.5 Rocket Bot => Add 2 bursts. Change weapon model with T1 rocket Kbot.
+Fix fighters weapons (now shoot even friendly is near target) 
+Add Fatboy1 and Corsumo1 for Ditawn (remplace Helldriver and Cordaub)
+???? To validate ????? => remplace All-terrain by Jumping feature for T3.5 Macross
+
+----Balance----
+Arm/Core T1.5 Rocket Bot => Increase Damage 100 dmg/s, HP 450 => 750, Decrease Range 700 => 620.
+Gladiator => Decrease cost(8KE => 4.8KE 550M =>480M). Rocket : Range 525 => 475. Dmg 120 => 100/s. Laser : Range 450 => 350. Dmg 100/s => 75/s.
+TLL T1 Rocket Bot => Increase Speed, Damage and Range To be better than T1 and smaller than T1.5 Arm/COre Rocket Bot.
+Aexxec => Decrease a little Energy. 5500 => 5200.
+Krow => Nerf Krow HP by 25% (20 => 15K HP)
+TllMediumFus => Increase Metal 3680 => 3880
+
+
+----Bug----
+Delete All-terrain for Razorback T4
+TllRobber can shoot Air now. (Tll T2 Transport)
+
+
 ---------------------------------------- v2.45.9 ---------------------------------------
 ----Improvments----
 Add new Icons for T2 Vehicles and Kbot TLL
@@ -13,8 +34,6 @@ Add Corgol1 and CorSumo1 for Commander Enginereer (Unlock with T2 Tech Center)
 Add AA Weapon for CorHowie (T3.5 Kbot Missile)
 Add SprayAngle for Armpers (T3 Gunship). Decrease by 10% dmg/s for BlackDown (T3 Core Gunship).
 TLLColdFus : Decrease Metal cost 13950 => 13250
-
-
 
 
 ---------------------------------------- v2.45.7 ---------------------------------------
