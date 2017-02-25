@@ -266,7 +266,7 @@ AimPrimary(heading, pitch)
 		turn waist to x-axis <0.000000> speed <20.000000>;
 		Static_Var_3 = 1;
 	}
-	turn TurretBase to y-axis heading speed <60.000000>;
+	turn TurretBase to y-axis heading speed <80.000000>;
 	turn TurretBase to x-axis <0.000000> - pitch speed <45.000000>;
 	wait-for-turn TurretBase around y-axis;
 	wait-for-turn TurretBase around x-axis;
@@ -385,47 +385,35 @@ FireTertiary()
 {
 	if( gun_3 == 0 )
 	{
-		move l1 to z-axis [-1.200000] speed [80.000000];
 		show lfire1;
 		sleep 140;
 		hide lfire1;
-		wait-for-move l1 along z-axis;
 		gun_3 = howitzer;
-		move l1 to z-axis [0.000000] speed [1.000000];
 		return (0);
 	}
 	if( gun_3 == 1 )
 	{
-		move l2 to z-axis [-1.200000] speed [80.000000];
 		show lfire2;
 		sleep 140;
 		hide lfire2;
-		wait-for-move l2 along z-axis;
 		gun_3 = fire1;
-		move l2 to z-axis [0.000000] speed [1.000000];
 		return (0);
 	}
 	if( gun_3 == 2 )
 	{
-		move l3 to z-axis [-1.200000] speed [80.000000];
 		show lfire3;
 		sleep 140;
 		hide lfire3;
-		wait-for-move l3 along z-axis;
 		gun_3 = fire2;
-		move l3 to z-axis [0.000000] speed [1.000000];
 		return (0);
 	}
 	if( gun_3 == 3 )
 	{
 		Static_Var_8 = 1;
-		move l4 to z-axis [-1.200000] speed [80.000000];
 		show lfire4;
 		sleep 140;
 		hide lfire4;
-		wait-for-move l4 along z-axis;
 		gun_3 = TurretBase;
-		move l4 to z-axis [0.000000] speed [1.000000];
 		return (0);
 	}
 }
@@ -440,11 +428,11 @@ AimTertiary(heading, pitch)
 		turn waist to x-axis <0.000000> speed <20.000000>;
 		Static_Var_3 = 1;
 	}
-	turn TurretBase to y-axis heading speed <60.000000>;
-	turn l1 to x-axis <0.000000> - pitch speed <85.000000>;
-	turn l2 to x-axis <0.000000> - pitch speed <85.000000>;
-	turn l3 to x-axis <0.000000> - pitch speed <85.000000>;
-	turn l4 to x-axis <0.000000> - pitch speed <85.000000>;
+	turn TurretBase to y-axis heading speed <80.000000>;
+	turn l1 to x-axis <0.000000> - pitch speed <285.000000>;
+	turn l2 to x-axis <0.000000> - pitch speed <285.000000>;
+	turn l3 to x-axis <0.000000> - pitch speed <285.000000>;
+	turn l4 to x-axis <0.000000> - pitch speed <285.000000>;
 	wait-for-turn TurretBase around y-axis;
 	wait-for-turn l1 around x-axis;
 	start-script Restore2();
