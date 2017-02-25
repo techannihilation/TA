@@ -1,8 +1,8 @@
 
 function gadget:GetInfo()
 	return {
-		name      = "Disabled Passengers",
-		desc      = "Disabled crawling bombs when passengers",
+		name      = "Disable unloaded bombs",
+		desc      = "Temp disables crawling once unloaded",
 		author    = "Nixtux",
 		date      = "Feb 20, 2017",
 		license   = "GNU GPL, v2 or later",
@@ -21,8 +21,6 @@ end
 ----------------------------------------------------------------
 -- Vars
 ----------------------------------------------------------------
-local frameDelay = 45
-
 local crawlingBombs = {
 	[UnitDefNames.armvader.id] = true,
 	[UnitDefNames.corroach.id] = true,
@@ -31,31 +29,15 @@ local crawlingBombs = {
 	[UnitDefNames.coretnt.id] = true,
 }
 
-local disabledUnit = {}
-----------------------------------------------------------------
+---------------------------------------------------------------
 -- Callins
 ----------------------------------------------------------------
 
 function gadget:UnitUnloaded(unitID, unitDefID, teamID, transportID)
 	if unitID == nil or unitDefID == nil or transportID == nil then return end
-	if crawlingBombs[unitDefID] then		
-       	local frame = Spring.GetGameFrame() + frameDelay
-       	Spring.SetUnitHealth(unitID, { paralyze = 1.0e9 })
-       	disabledUnit[unitID] = frame
+	if crawlingBombs[unitDefID] then	
+       	local x,y,z = Spring.GetUnitBasePosition(unitID)
+        local h = y - Spring.GetGroundHeight(x,z)
+       	Spring.SetUnitHealth(unitID, { paralyze = h*10 })
 	end
-end
-
-function gadget:UnitDestroyed(unitID)
-    disabledUnit[unitID] = nil
-end
-
-function gadget:GameFrame(frame)
-    -- prevent unloaded units from sliding across the map
-    for unitID,endframe in pairs(disabledUnit) do
-    	--Spring.Echo(frame,i,endframe)
-        if frame == endframe then
-			Spring.SetUnitHealth(unitID, { paralyze = -1})
-            disabledUnit[unitID] = nil
-        end
-    end
 end
