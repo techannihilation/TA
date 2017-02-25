@@ -10,9 +10,9 @@ local weapons = {
 	tllaether_thermite_bomb = { radius = 64, damage = 900, duration = 150, rangeFall = 0.5, timeFall = 0.5},
 
 	--junos
-	ajuno_juno_pulse = { radius = 950, damage = 20, duration = 90, rangeFall = 0.8, timeFall = 0.1, isjuno = true},
-	cjuno_juno_pulse = { radius = 950, damage = 20, duration = 90, rangeFall = 0.8, timeFall = 0.1, isjuno = true},
-	tlljuno_juno_pulse = { radius = 950, damage = 20, duration = 90, rangeFall = 0.8, timeFall = 0.1, isjuno = true}
+	ajuno_juno_pulse = { radius = 950, damage = 30, duration = 90, rangeFall = 0.8, timeFall = 0.1, isjuno = true},
+	cjuno_juno_pulse = { radius = 950, damage = 30, duration = 90, rangeFall = 0.8, timeFall = 0.1, isjuno = true},
+	tlljuno_juno_pulse = { radius = 950, damage = 30, duration = 90, rangeFall = 0.8, timeFall = 0.1, isjuno = true}
 
 }
 
