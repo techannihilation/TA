@@ -61,7 +61,7 @@ return {
 		turninplacespeedlimit = 1.7424,
 		turnrate = 210,
 		unitname = "corcarry",
-		workertime = 1000,
+		workertime = 4000,
 		customparams = {
 			buildpic = "CORCARRY.png",
 		},

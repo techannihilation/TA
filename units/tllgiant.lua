@@ -55,7 +55,7 @@ return {
 		unitname = "tllgiant",
 		unitnumber = 907,
 		waterline = 7,
-		workertime = 220,
+		workertime = 4000,
 		featuredefs = {
 			dead = {
 				blocking = true,

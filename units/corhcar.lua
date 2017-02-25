@@ -63,7 +63,7 @@ return {
 		turnrate = 64,
 		unitname = "corhcar",
 		waterline = 2,
-		workertime = 750,
+		workertime = 5500,
 		featuredefs = {
 			dead = {
 				blocking = false,

@@ -61,7 +61,7 @@ return {
 		turninplacespeedlimit = 1.782,
 		turnrate = 210,
 		unitname = "armcarry",
-		workertime = 1000,
+		workertime = 4000,
 		customparams = {
 			buildpic = "ARMCARRY.png",
 		},

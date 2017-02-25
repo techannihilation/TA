@@ -41,7 +41,7 @@ return {
 		unitname = "tllasp",
 		unitnumber = 805,
 		usebuildinggrounddecal = true,
-		workertime = 2000,
+		workertime = 3000,
 		yardmap = "oooo oooo oooo oooo",
 		featuredefs = {
 			dead = {

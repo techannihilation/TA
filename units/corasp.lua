@@ -53,7 +53,7 @@ return {
 		turnrate = 0,
 		unitname = "corasp",
 		usebuildinggrounddecal = true,
-		workertime = 2000,
+		workertime = 3000,
 		yardmap = "ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
 			buildpic = "CORASP.png",
