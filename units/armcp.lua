@@ -1,14 +1,14 @@
 return {
 	armcp = {
 		activatewhenbuilt = false,
-		buildcostenergy = 13067,
-		buildcostmetal = 1024,
+		buildcostenergy = 4850,
+		buildcostmetal = 1065,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 9,
 		buildinggrounddecalsizey = 9,
 		buildinggrounddecaltype = "armcp_aoplane.dds",
-		buildtime = 12740,
+		buildtime = 13740,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
