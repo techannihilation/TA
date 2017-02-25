@@ -27,8 +27,15 @@ local SpEcho = Spring.Echo
 local sqrt = math.sqrt
 local pairs = pairs
 local ipairs = ipairs
-local junoCanDamage = {}
 
+local scouts = {
+  [UnitDefNames["armflea"].id] = true,
+  [UnitDefNames["armfav"].id] = true,
+  [UnitDefNames["corpunk"].id] = true,
+  [UnitDefNames["corfav"].id] = true,
+  [UnitDefNames["tllbug"].id] = true,
+  [UnitDefNames["tllgladius"].id] = true,
+}
 
 function gadget:Explosion(weaponID, px, py, pz, ownerID)
 	if ownerID==nil then return end
@@ -45,9 +52,8 @@ function gadget:Explosion(weaponID, px, py, pz, ownerID)
 			teamID=SpGetUnitTeam(ownerID),
 			allyID=SpGetUnitAllyTeam(ownerID),
 			allyScale=weaponInfo[weaponID].allyScale or 1.0,
-			teamScale=teamScale or 1.0,
-			isjuno=isjuno or false
-
+			teamScale=weaponInfo[weaponID].teamScale or 1.0,
+			scoutScale=weaponInfo[weaponID].scoutScale or 1.0
 		}
 		table.insert(explosionList,w)
 	end
@@ -67,6 +73,8 @@ function gadget:GameFrame(f)
 					local damage = w.damage
 					local allyScale = w.allyScale
 					local teamScale = w.teamScale
+					local scoutScale = w.scoutScale
+Spring.Echo("scoutScale",scoutScale)
 					if w.rangeFall ~= 0 then
 						damage = damage - damage*w.rangeFall*sqrt((ux-w.pos.x)^2 + (uy-w.pos.y)^2 + (uz-w.pos.z)^2)/w.radius
 					end
@@ -77,14 +85,14 @@ function gadget:GameFrame(f)
 				   		damage = damage * allyScale
 					end
 					-- Avoid damage to self altogether
-					if w.isjuno and (u ~= nil and w.owner ~= nil and u ~= w.owner) then
-						if junoCanDamage[SpGetUnitDefID(u)] then
+					if (u ~= nil and w.owner ~= nil and u ~= w.owner) then
+						if scouts[Spring.GetUnitDefID(u)] then
+							SpAddUnitDamage(u, damage*scoutScale, 0, w.owner, w.id, 0, 0, 0)
+						else
 							SpAddUnitDamage(u, damage, 0, w.owner, w.id, 0, 0, 0)
 						end
-					elseif (not w.isjuno) and (u ~= nil and w.owner ~= nil and u ~= w.owner) then
-					   SpAddUnitDamage(u, damage, 0, w.owner, w.id, 0, 0, 0)
 					end
-				end
+				end		
 			end
 			w.damage = w.damage - w.timeLoss
 			if f >= w.expiry then
@@ -95,13 +103,6 @@ function gadget:GameFrame(f)
 end
 
 function gadget:Initialize()
-	for i=1,#UnitDefs do
-  local unitDefID = UnitDefs[i]
-    if unitDefID.canMove and unitDefID.health < 1500 then
-      --Spring.Echo(i,unitDefID.name, unitDefID.health, unitDefID.canMove)
-      junoCanDamage[i] = true
-   end
-  end
 	for w,_ in pairs(weaponInfo) do
 		Script.SetWatchWeapon(w, true)
 	end
