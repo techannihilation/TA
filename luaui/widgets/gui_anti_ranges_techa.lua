@@ -223,6 +223,9 @@ function widget:Update()
         pos["x"] = x
         pos["y"] = y
         pos["z"] = z
+	if antiNukes[unitDefId] == nil then
+	  Spring.Echo("nix its", unitDefId)
+	end
 	pos.coverageRange = antiNukes[unitDefId].coverageRange
 	pos.lineWidthMinus,pos.lineOpacityMultiplier = lineOpacity(pos["x"],pos["y"],pos["z"])
 	pos.circleColor = Stockpile(uID)
@@ -291,6 +294,7 @@ function widget:SetConfigData(data)
 end
 
 function widget:TextCommand(command)
+    Spring.Echo(command)
     if (string.find(command, "antiranges_fade") == 1  and  string.len(command) == 15) then 
 		fadeOnCloseup = not fadeOnCloseup
 		if fadeOnCloseup then
