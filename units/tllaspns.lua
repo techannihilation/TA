@@ -40,7 +40,7 @@ return {
 		unitname = "tllaspns",
 		unitnumber = 881,
 		waterline = 13,
-		workertime = 2000,
+		workertime = 3000,
 		yardmap = "wwww wwww wwww wwww",
 		featuredefs = {
 			dead = {
