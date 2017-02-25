@@ -2,7 +2,7 @@ return {
 	aexxec = {
 		acceleration = 0.4,
 		brakerate = 0.75,
-		buildcostenergy = 5665,
+		buildcostenergy = 5250,
 		buildcostmetal = 720,
 		builder = false,
 		buildtime = 8500,
