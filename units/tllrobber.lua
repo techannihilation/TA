@@ -48,6 +48,7 @@ return {
 		pitchscale = 1,
 		radardistance = 0,
 		radaremitheight = 28.8,
+		releaseheld = true,
 		selfdestructas = "BIG_UNIT_VTOL",
 		shootme = 1,
 		side = "TLL",

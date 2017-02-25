@@ -41,6 +41,7 @@ return {
 		objectname = "TLLTplane",
 		ovradjust = 1,
 		radaremitheight = 28.8,
+		releaseheld = true,
 		scale = 0.8,
 		selfdestructas = "SMALL_UNIT_VTOL",
 		shootme = 1,

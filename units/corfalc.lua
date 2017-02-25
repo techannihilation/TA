@@ -43,6 +43,7 @@ return {
 		objectname = "CORFALC",
 		ovradjust = 1,
 		radardistance = 0,
+		releaseheld = true,
 		scale = 0.8,
 		selfdestructas = "SMALL_UNIT_VTOL",
 		shootme = 1,

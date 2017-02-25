@@ -49,6 +49,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMDFLY",
 		radaremitheight = 28.8,
+		releaseheld = true,
 		scale = 1,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT_VTOL",

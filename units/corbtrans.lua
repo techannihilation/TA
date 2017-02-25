@@ -46,6 +46,7 @@ return {
 		objectname = "CORBTRANS",
 		radardistance = 0,
 		radaremitheight = 28.8,
+		releaseheld = true,
 		scale = 0.8,
 		selfdestructas = "BIG_UNIT_VTOL",
 		shootme = 1,

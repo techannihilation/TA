@@ -44,6 +44,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMATLAS",
 		radaremitheight = 28.8,
+		releaseheld = true,
 		scale = 0.8,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT_VTOL",

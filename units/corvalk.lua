@@ -51,6 +51,7 @@ return {
 		objectname = "CORVALK",
 		pitchscale = 1,
 		radaremitheight = 28.8,
+		releaseheld = true,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		side = "CORE",
