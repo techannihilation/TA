@@ -2,22 +2,24 @@
 ----Improvments----
 Arm/Core T1.5 Rocket Bot => Add 2 bursts. Change weapon model with T1 rocket Kbot.
 Fix fighters weapons (now shoot even friendly is near target) 
-Add Fatboy1 and Corsumo1 for Ditawn (remplace Helldriver and Cordaub)
-???? To validate ????? => remplace All-terrain by Jumping feature for T3.5 Macross
+Add Fatboy1 and Corsumo1 for Ditawn (replace Helldriver and Cordaub)
 
 ----Balance----
 Arm/Core T1.5 Rocket Bot => Increase Damage 100 dmg/s, HP 450 => 750, Decrease Range 700 => 620.
 Gladiator => Decrease cost(8KE => 4.8KE 550M =>480M). Rocket : Range 525 => 475. Dmg 120 => 100/s. Laser : Range 450 => 350. Dmg 100/s => 75/s.
-TLL T1 Rocket Bot => Increase Speed, Damage and Range To be better than T1 and smaller than T1.5 Arm/COre Rocket Bot.
+TLL T1 Rocket Bot => Increase Speed, Damage and Range To be better than T1 and smaller than T1.5 Arm/Core Rocket Bot.
 Aexxec => Decrease a little Energy. 5500 => 5200.
 Krow => Nerf Krow HP by 25% (20 => 15K HP)
 TllMediumFus => Increase Metal 3680 => 3880
-
+Crawling bomb wont explode while in transport
+Increase workertime for repair pads
 
 ----Bug----
 Delete All-terrain for Razorback T4
 TllRobber can shoot Air now. (Tll T2 Transport)
 
+----Visual----
+Make corhowie AA missile turn to target a bit faster
 
 ---------------------------------------- v2.45.9 ---------------------------------------
 ----Improvments----
