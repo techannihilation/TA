@@ -1,7 +1,7 @@
 return {
 	corehpad = {
-		buildcostenergy = 15040,
-		buildcostmetal = 1003,
+		buildcostenergy = 5040,
+		buildcostmetal = 1005,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 9,
