@@ -93,7 +93,8 @@ local antiNukes = {
 }
 
 for unitDefID, _ in pairs(antiNukes) do
-      antiNukes[unitDefID] = {coverageRange = WeaponDefs[UnitDefs[unitDefID].weapons[1].weaponDef].coverageRange} 
+	--Spring.Echo("coverage range =",WeaponDefs[UnitDefs[unitDefID].weapons[1].weaponDef].coverageRange)
+    antiNukes[unitDefID] = {coverageRange = WeaponDefs[UnitDefs[unitDefID].weapons[1].weaponDef].coverageRange} 
 end
 
 --------------------------------------------------------------------------------
@@ -174,8 +175,8 @@ function processVisibleUnit(unitID, unitDefId)
         pos["y"] = y
         pos["z"] = z
         pos.coverageRange = antiNukes[unitDefId].coverageRange
-	pos.lineWidthMinus,pos.lineOpacityMultiplier = lineOpacity(x,y,z)
-	pos.circleColor = Stockpile(unitID)
+		pos.lineWidthMinus,pos.lineOpacityMultiplier = lineOpacity(x,y,z)
+		pos.circleColor = Stockpile(unitID)
         antiInLos[unitID] = pos
         antiOutLos[unitID] = nil
     end
@@ -194,8 +195,8 @@ function widget:UnitLeftLos(unitID)
         pos["y"] = y or antiInLos[unitID].y
         pos["z"] = z or antiInLos[unitID].z
         pos.coverageRange = antiNukes[unitDefId].coverageRange
-	pos.lineWidthMinus,pos.lineOpacityMultiplier = lineOpacity(pos["x"],pos["y"],pos["z"])
-	pos.circleColor = Stockpile(unitID)
+		pos.lineWidthMinus,pos.lineOpacityMultiplier = lineOpacity(pos["x"],pos["y"],pos["z"])
+		pos.circleColor = Stockpile(unitID)
         antiOutLos[unitID] = pos
         antiInLos[unitID] = nil
     end
@@ -216,36 +217,37 @@ end
 function widget:Update()
   camX, camY, camZ = spGetCameraPosition()
   for uID, pos in pairs(antiInLos) do
-      local x, y, z = spGetUnitPosition(uID)
-      if x ~= nil and y ~= nil and z ~= nil then
+  local x, y, z = spGetUnitPosition(uID)
+  if x ~= nil and y ~= nil and z ~= nil then
 	local unitDefId = spGetUnitDefID(uID)
 	local pos = {}
-        pos["x"] = x
-        pos["y"] = y
-        pos["z"] = z
+    pos["x"] = x
+    pos["y"] = y
+    pos["z"] = z
 	if antiNukes[unitDefId] == nil then
-	  Spring.Echo("nix its", unitDefId)
+	  Spring.Echo("nix its", unitDefId,"    Valid unitid ",Spring.ValidUnitID(uID))
+	  return
 	end
 	pos.coverageRange = antiNukes[unitDefId].coverageRange
 	pos.lineWidthMinus,pos.lineOpacityMultiplier = lineOpacity(pos["x"],pos["y"],pos["z"])
 	pos.circleColor = Stockpile(uID)
 	antiInLos[uID] = pos
-        end
     end
-    for uID, pos in pairs(antiInLos) do
-        local _, inLos, _ = spGetPositionLosState(pos.x, pos.y, pos.z)
-        if not inLos then
-	    antiOutLos[uID] = pos
-            antiInLos[uID] = nil
-        end
+  end
+  for uID, pos in pairs(antiInLos) do
+    local _, inLos, _ = spGetPositionLosState(pos.x, pos.y, pos.z)
+    if not inLos then
+      antiOutLos[uID] = pos
+      antiInLos[uID] = nil
     end
-    for uID, pos in pairs(antiOutLos) do
-        local _, inLos, _ = spGetPositionLosState(pos.x, pos.y, pos.z)
-        if inLos then
-            antiOutLos[uID] = nil
-	    antiInLos[uID] = pos
-        end
+  end
+  for uID, pos in pairs(antiOutLos) do
+    local _, inLos, _ = spGetPositionLosState(pos.x, pos.y, pos.z)
+    if inLos then
+      antiOutLos[uID] = nil
+      antiInLos[uID] = pos
     end
+  end
 end
 
 function widget:GameFrame(n)
