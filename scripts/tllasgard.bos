@@ -3,10 +3,9 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, turret1, turret2, turret3, sleeve1, sleeve2, sleeve3,
-       wake1, wake2, wake3, barrel1, barrel2, barrel3, barrel4, barrel5,
-       barrel6, barrel7, flare1, flare2, flare3, flare4, flare5, flare6,
-       flare7;
+piece  base, body, turret1, turret2, turret3, sleeve1, sleeve2, sleeva,
+		wake1, wake2, wake3, barrel1, barrel2, barrel3, barrel4, barrel5,
+       barrel6, flare1, flare2, flare3, flare4, flarea, flareb;
 
 static-var  gun_3, gun_2, gun_1, restore_delay;
 
@@ -46,13 +45,12 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
-	hide flare5;
+	hide flarea;
 	hide flare4;
 	hide flare3;
 	hide flare1;
 	hide flare2;
-	hide flare6;
-	hide flare7;
+	hide flareb;
 	gun_3 = base;
 	gun_2 = base;
 	gun_1 = base;
@@ -83,7 +81,7 @@ RestoreAfterDelay3()
 {
 	sleep restore_delay;
 	turn turret3 to y-axis <0.000000> speed <35.000000>;
-	turn sleeve3 to x-axis <0.000000> speed <15.000000>;
+	turn sleeva to x-axis <0.000000> speed <15.000000>;
 }
 
 StartMoving()
@@ -141,9 +139,9 @@ AimPrimary(heading, pitch)
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
 	turn turret3 to y-axis heading speed <30.000000>;
-	turn sleeve3 to x-axis <0.000000> - pitch speed <15.000000>;
+	turn sleeva to x-axis <0.000000> - pitch speed <15.000000>;
 	wait-for-turn turret3 around y-axis;
-	wait-for-turn sleeve3 around x-axis;
+	wait-for-turn sleeva around x-axis;
 	start-script RestoreAfterDelay3();
 	return (1);
 }
@@ -197,7 +195,7 @@ FirePrimary()
 	if( gun_1 == 0 )
 	{
 		move barrel5 to z-axis [-1.000000] speed [500.000000];
-		emit-sfx 1024 + 0 from flare5;
+		emit-sfx 1024 + 0 from flarea;
 		sleep 150;
 		move barrel5 to z-axis [0.000000] speed [3.000000];
 		gun_1 = body;
@@ -206,18 +204,9 @@ FirePrimary()
 	if( gun_1 == 1 )
 	{
 		move barrel6 to z-axis [-1.000000] speed [500.000000];
-		emit-sfx 1024 + 0 from flare6;
+		emit-sfx 1024 + 0 from flareb;
 		sleep 150;
 		move barrel6 to z-axis [0.000000] speed [3.000000];
-		gun_1 = turret1;
-		return (0);
-	}
-	if( gun_1 == 2 )
-	{
-		move barrel7 to z-axis [-1.000000] speed [500.000000];
-		emit-sfx 1024 + 0 from flare7;
-		sleep 150;
-		move barrel7 to z-axis [0.000000] speed [3.000000];
 		gun_1 = base;
 		return (0);
 	}
@@ -266,15 +255,11 @@ QueryPrimary(piecenum)
 {
 	if( gun_1 == 0 )
 	{
-		piecenum = flare5;
+		piecenum = flarea;
 	}
 	if( gun_1 == 1 )
 	{
-		piecenum = flare6;
-	}
-	if( gun_1 == 2 )
-	{
-		piecenum = flare7;
+		piecenum = flareb;
 	}
 }
 
@@ -289,7 +274,7 @@ Killed(severity, corpsetype)
 	hide flare2;
 	hide flare3;
 	hide flare4;
-	hide flare5;
+	hide flarea;
 	explode barrel1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 	explode barrel6 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 	explode barrel3 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
@@ -300,7 +285,7 @@ Killed(severity, corpsetype)
 	explode wake2 type NOHEATCLOUD;
 	explode flare1 type NOHEATCLOUD;
 	explode flare2 type NOHEATCLOUD;
-	explode flare6 type NOHEATCLOUD;
+	explode flareb type NOHEATCLOUD;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
