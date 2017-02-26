@@ -64,6 +64,7 @@ return {
 			[7] = "tllasy",
 			[8] = "tllsubpen",
 			[9] = "tllturtle_lab",
+			[10] = "tllesy",
 		},
 		featuredefs = {
 			dead = {
