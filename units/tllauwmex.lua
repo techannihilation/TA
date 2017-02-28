@@ -35,7 +35,7 @@ return {
 		radaremitheight = 25,
 		selfdestructas = "SMALL_BUILDING",
 		side = "TLL",
-		sightdistance = 130,
+		sightdistance = 100,
 		unitname = "tllauwmex",
 		unitnumber = 908,
 		usebuildinggrounddecal = true,
