@@ -1,4 +1,4 @@
---in PA "commando" unit always survives being shot down during transport
+--in TechA "commando" unit always survives being shot down during transport
 --when a com dies in mid air the damage done is controlled by unit_combomb_full_damage 
 
 --several other ways to code this do not work because:
@@ -17,7 +17,7 @@
 
 function gadget:GetInfo()
   return {
-    name      = "transportfix",
+    name      = "transport passengers control",
     desc      = "kills units in transports when transports dies (except commandos)",
     author    = "knorke, bluestone",
     date      = "Dec 2012",
@@ -30,6 +30,14 @@ end
 if (not gadgetHandler:IsSyncedCode()) then return end
 
 local COMMANDO = UnitDefNames["commando"].id
+
+local crawlingBombs = {
+	[UnitDefNames.armvader.id] = true,
+	[UnitDefNames.corroach.id] = true,
+	[UnitDefNames.corsktl.id] = true,
+	[UnitDefNames.tllcrawlb.id] = true,
+	[UnitDefNames.coretnt.id] = true,
+}
 
 toKill = {} -- [frame][unitID]
 fromtrans = {}
@@ -60,9 +68,13 @@ function gadget:GameFrame (currentFrame)
 			tID = fromtrans[currentFrame][uID]
 			--Spring.Echo ("delayed killing check called for unit " .. uID .. " and trans " .. tID .. ". ")
 			--check that trans is dead/crashing and unit is still alive 
-			if ((not Spring.GetUnitIsDead(uID)) and (Spring.GetUnitIsDead(tID) or (Spring.GetUnitMoveTypeData(tID).aircraftState=="crashing")))	then	
+			if ((not Spring.GetUnitIsDead(uID)) and (Spring.GetUnitIsDead(tID) or (Spring.GetUnitMoveTypeData(tID).aircraftState=="crashing"))) then
 				--Spring.Echo("killing unit " .. uID)
-				Spring.DestroyUnit (uID, true, false) 
+				if crawlingBombs[Spring.GetUnitDefID(uID)] then
+					Spring.DestroyUnit (uID, false, true) 	
+				else
+					Spring.DestroyUnit (uID, true, false)
+				end
 			end
 		end
 	toKill[currentFrame] = nil
