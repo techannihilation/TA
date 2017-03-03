@@ -137,6 +137,13 @@ local moveDatas = {
 		maxslope = 80,
 		maxwaterdepth = 22,
 	},
+	HKBOT7 = {
+		crushstrength = 12400,
+		footprintx = 7,
+		footprintz = 7,
+		maxslope = 36,
+		maxwaterdepth = 22,
+	},
 	KBOT1 = {
 		crushstrength = 5,
 		footprintx = 1,
