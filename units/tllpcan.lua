@@ -14,7 +14,7 @@ return {
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
 		corpse = "DEAD",
 		defaultmissiontype = "GUARD_NOMOVE",
-		description = "PeeWee Cannon",
+		description = "Private Cannon",
 		energymake = 0,
 		energystorage = 0,
 		energyuse = 0,
