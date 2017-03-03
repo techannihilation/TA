@@ -110,6 +110,8 @@ return {
 			[27] = "tllvaliant",
 			[28] = "tllion",
 			[29] = "tllgazelle",
+			[30] = "tllvanya",
+
 		},
 		customparams = {
 			buildpic = "TLLCOM.png",
