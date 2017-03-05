@@ -189,6 +189,8 @@ experimental_ships = {
            "cortyrnt",
            "corhcar",
            "corblackhy",
+	   "tllasgard",
+	   "tllhcar",
 },
 --### LAND ###
 experimental_land = {

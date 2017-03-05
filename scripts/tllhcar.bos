@@ -1,0 +1,174 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, wake1, wake2, wake3, pad1, pad2, pad3, pad4, land1,
+       land2, land3, land4, radar, anti, nano, box;
+
+static-var  Static_Var_1;
+
+// Signal definitions
+#define SIG_MOVE			2
+#define SIG_AIM				4
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	var Func_Var_4;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			Func_Var_4 = Rand( 1, 3 );
+			if( Func_Var_4 == 1 )
+			{
+				emit-sfx smoketype from pad1;
+			}
+			if( Func_Var_4 == 2 )
+			{
+				emit-sfx smoketype from pad2;
+			}
+			if( Func_Var_4 == 3 )
+			{
+				emit-sfx smoketype from radar;
+			}
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	Static_Var_1 = 0;
+	start-script SmokeUnit();
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 1000;
+	}
+	spin radar around y-axis speed <60.000000>;
+}
+
+StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	while( TRUE )
+	{
+		emit-sfx 2 from wake1;
+		emit-sfx 2 from wake2;
+		emit-sfx 2 from wake3;
+		sleep 300;
+	}
+}
+
+StopMoving()
+{
+	signal SIG_MOVE;
+}
+
+Activate()
+{
+	spin radar around y-axis speed <60.000000> accelerate <1.000000>;
+	dont-cache pad1;
+	dont-cache pad2;
+	dont-cache radar;
+}
+
+Deactivate()
+{
+	stop-spin radar around y-axis decelerate <1.000000>;
+	cache pad1;
+	cache pad2;
+	cache radar;
+}
+
+QueryLandingPad(Func_Var_1, Func_Var_2)
+{
+	Static_Var_1 = !Static_Var_1;
+	if( Static_Var_1 )
+	{
+		Func_Var_1 = 6;
+		Func_Var_2 = 5;
+		return (0);
+	}
+	Func_Var_1 = 5;
+	Func_Var_2 = 6;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	return (1);
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = box;
+}
+
+AimTertiary(heading, pitch)
+{
+	return (1);
+}
+
+FireTertiary()
+{
+	sleep 150;
+}
+
+QueryTertiary(piecenum)
+{
+	piecenum = anti;
+}
+
+AimFromTertiary(piecenum)
+{
+	piecenum = anti;
+}
+
+Killed(severity, corpsetype)
+{
+	explode body type NOHEATCLOUD;
+	explode pad1 type NOHEATCLOUD;
+	explode radar type NOHEATCLOUD;
+	explode wake1 type NOHEATCLOUD;
+	explode wake2 type NOHEATCLOUD;
+	explode pad1 type NOHEATCLOUD;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		return (corpsetype);
+	}
+	explode radar type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode radar type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	return (corpsetype);
+}
