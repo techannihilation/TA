@@ -1,7 +1,7 @@
 return {
 	armtabi = {
 		buildangle = 4096,
-		buildcostenergy = 5333334,
+		buildcostenergy = 5300000,
 		buildcostmetal = 640000,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
