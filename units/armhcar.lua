@@ -55,7 +55,7 @@ return {
 		radaremitheight = 68,
 		selfdestructas = "BANTHA_NUKE",
 		side = "ARM",
-		sightdistance = 1324,
+		sightdistance = 600,
 		standingfireorder = 0,
 		standingmoveorder = 1,
 		steeringmode = 1,
