@@ -194,8 +194,8 @@ return {
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 1000,
 				damage = {
-					commanders = 50,
-					default = 500,
+					commanders = 350,
+					default = 700,
 					subs = 5,
 				},
 			},
@@ -203,7 +203,6 @@ return {
 		weapons = {
 			[1] = {
 				def = "ROCKET_MCV",
-				onlytargetcategory = "NOTVTOL",
 			},
 			[3] = {
 				def = "NUKE_HCAR_ARM",
