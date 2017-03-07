@@ -193,7 +193,7 @@ return {
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 800,
 				damage = {
-					commanders = 50,
+					commanders = 350,
 					default = 700,
 					subs = 5,
 				},
