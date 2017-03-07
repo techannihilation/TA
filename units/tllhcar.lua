@@ -157,13 +157,15 @@ return {
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 1300,
 				damage = {
-					bomb_resistant = 9000,
-					commanders = 4000,
-					default = 27000,
+					bomb_resistant = 4250,
+					commanders = 2500,
+					default = 15000,
+					experimental_land = 22000,
+					experimental_ships = 22000,
 					subs = 5,
 				},
 			},
-			rocket_mcv = {
+			rocket_pulse = {
 				areaofeffect = 64,
 				collidefriendly = false,
 				craterboost = 0,
@@ -193,7 +195,7 @@ return {
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 800,
 				damage = {
-					commanders = 50,
+					commanders = 250,
 					default = 500,
 					subs = 5,
 				},
@@ -201,7 +203,8 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "ROCKET_MCV",
+				def = "ROCKET_PULSE",
+				onlytargetcategory = "NOTVTOL",
 			},
 			[3] = {
 				def = "NUKE_HCAR_ARM",
