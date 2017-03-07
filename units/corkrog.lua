@@ -2,7 +2,7 @@ return {
 	corkrog = {
 		acceleration = 0.108,
 		brakerate = 0.714,
-		buildcostenergy = 402133,
+		buildcostenergy = 395000,
 		buildcostmetal = 27200,
 		builder = false,
 		buildpic = "CORKROG.png",
@@ -30,7 +30,7 @@ return {
 		losemitheight = 147,
 		maneuverleashlength = 640,
 		mass = 27416.66602,
-		maxdamage = 164500,
+		maxdamage = 168500,
 		maxslope = 17,
 		maxvelocity = 1.2,
 		maxwaterdepth = 12,
