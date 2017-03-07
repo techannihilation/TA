@@ -2,8 +2,8 @@ return {
 	armgor = {
 		acceleration = 0.09,
 		brakerate = 0.57,
-		buildcostenergy = 195000,
-		buildcostmetal = 13950,
+		buildcostenergy = 210000,
+		buildcostmetal = 14550,
 		builder = false,
 		buildtime = 235000,
 		canattack = true,
