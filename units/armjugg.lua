@@ -190,7 +190,7 @@ return {
 				model = "fmdmisl",
 				name = "Heavy Rockets",
 				range = 1050,
-				reloadtime = 2.5,
+				reloadtime = 2,
 				rgbcolor = "1.000 0.000 0.000",
 				smoketrail = false,
 				soundhitdry = "xplosml2",
