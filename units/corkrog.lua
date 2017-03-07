@@ -209,7 +209,7 @@ return {
 				noselfdamage = true,
 				proximitypriority = -1,
 				range = 1050,
-				reloadtime = 1,
+				reloadtime = 2,
 				smoketrail = false,
 				soundhitdry = "xplosml2",
 				soundstart = "rocklit1",
