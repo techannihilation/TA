@@ -2,7 +2,7 @@ return {
 	arm_furie = {
 		acceleration = 0.09,
 		brakerate = 0.6,
-		buildcostenergy = 560000,
+		buildcostenergy = 510000,
 		buildcostmetal = 37500,
 		builder = false,
 		buildtime = 500000,
@@ -232,7 +232,8 @@ return {
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 450,
 				damage = {
-					default = 700,
+					commanders = 250,
+					default = 500,
 					subs = 5,
 				},
 			},
