@@ -156,9 +156,11 @@ return {
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 1300,
 				damage = {
-					bomb_resistant = 9000,
-					commanders = 4000,
-					default = 27000,
+					bomb_resistant = 4250,
+					commanders = 2500,
+					default = 15000,
+					experimental_land = 22000,
+					experimental_ships = 22000,
 					subs = 5,
 				},
 			},
@@ -192,7 +194,7 @@ return {
 				weaponvelocity = 800,
 				damage = {
 					commanders = 50,
-					default = 500,
+					default = 700,
 					subs = 5,
 				},
 			},
