@@ -32,7 +32,7 @@ return {
 		idletime = 1800,
 		losemitheight = 62,
 		mass = 360,
-		maxdamage = 1650,
+		maxdamage = 1500,
 		maxslope = 14,
 		maxwaterdepth = 0,
 		name = "Charged Tesla",
