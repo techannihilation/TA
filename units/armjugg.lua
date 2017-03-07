@@ -2,8 +2,8 @@ return {
 	armjugg = {
 		acceleration = 0.09,
 		brakerate = 0.6,
-		buildcostenergy = 126900,
-		buildcostmetal = 14690,
+		buildcostenergy = 190000,
+		buildcostmetal = 13250,
 		builder = false,
 		buildtime = 183296,
 		canattack = true,
