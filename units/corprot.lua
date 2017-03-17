@@ -36,7 +36,7 @@ return {
 		mass = 1750,
 		maxdamage = 1800,
 		maxslope = 14,
-		maxvelocity = 1.15,
+		maxvelocity = 1.25,
 		metalstorage = 0,
 		mincloakdistance = 170,
 		mobilestandorders = 1,
