@@ -1,18 +1,30 @@
 ---------------------------------------- v2.46.0 ---------------------------------------
 ----Improvments----
+News TLL Icons
+Add T4 TLL TSAR weapon. And balance all TSAR Canon.
 Arm/Core T1.5 Rocket Bot => Add 2 bursts. Change weapon model with T1 rocket Kbot.
 Fix fighters weapons (now shoot even friendly is near target) 
 Add Fatboy1 and Corsumo1 for Ditawn (replace Helldriver and Cordaub)
 
 ----Balance----
+All Commander : rebalance stats. HP, Range and speed same for all. Decrease HP and speed for all commanders.
 Arm/Core T1.5 Rocket Bot => Increase Damage 100 dmg/s, HP 450 => 750, Decrease Range 700 => 620.
 Gladiator => Decrease cost(8KE => 4.8KE 550M =>480M). Rocket : Range 525 => 475. Dmg 120 => 100/s. Laser : Range 450 => 350. Dmg 100/s => 75/s.
 TLL T1 Rocket Bot => Increase Speed, Damage and Range To be better than T1 and smaller than T1.5 Arm/Core Rocket Bot.
 Aexxec => Decrease a little Energy. 5500 => 5200.
 Krow => Nerf Krow HP by 25% (20 => 15K HP)
 TllMediumFus => Increase Metal 3680 => 3880
-All air trans now release passenger when destoryed, now crawling bombs get paraylised for a short period when unloaded.
+All air trans now release passenger when destroyed, now crawling bombs get paraylised for a short period when unloaded.
 Increase workertime for repair pads
+Tesla and Tesla1 => decrease HP by 15%
+All underwater extrator balanced now.
+
+To confirm : 
+Metal Maker T1.5 ; Decrease resources for them. (-10%)
+Decrease Sight for Corprot (450 now)
+Armjugg => Balance Cost 
+All Destroyer  (T1 ship) => Decrease Speed. TLL => Decrease energy and range and dmg/s for canon (700 => 650 range). 
+
 
 ----Bug----
 Delete All-terrain for Razorback T4
