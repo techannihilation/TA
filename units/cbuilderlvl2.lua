@@ -58,7 +58,7 @@ return {
 			[5] = "corvhlt",
 			[6] = "corfhlt",
 			[7] = "corrl1",
-			[8] = "corerad",
+			[8] = "corerad1",
 			[9] = "core_immolator",
 			[10] = "corpcan",
 			[11] = "commando",
