@@ -339,7 +339,7 @@ return {
 				impulsefactor = 0.123,
 				name = "Commander Lightning Beam",
 				noselfdamage = true,
-				range = 405,
+				range = 420,
 				reloadtime = 0.8,
 				rgbcolor = "0.6 0.6 0.9",
 				soundhitdry = "lashit2",
