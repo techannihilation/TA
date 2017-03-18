@@ -219,6 +219,13 @@ local moveDatas = {
 		crushstrength = 5,
 		subMarine = 1,
 	},
+	UBOAT5 = {
+		footprintx = 5,
+		footprintz = 5,
+		minwaterdepth = 60,
+		crushstrength = 5,
+		subMarine = 1,
+	},
 	TANKHOVER3 = {
 		crushstrength = 90,
 		depthmod = 0,

@@ -43,7 +43,7 @@ local SpGetAllUnits        = Spring.GetAllUnits
 local ipairs = ipairs
 local pairs = pairs
 
-local buffer = 2
+local buffer = 5
 
 local excludedUnit = {
   [UnitDefNames["corthovr"].id] = true,
@@ -65,8 +65,8 @@ function gadget:GameFrame(n)
     local rx, baseposy, rz = GetUnitPosition(unitID)
     local elevation = GetGroundHeight(rx, rz)
     local isFactory = tidals[unitID].isfactory
-    --Spring.Echo( elevation, minwater)
-	  if ((elevation + minwater) > ( 0 +  buffer ) and canMove == false ) or ((elevation >= baseposy ) and canMove and not isFactory) then 
+    --Spring.Echo( elevation, minwater,baseposy,baseposy+buffer,canMove)
+	  if ((elevation + minwater) > ( 0 +  buffer ) and canMove == false ) or ((elevation >= baseposy) and canMove and not isFactory) then 
 	    if mass < 601 then
 	      SpSpawnCEG("Death_Explosion_Tidal_Small", rx, 0, rz)
 	    elseif mass >= 601 and mass <= 4000 then
