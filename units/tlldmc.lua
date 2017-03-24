@@ -41,6 +41,7 @@ return {
 		radardistance = 0,
 		radaremitheight = 49,
 		selfdestructas = "MEDIUM_BUILDING",
+		side = "TLL",
 		shootme = 1,
 		sightdistance = 1500,
 		standingfireorder = 0,
