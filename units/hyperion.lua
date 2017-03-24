@@ -49,6 +49,7 @@ return {
 		radardistance = 0,
 		radaremitheight = 108,
 		selfdestructas = "CRBLMSSL",
+		side = "TLL",
 		selfdestructcountdown = 10,
 		shootme = 1,
 		sightdistance = 700,
