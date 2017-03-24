@@ -43,6 +43,7 @@ return {
 		radaremitheight = 29,
 		scale = 1.2,
 		selfdestructas = "BIG_UNIT",
+		side = "TLL",
 		shootme = 1,
 		sightdistance = 750,
 		standingfireorder = 2,
