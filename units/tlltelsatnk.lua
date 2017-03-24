@@ -41,6 +41,7 @@ return {
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
+		side = "TLL",
 		sightdistance = 430,
 		standingfireorder = 2,
 		standingmoveorder = 1,
