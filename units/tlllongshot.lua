@@ -44,7 +44,7 @@ return {
 		scale = 1.2,
 		selfdestructas = "NUCLEAR_MISSILE",
 		shootme = 1,
-		side = "BIO",
+		side = "TLL",
 		sightdistance = 370,
 		standingfireorder = 2,
 		standingmoveorder = 1,
