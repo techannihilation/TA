@@ -585,3 +585,10 @@ for name, ud in pairs(UnitDefs) do
 
 
 --]]
+
+for name, ud in pairs(UnitDefs) do
+	if ud.side then
+		Spring.Echo(ud.name,ud.side)
+		ud.customparams.side=ud.side
+	end
+end
