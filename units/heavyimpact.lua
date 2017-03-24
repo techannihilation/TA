@@ -45,7 +45,7 @@ return {
 		radaremitheight = 62,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
-		side = "CORE",
+		side = "TLL",
 		sightdistance = 400,
 		standingfireorder = 2,
 		standingmoveorder = 0,
