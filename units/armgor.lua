@@ -46,7 +46,7 @@ return {
 		selfdestructas = "BANTHA_NUKE",
 		selfdestructcountdown = 10,
 		shootme = 1,
-		side = "ARMGOR",
+		side = "CORE",
 		sightdistance = 855,
 		standingfireorder = 2,
 		standingmoveorder = 1,
