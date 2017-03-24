@@ -25,6 +25,7 @@ local canDGun = {}
 
 local nukes = {
     [UnitDefNames["uppercut"].id] = true,
+    [UnitDefNames["armmarlin"].id] = true,
     [UnitDefNames["armhcar"].id] = true,
     [UnitDefNames["corhcar"].id] = true,
 }

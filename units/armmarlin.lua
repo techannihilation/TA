@@ -1,5 +1,5 @@
 return {
-	uppercut = {
+	armmarlin = {
 		acceleration = 0.015,
 		activatewhenbuilt = true,
 		brakerate = 0.54,
@@ -41,16 +41,16 @@ return {
 		minwaterdepth = 60,
 		mobilestandorders = 1,
 		movementclass = "UBOAT5",
-		name = "Uppercut",
+		name = "Marlin",
 		noautofire = false,
 		nochasecategory = "NOTSUBNOTSHIP",
-		objectname = "uppercut",
+		objectname = "armmarlin",
 		pushresistant = true,
 		radardistance = 0,
 		radaremitheight = 52,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
-		side = "CORE",
+		side = "ARM",
 		sightdistance = 500,
 		sonardistance = 750,
 		standingfireorder = 2,
@@ -59,7 +59,7 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 1.122,
 		turnrate = 200,
-		unitname = "uppercut",
+		unitname = "armmarlin",
 		waterline = 60,
 		workertime = 0,
 		featuredefs = {

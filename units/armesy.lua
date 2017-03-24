@@ -51,7 +51,7 @@ return {
 		yardmap = "wCCCCCCCCCCCCCwcCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCc",
 		buildoptions = {
 			[1] = "armbc",
-			[2] = "uppercut",
+			[2] = "armmarlin",
 			[3] = "armhcar",
 			[4] = "aseadragon",
 			[5] = "armtrmph",
