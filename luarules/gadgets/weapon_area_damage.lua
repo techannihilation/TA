@@ -74,7 +74,7 @@ function gadget:GameFrame(f)
 					local allyScale = w.allyScale
 					local teamScale = w.teamScale
 					local scoutScale = w.scoutScale
-Spring.Echo("scoutScale",scoutScale)
+
 					if w.rangeFall ~= 0 then
 						damage = damage - damage*w.rangeFall*sqrt((ux-w.pos.x)^2 + (uy-w.pos.y)^2 + (uz-w.pos.z)^2)/w.radius
 					end
