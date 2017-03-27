@@ -41,6 +41,7 @@ if (gadgetHandler:IsSyncedCode()) then
   local createunits  = {};
   local curTeam;
   local nextUnitX,nextUnitZ = 100,100;
+  local converts = include("LuaRules/Configs/maker_defs.lua")
 
 
   local function GameFrame(_,n)
@@ -83,7 +84,19 @@ if (gadgetHandler:IsSyncedCode()) then
 
 			local env = Spring.UnitScript.GetScriptEnv(uid)
 			if env then lus = true end
-			
+			local undefid = Spring.GetUnitDefID(uid)
+				
+			Spring.Echo("Processing unit :- ",undefid)
+			if converts[undefid] then
+			Spring.Echo("Processing MM:- ",undefid)
+				if lus then
+					if env.MMStatus then
+						Spring.UnitScript.CallAsUnit(uid, env.MMStatus)
+					end
+					else Spring.CallCOBScript(unitID,"MMStatus",0,1)
+				end
+			end
+
 			if lus then
 				if env.Activate then Spring.UnitScript.CallAsUnit(uid, env.Activate) end
 			else Spring.CallCOBScript(uid,"Activate",0) end
