@@ -15,7 +15,7 @@ return {
 		category = "ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Krogoth Class All-Terrain Kbot",
+		description = "Experimental Jump Kbot",
 		energymake = 22.5,
 		energystorage = 100,
 		energyuse = 10.75,
@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 12,
 		metalstorage = 0,
 		mobilestandorders = 1,
-		movementclass = "HTKBOT4",
+		movementclass = "HKBOT4",
 		name = "Macross",
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
@@ -59,6 +59,7 @@ return {
 		upright = true,
 		workertime = 0,
 		customparams = {
+			canjump = "1",
 			requiretech = "Advanced T3 Unit Research Centre",
 		},
 		featuredefs = {

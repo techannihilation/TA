@@ -42,6 +42,8 @@ jumpCategory = {
 		range = 400, height = 200, speed = 3,  reload = 20,  aaShootMe = false, delay = 0, cobscript = true, rotateMidAir = true, limitHeight=false},
 	longjumpbot = {
 		range = 400, height = 200, speed = 6,  reload = 20,  aaShootMe = false, delay = 0, cobscript = true, rotateMidAir = true, limitHeight=false},		
+	heavyjumpbot = {
+		range = 200, height = 200, speed = 1,  reload = 20,  aaShootMe = false, delay = 0, cobscript = true, rotateMidAir = true, limitHeight=false},		
 }
 
 jumpClassGroups = {
@@ -66,6 +68,9 @@ jumpClassGroups = {
 	},
 	longjumpbot = {
 	"armkrmi",
+	},
+	heavyjumpbot = {
+	"macross",
 	},
 	
 }
