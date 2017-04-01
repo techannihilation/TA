@@ -11,6 +11,7 @@ All Destroyer  (T1 ship) => Decrease Speed. TLL => Decrease energy and range and
 T2.5 Rapid Core Bot => Increase resources by 5%. Increase Damage by 5%. Decrease Range 400 => 380.
 Gorilla : Increase Spped 1.75 => 2.1. Decrease Damage StarBurst
 Juggernaut : Balance Energy Cost (Increase 126 => 190Ke. Metal : 14600 => 13200)
+All T3.5 Unit StarBurst => Decrease damage 700 => 500 per Shot. (Gain 10K HP for Krog and Orco. Furie 560KE => 510KE)
 
 ----Bug----
 
