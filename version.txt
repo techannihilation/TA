@@ -1,3 +1,21 @@
+---------------------------------------- v2.46.1 ---------------------------------------
+----Improvments----
+Add New Icons for all Units
+
+----Balance----
+Metal Maker T1.5 ; Decrease resources for them. (-10%)
+Underwater All faction Balanced. (TLL T1 cost 2Ke => 300E)
+Decrease Sight for Corprot (450 now)
+Armjugg => Balance Cost 
+All Destroyer  (T1 ship) => Decrease Speed. TLL => Decrease energy and range and dmg/s for canon (700 => 650 range). 
+T2.5 Rapid Core Bot => Increase resources by 5%. Increase Damage by 5%. Decrease Range 400 => 380.
+Gorilla : Increase Spped 1.75 => 2.1. Decrease Damage StarBurst
+Juggernaut : Balance Energy Cost (Increase 126 => 190Ke. Metal : 14600 => 13200)
+
+----Bug----
+
+
+
 ---------------------------------------- v2.46.0 ---------------------------------------
 ----Improvments----
 News TLL Icons
@@ -18,13 +36,6 @@ All air trans now release passenger when destroyed, now crawling bombs do no dam
 Increase workertime for repair pads
 Tesla and Tesla1 => decrease HP by 15%
 All underwater extrator balanced now.
-
-To confirm : 
-Metal Maker T1.5 ; Decrease resources for them. (-10%)
-Decrease Sight for Corprot (450 now)
-Armjugg => Balance Cost 
-All Destroyer  (T1 ship) => Decrease Speed. TLL => Decrease energy and range and dmg/s for canon (700 => 650 range). 
-
 
 ----Bug----
 Delete All-terrain for Razorback T4
