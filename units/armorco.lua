@@ -200,7 +200,7 @@ return {
 				noselfdamage = true,
 				proximitypriority = -1,
 				range = 1050,
-				reloadtime = 2,
+				reloadtime = 1,
 				rgbcolor = "1.000 0.000 0.000",
 				smoketrail = false,
 				soundhitdry = "xplosml2",
@@ -219,7 +219,7 @@ return {
 				weaponvelocity = 4000,
 				damage = {
 					commanders = 350,
-					default = 700,
+					default = 500,
 					subs = 5,
 				},
 			},
