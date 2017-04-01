@@ -195,7 +195,7 @@ return {
 				weapontype = "BeamLaser",
 				weaponvelocity = 1500,
 				damage = {
-					commanders = 1500,
+					commanders = 2500,
 					default = 5000,
 					subs = 5,
 				},
@@ -232,7 +232,6 @@ return {
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 450,
 				damage = {
-					commanders = 250,
 					default = 500,
 					subs = 5,
 				},
