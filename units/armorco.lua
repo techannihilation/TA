@@ -150,6 +150,7 @@ return {
 				weapontype = "EmgCannon",
 				weaponvelocity = 530,
 				damage = {
+					commanders = 120,
 					default = 240,
 					subs = 5,
 				},
@@ -180,7 +181,7 @@ return {
 				weapontype = "BeamLaser",
 				weaponvelocity = 1500,
 				damage = {
-					commanders = 1000,
+					commanders = 1250,
 					default = 2500,
 					subs = 5,
 				},
