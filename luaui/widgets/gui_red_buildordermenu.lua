@@ -26,7 +26,7 @@ local Config = {
 	buildmenu = {
 		px = 0,py = CanvasY -(12*6+5*2) -(35*8+0*7+5*2) -5, --default start position
 		
-		isx = 43,isy = 29, --icon size
+		isx = 45,isy = 40, --icon size
 		ix = 5,iy = 6, --icons x/y
 		ispreadx=0,ispready=0, --space between icons
 		
@@ -34,10 +34,10 @@ local Config = {
 		
 		fadetime = 0.15, --fade effect time, in seconds
 		
-		ctext = {1,1,1,0.9}, --color {r,g,b,alpha}
-		cbackground = {0,0,0,0.5},
-		cborder = {0,0,0,1},
-		cbuttonbackground = {0.1,0.1,0.1,0.6},
+		ctext = {1,1,1,1}, --color {r,g,b,alpha}
+		cbackground = {0,0,0,0.7},
+		cborder = {0,0,0,0},
+		cbuttonbackground = {0,0,0,0.025},
 		
 		dragbutton = {2}, --middle mouse button
 		tooltip = {
@@ -48,7 +48,7 @@ local Config = {
 	ordermenu = {
 		px = 0,py = CanvasY -(12*6+5*2) -(35*8+0*7+5*2) -5 -(35*5+0*4+5*2) -5,
 		
-		isx = 43,isy = 29,
+		isx = 45,isy = 33,
 		ix = 5,iy = 4,
 		
 		ispreadx=0,ispready=0,
@@ -57,10 +57,10 @@ local Config = {
 		
 		fadetime = 0.15,
 		
-		ctext = {1,1,1,0.9},
-		cbackground = {0,0,0,0.5},
-		cborder = {0,0,0,1},
-		cbuttonbackground={0.1,0.1,0.1,0.6},
+		ctext = {1,1,1,1},
+		cbackground = {0,0,0,0.7},
+		cborder = {0,0,0,0},
+		cbuttonbackground = {0,0,0,0.025},
 		
 		dragbutton = {2}, --middle mouse button
 		tooltip = {

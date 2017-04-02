@@ -25,8 +25,8 @@ local Config = {
 		
 		margin = 5, --distance from background border
 		
-		cbackground = {0,0,0,0.5}, --color {r,g,b,alpha}
-		cborder = {0,0,0,1},
+		cbackground = {0,0,0,0.65}, --color {r,g,b,alpha}
+		cborder = {0,0,0,0},
 		
 		dragbutton = {2}, --middle mouse button
 		tooltip = {

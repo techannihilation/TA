@@ -26,8 +26,8 @@ local Config = {
 		
 		expensefadetime = 0.25, --fade effect time, in seconds
 		
-		cbackground = {0,0,0,0.5}, --color {r,g,b,alpha}
-		cborder = {0,0,0,1},
+		cbackground = {0,0,0,0.65}, --color {r,g,b,alpha}
+		cborder = {0,0,0,0},
 		cbarbackground = {0,0,0,1},
 		cbar = {1,1,1,1},
 		cindicator = {1,0,0,0.8},
@@ -61,8 +61,8 @@ local Config = {
 		
 		expensefadetime = 0.25,
 		
-		cbackground = {0,0,0,0.5},
-		cborder = {0,0,0,1},
+		cbackground = {0,0,0,0.65},
+		cborder = {0,0,0,0},
 		cbarbackground = {0,0,0,1},
 		cbar = {1,1,0,1},
 		cindicator = {1,0,0,0.8},
