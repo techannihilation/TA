@@ -254,7 +254,7 @@ if (Spring.GetModOptions) then
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 --
-
+--[[
 if (modOptions.mo_transportenemy == "notcoms") then
   for name,ud in pairs(UnitDefs) do  
     if Commanders[ud.unitname] then
@@ -587,8 +587,14 @@ for name, ud in pairs(UnitDefs) do
 --]]
 
 for name, ud in pairs(UnitDefs) do
+		Spring.Echo(ud.unitname..".png")
+		ud.buildpic=ud.unitname..".png"
+end
+
+for name, ud in pairs(UnitDefs) do
 	if ud.side then
 		Spring.Echo(ud.name,ud.side)
 		ud.customparams.side=ud.side
 	end
 end
+--VFS.Include("gamedata/unitdefs_post_save_to_customparams.lua")

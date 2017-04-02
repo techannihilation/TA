@@ -93,7 +93,7 @@ if (gadgetHandler:IsSyncedCode()) then
 					if env.MMStatus then
 						Spring.UnitScript.CallAsUnit(uid, env.MMStatus)
 					end
-					else Spring.CallCOBScript(unitID,"MMStatus",0,1)
+					else Spring.CallCOBScript(uid,"MMStatus",0,1)
 				end
 			end
 

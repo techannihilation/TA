@@ -18,7 +18,7 @@ local startframe = 1000000000
 local index=1
 local counter = 1
 local unitnames={}
-local timedelay=55*10 --yeah this crap takes 8 hours, for a total of 427 units :D
+local timedelay=40*10 --yeah this crap takes 8 hours, for a total of 427 units :D
 
 function buildslowly(_,_,params)
 	if #params == 1 then
