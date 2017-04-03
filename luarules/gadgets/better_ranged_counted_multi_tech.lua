@@ -312,6 +312,7 @@ if (gadgetHandler:IsSyncedCode()) then
 	local ignoredunits={
  		[UnitDefNames["tlldischarge"].id] = true,
  		[UnitDefNames["armkrmi"].id] = true,
+ 		[UnitDefNames["armcav"].id] = true,
 	}
 
 	local function NthCharIs(str,n,charlist)
