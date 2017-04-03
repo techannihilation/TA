@@ -16,6 +16,8 @@ local CanvasX,CanvasY = 1272,734 --resolution in which the widget was made (for 
 
 --todo: sy adjustment
 
+local cbackground, cborder = include("Configs/ui_config.lua")
+
 local Config = {
 	tooltip = {
 		px = 0,py = CanvasY-(12*6+5*2), --default start position
@@ -25,8 +27,8 @@ local Config = {
 		
 		margin = 5, --distance from background border
 		
-		cbackground = {0,0,0,0.65}, --color {r,g,b,alpha}
-		cborder = {0,0,0,0},
+		cbackground = cbackground,
+		cborder = cborder,
 		
 		dragbutton = {2}, --middle mouse button
 		tooltip = {

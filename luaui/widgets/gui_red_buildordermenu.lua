@@ -20,6 +20,8 @@ local SpForceLayoutUpdate = Spring.ForceLayoutUpdate
 local SpGetCmdDescIndex = Spring.GetCmdDescIndex
 local SpGetModKeyState = Spring.GetModKeyState
 
+local cbackground, cborder, cbuttonbackground = include("Configs/ui_config.lua")
+
 --todo: build categories (eco | labs | defences | etc) basically sublists of buildcmds (maybe for regular orders too)
 
 local Config = {
@@ -35,9 +37,9 @@ local Config = {
 		fadetime = 0.15, --fade effect time, in seconds
 		
 		ctext = {1,1,1,1}, --color {r,g,b,alpha}
-		cbackground = {0,0,0,0.7},
-		cborder = {0,0,0,0},
-		cbuttonbackground = {0,0,0,0.025},
+		cbackground = cbackground,
+		cborder = cborder,
+		cbuttonbackground = cbuttonbackground,
 		
 		dragbutton = {2}, --middle mouse button
 		tooltip = {
@@ -58,9 +60,9 @@ local Config = {
 		fadetime = 0.15,
 		
 		ctext = {1,1,1,1},
-		cbackground = {0,0,0,0.7},
-		cborder = {0,0,0,0},
-		cbuttonbackground = {0,0,0,0.025},
+		cbackground = cbackground,
+		cborder = cborder,
+		cbuttonbackground = cbuttonbackground,
 		
 		dragbutton = {2}, --middle mouse button
 		tooltip = {
@@ -191,7 +193,7 @@ local function CreateGrid(r)
 		px=0,py=0,
 		sx=r.isx,sy=r.isy,
 		color=r.cbuttonbackground,
-		border=r.cborder,
+		border={0,0,0,0},
 		
 		options="n", --disable colorcodes
 		captioncolor=r.ctext,

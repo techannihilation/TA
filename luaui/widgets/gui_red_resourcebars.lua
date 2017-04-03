@@ -14,6 +14,8 @@ local NeededFrameworkVersion = 8
 local CanvasX,CanvasY = 1272,734 --resolution in which the widget was made (for 1:1 size)
 --1272,734 == 1280,768 windowed
 
+local cbackground, cborder, cbuttonbackground = include("Configs/ui_config.lua")
+
 local Config = {
 	metal = {
 		px = 300,py = 0, --default start position
@@ -26,9 +28,9 @@ local Config = {
 		
 		expensefadetime = 0.25, --fade effect time, in seconds
 		
-		cbackground = {0,0,0,0.65}, --color {r,g,b,alpha}
-		cborder = {0,0,0,0},
-		cbarbackground = {0,0,0,1},
+		cbackground = cbackground,
+		cborder = cborder,
+		cbarbackground = cbuttonbackground,
 		cbar = {1,1,1,1},
 		cindicator = {1,0,0,0.8},
 		
@@ -61,9 +63,9 @@ local Config = {
 		
 		expensefadetime = 0.25,
 		
-		cbackground = {0,0,0,0.65},
-		cborder = {0,0,0,0},
-		cbarbackground = {0,0,0,1},
+		cbackground = cbackground,
+		cborder = cborder,
+		cbarbackground = cbuttonbackground,
 		cbar = {1,1,0,1},
 		cindicator = {1,0,0,0.8},
 		

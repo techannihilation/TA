@@ -40,6 +40,8 @@ local sGetMyAllyTeamID = Spring.GetMyAllyTeamID
 local sGetModKeyState = Spring.GetModKeyState
 local spPlaySoundFile = Spring.PlaySoundFile
 
+local cbackground, cborder, cbuttonbackground = include("Configs/ui_config.lua")
+
 
 local Config = {
 	console = {
@@ -69,8 +71,8 @@ local Config = {
 		cmisctext = {0.78,0.78,0.78,1}, --everything else
 		cgametext = {0.4,1,1,1}, --server (autohost) chat
 		
-		cbackground = {0,0,0,0.65},
-		cborder = {0,0,0,0.0},
+		cbackground = cbackground,
+		cborder = cborder,
 		
 		dragbutton = {2}, --middle mouse button
 		tooltip = {

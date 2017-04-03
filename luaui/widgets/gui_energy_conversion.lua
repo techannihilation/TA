@@ -77,6 +77,8 @@ local spGetTeamResources = Spring.GetTeamResources
 
 local convertCapacities = VFS.Include('LuaRules/Configs/maker_defs.lua')
 
+local cbackground, cborder = include("Configs/ui_config.lua")
+
 --table.sort(EfficiencyThresholds, function(a,b) return a.e>b.e end)
 local WhiteStr   = "\255\255\255\255"
 local BlackStr   = "\255\001\001\001"
@@ -221,11 +223,11 @@ function widget:DrawScreen()
     -- Positioning
     glPushMatrix()
 	glTranslate(px, py, 0)
-	
+
 	-- Panel
-	glColor(0, 0, 0, 0.5)
+	glColor(cbackground)
 	glRect(0, 0, sx, sy)
-	glColor(0, 0, 0, 0.8)
+	glColor(cborder)
 	drawBorder(0, 0, sx, sy, 1)
 
 	-- Class box
