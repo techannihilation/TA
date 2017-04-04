@@ -48,7 +48,7 @@ return {
 		shootme = 1,
 		side = "ARM",
 		sightdistance = 280,
-		sonardistance = 305,
+		sonardistance = 500,
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
