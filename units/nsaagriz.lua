@@ -56,7 +56,7 @@ return {
 		selfdestructas = "CRBLMSSL",
 		selfdestructcountdown = 10,
 		shootme = 1,
-		side = "CORE",
+		side = "ARM",
 		sightdistance = 240,
 		standingfireorder = 2,
 		standingmoveorder = 1,
