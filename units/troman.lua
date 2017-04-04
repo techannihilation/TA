@@ -43,7 +43,7 @@ return {
 		radaremitheight = 58,
 		selfdestructas = "CRAWL_BLASTSML",
 		shootme = 1,
-		side = "ARM",
+		side = "CORE",
 		sightdistance = 700,
 		standingfireorder = 2,
 		standingmoveorder = 1,
