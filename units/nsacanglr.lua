@@ -130,7 +130,7 @@ return {
 				id = 31,
 				model = "DEPTHCHARGE",
 				name = "Depth Charge",
-				range = 200,
+				range = 320,
 				reloadtime = 1,
 				soundhitdry = "xplodep2",
 				soundstart = "torpedo1",
