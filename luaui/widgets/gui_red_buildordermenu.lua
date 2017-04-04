@@ -175,7 +175,7 @@ local function CreateGrid(r)
 		px=0,py=0,
 		sx=r.isx,sy=r.isy,
 		color={1,0,0,0.3},
-		border={0.8,0,0,1},
+		border={1.0,0,0,15},
 		
 		active=false,
 		onupdate=function(self)
@@ -185,11 +185,11 @@ local function CreateGrid(r)
 	
 	local mouseoverhighlight = Copy(selecthighlight,true)
 	mouseoverhighlight.color={1,1,1,0.3}
-	mouseoverhighlight.border={1,1,1,0.3}
+	mouseoverhighlight.border={1,1,1,0.15}
 	
 	local heldhighlight = Copy(selecthighlight,true)
 	heldhighlight.color={1,1,0,0.3}
-	heldhighlight.border={1,1,0,0.3}
+	heldhighlight.border={1,1,0,0.15}
 	
 	local icon = {"rectangle",
 		px=0,py=0,
