@@ -22,6 +22,8 @@ local SpGetModKeyState = Spring.GetModKeyState
 
 local cbackground, cborder, cbuttonbackground = include("Configs/ui_config.lua")
 
+local buttonTexture	= LUAUI_DIRNAME.."Images/button.png"
+
 --todo: build categories (eco | labs | defences | etc) basically sublists of buildcmds (maybe for regular orders too)
 
 local Config = {
@@ -337,16 +339,21 @@ local function UpdateGrid(g,cmds,ordertype)
 		icon.active = nil --activate
 		icon.cmdname = cmd.name
 		
-		icon.texture = nil
+		icon.texture = buttonTexture
 		if (cmd.texture) then
 			if (cmd.texture ~= "") then
 				icon.texture = cmd.texture
 			end
 		end
+
 		if (cmd.disabled) then
 			icon.texturecolor = {0.55,0.55,0.55,0.75}
 		else
-			icon.texturecolor = {1,1,1,0.95}
+			if (ordertype ~= 1) then
+				icon.texturecolor = {1,1,1,0.65}
+			else
+				icon.texturecolor = {1,1,1,0.95}
+			end
 		end
 		
 		icon.mouseclick = {
