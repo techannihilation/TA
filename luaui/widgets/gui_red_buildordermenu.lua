@@ -350,7 +350,7 @@ local function UpdateGrid(g,cmds,ordertype)
 			icon.texturecolor = {0.55,0.55,0.55,0.75}
 		else
 			if (ordertype ~= 1) then
-				icon.texturecolor = {1,1,1,0.65}
+				icon.texturecolor = {1,1,1,0.75}
 			else
 				icon.texturecolor = {1,1,1,0.95}
 			end
