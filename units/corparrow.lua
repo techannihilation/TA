@@ -3,7 +3,7 @@ return {
 		acceleration = 0.015,
 		brakerate = 0.2145,
 		buildcostenergy = 13800,
-		buildcostmetal = 1145,
+		buildcostmetal = 1245,
 		builder = false,
 		buildpic = "CORPARROW.png",
 		buildtime = 19000,
