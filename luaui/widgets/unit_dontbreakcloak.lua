@@ -24,9 +24,6 @@ local isCommander = {
   [UnitDefNames["corcom6"].id] = true,
   [UnitDefNames["corcom7"].id] = true,
   [UnitDefNames["corsktl"].id] = true,
-  [UnitDefNames["corjurgen"].id] = true,
-  [UnitDefNames["corprot"].id] = true,
-
 
 --Arm 
   [UnitDefNames["armcom"].id] = true,
@@ -36,8 +33,6 @@ local isCommander = {
   [UnitDefNames["armcom6"].id] = true,
   [UnitDefNames["armcom7"].id] = true,
   [UnitDefNames["taipan"].id] = true,
-  --[UnitDefNames["armpaspd"].id] = true,
- 
 
 --The lost legacy
   [UnitDefNames["tllcom"].id] = true,
@@ -48,7 +43,6 @@ local isCommander = {
   [UnitDefNames["tllcom7"].id] = true,
   [UnitDefNames["tlltraq"].id] = true,
   [UnitDefNames["tllwhale"].id] = true,
-
 }
 
 ----------------------------------------------------------------
