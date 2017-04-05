@@ -49,7 +49,7 @@ return {
 		renchname = "Vengence",
 		selfdestructas = "CRAWL_BLAST",
 		shootme = 1,
-		side = "CORE",
+		side = "ARM",
 		sightdistance = 500,
 		standingfireorder = 2,
 		standingmoveorder = 1,
