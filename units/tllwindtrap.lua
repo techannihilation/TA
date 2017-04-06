@@ -9,6 +9,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "tllwindtrap_aoplane.dds",
+		buildpic = "tllwindtrap.png",
 		buildtime = 1961,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		collisionvolumeoffsets = "-2 0 3",
@@ -47,6 +48,9 @@ return {
 		windgenerator = 120,
 		workertime = 0,
 		yardmap = "oooo oooo oooo oooo",
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

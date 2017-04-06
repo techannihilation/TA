@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 595,
 		buildcostmetal = 218,
 		builder = false,
+		buildpic = "tlldcsta.png",
 		buildtime = 4120,
 		canattack = true,
 		canstop = 1,
@@ -43,6 +44,9 @@ return {
 		waterline = 11,
 		workertime = 0,
 		yardmap = "wwww",
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -110,11 +114,13 @@ return {
 		},
 		weapondefs = {
 			coax_depthcharge = {
+				avoidfeature = false,
 				avoidfriendly = false,
 				bouncerebound = 0.6,
 				bounceslip = 0.6,
 				burnblow = true,
 				collidefriendly = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -128,6 +134,7 @@ return {
 				range = 580,
 				reloadtime = 1.8,
 				soundhitdry = "xplodep2",
+				soundhitwet = "xplodep2",
 				soundstart = "torpedo1",
 				startvelocity = 250,
 				tracks = true,

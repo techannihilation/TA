@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 81000,
 		buildcostmetal = 7600,
 		builder = false,
+		buildpic = "tllviking.png",
 		buildtime = 65000,
 		canattack = true,
 		canguard = true,
@@ -50,6 +51,9 @@ return {
 		unitname = "tllviking",
 		unitnumber = 902,
 		waterline = 8,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -137,7 +141,9 @@ return {
 			arm_bats = {
 				accuracy = 350,
 				areaofeffect = 96,
-				cegtag = "Trail_cannon",
+				avoidfeature = false,
+				cegtag = "Trail_cannon_med",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH96",
@@ -154,6 +160,8 @@ return {
 				size = 1.82,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy1",
 				stages = 20,
 				tolerance = 5000,
@@ -168,6 +176,8 @@ return {
 			},
 			arm_crus = {
 				areaofeffect = 16,
+				avoidfeature = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH1",
@@ -179,6 +189,8 @@ return {
 				range = 760,
 				reloadtime = 1,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy1",
 				targetmoveerror = 0.1,
 				turret = true,
@@ -187,7 +199,7 @@ return {
 				damage = {
 					default = 200,
 					subs = 5,
-},
+				},
 			},
 		},
 		weapons = {

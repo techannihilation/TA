@@ -7,6 +7,7 @@ return {
 		buildcostmetal = 133,
 		builddistance = 185,
 		builder = true,
+		buildpic = "tllca.png",
 		buildtime = 9150,
 		canfly = true,
 		canguard = true,
@@ -85,6 +86,9 @@ return {
 			[27] = "tlljam",
 			[28] = "tllshoretorp",
 			[29] = "tlljuno",
+		},
+		customparams = {
+			faction = "TLL",
 		},
 		nanocolor = {
 			[1] = 0.394,

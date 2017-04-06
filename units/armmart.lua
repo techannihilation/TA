@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 3500,
 		buildcostmetal = 420,
 		builder = false,
-		buildpic = "ARMMART.png",
+		buildpic = "armmart.png",
 		buildtime = 5530,
 		canattack = true,
 		canguard = true,
@@ -63,6 +63,7 @@ return {
 		customparams = {
 			buildpic = "ARMMART.png",
 			canareaattack = 1,
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
@@ -139,7 +140,9 @@ return {
 			arm_artillery = {
 				accuracy = 900,
 				areaofeffect = 120,
-				cegtag = "Trail_cannon",
+				avoidfeature = false,
+				cegtag = "Trail_cannon_med",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.5,
@@ -157,6 +160,8 @@ return {
 				size = 2,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed4",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy2",
 				stages = 20,
 				turret = true,

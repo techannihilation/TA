@@ -6,6 +6,7 @@ return {
 		buildcostmetal = 290,
 		builddistance = 262,
 		builder = true,
+		buildpic = "tllcs.png",
 		buildtime = 5818,
 		canguard = true,
 		canmove = true,
@@ -79,6 +80,9 @@ return {
 			[18] = "tllnssam",
 			[19] = "tllhltns",
 			[20] = "tlltorp",
+		},
+		customparams = {
+			faction = "TLL",
 		},
 		featuredefs = {
 			dead = {

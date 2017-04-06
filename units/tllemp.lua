@@ -8,6 +8,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "tllemp_aoplane.dds",
+		buildpic = "tllemp.png",
 		buildtime = 59531,
 		canattack = true,
 		canstop = 1,
@@ -49,6 +50,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "oooo oooo oooo oooo",
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -117,7 +121,9 @@ return {
 		weapondefs = {
 			armemp_weapon = {
 				areaofeffect = 200,
+				avoidfeature = false,
 				commandfire = true,
+				craterareaofeffect = 300,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 1,
@@ -137,6 +143,8 @@ return {
 				reloadtime = 2,
 				smoketrail = true,
 				soundhitdry = "xplomed4",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "misicbm1",
 				stockpile = true,
 				stockpiletime = 100,

@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 9,
 		buildinggrounddecalsizey = 9,
 		buildinggrounddecaltype = "cafus_aoplane.dds",
-		buildpic = "CAFUS.png",
+		buildpic = "cafus.png",
 		buildtime = 185000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "DEAD",
@@ -51,6 +51,7 @@ return {
 		yardmap = "oooooooooooooooooooooooooooooooooooo",
 		customparams = {
 			buildpic = "CAFUS.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

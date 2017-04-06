@@ -4,6 +4,7 @@ return {
 		buildcostenergy = 1120,
 		buildcostmetal = 311,
 		builder = false,
+		buildpic = "tlluwestorage.png",
 		buildtime = 6400,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "dead",
@@ -36,6 +37,9 @@ return {
 		unitnumber = 857,
 		workertime = 0,
 		yardmap = "oooooooooooooooo",
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

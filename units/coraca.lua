@@ -7,7 +7,7 @@ return {
 		buildcostmetal = 2912,
 		builddistance = 225,
 		builder = true,
-		buildpic = "CORACA.png",
+		buildpic = "coraca.png",
 		buildtime = 28001,
 		canfly = true,
 		canguard = true,
@@ -87,6 +87,7 @@ return {
 		},
 		customparams = {
 			buildpic = "CORACA.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			["1_dead"] = {

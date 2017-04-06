@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 175200,
 		buildcostmetal = 17060,
 		builder = false,
-		buildpic = "ARMUWFUS.png",
+		buildpic = "armuwfus1.png",
 		buildtime = 250000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		description = "Produces Highly Energy / Storage",
@@ -44,6 +44,7 @@ return {
 		yardmap = "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
 		customparams = {
 			buildpic = "ARMUWFUS.png",
+			faction = "ARM",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

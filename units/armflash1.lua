@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 1579,
 		buildcostmetal = 212,
 		builder = false,
-		buildpic = "ARMFLASH1.png",
+		buildpic = "armflash1.png",
 		buildtime = 1963,
 		canattack = true,
 		canguard = true,
@@ -65,6 +65,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "ARMFLASH1.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			armflash_dead = {
@@ -137,9 +138,11 @@ return {
 		weapondefs = {
 			emgx = {
 				areaofeffect = 8,
+				avoidfeature = false,
 				burst = 5,
 				burstrate = 0.08,
 				cegtag = "Trail_emg_upg",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:EMG_HIT",
@@ -153,6 +156,8 @@ return {
 				reloadtime = 0.31,
 				rgbcolor = "0.86 0.62 0",
 				size = 1.8,
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "flashemg",
 				sprayangle = 1180,
 				tolerance = 5000,

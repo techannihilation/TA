@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 22060,
 		buildcostmetal = 2280,
 		builder = false,
-		buildpic = "CORUWLIGHTFUS.png",
+		buildpic = "coruwlightfus.png",
 		buildtime = 35000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "DEAD",
@@ -43,6 +43,7 @@ return {
 		yardmap = "ooooo ooooo ooooo ooooo",
 		customparams = {
 			buildpic = "CORUWLIGHTFUS.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

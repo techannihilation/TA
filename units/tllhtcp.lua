@@ -8,6 +8,7 @@ return {
 		buildinggrounddecalsizex = 13,
 		buildinggrounddecalsizey = 13,
 		buildinggrounddecaltype = "tllhtcp_aoplane.dds",
+		buildpic = "tllhtcp.png",
 		buildtime = 80000,
 		canmove = true,
 		canpatrol = true,
@@ -60,6 +61,7 @@ return {
 			[6] = "hyperion",
 		},
 		customparams = {
+			faction = "TLL",
 			providetech = "T3 Factory",
 		},
 		featuredefs = {

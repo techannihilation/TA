@@ -6,7 +6,7 @@ return {
 		brakerate = 0.087,
 		buildcostenergy = 9600,
 		buildcostmetal = 150,
-		buildpic = "CORVAMP.png",
+		buildpic = "corvamp.png",
 		buildtime = 9000,
 		canattack = true,
 		canfly = true,
@@ -54,6 +54,7 @@ return {
 		unitrestricted = 150,
 		customparams = {
 			buildpic = "CORVAMP.png",
+			faction = "CORE",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
@@ -89,9 +90,10 @@ return {
 		weapondefs = {
 			corvtol_advmissile = {
 				areaofeffect = 35,
-				avoidFriendly = false,
-				avoidFeature = false,
+				avoidfeature = false,
+				avoidfriendly = false,
 				collidefriendly = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -107,6 +109,8 @@ return {
 				reloadtime = 0.5,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "Rocklit3",
 				startvelocity = 650,
 				texture2 = "coresmoketrail",

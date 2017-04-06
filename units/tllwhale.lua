@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 26133,
 		buildcostmetal = 4640,
 		builder = false,
+		buildpic = "tllwhale.png",
 		buildtime = 37565,
 		canattack = true,
 		canguard = true,
@@ -56,6 +57,9 @@ return {
 		unitname = "tllwhale",
 		unitnumber = 9201,
 		waterline = 30,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -125,7 +129,11 @@ return {
 		weapondefs = {
 			whale_vpulse = {
 				areaofeffect = 192,
+				avoidfeature = false,
 				cegtag = "TLLRAVENTRAIL",
+				craterareaofeffect = 288,
+				craterboost = 0,
+				cratermult = 0,
 				firestarter = 100,
 				firesubmersed = true,
 				flighttime = 10,
@@ -137,6 +145,8 @@ return {
 				reloadtime = 1.5,
 				smoketrail = false,
 				soundhitdry = "vpulsehit",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "vpulsefire",
 				texture1 = "null",
 				texture2 = "null",

@@ -73,6 +73,7 @@ return {
 		customparams = {
 			buildpic = "armmin.png",
 			customstock = true,
+			faction = "ARM",
 		},
 		nanocolor = {
 			[1] = 0.308,
@@ -116,7 +117,9 @@ return {
 		weapondefs = {
 			minesweeperairmissile = {
 				areaofeffect = 512,
+				avoidfeature = false,
 				commandfire = true,
+				craterareaofeffect = 768,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 1,

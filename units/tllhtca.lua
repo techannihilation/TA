@@ -7,6 +7,7 @@ return {
 		buildcostmetal = 930,
 		builddistance = 100,
 		builder = true,
+		buildpic = "tllhtca.png",
 		buildtime = 14000,
 		canfly = true,
 		canguard = true,
@@ -63,6 +64,9 @@ return {
 			[11] = "tllnanotc",
 			[12] = "tllfnanotc",
 			[13] = "tllca",
+		},
+		customparams = {
+			faction = "TLL",
 		},
 		nanocolor = {
 			[1] = 0.08,

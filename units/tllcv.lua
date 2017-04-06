@@ -6,6 +6,7 @@ return {
 		buildcostmetal = 230,
 		builddistance = 164,
 		builder = true,
+		buildpic = "tllcv.png",
 		buildtime = 5150,
 		canguard = true,
 		canmove = true,
@@ -83,6 +84,9 @@ return {
 			[27] = "tlljam",
 			[28] = "tllshoretorp",
 			[29] = "tlljuno",
+		},
+		customparams = {
+			faction = "TLL",
 		},
 		featuredefs = {
 			dead = {

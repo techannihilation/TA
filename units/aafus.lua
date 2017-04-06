@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "aafus_aoplane.dds",
-		buildpic = "AAFUS.png",
+		buildpic = "aafus.png",
 		buildtime = 175000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		collisionvolumeoffsets = "0 0 0",
@@ -56,6 +56,7 @@ return {
 		yardmap = "ooooooooooooooooooooooooooooooooooo",
 		customparams = {
 			buildpic = "AAFUS.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {

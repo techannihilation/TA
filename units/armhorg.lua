@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 13000,
 		buildcostmetal = 990,
 		builder = false,
+		buildpic = "armhorg.png",
 		buildtime = 18956,
 		canattack = true,
 		canguard = true,
@@ -57,6 +58,7 @@ return {
 		unitnumber = 66,
 		workertime = 0,
 		customparams = {
+			faction = "ARM",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
@@ -136,6 +138,7 @@ return {
 				burst = 8,
 				burstrate = 0.22,
 				cegtag = "Core_Def_AA_Rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 0,
@@ -153,6 +156,8 @@ return {
 				reloadtime = 8,
 				smoketrail = true,
 				soundhitdry = "TAWF114b",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "TAWF114a",
 				sprayangle = 250,
 				startvelocity = 250,

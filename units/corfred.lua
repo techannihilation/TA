@@ -75,10 +75,10 @@ return {
 			[12] = "corfnanotc",
 			[13] = "corcv",
 			[14] = "cormuskrat",
-			
 		},
 		customparams = {
 			buildpic = "corfred.png",
+			faction = "CORE",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},
 		featuredefs = {

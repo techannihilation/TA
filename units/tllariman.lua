@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 1280,
 		buildcostmetal = 310,
 		builder = false,
+		buildpic = "tllariman.png",
 		buildtime = 3201,
 		canattack = true,
 		canguard = true,
@@ -50,6 +51,9 @@ return {
 		turnrate = 625,
 		unitname = "tllariman",
 		unitnumber = 827,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -124,6 +128,7 @@ return {
 				areaofeffect = 48,
 				avoidfeature = false,
 				cegtag = "Trail_cannon",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:LIGHT_PLASMA_BLING",
@@ -141,6 +146,8 @@ return {
 				size = 1.36,
 				sizedecay = -0.15,
 				soundhitdry = "xplosml3",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "canlite3",
 				stages = 20,
 				turret = true,

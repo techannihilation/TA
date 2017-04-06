@@ -8,6 +8,7 @@ return {
 		buildcostmetal = 1850,
 		builddistance = 180,
 		builder = true,
+		buildpic = "tllcsa.png",
 		buildtime = 11075,
 		canfly = true,
 		canguard = true,
@@ -81,7 +82,10 @@ return {
 			[20] = "tllantinuke",
 			[21] = "tllsilo",
 			[22] = "tlllrpt",
-			[23] = "tllrlrpc",			
+			[23] = "tllrlrpc",
+		},
+		customparams = {
+			faction = "TLL",
 		},
 		nanocolor = {
 			[1] = 0.394,

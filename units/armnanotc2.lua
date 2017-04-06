@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "armnanotc2_aoplane.dds",
-		buildpic = "ARMNANOTC2.png",
+		buildpic = "armnanotc2.png",
 		buildtime = 20000,
 		canguard = true,
 		canmove = false,
@@ -59,6 +59,7 @@ return {
 		workertime = 800,
 		customparams = {
 			buildpic = "ARMNANOTC2.png",
+			faction = "ARM",
 		},
 		nanocolor = {
 			[1] = 0.42,

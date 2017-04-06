@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 10082,
 		buildcostmetal = 506,
 		builder = false,
+		buildpic = "nsacskv.png",
 		buildtime = 19000,
 		canattack = true,
 		canguard = true,
@@ -58,6 +59,7 @@ return {
 		unitnumber = 1414,
 		workertime = 0,
 		customparams = {
+			faction = "CORE",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
@@ -128,6 +130,10 @@ return {
 		weapondefs = {
 			corkrog_fire10 = {
 				areaofeffect = 12,
+				avoidfeature = false,
+				craterareaofeffect = 0,
+				craterboost = 0,
+				cratermult = 0,
 				explosiongenerator = "custom:KNIGHT_EXPLOSION_FX",
 				id = 150,
 				name = "Gauss Cannon",
@@ -136,6 +142,8 @@ return {
 				rgbcolor = "1 0.95 0.9",
 				size = 0.88,
 				soundhitdry = "xplomed21",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "Krogun1",
 				tolerance = 500,
 				turret = true,

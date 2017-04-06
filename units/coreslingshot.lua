@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 4500,
 		buildcostmetal = 480,
 		builder = false,
+		buildpic = "coreslingshot.png",
 		buildtime = 4600,
 		canattack = true,
 		canguard = true,
@@ -55,6 +56,9 @@ return {
 		unitname = "coreslingshot",
 		unitnumber = 6518,
 		workertime = 0,
+		customparams = {
+			faction = "CORE",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -124,8 +128,10 @@ return {
 		weapondefs = {
 			turtoise_missile = {
 				areaofeffect = 64,
+				avoidfeature = false,
 				canattackground = false,
 				cegtag = "Core_Def_AA_Rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				firestarter = 60,
@@ -140,6 +146,8 @@ return {
 				reloadtime = 0.8,
 				smoketrail = true,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splssml",
+				soundhitwetvolume = 0.6,
 				soundstart = "JeagerAAMissiles",
 				startvelocity = 820,
 				texture1 = "null",

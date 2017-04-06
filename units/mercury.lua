@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "mercury_aoplane.dds",
-		buildpic = "MERCURY.png",
+		buildpic = "mercury.png",
 		buildtime = 38843,
 		canattack = true,
 		canstop = 1,
@@ -53,6 +53,7 @@ return {
 		yardmap = "oooooooooooooooo",
 		customparams = {
 			buildpic = "MERCURY.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
@@ -124,7 +125,9 @@ return {
 		weapondefs = {
 			core_advsam = {
 				areaofeffect = 800,
+				avoidfeature = false,
 				canattackground = false,
+				craterareaofeffect = 1200,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.25,

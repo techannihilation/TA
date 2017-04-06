@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 34400,
 		buildcostmetal = 3350,
 		builder = false,
+		buildpic = "cortotal.png",
 		buildtime = 38000,
 		canattack = true,
 		canguard = true,
@@ -54,6 +55,7 @@ return {
 		unitnumber = 5365,
 		workertime = 0,
 		customparams = {
+			faction = "CORE",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
@@ -127,8 +129,10 @@ return {
 			cor_total = {
 				accuracy = 200,
 				areaofeffect = 120,
+				avoidfeature = false,
 				burnblow = true,
-				cegtag = "Trail_cannon",
+				cegtag = "Trail_cannon_med",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				gravityaffected = "TRUE",
@@ -144,6 +148,8 @@ return {
 				size = 2.38,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed21",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy1",
 				stages = 20,
 				turret = true,

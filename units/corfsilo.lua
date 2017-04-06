@@ -8,6 +8,7 @@ return {
 		buildinggrounddecalsizex = 19,
 		buildinggrounddecalsizey = 19,
 		buildinggrounddecaltype = "corfsilo_aoplane.dds",
+		buildpic = "corfsilo.png",
 		buildtime = 542439,
 		canattack = true,
 		canstop = 1,
@@ -46,6 +47,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo ",
+		customparams = {
+			faction = "CORE",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -118,10 +122,14 @@ return {
 		weapondefs = {
 			corfsilo_weapon = {
 				areaofeffect = 3020,
+				avoidfeature = false,
 				avoidfriendly = false,
 				cegtag = "Trail_nuke",
 				collidefriendly = false,
 				commandfire = true,
+				craterareaofeffect = 4530,
+				craterboost = 0,
+				cratermult = 0,
 				edgeeffectiveness = 0.5,
 				energypershot = 3000000,
 				firestarter = 100,

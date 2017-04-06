@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 2747,
 		buildcostmetal = 382,
 		builder = false,
+		buildpic = "nsaatorph.png",
 		buildtime = 7504,
 		canattack = true,
 		canguard = true,
@@ -59,6 +60,9 @@ return {
 		unitname = "nsaatorph",
 		unitnumber = 1403,
 		workertime = 0,
+		customparams = {
+			faction = "ARM",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -127,13 +131,18 @@ return {
 		weapondefs = {
 			armheavydepthcharge = {
 				areaofeffect = 16,
+				avoidfeature = false,
 				burnblow = true,
+				craterareaofeffect = 0,
+				craterboost = 0,
+				cratermult = 0,
 				id = 17,
 				model = "DEPTHCHARGE",
 				name = "Depth Charge",
 				range = 210,
 				reloadtime = 1,
 				soundhitdry = "xplodep2",
+				soundhitwet = "xplodep2",
 				soundstart = "torpedo1",
 				startvelocity = 100,
 				tolerance = 32767,

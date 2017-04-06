@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 3000,
 		buildcostmetal = 250,
 		builder = false,
-		buildpic = "TAWF0131.png",
+		buildpic = "tawf0131.png",
 		buildtime = 2998,
 		canattack = true,
 		canguard = true,
@@ -64,6 +64,7 @@ return {
 		customparams = {
 			buildpic = "TAWF0131.png",
 			canareaattack = 1,
+			faction = "ARM",
 		},
 		featuredefs = {
 			tawf013_dead = {
@@ -140,7 +141,9 @@ return {
 			tawf113_weapon1 = {
 				accuracy = 100,
 				areaofeffect = 90,
+				avoidfeature = false,
 				cegtag = "Trail_cannon",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH4",
@@ -158,6 +161,8 @@ return {
 				size = 1.77,
 				sizedecay = -0.15,
 				soundhitdry = "TAWF113b",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "TAWF113a",
 				stages = 20,
 				turret = true,

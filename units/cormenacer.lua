@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 15500,
 		buildcostmetal = 2400,
 		builder = false,
+		buildpic = "cormenacer.png",
 		buildtime = 17000,
 		canattack = true,
 		canguard = true,
@@ -61,6 +62,7 @@ return {
 		upright = false,
 		workertime = 0,
 		customparams = {
+			faction = "CORE",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},
 		featuredefs = {
@@ -134,7 +136,11 @@ return {
 			menacer = {
 				accuracy = 75,
 				areaofeffect = 140,
-				cegtag = "Trail_cannon",
+				avoidfeature = false,
+				cegtag = "Trail_cannon_med",
+				craterareaofeffect = 0,
+				craterboost = 0,
+				cratermult = 0,
 				edgeeffectiveness = 0.25,
 				explosiongenerator = "custom:flash140_fakelight",
 				gravityaffected = "TRUE",
@@ -150,6 +156,8 @@ return {
 				size = 2.14,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy5",
 				stages = 20,
 				targetmoveerror = 0.2,

@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "armcir1_aoplane.dds",
-		buildpic = "ARMCIR.png",
+		buildpic = "armcir1.png",
 		buildtime = 19004,
 		canattack = true,
 		canstop = 1,
@@ -55,6 +55,7 @@ return {
 		yardmap = "oooooooooooooooo",
 		customparams = {
 			buildpic = "ARMCIR.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			armcir_dead = {
@@ -129,11 +130,13 @@ return {
 		weapondefs = {
 			arm_cir2 = {
 				areaofeffect = 84,
+				avoidfeature = false,
 				burnblow = true,
 				burst = 4,
 				burstrate = 0.1,
 				canattackground = false,
 				cegtag = "Arm_Def_AA_Rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.75,
@@ -150,6 +153,8 @@ return {
 				reloadtime = 0.4,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
+				soundhitwet = "splssml",
+				soundhitwetvolume = 0.6,
 				soundstart = "rocklit1",
 				soundtrigger = true,
 				startvelocity = 750,

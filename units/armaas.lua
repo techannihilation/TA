@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 10133,
 		buildcostmetal = 907,
 		builder = false,
-		buildpic = "ARMAAS.png",
+		buildpic = "armaas.png",
 		buildtime = 8628,
 		canattack = true,
 		canguard = true,
@@ -62,6 +62,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "ARMAAS.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
@@ -135,8 +136,10 @@ return {
 		weapondefs = {
 			missilelauncher = {
 				areaofeffect = 64,
+				avoidfeature = false,
 				canattackground = false,
 				cegtag = "Arm_Def_AA_Rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 0,
@@ -153,6 +156,8 @@ return {
 				rgbcolor = "1.000 0.5 0",
 				smoketrail = true,
 				soundhitdry = "packohit",
+				soundhitwet = "splssml",
+				soundhitwetvolume = 0.6,
 				soundstart = "packolau",
 				soundtrigger = true,
 				startvelocity = 520,
@@ -179,8 +184,10 @@ return {
 			mobileflak = {
 				accuracy = 1000,
 				areaofeffect = 120,
+				avoidfeature = false,
 				burnblow = true,
 				canattackground = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.85,
@@ -194,6 +201,8 @@ return {
 				reloadtime = 0.25,
 				rgbcolor = "1.0 0.5 0.0",
 				soundhitdry = "flakhit",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "flakfire",
 				turret = true,
 				weapontimer = 1,

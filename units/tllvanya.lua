@@ -8,6 +8,7 @@ return {
 		buildinggrounddecalsizex = 13,
 		buildinggrounddecalsizey = 13,
 		buildinggrounddecaltype = "tllvanya_aoplane.dds",
+		buildpic = "tllvanya.png",
 		buildtime = 10000000,
 		canattack = true,
 		canguard = true,
@@ -50,9 +51,11 @@ return {
 		standingfireorder = 2,
 		unitname = "tllvanya",
 		unitnumber = 16,
-		--usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
+		customparams = {
+			faction = "TLL",
+		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
@@ -88,9 +91,13 @@ return {
 			arm_tabithacannon = {
 				accuracy = 120,
 				areaofeffect = 4360,
+				avoidfeature = false,
 				avoidfriendly = false,
 				cegtag = "Trail_cannon",
 				collidefriendly = false,
+				craterareaofeffect = 6540,
+				craterboost = 0,
+				cratermult = 0,
 				energypershot = 19720000,
 				explosiongenerator = "custom:ARGHNUKE_FX1",
 				firestarter = 75,

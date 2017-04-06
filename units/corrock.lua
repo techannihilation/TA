@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 2480,
 		buildcostmetal = 235,
 		builder = false,
-		buildpic = "CORROCK.png",
+		buildpic = "corrock.png",
 		buildtime = 2500,
 		canattack = true,
 		canguard = true,
@@ -59,6 +59,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "CORROCK.png",
+			faction = "CORE",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},
 		featuredefs = {
@@ -135,9 +136,11 @@ return {
 		weapondefs = {
 			lightartmiss = {
 				areaofeffect = 48,
+				avoidfeature = false,
 				burst = 2,
 				burstrate = 0.15,
 				cegtag = "Core_Trail_rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:Explosion_Medium_VLight",
@@ -152,6 +155,8 @@ return {
 				reloadtime = 3,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "rocklit1",
 				startvelocity = 190,
 				texture1 = "null",

@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 3712,
 		buildcostmetal = 226,
 		builder = false,
-		buildpic = "ARMST.png",
+		buildpic = "armst.png",
 		buildtime = 6704,
 		canattack = true,
 		canguard = true,
@@ -66,6 +66,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "ARMST.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
@@ -141,6 +142,8 @@ return {
 		weapondefs = {
 			armst_gauss = {
 				areaofeffect = 8,
+				avoidfeature = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH1nd",
@@ -154,6 +157,8 @@ return {
 				rgbcolor = "1 0.95 0.9",
 				size = 0.82,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy1",
 				turret = true,
 				weapontype = "Cannon",

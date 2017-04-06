@@ -7,7 +7,7 @@ return {
 		buildcostmetal = 117,
 		builddistance = 40,
 		builder = true,
-		buildpic = "CORCA.png",
+		buildpic = "corca.png",
 		buildtime = 9286,
 		canfly = true,
 		canguard = true,
@@ -93,6 +93,7 @@ return {
 		},
 		customparams = {
 			buildpic = "CORCA.png",
+			faction = "core",
 		},
 		nanocolor = {
 			[1] = 0.044,

@@ -7,6 +7,7 @@ return {
 		buildcostenergy = 65000,
 		buildcostmetal = 1800,
 		builder = true,
+		buildpic = "tllgiant.png",
 		buildtime = 25941,
 		canassist = false,
 		canguard = true,
@@ -56,6 +57,9 @@ return {
 		unitnumber = 907,
 		waterline = 7,
 		workertime = 4000,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -130,9 +134,11 @@ return {
 		weapondefs = {
 			tll_rocket = {
 				areaofeffect = 420,
+				avoidfeature = false,
 				avoidfriendly = false,
 				collidefriendly = false,
 				coverage = 1680,
+				craterareaofeffect = 630,
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 7500,
@@ -150,6 +156,8 @@ return {
 				reloadtime = 2,
 				smoketrail = true,
 				soundhitdry = "xplomed4",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "Rockhvy1",
 				stockpile = true,
 				stockpiletime = 90,

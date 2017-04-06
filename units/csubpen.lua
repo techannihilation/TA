@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 11,
 		buildinggrounddecalsizey = 11,
 		buildinggrounddecaltype = "csubpen_aoplane.dds",
-		buildpic = "CSUBPEN.png",
+		buildpic = "csubpen.png",
 		buildtime = 11400,
 		canmove = true,
 		canpatrol = true,
@@ -71,6 +71,7 @@ return {
 		},
 		customparams = {
 			buildpic = "CSUBPEN.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

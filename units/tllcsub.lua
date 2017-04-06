@@ -6,6 +6,7 @@ return {
 		buildcostmetal = 430,
 		builddistance = 250,
 		builder = true,
+		buildpic = "tllcsub.png",
 		buildtime = 6247,
 		canguard = true,
 		canmove = true,
@@ -73,6 +74,9 @@ return {
 			[12] = "tllfflak",
 			[13] = "tllcrawlb",
 			[14] = "tllcsub",
+		},
+		customparams = {
+			faction = "TLL",
 		},
 		featuredefs = {
 			dead = {

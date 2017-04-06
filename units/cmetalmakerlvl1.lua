@@ -8,6 +8,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "cmetalmakerlvl1_aoplane.dds",
+		buildpic = "cmetalmakerlvl1.png",
 		buildtime = 4800,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		description = "Converts upto 256 Energy to Metal",
@@ -38,6 +39,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "OOOOOOOOOOOO",
+		customparams = {
+			faction = "CORE",
+		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",

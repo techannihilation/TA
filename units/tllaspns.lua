@@ -6,6 +6,7 @@ return {
 		buildcostmetal = 500,
 		builddistance = 8,
 		builder = true,
+		buildpic = "tllaspns.png",
 		buildtime = 12500,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "dead",
@@ -42,6 +43,9 @@ return {
 		waterline = 13,
 		workertime = 3000,
 		yardmap = "wwww wwww wwww wwww",
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

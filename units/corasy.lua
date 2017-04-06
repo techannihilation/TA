@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 37268,
 		buildcostmetal = 4864,
 		builder = true,
-		buildpic = "CORASY.png",
+		buildpic = "corasy.png",
 		buildtime = 35696,
 		canmove = true,
 		canpatrol = true,
@@ -66,6 +66,7 @@ return {
 		},
 		customparams = {
 			buildpic = "CORASY.png",
+			faction = "CORE",
 			providetech = "T2 Factory",
 		},
 		featuredefs = {

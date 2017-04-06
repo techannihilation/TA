@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 1051,
 		buildcostmetal = 135,
 		builder = false,
-		buildpic = "ARMFRAD.png",
+		buildpic = "armfrad.png",
 		buildtime = 1637,
 		canattack = false,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
@@ -54,6 +54,7 @@ return {
 		yardmap = "wwwwwwwww",
 		customparams = {
 			buildpic = "ARMFRAD.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {

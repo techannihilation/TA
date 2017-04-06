@@ -6,6 +6,7 @@ return {
 		buildcostmetal = 2475,
 		builddistance = 225,
 		builder = true,
+		buildpic = "cach.png",
 		buildtime = 41029,
 		canguard = true,
 		canhover = true,
@@ -84,6 +85,9 @@ return {
 			[26] = "corint",
 			[27] = "corbuzz",
 			[28] = "corech18",
+		},
+		customparams = {
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 27200,
 		buildcostmetal = 1440,
 		builder = false,
-		buildpic = "MARAUDER.png",
+		buildpic = "marauder.png",
 		buildtime = 28957,
 		canattack = true,
 		canguard = true,
@@ -53,6 +53,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "MARAUDER.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
@@ -128,7 +129,9 @@ return {
 		weapondefs = {
 			armamph_missile = {
 				areaofeffect = 48,
+				avoidfeature = false,
 				canattackground = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -143,6 +146,8 @@ return {
 				reloadtime = 1,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "rocklit1",
 				startvelocity = 650,
 				texture2 = "armsmoketrail",
@@ -161,6 +166,8 @@ return {
 			},
 			armmech_cannon = {
 				areaofeffect = 12,
+				avoidfeature = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH211",
@@ -172,6 +179,8 @@ return {
 				range = 350,
 				reloadtime = 0.8,
 				soundhitdry = "XploMed21",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "KroGun1",
 				targetmoveerror = 0.15,
 				turret = true,

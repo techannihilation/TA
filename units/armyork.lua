@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 5760,
 		buildcostmetal = 560,
 		builder = false,
-		buildpic = "ARMYORK.png",
+		buildpic = "armyork.png",
 		buildtime = 13285,
 		canattack = true,
 		canguard = true,
@@ -65,6 +65,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "ARMYORK.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
@@ -141,8 +142,10 @@ return {
 			mobileflak = {
 				accuracy = 1000,
 				areaofeffect = 116,
+				avoidfeature = false,
 				burnblow = true,
 				canattackground = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.85,
@@ -157,6 +160,8 @@ return {
 				rgbcolor = "1.0 0.5 0.0",
 				size = 5,
 				soundhitdry = "flakhit",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "flakfire",
 				turret = true,
 				weapontimer = 1,

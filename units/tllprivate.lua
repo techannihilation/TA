@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 525,
 		buildcostmetal = 65,
 		builder = false,
+		buildpic = "tllprivate.png",
 		buildtime = 1920,
 		canattack = true,
 		canguard = true,
@@ -53,6 +54,9 @@ return {
 		unitname = "tllprivate",
 		unitnumber = 815,
 		upright = true,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -129,6 +133,7 @@ return {
 				burst = 3,
 				burstrate = 0.1,
 				cegtag = "Trail_emg",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:EMG_HIT",
@@ -143,6 +148,8 @@ return {
 				reloadtime = 0.3,
 				rgbcolor = "0.83 0.57 0",
 				size = 0.82,
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "flashemg",
 				sprayangle = 1180,
 				tolerance = 5000,

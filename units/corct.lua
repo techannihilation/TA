@@ -6,6 +6,7 @@ return {
 		buildcostmetal = 145,
 		builddistance = 102,
 		builder = true,
+		buildpic = "corct.png",
 		buildtime = 2100,
 		canguard = true,
 		canmove = true,
@@ -84,6 +85,9 @@ return {
 			[29] = "corjamt",
 			[30] = "cjuno",
 			[31] = "corech3",
+		},
+		customparams = {
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {

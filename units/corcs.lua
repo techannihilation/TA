@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 277,
 		builddistance = 262,
 		builder = true,
-		buildpic = "CORCS.png",
+		buildpic = "corcs.png",
 		buildtime = 5537,
 		canguard = true,
 		canmove = true,
@@ -84,6 +84,7 @@ return {
 		},
 		customparams = {
 			buildpic = "CORCS.png",
+			faction = "core",
 		},
 		featuredefs = {
 			dead = {

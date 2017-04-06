@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 21000,
 		buildcostmetal = 2200,
 		builder = false,
-		buildpic = "CORGOL.png",
+		buildpic = "corgol.png",
 		buildtime = 26000,
 		canattack = true,
 		canguard = true,
@@ -61,6 +61,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "CORGOL.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
@@ -140,7 +141,9 @@ return {
 		weapondefs = {
 			cor_gol = {
 				areaofeffect = 292,
-				cegtag = "Trail_cannon",
+				avoidfeature = false,
+				cegtag = "Trail_cannon_med",
+				craterareaofeffect = 438,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH96",
@@ -157,6 +160,8 @@ return {
 				size = 2.9,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed4",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy2",
 				stages = 20,
 				turret = true,

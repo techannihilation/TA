@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 3000,
 		buildcostmetal = 350,
 		builder = false,
-		buildpic = "CORRAID1.png",
+		buildpic = "corraid1.png",
 		buildtime = 3312,
 		canattack = true,
 		canguard = true,
@@ -61,6 +61,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "CORRAID1.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			corraid_dead = {
@@ -138,6 +139,7 @@ return {
 				areaofeffect = 68,
 				avoidfeature = false,
 				cegtag = "Trail_cannon",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:LIGHT_PLASMA_BLING_UPG",
@@ -155,6 +157,8 @@ return {
 				size = 1.57,
 				sizedecay = -0.15,
 				soundhitdry = "xplosml3",
+				soundhitwet = "splssml",
+				soundhitwetvolume = 0.6,
 				soundstart = "canlite3",
 				stages = 20,
 				turret = true,

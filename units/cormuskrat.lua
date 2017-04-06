@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 172,
 		builddistance = 172,
 		builder = true,
-		buildpic = "CORMUSKRAT.png",
+		buildpic = "cormuskrat.png",
 		buildtime = 6864,
 		canguard = true,
 		canmove = true,
@@ -106,6 +106,7 @@ return {
 		},
 		customparams = {
 			buildpic = "CORMUSKRAT.png",
+			faction = "core",
 		},
 		featuredefs = {
 			dead = {

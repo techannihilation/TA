@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 30000,
 		buildcostmetal = 1750,
 		builder = false,
+		buildpic = "corprot.png",
 		buildtime = 38000,
 		canattack = true,
 		canguard = true,
@@ -63,6 +64,7 @@ return {
 		upright = true,
 		workertime = 0,
 		customparams = {
+			faction = "CORE",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
@@ -138,6 +140,7 @@ return {
 			corprot_weapon = {
 				areaofeffect = 16,
 				collidefriendly = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				duration = 0.0025,
@@ -154,6 +157,8 @@ return {
 				rgbcolor = "1 1 0",
 				soundhitdry = "xplomed21",
 				soundhitvolume = 4,
+				soundhitwet = "sizzle",
+				soundhitwetvolume = 0.5,
 				soundstart = "Rocklit3",
 				soundstartvolume = 4,
 				thickness = 0.5,

@@ -6,6 +6,7 @@ return {
 		buildcostmetal = 2549,
 		builddistance = 225,
 		builder = true,
+		buildpic = "aach.png",
 		buildtime = 38495,
 		canguard = true,
 		canhover = true,
@@ -59,7 +60,7 @@ return {
 			[1] = "armfus",
 			[2] = "armuwfus",
 			[3] = "amgeo",
-			[4] = "armmmkr",	
+			[4] = "armmmkr",
 			[5] = "armuwmmm",
 			[6] = "armuwadves",
 			[7] = "armuwadvms",
@@ -84,6 +85,9 @@ return {
 			[26] = "armbrtha",
 			[27] = "armvulc",
 			[28] = "armrech18",
+		},
+		customparams = {
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {

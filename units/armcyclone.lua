@@ -63,6 +63,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "armcyclone.png",
+			faction = "ARM",
 			requiretech = "Advanced T3 Unit Research Centre",
 		},
 		sfxtypes = {
@@ -99,9 +100,11 @@ return {
 		weapondefs = {
 			["mk-83"] = {
 				areaofeffect = 100,
+				avoidfeature = false,
 				cegtag = "Trail_Medium_Rocket_Bomb",
 				collidefriendly = false,
 				commandfire = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				firestarter = 100,
@@ -118,6 +121,8 @@ return {
 				reloadtime = 21,
 				smoketrail = true,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "bombrel",
 				startvelocity = 500,
 				targetable = 0,

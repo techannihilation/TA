@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 5968,
 		buildcostmetal = 156,
 		builder = false,
-		buildpic = "CORSHAD.png",
+		buildpic = "corshad.png",
 		buildtime = 5054,
 		canattack = true,
 		canfly = true,
@@ -56,6 +56,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "CORSHAD.png",
+			faction = "CORE",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
@@ -97,6 +98,7 @@ return {
 				burstrate = 0.28,
 				collidefriendly = false,
 				commandfire = false,
+				craterareaofeffect = 282,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.15,
@@ -111,6 +113,8 @@ return {
 				range = 1280,
 				reloadtime = 4,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "bombrel",
 				sprayangle = 300,
 				weapontype = "AircraftBomb",

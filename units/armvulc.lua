@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 11,
 		buildinggrounddecalsizey = 11,
 		buildinggrounddecaltype = "armvulc_aoplane.dds",
-		buildpic = "ARMVULC.png",
+		buildpic = "armvulc.png",
 		buildtime = 505000,
 		canattack = true,
 		canstop = 1,
@@ -55,6 +55,7 @@ return {
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
 			buildpic = "ARMVULC.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
@@ -134,9 +135,11 @@ return {
 			armvulc_weapon2 = {
 				accuracy = 700,
 				areaofeffect = 224,
+				avoidfeature = false,
 				avoidground = false,
-				cegtag = "Trail_cannon",
+				cegtag = "Trail_cannon_med",
 				collidefriendly = false,
+				craterareaofeffect = 336,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.75,
@@ -155,6 +158,8 @@ return {
 				size = 2.6,
 				sizedecay = -0.15,
 				soundhitdry = "rflrpc3",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "XPLONUK4",
 				stages = 20,
 				turret = true,

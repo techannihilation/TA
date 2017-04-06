@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 1480,
 		buildcostmetal = 180,
 		builder = false,
+		buildpic = "tllhoplit.png",
 		buildtime = 6059,
 		canattack = true,
 		canguard = true,
@@ -50,6 +51,9 @@ return {
 		turnrate = 795,
 		unitname = "tllhoplit",
 		unitnumber = 874,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -121,8 +125,10 @@ return {
 		weapondefs = {
 			packo_missile = {
 				areaofeffect = 16,
+				avoidfeature = false,
 				canattackground = false,
 				cegtag = "Tll_Def_AA_Rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 0,
@@ -140,6 +146,8 @@ return {
 				reloadtime = 1,
 				smoketrail = true,
 				soundhitdry = "packohit",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "packolau",
 				soundtrigger = true,
 				startvelocity = 520,

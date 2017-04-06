@@ -8,6 +8,7 @@ return {
 		buildinggrounddecalsizex = 13,
 		buildinggrounddecalsizey = 13,
 		buildinggrounddecaltype = "corflu_aoplane.dds",
+		buildpic = "corflu.png",
 		buildtime = 10000000,
 		canattack = true,
 		canguard = true,
@@ -53,6 +54,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
+		customparams = {
+			faction = "CORE",
+		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
@@ -88,9 +92,13 @@ return {
 			cor_flucannon = {
 				accuracy = 150,
 				areaofeffect = 4630,
+				avoidfeature = false,
 				avoidfriendly = false,
 				cegtag = "Trail_cannon",
 				collidefriendly = false,
+				craterareaofeffect = 6945,
+				craterboost = 0,
+				cratermult = 0,
 				energypershot = 19720000,
 				explosiongenerator = "custom:ARGHNUKE_FX1",
 				firestarter = 0,

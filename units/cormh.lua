@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 3314,
 		buildcostmetal = 195,
 		builder = false,
-		buildpic = "CORMH.png",
+		buildpic = "cormh.png",
 		buildtime = 3579,
 		canattack = true,
 		canguard = true,
@@ -59,6 +59,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "CORMH.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
@@ -132,7 +133,9 @@ return {
 		weapondefs = {
 			cormh_weapon = {
 				areaofeffect = 80,
+				avoidfeature = false,
 				cegtag = "CORRAVENTRAIL",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH4",
@@ -149,6 +152,8 @@ return {
 				reloadtime = 9,
 				smoketrail = false,
 				soundhitdry = "xplomed4",
+				soundhitwet = "splssml",
+				soundhitwetvolume = 0.6,
 				soundstart = "Rockhvy1",
 				texture1 = "null",
 				texture2 = "null",

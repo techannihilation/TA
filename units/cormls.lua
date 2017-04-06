@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 305,
 		builddistance = 212,
 		builder = true,
-		buildpic = "CORMLS.png",
+		buildpic = "cormls.png",
 		buildtime = 5300,
 		canguard = true,
 		canmove = true,
@@ -75,6 +75,7 @@ return {
 		},
 		customparams = {
 			buildpic = "CORMLS.png",
+			faction = "core",
 		},
 		featuredefs = {
 			dead = {

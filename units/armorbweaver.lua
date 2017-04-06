@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 1650,
 		buildcostmetal = 70,
 		builder = false,
+		buildpic = "armorbweaver.png",
 		buildtime = 5423,
 		canguard = true,
 		canmove = true,
@@ -54,6 +55,9 @@ return {
 		unitname = "armorbweaver",
 		unitnumber = 6343,
 		workertime = 0,
+		customparams = {
+			faction = "ARM",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

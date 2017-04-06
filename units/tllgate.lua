@@ -9,6 +9,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "tllgate_aoplane.dds",
+		buildpic = "tllgate.png",
 		buildtime = 53485,
 		canattack = false,
 		canstop = 1,
@@ -46,6 +47,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "ooo ooo ooo ooo ooo",
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			heap = {
 				blocking = false,
@@ -113,6 +117,9 @@ return {
 		},
 		weapondefs = {
 			repulsor = {
+				craterareaofeffect = 0,
+				craterboost = 0,
+				cratermult = 0,
 				name = "PlasmaRepulsor",
 				range = 400,
 				shieldalpha = 0.35,
@@ -128,6 +135,8 @@ return {
 				shieldradius = 400,
 				shieldrepulser = true,
 				smartshield = true,
+				soundhitwet = "sizzle",
+				soundhitwetvolume = 0.5,
 				visibleshield = true,
 				visibleshieldhitframes = 70,
 				visibleshieldrepulse = true,

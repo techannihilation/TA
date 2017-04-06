@@ -6,6 +6,7 @@ return {
 		buildcostmetal = 155,
 		builddistance = 110,
 		builder = true,
+		buildpic = "coreleopard.png",
 		buildtime = 2800,
 		canassist = false,
 		canguard = true,
@@ -55,6 +56,9 @@ return {
 		unitname = "coreleopard",
 		unitnumber = 4331,
 		workertime = 250,
+		customparams = {
+			faction = "CORE",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

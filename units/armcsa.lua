@@ -8,7 +8,7 @@ return {
 		buildcostmetal = 2150,
 		builddistance = 60,
 		builder = true,
-		buildpic = "ARMCSA.png",
+		buildpic = "armcsa.png",
 		buildtime = 18098,
 		canfly = true,
 		canguard = true,
@@ -63,7 +63,7 @@ return {
 			[1] = "armfus",
 			[2] = "armuwfus",
 			[3] = "amgeo",
-			[4] = "armmmkr",	
+			[4] = "armmmkr",
 			[5] = "armuwmmm",
 			[6] = "armuwadves",
 			[7] = "armuwadvms",
@@ -92,6 +92,7 @@ return {
 		},
 		customparams = {
 			buildpic = "ARMCSA.png",
+			faction = "arm",
 		},
 		nanocolor = {
 			[1] = 0.128,

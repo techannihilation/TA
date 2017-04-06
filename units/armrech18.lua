@@ -8,7 +8,7 @@ return {
 		buildinggrounddecalsizex = 10,
 		buildinggrounddecalsizey = 10,
 		buildinggrounddecaltype = "armrech18_aoplane.dds",
-		buildpic = "armrech.png",
+		buildpic = "armrech18.png",
 		buildtime = 50000,
 		category = "LEVEL1 ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		collisionvolumeoffsets = "-1 -9 -5",
@@ -49,6 +49,7 @@ return {
 		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo",
 		customparams = {
 			buildpic = "armrech.png",
+			faction = "ARM",
 			ismorphingrc = true,
 			providetech = "Advanced T1 Unit Research Centre,Advanced T2 Unit Research Centre",
 		},

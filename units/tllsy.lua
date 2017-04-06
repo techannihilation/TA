@@ -3,6 +3,7 @@ return {
 		buildcostenergy = 1220,
 		buildcostmetal = 735,
 		builder = true,
+		buildpic = "tllsy.png",
 		buildtime = 6090,
 		canmove = true,
 		canpatrol = true,
@@ -51,6 +52,7 @@ return {
 			[7] = "tllambassador",
 		},
 		customparams = {
+			faction = "TLL",
 			providetech = "T1 Factory",
 		},
 		featuredefs = {

@@ -6,6 +6,7 @@ return {
 		buildcostmetal = 199,
 		builddistance = 197,
 		builder = true,
+		buildpic = "tllchover.png",
 		buildtime = 6780,
 		canguard = true,
 		canhover = true,
@@ -99,6 +100,9 @@ return {
 			[41] = "tlllmtns",
 			[42] = "tllnssam",
 			[43] = "tlltorp",
+		},
+		customparams = {
+			faction = "TLL",
 		},
 		featuredefs = {
 			dead = {

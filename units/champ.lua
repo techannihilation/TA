@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 86293,
 		buildcostmetal = 5280,
 		builder = false,
+		buildpic = "champ.png",
 		buildtime = 26678,
 		canattack = true,
 		canguard = true,
@@ -63,6 +64,9 @@ return {
 		unitnumber = 623,
 		upright = false,
 		workertime = 0,
+		customparams = {
+			faction = "CORE",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -118,14 +122,20 @@ return {
 		weapondefs = {
 			champ_gauss = {
 				areaofeffect = 48,
+				craterareaofeffect = 0,
+				craterboost = 0,
+				cratermult = 0,
 				id = 6,
-				impulsefactor = 2,
+				impulseboost = 0,
+				impulsefactor = 0,
 				name = "GaussCannon",
 				noexplode = true,
 				range = 590,
 				reloadtime = 1,
 				rgbcolor = "1.000 0.047 0.000",
 				soundhitdry = "xplomed2",
+				soundhitwet = "sizzle",
+				soundhitwetvolume = 0.5,
 				soundstart = "Krogun1",
 				tolerance = 2400,
 				turret = true,

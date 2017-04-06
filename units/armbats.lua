@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 79000,
 		buildcostmetal = 7000,
 		builder = false,
-		buildpic = "ARMBATS.png",
+		buildpic = "armbats.png",
 		buildtime = 58730,
 		canattack = true,
 		canguard = true,
@@ -60,6 +60,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "ARMBATS.png",
+			faction = "ARM",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
@@ -135,7 +136,9 @@ return {
 			arm_bats = {
 				accuracy = 350,
 				areaofeffect = 96,
-				cegtag = "Trail_cannon",
+				avoidfeature = false,
+				cegtag = "Trail_cannon_med",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH96",
@@ -152,6 +155,8 @@ return {
 				size = 1.82,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy1",
 				stages = 20,
 				tolerance = 5000,

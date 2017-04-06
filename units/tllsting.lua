@@ -7,6 +7,7 @@ return {
 		buildcostenergy = 18219,
 		buildcostmetal = 1440,
 		builder = false,
+		buildpic = "tllsting.png",
 		buildtime = 40280,
 		canattack = true,
 		canguard = true,
@@ -50,6 +51,9 @@ return {
 		turnrate = 350,
 		unitname = "tllsting",
 		unitnumber = 904,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -119,8 +123,10 @@ return {
 		weapondefs = {
 			missilelauncher = {
 				areaofeffect = 64,
+				avoidfeature = false,
 				canattackground = false,
 				cegtag = "Arm_Def_AA_Rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 0,
@@ -137,6 +143,8 @@ return {
 				rgbcolor = "1.000 0.5 0",
 				smoketrail = true,
 				soundhitdry = "packohit",
+				soundhitwet = "splssml",
+				soundhitwetvolume = 0.6,
 				soundstart = "packolau",
 				soundtrigger = true,
 				startvelocity = 520,
@@ -163,8 +171,10 @@ return {
 			mobileflak = {
 				accuracy = 1000,
 				areaofeffect = 192,
+				avoidfeature = false,
 				burnblow = true,
 				canattackground = false,
+				craterareaofeffect = 288,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.85,
@@ -178,6 +188,8 @@ return {
 				reloadtime = 1,
 				rgbcolor = "1.0 0.5 0.0",
 				soundhitdry = "flakhit",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "flakfire",
 				turret = true,
 				weapontimer = 1,

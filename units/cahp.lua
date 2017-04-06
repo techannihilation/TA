@@ -7,6 +7,7 @@ return {
 		buildinggrounddecalsizex = 12,
 		buildinggrounddecalsizey = 12,
 		buildinggrounddecaltype = "cahp_aoplane.dds",
+		buildpic = "cahp.png",
 		buildtime = 34521,
 		canmove = true,
 		canpatrol = true,
@@ -60,6 +61,7 @@ return {
 			[9] = "coradon",
 		},
 		customparams = {
+			faction = "CORE",
 			providetech = "T2 Factory",
 		},
 		featuredefs = {

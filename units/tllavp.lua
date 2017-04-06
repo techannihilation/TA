@@ -8,6 +8,7 @@ return {
 		buildinggrounddecalsizex = 10,
 		buildinggrounddecalsizey = 10,
 		buildinggrounddecaltype = "tllavp_aoplane.dds",
+		buildpic = "tllavp.png",
 		buildtime = 36440,
 		canmove = true,
 		canpatrol = true,
@@ -59,6 +60,7 @@ return {
 			[10] = "tllobscurer",
 		},
 		customparams = {
+			faction = "TLL",
 			providetech = "T2 Factory",
 		},
 		featuredefs = {

@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 9861,
 		buildcostmetal = 1013,
 		builder = false,
-		buildpic = "CORSHARK.png",
+		buildpic = "corshark.png",
 		buildtime = 15529,
 		canattack = true,
 		canguard = true,
@@ -61,6 +61,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "CORSHARK.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
@@ -134,9 +135,11 @@ return {
 		weapondefs = {
 			armsmart_torpedo = {
 				areaofeffect = 16,
+				avoidfeature = false,
 				avoidfriendly = false,
 				burnblow = true,
 				collidefriendly = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -149,6 +152,7 @@ return {
 				range = 600,
 				reloadtime = 2,
 				soundhitdry = "xplodep1",
+				soundhitwet = "xplodep1",
 				soundstart = "torpedo1",
 				startvelocity = 120,
 				tolerance = 18000,

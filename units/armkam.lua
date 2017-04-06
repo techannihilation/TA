@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 2374,
 		buildcostmetal = 133,
 		builder = false,
-		buildpic = "ARMKAM.png",
+		buildpic = "armkam.png",
 		buildtime = 5046,
 		canattack = true,
 		canfly = true,
@@ -57,6 +57,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "ARMKAM.png",
+			faction = "ARM",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
@@ -92,9 +93,11 @@ return {
 		weapondefs = {
 			med_emg = {
 				areaofeffect = 8,
+				avoidfeature = false,
 				burst = 3,
 				burstrate = 0.25,
 				cegtag = "Trail_emg_upg",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:BRAWLIMPACTS",
@@ -108,6 +111,8 @@ return {
 				reloadtime = 0.7,
 				rgbcolor = "0.79 0.51 0",
 				size = 2.25,
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "brawlemg",
 				sprayangle = 1024,
 				tolerance = 6000,

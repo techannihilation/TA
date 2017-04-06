@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "cordrag_aoplane.dds",
-		buildpic = "CORDRAG.png",
+		buildpic = "cordrag.png",
 		buildtime = 255,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "DRAGONSTEETH_CORE",
@@ -48,6 +48,7 @@ return {
 		yardmap = "ffff",
 		customparams = {
 			buildpic = "CORDRAG.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dragonsteeth_core = {

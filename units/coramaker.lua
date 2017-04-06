@@ -47,6 +47,7 @@ return {
 		yardmap = "oooooooooooo",
 		customparams = {
 			buildpic = "coramaker.png",
+			faction = "CORE",
 		},
 		sfxtypes = {
 			explosiongenerators = {

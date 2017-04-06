@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 2042,
 		buildcostmetal = 19,
 		builder = false,
-		buildpic = "ARMFMKR.png",
+		buildpic = "armfmkr.png",
 		buildtime = 2000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		description = "Converts upto 100 Energy to Metal",
@@ -43,6 +43,7 @@ return {
 		yardmap = "wwwwwwwww",
 		customparams = {
 			buildpic = "ARMFMKR.png",
+			faction = "ARM",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

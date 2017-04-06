@@ -7,6 +7,7 @@ return {
 		buildangle = 16384,
 		buildcostenergy = 325000,
 		buildcostmetal = 14500,
+		buildpic = "armhcar.png",
 		buildtime = 350000,
 		canattack = true,
 		canguard = true,
@@ -65,6 +66,9 @@ return {
 		unitname = "armhcar",
 		waterline = 2,
 		workertime = 5500,
+		customparams = {
+			faction = "ARM",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,
@@ -122,12 +126,14 @@ return {
 		weapondefs = {
 			nuke_hcar_arm = {
 				areaofeffect = 1280,
+				avoidfeature = false,
 				avoidfriendly = false,
 				cegtag = "Trail_nuke",
 				collidefriendly = false,
 				commandfire = true,
-				craterboost = 6,
-				cratermult = 4,
+				craterareaofeffect = 1920,
+				craterboost = 0.72,
+				cratermult = 0.48,
 				edgeeffectiveness = 0,
 				energypershot = 307500,
 				explosiongenerator = "custom:nuke_explo_1280",
@@ -167,7 +173,9 @@ return {
 			},
 			rocket_mcv = {
 				areaofeffect = 64,
+				avoidfeature = false,
 				collidefriendly = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:ARM_FIRE_SMALL",
@@ -184,6 +192,8 @@ return {
 				reloadtime = 2,
 				smoketrail = true,
 				soundhitdry = "cent_hit",
+				soundhitwet = "splssml",
+				soundhitwetvolume = 0.6,
 				soundstart = "mcv_fire1",
 				startvelocity = 350,
 				tolerance = 6000,

@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 152000,
 		buildcostmetal = 12160,
 		builder = false,
+		buildpic = "macross.png",
 		buildtime = 102487,
 		canattack = true,
 		canguard = true,
@@ -59,6 +60,7 @@ return {
 		upright = true,
 		workertime = 0,
 		customparams = {
+			faction = "CORE",
 			requiretech = "Advanced T3 Unit Research Centre",
 		},
 		featuredefs = {
@@ -130,6 +132,10 @@ return {
 		weapondefs = {
 			macross_arm_gun = {
 				areaofeffect = 80,
+				avoidfeature = false,
+				craterareaofeffect = 0,
+				craterboost = 0,
+				cratermult = 0,
 				id = 142,
 				model = "macrossbullets",
 				name = "Macross Arm Canon",
@@ -138,6 +144,8 @@ return {
 				rgbcolor = "1 0.95 0.9",
 				size = 1.63,
 				soundhitdry = "macrossmhit",
+				soundhitwet = "splssml",
+				soundhitwetvolume = 0.6,
 				soundstart = "macrossmissile",
 				tolerance = 1000,
 				turret = true,
@@ -150,6 +158,10 @@ return {
 			},
 			macross_missile = {
 				areaofeffect = 150,
+				avoidfeature = false,
+				craterareaofeffect = 0,
+				craterboost = 0,
+				cratermult = 0,
 				firestarter = 70,
 				id = 170,
 				metalpershot = 0,
@@ -160,6 +172,8 @@ return {
 				rgbcolor = "1.000 0.000 0.000",
 				smoketrail = true,
 				soundhitdry = "macrossmhit",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "macrossmissile",
 				startvelocity = 150,
 				tolerance = 8000,

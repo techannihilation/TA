@@ -7,7 +7,7 @@ return {
 		buildcostmetal = 112,
 		builddistance = 40,
 		builder = true,
-		buildpic = "ARMCA.png",
+		buildpic = "armca.png",
 		buildtime = 8844,
 		canfly = true,
 		canguard = true,
@@ -93,6 +93,7 @@ return {
 		},
 		customparams = {
 			buildpic = "ARMCA.png",
+			faction = "arm",
 		},
 		nanocolor = {
 			[1] = 0.036,

@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 9500,
 		buildcostmetal = 795,
 		builder = false,
+		buildpic = "tllcoyote.png",
 		buildtime = 12000,
 		canattack = true,
 		canguard = true,
@@ -50,6 +51,9 @@ return {
 		unitname = "tllcoyote",
 		unitnumber = 8330,
 		upright = true,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -119,8 +123,10 @@ return {
 		weapondefs = {
 			armamph_missile = {
 				areaofeffect = 48,
+				avoidfeature = false,
 				canattackground = false,
 				cegtag = "Tll_Def_AA_Rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -135,6 +141,8 @@ return {
 				reloadtime = 2,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "rocklit1",
 				startvelocity = 500,
 				texture1 = "null",
@@ -160,7 +168,9 @@ return {
 			},
 			core_reap = {
 				areaofeffect = 64,
+				avoidfeature = false,
 				cegtag = "Trail_cannon",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH72",
@@ -175,6 +185,8 @@ return {
 				separation = 0.45,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splssml",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannon3",
 				stages = 20,
 				turret = true,

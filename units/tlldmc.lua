@@ -41,8 +41,8 @@ return {
 		radardistance = 0,
 		radaremitheight = 49,
 		selfdestructas = "MEDIUM_BUILDING",
-		side = "TLL",
 		shootme = 1,
+		side = "TLL",
 		sightdistance = 1500,
 		standingfireorder = 0,
 		unitname = "tlldmc",
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "tlldmc.png",
 			canareaattack = 1,
+			faction = "TLL",
 			requiretech = "T3 Factory",
 		},
 		featuredefs = {
@@ -129,8 +130,10 @@ return {
 		weapondefs = {
 			tlldmc = {
 				areaofeffect = 400,
+				avoidfeature = false,
 				cegtag = "Trail_dmc_cannon",
 				collidefriendly = false,
+				craterareaofeffect = 600,
 				craterboost = 0,
 				cratermult = 0,
 				duration = 0.025,
@@ -151,6 +154,8 @@ return {
 				size = 4.5,
 				sizedecay = -0.25,
 				soundhitdry = "xplolrg1",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "Energy",
 				stages = 20,
 				turret = true,
@@ -166,8 +171,10 @@ return {
 			},
 			tlldmc_rapid = {
 				areaofeffect = 180,
+				avoidfeature = false,
 				cegtag = "Trail_dmc_cannon",
 				collidefriendly = false,
+				craterareaofeffect = 270,
 				craterboost = 0,
 				cratermult = 0,
 				duration = 0.025,
@@ -187,6 +194,8 @@ return {
 				size = 4.5,
 				sizedecay = -0.25,
 				soundhitdry = "xplolrg1",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "Energy",
 				stages = 20,
 				turret = true,

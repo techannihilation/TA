@@ -3,6 +3,7 @@ return {
 		buildcostenergy = 26600,
 		buildcostmetal = 2990,
 		builder = true,
+		buildpic = "tllsubpen.png",
 		buildtime = 6520,
 		canguard = true,
 		canmove = true,
@@ -61,6 +62,9 @@ return {
 			[10] = "tllsalamander",
 			[11] = "tllaak",
 			[12] = "tllleatherback",
+		},
+		customparams = {
+			faction = "TLL",
 		},
 		featuredefs = {
 			dead = {

@@ -6,6 +6,7 @@ return {
 		brakerate = 0.08,
 		buildcostenergy = 900,
 		buildcostmetal = 175,
+		buildpic = "tllfight.png",
 		buildtime = 3500,
 		canattack = true,
 		canfly = true,
@@ -54,6 +55,9 @@ return {
 		unitname = "tllfight",
 		unitnumber = 917,
 		upright = true,
+		customparams = {
+			faction = "TLL",
+		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
@@ -91,9 +95,10 @@ return {
 		weapondefs = {
 			tllvtol_missile = {
 				areaofeffect = 35,
-				avoidFriendly = false,
-				avoidFeature = false,
+				avoidfeature = false,
+				avoidfriendly = false,
 				collidefriendly = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				firestarter = 70,
@@ -108,6 +113,8 @@ return {
 				reloadtime = 1,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "Rocklit3",
 				startvelocity = 420,
 				texture2 = "armsmoketrail",

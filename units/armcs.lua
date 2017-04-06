@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 272,
 		builddistance = 262,
 		builder = true,
-		buildpic = "ARMCS.png",
+		buildpic = "armcs.png",
 		buildtime = 5121,
 		canguard = true,
 		canmove = true,
@@ -84,6 +84,7 @@ return {
 		},
 		customparams = {
 			buildpic = "ARMCS.png",
+			faction = "arm",
 		},
 		featuredefs = {
 			dead = {

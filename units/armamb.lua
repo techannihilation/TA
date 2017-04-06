@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "armamb_aoplane.dds",
-		buildpic = "ARMAMB.png",
+		buildpic = "armamb.png",
 		buildtime = 25000,
 		canattack = true,
 		canstop = 1,
@@ -60,6 +60,7 @@ return {
 		yardmap = "ooooooooo",
 		customparams = {
 			buildpic = "ARMAMB.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
@@ -156,7 +157,9 @@ return {
 			armamb_gun = {
 				accuracy = 400,
 				areaofeffect = 160,
-				cegtag = "Trail_cannon",
+				avoidfeature = false,
+				cegtag = "Trail_cannon_med",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.25,
@@ -175,6 +178,8 @@ return {
 				size = 2.21,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy5",
 				stages = 20,
 				turret = true,
@@ -190,7 +195,9 @@ return {
 			armamb_gun_high = {
 				accuracy = 400,
 				areaofeffect = 240,
-				cegtag = "Trail_cannon",
+				avoidfeature = false,
+				cegtag = "Trail_cannon_med",
+				craterareaofeffect = 360,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.5,
@@ -209,6 +216,8 @@ return {
 				size = 2.6,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy5",
 				stages = 20,
 				turret = true,

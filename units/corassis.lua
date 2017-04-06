@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 230,
 		builddistance = 136,
 		builder = true,
-		buildpic = "CORASSIS.png",
+		buildpic = "corassis.png",
 		buildtime = 6193,
 		canguard = true,
 		canmove = true,
@@ -83,6 +83,7 @@ return {
 		},
 		customparams = {
 			buildpic = "CORASSIS.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

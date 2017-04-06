@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 9,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "corhp_aoplane.dds",
-		buildpic = "CORHP.png",
+		buildpic = "corhp.png",
 		buildtime = 14253,
 		canmove = true,
 		canpatrol = true,
@@ -66,6 +66,7 @@ return {
 		},
 		customparams = {
 			buildpic = "CORHP.png",
+			faction = "CORE",
 			providetech = "T1 Factory",
 		},
 		featuredefs = {

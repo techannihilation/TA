@@ -9,6 +9,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "tllmex_aoplane.dds",
+		buildpic = "tllmex.png",
 		buildtime = 1820,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		collisionvolumeoffsets = "0 12 -7",
@@ -44,6 +45,9 @@ return {
 		unitnumber = 802,
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooooo",
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

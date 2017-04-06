@@ -9,6 +9,7 @@ return {
 		buildinggrounddecalsizex = 10,
 		buildinggrounddecalsizey = 10,
 		buildinggrounddecaltype = "armmas_aoplane.dds",
+		buildpic = "armmas.png",
 		buildtime = 85800,
 		canattack = false,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
@@ -48,6 +49,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo",
+		customparams = {
+			faction = "ARM",
+		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
@@ -60,6 +64,9 @@ return {
 		},
 		weapondefs = {
 			armmasshield = {
+				craterareaofeffect = 0,
+				craterboost = 0,
+				cratermult = 0,
 				name = "ExtractorShield",
 				shieldalpha = 0.4,
 				shieldbadcolor = "0.05 0.05 0.05",
@@ -73,6 +80,8 @@ return {
 				shieldrepulser = false,
 				shieldstartingpower = 5000,
 				smartshield = true,
+				soundhitwet = "sizzle",
+				soundhitwetvolume = 0.5,
 				visibleshield = true,
 				visibleshieldhitframes = 70,
 				visibleshieldrepulse = true,

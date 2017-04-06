@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 950,
 		buildcostmetal = 90,
 		builder = false,
-		buildpic = "CORSTORM.png",
+		buildpic = "corstorm.png",
 		buildtime = 1800,
 		canattack = true,
 		canguard = true,
@@ -58,6 +58,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "CORSTORM.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
@@ -136,7 +137,9 @@ return {
 		weapondefs = {
 			core_kbot_rocket = {
 				areaofeffect = 48,
+				avoidfeature = false,
 				cegtag = "Core_Trail_rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:Explosion_Medium_VLight",
@@ -151,6 +154,8 @@ return {
 				reloadtime = 3.5,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "rocklit1",
 				startvelocity = 190,
 				texture1 = "null",

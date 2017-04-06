@@ -7,6 +7,7 @@ return {
 		buildangle = 16384,
 		buildcostenergy = 302000,
 		buildcostmetal = 15100,
+		buildpic = "corhcar.png",
 		buildtime = 355000,
 		canattack = true,
 		canguard = true,
@@ -64,6 +65,9 @@ return {
 		unitname = "corhcar",
 		waterline = 2,
 		workertime = 5500,
+		customparams = {
+			faction = "CORE",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,
@@ -121,12 +125,14 @@ return {
 		weapondefs = {
 			nuke_hcar_core = {
 				areaofeffect = 1650,
+				avoidfeature = false,
 				avoidfriendly = false,
 				cegtag = "Trail_nuke",
 				collidefriendly = false,
 				commandfire = true,
-				craterboost = 6,
-				cratermult = 4,
+				craterareaofeffect = 2475,
+				craterboost = 0.72,
+				cratermult = 0.48,
 				edgeeffectiveness = 0,
 				energypershot = 307500,
 				explosiongenerator = "custom:nuke_explo_1280",
@@ -166,7 +172,9 @@ return {
 			},
 			rocket_krog = {
 				areaofeffect = 80,
+				avoidfeature = false,
 				collidefriendly = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASHSMALLBUILDINGEX",
@@ -183,6 +191,8 @@ return {
 				reloadtime = 2,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
+				soundhitwet = "splssml",
+				soundhitwetvolume = 0.6,
 				soundstart = "rocklit1",
 				startvelocity = 350,
 				tolerance = 9000,

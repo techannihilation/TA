@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 20,
 		buildinggrounddecalsizey = 20,
 		buildinggrounddecaltype = "corgant1_aoplane.dds",
-		buildpic = "CORGANT.png",
+		buildpic = "corgant1.png",
 		buildtime = 342000,
 		canmove = true,
 		canpatrol = true,
@@ -60,6 +60,7 @@ return {
 		},
 		customparams = {
 			buildpic = "CORGANT.png",
+			faction = "CORE",
 			providetech = "T4 Factory",
 		},
 		featuredefs = {

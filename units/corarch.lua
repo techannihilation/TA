@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 11787,
 		buildcostmetal = 1035,
 		builder = false,
-		buildpic = "CORARCH.png",
+		buildpic = "corarch.png",
 		buildtime = 9791,
 		canattack = true,
 		canguard = true,
@@ -62,6 +62,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "CORARCH.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
@@ -135,8 +136,10 @@ return {
 		weapondefs = {
 			missilelauncher = {
 				areaofeffect = 64,
+				avoidfeature = false,
 				canattackground = false,
 				cegtag = "Arm_Def_AA_Rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 0,
@@ -153,6 +156,8 @@ return {
 				rgbcolor = "1.000 0.5 0",
 				smoketrail = true,
 				soundhitdry = "packohit",
+				soundhitwet = "splssml",
+				soundhitwetvolume = 0.6,
 				soundstart = "packolau",
 				soundtrigger = true,
 				startvelocity = 520,
@@ -179,9 +184,11 @@ return {
 			mobileflak = {
 				accuracy = 1000,
 				areaofeffect = 150,
+				avoidfeature = false,
 				burnblow = true,
 				canattackground = false,
 				cegtag = "corflak-fx",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.85,
@@ -196,6 +203,8 @@ return {
 				rgbcolor = "1.0 0.5 0.0",
 				size = 5,
 				soundhitdry = "flakhit",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "flakfire",
 				turret = true,
 				weapontimer = 1,

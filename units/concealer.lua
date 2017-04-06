@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 1994,
 		buildcostmetal = 203,
 		builder = false,
+		buildpic = "concealer.png",
 		buildtime = 6156,
 		canguard = true,
 		canhover = true,
@@ -57,6 +58,9 @@ return {
 		unitname = "concealer",
 		unitnumber = 406,
 		workertime = 0,
+		customparams = {
+			faction = "ARM",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

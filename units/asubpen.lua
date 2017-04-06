@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 11,
 		buildinggrounddecalsizey = 11,
 		buildinggrounddecaltype = "asubpen_aoplane.dds",
-		buildpic = "ASUBPEN.png",
+		buildpic = "asubpen.png",
 		buildtime = 11000,
 		canmove = true,
 		canpatrol = true,
@@ -69,6 +69,7 @@ return {
 		},
 		customparams = {
 			buildpic = "ASUBPEN.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {

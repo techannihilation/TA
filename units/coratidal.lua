@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 2224,
 		buildcostmetal = 346,
 		builder = false,
-		buildpic = "CORATIDAL.png",
+		buildpic = "coratidal.png",
 		buildtime = 8376,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "DEAD",
@@ -47,6 +47,7 @@ return {
 		customparams = {
 			buildpic = "CORATIDAL.png",
 			energymultiplier = 5,
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

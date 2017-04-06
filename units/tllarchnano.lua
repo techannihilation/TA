@@ -6,6 +6,7 @@ return {
 		buildcostmetal = 480,
 		builddistance = 150,
 		builder = true,
+		buildpic = "tllarchnano.png",
 		buildtime = 10000,
 		cainrepair = 1,
 		canguard = true,
@@ -80,7 +81,10 @@ return {
 			[24] = "tllhmt",
 			[25] = "tllshoretorp",
 			[26] = "tllcrawlb",
-			[27] = "tllarchnano",		
+			[27] = "tllarchnano",
+		},
+		customparams = {
+			faction = "TLL",
 		},
 		featuredefs = {
 			dead = {

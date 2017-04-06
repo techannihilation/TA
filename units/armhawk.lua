@@ -6,7 +6,7 @@ return {
 		brakerate = 0.112,
 		buildcostenergy = 10200,
 		buildcostmetal = 140,
-		buildpic = "ARMHAWK.png",
+		buildpic = "armhawk.png",
 		buildtime = 9000,
 		canattack = true,
 		canfly = true,
@@ -54,6 +54,7 @@ return {
 		unitrestricted = 150,
 		customparams = {
 			buildpic = "ARMHAWK.png",
+			faction = "ARM",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
@@ -89,9 +90,10 @@ return {
 		weapondefs = {
 			armvtol_advmissile = {
 				areaofeffect = 35,
-				avoidFriendly = false,
-				avoidFeature = false,
+				avoidfeature = false,
+				avoidfriendly = false,
 				collidefriendly = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -107,6 +109,8 @@ return {
 				reloadtime = 0.8,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "Rocklit3",
 				startvelocity = 650,
 				texture2 = "armsmoketrail",

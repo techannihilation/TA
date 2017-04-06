@@ -6,6 +6,7 @@ return {
 		buildcostmetal = 12500,
 		builddistance = 250,
 		builder = true,
+		buildpic = "tllhtcb.png",
 		buildtime = 90000,
 		canguard = true,
 		canmove = true,
@@ -57,6 +58,9 @@ return {
 			[1] = "tllmegacoldfus",
 			[2] = "tllgate1",
 			[3] = "tlldb",
+		},
+		customparams = {
+			faction = "TLL",
 		},
 		featuredefs = {
 			dead = {

@@ -6,6 +6,7 @@ return {
 		buildcostmetal = 160,
 		builddistance = 117,
 		builder = true,
+		buildpic = "armcspider.png",
 		buildtime = 1865,
 		canattack = false,
 		canguard = true,
@@ -84,6 +85,9 @@ return {
 			[29] = "armjamt",
 			[30] = "ajuno",
 			[31] = "armrech3",
+		},
+		customparams = {
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {

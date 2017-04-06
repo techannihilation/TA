@@ -8,7 +8,7 @@ return {
 		buildcostmetal = 2300,
 		builddistance = 60,
 		builder = true,
-		buildpic = "CORCSA.png",
+		buildpic = "corcsa.png",
 		buildtime = 18900,
 		canfly = true,
 		canguard = true,
@@ -90,10 +90,10 @@ return {
 			[27] = "corint",
 			[28] = "corbuzz",
 			[29] = "corech18",
-
 		},
 		customparams = {
 			buildpic = "CORCSA.png",
+			faction = "core",
 		},
 		nanocolor = {
 			[1] = 0.128,

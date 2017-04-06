@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 850,
 		buildcostmetal = 310,
 		builder = false,
+		buildpic = "tllsoftshell.png",
 		buildtime = 3853,
 		canattack = false,
 		canguard = true,
@@ -50,6 +51,9 @@ return {
 		turnrate = 650,
 		unitname = "tllsoftshell",
 		unitnumber = 839,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
