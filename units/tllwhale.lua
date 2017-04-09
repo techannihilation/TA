@@ -46,6 +46,7 @@ return {
 		side = "TLL",
 		sightdistance = 350,
 		sonardistancejam = 100,
+		sonardistance = 600,
 		standingfireorder = 0,
 		standingmoveorder = 1,
 		stealth = true,
