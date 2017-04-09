@@ -17,42 +17,8 @@ race32lt.tga
 Sidepic
 tll.bmp
 
-Unitpictures also owned by [BoS]nixtux
-All new tll t1 unitpics
-tlldb
-tlldischarge
-tlldmc
-tllfgate
-tllflak
-tllfgate
-tllhailstorm
-tllmeegacoldfus
-tllmlrpc
-tlltelsatnk
-tllwmmohoconv
-aach
-aahp
-abroadside
-aaph
-abuilderlvl3
-acovertopcentre
-ccovertopcentre
-aexxec
-afusionplant
-ahermes
-amortor
-armcp
-armhorg
-armmex1
-cormex1
-armrech
-armpw1
-armrock1
-armrottweiler
-ashipyardlvl3
-cadvmstor
-coresy
-corfnanotc*
+All Unitpictures copyrighted by [BoS]nixtux
+
 ----------------------------------------------------------------------------------
 
 Credits :-Some Models are in this mod are from TA:Escalation i would like to thanks archdragon,
