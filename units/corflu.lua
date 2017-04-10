@@ -109,7 +109,7 @@ return {
 				name = "Influence Cannon",
 				nogap = 1,
 				range = 8550,
-				reloadtime = 240,
+				reloadtime = 320,
 				separation = 0.45,
 				sizedecay = -0.15,
 				soundhitdry = "bignuke",
