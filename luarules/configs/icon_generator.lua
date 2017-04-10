@@ -1,4 +1,4 @@
--- $Id: icon_generator.lua 4354 2009-04-11 14:32:28Z licho $
+ -- $Id: icon_generator.lua 4354 2009-04-11 14:32:28Z licho $
 -----------------------------------------------------------------------
 -----------------------------------------------------------------------
 --
@@ -81,7 +81,7 @@ backgrounds = {
 --//sea
   {check={floatOnWater=true,minWaterDepth=GreaterZero},           texture="LuaRules/Images/IconGenBkgs/water.png"},
   
-  {check={},                                                 texture="LuaRules/Images/IconGenBkgs/transparent.png"},
+  {check={canFly=true},                                                 texture="LuaRules/Images/IconGenBkgs/sky.png"},
 }
 
 
@@ -104,7 +104,7 @@ backgrounds = {
 --//empty  := empty model (used for fake units in CA)
 --//attempts := number of tries to scale the model to fit in the icon
 
-defaults = {unfold=true, attack=true, border=0.015, angle=30, rot="right", clamp=-10000, scale=2, empty=false, attempts=10, wait=300, zoom=1.0, offset={0,0,0},};
+defaults = {unfold=true, attack=true, border=0.05, angle=30, rot="right", clamp=-10000, scale=2, empty=false, attempts=10, wait=300, zoom=1.0, offset={0,0,0},};
 
 
 -----------------------------------------------------------------------
