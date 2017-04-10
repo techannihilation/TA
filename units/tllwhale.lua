@@ -142,7 +142,7 @@ return {
 				model = "vpulse",
 				name = "Vpulse2",
 				range = 1600,
-				reloadtime = 2,
+				reloadtime = 5,
 				smoketrail = false,
 				soundhitdry = "vpulsehit",
 				soundhitwet = "splslrg",
@@ -159,7 +159,7 @@ return {
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 400,
 				damage = {
-					default = 1000,
+					default = 2500,
 				},
 			},
 		},
