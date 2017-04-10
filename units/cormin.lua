@@ -67,8 +67,8 @@ return {
 			[6] = "cormine5",
 			[7] = "cormine6",
 			[8] = "cormine7",
-			[9] = "corfdrag",
-			[10] = "corfmine3",
+			[9] = "corfmine3",
+			[10] = "corfdrag",
 		},
 		customparams = {
 			buildpic = "cormin.png",
