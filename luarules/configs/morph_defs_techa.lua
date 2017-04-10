@@ -556,30 +556,22 @@ local morphDefs = {
     armmerl = {
 		into = 'armmlrs',
 		time = 120,
-		xp = 0.75,
-		metal = 3000,
-		energy = 20000,
+		xp = 1,
 	},
     corhrk = {
 		into = 'corhowie',
 		time = 120,
-		xp = 1.00,
-		metal = 3000,
-		energy = 20000,
+		xp = 1.25,
 	},
     cormart = {
 		into = 'clb',
 		time = 120,
 		xp = 0.60,
-		metal = 1500,
-		energy = 10000,
 	},
     armmart = {
 		into = 'avtr',
 		time = 120,
 		xp = 0.60,
-		metal = 1500,
-		energy = 10000,
 	},
     corgol = {
 		into = 'corgol1',
@@ -735,7 +727,6 @@ local morphDefs = {
 	},
     corpyrox1 = {
 		into = 'cordem',
-		tech = 2,
 		time = 60,
 		xp = 0.60,
 	},
