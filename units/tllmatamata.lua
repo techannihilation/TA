@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 12500,
 		buildcostmetal = 2650,
 		builder = false,
+		buildpic = "tllmatamata.png",
 		buildtime = 16000,
 		canattack = true,
 		canguard = true,
@@ -49,6 +50,9 @@ return {
 		turnrate = 530,
 		unitname = "tllmatamata",
 		unitnumber = 31903,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -123,6 +127,7 @@ return {
 				areaofeffect = 118,
 				avoidfeature = false,
 				cegtag = "Trail_cannon",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:LIGHT_PLASMA_BLING",
@@ -140,6 +145,8 @@ return {
 				size = 1.36,
 				sizedecay = -0.15,
 				soundhitdry = "xplosml3",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "canlite3",
 				stages = 20,
 				turret = true,

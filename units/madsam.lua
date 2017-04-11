@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "madsam_aoplane.dds",
-		buildpic = "MADSAM.png",
+		buildpic = "madsam.png",
 		buildtime = 5237,
 		canattack = true,
 		canstop = 1,
@@ -54,6 +54,7 @@ return {
 		yardmap = "ooooooooo",
 		customparams = {
 			buildpic = "MADSAM.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
@@ -130,11 +131,13 @@ return {
 		weapondefs = {
 			madsam_missile = {
 				areaofeffect = 16,
+				avoidfeature = false,
 				burnblow = true,
 				burst = 4,
 				burstrate = 0.2,
 				canattackground = false,
 				cegtag = "Core_Def_AA_Rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -151,6 +154,8 @@ return {
 				reloadtime = 2.5,
 				smoketrail = true,
 				soundhitdry = "packohit",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "packolau",
 				soundtrigger = true,
 				startvelocity = 520,

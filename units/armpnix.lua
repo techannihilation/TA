@@ -8,7 +8,7 @@ return {
 		buildcostenergy = 11332,
 		buildcostmetal = 244,
 		builder = false,
-		buildpic = "ARMPNIX.png",
+		buildpic = "armpnix.png",
 		buildtime = 31064,
 		canattack = true,
 		canfly = true,
@@ -56,6 +56,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "ARMPNIX.png",
+			faction = "ARM",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
@@ -91,9 +92,11 @@ return {
 		weapondefs = {
 			armadvbomb = {
 				areaofeffect = 194,
+				avoidfeature = false,
 				burst = 5,
 				collidefriendly = false,
 				commandfire = false,
+				craterareaofeffect = 291,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.7,
@@ -108,6 +111,8 @@ return {
 				range = 1280,
 				reloadtime = 0.14,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "bombrel",
 				weapontype = "AircraftBomb",
 				damage = {

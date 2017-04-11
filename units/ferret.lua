@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 9113,
 		buildcostmetal = 229,
 		builder = false,
+		buildpic = "ferret.png",
 		buildtime = 9800,
 		canattack = true,
 		canfly = true,
@@ -55,6 +56,9 @@ return {
 		unitname = "ferret",
 		unitnumber = 260,
 		workertime = 0,
+		customparams = {
+			faction = "CORE",
+		},
 		sfxtypes = {
 			explosiongenerators = {
 				[1] = "custom:heli_muzzle",
@@ -92,7 +96,11 @@ return {
 		weapondefs = {
 			bbu_mmg = {
 				areaofeffect = 5,
+				avoidfeature = false,
 				cegtag = "Trail_emg",
+				craterareaofeffect = 0,
+				craterboost = 0,
+				cratermult = 0,
 				explosiongenerator = "custom:EMG_HIT",
 				name = "Medium Machine Gun",
 				range = 300,
@@ -100,6 +108,8 @@ return {
 				rgbcolor = "1 0.95 0.9",
 				size = 0.77,
 				soundhitdry = "xplosml3",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "canlite3",
 				tolerance = 9000,
 				weapontype = "Cannon",

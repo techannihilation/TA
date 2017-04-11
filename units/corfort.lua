@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "corfort_aoplane.dds",
-		buildpic = "CORFORT.png",
+		buildpic = "corfort.png",
 		buildtime = 810,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "FORTIFICATION_CORE",
@@ -48,6 +48,7 @@ return {
 		yardmap = "ffff",
 		customparams = {
 			buildpic = "CORFORT.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			fortification_core = {

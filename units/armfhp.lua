@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 5277,
 		buildcostmetal = 1100,
 		builder = true,
-		buildpic = "ARMFHP.png",
+		buildpic = "armfhp.png",
 		buildtime = 17362,
 		canmove = true,
 		canpatrol = true,
@@ -58,6 +58,7 @@ return {
 		},
 		customparams = {
 			buildpic = "ARMFHP.png",
+			faction = "ARM",
 			providetech = "T1 Factory",
 		},
 		featuredefs = {

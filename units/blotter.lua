@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 2133,
 		buildcostmetal = 107,
 		builder = false,
+		buildpic = "blotter.png",
 		buildtime = 6456,
 		canguard = true,
 		canhover = true,
@@ -56,6 +57,9 @@ return {
 		unitname = "blotter",
 		unitnumber = 402,
 		workertime = 0,
+		customparams = {
+			faction = "CORE",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

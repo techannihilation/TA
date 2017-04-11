@@ -9,7 +9,7 @@ return {
 		buildcostenergy = 8047,
 		buildcostmetal = 180,
 		builder = false,
-		buildpic = "ARMSB.png",
+		buildpic = "armsb.png",
 		buildtime = 9684,
 		canattack = true,
 		canfly = true,
@@ -62,6 +62,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "ARMSB.png",
+			faction = "ARM",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
@@ -100,9 +101,11 @@ return {
 		weapondefs = {
 			seaadvbomb = {
 				areaofeffect = 100,
+				avoidfeature = false,
 				burst = 5,
 				collidefriendly = false,
 				commandfire = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.7,
@@ -117,6 +120,8 @@ return {
 				range = 1280,
 				reloadtime = 0.14,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "bombrel",
 				weapontype = "AircraftBomb",
 				damage = {

@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "corason_aoplane.dds",
-		buildpic = "CORASON.png",
+		buildpic = "corason.png",
 		buildtime = 6096,
 		canattack = false,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
@@ -54,6 +54,7 @@ return {
 		yardmap = "ooooooooo",
 		customparams = {
 			buildpic = "CORASON.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "cortoast_aoplane.dds",
-		buildpic = "CORTOAST.png",
+		buildpic = "cortoast.png",
 		buildtime = 25000,
 		canattack = true,
 		canstop = 1,
@@ -58,6 +58,7 @@ return {
 		yardmap = "ooooooooo",
 		customparams = {
 			buildpic = "CORTOAST.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
@@ -152,7 +153,9 @@ return {
 			cortoast_gun = {
 				accuracy = 450,
 				areaofeffect = 160,
-				cegtag = "Trail_cannon",
+				avoidfeature = false,
+				cegtag = "Trail_cannon_med",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.25,
@@ -171,6 +174,8 @@ return {
 				size = 2.29,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy5",
 				stages = 20,
 				turret = true,
@@ -186,7 +191,9 @@ return {
 			cortoast_gun_high = {
 				accuracy = 450,
 				areaofeffect = 240,
-				cegtag = "Trail_cannon",
+				avoidfeature = false,
+				cegtag = "Trail_cannon_med",
+				craterareaofeffect = 360,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.5,
@@ -205,6 +212,8 @@ return {
 				size = 2.68,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy5",
 				stages = 20,
 				turret = true,

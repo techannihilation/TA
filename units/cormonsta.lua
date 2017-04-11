@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 32000,
 		buildcostmetal = 2750,
 		builder = false,
+		buildpic = "cormonsta.png",
 		buildtime = 45000,
 		canattack = true,
 		canguard = true,
@@ -55,6 +56,7 @@ return {
 		unitnumber = 852741,
 		workertime = 0,
 		customparams = {
+			faction = "CORE",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
@@ -129,6 +131,10 @@ return {
 		weapondefs = {
 			cormonsta_gun = {
 				areaofeffect = 75,
+				avoidfeature = false,
+				craterareaofeffect = 0,
+				craterboost = 0,
+				cratermult = 0,
 				explosiongenerator = "custom:Explosion_Light_Plasma-2-Orange",
 				name = "Tanker Canon",
 				range = 500,
@@ -136,6 +142,8 @@ return {
 				rgbcolor = "0.74 0.43 0",
 				size = 1.6,
 				soundhitdry = "xplomed21",
+				soundhitwet = "splssml",
+				soundhitwetvolume = 0.6,
 				soundstart = "DEFILER2",
 				tolerance = 500,
 				turret = true,
@@ -149,11 +157,13 @@ return {
 			},
 			sam2_missile = {
 				areaofeffect = 16,
+				avoidfeature = false,
 				burnblow = true,
 				burst = 2,
 				burstrate = 0.2,
 				canattackground = false,
 				cegtag = "Core_Def_AA_Rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -170,6 +180,8 @@ return {
 				reloadtime = 2,
 				smoketrail = true,
 				soundhitdry = "packohit",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "packolau",
 				soundtrigger = true,
 				startvelocity = 520,

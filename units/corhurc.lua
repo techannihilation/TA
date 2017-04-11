@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 15323,
 		buildcostmetal = 334,
 		builder = false,
-		buildpic = "CORHURC.png",
+		buildpic = "corhurc.png",
 		buildtime = 34461,
 		canattack = true,
 		canfly = true,
@@ -56,6 +56,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "CORHURC.png",
+			faction = "CORE",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
@@ -91,9 +92,11 @@ return {
 		weapondefs = {
 			coradvbomb = {
 				areaofeffect = 220,
+				avoidfeature = false,
 				burst = 5,
 				collidefriendly = false,
 				commandfire = false,
+				craterareaofeffect = 330,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.7,
@@ -108,6 +111,8 @@ return {
 				range = 1280,
 				reloadtime = 0.14,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "bombrel",
 				weapontype = "AircraftBomb",
 				damage = {

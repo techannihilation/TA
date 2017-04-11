@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 9000,
 		buildcostmetal = 535,
 		builder = false,
+		buildpic = "tllamphibot.png",
 		buildtime = 5980,
 		canattack = true,
 		canguard = true,
@@ -58,6 +59,9 @@ return {
 		upright = true,
 		waterline = 30,
 		workertime = 0,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -127,9 +131,11 @@ return {
 		weapondefs = {
 			coramph_weapon1 = {
 				areaofeffect = 16,
+				avoidfeature = false,
 				avoidfriendly = false,
 				burnblow = true,
 				collidefriendly = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -143,6 +149,7 @@ return {
 				range = 400,
 				reloadtime = 8,
 				soundhitdry = "xplodep2",
+				soundhitwet = "xplodep2",
 				soundstart = "torpedo1",
 				startvelocity = 75,
 				turret = true,
@@ -157,7 +164,9 @@ return {
 			},
 			coramph_weapon2 = {
 				areaofeffect = 30,
+				avoidfeature = false,
 				burnblow = true,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2nd",
@@ -171,6 +180,8 @@ return {
 				reloadtime = 4,
 				smoketrail = true,
 				soundhitdry = "SabotHit",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "SabotFire",
 				startvelocity = 700,
 				targetmoveerror = 0.2,

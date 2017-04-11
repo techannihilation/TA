@@ -53,6 +53,7 @@ return {
 		yardmap = "ooo ooo ooo ooo",
 		customparams = {
 			buildpic = "armckmakr.png",
+			faction = "ARM",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

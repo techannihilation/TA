@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 9058,
 		buildcostmetal = 683,
 		builder = false,
+		buildpic = "tllcopter.png",
 		buildtime = 25000,
 		canattack = true,
 		canfly = true,
@@ -52,6 +53,9 @@ return {
 		unitname = "tllcopter",
 		unitnumber = 890,
 		workertime = 0,
+		customparams = {
+			faction = "TLL",
+		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
@@ -89,8 +93,10 @@ return {
 		weapondefs = {
 			vtol_emg = {
 				areaofeffect = 8,
+				avoidfeature = false,
 				burst = 3,
 				burstrate = 0.1,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:BRAWLIMPACTS",
@@ -104,6 +110,8 @@ return {
 				reloadtime = 0.8,
 				rgbcolor = "1 0.9 0.49",
 				size = 0.82,
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "brawlemg",
 				sprayangle = 1024,
 				tolerance = 6000,

@@ -8,6 +8,7 @@ return {
 		buildinggrounddecalsizex = 10,
 		buildinggrounddecalsizey = 10,
 		buildinggrounddecaltype = "tllap_aoplane.dds",
+		buildpic = "tllap.png",
 		buildtime = 7450,
 		canmove = true,
 		canpatrol = true,
@@ -57,6 +58,9 @@ return {
 			[5] = "tllbomber",
 			[6] = "tlltplane",
 			[7] = "tllcop1",
+		},
+		customparams = {
+			faction = "TLL",
 		},
 		featuredefs = {
 			dead = {

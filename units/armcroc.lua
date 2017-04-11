@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 12279,
 		buildcostmetal = 498,
 		builder = false,
-		buildpic = "ARMCROC.png",
+		buildpic = "armcroc.png",
 		buildtime = 13367,
 		canattack = true,
 		canguard = true,
@@ -65,6 +65,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "ARMCROC.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
@@ -137,7 +138,9 @@ return {
 		weapondefs = {
 			arm_triton = {
 				areaofeffect = 96,
-				cegtag = "Trail_cannon",
+				avoidfeature = false,
+				cegtag = "Trail_cannon_med",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH64",
@@ -154,6 +157,8 @@ return {
 				size = 1.82,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed4",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannon2",
 				stages = 20,
 				turret = true,

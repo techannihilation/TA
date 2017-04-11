@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "armfort_aoplane.dds",
-		buildpic = "ARMFORT.png",
+		buildpic = "armfort.png",
 		buildtime = 965,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "FORTIFICATION",
@@ -48,6 +48,7 @@ return {
 		yardmap = "ffff",
 		customparams = {
 			buildpic = "ARMFORT.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			fortification = {

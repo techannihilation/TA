@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 37000,
 		buildcostmetal = 5725,
 		builder = false,
+		buildpic = "armtem.png",
 		buildtime = 63500,
 		canattack = true,
 		canguard = true,
@@ -58,6 +59,7 @@ return {
 		unitnumber = 500,
 		workertime = 0,
 		customparams = {
+			faction = "ARM",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
@@ -129,7 +131,9 @@ return {
 		weapondefs = {
 			armtem_rocket = {
 				areaofeffect = 130,
+				avoidfeature = false,
 				cegtag = "ARMRAVENTRAIL",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				firestarter = 70,
@@ -143,6 +147,8 @@ return {
 				reloadtime = 2.5,
 				smoketrail = false,
 				soundhitdry = "xplomed4",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "temrocket_launch",
 				startvelocity = 150,
 				texture1 = "null",
@@ -163,6 +169,8 @@ return {
 			},
 			armtem_weapon = {
 				areaofeffect = 170,
+				avoidfeature = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH1",
@@ -174,6 +182,8 @@ return {
 				range = 760,
 				reloadtime = 2,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "Mavgun2",
 				tolerance = 4000,
 				turret = true,

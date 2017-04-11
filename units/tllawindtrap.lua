@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "tllawindtrap_aoplane.dds",
-		buildpic = "tllwindtrap.png",
+		buildpic = "tllawindtrap.png",
 		buildtime = 5883,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "dead",
@@ -40,13 +40,13 @@ return {
 		side = "TLL",
 		sightdistance = 280,
 		unitname = "tllawindtrap",
-		--usebuildinggrounddecal = true,
 		windgenerator = 90,
 		workertime = 0,
 		yardmap = "oooooo oooooo oooooo oooooo oooooo oooooo",
 		customparams = {
 			buildpic = "tllwindtrap.png",
 			energymultiplier = 4,
+			faction = "TLL",
 		},
 		featuredefs = {
 			dead = {

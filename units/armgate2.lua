@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "armgate2_aoplane.dds",
-		buildpic = "ARMGATE.png",
+		buildpic = "armgate2.png",
 		buildtime = 54139,
 		canattack = false,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
@@ -53,6 +53,7 @@ return {
 		yardmap = "ooo ooo ooo",
 		customparams = {
 			buildpic = "ARMGATE.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			armgate1_heap = {
@@ -124,6 +125,9 @@ return {
 		},
 		weapondefs = {
 			repulsor2 = {
+				craterareaofeffect = 0,
+				craterboost = 0,
+				cratermult = 0,
 				name = "PlasmaRepulsor",
 				range = 340,
 				shieldalpha = 0.3,
@@ -139,6 +143,8 @@ return {
 				shieldradius = 340,
 				shieldrepulser = true,
 				smartshield = true,
+				soundhitwet = "sizzle",
+				soundhitwetvolume = 0.5,
 				visibleshield = true,
 				visibleshieldrepulse = true,
 				weapontype = "Shield",

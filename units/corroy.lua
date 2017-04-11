@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 6290,
 		buildcostmetal = 1090,
 		builder = false,
-		buildpic = "CORROY.png",
+		buildpic = "corroy.png",
 		buildtime = 14000,
 		canattack = true,
 		canguard = true,
@@ -63,6 +63,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "CORROY.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
@@ -137,7 +138,9 @@ return {
 			core_roy = {
 				alphadecay = 0.3,
 				areaofeffect = 64,
+				avoidfeature = false,
 				cegtag = "Trail_cannon",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH4",
@@ -154,6 +157,8 @@ return {
 				size = 1.53,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splssml",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy1",
 				stages = 20,
 				turret = true,
@@ -166,9 +171,11 @@ return {
 			},
 			depthcharge = {
 				areaofeffect = 32,
+				avoidfeature = false,
 				avoidfriendly = false,
 				burnblow = true,
 				collidefriendly = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.99,
@@ -182,6 +189,7 @@ return {
 				range = 400,
 				reloadtime = 2.5,
 				soundhitdry = "xplodep2",
+				soundhitwet = "xplodep2",
 				soundstart = "torpedo1",
 				startvelocity = 140,
 				tolerance = 1000,

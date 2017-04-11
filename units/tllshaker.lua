@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 1600,
 		buildcostmetal = 245,
 		builder = false,
-		buildpic = "TLLSHAKER.png",
+		buildpic = "tllshaker.png",
 		buildtime = 3904,
 		canattack = true,
 		canguard = true,
@@ -64,6 +64,7 @@ return {
 		customparams = {
 			buildpic = "TLLSHAKER.png",
 			canareaattack = 1,
+			faction = "TLL",
 		},
 		featuredefs = {
 			dead = {
@@ -125,7 +126,9 @@ return {
 			tllshaker_gun = {
 				accuracy = 300,
 				areaofeffect = 68,
+				avoidfeature = false,
 				cegtag = "Trail_cannon",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH4",
@@ -143,6 +146,8 @@ return {
 				size = 1.57,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splssml",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy3",
 				stages = 20,
 				turret = true,

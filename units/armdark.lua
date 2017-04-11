@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 5327,
 		buildcostmetal = 285,
 		builder = false,
+		buildpic = "armdark.png",
 		buildtime = 14223,
 		canattack = true,
 		canguard = true,
@@ -61,6 +62,7 @@ return {
 		unitnumber = 2541,
 		workertime = 0,
 		customparams = {
+			faction = "ARM",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},
 		featuredefs = {
@@ -132,7 +134,9 @@ return {
 		weapondefs = {
 			corhorg_missile = {
 				areaofeffect = 48,
+				avoidfeature = false,
 				cegtag = "trail_medium_rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:Explosion_Medium_Rocket",
@@ -145,6 +149,8 @@ return {
 				reloadtime = 6,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "tirhorgue",
 				startvelocity = 450,
 				tolerance = 8000,

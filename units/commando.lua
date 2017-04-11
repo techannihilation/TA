@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 659,
 		builddistance = 137,
 		builder = true,
-		buildpic = "COMMANDO.png",
+		buildpic = "commando.png",
 		buildtime = 13178,
 		canassist = false,
 		canattack = true,
@@ -63,6 +63,7 @@ return {
 		workertime = 2000,
 		customparams = {
 			buildpic = "COMMANDO.png",
+			faction = "CORE",
 		},
 		nanocolor = {
 			[1] = 0.8,
@@ -107,7 +108,9 @@ return {
 		weapondefs = {
 			commandolas = {
 				areaofeffect = 192,
+				avoidfeature = false,
 				cegtag = "Trail_cannon",
+				craterareaofeffect = 288,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:EMPFLASH192",
@@ -127,6 +130,8 @@ return {
 				size = 1.75,
 				sizedecay = -0.15,
 				soundhitdry = "EMGPULS1",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannon1",
 				stages = 20,
 				tolerance = 1000,

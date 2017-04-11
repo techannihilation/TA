@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 14000,
 		buildcostmetal = 1550,
 		builder = false,
-		buildpic = "ARMFBOY.png",
+		buildpic = "armfboy.png",
 		buildtime = 22397,
 		canattack = true,
 		canguard = true,
@@ -59,6 +59,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "ARMFBOY.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
@@ -133,7 +134,9 @@ return {
 		weapondefs = {
 			arm_fatboy_notalaser = {
 				areaofeffect = 240,
-				cegtag = "Trail_cannon",
+				avoidfeature = false,
+				cegtag = "Trail_cannon_med",
+				craterareaofeffect = 360,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.7,
@@ -152,6 +155,8 @@ return {
 				size = 2.68,
 				sizedecay = -0.15,
 				soundhitdry = "bertha6",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "BERTHA1",
 				stages = 20,
 				turret = true,

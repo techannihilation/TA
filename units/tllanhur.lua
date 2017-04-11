@@ -9,16 +9,12 @@ return {
 		buildpic = "tllanhur.png",
 		buildtime = 45000,
 		canattack = true,
-		--cancloak = true,
 		canfly = true,
 		canguard = true,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL WEAPON",
-		--cloakcost = 500,
-		--cloakcostmoving = 1750,
-		--cloaktimeout = 350,
 		collide = false,
 		cruisealt = 220,
 		decloakonfire = true,
@@ -41,7 +37,6 @@ return {
 		maxvelocity = 10,
 		maxwaterdepth = 255,
 		metalstorage = 0,
-		--mincloakdistance = 100,
 		mobilestandorders = 1,
 		name = "Anhur",
 		noautofire = false,
@@ -62,6 +57,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "tllanhur.png",
+			faction = "TLL",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
@@ -97,11 +93,13 @@ return {
 		weapondefs = {
 			torpedo_bomb = {
 				areaofeffect = 32,
+				avoidfeature = false,
 				avoidfriendly = false,
 				burnblow = true,
 				burst = 2,
 				burstrate = 0.4,
 				collidefriendly = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -114,6 +112,7 @@ return {
 				range = 500,
 				reloadtime = 8,
 				soundhitdry = "xplodep2",
+				soundhitwet = "xplodep2",
 				soundstart = "bombrel",
 				startvelocity = 100,
 				tolerance = 12000,
@@ -131,7 +130,6 @@ return {
 					default = 4500,
 					experimental_land = 6000,
 					experimental_ships = 6000,
-					
 				},
 			},
 		},

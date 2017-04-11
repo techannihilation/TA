@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 5600,
 		buildcostmetal = 800,
 		builder = false,
+		buildpic = "tllaak.png",
 		buildtime = 5450,
 		canattack = true,
 		canguard = true,
@@ -49,6 +50,9 @@ return {
 		unitname = "tllaak",
 		unitnumber = 947,
 		upright = true,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -118,11 +122,13 @@ return {
 		weapondefs = {
 			arm_cir2 = {
 				areaofeffect = 84,
+				avoidfeature = false,
 				burnblow = true,
 				burst = 5,
 				burstrate = 0.1,
 				canattackground = false,
 				cegtag = "Tll_Def_AA_Rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.75,
@@ -139,6 +145,8 @@ return {
 				reloadtime = 1,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
+				soundhitwet = "splssml",
+				soundhitwetvolume = 0.6,
 				soundstart = "rocklit1",
 				soundtrigger = true,
 				startvelocity = 750,
@@ -164,8 +172,10 @@ return {
 			},
 			armaakbot_missile1 = {
 				areaofeffect = 64,
+				avoidfeature = false,
 				canattackground = false,
 				cegtag = "Tll_Def_AA_Rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -182,6 +192,8 @@ return {
 				smoketrail = true,
 				soundhitdry = "xplosml2",
 				soundhitvolume = 7.5,
+				soundhitwet = "splssml",
+				soundhitwetvolume = 0.6,
 				soundstart = "rocklit1",
 				soundstartvolume = 7.5,
 				startvelocity = 600,

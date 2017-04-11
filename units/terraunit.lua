@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 106667,
 		buildcostmetal = 106667,
 		builder = false,
-		buildpic = "levelterra.png",
+		buildpic = "terraunit.png",
 		buildtime = 10000000,
 		canattack = false,
 		capturable = false,
@@ -48,6 +48,7 @@ return {
 		yardmap = "yyyy",
 		customparams = {
 			buildpic = "levelterra.png",
+			faction = "ARM",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

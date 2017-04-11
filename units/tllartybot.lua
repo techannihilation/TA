@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 3500,
 		buildcostmetal = 960,
 		builder = false,
+		buildpic = "tllartybot.png",
 		buildtime = 10150,
 		canattack = true,
 		canguard = true,
@@ -55,6 +56,9 @@ return {
 		unitnumber = 924,
 		upright = true,
 		workertime = 0,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -123,6 +127,8 @@ return {
 		weapondefs = {
 			gauss = {
 				areaofeffect = 8,
+				avoidfeature = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH1nd",
@@ -136,6 +142,8 @@ return {
 				rgbcolor = "1 0.88 0.26",
 				size = 1.6,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy1",
 				turret = true,
 				weapontype = "Cannon",

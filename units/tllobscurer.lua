@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 1037,
 		buildcostmetal = 119,
 		builder = false,
+		buildpic = "tllobscurer.png",
 		buildtime = 6622,
 		canattack = false,
 		canguard = true,
@@ -50,6 +51,9 @@ return {
 		turnrate = 512,
 		unitname = "tllobscurer",
 		unitnumber = 838,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

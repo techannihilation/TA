@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 15680,
 		buildcostmetal = 680,
 		builder = false,
-		buildpic = "ARMSNIPE.png",
+		buildpic = "armsnipe.png",
 		buildtime = 19250,
 		canattack = true,
 		canguard = true,
@@ -57,6 +57,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "ARMSNIPE.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
@@ -136,6 +137,7 @@ return {
 			armsnipe_weapon = {
 				areaofeffect = 16,
 				collidefriendly = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				duration = 0.0025,
@@ -151,6 +153,8 @@ return {
 				rgbcolor = "1 1 0",
 				soundhitdry = "xplolrg2",
 				soundhitvolume = 4,
+				soundhitwet = "sizzle",
+				soundhitwetvolume = 0.5,
 				soundstart = "sniper2",
 				soundstartvolume = 4,
 				thickness = 0.5,

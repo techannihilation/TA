@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 5500,
 		buildcostmetal = 425,
 		builder = false,
+		buildpic = "armsonic.png",
 		buildtime = 6000,
 		canattack = true,
 		canguard = true,
@@ -62,6 +63,7 @@ return {
 		unitnumber = 6303,
 		workertime = 0,
 		customparams = {
+			faction = "ARM",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},
 		featuredefs = {
@@ -133,8 +135,12 @@ return {
 		weapondefs = {
 			sonic_cannon = {
 				areaofeffect = 235,
+				avoidfeature = false,
 				burnblow = true,
 				corethickness = 0.5,
+				craterareaofeffect = 352.5,
+				craterboost = 0,
+				cratermult = 0,
 				edgeeffectiveness = 0.1,
 				energypershot = 5,
 				explosiongenerator = "custom:diesmallwhite",
@@ -148,6 +154,8 @@ return {
 				rgbcolor = "0.9 0.8 1",
 				size = 10,
 				soundhitdry = "debris4",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "sonicwv1",
 				tolerance = 2000,
 				turret = true,

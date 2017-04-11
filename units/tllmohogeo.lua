@@ -9,6 +9,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "tllmohogeo_aoplane.dds",
+		buildpic = "tllmohogeo.png",
 		buildtime = 160000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "tllmohogeo_dead",
@@ -42,6 +43,9 @@ return {
 		unitnumber = 803,
 		usebuildinggrounddecal = true,
 		yardmap = "GGGGGGGGGGGGGGGG",
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			tllmohogeo_dead = {
 				blocking = true,

@@ -7,7 +7,7 @@ return {
 		buildcostmetal = 2912,
 		builddistance = 225,
 		builder = true,
-		buildpic = "CORACA.png",
+		buildpic = "coraca.png",
 		buildtime = 28001,
 		canfly = true,
 		canguard = true,
@@ -80,13 +80,14 @@ return {
 			[20] = "corbuzz",
 			[21] = "corap",
 			[22] = "coraap",
-			[23] = "corplat",
-			[24] = "coreap",
-			[25] = "corasp",
-			[26] = "corboucher",
+			[23] = "coreap",
+			[24] = "corasp",
+			[25] = "corboucher",
+			[26] = "corplat",
 		},
 		customparams = {
 			buildpic = "CORACA.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			["1_dead"] = {

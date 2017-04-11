@@ -48,6 +48,7 @@ return {
 		yardmap = "oooooo oooooo oooooo oooooo oooooo oooooo",
 		customparams = {
 			buildpic = "armses.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {

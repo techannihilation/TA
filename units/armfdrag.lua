@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 640,
 		buildcostmetal = 21,
 		builder = false,
-		buildpic = "ARMFDRAG.png",
+		buildpic = "armfdrag.png",
 		buildtime = 930,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "FLOATINGTEETH",
@@ -43,6 +43,7 @@ return {
 		yardmap = "wwww",
 		customparams = {
 			buildpic = "ARMFDRAG.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			floatingteeth = {

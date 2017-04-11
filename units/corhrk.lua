@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 5850,
 		buildcostmetal = 590,
 		builder = false,
-		buildpic = "CORHRK.png",
+		buildpic = "corhrk.png",
 		buildtime = 6591,
 		canattack = true,
 		canguard = true,
@@ -55,6 +55,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "CORHRK.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
@@ -130,7 +131,9 @@ return {
 		weapondefs = {
 			corhrk_rocket = {
 				areaofeffect = 60,
+				avoidfeature = false,
 				cegtag = "CORRAVENTRAIL",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.5,
@@ -147,6 +150,8 @@ return {
 				reloadtime = 7,
 				smoketrail = false,
 				soundhitdry = "xplomed4",
+				soundhitwet = "splssml",
+				soundhitwetvolume = 0.6,
 				soundstart = "Rockhvy1",
 				texture1 = "null",
 				texture2 = "null",

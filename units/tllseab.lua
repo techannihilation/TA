@@ -8,6 +8,7 @@ return {
 		buildcostenergy = 3500,
 		buildcostmetal = 550,
 		builder = false,
+		buildpic = "tllseab.png",
 		buildtime = 15000,
 		canattack = true,
 		canfly = true,
@@ -59,6 +60,9 @@ return {
 		unitname = "tllseab",
 		unitnumber = 920,
 		workertime = 0,
+		customparams = {
+			faction = "TLL",
+		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
@@ -96,9 +100,11 @@ return {
 		weapondefs = {
 			armseap_weapon1 = {
 				areaofeffect = 16,
+				avoidfeature = false,
 				avoidfriendly = false,
 				burnblow = true,
 				collidefriendly = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -111,6 +117,7 @@ return {
 				range = 500,
 				reloadtime = 8,
 				soundhitdry = "xplodep2",
+				soundhitwet = "xplodep2",
 				soundstart = "bombrel",
 				startvelocity = 100,
 				tolerance = 12000,
@@ -130,7 +137,9 @@ return {
 			},
 			tllvtol_missile = {
 				areaofeffect = 48,
+				avoidfeature = false,
 				collidefriendly = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				firestarter = 70,
@@ -145,6 +154,8 @@ return {
 				reloadtime = 1,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "Rocklit3",
 				startvelocity = 420,
 				texture2 = "armsmoketrail",

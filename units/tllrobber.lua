@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 8805,
 		buildcostmetal = 790,
 		builder = false,
+		buildpic = "tllrobber.png",
 		buildtime = 12000,
 		canfly = true,
 		canguard = true,
@@ -66,6 +67,9 @@ return {
 		unitnumber = 926,
 		upright = true,
 		workertime = 0,
+		customparams = {
+			faction = "TLL",
+		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
@@ -103,7 +107,9 @@ return {
 		weapondefs = {
 			tllvtol_missile2 = {
 				areaofeffect = 48,
+				avoidfeature = false,
 				collidefriendly = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				firestarter = 70,
@@ -117,6 +123,8 @@ return {
 				reloadtime = 1.2,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "Rocklit3",
 				startvelocity = 420,
 				texture2 = "armsmoketrail",

@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 12,
 		buildinggrounddecalsizey = 12,
 		buildinggrounddecaltype = "corsfus_aoplane.dds",
-		buildpic = "CORSFUS.png",
+		buildpic = "corsfus.png",
 		buildtime = 225000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		collisionvolumeoffsets = "0 -30 0",
@@ -56,6 +56,7 @@ return {
 		yardmap = "ooooooooo ooooooooo ooooooooo ooooooooo ooooooooo ooooooooo ooooooooo ooooooooo ooooooooo",
 		customparams = {
 			buildpic = "CORSFUS.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
@@ -119,6 +120,9 @@ return {
 		},
 		weapondefs = {
 			corsfusshield = {
+				craterareaofeffect = 0,
+				craterboost = 0,
+				cratermult = 0,
 				exteriorshield = 0,
 				name = "FusionShield",
 				shieldalpha = 0.3,
@@ -132,6 +136,8 @@ return {
 				shieldradius = 180,
 				shieldrepulser = false,
 				shieldstartingpower = 4000,
+				soundhitwet = "sizzle",
+				soundhitwetvolume = 0.5,
 				visibleshield = false,
 				visibleshieldhitframes = 32,
 				visibleshieldrepulse = true,

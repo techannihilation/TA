@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 379,
 		buildcostmetal = 311,
 		builder = false,
+		buildpic = "tlldivine.png",
 		buildtime = 3853,
 		canattack = false,
 		canguard = true,
@@ -51,6 +52,9 @@ return {
 		turnrate = 380,
 		unitname = "tlldivine",
 		unitnumber = 839,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

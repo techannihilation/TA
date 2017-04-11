@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 86180,
 		buildcostmetal = 4120,
 		builder = false,
+		buildpic = "troman.png",
 		buildtime = 35000,
 		canattack = true,
 		canguard = true,
@@ -55,6 +56,9 @@ return {
 		unitnumber = 673,
 		upright = true,
 		workertime = 0,
+		customparams = {
+			faction = "CORE",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -124,6 +128,10 @@ return {
 		weapondefs = {
 			armmav_weapon = {
 				areaofeffect = 8,
+				avoidfeature = false,
+				craterareaofeffect = 0,
+				craterboost = 0,
+				cratermult = 0,
 				explosiongenerator = "custom:FLASH1",
 				impactonly = 1,
 				name = "GaussCannon",
@@ -133,6 +141,8 @@ return {
 				rgbcolor = "1 0.95 0.9",
 				size = 0.82,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "Mavgun2",
 				tolerance = 4000,
 				turret = true,
@@ -146,6 +156,7 @@ return {
 			armsnipe_weapon = {
 				areaofeffect = 16,
 				collidefriendly = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				duration = 0.0025,
@@ -162,6 +173,8 @@ return {
 				rgbcolor = "1 1 0",
 				soundhitdry = "xplolrg2",
 				soundhitvolume = 4,
+				soundhitwet = "sizzle",
+				soundhitwetvolume = 0.5,
 				soundstart = "sniper2",
 				soundstartvolume = 4,
 				thickness = 0.5,

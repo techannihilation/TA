@@ -8,6 +8,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "tlldtns_aoplane.dds",
+		buildpic = "tlldtns.png",
 		buildtime = 930,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "TLLFloatingTeeth",
@@ -39,6 +40,9 @@ return {
 		waterline = 11,
 		workertime = 0,
 		yardmap = "ww ww",
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			tllfloatingteeth = {
 				autoreclaimable = 0,

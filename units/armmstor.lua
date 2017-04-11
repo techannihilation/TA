@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "armmstor_aoplane.dds",
-		buildpic = "ARMMSTOR.png",
+		buildpic = "armmstor.png",
 		buildtime = 2925,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		collisionvolumeoffsets = "0 0 0",
@@ -52,6 +52,7 @@ return {
 		yardmap = "oooooooooooooooo",
 		customparams = {
 			buildpic = "ARMMSTOR.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {

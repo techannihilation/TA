@@ -61,6 +61,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "corsbomb.png",
+			faction = "CORE",
 			requiretech = "Advanced T3 Unit Research Centre",
 		},
 		sfxtypes = {
@@ -97,10 +98,12 @@ return {
 		weapondefs = {
 			napalm_bomb = {
 				areaofeffect = 300,
+				avoidfeature = false,
 				burst = 3,
 				burstrate = 0.8,
 				collidefriendly = false,
 				commandfire = false,
+				craterareaofeffect = 450,
 				craterboost = 0,
 				cratermult = 0,
 				cylindertargeting = 0,
@@ -116,6 +119,8 @@ return {
 				range = 1280,
 				reloadtime = 10,
 				soundhitdry = "burn02",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "bombrel",
 				targetborder = 0,
 				weapontype = "AircraftBomb",

@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 35000,
 		buildcostmetal = 2900,
 		builder = false,
-		buildpic = "CORGOL1.png",
+		buildpic = "corgol1.png",
 		buildtime = 36125,
 		canattack = true,
 		canguard = true,
@@ -65,6 +65,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "CORGOL1.png",
+			faction = "CORE",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
@@ -141,7 +142,9 @@ return {
 		weapondefs = {
 			cor_gol1 = {
 				areaofeffect = 292,
-				cegtag = "Trail_cannon",
+				avoidfeature = false,
+				cegtag = "Trail_cannon_med",
+				craterareaofeffect = 438,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH96",
@@ -158,6 +161,8 @@ return {
 				size = 3.18,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed4",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy2",
 				stages = 20,
 				turret = true,

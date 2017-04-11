@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "corawin_aoplane.dds",
-		buildpic = "CORAWIN.png",
+		buildpic = "corawin.png",
 		buildtime = 5061,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		collisionvolumeoffsets = "-7 -9 0",
@@ -52,6 +52,7 @@ return {
 		customparams = {
 			buildpic = "CORAWIN.png",
 			energymultiplier = 4,
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

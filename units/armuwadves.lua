@@ -8,7 +8,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "armuwadves_aoplane.dds",
-		buildpic = "ARMUWADVES.png",
+		buildpic = "armuwadves.png",
 		buildtime = 20302,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		collisionvolumeoffsets = "0 -4 8",
@@ -47,6 +47,7 @@ return {
 		yardmap = "oooooooooooooooo",
 		customparams = {
 			buildpic = "ARMUWADVES.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {

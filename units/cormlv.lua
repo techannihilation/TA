@@ -7,7 +7,7 @@ return {
 		buildcostmetal = 61,
 		builddistance = 96,
 		builder = true,
-		buildpic = "CORMLV.png",
+		buildpic = "cormlv.png",
 		buildtime = 3640,
 		canassist = false,
 		canguard = false,
@@ -80,6 +80,7 @@ return {
 		},
 		customparams = {
 			buildpic = "CORMLV.png",
+			faction = "core",
 		},
 		featuredefs = {
 			dead = {
@@ -164,7 +165,9 @@ return {
 		weapondefs = {
 			minesweep = {
 				areaofeffect = 512,
+				avoidfeature = false,
 				collidefriendly = false,
+				craterareaofeffect = 768,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.25,

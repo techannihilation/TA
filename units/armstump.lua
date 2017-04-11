@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 1840,
 		buildcostmetal = 215,
 		builder = false,
-		buildpic = "ARMSTUMP.png",
+		buildpic = "armstump.png",
 		buildtime = 2900,
 		canattack = true,
 		canguard = true,
@@ -62,6 +62,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "ARMSTUMP.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
@@ -142,6 +143,7 @@ return {
 				areaofeffect = 48,
 				avoidfeature = false,
 				cegtag = "Trail_cannon",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:LIGHT_PLASMA_BLING",
@@ -159,6 +161,8 @@ return {
 				size = 1.36,
 				sizedecay = -0.15,
 				soundhitdry = "xplosml3",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "canlite3",
 				stages = 20,
 				turret = true,

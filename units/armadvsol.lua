@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "armadvsol_aoplane.dds",
-		buildpic = "ARMADVSOL.png",
+		buildpic = "armadvsol.png",
 		buildtime = 7000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "DEAD",
@@ -52,6 +52,7 @@ return {
 		yardmap = "oooooooooooooooo",
 		customparams = {
 			buildpic = "ARMADVSOL.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {

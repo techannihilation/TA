@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 4162,
 		buildcostmetal = 724,
 		builder = false,
-		buildpic = "CORSUB.png",
+		buildpic = "corsub.png",
 		buildtime = 9729,
 		canattack = true,
 		canguard = true,
@@ -61,6 +61,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "CORSUB.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
@@ -134,9 +135,11 @@ return {
 		weapondefs = {
 			arm_torpedo = {
 				areaofeffect = 16,
+				avoidfeature = false,
 				avoidfriendly = false,
 				burnblow = true,
 				collidefriendly = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -150,6 +153,7 @@ return {
 				range = 500,
 				reloadtime = 2.5,
 				soundhitdry = "xplodep1",
+				soundhitwet = "xplodep1",
 				soundstart = "torpedo1",
 				startvelocity = 100,
 				tolerance = 18000,

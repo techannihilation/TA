@@ -55,6 +55,7 @@ return {
 		workertime = 300,
 		customparams = {
 			buildpic = "armhevsenan.png",
+			faction = "ARM",
 		},
 		nanocolor = {
 			[1] = 0.52,

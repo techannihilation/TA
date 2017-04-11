@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 205,
 		builddistance = 110,
 		builder = true,
-		buildpic = "CORFAST.png",
+		buildpic = "corfast.png",
 		buildtime = 6488,
 		canguard = true,
 		canmove = true,
@@ -83,6 +83,7 @@ return {
 		},
 		customparams = {
 			buildpic = "CORFAST.png",
+			faction = "core",
 		},
 		featuredefs = {
 			dead = {

@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 1369,
 		buildcostmetal = 99,
 		builder = false,
-		buildpic = "CORVOYR.png",
+		buildpic = "corvoyr.png",
 		buildtime = 3945,
 		canattack = false,
 		canguard = true,
@@ -56,6 +56,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "CORVOYR.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

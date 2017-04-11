@@ -8,6 +8,7 @@ return {
 		buildinggrounddecalsizex = 10,
 		buildinggrounddecalsizey = 9,
 		buildinggrounddecaltype = "corevp_aoplane.dds",
+		buildpic = "corevp.png",
 		buildtime = 70500,
 		canmove = true,
 		canpatrol = true,
@@ -60,6 +61,7 @@ return {
 			[5] = "corbt",
 		},
 		customparams = {
+			faction = "CORE",
 			providetech = "T3 Factory",
 		},
 		featuredefs = {

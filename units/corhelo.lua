@@ -7,6 +7,7 @@ return {
 		buildcostenergy = 3943,
 		buildcostmetal = 45,
 		builder = false,
+		buildpic = "corhelo.png",
 		buildtime = 2510,
 		canattack = true,
 		canfly = true,
@@ -57,6 +58,9 @@ return {
 		unitnumber = 1986,
 		upright = true,
 		workertime = 0,
+		customparams = {
+			faction = "CORE",
+		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",

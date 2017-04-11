@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 2332,
 		buildcostmetal = 21,
 		builder = false,
-		buildpic = "CORFMKR.png",
+		buildpic = "corfmkr.png",
 		buildtime = 2400,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		description = "Converts upto 128 Energy to Metal",
@@ -43,6 +43,7 @@ return {
 		yardmap = "wwwwwwwww",
 		customparams = {
 			buildpic = "CORFMKR.png",
+			faction = "CORE",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

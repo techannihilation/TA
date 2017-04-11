@@ -8,6 +8,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "tlladt_aoplane.dds",
+		buildpic = "tlladt.png",
 		buildtime = 995,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "TLLfortification",
@@ -38,6 +39,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "ff ff",
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			rockteeth = {
 				animating = 0,

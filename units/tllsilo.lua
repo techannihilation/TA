@@ -8,6 +8,7 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "tllsilo_aoplane.dds",
+		buildpic = "tllsilo.png",
 		buildtime = 220000,
 		canattack = true,
 		canstop = 1,
@@ -50,6 +51,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo",
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -121,12 +125,14 @@ return {
 		weapondefs = {
 			crblmssl = {
 				areaofeffect = 1850,
+				avoidfeature = false,
 				avoidfriendly = false,
 				cegtag = "Trail_Large_Rocket",
 				collidefriendly = false,
 				commandfire = true,
-				craterboost = 6,
-				cratermult = 3,
+				craterareaofeffect = 2775,
+				craterboost = 0.72,
+				cratermult = 0.36,
 				edgeeffectiveness = 0.2,
 				energypershot = 150000,
 				explosiongenerator = "custom:nuke_explo_1280",

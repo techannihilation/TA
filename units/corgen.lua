@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "corgen_aoplane.dds",
-		buildpic = "CORGEN.png",
+		buildpic = "corgen.png",
 		buildtime = 8800,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "heap",
@@ -41,6 +41,7 @@ return {
 		yardmap = "ooo ooo ooo",
 		customparams = {
 			buildpic = "CORGEN.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			heap = {

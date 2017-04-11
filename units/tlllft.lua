@@ -8,6 +8,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "tlllft_aoplane.dds",
+		buildpic = "tlllft.png",
 		buildtime = 5846,
 		canattack = true,
 		canguard = true,
@@ -48,6 +49,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooo",
 		customparams = {
+			faction = "TLL",
 			requiretech = "Battle Commander",
 		},
 		featuredefs = {
@@ -123,6 +125,7 @@ return {
 				areaofeffect = 96,
 				burst = 20,
 				burstrate = 0.01,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.5,
@@ -140,6 +143,8 @@ return {
 				rgbcolor = "1 0.95 0.9",
 				rgbcolor2 = "0.9 0.85 0.8",
 				sizegrowth = 0.7,
+				soundhitwet = "sizzle",
+				soundhitwetvolume = 0.5,
 				soundstart = "flamhvy1",
 				sprayangle = 1800,
 				tolerance = 2500,

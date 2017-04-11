@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 2405,
 		buildcostmetal = 144,
 		builder = false,
-		buildpic = "CORSJAM.png",
+		buildpic = "corsjam.png",
 		buildtime = 7025,
 		canattack = true,
 		canguard = true,
@@ -59,6 +59,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "CORSJAM.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 6700,
 		buildcostmetal = 270,
 		builder = false,
-		buildpic = "ARMFIDO.png",
+		buildpic = "armfido.png",
 		buildtime = 7693,
 		canattack = true,
 		canguard = true,
@@ -56,6 +56,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "ARMFIDO.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
@@ -131,7 +132,9 @@ return {
 		weapondefs = {
 			bfido = {
 				areaofeffect = 48,
+				avoidfeature = false,
 				cegtag = "Trail_cannon",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -147,6 +150,8 @@ return {
 				size = 1.36,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannon1",
 				stages = 20,
 				turret = true,

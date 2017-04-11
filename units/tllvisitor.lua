@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 10724,
 		buildcostmetal = 2864,
 		builder = false,
+		buildpic = "tllvisitor.png",
 		buildtime = 22754,
 		canattack = true,
 		canguard = true,
@@ -49,6 +50,9 @@ return {
 		unitname = "tllvisitor",
 		unitnumber = 901,
 		waterline = 6,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -118,10 +122,12 @@ return {
 		weapondefs = {
 			ga2 = {
 				areaofeffect = 64,
+				avoidfeature = false,
 				burst = 2,
 				burstrate = 0.4,
 				canattackground = false,
 				cegtag = "Tll_Def_AA_Rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 0,
@@ -138,6 +144,8 @@ return {
 				reloadtime = 0.8,
 				smoketrail = true,
 				soundhitdry = "packohit",
+				soundhitwet = "splssml",
+				soundhitwetvolume = 0.6,
 				soundstart = "packolau",
 				soundtrigger = true,
 				startvelocity = 520,
@@ -164,7 +172,9 @@ return {
 			},
 			visitor_vpulse = {
 				areaofeffect = 126,
+				avoidfeature = false,
 				cegtag = "TLLRAVENTRAIL",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.5,
@@ -181,6 +191,8 @@ return {
 				reloadtime = 5.5,
 				smoketrail = false,
 				soundhitdry = "xplomed4",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "Rockhvy1",
 				texture1 = "null",
 				texture2 = "null",

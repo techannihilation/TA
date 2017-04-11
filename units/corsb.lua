@@ -8,7 +8,7 @@ return {
 		buildcostenergy = 8465,
 		buildcostmetal = 194,
 		builder = false,
-		buildpic = "CORSB.png",
+		buildpic = "corsb.png",
 		buildtime = 9022,
 		canattack = true,
 		canfly = true,
@@ -60,6 +60,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "CORSB.png",
+			faction = "CORE",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
@@ -98,9 +99,11 @@ return {
 		weapondefs = {
 			seaadvbomb = {
 				areaofeffect = 100,
+				avoidfeature = false,
 				burst = 5,
 				collidefriendly = false,
 				commandfire = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.7,
@@ -115,6 +118,8 @@ return {
 				range = 1280,
 				reloadtime = 0.14,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "bombrel",
 				weapontype = "AircraftBomb",
 				damage = {

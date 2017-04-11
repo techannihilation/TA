@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 2546,
 		buildcostmetal = 275,
 		builder = false,
-		buildpic = "CORLEVLR.png",
+		buildpic = "corlevlr.png",
 		buildtime = 3009,
 		canattack = true,
 		canguard = true,
@@ -61,6 +61,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "CORLEVLR.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
@@ -136,7 +137,9 @@ return {
 		weapondefs = {
 			corlevlr_weapon = {
 				areaofeffect = 160,
+				avoidfeature = false,
 				burnblow = true,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.75,
@@ -149,6 +152,8 @@ return {
 				rgbcolor = "0.7 0.37 0",
 				size = 2.26,
 				soundhitdry = "xplosml3",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "canlite3",
 				turret = true,
 				weapontype = "Cannon",

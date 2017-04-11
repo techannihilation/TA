@@ -8,7 +8,7 @@ return {
 		buildcostenergy = 27520,
 		buildcostmetal = 885,
 		builder = false,
-		buildpic = "CORENAA.png",
+		buildpic = "corenaa.png",
 		buildtime = 23129,
 		canattack = true,
 		canstop = 1,
@@ -50,6 +50,7 @@ return {
 		yardmap = "wwwwwwwwwwwwwwww",
 		customparams = {
 			buildpic = "CORENAA.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
@@ -110,9 +111,11 @@ return {
 			armflak_gun = {
 				accuracy = 1000,
 				areaofeffect = 192,
+				avoidfeature = false,
 				burnblow = true,
 				canattackground = false,
 				cegtag = "corflak-fx",
+				craterareaofeffect = 288,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.85,
@@ -128,6 +131,8 @@ return {
 				rgbcolor = "1.0 0.5 0.0",
 				size = 5,
 				soundhitdry = "flakhit",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "flakfire",
 				turret = true,
 				weapontimer = 1,

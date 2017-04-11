@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 7180,
 		buildcostmetal = 318,
 		builder = false,
+		buildpic = "armtys.png",
 		buildtime = 10500,
 		canattack = true,
 		canfly = true,
@@ -56,6 +57,9 @@ return {
 		unitnumber = 4017,
 		upright = true,
 		workertime = 0,
+		customparams = {
+			faction = "ARM",
+		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
@@ -90,7 +94,9 @@ return {
 		weapondefs = {
 			gmissiles = {
 				areaofeffect = 48,
+				avoidfeature = false,
 				cegtag = "Core_Trail_rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:Explosion_Medium_VLight",
@@ -104,6 +110,8 @@ return {
 				reloadtime = 1,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "Rocklit3",
 				startvelocity = 120,
 				texture1 = "null",

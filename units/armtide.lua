@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 439,
 		buildcostmetal = 87,
 		builder = false,
-		buildpic = "ARMTIDE.png",
+		buildpic = "armtide.png",
 		buildtime = 2188,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "DEAD",
@@ -47,6 +47,7 @@ return {
 		yardmap = "wwwwwwwww",
 		customparams = {
 			buildpic = "ARMTIDE.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {

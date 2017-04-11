@@ -6,6 +6,7 @@ return {
 		buildcostmetal = 3480,
 		builddistance = 225,
 		builder = true,
+		buildpic = "tllacv.png",
 		buildtime = 21500,
 		canguard = true,
 		canmove = true,
@@ -73,6 +74,9 @@ return {
 			[16] = "tllvp",
 			[17] = "tllavp",
 			[18] = "tllevp",
+		},
+		customparams = {
+			faction = "TLL",
 		},
 		featuredefs = {
 			dead = {

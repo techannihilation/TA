@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 4500,
 		buildcostmetal = 790,
 		builder = false,
+		buildpic = "tllhrk.png",
 		buildtime = 5519,
 		canattack = true,
 		canguard = true,
@@ -55,6 +56,9 @@ return {
 		unitnumber = 932,
 		upright = false,
 		workertime = 0,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -123,7 +127,9 @@ return {
 		weapondefs = {
 			corhrk_rocket = {
 				areaofeffect = 60,
+				avoidfeature = false,
 				cegtag = "TLLRAVENTRAIL",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.5,
@@ -140,6 +146,8 @@ return {
 				reloadtime = 7,
 				smoketrail = false,
 				soundhitdry = "vpulsehit",
+				soundhitwet = "splssml",
+				soundhitwetvolume = 0.6,
 				soundstart = "vpulsefire",
 				texture1 = "null",
 				texture2 = "null",

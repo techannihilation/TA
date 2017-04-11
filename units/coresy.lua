@@ -7,6 +7,7 @@ return {
 		buildinggrounddecalsizex = 18,
 		buildinggrounddecalsizey = 18,
 		buildinggrounddecaltype = "coresy_aoplane.dds",
+		buildpic = "coresy.png",
 		buildtime = 64000,
 		canmove = true,
 		canpatrol = true,
@@ -56,6 +57,7 @@ return {
 			[4] = "cortyrnt",
 		},
 		customparams = {
+			faction = "CORE",
 			providetech = "T3 Factory",
 		},
 		featuredefs = {
