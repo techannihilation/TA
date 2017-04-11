@@ -21,7 +21,7 @@ return {
 		defaultmissiontype = "Standby",
 		description = "Experimental Shielded Kbot",
 		energymake = 10,
-		energystorage = 0,
+		energystorage = 1000,
 		energyuse = 10,
 		explodeas = "BANTHA_NUKE",
 		firestandorders = 1,
