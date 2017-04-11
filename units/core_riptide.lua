@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 59500,
 		buildcostmetal = 4220,
 		builder = false,
+		buildpic = "core_riptide.png",
 		buildtime = 40000,
 		canattack = true,
 		canguard = true,
@@ -57,6 +58,7 @@ return {
 		upright = false,
 		workertime = 0,
 		customparams = {
+			faction = "CORE",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
@@ -129,7 +131,9 @@ return {
 		weapondefs = {
 			riptide = {
 				areaofeffect = 292,
-				cegtag = "Trail_cannon",
+				avoidfeature = false,
+				cegtag = "Trail_cannon_med",
+				craterareaofeffect = 438,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH96",
@@ -146,6 +150,8 @@ return {
 				size = 3.18,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed4",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy2",
 				stages = 20,
 				turret = true,
@@ -159,6 +165,8 @@ return {
 			},
 			rocket = {
 				areaofeffect = 150,
+				avoidfeature = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.5,
@@ -175,6 +183,8 @@ return {
 				reloadtime = 10,
 				smoketrail = true,
 				soundhitdry = "xplomed4",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "Rockhvy1",
 				turnrate = 28384,
 				weaponacceleration = 100,

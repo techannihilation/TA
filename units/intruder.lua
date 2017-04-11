@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 16011,
 		buildcostmetal = 1348,
 		builder = false,
-		buildpic = "INTRUDER.png",
+		buildpic = "intruder.png",
 		buildtime = 14177,
 		canguard = true,
 		canload = 1,
@@ -71,6 +71,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "INTRUDER.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

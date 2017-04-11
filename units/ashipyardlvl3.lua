@@ -7,6 +7,7 @@ return {
 		buildinggrounddecalsizex = 33,
 		buildinggrounddecalsizey = 33,
 		buildinggrounddecaltype = "ashipyardlvl3_aoplane.dds",
+		buildpic = "ashipyardlvl3.png",
 		buildtime = 500000.5,
 		canmove = true,
 		canpatrol = true,
@@ -46,6 +47,9 @@ return {
 		yardmap = "ooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccoo",
 		buildoptions = {
 			[1] = "abroadside",
+		},
+		customparams = {
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {

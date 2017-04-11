@@ -8,6 +8,7 @@ return {
 		buildcostenergy = 1920,
 		buildcostmetal = 160,
 		builder = false,
+		buildpic = "ahermes.png",
 		buildtime = 5141,
 		canattack = true,
 		canguard = true,
@@ -63,6 +64,9 @@ return {
 		unitname = "ahermes",
 		unitnumber = 655,
 		workertime = 0,
+		customparams = {
+			faction = "ARM",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -132,9 +136,11 @@ return {
 		weapondefs = {
 			ga2 = {
 				areaofeffect = 64,
+				avoidfeature = false,
 				burst = 4,
 				burstrate = 0.25,
 				canattackground = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 0,
@@ -150,6 +156,8 @@ return {
 				reloadtime = 1,
 				smoketrail = true,
 				soundhitdry = "packohit",
+				soundhitwet = "splssml",
+				soundhitwetvolume = 0.6,
 				soundstart = "packolau",
 				soundtrigger = true,
 				startvelocity = 520,

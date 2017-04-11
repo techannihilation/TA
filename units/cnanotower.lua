@@ -10,6 +10,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "cnanotower_aoplane.dds",
+		buildpic = "cnanotower.png",
 		buildtime = 100000,
 		canassist = true,
 		canguard = true,
@@ -67,6 +68,9 @@ return {
 			[6] = "corsilo1",
 			[7] = "corint1",
 			[8] = "corbuzz2",
+		},
+		customparams = {
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

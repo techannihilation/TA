@@ -48,6 +48,7 @@ return {
 		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo",
 		customparams = {
 			buildpic = "corech3.png",
+			faction = "ARM",
 			providetech = "Advanced T1 Unit Research Centre",
 		},
 		sfxtypes = {

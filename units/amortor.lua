@@ -8,6 +8,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "amortor_aoplane.dds",
+		buildpic = "amortor.png",
 		buildtime = 33833,
 		canattack = true,
 		canstop = 1,
@@ -51,6 +52,7 @@ return {
 		workertime = 0,
 		yardmap = "oooo oooo oooo oooo",
 		customparams = {
+			faction = "ARM",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},
 		featuredefs = {
@@ -127,7 +129,9 @@ return {
 		weapondefs = {
 			mortartillery = {
 				areaofeffect = 50,
+				avoidfeature = false,
 				cegtag = "Trail_cannon",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:flash70_fakelight",
@@ -144,6 +148,8 @@ return {
 				size = 1.58,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed4",
+				soundhitwet = "splssml",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy2",
 				stages = 20,
 				turret = true,

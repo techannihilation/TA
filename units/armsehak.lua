@@ -9,7 +9,7 @@ return {
 		buildcostenergy = 7066,
 		buildcostmetal = 127,
 		builder = false,
-		buildpic = "ARMSEHAK.png",
+		buildpic = "armsehak.png",
 		buildtime = 9064,
 		canfly = true,
 		canguard = true,
@@ -62,6 +62,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "ARMSEHAK.png",
+			faction = "ARM",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

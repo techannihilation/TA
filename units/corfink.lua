@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 1460,
 		buildcostmetal = 28,
 		builder = false,
-		buildpic = "CORFINK.png",
+		buildpic = "corfink.png",
 		buildtime = 2156,
 		canfly = true,
 		canguard = true,
@@ -54,6 +54,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "CORFINK.png",
+			faction = "CORE",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

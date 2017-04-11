@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "cormstor_aoplane.dds",
-		buildpic = "CORMSTOR.png",
+		buildpic = "cormstor.png",
 		buildtime = 2925,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		collisionvolumeoffsets = "-1 0 -6",
@@ -51,6 +51,7 @@ return {
 		yardmap = "ooooooooooooooooooooooooo",
 		customparams = {
 			buildpic = "CORMSTOR.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

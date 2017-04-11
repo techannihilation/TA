@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 4405,
 		buildcostmetal = 1010,
 		builder = false,
+		buildpic = "tawf116.png",
 		buildtime = 5700,
 		canattack = true,
 		canguard = true,
@@ -57,6 +58,7 @@ return {
 		unitname = "tawf116",
 		workertime = 0,
 		customparams = {
+			faction = "CORE",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
@@ -131,6 +133,7 @@ return {
 				areaofeffect = 48,
 				avoidfriendly = 1,
 				avoidground = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 400,
@@ -142,6 +145,8 @@ return {
 				range = 300,
 				reloadtime = 1.5,
 				soundhitdry = "xplomas2",
+				soundhitwet = "sizzle",
+				soundhitwetvolume = 0.5,
 				soundstart = "disigun1",
 				soundtrigger = false,
 				turret = true,

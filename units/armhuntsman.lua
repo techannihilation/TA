@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 2152,
 		buildcostmetal = 260,
 		builder = false,
+		buildpic = "armhuntsman.png",
 		buildtime = 2207,
 		canattack = true,
 		canguard = true,
@@ -56,6 +57,9 @@ return {
 		unitname = "armhuntsman",
 		unitnumber = 6981,
 		workertime = 0,
+		customparams = {
+			faction = "ARM",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -125,10 +129,12 @@ return {
 		weapondefs = {
 			armrl_missile = {
 				areaofeffect = 48,
+				avoidfeature = false,
 				burst = 2,
 				burstrate = 0.2,
 				canattackground = false,
 				cegtag = "Arm_Def_AA_Rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -144,6 +150,8 @@ return {
 				reloadtime = 3,
 				smoketrail = true,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "rockhvy2",
 				startvelocity = 400,
 				texture1 = "null",

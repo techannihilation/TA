@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 3387,
 		buildcostmetal = 345,
 		builder = false,
+		buildpic = "tllsquid.png",
 		buildtime = 13408,
 		canattack = false,
 		canguard = true,
@@ -55,6 +56,9 @@ return {
 		unitname = "tllsquid",
 		upright = true,
 		waterline = 30,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

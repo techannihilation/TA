@@ -67,12 +67,13 @@ return {
 			[6] = "armmine5",
 			[7] = "armmine7",
 			[8] = "armmine6",
-			[9] = "armfdrag",
-			[10] = "armfmine3",
+			[9] = "armfmine3",
+			[10] = "armfdrag",
 		},
 		customparams = {
 			buildpic = "armmin.png",
 			customstock = true,
+			faction = "ARM",
 		},
 		nanocolor = {
 			[1] = 0.308,
@@ -116,7 +117,9 @@ return {
 		weapondefs = {
 			minesweeperairmissile = {
 				areaofeffect = 512,
+				avoidfeature = false,
 				commandfire = true,
+				craterareaofeffect = 768,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 1,

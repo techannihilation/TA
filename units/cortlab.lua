@@ -8,6 +8,7 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "cortlab_aoplane.dds",
+		buildpic = "cortlab.png",
 		buildtime = 12000,
 		canmove = true,
 		canpatrol = true,
@@ -60,6 +61,7 @@ return {
 			[9] = "core_riptide",
 		},
 		customparams = {
+			faction = "CORE",
 			providetech = "T1 Factory",
 		},
 		featuredefs = {

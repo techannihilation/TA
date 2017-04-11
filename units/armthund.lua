@@ -8,7 +8,7 @@ return {
 		buildcostenergy = 5413,
 		buildcostmetal = 155,
 		builder = false,
-		buildpic = "ARMTHUND.png",
+		buildpic = "armthund.png",
 		buildtime = 4778,
 		canattack = true,
 		canfly = true,
@@ -58,6 +58,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "ARMTHUND.png",
+			faction = "ARM",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
@@ -99,6 +100,7 @@ return {
 				burstrate = 0.3,
 				collidefriendly = false,
 				commandfire = false,
+				craterareaofeffect = 282,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.25,
@@ -113,6 +115,8 @@ return {
 				range = 1280,
 				reloadtime = 4,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "bombrel",
 				sprayangle = 300,
 				weapontype = "AircraftBomb",

@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 215360,
 		buildcostmetal = 18500,
 		builder = false,
+		buildpic = "corbt.png",
 		buildtime = 155530,
 		canattack = true,
 		canguard = true,
@@ -56,6 +57,7 @@ return {
 		unitname = "corbt",
 		workertime = 0,
 		customparams = {
+			faction = "CORE",
 			requiretech = "Advanced T3 Unit Research Centre",
 		},
 		featuredefs = {
@@ -129,7 +131,9 @@ return {
 		weapondefs = {
 			corbt_cannon = {
 				areaofeffect = 220,
-				cegtag = "Trail_cannon",
+				avoidfeature = false,
+				cegtag = "Trail_cannon_med",
+				craterareaofeffect = 330,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.18,
@@ -151,6 +155,8 @@ return {
 				sizedecay = -0.15,
 				soundhitdry = "explode3",
 				soundhitdryvolume = 0.8,
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "mortar_snottyboy",
 				soundstartvolume = 0.3,
 				sprayangle = 2100,

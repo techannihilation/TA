@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 92800,
 		buildcostmetal = 3800,
 		builder = false,
-		buildpic = "CORKARG.png",
+		buildpic = "corkarg.png",
 		buildtime = 50609,
 		canattack = true,
 		canguard = true,
@@ -53,6 +53,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "CORKARG.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
@@ -109,10 +110,12 @@ return {
 		weapondefs = {
 			cor_erad = {
 				areaofeffect = 144,
+				avoidfeature = false,
 				burnblow = true,
 				burst = 3,
 				burstrate = 0.2,
 				canattackground = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:CORE_FIRE_SMALL",
@@ -128,6 +131,8 @@ return {
 				reloadtime = 2,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "rocklit1",
 				soundtrigger = true,
 				sprayangle = 250,
@@ -154,6 +159,7 @@ return {
 			super_missile = {
 				areaofeffect = 64,
 				avoidfeature = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:KARGMISSILE_EXPLOSION",
@@ -167,6 +173,8 @@ return {
 				reloadtime = 0.3,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
+				soundhitwet = "splssml",
+				soundhitwetvolume = 0.6,
 				soundstart = "rocklit1",
 				startvelocity = 500,
 				tolerance = 15000,
@@ -188,6 +196,7 @@ return {
 				burst = 4,
 				burstrate = 0.12,
 				cegtag = "Core_Def_AA_Rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				dance = 30,
@@ -207,6 +216,8 @@ return {
 				reloadtime = 10,
 				smoketrail = true,
 				soundhit = "rockhit",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "rapidrocket3",
 				startvelocity = 200,
 				texture1 = "null",

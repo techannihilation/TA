@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 1850,
 		buildcostmetal = 200,
 		builder = false,
-		buildpic = "ARMPINCER.png",
+		buildpic = "armpincer.png",
 		buildtime = 2200,
 		canattack = true,
 		canguard = true,
@@ -61,6 +61,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "ARMPINCER.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
@@ -118,6 +119,8 @@ return {
 		weapondefs = {
 			arm_pincer_gauss = {
 				areaofeffect = 8,
+				avoidfeature = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:LIGHT_PLASMA_BLING",
@@ -131,6 +134,8 @@ return {
 				rgbcolor = "1 0.95 0.9",
 				size = 0.82,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy1",
 				turret = true,
 				weapontype = "Cannon",

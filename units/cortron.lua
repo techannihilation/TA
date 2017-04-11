@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "cortron_aoplane.dds",
-		buildpic = "CORTRON.png",
+		buildpic = "cortron.png",
 		buildtime = 58927,
 		canattack = true,
 		canstop = 1,
@@ -54,6 +54,7 @@ return {
 		yardmap = "oooooooooooooooo",
 		customparams = {
 			buildpic = "CORTRON.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
@@ -129,9 +130,11 @@ return {
 		weapondefs = {
 			cortron_weapon = {
 				areaofeffect = 512,
+				avoidfeature = false,
 				commandfire = true,
-				craterboost = 4,
-				cratermult = 1.75,
+				craterareaofeffect = 768,
+				craterboost = 0.48,
+				cratermult = 0.21,
 				edgeeffectiveness = 0.4,
 				energypershot = 17437,
 				explosiongenerator = "custom:FLASHNUKE480",

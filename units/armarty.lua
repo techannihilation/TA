@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 2100,
 		buildcostmetal = 190,
 		builder = false,
+		buildpic = "armarty.png",
 		buildtime = 4000,
 		canattack = true,
 		canguard = true,
@@ -58,6 +59,7 @@ return {
 		upright = true,
 		workertime = 0,
 		customparams = {
+			faction = "ARM",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},
 		featuredefs = {
@@ -130,7 +132,9 @@ return {
 			lvl1_gun = {
 				accuracy = 300,
 				areaofeffect = 72,
+				avoidfeature = false,
 				cegtag = "Trail_cannon",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				gravityaffected = "TRUE",
@@ -147,6 +151,8 @@ return {
 				size = 1.6,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed4",
+				soundhitwet = "splssml",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy2",
 				stages = 20,
 				turret = false,

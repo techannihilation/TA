@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 5421,
 		buildcostmetal = 1173,
 		builder = true,
-		buildpic = "CORFHP.png",
+		buildpic = "corfhp.png",
 		buildtime = 17817,
 		canmove = true,
 		canpatrol = true,
@@ -54,11 +54,12 @@ return {
 			[3] = "corsnap",
 			[4] = "corah",
 			[5] = "cormh",
-			[6] = "corthovr",
-			[7] = "nsaclash",
+			[6] = "nsaclash",
+			[7] = "corthovr",
 		},
 		customparams = {
 			buildpic = "CORFHP.png",
+			faction = "CORE",
 			providetech = "T1 Factory",
 		},
 		featuredefs = {

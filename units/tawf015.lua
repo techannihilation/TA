@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 37867,
 		buildcostmetal = 1120,
 		builder = false,
-		buildpic = "TAWF015.png",
+		buildpic = "tawf015.png",
 		buildtime = 22000,
 		canattack = true,
 		canfly = true,
@@ -59,6 +59,7 @@ return {
 		wter_badtargetcategory = "NOTAIR",
 		customparams = {
 			buildpic = "TAWF015.png",
+			faction = "ARM",
 		},
 		sfxtypes = {
 			explosiongenerators = {
@@ -99,8 +100,10 @@ return {
 		weapondefs = {
 			katana_m = {
 				areaofeffect = 16,
+				avoidfeature = false,
 				burnblow = true,
 				cegtag = "Trail_cannon",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASHSMALLBUILDINGEX",
@@ -115,6 +118,8 @@ return {
 				size = 1.53,
 				sizedecay = -0.15,
 				soundhitdry = "xplosml3",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "canlite3",
 				soundtrigger = true,
 				stages = 20,
@@ -131,8 +136,10 @@ return {
 			},
 			katana_m2 = {
 				areaofeffect = 16,
+				avoidfeature = false,
 				cegtag = "Core_Trail_rocket",
 				collidefriendly = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.95,
@@ -147,6 +154,8 @@ return {
 				reloadtime = 0.45,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "Rocklit3",
 				startvelocity = 160,
 				texture1 = "null",

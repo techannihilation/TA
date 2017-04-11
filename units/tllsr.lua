@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 601,
 		builddistance = 112,
 		builder = true,
-		buildpic = "TLLSR.png",
+		buildpic = "tllsr.png",
 		buildtime = 9259,
 		canassist = false,
 		canguard = true,
@@ -59,6 +59,7 @@ return {
 		workertime = 450,
 		customparams = {
 			buildpic = "TLLSR.png",
+			faction = "TLL",
 		},
 		nanocolor = {
 			[1] = 0.58,

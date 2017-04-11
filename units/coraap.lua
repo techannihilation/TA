@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 9,
 		buildinggrounddecalsizey = 7,
 		buildinggrounddecaltype = "coraap_aoplane.dds",
-		buildpic = "CORAAP.png",
+		buildpic = "coraap.png",
 		buildtime = 40678,
 		canmove = true,
 		canpatrol = true,
@@ -65,6 +65,7 @@ return {
 		},
 		customparams = {
 			buildpic = "CORAAP.png",
+			faction = "CORE",
 			providetech = "T2 Factory",
 		},
 		featuredefs = {

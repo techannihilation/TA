@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 373,
 		buildcostmetal = 17,
 		builder = false,
-		buildpic = "CORPUNK.png",
+		buildpic = "corpunk.png",
 		buildtime = 880,
 		canattack = true,
 		canguard = true,
@@ -56,6 +56,7 @@ return {
 		wpri_badtargetcategory = "ANTIGATOR",
 		customparams = {
 			buildpic = "CORPUNK.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			armflea_dead = {

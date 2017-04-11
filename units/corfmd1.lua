@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "corfmd1_aoplane.dds",
-		buildpic = "CORFMD.png",
+		buildpic = "corfmd1.png",
 		buildtime = 196450,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
 		collisionvolumeoffsets = "0 0 -1",
@@ -55,6 +55,7 @@ return {
 		yardmap = "oooooooooooooooo",
 		customparams = {
 			buildpic = "CORFMD.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
@@ -127,9 +128,11 @@ return {
 		weapondefs = {
 			fmd_rocket1 = {
 				areaofeffect = 400,
+				avoidfeature = false,
 				avoidfriendly = false,
 				collidefriendly = false,
 				coverage = 2920,
+				craterareaofeffect = 600,
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 9000,
@@ -147,6 +150,8 @@ return {
 				reloadtime = 2,
 				smoketrail = true,
 				soundhitdry = "xplomed4",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "Rockhvy1",
 				stockpile = true,
 				stockpiletime = 60,

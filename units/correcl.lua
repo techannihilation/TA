@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 444,
 		builddistance = 112,
 		builder = true,
-		buildpic = "CORRECL.png",
+		buildpic = "correcl.png",
 		buildtime = 9495,
 		canassist = false,
 		canguard = true,
@@ -58,6 +58,7 @@ return {
 		workertime = 450,
 		customparams = {
 			buildpic = "CORRECL.png",
+			faction = "CORE",
 		},
 		nanocolor = {
 			[1] = 0.28,

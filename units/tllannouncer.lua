@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 890,
 		buildcostmetal = 190,
 		builder = false,
+		buildpic = "tllannouncer.png",
 		buildtime = 2500,
 		canattack = true,
 		canguard = true,
@@ -50,6 +51,9 @@ return {
 		turnrate = 625,
 		unitname = "tllannouncer",
 		unitnumber = 831,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -123,7 +127,9 @@ return {
 		weapondefs = {
 			cortruck_missile = {
 				areaofeffect = 24,
+				avoidfeature = false,
 				cegtag = "Tll_Trail_rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -139,6 +145,8 @@ return {
 				reloadtime = 1.3,
 				smoketrail = true,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "rockhvy2",
 				startvelocity = 150,
 				texture1 = "null",

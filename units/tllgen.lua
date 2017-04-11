@@ -25,10 +25,10 @@ return {
 		idletime = 1800,
 		losemitheight = 32,
 		mass = 390,
-		metalmake = 0,
 		maxdamage = 1590,
 		maxslope = 10,
 		maxwaterdepth = 0,
+		metalmake = 0,
 		name = "Energy Driller",
 		noautofire = false,
 		objectname = "tllgen",
@@ -38,11 +38,11 @@ return {
 		sightdistance = 200,
 		unitname = "tllgen",
 		unitnumber = 2415,
-		--usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "ooo ooo ooo",
 		customparams = {
 			buildpic = "tllgen.png",
+			faction = "TLL",
 		},
 		featuredefs = {
 			heap = {

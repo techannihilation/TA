@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 28644,
 		buildcostmetal = 1054,
 		builder = false,
-		buildpic = "CORPARROW.png",
+		buildpic = "corparrow.png",
 		buildtime = 22181,
 		canattack = true,
 		canguard = true,
@@ -64,6 +64,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "CORPARROW.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
@@ -138,7 +139,9 @@ return {
 		weapondefs = {
 			core_parrow = {
 				areaofeffect = 160,
-				cegtag = "Trail_cannon",
+				avoidfeature = false,
+				cegtag = "Trail_cannon_med",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH96",
@@ -155,6 +158,8 @@ return {
 				size = 2.26,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed1",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "largegun",
 				stages = 20,
 				turret = true,

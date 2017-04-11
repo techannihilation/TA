@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 32900,
 		buildcostmetal = 3540,
 		builder = false,
+		buildpic = "tankanotor.png",
 		buildtime = 26750,
 		canattack = true,
 		canguard = true,
@@ -59,6 +60,7 @@ return {
 		unitnumber = 7066,
 		workertime = 0,
 		customparams = {
+			faction = "ARM",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
@@ -131,9 +133,11 @@ return {
 		weapondefs = {
 			tankanotor_missiles = {
 				areaofeffect = 320,
+				avoidfeature = false,
 				burst = 2,
 				burstrate = 0.24,
 				cegtag = "trail_large_rocket_tankonator",
+				craterareaofeffect = 480,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:Explosion_Medium_Rocket",
@@ -149,6 +153,8 @@ return {
 				reloadtime = 7,
 				smoketrail = true,
 				soundhitdry = "tankahit",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "TAWF114a",
 				startvelocity = 40,
 				texture1 = "null",

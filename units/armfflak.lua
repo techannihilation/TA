@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 26667,
 		buildcostmetal = 907,
 		builder = false,
-		buildpic = "ARMFFLAK.png",
+		buildpic = "armfflak.png",
 		buildtime = 21855,
 		canattack = true,
 		canstop = 1,
@@ -49,6 +49,7 @@ return {
 		yardmap = "wwwwwwwww",
 		customparams = {
 			buildpic = "ARMFFLAK.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
@@ -109,9 +110,11 @@ return {
 			armflak_gun = {
 				accuracy = 1000,
 				areaofeffect = 192,
+				avoidfeature = false,
 				burnblow = true,
 				canattackground = false,
 				cegtag = "armflak-fx",
+				craterareaofeffect = 288,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.85,
@@ -126,6 +129,8 @@ return {
 				rgbcolor = "1.0 0.5 0.0",
 				size = 5,
 				soundhitdry = "flakhit",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "flakfire",
 				turret = true,
 				weapontimer = 1,

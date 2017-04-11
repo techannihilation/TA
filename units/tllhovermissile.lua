@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 4480,
 		buildcostmetal = 192,
 		builder = false,
+		buildpic = "tllhovermissile.png",
 		buildtime = 2800,
 		canattack = true,
 		canguard = true,
@@ -56,6 +57,9 @@ return {
 		unitname = "tllhovermissile",
 		unitnumber = 28703,
 		workertime = 0,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -125,9 +129,11 @@ return {
 		weapondefs = {
 			coreah_weapon = {
 				areaofeffect = 48,
+				avoidfeature = false,
 				burst = 3,
 				burstrate = 0.2,
 				canattackground = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -142,6 +148,8 @@ return {
 				reloadtime = 2.2,
 				smoketrail = true,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "rockhvy2",
 				startvelocity = 450,
 				texture2 = "coresmoketrail",

@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 10,
 		buildinggrounddecalsizey = 10,
 		buildinggrounddecaltype = "corsilo1_aoplane.dds",
-		buildpic = "CORSILO.png",
+		buildpic = "corsilo1.png",
 		buildtime = 181243,
 		canattack = true,
 		canstop = 1,
@@ -58,6 +58,7 @@ return {
 		yardmap = "ooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
 			buildpic = "CORSILO.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			corsilo_dead = {
@@ -133,12 +134,14 @@ return {
 		weapondefs = {
 			crblmssl1 = {
 				areaofeffect = 1650,
+				avoidfeature = false,
 				avoidfriendly = false,
 				cegtag = "Trail_nuke",
 				collidefriendly = false,
 				commandfire = true,
-				craterboost = 6,
-				cratermult = 4,
+				craterareaofeffect = 2475,
+				craterboost = 0.72,
+				cratermult = 0.48,
 				edgeeffectiveness = 0,
 				energypershot = 280000,
 				explosiongenerator = "custom:nuke_explo_1280",

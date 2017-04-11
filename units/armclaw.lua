@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "armclaw_aoplane.dds",
-		buildpic = "ARMCLAW.png",
+		buildpic = "armclaw.png",
 		buildtime = 4638,
 		canattack = true,
 		canstop = 1,
@@ -56,6 +56,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "ARMCLAW.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
@@ -139,14 +140,15 @@ return {
 			dclaw = {
 				areaofeffect = 8,
 				beamttl = 10,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				duration = 8,
 				explosiongenerator = "custom:tlllighning_exp",
 				firestarter = 50,
 				impactonly = 1,
-				impulseboost = 0.123,
-				impulsefactor = 0.123,
+				impulseboost = 0,
+				impulsefactor = 0,
 				intensity = 12,
 				name = "LightningGun",
 				noselfdamage = true,
@@ -154,6 +156,8 @@ return {
 				reloadtime = 1.15,
 				rgbcolor = "0.000 0.188 1.000",
 				soundhitdry = "lashit",
+				soundhitwet = "sizzle",
+				soundhitwetvolume = 0.5,
 				soundstart = "lghthvy1",
 				soundtrigger = true,
 				texture1 = "strike",

@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 2162,
 		buildcostmetal = 149,
 		builder = false,
-		buildpic = "ARMSAM.png",
+		buildpic = "armsam.png",
 		buildtime = 2945,
 		canattack = true,
 		canguard = true,
@@ -61,6 +61,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "ARMSAM.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
@@ -139,9 +140,11 @@ return {
 		weapondefs = {
 			armtruck_missile = {
 				areaofeffect = 24,
+				avoidfeature = false,
 				burst = 2,
 				burstrate = 0.25,
 				cegtag = "Arm_Trail_rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -157,6 +160,8 @@ return {
 				reloadtime = 4,
 				smoketrail = true,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "rockhvy2",
 				soundtrigger = true,
 				startvelocity = 150,

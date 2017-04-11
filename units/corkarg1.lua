@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 358000,
 		buildcostmetal = 17050,
 		builder = false,
-		buildpic = "CORKARG.png",
+		buildpic = "corkarg1.png",
 		buildtime = 350609,
 		canattack = true,
 		canguard = true,
@@ -56,6 +56,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "CORKARG.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
@@ -127,10 +128,12 @@ return {
 		weapondefs = {
 			cor_erad2 = {
 				areaofeffect = 84,
+				avoidfeature = false,
 				burnblow = true,
 				burst = 3,
 				burstrate = 0.2,
 				canattackground = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.75,
@@ -147,6 +150,8 @@ return {
 				reloadtime = 1,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
+				soundhitwet = "splssml",
+				soundhitwetvolume = 0.6,
 				soundstart = "rocklit1",
 				soundtrigger = true,
 				startvelocity = 750,
@@ -171,6 +176,7 @@ return {
 			super_missile1 = {
 				areaofeffect = 64,
 				avoidfeature = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:KARGMISSILE_EXPLOSION",
@@ -184,6 +190,8 @@ return {
 				reloadtime = 0.15,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
+				soundhitwet = "splssml",
+				soundhitwetvolume = 0.6,
 				soundstart = "rocklit1",
 				startvelocity = 500,
 				tolerance = 15000,
@@ -206,6 +214,7 @@ return {
 				burst = 4,
 				burstrate = 0.22,
 				cegtag = "Core_Def_AA_Rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 0,
@@ -223,6 +232,8 @@ return {
 				reloadtime = 8,
 				smoketrail = true,
 				soundhitdry = "TAWF114b",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "TAWF114a",
 				sprayangle = 250,
 				startvelocity = 250,

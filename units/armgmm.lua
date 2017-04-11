@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "armgmm_aoplane.dds",
-		buildpic = "ARMGMM.png",
+		buildpic = "armgmm.png",
 		buildtime = 75000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		description = "Safe Geothermal Powerplant",
@@ -48,6 +48,7 @@ return {
 		yardmap = "ooooo ooooo ooGoo ooooo ooooo",
 		customparams = {
 			buildpic = "ARMGMM.png",
+			faction = "ARM",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

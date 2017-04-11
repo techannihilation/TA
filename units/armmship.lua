@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 10458,
 		buildcostmetal = 2825,
 		builder = false,
-		buildpic = "ARMMSHIP.png",
+		buildpic = "armmship.png",
 		buildtime = 22317,
 		canattack = true,
 		canguard = true,
@@ -60,6 +60,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "ARMMSHIP.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
@@ -133,8 +134,10 @@ return {
 		weapondefs = {
 			armmship_rocket = {
 				areaofeffect = 96,
+				avoidfeature = false,
 				burnblow = true,
 				cegtag = "ARMRAVENTRAIL",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASHSMALLUNIT",
@@ -150,6 +153,8 @@ return {
 				reloadtime = 6,
 				smoketrail = false,
 				soundhitdry = "xplomed4",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "Rockhvy1",
 				texture1 = "null",
 				texture2 = "null",
@@ -169,8 +174,10 @@ return {
 			},
 			armship_missile = {
 				areaofeffect = 48,
+				avoidfeature = false,
 				canattackground = false,
 				cegtag = "Arm_Def_AA_Rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -185,6 +192,8 @@ return {
 				reloadtime = 0.8,
 				smoketrail = true,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "rockhvy2",
 				startvelocity = 430,
 				texture1 = "null",

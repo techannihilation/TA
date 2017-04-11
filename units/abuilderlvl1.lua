@@ -6,6 +6,7 @@ return {
 		buildcostmetal = 370,
 		builddistance = 100,
 		builder = true,
+		buildpic = "abuilderlvl1.png",
 		buildtime = 10200,
 		canfly = true,
 		canguard = true,
@@ -71,6 +72,9 @@ return {
 			[20] = "armpnix",
 			[21] = "armhawk",
 			[22] = "armaca",
+		},
+		customparams = {
+			faction = "ARM",
 		},
 		nanocolor = {
 			[1] = 0.12,

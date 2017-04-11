@@ -63,6 +63,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "coreclipse.png",
+			faction = "CORE",
 			requiretech = "Advanced T3 Unit Research Centre",
 		},
 		sfxtypes = {
@@ -99,11 +100,13 @@ return {
 		weapondefs = {
 			fab500 = {
 				areaofeffect = 64,
+				avoidfeature = false,
 				burst = 8,
 				burstrate = 0.3,
 				cegtag = "Trail_Medium_Rocket_Bomb",
 				collidefriendly = false,
 				commandfire = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.9,
@@ -122,6 +125,8 @@ return {
 				reloadtime = 21,
 				smoketrail = true,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splssml",
+				soundhitwetvolume = 0.6,
 				soundstart = "bombrel",
 				sprayangle = 1,
 				startvelocity = 220,

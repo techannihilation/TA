@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 12480,
 		buildcostmetal = 1707,
 		builder = false,
-		buildpic = "TAWF009.png",
+		buildpic = "tawf009.png",
 		buildtime = 21087,
 		canattack = true,
 		canguard = true,
@@ -61,6 +61,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "TAWF009.png",
+			faction = "ARM",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
@@ -137,9 +138,11 @@ return {
 		weapondefs = {
 			tawf009_weapon = {
 				areaofeffect = 16,
+				avoidfeature = false,
 				avoidfriendly = false,
 				burnblow = true,
 				collidefriendly = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH3",
@@ -152,6 +155,7 @@ return {
 				range = 690,
 				reloadtime = 1.5,
 				soundhitdry = "xplodep1",
+				soundhitwet = "xplodep1",
 				soundstart = "torpedo1",
 				startvelocity = 150,
 				tolerance = 8000,

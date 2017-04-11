@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 3450,
 		buildcostmetal = 455,
 		builder = false,
+		buildpic = "tllloki.png",
 		buildtime = 5200,
 		canattack = true,
 		canguard = true,
@@ -49,6 +50,9 @@ return {
 		turnrate = 350,
 		unitname = "tllloki",
 		unitnumber = 836,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -119,7 +123,9 @@ return {
 			core_artillery = {
 				accuracy = 960,
 				areaofeffect = 129,
-				cegtag = "Trail_cannon",
+				avoidfeature = false,
+				cegtag = "Trail_cannon_med",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.5,
@@ -137,6 +143,8 @@ return {
 				size = 2.06,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed4",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy2",
 				stages = 20,
 				turret = true,

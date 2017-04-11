@@ -8,6 +8,7 @@ return {
 		buildinggrounddecalsizex = 10,
 		buildinggrounddecalsizey = 10,
 		buildinggrounddecaltype = "tllalab_aoplane.dds",
+		buildpic = "tllalab.png",
 		buildtime = 45000,
 		canmove = true,
 		canpatrol = true,
@@ -65,6 +66,7 @@ return {
 			[16] = "tllconfuser",
 		},
 		customparams = {
+			faction = "TLL",
 			providetech = "T2 Factory",
 		},
 		featuredefs = {

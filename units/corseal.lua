@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 12814,
 		buildcostmetal = 480,
 		builder = false,
-		buildpic = "CORSEAL.png",
+		buildpic = "corseal.png",
 		buildtime = 8762,
 		canattack = true,
 		canguard = true,
@@ -65,6 +65,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "CORSEAL.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
@@ -137,7 +138,9 @@ return {
 		weapondefs = {
 			core_croc = {
 				areaofeffect = 64,
+				avoidfeature = false,
 				cegtag = "Trail_cannon",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH64",
@@ -154,6 +157,8 @@ return {
 				size = 1.53,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed4",
+				soundhitwet = "splssml",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannon2",
 				stages = 20,
 				turret = true,

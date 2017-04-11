@@ -6,7 +6,7 @@ return {
 		brakerate = 0.075,
 		buildcostenergy = 2130,
 		buildcostmetal = 85,
-		buildpic = "ARMFIG.png",
+		buildpic = "armfig.png",
 		buildtime = 4000,
 		canattack = true,
 		canfly = true,
@@ -56,6 +56,7 @@ return {
 		unitrestricted = 200,
 		customparams = {
 			buildpic = "ARMFIG.png",
+			faction = "ARM",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
@@ -91,9 +92,10 @@ return {
 		weapondefs = {
 			armvtol_missile_a2a = {
 				areaofeffect = 35,
-				avoidFriendly = false,
-				avoidFeature = false,
+				avoidfeature = false,
+				avoidfriendly = false,
 				collidefriendly = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -108,6 +110,8 @@ return {
 				reloadtime = 0.8,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "Rocklit3",
 				startvelocity = 600,
 				texture2 = "armsmoketrail",

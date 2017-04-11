@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 150980,
 		buildcostmetal = 16580,
 		builder = false,
+		buildpic = "armantar.png",
 		buildtime = 120000,
 		canattack = true,
 		canguard = true,
@@ -59,6 +60,9 @@ return {
 		unitname = "armantar",
 		unitnumber = 954568,
 		workertime = 0,
+		customparams = {
+			faction = "ARM",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -128,6 +132,7 @@ return {
 		weapondefs = {
 			armantar_laser = {
 				areaofeffect = 8,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 300,
@@ -140,6 +145,8 @@ return {
 				reloadtime = 0.6,
 				rgbcolor = "0.1875 0.109375 0.65625",
 				soundhitdry = "xplosml3",
+				soundhitwet = "sizzle",
+				soundhitwetvolume = 0.5,
 				soundstart = "Lasrhvy2",
 				tolerance = 500,
 				turret = true,
@@ -155,9 +162,13 @@ return {
 			},
 			armantar_missile = {
 				areaofeffect = 120,
+				avoidfeature = false,
 				burst = 6,
 				burstrate = 0.3,
 				cegtag = "Trail_Large_Rocket",
+				craterareaofeffect = 0,
+				craterboost = 0,
+				cratermult = 0,
 				explosiongenerator = "custom:Explosion_Light_Plasma-2",
 				firestarter = 20,
 				id = 233,
@@ -167,6 +178,8 @@ return {
 				reloadtime = 15,
 				smoketrail = true,
 				soundhitdry = "tankahit",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "tankafire",
 				startvelocity = 640,
 				tolerance = 12000,

@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 5850,
 		buildcostmetal = 65,
 		builder = false,
-		buildpic = "ARMVADER.png",
+		buildpic = "armvader.png",
 		buildtime = 7901,
 		canattack = true,
 		canguard = true,
@@ -58,6 +58,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "ARMVADER.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			corpse = {
@@ -126,7 +127,9 @@ return {
 		weapondefs = {
 			crawl_detonator = {
 				areaofeffect = 5,
+				avoidfeature = false,
 				cegtag = "Trail_cannon",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0,
@@ -141,6 +144,8 @@ return {
 				reloadtime = 0.1,
 				separation = 0.45,
 				sizedecay = -0.15,
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				stages = 20,
 				weapontype = "Cannon",
 				weaponvelocity = 1000,
@@ -151,6 +156,7 @@ return {
 			},
 			crawl_dummy = {
 				areaofeffect = 0,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0,
@@ -161,6 +167,8 @@ return {
 				name = "Crawlingbomb Dummy Weapon",
 				range = 80,
 				reloadtime = 0.1,
+				soundhitwet = "sizzle",
+				soundhitwetvolume = 0.5,
 				tolerance = 100000,
 				weapontype = "Melee",
 				weaponvelocity = 100000,

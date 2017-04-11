@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "corbhmth1_aoplane.dds",
-		buildpic = "CORBHMTH.png",
+		buildpic = "corbhmth1.png",
 		buildtime = 140000,
 		canattack = true,
 		canstop = 1,
@@ -55,6 +55,7 @@ return {
 		yardmap = "ooooo ooooo ooGoo ooooo ooooo",
 		customparams = {
 			buildpic = "CORBHMTH.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			corbhmth_dead = {
@@ -123,7 +124,9 @@ return {
 			corbhmth_weapon2 = {
 				accuracy = 480,
 				areaofeffect = 192,
-				cegtag = "Trail_cannon",
+				avoidfeature = false,
+				cegtag = "Trail_cannon_med",
+				craterareaofeffect = 288,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.7,
@@ -143,6 +146,8 @@ return {
 				size = 2.44,
 				sizedecay = -0.15,
 				soundhitdry = "xplolrg3",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "xplonuk3",
 				stages = 20,
 				turret = true,

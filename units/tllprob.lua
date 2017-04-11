@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 876,
 		buildcostmetal = 38,
 		builder = false,
+		buildpic = "tllprob.png",
 		buildtime = 2302,
 		canfly = true,
 		canguard = true,
@@ -50,6 +51,9 @@ return {
 		unitname = "tllprob",
 		unitnumber = 916,
 		workertime = 0,
+		customparams = {
+			faction = "TLL",
+		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",

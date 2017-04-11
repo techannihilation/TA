@@ -7,6 +7,7 @@ return {
 		buildinggrounddecalsizex = 18,
 		buildinggrounddecalsizey = 18,
 		buildinggrounddecaltype = "armesy_aoplane.dds",
+		buildpic = "armesy.png",
 		buildtime = 65400,
 		canmove = true,
 		canpatrol = true,
@@ -57,6 +58,7 @@ return {
 			[5] = "armtrmph",
 		},
 		customparams = {
+			faction = "ARM",
 			providetech = "T3 Factory",
 		},
 		featuredefs = {

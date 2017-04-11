@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 9500,
 		buildcostmetal = 560,
 		builder = false,
+		buildpic = "nsacskv.png",
 		buildtime = 19000,
 		canattack = true,
 		canguard = true,
@@ -58,6 +59,7 @@ return {
 		unitnumber = 1414,
 		workertime = 0,
 		customparams = {
+			faction = "CORE",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {

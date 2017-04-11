@@ -67,12 +67,13 @@ return {
 			[6] = "cormine5",
 			[7] = "cormine6",
 			[8] = "cormine7",
-			[9] = "corfdrag",
-			[10] = "corfmine3",
+			[9] = "corfmine3",
+			[10] = "corfdrag",
 		},
 		customparams = {
 			buildpic = "cormin.png",
 			customstock = true,
+			faction = "CORE",
 		},
 		nanocolor = {
 			[1] = 0.308,
@@ -116,7 +117,9 @@ return {
 		weapondefs = {
 			minesweeperairmissile = {
 				areaofeffect = 512,
+				avoidfeature = false,
 				commandfire = true,
+				craterareaofeffect = 768,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 1,

@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 6019,
 		buildcostmetal = 96,
 		builder = false,
+		buildpic = "tllshark.png",
 		buildtime = 8455,
 		canattack = true,
 		canguard = true,
@@ -59,6 +60,9 @@ return {
 		unitnumber = 906,
 		waterline = 30,
 		workertime = 0,
+		customparams = {
+			faction = "TLL",
+		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",

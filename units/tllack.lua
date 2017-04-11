@@ -6,6 +6,7 @@ return {
 		buildcostmetal = 2690,
 		builddistance = 225,
 		builder = true,
+		buildpic = "tllack.png",
 		buildtime = 21000,
 		canguard = true,
 		canmove = true,
@@ -73,6 +74,9 @@ return {
 			[16] = "tllalab",
 			[17] = "tllturtle_lab",
 			[18] = "tllhtcp",
+		},
+		customparams = {
+			faction = "TLL",
 		},
 		featuredefs = {
 			dead = {

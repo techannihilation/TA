@@ -34,22 +34,22 @@ end
 function gadget:Initialize()
 	gadgetHandler:AddChatAction('buildiconslow', buildslowly, "")
 	
-	for i,unitdefname in pairs(UnitDefNames) do
-		--Spring.Echo('unitdefname',i,unitdefname)
-		unitnames[#unitnames+1]=i
-    end
-	-- unitnames={
-		-- "armah",
-		-- "armanni",
-		-- "armason",
-		-- "armawac",
-	-- }
+	for i=1,#UnitDefs do
+  	local unitDefID = UnitDefs[i]
+    	if (unitDefID.minWaterDepth and unitDefID.minWaterDepth> 0) and unitDefID.waterline then
+    	--if unitDefID.canFly then
+    		Spring.Echo('unitdefname',unitDefID.name)
+        	unitnames[#unitnames+1]=unitDefID.name
+        end
+	end
 end
 
 function gadget:GameFrame(n)
 	--Spring.Echo(n,startframe,index)
 	if (n>startframe+timedelay*counter and index <=#unitnames) then 
 		-- Spring.Echo(" Drawing unit ",index,UnitDefNames[index]["name"])
+		--if UnitDefs[unitnames[index]].id then
+		--end
 		Spring.Echo(" Drawing unit ",index,unitnames[index]," out of ", #unitnames)
 		Spring.SendCommands("luarules buildicon "..unitnames[index])
 		index=index+1

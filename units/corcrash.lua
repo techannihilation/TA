@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 1173,
 		buildcostmetal = 197,
 		builder = false,
-		buildpic = "CORCRASH.png",
+		buildpic = "corcrash.png",
 		buildtime = 1900,
 		canattack = true,
 		canguard = true,
@@ -58,6 +58,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "CORCRASH.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
@@ -133,8 +134,10 @@ return {
 		weapondefs = {
 			corekbot_missile = {
 				areaofeffect = 48,
+				avoidfeature = false,
 				canattackground = false,
 				cegtag = "Core_Def_AA_Rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -150,6 +153,8 @@ return {
 				reloadtime = 1.2,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "rocklit1",
 				startvelocity = 650,
 				texture1 = "null",

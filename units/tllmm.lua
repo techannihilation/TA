@@ -9,6 +9,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "tllmm_aoplane.dds",
+		buildpic = "tllmm.png",
 		buildtime = 2000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "dead",
@@ -36,6 +37,9 @@ return {
 		unitnumber = 814,
 		usebuildinggrounddecal = true,
 		yardmap = "ooo ooo ooo",
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

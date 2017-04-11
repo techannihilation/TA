@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "corgate_aoplane.dds",
-		buildpic = "CORGATE.png",
+		buildpic = "corgate.png",
 		buildtime = 57166,
 		canattack = false,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
@@ -55,6 +55,7 @@ return {
 		yardmap = "oooooooooooooooo",
 		customparams = {
 			buildpic = "CORGATE.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
@@ -129,6 +130,9 @@ return {
 		},
 		weapondefs = {
 			repulsor = {
+				craterareaofeffect = 0,
+				craterboost = 0,
+				cratermult = 0,
 				name = "PlasmaRepulsor",
 				range = 400,
 				shieldalpha = 0.35,
@@ -144,6 +148,8 @@ return {
 				shieldradius = 400,
 				shieldrepulser = true,
 				smartshield = true,
+				soundhitwet = "sizzle",
+				soundhitwetvolume = 0.5,
 				visibleshield = true,
 				visibleshieldhitframes = 70,
 				visibleshieldrepulse = true,

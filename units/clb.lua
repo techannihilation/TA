@@ -67,6 +67,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "clb.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
@@ -138,8 +139,10 @@ return {
 			core_intimidator2 = {
 				accuracy = 535,
 				areaofeffect = 175,
+				avoidfeature = false,
 				cegtag = "Trail_cannon_large",
 				collidefriendly = false,
+				craterareaofeffect = 262.5,
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 2000,
@@ -158,6 +161,8 @@ return {
 				size = 2.6,
 				sizedecay = -0.15,
 				soundhitdry = "xplonuk1",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "xplonuk3",
 				stages = 20,
 				turret = true,

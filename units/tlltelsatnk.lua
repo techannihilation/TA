@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 37000,
 		buildcostmetal = 3650,
 		builder = false,
+		buildpic = "tlltelsatnk.png",
 		buildtime = 35000,
 		canattack = true,
 		canguard = true,
@@ -52,6 +53,9 @@ return {
 		turnrate = 495,
 		unitname = "tlltelsatnk",
 		workertime = 0,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -124,6 +128,7 @@ return {
 			tlltelsa_cannon = {
 				areaofeffect = 12,
 				beamttl = 10,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				duration = 1.9,
@@ -131,8 +136,8 @@ return {
 				explosiongenerator = "custom:tllweb_exp",
 				firestarter = 85,
 				id = 225,
-				impulseboost = 0.123,
-				impulsefactor = 0.123,
+				impulseboost = 0,
+				impulsefactor = 0,
 				intensity = 12,
 				name = "Spray Lightning",
 				noselfdamage = true,
@@ -141,6 +146,8 @@ return {
 				reloadtime = 2,
 				rgbcolor = "0.6 0.6 0.9",
 				soundhitdry = "lashit2",
+				soundhitwet = "sizzle",
+				soundhitwetvolume = 0.5,
 				soundstart = "Lghthvy1",
 				sprayangle = 1000,
 				texture1 = "strike",
