@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 11,
 		buildinggrounddecalsizey = 11,
 		buildinggrounddecaltype = "armbrtha1_aoplane.dds",
-		buildpic = "ARMBRTHA.png",
+		buildpic = "armbrtha1.png",
 		buildtime = 185000,
 		canattack = true,
 		canstop = 1,
@@ -56,6 +56,7 @@ return {
 		customparams = {
 			buildpic = "ARMBRTHA.png",
 			canareaattack = 1,
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
@@ -131,8 +132,10 @@ return {
 			arm_berthacannon1 = {
 				accuracy = 500,
 				areaofeffect = 292,
+				avoidfeature = false,
 				cegtag = "Trail_cannon_large",
 				collidefriendly = false,
+				craterareaofeffect = 438,
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 20000,
@@ -151,6 +154,8 @@ return {
 				size = 5,
 				sizedecay = -0.15,
 				soundhitdry = "xplonuk1",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "xplonuk4",
 				stages = 20,
 				turret = true,

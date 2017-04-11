@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "armguard_aoplane.dds",
-		buildpic = "ARMGUARD.png",
+		buildpic = "armguard.png",
 		buildtime = 15000,
 		canattack = true,
 		canstop = 1,
@@ -57,6 +57,7 @@ return {
 		yardmap = "ooooooooo",
 		customparams = {
 			buildpic = "ARMGUARD.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
@@ -138,7 +139,9 @@ return {
 			armfixed_gun = {
 				accuracy = 75,
 				areaofeffect = 128,
-				cegtag = "Trail_cannon",
+				avoidfeature = false,
+				cegtag = "Trail_cannon_med",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.25,
@@ -156,6 +159,8 @@ return {
 				size = 2.06,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy5",
 				stages = 20,
 				targetmoveerror = 0.2,
@@ -172,7 +177,9 @@ return {
 			armfixed_gun_high = {
 				accuracy = 75,
 				areaofeffect = 192,
-				cegtag = "Trail_cannon",
+				avoidfeature = false,
+				cegtag = "Trail_cannon_med",
+				craterareaofeffect = 288,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.5,
@@ -191,6 +198,8 @@ return {
 				size = 2.44,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy5",
 				stages = 20,
 				turret = true,

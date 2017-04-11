@@ -53,6 +53,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "armtarantula.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
@@ -131,9 +132,11 @@ return {
 		weapondefs = {
 			adv_rocket = {
 				areaofeffect = 72,
+				avoidfeature = false,
 				burst = 3,
 				burstrate = 0.3,
 				cegtag = "Arm_Trail_rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.5,
@@ -149,6 +152,8 @@ return {
 				reloadtime = 4,
 				smoketrail = true,
 				soundhitdry = "xplosml1",
+				soundhitwet = "splssml",
+				soundhitwetvolume = 0.6,
 				soundstart = "rockhvy3",
 				soundtrigger = true,
 				startvelocity = 120,

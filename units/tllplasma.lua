@@ -8,6 +8,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "tllplasma_aoplane.dds",
+		buildpic = "tllplasma.png",
 		buildtime = 25000,
 		canattack = true,
 		canstop = 1,
@@ -45,6 +46,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "ooo ooo ooo",
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -116,7 +120,9 @@ return {
 			armamb_gun = {
 				accuracy = 400,
 				areaofeffect = 150,
-				cegtag = "Trail_cannon",
+				avoidfeature = false,
+				cegtag = "Trail_cannon_med",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.25,
@@ -135,6 +141,8 @@ return {
 				size = 2.21,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy5",
 				stages = 20,
 				turret = true,

@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "armemp_aoplane.dds",
-		buildpic = "ARMEMP.png",
+		buildpic = "armemp.png",
 		buildtime = 79247,
 		canattack = true,
 		canstop = 1,
@@ -53,6 +53,7 @@ return {
 		yardmap = "oooooooooooooooo",
 		customparams = {
 			buildpic = "ARMEMP.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
@@ -128,7 +129,9 @@ return {
 		weapondefs = {
 			armemp_weapon = {
 				areaofeffect = 256,
+				avoidfeature = false,
 				commandfire = true,
+				craterareaofeffect = 384,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 1,
@@ -148,6 +151,8 @@ return {
 				reloadtime = 2,
 				smoketrail = true,
 				soundhitdry = "xplomed4",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "misicbm1",
 				stockpile = true,
 				stockpiletime = 90,

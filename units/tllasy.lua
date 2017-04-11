@@ -3,6 +3,7 @@ return {
 		buildcostenergy = 37590,
 		buildcostmetal = 4480,
 		builder = true,
+		buildpic = "tllasy.png",
 		buildtime = 13590,
 		canmove = true,
 		canpatrol = true,
@@ -55,6 +56,7 @@ return {
 			[10] = "tllmixer",
 		},
 		customparams = {
+			faction = "TLL",
 			providetech = "T2 Factory",
 		},
 		featuredefs = {

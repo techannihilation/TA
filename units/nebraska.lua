@@ -8,6 +8,7 @@ return {
 		buildinggrounddecalsizex = 11,
 		buildinggrounddecalsizey = 11,
 		buildinggrounddecaltype = "nebraska_aoplane.dds",
+		buildpic = "nebraska.png",
 		buildtime = 245000,
 		canattack = true,
 		canstop = 1,
@@ -52,6 +53,7 @@ return {
 		workertime = 0,
 		yardmap = "oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo",
 		customparams = {
+			faction = "CORE",
 			requiretech = "Advanced T3 Unit Research Centre",
 		},
 		featuredefs = {
@@ -124,6 +126,7 @@ return {
 			nebraska_weapon = {
 				areaofeffect = 30,
 				collidefriendly = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				duration = 0.025,
@@ -140,6 +143,8 @@ return {
 				reloadtime = 5,
 				rgbcolor = "0.9 0.6 1",
 				soundhitdry = "xplolrg1",
+				soundhitwet = "sizzle",
+				soundhitwetvolume = 0.5,
 				soundstart = "Energy",
 				thickness = 5,
 				turret = true,

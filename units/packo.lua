@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "packo_aoplane.dds",
-		buildpic = "PACKO.png",
+		buildpic = "packo.png",
 		buildtime = 5810,
 		canattack = true,
 		canstop = 1,
@@ -59,6 +59,7 @@ return {
 		yardmap = "ooooooooo",
 		customparams = {
 			buildpic = "PACKO.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
@@ -136,10 +137,12 @@ return {
 		weapondefs = {
 			packo_missile = {
 				areaofeffect = 16,
+				avoidfeature = false,
 				burst = 2,
 				burstrate = 0.2,
 				canattackground = false,
 				cegtag = "Arm_Def_AA_Rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 0,
@@ -158,6 +161,8 @@ return {
 				reloadtime = 1.75,
 				smoketrail = true,
 				soundhitdry = "packohit",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "packolau",
 				soundtrigger = true,
 				startvelocity = 520,

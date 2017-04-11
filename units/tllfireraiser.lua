@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 850,
 		buildcostmetal = 145,
 		builder = false,
+		buildpic = "tllfireraiser.png",
 		buildtime = 2000,
 		canattack = true,
 		canguard = true,
@@ -53,6 +54,9 @@ return {
 		unitname = "tllfireraiser",
 		unitnumber = 821,
 		upright = true,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -122,7 +126,9 @@ return {
 		weapondefs = {
 			tll_kbot_rocket = {
 				areaofeffect = 48,
+				avoidfeature = false,
 				cegtag = "Tll_Trail_rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:Explosion_Medium_VLight",
@@ -137,6 +143,8 @@ return {
 				reloadtime = 3,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "rocklit1",
 				startvelocity = 190,
 				texture1 = "null",

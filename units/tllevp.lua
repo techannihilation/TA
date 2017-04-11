@@ -4,6 +4,7 @@ return {
 		buildcostenergy = 145000,
 		buildcostmetal = 17900,
 		builder = true,
+		buildpic = "tllevp.png",
 		buildtime = 80000,
 		canmove = true,
 		canpatrol = true,
@@ -58,6 +59,7 @@ return {
 			[7] = "anvil",
 		},
 		customparams = {
+			faction = "TLL",
 			providetech = "T3 Factory",
 		},
 		featuredefs = {

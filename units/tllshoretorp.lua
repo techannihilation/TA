@@ -8,6 +8,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "tllshoretorp_aoplane.dds",
+		buildpic = "tllshoretorp.png",
 		buildtime = 9911,
 		canattack = true,
 		canguard = true,
@@ -44,6 +45,9 @@ return {
 		unitnumber = 946,
 		usebuildinggrounddecal = true,
 		yardmap = "ooo ooo ooo",
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -113,11 +117,13 @@ return {
 		},
 		weapondefs = {
 			tll_torpedo = {
+				avoidfeature = false,
 				avoidfriendly = false,
 				bouncerebound = 0.6,
 				bounceslip = 0.6,
 				burnblow = true,
 				collidefriendly = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -132,6 +138,7 @@ return {
 				range = 615,
 				reloadtime = 3.5,
 				soundhitdry = "xplodep2",
+				soundhitwet = "xplodep2",
 				soundstart = "torpedo1",
 				startvelocity = 300,
 				tracks = true,

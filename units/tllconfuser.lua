@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 562,
 		buildcostmetal = 189,
 		builder = false,
+		buildpic = "tllconfuser.png",
 		buildtime = 5775,
 		canattack = false,
 		canguard = true,
@@ -51,6 +52,9 @@ return {
 		turnrate = 825,
 		unitname = "tllconfuser",
 		unitnumber = 863,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

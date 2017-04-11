@@ -54,6 +54,7 @@ return {
 		},
 		customparams = {
 			buildpic = "tlleap.png",
+			faction = "TLL",
 		},
 		featuredefs = {
 			dead = {

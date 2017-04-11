@@ -69,6 +69,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "corvrad.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

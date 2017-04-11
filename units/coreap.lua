@@ -7,7 +7,7 @@ return {
 		buildinggrounddecalsizex = 13,
 		buildinggrounddecalsizey = 13,
 		buildinggrounddecaltype = "coreap_aoplane.dds",
-		buildpic = "COREAP.png",
+		buildpic = "coreap.png",
 		buildtime = 96525,
 		canbeassisted = true,
 		canmove = true,
@@ -56,6 +56,7 @@ return {
 		},
 		customparams = {
 			buildpic = "COREAP.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

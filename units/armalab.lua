@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 7,
 		buildinggrounddecalsizey = 7,
 		buildinggrounddecaltype = "armalab_aoplane.dds",
-		buildpic = "ARMALAB.png",
+		buildpic = "armalab.png",
 		buildtime = 45524,
 		canmove = true,
 		canpatrol = true,
@@ -81,6 +81,7 @@ return {
 		},
 		customparams = {
 			buildpic = "ARMALAB.png",
+			faction = "ARM",
 			providetech = "T2 Factory",
 		},
 		featuredefs = {

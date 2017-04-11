@@ -6,6 +6,7 @@ return {
 		brakerate = 0.09,
 		buildcostenergy = 42000,
 		buildcostmetal = 850,
+		buildpic = "tllshu.png",
 		buildtime = 18000,
 		canattack = true,
 		canfly = true,
@@ -52,6 +53,9 @@ return {
 		unitname = "tllshu",
 		unitnumber = 551,
 		unitrestricted = 300,
+		customparams = {
+			faction = "TLL",
+		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
@@ -86,9 +90,10 @@ return {
 		weapondefs = {
 			armvtol_advmissile = {
 				areaofeffect = 35,
-				avoidFriendly = false,
-				avoidFeature = false,
+				avoidfeature = false,
+				avoidfriendly = false,
 				collidefriendly = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -104,6 +109,8 @@ return {
 				reloadtime = 0.6,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "Rocklit3",
 				startvelocity = 650,
 				texture2 = "armsmoketrail",

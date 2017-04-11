@@ -10,6 +10,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "tllasp_aoplane.dds",
+		buildpic = "tllasp.png",
 		buildtime = 12000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "dead",
@@ -43,6 +44,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 3000,
 		yardmap = "oooo oooo oooo oooo",
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

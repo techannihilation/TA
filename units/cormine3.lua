@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 3,
 		buildinggrounddecalsizey = 3,
 		buildinggrounddecaltype = "cormine3_aoplane.dds",
-		buildpic = "CORMINE3.png",
+		buildpic = "cormine3.png",
 		buildtime = 125,
 		canattack = false,
 		canguard = false,
@@ -66,6 +66,7 @@ return {
 		yardmap = "o",
 		customparams = {
 			buildpic = "CORMINE3.png",
+			faction = "CORE",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},
 		sfxtypes = {
@@ -102,7 +103,9 @@ return {
 		weapondefs = {
 			mine_detonator = {
 				areaofeffect = 5,
+				avoidfeature = false,
 				cegtag = "Trail_cannon",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0,
@@ -117,6 +120,8 @@ return {
 				reloadtime = 0.1,
 				separation = 0.45,
 				sizedecay = -0.15,
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				stages = 20,
 				weapontype = "Cannon",
 				weaponvelocity = 1000,
@@ -127,6 +132,7 @@ return {
 			},
 			mine_dummy = {
 				areaofeffect = 0,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0,
@@ -137,6 +143,8 @@ return {
 				name = "Crawlingbomb Dummy Weapon",
 				range = 64,
 				reloadtime = 0.1,
+				soundhitwet = "sizzle",
+				soundhitwetvolume = 0.5,
 				tolerance = 100000,
 				weapontype = "Melee",
 				weaponvelocity = 100000,

@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 3639,
 		buildcostmetal = 325,
 		builder = false,
+		buildpic = "tllhoverrocket.png",
 		buildtime = 12521,
 		canattack = true,
 		canguard = true,
@@ -56,6 +57,9 @@ return {
 		unitname = "tllhoverrocket",
 		unitnumber = 28803,
 		workertime = 0,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -125,7 +129,11 @@ return {
 		weapondefs = {
 			tll_vpulse = {
 				areaofeffect = 126,
+				avoidfeature = false,
 				cegtag = "TLLRAVENTRAIL",
+				craterareaofeffect = 0,
+				craterboost = 0,
+				cratermult = 0,
 				firestarter = 100,
 				firesubmersed = true,
 				flighttime = 10,
@@ -137,6 +145,8 @@ return {
 				reloadtime = 10.5,
 				smoketrail = false,
 				soundhitdry = "vpulsehit",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "vpulsefire",
 				texture1 = "null",
 				texture2 = "null",

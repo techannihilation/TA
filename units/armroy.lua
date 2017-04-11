@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 6050,
 		buildcostmetal = 1045,
 		builder = false,
-		buildpic = "ARMROY.png",
+		buildpic = "armroy.png",
 		buildtime = 13000,
 		canattack = true,
 		canguard = true,
@@ -63,6 +63,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "ARMROY.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
@@ -136,7 +137,9 @@ return {
 		weapondefs = {
 			arm_roy = {
 				areaofeffect = 32,
+				avoidfeature = false,
 				cegtag = "Trail_cannon",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH3",
@@ -153,6 +156,8 @@ return {
 				size = 1.16,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannon3",
 				stages = 20,
 				turret = true,
@@ -165,9 +170,11 @@ return {
 			},
 			depthcharge = {
 				areaofeffect = 32,
+				avoidfeature = false,
 				avoidfriendly = false,
 				burnblow = true,
 				collidefriendly = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.99,
@@ -181,6 +188,7 @@ return {
 				range = 400,
 				reloadtime = 2.5,
 				soundhitdry = "xplodep2",
+				soundhitwet = "xplodep2",
 				soundstart = "torpedo1",
 				startvelocity = 140,
 				tolerance = 1000,

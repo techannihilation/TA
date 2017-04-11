@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "armsolar_aoplane.dds",
-		buildpic = "ARMSOLAR.png",
+		buildpic = "armsolar.png",
 		buildtime = 2045,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		collisionspherescale = 0.5,
@@ -52,6 +52,7 @@ return {
 		yardmap = "yycyy yoooy coooc yoooy yycyy",
 		customparams = {
 			buildpic = "ARMSOLAR.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {

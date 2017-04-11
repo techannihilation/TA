@@ -56,6 +56,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "corspec.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

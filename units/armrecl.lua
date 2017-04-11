@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 441,
 		builddistance = 112,
 		builder = true,
-		buildpic = "ARMRECL.png",
+		buildpic = "armrecl.png",
 		buildtime = 9259,
 		canassist = false,
 		canguard = true,
@@ -59,6 +59,7 @@ return {
 		workertime = 450,
 		customparams = {
 			buildpic = "ARMRECL.png",
+			faction = "ARM",
 		},
 		nanocolor = {
 			[1] = 0.28,

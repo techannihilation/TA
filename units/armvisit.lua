@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 3015,
 		buildcostmetal = 300,
 		builder = false,
+		buildpic = "armvisit.png",
 		buildtime = 7650,
 		canattack = true,
 		canguard = true,
@@ -56,6 +57,9 @@ return {
 		unitname = "armvisit",
 		unitnumber = 1740,
 		workertime = 0,
+		customparams = {
+			faction = "ARM",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -108,9 +112,11 @@ return {
 		weapondefs = {
 			emgx = {
 				areaofeffect = 8,
+				avoidfeature = false,
 				burst = 3,
 				burstrate = 0.1,
 				cegtag = "Trail_emg_upg",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:EMG_HIT",
@@ -124,6 +130,8 @@ return {
 				reloadtime = 0.3,
 				rgbcolor = "0.83 0.57 0",
 				size = 0.82,
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "flashemg",
 				sprayangle = 1180,
 				tolerance = 5000,

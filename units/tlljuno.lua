@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "tlljuno_aoplane.dds",
-		buildpic = "TLLJUNO.png",
+		buildpic = "tlljuno.png",
 		buildtime = 21833,
 		canattack = true,
 		canstop = 1,
@@ -56,6 +56,7 @@ return {
 		yardmap = "oooooooooooooooo",
 		customparams = {
 			buildpic = "TLLJUNO.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
@@ -131,7 +132,9 @@ return {
 		weapondefs = {
 			juno_pulse = {
 				areaofeffect = 1500,
+				avoidfeature = false,
 				commandfire = true,
+				craterareaofeffect = 2250,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 1,

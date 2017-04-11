@@ -9,6 +9,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "corupmex_aoplane.dds",
+		buildpic = "corupmex.png",
 		buildtime = 38577,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "dead",
@@ -43,6 +44,7 @@ return {
 		workertime = 0,
 		yardmap = "ooooooooo",
 		customparams = {
+			faction = "CORE",
 			providetech = "Jumpjet",
 			providetechrange = 2500,
 		},

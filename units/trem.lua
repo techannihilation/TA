@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 48000,
 		buildcostmetal = 2090,
 		builder = false,
-		buildpic = "TREM.png",
+		buildpic = "trem.png",
 		buildtime = 31103,
 		canattack = true,
 		canguard = true,
@@ -65,6 +65,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "TREM.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
@@ -141,7 +142,9 @@ return {
 			trem1 = {
 				accuracy = 1400,
 				areaofeffect = 160,
-				cegtag = "Trail_cannon",
+				avoidfeature = false,
+				cegtag = "Trail_cannon_med",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH4",
@@ -159,6 +162,8 @@ return {
 				size = 2.26,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed4",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy2",
 				stages = 20,
 				turret = true,

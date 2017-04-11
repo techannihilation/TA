@@ -7,6 +7,7 @@ return {
 		buildcostenergy = 50000,
 		buildcostmetal = 2250,
 		builder = false,
+		buildpic = "tllturtle.png",
 		buildtime = 90000,
 		canguard = true,
 		canmove = true,
@@ -54,6 +55,9 @@ return {
 		unitname = "tllturtle",
 		unitnumber = 31903,
 		workertime = 0,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -123,9 +127,11 @@ return {
 		weapondefs = {
 			armscab_weapon = {
 				areaofeffect = 420,
+				avoidfeature = false,
 				avoidfriendly = false,
 				collidefriendly = false,
 				coverage = 2000,
+				craterareaofeffect = 630,
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 6500,
@@ -143,6 +149,8 @@ return {
 				reloadtime = 2,
 				smoketrail = true,
 				soundhitdry = "xplomed4",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "Rockhvy1",
 				stockpile = true,
 				stockpiletime = 90,

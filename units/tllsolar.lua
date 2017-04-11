@@ -9,6 +9,7 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "tllsolar_aoplane.dds",
+		buildpic = "tllsolar.png",
 		buildtime = 2860,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "dead",
@@ -42,6 +43,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo",
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

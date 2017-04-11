@@ -52,6 +52,7 @@ return {
 		customparams = {
 			buildpic = "armawin.png",
 			energymultiplier = 4,
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

@@ -8,6 +8,7 @@ return {
 		buildinggrounddecalsizex = 10,
 		buildinggrounddecalsizey = 10,
 		buildinggrounddecaltype = "spiderlab_aoplane.dds",
+		buildpic = "spiderlab.png",
 		buildtime = 11900,
 		canmove = true,
 		canpatrol = true,
@@ -59,6 +60,7 @@ return {
 			[8] = "armweaver",
 		},
 		customparams = {
+			faction = "ARM",
 			providetech = "T1 Factory",
 		},
 		featuredefs = {

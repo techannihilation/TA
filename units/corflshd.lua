@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 53000,
 		buildcostmetal = 3893,
 		builder = false,
-		buildpic = "corflosh.png",
+		buildpic = "corflshd.png",
 		buildtime = 61782,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		description = "Floating Plasma Deflector",
@@ -47,6 +47,7 @@ return {
 		yardmap = "oooooooooooooooo",
 		customparams = {
 			buildpic = "corflosh.png",
+			faction = "CORE",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
@@ -81,6 +82,9 @@ return {
 		},
 		weapondefs = {
 			repulsor = {
+				craterareaofeffect = 0,
+				craterboost = 0,
+				cratermult = 0,
 				name = "PlasmaRepulsor",
 				range = 400,
 				shieldalpha = 0.35,
@@ -96,6 +100,8 @@ return {
 				shieldradius = 400,
 				shieldrepulser = true,
 				smartshield = true,
+				soundhitwet = "sizzle",
+				soundhitwetvolume = 0.5,
 				visibleshield = true,
 				visibleshieldhitframes = 70,
 				visibleshieldrepulse = true,

@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "armpb_aoplane.dds",
-		buildpic = "ARMPB.png",
+		buildpic = "armpb.png",
 		buildtime = 18961,
 		canattack = true,
 		canstop = 1,
@@ -57,6 +57,7 @@ return {
 		yardmap = "ooooooooo",
 		customparams = {
 			buildpic = "ARMPB.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
@@ -134,7 +135,9 @@ return {
 		weapondefs = {
 			armpb_weapon = {
 				areaofeffect = 24,
+				avoidfeature = false,
 				burnblow = true,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2nd",
@@ -147,6 +150,8 @@ return {
 				rgbcolor = "1 0.95 0.9",
 				size = 1.06,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy1",
 				targetmoveerror = 0.2,
 				tolerance = 8000,

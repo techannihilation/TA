@@ -8,6 +8,7 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "tllrichter_aoplane.dds",
+		buildpic = "tllrichter.png",
 		buildtime = 10955,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "DEAD",
@@ -39,6 +40,9 @@ return {
 		unitname = "tllrichter",
 		usebuildinggrounddecal = true,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo",
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

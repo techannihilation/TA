@@ -8,6 +8,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "cmetalmakerlvl2_aoplane.dds",
+		buildpic = "cmetalmakerlvl2.png",
 		buildtime = 240000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "dead",
@@ -40,6 +41,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "oooo oooo oooo oooo",
+		customparams = {
+			faction = "CORE",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

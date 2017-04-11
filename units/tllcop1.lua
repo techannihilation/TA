@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 2826,
 		buildcostmetal = 227,
 		builder = false,
+		buildpic = "tllcop1.png",
 		buildtime = 11657,
 		canattack = true,
 		canfly = true,
@@ -55,6 +56,9 @@ return {
 		unitname = "tllcop1",
 		unitnumber = 21101,
 		workertime = 0,
+		customparams = {
+			faction = "TLL",
+		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
@@ -92,8 +96,10 @@ return {
 		weapondefs = {
 			vtol_emg = {
 				areaofeffect = 8,
+				avoidfeature = false,
 				burst = 3,
 				burstrate = 0.1,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:BRAWLIMPACTS",
@@ -107,6 +113,8 @@ return {
 				reloadtime = 0.4,
 				rgbcolor = "0.86 0.62 0",
 				size = 0.82,
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "brawlemg",
 				sprayangle = 1024,
 				tolerance = 6000,

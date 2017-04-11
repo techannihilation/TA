@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 25500,
 		buildcostmetal = 2250,
 		builder = false,
-		buildpic = "ARMFBOY1.png",
+		buildpic = "armfboy1.png",
 		buildtime = 22400,
 		canattack = true,
 		canguard = true,
@@ -59,6 +59,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "ARMFBOY1.png",
+			faction = "ARM",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
@@ -131,7 +132,9 @@ return {
 		weapondefs = {
 			arm_fatboy_notalaser1 = {
 				areaofeffect = 320,
-				cegtag = "Trail_cannon",
+				avoidfeature = false,
+				cegtag = "Trail_cannon_med",
+				craterareaofeffect = 480,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.7,
@@ -150,6 +153,8 @@ return {
 				size = 3.07,
 				sizedecay = -0.15,
 				soundhitdry = "bertha6",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "BERTHA1",
 				stages = 20,
 				turret = true,

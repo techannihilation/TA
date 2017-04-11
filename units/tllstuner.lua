@@ -8,6 +8,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "tllstuner_aoplane.dds",
+		buildpic = "tllstuner.png",
 		buildtime = 11528,
 		canattack = true,
 		canstop = 1,
@@ -43,6 +44,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "oooo oooo oooo oooo",
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -113,12 +117,13 @@ return {
 		weapondefs = {
 			tllstuner_gun = {
 				areaofeffect = 28,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				duration = 0.06,
 				energypershot = 200,
-				impulseboost = 0.123,
-				impulsefactor = 0.123,
+				impulseboost = 0,
+				impulsefactor = 0,
 				intensity = 0.88,
 				metalpershot = 0,
 				name = "Stuner Cannon",
@@ -130,6 +135,8 @@ return {
 				rgbcolor = "0.0 0.0 0.5",
 				size = 1.11,
 				soundhitdry = "xplomed2",
+				soundhitwet = "sizzle",
+				soundhitwetvolume = 0.5,
 				soundstart = "tllstuner",
 				thickness = 1.6,
 				tolerance = 500,

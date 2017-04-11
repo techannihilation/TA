@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 857,
 		buildcostmetal = 129,
 		builder = false,
+		buildpic = "tlluwjam.png",
 		buildtime = 4912,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "dead",
@@ -41,6 +42,9 @@ return {
 		waterline = 7,
 		workertime = 0,
 		yardmap = "ooooooooo",
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

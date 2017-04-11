@@ -7,6 +7,7 @@ return {
 		buildcostenergy = 5500,
 		buildcostmetal = 350,
 		builder = false,
+		buildpic = "tllseaf.png",
 		buildtime = 12000,
 		canattack = true,
 		canfly = true,
@@ -56,6 +57,9 @@ return {
 		unitname = "tllseaf",
 		unitnumber = 919,
 		workertime = 0,
+		customparams = {
+			faction = "TLL",
+		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
@@ -93,6 +97,8 @@ return {
 		weapondefs = {
 			armsfig_weapon = {
 				areaofeffect = 35,
+				avoidfeature = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -107,6 +113,8 @@ return {
 				reloadtime = 0.8,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "Rocklit3",
 				startvelocity = 420,
 				texture2 = "armsmoketrail",
@@ -127,7 +135,9 @@ return {
 			},
 			tllvtol_missile = {
 				areaofeffect = 48,
+				avoidfeature = false,
 				collidefriendly = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				firestarter = 70,
@@ -142,6 +152,8 @@ return {
 				reloadtime = 1,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "Rocklit3",
 				startvelocity = 420,
 				texture2 = "armsmoketrail",

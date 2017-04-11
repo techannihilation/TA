@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 2518,
 		buildcostmetal = 289,
 		builder = false,
-		buildpic = "ARMJANUS.png",
+		buildpic = "armjanus.png",
 		buildtime = 3545,
 		canattack = true,
 		canguard = true,
@@ -61,6 +61,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "ARMJANUS.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
@@ -136,7 +137,9 @@ return {
 		weapondefs = {
 			janus_rocket = {
 				areaofeffect = 150,
+				avoidfeature = false,
 				cegtag = "Arm_Janus_Rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:VEHROCKET_EXPLOSION",
@@ -150,6 +153,8 @@ return {
 				smoketrail = true,
 				soundhitdry = "xplosml2",
 				soundhitvolume = 8,
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "rocklit1",
 				soundstartvolume = 7,
 				startvelocity = 190,

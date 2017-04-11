@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "cormex1_aoplane.dds",
-		buildpic = "CORMEX1.png",
+		buildpic = "cormex1.png",
 		buildtime = 6450,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		collisionvolumeoffsets = "0 8 0",
@@ -57,6 +57,7 @@ return {
 		yardmap = "ooooooooo",
 		customparams = {
 			buildpic = "CORMEX1.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			cormex_dead = {

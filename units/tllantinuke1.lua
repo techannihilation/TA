@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "tllantinuke_aoplane.dds",
-		buildpic = "tllantinuke.png",
+		buildpic = "tllantinuke1.png",
 		buildtime = 148025,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
 		corpse = "dead",
@@ -50,6 +50,7 @@ return {
 		yardmap = "oooo oooo oooo oooo",
 		customparams = {
 			buildpic = "tllantinuke.png",
+			faction = "TLL",
 		},
 		featuredefs = {
 			dead = {
@@ -119,9 +120,11 @@ return {
 		weapondefs = {
 			amd_rocket3 = {
 				areaofeffect = 400,
+				avoidfeature = false,
 				avoidfriendly = false,
 				collidefriendly = false,
 				coverage = 2920,
+				craterareaofeffect = 600,
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 14000,
@@ -139,6 +142,8 @@ return {
 				reloadtime = 2,
 				smoketrail = true,
 				soundhitdry = "xplomed4",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "Rockhvy1",
 				stockpile = true,
 				stockpiletime = 60,

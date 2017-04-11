@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "corestor_aoplane.dds",
-		buildpic = "CORESTOR.png",
+		buildpic = "corestor.png",
 		buildtime = 3900,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		collisionvolumeoffsets = "0 -10 0",
@@ -52,6 +52,7 @@ return {
 		yardmap = "oooooooooooooooo",
 		customparams = {
 			buildpic = "CORESTOR.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

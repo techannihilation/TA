@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 1124,
 		buildcostmetal = 131,
 		builder = false,
-		buildpic = "CORFRAD.png",
+		buildpic = "corfrad.png",
 		buildtime = 1783,
 		canattack = false,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
@@ -54,6 +54,7 @@ return {
 		yardmap = "wwwwwwwww",
 		customparams = {
 			buildpic = "CORFRAD.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

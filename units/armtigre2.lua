@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 106000,
 		buildcostmetal = 5900,
 		builder = false,
+		buildpic = "armtigre2.png",
 		buildtime = 76000,
 		canattack = true,
 		canguard = true,
@@ -56,6 +57,9 @@ return {
 		unitname = "armtigre2",
 		unitnumber = 5698,
 		workertime = 0,
+		customparams = {
+			faction = "ARM",
+		},
 		featuredefs = {
 			armtigre_heap = {
 				blocking = false,
@@ -125,7 +129,9 @@ return {
 		weapondefs = {
 			cor_gol1 = {
 				areaofeffect = 300,
-				cegtag = "Trail_cannon",
+				avoidfeature = false,
+				cegtag = "Trail_cannon_med",
+				craterareaofeffect = 450,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:flash192_fakelight",
@@ -141,6 +147,8 @@ return {
 				size = 2.21,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed4",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy2",
 				stages = 20,
 				turret = true,
@@ -154,7 +162,9 @@ return {
 			},
 			corkrog_rocket = {
 				areaofeffect = 96,
+				avoidfeature = false,
 				cegtag = "ARMRAVENTRAIL",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:incendiary_explosion_medium",
@@ -170,6 +180,8 @@ return {
 				reloadtime = 2,
 				smoketrail = false,
 				soundhitdry = "xplosml2",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "rocklit1",
 				startvelocity = 200,
 				texture1 = "null",

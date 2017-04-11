@@ -9,6 +9,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "tllhmt_aoplane.dds",
+		buildpic = "tllhmt.png",
 		buildtime = 13341,
 		canattack = true,
 		canguard = true,
@@ -45,6 +46,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "ooooooooo",
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -116,7 +120,9 @@ return {
 		weapondefs = {
 			arm_advsam = {
 				areaofeffect = 800,
+				avoidfeature = false,
 				canattackground = false,
+				craterareaofeffect = 1200,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.25,

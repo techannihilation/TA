@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 5800,
 		buildcostmetal = 320,
 		builder = false,
-		buildpic = "CORAPE.png",
+		buildpic = "corape.png",
 		buildtime = 20000,
 		canattack = true,
 		canfly = true,
@@ -57,6 +57,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "CORAPE.png",
+			faction = "CORE",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
@@ -92,7 +93,9 @@ return {
 		weapondefs = {
 			vtol_rocket = {
 				areaofeffect = 128,
+				avoidfeature = false,
 				burnblow = true,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:corape_explosion",
@@ -106,6 +109,8 @@ return {
 				reloadtime = 1,
 				smoketrail = true,
 				soundhitdry = "explode",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "rocklit3",
 				soundtrigger = true,
 				startvelocity = 300,

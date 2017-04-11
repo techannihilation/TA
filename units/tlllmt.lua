@@ -9,6 +9,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "tlllmt_aoplane.dds",
+		buildpic = "tlllmt.png",
 		buildtime = 1646,
 		canattack = true,
 		canguard = true,
@@ -45,6 +46,9 @@ return {
 		unitnumber = 806,
 		usebuildinggrounddecal = true,
 		yardmap = "oooo",
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -116,8 +120,10 @@ return {
 		weapondefs = {
 			armrl_missile = {
 				areaofeffect = 48,
+				avoidfeature = false,
 				canattackground = false,
 				cegtag = "Tll_Def_AA_Rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -133,6 +139,8 @@ return {
 				reloadtime = 1.7,
 				smoketrail = true,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "rockhvy2",
 				startvelocity = 400,
 				texture1 = "null",

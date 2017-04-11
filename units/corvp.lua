@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "corvp_aoplane.dds",
-		buildpic = "CORVP.png",
+		buildpic = "corvp.png",
 		buildtime = 5651,
 		canmove = true,
 		canpatrol = true,
@@ -76,6 +76,7 @@ return {
 		},
 		customparams = {
 			buildpic = "CORVP.png",
+			faction = "CORE",
 			providetech = "T1 Factory",
 		},
 		featuredefs = {

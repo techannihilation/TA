@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "armveil_aoplane.dds",
-		buildpic = "ARMVEIL.png",
+		buildpic = "armveil.png",
 		buildtime = 9080,
 		canattack = false,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
@@ -55,6 +55,7 @@ return {
 		yardmap = "oooo",
 		customparams = {
 			buildpic = "ARMVEIL.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {

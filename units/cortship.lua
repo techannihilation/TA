@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 5105,
 		buildcostmetal = 946,
 		builder = false,
-		buildpic = "CORTSHIP.png",
+		buildpic = "cortship.png",
 		buildtime = 13663,
 		canattack = false,
 		canguard = true,
@@ -64,6 +64,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "CORTSHIP.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

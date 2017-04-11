@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 6500,
 		buildcostmetal = 810,
 		builder = false,
+		buildpic = "tllhplasma.png",
 		buildtime = 15000,
 		canattack = true,
 		canguard = true,
@@ -56,6 +57,9 @@ return {
 		unitname = "tllhplasma",
 		unitnumber = 17404,
 		workertime = 0,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -125,7 +129,9 @@ return {
 		weapondefs = {
 			arm_bull = {
 				areaofeffect = 140,
-				cegtag = "Trail_cannon",
+				avoidfeature = false,
+				cegtag = "Trail_cannon_med",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH72",
@@ -142,6 +148,8 @@ return {
 				size = 2.14,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannon3",
 				stages = 20,
 				turret = true,

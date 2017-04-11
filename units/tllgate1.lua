@@ -50,6 +50,7 @@ return {
 		yardmap = "oooooo oooooo oooooo oooooo",
 		customparams = {
 			buildpic = "tllgate.png",
+			faction = "TLL",
 		},
 		featuredefs = {
 			heap = {
@@ -118,6 +119,9 @@ return {
 		},
 		weapondefs = {
 			repulsor = {
+				craterareaofeffect = 0,
+				craterboost = 0,
+				cratermult = 0,
 				name = "PlasmaRepulsor",
 				range = 1000,
 				shieldalpha = 0.3,
@@ -133,6 +137,8 @@ return {
 				shieldradius = 1000,
 				shieldrepulser = true,
 				smartshield = true,
+				soundhitwet = "sizzle",
+				soundhitwetvolume = 0.5,
 				visibleshield = true,
 				visibleshieldrepulse = true,
 				weapontype = "Shield",

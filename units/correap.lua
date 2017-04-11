@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 12000,
 		buildcostmetal = 635,
 		builder = false,
-		buildpic = "CORREAP.png",
+		buildpic = "correap.png",
 		buildtime = 13530,
 		canattack = true,
 		canguard = true,
@@ -64,6 +64,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "CORREAP.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
@@ -142,7 +143,9 @@ return {
 		weapondefs = {
 			core_reap = {
 				areaofeffect = 64,
+				avoidfeature = false,
 				cegtag = "Trail_cannon",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH72",
@@ -159,6 +162,8 @@ return {
 				size = 1.53,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splssml",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannon3",
 				stages = 20,
 				turret = true,

@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 7200,
 		buildcostmetal = 350,
 		builder = false,
-		buildpic = "ARMSABER.png",
+		buildpic = "armsaber.png",
 		buildtime = 20000,
 		canattack = true,
 		canfly = true,
@@ -61,6 +61,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "ARMSABER.png",
+			faction = "ARM",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
@@ -99,9 +100,11 @@ return {
 		weapondefs = {
 			vtol_emg2 = {
 				areaofeffect = 8,
+				avoidfeature = false,
 				burst = 3,
 				burstrate = 0.1,
 				cegtag = "VTOL_EMGTRAIL",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:armbrawl_explosion",
@@ -115,6 +118,8 @@ return {
 				reloadtime = 0.3,
 				rgbcolor = "1 0.95 0.4",
 				size = 2.5,
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "brawlemg",
 				sprayangle = 1024,
 				tolerance = 6000,

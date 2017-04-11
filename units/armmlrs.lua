@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 95424,
 		buildcostmetal = 6656,
 		builder = false,
+		buildpic = "armmlrs.png",
 		buildtime = 53231,
 		canattack = true,
 		canguard = true,
@@ -58,6 +59,7 @@ return {
 		unitnumber = 1876,
 		workertime = 0,
 		customparams = {
+			faction = "ARM",
 			requiretech = "Advanced T3 Unit Research Centre",
 		},
 		sfxtypes = {
@@ -97,10 +99,14 @@ return {
 		weapondefs = {
 			barrage = {
 				areaofeffect = 350,
+				avoidfeature = false,
 				burnblow = true,
 				burst = 3,
 				burstrate = 1.1,
 				cegtag = "Trail_Large_Rocket_New",
+				craterareaofeffect = 525,
+				craterboost = 0,
+				cratermult = 0,
 				explosiongenerator = "custom:Explosion_VeryHeavy_Rocket-nix",
 				firestarter = 80,
 				flighttime = 6,
@@ -112,6 +118,8 @@ return {
 				reloadtime = 30,
 				smoketrail = true,
 				soundhitdry = "mlrsboom",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "mlrsfireshort",
 				soundtrigger = true,
 				sprayangle = 1024,

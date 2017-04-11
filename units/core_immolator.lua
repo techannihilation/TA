@@ -56,6 +56,7 @@ return {
 		customparams = {
 			buildpic = "core_immolator.png",
 			canareaattack = 1,
+			faction = "Core",
 		},
 		featuredefs = {
 			dead = {
@@ -130,7 +131,9 @@ return {
 			core_intimidator3 = {
 				accuracy = 535,
 				areaofeffect = 250,
-				cegtag = "Trail_cannon",
+				avoidfeature = false,
+				cegtag = "Trail_cannon_med",
+				craterareaofeffect = 375,
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 4000,
@@ -149,6 +152,8 @@ return {
 				size = 2.72,
 				sizedecay = -0.15,
 				soundhitdry = "xplonuk1",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "xplonuk3",
 				stages = 20,
 				turret = true,

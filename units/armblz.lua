@@ -8,6 +8,7 @@ return {
 		buildcostenergy = 7728,
 		buildcostmetal = 318,
 		builder = false,
+		buildpic = "armblz.png",
 		buildtime = 17064,
 		canattack = true,
 		canfly = true,
@@ -58,6 +59,7 @@ return {
 		unitnumber = 53,
 		workertime = 0,
 		customparams = {
+			faction = "ARM",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},
 		sfxtypes = {
@@ -100,6 +102,7 @@ return {
 				burstrate = 0.28,
 				collidefriendly = false,
 				commandfire = false,
+				craterareaofeffect = 375,
 				craterboost = 0,
 				cratermult = 0,
 				firestarter = 100,
@@ -112,6 +115,8 @@ return {
 				range = 1280,
 				reloadtime = 5.5,
 				soundhitdry = "burn02",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "bombrel",
 				sprayangle = 300,
 				weapontype = "AircraftBomb",

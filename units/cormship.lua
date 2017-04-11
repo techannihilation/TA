@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 10270,
 		buildcostmetal = 2755,
 		builder = false,
-		buildpic = "CORMSHIP.png",
+		buildpic = "cormship.png",
 		buildtime = 22126,
 		canattack = true,
 		canguard = true,
@@ -62,6 +62,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "CORMSHIP.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
@@ -135,7 +136,9 @@ return {
 		weapondefs = {
 			armship_missile = {
 				areaofeffect = 48,
+				avoidfeature = false,
 				canattackground = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -150,6 +153,8 @@ return {
 				reloadtime = 0.5,
 				smoketrail = true,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "rockhvy2",
 				startvelocity = 430,
 				texture2 = "armsmoketrail",
@@ -172,8 +177,10 @@ return {
 			},
 			cormship_rocket = {
 				areaofeffect = 96,
+				avoidfeature = false,
 				burnblow = true,
 				cegtag = "CORRAVENTRAIL",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASHSMALLUNIT",
@@ -189,6 +196,8 @@ return {
 				reloadtime = 8,
 				smoketrail = false,
 				soundhitdry = "xplomed4",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "Rockhvy1",
 				texture1 = "null",
 				texture2 = "null",

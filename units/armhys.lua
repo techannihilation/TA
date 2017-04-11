@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "armhys_aoplane.dds",
-		buildpic = "ARMHYS.png",
+		buildpic = "armhys.png",
 		buildtime = 120000,
 		canattack = true,
 		canstop = 1,
@@ -47,6 +47,7 @@ return {
 		yardmap = "ooooooooooooooooooooooooo",
 		customparams = {
 			buildpic = "ARMHYS.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
@@ -120,8 +121,10 @@ return {
 			advflak = {
 				accuracy = 750,
 				areaofeffect = 256,
+				avoidfeature = false,
 				burnblow = true,
 				cegtag = "armflak-fx",
+				craterareaofeffect = 384,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.75,
@@ -135,6 +138,8 @@ return {
 				reloadtime = 0.25,
 				rgbcolor = "0.2 0.3 0.9",
 				soundhitdry = "flakhit",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "flakfire",
 				turret = true,
 				weapontimer = 1,

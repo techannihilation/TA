@@ -7,6 +7,7 @@ return {
 		buildcostenergy = 5900,
 		buildcostmetal = 1380,
 		builder = false,
+		buildpic = "armhls.png",
 		buildtime = 14150,
 		canattack = true,
 		canguard = true,
@@ -62,6 +63,7 @@ return {
 		waterline = 1,
 		workertime = 0,
 		customparams = {
+			faction = "ARM",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},
 		featuredefs = {
@@ -116,6 +118,8 @@ return {
 		weapondefs = {
 			arm_crus = {
 				areaofeffect = 16,
+				avoidfeature = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH1",
@@ -127,6 +131,8 @@ return {
 				range = 630,
 				reloadtime = 0.8,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy1",
 				targetmoveerror = 0.1,
 				turret = true,

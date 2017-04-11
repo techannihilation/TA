@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 13,
 		buildinggrounddecalsizey = 13,
 		buildinggrounddecaltype = "corint1_aoplane.dds",
-		buildpic = "CORINT.png",
+		buildpic = "corint1.png",
 		buildtime = 185000,
 		canattack = true,
 		canstop = 1,
@@ -54,6 +54,7 @@ return {
 		customparams = {
 			buildpic = "CORINT.png",
 			canareaattack = 1,
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
@@ -129,8 +130,10 @@ return {
 			core_intimidator1 = {
 				accuracy = 500,
 				areaofeffect = 292,
+				avoidfeature = false,
 				cegtag = "Trail_cannon_large",
 				collidefriendly = false,
+				craterareaofeffect = 438,
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 20000,
@@ -149,6 +152,8 @@ return {
 				size = 6.01,
 				sizedecay = -0.15,
 				soundhitdry = "xplonuk1",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "xplonuk3",
 				stages = 20,
 				turret = true,

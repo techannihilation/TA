@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 1076,
 		buildcostmetal = 203,
 		builder = false,
+		buildpic = "tllobserver.png",
 		buildtime = 3655,
 		canattack = false,
 		canguard = true,
@@ -52,6 +53,9 @@ return {
 		turnrate = 750,
 		unitname = "tllobserver",
 		unitnumber = 862,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

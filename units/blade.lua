@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 17403,
 		buildcostmetal = 951,
 		builder = false,
-		buildpic = "BLADE.png",
+		buildpic = "blade.png",
 		buildtime = 30964,
 		canattack = true,
 		canfly = true,
@@ -57,6 +57,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "BLADE.png",
+			faction = "ARM",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		sfxtypes = {
@@ -93,7 +94,9 @@ return {
 		weapondefs = {
 			vtol_sabot = {
 				areaofeffect = 32,
+				avoidfeature = false,
 				collidefriendly = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -107,6 +110,8 @@ return {
 				reloadtime = 1.1,
 				smoketrail = true,
 				soundhitdry = "SabotHit",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "SabotFire",
 				soundtrigger = true,
 				startvelocity = 700,

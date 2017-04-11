@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 445,
 		buildcostmetal = 86,
 		builder = false,
-		buildpic = "CORTIDE.png",
+		buildpic = "cortide.png",
 		buildtime = 2094,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "DEAD",
@@ -47,6 +47,7 @@ return {
 		yardmap = "www www www",
 		customparams = {
 			buildpic = "CORTIDE.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

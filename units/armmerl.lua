@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 6556,
 		buildcostmetal = 919,
 		builder = false,
-		buildpic = "ARMMERL.png",
+		buildpic = "armmerl.png",
 		buildtime = 15592,
 		canattack = true,
 		canguard = true,
@@ -65,6 +65,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "ARMMERL.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
@@ -140,7 +141,9 @@ return {
 		weapondefs = {
 			armtruck_rocket = {
 				areaofeffect = 90,
+				avoidfeature = false,
 				cegtag = "ARMRAVENTRAIL",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.5,
@@ -157,6 +160,8 @@ return {
 				reloadtime = 16,
 				smoketrail = false,
 				soundhitdry = "xplomed4",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "Rockhvy1",
 				texture1 = "null",
 				texture2 = "null",

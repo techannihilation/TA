@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 190000,
 		buildcostmetal = 13250,
 		builder = false,
+		buildpic = "armjugg.png",
 		buildtime = 230000,
 		canattack = true,
 		canguard = true,
@@ -59,6 +60,7 @@ return {
 		upright = true,
 		workertime = 0,
 		customparams = {
+			faction = "ARM",
 			requiretech = "Advanced T3 Unit Research Centre",
 		},
 		featuredefs = {
@@ -130,6 +132,8 @@ return {
 		weapondefs = {
 			armjugg_cannon = {
 				areaofeffect = 130,
+				avoidfeature = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				id = 251,
@@ -141,6 +145,8 @@ return {
 				rgbcolor = "0.91 0.71 0",
 				size = 2.2,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "Gatling",
 				tolerance = 500,
 				turret = true,
@@ -153,6 +159,7 @@ return {
 			},
 			armjugg_laser = {
 				areaofeffect = 8,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 300,
@@ -165,6 +172,8 @@ return {
 				reloadtime = 0.5,
 				rgbcolor = "0.1875 0.109375 0.65625",
 				soundhitdry = "xplosml3",
+				soundhitwet = "sizzle",
+				soundhitwetvolume = 0.5,
 				soundstart = "Lasrhvy2",
 				tolerance = 500,
 				turret = true,
@@ -178,7 +187,9 @@ return {
 			},
 			armjugg_rocket = {
 				areaofeffect = 80,
+				avoidfeature = false,
 				cegtag = "ARMRAVENTRAIL",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				firestarter = 70,
@@ -194,6 +205,8 @@ return {
 				rgbcolor = "1.000 0.000 0.000",
 				smoketrail = false,
 				soundhitdry = "xplosml2",
+				soundhitwet = "splssml",
+				soundhitwetvolume = 0.6,
 				soundstart = "rocklit1",
 				startvelocity = 150,
 				texture1 = "null",

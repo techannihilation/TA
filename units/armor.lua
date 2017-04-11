@@ -65,6 +65,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "armor.png",
+			faction = "ARM",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

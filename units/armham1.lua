@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 2273,
 		buildcostmetal = 265,
 		builder = false,
-		buildpic = "ARMHAM1.png",
+		buildpic = "armham1.png",
 		buildtime = 2210,
 		canattack = true,
 		canguard = true,
@@ -59,6 +59,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "ARMHAM1.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			armham_dead = {
@@ -134,7 +135,9 @@ return {
 		weapondefs = {
 			arm_ham1 = {
 				areaofeffect = 54,
+				avoidfeature = false,
 				cegtag = "Trail_cannon",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:LIGHT_PLASMA_BLING_UPG",
@@ -152,6 +155,8 @@ return {
 				size = 1.42,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed3",
+				soundhitwet = "splssml",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannon1",
 				stages = 20,
 				turret = true,

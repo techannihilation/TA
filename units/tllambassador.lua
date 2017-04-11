@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 5280,
 		buildcostmetal = 1008,
 		builder = false,
+		buildpic = "tllambassador.png",
 		buildtime = 15438,
 		canguard = true,
 		canload = 1,
@@ -55,6 +56,9 @@ return {
 		unitname = "tllambassador",
 		unitnumber = 943,
 		waterline = 6,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

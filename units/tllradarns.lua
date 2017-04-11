@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 591,
 		buildcostmetal = 103,
 		builder = false,
-		buildpic = "TLLRADARNS.png",
+		buildpic = "tllradarns.png",
 		buildtime = 1500,
 		canattack = false,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
@@ -54,6 +54,7 @@ return {
 		yardmap = "wwwwwwwww",
 		customparams = {
 			buildpic = "TLLRADARNS.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
