@@ -17,8 +17,7 @@ race32lt.tga
 Sidepic
 tll.bmp
 
-All Unitpictures copyrighted by [BoS]nixtux
-
+All Unit pictures and images used for icon backgrounds copyrighted by[BoS]nixtux
 ----------------------------------------------------------------------------------
 
 Credits :-Some Models are in this mod are from TA:Escalation i would like to thanks archdragon,
