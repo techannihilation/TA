@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 147000,
 		buildcostmetal = 8250,
 		builder = false,
+		buildpic = "tlldemon.png",
 		buildtime = 33000,
 		canattack = true,
 		canguard = true,
@@ -43,8 +44,8 @@ return {
 		radaremitheight = 29,
 		scale = 1.2,
 		selfdestructas = "BIG_UNIT",
-		side = "TLL",
 		shootme = 1,
+		side = "TLL",
 		sightdistance = 750,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -56,6 +57,9 @@ return {
 		unitname = "tlldemon",
 		unitnumber = 30001,
 		workertime = 0,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -128,6 +132,10 @@ return {
 			demonslayer_cannon = {
 				accuracy = 850,
 				areaofeffect = 480,
+				avoidfeature = false,
+				craterareaofeffect = 720,
+				craterboost = 0,
+				cratermult = 0,
 				energypershot = 12000,
 				explosiongenerator = "custom:FLASHNUKE480",
 				flighttime = 4,

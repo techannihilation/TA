@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 12736,
 		buildcostmetal = 1867,
 		builder = false,
-		buildpic = "CORSSUB.png",
+		buildpic = "corssub.png",
 		buildtime = 23007,
 		canattack = true,
 		canguard = true,
@@ -61,6 +61,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "CORSSUB.png",
+			faction = "CORE",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
@@ -135,9 +136,11 @@ return {
 		weapondefs = {
 			corssub_weapon = {
 				areaofeffect = 16,
+				avoidfeature = false,
 				avoidfriendly = false,
 				burnblow = true,
 				collidefriendly = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH3",
@@ -150,6 +153,7 @@ return {
 				range = 690,
 				reloadtime = 1.5,
 				soundhitdry = "xplodep1",
+				soundhitwet = "xplodep1",
 				soundstart = "torpedo1",
 				startvelocity = 150,
 				tolerance = 8000,

@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "armmakr_aoplane.dds",
-		buildpic = "ARMMAKR.png",
+		buildpic = "armmakr.png",
 		buildtime = 1000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		collisionvolumeoffsets = "-2 0 0",
@@ -51,6 +51,7 @@ return {
 		yardmap = "ooooooooo",
 		customparams = {
 			buildpic = "ARMMAKR.png",
+			faction = "ARM",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

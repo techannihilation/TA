@@ -9,6 +9,7 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "corpre_aoplane.dds",
+		buildpic = "corpre.png",
 		buildtime = 220000,
 		canattack = true,
 		canstop = 1,
@@ -47,6 +48,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo",
+		customparams = {
+			faction = "CORE",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -119,8 +123,10 @@ return {
 			advflak = {
 				accuracy = 750,
 				areaofeffect = 256,
+				avoidfeature = false,
 				burnblow = true,
 				cegtag = "corflak-fx",
+				craterareaofeffect = 384,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.5,
@@ -134,6 +140,8 @@ return {
 				reloadtime = 0.2,
 				rgbcolor = "1 0.3 0.2",
 				soundhitdry = "flakhit",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "flakfire",
 				turret = true,
 				weapontimer = 1,

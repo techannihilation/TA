@@ -7,6 +7,7 @@ return {
 		buildcostenergy = 4850,
 		buildcostmetal = 1205,
 		builder = false,
+		buildpic = "tllviolator.png",
 		buildtime = 13522,
 		canattack = true,
 		canguard = true,
@@ -56,6 +57,9 @@ return {
 		unitname = "tllviolator",
 		unitnumber = 894,
 		waterline = 8,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -125,7 +129,9 @@ return {
 		weapondefs = {
 			arm_roy = {
 				areaofeffect = 32,
+				avoidfeature = false,
 				cegtag = "Trail_cannon",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH3",
@@ -142,6 +148,8 @@ return {
 				size = 1.16,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannon3",
 				stages = 20,
 				turret = true,
@@ -154,9 +162,11 @@ return {
 			},
 			depthcharge = {
 				areaofeffect = 32,
+				avoidfeature = false,
 				avoidfriendly = false,
 				burnblow = true,
 				collidefriendly = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.99,
@@ -170,6 +180,7 @@ return {
 				range = 400,
 				reloadtime = 2.5,
 				soundhitdry = "xplodep2",
+				soundhitwet = "xplodep2",
 				soundstart = "torpedo1",
 				startvelocity = 140,
 				tolerance = 1000,

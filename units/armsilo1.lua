@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 10,
 		buildinggrounddecalsizey = 10,
 		buildinggrounddecaltype = "armsilo1_aoplane.dds",
-		buildpic = "ARMSILO.png",
+		buildpic = "armsilo1.png",
 		buildtime = 178453,
 		canattack = true,
 		canstop = 1,
@@ -56,6 +56,7 @@ return {
 		yardmap = "ooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
 			buildpic = "ARMSILO.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			armsilo_dead = {
@@ -131,12 +132,14 @@ return {
 		weapondefs = {
 			nuclear_missile1 = {
 				areaofeffect = 1280,
+				avoidfeature = false,
 				avoidfriendly = false,
 				cegtag = "Trail_nuke",
 				collidefriendly = false,
 				commandfire = true,
-				craterboost = 6,
-				cratermult = 3,
+				craterareaofeffect = 1920,
+				craterboost = 0.72,
+				cratermult = 0.36,
 				edgeeffectiveness = 0.3,
 				energypershot = 260000,
 				explosiongenerator = "custom:nuke_explo_1280",

@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 3328,
 		buildcostmetal = 444,
 		builder = false,
+		buildpic = "armmedt.png",
 		buildtime = 8540,
 		canattack = true,
 		canguard = true,
@@ -55,6 +56,7 @@ return {
 		unitnumber = 6625,
 		workertime = 0,
 		customparams = {
+			faction = "ARM",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},
 		featuredefs = {
@@ -128,6 +130,7 @@ return {
 				areaofeffect = 48,
 				avoidfeature = false,
 				cegtag = "Trail_cannon",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:LIGHT_PLASMA_BLING",
@@ -145,6 +148,8 @@ return {
 				size = 1.36,
 				sizedecay = -0.15,
 				soundhitdry = "xplosml3",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "canlite3",
 				stages = 20,
 				turret = true,

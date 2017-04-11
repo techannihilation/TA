@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 950,
 		buildcostmetal = 50,
 		builder = false,
-		buildpic = "ARMPW.png",
+		buildpic = "armpw.png",
 		buildtime = 1420,
 		canattack = true,
 		canguard = true,
@@ -59,6 +59,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "ARMPW.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
@@ -141,6 +142,7 @@ return {
 				burst = 3,
 				burstrate = 0.1,
 				cegtag = "Trail_emg",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:EMG_HIT",
@@ -155,6 +157,8 @@ return {
 				reloadtime = 0.3,
 				rgbcolor = "0.83 0.57 0",
 				size = 1.75,
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "flashemg",
 				sprayangle = 1180,
 				tolerance = 5000,

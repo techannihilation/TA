@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 2300,
 		buildcostmetal = 170,
 		builder = false,
-		buildpic = "CORWOLV.png",
+		buildpic = "corwolv.png",
 		buildtime = 3254,
 		canattack = true,
 		canguard = true,
@@ -64,6 +64,7 @@ return {
 		customparams = {
 			buildpic = "CORWOLV.png",
 			canareaattack = 1,
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
@@ -125,7 +126,9 @@ return {
 			corwolv_gun = {
 				accuracy = 300,
 				areaofeffect = 68,
+				avoidfeature = false,
 				cegtag = "Trail_cannon",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH4",
@@ -143,6 +146,8 @@ return {
 				size = 1.57,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splssml",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy3",
 				stages = 20,
 				turret = true,

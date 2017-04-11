@@ -51,7 +51,6 @@ local GL_COLOR_BUFFER_BIT = GL.COLOR_BUFFER_BIT
 local GL_PROJECTION = GL.PROJECTION
 local GL_MODELVIEW = GL.MODELVIEW
 
-
 local function Color(c)
 	glColor(c[1],c[2],c[3],c[4])
 end
@@ -80,7 +79,10 @@ local function Border(px,py,sx,sy,width,c)
 	elseif (width == 0) then
 		return
 	end
-	
+	if (c) and c[4] == 0 then
+		--Spring.Echo("DRAW CALL CULLED")
+		return 
+	end
 	glPushMatrix()
 	if (c) then
 		glColor(c[1],c[2],c[3],c[4])

@@ -7,6 +7,7 @@ return {
 		buildcostenergy = 4405,
 		buildcostmetal = 605,
 		builder = false,
+		buildpic = "armorca.png",
 		buildtime = 10112,
 		canattack = true,
 		canguard = true,
@@ -58,6 +59,7 @@ return {
 		unitnumber = 654,
 		workertime = 0,
 		customparams = {
+			faction = "ARM",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
@@ -129,7 +131,9 @@ return {
 		weapondefs = {
 			arm_roy = {
 				areaofeffect = 32,
+				avoidfeature = false,
 				cegtag = "Trail_cannon",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH3",
@@ -146,6 +150,8 @@ return {
 				size = 1.16,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannon3",
 				stages = 20,
 				turret = true,

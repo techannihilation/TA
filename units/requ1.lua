@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 45000,
 		buildcostmetal = 4100,
 		builder = false,
-		buildpic = "REQU1.png",
+		buildpic = "requ1.png",
 		buildtime = 98945,
 		canattack = true,
 		canbuild = true,
@@ -64,6 +64,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "REQU1.png",
+			faction = "CORE",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		sfxtypes = {
@@ -100,9 +101,11 @@ return {
 		weapondefs = {
 			cortron_weapon2 = {
 				areaofeffect = 480,
+				avoidfeature = false,
 				commandfire = true,
-				craterboost = 1,
-				cratermult = 1,
+				craterareaofeffect = 720,
+				craterboost = 0.12,
+				cratermult = 0.12,
 				edgeeffectiveness = 0.6,
 				energypershot = 50000,
 				explosiongenerator = "custom:FLASHNUKE480",

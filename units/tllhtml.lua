@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 245000,
 		buildcostmetal = 17250,
 		builder = false,
+		buildpic = "tllhtml.png",
 		buildtime = 91545,
 		canattack = true,
 		canguard = true,
@@ -62,6 +63,9 @@ return {
 		unitnumber = 942,
 		upright = true,
 		workertime = 0,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -146,6 +150,8 @@ return {
 		weapondefs = {
 			tll_gauss2 = {
 				areaofeffect = 125,
+				avoidfeature = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				id = 244,
@@ -157,6 +163,8 @@ return {
 				rgbcolor = "0.93 0.74 0",
 				size = 2.04,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy1",
 				turret = true,
 				weapontype = "Cannon",
@@ -172,6 +180,7 @@ return {
 				avoidfeature = false,
 				burst = 8,
 				burstrate = 0.11,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				dance = 30,
@@ -191,6 +200,8 @@ return {
 				reloadtime = 6,
 				smoketrail = true,
 				soundhit = "TAWF114b",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "TAWF114a",
 				startvelocity = 200,
 				texture2 = "coresmoketrail",

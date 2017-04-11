@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "armrl_aoplane.dds",
-		buildpic = "ARMRL.png",
+		buildpic = "armrl.png",
 		buildtime = 1843,
 		canattack = true,
 		canstop = 1,
@@ -57,6 +57,7 @@ return {
 		yardmap = "ooooooooo",
 		customparams = {
 			buildpic = "ARMRL.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
@@ -132,8 +133,10 @@ return {
 		weapondefs = {
 			armrl_missile = {
 				areaofeffect = 48,
+				avoidfeature = false,
 				canattackground = false,
 				cegtag = "Arm_Def_AA_Rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -149,6 +152,8 @@ return {
 				reloadtime = 1.7,
 				smoketrail = true,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "rockhvy2",
 				startvelocity = 400,
 				texture1 = "null",

@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 32500,
 		buildcostmetal = 2700,
 		builder = false,
+		buildpic = "armbull2.png",
 		buildtime = 36125,
 		canattack = true,
 		canguard = true,
@@ -55,6 +56,7 @@ return {
 		unitnumber = 229,
 		workertime = 0,
 		customparams = {
+			faction = "ARM",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
@@ -126,7 +128,9 @@ return {
 		weapondefs = {
 			arm_bull2 = {
 				areaofeffect = 140,
-				cegtag = "Trail_cannon",
+				avoidfeature = false,
+				cegtag = "Trail_cannon_med",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -144,6 +148,8 @@ return {
 				size = 1.83,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed21",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannon3",
 				stages = 20,
 				thickness = 2,
@@ -158,6 +164,10 @@ return {
 			},
 			armrogue_cannon = {
 				areaofeffect = 8,
+				avoidfeature = false,
+				craterareaofeffect = 0,
+				craterboost = 0,
+				cratermult = 0,
 				id = 243,
 				name = "Rogue Gatling Cannon",
 				range = 350,
@@ -165,6 +175,8 @@ return {
 				rgbcolor = "0.86 0.62 0",
 				size = 0.82,
 				soundhitdry = "gatlhit",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "gungatl",
 				soundtrigger = true,
 				sprayangle = 1024,

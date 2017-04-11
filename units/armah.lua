@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 4160,
 		buildcostmetal = 229,
 		builder = false,
-		buildpic = "ARMAH.png",
+		buildpic = "armah.png",
 		buildtime = 3565,
 		canattack = true,
 		canguard = true,
@@ -58,6 +58,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "ARMAH.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
@@ -131,10 +132,12 @@ return {
 		weapondefs = {
 			armah_weapon = {
 				areaofeffect = 48,
+				avoidfeature = false,
 				burst = 3,
 				burstrate = 0.2,
 				canattackground = false,
 				cegtag = "Arm_Def_AA_Rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -149,6 +152,8 @@ return {
 				reloadtime = 2,
 				smoketrail = true,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "rockhvy2",
 				startvelocity = 450,
 				texture1 = "null",
@@ -173,8 +178,10 @@ return {
 			},
 			bogus_missile = {
 				areaofeffect = 48,
+				avoidfeature = false,
 				canattackground = false,
 				cegtag = "Arm_Def_AA_Rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				impulseboost = 0,
@@ -183,6 +190,8 @@ return {
 				name = "Missiles",
 				range = 800,
 				reloadtime = 0.5,
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				startvelocity = 450,
 				tolerance = 9000,
 				turnrate = 33000,

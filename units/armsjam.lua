@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 2048,
 		buildcostmetal = 139,
 		builder = false,
-		buildpic = "ARMSJAM.png",
+		buildpic = "armsjam.png",
 		buildtime = 6700,
 		canattack = true,
 		canguard = true,
@@ -59,6 +59,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "ARMSJAM.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {

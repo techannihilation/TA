@@ -7,6 +7,7 @@ return {
 		buildinggrounddecalsizex = 10,
 		buildinggrounddecalsizey = 10,
 		buildinggrounddecaltype = "tllaap_aoplane.dds",
+		buildpic = "tllaap.png",
 		buildtime = 30000,
 		canmove = true,
 		canpatrol = true,
@@ -58,6 +59,7 @@ return {
 			[7] = "tllrobber",
 		},
 		customparams = {
+			faction = "TLL",
 			providetech = "T2 Factory",
 		},
 		featuredefs = {

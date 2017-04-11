@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 11,
 		buildinggrounddecalsizey = 11,
 		buildinggrounddecaltype = "amgeo_aoplane.dds",
-		buildpic = "AMGEO.png",
+		buildpic = "amgeo.png",
 		buildtime = 120000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		collisionvolumeoffsets = "-2 -2 6",
@@ -52,6 +52,7 @@ return {
 		yardmap = "ooooo ooooo ooooo ooooo ooooo oGGGo oGGGo ooooo",
 		customparams = {
 			buildpic = "AMGEO.png",
+			faction = "ARM",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

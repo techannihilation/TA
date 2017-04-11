@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 109,
 		builddistance = 112,
 		builder = true,
-		buildpic = "CORNECRO.png",
+		buildpic = "cornecro.png",
 		buildtime = 2400,
 		canassist = false,
 		canmove = true,
@@ -61,6 +61,7 @@ return {
 		workertime = 200,
 		customparams = {
 			buildpic = "CORNECRO.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

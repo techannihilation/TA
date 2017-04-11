@@ -4,6 +4,7 @@ return {
 		buildcostenergy = 16600,
 		buildcostmetal = 2720,
 		builder = false,
+		buildpic = "tllkrak.png",
 		buildtime = 25000,
 		canattack = true,
 		canguard = true,
@@ -41,6 +42,9 @@ return {
 		unitname = "tllkrak",
 		unitnumber = 882,
 		yardmap = "wwww wwww wwww wwww",
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -117,7 +121,9 @@ return {
 			floating_plasma = {
 				accuracy = 400,
 				areaofeffect = 150,
-				cegtag = "Trail_cannon",
+				avoidfeature = false,
+				cegtag = "Trail_cannon_med",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.25,
@@ -136,6 +142,8 @@ return {
 				size = 2.21,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy5",
 				stages = 20,
 				turret = true,

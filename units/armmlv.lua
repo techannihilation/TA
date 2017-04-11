@@ -7,7 +7,7 @@ return {
 		buildcostmetal = 57,
 		builddistance = 96,
 		builder = true,
-		buildpic = "ARMMLV.png",
+		buildpic = "armmlv.png",
 		buildtime = 3519,
 		canassist = false,
 		canguard = false,
@@ -80,6 +80,7 @@ return {
 		},
 		customparams = {
 			buildpic = "ARMMLV.png",
+			faction = "arm",
 		},
 		featuredefs = {
 			dead = {
@@ -163,7 +164,9 @@ return {
 		weapondefs = {
 			minesweep = {
 				areaofeffect = 512,
+				avoidfeature = false,
 				collidefriendly = false,
+				craterareaofeffect = 768,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.25,

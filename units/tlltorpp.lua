@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 2347,
 		buildcostmetal = 533,
 		builder = false,
+		buildpic = "tlltorpp.png",
 		buildtime = 15227,
 		canattack = true,
 		canfly = true,
@@ -54,6 +55,9 @@ return {
 		unitname = "tlltorpp",
 		unitnumber = 929,
 		workertime = 0,
+		customparams = {
+			faction = "TLL",
+		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
@@ -88,10 +92,12 @@ return {
 		weapondefs = {
 			armair_torpedo = {
 				areaofeffect = 16,
+				avoidfeature = false,
 				avoidfriendly = false,
 				burnblow = true,
 				collidefriendly = false,
 				commandfire = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -104,6 +110,7 @@ return {
 				range = 500,
 				reloadtime = 8,
 				soundhitdry = "xplodep2",
+				soundhitwet = "xplodep2",
 				soundstart = "bombrel",
 				startvelocity = 100,
 				tolerance = 6000,

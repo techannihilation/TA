@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 100000,
 		buildcostmetal = 1550,
 		builder = false,
-		buildpic = "CORMABM.png",
+		buildpic = "cormabm.png",
 		buildtime = 90000,
 		canguard = true,
 		canmove = true,
@@ -62,6 +62,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "CORMABM.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
@@ -137,9 +138,11 @@ return {
 		weapondefs = {
 			cormabm_weapon = {
 				areaofeffect = 420,
+				avoidfeature = false,
 				avoidfriendly = false,
 				collidefriendly = false,
 				coverage = 1680,
+				craterareaofeffect = 630,
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 7750,
@@ -157,6 +160,8 @@ return {
 				reloadtime = 2,
 				smoketrail = true,
 				soundhitdry = "xplomed4",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "Rockhvy1",
 				stockpile = true,
 				stockpiletime = 90,

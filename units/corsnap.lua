@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 3313,
 		buildcostmetal = 316,
 		builder = false,
-		buildpic = "CORSNAP.png",
+		buildpic = "corsnap.png",
 		buildtime = 3791,
 		canattack = true,
 		canguard = true,
@@ -59,6 +59,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "CORSNAP.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
@@ -132,7 +133,9 @@ return {
 		weapondefs = {
 			armanac_weapon = {
 				areaofeffect = 32,
+				avoidfeature = false,
 				cegtag = "Trail_cannon",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -149,6 +152,8 @@ return {
 				size = 1.16,
 				sizedecay = -0.15,
 				soundhitdry = "xplosml3",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "canlite3",
 				stages = 20,
 				turret = true,

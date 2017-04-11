@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 62000,
 		buildcostmetal = 3250,
 		builder = false,
-		buildpic = "ARMSHOCK.png",
+		buildpic = "armshock.png",
 		buildtime = 61218,
 		canattack = true,
 		canguard = true,
@@ -54,6 +54,7 @@ return {
 		unitname = "armshock",
 		customparams = {
 			buildpic = "ARMSHOCK.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
@@ -131,8 +132,9 @@ return {
 				areaofeffect = 192,
 				avoidfeature = false,
 				avoidfriendly = false,
-				cegtag = "Trail_cannon",
+				cegtag = "Trail_cannon_med",
 				collidefriendly = false,
+				craterareaofeffect = 288,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.5,
@@ -152,6 +154,8 @@ return {
 				size = 2.75,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy5",
 				stages = 20,
 				targetborder = 1,

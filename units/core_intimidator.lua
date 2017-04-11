@@ -52,6 +52,7 @@ return {
 		customparams = {
 			buildpic = "core_intimidator.png",
 			canareaattack = 1,
+			faction = "Core",
 		},
 		featuredefs = {
 			corint_dead = {
@@ -129,7 +130,9 @@ return {
 				accuracy = 300,
 				alphadecay = 0.01,
 				areaofeffect = 850,
+				avoidfeature = false,
 				cegtag = "vulcanfx1",
+				craterareaofeffect = 1275,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 50,

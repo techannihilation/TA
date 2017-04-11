@@ -3,6 +3,7 @@ return {
 		buildcostenergy = 19097,
 		buildcostmetal = 3893,
 		builder = true,
+		buildpic = "tllplat.png",
 		buildtime = 21483,
 		canmove = true,
 		canpatrol = true,
@@ -54,6 +55,7 @@ return {
 			[5] = "tlltorpcop",
 		},
 		customparams = {
+			faction = "TLL",
 			providetech = "T2 Factory",
 		},
 		featuredefs = {

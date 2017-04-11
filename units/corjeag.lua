@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 2293,
 		buildcostmetal = 187,
 		builder = false,
+		buildpic = "corjeag.png",
 		buildtime = 5145,
 		canattack = true,
 		canguard = true,
@@ -61,6 +62,9 @@ return {
 		unitname = "corjeag",
 		unitnumber = 707,
 		workertime = 0,
+		customparams = {
+			faction = "CORE",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -113,8 +117,10 @@ return {
 		weapondefs = {
 			corjeag_missile = {
 				areaofeffect = 64,
+				avoidfeature = false,
 				canattackground = false,
 				cegtag = "Core_Def_AA_Rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				firestarter = 60,
@@ -129,6 +135,8 @@ return {
 				reloadtime = 1,
 				smoketrail = true,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splssml",
+				soundhitwetvolume = 0.6,
 				soundstart = "JeagerAAMissiles",
 				startvelocity = 820,
 				texture1 = "null",

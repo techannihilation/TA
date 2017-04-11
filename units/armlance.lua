@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 7030,
 		buildcostmetal = 340,
 		builder = false,
-		buildpic = "ARMLANCE.png",
+		buildpic = "armlance.png",
 		buildtime = 15000,
 		canattack = true,
 		canfly = true,
@@ -56,6 +56,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "ARMLANCE.png",
+			faction = "ARM",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
@@ -91,10 +92,12 @@ return {
 		weapondefs = {
 			armair_torpedo = {
 				areaofeffect = 16,
+				avoidfeature = false,
 				avoidfriendly = false,
 				burnblow = true,
 				collidefriendly = false,
 				commandfire = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -108,6 +111,7 @@ return {
 				range = 500,
 				reloadtime = 8,
 				soundhitdry = "xplodep2",
+				soundhitwet = "xplodep2",
 				soundstart = "bombrel",
 				startvelocity = 100,
 				tolerance = 6000,

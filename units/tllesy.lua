@@ -7,6 +7,7 @@ return {
 		buildinggrounddecalsizex = 18,
 		buildinggrounddecalsizey = 18,
 		buildinggrounddecaltype = "tllesy_aoplane.dds",
+		buildpic = "tllesy.png",
 		buildtime = 65400,
 		canmove = true,
 		canpatrol = true,
@@ -45,16 +46,16 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		unitname = "tllesy",
-		--usebuildinggrounddecal = true,
 		waterline = 65,
 		workertime = 400,
 		yardmap = "wCCCCCCCCCCCCCwcCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCc",
 		buildoptions = {
 			[1] = "tllasgard",
 			[2] = "tllhcar",
-			[3] = "uppercut",
+			[3] = "tllswordfish",
 		},
 		customparams = {
+			faction = "TLL",
 			providetech = "T3 Factory",
 		},
 		featuredefs = {

@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 2195,
 		buildcostmetal = 337,
 		builder = false,
-		buildpic = "CORTL.png",
+		buildpic = "cortl.png",
 		buildtime = 4233,
 		canattack = true,
 		canstop = 1,
@@ -49,6 +49,7 @@ return {
 		yardmap = "wwwwwwwww",
 		customparams = {
 			buildpic = "CORTL.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
@@ -105,9 +106,11 @@ return {
 		weapondefs = {
 			coax_torpedo = {
 				areaofeffect = 16,
+				avoidfeature = false,
 				avoidfriendly = false,
 				burnblow = true,
 				collidefriendly = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -120,6 +123,7 @@ return {
 				range = 600,
 				reloadtime = 1.9,
 				soundhitdry = "xplodep2",
+				soundhitwet = "xplodep2",
 				soundstart = "torpedo1",
 				startvelocity = 200,
 				tracks = true,

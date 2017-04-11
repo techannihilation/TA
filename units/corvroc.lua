@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 6688,
 		buildcostmetal = 882,
 		builder = false,
-		buildpic = "CORVROC.png",
+		buildpic = "corvroc.png",
 		buildtime = 15002,
 		canattack = true,
 		canguard = true,
@@ -65,6 +65,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "CORVROC.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
@@ -140,7 +141,9 @@ return {
 		weapondefs = {
 			cortruck_rocket = {
 				areaofeffect = 100,
+				avoidfeature = false,
 				cegtag = "CORRAVENTRAIL",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.5,
@@ -157,6 +160,8 @@ return {
 				reloadtime = 20,
 				smoketrail = false,
 				soundhitdry = "xplomed4",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "Rockhvy1",
 				texture1 = "null",
 				texture2 = "null",

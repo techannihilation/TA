@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 31199,
 		buildcostmetal = 3061,
 		builder = false,
+		buildpic = "armkamo.png",
 		buildtime = 31000,
 		canattack = true,
 		canfly = true,
@@ -55,6 +56,7 @@ return {
 		unitname = "armkamo",
 		workertime = 0,
 		customparams = {
+			faction = "ARM",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		sfxtypes = {
@@ -96,9 +98,11 @@ return {
 		weapondefs = {
 			vtol_emg6 = {
 				areaofeffect = 8,
+				avoidfeature = false,
 				burst = 3,
 				burstrate = 0.1,
 				cegtag = "Trail_emg_upg",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:armbrawl_explosion",
@@ -112,6 +116,8 @@ return {
 				reloadtime = 0.475,
 				rgbcolor = "1 0.9 0.49",
 				size = 0.82,
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "brawlemg",
 				sprayangle = 1024,
 				tolerance = 6000,
@@ -130,8 +136,10 @@ return {
 			},
 			vtol_rocket5 = {
 				areaofeffect = 128,
+				avoidfeature = false,
 				burnblow = true,
 				cegtag = "Core_Trail_rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:thermite_explosion",
@@ -145,6 +153,8 @@ return {
 				rgbcolor = "0.63 0.25 0",
 				size = 2.06,
 				soundhitdry = "xplosml2",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "rocklit1",
 				soundtrigger = true,
 				startvelocity = 225,

@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 12000,
 		buildcostmetal = 850,
 		builder = false,
+		buildpic = "tlltraq.png",
 		buildtime = 19000,
 		canattack = true,
 		canguard = true,
@@ -64,6 +65,9 @@ return {
 		unitnumber = 345665,
 		upright = true,
 		workertime = 0,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -133,6 +137,10 @@ return {
 		weapondefs = {
 			tlltraq_weapon = {
 				areaofeffect = 8,
+				avoidfeature = false,
+				craterareaofeffect = 0,
+				craterboost = 0,
+				cratermult = 0,
 				explosiongenerator = "custom:FLASH1",
 				impactonly = 1,
 				name = "GaussCannon",
@@ -140,6 +148,8 @@ return {
 				range = 365,
 				reloadtime = 1,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "Mavgun2",
 				tolerance = 4000,
 				turret = true,

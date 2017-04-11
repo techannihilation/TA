@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 1547,
 		buildcostmetal = 347,
 		builder = false,
+		buildpic = "tllriot.png",
 		buildtime = 5840,
 		canattack = true,
 		canguard = true,
@@ -55,6 +56,9 @@ return {
 		turnrate = 210,
 		unitname = "tllriot",
 		workertime = 0,
+		customparams = {
+			faction = "ARM",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -127,9 +131,13 @@ return {
 		weapondefs = {
 			tllriot_cannon = {
 				areaofeffect = 185,
+				avoidfeature = false,
 				burnblow = true,
 				cegtag = "banthablaster",
 				corethickness = 0.5,
+				craterareaofeffect = 277.5,
+				craterboost = 0,
+				cratermult = 0,
 				edgeeffectiveness = 0.25,
 				energypershot = 25,
 				explosiongenerator = "custom:lightningexplo",
@@ -144,6 +152,8 @@ return {
 				rgbcolor = "0.5 0.5 1.0",
 				size = 2.5,
 				soundhitdry = "debris4",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "sonicwv1",
 				tolerance = 2000,
 				turret = true,

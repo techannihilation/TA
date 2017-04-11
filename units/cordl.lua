@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "cordl_aoplane.dds",
-		buildpic = "CORDL.png",
+		buildpic = "cordl.png",
 		buildtime = 4280,
 		canattack = true,
 		canstop = 1,
@@ -56,6 +56,7 @@ return {
 		yardmap = "oooo",
 		customparams = {
 			buildpic = "CORDL.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
@@ -132,11 +133,13 @@ return {
 		},
 		weapondefs = {
 			coax_depthcharge = {
+				avoidfeature = false,
 				avoidfriendly = false,
 				bouncerebound = 0.6,
 				bounceslip = 0.6,
 				burnblow = true,
 				collidefriendly = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -151,6 +154,7 @@ return {
 				range = 580,
 				reloadtime = 1.8,
 				soundhitdry = "xplodep2",
+				soundhitwet = "xplodep2",
 				soundstart = "torpedo1",
 				startvelocity = 300,
 				tracks = true,

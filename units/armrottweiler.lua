@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 5550,
 		buildcostmetal = 720,
 		builder = false,
+		buildpic = "armrottweiler.png",
 		buildtime = 8540,
 		canattack = true,
 		canguard = true,
@@ -65,6 +66,7 @@ return {
 		unitnumber = 6625,
 		workertime = 0,
 		customparams = {
+			faction = "ARM",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},
 		featuredefs = {
@@ -140,7 +142,9 @@ return {
 		weapondefs = {
 			armrottweiler_cannon = {
 				areaofeffect = 96,
+				avoidfeature = false,
 				burnblow = true,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.75,
@@ -154,6 +158,8 @@ return {
 				rgbcolor = "0.96 0.79 0",
 				size = 1.82,
 				soundhitdry = "xplosml3",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "canlite3",
 				turret = true,
 				weapontype = "Cannon",
@@ -166,7 +172,11 @@ return {
 			},
 			armrottweiler_mg = {
 				areaofeffect = 8,
+				avoidfeature = false,
 				burst = 2,
+				craterareaofeffect = 0,
+				craterboost = 0,
+				cratermult = 0,
 				explosiongenerator = "custom:popupshine",
 				id = 243,
 				model = "bullet4",
@@ -176,6 +186,8 @@ return {
 				rgbcolor = "0.86 0.62 0",
 				size = 0.82,
 				soundhitdry = "gatlhit",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "gungatl",
 				soundtrigger = true,
 				sprayangle = 1024,

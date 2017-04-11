@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 451,
 		buildcostmetal = 23,
 		builder = false,
+		buildpic = "tllsonar.png",
 		buildtime = 931,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "dead",
@@ -41,6 +42,9 @@ return {
 		waterline = 0,
 		workertime = 0,
 		yardmap = "wwww",
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 18450,
 		buildcostmetal = 2125,
 		builder = false,
+		buildpic = "armcd.png",
 		buildtime = 21000,
 		canattack = true,
 		canguard = true,
@@ -60,6 +61,7 @@ return {
 		upright = true,
 		workertime = 0,
 		customparams = {
+			faction = "ARM",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
@@ -131,13 +133,20 @@ return {
 		weapondefs = {
 			hvy_laser_weapon = {
 				areaofeffect = 8,
+				craterareaofeffect = 0,
+				craterboost = 0,
+				cratermult = 0,
 				energypershot = 250,
 				id = 99,
+				impulseboost = 0,
+				impulsefactor = 0,
 				name = "Heavy Laser",
 				range = 450,
 				reloadtime = 0.5,
 				rgbcolor = "1.000 0.000 0.412",
 				soundhitdry = "lashit",
+				soundhitwet = "sizzle",
+				soundhitwetvolume = 0.5,
 				soundstart = "lasrlit1",
 				turret = true,
 				weapontype = "LaserCannon",

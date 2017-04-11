@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 16900,
 		buildcostmetal = 3285,
 		builder = false,
+		buildpic = "tllthumper.png",
 		buildtime = 30000,
 		canattack = true,
 		canguard = true,
@@ -48,6 +49,9 @@ return {
 		turnrate = 200,
 		unitname = "tllthumper",
 		unitnumber = 834,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -117,7 +121,9 @@ return {
 		weapondefs = {
 			tll_thumper = {
 				areaofeffect = 312,
-				cegtag = "Trail_cannon",
+				avoidfeature = false,
+				cegtag = "Trail_cannon_med",
+				craterareaofeffect = 468,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH96",
@@ -134,6 +140,8 @@ return {
 				size = 2.97,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed4",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy2",
 				stages = 20,
 				turret = true,

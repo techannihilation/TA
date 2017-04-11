@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 10647,
 		buildcostmetal = 694,
 		builder = false,
+		buildpic = "corgfbt.png",
 		buildtime = 9523,
 		canattack = true,
 		canguard = true,
@@ -63,6 +64,7 @@ return {
 		unitnumber = 397,
 		workertime = 0,
 		customparams = {
+			faction = "CORE",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},
 		featuredefs = {
@@ -134,6 +136,7 @@ return {
 		weapondefs = {
 			fireball = {
 				areaofeffect = 168,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				duration = 0.06,
@@ -147,6 +150,8 @@ return {
 				rgbcolor = "1.000 0.071 0.000",
 				smoketrail = true,
 				soundhitdry = "Burn02",
+				soundhitwet = "sizzle",
+				soundhitwetvolume = 0.5,
 				soundstart = "Mavgun1",
 				soundtrigger = true,
 				sprayangle = 1024,

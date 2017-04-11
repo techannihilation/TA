@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 6187,
 		buildcostmetal = 587,
 		builder = false,
+		buildpic = "tllpuncher.png",
 		buildtime = 12158,
 		canattack = true,
 		canguard = true,
@@ -49,6 +50,9 @@ return {
 		turnrate = 550,
 		unitname = "tllpuncher",
 		unitnumber = 840,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -119,9 +123,11 @@ return {
 			tllflak_spider = {
 				accuracy = 1000,
 				areaofeffect = 140,
+				avoidfeature = false,
 				burnblow = true,
 				canattackground = false,
 				cegtag = "tllflak-fx",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.85,
@@ -137,6 +143,8 @@ return {
 				rgbcolor = "1.0 0.5 0.0",
 				size = 4,
 				soundhitdry = "flakhit",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "flakfire",
 				turret = true,
 				weapontimer = 1,

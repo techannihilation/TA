@@ -7,6 +7,7 @@ return {
 		buildcostenergy = 185000,
 		buildcostmetal = 9600,
 		builder = false,
+		buildpic = "armmcv.png",
 		buildtime = 179600,
 		canattack = true,
 		canguard = true,
@@ -65,6 +66,9 @@ return {
 		unitname = "armmcv",
 		unitnumber = 22134,
 		workertime = 0,
+		customparams = {
+			faction = "ARM",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -135,7 +139,9 @@ return {
 			arm_batsaftx = {
 				accuracy = 350,
 				areaofeffect = 48,
-				cegtag = "Trail_cannon",
+				avoidfeature = false,
+				cegtag = "Trail_cannon_med",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASHSMALLUNIT",
@@ -152,6 +158,8 @@ return {
 				size = 1.82,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy1",
 				stages = 20,
 				tolerance = 5000,
@@ -166,7 +174,9 @@ return {
 			rave_missile = {
 				acceleration = 0.3,
 				areaofeffect = 48,
+				avoidfeature = false,
 				cegtag = "titan_trail",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:Explosion_Medium_VLight",
@@ -182,6 +192,8 @@ return {
 				rgbcolor = "1.000 0.000 0.000",
 				smoketrail = true,
 				soundhitdry = "xplosml2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "rocklit1",
 				startvelocity = 220,
 				texture1 = "null",

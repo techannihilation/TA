@@ -9,6 +9,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "tllsam_aoplane.dds",
+		buildpic = "tllsam.png",
 		buildtime = 8413,
 		canattack = true,
 		canstop = 1,
@@ -46,6 +47,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "ooooooooo",
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -114,10 +118,12 @@ return {
 		weapondefs = {
 			packo_missile = {
 				areaofeffect = 16,
+				avoidfeature = false,
 				burst = 2,
 				burstrate = 0.2,
 				canattackground = false,
 				cegtag = "Tll_Def_AA_Rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 0,
@@ -136,6 +142,8 @@ return {
 				reloadtime = 1.7,
 				smoketrail = true,
 				soundhitdry = "packohit",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "packolau",
 				soundtrigger = true,
 				startvelocity = 520,

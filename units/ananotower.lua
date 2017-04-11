@@ -10,6 +10,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "ananotower_aoplane.dds",
+		buildpic = "ananotower.png",
 		buildtime = 100000,
 		canassist = true,
 		canguard = true,
@@ -68,6 +69,9 @@ return {
 			[6] = "armsilo1",
 			[7] = "armbrtha1",
 			[8] = "armvulc2",
+		},
+		customparams = {
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {

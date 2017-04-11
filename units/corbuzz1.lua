@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 19,
 		buildinggrounddecalsizey = 19,
 		buildinggrounddecaltype = "corbuzz1_aoplane.dds",
-		buildpic = "CORBUZZ.png",
+		buildpic = "corbuzz1.png",
 		buildtime = 2780630,
 		canattack = true,
 		canstop = 1,
@@ -60,6 +60,7 @@ return {
 		yardmap = "oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo ",
 		customparams = {
 			buildpic = "CORBUZZ.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
@@ -118,9 +119,11 @@ return {
 			corbuzz_weapon1 = {
 				accuracy = 450,
 				areaofeffect = 256,
+				avoidfeature = false,
 				avoidground = false,
-				cegtag = "Trail_cannon",
+				cegtag = "Trail_cannon_large",
 				collidefriendly = false,
+				craterareaofeffect = 384,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.8,
@@ -139,6 +142,8 @@ return {
 				size = 4.5,
 				sizedecay = -0.15,
 				soundhitdry = "rflrpc3",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "XPLONUK4",
 				stages = 20,
 				turret = true,

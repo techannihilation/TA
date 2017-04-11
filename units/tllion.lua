@@ -48,6 +48,7 @@ return {
 		yardmap = "oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo ",
 		customparams = {
 			buildpic = "tllion.png",
+			faction = "TLL",
 		},
 		featuredefs = {
 			dead = {
@@ -120,10 +121,14 @@ return {
 		weapondefs = {
 			tll_ultimate_nuke = {
 				areaofeffect = 2820,
+				avoidfeature = false,
 				avoidfriendly = false,
 				cegtag = "Trail_nuke",
 				collidefriendly = false,
 				commandfire = true,
+				craterareaofeffect = 4230,
+				craterboost = 0,
+				cratermult = 0,
 				edgeeffectiveness = 0.5,
 				energypershot = 4200000,
 				firestarter = 100,

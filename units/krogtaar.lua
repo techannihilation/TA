@@ -59,6 +59,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "krogtaar.png",
+			faction = "CORE",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
@@ -137,8 +138,10 @@ return {
 			cor_taar_rc = {
 				accuracy = 200,
 				areaofeffect = 64,
+				avoidfeature = false,
 				burnblow = true,
 				cegtag = "krogtaarblaster",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:Explosion_Light_Plasma-2",
@@ -152,6 +155,8 @@ return {
 				rgbcolor = "1 0.48 0.26",
 				size = 1.5,
 				soundhitdry = "xplomed3",
+				soundhitwet = "splssml",
+				soundhitwetvolume = 0.6,
 				soundstart = "Mavgun2",
 				sprayangle = 200,
 				tolerance = 10000,

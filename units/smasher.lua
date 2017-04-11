@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 13050,
 		buildcostmetal = 1973,
 		builder = false,
+		buildpic = "smasher.png",
 		buildtime = 42000,
 		canattack = true,
 		canfly = true,
@@ -56,6 +57,9 @@ return {
 		unitname = "smasher",
 		unitnumber = 789012,
 		workertime = 0,
+		customparams = {
+			faction = "ARM",
+		},
 		sfxtypes = {
 			explosiongenerators = {
 				[1] = "custom:heli_muzzle",
@@ -93,9 +97,11 @@ return {
 		weapondefs = {
 			vtol_emg6 = {
 				areaofeffect = 8,
+				avoidfeature = false,
 				burst = 3,
 				burstrate = 0.1,
 				cegtag = "Trail_emg_upg",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:EMG_HIT",
@@ -109,6 +115,8 @@ return {
 				reloadtime = 0.475,
 				rgbcolor = "1 0.95 0.9",
 				size = 0.82,
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "brawlemg",
 				sprayangle = 1024,
 				tolerance = 6000,
@@ -124,8 +132,10 @@ return {
 			},
 			vtol_rocket5 = {
 				areaofeffect = 128,
+				avoidfeature = false,
 				burnblow = true,
 				cegtag = "Trail_cannon",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASHSMALLBUILDINGEX",
@@ -140,6 +150,8 @@ return {
 				size = 1.53,
 				sizedecay = -0.15,
 				soundhitdry = "xplosml3",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "canlite3",
 				soundtrigger = true,
 				stages = 20,

@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 6000,
 		buildcostmetal = 150,
 		builder = false,
-		buildpic = "CORSFIG.png",
+		buildpic = "corsfig.png",
 		buildtime = 5000,
 		canattack = true,
 		canfly = true,
@@ -58,6 +58,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "CORSFIG.png",
+			faction = "CORE",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
@@ -96,6 +97,8 @@ return {
 		weapondefs = {
 			corsfig_weapon = {
 				areaofeffect = 35,
+				avoidfeature = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -110,6 +113,8 @@ return {
 				reloadtime = 0.8,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "Rocklit3",
 				startvelocity = 420,
 				tolerance = 8000,

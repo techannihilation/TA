@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "corvipe_aoplane.dds",
-		buildpic = "CORVIPE.png",
+		buildpic = "corvipe.png",
 		buildtime = 19035,
 		canattack = true,
 		canstop = 1,
@@ -55,6 +55,7 @@ return {
 		yardmap = "ooooooooo",
 		customparams = {
 			buildpic = "CORVIPE.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
@@ -150,7 +151,9 @@ return {
 		weapondefs = {
 			vipersabot = {
 				areaofeffect = 30,
+				avoidfeature = false,
 				burnblow = true,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2nd",
@@ -164,6 +167,8 @@ return {
 				reloadtime = 1.5,
 				smoketrail = true,
 				soundhitdry = "SabotHit",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "SabotFire",
 				startvelocity = 700,
 				targetmoveerror = 0.2,

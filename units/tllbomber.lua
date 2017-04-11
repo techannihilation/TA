@@ -7,6 +7,7 @@ return {
 		buildcostenergy = 2838,
 		buildcostmetal = 182,
 		builder = false,
+		buildpic = "tllbomber.png",
 		buildtime = 6575,
 		canattack = true,
 		canfly = true,
@@ -55,6 +56,9 @@ return {
 		unitname = "tllbomber",
 		unitnumber = 918,
 		workertime = 0,
+		customparams = {
+			faction = "TLL",
+		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
@@ -98,6 +102,7 @@ return {
 				burstrate = 0.25,
 				collidefriendly = false,
 				commandfire = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.25,
@@ -112,6 +117,8 @@ return {
 				range = 1280,
 				reloadtime = 4,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "bombrel",
 				sprayangle = 300,
 				weapontype = "AircraftBomb",

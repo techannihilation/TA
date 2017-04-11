@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 8000,
 		buildcostmetal = 960,
 		builder = false,
-		buildpic = "armpcan.png",
+		buildpic = "corpcan.png",
 		buildtime = 45000,
 		canattack = true,
 		canstop = 1,
@@ -52,6 +52,7 @@ return {
 		customparams = {
 			buildpic = "armpcan.png",
 			canareaattack = 1,
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
@@ -131,10 +132,12 @@ return {
 			peewee_cannon = {
 				accuracy = 500,
 				areaofeffect = 20,
+				avoidfeature = false,
 				avoidfriendly = false,
 				collidefriendly = false,
-				craterboost = 0.15,
-				cratermult = 0.15,
+				craterareaofeffect = 0,
+				craterboost = 0.018,
+				cratermult = 0,
 				energypershot = 820,
 				explosiongenerator = "custom:DIRT3",
 				gravityaffected = "false",
@@ -147,6 +150,8 @@ return {
 				range = 1650,
 				reloadtime = 7,
 				soundhitdry = "xplonuk1",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "xplonuk4",
 				sprayangle = 1200,
 				turret = true,

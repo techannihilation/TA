@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 119000,
 		buildcostmetal = 7500,
 		builder = false,
+		buildpic = "armsiege.png",
 		buildtime = 140000,
 		canattack = true,
 		canguard = true,
@@ -59,6 +60,9 @@ return {
 		unitname = "armsiege",
 		unitnumber = 46,
 		workertime = 0,
+		customparams = {
+			faction = "ARM",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -129,9 +133,11 @@ return {
 			cannon_siege = {
 				accuracy = 750,
 				areaofeffect = 280,
+				avoidfeature = false,
 				burst = 1,
 				burstrate = 1.5,
-				cegtag = "Trail_cannon",
+				cegtag = "Trail_cannon_med",
+				craterareaofeffect = 420,
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 0,
@@ -147,6 +153,8 @@ return {
 				size = 2.75,
 				sizedecay = -0.15,
 				soundhitdry = "xplomas4",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "siege_fire",
 				stages = 20,
 				tolerance = 1000,

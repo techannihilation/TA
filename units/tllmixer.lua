@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 2326,
 		buildcostmetal = 142,
 		builder = false,
+		buildpic = "tllmixer.png",
 		buildtime = 6895,
 		canattack = false,
 		canguard = true,
@@ -51,6 +52,9 @@ return {
 		unitname = "tllmixer",
 		unitnumber = 909,
 		waterline = 4,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

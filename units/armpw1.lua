@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 957,
 		buildcostmetal = 91,
 		builder = false,
-		buildpic = "ARMPW1.png",
+		buildpic = "armpw1.png",
 		buildtime = 1420,
 		canattack = true,
 		canguard = true,
@@ -59,6 +59,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "ARMPW1.png",
+			faction = "ARM",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},
 		featuredefs = {
@@ -139,6 +140,7 @@ return {
 				burst = 3,
 				burstrate = 0.1,
 				cegtag = "Trail_emg_upg",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:EMG_HIT",
@@ -153,6 +155,8 @@ return {
 				reloadtime = 0.31,
 				rgbcolor = "0.86 0.62 0",
 				size = 1.8,
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "flashemg",
 				sprayangle = 1180,
 				tolerance = 5000,

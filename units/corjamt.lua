@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "corjamt_aoplane.dds",
-		buildpic = "CORJAMT.png",
+		buildpic = "corjamt.png",
 		buildtime = 4577,
 		canattack = false,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
@@ -54,6 +54,7 @@ return {
 		yardmap = "oooo",
 		customparams = {
 			buildpic = "CORJAMT.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

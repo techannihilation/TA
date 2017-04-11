@@ -8,6 +8,7 @@ return {
 		buildinggrounddecalsizex = 15,
 		buildinggrounddecalsizey = 15,
 		buildinggrounddecaltype = "ccovertopscentre_aoplane.dds",
+		buildpic = "ccovertopscentre.png",
 		buildtime = 240000,
 		canmove = true,
 		canpatrol = true,
@@ -52,6 +53,7 @@ return {
 			[1] = "cbuilderlvl3",
 		},
 		customparams = {
+			faction = "CORE",
 			providetech = "Advanced T1 Unit Research Centre,Advanced T2 Unit Research Centre,Advanced T3 Unit Research Centre,Advanced T4 Unit Research Centre",
 		},
 		featuredefs = {

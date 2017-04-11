@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "corpun_aoplane.dds",
-		buildpic = "CORPUN.png",
+		buildpic = "corpun.png",
 		buildtime = 15000,
 		canattack = true,
 		canstop = 1,
@@ -57,6 +57,7 @@ return {
 		yardmap = "oooooooooooooooo",
 		customparams = {
 			buildpic = "CORPUN.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
@@ -138,7 +139,9 @@ return {
 			corfixed_gun = {
 				accuracy = 75,
 				areaofeffect = 140,
-				cegtag = "Trail_cannon",
+				avoidfeature = false,
+				cegtag = "Trail_cannon_med",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.25,
@@ -156,6 +159,8 @@ return {
 				size = 2.14,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy5",
 				stages = 20,
 				targetmoveerror = 0.2,
@@ -172,7 +177,9 @@ return {
 			corfixed_gun_high = {
 				accuracy = 75,
 				areaofeffect = 208,
-				cegtag = "Trail_cannon",
+				avoidfeature = false,
+				cegtag = "Trail_cannon_med",
+				craterareaofeffect = 312,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.5,
@@ -191,6 +198,8 @@ return {
 				size = 2.53,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy5",
 				stages = 20,
 				turret = true,

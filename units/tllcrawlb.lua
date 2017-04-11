@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 2500,
 		buildcostmetal = 400,
 		builder = false,
+		buildpic = "tllcrawlb.png",
 		buildtime = 7900,
 		canattack = true,
 		canguard = true,
@@ -56,6 +57,9 @@ return {
 		unitname = "tllcrawlb",
 		unitnumber = 927,
 		workertime = 0,
+		customparams = {
+			faction = "TLL",
+		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",

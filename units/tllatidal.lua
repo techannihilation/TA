@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 1552,
 		buildcostmetal = 213,
 		builder = false,
+		buildpic = "tllatidal.png",
 		buildtime = 4580,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "dead",
@@ -39,6 +40,7 @@ return {
 		yardmap = "oooo oooo oooo oooo",
 		customparams = {
 			energymultiplier = 2.5,
+			faction = "TLL",
 		},
 		featuredefs = {
 			dead = {

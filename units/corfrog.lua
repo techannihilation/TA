@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 17067,
 		buildcostmetal = 960,
 		builder = false,
+		buildpic = "corfrog.png",
 		buildtime = 30005,
 		canattack = true,
 		canguard = true,
@@ -59,6 +60,9 @@ return {
 		unitnumber = 165,
 		upright = true,
 		workertime = 0,
+		customparams = {
+			faction = "CORE",
+		},
 		featuredefs = {
 			corsent_dead = {
 				blocking = true,
@@ -131,9 +135,11 @@ return {
 			armflak_gun = {
 				accuracy = 1000,
 				areaofeffect = 192,
+				avoidfeature = false,
 				burnblow = true,
 				canattackground = false,
 				cegtag = "corflak-fx",
+				craterareaofeffect = 288,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.85,
@@ -149,6 +155,8 @@ return {
 				rgbcolor = "1.0 0.5 0.0",
 				size = 5,
 				soundhitdry = "flakhit",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "flakfire",
 				turret = true,
 				weapontimer = 1,

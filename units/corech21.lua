@@ -8,7 +8,7 @@ return {
 		buildinggrounddecalsizex = 10,
 		buildinggrounddecalsizey = 10,
 		buildinggrounddecaltype = "corech21_aoplane.dds",
-		buildpic = "corech3.png",
+		buildpic = "corech21.png",
 		buildtime = 100000,
 		category = "LEVEL2 ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		collisionvolumeoffsets = "-1 -9 -5",
@@ -49,6 +49,7 @@ return {
 		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo",
 		customparams = {
 			buildpic = "corech3.png",
+			faction = "ARM",
 			ismorphingrc = true,
 			providetech = "Advanced T1 Unit Research Centre,Advanced T2 Unit Research Centre,Advanced T3 Unit Research Centre",
 		},

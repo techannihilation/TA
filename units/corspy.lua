@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 12215,
 		buildcostmetal = 166,
 		builder = false,
-		buildpic = "CORSPY.png",
+		buildpic = "corspy.png",
 		buildtime = 22247,
 		canguard = false,
 		canmove = true,
@@ -60,6 +60,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "CORSPY.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

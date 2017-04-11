@@ -8,6 +8,7 @@ return {
 		buildinggrounddecalsizex = 9,
 		buildinggrounddecalsizey = 9,
 		buildinggrounddecaltype = "armcp_aoplane.dds",
+		buildpic = "armcp.png",
 		buildtime = 13740,
 		canmove = true,
 		canpatrol = true,
@@ -59,6 +60,7 @@ return {
 			[5] = "armkamo",
 		},
 		customparams = {
+			faction = "ARM",
 			providetech = "T1 Factory",
 		},
 		featuredefs = {

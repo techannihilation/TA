@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 100800,
 		buildcostmetal = 7540,
 		builder = false,
+		buildpic = "akmech.png",
 		buildtime = 64000,
 		canattack = true,
 		canguard = true,
@@ -62,6 +63,7 @@ return {
 		upright = true,
 		workertime = 0,
 		customparams = {
+			faction = "ARM",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
@@ -136,6 +138,8 @@ return {
 		weapondefs = {
 			akmech_cannon = {
 				areaofeffect = 48,
+				avoidfeature = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				id = 229,
@@ -148,6 +152,8 @@ return {
 				rgbcolor = "1 0.88 0.26",
 				size = 2.2,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy1",
 				turret = true,
 				weapontype = "Cannon",
@@ -159,7 +165,11 @@ return {
 			},
 			akmech_rocket = {
 				areaofeffect = 192,
+				avoidfeature = false,
 				cegtag = "Core_Trail_rocket",
+				craterareaofeffect = 288,
+				craterboost = 0,
+				cratermult = 0,
 				edgeeffectiveness = 1,
 				explosiongenerator = "custom:explosion_medium_rocket-2",
 				firestarter = 1000,
@@ -171,6 +181,8 @@ return {
 				size = 2.5,
 				smoketrail = true,
 				soundhitdry = "explode3",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "rockhvy2",
 				soundtrigger = true,
 				startvelocity = 200,
@@ -191,6 +203,7 @@ return {
 			},
 			arm_lightlaser4 = {
 				areaofeffect = 8,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 300,
@@ -203,6 +216,8 @@ return {
 				reloadtime = 0.65,
 				rgbcolor = "0.1875 0.109375 0.65625",
 				soundhitdry = "xplosml3",
+				soundhitwet = "sizzle",
+				soundhitwetvolume = 0.5,
 				soundstart = "Lasrhvy2",
 				tolerance = 500,
 				turret = true,

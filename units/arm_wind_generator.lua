@@ -47,6 +47,7 @@ return {
 		yardmap = "oooooooooooooooo",
 		customparams = {
 			buildpic = "arm_wind_generator.png",
+			faction = "Arm",
 		},
 		featuredefs = {
 			core_wind_generator_heap = {

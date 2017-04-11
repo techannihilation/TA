@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 1280,
 		buildcostmetal = 192,
 		builder = false,
-		buildpic = "ARMJETH.png",
+		buildpic = "armjeth.png",
 		buildtime = 1831,
 		canattack = true,
 		canguard = true,
@@ -58,6 +58,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "ARMJETH.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
@@ -136,10 +137,12 @@ return {
 		weapondefs = {
 			armkbot_missile = {
 				areaofeffect = 48,
+				avoidfeature = false,
 				burst = 2,
 				burstrate = 0.25,
 				canattackground = false,
 				cegtag = "Arm_Def_AA_Rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -155,6 +158,8 @@ return {
 				reloadtime = 1.6,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "rocklit1",
 				startvelocity = 650,
 				texture1 = "null",

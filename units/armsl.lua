@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 10760,
 		buildcostmetal = 530,
 		builder = false,
-		buildpic = "ARMSL.png",
+		buildpic = "armsl.png",
 		buildtime = 12000,
 		canfly = true,
 		canguard = true,
@@ -71,6 +71,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "ARMSL.png",
+			faction = "CORE",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

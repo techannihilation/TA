@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 79000,
 		buildcostmetal = 5050,
 		builder = false,
+		buildpic = "tlllongshot.png",
 		buildtime = 200000,
 		canattack = true,
 		canguard = true,
@@ -56,6 +57,9 @@ return {
 		unitname = "tlllongshot",
 		unitnumber = 30119,
 		workertime = 0,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -126,7 +130,9 @@ return {
 				accuracy = 300,
 				alphadecay = 0.01,
 				areaofeffect = 250,
+				avoidfeature = false,
 				cegtag = "vulcanfx1",
+				craterareaofeffect = 375,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 50,
@@ -149,6 +155,8 @@ return {
 				size = 4,
 				sizedecay = -0.15,
 				soundhitdry = "EMGPULS1",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "xplonuk4",
 				stages = 20,
 				tolerance = 7000,

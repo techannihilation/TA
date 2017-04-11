@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 35200,
 		buildcostmetal = 2340,
 		builder = false,
-		buildpic = "TLLFFLAK.png",
+		buildpic = "tllfflak.png",
 		buildtime = 21000,
 		canattack = true,
 		canstop = 1,
@@ -49,6 +49,7 @@ return {
 		yardmap = "wwww wwww wwww wwww",
 		customparams = {
 			buildpic = "TLLFFLAK.png",
+			faction = "TLL",
 		},
 		featuredefs = {
 			dead = {
@@ -109,9 +110,11 @@ return {
 			tllflak_gun = {
 				accuracy = 1000,
 				areaofeffect = 192,
+				avoidfeature = false,
 				burnblow = true,
 				canattackground = false,
 				cegtag = "tllflak-fx",
+				craterareaofeffect = 288,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.85,
@@ -126,6 +129,8 @@ return {
 				rgbcolor = "1.0 0.5 0.0",
 				size = 5,
 				soundhitdry = "flakhit",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "flakfire",
 				turret = true,
 				weapontimer = 1,

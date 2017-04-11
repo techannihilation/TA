@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "corwin_aoplane.dds",
-		buildpic = "CORWIN.png",
+		buildpic = "corwin.png",
 		buildtime = 1687,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		collisionvolumeoffsets = "0 2 0",
@@ -52,6 +52,7 @@ return {
 		yardmap = "ooooooooo",
 		customparams = {
 			buildpic = "CORWIN.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

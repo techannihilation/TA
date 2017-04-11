@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 195000,
 		buildcostmetal = 11950,
 		builder = false,
-		buildpic = "ARMCRABE.png",
+		buildpic = "armcrabe.png",
 		buildtime = 198800,
 		canattack = true,
 		canguard = true,
@@ -65,6 +65,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "ARMCRABE.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
@@ -135,6 +136,10 @@ return {
 		weapondefs = {
 			armcrabe_gauss = {
 				areaofeffect = 150,
+				avoidfeature = false,
+				craterareaofeffect = 0,
+				craterboost = 0,
+				cratermult = 0,
 				explosiongenerator = "custom:Explosion_Medium_Rocket",
 				name = "Crabe Cannon",
 				range = 1050,
@@ -142,6 +147,8 @@ return {
 				rgbcolor = "0.76 0.46 0",
 				size = 3.04,
 				soundhitdry = "XPLOSML1",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "AMATIR",
 				tolerance = 500,
 				turret = true,
@@ -154,9 +161,13 @@ return {
 			},
 			armcrabe_missiles = {
 				areaofeffect = 120,
+				avoidfeature = false,
 				burst = 3,
 				burstrate = 0.3,
 				cegtag = "Trail_Large_Rocket",
+				craterareaofeffect = 0,
+				craterboost = 0,
+				cratermult = 0,
 				explosiongenerator = "custom:Explosion_Light_Plasma-2",
 				firestarter = 20,
 				id = 233,
@@ -166,6 +177,8 @@ return {
 				reloadtime = 12,
 				smoketrail = true,
 				soundhitdry = "tankahit",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "tankafire",
 				startvelocity = 640,
 				tolerance = 12000,

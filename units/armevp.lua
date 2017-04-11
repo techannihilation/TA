@@ -8,6 +8,7 @@ return {
 		buildinggrounddecalsizex = 9,
 		buildinggrounddecalsizey = 7,
 		buildinggrounddecaltype = "armevp_aoplane.dds",
+		buildpic = "armevp.png",
 		buildtime = 70000,
 		canmove = true,
 		canpatrol = true,
@@ -60,6 +61,7 @@ return {
 			[6] = "nsaagriz",
 		},
 		customparams = {
+			faction = "ARM",
 			providetech = "T3 Factory",
 		},
 		featuredefs = {

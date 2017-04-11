@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 672,
 		buildcostmetal = 21,
 		builder = false,
-		buildpic = "CORFDRAG.png",
+		buildpic = "corfdrag.png",
 		buildtime = 1000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "FLOATINGTEETH_CORE",
@@ -43,6 +43,7 @@ return {
 		yardmap = "wwww",
 		customparams = {
 			buildpic = "CORFDRAG.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			floatingteeth_core = {

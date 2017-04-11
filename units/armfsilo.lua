@@ -8,6 +8,7 @@ return {
 		buildinggrounddecalsizex = 19,
 		buildinggrounddecalsizey = 19,
 		buildinggrounddecaltype = "armfsilo_aoplane.dds",
+		buildpic = "armfsilo.png",
 		buildtime = 539899,
 		canattack = true,
 		canstop = 1,
@@ -47,6 +48,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo ",
+		customparams = {
+			faction = "ARM",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -119,10 +123,14 @@ return {
 		weapondefs = {
 			armfsilo_weapon = {
 				areaofeffect = 2820,
+				avoidfeature = false,
 				avoidfriendly = false,
 				cegtag = "Trail_nuke",
 				collidefriendly = false,
 				commandfire = true,
+				craterareaofeffect = 4230,
+				craterboost = 0,
+				cratermult = 0,
 				edgeeffectiveness = 0.5,
 				energypershot = 2800000,
 				firestarter = 100,

@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 373300,
 		buildcostmetal = 23460,
 		builder = false,
+		buildpic = "tllgrim.png",
 		buildtime = 222193,
 		canattack = true,
 		canguard = true,
@@ -60,6 +61,9 @@ return {
 		unitnumber = 65200,
 		upright = true,
 		workertime = 0,
+		customparams = {
+			faction = "ARM",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -133,6 +137,7 @@ return {
 			tllgrim_gun = {
 				areaofeffect = 32,
 				collidefriendly = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				duration = 0.0025,
@@ -148,6 +153,8 @@ return {
 				rgbcolor = "1 1 0",
 				soundhitdry = "xplolrg2",
 				soundhitvolume = 4,
+				soundhitwet = "sizzle",
+				soundhitwetvolume = 0.5,
 				soundstart = "sniper2",
 				soundstartvolume = 4,
 				thickness = 0.5,
@@ -165,7 +172,9 @@ return {
 			},
 			tllgrim_missile = {
 				areaofeffect = 100,
+				avoidfeature = false,
 				cegtag = "TLLRAVENTRAIL",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:incendiary_explosion_small",
@@ -179,6 +188,8 @@ return {
 				reloadtime = 2,
 				smoketrail = true,
 				soundhitdry = "vpulsehit",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "vpulsefire",
 				texture1 = "null",
 				texture2 = "null",

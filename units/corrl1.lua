@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "corrl1_aoplane.dds",
-		buildpic = "CORRL.png",
+		buildpic = "corrl1.png",
 		buildtime = 1749,
 		canattack = true,
 		canstop = 1,
@@ -56,6 +56,7 @@ return {
 		yardmap = "ooooooooo",
 		customparams = {
 			buildpic = "CORRL.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			corrl_dead = {
@@ -128,10 +129,12 @@ return {
 		weapondefs = {
 			corrl_missile1 = {
 				areaofeffect = 48,
+				avoidfeature = false,
 				burst = 2,
 				burstrate = 0.25,
 				canattackground = false,
 				cegtag = "Core_Def_AA_Rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -147,6 +150,8 @@ return {
 				reloadtime = 2.3,
 				smoketrail = true,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "rockhvy2",
 				startvelocity = 400,
 				texture1 = "null",

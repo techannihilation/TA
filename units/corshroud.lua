@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "corshroud_aoplane.dds",
-		buildpic = "CORSHROUD.png",
+		buildpic = "corshroud.png",
 		buildtime = 9392,
 		canattack = false,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
@@ -54,6 +54,7 @@ return {
 		yardmap = "oooo",
 		customparams = {
 			buildpic = "CORSHROUD.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

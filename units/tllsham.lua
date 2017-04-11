@@ -6,6 +6,7 @@ return {
 		buildcostmetal = 128,
 		builddistance = 102,
 		builder = true,
+		buildpic = "tllsham.png",
 		buildtime = 2416,
 		canassist = false,
 		canguard = true,
@@ -61,6 +62,9 @@ return {
 		unitnumber = 256,
 		upright = true,
 		workertime = 218,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

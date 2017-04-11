@@ -8,6 +8,7 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "tllrlrpc_aoplane.dds",
+		buildpic = "tllrlrpc.png",
 		buildtime = 615189,
 		canattack = true,
 		canstop = 1,
@@ -49,6 +50,7 @@ return {
 		yardmap = "ooooo ooooo ooooo ooooo ooooo",
 		customparams = {
 			canareaattack = 1,
+			faction = "TLL",
 		},
 		featuredefs = {
 			dead = {
@@ -140,6 +142,7 @@ return {
 				accuracy = 100,
 				areaofeffect = 90,
 				beamttl = 10,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				duration = 0.6,
@@ -147,8 +150,8 @@ return {
 				explosiongenerator = "custom:Explosion_Barret_Tesla",
 				firestarter = 90,
 				id = 119,
-				impulseboost = 0.123,
-				impulsefactor = 0.123,
+				impulseboost = 0,
+				impulsefactor = 0,
 				intensity = 25,
 				name = "Ultra lightning Weapon",
 				noselfdamage = true,
@@ -156,6 +159,8 @@ return {
 				reloadtime = 0.6,
 				rgbcolor = "0.6 0.6 0.9",
 				soundhitdry = "maghit",
+				soundhitwet = "sizzle",
+				soundhitwetvolume = 0.5,
 				soundstart = "krypto",
 				texture1 = "strike",
 				thickness = 16,

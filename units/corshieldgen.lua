@@ -56,6 +56,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "corshieldgen.png",
+			faction = "Core",
 		},
 		featuredefs = {
 			dead = {
@@ -106,6 +107,9 @@ return {
 		},
 		weapondefs = {
 			repulsor2 = {
+				craterareaofeffect = 0,
+				craterboost = 0,
+				cratermult = 0,
 				name = "PlasmaRepulsor",
 				shieldalpha = 0.3,
 				shieldbadcolor = "1 0.2 0.2",
@@ -120,6 +124,8 @@ return {
 				shieldradius = 230,
 				shieldrepulser = true,
 				smartshield = true,
+				soundhitwet = "sizzle",
+				soundhitwetvolume = 0.5,
 				visibleshield = true,
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
