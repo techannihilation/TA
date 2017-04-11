@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 16000,
 		buildcostmetal = 2950,
 		builder = false,
+		buildpic = "tllbind.png",
 		buildtime = 50000,
 		canattack = true,
 		canguard = true,
@@ -50,6 +51,9 @@ return {
 		unitname = "tllbind",
 		unitnumber = 8301,
 		upright = true,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -123,6 +127,7 @@ return {
 			tllbinder_weapon = {
 				areaofeffect = 8,
 				beamttl = 10,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				duration = 1.9,
@@ -130,8 +135,8 @@ return {
 				explosiongenerator = "custom:tllweb_exp",
 				firestarter = 85,
 				id = 225,
-				impulseboost = 0.123,
-				impulsefactor = 0.123,
+				impulseboost = 0,
+				impulsefactor = 0,
 				intensity = 12,
 				name = "Spray Lightning",
 				noselfdamage = true,
@@ -140,6 +145,8 @@ return {
 				reloadtime = 1,
 				rgbcolor = "0.6 0.6 0.9",
 				soundhitdry = "lashit2",
+				soundhitwet = "sizzle",
+				soundhitwetvolume = 0.5,
 				soundstart = "Lghthvy1",
 				sprayangle = 1500,
 				texture1 = "strike",

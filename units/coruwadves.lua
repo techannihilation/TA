@@ -8,7 +8,7 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "coruwadves_aoplane.dds",
-		buildpic = "CORUWADVES.png",
+		buildpic = "coruwadves.png",
 		buildtime = 20416,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		collisionvolumeoffsets = "0 -16 0",
@@ -47,6 +47,7 @@ return {
 		yardmap = "ooooooooooooooooooooooooo",
 		customparams = {
 			buildpic = "CORUWADVES.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

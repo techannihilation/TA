@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 6150,
 		buildcostmetal = 1410,
 		builder = false,
+		buildpic = "tllatorp.png",
 		buildtime = 8580,
 		canattack = true,
 		canstop = 1,
@@ -44,6 +45,9 @@ return {
 		waterline = 3,
 		workertime = 0,
 		yardmap = "wwwwwwwww",
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -112,15 +116,20 @@ return {
 		weapondefs = {
 			tll_advedo = {
 				areaofeffect = 32,
+				avoidfeature = false,
 				burnblow = true,
 				burst = 2,
 				burstrate = 0.5,
+				craterareaofeffect = 0,
+				craterboost = 0,
+				cratermult = 0,
 				id = 219,
 				model = "TLLtorpedo",
 				name = "Torpedo Launcher",
 				range = 915,
 				reloadtime = 4,
 				soundhitdry = "SPLASH",
+				soundhitwet = "SPLASH",
 				soundstart = "torpedo1",
 				sprayangle = 5000,
 				startvelocity = 100,

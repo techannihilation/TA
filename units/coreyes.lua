@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 853,
 		buildcostmetal = 32,
 		builder = false,
-		buildpic = "COREYES.png",
+		buildpic = "coreyes.png",
 		buildtime = 1500,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		cloakcost = 10,
@@ -54,6 +54,7 @@ return {
 		yardmap = "o",
 		customparams = {
 			buildpic = "COREYES.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			cdragonseyes_dead = {

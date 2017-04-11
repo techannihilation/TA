@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 22080,
 		buildcostmetal = 1020,
 		builder = false,
-		buildpic = "TAWF114.png",
+		buildpic = "tawf114.png",
 		buildtime = 23500,
 		canattack = true,
 		canguard = true,
@@ -64,6 +64,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "TAWF114.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
@@ -143,7 +144,9 @@ return {
 		weapondefs = {
 			tawf_banisher = {
 				areaofeffect = 128,
+				avoidfeature = false,
 				cegtag = "Core_Ban_Rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.4,
@@ -159,6 +162,8 @@ return {
 				reloadtime = 7.5,
 				smoketrail = true,
 				soundhitdry = "TAWF114b",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "TAWF114a",
 				startvelocity = 400,
 				texture1 = "null",

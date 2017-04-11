@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 80665,
 		buildcostmetal = 4850,
 		builder = false,
-		buildpic = "ARMRAVEN.png",
+		buildpic = "armraven.png",
 		buildtime = 126522,
 		canattack = true,
 		canguard = true,
@@ -51,6 +51,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "ARMRAVEN.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
@@ -131,6 +132,7 @@ return {
 				burst = 32,
 				burstrate = 0.12,
 				cegtag = "Core_Def_AA_Rocket",
+				craterareaofeffect = 330,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.5,
@@ -149,6 +151,8 @@ return {
 				reloadtime = 15,
 				smoketrail = true,
 				soundhitdry = "rockhit",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "rapidrocket3",
 				sprayangle = 1200,
 				startvelocity = 200,

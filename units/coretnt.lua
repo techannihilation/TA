@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 58000,
 		buildcostmetal = 750,
 		builder = false,
+		buildpic = "coretnt.png",
 		buildtime = 12000,
 		canattack = true,
 		canguard = true,
@@ -57,6 +58,7 @@ return {
 		unitnumber = 927,
 		workertime = 0,
 		customparams = {
+			faction = "TLL",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		sfxtypes = {

@@ -896,9 +896,9 @@ end
 
 
   local function CreateIcon(udid,uid)
-    local faction = UnitDefs[udid].customParams.side or 'unknown'
+    local faction = UnitDefs[udid].customParams.faction or 'unknown'
 faction = string.lower(faction)
-    Spring.Echo("faction is ",faction,UnitDefs[udid].customParams.side,factionColors[faction])
+    Spring.Echo("faction is ",faction,UnitDefs[udid].customParams.faction,factionColors[faction])
     
     local cfg = unitConfigs[udid]
 

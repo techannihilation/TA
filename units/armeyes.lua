@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 853,
 		buildcostmetal = 32,
 		builder = false,
-		buildpic = "ARMEYES.png",
+		buildpic = "armeyes.png",
 		buildtime = 1500,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		cloakcost = 10,
@@ -54,6 +54,7 @@ return {
 		yardmap = "o",
 		customparams = {
 			buildpic = "ARMEYES.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dragonseyes_dead = {

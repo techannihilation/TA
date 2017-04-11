@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 210000,
 		buildcostmetal = 14750,
 		builder = false,
+		buildpic = "tllpbot.png",
 		buildtime = 270000,
 		canattack = true,
 		canguard = true,
@@ -48,6 +49,9 @@ return {
 		turnrate = 210,
 		unitname = "tllpbot",
 		upright = true,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -122,7 +126,9 @@ return {
 				accuracy = 800,
 				alphadecay = 0.3,
 				areaofeffect = 250,
+				avoidfeature = false,
 				cegtag = "vulcanfx_lowp",
+				craterareaofeffect = 375,
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 500,
@@ -141,6 +147,8 @@ return {
 				size = 2.25,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed4",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy2",
 				stages = 20,
 				turret = true,

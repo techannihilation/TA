@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 9,
 		buildinggrounddecalsizey = 7,
 		buildinggrounddecaltype = "armap_aoplane.dds",
-		buildpic = "ARMAP.png",
+		buildpic = "armap.png",
 		buildtime = 7240,
 		canmove = true,
 		canpatrol = true,
@@ -71,6 +71,7 @@ return {
 		},
 		customparams = {
 			buildpic = "ARMAP.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {

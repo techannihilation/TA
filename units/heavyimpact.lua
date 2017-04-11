@@ -58,6 +58,7 @@ return {
 		customparams = {
 			buildpic = "heavyimpact.png",
 			canareaattack = 1,
+			faction = "TLL",
 		},
 		featuredefs = {
 			heavyimpact_dead = {
@@ -135,10 +136,12 @@ return {
 				accuracy = 300,
 				alphadecay = 0.3,
 				areaofeffect = 256,
+				avoidfeature = false,
 				bounceexplosiongenerator = "custom:BERTHASHOT1",
 				bouncerebound = 0.8,
 				bounceslip = 1.01,
 				cegtag = "vulcanfx",
+				craterareaofeffect = 384,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.6,
@@ -160,6 +163,8 @@ return {
 				size = 2.75,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy5",
 				stages = 20,
 				targetmoveerror = 0.25,

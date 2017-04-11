@@ -6,7 +6,8 @@ return {
 		buildcostenergy = 3950,
 		buildcostmetal = 375,
 		builder = false,
-		buildtime = 7000,
+		buildpic = "nsacanglr.png",
+    buildtime = 7000,
 		canattack = true,
 		canguard = true,
 		canhover = true,
@@ -58,6 +59,9 @@ return {
 		unitname = "nsacanglr",
 		unitnumber = 1404,
 		workertime = 0,
+		customparams = {
+			faction = "CORE",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -126,13 +130,18 @@ return {
 		weapondefs = {
 			coreheavydepthcharge = {
 				areaofeffect = 16,
+				avoidfeature = false,
 				burnblow = true,
+				craterareaofeffect = 0,
+				craterboost = 0,
+				cratermult = 0,
 				id = 31,
 				model = "DEPTHCHARGE",
 				name = "Depth Charge",
 				range = 320,
 				reloadtime = 1,
 				soundhitdry = "xplodep2",
+				soundhitwet = "xplodep2",
 				soundstart = "torpedo1",
 				startvelocity = 100,
 				tolerance = 32767,

@@ -7,6 +7,7 @@ return {
 		buildcostmetal = 2380,
 		builddistance = 225,
 		builder = true,
+		buildpic = "tllaca.png",
 		buildtime = 27500,
 		canfly = true,
 		canguard = true,
@@ -81,8 +82,11 @@ return {
 			[23] = "tllasp",
 			[24] = "tllap",
 			[25] = "tllaap",
-			[26] = "tllplat",
-			[27] = "tlleap",
+			[26] = "tlleap",
+			[27] = "tllplat",
+		},
+		customparams = {
+			faction = "TLL",
 		},
 		nanocolor = {
 			[1] = 0.47,

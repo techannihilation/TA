@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 27500,
 		buildcostmetal = 2370,
 		builder = false,
+		buildpic = "nsacbehe.png",
 		buildtime = 30000,
 		canattack = true,
 		canguard = true,
@@ -57,6 +58,9 @@ return {
 		unitname = "nsacbehe",
 		unitnumber = 1408,
 		workertime = 0,
+		customparams = {
+			faction = "CORE",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -125,8 +129,10 @@ return {
 		weapondefs = {
 			cor_behegoli = {
 				areaofeffect = 292,
+				avoidfeature = false,
 				canattackground = 1,
-				cegtag = "Trail_cannon",
+				cegtag = "Trail_cannon_med",
+				craterareaofeffect = 438,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH96",
@@ -143,6 +149,8 @@ return {
 				size = 2.9,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed4",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy2",
 				stages = 20,
 				turret = true,

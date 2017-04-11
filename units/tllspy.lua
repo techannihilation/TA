@@ -60,6 +60,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "tllspy.png",
+			faction = "TLL",
 		},
 		featuredefs = {
 			dead = {

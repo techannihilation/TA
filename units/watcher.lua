@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 671,
 		buildcostmetal = 96,
 		builder = false,
+		buildpic = "watcher.png",
 		buildtime = 6443,
 		canguard = true,
 		canhover = true,
@@ -58,6 +59,9 @@ return {
 		unitname = "watcher",
 		unitnumber = 401,
 		workertime = 0,
+		customparams = {
+			faction = "CORE",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

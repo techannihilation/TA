@@ -3,6 +3,7 @@ return {
 		buildcostenergy = 37800,
 		buildcostmetal = 4820,
 		builder = true,
+		buildpic = "aahpns.png",
 		buildtime = 16220,
 		canmove = true,
 		canpatrol = true,
@@ -55,6 +56,7 @@ return {
 			[10] = "armtem",
 		},
 		customparams = {
+			faction = "ARM",
 			providetech = "T2 Factory",
 		},
 		featuredefs = {

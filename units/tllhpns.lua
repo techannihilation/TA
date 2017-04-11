@@ -3,6 +3,7 @@ return {
 		buildcostenergy = 2300,
 		buildcostmetal = 1300,
 		builder = true,
+		buildpic = "tllhpns.png",
 		buildtime = 11007,
 		canmove = true,
 		canpatrol = true,
@@ -50,6 +51,9 @@ return {
 			[4] = "tllhoverrocket",
 			[5] = "tllhovermissile",
 			[6] = "tllhplasma",
+		},
+		customparams = {
+			faction = "tll",
 		},
 		featuredefs = {
 			dead = {

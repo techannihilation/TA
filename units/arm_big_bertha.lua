@@ -54,6 +54,7 @@ return {
 		customparams = {
 			buildpic = "arm_big_bertha.png",
 			canareaattack = 1,
+			faction = "Arm",
 		},
 		featuredefs = {
 			armbrtha_dead = {
@@ -131,7 +132,9 @@ return {
 				accuracy = 300,
 				alphadecay = 0.01,
 				areaofeffect = 360,
+				avoidfeature = false,
 				cegtag = "vulcanfx1",
+				craterareaofeffect = 540,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 50,
@@ -154,6 +157,8 @@ return {
 				size = 4.14,
 				sizedecay = -0.15,
 				soundhitdry = "EMGPULS1",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "xplonuk4",
 				stages = 20,
 				tolerance = 7000,

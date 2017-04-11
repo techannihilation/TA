@@ -7,6 +7,7 @@ return {
 		buildcostenergy = 1900,
 		buildcostmetal = 650,
 		builder = false,
+		buildpic = "tllleatherback.png",
 		buildtime = 7500,
 		canguard = true,
 		canmove = true,
@@ -55,6 +56,9 @@ return {
 		unitname = "tllleatherback",
 		unitnumber = 31903,
 		workertime = 0,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -124,9 +128,11 @@ return {
 		weapondefs = {
 			torp = {
 				areaofeffect = 16,
+				avoidfeature = false,
 				avoidfriendly = false,
 				burnblow = true,
 				collidefriendly = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -140,6 +146,7 @@ return {
 				range = 600,
 				reloadtime = 2,
 				soundhitdry = "xplodep2",
+				soundhitwet = "xplodep2",
 				soundstart = "torpedo1",
 				startvelocity = 75,
 				turret = true,

@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "corarad_aoplane.dds",
-		buildpic = "CORARAD.png",
+		buildpic = "corarad.png",
 		buildtime = 11960,
 		canattack = false,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
@@ -55,6 +55,7 @@ return {
 		yardmap = "oooo",
 		customparams = {
 			buildpic = "CORARAD.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

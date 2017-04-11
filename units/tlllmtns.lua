@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 559,
 		buildcostmetal = 143,
 		builder = false,
+		buildpic = "tlllmtns.png",
 		buildtime = 2146,
 		canattack = true,
 		canguard = true,
@@ -44,6 +45,9 @@ return {
 		unitnumber = 888,
 		waterline = 3,
 		yardmap = "wwwwwwwww",
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -115,8 +119,10 @@ return {
 		weapondefs = {
 			armrl_missile = {
 				areaofeffect = 48,
+				avoidfeature = false,
 				canattackground = false,
 				cegtag = "Tll_Def_AA_Rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -132,6 +138,8 @@ return {
 				reloadtime = 1.7,
 				smoketrail = true,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "rockhvy2",
 				startvelocity = 400,
 				texture1 = "null",

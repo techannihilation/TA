@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 32500,
 		buildcostmetal = 1580,
 		builder = false,
+		buildpic = "tllwmmohoconv.png",
 		buildtime = 33000,
 		category = "ALL NOTDEFENSE NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		description = "Converts upto 1000 Energy into Metal",
@@ -33,6 +34,9 @@ return {
 		unitnumber = 870,
 		waterline = 0,
 		yardmap = "wwwww wwwww wwwww wwwww wwwww",
+		customparams = {
+			faction = "TLL",
+		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",

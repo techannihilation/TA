@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 49500,
 		buildcostmetal = 3350,
 		builder = false,
+		buildpic = "armweaver.png",
 		buildtime = 41000,
 		canattack = true,
 		canguard = true,
@@ -57,6 +58,7 @@ return {
 		upright = false,
 		workertime = 0,
 		customparams = {
+			faction = "ARM",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
@@ -129,10 +131,12 @@ return {
 		weapondefs = {
 			armrl_missile = {
 				areaofeffect = 48,
+				avoidfeature = false,
 				burst = 3,
 				burstrate = 0.2,
 				canattackground = false,
 				cegtag = "Arm_Def_AA_Rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -148,6 +152,8 @@ return {
 				reloadtime = 2,
 				smoketrail = true,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "rockhvy2",
 				startvelocity = 400,
 				texture1 = "null",
@@ -172,6 +178,7 @@ return {
 			},
 			armweaver_laser = {
 				areaofeffect = 8,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 200,
@@ -184,6 +191,8 @@ return {
 				reloadtime = 0.5,
 				rgbcolor = "0.1875 0.109375 0.65625",
 				soundhitdry = "xplosml3",
+				soundhitwet = "sizzle",
+				soundhitwetvolume = 0.5,
 				soundstart = "Lasrhvy2",
 				tolerance = 500,
 				turret = true,

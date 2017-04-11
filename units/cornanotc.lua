@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "cornanotc_aoplane.dds",
-		buildpic = "CORNANOTC.png",
+		buildpic = "cornanotc.png",
 		buildtime = 5000,
 		canguard = true,
 		canmove = false,
@@ -58,6 +58,7 @@ return {
 		workertime = 300,
 		customparams = {
 			buildpic = "CORNANOTC.png",
+			faction = "CORE",
 		},
 		nanocolor = {
 			[1] = 0.22,

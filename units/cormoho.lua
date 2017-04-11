@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "cormoho_aoplane.dds",
-		buildpic = "CORMOHO.png",
+		buildpic = "cormoho.png",
 		buildtime = 14125,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "DEAD",
@@ -52,6 +52,7 @@ return {
 		yardmap = "ooooooooooooooooooooooooo",
 		customparams = {
 			buildpic = "CORMOHO.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

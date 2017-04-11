@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 9,
 		buildinggrounddecalsizey = 7,
 		buildinggrounddecaltype = "armaap_aoplane.dds",
-		buildpic = "ARMAAP.png",
+		buildpic = "armaap.png",
 		buildtime = 40851,
 		canmove = true,
 		canpatrol = true,
@@ -67,6 +67,7 @@ return {
 		},
 		customparams = {
 			buildpic = "ARMAAP.png",
+			faction = "ARM",
 			providetech = "T2 Factory",
 		},
 		featuredefs = {

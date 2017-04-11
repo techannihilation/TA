@@ -58,6 +58,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "armorion.png",
+			faction = "ARM",
 			requiretech = "Advanced T3 Unit Research Centre",
 		},
 		sfxtypes = {
@@ -94,6 +95,7 @@ return {
 		weapondefs = {
 			orion_bomb = {
 				areaofeffect = 140,
+				avoidfeature = false,
 				bounceexplosiongenerator = "custom:dust_cloud",
 				bouncerebound = 0.25,
 				bounceslip = 0.7,
@@ -101,6 +103,7 @@ return {
 				burstrate = 0.05,
 				collidefriendly = false,
 				commandfire = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				cylindertargeting = 0,
@@ -118,6 +121,8 @@ return {
 				range = 1280,
 				reloadtime = 20,
 				soundhitdry = "burn02",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "bombrel",
 				sprayangle = 25000,
 				targetborder = 0,

@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "cortarg_aoplane.dds",
-		buildpic = "CORTARG.png",
+		buildpic = "cortarg.png",
 		buildtime = 10898,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "DEAD",
@@ -51,6 +51,7 @@ return {
 		yardmap = "oooooooooooooooooooo",
 		customparams = {
 			buildpic = "CORTARG.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

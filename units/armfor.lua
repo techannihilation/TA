@@ -9,6 +9,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "armfor_aoplane.dds",
+		buildpic = "armfor.png",
 		buildtime = 200000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		description = "Advanced Geothermical reactor",
@@ -39,6 +40,9 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "oooo oooo oooo oooo",
+		customparams = {
+			faction = "arm",
+		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail5",

@@ -8,6 +8,7 @@ return {
 		buildcostmetal = 110,
 		builddistance = 112,
 		builder = true,
+		buildpic = "armtick.png",
 		buildtime = 3000,
 		canassist = false,
 		canattack = false,
@@ -62,6 +63,9 @@ return {
 		unitname = "armtick",
 		unitnumber = 4244,
 		workertime = 200,
+		customparams = {
+			faction = "ARM",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

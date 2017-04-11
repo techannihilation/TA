@@ -8,6 +8,7 @@ return {
 		buildcostenergy = 7900,
 		buildcostmetal = 865,
 		builder = false,
+		buildpic = "tlltorpcop.png",
 		buildtime = 22050,
 		canattack = true,
 		canfly = true,
@@ -52,6 +53,9 @@ return {
 		turnrate = 885,
 		unitname = "tlltorpcop",
 		unitnumber = 885,
+		customparams = {
+			faction = "tll",
+		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
@@ -86,7 +90,9 @@ return {
 		weapondefs = {
 			tllair_torpedo = {
 				areaofeffect = 196,
+				avoidfeature = false,
 				burnblow = true,
+				craterareaofeffect = 294,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASHSMALLBUILDINGEX",
@@ -99,6 +105,8 @@ return {
 				rgbcolor = "0.66 0.29 0",
 				size = 2.06,
 				soundhitdry = "xplosml3",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "canlite3",
 				soundtrigger = true,
 				turret = false,

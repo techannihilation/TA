@@ -7,6 +7,7 @@ return {
 		buildcostenergy = 4871,
 		buildcostmetal = 45,
 		builder = false,
+		buildpic = "armsh175.png",
 		buildtime = 2183,
 		canattack = true,
 		canfly = true,
@@ -57,6 +58,9 @@ return {
 		unitname = "armsh175",
 		unitnumber = 75654,
 		workertime = 0,
+		customparams = {
+			faction = "ARM",
+		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",

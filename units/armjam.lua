@@ -65,6 +65,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "armjam.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {

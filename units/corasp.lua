@@ -12,7 +12,7 @@ return {
 		buildinggrounddecalsizex = 12,
 		buildinggrounddecalsizey = 12,
 		buildinggrounddecaltype = "corasp_aoplane.dds",
-		buildpic = "CORASP.png",
+		buildpic = "corasp.png",
 		buildtime = 18315,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		collisionvolumeoffsets = "0 -9 0",
@@ -57,6 +57,7 @@ return {
 		yardmap = "ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
 			buildpic = "CORASP.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

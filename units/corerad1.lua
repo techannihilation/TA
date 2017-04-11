@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "corerad1_aoplane.dds",
-		buildpic = "CORERAD.png",
+		buildpic = "corerad1.png",
 		buildtime = 19958,
 		canattack = true,
 		canstop = 1,
@@ -55,6 +55,7 @@ return {
 		yardmap = "oooooooooooooooo",
 		customparams = {
 			buildpic = "CORERAD.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			corerad_dead = {
@@ -129,11 +130,13 @@ return {
 		weapondefs = {
 			cor_erad2 = {
 				areaofeffect = 144,
+				avoidfeature = false,
 				burnblow = true,
 				burst = 4,
 				burstrate = 0.2,
 				canattackground = false,
 				cegtag = "Core_Def_AA_Rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:CORE_FIRE_SMALL",
@@ -149,6 +152,8 @@ return {
 				reloadtime = 0.8,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
+				soundhitwet = "splsmed",
+				soundhitwetvolume = 0.6,
 				soundstart = "rocklit1",
 				soundtrigger = true,
 				startvelocity = 750,

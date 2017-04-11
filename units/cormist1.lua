@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 3250,
 		buildcostmetal = 250,
 		builder = false,
-		buildpic = "CORMIST.png",
+		buildpic = "cormist1.png",
 		buildtime = 4465,
 		canattack = true,
 		canguard = true,
@@ -61,6 +61,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "CORMIST.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			cormist_dead = {
@@ -136,9 +137,11 @@ return {
 		weapondefs = {
 			cortruck_missile1 = {
 				areaofeffect = 24,
+				avoidfeature = false,
 				burst = 2,
 				burstrate = 0.4,
 				cegtag = "Core_Trail_rocket_upg",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -154,6 +157,8 @@ return {
 				reloadtime = 3.2,
 				smoketrail = true,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "rockhvy2",
 				startvelocity = 150,
 				texture1 = "null",

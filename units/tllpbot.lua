@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 1340,
 		buildcostmetal = 205,
 		builder = false,
+		buildpic = "tllpbot.png",
 		buildtime = 2260,
 		canattack = true,
 		canguard = true,
@@ -54,6 +55,9 @@ return {
 		unitname = "tllpbot",
 		unitnumber = 823,
 		upright = true,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -123,7 +127,9 @@ return {
 		weapondefs = {
 			tll_pbot = {
 				areaofeffect = 48,
+				avoidfeature = false,
 				cegtag = "Trail_cannon",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				gravityaffected = "TRUE",
@@ -139,6 +145,8 @@ return {
 				size = 1.36,
 				sizedecay = -0.15,
 				soundhitdry = "xplosml3",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "canlite3",
 				stages = 20,
 				tolerance = 500,

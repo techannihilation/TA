@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 879,
 		buildcostmetal = 448,
 		builder = false,
+		buildpic = "tllnssam.png",
 		buildtime = 5135,
 		canattack = true,
 		canstop = 1,
@@ -44,6 +45,9 @@ return {
 		waterline = 5,
 		workertime = 0,
 		yardmap = "wwwwwwwwwwwwwwww",
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -112,10 +116,12 @@ return {
 		weapondefs = {
 			packo_missile = {
 				areaofeffect = 16,
+				avoidfeature = false,
 				burst = 2,
 				burstrate = 0.2,
 				canattackground = false,
 				cegtag = "Tll_Def_AA_Rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 0,
@@ -134,6 +140,8 @@ return {
 				reloadtime = 1.7,
 				smoketrail = true,
 				soundhitdry = "packohit",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "packolau",
 				soundtrigger = true,
 				startvelocity = 520,

@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 165500,
 		buildcostmetal = 15500,
 		builder = false,
+		buildpic = "uppercut.png",
 		buildtime = 195000,
 		canattack = true,
 		canguard = true,
@@ -62,6 +63,9 @@ return {
 		unitname = "uppercut",
 		waterline = 60,
 		workertime = 0,
+		customparams = {
+			faction = "CORE",
+		},
 		featuredefs = {
 			dead = {
 				blocking = false,
@@ -114,9 +118,11 @@ return {
 		weapondefs = {
 			armsmart_torpedo = {
 				areaofeffect = 16,
+				avoidfeature = false,
 				avoidfriendly = false,
 				burnblow = true,
 				collidefriendly = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -129,6 +135,7 @@ return {
 				range = 500,
 				reloadtime = 1,
 				soundhitdry = "xplodep1",
+				soundhitwet = "xplodep1",
 				soundstart = "torpedo1",
 				startvelocity = 120,
 				tolerance = 18000,
@@ -146,9 +153,11 @@ return {
 			},
 			tawf009_weapon = {
 				areaofeffect = 16,
+				avoidfeature = false,
 				avoidfriendly = false,
 				burnblow = true,
 				collidefriendly = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH3",
@@ -161,6 +170,7 @@ return {
 				range = 720,
 				reloadtime = 2,
 				soundhitdry = "xplodep1",
+				soundhitwet = "xplodep1",
 				soundstart = "torpedo1",
 				startvelocity = 150,
 				tolerance = 18000,
@@ -179,11 +189,13 @@ return {
 			},
 			uppercut_rocket = {
 				areaofeffect = 650,
+				avoidfeature = false,
 				avoidfriendly = false,
 				collidefriendly = false,
 				commandfire = true,
-				craterboost = 1.5,
-				cratermult = 1,
+				craterareaofeffect = 975,
+				craterboost = 0.18,
+				cratermult = 0.12,
 				edgeeffectiveness = 0.35,
 				energypershot = 80000,
 				explosiongenerator = "custom:FLASHNUKE768",

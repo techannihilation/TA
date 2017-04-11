@@ -7,6 +7,7 @@ return {
 		buildcostenergy = 50000,
 		buildcostmetal = 2250,
 		builder = false,
+		buildpic = "tllsideneck.png",
 		buildtime = 90000,
 		canguard = true,
 		canmove = true,
@@ -54,6 +55,9 @@ return {
 		unitname = "tllsideneck",
 		unitnumber = 31903,
 		workertime = 0,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -123,8 +127,10 @@ return {
 		weapondefs = {
 			armkbot_missile = {
 				areaofeffect = 48,
+				avoidfeature = false,
 				canattackground = false,
 				cegtag = "Tll_Def_AA_Rocket",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -140,6 +146,8 @@ return {
 				reloadtime = 2,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "rocklit1",
 				startvelocity = 650,
 				texture1 = "null",

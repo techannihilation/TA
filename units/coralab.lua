@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 7,
 		buildinggrounddecaltype = "coralab_aoplane.dds",
-		buildpic = "CORALAB.png",
+		buildpic = "coralab.png",
 		buildtime = 45519,
 		canmove = true,
 		canpatrol = true,
@@ -80,6 +80,7 @@ return {
 		},
 		customparams = {
 			buildpic = "CORALAB.png",
+			faction = "CORE",
 			providetech = "T2 Factory",
 		},
 		featuredefs = {

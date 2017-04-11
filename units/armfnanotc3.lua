@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 7253,
 		builddistance = 1200,
 		builder = true,
-		buildpic = "CORFNANOTC3.png",
+		buildpic = "armfnanotc3.png",
 		buildtime = 40000,
 		canguard = true,
 		canmove = false,
@@ -56,6 +56,7 @@ return {
 		workertime = 1600,
 		customparams = {
 			buildpic = "CORFNANOTC3.png",
+			faction = "ARM",
 		},
 		nanocolor = {
 			[1] = 0.68,

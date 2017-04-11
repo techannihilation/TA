@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 200533,
 		buildcostmetal = 2599,
 		builder = false,
-		buildpic = "ARMSCAB.png",
+		buildpic = "armscab1.png",
 		buildtime = 205678,
 		canguard = true,
 		canmove = true,
@@ -55,6 +55,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "ARMSCAB.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			armscab_dead = {
@@ -127,9 +128,11 @@ return {
 		weapondefs = {
 			amd_rocket1 = {
 				areaofeffect = 400,
+				avoidfeature = false,
 				avoidfriendly = false,
 				collidefriendly = false,
 				coverage = 2380,
+				craterareaofeffect = 600,
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 8000,
@@ -147,6 +150,8 @@ return {
 				reloadtime = 2,
 				smoketrail = true,
 				soundhitdry = "xplomed4",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "Rockhvy1",
 				stockpile = true,
 				stockpiletime = 60,

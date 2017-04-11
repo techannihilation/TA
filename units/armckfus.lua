@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "armckfus_aoplane.dds",
-		buildpic = "ARMCKFUS.png",
+		buildpic = "armckfus.png",
 		buildtime = 75000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		cloakcost = 100,
@@ -55,6 +55,7 @@ return {
 		yardmap = "oooooooooooooooooooo",
 		customparams = {
 			buildpic = "ARMCKFUS.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {

@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 1050,
 		buildcostmetal = 245,
 		builder = false,
+		buildpic = "tllhickatee.png",
 		buildtime = 4745,
 		canattack = false,
 		canguard = true,
@@ -51,6 +52,9 @@ return {
 		turnrate = 625,
 		unitname = "tllhickatee",
 		unitnumber = 863,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

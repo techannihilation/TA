@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 8500,
 		buildcostmetal = 590,
 		builder = false,
+		buildpic = "cbrutus.png",
 		buildtime = 13000,
 		canattack = true,
 		canguard = true,
@@ -61,6 +62,7 @@ return {
 		unitnumber = 8887656448,
 		workertime = 0,
 		customparams = {
+			faction = "CORE",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},
 		featuredefs = {
@@ -132,7 +134,9 @@ return {
 		weapondefs = {
 			cbrutus_missile = {
 				areaofeffect = 32,
+				avoidfeature = false,
 				burnblow = true,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:Explosion_Medium_Rocket",
@@ -147,6 +151,8 @@ return {
 				reloadtime = 2,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "rockhvy3",
 				startvelocity = 250,
 				targetmoveerror = 0.2,

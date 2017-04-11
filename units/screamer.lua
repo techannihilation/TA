@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "screamer_aoplane.dds",
-		buildpic = "SCREAMER.png",
+		buildpic = "screamer.png",
 		buildtime = 37543,
 		canattack = true,
 		canstop = 1,
@@ -55,6 +55,7 @@ return {
 		yardmap = "oooooooooooooooo",
 		customparams = {
 			buildpic = "SCREAMER.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
@@ -126,7 +127,9 @@ return {
 		weapondefs = {
 			arm_advsam = {
 				areaofeffect = 800,
+				avoidfeature = false,
 				canattackground = false,
+				craterareaofeffect = 1200,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.25,

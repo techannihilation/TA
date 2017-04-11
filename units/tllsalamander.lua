@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 6300,
 		buildcostmetal = 580,
 		builder = false,
+		buildpic = "tllsalamander.png",
 		buildtime = 8351,
 		canattack = true,
 		canguard = true,
@@ -48,6 +49,9 @@ return {
 		turnrate = 880,
 		unitname = "tllsalamander",
 		unitnumber = 837,
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,
@@ -117,7 +121,9 @@ return {
 		weapondefs = {
 			arm_pincer_gauss = {
 				areaofeffect = 8,
+				avoidfeature = false,
 				cegtag = "Trail_cannon",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:LIGHT_PLASMA_BLING",
@@ -131,6 +137,8 @@ return {
 				rgbcolor = "0.75 0.45 0",
 				size = 1,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy1",
 				turret = true,
 				weapontype = "Cannon",

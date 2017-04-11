@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 12500,
 		buildcostmetal = 1040,
 		builder = false,
-		buildpic = "ARMATL.png",
+		buildpic = "armatl.png",
 		buildtime = 9262,
 		canattack = true,
 		canstop = 1,
@@ -50,6 +50,7 @@ return {
 		yardmap = "oooooooooooooooo",
 		customparams = {
 			buildpic = "ARMATL.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
@@ -106,9 +107,11 @@ return {
 		weapondefs = {
 			armatl_torpedo = {
 				areaofeffect = 32,
+				avoidfeature = false,
 				avoidfriendly = false,
 				burnblow = true,
 				collidefriendly = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH3",
@@ -120,6 +123,7 @@ return {
 				range = 915,
 				reloadtime = 3,
 				soundhitdry = "xplodep1",
+				soundhitwet = "xplodep1",
 				soundstart = "torpedo1",
 				startvelocity = 80,
 				tolerance = 1167,

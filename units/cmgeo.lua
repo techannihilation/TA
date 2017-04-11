@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "cmgeo_aoplane.dds",
-		buildpic = "CMGEO.png",
+		buildpic = "cmgeo.png",
 		buildtime = 132000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		description = "Hazardous Energy Source",
@@ -49,6 +49,7 @@ return {
 		yardmap = "ooooooo ooooooo oGGoooo oGGoooo ooooooo",
 		customparams = {
 			buildpic = "CMGEO.png",
+			faction = "CORE",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

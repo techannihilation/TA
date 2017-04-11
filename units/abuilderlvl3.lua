@@ -7,6 +7,7 @@ return {
 		buildcostmetal = 26133,
 		builddistance = 180,
 		builder = true,
+		buildpic = "abuilderlvl3.png",
 		buildtime = 340000,
 		canfly = true,
 		canguard = true,
@@ -66,6 +67,9 @@ return {
 			[14] = "armtabi",
 			[15] = "armshltx1",
 			[16] = "ashipyardlvl3",
+		},
+		customparams = {
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {

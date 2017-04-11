@@ -5,6 +5,7 @@ return {
 		buildcostenergy = 21800,
 		buildcostmetal = 1940,
 		builder = false,
+		buildpic = "armhdpw.png",
 		buildtime = 14800,
 		canattack = true,
 		canguard = true,
@@ -59,6 +60,7 @@ return {
 		upright = true,
 		workertime = 0,
 		customparams = {
+			faction = "ARM",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
@@ -133,14 +135,20 @@ return {
 		weapondefs = {
 			arm_emcc3 = {
 				areaofeffect = 8,
+				avoidfeature = false,
 				burst = 4,
 				burstrate = 0.05,
+				craterareaofeffect = 0,
+				craterboost = 0,
+				cratermult = 0,
 				id = 229,
 				name = "Electro-Magnetic Compression Cannon",
 				range = 850,
 				reloadtime = 0.15,
 				rgbcolor = "1.0 0.5 0.0",
 				soundhitdry = "lasrhit1",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "armsml2",
 				soundtrigger = true,
 				sprayangle = 1024,

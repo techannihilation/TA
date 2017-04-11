@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 1440,
 		buildcostmetal = 96,
 		builder = false,
+		buildpic = "r75v.png",
 		buildtime = 6747,
 		canattack = false,
 		canguard = true,
@@ -60,6 +61,9 @@ return {
 		unitnumber = 162,
 		upright = true,
 		workertime = 0,
+		customparams = {
+			faction = "ARM",
+		},
 		featuredefs = {
 			armhplasma_dead = {
 				blocking = true,

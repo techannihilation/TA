@@ -8,7 +8,7 @@ return {
 		buildcostenergy = 7250,
 		buildcostmetal = 265,
 		builder = false,
-		buildpic = "CORSEAP.png",
+		buildpic = "corseap.png",
 		buildtime = 13698,
 		canattack = true,
 		canfly = true,
@@ -60,6 +60,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "CORSEAP.png",
+			faction = "CORE",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
@@ -98,10 +99,12 @@ return {
 		weapondefs = {
 			armseap_weapon1 = {
 				areaofeffect = 16,
+				avoidfeature = false,
 				avoidfriendly = false,
 				burnblow = true,
 				collidefriendly = false,
 				commandfire = false,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH2",
@@ -114,6 +117,7 @@ return {
 				range = 500,
 				reloadtime = 8,
 				soundhitdry = "xplodep2",
+				soundhitwet = "xplodep2",
 				soundstart = "bombrel",
 				startvelocity = 100,
 				tolerance = 12000,

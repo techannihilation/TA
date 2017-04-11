@@ -8,7 +8,7 @@ return {
 		buildcostenergy = 6849,
 		buildcostmetal = 130,
 		builder = false,
-		buildpic = "CORHUNT.png",
+		buildpic = "corhunt.png",
 		buildtime = 9512,
 		canfly = true,
 		canguard = true,
@@ -61,6 +61,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "CORHUNT.png",
+			faction = "CORE",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

@@ -9,6 +9,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "tllasonar_aoplane.dds",
+		buildpic = "tllasonar.png",
 		buildtime = 6812,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "dead",
@@ -46,6 +47,9 @@ return {
 		waterline = 2,
 		workertime = 0,
 		yardmap = "oooo",
+		customparams = {
+			faction = "TLL",
+		},
 		featuredefs = {
 			dead = {
 				blocking = true,

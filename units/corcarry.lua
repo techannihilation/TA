@@ -8,7 +8,7 @@ return {
 		buildcostenergy = 79696,
 		buildcostmetal = 1684,
 		builder = true,
-		buildpic = "CORCARRY.png",
+		buildpic = "corcarry.png",
 		buildtime = 85271,
 		canassist = false,
 		canguard = true,
@@ -64,6 +64,7 @@ return {
 		workertime = 4000,
 		customparams = {
 			buildpic = "CORCARRY.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
@@ -142,9 +143,11 @@ return {
 		weapondefs = {
 			fmd_rocket = {
 				areaofeffect = 420,
+				avoidfeature = false,
 				avoidfriendly = false,
 				collidefriendly = false,
 				coverage = 1680,
+				craterareaofeffect = 630,
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 7500,
@@ -162,6 +165,8 @@ return {
 				reloadtime = 2,
 				smoketrail = true,
 				soundhitdry = "xplomed4",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "Rockhvy1",
 				stockpile = true,
 				stockpiletime = 90,

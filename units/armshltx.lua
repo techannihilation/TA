@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 10,
 		buildinggrounddecalsizey = 10,
 		buildinggrounddecaltype = "armshltx_aoplane.dds",
-		buildpic = "ARMSHLTX.png",
+		buildpic = "armshltx.png",
 		buildtime = 69000,
 		canmove = true,
 		canpatrol = true,
@@ -68,6 +68,7 @@ return {
 		},
 		customparams = {
 			buildpic = "ARMSHLTX.png",
+			faction = "ARM",
 			providetech = "T3 Factory",
 		},
 		featuredefs = {

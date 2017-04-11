@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 43062,
 		buildcostmetal = 2243,
 		builder = false,
-		buildpic = "ARMCYBR.png",
+		buildpic = "armcybr.png",
 		buildtime = 76203,
 		canattack = true,
 		canfly = true,
@@ -56,6 +56,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "ARMCYBR.png",
+			faction = "ARM",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		sfxtypes = {
@@ -96,6 +97,7 @@ return {
 				avoidfriendly = false,
 				cegtag = "Arm_Trail_rocket_upg",
 				collidefriendly = false,
+				craterareaofeffect = 384,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.5,
@@ -112,6 +114,8 @@ return {
 				reloadtime = 8,
 				smoketrail = true,
 				soundhitdry = "tonukeex",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "bombdropxx",
 				startvelocity = 100,
 				targetable = 0,

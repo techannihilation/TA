@@ -6,7 +6,7 @@ return {
 		brakerate = 0.04,
 		buildcostenergy = 17457,
 		buildcostmetal = 173,
-		buildpic = "CORGRIPN.png",
+		buildpic = "corgripn.png",
 		buildtime = 30522,
 		canattack = true,
 		canfly = true,
@@ -56,6 +56,7 @@ return {
 		unitname = "corgripn",
 		customparams = {
 			buildpic = "CORGRIPN.png",
+			faction = "ARM",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
@@ -91,10 +92,12 @@ return {
 		weapondefs = {
 			corgripn_bomb = {
 				areaofeffect = 240,
+				avoidfeature = false,
 				burst = 5,
 				burstrate = 0.19,
 				collidefriendly = false,
 				commandfire = false,
+				craterareaofeffect = 360,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.75,
@@ -112,6 +115,8 @@ return {
 				range = 1280,
 				reloadtime = 7,
 				soundhitdry = "EMGPULS1",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "bombrel",
 				tolerance = 7000,
 				weapontype = "AircraftBomb",

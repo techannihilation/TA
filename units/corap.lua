@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 9,
 		buildinggrounddecalsizey = 7,
 		buildinggrounddecaltype = "corap_aoplane.dds",
-		buildpic = "CORAP.png",
+		buildpic = "corap.png",
 		buildtime = 7180,
 		canmove = true,
 		canpatrol = true,
@@ -70,6 +70,7 @@ return {
 		},
 		customparams = {
 			buildpic = "CORAP.png",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

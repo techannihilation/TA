@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 1750,
 		buildcostmetal = 205,
 		builder = false,
-		buildpic = "ARMROCK1.png",
+		buildpic = "armrock1.png",
 		buildtime = 2000,
 		canattack = true,
 		canguard = true,
@@ -59,6 +59,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "ARMROCK1.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			armrock_dead = {
@@ -134,7 +135,9 @@ return {
 		weapondefs = {
 			arm_kbot_rocket1 = {
 				areaofeffect = 48,
+				avoidfeature = false,
 				cegtag = "Arm_Trail_rocket_upg",
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:Explosion_Medium_Light",
@@ -149,6 +152,8 @@ return {
 				reloadtime = 3,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
+				soundhitwet = "splshbig",
+				soundhitwetvolume = 0.6,
 				soundstart = "rocklit1",
 				startvelocity = 200,
 				texture1 = "null",

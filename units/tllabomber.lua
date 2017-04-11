@@ -8,6 +8,7 @@ return {
 		buildcostenergy = 4752,
 		buildcostmetal = 299,
 		builder = false,
+		buildpic = "tllabomber.png",
 		buildtime = 34898,
 		canattack = true,
 		canfly = true,
@@ -52,6 +53,9 @@ return {
 		unitname = "tllabomber",
 		unitnumber = 889,
 		workertime = 0,
+		customparams = {
+			faction = "TLL",
+		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
@@ -89,9 +93,11 @@ return {
 		weapondefs = {
 			coradvbomb = {
 				areaofeffect = 220,
+				avoidfeature = false,
 				burst = 5,
 				collidefriendly = false,
 				commandfire = false,
+				craterareaofeffect = 330,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.7,
@@ -106,6 +112,8 @@ return {
 				range = 1280,
 				reloadtime = 0.14,
 				soundhitdry = "xplomed2",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "bombrel",
 				weapontype = "AircraftBomb",
 				damage = {

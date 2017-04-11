@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "cormakr_aoplane.dds",
-		buildpic = "CORMAKR.png",
+		buildpic = "cormakr.png",
 		buildtime = 1200,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		collisionvolumeoffsets = "0 -1 0",
@@ -51,6 +51,7 @@ return {
 		yardmap = "oooooooooooo",
 		customparams = {
 			buildpic = "CORMAKR.png",
+			faction = "CORE",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

@@ -6,6 +6,7 @@ return {
 		buildcostmetal = 365,
 		builddistance = 100,
 		builder = true,
+		buildpic = "cbuilderlvl1.png",
 		buildtime = 10207,
 		canfly = true,
 		canguard = true,
@@ -77,6 +78,9 @@ return {
 			[20] = "corhurc",
 			[21] = "corvamp",
 			[22] = "coraca",
+		},
+		customparams = {
+			faction = "CORE",
 		},
 		nanocolor = {
 			[1] = 0.12,

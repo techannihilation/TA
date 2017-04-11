@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "ajuno_aoplane.dds",
-		buildpic = "AJUNO.png",
+		buildpic = "ajuno.png",
 		buildtime = 21833,
 		canattack = true,
 		canstop = 1,
@@ -57,6 +57,7 @@ return {
 		yardmap = "oooooooooooooooo",
 		customparams = {
 			buildpic = "AJUNO.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
@@ -132,7 +133,9 @@ return {
 		weapondefs = {
 			juno_pulse = {
 				areaofeffect = 1500,
+				avoidfeature = false,
 				commandfire = true,
+				craterareaofeffect = 2250,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 1,

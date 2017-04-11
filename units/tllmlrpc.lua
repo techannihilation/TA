@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 82000,
 		buildcostmetal = 5500,
 		builder = false,
-		buildpic = "tllmlrpc.png",
+		buildpic = "avtr.png",
 		buildtime = 90000,
 		canattack = true,
 		canguard = true,
@@ -67,6 +67,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "tllmlrpc.png",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
@@ -138,8 +139,10 @@ return {
 			arm_berthacannon2 = {
 				accuracy = 500,
 				areaofeffect = 192,
-				cegtag = "Trail_cannon",
+				avoidfeature = false,
+				cegtag = "Trail_cannon_med",
 				collidefriendly = false,
+				craterareaofeffect = 288,
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 5000,
@@ -158,6 +161,8 @@ return {
 				size = 2.44,
 				sizedecay = -0.15,
 				soundhitdry = "xplonuk1",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
 				soundstart = "xplonuk4",
 				stages = 20,
 				turret = true,
