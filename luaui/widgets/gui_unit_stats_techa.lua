@@ -261,7 +261,7 @@ function init()
 	bgcornerSize = fontSize*0.45
 	bgpadding = fontSize*0.9
 	xOffset = 25
-	yOffset = 250
+	yOffset = -250
 end
 
 function widget:ViewResize(x,y)
@@ -300,7 +300,7 @@ function widget:DrawScreen()
 	maxWidth = 0
 
 	cX = mx + xOffset
-	cY = my + yOffset
+	cY = vsy + yOffset
 	cYstart = cY
 	
 	local text = yellow .. uDef.humanName .. white .. "    " .. uDef.name .. "    (#" .. uID .. " , "..GetTeamColorCode(uTeam) .. GetTeamName(uTeam) .. white .. ")"
