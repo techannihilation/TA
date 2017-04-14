@@ -475,7 +475,9 @@ local function AddMorphCmdDesc(unitID, unitDefID, teamID, morphDef, teamTech)
     morphCmdDesc.texture = "LuaRules/Images/Morph/".. morphDef.texture
     morphCmdDesc.name = ''
   else
+    local ud = UnitDefs[morphDef.into]
     morphCmdDesc.texture = "#" .. morphDef.into   --//only works with a patched layout.lua or the TweakedLayout widget!
+    morphCmdDesc.name = "" .. string.gsub(ud.humanName, "%s+", "\n")  --to do add padding
   end
 
 
