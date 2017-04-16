@@ -60,7 +60,6 @@ local xPos, yPos            = xRelPos*vsx, yRelPos*vsy
 local widgetScale			= customScale
 local panelWidth 			= customPanelWidth
 local panelHeight 			= customPanelHeight
-local panelColor            = {0, 0, 0, 0.6}
 local oorx, oory            = 10, 13
 local count                 = 0
 local speedMultiplier       = 8
@@ -76,7 +75,8 @@ local avgSpeedTextPosX		= 0
 local avgSpeedTextPosY		= 0
 local windValueDrawList     = {}
 
-
+local cbackground, cborder, cbuttonbackground = include("Configs/ui_config.lua")
+local triggered = nil
 --------------------------------------------------------------------------------
 
 function GetWind()
@@ -117,7 +117,7 @@ end
 function createBackgroundList()
 	backgroundList = glCreateList(function()
         glPushMatrix()
-			glColor(panelColor)
+			--glColor(cbackground)
 			RectRound(xPos, yPos, xPos+panelWidth, yPos+panelHeight, 6*widgetScale)
 			
 			local borderPadding = 3.5*widgetScale
@@ -153,7 +153,15 @@ function drawWindValue(value)
 end
 
 function widget:DrawScreen()
+	if triggered == nil then
+		if cbackground[4] == 0.01 then
+			cbackground[4]=WG["background_color"]
+		end
+	triggered = true
+	end
+	glColor(cbackground)
 	glCallList(backgroundList)
+	glColor(1,1,1,1)
 	if rotationOn then -- Rotation
 		glTranslate(oorx*widgetScale, oory*widgetScale, 0)
 		glRotate(count, 0, 0, 1)
@@ -172,7 +180,7 @@ end
 
 function widget:TweakDrawScreen()
     glPushMatrix()
-        glColor(panelColor)
+        glColor(cbackground)
         RectRound(xPos, yPos, xPos+panelWidth, yPos+panelHeight, 6)
         glTranslate(xPos, yPos, 0)
         drawCheckbox(check1x, check1y, rotationOn, "Rotation")

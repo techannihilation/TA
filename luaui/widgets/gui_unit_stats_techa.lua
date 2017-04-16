@@ -111,6 +111,8 @@ local pplants = {
 	["tlladvsolar"] = true,
 }
 
+local cbackground, cborder = include("Configs/ui_config.lua")
+local triggered = nil
 
 ------------------------------------------------------------------------------------
 -- Speedups
@@ -269,6 +271,13 @@ function widget:ViewResize(x,y)
 end
 
 function widget:DrawScreen()
+	if triggered == nil then
+		if cbackground[4] == 0.01 then
+			cbackground[4]=WG["background_color"]
+		end
+	triggered = true
+	end
+	
 	local alt, ctrl, meta, shift = spGetModKeyState()
 	if not meta then RemoveGuishader() return end
 
@@ -667,7 +676,7 @@ function widget:DrawScreen()
 	end
 	
 	-- background
-	glColor(0,0,0,0.57)
+	glColor(cbackground)
 	cornersize = 0
 	RectRound(floor(cX-bgpadding)+cornersize, ceil(cY+(fontSize/3)+bgpadding)+cornersize, ceil(cX+maxWidth+bgpadding)-cornersize, floor(cYstart-bgpadding)-cornersize, bgcornerSize)
 	cornersize = ceil(bgpadding*0.16)

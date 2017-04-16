@@ -45,7 +45,6 @@ local glCreateList = gl.CreateList
 local glPushMatrix = gl.PushMatrix
 local glPopMatrix = gl.PopMatrix
 local glScale = gl.Scale
-local glReadPixels = gl.ReadPixels
 
 
 local GL_LINE_LOOP = GL.LINE_LOOP
@@ -179,43 +178,9 @@ function widget:Initialize()
 end
 
 function widget:DrawScreen()
-	if minimapbrightness == nil then
-		--get 100 points on minimap
-		glTexture("$minimap")
-
-		local r=0
-		local g=0
-		local b=0
-		local a=0
-		local cnt =0
-		for x=1, 9 do
-			
-			for y= 1, 9 do
-				local pr,pg,pb,pa = glReadPixels(50+10*x,50+10*y,1,1)
-				r=r+pr/81
-				g=g+pg/81
-				b=b+pb/81
-				a=a+pa/81
-				cnt=cnt+1
-			end
-		end
-		glTexture(false)
-		local OldMax, OldMin, NewMax, NewMin = 0.7,0.05,0.80,0.45
-		minimapbrightness=(r*0.3)+(g*0.5)+(b*0.2)
-		if minimapbrightness > OldMax then
-			Spring.Echo("nix new value found please adjust ", minimapbrightness)
-			minimapbrightness = OldMax
-		elseif minimapbrightness < OldMin then
-			Spring.Echo("nix new value found please adjust ", minimapbrightness)
-			minimapbrightness = OldMin
-		end
-		--Spring.Echo("Minimap brightness values:",minimapbrightness,cnt,r,g,b,a)		
-		local OldRange = (OldMax - OldMin) --darkmap - blindside
-		local NewRange = (NewMax - NewMin)
-		minimapbrightness = (((minimapbrightness - OldMin) * NewRange) / OldRange) + NewMin
-		minimapbrightness = (NewMax + NewMin) - minimapbrightness
-		--Spring.Echo("Background opacity values:",minimapbrightness)		
-
+	if triggered == nil then
+		minimapbrightness=WG["background_color"]
+	triggered = true
 	end
 
 	glResetState()
