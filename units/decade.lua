@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 2347,
 		buildcostmetal = 421,
 		builder = false,
-		buildpic = "decade.png",
+		buildpic = "decade.dds",
 		buildtime = 6525,
 		canattack = true,
 		canguard = true,

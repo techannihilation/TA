@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 199,
 		builddistance = 197,
 		builder = true,
-		buildpic = "tllchover.png",
+		buildpic = "tllchover.dds",
 		buildtime = 6780,
 		canguard = true,
 		canhover = true,

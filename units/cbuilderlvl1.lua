@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 365,
 		builddistance = 100,
 		builder = true,
-		buildpic = "cbuilderlvl1.png",
+		buildpic = "cbuilderlvl1.dds",
 		buildtime = 10207,
 		canfly = true,
 		canguard = true,

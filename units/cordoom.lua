@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "cordoom_aoplane.dds",
-		buildpic = "cordoom.png",
+		buildpic = "cordoom.dds",
 		buildtime = 55276,
 		canattack = true,
 		canstop = 1,

@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "tllgate1_aoplane.dds",
-		buildpic = "tllgate.png",
+		buildpic = "tllgate.dds",
 		buildtime = 253485,
 		canattack = false,
 		canstop = 1,

@@ -7,7 +7,7 @@ return {
 		buildinggrounddecalsizex = 10,
 		buildinggrounddecalsizey = 10,
 		buildinggrounddecaltype = "tllhp_aoplane.dds",
-		buildpic = "tllhp.png",
+		buildpic = "tllhp.dds",
 		buildtime = 12000,
 		canmove = true,
 		canpatrol = true,

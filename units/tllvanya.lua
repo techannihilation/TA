@@ -8,7 +8,7 @@ return {
 		buildinggrounddecalsizex = 13,
 		buildinggrounddecalsizey = 13,
 		buildinggrounddecaltype = "tllvanya_aoplane.dds",
-		buildpic = "tllvanya.png",
+		buildpic = "tllvanya.dds",
 		buildtime = 10000000,
 		canattack = true,
 		canguard = true,

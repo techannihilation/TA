@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 2039,
 		buildcostmetal = 391,
 		builder = false,
-		buildpic = "coresupp.png",
+		buildpic = "coresupp.dds",
 		buildtime = 6660,
 		canattack = true,
 		canguard = true,

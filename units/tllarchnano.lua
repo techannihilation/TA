@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 480,
 		builddistance = 150,
 		builder = true,
-		buildpic = "tllarchnano.png",
+		buildpic = "tllarchnano.dds",
 		buildtime = 10000,
 		cainrepair = 1,
 		canguard = true,

@@ -9,7 +9,7 @@ return {
 		buildcostmetal = 10750,
 		builddistance = 212,
 		builder = true,
-		buildpic = "corcom5.png",
+		buildpic = "corcom5.dds",
 		buildtime = 300000,
 		canattack = true,
 		cancapture = true,

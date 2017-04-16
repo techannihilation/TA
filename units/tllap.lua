@@ -8,7 +8,7 @@ return {
 		buildinggrounddecalsizex = 10,
 		buildinggrounddecalsizey = 10,
 		buildinggrounddecaltype = "tllap_aoplane.dds",
-		buildpic = "tllap.png",
+		buildpic = "tllap.dds",
 		buildtime = 7450,
 		canmove = true,
 		canpatrol = true,

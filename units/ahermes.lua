@@ -8,7 +8,7 @@ return {
 		buildcostenergy = 1920,
 		buildcostmetal = 160,
 		builder = false,
-		buildpic = "ahermes.png",
+		buildpic = "ahermes.dds",
 		buildtime = 5141,
 		canattack = true,
 		canguard = true,

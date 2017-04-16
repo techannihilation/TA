@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 280000,
 		buildcostmetal = 19200,
 		builder = false,
-		buildpic = "monkeylord.png",
+		buildpic = "monkeylord.dds",
 		buildtime = 444423,
 		canattack = true,
 		canguard = true,

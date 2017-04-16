@@ -8,7 +8,7 @@ return {
 		buildinggrounddecalsizex = 13,
 		buildinggrounddecalsizey = 13,
 		buildinggrounddecaltype = "corflu_aoplane.dds",
-		buildpic = "corflu.png",
+		buildpic = "corflu.dds",
 		buildtime = 10000000,
 		canattack = true,
 		canguard = true,

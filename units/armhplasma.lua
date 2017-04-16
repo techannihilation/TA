@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 17250,
 		buildcostmetal = 990,
 		builder = false,
-		buildpic = "armhplasma.png",
+		buildpic = "armhplasma.dds",
 		buildtime = 17000,
 		canattack = true,
 		canguard = true,

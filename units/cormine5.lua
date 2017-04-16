@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 3,
 		buildinggrounddecalsizey = 3,
 		buildinggrounddecaltype = "cormine5_aoplane.dds",
-		buildpic = "cormine5.png",
+		buildpic = "cormine5.dds",
 		buildtime = 125,
 		canattack = false,
 		canguard = false,

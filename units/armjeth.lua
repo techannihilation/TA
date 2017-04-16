@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 1280,
 		buildcostmetal = 192,
 		builder = false,
-		buildpic = "armjeth.png",
+		buildpic = "armjeth.dds",
 		buildtime = 1831,
 		canattack = true,
 		canguard = true,

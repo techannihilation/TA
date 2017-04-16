@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 9,
 		buildinggrounddecalsizey = 7,
 		buildinggrounddecaltype = "corap_aoplane.dds",
-		buildpic = "corap.png",
+		buildpic = "corap.dds",
 		buildtime = 7180,
 		canmove = true,
 		canpatrol = true,

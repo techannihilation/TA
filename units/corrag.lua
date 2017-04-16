@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 37867,
 		buildcostmetal = 1120,
 		builder = false,
-		buildpic = "corrag.png",
+		buildpic = "corrag.dds",
 		buildtime = 22000,
 		canattack = true,
 		canfly = true,

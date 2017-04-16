@@ -9,7 +9,7 @@ return {
 		buildcostmetal = 3000,
 		builddistance = 212,
 		builder = true,
-		buildpic = "tllcom1.png",
+		buildpic = "tllcom1.dds",
 		buildtime = 100000,
 		canattack = true,
 		cancapture = true,

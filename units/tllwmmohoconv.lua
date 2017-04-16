@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 32500,
 		buildcostmetal = 1580,
 		builder = false,
-		buildpic = "tllwmmohoconv.png",
+		buildpic = "tllwmmohoconv.dds",
 		buildtime = 33000,
 		category = "ALL NOTDEFENSE NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		description = "Converts upto 1000 Energy into Metal",

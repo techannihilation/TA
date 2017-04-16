@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 100250,
 		buildcostmetal = 5850,
 		builder = false,
-		buildpic = "corerex.png",
+		buildpic = "corerex.dds",
 		buildtime = 64500,
 		canattack = true,
 		canguard = true,

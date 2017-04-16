@@ -8,7 +8,7 @@ return {
 		buildinggrounddecalsizex = 9,
 		buildinggrounddecalsizey = 9,
 		buildinggrounddecaltype = "corboucher_aoplane.dds",
-		buildpic = "corboucher.png",
+		buildpic = "corboucher.dds",
 		buildtime = 231000,
 		canattack = true,
 		canstop = 1,

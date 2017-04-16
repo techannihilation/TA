@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "tllflak_aoplane.dds",
-		buildpic = "tllflak.png",
+		buildpic = "tllflak.dds",
 		buildtime = 13995,
 		canattack = true,
 		canstop = 1,

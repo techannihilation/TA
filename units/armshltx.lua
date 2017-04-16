@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 10,
 		buildinggrounddecalsizey = 10,
 		buildinggrounddecaltype = "armshltx_aoplane.dds",
-		buildpic = "armshltx.png",
+		buildpic = "armshltx.dds",
 		buildtime = 69000,
 		canmove = true,
 		canpatrol = true,

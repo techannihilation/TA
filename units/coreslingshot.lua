@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 4500,
 		buildcostmetal = 480,
 		builder = false,
-		buildpic = "coreslingshot.png",
+		buildpic = "coreslingshot.dds",
 		buildtime = 4600,
 		canattack = true,
 		canguard = true,

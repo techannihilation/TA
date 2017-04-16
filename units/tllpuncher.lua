@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 6187,
 		buildcostmetal = 587,
 		builder = false,
-		buildpic = "tllpuncher.png",
+		buildpic = "tllpuncher.dds",
 		buildtime = 12158,
 		canattack = true,
 		canguard = true,

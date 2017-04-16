@@ -6,7 +6,7 @@ return {
 		buildangle = 16384,
 		buildcostenergy = 950000,
 		buildcostmetal = 48000,
-		buildpic = "armtrmph.png",
+		buildpic = "armtrmph.dds",
 		buildtime = 389000,
 		canattack = true,
 		canguard = true,

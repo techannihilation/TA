@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 150980,
 		buildcostmetal = 16580,
 		builder = false,
-		buildpic = "armantar.png",
+		buildpic = "armantar.dds",
 		buildtime = 120000,
 		canattack = true,
 		canguard = true,

@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 9013,
 		buildcostmetal = 342,
 		builder = false,
-		buildpic = "armjade.png",
+		buildpic = "armjade.dds",
 		buildtime = 9200,
 		canattack = true,
 		canfly = true,

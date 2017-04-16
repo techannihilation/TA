@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 5200,
 		buildcostmetal = 1100,
 		builder = false,
-		buildpic = "tllconvincer.png",
+		buildpic = "tllconvincer.dds",
 		buildtime = 12800,
 		canattack = true,
 		canguard = true,

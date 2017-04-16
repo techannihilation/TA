@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 373300,
 		buildcostmetal = 23460,
 		builder = false,
-		buildpic = "tllgrim.png",
+		buildpic = "tllgrim.dds",
 		buildtime = 222193,
 		canattack = true,
 		canguard = true,

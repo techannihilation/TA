@@ -8,7 +8,7 @@ return {
 		buildcostenergy = 48000,
 		buildcostmetal = 2900,
 		builder = false,
-		buildpic = "armorion.png",
+		buildpic = "armorion.dds",
 		buildtime = 35000,
 		canattack = true,
 		canfly = true,

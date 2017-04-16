@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 11,
 		buildinggrounddecalsizey = 11,
 		buildinggrounddecaltype = "crnns_aoplane.dds",
-		buildpic = "crnns.png",
+		buildpic = "crnns.dds",
 		buildtime = 360000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		damagemodifier = 0.9,

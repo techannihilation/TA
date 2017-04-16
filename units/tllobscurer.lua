@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 1037,
 		buildcostmetal = 119,
 		builder = false,
-		buildpic = "tllobscurer.png",
+		buildpic = "tllobscurer.dds",
 		buildtime = 6622,
 		canattack = false,
 		canguard = true,

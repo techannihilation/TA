@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 150,
 		builddistance = 182,
 		builder = true,
-		buildpic = "armbeaver.png",
+		buildpic = "armbeaver.dds",
 		buildtime = 6708,
 		canguard = true,
 		canmove = true,

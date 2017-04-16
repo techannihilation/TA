@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 5850,
 		buildcostmetal = 400,
 		builder = false,
-		buildpic = "tllburner.png",
+		buildpic = "tllburner.dds",
 		buildtime = 6500,
 		canattack = true,
 		canguard = true,

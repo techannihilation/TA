@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 671,
 		buildcostmetal = 96,
 		builder = false,
-		buildpic = "watcher.png",
+		buildpic = "watcher.dds",
 		buildtime = 6443,
 		canguard = true,
 		canhover = true,

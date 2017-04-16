@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 230,
 		builddistance = 136,
 		builder = true,
-		buildpic = "corassis.png",
+		buildpic = "corassis.dds",
 		buildtime = 6193,
 		canguard = true,
 		canmove = true,

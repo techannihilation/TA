@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 50000,
 		buildcostmetal = 2250,
 		builder = false,
-		buildpic = "tllturtle.png",
+		buildpic = "tllturtle.dds",
 		buildtime = 90000,
 		canguard = true,
 		canmove = true,

@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "cordl_aoplane.dds",
-		buildpic = "cordl.png",
+		buildpic = "cordl.dds",
 		buildtime = 4280,
 		canattack = true,
 		canstop = 1,

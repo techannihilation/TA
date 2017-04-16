@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 5968,
 		buildcostmetal = 156,
 		builder = false,
-		buildpic = "corshad.png",
+		buildpic = "corshad.dds",
 		buildtime = 5054,
 		canattack = true,
 		canfly = true,

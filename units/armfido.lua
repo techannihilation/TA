@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 6700,
 		buildcostmetal = 270,
 		builder = false,
-		buildpic = "armfido.png",
+		buildpic = "armfido.dds",
 		buildtime = 7693,
 		canattack = true,
 		canguard = true,

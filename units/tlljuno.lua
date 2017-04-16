@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "tlljuno_aoplane.dds",
-		buildpic = "tlljuno.png",
+		buildpic = "tlljuno.dds",
 		buildtime = 21833,
 		canattack = true,
 		canstop = 1,

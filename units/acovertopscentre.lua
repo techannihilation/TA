@@ -8,7 +8,7 @@ return {
 		buildinggrounddecalsizex = 15,
 		buildinggrounddecalsizey = 15,
 		buildinggrounddecaltype = "acovertopscentre_aoplane.dds",
-		buildpic = "acovertopscentre.png",
+		buildpic = "acovertopscentre.dds",
 		buildtime = 250000,
 		canmove = true,
 		canpatrol = true,

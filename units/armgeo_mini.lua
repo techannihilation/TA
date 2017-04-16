@@ -12,7 +12,7 @@ return {
 		buildinggrounddecalsizex = 3.5,
 		buildinggrounddecalsizey = 3.5,
 		buildinggrounddecaltype = "armgeo_aoplane.dds",
-		buildpic = "armgeo_mini.png",
+		buildpic = "armgeo_mini.dds",
 		buildtime = 6200,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "dead",

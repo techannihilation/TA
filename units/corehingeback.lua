@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 3500,
 		buildcostmetal = 240,
 		builder = false,
-		buildpic = "corehingeback.png",
+		buildpic = "corehingeback.dds",
 		buildtime = 5000,
 		canattack = true,
 		canguard = true,

@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 11,
 		buildinggrounddecalsizey = 11,
 		buildinggrounddecaltype = "asubpen_aoplane.dds",
-		buildpic = "asubpen.png",
+		buildpic = "asubpen.dds",
 		buildtime = 11000,
 		canmove = true,
 		canpatrol = true,

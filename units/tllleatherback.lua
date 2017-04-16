@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 1900,
 		buildcostmetal = 650,
 		builder = false,
-		buildpic = "tllleatherback.png",
+		buildpic = "tllleatherback.dds",
 		buildtime = 7500,
 		canguard = true,
 		canmove = true,

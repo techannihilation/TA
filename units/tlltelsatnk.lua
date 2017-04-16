@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 37000,
 		buildcostmetal = 3650,
 		builder = false,
-		buildpic = "tlltelsatnk.png",
+		buildpic = "tlltelsatnk.dds",
 		buildtime = 35000,
 		canattack = true,
 		canguard = true,

@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 1600,
 		buildcostmetal = 27,
 		builder = false,
-		buildpic = "armfmine3.png",
+		buildpic = "armfmine3.dds",
 		buildtime = 150,
 		canattack = false,
 		canguard = false,

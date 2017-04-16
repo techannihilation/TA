@@ -7,7 +7,7 @@ return {
 		buildcostmetal = 206,
 		builddistance = 96,
 		builder = true,
-		buildpic = "tllmlv.png",
+		buildpic = "tllmlv.dds",
 		buildtime = 3921,
 		canassist = false,
 		canguard = false,

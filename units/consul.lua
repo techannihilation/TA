@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 245,
 		builddistance = 136,
 		builder = true,
-		buildpic = "consul.png",
+		buildpic = "consul.dds",
 		buildtime = 6800,
 		canguard = true,
 		canmove = true,

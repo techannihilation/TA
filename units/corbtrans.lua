@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 65000,
 		buildcostmetal = 3000,
 		builder = false,
-		buildpic = "corbtrans.png",
+		buildpic = "corbtrans.dds",
 		buildtime = 24000,
 		canattack = true,
 		canfly = true,

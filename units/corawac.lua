@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 8346,
 		buildcostmetal = 180,
 		builder = false,
-		buildpic = "corawac.png",
+		buildpic = "corawac.dds",
 		buildtime = 13264,
 		canfly = true,
 		canguard = true,

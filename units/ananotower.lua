@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "ananotower_aoplane.dds",
-		buildpic = "ananotower.png",
+		buildpic = "ananotower.dds",
 		buildtime = 100000,
 		canassist = true,
 		canguard = true,

@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 2750,
 		buildcostmetal = 365,
 		builder = false,
-		buildpic = "armstump1.png",
+		buildpic = "armstump1.dds",
 		buildtime = 2904,
 		canattack = true,
 		canguard = true,

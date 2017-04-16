@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 8044,
 		buildcostmetal = 693,
 		builder = false,
-		buildpic = "corthovr.png",
+		buildpic = "corthovr.dds",
 		buildtime = 19587,
 		canattack = false,
 		canguard = true,

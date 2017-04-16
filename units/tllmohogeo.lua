@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "tllmohogeo_aoplane.dds",
-		buildpic = "tllmohogeo.png",
+		buildpic = "tllmohogeo.dds",
 		buildtime = 160000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "tllmohogeo_dead",

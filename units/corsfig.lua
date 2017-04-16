@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 6000,
 		buildcostmetal = 150,
 		builder = false,
-		buildpic = "corsfig.png",
+		buildpic = "corsfig.dds",
 		buildtime = 5000,
 		canattack = true,
 		canfly = true,

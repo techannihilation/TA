@@ -8,7 +8,7 @@ return {
 		buildcostenergy = 6849,
 		buildcostmetal = 130,
 		builder = false,
-		buildpic = "corhunt.png",
+		buildpic = "corhunt.dds",
 		buildtime = 9512,
 		canfly = true,
 		canguard = true,

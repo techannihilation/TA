@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 9113,
 		buildcostmetal = 229,
 		builder = false,
-		buildpic = "ferret.png",
+		buildpic = "ferret.dds",
 		buildtime = 9800,
 		canattack = true,
 		canfly = true,

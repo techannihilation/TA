@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 4850,
 		buildcostmetal = 1205,
 		builder = false,
-		buildpic = "tllviolator.png",
+		buildpic = "tllviolator.dds",
 		buildtime = 13522,
 		canattack = true,
 		canguard = true,

@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 155,
 		builddistance = 110,
 		builder = true,
-		buildpic = "coreleopard.png",
+		buildpic = "coreleopard.dds",
 		buildtime = 2800,
 		canassist = false,
 		canguard = true,

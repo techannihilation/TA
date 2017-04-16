@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 190000,
 		buildcostmetal = 13250,
 		builder = false,
-		buildpic = "armjugg.png",
+		buildpic = "armjugg.dds",
 		buildtime = 230000,
 		canattack = true,
 		canguard = true,

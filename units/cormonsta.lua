@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 32000,
 		buildcostmetal = 2750,
 		builder = false,
-		buildpic = "cormonsta.png",
+		buildpic = "cormonsta.dds",
 		buildtime = 45000,
 		canattack = true,
 		canguard = true,

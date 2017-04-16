@@ -7,7 +7,7 @@ return {
 		buildinggrounddecalsizex = 12,
 		buildinggrounddecalsizey = 12,
 		buildinggrounddecaltype = "cahpns_aoplane.dds",
-		buildpic = "cahpns.png",
+		buildpic = "cahpns.dds",
 		buildtime = 17520,
 		canmove = true,
 		canpatrol = true,

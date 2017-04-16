@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 1867,
 		buildcostmetal = 107,
 		builder = false,
-		buildpic = "coreter.png",
+		buildpic = "coreter.dds",
 		buildtime = 6400,
 		canattack = false,
 		canguard = true,

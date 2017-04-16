@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 591,
 		buildcostmetal = 103,
 		builder = false,
-		buildpic = "tllradarns.png",
+		buildpic = "tllradarns.dds",
 		buildtime = 1500,
 		canattack = false,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",

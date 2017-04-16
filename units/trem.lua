@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 48000,
 		buildcostmetal = 2090,
 		builder = false,
-		buildpic = "trem.png",
+		buildpic = "trem.dds",
 		buildtime = 31103,
 		canattack = true,
 		canguard = true,

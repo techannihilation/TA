@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 1994,
 		buildcostmetal = 203,
 		builder = false,
-		buildpic = "concealer.png",
+		buildpic = "concealer.dds",
 		buildtime = 6156,
 		canguard = true,
 		canhover = true,

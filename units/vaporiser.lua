@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 8997,
 		buildcostmetal = 907,
 		builder = false,
-		buildpic = "vaporiser.png",
+		buildpic = "vaporiser.dds",
 		buildtime = 24999,
 		canattack = true,
 		canguard = true,

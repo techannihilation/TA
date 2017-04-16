@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "corhlt_aoplane.dds",
-		buildpic = "corhlt.png",
+		buildpic = "corhlt.dds",
 		buildtime = 14433,
 		canattack = true,
 		canstop = 1,

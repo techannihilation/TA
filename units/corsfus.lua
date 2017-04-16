@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 12,
 		buildinggrounddecalsizey = 12,
 		buildinggrounddecaltype = "corsfus_aoplane.dds",
-		buildpic = "corsfus.png",
+		buildpic = "corsfus.dds",
 		buildtime = 225000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		collisionvolumeoffsets = "0 -30 0",

@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 5500,
 		buildcostmetal = 420,
 		builder = false,
-		buildpic = "corechelonian.png",
+		buildpic = "corechelonian.dds",
 		buildtime = 10000,
 		canattack = true,
 		canguard = true,

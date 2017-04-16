@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 4100,
 		buildcostmetal = 380,
 		builder = false,
-		buildpic = "coreavalanche.png",
+		buildpic = "coreavalanche.dds",
 		buildtime = 3100,
 		canattack = true,
 		canguard = true,

@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 5500,
 		buildcostmetal = 425,
 		builder = false,
-		buildpic = "armsonic.png",
+		buildpic = "armsonic.dds",
 		buildtime = 6000,
 		canattack = true,
 		canguard = true,

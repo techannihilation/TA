@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 45000,
 		buildcostmetal = 4100,
 		builder = false,
-		buildpic = "requ1.png",
+		buildpic = "requ1.dds",
 		buildtime = 98945,
 		canattack = true,
 		canbuild = true,

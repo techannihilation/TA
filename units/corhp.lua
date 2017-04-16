@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 9,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "corhp_aoplane.dds",
-		buildpic = "corhp.png",
+		buildpic = "corhp.dds",
 		buildtime = 14253,
 		canmove = true,
 		canpatrol = true,

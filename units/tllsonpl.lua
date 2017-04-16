@@ -8,7 +8,7 @@ return {
 		buildcostenergy = 8470,
 		buildcostmetal = 161,
 		builder = false,
-		buildpic = "tllsonpl.png",
+		buildpic = "tllsonpl.dds",
 		buildtime = 11646,
 		canfly = true,
 		canguard = true,

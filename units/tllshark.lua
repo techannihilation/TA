@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 6019,
 		buildcostmetal = 96,
 		builder = false,
-		buildpic = "tllshark.png",
+		buildpic = "tllshark.dds",
 		buildtime = 8455,
 		canattack = true,
 		canguard = true,

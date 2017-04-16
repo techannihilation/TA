@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "tllnanotc1_aoplane.dds",
-		buildpic = "tllnanotc1.png",
+		buildpic = "tllnanotc1.dds",
 		buildtime = 13000,
 		canguard = true,
 		canmove = false,

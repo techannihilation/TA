@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "aspdbunk_aoplane.dds",
-		buildpic = "aspdbunk.png",
+		buildpic = "aspdbunk.dds",
 		buildtime = 13004,
 		canattack = true,
 		canstop = 1,

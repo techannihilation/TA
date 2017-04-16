@@ -9,7 +9,7 @@ return {
 		buildcostmetal = 10750,
 		builddistance = 212,
 		builder = true,
-		buildpic = "armcom5.png",
+		buildpic = "armcom5.dds",
 		buildtime = 300000,
 		canattack = true,
 		cancapture = true,

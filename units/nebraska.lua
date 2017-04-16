@@ -8,7 +8,7 @@ return {
 		buildinggrounddecalsizex = 11,
 		buildinggrounddecalsizey = 11,
 		buildinggrounddecaltype = "nebraska_aoplane.dds",
-		buildpic = "nebraska.png",
+		buildpic = "nebraska.dds",
 		buildtime = 245000,
 		canattack = true,
 		canstop = 1,

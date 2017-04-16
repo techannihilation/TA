@@ -7,7 +7,7 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "core_intimidator_aoplane.dds",
-		buildpic = "core_intimidator.png",
+		buildpic = "core_intimidator.dds",
 		buildtime = 73000,
 		canattack = true,
 		canguard = true,

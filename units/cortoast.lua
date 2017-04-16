@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "cortoast_aoplane.dds",
-		buildpic = "cortoast.png",
+		buildpic = "cortoast.dds",
 		buildtime = 25000,
 		canattack = true,
 		canstop = 1,

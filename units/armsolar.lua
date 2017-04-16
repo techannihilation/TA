@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "armsolar_aoplane.dds",
-		buildpic = "armsolar.png",
+		buildpic = "armsolar.dds",
 		buildtime = 2045,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		collisionspherescale = 0.5,

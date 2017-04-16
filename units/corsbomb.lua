@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 101330,
 		buildcostmetal = 3090,
 		builder = false,
-		buildpic = "corsbomb.png",
+		buildpic = "corsbomb.dds",
 		buildtime = 45000,
 		canattack = true,
 		cancloak = true,
