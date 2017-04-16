@@ -474,7 +474,6 @@ function InitializeFaction(sDefID)
 				gl.PushMatrix()
 
 					for c = 1, #cellRow do
-
 						gl.Color(cbackground)
 						gl.Rect(-borderSize, -borderSize, iconSize + borderSize, iconSize + borderSize)
 
@@ -548,7 +547,7 @@ local queueTimeFormat = whiteColor .. 'Queued ' .. metalColor .. '%dm ' .. energ
 function widget:DrawScreen()
 	if triggered == nil then
 		if cbackground[4] == 0.01 then
-			cbackground[4]=WG["background_color"]
+			cbackground[4]=WG["background_color"] or 0.65
 		end
 	triggered = true
 	end
