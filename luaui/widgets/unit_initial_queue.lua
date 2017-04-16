@@ -39,6 +39,9 @@ local energyColor = '\255\255\255\128' -- Light yellow
 local buildColor = '\255\128\255\128' -- Light green
 local whiteColor = '\255\255\255\255' -- White
 
+local cbackground, cborder, cbuttonbackground = include("Configs/ui_config.lua")
+local triggered = nil
+
 -- Building ids
 local ARMCOM = UnitDefNames["armcom"].id
 local CORCOM = UnitDefNames["corcom"].id
@@ -472,7 +475,7 @@ function InitializeFaction(sDefID)
 
 					for c = 1, #cellRow do
 
-						gl.Color(0, 0, 0, 1)
+						gl.Color(cbackground)
 						gl.Rect(-borderSize, -borderSize, iconSize + borderSize, iconSize + borderSize)
 
 						gl.Color(1, 1, 1, 1)
@@ -543,6 +546,12 @@ local queueTimeFormat = whiteColor .. 'Queued ' .. metalColor .. '%dm ' .. energ
 
 
 function widget:DrawScreen()
+	if triggered == nil then
+		if cbackground[4] == 0.01 then
+			cbackground[4]=WG["background_color"]
+		end
+	triggered = true
+	end
 	gl.PushMatrix()
 		gl.Translate(wl, wt, 0)
 		gl.CallList(panelList)
