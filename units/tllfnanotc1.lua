@@ -44,7 +44,6 @@ return {
 		script = "corfnanotc.cob",
 		seismicsignature = 0,
 		selfdestructas = "NANOBOOM2T",
-		side = "CORE",
 		sightdistance = 380,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
@@ -56,7 +55,7 @@ return {
 		workertime = 600,
 		customparams = {
 			buildpic = "CORFNANOTC.png",
-			faction = "CORE",
+			faction = "TLL",
 		},
 		nanocolor = {
 			[1] = 0.69,
