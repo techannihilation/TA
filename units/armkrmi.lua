@@ -58,7 +58,7 @@ return {
 		workertime = 0,
 		customparams = {
 			canjump = "1",
-			faction = "ARM",
+			faction = "CORE",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {

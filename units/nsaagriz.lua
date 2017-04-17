@@ -70,7 +70,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "krypto-blaster.png",
-			faction = "CORE",
+			faction = "ARM",
 			requiretech = "Advanced T3 Unit Research Centre",
 		},
 		featuredefs = {

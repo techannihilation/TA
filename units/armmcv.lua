@@ -67,7 +67,7 @@ return {
 		unitnumber = 22134,
 		workertime = 0,
 		customparams = {
-			faction = "ARM",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

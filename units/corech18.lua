@@ -39,7 +39,6 @@ return {
 		radaremitheight = 79.875,
 		script = "corech3.lua",
 		selfdestructas = "COMMANDER_BLAST",
-		side = "ARM",
 		sightdistance = 0,
 		unitname = "corech18",
 		unitnumber = 7210,
@@ -48,7 +47,7 @@ return {
 		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo",
 		customparams = {
 			buildpic = "corech3.png",
-			faction = "ARM",
+			faction = "CORE",
 			ismorphingrc = true,
 			providetech = "Advanced T1 Unit Research Centre,Advanced T2 Unit Research Centre",
 		},
