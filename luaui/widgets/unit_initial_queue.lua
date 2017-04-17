@@ -20,8 +20,8 @@ end
 -- Config
 ------------------------------------------------------------
 -- Panel
-local iconSize = 40
-local borderSize = 1
+local iconSize = 55
+local borderSize = 0
 local maxCols = 5
 local fontSize = 16
 
@@ -268,7 +268,6 @@ local wWidth, wHeight = Spring.GetWindowGeometry()
 local wl, wt = 7 , 0.44*wHeight
 
 local cellRows = {} -- {{bDefID, bDefID, ...}, ...}
-local panelList = nil -- Display list for panel
 local areDragging = false
 
 local isMex = {} -- isMex[uDefID] = true / nil
@@ -461,41 +460,6 @@ function InitializeFaction(sDefID)
 		cellRows[1 + math.floor(b / numCols)][1 + b % numCols] = sBuilds[b + 1]
 	end
 
-	-- Set up drawing function
-	local drawFunc = function()
-
-		gl.PushMatrix()
-			gl.Translate(0, borderSize, 0)
-
-			for r = 1, #cellRows do
-				local cellRow = cellRows[r]
-
-				gl.Translate(0, -iconSize - borderSize, 0)
-				gl.PushMatrix()
-
-					for c = 1, #cellRow do
-						gl.Rect(-borderSize, -borderSize, iconSize + borderSize, iconSize + borderSize)
-
-						gl.Color(1, 1, 1, 1)
-						gl.Texture("#" .. cellRow[c])
-							gl.TexRect(0, 0, iconSize, iconSize)
-						gl.Texture(false)
-
-						gl.Translate(iconSize + borderSize, 0, 0)
-					end
-				gl.PopMatrix()
-			end
-
-		gl.PopMatrix()
-	end
-
-	-- delete any pre-existing displaylist
-	if panelList then
-		gl.DeleteList(panelList)
-	end
-
-	panelList = gl.CreateList(drawFunc)
-
 	for uDefID, uDef in pairs(UnitDefs) do
 
 		if uDef.extractsMetal > 0 then
@@ -509,9 +473,6 @@ function InitializeFaction(sDefID)
 end
 
 function widget:Shutdown()
-	if panelList then
-		gl.DeleteList(panelList)
-	end
 	WG["faction_change"] = nil
 end
 
@@ -546,22 +507,41 @@ local queueTimeFormat = whiteColor .. 'Queued ' .. metalColor .. '%dm ' .. energ
 function widget:DrawScreen()
 	if triggered == nil then
 		if cbackground[4] == 0.01 then
-			cbackground[4]=0.65  --WG["background_color"] looks like this is not called before game start
+			cbackground[4]=WG["background_color"] or 0.65
 		end
 	triggered = true
 	end
 	gl.PushMatrix()
-		gl.Translate(wl, wt, 0)
-		gl.Color(cbackground)
-		gl.CallList(panelList)
-		gl.Color(1, 1, 1, 1)
+	gl.Translate(wl, wt, 0)
+	gl.PushMatrix()
+	gl.Translate(0, borderSize, 0)
 
-		if #buildQueue > 0 then
-			local mCost, eCost, bCost = GetQueueCosts()
-			local buildTime = bCost / sDef.buildSpeed
-			totalTime = buildTime
-			gl.Text(string.format(queueTimeFormat, mCost, eCost, buildTime), 0, 0, fontSize, 'do')
+	for r = 1, #cellRows do
+	local cellRow = cellRows[r]
+
+		gl.Translate(0, -iconSize - borderSize, 0)
+		gl.PushMatrix()
+		for c = 1, #cellRow do
+			gl.Color(cbackground)
+			gl.Rect(-borderSize, -borderSize, iconSize + borderSize, iconSize + borderSize)
+
+			gl.Color(1, 1, 1, 1)
+			gl.Texture("#" .. cellRow[c])
+			gl.TexRect(0, 0, iconSize, iconSize)
+			gl.Texture(false)
+
+			gl.Translate(iconSize + borderSize, 0, 0)
 		end
+		gl.PopMatrix()
+	end
+	gl.PopMatrix()
+
+	if #buildQueue > 0 then
+		local mCost, eCost, bCost = GetQueueCosts()
+		local buildTime = bCost / sDef.buildSpeed
+		totalTime = buildTime
+		gl.Text(string.format(queueTimeFormat, mCost, eCost, buildTime), 0, 0, fontSize, 'do')
+	end
 	gl.PopMatrix()
 end
 function widget:DrawWorld()
