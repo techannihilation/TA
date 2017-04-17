@@ -3,7 +3,7 @@ return {
 		acceleration = 0.11,
 		brakerate = 0.315,
 		buildcostenergy = 5850,
-		buildcostmetal = 375,
+		buildcostmetal = 345,
 		builder = false,
 		buildpic = "cormatch.dds",
 		buildtime = 6500,
