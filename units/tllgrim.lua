@@ -49,7 +49,6 @@ return {
 		radaremitheight = 72,
 		selfdestructas = "NUCLEAR_MISSILE",
 		shootme = 1,
-		side = "ARM",
 		sightdistance = 690,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -62,7 +61,7 @@ return {
 		upright = true,
 		workertime = 0,
 		customparams = {
-			faction = "ARM",
+			faction = "TLL",
 		},
 		featuredefs = {
 			dead = {

@@ -43,7 +43,6 @@ return {
 		script = "tllradarns.lua",
 		seismicsignature = 0,
 		selfdestructas = "SMALL_BUILDING",
-		side = "CORE",
 		sightdistance = 740,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,
@@ -54,7 +53,7 @@ return {
 		yardmap = "wwwwwwwww",
 		customparams = {
 			buildpic = "TLLRADARNS.png",
-			faction = "CORE",
+			faction = "TLL",
 		},
 		featuredefs = {
 			dead = {
