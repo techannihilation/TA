@@ -265,7 +265,7 @@ local buildNameToID = {}
 local gameStarted = false 
 
 local wWidth, wHeight = Spring.GetWindowGeometry()
-local wl, wt = 7 , 0.44*wHeight
+local wl, wt = 7 , 0.55*wHeight
 
 local cellRows = {} -- {{bDefID, bDefID, ...}, ...}
 local areDragging = false
