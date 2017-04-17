@@ -1,0 +1,134 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  tube2, tube1, base, body, wake1, wake2, wake3, wake4,
+       badge, turret3, firept3, missile1, flare1;
+
+static-var  gun_1, restore_delay;
+
+// Signal definitions
+#define SIG_MOVE			2
+#define SIG_AIM				4
+#define SIG_AIM_2			8
+#define SIG_AIM_3			16
+
+Create()
+{
+	restore_delay = 1000;
+	gun_1 = tube1;
+}
+
+RestoreAfterDelay()
+{
+	sleep restore_delay;
+	//turn turret1 to x-axis <0.000000> speed <30.000000>;
+	//turn turret2 to x-axis <0.000000> speed <30.000000>;
+	turn turret3 to x-axis <0.000000> speed <30.000000>;
+	//turn turret1 to y-axis <0.000000> speed <30.000000>;
+	//turn turret2 to y-axis <0.000000> speed <30.000000>;
+	turn turret3 to y-axis <0.000000> speed <30.000000>;
+}
+
+StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	while( TRUE )
+	{
+		emit-sfx 259 from wake1;
+		emit-sfx 259 from wake2;
+		emit-sfx 259 from wake3;
+		emit-sfx 259 from wake4;
+		sleep 250;
+	}
+}
+
+StopMoving()
+{
+	signal SIG_MOVE;
+}
+
+FirePrimary()
+{
+	gun_1 = !gun_1;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = gun_1;
+}
+
+
+AimSecondary(heading, pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	return (1);
+}
+
+FireSecondary()
+{
+}
+
+QuerySecondary(piecenum)
+{
+		piecenum = flare1;
+}
+
+
+AimTertiary(heading, pitch)
+{
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
+	turn turret3 to y-axis heading speed <45.000000>;
+	turn turret3 to x-axis <0.000000> - pitch speed <45.000000>;
+	wait-for-turn turret3 around y-axis;
+	wait-for-turn turret3 around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+AimFromTertiary(piecenum)
+{
+	piecenum = turret3;
+}
+
+QueryTertiary(piecenum)
+{
+	piecenum = firept3;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type SHATTER | EXPLODE_ON_HIT | BITMAP1;
+		explode body type BITMAPONLY | BITMAP2;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type SHATTER | EXPLODE_ON_HIT | BITMAP1;
+		explode body type BITMAPONLY | BITMAP2;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type SHATTER | EXPLODE_ON_HIT | BITMAP1;
+		explode body type BITMAPONLY | BITMAP2;
+		return (0);
+	}
+	corpsetype = 3;
+	explode base type SHATTER | EXPLODE_ON_HIT | BITMAP1;
+	explode body type BITMAPONLY | BITMAP2;
+}
