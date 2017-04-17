@@ -474,7 +474,6 @@ function InitializeFaction(sDefID)
 				gl.PushMatrix()
 
 					for c = 1, #cellRow do
-						gl.Color(cbackground)
 						gl.Rect(-borderSize, -borderSize, iconSize + borderSize, iconSize + borderSize)
 
 						gl.Color(1, 1, 1, 1)
@@ -553,7 +552,10 @@ function widget:DrawScreen()
 	end
 	gl.PushMatrix()
 		gl.Translate(wl, wt, 0)
+		gl.Color(cbackground)
 		gl.CallList(panelList)
+		gl.Color(1, 1, 1, 1)
+
 		if #buildQueue > 0 then
 			local mCost, eCost, bCost = GetQueueCosts()
 			local buildTime = bCost / sDef.buildSpeed
