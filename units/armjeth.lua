@@ -19,7 +19,7 @@ return {
 		collisionvolumetype = "box",
 		corpse = "DEAD",
 		defaultmissiontype = "Standby",
-		description = "Amphibious Anti-air Kbot",
+		description = "Amphibious Anti-Air Kbot",
 		energymake = 0,
 		energystorage = 0,
 		energyuse = 0,
