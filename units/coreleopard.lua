@@ -36,7 +36,7 @@ return {
 		metalstorage = 25,
 		mobilestandorders = 1,
 		movementclass = "TKBOT3",
-		name = "Leapord",
+		name = "Leopard",
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "coreleopard",
