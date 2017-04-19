@@ -16,7 +16,7 @@ return {
 		category = "ALL HOVER MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SMALL",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Batlefield Radar and Sonar Hovercraft",
+		description = "Radar and Sonar Hovercraft",
 		downloadable = 1,
 		energymake = 15,
 		energystorage = 0,
