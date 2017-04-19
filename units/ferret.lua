@@ -18,7 +18,7 @@ return {
 		collide = false,
 		cruisealt = 60,
 		defaultmissiontype = "VTOL_standby",
-		description = "Land Atack  Helicopter",
+		description = "Land Attack Helicopter",
 		energymake = 0.8,
 		energystorage = 0,
 		energyuse = 1,

@@ -18,7 +18,7 @@ return {
 		category = "ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL SMALL WEAPON",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Anti-Air Misile tank",
+		description = "Anti-Air Missile Tank",
 		energymake = 0.5,
 		energystorage = 0,
 		energyuse = 0.5,

@@ -16,7 +16,7 @@ return {
 		category = "ALL HUGE MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Long Range EMP Paralizer Tank",
+		description = "Long Range EMP Paralyser Tank",
 		energymake = 1,
 		energystorage = 0,
 		energyuse = 0,

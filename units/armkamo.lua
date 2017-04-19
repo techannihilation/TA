@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		metalstorage = 0,
 		mobilestandorders = 1,
-		name = "kamovas",
+		name = "Kamovas",
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMKAMO",

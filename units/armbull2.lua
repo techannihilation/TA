@@ -35,7 +35,7 @@ return {
 		metalstorage = 0,
 		mobilestandorders = 1,
 		movementclass = "HTANK3",
-		name = "Pittbull",
+		name = "Pitbull",
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMBULL2",
