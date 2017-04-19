@@ -38,7 +38,7 @@ return {
 		metalstorage = 0,
 		mobilestandorders = 1,
 		moverate1 = 8,
-		name = "AH-309 smasher",
+		name = "AH-309 Smasher",
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "smasher",
