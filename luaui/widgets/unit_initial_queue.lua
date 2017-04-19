@@ -506,7 +506,7 @@ local queueTimeFormat = whiteColor .. 'Queued ' .. metalColor .. '%dm ' .. energ
 
 function widget:DrawScreen()
 	if triggered == nil then
-		if cbackground[4] == 0.01 then
+		if cbackground[4] == 0.54321 then
 			cbackground[4]=WG["background_color"] or 0.65
 		end
 	triggered = true

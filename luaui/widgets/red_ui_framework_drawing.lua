@@ -101,7 +101,7 @@ end
 
 local function Rect(px,py,sx,sy,c)
 	if (c) then
-		if c[4] == 0.01 then
+		if c[4] == 0.54321 then
 			glColor(c[1],c[2],c[3],minimapbrightness or 0.65)  --minimapbrightness
 		else
 			glColor(c[1],c[2],c[3],c[4])
