@@ -15,7 +15,7 @@ return {
 		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
 		corpse = "DEAD",
 		defaultmissiontype = "Standby",
-		description = "Twin Medium Rocket Launcher",
+		description = "Medium Twin Rocket Launcher",
 		energymake = 0.5,
 		energystorage = 0,
 		energyuse = 0.5,
