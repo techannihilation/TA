@@ -95,7 +95,7 @@ return {
 			[12] = "tllpulaser",
 			[13] = "tllflak",
 			[14] = "tllack",
-			[15] = "corupmex",
+			[15] = "tlljumpdrive",
 			[16] = "tllpcan",
 			[17] = "irritator",
 			[18] = "tlluwfusion",

@@ -99,7 +99,7 @@ return {
 			[16] = "tllsam",
 			[17] = "tllack",
 			[18] = "tllburner",
-			[19] = "corupmex",
+			[19] = "tlljumpdrive",
 			[20] = "tllpcan",
 			[21] = "tllatidal",
 			[22] = "tlluwmstorage",

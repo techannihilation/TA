@@ -98,7 +98,7 @@ return {
 			[15] = "armpb",
 			[16] = "armflak",
 			[17] = "abuilderlvl2",
-			[18] = "corupmex",
+			[18] = "armjumpdrive",
 			[19] = "armuwfus",
 			[20] = "armuwmmm",
 			[21] = "armuwmme",

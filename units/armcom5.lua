@@ -100,7 +100,7 @@ return {
 			[17] = "armdl",
 			[18] = "packo",
 			[19] = "abuilderlvl2",
-			[20] = "corupmex",
+			[20] = "armjumpdrive",
 			[21] = "armuwlightfus",
 			[22] = "armuwms",
 			[23] = "armuwes",

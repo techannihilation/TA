@@ -96,7 +96,7 @@ return {
 			[13] = "tllobliterator",
 			[14] = "tllflak",
 			[15] = "tllack",
-			[16] = "corupmex",
+			[16] = "tlljumpdrive",
 			[17] = "tllpcan",
 			[18] = "irritator",
 			[19] = "tllvaliant",
