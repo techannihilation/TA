@@ -35,7 +35,7 @@ return {
 		maxslope = 10,
 		maxwaterdepth = 0,
 		metalstorage = 0,
-		name = "The Bucher",
+		name = "The Butcher",
 		noautofire = false,
 		nochasecategory = "ALL",
 		objectname = "corboucher",
