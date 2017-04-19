@@ -17,7 +17,7 @@ return {
 		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Ampibious & All Terrain Combat Engineer",
+		description = "Ampibious All-Terrain Combat Engineer",
 		energymake = 5,
 		energyuse = 0,
 		explodeas = "BIG_UNITEX",
