@@ -1,9 +1,18 @@
 ---------------------------------------- v2.46.1 ---------------------------------------
 ----Improvments----
 Add New Icons for all Units
+Improve Ui, opacity will chnage depends on map brightness
 Add Sonar for Turtle and delete explosion when destroyed.
 TllWhale => Add more time for Flight Pulse (didn't reach target at 1650 range).
+Uppercut is no longer shared between all faction, new models for arm and tll
+Jump drives are no longer shared between all faction, new models for arm and tll
+Many fixes unitname/descriptions, thanks to Antarac
+Reorder all build menus, split land units now come before sea
 
+----Bug----
+Fix armcav jumping, Closes #108
+Fix debug spaming console
+Remove corproto from dont break cloak widget
 
 ----Balance----
 Metal Maker T1.5 ; Decrease resources for them. (-10%)
@@ -32,7 +41,6 @@ All T3.5 Burst launcher have been fixed at 1050 range and 500 damage / s. Add bo
 
 
 
-----Bug----
 
 
 
