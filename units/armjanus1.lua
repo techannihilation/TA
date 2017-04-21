@@ -15,7 +15,7 @@ return {
 		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
 		corpse = "ARMJANUS_DEAD",
 		defaultmissiontype = "Standby",
-		description = "Twin Heavy Rocket Launcher (Boost)",
+		description = "Heavy Twin Rocket Launcher (Boost)",
 		energymake = 0.5,
 		energystorage = 0,
 		energyuse = 0.5,
