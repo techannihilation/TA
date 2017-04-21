@@ -19,7 +19,7 @@ return {
 		corpse = "DEAD",
 		damagemodifier = 1,
 		defaultmissiontype = "Standby",
-		description = "Mobile Missile Vehicle",
+		description = "Mobile Missile Launcher",
 		energymake = 0.5,
 		energystorage = 0,
 		energyuse = 0.5,
