@@ -37,7 +37,7 @@ function widget:DrawScreen()
 			end
 		end
 		glTexture(false)
-		local OldMax, OldMin, NewMax, NewMin = 0.7,0.05,0.80,0.45
+		local OldMax, OldMin, NewMax, NewMin = 0.87,0.05,0.80,0.45
 		minimapbrightness=(r*0.3)+(g*0.5)+(b*0.2)
 		if minimapbrightness > OldMax then
 			Spring.Echo("nix new value found please adjust ", minimapbrightness)
