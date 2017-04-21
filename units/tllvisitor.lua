@@ -16,7 +16,7 @@ return {
 		category = "ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTVTOL WEAPON",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Missile Ship",
+		description = "Mobile Missile Launcher",
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
 		floater = true,
