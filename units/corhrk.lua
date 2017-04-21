@@ -15,7 +15,7 @@ return {
 		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
 		corpse = "DEAD",
 		defaultmissiontype = "Standby",
-		description = "Heavy Rocket Kbot",
+		description = "Missile Kbot",
 		energymake = 0.6,
 		energystorage = 0,
 		energyuse = 0.6,
