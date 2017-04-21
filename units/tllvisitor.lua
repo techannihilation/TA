@@ -28,7 +28,7 @@ return {
 		maneuverleashlength = 640,
 		mass = 2864,
 		maxdamage = 3100,
-		maxvelocity = 0.95,
+		maxvelocity = 2,
 		minwaterdepth = 12,
 		mobilestandorders = 1,
 		movementclass = "DBOAT6",
