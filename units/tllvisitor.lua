@@ -171,7 +171,7 @@ return {
 				},
 			},
 			visitor_vpulse = {
-				areaofeffect = 126,
+				areaofeffect = 96,
 				avoidfeature = false,
 				cegtag = "TLLRAVENTRAIL",
 				craterareaofeffect = 0,
