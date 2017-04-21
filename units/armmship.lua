@@ -133,7 +133,7 @@ return {
 		},
 		weapondefs = {
 			armmship_rocket = {
-				areaofeffect = 96,
+				areaofeffect = 116,
 				avoidfeature = false,
 				burnblow = true,
 				cegtag = "ARMRAVENTRAIL",
@@ -167,8 +167,8 @@ return {
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 400,
 				damage = {
-					commanders = 600,
-					default = 1200,
+					commanders = 450,
+					default = 900,
 					subs = 5,
 				},
 			},
