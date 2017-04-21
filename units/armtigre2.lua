@@ -45,7 +45,6 @@ return {
 		radaremitheight = 44,
 		selfdestructas = "NUCLEAR_BLAST",
 		shootme = 1,
-		side = "ARM",
 		sightdistance = 500,
 		sonardistance = 0,
 		standingfireorder = 2,
@@ -58,7 +57,7 @@ return {
 		unitnumber = 5698,
 		workertime = 0,
 		customparams = {
-			faction = "ARM",
+			faction = "CORE",
 		},
 		featuredefs = {
 			armtigre_heap = {

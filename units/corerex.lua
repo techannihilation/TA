@@ -46,7 +46,6 @@ return {
 		radaremitheight = 39,
 		selfdestructas = "ATOMIC_BLAST",
 		shootme = 1,
-		side = "CORE",
 		sightdistance = 600,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -58,7 +57,7 @@ return {
 		unitnumber = 325,
 		workertime = 0,
 		customparams = {
-			faction = "CORE",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
