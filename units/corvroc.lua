@@ -2,7 +2,7 @@ return {
 	corvroc = {
 		acceleration = 0.0209,
 		brakerate = 0.1254,
-		buildcostenergy = 8450,
+		buildcostenergy = 9500,
 		buildcostmetal = 880,
 		builder = false,
 		buildpic = "corvroc.dds",
@@ -174,8 +174,8 @@ return {
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 415,
 				damage = {
-					commanders = 650,
-					default = 1950,
+					commanders = 950,
+					default = 1900,
 					subs = 5,
 				},
 			},
