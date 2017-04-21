@@ -16,7 +16,7 @@ return {
 		category = "ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Mobile Anti-Missile Defense",
+		description = "Mobile Anti-Nuke System",
 		energymake = -75,
 		energystorage = 1000,
 		energyuse = 0,
