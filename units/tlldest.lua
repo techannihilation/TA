@@ -171,7 +171,7 @@ return {
 				gravityaffected = "TRUE",
 				name = "Heavy Plasma Cannon",
 				nogap = 1,
-				range = 3550,
+				range = 3375,
 				reloadtime = 0.5,
 				separation = 0.45,
 				size = 1,
