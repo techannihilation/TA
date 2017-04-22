@@ -50,9 +50,10 @@ return {
 		workertime = 400,
 		yardmap = "wCCCCCCCCCCCCCwcCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCc",
 		buildoptions = {
-			[1] = "tllasgard",
-			[2] = "tllhcar",
-			[3] = "tllswordfish",
+			[1] = "tllswordfish",
+			[2] = "tllasgard",
+			[3] = "tllhcar",
+			[4] = "tlldest",
 		},
 		customparams = {
 			faction = "TLL",
