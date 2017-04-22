@@ -16,7 +16,7 @@ return {
 		corpse = "ARMSCAB_DEAD",
 		damagemodifier = 0.5,
 		defaultmissiontype = "Standby",
-		description = "Mobile Long Range Anti-Missile Defense",
+		description = "Mobile Long Range Anti-Nuke System",
 		energymake = -100,
 		energystorage = 1000,
 		energyuse = 0,
