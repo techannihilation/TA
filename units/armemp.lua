@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "armemp_aoplane.dds",
-		buildpic = "armemp.png",
+		buildpic = "armemp.dds",
 		buildtime = 79247,
 		canattack = true,
 		canstop = 1,

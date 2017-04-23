@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 11500,
 		buildcostmetal = 1250,
 		builder = false,
-		buildpic = "tllsniper.png",
+		buildpic = "tllsniper.dds",
 		buildtime = 22500,
 		canattack = true,
 		canguard = true,

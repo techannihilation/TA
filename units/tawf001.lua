@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "tawf001_aoplane.dds",
-		buildpic = "tawf001.png",
+		buildpic = "tawf001.dds",
 		buildtime = 6000,
 		canattack = true,
 		canstop = 1,

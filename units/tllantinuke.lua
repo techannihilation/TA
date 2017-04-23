@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "tllantinuke_aoplane.dds",
-		buildpic = "tllantinuke.png",
+		buildpic = "tllantinuke.dds",
 		buildtime = 98025,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
 		corpse = "dead",

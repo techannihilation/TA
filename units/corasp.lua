@@ -12,7 +12,7 @@ return {
 		buildinggrounddecalsizex = 12,
 		buildinggrounddecalsizey = 12,
 		buildinggrounddecaltype = "corasp_aoplane.dds",
-		buildpic = "corasp.png",
+		buildpic = "corasp.dds",
 		buildtime = 18315,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		collisionvolumeoffsets = "0 -9 0",

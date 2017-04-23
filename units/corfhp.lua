@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 5421,
 		buildcostmetal = 1173,
 		builder = true,
-		buildpic = "corfhp.png",
+		buildpic = "corfhp.dds",
 		buildtime = 17817,
 		canmove = true,
 		canpatrol = true,

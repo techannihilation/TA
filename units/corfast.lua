@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 205,
 		builddistance = 110,
 		builder = true,
-		buildpic = "corfast.png",
+		buildpic = "corfast.dds",
 		buildtime = 6488,
 		canguard = true,
 		canmove = true,

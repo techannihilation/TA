@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 10,
 		buildinggrounddecalsizey = 10,
 		buildinggrounddecaltype = "corsilo1_aoplane.dds",
-		buildpic = "corsilo1.png",
+		buildpic = "corsilo1.dds",
 		buildtime = 181243,
 		canattack = true,
 		canstop = 1,

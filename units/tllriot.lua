@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 1547,
 		buildcostmetal = 347,
 		builder = false,
-		buildpic = "tllriot.png",
+		buildpic = "tllriot.dds",
 		buildtime = 5840,
 		canattack = true,
 		canguard = true,
@@ -45,7 +45,6 @@ return {
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
 		shootme = 1,
-		side = "ARM",
 		sightdistance = 260,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -57,7 +56,7 @@ return {
 		unitname = "tllriot",
 		workertime = 0,
 		customparams = {
-			faction = "ARM",
+			faction = "TLL",
 		},
 		featuredefs = {
 			dead = {

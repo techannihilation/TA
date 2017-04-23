@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 60000,
 		buildcostmetal = 2600,
 		builder = false,
-		buildpic = "armor.png",
+		buildpic = "armor.dds",
 		buildtime = 25000,
 		canattack = true,
 		canfly = true,

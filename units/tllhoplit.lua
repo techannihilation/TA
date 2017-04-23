@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 1480,
 		buildcostmetal = 180,
 		builder = false,
-		buildpic = "tllhoplit.png",
+		buildpic = "tllhoplit.dds",
 		buildtime = 6059,
 		canattack = true,
 		canguard = true,

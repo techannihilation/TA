@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 21900,
 		buildcostmetal = 1450,
 		builder = false,
-		buildpic = "devastator.png",
+		buildpic = "devastator.dds",
 		buildtime = 27000,
 		canattack = true,
 		canguard = true,

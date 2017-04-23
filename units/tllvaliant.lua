@@ -10,7 +10,7 @@ return {
 		buildcostenergy = 570000,
 		buildcostmetal = 213000,
 		builder = true,
-		buildpic = "tllvaliant.png",
+		buildpic = "tllvaliant.dds",
 		buildtime = 1200000,
 		canattack = true,
 		cancapture = true,

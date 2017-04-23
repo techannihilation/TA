@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 5950,
 		buildcostmetal = 650,
 		builder = false,
-		buildpic = "tlldischarge.png",
+		buildpic = "tlldischarge.dds",
 		buildtime = 8500,
 		canattack = true,
 		canguard = true,

@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 4405,
 		buildcostmetal = 605,
 		builder = false,
-		buildpic = "armorca.png",
+		buildpic = "armorca.dds",
 		buildtime = 10112,
 		canattack = true,
 		canguard = true,

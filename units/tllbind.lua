@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 16000,
 		buildcostmetal = 2950,
 		builder = false,
-		buildpic = "tllbind.png",
+		buildpic = "tllbind.dds",
 		buildtime = 50000,
 		canattack = true,
 		canguard = true,

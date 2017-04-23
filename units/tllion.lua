@@ -8,7 +8,7 @@ return {
 		buildinggrounddecalsizex = 19,
 		buildinggrounddecalsizey = 19,
 		buildinggrounddecaltype = "tllion_aoplane.dds",
-		buildpic = "tllion.png",
+		buildpic = "tllion.dds",
 		buildtime = 1559848,
 		canattack = true,
 		canstop = 1,

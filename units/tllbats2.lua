@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 29376,
 		buildcostmetal = 5526,
 		builder = false,
-		buildpic = "tllbats2.png",
+		buildpic = "tllbats2.dds",
 		buildtime = 49640,
 		canattack = true,
 		canguard = true,

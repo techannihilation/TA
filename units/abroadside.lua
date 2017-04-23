@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 1750000,
 		buildcostmetal = 295000,
 		builder = false,
-		buildpic = "abroadside.png",
+		buildpic = "abroadside.dds",
 		buildtime = 2300000,
 		canattack = true,
 		canfly = true,

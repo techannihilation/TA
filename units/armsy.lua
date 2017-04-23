@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 1520,
 		buildcostmetal = 650,
 		builder = true,
-		buildpic = "armsy.png",
+		buildpic = "armsy.dds",
 		buildtime = 6050,
 		canmove = true,
 		canpatrol = true,

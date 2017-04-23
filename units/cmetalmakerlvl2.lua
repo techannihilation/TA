@@ -8,7 +8,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "cmetalmakerlvl2_aoplane.dds",
-		buildpic = "cmetalmakerlvl2.png",
+		buildpic = "cmetalmakerlvl2.dds",
 		buildtime = 240000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "dead",

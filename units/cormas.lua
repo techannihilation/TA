@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 10,
 		buildinggrounddecalsizey = 10,
 		buildinggrounddecaltype = "cormas_aoplane.dds",
-		buildpic = "cormas.png",
+		buildpic = "cormas.dds",
 		buildtime = 78000,
 		canattack = false,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",

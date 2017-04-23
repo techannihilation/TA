@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 11,
 		buildinggrounddecalsizey = 11,
 		buildinggrounddecaltype = "armvulc2_aoplane.dds",
-		buildpic = "armvulc2.png",
+		buildpic = "armvulc2.dds",
 		buildtime = 850000,
 		canattack = true,
 		canstop = 1,

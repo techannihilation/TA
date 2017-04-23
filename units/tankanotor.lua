@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 32900,
 		buildcostmetal = 3540,
 		builder = false,
-		buildpic = "tankanotor.png",
+		buildpic = "tankanotor.dds",
 		buildtime = 26750,
 		canattack = true,
 		canguard = true,

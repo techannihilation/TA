@@ -7,7 +7,7 @@ return {
 		buildinggrounddecalsizex = 18,
 		buildinggrounddecalsizey = 18,
 		buildinggrounddecaltype = "tllesy_aoplane.dds",
-		buildpic = "tllesy.png",
+		buildpic = "tllesy.dds",
 		buildtime = 65400,
 		canmove = true,
 		canpatrol = true,
@@ -50,9 +50,10 @@ return {
 		workertime = 400,
 		yardmap = "wCCCCCCCCCCCCCwcCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCc",
 		buildoptions = {
-			[1] = "tllasgard",
-			[2] = "tllhcar",
-			[3] = "tllswordfish",
+			[1] = "tllswordfish",
+			[2] = "tllasgard",
+			[3] = "tllhcar",
+			[4] = "tlldest",
 		},
 		customparams = {
 			faction = "TLL",

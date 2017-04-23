@@ -59,6 +59,8 @@ local receiveCount			= (tostring(Spring.GetModOptions().mo_enemycomcount) == "1"
 local comMarkers			= {}
 local removeMarkerFrame		= -1
 local lastMarkerFrame		= -1
+local cbackground, cborder, cbuttonbackground = include("Configs/ui_config.lua")
+local triggered = nil
 
 local comDefs = {
   [UnitDefNames["corcom"].id] = true,
@@ -242,6 +244,13 @@ function widget:DrawScreen()
 	if not inProgress then
 		return
 	end
+
+	if triggered == nil then
+		if cbackground[4] == 0.54321 then
+			cbackground[4]=WG["background_color"]
+		end
+	triggered = true
+	end
 	
 	local flickerState = allyComs == 1 and flashIcon and flicker()
 	if countChanged or flickerLastState ~= flickerState then
@@ -253,7 +262,7 @@ function widget:DrawScreen()
 		displayList = glCreateList( function()
 			glTranslate(xPos, yPos, 0)
 			--background
-			glColor(0, 0, 0, 0.5)
+			glColor(cbackground)
 			glRect(0, 0, panelWidth, panelHeight)
 			--com pic
 			if flickerState then

@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 11,
 		buildinggrounddecalsizey = 11,
 		buildinggrounddecaltype = "afusionplant_aoplane.dds",
-		buildpic = "afusionplant.png",
+		buildpic = "afusionplant.dds",
 		buildtime = 1800000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		collisionvolumeoffsets = "0 0 0",

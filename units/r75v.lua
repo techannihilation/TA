@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 1440,
 		buildcostmetal = 96,
 		builder = false,
-		buildpic = "r75v.png",
+		buildpic = "r75v.dds",
 		buildtime = 6747,
 		canattack = false,
 		canguard = true,

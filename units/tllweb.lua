@@ -8,7 +8,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "tllweb_aoplane.dds",
-		buildpic = "tllweb.png",
+		buildpic = "tllweb.dds",
 		buildtime = 5000,
 		canattack = true,
 		canguard = true,

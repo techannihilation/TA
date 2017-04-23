@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 305,
 		builddistance = 212,
 		builder = true,
-		buildpic = "cormls.png",
+		buildpic = "cormls.dds",
 		buildtime = 5300,
 		canguard = true,
 		canmove = true,

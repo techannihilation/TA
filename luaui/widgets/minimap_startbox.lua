@@ -296,6 +296,8 @@ function widget:DrawWorld()
 
   local time = Spring.DiffTimers(Spring.GetTimer(), startTimer)
 
+  if time < 0.7 then return end
+  
   -- show the ally startboxes
   DrawStartboxes3dWithStencil()
 

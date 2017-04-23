@@ -7,7 +7,7 @@ return {
 		buildinggrounddecalsizex = 18,
 		buildinggrounddecalsizey = 18,
 		buildinggrounddecaltype = "armesy_aoplane.dds",
-		buildpic = "armesy.png",
+		buildpic = "armesy.dds",
 		buildtime = 65400,
 		canmove = true,
 		canpatrol = true,

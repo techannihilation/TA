@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 4162,
 		buildcostmetal = 724,
 		builder = false,
-		buildpic = "corsub.png",
+		buildpic = "corsub.dds",
 		buildtime = 9729,
 		canattack = true,
 		canguard = true,

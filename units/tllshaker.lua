@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 1600,
 		buildcostmetal = 245,
 		builder = false,
-		buildpic = "tllshaker.png",
+		buildpic = "tllshaker.dds",
 		buildtime = 3904,
 		canattack = true,
 		canguard = true,

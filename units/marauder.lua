@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 27200,
 		buildcostmetal = 1440,
 		builder = false,
-		buildpic = "marauder.png",
+		buildpic = "marauder.dds",
 		buildtime = 28957,
 		canattack = true,
 		canguard = true,

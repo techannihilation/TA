@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 18180,
 		buildcostmetal = 970,
 		builder = false,
-		buildpic = "speeder.png",
+		buildpic = "speeder.dds",
 		buildtime = 22500,
 		canattack = true,
 		canguard = true,

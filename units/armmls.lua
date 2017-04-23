@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 275,
 		builddistance = 212,
 		builder = true,
-		buildpic = "armmls.png",
+		buildpic = "armmls.dds",
 		buildtime = 5247,
 		canguard = true,
 		canmove = true,

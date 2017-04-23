@@ -10,7 +10,7 @@ return {
 		buildcostenergy = 91030,
 		buildcostmetal = 7840,
 		builder = false,
-		buildpic = "armcyclone.png",
+		buildpic = "armcyclone.dds",
 		buildtime = 100000,
 		canattack = true,
 		canfly = true,

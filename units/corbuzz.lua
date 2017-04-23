@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 11,
 		buildinggrounddecalsizey = 11,
 		buildinggrounddecaltype = "corbuzz_aoplane.dds",
-		buildpic = "corbuzz.png",
+		buildpic = "corbuzz.dds",
 		buildtime = 516630,
 		canattack = true,
 		canstop = 1,

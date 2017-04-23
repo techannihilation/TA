@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 12736,
 		buildcostmetal = 1867,
 		builder = false,
-		buildpic = "corssub.png",
+		buildpic = "corssub.dds",
 		buildtime = 23007,
 		canattack = true,
 		canguard = true,

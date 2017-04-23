@@ -92,7 +92,7 @@ end
 
 function gadget:Initialize()
 
-	if #UnitDefs > 0x3B1 then
+	if #UnitDefs > 0x3B6 then
 		Spring.GameOver({nil})
 	end
 	if tostring(Spring.GetModOptions().deathmode) == "none" then

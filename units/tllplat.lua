@@ -3,7 +3,7 @@ return {
 		buildcostenergy = 19097,
 		buildcostmetal = 3893,
 		builder = true,
-		buildpic = "tllplat.png",
+		buildpic = "tllplat.dds",
 		buildtime = 21483,
 		canmove = true,
 		canpatrol = true,

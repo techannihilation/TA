@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 7900,
 		buildcostmetal = 1140,
 		builder = false,
-		buildpic = "tllsting.png",
+		buildpic = "tllsting.dds",
 		buildtime = 9000,
 		canattack = true,
 		canguard = true,

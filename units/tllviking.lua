@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 81000,
 		buildcostmetal = 7600,
 		builder = false,
-		buildpic = "tllviking.png",
+		buildpic = "tllviking.dds",
 		buildtime = 65000,
 		canattack = true,
 		canguard = true,

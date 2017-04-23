@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 1943,
 		buildcostmetal = 336,
 		builder = false,
-		buildpic = "tllrsplane.png",
+		buildpic = "tllrsplane.dds",
 		buildtime = 15918,
 		canfly = true,
 		canguard = true,

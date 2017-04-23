@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 5850,
 		buildcostmetal = 70,
 		builder = false,
-		buildpic = "corroach.png",
+		buildpic = "corroach.dds",
 		buildtime = 7899,
 		canattack = true,
 		canguard = true,

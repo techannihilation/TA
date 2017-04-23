@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 5800,
 		buildcostmetal = 320,
 		builder = false,
-		buildpic = "corape.png",
+		buildpic = "corape.dds",
 		buildtime = 20000,
 		canattack = true,
 		canfly = true,

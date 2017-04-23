@@ -8,7 +8,7 @@ return {
 		buildcostmetal = 110,
 		builddistance = 112,
 		builder = true,
-		buildpic = "armtick.png",
+		buildpic = "armtick.dds",
 		buildtime = 3000,
 		canassist = false,
 		canattack = false,

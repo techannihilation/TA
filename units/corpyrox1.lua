@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 34850,
 		buildcostmetal = 3290,
 		builder = false,
-		buildpic = "corpyrox1.png",
+		buildpic = "corpyrox1.dds",
 		buildtime = 40000,
 		canattack = true,
 		canguard = true,

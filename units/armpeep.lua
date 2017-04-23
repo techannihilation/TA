@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 1573,
 		buildcostmetal = 32,
 		builder = false,
-		buildpic = "armpeep.png",
+		buildpic = "armpeep.dds",
 		buildtime = 2585,
 		canfly = true,
 		canguard = true,

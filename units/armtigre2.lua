@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 106000,
 		buildcostmetal = 5900,
 		builder = false,
-		buildpic = "armtigre2.png",
+		buildpic = "armtigre2.dds",
 		buildtime = 76000,
 		canattack = true,
 		canguard = true,
@@ -45,7 +45,6 @@ return {
 		radaremitheight = 44,
 		selfdestructas = "NUCLEAR_BLAST",
 		shootme = 1,
-		side = "ARM",
 		sightdistance = 500,
 		sonardistance = 0,
 		standingfireorder = 2,
@@ -58,7 +57,7 @@ return {
 		unitnumber = 5698,
 		workertime = 0,
 		customparams = {
-			faction = "ARM",
+			faction = "CORE",
 		},
 		featuredefs = {
 			armtigre_heap = {

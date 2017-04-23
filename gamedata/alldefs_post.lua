@@ -19,6 +19,185 @@
 
 SaveDefsToCustomParams = false
 
+local iswater = {
+	["armfnanotc1"] = true,
+	["tllwhale"] = true,
+	["armmship"] = true,
+	["csubpen"] = true,
+	["asubpen"] = true,
+	["armhls"] = true,
+	["corfhlt"] = true,
+	["tllacsub"] = true,
+	["corcarry"] = true,
+	["armtl"] = true,
+	["coruwlightfus"] = true,
+	["coracsub"] = true,
+	["cormls"] = true,
+	["armuwfus1"] = true,
+	["armcs"] = true,
+	["armfnanotc"] = true,
+	["cahpns"] = true,
+	["aahpns"] = true,
+	["tllsonar"] = true,
+	["armmarlin"] = true,
+	["uppercut"] = true,
+	["tllwmmohoconv"] = true,
+	["tllwmconv"] = true,
+	["armacsub"] = true,
+	["tllvisitor"] = true,
+	["tllviolator"] = true,
+	["tllotter"] = true,
+	["tlluwmstorage"] = true,
+	["tlluwmex"] = true,
+	["tlluwjam"] = true,
+	["tllorc"] = true,
+	["tlluwfusion"] = true,
+	["tlluwestorage"] = true,
+	["tlltrid"] = true,
+	["armrecl"] = true,
+	["corcs"] = true,
+	["armason"] = true,
+	["armsjam"] = true,
+	["tlltide"] = true,
+	["tllsy"] = true,
+	["tllsubpen"] = true,
+	["tlllmtns"] = true,
+	["tllsting"] = true,
+	["tllsr"] = true,
+	["tllsquid"] = true,
+	["armbats"] = true,
+	["corfrt"] = true,
+	["armatidal"] = true,
+	["tllshark"] = true,
+	["armmls"] = true,
+	["tllradarns"] = true,
+	["armhevsenan"] = true,
+	["tllcs"] = true,
+	["tllplunger"] = true,
+	["tllfnanotc2"] = true,
+	["tllviking"] = true,
+	["cortyrnt"] = true,
+	["corenaa"] = true,
+	["corpt"] = true,
+	["corasy"] = true,
+	["tllgiant"] = true,
+	["corbats"] = true,
+	["armuwes"] = true,
+	["armatl"] = true,
+	["coratidal"] = true,
+	["tllhcar"] = true,
+	["armfrad"] = true,
+	["tllasonar"] = true,
+	["armtide"] = true,
+	["corsy"] = true,
+	["decade"] = true,
+	["tllfnanotc1"] = true,
+	["armpt"] = true,
+	["coratl"] = true,
+	["tllatidal"] = true,
+	["armuwlightfus"] = true,
+	["corason"] = true,
+	["corfnanotc1"] = true,
+	["coruwmmm"] = true,
+	["armsy"] = true,
+	["tllhltns"] = true,
+	["corhevsenan"] = true,
+	["coresupp"] = true,
+	["coruwfus"] = true,
+	["tllfnanotc"] = true,
+	["armfatf"] = true,
+	["tllesy"] = true,
+	["tllequalizer"] = true,
+	["armthovr"] = true,
+	["corfnanotc2"] = true,
+	["corfatf"] = true,
+	["tllcsub"] = true,
+	["armroy"] = true,
+	["tllacs"] = true,
+	["armuwmme"] = true,
+	["corfdrag"] = true,
+	["corsub"] = true,
+	["corfmkr"] = true,
+	["armesy"] = true,
+	["armflosh"] = true,
+	["tllmanta"] = true,
+	["tllswordfish"] = true,
+	["tllboat2"] = true,
+	["corfrad"] = true,
+	["tllbats2"] = true,
+	["crnns"] = true,
+	["armsub"] = true,
+	["tllatorp"] = true,
+	["armuwmex"] = true,
+	["tllasgard"] = true,
+	["tllasship"] = true,
+	["tllaspns"] = true,
+	["corplat"] = true,
+	["tllasy"] = true,
+	["corfnanotc3"] = true,
+	["tllambassador"] = true,
+	["tllauwmex"] = true,
+	["corblackhy"] = true,
+	["armfmkr"] = true,
+	["armtship"] = true,
+	["armbc"] = true,
+	["coruwmme"] = true,
+	["corroy"] = true,
+	["tlldtns"] = true,
+	["tlltorp"] = true,
+	["armfnanotc3"] = true,
+	["tllplat"] = true,
+	["corfhp"] = true,
+	["cortl"] = true,
+	["armuwmmm"] = true,
+	["coruwes"] = true,
+	["armcarry"] = true,
+	["armhcar"] = true,
+	["armfflak"] = true,
+	["tllfgate"] = true,
+	["tllkrak"] = true,
+	["cormship"] = true,
+	["corsjam"] = true,
+	["coruwms"] = true,
+	["coruwmex"] = true,
+	["cortship"] = true,
+	["corthovr"] = true,
+	["corssub"] = true,
+	["cortide"] = true,
+	["armcrus"] = true,
+	["correcl"] = true,
+	["armfhp"] = true,
+	["coresy"] = true,
+	["tllsolarns"] = true,
+	["tllfflak"] = true,
+	["armsonar"] = true,
+	["armsubk"] = true,
+	["tawf009"] = true,
+	["corasship"] = true,
+	["armhevsenan"] = true,
+	["corhcar"] = true,
+	["tllhpns"] = true,
+	["armasy"] = true,
+	["corsonar"] = true,
+	["armuwms"] = true,
+	["armuwfus"] = true,
+	["armplat"] = true,
+	["tlldcsta"] = true,
+	["tllmixer"] = true,
+	["aseadragon"] = true,
+	["corarch"] = true,
+	["armfnanotc2"] = true,
+	["tllnssam"] = true,
+	["corcrus"] = true,
+	["corfnanotc"] = true,
+	["armfdrag"] = true,
+	["corshark"] = true,
+	["armfhlt"] = true,
+	["armfrt"] = true,
+	["armtrmph"] = true,
+	["armaas"] = true,
+	["corflshd"] = true,
+	}
 
 local Commanders = {
 	["corcom"] = true,
@@ -361,8 +540,37 @@ local pplants = {
 
 -- process unitdef
 function UnitDef_Post(name, uDef)
-	--[[
 
+--[[	
+if uDef.buildoptions then
+		local tablesize = #uDef.buildoptions
+			local optionswater = {}
+			local optionsother = {}
+			Spring.Echo("buildoption found in ",uDef.unitname)
+			local a ,b = 1,1
+
+			for i,units in ipairs(uDef.buildoptions) do
+				if not iswater[units] then
+					Spring.Echo(a,units," other")
+					optionsother[a]=units
+					a=a+1
+				end
+			end
+			for i,units in ipairs(uDef.buildoptions) do
+				if iswater[units] then
+					Spring.Echo(a,units," water")
+					optionsother[a]=units
+					a=a+1
+				end
+			end
+			uDef.buildoptions={}
+			for i=1,tablesize do
+				uDef.buildoptions[i]=optionsother[i]
+				Spring.Echo("new order ",i,optionsother[i])
+			end
+		end
+
+--[[
 	if (not Commanders[uDef.unitname]) then
 		uDef.mass = math.max(uDef.maxdamage / 6.0, uDef.buildcostmetal)
 	end
@@ -430,20 +638,19 @@ function UnitDef_Post(name, uDef)
 	--end
 	--Uncomment to clean pieces
 	--uDef.sfxtypes.pieceexplosiongenerators = nil
-	
+	--[[
 	if not uDef.customparams then
-        uDef.customparams = {}
-    end
+        	uDef.customparams = {}
+   	end
 
 
-	uDef.buildpic=uDef.unitname..".png"
+	uDef.buildpic=uDef.unitname..".dds"
 
 
 
 	if uDef.side then
 		--Spring.Echo(uDef.name,uDef.side)
 		uDef.customparams.faction=uDef.side
-	end
 --]]
 end
 
@@ -459,7 +666,42 @@ end
 
 -- process modoptions (last, because they should not get baked)
 
-function ModOptions_Post (UnitDefs, WeaponDefs)
+function ModOptions_Post(UnitDefs, WeaponDefs)
+--[[
+
+	for name,ud in pairs(UnitDefs) do
+		if ud.buildoptions then
+		local tablesize = #ud.buildoptions
+			local optionswater = {}
+			local optionsother = {}
+			Spring.Echo("buildoption found in ",ud.unitname)
+			local a ,b = 1,1
+
+			for i,units in ipairs(ud.buildoptions) do
+				if not iswater[units] then
+					Spring.Echo(a,units," other")
+					optionsother[a]=units
+					a=a+1
+				end
+			end
+			for i,units in ipairs(ud.buildoptions) do
+				if iswater[units] then
+					Spring.Echo(a,units," water")
+					optionsother[a]=units
+					a=a+1
+				end
+			end
+			ud.buildoptions={}
+			for i=1,tablesize do
+				ud.buildoptions[i]=optionsother[i]
+				Spring.Echo("new order ",i,optionsother[i])
+			end
+		end
+	end
+
+--]]
+
+
 	if (Spring.GetModOptions) then
 	local modOptions = Spring.GetModOptions()
 
@@ -485,4 +727,5 @@ function ModOptions_Post (UnitDefs, WeaponDefs)
 			end
 		end
 	end
+	--]]
 end

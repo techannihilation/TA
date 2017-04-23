@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "tlljam_aoplane.dds",
-		buildpic = "tlljam.png",
+		buildpic = "tlljam.dds",
 		buildtime = 6555,
 		canattack = false,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",

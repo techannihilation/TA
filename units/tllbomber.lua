@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 2838,
 		buildcostmetal = 182,
 		builder = false,
-		buildpic = "tllbomber.png",
+		buildpic = "tllbomber.dds",
 		buildtime = 6575,
 		canattack = true,
 		canfly = true,

@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "armamd_aoplane.dds",
-		buildpic = "armamd.png",
+		buildpic = "armamd.dds",
 		buildtime = 125678,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
 		collisionvolumeoffsets = "0 0 -1",

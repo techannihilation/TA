@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 3,
 		buildinggrounddecalsizey = 3,
 		buildinggrounddecaltype = "armmine7_aoplane.dds",
-		buildpic = "armmine7.png",
+		buildpic = "armmine7.dds",
 		buildtime = 650,
 		canattack = false,
 		canguard = false,

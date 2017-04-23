@@ -6,7 +6,7 @@ return {
 		brakerate = 0.004,
 		buildcostenergy = 6973,
 		buildcostmetal = 310,
-		buildpic = "corfiend.png",
+		buildpic = "corfiend.dds",
 		buildtime = 17814,
 		canattack = true,
 		canfly = true,

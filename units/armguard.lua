@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "armguard_aoplane.dds",
-		buildpic = "armguard.png",
+		buildpic = "armguard.dds",
 		buildtime = 15000,
 		canattack = true,
 		canstop = 1,

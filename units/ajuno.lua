@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "ajuno_aoplane.dds",
-		buildpic = "ajuno.png",
+		buildpic = "ajuno.dds",
 		buildtime = 21833,
 		canattack = true,
 		canstop = 1,

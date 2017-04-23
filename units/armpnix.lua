@@ -8,7 +8,7 @@ return {
 		buildcostenergy = 11332,
 		buildcostmetal = 244,
 		builder = false,
-		buildpic = "armpnix.png",
+		buildpic = "armpnix.dds",
 		buildtime = 31064,
 		canattack = true,
 		canfly = true,

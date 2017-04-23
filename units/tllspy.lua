@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 8934,
 		buildcostmetal = 199,
 		builder = false,
-		buildpic = "tllspy.png",
+		buildpic = "tllspy.dds",
 		buildtime = 20345,
 		canguard = false,
 		canmove = true,

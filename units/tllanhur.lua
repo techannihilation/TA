@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 51000,
 		buildcostmetal = 4250,
 		builder = false,
-		buildpic = "tllanhur.png",
+		buildpic = "tllanhur.dds",
 		buildtime = 45000,
 		canattack = true,
 		canfly = true,

@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 8000,
 		buildcostmetal = 360,
 		builder = false,
-		buildpic = "armlashover.png",
+		buildpic = "armlashover.dds",
 		buildtime = 6500,
 		canattack = true,
 		canguard = true,

@@ -8,7 +8,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "tllplasma_aoplane.dds",
-		buildpic = "tllplasma.png",
+		buildpic = "tllplasma.dds",
 		buildtime = 25000,
 		canattack = true,
 		canstop = 1,

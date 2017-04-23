@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 3373,
 		builddistance = 112,
 		builder = true,
-		buildpic = "corjurgen.png",
+		buildpic = "corjurgen.dds",
 		buildtime = 31312,
 		canassist = false,
 		canattack = true,

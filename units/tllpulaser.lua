@@ -8,7 +8,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "tllpulaser_aoplane.dds",
-		buildpic = "tllpulaser.png",
+		buildpic = "tllpulaser.dds",
 		buildtime = 12381,
 		canattack = true,
 		canstop = 1,

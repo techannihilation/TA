@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 451,
 		buildcostmetal = 23,
 		builder = false,
-		buildpic = "tllsonar.png",
+		buildpic = "tllsonar.dds",
 		buildtime = 931,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "dead",

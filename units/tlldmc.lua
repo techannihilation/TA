@@ -8,7 +8,7 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "tlldmc_aoplane.dds",
-		buildpic = "tlldmc.png",
+		buildpic = "tlldmc.dds",
 		buildtime = 259000,
 		canattack = true,
 		canstop = 1,

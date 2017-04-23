@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 9920,
 		buildcostmetal = 2528,
 		builder = false,
-		buildpic = "corshieldgen.png",
+		buildpic = "corshieldgen.dds",
 		buildtime = 77166,
 		canattack = true,
 		canguard = true,

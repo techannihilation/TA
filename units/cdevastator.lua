@@ -9,7 +9,7 @@ return {
 		buildcostenergy = 1780000,
 		buildcostmetal = 303000,
 		builder = false,
-		buildpic = "cdevastator.png",
+		buildpic = "cdevastator.dds",
 		buildtime = 2400000,
 		canattack = true,
 		canfly = true,

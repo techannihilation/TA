@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 370000,
 		buildcostmetal = 22500,
 		builder = false,
-		buildpic = "irritator.png",
+		buildpic = "irritator.dds",
 		buildtime = 444423,
 		canattack = true,
 		canguard = true,

@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 59500,
 		buildcostmetal = 4220,
 		builder = false,
-		buildpic = "core_riptide.png",
+		buildpic = "core_riptide.dds",
 		buildtime = 40000,
 		canattack = true,
 		canguard = true,

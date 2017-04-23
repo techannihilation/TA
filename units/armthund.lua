@@ -8,7 +8,7 @@ return {
 		buildcostenergy = 5413,
 		buildcostmetal = 155,
 		builder = false,
-		buildpic = "armthund.png",
+		buildpic = "armthund.dds",
 		buildtime = 4778,
 		canattack = true,
 		canfly = true,

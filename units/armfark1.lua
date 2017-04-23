@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 310,
 		builddistance = 112,
 		builder = true,
-		buildpic = "armfark1.png",
+		buildpic = "armfark1.dds",
 		buildtime = 4302,
 		canguard = true,
 		canmove = true,
@@ -62,8 +62,7 @@ return {
 			[4] = "armllt1",
 			[5] = "armrad1",
 			[6] = "armrl1",
-			[7] = "commando",
-			[8] = "armshock1",
+			[7] = "armshock1",
 		},
 		customparams = {
 			buildpic = "ARMFARK.png",

@@ -64,7 +64,6 @@ local Spring_GetLocalTeamID      = Spring.GetLocalTeamID
 local Spring_GetLocalPlayerID    = Spring.GetLocalPlayerID
 local Spring_ShareResources      = Spring.ShareResources
 local Spring_GetTeamUnitCount    = Spring.GetTeamUnitCount
-local Echo                       = Spring.Echo
 local Spring_GetTeamResources    = Spring.GetTeamResources
 local Spring_SendCommands        = Spring.SendCommands
 local Spring_GetConfigInt        = Spring.GetConfigInt
@@ -164,6 +163,9 @@ local pingCpuColors   = {
 	[4] = {r = 0.82, g = 0.27, b = 0.18},
 	[5] = {r = 1, g = 0.15, b = 0.3}
 }
+
+local cbackground, _, _ = include("Configs/ui_config.lua")
+triggered = nil
 
 --------------------------------------------------------------------------------
 -- Time Variables
@@ -1191,7 +1193,14 @@ function widget:GameProgress(serverframenum)
 end
 
 function widget:DrawScreen()
-	
+
+	if triggered == nil then
+		if cbackground[4] == 0.54321 then
+			cbackground[4]=WG["background_color"]
+		end
+	triggered = true
+	end
+
 	if Spring_IsGUIHidden() or PlayerIsBehind then
 		return
 	end
@@ -1209,7 +1218,7 @@ function widget:DrawScreen()
 		local GameFrame = Spring_GetGameFrame()
 		if PrevGameFrame == nil then PrevGameFrame = GameFrame end
 		if (DrawFrame%5==0) or (GameFrame>PrevGameFrame+1) then
-			--Echo(DrawFrame)
+			--Spring.Echo(DrawFrame)
 			NeedUpdate = true
 		end
 	end
@@ -1355,7 +1364,7 @@ function CreateBackground()
 	end
 	
 	Background = gl_CreateList(function()
-		gl_Color(0,0,0,0.5)
+		gl_Color(cbackground)
 		
 		RectRound(BLcornerX,BLcornerY,TRcornerX,TRcornerY,6)
 		--DrawRect(BLcornerX,BLcornerY,TRcornerX,TRcornerY)

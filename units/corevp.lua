@@ -8,7 +8,7 @@ return {
 		buildinggrounddecalsizex = 10,
 		buildinggrounddecalsizey = 9,
 		buildinggrounddecaltype = "corevp_aoplane.dds",
-		buildpic = "corevp.png",
+		buildpic = "corevp.dds",
 		buildtime = 70500,
 		canmove = true,
 		canpatrol = true,

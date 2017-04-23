@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 16900,
 		buildcostmetal = 3285,
 		builder = false,
-		buildpic = "tllthumper.png",
+		buildpic = "tllthumper.dds",
 		buildtime = 30000,
 		canattack = true,
 		canguard = true,

@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 2300,
 		buildcostmetal = 225,
 		builder = false,
-		buildpic = "corraid.png",
+		buildpic = "corraid.dds",
 		buildtime = 3200,
 		canattack = true,
 		canguard = true,

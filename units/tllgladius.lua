@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 179,
 		buildcostmetal = 44,
 		builder = false,
-		buildpic = "tllgladius.png",
+		buildpic = "tllgladius.dds",
 		buildtime = 1181,
 		canattack = true,
 		canguard = true,

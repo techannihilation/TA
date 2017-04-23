@@ -3,7 +3,7 @@ return {
 		buildcostenergy = 2300,
 		buildcostmetal = 1300,
 		builder = true,
-		buildpic = "tllhpns.png",
+		buildpic = "tllhpns.dds",
 		buildtime = 11007,
 		canmove = true,
 		canpatrol = true,

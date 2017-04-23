@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 320,
 		builddistance = 450,
 		builder = true,
-		buildpic = "armfnanotc.png",
+		buildpic = "armfnanotc.dds",
 		buildtime = 5000,
 		canguard = true,
 		canmove = false,

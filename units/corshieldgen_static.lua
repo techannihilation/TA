@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "corshieldgen_static_aoplane.dds",
-		buildpic = "corshieldgen_static.png",
+		buildpic = "corshieldgen_static.dds",
 		buildtime = 77166,
 		canattack = false,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",

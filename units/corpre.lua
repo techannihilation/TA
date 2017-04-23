@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "corpre_aoplane.dds",
-		buildpic = "corpre.png",
+		buildpic = "corpre.dds",
 		buildtime = 220000,
 		canattack = true,
 		canstop = 1,

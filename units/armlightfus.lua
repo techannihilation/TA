@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 9,
 		buildinggrounddecalsizey = 9,
 		buildinggrounddecaltype = "armlightfus_aoplane.dds",
-		buildpic = "armlightfus.png",
+		buildpic = "armlightfus.dds",
 		buildtime = 20000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		collisionvolumeoffsets = "0 0 1",

@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 640,
 		buildcostmetal = 21,
 		builder = false,
-		buildpic = "armfdrag.png",
+		buildpic = "armfdrag.dds",
 		buildtime = 930,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "FLOATINGTEETH",

@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 3450,
 		buildcostmetal = 455,
 		builder = false,
-		buildpic = "tllloki.png",
+		buildpic = "tllloki.dds",
 		buildtime = 5200,
 		canattack = true,
 		canguard = true,

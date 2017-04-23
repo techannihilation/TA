@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 2195,
 		buildcostmetal = 337,
 		builder = false,
-		buildpic = "cortl.png",
+		buildpic = "cortl.dds",
 		buildtime = 4233,
 		canattack = true,
 		canstop = 1,

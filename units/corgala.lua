@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 950000,
 		buildcostmetal = 88000,
 		builder = false,
-		buildpic = "corgala.png",
+		buildpic = "corgala.dds",
 		buildtime = 780000,
 		canattack = true,
 		canguard = true,

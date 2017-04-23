@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "packo_aoplane.dds",
-		buildpic = "packo.png",
+		buildpic = "packo.dds",
 		buildtime = 5810,
 		canattack = true,
 		canstop = 1,
