@@ -404,9 +404,9 @@ local morphDefs = {
 		xp = 0.01,
 	},
 	corak1 = {
-		into = 'corpyro',
-		time = 30,
-		xp = 0.50,
+		into = 'armkrmi',
+		time = 60,
+		xp = 0.60,
 	},
 	corpyro = {
 		into = 'corpyrox',
@@ -453,11 +453,11 @@ local morphDefs = {
 		time = 10,
 		xp = 0.05,
 	},
-	armflash1 = {
-		into = 'armlatnk',
-		time = 30,
-		xp = 0.30,
-	},
+	
+		
+		
+		
+	
 	armlatnk = {
 		into = 'nsaagriz',
 		time = 180,
