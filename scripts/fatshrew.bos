@@ -1,0 +1,1010 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, torax, abdomen, magasin, laser_pylone, laser_bloc, laser_jonction, laser_canon,
+       laser_feu, gatling_pylone, gatling_bloc, gatling_canons, gatling_feu, cartouche, pattes, patte10,
+       patte11, patte12, patte13, patte14, stomp1, patte20, patte21, patte22,
+       patte23, patte24, stomp2, patte30, patte31, patte32, patte33, patte34,
+       stomp3, patte40, patte41, patte42, patte43, patte44, stomp4, patte50,
+       patte51, patte52, patte53, patte54, stomp5, patte60, patte61, patte62,
+       patte63, patte64, stomp6, ecraseur_epaule, ecraseur_bras, load_shoulder, load_arm, unload_shoulder,
+       unload_arm, goal_shoulder, goal_arm, basket1, basket2, basket3, basket4, basket5,
+       basket6, basket7;
+
+static-var  bMoving, gun_1, gun_3, Static_Var_4, Static_Var_5,
+            restore_delay, bAiming, Static_Var_8, Static_Var_9, Static_Var_10,
+            Static_Var_11, Static_Var_12, Static_Var_13, Static_Var_14, Static_Var_15,
+            Static_Var_16;
+
+// Signal definitions
+#define SIG_AIM				2
+#define SIG_AIM_3			4
+#define SIG_AIM_2			8
+
+
+TransportPickup(unitid)
+{
+	if( Static_Var_16 >= 7 )
+	{
+		return;
+	}
+	if( get XZ_HYPOT(get PIECE_XZ(torax) - get UNIT_XZ(unitid)) <= [120.000000] )
+	{
+		set BUSY to 1;
+		turn load_shoulder to y-axis get XZ_ATAN(get PIECE_XZ(load_shoulder) - get UNIT_XZ(unitid)) now;
+		move load_arm to z-axis get XZ_HYPOT(get PIECE_XZ(load_shoulder) - get UNIT_XZ(unitid)) now;
+		move load_arm to y-axis get UNIT_Y(unitid) - get PIECE_Y(load_shoulder) now;
+		attach-unit unitid to load_arm;
+		move load_arm to z-axis [0.000000] speed get XZ_HYPOT(get PIECE_XZ(load_shoulder) - get UNIT_XZ(unitid)) / [0.015259] * [0.006104];
+		move load_arm to y-axis get PIECE_Y(torax) - get PIECE_Y(load_shoulder) speed ( get PIECE_Y(torax) - get UNIT_Y(unitid) ) / [0.015259] * [0.006104];
+		sleep 2500;
+		++Static_Var_16;
+		if( Static_Var_16 == 1 )
+		{
+			attach-unit unitid to basket1;
+		}
+		if( Static_Var_16 == 2 )
+		{
+			attach-unit unitid to basket2;
+		}
+		if( Static_Var_16 == 3 )
+		{
+			attach-unit unitid to basket3;
+		}
+		if( Static_Var_16 == 4 )
+		{
+			attach-unit unitid to basket4;
+		}
+		if( Static_Var_16 == 5 )
+		{
+			attach-unit unitid to basket5;
+		}
+		if( Static_Var_16 == 6 )
+		{
+			attach-unit unitid to basket6;
+		}
+		if( Static_Var_16 == 7 )
+		{
+			attach-unit unitid to basket7;
+		}
+		set BUSY to 0;
+	}
+}
+
+TransportDrop(unitid, position)
+{
+	if( get XZ_HYPOT(get PIECE_XZ(torax) - get UNIT_XZ(unitid)) <= [300.000000] )
+	{
+		set BUSY to 1;
+		turn unload_shoulder to y-axis get XZ_ATAN(get PIECE_XZ(unload_shoulder) - position) now;
+		move unload_arm to z-axis [0.000000] now;
+		move unload_arm to y-axis get PIECE_Y(torax) - get PIECE_Y(unload_shoulder) now;
+		attach-unit unitid to unload_arm;
+		move unload_arm to z-axis get XZ_HYPOT(get PIECE_XZ(unload_shoulder) - position) speed get XZ_HYPOT(get PIECE_XZ(unload_shoulder) - position) / [0.009155] * [0.006104];
+		move unload_arm to y-axis get GROUND_HEIGHT(position) - get PIECE_Y(unload_shoulder) speed ( get PIECE_Y(torax) - get GROUND_HEIGHT(position) ) / [0.009155] * [0.006104];
+		sleep 1500;
+		--Static_Var_16;
+		drop-unit unitid;
+		set BUSY to 0;
+	}
+}
+
+TexasRanger(Func_Var_1, Func_Var_2)
+{
+	while( !bMoving )
+	{
+		sleep 100;
+	}
+	while( TRUE )
+	{
+		turn patte60 to y-axis <-1.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn patte50 to y-axis <45.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn patte40 to y-axis <-16.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn patte10 to y-axis <-14.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn patte21 to z-axis <30.000000> speed <30.000000> * <5.494505> / <2.197802>;
+		turn patte22 to z-axis <45.000000> speed <45.000000> * <5.494505> / <2.197802>;
+		turn patte23 to z-axis <7.000000> speed <7.000000> * <5.494505> / <2.197802>;
+		sleep 400;
+		while( !bMoving )
+		{
+			sleep 100;
+			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+		}
+		Func_Var_2 = get PIECE_XZ(base) - get PIECE_XZ(stomp3);
+		turn ecraseur_epaule to y-axis get XZ_ATAN(Func_Var_2) now;
+		move ecraseur_bras to z-axis get XZ_HYPOT(Func_Var_2) + [0.000000] - [20.000000] now;
+		move ecraseur_bras to y-axis get GROUND_HEIGHT(get PIECE_XZ(stomp3)) - get PIECE_Y(ecraseur_epaule) now;
+		if( Static_Var_11 == 5 AND bMoving )
+		{
+			move ecraseur_epaule to y-axis [0.000000] now;
+		}
+		if( Static_Var_11 != 5 OR !bMoving )
+		{
+			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+		}
+		turn patte31 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
+		turn patte32 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
+		turn patte33 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
+		turn patte20 to y-axis <45.000000> speed <60.000000> * <2.747253> / <2.197802>;
+		sleep 400;
+		while( !bMoving )
+		{
+			sleep 100;
+			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+		}
+		turn patte30 to y-axis <-14.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn patte60 to y-axis <-16.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn patte40 to y-axis <-30.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn patte10 to y-axis <1.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn patte51 to z-axis <0.000000> - <30.000000> speed <30.000000> * <5.494505> / <2.197802>;
+		turn patte52 to z-axis <0.000000> - <45.000000> speed <45.000000> * <5.494505> / <2.197802>;
+		turn patte53 to z-axis <0.000000> - <7.000000> speed <7.000000> * <5.494505> / <2.197802>;
+		sleep 400;
+		while( !bMoving )
+		{
+			sleep 100;
+			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+		}
+		Func_Var_2 = get PIECE_XZ(base) - get PIECE_XZ(stomp2);
+		turn ecraseur_epaule to y-axis get XZ_ATAN(Func_Var_2) now;
+		move ecraseur_bras to z-axis get XZ_HYPOT(Func_Var_2) + [0.000000] - [20.000000] now;
+		move ecraseur_bras to y-axis get GROUND_HEIGHT(get PIECE_XZ(stomp2)) - get PIECE_Y(ecraseur_epaule) now;
+		if( Static_Var_10 == 5 AND bMoving )
+		{
+			move ecraseur_epaule to y-axis [0.000000] now;
+		}
+		if( Static_Var_10 != 5 OR !bMoving )
+		{
+			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+		}
+		turn patte21 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
+		turn patte22 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
+		turn patte23 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
+		turn patte50 to y-axis <-15.000000> speed <60.000000> * <2.747253> / <2.197802>;
+		sleep 400;
+		while( !bMoving )
+		{
+			sleep 100;
+			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+		}
+		turn patte20 to y-axis <29.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn patte60 to y-axis <-31.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn patte30 to y-axis <1.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn patte10 to y-axis <15.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn patte41 to z-axis <30.000000> speed <30.000000> * <5.494505> / <2.197802>;
+		turn patte42 to z-axis <45.000000> speed <45.000000> * <5.494505> / <2.197802>;
+		turn patte43 to z-axis <7.000000> speed <7.000000> * <5.494505> / <2.197802>;
+		sleep 400;
+		while( !bMoving )
+		{
+			sleep 100;
+			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+		}
+		Func_Var_2 = get PIECE_XZ(base) - get PIECE_XZ(stomp5);
+		turn ecraseur_epaule to y-axis get XZ_ATAN(Func_Var_2) now;
+		move ecraseur_bras to z-axis get XZ_HYPOT(Func_Var_2) + [0.000000] - [20.000000] now;
+		move ecraseur_bras to y-axis get GROUND_HEIGHT(get PIECE_XZ(stomp5)) - get PIECE_Y(ecraseur_epaule) now;
+		if( Static_Var_13 == 5 AND bMoving )
+		{
+			move ecraseur_epaule to y-axis [0.000000] now;
+		}
+		if( Static_Var_13 != 5 OR !bMoving )
+		{
+			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+		}
+		turn patte51 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
+		turn patte52 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
+		turn patte53 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
+		turn patte40 to y-axis <30.000000> speed <60.000000> * <2.747253> / <2.197802>;
+		sleep 400;
+		while( !bMoving )
+		{
+			sleep 100;
+			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+		}
+		turn patte50 to y-axis <1.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn patte60 to y-axis <-45.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn patte30 to y-axis <16.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn patte20 to y-axis <14.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn patte11 to z-axis <0.000000> - <30.000000> speed <30.000000> * <5.494505> / <2.197802>;
+		turn patte12 to z-axis <0.000000> - <45.000000> speed <45.000000> * <5.494505> / <2.197802>;
+		turn patte13 to z-axis <0.000000> - <7.000000> speed <7.000000> * <5.494505> / <2.197802>;
+		sleep 400;
+		while( !bMoving )
+		{
+			sleep 100;
+			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+		}
+		Func_Var_2 = get PIECE_XZ(base) - get PIECE_XZ(stomp4);
+		turn ecraseur_epaule to y-axis get XZ_ATAN(Func_Var_2) now;
+		move ecraseur_bras to z-axis get XZ_HYPOT(Func_Var_2) + [0.000000] - [20.000000] now;
+		move ecraseur_bras to y-axis get GROUND_HEIGHT(get PIECE_XZ(stomp4)) - get PIECE_Y(ecraseur_epaule) now;
+		if( Static_Var_12 == 5 AND bMoving )
+		{
+			move ecraseur_epaule to y-axis [0.000000] now;
+		}
+		if( Static_Var_12 != 5 OR !bMoving )
+		{
+			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+		}
+		turn patte41 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
+		turn patte42 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
+		turn patte43 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
+		turn patte10 to y-axis <-45.000000> speed <60.000000> * <2.747253> / <2.197802>;
+		sleep 400;
+		while( !bMoving )
+		{
+			sleep 100;
+			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+		}
+		turn patte40 to y-axis <14.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn patte30 to y-axis <30.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn patte20 to y-axis <-1.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn patte50 to y-axis <16.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn patte61 to z-axis <30.000000> speed <30.000000> * <5.494505> / <2.197802>;
+		turn patte62 to z-axis <45.000000> speed <45.000000> * <5.494505> / <2.197802>;
+		turn patte63 to z-axis <7.000000> speed <7.000000> * <5.494505> / <2.197802>;
+		sleep 400;
+		while( !bMoving )
+		{
+			sleep 100;
+			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+		}
+		Func_Var_2 = get PIECE_XZ(base) - get PIECE_XZ(stomp1);
+		turn ecraseur_epaule to y-axis get XZ_ATAN(Func_Var_2) now;
+		move ecraseur_bras to z-axis get XZ_HYPOT(Func_Var_2) + [0.000000] - [20.000000] now;
+		move ecraseur_bras to y-axis get GROUND_HEIGHT(get PIECE_XZ(stomp1)) - get PIECE_Y(ecraseur_epaule) now;
+		if( Static_Var_9 == 5 AND bMoving )
+		{
+			move ecraseur_epaule to y-axis [0.000000] now;
+		}
+		if( Static_Var_9 != 5 OR !bMoving )
+		{
+			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+		}
+		turn patte11 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
+		turn patte12 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
+		turn patte13 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
+		turn patte60 to y-axis <15.000000> speed <60.000000> * <2.747253> / <2.197802>;
+		sleep 400;
+		while( !bMoving )
+		{
+			sleep 100;
+			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+		}
+		turn patte10 to y-axis <-29.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn patte20 to y-axis <-15.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn patte50 to y-axis <31.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn patte40 to y-axis <-1.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn patte31 to z-axis <0.000000> - <30.000000> speed <30.000000> * <5.494505> / <2.197802>;
+		turn patte32 to z-axis <0.000000> - <45.000000> speed <45.000000> * <5.494505> / <2.197802>;
+		turn patte33 to z-axis <0.000000> - <7.000000> speed <7.000000> * <5.494505> / <2.197802>;
+		sleep 400;
+		while( !bMoving )
+		{
+			sleep 100;
+			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+		}
+		Func_Var_2 = get PIECE_XZ(base) - get PIECE_XZ(stomp6);
+		turn ecraseur_epaule to y-axis get XZ_ATAN(Func_Var_2) now;
+		move ecraseur_bras to z-axis get XZ_HYPOT(Func_Var_2) + [0.000000] - [20.000000] now;
+		move ecraseur_bras to y-axis get GROUND_HEIGHT(get PIECE_XZ(stomp6)) - get PIECE_Y(ecraseur_epaule) now;
+		if( Static_Var_14 == 5 AND bMoving )
+		{
+			move ecraseur_epaule to y-axis [0.000000] now;
+		}
+		if( Static_Var_14 != 5 OR !bMoving )
+		{
+			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+		}
+		turn patte61 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
+		turn patte62 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
+		turn patte63 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
+		turn patte30 to y-axis <-30.000000> speed <60.000000> * <2.747253> / <2.197802>;
+		sleep 400;
+		while( !bMoving )
+		{
+			sleep 100;
+			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+		}
+	}
+	turn patte21 to z-axis <30.000000> speed <30.000000> * <5.494505> / <2.197802>;
+	turn patte22 to z-axis <45.000000> speed <45.000000> * <5.494505> / <2.197802>;
+	turn patte23 to z-axis <7.000000> speed <7.000000> * <5.494505> / <2.197802>;
+	wait-for-turn patte23 around z-axis;
+	turn patte20 to y-axis <45.000000> speed <60.000000> * <2.747253> / <2.197802>;
+	wait-for-turn patte20 around y-axis;
+	turn patte21 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
+	turn patte22 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
+	turn patte23 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
+	wait-for-turn patte23 around z-axis;
+	turn patte20 to y-axis <-15.000000> speed <15.000000> * <2.747253> / <2.197802>;
+	turn patte51 to z-axis <0.000000> - <30.000000> speed <30.000000> * <5.494505> / <2.197802>;
+	turn patte52 to z-axis <0.000000> - <45.000000> speed <45.000000> * <5.494505> / <2.197802>;
+	turn patte53 to z-axis <0.000000> - <7.000000> speed <7.000000> * <5.494505> / <2.197802>;
+	wait-for-turn patte53 around z-axis;
+	turn patte50 to y-axis <-15.000000> speed <60.000000> * <2.747253> / <2.197802>;
+	wait-for-turn patte50 around y-axis;
+	turn patte51 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
+	turn patte52 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
+	turn patte53 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
+	wait-for-turn patte53 around z-axis;
+	turn patte50 to y-axis <45.000000> speed <15.000000> * <2.747253> / <2.197802>;
+	turn patte41 to z-axis <30.000000> speed <30.000000> * <5.494505> / <2.197802>;
+	turn patte42 to z-axis <45.000000> speed <45.000000> * <5.494505> / <2.197802>;
+	turn patte43 to z-axis <7.000000> speed <7.000000> * <5.494505> / <2.197802>;
+	wait-for-turn patte43 around z-axis;
+	turn patte40 to y-axis <30.000000> speed <60.000000> * <2.747253> / <2.197802>;
+	wait-for-turn patte40 around y-axis;
+	turn patte41 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
+	turn patte42 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
+	turn patte43 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
+	wait-for-turn patte43 around z-axis;
+	turn patte40 to y-axis <-30.000000> speed <15.000000> * <2.747253> / <2.197802>;
+	turn patte11 to z-axis <0.000000> - <30.000000> speed <30.000000> * <5.494505> / <2.197802>;
+	turn patte12 to z-axis <0.000000> - <45.000000> speed <45.000000> * <5.494505> / <2.197802>;
+	turn patte13 to z-axis <0.000000> - <7.000000> speed <7.000000> * <5.494505> / <2.197802>;
+	wait-for-turn patte13 around z-axis;
+	turn patte10 to y-axis <-45.000000> speed <60.000000> * <2.747253> / <2.197802>;
+	wait-for-turn patte10 around y-axis;
+	turn patte11 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
+	turn patte12 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
+	turn patte13 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
+	wait-for-turn patte13 around z-axis;
+	turn patte10 to y-axis <15.000000> speed <15.000000> * <2.747253> / <2.197802>;
+	turn patte61 to z-axis <30.000000> speed <30.000000> * <5.494505> / <2.197802>;
+	turn patte62 to z-axis <45.000000> speed <45.000000> * <5.494505> / <2.197802>;
+	turn patte63 to z-axis <7.000000> speed <7.000000> * <5.494505> / <2.197802>;
+	wait-for-turn patte63 around z-axis;
+	turn patte60 to y-axis <15.000000> speed <60.000000> * <2.747253> / <2.197802>;
+	wait-for-turn patte60 around y-axis;
+	turn patte61 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
+	turn patte62 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
+	turn patte63 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
+	wait-for-turn patte63 around z-axis;
+	turn patte60 to y-axis <-45.000000> speed <15.000000> * <2.747253> / <2.197802>;
+	turn patte31 to z-axis <0.000000> - <30.000000> speed <30.000000> * <5.494505> / <2.197802>;
+	turn patte32 to z-axis <0.000000> - <45.000000> speed <45.000000> * <5.494505> / <2.197802>;
+	turn patte33 to z-axis <0.000000> - <7.000000> speed <7.000000> * <5.494505> / <2.197802>;
+	wait-for-turn patte33 around z-axis;
+	turn patte30 to y-axis <-30.000000> speed <60.000000> * <2.747253> / <2.197802>;
+	wait-for-turn patte30 around y-axis;
+	turn patte31 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
+	turn patte32 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
+	turn patte33 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
+	wait-for-turn patte33 around z-axis;
+	turn patte30 to y-axis <30.000000> speed <15.000000> * <2.747253> / <2.197802>;
+}
+
+DecrementCountergatling()
+{
+	sleep 1600;
+	--Static_Var_8;
+	if( Static_Var_8 <= 0 )
+	{
+		Static_Var_8 = 0;
+		Static_Var_4 = 0;
+	}
+}
+
+StartMoving()
+{
+	bMoving = TRUE;
+}
+
+StopMoving()
+{
+	bMoving = FALSE;
+	move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+}
+
+HealthCheck(Func_Var_1, Func_Var_2)
+{
+	Func_Var_1 = Rand( 0, 65535 );
+	turn torax to y-axis Func_Var_1 + get XZ_ATAN(<0.038462>) now;
+	Func_Var_2 = get XZ_ATAN(7);
+	wait-for-turn torax around y-axis;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		Func_Var_2 = Func_Var_2 - get XZ_ATAN(7);
+		while( Func_Var_2 < 0 )
+		{
+			Func_Var_2 = Func_Var_2 + 65536;
+		}
+		while( Func_Var_2 >= 32768 )
+		{
+			Func_Var_2 = Func_Var_2 - 65536;
+		}
+		if( Func_Var_2 < 0 )
+		{
+			Func_Var_2 = 0 - Func_Var_2;
+		}
+		turn torax to y-axis Func_Var_1 + get XZ_ATAN(<0.038462>) speed Func_Var_2 * <5.494505> / <2.747253>;
+		Func_Var_2 = get XZ_ATAN(7);
+		sleep 500;
+	}
+	turn torax to y-axis <0.000000> speed <180.000000>;
+	while( TRUE )
+	{
+		if( get HEALTH < 50 )
+		{
+			if( Static_Var_10 == 5 )
+			{
+				explode patte24 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+				dont-cache patte24;
+				--Static_Var_10;
+			}
+			if( Static_Var_10 == 4 )
+			{
+				explode patte23 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+				dont-cache patte23;
+				--Static_Var_10;
+			}
+		}
+		if( get HEALTH < 40 )
+		{
+			if( Static_Var_11 == 5 )
+			{
+				explode patte34 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+				dont-cache patte34;
+				--Static_Var_11;
+			}
+			if( Static_Var_11 == 4 )
+			{
+				explode patte33 type SHATTER | BITMAP4;
+				dont-cache patte33;
+				--Static_Var_11;
+			}
+			if( Static_Var_11 == 3 )
+			{
+				explode patte32 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+				dont-cache patte32;
+				--Static_Var_11;
+			}
+		}
+		if( get HEALTH < 30 )
+		{
+			if( Static_Var_10 == 3 )
+			{
+				explode patte22 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+				dont-cache patte22;
+				--Static_Var_10;
+			}
+		}
+		if( get HEALTH < 20 )
+		{
+			if( Static_Var_11 == 2 )
+			{
+				explode patte31 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+				dont-cache patte31;
+				--Static_Var_11;
+			}
+		}
+		if( get HEALTH < 10 )
+		{
+			if( Static_Var_14 == 5 )
+			{
+				explode patte64 type SHATTER | BITMAP2;
+				dont-cache patte64;
+				--Static_Var_14;
+			}
+			if( Static_Var_14 == 4 )
+			{
+				explode patte63 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+				dont-cache patte63;
+				--Static_Var_14;
+			}
+			if( Static_Var_14 == 3 )
+			{
+				explode patte62 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+				dont-cache patte62;
+				--Static_Var_14;
+			}
+		}
+		if( get HEALTH < 5 )
+		{
+			if( Static_Var_10 == 2 )
+			{
+				explode patte21 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+				dont-cache patte21;
+				--Static_Var_10;
+			}
+		}
+		if( get HEALTH >= 7 AND Static_Var_10 == 1 )
+		{
+			show patte21;
+			cache patte21;
+			++Static_Var_10;
+		}
+		if( get HEALTH >= 12 AND Static_Var_14 == 2 )
+		{
+			show patte62;
+			cache patte62;
+			++Static_Var_14;
+		}
+		if( get HEALTH >= 15 AND Static_Var_14 == 3 )
+		{
+			show patte63;
+			cache patte63;
+			++Static_Var_14;
+		}
+		if( get HEALTH >= 18 AND Static_Var_14 == 4 )
+		{
+			show patte64;
+			cache patte64;
+			++Static_Var_14;
+		}
+		if( get HEALTH >= 25 AND Static_Var_11 == 1 )
+		{
+			show patte31;
+			cache patte31;
+			++Static_Var_11;
+		}
+		if( get HEALTH >= 35 AND Static_Var_10 == 2 )
+		{
+			show patte22;
+			cache patte22;
+			++Static_Var_10;
+		}
+		if( get HEALTH >= 42 AND Static_Var_11 == 2 )
+		{
+			show patte32;
+			cache patte32;
+			++Static_Var_11;
+		}
+		if( get HEALTH >= 45 AND Static_Var_11 == 3 )
+		{
+			show patte33;
+			cache patte33;
+			++Static_Var_11;
+		}
+		if( get HEALTH >= 48 AND Static_Var_11 == 4 )
+		{
+			show patte34;
+			cache patte34;
+			++Static_Var_11;
+		}
+		if( get HEALTH > 53 AND Static_Var_10 == 3 )
+		{
+			show patte23;
+			cache patte23;
+			++Static_Var_10;
+		}
+		if( get HEALTH > 56 AND Static_Var_10 == 4 )
+		{
+			show patte24;
+			cache patte24;
+			++Static_Var_10;
+		}
+		sleep 200;
+	}
+}
+
+EmbeddedSpringTest()
+{
+	wait-for-move base along x-axis;
+	wait-for-move base along y-axis;
+	wait-for-move base along z-axis;
+	wait-for-turn base around x-axis;
+	wait-for-turn base around y-axis;
+	wait-for-turn base around z-axis;
+	Static_Var_15 = 0;
+}
+
+Create()
+{
+	Static_Var_16 = 0;
+	turn patte20 to y-axis <45.000000> now;
+	turn patte60 to y-axis <-45.000000> now;
+	turn patte10 to y-axis <-45.000000> now;
+	turn patte50 to y-axis <45.000000> now;
+	bMoving = FALSE;
+	gun_1 = base;
+	gun_3 = base;
+	Static_Var_4 = 0;
+	Static_Var_8 = 0;
+	Static_Var_5 = 0;
+	bAiming = FALSE;
+	restore_delay = 10;
+	Static_Var_9 = 5;
+	Static_Var_10 = 5;
+	Static_Var_11 = 5;
+	Static_Var_12 = 5;
+	Static_Var_13 = 5;
+	Static_Var_14 = 5;
+	set ARMORED to 1;
+	set ACTIVATION to 1;
+	hide gatling_pylone;
+	hide gatling_bloc;
+	hide gatling_canons;
+	hide gatling_feu;
+	turn gatling_bloc to x-axis <-90.000000> now;
+	move gatling_pylone to y-axis [-4.000000] now;
+	hide laser_pylone;
+	hide laser_bloc;
+	hide laser_jonction;
+	hide laser_canon;
+	hide laser_feu;
+	turn magasin to y-axis <180.043956> now;
+	turn laser_bloc to x-axis <90.000000> now;
+	move laser_pylone to y-axis [-4.000000] now;
+	hide cartouche;
+	dont-cache abdomen;
+	Static_Var_15 = 0 - 1;
+	start-script TexasRanger();
+	start-script EmbeddedSpringTest();
+	sleep 1;
+	Static_Var_15 = 1;
+	start-script HealthCheck();
+	set ACTIVATION to 1;
+}
+
+SetMaxReloadTime(Func_Var_1)
+{
+	restore_delay = 20000;
+}
+
+RetourTourelleLaser()
+{
+	sleep 8000;
+	turn laser_pylone to y-axis <0.000000> speed <25.000000>;
+	turn laser_bloc to x-axis <0.000000> speed <10.000000>;
+	sleep 20000;
+	if( gun_1 OR gun_3 OR Static_Var_4 OR bAiming != 1 )
+	{
+		return;
+	}
+	bAiming = 0 - 11;
+	turn laser_bloc to x-axis <90.000000> speed <120.000000>;
+	wait-for-turn laser_bloc around x-axis;
+	if( gun_1 OR gun_3 OR Static_Var_4 OR bAiming != 0 - 11 )
+	{
+		return;
+	}
+	move laser_pylone to y-axis [-4.000000] speed [32.000000];
+	wait-for-move laser_pylone along y-axis;
+	if( gun_1 OR gun_3 OR Static_Var_4 OR bAiming != 0 - 11 )
+	{
+		return;
+	}
+	hide laser_pylone;
+	hide laser_bloc;
+	hide laser_jonction;
+	hide laser_canon;
+	turn magasin to y-axis <90.021978> speed <240.054945>;
+	wait-for-turn magasin around y-axis;
+	if( gun_1 OR gun_3 OR Static_Var_4 OR bAiming != 0 - 11 )
+	{
+		return;
+	}
+	bAiming = FALSE;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = cartouche;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	var Func_Var_3;
+	wait-for-move base along y-axis;
+	wait-for-move base along y-axis;
+	wait-for-move base along y-axis;
+	while( gun_1 AND Static_Var_15 == 0 OR gun_3 OR Static_Var_4 )
+	{
+		sleep 200;
+	}
+	Func_Var_3 = 0;
+	if( bAiming == 1 )
+	{
+		Func_Var_3 = 6;
+	}
+	while( TRUE )
+	{
+		while( gun_3 OR Static_Var_4 )
+		{
+			sleep 200;
+			Func_Var_3 = 0;
+		}
+		if( bAiming != 0 - 1 AND bAiming != 1 )
+		{
+			Func_Var_3 = 0;
+		}
+		if( Func_Var_3 == 7 )
+		{
+			++Func_Var_3;
+			start-script RetourTourelleLaser();
+			if( Static_Var_15 == 0 )
+			{
+				move laser_feu to z-axis [10.000000] now;
+			}
+			if( Static_Var_15 == 1 )
+			{
+				move laser_feu to z-axis [-10.000000] now;
+			}
+			return (1);
+		}
+		if( Func_Var_3 == 6 )
+		{
+			++Func_Var_3;
+			turn laser_pylone to y-axis heading speed <30.000000>;
+			if( pitch > 65536 - 9100 OR pitch <= 32768 )
+			{
+				turn laser_bloc to x-axis <0.000000> - pitch speed <20.000000>;
+			}
+			if( pitch <= 65536 - 9100 AND pitch > 32768 )
+			{
+				turn laser_bloc to x-axis <50.000000> speed <20.000000>;
+			}
+			wait-for-turn laser_pylone around y-axis;
+			wait-for-turn laser_bloc around x-axis;
+		}
+		if( Func_Var_3 == 5 )
+		{
+			++Func_Var_3;
+			bAiming = TRUE;
+		}
+		if( Func_Var_3 == 4 )
+		{
+			++Func_Var_3;
+			turn laser_bloc to x-axis <0.000000> - pitch speed <120.000000>;
+			wait-for-turn laser_bloc around x-axis;
+		}
+		if( Func_Var_3 == 3 )
+		{
+			++Func_Var_3;
+			show laser_pylone;
+			show laser_bloc;
+			show laser_jonction;
+			show laser_canon;
+			move laser_pylone to y-axis [12.000000] speed [32.000000];
+			wait-for-move laser_pylone along y-axis;
+		}
+		if( Func_Var_3 == 2 )
+		{
+			++Func_Var_3;
+			hide gatling_pylone;
+			hide gatling_bloc;
+			hide gatling_canons;
+			turn magasin to y-axis <0.000000> speed <240.054945>;
+			wait-for-turn magasin around y-axis;
+		}
+		if( Func_Var_3 == 1 )
+		{
+			++Func_Var_3;
+			move gatling_pylone to y-axis [-4.000000] speed [32.000000];
+			wait-for-move gatling_pylone along y-axis;
+		}
+		if( Func_Var_3 == 0 )
+		{
+			bAiming = 0 - 1;
+			++Func_Var_3;
+			turn gatling_bloc to x-axis <-90.000000> speed <180.000000>;
+			wait-for-turn gatling_bloc around x-axis;
+		}
+	}
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = laser_feu;
+}
+
+FirePrimary()
+{
+	if( gun_1 )
+	{
+		return;
+	}
+	gun_1 = torax;
+	show laser_feu;
+	sleep 200;
+	hide laser_feu;
+	sleep 3800;
+	gun_1 = base;
+}
+
+AimFromTertiary(piecenum)
+{
+	piecenum = cartouche;
+}
+
+RetourTourelleGatling()
+{
+	sleep 2000;
+	turn gatling_pylone to y-axis <0.000000> speed <25.000000>;
+	turn gatling_bloc to x-axis <0.000000> speed <10.000000>;
+	Static_Var_4 = 0;
+	sleep 20000;
+	if( gun_1 OR gun_3 OR Static_Var_4 OR bAiming != 2 )
+	{
+		return;
+	}
+	bAiming = 0 - 22;
+	turn gatling_bloc to x-axis <90.000000> speed <180.000000>;
+	wait-for-turn gatling_bloc around x-axis;
+	if( gun_1 OR gun_3 OR Static_Var_4 OR bAiming != 0 - 22 )
+	{
+		return;
+	}
+	move gatling_pylone to y-axis [-4.000000] speed [32.000000];
+	wait-for-move gatling_pylone along y-axis;
+	if( gun_1 OR gun_3 OR Static_Var_4 OR bAiming != 0 - 22 )
+	{
+		return;
+	}
+	hide gatling_pylone;
+	hide gatling_bloc;
+	hide gatling_canons;
+	turn magasin to y-axis <90.021978> speed <240.054945>;
+	wait-for-turn magasin around y-axis;
+	if( gun_1 OR gun_3 OR Static_Var_4 OR bAiming != 0 - 22 )
+	{
+		return;
+	}
+	bAiming = FALSE;
+}
+
+AimTertiary(heading, pitch)
+{
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
+	Static_Var_4 = 1;
+	while( gun_1 )
+	{
+		sleep 200;
+	}
+	Static_Var_4 = 1;
+	Static_Var_8 = 3;
+	if( bAiming != 2 )
+	{
+		bAiming = 0 - 2;
+		turn laser_bloc to x-axis <90.000000> speed <120.000000>;
+		wait-for-turn laser_bloc around x-axis;
+		move laser_pylone to y-axis [-4.000000] speed [32.000000];
+		wait-for-move laser_pylone along y-axis;
+		hide laser_pylone;
+		hide laser_bloc;
+		hide laser_jonction;
+		hide laser_canon;
+		turn magasin to y-axis <180.043956> speed <240.054945>;
+		wait-for-turn magasin around y-axis;
+		show gatling_pylone;
+		show gatling_bloc;
+		show gatling_canons;
+		move gatling_pylone to y-axis [12.000000] speed [32.000000];
+		wait-for-move gatling_pylone along y-axis;
+		turn gatling_bloc to x-axis pitch speed <180.000000>;
+		wait-for-turn gatling_bloc around x-axis;
+		bAiming = TRUE;
+		Static_Var_4 = 1;
+		Static_Var_8 = 3;
+	}
+	turn gatling_pylone to y-axis heading speed <270.000000>;
+	if( pitch > 65536 - 9100 OR pitch <= 32768 )
+	{
+		turn gatling_bloc to x-axis pitch speed <120.000000>;
+	}
+	if( pitch <= 65536 - 9100 AND pitch > 32768 )
+	{
+		turn gatling_bloc to x-axis <0.000000> - <50.000000> speed <120.000000>;
+	}
+	wait-for-turn gatling_pylone around y-axis;
+	wait-for-turn gatling_bloc around x-axis;
+	start-script RetourTourelleGatling();
+	return (1);
+}
+
+QueryTertiary(piecenum)
+{
+	piecenum = gatling_feu;
+}
+
+FireTertiary()
+{
+	if( gun_3 )
+	{
+		return;
+	}
+	gun_3 = torax;
+	show gatling_feu;
+	sleep 200;
+	hide gatling_feu;
+	++Static_Var_5;
+	if( Static_Var_5 >= 6 )
+	{
+		Static_Var_5 = 0;
+	}
+	turn gatling_canons to z-axis <360.087912> * Static_Var_5 / <0.032967> speed <150.043956>;
+	explode cartouche type FALL;
+	sleep 200;
+	explode cartouche type FALL;
+	gun_3 = base;
+}
+
+AimFromSecondary(piecenum)
+{
+	piecenum = ecraseur_bras;
+}
+
+AimSecondary(heading, pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	sleep 200;
+	if( Static_Var_15 != 0 )
+	{
+		while( TRUE )
+		{
+			sleep [21.972656];
+		}
+	}
+	return (1);
+}
+
+QuerySecondary(piecenum)
+{
+	piecenum = ecraseur_bras;
+}
+
+FireSecondary(Func_Var_1)
+{
+}
+
+AimFrom4(Func_Var_1)
+{
+	Func_Var_1 = 1;
+}
+
+Aim4(Func_Var_1, Func_Var_2)
+{
+	signal 16;
+	set-signal-mask 16;
+	while( !get ACTIVATION )
+	{
+		sleep 2000;
+	}
+	return (1);
+}
+
+Query4(Func_Var_1)
+{
+	Func_Var_1 = 1;
+}
+
+Fire4(Func_Var_1)
+{
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = torax;
+}
+
+Killed(severity, corpsetype)
+{
+	move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+	explode torax type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode abdomen type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode laser_pylone type SHATTER | BITMAP3;
+	explode laser_bloc type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode laser_jonction type SHATTER | BITMAP4;
+	explode patte10 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode patte40 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode patte50 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode patte31 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode patte61 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode patte12 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode patte42 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode patte52 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode patte23 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode patte14 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode patte44 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode patte54 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	corpsetype = 1;
+}
