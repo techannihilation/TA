@@ -152,24 +152,24 @@ local morphDefs = {
 		xp = 0.50,
 	},
 	armhlt = {
-			into = 'armvhlt',
-			time = 30,
-			xp = 0.30,
+		into = 'armvhlt',
+		time = 30,
+		xp = 0.30,
 	},	
 	armvhlt	= {		
-			into = 'armpb',
-			time = 30,
-			xp = 0.30,	
+		into = 'armpb',
+		time = 30,
+		xp = 0.30,	
 	},
 	corhlt= {
-			into = 'corvhlt',
-			time = 30,
-			xp = 0.30,
+		into = 'corvhlt',
+		time = 30,
+		xp = 0.30,
 	},
 	corvhlt = {
-			into = 'corvipe',
-			time = 30,
-			xp = 0.30,
+		into = 'corvipe',
+		time = 30,
+		xp = 0.30,
 	},
 	tllhlt = {
 		into = 'tllpulaser',
@@ -268,14 +268,14 @@ local morphDefs = {
 	},
 	armgeo = {
 	{
-	  	into = 'amgeo',
-	  	time = 120,
-	  	tech = 1,
+			into = 'amgeo',
+			time = 120,
+			tech = 1,
 	},
         {
-		into = 'armgmm',
-		time = 60,
-		tech = 1,
+			into = 'armgmm',
+			time = 60,
+			tech = 1,
 	},
 	},
 	armgmm = {
@@ -284,14 +284,14 @@ local morphDefs = {
 	},
 	corgeo = {
     	{
-		into = 'cmgeo',
-	  	time = 120,
-	  	tech = 1,
+			into = 'cmgeo',
+	  		time = 120,
+	  		tech = 1,
 	},
 	{
-		into = 'corbhmth',
-	  	time = 90,
-	  	tech = 1,
+			into = 'corbhmth',
+	  		time = 90,
+	  		tech = 1,
 	},
 	},
 	corbhmth = {
@@ -452,12 +452,7 @@ local morphDefs = {
 		into = 'armflash1',
 		time = 10,
 		xp = 0.05,
-	},
-	
-		
-		
-		
-	
+	},	
 	armlatnk = {
 		into = 'nsaagriz',
 		time = 180,
