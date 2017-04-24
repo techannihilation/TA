@@ -572,16 +572,30 @@ local morphDefs = {
 		into = 'corwolv1',
 		time = 10,
 		xp = 0.05,
-		},
+	},
 	corwolv1 = {
-		into = 'cormart',
-		time = 30,
-		xp = 0.30,
+		{
+			into = 'cormart',
+			time = 30,
+			xp = 0.30,
+		},
+		{
+			into = 'trem',
+			time = 60,
+			xp = 0.45,
+		},
 	},
 	cormart = {
-		into = 'clb',
-		time = 120,
-		xp = 0.60,
+		{
+			into = 'cortotal',
+			time = 60,
+			xp = 0.60,
+		},
+		{
+			into = 'clb',
+			time = 120,
+			xp = 0.60,
+		},
 	},
 	cormist = {
 		into = 'cormist1',
