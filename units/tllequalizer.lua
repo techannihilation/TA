@@ -4,7 +4,7 @@ return {
 		activatewhenbuilt = true,
 		brakerate = 0.75,
 		buildangle = 16384,
-		buildcostenergy = 9720,
+		buildcostenergy = 11720,
 		buildcostmetal = 2160,
 		builder = false,
 		buildpic = "tllequalizer.dds",
