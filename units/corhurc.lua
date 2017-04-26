@@ -93,7 +93,8 @@ return {
 			coradvbomb = {
 				areaofeffect = 220,
 				avoidfeature = false,
-				burst = 5,
+				burst = 10,
+				burstrate = 0.10,
 				collidefriendly = false,
 				commandfire = false,
 				craterareaofeffect = 330,
@@ -109,7 +110,7 @@ return {
 				name = "AdvancedBombs",
 				noselfdamage = true,
 				range = 1280,
-				reloadtime = 0.14,
+				reloadtime = 6,
 				soundhitdry = "xplomed2",
 				soundhitwet = "splslrg",
 				soundhitwetvolume = 0.6,
