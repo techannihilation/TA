@@ -118,6 +118,7 @@ return {
 				soundhitwet = "splslrg",
 				soundhitwetvolume = 0.6,
 				soundstart = "bombrel",
+				sprayangle = 15000,
 				tolerance = 7000,
 				weapontype = "AircraftBomb",
 				damage = {
