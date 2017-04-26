@@ -19,7 +19,7 @@ return {
 		collide = false,
 		cruisealt = 220,
 		defaultmissiontype = "VTOL_standby",
-		description = "Heavy Strategic Bomber",
+		description = "Strategic Bomber",
 		energymake = 1,
 		energystorage = 0,
 		energyuse = 1,
