@@ -19,7 +19,7 @@ return {
 		collisionvolumetype = "ellipsoid",
 		corpse = "ARMFBOY_DEAD",
 		defaultmissiontype = "Standby",
-		description = "Very Heavy Plasma Kbot (Boost)",
+		description = "Very Heavy Plasma Kbot",
 		energymake = 0,
 		energystorage = 0,
 		energyuse = 0,
