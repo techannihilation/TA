@@ -7,7 +7,7 @@ return {
 		buildcostmetal = 360,
 		builder = false,
 		buildpic = "cortitan.dds",
-		buildtime = 22072,
+		buildtime = 22000,
 		canattack = true,
 		canfly = true,
 		canguard = true,
