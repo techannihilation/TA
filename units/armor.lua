@@ -19,7 +19,7 @@ return {
 		category = "ALL MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTWEAPON VTOL",
 		cruisealt = 250,
 		defaultmissiontype = "VTOL_standby",
-		description = "Very Heavy Air Transport, Min load 2000 - Max Load 15000",
+		description = "Very Heavy Air Transport",
 		energymake = 0.6,
 		energystorage = 0,
 		energyuse = 0.6,

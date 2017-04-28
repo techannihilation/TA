@@ -1,4 +1,4 @@
----------------------------------------- v2.46.1 ---------------------------------------
+---------------------------------------- v2.5 ---------------------------------------
 ----Improvments----
 Add New Icons for all Units
 Improve Ui, opacity will chnage depends on map brightness
@@ -27,21 +27,23 @@ All T3.5 Unit StarBurst => Decrease damage 700 => 500 per Shot. (Gain 10K HP for
 Balance AA T2 TLL Ship => Decrease cost and buildtime.
 
 To merge : 
-
+Add many new morph. (try to make a morph tree for T1 => Adv T1 => T2 => T2.5 => T3 => T3.5 => T4)
+Add New T3 SuperBattleShip TLL
+Balance missile veh and Kbot (decrease speed for Tll All terrain, balance cost  for all)
+Add lock for Corporrow (amphibious core veh) and increase stats
+Remplace Torpedo by EMP bomb for TllAnhur (T3 TLL Bomber)
+Balance Ship missile (timebuild and less resources)
+Remplace green laser by plasma canon for Tll Cruiser
+Add new unit : T2.5 Core Rapid green laser tank.
+Balance All Bomber T1 T2 all faction (less reload for t1, less damage for t2 and faster and decrease timebuild)
 T3.5 Shield Bot => Fix Sightdistance to 500
 ArmHorg => Transform weapon into EMP Missile Long Range (4 burst at 1500 dmg emp)
-Morphing system : Increase Metal and energy to pass T2 => t3.5 (like Howie). Increase Xp by 0.25 too.
-Nerf Cordomm1 Less Hp 70K => 52K) and Tachyon1 Defense (Increase energy)
+Nerf Cordomm1 Less Hp 70K => 52K and Tachyon1 Defense (Increase energy)
 Increase All T4 TSAR Weapon by 200KM and Increase by 175% Time to load ammunitions.
 LRPC TLL => Decrease Range to 6200 => 5600 (ARM / CORE to 5100)
 Hover Arm & Core Anti Sub => Balance Sonar Range (1800 => 500)
 Nerf Fast T2 Core Rapid Bot by 5% for range. Increase Metal by 5%.
 All T3.5 Burst launcher have been fixed at 1050 range and 500 damage / s. Add bonus for each unit (+10K HP or decrease cost).
-
-
-
-
-
 
 
 ---------------------------------------- v2.46.0 ---------------------------------------
