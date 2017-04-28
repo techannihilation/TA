@@ -27,7 +27,7 @@ All T3.5 Unit StarBurst => Decrease damage 700 => 500 per Shot. (Gain 10K HP for
 Balance AA T2 TLL Ship => Decrease cost and buildtime.
 
 To merge : 
-Add many new morph. 
+Add many new morph. (try to make a morph tree for T1 => Adv T1 => T2 => T2.5 => T3 => T3.5 => T4)
 Add New T3 SuperBattleShip TLL
 Balance missile veh and Kbot (decrease speed for Tll All terrain, balance cost  for all)
 Add lock for Corporrow (amphibious core veh) and increase stats
