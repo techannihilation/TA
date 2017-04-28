@@ -152,24 +152,24 @@ local morphDefs = {
 		xp = 0.50,
 	},
 	armhlt = {
-			into = 'armvhlt',
-			time = 30,
-			xp = 0.30,
+		into = 'armvhlt',
+		time = 30,
+		xp = 0.30,
 	},	
 	armvhlt	= {		
-			into = 'armpb',
-			time = 30,
-			xp = 0.30,	
+		into = 'armpb',
+		time = 30,
+		xp = 0.30,	
 	},
 	corhlt= {
-			into = 'corvhlt',
-			time = 30,
-			xp = 0.30,
+		into = 'corvhlt',
+		time = 30,
+		xp = 0.30,
 	},
 	corvhlt = {
-			into = 'corvipe',
-			time = 30,
-			xp = 0.30,
+		into = 'corvipe',
+		time = 30,
+		xp = 0.30,
 	},
 	tllhlt = {
 		into = 'tllpulaser',
@@ -268,14 +268,14 @@ local morphDefs = {
 	},
 	armgeo = {
 	{
-	  	into = 'amgeo',
-	  	time = 120,
-	  	tech = 1,
+			into = 'amgeo',
+			time = 120,
+			tech = 1,
 	},
         {
-		into = 'armgmm',
-		time = 60,
-		tech = 1,
+			into = 'armgmm',
+			time = 60,
+			tech = 1,
 	},
 	},
 	armgmm = {
@@ -284,14 +284,14 @@ local morphDefs = {
 	},
 	corgeo = {
     	{
-		into = 'cmgeo',
-	  	time = 120,
-	  	tech = 1,
+			into = 'cmgeo',
+	  		time = 120,
+	  		tech = 1,
 	},
 	{
-		into = 'corbhmth',
-	  	time = 90,
-	  	tech = 1,
+			into = 'corbhmth',
+	  		time = 90,
+	  		tech = 1,
 	},
 	},
 	corbhmth = {
@@ -404,9 +404,9 @@ local morphDefs = {
 		xp = 0.01,
 	},
 	corak1 = {
-		into = 'corpyro',
-		time = 30,
-		xp = 0.50,
+		into = 'armkrmi',
+		time = 60,
+		xp = 0.60,
 	},
 	corpyro = {
 		into = 'corpyrox',
@@ -452,12 +452,7 @@ local morphDefs = {
 		into = 'armflash1',
 		time = 10,
 		xp = 0.05,
-	},
-	armflash1 = {
-		into = 'armlatnk',
-		time = 30,
-		xp = 0.30,
-	},
+	},	
 	armlatnk = {
 		into = 'nsaagriz',
 		time = 180,
@@ -572,16 +567,30 @@ local morphDefs = {
 		into = 'corwolv1',
 		time = 10,
 		xp = 0.05,
-		},
+	},
 	corwolv1 = {
-		into = 'cormart',
-		time = 30,
-		xp = 0.30,
+		{
+			into = 'cormart',
+			time = 30,
+			xp = 0.30,
+		},
+		{
+			into = 'trem',
+			time = 60,
+			xp = 0.45,
+		},
 	},
 	cormart = {
-		into = 'clb',
-		time = 120,
-		xp = 0.60,
+		{
+			into = 'cortotal',
+			time = 60,
+			xp = 0.60,
+		},
+		{
+			into = 'clb',
+			time = 120,
+			xp = 0.60,
+		},
 	},
 	cormist = {
 		into = 'cormist1',
