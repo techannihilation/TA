@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 2347,
 		buildcostmetal = 533,
 		builder = false,
-		buildpic = "tlltorpp.png",
+		buildpic = "tlltorpp.dds",
 		buildtime = 15227,
 		canattack = true,
 		canfly = true,

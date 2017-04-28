@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 879,
 		buildcostmetal = 448,
 		builder = false,
-		buildpic = "tllnssam.png",
+		buildpic = "tllnssam.dds",
 		buildtime = 5135,
 		canattack = true,
 		canstop = 1,

@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "corawin_aoplane.dds",
-		buildpic = "corawin.png",
+		buildpic = "corawin.dds",
 		buildtime = 5061,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		collisionvolumeoffsets = "-7 -9 0",

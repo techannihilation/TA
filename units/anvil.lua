@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 225000,
 		buildcostmetal = 17550,
 		builder = false,
-		buildpic = "anvil.png",
+		buildpic = "anvil.dds",
 		buildtime = 803500,
 		canattack = true,
 		canguard = true,

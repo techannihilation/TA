@@ -8,7 +8,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "tllshoretorp_aoplane.dds",
-		buildpic = "tllshoretorp.png",
+		buildpic = "tllshoretorp.dds",
 		buildtime = 9911,
 		canattack = true,
 		canguard = true,

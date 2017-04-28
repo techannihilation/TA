@@ -6,7 +6,7 @@ return {
 		buildangle = 16384,
 		buildcostenergy = 16107,
 		buildcostmetal = 1333,
-		buildpic = "tllasship.png",
+		buildpic = "tllasship.dds",
 		buildtime = 23300,
 		canattack = true,
 		canguard = true,

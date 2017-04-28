@@ -12,7 +12,7 @@ return {
 		buildinggrounddecalsizex = 3,
 		buildinggrounddecalsizey = 3,
 		buildinggrounddecaltype = "corgeo_aoplane.dds",
-		buildpic = "corgeo_mini.png",
+		buildpic = "corgeo_mini.dds",
 		buildtime = 6200,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "dead",

@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 350,
 		buildcostmetal = 85,
 		builder = false,
-		buildpic = "tlluwmex.png",
+		buildpic = "tlluwmex.dds",
 		buildtime = 1875,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "dead",

@@ -7,7 +7,7 @@ return {
 		buildangle = 16384,
 		buildcostenergy = 302000,
 		buildcostmetal = 15100,
-		buildpic = "corhcar.png",
+		buildpic = "corhcar.dds",
 		buildtime = 355000,
 		canattack = true,
 		canguard = true,

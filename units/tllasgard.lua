@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 158000,
 		buildcostmetal = 11200,
 		builder = false,
-		buildpic = "tllasgard.png",
+		buildpic = "tllasgard.dds",
 		buildtime = 65000,
 		canattack = true,
 		canguard = true,

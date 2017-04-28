@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 12976,
 		buildcostmetal = 2107,
 		builder = false,
-		buildpic = "apache.png",
+		buildpic = "apache.dds",
 		buildtime = 39500,
 		canattack = true,
 		canfly = true,

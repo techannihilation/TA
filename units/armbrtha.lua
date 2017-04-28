@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "armbrtha_aoplane.dds",
-		buildpic = "armbrtha.png",
+		buildpic = "armbrtha.dds",
 		buildtime = 85000,
 		canattack = true,
 		canstop = 1,

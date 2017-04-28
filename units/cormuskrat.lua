@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 172,
 		builddistance = 172,
 		builder = true,
-		buildpic = "cormuskrat.png",
+		buildpic = "cormuskrat.dds",
 		buildtime = 6864,
 		canguard = true,
 		canmove = true,

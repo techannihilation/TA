@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "armanni_aoplane.dds",
-		buildpic = "armanni.png",
+		buildpic = "armanni.dds",
 		buildtime = 52071,
 		canattack = true,
 		canstop = 1,

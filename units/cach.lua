@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 2475,
 		builddistance = 225,
 		builder = true,
-		buildpic = "cach.png",
+		buildpic = "cach.dds",
 		buildtime = 41029,
 		canguard = true,
 		canhover = true,

@@ -7,7 +7,7 @@ return {
 		buildinggrounddecalsizex = 13,
 		buildinggrounddecalsizey = 13,
 		buildinggrounddecaltype = "coreap_aoplane.dds",
-		buildpic = "coreap.png",
+		buildpic = "coreap.dds",
 		buildtime = 96525,
 		canbeassisted = true,
 		canmove = true,

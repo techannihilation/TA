@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 2480,
 		buildcostmetal = 235,
 		builder = false,
-		buildpic = "corrock.png",
+		buildpic = "corrock.dds",
 		buildtime = 2500,
 		canattack = true,
 		canguard = true,

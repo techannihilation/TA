@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 890,
 		buildcostmetal = 35,
 		builder = false,
-		buildpic = "corak.png",
+		buildpic = "corak.dds",
 		buildtime = 1280,
 		canattack = true,
 		canguard = true,

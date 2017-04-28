@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 10082,
 		buildcostmetal = 506,
 		builder = false,
-		buildpic = "nsacskv.png",
+		buildpic = "nsacskv.dds",
 		buildtime = 19000,
 		canattack = true,
 		canguard = true,

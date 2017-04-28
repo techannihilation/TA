@@ -8,7 +8,7 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "tllsilo_aoplane.dds",
-		buildpic = "tllsilo.png",
+		buildpic = "tllsilo.dds",
 		buildtime = 220000,
 		canattack = true,
 		canstop = 1,

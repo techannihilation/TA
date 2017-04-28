@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 12500,
 		buildcostmetal = 910,
 		builder = false,
-		buildpic = "coredauber.png",
+		buildpic = "coredauber.dds",
 		buildtime = 11200,
 		canattack = true,
 		canguard = true,

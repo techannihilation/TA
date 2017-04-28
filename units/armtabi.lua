@@ -8,7 +8,7 @@ return {
 		buildinggrounddecalsizex = 13,
 		buildinggrounddecalsizey = 13,
 		buildinggrounddecaltype = "armtabi_aoplane.dds",
-		buildpic = "armtabi.png",
+		buildpic = "armtabi.dds",
 		buildtime = 10000000,
 		canattack = true,
 		canguard = true,

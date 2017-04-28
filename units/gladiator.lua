@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 4890,
 		buildcostmetal = 485,
 		builder = false,
-		buildpic = "gladiator.png",
+		buildpic = "gladiator.dds",
 		buildtime = 5200,
 		canattack = true,
 		canguard = true,

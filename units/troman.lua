@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 86180,
 		buildcostmetal = 4120,
 		builder = false,
-		buildpic = "troman.png",
+		buildpic = "troman.dds",
 		buildtime = 35000,
 		canattack = true,
 		canguard = true,

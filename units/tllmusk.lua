@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 2710,
 		builddistance = 225,
 		builder = true,
-		buildpic = "tllmusk.png",
+		buildpic = "tllmusk.dds",
 		buildtime = 14000,
 		canguard = true,
 		canmove = true,

@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "screamer_aoplane.dds",
-		buildpic = "screamer.png",
+		buildpic = "screamer.dds",
 		buildtime = 37543,
 		canattack = true,
 		canstop = 1,

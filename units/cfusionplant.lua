@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 12,
 		buildinggrounddecalsizey = 12,
 		buildinggrounddecaltype = "cfusionplant_aoplane.dds",
-		buildpic = "cfusionplant.png",
+		buildpic = "cfusionplant.dds",
 		buildtime = 2200000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "dead",

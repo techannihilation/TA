@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 1650,
 		buildcostmetal = 70,
 		builder = false,
-		buildpic = "armorbweaver.png",
+		buildpic = "armorbweaver.dds",
 		buildtime = 5423,
 		canguard = true,
 		canmove = true,

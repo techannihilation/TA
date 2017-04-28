@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 18000,
 		buildcostmetal = 1445,
 		builder = false,
-		buildpic = "tllroaster.png",
+		buildpic = "tllroaster.dds",
 		buildtime = 31200,
 		canattack = true,
 		canguard = true,

@@ -7,7 +7,7 @@ return {
 		buildinggrounddecalsizex = 33,
 		buildinggrounddecalsizey = 33,
 		buildinggrounddecaltype = "cshipyardlvl4_aoplane.dds",
-		buildpic = "cshipyardlvl4.png",
+		buildpic = "cshipyardlvl4.dds",
 		buildtime = 500000.5,
 		canmove = true,
 		canpatrol = true,

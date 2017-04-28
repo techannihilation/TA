@@ -1,6 +1,18 @@
 ---------------------------------------- v2.46.1 ---------------------------------------
 ----Improvments----
 Add New Icons for all Units
+Improve Ui, opacity will chnage depends on map brightness
+Add Sonar for Turtle and delete explosion when destroyed.
+TllWhale => Add more time for Flight Pulse (didn't reach target at 1650 range).
+Uppercut is no longer shared between all faction, new models for arm and tll
+Jump drives are no longer shared between all faction, new models for arm and tll
+Many fixes unitname/descriptions, thanks to Antarac
+Reorder all build menus, split land units now come before sea
+
+----Bug----
+Fix armcav jumping, Closes #108
+Fix debug spaming console
+Remove corproto from dont break cloak widget
 
 ----Balance----
 Metal Maker T1.5 ; Decrease resources for them. (-10%)
@@ -12,8 +24,23 @@ T2.5 Rapid Core Bot => Increase resources by 5%. Increase Damage by 5%. Decrease
 Gorilla : Increase Spped 1.75 => 2.1. Decrease Damage StarBurst
 Juggernaut : Balance Energy Cost (Increase 126 => 190Ke. Metal : 14600 => 13200)
 All T3.5 Unit StarBurst => Decrease damage 700 => 500 per Shot. (Gain 10K HP for Krog and Orco. Furie 560KE => 510KE)
+Balance AA T2 TLL Ship => Decrease cost and buildtime.
 
-----Bug----
+To merge : 
+
+T3.5 Shield Bot => Fix Sightdistance to 500
+ArmHorg => Transform weapon into EMP Missile Long Range (4 burst at 1500 dmg emp)
+Morphing system : Increase Metal and energy to pass T2 => t3.5 (like Howie). Increase Xp by 0.25 too.
+Nerf Cordomm1 Less Hp 70K => 52K) and Tachyon1 Defense (Increase energy)
+Increase All T4 TSAR Weapon by 200KM and Increase by 175% Time to load ammunitions.
+LRPC TLL => Decrease Range to 6200 => 5600 (ARM / CORE to 5100)
+Hover Arm & Core Anti Sub => Balance Sonar Range (1800 => 500)
+Nerf Fast T2 Core Rapid Bot by 5% for range. Increase Metal by 5%.
+All T3.5 Burst launcher have been fixed at 1050 range and 500 damage / s. Add bonus for each unit (+10K HP or decrease cost).
+
+
+
+
 
 
 

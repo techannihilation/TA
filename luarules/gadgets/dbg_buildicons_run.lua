@@ -38,7 +38,9 @@ function gadget:Initialize()
   	local unitDefID = UnitDefs[i]
     	if (unitDefID.minWaterDepth and unitDefID.minWaterDepth> 0) and unitDefID.waterline then
     	--if unitDefID.canFly then
-    		Spring.Echo('unitdefname',unitDefID.name)
+    	--if unitDefID.isFactory then
+
+    		--Spring.Echo('unitdefname',unitDefID.name)
         	unitnames[#unitnames+1]=unitDefID.name
         end
 	end

@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 2326,
 		buildcostmetal = 142,
 		builder = false,
-		buildpic = "tllmixer.png",
+		buildpic = "tllmixer.dds",
 		buildtime = 6895,
 		canattack = false,
 		canguard = true,

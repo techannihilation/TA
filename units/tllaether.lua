@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 119030,
 		buildcostmetal = 15260,
 		builder = false,
-		buildpic = "tllaether.png",
+		buildpic = "tllaether.dds",
 		buildtime = 155000,
 		canattack = true,
 		canfly = true,

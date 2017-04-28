@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 3,
 		buildinggrounddecalsizey = 3,
 		buildinggrounddecaltype = "tllmine2_aoplane.dds",
-		buildpic = "tllmine2.png",
+		buildpic = "tllmine2.dds",
 		buildtime = 100,
 		canattack = false,
 		canguard = false,

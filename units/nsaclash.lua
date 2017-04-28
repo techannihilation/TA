@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 11800,
 		buildcostmetal = 690,
 		builder = false,
-		buildpic = "nsaclash.png",
+		buildpic = "nsaclash.dds",
 		buildtime = 10907,
 		canattack = true,
 		canguard = true,

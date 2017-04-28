@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 5250,
 		buildcostmetal = 720,
 		builder = false,
-		buildpic = "aexxec.png",
+		buildpic = "aexxec.dds",
 		buildtime = 8500,
 		canattack = true,
 		canguard = true,

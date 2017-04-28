@@ -7,7 +7,7 @@ return {
 		buildangle = 16384,
 		buildcostenergy = 355000,
 		buildcostmetal = 25000,
-		buildpic = "aseadragon.png",
+		buildpic = "aseadragon.dds",
 		buildtime = 300000,
 		canattack = true,
 		canguard = true,

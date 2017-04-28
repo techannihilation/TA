@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 10780,
 		buildcostmetal = 1005,
 		builder = false,
-		buildpic = "corarch.png",
+		buildpic = "corarch.dds",
 		buildtime = 9000,
 		canattack = true,
 		canguard = true,

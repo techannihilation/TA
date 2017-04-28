@@ -5,7 +5,7 @@ return {
 		brakerate = 0.564,
 		buildcostenergy = 6613,
 		buildcostmetal = 619,
-		buildpic = "armaak.png",
+		buildpic = "armaak.dds",
 		buildtime = 6958,
 		canmove = true,
 		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",

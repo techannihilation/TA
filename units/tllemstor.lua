@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 11,
 		buildinggrounddecalsizey = 11,
 		buildinggrounddecaltype = "tllemstor_aoplane.dds",
-		buildpic = "tllemstor.png",
+		buildpic = "tllemstor.dds",
 		buildtime = 57710,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		cloakcost = 680,

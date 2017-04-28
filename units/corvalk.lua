@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 1437,
 		buildcostmetal = 74,
 		builder = false,
-		buildpic = "corvalk.png",
+		buildpic = "corvalk.dds",
 		buildtime = 4122,
 		canfly = true,
 		canguard = true,

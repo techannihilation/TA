@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 180200,
 		buildcostmetal = 11300,
 		builder = false,
-		buildpic = "cordem.png",
+		buildpic = "cordem.dds",
 		buildtime = 232000,
 		canattack = true,
 		canguard = true,

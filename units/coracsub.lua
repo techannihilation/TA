@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 3400,
 		builddistance = 310,
 		builder = true,
-		buildpic = "coracsub.png",
+		buildpic = "coracsub.dds",
 		buildtime = 57228,
 		canguard = true,
 		canmove = true,

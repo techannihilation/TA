@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "arm_wind_generator_aoplane.dds",
-		buildpic = "arm_wind_generator.png",
+		buildpic = "arm_wind_generator.dds",
 		buildtime = 1603,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "dead",

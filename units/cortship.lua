@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 5105,
 		buildcostmetal = 946,
 		builder = false,
-		buildpic = "cortship.png",
+		buildpic = "cortship.dds",
 		buildtime = 13663,
 		canattack = false,
 		canguard = true,

@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 3400,
 		builddistance = 310,
 		builder = true,
-		buildpic = "armacsub.png",
+		buildpic = "armacsub.dds",
 		buildtime = 56565,
 		canguard = true,
 		canmove = true,

@@ -475,7 +475,26 @@ local function AddMorphCmdDesc(unitID, unitDefID, teamID, morphDef, teamTech)
     morphCmdDesc.texture = "LuaRules/Images/Morph/".. morphDef.texture
     morphCmdDesc.name = ''
   else
+    local ud = UnitDefs[morphDef.into]
+    local string = tostring(ud.humanName)
+    local humDesc = ""
+    local longestword = 1
+    for word in string.gmatch(string,"%w+") do 
+      if string.len(word) > longestword then
+        longestword = string.len(word)
+      end
+    end
+
+    for word in string.gmatch(string,"%w+") do
+      padding = math.floor(longestword-string.len(word))
+      for p = 1, padding do
+        humDesc =  humDesc .. " "
+      end
+      humDesc =  humDesc .. word .. "\n"
+    end
+
     morphCmdDesc.texture = "#" .. morphDef.into   --//only works with a patched layout.lua or the TweakedLayout widget!
+    morphCmdDesc.name = "" .. humDesc  --to do add padding
   end
 
 

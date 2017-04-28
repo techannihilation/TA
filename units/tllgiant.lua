@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 65000,
 		buildcostmetal = 1800,
 		builder = true,
-		buildpic = "tllgiant.png",
+		buildpic = "tllgiant.dds",
 		buildtime = 25941,
 		canassist = false,
 		canguard = true,

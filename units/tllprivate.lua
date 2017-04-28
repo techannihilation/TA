@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 525,
 		buildcostmetal = 65,
 		builder = false,
-		buildpic = "tllprivate.png",
+		buildpic = "tllprivate.dds",
 		buildtime = 1920,
 		canattack = true,
 		canguard = true,

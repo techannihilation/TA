@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 12500,
 		buildcostmetal = 2650,
 		builder = false,
-		buildpic = "tllmatamata.png",
+		buildpic = "tllmatamata.dds",
 		buildtime = 16000,
 		canattack = true,
 		canguard = true,

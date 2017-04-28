@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 7257,
 		buildcostmetal = 806,
 		builder = false,
-		buildpic = "armfatf.png",
+		buildpic = "armfatf.dds",
 		buildtime = 9886,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "DEAD",

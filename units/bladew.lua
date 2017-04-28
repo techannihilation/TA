@@ -4,7 +4,7 @@ return {
 		brakerate = 0.55,
 		buildcostenergy = 1280,
 		buildcostmetal = 58,
-		buildpic = "bladew.png",
+		buildpic = "bladew.dds",
 		buildtime = 2073,
 		canattack = true,
 		canfly = true,

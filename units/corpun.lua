@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "corpun_aoplane.dds",
-		buildpic = "corpun.png",
+		buildpic = "corpun.dds",
 		buildtime = 15000,
 		canattack = true,
 		canstop = 1,

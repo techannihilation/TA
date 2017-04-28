@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 13900,
 		buildcostmetal = 1245,
 		builder = false,
-		buildpic = "corparrow.png",
+		buildpic = "corparrow.dds",
 		buildtime = 19000,
 		canattack = true,
 		canguard = true,

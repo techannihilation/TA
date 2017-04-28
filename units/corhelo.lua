@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 3943,
 		buildcostmetal = 45,
 		builder = false,
-		buildpic = "corhelo.png",
+		buildpic = "corhelo.dds",
 		buildtime = 2510,
 		canattack = true,
 		canfly = true,

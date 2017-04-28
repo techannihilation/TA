@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "armclaw_aoplane.dds",
-		buildpic = "armclaw.png",
+		buildpic = "armclaw.dds",
 		buildtime = 4638,
 		canattack = true,
 		canstop = 1,

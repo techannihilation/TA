@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 7,
 		buildinggrounddecaltype = "armavp_aoplane.dds",
-		buildpic = "armavp.png",
+		buildpic = "armavp.dds",
 		buildtime = 36440,
 		canmove = true,
 		canpatrol = true,

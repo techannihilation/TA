@@ -7,7 +7,7 @@ return {
 		buildcostmetal = 43,
 		builddistance = 160,
 		builder = true,
-		buildpic = "cormin.png",
+		buildpic = "cormin.dds",
 		buildtime = 1600,
 		canassist = false,
 		canbeassisted = false,

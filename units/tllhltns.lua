@@ -4,7 +4,7 @@ return {
 		buildcostenergy = 5800,
 		buildcostmetal = 690,
 		builder = false,
-		buildpic = "tllhltns.png",
+		buildpic = "tllhltns.dds",
 		buildtime = 9705,
 		canattack = true,
 		canguard = true,

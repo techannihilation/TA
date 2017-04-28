@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 30132,
 		buildcostmetal = 3115,
 		builder = false,
-		buildpic = "corhind.png",
+		buildpic = "corhind.dds",
 		buildtime = 34000,
 		canattack = true,
 		canfly = true,

@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 21440,
 		buildcostmetal = 3550,
 		builder = false,
-		buildpic = "tllnuada.png",
+		buildpic = "tllnuada.dds",
 		buildtime = 18650,
 		canattack = true,
 		canfly = true,

@@ -8,7 +8,7 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "cortlab_aoplane.dds",
-		buildpic = "cortlab.png",
+		buildpic = "cortlab.dds",
 		buildtime = 12000,
 		canmove = true,
 		canpatrol = true,

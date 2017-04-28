@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 3639,
 		buildcostmetal = 325,
 		builder = false,
-		buildpic = "tllhoverrocket.png",
+		buildpic = "tllhoverrocket.dds",
 		buildtime = 12521,
 		canattack = true,
 		canguard = true,

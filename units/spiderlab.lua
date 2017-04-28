@@ -8,7 +8,7 @@ return {
 		buildinggrounddecalsizex = 10,
 		buildinggrounddecalsizey = 10,
 		buildinggrounddecaltype = "spiderlab_aoplane.dds",
-		buildpic = "spiderlab.png",
+		buildpic = "spiderlab.dds",
 		buildtime = 11900,
 		canmove = true,
 		canpatrol = true,

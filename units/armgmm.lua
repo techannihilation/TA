@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "armgmm_aoplane.dds",
-		buildpic = "armgmm.png",
+		buildpic = "armgmm.dds",
 		buildtime = 75000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		description = "Safe Geothermal Powerplant",

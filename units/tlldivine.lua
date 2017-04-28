@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 379,
 		buildcostmetal = 311,
 		builder = false,
-		buildpic = "tlldivine.png",
+		buildpic = "tlldivine.dds",
 		buildtime = 3853,
 		canattack = false,
 		canguard = true,

@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 4948,
 		buildcostmetal = 980,
 		builder = false,
-		buildpic = "armtship.png",
+		buildpic = "armtship.dds",
 		buildtime = 14538,
 		canattack = false,
 		canguard = true,

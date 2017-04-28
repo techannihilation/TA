@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 1120,
 		buildcostmetal = 181,
 		builder = false,
-		buildpic = "tllfirestarter.png",
+		buildpic = "tllfirestarter.dds",
 		buildtime = 2700,
 		canattack = true,
 		canguard = true,

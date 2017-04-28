@@ -7,7 +7,7 @@ return {
 		buildinggrounddecalsizex = 9,
 		buildinggrounddecalsizey = 9,
 		buildinggrounddecaltype = "corehpad_aoplane.dds",
-		buildpic = "corehpad.png",
+		buildpic = "corehpad.dds",
 		buildtime = 14250,
 		canmove = true,
 		canpatrol = true,

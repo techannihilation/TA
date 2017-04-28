@@ -5,7 +5,7 @@ return {
 		brakerate = 0.564,
 		buildcostenergy = 6240,
 		buildcostmetal = 640,
-		buildpic = "coraak.png",
+		buildpic = "coraak.dds",
 		buildtime = 7581,
 		canmove = true,
 		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",

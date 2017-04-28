@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 2738,
 		buildcostmetal = 203,
 		builder = false,
-		buildpic = "cslicer.png",
+		buildpic = "cslicer.dds",
 		buildtime = 2017,
 		canattack = true,
 		canguard = true,

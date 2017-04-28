@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 19700,
 		buildcostmetal = 1650,
 		builder = false,
-		buildpic = "armkrmi.png",
+		buildpic = "armkrmi.dds",
 		buildtime = 33600,
 		canattack = true,
 		canguard = true,
@@ -44,7 +44,7 @@ return {
 		radaremitheight = 59,
 		selfdestructas = "CRAWL_BLAST",
 		shootme = 1,
-		side = "ARM",
+		side = "CORE",
 		sightdistance = 450,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -58,7 +58,7 @@ return {
 		workertime = 0,
 		customparams = {
 			canjump = "1",
-			faction = "ARM",
+			faction = "CORE",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {

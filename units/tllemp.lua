@@ -8,7 +8,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "tllemp_aoplane.dds",
-		buildpic = "tllemp.png",
+		buildpic = "tllemp.dds",
 		buildtime = 59531,
 		canattack = true,
 		canstop = 1,

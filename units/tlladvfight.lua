@@ -6,7 +6,7 @@ return {
 		brakerate = 0.09,
 		buildcostenergy = 7200,
 		buildcostmetal = 355,
-		buildpic = "tlladvfight.png",
+		buildpic = "tlladvfight.dds",
 		buildtime = 10000,
 		canattack = true,
 		canfly = true,

@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 3387,
 		buildcostmetal = 345,
 		builder = false,
-		buildpic = "tllsquid.png",
+		buildpic = "tllsquid.dds",
 		buildtime = 13408,
 		canattack = false,
 		canguard = true,

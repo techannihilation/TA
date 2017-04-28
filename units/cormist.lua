@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 2322,
 		buildcostmetal = 156,
 		builder = false,
-		buildpic = "cormist.png",
+		buildpic = "cormist.dds",
 		buildtime = 3065,
 		canattack = true,
 		canguard = true,

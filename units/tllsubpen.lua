@@ -3,7 +3,7 @@ return {
 		buildcostenergy = 26600,
 		buildcostmetal = 2990,
 		builder = true,
-		buildpic = "tllsubpen.png",
+		buildpic = "tllsubpen.dds",
 		buildtime = 6520,
 		canguard = true,
 		canmove = true,

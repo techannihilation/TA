@@ -10,7 +10,7 @@ return {
 		buildcostenergy = 85600,
 		buildcostmetal = 7280,
 		builder = false,
-		buildpic = "coreclipse.png",
+		buildpic = "coreclipse.dds",
 		buildtime = 100000,
 		canattack = true,
 		canfly = true,

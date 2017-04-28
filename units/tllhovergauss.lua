@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 1800,
 		buildcostmetal = 275,
 		builder = false,
-		buildpic = "tllhovergauss.png",
+		buildpic = "tllhovergauss.dds",
 		buildtime = 5200,
 		canattack = true,
 		canguard = true,

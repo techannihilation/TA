@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 10135,
 		buildcostmetal = 905,
 		builder = false,
-		buildpic = "armaas.png",
+		buildpic = "armaas.dds",
 		buildtime = 9000,
 		canattack = true,
 		canguard = true,

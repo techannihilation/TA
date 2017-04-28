@@ -6,7 +6,7 @@ return {
 		brakerate = 0.07,
 		buildcostenergy = 58600,
 		buildcostmetal = 720,
-		buildpic = "airwolf3g.png",
+		buildpic = "airwolf3g.dds",
 		buildtime = 18000,
 		canattack = true,
 		canfly = true,

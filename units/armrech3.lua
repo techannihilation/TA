@@ -8,7 +8,7 @@ return {
 		buildinggrounddecalsizex = 10,
 		buildinggrounddecalsizey = 10,
 		buildinggrounddecaltype = "armrech3_aoplane.dds",
-		buildpic = "armrech3.png",
+		buildpic = "armrech3.dds",
 		buildtime = 7500,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		collisionvolumeoffsets = "-1 -9 -5",

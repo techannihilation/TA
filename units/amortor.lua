@@ -8,7 +8,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "amortor_aoplane.dds",
-		buildpic = "amortor.png",
+		buildpic = "amortor.dds",
 		buildtime = 33833,
 		canattack = true,
 		canstop = 1,

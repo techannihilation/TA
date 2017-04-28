@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 373,
 		buildcostmetal = 17,
 		builder = false,
-		buildpic = "corpunk.png",
+		buildpic = "corpunk.dds",
 		buildtime = 880,
 		canattack = true,
 		canguard = true,

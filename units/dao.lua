@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 3200,
 		buildcostmetal = 400,
 		builder = false,
-		buildpic = "dao.png",
+		buildpic = "dao.dds",
 		buildtime = 4250,
 		canattack = true,
 		canguard = true,

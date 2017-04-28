@@ -7,7 +7,7 @@ return {
 		buildangle = 16384,
 		buildcostenergy = 212000,
 		buildcostmetal = 17500,
-		buildpic = "tllhcar.png",
+		buildpic = "tllhcar.dds",
 		buildtime = 350000,
 		canattack = true,
 		canguard = true,

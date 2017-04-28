@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 2500,
 		buildcostmetal = 400,
 		builder = false,
-		buildpic = "tllcrawlb.png",
+		buildpic = "tllcrawlb.dds",
 		buildtime = 7900,
 		canattack = true,
 		canguard = true,

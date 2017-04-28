@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 9500,
 		buildcostmetal = 795,
 		builder = false,
-		buildpic = "tllcoyote.png",
+		buildpic = "tllcoyote.dds",
 		buildtime = 12000,
 		canattack = true,
 		canguard = true,

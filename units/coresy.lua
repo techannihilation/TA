@@ -7,7 +7,7 @@ return {
 		buildinggrounddecalsizex = 18,
 		buildinggrounddecalsizey = 18,
 		buildinggrounddecaltype = "coresy_aoplane.dds",
-		buildpic = "coresy.png",
+		buildpic = "coresy.dds",
 		buildtime = 64000,
 		canmove = true,
 		canpatrol = true,

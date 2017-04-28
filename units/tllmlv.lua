@@ -7,7 +7,7 @@ return {
 		buildcostmetal = 206,
 		builddistance = 96,
 		builder = true,
-		buildpic = "tllmlv.png",
+		buildpic = "tllmlv.dds",
 		buildtime = 3921,
 		canassist = false,
 		canguard = false,
@@ -50,7 +50,6 @@ return {
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
-		side = "arm",
 		sightdistance = 201,
 		standingfireorder = 0,
 		standingmoveorder = 1,
@@ -80,7 +79,7 @@ return {
 		},
 		customparams = {
 			buildpic = "TLLMLV.png",
-			faction = "arm",
+			faction = "TLL",
 		},
 		featuredefs = {
 			dead = {

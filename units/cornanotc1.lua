@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "cornanotc1_aoplane.dds",
-		buildpic = "cornanotc1.png",
+		buildpic = "cornanotc1.dds",
 		buildtime = 10000,
 		canguard = true,
 		canmove = false,

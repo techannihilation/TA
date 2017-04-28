@@ -8,7 +8,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "tllstuner_aoplane.dds",
-		buildpic = "tllstuner.png",
+		buildpic = "tllstuner.dds",
 		buildtime = 11528,
 		canattack = true,
 		canstop = 1,

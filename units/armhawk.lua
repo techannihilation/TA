@@ -6,7 +6,7 @@ return {
 		brakerate = 0.112,
 		buildcostenergy = 10200,
 		buildcostmetal = 140,
-		buildpic = "armhawk.png",
+		buildpic = "armhawk.dds",
 		buildtime = 9000,
 		canattack = true,
 		canfly = true,

@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 2160,
 		buildcostmetal = 363,
 		builder = false,
-		buildpic = "armatidal.png",
+		buildpic = "armatidal.dds",
 		buildtime = 8336,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "DEAD",
