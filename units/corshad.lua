@@ -111,7 +111,7 @@ return {
 				name = "Bombs",
 				noselfdamage = true,
 				range = 1280,
-				reloadtime = 4,
+				reloadtime = 6,
 				soundhitdry = "xplomed2",
 				soundhitwet = "splslrg",
 				soundhitwetvolume = 0.6,
