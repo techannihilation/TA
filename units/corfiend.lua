@@ -109,7 +109,7 @@ return {
 				name = "Advanced Bombs",
 				noselfdamage = true,
 				range = 1280,
-				reloadtime = 5.5,
+				reloadtime = 6,
 				soundhitdry = "xplomed2",
 				soundhitwet = "splslrg",
 				soundhitwetvolume = 0.6,
