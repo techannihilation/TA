@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 14941,
 		buildcostmetal = 1600,
 		builder = false,
-		buildpic = "armiguana.png",
+		buildpic = "armiguana.dds",
 		buildtime = 25575,
 		canattack = true,
 		canguard = true,

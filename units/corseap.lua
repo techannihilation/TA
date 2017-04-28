@@ -8,7 +8,7 @@ return {
 		buildcostenergy = 7250,
 		buildcostmetal = 265,
 		builder = false,
-		buildpic = "corseap.png",
+		buildpic = "corseap.dds",
 		buildtime = 13698,
 		canattack = true,
 		canfly = true,

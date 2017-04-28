@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 86293,
 		buildcostmetal = 5280,
 		builder = false,
-		buildpic = "champ.png",
+		buildpic = "champ.dds",
 		buildtime = 26678,
 		canattack = true,
 		canguard = true,

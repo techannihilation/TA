@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 2677,
 		builddistance = 225,
 		builder = true,
-		buildpic = "corack.png",
+		buildpic = "corack.dds",
 		buildtime = 20709,
 		canguard = true,
 		canmove = true,

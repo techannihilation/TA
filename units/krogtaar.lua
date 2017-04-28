@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 74900,
 		buildcostmetal = 6150,
 		builder = false,
-		buildpic = "krogtaar.png",
+		buildpic = "krogtaar.dds",
 		buildtime = 101125,
 		canattack = true,
 		canguard = true,

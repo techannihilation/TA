@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 4480,
 		buildcostmetal = 192,
 		builder = false,
-		buildpic = "tllhovermissile.png",
+		buildpic = "tllhovermissile.dds",
 		buildtime = 2800,
 		canattack = true,
 		canguard = true,

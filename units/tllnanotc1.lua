@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "tllnanotc1_aoplane.dds",
-		buildpic = "tllnanotc1.png",
+		buildpic = "tllnanotc1.dds",
 		buildtime = 13000,
 		canguard = true,
 		canmove = false,
@@ -47,7 +47,6 @@ return {
 		script = "cornanotc.cob",
 		seismicsignature = 0,
 		selfdestructas = "NANOBOOM2T",
-		side = "CORE",
 		sightdistance = 380,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
@@ -59,7 +58,7 @@ return {
 		workertime = 600,
 		customparams = {
 			buildpic = "CORNANOTC.png",
-			faction = "CORE",
+			faction = "TLL",
 		},
 		nanocolor = {
 			[1] = 0.69,

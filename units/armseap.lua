@@ -8,7 +8,7 @@ return {
 		buildcostenergy = 6500,
 		buildcostmetal = 250,
 		builder = false,
-		buildpic = "armseap.png",
+		buildpic = "armseap.dds",
 		buildtime = 12000,
 		canattack = true,
 		canfly = true,

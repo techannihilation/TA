@@ -174,6 +174,7 @@ local function CreateGrid(r)
 	local selecthighlight = {"rectangle",
 		px=0,py=0,
 		sx=r.isx,sy=r.isy,
+		
 		color={1,0,0,0.3},
 		border={1.0,0,0,15},
 		
@@ -347,12 +348,16 @@ local function UpdateGrid(g,cmds,ordertype)
 		end
 
 		if (cmd.disabled) then
-			icon.texturecolor = {0.55,0.55,0.55,0.75}
+			icon.texturecolor = {0.55,0.55,0.55,0.65}
 		else
 			if (ordertype ~= 1) then
-				icon.texturecolor = {1,1,1,0.75}
+				if icon.texture == buttonTexture then
+					icon.texturecolor = {1,1,1,0.95}
+				else
+					icon.texturecolor = {1,1,1,0.65}
+				end
 			else
-				icon.texturecolor = {1,1,1,0.95}
+				icon.texturecolor = {1,1,1,0.98}
 			end
 		end
 		

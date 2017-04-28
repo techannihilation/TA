@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 1172,
 		buildcostmetal = 75,
 		builder = false,
-		buildpic = "tllhoverlight.png",
+		buildpic = "tllhoverlight.dds",
 		buildtime = 2401,
 		canattack = true,
 		canguard = true,

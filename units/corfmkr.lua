@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 2332,
 		buildcostmetal = 21,
 		builder = false,
-		buildpic = "corfmkr.png",
+		buildpic = "corfmkr.dds",
 		buildtime = 2400,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		description = "Converts upto 128 Energy to Metal",

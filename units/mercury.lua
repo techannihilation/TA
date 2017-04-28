@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "mercury_aoplane.dds",
-		buildpic = "mercury.png",
+		buildpic = "mercury.dds",
 		buildtime = 38843,
 		canattack = true,
 		canstop = 1,

@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 850,
 		buildcostmetal = 145,
 		builder = false,
-		buildpic = "tllfireraiser.png",
+		buildpic = "tllfireraiser.dds",
 		buildtime = 2000,
 		canattack = true,
 		canguard = true,

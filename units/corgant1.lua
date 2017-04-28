@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 20,
 		buildinggrounddecalsizey = 20,
 		buildinggrounddecaltype = "corgant1_aoplane.dds",
-		buildpic = "corgant1.png",
+		buildpic = "corgant1.dds",
 		buildtime = 342000,
 		canmove = true,
 		canpatrol = true,

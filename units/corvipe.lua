@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "corvipe_aoplane.dds",
-		buildpic = "corvipe.png",
+		buildpic = "corvipe.dds",
 		buildtime = 19035,
 		canattack = true,
 		canstop = 1,

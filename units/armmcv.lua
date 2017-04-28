@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 185000,
 		buildcostmetal = 9600,
 		builder = false,
-		buildpic = "armmcv.png",
+		buildpic = "armmcv.dds",
 		buildtime = 179600,
 		canattack = true,
 		canguard = true,
@@ -54,7 +54,7 @@ return {
 		selfdestructas = "BANTHA_NUKE",
 		selfdestructcountdown = 10,
 		shootme = 1,
-		side = "ARM",
+		side = "CORE",
 		sightdistance = 640,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -67,7 +67,7 @@ return {
 		unitnumber = 22134,
 		workertime = 0,
 		customparams = {
-			faction = "ARM",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

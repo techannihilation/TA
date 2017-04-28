@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "armfor_aoplane.dds",
-		buildpic = "armfor.png",
+		buildpic = "armfor.dds",
 		buildtime = 200000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		description = "Advanced Geothermical reactor",

@@ -8,7 +8,7 @@ return {
 		buildcostenergy = 15199,
 		buildcostmetal = 939,
 		builder = false,
-		buildpic = "chopper.png",
+		buildpic = "chopper.dds",
 		buildtime = 21000,
 		canattack = true,
 		canfly = true,

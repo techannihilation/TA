@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "corestor_aoplane.dds",
-		buildpic = "corestor.png",
+		buildpic = "corestor.dds",
 		buildtime = 3900,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		collisionvolumeoffsets = "0 -10 0",

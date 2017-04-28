@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 41942,
 		buildcostmetal = 6144,
 		builder = true,
-		buildpic = "corplat.png",
+		buildpic = "corplat.dds",
 		buildtime = 20102,
 		canmove = true,
 		canpatrol = true,

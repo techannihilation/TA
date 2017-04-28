@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 8500,
 		buildcostmetal = 590,
 		builder = false,
-		buildpic = "cbrutus.png",
+		buildpic = "cbrutus.dds",
 		buildtime = 13000,
 		canattack = true,
 		canguard = true,

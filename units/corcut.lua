@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 13000,
 		buildcostmetal = 600,
 		builder = false,
-		buildpic = "corcut.png",
+		buildpic = "corcut.dds",
 		buildtime = 27000,
 		canattack = true,
 		canfly = true,

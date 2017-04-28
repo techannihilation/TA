@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "armarad_aoplane.dds",
-		buildpic = "armarad.png",
+		buildpic = "armarad.dds",
 		buildtime = 11800,
 		canattack = false,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",

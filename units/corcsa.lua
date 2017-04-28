@@ -8,7 +8,7 @@ return {
 		buildcostmetal = 2300,
 		builddistance = 60,
 		builder = true,
-		buildpic = "corcsa.png",
+		buildpic = "corcsa.dds",
 		buildtime = 18900,
 		canfly = true,
 		canguard = true,

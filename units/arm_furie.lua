@@ -2,10 +2,10 @@ return {
 	arm_furie = {
 		acceleration = 0.09,
 		brakerate = 0.6,
-		buildcostenergy = 560000,
+		buildcostenergy = 510000,
 		buildcostmetal = 37500,
 		builder = false,
-		buildpic = "arm_furie.png",
+		buildpic = "arm_furie.dds",
 		buildtime = 500000,
 		canattack = true,
 		canguard = true,
@@ -206,7 +206,7 @@ return {
 				weapontype = "BeamLaser",
 				weaponvelocity = 1500,
 				damage = {
-					commanders = 1500,
+					commanders = 2500,
 					default = 5000,
 					subs = 5,
 				},
@@ -247,7 +247,7 @@ return {
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 450,
 				damage = {
-					default = 700,
+					default = 500,
 					subs = 5,
 				},
 			},

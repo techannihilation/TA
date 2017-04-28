@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 2667,
 		builddistance = 225,
 		builder = true,
-		buildpic = "armack.png",
+		buildpic = "armack.dds",
 		buildtime = 20400,
 		canguard = true,
 		canmove = true,

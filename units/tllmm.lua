@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "tllmm_aoplane.dds",
-		buildpic = "tllmm.png",
+		buildpic = "tllmm.dds",
 		buildtime = 2000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "dead",

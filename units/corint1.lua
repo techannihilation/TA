@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 13,
 		buildinggrounddecalsizey = 13,
 		buildinggrounddecaltype = "corint1_aoplane.dds",
-		buildpic = "corint1.png",
+		buildpic = "corint1.dds",
 		buildtime = 185000,
 		canattack = true,
 		canstop = 1,

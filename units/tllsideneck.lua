@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 50000,
 		buildcostmetal = 2250,
 		builder = false,
-		buildpic = "tllsideneck.png",
+		buildpic = "tllsideneck.dds",
 		buildtime = 90000,
 		canguard = true,
 		canmove = true,

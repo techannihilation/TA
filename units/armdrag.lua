@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "armdrag_aoplane.dds",
-		buildpic = "armdrag.png",
+		buildpic = "armdrag.dds",
 		buildtime = 255,
 		canattack = false,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",

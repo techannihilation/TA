@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 591,
 		buildcostmetal = 103,
 		builder = false,
-		buildpic = "tllradarns.png",
+		buildpic = "tllradarns.dds",
 		buildtime = 1500,
 		canattack = false,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
@@ -43,7 +43,6 @@ return {
 		script = "tllradarns.lua",
 		seismicsignature = 0,
 		selfdestructas = "SMALL_BUILDING",
-		side = "CORE",
 		sightdistance = 740,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,
@@ -54,7 +53,7 @@ return {
 		yardmap = "wwwwwwwww",
 		customparams = {
 			buildpic = "TLLRADARNS.png",
-			faction = "CORE",
+			faction = "TLL",
 		},
 		featuredefs = {
 			dead = {

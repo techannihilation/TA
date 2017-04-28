@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "tllobliterator_aoplane.dds",
-		buildpic = "tllobliterator.png",
+		buildpic = "tllobliterator.dds",
 		buildtime = 52513,
 		canattack = true,
 		canguard = true,

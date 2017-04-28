@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "armtarg_aoplane.dds",
-		buildpic = "armtarg.png",
+		buildpic = "armtarg.dds",
 		buildtime = 8707,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "DEAD",

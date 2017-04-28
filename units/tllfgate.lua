@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 49000,
 		buildcostmetal = 3900,
 		builder = false,
-		buildpic = "tllfgate.png",
+		buildpic = "tllfgate.dds",
 		buildtime = 78000,
 		category = "ALL NOTDEFENSE NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		description = "Floating Plasma Deflector",

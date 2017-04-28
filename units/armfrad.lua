@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 1051,
 		buildcostmetal = 135,
 		builder = false,
-		buildpic = "armfrad.png",
+		buildpic = "armfrad.dds",
 		buildtime = 1637,
 		canattack = false,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",

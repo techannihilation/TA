@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 10,
 		buildinggrounddecalsizey = 10,
 		buildinggrounddecaltype = "armsilo_aoplane.dds",
-		buildpic = "armsilo.png",
+		buildpic = "armsilo.dds",
 		buildtime = 180000,
 		canattack = true,
 		canstop = 1,

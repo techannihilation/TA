@@ -6,7 +6,7 @@ return {
 		brakerate = 0.09,
 		buildcostenergy = 70400,
 		buildcostmetal = 580,
-		buildpic = "shrike.png",
+		buildpic = "shrike.dds",
 		buildtime = 18000,
 		canattack = true,
 		canfly = true,

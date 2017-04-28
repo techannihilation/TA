@@ -4,7 +4,7 @@ return {
 		buildcostenergy = 145000,
 		buildcostmetal = 17900,
 		builder = true,
-		buildpic = "tllevp.png",
+		buildpic = "tllevp.dds",
 		buildtime = 80000,
 		canmove = true,
 		canpatrol = true,

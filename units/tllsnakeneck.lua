@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 4485,
 		buildcostmetal = 675,
 		builder = false,
-		buildpic = "tllsnakeneck.png",
+		buildpic = "tllsnakeneck.dds",
 		buildtime = 7280,
 		canattack = true,
 		canguard = true,

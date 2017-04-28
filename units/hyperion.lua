@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 420000,
 		buildcostmetal = 73500,
 		builder = false,
-		buildpic = "hyperion.png",
+		buildpic = "hyperion.dds",
 		buildtime = 1000000,
 		canattack = true,
 		canguard = true,

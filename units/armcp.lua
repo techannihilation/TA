@@ -8,7 +8,7 @@ return {
 		buildinggrounddecalsizex = 9,
 		buildinggrounddecalsizey = 9,
 		buildinggrounddecaltype = "armcp_aoplane.dds",
-		buildpic = "armcp.png",
+		buildpic = "armcp.dds",
 		buildtime = 13740,
 		canmove = true,
 		canpatrol = true,

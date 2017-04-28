@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 53000,
 		buildcostmetal = 3893,
 		builder = false,
-		buildpic = "corflshd.png",
+		buildpic = "corflshd.dds",
 		buildtime = 61782,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		description = "Floating Plasma Deflector",

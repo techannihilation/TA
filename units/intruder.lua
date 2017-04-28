@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 16011,
 		buildcostmetal = 1348,
 		builder = false,
-		buildpic = "intruder.png",
+		buildpic = "intruder.dds",
 		buildtime = 14177,
 		canguard = true,
 		canload = 1,

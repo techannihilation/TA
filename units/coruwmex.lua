@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "coruwmex_aoplane.dds",
-		buildpic = "coruwmex.png",
+		buildpic = "coruwmex.dds",
 		buildtime = 1875,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "DEAD",

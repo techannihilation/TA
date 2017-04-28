@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "corbhmth_aoplane.dds",
-		buildpic = "corbhmth.png",
+		buildpic = "corbhmth.dds",
 		buildtime = 80000,
 		canattack = true,
 		canstop = 1,

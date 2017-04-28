@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 9,
 		buildinggrounddecalsizey = 9,
 		buildinggrounddecaltype = "tllgazelle_aoplane.dds",
-		buildpic = "tllgazelle.png",
+		buildpic = "tllgazelle.dds",
 		buildtime = 835972,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
 		collisionvolumeoffsets = "0 0 -1",

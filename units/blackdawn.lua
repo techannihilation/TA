@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 29440,
 		buildcostmetal = 4100,
 		builder = false,
-		buildpic = "blackdawn.png",
+		buildpic = "blackdawn.dds",
 		buildtime = 30000,
 		canattack = true,
 		canfly = true,

@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "armgate1_aoplane.dds",
-		buildpic = "armgate1.png",
+		buildpic = "armgate1.dds",
 		buildtime = 354139,
 		canattack = false,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",

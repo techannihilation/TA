@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 106667,
 		buildcostmetal = 106667,
 		builder = false,
-		buildpic = "terraunit.png",
+		buildpic = "terraunit.dds",
 		buildtime = 10000000,
 		canattack = false,
 		capturable = false,

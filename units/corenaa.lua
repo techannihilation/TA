@@ -8,7 +8,7 @@ return {
 		buildcostenergy = 27520,
 		buildcostmetal = 885,
 		builder = false,
-		buildpic = "corenaa.png",
+		buildpic = "corenaa.dds",
 		buildtime = 23129,
 		canattack = true,
 		canstop = 1,

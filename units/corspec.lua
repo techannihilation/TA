@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 1547,
 		buildcostmetal = 75,
 		builder = false,
-		buildpic = "corspec.png",
+		buildpic = "corspec.dds",
 		buildtime = 5440,
 		canattack = false,
 		canguard = true,

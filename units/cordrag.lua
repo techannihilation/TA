@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "cordrag_aoplane.dds",
-		buildpic = "cordrag.png",
+		buildpic = "cordrag.dds",
 		buildtime = 255,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "DRAGONSTEETH_CORE",

@@ -2,10 +2,10 @@ return {
 	corkrog = {
 		acceleration = 0.108,
 		brakerate = 0.714,
-		buildcostenergy = 402133,
+		buildcostenergy = 395000,
 		buildcostmetal = 27200,
 		builder = false,
-		buildpic = "corkrog.png",
+		buildpic = "corkrog.dds",
 		buildtime = 350145,
 		canattack = true,
 		canguard = true,
@@ -30,7 +30,7 @@ return {
 		losemitheight = 147,
 		maneuverleashlength = 640,
 		mass = 27416.66602,
-		maxdamage = 164500,
+		maxdamage = 174500,
 		maxslope = 17,
 		maxvelocity = 1.2,
 		maxwaterdepth = 12,
@@ -165,7 +165,7 @@ return {
 				weapontype = "BeamLaser",
 				weaponvelocity = 1500,
 				damage = {
-					commanders = 1000,
+					commanders = 2500,
 					default = 5000,
 					subs = 5,
 				},
@@ -200,6 +200,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 900,
 				damage = {
+					commanders = 175,
 					default = 350,
 					subs = 5,
 				},
@@ -240,8 +241,7 @@ return {
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 4000,
 				damage = {
-					commanders = 350,
-					default = 700,
+					default = 500,
 					subs = 5,
 				},
 			},

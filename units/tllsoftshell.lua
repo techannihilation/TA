@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 850,
 		buildcostmetal = 310,
 		builder = false,
-		buildpic = "tllsoftshell.png",
+		buildpic = "tllsoftshell.dds",
 		buildtime = 3853,
 		canattack = false,
 		canguard = true,

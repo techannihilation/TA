@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 165500,
 		buildcostmetal = 15500,
 		builder = false,
-		buildpic = "uppercut.png",
+		buildpic = "uppercut.dds",
 		buildtime = 195000,
 		canattack = true,
 		canguard = true,

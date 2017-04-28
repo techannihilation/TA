@@ -8,7 +8,7 @@ return {
 		buildcostenergy = 3500,
 		buildcostmetal = 550,
 		builder = false,
-		buildpic = "tllseab.png",
+		buildpic = "tllseab.dds",
 		buildtime = 15000,
 		canattack = true,
 		canfly = true,

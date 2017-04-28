@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "corfmd_aoplane.dds",
-		buildpic = "corfmd.png",
+		buildpic = "corfmd.dds",
 		buildtime = 126450,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
 		collisionvolumeoffsets = "0 0 -1",

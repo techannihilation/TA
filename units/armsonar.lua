@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "armsonar_aoplane.dds",
-		buildpic = "armsonar.png",
+		buildpic = "armsonar.dds",
 		buildtime = 912,
 		canattack = false,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",

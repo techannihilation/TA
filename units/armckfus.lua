@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "armckfus_aoplane.dds",
-		buildpic = "armckfus.png",
+		buildpic = "armckfus.dds",
 		buildtime = 75000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		cloakcost = 100,

@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 7573,
 		buildcostmetal = 480,
 		builder = false,
-		buildpic = "corsent.png",
+		buildpic = "corsent.dds",
 		buildtime = 14982,
 		canattack = true,
 		canguard = true,

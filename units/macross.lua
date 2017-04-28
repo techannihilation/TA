@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 152000,
 		buildcostmetal = 12160,
 		builder = false,
-		buildpic = "macross.png",
+		buildpic = "macross.dds",
 		buildtime = 102487,
 		canattack = true,
 		canguard = true,

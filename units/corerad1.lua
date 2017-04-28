@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "corerad1_aoplane.dds",
-		buildpic = "corerad1.png",
+		buildpic = "corerad1.dds",
 		buildtime = 19958,
 		canattack = true,
 		canstop = 1,

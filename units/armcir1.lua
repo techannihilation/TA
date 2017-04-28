@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "armcir1_aoplane.dds",
-		buildpic = "armcir1.png",
+		buildpic = "armcir1.dds",
 		buildtime = 19004,
 		canattack = true,
 		canstop = 1,

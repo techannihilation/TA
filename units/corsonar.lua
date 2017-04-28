@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "corsonar_aoplane.dds",
-		buildpic = "corsonar.png",
+		buildpic = "corsonar.dds",
 		buildtime = 900,
 		canattack = false,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",

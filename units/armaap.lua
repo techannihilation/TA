@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 9,
 		buildinggrounddecalsizey = 7,
 		buildinggrounddecaltype = "armaap_aoplane.dds",
-		buildpic = "armaap.png",
+		buildpic = "armaap.dds",
 		buildtime = 40851,
 		canmove = true,
 		canpatrol = true,

@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 1111,
 		buildcostmetal = 126,
 		builder = false,
-		buildpic = "corgator.png",
+		buildpic = "corgator.dds",
 		buildtime = 1761,
 		canattack = true,
 		canguard = true,

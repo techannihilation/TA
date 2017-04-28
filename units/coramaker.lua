@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "coramaker_aoplane.dds",
-		buildpic = "coramaker.png",
+		buildpic = "coramaker.dds",
 		buildtime = 4400,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		description = "Converts upto 256 Energy to Metal",

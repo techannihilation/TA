@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 82000,
 		buildcostmetal = 5500,
 		builder = false,
-		buildpic = "avtr.png",
+		buildpic = "avtr.dds",
 		buildtime = 90000,
 		canattack = true,
 		canguard = true,
@@ -48,7 +48,6 @@ return {
 		radaremitheight = 26,
 		selfdestructas = "ATOMIC_BLAST",
 		shootme = 1,
-		side = "ARM",
 		sightdistance = 260,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -67,7 +66,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "tllmlrpc.png",
-			faction = "ARM",
+			faction = "TLL",
 		},
 		featuredefs = {
 			dead = {

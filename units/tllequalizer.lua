@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 14720,
 		buildcostmetal = 1861,
 		builder = false,
-		buildpic = "tllequalizer.png",
+		buildpic = "tllequalizer.dds",
 		buildtime = 19901,
 		canattack = true,
 		canguard = true,

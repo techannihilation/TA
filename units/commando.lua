@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 659,
 		builddistance = 137,
 		builder = true,
-		buildpic = "commando.png",
+		buildpic = "commando.dds",
 		buildtime = 13178,
 		canassist = false,
 		canattack = true,

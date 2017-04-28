@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 12000,
 		buildcostmetal = 635,
 		builder = false,
-		buildpic = "correap.png",
+		buildpic = "correap.dds",
 		buildtime = 13530,
 		canattack = true,
 		canguard = true,

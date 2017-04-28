@@ -8,7 +8,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "tlldtns_aoplane.dds",
-		buildpic = "tlldtns.png",
+		buildpic = "tlldtns.dds",
 		buildtime = 930,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "TLLFloatingTeeth",

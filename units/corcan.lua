@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 9300,
 		buildcostmetal = 550,
 		builder = false,
-		buildpic = "corcan.png",
+		buildpic = "corcan.dds",
 		buildtime = 11000,
 		canattack = true,
 		canguard = true,

@@ -6,7 +6,7 @@ return {
 		buildangle = 16384,
 		buildcostenergy = 9750,
 		buildcostmetal = 1800,
-		buildpic = "corasship.png",
+		buildpic = "corasship.dds",
 		buildtime = 23300,
 		canattack = true,
 		canguard = true,

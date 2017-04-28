@@ -7,7 +7,7 @@ return {
 		buildinggrounddecalsizex = 13,
 		buildinggrounddecalsizey = 13,
 		buildinggrounddecaltype = "tlleap_aoplane.dds",
-		buildpic = "tlleap.png",
+		buildpic = "tlleap.dds",
 		buildtime = 96525,
 		canbeassisted = true,
 		canmove = true,

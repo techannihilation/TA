@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 520000,
 		buildcostmetal = 29000,
 		builder = false,
-		buildpic = "nsaagriz.png",
+		buildpic = "nsaagriz.dds",
 		buildtime = 520000,
 		canattack = true,
 		canguard = true,
@@ -56,7 +56,7 @@ return {
 		selfdestructas = "CRBLMSSL",
 		selfdestructcountdown = 10,
 		shootme = 1,
-		side = "CORE",
+		side = "ARM",
 		sightdistance = 240,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -70,7 +70,7 @@ return {
 		workertime = 0,
 		customparams = {
 			buildpic = "krypto-blaster.png",
-			faction = "CORE",
+			faction = "ARM",
 			requiretech = "Advanced T3 Unit Research Centre",
 		},
 		featuredefs = {

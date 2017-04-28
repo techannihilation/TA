@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 4267,
 		buildcostmetal = 725,
 		builder = false,
-		buildpic = "tllplunger.png",
+		buildpic = "tllplunger.dds",
 		buildtime = 9949,
 		canattack = true,
 		canguard = true,

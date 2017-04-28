@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 12215,
 		buildcostmetal = 166,
 		builder = false,
-		buildpic = "corspy.png",
+		buildpic = "corspy.dds",
 		buildtime = 22247,
 		canguard = false,
 		canmove = true,

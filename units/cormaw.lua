@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "cormaw_aoplane.dds",
-		buildpic = "cormaw.png",
+		buildpic = "cormaw.dds",
 		buildtime = 4419,
 		canattack = true,
 		canstop = 1,

@@ -8,7 +8,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "ametalmakerlvl1_aoplane.dds",
-		buildpic = "ametalmakerlvl1.png",
+		buildpic = "ametalmakerlvl1.dds",
 		buildtime = 4000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		description = "Converts upto 200 Energy to Metal",

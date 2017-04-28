@@ -8,7 +8,7 @@ return {
 		buildinggrounddecalsizex = 9,
 		buildinggrounddecalsizey = 9,
 		buildinggrounddecaltype = "tllturtle_lab_aoplane.dds",
-		buildpic = "tllturtle_lab.png",
+		buildpic = "tllturtle_lab.dds",
 		buildtime = 45000,
 		canmove = true,
 		canpatrol = true,

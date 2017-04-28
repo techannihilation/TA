@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "cortron_aoplane.dds",
-		buildpic = "cortron.png",
+		buildpic = "cortron.dds",
 		buildtime = 58927,
 		canattack = true,
 		canstop = 1,

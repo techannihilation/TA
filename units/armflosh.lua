@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 53000,
 		buildcostmetal = 3800,
 		builder = false,
-		buildpic = "armflosh.png",
+		buildpic = "armflosh.dds",
 		buildtime = 61719,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		description = "Floating Plasma Deflector",

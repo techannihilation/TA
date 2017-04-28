@@ -8,7 +8,7 @@ return {
 		buildinggrounddecalsizex = 19,
 		buildinggrounddecalsizey = 19,
 		buildinggrounddecaltype = "corfsilo_aoplane.dds",
-		buildpic = "corfsilo.png",
+		buildpic = "corfsilo.dds",
 		buildtime = 542439,
 		canattack = true,
 		canstop = 1,

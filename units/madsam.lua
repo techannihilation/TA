@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "madsam_aoplane.dds",
-		buildpic = "madsam.png",
+		buildpic = "madsam.dds",
 		buildtime = 5237,
 		canattack = true,
 		canstop = 1,

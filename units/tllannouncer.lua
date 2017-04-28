@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 890,
 		buildcostmetal = 190,
 		builder = false,
-		buildpic = "tllannouncer.png",
+		buildpic = "tllannouncer.dds",
 		buildtime = 2500,
 		canattack = true,
 		canguard = true,

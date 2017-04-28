@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 500,
 		builddistance = 8,
 		builder = true,
-		buildpic = "tllaspns.png",
+		buildpic = "tllaspns.dds",
 		buildtime = 12500,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "dead",

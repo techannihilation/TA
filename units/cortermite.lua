@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 9500,
 		buildcostmetal = 890,
 		builder = false,
-		buildpic = "cortermite.png",
+		buildpic = "cortermite.dds",
 		buildtime = 10000,
 		canattack = true,
 		canguard = true,

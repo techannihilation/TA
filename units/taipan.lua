@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 21583,
 		buildcostmetal = 495,
 		builder = false,
-		buildpic = "taipan.png",
+		buildpic = "taipan.dds",
 		buildtime = 23659,
 		canattack = true,
 		canguard = true,

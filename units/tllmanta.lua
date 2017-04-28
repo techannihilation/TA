@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 13653,
 		buildcostmetal = 1227,
 		builder = false,
-		buildpic = "tllmanta.png",
+		buildpic = "tllmanta.dds",
 		buildtime = 19250,
 		canattack = true,
 		canguard = true,

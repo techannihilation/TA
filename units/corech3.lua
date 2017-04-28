@@ -8,7 +8,7 @@ return {
 		buildinggrounddecalsizex = 10,
 		buildinggrounddecalsizey = 10,
 		buildinggrounddecaltype = "corech3_aoplane.dds",
-		buildpic = "corech3.png",
+		buildpic = "corech3.dds",
 		buildtime = 7500,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		collisionvolumeoffsets = "-1 -9 -5",
@@ -39,7 +39,6 @@ return {
 		radaremitheight = 79.875,
 		script = "corech3.lua",
 		selfdestructas = "COMMANDER_BLAST",
-		side = "ARM",
 		sightdistance = 0,
 		unitname = "corech3",
 		unitnumber = 7210,
@@ -48,7 +47,7 @@ return {
 		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo",
 		customparams = {
 			buildpic = "corech3.png",
-			faction = "ARM",
+			faction = "CORE",
 			providetech = "Advanced T1 Unit Research Centre",
 		},
 		sfxtypes = {

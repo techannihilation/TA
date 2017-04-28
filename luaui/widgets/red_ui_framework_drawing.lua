@@ -46,10 +46,12 @@ local glPushMatrix = gl.PushMatrix
 local glPopMatrix = gl.PopMatrix
 local glScale = gl.Scale
 
+
 local GL_LINE_LOOP = GL.LINE_LOOP
 local GL_COLOR_BUFFER_BIT = GL.COLOR_BUFFER_BIT
 local GL_PROJECTION = GL.PROJECTION
 local GL_MODELVIEW = GL.MODELVIEW
+local minimapbrightness = nil
 
 local function Color(c)
 	glColor(c[1],c[2],c[3],c[4])
@@ -99,7 +101,11 @@ end
 
 local function Rect(px,py,sx,sy,c)
 	if (c) then
-		glColor(c[1],c[2],c[3],c[4])
+		if c[4] == 0.54321 then
+			glColor(c[1],c[2],c[3],minimapbrightness or 0.65)  --minimapbrightness
+		else
+			glColor(c[1],c[2],c[3],c[4])
+		end
 	else
 		glColor(1,1,1,1)
 	end
@@ -140,7 +146,7 @@ function widget:ViewResize(viewSizeX, viewSizeY)
 end
 
 function widget:Initialize()
-        widgetHandler:RegisterGlobal('DrawManager_redui_drawing', DrawStatus)
+    widgetHandler:RegisterGlobal('DrawManager_redui_drawing', DrawStatus)
 	vsx,vsy = widgetHandler:GetViewSizes()
 	CreateStartList()
 	
@@ -172,6 +178,11 @@ function widget:Initialize()
 end
 
 function widget:DrawScreen()
+	if triggered == nil then
+		minimapbrightness=WG["background_color"]
+	triggered = true
+	end
+
 	glResetState()
 	glResetMatrices()
 	

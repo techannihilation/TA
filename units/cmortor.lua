@@ -8,7 +8,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "cmortor_aoplane.dds",
-		buildpic = "cmortor.png",
+		buildpic = "cmortor.dds",
 		buildtime = 33833,
 		canattack = true,
 		canstop = 1,

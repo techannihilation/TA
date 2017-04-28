@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 86000,
 		buildcostmetal = 7450,
 		builder = false,
-		buildpic = "heavyimpact.png",
+		buildpic = "heavyimpact.dds",
 		buildtime = 64600,
 		canattack = true,
 		canguard = true,
