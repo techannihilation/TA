@@ -18,6 +18,8 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Cruiser",
+		energymake = 5,
+		energymake = 5,
 		explodeas = "SMALL_UNITEX",
 		firestandorders = 1,
 		floater = true,
