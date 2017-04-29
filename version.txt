@@ -1,4 +1,4 @@
----------------------------------------- v2.46.1 ---------------------------------------
+---------------------------------------- v2.47.0 ---------------------------------------
 ----Improvments----
 Add New Icons for all Units
 Improve Ui, opacity will chnage depends on map brightness
@@ -25,9 +25,6 @@ Gorilla : Increase Spped 1.75 => 2.1. Decrease Damage StarBurst
 Juggernaut : Balance Energy Cost (Increase 126 => 190Ke. Metal : 14600 => 13200)
 All T3.5 Unit StarBurst => Decrease damage 700 => 500 per Shot. (Gain 10K HP for Krog and Orco. Furie 560KE => 510KE)
 Balance AA T2 TLL Ship => Decrease cost and buildtime.
-
-To merge : 
-
 T3.5 Shield Bot => Fix Sightdistance to 500
 ArmHorg => Transform weapon into EMP Missile Long Range (4 burst at 1500 dmg emp)
 Morphing system : Increase Metal and energy to pass T2 => t3.5 (like Howie). Increase Xp by 0.25 too.
@@ -38,7 +35,7 @@ Hover Arm & Core Anti Sub => Balance Sonar Range (1800 => 500)
 Nerf Fast T2 Core Rapid Bot by 5% for range. Increase Metal by 5%.
 All T3.5 Burst launcher have been fixed at 1050 range and 500 damage / s. Add bonus for each unit (+10K HP or decrease cost).
 
-
+There more changes but not shown here atm will update later
 
 
 
