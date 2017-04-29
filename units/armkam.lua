@@ -94,7 +94,7 @@ return {
 			med_emg = {
 				areaofeffect = 8,
 				avoidfeature = false,
-				avoidFriendly= false,
+				avoidfriendly= false,
 				burst = 3,
 				burstrate = 0.25,
 				cegtag = "Trail_emg_upg",
