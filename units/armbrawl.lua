@@ -97,9 +97,11 @@ return {
 			vtol_emg = {
 				areaofeffect = 8,
 				avoidfeature = false,
+				avoidfriendly= false,
 				burst = 3,
 				burstrate = 0.1,
 				cegtag = "VTOL_EMGTRAIL",
+				collidefriendly = false,
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
