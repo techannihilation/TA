@@ -2,7 +2,7 @@ return {
 	armorco = {
 		acceleration = 0.108,
 		brakerate = 0.714,
-		buildcostenergy = 375400,
+		buildcostenergy = 365400,
 		buildcostmetal = 25920,
 		builder = false,
 		buildpic = "armorco.dds",
@@ -32,7 +32,7 @@ return {
 		losemitheight = 93,
 		maneuverleashlength = 640,
 		mass = 25920,
-		maxdamage = 148000,
+		maxdamage = 158000,
 		maxslope = 17,
 		maxvelocity = 1.25,
 		maxwaterdepth = 12,
@@ -157,6 +157,7 @@ return {
 				weapontype = "EmgCannon",
 				weaponvelocity = 530,
 				damage = {
+					commanders = 120,
 					default = 240,
 					subs = 5,
 				},
@@ -192,7 +193,7 @@ return {
 				weapontype = "BeamLaser",
 				weaponvelocity = 1500,
 				damage = {
-					commanders = 1000,
+					commanders = 1250,
 					default = 2500,
 					subs = 5,
 				},
@@ -234,8 +235,7 @@ return {
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 4000,
 				damage = {
-					commanders = 350,
-					default = 700,
+					default = 500,
 					subs = 5,
 				},
 			},

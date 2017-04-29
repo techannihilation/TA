@@ -93,8 +93,10 @@ return {
 			arm_emcc3 = {
 				areaofeffect = 8,
 				avoidfeature = false,
+				avoidfriendly= false,
 				burst = 4,
 				burstrate = 0.05,
+				collidefriendly = false,
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
