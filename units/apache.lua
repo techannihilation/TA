@@ -99,9 +99,11 @@ return {
 			vtol_emg6 = {
 				areaofeffect = 8,
 				avoidfeature = false,
+				avoidfriendly= false,
 				burst = 3,
 				burstrate = 0.1,
 				cegtag = "Trail_emg_upg",
+				collidefriendly = false,
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
@@ -134,8 +136,10 @@ return {
 			vtol_rocket5 = {
 				areaofeffect = 128,
 				avoidfeature = false,
+				avoidfriendly= false,
 				burnblow = true,
 				cegtag = "Core_Trail_rocket",
+				collidefriendly = false,
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
