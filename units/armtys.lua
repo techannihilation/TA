@@ -95,7 +95,9 @@ return {
 			gmissiles = {
 				areaofeffect = 48,
 				avoidfeature = false,
+				avoidfriendly= false,
 				cegtag = "Core_Trail_rocket",
+				collidefriendly = false,
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
