@@ -102,9 +102,7 @@ return {
 		weapondefs = {
 			krowlaser = {
 				areaofeffect = 8,
-				avoidfriendly= false,
 				beamtime = 0.15,
-				collidefriendly = false,
 				corethickness = 0.2,
 				craterareaofeffect = 0,
 				craterboost = 0,
@@ -140,9 +138,7 @@ return {
 			},
 			krowlaser2 = {
 				areaofeffect = 8,
-				avoidfriendly= false,
 				beamtime = 0.15,
-				collidefriendly = false,
 				corethickness = 0.2,
 				craterareaofeffect = 0,
 				craterboost = 0,
