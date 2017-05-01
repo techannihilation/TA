@@ -72,7 +72,8 @@ local BlackList = {
 
    ["corkarg1_tawf_banisher2"] = {r=1.2,g=0.2,b=0.2,radius=155,beam=false},
 
-
+   ["exoarm_lightning"] = {r=0.08,g=0.08,b=0.98,radius=120,beam=true},
+   ["exoarm_exo_blast"] = {r=0.08,g=0.08,b=2.9,radius=180,beam=false},
    }
    local Armtrails = {
    ["armrock_arm_kbot_rocket"] = true,
