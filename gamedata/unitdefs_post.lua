@@ -1,4 +1,4 @@
--- BA does not use unitdefs_post, see alldefs_post.lua 
+-- TA does not use unitdefs_post, see alldefs_post.lua 
 -- basically, DONT TOUCH this! 
 
 
@@ -12,15 +12,13 @@ VFS.Include("gamedata/post_save_to_customparams.lua")
 for name,ud in pairs(UnitDefs) do
   UnitDef_Post(name,ud)
   if ud.weapondefs then
-	for wname,wd in pairs(ud.weapondefs) do
-	  WeaponDef_Post(wname,wd)
-	end
+	  for wname,wd in pairs(ud.weapondefs) do
+	    WeaponDef_Post(wname,wd)
+	  end
   end 
-  
-  --ud.acceleration = 0.75
-  --ud.turnrate = 800
+
   
   if SaveDefsToCustomParams then
-      SaveDefToCustomParams("UnitDefs", name, ud)    
+    SaveDefToCustomParams("UnitDefs", name, ud)    
   end
 end
