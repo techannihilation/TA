@@ -65,7 +65,7 @@ return {
 		shootme = 1,
 		showplayername = true,
 		side = "tll",
-		sightdistance = 900,
+		sightdistance = 600,
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
