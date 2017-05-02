@@ -97,7 +97,9 @@ return {
 			bbu_mmg = {
 				areaofeffect = 5,
 				avoidfeature = false,
+				avoidfriendly= false,
 				cegtag = "Trail_emg",
+				collidefriendly = false,
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
