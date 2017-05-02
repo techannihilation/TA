@@ -93,7 +93,7 @@ return {
 		weapondefs = {
 			armjade_laser = {
 				areaofeffect = 15,
-				avoidfriendly= false,
+				avoidfriendly = false,
 				beamtime = 0.3,
 				collidefriendly = false,
 				corethickness = 0.175,

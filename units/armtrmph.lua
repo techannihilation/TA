@@ -69,19 +69,13 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = false,
-				category = "arm_corpses",
-				damage = 57444.00391,
+				damage = 36689,
 				description = "Triumph Wreckage",
-				featurereclamate = "smudge01",
 				footprintx = 8,
 				footprintz = 8,
-				height = 4,
-				hitdensity = 100,
-				metal = 33066.40234,
+				metal = 36000,
 				object = "armtrmph_dead",
 				reclaimable = true,
-				seqnamereclamate = "tree1reclamate",
-				world = "All Worlds",
 			},
 		},
 		sfxtypes = {

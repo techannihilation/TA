@@ -69,19 +69,13 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = true,
-				category = "core_corpses",
-				damage = 2496,
+				damage = 3484,
 				description = "Specter Wreckage",
-				featurereclamate = "smudge01",
 				footprintx = 4,
 				footprintz = 4,
-				height = 4,
-				hitdensity = 100,
-				metal = 1380.80005,
+				metal = 1350,
 				object = "CORASSHIP_dead",
 				reclaimable = true,
-				seqnamereclamate = "tree1reclamate",
-				world = "All Worlds",
 			},
 		},
 		sfxtypes = {

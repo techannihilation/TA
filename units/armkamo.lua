@@ -137,7 +137,7 @@ return {
 			vtol_rocket5 = {
 				areaofeffect = 128,
 				avoidfeature = false,
-				avoidfriendly= false,
+				avoidfriendly = false,
 				burnblow = true,
 				cegtag = "Core_Trail_rocket",
 				collidefriendly = false,

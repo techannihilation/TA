@@ -92,19 +92,13 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = true,
-				category = "arm_corpses",
-				damage = 1453.80005,
-				description = "Advanced construction hover wreckage ",
-				featurereclamate = "smudge01",
+				damage = 2323,
+				description = "Advanced Construction Hover Wreckage",
 				footprintx = 3,
 				footprintz = 4,
-				height = 20,
-				hitdensity = 100,
-				metal = 1912,
+				metal = 1911,
 				object = "aach_dead",
 				reclaimable = true,
-				seqnamereclamate = "tree1reclamate",
-				world = "All Worlds",
 			},
 		},
 		nanocolor = {

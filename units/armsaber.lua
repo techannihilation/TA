@@ -101,7 +101,7 @@ return {
 			vtol_emg2 = {
 				areaofeffect = 8,
 				avoidfeature = false,
-				avoidfriendly= false,
+				avoidfriendly = false,
 				burst = 3,
 				burstrate = 0.1,
 				cegtag = "VTOL_EMGTRAIL",

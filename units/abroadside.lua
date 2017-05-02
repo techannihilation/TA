@@ -60,19 +60,13 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = true,
-				category = "arm_corpses",
-				damage = 600000,
-				description = "Broadside Wreckage",
-				featurereclamate = "smudge01",
+				damage = 212731,
+				description = "BROADSIDE Wreckage",
 				footprintx = 6,
 				footprintz = 8,
-				height = 40,
-				hitdensity = 100,
-				metal = 221280,
+				metal = 221250,
 				object = "ABroadside_dead",
 				reclaimable = true,
-				seqnamereclamate = "tree1reclamate",
-				world = "All Worlds",
 			},
 		},
 		sfxtypes = {

@@ -41,19 +41,13 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = true,
-				category = "tll_corpses",
-				damage = 72,
-				description = "Wreckage",
-				featurereclamate = "smudge01",
+				damage = 243,
+				description = "Metal Producer Wreckage",
 				footprintx = 3,
 				footprintz = 3,
-				height = 12,
-				hitdensity = 102,
-				metal = 21.6,
+				metal = 21,
 				object = "tllWMconv_dead",
 				reclaimable = true,
-				seqnamereclamate = "tree1reclamate",
-				world = "all",
 			},
 		},
 		sfxtypes = {

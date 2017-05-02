@@ -59,19 +59,13 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = false,
-				category = "arm_corpses",
-				damage = 21600,
-				description = "OPS ARM Wreckage",
-				featurereclamate = "smudge01",
+				damage = 17581,
+				description = "OPS Center T4 Wreckage",
 				footprintx = 12,
 				footprintz = 12,
-				height = 20,
-				hitdensity = 100,
-				metal = 60000,
+				metal = 61230,
 				object = "ACovertOpsCentre_dead",
 				reclaimable = true,
-				seqnamereclamate = "tree1reclamate",
-				world = "All Worlds",
 			},
 		},
 		nanocolor = {

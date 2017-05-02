@@ -78,19 +78,13 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = false,
-				category = "core_corpses",
-				damage = 4800,
-				description = "Fulcrum Wreckage",
-				featurereclamate = "smudge01",
+				damage = 5690,
+				description = "Builder Level 3 Wreckage",
 				footprintx = 4,
 				footprintz = 8,
-				height = 40,
-				hitdensity = 100,
 				metal = 19200,
 				object = "CBuilderLvl3_dead",
 				reclaimable = true,
-				seqnamereclamate = "tree1reclamate",
-				world = "All Worlds",
 			},
 		},
 		nanocolor = {

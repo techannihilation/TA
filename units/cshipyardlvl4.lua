@@ -54,19 +54,13 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = true,
-				category = "core_corpses",
-				damage = 36000,
-				description = "ShipyardAero Wreckage",
-				featurereclamate = "smudge01",
+				damage = 25789,
+				description = "Shipyard Wreckage",
 				footprintx = 13,
 				footprintz = 30,
-				height = 30,
-				hitdensity = 100,
-				metal = 88000,
+				metal = 87999,
 				object = "CShipyardLvl4_dead",
 				reclaimable = true,
-				seqnamereclamate = "tree1reclamate",
-				world = "All Worlds",
 			},
 		},
 		nanocolor = {

@@ -71,19 +71,13 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = false,
-				category = "core_corpses",
-				damage = 9300,
+				damage = 9345,
 				description = "Nexus Wreckage",
-				featurereclamate = "smudge01",
 				footprintx = 8,
 				footprintz = 8,
-				height = 4,
-				hitdensity = 100,
-				metal = 13022.40039,
+				metal = 11325,
 				object = "corhcar_dead",
 				reclaimable = true,
-				seqnamereclamate = "tree1reclamate",
-				world = "All Worlds",
 			},
 		},
 		nanocolor = {

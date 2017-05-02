@@ -76,19 +76,13 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = true,
-				category = "core_corpses",
-				damage = 630000,
-				description = "Devastator Wreckage",
-				featurereclamate = "smudge01",
+				damage = 220660,
+				description = "DEVASTATOR Wreckage",
 				footprintx = 14,
 				footprintz = 8,
-				height = 50,
-				hitdensity = 100,
-				metal = 227600,
+				metal = 227250,
 				object = "CDevastator_dead",
 				reclaimable = true,
-				seqnamereclamate = "tree1reclamate",
-				world = "All Worlds",
 			},
 		},
 		sfxtypes = {

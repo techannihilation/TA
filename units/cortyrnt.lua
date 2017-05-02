@@ -70,19 +70,13 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = false,
-				category = "core_corpses",
-				damage = 55815.00391,
+				damage = 35825,
 				description = "Tyrant Wreckage",
-				featurereclamate = "smudge01",
 				footprintx = 8,
 				footprintz = 8,
-				height = 4,
-				hitdensity = 100,
-				metal = 33996.80078,
+				metal = 33937,
 				object = "cortyrnt_dead",
 				reclaimable = true,
-				seqnamereclamate = "tree1reclamate",
-				world = "All Worlds",
 			},
 		},
 		sfxtypes = {

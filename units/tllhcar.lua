@@ -72,19 +72,13 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = false,
-				category = "tll_corpses",
-				damage = 9168,
-				description = "Atlantis Wreckage",
-				featurereclamate = "smudge01",
+				damage = 9838,
+				description = "Titan Wreckage",
 				footprintx = 8,
 				footprintz = 8,
-				height = 4,
-				hitdensity = 100,
-				metal = 13111.2002,
+				metal = 13125,
 				object = "tllhcar_dead",
 				reclaimable = true,
-				seqnamereclamate = "tree1reclamate",
-				world = "All Worlds",
 			},
 		},
 		nanocolor = {

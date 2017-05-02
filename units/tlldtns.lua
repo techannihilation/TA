@@ -11,7 +11,7 @@ return {
 		buildpic = "tlldtns.dds",
 		buildtime = 930,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
-		corpse = "TLLFloatingTeeth",
+		corpse = "tllfloatingteeth",
 		description = "Shark's Teeth",
 		downloadable = 1,
 		energymake = 0,

@@ -66,19 +66,13 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = true,
-				category = "arm_corpses",
-				damage = 1110,
-				description = "Helipad (ARM) Wreckage",
-				featurereclamate = "smudge01",
+				damage = 1897,
+				description = "Helipad Wreckage",
 				footprintx = 3,
 				footprintz = 3,
-				height = 20,
-				hitdensity = 100,
-				metal = 441.888,
+				metal = 798,
 				object = "armcp_dead",
 				reclaimable = true,
-				seqnamereclamate = "tree1reclamate",
-				world = "All Worlds",
 			},
 		},
 		nanocolor = {

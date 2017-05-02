@@ -101,7 +101,7 @@ return {
 			vtol_rocket2 = {
 				areaofeffect = 196,
 				avoidfeature = false,
-				avoidfriendly= false,
+				avoidfriendly = false,
 				burnblow = true,
 				collidefriendly = false,
 				craterareaofeffect = 294,

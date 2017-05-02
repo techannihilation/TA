@@ -46,19 +46,13 @@ return {
 		featuredefs = {
 			heap = {
 				blocking = false,
-				category = "heaps",
-				damage = 59.235,
-				description = "Wreckage",
-				featurereclamate = "smudge01",
+				damage = 2176,
+				description = "Energy Driller Debris",
 				footprintx = 3,
 				footprintz = 3,
-				height = 4,
-				hitdensity = 100,
-				metal = 93.17699,
+				metal = 198,
 				object = "3x3d",
 				reclaimable = true,
-				seqnamereclamate = "tree1reclamate",
-				world = "All Worlds",
 			},
 		},
 		sfxtypes = {

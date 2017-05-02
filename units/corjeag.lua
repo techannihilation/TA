@@ -68,19 +68,13 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = true,
-				category = "core_corpses",
-				damage = 666,
+				damage = 1293,
 				description = "Jeager Wreckage",
-				featurereclamate = "smudge01",
 				footprintx = 2,
 				footprintz = 2,
-				height = 40,
-				hitdensity = 100,
 				metal = 140,
 				object = "corjeag_dead",
 				reclaimable = true,
-				seqnamereclamate = "tree1reclamate",
-				world = "All Worlds",
 			},
 		},
 		sfxtypes = {

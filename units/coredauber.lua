@@ -63,19 +63,13 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = true,
-				category = "arm_corpses",
-				damage = 4260,
+				damage = 2086,
 				description = "Dauber Wreckage",
-				featurereclamate = "smudge01",
 				footprintx = 2,
 				footprintz = 2,
-				height = 4,
-				hitdensity = 100,
-				metal = 488,
+				metal = 682,
 				object = "CoreDauber_dead",
 				reclaimable = true,
-				seqnamereclamate = "tree1reclamate",
-				world = "All Worlds",
 			},
 		},
 		sfxtypes = {

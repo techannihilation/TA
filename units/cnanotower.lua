@@ -75,19 +75,13 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = true,
-				category = "core_corpses",
-				damage = 4500,
-				description = "Core Nanotower Remains",
-				featurereclamate = "smudge01",
+				damage = 5421,
+				description = "Hardened Nanotower Wreckage",
 				footprintx = 4,
 				footprintz = 4,
-				height = 20,
-				hitdensity = 100,
-				metal = 11600,
+				metal = 9000,
 				object = "CNanotower_dead",
 				reclaimable = true,
-				seqnamereclamate = "tree1reclamate",
-				world = "All Worlds",
 			},
 		},
 		nanocolor = {
