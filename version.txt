@@ -28,7 +28,7 @@ Juggernaut : Balance Energy Cost (Increase 126 => 190Ke. Metal : 14600 => 13200)
 All T3.5 Unit StarBurst => Decrease damage 700 => 500 per Shot. (Gain 10K HP for Krog and Orco. Furie 560KE => 510KE)
 Balance AA T2 TLL Ship => Decrease cost and buildtime.
 
-To merge : 
+All t2 radar air => decrease timebuild and cost
 Add many new morph. (try to make a morph tree for T1 => Adv T1 => T2 => T2.5 => T3 => T3.5 => T4)
 Add New T3 SuperBattleShip TLL
 Balance missile veh and Kbot (decrease speed for Tll All terrain, balance cost  for all)
