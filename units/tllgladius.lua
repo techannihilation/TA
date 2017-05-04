@@ -39,8 +39,6 @@ return {
 		objectname = "TLLGLADIUS",
 		radaremitheight = 25,
 		selfdestructas = "SMALL_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 480,
 		standingfireorder = 2,
 		standingmoveorder = 2,
@@ -50,7 +48,6 @@ return {
 		turninplacespeedlimit = 3.234,
 		turnrate = 1050,
 		unitname = "tllgladius",
-		unitnumber = 8260,
 		customparams = {
 			faction = "TLL",
 		},

@@ -48,8 +48,6 @@ return {
 		radardistance = 0,
 		radaremitheight = 26,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "CORE",
 		sightdistance = 480,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -59,7 +57,6 @@ return {
 		turninplacespeedlimit = 1.386,
 		turnrate = 250,
 		unitname = "corhover3g",
-		unitnumber = 4313,
 		workertime = 0,
 		customparams = {
 			faction = "CORE",

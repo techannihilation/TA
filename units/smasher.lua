@@ -44,8 +44,6 @@ return {
 		objectname = "smasher",
 		radardistance = 0,
 		selfdestructas = "SMALL_UNIT_VTOL",
-		shootme = 1,
-		side = "ARM",
 		sightdistance = 400,
 		sonardistance = 0,
 		standingfireorder = 2,
@@ -55,7 +53,6 @@ return {
 		turninplacespeedlimit = 2.508,
 		turnrate = 1024,
 		unitname = "smasher",
-		unitnumber = 789012,
 		workertime = 0,
 		customparams = {
 			faction = "ARM",

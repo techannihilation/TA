@@ -41,8 +41,6 @@ return {
 		objectname = "TLLORC",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 250,
 		sonardistance = 750,
 		standingfireorder = 2,
@@ -52,7 +50,6 @@ return {
 		turninplacespeedlimit = 1.155,
 		turnrate = 75,
 		unitname = "tllorc",
-		unitnumber = 905,
 		upright = true,
 		waterline = 32,
 		customparams = {

@@ -44,8 +44,6 @@ return {
 		radardistancejam = 450,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "CORE",
 		sightdistance = 290,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -55,7 +53,6 @@ return {
 		turninplacespeedlimit = 1.65,
 		turnrate = 250,
 		unitname = "blotter",
-		unitnumber = 402,
 		workertime = 0,
 		customparams = {
 			faction = "CORE",

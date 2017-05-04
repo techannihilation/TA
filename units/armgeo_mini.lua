@@ -43,7 +43,6 @@ return {
 		script = "armgeo.cob",
 		seismicsignature = 0,
 		selfdestructas = "ESTOR_BUILDING",
-		side = "ARM",
 		sightdistance = 275,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,

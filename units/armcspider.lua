@@ -42,8 +42,6 @@ return {
 		radardistance = 50,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "ARM",
 		sightdistance = 165,
 		standingmoveorder = 1,
 		steeringmode = 1,
@@ -51,7 +49,6 @@ return {
 		turninplacespeedlimit = 0.8118,
 		turnrate = 1020,
 		unitname = "armcspider",
-		unitnumber = 4339,
 		workertime = 110,
 		buildoptions = {
 			[1] = "armsolar",

@@ -44,8 +44,6 @@ return {
 		objectname = "AACH",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "ARM",
 		sightdistance = 270,
 		standingmoveorder = 1,
 		steeringmode = 1,
@@ -54,7 +52,6 @@ return {
 		turninplacespeedlimit = 1.056,
 		turnrate = 220,
 		unitname = "aach",
-		unitnumber = 11000,
 		workertime = 560,
 		buildoptions = {
 			[1] = "armfus",

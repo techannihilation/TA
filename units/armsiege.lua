@@ -47,8 +47,6 @@ return {
 		radardistance = 0,
 		radaremitheight = 34,
 		selfdestructas = "ATOMIC_BLASTSML",
-		shootme = 1,
-		side = "ARM",
 		sightdistance = 625,
 		standingfireorder = 1,
 		standingmoveorder = 0,
@@ -58,7 +56,6 @@ return {
 		turninplacespeedlimit = 0.858,
 		turnrate = 288,
 		unitname = "armsiege",
-		unitnumber = 46,
 		workertime = 0,
 		customparams = {
 			faction = "ARM",

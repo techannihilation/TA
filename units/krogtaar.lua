@@ -44,8 +44,6 @@ return {
 		radaremitheight = 56,
 		selfdestructas = "CRAWL_BLAST",
 		selfdestructcountdown = 10,
-		shootme = 1,
-		side = "CORE",
 		sightdistance = 390,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -54,7 +52,6 @@ return {
 		turninplacespeedlimit = 0.792,
 		turnrate = 1058,
 		unitname = "krogtaar",
-		unitnumber = 12323,
 		upright = true,
 		workertime = 0,
 		customparams = {

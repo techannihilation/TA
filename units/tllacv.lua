@@ -43,8 +43,6 @@ return {
 		objectname = "TLLACV",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 230,
 		standingmoveorder = 1,
 		steeringmode = 1,
@@ -53,7 +51,6 @@ return {
 		turninplacespeedlimit = 1.089,
 		turnrate = 450,
 		unitname = "tllacv",
-		unitnumber = 835,
 		workertime = 320,
 		buildoptions = {
 			[1] = "tllmedfusion",

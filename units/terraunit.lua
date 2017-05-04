@@ -36,7 +36,6 @@ return {
 		script = "nullscript.lua",
 		seismicsignature = 4,
 		selfdestructcountdown = 1,
-		side = "ARM",
 		sightdistance = 0,
 		stealth = true,
 		turninplaceanglelimit = 140,

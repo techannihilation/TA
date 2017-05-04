@@ -60,7 +60,6 @@ return {
 		turninplacespeedlimit = 1.056,
 		turnrate = 96,
 		unitname = "tlldest",
-		unitnumber = 27174,
 		waterline = 6,
 		customparams = {
 			faction = "TLL",
@@ -265,7 +264,6 @@ return {
 				explosiongenerator = "custom:incendiary_explosion_small",
 				firestarter = 100,
 				flighttime = 6,
-				id = 228,
 				metalpershot = 0,
 				model = "vpulse",
 				name = "Vpulse Rocket",

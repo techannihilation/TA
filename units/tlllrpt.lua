@@ -39,12 +39,9 @@ return {
 		onoffable = true,
 		radaremitheight = 65,
 		selfdestructas = "ATOMIC_BLAST",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 210,
 		standingfireorder = 2,
 		unitname = "tlllrpt",
-		unitnumber = 820,
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooooooooooo",
 		customparams = {

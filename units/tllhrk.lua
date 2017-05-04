@@ -43,8 +43,6 @@ return {
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 380,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -53,7 +51,6 @@ return {
 		turninplacespeedlimit = 0.99,
 		turnrate = 658,
 		unitname = "tllhrk",
-		unitnumber = 932,
 		upright = false,
 		workertime = 0,
 		customparams = {

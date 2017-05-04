@@ -40,8 +40,6 @@ return {
 		objectname = "tllshu",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 750,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -51,7 +49,6 @@ return {
 		turninplacespeedlimit = 9.9,
 		turnrate = 1280,
 		unitname = "tllshu",
-		unitnumber = 551,
 		unitrestricted = 300,
 		customparams = {
 			faction = "TLL",

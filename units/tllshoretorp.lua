@@ -37,12 +37,9 @@ return {
 		objectname = "TLLshoretorp",
 		radaremitheight = 105,
 		selfdestructas = "MEDIUM_BUILDING",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 380,
 		standingfireorder = 2,
 		unitname = "tllshoretorp",
-		unitnumber = 946,
 		usebuildinggrounddecal = true,
 		yardmap = "ooo ooo ooo",
 		customparams = {

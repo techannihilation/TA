@@ -33,7 +33,6 @@ return {
 		radaremitheight = 32,
 		script = "cormakr.cob",
 		selfdestructas = "ARMESTOR_BUILDING",
-		side = "CORE",
 		sightdistance = 210,
 		unitname = "cmetalmakerlvl1",
 		usebuildinggrounddecal = true,

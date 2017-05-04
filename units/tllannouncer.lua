@@ -39,8 +39,6 @@ return {
 		objectname = "TLLANNOUNCER",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 580,
 		standingfireorder = 2,
 		standingmoveorder = 2,
@@ -50,7 +48,6 @@ return {
 		turninplacespeedlimit = 1.023,
 		turnrate = 625,
 		unitname = "tllannouncer",
-		unitnumber = 831,
 		customparams = {
 			faction = "TLL",
 		},

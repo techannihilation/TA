@@ -45,8 +45,6 @@ return {
 		objectname = "ARMSH175",
 		radardistance = 1850,
 		selfdestructas = "SMALL_UNIT_VTOL",
-		shootme = 1,
-		side = "ARM",
 		sightdistance = 400,
 		sonardistance = 0,
 		standingfireorder = 2,
@@ -56,7 +54,6 @@ return {
 		turninplacespeedlimit = 5.94,
 		turnrate = 1200,
 		unitname = "armsh175",
-		unitnumber = 75654,
 		workertime = 0,
 		customparams = {
 			faction = "ARM",

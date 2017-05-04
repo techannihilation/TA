@@ -50,8 +50,6 @@ return {
 		radaremitheight = 130,
 		selfdestructas = "BANTHA_NUKE",
 		selfdestructcountdown = 10,
-		shootme = 1,
-		side = "ARM",
 		sightdistance = 712,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -60,7 +58,6 @@ return {
 		turninplacespeedlimit = 1.122,
 		turnrate = 1080,
 		unitname = "armraptor",
-		unitnumber = 1201,
 		upright = true,
 		workertime = 0,
 		customparams = {

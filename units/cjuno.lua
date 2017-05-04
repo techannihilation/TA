@@ -44,7 +44,6 @@ return {
 		radaremitheight = 71,
 		seismicsignature = 0,
 		selfdestructas = "ATOMIC_BLAST",
-		side = "CORE",
 		sightdistance = 425,
 		standingfireorder = 2,
 		stealth = true,

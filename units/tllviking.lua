@@ -37,10 +37,7 @@ return {
 		nochasecategory = "VTOL",
 		objectname = "TLLVIKING",
 		radaremitheight = 56,
-		scale = 0.6,
 		selfdestructas = "CRAWL_BLAST",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 650,
 		standingfireorder = 2,
 		standingmoveorder = 0,
@@ -49,7 +46,6 @@ return {
 		turninplacespeedlimit = 1.32,
 		turnrate = 307,
 		unitname = "tllviking",
-		unitnumber = 902,
 		waterline = 8,
 		customparams = {
 			faction = "TLL",

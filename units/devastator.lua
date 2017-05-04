@@ -48,8 +48,6 @@ return {
 		radardistance = 0,
 		radaremitheight = 48,
 		selfdestructas = "ESTOR_BUILDINGEX",
-		shootme = 1,
-		side = "ARM",
 		sightdistance = 650,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -59,7 +57,6 @@ return {
 		turninplacespeedlimit = 0.99,
 		turnrate = 250,
 		unitname = "devastator",
-		unitnumber = 1234,
 		workertime = 0,
 		customparams = {
 			faction = "ARM",

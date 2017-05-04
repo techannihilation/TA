@@ -42,8 +42,6 @@ return {
 		objectname = "TLLCK",
 		radaremitheight = 26,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 340,
 		standingmoveorder = 1,
 		steeringmode = 1,
@@ -52,7 +50,6 @@ return {
 		turninplacespeedlimit = 0.924,
 		turnrate = 1020,
 		unitname = "tllck",
-		unitnumber = 812,
 		upright = true,
 		workertime = 100,
 		buildoptions = {

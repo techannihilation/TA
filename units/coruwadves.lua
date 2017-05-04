@@ -39,7 +39,6 @@ return {
 		radaremitheight = 31,
 		seismicsignature = 0,
 		selfdestructas = "MINE_NUKE",
-		side = "CORE",
 		sightdistance = 192,
 		unitname = "coruwadves",
 		usebuildinggrounddecal = true,

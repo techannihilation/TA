@@ -45,7 +45,6 @@ return {
 		radaremitheight = 76,
 		seismicsignature = 0,
 		selfdestructas = "MEDIUM_BUILDING",
-		side = "ARM",
 		sightdistance = 475,
 		standingfireorder = 2,
 		turninplaceanglelimit = 140,

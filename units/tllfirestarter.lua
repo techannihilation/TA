@@ -44,8 +44,6 @@ return {
 		objectname = "TLLFIRESTARTER",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 500,
 		standingfireorder = 2,
 		standingmoveorder = 2,
@@ -54,7 +52,6 @@ return {
 		turninplacespeedlimit = 1.254,
 		turnrate = 1016,
 		unitname = "tllfirestarter",
-		unitnumber = 822,
 		upright = true,
 		customparams = {
 			faction = "TLL",

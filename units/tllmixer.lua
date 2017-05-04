@@ -40,8 +40,6 @@ return {
 		radardistancejam = 715,
 		radaremitheight = 29,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 305,
 		sonardistance = 0,
 		standingmoveorder = 0,
@@ -50,7 +48,6 @@ return {
 		turninplacespeedlimit = 1.716,
 		turnrate = 385,
 		unitname = "tllmixer",
-		unitnumber = 909,
 		waterline = 4,
 		customparams = {
 			faction = "TLL",

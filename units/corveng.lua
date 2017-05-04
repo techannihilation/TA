@@ -44,7 +44,6 @@ return {
 		objectname = "CORVENG",
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT_VTOL",
-		side = "CORE",
 		sightdistance = 500,
 		standingfireorder = 2,
 		standingmoveorder = 1,

@@ -37,7 +37,6 @@ return {
 		objectname = "ARMFORT",
 		radaremitheight = 50,
 		seismicsignature = 0,
-		side = "ARM",
 		sightdistance = 130,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,

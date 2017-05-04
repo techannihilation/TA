@@ -31,10 +31,8 @@ return {
 		objectname = "TLLMM",
 		radaremitheight = 25,
 		selfdestructas = "ARMESTOR_BUILDING",
-		side = "TLL",
 		sightdistance = 210,
 		unitname = "tllmm",
-		unitnumber = 814,
 		usebuildinggrounddecal = true,
 		yardmap = "ooo ooo ooo",
 		customparams = {

@@ -44,7 +44,6 @@ return {
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
-		side = "ARM",
 		sightdistance = 509,
 		sonardistance = 350,
 		standingfireorder = 2,

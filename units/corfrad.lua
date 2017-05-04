@@ -43,7 +43,6 @@ return {
 		script = "corfrad.lua",
 		seismicsignature = 0,
 		selfdestructas = "SMALL_BUILDING",
-		side = "CORE",
 		sightdistance = 740,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,

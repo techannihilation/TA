@@ -43,7 +43,6 @@ return {
 		script = "corgeo.cob",
 		seismicsignature = 0,
 		selfdestructas = "ESTOR_BUILDING",
-		side = "CORE",
 		sightdistance = 250,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,

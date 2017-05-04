@@ -46,8 +46,6 @@ return {
 		radardistance = 0,
 		radaremitheight = 28,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "ARM",
 		sightdistance = 350,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -56,7 +54,6 @@ return {
 		turninplacespeedlimit = 0.693,
 		turnrate = 700,
 		unitname = "aexxec",
-		unitnumber = 901,
 		workertime = 0,
 		customparams = {
 			faction = "ARM",

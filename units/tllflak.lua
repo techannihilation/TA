@@ -36,12 +36,9 @@ return {
 		objectname = "TLLFLAK",
 		radaremitheight = 29,
 		selfdestructas = "MEDIUM_BUILDING",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 650,
 		standingfireorder = 2,
 		unitname = "tllflak",
-		unitnumber = 818,
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooooo",
 		customparams = {

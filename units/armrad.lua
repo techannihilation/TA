@@ -44,7 +44,6 @@ return {
 		script = "armrad.lua",
 		seismicsignature = 0,
 		selfdestructas = "SMALL_BUILDING",
-		side = "ARM",
 		sightdistance = 680,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,

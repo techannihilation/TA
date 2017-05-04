@@ -41,7 +41,6 @@ return {
 		objectname = "ARMHAWK",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
-		side = "ARM",
 		sightdistance = 560,
 		standingfireorder = 2,
 		standingmoveorder = 1,

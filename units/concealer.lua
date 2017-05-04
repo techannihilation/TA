@@ -45,8 +45,6 @@ return {
 		radardistancejam = 480,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "ARM",
 		sightdistance = 290,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -56,7 +54,6 @@ return {
 		turninplacespeedlimit = 1.782,
 		turnrate = 260,
 		unitname = "concealer",
-		unitnumber = 406,
 		workertime = 0,
 		customparams = {
 			faction = "ARM",

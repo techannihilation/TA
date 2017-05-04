@@ -37,10 +37,8 @@ return {
 		onoffable = false,
 		radaremitheight = 61,
 		selfdestructas = "NUCLEAR_MISSILE",
-		side = "TLL",
 		sightdistance = 210,
 		unitname = "tllmohogeo",
-		unitnumber = 803,
 		usebuildinggrounddecal = true,
 		yardmap = "GGGGGGGGGGGGGGGG",
 		customparams = {

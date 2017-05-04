@@ -44,8 +44,6 @@ return {
 		objectname = "TLLCHOVER",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 310,
 		standingmoveorder = 1,
 		steeringmode = 1,
@@ -54,7 +52,6 @@ return {
 		turninplacespeedlimit = 1.3992,
 		turnrate = 400,
 		unitname = "tllchover",
-		unitnumber = 18701,
 		workertime = 165,
 		buildoptions = {
 			[1] = "tllsolar",

@@ -46,8 +46,6 @@ return {
 		radardistance = 0,
 		radaremitheight = 42,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 550,
 		standingfireorder = 0,
 		standingmoveorder = 1,
@@ -56,7 +54,6 @@ return {
 		turninplacespeedlimit = 0.825,
 		turnrate = 1216,
 		unitname = "tllsniper",
-		unitnumber = 931,
 		upright = true,
 		workertime = 0,
 		customparams = {

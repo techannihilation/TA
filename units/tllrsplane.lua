@@ -37,10 +37,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "TLLRSPLANE",
 		radardistance = 1600,
-		scale = 1,
 		selfdestructas = "SMALL_UNIT_VTOL",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 1150,
 		sonardistance = 1150,
 		standingmoveorder = 1,
@@ -50,7 +47,6 @@ return {
 		turninplacespeedlimit = 7.392,
 		turnrate = 370,
 		unitname = "tllrsplane",
-		unitnumber = 899,
 		workertime = 0,
 		customparams = {
 			faction = "TLL",

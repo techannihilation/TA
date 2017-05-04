@@ -38,7 +38,6 @@ return {
 		seismicdistance = 2000,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
-		side = "ARM",
 		sightdistance = 240,
 		unitname = "armsd",
 		usebuildinggrounddecal = true,

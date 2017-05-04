@@ -41,7 +41,6 @@ return {
 		radaremitheight = 35,
 		seismicsignature = 0,
 		selfdestructas = "SPYBOMBX",
-		side = "ARM",
 		sightdistance = 455,
 		standingfireorder = 0,
 		turninplaceanglelimit = 140,

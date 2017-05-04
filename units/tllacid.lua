@@ -43,8 +43,6 @@ return {
 		objectname = "tllacid",
 		radaremitheight = 42,
 		selfdestructas = "SPYBOMBX",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 390,
 		standingfireorder = 0,
 		standingmoveorder = 1,
@@ -54,7 +52,6 @@ return {
 		turninplacespeedlimit = 0.528,
 		turnrate = 380,
 		unitname = "tllacid",
-		unitnumber = 30132,
 		workertime = 0,
 		customparams = {
 			faction = "TLL",

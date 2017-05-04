@@ -47,7 +47,6 @@ return {
 		radardistance = 0,
 		radaremitheight = 26,
 		selfdestructas = "ATOMIC_BLAST",
-		shootme = 1,
 		sightdistance = 260,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -62,7 +61,6 @@ return {
 		turninplacespeedlimit = 0.792,
 		turnrate = 176,
 		unitname = "avtr",
-		unitnumber = 999,
 		workertime = 0,
 		customparams = {
 			buildpic = "tllmlrpc.png",

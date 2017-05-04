@@ -43,8 +43,6 @@ return {
 		onoffable = true,
 		radaremitheight = 31,
 		selfdestructas = "MINE_MEDIUM",
-		shootme = 1,
-		side = "CORE",
 		sightdistance = 450,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -53,7 +51,6 @@ return {
 		turninplacespeedlimit = 0.594,
 		turnrate = 340,
 		unitname = "cormonsta",
-		unitnumber = 852741,
 		workertime = 0,
 		customparams = {
 			faction = "CORE",

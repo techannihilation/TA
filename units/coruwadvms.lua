@@ -36,7 +36,6 @@ return {
 		radaremitheight = 37,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
-		side = "CORE",
 		sightdistance = 182,
 		unitname = "coruwadvms",
 		usebuildinggrounddecal = true,

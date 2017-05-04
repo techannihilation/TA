@@ -38,8 +38,6 @@ return {
 		objectname = "TLLROASTER",
 		radaremitheight = 25,
 		selfdestructas = "ESTOR_BUILDING",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 650,
 		standingfireorder = 2,
 		standingmoveorder = 0,
@@ -49,7 +47,6 @@ return {
 		turninplacespeedlimit = 0.99,
 		turnrate = 200,
 		unitname = "tllroaster",
-		unitnumber = 871,
 		customparams = {
 			faction = "TLL",
 		},

@@ -37,7 +37,6 @@ return {
 		objectname = "CORDRAG",
 		radaremitheight = 25,
 		seismicsignature = 0,
-		side = "CORE",
 		sightdistance = 130,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,

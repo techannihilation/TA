@@ -44,8 +44,6 @@ return {
 		radardistance = 0,
 		radaremitheight = 41,
 		selfdestructas = "CRAWL_BLAST",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 500,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -54,7 +52,6 @@ return {
 		turninplacespeedlimit = 0.528,
 		turnrate = 510,
 		unitname = "tllom",
-		unitnumber = 20000,
 		upright = false,
 		workertime = 0,
 		customparams = {

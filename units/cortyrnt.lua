@@ -51,7 +51,6 @@ return {
 		radaremitheight = 84,
 		selfdestructas = "CRBLMSSL",
 		selfdestructcountdown = 10,
-		side = "CORE",
 		sightdistance = 750,
 		sonardistance = 0,
 		standingfireorder = 2,
@@ -61,7 +60,6 @@ return {
 		turninplacespeedlimit = 1.056,
 		turnrate = 96,
 		unitname = "cortyrnt",
-		unitnumber = 27174,
 		waterline = 6,
 		customparams = {
 			faction = "CORE",

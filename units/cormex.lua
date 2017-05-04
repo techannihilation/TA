@@ -45,7 +45,6 @@ return {
 		seismicsignature = 0,
 		selfdestructas = "TINY_BUILDINGEX",
 		selfdestructcountdown = 1,
-		side = "CORE",
 		sightdistance = 273,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,

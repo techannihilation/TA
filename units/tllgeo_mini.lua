@@ -39,10 +39,8 @@ return {
 		radaremitheight = 29,
 		script = "tllgeo.cob",
 		selfdestructas = "ESTOR_BUILDING",
-		side = "TLL",
 		sightdistance = 210,
 		unitname = "tllgeo_mini",
-		unitnumber = 803,
 		yardmap = "ooo oGo ooo",
 		customparams = {
 			buildpic = "TLLGEO.png",

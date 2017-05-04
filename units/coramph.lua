@@ -45,7 +45,6 @@ return {
 		script = "coramph.lua",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
-		side = "CORE",
 		sightdistance = 450,
 		sonardistance = 500,
 		standingfireorder = 2,

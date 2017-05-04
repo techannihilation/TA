@@ -41,10 +41,7 @@ return {
 		nochasecategory = "VTOL",
 		objectname = "TLLASGARD",
 		radaremitheight = 56,
-		scale = 0.6,
 		selfdestructas = "CRAWL_BLAST",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 550,
 		standingfireorder = 2,
 		standingmoveorder = 0,
@@ -53,7 +50,6 @@ return {
 		turninplacespeedlimit = 1.32,
 		turnrate = 70,
 		unitname = "tllasgard",
-		unitnumber = 902,
 		waterline = 8,
 		customparams = {
 			faction = "TLL",

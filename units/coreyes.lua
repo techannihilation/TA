@@ -42,7 +42,6 @@ return {
 		onoffable = false,
 		radaremitheight = 27,
 		seismicsignature = 0,
-		side = "CORE",
 		sightdistance = 540,
 		stealth = true,
 		turninplaceanglelimit = 140,

@@ -46,8 +46,6 @@ return {
 		radardistance = 1490,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "ARM",
 		sightdistance = 450,
 		sonardistance = 1100,
 		standingfireorder = 2,
@@ -58,7 +56,6 @@ return {
 		turninplacespeedlimit = 2.31,
 		turnrate = 310,
 		unitname = "r75v",
-		unitnumber = 162,
 		upright = true,
 		workertime = 0,
 		customparams = {

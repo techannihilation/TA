@@ -30,7 +30,6 @@ return {
 		radaremitheight = 28,
 		seismicsignature = 1,
 		selfdestructas = "BIG_UNIT",
-		side = "ARM",
 		sightdistance = 400,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,

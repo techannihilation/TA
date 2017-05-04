@@ -42,8 +42,6 @@ return {
 		nochasecategory = "VTOL",
 		objectname = "tlltorpcop",
 		selfdestructas = "BIG_UNIT_VTOL",
-		shootme = 1,
-		side = "tll",
 		sightdistance = 350,
 		standingfireorder = 0,
 		standingmoveorder = 1,
@@ -52,7 +50,6 @@ return {
 		turninplacespeedlimit = 4.62,
 		turnrate = 885,
 		unitname = "tlltorpcop",
-		unitnumber = 885,
 		customparams = {
 			faction = "tll",
 		},

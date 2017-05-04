@@ -44,8 +44,6 @@ return {
 		objectname = "tllmusk",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNITEX",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 260,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -55,7 +53,6 @@ return {
 		turninplacespeedlimit = 0.66,
 		turnrate = 525,
 		unitname = "tllmusk",
-		unitnumber = 4244,
 		workertime = 260,
 		buildoptions = {
 			[1] = "tllmedfusion",

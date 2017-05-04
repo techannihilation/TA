@@ -45,8 +45,6 @@ return {
 		objectname = "CORPYROX",
 		radaremitheight = 63,
 		selfdestructas = "CRAWL_BLAST",
-		shootme = 1,
-		side = "CORE",
 		sightdistance = 540,
 		standingfireorder = 2,
 		standingmoveorder = 1,

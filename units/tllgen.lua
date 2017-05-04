@@ -34,10 +34,8 @@ return {
 		objectname = "tllgen",
 		radaremitheight = 32,
 		selfdestructas = "LIGHTSHIPBLAST",
-		side = "TLL",
 		sightdistance = 200,
 		unitname = "tllgen",
-		unitnumber = 2415,
 		workertime = 0,
 		yardmap = "ooo ooo ooo",
 		customparams = {

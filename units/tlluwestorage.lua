@@ -31,10 +31,8 @@ return {
 		radardistance = 0,
 		radaremitheight = 45,
 		selfdestructas = "ESTOR_BUILDING",
-		side = "TLL",
 		sightdistance = 140,
 		unitname = "tlluwestorage",
-		unitnumber = 857,
 		workertime = 0,
 		yardmap = "oooooooooooooooo",
 		customparams = {

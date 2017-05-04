@@ -44,8 +44,6 @@ return {
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 280,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -55,7 +53,6 @@ return {
 		turninplacespeedlimit = 2.112,
 		turnrate = 320,
 		unitname = "tllhovermissile",
-		unitnumber = 28703,
 		workertime = 0,
 		customparams = {
 			faction = "TLL",

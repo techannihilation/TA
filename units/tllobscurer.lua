@@ -40,8 +40,6 @@ return {
 		radardistancejam = 550,
 		radaremitheight = 30,
 		selfdestructas = "SMALL_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 230,
 		standingmoveorder = 1,
 		steeringmode = 1,
@@ -50,7 +48,6 @@ return {
 		turninplacespeedlimit = 1.122,
 		turnrate = 512,
 		unitname = "tllobscurer",
-		unitnumber = 838,
 		customparams = {
 			faction = "TLL",
 		},

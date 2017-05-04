@@ -54,7 +54,6 @@ return {
 		releaseheld = true,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
-		side = "CORE",
 		sightdistance = 125,
 		standingmoveorder = 1,
 		steeringmode = 1,

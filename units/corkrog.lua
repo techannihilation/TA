@@ -45,7 +45,6 @@ return {
 		seismicsignature = 0,
 		selfdestructas = "CRBLMSSL",
 		selfdestructcountdown = 10,
-		side = "CORE",
 		sightdistance = 845,
 		standingfireorder = 2,
 		standingmoveorder = 1,

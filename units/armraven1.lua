@@ -39,7 +39,6 @@ return {
 		script = "armraven.cob",
 		seismicsignature = 0,
 		selfdestructas = "MECH_BLAST",
-		side = "CORE",
 		sightdistance = 700,
 		standingfireorder = 2,
 		standingmoveorder = 1,

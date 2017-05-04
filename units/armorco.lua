@@ -49,7 +49,6 @@ return {
 		seismicsignature = 64,
 		selfdestructas = "CRBLMSSL",
 		selfdestructcountdown = 10,
-		side = "ARM",
 		sightdistance = 910,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -58,7 +57,6 @@ return {
 		turninplacespeedlimit = 0.825,
 		turnrate = 396,
 		unitname = "armorco",
-		unitnumber = 263,
 		upright = true,
 		workertime = 0,
 		customparams = {
@@ -129,7 +127,6 @@ return {
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
-				id = 6,
 				impulseboost = 0,
 				impulsefactor = 0,
 				name = "GaussCannon",

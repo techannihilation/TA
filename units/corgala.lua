@@ -48,8 +48,6 @@ return {
 		radaremitheight = 202,
 		selfdestructas = "NUCLEAR_MISSILE",
 		selfdestructcountdown = 10,
-		shootme = 1,
-		side = "CORE",
 		sightdistance = 900,
 		standingfireorder = 2,
 		standingmoveorder = 0,

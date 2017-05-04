@@ -38,7 +38,6 @@ return {
 		radardistance = 0,
 		radaremitheight = 27,
 		selfdestructas = "BIG_UNIT",
-		side = "TLL",
 		sightdistance = 250,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -46,7 +45,6 @@ return {
 		turninplacespeedlimit = 0.594,
 		turnrate = 490,
 		unitname = "tllsnakeneck",
-		unitnumber = 31903,
 		customparams = {
 			faction = "TLL",
 		},

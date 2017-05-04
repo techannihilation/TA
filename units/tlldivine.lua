@@ -41,8 +41,6 @@ return {
 		radaremitheight = 31,
 		script = "tlldivine.lua",
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 320,
 		standingmoveorder = 0,
 		steeringmode = 1,
@@ -51,7 +49,6 @@ return {
 		turninplacespeedlimit = 1.023,
 		turnrate = 380,
 		unitname = "tlldivine",
-		unitnumber = 839,
 		customparams = {
 			faction = "TLL",
 		},

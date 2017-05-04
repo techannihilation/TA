@@ -40,7 +40,6 @@ return {
 		script = "ARMPCAN.COB",
 		seismicsignature = 0,
 		selfdestructas = "ATOMIC_BLAST",
-		side = "TLL",
 		sightdistance = 273,
 		standingfireorder = 0,
 		turninplaceanglelimit = 140,

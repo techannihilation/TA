@@ -39,7 +39,6 @@ return {
 		radaremitheight = 32,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLASTSML",
-		side = "ARM",
 		sightdistance = 455,
 		standingfireorder = 2,
 		standingmoveorder = 1,

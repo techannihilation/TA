@@ -43,7 +43,6 @@ return {
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "ESTOR_BUILDING",
-		side = "CORE",
 		sightdistance = 650,
 		standingfireorder = 2,
 		turninplaceanglelimit = 140,

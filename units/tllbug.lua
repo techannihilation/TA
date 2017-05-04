@@ -43,8 +43,6 @@ return {
 		objectname = "TLLBUG",
 		radaremitheight = 25,
 		selfdestructas = "SMALL_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 500,
 		standingfireorder = 2,
 		standingmoveorder = 2,
@@ -53,7 +51,6 @@ return {
 		turninplacespeedlimit = 2.97,
 		turnrate = 1300,
 		unitname = "tllbug",
-		unitnumber = 824,
 		upright = true,
 		customparams = {
 			faction = "TLL",

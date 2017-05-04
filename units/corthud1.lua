@@ -46,7 +46,6 @@ return {
 		script = "corthud.cob",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
-		side = "CORE",
 		sightdistance = 380,
 		standingfireorder = 2,
 		standingmoveorder = 1,

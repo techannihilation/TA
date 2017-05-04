@@ -37,13 +37,10 @@ return {
 		nochasecategory = "ALL",
 		objectname = "tllturtle_lab",
 		radaremitheight = 34,
-		scale = 0.75,
 		selfdestructas = "LARGE_BUILDING",
-		side = "TLL",
 		sightdistance = 223,
 		standingmoveorder = 2,
 		unitname = "tllturtle_lab",
-		unitnumber = 811,
 		workertime = 400,
 		yardmap = "occccooccccooccccooccccooccccoocccco",
 		buildoptions = {

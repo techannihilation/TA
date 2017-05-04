@@ -42,10 +42,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "TLLCOP1",
 		radardistance = 0,
-		scale = 1,
 		selfdestructas = "SMALL_UNIT_VTOL",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 300,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -54,7 +51,6 @@ return {
 		turninplacespeedlimit = 4.158,
 		turnrate = 900,
 		unitname = "tllcop1",
-		unitnumber = 21101,
 		workertime = 0,
 		customparams = {
 			faction = "TLL",

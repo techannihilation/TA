@@ -25,13 +25,10 @@ return {
 		nochasecategory = "ALL",
 		noshadow = 1,
 		objectname = "tllwmmohoconv",
-		ovradjust = 1,
 		radaremitheight = 36,
 		selfdestructas = "ATOMIC_BLAST",
-		side = "TLL",
 		sightdistance = 200,
 		unitname = "tllwmmohoconv",
-		unitnumber = 870,
 		waterline = 0,
 		yardmap = "wwwww wwwww wwwww wwwww wwwww",
 		customparams = {

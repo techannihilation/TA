@@ -35,7 +35,6 @@ return {
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_BUILDING",
-		side = "CORE",
 		sightdistance = 130,
 		tidalgenerator = 1,
 		turninplaceanglelimit = 140,

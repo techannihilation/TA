@@ -39,7 +39,6 @@ return {
 		radardistance = 0,
 		radaremitheight = 101,
 		selfdestructas = "SHIPBLAST",
-		side = "ARM",
 		sightdistance = 220,
 		unitname = "ashipyardlvl3",
 		usebuildinggrounddecal = true,

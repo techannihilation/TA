@@ -53,7 +53,6 @@ return {
 		seismicsignature = 0,
 		selfdestructas = "thermite_mine",
 		selfdestructcountdown = 0,
-		side = "TLL",
 		sightdistance = 83.2,
 		standingfireorder = 2,
 		stealth = true,

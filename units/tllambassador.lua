@@ -41,10 +41,7 @@ return {
 		nochasecategory = "VTOL",
 		objectname = "TLLAMBASSADOR",
 		radaremitheight = 70,
-		scale = 0.5,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 325,
 		standingmoveorder = 1,
 		steeringmode = 1,
@@ -54,7 +51,6 @@ return {
 		turninplacespeedlimit = 1.881,
 		turnrate = 310,
 		unitname = "tllambassador",
-		unitnumber = 943,
 		waterline = 6,
 		customparams = {
 			faction = "TLL",

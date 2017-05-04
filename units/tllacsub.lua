@@ -47,8 +47,6 @@ return {
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "SMALL_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 120,
 		sonardistance = 450,
 		standingmoveorder = 1,
@@ -57,7 +55,6 @@ return {
 		turninplacespeedlimit = 1.32,
 		turnrate = 340,
 		unitname = "tllacsub",
-		unitnumber = 897,
 		waterline = 30,
 		workertime = 510,
 		buildoptions = {

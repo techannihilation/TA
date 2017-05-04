@@ -39,10 +39,8 @@ return {
 		onoffable = true,
 		radaremitheight = 60,
 		selfdestructas = "TINY_BUILDINGEX",
-		side = "TLL",
 		sightdistance = 210,
 		unitname = "tllmex",
-		unitnumber = 802,
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooooo",
 		customparams = {

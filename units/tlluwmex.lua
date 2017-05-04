@@ -31,10 +31,8 @@ return {
 		onoffable = true,
 		radaremitheight = 25,
 		selfdestructas = "SMALL_BUILDING",
-		side = "TLL",
 		sightdistance = 100,
 		unitname = "tlluwmex",
-		unitnumber = 898,
 		workertime = 0,
 		yardmap = "ooooooooo",
 		customparams = {

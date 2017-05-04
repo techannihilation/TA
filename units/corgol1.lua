@@ -47,7 +47,6 @@ return {
 		script = "corgol1.cob",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
-		side = "CORE",
 		sightdistance = 395,
 		standingfireorder = 2,
 		standingmoveorder = 1,

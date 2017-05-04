@@ -39,7 +39,6 @@ return {
 		radaremitheight = 42,
 		seismicsignature = 0,
 		selfdestructas = "MINE_NUKE",
-		side = "ARM",
 		sightdistance = 169,
 		unitname = "armuwadves",
 		usebuildinggrounddecal = true,

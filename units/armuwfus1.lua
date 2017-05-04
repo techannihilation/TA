@@ -34,7 +34,6 @@ return {
 		script = "armuwfus1.cob",
 		seismicsignature = 0,
 		selfdestructas = "NUCLEAR_MISSILE1",
-		side = "ARM",
 		sightdistance = 143,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,

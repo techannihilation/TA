@@ -39,10 +39,7 @@ return {
 		nochasecategory = "VTOL",
 		objectname = "TLLboat2",
 		radaremitheight = 34,
-		scale = 0.5,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 450,
 		standingfireorder = 2,
 		standingmoveorder = 2,
@@ -51,7 +48,6 @@ return {
 		turninplacespeedlimit = 1.98,
 		turnrate = 345,
 		unitname = "tllboat2",
-		unitnumber = 165,
 		waterline = 6,
 		customparams = {
 			faction = "TLL",

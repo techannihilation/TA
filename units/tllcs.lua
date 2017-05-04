@@ -46,8 +46,6 @@ return {
 		objectname = "TLLCS",
 		radaremitheight = 25,
 		selfdestructas = "SMALL_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 225,
 		standingmoveorder = 1,
 		steeringmode = 1,
@@ -56,7 +54,6 @@ return {
 		turninplacespeedlimit = 1.419,
 		turnrate = 421,
 		unitname = "tllcs",
-		unitnumber = 852,
 		waterline = 4,
 		workertime = 160,
 		buildoptions = {

@@ -68,7 +68,6 @@ return {
 		selfdestructas = "COMMANDER_SELFD",
 		selfdestructcountdown = 10,
 		showplayername = true,
-		side = "CORE",
 		sightdistance = 700,
 		sonardistance = 500,
 		standingfireorder = 2,

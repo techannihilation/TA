@@ -47,7 +47,6 @@ return {
 		seismicsignature = 2,
 		selfdestructas = "SPYBOMBX",
 		selfdestructcountdown = 1,
-		side = "CORE",
 		sightdistance = 550,
 		standingmoveorder = 1,
 		stealth = true,

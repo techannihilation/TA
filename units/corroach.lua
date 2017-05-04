@@ -44,7 +44,6 @@ return {
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
 		selfdestructcountdown = 0,
-		side = "CORE",
 		sightdistance = 260,
 		standingfireorder = 0,
 		standingmoveorder = 1,

@@ -46,8 +46,6 @@ return {
 		radaremitheight = 25,
 		script = "armmark.lua",
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "ARM",
 		sightdistance = 900,
 		sonardistance = 0,
 		standingmoveorder = 1,
@@ -56,7 +54,6 @@ return {
 		turninplacespeedlimit = 0.891,
 		turnrate = 505,
 		unitname = "armmark",
-		unitnumber = 168,
 		workertime = 0,
 		customparams = {
 			buildpic = "armmark.png",

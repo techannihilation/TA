@@ -35,7 +35,6 @@ return {
 		seismicdistance = 2200,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
-		side = "TLL",
 		sightdistance = 225,
 		unitname = "tllrichter",
 		usebuildinggrounddecal = true,

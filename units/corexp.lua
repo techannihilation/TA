@@ -45,7 +45,6 @@ return {
 		radaremitheight = 55,
 		seismicsignature = 0,
 		selfdestructcountdown = 1,
-		side = "CORE",
 		sightdistance = 455,
 		standingfireorder = 2,
 		turninplaceanglelimit = 140,

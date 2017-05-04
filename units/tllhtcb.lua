@@ -42,8 +42,6 @@ return {
 		objectname = "TLLHTCB",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 230,
 		standingmoveorder = 1,
 		steeringmode = 1,
@@ -52,7 +50,6 @@ return {
 		turninplacespeedlimit = 1.089,
 		turnrate = 550,
 		unitname = "tllhtcb",
-		unitnumber = 835,
 		workertime = 320,
 		buildoptions = {
 			[1] = "tllmegacoldfus",

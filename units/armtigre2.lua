@@ -44,7 +44,6 @@ return {
 		radardistance = 0,
 		radaremitheight = 44,
 		selfdestructas = "NUCLEAR_BLAST",
-		shootme = 1,
 		sightdistance = 500,
 		sonardistance = 0,
 		standingfireorder = 2,
@@ -54,7 +53,6 @@ return {
 		turninplacespeedlimit = 0.726,
 		turnrate = 340,
 		unitname = "armtigre2",
-		unitnumber = 5698,
 		workertime = 0,
 		customparams = {
 			faction = "CORE",

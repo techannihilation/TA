@@ -43,8 +43,6 @@ return {
 		radardistance = 0,
 		radaremitheight = 37,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "CORE",
 		sightdistance = 350,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -53,7 +51,6 @@ return {
 		turninplacespeedlimit = 0.858,
 		turnrate = 999,
 		unitname = "coredauber",
-		unitnumber = 205,
 		upright = true,
 		workertime = 0,
 		customparams = {

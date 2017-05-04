@@ -35,7 +35,6 @@ return {
 		radaremitheight = 53,
 		script = "armmmkr.cob",
 		selfdestructas = "nuclear_missile1",
-		side = "ARM",
 		sightdistance = 210,
 		unitname = "ametalmakerlvl2",
 		usebuildinggrounddecal = true,

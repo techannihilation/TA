@@ -41,12 +41,9 @@ return {
 		radardistance = 650,
 		radaremitheight = 35,
 		selfdestructas = "CRAWL_BLASTSML",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 680,
 		standingfireorder = 2,
 		unitname = "tllobliterator",
-		unitnumber = 813,
 		usebuildinggrounddecal = true,
 		yardmap = "ooooo ooooo ooooo ooooo",
 		customparams = {

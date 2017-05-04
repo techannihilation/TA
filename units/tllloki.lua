@@ -38,8 +38,6 @@ return {
 		pushresistant = true,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 230,
 		standingfireorder = 2,
 		standingmoveorder = 0,
@@ -49,7 +47,6 @@ return {
 		turninplacespeedlimit = 1.122,
 		turnrate = 350,
 		unitname = "tllloki",
-		unitnumber = 836,
 		customparams = {
 			faction = "TLL",
 		},

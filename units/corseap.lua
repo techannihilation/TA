@@ -48,7 +48,6 @@ return {
 		objectname = "CORSEAP",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
-		side = "CORE",
 		sightdistance = 455,
 		standingfireorder = 2,
 		standingmoveorder = 1,

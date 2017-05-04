@@ -32,7 +32,6 @@ return {
 		objectname = "ARMFDRAG",
 		radaremitheight = 38,
 		seismicsignature = 0,
-		side = "ARM",
 		sightdistance = 130,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,

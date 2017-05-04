@@ -49,7 +49,6 @@ return {
 		seismicsignature = 0,
 		selfdestructas = "TWILIGHT",
 		selfdestructcountdown = 0,
-		side = "ARM",
 		sightdistance = 83.2,
 		standingfireorder = 2,
 		stealth = true,

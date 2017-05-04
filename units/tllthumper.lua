@@ -37,8 +37,6 @@ return {
 		objectname = "TLLTHUMPER",
 		radaremitheight = 28,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 395,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -48,7 +46,6 @@ return {
 		turninplacespeedlimit = 0.528,
 		turnrate = 200,
 		unitname = "tllthumper",
-		unitnumber = 834,
 		customparams = {
 			faction = "TLL",
 		},

@@ -40,7 +40,6 @@ return {
 		radaremitheight = 54,
 		seismicsignature = 0,
 		selfdestructas = "MECH_BLAST",
-		side = "CORE",
 		sightdistance = 455,
 		standingfireorder = 2,
 		standingmoveorder = 1,

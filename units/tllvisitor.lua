@@ -38,8 +38,6 @@ return {
 		objectname = "TLLVISITOR",
 		radaremitheight = 36,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 245,
 		standingfireorder = 2,
 		standingmoveorder = 0,
@@ -48,7 +46,6 @@ return {
 		turninplacespeedlimit = 0.627,
 		turnrate = 292,
 		unitname = "tllvisitor",
-		unitnumber = 901,
 		waterline = 6,
 		customparams = {
 			faction = "TLL",

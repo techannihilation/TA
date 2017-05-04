@@ -43,7 +43,6 @@ return {
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
-		side = "ARM",
 		sightdistance = 289,
 		standingfireorder = 2,
 		standingmoveorder = 1,

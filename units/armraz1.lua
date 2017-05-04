@@ -50,7 +50,6 @@ return {
 		seismicsignature = 0,
 		selfdestructas = "BANTHA_NUKE",
 		selfdestructcountdown = 10,
-		side = "ARM",
 		sightdistance = 600,
 		standingfireorder = 2,
 		standingmoveorder = 1,

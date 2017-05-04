@@ -33,7 +33,6 @@ return {
 		radaremitheight = 36,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
-		side = "CORE",
 		sightdistance = 143,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,

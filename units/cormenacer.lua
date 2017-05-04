@@ -48,8 +48,6 @@ return {
 		radardistance = 0,
 		radaremitheight = 29,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "CORE",
 		sightdistance = 245,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -58,7 +56,6 @@ return {
 		turninplacespeedlimit = 0.594,
 		turnrate = 510,
 		unitname = "cormenacer",
-		unitnumber = 20000,
 		upright = false,
 		workertime = 0,
 		customparams = {

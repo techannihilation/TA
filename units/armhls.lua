@@ -46,10 +46,7 @@ return {
 		objectname = "ARMHLS",
 		radardistance = 0,
 		radaremitheight = 25,
-		scale = 0.5,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "ARM",
 		sightdistance = 530,
 		sonardistance = 305,
 		standingfireorder = 2,
@@ -59,7 +56,6 @@ return {
 		turninplacespeedlimit = 2.178,
 		turnrate = 220,
 		unitname = "armhls",
-		unitnumber = 5963,
 		waterline = 1,
 		workertime = 0,
 		customparams = {

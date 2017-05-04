@@ -43,8 +43,6 @@ return {
 		radardistance = 0,
 		radaremitheight = 58,
 		selfdestructas = "CRAWL_BLASTSML",
-		shootme = 1,
-		side = "CORE",
 		sightdistance = 700,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -53,7 +51,6 @@ return {
 		turninplacespeedlimit = 0.66,
 		turnrate = 777,
 		unitname = "troman",
-		unitnumber = 673,
 		upright = true,
 		workertime = 0,
 		customparams = {

@@ -44,7 +44,6 @@ return {
 		repairspeed = 75,
 		seismicsignature = 2,
 		selfdestructas = "BIG_UNIT",
-		side = "ARM",
 		sightdistance = 325,
 		standingmoveorder = 1,
 		steeringmode = 1,

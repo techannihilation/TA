@@ -37,8 +37,6 @@ return {
 		objectname = "TLLSALAMANDER",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 325,
 		standingfireorder = 2,
 		standingmoveorder = 0,
@@ -48,7 +46,6 @@ return {
 		turninplacespeedlimit = 1.023,
 		turnrate = 880,
 		unitname = "tllsalamander",
-		unitnumber = 837,
 		customparams = {
 			faction = "TLL",
 		},

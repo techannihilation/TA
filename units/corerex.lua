@@ -45,7 +45,6 @@ return {
 		objectname = "COREREX",
 		radaremitheight = 39,
 		selfdestructas = "ATOMIC_BLAST",
-		shootme = 1,
 		sightdistance = 600,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -54,7 +53,6 @@ return {
 		turninplacespeedlimit = 0.726,
 		turnrate = 256,
 		unitname = "corerex",
-		unitnumber = 325,
 		workertime = 0,
 		customparams = {
 			faction = "ARM",
@@ -159,7 +157,6 @@ return {
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.885,
-				id = 254,
 				impulseboost = 0,
 				impulsefactor = 0,
 				name = "Plutonium Shell",

@@ -39,7 +39,6 @@ return {
 		objectname = "tllhailstorm",
 		radaremitheight = 40,
 		selfdestructas = "CRAWL_BLAST",
-		side = "TLL",
 		sightdistance = 620,
 		standingfireorder = 2,
 		standingmoveorder = 0,

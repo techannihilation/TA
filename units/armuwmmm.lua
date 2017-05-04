@@ -38,7 +38,6 @@ return {
 		radaremitheight = 27,
 		seismicsignature = 0,
 		selfdestructas = "ATOMIC_BLAST",
-		side = "ARM",
 		sightdistance = 156,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,

@@ -44,8 +44,6 @@ return {
 		radaremitheight = 76,
 		selfdestructas = "BANTHA_NUKE",
 		selfdestructcountdown = 10,
-		shootme = 1,
-		side = "CORE",
 		sightdistance = 300,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -54,7 +52,6 @@ return {
 		turninplacespeedlimit = 0.99,
 		turnrate = 590,
 		unitname = "cordem",
-		unitnumber = 25001,
 		upright = true,
 		workertime = 0,
 		customparams = {

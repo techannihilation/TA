@@ -35,12 +35,9 @@ return {
 		onoffable = true,
 		radaremitheight = 26,
 		selfdestructas = "MEDIUM_BUILDING",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 400,
 		standingfireorder = 2,
 		unitname = "tllkrak",
-		unitnumber = 882,
 		yardmap = "wwww wwww wwww wwww",
 		customparams = {
 			faction = "TLL",

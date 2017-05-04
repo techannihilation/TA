@@ -45,7 +45,6 @@ return {
 		seismicsignature = 0,
 		selfdestructas = "FMINE_HEAVY",
 		selfdestructcountdown = 0,
-		side = "CORE",
 		sightdistance = 71.5,
 		standingfireorder = 2,
 		stealth = true,

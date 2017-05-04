@@ -47,7 +47,6 @@ return {
 		objectname = "CBuilderLvl3",
 		radardistance = 0,
 		selfdestructas = "SHIPBLAST",
-		side = "CORE",
 		sightdistance = 400,
 		turninplaceanglelimit = 360,
 		turninplacespeedlimit = 2.112,

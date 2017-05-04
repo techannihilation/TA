@@ -44,7 +44,6 @@ return {
 		radardistance = 0,
 		radaremitheight = 20.7,
 		selfdestructas = "BIG_UNIT_VTOL",
-		side = "CORE",
 		sightdistance = 270,
 		turninplaceanglelimit = 360,
 		turninplacespeedlimit = 4.74012,

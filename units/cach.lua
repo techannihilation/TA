@@ -44,8 +44,6 @@ return {
 		objectname = "CACH",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "CORE",
 		sightdistance = 270,
 		standingmoveorder = 1,
 		steeringmode = 1,
@@ -54,7 +52,6 @@ return {
 		turninplacespeedlimit = 1.056,
 		turnrate = 215,
 		unitname = "cach",
-		unitnumber = 11004,
 		workertime = 560,
 		buildoptions = {
 			[1] = "corfus",

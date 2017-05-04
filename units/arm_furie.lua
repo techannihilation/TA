@@ -50,8 +50,6 @@ return {
 		radaremitheight = 85,
 		selfdestructas = "CRBLMSSL",
 		selfdestructcountdown = 10,
-		shootme = 1,
-		side = "ARM",
 		sightdistance = 520,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -60,7 +58,6 @@ return {
 		turninplacespeedlimit = 0.594,
 		turnrate = 560,
 		unitname = "arm_furie",
-		unitnumber = 7218,
 		workertime = 0,
 		customparams = {
 			faction = "ARM",

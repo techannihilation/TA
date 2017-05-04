@@ -39,7 +39,6 @@ return {
 		radardistance = 0,
 		radaremitheight = 97,
 		selfdestructas = "SUPERBLAST",
-		side = "CORE",
 		sightdistance = 220,
 		unitname = "cshipyardlvl4",
 		usebuildinggrounddecal = true,

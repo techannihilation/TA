@@ -43,10 +43,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "tllnuada",
 		radardistance = 0,
-		scale = 1,
 		selfdestructas = "BIG_UNIT_VTOL",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 550,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -55,7 +52,6 @@ return {
 		turninplacespeedlimit = 3.63,
 		turnrate = 590,
 		unitname = "tllnuada",
-		unitnumber = 8387,
 		workertime = 0,
 		customparams = {
 			buildpic = "tllnuada.png",

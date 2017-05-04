@@ -32,7 +32,6 @@ return {
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "ARMESTOR_BUILDING",
-		side = "ARM",
 		sightdistance = 210,
 		unitname = "ametalmakerlvl1",
 		usebuildinggrounddecal = true,

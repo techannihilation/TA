@@ -44,10 +44,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "CHOPPER",
 		radardistance = 0,
-		scale = 1,
 		selfdestructas = "BIG_UNIT_VTOL",
-		shootme = 1,
-		side = "ARM",
 		sightdistance = 350,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -56,7 +53,6 @@ return {
 		turninplacespeedlimit = 2.97,
 		turnrate = 700,
 		unitname = "chopper",
-		unitnumber = 702,
 		workertime = 0,
 		customparams = {
 			faction = "ARM",

@@ -44,7 +44,6 @@ return {
 		script = "corfmd.cob",
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
-		side = "CORE",
 		sightdistance = 195,
 		standingfireorder = 2,
 		turninplaceanglelimit = 140,

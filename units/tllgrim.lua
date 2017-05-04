@@ -48,7 +48,6 @@ return {
 		radardistance = 0,
 		radaremitheight = 72,
 		selfdestructas = "NUCLEAR_MISSILE",
-		shootme = 1,
 		sightdistance = 690,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -57,7 +56,6 @@ return {
 		turninplacespeedlimit = 0.528,
 		turnrate = 1016,
 		unitname = "tllgrim",
-		unitnumber = 65200,
 		upright = true,
 		workertime = 0,
 		customparams = {
@@ -167,7 +165,6 @@ return {
 				explosiongenerator = "custom:incendiary_explosion_small",
 				firestarter = 100,
 				flighttime = 6,
-				id = 228,
 				metalpershot = 0,
 				model = "vpulse",
 				name = "Vpulse Rocket",

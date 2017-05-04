@@ -43,8 +43,6 @@ return {
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "CORE",
 		sightdistance = 340,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -59,7 +57,6 @@ return {
 		turninplacespeedlimit = 1.749,
 		turnrate = 400,
 		unitname = "dao",
-		unitnumber = 176,
 		workertime = 0,
 		customparams = {
 			faction = "CORE",

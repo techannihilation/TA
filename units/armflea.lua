@@ -42,7 +42,6 @@ return {
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "FLEA_EX",
-		side = "ARM",
 		sightdistance = 550,
 		standingfireorder = 2,
 		standingmoveorder = 1,

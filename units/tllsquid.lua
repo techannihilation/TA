@@ -44,8 +44,6 @@ return {
 		radardistancejam = 475,
 		radaremitheight = 25,
 		selfdestructas = "SMALL_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 150,
 		sonardistance = 120,
 		sonardistancejam = 96,

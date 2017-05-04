@@ -39,8 +39,6 @@ return {
 		objectname = "TLLBURNER",
 		radaremitheight = 29,
 		selfdestructas = "CORPYRO_BLAST",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 289,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -49,7 +47,6 @@ return {
 		turninplacespeedlimit = 1.584,
 		turnrate = 1250,
 		unitname = "tllburner",
-		unitnumber = 830,
 		upright = true,
 		customparams = {
 			faction = "TLL",

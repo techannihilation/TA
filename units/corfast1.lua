@@ -45,7 +45,6 @@ return {
 		script = "corfast.cob",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
-		side = "CORE",
 		sightdistance = 520,
 		standingmoveorder = 1,
 		steeringmode = 2,

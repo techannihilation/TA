@@ -35,10 +35,8 @@ return {
 		objectname = "TLLtower",
 		radaremitheight = 137,
 		selfdestructas = "SMALL_BUILDING",
-		side = "TLL",
 		sightdistance = 1000,
 		unitname = "tlltower",
-		unitnumber = 1809,
 		usebuildinggrounddecal = true,
 		yardmap = "oooo",
 		customparams = {

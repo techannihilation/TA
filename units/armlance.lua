@@ -44,7 +44,6 @@ return {
 		objectname = "ARMLANCE",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
-		side = "ARM",
 		sightdistance = 455,
 		standingfireorder = 2,
 		standingmoveorder = 1,

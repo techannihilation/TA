@@ -45,7 +45,6 @@ return {
 		script = "consul.cob",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
-		side = "arm",
 		sightdistance = 500,
 		standingmoveorder = 1,
 		steeringmode = 1,

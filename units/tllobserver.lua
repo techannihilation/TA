@@ -43,8 +43,6 @@ return {
 		radaremitheight = 30,
 		script = "tllobserver.lua",
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 240,
 		standingmoveorder = 0,
 		steeringmode = 1,
@@ -52,7 +50,6 @@ return {
 		turninplacespeedlimit = 0.759,
 		turnrate = 750,
 		unitname = "tllobserver",
-		unitnumber = 862,
 		customparams = {
 			faction = "TLL",
 		},

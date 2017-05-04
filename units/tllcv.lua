@@ -42,8 +42,6 @@ return {
 		objectname = "TLLCV",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 195,
 		standingmoveorder = 1,
 		steeringmode = 1,
@@ -52,7 +50,6 @@ return {
 		turninplacespeedlimit = 1.023,
 		turnrate = 375,
 		unitname = "tllcv",
-		unitnumber = 829,
 		workertime = 115,
 		buildoptions = {
 			[1] = "tllsolar",

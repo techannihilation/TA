@@ -44,8 +44,6 @@ return {
 		radardistance = 1800,
 		radaremitheight = 25,
 		selfdestructas = "SPYBOMBX",
-		shootme = 1,
-		side = "CORE",
 		sightdistance = 390,
 		standingfireorder = 0,
 		standingmoveorder = 1,
@@ -60,7 +58,6 @@ return {
 		turninplacespeedlimit = 0.561,
 		turnrate = 165,
 		unitname = "requ1",
-		unitnumber = 323,
 		workertime = 0,
 		customparams = {
 			buildpic = "REQU1.png",

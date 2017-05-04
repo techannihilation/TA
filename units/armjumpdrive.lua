@@ -38,7 +38,6 @@ return {
 		selfdestructas = "SMALL_BUILDING",
 		sightdistance = 273,
 		unitname = "armjumpdrive",
-		unitnumber = 48,
 		workertime = 0,
 		yardmap = "ooooooooo",
 		customparams = {

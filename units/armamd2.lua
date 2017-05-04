@@ -44,7 +44,6 @@ return {
 		script = "armamd.cob",
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
-		side = "ARM",
 		sightdistance = 201,
 		standingfireorder = 2,
 		turninplaceanglelimit = 140,

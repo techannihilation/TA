@@ -40,10 +40,8 @@ return {
 		radaremitheight = 70,
 		script = "tllmex.cob",
 		selfdestructas = "SMALL_BUILDING",
-		side = "TLL",
 		sightdistance = 210,
 		unitname = "tllmex1",
-		unitnumber = 802,
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooooo",
 		customparams = {

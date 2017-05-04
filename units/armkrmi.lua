@@ -43,8 +43,6 @@ return {
 		radardistance = 1500,
 		radaremitheight = 59,
 		selfdestructas = "CRAWL_BLAST",
-		shootme = 1,
-		side = "CORE",
 		sightdistance = 450,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -53,7 +51,6 @@ return {
 		turninplacespeedlimit = 1.98,
 		turnrate = 960,
 		unitname = "armkrmi",
-		unitnumber = 9521,
 		upright = true,
 		workertime = 0,
 		customparams = {

@@ -40,7 +40,6 @@ return {
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
-		side = "TLL",
 		sightdistance = 450,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -49,7 +48,6 @@ return {
 		turninplacespeedlimit = 0.594,
 		turnrate = 530,
 		unitname = "tllmatamata",
-		unitnumber = 31903,
 		customparams = {
 			faction = "TLL",
 		},

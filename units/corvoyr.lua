@@ -45,7 +45,6 @@ return {
 		script = "corvoyr.lua",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
-		side = "CORE",
 		sightdistance = 925,
 		standingmoveorder = 1,
 		steeringmode = 1,

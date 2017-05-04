@@ -38,10 +38,7 @@ return {
 		nochasecategory = "ALL",
 		objectname = "TLLSTING",
 		radaremitheight = 26,
-		scale = 0.6,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 525,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -50,7 +47,6 @@ return {
 		turninplacespeedlimit = 1.914,
 		turnrate = 350,
 		unitname = "tllsting",
-		unitnumber = 904,
 		customparams = {
 			faction = "TLL",
 		},

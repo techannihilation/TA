@@ -44,8 +44,6 @@ return {
 		radaremitheight = 25,
 		resurrect = 1,
 		selfdestructas = "BIG_UNIT",
-		shootme = 0,
-		side = "CORE",
 		sightdistance = 300,
 		standingmoveorder = 1,
 		stealth = true,
@@ -54,7 +52,6 @@ return {
 		turninplacespeedlimit = 0.858,
 		turnrate = 1020,
 		unitname = "coreleopard",
-		unitnumber = 4331,
 		workertime = 250,
 		customparams = {
 			faction = "CORE",

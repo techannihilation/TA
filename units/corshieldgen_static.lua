@@ -43,7 +43,6 @@ return {
 		script = "corshieldgen.cob",
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
-		side = "CORE",
 		sightdistance = 273,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,

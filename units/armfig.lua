@@ -44,7 +44,6 @@ return {
 		objectname = "ARMFIG",
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT_VTOL",
-		side = "ARM",
 		sightdistance = 500,
 		standingfireorder = 2,
 		standingmoveorder = 1,

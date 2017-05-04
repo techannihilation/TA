@@ -44,8 +44,6 @@ return {
 		objectname = "Apache",
 		radardistance = 0,
 		selfdestructas = "SMALL_UNIT_VTOL",
-		shootme = 1,
-		side = "ARM",
 		sightdistance = 280,
 		sonardistance = 0,
 		standingfireorder = 2,
@@ -55,7 +53,6 @@ return {
 		turninplacespeedlimit = 2.64,
 		turnrate = 1024,
 		unitname = "apache",
-		unitnumber = 75645,
 		workertime = 0,
 		customparams = {
 			faction = "ARM",

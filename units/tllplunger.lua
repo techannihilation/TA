@@ -41,8 +41,6 @@ return {
 		objectname = "TLLPLUNGER",
 		radaremitheight = 25,
 		selfdestructas = "SMALL_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 365,
 		sonardistance = 450,
 		standingfireorder = 2,
@@ -52,7 +50,6 @@ return {
 		turninplacespeedlimit = 1.584,
 		turnrate = 356,
 		unitname = "tllplunger",
-		unitnumber = 895,
 		upright = true,
 		waterline = 40,
 		customparams = {

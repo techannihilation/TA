@@ -44,8 +44,6 @@ return {
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "ARM",
 		sightdistance = 500,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -55,7 +53,6 @@ return {
 		turninplacespeedlimit = 0.8415,
 		turnrate = 1011,
 		unitname = "corehingeback",
-		unitnumber = 6527,
 		workertime = 0,
 		customparams = {
 			faction = "ARM",

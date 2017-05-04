@@ -48,7 +48,6 @@ return {
 		resurrect = 1,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
-		side = "ARM",
 		sightdistance = 430,
 		standingmoveorder = 1,
 		stealth = true,

@@ -48,7 +48,6 @@ return {
 		seismicsignature = 64,
 		selfdestructas = "CORMINE6",
 		selfdestructcountdown = 0,
-		side = "CORE",
 		sightdistance = 260,
 		standingfireorder = 2,
 		standingmoveorder = 1,

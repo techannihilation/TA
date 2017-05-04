@@ -40,7 +40,6 @@ return {
 		radaremitheight = 37,
 		seismicsignature = 0,
 		selfdestructcountdown = 1,
-		side = "ARM",
 		sightdistance = 100,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,

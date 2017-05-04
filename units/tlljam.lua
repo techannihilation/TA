@@ -37,10 +37,8 @@ return {
 		radardistancejam = 562,
 		radaremitheight = 81,
 		selfdestructas = "BIG_UNIT",
-		side = "TLL",
 		sightdistance = 240,
 		unitname = "tlljam",
-		unitnumber = 841,
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		customparams = {

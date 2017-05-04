@@ -26,13 +26,10 @@ return {
 		nochasecategory = "ALL",
 		noshadow = 1,
 		objectname = "tllWMconv",
-		ovradjust = 1,
 		radaremitheight = 57,
 		selfdestructas = "SMALL_BUILDING",
-		side = "TLL",
 		sightdistance = 200,
 		unitname = "tllwmconv",
-		unitnumber = 870,
 		waterline = 5,
 		yardmap = "wwwwwwwww",
 		customparams = {

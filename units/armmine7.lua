@@ -49,7 +49,6 @@ return {
 		seismicsignature = 0,
 		selfdestructas = "mine_singularity",
 		selfdestructcountdown = 0,
-		side = "CORE",
 		sightdistance = 83.2,
 		standingfireorder = 2,
 		stealth = true,

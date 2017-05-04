@@ -276,7 +276,6 @@ return {
 				duration = 3,
 				explosiongenerator = "custom:tllweb_exp",
 				firestarter = 85,
-				id = 217,
 				impulseboost = 0,
 				impulsefactor = 0,
 				name = "Commander Lightning Beam",

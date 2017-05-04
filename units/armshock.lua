@@ -43,7 +43,6 @@ return {
 		radaremitheight = 50,
 		seismicsignature = 0,
 		selfdestructas = "SHOCKER",
-		side = "ARM",
 		sightdistance = 625,
 		standingfireorder = 2,
 		standingmoveorder = 0,

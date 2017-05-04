@@ -36,7 +36,6 @@ return {
 		radardistance = 0,
 		radaremitheight = 44,
 		selfdestructas = "FUSIONX_BLAST",
-		side = "TLL",
 		sightdistance = 263,
 		unitname = "tllmedfusion",
 		usebuildinggrounddecal = true,

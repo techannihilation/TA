@@ -43,8 +43,6 @@ return {
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "CORE",
 		sightdistance = 425,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -59,7 +57,6 @@ return {
 		turninplacespeedlimit = 0.924,
 		turnrate = 343,
 		unitname = "cbrutus",
-		unitnumber = 8887656448,
 		workertime = 0,
 		customparams = {
 			faction = "CORE",

@@ -39,8 +39,6 @@ return {
 		objectname = "CORMDDM",
 		radaremitheight = 44,
 		selfdestructas = "ESTOR_BUILDINGEX",
-		shootme = 1,
-		side = "CORE",
 		sightdistance = 270,
 		standingfireorder = 2,
 		standingmoveorder = 0,
@@ -50,7 +48,6 @@ return {
 		turninplacespeedlimit = 0.726,
 		turnrate = 200,
 		unitname = "cormddm",
-		unitnumber = 2032,
 		customparams = {
 			faction = "CORE",
 			requiretech = "Advanced T2 Unit Research Centre",

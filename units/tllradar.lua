@@ -36,10 +36,8 @@ return {
 		radaremitheight = 34,
 		script = "tllradar.lua",
 		selfdestructas = "SMALL_BUILDING",
-		side = "TLL",
 		sightdistance = 350,
 		unitname = "tllradar",
-		unitnumber = 809,
 		usebuildinggrounddecal = true,
 		yardmap = "oooo",
 		customparams = {

@@ -42,7 +42,6 @@ return {
 		radaremitheight = 136,
 		seismicsignature = 0,
 		selfdestructas = "BANTHA_DEATH",
-		side = "ARM",
 		sightdistance = 273,
 		standingfireorder = 1,
 		turninplaceanglelimit = 140,

@@ -47,7 +47,6 @@ return {
 		script = "armnanotc.cob",
 		seismicsignature = 0,
 		selfdestructas = "NANOBOOM2A",
-		side = "ARM",
 		sightdistance = 380,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,

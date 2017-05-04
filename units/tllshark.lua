@@ -47,8 +47,6 @@ return {
 		radaremitheight = 25,
 		selfdestructas = "CRAWL_BLAST",
 		selfdestructcountdown = 2,
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 150,
 		standingfireorder = 0,
 		standingmoveorder = 1,
@@ -57,7 +55,6 @@ return {
 		turninplacespeedlimit = 2.541,
 		turnrate = 400,
 		unitname = "tllshark",
-		unitnumber = 906,
 		waterline = 30,
 		workertime = 0,
 		customparams = {

@@ -42,8 +42,6 @@ return {
 		objectname = "TLLOTTER",
 		radaremitheight = 25,
 		selfdestructas = "SMALL_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 900,
 		standingfireorder = 2,
 		standingmoveorder = 2,
@@ -53,7 +51,6 @@ return {
 		turninplacespeedlimit = 2.772,
 		turnrate = 602,
 		unitname = "tllotter",
-		unitnumber = 891,
 		waterline = 5,
 		customparams = {
 			faction = "TLL",

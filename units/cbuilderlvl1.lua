@@ -48,7 +48,6 @@ return {
 		radaremitheight = 27,
 		repairspeed = 35,
 		selfdestructas = "SMALL_UNIT_VTOL",
-		side = "CORE",
 		sightdistance = 370,
 		turninplaceanglelimit = 360,
 		turninplacespeedlimit = 6.6,

@@ -43,8 +43,6 @@ return {
 		objectname = "CORMATCH",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "CORE",
 		sightdistance = 300,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -54,7 +52,6 @@ return {
 		turninplacespeedlimit = 1.848,
 		turnrate = 230,
 		unitname = "cormatch",
-		unitnumber = 6144,
 		workertime = 0,
 		customparams = {
 			faction = "CORE",

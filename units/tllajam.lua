@@ -37,7 +37,6 @@ return {
 		radardistancejam = 1500,
 		radaremitheight = 97,
 		selfdestructas = "BIG_UNIT",
-		side = "TLL",
 		sightdistance = 620,
 		stealth = true,
 		unitname = "tllajam",

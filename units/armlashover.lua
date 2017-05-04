@@ -45,8 +45,6 @@ return {
 		objectname = "ARMLASHOVER",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "ARM",
 		sightdistance = 350,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -56,7 +54,6 @@ return {
 		turninplacespeedlimit = 2.244,
 		turnrate = 520,
 		unitname = "armlashover",
-		unitnumber = 8812,
 		workertime = 0,
 		customparams = {
 			faction = "ARM",

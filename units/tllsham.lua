@@ -50,8 +50,6 @@ return {
 		radaremitheight = 30,
 		resurrect = 1,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 500,
 		standingmoveorder = 2,
 		steeringmode = 2,
@@ -59,7 +57,6 @@ return {
 		turninplacespeedlimit = 1.452,
 		turnrate = 1000,
 		unitname = "tllsham",
-		unitnumber = 256,
 		upright = true,
 		workertime = 218,
 		customparams = {

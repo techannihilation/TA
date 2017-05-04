@@ -48,7 +48,6 @@ return {
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
-		side = "CORE",
 		sightdistance = 299,
 		standingmoveorder = 1,
 		steeringmode = 1,

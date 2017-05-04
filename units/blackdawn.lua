@@ -43,10 +43,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "BLACKDAWN",
 		radardistance = 0,
-		scale = 1,
 		selfdestructas = "BIG_UNIT_VTOL",
-		shootme = 1,
-		side = "CORE",
 		sightdistance = 480,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -55,7 +52,6 @@ return {
 		turninplacespeedlimit = 3.498,
 		turnrate = 590,
 		unitname = "blackdawn",
-		unitnumber = 8387,
 		workertime = 0,
 		customparams = {
 			buildpic = "blackdawn.png",

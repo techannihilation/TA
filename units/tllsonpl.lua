@@ -43,10 +43,7 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "tllsonpl",
-		scale = 1,
 		selfdestructas = "BIG_UNIT_VTOL",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 350,
 		sonardistance = 1550,
 		standingmoveorder = 2,
@@ -55,7 +52,6 @@ return {
 		turninplacespeedlimit = 6.369,
 		turnrate = 455,
 		unitname = "tllsonpl",
-		unitnumber = 928,
 		workertime = 0,
 		customparams = {
 			faction = "TLL",

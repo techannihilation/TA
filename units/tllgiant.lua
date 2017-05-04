@@ -43,8 +43,6 @@ return {
 		radardistance = 2950,
 		radaremitheight = 71,
 		selfdestructas = "ATOMIC_BLAST",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 1080,
 		sonardistance = 760,
 		standingfireorder = 2,
@@ -54,7 +52,6 @@ return {
 		turninplacespeedlimit = 1.782,
 		turnrate = 72,
 		unitname = "tllgiant",
-		unitnumber = 907,
 		waterline = 7,
 		workertime = 4000,
 		customparams = {

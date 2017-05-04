@@ -39,7 +39,6 @@ return {
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
-		side = "TLL",
 		sightdistance = 400,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -48,7 +47,6 @@ return {
 		turninplacespeedlimit = 0.594,
 		turnrate = 465,
 		unitname = "tllloggerhead",
-		unitnumber = 31903,
 		workertime = 0,
 		customparams = {
 			faction = "TLL",

@@ -46,7 +46,6 @@ return {
 		script = "corsilo.cob",
 		seismicsignature = 0,
 		selfdestructas = "NUCLEAR_MISSILE",
-		side = "CORE",
 		sightdistance = 455,
 		standingfireorder = 0,
 		turninplaceanglelimit = 140,

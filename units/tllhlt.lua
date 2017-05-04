@@ -41,12 +41,9 @@ return {
 		objectname = "TLLHLT",
 		radaremitheight = 83,
 		selfdestructas = "MEDIUM_BUILDING",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 380,
 		standingfireorder = 2,
 		unitname = "tllhlt",
-		unitnumber = 810,
 		usebuildinggrounddecal = true,
 		yardmap = "oooo",
 		customparams = {

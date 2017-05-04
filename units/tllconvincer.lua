@@ -37,8 +37,6 @@ return {
 		objectname = "TLLCONVINCER",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 230,
 		standingfireorder = 2,
 		standingmoveorder = 0,
@@ -48,7 +46,6 @@ return {
 		turninplacespeedlimit = 0.693,
 		turnrate = 400,
 		unitname = "tllconvincer",
-		unitnumber = 872,
 		customparams = {
 			faction = "TLL",
 		},

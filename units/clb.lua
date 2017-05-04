@@ -47,8 +47,6 @@ return {
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "ATOMIC_BLAST",
-		shootme = 1,
-		side = "CORE",
 		sightdistance = 312,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -62,7 +60,6 @@ return {
 		turninplacespeedlimit = 0.924,
 		turnrate = 132,
 		unitname = "clb",
-		unitnumber = 995,
 		upright = true,
 		workertime = 0,
 		customparams = {

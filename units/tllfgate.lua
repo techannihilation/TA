@@ -36,7 +36,6 @@ return {
 		radaremitheight = 38,
 		seismicsignature = 0,
 		selfdestructas = "MINE_NUKE",
-		side = "TLL",
 		sightdistance = 273,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,

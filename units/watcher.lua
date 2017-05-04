@@ -45,8 +45,6 @@ return {
 		radardistance = 1600,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "CORE",
 		sightdistance = 400,
 		sonardistance = 1240,
 		standingfireorder = 2,
@@ -57,7 +55,6 @@ return {
 		turninplacespeedlimit = 1.716,
 		turnrate = 240,
 		unitname = "watcher",
-		unitnumber = 401,
 		workertime = 0,
 		customparams = {
 			faction = "CORE",

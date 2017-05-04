@@ -39,12 +39,9 @@ return {
 		radaremitheight = 81,
 		script = "tlllmt.cob",
 		selfdestructas = "MEDIUM_BUILDING",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 425,
 		standingfireorder = 2,
 		unitname = "tlllmt1",
-		unitnumber = 806,
 		usebuildinggrounddecal = true,
 		yardmap = "oooo",
 		customparams = {

@@ -42,8 +42,6 @@ return {
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "ARM",
 		sightdistance = 355,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -53,7 +51,6 @@ return {
 		turninplacespeedlimit = 1.914,
 		turnrate = 375,
 		unitname = "armmedt",
-		unitnumber = 6625,
 		workertime = 0,
 		customparams = {
 			faction = "ARM",

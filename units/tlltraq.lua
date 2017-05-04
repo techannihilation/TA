@@ -51,8 +51,6 @@ return {
 		radardistance = 450,
 		radaremitheight = 45,
 		selfdestructas = "BIG_UNITEX",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 250,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -62,7 +60,6 @@ return {
 		turninplacespeedlimit = 0.99,
 		turnrate = 1005,
 		unitname = "tlltraq",
-		unitnumber = 345665,
 		upright = true,
 		workertime = 0,
 		customparams = {

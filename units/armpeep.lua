@@ -43,7 +43,6 @@ return {
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		selfdestructcountdown = 1,
-		side = "ARM",
 		sightdistance = 850,
 		standingmoveorder = 1,
 		steeringmode = 1,

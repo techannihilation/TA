@@ -41,8 +41,6 @@ return {
 		radardistance = 2200,
 		radaremitheight = 35,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 300,
 		sonardistance = 1250,
 		standingmoveorder = 0,
@@ -51,7 +49,6 @@ return {
 		turninplacespeedlimit = 0.66,
 		turnrate = 625,
 		unitname = "tllhickatee",
-		unitnumber = 863,
 		customparams = {
 			faction = "TLL",
 		},

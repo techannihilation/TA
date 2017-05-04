@@ -42,8 +42,6 @@ return {
 		objectname = "TLLPRIVATE",
 		radaremitheight = 39,
 		selfdestructas = "SMALL_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 455,
 		standingfireorder = 2,
 		standingmoveorder = 2,
@@ -52,7 +50,6 @@ return {
 		turninplacespeedlimit = 1.881,
 		turnrate = 1120,
 		unitname = "tllprivate",
-		unitnumber = 815,
 		upright = true,
 		customparams = {
 			faction = "TLL",

@@ -49,7 +49,6 @@ return {
 		script = "armseer.lua",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
-		side = "ARM",
 		sightdistance = 900,
 		standingmoveorder = 1,
 		steeringmode = 1,

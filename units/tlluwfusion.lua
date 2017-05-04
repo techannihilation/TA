@@ -32,10 +32,8 @@ return {
 		objectname = "tllUWFUSion",
 		radaremitheight = 42,
 		selfdestructas = "NUCLEAR_MISSILE",
-		side = "TLL",
 		sightdistance = 110,
 		unitname = "tlluwfusion",
-		unitnumber = 867,
 		workertime = 0,
 		yardmap = "oooooooooooooooooooooooo",
 		customparams = {

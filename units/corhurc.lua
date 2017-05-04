@@ -44,7 +44,6 @@ return {
 		objectname = "CORHURC",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
-		side = "CORE",
 		sightdistance = 221,
 		standingfireorder = 2,
 		standingmoveorder = 1,

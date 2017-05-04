@@ -41,7 +41,6 @@ return {
 		selfdestructas = "COMMANDER_BLAST",
 		sightdistance = 0,
 		unitname = "corech18",
-		unitnumber = 7210,
 		usebuildinggrounddecal = true,
 		workertime = 0,
 		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo",

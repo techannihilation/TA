@@ -44,8 +44,6 @@ return {
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 400,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -55,7 +53,6 @@ return {
 		turninplacespeedlimit = 1.188,
 		turnrate = 280,
 		unitname = "tllhplasma",
-		unitnumber = 17404,
 		workertime = 0,
 		customparams = {
 			faction = "TLL",

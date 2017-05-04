@@ -42,7 +42,6 @@ return {
 		script = "corgate.cob",
 		seismicsignature = 0,
 		selfdestructas = "MINE_NUKE",
-		side = "CORE",
 		sightdistance = 273,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,

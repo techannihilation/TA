@@ -48,7 +48,6 @@ return {
 		radardistance = 2200,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
-		side = "CORE",
 		sightdistance = 1130,
 		sonardistance = 900,
 		standingfireorder = 2,

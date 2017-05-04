@@ -41,8 +41,6 @@ return {
 		objectname = "TLLMANTA",
 		radaremitheight = 25,
 		selfdestructas = "SMALL_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 150,
 		sonardistance = 470,
 		standingfireorder = 2,
@@ -52,7 +50,6 @@ return {
 		turninplacespeedlimit = 1.617,
 		turnrate = 400,
 		unitname = "tllmanta",
-		unitnumber = 903,
 		upright = true,
 		waterline = 30,
 		customparams = {

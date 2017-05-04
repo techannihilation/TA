@@ -44,8 +44,6 @@ return {
 		radardistance = 0,
 		radaremitheight = 35,
 		selfdestructas = "CRAWL_BLAST",
-		shootme = 1,
-		side = "CORE",
 		sightdistance = 480,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -54,7 +52,6 @@ return {
 		turninplacespeedlimit = 0.594,
 		turnrate = 510,
 		unitname = "core_riptide",
-		unitnumber = 20000,
 		upright = false,
 		workertime = 0,
 		customparams = {

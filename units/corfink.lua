@@ -42,7 +42,6 @@ return {
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT_VTOL",
 		selfdestructcountdown = 1,
-		side = "CORE",
 		sightdistance = 800,
 		standingfireorder = 2,
 		standingmoveorder = 1,

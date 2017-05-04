@@ -47,8 +47,6 @@ return {
 		radardistance = 0,
 		radaremitheight = 36,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 350,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -57,7 +55,6 @@ return {
 		turninplacespeedlimit = 1.452,
 		turnrate = 816,
 		unitname = "tlllasbot",
-		unitnumber = 925,
 		upright = true,
 		workertime = 0,
 		customparams = {

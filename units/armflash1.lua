@@ -47,7 +47,6 @@ return {
 		script = "armflash.cob",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
-		side = "ARM",
 		sightdistance = 319,
 		standingfireorder = 2,
 		standingmoveorder = 1,

@@ -37,8 +37,6 @@ return {
 		radardistance = 1000,
 		radaremitheight = 65,
 		selfdestructas = "MEDIUM_BUILDING",
-		shootme = 1,
-		side = "ARM",
 		sightdistance = 950,
 		standingfireorder = 2,
 		unitname = "armhys",

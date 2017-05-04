@@ -38,8 +38,6 @@ return {
 		objectname = "TLLCOYOTE",
 		radaremitheight = 28,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 400,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -49,7 +47,6 @@ return {
 		turninplacespeedlimit = 1.452,
 		turnrate = 320,
 		unitname = "tllcoyote",
-		unitnumber = 8330,
 		upright = true,
 		customparams = {
 			faction = "TLL",

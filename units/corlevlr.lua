@@ -43,7 +43,6 @@ return {
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
-		side = "CORE",
 		sightdistance = 286,
 		standingfireorder = 2,
 		standingmoveorder = 1,

@@ -49,7 +49,6 @@ return {
 		radaremitheight = 30,
 		selfdestructas = "MEGA_BLAST1",
 		selfdestructcountdown = 10,
-		side = "ARM",
 		sightdistance = 1000,
 		turninplaceanglelimit = 360,
 		turninplacespeedlimit = 0.65,

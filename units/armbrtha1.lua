@@ -43,7 +43,6 @@ return {
 		script = "armbrtha.cob",
 		seismicsignature = 0,
 		selfdestructas = "ATOMIC_BLAST",
-		side = "ARM",
 		sightdistance = 273,
 		standingfireorder = 0,
 		turninplaceanglelimit = 140,

@@ -31,11 +31,9 @@ return {
 		radardistance = 0,
 		radaremitheight = 42,
 		selfdestructas = "SMALL_BUILDING",
-		side = "TLL",
 		sightdistance = 110,
 		tidalgenerator = 1,
 		unitname = "tllatidal",
-		unitnumber = 880,
 		workertime = 0,
 		yardmap = "oooo oooo oooo oooo",
 		customparams = {

@@ -43,7 +43,6 @@ return {
 		script = "corkarg.cob",
 		seismicsignature = 0,
 		selfdestructas = "BANTHA_NUKE",
-		side = "CORE",
 		sightdistance = 650,
 		standingfireorder = 2,
 		standingmoveorder = 1,

@@ -46,7 +46,6 @@ return {
 		script = "armpw.cob",
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
-		side = "ARM",
 		sightdistance = 429,
 		standingfireorder = 2,
 		standingmoveorder = 1,

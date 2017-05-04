@@ -40,13 +40,11 @@ return {
 		radardistance = 0,
 		radaremitheight = 56,
 		selfdestructas = "LARGE_BUILDING",
-		side = "TLL",
 		sightdistance = 220,
 		sortbias = 0,
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		unitname = "tllevp",
-		unitnumber = 30007,
 		workertime = 850,
 		yardmap = "oooccccccooo oooccccccooo oooccccccooo oooccccccooo oooccccccooo oooccccccooo oooccccccooo oooccccccooo",
 		buildoptions = {

@@ -44,7 +44,6 @@ return {
 		radardistancejam = 450,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
-		side = "CORE",
 		sightdistance = 250,
 		standingmoveorder = 1,
 		steeringmode = 1,

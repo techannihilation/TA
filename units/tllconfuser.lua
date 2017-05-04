@@ -42,8 +42,6 @@ return {
 		radardistancejam = 550,
 		radaremitheight = 39,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 200,
 		standingmoveorder = 0,
 		steeringmode = 1,
@@ -51,7 +49,6 @@ return {
 		turninplacespeedlimit = 0.6732,
 		turnrate = 825,
 		unitname = "tllconfuser",
-		unitnumber = 863,
 		customparams = {
 			faction = "TLL",
 		},

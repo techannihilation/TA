@@ -43,7 +43,6 @@ return {
 		seismicsignature = 0,
 		selfdestructas = "CORPYRO_BLAST",
 		selfdestructcountdown = 1,
-		side = "CORE",
 		sightdistance = 318,
 		standingfireorder = 2,
 		standingmoveorder = 1,

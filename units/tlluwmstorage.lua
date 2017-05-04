@@ -31,10 +31,8 @@ return {
 		radardistance = 0,
 		radaremitheight = 57,
 		selfdestructas = "SMALL_BUILDING",
-		side = "TLL",
 		sightdistance = 140,
 		unitname = "tlluwmstorage",
-		unitnumber = 856,
 		workertime = 0,
 		yardmap = "oooooooooooooooo",
 		customparams = {

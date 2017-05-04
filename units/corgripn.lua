@@ -44,7 +44,6 @@ return {
 		objectname = "CORGRIPN",
 		seismicsignature = 0,
 		selfdestructas = "ESTOR_BUILDINGEX",
-		side = "ARM",
 		sightdistance = 390,
 		standingfireorder = 2,
 		standingmoveorder = 2,

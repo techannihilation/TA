@@ -41,10 +41,7 @@ return {
 		nochasecategory = "VTOL",
 		objectname = "TLLEQUALIZER",
 		radaremitheight = 39,
-		scale = 0.5,
 		selfdestructas = "SMALL_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 450,
 		sonardistance = 375,
 		standingfireorder = 2,
@@ -54,7 +51,6 @@ return {
 		turninplacespeedlimit = 1.617,
 		turnrate = 328,
 		unitname = "tllequalizer",
-		unitnumber = 896,
 		waterline = 10,
 		customparams = {
 			faction = "TLL",

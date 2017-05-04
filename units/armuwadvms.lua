@@ -36,7 +36,6 @@ return {
 		radaremitheight = 43,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
-		side = "ARM",
 		sightdistance = 195,
 		unitname = "armuwadvms",
 		usebuildinggrounddecal = true,

@@ -43,7 +43,6 @@ return {
 		radardistance = 0,
 		radaremitheight = 97,
 		selfdestructas = "MINE_NUKE",
-		side = "ARM",
 		sightdistance = 322,
 		unitname = "armmas",
 		usebuildinggrounddecal = true,

@@ -42,7 +42,6 @@ return {
 		radardistance = 0,
 		radaremitheight = 32,
 		selfdestructas = "SHIPBLAST",
-		side = "CORE",
 		sightdistance = 220,
 		stealth = true,
 		unitname = "ccovertopscentre",

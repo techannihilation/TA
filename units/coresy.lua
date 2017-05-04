@@ -41,7 +41,6 @@ return {
 		radardistance = 100,
 		radaremitheight = 93,
 		selfdestructas = "ATOMIC_BLAST",
-		side = "CORE",
 		sightdistance = 324,
 		standingfireorder = 2,
 		standingmoveorder = 1,

@@ -43,10 +43,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "corhelo",
 		radardistance = 1900,
-		scale = 1,
 		selfdestructas = "SMALL_UNIT_VTOL",
-		shootme = 1,
-		side = "CORE",
 		sightdistance = 350,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -55,7 +52,6 @@ return {
 		turninplacespeedlimit = 5.94,
 		turnrate = 455,
 		unitname = "corhelo",
-		unitnumber = 1986,
 		upright = true,
 		workertime = 0,
 		customparams = {

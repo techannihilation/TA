@@ -41,7 +41,6 @@ return {
 		script = "armshock.cob",
 		seismicsignature = 0,
 		selfdestructas = "SHOCKER",
-		side = "ARM",
 		sightdistance = 625,
 		standingfireorder = 2,
 		standingmoveorder = 0,

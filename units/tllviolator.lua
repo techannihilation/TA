@@ -42,10 +42,7 @@ return {
 		nochasecategory = "VTOL",
 		objectname = "TLLVIOLATOR",
 		radaremitheight = 35,
-		scale = 0.5,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 520,
 		sonardistance = 420,
 		standingfireorder = 2,
@@ -55,7 +52,6 @@ return {
 		turninplacespeedlimit = 1.848,
 		turnrate = 325,
 		unitname = "tllviolator",
-		unitnumber = 894,
 		waterline = 8,
 		customparams = {
 			faction = "TLL",

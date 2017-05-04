@@ -38,8 +38,6 @@ return {
 		objectname = "TLLPUNCHER",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "TLL",
 		sightdistance = 550,
 		standingfireorder = 2,
 		standingmoveorder = 0,
@@ -49,7 +47,6 @@ return {
 		turninplacespeedlimit = 1.3134,
 		turnrate = 550,
 		unitname = "tllpuncher",
-		unitnumber = 840,
 		customparams = {
 			faction = "TLL",
 		},

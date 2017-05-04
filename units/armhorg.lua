@@ -44,8 +44,6 @@ return {
 		radardistance = 960,
 		radaremitheight = 25,
 		selfdestructas = "TWILIGHT",
-		shootme = 1,
-		side = "ARM",
 		sightdistance = 300,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -55,7 +53,6 @@ return {
 		turninplacespeedlimit = 0.858,
 		turnrate = 450,
 		unitname = "armhorg",
-		unitnumber = 66,
 		workertime = 0,
 		customparams = {
 			faction = "ARM",

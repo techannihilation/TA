@@ -45,8 +45,6 @@ return {
 		radardistance = 0,
 		radaremitheight = 28,
 		selfdestructas = "BIG_UNIT",
-		shootme = 1,
-		side = "ARM",
 		sightdistance = 260,
 		standingfireorder = 2,
 		standingmoveorder = 0,
@@ -56,7 +54,6 @@ return {
 		turninplacespeedlimit = 1.0626,
 		turnrate = 489,
 		unitname = "armiguana",
-		unitnumber = 176,
 		upright = true,
 		workertime = 0,
 		customparams = {
