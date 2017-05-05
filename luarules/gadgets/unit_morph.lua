@@ -403,6 +403,24 @@ local GetUnitRank = function() return 0 end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
+local function SplitNames(name)
+  local Desc = ""
+  local string = tostring(name)
+  local longestword = 1
+  for word in string.gmatch(string,"%w+") do 
+    if string.len(word) > longestword then
+      longestword = string.len(word)
+    end
+  end
+  for word in string.gmatch(string,"%w+") do
+    padding = math.floor(longestword-string.len(word))
+    for p = 1, padding do
+      Desc =  Desc .. " "
+    end
+    Desc =  Desc .. word .. "\n"
+  end
+return Desc
+end
 
 local function UnitReqCheck(teamID, reqUnit)
   if (reqUnit==-1) then return true end
@@ -470,14 +488,14 @@ local function AddMorphCmdDesc(unitID, unitDefID, teamID, morphDef, teamTech)
   local unitRank = GetUnitRank(unitID)
   local teamOwnsReqUnit = UnitReqCheck(teamID,morphDef.require)
   morphCmdDesc.tooltip = GetMorphToolTip(unitID, unitDefID, teamID, morphDef, teamTech, unitXP, unitRank, teamOwnsReqUnit)
+  local humDesc = ""
 
   if morphDef.texture then
     morphCmdDesc.texture = "LuaRules/Images/Morph/".. morphDef.texture
     morphCmdDesc.name = ''
   else
     local ud = UnitDefs[morphDef.into]
-    local string = tostring(ud.humanName)
-    local humDesc = ""
+    local string = SplitNames(ud.humanName)
     local longestword = 1
     for word in string.gmatch(string,"%w+") do 
       if string.len(word) > longestword then
@@ -621,9 +639,10 @@ local function StopMorph(unitID, morphData)
 
   SendToUnsynced("unit_morph_stop", unitID)
 
-  local cmdDescID = SpFindUnitCmdDesc(unitID, morphData.def.stopCmd)
+  local cmdDescID = SpFindUnitCmdDesc(unitID, morphData.def.stopCmd,morphData.def.cmd)
   if (cmdDescID) then
-    SpEditUnitCmdDesc(unitID, cmdDescID, {id=morphData.def.cmd, name=morphCmdDesc.name})
+  local name = SplitNames(UnitDefs[morphData.def.into].humanName)
+    SpEditUnitCmdDesc(unitID, cmdDescID, {id=morphData.def.cmd, name=name})  --morphCmdDesc.name})
   end
 end
 
