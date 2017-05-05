@@ -63,7 +63,6 @@ return {
 		waterline = 6,
 		customparams = {
 			faction = "TLL",
-			requiretech = "Advanced T3 Unit Research Centre",
 		},
 		featuredefs = {
 			dead = {
