@@ -17,6 +17,8 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "All-Terrain Assault Mech",
+		energymake = 10,
+		enregyuse = 10,
 		explodeas = "MECH_BLASTSML",
 		firestandorders = 1,
 		footprintx = 4,
