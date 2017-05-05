@@ -302,6 +302,7 @@ return {
 			},
 			[3] = {
 				def = "ROCKET",
+				onlytargetcategory = "NOTVTOL",
 			},
 			[4] = {
 				def = "BSCANNON",
