@@ -28,7 +28,7 @@ return {
 		losemitheight = 25,
 		maneuverleashlength = 640,
 		mass = 229,
-		maxdamage = 912,
+		maxdamage = 910,
 		maxslope = 16,
 		maxvelocity = 1.55,
 		maxwaterdepth = 18,
@@ -80,7 +80,6 @@ return {
 			[26] = "tllshoretorp",
 			[27] = "tlljuno",
 			[28] = "tllsy",
-			[29] = "tlldcsta",
 		},
 		customparams = {
 			faction = "TLL",
