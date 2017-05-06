@@ -3,7 +3,7 @@ return {
 		acceleration = 0.206,
 		brakerate = 0.786,
 		buildcostenergy = 325000,
-		buildcostmetal = 16350,
+		buildcostmetal = 17950,
 		builder = false,
 		buildpic = "armraz1.dds",
 		buildtime = 388000,
