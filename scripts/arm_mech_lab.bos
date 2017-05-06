@@ -1,0 +1,345 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, NE_block, glow1, SE_block, glow2, SW_block, glow3, NW_block,
+       glow4, column_z_displacer, column, head, nc1, nc2, nc3, nc4,
+       nc5, nanogun1, nanogun2, nanogun3, nanogun4, nanogun5, headglow, hc_z_mover,
+       hc1, hc2, hc3, hc4, hc5, np, nc_z_mover, ncp1,
+       ncp2, ncp3, ncp4, ncp5, ncpp1, ncpp2, ncpp4, ncpp5;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3;
+
+// Signal definitions
+#define SIG_ACTIVATE			2
+
+
+Open()
+{
+	move NE_block to x-axis [-13.300000] speed [13.300000];
+	move NE_block to z-axis [-5.600000] speed [5.600000];
+	move SE_block to x-axis [-11.900000] speed [11.900000];
+	move SE_block to z-axis [2.100000] speed [2.100000];
+	move SW_block to x-axis [11.900000] speed [11.900000];
+	move SW_block to z-axis [2.100000] speed [2.100000];
+	move NW_block to x-axis [13.300000] speed [13.300000];
+	move NW_block to z-axis [-5.600000] speed [5.600000];
+	wait-for-move NE_block along x-axis;
+	sleep 1000;
+	move head to y-axis [30.000000] speed [30.000000];
+	wait-for-move head along y-axis;
+	move head to y-axis [35.000000] speed [15.000000];
+	wait-for-move head along y-axis;
+	move head to y-axis [37.500000] speed [7.500000];
+	wait-for-move head along y-axis;
+	move head to y-axis [38.750000] speed [3.750000];
+	wait-for-move head along y-axis;
+	
+	
+	
+	sleep 1000;
+	move hc1 to x-axis [-1.400000] speed [1.400000];
+	move hc1 to y-axis [3.000000] speed [3.000000];
+	move hc2 to x-axis [-2.000000] speed [2.000000];
+	move hc2 to y-axis [-1.000000] speed [1.000000];
+	move hc3 to y-axis [-2.000000] speed [2.000000];
+	move hc4 to x-axis [2.000000] speed [2.000000];
+	move hc4 to y-axis [-1.000000] speed [1.000000];
+	move hc5 to x-axis [1.400000] speed [1.400000];
+	move hc5 to y-axis [3.000000] speed [3.000000];
+	wait-for-move hc1 along x-axis;
+	sleep 1000;
+	move hc_z_mover to z-axis [-14.000000] speed [14.000000];
+	turn nc1 to x-axis <-90.000000> speed <90.000000>;
+	turn nc2 to y-axis <90.000000> speed <90.000000>;
+	turn nc3 to x-axis <90.000000> speed <90.000000>;
+	turn nc4 to y-axis <-90.000000> speed <90.000000>;
+	turn nc5 to x-axis <-90.000000> speed <90.000000>;
+	wait-for-move hc_z_mover along z-axis;
+	signal 4;
+	set-signal-mask 4;
+}
+
+Close()
+{
+	signal 4;
+	turn nc1 to x-axis <0.000000> speed <90.000000>;
+	turn nc2 to y-axis <0.000000> speed <90.000000>;
+	turn nc3 to x-axis <0.000000> speed <90.000000>;
+	turn nc4 to y-axis <0.000000> speed <90.000000>;
+	turn nc5 to x-axis <0.000000> speed <90.000000>;
+	dont-cache glow1;
+	dont-cache glow2;
+	dont-cache glow3;
+	dont-cache glow4;
+	move hc_z_mover to z-axis [0.000000] speed [14.000000];
+	move nc_z_mover to z-axis [0.000000] speed [5.000000];
+	wait-for-move hc_z_mover along z-axis;
+	sleep 100;
+	move hc1 to x-axis [0.000000] speed [1.400000];
+	move hc1 to y-axis [0.000000] speed [3.000000];
+	move hc2 to x-axis [0.000000] speed [2.000000];
+	move hc2 to y-axis [0.000000] speed [1.000000];
+	move hc3 to y-axis [0.000000] speed [2.000000];
+	move hc4 to x-axis [0.000000] speed [2.000000];
+	move hc4 to y-axis [0.000000] speed [1.000000];
+	move hc5 to x-axis [0.000000] speed [1.400000];
+	move hc5 to y-axis [0.000000] speed [3.000000];
+	wait-for-move column_z_displacer along z-axis;
+	sleep 100;
+	
+	
+	move head to y-axis [5.000000] speed [30.000000];
+	wait-for-move head along y-axis;
+	move head to y-axis [2.500000] speed [15.000000];
+	wait-for-move head along y-axis;
+	move head to y-axis [1.250000] speed [7.500000];
+	wait-for-move head along y-axis;
+	move head to y-axis [0000] speed [3.7500000];
+	wait-for-move head along y-axis;
+	
+	
+	
+	move NE_block to x-axis [0.000000] speed [13.300000];
+	move NE_block to z-axis [0.000000] speed [5.600000];
+	move SE_block to x-axis [0.000000] speed [11.900000];
+	move SE_block to z-axis [0.000000] speed [2.100000];
+	move SW_block to x-axis [0.000000] speed [11.900000];
+	move SW_block to z-axis [0.000000] speed [2.100000];
+	move NW_block to x-axis [0.000000] speed [13.300000];
+	move NW_block to z-axis [0.000000] speed [5.600000];
+	sleep 100;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from NE_block;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Bla()
+{
+	set YARD_OPEN to 1;
+	while( !get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 1;
+	}
+	set BUGGER_OFF to 0;
+}
+
+Blabla()
+{
+	set YARD_OPEN to 0;
+	while( get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 0;
+	}
+	set BUGGER_OFF to 0;
+}
+
+Activate()
+{
+	while( Static_Var_2 )
+	{
+		sleep 200;
+	}
+	signal SIG_ACTIVATE;
+	Static_Var_2 = 1;
+	if( !Static_Var_3 )
+	{
+		call-script Open();
+		Static_Var_3 = 1;
+	}
+	call-script Bla();
+	set INBUILDSTANCE to 1;
+	Static_Var_2 = 0;
+}
+
+Deactivate()
+{
+	while( Static_Var_2 )
+	{
+		sleep 200;
+	}
+	signal SIG_ACTIVATE;
+	set-signal-mask SIG_ACTIVATE;
+	set INBUILDSTANCE to 0;
+	sleep 2500;
+	Static_Var_2 = 1;
+	call-script Blabla();
+	if( Static_Var_3 )
+	{
+		call-script Close();
+		Static_Var_3 = 0;
+	}
+	Static_Var_2 = 0;
+}
+
+Create()
+{
+	dont-cache glow1;
+	dont-cache glow2;
+	dont-cache glow3;
+	dont-cache glow4;
+	dont-cache headglow;
+	dont-shade base;
+	dont-shade NE_block;
+	dont-shade glow1;
+	dont-shade SE_block;
+	dont-shade glow2;
+	dont-shade SW_block;
+	dont-shade glow3;
+	dont-shade NW_block;
+	dont-shade glow4;
+	dont-shade column_z_displacer;
+	dont-shade column;
+	dont-shade head;
+	dont-shade nc1;
+	dont-shade nc2;
+	dont-shade nc3;
+	dont-shade nc4;
+	dont-shade nc5;
+	dont-shade headglow;
+	dont-shade hc1;
+	dont-shade hc2;
+	dont-shade hc3;
+	dont-shade hc4;
+	dont-shade hc5;
+	Static_Var_2 = 0;
+	Static_Var_3 = 0;
+	Static_Var_1 = 1;
+	turn ncp1 to z-axis <31.000000> now;
+	turn ncp2 to z-axis <16.000000> now;
+	turn ncp4 to z-axis <-16.000000> now;
+	turn ncp5 to z-axis <-31.000000> now;
+	
+	turn ncpp1 to y-axis <10.000000> now;
+	turn ncpp2 to x-axis <20.000000> now;
+	turn ncpp4 to x-axis <20.000000> now;
+	turn ncpp5 to y-axis <-10.000000> now;
+	
+	turn column to x-axis <-31.500000> now;
+	turn head to x-axis <31.500000> now;
+	
+	
+	start-script SmokeUnit();
+}
+
+QueryNanoPiece(piecenum)
+{
+	if( Static_Var_1 == 1 )
+	{
+		piecenum = nanogun1;
+	}
+	if( Static_Var_1 == 2 )
+	{
+		piecenum = nanogun2;
+	}
+	if( Static_Var_1 == 3 )
+	{
+		piecenum = nanogun3;
+	}
+	if( Static_Var_1 == 4 )
+	{
+		piecenum = nanogun4;
+	}
+	if( Static_Var_1 == 5 )
+	{
+		piecenum = nanogun5;
+	}
+	++Static_Var_1;
+	if( Static_Var_1 > 5 )
+	{
+		Static_Var_1 = 1;
+	}
+}
+
+StartBuilding()
+{
+	
+}
+
+StopBuilding()
+{
+	
+}
+
+QueryBuildInfo(piecenum)
+{
+	piecenum = np;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type BITMAPONLY | BITMAP1;
+		explode NE_block type BITMAPONLY | BITMAP2;
+		explode SE_block type SHATTER | BITMAP4;
+		explode SW_block type BITMAPONLY | BITMAP1;
+		explode NW_block type BITMAPONLY | BITMAP2;
+		explode head type BITMAPONLY | BITMAP3;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type BITMAPONLY | BITMAP1;
+		explode NE_block type SHATTER | BITMAP2;
+		explode SE_block type SHATTER | BITMAP4;
+		explode SW_block type BITMAPONLY | BITMAP1;
+		explode NW_block type BITMAPONLY | BITMAP2;
+		explode head type BITMAPONLY | BITMAP3;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type BITMAPONLY | BITMAP1;
+		explode NE_block type SHATTER | BITMAP2;
+		explode SE_block type SHATTER | BITMAP4;
+		explode SW_block type BITMAPONLY | BITMAP1;
+		explode NW_block type SHATTER | BITMAP2;
+		explode head type SHATTER | BITMAP3;
+		return (0);
+	}
+	corpsetype = 3;
+	explode base type BITMAPONLY | BITMAP1;
+	explode NE_block type SHATTER | BITMAP2;
+	explode SE_block type SHATTER | BITMAP4;
+	explode SW_block type BITMAPONLY | BITMAP1;
+	explode NW_block type SHATTER | BITMAP2;
+	explode head type SHATTER | BITMAP3;
+}

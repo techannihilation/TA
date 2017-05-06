@@ -1,0 +1,434 @@
+piece body, nano1, nano2, nano3, nano4, target, base, buildinga, buildingb, light1, light2, light3, light4, glow1, glow2, glow3, glow4, pylon1, pylon2, pylon3, pylon4, loarm1, loarm2, loarm3, loarm4, midarm1, midarm2, midarm3, midarm4, higharm1, higharm2, higharm3, higharm4;
+
+static-var Nano;
+static-var StaticVar1;
+static-var StaticVar2;
+
+#define SIG_0 0
+#define SIG_2 2
+
+activatescr()
+{
+	if (TRUE)
+	{
+	  move buildinga to x-axis [5.00] speed [1.20];
+	  move buildingb to x-axis [-5.00] speed [1.20];
+	  sleep 750;
+	}
+	if (TRUE)
+	{
+	  turn pylon1 to y-axis <-45.01> speed <7.00>;
+	  turn pylon2 to y-axis <45.01> speed <7.00>;
+	  turn pylon3 to y-axis <45.01> speed <7.00>;
+	  turn pylon4 to y-axis <-45.01> speed <7.00>;
+	  sleep 500;
+	}
+	if (TRUE)
+	{
+	  turn loarm1 to z-axis <-112.52> speed <18.00>;
+	  turn loarm2 to z-axis <-112.52> speed <18.00>;
+	  turn loarm3 to z-axis <112.52> speed <18.00>;
+	  turn loarm4 to z-axis <112.52> speed <18.00>;
+	  sleep 750;
+	}
+	if (TRUE)
+	{
+	  turn midarm1 to z-axis <-45.01> speed <12.00>;
+	  turn midarm2 to z-axis <-45.01> speed <12.00>;
+	  turn midarm3 to z-axis <45.01> speed <12.00>;
+	  turn midarm4 to z-axis <45.01> speed <12.00>;
+	  sleep 750;
+	}
+	if (TRUE)
+	{
+	  turn higharm1 to z-axis <-45.01> speed <9.00>;
+	  turn higharm2 to z-axis <-45.01> speed <9.00>;
+	  turn higharm3 to z-axis <45.01> speed <9.00>;
+	  turn higharm4 to z-axis <45.01> speed <9.00>;
+	  sleep 3500;
+	}
+	if (TRUE)
+	{
+	  show nano1;
+	  explode nano1 type (32 | 4096);
+	  hide nano1;
+	  sleep 500;
+	}
+	if (TRUE)
+	{
+	  show nano2;
+	  explode nano2 type (32 | 4096);
+	  hide nano2;
+	  sleep 500;
+	}
+	if (TRUE)
+	{
+	  show nano3;
+	  explode nano3 type (32 | 4096);
+	  hide nano3;
+	  sleep 500;
+	}
+	if (TRUE)
+	{
+	  show nano4;
+	  explode nano4 type (32 | 4096);
+	  hide nano4;
+	  sleep 500;
+	}
+	sleep 34;
+	return 0;
+}
+// end of function activatescr
+
+deactivatescr()
+{
+	if (TRUE)
+	{
+	  show nano4;
+	  explode nano4 type (32 | 4096);
+	  hide nano4;
+	  sleep 250;
+	}
+	if (TRUE)
+	{
+	  show nano3;
+	  explode nano3 type (32 | 4096);
+	  hide nano3;
+	  sleep 250;
+	}
+	if (TRUE)
+	{
+	  show nano2;
+	  explode nano2 type (32 | 4096);
+	  hide nano2;
+	  sleep 250;
+	}
+	if (TRUE)
+	{
+	  show nano1;
+	  explode nano1 type (32 | 4096);
+	  hide nano1;
+	  sleep 250;
+	}
+	if (TRUE)
+	{
+	  turn higharm4 to z-axis <0.00> speed <9.75>;
+	  turn higharm3 to z-axis <0.00> speed <9.75>;
+	  turn higharm2 to z-axis <0.00> speed <9.75>;
+	  turn higharm1 to z-axis <0.00> speed <9.75>;
+	  sleep 750;
+	}
+	if (TRUE)
+	{
+	  turn midarm4 to z-axis <0.00> speed <20.00>;
+	  turn midarm3 to z-axis <0.00> speed <20.00>;
+	  turn midarm2 to z-axis <0.00> speed <20.00>;
+	  turn midarm1 to z-axis <0.00> speed <20.00>;
+	  sleep 750;
+	}
+	if (TRUE)
+	{
+	  turn loarm4 to z-axis <0.00> speed <30.01>;
+	  turn loarm3 to z-axis <0.00> speed <30.01>;
+	  turn loarm2 to z-axis <0.00> speed <30.01>;
+	  turn loarm1 to z-axis <0.00> speed <30.01>;
+	  sleep 500;
+	}
+	if (TRUE)
+	{
+	  turn pylon4 to y-axis <0.00> speed <14.00>;
+	  turn pylon3 to y-axis <0.00> speed <14.00>;
+	  turn pylon2 to y-axis <0.00> speed <14.00>;
+	  turn pylon1 to y-axis <0.00> speed <14.00>;
+	  sleep 750;
+	}
+	if (TRUE)
+	{
+	  move buildingb to x-axis [0.00] speed [3.00];
+	  move buildinga to x-axis [0.00] speed [3.00];
+	  sleep 5000;
+	}
+	sleep 34;
+	return 0;
+}
+// end of function deactivatescr
+
+SmokeUnit()
+{
+	var Var0;
+	var Var1;
+	var Var2;
+	while (get 17)
+	{
+	  sleep 400;
+	}
+	while (TRUE)
+	{
+	  Var0 = get 4;
+	  if ((Var0 < 66))
+	  {
+		Var2 = (256 | 2);
+		if ((rand (1, 66) < Var0))
+		{
+		  Var2 = (256 | 1);
+		}
+		emit-sfx Var2 from base;
+	  }
+	  Var1 = (Var0 * 50);
+	  if ((Var1 < 200))
+	  {
+		Var1 = 200;
+	  }
+	  sleep Var1;
+	}
+	return 0;
+}
+// end of function SmokeUnit
+
+OpenYard()
+{
+	set 18 to 1;
+	while (!get 18)
+	{
+	  set 19 to 1;
+	  sleep 1500;
+	  set 18 to 1;
+	}
+	set 19 to 0;
+	return 0;
+}
+// end of function OpenYard
+
+CloseYard()
+{
+	set 18 to 0;
+	while (get 18)
+	{
+	  set 19 to 1;
+	  sleep 1500;
+	  set 18 to 0;
+	}
+	set 19 to 0;
+	return 0;
+}
+// end of function CloseYard
+
+go()
+{
+	cache light1;
+	cache light2;
+	cache light3;
+	cache light4;
+	hide light1;
+	hide light2;
+	hide light3;
+	hide light4;
+	show glow1;
+	show glow2;
+	show glow3;
+	show glow4;
+	dont-cache glow1;
+	dont-cache glow2;
+	dont-cache glow3;
+	dont-cache glow4;
+	call-script activatescr();
+	call-script OpenYard();
+	set 5 to 1;
+	return 0;
+}
+// end of function go
+
+stop()
+{
+	set 5 to 0;
+	call-script CloseYard();
+	call-script deactivatescr();
+	cache glow1;
+	cache glow2;
+	cache glow3;
+	cache glow4;
+	hide glow1;
+	hide glow2;
+	hide glow3;
+	hide glow4;
+	show light1;
+	show light2;
+	show light3;
+	show light4;
+	dont-cache light1;
+	dont-cache light2;
+	dont-cache light3;
+	dont-cache light4;
+	return 0;
+}
+// end of function stop
+
+InitState()
+{
+	StaticVar1 = 1;
+	StaticVar2 = 0;
+	return 0;
+}
+// end of function InitState
+
+RequestState(Var0)
+{
+	var Var1;
+	if (StaticVar2)
+	{
+	  StaticVar1 = Var0;
+	  return 0;
+	}
+	StaticVar2 = 1;
+	Var1 = StaticVar1;
+	StaticVar1 = Var0;
+	while ((StaticVar1 != Var1))
+	{
+	  if ((StaticVar1 == 0))
+	  {
+		call-script go();
+		Var1 = 0;
+	  }
+	  if ((StaticVar1 == 1))
+	  {
+		call-script stop();
+		Var1 = 1;
+	  }
+	}
+	StaticVar2 = 0;
+	return 0;
+}
+// end of function RequestState
+
+Create()
+{
+	Nano = 1;
+	hide nano1;
+	hide nano2;
+	hide nano3;
+	hide nano4;
+	dont-shade glow1;
+	dont-shade glow2;
+	dont-shade glow3;
+	dont-shade glow4;
+	hide glow1;
+	hide glow2;
+	hide glow3;
+	hide glow4;
+	dont-shade pylon1;
+	dont-shade pylon2;
+	dont-shade pylon3;
+	dont-shade pylon4;
+	dont-shade loarm1;
+	dont-shade loarm2;
+	dont-shade loarm3;
+	dont-shade loarm4;
+	dont-shade midarm1;
+	dont-shade midarm2;
+	dont-shade midarm3;
+	dont-shade midarm4;
+	dont-shade higharm1;
+	dont-shade higharm2;
+	dont-shade higharm3;
+	dont-shade higharm4;
+	dont-shade light1;
+	dont-shade light2;
+	dont-shade light3;
+	dont-shade light4;
+	dont-cache light1;
+	dont-cache light2;
+	dont-cache light3;
+	dont-cache light4;
+	call-script InitState();
+	start-script SmokeUnit();
+	return 0;
+}
+// end of function Create
+
+QueryNanoPiece()
+{
+	var Var0;
+	if ((Nano == 1))
+	{
+	  Var0 = 1;
+	}
+	if ((Nano == 2))
+	{
+	  Var0 = 2;
+	}
+	if ((Nano == 3))
+	{
+	  Var0 = 3;
+	}
+	if ((Nano == 4))
+	{
+	  Var0 = 4;
+	}
+	Nano = (Nano + 1);
+	if ((Nano == 5))
+	{
+	  Nano = 1;
+	}
+	return 0;
+}
+// end of function QueryNanoPiece
+
+Activate()
+{
+	signal SIG_2;
+	start-script RequestState(0);
+	return 0;
+}
+// end of function Activate
+
+Deactivate()
+{
+	signal SIG_2;
+	set-signal-mask SIG_2;
+	set-signal-mask SIG_0;
+	start-script RequestState(1);
+	return 0;
+}
+// end of function Deactivate
+
+QueryBuildInfo()
+{
+	var Var0;
+	Var0 = 5;
+	return 0;
+}
+// end of function QueryBuildInfo
+
+SweetSpot()
+{
+	var Var0;
+	Var0 = 0;
+	return 0;
+}
+// end of function SweetSpot
+
+Killed()
+{
+	var Var0;
+	var Var1;
+	if ((Var0 <= 25))
+	{
+	  Var1 = 1;
+	  explode body type (32 | 256);
+	  return 0;
+	}
+	if ((Var0 <= 50))
+	{
+	  Var1 = 2;
+	  explode body type (32 | 256);
+	  return 0;
+	}
+	if ((Var0 <= 99))
+	{
+	  Var1 = 3;
+	  explode body type (32 | 256);
+	  return 0;
+	}
+	return 0;
+}
+// end of function Killed
