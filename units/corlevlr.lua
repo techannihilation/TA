@@ -2,11 +2,11 @@ return {
 	corlevlr = {
 		acceleration = 0.0364,
 		brakerate = 1.0854,
-		buildcostenergy = 2546,
+		buildcostenergy = 2540,
 		buildcostmetal = 275,
 		builder = false,
 		buildpic = "corlevlr.dds",
-		buildtime = 3009,
+		buildtime = 3000,
 		canattack = true,
 		canguard = true,
 		canmove = true,
@@ -146,7 +146,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 550,
 				damage = {
-					commanders = 197,
+					commanders = 190,
 					default = 290,
 					subs = 5,
 				},
