@@ -348,7 +348,7 @@ local function UpdateGrid(g,cmds,ordertype)
 		end
 
 		if (cmd.disabled) then
-			icon.texturecolor = {0.55,0.55,0.55,0.65}
+			icon.texturecolor = {0.45,0.45,0.45,0.98}
 		else
 			if (ordertype ~= 1) then
 				if icon.texture == buttonTexture then
