@@ -174,7 +174,7 @@ return {
 				model = "missile",
 				name = "KarganethMissiles",
 				noselfdamage = true,
-				range = 1000,
+				range = 900,
 				reloadtime = 0.15,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
