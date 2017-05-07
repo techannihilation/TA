@@ -84,7 +84,7 @@ return {
 			[31] = "corsy",
 		},
 		customparams = {
-			faction = "COR",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
