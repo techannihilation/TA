@@ -4,7 +4,7 @@ return {
 		airsightdistance = 1100,
 		brakerate = 0.7,
 		buildcostenergy = 318000,
-		buildcostmetal = 16250,
+		buildcostmetal = 17050,
 		builder = false,
 		buildpic = "corkarg1.dds",
 		buildtime = 300000,
