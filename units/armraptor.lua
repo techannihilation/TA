@@ -2,7 +2,7 @@ return {
 	armraptor = {
 		acceleration = 0.21,
 		brakerate = 0.63,
-		buildcostenergy = 290000,
+		buildcostenergy = 315000,
 		buildcostmetal = 19850,
 		builder = false,
 		buildpic = "armraptor.dds",
