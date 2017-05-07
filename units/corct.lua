@@ -2,7 +2,7 @@ return {
 	corct = {
 		acceleration = 0.15,
 		brakerate = 0.45,
-		buildcostenergy = 3056,
+		buildcostenergy = 3055,
 		buildcostmetal = 145,
 		builddistance = 102,
 		builder = true,
@@ -17,9 +17,9 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Tech Level 1",
-		energymake = 0.7,
+		energymake = 7,
 		energystorage = 65,
-		energyuse = 0.7,
+		energyuse = 0,
 		explodeas = "BIG_UNITEX",
 		footprintx = 3,
 		footprintz = 3,
@@ -31,6 +31,7 @@ return {
 		maxdamage = 2150,
 		maxvelocity = 1,
 		maxwaterdepth = 27,
+		metalmake = 0.10,
 		metalstorage = 65,
 		mobilestandorders = 1,
 		movementclass = "TKBOT3",
@@ -83,7 +84,7 @@ return {
 			[31] = "corsy",
 		},
 		customparams = {
-			faction = "ARM",
+			faction = "COR",
 		},
 		featuredefs = {
 			dead = {
