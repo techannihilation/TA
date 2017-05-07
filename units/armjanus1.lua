@@ -2,11 +2,11 @@ return {
 	armjanus1 = {
 		acceleration = 0.0198,
 		brakerate = 0.165,
-		buildcostenergy = 3478,
-		buildcostmetal = 497,
+		buildcostenergy = 3520,
+		buildcostmetal = 490,
 		builder = false,
 		buildpic = "armjanus1.dds",
-		buildtime = 3545,
+		buildtime = 4200,
 		canattack = true,
 		canguard = true,
 		canmove = true,
@@ -65,7 +65,7 @@ return {
 		featuredefs = {
 			armjanus_dead = {
 				blocking = true,
-				damage = 1284,
+				damage = 900,
 				description = "Ruinous Janus Wreckage",
 				energy = 0,
 				featuredead = "armjanus_heap",
@@ -77,7 +77,7 @@ return {
 			},
 			armjanus_heap = {
 				blocking = false,
-				damage = 1606,
+				damage = 1050,
 				description = "Ruinous Janus Debris",
 				energy = 0,
 				footprintx = 2,
@@ -120,7 +120,7 @@ return {
 		},
 		weapondefs = {
 			janus_rocket1 = {
-				areaofeffect = 190,
+				areaofeffect = 150,
 				avoidfeature = false,
 				cegtag = "Arm_Janus_Rocket",
 				craterareaofeffect = 285,
@@ -132,8 +132,8 @@ return {
 				model = "megamisl",
 				name = "HeavyRocket",
 				noselfdamage = false,
-				range = 440,
-				reloadtime = 12,
+				range = 420,
+				reloadtime = 6,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
 				soundhitvolume = 8,
@@ -155,8 +155,8 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 225,
 				damage = {
-					commanders = 319,
-					default = 470,
+					commanders = 200,
+					default = 300,
 					subs = 5,
 				},
 			},
