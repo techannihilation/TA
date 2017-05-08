@@ -6,7 +6,7 @@ local weaponName = "twilight"
 --------------------------------------------------------------------------------
 
 local weaponDef = {
-	areaofeffect = 400,
+	areaofeffect = 300,
 	commandfire = 1,
 	craterboost = 0,
 	cratermult = 0,
@@ -26,11 +26,8 @@ local weaponDef = {
 	tolerance = 7000,
 	turret = 1,
 	damage = {
-		blackhydra = 30,
-		commanders = 30,
+		commanders = 1000,
 		default = 4000,
-		krogoth = 30,
-		seadragon = 30,
 	},
 }
 --------------------------------------------------------------------------------
