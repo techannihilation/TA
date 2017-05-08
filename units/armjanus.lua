@@ -68,7 +68,7 @@ return {
 				collisionvolumeoffsets = "-1.45095062256 -4.56400614014 0.266441345215",
 				collisionvolumescales = "28.8743438721 18.1917877197 33.2305145264",
 				collisionvolumetype = "Box",
-				damage = 790,
+				damage = 1086,
 				description = "Janus Wreckage",
 				energy = 0,
 				featuredead = "heap",
@@ -80,7 +80,7 @@ return {
 			},
 			heap = {
 				blocking = false,
-				damage = 600,
+				damage = 1358,
 				description = "Janus Debris",
 				energy = 0,
 				footprintx = 2,
