@@ -65,7 +65,7 @@ return {
 		featuredefs = {
 			armjanus_dead = {
 				blocking = true,
-				damage = 900,
+				damage = 1284,
 				description = "Ruinous Janus Wreckage",
 				energy = 0,
 				featuredead = "armjanus_heap",
@@ -77,7 +77,7 @@ return {
 			},
 			armjanus_heap = {
 				blocking = false,
-				damage = 1050,
+				damage = 1606,
 				description = "Ruinous Janus Debris",
 				energy = 0,
 				footprintx = 2,
