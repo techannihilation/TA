@@ -6,20 +6,20 @@ local weaponName = "mine_heavy"
 --------------------------------------------------------------------------------
 
 local weaponDef = {
-	areaofeffect = 300,
+	areaofeffect = 200,
 	craterboost = 0,
 	cratermult = 0,
-	edgeeffectiveness = 0.69999998807907,
+	edgeeffectiveness = 0.7,
 	explosiongenerator = [[custom:FLASHNUKE240]],
 	impulseboost = 0,
 	name = [[HeavyMine]],
 	range = 480,
-	reloadtime = 3.5999999046326,
+	reloadtime = 3,
 	soundhit = [[xplolrg3]],
 	soundstart = [[largegun]],
 	weaponvelocity = 250,
 	damage = {
-		default = 1250,
+		default = 1200,
 		minelayers = 25,
 		mines = 0.5,
 	},
