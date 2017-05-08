@@ -16,7 +16,7 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Heavy Plasma Cannon",
-		explodeas = "SHOCKER",
+		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
 		footprintx = 3,
 		footprintz = 3,
