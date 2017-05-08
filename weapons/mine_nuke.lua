@@ -22,7 +22,7 @@ local weaponDef = {
 	weaponvelocity = 250,
 	damage = {
 		commanders = 1500,
-		default = 6000,
+		default = 4500,
 		mines = 50,
 	},
 }
