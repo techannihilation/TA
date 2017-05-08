@@ -2,11 +2,11 @@ return {
 	armraven1 = {
 		acceleration = 0.108,
 		brakerate = 0.564,
-		buildcostenergy = 48667,
-		buildcostmetal = 1654,
+		buildcostenergy = 32000,
+		buildcostmetal = 1650,
 		builder = false,
 		buildpic = "armraven1.dds",
-		buildtime = 45522,
+		buildtime = 40000,
 		canattack = true,
 		canguard = true,
 		canmove = true,
@@ -157,6 +157,7 @@ return {
 				weaponvelocity = 410,
 				wobble = 1800,
 				damage = {
+					commanders = 120,
 					default = 160,
 					subs = 5,
 				},
