@@ -20,7 +20,7 @@ local weaponDef = {
 	soundstart = [[largegun]],
 	weaponvelocity = 250,
 	damage = {
-		default = 300,
+		default = 400,
 		minelayers = 10,
 		mines = 1,
 	},
