@@ -40,7 +40,7 @@ return {
 		radaremitheight = 35,
 		script = "armshock.cob",
 		seismicsignature = 0,
-		selfdestructas = "SHOCKER",
+		selfdestructas = "MECH_BLAST",
 		sightdistance = 450,
 		standingfireorder = 2,
 		standingmoveorder = 0,
