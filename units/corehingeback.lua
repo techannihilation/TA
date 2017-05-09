@@ -55,7 +55,7 @@ return {
 		unitname = "corehingeback",
 		workertime = 0,
 		customparams = {
-			faction = "ARM",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
