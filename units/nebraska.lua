@@ -49,7 +49,7 @@ return {
 		workertime = 0,
 		yardmap = "oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo",
 		customparams = {
-			faction = "CORE",
+			faction = "ARM",
 			requiretech = "Advanced T3 Unit Research Centre",
 		},
 		featuredefs = {
