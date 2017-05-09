@@ -3,7 +3,7 @@ return {
 		acceleration = 0.07629,
 		brakerate = 0.22887,
 		buildcostenergy = 31500,
-		buildcostmetal = 8020,
+		buildcostmetal = 7150,
 		builder = false,
 		buildpic = "tllom.dds",
 		buildtime = 102000,
