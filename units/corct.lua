@@ -31,7 +31,7 @@ return {
 		maxdamage = 2150,
 		maxvelocity = 1,
 		maxwaterdepth = 27,
-		metalmake = 0.10,
+		metalmake = 0.1,
 		metalstorage = 65,
 		mobilestandorders = 1,
 		movementclass = "TKBOT3",

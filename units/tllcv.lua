@@ -87,7 +87,7 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = true,
-				damage = 1116,
+				damage = 1114,
 				description = "Construction Vehicle Wreckage",
 				featuredead = "heap",
 				footprintx = 3,
@@ -98,7 +98,7 @@ return {
 			},
 			heap = {
 				blocking = false,
-				damage = 1395,
+				damage = 1393,
 				description = "Construction Vehicle Debris",
 				footprintx = 3,
 				footprintz = 3,

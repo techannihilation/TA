@@ -56,7 +56,7 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = true,
-				damage = 740,
+				damage = 743,
 				description = "Advanced Wind Generator Wreckage",
 				energy = 0,
 				featuredead = "heap",
@@ -68,12 +68,12 @@ return {
 			},
 			heap = {
 				blocking = false,
-				damage = 926,
+				damage = 928,
 				description = "Advanced Wind Generator Debris",
 				energy = 0,
 				footprintx = 7,
 				footprintz = 7,
-				metal = 49,
+				metal = 50,
 				object = "7X7B",
 				reclaimable = true,
 			},
