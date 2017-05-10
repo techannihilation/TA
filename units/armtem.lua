@@ -2,7 +2,7 @@ return {
 	armtem = {
 		acceleration = 0.035,
 		brakerate = 0.15,
-		buildcostenergy = 37000,
+		buildcostenergy = 52000,
 		buildcostmetal = 5725,
 		builder = false,
 		buildpic = "armtem.dds",
@@ -45,7 +45,7 @@ return {
 		radardistance = 0,
 		radaremitheight = 35,
 		selfdestructas = "CRAWL_BLAST",
-		sightdistance = 620,
+		sightdistance = 490,
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
