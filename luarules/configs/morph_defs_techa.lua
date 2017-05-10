@@ -380,8 +380,8 @@ local morphDefs = {
 	},
 	armrock1 = {
 		into = 'armtarantula',
-		time = 10,
-		xp = 0.05,
+		time = 20,
+		xp = 0.10,
 	},
 	armham = {
 		into = 'armham1',
