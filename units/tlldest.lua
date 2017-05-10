@@ -63,7 +63,6 @@ return {
 		waterline = 6,
 		customparams = {
 			faction = "TLL",
-			requiretech = "Advanced T3 Unit Research Centre",
 		},
 		featuredefs = {
 			dead = {
@@ -236,7 +235,7 @@ return {
 				name = "FlakCannon",
 				noselfdamage = true,
 				range = 600,
-				reloadtime = 0.75,
+				reloadtime = 1,
 				rgbcolor = "1.0 0.5 0.0",
 				soundhitdry = "flakhit",
 				soundhitwet = "splslrg",
@@ -302,6 +301,7 @@ return {
 			},
 			[3] = {
 				def = "ROCKET",
+				onlytargetcategory = "NOTVTOL",
 			},
 			[4] = {
 				def = "BSCANNON",

@@ -4,7 +4,7 @@ return {
 		activatewhenbuilt = true,
 		brakerate = 0,
 		buildcostenergy = 1210,
-		buildcostmetal = 124,
+		buildcostmetal = 125,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 8,
@@ -28,7 +28,7 @@ return {
 		idletime = 1800,
 		losemitheight = 136,
 		mass = 124,
-		maxdamage = 528,
+		maxdamage = 530,
 		maxslope = 10,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
@@ -51,7 +51,7 @@ return {
 		customparams = {
 			buildpic = "armawin.png",
 			energymultiplier = 4,
-			faction = "CORE",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {

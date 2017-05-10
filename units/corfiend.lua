@@ -53,7 +53,7 @@ return {
 		unitname = "corfiend",
 		upright = true,
 		customparams = {
-			faction = "ARM",
+			faction = "CORE",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},
 		sfxtypes = {

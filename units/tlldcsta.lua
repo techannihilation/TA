@@ -12,9 +12,9 @@ return {
 		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
-		description = "Depth Charge Launcher",
-		energymake = 0,
-		energyuse = 0,
+    description = "Floating Missile Launcher",
+		energymake = 0.1,
+		energyuse = 0.1,
 		explodeas = "SMALL_UNITEX",
 		firestandorders = 1,
 		footprintx = 2,
@@ -26,7 +26,7 @@ return {
 		mass = 218,
 		maxdamage = 1425,
 		minwaterdepth = 5,
-		name = "Depth Charge Station",
+		name = "Missile Launcher",
 		noautofire = false,
 		nochasecategory = "ALL",
 		noshadow = 1,
@@ -37,7 +37,7 @@ return {
 		sonardistance = 0,
 		standingfireorder = 2,
 		unitname = "tlldcsta",
-		waterline = 11,
+		waterline = 0,
 		workertime = 0,
 		yardmap = "wwww",
 		customparams = {
@@ -47,7 +47,7 @@ return {
 			dead = {
 				blocking = true,
 				damage = 1371,
-				description = "Depth Charge Station Wreckage",
+				description = "Floating Missile Launcher Wreckage",
 				featuredead = "heap",
 				footprintx = 2,
 				footprintz = 2,
@@ -58,7 +58,7 @@ return {
 			heap = {
 				blocking = false,
 				damage = 1714,
-				description = "Depth Charge Station Debris",
+				description = "Floating Missile Launcher Debris",
 				footprintx = 2,
 				footprintz = 2,
 				metal = 327,
@@ -98,9 +98,8 @@ return {
 			},
 		},
 		weapondefs = {
-			vpulse_depthcharge = {
-				corhrk_rocket = {
-				areaofeffect = 140,
+			rocket = {
+				areaofeffect = 90,
 				avoidfeature = false,
 				cegtag = "TLLRAVENTRAIL",
 				craterareaofeffect = 0,
@@ -116,7 +115,7 @@ return {
 				model = "vpulse",
 				name = "Vpulse Rocket",
 				noselfdamage = true,
-				range = 1050,
+				range = 1150,
 				reloadtime = 7,
 				smoketrail = false,
 				soundhitdry = "vpulsehit",
@@ -140,7 +139,8 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "VPULSE_DEPTHCHARGE",
+				badtargetcategory = "MOBILE",
+				def = "ROCKET",
 				onlytargetcategory = "NOTVTOL",
 			},
 		},

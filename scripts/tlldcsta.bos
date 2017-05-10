@@ -5,6 +5,9 @@
 
 piece  base, body, lights, flare1, flare2;
 
+// Signal definitions
+#define SIG_AIM				2
+#define SIG_AIM_2			4
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -58,6 +61,20 @@ Create()
 	dont-cache lights;
 	start-script SmokeUnit();
 	start-script Tangue();
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	return (1);
+}
+
+AimSecondary(heading, pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM;
+	return (1);
 }
 
 QueryPrimary(piecenum)

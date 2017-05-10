@@ -6,7 +6,7 @@ local weaponName = "thermite_mine"
 --------------------------------------------------------------------------------
 
 local weaponDef = {
-	areaofeffect = 64,
+	areaofeffect = 100,
 	commandfire = 1,
 	craterboost = 0,
 	cratermult = 0,
@@ -18,13 +18,13 @@ local weaponDef = {
 	model = [[bomb]],
 	name = [[Thermite Blast]],
 	range = 600,
-	reloadtime = 0.30000001192093,
+	reloadtime = 0.3,
 	soundHitDry = [[xplosml3]],
 	soundStart = [[canlite3]],
 	tolerance = 7000,
 	turret = 1,
 	damage = {
-		default = 2250,
+		default = 3000,
 		minelayers = 25,
 		mines = 0.5,
 	},
