@@ -12,7 +12,7 @@ return {
 		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
-    description = "Floating Missile Launcher",
+    		description = "Floating Missile Launcher",
 		energymake = 0.1,
 		energyuse = 0.1,
 		explodeas = "SMALL_UNITEX",
