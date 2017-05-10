@@ -7,7 +7,7 @@ return {
 		builddistance = 262,
 		builder = true,
 		buildpic = "tllcs.dds",
-		buildtime = 5818,
+		buildtime = 5800,
 		canguard = true,
 		canmove = true,
 		canpatrol = true,
@@ -77,6 +77,7 @@ return {
 			[18] = "tllnssam",
 			[19] = "tllhltns",
 			[20] = "tlltorp",
+			[21] = "tlldcsta",
 		},
 		customparams = {
 			faction = "TLL",
