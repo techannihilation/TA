@@ -132,7 +132,7 @@ return {
 				model = "megamisl",
 				name = "HeavyRocket",
 				noselfdamage = false,
-				range = 420,
+				range = 440,
 				reloadtime = 6,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
