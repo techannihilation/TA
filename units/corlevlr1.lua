@@ -29,7 +29,7 @@ return {
 		losemitheight = 25,
 		maneuverleashlength = 640,
 		mass = 478,
-		maxdamage = 1850,
+		maxdamage = 1700,
 		maxslope = 17,
 		maxvelocity = 1.4,
 		maxwaterdepth = 12,
@@ -120,7 +120,7 @@ return {
 		},
 		weapondefs = {
 			corlevlr_weapon1 = {
-				areaofeffect = 160,
+				areaofeffect = 170,
 				avoidfeature = false,
 				burnblow = true,
 				craterareaofeffect = 270,
@@ -131,7 +131,7 @@ return {
 				impulsefactor = 1.5,
 				name = "RiotCannon",
 				noselfdamage = false,
-				range = 350,
+				range = 340,
 				reloadtime = 2,
 				rgbcolor = "0.7 0.37 0",
 				size = 2.38,
