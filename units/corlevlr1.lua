@@ -131,7 +131,7 @@ return {
 				impulsefactor = 1.5,
 				name = "RiotCannon",
 				noselfdamage = false,
-				range = 340,
+				range = 325,
 				reloadtime = 2,
 				rgbcolor = "0.7 0.37 0",
 				size = 2.38,
