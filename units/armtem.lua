@@ -2,7 +2,7 @@ return {
 	armtem = {
 		acceleration = 0.035,
 		brakerate = 0.15,
-		buildcostenergy = 52000,
+		buildcostenergy = 46470,
 		buildcostmetal = 5725,
 		builder = false,
 		buildpic = "armtem.dds",
