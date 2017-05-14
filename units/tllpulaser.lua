@@ -1,15 +1,15 @@
 return {
 	tllpulaser = {
 		buildangle = 8192,
-		buildcostenergy = 9950,
-		buildcostmetal = 1325,
+		buildcostenergy = 14550,
+		buildcostmetal = 1485,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "tllpulaser_aoplane.dds",
 		buildpic = "tllpulaser.dds",
-		buildtime = 12381,
+		buildtime = 20000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
