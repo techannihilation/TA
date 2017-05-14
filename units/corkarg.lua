@@ -7,7 +7,7 @@ return {
 		buildcostmetal = 3800,
 		builder = false,
 		buildpic = "corkarg.dds",
-		buildtime = 50609,
+		buildtime = 55000,
 		canattack = true,
 		canguard = true,
 		canmove = true,
@@ -142,12 +142,12 @@ return {
 				weaponvelocity = 1500,
 				wobble = 1800,
 				damage = {
-					bombers = 100,
+					bombers = 120,
 					default = 5,
-					fighters = 100,
+					fighters = 120,
 					flak_resistant = 100,
 					subs = 5,
-					unclassed_air = 100,
+					unclassed_air = 120,
 				},
 			},
 			super_missile = {
@@ -180,6 +180,7 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 800,
 				damage = {
+					commanders = 90,
 					default = 120,
 					subs = 5,
 				},
