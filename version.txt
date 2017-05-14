@@ -5,6 +5,7 @@ Add new unit for TLL. Static Rocket Artillery for Sea.
 
 
 ----Balance----
+Increase HP for TSAR. 16500 => 116500
 Increase T4 Razoback, Karg and Raptor cost by 25%
 Increase EnergyCost for T2.5 ARM / COre Hover
 Decrease cost (-800M) for TLLom (turtle TLL)
