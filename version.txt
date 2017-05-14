@@ -1,3 +1,18 @@
+---------------------------------------- v2.48.3 ---------------------------------------
+----Improvments----
+Remplace Rocket for Coradon (same than pop-up missile core)
+Add new unit for TLL. Static Rocket Artillery for Sea.
+
+
+----Balance----
+Increase T4 Razoback, Karg and Raptor cost by 25%
+Increase EnergyCost for T2.5 ARM / COre Hover
+Decrease cost (-800M) for TLLom (turtle TLL)
+Increase cost (+250M) for Core T2.5 Vehicle Fortress (Mobile Doomsday)
+Increase cost for Pop-up +250M for Arm / Core / TLL)
+Add Xp and time for morph corpyro into demon
+Delete Sniper morphing for rocket bot. Remplace by Tarantula 
+
 
 ---------------------------------------- v2.48.2 ---------------------------------------
 
