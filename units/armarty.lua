@@ -15,7 +15,7 @@ return {
 		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Level 1 Artillery",
+		description = "Light Artillery",
 		downloadable = 1,
 		energymake = 0.3,
 		energystorage = 0,

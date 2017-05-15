@@ -2,11 +2,11 @@ return {
 	armjanus1 = {
 		acceleration = 0.0198,
 		brakerate = 0.165,
-		buildcostenergy = 3478,
-		buildcostmetal = 497,
+		buildcostenergy = 3520,
+		buildcostmetal = 490,
 		builder = false,
 		buildpic = "armjanus1.dds",
-		buildtime = 3545,
+		buildtime = 4200,
 		canattack = true,
 		canguard = true,
 		canmove = true,
@@ -120,7 +120,7 @@ return {
 		},
 		weapondefs = {
 			janus_rocket1 = {
-				areaofeffect = 190,
+				areaofeffect = 150,
 				avoidfeature = false,
 				cegtag = "Arm_Janus_Rocket",
 				craterareaofeffect = 285,
@@ -133,7 +133,7 @@ return {
 				name = "HeavyRocket",
 				noselfdamage = false,
 				range = 440,
-				reloadtime = 12,
+				reloadtime = 6,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
 				soundhitvolume = 8,
@@ -155,8 +155,7 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 225,
 				damage = {
-					commanders = 319,
-					default = 470,
+					default = 300,
 					subs = 5,
 				},
 			},

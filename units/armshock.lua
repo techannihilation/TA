@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 3250,
 		builder = false,
 		buildpic = "armshock.dds",
-		buildtime = 61218,
+		buildtime = 80000,
 		canattack = true,
 		canguard = true,
 		canmove = true,
