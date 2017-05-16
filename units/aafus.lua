@@ -19,7 +19,6 @@ return {
 		collisionvolumetest = 1,
 		collisionvolumetype = "Box",
 		corpse = "dead",
-		damagemodifier = 0.95,
 		description = "Enhanced Energy Output / Storage",
 		energymake = 3000,
 		energystorage = 6000,
