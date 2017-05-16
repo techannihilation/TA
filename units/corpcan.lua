@@ -51,7 +51,7 @@ return {
 		customparams = {
 			buildpic = "armpcan.png",
 			canareaattack = 1,
-			faction = "ARM",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

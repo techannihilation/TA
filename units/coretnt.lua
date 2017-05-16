@@ -54,7 +54,7 @@ return {
 		unitname = "coretnt",
 		workertime = 0,
 		customparams = {
-			faction = "TLL",
+			faction = "CORE",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		sfxtypes = {
