@@ -22,7 +22,7 @@ return {
 		damagemodifier = 0.95,
 		description = "Enhanced Energy Output / Storage",
 		energymake = 3000,
-		energystorage = 50000,
+		energystorage = 6000,
 		energyuse = 0,
 		explodeas = "NUCLEAR_MISSILE",
 		footprintx = 7,
