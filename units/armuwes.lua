@@ -25,7 +25,7 @@ return {
 		idletime = 1800,
 		losemitheight = 34,
 		mass = 496.66666,
-		maxdamage = 2980,
+		maxdamage = 1980,
 		maxslope = 20,
 		maxvelocity = 0,
 		metalstorage = 0,
