@@ -30,7 +30,7 @@ return {
 		maxdamage = 2050,
 		maxslope = 24,
 		maxvelocity = 0,
-		metalstorage = 1000,
+		metalstorage = 200,
 		minwaterdepth = 15,
 		name = "Underwater Moho Mine",
 		noautofire = false,
