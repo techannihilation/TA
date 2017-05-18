@@ -25,7 +25,6 @@ local GetUnitBasePosition = Spring.GetUnitBasePosition
 local NO_LAND_DAMAGE = {
   [WeaponDefNames['armdl_coax_depthcharge'].id] = true,
   [WeaponDefNames['cordl_coax_depthcharge'].id] = true,
-  [WeaponDefNames['tlldcsta_coax_depthcharge'].id] = true,
   [WeaponDefNames['armtl_coax_torpedo'].id] = true,
   [WeaponDefNames['cortl_coax_torpedo'].id] = true,
   [WeaponDefNames['tlltorp_coax_torpedo'].id] = true,
