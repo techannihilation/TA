@@ -51,7 +51,7 @@ return {
 		maxvelocity = 1.5,
 		maxwaterdepth = 35,
 		metalmake = 12,
-		metalstorage = 5000,
+		metalstorage = 2500,
 		mincloakdistance = 40,
 		mobilestandorders = 1,
 		movementclass = "AKBOT2",
