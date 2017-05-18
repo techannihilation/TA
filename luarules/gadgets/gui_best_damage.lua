@@ -4,7 +4,7 @@
 function gadget:GetInfo()
 	return {
 		name = "Best Total Damage",
-		desc = "Announce Leader",
+		desc = "Announce Damage",
 		author = "zwzsg", --nixtux
 		date = "14 june 2011",
 		license = "Free",
@@ -22,6 +22,7 @@ if (gadgetHandler:IsSyncedCode()) then
 	local oldtime = 0
 	local currenttime
 	local UPDATE = 15
+	local dgun_weapons = {}
 	
 	local function isUnitComplete(UnitID)
 		local health,maxHealth,paralyzeDamage,captureProgress,buildProgress=Spring.GetUnitHealth(UnitID)
@@ -47,6 +48,14 @@ if (gadgetHandler:IsSyncedCode()) then
 	end
 	
 	function gadget:Initialize()
+	
+		for i=1,#WeaponDefs do
+    		local wd = WeaponDefs[i]
+    		if (wd.type == "DGun") then
+      			dgun_weapons[wd] = true
+    		end
+  		end
+
 		BestTeamDamageCount = 0
 		DamageCounters = {}
 		for _,team in ipairs(Spring.GetTeamList()) do
@@ -59,6 +68,7 @@ if (gadgetHandler:IsSyncedCode()) then
 	end
 
 	function gadget:UnitDamaged(u,ud,ut,d, p ,w ,pr, a,ad,at)
+		if dgun_weapons[w] then return end
 		currenttime = Spring.GetGameSeconds()
 		if ut and at and (not Spring.AreTeamsAllied(ut,at)) and isUnitComplete(u) and u and a and u~=a and p == false then
 			DamageCounters[at]=DamageCounters[at]+math.floor(d)
@@ -94,45 +104,4 @@ if (gadgetHandler:IsSyncedCode()) then
 			end
 		end
 	end
---[[	
-	function gadget:UnitDestroyed(u,ud,ut,a,ad,at)
-		if ut and at and (not Spring.AreTeamsAllied(ut,at)) and isUnitComplete(u) and u and a and u~=a then
-			KillCounters[at]=KillCounters[at]+1
-			if KillCounters[at]>BestTeamCount then
-				BestTeamCount=KillCounters[at]
-				if at~=BestTeam then
-					BestTeam=at
-					names=nil
-					for _,pid in ipairs(Spring.GetPlayerList(at,true)) do
-						local _,active,spectator=Spring.GetPlayerInfo(pid)
-						if active and not spectator then
-							names=(names and names..", " or "").."<PLAYER"..pid..">"
-						end
-					end
-					if string.len(Spring.GetTeamLuaAI(at) or "")>2 then
-						names=(names and names..", " or "")..Spring.GetTeamLuaAI(at)
-					else
-						-- Restore 0.81.2.1 behavior of GetAIInfo
-						local function GetOldAIInfo(team)
-							local AIInfo={Spring.GetAIInfo(team)}
-							if #AIInfo==6 then
-								table.insert(AIInfo,1,team)
-							end
-							return unpack(AIInfo)
-						end
-						local _,_,_,_,ShortName,_,_ = GetOldAIInfo(at)
-						if ShortName and string.len(ShortName)>2 then
-							if ShortName~="UNKNOWN" and ShortName~="SYNCED_NOSHORTNAME" and ShortName~="NullAI" and ShortName~="NullOOJavaAI" then
-								names=(names and names..", " or "")..ShortName
-							else
-								names=(names and names..", " or "").."AI"
-							end
-						end
-					end
-					Spring.SendMessage("\255\255\001\001" .."Team"..at.." "..(names and names or "").."'s "..GetSide(at).." has taken the lead with "..BestTeamCount.." kills!")
-				end
-			end
-		end
-	end
---]]
 end
