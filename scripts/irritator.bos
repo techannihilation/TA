@@ -75,45 +75,49 @@ MotionControl()
 			Static_Var_3 = 0;
 			if( !Static_Var_5 )
 			{
-				turn rupleg to x-axis <-35.000000> speed <196.000000>;
-				turn lupleg to x-axis <28.000000> speed <106.395604>;
+				turn rupleg to x-axis <-35.000000> speed <100.000000>;
+				turn lupleg to x-axis <28.000000> speed <50.395604>;
 			}
 			if( Static_Var_5 )
 			{
-				turn rupleg to x-axis <-35.000000> speed <98.000000>;
-				turn lupleg to x-axis <28.000000> speed <78.395604>;
+				turn rupleg to x-axis <-35.000000> speed <49.000000>;
+				turn lupleg to x-axis <28.000000> speed <37.395604>;
 			}
 			turn LArm to x-axis <-10.000000> speed <30.000000>;
 			turn RArm to x-axis <20.000000> speed <40.000000>;
-			turn llleg to x-axis <-15.000000> speed <42.000000>;
-			turn lfoot to x-axis <-18.000000> speed <50.395604>;
-			sleep 350;
+
+			turn llleg to x-axis <-15.000000> speed <21.000000>;
+			turn lfoot to x-axis <-18.000000> speed <25.395604>;
+			sleep 525;
 			turn Body to x-axis <0.000000> speed <39.197802>;
 			turn LArm to x-axis <0.000000> speed <20.000000>;
 			turn RArm to x-axis <0.000000> speed <50.000000>;
-			turn rupleg to x-axis <10.000000> speed <116.664835>;
-			turn rlleg to x-axis <5.000000> speed <23.329670>;
-			turn lupleg to x-axis <35.000000> speed <32.664835>;
-			turn llleg to x-axis <10.000000> speed <116.664835>;
-			turn lfoot to x-axis <5.000000> speed <84.000000>;
-			sleep 215;
+
+			turn rupleg to x-axis <10.000000> speed <60.664835>;
+			turn rlleg to x-axis <5.000000> speed <12.329670>;
+			turn lupleg to x-axis <35.000000> speed <16.664835>;
+			turn llleg to x-axis <10.000000> speed <60.664835>;
+			turn lfoot to x-axis <5.000000> speed <42.000000>;
+			sleep 322;
 			turn Body to x-axis <-8.500000> speed <22.000000>;
 			turn Body to y-axis <2.000000> speed <3.000000>;
 			turn LArm to x-axis <20.000000> speed <30.000000>;
 			turn RArm to x-axis <-10.000000> speed <40.000000>;
-			turn lupleg to x-axis <-35.000000> speed <196.000000>;
-			turn rupleg to x-axis <28.000000> speed <106.395604>;
-			turn rlleg to x-axis <-15.000000> speed <42.000000>;
-			turn rfoot to x-axis <-18.000000> speed <50.395604>;
-			sleep 350;
+
+			turn lupleg to x-axis <-35.000000> speed <100.000000>;
+			turn rupleg to x-axis <28.000000> speed <51.395604>;
+			turn rlleg to x-axis <-15.000000> speed <21.000000>;
+			turn rfoot to x-axis <-18.000000> speed <25.395604>;
+			sleep 525;
 			turn Body to x-axis <0.000000> speed <28.000000>;
 			turn LArm to x-axis <0.000000> speed <50.000000>;
 			turn RArm to x-axis <0.000000> speed <20.000000>;
-			turn lupleg to x-axis <10.000000> speed <116.664835>;
-			turn llleg to x-axis <5.000000> speed <23.329670>;
-			turn rupleg to x-axis <35.000000> speed <32.664835>;
-			turn rlleg to x-axis <10.000000> speed <116.664835>;
-			turn rfoot to x-axis <5.000000> speed <84.000000>;
+
+			turn lupleg to x-axis <10.000000> speed <57.664835>;
+			turn llleg to x-axis <5.000000> speed <12.329670>;
+			turn rupleg to x-axis <35.000000> speed <17.664835>;
+			turn rlleg to x-axis <10.000000> speed <58.664835>;
+			turn rfoot to x-axis <5.000000> speed <42.000000>;
 			if( Static_Var_5 )
 			{
 				Static_Var_5 = 0;
@@ -124,47 +128,51 @@ MotionControl()
 			Static_Var_3 = 1;
 			if( !Static_Var_5 )
 			{
-				turn rupleg to x-axis <-35.000000> speed <196.000000>;
-				turn lupleg to x-axis <28.000000> speed <106.395604>;
+				turn rupleg to x-axis <-35.000000> speed <100.000000>;
+				turn lupleg to x-axis <28.000000> speed <53.395604>;
 			}
 			if( Static_Var_5 )
 			{
-				turn rupleg to x-axis <-35.000000> speed <98.000000>;
-				turn lupleg to x-axis <28.000000> speed <78.395604>;
+				turn rupleg to x-axis <-35.000000> speed <50.000000>;
+				turn lupleg to x-axis <28.000000> speed <39.395604>;
 			}
 			turn LArm to x-axis <-10.000000> speed <30.000000>;
 			turn RArm to x-axis <20.000000> speed <40.000000>;
-			turn llleg to x-axis <-15.000000> speed <42.000000>;
-			turn lfoot to x-axis <-18.000000> speed <50.395604>;
-			sleep 350;
+
+			turn llleg to x-axis <-15.000000> speed <21.000000>;
+			turn lfoot to x-axis <-18.000000> speed <25.395604>;
+			sleep 525;
 			turn LArm to x-axis <0.000000> speed <20.000000>;
 			turn RArm to x-axis <0.000000> speed <50.000000>;
-			turn rupleg to x-axis <10.000000> speed <116.664835>;
-			turn rlleg to x-axis <5.000000> speed <23.329670>;
-			turn lupleg to x-axis <35.000000> speed <32.664835>;
-			turn llleg to x-axis <10.000000> speed <116.664835>;
-			turn lfoot to x-axis <5.000000> speed <84.000000>;
-			sleep 215;
+
+			turn rupleg to x-axis <10.000000> speed <59.664835>;
+			turn rlleg to x-axis <5.000000> speed <12.329670>;
+			turn lupleg to x-axis <35.000000> speed <17.664835>;
+			turn llleg to x-axis <10.000000> speed <59.664835>;
+			turn lfoot to x-axis <5.000000> speed <42.000000>;
+			sleep 322;
 			turn LArm to x-axis <20.000000> speed <30.000000>;
 			turn RArm to x-axis <-10.000000> speed <40.000000>;
-			turn lupleg to x-axis <-35.000000> speed <196.000000>;
-			turn rupleg to x-axis <28.000000> speed <106.395604>;
-			turn rlleg to x-axis <-15.000000> speed <42.000000>;
-			turn rfoot to x-axis <-18.000000> speed <50.395604>;
-			sleep 350;
+
+			turn lupleg to x-axis <-35.000000> speed <100.000000>;
+			turn rupleg to x-axis <28.000000> speed <53.395604>;
+			turn rlleg to x-axis <-15.000000> speed <21.000000>;
+			turn rfoot to x-axis <-18.000000> speed <25.395604>;
+			sleep 525;
 			turn LArm to x-axis <0.000000> speed <50.000000>;
 			turn RArm to x-axis <0.000000> speed <20.000000>;
-			turn lupleg to x-axis <10.000000> speed <116.664835>;
-			turn llleg to x-axis <5.000000> speed <23.329670>;
-			turn rupleg to x-axis <35.000000> speed <32.664835>;
-			turn rlleg to x-axis <10.000000> speed <116.664835>;
-			turn rfoot to x-axis <5.000000> speed <84.000000>;
+
+			turn lupleg to x-axis <10.000000> speed <59.664835>;
+			turn llleg to x-axis <5.000000> speed <12.329670>;
+			turn rupleg to x-axis <35.000000> speed <17.664835>;
+			turn rlleg to x-axis <10.000000> speed <59.664835>;
+			turn rfoot to x-axis <5.000000> speed <42.000000>;
 			if( Static_Var_5 )
 			{
 				Static_Var_5 = 0;
 			}
 		}
-		sleep 215;
+		sleep 322;
 		if( !bAiming )
 		{
 			turn Body to x-axis <-8.500000> speed <30.796703>;
@@ -231,12 +239,13 @@ StopMoving()
 	Static_Var_5 = 1;
 	turn LArm to x-axis <0.000000> speed <20.000000>;
 	turn RArm to x-axis <0.000000> speed <20.000000>;
-	turn rupleg to x-axis <0.000000> speed <140.000000>;
-	turn rlleg to x-axis <0.000000> speed <98.000000>;
-	turn rfoot to x-axis <0.000000> speed <84.000000>;
-	turn lupleg to x-axis <0.000000> speed <140.000000>;
-	turn llleg to x-axis <0.000000> speed <98.000000>;
-	turn lfoot to x-axis <0.000000> speed <84.000000>;
+
+	turn rupleg to x-axis <0.000000> speed <70.000000>;
+	turn rlleg to x-axis <0.000000> speed <50.000000>;
+	turn rfoot to x-axis <0.000000> speed <42.000000>;
+	turn lupleg to x-axis <0.000000> speed <70.000000>;
+	turn llleg to x-axis <0.000000> speed <50.000000>;
+	turn lfoot to x-axis <0.000000> speed <42.000000>;
 	if( !bAiming )
 	{
 		turn Body to x-axis <0.000000> speed <8.395604>;
