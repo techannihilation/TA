@@ -20,7 +20,7 @@ return {
 		digger = 1,
 		energyuse = 22,
 		explodeas = "SMALL_BUILDINGEX",
-		extractsmetal = 0.0028,
+		extractsmetal = 0.0025,
 		footprintx = 3,
 		footprintz = 3,
 		icontype = "building",
