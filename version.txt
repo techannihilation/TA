@@ -1,20 +1,26 @@
 ---------------------------------------- v2.48.3 ---------------------------------------
 ----Improvments----
-Remplace Rocket for Coradon (same than pop-up missile core)
+Replace Rocket for Coradon (same than pop-up missile core)
 Add new unit for TLL. Static Rocket Artillery for Sea.
-
+Add tll t1 floating static rocket launcher
+Re-model tllobliterator now taller
 
 ----Balance----
 Increase HP for TSAR. 16500 => 116500
 Increase T4 Razoback, Karg and Raptor cost by 25%
-Increase EnergyCost for T2.5 ARM / COre Hover
+Increase EnergyCost for T2.5 ARM / Core Hover
 Decrease cost (-800M) for TLLom (turtle TLL)
 Increase cost (+250M) for Core T2.5 Vehicle Fortress (Mobile Doomsday)
 Increase cost for Pop-up +250M for Arm / Core / TLL)
 Add Xp and time for morph corpyro into demon
-Delete Sniper morphing for rocket bot. Remplace by Tarantula 
+Delete Sniper morphing for rocket bot. Replace by Tarantula
+Re-work all storage amount  -- will add full change list laster
 
-
+----Bug----
+Reduce animation speed for irritator, Closes #234
+Fix dt's unitpic size
+Add missing images for wind widget
+Use a brighter color for disabled units
 ---------------------------------------- v2.48.2 ---------------------------------------
 
 ----Improvments----
