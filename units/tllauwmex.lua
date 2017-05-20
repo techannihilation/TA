@@ -17,7 +17,7 @@ return {
 		downloadable = 1,
 		energyuse = 21,
 		explodeas = "SMALL_BUILDINGEX",
-		extractsmetal = 0.045,
+		extractsmetal = 0.0045,
 		footprintx = 5,
 		footprintz = 5,
 		icontype = "building",
