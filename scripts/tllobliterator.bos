@@ -50,9 +50,9 @@ deactivatescr()
 	wait-for-turn radar around y-axis;
 	move tige to z-axis [-4.000000] speed [10.000000];
 	wait-for-move tige along z-axis;
-	move turret to y-axis [-1.000000] speed [2.000000];
+	move turret to y-axis [-8.400000] speed [8.000000];
 	move tower to y-axis [-2.500000] speed [4.000000];
-	move turret to z-axis [2.000000] speed [4.000000];
+	move turret to z-axis [1.500000] speed [4.000000];
 	turn pistons to x-axis <-75.000000> speed <30.000000>;
 	turn s2 to x-axis <75.000000> speed <30.000000>;
 	move sleeve to z-axis [5.000000] speed [4.000000];
