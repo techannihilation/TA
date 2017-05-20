@@ -182,7 +182,7 @@ return {
 				targetmoveerror = 0.3,
 				thickness = 3.5,
 				tolerance = 10000,
-				turret = true,
+				turret = false,
 				weapontype = "BeamLaser",
 				weaponvelocity = 1000,
 				damage = {
