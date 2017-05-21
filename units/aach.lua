@@ -7,7 +7,7 @@ return {
 		builddistance = 225,
 		builder = true,
 		buildpic = "aach.dds",
-		buildtime = 40000,
+		buildtime = 30000,
 		canguard = true,
 		canhover = true,
 		canmove = true,
