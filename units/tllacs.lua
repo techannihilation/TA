@@ -29,7 +29,7 @@ return {
 		losemitheight = 25,
 		maneuverleashlength = 320,
 		mass = 1240,
-		maxdamage = 2105,
+		maxdamage = 1600,
 		maxvelocity = 2,
 		metalmake = 0.95,
 		metalstorage = 50,
