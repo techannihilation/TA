@@ -3,7 +3,7 @@ return {
 		acceleration = 0.48,
 		brakerate = 0.048,
 		buildcostenergy = 19595,
-		buildcostmetal = 2549,
+		buildcostmetal = 1655,
 		builddistance = 225,
 		builder = true,
 		buildpic = "aach.dds",
