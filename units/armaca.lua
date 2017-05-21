@@ -8,7 +8,7 @@ return {
 		builddistance = 225,
 		builder = true,
 		buildpic = "armaca.dds",
-		buildtime = 40000,
+		buildtime = 30000,
 		canfly = true,
 		canguard = true,
 		canmove = true,
