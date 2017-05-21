@@ -5,7 +5,7 @@ return {
 		bankscale = 1.5,
 		brakerate = 0.36,
 		buildcostenergy = 38460,
-		buildcostmetal = 1350,
+		buildcostmetal = 1500,
 		builddistance = 180,
 		builder = true,
 		buildpic = "tllcsa.dds",
