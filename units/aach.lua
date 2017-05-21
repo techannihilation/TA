@@ -2,7 +2,7 @@ return {
 	aach = {
 		acceleration = 0.48,
 		brakerate = 0.048,
-		buildcostenergy = 19595,
+		buildcostenergy = 36595,
 		buildcostmetal = 1655,
 		builddistance = 225,
 		builder = true,
