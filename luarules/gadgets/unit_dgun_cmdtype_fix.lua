@@ -28,6 +28,7 @@ local nukes = {
     [UnitDefNames["armmarlin"].id] = true,
     [UnitDefNames["armhcar"].id] = true,
     [UnitDefNames["corhcar"].id] = true,
+    [UnitDefNames["tllswordfish"].id] = true,
 }
 
 local emp = {
