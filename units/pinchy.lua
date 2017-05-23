@@ -52,7 +52,7 @@ return {
 		turnrate = 1210,
 		unitname = "pinchy",
 		upright = true,
-		workertime = 150,
+		workertime = 1200,
 		buildoptions = {
 			[1] = "corgate1",
 			[2] = "cordoom1",
