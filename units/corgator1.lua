@@ -3,7 +3,7 @@ return {
 		acceleration = 0.085,
 		brakerate = 0.285,
 		buildcostenergy = 2110,
-		buildcostmetal = 225,
+		buildcostmetal = 230,
 		builder = false,
 		buildpic = "corgator1.dds",
 		buildtime = 3000,
