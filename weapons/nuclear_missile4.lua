@@ -6,7 +6,7 @@ local weaponName = "nuclear_missile4"
 --------------------------------------------------------------------------------
 
 local weaponDef = {
-	areaofeffect = 1200,
+	areaofeffect = 1400,
 	avoidfriendly = 0,
 	collidefriendly = 0,
 	commandfire = 1,
