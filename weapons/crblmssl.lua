@@ -22,7 +22,7 @@ local weaponDef = {
 	soundhit = [[xplomed4]],
 	soundstart = [[misicbm1]],
 	damage = {
-		commanders = 2500,
+		commanders = 3500,
 		default = 10000,
 	},
 }
