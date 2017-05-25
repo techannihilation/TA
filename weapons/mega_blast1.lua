@@ -6,7 +6,7 @@ local weaponName = "mega_blast1"
 --------------------------------------------------------------------------------
 
 local weaponDef = {
-	areaofeffect = 2200,
+	areaofeffect = 2250,
 	craterboost = 6,
 	cratermult = 3,
 	edgeeffectiveness = 0.25,
