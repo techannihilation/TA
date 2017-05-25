@@ -6,7 +6,7 @@ local weaponName = "bantha_nuke"
 --------------------------------------------------------------------------------
 
 local weaponDef = {
-	areaofeffect = 1200,
+	areaofeffect = 1000,
 	avoidfriendly = 0,
 	collidefriendly = 0,
 	commandfire = 1,
