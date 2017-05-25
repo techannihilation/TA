@@ -136,7 +136,7 @@ return {
 				noselfdamage = true,
 				predictboost = 0.4,
 				range = 385,
-				reloadtime = 1,
+				reloadtime = 1,75,
 				rgbcolor = "1 0.86 0.11",
 				separation = 0.45,
 				size = 1.42,
@@ -150,7 +150,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 286,
 				damage = {
-					default = 105,
+					default = 175,
 					subs = 5,
 				},
 			},
