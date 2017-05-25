@@ -41,7 +41,7 @@ return {
 		objectname = "CORTRON",
 		radaremitheight = 42,
 		seismicsignature = 0,
-		selfdestructas = "NUCLEAR_MISSILE",
+		selfdestructas = "ATOMIC_BLAST",
 		sightdistance = 455,
 		standingfireorder = 0,
 		turninplaceanglelimit = 140,
