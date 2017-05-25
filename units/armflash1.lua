@@ -154,7 +154,7 @@ return {
 				weaponvelocity = 600,
 				damage = {
 					default = 12,
-					raider_resistant = 5.5,
+					raider_resistant = 6,
 					subs = 5,
 				},
 			},
