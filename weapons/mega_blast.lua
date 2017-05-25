@@ -19,6 +19,7 @@ local weaponDef = {
 	turret = 1,
 	damage = {
 		commanders = 2500,
+		crawlingbombs = 200,
 		default = 30000,
 	},
 }
