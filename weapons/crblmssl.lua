@@ -6,7 +6,7 @@ local weaponName = "crblmssl"
 --------------------------------------------------------------------------------
 
 local weaponDef = {
-	areaofeffect = 1600,
+	areaofeffect = 1800,
 	avoidfriendly = 0,
 	collidefriendly = 0,
 	commandfire = 1,
