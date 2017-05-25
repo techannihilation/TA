@@ -3,7 +3,7 @@ return {
 		acceleration = 0.12,
 		brakerate = 0.675,
 		buildcostenergy = 1300,
-		buildcostmetal = 120,
+		buildcostmetal = 130,
 		builder = false,
 		buildpic = "armham.dds",
 		buildtime = 2200,
