@@ -3,7 +3,7 @@ return {
 		acceleration = 0.06,
 		brakerate = 0.195,
 		buildcostenergy = 975,
-		buildcostmetal = 125,
+		buildcostmetal = 120,
 		builder = false,
 		buildpic = "armflash.dds",
 		buildtime = 2000,
