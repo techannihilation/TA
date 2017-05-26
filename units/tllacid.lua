@@ -16,7 +16,7 @@ return {
 		category = "ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Long Range Vertical Missile Vehicle",
+		description = "Tactical Acid Vehicle",
 		energymake = 0,
 		energystorage = 0,
 		energyuse = 0,
