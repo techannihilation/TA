@@ -76,6 +76,7 @@ return {
 			[17] = "armkrmi",
 			[18] = "corpyrox",
 			[19] = "krogtaar",
+			[20] = "corcrab",
 		},
 		customparams = {
 			buildpic = "CORALAB.png",
