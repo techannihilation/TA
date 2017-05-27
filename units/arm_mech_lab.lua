@@ -49,7 +49,6 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "arm_mech_lab",
-		--usebuildinggrounddecal = true,
 		workertime = 600,
 		yardmap = "oooooooooooo oooooooooooo oooooooooooo oooooooooooo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ",
 		buildoptions = {

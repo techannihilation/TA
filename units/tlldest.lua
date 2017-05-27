@@ -273,6 +273,7 @@ return {
 				soundhitwet = "splsmed",
 				soundhitwetvolume = 0.6,
 				soundstart = "vpulsefire",
+				targetable = 16,
 				texture1 = "null",
 				texture2 = "null",
 				texture3 = "null",

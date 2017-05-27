@@ -191,6 +191,7 @@ return {
 				soundhitwetvolume = 0.6,
 				soundstart = "rocklit1",
 				startvelocity = 150,
+				targetable = 16,
 				texture1 = "null",
 				texture2 = "null",
 				texture3 = "null",

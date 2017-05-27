@@ -188,6 +188,7 @@ return {
 				soundhitwetvolume = 0.6,
 				soundstart = "rocklit1",
 				startvelocity = 350,
+				targetable = 16,
 				tolerance = 9000,
 				tracks = true,
 				turnrate = 63000,

@@ -171,6 +171,7 @@ return {
 				soundhitwet = "splslrg",
 				soundhitwetvolume = 0.6,
 				soundstart = "Rockhvy1",
+				targetable = 16,
 				turnrate = 28384,
 				weaponacceleration = 100,
 				weapontimer = 2,

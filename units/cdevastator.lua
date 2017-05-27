@@ -189,6 +189,7 @@ return {
 				soundstart = "DevastatorRocket",
 				soundtrigger = true,
 				startvelocity = 350,
+				targetable = 16,
 				tolerance = 3000,
 				tracks = true,
 				turnrate = 30000,

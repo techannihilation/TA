@@ -190,6 +190,7 @@ return {
 				soundhitwetvolume = 0.6,
 				soundstart = "vpulsefire",
 				startvelocity = 350,
+				targetable = 16,
 				tolerance = 6000,
 				tracks = true,
 				turnrate = 68000,
