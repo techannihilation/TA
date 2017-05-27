@@ -28,9 +28,9 @@ local noClosedE = {
 
 function gadget:UnitCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOptions)
     if noClosedE[unitDefID] and cmdID==CMD.ONOFF then
-        local on = (cmdOptions[1]==1) --invert because the command hasn't yet taken effect
+        local on = (cmdParams[1]==1) --invert because the command hasn't yet taken effect
         local _,_,eMake,_ = Spring.GetUnitResources(unitID)
-        if on then 
+        if on then
             Spring.SetUnitResourcing(unitID, "ume", UnitDefs[unitDefID].energyMake - eMake)
         else
             Spring.SetUnitResourcing(unitID, "ume", -eMake)
