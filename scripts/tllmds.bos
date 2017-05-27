@@ -1,0 +1,127 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  flare, base, turret, barrel, sleeves;
+
+// Signal definitions
+#define SIG_AIM				2
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	hide flare;
+	turn sleeves to x-axis <-50> NOW;
+	dont-cache flare;
+	dont-cache barrel;
+	dont-cache sleeves;
+	dont-cache turret;
+	dont-shade flare;
+	dont-shade barrel;
+	dont-shade sleeves;
+	dont-shade turret;
+	start-script SmokeUnit();
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	turn turret to y-axis heading speed <700.005495>;
+	turn sleeves to x-axis <0.000000> - pitch speed <550.010989>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn sleeves around x-axis;
+	return (1);
+}
+
+FirePrimary()
+{
+	show flare;
+	sleep 150;
+	hide flare;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = flare;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = turret;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	hide flare;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode barrel type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode flare type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+		explode sleeves type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode turret type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode barrel type NOHEATCLOUD | FALL | BITMAP1;
+		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode flare type NOHEATCLOUD | FALL | BITMAP4;
+		explode sleeves type NOHEATCLOUD | SHATTER | BITMAP1;
+		explode turret type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode barrel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode flare type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode sleeves type NOHEATCLOUD | SHATTER | BITMAP1;
+		explode turret type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode barrel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode base type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+	explode flare type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode sleeves type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
+	explode turret type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+	return (corpsetype);
+}
