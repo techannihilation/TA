@@ -1,3 +1,12 @@
+---------------------------------------- v2.49.0 ---------------------------------------
+Fix coradon weapon
+Fix tll swordfish command button name for tac nuke
+Metron needs HP boost (#253), maxdamage = 38650 > 67500
+Fix armclaw, cormaw unitpics, and overlay decoy text to arm decoy fusion, Closes #249
+Fix solars energy drain once toggles re-open
+Revert storage changes until we can find some values the playerbase is happy with
+Add gadget to spawn wake effect for kbot/tanks in shallow water
+
 ---------------------------------------- v2.48.3 ---------------------------------------
 ----Improvments----
 Replace Rocket for Coradon (same than pop-up missile core)
