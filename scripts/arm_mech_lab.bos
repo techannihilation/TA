@@ -8,7 +8,7 @@ piece  base, NE_block, glow1, SE_block, glow2, SW_block, glow3, NW_block,
        nc5, nanogun1, nanogun2, nanogun3, nanogun4, nanogun5, headglow, hc_z_mover,
        hc1, hc2, hc3, hc4, hc5, np, nc_z_mover, ncp1,
        ncp2, ncp3, ncp4, ncp5, ncpp1, ncpp2, ncpp4, ncpp5, blink1, blink2, blink3,
-       blink4, blink5, blink6,blink7, blink8;
+       blink4, blink5, blink6,blink7, blink8, blink9;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3;
 
@@ -20,6 +20,8 @@ Standby()
 {
 	while( TRUE )
 	{
+		emit-sfx 1025 from blink9;
+		sleep 100;
 		emit-sfx 1024 from blink2;
 		emit-sfx 1024 from blink8;
 		emit-sfx 1024 from blink4;
@@ -29,6 +31,8 @@ Standby()
 		emit-sfx 1024 from blink7;
 		emit-sfx 1024 from blink3;
 		emit-sfx 1024 from blink5;
+		sleep 100;
+		emit-sfx 1025 from blink9;
 		sleep 750;
 		emit-sfx 1024 from blink2;
 		sleep 450;
@@ -38,6 +42,7 @@ Standby()
 		sleep 450;
 		emit-sfx 1024 from blink8;
 		sleep 650;
+		emit-sfx 1025 from blink9;
 		emit-sfx 1024 from blink4;
 		sleep 450;
 		emit-sfx 1024 from blink3;
