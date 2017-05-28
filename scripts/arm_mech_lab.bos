@@ -7,7 +7,8 @@ piece  base, NE_block, glow1, SE_block, glow2, SW_block, glow3, NW_block,
        glow4, column_z_displacer, column, head, nc1, nc2, nc3, nc4,
        nc5, nanogun1, nanogun2, nanogun3, nanogun4, nanogun5, headglow, hc_z_mover,
        hc1, hc2, hc3, hc4, hc5, np, nc_z_mover, ncp1,
-       ncp2, ncp3, ncp4, ncp5, ncpp1, ncpp2, ncpp4, ncpp5;
+       ncp2, ncp3, ncp4, ncp5, ncpp1, ncpp2, ncpp4, ncpp5, blink1, blink2, blink3,
+       blink4, blink5, blink6,blink7, blink8;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3;
 
@@ -15,7 +16,42 @@ static-var  Static_Var_1, Static_Var_2, Static_Var_3;
 #define SIG_ACTIVATE			2
 
 
-Open()
+Standby()
+{
+	while( TRUE )
+	{
+		emit-sfx 1024 from blink2;
+		emit-sfx 1024 from blink8;
+		emit-sfx 1024 from blink4;
+		emit-sfx 1024 from blink6;
+		sleep 1000;
+		emit-sfx 1024 from blink1;
+		emit-sfx 1024 from blink7;
+		emit-sfx 1024 from blink3;
+		emit-sfx 1024 from blink5;
+		sleep 750;
+		emit-sfx 1024 from blink2;
+		sleep 450;
+		emit-sfx 1024 from blink1;
+		sleep 650;
+		emit-sfx 1024 from blink7;
+		sleep 450;
+		emit-sfx 1024 from blink8;
+		sleep 650;
+		emit-sfx 1024 from blink4;
+		sleep 450;
+		emit-sfx 1024 from blink3;
+		sleep 650;
+		emit-sfx 1024 from blink5;
+		sleep 450;
+		emit-sfx 1024 from blink6;
+		sleep 1000;
+	}
+	sleep 50;
+	start-script Standby();
+}
+
+activatescr()
 {
 	move NE_block to x-axis [-13.300000] speed [13.300000];
 	move NE_block to z-axis [-5.600000] speed [5.600000];
@@ -57,11 +93,9 @@ Open()
 	turn nc4 to y-axis <-90.000000> speed <90.000000>;
 	turn nc5 to x-axis <-90.000000> speed <90.000000>;
 	wait-for-move hc_z_mover along z-axis;
-	signal 4;
-	set-signal-mask 4;
 }
 
-Close()
+deactivatescr()
 {
 	signal 4;
 	turn nc1 to x-axis <0.000000> speed <90.000000>;
@@ -118,6 +152,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	{
 		sleep 400;
 	}
+	start-script Standby();
 	while( TRUE )
 	{
 		healthpercent = get HEALTH;
@@ -139,7 +174,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-Bla()
+OpenYard()
 {
 	set YARD_OPEN to 1;
 	while( !get YARD_OPEN )
@@ -151,7 +186,7 @@ Bla()
 	set BUGGER_OFF to 0;
 }
 
-Blabla()
+CloseYard()
 {
 	set YARD_OPEN to 0;
 	while( get YARD_OPEN )
@@ -163,42 +198,46 @@ Blabla()
 	set BUGGER_OFF to 0;
 }
 
-Activate()
+
+
+Go()
 {
-	while( Static_Var_2 )
-	{
-		sleep 200;
-	}
-	signal SIG_ACTIVATE;
-	Static_Var_2 = 1;
-	if( !Static_Var_3 )
-	{
-		call-script Open();
-		Static_Var_3 = 1;
-	}
-	call-script Bla();
+	call-script activatescr();
+	call-script OpenYard();
 	set INBUILDSTANCE to 1;
-	Static_Var_2 = 0;
 }
 
-Deactivate()
+Stop()
 {
-	while( Static_Var_2 )
-	{
-		sleep 200;
-	}
-	signal SIG_ACTIVATE;
-	set-signal-mask SIG_ACTIVATE;
 	set INBUILDSTANCE to 0;
-	sleep 2500;
-	Static_Var_2 = 1;
-	call-script Blabla();
+	call-script CloseYard();
+	call-script deactivatescr();
+}
+
+RequestState(requestedstate, currentstate)
+{
 	if( Static_Var_3 )
 	{
-		call-script Close();
-		Static_Var_3 = 0;
+		Static_Var_2 = requestedstate;
+		return (0);
 	}
-	Static_Var_2 = 0;
+	Static_Var_3 = 1;
+	currentstate = Static_Var_2;
+	Static_Var_2 = requestedstate;
+	while( Static_Var_2 != currentstate )
+	{
+		if( Static_Var_2 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+		else
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+	}
+	Static_Var_3 = 0;
 }
 
 Create()
@@ -280,14 +319,28 @@ QueryNanoPiece(piecenum)
 	}
 }
 
+Activate()
+{
+	signal SIG_ACTIVATE;
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	signal SIG_ACTIVATE;
+	set-signal-mask SIG_ACTIVATE;
+	set-signal-mask 0;
+	start-script RequestState(1);
+}
+
 StartBuilding()
 {
-	
+	sleep 50;
 }
 
 StopBuilding()
 {
-	
+	sleep 50;
 }
 
 QueryBuildInfo(piecenum)
@@ -305,41 +358,42 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type BITMAPONLY | BITMAP1;
-		explode NE_block type BITMAPONLY | BITMAP2;
-		explode SE_block type SHATTER | BITMAP4;
-		explode SW_block type BITMAPONLY | BITMAP1;
-		explode NW_block type BITMAPONLY | BITMAP2;
-		explode head type BITMAPONLY | BITMAP3;
-		return (0);
+		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode NE_block type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode SE_block type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode SW_block type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode NW_block type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode head type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type BITMAPONLY | BITMAP1;
-		explode NE_block type SHATTER | BITMAP2;
-		explode SE_block type SHATTER | BITMAP4;
-		explode SW_block type BITMAPONLY | BITMAP1;
-		explode NW_block type BITMAPONLY | BITMAP2;
-		explode head type BITMAPONLY | BITMAP3;
-		return (0);
+		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode NE_block type NOHEATCLOUD | SHATTER | BITMAP2;
+		explode SE_block type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode SW_block type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode NW_block type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode head type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type BITMAPONLY | BITMAP1;
-		explode NE_block type SHATTER | BITMAP2;
-		explode SE_block type SHATTER | BITMAP4;
-		explode SW_block type BITMAPONLY | BITMAP1;
-		explode NW_block type SHATTER | BITMAP2;
-		explode head type SHATTER | BITMAP3;
-		return (0);
+		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode NE_block type NOHEATCLOUD | SHATTER | BITMAP2;
+		explode SE_block type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode SW_block type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode NW_block type NOHEATCLOUD | SHATTER | BITMAP2;
+		explode head type NOHEATCLOUD | SHATTER | BITMAP3;
+		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type BITMAPONLY | BITMAP1;
-	explode NE_block type SHATTER | BITMAP2;
-	explode SE_block type SHATTER | BITMAP4;
-	explode SW_block type BITMAPONLY | BITMAP1;
-	explode NW_block type SHATTER | BITMAP2;
-	explode head type SHATTER | BITMAP3;
+	explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+	explode NE_block type NOHEATCLOUD | SHATTER | BITMAP2;
+	explode SE_block type NOHEATCLOUD | SHATTER | BITMAP4;
+	explode SW_block type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+	explode NW_block type NOHEATCLOUD | SHATTER | BITMAP2;
+	explode head type NOHEATCLOUD | SHATTER | BITMAP3;
+	return (corpsetype);
 }

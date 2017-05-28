@@ -81,9 +81,7 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:GantWhiteLight",
-				[2] = "custom:YellowLight",
-				[3] = "custom:WhiteLight",
+				[1] = "custom:YellowLight",
 			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
