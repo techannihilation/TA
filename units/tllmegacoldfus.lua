@@ -16,7 +16,7 @@ return {
 		description = "Produces Metal and Energy/ Storage",
 		downloadable = 1,
 		energymake = 24000,
-		energystorage = 48000,
+		energystorage = 29000,
 		energyuse = 18000,
 		explodeas = "SUPERBLAST_BUILDING",
 		footprintx = 7,
