@@ -1,15 +1,15 @@
 return {
 	coruwadves = {
 		buildangle = 7822,
-		buildcostenergy = 10700,
-		buildcostmetal = 735,
+		buildcostenergy = 10701,
+		buildcostmetal = 736,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "coruwadves_aoplane.dds",
 		buildpic = "coruwadves.dds",
-		buildtime = 20000,
+		buildtime = 20416,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		collisionvolumeoffsets = "0 -16 0",
 		collisionvolumescales = "90 65 90",
