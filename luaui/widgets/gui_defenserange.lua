@@ -88,6 +88,7 @@ modConfig["TA"]["unitList"] =
 								armamd = { weapons = { 3 } }, --antinuke
 								armamd1 = { weapons = { 3 } }, --antinuke
 								armamd2 = { weapons = { 3 } }, --antinuke
+								armmds = { weapons = { 3 } }, --Missile Defence System
 
 								--Core
 									--Ground Weapons--
@@ -126,6 +127,7 @@ modConfig["TA"]["unitList"] =
 								nebraska = { weapons = { 1 } },
 								core_intimidator = { weapons = { 1 } },
 								corpcan = { weapons = { 1 } },
+								cormmds = { weapons = { 3 } }, --Missile Defence System
 
 									--Anti-Air--
 								corfrt = { weapons = { 2 } }, --floating rocket laucher
@@ -138,6 +140,7 @@ modConfig["TA"]["unitList"] =
 								corflak = { weapons = { 2 } },
 								screamer = { weapons = { 2 } },
 								corpre = { weapons = { 2 } },
+								
 									--Anti-Nuke--
 								corfmd = { weapons = { 3 } },
 								corfmd1 = { weapons = { 3 } },
@@ -181,11 +184,12 @@ modConfig["TA"]["unitList"] =
 								tllsam = { weapons = { 2 } },
 								tlldb = { weapons = { 2 } },
 								tllhmt = { weapons = { 2 } },
+
 									--Anti-Nuke--
 								tllantinuke = { weapons = { 3 } },
 								tllantinuke1 = { weapons = { 3 } },
-								tllgazelle= { weapons = { 3 } }
-							
+								tllgazelle = { weapons = { 3 } },
+								armmds = { weapons = { 3 } } --Missile Defence System
 							}
 
 --implement this if you want dps-depending ring-colors
