@@ -88,8 +88,6 @@ modConfig["TA"]["unitList"] =
 								armamd = { weapons = { 3 } }, --antinuke
 								armamd1 = { weapons = { 3 } }, --antinuke
 								armamd2 = { weapons = { 3 } }, --antinuke
-								armscab = { weapons = { 3 } },
-								armscab1 = { weapons = { 3 } },
 
 								--Core
 									--Ground Weapons--
