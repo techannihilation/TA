@@ -26,7 +26,7 @@ changelog:
 	 --]]
 	 
 -- CONFIGURATION
-local debug = false --generates debug message
+local debug = true --generates debug message
 
 local modConfig = {}
 -- TechA
@@ -38,6 +38,7 @@ modConfig["TA"]["unitList"] =
 								--Arm
 									--Ground Weapons--
 								armclaw = { weapons = { 1 } },
+								amortor = { weapons = { 1 } },
 								armllt = { weapons = { 1 } },
 								armllt1 = { weapons = { 1 } },
 								tawf001 = { weapons = { 1 } },
@@ -53,6 +54,7 @@ modConfig["TA"]["unitList"] =
 								armdl = { weapons = { 1 } }, --depthcharge
 								ajuno = { weapons = { 1 } },
 								armtl = { weapons = { 1 } }, --torp launcher
+								armatl = { weapons = { 1 } }, --adv torp launcher
 								armfhlt = { weapons = { 1 } },  --floating hlt
 								arm_immolator = { weapons = { 1 } },
 								armamb = { weapons = { 1,1 } }, --ambusher
@@ -68,6 +70,8 @@ modConfig["TA"]["unitList"] =
 								armvulc1 = { weapons = { 1 } },
 								armvulc2 = { weapons = { 1 } },
 								armtabi = { weapons = { 1 } },
+								armpcan = { weapons = { 1 } },
+
 									--Anti-Air--
 								armrl = { weapons = { 2 } }, --light aa
 								armrl1 = { weapons = { 2 } },
@@ -78,6 +82,8 @@ modConfig["TA"]["unitList"] =
 								armflak = { weapons = { 2 } },
 								armfflak = { weapons = { 2 } },
 								mercury = { weapons = { 2 } },
+								armhys = { weapons = { 2 } },
+
 									--Anti-Nuke--
 								armamd = { weapons = { 3 } }, --antinuke
 								armamd1 = { weapons = { 3 } }, --antinuke
@@ -106,6 +112,7 @@ modConfig["TA"]["unitList"] =
 								corboucher = { weapons = { 1 } },
 								corfhlt = { weapons = { 1 } },  --floating hlt
 								cortl = { weapons = { 1 } }, --torp launcher
+								coratl = { weapons = { 1 } }, --adv torp launcher
 								cortoast = { weapons = { 1 } },
 								corvipe = { weapons = { 1 } },
 								cordoom = { weapons = { 1 } },
@@ -119,7 +126,9 @@ modConfig["TA"]["unitList"] =
 								core_immolator1	 = { weapons = { 1 } },
 								hllt = { weapons = { 1 } },
 								nebraska = { weapons = { 1 } },
-								spit3g = { weapons = { 1 } },
+								core_intimidator = { weapons = { 1 } },
+								corpcan = { weapons = { 1 } },
+
 									--Anti-Air--
 								corfrt = { weapons = { 2 } }, --floating rocket laucher
 								corrl = { weapons = { 2 } },
@@ -143,7 +152,6 @@ modConfig["TA"]["unitList"] =
 								tlldcsta = { weapons = { 1 } },
 								tllemp = { weapons = { 1 } },
 								tllatorp = { weapons = { 1 } },
-								tllsilo = { weapons = { 1 } },
 								tllhlt = { weapons = { 1 } },
 								tllhltns = { weapons = { 1 } },
 								tlllrpt = { weapons = { 1 } },
@@ -157,12 +165,13 @@ modConfig["TA"]["unitList"] =
 								tllllt = { weapons = { 1 } },
 								tlllft = { weapons = { 1 } },
 								tllweb = { weapons = { 1 } },
+								tllupgweb = { weapons = { 1 } },
 								tlldmc = { weapons = { 1 } },
 								tlllbt = { weapons = { 1 } },
 								tlltrid = { weapons = { 1 } },
 								tllkrak = { weapons = { 1 } },
-								
-								tllkrak = { weapons = { 1 } },
+								tlljuno = { weapons = { 1 } },
+								tllpcan = { weapons = { 1 } },
 
 									--Anti-Air--
 								tlllmt = { weapons = { 2 } },
@@ -175,7 +184,9 @@ modConfig["TA"]["unitList"] =
 								tlldb = { weapons = { 2 } },
 								tllhmt = { weapons = { 2 } },
 									--Anti-Nuke--
-								tllantinuke = { weapons = { 3 } } 
+								tllantinuke = { weapons = { 3 } },
+								tllantinuke1 = { weapons = { 3 } },
+								tllgazelle= { weapons = { 3 } }
 							
 							}
 
