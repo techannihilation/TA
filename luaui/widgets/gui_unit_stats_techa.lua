@@ -601,6 +601,14 @@ function widget:DrawScreen()
 			  	DrawText("Anti:", format("%d Interceptor Range", uWep.coverageRange))
 			end
 
+			if uWep.coverageRange and uWep.interceptor == 16 then
+			  	DrawText("MDS:", format("%d Interceptor Range", uWep.coverageRange))
+			end
+
+			if uWep.targetable == 16 then
+			  	DrawText("MDS:","Is Targetable", '')
+			end
+
 			local reload = spGetUnitWeaponState(uID,weaponNums[i] or -1,"reloadTime") or uWep.reload
 			local accuracy = spGetUnitWeaponState(uID,weaponNums[i] or -1,"accuracy") or uWep.accuracy
 			local moveError = spGetUnitWeaponState(uID,weaponNums[i] or -1,"targetMoveError") or uWep.targetMoveError
