@@ -50,7 +50,7 @@ end
 
 function gadget:Initialize()
 	for wdid, wd in pairs(WeaponDefs) do
-		if wd.interceptor > 0 and wd.coverageRange then
+		if (wd.interceptor and wd.interceptor ~=16) and wd.coverageRange then
 			Script.SetWatchWeapon(wdid, true)
 		end
 	end
