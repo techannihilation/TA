@@ -26,7 +26,7 @@ changelog:
 	 --]]
 	 
 -- CONFIGURATION
-local debug = true --generates debug message
+local debug = false --generates debug message
 
 local modConfig = {}
 -- TechA
