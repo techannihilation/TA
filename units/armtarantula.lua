@@ -144,6 +144,7 @@ return {
 				soundstart = "rockhvy3",
 				soundtrigger = true,
 				startvelocity = 120,
+				targetable = 16,
 				targetmoveerror = 0.2,
 				texture1 = "null",
 				texture2 = "null",

@@ -121,6 +121,7 @@ return {
 				soundtrigger = true,
 				sprayangle = 1024,
 				startvelocity = 150,
+				targetable = 16,
 				texture1 = "null",
 				texture2 = "null",
 				texture3 = "null",

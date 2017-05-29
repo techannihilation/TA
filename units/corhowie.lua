@@ -113,6 +113,7 @@ return {
 				soundstart = "mlrsfireshort",
 				soundtrigger = true,
 				startvelocity = 150,
+				targetable = 16,
 				texture1 = "null",
 				texture2 = "null",
 				texture3 = "null",

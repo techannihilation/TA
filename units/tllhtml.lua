@@ -188,6 +188,7 @@ return {
 				soundhitwetvolume = 0.6,
 				soundstart = "TAWF114a",
 				startvelocity = 200,
+				targetable = 16,
 				texture2 = "coresmoketrail",
 				trajectoryheight = 1,
 				turnrate = 0,

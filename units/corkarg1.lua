@@ -226,6 +226,7 @@ return {
 				soundstart = "TAWF114a",
 				sprayangle = 250,
 				startvelocity = 250,
+				targetable = 16,
 				texture1 = "null",
 				texture2 = "coresmoketrail",
 				texture3 = "null",

@@ -117,8 +117,8 @@ return {
 			mds = {
 				areaofeffect = 300,
 				avoidfeature = false,
+				collidefeature = false,
 				coverage = 1000,
-				collideFeature = false,
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,

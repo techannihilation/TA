@@ -215,6 +215,7 @@ return {
 				soundhitwetvolume = 0.6,
 				soundstart = "rapidrocket3",
 				startvelocity = 200,
+				targetable = 16,
 				texture1 = "null",
 				texture2 = "coresmoketrail",
 				texture3 = "null",
