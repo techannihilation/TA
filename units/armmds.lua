@@ -137,7 +137,7 @@ return {
 				soundhitwetvolume = 0.5,
 				soundstart = "lasrfast",
 				soundtrigger = true,
-				thickness = 10,
+				thickness = 5,
 				turret = true,
 				weapontype = "LaserCannon",
 				weaponvelocity = 1700,
