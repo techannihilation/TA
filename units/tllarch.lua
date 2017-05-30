@@ -2,7 +2,7 @@ return {
 	tllarch = {
 		activatewhenbuilt = true,
 		buildangle = 65536,
-		buildcostenergy = 52143,
+		buildcostenergy = 15143,
 		buildcostmetal = 3942,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
