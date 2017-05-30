@@ -80,8 +80,9 @@ return {
 			[27] = "cordl",
 			[28] = "corjamt",
 			[29] = "cjuno",
-			[30] = "corech3",
-			[31] = "corsy",
+			[30] = "cmortor",
+			[31] = "corech3",
+			[32] = "corsy",
 		},
 		customparams = {
 			faction = "CORE",

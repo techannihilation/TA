@@ -88,8 +88,9 @@ return {
 			[28] = "cordl",
 			[29] = "corjamt",
 			[30] = "cjuno",
-			[31] = "corech3",
-			[32] = "corsy",
+			[31] = "cmortor",
+			[32] = "corech3",
+			[33] = "corsy",
 		},
 		customparams = {
 			buildpic = "CORCK.png",

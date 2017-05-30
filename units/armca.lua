@@ -85,9 +85,10 @@ return {
 			[28] = "armdl",
 			[29] = "armjamt",
 			[30] = "ajuno",
-			[31] = "armrech3",
-			[32] = "armasp",
-			[33] = "armsy",
+			[31] = "amortor",
+			[32] = "armrech3",
+			[33] = "armasp",
+			[34] = "armsy",
 		},
 		customparams = {
 			buildpic = "ARMCA.png",

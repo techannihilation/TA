@@ -80,8 +80,9 @@ return {
 			[27] = "armdl",
 			[28] = "armjamt",
 			[29] = "ajuno",
-			[30] = "armrech3",
-			[31] = "armsy",
+			[30] = "amortor",
+			[31] = "armrech3",
+			[32] = "armsy",
 		},
 		customparams = {
 			faction = "ARM",

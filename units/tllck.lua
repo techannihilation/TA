@@ -81,7 +81,8 @@ return {
 			[26] = "tlljam",
 			[27] = "tllshoretorp",
 			[28] = "tlljuno",
-			[29] = "tllsy",
+			[29] = "tllarch",
+			[30] = "tllsy",
 		},
 		customparams = {
 			faction = "TLL",
