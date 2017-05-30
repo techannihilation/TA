@@ -12,7 +12,7 @@ return {
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "corgate2_aoplane.dds",
 		buildpic = "corgate2.dds",
-		buildtime = 77166,
+		buildtime = 25724,
 		canattack = false,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "dead",
