@@ -42,7 +42,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 Dive()
 {
 	WeaponToggle = !WeaponToggle;
-	get PRINT(WeaponToggle);
+	//get PRINT(WeaponToggle);
 }
 
 Create()
