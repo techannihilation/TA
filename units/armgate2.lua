@@ -12,7 +12,7 @@ return {
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "armgate2_aoplane.dds",
 		buildpic = "armgate2.dds",
-		buildtime = 54139,
+		buildtime = 24362,
 		canattack = false,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "dead",
