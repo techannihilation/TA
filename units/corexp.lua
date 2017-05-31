@@ -19,7 +19,6 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Armed Metal Extractor",
-		energystorage = 0,
 		energyuse = 5,
 		explodeas = "MEDIUM_BUILDINGEX",
 		extractsmetal = 0.001,

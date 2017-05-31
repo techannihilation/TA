@@ -19,7 +19,6 @@ return {
 		collisionvolumetype = "CylY",
 		corpse = "armmex_dead",
 		description = "Overcharged Metal Extractor, Amphibious",
-		energystorage = 0,
 		energyuse = 22,
 		explodeas = "SMALL_BUILDING",
 		extractsmetal = 0.0025,

@@ -36,7 +36,6 @@ return {
 		maxslope = 19,
 		maxvelocity = 1.9,
 		maxwaterdepth = 14,
-		metalstorage = 0,
 		mincloakdistance = 40,
 		mobilestandorders = 1,
 		movementclass = "KBOT2",

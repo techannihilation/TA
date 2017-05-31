@@ -25,7 +25,6 @@ return {
 		losemitheight = 56,
 		mass = 18133,
 		maxdamage = 10400,
-		metalstorage = 0,
 		minwaterdepth = 15,
 		name = "Advanced Antimater Fusion",
 		noautofire = false,

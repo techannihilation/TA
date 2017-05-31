@@ -15,7 +15,6 @@ return {
 		corpse = "dead",
 		description = "Increase Metal Storage (350000)",
 		downloadable = 1,
-		energystorage = 0,
 		explodeas = "SMALL_BUILDINGEX",
 		footprintx = 7,
 		footprintz = 6,

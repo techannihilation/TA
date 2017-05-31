@@ -29,7 +29,6 @@ return {
 		maxdamage = 30000,
 		maxslope = 10,
 		maxwaterdepth = 0,
-		metalstorage = 0,
 		name = "Mega Fusion Reactor",
 		noautofire = false,
 		nochasecategory = "ALL",

@@ -33,7 +33,6 @@ return {
 		maxslope = 15,
 		maxvelocity = 0,
 		maxwaterdepth = 9999,
-		metalstorage = 0,
 		name = "Dwarf Geothermal Powerplant",
 		noautofire = false,
 		nochasecategory = "ALL",

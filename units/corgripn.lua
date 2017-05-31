@@ -22,8 +22,6 @@ return {
 		cruisealt = 220,
 		defaultmissiontype = "VTOL_standby",
 		description = "EMP Bomber",
-		energymake = 2,
-		energyuse = 2,
 		explodeas = "BIG_UNIT",
 		firestandorders = 1,
 		footprintx = 3,

@@ -34,7 +34,6 @@ return {
 		maxdamage = 3411,
 		maxslope = 10,
 		maxwaterdepth = 0,
-		metalstorage = 0,
 		name = "Land Slide",
 		noautofire = false,
 		nochasecategory = "ALL",

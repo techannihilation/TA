@@ -16,8 +16,6 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Missile Truck",
-		energymake = 0.5,
-		energyuse = 0.5,
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
 		footprintx = 3,

@@ -16,8 +16,6 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Fusilage Combat Tank",
-		energymake = 1,
-		energyuse = 1,
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
 		footprintx = 3,

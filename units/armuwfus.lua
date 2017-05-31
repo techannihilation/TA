@@ -29,7 +29,6 @@ return {
 		maxdamage = 5000,
 		maxslope = 10,
 		maxvelocity = 0,
-		metalstorage = 0,
 		minwaterdepth = 25,
 		name = "Underwater Fusion Plant",
 		noautofire = false,

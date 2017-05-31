@@ -20,7 +20,6 @@ return {
 		corpse = "dead",
 		damagemodifier = 0.4,
 		description = "Extracts Metal",
-		energystorage = 0,
 		energyuse = 3,
 		explodeas = "SMALL_BUILDINGEX",
 		extractsmetal = 0.001,

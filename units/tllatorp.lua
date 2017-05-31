@@ -13,8 +13,6 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Torpedo & Depth Charge Launcher",
-		energymake = 0,
-		energyuse = 0,
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
 		footprintx = 3,

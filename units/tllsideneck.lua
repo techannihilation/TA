@@ -33,7 +33,6 @@ return {
 		maxslope = 10,
 		maxvelocity = 0.5,
 		maxwaterdepth = 200,
-		metalstorage = 0,
 		mobilestandorders = 1,
 		movementclass = "kbot3",
 		name = "Sideneck",

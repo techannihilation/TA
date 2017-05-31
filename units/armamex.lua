@@ -17,7 +17,6 @@ return {
 		cloakcost = 12,
 		corpse = "dead",
 		description = "Stealthy Cloakable Metal Extractor",
-		energystorage = 0,
 		energyuse = 3,
 		explodeas = "TWILIGHT",
 		extractsmetal = 0.001,

@@ -38,7 +38,6 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 25,
 		metalmake = 0,
-		metalstorage = 0,
 		mobilestandorders = 1,
 		name = "Hardened Nanotower",
 		noautofire = false,

@@ -33,7 +33,6 @@ return {
 		maxslope = 10,
 		maxvelocity = 1.63,
 		maxwaterdepth = 0,
-		metalstorage = 0,
 		mobilestandorders = 1,
 		movementclass = "TKBOT3",
 		name = "Advanced Scarab",

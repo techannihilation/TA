@@ -20,7 +20,6 @@ return {
 		corpse = "cormex_dead",
 		damagemodifier = 0.4,
 		description = "Overcharged Metal Extractor, Amphibious",
-		energystorage = 0,
 		energyuse = 22,
 		explodeas = "SMALL_BUILDING",
 		extractsmetal = 0.0025,

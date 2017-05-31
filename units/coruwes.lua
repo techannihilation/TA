@@ -28,7 +28,6 @@ return {
 		maxdamage = 3042,
 		maxslope = 20,
 		maxvelocity = 0,
-		metalstorage = 0,
 		minwaterdepth = 31,
 		name = "Underwater Energy Storage",
 		noautofire = false,

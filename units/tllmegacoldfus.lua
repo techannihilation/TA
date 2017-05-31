@@ -30,7 +30,6 @@ return {
 		maxdamage = 28900,
 		maxslope = 10,
 		maxwaterdepth = 0,
-		metalstorage = 0,
 		name = "Dark Matter Converter",
 		noautofire = false,
 		nochasecategory = "ALL",

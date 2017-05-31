@@ -19,8 +19,6 @@ return {
 		cruisealt = 70,
 		defaultmissiontype = "VTOL_standby",
 		description = "Air Transport",
-		energymake = 0.6,
-		energyuse = 0.6,
 		explodeas = "SMALL_UNITEX",
 		firestandorders = 0,
 		footprintx = 3,

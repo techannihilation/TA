@@ -35,7 +35,6 @@ return {
 		maxslope = 14,
 		maxvelocity = 1.22,
 		maxwaterdepth = 12,
-		metalstorage = 0,
 		mobilestandorders = 1,
 		movementclass = "TANK2",
 		name = "Grimani",

@@ -31,7 +31,6 @@ return {
 		maxslope = 10,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		metalstorage = 0,
 		name = "Small Shield",
 		noautofire = false,
 		nochasecategory = "ALL",

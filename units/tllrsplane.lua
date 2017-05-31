@@ -18,8 +18,6 @@ return {
 		collide = false,
 		cruisealt = 170,
 		description = "Radar/Sonar Stealth Plane",
-		energymake = 10,
-		energyuse = 10,
 		explodeas = "BIG_UNITEX",
 		footprintx = 3,
 		footprintz = 3,

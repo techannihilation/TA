@@ -15,8 +15,6 @@ return {
 		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
 		corpse = "dead",
 		description = "Mobile Artillery Turtle",
-		energymake = 1,
-		energyuse = 1,
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
 		footprintx = 3,

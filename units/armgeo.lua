@@ -31,7 +31,6 @@ return {
 		maxslope = 20,
 		maxvelocity = 0,
 		maxwaterdepth = 9999,
-		metalstorage = 0,
 		name = "Geothermal Powerplant",
 		noautofire = false,
 		nochasecategory = "ALL",

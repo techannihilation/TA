@@ -28,7 +28,6 @@ return {
 		mass = 655,
 		maxdamage = 3930,
 		maxvelocity = 0,
-		metalstorage = 0,
 		minwaterdepth = 5,
 		name = "Thunderbolt",
 		noautofire = false,

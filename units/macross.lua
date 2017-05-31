@@ -34,7 +34,6 @@ return {
 		maxslope = 20,
 		maxvelocity = 1.7,
 		maxwaterdepth = 12,
-		metalstorage = 0,
 		mobilestandorders = 1,
 		movementclass = "HTKBOT4",
 		name = "Macross",

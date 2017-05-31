@@ -20,7 +20,6 @@ return {
 		damagemodifier = 0.4,
 		description = "Planet Crust Deep Penetration Mine, Amphibious",
 		energymake = 0,
-		energystorage = 0,
 		energyuse = 250,
 		explodeas = "ATOMIC_BLAST",
 		extractsmetal = 0.03,

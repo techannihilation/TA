@@ -19,8 +19,6 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Rocket Kbot",
-		energymake = 0.6,
-		energyuse = 0.6,
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
 		footprintx = 2,

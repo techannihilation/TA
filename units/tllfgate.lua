@@ -25,7 +25,6 @@ return {
 		maxdamage = 3600,
 		maxslope = 10,
 		maxvelocity = 0,
-		metalstorage = 0,
 		minwaterdepth = 5,
 		name = "Saint",
 		noautofire = false,

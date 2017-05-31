@@ -36,7 +36,6 @@ return {
 		maxslope = 13,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		metalstorage = 0,
 		name = "Advanced Fusion Reactor",
 		noautofire = false,
 		nochasecategory = "ALL",

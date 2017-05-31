@@ -10,7 +10,6 @@ return {
 		corpse = "dead",
 		description = "Increases Metal Storage (4100)",
 		downloadable = 1,
-		energystorage = 0,
 		energyuse = 0,
 		explodeas = "SMALL_BUILDINGEX",
 		footprintx = 4,

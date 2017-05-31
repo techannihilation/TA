@@ -20,7 +20,6 @@ return {
 		defaultmissiontype = "Standby",
 		description = "Naval Engineer",
 		energymake = 8,
-		energystorage = 0,
 		energyuse = 0,
 		explodeas = "SMALL_UNITEX",
 		floater = true,

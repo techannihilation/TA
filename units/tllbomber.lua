@@ -21,8 +21,6 @@ return {
 		cruisealt = 200,
 		defaultmissiontype = "VTOL_standby",
 		description = "Bomber",
-		energymake = 1,
-		energyuse = 1,
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
 		footprintx = 3,

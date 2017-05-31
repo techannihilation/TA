@@ -25,7 +25,6 @@ return {
 		maxdamage = 920,
 		maxslope = 10,
 		maxvelocity = 0,
-		metalstorage = 0,
 		minwaterdepth = 20,
 		name = "Advanced Tidal Generator",
 		noautofire = false,

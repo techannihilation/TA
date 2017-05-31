@@ -20,8 +20,6 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Rapid Plasma Kbot",
-		energymake = 0.6,
-		energyuse = 0.6,
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
 		footprintx = 2,

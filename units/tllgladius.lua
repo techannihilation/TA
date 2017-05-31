@@ -16,8 +16,6 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Fast Scout Vehicle",
-		energymake = 0.3,
-		energyuse = 0.3,
 		explodeas = "SMALL_UNITEX",
 		firestandorders = 1,
 		footprintx = 2,

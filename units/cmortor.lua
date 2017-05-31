@@ -30,7 +30,6 @@ return {
 		maxdamage = 3611,
 		maxslope = 10,
 		maxwaterdepth = 0,
-		metalstorage = 0,
 		name = "Avalanche",
 		noautofire = false,
 		nochasecategory = "ALL",

@@ -16,7 +16,6 @@ return {
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "dead",
 		description = "Extracts Metal",
-		energystorage = 0,
 		energyuse = 2,
 		explodeas = "SMALL_BUILDINGEX",
 		extractsmetal = 0.001,

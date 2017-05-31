@@ -21,8 +21,6 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Amphibious Anti-Air Kbot",
-		energymake = 0,
-		energyuse = 0,
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
 		footprintx = 2,

@@ -22,7 +22,6 @@ return {
 		losemitheight = 62,
 		mass = 192,
 		maxdamage = 485,
-		metalstorage = 0,
 		minwaterdepth = 20,
 		name = "Hybrid Solar Collector/Tidal Generator",
 		noautofire = false,

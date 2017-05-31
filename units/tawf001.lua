@@ -37,7 +37,6 @@ return {
 		maxslope = 10,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		metalstorage = 0,
 		name = "Beamer",
 		noautofire = false,
 		nochasecategory = "ALL",

@@ -33,7 +33,6 @@ return {
 		maxslope = 32,
 		maxvelocity = 0.75,
 		maxwaterdepth = 200,
-		metalstorage = 0,
 		mobilestandorders = 1,
 		movementclass = "AMPTBOT",
 		name = "Turtle",

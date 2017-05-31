@@ -33,7 +33,6 @@ return {
 		maxdamage = 2475,
 		maxslope = 10,
 		maxwaterdepth = 1,
-		metalstorage = 0,
 		name = "Light Fusion Power Plant",
 		noautofire = false,
 		objectname = "armlightfus",

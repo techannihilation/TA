@@ -33,7 +33,6 @@ return {
 		maxslope = 15,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		metalstorage = 0,
 		name = "Moho Geothermal Powerplant",
 		noautofire = false,
 		nochasecategory = "ALL",

@@ -36,7 +36,6 @@ return {
 		maxslope = 10,
 		maxvelocity = 0,
 		maxwaterdepth = 1,
-		metalstorage = 0,
 		modelcenteroffset = "0 -55 0",
 		name = "Airstrike Resistant Fusion Reactor",
 		noautofire = false,

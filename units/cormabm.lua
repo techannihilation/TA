@@ -34,7 +34,6 @@ return {
 		maxslope = 10,
 		maxvelocity = 1.417,
 		maxwaterdepth = 0,
-		metalstorage = 0,
 		mobilestandorders = 1,
 		movementclass = "TANK3",
 		name = "Hedgehog",

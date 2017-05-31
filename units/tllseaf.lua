@@ -22,8 +22,6 @@ return {
 		defaultmissiontype = "VTOL_standby",
 		description = "Seaplane Fighter",
 		downloadable = 1,
-		energymake = 1,
-		energyuse = 1,
 		explodeas = "SMALL_UNITEX",
 		firestandorders = 1,
 		floater = true,

@@ -35,7 +35,6 @@ return {
 		maxslope = 12,
 		maxvelocity = 1.61,
 		maxwaterdepth = 12,
-		metalstorage = 0,
 		mobilestandorders = 1,
 		movementclass = "TANKHOVER3",
 		name = "Iguana",

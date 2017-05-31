@@ -20,7 +20,6 @@ return {
 		damagemodifier = 0.4,
 		description = "Deep Core Metal Extractor, Amphibious",
 		energymake = 0,
-		energystorage = 0,
 		energyuse = 250,
 		explodeas = "ATOMIC_BLAST",
 		extractsmetal = 0.03,

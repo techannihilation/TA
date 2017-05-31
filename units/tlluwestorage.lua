@@ -22,7 +22,6 @@ return {
 		mass = 451.66666,
 		maxdamage = 2710,
 		maxslope = 20,
-		metalstorage = 0,
 		minwaterdepth = 30,
 		name = "Underwater Energy Storage",
 		noautofire = false,

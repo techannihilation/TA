@@ -17,8 +17,6 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Long Range Plasma Canon",
-		energymake = 0,
-		energyuse = 0,
 		explodeas = "ATOMIC_BLAST",
 		firestandorders = 1,
 		firestate = 2,

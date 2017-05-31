@@ -29,7 +29,6 @@ return {
 		maxdamage = 4680,
 		maxslope = 20,
 		maxwaterdepth = 0,
-		metalstorage = 0,
 		name = "Heavy Elemental Reactor",
 		nochasecategory = "ALL",
 		objectname = "TLLMEDFUSION",

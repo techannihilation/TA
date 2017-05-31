@@ -36,7 +36,6 @@ return {
 		maxslope = 10,
 		maxvelocity = 0,
 		maxwaterdepth = 1,
-		metalstorage = 0,
 		name = "Air Repair Pad",
 		noautofire = false,
 		nochasecategory = "ALL",

@@ -19,8 +19,6 @@ return {
 		corpse = "dead1",
 		defaultmissiontype = "Standby",
 		description = "Experimental Heavily Armored Assault Kbot",
-		energymake = 55,
-		energyuse = 55,
 		explodeas = "NUCLEAR_MISSILE3",
 		firestandorders = 1,
 		footprintx = 7,

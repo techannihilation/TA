@@ -42,7 +42,6 @@ return {
 		mass = 15000,
 		maxdamage = 15500,
 		maxvelocity = 1.75,
-		metalstorage = 0,
 		minwaterdepth = 30,
 		mobilestandorders = 1,
 		movementclass = "HDBOAT8",

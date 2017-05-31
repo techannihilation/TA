@@ -20,8 +20,6 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Fast & Paralyse Scout Kbot",
-		energymake = 0.4,
-		energyuse = 0.4,
 		explodeas = "SMALL_UNITEX",
 		firestandorders = 1,
 		footprintx = 1,

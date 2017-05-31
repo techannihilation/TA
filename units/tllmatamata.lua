@@ -16,8 +16,6 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Heavy Assault Turtle",
-		energymake = 3,
-		energyuse = 3,
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
 		footprintx = 3,

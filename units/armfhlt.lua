@@ -28,7 +28,6 @@ return {
 		mass = 641.66669,
 		maxdamage = 3850,
 		maxvelocity = 0,
-		metalstorage = 0,
 		minwaterdepth = 2,
 		name = "Stingray",
 		noautofire = false,

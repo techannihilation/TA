@@ -33,7 +33,6 @@ return {
 		maxslope = 10,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		metalstorage = 0,
 		name = "Energy Storage",
 		noautofire = false,
 		nochasecategory = "ALL",

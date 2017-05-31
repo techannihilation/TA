@@ -16,8 +16,6 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Heavy Armored Assault Kbot",
-		energymake = 2,
-		energyuse = 2,
 		explodeas = "CORPYRO_BLAST",
 		firestandorders = 1,
 		footprintx = 3,

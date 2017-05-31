@@ -37,7 +37,6 @@ return {
 		maxslope = 12,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		metalstorage = 0,
 		name = "Punisher",
 		noautofire = false,
 		nochasecategory = "ALL",

@@ -32,7 +32,6 @@ return {
 		maxdamage = 2552,
 		maxslope = 10,
 		maxwaterdepth = 0,
-		metalstorage = 0,
 		mincloackdistance = 80,
 		name = "Spider Bunker",
 		noautofire = true,

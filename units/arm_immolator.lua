@@ -32,7 +32,6 @@ return {
 		maxdamage = 2800,
 		maxslope = 10,
 		maxwaterdepth = 0,
-		metalstorage = 0,
 		name = "Immolator",
 		noautofire = false,
 		nochasecategory = "ALL",

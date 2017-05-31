@@ -24,7 +24,6 @@ return {
 		maxdamage = 9800,
 		maxslope = 10,
 		maxvelocity = 0,
-		metalstorage = 0,
 		minwaterdepth = 70,
 		name = "Advanced Underwater Antimater Fusion",
 		noautofire = false,

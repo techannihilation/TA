@@ -30,7 +30,6 @@ return {
 		maxslope = 10,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		metalstorage = 0,
 		name = "T3 Energy Storage",
 		noautofire = false,
 		objectname = "corses",

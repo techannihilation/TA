@@ -25,7 +25,6 @@ return {
 		maxdamage = 253,
 		maxslope = 10,
 		maxvelocity = 0,
-		metalstorage = 0,
 		minwaterdepth = 20,
 		name = "Tidal Generator",
 		noautofire = false,

@@ -13,8 +13,6 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Floating Missile Launcher",
-		energymake = 0.1,
-		energyuse = 0.1,
 		explodeas = "SMALL_UNITEX",
 		firestandorders = 1,
 		footprintx = 2,
