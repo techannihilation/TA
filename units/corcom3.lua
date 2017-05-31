@@ -419,13 +419,14 @@ return {
 		weapons = {
 			[1] = {
 				def = "ARMCOMLASER3",
+				onlytargetcategory = "NOTSUB",
 			},
 			[3] = {
 				def = "ARM_DISINTEGRATOR1",
 			},
 			[4] = {
-				badtargetcategory = "VTOL",
 				def = "CORCOMSEALASER",
+				onlytargetcategory = "NOTVTOL",
 			},
 			[5] = {
 				def = "TELEPORT",

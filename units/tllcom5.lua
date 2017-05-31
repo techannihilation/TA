@@ -346,6 +346,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "TLLCOM_LIGHTNING5",
+				onlytargetcategory = "NOTSUB",
 			},
 			[2] = {
 				def = "COM_SHIELD",
@@ -354,8 +355,8 @@ return {
 				def = "TLL_DISINTEGRATOR2",
 			},
 			[4] = {
-				badtargetcategory = "VTOL",
 				def = "TLLCOMSEALASER",
+				onlytargetcategory = "NOTVTOL",
 			},
 		},
 	},
