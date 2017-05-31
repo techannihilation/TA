@@ -52,7 +52,6 @@ return {
 		turninplacespeedlimit = 3.498,
 		turnrate = 590,
 		unitname = "blackdawn",
-		workertime = 0,
 		customparams = {
 			buildpic = "blackdawn.png",
 			faction = "CORE",

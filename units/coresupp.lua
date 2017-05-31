@@ -57,7 +57,6 @@ return {
 		turnrate = 528,
 		unitname = "coresupp",
 		waterline = 1,
-		workertime = 0,
 		customparams = {
 			buildpic = "CORESUPP.png",
 			faction = "CORE",

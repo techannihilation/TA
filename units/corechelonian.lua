@@ -50,7 +50,6 @@ return {
 		turninplacespeedlimit = 0.66,
 		turnrate = 1056,
 		unitname = "corechelonian",
-		workertime = 0,
 		customparams = {
 			buildpic = "corechelonian.png",
 			faction = "CORE",

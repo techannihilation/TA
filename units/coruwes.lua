@@ -43,7 +43,6 @@ return {
 		turnrate = 0,
 		unitname = "coruwes",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "oooooooooooooooo",
 		customparams = {
 			buildpic = "CORUWES.png",

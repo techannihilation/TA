@@ -43,7 +43,6 @@ return {
 		turnrate = 0,
 		unitname = "armses",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "oooooo oooooo oooooo oooooo oooooo oooooo",
 		customparams = {
 			buildpic = "armses.png",

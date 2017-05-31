@@ -56,7 +56,6 @@ return {
 		turninplacespeedlimit = 5.8542,
 		turnrate = 575,
 		unitname = "corseap",
-		workertime = 0,
 		customparams = {
 			buildpic = "CORSEAP.png",
 			faction = "CORE",

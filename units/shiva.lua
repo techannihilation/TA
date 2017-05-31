@@ -49,7 +49,6 @@ return {
 		turnrate = 616,
 		unitname = "shiva",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			buildpic = "SHIVA.png",
 			faction = "CORE",

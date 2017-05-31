@@ -53,7 +53,6 @@ return {
 		turnrate = 590,
 		unitname = "cordem",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			faction = "CORE",
 		},

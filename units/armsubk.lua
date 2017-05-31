@@ -57,7 +57,6 @@ return {
 		unitname = "armsubk",
 		upright = true,
 		waterline = 30,
-		workertime = 0,
 		customparams = {
 			buildpic = "ARMSUBK.png",
 			faction = "ARM",

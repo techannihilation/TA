@@ -38,7 +38,6 @@ return {
 		selfdestructas = "SMALL_BUILDING",
 		sightdistance = 273,
 		unitname = "tlljumpdrive",
-		workertime = 0,
 		yardmap = "ooooooooo",
 		customparams = {
 			faction = "TLL",

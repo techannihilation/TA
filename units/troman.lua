@@ -52,7 +52,6 @@ return {
 		turnrate = 777,
 		unitname = "troman",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			faction = "CORE",
 		},

@@ -63,7 +63,6 @@ return {
 		turninplacespeedlimit = 0.66,
 		turnrate = 600,
 		unitname = "nsaagriz",
-		workertime = 0,
 		customparams = {
 			buildpic = "krypto-blaster.png",
 			faction = "ARM",

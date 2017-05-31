@@ -55,7 +55,6 @@ return {
 		unitname = "cormaw",
 		upright = true,
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		customparams = {
 			buildpic = "CORMAW.png",
 			faction = "CORE",

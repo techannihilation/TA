@@ -52,7 +52,6 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "tllllt",
-		workertime = 0,
 		yardmap = "oooo",
 		customparams = {
 			buildpic = "TLLLLT.png",

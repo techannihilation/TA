@@ -53,7 +53,6 @@ return {
 		turninplacespeedlimit = 5.544,
 		turnrate = 829,
 		unitname = "armthund",
-		workertime = 0,
 		customparams = {
 			buildpic = "ARMTHUND.png",
 			faction = "ARM",

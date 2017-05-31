@@ -61,7 +61,6 @@ return {
 		unitname = "fatshrew",
 		upright = true,
 		version = 1,
-		workertime = 0,
 		zbuffer = 1,
 		customparams = {
 			faction = "Core",

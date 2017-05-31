@@ -59,7 +59,6 @@ return {
 		turnrate = 361,
 		unitname = "armtship",
 		waterline = 10,
-		workertime = 0,
 		customparams = {
 			buildpic = "ARMTSHIP.png",
 			faction = "ARM",

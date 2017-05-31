@@ -43,7 +43,6 @@ return {
 		turnrate = 0,
 		unitname = "corfort",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "ffff",
 		customparams = {
 			buildpic = "CORFORT.png",

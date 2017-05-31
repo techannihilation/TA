@@ -52,7 +52,6 @@ return {
 		turnrate = 960,
 		unitname = "armkrmi",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			canjump = "1",
 			faction = "CORE",

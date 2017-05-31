@@ -58,7 +58,6 @@ return {
 		turninplacespeedlimit = 0.93522,
 		turnrate = 520.29999,
 		unitname = "cormabm",
-		workertime = 0,
 		customparams = {
 			buildpic = "CORMABM.png",
 			faction = "CORE",

@@ -46,7 +46,6 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "tllpcan",
-		workertime = 0,
 		yardmap = "oooooooooooooooo",
 		customparams = {
 			buildpic = "armpcan.png",

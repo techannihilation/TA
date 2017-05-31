@@ -50,7 +50,6 @@ return {
 		unitname = "armvulc",
 		usebuildinggrounddecal = true,
 		usepiececollisionvolumes = 1,
-		workertime = 0,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
 			buildpic = "ARMVULC.png",

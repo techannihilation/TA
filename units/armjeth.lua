@@ -54,7 +54,6 @@ return {
 		turnrate = 1118,
 		unitname = "armjeth",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			buildpic = "ARMJETH.png",
 			faction = "ARM",

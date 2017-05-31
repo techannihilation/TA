@@ -39,7 +39,6 @@ return {
 		sightdistance = 280,
 		unitname = "tllawindtrap",
 		windgenerator = 90,
-		workertime = 0,
 		yardmap = "oooooo oooooo oooooo oooooo oooooo oooooo",
 		customparams = {
 			buildpic = "tllwindtrap.png",

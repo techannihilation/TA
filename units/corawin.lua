@@ -46,7 +46,6 @@ return {
 		unitname = "corawin",
 		usebuildinggrounddecal = true,
 		windgenerator = 100,
-		workertime = 0,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo",
 		customparams = {
 			buildpic = "CORAWIN.png",

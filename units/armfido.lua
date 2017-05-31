@@ -52,7 +52,6 @@ return {
 		turnrate = 990,
 		unitname = "armfido",
 		upright = false,
-		workertime = 0,
 		customparams = {
 			buildpic = "ARMFIDO.png",
 			faction = "ARM",

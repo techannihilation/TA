@@ -60,7 +60,6 @@ return {
 		turninplacespeedlimit = 1.584,
 		turnrate = 525,
 		unitname = "ahermes",
-		workertime = 0,
 		customparams = {
 			faction = "ARM",
 		},

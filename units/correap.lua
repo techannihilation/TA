@@ -60,7 +60,6 @@ return {
 		turninplacespeedlimit = 1.518,
 		turnrate = 434,
 		unitname = "correap",
-		workertime = 0,
 		customparams = {
 			buildpic = "CORREAP.png",
 			faction = "CORE",

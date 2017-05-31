@@ -53,7 +53,6 @@ return {
 		turninplacespeedlimit = 0.792,
 		turnrate = 1020,
 		unitname = "corcrab",
-		workertime = 0,
 		customparams = {
 			faction = "CORE",
 			requiretech = "Advanced T2 Unit Research Centre",

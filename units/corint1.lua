@@ -48,7 +48,6 @@ return {
 		turnrate = 0,
 		unitname = "corint1",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
 			buildpic = "CORINT.png",

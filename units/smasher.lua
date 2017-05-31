@@ -53,7 +53,6 @@ return {
 		turninplacespeedlimit = 2.508,
 		turnrate = 1024,
 		unitname = "smasher",
-		workertime = 0,
 		customparams = {
 			faction = "ARM",
 		},

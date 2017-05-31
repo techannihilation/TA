@@ -55,7 +55,6 @@ return {
 		turnrate = 700,
 		unitname = "gladiator",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			faction = "CORE",
 			requiretech = "Advanced T1 Unit Research Centre",

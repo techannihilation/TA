@@ -52,7 +52,6 @@ return {
 		turninplacespeedlimit = 1.188,
 		turnrate = 512,
 		unitname = "tllcrawlb",
-		workertime = 0,
 		customparams = {
 			faction = "TLL",
 		},

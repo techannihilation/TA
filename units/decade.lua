@@ -57,7 +57,6 @@ return {
 		turnrate = 530,
 		unitname = "decade",
 		waterline = 1,
-		workertime = 0,
 		customparams = {
 			buildpic = "DECADE.png",
 			faction = "ARM",

@@ -62,7 +62,6 @@ return {
 		turnrate = 591.79999,
 		unitname = "corsent",
 		upright = false,
-		workertime = 0,
 		customparams = {
 			buildpic = "CORSENT.png",
 			faction = "CORE",

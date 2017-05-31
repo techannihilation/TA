@@ -38,7 +38,6 @@ return {
 		sightdistance = 100,
 		unitname = "tllauwmex",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "ooooooooooooooooooooooooo",
 		customparams = {
 			faction = "TLL",

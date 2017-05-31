@@ -44,7 +44,6 @@ return {
 		sonardistance = 4800,
 		unitname = "tlltarg",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo ",
 		customparams = {
 			faction = "TLL",

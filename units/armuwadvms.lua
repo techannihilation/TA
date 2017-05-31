@@ -39,7 +39,6 @@ return {
 		sightdistance = 195,
 		unitname = "armuwadvms",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "oooooooooooooooo",
 		customparams = {
 			buildpic = "ARMUWADVMS.png",

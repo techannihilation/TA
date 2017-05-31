@@ -57,7 +57,6 @@ return {
 		turnrate = 1056,
 		unitname = "exoarm",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			faction = "ARM",
 		},

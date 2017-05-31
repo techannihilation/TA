@@ -42,7 +42,6 @@ return {
 		turnrate = 0,
 		unitname = "coramaker",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "oooooooooooo",
 		customparams = {
 			buildpic = "coramaker.png",

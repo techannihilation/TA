@@ -44,7 +44,6 @@ return {
 		turnrate = 0,
 		unitname = "tllfflak",
 		waterline = 0,
-		workertime = 0,
 		yardmap = "wwww wwww wwww wwww",
 		customparams = {
 			buildpic = "TLLFFLAK.png",

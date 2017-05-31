@@ -53,7 +53,6 @@ return {
 		turninplacespeedlimit = 0.726,
 		turnrate = 256,
 		unitname = "corerex",
-		workertime = 0,
 		customparams = {
 			faction = "ARM",
 		},

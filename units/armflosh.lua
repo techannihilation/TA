@@ -42,7 +42,6 @@ return {
 		turnrate = 0,
 		unitname = "armflosh",
 		waterline = 2,
-		workertime = 0,
 		yardmap = "oooooooooooooooo",
 		customparams = {
 			buildpic = "armflosh.png",

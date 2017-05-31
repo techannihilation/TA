@@ -44,7 +44,6 @@ return {
 		standingfireorder = 0,
 		unitname = "tllemp",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "oooo oooo oooo oooo",
 		customparams = {
 			faction = "TLL",

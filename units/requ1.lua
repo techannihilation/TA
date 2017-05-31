@@ -58,7 +58,6 @@ return {
 		turninplacespeedlimit = 0.561,
 		turnrate = 165,
 		unitname = "requ1",
-		workertime = 0,
 		customparams = {
 			buildpic = "REQU1.png",
 			faction = "CORE",

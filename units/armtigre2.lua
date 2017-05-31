@@ -53,7 +53,6 @@ return {
 		turninplacespeedlimit = 0.726,
 		turnrate = 340,
 		unitname = "armtigre2",
-		workertime = 0,
 		customparams = {
 			faction = "CORE",
 		},

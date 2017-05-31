@@ -43,7 +43,6 @@ return {
 		unitname = "tllwindtrap",
 		usebuildinggrounddecal = true,
 		windgenerator = 120,
-		workertime = 0,
 		yardmap = "oooo oooo oooo oooo",
 		customparams = {
 			faction = "TLL",

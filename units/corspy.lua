@@ -56,7 +56,6 @@ return {
 		turnrate = 1320,
 		unitname = "corspy",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			buildpic = "CORSPY.png",
 			faction = "CORE",

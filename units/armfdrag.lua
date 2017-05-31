@@ -38,7 +38,6 @@ return {
 		turnrate = 0,
 		unitname = "armfdrag",
 		waterline = 22,
-		workertime = 0,
 		yardmap = "wwww",
 		customparams = {
 			buildpic = "ARMFDRAG.png",

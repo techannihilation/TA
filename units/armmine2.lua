@@ -63,7 +63,6 @@ return {
 		turnrate = 0,
 		unitname = "armmine2",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		customparams = {
 			buildpic = "ARMMINE2.png",
 			faction = "ARM",

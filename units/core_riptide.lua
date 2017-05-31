@@ -53,7 +53,6 @@ return {
 		turnrate = 510,
 		unitname = "core_riptide",
 		upright = false,
-		workertime = 0,
 		customparams = {
 			faction = "CORE",
 			requiretech = "Advanced T2 Unit Research Centre",

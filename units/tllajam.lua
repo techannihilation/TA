@@ -40,7 +40,6 @@ return {
 		sightdistance = 620,
 		stealth = true,
 		unitname = "tllajam",
-		workertime = 0,
 		customparams = {
 			faction = "TLL",
 		},

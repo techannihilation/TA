@@ -39,7 +39,6 @@ return {
 		sightdistance = 273,
 		unitname = "corupmex",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "ooooooooo",
 		customparams = {
 			faction = "CORE",

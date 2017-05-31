@@ -53,7 +53,6 @@ return {
 		turninplacespeedlimit = 0.8415,
 		turnrate = 1011,
 		unitname = "corehingeback",
-		workertime = 0,
 		customparams = {
 			faction = "CORE",
 		},

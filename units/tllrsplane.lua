@@ -47,7 +47,6 @@ return {
 		turninplacespeedlimit = 7.392,
 		turnrate = 370,
 		unitname = "tllrsplane",
-		workertime = 0,
 		customparams = {
 			faction = "TLL",
 		},

@@ -48,7 +48,6 @@ return {
 		standingfireorder = 2,
 		unitname = "core_immolator",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "oooo oooo oooo oooo",
 		customparams = {
 			buildpic = "core_immolator.png",

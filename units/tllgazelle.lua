@@ -50,7 +50,6 @@ return {
 		turnrate = 0,
 		unitname = "tllgazelle",
 		unitrestricted = 8,
-		workertime = 0,
 		yardmap = "oooooo oooooo oooooo oooooo oooooo oooooo",
 		customparams = {
 			buildpic = "TLLGAZELLE.png",

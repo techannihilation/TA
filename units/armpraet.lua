@@ -63,7 +63,6 @@ return {
 		turnrate = 225,
 		unitname = "armpraet",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			faction = "ARM",
 		},

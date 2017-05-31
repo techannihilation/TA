@@ -55,7 +55,6 @@ return {
 		turninplacespeedlimit = 1.716,
 		turnrate = 240,
 		unitname = "watcher",
-		workertime = 0,
 		customparams = {
 			faction = "CORE",
 		},

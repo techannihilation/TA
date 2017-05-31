@@ -57,7 +57,6 @@ return {
 		turnrate = 1016,
 		unitname = "tllgrim",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			faction = "TLL",
 		},

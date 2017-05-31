@@ -45,7 +45,6 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "armpcan",
-		workertime = 0,
 		yardmap = "oooooooooooooooo",
 		customparams = {
 			canareaattack = 1,

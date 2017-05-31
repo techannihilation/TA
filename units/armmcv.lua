@@ -61,7 +61,6 @@ return {
 		turninplacespeedlimit = 0.792,
 		turnrate = 310,
 		unitname = "armmcv",
-		workertime = 0,
 		customparams = {
 			faction = "CORE",
 		},

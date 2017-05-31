@@ -53,7 +53,6 @@ return {
 		turninplacespeedlimit = 1.65,
 		turnrate = 250,
 		unitname = "blotter",
-		workertime = 0,
 		customparams = {
 			faction = "CORE",
 		},

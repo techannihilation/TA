@@ -53,7 +53,6 @@ return {
 		turninplacespeedlimit = 2.97,
 		turnrate = 700,
 		unitname = "chopper",
-		workertime = 0,
 		customparams = {
 			faction = "ARM",
 		},

@@ -57,7 +57,6 @@ return {
 		turnrate = 220,
 		unitname = "armhls",
 		waterline = 1,
-		workertime = 0,
 		customparams = {
 			faction = "ARM",
 			requiretech = "Advanced T1 Unit Research Centre",

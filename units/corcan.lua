@@ -55,7 +55,6 @@ return {
 		turnrate = 970,
 		unitname = "corcan",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			buildpic = "CORCAN.png",
 			faction = "CORE",

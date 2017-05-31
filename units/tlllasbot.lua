@@ -56,7 +56,6 @@ return {
 		turnrate = 816,
 		unitname = "tlllasbot",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			faction = "TLL",
 		},

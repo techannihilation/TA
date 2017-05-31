@@ -54,7 +54,6 @@ return {
 		turnrate = 450,
 		unitname = "armarty",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			faction = "ARM",
 			requiretech = "Advanced T1 Unit Research Centre",

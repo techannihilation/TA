@@ -38,7 +38,6 @@ return {
 		standingfireorder = 2,
 		unitname = "tlltorp",
 		waterline = 0,
-		workertime = 0,
 		yardmap = "wwwwwwwww",
 		customparams = {
 			faction = "TLL",

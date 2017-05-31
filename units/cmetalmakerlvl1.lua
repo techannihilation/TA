@@ -36,7 +36,6 @@ return {
 		sightdistance = 210,
 		unitname = "cmetalmakerlvl1",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "OOOOOOOOOOOO",
 		customparams = {
 			faction = "CORE",

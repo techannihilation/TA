@@ -41,7 +41,6 @@ return {
 		standingfireorder = 2,
 		unitname = "tllantinuke",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "oooo oooo oooo oooo",
 		customparams = {
 			faction = "TLL",

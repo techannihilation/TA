@@ -55,7 +55,6 @@ return {
 		turnrate = 489,
 		unitname = "armiguana",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			faction = "ARM",
 		},

@@ -54,7 +54,6 @@ return {
 		turnrate = 950,
 		unitname = "corpyrox",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			faction = "CORE",
 			requiretech = "Advanced T2 Unit Research Centre",

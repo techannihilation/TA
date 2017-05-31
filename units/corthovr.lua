@@ -62,7 +62,6 @@ return {
 		turnrate = 370,
 		unitname = "corthovr",
 		waterline = 10,
-		workertime = 0,
 		customparams = {
 			buildpic = "CORTHOVR.png",
 			faction = "CORE",

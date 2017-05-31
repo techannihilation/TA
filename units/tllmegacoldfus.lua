@@ -41,7 +41,6 @@ return {
 		sightdistance = 210,
 		unitname = "tllmegacoldfus",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo",
 		customparams = {
 			faction = "TLL",

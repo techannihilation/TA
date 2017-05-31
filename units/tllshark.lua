@@ -56,7 +56,6 @@ return {
 		turnrate = 400,
 		unitname = "tllshark",
 		waterline = 30,
-		workertime = 0,
 		customparams = {
 			faction = "TLL",
 		},

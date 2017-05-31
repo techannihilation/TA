@@ -42,7 +42,6 @@ return {
 		sightdistance = 192,
 		unitname = "coruwadves",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "ooooooooooooooooooooooooo",
 		customparams = {
 			buildpic = "CORUWADVES.png",

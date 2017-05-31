@@ -53,7 +53,6 @@ return {
 		turninplacespeedlimit = 7.59,
 		turnrate = 512,
 		unitname = "tllseaf",
-		workertime = 0,
 		customparams = {
 			faction = "TLL",
 		},

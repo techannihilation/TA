@@ -60,7 +60,6 @@ return {
 		turninplacespeedlimit = 1.2573,
 		turnrate = 375,
 		unitname = "tawf114",
-		workertime = 0,
 		customparams = {
 			buildpic = "TAWF114.png",
 			faction = "CORE",

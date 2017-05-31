@@ -47,7 +47,6 @@ return {
 		turnrate = 0,
 		unitname = "armestor",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "ooooooooo",
 		customparams = {
 			buildpic = "ARMESTOR.png",

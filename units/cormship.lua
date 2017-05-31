@@ -56,7 +56,6 @@ return {
 		turninplacespeedlimit = 1.7424,
 		turnrate = 341,
 		unitname = "cormship",
-		workertime = 0,
 		customparams = {
 			buildpic = "CORMSHIP.png",
 			faction = "CORE",

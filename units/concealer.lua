@@ -54,7 +54,6 @@ return {
 		turninplacespeedlimit = 1.782,
 		turnrate = 260,
 		unitname = "concealer",
-		workertime = 0,
 		customparams = {
 			faction = "ARM",
 		},

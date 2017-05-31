@@ -52,7 +52,6 @@ return {
 		turnrate = 362,
 		unitname = "tllbats2",
 		waterline = 9,
-		workertime = 0,
 		customparams = {
 			faction = "TLL",
 		},

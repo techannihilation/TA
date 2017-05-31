@@ -35,7 +35,6 @@ return {
 		tidalgenerator = 1,
 		unitname = "tlltide",
 		waterline = 1,
-		workertime = 0,
 		yardmap = "wwwwwwwww",
 		customparams = {
 			faction = "TLL",

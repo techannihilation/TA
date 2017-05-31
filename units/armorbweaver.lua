@@ -50,7 +50,6 @@ return {
 		turninplacespeedlimit = 0.759,
 		turnrate = 950,
 		unitname = "armorbweaver",
-		workertime = 0,
 		customparams = {
 			faction = "ARM",
 		},

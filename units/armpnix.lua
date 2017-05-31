@@ -51,7 +51,6 @@ return {
 		turninplacespeedlimit = 6.1842,
 		turnrate = 402,
 		unitname = "armpnix",
-		workertime = 0,
 		customparams = {
 			buildpic = "ARMPNIX.png",
 			faction = "ARM",

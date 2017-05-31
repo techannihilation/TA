@@ -55,7 +55,6 @@ return {
 		turninplacespeedlimit = 1.056,
 		turnrate = 169,
 		unitname = "nsacanglr",
-		workertime = 0,
 		customparams = {
 			faction = "CORE",
 		},

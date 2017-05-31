@@ -51,7 +51,6 @@ return {
 		turnrate = 500,
 		unitname = "corshieldgen",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			buildpic = "corshieldgen.png",
 			faction = "Core",

@@ -57,7 +57,6 @@ return {
 		turninplacespeedlimit = 0.726,
 		turnrate = 300,
 		unitname = "armdark",
-		workertime = 0,
 		customparams = {
 			faction = "ARM",
 			requiretech = "Advanced T1 Unit Research Centre",

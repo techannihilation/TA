@@ -37,7 +37,6 @@ return {
 		tidalgenerator = 1,
 		unitname = "tllsolarns",
 		waterline = 8,
-		workertime = 0,
 		yardmap = "wwww wwww wwww wwww",
 		customparams = {
 			faction = "TLL",

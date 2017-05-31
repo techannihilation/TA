@@ -43,7 +43,6 @@ return {
 		unitname = "armdrag",
 		upright = false,
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "ffff",
 		customparams = {
 			buildpic = "ARMDRAG.png",

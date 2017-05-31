@@ -36,7 +36,6 @@ return {
 		unitname = "tlldtns",
 		usebuildinggrounddecal = true,
 		waterline = 11,
-		workertime = 0,
 		yardmap = "ww ww",
 		customparams = {
 			faction = "TLL",

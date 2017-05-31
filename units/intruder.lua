@@ -66,7 +66,6 @@ return {
 		turnrate = 215.60001,
 		unitname = "intruder",
 		unloadspread = 4,
-		workertime = 0,
 		customparams = {
 			buildpic = "INTRUDER.png",
 			faction = "CORE",

@@ -42,7 +42,6 @@ return {
 		unitname = "tllasonar",
 		usebuildinggrounddecal = true,
 		waterline = 2,
-		workertime = 0,
 		yardmap = "oooo",
 		customparams = {
 			faction = "TLL",

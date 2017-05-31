@@ -57,7 +57,6 @@ return {
 		unitname = "corsub",
 		upright = true,
 		waterline = 30,
-		workertime = 0,
 		customparams = {
 			buildpic = "CORSUB.png",
 			faction = "CORE",

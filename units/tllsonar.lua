@@ -37,7 +37,6 @@ return {
 		sonardistance = 1320,
 		unitname = "tllsonar",
 		waterline = 0,
-		workertime = 0,
 		yardmap = "wwww",
 		customparams = {
 			faction = "TLL",

@@ -50,7 +50,6 @@ return {
 		turninplacespeedlimit = 0.528,
 		turnrate = 430,
 		unitname = "tllturtle",
-		workertime = 0,
 		customparams = {
 			faction = "TLL",
 		},

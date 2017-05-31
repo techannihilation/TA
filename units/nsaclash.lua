@@ -52,7 +52,6 @@ return {
 		turninplacespeedlimit = 1.023,
 		turnrate = 410,
 		unitname = "nsaclash",
-		workertime = 0,
 		customparams = {
 			buildpic = "NSACLASH.png",
 			faction = "CORE",

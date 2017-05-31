@@ -53,7 +53,6 @@ return {
 		turninplacespeedlimit = 2.508,
 		turnrate = 425,
 		unitname = "tllhoverlight",
-		workertime = 0,
 		customparams = {
 			faction = "TLL",
 		},

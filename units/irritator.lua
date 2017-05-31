@@ -62,7 +62,6 @@ return {
 		unitname = "irritator",
 		upright = true,
 		version = 1,
-		workertime = 0,
 		zbuffer = 1,
 		customparams = {
 			buildpic = "irritator.png",

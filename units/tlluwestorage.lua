@@ -33,7 +33,6 @@ return {
 		selfdestructas = "ESTOR_BUILDING",
 		sightdistance = 140,
 		unitname = "tlluwestorage",
-		workertime = 0,
 		yardmap = "oooooooooooooooo",
 		customparams = {
 			faction = "TLL",

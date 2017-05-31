@@ -42,7 +42,6 @@ return {
 		turnrate = 0,
 		unitname = "corfatf",
 		waterline = 8,
-		workertime = 0,
 		yardmap = "wwwwwwwwwwwwwwww",
 		customparams = {
 			buildpic = "CORFATF.png",

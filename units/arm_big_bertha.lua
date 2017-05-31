@@ -46,7 +46,6 @@ return {
 		unitname = "arm_big_bertha",
 		usebuildinggrounddecal = true,
 		usepiececollisionvolumes = 1,
-		workertime = 0,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo",
 		customparams = {
 			buildpic = "arm_big_bertha.png",

@@ -57,7 +57,6 @@ return {
 		turninplacespeedlimit = 1.749,
 		turnrate = 400,
 		unitname = "dao",
-		workertime = 0,
 		customparams = {
 			faction = "CORE",
 			requiretech = "Advanced T1 Unit Research Centre",

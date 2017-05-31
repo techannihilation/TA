@@ -35,7 +35,6 @@ return {
 		sightdistance = 250,
 		unitname = "corgen",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "ooo ooo ooo",
 		customparams = {
 			buildpic = "CORGEN.png",

@@ -39,7 +39,6 @@ return {
 		standingfireorder = 2,
 		unitname = "tllstuner",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "oooo oooo oooo oooo",
 		customparams = {
 			faction = "TLL",

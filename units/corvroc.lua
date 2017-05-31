@@ -61,7 +61,6 @@ return {
 		turninplacespeedlimit = 0.6171,
 		turnrate = 520.29999,
 		unitname = "corvroc",
-		workertime = 0,
 		customparams = {
 			buildpic = "CORVROC.png",
 			faction = "CORE",

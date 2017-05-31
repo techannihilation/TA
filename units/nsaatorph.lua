@@ -56,7 +56,6 @@ return {
 		turninplacespeedlimit = 1.848,
 		turnrate = 230,
 		unitname = "nsaatorph",
-		workertime = 0,
 		customparams = {
 			faction = "ARM",
 		},

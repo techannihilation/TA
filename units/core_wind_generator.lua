@@ -41,7 +41,6 @@ return {
 		unitname = "core_wind_generator",
 		usebuildinggrounddecal = true,
 		windgenerator = 185,
-		workertime = 0,
 		yardmap = "oooooooooooooooo",
 		customparams = {
 			buildpic = "core_wind_generator.png",

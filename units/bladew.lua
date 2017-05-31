@@ -50,7 +50,6 @@ return {
 		unitname = "bladew",
 		upright = true,
 		usesmoothmesh = 0,
-		workertime = 0,
 		customparams = {
 			buildpic = "BLADEW.png",
 			faction = "CORE",

@@ -43,7 +43,6 @@ return {
 		turnrate = 0,
 		unitname = "terraunit",
 		upright = false,
-		workertime = 0,
 		yardmap = "yyyy",
 		customparams = {
 			buildpic = "levelterra.png",

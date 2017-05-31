@@ -48,7 +48,6 @@ return {
 		sightdistance = 650,
 		standingfireorder = 2,
 		unitname = "tllvanya",
-		workertime = 0,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
 			faction = "TLL",

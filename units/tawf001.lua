@@ -52,7 +52,6 @@ return {
 		turnrate = 0,
 		unitname = "tawf001",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "oooo",
 		customparams = {
 			buildpic = "TAWF001.png",

@@ -53,7 +53,6 @@ return {
 		turninplacespeedlimit = 3.3,
 		turnrate = 720,
 		unitname = "tawf015",
-		workertime = 0,
 		wter_badtargetcategory = "NOTAIR",
 		customparams = {
 			buildpic = "TAWF015.png",

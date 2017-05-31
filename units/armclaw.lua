@@ -52,7 +52,6 @@ return {
 		unitname = "armclaw",
 		upright = true,
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		customparams = {
 			buildpic = "ARMCLAW.png",
 			faction = "ARM",

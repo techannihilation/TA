@@ -58,7 +58,6 @@ return {
 		turnrate = 1097,
 		unitname = "corfav",
 		unitrestricted = 150,
-		workertime = 0,
 		customparams = {
 			buildpic = "CORFAV.png",
 			faction = "CORE",

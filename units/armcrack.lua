@@ -55,7 +55,6 @@ return {
 		turnrate = 1103,
 		unitname = "armcrack",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			buildpic = "armcrack.png",
 			faction = "ARM",

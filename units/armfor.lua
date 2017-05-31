@@ -36,7 +36,6 @@ return {
 		sightdistance = 250,
 		unitname = "armfor",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "oooo oooo oooo oooo",
 		customparams = {
 			faction = "arm",

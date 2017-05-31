@@ -56,7 +56,6 @@ return {
 		turnrate = 0,
 		unitname = "armfmine3",
 		waterline = 0,
-		workertime = 0,
 		customparams = {
 			buildpic = "ARMFMINE3.png",
 			faction = "ARM",

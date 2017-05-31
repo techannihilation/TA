@@ -38,7 +38,6 @@ return {
 		sightdistance = 210,
 		unitname = "tllemstor",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo",
 		customparams = {
 			faction = "TLL",

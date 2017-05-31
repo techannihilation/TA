@@ -60,7 +60,6 @@ return {
 		turninplacespeedlimit = 1.98,
 		turnrate = 484,
 		unitname = "corgator",
-		workertime = 0,
 		customparams = {
 			buildpic = "CORGATOR.png",
 			faction = "CORE",

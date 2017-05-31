@@ -43,7 +43,6 @@ return {
 		sightdistance = 250,
 		unitname = "armlightfus",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "oooooo oooooo oooooo oooooo oooooo oooooo",
 		customparams = {
 			buildpic = "armlightfus.png",

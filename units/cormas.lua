@@ -46,7 +46,6 @@ return {
 		sightdistance = 322,
 		unitname = "cormas",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo",
 		customparams = {
 			faction = "CORE",

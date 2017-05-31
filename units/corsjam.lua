@@ -55,7 +55,6 @@ return {
 		turninplacespeedlimit = 1.9008,
 		turnrate = 512,
 		unitname = "corsjam",
-		workertime = 0,
 		customparams = {
 			buildpic = "CORSJAM.png",
 			faction = "CORE",

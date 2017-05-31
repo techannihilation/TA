@@ -55,7 +55,6 @@ return {
 		turnrate = 960,
 		unitname = "armgor",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			faction = "CORE",
 			requiretech = "Advanced T3 Unit Research Centre",

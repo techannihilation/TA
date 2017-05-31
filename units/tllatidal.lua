@@ -34,7 +34,6 @@ return {
 		sightdistance = 110,
 		tidalgenerator = 1,
 		unitname = "tllatidal",
-		workertime = 0,
 		yardmap = "oooo oooo oooo oooo",
 		customparams = {
 			energymultiplier = 2.5,

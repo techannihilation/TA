@@ -39,7 +39,6 @@ return {
 		unitname = "cadvmsto",
 		upright = true,
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo",
 		customparams = {
 			faction = "CORE",

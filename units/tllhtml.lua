@@ -58,7 +58,6 @@ return {
 		turnrate = 390,
 		unitname = "tllhtml",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			faction = "TLL",
 		},

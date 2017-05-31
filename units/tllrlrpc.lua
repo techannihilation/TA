@@ -43,7 +43,6 @@ return {
 		standingfireorder = 0,
 		unitname = "tllrlrpc",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo",
 		customparams = {
 			canareaattack = 1,

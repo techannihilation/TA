@@ -61,7 +61,6 @@ return {
 		turnrate = 132,
 		unitname = "clb",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			buildpic = "clb.png",
 			faction = "CORE",

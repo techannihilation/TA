@@ -37,7 +37,6 @@ return {
 		sonardistancejam = 275,
 		unitname = "tlluwjam",
 		waterline = 7,
-		workertime = 0,
 		yardmap = "ooooooooo",
 		customparams = {
 			faction = "TLL",

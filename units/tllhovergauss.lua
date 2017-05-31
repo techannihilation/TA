@@ -53,7 +53,6 @@ return {
 		turninplacespeedlimit = 1.716,
 		turnrate = 280,
 		unitname = "tllhovergauss",
-		workertime = 0,
 		customparams = {
 			faction = "TLL",
 		},

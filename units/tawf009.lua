@@ -57,7 +57,6 @@ return {
 		unitname = "tawf009",
 		upright = true,
 		waterline = 30,
-		workertime = 0,
 		customparams = {
 			buildpic = "TAWF009.png",
 			faction = "ARM",

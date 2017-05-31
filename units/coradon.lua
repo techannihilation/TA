@@ -57,7 +57,6 @@ return {
 		turnrate = 290,
 		unitname = "coradon",
 		waterline = 7,
-		workertime = 0,
 		customparams = {
 			faction = "CORE",
 			requiretech = "Advanced T2 Unit Research Centre",

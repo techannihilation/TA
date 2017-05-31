@@ -61,7 +61,6 @@ return {
 		turnrate = 200,
 		unitname = "uppercut",
 		waterline = 60,
-		workertime = 0,
 		customparams = {
 			faction = "CORE",
 		},

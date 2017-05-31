@@ -51,7 +51,6 @@ return {
 		turnrate = 1672,
 		unitname = "armflea",
 		unitrestricted = 150,
-		workertime = 0,
 		customparams = {
 			buildpic = "ARMFLEA.png",
 			faction = "ARM",

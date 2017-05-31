@@ -48,7 +48,6 @@ return {
 		turnrate = 0,
 		unitname = "armgate2",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "ooo ooo ooo",
 		customparams = {
 			buildpic = "ARMGATE.png",

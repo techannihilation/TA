@@ -52,7 +52,6 @@ return {
 		turninplacespeedlimit = 1.848,
 		turnrate = 230,
 		unitname = "cormatch",
-		workertime = 0,
 		customparams = {
 			faction = "CORE",
 		},

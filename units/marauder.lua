@@ -49,7 +49,6 @@ return {
 		turnrate = 1056,
 		unitname = "marauder",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			buildpic = "MARAUDER.png",
 			faction = "ARM",

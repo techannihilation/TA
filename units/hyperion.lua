@@ -60,7 +60,6 @@ return {
 		turnrate = 620,
 		unitname = "hyperion",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			faction = "TLL",
 		},

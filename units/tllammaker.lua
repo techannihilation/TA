@@ -39,7 +39,6 @@ return {
 		sightdistance = 210,
 		unitname = "tllammaker",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "oooo oooo oooo oooo",
 		customparams = {
 			faction = "TLL",

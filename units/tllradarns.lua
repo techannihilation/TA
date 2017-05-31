@@ -49,7 +49,6 @@ return {
 		turnrate = 0,
 		unitname = "tllradarns",
 		waterline = 0,
-		workertime = 0,
 		yardmap = "wwwwwwwww",
 		customparams = {
 			buildpic = "TLLRADARNS.png",

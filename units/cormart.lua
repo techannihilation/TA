@@ -61,7 +61,6 @@ return {
 		turninplacespeedlimit = 1.221,
 		turnrate = 445,
 		unitname = "cormart",
-		workertime = 0,
 		customparams = {
 			buildpic = "CORMART.png",
 			canareaattack = 1,

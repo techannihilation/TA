@@ -56,7 +56,6 @@ return {
 		turninplacespeedlimit = 5.7486,
 		turnrate = 368,
 		unitname = "corsb",
-		workertime = 0,
 		customparams = {
 			buildpic = "CORSB.png",
 			faction = "CORE",

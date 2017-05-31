@@ -67,7 +67,6 @@ return {
 		turnrate = 380,
 		unitname = "armsl",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			buildpic = "ARMSL.png",
 			faction = "CORE",

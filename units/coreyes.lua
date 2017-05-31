@@ -49,7 +49,6 @@ return {
 		turnrate = 0,
 		unitname = "coreyes",
 		waterline = 5,
-		workertime = 0,
 		yardmap = "o",
 		customparams = {
 			buildpic = "COREYES.png",

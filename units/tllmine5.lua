@@ -60,7 +60,6 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "tllmine5",
-		workertime = 0,
 		customparams = {
 			buildpic = "TLLMINE5.png",
 			faction = "TLL",

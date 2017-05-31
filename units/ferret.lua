@@ -51,7 +51,6 @@ return {
 		turninplacespeedlimit = 3.3,
 		turnrate = 1600,
 		unitname = "ferret",
-		workertime = 0,
 		customparams = {
 			faction = "CORE",
 		},

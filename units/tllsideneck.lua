@@ -50,7 +50,6 @@ return {
 		turninplacespeedlimit = 0.33,
 		turnrate = 430,
 		unitname = "tllsideneck",
-		workertime = 0,
 		customparams = {
 			faction = "TLL",
 		},

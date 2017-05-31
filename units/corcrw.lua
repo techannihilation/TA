@@ -60,7 +60,6 @@ return {
 		turnrate = 297,
 		unitname = "corcrw",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			buildpic = "CORCRW.png",
 			faction = "CORE",

@@ -43,7 +43,6 @@ return {
 		sightdistance = 240,
 		unitname = "tllgate",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "oooooo oooooo oooooo oooooo",
 		customparams = {
 			buildpic = "tllgate.png",

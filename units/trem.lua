@@ -61,7 +61,6 @@ return {
 		turninplacespeedlimit = 0.924,
 		turnrate = 169.39999,
 		unitname = "trem",
-		workertime = 0,
 		customparams = {
 			buildpic = "TREM.png",
 			faction = "CORE",

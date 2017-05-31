@@ -40,7 +40,6 @@ return {
 		sightdistance = 240,
 		unitname = "tlljam",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		customparams = {
 			faction = "TLL",
 		},

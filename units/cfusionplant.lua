@@ -42,7 +42,6 @@ return {
 		turnrate = 0,
 		unitname = "cfusionplant",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
 			faction = "CORE",

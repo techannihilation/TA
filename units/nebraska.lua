@@ -46,7 +46,6 @@ return {
 		standingfireorder = 2,
 		unitname = "nebraska",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo",
 		customparams = {
 			faction = "ARM",

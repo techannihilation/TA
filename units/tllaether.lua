@@ -52,7 +52,6 @@ return {
 		turnrate = 215,
 		unitname = "tllaether",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			buildpic = "tllaether.png",
 			faction = "TLL",

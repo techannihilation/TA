@@ -53,7 +53,6 @@ return {
 		turninplacespeedlimit = 1.452,
 		turnrate = 300,
 		unitname = "armhplasma",
-		workertime = 0,
 		customparams = {
 			faction = "ARM",
 		},

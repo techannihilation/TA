@@ -43,7 +43,6 @@ return {
 		sightdistance = 0,
 		unitname = "corech21",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo",
 		customparams = {
 			buildpic = "corech3.png",

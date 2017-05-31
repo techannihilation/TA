@@ -38,7 +38,6 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "armuwlightfus",
-		workertime = 0,
 		yardmap = "oooo oooo oooo oooo",
 		customparams = {
 			buildpic = "ARMUWLIGHTFUS.png",

@@ -50,7 +50,6 @@ return {
 		turninplacespeedlimit = 4.29,
 		turnrate = 140,
 		unitname = "tllanhur",
-		workertime = 0,
 		customparams = {
 			buildpic = "tllanhur.png",
 			faction = "TLL",

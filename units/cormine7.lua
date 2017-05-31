@@ -56,7 +56,6 @@ return {
 		turnrate = 0,
 		unitname = "cormine7",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		customparams = {
 			buildpic = "CORMINE7.png",
 			faction = "CORE",

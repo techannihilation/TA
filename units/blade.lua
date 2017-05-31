@@ -52,7 +52,6 @@ return {
 		turninplacespeedlimit = 5.28,
 		turnrate = 720,
 		unitname = "blade",
-		workertime = 0,
 		customparams = {
 			buildpic = "BLADE.png",
 			faction = "ARM",

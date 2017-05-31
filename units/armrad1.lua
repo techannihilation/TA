@@ -51,7 +51,6 @@ return {
 		unitname = "armrad1",
 		usebuildinggrounddecal = true,
 		usepiececollisionvolumes = 1,
-		workertime = 0,
 		yardmap = "oooo",
 		customparams = {
 			buildpic = "ARMRAD.png",

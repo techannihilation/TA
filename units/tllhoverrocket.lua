@@ -53,7 +53,6 @@ return {
 		turninplacespeedlimit = 1.419,
 		turnrate = 360,
 		unitname = "tllhoverrocket",
-		workertime = 0,
 		customparams = {
 			faction = "TLL",
 		},

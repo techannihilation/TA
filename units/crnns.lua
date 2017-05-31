@@ -40,7 +40,6 @@ return {
 		unitname = "crnns",
 		usebuildinggrounddecal = true,
 		waterline = 10,
-		workertime = 0,
 		yardmap = "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
 		customparams = {
 			faction = "CORE",

@@ -52,7 +52,6 @@ return {
 		turnrate = 850,
 		unitname = "armtys",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			faction = "ARM",
 		},

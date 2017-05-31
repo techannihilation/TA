@@ -55,7 +55,6 @@ return {
 		turnrate = 960,
 		unitname = "armjugg",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			faction = "ARM",
 			requiretech = "Advanced T3 Unit Research Centre",

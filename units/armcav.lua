@@ -58,7 +58,6 @@ return {
 		turnrate = 550,
 		unitname = "armcav",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			canjump = "1",
 			faction = "ARM",

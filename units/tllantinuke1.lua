@@ -42,7 +42,6 @@ return {
 		standingfireorder = 2,
 		unitname = "tllantinuke1",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "oooo oooo oooo oooo",
 		customparams = {
 			buildpic = "tllantinuke.png",

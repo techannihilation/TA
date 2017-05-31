@@ -53,7 +53,6 @@ return {
 		turninplacespeedlimit = 2.178,
 		turnrate = 260,
 		unitname = "armvisit",
-		workertime = 0,
 		customparams = {
 			faction = "ARM",
 		},

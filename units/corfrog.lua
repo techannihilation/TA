@@ -55,7 +55,6 @@ return {
 		turnrate = 489,
 		unitname = "corfrog",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			faction = "CORE",
 		},

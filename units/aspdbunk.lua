@@ -46,7 +46,6 @@ return {
 		standingfireorder = 2,
 		unitname = "aspdbunk",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "oooo",
 		customparams = {
 			faction = "ARM",

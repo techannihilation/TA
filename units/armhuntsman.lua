@@ -52,7 +52,6 @@ return {
 		turninplacespeedlimit = 1.056,
 		turnrate = 1020,
 		unitname = "armhuntsman",
-		workertime = 0,
 		customparams = {
 			faction = "ARM",
 		},

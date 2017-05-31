@@ -53,7 +53,6 @@ return {
 		turninplacespeedlimit = 1.188,
 		turnrate = 280,
 		unitname = "tllhplasma",
-		workertime = 0,
 		customparams = {
 			faction = "TLL",
 		},

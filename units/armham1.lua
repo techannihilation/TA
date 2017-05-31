@@ -55,7 +55,6 @@ return {
 		turnrate = 1094,
 		unitname = "armham1",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			buildpic = "ARMHAM1.png",
 			faction = "ARM",

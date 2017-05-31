@@ -59,7 +59,6 @@ return {
 		turnrate = 816,
 		unitname = "tlldischarge",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			canjump = "1",
 			faction = "TLL",

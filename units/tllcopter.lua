@@ -47,7 +47,6 @@ return {
 		turninplacespeedlimit = 4.62,
 		turnrate = 720,
 		unitname = "tllcopter",
-		workertime = 0,
 		customparams = {
 			faction = "TLL",
 		},

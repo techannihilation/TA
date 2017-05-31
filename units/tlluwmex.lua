@@ -33,7 +33,6 @@ return {
 		selfdestructas = "SMALL_BUILDING",
 		sightdistance = 100,
 		unitname = "tlluwmex",
-		workertime = 0,
 		yardmap = "ooooooooo",
 		customparams = {
 			faction = "TLL",

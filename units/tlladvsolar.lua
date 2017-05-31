@@ -41,7 +41,6 @@ return {
 		unitname = "tlladvsolar",
 		usebuildinggrounddecal = true,
 		windgenerator = 25,
-		workertime = 0,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo",
 		customparams = {
 			faction = "TLL",

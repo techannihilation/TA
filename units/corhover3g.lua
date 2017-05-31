@@ -57,7 +57,6 @@ return {
 		turninplacespeedlimit = 1.386,
 		turnrate = 250,
 		unitname = "corhover3g",
-		workertime = 0,
 		customparams = {
 			faction = "CORE",
 		},

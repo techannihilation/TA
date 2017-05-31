@@ -57,7 +57,6 @@ return {
 		turnrate = 510,
 		unitname = "cormenacer",
 		upright = false,
-		workertime = 0,
 		customparams = {
 			faction = "CORE",
 			requiretech = "Advanced T1 Unit Research Centre",

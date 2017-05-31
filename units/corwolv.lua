@@ -59,7 +59,6 @@ return {
 		turninplacespeedlimit = 1.254,
 		turnrate = 466,
 		unitname = "corwolv",
-		workertime = 0,
 		customparams = {
 			buildpic = "CORWOLV.png",
 			canareaattack = 1,

@@ -61,7 +61,6 @@ return {
 		turnrate = 200,
 		unitname = "tllswordfish",
 		waterline = 60,
-		workertime = 0,
 		customparams = {
 			faction = "TLL",
 		},

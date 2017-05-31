@@ -42,7 +42,6 @@ return {
 		standingfireorder = 2,
 		unitname = "cmortor",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "oooo oooo oooo oooo",
 		customparams = {
 			faction = "CORE",

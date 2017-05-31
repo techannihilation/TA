@@ -53,7 +53,6 @@ return {
 		turninplacespeedlimit = 2.112,
 		turnrate = 320,
 		unitname = "tllhovermissile",
-		workertime = 0,
 		customparams = {
 			faction = "TLL",
 		},

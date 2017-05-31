@@ -50,7 +50,6 @@ return {
 		turninplacespeedlimit = 1.056,
 		turnrate = 1056,
 		unitname = "cortermite",
-		workertime = 0,
 		customparams = {
 			buildpic = "CORTERMITE.png",
 			faction = "CORE",

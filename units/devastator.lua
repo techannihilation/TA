@@ -57,7 +57,6 @@ return {
 		turninplacespeedlimit = 0.99,
 		turnrate = 250,
 		unitname = "devastator",
-		workertime = 0,
 		customparams = {
 			faction = "ARM",
 		},

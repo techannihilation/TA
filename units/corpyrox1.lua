@@ -54,7 +54,6 @@ return {
 		turnrate = 950,
 		unitname = "corpyrox1",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			buildpic = "corpyrox.png",
 			faction = "CORE",

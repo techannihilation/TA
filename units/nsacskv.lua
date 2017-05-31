@@ -53,7 +53,6 @@ return {
 		turninplacespeedlimit = 1.815,
 		turnrate = 511,
 		unitname = "nsacskv",
-		workertime = 0,
 		customparams = {
 			faction = "CORE",
 			requiretech = "Advanced T2 Unit Research Centre",

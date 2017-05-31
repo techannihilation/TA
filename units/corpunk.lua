@@ -51,7 +51,6 @@ return {
 		turninplacespeedlimit = 2.904,
 		turnrate = 1672,
 		unitname = "corpunk",
-		workertime = 0,
 		wpri_badtargetcategory = "ANTIGATOR",
 		customparams = {
 			buildpic = "CORPUNK.png",

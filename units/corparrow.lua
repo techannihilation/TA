@@ -60,7 +60,6 @@ return {
 		turninplacespeedlimit = 1.287,
 		turnrate = 400,
 		unitname = "corparrow",
-		workertime = 0,
 		customparams = {
 			buildpic = "CORPARROW.png",
 			faction = "CORE",

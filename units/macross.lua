@@ -55,7 +55,6 @@ return {
 		turnrate = 205,
 		unitname = "macross",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			faction = "CORE",
 			requiretech = "Advanced T3 Unit Research Centre",

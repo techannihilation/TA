@@ -51,7 +51,6 @@ return {
 		turnrate = 0,
 		unitname = "armdl",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "oooo",
 		customparams = {
 			buildpic = "ARMDL.png",

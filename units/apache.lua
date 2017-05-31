@@ -53,7 +53,6 @@ return {
 		turninplacespeedlimit = 2.64,
 		turnrate = 1024,
 		unitname = "apache",
-		workertime = 0,
 		customparams = {
 			faction = "ARM",
 		},

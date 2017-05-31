@@ -50,7 +50,6 @@ return {
 		turnrate = 320,
 		unitname = "corsumo",
 		upright = false,
-		workertime = 0,
 		customparams = {
 			buildpic = "CORSUMO.png",
 			faction = "CORE",

@@ -51,7 +51,6 @@ return {
 		turninplacespeedlimit = 7.062,
 		turnrate = 402,
 		unitname = "corawac",
-		workertime = 0,
 		customparams = {
 			buildpic = "CORAWAC.png",
 			faction = "CORE",

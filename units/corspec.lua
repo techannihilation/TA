@@ -52,7 +52,6 @@ return {
 		turnrate = 945,
 		unitname = "corspec",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			buildpic = "corspec.png",
 			faction = "CORE",

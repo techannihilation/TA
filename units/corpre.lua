@@ -43,7 +43,6 @@ return {
 		standingfireorder = 2,
 		unitname = "corpre",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo",
 		customparams = {
 			faction = "CORE",

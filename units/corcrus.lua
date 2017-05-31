@@ -57,7 +57,6 @@ return {
 		turninplacespeedlimit = 1.7424,
 		turnrate = 448,
 		unitname = "corcrus",
-		workertime = 0,
 		customparams = {
 			buildpic = "CORCRUS.png",
 			faction = "CORE",

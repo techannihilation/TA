@@ -67,7 +67,6 @@ return {
 		turnrate = 66.5,
 		unitname = "cdevastator",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			faction = "CORE",
 		},

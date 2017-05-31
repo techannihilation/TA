@@ -45,7 +45,6 @@ return {
 		standingfireorder = 0,
 		unitname = "tlldmc",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo",
 		customparams = {
 			buildpic = "tlldmc.png",

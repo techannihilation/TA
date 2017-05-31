@@ -54,7 +54,6 @@ return {
 		turninplacespeedlimit = 1.65,
 		turnrate = 820,
 		unitname = "cslicer",
-		workertime = 0,
 		customparams = {
 			faction = "CORE",
 			requiretech = "Advanced T1 Unit Research Centre",

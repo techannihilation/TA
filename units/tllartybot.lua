@@ -51,7 +51,6 @@ return {
 		turnrate = 512,
 		unitname = "tllartybot",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			faction = "TLL",
 		},

@@ -52,7 +52,6 @@ return {
 		turnrate = 999,
 		unitname = "coredauber",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			faction = "CORE",
 			requiretech = "Advanced T2 Unit Research Centre",

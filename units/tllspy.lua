@@ -56,7 +56,6 @@ return {
 		turnrate = 1275,
 		unitname = "tllspy",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			buildpic = "tllspy.png",
 			faction = "TLL",

@@ -55,7 +55,6 @@ return {
 		turnrate = 215,
 		unitname = "coreclipse",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			buildpic = "coreclipse.png",
 			faction = "CORE",

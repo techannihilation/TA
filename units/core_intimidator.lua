@@ -44,7 +44,6 @@ return {
 		standingfireorder = 2,
 		unitname = "core_intimidator",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo",
 		customparams = {
 			buildpic = "core_intimidator.png",

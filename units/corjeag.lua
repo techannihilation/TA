@@ -58,7 +58,6 @@ return {
 		turninplacespeedlimit = 1.4652,
 		turnrate = 536,
 		unitname = "corjeag",
-		workertime = 0,
 		customparams = {
 			faction = "CORE",
 		},

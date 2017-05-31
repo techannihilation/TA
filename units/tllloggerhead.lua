@@ -47,7 +47,6 @@ return {
 		turninplacespeedlimit = 0.594,
 		turnrate = 465,
 		unitname = "tllloggerhead",
-		workertime = 0,
 		customparams = {
 			faction = "TLL",
 		},

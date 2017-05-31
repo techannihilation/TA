@@ -53,7 +53,6 @@ return {
 		turnrate = 1058,
 		unitname = "krogtaar",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			buildpic = "krogtaar.png",
 			faction = "CORE",

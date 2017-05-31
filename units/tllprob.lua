@@ -47,7 +47,6 @@ return {
 		turninplacespeedlimit = 7.92,
 		turnrate = 800,
 		unitname = "tllprob",
-		workertime = 0,
 		customparams = {
 			faction = "TLL",
 		},

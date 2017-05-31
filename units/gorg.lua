@@ -53,7 +53,6 @@ return {
 		turninplacespeedlimit = 0.528,
 		turnrate = 109,
 		unitname = "gorg",
-		workertime = 0,
 		customparams = {
 			buildpic = "GORG.png",
 			faction = "CORE",

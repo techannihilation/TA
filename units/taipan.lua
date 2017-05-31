@@ -58,7 +58,6 @@ return {
 		turnrate = 1005,
 		unitname = "taipan",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			faction = "ARM",
 			requiretech = "Advanced T2 Unit Research Centre",

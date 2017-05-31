@@ -48,7 +48,6 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "armgeo_mini",
-		workertime = 0,
 		yardmap = "ooo oGo ooo",
 		customparams = {
 			buildpic = "ARMGEO.png",

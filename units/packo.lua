@@ -54,7 +54,6 @@ return {
 		turnrate = 0,
 		unitname = "packo",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "ooooooooo",
 		customparams = {
 			buildpic = "PACKO.png",

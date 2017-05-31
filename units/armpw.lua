@@ -55,7 +55,6 @@ return {
 		unitname = "armpw",
 		unitrestricted = 125,
 		upright = true,
-		workertime = 0,
 		customparams = {
 			buildpic = "ARMPW.png",
 			faction = "ARM",

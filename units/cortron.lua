@@ -49,7 +49,6 @@ return {
 		turnrate = 0,
 		unitname = "cortron",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "oooooooooooooooo",
 		customparams = {
 			buildpic = "CORTRON.png",

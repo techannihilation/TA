@@ -53,7 +53,6 @@ return {
 		turnrate = 455,
 		unitname = "corhelo",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			faction = "CORE",
 		},

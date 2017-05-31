@@ -61,7 +61,6 @@ return {
 		turninplacespeedlimit = 0.95832,
 		turnrate = 619.29999,
 		unitname = "coreter",
-		workertime = 0,
 		customparams = {
 			buildpic = "CORETER.png",
 			faction = "CORE",

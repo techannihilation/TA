@@ -49,7 +49,6 @@ return {
 		standingfireorder = 2,
 		unitname = "armtabi",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
 			faction = "ARM",

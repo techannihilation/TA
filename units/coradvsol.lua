@@ -50,7 +50,6 @@ return {
 		turnrate = 0,
 		unitname = "coradvsol",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "oooooooooooooooo",
 		customparams = {
 			buildpic = "CORADVSOL.png",

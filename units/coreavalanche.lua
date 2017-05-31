@@ -50,7 +50,6 @@ return {
 		turninplacespeedlimit = 0.792,
 		turnrate = 1015,
 		unitname = "coreavalanche",
-		workertime = 0,
 		customparams = {
 			faction = "CORE",
 		},

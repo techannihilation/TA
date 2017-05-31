@@ -55,7 +55,6 @@ return {
 		turnrate = 1216,
 		unitname = "tllsniper",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			faction = "TLL",
 		},

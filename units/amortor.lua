@@ -46,7 +46,6 @@ return {
 		standingfireorder = 2,
 		unitname = "amortor",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "oooo oooo oooo oooo",
 		customparams = {
 			faction = "ARM",

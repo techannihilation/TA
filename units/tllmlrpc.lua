@@ -61,7 +61,6 @@ return {
 		turninplacespeedlimit = 0.792,
 		turnrate = 176,
 		unitname = "avtr",
-		workertime = 0,
 		customparams = {
 			buildpic = "tllmlrpc.png",
 			faction = "TLL",

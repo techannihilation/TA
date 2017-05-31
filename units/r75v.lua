@@ -57,7 +57,6 @@ return {
 		turnrate = 310,
 		unitname = "r75v",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			faction = "ARM",
 		},

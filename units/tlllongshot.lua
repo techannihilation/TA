@@ -52,7 +52,6 @@ return {
 		turninplacespeedlimit = 0.792,
 		turnrate = 325,
 		unitname = "tlllongshot",
-		workertime = 0,
 		customparams = {
 			faction = "TLL",
 		},

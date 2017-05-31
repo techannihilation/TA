@@ -59,7 +59,6 @@ return {
 		turninplacespeedlimit = 1.42428,
 		turnrate = 393.79999,
 		unitname = "tawf0131",
-		workertime = 0,
 		customparams = {
 			buildpic = "TAWF0131.png",
 			canareaattack = 1,

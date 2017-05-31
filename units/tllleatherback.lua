@@ -51,7 +51,6 @@ return {
 		turninplacespeedlimit = 0.528,
 		turnrate = 430,
 		unitname = "tllleatherback",
-		workertime = 0,
 		customparams = {
 			faction = "TLL",
 		},

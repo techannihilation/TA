@@ -51,7 +51,6 @@ return {
 		turnrate = 0,
 		unitname = "corhlt",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "oooo",
 		customparams = {
 			buildpic = "CORHLT.png",

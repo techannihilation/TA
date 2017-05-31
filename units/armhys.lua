@@ -41,7 +41,6 @@ return {
 		standingfireorder = 2,
 		unitname = "armhys",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "ooooooooooooooooooooooooo",
 		customparams = {
 			buildpic = "ARMHYS.png",

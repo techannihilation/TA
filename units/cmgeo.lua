@@ -44,7 +44,6 @@ return {
 		turnrate = 0,
 		unitname = "cmgeo",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "ooooooo ooooooo oGGoooo oGGoooo ooooooo",
 		customparams = {
 			buildpic = "CMGEO.png",

@@ -57,7 +57,6 @@ return {
 		turninplacespeedlimit = 0.94149,
 		turnrate = 366.20001,
 		unitname = "corlevlr",
-		workertime = 0,
 		customparams = {
 			buildpic = "CORLEVLR.png",
 			faction = "CORE",

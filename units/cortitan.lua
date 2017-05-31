@@ -52,7 +52,6 @@ return {
 		turninplacespeedlimit = 6.9828,
 		turnrate = 450,
 		unitname = "cortitan",
-		workertime = 0,
 		customparams = {
 			buildpic = "CORTITAN.png",
 			faction = "CORE",

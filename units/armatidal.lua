@@ -41,7 +41,6 @@ return {
 		turnrate = 0,
 		unitname = "armatidal",
 		waterline = 16,
-		workertime = 0,
 		yardmap = "wwwwww wwwwww wwwwww wwwwww wwwwww wwwwww",
 		customparams = {
 			buildpic = "ARMATIDAL.png",

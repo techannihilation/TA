@@ -61,7 +61,6 @@ return {
 		unitname = "monkeylord",
 		upright = true,
 		version = 1,
-		workertime = 0,
 		zbuffer = 1,
 		customparams = {
 			buildpic = "ML_Rampage_Wotan.png",

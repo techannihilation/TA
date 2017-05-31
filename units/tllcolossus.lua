@@ -56,7 +56,6 @@ return {
 		turnrate = 950,
 		unitname = "tllcolossus",
 		upright = true,
-		workertime = 0,
 		customparams = {
 			faction = "TLL",
 		},

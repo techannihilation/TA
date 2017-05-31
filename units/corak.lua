@@ -55,7 +55,6 @@ return {
 		unitname = "corak",
 		unitrestricted = 125,
 		upright = true,
-		workertime = 0,
 		customparams = {
 			buildpic = "CORAK.png",
 			faction = "CORE",

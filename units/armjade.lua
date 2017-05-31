@@ -50,7 +50,6 @@ return {
 		turnrate = 750,
 		unitname = "armjade",
 		usesmoothmesh = 0,
-		workertime = 0,
 		customparams = {
 			faction = "ARM",
 			requiretech = "Advanced T1 Unit Research Centre",

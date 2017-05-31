@@ -52,7 +52,6 @@ return {
 		turninplacespeedlimit = 3.63,
 		turnrate = 590,
 		unitname = "tllnuada",
-		workertime = 0,
 		customparams = {
 			buildpic = "tllnuada.png",
 			faction = "TLL",

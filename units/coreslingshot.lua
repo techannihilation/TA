@@ -51,7 +51,6 @@ return {
 		turninplacespeedlimit = 0.792,
 		turnrate = 1020,
 		unitname = "coreslingshot",
-		workertime = 0,
 		customparams = {
 			faction = "CORE",
 		},

@@ -52,7 +52,6 @@ return {
 		unitname = "armamd2",
 		unitrestricted = 8,
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "oooooo oooooo oooooo oooooo oooooo oooooo",
 		customparams = {
 			buildpic = "ARMAMD.png",

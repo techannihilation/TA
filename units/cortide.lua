@@ -42,7 +42,6 @@ return {
 		turnrate = 0,
 		unitname = "cortide",
 		waterline = 13,
-		workertime = 0,
 		yardmap = "www www www",
 		customparams = {
 			buildpic = "CORTIDE.png",

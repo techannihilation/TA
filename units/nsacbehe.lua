@@ -54,7 +54,6 @@ return {
 		turninplacespeedlimit = 0.924,
 		turnrate = 169,
 		unitname = "nsacbehe",
-		workertime = 0,
 		customparams = {
 			faction = "CORE",
 		},

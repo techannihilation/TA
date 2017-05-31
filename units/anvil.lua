@@ -56,7 +56,6 @@ return {
 		turninplacespeedlimit = 0.726,
 		turnrate = 300,
 		unitname = "anvil",
-		workertime = 0,
 		customparams = {
 			faction = "TLL",
 		},

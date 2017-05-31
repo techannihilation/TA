@@ -47,7 +47,6 @@ return {
 		turnrate = 0,
 		unitname = "amgeo",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo oGGGo oGGGo ooooo",
 		customparams = {
 			buildpic = "AMGEO.png",

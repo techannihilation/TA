@@ -53,7 +53,6 @@ return {
 		turnrate = 0,
 		unitname = "corfmine3",
 		waterline = 0,
-		workertime = 0,
 		customparams = {
 			buildpic = "CORFMINE3.png",
 			faction = "CORE",

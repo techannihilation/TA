@@ -48,7 +48,6 @@ return {
 		unitname = "armwin",
 		usebuildinggrounddecal = true,
 		windgenerator = 120,
-		workertime = 0,
 		yardmap = "ooooooooo",
 		customparams = {
 			buildpic = "ARMWIN.png",

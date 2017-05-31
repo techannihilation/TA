@@ -36,7 +36,6 @@ return {
 		selfdestructas = "LIGHTSHIPBLAST",
 		sightdistance = 200,
 		unitname = "tllgen",
-		workertime = 0,
 		yardmap = "ooo ooo ooo",
 		customparams = {
 			buildpic = "tllgen.png",

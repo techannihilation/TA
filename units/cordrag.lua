@@ -43,7 +43,6 @@ return {
 		turnrate = 0,
 		unitname = "cordrag",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "ffff",
 		customparams = {
 			buildpic = "CORDRAG.png",

@@ -54,7 +54,6 @@ return {
 		unitname = "corbuzz2",
 		usebuildinggrounddecal = true,
 		usepiececollisionvolumes = 1,
-		workertime = 0,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
 			buildpic = "CORBUZZ.png",

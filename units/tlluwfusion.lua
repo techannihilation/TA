@@ -34,7 +34,6 @@ return {
 		selfdestructas = "NUCLEAR_MISSILE",
 		sightdistance = 110,
 		unitname = "tlluwfusion",
-		workertime = 0,
 		yardmap = "oooooooooooooooooooooooo",
 		customparams = {
 			faction = "TLL",

@@ -60,7 +60,6 @@ return {
 		turnrate = 244,
 		unitname = "champ",
 		upright = false,
-		workertime = 0,
 		customparams = {
 			faction = "CORE",
 		},

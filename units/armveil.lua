@@ -50,7 +50,6 @@ return {
 		unitname = "armveil",
 		usebuildinggrounddecal = true,
 		usepiececollisionvolumes = 1,
-		workertime = 0,
 		yardmap = "oooo",
 		customparams = {
 			buildpic = "ARMVEIL.png",

@@ -52,7 +52,6 @@ return {
 		unitname = "corfmd2",
 		unitrestricted = 8,
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "oooooo oooooo oooooo oooooo oooooo oooooo",
 		customparams = {
 			buildpic = "CORFMD.png",

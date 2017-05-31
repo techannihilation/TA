@@ -36,7 +36,6 @@ return {
 		sightdistance = 1,
 		unitname = "tlldt",
 		usebuildinggrounddecal = true,
-		workertime = 0,
 		yardmap = "ff ff",
 		customparams = {
 			faction = "TLL",
