@@ -199,9 +199,8 @@ AimSecondary(heading, pitch)
 FirePrimary()
 {
 	move barrel1 to z-axis [-1.000000] now;
-	show flare1;
+	emit-sfx 1024 + 0 from flare1;
 	sleep 150;
-	hide flare1;
 	move barrel2 to z-axis [-1.000000] now;
 	wait-for-move barrel2 along z-axis;
 	move barrel1 to z-axis [0.000000] speed [3.000000];
@@ -212,27 +211,15 @@ FireSecondary()
 {
 	if( gun_2 == 0 )
 	{
-		show flare2;
-		show flare5;
-		sleep 150;
-		hide flare2;
-		hide flare5;
+		emit-sfx 1025 + 0 from flare2;
 	}
 	if( gun_2 == 1 )
 	{
-		show flare3;
-		show flare6;
-		sleep 150;
-		hide flare3;
-		hide flare6;
+		emit-sfx 1025 + 0 from flare3;
 	}
 	if( gun_2 == 2 )
 	{
-		show flare4;
-		show flare7;
-		sleep 150;
-		hide flare4;
-		hide flare7;
+		emit-sfx 1025 + 0 from flare4;
 	}
 	++gun_2;
 	if( gun_2 == 3 )
