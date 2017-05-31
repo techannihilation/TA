@@ -35,7 +35,7 @@ return {
 		maxslope = 20,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		metalstorage = 500,
+		metalstorage = 200,
 		name = "Moho Exploiter",
 		noautofire = false,
 		nochasecategory = "ALL",
