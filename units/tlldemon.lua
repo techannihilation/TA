@@ -140,6 +140,7 @@ return {
 				soundhitdry = "rockhit",
 				soundstart = "rapidrocket3",
 				startvelocity = 500,
+				targetable = 16,
 				texture1 = "null",
 				texture2 = "null",
 				texture3 = "null",
