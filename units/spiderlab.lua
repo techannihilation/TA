@@ -20,7 +20,7 @@ return {
 		energyuse = 0,
 		explodeas = "LARGE_BUILDINGEX",
 		firestandorders = 1,
-		footprintx = 6,
+		footprintx = 8,
 		footprintz = 8,
 		icontype = "building",
 		idleautoheal = 5,
@@ -44,7 +44,7 @@ return {
 		standingmoveorder = 1,
 		unitname = "spiderlab",
 		workertime = 200,
-		yardmap = "oooooo occcco occcco occcco occcco occcco yyyyyy yyyyyy",
+		yardmap = "oooooooo occcccco occcccco occcccco occcccco occcccco yyyyyyyy yyyyyyyy",
 		buildoptions = {
 			[1] = "armcspider",
 			[2] = "armtick",
