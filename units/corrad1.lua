@@ -14,7 +14,7 @@ return {
 		buildpic = "corrad1.dds",
 		buildtime = 1137,
 		canattack = false,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "corrad_dead",
 		description = "Medium Warning System",
 		explodeas = "SMALL_BUILDINGEX",

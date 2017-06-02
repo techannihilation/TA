@@ -10,7 +10,7 @@ return {
 		buildinggrounddecaltype = "corech18_aoplane.dds",
 		buildpic = "corech18.dds",
 		buildtime = 50000,
-		category = "LEVEL1 ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
+		category = "LEVEL1 ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		collisionvolumeoffsets = "-1 -9 -5",
 		collisionvolumescales = "64 70 102",
 		collisionvolumetest = 1,

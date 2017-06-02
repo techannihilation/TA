@@ -12,7 +12,7 @@ return {
 		buildtime = 1559848,
 		canattack = true,
 		canstop = 1,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		collisionvolumeoffsets = "30 -130 10",
 		collisionvolumescales = "260 360 260",
 		collisionvolumetype = "CylY",
@@ -149,7 +149,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "TLL_ULTIMATE_NUKE",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

@@ -193,11 +193,11 @@ return {
 		weapons = {
 			[1] = {
 				def = "CORFHLT_LASER",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "CORE_LIGHTLASER",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

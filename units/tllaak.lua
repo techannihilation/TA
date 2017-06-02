@@ -206,11 +206,11 @@ return {
 		weapons = {
 			[1] = {
 				def = "ARM_CIR2",
-				onlytargetcategory = "VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "ARMAAKBOT_MISSILE1",
-				onlytargetcategory = "VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

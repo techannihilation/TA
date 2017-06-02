@@ -227,15 +227,15 @@ return {
 		weapons = {
 			[1] = {
 				def = "COR_CRUS",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "ADV_DECKLASER",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "ADVDEPTHCHARGE",
-				onlytargetcategory = "NOTHOVERNOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

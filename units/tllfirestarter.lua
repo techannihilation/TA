@@ -158,7 +158,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "ARMKBOT_MISSILE",
-				onlytargetcategory = "VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

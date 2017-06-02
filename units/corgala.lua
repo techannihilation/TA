@@ -166,11 +166,11 @@ return {
 			[1] = {
 				badtargetcategory = "MEDIUM SMALL TINY",
 				def = "RavagerBeam",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "Galacticus_Cannon",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

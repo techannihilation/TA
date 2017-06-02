@@ -158,7 +158,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "CORE_PARROW",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

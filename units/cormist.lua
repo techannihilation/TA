@@ -168,7 +168,7 @@ return {
 				def = "CORTRUCK_MISSILE",
 				maindir = "0 0 1",
 				maxangledif = 270,
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

@@ -148,11 +148,11 @@ return {
 		weapons = {
 			[1] = {
 				def = "ARM_LASERAHOVER",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "ARM_LASERAHOVER",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

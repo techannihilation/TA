@@ -132,7 +132,7 @@ return {
 			[1] = {
 				badtargetcategory = "TINYVTOL",
 				def = "ARMSFIG_WEAPON",
-				onlytargetcategory = "VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

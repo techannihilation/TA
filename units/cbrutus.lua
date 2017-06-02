@@ -151,7 +151,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "CBRUTUS_MISSILE",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

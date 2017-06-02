@@ -15,7 +15,7 @@ return {
 		buildtime = 5810,
 		canattack = true,
 		canstop = 1,
-		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
+		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		cloakcost = 20,
 		corpse = "dead",
 		damagemodifier = 0.2,
@@ -175,7 +175,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "PACKO_MISSILE",
-				onlytargetcategory = "VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

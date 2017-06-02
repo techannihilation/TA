@@ -9,7 +9,7 @@ return {
 		builder = false,
 		buildpic = "armflosh.dds",
 		buildtime = 61719,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		description = "Floating Plasma Deflector",
 		energyuse = 0,
 		explodeas = "LARGE_BUILDINGEX",

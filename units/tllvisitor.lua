@@ -199,11 +199,11 @@ return {
 		weapons = {
 			[1] = {
 				def = "VISITOR_VPULSE",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "GA2",
-				onlytargetcategory = "VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

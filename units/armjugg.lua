@@ -207,11 +207,11 @@ return {
 		weapons = {
 			[1] = {
 				def = "ARMJUGG_CANNON",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "ARMJUGG_LASER",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "ARMJUGG_ROCKET",

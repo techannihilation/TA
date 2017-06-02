@@ -155,7 +155,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "ARM_FATBOY_NOTALASER",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

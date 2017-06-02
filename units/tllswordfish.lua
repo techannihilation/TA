@@ -219,19 +219,19 @@ return {
 		weapons = {
 			[1] = {
 				def = "SWORDFISH_ROCKET",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "TAWF009_WEAPON",
 				maindir = "0 0 1",
 				maxangledif = 110,
-				onlytargetcategory = "NOTHOVERNOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "ARMSMART_TORPEDO",
 				maindir = "0 0 1",
 				maxangledif = 150,
-				onlytargetcategory = "NOTHOVERNOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

@@ -13,7 +13,7 @@ return {
 		buildinggrounddecaltype = "armamd2_aoplane.dds",
 		buildpic = "armamd2.dds",
 		buildtime = 495678,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		collisionvolumeoffsets = "0 0 -1",
 		collisionvolumescales = "38 68 38",
 		collisionvolumetype = "Box",
@@ -157,7 +157,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "AMD_ROCKET2",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

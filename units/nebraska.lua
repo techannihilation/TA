@@ -12,7 +12,7 @@ return {
 		buildtime = 245000,
 		canattack = true,
 		canstop = 1,
-		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
+		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		collisionvolumeoffsets = "0 -40 0",
 		collisionvolumescales = "143 154 143",
 		collisionvolumetest = 1,
@@ -143,7 +143,7 @@ return {
 			[1] = {
 				badtargetcategory = "LARGE MEDIUM SMALL TINY",
 				def = "NEBRASKA_WEAPON",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

@@ -133,7 +133,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "ARMSEAP_WEAPON1",
-				onlytargetcategory = "NOTHOVERNOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

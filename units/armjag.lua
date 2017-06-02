@@ -225,11 +225,11 @@ return {
 		weapons = {
 			[1] = {
 				def = "ARMJAG_GAUSS",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "ARMJAG_HEAD",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "ARMJAG_MISS",

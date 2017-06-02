@@ -153,7 +153,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "COREAH_WEAPON",
-				onlytargetcategory = "VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

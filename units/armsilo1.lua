@@ -15,7 +15,7 @@ return {
 		buildtime = 178453,
 		canattack = true,
 		canstop = 1,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		corpse = "armsilo_dead",
 		description = "Enriched Nuclear ICBM Launcher",
 		explodeas = "ATOMIC_BLAST",
@@ -163,7 +163,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "NUCLEAR_MISSILE1",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

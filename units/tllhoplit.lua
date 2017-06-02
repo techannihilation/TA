@@ -161,7 +161,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "PACKO_MISSILE",
-				onlytargetcategory = "VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

@@ -192,7 +192,7 @@ return {
 				def = "CORADON_WEAPON",
 				maindir = "0 0 1",
 				maxangledif = 210,
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "CORADON_MISSILE",

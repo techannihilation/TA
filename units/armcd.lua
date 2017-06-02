@@ -141,7 +141,7 @@ return {
 			[1] = {
 				badtargetcategory = "SMALL TINY",
 				def = "hvy_laser_weapon",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

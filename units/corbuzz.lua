@@ -15,7 +15,7 @@ return {
 		buildtime = 516630,
 		canattack = true,
 		canstop = 1,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		collisionvolumeoffsets = "0 -19 0",
 		collisionvolumescales = "65 150 90",
 		collisionvolumetest = 1,
@@ -164,7 +164,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "CORBUZZ_WEAPON2",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

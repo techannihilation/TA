@@ -134,7 +134,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "THERMITE_BOMB",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

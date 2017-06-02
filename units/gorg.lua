@@ -222,25 +222,25 @@ return {
 		weapons = {
 			[1] = {
 				def = "JUGGERNAUT_FIRE",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "GORG_BOTTOM",
 				maindir = "1 0 4",
 				maxangledif = 90,
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "GORG_BOTTOM",
 				maindir = "-1 0 4",
 				maxangledif = 90,
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[4] = {
 				def = "GORG_TOP",
 				maindir = "0 1 0",
 				maxangledif = 270,
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

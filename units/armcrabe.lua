@@ -183,11 +183,11 @@ return {
 		weapons = {
 			[1] = {
 				def = "ARMCRABE_GAUSS",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "ARMCRABE_MISSILES",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

@@ -149,7 +149,7 @@ return {
 			[1] = {
 				badtargetcategory = "SMALL TINY",
 				def = "corehingeback",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

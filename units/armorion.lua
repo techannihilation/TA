@@ -134,7 +134,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "ORION_BOMB",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

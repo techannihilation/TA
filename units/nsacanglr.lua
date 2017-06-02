@@ -143,7 +143,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "COREHEAVYDEPTHCHARGE",
-				onlytargetcategory = "NOTHOVERNOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

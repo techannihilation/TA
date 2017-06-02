@@ -137,7 +137,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "ARM_PINCER_GAUSS",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

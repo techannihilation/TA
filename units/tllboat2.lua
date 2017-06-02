@@ -196,11 +196,11 @@ return {
 		weapons = {
 			[1] = {
 				def = "TLL_LASERSHIP",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "ARMTRUCK_MISSILE",
-				onlytargetcategory = "VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

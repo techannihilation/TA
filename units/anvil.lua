@@ -163,7 +163,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "AnchorEmpBeam",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

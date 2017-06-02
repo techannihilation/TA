@@ -141,7 +141,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "ARMDFLY_PARALYZER",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

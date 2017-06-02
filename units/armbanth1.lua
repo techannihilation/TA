@@ -227,11 +227,11 @@ return {
 			[1] = {
 				badtargetcategory = "MEDIUM SMALL TINY",
 				def = "TEHLAZEROFDEWM1",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "ARMBANTHA_FIRE1",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "BANTHA_ROCKET1",

@@ -152,7 +152,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "TLLTELSA_CANNON",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

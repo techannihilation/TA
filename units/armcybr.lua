@@ -140,7 +140,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "ARM_PIDR",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

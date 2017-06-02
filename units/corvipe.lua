@@ -14,7 +14,7 @@ return {
 		buildtime = 20000,
 		canattack = true,
 		canstop = 1,
-		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
+		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		corpse = "dead",
 		damagemodifier = 0.5,
 		defaultmissiontype = "GUARD_NOMOVE",
@@ -169,7 +169,7 @@ return {
 			[1] = {
 				badtargetcategory = "SMALL TINY",
 				def = "VIPERSABOT",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

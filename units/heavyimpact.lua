@@ -170,7 +170,7 @@ return {
 			[1] = {
 				badtargetcategory = "VTOL",
 				def = "CORMECHART",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 				weaponmaindir1 = "0 0 1",
 			},
 		},

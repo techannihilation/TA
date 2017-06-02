@@ -11,7 +11,7 @@ return {
 		buildinggrounddecaltype = "corlightfus_aoplane.dds",
 		buildpic = "corlightfus.dds",
 		buildtime = 22000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		collisionvolumeoffsets = "0 0 1",
 		collisionvolumescales = "88.6 39.6 94.6",
 		collisionvolumetest = 1,

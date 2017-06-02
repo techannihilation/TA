@@ -122,7 +122,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "COREBOMB",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

@@ -12,7 +12,7 @@ return {
 		buildtime = 56190,
 		canattack = true,
 		canstop = 1,
-		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
+		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		corpse = "dead",
 		description = "Fast Gatling Plasma Battery",
 		energyuse = 10,
@@ -125,7 +125,7 @@ return {
 			[1] = {
 				badtargetcategory = "TINY",
 				def = "GUN",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

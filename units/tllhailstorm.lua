@@ -133,7 +133,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "TLL_HAILSTORM",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

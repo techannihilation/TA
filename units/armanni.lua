@@ -15,7 +15,7 @@ return {
 		buildtime = 52071,
 		canattack = true,
 		canstop = 1,
-		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
+		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		corpse = "dead",
 		damagemodifier = 0.25,
 		defaultmissiontype = "GUARD_NOMOVE",
@@ -157,7 +157,7 @@ return {
 			[1] = {
 				badtargetcategory = "SMALL TINY",
 				def = "ATA",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

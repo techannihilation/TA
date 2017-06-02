@@ -158,7 +158,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "EMG",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

@@ -154,7 +154,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "ARMST_GAUSS",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

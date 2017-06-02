@@ -162,7 +162,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "ARM_LASER",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

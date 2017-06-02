@@ -151,7 +151,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "WHALE_VPULSE",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

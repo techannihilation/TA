@@ -166,7 +166,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "CORMABM_WEAPON",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

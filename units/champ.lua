@@ -139,7 +139,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "champ_gauss",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

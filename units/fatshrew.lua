@@ -231,7 +231,6 @@ return {
 				tracks = true,
 				turnrate = 50000,
 				weaponacceleration = 230,
-				--weapontimer = 2,
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 4000,
 				damage = {
@@ -244,7 +243,7 @@ return {
 			[1] = {
 				badtargetcategory = "TINY",
 				def = "BEAM_LASER",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "GATLING",

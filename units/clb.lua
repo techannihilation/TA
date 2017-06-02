@@ -159,7 +159,7 @@ return {
 			[1] = {
 				badtargetcategory = "SMALL TINY",
 				def = "CORE_INTIMIDATOR2",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

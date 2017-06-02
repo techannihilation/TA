@@ -117,7 +117,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "BBU_MMG",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

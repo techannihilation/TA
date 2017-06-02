@@ -144,7 +144,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "CORE_ARTILLERY",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

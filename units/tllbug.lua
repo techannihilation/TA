@@ -154,7 +154,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "TLLLIGHT_PARALYZER",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

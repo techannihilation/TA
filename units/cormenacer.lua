@@ -155,7 +155,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "MENACER",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

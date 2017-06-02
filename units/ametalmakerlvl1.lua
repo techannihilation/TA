@@ -10,7 +10,7 @@ return {
 		buildinggrounddecaltype = "ametalmakerlvl1_aoplane.dds",
 		buildpic = "ametalmakerlvl1.dds",
 		buildtime = 4000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		description = "Converts upto 200 Energy to Metal",
 		explodeas = "ARMESTOR_BUILDING",
 		floater = false,

@@ -225,11 +225,11 @@ return {
 		weapons = {
 			[1] = {
 				def = "ARMORCO_FIRE",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "ATAD",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "CORKROG_ROCKET",

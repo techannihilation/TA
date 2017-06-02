@@ -160,7 +160,7 @@ return {
 			[1] = {
 				badtargetcategory = "MOBILE",
 				def = "CORMH_WEAPON",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

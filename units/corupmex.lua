@@ -11,7 +11,7 @@ return {
 		buildinggrounddecaltype = "corupmex_aoplane.dds",
 		buildpic = "corupmex.dds",
 		buildtime = 38577,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "dead",
 		description = "Enables jumps on large radius",
 		energyuse = 0,

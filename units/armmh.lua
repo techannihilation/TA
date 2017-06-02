@@ -156,7 +156,7 @@ return {
 			[1] = {
 				badtargetcategory = "MOBILE",
 				def = "ARMMH_WEAPON",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

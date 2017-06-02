@@ -213,15 +213,15 @@ return {
 				def = "ARM_LIGHTLASER4",
 				maindir = "0 0 1",
 				maxangledif = 90,
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "AKMECH_CANNON",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "AKMECH_ROCKET",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

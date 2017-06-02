@@ -13,7 +13,7 @@ return {
 		buildinggrounddecaltype = "cafus_aoplane.dds",
 		buildpic = "cafus.dds",
 		buildtime = 185000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "dead",
 		description = "Enhanced Energy Output / Storage",
 		energymake = 3200,

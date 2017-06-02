@@ -12,7 +12,7 @@ return {
 		buildtime = 539899,
 		canattack = true,
 		canstop = 1,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		corpse = "dead",
 		description = "Ultimate Nuclear Missile Launcher",
 		downloadable = 1,
@@ -146,7 +146,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "ARMFSILO_WEAPON",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

@@ -190,7 +190,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "MECH_RAPIDLASER1",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "TAWF_BANISHER2",

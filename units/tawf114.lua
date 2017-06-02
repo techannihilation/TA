@@ -174,7 +174,7 @@ return {
 				def = "TAWF_BANISHER",
 				maindir = "0 0 1",
 				maxangledif = 270,
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

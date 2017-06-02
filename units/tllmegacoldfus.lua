@@ -11,7 +11,7 @@ return {
 		buildinggrounddecaltype = "tllmegacoldfus_aoplane.dds",
 		buildpic = "tllmegacoldfus.dds",
 		buildtime = 1750000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "dead",
 		description = "Produces Metal and Energy/ Storage",
 		downloadable = 1,

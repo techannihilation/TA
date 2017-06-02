@@ -157,7 +157,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "CORE_CROC",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

@@ -15,7 +15,7 @@ return {
 		buildtime = 58927,
 		canattack = true,
 		canstop = 1,
-		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
+		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		corpse = "dead",
 		description = "Tactical Nuke Launcher",
 		energyuse = 0,
@@ -154,7 +154,7 @@ return {
 			[1] = {
 				badtargetcategory = "TINY",
 				def = "CORTRON_WEAPON",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

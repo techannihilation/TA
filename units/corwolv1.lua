@@ -149,7 +149,7 @@ return {
 				def = "CORWOLV_GUN1",
 				maindir = "0 0 1",
 				maxangledif = 180,
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

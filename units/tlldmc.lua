@@ -12,7 +12,7 @@ return {
 		buildtime = 259000,
 		canattack = true,
 		canstop = 1,
-		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
+		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		collisionvolumeoffsets = "0 -3 -18",
 		collisionvolumescales = "65 65 70",
 		collisionvolumetype = "Box",
@@ -193,12 +193,12 @@ return {
 			[1] = {
 				badtargetcategory = "MEDIUM SMALL TINY",
 				def = "tlldmc",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				badtargetcategory = "MEDIUM SMALL TINY",
 				def = "tlldmc_rapid",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

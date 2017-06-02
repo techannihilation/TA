@@ -143,7 +143,7 @@ return {
 			[1] = {
 				badtargetcategory = "ANTIFLAME",
 				def = "FLAMETHROWER",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

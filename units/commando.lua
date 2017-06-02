@@ -144,7 +144,7 @@ return {
 			[1] = {
 				badtargetcategory = "SMALL TINY",
 				def = "COMMANDOLAS",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

@@ -156,7 +156,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "AMD_ROCKET1",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

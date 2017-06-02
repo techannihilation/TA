@@ -14,7 +14,7 @@ return {
 		buildpic = "armgate.dds",
 		buildtime = 54139,
 		canattack = false,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		collisionvolumeoffsets = "0 -4 1",
 		collisionvolumescales = "57 37 57",
 		collisionvolumetype = "CylY",

@@ -186,11 +186,11 @@ return {
 		weapons = {
 			[1] = {
 				def = "CORE_REAP",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "ARMAMPH_MISSILE",
-				onlytargetcategory = "VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

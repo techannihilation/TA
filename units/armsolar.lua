@@ -13,7 +13,7 @@ return {
 		buildinggrounddecaltype = "armsolar_aoplane.dds",
 		buildpic = "armsolar.dds",
 		buildtime = 2045,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		collisionspherescale = 0.5,
 		corpse = "dead",
 		damagemodifier = 0.5,

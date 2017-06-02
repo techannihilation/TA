@@ -152,7 +152,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "LIGHTNING1",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

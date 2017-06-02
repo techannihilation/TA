@@ -159,7 +159,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "CORE_KBOT_ROCKET",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

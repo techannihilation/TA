@@ -165,7 +165,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "EXP_HEAVYROCKET",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

@@ -176,7 +176,7 @@ return {
 			},
 			[2] = {
 				def = "Katana_M2",
-				onlytargetcategory = "VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

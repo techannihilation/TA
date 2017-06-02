@@ -134,7 +134,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "COAX_TORPEDO",
-				onlytargetcategory = "NOTHOVERNOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

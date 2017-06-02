@@ -150,7 +150,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "FLEA_LASER",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

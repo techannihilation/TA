@@ -205,15 +205,15 @@ return {
 		weapons = {
 			[1] = {
 				def = "MISSILELAUNCHER",
-				onlytargetcategory = "VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "MISSILELAUNCHER",
-				onlytargetcategory = "VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "MOBILEFLAK",
-				onlytargetcategory = "VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

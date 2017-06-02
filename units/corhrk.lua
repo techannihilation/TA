@@ -156,7 +156,7 @@ return {
 			[1] = {
 				badtargetcategory = "MOBILE",
 				def = "CORHRK_ROCKET",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

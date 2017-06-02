@@ -129,7 +129,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "GMISSILES",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

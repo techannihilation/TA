@@ -10,7 +10,7 @@ return {
 		buildinggrounddecaltype = "tlltower_aoplane.dds",
 		buildpic = "tlltower.dds",
 		buildtime = 5372,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		collisionvolumeoffsets = "0 -20 0",
 		collisionvolumescales = "22 110 22",
 		collisionvolumetype = "box",

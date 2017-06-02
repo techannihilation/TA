@@ -148,7 +148,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "TLLBINDER_WEAPON",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

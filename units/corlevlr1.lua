@@ -146,7 +146,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "CORLEVLR_WEAPON1",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

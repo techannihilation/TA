@@ -197,7 +197,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "ARM_BATSAFTX",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

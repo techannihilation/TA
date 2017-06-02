@@ -263,19 +263,19 @@ return {
 		weapons = {
 			[1] = {
 				def = "EXO_BLAST",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				badtargetcategory = "MEDIUM SMALL TINY",
 				def = "TEHLAZEROFDEWM1",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "BANTHA_ROCKET1",
 			},
 			[4] = {
 				def = "LIGHTNING",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

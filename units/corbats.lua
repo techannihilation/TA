@@ -192,13 +192,13 @@ return {
 		weapons = {
 			[1] = {
 				def = "COR_BATS",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "CORE_BATSLASER",
 				maindir = "0 0 1",
 				maxangledif = 330,
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

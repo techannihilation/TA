@@ -196,11 +196,11 @@ return {
 		weapons = {
 			[1] = {
 				def = "DISCHARGE",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "STUN_BOMB",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

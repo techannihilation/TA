@@ -133,7 +133,7 @@ return {
 			[1] = {
 				badtargetcategory = "TINY",
 				def = "CORATL_TORPEDO",
-				onlytargetcategory = "NOTHOVERNOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

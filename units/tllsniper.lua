@@ -152,7 +152,7 @@ return {
 			[1] = {
 				badtargetcategory = "SMALL TINY",
 				def = "CORPROT_WEAPON",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

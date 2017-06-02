@@ -191,11 +191,11 @@ return {
 		weapons = {
 			[1] = {
 				def = "TLLGRIM_GUN",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "TLLGRIM_MISSILE",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

@@ -186,19 +186,19 @@ return {
 		weapons = {
 			[1] = {
 				def = "TLL_OBLITERATOR",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "LIGHTNING",
 				maindir = "1 0 0",
 				maxangledif = 220,
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "LIGHTNING",
 				maindir = "-1 0 4",
 				maxangledif = 220,
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

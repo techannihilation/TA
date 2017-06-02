@@ -151,7 +151,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "GATOR_LASERX1",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

@@ -143,7 +143,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "torp",
-				onlytargetcategory = "NOTHOVERNOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

@@ -189,11 +189,11 @@ return {
 		weapons = {
 			[1] = {
 				def = "CORMONSTA_GUN",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "SAM2_MISSILE",
-				onlytargetcategory = "VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

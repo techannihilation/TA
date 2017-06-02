@@ -12,7 +12,7 @@ return {
 		buildinggrounddecaltype = "corfort_aoplane.dds",
 		buildpic = "corfort.dds",
 		buildtime = 810,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "fortification_core",
 		description = "Perimeter Defense",
 		footprintx = 2,

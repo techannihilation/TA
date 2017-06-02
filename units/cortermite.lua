@@ -149,7 +149,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "CORE_TERMITE_LASER",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

@@ -187,7 +187,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "COR_GOL1",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "CORKROG_ROCKET",

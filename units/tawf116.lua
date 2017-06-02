@@ -142,7 +142,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "ARM_DISINTEGRATORxxx",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

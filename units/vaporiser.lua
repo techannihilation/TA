@@ -158,11 +158,11 @@ return {
 		weapons = {
 			[1] = {
 				def = "MountedAntimatterAccelerator1",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "MountedAntimatterAccelerator1",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

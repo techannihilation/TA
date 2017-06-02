@@ -146,7 +146,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "LVL1_GUN",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

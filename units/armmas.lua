@@ -12,7 +12,7 @@ return {
 		buildpic = "armmas.dds",
 		buildtime = 85800,
 		canattack = false,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "80 112 80",
 		collisionvolumetest = 1,
@@ -92,7 +92,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "ARMMASshield",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

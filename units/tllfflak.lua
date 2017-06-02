@@ -11,7 +11,7 @@ return {
 		buildtime = 21000,
 		canattack = true,
 		canstop = 1,
-		category = "ALL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
+		category = "ALL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Anti-Air Flak Gun - Naval Series",
@@ -138,7 +138,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "TLLFLAK_GUN",
-				onlytargetcategory = "VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

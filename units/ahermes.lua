@@ -161,7 +161,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "GA2",
-				onlytargetcategory = "VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

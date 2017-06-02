@@ -12,7 +12,7 @@ return {
 		buildpic = "cormas.dds",
 		buildtime = 78000,
 		canattack = false,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		collisionvolumeoffsets = "0 16 0",
 		collisionvolumescales = "76 152 76",
 		collisionvolumetest = 1,
@@ -92,7 +92,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "CORMASshield",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

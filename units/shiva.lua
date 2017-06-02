@@ -186,7 +186,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "SHIVA_GUN",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "SHIVA_ROCKET",

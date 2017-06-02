@@ -266,22 +266,22 @@ return {
 		weapons = {
 			[1] = {
 				def = "CORKROG_FIRE",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "ATAD",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "CORKROG_ROCKET",
 			},
 			[4] = {
 				def = "KROGCRUSH",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[5] = {
 				def = "KROGCRUSH",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

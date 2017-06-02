@@ -148,7 +148,7 @@ return {
 			[1] = {
 				badtargetcategory = "MOBILE",
 				def = "TLL_Vpulse",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

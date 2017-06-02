@@ -17,7 +17,7 @@ return {
 		canmove = false,
 		canpatrol = false,
 		canstop = 0,
-		category = "ALL MINE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
+		category = "ALL MINE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		cloakcost = 200,
 		defaultmissiontype = "Standby_Mine",
 		description = "Singularity Bomb",
@@ -146,11 +146,11 @@ return {
 		weapons = {
 			[1] = {
 				def = "MINE_DUMMY",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "MINE_DETONATOR",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

@@ -218,19 +218,19 @@ return {
 		weapons = {
 			[1] = {
 				def = "CANNON_TRMPH",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "CANNON_TRMPH",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "CANNON_BATS_AFT",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[4] = {
 				def = "CANNON_BATS_AFT",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[5] = {
 				def = "ROCKET_MCV",

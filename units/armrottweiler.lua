@@ -185,7 +185,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "ARMROTTWEILER_CANNON",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "ARMROTTWEILER_MG",

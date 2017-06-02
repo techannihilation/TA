@@ -13,7 +13,7 @@ return {
 		buildtime = 4638,
 		canattack = true,
 		canstop = 1,
-		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
+		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		corpse = "dead",
 		damagemodifier = 0.15,
 		defaultmissiontype = "GUARD_NOMOVE",
@@ -170,7 +170,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "DCLAW",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

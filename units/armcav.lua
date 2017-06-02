@@ -194,11 +194,11 @@ return {
 		weapons = {
 			[1] = {
 				def = "CAV_LIGHTING",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "LIGHTNING",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

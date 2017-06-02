@@ -170,7 +170,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "KARGANETH_CANNON",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

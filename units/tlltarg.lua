@@ -11,7 +11,7 @@ return {
 		buildinggrounddecaltype = "tlltarg_aoplane.dds",
 		buildpic = "tlltarg.dds",
 		buildtime = 78250,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "dead",
 		damagemodifier = 0.75,
 		description = "Automatic Targeting, Very Long Range Radar/Sonar",

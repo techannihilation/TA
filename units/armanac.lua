@@ -149,7 +149,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "ARMANAC_WEAPON",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

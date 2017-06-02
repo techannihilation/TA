@@ -159,7 +159,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "COR_GOL",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

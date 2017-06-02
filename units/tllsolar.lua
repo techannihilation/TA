@@ -11,7 +11,7 @@ return {
 		buildinggrounddecaltype = "tllsolar_aoplane.dds",
 		buildpic = "tllsolar.dds",
 		buildtime = 2860,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "dead",
 		damagemodifier = 0.5,
 		description = "Produces Energy",

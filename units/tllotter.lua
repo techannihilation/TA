@@ -202,11 +202,11 @@ return {
 		weapons = {
 			[1] = {
 				def = "TLLLIGHT_PARALYZER",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "ARMKBOT_MISSILE",
-				onlytargetcategory = "VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

@@ -144,7 +144,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "TLL_PBOT",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

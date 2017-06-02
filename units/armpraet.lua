@@ -236,18 +236,18 @@ return {
 		weapons = {
 			[1] = {
 				def = "PRAETORIAN_SPLIT",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "PRAETORIAN_HEAD",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "PRAETORIAN_ROCKET",
 			},
 			[4] = {
 				def = "Praetorian_Shield",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

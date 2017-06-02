@@ -123,11 +123,11 @@ return {
 		weapons = {
 			[1] = {
 				def = "VTOL_EMG",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "VTOL_EMG",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

@@ -150,7 +150,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "TLL_LASERH1",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

@@ -14,7 +14,7 @@ return {
 		buildtime = 25500,
 		canattack = true,
 		canstop = 1,
-		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
+		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "28 92 28",
 		collisionvolumetype = "box",
@@ -162,7 +162,7 @@ return {
 			[1] = {
 				badtargetcategory = "TINY",
 				def = "CORE_LASERH2",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

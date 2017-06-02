@@ -143,7 +143,7 @@ return {
 				def = "ATAM",
 				maindir = "0 0 1",
 				maxangledif = 160,
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

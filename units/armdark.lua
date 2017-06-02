@@ -149,7 +149,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "CORHORG_MISSILE",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

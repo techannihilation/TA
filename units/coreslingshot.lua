@@ -152,7 +152,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "TURTOISE_MISSILE",
-				onlytargetcategory = "VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

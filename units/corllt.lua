@@ -14,7 +14,7 @@ return {
 		buildtime = 2724,
 		canattack = true,
 		canstop = 1,
-		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
+		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		collisionvolumeoffsets = "0 1 0",
 		collisionvolumescales = "32 72 32",
 		collisionvolumetype = "CylY",
@@ -162,7 +162,7 @@ return {
 			[1] = {
 				badtargetcategory = "MEDIUM LARGE HUGE",
 				def = "CORE_LIGHTLASER",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

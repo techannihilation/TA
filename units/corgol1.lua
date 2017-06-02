@@ -161,7 +161,7 @@ return {
 			[1] = {
 				badtargetcategory = "SMALL TINY",
 				def = "COR_GOL1",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

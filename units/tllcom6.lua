@@ -19,7 +19,7 @@ return {
 		canpatrol = true,
 		canreclamate = 1,
 		canstop = 1,
-		category = "ALL COMMANDER CONSTR HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
+		category = "ALL COMMANDER CONSTR HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		cloakcost = 100,
 		cloakcostmoving = 700,
 		collisionvolumeoffsets = "-5 1 0",
@@ -340,7 +340,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "TLLCOM_LIGHTNING5",
-				onlytargetcategory = "NOTSUB",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "COM_SHIELD1",
@@ -350,7 +350,7 @@ return {
 			},
 			[4] = {
 				def = "TLLCOMSEALASER",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

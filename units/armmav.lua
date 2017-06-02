@@ -139,7 +139,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "ARMMAV_WEAPON",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

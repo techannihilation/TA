@@ -13,7 +13,7 @@ return {
 		buildinggrounddecaltype = "corsfus_aoplane.dds",
 		buildpic = "corsfus.dds",
 		buildtime = 225000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		collisionvolumeoffsets = "0 -30 0",
 		collisionvolumescales = "55 115 55",
 		collisionvolumetest = 1,

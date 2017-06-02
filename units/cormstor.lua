@@ -12,7 +12,7 @@ return {
 		buildinggrounddecaltype = "cormstor_aoplane.dds",
 		buildpic = "cormstor.dds",
 		buildtime = 2925,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		collisionvolumeoffsets = "-1 0 -6",
 		collisionvolumescales = "75 34 75",
 		collisionvolumetype = "CylY",

@@ -148,7 +148,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "TLLRIOT_CANNON",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

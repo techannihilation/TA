@@ -155,7 +155,7 @@ return {
 			[1] = {
 				badtargetcategory = "MOBILE",
 				def = "ACIDRAIN_ROCKET",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

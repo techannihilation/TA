@@ -11,7 +11,7 @@ return {
 		buildinggrounddecaltype = "tllradar_aoplane.dds",
 		buildpic = "tllradar.dds",
 		buildtime = 1250,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "dead",
 		description = "Early Warning System",
 		explodeas = "SMALL_BUILDINGEX",

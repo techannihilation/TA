@@ -13,7 +13,7 @@ return {
 		buildtime = 120000,
 		canattack = true,
 		canstop = 1,
-		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
+		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Very Heavy Anti-Air Flak Gun",
@@ -141,7 +141,7 @@ return {
 			[1] = {
 				badtargetcategory = "MEDIUMVTOL SMALLVTOL TINYVTOL",
 				def = "ADVFLAK",
-				onlytargetcategory = "VTOL SUPERSHIP",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

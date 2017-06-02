@@ -14,7 +14,7 @@ return {
 		buildpic = "armjamt.dds",
 		buildtime = 9955,
 		canattack = false,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		cloakcost = 25,
 		collisionvolumeoffsets = "-1 -9 0",
 		collisionvolumescales = "32.6 89.6 34.6",

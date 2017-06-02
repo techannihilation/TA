@@ -155,7 +155,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "CORE_CANLASER",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

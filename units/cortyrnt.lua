@@ -223,18 +223,18 @@ return {
 		weapons = {
 			[1] = {
 				def = "CANNON_TYRNT",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "ROCKET_KROG",
 			},
 			[3] = {
 				def = "BLOD_DOOM",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[4] = {
 				def = "BLOD_DOOM",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

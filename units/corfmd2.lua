@@ -13,7 +13,7 @@ return {
 		buildinggrounddecaltype = "corfmd2_aoplane.dds",
 		buildpic = "corfmd2.dds",
 		buildtime = 496450,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		collisionvolumeoffsets = "0 0 -1",
 		collisionvolumescales = "48 78 48",
 		collisionvolumetype = "Box",
@@ -157,7 +157,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "FMD_ROCKET2",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

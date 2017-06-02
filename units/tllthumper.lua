@@ -142,7 +142,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "TLL_Thumper",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

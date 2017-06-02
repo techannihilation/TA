@@ -15,7 +15,7 @@ return {
 		buildtime = 140000,
 		canattack = true,
 		canstop = 1,
-		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
+		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		corpse = "corbhmth_dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Geothermal Long Range Plasma Battery",
@@ -151,7 +151,7 @@ return {
 			[1] = {
 				badtargetcategory = "SMALL TINY",
 				def = "CORBHMTH_WEAPON2",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

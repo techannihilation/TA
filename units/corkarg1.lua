@@ -250,16 +250,16 @@ return {
 		weapons = {
 			[1] = {
 				def = "SUPER_MISSILE1",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				badtargetcategory = "MEDIUM SMALL TINY",
 				def = "TAWF_BANISHER2",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "cor_erad2",
-				onlytargetcategory = "VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

@@ -13,7 +13,7 @@ return {
 		buildtime = 53485,
 		canattack = false,
 		canstop = 1,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "tllgate_dead",
 		description = "Plasma Deflector",
 		energystorage = 1800,

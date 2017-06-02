@@ -131,7 +131,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "SEAADVBOMB",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

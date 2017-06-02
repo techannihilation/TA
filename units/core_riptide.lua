@@ -182,7 +182,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "RIPTIDE",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "ROCKET",

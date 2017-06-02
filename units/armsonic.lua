@@ -150,7 +150,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "SONIC_CANNON",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

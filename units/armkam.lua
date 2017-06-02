@@ -130,7 +130,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "MED_EMG",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

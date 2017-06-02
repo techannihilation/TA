@@ -145,7 +145,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "TLLTRAQ_WEAPON",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

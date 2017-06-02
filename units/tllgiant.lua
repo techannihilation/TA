@@ -162,7 +162,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "TLL_ROCKET",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

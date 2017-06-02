@@ -175,7 +175,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "FMD_ROCKET",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

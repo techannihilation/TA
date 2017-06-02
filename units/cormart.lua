@@ -163,7 +163,7 @@ return {
 				def = "CORE_ARTILLERY",
 				maindir = "0 0 1",
 				maxangledif = 120,
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

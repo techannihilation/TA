@@ -140,11 +140,11 @@ return {
 		weapons = {
 			[1] = {
 				def = "CRAWL_DUMMY",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "CRAWL_DETONATOR",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

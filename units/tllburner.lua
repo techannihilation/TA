@@ -149,7 +149,7 @@ return {
 			[1] = {
 				badtargetcategory = "ANTIFLAME",
 				def = "TLL_FLAME",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

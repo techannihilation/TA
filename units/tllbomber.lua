@@ -125,7 +125,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "TLLBOMB",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

@@ -15,7 +15,7 @@ return {
 		buildtime = 19958,
 		canattack = true,
 		canstop = 1,
-		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
+		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		corpse = "corerad_dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Rapid-Fire Bomb-Resistant Medium-Range Missile Battery",
@@ -164,7 +164,7 @@ return {
 			[1] = {
 				badtargetcategory = "SMALLVTOL TINYVTOL",
 				def = "COR_ERAD2",
-				onlytargetcategory = "VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

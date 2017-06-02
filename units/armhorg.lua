@@ -172,7 +172,7 @@ return {
 				def = "armhorg_weapon",
 				maindir = "0 0 1",
 				maxangledif = 270,
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

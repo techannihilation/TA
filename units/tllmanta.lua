@@ -155,7 +155,7 @@ return {
 				def = "ARMSMART_TORPEDO",
 				maindir = "0 0 1",
 				maxangledif = 110,
-				onlytargetcategory = "NOTHOVERNOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

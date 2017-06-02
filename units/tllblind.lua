@@ -236,15 +236,15 @@ return {
 		weapons = {
 			[1] = {
 				def = "COR_GOL",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "PACKO_MISSILE",
-				onlytargetcategory = "VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "TLLBLIND_TESLA",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

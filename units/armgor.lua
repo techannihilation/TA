@@ -221,11 +221,11 @@ return {
 		weapons = {
 			[1] = {
 				def = "ARMGOR_FIRE",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "ARMGOR_HEAD",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "ARM_FURIE_ROCKET",

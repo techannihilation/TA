@@ -155,7 +155,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "CORBT_CANNON",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

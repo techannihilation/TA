@@ -14,7 +14,7 @@ return {
 		buildinggrounddecaltype = "corasp_aoplane.dds",
 		buildpic = "corasp.dds",
 		buildtime = 18315,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		collisionvolumeoffsets = "0 -9 0",
 		collisionvolumescales = "135 27 135",
 		collisionvolumetype = "Box",

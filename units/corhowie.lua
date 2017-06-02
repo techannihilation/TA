@@ -179,7 +179,7 @@ return {
 			[1] = {
 				badtargetcategory = "SMALL TINY",
 				def = "ASM",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "CORJEAG_MISSILE",

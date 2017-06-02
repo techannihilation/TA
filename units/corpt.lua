@@ -200,7 +200,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "ARMPT_LASER",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "ARMKBOT_MISSILE",

@@ -158,11 +158,11 @@ return {
 		weapons = {
 			[1] = {
 				def = "JANUS_ROCKET1",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "JANUS_ROCKET1",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 				slaveto = 1,
 			},
 		},

@@ -153,7 +153,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "TLL_ASEDO",
-				onlytargetcategory = "NOTHOVERNOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

@@ -148,7 +148,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "BFIDO",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

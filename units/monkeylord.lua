@@ -193,7 +193,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "Cybran_Monkeylord_Beam",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "Cybran_Monkeylord_Shield",

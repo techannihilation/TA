@@ -147,7 +147,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "COR_BEHEGOLI",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

@@ -175,11 +175,11 @@ return {
 		weapons = {
 			[1] = {
 				def = "CORE_BATSLASER",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "TLL_LASERSHIP",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

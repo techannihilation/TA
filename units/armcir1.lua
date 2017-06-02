@@ -15,7 +15,7 @@ return {
 		buildtime = 19004,
 		canattack = true,
 		canstop = 1,
-		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
+		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		corpse = "armcir_dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Rapid-Fire Bomb-Resistant Medium-Range Missile Battery",
@@ -165,7 +165,7 @@ return {
 			[1] = {
 				badtargetcategory = "SMALLVTOL TINYVTOL",
 				def = "ARM_CIR2",
-				onlytargetcategory = "VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

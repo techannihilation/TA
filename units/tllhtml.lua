@@ -203,11 +203,11 @@ return {
 		weapons = {
 			[1] = {
 				def = "TLL_GAUSS2",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "TLL_ROCKETS2",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

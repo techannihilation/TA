@@ -13,7 +13,7 @@ return {
 		buildinggrounddecaltype = "tllgazelle_aoplane.dds",
 		buildpic = "tllgazelle.dds",
 		buildtime = 835972,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		collisionvolumeoffsets = "0 0 -1",
 		collisionvolumescales = "48 78 48",
 		collisionvolumetype = "Box",
@@ -155,7 +155,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "TLL_GAZELLE_ROCKET",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

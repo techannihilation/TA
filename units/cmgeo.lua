@@ -13,7 +13,7 @@ return {
 		buildinggrounddecaltype = "cmgeo_aoplane.dds",
 		buildpic = "cmgeo.dds",
 		buildtime = 132000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		description = "Hazardous Energy Source",
 		energymake = 3200,
 		energystorage = 3200,

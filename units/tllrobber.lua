@@ -138,11 +138,11 @@ return {
 		weapons = {
 			[1] = {
 				def = "TLLVTOL_MISSILE2",
-				onlytargetcategory = "VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "TLLVTOL_MISSILE2",
-				onlytargetcategory = "VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

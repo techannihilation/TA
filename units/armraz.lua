@@ -155,7 +155,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "MECH_RAPIDLASER",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

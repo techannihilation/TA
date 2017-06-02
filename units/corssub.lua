@@ -159,7 +159,7 @@ return {
 				def = "CORSSUB_WEAPON",
 				maindir = "0 0 1",
 				maxangledif = 75,
-				onlytargetcategory = "NOTHOVERNOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

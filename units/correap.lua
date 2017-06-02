@@ -160,7 +160,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "CORE_REAP",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

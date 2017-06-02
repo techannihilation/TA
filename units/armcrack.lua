@@ -161,7 +161,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "Lightartmissarm",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},
