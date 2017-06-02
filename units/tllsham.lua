@@ -15,7 +15,7 @@ return {
 		canreclamate = 1,
 		canresurrect = true,
 		canstop = 1,
-		category = "ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SMALL",
+		category = "ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SMALL SURFACE",
 		cloakcost = 25,
 		cloakcostmoving = 95,
 		collisionvolumeoffsets = "0 -3 0",
