@@ -16,6 +16,7 @@ local fbo
 local depthTex, screenCopyTex, jitterTex
 local jitterShader
 local screenSizeLoc
+local HasBothDeferredTargets
 
 --//DisplayLists
 local enterIdentity,postDrawAndLeaveIdentity
@@ -85,23 +86,27 @@ end
 -----------------------------------------------------------------------------------------------------------------
 
 function PostDistortion.ViewResize()
-  gl.DeleteTexture(depthTex)
+  if not HasBothDeferredTargets then
+	gl.DeleteTexture(depthTex)
+	depthTex = gl.CreateTexture(vsx,vsy, {
+		target = target,
+		format = PostDistortion.depthformat,
+		min_filter = GL.NEAREST,
+		mag_filter = GL.NEAREST,
+		wrap_s   = GL.CLAMP_TO_EDGE,
+		wrap_t   = GL.CLAMP_TO_EDGE,
+	})
+	
+	fbo.depth  = depthTex
+  end
+  
   if (gl.DeleteTextureFBO) then
     gl.DeleteTextureFBO(screenCopyTex)
     gl.DeleteTextureFBO(jitterTex)
   end
 
   local target = (pd.texRectangle and GL_TEXTURE_RECTANGLE)
-
-  depthTex = gl.CreateTexture(vsx,vsy, {
-    target = target,
-    format = PostDistortion.depthformat,
-    min_filter = GL.NEAREST,
-    mag_filter = GL.NEAREST,
-    wrap_s   = GL.CLAMP_TO_EDGE,
-    wrap_t   = GL.CLAMP_TO_EDGE,
-  })
-
+  
   screenCopyTex = gl.CreateTexture(vsx,vsy, {
     target = target,
     min_filter = GL.LINEAR,
@@ -119,7 +124,6 @@ function PostDistortion.ViewResize()
     wrap_t   = GL.CLAMP_TO_EDGE,
   })
 
-  fbo.depth  = depthTex
   fbo.color0 = jitterTex
 end
 
@@ -139,7 +143,7 @@ function PostDistortion:BeginDraw()
   glActiveFBO(fbo, gl.Clear, GL_COLOR_BUFFER_BIT, 0,0,0,0) --//clear jitterTex
 
   --// copy depthbuffer to a seperated depth texture, so we can use it in the MRT
-  if (pd.copyDepthBuffer) then
+  if (pd.copyDepthBuffer and not HasBothDeferredTargets) then
     glCopyToTexture(depthTex, 0, 0, vpx, vpy, vsx, vsy)
   end
 
@@ -152,6 +156,10 @@ function PostDistortion:EndDraw()
   if (pd.texRectangle) then glUniform(screenSizeLoc,vsx,vsy) end
   glTexture(0,jitterTex);
   glTexture(1,screenCopyTex); 
+  if HasBothDeferredTargets then
+	  glTexture(2,"$map_gbuffer_zvaltex"); 
+	  glTexture(3,"$model_gbuffer_zvaltex"); 
+  end
   glCallList(postDrawAndLeaveIdentity);
 end
 
@@ -185,16 +193,20 @@ function PostDistortion.Initialize()
 
   if (type(LupsConfig.distortioncopydepthbuffer)=="boolean") then
     pd.copyDepthBuffer = LupsConfig.distortioncopydepthbuffer
+
   end
 
   ------------------------------------------------------------------------------------------
   ------------------------------------------------------------------------------------------
   -- CREATE SHADER
   --
+  local HasBothDeferredTargets 	= (Spring.GetConfigString("AllowDeferredMapRendering") == '1' and Spring.GetConfigString("AllowDeferredModelRendering")=='1') 
 
   local defines = ""
-  if (pd.copyDepthBuffer) then defines = defines .. "#define depthtexture\n" end
-
+  if (pd.copyDepthBuffer and not HasBothDeferredTargets) then defines = defines .. "#define depthtexture\n" end
+  
+  if HasBothDeferredTargets then defines = defines .. "#define hasdeferredbuffers\n" end
+  
   jitterShader = gl.CreateShader({
     fragment = defines .. [[
       #ifdef texrect
@@ -211,6 +223,10 @@ function PostDistortion.Initialize()
       #ifdef depthtexture
         uniform sampler2D depthTex;
       #endif
+	  #ifdef hasdeferredbuffers
+		uniform sampler2D depthTex;
+		uniform sampler2D modeldepths;
+	  #endif
 
         void main(void)
         {
@@ -236,6 +252,9 @@ function PostDistortion.Initialize()
       #ifdef depthtexture
            gl_FragDepth = texture2D(depthTex, texcoord ).z;
       #endif
+	  #ifdef hasdeferredbuffers
+			gl_FragDepth = min( texture2D(modeldepths, texcoord).x,texture2D(depthTex, texcoord).x);
+	  #endif
 
           }else{
             discard;
@@ -246,6 +265,7 @@ function PostDistortion.Initialize()
       infoTex   = 0,
       screenTex = 1,
       depthTex  = 2,
+      modeldepthTex  = 3,
       ScreenSize = {vsx,vsy},
     },
   })
@@ -278,6 +298,7 @@ function PostDistortion.Initialize()
     gl.Texture(0,false);
     gl.Texture(1,false);
     gl.Texture(2,false);
+    gl.Texture(3,false);
 
     gl.MatrixMode(GL.PROJECTION); gl.PopMatrix();
     gl.MatrixMode(GL.MODELVIEW);  gl.PopMatrix();
