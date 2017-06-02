@@ -12,7 +12,7 @@ return {
 		buildinggrounddecaltype = "armawin_aoplane.dds",
 		buildpic = "armawin.dds",
 		buildtime = 4809,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
 		collisionvolumeoffsets = "-4 -16 0",
 		collisionvolumescales = "80 121 80",
 		collisionvolumetype = "CylY",

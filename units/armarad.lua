@@ -14,7 +14,7 @@ return {
 		buildpic = "armarad.dds",
 		buildtime = 11800,
 		canattack = false,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
 		corpse = "dead",
 		description = "Long-Range Radar",
 		explodeas = "SMALL_BUILDINGEX",

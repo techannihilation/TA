@@ -13,7 +13,7 @@ return {
 		buildinggrounddecaltype = "amgeo_aoplane.dds",
 		buildpic = "amgeo.dds",
 		buildtime = 120000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
 		collisionvolumeoffsets = "-2 -2 6",
 		collisionvolumescales = "69 69 107",
 		collisionvolumetype = "CylZ",

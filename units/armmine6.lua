@@ -18,7 +18,7 @@ return {
 		canmove = false,
 		canpatrol = false,
 		canstop = 0,
-		category = "ALL MINE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		category = "ALL MINE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE SURFACE",
 		cloakcost = 25,
 		defaultmissiontype = "Standby_Mine",
 		description = "Camouflaged Nuke Warhead",

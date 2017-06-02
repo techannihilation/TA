@@ -13,7 +13,7 @@ return {
 		buildinggrounddecaltype = "tllgazelle_aoplane.dds",
 		buildpic = "tllgazelle.dds",
 		buildtime = 835972,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE SURFACE",
 		collisionvolumeoffsets = "0 0 -1",
 		collisionvolumescales = "48 78 48",
 		collisionvolumetype = "Box",

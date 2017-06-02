@@ -12,7 +12,7 @@ return {
 		buildpic = "tlljam.dds",
 		buildtime = 6555,
 		canattack = false,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
 		corpse = "dead",
 		description = "Radar Jammer",
 		energyuse = 60,

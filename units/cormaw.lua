@@ -13,7 +13,7 @@ return {
 		buildtime = 4419,
 		canattack = true,
 		canstop = 1,
-		category = "ALL ANTIFLAME NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		category = "ALL ANTIFLAME NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE SURFACE",
 		collisionvolumeoffsets = "0 -6 0",
 		collisionvolumescales = "31 39 31",
 		collisionvolumetype = "CylY",

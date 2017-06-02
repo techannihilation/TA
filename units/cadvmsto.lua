@@ -11,7 +11,7 @@ return {
 		buildinggrounddecaltype = "cadvmsto_aoplane.dds",
 		buildpic = "cadvmsto.dds",
 		buildtime = 66125,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
 		corpse = "dead",
 		description = "Increase Metal Storage (350000)",
 		downloadable = 1,

@@ -11,7 +11,7 @@ return {
 		buildtime = 2357,
 		canattack = true,
 		canstop = 1,
-		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE SURFACE",
 		collisionvolumeoffsets = "0 -8 0",
 		collisionvolumescales = "36 67 36",
 		collisionvolumetype = "CylY",

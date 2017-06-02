@@ -11,7 +11,7 @@ return {
 		buildinggrounddecaltype = "afusionplant_aoplane.dds",
 		buildpic = "afusionplant.dds",
 		buildtime = 1800000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "138 99 72",
 		collisionvolumetest = 1,

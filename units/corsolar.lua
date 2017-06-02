@@ -13,7 +13,7 @@ return {
 		buildinggrounddecaltype = "corsolar_aoplane.dds",
 		buildpic = "corsolar.dds",
 		buildtime = 1600,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
 		corpse = "dead",
 		damagemodifier = 0.5,
 		description = "Produces Energy",

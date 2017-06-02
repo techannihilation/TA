@@ -15,7 +15,7 @@ return {
 		buildtime = 32500,
 		canattack = true,
 		canstop = 1,
-		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE SURFACE",
 		corpse = "dead",
 		damagemodifier = 0.75,
 		description = "Convertible Metal Extractor",

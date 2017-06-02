@@ -13,7 +13,7 @@ return {
 		buildinggrounddecaltype = "aafus_aoplane.dds",
 		buildpic = "aafus.dds",
 		buildtime = 175000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "118 78 76",
 		collisionvolumetest = 1,

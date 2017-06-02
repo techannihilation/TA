@@ -11,7 +11,7 @@ return {
 		buildinggrounddecaltype = "armgen_aoplane.dds",
 		buildpic = "armgen.dds",
 		buildtime = 7800,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
 		corpse = "heap",
 		description = "Hybrid Energy Producer/Metal Maker",
 		energymake = 100,

@@ -11,7 +11,7 @@ return {
 		buildinggrounddecaltype = "tllarad_aoplane.dds",
 		buildpic = "tllarad.dds",
 		buildtime = 5050,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
 		corpse = "dead",
 		damagemodifier = 0.8,
 		description = "Long Range Radar Tower",

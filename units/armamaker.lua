@@ -13,7 +13,7 @@ return {
 		buildinggrounddecaltype = "armamaker_aoplane.dds",
 		buildpic = "armamaker.dds",
 		buildtime = 4000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
 		collisionvolumeoffsets = "0 0 1",
 		collisionvolumescales = "48.6 29.6 54.6",
 		collisionvolumetest = 1,

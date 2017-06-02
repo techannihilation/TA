@@ -11,7 +11,7 @@ return {
 		buildinggrounddecaltype = "armlightfus_aoplane.dds",
 		buildpic = "armlightfus.dds",
 		buildtime = 20000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
 		collisionvolumeoffsets = "0 0 1",
 		collisionvolumescales = "68.6 69.6 74.6",
 		collisionvolumetest = 1,

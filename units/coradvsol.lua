@@ -13,7 +13,7 @@ return {
 		buildinggrounddecaltype = "coradvsol_aoplane.dds",
 		buildpic = "coradvsol.dds",
 		buildtime = 6200,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
 		collisionvolumeoffsets = "0 0 -2",
 		collisionvolumescales = "57 55 57",
 		collisionvolumetype = "CylY",

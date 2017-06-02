@@ -13,7 +13,7 @@ return {
 		buildinggrounddecaltype = "armtarg_aoplane.dds",
 		buildpic = "armtarg.dds",
 		buildtime = 8707,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
 		corpse = "dead",
 		description = "Enhanced Radar Targeting, more facilities enhance accuracy",
 		energyuse = 150,

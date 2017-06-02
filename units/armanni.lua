@@ -15,7 +15,7 @@ return {
 		buildtime = 52071,
 		canattack = true,
 		canstop = 1,
-		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE SURFACE",
 		corpse = "dead",
 		damagemodifier = 0.25,
 		defaultmissiontype = "GUARD_NOMOVE",

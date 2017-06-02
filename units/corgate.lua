@@ -14,7 +14,7 @@ return {
 		buildpic = "corgate.dds",
 		buildtime = 57166,
 		canattack = false,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
 		collisionvolumeoffsets = "0 -4 1",
 		collisionvolumescales = "57 38 57",
 		collisionvolumetype = "CylY",

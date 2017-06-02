@@ -8,7 +8,7 @@ return {
 		builder = false,
 		buildpic = "armfdrag.dds",
 		buildtime = 930,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
 		corpse = "floatingteeth",
 		description = "Perimeter Defense",
 		footprintx = 2,

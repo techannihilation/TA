@@ -10,7 +10,7 @@ return {
 		buildpic = "armfrad.dds",
 		buildtime = 1637,
 		canattack = false,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
 		collisionvolumeoffsets = "0 -7 0",
 		collisionvolumescales = "36 70 36",
 		collisionvolumetype = "CylY",

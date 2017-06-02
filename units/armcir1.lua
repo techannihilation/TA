@@ -15,7 +15,7 @@ return {
 		buildtime = 19004,
 		canattack = true,
 		canstop = 1,
-		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE SURFACE",
 		corpse = "armcir_dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Rapid-Fire Bomb-Resistant Medium-Range Missile Battery",

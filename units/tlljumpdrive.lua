@@ -11,7 +11,7 @@ return {
 		buildinggrounddecaltype = "corupmex_aoplane.dds",
 		buildpic = "tlljumpdrive.dds",
 		buildtime = 38577,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
 		corpse = "dead",
 		description = "Enables jumps on large radius",
 		energyuse = 0,

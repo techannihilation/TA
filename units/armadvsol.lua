@@ -13,7 +13,7 @@ return {
 		buildinggrounddecaltype = "armadvsol_aoplane.dds",
 		buildpic = "armadvsol.dds",
 		buildtime = 7000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
 		corpse = "dead",
 		damagemodifier = 0.9,
 		description = "Produces Energy",

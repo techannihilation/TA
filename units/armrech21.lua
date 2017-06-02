@@ -10,7 +10,7 @@ return {
 		buildinggrounddecaltype = "armrech21_aoplane.dds",
 		buildpic = "armrech21.dds",
 		buildtime = 100000,
-		category = "LEVEL2 ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "LEVEL2 ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
 		collisionvolumeoffsets = "-1 -9 -5",
 		collisionvolumescales = "64 70 102",
 		collisionvolumetest = 1,

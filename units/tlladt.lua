@@ -10,7 +10,7 @@ return {
 		buildinggrounddecaltype = "tlladt_aoplane.dds",
 		buildpic = "tlladt.dds",
 		buildtime = 995,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
 		corpse = "tllfortification",
 		description = "Perimeter Defense",
 		downloadable = 1,

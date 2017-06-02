@@ -18,7 +18,7 @@ return {
 		canrepair = false,
 		canrestore = false,
 		canstop = 1,
-		category = "ALL CONSTR MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL TINY WEAPON SURFACE",
+		category = "ALL CONSTR MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL TINY WEAPON SURFACE SURFACE",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Stealthy Minelayer/Minesweeper",

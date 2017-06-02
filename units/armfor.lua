@@ -11,7 +11,7 @@ return {
 		buildinggrounddecaltype = "armfor_aoplane.dds",
 		buildpic = "armfor.dds",
 		buildtime = 200000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
 		description = "Advanced Geothermical reactor",
 		energymake = 5000,
 		energystorage = 5000,

@@ -15,7 +15,7 @@ return {
 		buildtime = 178453,
 		canattack = true,
 		canstop = 1,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE SURFACE",
 		corpse = "armsilo_dead",
 		description = "Enriched Nuclear ICBM Launcher",
 		explodeas = "ATOMIC_BLAST",

@@ -11,7 +11,7 @@ return {
 		buildinggrounddecaltype = "tllwindtrap_aoplane.dds",
 		buildpic = "tllwindtrap.dds",
 		buildtime = 1961,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
 		collisionvolumeoffsets = "-2 0 3",
 		collisionvolumescales = "44 44 50",
 		collisionvolumetype = "box",

@@ -17,7 +17,7 @@ return {
 		canrepair = false,
 		canrestore = false,
 		canstop = 1,
-		category = "ALL CONSTR LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		category = "ALL CONSTR LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE SURFACE",
 		cloakcost = 1500,
 		cloakcostmoving = 4000,
 		corpse = "dead",

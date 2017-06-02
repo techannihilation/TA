@@ -10,7 +10,7 @@ return {
 		buildpic = "corfrad.dds",
 		buildtime = 1783,
 		canattack = false,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
 		collisionvolumeoffsets = "0 -9 0",
 		collisionvolumescales = "32 106 32",
 		collisionvolumetype = "CylY",

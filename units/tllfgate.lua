@@ -9,7 +9,7 @@ return {
 		builder = false,
 		buildpic = "tllfgate.dds",
 		buildtime = 78000,
-		category = "ALL NOTDEFENSE NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL NOTDEFENSE NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
 		description = "Floating Plasma Deflector",
 		energystorage = 2000,
 		energyuse = 0,

@@ -10,7 +10,7 @@ return {
 		buildinggrounddecaltype = "tlldt_aoplane.dds",
 		buildpic = "tlldt.dds",
 		buildtime = 520,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
 		corpse = "tlldragonsteeth",
 		description = "Dragon's Teeth",
 		footprintx = 2,

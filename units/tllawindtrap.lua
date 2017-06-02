@@ -11,7 +11,7 @@ return {
 		buildinggrounddecaltype = "tllawindtrap_aoplane.dds",
 		buildpic = "tllawindtrap.dds",
 		buildtime = 5883,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
 		corpse = "dead",
 		description = "Produces Energy",
 		energyuse = 0,
