@@ -11,7 +11,7 @@ return {
 		buildinggrounddecaltype = "cfusionplant_aoplane.dds",
 		buildpic = "cfusionplant.dds",
 		buildtime = 2200000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "dead",
 		description = "Produces Energy",
 		energymake = 25600,

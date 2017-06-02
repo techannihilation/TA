@@ -11,7 +11,7 @@ return {
 		buildinggrounddecaltype = "tllemstor_aoplane.dds",
 		buildpic = "tllemstor.dds",
 		buildtime = 57710,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		cloakcost = 680,
 		corpse = "dead",
 		description = "Increases Energy & Metal Storage [250000/50000",

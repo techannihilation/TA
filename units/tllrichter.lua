@@ -10,7 +10,7 @@ return {
 		buildinggrounddecaltype = "tllrichter_aoplane.dds",
 		buildpic = "tllrichter.dds",
 		buildtime = 10955,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "dead",
 		description = "Seismic System",
 		energyuse = 125,

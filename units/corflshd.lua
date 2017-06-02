@@ -9,7 +9,7 @@ return {
 		builder = false,
 		buildpic = "corflshd.dds",
 		buildtime = 61782,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		description = "Floating Plasma Deflector",
 		energyuse = 0,
 		explodeas = "LARGE_BUILDINGEX",

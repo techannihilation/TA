@@ -11,7 +11,7 @@ return {
 		buildinggrounddecaltype = "corgen_aoplane.dds",
 		buildpic = "corgen.dds",
 		buildtime = 8800,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "heap",
 		description = "Hybrid Energy Producer/Metal Maker",
 		energymake = 128,

@@ -12,7 +12,7 @@ return {
 		buildinggrounddecaltype = "armfort_aoplane.dds",
 		buildpic = "armfort.dds",
 		buildtime = 965,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "fortification",
 		description = "Perimeter Defense",
 		footprintx = 2,

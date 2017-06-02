@@ -11,7 +11,7 @@ return {
 		buildinggrounddecaltype = "tllmohogeo_aoplane.dds",
 		buildpic = "tllmohogeo.dds",
 		buildtime = 160000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "tllmohogeo_dead",
 		description = "Hazardous Geothermal Foundry Produces Energy/Metal",
 		energymake = 3000,

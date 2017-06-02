@@ -12,7 +12,7 @@ return {
 		buildpic = "armdrag.dds",
 		buildtime = 255,
 		canattack = false,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "dragonsteeth",
 		description = "Perimeter Defense",
 		footprintx = 2,

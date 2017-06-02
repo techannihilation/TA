@@ -9,7 +9,7 @@ return {
 		builder = false,
 		buildpic = "coreyes.dds",
 		buildtime = 1500,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		cloakcost = 10,
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "16 26 16",

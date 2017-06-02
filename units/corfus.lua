@@ -13,7 +13,7 @@ return {
 		buildinggrounddecaltype = "corfus_aoplane.dds",
 		buildpic = "corfus.dds",
 		buildtime = 69000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "dead",
 		description = "Produces Energy / Storage",
 		energymake = 1280,

@@ -11,7 +11,7 @@ return {
 		buildinggrounddecaltype = "tllammaker_aoplane.dds",
 		buildpic = "tllammaker.dds",
 		buildtime = 42000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "dead",
 		damagemodifier = 0.7,
 		description = "Converts upto 1000 Energy into Metal",

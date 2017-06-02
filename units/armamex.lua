@@ -13,7 +13,7 @@ return {
 		buildinggrounddecaltype = "armamex_aoplane.dds",
 		buildpic = "armamex.dds",
 		buildtime = 1800,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		cloakcost = 12,
 		corpse = "dead",
 		description = "Stealthy Cloakable Metal Extractor",

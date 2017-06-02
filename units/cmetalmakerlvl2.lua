@@ -10,7 +10,7 @@ return {
 		buildinggrounddecaltype = "cmetalmakerlvl2_aoplane.dds",
 		buildpic = "cmetalmakerlvl2.dds",
 		buildtime = 240000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "dead",
 		damagemodifier = 0.25,
 		description = "Converts upto 20480 Energy to Metal",

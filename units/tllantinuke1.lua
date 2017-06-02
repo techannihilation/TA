@@ -11,7 +11,7 @@ return {
 		buildinggrounddecaltype = "tllantinuke_aoplane.dds",
 		buildpic = "tllantinuke1.dds",
 		buildtime = 148025,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		corpse = "dead",
 		damagemodifier = 0.8,
 		description = "Long Range Anti-Nuke System",

@@ -18,7 +18,7 @@ return {
 		canmove = false,
 		canpatrol = false,
 		canstop = 0,
-		category = "ALL MINE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE SURFACE",
+		category = "ALL MINE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		cloakcost = 3,
 		collide = false,
 		collisionvolumeoffsets = "0 0 0",

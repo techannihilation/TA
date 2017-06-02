@@ -11,7 +11,7 @@ return {
 		buildinggrounddecaltype = "tllmm_aoplane.dds",
 		buildpic = "tllmm.dds",
 		buildtime = 2000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "dead",
 		damagemodifier = 0.4,
 		description = "Converts upto 100 Energy into Metal",

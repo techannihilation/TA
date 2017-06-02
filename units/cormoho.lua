@@ -13,7 +13,7 @@ return {
 		buildinggrounddecaltype = "cormoho_aoplane.dds",
 		buildpic = "cormoho.dds",
 		buildtime = 14125,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "dead",
 		damagemodifier = 0.25,
 		description = "Advanced Metal Extractor / Storage",

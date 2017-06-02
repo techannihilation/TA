@@ -14,7 +14,7 @@ return {
 		canreclamate = 1,
 		canstop = 1,
 		cantbetransported = true,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		defaultmissiontype = "Standby",
 		description = "Repairs and builds on big radius",
 		energyuse = 30,

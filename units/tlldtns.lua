@@ -10,7 +10,7 @@ return {
 		buildinggrounddecaltype = "tlldtns_aoplane.dds",
 		buildpic = "tlldtns.dds",
 		buildtime = 930,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "tllfloatingteeth",
 		description = "Shark's Teeth",
 		downloadable = 1,

@@ -12,7 +12,7 @@ return {
 		buildinggrounddecaltype = "armckfus_aoplane.dds",
 		buildpic = "armckfus.dds",
 		buildtime = 75000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		cloakcost = 100,
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "98 59 62",

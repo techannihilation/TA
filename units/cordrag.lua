@@ -12,7 +12,7 @@ return {
 		buildinggrounddecaltype = "cordrag_aoplane.dds",
 		buildpic = "cordrag.dds",
 		buildtime = 255,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "dragonsteeth_core",
 		description = "Perimeter Defense",
 		footprintx = 2,

@@ -13,7 +13,7 @@ return {
 		canattack = true,
 		canguard = true,
 		canstop = 1,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		corpse = "core_immolator_dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Plasma Tower",

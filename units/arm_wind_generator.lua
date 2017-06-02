@@ -11,7 +11,7 @@ return {
 		buildinggrounddecaltype = "arm_wind_generator_aoplane.dds",
 		buildpic = "arm_wind_generator.dds",
 		buildtime = 1603,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "dead",
 		description = "Produces Energy",
 		downloadable = 1,

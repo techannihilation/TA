@@ -11,7 +11,7 @@ return {
 		buildinggrounddecaltype = "tllamex_aoplane.dds",
 		buildpic = "tllamex.dds",
 		buildtime = 14530,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "dead",
 		description = "Advanced Metal Extractor/ Storage",
 		energyuse = 30,

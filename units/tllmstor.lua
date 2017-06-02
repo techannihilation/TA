@@ -11,7 +11,7 @@ return {
 		buildinggrounddecaltype = "tllmstor_aoplane.dds",
 		buildpic = "tllmstor.dds",
 		buildtime = 3125,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "dead",
 		description = "Increases Metal Storage (4000)",
 		energyuse = 0,

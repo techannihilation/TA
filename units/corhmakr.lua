@@ -13,7 +13,7 @@ return {
 		buildinggrounddecaltype = "corhmakr_aoplane.png",
 		buildpic = "corhmakr.dds",
 		buildtime = 95000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		collisionvolumeoffsets = "-2 0 0",
 		collisionvolumescales = "60 100 60",
 		collisionvolumetype = "CylY",

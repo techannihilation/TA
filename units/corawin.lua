@@ -12,7 +12,7 @@ return {
 		buildinggrounddecaltype = "corawin_aoplane.dds",
 		buildpic = "corawin.dds",
 		buildtime = 5061,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		collisionvolumeoffsets = "-7 -9 0",
 		collisionvolumescales = "80 121 80",
 		collisionvolumetype = "CylY",

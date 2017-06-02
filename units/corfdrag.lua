@@ -8,7 +8,7 @@ return {
 		builder = false,
 		buildpic = "corfdrag.dds",
 		buildtime = 1000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "floatingteeth_core",
 		description = "Perimeter Defense",
 		footprintx = 2,

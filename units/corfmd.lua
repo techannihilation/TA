@@ -13,7 +13,7 @@ return {
 		buildinggrounddecaltype = "corfmd_aoplane.dds",
 		buildpic = "corfmd.dds",
 		buildtime = 126450,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		collisionvolumeoffsets = "0 0 -1",
 		collisionvolumescales = "36 78 36",
 		collisionvolumetype = "Box",

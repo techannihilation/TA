@@ -13,7 +13,7 @@ return {
 		buildinggrounddecaltype = "armestor_aoplane.dds",
 		buildpic = "armestor.dds",
 		buildtime = 3900,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "42 34 42",
 		collisionvolumetype = "CylY",

@@ -13,7 +13,7 @@ return {
 		buildinggrounddecaltype = "armgmm_aoplane.dds",
 		buildpic = "armgmm.dds",
 		buildtime = 75000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		description = "Safe Geothermal Powerplant",
 		digger = 1,
 		energymake = 1600,
