@@ -3,15 +3,15 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, torax, abdomen, magasin, laser_pylone, laser_bloc, laser_jonction, laser_canon,
-       laser_feu, gatling_pylone, gatling_bloc, gatling_canons, gatling_feu, cartouche, pattes, patte10,
+piece  base, torax, abdomen, magasin, laser_pylone, laser_bloc, cartouche, laser_jonction, laser_canon,
+       laser_feu, gatling_pylone, gatling_bloc, gatling_canons, gatling_feu, pattes, patte10,
        patte11, patte12, patte13, patte14, stomp1, patte20, patte21, patte22,
        patte23, patte24, stomp2, patte30, patte31, patte32, patte33, patte34,
        stomp3, patte40, patte41, patte42, patte43, patte44, stomp4, patte50,
        patte51, patte52, patte53, patte54, stomp5, patte60, patte61, patte62,
        patte63, patte64, stomp6, ecraseur_epaule, ecraseur_bras, load_shoulder, load_arm, unload_shoulder,
        unload_arm, goal_shoulder, goal_arm, basket1, basket2, basket3, basket4, basket5,
-       basket6, basket7;
+       basket6, basket7, rocket_left, rocket_right;
 
 static-var  bMoving, gun_1, gun_3, Static_Var_4, Static_Var_5,
             restore_delay, bAiming, Static_Var_8, Static_Var_9, Static_Var_10,
@@ -616,28 +616,13 @@ Create()
 	Static_Var_14 = 5;
 	set ARMORED to 1;
 	set ACTIVATION to 1;
-	hide gatling_pylone;
-	hide gatling_bloc;
-	hide gatling_canons;
-	hide gatling_feu;
-	turn gatling_bloc to x-axis <-90.000000> now;
-	move gatling_pylone to y-axis [-4.000000] now;
-	hide laser_pylone;
-	hide laser_bloc;
-	hide laser_jonction;
-	hide laser_canon;
-	hide laser_feu;
-	turn magasin to y-axis <180.043956> now;
-	turn laser_bloc to x-axis <90.000000> now;
-	move laser_pylone to y-axis [-4.000000] now;
-	hide cartouche;
 	dont-cache abdomen;
 	Static_Var_15 = 0 - 1;
 	start-script TexasRanger();
 	start-script EmbeddedSpringTest();
 	sleep 1;
 	Static_Var_15 = 1;
-	start-script HealthCheck();
+	//start-script HealthCheck();
 	set ACTIVATION to 1;
 }
 
@@ -691,103 +676,18 @@ AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	var Func_Var_3;
-	wait-for-move base along y-axis;
-	wait-for-move base along y-axis;
-	wait-for-move base along y-axis;
-	while( gun_1 AND Static_Var_15 == 0 OR gun_3 OR Static_Var_4 )
+	turn laser_pylone to y-axis heading speed <130.000000>;
+	if( pitch > 65536 - 9100 OR pitch <= 32768 )
 	{
-		sleep 200;
+		turn laser_bloc to x-axis <-8.000000> - pitch speed <120.000000>;
 	}
-	Func_Var_3 = 0;
-	if( bAiming == 1 )
+	if( pitch <= 65536 - 9100 AND pitch > 32768 )
 	{
-		Func_Var_3 = 6;
+		turn laser_bloc to x-axis <-8.000000> - pitch speed <120.000000>;
 	}
-	while( TRUE )
-	{
-		while( gun_3 OR Static_Var_4 )
-		{
-			sleep 200;
-			Func_Var_3 = 0;
-		}
-		if( bAiming != 0 - 1 AND bAiming != 1 )
-		{
-			Func_Var_3 = 0;
-		}
-		if( Func_Var_3 == 7 )
-		{
-			++Func_Var_3;
-			start-script RetourTourelleLaser();
-			if( Static_Var_15 == 0 )
-			{
-				move laser_feu to z-axis [10.000000] now;
-			}
-			if( Static_Var_15 == 1 )
-			{
-				move laser_feu to z-axis [-10.000000] now;
-			}
-			return (1);
-		}
-		if( Func_Var_3 == 6 )
-		{
-			++Func_Var_3;
-			turn laser_pylone to y-axis heading speed <30.000000>;
-			if( pitch > 65536 - 9100 OR pitch <= 32768 )
-			{
-				turn laser_bloc to x-axis <0.000000> - pitch speed <20.000000>;
-			}
-			if( pitch <= 65536 - 9100 AND pitch > 32768 )
-			{
-				turn laser_bloc to x-axis <50.000000> speed <20.000000>;
-			}
-			wait-for-turn laser_pylone around y-axis;
-			wait-for-turn laser_bloc around x-axis;
-		}
-		if( Func_Var_3 == 5 )
-		{
-			++Func_Var_3;
-			bAiming = TRUE;
-		}
-		if( Func_Var_3 == 4 )
-		{
-			++Func_Var_3;
-			turn laser_bloc to x-axis <0.000000> - pitch speed <120.000000>;
-			wait-for-turn laser_bloc around x-axis;
-		}
-		if( Func_Var_3 == 3 )
-		{
-			++Func_Var_3;
-			show laser_pylone;
-			show laser_bloc;
-			show laser_jonction;
-			show laser_canon;
-			move laser_pylone to y-axis [12.000000] speed [32.000000];
-			wait-for-move laser_pylone along y-axis;
-		}
-		if( Func_Var_3 == 2 )
-		{
-			++Func_Var_3;
-			hide gatling_pylone;
-			hide gatling_bloc;
-			hide gatling_canons;
-			turn magasin to y-axis <0.000000> speed <240.054945>;
-			wait-for-turn magasin around y-axis;
-		}
-		if( Func_Var_3 == 1 )
-		{
-			++Func_Var_3;
-			move gatling_pylone to y-axis [-4.000000] speed [32.000000];
-			wait-for-move gatling_pylone along y-axis;
-		}
-		if( Func_Var_3 == 0 )
-		{
-			bAiming = 0 - 1;
-			++Func_Var_3;
-			turn gatling_bloc to x-axis <-90.000000> speed <180.000000>;
-			wait-for-turn gatling_bloc around x-axis;
-		}
-	}
+	wait-for-turn laser_pylone around y-axis;
+	wait-for-turn laser_bloc around x-axis;
+	return (1);
 }
 
 QueryPrimary(piecenum)
@@ -797,16 +697,10 @@ QueryPrimary(piecenum)
 
 FirePrimary()
 {
-	if( gun_1 )
-	{
-		return;
-	}
-	gun_1 = torax;
 	show laser_feu;
 	sleep 200;
 	hide laser_feu;
 	sleep 3800;
-	gun_1 = base;
 }
 
 AimFromTertiary(piecenum)
@@ -855,36 +749,6 @@ AimTertiary(heading, pitch)
 	signal SIG_AIM_3;
 	set-signal-mask SIG_AIM_3;
 	Static_Var_4 = 1;
-	while( gun_1 )
-	{
-		sleep 200;
-	}
-	Static_Var_4 = 1;
-	Static_Var_8 = 3;
-	if( bAiming != 2 )
-	{
-		bAiming = 0 - 2;
-		turn laser_bloc to x-axis <90.000000> speed <120.000000>;
-		wait-for-turn laser_bloc around x-axis;
-		move laser_pylone to y-axis [-4.000000] speed [32.000000];
-		wait-for-move laser_pylone along y-axis;
-		hide laser_pylone;
-		hide laser_bloc;
-		hide laser_jonction;
-		hide laser_canon;
-		turn magasin to y-axis <180.043956> speed <240.054945>;
-		wait-for-turn magasin around y-axis;
-		show gatling_pylone;
-		show gatling_bloc;
-		show gatling_canons;
-		move gatling_pylone to y-axis [12.000000] speed [32.000000];
-		wait-for-move gatling_pylone along y-axis;
-		turn gatling_bloc to x-axis pitch speed <180.000000>;
-		wait-for-turn gatling_bloc around x-axis;
-		bAiming = TRUE;
-		Static_Var_4 = 1;
-		Static_Var_8 = 3;
-	}
 	turn gatling_pylone to y-axis heading speed <270.000000>;
 	if( pitch > 65536 - 9100 OR pitch <= 32768 )
 	{
@@ -892,11 +756,11 @@ AimTertiary(heading, pitch)
 	}
 	if( pitch <= 65536 - 9100 AND pitch > 32768 )
 	{
-		turn gatling_bloc to x-axis <0.000000> - <50.000000> speed <120.000000>;
+		turn gatling_bloc to x-axis <-0.000000> - pitch speed <120.000000>;
 	}
 	wait-for-turn gatling_pylone around y-axis;
 	wait-for-turn gatling_bloc around x-axis;
-	start-script RetourTourelleGatling();
+	//start-script RetourTourelleGatling();
 	return (1);
 }
 
@@ -905,25 +769,15 @@ QueryTertiary(piecenum)
 	piecenum = gatling_feu;
 }
 
-FireTertiary()
+Shot3()
 {
-	if( gun_3 )
-	{
-		return;
-	}
-	gun_3 = torax;
-	show gatling_feu;
-	sleep 200;
-	hide gatling_feu;
+	emit-sfx 1024 + 0 from gatling_feu;
 	++Static_Var_5;
 	if( Static_Var_5 >= 6 )
 	{
 		Static_Var_5 = 0;
 	}
-	turn gatling_canons to z-axis <360.087912> * Static_Var_5 / <0.032967> speed <150.043956>;
-	explode cartouche type FALL;
-	sleep 200;
-	explode cartouche type FALL;
+	turn gatling_canons to z-axis <60.087912> * Static_Var_5 speed <500.043956>;
 	gun_3 = base;
 }
 
@@ -979,6 +833,48 @@ Query4(Func_Var_1)
 
 Fire4(Func_Var_1)
 {
+}
+
+AimWeapon5(heading, pitch)
+{
+	return (1);
+}
+
+FireWeapon5()
+{
+
+}
+
+AimFromWeapon5(piecenum)
+{
+	piecenum = cartouche;
+}
+
+
+QueryWeapon5(piecenum)
+{
+	piecenum = rocket_right;
+}
+
+AimWeapon6(heading, pitch)
+{
+	return (1);
+}
+
+FireWeapon6()
+{
+
+}
+
+AimFromWeapon6(piecenum)
+{
+	piecenum = cartouche;
+}
+
+
+QueryWeapon6(piecenum)
+{
+	piecenum = rocket_left;
 }
 
 SweetSpot(piecenum)

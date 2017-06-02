@@ -15,10 +15,14 @@ if (not gadgetHandler:IsSyncedCode()) then return end
 local wiggleWeapon = {}
 wiggleWeapon[WeaponDefNames["armabad_exp_heavyrocket1"].id] = 1
 
+local danceWeapon = {}
+danceWeapon[WeaponDefNames["fatshrew_rocket"].id] = 1
+
 local redirectProjectiles = {}  -- [frame][projectileID] = table with .targetType .targetX .targetY .targetZ .targetID
 
 function gadget:Initialize()
 	Script.SetWatchWeapon (WeaponDefNames["armabad_exp_heavyrocket1"].id, true)
+	Script.SetWatchWeapon (WeaponDefNames["fatshrew_rocket"].id, true)
 end
 
  
@@ -53,6 +57,14 @@ end
 
 		addProjectileRedirect (proID, originalTarget, 80)
 		
+		return true
+	end
+	if (danceWeapon [Spring.GetProjectileDefID (proID)]) then
+		local originalTarget = getTargetTable (proID)
+		local tx,ty,tz = getProjectileTargetXYZ (proID)
+		local x,y,z = Spring.GetUnitPosition (proOwnerID)
+		addProjectileRedirect (proID, makeTargetTable(x+math.random(-200,200),Spring.GetGroundHeight (x,z)+800,z+math.random(-200,200)), 1)
+		addProjectileRedirect (proID, originalTarget, 65)
 		return true
 	end
 end
