@@ -13,7 +13,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HOVER MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTVTOL TINY WEAPON SURFACE",
+		category = "ALL HOVER MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTVTOL TINY WEAPON",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Scout Hovercraft",

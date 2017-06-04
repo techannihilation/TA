@@ -44,6 +44,7 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		unitname = "tllsubpen",
+		waterline = 55,
 		workertime = 115,
 		yardmap = "wwwCCCCC wwwCCCCC wwwCCCCC wwwCCCCC wwwCCCCC wwwCCCCC wwwCCCCC wwwCCCCC",
 		buildoptions = {

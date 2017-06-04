@@ -8,7 +8,7 @@ return {
 		buildpic = "coraak.dds",
 		buildtime = 7581,
 		canmove = true,
-		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Heavy Amphibious Anti-Air Kbot",

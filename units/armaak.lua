@@ -8,7 +8,7 @@ return {
 		buildpic = "armaak.dds",
 		buildtime = 6958,
 		canmove = true,
-		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Advanced Amphibious Anti-Air Kbot",
