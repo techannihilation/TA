@@ -14,7 +14,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTVTOL WEAPON",
+		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTVTOL WEAPON SURFACE",
 		collisionvolumeoffsets = "0 -5 0",
 		collisionvolumescales = "31 31 82",
 		collisionvolumetype = "CylZ",
@@ -203,15 +203,15 @@ return {
 		weapons = {
 			[1] = {
 				def = "MISSILELAUNCHER",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "VTOL",
 			},
 			[2] = {
 				def = "MISSILELAUNCHER",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "VTOL",
 			},
 			[3] = {
 				def = "MOBILEFLAK",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "VTOL",
 			},
 		},
 	},

@@ -13,7 +13,7 @@ return {
 		canpatrol = true,
 		canreclamate = 1,
 		canstop = 1,
-		category = "ALL CONSTR LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTVTOL NOTWEAPON SUB",
+		category = "ALL CONSTR LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTVTOL NOTWEAPON SUB SURFACE",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "36 26 66",
 		collisionvolumetest = 1,

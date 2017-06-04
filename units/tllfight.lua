@@ -131,12 +131,12 @@ return {
 			[1] = {
 				badtargetcategory = "TINYVTOL",
 				def = "TLLVTOL_MISSILE",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "VTOL",
 			},
 			[2] = {
 				badtargetcategory = "TINYVTOL",
 				def = "TLLVTOL_MISSILE",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "VTOL",
 			},
 		},
 	},

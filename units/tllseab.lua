@@ -169,15 +169,15 @@ return {
 		weapons = {
 			[1] = {
 				def = "ARMSEAP_WEAPON1",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "NOTHOVERNOTVTOL",
 			},
 			[2] = {
 				def = "ARMSEAP_WEAPON1",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "NOTHOVERNOTVTOL",
 			},
 			[3] = {
 				def = "TLLVTOL_MISSILE",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "VTOL",
 			},
 		},
 	},

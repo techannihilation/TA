@@ -418,7 +418,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "ARMCOMLASER",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "NOTSUB",
 			},
 			[3] = {
 				def = "ARM_DISINTEGRATOR",

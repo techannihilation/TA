@@ -13,7 +13,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
+		category = "ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Anti-Submarine Torpedo Turtle",
@@ -143,7 +143,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "torp",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "NOTHOVERNOTVTOL",
 			},
 		},
 	},

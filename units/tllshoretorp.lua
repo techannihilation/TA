@@ -143,7 +143,7 @@ return {
 			[1] = {
 				badtargetcategory = "TINY",
 				def = "TLL_TORPEDO",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "NOTHOVERNOTVTOL",
 			},
 		},
 	},

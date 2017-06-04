@@ -138,7 +138,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "TLLFLAK_GUN",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "VTOL",
 			},
 		},
 	},

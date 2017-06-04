@@ -12,7 +12,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
+		category = "ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "76 76 56",
 		collisionvolumetest = 1,
@@ -220,7 +220,7 @@ return {
 			},
 			[3] = {
 				def = "KILLER_TORPEDO",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "NOTHOVERNOTVTOL",
 			},
 		},
 	},

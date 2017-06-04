@@ -18,7 +18,7 @@ return {
 		canreclamate = 1,
 		canresurrect = true,
 		canstop = 1,
-		category = "ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SMALL",
+		category = "ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SMALL SURFACE",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "All-Terrain Resurrection Spider",

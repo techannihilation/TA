@@ -12,7 +12,7 @@ return {
 		buildpic = "armmas.dds",
 		buildtime = 85800,
 		canattack = false,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "80 112 80",
 		collisionvolumetest = 1,

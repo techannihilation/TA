@@ -13,7 +13,7 @@ return {
 		buildinggrounddecaltype = "corgeo_aoplane.dds",
 		buildpic = "corgeo.dds",
 		buildtime = 24000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		corpse = "dead",
 		description = "Produces Energy / Storage",
 		energymake = 640,

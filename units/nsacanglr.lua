@@ -14,7 +14,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HOVER MEDIUM MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
+		category = "ALL HOVER MEDIUM MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Anti-Submarine HoverCraft",
@@ -143,7 +143,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "COREHEAVYDEPTHCHARGE",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "NOTHOVERNOTVTOL",
 			},
 		},
 	},

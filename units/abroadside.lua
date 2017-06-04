@@ -209,13 +209,13 @@ return {
 				def = "CapitalShipMinigun",
 				maindir = "1 0 0",
 				maxangledif = 170,
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "VTOL",
 			},
 			[5] = {
 				def = "CapitalShipMinigun",
 				maindir = "-1 0 0",
 				maxangledif = 170,
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "VTOL",
 			},
 			[6] = {
 				def = "750MW",

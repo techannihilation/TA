@@ -12,7 +12,7 @@ return {
 		buildpic = "cormas.dds",
 		buildtime = 78000,
 		canattack = false,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
 		collisionvolumeoffsets = "0 16 0",
 		collisionvolumescales = "76 152 76",
 		collisionvolumetest = 1,

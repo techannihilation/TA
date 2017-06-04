@@ -13,7 +13,7 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		cantbetransported = true,
-		category = "ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
+		category = "ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Krogoth Class All-Terrain Kbot",
@@ -174,11 +174,11 @@ return {
 		weapons = {
 			[2] = {
 				def = "MACROSS_ARM_GUN",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "MACROSS_MISSILE",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

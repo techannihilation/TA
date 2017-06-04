@@ -14,7 +14,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTVTOL WEAPON",
+		category = "ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTVTOL WEAPON SURFACE",
 		collisionvolumeoffsets = "0 -14 10",
 		collisionvolumescales = "70 70 170",
 		collisionvolumetype = "CylZ",
@@ -255,7 +255,7 @@ return {
 			},
 			[3] = {
 				def = "HYDRAMISS",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "VTOL",
 			},
 			[4] = {
 				def = "HYDRA_GUN",
@@ -271,7 +271,7 @@ return {
 			},
 			[6] = {
 				def = "HYDRAMISS",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "VTOL",
 			},
 		},
 	},

@@ -150,7 +150,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "MINESWEEPERAIRMISSILE",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "MINE",
 			},
 		},
 	},

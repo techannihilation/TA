@@ -170,17 +170,17 @@ return {
 			[1] = {
 				badtargetcategory = "MEDIUMVTOL SMALLVTOL TINYVTOL",
 				def = "ARMVTOL_ADVMISSILE",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "VTOL",
 			},
 			[2] = {
 				badtargetcategory = "MEDIUMVTOL SMALLVTOL TINYVTOL",
 				def = "ARMVTOL_ADVMISSILE",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "VTOL",
 			},
 			[3] = {
 				badtargetcategory = "MEDIUMVTOL SMALLVTOL TINYVTOL",
 				def = "ARMVTOL_ADVMISSILE1",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "VTOL",
 			},
 		},
 	},

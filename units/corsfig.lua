@@ -131,7 +131,7 @@ return {
 			[1] = {
 				badtargetcategory = "TINYVTOL",
 				def = "CORSFIG_WEAPON",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "VTOL",
 			},
 		},
 	},

@@ -344,7 +344,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "ARMCOMLASER5",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "NOTSUB",
 			},
 			[2] = {
 				def = "COM_SHIELD2",

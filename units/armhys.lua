@@ -141,7 +141,7 @@ return {
 			[1] = {
 				badtargetcategory = "MEDIUMVTOL SMALLVTOL TINYVTOL",
 				def = "ADVFLAK",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "VTOL SUPERSHIP",
 			},
 		},
 	},

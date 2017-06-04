@@ -421,7 +421,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "TLLCOM_LIGHTNING3",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "NOTSUB",
 			},
 			[3] = {
 				def = "TLL_DISINTEGRATOR1",

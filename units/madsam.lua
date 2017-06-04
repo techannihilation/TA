@@ -168,7 +168,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "MADSAM_MISSILE",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "VTOL",
 			},
 		},
 	},

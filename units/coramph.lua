@@ -14,7 +14,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
+		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		corpse = "heap",
 		defaultmissiontype = "Standby",
 		description = "Amphibious Kbot",
@@ -173,7 +173,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "CORAMPH_WEAPON1",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "NOTHOVERNOTVTOL",
 			},
 			[2] = {
 				def = "CORAMPH_WEAPON2",

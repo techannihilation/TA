@@ -164,7 +164,7 @@ return {
 			[1] = {
 				badtargetcategory = "SMALLVTOL TINYVTOL",
 				def = "COR_ERAD2",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "VTOL",
 			},
 		},
 	},

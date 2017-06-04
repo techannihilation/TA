@@ -14,7 +14,7 @@ return {
 		canreclamate = 1,
 		canresurrect = true,
 		canstop = 1,
-		category = "ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SMALL",
+		category = "ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SMALL SURFACE",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "21 32 21",
 		collisionvolumetype = "CylY",

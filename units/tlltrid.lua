@@ -9,7 +9,7 @@ return {
 		canattack = true,
 		canguard = true,
 		canstop = 1,
-		category = "ALL MEDIUM NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		category = "ALL MEDIUM NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
 		corpse = "dead",
 		description = "Energy weapon",
 		energyuse = 0,

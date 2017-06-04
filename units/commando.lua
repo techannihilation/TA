@@ -18,7 +18,7 @@ return {
 		canrepair = false,
 		canrestore = false,
 		canstop = 1,
-		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
+		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		defaultmissiontype = "Standby",
 		description = "Stealthy Capture Kbot",
 		explodeas = "SPYBOMBX",

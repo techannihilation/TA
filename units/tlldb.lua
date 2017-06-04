@@ -191,17 +191,17 @@ return {
 			[1] = {
 				badtargetcategory = "MEDIUMVTOL SMALLVTOL TINYVTOL",
 				def = "DRAGON_BREATH_GUN",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "VTOL",
 			},
 			[2] = {
 				badtargetcategory = "MEDIUMVTOL SMALLVTOL TINYVTOL",
 				def = "DRAGON_BREATH_MISSILE",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "VTOL SUPERSHIP",
 			},
 			[3] = {
 				badtargetcategory = "MEDIUMVTOL SMALLVTOL TINYVTOL",
 				def = "DRAGON_BREATH_MISSILE",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "VTOL SUPERSHIP",
 			},
 		},
 	},

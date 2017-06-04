@@ -146,11 +146,11 @@ return {
 		weapons = {
 			[1] = {
 				def = "VTOL_ROCKET",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "VTOL",
 			},
 			[2] = {
 				def = "VTOL_ROCKET",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "VTOL",
 			},
 			[3] = {
 				def = "Sonicwave",

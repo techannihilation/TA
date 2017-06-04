@@ -10,7 +10,7 @@ return {
 		buildtime = 10000000,
 		canattack = false,
 		capturable = false,
-		category = "ALL SURFACE",
+		category = "ALL",
 		collisionvolumeoffsets = "0 -3000 0",
 		collisionvolumescales = "32 32 32",
 		collisionvolumetest = 1,

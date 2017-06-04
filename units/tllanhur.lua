@@ -127,7 +127,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "CORGRIPN_BOMB",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "NOTHOVERNOTVTOL",
 			},
 		},
 	},

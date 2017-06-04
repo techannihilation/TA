@@ -131,7 +131,7 @@ return {
 			[1] = {
 				badtargetcategory = "TINY",
 				def = "TLL_ADVEDO",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "NOTHOVERNOTVTOL",
 			},
 		},
 	},

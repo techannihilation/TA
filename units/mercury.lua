@@ -154,7 +154,7 @@ return {
 			[1] = {
 				badtargetcategory = "MEDIUMVTOL SMALLVTOL TINYVTOL",
 				def = "CORE_ADVSAM",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "VTOL",
 			},
 		},
 	},

@@ -13,10 +13,10 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
-		collisionVolumeScales = "263 132 263",
-		collisionVolumeOffsets = "0 -6 0",
-		collisionVolumeType	= "CylY",
+		category = "ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		collisionvolumeoffsets = "0 -6 0",
+		collisionvolumescales = "263 132 263",
+		collisionvolumetype = "CylY",
 		corpse = "fatshrew_dead",
 		defaultmissiontype = "Standby",
 		description = "Experimental Siege Unit",
@@ -250,7 +250,7 @@ return {
 			},
 			[3] = {
 				def = "GATLING",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[5] = {
 				def = "ROCKET",

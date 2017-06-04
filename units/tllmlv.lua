@@ -176,7 +176,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "MINESWEEP",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "MINE",
 			},
 		},
 	},

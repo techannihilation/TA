@@ -340,7 +340,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "TLLCOM_LIGHTNING5",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "NOTSUB",
 			},
 			[2] = {
 				def = "COM_SHIELD1",

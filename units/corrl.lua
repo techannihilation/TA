@@ -163,7 +163,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "CORRL_MISSILE",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "VTOL",
 			},
 		},
 	},
