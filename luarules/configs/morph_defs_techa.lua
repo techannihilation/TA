@@ -561,7 +561,7 @@ local morphDefs = {
 	correap = {
 		into = 'champ',
 		time = 60,
-		xp = 0.30,
+		xp = 0.50,
 	},
 	corwolv = {
 		into = 'corwolv1',
