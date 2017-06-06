@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 420,
 		builder = false,
 		buildpic = "corsktl.dds",
-		buildtime = 16975,
+		buildtime = 12000,
 		canattack = true,
 		canguard = true,
 		canmove = true,
