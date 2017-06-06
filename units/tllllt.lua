@@ -122,7 +122,7 @@ return {
 		},
 		weapondefs = {
 			spam_lightning = {
-				areaofeffect = 8,
+				areaofeffect = 10,
 				beamttl = 10,
 				burst = 3,
 				burstrate = 0.125,
@@ -130,7 +130,7 @@ return {
 				craterboost = 0,
 				cratermult = 0,
 				duration = 1.9,
-				energypershot = 2,
+				energypershot = 4,
 				explosiongenerator = "custom:tllweb_exp",
 				firestarter = 85,
 				impulseboost = 0,
@@ -139,7 +139,7 @@ return {
 				name = "Spray Lightning",
 				noselfdamage = true,
 				projectiles = 2,
-				range = 380,
+				range = 430,
 				reloadtime = 1,
 				rgbcolor = "0.6 0.6 0.9",
 				soundhitdry = "lashit2",
@@ -155,8 +155,8 @@ return {
 				weapontype = "LightningCannon",
 				weaponvelocity = 2250,
 				damage = {
-					commanders = 38,
-					default = 32,
+					commanders = 28,
+					default = 24,
 					subs = 5,
 				},
 			},
