@@ -2,7 +2,7 @@ return {
 	coretnt = {
 		acceleration = 0.3,
 		brakerate = 0.36,
-		buildcostenergy = 58000,
+		buildcostenergy = 48000,
 		buildcostmetal = 750,
 		builder = false,
 		buildpic = "coretnt.dds",
@@ -26,7 +26,7 @@ return {
 		losemitheight = 25,
 		maneuverleashlength = 640,
 		mass = 750,
-		maxdamage = 2550,
+		maxdamage = 3550,
 		maxslope = 32,
 		maxvelocity = 1,
 		maxwaterdepth = 115,
