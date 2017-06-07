@@ -143,7 +143,7 @@ return {
 				nogap = 1,
 				noselfdamage = true,
 				numbounce = 1,
-				range = 1400,
+				range = 1375,
 				reloadtime = 6,
 				rgbcolor = "0.67 0.31 0",
 				separation = 0.45,
@@ -160,7 +160,6 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 450,
 				damage = {
-					commanders = 1800,
 					default = 3000,
 					subs = 5,
 				},
