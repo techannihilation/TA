@@ -471,7 +471,7 @@ local morphDefs = {
 	armbull = {
 		into = 'armbull2',
 		time = 30,
-		xp = 0.30,
+		xp = 0.10,
 	},
 	armbull2 = {
 		into = 'armsiege',
@@ -540,8 +540,8 @@ local morphDefs = {
 	},
 	corgol = {
 		into = 'corgol1',
-		time = 60,
-		xp = 0.20,
+		time = 30,
+		xp = 0.10,
 	},
 	corgol1 = {
 		into = 'corbt',
