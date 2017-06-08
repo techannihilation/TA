@@ -63,6 +63,10 @@ local BlackList = {
    ["tllasgard_hailstorm"] = {r=0.8,g=0.6,b=0.2,radius=440,beam=false},
    ["krogtaar_cor_taar_rc"] = {r=0.98,g=0.28,b=0.3,radius=120,beam=false},
    ["armlatnk_armlatnk_weapon"] = {r=0.08,g=0.08,b=0.98,radius=90,beam=true},
+   ["armlashover_armlatnk_weapon"] = {r=0.08,g=0.08,b=0.98,radius=90,beam=true},
+   ["armhobo_armlatnk_weapon"] = {r=0.08,g=0.08,b=0.98,radius=90,beam=true},
+   ["armscpion_armscpion_lightning"] = {r=0.08,g=0.08,b=0.98,radius=90,beam=true},
+
    ["armclaw_dclaw"] = {r=0.08,g=0.08,b=0.98,radius=90,beam=true},
 
    ["armraven1_exp_heavyrocket1"] = {r=1.2,g=0.2,b=0.2,radius=110,beam=false},

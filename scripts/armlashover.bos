@@ -136,9 +136,8 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-	show flarea;
+	emit-sfx 1024 + 0 from flarea;
 	sleep 150;
-	hide flarea;
 }
 
 QueryPrimary(piecenum)
