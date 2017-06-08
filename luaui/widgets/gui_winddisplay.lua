@@ -154,7 +154,7 @@ end
 
 function widget:DrawScreen()
 	if triggered == nil then
-		if cbackground[4] == 0.54321 then
+		if cbackground[4] == 0.54321 and WG["background_color"] then
 			cbackground[4]=WG["background_color"]
 		end
 	triggered = true
