@@ -352,7 +352,7 @@ return {
 			},
 			[4] = {
 				def = "CORCOMSEALASER",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "UNDERWATER",
 			},
 		},
 	},

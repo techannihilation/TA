@@ -356,7 +356,7 @@ return {
 			},
 			[4] = {
 				def = "ARMCOMSEALASER",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "UNDERWATER",
 			},
 		},
 	},

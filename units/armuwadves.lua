@@ -10,7 +10,7 @@ return {
 		buildinggrounddecaltype = "armuwadves_aoplane.dds",
 		buildpic = "armuwadves.dds",
 		buildtime = 20302,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER",
 		collisionvolumeoffsets = "0 -4 8",
 		collisionvolumescales = "62 39 62",
 		collisionvolumetype = "CylY",

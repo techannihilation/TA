@@ -10,7 +10,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "LEVEL1 ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON PLANT",
+		category = "LEVEL1 ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON PLANT UNDERWATER",
 		collisionvolumeoffsets = "0 -9 -2",
 		collisionvolumescales = "180 60 176",
 		collisionvolumetype = "Box",

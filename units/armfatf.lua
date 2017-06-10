@@ -9,7 +9,7 @@ return {
 		builder = false,
 		buildpic = "armfatf.dds",
 		buildtime = 9886,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER",
 		corpse = "dead",
 		description = "Enhanced Radar Targeting",
 		energyuse = 150,

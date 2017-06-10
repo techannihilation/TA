@@ -417,7 +417,7 @@ return {
 			},
 			[4] = {
 				def = "TLLCOMSEALASER",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "UNDERWATER",
 			},
 			[5] = {
 				def = "TELEPORT",

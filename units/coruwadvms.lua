@@ -10,7 +10,7 @@ return {
 		buildinggrounddecaltype = "coruwadvms_aoplane.dds",
 		buildpic = "coruwadvms.dds",
 		buildtime = 20524,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER",
 		corpse = "dead",
 		description = "Increases Metal Storage (10000)",
 		downloadable = 1,

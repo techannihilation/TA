@@ -426,7 +426,7 @@ return {
 			},
 			[4] = {
 				def = "CORCOMSEALASER",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "UNDERWATER",
 			},
 			[5] = {
 				def = "TELEPORT",

@@ -7,7 +7,7 @@ return {
 		builder = false,
 		buildpic = "tllsolarns.dds",
 		buildtime = 3750,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER",
 		corpse = "dead",
 		damagemodifier = 0.5,
 		description = "Produce Energy",

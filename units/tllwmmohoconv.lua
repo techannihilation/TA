@@ -7,7 +7,7 @@ return {
 		builder = false,
 		buildpic = "tllwmmohoconv.dds",
 		buildtime = 33000,
-		category = "ALL NOTDEFENSE NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
+		category = "ALL NOTDEFENSE NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER",
 		description = "Converts upto 1000 Energy into Metal",
 		explodeas = "ATOMIC_BLASTSML",
 		footprintx = 5,

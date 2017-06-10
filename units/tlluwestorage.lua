@@ -6,7 +6,7 @@ return {
 		builder = false,
 		buildpic = "tlluwestorage.dds",
 		buildtime = 6400,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER",
 		corpse = "dead",
 		description = "Increases Energy Storage (21000)",
 		downloadable = 1,

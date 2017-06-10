@@ -14,7 +14,7 @@ return {
 		buildpic = "armsonar.dds",
 		buildtime = 912,
 		canattack = false,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER",
 		corpse = "dead",
 		description = "Locates Water Units",
 		explodeas = "SMALL_BUILDINGEX",

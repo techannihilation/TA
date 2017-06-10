@@ -29,6 +29,7 @@ return {
 		idleautoheal = 10,
 		idletime = 30,
 		immunetoparalyzer = 1,
+		isairbase = true,
 		losemitheight = 76,
 		maneuverleashlength = 1250,
 		mass = 19200,

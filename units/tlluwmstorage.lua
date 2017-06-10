@@ -6,7 +6,7 @@ return {
 		builder = false,
 		buildpic = "tlluwmstorage.dds",
 		buildtime = 3849,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER",
 		corpse = "dead",
 		description = "Increases Metal Storage (4100)",
 		downloadable = 1,

@@ -12,7 +12,7 @@ return {
 		buildinggrounddecaltype = "armuwms_aoplane.dds",
 		buildpic = "armuwms.dds",
 		buildtime = 3741,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER",
 		corpse = "dead",
 		description = "Increases Metal Storage (3000)",
 		energyuse = 0,

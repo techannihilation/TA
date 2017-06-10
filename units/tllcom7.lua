@@ -355,7 +355,7 @@ return {
 			},
 			[4] = {
 				def = "TLLCOMSEALASER",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "UNDERWATER",
 			},
 		},
 	},

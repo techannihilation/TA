@@ -9,7 +9,7 @@ return {
 		builder = false,
 		buildpic = "armuwlightfus.dds",
 		buildtime = 35000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER",
 		corpse = "dead",
 		description = "Produces Energy / Storage",
 		energymake = 650,

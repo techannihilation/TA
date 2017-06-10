@@ -13,7 +13,7 @@ return {
 		canattack = true,
 		canguard = true,
 		canstop = 1,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON UNDERWATER",
 		corpse = "armbrtha_dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Long Range EMP Paralizer",
