@@ -143,8 +143,6 @@ return {
 				accuracy = 10,
 				areaofeffect = 80,
 				burnblow = false,
-				burst = 2,
-				burstrate = 0.15,
 				corethickness = 1,
 				craterareaofeffect = 0,
 				craterboost = 0,
