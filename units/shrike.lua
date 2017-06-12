@@ -49,7 +49,7 @@ return {
 		unitname = "shrike",
 		unitrestricted = 300,
 		customparams = {
-			faction = "ARM",
+			faction = "CORE",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
