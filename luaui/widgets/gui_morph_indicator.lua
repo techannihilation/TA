@@ -55,6 +55,8 @@ local update = 4.0
 
 local alliedUnits  = {}
 local smallList = {}
+local morphableList = {}
+
 
 local myAllyTeamID = 666
 
@@ -161,6 +163,24 @@ function widget:Shutdown()
   for _,rankTexture in ipairs(rankTextures) do
     glDeleteTexture(rankTexture)
   end
+end
+
+function widget:MousePress(mx, my, button)
+  local alt,ctrl,meta,shift = Spring.GetModKeyState()
+  if ctrl and button == 1 then
+    local sel = Spring.GetSelectedUnits()
+    for i, unitIDs in pairs(sel) do
+      local unitDefID = Spring.GetUnitDefID(unitIDs)
+      if smallList[unitIDs] then 
+        table.insert(morphableList,unitIDs)
+      end
+    end
+    if #morphableList>0 then
+      Spring.SelectUnitArray(morphableList,false)
+    end
+  end
+  morphableList = {}
+  return false
 end
 
 -------------------------------------------------------------------------------------
