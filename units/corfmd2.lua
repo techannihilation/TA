@@ -34,7 +34,7 @@ return {
 		maxslope = 10,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		name = "T3 Defensor",
+		name = "Defensor",
 		nochasecategory = "ALL",
 		objectname = "CORFMD2",
 		radardistance = 50,
@@ -59,7 +59,7 @@ return {
 			corfmd1_dead = {
 				blocking = true,
 				damage = 10575,
-				description = "T3 Defensor Wreckage",
+				description = "Defensor Wreckage",
 				energy = 0,
 				featuredead = "corfmd1_heap",
 				footprintx = 5,
@@ -71,7 +71,7 @@ return {
 			corfmd1_heap = {
 				blocking = false,
 				damage = 13219,
-				description = "T3 Defensor Debris",
+				description = "Defensor Debris",
 				energy = 0,
 				footprintx = 5,
 				footprintz = 5,
