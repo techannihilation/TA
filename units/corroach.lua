@@ -7,7 +7,7 @@ return {
 		buildcostmetal = 70,
 		builder = false,
 		buildpic = "corroach.dds",
-		buildtime = 7899,
+		buildtime = 6000,
 		canattack = true,
 		canguard = true,
 		canmove = true,
