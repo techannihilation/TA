@@ -14,7 +14,7 @@ return {
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		corpse = "dead",
 		damagemodifier = 0.8,
-		description = "Long Range Anti-Nuke System",
+		description = "Long Range Anti-Nuke",
 		energyuse = 0,
 		explodeas = "ATOMIC_BLAST",
 		firestandorders = 1,
