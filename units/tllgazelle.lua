@@ -19,7 +19,7 @@ return {
 		collisionvolumetype = "Box",
 		corpse = "dead",
 		damagemodifier = 0.5,
-		description = "T3 Anti-Nuke System",
+		description = "T3 Anti-Nuke",
 		energyuse = 0,
 		explodeas = "LARGE_BUILDINGEX",
 		firestandorders = 1,

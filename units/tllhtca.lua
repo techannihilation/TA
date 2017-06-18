@@ -19,7 +19,7 @@ return {
 		category = "ALL CONSTR MEDIUMVTOL MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTWEAPON VTOL",
 		collide = false,
 		cruisealt = 130,
-		description = "Makes Advanced T1 Combat Units",
+		description = "Advanced T1 Construction Air",
 		dontland = 1,
 		energymake = 10,
 		energystorage = 500,

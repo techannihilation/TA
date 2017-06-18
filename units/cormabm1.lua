@@ -16,7 +16,7 @@ return {
 		corpse = "cormabm_dead",
 		damagemodifier = 0.5,
 		defaultmissiontype = "Standby",
-		description = "Mobile Long Range Anti-Nuke System",
+		description = "Mobile Long Range Anti-Nuke",
 		energymake = -100,
 		energystorage = 1000,
 		energyuse = 0,
