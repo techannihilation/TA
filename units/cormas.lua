@@ -17,7 +17,6 @@ return {
 		collisionvolumescales = "76 152 76",
 		collisionvolumetest = 1,
 		collisionvolumetype = "CylY",
-		damagemodifier = 0.4,
 		description = "Planet Crust Deep Penetration Mine, Amphibious",
 		energymake = 0,
 		energyuse = 250,
