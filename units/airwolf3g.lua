@@ -49,7 +49,7 @@ return {
 		unitname = "airwolf3g",
 		unitrestricted = 300,
 		customparams = {
-			faction = "CORE",
+			faction = "ARM",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
