@@ -17,7 +17,6 @@ return {
 		collisionvolumescales = "80 112 80",
 		collisionvolumetest = 1,
 		collisionvolumetype = "CylY",
-		damagemodifier = 0.4,
 		description = "Deep Core Metal Extractor, Amphibious",
 		energymake = 0,
 		energyuse = 250,
