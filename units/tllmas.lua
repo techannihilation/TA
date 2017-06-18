@@ -2,7 +2,7 @@ return {
 	tllmas = {
 		activatewhenbuilt = true,
 		buildangle = 4096,
-		buildcostenergy = 51850,
+		buildcostenergy = 41850,
 		buildcostmetal = 7070,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
