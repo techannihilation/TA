@@ -10,7 +10,7 @@ return {
       flashalpha         = 0.9,
       flashsize          = 35,
       ground             = true,
-      ttl                = 10,
+      ttl                = 30,
       water              = true,
       color = {
         [1]  = 0.10000000149012,
