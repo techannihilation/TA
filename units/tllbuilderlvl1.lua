@@ -21,7 +21,7 @@ return {
 		collisionvolumetest = 1,
 		collisionvolumetype = "ellipsoid",
 		cruisealt = 90,
-		description = "Combat Engineer",
+		description = "Combat Engineer Air",
 		dontland = 1,
 		energymake = 10,
 		energystorage = 100,
