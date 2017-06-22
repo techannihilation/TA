@@ -290,6 +290,10 @@ effectUnitDefs = {
     {class='AirJet',options={color={0.8,0.1,0.1}, width=3, length=12, piece="engineExR", onActive=true}},
     {class='AirJet',options={color={0.8,0.1,0.1}, width=3, length=12, piece="engineExL", onActive=true}},
  },
+ cbuilderlvl3 = {
+    {class='AirJet',options={color={0.8,0.1,0.1}, width=12, length=15, piece="thruster1", onActive=true}},
+    {class='AirJet',options={color={0.8,0.1,0.1}, width=12, length=15, piece="thruster.55552", onActive=true}},
+ },
  tllca = {
     {class='AirJet',options={color={1,1,1}, width=6, length=15, piece="rthrust", onActive=true}},
     {class='AirJet',options={color={1,1,1}, width=6, length=15, piece="lthrust", onActive=true}},
