@@ -294,6 +294,9 @@ effectUnitDefs = {
     {class='AirJet',options={color={0.8,0.1,0.1}, width=12, length=15, piece="thruster1", onActive=true}},
     {class='AirJet',options={color={0.8,0.1,0.1}, width=12, length=15, piece="thruster.55552", onActive=true}},
  },
+ tllbuilderlvl3 = {
+    {class='AirJet',options={color={1,1,1}, width=10, length=35, piece="thruster", onActive=true}},
+ },
  tllca = {
     {class='AirJet',options={color={1,1,1}, width=6, length=15, piece="rthrust", onActive=true}},
     {class='AirJet',options={color={1,1,1}, width=6, length=15, piece="lthrust", onActive=true}},
