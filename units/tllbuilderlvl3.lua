@@ -54,7 +54,17 @@ return {
 		unitname = "tllbuilderlvl3",
 		workertime = 2000,
 		buildoptions = {
-			[1] = "tllmas",
+			[1] = "tllmegacoldfus",
+			[2] = "tllammaker",
+			[3] = "tllemstor",
+			[4] = "tllmas",
+			[5] = "tllnanotc2",
+			[6] = "tlldmc",
+			[7] = "tlldb",
+			[8] = "tllgate1",
+			[9] = "tllgazelle",
+			[10] = "tllion",
+			[11] = "tllvanya",			
 		},
 		customparams = {
 			faction = "TLL",
