@@ -7,12 +7,74 @@ piece  base, turret1, turret2, rocket, radar, barrel1, barrel2, flare1,
        flare2, flare3, flare4, leg1, leg2, leg3, leg4, leg5,
        leg6;
 
-static-var  bMoving, restore_delay, gun_1, gun_2;
+static-var bMoving, restore_delay, gun_1, gun_2;
 
 // Signal definitions
 #define SIG_AIM				2
 #define SIG_AIM_2			4
 
+wriggle()
+{
+	move base to y-axis [-1.000000] speed [4.000000];
+	turn leg1 to y-axis <43.005495> speed <40.000000>;
+			turn leg1 to y-axis <0.000000> speed <40.000000>;
+			turn leg1 to z-axis <0.000000> speed <40.000000>;
+			turn leg1 to z-axis <0.000000> speed <40.000000>;
+			turn leg2 to z-axis <0.000000> speed <40.000000>;
+			turn leg2 to z-axis <31.005495> speed <40.000000>;
+			turn leg3 to y-axis <34.005495> speed <40.000000>;
+			turn leg3 to y-axis <34.005495> speed <40.000000>;
+			turn leg3 to z-axis <31.005495> speed <40.000000>;
+			turn leg3 to z-axis <0.000000> speed <40.000000>;
+			turn leg4 to y-axis <-40.005495> speed <40.000000>;
+			turn leg4 to y-axis <-40.005495> speed <40.000000>;
+			turn leg4 to z-axis <-31.005495> speed <40.000000>;
+			turn leg4 to z-axis <0.000000> speed <40.000000>;
+			turn leg5 to y-axis <-37.005495> speed <40.000000>;
+			turn leg5 to y-axis <0.000000> speed <40.000000>;
+			turn leg5 to z-axis <0.000000> speed <40.000000>;
+			turn leg5 to z-axis <0.000000> speed <40.000000>;
+			turn leg6 to y-axis <0.000000> speed <40.000000>;
+			turn leg6 to y-axis <-30.005495> speed <40.000000>;
+			turn leg6 to z-axis <-45.005495> speed <40.000000>;
+			sleep 200;
+			move base to y-axis [1.000000] speed [5.000000];
+			turn leg1 to z-axis <31.005495> speed <40.000000>;
+			turn leg2 to y-axis <34.005495> speed <40.000000>;
+			turn leg2 to z-axis <31.005495> speed <40.000000>;
+			turn leg3 to y-axis <0.000000> speed <40.000000>;
+			turn leg3 to z-axis <0.000000> speed <40.000000>;
+			turn leg4 to y-axis <0.000000> speed <40.000000>;
+			turn leg5 to z-axis <-31.005495> speed <40.000000>;
+			turn leg6 to z-axis <2.000000> speed <40.000000>;
+			sleep 200;
+
+			turn leg1 to y-axis <55.005495> speed <40.000000>;
+			turn leg1 to z-axis <31.005495> speed <40.000000>;
+			turn leg2 to y-axis <34.005495> speed <40.000000>;
+			turn leg2 to z-axis <0.000000> speed <40.000000>;
+			turn leg3 to z-axis <31.005495> speed <40.000000>;
+			turn leg4 to y-axis <0.000000> speed <40.000000>;
+			turn leg4 to z-axis <-31.005495> speed <40.000000>;
+			turn leg5 to y-axis <-31.005495> speed <40.000000>;
+			turn leg5 to z-axis <-31.005495> speed <40.000000>;
+			turn leg6 to y-axis <3.000000> speed <40.000000>;
+			sleep 200;
+		move base to y-axis [0.000000] speed [2.000000];
+		turn leg1 to y-axis <43.005495> speed <40.000000>;
+		turn leg1 to z-axis <0.000000> speed <40.000000>;
+		turn leg2 to y-axis <0.000000> speed <40.000000>;
+		turn leg2 to z-axis <0.000000> speed <40.000000>;
+		turn leg3 to y-axis <34.005495> speed <40.000000>;
+		turn leg3 to z-axis <31.005495> speed <40.000000>;
+		turn leg4 to y-axis <-40.005495> speed <40.000000>;
+		turn leg4 to z-axis <-31.005495> speed <40.000000>;
+		turn leg5 to y-axis <-37.005495> speed <40.000000>;
+		turn leg5 to z-axis <0.000000> speed <40.000000>;
+		turn leg6 to y-axis <0.000000> speed <40.000000>;
+		turn leg6 to z-axis <-45.005495> speed <40.000000>;
+		sleep 200;
+		}
 
 walk2()
 {

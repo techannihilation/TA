@@ -1,0 +1,359 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, hips, body, jammer, rshoulder, rarm, rlathe, lshoulder,
+       larm, llathe, rthigh, rfoot, lthigh, lfoot, lspray, rspray;
+
+static-var  bMoving, Shield_Toggle, Static_Var_2, Static_Var_3;
+
+// Signal definitions
+#define SIG_MOVE			2
+
+Shield()
+{
+	Shield_Toggle = !Shield_Toggle;
+}
+
+walk()
+{
+	while( bMoving == 1 )
+	{
+		turn rshoulder to x-axis <-10.000000> speed <66.442953>;
+		turn lshoulder to x-axis <10.000000> speed <66.442953>;
+		turn rthigh to x-axis <5.000000> speed <33.221477>;
+		turn rfoot to x-axis <-5.000000> speed <33.221477>;
+		turn lthigh to x-axis <-10.000000> speed <66.442953>;
+		turn lfoot to x-axis <0.000000> now;
+		sleep 101;
+		turn body to x-axis <4.000000> speed <26.577181>;
+		turn rshoulder to x-axis <-20.000000> speed <66.442953>;
+		turn rarm to z-axis <-4.000000> speed <26.577181>;
+		turn lshoulder to x-axis <20.000000> speed <66.442953>;
+		turn rthigh to x-axis <10.000000> speed <33.221477>;
+		turn rfoot to x-axis <-10.000000> speed <33.221477>;
+		turn lthigh to x-axis <-20.000000> speed <66.442953>;
+		sleep 101;
+		turn body to x-axis <8.000000> speed <34.137931>;
+		turn rshoulder to x-axis <-30.005495> speed <85.391725>;
+		turn rarm to z-axis <-8.000000> speed <34.137931>;
+		turn lshoulder to x-axis <30.005495> speed <85.391725>;
+		turn rthigh to x-axis <15.000000> speed <42.672414>;
+		turn rfoot to x-axis <-15.000000> speed <42.672414>;
+		turn lthigh to x-axis <-30.005495> speed <85.391725>;
+		sleep 98;
+		turn body to x-axis <16.000000> speed <53.154362>;
+		turn rshoulder to x-axis <-40.005495> speed <66.442953>;
+		turn rarm to z-axis <-12.000000> speed <26.577181>;
+		turn lshoulder to x-axis <40.005495> speed <66.442953>;
+		turn rthigh to x-axis <20.000000> speed <33.221477>;
+		turn rfoot to x-axis <-20.000000> speed <33.221477>;
+		turn lthigh to x-axis <-20.000000> speed <66.479463>;
+		turn lfoot to x-axis <10.000000> speed <66.442953>;
+		sleep 100;
+		turn body to x-axis <12.000000> speed <26.577181>;
+		turn rshoulder to x-axis <-30.005495> speed <66.442953>;
+		turn rarm to z-axis <-8.000000> speed <26.577181>;
+		turn lshoulder to x-axis <30.005495> speed <66.442953>;
+		turn rthigh to x-axis <15.000000> speed <33.221477>;
+		turn rfoot to x-axis <10.000000> speed <199.328859>;
+		turn lthigh to x-axis <-15.000000> speed <33.221477>;
+		turn lfoot to x-axis <15.000000> speed <33.221477>;
+		sleep 99;
+		turn body to x-axis <8.000000> speed <26.577181>;
+		turn rshoulder to x-axis <-20.000000> speed <66.479463>;
+		turn rarm to z-axis <-4.000000> speed <26.577181>;
+		turn lshoulder to x-axis <20.000000> speed <66.479463>;
+		turn rthigh to x-axis <10.000000> speed <33.221477>;
+		turn rfoot to x-axis <15.000000> speed <33.221477>;
+		turn lthigh to x-axis <-10.000000> speed <33.221477>;
+		turn lfoot to x-axis <10.000000> speed <33.221477>;
+		sleep 101;
+		turn body to x-axis <4.000000> speed <26.577181>;
+		turn rshoulder to x-axis <-10.000000> speed <66.442953>;
+		turn rarm to z-axis <0.000000> speed <26.577181>;
+		turn lshoulder to x-axis <10.000000> speed <66.442953>;
+		turn rthigh to x-axis <5.000000> speed <33.221477>;
+		turn lthigh to x-axis <-5.000000> speed <33.221477>;
+		turn lfoot to x-axis <5.000000> speed <33.221477>;
+		sleep 105;
+		turn body to x-axis <0.000000> speed <26.577181>;
+		turn rshoulder to x-axis <0.000000> speed <66.442953>;
+		turn lshoulder to x-axis <0.000000> speed <66.442953>;
+		turn rthigh to x-axis <0.000000> speed <33.221477>;
+		turn rfoot to x-axis <10.000000> speed <33.221477>;
+		turn lthigh to x-axis <0.000000> speed <33.221477>;
+		turn lfoot to x-axis <0.000000> speed <33.221477>;
+		sleep 100;
+		turn lshoulder to x-axis <-10.000000> speed <66.442953>;
+		turn rshoulder to x-axis <10.000000> speed <66.442953>;
+		turn lthigh to x-axis <5.000000> speed <33.221477>;
+		turn lfoot to x-axis <-5.000000> speed <33.221477>;
+		turn rthigh to x-axis <-10.000000> speed <66.442953>;
+		turn rfoot to x-axis <0.000000> speed <66.442953>;
+		sleep 101;
+		turn body to x-axis <4.000000> speed <26.577181>;
+		turn lshoulder to x-axis <-20.000000> speed <66.442953>;
+		turn larm to z-axis <4.000000> speed <26.577181>;
+		turn rshoulder to x-axis <20.000000> speed <66.442953>;
+		turn lthigh to x-axis <10.000000> speed <33.221477>;
+		turn lfoot to x-axis <-10.000000> speed <33.221477>;
+		turn rthigh to x-axis <-20.000000> speed <66.442953>;
+		sleep 101;
+		turn body to x-axis <8.000000> speed <34.137931>;
+		turn lshoulder to x-axis <-30.005495> speed <85.391725>;
+		turn larm to z-axis <8.000000> speed <34.137931>;
+		turn rshoulder to x-axis <30.005495> speed <85.391725>;
+		turn lthigh to x-axis <15.000000> speed <42.672414>;
+		turn lfoot to x-axis <-15.000000> speed <42.672414>;
+		turn rthigh to x-axis <-30.005495> speed <85.391725>;
+		sleep 98;
+		turn body to x-axis <16.000000> speed <53.154362>;
+		turn lshoulder to x-axis <-40.005495> speed <66.442953>;
+		turn larm to z-axis <12.000000> speed <26.577181>;
+		turn rshoulder to x-axis <40.005495> speed <66.442953>;
+		turn lthigh to x-axis <20.000000> speed <33.221477>;
+		turn lfoot to x-axis <-20.000000> speed <33.221477>;
+		turn rthigh to x-axis <-20.000000> speed <66.479463>;
+		turn rfoot to x-axis <10.000000> speed <66.442953>;
+		sleep 100;
+		turn body to x-axis <12.000000> speed <26.577181>;
+		turn lshoulder to x-axis <-30.005495> speed <66.442953>;
+		turn larm to z-axis <8.000000> speed <26.577181>;
+		turn rshoulder to x-axis <30.005495> speed <66.442953>;
+		turn lthigh to x-axis <15.000000> speed <33.221477>;
+		turn lfoot to x-axis <10.000000> speed <199.328859>;
+		turn rthigh to x-axis <-15.000000> speed <33.221477>;
+		turn rfoot to x-axis <15.000000> speed <33.221477>;
+		sleep 99;
+		turn body to x-axis <8.000000> speed <26.577181>;
+		turn lshoulder to x-axis <-20.000000> speed <66.479463>;
+		turn larm to z-axis <4.000000> speed <26.577181>;
+		turn rshoulder to x-axis <20.000000> speed <66.479463>;
+		turn lthigh to x-axis <10.000000> speed <33.221477>;
+		turn lfoot to x-axis <15.000000> speed <33.221477>;
+		turn rthigh to x-axis <-10.000000> speed <33.221477>;
+		turn rfoot to x-axis <10.000000> speed <33.221477>;
+		sleep 101;
+		turn body to x-axis <4.000000> speed <26.577181>;
+		turn lshoulder to x-axis <-10.000000> speed <66.442953>;
+		turn larm to z-axis <0.000000> speed <26.577181>;
+		turn rshoulder to x-axis <10.000000> speed <66.442953>;
+		turn lthigh to x-axis <5.000000> speed <33.221477>;
+		turn rthigh to x-axis <-5.000000> speed <33.221477>;
+		turn lfoot to x-axis <5.000000> speed <66.442953>;
+		sleep 105;
+		turn body to x-axis <0.000000> speed <26.577181>;
+		turn lshoulder to x-axis <0.000000> speed <66.442953>;
+		turn rshoulder to x-axis <0.000000> speed <66.442953>;
+		turn lthigh to x-axis <0.000000> speed <33.221477>;
+		turn lfoot to x-axis <10.000000> speed <33.221477>;
+		turn rthigh to x-axis <0.000000> speed <33.221477>;
+		turn rfoot to x-axis <0.000000> speed <66.442953>;
+		sleep 100;
+	}
+}
+
+stop()
+{
+	turn body to x-axis <0.000000> speed <200.043956>;
+	turn lshoulder to x-axis <0.000000> speed <200.043956>;
+	turn rshoulder to x-axis <0.000000> speed <200.043956>;
+	turn lthigh to x-axis <0.000000> speed <200.043956>;
+	turn lfoot to x-axis <0.000000> speed <200.043956>;
+	turn rthigh to x-axis <0.000000> speed <200.043956>;
+	turn rfoot to x-axis <0.000000> speed <200.043956>;
+}
+
+Create()
+{
+	Shield_Toggle = 1;
+	Static_Var_2 = 0;
+	Static_Var_3 = 0;
+	bMoving = FALSE;
+	dont-cache jammer;
+	dont-shade jammer;
+	start-script walk();
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = hips;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = hips;
+}
+
+AimPrimary(heading, pitch)
+{
+	if( Shield_Toggle )
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
+}
+
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	bMoving = TRUE;
+	call-script walk();
+	return (0);
+}
+
+StopMoving()
+{
+	bMoving = FALSE;
+	signal SIG_MOVE;
+	call-script stop();
+	return (0);
+}
+
+StartBuilding(Func_Var_1)
+{
+	Static_Var_3 = Func_Var_1;
+	turn body to y-axis Static_Var_3 speed <300.071429>;
+	turn lshoulder to x-axis <-30.005495> speed <200.043956>;
+	turn rshoulder to x-axis <-30.005495> speed <200.043956>;
+	turn llathe to x-axis <-60.010989> speed <200.043956>;
+	turn rlathe to x-axis <-60.010989> speed <200.043956>;
+	wait-for-turn body around y-axis;
+	wait-for-turn lshoulder around x-axis;
+	wait-for-turn rshoulder around x-axis;
+	wait-for-turn llathe around x-axis;
+	wait-for-turn rlathe around x-axis;
+	set INBUILDSTANCE to 1;
+}
+
+StopBuilding()
+{
+	set INBUILDSTANCE to 0;
+	turn body to y-axis <0.000000> speed <200.043956>;
+	turn lshoulder to x-axis <0.000000> speed <200.043956>;
+	turn rshoulder to x-axis <0.000000> speed <200.043956>;
+	turn llathe to x-axis <0.000000> speed <200.043956>;
+	turn rlathe to x-axis <0.000000> speed <200.043956>;
+	wait-for-turn body around y-axis;
+	wait-for-turn lshoulder around x-axis;
+	wait-for-turn rshoulder around x-axis;
+	wait-for-turn llathe around x-axis;
+	wait-for-turn rlathe around x-axis;
+}
+
+Activate()
+{
+	spin jammer around z-axis speed <100.021978>;
+}
+
+Deactivate()
+{
+	spin jammer around z-axis speed <0.000000>;
+}
+
+QueryNanoPiece(piecenum)
+{
+	if( Static_Var_2 == 0 )
+	{
+		piecenum = lspray;
+	}
+	if( Static_Var_2 == 1 )
+	{
+		piecenum = rspray;
+	}
+	++Static_Var_2;
+	if( Static_Var_2 == 2 )
+	{
+		Static_Var_2 = 0;
+	}
+}
+
+TargetHeading(Func_Var_1)
+{
+	Static_Var_3 = 0 - Func_Var_1;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode hips type BITMAPONLY | BITMAP1;
+		explode body type BITMAPONLY | BITMAP1;
+		explode jammer type BITMAPONLY | BITMAP1;
+		explode rshoulder type BITMAPONLY | BITMAP1;
+		explode rarm type BITMAPONLY | BITMAP1;
+		explode rlathe type BITMAPONLY | BITMAP1;
+		explode lshoulder type BITMAPONLY | BITMAP1;
+		explode larm type BITMAPONLY | BITMAP1;
+		explode llathe type BITMAPONLY | BITMAP1;
+		explode rthigh type BITMAPONLY | BITMAP1;
+		explode rfoot type BITMAPONLY | BITMAP1;
+		explode lthigh type BITMAPONLY | BITMAP1;
+		explode lfoot type BITMAPONLY | BITMAP1;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode hips type SHATTER | BITMAP4;
+		explode body type SHATTER | BITMAP4;
+		explode jammer type SHATTER | BITMAP4;
+		explode rshoulder type SHATTER | BITMAP4;
+		explode rarm type SHATTER | BITMAP4;
+		explode rlathe type SHATTER | BITMAP4;
+		explode lshoulder type SHATTER | BITMAP4;
+		explode larm type SHATTER | BITMAP4;
+		explode llathe type SHATTER | BITMAP4;
+		explode rthigh type SHATTER | BITMAP4;
+		explode rfoot type SHATTER | BITMAP4;
+		explode lthigh type SHATTER | BITMAP4;
+		explode lfoot type SHATTER | BITMAP4;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode hips type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode body type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode jammer type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode rshoulder type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode rarm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode rlathe type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode lshoulder type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode larm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode llathe type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode rthigh type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode rfoot type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode lthigh type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode lfoot type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode hips type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode body type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode jammer type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode rshoulder type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode rarm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode rlathe type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode lshoulder type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode larm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode llathe type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode rthigh type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode rfoot type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode lthigh type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode lfoot type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	return (corpsetype);
+}
