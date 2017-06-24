@@ -44,7 +44,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooooo",
 		customparams = {
-			faction = "CORE",
+			faction = "TLL",
 		},
 		featuredefs = {
 			dead = {
