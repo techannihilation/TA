@@ -4,7 +4,7 @@ return {
 		airhoverfactor = 0,
 		brakerate = 0.35,
 		buildcostenergy = 320000,
-		buildcostmetal = 33600,
+		buildcostmetal = 36600,
 		builddistance = 190,
 		builder = true,
 		buildpic = "tllbuilderlvl3.dds",
