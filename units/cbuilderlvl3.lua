@@ -4,7 +4,7 @@ return {
 		airhoverfactor = 0,
 		brakerate = 0.35,
 		buildcostenergy = 623000,
-		buildcostmetal = 22600,
+		buildcostmetal = 23250,
 		builddistance = 190,
 		builder = true,
 		buildpic = "cbuilderlvl3.dds",
