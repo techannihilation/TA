@@ -93,7 +93,7 @@ return {
 			[11] = "tllarad",
 			[12] = "tllpulaser",
 			[13] = "tllflak",
-			[14] = "tllack",
+			[14] = "tllbuilderlvl2",
 			[15] = "tlljumpdrive",
 			[16] = "tllpcan",
 			[17] = "irritator",
