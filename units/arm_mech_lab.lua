@@ -57,8 +57,8 @@ return {
 			[3] = "armsmc",
 		},
 		customparams = {
-			buildpic = "CORGANT.png",
-			faction = "CORE",
+			buildpic = "arm_mech_lab.png",
+			faction = "ARM",
 			providetech = "T4 Factory",
 		},
 		featuredefs = {
