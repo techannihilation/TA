@@ -1,0 +1,599 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece Basis, r1Klap, r2Klap, r3Klap, l1Klap, l2Klap, l3Klap, r1Sch, r2Sch, l1Sch,
+	  l2Sch, r1Arm, r2Arm, l1Arm, l2Arm, r1Traeg, r2Traeg, l1Traeg, l2Traeg, r1Halt,
+	  r2Halt, l1Halt, l2Halt, r1Nano, r2Nano, r3Nano, l1Nano, l2Nano, l3Nano, Rotor,
+	  r1Spr, r2Spr, r3Spr, l1Spr, l2Spr, l3Spr, r1Rot, r2Rot, l1Rot, l2Rot, Spitze,
+	  r1Blink, r3Blink, l1Blink,  l3Blink, Blink1, Blink2;// jet1, jet2,;
+
+static-var  nanos, buisy, offen;
+
+#define SIG_ACTIVATE			2
+#define SIG_SPIN			    4
+//#define SIG_FLAMES			    8
+
+/*
+ProcessFlames()
+{
+	set-signal-mask SIG_FLAMES;
+	while( TRUE )
+	{
+		{
+			emit-sfx 0 from jet1;
+			emit-sfx 0 from jet2;
+		//	emit-sfx 0 from jet3;
+		}
+		sleep 170;
+	}
+}
+
+*/
+Drehe()
+{
+	set-signal-mask SIG_SPIN;
+	while (TRUE)
+	{
+		turn Rotor to y-axis <5> speed <30>;
+		wait-for-turn Rotor around y-axis;
+		turn Rotor to y-axis <10> speed <27>;
+		wait-for-turn Rotor around y-axis;
+		turn Rotor to y-axis <20> speed <21>;
+		wait-for-turn Rotor around y-axis;
+		turn Rotor to y-axis <25> speed <12>;
+		wait-for-turn Rotor around y-axis;
+		turn Rotor to y-axis <30> speed <8>;
+		wait-for-turn Rotor around y-axis;
+		
+		turn Rotor to y-axis <25> speed <8>;
+		wait-for-turn Rotor around y-axis;
+		turn Rotor to y-axis <20> speed <12>;
+		wait-for-turn Rotor around y-axis;
+		turn Rotor to y-axis <15> speed <18>;
+		wait-for-turn Rotor around y-axis;
+		turn Rotor to y-axis <10> speed <21>;
+		wait-for-turn Rotor around y-axis;
+		turn Rotor to y-axis <5> speed <27>;
+		wait-for-turn Rotor around y-axis;
+		
+		turn Rotor to y-axis <-5> speed <30>;
+		wait-for-turn Rotor around y-axis;
+		turn Rotor to y-axis <-10> speed <27>;
+		wait-for-turn Rotor around y-axis;
+		turn Rotor to y-axis <-20> speed <21>;
+		wait-for-turn Rotor around y-axis;
+		turn Rotor to y-axis <-25> speed <12>;
+		wait-for-turn Rotor around y-axis;
+		turn Rotor to y-axis <-30> speed <8>;
+		wait-for-turn Rotor around y-axis;
+		
+		turn Rotor to y-axis <-25> speed <8>;
+		wait-for-turn Rotor around y-axis;
+		turn Rotor to y-axis <-20> speed <12>;
+		wait-for-turn Rotor around y-axis;
+		turn Rotor to y-axis <-15> speed <18>;
+		wait-for-turn Rotor around y-axis;
+		turn Rotor to y-axis <-10> speed <21>;
+		wait-for-turn Rotor around y-axis;
+		turn Rotor to y-axis <-5> speed <27>;
+		wait-for-turn Rotor around y-axis;
+	}
+}	
+
+
+Schliesse()
+{
+	signal SIG_SPIN;
+//	signal SIG_FLAMES;
+
+	turn Rotor to y-axis <0> speed <15>;
+
+	turn r1Halt to y-axis <0> speed <10>;
+	turn r2Halt to y-axis <0> speed <10>;
+	turn r2Nano to y-axis <0> speed <10>;
+	turn l1Halt to y-axis <0> speed <10>;
+	turn l2Halt to y-axis <0> speed <10>;
+	turn l2Nano to y-axis <00> speed <10>;
+	
+	wait-for-turn r1Halt around y-axis;
+	
+	move r1Blink to x-axis [0] speed [4];
+	move r3Blink to x-axis [0] speed [4];
+	
+	move l1Blink to x-axis [0] speed [4];
+	move l3Blink to x-axis [0] speed [4];
+
+	turn r1Traeg to z-axis <0> speed <50>;
+	turn r2Traeg to z-axis <0> speed <50>;
+	turn l1Traeg to z-axis <0> speed <50>;
+	turn l2Traeg to z-axis <0> speed <50>;
+
+	turn r1Rot to z-axis <0> speed <50>;
+	turn r2Rot to z-axis <0> speed <50>;
+	turn l1Rot to z-axis <0> speed <50>;
+	turn l2Rot to z-axis <0> speed <50>;
+	
+	turn r1Arm to z-axis <0> speed <10>;
+	turn r2Arm to z-axis <0> speed <10>;
+	turn l1Arm to z-axis <0> speed <10>;
+	turn l2Arm to z-axis <0> speed <10>;
+		
+	turn r1Halt to z-axis <0> speed <10>;
+	turn r2Halt to z-axis <0> speed <10>;
+	turn l1Halt to z-axis <0> speed <10>;
+	turn l2Halt to z-axis <0> speed <10>;
+	
+	sleep 1500;
+
+	turn r1Arm to z-axis <0> speed <30>;
+	turn r2Arm to z-axis <0> speed <30>;
+	turn l1Arm to z-axis <0> speed <30>;
+	turn l2Arm to z-axis <0> speed <30>;
+		
+	turn r1Halt to z-axis <0> speed <30>;
+	turn r2Halt to z-axis <0> speed <30>;
+	turn l1Halt to z-axis <0> speed <30>;
+	turn l2Halt to z-axis <0> speed <30>;
+	
+	wait-for-turn r1Arm around z-axis;
+	
+	turn r1Klap to z-axis <0> speed <20>;
+	turn r2Klap to z-axis <0> speed <24.4>;
+	turn r3Klap to z-axis <0> speed <20>;
+	turn l1Klap to z-axis <0> speed <20>;
+	turn l2Klap to z-axis <0> speed <24.4>;
+	turn l3Klap to z-axis <0> speed <20>;
+	
+	wait-for-turn r1Klap around z-axis;
+
+}	
+
+
+
+Oeffne()
+{	
+	turn r1Klap to z-axis <90> speed <20>;
+	turn l1Klap to z-axis <-90> speed <20>;
+	sleep 250;
+	turn r2Klap to z-axis <90> speed <20>;
+	turn l2Klap to z-axis <-90> speed <20>;
+	sleep 250;
+	turn r3Klap to z-axis <90> speed <20>;
+	turn l3Klap to z-axis <-90> speed <20>;
+	
+	wait-for-turn l3Klap around z-axis;
+	
+	move r1Blink to x-axis [2] speed [4];
+	move r3Blink to x-axis [2] speed [4];
+	
+	move l1Blink to x-axis [-2] speed [4];
+	move l3Blink to x-axis [-2] speed [4];
+
+	turn r1Arm to z-axis <130> speed <20>;
+	turn r2Arm to z-axis <130> speed <20>;
+	turn r1Halt to z-axis <-130> speed <20>;
+	turn r2Halt to z-axis <-130> speed <20>;
+	
+	sleep 500;
+		
+	turn l1Arm to z-axis <-130> speed <20>;
+	turn l2Arm to z-axis <-130> speed <20>;
+	turn l1Halt to z-axis <130> speed <20>;
+	turn l2Halt to z-axis <130> speed <20>;
+	
+	sleep 2500;
+
+	turn r2Klap to z-axis <130> speed <15>;
+	turn l2Klap to z-axis <-130> speed <15>;
+	
+	turn r1Traeg to z-axis <135> speed <35>;
+	turn r2Traeg to z-axis <135> speed <35>;
+	turn r1Rot to z-axis <-145> speed <35>;
+	turn r2Rot to z-axis <-145> speed <35>;
+	
+	sleep 500;
+
+			
+	turn l1Traeg to z-axis <-135> speed <35>;
+	turn l2Traeg to z-axis <-135> speed <35>;
+	turn l1Rot to z-axis <145> speed <35>;
+	turn l2Rot to z-axis <145> speed <35>;
+	
+	wait-for-turn r1Traeg around z-axis;
+
+	turn r1Halt to y-axis <-18> speed <10>;
+	turn r2Halt to y-axis <18> speed <10>;
+	
+	turn r2Nano to y-axis <18> speed <10>;
+
+	turn l1Halt to y-axis <18> speed <10>;
+	turn l2Halt to y-axis <-18> speed <10>;
+	
+	turn l2Nano to y-axis <-18> speed <10>;
+	
+	signal SIG_SPIN;
+//	signal SIG_FLAMES;
+
+	start-script Drehe();
+//	start-script ProcessFlames();
+	wait-for-turn r1Halt around y-axis;
+	
+}	
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from r1Klap;
+			emit-sfx smoketype from r3Klap;
+			emit-sfx smoketype from l1Klap;
+			emit-sfx smoketype from l3Klap;
+
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Freigabe()
+{
+	set YARD_OPEN to 1;
+	while( !get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 1;
+	}
+	set BUGGER_OFF to 0;
+}
+
+Sperrung()
+{
+	set YARD_OPEN to 0;
+	while( get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 0;
+	}
+	set BUGGER_OFF to 0;
+}
+
+Activate()
+{
+	while(buisy){sleep 200;}
+	signal SIG_ACTIVATE;
+
+	buisy = TRUE;
+	if (!offen)
+	{
+		//busiy = TRUE;
+		call-script Oeffne();
+		offen= TRUE;
+	}
+	
+	call-script Freigabe();
+	set INBUILDSTANCE to 1;
+	buisy= FALSE;
+}
+
+Deactivate()
+{
+	while(buisy){sleep 200;}
+	signal SIG_ACTIVATE;
+	set-signal-mask SIG_ACTIVATE;
+	set INBUILDSTANCE to 0;
+	sleep 2500;
+	buisy = TRUE;
+	call-script Sperrung();
+	if (offen)
+	{
+		call-script Schliesse();
+		offen=FALSE;
+	}
+	buisy=FALSE;
+}
+
+
+Create()
+{
+	dont-cache Blink1;
+	dont-cache Blink2;
+	dont-cache Spitze;
+	dont-shade Rotor;
+	dont-shade basis;
+	dont-shade r1Klap;
+	dont-shade r2Klap;
+	dont-shade r3Klap;
+	dont-shade l1Klap;
+	dont-shade l2Klap;
+	dont-shade l3Klap;
+	dont-shade r1Nano;
+	dont-shade r2Nano;
+	dont-shade r3Nano;
+	dont-shade l1Nano;
+	dont-shade l2Nano;
+	dont-shade l3Nano;
+	
+	dont-shade r1Arm;
+	dont-shade r2Arm;
+	dont-shade l1Arm;
+	dont-shade l2Arm;
+	
+	dont-shade r1Sch;
+	dont-shade r2Sch;
+
+	dont-shade l1Sch;
+	dont-shade l2Sch;
+
+	dont-shade r1Traeg;
+	dont-shade r2Traeg;
+	dont-shade l1Traeg;
+	dont-shade l2Traeg;
+
+	dont-shade r1Halt;
+	dont-shade r2Halt;
+	dont-shade l1Halt;
+	dont-shade l2Halt;
+	buisy=FALSE;
+	offen=FALSE;
+	nanos=1;
+	start-script SmokeUnit();
+	
+}
+
+QueryNanoPiece(piecenum)
+{
+	if( nanos == 1 )
+	{	
+//		emit-sfx 0 from jet1;
+		piecenum = r1Spr;
+	}
+	if( nanos == 2 )
+	{
+		piecenum = r2Spr;
+	}
+	if( nanos == 3 )
+	{
+		piecenum = r3Spr;
+	}
+	if( nanos == 4 )
+	{
+//		emit-sfx 0 from jet2;
+		piecenum = l1Spr;
+	}
+	if( nanos == 5 )
+	{
+		piecenum = l2Spr;
+	}
+	if( nanos == 6 )
+	{
+		piecenum = l3Spr;
+	}
+	++nanos;
+	if( nanos == 7 )
+	{
+		nanos = 1;
+	}
+}
+
+
+StartBuilding()
+{
+	dont-cache r1Blink;
+	dont-cache r3Blink;
+	dont-cache l1Blink;
+	dont-cache l3Blink;
+
+}
+
+StopBuilding()
+{
+	cache r1Blink;
+	cache r3Blink;
+	cache l1Blink;
+	cache l3Blink;
+}
+
+QueryBuildInfo(piecenum)
+{
+	piecenum = Rotor;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = Basis;
+}
+
+Killed(severity, corpsetype)
+	{
+	if (severity <= 25)
+		{
+		corpsetype = 1;
+		explode Basis type	BITMAPONLY | BITMAP1;
+		explode r1Klap type	BITMAPONLY | BITMAP1;
+		explode r1Blink type	BITMAPONLY | BITMAP1;
+		explode r2Klap type	BITMAPONLY | BITMAP1;
+		explode r3Klap type	BITMAPONLY | BITMAP1;
+		explode r3Blink type	BITMAPONLY | BITMAP1;
+		explode l1Klap type	BITMAPONLY | BITMAP1;
+		explode l1Blink type	BITMAPONLY | BITMAP1;
+		explode l2Klap type	BITMAPONLY | BITMAP1;
+		explode l3Klap type	BITMAPONLY | BITMAP1;
+		explode l3Blink type	BITMAPONLY | BITMAP1;
+		explode r1Sch type	BITMAPONLY | BITMAP1;
+		explode r1Arm type	BITMAPONLY | BITMAP1;
+		explode r1Traeg type	BITMAPONLY | BITMAP1;
+		explode r1Halt type	BITMAPONLY | BITMAP1;
+		explode r1Nano type	BITMAPONLY | BITMAP1;
+		explode r2Sch type	BITMAPONLY | BITMAP1;
+		explode r2Arm type	BITMAPONLY | BITMAP1;
+		explode r2Traeg type	BITMAPONLY | BITMAP1;
+		explode r2Halt type	BITMAPONLY | BITMAP1;
+		explode r2Nano type	BITMAPONLY | BITMAP1;
+		explode r3Nano type	BITMAPONLY | BITMAP1;
+		explode Rotor type	BITMAPONLY | BITMAP1;
+		explode l1Sch type	BITMAPONLY | BITMAP1;
+		explode l1Arm type	BITMAPONLY | BITMAP1;
+		explode l1Traeg type	BITMAPONLY | BITMAP1;
+		explode l1Rot type	BITMAPONLY | BITMAP1;
+		explode l1Halt type	BITMAPONLY | BITMAP1;
+		explode l1Nano type	BITMAPONLY | BITMAP1;
+		explode l2Sch type	BITMAPONLY | BITMAP1;
+		explode l2Arm type	BITMAPONLY | BITMAP1;
+		explode l2Traeg type	BITMAPONLY | BITMAP1;
+		explode l2Halt type	BITMAPONLY | BITMAP1;
+		explode l3Nano type	BITMAPONLY | BITMAP1;
+		explode l3Spr type	BITMAPONLY | BITMAP1;
+		explode l2Nano type	BITMAPONLY | BITMAP1;
+		explode Spitze type	BITMAPONLY | BITMAP1;
+		explode Blink1 type	BITMAPONLY | BITMAP1;
+		explode Blink2 type	BITMAPONLY | BITMAP1;
+		return(0);
+		}
+	if (severity <= 50)
+		{
+		corpsetype = 2;
+		explode Basis type	SHATTER | BITMAP4;
+		explode r1Klap type	SHATTER | BITMAP4;
+		explode r1Blink type	SHATTER | BITMAP4;
+		explode r2Klap type	SHATTER | BITMAP4;
+		explode r3Klap type	SHATTER | BITMAP4;
+		explode r3Blink type	SHATTER | BITMAP4;
+		explode l1Klap type	SHATTER | BITMAP4;
+		explode l1Blink type	SHATTER | BITMAP4;
+		explode l2Klap type	SHATTER | BITMAP4;
+		explode l3Klap type	SHATTER | BITMAP4;
+		explode l3Blink type	SHATTER | BITMAP4;
+		explode r1Sch type	SHATTER | BITMAP4;
+		explode r1Arm type	SHATTER | BITMAP4;
+		explode r1Traeg type	SHATTER | BITMAP4;
+		explode r1Halt type	SHATTER | BITMAP4;
+		explode r1Nano type	SHATTER | BITMAP4;
+		explode r2Sch type	SHATTER | BITMAP4;
+		explode r2Arm type	SHATTER | BITMAP4;
+		explode r2Traeg type	SHATTER | BITMAP4;
+		explode r2Halt type	SHATTER | BITMAP4;
+		explode r2Nano type	SHATTER | BITMAP4;
+		explode r2Spr type	SHATTER | BITMAP4;
+		explode r3Nano type	SHATTER | BITMAP4;
+		explode Rotor type	SHATTER | BITMAP4;
+		explode l1Sch type	SHATTER | BITMAP4;
+		explode l1Arm type	SHATTER | BITMAP4;
+		explode l1Traeg type	SHATTER | BITMAP4;
+		explode l1Halt type	SHATTER | BITMAP4;
+		explode l1Nano type	SHATTER | BITMAP4;
+		explode l2Sch type	SHATTER | BITMAP4;
+		explode l2Arm type	SHATTER | BITMAP4;
+		explode l2Traeg type	SHATTER | BITMAP4;
+		explode l2Halt type	SHATTER | BITMAP4;
+		explode l3Nano type	SHATTER | BITMAP4;
+		explode l2Nano type	SHATTER | BITMAP4;
+		explode Spitze type	SHATTER | BITMAP4;
+		explode Blink1 type	SHATTER | BITMAP4;
+		explode Blink2 type	SHATTER | BITMAP4;
+		return(0);
+		}
+	if (severity <= 99)
+		{
+		corpsetype = 3;
+		explode Basis type	BITMAPONLY | BITMAP2;
+		explode r1Klap type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode r1Blink type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode r2Klap type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode r3Klap type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode r3Blink type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode l1Klap type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode l1Blink type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode l2Klap type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode l3Klap type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode l3Blink type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode r1Sch type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode r1Arm type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode r1Traeg type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode r1Halt type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode r1Nano type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode r2Sch type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode r2Arm type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode r2Traeg type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode r2Halt type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode r2Nano type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode r3Nano type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode r3Spr type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode Rotor type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode l1Sch type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode l1Arm type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode l1Traeg type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode l1Halt type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode l1Nano type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode l2Sch type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode l2Arm type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode l2Traeg type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode l2Halt type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode l3Nano type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode l2Nano type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode Spitze type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode Blink1 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode Blink2 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		return(0);
+		}
+	corpsetype = 3;
+	explode Basis type	BITMAPONLY | BITMAP2;
+	explode r1Klap type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode r1Blink type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode r2Klap type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode r3Klap type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode r3Blink type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode l1Klap type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode l1Blink type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode l2Klap type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode l3Klap type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode l3Blink type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode r1Sch type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode r1Arm type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode r1Traeg type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode r1Halt type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode r1Nano type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode r2Sch type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode r2Arm type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode r2Traeg type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode r2Halt type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode r2Nano type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode r3Nano type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode Rotor type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode l1Sch type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode l1Arm type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode l1Traeg type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode l1Halt type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode l1Nano type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode l2Sch type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode l2Arm type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode l2Traeg type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode l2Halt type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode l3Nano type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode l3Spr type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode l2Nano type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode Spitze type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode Blink1 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode Blink2 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	return(0);
+	}
