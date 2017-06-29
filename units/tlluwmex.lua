@@ -31,6 +31,7 @@ return {
 		onoffable = true,
 		radaremitheight = 25,
 		selfdestructas = "SMALL_BUILDING",
+		selfdestructcountdown = 1,
 		sightdistance = 100,
 		unitname = "tlluwmex",
 		yardmap = "ooooooooo",
