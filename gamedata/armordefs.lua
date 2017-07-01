@@ -113,6 +113,10 @@ unclassed_air = {
            "armmin",
            "cormin",
            "tllhtca",
+           "tllbuilderlvl1",
+           "tllbuilderlvl2",
+           "tllbuilderlvl3",
+           "tllhtca",
 },
 --### SEA ###
 ships = {
