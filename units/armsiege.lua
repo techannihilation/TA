@@ -53,7 +53,7 @@ return {
 		turnrate = 288,
 		unitname = "armsiege",
 		customparams = {
-			faction = "ARM",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

@@ -54,7 +54,7 @@ return {
 		buildoptions = {
 			[1] = "clb",
 			[2] = "champ",
-			[3] = "armmcv",
+			[3] = "armsiege",
 			[4] = "armtigre2",
 			[5] = "corbt",
 		},

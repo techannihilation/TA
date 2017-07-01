@@ -58,7 +58,7 @@ return {
 		turnrate = 310,
 		unitname = "armmcv",
 		customparams = {
-			faction = "CORE",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {

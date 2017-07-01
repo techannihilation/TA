@@ -474,7 +474,7 @@ local morphDefs = {
 		xp = 0.30,
 	},
 	armbull2 = {
-		into = 'armsiege',
+		into = 'armmcv',
 		time = 120,
 		xp = 0.60,
 	},
@@ -853,7 +853,7 @@ local morphDefs = {
 		xp = 0.45,
 	},
 	cortotal = {
-     		into = 'armmcv',
+     		into = 'armsiege',
 		time = 60,
 		xp = 0.30,
 	},
