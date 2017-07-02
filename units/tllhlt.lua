@@ -41,7 +41,7 @@ return {
 		objectname = "TLLHLT",
 		radaremitheight = 83,
 		selfdestructas = "MEDIUM_BUILDING",
-		sightdistance = 450,
+		sightdistance = 490,
 		standingfireorder = 2,
 		unitname = "tllhlt",
 		usebuildinggrounddecal = true,
@@ -138,7 +138,8 @@ return {
 				weapontype = "BeamLaser",
 				weaponvelocity = 2250,
 				damage = {
-					default = 525,
+					commanders = 650,
+					default = 450,
 					subs = 5,
 				},
 			},
