@@ -17,7 +17,7 @@ return {
 		energyuse = 0,
 		explodeas = "SMALL_BUILDINGEX",
 		footprintx = 3,
-		footprintz = 3,
+		footprintz = 4,
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
