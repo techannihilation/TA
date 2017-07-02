@@ -11,7 +11,7 @@ piece  base, torax, abdomen, magasin, laser_pylone, laser_bloc, cartouche, laser
        patte51, patte52, patte53, patte54, stomp5, patte60, patte61, patte62,
        patte63, patte64, stomp6, ecraseur_epaule, ecraseur_bras, load_shoulder, load_arm, unload_shoulder,
        unload_arm, goal_shoulder, goal_arm, basket1, basket2, basket3, basket4, basket5,
-       basket6, basket7, rocket_left, rocket_right;
+       basket6, rocket_left, rocket_right;
 
 static-var  bMoving, gun_1, gun_3, Static_Var_4, Static_Var_5,
             restore_delay, bAiming, Static_Var_8, Static_Var_9, Static_Var_10,
@@ -23,73 +23,6 @@ static-var  bMoving, gun_1, gun_3, Static_Var_4, Static_Var_5,
 #define SIG_AIM_3			4
 #define SIG_AIM_2			8
 
-
-TransportPickup(unitid)
-{
-	if( Static_Var_16 >= 7 )
-	{
-		return;
-	}
-	if( get XZ_HYPOT(get PIECE_XZ(torax) - get UNIT_XZ(unitid)) <= [120.000000] )
-	{
-		set BUSY to 1;
-		turn load_shoulder to y-axis get XZ_ATAN(get PIECE_XZ(load_shoulder) - get UNIT_XZ(unitid)) now;
-		move load_arm to z-axis get XZ_HYPOT(get PIECE_XZ(load_shoulder) - get UNIT_XZ(unitid)) now;
-		move load_arm to y-axis get UNIT_Y(unitid) - get PIECE_Y(load_shoulder) now;
-		attach-unit unitid to load_arm;
-		move load_arm to z-axis [0.000000] speed get XZ_HYPOT(get PIECE_XZ(load_shoulder) - get UNIT_XZ(unitid)) / [0.015259] * [0.006104];
-		move load_arm to y-axis get PIECE_Y(torax) - get PIECE_Y(load_shoulder) speed ( get PIECE_Y(torax) - get UNIT_Y(unitid) ) / [0.015259] * [0.006104];
-		sleep 2500;
-		++Static_Var_16;
-		if( Static_Var_16 == 1 )
-		{
-			attach-unit unitid to basket1;
-		}
-		if( Static_Var_16 == 2 )
-		{
-			attach-unit unitid to basket2;
-		}
-		if( Static_Var_16 == 3 )
-		{
-			attach-unit unitid to basket3;
-		}
-		if( Static_Var_16 == 4 )
-		{
-			attach-unit unitid to basket4;
-		}
-		if( Static_Var_16 == 5 )
-		{
-			attach-unit unitid to basket5;
-		}
-		if( Static_Var_16 == 6 )
-		{
-			attach-unit unitid to basket6;
-		}
-		if( Static_Var_16 == 7 )
-		{
-			attach-unit unitid to basket7;
-		}
-		set BUSY to 0;
-	}
-}
-
-TransportDrop(unitid, position)
-{
-	if( get XZ_HYPOT(get PIECE_XZ(torax) - get UNIT_XZ(unitid)) <= [300.000000] )
-	{
-		set BUSY to 1;
-		turn unload_shoulder to y-axis get XZ_ATAN(get PIECE_XZ(unload_shoulder) - position) now;
-		move unload_arm to z-axis [0.000000] now;
-		move unload_arm to y-axis get PIECE_Y(torax) - get PIECE_Y(unload_shoulder) now;
-		attach-unit unitid to unload_arm;
-		move unload_arm to z-axis get XZ_HYPOT(get PIECE_XZ(unload_shoulder) - position) speed get XZ_HYPOT(get PIECE_XZ(unload_shoulder) - position) / [0.009155] * [0.006104];
-		move unload_arm to y-axis get GROUND_HEIGHT(position) - get PIECE_Y(unload_shoulder) speed ( get PIECE_Y(torax) - get GROUND_HEIGHT(position) ) / [0.009155] * [0.006104];
-		sleep 1500;
-		--Static_Var_16;
-		drop-unit unitid;
-		set BUSY to 0;
-	}
-}
 
 TexasRanger(Func_Var_1, Func_Var_2)
 {
