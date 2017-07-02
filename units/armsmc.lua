@@ -53,7 +53,7 @@ return {
 		workertime = 1500,
 		buildoptions = {
 			[1] = "cormas",
-			[2] = "corflac",
+			[2] = "corflak",
 			[3] = "cordoom",
 			[4] = "corgate",
 			[5] = "cormds",
