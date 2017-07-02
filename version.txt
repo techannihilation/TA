@@ -1,3 +1,28 @@
+---------------------------------------- v2.5.0 ---------------------------------------
+----Improvments----
+ADD HLT ADV for TLL
+Add Adv Wind trap for TLL
+Add Engineerer Air T1 (Battle Commander) and T2 (AirLab T2)
+Add T3 Cons Ship TLL
+Add T3 Mex, T4 Nano
+Delete Shield from T3 extractor 
+Delete T3 Cons vehicle TLL from Vehicle T3 Lab
+Add many morph for TLL Units (Tanks and Kbots)
+Command Vehivcle becomes a ARM unit
+Siege Vehicle becomes a CORE Unit
+
+----Balance----
+TLLOM => Decrease HP 27K => 25K
+Balance HLT TLL. Decrease stats to have same than ARM / CORE (need approval from team)
+Balance Capital mini Gun from Hero (damage / 2) (need approval from team)
+Explosion balance (Crawl Blast, Bantha Nuke, SelfDestroy from Hero, T4...) We will have a Wiki soon on this subject (need approval from team)
+Delete explosion after death for Troman (T3 Core sniper) (need approval from team)
+Increase HP for Armsiege 20K => 29K (need approval from team)
+
+
+----Bug----
+
+
 ---------------------------------------- v2.49.0 ---------------------------------------
 Fix coradon weapon
 Fix tll swordfish command button name for tac nuke
