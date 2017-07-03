@@ -66,8 +66,10 @@ return {
 			sonicwave = {
 				accuracy = 150,
 				areaofeffect = 150,
+				avoidfriendly = false,
 				burnblow = false,
 				cegtag = "SONICWAVEREDTRAIL",
+				collidefriendly = false,
 				corethickness = 2.5,
 				craterareaofeffect = 0,
 				craterboost = 0,
@@ -108,6 +110,7 @@ return {
 			vtol_rocket = {
 				areaofeffect = 16,
 				avoidfeature = false,
+				avoidfriendly = false,
 				collidefriendly = false,
 				craterareaofeffect = 0,
 				craterboost = 0,
