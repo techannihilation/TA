@@ -172,9 +172,14 @@ local morphDefs = {
 		xp = 0.30,
 	},
 	tllhlt = {
+		into = 'tllvhlt',
+		time = 30,
+		xp = 0.30,
+	},
+	tllvhlt = {
 		into = 'tllpulaser',
 		time = 30,
-		xp = 0.50,
+		xp = 0.30,
 	},
 	tllweb = {
 		into = 'tllupgweb',
