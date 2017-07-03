@@ -32,7 +32,7 @@ return {
 		maxslope = 10,
 		maxwaterdepth = 0,
 		name = "DMC",
-		noautofire = true,
+		noautofire = false,
 		objectname = "tlldmc",
 		radardistance = 0,
 		radaremitheight = 49,
