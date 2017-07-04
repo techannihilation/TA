@@ -53,7 +53,7 @@ return {
 			[1] = "tllradar",
 			[2] = "tllgate2",
 			[3] = "tllupgweb",
-			[4] = "tllhlt",
+			[4] = "tllvhlt",
 			[5] = "tllmortor",
 			[6] = "tlllmt1",
 			[7] = "tllsam",
