@@ -172,9 +172,14 @@ local morphDefs = {
 		xp = 0.30,
 	},
 	tllhlt = {
+		into = 'tllvhlt',
+		time = 30,
+		xp = 0.30,
+	},
+	tllvhlt = {
 		into = 'tllpulaser',
 		time = 30,
-		xp = 0.50,
+		xp = 0.30,
 	},
 	tllweb = {
 		into = 'tllupgweb',
@@ -471,7 +476,7 @@ local morphDefs = {
 	armbull = {
 		into = 'armbull2',
 		time = 30,
-		xp = 0.30,
+		xp = 0.15,
 	},
 	armbull2 = {
 		into = 'armmcv',
@@ -540,8 +545,8 @@ local morphDefs = {
 	},
 	corgol = {
 		into = 'corgol1',
-		time = 60,
-		xp = 0.20,
+		time = 30,
+		xp = 0.15,
 	},
 	corgol1 = {
 		into = 'corbt',
@@ -561,7 +566,7 @@ local morphDefs = {
 	correap = {
 		into = 'champ',
 		time = 60,
-		xp = 0.30,
+		xp = 0.50,
 	},
 	corwolv = {
 		into = 'corwolv1',
@@ -877,6 +882,55 @@ local morphDefs = {
 		time = 30,
 		xp = 0.15,
 	},
+	
+-- New adding for TLL
+
+	tllshaker = {
+     		into = 'tlloki',
+		time = 30,
+		xp = 0.35,
+	},
+	tlloki = {
+     		into = 'tllmlrpc',
+		time = 120,
+		xp = 0.60,
+	},
+	tllariman = {
+     		into = 'tllcoyote',
+		time = 30,
+		xp = 0.40,
+	},
+	tllconvincer = {
+     		into = 'tllacid',
+		time = 120,
+		xp = 0.60,
+	},
+	tllroaster = {
+     		into = 'tlltelsatnk',
+		time = 60,
+		xp = 0.30,
+	},
+	tllpbot = {
+     		into = 'tllartybot',
+		time = 30,
+		xp = 0.50,
+	},
+	tllartybot = {
+     		into = 'heavyimpact',
+		time = 30,
+		xp = 0.50,
+	},
+	tllbind = {
+     		into = 'tllblind',
+		time = 120,
+		xp = 0.60,
+	},
+	tllfireraiser = {
+     		into = 'tllamphibot',
+		time = 30,
+		xp = 0.50,
+	},
+		
 
 }
 

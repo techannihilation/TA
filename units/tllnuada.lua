@@ -87,6 +87,7 @@ return {
 			vtol_sabot = {
 				areaofeffect = 32,
 				avoidfeature = false,
+				avoidfriendly = false,
 				collidefriendly = false,
 				craterareaofeffect = 0,
 				craterboost = 0,

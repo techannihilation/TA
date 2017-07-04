@@ -86,7 +86,9 @@ return {
 			tllair_torpedo = {
 				areaofeffect = 196,
 				avoidfeature = false,
+				avoidfriendly = false,
 				burnblow = true,
+				collidefriendly = false,
 				craterareaofeffect = 294,
 				craterboost = 0,
 				cratermult = 0,

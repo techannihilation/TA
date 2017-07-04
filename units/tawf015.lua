@@ -94,8 +94,10 @@ return {
 			katana_m = {
 				areaofeffect = 16,
 				avoidfeature = false,
+				avoidfriendly = false,
 				burnblow = true,
 				cegtag = "Trail_cannon",
+				collidefriendly = false,
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
@@ -130,6 +132,7 @@ return {
 			katana_m2 = {
 				areaofeffect = 16,
 				avoidfeature = false,
+				avoidfriendly = false,
 				cegtag = "Core_Trail_rocket",
 				collidefriendly = false,
 				craterareaofeffect = 0,
