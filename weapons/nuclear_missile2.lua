@@ -23,7 +23,6 @@ local weaponDef = {
 	soundstart = [[misicbm1]],
 	damage = {
 		commanders = 2500,
-		crawlingbombs = 150,
 		default = 10000,
 	},
 }
