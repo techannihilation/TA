@@ -5,7 +5,7 @@ return {
 		antiweapons = 1,
 		brakerate = 0.069,
 		buildangle = 16384,
-		buildcostenergy = 75000,
+		buildcostenergy = 91000,
 		buildcostmetal = 2850,
 		builder = true,
 		buildpic = "corcarry.dds",
