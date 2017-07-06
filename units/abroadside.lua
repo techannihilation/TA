@@ -144,8 +144,6 @@ return {
 				accuracy = 10,
 				areaofeffect = 80,
 				burnblow = false,
-				burst = 2,
-				burstrate = 0.15,
 				collidefriendly = false,
 				corethickness = 1,
 				craterareaofeffect = 0,
