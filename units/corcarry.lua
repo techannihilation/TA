@@ -6,7 +6,7 @@ return {
 		brakerate = 0.069,
 		buildangle = 16384,
 		buildcostenergy = 75000,
-		buildcostmetal = 2550,
+		buildcostmetal = 2850,
 		builder = true,
 		buildpic = "corcarry.dds",
 		buildtime = 90000,
