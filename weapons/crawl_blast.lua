@@ -20,7 +20,7 @@ local weaponDef = {
 	weaponvelocity = 250,
 	damage = {
 		commanders = 1250,
-		crawlingbombs = 50,
+		crawlingbombs = 200,
 		default = 2500,
 	},
 }
