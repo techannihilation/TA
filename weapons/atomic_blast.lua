@@ -17,7 +17,6 @@ local weaponDef = {
 	soundstart = [[largegun]],
 	damage = {
 		commanders = 1250,
-		crawlingbombs = 50,
 		default = 2500,
 	},
 }
