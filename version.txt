@@ -24,6 +24,7 @@ Add T1.5 plasma cannon back for arm/core
 
 Delete Shield from T3 extractor
 Defensive range widget add missing units
+Anti range widget add missing unit tllgiant
 Add many morph for TLL Units (Tanks and Kbots)
 Command Vehicle becomes a ARM unit
 Siege Vehicle becomes a CORE Unit
