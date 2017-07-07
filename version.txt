@@ -1,17 +1,37 @@
----------------------------------------- v2.5.0 ---------------------------------------
+---------------------------------------- vX.X.X ---------------------------------------
+
 ----Improvments----
-ADD HLT ADV for TLL
-Add Adv Wind trap for TLL
-Add Engineerer Air T1 (Battle Commander) and T2 (AirLab T2)
-Add T3 Cons Ship TLL
-Add T3 Mex, T4 Nano
-Delete Shield from T3 extractor 
-Delete T3 Cons vehicle TLL from Vehicle T3 Lab
+First Big changed for this release, is fixing ground units targeting underwater units.
+
+This Release we have also focused on some well needed love for tll so we bring you 
+
+-- New units --
+Very Heavy Laser Tower
+Advanced Wind trap
+Engineerer Air T1 (Battle Commander) and T2 (AirLab T2)
+T3 Cons Ship TLL -- Replaces T3 vehicle con from 3 lab
+T3 Mex
+T4 Nano
+Energy Cannon -- T1.5 tech 
+Plamsa Gatling Gun -- T1.5 tech
+Tll Dwarf Shield 
+
+All Faction get Missle Defence System
+Its a static laser tower that shoots down some rockets/missile (i won't target nukes/tac nukes)
+
+Add T1.5 plasma cannon back for arm/core 
+
+ 
+--
+Delete Shield from T3 extractor
 Add many morph for TLL Units (Tanks and Kbots)
 Command Vehicle becomes a ARM unit
 Siege Vehicle becomes a CORE Unit
+Morph indicator widget, add new key binding (button 1 + ctrl), select units + press new button combo, it auto reselects morphable units only
+
 
 ----Balance----
+Rework tllllt stats now inline with arm/core llt
 TLLOM => Decrease HP 27K => 25K
 Balance HLT TLL. Decrease stats to have same than ARM / CORE 
 Balance Capital mini Gun from Hero (damage / 2) 
@@ -21,6 +41,11 @@ Increase HP for Armsiege 20K => 29K
 Balance Cost from all carrier and decrese HP (need approval from team)
 Reduce explosion for cortron (tactical nuke) and increase energycost by 20%
 
+----Visual----
+Add lups effect for core t3 builder
+New weapon visuals for armcrabe (Reduced particle count per shot)
+Dont draw explosions for nukes that explode while in the air
+Fix unitpics with wrong faction
 
 ----Bug----
 
