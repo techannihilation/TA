@@ -1,12 +1,12 @@
 ---------------------------------------- vX.X.X ---------------------------------------
 
 ----Improvments----
-First Big changed for this release, is fixing ground units targeting underwater units.
+First Big change for this release, is fixing units targeting underwater units and well as ground units.
 
-This Release we have also focused on some well needed love for tll so we bring you 
+This Release we have also focused on some well needed love for tll so we bring you 10+ new units for TLL
 
 -- New units --
-Very Heavy Laser Tower
+Very Heavy Laser Tower (To Match Arm/Core Countpart)
 Advanced Wind trap
 Engineerer Air T1 (Battle Commander) and T2 (AirLab T2)
 T3 Cons Ship TLL -- Replaces T3 vehicle con from 3 lab
@@ -17,13 +17,13 @@ Plamsa Gatling Gun -- T1.5 tech
 Tll Dwarf Shield 
 
 All Faction get Missle Defence System
-Its a static laser tower that shoots down some rockets/missile (i won't target nukes/tac nukes)
+This units is a static laser tower that shoots down rockets/missile (i won't target nukes/tac nukes)
 
 Add T1.5 plasma cannon back for arm/core 
 
- 
---
+
 Delete Shield from T3 extractor
+Defensive range widget add missing units
 Add many morph for TLL Units (Tanks and Kbots)
 Command Vehicle becomes a ARM unit
 Siege Vehicle becomes a CORE Unit
@@ -31,6 +31,7 @@ Morph indicator widget, add new key binding (button 1 + ctrl), select units + pr
 
 
 ----Balance----
+Small Shield balance reducion of buildtime
 Rework tllllt stats now inline with arm/core llt
 TLLOM => Decrease HP 27K => 25K
 Balance HLT TLL. Decrease stats to have same than ARM / CORE 
@@ -44,10 +45,15 @@ Reduce explosion for cortron (tactical nuke) and increase energycost by 20%
 ----Visual----
 Add lups effect for core t3 builder
 New weapon visuals for armcrabe (Reduced particle count per shot)
+New weapon visuals for tlldemon (over 50% saving in particle count)
 Dont draw explosions for nukes that explode while in the air
 Fix unitpics with wrong faction
+Add dust trail effect for armbull when on land
 
 ----Bug----
+Fix commander underwater laser targeting aircraft, Closes #254
+Increase spiderlabs footprint
+Revert Hailstorm stas to previous version
 
 
 ---------------------------------------- v2.49.0 ---------------------------------------
