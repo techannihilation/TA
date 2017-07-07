@@ -68,7 +68,10 @@ Add dust trail effect for armbull when on land
 Fix commander underwater laser targeting aircraft, Closes #254
 Increase spiderlabs footprint
 Revert Hailstorm stas to previous version
-
+Fix tllplasma aimpoint
+Fix gunships damaging each other
+Tlldmc add fire state buttons, Closes #336
+Fix jumpdrive footprint size, Closes #302
 
 ---------------------------------------- v2.49.0 ---------------------------------------
 Fix coradon weapon
