@@ -73,6 +73,12 @@ return {
 			[16] = "tllalab",
 			[17] = "tllturtle_lab",
 			[18] = "tllhtcp",
+			[19] = "tlluwfusion",
+			[20] = "tllauwmex",
+			[21] = "tllwmmohoconv",
+			[22] = "tllfgate",
+			[23] = "tllasy",
+			[24] = "tllsubpen",
 		},
 		customparams = {
 			faction = "TLL",
