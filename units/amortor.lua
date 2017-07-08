@@ -75,7 +75,7 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:mediumflare",
+				[1] = "custom:BANTHAMUZZLE",
 			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
@@ -110,22 +110,23 @@ return {
 			},
 		},
 		weapondefs = {
-			mortartillery = {
+			energy_cannon = {
 				areaofeffect = 50,
 				avoidfeature = false,
-				cegtag = "Trail_cannon",
+				cegtag = "banthablaster",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
-				explosiongenerator = "custom:flash70_fakelight",
+				explosiongenerator = "custom:lightningexplo",
 				gravityaffected = "TRUE",
+				hightrajectory = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				name = "Mortar Cannon",
 				nogap = 1,
 				range = 1520,
 				reloadtime = 2.5,
-				rgbcolor = "1 0.88 0.23",
+				rgbcolor = "0.5 0.5 1.0",
 				separation = 0.45,
 				size = 1.58,
 				sizedecay = -0.15,
@@ -148,7 +149,7 @@ return {
 		weapons = {
 			[1] = {
 				badtargetcategory = "TINY",
-				def = "MORTARTILLERY",
+				def = "ENERGY_CANNON",
 				onlytargetcategory = "SURFACE",
 			},
 		},
