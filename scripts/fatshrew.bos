@@ -365,13 +365,13 @@ HealthCheck(Func_Var_1, Func_Var_2)
 		{
 			if( Static_Var_10 == 5 )
 			{
-				explode patte24 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+				explode patte24 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 				dont-cache patte24;
 				--Static_Var_10;
 			}
 			if( Static_Var_10 == 4 )
 			{
-				explode patte23 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+				explode patte23 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 				dont-cache patte23;
 				--Static_Var_10;
 			}
@@ -380,19 +380,19 @@ HealthCheck(Func_Var_1, Func_Var_2)
 		{
 			if( Static_Var_11 == 5 )
 			{
-				explode patte34 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+				explode patte34 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 				dont-cache patte34;
 				--Static_Var_11;
 			}
 			if( Static_Var_11 == 4 )
 			{
-				explode patte33 type SHATTER | BITMAP4;
+				explode patte33 type NOHEATCLOUD | SHATTER | BITMAP4;
 				dont-cache patte33;
 				--Static_Var_11;
 			}
 			if( Static_Var_11 == 3 )
 			{
-				explode patte32 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+				explode patte32 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 				dont-cache patte32;
 				--Static_Var_11;
 			}
@@ -401,7 +401,7 @@ HealthCheck(Func_Var_1, Func_Var_2)
 		{
 			if( Static_Var_10 == 3 )
 			{
-				explode patte22 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+				explode patte22 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 				dont-cache patte22;
 				--Static_Var_10;
 			}
@@ -410,7 +410,7 @@ HealthCheck(Func_Var_1, Func_Var_2)
 		{
 			if( Static_Var_11 == 2 )
 			{
-				explode patte31 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+				explode patte31 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 				dont-cache patte31;
 				--Static_Var_11;
 			}
@@ -419,19 +419,19 @@ HealthCheck(Func_Var_1, Func_Var_2)
 		{
 			if( Static_Var_14 == 5 )
 			{
-				explode patte64 type SHATTER | BITMAP2;
+				explode patte64 type NOHEATCLOUD | SHATTER | BITMAP2;
 				dont-cache patte64;
 				--Static_Var_14;
 			}
 			if( Static_Var_14 == 4 )
 			{
-				explode patte63 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+				explode patte63 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 				dont-cache patte63;
 				--Static_Var_14;
 			}
 			if( Static_Var_14 == 3 )
 			{
-				explode patte62 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+				explode patte62 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
 				dont-cache patte62;
 				--Static_Var_14;
 			}
@@ -440,7 +440,7 @@ HealthCheck(Func_Var_1, Func_Var_2)
 		{
 			if( Static_Var_10 == 2 )
 			{
-				explode patte21 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+				explode patte21 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 				dont-cache patte21;
 				--Static_Var_10;
 			}
@@ -818,22 +818,22 @@ SweetSpot(piecenum)
 Killed(severity, corpsetype)
 {
 	move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
-	explode torax type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode abdomen type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode laser_pylone type SHATTER | BITMAP3;
-	explode laser_bloc type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode laser_jonction type SHATTER | BITMAP4;
-	explode patte10 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-	explode patte40 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-	explode patte50 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-	explode patte31 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-	explode patte61 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-	explode patte12 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-	explode patte42 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-	explode patte52 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-	explode patte23 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-	explode patte14 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-	explode patte44 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-	explode patte54 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode torax type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode abdomen type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode laser_pylone type NOHEATCLOUD | SHATTER | BITMAP3;
+	explode laser_bloc type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode laser_jonction type NOHEATCLOUD | SHATTER | BITMAP4;
+	explode patte10 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode patte40 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode patte50 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode patte31 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode patte61 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode patte12 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode patte42 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode patte52 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode patte23 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode patte14 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode patte44 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode patte54 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
 	corpsetype = 1;
 }

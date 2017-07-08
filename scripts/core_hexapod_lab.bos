@@ -4,6 +4,11 @@ static-var Nano;
 static-var StaticVar1;
 static-var StaticVar2;
 
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
 #define SIG_0 0
 #define SIG_2 2
 
@@ -50,28 +55,28 @@ activatescr()
 	if (TRUE)
 	{
 	  show nano1;
-	  explode nano1 type (32 | 4096);
+	  explode nano1 type NOHEATCLOUD | (32 | 4096);
 	  hide nano1;
 	  sleep 500;
 	}
 	if (TRUE)
 	{
 	  show nano2;
-	  explode nano2 type (32 | 4096);
+	  explode nano2 type NOHEATCLOUD | (32 | 4096);
 	  hide nano2;
 	  sleep 500;
 	}
 	if (TRUE)
 	{
 	  show nano3;
-	  explode nano3 type (32 | 4096);
+	  explode nano3 type NOHEATCLOUD | (32 | 4096);
 	  hide nano3;
 	  sleep 500;
 	}
 	if (TRUE)
 	{
 	  show nano4;
-	  explode nano4 type (32 | 4096);
+	  explode nano4 type NOHEATCLOUD | (32 | 4096);
 	  hide nano4;
 	  sleep 500;
 	}
@@ -85,28 +90,28 @@ deactivatescr()
 	if (TRUE)
 	{
 	  show nano4;
-	  explode nano4 type (32 | 4096);
+	  explode nano4 type NOHEATCLOUD | (32 | 4096);
 	  hide nano4;
 	  sleep 250;
 	}
 	if (TRUE)
 	{
 	  show nano3;
-	  explode nano3 type (32 | 4096);
+	  explode nano3 type NOHEATCLOUD | (32 | 4096);
 	  hide nano3;
 	  sleep 250;
 	}
 	if (TRUE)
 	{
 	  show nano2;
-	  explode nano2 type (32 | 4096);
+	  explode nano2 type NOHEATCLOUD | (32 | 4096);
 	  hide nano2;
 	  sleep 250;
 	}
 	if (TRUE)
 	{
 	  show nano1;
-	  explode nano1 type (32 | 4096);
+	  explode nano1 type NOHEATCLOUD | (32 | 4096);
 	  hide nano1;
 	  sleep 250;
 	}
@@ -414,19 +419,19 @@ Killed()
 	if ((Var0 <= 25))
 	{
 	  Var1 = 1;
-	  explode body type (32 | 256);
+	  explode body type NOHEATCLOUD | (32 | 256);
 	  return 0;
 	}
 	if ((Var0 <= 50))
 	{
 	  Var1 = 2;
-	  explode body type (32 | 256);
+	  explode body type NOHEATCLOUD | (32 | 256);
 	  return 0;
 	}
 	if ((Var0 <= 99))
 	{
 	  Var1 = 3;
-	  explode body type (32 | 256);
+	  explode body type NOHEATCLOUD | (32 | 256);
 	  return 0;
 	}
 	return 0;

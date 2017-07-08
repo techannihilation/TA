@@ -215,24 +215,24 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode hull type BITMAPONLY | BITMAP1;
-		explode base type BITMAPONLY | BITMAP2;
-		explode sirip1 type BITMAPONLY | BITMAP5;
-		explode pros type SHATTER | BITMAP1;
+		explode hull type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode sirip1 type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+		explode pros type NOHEATCLOUD | SHATTER | BITMAP1;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type BITMAPONLY | BITMAP1;
-		explode sirip2 type FALL | EXPLODE_ON_HIT | BITMAP1;
-		explode hull type BITMAPONLY | BITMAP5;
-		explode pros type SHATTER | BITMAP1;
+		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode sirip2 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT | BITMAP1;
+		explode hull type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+		explode pros type NOHEATCLOUD | SHATTER | BITMAP1;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type BITMAPONLY | BITMAP1;
-	explode sirip1 type FALL | EXPLODE_ON_HIT | BITMAP1;
-	explode hull type BITMAPONLY | BITMAP5;
-	explode pros type SHATTER | BITMAP1;
+	explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+	explode sirip1 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT | BITMAP1;
+	explode hull type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+	explode pros type NOHEATCLOUD | SHATTER | BITMAP1;
 }
