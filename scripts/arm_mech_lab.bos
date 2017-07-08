@@ -58,23 +58,23 @@ Standby()
 
 activatescr()
 {
-	move NE_block to x-axis [-13.300000] speed [13.300000];
-	move NE_block to z-axis [-5.600000] speed [5.600000];
-	move SE_block to x-axis [-11.900000] speed [11.900000];
-	move SE_block to z-axis [2.100000] speed [2.100000];
-	move SW_block to x-axis [11.900000] speed [11.900000];
-	move SW_block to z-axis [2.100000] speed [2.100000];
-	move NW_block to x-axis [13.300000] speed [13.300000];
-	move NW_block to z-axis [-5.600000] speed [5.600000];
+	move NE_block to x-axis [-19.950000] speed [13.300000];
+	move NE_block to z-axis [-8.400000] speed [5.600000];
+	move SE_block to x-axis [-17.850000] speed [11.900000];
+	move SE_block to z-axis [3.150000] speed [2.100000];
+	move SW_block to x-axis [17.850000] speed [11.900000];
+	move SW_block to z-axis [3.150000] speed [2.100000];
+	move NW_block to x-axis [19.950000] speed [13.300000];
+	move NW_block to z-axis [-8.400000] speed [5.600000];
 	wait-for-move NE_block along x-axis;
 	sleep 1000;
-	move head to y-axis [30.000000] speed [30.000000];
+	move head to y-axis [45.000000] speed [30.000000];
 	wait-for-move head along y-axis;
-	move head to y-axis [35.000000] speed [15.000000];
+	move head to y-axis [52.500000] speed [15.000000];
 	wait-for-move head along y-axis;
-	move head to y-axis [37.500000] speed [7.500000];
+	move head to y-axis [56.500000] speed [7.500000];
 	wait-for-move head along y-axis;
-	move head to y-axis [38.750000] speed [3.750000];
+	move head to y-axis [58.125000] speed [3.750000];
 	wait-for-move head along y-axis;
 	
 	

@@ -21,7 +21,7 @@ return {
 		energyuse = 0,
 		explodeas = "LARGE_BUILDINGEX",
 		firestandorders = 1,
-		footprintx = 12,
+		footprintx = 18,
 		footprintz = 12,
 		icontype = "building",
 		idleautoheal = 5,
@@ -50,7 +50,7 @@ return {
 		turnrate = 0,
 		unitname = "arm_mech_lab",
 		workertime = 600,
-		yardmap = "oooooooooooo oooooooooooo oooooooooooo oooooooooooo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ",
+		yardmap = "oooooooooooooooooo oooooooooooooooooo oooooooooooooooooo oooooooooooooooooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo",
 		buildoptions = {
 			[1] = "armpraet",
 			[2] = "exoarm",
