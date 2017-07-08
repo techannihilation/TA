@@ -45,12 +45,12 @@ activatescr()
 {
 	if( TRUE )
 	{
-		move nanog to x-axis [-4.000000] speed [5.000000];
-		move nanod to x-axis [4.000000] speed [5.000000];
+		move nanog to x-axis [-8.000000] speed [5.000000];
+		move nanod to x-axis [8.000000] speed [5.000000];
 		wait-for-move nanog along x-axis;
 		wait-for-move nanod along x-axis;
-		move nanog1 to x-axis [-4.000000] speed [5.000000];
-		move nanod1 to x-axis [4.000000] speed [5.000000];
+		move nanog1 to x-axis [-8.000000] speed [5.000000];
+		move nanod1 to x-axis [8.000000] speed [5.000000];
 		turn nanog to y-axis <-60.010989> speed <100.000000>;
 		turn nanod to y-axis <60.010989> speed <100.000000>;
 		turn nanog1 to y-axis <-60.010989> speed <100.000000>;
