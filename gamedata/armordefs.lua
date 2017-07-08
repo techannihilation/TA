@@ -112,7 +112,6 @@ unclassed_air = {
            "corrag",
            "armmin",
            "cormin",
-           "tllhtca",
            "tllbuilderlvl1",
            "tllbuilderlvl2",
            "tllbuilderlvl3",
