@@ -216,7 +216,7 @@ Oeffne()
 	signal SIG_SPIN;
 //	signal SIG_FLAMES;
 
-	start-script Drehe();
+//	start-script Drehe();
 //	start-script ProcessFlames();
 	wait-for-turn r1Halt around y-axis;
 	
