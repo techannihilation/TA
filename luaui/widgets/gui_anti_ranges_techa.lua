@@ -90,6 +90,7 @@ local antiNukes = {
   [UnitDefNames["tllturtle"].id] = true,
   [UnitDefNames["tllantinuke"].id] = true,
   [UnitDefNames["tllantinuke1"].id] = true,
+  [UnitDefNames["tllgiant"].id] = true,
 }
 
 for unitDefID, _ in pairs(antiNukes) do

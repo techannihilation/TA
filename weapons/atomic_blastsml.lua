@@ -20,7 +20,8 @@ local weaponDef = {
 	turret = 1,
 	weaponvelocity = 250,
 	damage = {
-		default = 1100,
+		commanders = 625,
+		default = 1250,
 	},
 }
 --------------------------------------------------------------------------------

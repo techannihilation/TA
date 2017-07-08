@@ -1,27 +1,77 @@
----------------------------------------- v2.5.0 ---------------------------------------
+---------------------------------------- vX.X.X ---------------------------------------
+
 ----Improvments----
-ADD HLT ADV for TLL
-Add Adv Wind trap for TLL
-Add Engineerer Air T1 (Battle Commander) and T2 (AirLab T2)
-Add T3 Cons Ship TLL
-Add T3 Mex, T4 Nano
-Delete Shield from T3 extractor 
-Delete T3 Cons vehicle TLL from Vehicle T3 Lab
-Add many morph for TLL Units (Tanks and Kbots)
-Command Vehivcle becomes a ARM unit
+First Big change for this release, is fixing units targeting underwater units and well as ground units.
+
+This Release we have also focused on some well needed love for tll so we bring you 10+ new units for TLL
+
+-- New units --
+Very Heavy Laser Tower (To Match Arm/Core Countpart)
+Advanced Wind trap
+Engineerer Air T1 (Battle Commander) and T2 (AirLab T2)
+T3 Cons Ship TLL -- Replaces T3 vehicle con from 3 lab
+T3 Mex
+T4 Nano
+Energy Cannon -- T1.5 tech 
+Plamsa Gatling Gun -- T1.5 tech
+Tll Dwarf Shield 
+
+Add morph tree for TLL
+
+Available Morph are
+Morph tllhlt into tllvhlt
+Morph tllshaker into tlloki
+Morph tlloki into tllmlrpc
+Morph tllariman into tllcoyote
+Morph tllconvincer into tllacid
+Morph tllroaster into tlltelsatnk
+Morph tllpbot into tllartybot
+Morph tllartybot into heavyimpact
+Morph tllbind into tllblind
+Morph tllfireraiser into tllamphibot
+
+All Faction get Missle Defence System
+This units is a static laser tower that shoots down rockets/missile (i won't target nukes/tac nukes)
+
+Add T1.5 plasma cannon back for arm/core 
+
+
+Delete Shield from T3 extractor
+Defensive range widget add missing units
+Anti range widget add missing unit tllgiant
+Command Vehicle becomes a ARM unit
 Siege Vehicle becomes a CORE Unit
+Morph indicator widget, add new key binding (button 1 + ctrl), select units + press new button combo, it auto reselects morphable units only
+
 
 ----Balance----
+Small Shield balance reducion of buildtime
+Rework tllllt stats now inline with arm/core llt
 TLLOM => Decrease HP 27K => 25K
-Balance HLT TLL. Decrease stats to have same than ARM / CORE (need approval from team)
-Balance Capital mini Gun from Hero (damage / 2) (need approval from team)
-Explosion balance (Crawl Blast, Bantha Nuke, SelfDestroy from Hero, T4...) We will have a Wiki soon on this subject (need approval from team)
-Delete explosion after death for Troman (T3 Core sniper) (need approval from team)
-Increase HP for Armsiege 20K => 29K (need approval from team)
+Balance HLT TLL. Decrease stats to have same than ARM / CORE 
+Balance Capital mini Gun from Hero (damage / 2) 
+Explosion balance (Crawl Blast, Bantha Nuke, SelfDestroy from Hero, T4...) We will have a Wiki soon on this subject 
+Delete explosion after death for Troman (T3 Core sniper) 
+Increase HP for Armsiege 20K => 29K
+Balance Cost from all carrier and decrese HP (need approval from team)
+Reduce explosion for cortron (tactical nuke) and increase energycost by 20%
 
+----Visual----
+Add lups effect for core t3 builder
+New weapon visuals for armcrabe (Reduced particle count per shot)
+New weapon visuals for tlldemon (over 50% saving in particle count)
+Dont draw explosions for nukes that explode while in the air
+Fix unitpics with wrong faction
+Add dust trail effect for armbull when on land
 
 ----Bug----
-
+Fix commander underwater laser targeting aircraft, Closes #254
+Increase spiderlabs footprint
+Revert Hailstorm stas to previous version
+Fix tllplasma aimpoint
+Fix gunships damaging each other
+Tlldmc add fire state buttons, Closes #336
+Fix jumpdrive footprint size, Closes #302
 
 ---------------------------------------- v2.49.0 ---------------------------------------
 Fix coradon weapon
