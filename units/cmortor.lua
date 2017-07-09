@@ -15,7 +15,7 @@ return {
 		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
-		description = "Range Mortar Cannon",
+		description = "High Trajectory Energy Mortar",
 		energystorage = 10,
 		energyuse = 0,
 		explodeas = "MEDIUM_BUILDINGEX",
