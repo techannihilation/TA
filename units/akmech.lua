@@ -22,7 +22,7 @@ return {
 		description = "AK X-1 General Heavy Assault Vengence",
 		downloadable = 1,
 		energystorage = 100,
-		explodeas = "CRAWL_BLAST",
+		explodeas = "CRAWL_BLASTSML",
 		firestandorders = 1,
 		footprintx = 3,
 		footprintz = 3,
