@@ -46,8 +46,8 @@ if (gadgetHandler:IsSyncedCode()) then
 		if VFS.FileExists(mapConfig) then
 			mapFeatures = VFS.Include(mapConfig)
 			for _, featID in pairs(Spring.GetAllFeatures()) do
-				local featureModel = FeatureDefs[Spring.GetFeatureDefID(featID)].model.name:lower()
-				if featureModel:len() > 4 then
+					local modelpath = FeatureDefs[Spring.GetFeatureDefID(featID)].model.path
+					local featureModel = modelpath:lower()				if featureModel:len() > 4 then
 					local featureModelTrim = featureModel:match("/.*"):sub(2)
 					if mapFeatures[featureModelTrim] then
 						local p = mapFeatures[featureModelTrim]
@@ -68,8 +68,9 @@ if (gadgetHandler:IsSyncedCode()) then
 			end			
 		else
 			for _, featID in pairs(Spring.GetAllFeatures()) do
-				local featureModel = FeatureDefs[Spring.GetFeatureDefID(featID)].model.name:lower()
-				if featureModel:find(".3do") then
+					local modelpath = FeatureDefs[Spring.GetFeatureDefID(featID)].model.path
+					local featureModel = modelpath:lower()
+					if featureModel:find(".3do") then
 					local rs, hs
 					if (spGetFeatureRadius(featID)>47) then
 						rs, hs = 0.68, 0.60
@@ -173,7 +174,8 @@ if (gadgetHandler:IsSyncedCode()) then
 
 	-- Same as for 3DO units, but for features
 	function gadget:FeatureCreated(featureID, allyTeam)
-		local featureModel = FeatureDefs[Spring.GetFeatureDefID(featureID)].model.name:lower()
+		local modelpath = FeatureDefs[Spring.GetFeatureDefID(featureID)].model.path
+		local featureModel = modelpath:lower()
 		if featureModel == "" or nil then return end	--geovents or engine trees have no models
 		local featureModelTrim = featureModel:match("/.*"):sub(2)
 		if mapFeatures[featureModelTrim] then	-- it just might happen that some map features can have corpses
