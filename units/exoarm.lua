@@ -35,7 +35,7 @@ return {
 		maxvelocity = 1.6,
 		maxwaterdepth = 12,
 		mobilestandorders = 1,
-		movementclass = "VKBOT5",
+		movementclass = "hkbot4",
 		name = "Exo",
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
