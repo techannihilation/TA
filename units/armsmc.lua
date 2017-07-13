@@ -2,7 +2,7 @@ return {
 	armsmc = {
 		acceleration = 0.12,
 		brakerate = 0.75,
-		buildcostenergy = 214055,
+		buildcostenergy = 284055,
 		buildcostmetal = 10345,
 		builddistance = 300,
 		builder = true,
