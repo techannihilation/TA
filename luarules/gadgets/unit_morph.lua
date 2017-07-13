@@ -404,7 +404,7 @@ local GetUnitRank = function() return 0 end
 --------------------------------------------------------------------------------
 
 local function SplitNames(name)
-  local Desc = ""
+  local Desc = "Morph "
   local string = tostring(name)
   local longestword = 1
   for word in string.gmatch(string,"%w+") do 
