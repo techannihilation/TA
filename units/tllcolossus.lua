@@ -236,7 +236,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "COR_GOL",
+				def = "QUATRO_GUN",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
