@@ -46,7 +46,7 @@ if (gadgetHandler:IsSyncedCode()) then
 		if VFS.FileExists(mapConfig) then
 			mapFeatures = VFS.Include(mapConfig)
 			for _, featID in pairs(Spring.GetAllFeatures()) do
-					local modelpath = FeatureDefs[Spring.GetFeatureDefID(featID)].model.path
+					local modelpath = FeatureDefs[Spring.GetFeatureDefID(featID)].modelpath
 					local featureModel = modelpath:lower()				if featureModel:len() > 4 then
 					local featureModelTrim = featureModel:match("/.*"):sub(2)
 					if mapFeatures[featureModelTrim] then
@@ -68,7 +68,7 @@ if (gadgetHandler:IsSyncedCode()) then
 			end			
 		else
 			for _, featID in pairs(Spring.GetAllFeatures()) do
-					local modelpath = FeatureDefs[Spring.GetFeatureDefID(featID)].model.path
+					local modelpath = FeatureDefs[Spring.GetFeatureDefID(featID)].modelpath
 					local featureModel = modelpath:lower()
 					if featureModel:find(".3do") then
 					local rs, hs
@@ -174,7 +174,7 @@ if (gadgetHandler:IsSyncedCode()) then
 
 	-- Same as for 3DO units, but for features
 	function gadget:FeatureCreated(featureID, allyTeam)
-		local modelpath = FeatureDefs[Spring.GetFeatureDefID(featureID)].model.path
+		local modelpath = FeatureDefs[Spring.GetFeatureDefID(featureID)].modelpath
 		local featureModel = modelpath:lower()
 		if featureModel == "" or nil then return end	--geovents or engine trees have no models
 		local featureModelTrim = featureModel:match("/.*"):sub(2)
