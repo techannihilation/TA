@@ -30,7 +30,7 @@ return {
 		mass = 1550,
 		maxdamage = 1780,
 		maxslope = 10,
-		maxvelocity = 1.3,
+		maxvelocity = 1.4,
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		movementclass = "TKBOT3",
