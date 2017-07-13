@@ -2,7 +2,7 @@ return {
 	pinchy = {
 		acceleration = 0.12,
 		brakerate = 0.75,
-		buildcostenergy = 190005,
+		buildcostenergy = 250005,
 		buildcostmetal = 8905,
 		builddistance = 300,
 		builder = true,
