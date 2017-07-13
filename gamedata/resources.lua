@@ -210,7 +210,6 @@ local resources = {
 			flare1='FlarenSpark/Flare1.TGA',
 			flare2='FlarenSpark/Flare2.TGA',
 			flare3='FlarenSpark/Flare3.TGA',
-			flarePills1='FlarenSpark/FlarePills1.TGA',
 			
 			lightring='lightring.tga',
 			lightb3='lightningball3.tga',
@@ -231,9 +230,11 @@ local resources = {
 			map_dirtplosion2='other/dirtplosion2.tga',
 			
 			--lightning
-			strike='strike.png',
-			lightningball_new='lightningball.png',
+			strike='techa_artwork/strike.png',
+			lightningball_new='techa_artwork/lightningball.png',
 			puff='Shine_Smokey_256.png',
+
+			cloud='sky1.png',
 		},
 	},
 }
