@@ -21,7 +21,7 @@ return {
 		defaultmissiontype = "Standby",
 		description = "Experimental Siege Hexapod",
 		energystorage = 10000,
-		explodeas = "NUCLEAR_MISSILE2",
+		explodeas = "NUCLEAR_MISSILE4",
 		firestandorders = 1,
 		footprintx = 8,
 		footprintz = 8,
@@ -49,7 +49,7 @@ return {
 		radaremitheight = 76,
 		script = "fatshrew.cob",
 		seismicsignature = 48,
-		selfdestructas = "CRBLMSSL",
+		selfdestructas = "CRBLMSSL4",
 		selfdestructcountdown = 10,
 		sightdistance = 800,
 		standingfireorder = 2,
@@ -245,8 +245,8 @@ return {
 			[1] = {
 				badtargetcategory = "TINY",
 				def = "ATAD",
-				maindir = "0 1 0",
-				maxangledif = 260,
+				maindir = "0 0 1",
+				maxangledif = 85,
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
