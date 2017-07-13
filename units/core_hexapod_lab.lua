@@ -28,7 +28,7 @@ return {
 		idletime = 1800,
 		losemitheight = 81,
 		mass = 89600,
-		maxdamage = 55000,
+		maxdamage = 75000,
 		maxslope = 18,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
