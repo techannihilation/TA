@@ -38,7 +38,7 @@ return {
 		maxvelocity = 1.2,
 		maxwaterdepth = 520,
 		mobilestandorders = 1,
-		movementclass = "VKBOT9",
+		movementclass = "HTKBOT7",
 		name = "Fatshrew Mech",
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
