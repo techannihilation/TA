@@ -52,9 +52,9 @@ return {
 		workertime = 600,
 		yardmap = "oooooooooooooooooo oooooooooooooooooo oooooooooooooooooo oooooooooooooooooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo",
 		buildoptions = {
-			[1] = "armpraet",
-			[2] = "exoarm",
-			[3] = "armsmc",
+			[1] = "armsmc",
+			[2] = "armpraet",
+			[3] = "exoarm",
 		},
 		customparams = {
 			buildpic = "arm_mech_lab.png",
