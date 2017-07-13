@@ -2,8 +2,8 @@ return {
 	arm_mech_lab = {
 		acceleration = 0,
 		brakerate = 0,
-		buildcostenergy = 446055,
-		buildcostmetal = 39600,
+		buildcostenergy = 586055,
+		buildcostmetal = 77600,
 		builder = true,
 		buildinggrounddecaldecayspeed = 0.01,
 		buildinggrounddecalsizex = 20,
