@@ -2,8 +2,8 @@ return {
 	core_hexapod_lab = {
 		acceleration = 0,
 		brakerate = 0,
-		buildcostenergy = 498000,
-		buildcostmetal = 47600,
+		buildcostenergy = 598000,
+		buildcostmetal = 77600,
 		builder = true,
 		buildinggrounddecaldecayspeed = 0.01,
 		buildinggrounddecalsizex = 20,
