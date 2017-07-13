@@ -59,7 +59,7 @@ function gadget:RecvLuaMsg(msg, playerID)
     end
 end
 
-function gadget:AllowStartPosition(x,y,z,playerID,readyState)
+function gadget:AllowStartPosition(playerID, teamID, readyState, cx, cy, cz, rx, ry, rz)
     FindSubs(false)
     return true
 end
