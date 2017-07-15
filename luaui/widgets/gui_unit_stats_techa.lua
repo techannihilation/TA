@@ -14,6 +14,9 @@ end
 
 include("keysym.h.lua")
 
+---- v1.5
+-- Add large icon
+
 ---- v1.4 changes
 -- Remove Corner Crap
 -- Update to all info shown in TechA version
@@ -314,6 +317,14 @@ function widget:DrawScreen()
 	
 	local text = yellow .. uDef.humanName .. white .. "    " .. uDef.name .. "    (#" .. uID .. " , "..GetTeamColorCode(uTeam) .. GetTeamName(uTeam) .. white .. ")"
 	
+	--needs a better position
+	glColor(0,0,0,0.73)
+	gl.Rect(cX, cY+17, cX+138, cY+128)
+	gl.Color(1, 1, 1)
+  	gl.Texture('#' .. uDefID)
+  	gl.TexRect(cX, cY+17, cX+138, cY+128)
+  	gl.Texture(false)
+
 	local cornersize = 0
 	glColor(0,0,0,0.73)
 	RectRound(cX-bgpadding+cornersize, cY-bgpadding+cornersize, cX+(gl.GetTextWidth(text)*fontSize)+bgpadding-cornersize, cY+(fontSize/2)+bgpadding-cornersize, bgcornerSize)
