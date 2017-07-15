@@ -64,8 +64,9 @@ return {
 			[12] = "armvulc1",
 			[13] = "armfsilo",
 			[14] = "armtabi",
-			[15] = "armshltx1",
-			[16] = "ashipyardlvl3",
+			[15] = "arm_mech_lab",
+			[16] = "armshltx1",
+			[17] = "ashipyardlvl3",
 		},
 		customparams = {
 			faction = "ARM",

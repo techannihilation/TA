@@ -68,8 +68,9 @@ return {
 			[12] = "corbuzz1",
 			[13] = "corfsilo",
 			[14] = "corflu",
-			[15] = "corgant1",
-			[16] = "cshipyardlvl4",
+			[15] = "core_hexapod_lab",
+			[16] = "corgant1",
+			[17] = "cshipyardlvl4",
 		},
 		customparams = {
 			faction = "CORE",
