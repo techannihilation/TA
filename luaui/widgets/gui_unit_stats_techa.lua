@@ -325,7 +325,7 @@ function widget:DrawScreen()
 	RectRound(cX-bgpadding+cornersize, cY-bgpadding+cornersize, cX+(gl.GetTextWidth(text)*fontSize)+bgpadding-cornersize, cY+(fontSize/2)+bgpadding-cornersize, bgcornerSize)
 	
 	--need to check scaling
-	local tX = (cX-bgpadding+cornersize + cX+(gl.GetTextWidth(text)*fontSize)+bgpadding-cornersize) * 0.55
+	local tX = (cX-bgpadding+cornersize + cX+(gl.GetTextWidth(text)*fontSize)+bgpadding-cornersize) * 0.54
 	local tY = cY *0.79
 	local iconsize = 96
 	gl.Color(1, 1, 1)
