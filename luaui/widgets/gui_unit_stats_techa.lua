@@ -317,14 +317,6 @@ function widget:DrawScreen()
 	
 	local text = yellow .. uDef.humanName .. white .. "    " .. uDef.name .. "    (#" .. uID .. " , "..GetTeamColorCode(uTeam) .. GetTeamName(uTeam) .. white .. ")"
 	
-	--needs a better position
-	glColor(0,0,0,0.73)
-	gl.Rect(cX, cY+17, cX+138, cY+128)
-	gl.Color(1, 1, 1)
-  	gl.Texture('#' .. uDefID)
-  	gl.TexRect(cX, cY+17, cX+138, cY+128)
-  	gl.Texture(false)
-
 	local cornersize = 0
 	glColor(0,0,0,0.73)
 	RectRound(cX-bgpadding+cornersize, cY-bgpadding+cornersize, cX+(gl.GetTextWidth(text)*fontSize)+bgpadding-cornersize, cY+(fontSize/2)+bgpadding-cornersize, bgcornerSize)
@@ -332,6 +324,15 @@ function widget:DrawScreen()
 	glColor(1,1,1,0.025)
 	RectRound(cX-bgpadding+cornersize, cY-bgpadding+cornersize, cX+(gl.GetTextWidth(text)*fontSize)+bgpadding-cornersize, cY+(fontSize/2)+bgpadding-cornersize, bgcornerSize)
 	
+	--need to check scaling
+	local tX = (cX-bgpadding+cornersize + cX+(gl.GetTextWidth(text)*fontSize)+bgpadding-cornersize) * 0.55
+	local tY = cY *0.79
+	local iconsize = 96
+	gl.Color(1, 1, 1)
+  	gl.Texture('#' .. uDefID)
+  	gl.TexRect(tX, tY, tX+iconsize, tY+iconsize)
+  	gl.Texture(false)
+
 	if (WG['guishader_api'] ~= nil) then
 		guishaderEnabled = true
 		WG['guishader_api'].InsertRect(cX-bgpadding, cY-bgpadding, cX+(gl.GetTextWidth(text)*fontSize)+bgpadding, cY+(fontSize/2)+bgpadding, 'unit_stats_title')
