@@ -366,7 +366,6 @@ local stopMorphOnDevolution = true --// should morphing stop during devolution
 --------------------------------------------------------------------------------
 
 local morphDefs  = {} --// make it global in Initialize()
-local extraUnitMorphDefs = {} -- stores extra morphs data
 local morphUnits = {} --// make it global in Initialize()
 local reqDefIDs  = {} --// all possible unitDefID's, which are used as a requirement for a morph
 local morphToStart = {} -- morphes to start next frame
@@ -689,9 +688,6 @@ local function FinishMorph(unitID, morphData)
     SpSetUnitPosition(newUnit, px, py, pz)
   end
 
-  if (extraUnitMorphDefs[unitID] ~= nil) then
-    -- nothing here for now
-  end
   --Spring.Echo(morphData.def.facing)
   SpSetUnitRotation(newUnit, 0, -h * pi / 32768, 0)
 
@@ -1155,7 +1151,7 @@ function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOpt
       --Spring.Echo('Morph gadget: AllowCommand morph cannot be here!')
     elseif (cmdID > CMD_MORPH and cmdID <= CMD_MORPH+MAX_MORPH) then
       --Spring.Echo('Morph gadget: AllowCommand specific morph')
-      morphDef = (morphDefs[unitDefID] or {})[cmdID] or extraUnitMorphDefs[unitID]
+      morphDef = (morphDefs[unitDefID] or {})[cmdID]
       cmdp = -cmdID
     end
     if ((morphDef)and
@@ -1206,7 +1202,7 @@ function gadget:CommandFallback(unitID, unitDefID, teamID, cmdID, cmdParams, cmd
     end
   else
     --Spring.Echo('Morph gadget: CommandFallback specific morph')
-    morphDef = (morphDefs[unitDefID] or {})[cmdID] or extraUnitMorphDefs[unitID]
+    morphDef = (morphDefs[unitDefID] or {})[cmdID]
     cmdp = -cmdID
   end
   if (not morphDef) then
@@ -1292,7 +1288,6 @@ local drawProgress = true --//a widget can do this job too (see healthbars)
 
 local morphUnits = {}
 local morphDefs = {}
-local extraUnitMorphDefs = {}
 
 local MAX_MORPH = 0 --// will increase dynamically
 
@@ -1346,7 +1341,7 @@ local function StartMorph(cmd, unitID, unitDefID, morphID)
         else readTeam = GetLocalTeamID() end
       CallAsTeam({ ['read'] = readTeam }, function()
         if (unitID)and(IsUnitVisible(unitID)) then
-          Script.LuaUI.MorphStart(unitID, (morphDefs[unitDefID] or {})[morphID] or nil) -- or SYNCED.extraUnitMorphDefs[unitID])
+          Script.LuaUI.MorphStart(unitID, (morphDefs[unitDefID] or {})[morphID] or nil)
         end
       end)
     end
@@ -1384,7 +1379,7 @@ local function StartMph(cmd, unitID, unitDefID, prog, incr, mID, tID, cmdp)
     tdef =(morphDefs[unitDefID] or {})[GG.MorphInfo[unitDefID][cmdp]]
   end
   if cmdp ~= nil and cmdp < 0 then  
-    tdef = (morphDefs[unitDefID] or {})[-cmdp] or extraUnitMorphDefs[unitID]
+    tdef = (morphDefs[unitDefID] or {})[-cmdp]
   end
     
   morphUnits[unitID] = {
