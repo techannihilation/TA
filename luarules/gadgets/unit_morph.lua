@@ -366,9 +366,7 @@ local stopMorphOnDevolution = true --// should morphing stop during devolution
 --------------------------------------------------------------------------------
 
 local morphDefs  = {} --// make it global in Initialize()
-local extraUnitMorphDefs = {} -- stores mainly planetwars morphs
-local hostName = nil -- planetwars hostname
-local PWUnits = {} -- planetwars units
+local extraUnitMorphDefs = {} -- stores extra morphs data
 local morphUnits = {} --// make it global in Initialize()
 local reqDefIDs  = {} --// all possible unitDefID's, which are used as a requirement for a morph
 local morphToStart = {} -- morphes to start next frame
@@ -532,15 +530,6 @@ local function AddMorphCmdDesc(unitID, unitDefID, teamID, morphDef, teamTech)
   morphCmdDesc.text = nil
 end
 
-
-local function AddExtraUnitMorph(unitID, unitDef, teamID, morphDef)  -- adds extra unit morph (planetwars morphing)
-    morphDef = BuildMorphDef(unitDef, morphDef)
-    extraUnitMorphDefs[unitID] = morphDef
-    AddMorphCmdDesc(unitID, unitDef.id, teamID, morphDef, 0)
-end
-
-
-
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -703,21 +692,8 @@ local function FinishMorph(unitID, morphData)
   if (extraUnitMorphDefs[unitID] ~= nil) then
     -- nothing here for now
   end
-  if (hostName ~= nil) and PWUnits[unitID] then
-    -- send planetwars deployment message
-    PWUnit = PWUnits[unitID]
-    PWUnit.currentDef=udDst
-    local data = PWUnit.owner..","..defName..","..floor(px)..","..floor(pz)..",".."S" -- todo determine and apply smart orientation of the structure
-    Spring.SendCommands("w "..hostName.." pwmorph:"..data)
-    extraUnitMorphDefs[unitID] = nil
-    GG.PlanetWars.units[unitID] = nil
-    GG.PlanetWars.units[newUnit] = PWUnit
-    SendToUnsynced('PWCreate', unitTeam, newUnit)
-  elseif (not morphData.def.facing) then  -- set rotation only if unit is not planetwars and facing is not true
-    --Spring.Echo(morphData.def.facing)
-    SpSetUnitRotation(newUnit, 0, -h * pi / 32768, 0)
-  end
-
+  --Spring.Echo(morphData.def.facing)
+  SpSetUnitRotation(newUnit, 0, -h * pi / 32768, 0)
 
   --//copy experience
   local newXp = SpGetUnitExperience(unitID)*XpScale
@@ -826,13 +802,6 @@ function gadget:Initialize()
     GetUnitRank = GG.rankHandler.GetUnitRank
     RankToXp    = GG.rankHandler.RankToXp
   end
-
-  -- self linking for planetwars
-  GG['morphHandler'] = {}
-  GG['morphHandler'].AddExtraUnitMorph = AddExtraUnitMorph
-
-  hostName = GG.PlanetWars and GG.PlanetWars.options.hostname or nil
-  PWUnits = GG.PlanetWars and GG.PlanetWars.units or {}
 
   if (type(GG.UnitRanked)~="table") then GG.UnitRanked = {} end
   table.insert(GG.UnitRanked, UnitRanked)
