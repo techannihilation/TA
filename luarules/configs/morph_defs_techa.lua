@@ -930,8 +930,16 @@ local morphDefs = {
 		time = 30,
 		xp = 0.50,
 	},
-		
-
+	tllfirestarter = {
+	     	into = 'tllaak',
+		time = 30,
+		xp = 0.20,	
+	},
+	tllhoplit = {
+	     	into = 'tllpuncher',
+		time = 30,
+		xp = 0.20,	
+	},
 }
 
 
