@@ -16,7 +16,7 @@ return {
 		category = "ALL CONSTR MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Shielded Experimental Engineer,
+		description = "Shielded Experimental Engineer",
 		energymake = 100,
 		energystorage = 100,
 		explodeas = "BIG_UNITEX",
