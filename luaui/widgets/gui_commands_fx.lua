@@ -438,21 +438,22 @@ end
 
 function addUnitCommand(unitID, unitDefID, cmdID)
 	-- record that a command was given (note: cmdID is not used, but useful to record for debugging)
-  if string.sub(UnitDefs[unitDefID].name, 1, 7) == "critter" then return end
-  if unitID and (CONFIG[cmdID] or cmdID==CMD_INSERT or cmdID<0) then
-    maxCommand = maxCommand + 1
-    commands[maxCommand] = {ID=cmdID,time=osClock,unitID=unitID,draw=false,selected=spIsUnitSelected(unitID),udid=unitDefID} -- command queue is not updated until next gameframe
-  end
+	if unitID and (CONFIG[cmdID] or cmdID==CMD_INSERT or cmdID<0) then
+    	maxCommand = maxCommand + 1
+    	commands[maxCommand] = {ID=cmdID,time=osClock,unitID=unitID,draw=false,selected=spIsUnitSelected(unitID),udid=unitDefID} -- command queue is not updated until next gameframe
+  	end
 end
 
+
 local newUnitCommands = {}
+
 function widget:UnitCommand(unitID, unitDefID, teamID, cmdID, _, _)
-		if newUnitCommands[unitID] == nil then		-- only process the first in queue, else when super large queue order is given widget will hog memory and crash
+	if newUnitCommands[unitID] == nil then		-- only process the first in queue, else when super large queue order is given widget will hog memory and crash
     	addUnitCommand(unitID, unitDefID, cmdID)
     	newUnitCommands[unitID] = true
     else
-			newUnitCommands[unitID] = {unitDefID, cmdID}
-		end
+		newUnitCommands[unitID] = {unitDefID, cmdID}
+	end
 end
 
 function ExtractTargetLocation(a,b,c,d,cmdID)
