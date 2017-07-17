@@ -155,7 +155,7 @@ return {
 				cratermult = 0,
 				duration = 10,
 				energypershot = 35,
-				explosiongenerator = "custom:custom:tlllighning_exp",
+				explosiongenerator = "custom:tlllighning_exp",
 				firestarter = 50,
 				impactonly = 1,
 				impulseboost = 0,
