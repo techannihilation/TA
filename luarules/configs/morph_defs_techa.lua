@@ -227,27 +227,27 @@ local morphDefs = {
 	armanni = {
 		into = 'armanni1',
 		time = 120,
-		xp = 1.07,
+		xp = 1.00,
 	},
 	cordoom = {
 		into = 'cordoom1',
 		time = 120,
-		xp = 1.07,
+		xp = 1.00,
 	},
 	corflak = {
 		into = 'corpre',
 		time = 120,
-		xp = 1.07,
+		xp = 1.00,
 	},
 	armflak = {
 		into = 'armhys',
 		time = 120,
-		xp = 1.07,
+		xp = 1.00,
 	},
 	tllflak = {
 		into = 'tlldb',
 		time = 120,
-		xp = 1.07,
+		xp = 1.00,
 	},
 	armsilo = {
 		into = 'armsilo1',
@@ -939,6 +939,11 @@ local morphDefs = {
 	     	into = 'tllpuncher',
 		time = 30,
 		xp = 0.20,	
+	},
+	tllflak = {
+		into = 'tlldb',
+		time = 120,
+		xp = 1.00,
 	},
 }
 
