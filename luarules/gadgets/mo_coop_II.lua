@@ -106,7 +106,7 @@ if gadgetHandler:IsSyncedCode() then
 		end
 	end
 
-	function gadget:AllowStartPosition(playerID, teamID, readyState, cx, cy, cz, rx, ry, rz)
+	function gadget:AllowStartPosition(playerID, teamID, readyState, x, y, z, rx, ry, rz)
 		--Spring.Echo('allowstart',x,z,playerID)
 		for otherplayerID, startPos in pairs(coopStartPoints) do
 			if startPos[1]==x and startPos[3]==z then

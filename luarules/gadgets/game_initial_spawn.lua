@@ -250,7 +250,7 @@ end
 -- Startpoints
 ----------------------------------------------------------------
 
-function gadget:AllowStartPosition(playerID, teamID, readyState, cx, cy, cz, rx, ry, rz)
+function gadget:AllowStartPosition(playerID, teamID, readyState, x, y, z, rx, ry, rz)
     -- readyState:
   
     -- 0: player did not place startpoint, is unready 
