@@ -52,10 +52,9 @@ return {
 		workertime = 600,
 		yardmap = "oooooooooooo oooooooooooo oooooooooooo oooooooooooo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ",
 		buildoptions = {
-			[1] = "tllbuilderlvl3",
-			[2] = "tlldoc",
-			[3] = "irritator",
-			[4] = "tllcolossus",
+			[1] = "tlldoc",
+			[2] = "irritator",
+			[3] = "tllcolossus",
 		},
 		customparams = {
 			buildpic = "tllprototype.png",
