@@ -137,7 +137,7 @@ return {
 				laserflaresize = 5,
 				name = "Cybran_Monkeylord_Beam",
 				noselfdamage = true,
-				range = 1150,
+				range = 1000,
 				reloadtime = 1,
 				rgbcolor = "1 0 0",
 				soundhitdry = "",
