@@ -29,7 +29,7 @@ return {
 		losemitheight = 76,
 		maneuverleashlength = 1250,
 		mass = 19200,
-		maxdamage = 177500,
+		maxdamage = 157500,
 		maxslope = 36,
 		maxvelocity = 1.2,
 		maxwaterdepth = 100,
@@ -195,9 +195,9 @@ return {
 				def = "Cybran_Monkeylord_Beam",
 				onlytargetcategory = "SURFACE",
 			},
-			--[3] = {
-			--	def = "Cybran_Monkeylord_Shield",
-			--},
+			[3] = {
+				def = "Cybran_Monkeylord_Shield",
+			},
 		},
 	},
 }
