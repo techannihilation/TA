@@ -17,7 +17,7 @@ return {
 		category = "ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTVTOL WEAPON SURFACE",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Aircraft Carrier with Anti-Nuke",
+		description = "Aircraft Carrier with Lon range Anti-Nuke",
 		energymake = -100,
 		energyuse = 0,
 		explodeas = "ATOMIC_BLAST",
