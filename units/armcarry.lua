@@ -135,7 +135,7 @@ return {
 				avoidfeature = false,
 				avoidfriendly = false,
 				collidefriendly = false,
-				coverage = 1680,
+				coverage = 2380,
 				craterareaofeffect = 630,
 				craterboost = 0,
 				cratermult = 0,
