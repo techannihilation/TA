@@ -112,7 +112,7 @@ return {
 				avoidfeature = false,
 				avoidfriendly = false,
 				collidefriendly = false,
-				coverage = 2000,
+				coverage = 2380,
 				craterareaofeffect = 630,
 				craterboost = 0,
 				cratermult = 0,
@@ -144,7 +144,7 @@ return {
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 3000,
 				damage = {
-					default = 500,
+					default = 1500,
 					subs = 5,
 				},
 			},
