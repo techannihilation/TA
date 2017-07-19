@@ -15,7 +15,7 @@ return {
 		category = "ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		corpse = "armscab_dead",
 		defaultmissiontype = "Standby",
-		description = "Mobile Long Range Anti-Nuke",
+		description = "All-terrain Long Range Anti-Nuke",
 		energymake = -100,
 		energystorage = 1000,
 		energyuse = 0,
