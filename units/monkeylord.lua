@@ -16,7 +16,7 @@ return {
 		category = "ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		corpse = "monkeylord_dead",
 		defaultmissiontype = "Standby",
-		description = "Hight energy weapon Hexapod",
+		description = "Experimental Shielded Hexapod",
 		energystorage = 10000,
 		explodeas = "NUCLEAR_MISSILE2",
 		firestandorders = 1,
