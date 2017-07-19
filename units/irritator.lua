@@ -148,10 +148,8 @@ return {
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
 				soundstart = "Lghthvy1",
-				sprayangle = 1750,
 				texture1 = "strike",
 				thickness = 2,
-				tolerance = 12000,
 				turret = true,
 				weapontimer = 1,
 				weapontype = "LightningCannon",
@@ -273,6 +271,8 @@ return {
 			[2] = {
 				def = "TESLA_CANON",
 				onlytargetcategory = "SURFACE",
+				maindir = "0 0 1",
+				maxangledif = 120,
 			},
 			[3] = {
 				def = "IRRITATOR_ROCKET",
