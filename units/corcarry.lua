@@ -21,7 +21,7 @@ return {
 		collisionvolumetype = "CylZ",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Aircraft Carrier with Lon range Anti-Nuke",
+		description = "Aircraft Carrier with long range Anti-Nuke",
 		energymake = -100,
 		energystorage = 1500,
 		energyuse = 25,
