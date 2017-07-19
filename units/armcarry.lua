@@ -24,7 +24,7 @@ return {
 		description = "Aircraft Carrier with Anti-Nuke",
 		energymake = 250,
 		energystorage = 1500,
-		energyuse = 0,
+		energyuse = -100,
 		explodeas = "CRAWL_BLAST",
 		firestandorders = 1,
 		floater = true,
