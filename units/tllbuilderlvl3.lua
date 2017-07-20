@@ -65,6 +65,7 @@ return {
 			[9] = "tllgazelle",
 			[10] = "tllion",
 			[11] = "tllvanya",
+			[12] = "tllprototype",
 		},
 		customparams = {
 			faction = "TLL",
