@@ -79,8 +79,7 @@ return {
 			[25] = "tllap",
 			[26] = "tllaap",
 			[27] = "tlleap",
-			[28] = "tllprototype",
-			
+			[28] = "tllprototype",			
 		},
 		customparams = {
 			faction = "TLL",
