@@ -47,6 +47,8 @@ local GL_GREATER = GL.GREATER
 local morphDefs = VFS.Include('LuaRules/Configs/morph_defs_techa.lua', nil, VFS.RAW_FIRST)
 local morphRanks ={}
 
+local CMD_MORPH = 31410
+local MAX_MORPH = 250 -- ATM its 173
 
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
@@ -165,23 +167,6 @@ function widget:Shutdown()
   end
 end
 
-function widget:MousePress(mx, my, button)
-  local alt,ctrl,meta,shift = Spring.GetModKeyState()
-  if ctrl and button == 1 then
-    local sel = Spring.GetSelectedUnits()
-    for i, unitIDs in pairs(sel) do
-      local unitDefID = Spring.GetUnitDefID(unitIDs)
-      if smallList[unitIDs] then 
-        table.insert(morphableList,unitIDs)
-      end
-    end
-    if #morphableList>0 then
-      Spring.SelectUnitArray(morphableList,false)
-    end
-  end
-  morphableList = {}
-  return false
-end
 
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
@@ -261,8 +246,28 @@ end
 
 function widget:GameFrame(frame)
   if spGetSpectatingState() then
-    return
+    --return
   end
+
+  if frame%5==0 then
+   --Spring.Echo("current cmdid", WG["cmdID"])
+    if WG["cmdID"] and (WG["cmdID"] >= CMD_MORPH and WG["cmdID"] <= (CMD_MORPH+200)) then
+      WG["cmdID"] = nil
+      local sel = Spring.GetSelectedUnits()
+      for i, unitIDs in pairs(sel) do
+        local unitDefID = Spring.GetUnitDefID(unitIDs)
+        if smallList[unitIDs] then
+          --Spring.Echo(unitIDs)
+          table.insert(morphableList,unitIDs)
+        end
+      end
+      if #morphableList>0 then
+        Spring.SelectUnitArray(morphableList,false)
+      end
+    end
+    morphableList = {}
+  end
+
   if frame%129==0 then
     for unitID,v in pairs(smallList) do
       local myteam = Spring.GetMyTeamID()

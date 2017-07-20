@@ -180,7 +180,7 @@ local function CreateGrid(r)
 		
 		active=false,
 		onupdate=function(self)
-			self.active = false
+		self.active = false
 		end,
 	}
 	
@@ -212,10 +212,13 @@ local function CreateGrid(r)
 			end},
 		},
 		mouseover=function(mx,my,self)
+			if self.cmdID and self.cmdID > 0 then
+				WG["cmdID"] = self.cmdID
+				--Spring.Echo(WG["cmdID"],self.cmdname)
+			end
 			mouseoverhighlight.px = self.px
 			mouseoverhighlight.py = self.py
 			mouseoverhighlight.active = nil
-			
 			SetTooltip(self.tooltip)
 		end,
 		
@@ -298,6 +301,7 @@ local function CreateGrid(r)
 end
 
 local function UpdateGrid(g,cmds,ordertype)
+
 	if (#cmds==0) then
 		g.background.active = false
 	else
@@ -339,7 +343,7 @@ local function UpdateGrid(g,cmds,ordertype)
 		icon.tooltip = cmd.tooltip
 		icon.active = nil --activate
 		icon.cmdname = cmd.name
-		
+		icon.cmdID = cmd.id
 		icon.texture = buttonTexture
 		if (cmd.texture) then
 			if (cmd.texture ~= "") then
