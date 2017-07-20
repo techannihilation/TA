@@ -216,7 +216,7 @@ return {
 				name = "HeavyRockets",
 				noselfdamage = true,
 				proximitypriority = -1,
-				range = 1050,
+				range = 1400,
 				reloadtime = 2,
 				smoketrail = false,
 				soundhitdry = "xplosml2",
@@ -236,7 +236,7 @@ return {
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 4000,
 				damage = {
-					default = 500,
+					default = 960,
 					subs = 5,
 				},
 			},
