@@ -252,7 +252,6 @@ function widget:GameFrame(frame)
   if frame%5==0 then
    --Spring.Echo("current cmdid", WG["cmdID"])
     if WG["cmdID"] and (WG["cmdID"] >= CMD_MORPH and WG["cmdID"] <= (CMD_MORPH+200)) then
-      WG["cmdID"] = nil
       local sel = Spring.GetSelectedUnits()
       for i, unitIDs in pairs(sel) do
         local unitDefID = Spring.GetUnitDefID(unitIDs)

@@ -12,6 +12,10 @@ function widget:GetInfo()
 end
 local NeededFrameworkVersion = 8
 local CanvasX,CanvasY = 1272,734 --resolution in which the widget was made (for 1:1 size)
+local iconsizeMaster = 96
+local iconsize = iconsizeMaster
+local unitDefID
+local posx,posy = 0,0
 --1272,734 == 1280,768 windowed
 
 --todo: sy adjustment
@@ -21,7 +25,7 @@ local cbackground, cborder = include("Configs/ui_config.lua")
 local Config = {
 	tooltip = {
 		px = 0,py = CanvasY-(12*6+5*2), --default start position
-		sx = 300,sy = 12*6+5*2, --background size
+		sx = 300+(iconsize*1.2),sy = 12*6+5*2, --background size
 		
 		fontsize = 12,
 		
@@ -124,6 +128,28 @@ local function getEditedCurrentTooltip()
 	local limExp = currentExp and currentExp/(1+currentExp) or 1
 	--replace with limexp: exp/(1+exp) since all spring exp effects are linear in limexp, multiply by 10 because people like big numbers instead of [0,1]
 	text = currentExp and text:gsub(expPattern,string.format("Experience %.2f", currentExp) ) or text
+	local mx,my,gx,gy,gz,tooltipID
+    mx,my = Spring.GetMouseState()
+    if mx and my then
+    local _,pos = Spring.TraceScreenRay(mx,my,true,true)
+        if pos then
+            gx,gy,gz=unpack(pos)
+        end
+        local kind,var1 = Spring.TraceScreenRay(mx,my,false,true)
+        if kind=="unit" then
+            tooltipID = var1
+        end
+    end
+    if tooltipID then
+        unitDefID=Spring.GetUnitDefID(tooltipID)
+        iconsize=iconsizeMaster
+    elseif WG["cmdID"] and WG["cmdID"] < 0 then
+    	unitDefID=math.abs(WG["cmdID"])
+    	iconsize=iconsizeMaster
+    else
+    	unitDefID=nil
+    	iconsize=0
+    end
 	return text
 end
 
@@ -170,7 +196,7 @@ local function createtooltip(r)
 				else
 					self.sx = r.sx * Screen.vsy/CanvasY
 				end
-				text.px = self.px + r.margin
+				text.px = self.px + r.margin + iconsize
 			else --right side of screen
 				if ((self.sx-r.margin*2 -1) <= text.getwidth()) then
 					self.px = self.px - ((text.getwidth() + r.margin*2) - self.sx)
@@ -202,6 +228,16 @@ local function createtooltip(r)
 	}
 end
 
+function widget:DrawScreen()
+	if unitDefID then
+		gl.Color(1, 1, 1, 1)
+  		gl.Texture('#' .. unitDefID) -- Screen.vsx,Screen.vsy
+  		gl.TexRect(tooltip.background.px, Screen.vsy - tooltip.background.py - iconsize, tooltip.background.px + iconsize, Screen.vsy - tooltip.background.py)
+  		gl.Texture(false)
+  	end
+end
+
+
 function widget:Initialize()
 	PassedStartupCheck = RedUIchecks()
 	if (not PassedStartupCheck) then return end
@@ -229,7 +265,7 @@ function widget:GetConfigData() --save config
 		local unscale = CanvasY/vsy --needed due to autoresize, stores unresized variables
 		Config.tooltip.px = tooltip.background.px * unscale
 		Config.tooltip.py = tooltip.background.py * unscale
-		return {Config=Config}
+		--return {Config=Config}
 	end
 end
 function widget:SetConfigData(data) --load config

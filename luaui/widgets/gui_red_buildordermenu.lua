@@ -212,7 +212,7 @@ local function CreateGrid(r)
 			end},
 		},
 		mouseover=function(mx,my,self)
-			if self.cmdID and self.cmdID > 0 then
+			if self.cmdID then
 				WG["cmdID"] = self.cmdID
 				--Spring.Echo(WG["cmdID"],self.cmdname)
 			end
@@ -301,7 +301,6 @@ local function CreateGrid(r)
 end
 
 local function UpdateGrid(g,cmds,ordertype)
-
 	if (#cmds==0) then
 		g.background.active = false
 	else
@@ -615,6 +614,7 @@ function widget:CommandsChanged()
 end
 function widget:Update()
 	onWidgetUpdate()
+	WG["cmdID"] = nil
 	if (updatehax or firstupdate) then
 		if (firstupdate) then
 			haxlayout()
