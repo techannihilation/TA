@@ -107,7 +107,7 @@ unitTargets = {} -- data holds all unitID data
 --------------------------------------------------------------------------------
 -- Commands
 
-local tooltipText = 'Sets a top priority attack target, to be used if within range (not removed by move commands)'
+local tooltipText = 'Sets a top priority attack target\nTo be used if within range (not removed by move commands)'
 
 local unitSetTargetRectangleCmdDesc = {
 	id		= CMD_UNIT_SET_TARGET_RECTANGLE,
