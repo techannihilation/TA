@@ -771,6 +771,13 @@ local morphDefs = {
 		metal = 2700,
 		energy = 33000,
 	},
+	tllnanotc2 = {
+		into = 'tllnanotc3',
+		tech = 3,
+		time = 120,
+		metal = 4540,
+		energy = 60000,
+	},
 	tllfnanotc = {
 		into = 'tllfnanotc1',
 		tech = 1,
