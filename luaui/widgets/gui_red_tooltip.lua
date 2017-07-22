@@ -123,6 +123,10 @@ end
 local function getEditedCurrentTooltip()
 	local text = sGetCurrentTooltip()
 	--extract the exp value with regexp
+	local expMorphPat = "UnitDefID (%d+)\n"
+	local MorphDefID = tonumber(text:match(expMorphPat)) or nil
+    text = text:gsub(expMorphPat,string.format("")) or text
+
 	local expPattern = "Experience (%d+%.%d%d)"
 	local currentExp = tonumber(text:match(expPattern))
 
@@ -141,7 +145,10 @@ local function getEditedCurrentTooltip()
             tooltipID = var1
         end
     end
-    if tooltipID then
+    if MorphDefID then
+    	unitDefID=MorphDefID
+        iconsize=iconsizeMaster
+    elseif tooltipID then
         unitDefID=Spring.GetUnitDefID(tooltipID)
         iconsize=iconsizeMaster
     elseif WG["cmdID"] and WG["cmdID"] < 0 then

@@ -401,7 +401,7 @@ local GetUnitRank = function() return 0 end
 --------------------------------------------------------------------------------
 
 local function SplitNames(name)
-  local Desc = "Morph "
+  local Desc = "Morph \n"
   local string = tostring(name)
   local longestword = 1
   for word in string.gmatch(string,"%w+") do 
@@ -428,6 +428,7 @@ end
 local function GetMorphToolTip(unitID, unitDefID, teamID, morphDef, teamTech, unitXP, unitRank, teamOwnsReqUnit)
   local ud = UnitDefs[morphDef.into]
   local tt = ''
+   tt = tt .. 'UnitDefID ' .. morphDef.into .. '\n'
   if (morphDef.text ~= nil) then
     tt = tt .. WhiteStr  .. morphDef.text .. '\n'
   else
