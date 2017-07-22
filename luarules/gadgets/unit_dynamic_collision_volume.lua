@@ -123,7 +123,7 @@ if (gadgetHandler:IsSyncedCode()) then
 					spSetPieceCollisionData(unitID, pieceIndex, false, 1, 1, 1, 0, 0, 0, 1, 1)
 				end
 			end
-		elseif UnitDefs[unitDefID].model.type=="3do" and not (Game.armorTypes[uDef.armorType] =="subs") then
+		elseif UnitDefs[unitDefID].modeltype=="3do" and not (Game.armorTypes[uDef.armorType] =="subs") then
 			local rs, hs, ws, ars, ahs
 			if (spGetUnitRadius(unitID)>47 and not UnitDefs[unitDefID].canFly) then
 				rs, hs, ws = 0.59, 0.59, 0.59
@@ -152,10 +152,10 @@ if (gadgetHandler:IsSyncedCode()) then
 				spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*ars, spGetUnitHeight(unitID)*ahs)
 			end
 		end
-		if UnitDefs[unitDefID].model.type=="3do" and (Game.armorTypes[uDef.armorType] =="subs") then
+		if UnitDefs[unitDefID].modeltype=="3do" and (Game.armorTypes[uDef.armorType] =="subs") then
 			spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*0.45, spGetUnitHeight(unitID)*0.45)
 		end
-		if UnitDefs[unitDefID].model.type=="3do" and (Game.armorTypes[uDef.armorType] =="ships") and (Game.armorTypes[uDef.armorType] =="experimental_ships") then 
+		if UnitDefs[unitDefID].modeltype=="3do" and (Game.armorTypes[uDef.armorType] =="ships") and (Game.armorTypes[uDef.armorType] =="experimental_ships") then 
 			local bx,by,bz,mx,my,mz,ax,ay,az = Spring.GetUnitPosition(unitID,true,true) --basepoint,midpoint,aimpoint
 			local h = Spring.GetUnitHeight(unitID)
 			if by <= 0 and by + h >= 0 then
