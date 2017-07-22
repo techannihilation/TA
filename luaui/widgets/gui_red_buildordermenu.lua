@@ -21,6 +21,7 @@ local SpGetCmdDescIndex = Spring.GetCmdDescIndex
 local SpGetModKeyState = Spring.GetModKeyState
 
 local cbackground, cborder, cbuttonbackground = include("Configs/ui_config.lua")
+local update = 4.0
 
 local buttonTexture	= LUAUI_DIRNAME.."Images/button.png"
 
@@ -612,9 +613,15 @@ end
 function widget:CommandsChanged()
 	haxlayout()
 end
+
+function widget:GameFrame(frame)
+  if frame%5==0 then
+  	WG["cmdID"] = nil
+  end
+end
+
 function widget:Update()
 	onWidgetUpdate()
-	WG["cmdID"] = nil
 	if (updatehax or firstupdate) then
 		if (firstupdate) then
 			haxlayout()

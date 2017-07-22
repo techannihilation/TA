@@ -11,11 +11,12 @@ function widget:GetInfo()
 	}
 end
 local NeededFrameworkVersion = 8
-local CanvasX,CanvasY = 1272,734 --resolution in which the widget was made (for 1:1 size)
+local CanvasX,CanvasY = 1440,900 --resolution in which the widget was made (for 1:1 size)
 local iconsizeMaster = 96
 local iconsize = iconsizeMaster
 local unitDefID
-local posx,posy = 0,0
+local CMD_MORPH = 31410
+
 --1272,734 == 1280,768 windowed
 
 --todo: sy adjustment
@@ -25,7 +26,7 @@ local cbackground, cborder = include("Configs/ui_config.lua")
 local Config = {
 	tooltip = {
 		px = 0,py = CanvasY-(12*6+5*2), --default start position
-		sx = 300+(iconsize*1.2),sy = 12*6+5*2, --background size
+		sx = 320,sy = 12*6+5*2, --background size
 		
 		fontsize = 12,
 		
@@ -146,6 +147,15 @@ local function getEditedCurrentTooltip()
     elseif WG["cmdID"] and WG["cmdID"] < 0 then
     	unitDefID=math.abs(WG["cmdID"])
     	iconsize=iconsizeMaster
+    elseif WG["cmdID"] and (WG["cmdID"] >= CMD_MORPH and WG["cmdID"] <= CMD_MORPH+250) then
+    	--todo
+    	iconsize=0
+    elseif Spring.GetSelectedUnitsCount() == 1 then
+    	unitID=Spring.GetSelectedUnits()[1]
+    	if Spring.ValidUnitID(unitID) then
+    		unitDefID=Spring.GetUnitDefID(unitID)
+    		iconsize=iconsizeMaster
+    	end
     else
     	unitDefID=nil
     	iconsize=0
@@ -192,23 +202,22 @@ local function createtooltip(r)
 		onupdate=function(self)
 			if (self.px < (Screen.vsx/2)) then --left side of screen
 				if ((self.sx-r.margin*2) <= text.getwidth()) then
-					self.sx = (text.getwidth()+r.margin*2) -1
+					self.sx = ((text.getwidth()+r.margin*2) -1) + (iconsize*1.95)
 				else
-					self.sx = r.sx * Screen.vsy/CanvasY
+					self.sx = (r.sx * Screen.vsy/CanvasY) + (iconsize*1.95)
 				end
 				text.px = self.px + r.margin + iconsize
 			else --right side of screen
 				if ((self.sx-r.margin*2 -1) <= text.getwidth()) then
 					self.px = self.px - ((text.getwidth() + r.margin*2) - self.sx)
-					self.sx = (text.getwidth() + r.margin*2)
+					self.sx = (text.getwidth() + r.margin*2) + (iconsize*1.95)
 				else
 					self.px = self.px - ((r.sx * Screen.vsy/CanvasY) - self.sx)
-					self.sx = r.sx * Screen.vsy/CanvasY
+					self.sx = (r.sx * Screen.vsy/CanvasY ) + (iconsize*1.95)
 				end
-				text.px = self.px + r.margin
+				text.px = self.px + r.margin + iconsize
 			end
 		end,
-		
 		mouseover=function(mx,my,self)
 			text._mouseoverself = true
 		end,
