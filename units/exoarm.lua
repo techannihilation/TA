@@ -199,7 +199,7 @@ return {
 				craterboost = 0,
 				cratermult = 0,
 				name = "Electro-Magnetic Compression Cannon",
-				range = 750,
+				range = 700,
 				reloadtime = 1,
 				rgbcolor = "1.0 0.5 0.0",
 				soundhitdry = "lasrhit1",
