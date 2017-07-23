@@ -276,7 +276,13 @@ function widget:Initialize()
 		else
 			fragSrc = VFS.LoadFile("shaders\\deferred_lighting.glsl",VFS.ZIP)
 			--Spring.Echo('gfx_deferred_rendering.lua: Shader code:',fragSrc)
-			depthPointShader = glCreateShader({
+			depthPointShader = depthPointShader or glCreateShader({
+				defines = {
+					"#version 120\n",
+					"#define BEAM_LIGHT 0\n",
+					"#define CLIP_CONTROL " .. (Platform ~= nil and Platform.glSupportClipSpaceControl and 1 or 0) .. "\n"
+				},
+
 				vertex = vertSrc,
 				fragment = fragSrc,
 				uniformInt = {
@@ -300,8 +306,14 @@ function widget:Initialize()
 				uniformEyePosPoint       = glGetUniformLocation(depthPointShader, 'eyePos')
 				uniformViewPrjInvPoint   = glGetUniformLocation(depthPointShader, 'viewProjectionInv')
 			end
-			fragSrc="#define BEAM_LIGHT \n".. fragSrc
-			depthBeamShader = glCreateShader({
+			--fragSrc="#define BEAM_LIGHT \n".. fragSrc
+			depthBeamShader = depthBeamShader or glCreateShader({
+				defines = {
+					"#version 120\n",
+					"#define BEAM_LIGHT 1\n",
+					"#define CLIP_CONTROL " .. (Platform ~= nil and Platform.glSupportClipSpaceControl and 1 or 0) .. "\n"
+				},
+
 				vertex = vertSrc,
 				fragment = fragSrc,
 				uniformInt = {
@@ -448,7 +460,7 @@ function widget:DrawScreenEffects()
 				--Spring.Echo(Spring.GetDrawFrame(),i,pID)
 				no_duplicate_projectileIDs_hackyfix[pID] = true
 				local x,y,z=spGetProjectilePosition(pID)
-				--Spring.Echo("projectilepos=",x,y,z,'id',pID)
+				--ring.Echo("projectilepos=",x,y,z,'id',pID)
 				local weapon,piece=spGetProjectileType(pID)
 				if piece then
 					local explosionflags = spGetPieceProjectileParams(pID)
