@@ -52,68 +52,6 @@ local cX, cY
 
 local DAMAGE_PERIOD ,weaponInfo = VFS.Include('LuaRules/Configs/area_damage_defs.lua', nil, VFS.RAW_FIRST)
 
-local pplants = {
-	["aafus"] = true,
-	["afusionplant"] = true,
-	["amgeo"] = true,
-	["armadvsol"] = true,
-	["armckfus"] = true,
-	["armfor"] = true,
-	["armfus"] = true,
-	["armgeo"] = true,
-	["armgmm"] = true,
-	["armsolar"] = true,
-	["armtide"] = true,
-	["armuwfus"] = true,
-	["armuwfus1"] = true,
-	["armwin"] = true,
-	["cafus"] = true,
-	["cfusionplant"] = true,
-	["cmgeo"] = true,
-	["coradvsol"] = true,
-	["corbhmth"] = true,
-	["corbhmth1"] = true,
-	["corfus"] = true,
-	["corgeo"] = true,
-	["corsfus"] = true,
-	["corsolar"] = true,
-	["cortide"] = true,
-	["coruwfus"] = true,
-	["corwin"] = true,
-	["crnns"] = true,
-	["tlladvsolar"] = true,
-	["tllatidal"] = true,
-	["tllcoldfus"] = true,
-	["tllgeo"] = true,
-	["tllmedfusion"] = true,
-	["tllmegacoldfus"] = true,
-	["tllmohogeo"] = true,
-	["tllsolar"] = true,
-	["tllsolarns"] = true,
-	["tlltide"] = true,
-	["tlluwfusion"] = true,
-	["tllwindtrap"] = true,
-	["corawin"] = true,
-	["armawin"] = true,
-	["coratidal"] = true,
-	["armatidal"] = true,
-	["armlightfus"] = true,
-	["armuwlightfus"] = true,
-	["corlightfus"] = true,
-	["coruwlightfus"] = true,
-	["armgen"] = true,
-	["corgen"] = true,
-	["corgeo_mini"] = true,
-	["armgeo_mini"] = true,
-	["tllgeo_mini"] = true,
-	["armsolar"] = true,
-	["corsolar"] = true,
-	["crnns"] = true,
-	["tllsolar"] = true,
-	["tllsolarns"] = true,
-	["tlladvsolar"] = true,
-}
-
 local cbackground, cborder = include("Configs/ui_config.lua")
 local triggered = nil
 
@@ -282,7 +220,6 @@ function widget:DrawScreen()
 	end
 	
 	local text = Spring.GetCurrentTooltip()
-	--extract the exp value with regexp
 	local expMorphPat = "UnitDefID (%d+)\n"
 	local uDefID = tonumber(text:match(expMorphPat)) or nil
 	local OrderID = WG["cmdID"] or nil
