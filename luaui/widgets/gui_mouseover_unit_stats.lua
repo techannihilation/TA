@@ -1,7 +1,7 @@
 
 function widget:GetInfo()
 	return {
-		name      = "Morph Unit Stats",
+		name      = "Mouse Over Unit Stats",
 		desc      = "Shows detailed unit stats",
 		author    = "Niobium",
 		date      = "Jan 11, 2009",
@@ -285,15 +285,15 @@ function widget:DrawScreen()
 	--extract the exp value with regexp
 	local expMorphPat = "UnitDefID (%d+)\n"
 	local uDefID = tonumber(text:match(expMorphPat)) or nil
-    text = text:gsub(expMorphPat,string.format("")) or text
+	local OrderID = WG["cmdID"] or nil
+	if OrderID  and OrderID < 0 then
+		OrderID = math.abs(OrderID)
+		uDefID = OrderID
+	end
 
 	if not uDefID then RemoveGuishader() return end
 
 	local mx, my = spGetMouseState()
-
-	if not uDefID then
-		RemoveGuishader() return
-	end
 
 	local uDef = uDefs[uDefID]
 
