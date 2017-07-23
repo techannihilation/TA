@@ -262,11 +262,11 @@ return {
 				def = "EXO_BLAST",
 				onlytargetcategory = "SURFACE",
 			},
-			--[2] = {
-			--	badtargetcategory = "MEDIUM SMALL TINY",
-			--	def = "TEHLAZEROFDEWM1",
-			--	onlytargetcategory = "SURFACE",
-			--},
+			[2] = {
+				badtargetcategory = "MEDIUM SMALL TINY",
+				def = "TEHLAZEROFDEWM1",
+				onlytargetcategory = "SURFACE",
+			},
 			[3] = {
 				def = "BANTHA_ROCKET1",
 			},
