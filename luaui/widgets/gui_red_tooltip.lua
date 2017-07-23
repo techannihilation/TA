@@ -25,8 +25,8 @@ local cbackground, cborder = include("Configs/ui_config.lua")
 
 local Config = {
 	tooltip = {
-		px = 0,py = CanvasY-(12*6+5*2), --default start position
-		sx = 320,sy = 12*6+5*2, --background size
+		px = 0,py = CanvasY-(12*7+5*2), --default start position
+		sx = 320,sy = 12*7+5*2, --background size
 		
 		fontsize = 12,
 		
@@ -125,7 +125,9 @@ local function getEditedCurrentTooltip()
 	--extract the exp value with regexp
 	local expMorphPat = "UnitDefID (%d+)\n"
 	local MorphDefID = tonumber(text:match(expMorphPat)) or nil
-    text = text:gsub(expMorphPat,string.format("")) or text
+	if MorphDefID ~= nil then
+    	text = text:gsub(expMorphPat,string.format("")) or text
+	end
 
 	local expPattern = "Experience (%d+%.%d%d)"
 	local currentExp = tonumber(text:match(expPattern))
@@ -146,8 +148,8 @@ local function getEditedCurrentTooltip()
         end
     end
     if MorphDefID then
-    	unitDefID=MorphDefID
-        iconsize=iconsizeMaster
+    	--unitDefID=MorphDefID
+        --iconsize=iconsizeMaster
     elseif tooltipID then
         unitDefID=Spring.GetUnitDefID(tooltipID)
         iconsize=iconsizeMaster
@@ -281,7 +283,7 @@ function widget:GetConfigData() --save config
 		local unscale = CanvasY/vsy --needed due to autoresize, stores unresized variables
 		Config.tooltip.px = tooltip.background.px * unscale
 		Config.tooltip.py = tooltip.background.py * unscale
-		--return {Config=Config}
+		return {Config=Config}
 	end
 end
 function widget:SetConfigData(data) --load config
