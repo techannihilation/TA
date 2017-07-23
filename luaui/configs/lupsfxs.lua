@@ -102,7 +102,7 @@ plasmaball_corfus = {
   sizeGrowth   = 0.74,
   emitVector   = {0,0,0},
   emitRotSpread = 70,
-  texture      = 'bitmaps/lightningball.png',
+  texture      = 'bitmaps/techa_artwork/lightningball.png',
   count        = 2,
   repeatEffect = true,
   }
@@ -125,7 +125,7 @@ plasmaball_corsfus = {
   sizeGrowth   = 0.74,
   emitVector   = {0,0,0},
   emitRotSpread = 70,
-  texture      = 'bitmaps/lightningball.png',
+  texture      = 'bitmaps/techa_artwork/lightningball.png',
   count        = 3,
   repeatEffect = true,
   }
@@ -148,7 +148,7 @@ plasmaball_cafus = {
   sizeGrowth   = 0.74,
   emitVector   = {0,0,0},
   emitRotSpread = 70,
-  texture      = 'bitmaps/lightningball.png',
+  texture      = 'bitmaps/techa_artwork/lightningball.png',
   count        = 3,
   repeatEffect = true,
   }
@@ -171,7 +171,7 @@ plasmaball_crnns = {
   sizeGrowth   = 0.74,
   emitVector   = {0,0,0},
   emitRotSpread = 70,
-  texture      = 'bitmaps/lightningball.png',
+  texture      = 'bitmaps/techa_artwork/lightningball.png',
   count        = 3,
   repeatEffect = true,
   }
@@ -194,7 +194,7 @@ plasmaball_cfusionplant = {
   sizeGrowth   = 0.74,
   emitVector   = {0,0,0},
   emitRotSpread = 360,
-  texture      = 'bitmaps/lightningball.png',
+  texture      = 'bitmaps/techa_artwork/lightningball.png',
   count        = 5,
   repeatEffect = true,
   }
@@ -218,7 +218,7 @@ plasmaball_tllmedfusion = {
   sizeGrowth   = -1,
   emitVector   = {0,0,0},
   emitRotSpread = 360,
-  texture      = 'bitmaps/lightningball.png',
+  texture      = 'bitmaps/techa_artwork/lightningball.png',
   count        = 2,
   repeatEffect = true,
   }
@@ -242,7 +242,7 @@ plasmaball_tllcoldfus = {
   sizeGrowth   = -1,
   emitVector   = {0,0,0},
   emitRotSpread = 360,
-  texture      = 'bitmaps/lightningball.png',
+  texture      = 'bitmaps/techa_artwork/lightningball.png',
   count        = 2,
   repeatEffect = true,
   }
@@ -266,7 +266,7 @@ plasmaball_tllmegacoldfus = {
   sizeGrowth   = -1,
   emitVector   = {0,0,0},
   emitRotSpread = 360,
-  texture      = 'bitmaps/lightningball.png',
+  texture      = 'bitmaps/techa_artwork/lightningball.png',
   count        = 2,
   repeatEffect = true,
   }
