@@ -17,7 +17,7 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "All-terrain and amphibious Long Range Anti-Nuke",
-		energymake = -100,
+		energymake = 50,
 		energystorage = 1000,
 		energyuse = 0,
 		explodeas = "ATOMIC_BLAST",
