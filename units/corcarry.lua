@@ -139,7 +139,7 @@ return {
 				craterareaofeffect = 630,
 				craterboost = 0,
 				cratermult = 0,
-				energypershot = 8000,
+				energypershot = 25000,
 				explosiongenerator = "custom:FLASH4",
 				firestarter = 100,
 				flighttime = 120,
