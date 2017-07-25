@@ -18,7 +18,7 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Aircraft Carrier with long range Anti-Nuke",
-		energymake = -100,
+		energymake = 50,
 		energyuse = 0,
 		explodeas = "ATOMIC_BLAST",
 		floater = true,
