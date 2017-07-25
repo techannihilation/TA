@@ -18,7 +18,7 @@ return {
 		defaultmissiontype = "Standby",
 		description = "All-terrain and amphibious Long Range Anti-Nuke",
 		energymake = 50,
-		energystorage = 1000,
+		energystorage = 100,
 		energyuse = 0,
 		explodeas = "ATOMIC_BLAST",
 		firestandorders = 1,
