@@ -46,7 +46,7 @@ local xOffset = 25
 local yOffset = 25
 local useSelection = true
 
-local customFontSize = 18
+local customFontSize = 16
 
 local cX, cY
 
@@ -183,6 +183,9 @@ local maxWidth = 0
 local textBuffer = {}
 local textBufferCount = 0
 
+local textDistance = 15
+local startTimer = Spring.GetTimer()
+
 ------------------------------------------------------------------------------------
 -- Functions
 ------------------------------------------------------------------------------------
@@ -197,14 +200,14 @@ local function DrawText(t1, t2)
 	textBufferCount = textBufferCount + 1
 	textBuffer[textBufferCount] = {t1,t2,cX,cY}
 	cY = cY - fontSize
-	maxWidth = max(maxWidth, (gl.GetTextWidth(t1)*fontSize), (gl.GetTextWidth(t2)*fontSize)+(fontSize*6.5))
+	maxWidth = max(maxWidth, (gl.GetTextWidth(t1)*fontSize), (gl.GetTextWidth(t2)*fontSize)+(fontSize*textDistance))
 end
 
 local function DrawTextBuffer()
 	local num = #textBuffer
 	for i=1, num do
 		glText(textBuffer[i][1], textBuffer[i][3], textBuffer[i][4], fontSize, "o")
-		glText(textBuffer[i][2], textBuffer[i][3] + (fontSize*6.5), textBuffer[i][4], fontSize, "o")
+		glText(textBuffer[i][2], textBuffer[i][3] + (fontSize*textDistance), textBuffer[i][4], fontSize, "o")
 	end
 end
 
@@ -273,6 +276,7 @@ function widget:ViewResize(x,y)
 	init()
 end
 
+--local starttime = Spring.GetGameSecond()
 function widget:DrawScreen()
 	if triggered == nil then
 		if cbackground[4] == 0.54321 then
@@ -290,7 +294,16 @@ function widget:DrawScreen()
 		uDefID = OrderID
 	end
 
-	if not uDefID then RemoveGuishader() return end
+	if uDefID then
+		local time = Spring.DiffTimers(Spring.GetTimer(), startTimer)
+		--Spring.Echo(startTimer,time)
+  		if time < 1.5 then return end
+	end
+
+	if not uDefID then 
+		RemoveGuishader()
+		startTimer = Spring.GetTimer()
+	return end
 
 	local mx, my = spGetMouseState()
 
@@ -301,7 +314,7 @@ function widget:DrawScreen()
 	maxWidth = 0
 
 	cX = (vsx*.05) + xOffset
-	cY = vsy + yOffset
+	cY = vsy + (yOffset*.5)
 	cYstart = cY
 	
 	local text = yellow .. uDef.humanName .. white .. "    " .. uDef.name
@@ -443,7 +456,23 @@ function widget:DrawScreen()
 		DrawText("Move:", format("%.1f / %.1f / %.0f (Speed / Accel / Turn)", uDef.speed, 900 * uDef.maxAcc, simSpeed * uDef.turnRate * (180 / 32767)))
 	end
 
+	cY = cY - fontSize
 
+	-- Buildoptions
+	if uDef.buildOptions and #uDef.buildOptions > 0 then
+		
+		DrawText("Buildoption:","")
+		for i=1, #uDef.buildOptions do
+    		buildDefID = uDef.buildOptions[i] 
+    		local bDef = uDefs[buildDefID]
+    		DrawText(bDef.humanName, format(metalColor .. '%d' .. white .. ' / ' ..
+							energyColor .. '%d' .. white .. ' / ' ..
+							buildColor .. '%d', bDef.metalCost, bDef.energyCost, bDef.buildTime))
+    		index = 0
+    	end
+	end
+
+	cY = cY - fontSize
 
 	if uDef.buildSpeed > 0 then	DrawText('Build:', yellow .. uDef.buildSpeed) end
 	if uDef.buildDistance > 0 then DrawText("B Dist:", format(yellow .. "%d", uDef.buildDistance)) end
