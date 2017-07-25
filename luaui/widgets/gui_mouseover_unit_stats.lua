@@ -5,7 +5,7 @@ function widget:GetInfo()
 		desc      = "Shows detailed unit stats",
 		author    = "Niobium",
 		date      = "Jan 11, 2009",
-		version   = 1.3,
+		version   = 1.6,
 		license   = "GNU GPL, v2 or later",
 		layer     = -9999999999,
 		enabled   = true,  --  loaded by default?
@@ -13,6 +13,10 @@ function widget:GetInfo()
 end
 
 include("keysym.h.lua")
+---- 1.6
+-- Rework widget to show stats only on mouseover buildicons and morph icons
+-- Remove mass
+-- Show buildoptions and costs
 
 ---- v1.5
 -- Add large icon
