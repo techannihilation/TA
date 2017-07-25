@@ -16,7 +16,7 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Mobile Anti-Nuke",
-		energymake = -75,
+		energymake = 25,
 		energystorage = 1000,
 		energyuse = 0,
 		explodeas = "LARGE_BUILDINGEX",
