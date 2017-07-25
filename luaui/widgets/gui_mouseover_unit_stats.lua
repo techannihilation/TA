@@ -3,7 +3,7 @@ function widget:GetInfo()
 	return {
 		name      = "Mouse Over Unit Stats",
 		desc      = "Shows detailed unit stats",
-		author    = "Niobium",
+		author    = "Niobium, Nixtux",
 		date      = "Jan 11, 2009",
 		version   = 1.6,
 		license   = "GNU GPL, v2 or later",
