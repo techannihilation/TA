@@ -3,9 +3,9 @@ function widget:GetInfo()
 	return {
 		name      = "Unit Stats",
 		desc      = "Shows detailed unit stats",
-		author    = "Niobium",
+		author    = "Niobium, Nixtux",
 		date      = "Jan 11, 2009",
-		version   = 1.3,
+		version   = 1.6,
 		license   = "GNU GPL, v2 or later",
 		layer     = -9999999999,
 		enabled   = true,  --  loaded by default?
@@ -13,6 +13,10 @@ function widget:GetInfo()
 end
 
 include("keysym.h.lua")
+
+---- v1.6
+-- Add new tll units
+-- Remove mass
 
 ---- v1.5
 -- Add large icon
@@ -93,6 +97,7 @@ local pplants = {
 	["tlltide"] = true,
 	["tlluwfusion"] = true,
 	["tllwindtrap"] = true,
+	["tllawindtrap"] = true,
 	["corawin"] = true,
 	["armawin"] = true,
 	["coratidal"] = true,
@@ -103,6 +108,8 @@ local pplants = {
 	["coruwlightfus"] = true,
 	["armgen"] = true,
 	["corgen"] = true,
+	["tllgen"] = true,
+	["tllgen"] = true,
 	["corgeo_mini"] = true,
 	["armgeo_mini"] = true,
 	["tllgeo_mini"] = true,
@@ -488,7 +495,6 @@ function widget:DrawScreen()
 	if (uDef.captureSpeed > 0 and uDef.captureSpeed ~= uDef.buildSpeed) then DrawText("Capture:", format(yellow .. "%d", uDef.captureSpeed)) end
 	if (uDef.terraformSpeed > 0 and uDef.terraformSpeed ~= uDef.buildSpeed) then DrawText("Capture:", format(yellow .. "%d", uDef.terraformSpeed)) end
 
-	if uDef.mass > 0 then DrawText("Mass:", format(orange .. "%d", uDef.mass)) end
 	if uDef.isTransport and uDef.transportMass > 0 then DrawText("Transporter Max Mass:", format(orange .. "%d", uDef.transportMass)) end
 
 	cY = cY - fontSize
