@@ -57,11 +57,7 @@ if (gadgetHandler:IsSyncedCode()) then
 						local xs, ys, zs, xo, yo, zo, vtype, htype, axis, _ = spGetFeatureCollisionData(featID)
 						Spring.Echo(featureModel, xs, ys, zs, xo, yo, zo, vtype, htype, axis)
 						if (vtype>=3 and xs==ys and ys==zs) then
-							if Game.version > "91.0" then
-								spSetFeatureCollisionData(featID, xs, ys*0.75, zs,  xo, yo-ys*0.09, zo,  1, htype, 1)
-							else
-								spSetFeatureCollisionData(featID, xs, ys*0.75, zs,  xo, yo-ys*0.09, zo,  vtype, htype, axis)
-							end
+							spSetFeatureCollisionData(featID, xs, ys*0.75, zs,  xo, yo-ys*0.09, zo,  1, htype, 1)
 						end
 					end
 				end
