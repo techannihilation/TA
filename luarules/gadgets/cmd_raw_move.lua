@@ -6,7 +6,7 @@ function gadget:GetInfo()
 		date	= "June 12 2014",
 		license	= "GNU GPL, v2 or later",
 		layer	= 0,
-		enabled = true,
+		enabled = false,
 	}
 end
 
@@ -639,6 +639,11 @@ end
 function gadget:UnitCreated(unitID, unitDefID, teamID)
 	if (canMoveDefs[unitDefID]) then 
 		spInsertUnitCmdDesc(unitID, moveRawCmdDesc)
+		local cmdDescID = Spring.FindUnitCmdDesc(unitID, CMD_MOVE)
+		if (cmdDescID) then
+			Spring.RemoveUnitCmdDesc(unitID, cmdDescID)
+		end
+
 	end
 	if constructorBuildDistDefs[unitDefID] and not constructorByID[unitID] then
 		AddConstructor(unitID, constructorBuildDistDefs[unitDefID])
