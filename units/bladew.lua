@@ -125,7 +125,6 @@ return {
 					commanders = 30,
 					default = 400,
 					subs = 5,
-
 				},
 			},
 		},
