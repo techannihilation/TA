@@ -344,13 +344,28 @@ local morphDefs = {
 		time = 30,
 		tech = 1,
 	},
+	armjamt = {
+		into = 'armveil',
+		time = 30,
+		tech = 1,
+	},
 	corrad = {
 		into = 'corarad',
 		time = 30,
 		tech = 1,
 	},
+	corjamt = {
+		into = 'corshroud',
+		time = 30,
+		tech = 1,
+	},
 	tllradar = {
 		into = 'tllarad',
+		time = 30,
+		tech = 1,
+	},
+	tlljam = {
+		into = 'tllajam',
 		time = 30,
 		tech = 1,
 	},
@@ -548,7 +563,6 @@ local morphDefs = {
 		time = 120,
 		xp = 0.75,
 	},
-	armsam = {
 		into = 'armsam1',
 		time = 10,
 		xp = 0.05,
