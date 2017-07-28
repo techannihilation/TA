@@ -148,17 +148,14 @@ local function getEditedCurrentTooltip()
         end
     end
     if MorphDefID then
-    	--unitDefID=MorphDefID
-        --iconsize=iconsizeMaster
+    	unitDefID=MorphDefID
+        iconsize=iconsizeMaster
     elseif tooltipID then
         unitDefID=Spring.GetUnitDefID(tooltipID)
         iconsize=iconsizeMaster
     elseif WG["cmdID"] and WG["cmdID"] < 0 then
     	unitDefID=math.abs(WG["cmdID"])
     	iconsize=iconsizeMaster
-    elseif WG["cmdID"] and (WG["cmdID"] >= CMD_MORPH and WG["cmdID"] <= CMD_MORPH+250) then
-    	--todo
-    	iconsize=0
     elseif Spring.GetSelectedUnitsCount() == 1 then
     	unitID=Spring.GetSelectedUnits()[1]
     	if Spring.ValidUnitID(unitID) then

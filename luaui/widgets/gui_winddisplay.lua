@@ -77,6 +77,7 @@ local windValueDrawList     = {}
 
 local cbackground, cborder, cbuttonbackground = include("Configs/ui_config.lua")
 local triggered = nil
+local gamestarted  = nil
 --------------------------------------------------------------------------------
 
 function GetWind()
@@ -96,8 +97,14 @@ function GetWind()
     end
 end
 
+function widget:GameStart()
+	gamestarted = true
+end
+
 function widget:GameFrame(frame)
-	GetWind()
+	if frame%2 == 0 then
+		GetWind()
+	end
 end
 
 function vsSolar(currentWind)
@@ -168,7 +175,7 @@ function widget:DrawScreen()
 		glTranslate(-oorx*widgetScale, -oory*widgetScale, 0)
 	end
 	glCallList(backgroundList2)
-    if spGetGameFrame() > 1 then
+    if gamestarted then
 		if windValueDrawList[printWind] == nil then
 			windValueDrawList[printWind] = glCreateList(drawWindValue, printWind)
 		end
