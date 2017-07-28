@@ -65,7 +65,6 @@ local formationCmds = {
 
 -- What commands require alt to be held 
 local requiresAlt = {
-	[CMD_RAW_MOVE] = true,
 }
 
 -- Context-based default commands that can be overridden (meaning that cf2 doesn't touch the command i.e. guard/attack when mouseover unit)
@@ -73,8 +72,6 @@ local requiresAlt = {
 -- Normal logic will follow after override, i.e. must be a formationCmd to get formation, alt must be held if requiresAlt, etc.
 local overrideCmds = {
 	[CMD.GUARD] = CMD.MOVE,
-	[CMD.ATTACK] = CMD.ATTACK,
-	[CMD_SETTARGET] = CMD_SETTARGET, 
 }
 
 -- What commands can be issued at a position or unit/feature ID (Only used by GetUnitPosition)
@@ -180,7 +177,7 @@ local huge = math.huge
 local pi2 = 2*math.pi
 
 local CMD_INSERT = CMD.INSERT
-local CMD_MOVE = CMD.MOVE
+local CMD_MOVE = CMD_RAW_MOVE
 local CMD_ATTACK = CMD.ATTACK
 local CMD_UNLOADUNIT = CMD.UNLOAD_UNIT
 local CMD_UNLOADUNITS = CMD.UNLOAD_UNITS
@@ -455,11 +452,12 @@ function widget:MousePress(mx, my, mButton)
 		return false
 	end
 	
-	-- Set move cmd to raw move if appropriate
- 	if alt and usingCmd == CMD_MOVE then
+	--[[ Set move cmd to raw move if appropriate
+ 	if usingCmd == CMD_MOVE then
  		usingCmd = CMD_RAW_MOVE
 	end
-
+	--]]
+	
 	-- Get clicked position
 	local _, pos = spTraceScreenRay(mx, my, true, inMinimap)
 	if not pos then return false end
@@ -506,6 +504,10 @@ function widget:MouseMove(mx, my, dx, dy, mButton)
 			
 			local alt, ctrl, meta, shift = GetModKeys()
 			local cmdOpts = GetCmdOpts(false, ctrl, meta, shift, usingRMB) -- using alt uses springs box formation, so we set it off always
+			if usingCmd == CMD_RAW_MOVE then
+				usingCmd = CMD.MOVE
+			end
+
 			GiveNotifyingOrder(usingCmd, pos, cmdOpts)
 			lastPathPos = pos
 			
@@ -520,6 +522,10 @@ function widget:MouseMove(mx, my, dx, dy, mButton)
 				
 				local alt, ctrl, meta, shift = GetModKeys()
 				local cmdOpts = GetCmdOpts(false, ctrl, meta, true, usingRMB) -- using alt uses springs box formation, so we set it off always
+				if usingCmd == CMD_RAW_MOVE then
+					usingCmd = CMD.MOVE
+				end
+
 				GiveNotifyingOrder(usingCmd, pos, cmdOpts)
 				lastPathPos = pos
 			end

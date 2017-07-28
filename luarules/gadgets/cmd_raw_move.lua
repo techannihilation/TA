@@ -6,7 +6,7 @@ function gadget:GetInfo()
 		date	= "June 12 2014",
 		license	= "GNU GPL, v2 or later",
 		layer	= 0,
-		enabled = false,
+		enabled = true,
 	}
 end
 
@@ -641,7 +641,7 @@ function gadget:UnitCreated(unitID, unitDefID, teamID)
 		spInsertUnitCmdDesc(unitID, moveRawCmdDesc)
 		local cmdDescID = Spring.FindUnitCmdDesc(unitID, CMD_MOVE)
 		if (cmdDescID) then
-			Spring.RemoveUnitCmdDesc(unitID, cmdDescID)
+			--Spring.RemoveUnitCmdDesc(unitID, cmdDescID)
 		end
 
 	end
