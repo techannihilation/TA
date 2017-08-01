@@ -278,20 +278,20 @@ function widget:GetConfigData() --save config
 	if (PassedStartupCheck) then
 		local vsy = Screen.vsy
 		local unscale = CanvasY/vsy --needed due to autoresize, stores unresized variables
-		if tooltip.background.px * unscale > -50 or Config.tooltip.py = tooltip.background.py > -50 then
-			Config.new_tooltip.px = tooltip.background.px * unscale
-			Config.new_tooltipn.py = tooltip.background.py * unscale
+		if (tooltip.background.px * unscale > -50) or (tooltip.background.py * unscale > -50) then
+			Config.tooltip.px = tooltip.background.px * unscale
+			Config.tooltipn.py = tooltip.background.py * unscale
 			return {Config=Config}
 		else
-			Config.new_tooltip.px = -50
-			Config.new_tooltip.py = -50
+			Config.tooltip.px = -50
+			Config.tooltip.py = -50
 			return {Config=Config}
 		end
 	end
 end
 function widget:SetConfigData(data) --load config
 	if (data.Config ~= nil) then
-		Config.new_tooltip.px = data.Config.tooltip.px
-		Config.new_tooltip.py = data.Config.tooltip.py
+		Config.tooltip.px = data.Config.tooltip.px
+		Config.tooltip.py = data.Config.tooltip.py
 	end
 end
