@@ -121,11 +121,10 @@ return {
 		weapondefs = {
 			repulsor2 = {
 				name = "PlasmaRepulsor",
-				shieldalpha = 0.3,
-				shieldbadcolor = "1 0.2 0.2",
+				shieldbadcolor = "1 0.2 0.2 0.30",
 				shieldenergyuse = 350,
 				shieldforce = 8,
-				shieldgoodcolor = "0.2 1 0.2",
+				shieldgoodcolor = "0.2 1 0.2 0.30",
 				shieldintercepttype = 1,
 				shieldmaxspeed = 200,
 				shieldpower = 2600,

@@ -32,7 +32,7 @@ return {
 		maxslope = 16,
 		maxvelocity = 1.5,
 		maxwaterdepth = 18,
-		metalmake = 1.00,
+		metalmake = 1,
 		metalstorage = 100,
 		mobilestandorders = 1,
 		movementclass = "TANK3",
@@ -69,7 +69,7 @@ return {
 			[15] = "tllshoretorp",
 			[16] = "tllcoyote",
 			[17] = "tllloki",
-			[18] = "tllacv",			
+			[18] = "tllacv",
 		},
 		customparams = {
 			faction = "TLL",

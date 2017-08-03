@@ -43,7 +43,6 @@ return {
 		selfdestructas = "MINE_NUKE",
 		sightdistance = 322,
 		unitname = "tllmas",
-		--usebuildinggrounddecal = true,
 		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo",
 		customparams = {
 			faction = "TLL",
