@@ -340,9 +340,8 @@ local morphDefs = {
 		tech = 2,
 	},
 	armrad = {
-		into = 'armarad',
-		time = 30,
-		tech = 1,
+		into = 'armrad1',
+		time = 20,
 	},
 	armrad1 = {
 		into = 'armarad',
@@ -355,9 +354,8 @@ local morphDefs = {
 		tech = 1,
 	},
 	corrad = {
-		into = 'corarad',
-		time = 30,
-		tech = 1,
+		into = 'corrad1',
+		time = 20,
 	},
 	corrad1 = {
 		into = 'corarad',

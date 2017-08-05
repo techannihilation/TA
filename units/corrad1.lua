@@ -33,7 +33,7 @@ return {
 		name = "Advanced Radar Tower",
 		noautofire = false,
 		nochasecategory = "ALL",
-		objectname = "CORRAD",
+		objectname = "CORRAD1",
 		onoffable = true,
 		radardistance = 2800,
 		radaremitheight = 89,
