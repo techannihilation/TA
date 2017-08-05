@@ -85,6 +85,9 @@ unitList["TA"] = {
 [UnitDefNames["ashipyardlvl3"].id] = 	{["en"]="Arm Hero Lab", ["de"]="", ["fr"]="" },
 [UnitDefNames["acovertopscentre"].id] = 	{["en"]="T4 Lab", ["de"]="", ["fr"]="" },
 [UnitDefNames["ccovertopscentre"].id] = 	{["en"]="T4 Lab", ["de"]="", ["fr"]="" },
+[UnitDefNames["core_hexapod_lab"].id] = 	{["en"]="Hexapod Lab", ["de"]="", ["fr"]="" },
+[UnitDefNames["arm_mech_lab"].id] = 	{["en"]="Mech Lab", ["de"]="", ["fr"]="" },
+[UnitDefNames["tllprototype"].id] = 	{["en"]="Prototype Lab", ["de"]="", ["fr"]="" },
 
 --T3 Mex
 [UnitDefNames["armmas"].id] = 	{["en"]="T3 Mex", ["de"]="", ["fr"]="" },
