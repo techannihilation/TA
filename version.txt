@@ -36,7 +36,7 @@ This units is a static laser tower that shoots down rockets/missile (i won't tar
 
 Add T1.5 plasma cannon back for arm/core 
 
-
+Add static radar morph chain and retuxture t1.5 radar
 Delete Shield from T3 extractor
 Defensive range widget add missing units
 Anti range widget add missing unit tllgiant
