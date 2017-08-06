@@ -9,7 +9,7 @@
 
 function widget:GetInfo()
 	return {
-		name	= "BA_AllyCursors",
+		name	= "AllyCursors",
 		desc	= "Shows the mouse pos of allied players",
 		author	= "jK,TheFatController",
 		date	= "Apr,2009",
