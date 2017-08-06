@@ -1,7 +1,7 @@
 --------------------------------------------------------------------------------
 function widget:GetInfo()
     return {
-        name      = "Anti Ranges (TechA)",
+        name      = "Anti Ranges (TechA) New",
         desc      = "Draws circle to show anti defence ranges (options: /antiranges_glow, antiranges_fade)",
         author    = "[teh]decay, Floris",
         date      = "25 january 2015",
@@ -67,9 +67,12 @@ local spGetAllUnits    			= Spring.GetAllUnits
 
 local antiInLos					= {}
 local antiOutLos				= {}
+local antiToDraw        = {}
 local camX, camY, camZ = spGetCameraPosition()
-
+local lineWidthMinus = 1
+local lineOpacityMultiplier = 1
 local HighPing = false
+local update = 0.5
 
 local antiNukes = {
 --Arm 
@@ -90,6 +93,7 @@ local antiNukes = {
   [UnitDefNames["tllturtle"].id] = true,
   [UnitDefNames["tllantinuke"].id] = true,
   [UnitDefNames["tllantinuke1"].id] = true,
+  [UnitDefNames["tllgazelle"].id] = true,
   [UnitDefNames["tllgiant"].id] = true,
 }
 
@@ -102,28 +106,21 @@ end
 -- Callins
 --------------------------------------------------------------------------------
 
-function widget:DrawWorld()
-    if Spring.IsGUIHidden() or HighPing then return end
-    for uID, pos in pairs(antiInLos) do
-        if pos.x ~= nil and pos.y ~= nil and pos.z ~= nil then
-		drawCircle(uID, pos.coverageRange, pos.x, pos.y, pos.z,pos.lineWidthMinus, pos.lineOpacityMultiplier, pos.circleColor)
-        end
-    end
+function widget:DrawWorldPreUnit()
+  if Spring.IsGUIHidden() or HighPing then return end
 
-    for uID, pos in pairs(antiOutLos) do
-        if pos.x ~= nil and pos.y ~= nil and pos.z ~= nil then
-		drawCircle(uID, pos.coverageRange, pos.x, pos.y, pos.z,pos.lineWidthMinus, pos.lineOpacityMultiplier, pos.circleColor)
-        end 
-    end
+  for uID, pos in pairs(antiToDraw) do
+    drawCircle(uID, pos.coverageRange, pos.x, pos.y, pos.z, pos.circleColor)
+  end
 end
 
-function drawCircle(uID, coverageRange, x, y, z, lineWidthMinus, lineOpacityMultiplier, circleColor)
-        if lineOpacityMultiplier > 0 then
-                glDepthTest(true)
-                glColor(circleColor[1],circleColor[2],circleColor[3], .5*lineOpacityMultiplier)
-                glLineWidth(3-lineWidthMinus)
-                glDrawGroundCircle(x, y, z, coverageRange, 64)  
-        end
+function drawCircle(uID, coverageRange, x, y, z, circleColor)
+  if lineOpacityMultiplier > 0 then
+    glDepthTest(true)
+    glColor(circleColor[1],circleColor[2],circleColor[3], .5*lineOpacityMultiplier)
+    glLineWidth(3-lineWidthMinus)
+    glDrawGroundCircle(x, y, z, coverageRange, 64)  
+  end
 end
 
 function widget:UnitEnteredLos(unitID)
@@ -136,11 +133,11 @@ function lineOpacity(x,y,z)
    local yDifference = camY - y
    local zDifference = camZ - z
    local camDistance = math.sqrt(xDifference*xDifference + yDifference*yDifference + zDifference*zDifference)
-   local lineWidthMinus = (camDistance/fadeStartDistance)
+   lineWidthMinus = (camDistance/fadeStartDistance)
         if lineWidthMinus > 2 then
                 lineWidthMinus = 2
         end
-        local lineOpacityMultiplier = 1
+        lineOpacityMultiplier = 1
         if fadeOnCloseup then
                 lineOpacityMultiplier = (camDistance - fadeStartDistance) / 1800
                 if lineOpacityMultiplier > 1 then
@@ -148,7 +145,7 @@ function lineOpacity(x,y,z)
                 end
         end
         lineOpacityMultiplier = lineOpacityMultiplier * opacityMultiplier
-        	--Spring.Echo(camDistance,lineWidthMinus,lineOpacityMultiplier)
+        --Spring.Echo(camDistance,lineWidthMinus,lineOpacityMultiplier)
 	return lineWidthMinus,lineOpacityMultiplier
 end
 
@@ -176,10 +173,12 @@ function processVisibleUnit(unitID, unitDefId)
         pos["y"] = y
         pos["z"] = z
         pos.coverageRange = antiNukes[unitDefId].coverageRange
-		pos.lineWidthMinus,pos.lineOpacityMultiplier = lineOpacity(x,y,z)
-		pos.circleColor = Stockpile(unitID)
+		    pos.circleColor = Stockpile(unitID)
         antiInLos[unitID] = pos
         antiOutLos[unitID] = nil
+        if x ~= nil and y ~= nil and z ~= nil then
+          antiToDraw[unitID] = pos
+        end
     end
 end
 
@@ -196,10 +195,12 @@ function widget:UnitLeftLos(unitID)
         pos["y"] = y or antiInLos[unitID].y
         pos["z"] = z or antiInLos[unitID].z
         pos.coverageRange = antiNukes[unitDefId].coverageRange
-		pos.lineWidthMinus,pos.lineOpacityMultiplier = lineOpacity(pos["x"],pos["y"],pos["z"])
-		pos.circleColor = Stockpile(unitID)
+		    pos.circleColor = Stockpile(unitID)
         antiOutLos[unitID] = pos
         antiInLos[unitID] = nil
+        if x ~= nil and y ~= nil and z ~= nil then
+          antiToDraw[unitID] = pos
+        end
     end
 end
 
@@ -215,11 +216,25 @@ function widget:UnitGiven(unitID, unitDefID, unitTeam, oldTeam)
     processVisibleUnit(unitID, unitDefID)
 end
 
-function widget:Update()
+local timeCounter = math.huge -- force the first update
+function widget:Update(deltaTime)
+  if (timeCounter < update) then
+    timeCounter = timeCounter + deltaTime
+    return
+  end
+  timeCounter = 0
+
+  for unitID, _ in pairs(antiInLos) do
+    if not spGetUnitDefID(unitID) then
+      antiInLos[unitID] = nil -- has died
+      antiToDraw[unitID] = nil
+    end
+  end
   camX, camY, camZ = spGetCameraPosition()
   for uID, pos in pairs(antiInLos) do
   local x, y, z = spGetUnitPosition(uID)
   if x ~= nil and y ~= nil and z ~= nil then
+  lineOpacity(x,y,z)
 	local unitDefId = spGetUnitDefID(uID)
 	local pos = {}
     pos["x"] = x
@@ -230,7 +245,6 @@ function widget:Update()
 	  return
 	end
 	pos.coverageRange = antiNukes[unitDefId].coverageRange
-	pos.lineWidthMinus,pos.lineOpacityMultiplier = lineOpacity(pos["x"],pos["y"],pos["z"])
 	pos.circleColor = Stockpile(uID)
 	antiInLos[uID] = pos
     end
@@ -249,14 +263,13 @@ function widget:Update()
       antiInLos[uID] = pos
     end
   end
+  if x ~= nil and y ~= nil and z ~= nil then
+    antiToDraw[unitID] = pos
+  end
 end
 
 function widget:GameFrame(n)
-    for uID, _ in pairs(antiInLos) do
-        if not spGetUnitDefID(uID) then
-            antiInLos[uID] = nil -- has died
-        end
-    end
+  
 end
 
 function widget:Initialize()
