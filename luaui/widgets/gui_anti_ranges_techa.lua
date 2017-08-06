@@ -1,12 +1,12 @@
 --------------------------------------------------------------------------------
 function widget:GetInfo()
     return {
-        name      = "Anti Ranges (TechA) New",
+        name      = "Anti Ranges (TechA)",
         desc      = "Draws circle to show anti defence ranges (options: /antiranges_glow, antiranges_fade)",
         author    = "[teh]decay, Floris",
         date      = "25 january 2015",
         license   = "GNU GPL, v2 or later",
-        version   = 5,
+        version   = 6,
         layer     = 5,
         enabled   = true  --  loaded by default?
     }
@@ -18,6 +18,7 @@ end
 -- v2 [teh]decay:  Add water antinukes
 -- v3 Floris:  added normal anti, changed widget name, optional glow, optional fadeout on closeup, changed line thickness and opacity, empty anti uses different color
 -- v5 Nixtux: Minor performace change, Update for techa anti list (added jools check if stockpilenumber is nil change)
+-- v6 Nixtux: More performance work in some cases it's 50% cheaper than original BA version
 --------------------------------------------------------------------------------
 -- Console commands
 --------------------------------------------------------------------------------
