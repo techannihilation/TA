@@ -622,7 +622,7 @@ function widget:MouseRelease(mx, my, mButton)
 			--		CMD_INSERT,
 			--		{-1,CMD_RAW_MOVE,0,fNodes[1][1],fNodes[1][2],fNodes[1][3]},
 			--		{"alt"})
-			    GiveNotifyingOrder(usingCmd, {fNodes[1][1],fNodes[1][2],fNodes[1][3]}, cmdOpts)			
+			    GiveNotifyingOrder(CMD.MOVE,  {fNodes[1][1],fNodes[1][2],fNodes[1][3]}, cmdOpts)			
 			else
 				-- Deselect command, select default command instead
 				spSetActiveCommand(0)
