@@ -19,7 +19,7 @@ return {
 		collisionvolumetype = "CylY",
 		corpse = "heap",
 		defaultmissiontype = "Standby",
-		description = "Experimental Shield Kbot",
+		description = "Experimental Blue Shield Kbot",
 		explodeas = "NUCLEAR_MISSILE4",
 		firestandorders = 1,
 		footprintx = 7,
