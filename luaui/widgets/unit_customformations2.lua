@@ -49,8 +49,8 @@ local lineFadeRate = 2.0
 
 -- What commands are eligible for custom formations
 local CMD_SETTARGET = 34923
-local CMD_JUMP = 38521
 local CMD_RAW_MOVE = 39812
+local CMD_JUMP = 38521
 
 local formationCmds = {
 	[CMD.MOVE] = true,
@@ -59,8 +59,8 @@ local formationCmds = {
 	[CMD.PATROL] = true,
 	[CMD.UNLOAD_UNIT] = true,
 	[CMD_SETTARGET] = true, -- set target
-	[CMD_JUMP] = true, -- jumpjets
-	[CMD_RAW_MOVE] = true -- rawmove
+	[CMD_RAW_MOVE] = true,
+	[CMD_JUMP] = true -- jumpjets
 }
 
 -- What commands require alt to be held 
@@ -71,16 +71,17 @@ local requiresAlt = {
 -- If the mouse remains on the same target for both Press/Release then the formation is ignored and original command is issued.
 -- Normal logic will follow after override, i.e. must be a formationCmd to get formation, alt must be held if requiresAlt, etc.
 local overrideCmds = {
-	[CMD.GUARD] = CMD.MOVE,
+	[CMD.GUARD] = CMD_RAW_MOVE,
+	[CMD.ATTACK] = CMD_RAW_MOVE,
+	[CMD_SETTARGET] = CMD_RAW_MOVE
 }
 
 -- What commands can be issued at a position or unit/feature ID (Only used by GetUnitPosition)
 local positionCmds = {
 	[CMD.MOVE]=true,		[CMD.ATTACK]=true,		[CMD.RECLAIM]=true,		[CMD.RESTORE]=true,		[CMD.RESURRECT]=true,
 	[CMD.PATROL]=true,		[CMD.CAPTURE]=true,		[CMD.FIGHT]=true, 		[CMD.MANUALFIRE]=true,		[CMD.UNLOAD_UNIT]=true,
-	[CMD.UNLOAD_UNITS]=true,	[CMD.LOAD_UNITS]=true,		[CMD.GUARD]=true,		[CMD.AREA_ATTACK]=true,		[CMD_SETTARGET]=true, -- set target
-	[CMD_JUMP]= true -- jumpjets
-
+	[CMD.UNLOAD_UNITS]=true,	[CMD.LOAD_UNITS]=true,		[CMD.GUARD]=true,		[CMD.AREA_ATTACK]=true,		[CMD_SETTARGET]=true,
+	[CMD_JUMP]= true,
 }
 
 
@@ -207,7 +208,7 @@ local function GetUnitFinalPosition(uID)
 	
 	local ux, uy, uz = spGetUnitPosition(uID)
 	
-	local cmds = spGetCommandQueue(uID,-1)
+	local cmds = spGetCommandQueue(uID,5000)
 	for i = #cmds, 1, -1 do
 		
 		local cmd = cmds[i]
@@ -615,7 +616,7 @@ function widget:MouseRelease(mx, my, mButton)
 			if targetID then
 				-- Give order (i.e. pass the command to the engine to use as normal)
 				GiveNotifyingOrder(usingCmd, {targetID}, cmdOpts)			
-			elseif usingCmd == CMD_MOVE or usingCmd == CMD_RAW_MOVE then 
+			elseif usingCmd == CMD_MOVE then 
 				local selUnits = spGetSelectedUnits()
 				local uSpeed = UnitDefs[spGetUnitDefID(selUnits[1])].speed
 				--spGiveOrderToUnit(selUnits[1],
