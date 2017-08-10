@@ -1,0 +1,770 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, pelvis, torso, sleeve1, flare1a, flare1b, flare1c, flare3a, flare3b, flare1ra, flare1rb, flare1rc, sleeve2, flare2a, flare2b, flare2c, flare3c, flare3d, flare2ra, flare2rb, flare2rc, aim, joint1a, joint1b, leg1, joint2a, joint2b, leg2, joint3a, joint3b, leg3, joint4a, joint4b, leg4, gen, joint5a, joint5b, leg5, joint6a, joint6b, leg6;
+
+static-var  gun_1, gun_2, gun_3, terraintype, Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
+            Static_Var_6;
+
+// Signal definitions
+#define SIG_AIM				2
+#define SIG_AIM_2           4
+#define SIG_AIM_3           8
+
+#define rocketlaunchhev 1024+0
+#define rocketlaunchmed 1024+1
+#define rocketlaunchback 1024+2
+
+#undef   ANIM_VARIABLE 
+
+walk()
+{
+	if( TRUE )
+	{
+//Front leg left
+	turn joint1a to y-axis <14> speed <70>;
+	turn joint1a to z-axis <-8> speed <70>;
+	turn joint1b to y-axis <0> speed <70>;
+	turn joint1b to z-axis <-10> speed <70>;
+	turn leg1 to z-axis <-30> speed <90>;
+// Front leg right
+	turn joint2a to y-axis <14> speed <70>;
+	turn joint2a to z-axis <8> speed <70>;
+	turn joint2b to y-axis <0> speed <70>;
+	turn joint2b to z-axis <10> speed <70>;
+	turn leg2 to z-axis <30> speed <90>;
+// Back leg left
+	turn joint3a to y-axis <-10> speed <70>;
+	turn joint3a to z-axis <-8> speed <70>;
+	turn joint3b to y-axis <0> speed <70>;
+	turn joint3b to z-axis <-10> speed <70>;
+	turn leg3 to z-axis <10> speed <90>;
+
+// Back leg right
+	turn joint4a to y-axis <-10> speed <70>;
+	turn joint4a to z-axis <8> speed <70>;
+	turn joint4b to y-axis <0> speed <70>;
+	turn joint4b to z-axis <10> speed <70>;
+	turn leg4 to z-axis <-10> speed <90>;
+//Mid leg right
+	turn joint5a to y-axis <-14> speed <70>;
+	turn joint5a to z-axis <-8> speed <70>;
+	turn joint5b to y-axis <0> speed <70>;
+	turn joint5b to z-axis <-10> speed <70>;
+	turn leg5 to z-axis <30> speed <90>;
+//Mid leg left
+	turn joint6a to y-axis <14> speed <70>;
+	turn joint6a to z-axis <8> speed <70>;
+	turn joint6b to y-axis <0> speed <70>;
+	turn joint6b to z-axis <10> speed <70>;
+	turn leg6 to z-axis <-30> speed <90>;
+	
+	turn torso to x-axis <5> speed <10>;
+	turn torso to z-axis <5> speed <10>;
+	turn torso to y-axis <5> speed <10>;
+	
+	wait-for-turn joint1a around y-axis;
+	wait-for-turn joint1a around z-axis;
+	wait-for-turn joint1b around y-axis;
+	wait-for-turn joint1b around z-axis;
+	wait-for-turn joint2a around y-axis;
+	wait-for-turn joint2a around z-axis;
+	wait-for-turn joint2b around y-axis;
+	wait-for-turn joint2b around z-axis;
+	wait-for-turn joint3a around y-axis;
+	wait-for-turn joint3a around z-axis;
+	wait-for-turn joint3b around y-axis;
+	wait-for-turn joint3b around z-axis;
+	wait-for-turn joint4a around y-axis;
+	wait-for-turn joint4a around z-axis;
+	wait-for-turn joint4b around y-axis;
+	wait-for-turn joint4b around z-axis;
+	wait-for-turn joint5a around y-axis;
+	wait-for-turn joint5a around z-axis;
+	wait-for-turn joint5b around y-axis;
+	wait-for-turn joint5b around z-axis;
+	wait-for-turn joint6a around y-axis;
+	wait-for-turn joint6a around z-axis;
+	wait-for-turn joint6b around y-axis;
+	wait-for-turn joint6b around z-axis;
+	}
+	if( TRUE )
+	{
+	turn joint1a to y-axis <14> speed <70>;
+	turn joint1a to z-axis <8> speed <70>;
+	turn joint1b to y-axis <0> speed <70>;
+	turn joint1b to z-axis <10> speed <70>;
+	turn leg1 to z-axis <-30> speed <90>;
+	
+	turn joint2a to y-axis <14> speed <70>;
+	turn joint2a to z-axis <-8> speed <70>;
+	turn joint2b to y-axis <0> speed <70>;
+	turn joint2b to z-axis <-10> speed <70>;
+	turn leg2 to z-axis <30> speed <90>;
+	
+	turn joint3a to y-axis <-10> speed <70>;
+	turn joint3a to z-axis <8> speed <70>;
+	turn joint3b to y-axis <0> speed <70>;
+	turn joint3b to z-axis <10> speed <70>;
+	turn leg3 to z-axis <-30> speed <90>;
+	
+	turn joint4a to y-axis <-10> speed <70>;
+	turn joint4a to z-axis <-8> speed <70>;
+	turn joint4b to y-axis <0> speed <70>;
+	turn joint4b to z-axis <-10> speed <70>;
+	turn leg4 to z-axis <30> speed <90>;
+	
+	turn joint5a to y-axis <10> speed <70>;
+	turn joint5a to z-axis <8> speed <70>;
+	turn joint5b to y-axis <0> speed <70>;
+	turn joint5b to z-axis <10> speed <70>;
+	turn leg5 to z-axis <-10> speed <90>;
+	
+	turn joint6a to y-axis <-10> speed <70>;
+	turn joint6a to z-axis <-8> speed <70>;
+	turn joint6b to y-axis <0> speed <70>;
+	turn joint6b to z-axis <-10> speed <70>;
+	turn leg6 to z-axis <10> speed <90>;
+	
+	turn torso to x-axis <0> speed <10>;
+	turn torso to z-axis <0> speed <10>;
+	turn torso to y-axis <0> speed <10>;
+	
+	wait-for-turn joint1a around y-axis;
+	wait-for-turn joint1a around z-axis;
+	wait-for-turn joint1b around y-axis;
+	wait-for-turn joint1b around z-axis;
+	wait-for-turn joint2a around y-axis;
+	wait-for-turn joint2a around z-axis;
+	wait-for-turn joint2b around y-axis;
+	wait-for-turn joint2b around z-axis;
+	wait-for-turn joint3a around y-axis;
+	wait-for-turn joint3a around z-axis;
+	wait-for-turn joint3b around y-axis;
+	wait-for-turn joint3b around z-axis;
+	wait-for-turn joint4a around y-axis;
+	wait-for-turn joint4a around z-axis;
+	wait-for-turn joint4b around y-axis;
+	wait-for-turn joint4b around z-axis;
+	wait-for-turn joint5a around y-axis;
+	wait-for-turn joint5a around z-axis;
+	wait-for-turn joint5b around y-axis;
+	wait-for-turn joint5b around z-axis;
+	wait-for-turn joint6a around y-axis;
+	wait-for-turn joint6a around z-axis;
+	wait-for-turn joint6b around y-axis;
+	wait-for-turn joint6b around z-axis;
+	}
+	if( TRUE )
+	{
+	turn joint1a to y-axis <-10> speed <70>;
+	turn joint1a to z-axis <-8> speed <70>;
+	turn joint1b to y-axis <0> speed <70>;
+	turn joint1b to z-axis <-10> speed <70>;
+	turn leg1 to z-axis <10> speed <90>;
+	
+	turn joint2a to y-axis <-10> speed <70>;
+	turn joint2a to z-axis <8> speed <70>;
+	turn joint2b to y-axis <0> speed <70>;
+	turn joint2b to z-axis <10> speed <70>;
+	turn leg2 to z-axis <-10> speed <90>;
+	
+	turn joint3a to y-axis <14> speed <70>;
+	turn joint3a to z-axis <-8> speed <70>;
+	turn joint3b to y-axis <0> speed <70>;
+	turn joint3b to z-axis <-10> speed <70>;
+	turn leg3 to z-axis <-30> speed <90>;
+
+	turn joint4a to y-axis <14> speed <70>;
+	turn joint4a to z-axis <8> speed <70>;
+	turn joint4b to y-axis <0> speed <70>;
+	turn joint4b to z-axis <10> speed <70>;
+	turn leg4 to z-axis <30> speed <90>;
+	
+	turn joint5a to y-axis <10> speed <70>;
+	turn joint5a to z-axis <-8> speed <70>;
+	turn joint5b to y-axis <0> speed <70>;
+	turn joint5b to z-axis <-10> speed <70>;
+	turn leg5 to z-axis <30> speed <90>;
+	
+	turn joint6a to y-axis <-10> speed <70>;
+	turn joint6a to z-axis <8> speed <70>;
+	turn joint6b to y-axis <0> speed <70>;
+	turn joint6b to z-axis <10> speed <70>;
+	turn leg6 to z-axis <-30> speed <90>;
+	
+	turn torso to x-axis <5> speed <10>;
+	turn torso to z-axis <-5> speed <10>;
+	turn torso to y-axis <-5> speed <10>;
+	
+	wait-for-turn joint1a around y-axis;
+	wait-for-turn joint1a around z-axis;
+	wait-for-turn joint1b around y-axis;
+	wait-for-turn joint1b around z-axis;
+	wait-for-turn joint2a around y-axis;
+	wait-for-turn joint2a around z-axis;
+	wait-for-turn joint2b around y-axis;
+	wait-for-turn joint2b around z-axis;
+	wait-for-turn joint3a around y-axis;
+	wait-for-turn joint3a around z-axis;
+	wait-for-turn joint3b around y-axis;
+	wait-for-turn joint3b around z-axis;
+	wait-for-turn joint4a around y-axis;
+	wait-for-turn joint4a around z-axis;
+	wait-for-turn joint4b around y-axis;
+	wait-for-turn joint4b around z-axis;
+	wait-for-turn joint5a around y-axis;
+	wait-for-turn joint5a around z-axis;
+	wait-for-turn joint5b around y-axis;
+	wait-for-turn joint5b around z-axis;
+	wait-for-turn joint6a around y-axis;
+	wait-for-turn joint6a around z-axis;
+	wait-for-turn joint6b around y-axis;
+	wait-for-turn joint6b around z-axis;
+	}
+	if( TRUE )
+	{
+	turn joint1a to y-axis <-10> speed <70>;
+	turn joint1a to z-axis <8> speed <70>;
+	turn joint1b to y-axis <0> speed <70>;
+	turn joint1b to z-axis <10> speed <70>;
+	turn leg1 to z-axis <-30> speed <90>;
+	
+	turn joint2a to y-axis <-10> speed <70>;
+	turn joint2a to z-axis <-8> speed <70>;
+	turn joint2b to y-axis <0> speed <70>;
+	turn joint2b to z-axis <-10> speed <70>;
+	turn leg2 to z-axis <30> speed <90>;
+	
+	turn joint3a to y-axis <14> speed <70>;
+	turn joint3a to z-axis <8> speed <70>;
+	turn joint3b to y-axis <0> speed <70>;
+	turn joint3b to z-axis <10> speed <70>;
+	turn leg3 to z-axis <-30> speed <90>;
+	
+	turn joint4a to y-axis <14> speed <70>;
+	turn joint4a to z-axis <-8> speed <70>;
+	turn joint4b to y-axis <0> speed <70>;
+	turn joint4b to z-axis <-10> speed <70>;
+	turn leg4 to z-axis <30> speed <90>;
+
+	turn joint5a to y-axis <-14> speed <70>;
+	turn joint5a to z-axis <8> speed <70>;
+	turn joint5b to y-axis <0> speed <70>;
+	turn joint5b to z-axis <10> speed <70>;
+	turn leg5 to z-axis <30> speed <90>;
+	
+	turn joint6a to y-axis <14> speed <70>;
+	turn joint6a to z-axis <-8> speed <70>;
+	turn joint6b to y-axis <0> speed <70>;
+	turn joint6b to z-axis <-10> speed <70>;
+	turn leg6 to z-axis <-30> speed <90>;
+	
+	turn torso to x-axis <0> speed <10>;
+	turn torso to z-axis <0> speed <10>;
+	turn torso to y-axis <0> speed <10>;
+	
+	wait-for-turn joint1a around y-axis;
+	wait-for-turn joint1a around z-axis;
+	wait-for-turn joint1b around y-axis;
+	wait-for-turn joint1b around z-axis;
+	wait-for-turn joint2a around y-axis;
+	wait-for-turn joint2a around z-axis;
+	wait-for-turn joint2b around y-axis;
+	wait-for-turn joint2b around z-axis;
+	wait-for-turn joint3a around y-axis;
+	wait-for-turn joint3a around z-axis;
+	wait-for-turn joint3b around y-axis;
+	wait-for-turn joint3b around z-axis;
+	wait-for-turn joint4a around y-axis;
+	wait-for-turn joint4a around z-axis;
+	wait-for-turn joint4b around y-axis;
+	wait-for-turn joint4b around z-axis;
+	wait-for-turn joint5a around y-axis;
+	wait-for-turn joint5a around z-axis;
+	wait-for-turn joint5b around y-axis;
+	wait-for-turn joint5b around z-axis;
+	wait-for-turn joint6a around y-axis;
+	wait-for-turn joint6a around z-axis;
+	wait-for-turn joint6b around y-axis;
+	wait-for-turn joint6b around z-axis;
+	}
+
+}
+
+InitState()
+{
+	Static_Var_5 = 1;
+	Static_Var_6 = 0;
+}
+
+MotionControl(moving, aiming, justmoved)
+{
+	justmoved = TRUE;
+	while( TRUE )
+	{
+		moving = Static_Var_1;
+		aiming = Static_Var_2;
+		if( moving )
+		{
+			if( aiming )
+			{
+				Static_Var_3 = 1;
+				call-script walk();
+			}
+			if( !aiming )
+			{
+				Static_Var_3 = 0;
+				call-script walk();
+			}
+			justmoved = TRUE;
+		}
+		if( !moving )
+		{
+			Static_Var_3 = 1;
+			if( justmoved )
+			{
+//Front leg left
+	turn joint1a to y-axis <0> speed <30>;
+	turn joint1a to z-axis <0> speed <30>;
+	turn joint1b to y-axis <0> speed <30>;
+	turn joint1b to z-axis <0> speed <30>;
+	turn leg1 to z-axis <0> speed <60>;
+// Front leg right
+	turn joint2a to y-axis <0> speed <30>;
+	turn joint2a to z-axis <0> speed <30>;
+	turn joint2b to y-axis <0> speed <30>;
+	turn joint2b to z-axis <0> speed <30>;
+	turn leg2 to z-axis <0> speed <60>;
+// Back leg left
+	turn joint3a to y-axis <0> speed <30>;
+	turn joint3a to z-axis <0> speed <30>;
+	turn joint3b to y-axis <0> speed <30>;
+	turn joint3b to z-axis <0> speed <30>;
+	turn leg3 to z-axis <0> speed <60>;
+
+// Back leg right
+	turn joint4a to y-axis <0> speed <30>;
+	turn joint4a to z-axis <0> speed <30>;
+	turn joint4b to y-axis <0> speed <30>;
+	turn joint4b to z-axis <0> speed <30>;
+	turn leg4 to z-axis <0> speed <60>;
+//Mid leg right
+	turn joint5a to y-axis <0> speed <30>;
+	turn joint5a to z-axis <0> speed <30>;
+	turn joint5b to y-axis <0> speed <30>;
+	turn joint5b to z-axis <0> speed <30>;
+	turn leg5 to z-axis <0> speed <60>;
+//Mid leg left
+	turn joint6a to y-axis <0> speed <30>;
+	turn joint6a to z-axis <0> speed <30>;
+	turn joint6b to y-axis <0> speed <30>;
+	turn joint6b to z-axis <0> speed <30>;
+	turn leg6 to z-axis <0> speed <60>;
+				if( !aiming )
+				{
+
+				}
+				justmoved = FALSE;
+			}
+			sleep 100;
+		}
+	}
+}
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from torso;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+DishSpin()
+{
+          spin gen around z-axis speed <200> accelerate <130>; 
+}
+
+setSFXoccupy(setSFXoccupy_argument) 
+{   
+           terraintype = setSFXoccupy_argument;   
+} 
+
+Create()
+{
+        hide flare1a;
+        hide flare1b;
+        hide flare1c;
+        hide flare3a;
+        hide flare3b;
+        hide flare1ra;
+        hide flare1rb;
+        hide flare1rc;
+        hide flare2a;
+        hide flare2b;
+        hide flare2c;
+        hide flare3c;
+        hide flare3d;
+        hide flare2ra;
+        hide flare2rb;
+        hide flare2rc;
+		Static_Var_1 = 0;
+		Static_Var_2 = 0;
+		Static_Var_3 = 1;
+		call-script InitState();
+        start-script DishSpin();
+        start-script setSFXoccupy();
+		start-script MotionControl();
+        start-script SmokeUnit();
+}
+
+StartMoving()
+{
+	Static_Var_1 = 1;
+}
+
+StopMoving()
+{
+	Static_Var_1 = 0;
+}
+
+RestoreAfterDelay()
+{
+	sleep 3000;
+	turn torso to y-axis <0.0> speed <70.0>;
+	turn sleeve1 to x-axis <0.0> speed <50.0>;
+        turn sleeve2 to x-axis <0.0> speed <50.0>;
+	Static_Var_2 = 0;
+}
+
+AimWeapon1(heading, pitch)
+{
+	while( gun_1 >= 3)
+    {
+        sleep 100;
+    }
+    signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	Static_Var_2 = 1;
+	turn torso to y-axis heading speed <150.0>;
+	turn sleeve1 to x-axis <0.0> - pitch speed <100.0>;
+	wait-for-turn torso around y-axis;
+	wait-for-turn sleeve1 around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireWeapon1()
+{
+	if( gun_1 == 0 )
+	{
+		emit-sfx rocketlaunchhev from flare2a;
+	}
+	if( gun_1 == 1 )
+	{
+		emit-sfx rocketlaunchhev from flare1a;
+	}
+        gun_1= gun_1 + 1;
+	if( gun_1 >= 2 )
+	{
+	gun_1=0;	
+    }
+}
+
+AimFromWeapon1(piecenum)
+{
+	piecenum = aim;
+}
+
+QueryWeapon1(piecenum)
+{
+	if( gun_1 == 0 )
+	{
+		piecenum = flare1a;
+	}
+        if( gun_1 == 1 )
+	{
+		piecenum = flare2a;
+	}
+        if( gun_1 == 2 )
+	{
+		piecenum = flare1c;
+	}
+}
+
+AimWeapon2(heading, pitch)
+{
+	while( gun_2 >= 3)
+    {
+        sleep 100;
+    }
+    signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	turn torso to y-axis heading speed <450.0>;
+	turn sleeve2 to x-axis <0.0> - pitch speed <200.0>;
+    wait-for-turn torso around y-axis;
+	wait-for-turn sleeve2 around x-axis;
+    start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireWeapon2()
+{
+	if( gun_2 == 0 )
+	{
+		emit-sfx rocketlaunchhev from flare2a;
+	}
+	if( gun_2 == 1 )
+	{
+		emit-sfx rocketlaunchhev from flare2b;
+	}
+        if( gun_2 == 2 )
+	{
+		emit-sfx rocketlaunchhev from flare2c;
+	}
+        gun_2= gun_2 + 1;
+	if( gun_2 >= 3 )
+	{
+	gun_2=0;	
+    }
+}
+
+AimFromWeapon2(piecenum)
+{
+	piecenum = aim;
+}
+
+QueryWeapon2(piecenum)
+{
+	if( gun_2 == 0 )
+	{
+		piecenum = flare2a;
+	}
+        if( gun_2 == 1 )
+	{
+		piecenum = flare2b;
+	}
+        if( gun_2 == 2 )
+	{
+		piecenum = flare2c;
+	}
+}
+
+AimWeapon3(heading, pitch)
+{
+	while( gun_3 >= 4)
+   {
+        sleep 100;
+    }
+    signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
+	turn torso to y-axis heading speed <550.0>;
+	turn sleeve1 to x-axis <0.0> - pitch speed <200.0>;
+	turn sleeve2 to x-axis <0.0> - pitch speed <200.0>;
+    wait-for-turn torso around y-axis;
+	wait-for-turn sleeve1 around x-axis;
+	wait-for-turn sleeve2 around x-axis;
+    start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireWeapon3()
+{
+	if( gun_3 == 0 )
+	{
+		emit-sfx rocketlaunchmed from flare3a;
+        emit-sfx rocketlaunchback from flare1rb;
+		sleep 75;
+	}
+	if( gun_3 == 1 )
+	{
+		emit-sfx rocketlaunchmed from flare3b;
+        emit-sfx rocketlaunchback from flare1rc;
+		sleep 75;
+	}
+        if( gun_3 == 2 )
+	{
+		emit-sfx rocketlaunchmed from flare3c;
+        emit-sfx rocketlaunchback from flare2rb;
+		sleep 75;
+	}
+	if( gun_3 == 3 )
+	{
+		emit-sfx rocketlaunchmed from flare3d;
+        emit-sfx rocketlaunchback from flare2rc;
+		sleep 75;
+	}
+        gun_3= gun_3 + 1;
+	if( gun_3 >= 4 )
+	{
+	gun_3=0;	
+    }
+}
+
+AimFromWeapon3(piecenum)
+{
+	piecenum = aim;
+}
+
+QueryWeapon3(piecenum)
+{
+	if( gun_3 == 0 )
+	{
+		piecenum = flare3a;
+	}
+        if( gun_3 == 1 )
+	{
+		piecenum = flare3b;
+	}
+        if( gun_3 == 2 )
+	{
+		piecenum = flare3c;
+	}
+        if( gun_3 == 3 )
+	{
+		piecenum = flare3d;
+	}
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = pelvis;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type BITMAPONLY | BITMAP1;
+		explode pelvis type BITMAPONLY | BITMAP3;
+		explode torso type BITMAPONLY | BITMAP5;
+		explode sleeve1 type BITMAPONLY | BITMAP2;
+		explode sleeve2 type BITMAPONLY | BITMAP3;
+		explode joint1a type BITMAPONLY | BITMAP1;
+		explode joint1b type BITMAPONLY | BITMAP4;
+		explode leg1 type BITMAPONLY | BITMAP5;
+		explode joint2a type BITMAPONLY | BITMAP3;
+		explode joint2b type BITMAPONLY | BITMAP4;
+		explode leg2 type BITMAPONLY | BITMAP2;
+		explode joint3a type BITMAPONLY | BITMAP1;
+		explode joint3b type BITMAPONLY | BITMAP2;
+		explode leg3 type BITMAPONLY | BITMAP4;
+		explode joint4a type BITMAPONLY | BITMAP4;
+		explode joint4b type BITMAPONLY | BITMAP5;
+		explode leg4 type BITMAPONLY | BITMAP2;
+		explode gen type BITMAPONLY | BITMAP1;
+		explode joint5a type BITMAPONLY | BITMAP3;
+		explode joint5b type BITMAPONLY | BITMAP4;
+		explode leg5 type BITMAPONLY | BITMAP1;
+		explode joint6a type BITMAPONLY | BITMAP2;
+		explode joint6b type BITMAPONLY | BITMAP1;
+		explode leg6 type BITMAPONLY | BITMAP3;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type BITMAPONLY | BITMAP1;
+		explode pelvis type BITMAPONLY | BITMAP3;
+		explode torso type BITMAPONLY | BITMAP5;
+		explode sleeve1 type BITMAPONLY | BITMAP2;
+		explode sleeve2 type BITMAPONLY | BITMAP3;
+		explode joint1a type BITMAPONLY | BITMAP1;
+		explode joint1b type BITMAPONLY | BITMAP4;
+		explode leg1 type BITMAPONLY | BITMAP5;
+		explode joint2a type BITMAPONLY | BITMAP3;
+		explode joint2b type BITMAPONLY | BITMAP4;
+		explode leg2 type BITMAPONLY | BITMAP2;
+		explode joint3a type BITMAPONLY | BITMAP1;
+		explode joint3b type BITMAPONLY | BITMAP2;
+		explode leg3 type BITMAPONLY | BITMAP4;
+		explode joint4a type BITMAPONLY | BITMAP4;
+		explode joint4b type BITMAPONLY | BITMAP5;
+		explode leg4 type BITMAPONLY | BITMAP2;
+		explode gen type BITMAPONLY | BITMAP1;
+		explode joint5a type BITMAPONLY | BITMAP3;
+		explode joint5b type BITMAPONLY | BITMAP4;
+		explode leg5 type BITMAPONLY | BITMAP1;
+		explode joint6a type BITMAPONLY | BITMAP2;
+		explode joint6b type BITMAPONLY | BITMAP1;
+		explode leg6 type BITMAPONLY | BITMAP3;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type BITMAPONLY | BITMAP1;
+		explode pelvis type BITMAPONLY | BITMAP3;
+		explode torso type BITMAPONLY | BITMAP5;
+		explode sleeve1 type BITMAPONLY | BITMAP2;
+		explode sleeve2 type BITMAPONLY | BITMAP3;
+		explode joint1a type BITMAPONLY | BITMAP1;
+		explode joint1b type BITMAPONLY | BITMAP4;
+		explode leg1 type BITMAPONLY | BITMAP5;
+		explode joint2a type BITMAPONLY | BITMAP3;
+		explode joint2b type BITMAPONLY | BITMAP4;
+		explode leg2 type BITMAPONLY | BITMAP2;
+		explode joint3a type BITMAPONLY | BITMAP1;
+		explode joint3b type BITMAPONLY | BITMAP2;
+		explode leg3 type BITMAPONLY | BITMAP4;
+		explode joint4a type BITMAPONLY | BITMAP4;
+		explode joint4b type BITMAPONLY | BITMAP5;
+		explode leg4 type BITMAPONLY | BITMAP2;
+		explode gen type BITMAPONLY | BITMAP1;
+		explode joint5a type BITMAPONLY | BITMAP3;
+		explode joint5b type BITMAPONLY | BITMAP4;
+		explode leg5 type BITMAPONLY | BITMAP1;
+		explode joint6a type BITMAPONLY | BITMAP2;
+		explode joint6b type BITMAPONLY | BITMAP1;
+		explode leg6 type BITMAPONLY | BITMAP3;
+		return (0);
+	}
+	corpsetype = 3;
+		explode base type BITMAPONLY | BITMAP1;
+		explode pelvis type BITMAPONLY | BITMAP3;
+		explode torso type BITMAPONLY | BITMAP5;
+		explode sleeve1 type BITMAPONLY | BITMAP2;
+		explode sleeve2 type BITMAPONLY | BITMAP3;
+		explode joint1a type BITMAPONLY | BITMAP1;
+		explode joint1b type BITMAPONLY | BITMAP4;
+		explode leg1 type BITMAPONLY | BITMAP5;
+		explode joint2a type BITMAPONLY | BITMAP3;
+		explode joint2b type BITMAPONLY | BITMAP4;
+		explode leg2 type BITMAPONLY | BITMAP2;
+		explode joint3a type BITMAPONLY | BITMAP1;
+		explode joint3b type BITMAPONLY | BITMAP2;
+		explode leg3 type BITMAPONLY | BITMAP4;
+		explode joint4a type BITMAPONLY | BITMAP4;
+		explode joint4b type BITMAPONLY | BITMAP5;
+		explode leg4 type BITMAPONLY | BITMAP2;
+		explode gen type BITMAPONLY | BITMAP1;
+		explode joint5a type BITMAPONLY | BITMAP3;
+		explode joint5b type BITMAPONLY | BITMAP4;
+		explode leg5 type BITMAPONLY | BITMAP1;
+		explode joint6a type BITMAPONLY | BITMAP2;
+		explode joint6b type BITMAPONLY | BITMAP1;
+		explode leg6 type BITMAPONLY | BITMAP3;
+}
