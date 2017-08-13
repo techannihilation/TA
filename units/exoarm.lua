@@ -217,7 +217,7 @@ return {
 				craterboost = 0,
 				cratermult = 0,
 				name = "PlasmaRepulsor",
-				rechargeDelay = 2,
+				rechargedelay = 2,
 				shieldbadcolor = "1 0.2 0.2 0.30",
 				shieldenergyuse = 2000,
 				shieldforce = 5,
