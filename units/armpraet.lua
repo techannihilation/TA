@@ -220,7 +220,7 @@ return {
 				sizedecay = -0.15,
 				soundhitdry = "xplomed4",
 				soundhitwet = "splsmed",
-				soundhitwetvolume = 0.3,
+				soundhitwetvolume = 0.6,
 				soundstart = "Scargun",
 				stages = 20,
 				turret = true,
