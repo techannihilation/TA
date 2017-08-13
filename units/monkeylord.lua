@@ -142,7 +142,7 @@ return {
 				rgbcolor = "1 0 0",
 				soundhitdry = "",
 				soundhitwet = "sizzle",
-				soundhitwetvolume = 0.2,
+				soundhitwetvolume = 0.5,
 				soundstart = "BFG__X1B",
 				soundtrigger = 1,
 				sweepfire = false,
