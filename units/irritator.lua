@@ -219,7 +219,7 @@ return {
 					subs = 5,
 				},
 			},
-			tll_barret = {
+			mini_barret = {
 				accuracy = 100,
 				areaofeffect = 200,
 				beamttl = 10,
@@ -258,11 +258,11 @@ return {
 		weapons = {
 			[1] = {
 				badtargetcategory = "MEDIUM SMALL TINY",
-				def = "TLL_BARRET",
+				def = "MINI_BARRET",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				def = "IRRITATOR_CANON",
+				def = "IRRITATOR_CANONN",
 				onlytargetcategory = "SURFACE",
 				maindir = "0 0 1",
 				maxangledif = 120,
