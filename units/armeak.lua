@@ -4,7 +4,7 @@ return {
 		airsightdistance = 1200,
 		brakerate = 0.494,
 		buildcostenergy = 89920,
-		buildcostmetal = 4850,
+		buildcostmetal = 5250,
 		buildpic = "armeak.dds",
 		buildtime = 75000,
 		canmove = true,
