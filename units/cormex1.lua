@@ -1,4 +1,4 @@
-return {
+ return {
 	cormex1 = {
 		acceleration = 0,
 		activatewhenbuilt = true,
@@ -13,7 +13,7 @@ return {
 		buildinggrounddecaltype = "cormex1_aoplane.dds",
 		buildpic = "cormex1.dds",
 		buildtime = 6450,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER SURFACE",
 		collisionvolumeoffsets = "0 8 0",
 		collisionvolumescales = "50 35 50",
 		collisionvolumetype = "CylY",
