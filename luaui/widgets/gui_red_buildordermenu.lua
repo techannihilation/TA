@@ -491,11 +491,7 @@ function widget:Initialize()
 	
 	AutoResizeObjects() --fix for displacement on crash issue
 
-	WG['red_buildmenu'] = {}
-	WG['red_buildmenu'].setConfigOldUnitIcons = function(value)
-  	oldUnitpics = value
-  	end
-
+	WG['OtaIcons'] = oldUnitpics
 end
 
 local function onNewCommands(buildcmds,othercmds)
@@ -643,6 +639,12 @@ function widget:CommandsChanged()
 end
 
 function widget:GameFrame(frame)
+  if oldUnitpics ~= WG['OtaIcons'] then
+  	--Spring.Echo("OtaIcons toggle ", WG['OtaIcons'])
+  	oldUnitpics = WG['OtaIcons']
+    Spring.ForceLayoutUpdate()
+  end
+
   if frame%5==0 then
   	WG["cmdID"] = nil
   end
