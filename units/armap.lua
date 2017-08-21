@@ -64,9 +64,10 @@ return {
 			[5] = "armthund",
 			[6] = "armatlas",
 			[7] = "armkam",
-			[8] = "armblz",
-			[9] = "armdragf",
-			[10] = "armjade",
+			[8] = "blastwing",
+			[9] = "armblz",
+			[10] = "armdragf",
+			[11] = "armjade",
 		},
 		customparams = {
 			buildpic = "ARMAP.png",
