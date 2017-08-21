@@ -124,7 +124,7 @@ return {
 		weapons = {
 			[1] = {
 				badtargetcategory = "MEDIUM LARGE HUGE",
-				def = "SPAM_LIGHTNING",
+				def = "LASER",
 				onlytargetcategory = "SURFACE",
 			},
 		},
