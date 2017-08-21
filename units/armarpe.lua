@@ -51,6 +51,7 @@ return {
 		steeringmode = 1,
 		turnrate = 693,
 		unitname = "armarpe",
+		usesmoothmesh = 0,
 		customparams = {
 			faction = "CORE",
 			requiretech = "Advanced T1 Unit Research Centre",
