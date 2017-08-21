@@ -15,7 +15,7 @@ return {
 		category = "ALL MEDIUMVTOL MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL WEAPON",
 		collide = false,
 		cruisealt = "32",
-		description = "Kamikaze Bomb Drone",
+		description = "Kamikaze EMP Bomb Drone",
 		downloadable = 1,
 		energymake = 1,
 		energyuse = 0,
@@ -52,7 +52,6 @@ return {
 		usesmoothmesh = 0,
 		customparams = {
 			faction = "ARM",
-			requiretech = "Advanced T1 Unit Research Centre",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
