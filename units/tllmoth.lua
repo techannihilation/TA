@@ -2,7 +2,7 @@ return {
 	tllmoth = {
 		acceleration = 0.142,
 		brakerate = 0.385,
-		buildcostenergy = 6075,
+		buildcostenergy = 5475,
 		buildcostmetal = 420,
 		builder = false,
 		buildpic = "tllmoth.dds",
