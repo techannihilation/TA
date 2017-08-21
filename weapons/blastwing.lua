@@ -15,7 +15,7 @@ return {
 		soundstart = "bombrel",
 		damage = {
 			bombers = 5,
-			commanders = 25,
+			commanders = 30,
 			default = 1200,
 			fighters = 5,
 			flak_resistant = 5,
