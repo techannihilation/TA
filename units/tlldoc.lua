@@ -2,8 +2,8 @@ return {
 	tlldoc = {
 		acceleration = 0.12,
 		brakerate = 0.75,
-		buildcostenergy = 320000,
-		buildcostmetal = 36600,
+		buildcostenergy = 340000,
+		buildcostmetal = 29600,
 		builddistance = 300,
 		builder = true,
 		buildpic = "tlldoc.dds",
