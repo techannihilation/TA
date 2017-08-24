@@ -67,9 +67,10 @@ return {
 			[13] = "tllflak",
 			[14] = "tllhmt",
 			[15] = "tllshoretorp",
-			[16] = "tllcoyote",
-			[17] = "tllloki",
-			[18] = "tllacv",
+			[16] = "tllcv",
+			[17] = "tllcoyote",
+			[18] = "tllloki",
+			
 		},
 		customparams = {
 			faction = "TLL",
