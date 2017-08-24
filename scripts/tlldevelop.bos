@@ -3,8 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, pad, nano1, nano2, nano3, nano4, arm1a, arm1b,
-       arm2a, arm2b, arm3a, arm3b, arm4a, arm4b, gun1, gun2,
+piece  base, pad, nano1, nano2, nano3, nano4, arm1a, arm2a,  arm3a, arm4a,
        radar, sphere1, sphere2, light, support1, support2, support3, support4,
        mast;
 
@@ -75,27 +74,15 @@ Go()
 	show arm2a;
 	show arm3a;
 	show arm4a;
-	show arm1b;
-	show arm2b;
-	show arm3b;
-	show arm4b;
-	move arm1a to z-axis [27.000000] speed [10.000000];
-	move arm1b to z-axis [27.000000] speed [10.000000];
-	move arm2a to z-axis [27.000000] speed [10.000000];
-	move arm2b to z-axis [27.000000] speed [10.000000];
-	move arm3a to z-axis [27.000000] speed [10.000000];
-	move arm3b to z-axis [27.000000] speed [10.000000];
-	move arm4a to z-axis [27.000000] speed [10.000000];
-	move arm4b to z-axis [27.000000] speed [10.000000];
+	move arm1a to z-axis [8.000000] speed [10.000000];
+	move arm2a to z-axis [8.000000] speed [10.000000];
+	move arm3a to z-axis [8.000000] speed [10.000000];
+	move arm4a to z-axis [8.000000] speed [10.000000];
 	wait-for-move arm1a along z-axis;
 	turn arm1a to x-axis <45.010989> speed <10.000000>;
 	turn arm2a to x-axis <45.010989> speed <10.000000>;
 	turn arm3a to x-axis <45.010989> speed <10.000000>;
 	turn arm4a to x-axis <45.010989> speed <10.000000>;
-	turn arm1b to x-axis <-45.010989> speed <10.000000>;
-	turn arm2b to x-axis <-45.010989> speed <10.000000>;
-	turn arm3b to x-axis <-45.010989> speed <10.000000>;
-	turn arm4b to x-axis <-45.010989> speed <10.000000>;
 	wait-for-turn arm1a around x-axis;
 	call-script OpenYard();
 	set INBUILDSTANCE to 1;
@@ -109,28 +96,16 @@ Stop()
 	turn arm2a to x-axis <0.000000> speed <15.000000>;
 	turn arm3a to x-axis <0.000000> speed <15.000000>;
 	turn arm4a to x-axis <0.000000> speed <15.000000>;
-	turn arm1b to x-axis <0.000000> speed <15.000000>;
-	turn arm2b to x-axis <0.000000> speed <15.000000>;
-	turn arm3b to x-axis <0.000000> speed <15.000000>;
-	turn arm4b to x-axis <0.000000> speed <15.000000>;
 	wait-for-turn arm1a around x-axis;
 	move arm1a to z-axis [0.000000] speed [15.000000];
-	move arm1b to z-axis [0.000000] speed [15.000000];
 	move arm2a to z-axis [0.000000] speed [15.000000];
-	move arm2b to z-axis [0.000000] speed [15.000000];
 	move arm3a to z-axis [0.000000] speed [15.000000];
-	move arm3b to z-axis [0.000000] speed [15.000000];
 	move arm4a to z-axis [0.000000] speed [15.000000];
-	move arm4b to z-axis [0.000000] speed [15.000000];
 	wait-for-move arm1a along z-axis;
 	hide arm1a;
-	hide arm1b;
 	hide arm2a;
-	hide arm2b;
 	hide arm3a;
-	hide arm3b;
 	hide arm4a;
-	hide arm4b;
 }
 
 InitState()
@@ -168,13 +143,9 @@ RequestState(requestedstate, currentstate)
 Create()
 {
 	hide arm1a;
-	hide arm1b;
 	hide arm2a;
-	hide arm2b;
 	hide arm3a;
-	hide arm3b;
 	hide arm4a;
-	hide arm4b;
 	dont-shade radar;
 	dont-cache sphere1;
 	dont-cache sphere2;
@@ -189,48 +160,6 @@ Create()
 		sleep 1000;
 	}
 	spin radar around y-axis speed <30.005495>;
-}
-
-AimPrimary(heading, pitch)
-{
-	signal SIG_AIM;
-	set-signal-mask SIG_AIM;
-	turn gun1 to y-axis heading speed <150.000000>;
-	turn gun1 to x-axis <0.000000> - pitch speed <130.000000>;
-	wait-for-turn gun1 around y-axis;
-	wait-for-turn gun1 around x-axis;
-	return (1);
-}
-
-AimFromPrimary(piecenum)
-{
-	piecenum = gun1;
-}
-
-AimTertiary(heading, pitch)
-{
-	signal SIG_AIM_3;
-	set-signal-mask SIG_AIM_3;
-	turn gun2 to y-axis heading speed <150.000000>;
-	turn gun2 to x-axis <0.000000> - pitch speed <130.000000>;
-	wait-for-turn gun2 around y-axis;
-	wait-for-turn gun2 around x-axis;
-	return (1);
-}
-
-AimFromTertiary(piecenum)
-{
-	piecenum = gun2;
-}
-
-QueryPrimary(piecenum)
-{
-	piecenum = gun1;
-}
-
-QueryTertiary(piecenum)
-{
-	piecenum = gun2;
 }
 
 QueryNanoPiece(piecenum)
@@ -304,101 +233,78 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type BITMAPONLY | BITMAP5;
-		explode arm1a type BITMAPONLY | BITMAP2;
-		explode arm2a type BITMAPONLY | BITMAP3;
-		explode arm1b type BITMAPONLY | BITMAP2;
-		explode arm2b type BITMAPONLY | BITMAP3;
-		explode arm3a type BITMAPONLY | BITMAP2;
-		explode arm3b type BITMAPONLY | BITMAP3;
-		explode support1 type BITMAPONLY | BITMAP5;
-		explode support2 type BITMAPONLY | BITMAP5;
-		explode support3 type BITMAPONLY | BITMAP5;
-		explode pad type BITMAPONLY | BITMAP5;
-		explode radar type SMOKE;
-		explode support4 type SHATTER | BITMAP5;
-		explode arm4a type FALL | SMOKE;
-		explode arm4b type FALL | SMOKE;
-		explode gun1 type SMOKE;
-		explode gun2 type SMOKE;
-		explode sphere1 type SHATTER | BITMAP5;
-		explode sphere2 type FALL | FIRE | BITMAP5;
-		explode light type SHATTER;
-		explode mast type SHATTER;
-		return (0);
+		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+		explode arm1a type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode arm2a type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode arm3a type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode support1 type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+		explode support2 type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+		explode support3 type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+		explode pad type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+		explode radar type NOHEATCLOUD | SMOKE;
+		explode support4 type NOHEATCLOUD | SHATTER | BITMAP5;
+		explode arm4a type NOHEATCLOUD | FALL | SMOKE;
+		explode sphere1 type NOHEATCLOUD | SHATTER | BITMAP5;
+		explode sphere2 type NOHEATCLOUD | FALL | FIRE | BITMAP5;
+		explode light type NOHEATCLOUD | SHATTER;
+		explode mast type NOHEATCLOUD | SHATTER;
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type BITMAPONLY | BITMAP5;
-		explode arm1a type SMOKE | BITMAP2;
-		explode arm2a type FIRE | BITMAP3;
-		explode arm1b type FIRE | BITMAP2;
-		explode arm2b type SMOKE | BITMAP3;
-		explode arm3a type SMOKE | BITMAP2;
-		explode arm3b type SMOKE | BITMAP3;
-		explode support1 type SHATTER | BITMAP5;
-		explode support2 type SHATTER | BITMAP5;
-		explode support3 type FIRE | BITMAP5;
-		explode pad type FIRE | BITMAP5;
-		explode radar type FIRE;
-		explode support4 type SHATTER | BITMAP5;
-		explode arm4a type FIRE;
-		explode arm4b type FIRE;
-		explode gun1 type FIRE;
-		explode gun2 type FIRE;
-		explode sphere1 type SHATTER | BITMAP5;
-		explode sphere2 type SHATTER | BITMAP5;
-		explode light type SHATTER;
-		explode mast type SHATTER;
-		return (0);
+		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+		explode arm1a type NOHEATCLOUD | SMOKE | BITMAP2;
+		explode arm2a type NOHEATCLOUD | FIRE | BITMAP3;
+		explode arm3a type NOHEATCLOUD | SMOKE | BITMAP2;
+		explode support1 type NOHEATCLOUD | SHATTER | BITMAP5;
+		explode support2 type NOHEATCLOUD | SHATTER | BITMAP5;
+		explode support3 type NOHEATCLOUD | FIRE | BITMAP5;
+		explode pad type NOHEATCLOUD | FIRE | BITMAP5;
+		explode radar type NOHEATCLOUD | FIRE;
+		explode support4 type NOHEATCLOUD | SHATTER | BITMAP5;
+		explode arm4a type NOHEATCLOUD | FIRE;
+		explode sphere1 type NOHEATCLOUD | SHATTER | BITMAP5;
+		explode sphere2 type NOHEATCLOUD | SHATTER | BITMAP5;
+		explode light type NOHEATCLOUD | SHATTER;
+		explode mast type NOHEATCLOUD | SHATTER;
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type BITMAPONLY | BITMAP5;
-		explode arm1a type SHATTER | BITMAP2;
-		explode arm2a type FIRE | BITMAP3;
-		explode arm1b type FIRE | BITMAP2;
-		explode arm2b type FIRE | BITMAP3;
-		explode arm3a type SHATTER | BITMAP2;
-		explode arm3b type FIRE | BITMAP3;
-		explode support1 type SHATTER | BITMAP5;
-		explode support2 type SHATTER | BITMAP5;
-		explode support3 type FIRE | BITMAP5;
-		explode pad type FIRE | BITMAP5;
-		explode radar type FIRE;
-		explode support4 type SHATTER | BITMAP5;
-		explode arm4a type FIRE;
-		explode arm4b type SHATTER;
-		explode gun1 type SHATTER;
-		explode gun2 type FIRE;
-		explode sphere1 type SHATTER | BITMAP5;
-		explode sphere2 type SHATTER | BITMAP5;
-		explode light type SHATTER;
-		explode mast type SHATTER;
-		return (0);
+		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+		explode arm1a type NOHEATCLOUD | SHATTER | BITMAP2;
+		explode arm2a type NOHEATCLOUD | FIRE | BITMAP3;
+		explode arm3a type NOHEATCLOUD | SHATTER | BITMAP2;
+		explode support1 type NOHEATCLOUD | SHATTER | BITMAP5;
+		explode support2 type NOHEATCLOUD | SHATTER | BITMAP5;
+		explode support3 type NOHEATCLOUD | FIRE | BITMAP5;
+		explode pad type NOHEATCLOUD | FIRE | BITMAP5;
+		explode radar type NOHEATCLOUD | FIRE;
+		explode support4 type NOHEATCLOUD | SHATTER | BITMAP5;
+		explode arm4a type NOHEATCLOUD | FIRE;
+		explode sphere1 type NOHEATCLOUD | SHATTER | BITMAP5;
+		explode sphere2 type NOHEATCLOUD | SHATTER | BITMAP5;
+		explode light type NOHEATCLOUD | SHATTER;
+		explode mast type NOHEATCLOUD | SHATTER;
+		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type SHATTER | BITMAP5;
-	explode arm1a type SHATTER | BITMAP2;
-	explode arm2a type SHATTER | BITMAP3;
-	explode arm1b type SHATTER | BITMAP2;
-	explode arm2b type SHATTER | BITMAP3;
-	explode arm3a type SHATTER | BITMAP2;
-	explode arm3b type SHATTER | BITMAP3;
-	explode support1 type SHATTER | BITMAP5;
-	explode support2 type SHATTER | BITMAP5;
-	explode support3 type SHATTER | BITMAP5;
-	explode pad type FIRE | BITMAP5;
-	explode radar type SHATTER;
-	explode support4 type SHATTER | BITMAP5;
-	explode arm4a type SHATTER;
-	explode arm4b type SHATTER;
-	explode gun1 type SHATTER;
-	explode gun2 type SHATTER;
-	explode sphere1 type SHATTER | BITMAP5;
-	explode sphere2 type SHATTER | BITMAP5;
-	explode light type SHATTER;
-	explode mast type SHATTER;
+	explode base type NOHEATCLOUD | SHATTER | BITMAP5;
+	explode arm1a type NOHEATCLOUD | SHATTER | BITMAP2;
+	explode arm2a type NOHEATCLOUD | SHATTER | BITMAP3;
+	explode arm3a type NOHEATCLOUD | SHATTER | BITMAP2;
+	explode support1 type NOHEATCLOUD | SHATTER | BITMAP5;
+	explode support2 type NOHEATCLOUD | SHATTER | BITMAP5;
+	explode support3 type NOHEATCLOUD | SHATTER | BITMAP5;
+	explode pad type NOHEATCLOUD | FIRE | BITMAP5;
+	explode radar type NOHEATCLOUD | SHATTER;
+	explode support4 type NOHEATCLOUD | SHATTER | BITMAP5;
+	explode arm4a type NOHEATCLOUD | SHATTER;
+	explode sphere1 type NOHEATCLOUD | SHATTER | BITMAP5;
+	explode sphere2 type NOHEATCLOUD | SHATTER | BITMAP5;
+	explode light type NOHEATCLOUD | SHATTER;
+	explode mast type NOHEATCLOUD | SHATTER;
+	return (corpsetype);
 }
