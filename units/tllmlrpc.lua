@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 82000,
 		buildcostmetal = 5500,
 		builder = false,
-		buildpic = "avtr.dds",
+		buildpic = "tllmlrpc.dds",
 		buildtime = 90000,
 		canattack = true,
 		canguard = true,
