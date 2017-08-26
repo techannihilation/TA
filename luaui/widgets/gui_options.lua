@@ -508,7 +508,7 @@ function applyOptionValue(i)
 			Spring.SetConfigInt("FSAALevel ",value)
 		elseif id == 'shadowslider' then
 			local enabled = 1
-			if value == options.min then 
+			if value == options[i].min then 
 				enabled = 0
 			end
 			Spring.SendCommands("shadows "..enabled.." "..value)
