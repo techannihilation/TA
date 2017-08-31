@@ -25,7 +25,7 @@ return {
 		energymake = 50,
 		energystorage = 1500,
 		energyuse = 0,
-		explodeas = "CRAWL_BLAST",
+		explodeas = "LARGE_BUILDINGEX",
 		firestandorders = 1,
 		floater = true,
 		footprintx = 6,
