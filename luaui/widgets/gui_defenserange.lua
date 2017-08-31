@@ -251,8 +251,8 @@ state["myPlayerID"] = nil
 --Button display configuration
 --position only relevant if no saved config data found
 local buttonConfig = {}
-buttonConfig["posPercRight"] = 0.98
-buttonConfig["posPercBottom"] = 0.8
+buttonConfig["posPercRight"] = 0.984
+buttonConfig["posPercBottom"] = 0.815
 buttonConfig["defaultScreenResY"] = 1050 --do not change
 buttonConfig["defaultWidth"] = 23 --size in pixels in default screen resolution
 buttonConfig["defaultWidth"] = 23 --size in pixels in default screen resolution

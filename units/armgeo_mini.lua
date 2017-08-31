@@ -14,7 +14,7 @@ return {
 		buildinggrounddecaltype = "armgeo_aoplane.dds",
 		buildpic = "armgeo_mini.dds",
 		buildtime = 6200,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER SURFACE",
 		corpse = "dead",
 		description = "Produces Energy",
 		energymake = 180,

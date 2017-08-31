@@ -124,6 +124,8 @@ local pplants = {
 local cbackground, cborder = include("Configs/ui_config.lua")
 local triggered = nil
 
+local update = 1.5
+local uDefID
 ------------------------------------------------------------------------------------
 -- Speedups
 ------------------------------------------------------------------------------------
@@ -283,7 +285,26 @@ function widget:ViewResize(x,y)
 	init()
 end
 
---local starttime = Spring.GetGameSecond()
+local timeCounter = math.huge -- force the first update
+
+
+function widget:Update(deltaTime)
+  if (timeCounter < update) then
+    timeCounter = timeCounter + deltaTime
+    return
+  end
+
+  timeCounter = 0
+	local text = Spring.GetCurrentTooltip()
+	local expMorphPat = "UnitDefID (%d+)\n"
+	uDefID = tonumber(text:match(expMorphPat)) or nil
+	local OrderID = WG["cmdID"] or nil
+	if OrderID  and OrderID < 0 then
+		OrderID = math.abs(OrderID)
+		uDefID = OrderID
+	end
+end
+
 function widget:DrawScreen()
 	if triggered == nil then
 		if cbackground[4] == 0.54321 then
@@ -292,15 +313,6 @@ function widget:DrawScreen()
 	triggered = true
 	end
 	
-	local text = Spring.GetCurrentTooltip()
-	local expMorphPat = "UnitDefID (%d+)\n"
-	local uDefID = tonumber(text:match(expMorphPat)) or nil
-	local OrderID = WG["cmdID"] or nil
-	if OrderID  and OrderID < 0 then
-		OrderID = math.abs(OrderID)
-		uDefID = OrderID
-	end
-
 	if uDefID then
 		local time = Spring.DiffTimers(Spring.GetTimer(), startTimer)
 		--Spring.Echo(startTimer,time)

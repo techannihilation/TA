@@ -44,7 +44,6 @@ return {
 		sightdistance = 350,
 		standingfireorder = 2,
 		unitname = "tllmortor",
-		--usebuildinggrounddecal = true,
 		yardmap = "oooo oooo oooo oooo",
 		customparams = {
 			faction = "TLL",

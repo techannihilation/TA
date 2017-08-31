@@ -103,11 +103,10 @@ return {
 			repulsor2 = {
 				name = "PlasmaRepulsor",
 				range = 340,
-				shieldalpha = 0.3,
-				shieldbadcolor = "1 0.2 0.2",
+				shieldbadcolor = "1 0.2 0.2 0.30",
 				shieldenergyuse = 300,
 				shieldforce = 8,
-				shieldgoodcolor = "0.2 1 0.2",
+				shieldgoodcolor = "0.2 1 0.2 0.30",
 				shieldintercepttype = 1,
 				shieldmaxspeed = 200,
 				shieldpower = 2900,

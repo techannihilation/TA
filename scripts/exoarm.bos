@@ -527,6 +527,25 @@ QueryWeapon4(piecenum)
 	}
 }
 
+AimWeapon5(heading, pitch)
+{
+	return (1);
+}
+
+FireWeapon5()
+{
+}
+
+AimFromWeapon5(piecenum)
+{
+	piecenum = pelvis;
+}
+
+QueryWeapon5(piecenum)
+{
+	piecenum = pelvis;
+}
+
 Killed(severity, corpsetype)
 {
 	hide rflare;

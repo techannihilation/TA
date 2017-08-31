@@ -49,7 +49,6 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "tllvhlt",
-		--usebuildinggrounddecal = true,
 		yardmap = "oooo",
 		customparams = {
 			buildpic = "tllvhlt.png",

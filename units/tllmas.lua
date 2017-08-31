@@ -17,7 +17,7 @@ return {
 		collisionvolumescales = "76 152 76",
 		collisionvolumetest = 1,
 		collisionvolumetype = "CylY",
-		description = "Planet Mantle Penetration Mine, Amphibious",
+		description = "Planet Mantle Penetration Mine (Metal Extractor), Amphibious",
 		energymake = 0,
 		energyuse = 250,
 		explodeas = "ATOMIC_BLAST",
@@ -43,7 +43,6 @@ return {
 		selfdestructas = "MINE_NUKE",
 		sightdistance = 322,
 		unitname = "tllmas",
-		--usebuildinggrounddecal = true,
 		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo",
 		customparams = {
 			faction = "TLL",

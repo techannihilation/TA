@@ -148,17 +148,14 @@ local function getEditedCurrentTooltip()
         end
     end
     if MorphDefID then
-    	--unitDefID=MorphDefID
-        --iconsize=iconsizeMaster
+    	unitDefID=MorphDefID
+        iconsize=iconsizeMaster
     elseif tooltipID then
         unitDefID=Spring.GetUnitDefID(tooltipID)
         iconsize=iconsizeMaster
     elseif WG["cmdID"] and WG["cmdID"] < 0 then
     	unitDefID=math.abs(WG["cmdID"])
     	iconsize=iconsizeMaster
-    elseif WG["cmdID"] and (WG["cmdID"] >= CMD_MORPH and WG["cmdID"] <= CMD_MORPH+250) then
-    	--todo
-    	iconsize=0
     elseif Spring.GetSelectedUnitsCount() == 1 then
     	unitID=Spring.GetSelectedUnits()[1]
     	if Spring.ValidUnitID(unitID) then
@@ -281,9 +278,15 @@ function widget:GetConfigData() --save config
 	if (PassedStartupCheck) then
 		local vsy = Screen.vsy
 		local unscale = CanvasY/vsy --needed due to autoresize, stores unresized variables
-		Config.tooltip.px = tooltip.background.px * unscale
-		Config.tooltip.py = tooltip.background.py * unscale
-		return {Config=Config}
+		if (tooltip.background.px * unscale > -50) or (tooltip.background.py * unscale > -50) then
+			Config.tooltip.px = tooltip.background.px * unscale
+			Config.tooltipn.py = tooltip.background.py * unscale
+			return {Config=Config}
+		else
+			Config.tooltip.px = -50
+			Config.tooltip.py = -50
+			return {Config=Config}
+		end
 	end
 end
 function widget:SetConfigData(data) --load config

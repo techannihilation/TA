@@ -74,7 +74,7 @@ end
 
 function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponID, projectileID, attackerID, attackerDefID, attackerTeam)
   if isloadedID[unitID] then
-    Spring.Echo(unitID, " Damage reduced")
+    --Spring.Echo(unitID, " Damage reduced")
     return 0, 1
   else
     return damage, 1

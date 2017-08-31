@@ -15,7 +15,7 @@ function widget:GetInfo()
 		desc      = "Players list with useful information / shortcuts. Use tweakmode (ctrl+F11) to customize. '/cputext' displays cpu %",
 		author    = "Marmoth. (spiced up by Floris)",
 		date      = "25 april 2015",
-		version   = "14.0",
+		version   = "16.0",
 		license   = "GNU GPL, v2 or later",
 		layer     = -4,
 		enabled   = true,  --  loaded by default?
@@ -36,6 +36,7 @@ end
 -- v13   (Floris): Added scale buttons. Added grey cpu/ping icons for spectators. Resized elements. Textured bg. Spec label click to unfold/fold. Added guishader. Lockcamera on doubleclick. Ping in ms/sec/min. Shows dot icon in front of tracked player. HD-ified lots of other icons. Speccing/dead player keep their color. Improved e/m share gui responsiveness. + removed the m_spec option
 -- v14   (Floris): Added country flags + Added camera icons for locked camera + specs show bright when they are broadcasting new lockcamera positions + bugfixed lockcamera for specs. Added small gaps between in tweakui icons. Auto scales with resolution changes.
 -- v15   (Floris): Integrated LockCamers widget code
+-- v16   (Nixtux): Cleanup getgameframe calls everywhere (performance improvement)
 
 --------------------------------------------------------------------------------
 -- Widget Scale
@@ -72,7 +73,6 @@ local Spring_GetAIInfo           = Spring.GetAIInfo
 local Spring_GetTeamRulesParam   = Spring.GetTeamRulesParam
 local Spring_IsGUIHidden		 = Spring.IsGUIHidden
 local Spring_GetDrawFrame		 = Spring.GetDrawFrame
-local Spring_GetGameFrame		 = Spring.GetGameFrame
 local Spring_GetTeamColor		 = Spring.GetTeamColor
 local Spring_GetMyTeamID		 = Spring.GetMyTeamID
 
@@ -166,7 +166,7 @@ local pingCpuColors   = {
 
 local cbackground, _, _ = include("Configs/ui_config.lua")
 triggered = nil
-
+local currentGameFrame = Spring_GetGameFrame()
 --------------------------------------------------------------------------------
 -- Time Variables
 --------------------------------------------------------------------------------
@@ -1126,7 +1126,8 @@ function SortPlayers(teamID,allyTeamID,vOffset)
 		table.insert(drawListOffset, vOffset)
 		table.insert(drawList, 64 + teamID)  -- no players team
 		player[64 + teamID].posY = vOffset
-		if Spring_GetGameFrame() > 0 then
+		if gameStarted then
+		--if Spring_GetGameFrame() > 0 then
 			player[64+teamID].totake = IsTakeable(teamID)
 		end
 	end
@@ -1178,13 +1179,17 @@ end
 --  Draw control
 ---------------------------------------------------------------------------------------------------
 
-local PrevGameFrame
+local PrevGameFrame = 0
 local MainList
 local Background
 local ShareSlider
 
+function widget:GameFrame(frame)
+	currentGameFrame = frame
+end
+
 function widget:GameProgress(serverframenum)
-	local frame = Spring.GetGameFrame()
+	local frame = currentGameFrame
 	if frame > (serverframenum-maxframelag) then
 		PlayerIsBehind = false
 	else
@@ -1215,9 +1220,8 @@ function widget:DrawScreen()
 	local mouseX,mouseY = Spring_GetMouseState()
 	if (mouseX > widgetPosX + m_name.posX + m_name.width - 5) and (mouseX < widgetPosX + widgetWidth) and (mouseY > widgetPosY - 16) and (mouseY < widgetPosY + widgetHeight) then
 		local DrawFrame = Spring_GetDrawFrame()
-		local GameFrame = Spring_GetGameFrame()
-		if PrevGameFrame == nil then PrevGameFrame = GameFrame end
-		if (DrawFrame%5==0) or (GameFrame>PrevGameFrame+1) then
+		if PrevGameFrame == nil then PrevGameFrame = currentGameFrame end
+		if (DrawFrame%5==0) or (currentGameFrame>PrevGameFrame+1) then
 			--Spring.Echo(DrawFrame)
 			NeedUpdate = true
 		end
@@ -1226,7 +1230,7 @@ function widget:DrawScreen()
 	if NeedUpdate then
 		--Spring.Echo("DS APL update")
 		CreateLists()
-		PrevGameFrame = GameFrame
+		PrevGameFrame = currentGameFrame
 	end
 	
 	-- draws the background
@@ -1460,7 +1464,8 @@ function CreateMainList(tip)
 				specAmount = ""
 			end
 			DrawLabel(" Spectators  "..specAmount, drawListOffset[i], specListShow)
-			if Spring.GetGameFrame() <= 0 then
+			if gameStarted == nil then
+			--if Spring.GetGameFrame() <= 0 then
 				if specListShow then
 					DrawLabelTip("(click to hide specs)", drawListOffset[i], 95)
 				else
@@ -1473,7 +1478,8 @@ function CreateMainList(tip)
 			DrawLabel(" Enemies", drawListOffset[i], true)
 		elseif drawObject == -2 then
 			DrawLabel(" Allies", drawListOffset[i], true)
-			if Spring.GetGameFrame() <= 0 then
+			if gameStarted == 0 then
+			--if Spring.GetGameFrame() <= 0 then
 				DrawLabelTip("(dbl-click playername to track)", drawListOffset[i], 46)
 			end
 			if showTeamsizeVersus then
@@ -2705,7 +2711,8 @@ function widget:SetConfigData(data)      -- load
 		end
 	end
 
-	if data.lockPlayerID ~= nil and Spring.GetGameFrame()>0 then 
+	if data.lockPlayerID ~= nil and gameStarted then 
+	--if data.lockPlayerID ~= nil and Spring.GetGameFrame()>0 then 
  	    lockPlayerID = data.lockPlayerID 
  	end
 
@@ -2811,7 +2818,8 @@ function CheckPlayersChange()
 			player[i].cpu     = cpuUsage*100-((cpuUsage*100)%1)
 		end
 		
-		if teamID and Spring_GetGameFrame() > 0 then
+		if teamID and gameStarted then
+		--if teamID and Spring_GetGameFrame() > 0 then
 			local totake = IsTakeable(teamID)
 			player[i].totake = totake
 			if totake then
@@ -2862,7 +2870,7 @@ function Take(teamID,name, i)
 	reportTake = true
 	tookTeamID = teamID
 	tookTeamName = name
-	tookFrame = Spring.GetGameFrame()
+	tookFrame = currentGameFrame
 	
 	Spring_SendCommands("luarules take2 " .. teamID)
 	return
@@ -2908,7 +2916,7 @@ function widget:Update(delta) --handles takes & related messages
 
 	totalTime = totalTime + delta 
 	timeCounter = timeCounter + delta
-	curFrame = Spring_GetGameFrame()
+	curFrame = currentGameFrame
 	
 	
 	if energyPlayer ~= nil or metalPlayer ~= nil then

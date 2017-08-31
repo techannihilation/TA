@@ -61,7 +61,7 @@ return {
 			[9] = "tllfireraiser",
 			[10] = "tllriot",
 			[11] = "tllhplasma",
-			[12] = "tllbomber",
+			[12] = "tllmoth",
 			[13] = "tlldcsta",
 			[14] = "tllhltns",
 			[15] = "tlllmtns",

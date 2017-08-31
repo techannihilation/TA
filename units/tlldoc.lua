@@ -63,7 +63,7 @@ return {
 			[8] = "tllgate1",
 			[9] = "tllgazelle",
 			[10] = "tllion",
-			[11] = "tllvanya",			
+			[11] = "tllvanya",
 		},
 		customparams = {
 			buildpic = "ARMSMC.png",

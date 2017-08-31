@@ -116,6 +116,11 @@ unclassed_air = {
            "tllbuilderlvl2",
            "tllbuilderlvl3",
            "tllhtca",
+		"tllmoth",
+		"blastwing",
+		"armarpe",
+		
+		
 },
 --### SEA ###
 ships = {

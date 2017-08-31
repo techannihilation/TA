@@ -309,15 +309,73 @@ local morphDefs = {
 	  	time = 120,
 	  	tech = 1,
 	},
+	armgate2 = {
+		into = 'armgate',
+		time = 60,
+		tech = 1,
+	},
 	armgate = {
 		into = 'armgate1',
 		time = 120,
 		tech = 2,
 	},
+	corgate2 = {
+		into = 'corgate',
+		time = 60,
+		tech = 1,
+	},
 	corgate = {
 		into = 'corgate1',
 		time = 120,
 		tech = 2,
+	},
+	tllgate2 = {
+		into = 'tllgate',
+		time = 60,
+		tech = 1,
+	},
+	tllgate = {
+		into = 'tllgate1',
+		time = 120,
+		tech = 2,
+	},
+	armrad = {
+		into = 'armrad1',
+		time = 20,
+	},
+	armrad1 = {
+		into = 'armarad',
+		time = 30,
+		tech = 1,
+	},
+	armjamt = {
+		into = 'armveil',
+		time = 30,
+		tech = 1,
+	},
+	corrad = {
+		into = 'corrad1',
+		time = 20,
+	},
+	corrad1 = {
+		into = 'corarad',
+		time = 30,
+		tech = 1,
+	},
+	corjamt = {
+		into = 'corshroud',
+		time = 30,
+		tech = 1,
+	},
+	tllradar = {
+		into = 'tllarad',
+		time = 30,
+		tech = 1,
+	},
+	tlljam = {
+		into = 'tllajam',
+		time = 30,
+		tech = 1,
 	},
 	corech3 = {
 		into = 'corech18',
