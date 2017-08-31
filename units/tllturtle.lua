@@ -16,7 +16,7 @@ return {
 		category = "ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "All-terrain and amphibious Long Range Anti-Nuke",
+		description = "Long Range Anti-Nuke turtle",
 		energymake = 50,
 		energystorage = 100,
 		energyuse = 0,
