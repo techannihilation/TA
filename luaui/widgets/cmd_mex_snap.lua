@@ -27,6 +27,7 @@ local spGetActiveCommand = Spring.GetActiveCommand
 local spGetMouseState = Spring.GetMouseState
 local spTraceScreenRay = Spring.TraceScreenRay
 
+local gameStarted = Spring.GetGameFrame()
 local isMex = {}
 for uDefID, uDef in pairs(UnitDefs) do
 	if uDef.extractsMetal > 0 then
@@ -100,10 +101,22 @@ function widget:Initialize()
 	end
 end
 
+function widget:GameFrame(n)
+	if n > 0 then
+		gameStarted = n
+	end
+end
+
 function widget:DrawWorld()
 	
 	-- Check command is to build a mex
-	local _, cmdID = spGetActiveCommand()
+	local cmdID
+	if gameStarted > 0 then 
+		_, cmdID = spGetActiveCommand()
+	elseif WG["PreGameCommand"] then
+		cmdID = WG["PreGameCommand"].cmdID
+	end
+
 	if not (cmdID and isMex[-cmdID]) then return end
 	
 	-- Attempt to get position of command
@@ -119,8 +132,14 @@ function widget:DrawWorld()
 	-- Get the closet position that would give 100%
 	local bface = Spring.GetBuildFacing()
 	local bestPos = GetClosestMexPosition(closestSpot, bx, bz, -cmdID, bface)
-	if not bestPos then return end
-	
+	if not bestPos then
+		if gameStarted == 0 then 
+			WG["PreGameMexPos"] = nil
+		end
+		return
+	end
+	WG["PreGameMexPos"] = {cmdID = cmdID, bx = bestPos[1], by = bestPos[2], bz = bestPos[3], buildFacing = bface}
+
 	-- Draw !
 	gl.DepthTest(false)
 	
@@ -143,18 +162,31 @@ function widget:DrawWorld()
 	gl.DepthMask(false)
 end
 
+--[[
+function widget:MousePress(mx, my, mButton)
+	if gameStarted > 0 then return end
+	if mButton == 1 then
+		if WG["PreGameCommand"] then
+			local cmdID = WG["PreGameCommand"].cmdID
+			local bx = WG["PreGameCommand"].x
+			local bz = WG["PreGameCommand"].z
+			local bface = WG["PreGameCommand"].buildFacing
+			cmdID = -cmdID
+			local cmdParams = {bx, _ ,bz, bface}
+			--widget:CommandNotify(cmdID, cmdParams, "")
+		end
+	end
+end
+--]]
+
 function widget:CommandNotify(cmdID, cmdParams, cmdOpts)
-	
 	if isMex[-cmdID] then
-		
 		local bx, bz = cmdParams[1], cmdParams[3]
 		local closestSpot = GetClosestMetalSpot(bx, bz)
 		if closestSpot and not WG.IsMexPositionValid(closestSpot, bx, bz) then
-			
 			local bface = cmdParams[4]
 			local bestPos = GetClosestMexPosition(closestSpot, bx, bz, -cmdID, bface)
-			if bestPos then
-				
+			if bestPos and gameStarted > 0 then
 				GiveNotifyingOrder(cmdID, {bestPos[1], bestPos[2], bestPos[3], bface}, cmdOpts)
 				return true
 			end

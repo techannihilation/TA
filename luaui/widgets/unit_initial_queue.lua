@@ -42,6 +42,13 @@ local whiteColor = '\255\255\255\255' -- White
 local cbackground, cborder, cbuttonbackground = include("Configs/ui_config.lua")
 local triggered = nil
 
+local isMex = {}
+for uDefID, uDef in pairs(UnitDefs) do
+	if uDef.extractsMetal > 0 then
+		isMex[uDefID] = true
+	end
+end
+
 -- Building ids
 local ARMCOM = UnitDefNames["armcom"].id
 local CORCOM = UnitDefNames["corcom"].id
@@ -154,6 +161,10 @@ local ARMFDRAG = UnitDefNames["armfdrag"].id
 local CORFDRAG = UnitDefNames["corfdrag"].id
 local TLLDTNS = UnitDefNames["tlldtns"].id
 
+local ARMGEOMINI = UnitDefNames["armgeo_mini"].id
+local CORGEOMINI = UnitDefNames["corgeo_mini"].id
+local TLLGEOMINI = UnitDefNames["tllgeo_mini"].id
+
 
 -- this info is used to switch buildings between factions
 local armToCore = {}
@@ -184,6 +195,7 @@ armToCore[ARMUWMS] = CORUWMS
 armToCore[ARMUWES] = CORUWES
 armToCore[ARMFMKR] = CORFMKR
 armToCore[ARMFDRAG] = CORFDRAG
+armToCore[ARMGEOMINI] = CORGEOMINI
 
 local tllToCore = {}
 
@@ -212,6 +224,7 @@ tllToCore[TLLUWESTORAGE] = CORUWES
 tllToCore[TLLWMCONV] = CORFMKR
 tllToCore[TLLDTNS] = CORFDRAG
 tllToCore[TLLTORP] = CORTL
+tllToCore[TLLGEOMINI] = CORGEOMINI
 
 local tlltoArm = {}
 
@@ -240,6 +253,7 @@ tlltoArm[TLLUWESTORAGE] = ARMUWES
 tlltoArm[TLLWMCONV] = ARMFMKR
 tlltoArm[TLLDTNS] = ARMFDRAG
 tlltoArm[TLLTORP] = ARMTL
+tlltoArm[TLLGEOMINI] = ARMGEOMINI
 
 function table_invert(t)
     local s={}
@@ -368,7 +382,9 @@ local function SetSelDefID(defID)
 
 	selDefID = defID
 	local MetalWidget = widgetHandler.knownWidgets['Pre Start Metal View'] or {}
-
+	if selDefID then
+		WG["PreGameCommand"] = {cmdID = -selDefID}
+	end
 	if (isMex[selDefID] ~= nil) ~= (Spring.GetMapDrawMode() == "metal") and MetalWidget.active == false then
 		Spring.SendCommands("ShowMetalMap")
 	end
@@ -443,6 +459,7 @@ end
 
 function InitializeFaction(sDefID)
 	sDef = UnitDefs[sDefID]
+
 	-- Don't run if theres nothing to show
 	local sBuilds = sDef.buildOptions
 	if not sBuilds or (#sBuilds == 0) then
@@ -784,14 +801,17 @@ function widget:MousePress(mx, my, mButton)
 				if not pos then return end
 				local bx, by, bz = Spring.Pos2BuildPos(selDefID, pos[1], pos[2], pos[3])
 				local buildFacing = Spring.GetBuildFacing()
-
+				if WG["PreGameMexPos"] and isMex[selDefID] then
+					bx = WG["PreGameMexPos"].bx
+					by = WG["PreGameMexPos"].by
+					bz = WG["PreGameMexPos"].bz
+					--buildFacing = WG["PreGameMexPos"].buildFacing
+				end
 				if Spring.TestBuildOrder(selDefID, bx, by, bz, buildFacing) ~= 0 then
-
 					local buildData = {selDefID, bx, by, bz, buildFacing}
 					local _, _, meta, shift = Spring.GetModKeyState()
 					if meta then
-						table.insert(buildQueue, 1, buildData)
-
+							table.insert(buildQueue, 1, buildData)
 					elseif shift then
 
 						local anyClashes = false
