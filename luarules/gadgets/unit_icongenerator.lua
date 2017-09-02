@@ -1026,10 +1026,10 @@ local schemes,resolutions,ratios = {},{},{}
       Spring.Echo("Cheating must be enabled");
       return false;
     end;
-    if (not Spring.GetModUICtrl()) then
-      Spring.Echo("ModUICtrl is needed (type /luamoduictrl 1)");
-      return false;
-    end;
+    --if (not Spring.GetModUICtrl()) then
+    --  Spring.Echo("ModUICtrl is needed (type /luamoduictrl 1)");
+    --  return false;
+    --end;
     if (final_tex or #jobs>0) then
       Spring.Echo("Wait until current process is finished");
       return false;

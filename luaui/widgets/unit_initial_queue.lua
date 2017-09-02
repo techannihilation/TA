@@ -384,6 +384,8 @@ local function SetSelDefID(defID)
 	local MetalWidget = widgetHandler.knownWidgets['Pre Start Metal View'] or {}
 	if selDefID then
 		WG["PreGameCommand"] = {cmdID = -selDefID}
+	else 
+		WG["PreGameCommand"] = nil
 	end
 	if (isMex[selDefID] ~= nil) ~= (Spring.GetMapDrawMode() == "metal") and MetalWidget.active == false then
 		Spring.SendCommands("ShowMetalMap")
