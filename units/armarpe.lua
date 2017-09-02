@@ -21,7 +21,7 @@ return {
 		defaultmissiontype = "VTOL_standby",
 		description = "Strong Laser Gunship",
 		energystorage = 0,
-		energyuse = 0.8,
+		energymake = 1,
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
 		footprintx = 2,

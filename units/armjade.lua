@@ -116,10 +116,7 @@ return {
 				damage = {
 					commanders = 70,
 					default = 140,
-					fighters = 0,
-					flak_resistant = 0,
 					subs = 5,
-					unclassed_air = 0,
 				},
 			},
 		},
