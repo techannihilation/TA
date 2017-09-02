@@ -462,14 +462,17 @@ function applyOptionValue(i)
 		end
 		if id == 'advmapshading' then
 			Spring.SendCommands("AdvMapShading "..value)
+			Spring.SetConfigInt("AdvMapShading",value)
 		elseif id == 'advmodelshading' then
 			Spring.SendCommands("AdvModelShading "..value)
+			Spring.SetConfigInt("AdvModelShading",value)
 		elseif id == 'advsky' then
 			Spring.SetConfigInt("AdvSky",value)
 		elseif id == 'shadows' then
 			Spring.SendCommands("Shadows "..value)
 		elseif id == 'fullscreen' then
 			Spring.SendCommands("Fullscreen "..value)
+			Spring.SetConfigInt("Fullscreen",value)
 		elseif id == 'borderless' then
 			Spring.SendCommands("WindowBorderless "..value)
 		elseif id == 'screenedgemove' then
@@ -477,6 +480,7 @@ function applyOptionValue(i)
 			Spring.SetConfigInt("WindowedEdgeMove",value)
 		elseif id == 'hwcursor' then
 			Spring.SendCommands("hardwareCursor "..value)
+			Spring.SetConfigInt("HardwareCursor",value)
 		elseif id == 'fpstimespeed' then
 			Spring.SendCommands("fps "..value)
 			Spring.SendCommands("clock "..value)
@@ -528,7 +532,7 @@ function applyOptionValue(i)
 		elseif id == 'grassdetail' then
 			Spring.SetConfigInt("GrassDetail ",value)
 		elseif id == 'grounddetail' then
-			--Spring.SetConfigInt("GroundDetail "..value)
+			Spring.SetConfigInt("GroundDetail "..value)
 			Spring.SendCommands("grounddetail "..value)
 		elseif id == 'sndvolmaster' then
 			Spring.SetConfigInt("snd_volmaster", value)
@@ -748,11 +752,11 @@ function widget:Initialize()
 	  
 	options = {
 		{id="fullscreen", name="Fullscreen", type="bool", value=tonumber(Spring.GetConfigInt("Fullscreen",1) or 1) == 1},
-		{id="borderless", name="Borderless", type="bool", value=tonumber(Spring.GetConfigInt("WindowBorderless",1) or 1) == 1},
+		{id="borderless", name="Borderless window", type="bool", value=tonumber(Spring.GetConfigInt("WindowBorderless",1) or 1) == 1, description="Changes will be applied next game.\n\n(dont forget to turn off the \'fullscreen\' option next game)"},
 		{id="screenedgemove", name="Screen edge moves camera", type="bool", value=tonumber(Spring.GetConfigInt("FullscreenEdgeMove",1) or 1) == 1, description="If mouse is close to screen edge this will move camera\n\nChanges will be applied next game"},
-		{id="hwcursor", name="Hardware-cursor", type="bool", value=tonumber(Spring.GetConfigInt("hardwareCursor",1) or 1) == 1},
+		{id="hwcursor", name="Hardware cursor", type="bool", value=tonumber(Spring.GetConfigInt("hardwareCursor",1) or 1) == 1, description="When disabled: the mouse cursor refresh rate will be the same as your ingame fps"},
 		{id="fsaa", name="Anti Aliasing", type="slider", min=0, max=16, step=1, value=tonumber(Spring.GetConfigInt("FSAALevel",1) or 2), description='Changes will be applied next game'},
-		{id="advmapshading", name="Advanced map shading", type="bool", value=tonumber(Spring.GetConfigInt("AdvMapShading",1) or 1) == 1, description='When disabled: shadows are disabled too'},
+		{id="advmapshading", name="Advanced map shading", type="bool", value=tonumber(Spring.GetConfigInt("AdvMapShading",1) or 1) == 1, description='When disabled: map shadows aren\'t rendered as well'},
 		{id="advmodelshading", name="Advanced model shading", type="bool", value=tonumber(Spring.GetConfigInt("AdvModelShading",1) or 1) == 1},
 		
 		-- only one of these shadow options are shown, depending if "Shadow Quality Manager" widget is active
