@@ -430,8 +430,8 @@ end
 
 function gadget:AllowCommand(unitID, unitDefID, unitTeam, cmdID, cmdParams, cmdOptions)
 	if cmdID == CMD_MOVE and not canFlyDefs[unitDefID] then
-		moveCommandReplacementUnits = moveCommandReplacementUnits or {}
-		moveCommandReplacementUnits[#moveCommandReplacementUnits + 1] = unitID
+		--moveCommandReplacementUnits = moveCommandReplacementUnits or {}
+		--moveCommandReplacementUnits[#moveCommandReplacementUnits + 1] = unitID
 	end
 	
 	if constructorBuildDistDefs[unitDefID] and not rawBuildUpdateIgnore[cmdID] then
