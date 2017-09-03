@@ -106,7 +106,7 @@ return {
 			},
 		},
 		weapondefs = {
-			energy_cannon = {
+			mortor_cannon = {
 				areaofeffect = 50,
 				avoidfeature = false,
 				cegtag = "banthablaster",
@@ -135,9 +135,9 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 550,
 				damage = {
-					default = 300,
-					experimental_ships = 600,
-					ships = 450,
+					default = 40,
+					experimental_ships = 60,
+					ships = 60,
 					subs = 5,
 				},
 			},
@@ -145,7 +145,7 @@ return {
 		weapons = {
 			[1] = {
 				badtargetcategory = "TINY",
-				def = "ENERGY_CANNON",
+				def = "MORTOR_CANNON",
 				onlytargetcategory = "SURFACE",
 			},
 		},
