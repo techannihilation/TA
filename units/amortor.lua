@@ -110,7 +110,7 @@ return {
 			},
 		},
 		weapondefs = {
-			energy_cannon = {
+			mortor_cannon = {
 				areaofeffect = 50,
 				avoidfeature = false,
 				cegtag = "banthablaster",
@@ -149,7 +149,7 @@ return {
 		weapons = {
 			[1] = {
 				badtargetcategory = "TINY",
-				def = "ENERGY_CANNON",
+				def = "MORTOR_CANNON",
 				onlytargetcategory = "SURFACE",
 			},
 		},
