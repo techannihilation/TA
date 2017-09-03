@@ -209,8 +209,12 @@ function widget:Shutdown()
 	widgetHandler:DeregisterGlobal('DrawManager_energygui', DrawStatus)
 end
 
-function widget:GameFrame(n)
-	if (n % resourceRefreshRate == 1) then
+function widget:GameFrame(frame)
+	if frame%10==0 then
+		cbackground[4] = WG["background_color_over"]
+		return
+    end
+	if (frame % resourceRefreshRate == 1) then
 		refreshData() 
 	end
 end

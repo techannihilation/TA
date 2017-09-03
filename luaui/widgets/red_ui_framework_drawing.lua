@@ -177,6 +177,13 @@ function widget:Initialize()
 	F[5] = Text
 end
 
+function widget:GameFrame(frame)
+    if frame%10==0 then
+		minimapbrightness = WG["background_color_over"]
+		return
+    end
+end
+
 function widget:DrawScreen()
 	if triggered == nil then
 		minimapbrightness=WG["background_color"]

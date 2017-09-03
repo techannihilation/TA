@@ -20,6 +20,9 @@ local font = gl.LoadFont(LUAUI_DIRNAME.."Fonts/FreeSansBold.otf", loadedFontSize
 local bgcorner1 = ":n:"..LUAUI_DIRNAME.."Images/bgcorner1.png" -- only used to draw dropdown arrow
 local closeButtonTex = ":n:"..LUAUI_DIRNAME.."Images/close.dds"
 
+local cbackground, cborder, cbuttonbackground = include("Configs/ui_config.lua")
+
+local triggered = nil
 local bgMargin = 6
 
 local closeButtonSize = 30
@@ -90,6 +93,13 @@ function widget:ViewResize()
   widgetScale = (0.75 + (vsx*vsy / 7500000)) * customScale
   if windowList then gl.DeleteList(windowList) end
   windowList = gl.CreateList(DrawWindow)
+end
+
+function widget:GameFrame(frame)
+	if frame%10==0 then
+		cbackground[4] = WG["background_color_over"]
+		return
+    end
 end
 
 function widget:GameStart()
@@ -222,7 +232,7 @@ function DrawWindow()
   local y = screenY --upwards
 	
 	-- background
-  gl.Color(0,0,0,0.8)
+  gl.Color(0,0,0,cbackground[4])
 	RectRound(x-bgMargin,y-screenHeight-bgMargin,x+screenWidth+bgMargin,y+bgMargin,8, 0,1,1,1)
 	-- content area
 	gl.Color(0.33,0.33,0.33,0.15)
@@ -342,6 +352,12 @@ end
 
 
 function widget:DrawScreen()
+	if triggered == nil then
+		if cbackground[4] == 0.54321 and WG["background_color"] then
+			cbackground[4]=WG["background_color"]
+		end
+	triggered = true
+	end
 
   if spIsGUIHidden() then return end
   if amNewbie and not gameStarted then return end
@@ -541,6 +557,12 @@ function applyOptionValue(i)
 			Spring.SetConfigInt("CrossAlpha", value)
 		elseif id == 'darkenmap' then
 			WG['darkenmap'].setMapDarkness(value)
+		elseif id == 'uibgcolor' then
+			if value  == 0 then
+				WG["background_color_over"] = WG["background_color"]
+			else 
+				WG["background_color_over"] = (value*0.01)
+			end
 		end
 		
 	elseif options[i].type == 'select' then
@@ -788,6 +810,8 @@ function widget:Initialize()
 		{id="snow", widget="Snow", name="Snow", type="bool", value=widgetHandler.orderList["Snow"] ~= nil and (widgetHandler.orderList["Snow"] > 0), description='Lets it snow on winter maps, auto reduces when your fps gets lower + unitcount higher\n\nYou can give the command /snow to toggle snow for the current map (it remembers)'},
 		
 		{id="camera", name="Camera", type="select", options={'fps','overhead','spring','rot overhead','free'}, value=(tonumber(Spring.GetConfigInt("CamMode",1) or 2))},
+		{id="uibgcolor", name="UI Background Color", type="slider", min=0, max=90, value=tonumber((WG["background_color"]) or 55), description='Adjust Darkness of UI background'},
+
 	}
 	
 	local processedOptions = {}

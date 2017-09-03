@@ -102,6 +102,10 @@ function widget:GameStart()
 end
 
 function widget:GameFrame(frame)
+	if frame%10==0 then
+		cbackground[4] = WG["background_color_over"]
+		return
+    end
 	if frame%2 == 0 then
 		GetWind()
 	end

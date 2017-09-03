@@ -55,6 +55,7 @@ function widget:DrawScreen()
 
 		if WG["background_color"] == nil then
 			WG["background_color"] = minimapbrightness
+			WG["background_color_over"] = minimapbrightness
 		end
 	end
 end

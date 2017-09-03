@@ -1185,6 +1185,10 @@ local Background
 local ShareSlider
 
 function widget:GameFrame(frame)
+	if frame%10==0 then
+		cbackground[4] = WG["background_color_over"]
+		return
+    end
 	currentGameFrame = frame
 end
 
