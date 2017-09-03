@@ -15,9 +15,9 @@ local weapons = {
 	tlljuno_juno_pulse = { radius = 950, damage = 5, duration = 90, rangeFall = 0.8, timeFall = 0.1, scoutScale = 10},
 	
 	--mortor_canon
-	amortor_mortor_canon =  { radius = 95, damage = 200, duration = 60, rangeFall = 0.25, timeFall = 0.8, allyScale = 0.5, teamScale = 0.25},
-	cmortor_mortor_canon =  { radius = 95, damage = 200, duration = 60, rangeFall = 0.25, timeFall = 0.8, allyScale = 0.5, teamScale = 0.25},
-	tllmortor_mortor_canon =  { radius = 95, damage = 200, duration = 60, rangeFall = 0.25, timeFall = 0.8, allyScale = 0.5, teamScale = 0.25},
+	amortor_mortor_cannon =  { radius = 95, damage = 200, duration = 60, rangeFall = 0.25, timeFall = 0.8, allyScale = 0.5, teamScale = 0.25},
+	cmortor_mortor_cannon =  { radius = 95, damage = 200, duration = 60, rangeFall = 0.25, timeFall = 0.8, allyScale = 0.5, teamScale = 0.25},
+	tllmortor_mortor_cannon =  { radius = 95, damage = 200, duration = 60, rangeFall = 0.25, timeFall = 0.8, allyScale = 0.5, teamScale = 0.25},
 
 }
 
