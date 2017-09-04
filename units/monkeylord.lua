@@ -2,7 +2,6 @@ return {
 	monkeylord = {
 		acceleration = 0.12,
 		activatewhenbuilt = true,
-		autoheal = 100,
 		brakerate = 2.97,
 		buildcostenergy = 440000,
 		buildcostmetal = 29200,
