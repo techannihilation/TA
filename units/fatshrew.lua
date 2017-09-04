@@ -2,6 +2,7 @@ return {
 	fatshrew = {
 		acceleration = 0.12,
 		activatewhenbuilt = true,
+		autoheal = 400,
 		brakerate = 1.05,
 		buildcostenergy = 1250005,
 		buildcostmetal = 109200,
@@ -26,8 +27,8 @@ return {
 		footprintx = 8,
 		footprintz = 8,
 		icontype = "Krogoth",
-		idleautoheal = 3000,
-		idletime = 90,
+		idleautoheal = 5,
+		idletime = 1800,
 		immunetoparalyzer = 1,
 		isairbase = true,
 		losemitheight = 76,
