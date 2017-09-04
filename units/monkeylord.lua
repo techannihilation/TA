@@ -2,6 +2,7 @@ return {
 	monkeylord = {
 		acceleration = 0.12,
 		activatewhenbuilt = true,
+		autoheal = 100,
 		brakerate = 2.97,
 		buildcostenergy = 440000,
 		buildcostmetal = 29200,
@@ -34,7 +35,7 @@ return {
 		maxvelocity = 1.2,
 		maxwaterdepth = 100,
 		mobilestandorders = 1,
-		movementclass = "HTKBOT7",
+		movementclass = "hkbot4",
 		name = "Cybran Monkeylord Shielded Mech",
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
