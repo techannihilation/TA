@@ -20,7 +20,7 @@ return {
 		collisionvolumetype = "CylY",
 		corpse = "fatshrew_dead",
 		defaultmissiontype = "Standby",
-		description = "Experimental Fast AutoRepair Siege Hexapod",
+		description = "Experimental Siege Hexapod (Auto-Repair 400)",
 		energystorage = 10000,
 		explodeas = "NUCLEAR_MISSILE4",
 		firestandorders = 1,
