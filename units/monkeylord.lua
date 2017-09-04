@@ -34,7 +34,7 @@ return {
 		maxvelocity = 1.2,
 		maxwaterdepth = 100,
 		mobilestandorders = 1,
-		movementclass = "hkbot4",
+		movementclass = "HKBOT7",
 		name = "Cybran Monkeylord Shielded Mech",
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
