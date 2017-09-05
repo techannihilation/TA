@@ -10,7 +10,7 @@ Improvments:
 
 - This Release we have also focused on some well needed love for tll so we bring you 10+ new units for TLL
 
-New units:
+New units for TLL:
 - Very Heavy Laser Tower (To Match Arm/Core Countpart)
 - Advanced Wind trap
 - Engineerer Air T1 (Battle Commander) and T2 (AirLab T2)
@@ -20,7 +20,14 @@ New units:
 - Energy Cannon -- T1.5 tech 
 - Plamsa Gatling Gun -- T1.5 tech
 - Tll Dwarf Shield 
- 
+- Tll gunship -- T1.5 tech
+
+New units for ARM:
+- Blastwing -- Air EMP Kamakazi unit
+
+New units for CORE:
+- Surveyor -- Air Strong Laser Gunship
+
 Add morph tree for TLL:
 - Available Morph are
 - Morph tllhlt into tllvhlt
@@ -35,7 +42,7 @@ Add morph tree for TLL:
 - Morph tllfireraiser into tllamphibot
 
 All Faction get Missle Defence System:
-- This units is a static laser tower that shoots down rockets/missile (i won't target nukes/tac nukes)
+- This units is a static laser tower that intercepts rockets/missile (i won't target nukes/tac nukes)
 
 - Add T1.5 plasma cannon back for arm/core 
 - Add static radar morph chain and re-texture t1.5 radar
