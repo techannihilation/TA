@@ -159,8 +159,8 @@ end
 
 function drawWindValue(value)
 	glText(value, windTextPosX, windTextPosY, textSize*widgetScale, 'oc') -- Wind speed text
-	glColor(1,1,1,0.25)
-    glText(avgWind, -(15*widgetScale)+panelWidth, ((textSize*0.75*widgetScale)/8), textSize*0.75*widgetScale, 'r') -- Wind speed text
+	--glColor(1,1,1,0.25)
+    --glText(avgWind, -(15*widgetScale)+panelWidth, ((textSize*0.75*widgetScale)/8), textSize*0.75*widgetScale, 'r') -- Wind speed text
 end
 
 function widget:DrawScreen()
@@ -195,7 +195,7 @@ function widget:TweakDrawScreen()
         RectRound(xPos, yPos, xPos+panelWidth, yPos+panelHeight, 6)
         glTranslate(xPos, yPos, 0)
         drawCheckbox(check1x, check1y, rotationOn, "Rotation")
-        drawCheckbox(check2x, check2y, vsSolarOn, "Vs Solar")
+        --drawCheckbox(check2x, check2y, vsSolarOn, "Vs Solar")
     glPopMatrix() 
 end
 
