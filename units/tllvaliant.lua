@@ -24,7 +24,7 @@ return {
 		canresurrect = false,
 		canstop = 1,
 		capturespeed = 600,
-		category = "ALL HUGE MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTVTOL SUPERSHIP WEAPON",
+		category = "ALL HUGE MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTVTOL SUPERSHIP WEAPON SURFACE",
 		collide = false,
 		collisionvolumeoffsets = "28 -10 -5",
 		collisionvolumescales = "110 70 190",
