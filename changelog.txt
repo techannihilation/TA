@@ -4,6 +4,9 @@
    
 Improvments:
 - Update to latest engine 104
+
+- Raw Move added
+
 - First Big change for this release, is fixing units targeting underwater units and well as ground units.
 
 - New t4.5 Units for all factions
@@ -17,13 +20,14 @@ New units for TLL:
 - T3 Cons Ship TLL -- Replace's T3 vehicle con from 3 lab
 - T3 Mex
 - T4 Nano
-- Energy Cannon -- T1.5 tech 
+- Energy Cannon -- Area damage -- T1.5 tech 
 - Plamsa Gatling Gun -- T1.5 tech
 - Tll Dwarf Shield 
 - Tll gunship -- T1.5 tech
 
 New units for ARM:
 - Blastwing -- Air EMP Kamakazi unit
+- Energy Cannon -- Area damage -- T1.5 tech 
 
 New units for CORE:
 - Surveyor -- Air Strong Laser Gunship
@@ -44,6 +48,13 @@ Add morph tree for TLL:
 All Faction get Missle Defence System:
 - This units is a static laser tower that intercepts rockets/missile (i won't target nukes/tac nukes)
 
+New Widgets:
+- Command info widget
+- Build option unit stats (hover over menu icon for 2 secs)
+- Changelog widget
+- Options widget (new option for techa - OTA icons option, UI opacity option)
+
+Other Improvments:
 - Add T1.5 plasma cannon back for arm/core 
 - Add static radar morph chain and re-texture t1.5 radar
 - Delete Shield from T3 extractor
@@ -55,6 +66,7 @@ All Faction get Missle Defence System:
 
 
 Balance:
+- Fix commander EMP damage to 0.025% of default damage
 - Small Shield balance reducion of buildtime
 - Rework tllllt stats now inline with arm/core llt
 - TLLOM => Decrease HP 27K => 25K
@@ -77,10 +89,14 @@ Visual:
 
 
 Bugs:
-- Fix commander underwater laser targeting aircraft, Closes #254
+- Fix commander underwater laser targeting aircraft, Close's #254
 - Increase spiderlabs footprint
 - Revert Hailstorm stas to previous version
 - Fix tllplasma aimpoint
 - Fix gunships damaging each other
-- Tlldmc add fire state buttons, Closes #336
-- Fix jumpdrive footprint size, Closes #302
+- Tlldmc add fire state buttons, Close's #336
+- Fix jumpdrive footprint size, Close's #302
+- Fix missing texture blacklily, Close's #499
+- Fix smoke while under construction monkeylord, Close's #477
+- Reduce size of unit in icon for arm/core eyes, Close's #481
+- Auto Erase start position markers after 30s, Closes #361
