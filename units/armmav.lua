@@ -16,7 +16,7 @@ return {
 		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Skirmish Kbot (Combat Auto-Repair)",
+		description = "Skirmish Kbot (Auto-Repair 50)",
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
 		footprintx = 2,
