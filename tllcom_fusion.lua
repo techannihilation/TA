@@ -54,7 +54,7 @@ return {
 		mincloakdistance = 50,
 		mobilestandorders = 1,
 		movementclass = "AKBOT2",
-		name = "Ecoing Commander",
+		name = "Fusion Commander",
 		nochasecategory = "ALL SUB",
 		norestrict = 1,
 		objectname = "TLLCOM",
