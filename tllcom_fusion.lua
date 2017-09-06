@@ -1,5 +1,5 @@
 return {
-	tllcom1 = {
+	tllcom_fusion = {
 		acceleration = 0.12,
 		activatewhenbuilt = true,
 		amphibious = 1,
