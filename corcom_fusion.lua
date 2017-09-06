@@ -1,5 +1,5 @@
 return {
-	corcom1 = {
+	corcom_fusion = {
 		acceleration = 0.18,
 		activatewhenbuilt = true,
 		amphibious = 1,
@@ -50,7 +50,7 @@ return {
 		maxslope = 20,
 		maxvelocity = 1.2,
 		maxwaterdepth = 35,
-		metalmake = 8,
+		metalmake = 10,
 		metalstorage = 5000,
 		mincloakdistance = 50,
 		mobilestandorders = 1,
