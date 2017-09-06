@@ -98,7 +98,7 @@ return {
 				energy = 0,
 				footprintx = 2,
 				footprintz = 2,
-				metal = 2000,
+				metal = 1105,
 				object = "ARMACK_DEAD",
 				reclaimable = true,
 			},
