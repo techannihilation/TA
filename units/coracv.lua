@@ -106,7 +106,7 @@ return {
 				energy = 0,
 				footprintx = 3,
 				footprintz = 3,
-				metal = 2280,
+				metal = 1480,
 				object = "CORACV_DEAD",
 				reclaimable = true,
 			},
