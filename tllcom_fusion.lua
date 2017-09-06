@@ -74,7 +74,7 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0.726,
 		turnrate = 1148,
-		unitname = "tllcom1",
+		unitname = "tllcom_fusion",
 		upright = true,
 		workertime = 350,
 		buildoptions = {
