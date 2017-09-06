@@ -108,10 +108,8 @@ return {
 			[26] = "tllasonar",
 			[27] = "tlldtns",
 			[28] = "tllhltns",
-			[29] = "tllkrak",
-			[30] = "tlltrid",
-			[31] = "tllatorp",
-			[32] = "tllfflak",
+			[29] = "tllatorp",
+			[30] = "tllfflak",
 		},
 		customparams = {
 			buildpic = "TLLCOM.png",
