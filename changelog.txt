@@ -54,8 +54,12 @@ New Widgets:
 - Changelog widget
 - Options widget (new option for techa - OTA icons option, UI opacity option)
 
+Widget Improvements:
+- Mex snap now works before game start
+- Performance improvement for anti range widget
+- Performance improvement for wind display widget
+
 Other Improvments:
-- Add T1.5 plasma cannon back for arm/core 
 - Add static radar morph chain and re-texture t1.5 radar
 - Delete Shield from T3 extractor
 - Defensive range widget add missing units
