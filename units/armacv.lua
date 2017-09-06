@@ -106,7 +106,7 @@ return {
 				energy = 0,
 				footprintx = 3,
 				footprintz = 3,
-				metal = 2343,
+				metal = 1343,
 				object = "ARMACV_DEAD",
 				reclaimable = true,
 			},
