@@ -71,8 +71,7 @@ return {
 			[16] = "tllmds",
 			[17] = "tllvp",
 			[18] = "tllavp",
-			[19] = "tllevp",
-			[20] = "tllnanotc1",			
+			[19] = "tllevp",			
 		},
 		customparams = {
 			faction = "TLL",
