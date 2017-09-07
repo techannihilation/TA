@@ -80,8 +80,7 @@ return {
 			[22] = "corlab",
 			[23] = "coralab",
 			[24] = "corgant",
-			[25] = "cornanotc1",
-			[26] = "corboucher",
+			[25] = "corboucher",
 		},
 		customparams = {
 			buildpic = "CORACK.png",
