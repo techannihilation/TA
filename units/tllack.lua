@@ -72,7 +72,6 @@ return {
 			[17] = "tllalab",
 			[18] = "tllturtle_lab",
 			[19] = "tllhtcp",
-			[20] = "tllnanotc1",
 		},
 		customparams = {
 			faction = "TLL",
