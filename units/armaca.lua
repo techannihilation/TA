@@ -82,8 +82,7 @@ return {
 			[23] = "armeap",
 			[24] = "nebraska",
 			[25] = "armasp",
-			[26] = "armnanotc1",
-			[27] = "armplat",
+			[26] = "armplat",
 		},
 		customparams = {
 			buildpic = "ARMACA.png",
