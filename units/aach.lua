@@ -93,7 +93,7 @@ return {
 				description = "Advanced Construction Hover Wreckage",
 				footprintx = 3,
 				footprintz = 4,
-				metal = 1911,
+				metal = 1411,
 				object = "aach_dead",
 				reclaimable = true,
 			},
