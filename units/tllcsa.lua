@@ -34,7 +34,7 @@ return {
 		idletime = 1800,
 		maneuverleashlength = 1280,
 		mass = 1280,
-		maxdamage = 2055,
+		maxdamage = 1555,
 		maxslope = 10,
 		maxvelocity = 6,
 		maxwaterdepth = 255,
