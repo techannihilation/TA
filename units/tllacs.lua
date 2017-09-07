@@ -7,7 +7,7 @@ return {
 		builddistance = 312,
 		builder = true,
 		buildpic = "tllacs.dds",
-		buildtime = 23585,
+		buildtime = 20000,
 		canguard = true,
 		canmove = true,
 		canpatrol = true,
