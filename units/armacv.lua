@@ -88,8 +88,7 @@ return {
 			[22] = "armvp",
 			[23] = "armavp",
 			[24] = "armevp",
-			[25] = "armnanotc1",
-			[26] = "nebraska",
+			[25] = "nebraska",
 		},
 		customparams = {
 			buildpic = "ARMACV.png",
