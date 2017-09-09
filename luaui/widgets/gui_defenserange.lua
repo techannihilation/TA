@@ -418,7 +418,7 @@ end
 
 function widget:Initialize()
 	state["myPlayerID"] = spGetLocalTeamID()
-
+	WG['defrange'] = {}
     widgetHandler:RegisterGlobal('SetOpacity_Defense_Range', SetOpacity)
     widgetHandler:RegisterGlobal('DrawManager_defense_range', DrawStatus)
 
@@ -858,7 +858,12 @@ function widget:Update()
 	if TooHigh or HighPing then
 		return
 	end
-	
+	WG['defrange'].allyair = true
+	WG['defrange'].allyground = true
+	WG['defrange'].allynuke = true
+	WG['defrange'].enemyair = true
+	WG['defrange'].enemyground = true
+	WG['defrange'].enemynuke = true
 	local timef = spGetGameSeconds()
 	local time = floor(timef)
 
@@ -1185,12 +1190,14 @@ function widget:DrawWorld()
 end
 
 -- needed for GetTooltip
+
 function widget:IsAbove(x, y)
   if (not GetButton(x, y)) then
     return false
   end
   return true
 end
+
 
 function widget:GetTooltip(x, y)
   local buttondata = GetButton(x, y)
