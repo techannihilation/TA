@@ -5,8 +5,7 @@ return {
 	desc    = "Leftmouse: scroll down,  Rightmouse: scroll up,  ctrl/shift/alt combi: speedup)",
 	author  = "Floris",
 	date    = "August 2015",
-	license = "Dental flush",
-	layer   = -1,
+	layer   = 2,
 	enabled = true,
 }
 end
@@ -16,9 +15,10 @@ end
 local loadedFontSize = 32
 local font = gl.LoadFont(LUAUI_DIRNAME.."Fonts/FreeSansBold.otf", loadedFontSize, 16,2)
 
-local closeButtonTex = ":n:"..LUAUI_DIRNAME.."Images/close.dds"
-
 local changelogFile = VFS.LoadFile("changelog.txt")
+
+local cbackground, cborder, cbuttonbackground = include("Configs/ui_config.lua")
+local triggered = nil
 
 local bgMargin = 6
 
@@ -80,22 +80,8 @@ function widget:ViewResize()
 end
 
 local myTeamID = Spring.GetMyTeamID()
-local amNewbie = (Spring.GetTeamRulesParam(myTeamID, 'isNewbie') == 1)
-local gameStarted = (Spring.GetGameFrame()>0)
-function widget:GameStart()
-    gameStarted = true
-end
 
--- button
-local textSize		= 0.75
-local textMargin	= 0.25
-local lineWidth		= 0.0625
-
-local posX = 0.1
-local posY = 0
 local showOnceMore = false		-- used because of GUI shader delay
-local buttonGL
-local startPosX = posX
 
 local function DrawRectRound(px,py,sx,sy,cs, tl,tr,br,bl)
 	gl.TexCoord(0.8,0.8)
@@ -158,21 +144,7 @@ local function DrawRectRound(px,py,sx,sy,cs, tl,tr,br,bl)
 	gl.Vertex(sx, sy-cs, 0)
 end
 function RectRound(px,py,sx,sy,cs, tl,tr,br,bl)		-- (coordinates work differently than the RectRound func in other widgets)
-	--gl.Texture(bgcorner)
 	gl.BeginEnd(GL.QUADS, DrawRectRound, px,py,sx,sy,cs, tl,tr,br,bl)
-	--gl.Texture(false)
-end
-
-function DrawButton()
-    glPolygonMode(GL_FRONT_AND_BACK, GL_FILL)
-	RectRound(0,0,4.5,1.05,0.25, 2,2,0,0)
-	local vertices = {
-		{v = {0, 1, 0}},
-		{v = {0, 0, 0}},
-		{v = {1, 0, 0}},
-	}
-	glShape(GL_LINE_STRIP, vertices)
-    glText("Changelog", textMargin, textMargin, textSize, "no")
 end
 
 
@@ -181,21 +153,23 @@ local versionOffsetY = 14
 local versionFontSize = 16
 
 local versionQuickLinks = {}
+
+
 function DrawSidebar(x,y,width,height)
 	local fontSize		= versionFontSize
 	local fontOffsetY	= versionOffsetY
 	local fontOffsetX	= versionOffsetX
 	
 	-- background
-	gl.Color(0.72,0.5,0.12,0.3)
-	RectRound(x,y-height,x+width,y,6)
+	gl.Color(0.7,0.5,0.15,0.21)
+	RectRound(x,y-height,x+width,y,2.5*widgetScale)
 	
 	-- version links
 	versionQuickLinks = {}
 	if changelogFile then
 		font:Begin()
 		font:SetOutlineColor(0.25,0.2,0,0.3)
-		font:SetTextColor(1,0.8,0.1,1)
+		font:SetTextColor(0.92,0.72,0.15,1)
 		local lineKey = 1
 		local yOffset = 24
 		local j = 0
@@ -235,12 +209,13 @@ function DrawTextarea(x,y,width,height,scrollbar)
 	local scrollbarWidth     		= 8
 	local scrollbarPosWidth  		= 4
 	local scrollbarPosMinHeight 	= 8
-	local scrollbarBackgroundColor	= {0,0,0,0.24	}
+	local scrollbarBackgroundColor	= {0,0,0,0.24}
 	local scrollbarBarColor			= {1,1,1,0.08}
 	
 	local fontSizeTitle				= 17		-- is version number
 	local fontSizeDate				= 13
 	local fontSizeLine				= 15
+	local lineSeparator				= 2
 	
 	local fontColorTitle			= {1,1,1,1}
 	local fontColorDate				= {0.66,0.88,0.66,1}
@@ -256,6 +231,7 @@ function DrawTextarea(x,y,width,height,scrollbar)
 			local scrollbarTop       = y-scrollbarOffsetTop-scrollbarMargin-(scrollbarWidth-scrollbarPosWidth)
 			local scrollbarBottom    = y-scrollbarOffsetBottom-height+scrollbarMargin+(scrollbarWidth-scrollbarPosWidth)
 			local scrollbarPosHeight = math.max(((height-scrollbarMargin-scrollbarMargin) / totalChangelogLines) * ((height-scrollbarMargin-scrollbarMargin) / 25), scrollbarPosMinHeight)
+			if scrollbarPosHeight > scrollbarTop-scrollbarBottom then scrollbarPosHeight = scrollbarTop-scrollbarBottom end
 			local scrollbarPos       = scrollbarTop + (scrollbarBottom - scrollbarTop) * ((startLine-1) / totalChangelogLines)
 			scrollbarPos             = scrollbarPos + ((startLine-1) / totalChangelogLines) * scrollbarPosHeight	-- correct position taking position bar height into account
 
@@ -286,7 +262,7 @@ function DrawTextarea(x,y,width,height,scrollbar)
 		local lineKey = startLine
 		local j = 1
 		while j < maxLines do	-- maxlines is not exact, just a failsafe
-			if (fontSizeTitle)*j > height then
+			if (lineSeparator+fontSizeTitle)*j > height then
 				break;
 			end
 			if changelogLines[lineKey] == nil then
@@ -298,7 +274,7 @@ function DrawTextarea(x,y,width,height,scrollbar)
 				-- date line
 				line = "  " .. line
 				font:SetTextColor(fontColorDate)
-				font:Print(line, x, y-fontSizeTitle*j, fontSizeDate, "n")
+				font:Print(line, x, y-(lineSeparator+fontSizeTitle)*j, fontSizeDate, "n")
 			elseif string.find(line, '^(%d*%d.?%d+)') then
 				-- version line
 				local versionStrip = string.match(line, '( %d*%d.?%d+)')
@@ -308,7 +284,7 @@ function DrawTextarea(x,y,width,height,scrollbar)
 					line = " " .. line
 				end
 				font:SetTextColor(fontColorTitle)
-				font:Print(line, x-9, y-fontSizeTitle*j, fontSizeTitle, "n")
+				font:Print(line, x-9, y-(lineSeparator+fontSizeTitle)*j, fontSizeTitle, "n")
 				
 			else
 				font:SetTextColor(fontColorLine)
@@ -320,19 +296,19 @@ function DrawTextarea(x,y,width,height,scrollbar)
 					end
 					line = string.upper(string.sub(line, firstLetterPos, firstLetterPos))..string.sub(line, firstLetterPos+1)
 					line, numLines = font:WrapText(line, (width - 40 - textRightOffset)*(loadedFontSize/fontSizeLine))
-					if (fontSizeTitle)*(j+numLines-1) > height then 
+					if (lineSeparator+fontSizeTitle)*(j+numLines-1) > height then
 						break;
 					end
-					font:Print("   - ", x, y-fontSizeTitle*j, fontSizeLine, "n")
-					font:Print(line, x+26, y-fontSizeTitle*j, fontSizeLine, "n")
+					font:Print("   - ", x, y-(lineSeparator+fontSizeTitle)*j, fontSizeLine, "n")
+					font:Print(line, x+26, y-(lineSeparator+fontSizeTitle)*j, fontSizeLine, "n")
 				else
 					-- line
 					line = "  " .. line
 					line, numLines = font:WrapText(line, (width)*(loadedFontSize/fontSizeLine))
-					if (fontSizeTitle)*(j+numLines-1) > height then 
+					if (lineSeparator+fontSizeTitle)*(j+numLines-1) > height then
 						break;
 					end
-					font:Print(line, x, y-(fontSizeTitle)*j, fontSizeLine, "n")
+					font:Print(line, x, y-(lineSeparator+fontSizeTitle)*j, fontSizeLine, "n")
 				end
 				j = j + (numLines - 1)
 			end
@@ -351,17 +327,22 @@ function DrawWindow()
     local y = screenY --upwards
 	
 	-- background
-    gl.Color(0,0,0,0.8)
 	RectRound(x-bgMargin,y-screenHeight-bgMargin,x+screenWidth+bgMargin,y+bgMargin,8, 0,1,1,1)
 	-- content area
 	gl.Color(0.33,0.33,0.33,0.15)
 	RectRound(x,y-screenHeight,x+screenWidth,y,6)
 	
 	-- close button
-    gl.Color(1,1,1,1)
-	gl.Texture(closeButtonTex)
-	gl.TexRect(screenX+screenWidth-closeButtonSize,screenY,screenX+screenWidth,screenY-closeButtonSize)
-	gl.Texture(false)
+	local size = closeButtonSize*0.7
+	local width = size*0.055
+  gl.Color(1,1,1,1)
+	gl.PushMatrix()
+		gl.Translate(screenX+screenWidth-(closeButtonSize/2),screenY-(closeButtonSize/2),0)
+  	gl.Rotate(-45,0,0,1)
+  	gl.Rect(-width,size/2,width,-size/2)
+  	gl.Rotate(90,0,0,1)
+  	gl.Rect(-width,size/2,width,-size/2)
+	gl.PopMatrix()
 	
 	-- title
     local title = "Changelog"
@@ -382,39 +363,34 @@ function DrawWindow()
 	DrawTextarea(x+90, y-10, screenWidth-90, screenHeight-24, 1)
 end
 
+function widget:GameFrame(frame)
+	if frame%10==0 then
+		cbackground[4] = WG["background_color_over"]
+    end
+end
 
 function widget:DrawScreen()
-    if spIsGUIHidden() then return end
-    if amNewbie and not gameStarted then return end
-    
-    -- draw the button
-    if not buttonGL then
-        buttonGL = gl.CreateList(DrawButton)
-    end
-    
-    glLineWidth(lineWidth)
+  if spIsGUIHidden() then return end
+  
+  if triggered == nil then
+		if cbackground[4] == 0.54321 and WG["background_color"] then
+			cbackground[4]=WG["background_color"]
+		end
+	triggered = true
+	end
 
-    glPushMatrix()
-        glTranslate(posX*vsx, posY*vsy, 0)
-        glScale(17*widgetScale, 17*widgetScale, 1)
-		glColor(0, 0, 0, (0.3*bgColorMultiplier))
-        glCallList(buttonGL)
-    glPopMatrix()
-
-    glColor(1, 1, 1, 1)
-    glLineWidth(1)
-    
-    -- draw the help
-    if not changelogList then
-        changelogList = gl.CreateList(DrawWindow)
-    end
-    
-    if show or showOnceMore then
+  -- draw the help
+  if not changelogList then
+      changelogList = gl.CreateList(DrawWindow)
+  end
+  
+  if show or showOnceMore then
     
 		-- draw the changelog panel
 		glPushMatrix()
 			glTranslate(-(vsx * (widgetScale-1))/2, -(vsy * (widgetScale-1))/2, 0)
 			glScale(widgetScale, widgetScale, 1)
+			gl.Color(cbackground)
 			glCallList(changelogList)
 		glPopMatrix()
 		if (WG['guishader_api'] ~= nil) then
@@ -423,6 +399,8 @@ function widget:DrawScreen()
 			local rectX2 = ((screenX+screenWidth+bgMargin) * widgetScale) - ((vsx * (widgetScale-1))/2)
 			local rectY2 = ((screenY-screenHeight-bgMargin) * widgetScale) - ((vsy * (widgetScale-1))/2)
 			WG['guishader_api'].InsertRect(rectX1, rectY2, rectX2, rectY1, 'changelog')
+			--WG['guishader_api'].setBlurIntensity(0.0017)
+			--WG['guishader_api'].setScreenBlur(true)
 		end
 		showOnceMore = false
 		
@@ -430,7 +408,7 @@ function widget:DrawScreen()
 		local usedScreenX = (vsx*0.5) - ((screenWidth/2)*widgetScale)
 		local usedScreenY = (vsy*0.5) + ((screenHeight/2)*widgetScale)
 
-		local x,y = Spring.GetMouseState()
+		local x,y,pressed = Spring.GetMouseState()
 		if changelogFile then
 			local lineKey = 1
 			local j = 0
@@ -459,18 +437,32 @@ function widget:DrawScreen()
 				local x2 = usedScreenX+(70*widgetScale)
 				local y2 = textY+yOffsetDown
 				if IsOnRect(x, y, x1, y1, x2, y2) then
-					gl.Color(1,0.93,0.75,0.22)
-					RectRound(x1, y1, x2, y2, 5*widgetScale)
+					if pressed then
+						gl.Color(1,0.93,0.75,0.23)
+					else
+						gl.Color(1,0.93,0.75,0.15)
+					end
+					RectRound(x1, y1, x2, y2, 3*widgetScale)
 					break;
 				end
 				j = j + 1
 				lineKey = lineKey + 1
 			end
 		end
-    else
-		if (WG['guishader_api'] ~= nil) then
-			WG['guishader_api'].RemoveRect('changelog')
+  else
+	if (WG['guishader_api'] ~= nil) then
+		local removed = WG['guishader_api'].RemoveRect('changelog')
+		if removed then
+			--WG['guishader_api'].setBlurIntensity()
+			WG['guishader_api'].setScreenBlur(false)
 		end
+	end
+  end
+end
+
+function widget:KeyPress(key)
+	if key == 27 then	-- ESC
+		show = false
 	end
 end
 
@@ -507,7 +499,7 @@ end
 function widget:MouseWheel(up, value)
 	
 	if show then	
-		local addLines = value*-5 -- direction is retarded
+		local addLines = value*-3 -- direction is retarded
 		
 		startLine = startLine + addLines
 		if startLine < 1 then startLine = 1 end
@@ -533,122 +525,112 @@ function widget:MouseRelease(x, y, button)
 end
 
 function mouseEvent(x, y, button, release)
-	if spIsGUIHidden() then return false end
-    if amNewbie and not gameStarted then return end
-    
-	  if show then 
-			-- on window
-			local rectX1 = ((screenX-bgMargin) * widgetScale) - ((vsx * (widgetScale-1))/2)
-			local rectY1 = ((screenY+bgMargin) * widgetScale) - ((vsy * (widgetScale-1))/2)
-			local rectX2 = ((screenX+screenWidth+bgMargin) * widgetScale) - ((vsx * (widgetScale-1))/2)
-			local rectY2 = ((screenY-screenHeight-bgMargin) * widgetScale) - ((vsy * (widgetScale-1))/2)
-			if IsOnRect(x, y, rectX1, rectY2, rectX2, rectY1) then
-			
-				-- on close button
-				local brectX1 = rectX2 - ((closeButtonSize+bgMargin+bgMargin) * widgetScale)
-				local brectY2 = rectY1 - ((closeButtonSize+bgMargin+bgMargin) * widgetScale)
-				if IsOnRect(x, y, brectX1, brectY2, rectX2, rectY1) then
-					if release then
-						showOnceMore = true		-- show once more because the guishader lags behind, though this will not fully fix it
-						show = not show
-					end
-					return true
-				end
-				
-				--[[ scroll text with mouse 2
-				if button == 1 or button == 3 then
-					if IsOnRect(x, y, rectX1+(90*widgetScale), rectY2, rectX2, rectY1) then
-						if release then
-							local alt, ctrl, meta, shift = Spring.GetModKeyState()
-							local addLines = 3
-							
-							if ctrl or shift then 
-								addLines = 8
-							end
-							if ctrl and shift then 
-								addLines = 22
-							end
-							if ctrl and shift and alt then 
-								addLines = 66
-							end
-							if button == 3 then 
-								addLines = -addLines
-							end
-							startLine = startLine + addLines
-							if startLine < 1 then startLine = 1 end
-							if startLine > totalChangelogLines - textareaMinLines then startLine = totalChangelogLines - textareaMinLines end
-							
-							if changelogList then
-								glDeleteList(changelogList)
-							end
-							changelogList = gl.CreateList(DrawWindow)
-						end
-						return true
-					end
-				end]]--
-				
-				-- version buttons
-				if button == 1 and release then
-					local yOffset = 24
-					local usedScreenX = (vsx*0.5) - ((screenWidth/2)*widgetScale)
-					local usedScreenY = (vsy*0.5) + ((screenHeight/2)*widgetScale)
-					
-					local x,y = Spring.GetMouseState()
-					if changelogFile then
-						local lineKey = 1
-						local j = 0
-						while j < 25 do	
-							if (versionFontSize+versionOffsetY)*j > (screenHeight-yOffset) then
-								break;
-							end
-							if versions[lineKey] == nil then
-								break;
-							end
-							
-							-- version title
-							local textX = usedScreenX-((10+versionOffsetX)*widgetScale)
-							local textY = usedScreenY-((((versionFontSize+versionOffsetY)*j)-5)*widgetScale)
-							
-							local x1 = usedScreenX
-							local y1 = textY-(((versionFontSize*0.66)+yOffset)*widgetScale)
-							local x2 = usedScreenX+((70*widgetScale))
-							local y2 = textY+(((versionFontSize*1.21)-yOffset)*widgetScale)
-							if IsOnRect(x, y, x1, y1, x2, y2) then
-								startLine = versions[lineKey]
-								if changelogList then
-									glDeleteList(changelogList)
-								end
-								changelogList = gl.CreateList(DrawWindow)
-								break;
-							end
-							
-							j = j + 1
-							lineKey = lineKey + 1
-						end
-					end
-					return true
-				end
-				
-				if button == 1 or button == 3 then
-					return true
-				end
-			elseif titleRect == nil or not IsOnRect(x, y, (titleRect[1] * widgetScale) - ((vsx * (widgetScale-1))/2), (titleRect[2] * widgetScale) - ((vsy * (widgetScale-1))/2), (titleRect[3] * widgetScale) - ((vsx * (widgetScale-1))/2), (titleRect[4] * widgetScale) - ((vsy * (widgetScale-1))/2)) then
+  if spIsGUIHidden() then return end
+  
+  if show then 
+		-- on window
+		local rectX1 = ((screenX-bgMargin) * widgetScale) - ((vsx * (widgetScale-1))/2)
+		local rectY1 = ((screenY+bgMargin) * widgetScale) - ((vsy * (widgetScale-1))/2)
+		local rectX2 = ((screenX+screenWidth+bgMargin) * widgetScale) - ((vsx * (widgetScale-1))/2)
+		local rectY2 = ((screenY-screenHeight-bgMargin) * widgetScale) - ((vsy * (widgetScale-1))/2)
+		if IsOnRect(x, y, rectX1, rectY2, rectX2, rectY1) then
+		
+			-- on close button
+			local brectX1 = rectX2 - ((closeButtonSize+bgMargin+bgMargin) * widgetScale)
+			local brectY2 = rectY1 - ((closeButtonSize+bgMargin+bgMargin) * widgetScale)
+			if IsOnRect(x, y, brectX1, brectY2, rectX2, rectY1) then
 				if release then
 					showOnceMore = true		-- show once more because the guishader lags behind, though this will not fully fix it
 					show = not show
 				end
 				return true
 			end
-    else
-			tx = (x - posX*vsx)/(17*widgetScale)
-			ty = (y - posY*vsy)/(17*widgetScale)
-			if tx < 0 or tx > 4.5 or ty < 0 or ty > 1.05 then return false end
+			
+			--[[ scroll text with mouse 2
+			if button == 1 or button == 3 then
+				if IsOnRect(x, y, rectX1+(90*widgetScale), rectY2, rectX2, rectY1) then
+					if release then
+						local alt, ctrl, meta, shift = Spring.GetModKeyState()
+						local addLines = 3
+						
+						if ctrl or shift then 
+							addLines = 8
+						end
+						if ctrl and shift then 
+							addLines = 22
+						end
+						if ctrl and shift and alt then 
+							addLines = 66
+						end
+						if button == 3 then 
+							addLines = -addLines
+						end
+						startLine = startLine + addLines
+						if startLine < 1 then startLine = 1 end
+						if startLine > totalChangelogLines - textareaMinLines then startLine = totalChangelogLines - textareaMinLines end
+						
+						if changelogList then
+							glDeleteList(changelogList)
+						end
+						changelogList = gl.CreateList(DrawWindow)
+					end
+					return true
+				end
+			end]]--
+			
+			-- version buttons
+			if button == 1 and release then
+				local yOffset = 24
+				local usedScreenX = (vsx*0.5) - ((screenWidth/2)*widgetScale)
+				local usedScreenY = (vsy*0.5) + ((screenHeight/2)*widgetScale)
+				
+				local x,y = Spring.GetMouseState()
+				if changelogFile then
+					local lineKey = 1
+					local j = 0
+					while j < 25 do	
+						if (versionFontSize+versionOffsetY)*j > (screenHeight-yOffset) then
+							break;
+						end
+						if versions[lineKey] == nil then
+							break;
+						end
+						
+						-- version title
+						local textX = usedScreenX-((10+versionOffsetX)*widgetScale)
+						local textY = usedScreenY-((((versionFontSize+versionOffsetY)*j)-5)*widgetScale)
+						
+						local x1 = usedScreenX
+						local y1 = textY-(((versionFontSize*0.66)+yOffset)*widgetScale)
+						local x2 = usedScreenX+((70*widgetScale))
+						local y2 = textY+(((versionFontSize*1.21)-yOffset)*widgetScale)
+						if IsOnRect(x, y, x1, y1, x2, y2) then
+							startLine = versions[lineKey]
+							if changelogList then
+								glDeleteList(changelogList)
+							end
+							changelogList = gl.CreateList(DrawWindow)
+							break;
+						end
+						
+						j = j + 1
+						lineKey = lineKey + 1
+					end
+				end
+				return true
+			end
+			
+			if button == 1 or button == 3 then
+				return true
+			end
+		elseif titleRect == nil or not IsOnRect(x, y, (titleRect[1] * widgetScale) - ((vsx * (widgetScale-1))/2), (titleRect[2] * widgetScale) - ((vsy * (widgetScale-1))/2), (titleRect[3] * widgetScale) - ((vsx * (widgetScale-1))/2), (titleRect[4] * widgetScale) - ((vsy * (widgetScale-1))/2)) then
 			if release then
-				showOnceMore = show		-- show once more because the guishader lags behind, though this will not fully fix it
-				show = not show
+				showOnceMore = true		-- show once more because the guishader lags behind, though this will not fully fix it
+				show = false
 			end
 			return true
-    end
+		end
+	end
 end
 
 function lines(str)
@@ -660,6 +642,16 @@ end
 
 function widget:Initialize()
 	if changelogFile then
+
+		WG['changelog'] = {}
+		WG['changelog'].toggle = function(state)
+			if state ~= nil then
+				show = state
+			else
+				show = not show
+			end
+		end
+	
 		-- somehow there are a few characters added at the start that we need to remove
 		changelogFile = string.sub(changelogFile, 4)
 		
@@ -667,11 +659,14 @@ function widget:Initialize()
 		changelogLines = lines(changelogFile)
 		
 		local versionKey = 0
+		local insertedLatest = false
 		for i, line in ipairs(changelogLines) do
 		
-			if string.find(line, '^(%d*%d.?%d+ /-)') then
+			if insertedLatest == false or string.find(line, '^(%d*%d.?%d+ [/-]> %d*%d.[0-9]0)$') or  string.find(line, '^(%d*%d.?%d+ [/-]> %d*%d.[0-9])$') then
+			--if string.find(line, '^(%d*%d.?%d+ [/-]> )') then
 				versionKey = versionKey + 1
 				versions[versionKey] = i
+				insertedLatest = true
 			end
 			totalChangelogLines = i
 		end

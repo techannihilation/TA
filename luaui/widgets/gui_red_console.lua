@@ -1,25 +1,32 @@
+-- disable as clipLine is very slow on headless
+if (Spring.GetConfigInt('Headless', 0) ~= 0) then
+   return false
+end
+
 function widget:GetInfo()
 	return {
 	name      = "Red Console", --version 4.1
 	desc      = "Requires Red UI Framework",
 	author    = "Regret",
-	date      = "August 13, 2009", --last change September 10,2009
+	date      = "29 may 2015",
 	license   = "GNU GPL, v2 or later",
 	layer     = 0,
 	enabled   = true, --enabled by default
 	handler   = true, --can use widgetHandler:x()
 	}
 end
+local vsx, vsy = gl.GetViewSizes()
+local widgetScale = (1 + (vsx*vsy / 4000000))
+
 local NeededFrameworkVersion = 8
-local CanvasX,CanvasY = 1272,734 --resolution in which the widget was made (for 1:1 size)
---1272,734 == 1280,768 windowed
 local SoundIncomingChat  = 'sounds/beep4.wav'
 local SoundIncomingChatVolume = 1.0
 
 local gameOver = false
-
+local lastConnectionAttempt = ''
 --todo: dont cut words apart when clipping text 
 
+local cbackground, cborder, cbuttonbackground = include("Configs/ui_config.lua")
 
 local clock = os.clock
 local slen = string.len
@@ -39,27 +46,26 @@ local sGetTeamColor = Spring.GetTeamColor
 local sGetMyAllyTeamID = Spring.GetMyAllyTeamID
 local sGetModKeyState = Spring.GetModKeyState
 local spPlaySoundFile = Spring.PlaySoundFile
-
-local cbackground, cborder, cbuttonbackground = include("Configs/ui_config.lua")
-
+local sGetMyPlayerID = Spring.GetMyPlayerID
 
 local Config = {
 	console = {
-		px = 300,py = 34+5, --default start position
-		sx = 605, --background size
+		px = vsx*0.302,py = vsy*0.048, --default start position
+		sx = vsx*0.419, --background size
 		
-		fontsize = 12,
+		fontsize = 11.5*widgetScale,
 		
 		minlines = 1, --minimal number of lines to display
-		maxlines = 10,
+		maxlines = 6,
+		maxlinesScrollmode = 10,
 		
-		maxage = 15, --max time for a message to be displayed, in seconds
+		maxage = 30, --max time for a message to be displayed, in seconds
 		
-		margin = 5, --distance from background border
+		margin = 7*widgetScale, --distance from background border
 		
 		fadetime = 0.25, --fade effect time, in seconds
-		fadedistance = 100, --distance from cursor at which console shows up when empty
-		
+		fadedistance = 100*widgetScale, --distance from cursor at which console shows up when empty
+
 		filterduplicates = true, --group identical lines, f.e. ( 5x Nickname: blahblah)
 		
 		--note: transparency for text not supported yet
@@ -74,11 +80,11 @@ local Config = {
 		cbackground = cbackground,
 		cborder = cborder,
 		
-		dragbutton = {2}, --middle mouse button
+		dragbutton = {2,3}, --middle mouse button
 		tooltip = {
-			background ="Hold \255\255\255\1middle mouse button\255\255\255\255 to drag the console around.\n\n"..
-			"Press \255\255\255\1CTRL\255\255\255\255 while mouse is above the console to activate chatlog viewing.\n"..
-			"Use mousewheel (+hold \255\255\255\1SHIFT\255\255\255\255 for speedup) to scroll through the chatlog.",
+			background ="In CTRL+F11 mode:  Hold \255\255\255\1middle mouse button\255\255\255\255 to drag the console.\n"..
+			"- Press \255\255\255\1CTRL\255\255\255\255 while mouse is above the \nconsole to activate chatlog viewing.\n"..
+			"- Use mousewheel (+hold \255\255\255\1SHIFT\255\255\255\255 for speedup)\n to scroll through the chatlog.",
 		},
 	},
 }
@@ -116,8 +122,8 @@ end
 
 local function AutoResizeObjects() --autoresize v2
 	if (LastAutoResizeX==nil) then
-		LastAutoResizeX = CanvasX
-		LastAutoResizeY = CanvasY
+		LastAutoResizeX = vsx
+		LastAutoResizeY = vsy
 	end
 	local lx,ly = LastAutoResizeX,LastAutoResizeY
 	local vsx,vsy = Screen.vsx,Screen.vsy
@@ -158,6 +164,7 @@ local function AutoResizeObjects() --autoresize v2
 		LastAutoResizeX,LastAutoResizeY = vsx,vsy
 	end
 end
+
 
 local function createconsole(r)
 	local vars = {}
@@ -226,7 +233,7 @@ local function createconsole(r)
 		if (not self._mousenotover) then
 			background.active = nil --activate
 			if (vars._empty) then
-				background.sy = r.minlines*lines.fontsize + (lines.px-background.px)*2
+				background.sy = (r.minlines*lines.fontsize + (lines.px-background.px)*2)
 			end
 			local alt,ctrl,meta,shift = Spring.GetModKeyState()
 			if (ctrl and not vars.browsinghistory) then
@@ -372,6 +379,7 @@ end
 local function clipHistory(g,oneline)
 	local history = g.vars.consolehistory
 	local maxsize = g.background.sx - (g.lines.px-g.background.px)
+	
 	local fontsize = g.lines.fontsize
 	
 	if (oneline) then
@@ -430,7 +438,7 @@ local function processLine(line,g,cfg,newlinecolor)
 	
 	local names = {}
 	for i=1,#roster do
-		names[roster[i][1]] = {roster[i][4],roster[i][5],roster[i][3]}
+		names[roster[i][1]] = {roster[i][4],roster[i][5],roster[i][3],roster[i][2]}
 	end
 	
 	local name = ""
@@ -461,10 +469,50 @@ local function processLine(line,g,cfg,newlinecolor)
 			text = ssub(line,3)
             if ssub(line,1,3) == "> <" then --player speaking in battleroom
                 local i = sfind(ssub(line,4,slen(line)), ">")
-                name = ssub(line,4,i+2)
+				if (i) then
+					name = ssub(line,4,i+2)
+				else
+					name = "unknown"
+				end
             end
 		end		
     end
+	
+	-- filter shadows config changes
+	if sfind(line,"^Set \"shadows\" config(-)parameter to ") then
+		ignoreThisMessage = true
+	end
+	
+	
+	-- filter Sync error when its a spectator
+	if sfind(line,"^Sync error for ") then
+		name = ssub(line,16,sfind(line," in frame ")-1)
+		if names[name] ~= nil and names[name][2] ~= nil and names[name][2] and sGetMyPlayerID() ~= names[name][4] then	-- when spec
+			ignoreThisMessage = true
+		end
+	end
+	
+	-- filter Sync error when its a spectator
+	if sfind(line,"^Error: %[DESYNC WARNING%] ") then
+		name = ssub(line,sfind(line," %(")+2,sfind(line,"%) ")-1)
+		if names[name] ~= nil and names[name][2] ~= nil and names[name][2] and sGetMyPlayerID() ~= names[name][4] then	-- when spec
+			ignoreThisMessage = true
+		end
+	end
+	
+	-- filter Connection attempts
+	if sfind(line,"^Connection attempt from ") then
+		name = ssub(line,25)
+		lastConnectionAttempt = name
+	  ignoreThisMessage = true
+	end
+	
+	-- filter Connection established
+	if sfind(line," Connection established") then
+		name = lastConnectionAttempt
+	  ignoreThisMessage = true
+	end
+	
 	
 	if linetype==0 then
 		--filter out some engine messages; 
@@ -479,6 +527,7 @@ local function processLine(line,g,cfg,newlinecolor)
 				line = ssub(line,1,n-3) --shorten so as these messages don't get clipped and can be detected as duplicates
 			end
         end
+
 		
 		if gameOver then
 			if sfind(line,'left the game') then
@@ -487,6 +536,7 @@ local function processLine(line,g,cfg,newlinecolor)
 		end
 	end
 	
+
 	--ignore messages from muted--
 	if WG.ignoredPlayers and WG.ignoredPlayers[name] then 
 		ignoreThisMessage = true 
@@ -617,23 +667,28 @@ local function updateconsole(g,cfg)
 	local skipagecheck = g.vars._skipagecheck
 	local usecounters = g.vars._usecounters
 	
+	local maxlines = cfg.maxlines
+	
 	local historyoffset = 0
 	if (g.vars.browsinghistory) then
 		if (g.vars.historyoffset == nil) then
 			g.vars.historyoffset = 0
 		end
 		historyoffset = g.vars.historyoffset
+		maxlines = cfg.maxlinesScrollmode
 	end
 	
 	if (usecounters == nil) then
 		usecounters = cfg.filterduplicates
 	end
 
-	local maxlines = cfg.maxlines
 	
 	local counters = {}
 	for i=1,maxlines do
 		counters[i] = 1
+		if g.counters[i] == nil then
+			g.counters[i] = {}
+		end
 		g.counters[i].active = false
 		g.counters[i].caption = ""
 	end
@@ -695,15 +750,16 @@ local function updateconsole(g,cfg)
 		g.background.active = false
 		g.lines.active = false
 		g.vars._empty = true
-		g.background.sy = cfg.minlines*g.lines.fontsize + (g.lines.px-g.background.px)*2
+		g.background.sy = (cfg.minlines*g.lines.fontsize + (g.lines.px-g.background.px)*2 ) -(cfg.margin/3.5)
 	else
 		g.background.active = nil --activate
 		g.lines.active = nil --activate
 		g.vars._empty = nil
-		g.background.sy = count*g.lines.fontsize + (g.lines.px-g.background.px)*2
+		g.background.sy = (count*g.lines.fontsize + (g.lines.px-g.background.px)*2 ) -(cfg.margin/3.5)
 	end
 	
 	g.lines.caption = display
+	g.lines.sx = 100
 end
 
 function widget:Initialize()
@@ -743,15 +799,14 @@ end
 function widget:GetConfigData() --save config
 	if (PassedStartupCheck) then
 		local vsy = Screen.vsy
-		local unscale = CanvasY/vsy --needed due to autoresize, stores unresized variables
-		Config.console.px = console.background.px * unscale
-		Config.console.py = console.background.py * unscale
+		Config.console.px = console.background.px
+		Config.console.py = console.background.py
 		return {Config=Config}
 	end
 end
 function widget:SetConfigData(data) --load config
 	if (data.Config ~= nil) then
-		Config.console.px = data.Config.console.px
-		Config.console.py = data.Config.console.py
+		--Config.console.px = data.Config.console.px
+		--Config.console.py = data.Config.console.py
 	end
 end

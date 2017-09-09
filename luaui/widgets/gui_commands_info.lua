@@ -7,7 +7,7 @@ return {
 	date    = "August 2015",
 	license = "Dental flush",
 	layer   = -1,
-	enabled = true,
+	enabled = false,
 }
 end
 
