@@ -902,6 +902,8 @@ function applyOptionValue(i, skipRedrawWindow)
 				Spring.Echo(WG["background_color"],value*0.01)
 				WG["background_color_over"] = (value*0.01)
 			end
+		elseif id == 'musicvolume' then
+			WG["music_volume"] = value
 		elseif id == 'highlightselunits_opacity' then
 			WG['highlightselunits'].setOpacity(value)
 		elseif id == 'bloom' then
