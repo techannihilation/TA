@@ -127,23 +127,26 @@ local function getEditedCurrentTooltip()
 	local lvl2tech = text:match("advanced t2 unit research centre") or nil
 	local lvl3tech = text:match("advanced t3 unit research centre") or nil
 	local lvl4tech = text:match("advanced t4 unit research centre") or nil
-	if lvl4tech then
-		text = text:gsub(lvl3tech,string.format("")) or text
-		text = text:gsub(lvl2tech,string.format("")) or text
-		text = text:gsub(lvl1tech,string.format("")) or text
-		text = text:gsub(",",string.format(""),3) or text
-		text = text:gsub(lvl4tech,string.format("Advanced T4 Unit Research Centre")) or text
-	elseif lvl3tech then
-		text = text:gsub(lvl2tech,string.format("")) or text
-		text = text:gsub(lvl1tech,string.format("")) or text
-		text = text:gsub(",",string.format(""),2) or text
-		text = text:gsub(lvl3tech,string.format("Advanced T3 Unit Research Centre")) or text
-	elseif lvl2tech then
-		text = text:gsub(lvl1tech,string.format("")) or text
-		text = text:gsub(",",string.format(""),1) or text
-		text = text:gsub(lvl2tech,string.format("Advanced T2 Unit Research Centre")) or text
-	elseif lvl1tech then
-		text = text:gsub(lvl1tech,string.format("Advanced T1 Unit Research Centre")) or text
+	local provides = text:match("Provides") or nil
+	if provides then
+		if lvl4tech then
+			text = text:gsub(lvl3tech,string.format("")) or text
+			text = text:gsub(lvl2tech,string.format("")) or text
+			text = text:gsub(lvl1tech,string.format("")) or text
+			text = text:gsub(",",string.format(""),3) or text
+			text = text:gsub(lvl4tech,string.format("Advanced T4 Unit Research Centre")) or text
+		elseif lvl3tech then
+			text = text:gsub(lvl2tech,string.format("")) or text
+			text = text:gsub(lvl1tech,string.format("")) or text
+			text = text:gsub(",",string.format(""),2) or text
+			text = text:gsub(lvl3tech,string.format("Advanced T3 Unit Research Centre")) or text
+		elseif lvl2tech then
+			text = text:gsub(lvl1tech,string.format("")) or text
+			text = text:gsub(",",string.format(""),1) or text
+			text = text:gsub(lvl2tech,string.format("Advanced T2 Unit Research Centre")) or text
+		elseif lvl1tech then
+			text = text:gsub(lvl1tech,string.format("Advanced T1 Unit Research Centre")) or text
+		end
 	end
 	--extract the exp value with regexp
 	local expMorphPat = "UnitDefID (%d+)\n"
