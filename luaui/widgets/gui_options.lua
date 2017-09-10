@@ -807,6 +807,42 @@ function applyOptionValue(i, skipRedrawWindow)
 			else
 				WG['OtaIcons'] = true
 			end
+		elseif id == 'allyair' then
+			if value == 1 then
+				WG['defrange'].enabled.ally.air = true
+			else
+				WG['defrange'].enabled.ally.air = false
+			end
+		elseif id == 'allyground' then
+			if value == 1 then
+				WG['defrange'].enabled.ally.ground = true
+			else
+				WG['defrange'].enabled.ally.ground = false
+			end
+		elseif id == 'allynuke' then
+			if value == 1 then
+				WG['defrange'].enabled.ally.nuke = true
+			else
+				WG['defrange'].enabled.ally.nuke = false
+			end
+		elseif id == 'enemyair' then
+			if value == 1 then
+				WG['defrange'].enabled.enemy.air = true
+			else
+				WG['defrange'].enabled.enemy.air = false
+			end
+		elseif id == 'enemyground' then
+			if value == 1 then
+				WG['defrange'].enabled.enemy.ground = true
+			else
+				WG['defrange'].enabled.enemy.ground = false
+			end
+		elseif id == 'enemynuke' then
+			if value == 1 then
+				WG['defrange'].enabled.enemy.nuke = true
+			else
+				WG['defrange'].enabled.enemy.nuke = false
+			end
 		elseif id == 'darkenmap_darkenfeatures' then
 			WG['darkenmap'].setDarkenFeatures(options[i].value)
 		elseif id == 'smartselect_includebuildings' then
@@ -1299,13 +1335,12 @@ function widget:Initialize()
 		{id="settargetdefault", group="game", widget="Set target default", name="Set-target as default", type="bool", value=widgetHandler.orderList["Set target default"] ~= nil and (widgetHandler.orderList["Set target default"] > 0), description='Replace default attack command to a set-target command\n(when rightclicked on enemy unit)'},
 
 		--Defensive Range Options
-		{id="allyair", group="dr", name="Ally Air", type="bool", value=WG['defrange'].allyair or false, description='Show Range For Ally Air'},
-		{id="allyground", group="dr", name="Ally Ground", type="bool", value=WG['defrange'].allyground or false, description='Show Range For Ally Ground'},
-		{id="allynuke", group="dr", name="Ally Nuke", type="bool", value=WG['defrange'].allynuke or false, description='Show Range For Ally Air Nuke'},
-		{id="enemyair", group="dr", name="Enemy Air", type="bool", value=WG['defrange'].enemyair or false, description='Show Range For Enemy Air'},
-		{id="enemyground", group="dr", name="Enemy Ground", type="bool", value=WG['defrange'].enemyground or false, description='Show Range For Enemy Ground'},
-		{id="enemynuke", group="dr", name="Enemy Nuke", type="bool", value=WG['defrange'].enemynuke or false, description='Show Range For Enemy Nuke'},
-		--]]
+		{id="allyair", group="dr", name="Ally Air", type="bool", WG['defrange'].enabled.ally.air or false, description='Show Range For Ally Air'},
+		{id="allyground", group="dr", name="Ally Ground", type="bool", WG['defrange'].enabled.ally.ground or false, description='Show Range For Ally Ground'},
+		{id="allynuke", group="dr", name="Ally Nuke", type="bool", WG['defrange'].enabled.ally.nuke or false, description='Show Range For Ally Air Nuke'},
+		{id="enemyair", group="dr", name="Enemy Air", type="bool", value=WG['defrange'].enabled.enemy.air or false, description='Show Range For Enemy Air'},
+		{id="enemyground", group="dr", name="Enemy Ground", type="bool", value=WG['defrange'].enabled.enemy.ground or false, description='Show Range For Enemy Ground'},
+		{id="enemynuke", group="dr", name="Enemy Nuke", type="bool", value=WG['defrange'].enabled.enemy.nuke or false, description='Show Range For Enemy Nuke'},
 	}
 
 
