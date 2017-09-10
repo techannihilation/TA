@@ -1006,7 +1006,7 @@ function widget:DrawScreen()
 
 
 	if dlistWind1 then
-		glColor(0,0,0,cbackground[4])
+		glColor(cbackground)
 		glCallList(dlistWind1)
 		glRotate(windRotation, 0, 0, 1)
 		glCallList(dlistWind2)

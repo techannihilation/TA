@@ -258,7 +258,6 @@ buttonConfig["baseColorAlly"] = { 0.0, 0.3, 0.0, 0.6 }
 buttonConfig["enabledColorAlly"] = { 0.0, .80, 0.0, 1.9 }
 buttonConfig["enabledColorEnemy"] = { 1.00, 0.0, 0.0, 0.95 }
 
-local buttonList --glList for drawing buttons
 local rangeCircleList --glList for drawing range circles
 local _,oldcamy,_ = Spring.GetCameraPosition() --for tracking if we should change the alpha/linewidth based on camheight
 
@@ -279,20 +278,14 @@ lineConfig["circleDivs"] = 40.0
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 local GL_LINE_LOOP          = GL.LINE_LOOP
-local glTexEnv				= gl.TexEnv
-local glFeatureShape		= gl.FeatureShape
 local glBeginEnd            = gl.BeginEnd
-local glBillboard           = gl.Billboard
 local glColor               = gl.Color
 local glDepthTest           = gl.DepthTest
 local glDrawGroundCircle    = gl.DrawGroundCircle
 local glDrawGroundQuad      = gl.DrawGroundQuad
 local glLineWidth           = gl.LineWidth
-local glPopMatrix           = gl.PopMatrix
-local glPushMatrix          = gl.PushMatrix
 local glTexRect             = gl.TexRect
 local glText                = gl.Text
-local glTexture             = gl.Texture
 local glTranslate           = gl.Translate
 local glVertex              = gl.Vertex
 local glAlphaTest			= gl.AlphaTest
