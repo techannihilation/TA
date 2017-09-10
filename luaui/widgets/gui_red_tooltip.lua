@@ -122,6 +122,10 @@ end
 
 local function getEditedCurrentTooltip()
 	local text = sGetCurrentTooltip()
+	local reclaim = text:match("Reclaim: Sucks in the metal/energy content of a unit/feature and add it to your storage") or nil
+	if reclaim then
+		text = "Reclaim: Sucks in the metal/energy content of a unit/feature\nand add it to your storage"
+	end
 	--Prune RC tech list
 	local lvl1tech = text:match("advanced t1 unit research centre") or nil
 	local lvl2tech = text:match("advanced t2 unit research centre") or nil
