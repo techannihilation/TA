@@ -929,10 +929,8 @@ end
 
 --SAVE / LOAD CONFIG FILE
 function widget:GetConfigData()
-	printDebug("Saving config. Bottom: " .. buttonConfig["posPercBottom"] )
 	local data = {}
 	data["buttons"] = buttonConfig["enabled"]
-
 	return data
 end
 

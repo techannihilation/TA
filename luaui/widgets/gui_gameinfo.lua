@@ -14,9 +14,7 @@ end
 local loadedFontSize = 32
 local font = gl.LoadFont(LUAUI_DIRNAME.."Fonts/FreeSansBold.otf", loadedFontSize, 16,2)
 
-local bgcorner = LUAUI_DIRNAME.."Images/bgcorner.png"
-
-		
+	
 local titlecolor = "\255\255\205\100"
 local keycolor = ""
 local valuecolor = "\255\255\255\255"
@@ -37,9 +35,9 @@ changelogFile = changelogFile .. keycolor.."Gavity"..separator..valuegreycolor..
 changelogFile = changelogFile .. keycolor.."Hardness"..separator..valuegreycolor..Game.mapHardness.. keycolor.."\n"
 changelogFile = changelogFile .. keycolor.."Tidal speed"..separator..valuegreycolor..Game.tidal.. keycolor.."\n"
 if Game.windMin == Game.windMax then
-	changelogFile = changelogFile .. keycolor.."Wind speed"..separator..valuegreycolor..(Game.windMin*1.5)..valuegreycolor.."\n"
+	changelogFile = changelogFile .. keycolor.."Wind speed"..separator..valuegreycolor..(Game.windMin)..valuegreycolor.."\n"
 else
-	changelogFile = changelogFile .. keycolor.."Wind speed"..separator..valuegreycolor..(Game.windMin*1.5)..valuegreycolor.."  -  "..valuegreycolor..(Game.windMax*1.5).."\n"
+	changelogFile = changelogFile .. keycolor.."Wind speed"..separator..valuegreycolor..(Game.windMin)..valuegreycolor.."  -  "..valuegreycolor..(Game.windMax*1.5).."\n"
 end
 if Game.waterDamage == 0 then 
 	vcolor = valuegreycolor
@@ -214,9 +212,9 @@ local function DrawRectRound(px,py,sx,sy,cs, tl,tr,br,bl)
 	gl.Vertex(sx, sy-cs, 0)
 end
 function RectRound(px,py,sx,sy,cs, tl,tr,br,bl)		-- (coordinates work differently than the RectRound func in other widgets)
-	gl.Texture(bgcorner)
+	--gl.Texture(bgcorner)
 	gl.BeginEnd(GL.QUADS, DrawRectRound, px,py,sx,sy,cs, tl,tr,br,bl)
-	gl.Texture(false)
+	--gl.Texture(false)
 end
     
 function DrawTextarea(x,y,width,height,scrollbar)
