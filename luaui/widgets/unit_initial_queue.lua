@@ -41,6 +41,7 @@ local whiteColor = '\255\255\255\255' -- White
 
 local cbackground, cborder, cbuttonbackground = include("Configs/ui_config.lua")
 local triggered = nil
+local update = 0.5
 
 local isMex = {}
 for uDefID, uDef in pairs(UnitDefs) do
@@ -737,6 +738,17 @@ function widget:GameFrame(n)
 			widgetHandler:RemoveWidget(self)
 		end
 	end
+end
+
+local timeCounter = math.huge -- force the first update
+
+function widget:Update(deltaTime)
+  if (timeCounter < update) then
+    timeCounter = timeCounter + deltaTime
+    return
+  end
+  timeCounter = 0
+  cbackground[4] = WG["background_opacity_option"]
 end
 
 ------------------------------------------------------------

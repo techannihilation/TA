@@ -57,9 +57,9 @@ local Config = {
 		
 		minlines = 1, --minimal number of lines to display
 		maxlines = 6,
-		maxlinesScrollmode = 10,
+		maxlinesScrollmode = 8,
 		
-		maxage = 30, --max time for a message to be displayed, in seconds
+		maxage = 15, --max time for a message to be displayed, in seconds
 		
 		margin = 7*widgetScale, --distance from background border
 		

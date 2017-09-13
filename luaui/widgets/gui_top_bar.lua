@@ -115,7 +115,7 @@ local now = os.clock()
 
 local cbackground, cborder, cbuttonbackground = include("Configs/ui_config.lua")
 local triggered = nil
-
+local oldbgcolor = cbackground[4]
 --------------------------------------------------------------------------------
 -- Rejoin
 --------------------------------------------------------------------------------
@@ -718,12 +718,14 @@ local function updateResbar(res)
 	-- add tooltips
 	if WG['tooltip'] ~= nil then
 		WG['tooltip'].AddTooltip(res..'_share_slider', shareIndicatorArea[res], "\255\215\255\215"..res:sub(1,1):upper()..res:sub(2).." Share Slider\n\255\240\240\240Overflowing to your team when \n"..res.." goes beyond this point")
-		WG['tooltip'].AddTooltip(res..'_metalmaker_slider', conversionIndicatorArea, "\255\215\255\215Energy Conversion slider\n\255\240\240\240Excess energy beyond this point will be\nconverted to metal\n(by your Energy Convertor units)")
-			
+		if res == 'energy' then
+			WG['tooltip'].AddTooltip(res..'_metalmaker_slider', conversionIndicatorArea, "\255\215\255\215Energy Conversion slider\n\255\240\240\240Excess energy beyond this point will be\nconverted to metal\n(by your Energy Convertor units)")
+		end
 		WG['tooltip'].AddTooltip(res..'_pull',    {resbarDrawinfo[res].textPull[2]-(resbarDrawinfo[res].textPull[4]*0.5),       resbarDrawinfo[res].textPull[3],    resbarDrawinfo[res].textPull[2]+(resbarDrawinfo[res].textPull[4]*2),       resbarDrawinfo[res].textPull[3]+resbarDrawinfo[res].textPull[4]}, ""..res.." usage")
 		WG['tooltip'].AddTooltip(res..'_income',  {resbarDrawinfo[res].textIncome[2]-(resbarDrawinfo[res].textIncome[4]*0.5),   resbarDrawinfo[res].textIncome[3],  resbarDrawinfo[res].textIncome[2]+(resbarDrawinfo[res].textIncome[4]*2),   resbarDrawinfo[res].textIncome[3]+resbarDrawinfo[res].textIncome[4]}, ""..res.." income")
 		WG['tooltip'].AddTooltip(res..'_storage', {resbarDrawinfo[res].textStorage[2]-(resbarDrawinfo[res].textStorage[4]*2.75), resbarDrawinfo[res].textStorage[3], resbarDrawinfo[res].textStorage[2], resbarDrawinfo[res].textStorage[3]+resbarDrawinfo[res].textStorage[4]}, ""..res.." storage")
 		WG['tooltip'].AddTooltip(res..'_curent', {resbarDrawinfo[res].textCurrent[2]-(resbarDrawinfo[res].textCurrent[4]*1.75), resbarDrawinfo[res].textCurrent[3], resbarDrawinfo[res].textCurrent[2]+(resbarDrawinfo[res].textCurrent[4]*1.75), resbarDrawinfo[res].textCurrent[3]+resbarDrawinfo[res].textCurrent[4]}, "\255\215\255\215"..string.upper(res).."\n\255\240\240\240Share "..res.." to a specific player by...\n1) Using the (adv)playerlist,\n    dragging up the "..res.." icon at the rightside.\n2) An interface brought up with the H key.")
+
 	end
 	
 	updateResbarValues(res)
@@ -803,10 +805,6 @@ function checkStatus()
 end
 
 function widget:GameFrame(n)
-	if n%10==0 then
-		cbackground[4] = WG["background_color_over"]
-    end
-
 	spec = spGetSpectatingState()
 	if n > 0 and not gameStarted then
 		gameStarted = true
@@ -842,8 +840,13 @@ function widget:GameFrame(n)
 	lastUpdateFrame = currentUpdateFrame
 end
 
-
 function widget:Update(dt)
+	if currentUpdateFrame%5==0 then
+		if oldbgcolor ~= WG["background_opacity_option"] then
+			cbackground[4] = WG["background_opacity_option"]
+			oldbgcolor = cbackground[4]
+		end
+    end
 	local mx,my = spGetMouseState()
     now = os.clock()
 
@@ -964,7 +967,6 @@ end
 function widget:DrawScreen()
 	if triggered == nil then
 		if cbackground[4] == 0.54321 and WG["background_color"] then
-			Spring.Echo("bg color reset",cbackground[4],WG["background_color"])
 			cbackground[4]=WG["background_color"]
 		end
 	triggered = true

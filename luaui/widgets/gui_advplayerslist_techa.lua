@@ -166,6 +166,7 @@ local pingCpuColors   = {
 
 local cbackground, _, _ = include("Configs/ui_config.lua")
 triggered = nil
+update = 0.5
 local currentGameFrame = Spring_GetGameFrame()
 --------------------------------------------------------------------------------
 -- Time Variables
@@ -1183,14 +1184,6 @@ local PrevGameFrame = 0
 local MainList
 local Background
 local ShareSlider
-
-function widget:GameFrame(frame)
-	if frame%10==0 then
-		cbackground[4] = WG["background_color_over"]
-		return
-    end
-	currentGameFrame = frame
-end
 
 function widget:GameProgress(serverframenum)
 	local frame = currentGameFrame
@@ -2922,7 +2915,10 @@ function widget:Update(delta) --handles takes & related messages
 	timeCounter = timeCounter + delta
 	curFrame = currentGameFrame
 	
-	
+	if currentGameFrame%5==0 then
+			cbackground[4] = WG["background_opacity_option"]
+    end
+
 	if energyPlayer ~= nil or metalPlayer ~= nil then
 		CreateShareSlider()
 	end
@@ -2972,6 +2968,7 @@ function widget:Update(delta) --handles takes & related messages
 	end
 	
 	-- update lists every now and then, just to make sure
+
 	if timeCounter < updateRate then
 		return
 	else

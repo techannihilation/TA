@@ -19,6 +19,10 @@ if (vsx == 1) then --hax for windowed mode
 	vsx,vsy = Spring.GetWindowGeometry()
 end
 
+
+local minimapbrightness = nil
+local update = 0.5
+
 local sIsGUIHidden = Spring.IsGUIHidden
 
 local F = {} --function table
@@ -51,7 +55,6 @@ local GL_LINE_LOOP = GL.LINE_LOOP
 local GL_COLOR_BUFFER_BIT = GL.COLOR_BUFFER_BIT
 local GL_PROJECTION = GL.PROJECTION
 local GL_MODELVIEW = GL.MODELVIEW
-local minimapbrightness = nil
 
 local function Color(c)
 	glColor(c[1],c[2],c[3],c[4])
@@ -177,13 +180,6 @@ function widget:Initialize()
 	F[5] = Text
 end
 
-function widget:GameFrame(frame)
-    if frame%10==0 then
-		minimapbrightness = WG["background_color_over"]
-		return
-    end
-end
-
 function widget:DrawScreen()
 	if triggered == nil then
 		minimapbrightness=WG["background_color"]
@@ -206,12 +202,20 @@ function widget:DrawScreen()
 	CleanedTodo = true
 end
 
-function widget:Update()
+local timeCounter = math.huge -- force the first update
+
+function widget:Update(deltaTime)
 	if (sIsGUIHidden()) then
 		for i=1,#Todo do
 			Todo[i] = nil
 		end
 	end
+	if (timeCounter < update) then
+    	timeCounter = timeCounter + deltaTime
+    	return
+  	end
+  	timeCounter = 0
+  	minimapbrightness = WG["background_opacity_option"]
 end
 
 function widget:Shutdown()

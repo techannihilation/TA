@@ -24,6 +24,7 @@ local forwardTex = LUAUI_DIRNAME.."Images/forward.dds"
 
 local cbackground, cborder, cbuttonbackground = include("Configs/ui_config.lua")
 local triggered = nil
+local update = 0.5
 
 local bgMargin = 6
 
@@ -214,10 +215,15 @@ function widget:ViewResize()
   windowList = gl.CreateList(DrawWindow)
 end
 
-function widget:GameFrame(frame)
-	if frame%10==0 then
-		cbackground[4] = WG["background_color_over"]
-    end
+local timeCounter = math.huge -- force the first update
+
+function widget:Update(deltaTime)
+  if (timeCounter < update) then
+    timeCounter = timeCounter + deltaTime
+    return
+  end
+  timeCounter = 0
+  cbackground[4] = WG["background_opacity_option"]
 end
 
 local showOnceMore = false		-- used because of GUI shader delay
@@ -932,13 +938,13 @@ function applyOptionValue(i, skipRedrawWindow)
 		elseif id == 'darkenmap' then
 			WG['darkenmap'].setMapDarkness(value)
 		elseif id == 'uibgcolor' then
-			if value  == 0 then
-				WG["background_color_over"] = WG["background_color"]
+			if value  <= 0.4 then
+				WG["background_opacity_option"] = WG["background_color"]
 			else
-				Spring.Echo(WG["background_color"],value*0.01)
-				WG["background_color_over"] = (value*0.01)
+				WG["background_opacity_option"] = (value)
 			end
 		elseif id == 'musicvolume' then
+			Spring.SetSoundStreamVolume(value)
 			WG["music_volume"] = value
 		elseif id == 'highlightselunits_opacity' then
 			WG['highlightselunits'].setOpacity(value)
@@ -1278,10 +1284,13 @@ function widget:Initialize()
 		{id="advsky", group="gfx", name="Advanced sky", type="bool", value=tonumber(Spring.GetConfigInt("AdvSky",1) or 1) == 1, description='Enables high resolution clouds\n\nChanges will be applied next game'},
 		{id="snow", group="gfx", widget="Snow", name="Snow", type="bool", value=widgetHandler.orderList["Snow"] ~= nil and (widgetHandler.orderList["Snow"] > 0), description='Snows at winter maps, auto reduces amount when fps gets lower and unitcount higher\n\nUse /snow to toggle snow for current map (it remembers)'},
 
+		{id="edgemovedynamic", group="gfx", name="EdgeMove scrolling area", type="bool", value=tonumber(Spring.GetConfigInt("EdgeMoveWidth",1) or 1) == 1},
+		{id="edgemovewidth", group="gfx", name="EdgeMove scrolling speed", type="slider", min=0, max=2, step=0.02, value=tonumber(Spring.GetConfigInt("EdgeMoveDynamic",1) or 2), description='Changes will be applied next game'},
+
 		-- SND
 		{id="sndvolmaster", group="snd", name="Master volume", type="slider", min=0, max=200, step=10, value=tonumber(Spring.GetConfigInt("snd_volmaster",1) or 100)},
 		{id="musicplayer", group="snd", widget="Music Player", name="Music Player", type="bool", value=widgetHandler.orderList["Music Player"] ~= nil and (widgetHandler.orderList["Music Player"] > 0), description='Plays music based on situation'},
-		{id="musicvolume", group="snd", name="Music Volume", type="slider", min=0, max=1, step=0.1, value=WG["music_volume"] or 0.5},
+		{id="musicvolume", group="snd", name="Music Volume", type="slider", min=0, max=1, step=0.01, value=WG["music_volume"] or 0.5},
 
 		--{id="sndvolbattle", group="snd", name="Battle volume", type="slider", min=0, max=200, step=10, value=tonumber(Spring.GetConfigInt("snd_volbattle",1) or 100)},
 		--{id="sndvolui", group="snd", name="Interface volume", type="slider", min=0, max=200, step=10, value=tonumber(Spring.GetConfigInt("snd_volui",1) or 100)},
@@ -1301,7 +1310,7 @@ function widget:Initialize()
 		{id="disticon", group="ui", name="Unit icon distance", type="slider", min=0, max=800, step=50, value=tonumber(Spring.GetConfigInt("UnitIconDist",1) or 800)},
 		{id="teamcolors", group="ui", widget="Player Color Palette", name="Team colors based on a palette", type="bool", value=widgetHandler.orderList["Player Color Palette"] ~= nil and (widgetHandler.orderList["Player Color Palette"] > 0), description='Replaces lobby team colors for a color palette based one\n\nNOTE: reloads all widgets because these need to update their teamcolors'},
 
-		{id="uibgcolor", group="ui", name="UI background opacity", type="slider", min=0, max=100, value=WG["background_color"] or 69, description='Adjust Darkness of UI background'},
+		{id="uibgcolor", group="ui", name="UI background opacity", type="slider", min=0.40, max=1, step=0.001, value=WG["background_opacity_option"] or 0.69, description='Adjust Darkness of UI background'},
 
 		--{id="fancyselunits", group="gfx", widget="Fancy Selected Units", name="Fancy Selected Units", type="bool", value=widgetHandler.orderList["Fancy Selected Units"] ~= nil and (widgetHandler.orderList["Fancy Selected Units"] > 0), description=''},
 
@@ -1383,3 +1392,19 @@ function widget:Shutdown()
         glDeleteList(windowList)
     end
 end
+
+--SAVE / LOAD CONFIG FILE
+function widget:GetConfigData()
+	local data = {}
+	data["background_opacity_option"] = WG["background_opacity_option"]
+	return data
+end
+
+function widget:SetConfigData(data) 
+	if (data ~= nil) then
+		if ( data["background_opacity_option"] ~= nil ) then
+			WG["background_opacity_option"] = data["background_opacity_option"]
+		end
+	end
+end
+--END OF SAFE CONFIG FILE
