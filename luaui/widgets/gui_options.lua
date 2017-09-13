@@ -939,7 +939,6 @@ function applyOptionValue(i, skipRedrawWindow)
 				WG["background_color_over"] = (value*0.01)
 			end
 		elseif id == 'musicvolume' then
-		Spring.SetSoundStreamVolume(value)
 			WG["music_volume"] = value
 		elseif id == 'highlightselunits_opacity' then
 			WG['highlightselunits'].setOpacity(value)
