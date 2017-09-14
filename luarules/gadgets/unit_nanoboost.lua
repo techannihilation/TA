@@ -138,12 +138,14 @@ local function BuildspeedCommand(unitID, unitDefID, cmdParams, teamID)
 		--Spring.Echo("boosted at " .. buildspeedlist[unitID].speed *1.8)
 		Spring.SetUnitBuildSpeed(unitID, buildspeedlist[unitID].speed *1.8,0,0)
 		spSetUnitRulesParam(unitID,"nanoPower",(buildspeedlist[unitID].speed *1.8))
+    spSetUnitRulesParam(unitID,"nanoBoosted",1)
 		boostednanos[unitID] = true
 
 	else
 		--Spring.Echo("not boosted at " .. buildspeedlist[unitID].speed)
 		Spring.SetUnitBuildSpeed(unitID, buildspeedlist[unitID].speed, buildspeedlist[unitID].repair, buildspeedlist[unitID].reclaim)
 		spSetUnitRulesParam(unitID,"nanoPower",buildspeedlist[unitID].speed)
+    spSetUnitRulesParam(unitID,"nanoBoosted",0)
 		boostednanos[unitID] = nil
 		
 	end
