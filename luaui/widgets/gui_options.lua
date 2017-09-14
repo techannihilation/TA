@@ -803,6 +803,9 @@ function applyOptionValue(i, skipRedrawWindow)
 		elseif id == 'hwcursor' then
 			Spring.SendCommands("HardwareCursor "..value)
 			Spring.SetConfigInt("HardwareCursor",value)
+		elseif id == 'edgemovedynamic' then
+			Spring.SendCommands("EdgeMoveDynamic "..value)
+			Spring.SetConfigInt("EdgeMoveDynamic",value)
 		elseif id == 'fpstimespeed' then
 			Spring.SendCommands("fps "..value)
 			Spring.SendCommands("clock "..value)
@@ -919,6 +922,9 @@ function applyOptionValue(i, skipRedrawWindow)
 			Spring.SetConfigInt("MaxNanoParticles",value)
 		elseif id == 'grassdetail' then
 			Spring.SetConfigInt("GrassDetail",value)
+		elseif id == 'edgemovewidth' then
+			Spring.SetConfigInt("GroundDetail", value)
+			Spring.SendCommands("grounddetail "..value)
 		elseif id == 'grounddetail' then
 			Spring.SetConfigInt("GroundDetail", value)
 			Spring.SendCommands("grounddetail "..value)
@@ -1284,8 +1290,8 @@ function widget:Initialize()
 		{id="advsky", group="gfx", name="Advanced sky", type="bool", value=tonumber(Spring.GetConfigInt("AdvSky",1) or 1) == 1, description='Enables high resolution clouds\n\nChanges will be applied next game'},
 		{id="snow", group="gfx", widget="Snow", name="Snow", type="bool", value=widgetHandler.orderList["Snow"] ~= nil and (widgetHandler.orderList["Snow"] > 0), description='Snows at winter maps, auto reduces amount when fps gets lower and unitcount higher\n\nUse /snow to toggle snow for current map (it remembers)'},
 
-		{id="edgemovedynamic", group="gfx", name="EdgeMove scrolling area", type="bool", value=tonumber(Spring.GetConfigInt("EdgeMoveWidth",1) or 1) == 1},
-		{id="edgemovewidth", group="gfx", name="EdgeMove scrolling speed", type="slider", min=0, max=2, step=0.02, value=tonumber(Spring.GetConfigInt("EdgeMoveDynamic",1) or 2), description='Changes will be applied next game'},
+		{id="edgemovedynamic", group="gfx", name="EdgeMove scrolling area", type="bool", value=tonumber(Spring.GetConfigInt("EdgeMoveDynamic",1) or 1) == 1},
+		{id="edgemovewidth", group="gfx", name="EdgeMove scrolling speed", type="slider", min=0, max=2, step=0.02, value=tonumber(Spring.GetConfigInt("EdgeMoveWidth",1) or 2), description='Changes will be applied next game'},
 
 		-- SND
 		{id="sndvolmaster", group="snd", name="Master volume", type="slider", min=0, max=200, step=10, value=tonumber(Spring.GetConfigInt("snd_volmaster",1) or 100)},

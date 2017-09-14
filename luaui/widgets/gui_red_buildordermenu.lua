@@ -645,7 +645,7 @@ function widget:GameFrame(frame)
     Spring.ForceLayoutUpdate()
   end
 
-  if frame%5==0 then
+  if frame%9==0 then
   	WG["cmdID"] = nil
   end
 end

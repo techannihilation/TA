@@ -580,6 +580,7 @@ end
 
 
 function widget:IsAbove(x,y)
+	if not guiData.mainPanel.visible then return false end
 	return isAbove({x=x,y=y},guiData)
 end
 
