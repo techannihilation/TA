@@ -31,7 +31,7 @@ local CMD_RESURRECT = CMD.RESURRECT
 -- implement reclaim 
 
 function gadget:AllowFeatureBuildStep(builderID, builderTeam, featureID, featureDefID, step)
-  if Spring.GetUnitRulesParam(builderID,"nanoBoosted") == 1 then return true end
+  if Spring.GetUnitRulesParam(builderID,"nanoBoosted") == 1 then return false end
   if step > 0 then return true end
   local reclaimspeed = (UnitDefs[GetUnitDefID(builderID)].reclaimSpeed / 30)
   local reclaimtime = FeatureDefs[featureDefID].reclaimTime
