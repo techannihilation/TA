@@ -923,8 +923,8 @@ function applyOptionValue(i, skipRedrawWindow)
 		elseif id == 'grassdetail' then
 			Spring.SetConfigInt("GrassDetail",value)
 		elseif id == 'edgemovewidth' then
-			Spring.SetConfigInt("GroundDetail", value)
-			Spring.SendCommands("grounddetail "..value)
+			Spring.SetConfigInt("EdgeMoveDynamic", value)
+			Spring.SendCommands("EdgeMoveDynamic "..value)
 		elseif id == 'grounddetail' then
 			Spring.SetConfigInt("GroundDetail", value)
 			Spring.SendCommands("grounddetail "..value)
