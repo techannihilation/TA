@@ -1348,6 +1348,7 @@ function widget:Initialize()
 		{id="factoryrepeat", group="game", widget="Factory Auto-Repeat", name="Factory auto-repeat", type="bool", value=widgetHandler.orderList["Factory Auto-Repeat"] ~= nil and (widgetHandler.orderList["Factory Auto-Repeat"] > 0), description='Sets new factories on Repeat mode'},
 		--{id="transportai", group="game", widget="Transport AI", name="Transport AI", type="bool", value=widgetHandler.orderList["Transport AI"] ~= nil and (widgetHandler.orderList["Transport AI"] > 0), description='Transport units automatically pick up new units going to factory waypoint.'},
 		{id="settargetdefault", group="game", widget="Set target default", name="Set-target as default", type="bool", value=widgetHandler.orderList["Set target default"] ~= nil and (widgetHandler.orderList["Set target default"] > 0), description='Replace default attack command to a set-target command\n(when rightclicked on enemy unit)'},
+		{id="blacklily", group="game", widget="unit_blacklily_auto_cloak", name="Blacklily Auto Cloak", type="bool", value=widgetHandler.orderList["unit_blacklily_auto_cloak"] ~= nil and (widgetHandler.orderList["unit_blacklily_auto_cloak"] > 0), description='Enabled cloak on attack or fight command'},
 
 		--Defensive Range Options
 		{id="allyair", group="dr", name="Ally Air", type="bool", WG['defrange'].enabled.ally.air or false, description='Show Range For Ally Air'},

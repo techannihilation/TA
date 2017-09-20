@@ -1,7 +1,7 @@
 function widget:GetInfo()
   return {
     name      = "unit_blacklily_auto_cloak",
-    desc      = "Enabled cloak on atteck/fight command",
+    desc      = "Auto enables cloak on attack/fight command",
     author    = "nixtux",
     date      = "Jun 08, 2016",
     license   = "GNU GPL, v2 or later",
