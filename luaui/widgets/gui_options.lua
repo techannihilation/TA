@@ -91,7 +91,7 @@ local addedWidgetOptions = false
 
 local luaShaders = tonumber(Spring.GetConfigInt("ForceShaders",1) or 0)
 
-local mapExt = {'vr','map','none'}
+local mapExt = {'VR Grid','Map','None'}
 local presetNames = {'lowest','low','medium','high','ultra'}
 local presets = {
 	lowest = {
@@ -973,10 +973,10 @@ function applyOptionValue(i, skipRedrawWindow)
 			options[i].value = 0
 			loadPreset(presetNames[value])
 		elseif id == 'mapedgeextensions' then
-			if options[i].options[value] == 'vr' then
+			if options[i].options[value] == 'VR Grid' then
 				widgetHandler:EnableWidget("Map External VR Grid")
 				widgetHandler:DisableWidget("Map Edge Extension")
-			elseif options[i].options[value] == 'map' then
+			elseif options[i].options[value] == 'Map' then
 				widgetHandler:EnableWidget("Map Edge Extension")
 				widgetHandler:DisableWidget("Map External VR Grid")
 			else
