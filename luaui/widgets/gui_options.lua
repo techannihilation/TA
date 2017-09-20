@@ -91,13 +91,12 @@ local addedWidgetOptions = false
 
 local luaShaders = tonumber(Spring.GetConfigInt("ForceShaders",1) or 0)
 
-
+local mapExt = {'vr','map','none'}
 local presetNames = {'lowest','low','medium','high','ultra'}
 local presets = {
 	lowest = {
 		bloom = 0,
 		water = 1,
-		mapedgeextension = false,
 		lighteffects = false,
 		lups = false,
 		snow = false,
@@ -119,7 +118,6 @@ local presets = {
 	low = {
 		bloom = 0,
 		water = 2,
-		mapedgeextension = false,
 		lighteffects = false,
 		lups = true,
 		snow = false,
@@ -141,7 +139,6 @@ local presets = {
 	medium = {
 		bloom = 1,
 		water = 4,
-		mapedgeextension = true,
 		lighteffects = true,
 		lups = true,
 		snow = true,
@@ -163,7 +160,6 @@ local presets = {
 	high = {
 		bloom = 1,
 		water = 5,
-		mapedgeextension = true,
 		lighteffects = true,
 		lups = true,
 		snow = true,
@@ -185,7 +181,6 @@ local presets = {
 	ultra = {
 		bloom = 2,
 		water = 3,
-		mapedgeextension = true,
 		lighteffects = true,
 		lups = true,
 		snow = true,
@@ -872,7 +867,7 @@ function applyOptionValue(i, skipRedrawWindow)
 		
 		if options[i].widget ~= nil then
 			if value ~= 0 then
-				if id == 'bloom' or id == 'guishader' or id == 'xrayshader' or id == 'snow' or id == 'mapedgeextension' then
+				if id == 'bloom' or id == 'guishader' or id == 'xrayshader' or id == 'snow' or id == 'mapedgeextensions' then
 					if luaShaders ~= 1 and not enabledLuaShaders then
 						Spring.SetConfigInt("ForceShaders", 1)
 						enabledLuaShaders = true
@@ -977,6 +972,17 @@ function applyOptionValue(i, skipRedrawWindow)
 			Spring.Echo('Loading preset:   '..options[i].options[value])
 			options[i].value = 0
 			loadPreset(presetNames[value])
+		elseif id == 'mapedgeextensions' then
+			if options[i].options[value] == 'vr' then
+				widgetHandler:EnableWidget("Map External VR Grid")
+				widgetHandler:DisableWidget("Map Edge Extension")
+			elseif options[i].options[value] == 'map' then
+				widgetHandler:EnableWidget("Map Edge Extension")
+				widgetHandler:DisableWidget("Map External VR Grid")
+			else
+				widgetHandler:DisableWidget("Map External VR Grid")
+				widgetHandler:DisableWidget("Map Edge Extension")
+			end
 		elseif id == 'water' then
 			Spring.SendCommands("water "..(value-1))
 		elseif id == 'camera' then
@@ -1277,7 +1283,9 @@ function widget:Initialize()
 		{id="bloom", group="gfx", widget="Bloom Shader", name="Bloom shader", type="slider", min=0, max=2, step=1, value=0, description='Bloom will make the map and units glow\n\nSetting the slider all the way will stress your GPU more'},
 		{id="decals", group="gfx", name="Ground decals", type="slider", min=0, max=5, step=1, value=tonumber(Spring.GetConfigInt("GroundDecals",1) or 1), description='Set how long map decals will stay.\n\nDecals are ground scars, footsteps/tracks and shading under buildings'},
 		{id="guishader", group="gfx", widget="GUI-Shader", name="GUI blur shader", type="bool", value=widgetHandler.orderList["GUI-Shader"] ~= nil and (widgetHandler.orderList["GUI-Shader"] > 0), description='Blurs the world under every user interface element\n\nIntel Graphics have trouble with this'},
-		{id="mapedgeextension", group="gfx", widget="Map Edge Extension", name="Map edge extension", type="bool", value=widgetHandler.orderList["Map Edge Extension"] ~= nil and (widgetHandler.orderList["Map Edge Extension"] > 0), description='Mirrors the map at screen edges and darkens and decolorizes them\n\nEnable shaders for best result'},
+
+		{id="mapedgeextensions", group="gfx", name="Map Edge Extensions", type="select", options=mapExt, value=0, description='Select from the various map edge extensions\n\nEnable shaders for best result'},
+
 		{id="water", group="gfx", name="Water type", type="select", options={'basic','reflective','dynamic','reflective&refractive','bump-mapped'}, value=(tonumber(Spring.GetConfigInt("Water",1) or 1)+1)},
 		{id="lups", group="gfx", widget="LupsManager", name="Lups particle/shader effects", type="bool", value=widgetHandler.orderList["LupsManager"] ~= nil and (widgetHandler.orderList["LupsManager"] > 0), description='Toggle unit particle effects: jet beams, ground flashes, fusion energy balls'},
 		{id="xrayshader", group="gfx", widget="XrayShader", name="Unit xray shader", type="bool", value=widgetHandler.orderList["XrayShader"] ~= nil and (widgetHandler.orderList["XrayShader"] > 0), description='Highlights all units, highlight effect dissolves on close camera range.\n\nFades out and disables at low fps\nWorks less on dark teamcolors'},
@@ -1383,7 +1391,7 @@ function widget:Initialize()
 			insert = false
 		end
 		if luaShaders ~= 1 then
-			if option.id == "advmapshading" or option.id == "advmodelshading" or option.id == "bloom" or option.id == "guishader" or option.id == "xrayshader" or option.id == "mapedgeextension" or option.id == "snow" then
+			if option.id == "advmapshading" or option.id == "advmodelshading" or option.id == "bloom" or option.id == "guishader" or option.id == "xrayshader" or option.id == "mapedgeextensions" or option.id == "snow" then
 				option.description = 'You dont have shaders enabled, we will enable it for you but...\n\nChanges will be applied next game'
 			end
 		end
