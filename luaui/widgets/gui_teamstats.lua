@@ -11,9 +11,6 @@ function widget:GetInfo()
 	}
 end
 
-local cbackground, cborder, cbuttonbackground = include("Configs/ui_config.lua")
-local triggered = nil
-
 local fontSize = 22		-- is caclulated somewhere else anyway
 local fontSizePercentage = 0.6 -- fontSize * X = actual fontsize
 local update = 30 -- in frames
@@ -458,9 +455,6 @@ function widget:PlayerChanged()
 end
 
 function widget:GameFrame(n,forceupdate)
-	if n%10==0 then
-		cbackground[4] = WG["background_color_over"]
-    end
 	if n > 0 then
 		gameStarted = true
 	end
@@ -663,13 +657,6 @@ function widget:DrawScreen()
 		return
 	end
 
-	if triggered == nil then
-		if cbackground[4] == 0.54321 and WG["background_color"] then
-			cbackground[4]=WG["background_color"]
-		end
-	triggered = true
-	end
-
 	if (WG['guishader_api'] ~= nil) then
 		WG['guishader_api'].RemoveRect('teamstats_window')
 	end
@@ -757,7 +744,7 @@ function DrawBackground()
 
 	local x1,y1,x2,y2 = guiData.mainPanel.absSizes.x.min, guiData.mainPanel.absSizes.y.min, guiData.mainPanel.absSizes.x.max, guiData.mainPanel.absSizes.y.max
 
-	gl.Color(cbackground)
+	gl.Color(WG["background_opacity_custom"])
 	local padding = 5*widgetScale
 	RectRound(x1-padding,y1-padding,x2+padding,y2+padding,8*widgetScale)
 	if (WG['guishader_api'] ~= nil) then

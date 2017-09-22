@@ -14,9 +14,6 @@ end
 local loadedFontSize = 32
 local font = gl.LoadFont(LUAUI_DIRNAME.."Fonts/FreeSansBold.otf", loadedFontSize, 16,2)
 
-local cbackground, cborder, cbuttonbackground = include("Configs/ui_config.lua")
-local triggered = nil
-
 local bgMargin = 6
 
 local closeButtonSize = 30
@@ -218,23 +215,8 @@ function DrawWindow()
     gl.Text("These keybinds are set by default. If you remove/replace hotkey widgets, or use your own uikeys, they might stop working!", screenX+12, y-screenHeight + 14, 12.5)
 end
 
-
-function widget:GameFrame(frame)
-	if frame%10==0 then
-		cbackground[4] = WG["background_color_over"]
-    end
-end
-
 function widget:DrawScreen()
   if spIsGUIHidden() then return end
-  
-  if triggered == nil then
-		if cbackground[4] == 0.54321 and WG["background_color"] then
-			cbackground[4]=WG["background_color"]
-		end
-	triggered = true
-	end
-  
   -- draw the help
   if not keybinds then
       keybinds = gl.CreateList(DrawWindow)
@@ -244,7 +226,7 @@ function widget:DrawScreen()
 		glPushMatrix()
 			glTranslate(-(vsx * (widgetScale-1))/2, -(vsy * (widgetScale-1))/2, 0)
 			glScale(widgetScale, widgetScale, 1)
-			gl.Color(cbackground)
+			gl.Color(WG["background_opacity_custom"])
 			glCallList(keybinds)
 		glPopMatrix()
 		if (WG['guishader_api'] ~= nil) then

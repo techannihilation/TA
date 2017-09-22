@@ -164,9 +164,6 @@ local pingCpuColors   = {
 	[5] = {r = 1, g = 0.15, b = 0.3}
 }
 
-local cbackground, _, _ = include("Configs/ui_config.lua")
-triggered = nil
-update = 0.5
 local currentGameFrame = Spring_GetGameFrame()
 --------------------------------------------------------------------------------
 -- Time Variables
@@ -1196,13 +1193,6 @@ end
 
 function widget:DrawScreen()
 
-	if triggered == nil then
-		if cbackground[4] == 0.54321 then
-			cbackground[4]=WG["background_color"]
-		end
-	triggered = true
-	end
-
 	if Spring_IsGUIHidden() or PlayerIsBehind then
 		return
 	end
@@ -1365,7 +1355,7 @@ function CreateBackground()
 	end
 	
 	Background = gl_CreateList(function()
-		gl_Color(cbackground)
+		gl_Color(WG["background_opacity_custom"])
 		
 		RectRound(BLcornerX,BLcornerY,TRcornerX,TRcornerY,6)
 		--DrawRect(BLcornerX,BLcornerY,TRcornerX,TRcornerY)
@@ -2914,10 +2904,6 @@ function widget:Update(delta) --handles takes & related messages
 	totalTime = totalTime + delta 
 	timeCounter = timeCounter + delta
 	curFrame = currentGameFrame
-	
-	if currentGameFrame%5==0 then
-			cbackground[4] = WG["background_opacity_option"]
-    end
 
 	if energyPlayer ~= nil or metalPlayer ~= nil then
 		CreateShareSlider()

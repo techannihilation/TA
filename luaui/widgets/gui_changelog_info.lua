@@ -17,9 +17,6 @@ local font = gl.LoadFont(LUAUI_DIRNAME.."Fonts/FreeSansBold.otf", loadedFontSize
 
 local changelogFile = VFS.LoadFile("changelog.txt")
 
-local cbackground, cborder, cbuttonbackground = include("Configs/ui_config.lua")
-local triggered = nil
-
 local bgMargin = 6
 
 local closeButtonSize = 30
@@ -363,21 +360,8 @@ function DrawWindow()
 	DrawTextarea(x+90, y-10, screenWidth-90, screenHeight-24, 1)
 end
 
-function widget:GameFrame(frame)
-	if frame%10==0 then
-		cbackground[4] = WG["background_color_over"]
-    end
-end
-
 function widget:DrawScreen()
   if spIsGUIHidden() then return end
-  
-  if triggered == nil then
-		if cbackground[4] == 0.54321 and WG["background_color"] then
-			cbackground[4]=WG["background_color"]
-		end
-	triggered = true
-	end
 
   -- draw the help
   if not changelogList then
@@ -390,7 +374,7 @@ function widget:DrawScreen()
 		glPushMatrix()
 			glTranslate(-(vsx * (widgetScale-1))/2, -(vsy * (widgetScale-1))/2, 0)
 			glScale(widgetScale, widgetScale, 1)
-			gl.Color(cbackground)
+			gl.Color(WG["background_opacity_custom"])
 			glCallList(changelogList)
 		glPopMatrix()
 		if (WG['guishader_api'] ~= nil) then

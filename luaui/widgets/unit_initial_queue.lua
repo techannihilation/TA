@@ -39,10 +39,6 @@ local energyColor = '\255\255\255\128' -- Light yellow
 local buildColor = '\255\128\255\128' -- Light green
 local whiteColor = '\255\255\255\255' -- White
 
-local cbackground, cborder, cbuttonbackground = include("Configs/ui_config.lua")
-local triggered = nil
-local update = 0.5
-
 local isMex = {}
 for uDefID, uDef in pairs(UnitDefs) do
 	if uDef.extractsMetal > 0 then
@@ -525,12 +521,6 @@ local queueTimeFormat = whiteColor .. 'Queued ' .. metalColor .. '%dm ' .. energ
 
 
 function widget:DrawScreen()
-	if triggered == nil then
-		if cbackground[4] == 0.54321 then
-			cbackground[4]=WG["background_color"] or 0.65
-		end
-	triggered = true
-	end
 	gl.PushMatrix()
 	gl.Translate(wl, wt, 0)
 	gl.PushMatrix()
@@ -542,7 +532,7 @@ function widget:DrawScreen()
 		gl.Translate(0, -iconSize - borderSize, 0)
 		gl.PushMatrix()
 		for c = 1, #cellRow do
-			gl.Color(cbackground)
+			gl.Color(WG["background_opacity_custom"])
 			gl.Rect(-borderSize, -borderSize, iconSize + borderSize, iconSize + borderSize)
 
 			gl.Color(1, 1, 1, 1)
@@ -738,17 +728,6 @@ function widget:GameFrame(n)
 			widgetHandler:RemoveWidget(self)
 		end
 	end
-end
-
-local timeCounter = math.huge -- force the first update
-
-function widget:Update(deltaTime)
-  if (timeCounter < update) then
-    timeCounter = timeCounter + deltaTime
-    return
-  end
-  timeCounter = 0
-  cbackground[4] = WG["background_opacity_option"]
 end
 
 ------------------------------------------------------------

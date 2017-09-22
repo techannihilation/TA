@@ -53,11 +53,25 @@ function widget:DrawScreen()
 		minimapbrightness = (NewMax + NewMin) - minimapbrightness
 		--Spring.Echo("Background opacity values:",minimapbrightness)		
 
-		if WG["background_color"] == nil then
-			WG["background_color"] = minimapbrightness
-			if not WG["background_opacity_option"] then
-				WG["background_opacity_option"] = minimapbrightness
+		if WG["background_opacity"] == nil then
+			WG["background_opacity"] = minimapbrightness
+			if not WG["background_opacity_custom"] then
+				WG["background_opacity_custom"] = {0,0,0,minimapbrightness}
 			end
+		end
+	end
+end
+
+function widget:GetConfigData()
+	local data = {}
+	data["background_opacity_custom"] = WG["background_opacity_custom"]
+	return data
+end
+
+function widget:SetConfigData(data) 
+	if (data ~= nil) then
+		if ( data["background_opacity_custom"] ~= nil ) then
+			WG["background_opacity_custom"] = data["background_opacity_custom"]
 		end
 	end
 end

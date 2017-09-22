@@ -101,7 +101,7 @@ local function StartLoopingTrack(trackInit, trackLoop)
 	
 	curTrack = trackInit
 	loopTrack = trackLoop
-	Spring.PlaySoundStream(trackInit, WG.music_volume or 0.5)
+	Spring.PlaySoundStream(trackInit, WG.music_volume or 0.4)
 	looping = 0.5
 end
 
@@ -147,7 +147,7 @@ local function StartTrack(track)
 		-- Spring.Echo("Song changed but unable to get the artist and title info")
 	-- end
 	curTrack = newTrack
-	Spring.PlaySoundStream(newTrack,WG.music_volume or 0.5)
+	Spring.PlaySoundStream(newTrack,WG.music_volume or 0.4)
 	
 	WG.music_start_volume = WG.music_volume
 end
@@ -216,7 +216,7 @@ function widget:Update(dt)
 				looping = 1
 			elseif playedTime >= totalTime - LOOP_BUFFER then
 				Spring.StopSoundStream()
-				Spring.PlaySoundStream(loopTrack,WG.music_volume or 0.5)
+				Spring.PlaySoundStream(loopTrack,WG.music_volume or 0.4)
 			end
 		end
 		timeframetimer_short = 0
@@ -413,9 +413,25 @@ function widget:GameOver()
 	end
 	looping = false
 	Spring.StopSoundStream()
-	Spring.PlaySoundStream(track,WG.music_volume or 0.5)
+	Spring.PlaySoundStream(track,WG.music_volume or 0.4)
 	WG.music_start_volume = WG.music_volume
 end
+
+--SAVE / LOAD CONFIG FILE
+function widget:GetConfigData()
+	local data = {}
+	data["music_volume"] = WG.music_volume
+	return data
+end
+
+function widget:SetConfigData(data) 
+	if (data ~= nil) then
+		if ( data["music_volume"] ~= nil ) then
+			WG.music_volume = data["music_volume"]
+		end
+	end
+end
+--END OF SAFE CONFIG FILE
 
 
 --------------------------------------------------------------------------------

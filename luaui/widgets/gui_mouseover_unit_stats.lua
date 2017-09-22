@@ -121,9 +121,6 @@ local pplants = {
 	["tlladvsolar"] = true,
 }
 
-local cbackground, cborder = include("Configs/ui_config.lua")
-local triggered = nil
-
 local update = 1.5
 local uDefID
 ------------------------------------------------------------------------------------
@@ -306,13 +303,6 @@ function widget:Update(deltaTime)
 end
 
 function widget:DrawScreen()
-	if triggered == nil then
-		if cbackground[4] == 0.54321 then
-			cbackground[4]=WG["background_color"]
-		end
-	triggered = true
-	end
-	
 	if uDefID then
 		local time = Spring.DiffTimers(Spring.GetTimer(), startTimer)
 		--Spring.Echo(startTimer,time)
@@ -680,7 +670,7 @@ function widget:DrawScreen()
 	end
 	
 	-- background
-	glColor(cbackground)
+	glColor(WG["background_opacity_custom"])
 	cornersize = 0
 	RectRound(floor(cX-bgpadding)+cornersize, ceil(cY+(fontSize/3)+bgpadding)+cornersize, ceil(cX+maxWidth+bgpadding)-cornersize, floor(cYstart-bgpadding)-cornersize, bgcornerSize)
 	cornersize = ceil(bgpadding*0.16)

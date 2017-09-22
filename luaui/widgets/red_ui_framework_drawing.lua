@@ -105,7 +105,7 @@ end
 local function Rect(px,py,sx,sy,c)
 	if (c) then
 		if c[4] == 0.54321 then
-			glColor(c[1],c[2],c[3],minimapbrightness or 0.65)  --minimapbrightness
+			glColor(WG["background_opacity_custom"] or {0,0,0,5})
 		else
 			glColor(c[1],c[2],c[3],c[4])
 		end
@@ -215,7 +215,7 @@ function widget:Update(deltaTime)
     	return
   	end
   	timeCounter = 0
-  	minimapbrightness = WG["background_opacity_option"]
+  	minimapbrightness = WG["background_opacity_custom"][4]
 end
 
 function widget:Shutdown()

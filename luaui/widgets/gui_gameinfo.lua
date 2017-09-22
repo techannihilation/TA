@@ -14,9 +14,6 @@ end
 local loadedFontSize = 32
 local font = gl.LoadFont(LUAUI_DIRNAME.."Fonts/FreeSansBold.otf", loadedFontSize, 16,2)
 
-local cbackground, cborder, cbuttonbackground = include("Configs/ui_config.lua")
-local triggered = nil
-
 local titlecolor = "\255\255\205\100"
 local keycolor = ""
 local valuecolor = "\255\255\255\255"
@@ -347,7 +344,7 @@ function DrawWindow()
 	-- title
     local title = "Game info"
 	local titleFontSize = 18
-    gl.Color(cbackground)
+    gl.Color(WG["background_opacity_custom"])
     titleRect = {x-bgMargin, y+bgMargin, x+(glGetTextWidth(title)*titleFontSize)+27-bgMargin, y+37}
 	RectRound(titleRect[1], titleRect[2], titleRect[3], titleRect[4], 8, 1,1,0,0)
 	font:Begin()
@@ -360,23 +357,10 @@ function DrawWindow()
 	DrawTextarea(x, y-10, screenWidth, screenHeight-24, 1)
 end
 
-function widget:GameFrame(frame)
-	if frame%10==0 then
-		cbackground[4] = WG["background_color_over"]
-    end
-end
-
 function widget:DrawScreen()
   if spIsGUIHidden() then return end
   if amNewbie then return end
   
-  if triggered == nil then
-	if cbackground[4] == 0.54321 and WG["background_color"] then
-      cbackground[4]=WG["background_color"]
-	end
-  triggered = true
-  end
-
   -- draw the help
   if not changelogList then
       changelogList = gl.CreateList(DrawWindow)
@@ -388,7 +372,7 @@ function widget:DrawScreen()
 		glPushMatrix()
 			glTranslate(-(vsx * (widgetScale-1))/2, -(vsy * (widgetScale-1))/2, 0)
 			glScale(widgetScale, widgetScale, 1)
-		    gl.Color(cbackground)
+		    gl.Color(WG["background_opacity_custom"])
 			glCallList(changelogList)
 		glPopMatrix()
 		if (WG['guishader_api'] ~= nil) then

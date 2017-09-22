@@ -210,16 +210,6 @@ function widget:ViewResize()
   windowList = gl.CreateList(DrawWindow)
 end
 
-local timeCounter = math.huge -- force the first update
-
-function widget:Update(deltaTime)
-  if (timeCounter < update) then
-    timeCounter = timeCounter + deltaTime
-    return
-  end
-  timeCounter = 0
-  cbackground[4] = WG["background_opacity_option"]
-end
 
 local showOnceMore = false		-- used because of GUI shader delay
 
@@ -632,13 +622,7 @@ end
 
 
 function widget:DrawScreen()
-  if triggered == nil then
-	if cbackground[4] == 0.54321 and WG["background_color"] then
-	  cbackground[4]=WG["background_color"]
-	end
-  triggered = true
-  end
-  
+
   if spIsGUIHidden() then return end
   
   -- draw the window
@@ -659,7 +643,7 @@ function widget:DrawScreen()
 		glPushMatrix()
 			glTranslate(-(vsx * (widgetScale-1))/2, -(vsy * (widgetScale-1))/2, 0)
 			glScale(widgetScale, widgetScale, 1)
-			gl.Color(cbackground)
+			gl.Color(WG["background_opacity_custom"])
 			glCallList(windowList)
 			if (WG['guishader_api'] ~= nil) then
 				local rectX1 = ((screenX-bgMargin) * widgetScale) - ((vsx * (widgetScale-1))/2)
@@ -939,10 +923,10 @@ function applyOptionValue(i, skipRedrawWindow)
 		elseif id == 'darkenmap' then
 			WG['darkenmap'].setMapDarkness(value)
 		elseif id == 'uibgcolor' then
-			if value  <= 0.4 then
-				WG["background_opacity_option"] = WG["background_color"]
+			if value <= 0.4 then
+				WG["background_opacity_custom"][4] = WG["background_color"]
 			else
-				WG["background_opacity_option"] = (value)
+				WG["background_opacity_custom"][4] = (value)
 			end
 		elseif id == 'musicvolume' then
 			Spring.SetSoundStreamVolume(value)
@@ -1304,7 +1288,7 @@ function widget:Initialize()
 		-- SND
 		{id="sndvolmaster", group="snd", name="Master volume", type="slider", min=0, max=200, step=10, value=tonumber(Spring.GetConfigInt("snd_volmaster",1) or 100)},
 		{id="musicplayer", group="snd", widget="Music Player", name="Music Player", type="bool", value=widgetHandler.orderList["Music Player"] ~= nil and (widgetHandler.orderList["Music Player"] > 0), description='Plays music based on situation'},
-		{id="musicvolume", group="snd", name="Music Volume", type="slider", min=0, max=1, step=0.01, value=WG["music_volume"] or 0.5},
+		{id="musicvolume", group="snd", name="Music Volume", type="slider", min=0, max=1, step=0.01, value=WG["music_volume"] or 0.4},
 
 		--{id="sndvolbattle", group="snd", name="Battle volume", type="slider", min=0, max=200, step=10, value=tonumber(Spring.GetConfigInt("snd_volbattle",1) or 100)},
 		--{id="sndvolui", group="snd", name="Interface volume", type="slider", min=0, max=200, step=10, value=tonumber(Spring.GetConfigInt("snd_volui",1) or 100)},
@@ -1324,7 +1308,7 @@ function widget:Initialize()
 		{id="disticon", group="ui", name="Unit icon distance", type="slider", min=0, max=800, step=50, value=tonumber(Spring.GetConfigInt("UnitIconDist",1) or 800)},
 		{id="teamcolors", group="ui", widget="Player Color Palette", name="Team colors based on a palette", type="bool", value=widgetHandler.orderList["Player Color Palette"] ~= nil and (widgetHandler.orderList["Player Color Palette"] > 0), description='Replaces lobby team colors for a color palette based one\n\nNOTE: reloads all widgets because these need to update their teamcolors'},
 
-		{id="uibgcolor", group="ui", name="UI background opacity", type="slider", min=0.40, max=1, step=0.001, value=WG["background_opacity_option"] or 0.69, description='Adjust Darkness of UI background'},
+		{id="uibgcolor", group="ui", name="UI background opacity", type="slider", min=0.40, max=1, step=0.001, value=WG["background_opacity_custom"][4] or 0.69, description='Adjust Darkness of UI background'},
 
 		--{id="fancyselunits", group="gfx", widget="Fancy Selected Units", name="Fancy Selected Units", type="bool", value=widgetHandler.orderList["Fancy Selected Units"] ~= nil and (widgetHandler.orderList["Fancy Selected Units"] > 0), description=''},
 
@@ -1407,19 +1391,3 @@ function widget:Shutdown()
         glDeleteList(windowList)
     end
 end
-
---SAVE / LOAD CONFIG FILE
-function widget:GetConfigData()
-	local data = {}
-	data["background_opacity_option"] = WG["background_opacity_option"]
-	return data
-end
-
-function widget:SetConfigData(data) 
-	if (data ~= nil) then
-		if ( data["background_opacity_option"] ~= nil ) then
-			WG["background_opacity_option"] = data["background_opacity_option"]
-		end
-	end
-end
---END OF SAFE CONFIG FILE

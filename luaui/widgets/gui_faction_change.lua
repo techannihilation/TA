@@ -57,9 +57,6 @@ local amNewbie = (spGetTeamRulesParam(myTeamID, 'isNewbie') == 1)
 local factionChangeList
 local px, py = wWidth - 198, 0.63*wHeight
 
-local cbackground, cborder, cbuttonbackground = include("Configs/ui_config.lua")
-local triggered = nil
-local update = 0.5
 --------------------------------------------------------------------------------
 -- Funcs
 --------------------------------------------------------------------------------
@@ -108,24 +105,7 @@ function widget:DrawWorld()
 	glTexture(false)
 end
 
-local timeCounter = math.huge -- force the first update
-
-function widget:Update(deltaTime)
-  if (timeCounter < update) then
-    timeCounter = timeCounter + deltaTime
-    return
-  end
-  timeCounter = 0
-  cbackground[4] = WG["background_opacity_option"]
-end
-
 function widget:DrawScreen()
-	if triggered == nil then
-		if cbackground[4] == 0.54321 and WG["background_color"] then
-			cbackground[4]=WG["background_color"]
-		end
-  		triggered = true
-  	end
 
 	-- Spectator check
 	if spGetSpectatingState() then
@@ -137,7 +117,7 @@ function widget:DrawScreen()
 	glPushMatrix()
 	glTranslate(px, py, 0)
 	--call list
-	glColor(cbackground)
+	glColor(WG["background_opacity_custom"])
 
 	if factionChangeList then
 

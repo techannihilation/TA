@@ -40,6 +40,7 @@ local comDefs = {
   [UnitDefNames["tllcom7"].id] = true,
 }
 
+local bgcorner = LUAUI_DIRNAME.."Images/bgcorner.png"
 local barbg									= ":n:"..LUAUI_DIRNAME.."Images/resbar.dds"
 local barGlowCenterTexture	= LUAUI_DIRNAME.."Images/barglow-center.dds"
 local barGlowEdgeTexture		= LUAUI_DIRNAME.."Images/barglow-edge.dds"
@@ -113,9 +114,6 @@ local guishaderCheckUpdateRate = 2
 local nextGuishaderCheck = guishaderCheckUpdateRate
 local now = os.clock()
 
-local cbackground, cborder, cbuttonbackground = include("Configs/ui_config.lua")
-local triggered = nil
-local oldbgcolor = cbackground[4]
 --------------------------------------------------------------------------------
 -- Rejoin
 --------------------------------------------------------------------------------
@@ -227,9 +225,9 @@ end
 
 function RectRound(px,py,sx,sy,cs)
 	local px,py,sx,sy,cs = math.floor(px),math.floor(py),math.ceil(sx),math.ceil(sy),math.floor(cs)
-	--gl.Texture(bgcorner)
+	gl.Texture(bgcorner)
 	gl.BeginEnd(GL.QUADS, DrawRectRound, px,py,sx,sy,cs)
-	--gl.Texture(false)
+	gl.Texture(false)
 end
 
 
@@ -841,12 +839,6 @@ function widget:GameFrame(n)
 end
 
 function widget:Update(dt)
-	if currentUpdateFrame%5==0 then
-		if oldbgcolor ~= WG["background_opacity_option"] then
-			cbackground[4] = WG["background_opacity_option"]
-			oldbgcolor = cbackground[4]
-		end
-    end
 	local mx,my = spGetMouseState()
     now = os.clock()
 
@@ -965,15 +957,9 @@ function widget:Update(dt)
 end
 
 function widget:DrawScreen()
-	if triggered == nil then
-		if cbackground[4] == 0.54321 and WG["background_color"] then
-			cbackground[4]=WG["background_color"]
-		end
-	triggered = true
-	end
 
 	if dlistBackground then
-		glColor(0,0,0,cbackground[4])
+		gl.Color(WG["background_opacity_custom"])
 		glCallList(dlistBackground)
 	end
 
@@ -981,7 +967,7 @@ function widget:DrawScreen()
 
 	local res = 'metal'
 	if dlistResbar[res][1] and dlistResbar[res][2] and dlistResbar[res][3] and dlistResbar[res][4] then
-		glColor(0,0,0,cbackground[4])
+		gl.Color(WG["background_opacity_custom"])
 		glCallList(dlistResbar[res][1])
         glCallList(dlistResbar[res][3])
         glCallList(dlistResbar[res][4])
@@ -994,7 +980,7 @@ function widget:DrawScreen()
 	end
 	res = 'energy'
 	if dlistResbar[res][1] and dlistResbar[res][2] and dlistResbar[res][3] and dlistResbar[res][4] then
-		glColor(0,0,0,cbackground[4])
+		gl.Color(WG["background_opacity_custom"])
 		glCallList(dlistResbar[res][1])
         glCallList(dlistResbar[res][3])
         glCallList(dlistResbar[res][4])
@@ -1008,7 +994,7 @@ function widget:DrawScreen()
 
 
 	if dlistWind1 then
-		glColor(cbackground)
+		gl.Color(WG["background_opacity_custom"])
 		glCallList(dlistWind1)
 		glRotate(windRotation, 0, 0, 1)
 		glCallList(dlistWind2)
@@ -1019,7 +1005,7 @@ function widget:DrawScreen()
 		end
 	end
 	if dlistComs1 then
-		glColor(0,0,0,cbackground[4])
+		gl.Color(WG["background_opacity_custom"])
 		glCallList(dlistComs1)
 		if allyComs == 1 and (gameFrame % 12 < 6) then
 			glColor(1,0.6,0,0.6)
@@ -1031,7 +1017,7 @@ function widget:DrawScreen()
 	
 
 	if dlistRejoin and showRejoinUI then
-		glColor(0,0,0,cbackground[4])
+		gl.Color(WG["background_opacity_custom"])
 		glCallList(dlistRejoin)
 	elseif dlistRejoin ~= nil then
 		if dlistRejoin ~= nil then
@@ -1043,7 +1029,7 @@ function widget:DrawScreen()
 	end
 
 	if dlistButtons1 then
-		glColor(0,0,0,cbackground[4])
+		gl.Color(WG["background_opacity_custom"])
 		glCallList(dlistButtons1)
 		-- hovered?
 		if buttonsArea['buttons'] ~= nil and IsOnRect(x, y, buttonsArea[1], buttonsArea[2], buttonsArea[3], buttonsArea[4]) then
@@ -1060,7 +1046,7 @@ function widget:DrawScreen()
 				end
 			end
 		end
-		glColor(0,0,0,cbackground[4])
+		gl.Color(WG["background_opacity_custom"])
 		glCallList(dlistButtons2)
 	end
 

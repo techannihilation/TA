@@ -26,7 +26,7 @@ local update = 4.0
 local buttonTexture	= LUAUI_DIRNAME.."Images/button.png"
 local oldUnitpicsDir = LUAUI_DIRNAME.."Images/oldunitpics/"
 
-local oldUnitpics = false
+local oldUnitpics = true
 
 --todo: build categories (eco | labs | defences | etc) basically sublists of buildcmds (maybe for regular orders too)
 
