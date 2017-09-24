@@ -16,7 +16,7 @@ return {
 		canstop = 1,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON PLANT SURFACE",
 		corpse = "heap",
-		description = "Produces Shields Units",
+		description = "Produces T4 Units",
 		energystorage = 800,
 		energyuse = 0,
 		explodeas = "LARGE_BUILDINGEX",
