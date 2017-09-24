@@ -1,8 +1,8 @@
 return {
 	tllvanya = {
 		buildangle = 4096,
-		buildcostenergy = 3200000,
-		buildcostmetal = 1120000,
+		buildcostenergy = 2900000,
+		buildcostmetal = 952000,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 13,
