@@ -13,7 +13,7 @@ return {
 		--collisionvolumescales = "220 220 536",
 		--collisionvolumetype = "CylZ",
 		corpse = "dead",
-		description = "Produces AeroShips",
+		description = "Produces T5 AeroShips",
 		energystorage = 500,
 		energyuse = 0,
 		explodeas = "SHIPBLAST",
