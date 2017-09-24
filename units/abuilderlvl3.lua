@@ -75,7 +75,7 @@ return {
 			dead = {
 				blocking = false,
 				damage = 5148,
-				description = "Builder Level 3 Wreckage",
+				description = "Builder Level 4 Wreckage",
 				footprintx = 4,
 				footprintz = 8,
 				metal = 19599,
