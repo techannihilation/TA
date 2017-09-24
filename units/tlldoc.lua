@@ -16,7 +16,7 @@ return {
 		category = "ALL CONSTR MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Amphibious Experimental Engineer",
+		description = "Amphibious Tech Level 3",
 		energymake = 80,
 		energystorage = 100,
 		explodeas = "BIG_UNITEX",
