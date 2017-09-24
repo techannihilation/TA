@@ -14,6 +14,7 @@ local NeededFrameworkVersion = 8
 local CanvasX,CanvasY = 1440,900 --resolution in which the widget was made (for 1:1 size)
 local iconsizeMaster = 96
 local iconsize = iconsizeMaster
+local oldUnitpicsDir = LUAUI_DIRNAME.."Images/oldunitpics/"
 local unitDefID
 local CMD_MORPH = 31410
 
@@ -272,7 +273,12 @@ end
 function widget:DrawScreen()
 	if unitDefID then
 		gl.Color(1, 1, 1, 1)
-  		gl.Texture('#' .. unitDefID) -- Screen.vsx,Screen.vsy
+		--Spring.Echo(VFS.FileExists(oldUnitpicsDir..UnitDefs[unitDefID].name..'.png'),unitDefID,UnitDefs[unitDefID].name )
+		if WG['OtaIcons'] and VFS.FileExists(oldUnitpicsDir..UnitDefs[unitDefID].name..'.png') then
+			gl.Texture(oldUnitpicsDir..UnitDefs[unitDefID].name..'.png')
+		else
+			gl.Texture('#' .. unitDefID) -- Screen.vsx,Screen.vsy
+		end
   		gl.TexRect(tooltip.background.px, Screen.vsy - tooltip.background.py - iconsize, tooltip.background.px + iconsize, Screen.vsy - tooltip.background.py)
   		gl.Texture(false)
   	end
