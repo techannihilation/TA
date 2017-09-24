@@ -2,8 +2,8 @@ return {
 	tllprototype = {
 		acceleration = 0,
 		brakerate = 0,
-		buildcostenergy = 451665,
-		buildcostmetal = 64600,
+		buildcostenergy = 431665,
+		buildcostmetal = 60600,
 		builder = true,
 		buildinggrounddecaldecayspeed = 0.01,
 		buildinggrounddecalsizex = 20,
