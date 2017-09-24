@@ -20,7 +20,7 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Battleship",
-		explodeas = "BIG_UNITEX",
+		explodeas = "CRAWL_BLASTSML",
 		firestandorders = 1,
 		floater = true,
 		footprintx = 6,

@@ -16,7 +16,7 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Heavy Weapons Mech",
-		explodeas = "CRAWL_BLAST",
+		explodeas = "CRAWL_BLASTSML",
 		firestandorders = 1,
 		footprintx = 4,
 		footprintz = 4,

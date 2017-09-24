@@ -38,8 +38,12 @@ local morphDefs = {
 		},
 	},
 	armcom1 = {
-		into = 'armcom5',
-        	time = 90,
+		into = 'armcom_fusion',
+        	time = 60,
+	},
+	armcom_fusion = {
+		into = 'armcom6',
+        	time = 120,
 	},
 	armcom4 = {
 		into = 'armcom5',
@@ -51,7 +55,7 @@ local morphDefs = {
 	},
 	armcom6 = {
 		into = 'armcom7',
-		time = 180,
+		time = 240,
 	},
 	corcom = {
 		{
@@ -74,8 +78,12 @@ local morphDefs = {
 		},
 	},
 	corcom1 = {
-		into = 'corcom5',
-		time = 90,
+		into = 'corcom_fusion',
+        	time = 60,
+	},
+	corcom_fusion = {
+		into = 'corcom6',
+        	time = 120,
 	},
 	corcom3 = {
 		into = 'corcom5',
@@ -87,7 +95,7 @@ local morphDefs = {
 	},
 	corcom6 = {
 		into = 'corcom7',
-		time = 120,
+		time = 240,
 	},
 	tllcom = {
 		{
@@ -109,9 +117,13 @@ local morphDefs = {
 		},
 	},
 	tllcom1 = {
-		into = 'tllcom5',
-		time = 90,
+		into = 'tllcom_fusion',
+        	time = 60,
 	},
+	tllcom_fusion = {
+		into = 'tllcom6',
+        	time = 120,
+	},	
 	tllcom3 = {
 		into = 'tllcom5',
 		time = 60,
@@ -122,7 +134,7 @@ local morphDefs = {
 	},
 	tllcom6 = {
 		into = 'tllcom7',
-		time = 180,
+		time = 240,
 	},
 	corrl = {
 		into = 'corrl1',
