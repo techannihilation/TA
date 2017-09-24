@@ -3,7 +3,7 @@ return {
 		acceleration = 0,
 		brakerate = 0,
 		buildcostenergy = 208000,
-		buildcostmetal = 18133,
+		buildcostmetal = 18150,
 		builder = true,
 		buildinggrounddecaldecayspeed = 0.01,
 		buildinggrounddecalsizex = 10,
@@ -54,6 +54,7 @@ return {
 		workertime = 600,
 		yardmap = "oooooooooooooooooo occccccco occccccco occccccco occccccco occccccco occccccco occccccco",
 		buildoptions = {
+			[1] = "pinchy",
 			[1] = "corkarg",
 			[2] = "troman",
 			[3] = "shiva",
