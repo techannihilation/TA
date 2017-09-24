@@ -66,6 +66,7 @@ return {
 			[10] = "tllion",
 			[11] = "tllvanya",
 			[12] = "tllprototype",
+			[13] = "tllshipyardlvl3",
 		},
 		customparams = {
 			faction = "TLL",
