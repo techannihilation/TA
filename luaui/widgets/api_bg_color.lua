@@ -15,6 +15,12 @@ local glReadPixels = gl.ReadPixels
 local glTexture = gl.Texture
 local minimapbrightness = nil
 
+function widget:Initialize()
+    if not WG["background_opacity_custom"] then
+		WG["background_opacity_custom"] = {0,0,0,0.5}
+	end
+end
+
 function widget:DrawScreen()
 	if minimapbrightness == nil then
 		--get 100 points on minimap
