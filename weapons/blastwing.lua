@@ -1,0 +1,25 @@
+return {
+	blastwing = {
+		areaofeffect = 200,
+		craterboost = 0,
+		cratermult = 0,
+		edgeeffectiveness = 0.75,
+		explosiongenerator = "custom:EMPFLASH240",
+		impulseboost = 0,
+		impulsefactor = 0,
+		model = "bomb",
+		name = "EMPboom",
+		paralyzer = true,
+		paralyzetime = 12,
+		soundhit = "EMGPULS1",
+		soundstart = "bombrel",
+		damage = {
+			bombers = 5,
+			commanders = 30,
+			default = 1200,
+			fighters = 5,
+			flak_resistant = 5,
+			unclassed_air = 5,
+		},
+	},
+}

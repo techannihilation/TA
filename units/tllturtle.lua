@@ -119,6 +119,7 @@ return {
 				energypershot = 25000,
 				explosiongenerator = "custom:FLASH4",
 				firestarter = 100,
+				firesubmersed = true,
 				flighttime = 120,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,

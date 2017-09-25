@@ -269,6 +269,7 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
+				badtargetcategory = "TINY",
 				def = "ATAD",
 				onlytargetcategory = "SURFACE",
 			},

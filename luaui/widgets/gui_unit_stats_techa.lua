@@ -3,9 +3,9 @@ function widget:GetInfo()
 	return {
 		name      = "Unit Stats",
 		desc      = "Shows detailed unit stats",
-		author    = "Niobium",
+		author    = "Niobium, Nixtux",
 		date      = "Jan 11, 2009",
-		version   = 1.3,
+		version   = 1.6,
 		license   = "GNU GPL, v2 or later",
 		layer     = -9999999999,
 		enabled   = true,  --  loaded by default?
@@ -13,6 +13,13 @@ function widget:GetInfo()
 end
 
 include("keysym.h.lua")
+
+---- v1.6
+-- Add new tll units
+-- Remove mass
+
+---- v1.5
+-- Add large icon
 
 ---- v1.4 changes
 -- Remove Corner Crap
@@ -90,6 +97,7 @@ local pplants = {
 	["tlltide"] = true,
 	["tlluwfusion"] = true,
 	["tllwindtrap"] = true,
+	["tllawindtrap"] = true,
 	["corawin"] = true,
 	["armawin"] = true,
 	["coratidal"] = true,
@@ -100,6 +108,8 @@ local pplants = {
 	["coruwlightfus"] = true,
 	["armgen"] = true,
 	["corgen"] = true,
+	["tllgen"] = true,
+	["tllgen"] = true,
 	["corgeo_mini"] = true,
 	["armgeo_mini"] = true,
 	["tllgeo_mini"] = true,
@@ -110,9 +120,6 @@ local pplants = {
 	["tllsolarns"] = true,
 	["tlladvsolar"] = true,
 }
-
-local cbackground, cborder = include("Configs/ui_config.lua")
-local triggered = nil
 
 ------------------------------------------------------------------------------------
 -- Speedups
@@ -271,13 +278,6 @@ function widget:ViewResize(x,y)
 end
 
 function widget:DrawScreen()
-	if triggered == nil then
-		if cbackground[4] == 0.54321 then
-			cbackground[4]=WG["background_color"]
-		end
-	triggered = true
-	end
-	
 	local alt, ctrl, meta, shift = spGetModKeyState()
 	if not meta then RemoveGuishader() return end
 
@@ -485,7 +485,6 @@ function widget:DrawScreen()
 	if (uDef.captureSpeed > 0 and uDef.captureSpeed ~= uDef.buildSpeed) then DrawText("Capture:", format(yellow .. "%d", uDef.captureSpeed)) end
 	if (uDef.terraformSpeed > 0 and uDef.terraformSpeed ~= uDef.buildSpeed) then DrawText("Capture:", format(yellow .. "%d", uDef.terraformSpeed)) end
 
-	if uDef.mass > 0 then DrawText("Mass:", format(orange .. "%d", uDef.mass)) end
 	if uDef.isTransport and uDef.transportMass > 0 then DrawText("Transporter Max Mass:", format(orange .. "%d", uDef.transportMass)) end
 
 	cY = cY - fontSize
@@ -684,7 +683,7 @@ function widget:DrawScreen()
 	end
 	
 	-- background
-	glColor(cbackground)
+	glColor(WG["background_opacity_custom"])
 	cornersize = 0
 	RectRound(floor(cX-bgpadding)+cornersize, ceil(cY+(fontSize/3)+bgpadding)+cornersize, ceil(cX+maxWidth+bgpadding)-cornersize, floor(cYstart-bgpadding)-cornersize, bgcornerSize)
 	cornersize = ceil(bgpadding*0.16)

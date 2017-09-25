@@ -104,9 +104,9 @@ Killed(severity, corpsetype)
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAPNUKE;
+		explode base type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAPNUKE;
 		return (0);
 	}
 	corpsetype = 3;
-	explode base type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAPNUKE;
+	explode base type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAPNUKE;
 }

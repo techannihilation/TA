@@ -21,8 +21,12 @@ local SpGetCmdDescIndex = Spring.GetCmdDescIndex
 local SpGetModKeyState = Spring.GetModKeyState
 
 local cbackground, cborder, cbuttonbackground = include("Configs/ui_config.lua")
+local update = 4.0
 
 local buttonTexture	= LUAUI_DIRNAME.."Images/button.png"
+local oldUnitpicsDir = LUAUI_DIRNAME.."Images/oldunitpics/"
+
+local oldUnitpics = true
 
 --todo: build categories (eco | labs | defences | etc) basically sublists of buildcmds (maybe for regular orders too)
 
@@ -180,7 +184,7 @@ local function CreateGrid(r)
 		
 		active=false,
 		onupdate=function(self)
-			self.active = false
+		self.active = false
 		end,
 	}
 	
@@ -212,10 +216,13 @@ local function CreateGrid(r)
 			end},
 		},
 		mouseover=function(mx,my,self)
+			if self.cmdID then
+				WG["cmdID"] = self.cmdID
+				--Spring.Echo(WG["cmdID"],self.cmdname)
+			end
 			mouseoverhighlight.px = self.px
 			mouseoverhighlight.py = self.py
 			mouseoverhighlight.active = nil
-			
 			SetTooltip(self.tooltip)
 		end,
 		
@@ -339,7 +346,7 @@ local function UpdateGrid(g,cmds,ordertype)
 		icon.tooltip = cmd.tooltip
 		icon.active = nil --activate
 		icon.cmdname = cmd.name
-		
+		icon.cmdID = cmd.id
 		icon.texture = buttonTexture
 		if (cmd.texture) then
 			if (cmd.texture ~= "") then
@@ -354,7 +361,7 @@ local function UpdateGrid(g,cmds,ordertype)
 				if icon.texture == buttonTexture then
 					icon.texturecolor = {1,1,1,0.95}
 				else
-					icon.texturecolor = {1,1,1,0.65}
+					icon.texturecolor = {1,1,1,0.99}
 				end
 			else
 				icon.texturecolor = {1,1,1,0.98}
@@ -371,7 +378,11 @@ local function UpdateGrid(g,cmds,ordertype)
 		}
 		
 		if (ordertype == 1) then --build orders
-			icon.texture = "#"..cmd.id*-1
+			if oldUnitpics and UnitDefs[cmd.id*-1] ~= nil and VFS.FileExists(oldUnitpicsDir..UnitDefs[cmd.id*-1].name..'.png') then
+				icon.texture = oldUnitpicsDir..UnitDefs[cmd.id*-1].name..'.png'
+			else
+				icon.texture = "#"..cmd.id*-1
+			end
 			if (cmd.params[1]) then
 				icon.caption = "\n\n"..cmd.params[1].."          "
 			else
@@ -456,6 +467,18 @@ local function UpdateGrid(g,cmds,ordertype)
 	end
 end
 
+function widget:TextCommand(command)
+	if (string.find(command, "otaicons") == 1 and string.len(command) == 8) then
+		oldUnitpics = not oldUnitpics
+		Spring.ForceLayoutUpdate()
+		if oldUnitpics then
+			Spring.Echo("Using OTA unit icons in buildmenu")
+		else
+			Spring.Echo("Using TechA unit icons in buildmenu")
+		end
+	end
+end
+
 function widget:Initialize()
 	PassedStartupCheck = RedUIchecks()
 	if (not PassedStartupCheck) then return end
@@ -467,6 +490,8 @@ function widget:Initialize()
 	ordermenu.page = 1
 	
 	AutoResizeObjects() --fix for displacement on crash issue
+
+	WG['OtaIcons'] = oldUnitpics
 end
 
 local function onNewCommands(buildcmds,othercmds)
@@ -494,7 +519,7 @@ function widget:GetConfigData() --save config
 		Config.buildmenu.py = buildmenu.background.py * unscale
 		Config.ordermenu.px = ordermenu.background.px * unscale
 		Config.ordermenu.py = ordermenu.background.py * unscale
-		return {Config=Config}
+		return {Config=Config, oldUnitpics=oldUnitpics}
 	end
 end
 function widget:SetConfigData(data) --load config
@@ -503,6 +528,9 @@ function widget:SetConfigData(data) --load config
 		Config.buildmenu.py = data.Config.buildmenu.py
 		Config.ordermenu.px = data.Config.ordermenu.px
 		Config.ordermenu.py = data.Config.ordermenu.py
+		if (data.oldUnitpics ~= nil) then
+			oldUnitpics = data.oldUnitpics
+		end
 	end
 end
 
@@ -609,6 +637,19 @@ end
 function widget:CommandsChanged()
 	haxlayout()
 end
+
+function widget:GameFrame(frame)
+  if oldUnitpics ~= WG['OtaIcons'] then
+  	--Spring.Echo("OtaIcons toggle ", WG['OtaIcons'])
+  	oldUnitpics = WG['OtaIcons']
+    Spring.ForceLayoutUpdate()
+  end
+
+  if frame%9==0 then
+  	WG["cmdID"] = nil
+  end
+end
+
 function widget:Update()
 	onWidgetUpdate()
 	if (updatehax or firstupdate) then

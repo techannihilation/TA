@@ -38,8 +38,12 @@ local morphDefs = {
 		},
 	},
 	armcom1 = {
-		into = 'armcom5',
-        	time = 90,
+		into = 'armcom_fusion',
+        	time = 60,
+	},
+	armcom_fusion = {
+		into = 'armcom6',
+        	time = 120,
 	},
 	armcom4 = {
 		into = 'armcom5',
@@ -51,7 +55,7 @@ local morphDefs = {
 	},
 	armcom6 = {
 		into = 'armcom7',
-		time = 180,
+		time = 240,
 	},
 	corcom = {
 		{
@@ -74,8 +78,12 @@ local morphDefs = {
 		},
 	},
 	corcom1 = {
-		into = 'corcom5',
-		time = 90,
+		into = 'corcom_fusion',
+        	time = 60,
+	},
+	corcom_fusion = {
+		into = 'corcom6',
+        	time = 120,
 	},
 	corcom3 = {
 		into = 'corcom5',
@@ -87,7 +95,7 @@ local morphDefs = {
 	},
 	corcom6 = {
 		into = 'corcom7',
-		time = 120,
+		time = 240,
 	},
 	tllcom = {
 		{
@@ -109,9 +117,13 @@ local morphDefs = {
 		},
 	},
 	tllcom1 = {
-		into = 'tllcom5',
-		time = 90,
+		into = 'tllcom_fusion',
+        	time = 60,
 	},
+	tllcom_fusion = {
+		into = 'tllcom6',
+        	time = 120,
+	},	
 	tllcom3 = {
 		into = 'tllcom5',
 		time = 60,
@@ -122,7 +134,7 @@ local morphDefs = {
 	},
 	tllcom6 = {
 		into = 'tllcom7',
-		time = 180,
+		time = 240,
 	},
 	corrl = {
 		into = 'corrl1',
@@ -309,15 +321,73 @@ local morphDefs = {
 	  	time = 120,
 	  	tech = 1,
 	},
+	armgate2 = {
+		into = 'armgate',
+		time = 60,
+		tech = 1,
+	},
 	armgate = {
 		into = 'armgate1',
 		time = 120,
 		tech = 2,
 	},
+	corgate2 = {
+		into = 'corgate',
+		time = 60,
+		tech = 1,
+	},
 	corgate = {
 		into = 'corgate1',
 		time = 120,
 		tech = 2,
+	},
+	tllgate2 = {
+		into = 'tllgate',
+		time = 60,
+		tech = 1,
+	},
+	tllgate = {
+		into = 'tllgate1',
+		time = 120,
+		tech = 2,
+	},
+	armrad = {
+		into = 'armrad1',
+		time = 20,
+	},
+	armrad1 = {
+		into = 'armarad',
+		time = 30,
+		tech = 1,
+	},
+	armjamt = {
+		into = 'armveil',
+		time = 30,
+		tech = 1,
+	},
+	corrad = {
+		into = 'corrad1',
+		time = 20,
+	},
+	corrad1 = {
+		into = 'corarad',
+		time = 30,
+		tech = 1,
+	},
+	corjamt = {
+		into = 'corshroud',
+		time = 30,
+		tech = 1,
+	},
+	tllradar = {
+		into = 'tllarad',
+		time = 30,
+		tech = 1,
+	},
+	tlljam = {
+		into = 'tllajam',
+		time = 30,
+		tech = 1,
 	},
 	corech3 = {
 		into = 'corech18',
@@ -624,23 +694,23 @@ local morphDefs = {
 		energy = 2000,
 	},
 	armmav = {
-     		into = 'armraz',
+     	into = 'armraz',
 		time = 60,
 		xp = 0.5,
 	},
 	armraz  = {
  		into = 'armraz1',
-         	time = 120,
-         	xp = 0.50,
+        time = 120,
+        xp = 0.50,
          },
 	aexxec	= {
-     		into = 'akmech',
+     	into = 'akmech',
 		time = 120,
 		xp = 0.75,
 	},
 	akmech = {
-        	into = 'armorco',
-        	time = 120,
+        into = 'armorco',
+        time = 120,
 		xp = 0.50,
 	},
 	armmerl = {
@@ -657,6 +727,11 @@ local morphDefs = {
 		into = 'corsumo1',
 		time = 60,
 		xp = 0.20,
+	},
+	corsumo1 = {
+		into = 'gorg',
+		time = 120,
+		xp = 0.60,
 	},
 	armzeus = {
 		into = 'armzeus1',
@@ -766,6 +841,13 @@ local morphDefs = {
 		metal = 2700,
 		energy = 33000,
 	},
+	tllnanotc2 = {
+		into = 'tllnanotc3',
+		tech = 3,
+		time = 120,
+		metal = 4540,
+		energy = 60000,
+	},
 	tllfnanotc = {
 		into = 'tllfnanotc1',
 		tech = 1,
@@ -801,7 +883,7 @@ local morphDefs = {
 		xp = 0.20,
 	},
 	corjeag = {
-     		into = 'corsent',
+     	into = 'corsent',
 		time = 30,
 		xp = 0.20,
 	},
@@ -816,69 +898,69 @@ local morphDefs = {
 		xp = 0.50,
 	},
 	corkrog = {
-        	into = 'corkrog1',
-        	time = 240,
+        into = 'corkrog1',
+        time = 240,
 		xp = 0.60,
 	},
 	armbanth = {
-        	into = 'armbanth1',
-        	time = 240,
+        into = 'armbanth1',
+        time = 240,
 		xp = 0.60,
 	},
 	corkarg = {
  		into = 'corkarg1',
-         	time = 120,
-         	xp = 0.50,
+        time = 120,
+        xp = 0.50,
          },
 	armgeo_mini = {
-     		into = 'armgeo',
+     	into = 'armgeo',
 		time = 30,
 	},
 	corgeo_mini = {
-     		into = 'corgeo',
+     	into = 'corgeo',
 		time = 30,
 	},
 	tllgeo_mini = {
-     		into = 'tllgeo',
+     	into = 'tllgeo',
 		time = 30,
 	},
 	corprot = {
-     		into = 'troman',
+     	into = 'troman',
 		time = 60,
 		xp = 0.30,
 	},
 	coramph = {
-     		into = 'shiva',
+     	into = 'shiva',
 		time = 60,
 		xp = 0.30,
 	},
 	armkrmi= {
-     		into = 'armgor',
+     	into = 'armgor',
 		time = 120,
 		xp = 0.45,
 	},
 	cortotal = {
-     		into = 'armsiege',
+     	into = 'armsiege',
 		time = 60,
 		xp = 0.30,
 	},
 	armfast = {
-     		into = 'armjugg',
+     	into = 'armjugg',
 		time = 120,
 		xp = 0.60,
 	},
 	armpincer = {
-     		into = 'armcroc',
+     	into = 'armcroc',
 		time = 30,
 		xp = 0.30,
 	},
 	armcroc = {
-     		into = 'armscpion',
+     	into = 'armscpion',
 		time = 30,
 		xp = 0.30,
 	},
 	armst = {
-     		into = 'armscpion',
+     	into = 'armscpion',
 		time = 30,
 		xp = 0.15,
 	},
@@ -886,52 +968,60 @@ local morphDefs = {
 -- New adding for TLL
 
 	tllshaker = {
-     		into = 'tlloki',
+     	into = 'tllloki',
 		time = 30,
 		xp = 0.35,
 	},
-	tlloki = {
-     		into = 'tllmlrpc',
+	tllloki = {
+     	into = 'tllmlrpc',
 		time = 120,
 		xp = 0.60,
 	},
 	tllariman = {
-     		into = 'tllcoyote',
+     	into = 'tllcoyote',
 		time = 30,
 		xp = 0.40,
 	},
 	tllconvincer = {
-     		into = 'tllacid',
+     	into = 'tllacid',
 		time = 120,
 		xp = 0.60,
 	},
 	tllroaster = {
-     		into = 'tlltelsatnk',
+     	into = 'tlltelsatnk',
 		time = 60,
 		xp = 0.30,
 	},
 	tllpbot = {
-     		into = 'tllartybot',
+     	into = 'tllartybot',
 		time = 30,
 		xp = 0.50,
 	},
 	tllartybot = {
-     		into = 'heavyimpact',
+     	into = 'heavyimpact',
 		time = 30,
 		xp = 0.50,
 	},
 	tllbind = {
-     		into = 'tllblind',
+     	into = 'tllblind',
 		time = 120,
 		xp = 0.60,
 	},
 	tllfireraiser = {
-     		into = 'tllamphibot',
+     	into = 'tllamphibot',
 		time = 30,
 		xp = 0.50,
 	},
-		
-
+	tllfirestarter = {
+	    into = 'tllaak',
+		time = 30,
+		xp = 0.20,	
+	},
+	tllhoplit = {
+	    into = 'tllpuncher',
+		time = 30,
+		xp = 0.20,	
+	},
 }
 
 

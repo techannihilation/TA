@@ -122,13 +122,16 @@ local flexCallIns = {
   'UnitCreated',
   'UnitFinished',
   'UnitFromFactory',
+   'UnitReverseBuilt',
   'UnitDestroyed',
+  'RenderUnitDestroyed',
   'UnitTaken',
   'UnitGiven',
   'UnitIdle',
   'UnitCommand',
   'UnitCmdDone',
   'UnitDamaged',
+  'UnitStunned',
   'UnitEnteredRadar',
   'UnitEnteredLos',
   'UnitLeftRadar',
@@ -152,6 +155,7 @@ local flexCallIns = {
   'DrawWorldReflection',
   'DrawWorldRefraction',
   'DrawScreenEffects',
+  'DrawScreenPost',
   'DrawInMiniMap',
   'RecvSkirmishAIMessage',
 }
@@ -187,7 +191,12 @@ local callInLists = {
   'TweakIsAbove',
   'TweakGetTooltip',
   'RecvFromSynced',
-
+  'TextInput',
+  'DownloadQueued',
+  'DownloadStarted',
+  'DownloadFinished',
+  'DownloadFailed',
+  'DownloadProgress',
 -- these use mouseOwner instead of lists
 --  'MouseMove',
 --  'MouseRelease',
@@ -263,7 +272,7 @@ function widgetHandler:SaveConfigData()
   local filetable = {}
   for i,w in ipairs(self.widgets) do
     if (w.GetConfigData) then
-      self.configData[w.whInfo.name] = w:GetConfigData()
+      self.configData[w.whInfo.name] = select(2, pcall(w.GetConfigData))
     end
     self.orderList[w.whInfo.name] = i
   end
@@ -326,7 +335,6 @@ end
 
 
 function widgetHandler:Initialize()
-  Spring.Echo("nixxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
   self:LoadConfigData()
 
   local autoUserWidgets = Spring.GetConfigInt('LuaAutoEnableUserWidgets', 1)
@@ -444,6 +452,7 @@ function widgetHandler:LoadWidget(filename, fromZip)
     knownInfo.author   = widget.whInfo.author
     knownInfo.basename = widget.whInfo.basename
     knownInfo.filename = widget.whInfo.filename
+    --knownInfo.enabled  = widget.whInfo.enabled
     knownInfo.fromZip  = fromZip
     self.knownWidgets[name] = knownInfo
     self.knownCount = self.knownCount + 1
@@ -498,6 +507,7 @@ function widgetHandler:NewWidget()
       __metatable = true,
     })
   end
+  widget._G = _G         -- the global table
   widget.WG = self.WG    -- the shared table
   widget.widget = widget -- easy self referencing
 
@@ -1300,6 +1310,14 @@ function widgetHandler:DrawScreenEffects(vsx, vsy)
 end
 
 
+function widgetHandler:DrawScreenPost(vsx, vsy)
+  for _,w in ripairs(self.DrawScreenPostList) do
+    w:DrawScreenPost(vsx, vsy)
+  end
+  return
+end
+
+
 function widgetHandler:DrawInMiniMap(xSize, ySize)
   for _,w in ripairs(self.DrawInMiniMapList) do
     w:DrawInMiniMap(xSize, ySize)
@@ -1360,6 +1378,18 @@ function widgetHandler:KeyRelease(key, mods, label, unicode)
   return false
 end
 
+function widgetHandler:TextInput(utf8, ...)
+  if (self.tweakMode) then
+    return true
+  end
+
+  for _,w in ipairs(self.TextInputList) do
+    if (w:TextInput(utf8, ...)) then
+      return true
+    end
+  end
+  return false
+end
 
 --------------------------------------------------------------------------------
 --
@@ -1695,9 +1725,9 @@ end
 --  Unit call-ins
 --
 
-function widgetHandler:UnitCreated(unitID, unitDefID, unitTeam)
+function widgetHandler:UnitCreated(unitID, unitDefID, unitTeam, builderID)
   for _,w in ipairs(self.UnitCreatedList) do
-    w:UnitCreated(unitID, unitDefID, unitTeam)
+    w:UnitCreated(unitID, unitDefID, unitTeam, builderID)
   end
   return
 end
@@ -1721,9 +1751,25 @@ function widgetHandler:UnitFromFactory(unitID, unitDefID, unitTeam,
 end
 
 
+function widgetHandler:UnitReverseBuilt(unitID, unitDefID, unitTeam)
+  for _,w in ipairs(self.UnitReverseBuiltList) do
+    w:UnitReverseBuilt(unitID, unitDefID, unitTeam)
+  end
+  return
+end
+
+
 function widgetHandler:UnitDestroyed(unitID, unitDefID, unitTeam)
   for _,w in ipairs(self.UnitDestroyedList) do
     w:UnitDestroyed(unitID, unitDefID, unitTeam)
+  end
+  return
+end
+
+
+function widgetHandler:RenderUnitDestroyed(unitID, unitDefID, unitTeam)
+  for _,w in ipairs(self.RenderUnitDestroyedList) do
+    w:RenderUnitDestroyed(unitID, unitDefID, unitTeam)
   end
   return
 end
@@ -1753,19 +1799,17 @@ function widgetHandler:UnitIdle(unitID, unitDefID, unitTeam)
 end
 
 
-function widgetHandler:UnitCommand(unitID, unitDefID, unitTeam,
-                                   cmdId, cmdParams, cmdOpts, cmdTag) 
+function widgetHandler:UnitCommand(unitID, unitDefID, unitTeam, cmdId, cmdParams, cmdOpts, cmdTag)
   for _,w in ipairs(self.UnitCommandList) do
-    w:UnitCommand(unitID, unitDefID, unitTeam,
-                  cmdId, cmdParams, cmdOpts, cmdTag)
+    w:UnitCommand(unitID, unitDefID, unitTeam, cmdId, cmdParams, cmdOpts, cmdTag)
   end
   return
 end
 
 
-function widgetHandler:UnitCmdDone(unitID, unitDefID, unitTeam, cmdID, cmdTag, cmdParams, cmdOpts)
+function widgetHandler:UnitCmdDone(unitID, unitDefID, unitTeam, cmdID, cmdParams, cmdOpts, cmdTag)
   for _,w in ipairs(self.UnitCmdDoneList) do
-    w:UnitCmdDone(unitID, unitDefID, unitTeam, cmdID, cmdTag, cmdParams, cmdOpts)
+    w:UnitCmdDone(unitID, unitDefID, unitTeam, cmdID, cmdParams, cmdOpts, cmdTag)
   end
   return
 end
@@ -1775,6 +1819,14 @@ function widgetHandler:UnitDamaged(unitID, unitDefID, unitTeam,
                                    damage, paralyzer)
   for _,w in ipairs(self.UnitDamagedList) do
     w:UnitDamaged(unitID, unitDefID, unitTeam, damage, paralyzer)
+  end
+  return
+end
+
+
+function widgetHandler:UnitStunned(unitID, unitDefID, unitTeam, stunned)
+  for _,w in ipairs(self.UnitStunnedList) do
+    w:UnitStunned(unitID, unitDefID, unitTeam, stunned)
   end
   return
 end
@@ -1929,6 +1981,47 @@ function widgetHandler:StockpileChanged(unitID, unitDefID, unitTeam,
   end
   return
 end
+
+
+--------------------------------------------------------------------------------
+--
+--  Download call-ins
+--
+
+function widgetHandler:DownloadStarted(id)
+  for _,w in ipairs(self.DownloadStartedList) do
+    w:DownloadStarted(id)
+  end
+end
+
+
+function widgetHandler:DownloadQueued(id)
+  for _,w in ipairs(self.DownloadQueuedList) do
+    w:DownloadQueued(id)
+  end
+end
+
+
+function widgetHandler:DownloadFinished(id)
+  for _,w in ipairs(self.DownloadFinishedList) do
+    w:DownloadFinished(id)
+  end
+end
+
+
+function widgetHandler:DownloadFailed(id, errorid)
+  for _,w in ipairs(self.DownloadFailedList) do
+    w:DownloadFailed(id, errorid)
+  end
+end
+
+
+function widgetHandler:DownloadProgress(id, downloaded, total)
+  for _,w in ipairs(self.DownloadProgressList) do
+    w:DownloadProgress(id, downloaded, total)
+  end
+end
+
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

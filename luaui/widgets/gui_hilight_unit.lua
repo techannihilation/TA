@@ -67,7 +67,6 @@ local glPolygonOffset           = gl.PolygonOffset
 local glPopMatrix               = gl.PopMatrix
 local glPushMatrix              = gl.PushMatrix
 local glScale                   = gl.Scale
-local glSmoothing               = gl.Smoothing
 local glTexCoord                = gl.TexCoord
 local glTexGen                  = gl.TexGen
 local glText                    = gl.Text
@@ -126,9 +125,6 @@ function widget:ViewResize(viewSizeX, viewSizeY)
   vsy = viewSizeY
 end
 
-local smoothPolys = (glSmoothing ~= nil) and false
-
-
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -183,10 +179,7 @@ local function HilightModel(drawFunc, drawData, outline)
   glPolygonOffset(-2, -2)
   glBlending(GL_SRC_ALPHA, GL_ONE)
 
-  if (smoothPolys) then
-    glSmoothing(nil, nil, true)
-  end
-
+  
   local scale = 20
   local shift = (2 * widgetHandler:GetHourTimer()) % scale
   glTexCoord(0, 0)
@@ -213,9 +206,6 @@ local function HilightModel(drawFunc, drawData, outline)
     glLineWidth(1)
   end
 
-  if (smoothPolys) then
-    glSmoothing(nil, nil, false)
-  end
 
   glBlending(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
   glPolygonOffset(false)

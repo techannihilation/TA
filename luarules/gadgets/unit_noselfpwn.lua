@@ -39,7 +39,7 @@ PWN_UNITS[UnitDefNames["corpt"].id] = true
 --The lost legacy
 PWN_UNITS[UnitDefNames["tllpbot"].id] = true
 PWN_UNITS[UnitDefNames["tllburner"].id] = true
-PWN_UNITS[UnitDefNames["tlllft"].id] = true
+--PWN_UNITS[UnitDefNames["tlllft"].id] = true
 PWN_UNITS[UnitDefNames["tllotter"].id] = true
 
 

@@ -46,8 +46,8 @@ if (gadgetHandler:IsSyncedCode()) then
 		if VFS.FileExists(mapConfig) then
 			mapFeatures = VFS.Include(mapConfig)
 			for _, featID in pairs(Spring.GetAllFeatures()) do
-				local featureModel = FeatureDefs[Spring.GetFeatureDefID(featID)].model.path:lower()
-				if featureModel:len() > 4 then
+					local modelpath = FeatureDefs[Spring.GetFeatureDefID(featID)].modelpath
+					local featureModel = modelpath:lower()				if featureModel:len() > 4 then
 					local featureModelTrim = featureModel:match("/.*"):sub(2)
 					if mapFeatures[featureModelTrim] then
 						local p = mapFeatures[featureModelTrim]
@@ -57,19 +57,16 @@ if (gadgetHandler:IsSyncedCode()) then
 						local xs, ys, zs, xo, yo, zo, vtype, htype, axis, _ = spGetFeatureCollisionData(featID)
 						Spring.Echo(featureModel, xs, ys, zs, xo, yo, zo, vtype, htype, axis)
 						if (vtype>=3 and xs==ys and ys==zs) then
-							if Game.version > "91.0" then
-								spSetFeatureCollisionData(featID, xs, ys*0.75, zs,  xo, yo-ys*0.09, zo,  1, htype, 1)
-							else
-								spSetFeatureCollisionData(featID, xs, ys*0.75, zs,  xo, yo-ys*0.09, zo,  vtype, htype, axis)
-							end
+							spSetFeatureCollisionData(featID, xs, ys*0.75, zs,  xo, yo-ys*0.09, zo,  1, htype, 1)
 						end
 					end
 				end
 			end			
 		else
 			for _, featID in pairs(Spring.GetAllFeatures()) do
-				local featureModel = FeatureDefs[Spring.GetFeatureDefID(featID)].model.path:lower()
-				if featureModel:find(".3do") then
+					local modelpath = FeatureDefs[Spring.GetFeatureDefID(featID)].modelpath
+					local featureModel = modelpath:lower()
+					if featureModel:find(".3do") then
 					local rs, hs
 					if (spGetFeatureRadius(featID)>47) then
 						rs, hs = 0.68, 0.60
@@ -122,7 +119,7 @@ if (gadgetHandler:IsSyncedCode()) then
 					spSetPieceCollisionData(unitID, pieceIndex, false, 1, 1, 1, 0, 0, 0, 1, 1)
 				end
 			end
-		elseif UnitDefs[unitDefID].model.type=="3do" and not (Game.armorTypes[uDef.armorType] =="subs") then
+		elseif UnitDefs[unitDefID].modeltype=="3do" and not (Game.armorTypes[uDef.armorType] =="subs") then
 			local rs, hs, ws, ars, ahs
 			if (spGetUnitRadius(unitID)>47 and not UnitDefs[unitDefID].canFly) then
 				rs, hs, ws = 0.59, 0.59, 0.59
@@ -151,10 +148,10 @@ if (gadgetHandler:IsSyncedCode()) then
 				spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*ars, spGetUnitHeight(unitID)*ahs)
 			end
 		end
-		if UnitDefs[unitDefID].model.type=="3do" and (Game.armorTypes[uDef.armorType] =="subs") then
+		if UnitDefs[unitDefID].modeltype=="3do" and (Game.armorTypes[uDef.armorType] =="subs") then
 			spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*0.45, spGetUnitHeight(unitID)*0.45)
 		end
-		if UnitDefs[unitDefID].model.type=="3do" and (Game.armorTypes[uDef.armorType] =="ships") and (Game.armorTypes[uDef.armorType] =="experimental_ships") then 
+		if UnitDefs[unitDefID].modeltype=="3do" and (Game.armorTypes[uDef.armorType] =="ships") and (Game.armorTypes[uDef.armorType] =="experimental_ships") then 
 			local bx,by,bz,mx,my,mz,ax,ay,az = Spring.GetUnitPosition(unitID,true,true) --basepoint,midpoint,aimpoint
 			local h = Spring.GetUnitHeight(unitID)
 			if by <= 0 and by + h >= 0 then
@@ -173,7 +170,8 @@ if (gadgetHandler:IsSyncedCode()) then
 
 	-- Same as for 3DO units, but for features
 	function gadget:FeatureCreated(featureID, allyTeam)
-		local featureModel = FeatureDefs[Spring.GetFeatureDefID(featureID)].model.path:lower()
+		local modelpath = FeatureDefs[Spring.GetFeatureDefID(featureID)].modelpath
+		local featureModel = modelpath:lower()
 		if featureModel == "" or nil then return end	--geovents or engine trees have no models
 		local featureModelTrim = featureModel:match("/.*"):sub(2)
 		if mapFeatures[featureModelTrim] then	-- it just might happen that some map features can have corpses

@@ -2,11 +2,12 @@
 local modrules  = {
 
   movement = {
-    allowAirPlanesToLeaveMap = true;  -- defaults to true
-    allowPushingEnemyUnits   = true; -- defaults to false
-    allowCrushingAlliedUnits = false; -- defaults to false
-    allowUnitCollisionDamage = false; -- defaults to false
+    allowAirPlanesToLeaveMap = true,
+    allowPushingEnemyUnits   = true, -- defaults to false
+    allowCrushingAlliedUnits = false,
+    allowUnitCollisionDamage = false,
     allowUnitCollisionOverlap = false,	-- defaults to true
+    allowGroundUnitGravity = false,
   },
 
   construction = {
@@ -33,7 +34,7 @@ local modrules  = {
   },
 
   nanospray = {
-    allow_team_colors = false, --- broken/removed as of 89 thanks kloot
+    allow_team_colors = false,
   },
   
   featureLOS = {
@@ -46,8 +47,9 @@ local modrules  = {
   },
   
   system = {
-    luaThreadingModel = 2, --To be removed as of 95
     pathFinderSystem = (Spring.GetModOptions() and (Spring.GetModOptions().qtpfs == "qtpfs") and 1) or 0,
+    pathFinderRawDistMult = 1.25,
+    pathFinderUpdateRate = 0.007,
   },
  }
 

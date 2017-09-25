@@ -21,6 +21,7 @@ local infoMessage = {}
 
 --table.insert(infoMessage, "Merry Xmas From TECHA 1st morph is free")
 
+table.insert(infoMessage, "To Switch to OTA style icon use option widget")
 
 if Spring.GetModOptions() then 
 	if Spring.GetModOptions().deathmode then

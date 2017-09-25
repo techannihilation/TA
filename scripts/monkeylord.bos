@@ -248,6 +248,35 @@ IdleControl()
 	}
 }
 
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	start-script IdleControl();
+	start-script MotionControl();
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from cephalotorax;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
 Create()
 {
 	bMoving = FALSE;
@@ -261,8 +290,7 @@ Create()
 	move ecraseur_epaule to y-axis [13107.199982] now;
 	hide bouche;
 	dont-cache bouche;
-	start-script IdleControl();
-	start-script MotionControl();
+	start-script SmokeUnit();
 	sleep 1;
 	Static_Var_6 = 1;
 }
@@ -428,5 +456,5 @@ Killed(severity, corpsetype)
 	explode leg5 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode leg6 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	corpsetype = 1;
-	return (2);
+	return (corpsetype);
 }

@@ -353,56 +353,56 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode carapace type BITMAPONLY | BITMAP1;
-		explode leg2 type BITMAPONLY | BITMAP2;
-		explode leg4 type BITMAPONLY | BITMAP3;
-		explode larm type BITMAPONLY | BITMAP4;
-		explode rarm type BITMAPONLY | BITMAP5;
+		explode carapace type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode leg2 type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode leg4 type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode larm type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+		explode rarm type NOHEATCLOUD | BITMAPONLY | BITMAP5;
 		return (0);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode carapace type BITMAPONLY | BITMAP1;
-		explode leg2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode leg4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		explode larm type BITMAPONLY | BITMAP4;
-		explode rarm type BITMAPONLY | BITMAP5;
-		explode nano1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-		explode nano2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode firepoint type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		explode trapdoor type SHATTER | EXPLODE_ON_HIT | BITMAP4;
+		explode carapace type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode leg2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode leg4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode larm type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+		explode rarm type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+		explode nano1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode nano2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode firepoint type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode trapdoor type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP4;
 		return (0);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode carapace type BITMAPONLY | BITMAP1;
-		explode leg2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode leg4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		explode leg2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-		explode leg4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-		explode leg2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-		explode leg4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode larm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		explode rarm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-		explode nano1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-		explode nano2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-		explode firepoint type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode trapdoor type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+		explode carapace type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode leg2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode leg4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode leg2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode leg4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode leg2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode leg4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode larm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode rarm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode nano1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode nano2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode firepoint type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode trapdoor type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP3;
 		return (0);
 	}
 	corpsetype = 3;
-	explode carapace type SHATTER | EXPLODE_ON_HIT | BITMAP1;
-	explode leg2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode leg4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-	explode leg2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-	explode leg4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-	explode leg2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-	explode leg4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode larm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-	explode rarm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-	explode nano1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-	explode nano2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-	explode firepoint type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode carapace type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
+	explode leg2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode leg4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode leg2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode leg4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode leg2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode leg4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode larm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode rarm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode nano1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode nano2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode firepoint type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 }

@@ -144,7 +144,7 @@ return {
 				weapontype = "LaserCannon",
 				weaponvelocity = 600,
 				damage = {
-					commanders = 40,
+					commanders = 10,
 					default = 400,
 					raider_resistant = 200,
 					subs = 5,

@@ -36,7 +36,7 @@ return {
 		selfdestructas = "SMALL_BUILDING",
 		sightdistance = 273,
 		unitname = "armjumpdrive",
-		yardmap = "ooooooooo",
+		yardmap = "oooooooooooo",
 		customparams = {
 			faction = "ARM",
 			providetech = "Jumpjet",

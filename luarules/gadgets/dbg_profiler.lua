@@ -11,16 +11,12 @@ function gadget:GetInfo()
     license   = "GNU GPL, v2 or later",
     layer     = math.huge,
     handler   = true,
-    enabled   = true  --  loaded by default?
+    enabled   = true, --  loaded by default?
   }
 end
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-if not Game.modVersion:find("VERSION",1,true) then
-  Spring.Echo("debug working")
-	return false
-end
 
 local callinTimes       = {}
 local callinTimesSYNCED = {}
@@ -177,6 +173,7 @@ local function StartHook()
   end
 
   Spring.Echo("hooked UpdateCallin: OK")
+  return true
 end
 
 --------------------------------------------------------------------------------
@@ -187,10 +184,10 @@ end
 if (gadgetHandler:IsSyncedCode()) then
 
   function gadget:Initialize()
-    --[[gadgetHandler.actionHandler.AddChatAction(gadget, 'profile', StartHook,
+    gadgetHandler.actionHandler.AddChatAction(gadget, 'profile', StartHook,
       " : starts the gadget profiler (for debugging issues)"
-    )]]
-    StartHook()
+    )
+    --StartHook()
   end
 
   --function gadget:Shutdown()
@@ -204,40 +201,50 @@ else
 
   local startTimer
   local startTimerSYNCED
-  local profile_unsynced = true
-  local profile_synced = true
+  local profile_unsynced = false
+  local profile_synced = false
 
   local function UpdateDrawCallin()
-    --[[gadget.DrawScreen = gadget.DrawScreen_
-    gadgetHandler:UpdateGadgetCallIn("DrawScreen", gadget)]]
+    gadget.DrawScreen = gadget.DrawScreen_
+    gadgetHandler:UpdateGadgetCallIn("DrawScreen", gadget)
   end
-
+  
   local function Start(cmd, msg, words, playerID)
     if (Spring.GetLocalPlayerID() ~= playerID) then
       return
     end
 
-    --if (not profile_unsynced) then
+    if (not profile_unsynced) then
       UpdateDrawCallin()
       UpdateDrawCallin()
       startTimer = Spring.GetTimer()
-      --StartHook()
-      --profile_unsynced = true
-    --end
+      StartHook()
+      profile_unsynced = true
+    end
   end
   local function StartSYNCED(cmd, msg, words, playerID)
-    --[[if (Spring.GetLocalPlayerID() ~= playerID) then
+    show = true
+    if (Spring.GetLocalPlayerID() ~= playerID) then
       return
-    end]]
+    end
 
-    --if (not profile_synced) then
-	startTimer = Spring.GetTimer()
+    if (not profile_synced) then
       startTimerSYNCED = Spring.GetTimer()
-      --profile_synced = true
+      profile_synced = true
       UpdateDrawCallin()
       UpdateDrawCallin()
-    --end
+    end
   end
+  local show = true
+  local function StartBoth(cmd, msg, words, playerID)
+    show = true
+    Start(cmd, msg, words, playerID)
+    StartSYNCED(cmd, msg, words, playerID)
+  end
+  local function Hide(cmd, msg, words, playerID)
+    show = false
+  end
+    
 
   local timers = {}
   function SyncedCallinStarted(_,gname,cname)
@@ -258,21 +265,17 @@ else
     timeStats[2] = timeStats[2] + dt
   end
 
-function gadget:RecvFromSynced(a,b,c)
-	if a == "prf_started" then
-		SyncedCallinStarted(a,b,c)
-	end
-	if a == "prf_finished" then
-		SyncedCallinFinished(a,b,c)
-	end
-end
-
   function gadget:Initialize()
-    --gadgetHandler:AddSyncAction("prf_started",SyncedCallinStarted) 
-    --gadgetHandler:AddSyncAction("prf_finished",SyncedCallinFinished) 
+    gadgetHandler.actionHandler.AddSyncAction(gadget, "prf_started",SyncedCallinStarted) 
+    gadgetHandler.actionHandler.AddSyncAction(gadget, "prf_finished",SyncedCallinFinished) 
 
-    StartHook()
-	StartSYNCED()
+    gadgetHandler.actionHandler.AddChatAction(gadget, 'uprofile', Start,
+      " : starts the gadget profiler (for debugging issues)"
+    )
+    gadgetHandler.actionHandler.AddChatAction(gadget, 'profile', StartSYNCED,"")
+    gadgetHandler.actionHandler.AddChatAction(gadget, 'ap', StartBoth,"")
+    gadgetHandler.actionHandler.AddChatAction(gadget, 'hideprofile', Hide,"")
+    --StartHook()
   end
 
 local tick = 0.1
@@ -301,8 +304,10 @@ local function SortFunc(a,b)
   --end
 end
 
-  function gadget:DrawScreen()
+  function gadget:DrawScreen_()
+  	if not show then return end
     if not (next(callinTimes)) then
+        --Spring.Echo("no callin times in profiler!")
       return --// nothing to do
     end
 
@@ -387,32 +392,45 @@ end
     end
 
     local vsx, vsy = gl.GetViewSizes()
-    local x,y = vsx-300, vsy-40
-
+    --local x,y = vsx-1050, vsy-100
+    local x,y = vsx-450, vsy-100
+  	local widgetScale = (1 + (vsx*vsy / 7500000))
+	  gl.PushMatrix()
+	    gl.Translate(vsx-(vsx*widgetScale),vsy-(vsy*widgetScale),0)
+	    gl.Scale(widgetScale,widgetScale,1)
+  	
     local maximum_ = (maximumSYNCED > maximum) and (maximumSYNCED) or (maximum)
 
     gl.Color(1,1,1,1)
     gl.BeginText()
-    if (profile_unsynced) then
-      for i=1,#sortedList do
+    
+    if (profile_unsynced) then    
+      y = y - 24
+      gl.Text("UNSYNCED", x+115, y-3, 12, "noc")
+      y = y - 5
+
+    for i=1,#sortedList do
         local v = sortedList[i]
         local wname = v[1]
         local tLoad = v[2]
         if maximum > 0 then
           gl.Rect(x+100-tLoad/maximum_*100, y+1-(12)*i, x+100, y+9-(12)*i)
         end
-        gl.Text(wname, x+150, y+1-(12)*i, 10)
-        gl.Text(('%.3f%%'):format(tLoad), x+105, y+1-(12)*i, 10)
+        gl.Text(wname, x+150, y+1-(12)*i, 10, "o")
+        gl.Text(('%.3f%%'):format(tLoad), x+105, y+1-(12)*i, 10, "o")
       end
     end
+    local j = 0
     if (profile_synced) then
-      local j = #sortedList + 1
+      x = x - 300
 
-      gl.Rect(x, y+5-(12)*j, x+230, y+4-(12)*j)
+      --gl.Rect(x, y+5-(12)*j, x+230, y+4-(12)*j)
       gl.Color(1,0,0)   
-      gl.Text("SYNCED", x+115, y-3-(12)*j, 12, "nOc")
+      y = y - 8
+      gl.Text("SYNCED", x+115, y-3-(12)*j, 12, "noc")
       gl.Color(1,1,1,1)
       j = j
+      y = y - 5
 
       for i=1,#sortedListSYNCED do
         local v = sortedListSYNCED[i]
@@ -421,17 +439,25 @@ end
         if maximum > 0 then
           gl.Rect(x+100-tLoad/maximum_*100, y+1-(12)*(j+i), x+100, y+9-(12)*(j+i))
         end
-        gl.Text(wname, x+150, y+1-(12)*(j+i), 10)
-        gl.Text(('%.3f%%'):format(tLoad), x+105, y+1-(12)*(j+i), 10)
+        gl.Text(wname, x+150, y+1-(12)*(j+i), 10, "o")
+        gl.Text(('%.3f%%'):format(tLoad), x+105, y+1-(12)*(j+i), 10, "o")
+        
+        if i==50 then
+            x = x - 300
+            j = j - 50 --offset
+        end
       end
     end
-    local i = #sortedList + #sortedListSYNCED + 2
-    gl.Text("\255\255\064\064total time", x+150, y-1-(12)*i, 10)
-    gl.Text("\255\255\064\064"..('%.3fs'):format(allOverTimeSec), x+105, y-1-(12)*i, 10)
+    --local i = #sortedList + #sortedListSYNCED + 2
+    local i = #sortedListSYNCED + 1
+    gl.Text("\255\255\064\064total time", x-110, y-1-(12)*(i+j), 10, "o")
+    gl.Text("\255\255\064\064"..('%.3fs'):format(allOverTimeSec), x-10, y-1-(12)*(i+j), 10, "o")
     i = i+1
-    gl.Text("\255\255\064\064total FPS cost", x+150, y-1-(12)*i, 10)
-    gl.Text("\255\255\064\064"..('%.1f%%'):format(allOverTime+allOverTimeSYNCED), x+105, y-1-(12)*i, 10)
+    gl.Text("\255\255\064\064total FPS cost", x-110, y-1-(12)*(i+j), 10, "o")
+    gl.Text("\255\255\064\064"..('%.1f%%'):format(allOverTime+allOverTimeSYNCED), x-10, y-1-(12)*(i+j), 10, "o")
     gl.EndText()
+    
+	  gl.PopMatrix()
   end
 
 end

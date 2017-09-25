@@ -1101,9 +1101,9 @@ function gadgetHandler:AllowCommand(unitID, unitDefID, unitTeam,
   return true
 end
 
-function gadgetHandler:AllowStartPosition(cx, cy, cz, playerID, readyState, rx, ry, rz)
+function gadgetHandler:AllowStartPosition(playerID, teamID, readyState, cx, cy, cz, rx, ry, rz)
   for _,g in r_ipairs(self.AllowStartPositionList) do
-    if (not g:AllowStartPosition(cx, cy, cz, playerID, readyState, rx, ry, rz)) then
+    if (not g:AllowStartPosition(playerID, teamID, readyState, cx, cy, cz, rx, ry, rz)) then
       return false
     end
   end
@@ -1644,11 +1644,24 @@ end
 --  Shield call-ins
 --
 
-function gadgetHandler:ShieldPreDamaged(proID, proOwnerID, shieldEmitterWeaponNum, shieldCarrierUnitID, bounceProjectile, beamEmitterWeaponNum, beamEmitterUnitID)
-
+function gadgetHandler:ShieldPreDamaged(
+  proID,
+  proOwnerID,
+  shieldEmitterWeapNum,
+  shieldCarrierUnitID,
+  bounceProj,
+  beamEmitterWeapNum,
+  beamEmitterUnitID,
+  spx,
+  spy,
+  spz,
+  hpx,
+  hpy,
+  hpz
+)
   for _,g in r_ipairs(self.ShieldPreDamagedList) do
     -- first gadget to handle this consumes the event
-    if (g:ShieldPreDamaged(proID, proOwnerID, shieldEmitterWeaponNum, shieldCarrierUnitID, bounceProjectile, beamEmitterWeaponNum, beamEmitterUnitID)) then
+    if (g:ShieldPreDamaged(proID, proOwnerID, shieldEmitterWeapNum, shieldCarrierUnitID, bounceProj, beamEmitterWeapNum, beamEmitterUnitID, spx, spy, spz, hpx, hpy, hpz)) then
       return true
     end
   end
@@ -1662,13 +1675,14 @@ end
 --  Misc call-ins
 --
 
-function gadgetHandler:Explosion(weaponID, px, py, pz, ownerID)
+function gadgetHandler:Explosion(weaponID, px, py, pz, ownerID, projectileID)
   local noGfx = false
   for _,g in r_ipairs(self.ExplosionList) do
-    noGfx = noGfx or g:Explosion(weaponID, px, py, pz, ownerID)
+    noGfx = noGfx or g:Explosion(weaponID, px, py, pz, ownerID, projectileID)
   end
   return noGfx
 end
+
 
 
 --------------------------------------------------------------------------------
@@ -1722,6 +1736,12 @@ function gadgetHandler:DrawWorldPreUnit()
   end
 end
 
+function gadgetHandler:DrawWorldPreParticles()
+  for _,g in r_ipairs(self.DrawWorldPreParticlesList) do
+    g:DrawWorldPreParticles()
+  end
+end
+
 function gadgetHandler:DrawWorldShadow()
   for _,g in r_ipairs(self.DrawWorldShadowList) do
     g:DrawWorldShadow()
@@ -1747,11 +1767,13 @@ function gadgetHandler:DrawGroundPreForward()
   end
 end
 
+
 function gadgetHandler:DrawGroundPreDeferred()
   for _,g in r_ipairs(self.DrawGroundPreDeferredList) do
     g:DrawGroundPreDeferred()
   end
 end
+
 
 function gadgetHandler:DrawGroundPostDeferred()
   for _,g in r_ipairs(self.DrawGroundPostDeferredList) do
@@ -1766,6 +1788,7 @@ function gadgetHandler:DrawUnitsPostDeferred()
   end
 end
 
+
 function gadgetHandler:DrawFeaturesPostDeferred()
   for _,g in r_ipairs(self.DrawFeaturesPostDeferredList) do
     g:DrawFeaturesPostDeferred()
@@ -1776,6 +1799,14 @@ end
 function gadgetHandler:DrawScreenEffects(vsx, vsy)
   for _,g in r_ipairs(self.DrawScreenEffectsList) do
     g:DrawScreenEffects(vsx, vsy)
+  end
+  return
+end
+
+
+function gadgetHandler:DrawScreenPost(vsx, vsy)
+  for _,g in r_ipairs(self.DrawScreenPostList) do
+    g:DrawScreenPost(vsx, vsy)
   end
   return
 end

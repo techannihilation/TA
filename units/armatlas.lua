@@ -2,7 +2,7 @@ return {
 	armatlas = {
 		acceleration = 0.09,
 		bankscale = 1,
-		brakerate = 0.25,
+		brakerate = 0.75,
 		buildcostenergy = 1322,
 		buildcostmetal = 68,
 		builder = false,

@@ -744,6 +744,8 @@ FireSecondary()
 
 AimTertiary(heading, pitch)
 {
+	turn torso to y-axis heading speed <100.000000>;
+	wait-for-turn torso around y-axis;
 	return (1);
 }
 

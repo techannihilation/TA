@@ -58,6 +58,7 @@ return {
 		customparams = {
 			buildpic = "ARMBANTH.png",
 			faction = "ARM",
+			requiretech = "Advanced T4 Unit Research Centre",
 		},
 		featuredefs = {
 			dead = {

@@ -1,46 +1,36 @@
--- WEAPONDEF -- CRBLMSSL_CORE --
---------------------------------------------------------------------------------
-
-local weaponName = "crblmssl_core"
-
---------------------------------------------------------------------------------
-
-local weaponDef = {
-	areaofeffect = 1920,
-	avoidfriendly = 0,
-	collidefriendly = 0,
-	commandfire = 1,
-	craterboost = 6,
-	cratermult = 3,
-	edgeeffectiveness = 0.30000001192093,
-	energypershot = 187500,
-	explosiongenerator = [[custom:CORE_FUSION_EXPLO_1920]],
-	firestarter = 0,
-	flighttime = 400,
-	impulseboost = 0.5,
-	impulsefactor = 0.5,
-	metalpershot = 1500,
-	model = [[crblmssl]],
-	name = [[CoreNuclearMissile]],
-	range = 72000,
-	reloadtime = 180,
-	smoketrail = 1,
-	soundhit = [[xplomed4]],
-	soundstart = [[misicbm1]],
-	stockpile = 1,
-	targetable = 1,
-	tolerance = 4000,
-	turnrate = 32768,
-	weaponacceleration = 100,
-	weapontimer = 8,
-	weaponvelocity = 1600,
-	damage = {
-		commanders = 2500,
-		default = 11500,
+return {
+	crblmssl_core = {
+		areaofeffect = 1920,
+		avoidfriendly = 0,
+		collidefriendly = 0,
+		commandfire = 1,
+		craterboost = 6,
+		cratermult = 3,
+		edgeeffectiveness = 0.3,
+		energypershot = 187500,
+		explosiongenerator = "custom:CORE_FUSION_EXPLO_1920",
+		firestarter = 0,
+		flighttime = 400,
+		impulseboost = 0.5,
+		impulsefactor = 0.5,
+		metalpershot = 1500,
+		model = "crblmssl",
+		name = "CoreNuclearMissile",
+		range = 72000,
+		reloadtime = 180,
+		smoketrail = 1,
+		soundhit = "xplomed4",
+		soundstart = "misicbm1",
+		stockpile = 1,
+		targetable = 1,
+		tolerance = 4000,
+		turnrate = 32768,
+		weaponacceleration = 100,
+		weapontimer = 8,
+		weaponvelocity = 1600,
+		damage = {
+			commanders = 2500,
+			default = 11500,
+		},
 	},
 }
---------------------------------------------------------------------------------
-
-return lowerkeys({[weaponName] = weaponDef})
-
---------------------------------------------------------------------------------

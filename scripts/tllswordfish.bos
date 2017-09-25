@@ -110,25 +110,25 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type SHATTER | EXPLODE_ON_HIT | BITMAP1;
-		explode body type BITMAPONLY | BITMAP2;
+		explode base type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
+		explode body type NOHEATCLOUD | BITMAPONLY | BITMAP2;
 		return (0);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type SHATTER | EXPLODE_ON_HIT | BITMAP1;
-		explode body type BITMAPONLY | BITMAP2;
+		explode base type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
+		explode body type NOHEATCLOUD | BITMAPONLY | BITMAP2;
 		return (0);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type SHATTER | EXPLODE_ON_HIT | BITMAP1;
-		explode body type BITMAPONLY | BITMAP2;
+		explode base type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
+		explode body type NOHEATCLOUD | BITMAPONLY | BITMAP2;
 		return (0);
 	}
 	corpsetype = 3;
-	explode base type SHATTER | EXPLODE_ON_HIT | BITMAP1;
-	explode body type BITMAPONLY | BITMAP2;
+	explode base type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
+	explode body type NOHEATCLOUD | BITMAPONLY | BITMAP2;
 }

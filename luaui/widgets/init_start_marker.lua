@@ -25,7 +25,8 @@ function widget:Update()
 		if x ~= nil and id ~= nil then
 			Spring.MarkerAddPoint(x, y, z, "Start " .. id )
 			widgetHandler:RemoveWidget()
-		elseif (Spring.GetGameSeconds() > 60) then
+		elseif (Spring.GetGameSeconds() > 30) and (x ~= nil and id ~= nil) then
+			Spring.MarkerErasePosition(x, y, z)
 			widgetHandler:RemoveWidget()		
 		end
 	end

@@ -11,7 +11,13 @@ function widget:GetInfo()
 	}
 end
 local NeededFrameworkVersion = 8
-local CanvasX,CanvasY = 1272,734 --resolution in which the widget was made (for 1:1 size)
+local CanvasX,CanvasY = 1440,900 --resolution in which the widget was made (for 1:1 size)
+local iconsizeMaster = 96
+local iconsize = iconsizeMaster
+local oldUnitpicsDir = LUAUI_DIRNAME.."Images/oldunitpics/"
+local unitDefID
+local CMD_MORPH = 31410
+
 --1272,734 == 1280,768 windowed
 
 --todo: sy adjustment
@@ -20,8 +26,8 @@ local cbackground, cborder = include("Configs/ui_config.lua")
 
 local Config = {
 	tooltip = {
-		px = 0,py = CanvasY-(12*6+5*2), --default start position
-		sx = 300,sy = 12*6+5*2, --background size
+		px = 0,py = CanvasY-(12*7+5*2), --default start position
+		sx = 320,sy = 12*7+5*2, --background size
 		
 		fontsize = 12,
 		
@@ -117,13 +123,76 @@ end
 
 local function getEditedCurrentTooltip()
 	local text = sGetCurrentTooltip()
+	--Prune RC tech list
+	local lvl1tech = text:match("advanced t1 unit research centre") or nil
+	local lvl2tech = text:match("advanced t2 unit research centre") or nil
+	local lvl3tech = text:match("advanced t3 unit research centre") or nil
+	local lvl4tech = text:match("advanced t4 unit research centre") or nil
+	local provides = text:match("Provides") or nil
+	if provides then
+		if lvl4tech then
+			text = text:gsub(lvl3tech,string.format("")) or text
+			text = text:gsub(lvl2tech,string.format("")) or text
+			text = text:gsub(lvl1tech,string.format("")) or text
+			text = text:gsub(",",string.format(""),3) or text
+			text = text:gsub(lvl4tech,string.format("Advanced T4 Unit Research Centre")) or text
+		elseif lvl3tech then
+			text = text:gsub(lvl2tech,string.format("")) or text
+			text = text:gsub(lvl1tech,string.format("")) or text
+			text = text:gsub(",",string.format(""),2) or text
+			text = text:gsub(lvl3tech,string.format("Advanced T3 Unit Research Centre")) or text
+		elseif lvl2tech then
+			text = text:gsub(lvl1tech,string.format("")) or text
+			text = text:gsub(",",string.format(""),1) or text
+			text = text:gsub(lvl2tech,string.format("Advanced T2 Unit Research Centre")) or text
+		elseif lvl1tech then
+			text = text:gsub(lvl1tech,string.format("Advanced T1 Unit Research Centre")) or text
+		end
+	end
 	--extract the exp value with regexp
+	local expMorphPat = "UnitDefID (%d+)\n"
+	local MorphDefID = tonumber(text:match(expMorphPat)) or nil
+	if MorphDefID ~= nil then
+    	text = text:gsub(expMorphPat,string.format("")) or text
+	end
+
 	local expPattern = "Experience (%d+%.%d%d)"
 	local currentExp = tonumber(text:match(expPattern))
 
 	local limExp = currentExp and currentExp/(1+currentExp) or 1
 	--replace with limexp: exp/(1+exp) since all spring exp effects are linear in limexp, multiply by 10 because people like big numbers instead of [0,1]
 	text = currentExp and text:gsub(expPattern,string.format("Experience %.2f", currentExp) ) or text
+	local mx,my,gx,gy,gz,tooltipID
+    mx,my = Spring.GetMouseState()
+    if mx and my then
+    local _,pos = Spring.TraceScreenRay(mx,my,true,true)
+        if pos then
+            gx,gy,gz=unpack(pos)
+        end
+        local kind,var1 = Spring.TraceScreenRay(mx,my,false,true)
+        if kind=="unit" then
+            tooltipID = var1
+        end
+    end
+    if MorphDefID then
+    	unitDefID=MorphDefID
+        iconsize=iconsizeMaster
+    elseif tooltipID then
+        unitDefID=Spring.GetUnitDefID(tooltipID)
+        iconsize=iconsizeMaster
+    elseif WG["cmdID"] and WG["cmdID"] < 0 then
+    	unitDefID=math.abs(WG["cmdID"])
+    	iconsize=iconsizeMaster
+    elseif Spring.GetSelectedUnitsCount() == 1 then
+    	unitID=Spring.GetSelectedUnits()[1]
+    	if Spring.ValidUnitID(unitID) then
+    		unitDefID=Spring.GetUnitDefID(unitID)
+    		iconsize=iconsizeMaster
+    	end
+    else
+    	unitDefID=nil
+    	iconsize=0
+    end
 	return text
 end
 
@@ -166,23 +235,22 @@ local function createtooltip(r)
 		onupdate=function(self)
 			if (self.px < (Screen.vsx/2)) then --left side of screen
 				if ((self.sx-r.margin*2) <= text.getwidth()) then
-					self.sx = (text.getwidth()+r.margin*2) -1
+					self.sx = ((text.getwidth()+r.margin*2) -1) + (iconsize*1.95)
 				else
-					self.sx = r.sx * Screen.vsy/CanvasY
+					self.sx = (r.sx * Screen.vsy/CanvasY) + (iconsize*1.95)
 				end
-				text.px = self.px + r.margin
+				text.px = self.px + r.margin + iconsize
 			else --right side of screen
 				if ((self.sx-r.margin*2 -1) <= text.getwidth()) then
 					self.px = self.px - ((text.getwidth() + r.margin*2) - self.sx)
-					self.sx = (text.getwidth() + r.margin*2)
+					self.sx = (text.getwidth() + r.margin*2) + (iconsize*1.95)
 				else
 					self.px = self.px - ((r.sx * Screen.vsy/CanvasY) - self.sx)
-					self.sx = r.sx * Screen.vsy/CanvasY
+					self.sx = (r.sx * Screen.vsy/CanvasY ) + (iconsize*1.95)
 				end
-				text.px = self.px + r.margin
+				text.px = self.px + r.margin + iconsize
 			end
 		end,
-		
 		mouseover=function(mx,my,self)
 			text._mouseoverself = true
 		end,
@@ -201,6 +269,21 @@ local function createtooltip(r)
 		margin = r.margin,
 	}
 end
+
+function widget:DrawScreen()
+	if unitDefID then
+		gl.Color(1, 1, 1, 1)
+		--Spring.Echo(VFS.FileExists(oldUnitpicsDir..UnitDefs[unitDefID].name..'.png'),unitDefID,UnitDefs[unitDefID].name )
+		if WG['OtaIcons'] and VFS.FileExists(oldUnitpicsDir..UnitDefs[unitDefID].name..'.png') then
+			gl.Texture(oldUnitpicsDir..UnitDefs[unitDefID].name..'.png')
+		else
+			gl.Texture('#' .. unitDefID) -- Screen.vsx,Screen.vsy
+		end
+  		gl.TexRect(tooltip.background.px, Screen.vsy - tooltip.background.py - iconsize, tooltip.background.px + iconsize, Screen.vsy - tooltip.background.py)
+  		gl.Texture(false)
+  	end
+end
+
 
 function widget:Initialize()
 	PassedStartupCheck = RedUIchecks()
@@ -227,9 +310,15 @@ function widget:GetConfigData() --save config
 	if (PassedStartupCheck) then
 		local vsy = Screen.vsy
 		local unscale = CanvasY/vsy --needed due to autoresize, stores unresized variables
-		Config.tooltip.px = tooltip.background.px * unscale
-		Config.tooltip.py = tooltip.background.py * unscale
-		return {Config=Config}
+		if (tooltip.background.px * unscale > -50) or (tooltip.background.py * unscale > -50) then
+			Config.tooltip.px = tooltip.background.px * unscale
+			Config.tooltipn.py = tooltip.background.py * unscale
+			return {Config=Config}
+		else
+			Config.tooltip.px = -50
+			Config.tooltip.py = -50
+			return {Config=Config}
+		end
 	end
 end
 function widget:SetConfigData(data) --load config

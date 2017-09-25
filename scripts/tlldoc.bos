@@ -1,0 +1,731 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, torso, nanog, nanog1, nanog2, nanod, nanod1, nanod2,
+       lthigh, lleg, lfoot, rthigh, rleg, rfoot, wake1, wake2,
+       wake4, wake3, flotg1a, flotg2a, flotg3a, flotd1a, flotd2a, flotd3a,
+       flotg1b, flotg2b, flotg3b, flotd1b, flotd2b, flotd3b, beam1, beam2;
+
+static-var  bMoving, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
+            Static_Var_6, Static_Var_7, statechg_DesiredState, statechg_StateChanging;
+
+// Signal definitions
+#define SIG_MOVE			2
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from torso;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+activatescr()
+{
+	if( TRUE )
+	{
+		move nanog to x-axis [-8.000000] speed [5.000000];
+		move nanod to x-axis [8.000000] speed [5.000000];
+		wait-for-move nanog along x-axis;
+		wait-for-move nanod along x-axis;
+		move nanog1 to x-axis [-8.000000] speed [5.000000];
+		move nanod1 to x-axis [8.000000] speed [5.000000];
+		turn nanog to y-axis <-60.010989> speed <100.000000>;
+		turn nanod to y-axis <60.010989> speed <100.000000>;
+		turn nanog1 to y-axis <-60.010989> speed <100.000000>;
+		turn nanod1 to y-axis <60.010989> speed <100.000000>;
+		turn nanog2 to y-axis <95.021978> speed <150.000000>;
+		turn nanod2 to y-axis <-95.021978> speed <150.000000>;
+		sleep 390;
+	}
+	sleep 20;
+	return (0);
+	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		move nanog1 to x-axis [0.000000] speed [5.000000];
+		move nanod1 to x-axis [0.000000] speed [5.000000];
+		turn nanog to y-axis <0.000000> speed <100.000000>;
+		turn nanod to y-axis <0.000000> speed <100.000000>;
+		turn nanog1 to y-axis <0.000000> speed <100.000000>;
+		turn nanod1 to y-axis <0.000000> speed <100.000000>;
+		turn nanog2 to y-axis <0.000000> speed <150.000000>;
+		turn nanod2 to y-axis <0.000000> speed <150.000000>;
+		sleep 250;
+		move nanog to x-axis [0.000000] speed [5.000000];
+		move nanod to x-axis [0.000000] speed [5.000000];
+		sleep 390;
+	}
+	sleep 20;
+}
+
+
+
+Go()
+{
+	call-script activatescr();
+	turn torso to y-axis Static_Var_6 speed <100.000000>;
+	wait-for-turn torso around y-axis;
+	set INBUILDSTANCE to 1;
+}
+
+Stop()
+{
+	set INBUILDSTANCE to 0;
+	turn torso to y-axis <0.000000> speed <100.000000>;
+	wait-for-turn torso around y-axis;
+	call-script deactivatescr();
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+walk()
+{
+	if( TRUE )
+	{
+		turn lthigh to x-axis <0.000000> speed <300.000000>;
+		turn lleg to x-axis <-42.005495> speed <300.000000>;
+		turn lfoot to x-axis <30.005495> speed <300.000000>;
+		turn rthigh to x-axis <11.000000> speed <300.000000>;
+		turn rleg to x-axis <20.000000> speed <300.000000>;
+		turn rfoot to x-axis <-29.005495> speed <300.000000>;
+		turn torso to x-axis <7.000000> speed <75.000000>;
+		turn torso to z-axis <3.000000> speed <150.000000>;
+		wait-for-turn lthigh around x-axis;
+		wait-for-turn lthigh around x-axis;
+		turn rthigh to x-axis <45.010989> speed <300.000000>;
+		turn rleg to x-axis <14.000000> speed <150.000000>;
+		turn rfoot to x-axis <-12.000000> speed <150.000000>;
+		turn lthigh to x-axis <-50.010989> speed <300.000000>;
+		turn lleg to x-axis <37.005495> speed <300.000000>;
+		turn lfoot to x-axis <0.000000> speed <300.000000>;
+		turn torso to x-axis <14.000000> speed <75.000000>;
+		turn torso to z-axis <6.000000> speed <150.000000>;
+		wait-for-turn lthigh around x-axis;
+		wait-for-turn lthigh around x-axis;
+		turn rthigh to x-axis <35.005495> speed <300.000000>;
+		turn rleg to x-axis <-14.000000> speed <300.000000>;
+		turn rfoot to x-axis <-12.000000> speed <150.000000>;
+		turn lthigh to x-axis <-34.005495> speed <300.000000>;
+		turn lleg to x-axis <20.000000> speed <300.000000>;
+		turn lfoot to x-axis <8.000000> speed <150.000000>;
+		turn torso to x-axis <7.000000> speed <75.000000>;
+		turn torso to z-axis <3.000000> speed <150.000000>;
+		wait-for-turn lthigh around x-axis;
+		wait-for-turn lthigh around x-axis;
+		turn rthigh to x-axis <17.000000> speed <300.000000>;
+		turn rleg to x-axis <-37.005495> speed <300.000000>;
+		turn rfoot to x-axis <21.000000> speed <300.000000>;
+		turn lthigh to x-axis <0.000000> speed <300.000000>;
+		turn lleg to x-axis <0.000000> speed <300.000000>;
+		turn lfoot to x-axis <0.000000> speed <300.000000>;
+		turn torso to x-axis <-3.000000> speed <75.000000>;
+		turn torso to z-axis <0.000000> speed <150.000000>;
+		wait-for-turn lthigh around x-axis;
+		wait-for-turn lthigh around x-axis;
+		turn rthigh to x-axis <0.000000> speed <300.000000>;
+		turn rleg to x-axis <-42.005495> speed <300.000000>;
+		turn rfoot to x-axis <30.005495> speed <300.000000>;
+		turn lthigh to x-axis <11.000000> speed <300.000000>;
+		turn lleg to x-axis <20.000000> speed <300.000000>;
+		turn lfoot to x-axis <-29.005495> speed <300.000000>;
+		turn torso to x-axis <7.000000> speed <75.000000>;
+		turn torso to z-axis <-3.000000> speed <150.000000>;
+		wait-for-turn lthigh around x-axis;
+		wait-for-turn lthigh around x-axis;
+		turn rthigh to x-axis <-50.010989> speed <300.000000>;
+		turn rleg to x-axis <37.005495> speed <300.000000>;
+		turn rfoot to x-axis <0.000000> speed <300.000000>;
+		turn lthigh to x-axis <45.010989> speed <300.000000>;
+		turn lleg to x-axis <14.000000> speed <150.000000>;
+		turn lfoot to x-axis <-12.000000> speed <150.000000>;
+		turn torso to x-axis <14.000000> speed <75.000000>;
+		turn torso to z-axis <-6.000000> speed <150.000000>;
+		wait-for-turn lthigh around x-axis;
+		wait-for-turn lthigh around x-axis;
+		turn rthigh to x-axis <-34.005495> speed <300.000000>;
+		turn rleg to x-axis <20.000000> speed <300.000000>;
+		turn rfoot to x-axis <8.000000> speed <150.000000>;
+		turn lthigh to x-axis <35.005495> speed <300.000000>;
+		turn lleg to x-axis <-14.000000> speed <300.000000>;
+		turn lfoot to x-axis <-12.000000> speed <150.000000>;
+		turn torso to x-axis <7.000000> speed <75.000000>;
+		turn torso to z-axis <-3.000000> speed <150.000000>;
+		wait-for-turn lthigh around x-axis;
+		wait-for-turn lthigh around x-axis;
+		turn rthigh to x-axis <0.000000> speed <300.000000>;
+		turn rleg to x-axis <0.000000> speed <300.000000>;
+		turn rfoot to x-axis <0.000000> speed <300.000000>;
+		turn lthigh to x-axis <17.000000> speed <300.000000>;
+		turn lleg to x-axis <-37.005495> speed <300.000000>;
+		turn lfoot to x-axis <21.000000> speed <300.000000>;
+		turn torso to x-axis <0.000000> speed <75.000000>;
+		turn torso to z-axis <0.000000> speed <150.000000>;
+		wait-for-turn lthigh around x-axis;
+		wait-for-turn lthigh around x-axis;
+		sleep 42;
+	}
+	sleep 20;
+}
+
+walklegs()
+{
+	if( TRUE )
+	{
+		turn lthigh to x-axis <0.000000> speed <300.000000>;
+		turn lleg to x-axis <-42.005495> speed <300.000000>;
+		turn lfoot to x-axis <30.005495> speed <300.000000>;
+		turn rthigh to x-axis <11.000000> speed <300.000000>;
+		turn rleg to x-axis <20.000000> speed <300.000000>;
+		turn rfoot to x-axis <-29.005495> speed <300.000000>;
+		turn torso to x-axis <3.000000> speed <75.000000>;
+		turn torso to z-axis <1.000000> speed <150.000000>;
+		wait-for-turn lthigh around x-axis;
+		wait-for-turn lthigh around x-axis;
+		turn rthigh to x-axis <45.010989> speed <300.000000>;
+		turn rleg to x-axis <14.000000> speed <150.000000>;
+		turn rfoot to x-axis <-12.000000> speed <150.000000>;
+		turn lthigh to x-axis <-50.010989> speed <300.000000>;
+		turn lleg to x-axis <37.005495> speed <300.000000>;
+		turn lfoot to x-axis <0.000000> speed <300.000000>;
+		turn torso to x-axis <6.000000> speed <75.000000>;
+		turn torso to z-axis <2.000000> speed <150.000000>;
+		wait-for-turn lthigh around x-axis;
+		wait-for-turn lthigh around x-axis;
+		turn rthigh to x-axis <35.005495> speed <300.000000>;
+		turn rleg to x-axis <-14.000000> speed <300.000000>;
+		turn rfoot to x-axis <-12.000000> speed <150.000000>;
+		turn lthigh to x-axis <-34.005495> speed <300.000000>;
+		turn lleg to x-axis <20.000000> speed <300.000000>;
+		turn lfoot to x-axis <8.000000> speed <150.000000>;
+		turn torso to x-axis <3.000000> speed <75.000000>;
+		turn torso to z-axis <1.000000> speed <150.000000>;
+		wait-for-turn lthigh around x-axis;
+		wait-for-turn lthigh around x-axis;
+		turn rthigh to x-axis <17.000000> speed <300.000000>;
+		turn rleg to x-axis <-37.005495> speed <300.000000>;
+		turn rfoot to x-axis <21.000000> speed <300.000000>;
+		turn lthigh to x-axis <0.000000> speed <300.000000>;
+		turn lleg to x-axis <0.000000> speed <300.000000>;
+		turn lfoot to x-axis <0.000000> speed <300.000000>;
+		turn torso to x-axis <0.000000> speed <75.000000>;
+		turn torso to z-axis <0.000000> speed <150.000000>;
+		wait-for-turn lthigh around x-axis;
+		wait-for-turn lthigh around x-axis;
+		turn rthigh to x-axis <0.000000> speed <300.000000>;
+		turn rleg to x-axis <-42.005495> speed <300.000000>;
+		turn rfoot to x-axis <30.005495> speed <300.000000>;
+		turn lthigh to x-axis <11.000000> speed <300.000000>;
+		turn lleg to x-axis <20.000000> speed <300.000000>;
+		turn lfoot to x-axis <-29.005495> speed <300.000000>;
+		turn torso to x-axis <3.000000> speed <75.000000>;
+		turn torso to z-axis <-1.000000> speed <150.000000>;
+		wait-for-turn lthigh around x-axis;
+		wait-for-turn lthigh around x-axis;
+		turn rthigh to x-axis <-50.010989> speed <300.000000>;
+		turn rleg to x-axis <37.005495> speed <300.000000>;
+		turn rfoot to x-axis <0.000000> speed <300.000000>;
+		turn lthigh to x-axis <45.010989> speed <300.000000>;
+		turn lleg to x-axis <14.000000> speed <150.000000>;
+		turn lfoot to x-axis <-12.000000> speed <150.000000>;
+		turn torso to x-axis <6.000000> speed <75.000000>;
+		turn torso to z-axis <-2.000000> speed <150.000000>;
+		wait-for-turn lthigh around x-axis;
+		wait-for-turn lthigh around x-axis;
+		turn rthigh to x-axis <-34.005495> speed <300.000000>;
+		turn rleg to x-axis <20.000000> speed <300.000000>;
+		turn rfoot to x-axis <8.000000> speed <150.000000>;
+		turn lthigh to x-axis <35.005495> speed <300.000000>;
+		turn lleg to x-axis <-14.000000> speed <300.000000>;
+		turn lfoot to x-axis <-12.000000> speed <150.000000>;
+		turn torso to x-axis <3.000000> speed <75.000000>;
+		turn torso to z-axis <-1.000000> speed <150.000000>;
+		wait-for-turn lthigh around x-axis;
+		wait-for-turn lthigh around x-axis;
+		turn rthigh to x-axis <0.000000> speed <300.000000>;
+		turn rleg to x-axis <0.000000> speed <300.000000>;
+		turn rfoot to x-axis <0.000000> speed <300.000000>;
+		turn lthigh to x-axis <17.000000> speed <300.000000>;
+		turn lleg to x-axis <-37.005495> speed <300.000000>;
+		turn lfoot to x-axis <21.000000> speed <300.000000>;
+		turn torso to x-axis <0.000000> speed <75.000000>;
+		turn torso to z-axis <0.000000> speed <150.000000>;
+		wait-for-turn lthigh around x-axis;
+		wait-for-turn lthigh around x-axis;
+		sleep 42;
+	}
+	sleep 20;
+}
+
+transform()
+{
+	if( TRUE )
+	{
+		show flotg1a;
+		show flotg2a;
+		show flotg3a;
+		show flotg1b;
+		show flotg2b;
+		show flotg3b;
+		show flotd1a;
+		show flotd2a;
+		show flotd3a;
+		show flotd1b;
+		show flotd2b;
+		show flotd3b;
+		turn flotg1a to z-axis <60.010989> speed <100.000000>;
+		turn flotg1b to z-axis <60.010989> speed <100.000000>;
+		turn flotd1a to z-axis <-60.010989> speed <100.000000>;
+		turn flotd1b to z-axis <-60.010989> speed <100.000000>;
+		wait-for-turn flotg1a around z-axis;
+		wait-for-turn flotd1a around z-axis;
+		turn flotg2a to z-axis <60.010989> speed <100.000000>;
+		turn flotg2b to z-axis <60.010989> speed <100.000000>;
+		turn flotd2a to z-axis <-60.010989> speed <100.000000>;
+		turn flotd2b to z-axis <-60.010989> speed <100.000000>;
+		wait-for-turn flotg2a around z-axis;
+		wait-for-turn flotd2a around z-axis;
+		turn flotg3a to z-axis <60.010989> speed <100.000000>;
+		turn flotg3b to z-axis <60.010989> speed <100.000000>;
+		turn flotd3a to z-axis <-60.010989> speed <100.000000>;
+		turn flotd3b to z-axis <-60.010989> speed <100.000000>;
+		wait-for-turn flotg3a around z-axis;
+		wait-for-turn flotd3a around z-axis;
+		turn rthigh to x-axis <0.000000> now;
+		turn lthigh to x-axis <0.000000> now;
+		turn rleg to x-axis <0.000000> now;
+		turn lleg to x-axis <0.000000> now;
+		turn rfoot to x-axis <0.000000> now;
+		turn lfoot to x-axis <0.000000> now;
+		turn rthigh to x-axis <90.021978> speed <100.000000>;
+		turn lthigh to x-axis <90.021978> speed <100.000000>;
+		move torso to y-axis [-4.000000] speed [20.000000];
+		sleep 390;
+	}
+	sleep 20;
+}
+
+reform()
+{
+	if( TRUE )
+	{
+		move torso to y-axis [0.000000] speed [10.000000];
+		turn rthigh to x-axis <0.000000> speed <100.000000>;
+		turn lthigh to x-axis <0.000000> speed <100.000000>;
+		wait-for-turn rthigh around x-axis;
+		wait-for-turn lthigh around x-axis;
+		turn flotg3a to z-axis <0.000000> speed <100.000000>;
+		turn flotg3b to z-axis <0.000000> speed <100.000000>;
+		turn flotd3a to z-axis <0.000000> speed <100.000000>;
+		turn flotd3b to z-axis <0.000000> speed <100.000000>;
+		wait-for-turn flotg3a around z-axis;
+		wait-for-turn flotd3a around z-axis;
+		turn flotg2a to z-axis <0.000000> speed <100.000000>;
+		turn flotg2b to z-axis <0.000000> speed <100.000000>;
+		turn flotd2a to z-axis <0.000000> speed <100.000000>;
+		turn flotd2b to z-axis <0.000000> speed <100.000000>;
+		wait-for-turn flotg2a around z-axis;
+		wait-for-turn flotd2a around z-axis;
+		turn flotg1a to z-axis <0.000000> speed <100.000000>;
+		turn flotg1b to z-axis <0.000000> speed <100.000000>;
+		turn flotd1a to z-axis <0.000000> speed <100.000000>;
+		turn flotd1b to z-axis <0.000000> speed <100.000000>;
+		wait-for-turn flotg1a around z-axis;
+		wait-for-turn flotd1a around z-axis;
+		hide flotg1a;
+		hide flotg2a;
+		hide flotg3a;
+		hide flotg1b;
+		hide flotg2b;
+		hide flotg3b;
+		hide flotd1a;
+		hide flotd2a;
+		hide flotd3a;
+		hide flotd1b;
+		hide flotd2b;
+		hide flotd3b;
+		sleep 390;
+	}
+	sleep 20;
+}
+
+swim()
+{
+	if( TRUE )
+	{
+	}
+	sleep 10;
+}
+
+MotionControl(Func_Var_1)
+{
+	Func_Var_1 = 1;
+	while( TRUE )
+	{
+		if( Static_Var_5 == 2 )
+		{
+			if( !Static_Var_4 )
+			{
+				call-script transform();
+				Static_Var_4 = 1;
+				Func_Var_1 = 1;
+			}
+		}
+		if( Static_Var_4 )
+		{
+			if( Static_Var_5 == 1 )
+			{
+				call-script reform();
+				Static_Var_4 = 0;
+				Func_Var_1 = 1;
+			}
+			if( Static_Var_5 == 4 )
+			{
+				call-script reform();
+				Static_Var_4 = 0;
+				Func_Var_1 = 1;
+			}
+		}
+		if( bMoving )
+		{
+			if( Static_Var_2 )
+			{
+				Static_Var_3 = 1;
+				if( Static_Var_4 )
+				{
+					call-script swim();
+				}
+				if( !Static_Var_4 )
+				{
+					call-script walklegs();
+				}
+			}
+			if( !Static_Var_2 )
+			{
+				Static_Var_3 = 0;
+				if( Static_Var_4 )
+				{
+					call-script swim();
+				}
+				if( !Static_Var_4 )
+				{
+					call-script walk();
+				}
+			}
+			Func_Var_1 = 1;
+		}
+		if( !bMoving )
+		{
+			Static_Var_3 = 1;
+			if( Func_Var_1 AND !Static_Var_4 )
+			{
+				Func_Var_1 = 0;
+			}
+			sleep 100;
+		}
+	}
+}
+
+Create()
+{
+	bMoving = FALSE;
+	Static_Var_2 = 0;
+	Static_Var_3 = 1;
+	Static_Var_4 = 0;
+	hide flotg1a;
+	hide flotg2a;
+	hide flotg3a;
+	hide flotg1b;
+	hide flotg2b;
+	hide flotg3b;
+	hide flotd1a;
+	hide flotd2a;
+	hide flotd3a;
+	hide flotd1b;
+	hide flotd2b;
+	hide flotd3b;
+	Static_Var_6 = 0;
+	Static_Var_7 = 1;
+	call-script InitState();
+	start-script MotionControl();
+	start-script SmokeUnit();
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+StartBuilding(Func_Var_1)
+{
+	Static_Var_6 = Func_Var_1;
+	start-script RequestState(0);
+}
+
+StopBuilding()
+{
+	start-script RequestState(1);
+}
+
+QueryNanoPiece(piecenum)
+{
+	if( Static_Var_7 == 1 )
+	{
+		piecenum = beam1;
+	}
+	if( Static_Var_7 == 2 )
+	{
+		piecenum = beam2;
+	}
+	++Static_Var_7;
+	if( Static_Var_7 == 3 )
+	{
+		Static_Var_7 = 1;
+	}
+}
+
+TargetHeading(Func_Var_1)
+{
+	Static_Var_6 = 0 - Func_Var_1;
+}
+
+StartMoving()
+{
+	bMoving = TRUE;
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	while( TRUE )
+	{
+		if( Static_Var_5 == 2 )
+		{
+			emit-sfx 2 from wake1;
+			emit-sfx 2 from wake2;
+			emit-sfx 2 from wake3;
+			emit-sfx 2 from wake4;
+		}
+		if( Static_Var_5 == 1 )
+		{
+			emit-sfx 2 from wake1;
+			emit-sfx 2 from wake2;
+			emit-sfx 2 from wake3;
+			emit-sfx 2 from wake4;
+		}
+		sleep 250;
+	}
+}
+
+StopMoving()
+{
+	bMoving = FALSE;
+	signal SIG_MOVE;
+}
+
+setSFXoccupy(state)
+{
+	Static_Var_5 = state;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = torso;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode torso type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode nanog type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode nanog1 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode nanog2 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode nanod type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode nanod1 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode nanod2 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode lthigh type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode lleg type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode lfoot type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode rthigh type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode rleg type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode rfoot type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode wake1 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode wake2 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode wake4 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode wake3 type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode flotg1a type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode flotg2a type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode flotg3a type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode flotd1a type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode flotd2a type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode flotd3a type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode flotg1b type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode flotg2b type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode flotg3b type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode flotd1b type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode flotd2b type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode flotd3b type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode torso type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode nanog type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode nanog1 type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode nanog2 type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode nanod type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode nanod1 type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode nanod2 type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode lthigh type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode lleg type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode lfoot type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode rthigh type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode rleg type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode rfoot type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode wake1 type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode wake2 type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode wake4 type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode wake3 type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode flotg1a type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode flotg2a type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode flotg3a type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode flotd1a type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode flotd2a type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode flotd3a type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode flotg1b type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode flotg2b type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode flotg3b type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode flotd1b type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode flotd2b type NOHEATCLOUD | SHATTER | BITMAP4;
+		explode flotd3b type NOHEATCLOUD | SHATTER | BITMAP4;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode torso type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode nanog type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode nanog1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode nanog2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode nanod type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode nanod1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode nanod2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode lthigh type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode lleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode lfoot type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode rthigh type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode rleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode rfoot type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode wake1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode wake2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode wake4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode wake3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode flotg1a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode flotg2a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode flotg3a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode flotd1a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode flotd2a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode flotd3a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode flotg1b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode flotg2b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode flotg3b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode flotd1b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode flotd2b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode flotd3b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		return (0);
+	}
+	corpsetype = 3;
+	explode base type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode torso type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+	explode nanog type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode nanog1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode nanog2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode nanod type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode nanod1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode nanod2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode lthigh type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode lleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode lfoot type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode rthigh type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode rleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode rfoot type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode wake1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode wake2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode wake4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode wake3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode flotg1a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode flotg2a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode flotg3a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode flotd1a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode flotd2a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode flotd3a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode flotg1b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode flotg2b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode flotg3b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode flotd1b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode flotd2b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode flotd3b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+}

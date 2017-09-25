@@ -26,7 +26,7 @@ local dropperID = UnitDefNames['fatshrew'].id
 local unitsToDrop = UnitDefNames['cormonsta'].id
 local holding = {}
 local holdingID = {}
-
+local isloadedID = {}
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
 
@@ -41,11 +41,11 @@ function gadget:UnitFinished(unitID, unitDefID, unitTeam)
     holdingID[unitID] = {}
     holdingID[unitID].frame = nil
    	for pieceName, pieceNum in pairs(pieceMap) do
-			if pieceName:find("basket") then
-				local x, y, z = Spring.GetUnitPiecePosDir(unitID,pieceNum)
+		if pieceName:find("basket") then
+		local x, y, z = Spring.GetUnitPiecePosDir(unitID,pieceNum)
         local heading = Spring.GetUnitHeading(unitID)
         local face = math.floor((heading + 8192) / 16384) % 4
-			  local newUnitID = Spring.CreateUnit(unitsToDrop, x, y, z, face, unitTeam)
+		local newUnitID = Spring.CreateUnit(unitsToDrop, x, y, z, face, unitTeam)
         Spring.SetUnitStealth(newUnitID, true)
         Spring.SetUnitSonarStealth(newUnitID, true)
         Spring.SetUnitNoSelect(newUnitID, true)
@@ -56,6 +56,7 @@ function gadget:UnitFinished(unitID, unitDefID, unitTeam)
         holdingID[unitID][count] = {newUnitID,pieceNum}
         --holdingID[unitID].frame = Spring.GetGameFrame()
         holdingID[unitID].canAnimate = true
+        isloadedID[newUnitID] = true
         holding[unitID] = true
         count = count + 1
       end
@@ -71,6 +72,19 @@ function gadget:GameFrame(f)
   end
 end
 
+function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponID, projectileID, attackerID, attackerDefID, attackerTeam)
+  if isloadedID[unitID] then
+    --Spring.Echo(unitID, " Damage reduced")
+    return 0, 1
+  else
+    return damage, 1
+  end
+end
+
+function gadget:UnitDestroyed(unitID, unitDefID)
+	isloadedID[unitID] = false
+end
+
 function gadget:UnitDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponDefID, projectileID, attackerID, attackerDefID, attackerTeam)
   if (unitDefID == dropperID) and holding[unitID] then
     local currentHP, maxHP = Spring.GetUnitHealth(unitID)
@@ -83,6 +97,7 @@ function gadget:UnitDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weap
         Spring.SetUnitStealth(passIDs, false)
         Spring.SetUnitSonarStealth(passIDs, false)
         Spring.SetUnitNoSelect(passIDs, false)
+        isloadedID[passIDs] = false
         --Spring.Echo("UnLoading ", passangers," with ", passIDs)
         if attackerID and passIDs then
           local x,y,z = Spring.GetUnitPosition(unitID)

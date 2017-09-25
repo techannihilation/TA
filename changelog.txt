@@ -1,0 +1,106 @@
+﻿2.49 -> 2.50
+2017-09-05
+
+   
+Improvments:
+- Update to latest engine 104
+
+- Raw Move added
+
+- First Big change for this release, is fixing units targeting underwater units and well as ground units.
+
+- New t4.5 Units for all factions
+
+- This Release we have also focused on some well needed love for tll so we bring you 10+ new units for TLL
+
+New units for TLL:
+- Very Heavy Laser Tower (To Match Arm/Core Countpart)
+- Advanced Wind trap
+- Engineerer Air T1 (Battle Commander) and T2 (AirLab T2)
+- T3 Cons Ship TLL -- Replace's T3 vehicle con from 3 lab
+- T3 Mex
+- T4 Nano
+- Energy Cannon -- Area damage -- T1.5 tech 
+- Plamsa Gatling Gun -- T1.5 tech
+- Tll Dwarf Shield 
+- Tll gunship -- T1.5 tech
+
+New units for ARM:
+- Blastwing -- Air EMP Kamakazi unit
+- Energy Cannon -- Area damage -- T1.5 tech 
+
+New units for CORE:
+- Surveyor -- Air Strong Laser Gunship
+
+Add morph tree for TLL:
+- Available Morph are
+- Morph tllhlt into tllvhlt
+- Morph tllshaker into tlloki
+- Morph tlloki into tllmlrpc
+- Morph tllariman into tllcoyote
+- Morph tllconvincer into tllacid
+- Morph tllroaster into tlltelsatnk
+- Morph tllpbot into tllartybot
+- Morph tllartybot into heavyimpact
+- Morph tllbind into tllblind
+- Morph tllfireraiser into tllamphibot
+
+All Faction get Missle Defence System:
+- This units is a static laser tower that intercepts rockets/missile (i won't target nukes/tac nukes)
+
+New Widgets:
+- Command info widget
+- Build option unit stats (hover over menu icon for 2 secs)
+- Changelog widget
+- Options widget (new option for techa - OTA icons option, UI opacity option)
+
+Widget Improvements:
+- Mex snap now works before game start
+- Performance improvement for anti range widget
+- Performance improvement for wind display widget
+
+Other Improvments:
+- Add static radar morph chain and re-texture t1.5 radar
+- Delete Shield from T3 extractor
+- Defensive range widget add missing units
+- Anti range widget add missing unit tllgiant
+- Command Vehicle becomes a ARM unit
+- Siege Vehicle becomes a CORE Unit
+- Morph indicator widget, add new key binding (button 1 + ctrl), select units + press new button combo, it auto reselects morphable units only
+
+
+Balance:
+- Fix commander EMP damage to 0.025% of default damage
+- Small Shield balance reducion of buildtime
+- Rework tllllt stats now inline with arm/core llt
+- TLLOM => Decrease HP 27K => 25K
+- Balance HLT TLL. Decrease stats to have same than ARM / CORE 
+- Balance Capital mini Gun from Hero (damage / 2) 
+- Explosion balance (Crawl Blast, Bantha Nuke, SelfDestroy from Hero, T4...) We will have a Wiki soon on this subject 
+- Delete explosion after death for Troman (T3 Core sniper) 
+- Increase HP for Armsiege 20K => 29K
+- Balance Cost from all carrier and decrese HP (need approval from team)
+- Reduce explosion for cortron (tactical nuke) and increase energycost by 20%
+
+
+Visual:
+- Add lups effect for core t3 builder
+- New weapon visuals for armcrabe (Reduced particle count per shot)
+- New weapon visuals for tlldemon (over 50% saving in particle count)
+- Dont draw explosions for nukes that explode while in the air
+- Fix unitpics with wrong faction
+- Add dust trail effect for armbull when on land
+
+
+Bugs:
+- Fix commander underwater laser targeting aircraft, Close's #254
+- Increase spiderlabs footprint
+- Revert Hailstorm stas to previous version
+- Fix tllplasma aimpoint
+- Fix gunships damaging each other
+- Tlldmc add fire state buttons, Close's #336
+- Fix jumpdrive footprint size, Close's #302
+- Fix missing texture blacklily, Close's #499
+- Fix smoke while under construction monkeylord, Close's #477
+- Reduce size of unit in icon for arm/core eyes, Close's #481
+- Auto Erase start position markers after 30s, Closes #361

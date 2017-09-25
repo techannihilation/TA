@@ -20,7 +20,7 @@ return {
 		corpse = "heap",
 		defaultmissiontype = "Standby",
 		description = "Hell Fire Captain (Auto-Repair 25)",
-		explodeas = "BIG_UNITEX",
+		explodeas = "CRAWL_BLASTSML",
 		firestandorders = 1,
 		footprintx = 3,
 		footprintz = 3,

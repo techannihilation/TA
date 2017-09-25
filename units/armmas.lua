@@ -17,7 +17,7 @@ return {
 		collisionvolumescales = "80 112 80",
 		collisionvolumetest = 1,
 		collisionvolumetype = "CylY",
-		description = "Deep Core Metal Extractor, Amphibious",
+		description = "Deep Core Penetration Mine (Metal Extractor), Amphibious",
 		energymake = 0,
 		energyuse = 250,
 		explodeas = "ATOMIC_BLAST",

@@ -251,17 +251,6 @@ state["myPlayerID"] = nil
 --Button display configuration
 --position only relevant if no saved config data found
 local buttonConfig = {}
-buttonConfig["posPercRight"] = 0.98
-buttonConfig["posPercBottom"] = 0.8
-buttonConfig["defaultScreenResY"] = 1050 --do not change
-buttonConfig["defaultWidth"] = 23 --size in pixels in default screen resolution
-buttonConfig["defaultWidth"] = 23 --size in pixels in default screen resolution
-buttonConfig["spacingy"] = 3
-buttonConfig["spacingx"] = 3
-buttonConfig["borderColor"] = { 0, 0, 0, 1.0 }
-buttonConfig["currentHeight"] = 0 --do not change
-buttonConfig["currentWidth"] = 0 --do not change
-buttonConfig["nextOrigin"] = {{0,0}, 0, 0, 0, 0} --do not change
 buttonConfig["enabled"] = { ally = { ground = false, air = false, nuke = false }, enemy = { ground = true, air = true, nuke = true } }
 
 buttonConfig["baseColorEnemy"] = { 0.6, 0.0, 0.0, 0.6 }
@@ -269,23 +258,8 @@ buttonConfig["baseColorAlly"] = { 0.0, 0.3, 0.0, 0.6 }
 buttonConfig["enabledColorAlly"] = { 0.0, .80, 0.0, 1.9 }
 buttonConfig["enabledColorEnemy"] = { 1.00, 0.0, 0.0, 0.95 }
 
-local buttonList --glList for drawing buttons
 local rangeCircleList --glList for drawing range circles
 local _,oldcamy,_ = Spring.GetCameraPosition() --for tracking if we should change the alpha/linewidth based on camheight
-
-
-
-
-
-local tooltips = {
-    [-1] = 'DefenseRange by very_bad_soldier', 
-     [1] = 'Display ally ground defense (on/off)',
-     [2] = 'Display enemy ground defense (on/off)',
-     [3] = 'Display ally air defense (on/off)',
-     [4] = 'Display enemy air defense (on/off)',
-     [5] = 'Display ally nuke defense (on/off)',
-     [6] = 'Display enemy nuke defense (on/off)'
-}
 
 local defences = {}	
 local currentModConfig = {}
@@ -304,20 +278,14 @@ lineConfig["circleDivs"] = 40.0
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 local GL_LINE_LOOP          = GL.LINE_LOOP
-local glTexEnv				= gl.TexEnv
-local glFeatureShape		= gl.FeatureShape
 local glBeginEnd            = gl.BeginEnd
-local glBillboard           = gl.Billboard
 local glColor               = gl.Color
 local glDepthTest           = gl.DepthTest
 local glDrawGroundCircle    = gl.DrawGroundCircle
 local glDrawGroundQuad      = gl.DrawGroundQuad
 local glLineWidth           = gl.LineWidth
-local glPopMatrix           = gl.PopMatrix
-local glPushMatrix          = gl.PushMatrix
 local glTexRect             = gl.TexRect
 local glText                = gl.Text
-local glTexture             = gl.Texture
 local glTranslate           = gl.Translate
 local glVertex              = gl.Vertex
 local glAlphaTest			= gl.AlphaTest
@@ -368,7 +336,6 @@ local UpdateButtons
 local AddButton
 local DetectMod
 local SetButtonOrigin
-local DrawButtonGL
 local ResetGl
 local GetButton
 local ButtonAllyPressed
@@ -417,16 +384,14 @@ end
 
 
 function widget:Initialize()
+	WG['defrange'] = buttonConfig
 	state["myPlayerID"] = spGetLocalTeamID()
-
     widgetHandler:RegisterGlobal('SetOpacity_Defense_Range', SetOpacity)
     widgetHandler:RegisterGlobal('DrawManager_defense_range', DrawStatus)
 
 	DetectMod()
 
-	UpdateButtons()
 
-	
 	--Recheck units on widget reload
 	local myAllyTeam = Spring.GetMyAllyTeamID()
 	local units = Spring.GetAllUnits()
@@ -607,240 +572,9 @@ function GetColorByDps( dps, isEnemy, typeStr )
 	return color
 end
 
-function SetButtonOrigin(coords, xlen, ylen, xstep, ystep)
-  buttonConfig["nextOrigin"] = {coords, xlen, ylen, xstep, ystep}
-end
-
-function UpdateButtons()
-	--resize buttons depening on screen resolution
-	ResizeButtonsToScreen()
-	
-	buttons = {}
-
-	local maxx = floor( state["screenx"] * buttonConfig["posPercRight"] + 0.5 )
-	local maxy = floor( state["screeny"] * buttonConfig["posPercBottom"] + 0.5 )
-
-	local xSpace = buttonConfig["spacingx"] * ( buttonConfig["currentWidth"] / buttonConfig["defaultWidth"] )
-	local ySpace = buttonConfig["spacingy"] * ( buttonConfig["currentWidth"] / buttonConfig["defaultWidth"] )
-	
-	local ButtonYStep = 0 - (buttonConfig["currentHeight"]  + ySpace)
-	local ButtonXStep = 0
-	  
-	buttonConfig["scaleFactor"] = ( buttonConfig["currentWidth"] / buttonConfig["defaultWidth"] )
-	buttonConfig["xSpace"] = buttonConfig["spacingx"] * buttonConfig["scaleFactor"]
-	buttonConfig["ySpace"] = buttonConfig["spacingy"] * buttonConfig["scaleFactor"]
-	buttonConfig["xPosMin"] = ((buttonConfig["posPercRight"]) * state["screenx"]) - buttonConfig["currentWidth"] 
-	buttonConfig["xPosMax"] = buttonConfig["xPosMin"] + 2 * buttonConfig["currentWidth"] + buttonConfig["xSpace"]
-	buttonConfig["yPosMin"] = (buttonConfig["posPercBottom"] * state["screeny"])
-	buttonConfig["yPosMax"] = ( buttonConfig["yPosMin"] - ( buttonConfig["currentHeight"]  ) * 3 - buttonConfig["ySpace"] * 2)
-	 
-	SetButtonOrigin({maxx, maxy}, buttonConfig["currentWidth"], buttonConfig["currentHeight"] , ButtonXStep, ButtonYStep)
-
-	AddButton(1, "LuaUI/Images/tank_icon_32.png", (buttonConfig["currentWidth"] + xSpace), 0)
-	AddButton(2, "LuaUI/Images/tank_icon_32.png", -(buttonConfig["currentWidth"] + xSpace), ButtonYStep )
-	  
-	AddButton(3, "LuaUI/Images/air_icon_32.png", (buttonConfig["currentWidth"] + xSpace), 0)
-	AddButton(4, "LuaUI/Images/air_icon_32.png", -(buttonConfig["currentWidth"] + xSpace), ButtonYStep)
-	  
-	AddButton(5, "LuaUI/Images/nuke_icon_32.png", (buttonConfig["currentWidth"] + xSpace), 0 )
-	AddButton(6, "LuaUI/Images/nuke_icon_32.png", -(buttonConfig["currentWidth"] + xSpace), ButtonYStep)
-end
-
-function AddButton(index, title, xstep, ystep )
-	if (buttons[index]) then
-		error('plugin: internal error. Adding button with a repeated index: '..index..'. Old: '..buttons[index][2]..', new: '..title)
-	end
-
-	local cur_coords = buttonConfig["nextOrigin"][1]
-	local xlen = buttonConfig["nextOrigin"][2]
-	local ylen = buttonConfig["nextOrigin"][3]
-	  
-	if ( xstep == nil ) then
-		xstep = buttonConfig["nextOrigin"][4]
-	end
-	if ( ystep == nil ) then
-		ystep = buttonConfig["nextOrigin"][5]
-	end
-	
-  local corner_coords = {cur_coords[1] - xlen, cur_coords[2] - ylen}
-
-  table.insert(buttons, {index, title, {corner_coords, cur_coords}} )
-  local new_coords = {cur_coords[1] + xstep, cur_coords[2] + ystep}
-  buttonConfig["nextOrigin"] = {new_coords, xlen, ylen, xstep, ystep}
-end
-
-function widget:ViewResize(viewSizeX, viewSizeY)
-  state["screenx"] = viewSizeX
-  state["screeny"] = viewSizeY
-  UpdateButtons()
-end
-
-function Ismouseover()
-  local x,y = Spring.GetMouseState()
-  local mouseborder = 10
-    --Spring.Echo(buttonConfig["xPosMin"],buttonConfig["xPosMax"],buttonConfig["yPosMin"],buttonConfig["yPosMax"])
-  if x > (buttonConfig["xPosMin"] - mouseborder) and x < (buttonConfig["xPosMax"] + mouseborder)  and y > (buttonConfig["yPosMax"] - mouseborder) and y < (buttonConfig["yPosMin"] + mouseborder) then
-    --Spring.Echo("hit")
-    return true
-  else
-    return false
-  end
-end
-
-function widget:DrawScreen()	
-	if not spIsGUIHidden() and Ismouseover() then
-		if buttonList then
-			glCallList(buttonList)
-		else
-			UpdateButtonList()
-		end
-	end
-end
-
-
-function UpdateButtonList()
-  --delete old list
-  if buttonList then
-    glDeleteList(buttonList)
-  end
-
-  --create new list
-  buttonList = glCreateList(function()
-  
-  for num, data in pairs(buttons) do
-    local coords = data[3]
-    
-    local enemy = true
-    if ( num % 2 > 0 ) then
-    	enemy = false
-    end
-    
-    local enabled = false
-    if ( num == 1 and buttonConfig["enabled"]["ally"]["ground"] ) then
-    	enabled = true
-    elseif ( num == 2 and buttonConfig["enabled"]["enemy"]["ground"] ) then
-    	enabled = true
-    elseif ( num == 3 and buttonConfig["enabled"]["ally"]["air"] ) then
-    	enabled = true
-    elseif ( num == 4 and buttonConfig["enabled"]["enemy"]["air"] ) then
-    	enabled = true
-    elseif ( num == 5 and buttonConfig["enabled"]["ally"]["nuke"] ) then
-    	enabled = true
-    elseif ( num == 6 and buttonConfig["enabled"]["enemy"]["nuke"] ) then
-    	enabled = true
-    end
-
-    DrawButtonGL(data[2], coords[1][1], coords[1][2], coords[2][1], coords[2][2], enemy, enabled)
-  end
-  
-  ResetGl()
-  
-  end)
-
-end
-
-function DrawButtonGL(text, xmin, ymin, xmax, ymax, enemy, enabled )
-	-- draw button body
-	local bgColor = buttonConfig["baseColorAlly"]
-	if ( enemy ) then
-  	if (enabled) then
-	   	bgColor = buttonConfig["enabledColorEnemy"]
-  	else
-	   	bgColor = buttonConfig["baseColorEnemy"]
-  	end
-  else
-  	if (enabled) then
-	   	bgColor = buttonConfig["enabledColorAlly"]
-  	else
-	   	bgColor = buttonConfig["baseColorAlly"]
-  	end
-	end
- 
- -- draw colored background rectangle
-	glColor( bgColor )
-	glTexture(false)
-	glTexRect( xmin, ymin, xmax, ymax )
-
- -- draw icon
-  glColor( { 1.0, 1.0, 1.0} )
- 
-	glTexture( ":n:" .. text)
-
-  local texBorder = 0.71875
- -- glShape(GL_QUADS, { { v = { xmin, ymin }, t = { 0.0, texBorder} }, { v = { xmax, ymin }, t = { texBorder, texBorder} },
- --   { v = { xmax, ymax }, t = { texBorder, 0.0} }, { v = { xmin, ymax }, t = { 0.0, 0.0} }  })
-
-	glTexRect( xmin, ymin, xmax, ymax, 0.0, texBorder, texBorder, 0.0 )
-	
-  glTexture(false)
-
-   -- draw the outline
-   glColor(buttonConfig["borderColor"])
-  
-  local function Draw()
-    glVertex(xmin, ymin)
-    glVertex(xmax, ymin)
-    glVertex(xmax, ymax)
-    glVertex(xmin, ymax)
-  end
-  
-  glBeginEnd(GL_LINE_LOOP, Draw)
-end
-
 function ResetGl() 
 	glColor( { 1.0, 1.0, 1.0, 1.0 } )
 	glLineWidth( 1.0 )
-end
-
-function GetButton(x, y)
-  for num, data in pairs(buttons) do
-    local coords = data[3]
-    if (x > coords[1][1] and x < coords[2][1] and y > coords[1][2] and y < coords[2][2] ) then
-      return buttons[num]
-    end
-  end
-  return nil
-end
-
-function widget:MousePress(x, y, button)
-  local buttondata = GetButton(x, y)
-  if (not buttondata) then
-    return false
-  end
-  return true
-end
-
-function ButtonAllyPressed(tag)
-	buttonConfig["enabled"]["ally"][tag] = not buttonConfig["enabled"]["ally"][tag]
-	UpdateButtonList()
-end
-
-function ButtonEnemyPressed(tag)
-	buttonConfig["enabled"]["enemy"][tag] = not buttonConfig["enabled"]["enemy"][tag]
-	UpdateButtonList()
-end
-
-function widget:MouseRelease(x, y, button)
-  local buttondata = GetButton(x, y)
-  if (not buttondata) then
-    return false
-  end
-  
-  if (button > 1) then
-    return -1
-  end
-
-
-  local buttonIndex = buttondata[1]
-  if (buttonIndex == 1) then ButtonAllyPressed("ground") end
-  if (buttonIndex == 2) then ButtonEnemyPressed("ground") end
-  if (buttonIndex == 3) then ButtonAllyPressed("air") end
-  if (buttonIndex == 4) then ButtonEnemyPressed("air") end
-  if (buttonIndex == 5) then ButtonAllyPressed("nuke") end
-  if (buttonIndex == 6) then ButtonEnemyPressed("nuke") end
- 
-  UpdateButtons()
-  return -1
 end
 
 local darkOpacity = 0
@@ -858,7 +592,6 @@ function widget:Update()
 	if TooHigh or HighPing then
 		return
 	end
-	
 	local timef = spGetGameSeconds()
 	local time = floor(timef)
 
@@ -936,14 +669,6 @@ function DetectMod()
 	end
 	
 	printDebug( "<DefenseRange> ModName: " .. Game.modName .. " Detected Mod: " .. state["curModID"] )
-end
-
-function ResizeButtonsToScreen()
-	state["screenx"], state["screeny"] = widgetHandler:GetViewSizes()
-	--printDebug("Old Width:" .. ButtonWidthOrg .. " vsy: " .. vsy )
-	buttonConfig["currentWidth"] = ( state["screeny"] / buttonConfig["defaultScreenResY"] ) * buttonConfig["defaultWidth"]
-	buttonConfig["currentHeight"] = buttonConfig["currentWidth"]
-	--printDebug("New Width:" .. ButtonWidth )
 end
 
 function GetRange2DWeapon( range, yDiff)
@@ -1171,8 +896,8 @@ function UpdateCircleList()
 	end)
 end
 
-
 function widget:DrawWorld()
+
   	if spIsGUIHidden() or HighPing then
 		return
 	end
@@ -1182,27 +907,6 @@ function widget:DrawWorld()
 	else
 		UpdateCircleList()
 	end
-end
-
--- needed for GetTooltip
-function widget:IsAbove(x, y)
-  if (not GetButton(x, y)) then
-    return false
-  end
-  return true
-end
-
-function widget:GetTooltip(x, y)
-  local buttondata = GetButton(x, y)
-  if (not buttondata) then
-    return tooltips[-1]
-  end
-
-  local buttonIndex = buttondata[1]
-
-  local tt = tooltips[buttonIndex]
-
-  return (tt and tt) or tooltips[-1]
 end
 
 function printDebug( value )
@@ -1225,12 +929,8 @@ end
 
 --SAVE / LOAD CONFIG FILE
 function widget:GetConfigData()
-	printDebug("Saving config. Bottom: " .. buttonConfig["posPercBottom"] )
 	local data = {}
 	data["buttons"] = buttonConfig["enabled"]
-	data["positionPercentageRight"] = buttonConfig["posPercRight"]
-	data["positionPercentageBottom"] = buttonConfig["posPercBottom"]
-  
 	return data
 end
 
@@ -1241,81 +941,6 @@ function widget:SetConfigData(data)
 			buttonConfig["enabled"] = data["buttons"]
 			printDebug("enabled config found...")
 		end
-		
-		if ( data["positionPercentageRight"] ~= nil ) then
-			buttonConfig["posPercRight"] = data["positionPercentageRight"]
-			printDebug("right pos config found...")
-		end
-		
-		if ( data["positionPercentageBottom"] ~= nil ) then
-			buttonConfig["posPercBottom"] = data["positionPercentageBottom"]
-			printDebug("bottom config found: " .. buttonConfig["posPercBottom"])
-		end
 	end
 end
 --END OF SAFE CONFIG FILE
-
---TWEAK MODE
-local inTweakDrag = false
-function widget:TweakMousePress(x,y,button)
-	local buttondata = GetButton(x, y)
-	if (not buttondata) then
-		return false
-	end
-
-	inTweakDrag = true	--allows button movement when mouse moves
-	return true	
-end
-
-function widget:TweakMouseMove(x,y,dx,dy,button)
-	if ( inTweakDrag == false ) then
-		return
-	end
-	--todo: no need to recalc every frame, only on screenResize
-	local scaleFactor = ( buttonConfig["currentWidth"] / buttonConfig["defaultWidth"] )
-	local xSpace = buttonConfig["spacingx"] * scaleFactor
-	local ySpace = buttonConfig["spacingy"] * scaleFactor
-	--
-	
-	local xMod = dx / state["screenx"] --delta in screen pixels
-	local xPosMin = ((buttonConfig["posPercRight"] + xMod) * state["screenx"]) - buttonConfig["currentWidth"]
-	local xPosMax = xPosMin + 2 * buttonConfig["currentWidth"] + xSpace
-
-	if ( ( xPosMin >= 0.0 ) and ( xPosMax < state["screenx"] ) ) then
-		buttonConfig["posPercRight"] = buttonConfig["posPercRight"] + xMod
-	end
-	
-	local yMod = dy / state["screeny"]
-	local yPosMin = ((buttonConfig["posPercBottom"] + yMod) * state["screeny"])
-	local yPosMax = ( yPosMin - ( buttonConfig["currentHeight"]  ) * 3 - ySpace * 2)
-
-	if ( ( yPosMin < state["screeny"] ) and (  yPosMax > 0.0 ) ) then
-		buttonConfig["posPercBottom"] = buttonConfig["posPercBottom"] + yMod
-	end
-
-	UpdateButtons()
-end
-
-function widget:TweakMouseRelease(x,y,button)
-	inTweakDrag = false
-end
-
-function widget:TweakDrawScreen()
-	glColor(0.0,0.0,1.0,0.5)                                   
-	glRect(buttonConfig["xPosMin"], buttonConfig["yPosMax"], buttonConfig["xPosMax"], buttonConfig["yPosMin"])
-	glColor(1,1,1,1)
-end
-
-function widget:TweakIsAbove(x,y)
-  if (not GetButton(x, y)) then
-    return false
-  end
-  return true
-end
-
-function widget:TweakGetTooltip(x,y)
-  return 'Click and hold left mouse button\n'..
-         'over a button to drag\n'
-end
-
---END OF TWEAK MODE

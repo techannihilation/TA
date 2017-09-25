@@ -109,54 +109,54 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type BITMAPONLY | BITMAP3;
-		explode fire type BITMAPONLY | BITMAP4;
-		explode fire type BITMAPONLY | BITMAP5;
-		explode body type BITMAPONLY | BITMAP1;
-		explode gun type BITMAPONLY | BITMAP2;
-		explode aim type SMOKE;
-		explode fire type FALL | BITMAP5;
+		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode fire type NOHEATCLOUD | BITMAPONLY | BITMAP4;
+		explode fire type NOHEATCLOUD | BITMAPONLY | BITMAP5;
+		explode body type NOHEATCLOUD | BITMAPONLY | BITMAP1;
+		explode gun type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+		explode aim type NOHEATCLOUD | SMOKE;
+		explode fire type NOHEATCLOUD | FALL | BITMAP5;
 		return (corpsetype);
 	}
 	if( severity <= 40 )
 	{
 		corpsetype = 2;
-		explode aim type SMOKE;
-		explode fire type SMOKE;
-		explode base type BITMAPONLY | BITMAP3;
-		explode fire type SMOKE;
-		explode barrel type SHATTER | BITMAP1;
-		explode gun type BITMAPONLY | BITMAP2;
+		explode aim type NOHEATCLOUD | SMOKE;
+		explode fire type NOHEATCLOUD | SMOKE;
+		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode fire type NOHEATCLOUD | SMOKE;
+		explode barrel type NOHEATCLOUD | SHATTER | BITMAP1;
+		explode gun type NOHEATCLOUD | BITMAPONLY | BITMAP2;
 		return (corpsetype);
 	}
 	if( severity <= 80 )
 	{
 		corpsetype = 3;
-		explode aim type SMOKE;
-		explode fire type SMOKE;
-		explode aim type SMOKE;
-		explode fire type SMOKE;
-		explode base type BITMAP3;
-		explode fire type SMOKE;
-		explode body type BITMAP1;
-		explode barrel type BITMAP1;
-		explode gun type BITMAP2;
+		explode aim type NOHEATCLOUD | SMOKE;
+		explode fire type NOHEATCLOUD | SMOKE;
+		explode aim type NOHEATCLOUD | SMOKE;
+		explode fire type NOHEATCLOUD | SMOKE;
+		explode base type NOHEATCLOUD | BITMAP3;
+		explode fire type NOHEATCLOUD | SMOKE;
+		explode body type NOHEATCLOUD | BITMAP1;
+		explode barrel type NOHEATCLOUD | BITMAP1;
+		explode gun type NOHEATCLOUD | BITMAP2;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode aim type SMOKE;
-	explode fire type SMOKE;
-	explode aim type SMOKE;
-	explode fire type SMOKE;
-	explode aim type SMOKE;
-	explode fire type SMOKE;
-	explode aim type SMOKE;
-	explode fire type SMOKE;
-	explode base type BITMAP3;
-	explode fire type SMOKE;
-	explode barrel type BITMAP1;
-	explode body type BITMAP1;
-	explode gun type BITMAP2;
-	explode gun type SMOKE;
+	explode aim type NOHEATCLOUD | SMOKE;
+	explode fire type NOHEATCLOUD | SMOKE;
+	explode aim type NOHEATCLOUD | SMOKE;
+	explode fire type NOHEATCLOUD | SMOKE;
+	explode aim type NOHEATCLOUD | SMOKE;
+	explode fire type NOHEATCLOUD | SMOKE;
+	explode aim type NOHEATCLOUD | SMOKE;
+	explode fire type NOHEATCLOUD | SMOKE;
+	explode base type NOHEATCLOUD | BITMAP3;
+	explode fire type NOHEATCLOUD | SMOKE;
+	explode barrel type NOHEATCLOUD | BITMAP1;
+	explode body type NOHEATCLOUD | BITMAP1;
+	explode gun type NOHEATCLOUD | BITMAP2;
+	explode gun type NOHEATCLOUD | SMOKE;
 	return (corpsetype);
 }
