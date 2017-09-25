@@ -680,12 +680,22 @@ local morphDefs = {
 	armjeth = {
 		into = 'armaak',
 		time = 30,
-		xp = 0.20,
+		xp = 1.00,
+	},
+	armaak = {
+		into = 'armeak',
+		time = 60,
+		xp = 2.00,
 	},
 	corcrash = {
 		into = 'coraak',
 		time = 30,
-		xp = 0.20,
+		xp = 1.00,
+	},
+	coraak = {
+		into = 'coreak',
+		time = 60,
+		xp = 2.00,
 	},
 	armwar = {
 		into = 'armmav',
