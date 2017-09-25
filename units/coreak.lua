@@ -11,7 +11,7 @@ return {
 		category = "ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Very Heavy Anti-Air Kbot",
+		description = "Very Heavy All-terrain Anti-Air Kbot",
 		explodeas = "BIG_UNITEX",
 		footprintx = 7,
 		footprintz = 7,
