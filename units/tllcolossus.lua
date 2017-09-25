@@ -51,6 +51,7 @@ return {
 		upright = true,
 		customparams = {
 			faction = "TLL",
+			requiretech = "Advanced T4 Unit Research Centre",
 		},
 		featuredefs = {
 			dead = {
