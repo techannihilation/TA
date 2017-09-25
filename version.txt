@@ -11,7 +11,7 @@ Fusion commander for All faction. Produce better resources (+10M / +500E).
 Very Heavy Laser Tower TLL (T1.5 tech) (To Match Arm/Core Countpart)
 Advanced Wind trap
 Engineerer Air T1 TLL (Battle Commander) and T2 TLL (AirLab T2)
-T4 Cons Ship TLL -- Replaces T3 vehicle con from 3 lab
+T4 Cons Ship TLL -- New tech tree : T1>T2 cons >T3 Lab Kbot> T3 Cons > T4 RC > T4 Cons > T5 Lab or apocalytic weapons
 T3 Mex TLL
 T4 Nano TLL
 Energy Cannon for all faction (Add T1.5 plasma cannon back for arm/core)
