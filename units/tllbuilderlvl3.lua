@@ -58,7 +58,7 @@ return {
 			[2] = "tllammaker",
 			[3] = "tllemstor",
 			[4] = "tllmas",
-			[5] = "tllnanotc2",
+			[5] = "tllnanotc3",
 			[6] = "tlldmc",
 			[7] = "tlldb",
 			[8] = "tllgate1",
