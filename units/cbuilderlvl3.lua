@@ -42,7 +42,7 @@ return {
 		maxwaterdepth = 0,
 		metalmake = 3.75,
 		metalstorage = 100,
-		name = "Cruiser,
+		name = "Cruiser",
 		nochasecategory = "SUB VTOL",
 		objectname = "CBuilderLvl3",
 		radardistance = 0,
