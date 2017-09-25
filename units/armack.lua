@@ -80,7 +80,6 @@ return {
 			[22] = "armlab",
 			[23] = "armalab",
 			[24] = "armshltx",
-			[25] = "nebraska",
 		},
 		customparams = {
 			buildpic = "ARMACK.png",
