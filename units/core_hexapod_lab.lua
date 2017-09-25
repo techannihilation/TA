@@ -54,12 +54,12 @@ return {
 		yardmap = "ooccccccccccccccccoo ooccccccccccccccccoo ooccccccccccccccccoo ooccccccccccccccccoo ooccccccccccccccccoo ooccccccccccccccccoo ooccccccccccccccccoo ooccccccccccccccccoo ooccccccccccccccccoo ooccccccccccccccccoo ooccccccccccccccccoo ooccccccccccccccccoo",
 		buildoptions = {
 			[1] = "pinchy",
-			[2] = "corkrog1",
+			[2] = "corkarg1",
 			[3] = "coreak",
 			[4] = "monkeylord",
 			[5] = "corgala",
 			[6] = "fatshrew",
-			[7] = "corkarg1",			
+			[7] = "corkrog1",			
 		},
 		customparams = {
 			buildpic = "CORGANT.png",
