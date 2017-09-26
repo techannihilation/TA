@@ -1,4 +1,17 @@
-﻿2.49.0 -> 3.01.0
+﻿3.01.0 -> 3.02.0
+2017-09-26
+
+Bugs Fix Release:
+
+- Make initial queue widget aware of icon option
+- Add some missing OTA unit icons
+- Fix ecostats background color
+- Add working awards gadget
+- Fix reclaim of tll t3 nano
+- Nerf armweaver
+- Add reclaim to t3 kbot cons
+
+2.49.0 -> 3.01.0
 2017-09-05
 
    
