@@ -11,7 +11,7 @@ return {
 		canguard = true,
 		canmove = true,
 		canpatrol = true,
-		canreclaim = false,
+		canreclaim = true,
 		canstop = 1,
 		category = "ALL CONSTR MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "dead",
