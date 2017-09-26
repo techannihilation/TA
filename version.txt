@@ -1,15 +1,26 @@
-   
+----Description----
+- This Release we have also focused on some well needed love for tll so we bring you 10+ new units for TLL.
+- We added a new commander morph : The Fusion Commander. This commander will balance the gameplay, cause it will reduce the power of Assault Commander.
+- We also separated the Tech level in adding the T4.5 and T5 tech. For all faction, the T4.5 could be unlocked with T4 RC. The T5 Tech is the AeroShip Lab T5 (strongers units in the game). For TLL, the RC is the tlldevelop that can produce the T4 cons Ship.
+- Finally, all T3 Eco structures can be build easily by T3 constructor (From T3 LAB) or Supreme Commander.
+
 ----Improvments----
 Update to latest engine 104
-This Release we have also focused on some well needed love for tll so we bring you 10+ new units for TLL
-First Big change for this release, is fixing units targeting underwater units and well as ground units.
+Fixing units targeting underwater units and well as ground units.
 New t4.5 Units for all factions (Corkrog1, Armbanth1, ExoArm, Tllcolossus, Corgala, armraptor) unlocked with T4 RC
-Hero Lab becomes T5 LAB. And Hero T5 units.
+Supreme commanders can make T3 MEX, Fusion, Storage. Can make T4 LAB and T4 RC.
+Add static radar morph chain and retuxture t1.5 radar
+Delete Shield from T3 extractor
+Defensive range widget add missing units
+Anti range widget add missing unit tllgiant
+Command Vehicle becomes a ARM unit
+Siege Vehicle becomes a CORE Unit
+Morph indicator widget, add new key binding (button 1 + ctrl), select units + press new button combo, it auto reselects morphable units only
 
 -- New units --
-Fusion commander for All faction. Produce better resources (+10M / +500E).
+Fusion commander for All faction. Produce better resources (+10M / +500E). NEW morph system for commander. We have now 2 paths : standar>Eco>Fusion>Star>Supreme or standar>Battle>Assault>Star>Supreme. Cost at 5KM and 100KE to morph into Fusion or Assault.
 Very Heavy Laser Tower TLL (T1.5 tech) (To Match Arm/Core Countpart)
-Advanced Wind trap
+Advanced Wind trap TLL
 Engineerer Air T1 TLL (Battle Commander) and T2 TLL (AirLab T2)
 T4 Cons Ship TLL -- New tech tree : T1>T2 cons >T3 Lab Kbot> T3 Cons > T4 RC > T4 Cons > T5 Lab or apocalytic weapons
 T3 Mex TLL
@@ -18,12 +29,13 @@ Energy Cannon for all faction (Add T1.5 plasma cannon back for arm/core)
 Plamsa Gatling Gun -- TLL T1.5 tech
 Tll Dwarf Shield
 T3 Cons Kbot for all faction. They can build T4 Lab and T3 Mex, Fusion and Storage
-New T4 LAB for all faction
-New T3 AA for Arm / Core Kbot 
-All Faction get Missle Defence System => This units is a static laser tower that shoots down rockets/missile (i won't target nukes/tac nukes). T2 Cons can build it.
+New T4 LAB for all faction (for Arm/Core, remplace T4 last model (corgant2))
+New T4 AA for Arm / Core Kbot 
+Missle Defence System for all fction => This units is a static laser tower that shoots down rockets/missile/starburst (i won't target nukes/tac nukes). T2 Cons can build it.
+Move All Shield Bot from Experimental Nano into T4 LAB.
+XXX Move Hailstorm and Hyperion into T4 LAB.
 
-Add morph tree for TLL
-----------------------
+--- Add morph ---
 Available Morph are
 Morph tllhlt into tllvhlt
 Morph tllshaker into tlloki
@@ -35,16 +47,9 @@ Morph tllpbot into tllartybot
 Morph tllartybot into heavyimpact
 Morph tllbind into tllblind
 Morph tllfireraiser into tllamphibot
-
-NEW morph system for commander. We have now 2 paths : standar>Eco>Fusion>Star>Supreme or standar>Battle>Assault>Star>Supreme
-Supreme commanders can make T3 MEX, Fusion, Storage. Can make T4 LAB and T4 RC.
-Add static radar morph chain and retuxture t1.5 radar
-Delete Shield from T3 extractor
-Defensive range widget add missing units
-Anti range widget add missing unit tllgiant
-Command Vehicle becomes a ARM unit
-Siege Vehicle becomes a CORE Unit
-Morph indicator widget, add new key binding (button 1 + ctrl), select units + press new button combo, it auto reselects morphable units only
+Morph EcoCommander into Fusion Commander
+Morph BattleCommander into Assault Commander
+Morph T2 AA (armaak and coraak) into T4 AA (armeak and coreak)
 
 ----Balance----
 Small Shield balance reducion of buildtime
@@ -59,6 +64,9 @@ Balance Cost from all carrier and decrese HP (need approval from team)
 Reduce explosion for cortron (tactical nuke) and increase energycost by 20%
 Reduce metal cost for all T2 constructor by 30~40% (30% for vehicle and naval, 40% for air, but increase energy for air).
 All AntiNuke have been balanced. 200 metal and 25K E / missile for standar. Increase with Adv Antinuke. Carrier cost have been increased, and produce less energy 350 > 50
+Decrease cost of Valiant, TSAR TLL, tllion, tllgazelle (Cost balanced cause, need to build the T4 RC then the T4 Cons to build them).
+XXX Increase stats and cost for Hailstorm. (20KM => 50KM). Transform unit into rapid long range plasma.
+XXX Decrease for by 20% for all Experimental Nano (cause, they lost shielded bot)
 
 ----Visual----
 Add lups effect for core t3 builder
