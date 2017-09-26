@@ -164,7 +164,7 @@ local pingCpuColors   = {
 	[5] = {r = 1, g = 0.15, b = 0.3}
 }
 
-local currentGameFrame = Spring_GetGameFrame()
+local currentGameFrame = Spring.GetGameFrame()
 --------------------------------------------------------------------------------
 -- Time Variables
 --------------------------------------------------------------------------------
