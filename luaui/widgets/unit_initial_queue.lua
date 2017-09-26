@@ -33,6 +33,7 @@ local borderClashColor = {0.7, 0.3, 0.3, 1.0}
 local borderValidColor = {0.0, 1.0, 0.0, 1.0}
 local borderInvalidColor = {1.0, 0.0, 0.0, 1.0}
 local buildingQueuedAlpha = 0.5
+local oldUnitpicsDir = LUAUI_DIRNAME.."Images/oldunitpics/"
 
 local metalColor = '\255\196\196\255' -- Light blue
 local energyColor = '\255\255\255\128' -- Light yellow
@@ -536,7 +537,13 @@ function widget:DrawScreen()
 			gl.Rect(-borderSize, -borderSize, iconSize + borderSize, iconSize + borderSize)
 
 			gl.Color(1, 1, 1, 1)
-			gl.Texture("#" .. cellRow[c])
+
+			if WG['OtaIcons'] and VFS.FileExists(oldUnitpicsDir..UnitDefs[cellRow[c]].name..'.png') then
+				gl.Texture(oldUnitpicsDir..UnitDefs[cellRow[c]].name..'.png')
+			else
+				gl.Texture('#' .. cellRow[c]) -- Screen.vsx,Screen.vsy
+			end
+
 			gl.TexRect(0, 0, iconSize, iconSize)
 			gl.Texture(false)
 
