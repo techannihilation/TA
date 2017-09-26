@@ -2,8 +2,8 @@ return {
 	ananotower = {
 		acceleration = 0.2,
 		brakerate = 2,
-		buildcostenergy = 250000,
-		buildcostmetal = 12000,
+		buildcostenergy = 198000,
+		buildcostmetal = 9950,
 		builddistance = 1000,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,

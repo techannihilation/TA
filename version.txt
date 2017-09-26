@@ -31,9 +31,9 @@
 -T3 Cons Kbot for all faction. They can build T4 Lab and T3 Mex, Fusion and Storage
 -New T4 LAB for all faction (for Arm/Core, remplace T4 last model (corgant2))
 -New T4 AA for Arm / Core Kbot 
--Missle Defence System for all fction => This units is a static laser tower that shoots down rockets/missile/starburst (i won't target nukes/tac nukes). T2 Cons can build it.
+-Missle Defence System for all faction => This units is a static laser tower that shoots down rockets/missile/starburst (i won't target nukes/tac nukes). T2 Cons can build it.
 -Move All Shield Bot from Experimental Nano into T4 LAB.
--XXX Move Hailstorm and Hyperion into T4 LAB.
+-Move Hailstorm and Hyperion into T4 LAB.
 
 --- Add morph ---
 -Available Morph are
@@ -57,16 +57,16 @@
 -TLLOM => Decrease HP 27K => 25K
 -Balance HLT TLL. Decrease stats to have same than ARM / CORE 
 -Balance Capital mini Gun from Hero (damage / 2) 
--Explosion balance (Crawl Blast, Bantha Nuke, SelfDestroy from Hero, T4...) We will have a Wiki soon on this subject 
+-Explosion balance (Crawl Blast, Bantha Nuke, SelfDestroy from Hero, T4...)
+-Remplace Crawl_blast by craw_blast_SM (SM = Small) explosion when unit death for All big unit T2.5 (if autodestroy = crawl_blast)
 -Delete explosion after death for Troman (T3 Core sniper) 
 -Increase HP for Armsiege 20K => 29K
--Balance Cost from all carrier and decrese HP (need approval from team)
 -Reduce explosion for cortron (tactical nuke) and increase energycost by 20%
 -Reduce metal cost for all T2 constructor by 30~40% (30% for vehicle and naval, 40% for air, but increase energy for air).
 -All AntiNuke have been balanced. 200 metal and 25K E / missile for standar. Increase with Adv Antinuke. Carrier cost have been increased, and produce less energy 350 > 50
 -Decrease cost of Valiant, TSAR TLL, tllion, tllgazelle (Cost balanced cause, need to build the T4 RC then the T4 Cons to build them).
--XXX Increase stats and cost for Hailstorm. (20KM => 50KM). Transform unit into rapid long range plasma.
--XXX Decrease for by 20% for all Experimental Nano (cause, they lost shielded bot)
+-Increase stats and cost for Hailstorm. (20KM => 50KM). Transform unit into rapid long range plasma.
+-Decrease for by 20% for all Experimental Nano (cause, they lost shielded bot)
 
 ----Visual----
 -Add lups effect for core t3 builder

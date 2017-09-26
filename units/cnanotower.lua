@@ -2,8 +2,8 @@ return {
 	cnanotower = {
 		acceleration = 0.2,
 		brakerate = 2,
-		buildcostenergy = 250000,
-		buildcostmetal = 12000,
+		buildcostenergy = 200000,
+		buildcostmetal = 9800,
 		builddistance = 1000,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
