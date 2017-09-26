@@ -1193,7 +1193,7 @@ end
 
 function widget:DrawScreen()
 
-	if Spring_IsGUIHidden() or PlayerIsBehind then
+	if Spring_IsGUIHidden() then
 		return
 	end
 	
