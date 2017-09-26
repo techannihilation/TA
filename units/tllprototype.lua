@@ -53,8 +53,8 @@ return {
 		yardmap = "ooccccccccccoo ooccccccccccoo ooccccccccccoo ooccccccccccoo ooccccccccccoo ooccccccccccoo ooccccccccccoo ooccccccccccoo ooccccccccccoo ooccccccccccoo ooccccccccccoo ooccccccccccoo ooccccccccccoo ooccccccccccoo ",
 		buildoptions = {
 			[1] = "tlldoc",
-			[2] = "tllhailstorm",
-			[3] = "irritator",
+			[2] = "irritator",
+			[3] = "tllhailstorm",
 			[4] = "hyperion",
 			[5] = "tllcolossus",
 		},
