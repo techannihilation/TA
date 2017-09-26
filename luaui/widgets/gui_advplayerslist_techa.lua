@@ -1222,6 +1222,7 @@ function widget:DrawScreen()
 	
 	-- draws the background
 	if Background then
+		gl_Color(WG["background_opacity_custom"])
 		gl_CallList(Background)
 	else
 		CreateBackground()
@@ -1355,7 +1356,7 @@ function CreateBackground()
 	end
 	
 	Background = gl_CreateList(function()
-		gl_Color(WG["background_opacity_custom"])
+		
 		
 		RectRound(BLcornerX,BLcornerY,TRcornerX,TRcornerY,6)
 		--DrawRect(BLcornerX,BLcornerY,TRcornerX,TRcornerY)
