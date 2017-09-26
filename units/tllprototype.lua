@@ -54,7 +54,9 @@ return {
 		buildoptions = {
 			[1] = "tlldoc",
 			[2] = "irritator",
-			[3] = "tllcolossus",
+			[3] = "tllhailstorm",
+			[4] = "hyperion",
+			[5] = "tllcolossus",
 		},
 		customparams = {
 			buildpic = "tllprototype.png",
