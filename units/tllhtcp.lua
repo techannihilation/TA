@@ -54,8 +54,6 @@ return {
 			[3] = "heavyimpact",
 			[4] = "tllhtml",
 			[5] = "tllgrim",
-			[6] = "tllhailstorm",
-			[7] = "hyperion",
 		},
 		customparams = {
 			faction = "TLL",
