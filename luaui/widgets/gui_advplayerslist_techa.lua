@@ -1221,8 +1221,8 @@ function widget:DrawScreen()
 	end
 	
 	-- draws the background
+	gl_Color(WG["background_opacity_custom"])
 	if Background then
-		gl_Color(WG["background_opacity_custom"])
 		gl_CallList(Background)
 	else
 		CreateBackground()
