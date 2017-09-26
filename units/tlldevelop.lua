@@ -1,11 +1,11 @@
 return {
 	tlldevelop = {
 		activatewhenbuilt = true,
-		buildcostenergy = 1570000,
-		buildcostmetal = 81640,
+		buildcostenergy = 1070000,
+		buildcostmetal = 90640,
 		builder = true,
 		buildpic = "tlldevelop.dds",
-		buildtime = 240000,
+		buildtime = 1500000,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
