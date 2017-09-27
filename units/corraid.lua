@@ -135,7 +135,7 @@ return {
 				name = "LightCannon",
 				nogap = 1,
 				noselfdamage = true,
-				range = 360,
+				range = 350,
 				reloadtime = 1.2,
 				rgbcolor = "0.87 0.63 0",
 				separation = 0.45,
