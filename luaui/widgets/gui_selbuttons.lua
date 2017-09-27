@@ -72,6 +72,7 @@ local spSelectUnitArray        = Spring.SelectUnitArray
 local spSelectUnitMap          = Spring.SelectUnitMap
 local spSendCommands           = Spring.SendCommands
 
+local oldUnitpicsDir = LUAUI_DIRNAME.."Images/oldunitpics/"
 
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
@@ -272,9 +273,9 @@ function DrawUnitDefModel(unitDefID, iconPos, count)
   local ud = UnitDefs[unitDefID] 
 
   -- draw background quad
---  glColor(0.3, 0.3, 0.3, 1.0)
+  glColor(0.3, 0.3, 0.3, 1.0)
 --  glTexture('#'..unitDefID)
-  glTexture(false)
+  --glTexture(false)
   SetupBackgroundColor(ud)
   glRect(xmin + 1, ymin + 1, xmax, ymax)
 
@@ -344,7 +345,13 @@ function DrawUnitDefTexture(unitDefID, iconPos, count)
   local ud = UnitDefs[unitDefID] 
 
   glColor(1, 1, 1)
-  glTexture('#' .. unitDefID)
+
+  if WG['OtaIcons'] and VFS.FileExists(oldUnitpicsDir..UnitDefs[unitDefID].name..'.png') then
+    gl.Texture(oldUnitpicsDir..UnitDefs[unitDefID].name..'.png')
+  else
+    gl.Texture('#' .. unitDefID)
+  end
+
   glTexRect(xmin, ymin, xmax, ymax)
   glTexture(false)
 
