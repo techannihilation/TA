@@ -10,12 +10,6 @@ return {
 }
 end
 
-function widget:Initialize()
-	if Spring.GetConfigInt("Vsync",1) == 0 then
-		widgetHandler:RemoveWidget()
-	end
-end
-
 --SAVE / LOAD CONFIG FILE
 function widget:GetConfigData()
 	local data = {}
@@ -25,7 +19,7 @@ end
 
 function widget:SetConfigData(data) 
 	if (data ~= nil) then
-		if ( data["vsync"] ~= nil ) then
+		if ( data["vsync"] == nil ) then
 			--Nothing todo
 		else
 			if Spring.GetConfigInt("Vsync",1) == 1 then
