@@ -2,7 +2,7 @@ return {
 	corraid1 = {
 		acceleration = 0.0243,
 		brakerate = 0.076,
-		buildcostenergy = 2750,
+		buildcostenergy = 3000,
 		buildcostmetal = 350,
 		builder = false,
 		buildpic = "corraid1.dds",
@@ -132,7 +132,7 @@ return {
 				name = "LightCannon",
 				nogap = 1,
 				noselfdamage = true,
-				range = 350,
+				range = 370,
 				reloadtime = 1,
 				rgbcolor = "0.82 0.56 0",
 				separation = 0.45,
