@@ -159,7 +159,7 @@ return {
 				model = "missile",
 				name = "Missiles",
 				noselfdamage = true,
-				range = 950,
+				range = 1000,
 				reloadtime = 0.20,
 				rgbcolor = "1.000 0.000 0.000",
 				smoketrail = true,
