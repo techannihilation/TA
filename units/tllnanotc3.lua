@@ -42,7 +42,7 @@ return {
 		radaremitheight = 37,
 		reclaimspeed = 463.26328,
 		repairspeed = 636.21655,
-		script = "tllnanotc.cob",
+		script = "cornanotc.cob",
 		seismicsignature = 0,
 		selfdestructas = "NANOBOOM3A",
 		sightdistance = 380,

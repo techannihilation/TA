@@ -1,5 +1,19 @@
-﻿3.01.0 -> 3.02.0
-2017-09-26
+﻿3.02.0 -> 3.03.1
+2017-09-28
+
+
+
+Bugs Fix Release:
+- Fix tll level3 nano tower error
+- Fix apl
+- Vsync is allways off for new players
+- Balance tllairman
+- Fix fusion commander costs
+- Balance mortor cannons area damage
+
+
+3.01.0 -> 3.02.0
+2017-09-2
 
 Bugs Fix Release:
 

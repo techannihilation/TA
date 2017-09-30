@@ -2898,7 +2898,7 @@ local lastTakeMsg = -120
 
 function widget:Update(delta) --handles takes & related messages
 
-	if Spring_IsGUIHidden() or PlayerIsBehind then
+	if Spring_IsGUIHidden() then
 		return
 	end
 
