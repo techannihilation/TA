@@ -59,7 +59,7 @@ return {
 			[4] = "tllemstor",
 			[5] = "tllnanotc2",
 			[6] = "tllprototype",
-			[7] = "tlldevelop",			
+			[7] = "tlldevelop",
 			[8] = "tllgate1",
 			[9] = "tlldmc",
 			[10] = "tlldb",

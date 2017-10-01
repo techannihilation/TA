@@ -13,7 +13,7 @@ return {
 		buildinggrounddecaltype = "coruwmex_aoplane.dds",
 		buildpic = "coruwmex.dds",
 		buildtime = 1875,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER SURFACE",
 		corpse = "dead",
 		description = "Extracts Metal",
 		energyuse = 2,

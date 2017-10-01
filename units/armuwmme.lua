@@ -13,7 +13,7 @@ return {
 		buildinggrounddecaltype = "armuwmme_aoplane.dds",
 		buildpic = "armuwmme.dds",
 		buildtime = 35000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER SURFACE",
 		corpse = "dead",
 		description = "Advanced Metal Extractor / Storage",
 		energyuse = 25,

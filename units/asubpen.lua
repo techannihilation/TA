@@ -13,7 +13,7 @@ return {
 		buildtime = 11000,
 		canmove = true,
 		canpatrol = true,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON PLANT UNDERWATER",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON PLANT UNDERWATER SURFACE",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "118 40 119",
 		collisionvolumetype = "Box",

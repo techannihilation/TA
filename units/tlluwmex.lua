@@ -7,7 +7,7 @@ return {
 		builder = false,
 		buildpic = "tlluwmex.dds",
 		buildtime = 1875,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER SURFACE",
 		corpse = "dead",
 		description = "Extracts Metal",
 		downloadable = 1,

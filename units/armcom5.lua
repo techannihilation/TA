@@ -99,8 +99,6 @@ return {
 			[17] = "armdl",
 			[18] = "packo",
 			[19] = "abuilderlvl2",
-			[20] = "armjumpdrive",
-			[21] = "armtide",
 			[20] = "armuwms",
 			[21] = "armuwes",
 			[22] = "armuwmex",

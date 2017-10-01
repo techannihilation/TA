@@ -14,7 +14,7 @@ return {
 		buildpic = "armason.dds",
 		buildtime = 6152,
 		canattack = false,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER SURFACE",
 		corpse = "dead",
 		damagemodifier = 0.46,
 		description = "Extended Sonar",

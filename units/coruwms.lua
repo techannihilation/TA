@@ -12,7 +12,7 @@ return {
 		buildinggrounddecaltype = "coruwms_aoplane.dds",
 		buildpic = "coruwms.dds",
 		buildtime = 3874,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER SURFACE",
 		corpse = "dead",
 		description = "Increases Metal Storage (3000)",
 		energyuse = 0,

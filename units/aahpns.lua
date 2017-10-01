@@ -8,7 +8,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "LEVEL1 ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON PLANT UNDERWATER",
+		category = "LEVEL1 ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON PLANT UNDERWATER SURFACE",
 		corpse = "dead",
 		description = "Builds T2 Hovercrafts",
 		downloadable = 1,

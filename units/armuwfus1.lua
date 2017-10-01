@@ -9,7 +9,7 @@ return {
 		builder = false,
 		buildpic = "armuwfus1.dds",
 		buildtime = 250000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER SURFACE",
 		description = "Produces Highly Energy / Storage",
 		energymake = 5000,
 		energystorage = 40000,

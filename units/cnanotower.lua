@@ -19,7 +19,7 @@ return {
 		canreclamate = 0,
 		canstop = 1,
 		cantbetransported = true,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER SURFACE",
 		corpse = "dead",
 		defaultmissiontype = "patrol",
 		description = "Experimental Nanotower",

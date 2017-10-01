@@ -13,7 +13,7 @@ return {
 		buildinggrounddecaltype = "armuwmmm_aoplane.dds",
 		buildpic = "armuwmmm.dds",
 		buildtime = 40000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER SURFACE",
 		corpse = "dead",
 		damagemodifier = 0.3,
 		description = "Converts upto 1000 Energy to Metal",

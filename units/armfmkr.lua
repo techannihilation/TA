@@ -9,7 +9,7 @@ return {
 		builder = false,
 		buildpic = "armfmkr.dds",
 		buildtime = 2000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER SURFACE",
 		description = "Converts upto 100 Energy to Metal",
 		explodeas = "ARMESTOR_BUILDINGEX",
 		footprintx = 3,
