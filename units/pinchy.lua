@@ -3,7 +3,7 @@ return {
 		acceleration = 0.12,
 		brakerate = 0.75,
 		buildcostenergy = 250005,
-		buildcostmetal = 11905,
+		buildcostmetal = 14905,
 		builddistance = 300,
 		builder = true,
 		buildpic = "pinchy.dds",
