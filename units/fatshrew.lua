@@ -66,6 +66,7 @@ return {
 		zbuffer = 1,
 		customparams = {
 			faction = "CORE",
+			requiretech = "Advanced T4 Unit Research Centre",
 		},
 		featuredefs = {
 			fatshrew_dead = {
