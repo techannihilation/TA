@@ -16,7 +16,7 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Mobile Energy Weapon",
-		explodeas = "CRAWL_BLASTSM",
+		explodeas = "CRAWL_BLASTSML",
 		firestandorders = 1,
 		footprintx = 4,
 		footprintz = 4,
