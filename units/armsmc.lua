@@ -3,7 +3,7 @@ return {
 		acceleration = 0.12,
 		brakerate = 0.75,
 		buildcostenergy = 284055,
-		buildcostmetal = 12345,
+		buildcostmetal = 15345,
 		builddistance = 300,
 		builder = true,
 		buildpic = "armsmc.dds",
