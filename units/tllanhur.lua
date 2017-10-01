@@ -20,7 +20,7 @@ return {
 		decloakonfire = true,
 		decloakspherical = true,
 		defaultmissiontype = "VTOL_standby",
-		description = "Heavy Torpedo Bomber",
+		description = "Heavy EMP Bomber",
 		explodeas = "BIG_UNITEX",
 		footprintx = 3,
 		footprintz = 3,
