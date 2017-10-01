@@ -3,7 +3,7 @@ return {
 		acceleration = 0.12,
 		brakerate = 0.75,
 		buildcostenergy = 199935,
-		buildcostmetal = 16600,
+		buildcostmetal = 19600,
 		builddistance = 300,
 		builder = true,
 		buildpic = "tlldoc.dds",
