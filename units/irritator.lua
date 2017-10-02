@@ -262,9 +262,9 @@ return {
 			},
 			[2] = {
 				def = "IRRITATOR_CANNON",
-				onlytargetcategory = "SURFACE",
 				maindir = "0 0 1",
 				maxangledif = 120,
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "IRRITATOR_ROCKET",

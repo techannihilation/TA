@@ -10,7 +10,7 @@ return {
 		buildtime = 5135,
 		canattack = true,
 		canstop = 1,
-		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON UNDERWATER",
+		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON UNDERWATER SURFACE",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Floating SAM Tower",
