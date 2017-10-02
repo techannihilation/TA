@@ -49,13 +49,11 @@ return {
 		workertime = 980,
 		yardmap = "ooccccccoo ooccccccoo ooccccccoo cccccccccc cccccccccc cccccccccc ooccccccoo ooccccccoo ooccccccoo ooccccccoo ",
 		buildoptions = {
-			[1] = "tllbuilderlvl3",
+			[1] = "tlldoc",
 			[2] = "tllblind",
 			[3] = "heavyimpact",
 			[4] = "tllhtml",
 			[5] = "tllgrim",
-			[6] = "tllhailstorm",
-			[7] = "hyperion",
 		},
 		customparams = {
 			faction = "TLL",

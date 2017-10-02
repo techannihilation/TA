@@ -11,7 +11,7 @@ return {
 		buildinggrounddecaltype = "tllasonar_aoplane.dds",
 		buildpic = "tllasonar.dds",
 		buildtime = 6812,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER SURFACE",
 		corpse = "dead",
 		description = "Locates Water Units",
 		energymake = 21,

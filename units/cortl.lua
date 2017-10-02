@@ -11,7 +11,7 @@ return {
 		buildtime = 4233,
 		canattack = true,
 		canstop = 1,
-		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON UNDERWATER",
+		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON UNDERWATER SURFACE",
 		corpse = "dead",
 		description = "Torpedo Launcher",
 		explodeas = "MEDIUM_BUILDINGEX",

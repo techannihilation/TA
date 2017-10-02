@@ -8,7 +8,7 @@ return {
 		builder = true,
 		buildpic = "tllaspns.dds",
 		buildtime = 12500,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER SURFACE",
 		corpse = "dead",
 		description = "Automatically Repairs Aircraft - Naval Series",
 		energymake = 10,

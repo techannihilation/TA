@@ -56,6 +56,7 @@ return {
 		upright = true,
 		customparams = {
 			faction = "ARM",
+			requiretech = "Advanced T4 Unit Research Centre",
 		},
 		featuredefs = {
 			heap = {

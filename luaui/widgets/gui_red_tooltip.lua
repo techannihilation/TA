@@ -312,7 +312,7 @@ function widget:GetConfigData() --save config
 		local unscale = CanvasY/vsy --needed due to autoresize, stores unresized variables
 		if (tooltip.background.px * unscale > -50) or (tooltip.background.py * unscale > -50) then
 			Config.tooltip.px = tooltip.background.px * unscale
-			Config.tooltipn.py = tooltip.background.py * unscale
+			Config.tooltip.py = tooltip.background.py * unscale
 			return {Config=Config}
 		else
 			Config.tooltip.px = -50

@@ -1,8 +1,8 @@
 return {
 	tllion = {
 		buildangle = 1700,
-		buildcostenergy = 4700000,
-		buildcostmetal = 322000,
+		buildcostenergy = 720000,
+		buildcostmetal = 192000,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 19,
@@ -54,7 +54,7 @@ return {
 				featuredead = "heap",
 				footprintx = 5,
 				footprintz = 5,
-				metal = 241500,
+				metal = 121500,
 				object = "tllion_dead",
 				reclaimable = true,
 			},
@@ -64,7 +64,7 @@ return {
 				description = "Command Center Debris",
 				footprintx = 5,
 				footprintz = 5,
-				metal = 128800,
+				metal = 78800,
 				object = "5x5d",
 				reclaimable = true,
 			},

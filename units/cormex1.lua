@@ -1,4 +1,4 @@
- return {
+return {
 	cormex1 = {
 		acceleration = 0,
 		activatewhenbuilt = true,

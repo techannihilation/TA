@@ -164,7 +164,7 @@ local pingCpuColors   = {
 	[5] = {r = 1, g = 0.15, b = 0.3}
 }
 
-local currentGameFrame = Spring_GetGameFrame()
+local currentGameFrame = Spring.GetGameFrame()
 --------------------------------------------------------------------------------
 -- Time Variables
 --------------------------------------------------------------------------------
@@ -1193,7 +1193,7 @@ end
 
 function widget:DrawScreen()
 
-	if Spring_IsGUIHidden() or PlayerIsBehind then
+	if Spring_IsGUIHidden() then
 		return
 	end
 	
@@ -1221,6 +1221,7 @@ function widget:DrawScreen()
 	end
 	
 	-- draws the background
+	gl_Color(WG["background_opacity_custom"])
 	if Background then
 		gl_CallList(Background)
 	else
@@ -1355,7 +1356,7 @@ function CreateBackground()
 	end
 	
 	Background = gl_CreateList(function()
-		gl_Color(WG["background_opacity_custom"])
+		
 		
 		RectRound(BLcornerX,BLcornerY,TRcornerX,TRcornerY,6)
 		--DrawRect(BLcornerX,BLcornerY,TRcornerX,TRcornerY)
@@ -2897,7 +2898,7 @@ local lastTakeMsg = -120
 
 function widget:Update(delta) --handles takes & related messages
 
-	if Spring_IsGUIHidden() or PlayerIsBehind then
+	if Spring_IsGUIHidden() then
 		return
 	end
 

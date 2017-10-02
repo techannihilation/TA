@@ -1,4 +1,42 @@
-﻿2.49 -> 2.50
+﻿3.03.1 -> 3.03.2
+2017-10-01
+
+Bugs Fix Release:
+- Techlock FatShrew
+- Add moho extractor for cor fusion commander
+- Balance T3 Cons Metal Cost #553
+- Fix Change description for TLL EMP Bomber
+- Balance T4 AA
+- Fix some units not getting targeted
+- Fix Assault commander missing build options
+
+3.02.0 -> 3.03.1
+2017-09-28
+
+
+Bugs Fix Release:
+- Fix tll level3 nano tower error
+- Fix apl
+- Vsync is allways off for new players
+- Balance tllairman
+- Fix fusion commander costs
+- Balance mortor cannons area damage
+
+
+3.01.0 -> 3.02.0
+2017-09-2
+
+Bugs Fix Release:
+
+- Make initial queue widget aware of icon option
+- Add some missing OTA unit icons
+- Fix ecostats background color
+- Add working awards gadget
+- Fix reclaim of tll t3 nano
+- Nerf armweaver
+- Add reclaim to t3 kbot cons
+
+2.49.0 -> 3.01.0
 2017-09-05
 
    
@@ -7,9 +45,12 @@ Improvments:
 
 - Raw Move added
 
-- First Big change for this release, is fixing units targeting underwater units and well as ground units.
+- We added a new commander morph : The Fusion Commander. Its a level up from eco commander.
 
-- New t4.5 Units for all factions
+- First Big change for this release, is fixing units targeting underwater units and well as ground units.
+- We also separated the Tech level in adding the T4.5 and T5 tech. For all faction, the T4.5 could be unlocked with T4    RC. The T5 Tech is the AeroShip Lab T5 (strongers units in the game). For TLL, the RC is the tlldevelop that can produce the T4 cons Ship.
+ 
+ - Finally, all T3 Eco structures can be build easily by T3 constructor (From T3 LAB) or Supreme Commander.ew t4.5 Units for all factions
 
 - This Release we have also focused on some well needed love for tll so we bring you 10+ new units for TLL
 
@@ -24,13 +65,19 @@ New units for TLL:
 - Plamsa Gatling Gun -- T1.5 tech
 - Tll Dwarf Shield 
 - Tll gunship -- T1.5 tech
+- T4 Cons Ship TLL -- New tech tree : T1>T2 cons >T3 Lab Kbot> T3 Cons > T4 RC > T4 Cons > T5 Lab or apocalytic weapons
+
 
 New units for ARM:
 - Blastwing -- Air EMP Kamakazi unit
 - Energy Cannon -- Area damage -- T1.5 tech 
+- New T4 AA Kbot 
+- T4 Lab
 
 New units for CORE:
 - Surveyor -- Air Strong Laser Gunship
+- New T4 AA Kbot 
+- T4 Lab
 
 Add morph tree for TLL:
 - Available Morph are
@@ -45,8 +92,10 @@ Add morph tree for TLL:
 - Morph tllbind into tllblind
 - Morph tllfireraiser into tllamphibot
 
+
 All Faction get Missle Defence System:
 - This units is a static laser tower that intercepts rockets/missile (i won't target nukes/tac nukes)
+
 
 New Widgets:
 - Command info widget
@@ -54,12 +103,22 @@ New Widgets:
 - Changelog widget
 - Options widget (new option for techa - OTA icons option, UI opacity option)
 
+
 Widget Improvements:
 - Mex snap now works before game start
 - Performance improvement for anti range widget
+- Anti range widget add missing unit tllgiant
 - Performance improvement for wind display widget
 
+
 Other Improvments:
+- Supreme commanders can make T3 MEX, Fusion, Storage. Can make T4 LAB and T4 RC.
+- Add static radar morph chain and retuxture t1.5 radar
+- Delete Shield from T3 extractor
+- Defensive range widget add missing units
+- Command Vehicle becomes a ARM unit
+- Siege Vehicle becomes a CORE Unit
+- New t4.5 Units for all factions (Corkrog1, Armbanth1, ExoArm, Tllcolossus, Corgala, armraptor) unlocked with T4 RC
 - Add static radar morph chain and re-texture t1.5 radar
 - Delete Shield from T3 extractor
 - Defensive range widget add missing units
@@ -67,6 +126,23 @@ Other Improvments:
 - Command Vehicle becomes a ARM unit
 - Siege Vehicle becomes a CORE Unit
 - Morph indicator widget, add new key binding (button 1 + ctrl), select units + press new button combo, it auto reselects morphable units only
+
+
+Morph:
+- Available Morph are
+- Morph tllhlt into tllvhlt
+- Morph tllshaker into tlloki
+- Morph tlloki into tllmlrpc
+- Morph tllariman into tllcoyote
+- Morph tllconvincer into tllacid
+- Morph tllroaster into tlltelsatnk
+- Morph tllpbot into tllartybot
+- Morph tllartybot into heavyimpact
+- Morph tllbind into tllblind
+- Morph tllfireraiser into tllamphibot
+- Morph EcoCommander into Fusion Commander
+- Morph BattleCommander into Assault Commander
+- Morph T2 AA (armaak and coraak) into T4 AA (armeak and coreak)
 
 
 Balance:

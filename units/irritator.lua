@@ -13,7 +13,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		category = "ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE UNDERWATER",
 		corpse = "irritator_dead",
 		defaultmissiontype = "Standby",
 		description = "Experimental Shield Unit",
@@ -262,9 +262,9 @@ return {
 			},
 			[2] = {
 				def = "IRRITATOR_CANNON",
-				onlytargetcategory = "SURFACE",
 				maindir = "0 0 1",
 				maxangledif = 120,
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "IRRITATOR_ROCKET",

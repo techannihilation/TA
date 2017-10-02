@@ -14,7 +14,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		category = "ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -6 0",
 		collisionvolumescales = "263 132 263",
 		collisionvolumetype = "CylY",
@@ -66,6 +66,7 @@ return {
 		zbuffer = 1,
 		customparams = {
 			faction = "CORE",
+			requiretech = "Advanced T4 Unit Research Centre",
 		},
 		featuredefs = {
 			fatshrew_dead = {

@@ -535,7 +535,7 @@ local function DrawBackground(posY, allyID)
 	local y1 = widgetPosY - posY + widgetHeight
 	local y2 = widgetPosY - posY + tH + widgetHeight
 	local area = {widgetPosX, y1, widgetPosX+widgetWidth, y2 }
-
+	glColor(WG["background_opacity_custom"])
 	RectRound(widgetPosX,y1, widgetPosX + widgetWidth, y2, 5*widgetScale)
 	glColor(1,1,1,0.025)
 	RectRound(widgetPosX+borderPadding,y1+borderPadding, widgetPosX + widgetWidth-borderPadding, y2-borderPadding, borderPadding*1.5)
@@ -1442,7 +1442,6 @@ function widget:DrawScreen()
 	if not sideImageList then makeSideImageList() end
 	
 	gl.PushMatrix()
-	glColor(WG["background_opacity_custom"])
 	gl.CallList(drawList)
 	gl.CallList(sideImageList)
 	gl.PopMatrix()
