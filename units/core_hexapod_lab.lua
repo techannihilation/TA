@@ -59,7 +59,7 @@ return {
 			[4] = "monkeylord",
 			[5] = "corgala",
 			[6] = "fatshrew",
-			[7] = "corkrog1",
+			[7] = "corkrog1",			
 		},
 		customparams = {
 			buildpic = "CORGANT.png",

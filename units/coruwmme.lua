@@ -13,7 +13,7 @@ return {
 		buildinggrounddecaltype = "coruwmme_aoplane.dds",
 		buildpic = "coruwmme.dds",
 		buildtime = 35000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER",
 		corpse = "dead",
 		damagemodifier = 0.35,
 		description = "Advanced Metal Extractor / Storage",

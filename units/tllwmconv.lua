@@ -7,7 +7,7 @@ return {
 		builder = false,
 		buildpic = "tllwmconv.dds",
 		buildtime = 2200,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER",
 		corpse = "dead",
 		description = "Converts upto 100 Energy into Metal",
 		explodeas = "SMALL_BUILDINGEX",

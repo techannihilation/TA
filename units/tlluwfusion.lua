@@ -7,7 +7,7 @@ return {
 		builder = false,
 		buildpic = "tlluwfusion.dds",
 		buildtime = 90000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER",
 		corpse = "dead",
 		description = "Produces Metal and Energy/ Storage",
 		downloadable = 1,

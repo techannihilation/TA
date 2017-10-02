@@ -9,7 +9,7 @@ return {
 		builder = false,
 		buildpic = "corfmkr.dds",
 		buildtime = 2400,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER",
 		description = "Converts upto 128 Energy to Metal",
 		explodeas = "ARMESTOR_BUILDINGEX",
 		footprintx = 3,

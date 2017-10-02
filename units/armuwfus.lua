@@ -13,7 +13,7 @@ return {
 		buildinggrounddecaltype = "armuwfus_aoplane.dds",
 		buildpic = "armuwfus.dds",
 		buildtime = 90000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER",
 		corpse = "dead",
 		description = "Produces Energy / Storage",
 		energymake = 1250,

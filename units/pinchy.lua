@@ -67,7 +67,7 @@ return {
 			[12] = "corsilo1",
 			[13] = "corint1",
 			[14] = "corbuzz2",
-			[15] = "corboucher",
+			[15] = "corboucher",			
 		},
 		customparams = {
 			buildpic = "CORFAST.png",

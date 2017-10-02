@@ -11,7 +11,7 @@ return {
 		buildinggrounddecaltype = "crnns_aoplane.dds",
 		buildpic = "crnns.dds",
 		buildtime = 360000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER SURFACE",
+		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER",
 		damagemodifier = 0.9,
 		description = "Produces Energy / Storage",
 		energymake = 5120,
