@@ -3,7 +3,7 @@ return {
 		acceleration = 0.1,
 		autoheal = 125,
 		brakerate = 0.45,
-		buildcostenergy = 190200,
+		buildcostenergy = 184200,
 		buildcostmetal = 11300,
 		builder = false,
 		buildpic = "cordem.dds",
