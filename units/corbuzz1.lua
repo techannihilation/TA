@@ -22,7 +22,7 @@ return {
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
-		description = "T3 Rapid-Fire Long-Range Plasma Cannon",
+		description = "Ultimate Rapid-Fire Long-Range Plasma Cannon",
 		explodeas = "BANTHA_DEATH",
 		firestandorders = 3,
 		footprintx = 16,
