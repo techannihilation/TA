@@ -1497,6 +1497,9 @@ end
 
 
 function widget:Initialize()
+    if not WG["background_opacity_custom"] then
+        WG["background_opacity_custom"] = {0,0,0,0.5}
+    end
 	Spring.SendCommands("resbar 0")
 	if Spring.GetGameFrame() > 0 then
 		countComs()
