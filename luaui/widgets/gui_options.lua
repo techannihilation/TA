@@ -1216,6 +1216,9 @@ end
 
 
 function widget:Initialize()
+    if not WG["background_opacity_custom"] then
+        WG["background_opacity_custom"] = {0,0,0,0.5}
+    end
 
 	WG['options'] = {}
 	WG['options'].toggle = function(state)
