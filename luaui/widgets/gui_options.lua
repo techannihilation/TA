@@ -1308,7 +1308,7 @@ function widget:Initialize()
 		{id="disticon", group="ui", name="Unit icon distance", type="slider", min=0, max=800, step=50, value=tonumber(Spring.GetConfigInt("UnitIconDist",1) or 800)},
 		{id="teamcolors", group="ui", widget="Player Color Palette", name="Team colors based on a palette", type="bool", value=widgetHandler.orderList["Player Color Palette"] ~= nil and (widgetHandler.orderList["Player Color Palette"] > 0), description='Replaces lobby team colors for a color palette based one\n\nNOTE: reloads all widgets because these need to update their teamcolors'},
 
-		{id="uibgcolor", group="ui", name="UI background opacity", type="slider", min=0.40, max=1, step=0.001, value=WG["background_opacity_custom"][4] or 0.69, description='Adjust Darkness of UI background'},
+		{id="uibgcolor", group="ui", name="UI background opacity", type="slider", min=0.40, max=1, step=0.001, value=(WG["background_opacity_custom"] and WG["background_opacity_custom"][4]) or 0.69, description='Adjust Darkness of UI background'},
 
 		--{id="fancyselunits", group="gfx", widget="Fancy Selected Units", name="Fancy Selected Units", type="bool", value=widgetHandler.orderList["Fancy Selected Units"] ~= nil and (widgetHandler.orderList["Fancy Selected Units"] > 0), description=''},
 
