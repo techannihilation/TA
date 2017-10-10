@@ -76,7 +76,6 @@ return {
 			[19] = "corca",
 			[20] = "corhurc",
 			[21] = "corvamp",
-			[22] = "coraca",
 		},
 		customparams = {
 			faction = "CORE",
