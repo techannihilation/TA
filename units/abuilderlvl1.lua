@@ -70,7 +70,6 @@ return {
 			[19] = "armca",
 			[20] = "armpnix",
 			[21] = "armhawk",
-			[22] = "armaca",
 		},
 		customparams = {
 			faction = "ARM",
