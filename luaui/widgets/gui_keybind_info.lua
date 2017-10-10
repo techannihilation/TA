@@ -305,6 +305,9 @@ function mouseEvent(x, y, button, release)
 end
 
 function widget:Initialize()
+    if not WG["background_opacity_custom"] then
+        WG["background_opacity_custom"] = {0,0,0,0.5}
+    end
 
 	WG['keybinds'] = {}
 	WG['keybinds'].toggle = function(state)
