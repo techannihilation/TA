@@ -88,7 +88,6 @@ return {
 			[22] = "corvp",
 			[23] = "coravp",
 			[24] = "corevp",
-			[25] = "corboucher",
 		},
 		customparams = {
 			buildpic = "CORACV.png",

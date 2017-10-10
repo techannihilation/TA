@@ -46,7 +46,6 @@ return {
 			buildpic = "tlldmc.png",
 			canareaattack = 1,
 			faction = "TLL",
-			requiretech = "T3 Factory",
 		},
 		featuredefs = {
 			dead = {
