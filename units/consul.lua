@@ -80,6 +80,7 @@ return {
 			[15] = "packo",
 			[16] = "armflak",
 			[17] = "mercury",
+			[18] = "armmds",
 			[18] = "armdl",
 			[19] = "armcv",
 			[20] = "armlatnk",
