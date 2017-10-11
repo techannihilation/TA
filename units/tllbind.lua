@@ -2,8 +2,8 @@ return {
 	tllbind = {
 		acceleration = 0.06,
 		brakerate = 0.4,
-		buildcostenergy = 16000,
-		buildcostmetal = 2950,
+		buildcostenergy = 19500,
+		buildcostmetal = 2850,
 		builder = false,
 		buildpic = "tllbind.dds",
 		buildtime = 50000,
