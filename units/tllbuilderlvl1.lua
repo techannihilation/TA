@@ -72,7 +72,7 @@ return {
 			[15] = "tllshoretorp",
 			[16] = "tlladvfight",
 			[17] = "tllabomber",
-			[187] = "tllca",
+			[18] = "tllca",
 		},
 		customparams = {
 			faction = "TLL",
