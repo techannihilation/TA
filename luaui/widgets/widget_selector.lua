@@ -92,7 +92,9 @@ local scrollbargrabpos = 0.0
 
 local show = false
 local pagestepped = false
+local showApiWidgets = false
 
+local apiWidgets = "BG color"
 
 
 local buttons = { --see MouseRelease for which functions are called by which buttons
@@ -278,14 +280,27 @@ local function UpdateList()
 
   local myName = widget:GetInfo().name
   maxWidth = 0
+  local uncount = 1 
   widgetsList = {}
   for name,data in pairs(widgetHandler.knownWidgets) do
     if (name ~= myName) then
-      table.insert(fullWidgetsList, { name, data })
-      -- look for the maxWidth
-      local width = fontSize * gl.GetTextWidth(name)
-      if (width > maxWidth) then
-        maxWidth = width
+      if apiWidgets == name and showApiWidgets == true then
+        table.insert(fullWidgetsList, { name, data })
+        uncount = 0
+        -- look for the maxWidth
+        local width = fontSize * gl.GetTextWidth(name)
+
+        if (width > maxWidth) then
+          maxWidth = width
+        end
+      elseif apiWidgets ~= name then
+        table.insert(fullWidgetsList, { name, data })
+        -- look for the maxWidth
+        local width = fontSize * gl.GetTextWidth(name)
+
+        if (width > maxWidth) then
+          maxWidth = width
+        end
       end
     end
   end
@@ -293,7 +308,7 @@ local function UpdateList()
   maxWidth = (maxWidth / fontSize)
 
   local myCount = #fullWidgetsList
-  if (widgetHandler.knownCount ~= (myCount + 1)) then
+  if (widgetHandler.knownCount ~= ((myCount + 1) + uncount)) then
     error('knownCount mismatch')
   end
 
@@ -771,7 +786,7 @@ function widget:SetConfigData(data)
     show = data.show or show
 end
 
-function widget:TextCommand(s) 
+function widget:TextCommand(s)
   -- process request to tell the widgetHandler to blank out the widget config when it shuts down
   local token = {}
   local n = 0
@@ -789,6 +804,17 @@ function widget:TextCommand(s)
     widgetHandler.__blankOutConfig = true
     widgetHandler.__allowUserWidgets = false
     Spring.SendCommands("luarules reloadluaui") 
+  end
+  if (string.find(s, "showapiwidgets") == 1 and string.len(s) == 14) then
+    showApiWidgets = not showApiWidgets
+    widgetHandler.knownChanged = not widgetHandler.knownChanged
+    fullWidgetsList = {}
+    UpdateList()
+    if showApiWidgets then
+      Spring.Echo("Api widgets will be shown in widget list")
+    else
+      Spring.Echo("Api widgets will not be shown in widget list")
+    end
   end
 end
         
