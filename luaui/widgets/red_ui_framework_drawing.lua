@@ -215,7 +215,12 @@ function widget:Update(deltaTime)
     	return
   	end
   	timeCounter = 0
-  	minimapbrightness = WG["background_opacity_custom"][4]
+	
+  	if WG["background_opacity_custom"] then
+            minimapbrightness = WG["background_opacity_custom"][4]
+        else
+            minimapbrightness = 0.5
+        end
 end
 
 function widget:Shutdown()

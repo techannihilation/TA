@@ -18,7 +18,7 @@ return {
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
-		description = "T3 Rapid-Fire Long-Range Plasma Cannon",
+		description = "Ultimate Rapid-Fire Long-Range Plasma Cannon",
 		explodeas = "BANTHA_DEATH",
 		firestandorders = 1,
 		footprintx = 16,

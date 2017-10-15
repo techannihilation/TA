@@ -1,10 +1,10 @@
 return {
 	corpyrox = {
 		acceleration = 0.1,
-		autoheal = 25,
+		autoheal = 50,
 		brakerate = 0.54,
-		buildcostenergy = 27850,
-		buildcostmetal = 2690,
+		buildcostenergy = 28850,
+		buildcostmetal = 2890,
 		builder = false,
 		buildpic = "corpyrox.dds",
 		buildtime = 32000,
@@ -19,7 +19,7 @@ return {
 		collisionvolumetype = "box",
 		corpse = "heap",
 		defaultmissiontype = "Standby",
-		description = "Hell Fire Captain (Auto-Repair 25)",
+		description = "Hell Fire Captain (Auto-Repair 50)",
 		explodeas = "CRAWL_BLASTSML",
 		firestandorders = 1,
 		footprintx = 3,

@@ -505,6 +505,9 @@ end
 ------------------------------------------------------------
 
 function widget:Initialize()
+    if not WG["background_opacity_custom"] then
+        WG["background_opacity_custom"] = {0,0,0,0.5}
+    end
 	if (Game.startPosType == 1) or			-- Don't run if start positions are random
 	   (Spring.GetGameFrame() > 0) or		-- Don't run if game has already started
 	   (amNewbie) or						-- Don't run if i'm a newbie
