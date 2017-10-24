@@ -116,7 +116,7 @@ return {
 					commanders = 30,
 					default = 60,
 					experimental_ships = 90,
-					ships = 90,
+					ships = 75,
 					subs = 5,
 				},
 			},
