@@ -1,3 +1,13 @@
+---------------------------------------- v3.04 ---------------------------------------
+
+----Balance----
+Move MDS into Engineers
+Gatling TLL => Increase damage (+40%)
+TLLBind => Ratio M/E
+Corgol1 => Decrease HP 13K -> 11K
+
+
+---------------------------------------- v3.03.2 ---------------------------------------
 ----Description----
 - This Release we have also focused on some well needed love for tll so we bring you 10+ new units for TLL.
 - We added a new commander morph : The Fusion Commander. This commander will balance the gameplay, cause it will reduce the power of Assault Commander.
