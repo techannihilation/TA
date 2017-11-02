@@ -1015,7 +1015,7 @@ local morphDefs = {
 	tllbind = {
      	into = 'tllblind',
 		time = 120,
-		xp = 0.60,
+		xp = 0.30,
 	},
 	tllfireraiser = {
      	into = 'tllamphibot',
