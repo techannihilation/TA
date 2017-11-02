@@ -126,7 +126,7 @@ return {
 				gravityaffected = "TRUE",
 				impulseboost = 0.5,
 				impulsefactor = 0.5,
-				metalpershot = 300,
+				metalpershot = 0,
 				name = "IntimidatorCannon",
 				nogap = 1,
 				noselfdamage = true,
