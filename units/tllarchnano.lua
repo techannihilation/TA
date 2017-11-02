@@ -67,7 +67,7 @@ return {
 			[14] = "tllmds",
 			[15] = "tllshoretorp",
 			[16] = "tllcrawlb",
-			[17] = "tllamphibot"
+			[17] = "tllamphibot",
 			[18] = "tllck",
 			[19] = "tllarch",
 			[20] = "tlltide",
