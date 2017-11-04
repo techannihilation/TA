@@ -109,6 +109,7 @@ return {
 		},
 		weapondefs = {
 			mortor_cannon = {
+				accuracy = 500,
 				areaofeffect = 192,
 				avoidfeature = false,
 				cegtag = "banthablaster",
@@ -136,6 +137,7 @@ return {
 				turret = true,
 				weapontype = "Cannon",
 				weaponvelocity = 365,
+				wobble = 1000,
 				damage = {
 					default = 100,
 					experimental_ships = 200,
