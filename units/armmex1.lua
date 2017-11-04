@@ -33,7 +33,7 @@ return {
 		maxslope = 20,
 		maxvelocity = 0,
 		maxwaterdepth = 9999,
-		metalstorage = 300,
+		metalstorage = 50,
 		name = "Metal Extractor",
 		noautofire = false,
 		nochasecategory = "ALL",
