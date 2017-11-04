@@ -27,7 +27,7 @@ return {
 		maxdamage = 3557,
 		maxslope = 10,
 		maxwaterdepth = 0,
-		metalstorage = 1250,
+		metalstorage = 750,
 		name = "Moho Mine",
 		noautofire = false,
 		nochasecategory = "ALL",
