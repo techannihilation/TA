@@ -23,6 +23,7 @@ return {
 		mass = 58,
 		maxdamage = 220,
 		maxslope = 24,
+		metalstorage = 35,
 		minwaterdepth = 20,
 		name = "Underwater Metal Extractor",
 		noautofire = false,
