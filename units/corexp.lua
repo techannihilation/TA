@@ -35,7 +35,7 @@ return {
 		maxslope = 20,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		metalstorage = 75,
+		metalstorage = 25,
 		name = "Exploiter",
 		noautofire = false,
 		nochasecategory = "ALL",

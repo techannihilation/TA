@@ -27,6 +27,7 @@ return {
 		mass = 800,
 		maxdamage = 3300,
 		maxslope = 24,
+		metalstorage = 750,
 		minwaterdepth = 20,
 		name = "Advanced Underwater Mex",
 		noautofire = false,

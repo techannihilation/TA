@@ -29,7 +29,7 @@ return {
 		maxdamage = 180,
 		maxslope = 24,
 		maxvelocity = 0,
-		metalstorage = 50,
+		metalstorage = 25,
 		minwaterdepth = 15,
 		name = "Underwater Metal Extractor",
 		noautofire = false,

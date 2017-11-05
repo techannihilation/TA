@@ -30,7 +30,7 @@ return {
 		maxslope = 20,
 		maxvelocity = 0,
 		maxwaterdepth = 20,
-		metalstorage = 1000,
+		metalstorage = 500,
 		name = "Moho Mine",
 		noautofire = false,
 		nochasecategory = "ALL",
