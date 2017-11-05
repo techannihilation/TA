@@ -17,7 +17,7 @@ return {
 		corpse = "dead",
 		description = "Enhanced Energy Output / Storage",
 		energymake = 3200,
-		energystorage = 51200,
+		energystorage = 35000,
 		energyuse = 0,
 		explodeas = "NUCLEAR_MISSILE_CORE",
 		footprintx = 6,
