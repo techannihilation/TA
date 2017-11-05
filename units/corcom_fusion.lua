@@ -83,7 +83,7 @@ return {
 			[2] = "corgen",
 			[3] = "corfus",
 			[4] = "cmgeo",
-			[5] = "cormexp",
+			[5] = "cormmkr",
 			[6] = "cormoho",
 			[7] = "coruwadves",
 			[8] = "coruwadvms",
