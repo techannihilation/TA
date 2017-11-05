@@ -19,7 +19,7 @@ return {
 		defaultmissiontype = "Standby",
 		description = "All-Terrain Heavy Attack Spider",
 		downloadable = 1,
-		explodeas = "CRAWL_BLAST",
+		explodeas = "CRAWL_BLASTSML",
 		firestandorders = 1,
 		footprintx = 3,
 		footprintz = 3,
