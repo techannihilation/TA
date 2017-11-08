@@ -423,14 +423,24 @@ local morphDefs = {
 		time = 30,
 		xp = 0.15,
 	},
+	arm_immolator = {
+		into = 'armbrtha',
+		time = 30,
+		xp = 0.50,	
+	}
 	armbrtha = {
 		into = 'armbrtha1',
-		time = 30,
+		time = 60,
 		xp = 0.50,
 	},
+	core_immolator = {
+		into = 'corint',
+		time = 30,
+		xp = 0.50,	
+	}
 	corint= {
 		into = 'corint1',
-		time = 30,
+		time = 60,
 		xp = 0.50,
 	},
 	armpw = {
