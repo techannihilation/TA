@@ -1,7 +1,7 @@
 return {
 	arm_immolator = {
 		buildangle = 8192,
-		buildcostenergy = 31890,
+		buildcostenergy = 36890,
 		buildcostmetal = 2295,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
