@@ -2,11 +2,11 @@ return {
 	cormort = {
 		acceleration = 0.132,
 		brakerate = 0.675,
-		buildcostenergy = 2200,
-		buildcostmetal = 405,
+		buildcostenergy = 5200,
+		buildcostmetal = 410,
 		builder = false,
 		buildpic = "cormort.dds",
-		buildtime = 5139,
+		buildtime = 5500,
 		canattack = true,
 		canguard = true,
 		canmove = true,
@@ -116,6 +116,7 @@ return {
 		},
 		weapondefs = {
 			core_mort = {
+				accuracy = 300,
 				areaofeffect = 36,
 				avoidfeature = false,
 				cegtag = "Trail_cannon",
@@ -130,7 +131,7 @@ return {
 				nogap = 1,
 				noselfdamage = true,
 				range = 850,
-				reloadtime = 1.6,
+				reloadtime = 1.5,
 				rgbcolor = "1 0.88 0.26",
 				separation = 0.45,
 				size = 1.21,
