@@ -7,7 +7,7 @@ return {
 		buildcostmetal = 310,
 		builder = false,
 		buildpic = "armfido.dds",
-		buildtime = 5200,
+		buildtime = 6000,
 		canattack = true,
 		canguard = true,
 		canmove = true,
