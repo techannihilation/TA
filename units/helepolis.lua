@@ -3,8 +3,8 @@ return {
 		acceleration = 0.025,
 		bmcode = 1,
 		brakerate = 0.15,
-		buildcostenergy = 71800,
-		buildcostmetal = 8250,
+		buildcostenergy = 91800,
+		buildcostmetal = 7250,
 		builder = false,
 		buildpic = "helepolis.png",
 		buildtime = 115000,
@@ -67,7 +67,7 @@ return {
 		upright = false,
 		customparams = {
 			buildpic = "helepolis.png",
-			faction = "TLL",
+			faction = "CORE",
 			requiretech = "T2 Factory",
 		},
 		sfxtypes = {
