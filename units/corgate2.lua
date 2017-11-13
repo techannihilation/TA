@@ -19,7 +19,7 @@ return {
 		description = "Small Plasma Deflector",
 		energystorage = 1500,
 		energyuse = 0,
-		explodeas = "CRAWL_BLAST",
+		explodeas = "CRAWL_BLASTSML",
 		footprintx = 3,
 		footprintz = 3,
 		icontype = "building",
