@@ -171,11 +171,13 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "VTOL",
 				def = "CORE_JUGGINGCAN",
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
+				badtargetcategory = "MEDIUM SMALL TINY",
 				def = "MINI_ATADR",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},
