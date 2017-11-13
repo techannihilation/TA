@@ -38,7 +38,7 @@ return {
 		radardistance = 0,
 		radaremitheight = 25,
 		script = "tllgate.cob",
-		selfdestructas = "MINE_NUKE",
+		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 240,
 		unitname = "tllgate2",
 		yardmap = "oo oo oo oo",
