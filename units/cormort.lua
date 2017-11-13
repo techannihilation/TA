@@ -3,7 +3,7 @@ return {
 		acceleration = 0.132,
 		brakerate = 0.675,
 		buildcostenergy = 6400,
-		buildcostmetal = 405,
+		buildcostmetal = 385,
 		builder = false,
 		buildpic = "cormort.dds",
 		buildtime = 5500,
