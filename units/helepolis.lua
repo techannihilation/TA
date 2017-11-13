@@ -3,8 +3,8 @@ return {
 		acceleration = 0.025,
 		bmcode = 1,
 		brakerate = 0.15,
-		buildcostenergy = 91800,
-		buildcostmetal = 7250,
+		buildcostenergy = 141800,
+		buildcostmetal = 9850,
 		builder = false,
 		buildpic = "helepolis.png",
 		buildtime = 115000,
@@ -37,7 +37,7 @@ return {
 		losemitheight = 29,
 		maneuverleashlength = 640,
 		mass = 12000,
-		maxdamage = 49000,
+		maxdamage = 62000,
 		maxslope = 14,
 		maxvelocity = 0.75,
 		maxwaterdepth = 12,
@@ -99,7 +99,7 @@ return {
 		weapondefs = {
 			mini_atadr = {
 				areaofeffect = 12,
-				beamtime = 0.7,
+				beamtime = 1,
 				corethickness = 0.3,
 				craterareaofeffect = 0,
 				craterboost = 0,
@@ -128,8 +128,8 @@ return {
 				weapontype = "BeamLaser",
 				weaponvelocity = 1500,
 				damage = {
-					commanders = 1150,
-					default = 2300,
+					commanders = 1750,
+					default = 3500,
 					subs = 5,
 				},
 
@@ -164,7 +164,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 512,
 				damage = {
-					default = 500,
+					default = 600,
 					subs = 5,
 				},
 			},
