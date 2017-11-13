@@ -1,7 +1,7 @@
 return {
 	core_immolator = {
 		buildangle = 8192,
-		buildcostenergy = 33670,
+		buildcostenergy = 26670,
 		buildcostmetal = 2460,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
