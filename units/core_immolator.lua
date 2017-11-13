@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "core_immolator_aoplane.dds",
 		buildpic = "core_immolator.dds",
-		buildtime = 45000,
+		buildtime = 30000,
 		canattack = true,
 		canguard = true,
 		canstop = 1,
