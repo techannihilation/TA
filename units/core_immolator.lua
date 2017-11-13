@@ -42,7 +42,7 @@ return {
 		objectname = "core_immolator",
 		radardistance = 0,
 		radaremitheight = 30,
-		selfdestructas = "ATOMIC_BLAST",
+		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 665,
 		standingfireorder = 2,
 		unitname = "core_immolator",
