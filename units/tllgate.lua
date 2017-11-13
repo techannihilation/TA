@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "tllgate_aoplane.dds",
 		buildpic = "tllgate.dds",
-		buildtime = 60000,
+		buildtime = 50000,
 		canattack = false,
 		canstop = 1,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
