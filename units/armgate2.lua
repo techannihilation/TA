@@ -40,7 +40,7 @@ return {
 		radaremitheight = 25,
 		script = "armgate.cob",
 		seismicsignature = 0,
-		selfdestructas = "MINE_NUKE",
+		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 273,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,
