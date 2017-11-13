@@ -746,7 +746,7 @@ local morphDefs = {
 	helepolis = {
 		into = 'gorg',
 		time = 120,
-		xp = 0.50,
+		xp = 0.20,
 	},
 	armzeus = {
 		into = 'armzeus1',
