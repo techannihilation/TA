@@ -49,12 +49,12 @@ return {
 		yardmap = "wwwCCCCC wwwCCCCC wwwCCCCC wwwCCCCC wwwCCCCC wwwCCCCC wwwCCCCC wwwCCCCC",
 		buildoptions = {
 			[1] = "tllarchnano",
-			[2] = "tllarchnano",
 			[3] = "tllamphibot",
 			[4] = "tllsalamander",
 			[5] = "tllaak",
 			[6] = "tllleatherback",
 			[7] = "tllacsub",
+			[7] = "tllcsub",
 			[8] = "tllmanta",
 			[9] = "tllorc",
 			[10] = "tllwhale",
