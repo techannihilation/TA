@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 345,
 		builder = false,
 		buildpic = "cormort.dds",
-		buildtime = 5500,
+		buildtime = 5200,
 		canattack = true,
 		canguard = true,
 		canmove = true,
