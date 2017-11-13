@@ -1,7 +1,7 @@
 return {
 	arm_immolator = {
 		buildangle = 8192,
-		buildcostenergy = 122843,
+		buildcostenergy = 36890,
 		buildcostmetal = 2295,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "arm_immolator_aoplane.dds",
 		buildpic = "arm_immolator.dds",
-		buildtime = 43900,
+		buildtime = 45000,
 		canattack = true,
 		canguard = true,
 		canstop = 1,

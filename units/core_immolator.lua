@@ -1,15 +1,15 @@
 return {
 	core_immolator = {
 		buildangle = 8192,
-		buildcostenergy = 122843,
-		buildcostmetal = 1760,
+		buildcostenergy = 33670,
+		buildcostmetal = 2460,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "core_immolator_aoplane.dds",
 		buildpic = "core_immolator.dds",
-		buildtime = 43900,
+		buildtime = 45000,
 		canattack = true,
 		canguard = true,
 		canstop = 1,
