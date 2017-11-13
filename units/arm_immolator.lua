@@ -20,7 +20,7 @@ return {
 		downloadable = 1,
 		energystorage = 1200,
 		energyuse = 0,
-		explodeas = "ATOMIC_BLAST",
+		explodeas = "CRAWL_BLASTSML",
 		firestandorders = 1,
 		footprintx = 4,
 		footprintz = 4,
