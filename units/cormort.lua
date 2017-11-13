@@ -117,7 +117,7 @@ return {
 		weapondefs = {
 			core_mort = {
 				accuracy = 300,
-				areaofeffect = 36,
+				areaofeffect = 45,
 				avoidfeature = false,
 				cegtag = "Trail_cannon",
 				craterareaofeffect = 0,
