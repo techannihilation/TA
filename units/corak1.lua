@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 75,
 		builder = false,
 		buildpic = "corak1.dds",
-		buildtime = 1279,
+		buildtime = 1500,
 		canattack = true,
 		canguard = true,
 		canmove = true,
