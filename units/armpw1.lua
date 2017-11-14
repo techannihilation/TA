@@ -3,7 +3,7 @@ return {
 		acceleration = 0.36,
 		brakerate = 0.6,
 		buildcostenergy = 1050,
-		buildcostmetal = 90,
+		buildcostmetal = 95,
 		builder = false,
 		buildpic = "armpw1.dds",
 		buildtime = 1550,
