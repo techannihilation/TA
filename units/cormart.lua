@@ -138,7 +138,7 @@ return {
 				name = "PlasmaCannon",
 				nogap = 1,
 				noselfdamage = true,
-				range = 1280,
+				range = 1290,
 				reloadtime = 2,
 				rgbcolor = "0.65 0.28 0",
 				separation = 0.45,
@@ -153,7 +153,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 413.24933,
 				damage = {
-					default = 100,
+					default = 90,
 					subs = 5,
 				},
 			},
