@@ -427,7 +427,7 @@ local morphDefs = {
 		into = 'armbrtha',
 		time = 30,
 		xp = 0.50,	
-	}
+	},
 	armbrtha = {
 		into = 'armbrtha1',
 		time = 60,
@@ -437,7 +437,7 @@ local morphDefs = {
 		into = 'corint',
 		time = 30,
 		xp = 0.50,	
-	}
+	},
 	corint= {
 		into = 'corint1',
 		time = 60,
