@@ -3,7 +3,7 @@ return {
 		acceleration = 0.0184,
 		brakerate = 0.3696,
 		buildcostenergy = 5490,
-		buildcostmetal = 360,
+		buildcostmetal = 375,
 		builder = false,
 		buildpic = "armmart.dds",
 		buildtime = 5500,
