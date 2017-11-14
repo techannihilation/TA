@@ -3,7 +3,7 @@ return {
 		acceleration = 0.012,
 		brakerate = 0.03,
 		buildcostenergy = 3450,
-		buildcostmetal = 415,
+		buildcostmetal = 455,
 		builder = false,
 		buildpic = "tllloki.dds",
 		buildtime = 5200,
