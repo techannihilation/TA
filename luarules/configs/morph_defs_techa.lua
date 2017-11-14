@@ -1062,9 +1062,19 @@ local morphDefs = {
 	  	time = 30,
 	  	tech = 1,
 	},
+	armrad1 = {
+		into = 'armarad',
+	  	time = 20,
+	  	tech = 1,
+	},	
 	corrad = {
 		into = 'corarad',
 	  	time = 30,
+	  	tech = 1,
+	},
+	corrad1 = {
+		into = 'corarad',
+	  	time = 20,
 	  	tech = 1,
 	},
 	tllradar = {
