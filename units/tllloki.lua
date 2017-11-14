@@ -3,7 +3,7 @@ return {
 		acceleration = 0.012,
 		brakerate = 0.03,
 		buildcostenergy = 3450,
-		buildcostmetal = 455,
+		buildcostmetal = 415,
 		builder = false,
 		buildpic = "tllloki.dds",
 		buildtime = 5200,
@@ -106,8 +106,8 @@ return {
 		},
 		weapondefs = {
 			core_artillery = {
-				accuracy = 960,
-				areaofeffect = 129,
+				accuracy = 900,
+				areaofeffect = 120,
 				avoidfeature = false,
 				cegtag = "Trail_cannon_med",
 				craterareaofeffect = 0,
@@ -136,7 +136,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 413.24933,
 				damage = {
-					default = 90,
+					default = 100,
 					subs = 5,
 				},
 			},
