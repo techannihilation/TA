@@ -2,7 +2,7 @@ return {
 	cormart = {
 		acceleration = 0.0204,
 		brakerate = 0.3696,
-		buildcostenergy = 4000,
+		buildcostenergy = 4950,
 		buildcostmetal = 390,
 		builder = false,
 		buildpic = "cormart.dds",
@@ -31,7 +31,7 @@ return {
 		mass = 390,
 		maxdamage = 560,
 		maxslope = 12,
-		maxvelocity = 1.85,
+		maxvelocity = 1.9,
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		movementclass = "TANK3",
@@ -123,8 +123,8 @@ return {
 		},
 		weapondefs = {
 			core_artillery = {
-				accuracy = 960,
-				areaofeffect = 129,
+				accuracy = 900,
+				areaofeffect = 120,
 				avoidfeature = false,
 				cegtag = "Trail_cannon_med",
 				craterareaofeffect = 0,
@@ -138,7 +138,7 @@ return {
 				name = "PlasmaCannon",
 				nogap = 1,
 				noselfdamage = true,
-				range = 1265,
+				range = 1285,
 				reloadtime = 2,
 				rgbcolor = "0.65 0.28 0",
 				separation = 0.45,
