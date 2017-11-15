@@ -119,7 +119,7 @@ return {
 				name = "FlakCannon",
 				noselfdamage = true,
 				range = 1000,
-				reloadtime = 0.25,
+				reloadtime = 0.2,
 				rgbcolor = "1.0 0.5 0.0",
 				size = 5,
 				soundhitdry = "flakhit",
