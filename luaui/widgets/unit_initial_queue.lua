@@ -13,7 +13,7 @@ function widget:GetInfo()
 	}
 end
 -- 12 jun 2012: "uDef.isMetalExtractor" was replaced by "uDef.extractsMetal > 0" to fix "metal" mode map switching (by [teh]decay, thx to vbs and Beherith)
--- 20 march 2013: added keyboard support with BA keybinds (Bluestone)
+-- 20 march 2013: added keyboard support with TA keybinds (Bluestone)
 -- august 2013: send queue length to cmd_idle_players (BrainDamage)
 -- june 2015: guishader + rounded corners + hover effect + widget scales with resolution + remembers queue after /luaui reload (Floris)
 
@@ -22,28 +22,25 @@ end
 -- Config
 ------------------------------------------------------------
 -- Panel
-local iconWidth = 55
-local iconHeight = 52
-local iconPadding = 0.2
+local iconWidth = 50
+local iconHeight = 47
+local iconPadding = 2
 local borderSize = 0
 local maxCols = 5
 local fontSize = 17
-local margin = 1
-local drawTooltip = true		-- drawBigTooltip = true... this needs to be true aswell
-local drawBigTooltip = false
+local margin = 6
 
-local borderPadding = 1
-local borderColor = {1,1,1,0.025}
+local borderPadding = 2.5
+local borderColor = {1,1,1,0.022}
 
-local backgroundColor = {0,0,0,0.66}
+local backgroundColor = {0,0,0,0.6}
 local hoverColor = {1,1,1,0.25}
 local pushedColor = {1,0.1,0,0.33}
 local clickColor = {0.66,1,0,0.25}
 --local pressColor = {1,0,0,0.44}
-local bgcorner = LUAUI_DIRNAME.."Images/bgcorner.png"
+local bgcorner = ":n:"..LUAUI_DIRNAME.."Images/bgcorner.png"
 local buttonhighlight = ":n:"..LUAUI_DIRNAME.."Images/button-highlight.dds"
 local buttonpushed = ":n:"..LUAUI_DIRNAME.."Images/button-pushed.dds"
-local oldUnitpicsDir = LUAUI_DIRNAME.."Images/oldunitpics/"
 local customScale = 0.95
 
 -- Colors
@@ -67,14 +64,6 @@ local GL_ONE                   = GL.ONE
 local GL_ONE_MINUS_SRC_ALPHA   = GL.ONE_MINUS_SRC_ALPHA
 local GL_SRC_ALPHA             = GL.SRC_ALPHA
 local glBlending               = gl.Blending
-
-local isMex = {}
-for uDefID, uDef in pairs(UnitDefs) do
-	if uDef.extractsMetal > 0 then
-		isMex[uDefID] = true
-	end
-end
-
 -- Building ids
 local ARMCOM = UnitDefNames["armcom"].id
 local CORCOM = UnitDefNames["corcom"].id
@@ -290,8 +279,6 @@ function table_invert(t)
 end
 
 local coreToArm = table_invert(armToCore)
-local CoreTotll = table_invert(tllToCore)
-local Armtotll = table_invert(tlltoArm)
 ------------------------------------------------------------
 -- Globals
 ------------------------------------------------------------
@@ -326,28 +313,6 @@ local totalTime
 -- Local functions
 ------------------------------------------------------------
 
-function wrap(str, limit)
-	limit = limit or 72
-	local here = 1
-	local buf = ""
-	local t = {}
-	str:gsub("(%s*)()(%S+)()",
-		function(sp, st, word, fi)
-			if fi-here > limit then
-				--# Break the line
-				here = st
-				table.insert(t, buf)
-				buf = word
-			else
-				buf = buf..sp..word  --# Append
-			end
-		end)
-	--# Tack on any leftovers
-	if(buf ~= "") then
-		table.insert(t, buf)
-	end
-	return t
-end
 
 local function RectQuad(px,py,sx,sy)
 	local o = 0.008		-- texture offset, because else grey line might show at the edges
@@ -395,7 +360,7 @@ local function DrawBuilding(buildData, borderColor, buildingAlpha, drawRanges)
 
 		if isMex[bDefID] then
 			gl.Color(1.0, 0.3, 0.3, 0.7)
-			gl.DrawGroundCircle(bx, by, bz, Game.extractorRadius, 50)
+			gl.DrawGroundCircle(bx, by, bz, Game.extractorRadius, 40)
 		end
 
 		local wRange = weaponRange[bDefID]
@@ -447,13 +412,8 @@ end
 local function SetSelDefID(defID)
 
 	selDefID = defID
-	local MetalWidget = widgetHandler.knownWidgets['Pre Start Metal View'] or {}
-	if selDefID then
-		WG["PreGameCommand"] = {cmdID = -selDefID}
-	else 
-		WG["PreGameCommand"] = nil
-	end
-	if (isMex[selDefID] ~= nil) ~= (Spring.GetMapDrawMode() == "metal") and MetalWidget.active == false then
+
+	if (isMex[selDefID] ~= nil) ~= (Spring.GetMapDrawMode() == "metal") then
 		Spring.SendCommands("ShowMetalMap")
 	end
 end
@@ -505,9 +465,6 @@ end
 ------------------------------------------------------------
 
 function widget:Initialize()
-    if not WG["background_opacity_custom"] then
-        WG["background_opacity_custom"] = {0,0,0,0.5}
-    end
 	if (Game.startPosType == 1) or			-- Don't run if start positions are random
 	   (Spring.GetGameFrame() > 0) or		-- Don't run if game has already started
 	   (amNewbie) or						-- Don't run if i'm a newbie
@@ -610,12 +567,8 @@ function InitializeFaction(sDefID)
 						--gl.Rect(-borderSize, -borderSize, iconWidth + borderSize, iconHeight + borderSize)
 
 						gl.Color(1, 1, 1, 1)
-						if WG['OtaIcons'] and VFS.FileExists(oldUnitpicsDir..UnitDefs[cellRow[c]].name..'.png') then
-							gl.Texture(oldUnitpicsDir..UnitDefs[cellRow[c]].name..'.png')
-						else
-							gl.Texture('#' .. cellRow[c]) -- Screen.vsx,Screen.vsy
-						end
-						DrawRect(iconPadding, iconPadding, (iconWidth-iconPadding), (iconHeight-iconPadding))
+						gl.Texture("#" .. cellRow[c])
+							DrawRect(iconPadding, iconPadding, (iconWidth-iconPadding), (iconHeight-iconPadding))
 						gl.Texture(false)
 
 						gl.Translate((iconWidth + borderSize), 0, 0)
@@ -649,10 +602,10 @@ function widget:Shutdown()
 	if panelList then
 		gl.DeleteList(panelList)
 	end
+	WG["faction_change"] = nil
 	if (WG['guishader_api'] ~= nil) then
 		WG['guishader_api'].RemoveRect('initialqueue')
 	end
-	WG["faction_change"] = nil
 end
 
 
@@ -729,44 +682,7 @@ function widget:DrawScreen()
 	gl.PushMatrix()
 		gl.Translate(wl, wt, 0)
 		gl.Scale(widgetScale,widgetScale,widgetScale)
-		gl.PushMatrix()
-			gl.Translate(0, borderSize, 0)
-
-			-- background
-			local bgheight = ((#cellRows*iconHeight)+margin)
-			local bgwidth = ((maxCols*iconWidth)+margin)
-			gl.Color(WG["background_opacity_custom"])
-			RectRound(-(margin), -bgheight, bgwidth, margin, ((iconWidth+iconPadding+iconPadding)/7))
-			gl.Color(borderColor)
-			RectRound(-(margin)+borderPadding, -bgheight+borderPadding, bgwidth-borderPadding, margin-borderPadding, ((iconWidth+iconPadding+iconPadding)/9))
-
-			for r = 1, #cellRows do
-				local cellRow = cellRows[r]
-				
-				gl.Translate(0, -((iconHeight - borderSize)), 0)
-				gl.PushMatrix()
-					
-					for c = 1, #cellRow do
-
-						gl.Color(0, 0, 0, 1)
-						--gl.Rect(-borderSize, -borderSize, iconWidth + borderSize, iconHeight + borderSize)
-
-						gl.Color(1, 1, 1, 1)
-						if WG['OtaIcons'] and VFS.FileExists(oldUnitpicsDir..UnitDefs[cellRow[c]].name..'.png') then
-							gl.Texture(oldUnitpicsDir..UnitDefs[cellRow[c]].name..'.png')
-						else
-							gl.Texture('#' .. cellRow[c]) -- Screen.vsx,Screen.vsy
-						end
-						DrawRect(iconPadding, iconPadding, (iconWidth-iconPadding), (iconHeight-iconPadding))
-						gl.Texture(false)
-
-						gl.Translate((iconWidth + borderSize), 0, 0)
-					end
-				gl.PopMatrix()
-			end
-
-		gl.PopMatrix()
-		--gl.CallList(panelList)
+		gl.CallList(panelList)
 		gl.Scale(1/widgetScale,1/widgetScale,1/widgetScale)
 		if #buildQueue > 0 then
 			local mCost, eCost, bCost = GetQueueCosts()
@@ -801,24 +717,6 @@ function widget:DrawScreen()
 			end
 			gl.Texture(false)
 			gl.Translate(((iconWidth*widgetScale)*col), ((iconHeight*widgetScale)*row), 0)
-
-			if drawTooltip and WG['tooltip'] ~= nil then
-				local udefid = TraceDefID(CurMouseState[1], CurMouseState[2])
-				local text = "\255\215\255\215"..UnitDefs[udefid].humanName.."\n\255\240\240\240"
-				if drawBigTooltip and UnitDefs[udefid].customParams.description_long ~= nil then
-					local lines = wrap(UnitDefs[udefid].customParams.description_long, 58)
-					local description = ''
-					local newline = ''
-					for i, line in ipairs(lines) do
-						description = description..newline..line
-						newline = '\n'
-					end
-					text = text..description
-				else
-					text = text..UnitDefs[udefid].tooltip
-				end
-				WG['tooltip'].ShowTooltip('initialqueue', text)
-			end
 		end
 		if selDefID ~= nil and lastClickedRow ~= nil and lastClickedCol ~= nil then
 			local row, col = lastClickedRow, lastClickedCol
@@ -863,14 +761,6 @@ function widget:DrawWorld()
 		sy = Spring.GetGroundHeight(sx, sz)
 
 		-- Draw the starting unit at start position
-		if sDef.id == ARMCOM then
-			sDefID = sDef.id
-		elseif sDef.id == CORCOM then
-			sDefID = sDef.id
-		else 
-			sDefID = sDef.id
-		end
-
 		DrawUnitDef(sDefID, myTeamID, sx, sy, sz)
 
 		-- Draw start units build radius
@@ -887,26 +777,9 @@ function widget:DrawWorld()
                 buildData[1] = coreToArm[buildDataId]
                 buildQueue[b] = buildData
             end
-	    if tlltoArm[buildDataId] ~= nil then
-                buildData[1] = tlltoArm[buildDataId]
-                buildQueue[b] = buildData
-            end
         elseif sDef.id == CORCOM then
             if armToCore[buildDataId] ~= nil then
                 buildData[1] = armToCore[buildDataId]
-                buildQueue[b] = buildData
-            end
-	    if tllToCore[buildDataId] ~= nil then
-                buildData[1] = tllToCore[buildDataId]
-                buildQueue[b] = buildData
-            end
-      elseif sDef.id == TLLCOM then
-            if CoreTotll[buildDataId] ~= nil then
-                buildData[1] = CoreTotll[buildDataId]
-                buildQueue[b] = buildData
-            end
-	    if Armtotll[buildDataId] ~= nil then
-                buildData[1] = Armtotll[buildDataId]
                 buildQueue[b] = buildData
             end
         end
@@ -978,14 +851,14 @@ function widget:GameFrame(n)
 	local buildTime = GetQueueBuildTime()
 	Spring.SendCommands("luarules initialQueueTime " .. buildTime)
 	
-	if (n == 142) then
+	if (n == 107) then
 		--Spring.Echo("> Starting unit never spawned !")
 		widgetHandler:RemoveWidget(self)
 		return
 	end
 	
 
-	if (comGate==0 or Spring.GetGameFrame() == 141) then --comGate takes up until frame 105
+	if (comGate==0 or Spring.GetGameFrame() == 106) then --comGate takes up until frame 105
 		local tasker
 		-- Search for our starting unit
 		local units = Spring.GetTeamUnits(Spring.GetMyTeamID())
@@ -1072,12 +945,6 @@ function widget:MousePress(mx, my, mButton)
 				if not pos then return end
 				local bx, by, bz = Spring.Pos2BuildPos(selDefID, pos[1], pos[2], pos[3])
 				local buildFacing = Spring.GetBuildFacing()
-				if WG["PreGameMexPos"] and isMex[selDefID] then
-					bx = WG["PreGameMexPos"].bx
-					by = WG["PreGameMexPos"].by
-					bz = WG["PreGameMexPos"].bz
-					--buildFacing = WG["PreGameMexPos"].buildFacing
-				end
 
 				if Spring.TestBuildOrder(selDefID, bx, by, bz, buildFacing) ~= 0 then
 
@@ -1166,7 +1033,7 @@ function widget:MouseRelease(mx, my, mButton)
 end
 
 ------------------------------------------------------------
--- Keyboard -- This will only work with BA!
+-- Keyboard -- This will only work with TA!
 ------------------------------------------------------------
 local ZKEY = 122
 local XKEY = 120
@@ -1230,36 +1097,7 @@ function widget:KeyPress(key,mods,isrepeat)
 			else 								SetSelDefID(CORLAB)		
 			end
 		end	
-	elseif sDef == UnitDefs[TLLCOM] then
-		if key == ZKEY then
-			if 		selDefID == TLLMEX then 	SetSelDefID(TLLUWMEX)
-			elseif 	selDefID == TLLUWMEX then	SetSelDefID(TLLMEX)
-			else								SetSelDefID(TLLMEX)
-			end		
-		elseif key == XKEY then
-			if 		selDefID == TLLSOLAR then	SetSelDefID(TLLWIND)
-			elseif 	selDefID == TLLWIND then	SetSelDefID(TLLTIDE)
-			elseif 	selDefID == TLLTIDE then	SetSelDefID(TLLSOLAR)
-			else 								SetSelDefID(TLLSOLAR)
-			end
-		elseif key == CKEY then
-			if		selDefID == TLLLLT then		SetSelDefID(TLLRADAR)
-			elseif 	selDefID == TLLRADAR then	SetSelDefID(TLLLMT)
-			elseif 	selDefID == TLLLMT then 	SetSelDefID(TLLTORP)
-			elseif 	selDefID == TLLTORP then 	SetSelDefID(TLLSONAR)
-			elseif 	selDefID == TLLSONAR then	SetSelDefID(TLLLMTNS)
-			elseif 	selDefID == TLLLMTNS then	SetSelDefID(TLLLLT)
-			else 								SetSelDefID(TLLLLT)
-			end
-		elseif key == VKEY then
-			if		selDefID == TLLLAB then		SetSelDefID(TLLVP)
-			elseif 	selDefID == TLLVP then		SetSelDefID(TLLSY)
-			elseif 	selDefID == TLLSY then		SetSelDefID(TLLLAB)
-			else 								SetSelDefID(TLLLAB)		
-			end
-		end	
 	end
-
 end
 
 function widget:ViewResize(newX,newY)
