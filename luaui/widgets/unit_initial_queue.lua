@@ -582,56 +582,11 @@ function InitializeFaction(sDefID)
 	for b = 0, #sBuilds - 1 do
 		cellRows[1 + math.floor(b / numCols)][1 + b % numCols] = sBuilds[b + 1]
 	end
-	
-			
-	-- Set up drawing function
-	local drawFunc = function()
-
-		gl.PushMatrix()
-			gl.Translate(0, borderSize, 0)
-
-			-- background
-			local bgheight = ((#cellRows*iconHeight)+margin)
-			local bgwidth = ((maxCols*iconWidth)+margin)
-			gl.Color(backgroundColor)
-			RectRound(-(margin), -bgheight, bgwidth, margin, ((iconWidth+iconPadding+iconPadding)/7))
-			gl.Color(borderColor)
-			RectRound(-(margin)+borderPadding, -bgheight+borderPadding, bgwidth-borderPadding, margin-borderPadding, ((iconWidth+iconPadding+iconPadding)/9))
-
-			for r = 1, #cellRows do
-				local cellRow = cellRows[r]
-				
-				gl.Translate(0, -((iconHeight - borderSize)), 0)
-				gl.PushMatrix()
-					
-					for c = 1, #cellRow do
-
-						gl.Color(0, 0, 0, 1)
-						--gl.Rect(-borderSize, -borderSize, iconWidth + borderSize, iconHeight + borderSize)
-
-						gl.Color(1, 1, 1, 1)
-						if WG['OtaIcons'] and VFS.FileExists(oldUnitpicsDir..UnitDefs[cellRow[c]].name..'.png') then
-							gl.Texture(oldUnitpicsDir..UnitDefs[cellRow[c]].name..'.png')
-						else
-							gl.Texture('#' .. cellRow[c]) -- Screen.vsx,Screen.vsy
-						end
-						DrawRect(iconPadding, iconPadding, (iconWidth-iconPadding), (iconHeight-iconPadding))
-						gl.Texture(false)
-
-						gl.Translate((iconWidth + borderSize), 0, 0)
-					end
-				gl.PopMatrix()
-			end
-
-		gl.PopMatrix()
-	end
 
 	-- delete any pre-existing displaylist
 	if panelList then
 		gl.DeleteList(panelList)
 	end
-
-	panelList = gl.CreateList(drawFunc)
 
 	for uDefID, uDef in pairs(UnitDefs) do
 
