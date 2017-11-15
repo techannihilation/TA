@@ -612,8 +612,6 @@ function InitializeFaction(sDefID)
 						gl.Color(1, 1, 1, 1)
 						if WG['OtaIcons'] and VFS.FileExists(oldUnitpicsDir..UnitDefs[cellRow[c]].name..'.png') then
 							gl.Texture(oldUnitpicsDir..UnitDefs[cellRow[c]].name..'.png')
-						else
-							gl.Texture('#' .. cellRow[c]) -- Screen.vsx,Screen.vsy
 						end
 						DrawRect(iconPadding, iconPadding, (iconWidth-iconPadding), (iconHeight-iconPadding))
 						gl.Texture(false)
