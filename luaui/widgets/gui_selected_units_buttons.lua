@@ -147,7 +147,22 @@ end
 local prevMouseIcon
 local justCreatedList = false
 local hoverClock = nil
+
+function cacheUnitIcons()
+    if cached == nil then
+        gl.Color(1,1,1,0.001)
+        for id, unit in pairs(UnitDefs) do
+            gl.Texture('#' .. id)
+            gl.TexRect(-1,-1,0,0)
+            gl.Texture(false)
+        end
+        gl.Color(1,1,1,1)
+        cached = true
+    end
+end
+
 function widget:DrawScreen()
+	cacheUnitIcons() -- white icons fix
 	enabled = false
 	if (not spIsGUIHidden()) then
 	  if picList then
