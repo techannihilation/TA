@@ -34,7 +34,7 @@ return {
 		noautofire = false,
 		nochasecategory = "ALL",
 		objectname = "CORPRE",
-		radardistance = 1000,
+		radardistance = 1200,
 		radaremitheight = 43,
 		selfdestructas = "MEDIUM_BUILDING",
 		sightdistance = 600,
