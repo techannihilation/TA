@@ -103,7 +103,7 @@ return {
 		weapondefs = {
 			advflak = {
 				accuracy = 750,
-				areaofeffect = 256,
+				areaofeffect = 216,
 				avoidfeature = false,
 				burnblow = true,
 				cegtag = "armflak-fx",
@@ -118,7 +118,7 @@ return {
 				name = "AdvancedFlakCannon",
 				noselfdamage = true,
 				range = 1300,
-				reloadtime = 0.3,
+				reloadtime = 0.25,
 				rgbcolor = "0.2 0.3 0.9",
 				soundhitdry = "flakhit",
 				soundhitwet = "splslrg",
