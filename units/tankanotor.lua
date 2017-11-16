@@ -42,7 +42,7 @@ return {
 		radardistance = 0,
 		radaremitheight = 33,
 		selfdestructas = "BIG_UNIT",
-		sightdistance = 750,
+		sightdistance = 550,
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
