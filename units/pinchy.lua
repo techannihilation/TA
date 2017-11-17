@@ -35,7 +35,7 @@ return {
 		metalmake = 2,
 		metalstorage = 100,
 		mobilestandorders = 1,
-		movementclass = "VKBOT5",
+		movementclass = "HTKBOT7",
 		name = "Pinchy",
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
