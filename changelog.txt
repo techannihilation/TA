@@ -5,8 +5,17 @@ Bugs Fix Release:
 - Fusion Commander Core have T2 Metal Maker.
 - Sub Lab TLL can now makes sub engineers.
 - TLL T4 and T4 provides Tech 2 3. (with T4 lab, was impossible to make Anti T3/T4 unit def for TLL).
+- Add Allterrain movement class to Pinchy
+- Fix White icons
 
 Balance:
+- Adv Fusion capacity storage reduced by 25%. 35KE storage now vs 50KE.
+- Decrease all Energy Storage by 25%
+- Metal Extractor Storage decreases (25 for T1, 50 for T1,5, 500 for T2, 2500 for T3)
+- Tllcoyote : Increase speed to have same than reaper.
+- All mortor : less precision (random shoot in area targeted).
+- Armraz1 => Fix Bug. (damage was at 3K but in real 2K). Now they are fixed to 2500 / S.
+- CorKarg1 => Decrease HP 90K => 70K
 - Armpewee1 and cor AK1 : increase cost by 10% and buildtime by 50%.
 - Balance T2 mortor Kbot Core (Less accuracy, increase damage 65 => 70dmg/s and AOE). Balance Ratio M/E.
 - Fido timebuild decrease. Balance Ratio E/M.
@@ -15,19 +24,15 @@ Balance:
 - Balance Plasma T1.5 (Decrease cost by 300%) and Shield (Increase a little cost by 5%).
 - Balance T2 Shield and Plasma (explosion and cost).
 - Explosion decreases for Spider (T2.5) & T1.5 Bertha & Mini Shield.
-- Adv Fusion capacity storage reduced by 25%. 35KE storage now vs 50KE.
-- Tllcoyote : Increase speed to have same than reaper.
-- All mortor : less precision (random shoot in area targeted).
-- Armraz1 => Fix Bug. (damage was at 3K but in real 2K). Now they are fixed to 2500 / S.
-- CorKarg1 => Decrease HP 90K => 70K
-- Metal Extractor Storage decreases (25 for T1, 50 for T1,5, 500 for T2, 2500 for T3)
 - Move MDS into Engineers
 - Gatling TLL => Increase damage (+40%)
 - TLLBind => Ratio M/E
 - Corgol1 => Decrease HP 13K -> 11K
+- Tankanotor : Decrease metal cost and increase Energy. Decrease Speed and sight.
+- Flak (T2 and T3) Structure : Decrease energy cost and decrease damage 50%.
+- T4 AA: Decrease cost.
 
 Waiting validation:
-- Decrease all Energy Storage by 25%
 - Add Helepolis (Mini fortress) unit for Morph Tree Sumo => Sumo1 => Helepolis => Juggernault
 - Balance Storage Commander (start at 1K M/E. double Energy Storage by level. And Add +1000 Metal storage by level)
  
