@@ -1,5 +1,5 @@
 ﻿3.03.3 -> 3.04.0
-2017-10-31
+2017-11-17
 
 Bugs Fix Release:
 - Fusion Commander Core have T2 Metal Maker.
