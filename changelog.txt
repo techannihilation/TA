@@ -12,6 +12,7 @@ Balance:
 - Adv Fusion capacity storage reduced by 25%. 35KE storage now vs 50KE.
 - Decrease all Energy Storage by 25%
 - Metal Extractor Storage decreases (25 for T1, 50 for T1,5, 500 for T2, 2500 for T3)
+- Commander Storage Fixed : +1KM by level and x1KEby level (example : star commander has 4KM and 8KE storage) (battle and assault are considered as standar commander level for resources and storage)
 - Tllcoyote : Increase speed to have same than reaper.
 - All mortor : less precision (random shoot in area targeted).
 - Armraz1 => Fix Bug. (damage was at 3K but in real 2K). Now they are fixed to 2500 / S.
