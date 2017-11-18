@@ -32,7 +32,7 @@ return {
 		defaultmissiontype = "Standby",
 		description = "Commander",
 		energymake = 1000,
-		energystorage = 15000,
+		energystorage = 16000,
 		energyuse = 0,
 		explodeas = "COMMANDER_BLAST8",
 		firestandorders = 1,
