@@ -57,7 +57,6 @@ return {
 			[5] = "tllmortor",
 			[6] = "tlllmt1",
 			[7] = "tllsam",
-			[8] = "tll_immolator",
 			[9] = "tllpcan",
 			[10] = "tllfireraiser",
 			[11] = "tllriot",
