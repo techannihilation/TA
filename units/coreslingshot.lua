@@ -7,7 +7,7 @@ return {
 		buildcostmetal = 305,
 		builder = false,
 		buildpic = "coreslingshot.dds",
-		buildtime = 4600,
+		buildtime = 3500,
 		canattack = true,
 		canguard = true,
 		canmove = true,
