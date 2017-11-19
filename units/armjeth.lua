@@ -7,7 +7,7 @@ return {
 		buildcostmetal = 190,
 		builder = false,
 		buildpic = "armjeth.dds",
-		buildtime = 1831,
+		buildtime = 2000,
 		canattack = true,
 		canguard = true,
 		canmove = true,
