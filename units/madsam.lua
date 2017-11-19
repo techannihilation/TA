@@ -19,7 +19,6 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Hardened Missile Battery",
-		energyuse = 5,
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
 		footprintx = 3,
