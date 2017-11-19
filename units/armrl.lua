@@ -3,7 +3,7 @@ return {
 		acceleration = 0,
 		airsightdistance = 700,
 		brakerate = 0,
-		buildcostenergy = 850,
+		buildcostenergy = 890,
 		buildcostmetal = 90,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
