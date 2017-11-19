@@ -7,7 +7,7 @@ return {
 		buildcostmetal = 145,
 		builder = false,
 		buildpic = "tllotter.dds",
-		buildtime = 2214,
+		buildtime = 2000,
 		canattack = true,
 		canguard = true,
 		canmove = true,
