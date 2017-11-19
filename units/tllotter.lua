@@ -3,7 +3,7 @@ return {
 		acceleration = 0.1,
 		airsightdistance = 675,
 		brakerate = 0.6,
-		buildcostenergy = 1090,
+		buildcostenergy = 780,
 		buildcostmetal = 145,
 		builder = false,
 		buildpic = "tllotter.dds",
