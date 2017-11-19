@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 6640,
 		buildcostmetal = 625,
 		buildpic = "armaak.dds",
-		buildtime = 6958,
+		buildtime = 8000,
 		canmove = true,
 		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		corpse = "dead",
