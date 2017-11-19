@@ -12,7 +12,7 @@ return {
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "madsam_aoplane.dds",
 		buildpic = "madsam.dds",
-		buildtime = 5000,
+		buildtime = 5500,
 		canattack = true,
 		canstop = 1,
 		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
