@@ -3,7 +3,7 @@ return {
 		acceleration = 0.165,
 		airsightdistance = 720,
 		brakerate = 0.495,
-		buildcostenergy = 2155,
+		buildcostenergy = 1655,
 		buildcostmetal = 210,
 		builder = false,
 		buildpic = "armhuntsman.dds",
