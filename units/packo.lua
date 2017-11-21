@@ -141,7 +141,7 @@ return {
 				noselfdamage = true,
 				proximitypriority = 1,
 				range = 900,
-				reloadtime = 1,25,
+				reloadtime = 1.25,
 				smoketrail = true,
 				soundhitdry = "packohit",
 				soundhitwet = "splshbig",
