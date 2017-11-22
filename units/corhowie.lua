@@ -104,7 +104,7 @@ return {
 				model = "TAWF114a",
 				name = "Antiship missile",
 				range = 2100,
-				reloadtime = 25,
+				reloadtime = 15,
 				smoketrail = true,
 				soundhitdry = "mlrsboom",
 				soundhitwet = "splslrg",
@@ -127,7 +127,7 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 900,
 				damage = {
-					default = 7500,
+					default = 4500,
 					subs = 5,
 				},
 			},
