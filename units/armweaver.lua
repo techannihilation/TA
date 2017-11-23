@@ -150,11 +150,11 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 1400,
 				damage = {
-					bombers = 120,
+					bombers = 100,
 					default = 5,
-					fighters = 120,
+					fighters = 100,
 					flak_resistant = 100,
-					unclassed_air = 120,
+					unclassed_air = 100,
 				},
 			},
 			armweaver_laser = {
