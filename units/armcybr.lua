@@ -7,7 +7,7 @@ return {
 		buildcostmetal = 3140,
 		builder = false,
 		buildpic = "armcybr.dds",
-		buildtime = 76203,
+		buildtime = 71203,
 		canattack = true,
 		canfly = true,
 		canguard = true,
