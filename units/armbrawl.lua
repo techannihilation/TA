@@ -3,7 +3,7 @@ return {
 		acceleration = 0.24,
 		bankscale = 1,
 		brakerate = 0.441,
-		buildcostenergy = 6000,
+		buildcostenergy = 7950,
 		buildcostmetal = 300,
 		builder = false,
 		buildpic = "armbrawl.dds",
