@@ -55,7 +55,7 @@ local morphDefs = {
 	},
 	armcom6 = {
 		into = 'armcom7',
-		time = 240,
+		time = 180,
 	},
 	corcom = {
 		{
@@ -95,7 +95,7 @@ local morphDefs = {
 	},
 	corcom6 = {
 		into = 'corcom7',
-		time = 240,
+		time = 180,
 	},
 	tllcom = {
 		{
@@ -134,7 +134,7 @@ local morphDefs = {
 	},
 	tllcom6 = {
 		into = 'tllcom7',
-		time = 240,
+		time = 180,
 	},
 	corrl = {
 		into = 'corrl1',
