@@ -1,6 +1,6 @@
 local array = {}
 
-local DAMAGE_PERIOD = 2 -- how often damage is applied
+local DAMAGE_PERIOD = 10 -- how often damage is applied
 
 local weapons = {
 	tllacid_acidrain_rocket = { radius = 400, damage = 100, duration = 625, rangeFall = 0.6, timeFall = 0.5},
@@ -10,9 +10,9 @@ local weapons = {
 	tllaether_thermite_bomb = { radius = 64, damage = 900, duration = 150, rangeFall = 0.5, timeFall = 0.5},
 
 	--junos
-	ajuno_juno_pulse = { radius = 950, damage = 5, duration = 90, rangeFall = 0.8, timeFall = 0.1, scoutScale = 10},
-	cjuno_juno_pulse = { radius = 950, damage = 5, duration = 90, rangeFall = 0.8, timeFall = 0.1, scoutScale = 10},
-	tlljuno_juno_pulse = { radius = 950, damage = 5, duration = 90, rangeFall = 0.8, timeFall = 0.1, scoutScale = 10},
+	ajuno_juno_pulse = { radius = 950, damage = 3, duration = 180, rangeFall = 0.8, timeFall = 0.1, scoutScale = 15},
+	cjuno_juno_pulse = { radius = 950, damage = 3, duration = 180, rangeFall = 0.8, timeFall = 0.1, scoutScale = 15},
+	tlljuno_juno_pulse = { radius = 950, damage = 3, duration = 180, rangeFall = 0.8, timeFall = 0.1, scoutScale = 15},
 	
 	--mortor_canon
 	amortor_mortor_cannon =  { radius = 95, damage = 200, duration = 120, rangeFall = 0.25, timeFall = 0.5, allyScale = 0.25, teamScale = 0.25},
