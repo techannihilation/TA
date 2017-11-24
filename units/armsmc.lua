@@ -7,7 +7,7 @@ return {
 		builddistance = 300,
 		builder = true,
 		buildpic = "armsmc.dds",
-		buildtime = 220000,
+		buildtime = 300000,
 		canguard = true,
 		canmove = true,
 		canpatrol = true,
