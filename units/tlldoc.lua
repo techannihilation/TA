@@ -7,7 +7,7 @@ return {
 		builddistance = 300,
 		builder = true,
 		buildpic = "tlldoc.dds",
-		buildtime = 222000,
+		buildtime = 300000,
 		canguard = true,
 		canmove = true,
 		canpatrol = true,
@@ -63,10 +63,15 @@ return {
 			[8] = "tllgate1",
 			[9] = "tlldmc",
 			[10] = "tlldb",
+			[11] = "tlluwfusion",
+			[12] = "tllwmmohoconv",
+			[13] = "tllfgate",
+			[14] = "tllesy",
 		},
 		customparams = {
 			buildpic = "ARMSMC.png",
 			faction = "TLL",
+			providetech = "T3 Factory",
 		},
 		featuredefs = {
 			dead = {
