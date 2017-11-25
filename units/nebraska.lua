@@ -47,7 +47,7 @@ return {
 		yardmap = "oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo",
 		customparams = {
 			faction = "ARM",
-			requiretech = "Advanced T3 Unit Research Centre",
+			requiretech = "T3 Factory",
 		},
 		featuredefs = {
 			dead = {
