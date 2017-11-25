@@ -3,7 +3,7 @@ return {
 		acceleration = 0.152,
 		bankscale = 1,
 		brakerate = 0.3563,
-		buildcostenergy = 5800,
+		buildcostenergy = 8200,
 		buildcostmetal = 320,
 		builder = false,
 		buildpic = "corape.dds",
