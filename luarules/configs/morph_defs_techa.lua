@@ -449,9 +449,9 @@ local morphDefs = {
 		xp = 0.01,
 	},
 	armpw1 = {
-		into = 'armhdpw',
-		time = 60,
-		xp = 1.00,
+		into = 'armfast',
+		time = 10,
+		xp = 0.25,
 	},
 	armhdpw = {
 		into = 'arm_furie',
@@ -489,9 +489,9 @@ local morphDefs = {
 		xp = 0.01,
 	},
 	corak1 = {
-		into = 'armkrmi',
-		time = 60,
-		xp = 0.60,
+		into = 'corpyro',
+		time = 10,
+		xp = 0.25,
 	},
 	corpyro = {
 		into = 'corpyrox',
