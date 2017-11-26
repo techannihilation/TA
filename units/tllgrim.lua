@@ -2,7 +2,7 @@ return {
 	tllgrim = {
 		acceleration = 0.21,
 		brakerate = 0.45,
-		buildcostenergy = 297000,
+		buildcostenergy = 277000,
 		buildcostmetal = 20460,
 		builder = false,
 		buildpic = "tllgrim.dds",
