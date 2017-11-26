@@ -129,7 +129,7 @@ return {
 				impulsefactor = 0.234,
 				intensity = 0.75,
 				name = "Grim Cannon",
-				range = 1550,
+				range = 1400,
 				reloadtime = 10,
 				rgbcolor = "1 1 0",
 				soundhitdry = "xplolrg2",
