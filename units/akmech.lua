@@ -126,7 +126,7 @@ return {
 				impulsefactor = 0.123,
 				name = "AK-Gauss",
 				noselfdamage = true,
-				range = 600,
+				range = 700,
 				reloadtime = 1.5,
 				rgbcolor = "1 0.88 0.26",
 				size = 2.2,
