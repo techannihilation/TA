@@ -2,7 +2,7 @@ return {
 	akmech = {
 		acceleration = 0.07,
 		brakerate = 0.54,
-		buildcostenergy = 110800,
+		buildcostenergy = 118800,
 		buildcostmetal = 8140,
 		builder = false,
 		buildpic = "akmech.dds",
