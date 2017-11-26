@@ -127,7 +127,7 @@ return {
 				name = "AK-Gauss",
 				noselfdamage = true,
 				range = 800,
-				reloadtime = 1.5,
+				reloadtime = 1.0,
 				rgbcolor = "1 0.88 0.26",
 				size = 2.2,
 				soundhitdry = "xplomed2",
@@ -138,7 +138,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 450,
 				damage = {
-					default = 500,
+					default = 350,
 					subs = 5,
 				},
 			},
