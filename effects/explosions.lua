@@ -1061,6 +1061,22 @@ return {
       },
     },
   },
+  
+    ["flash96red"] = {
+    usedefaultexplosions = true,
+    groundflash = {
+      circlealpha        = 1,
+      circlegrowth       = 5,
+      flashalpha         = 1.9,
+      flashsize          = 96,
+      ttl                = 7,
+      color = {
+        [1]  = 1,
+        [2]  = 0.1,
+        [3]  = 0.1,
+      },
+    },
+  },
 
   ["burnteal"] = {
     dirt = {
