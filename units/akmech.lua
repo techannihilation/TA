@@ -21,7 +21,7 @@ return {
 		defaultmissiontype = "Standby",
 		description = "AK X-1 General Heavy Assault Vengence",
 		downloadable = 1,
-		energystorage = 600,
+		energystorage = 300,
 		explodeas = "CRAWL_BLASTSML",
 		firestandorders = 1,
 		footprintx = 3,
