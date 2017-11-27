@@ -154,13 +154,11 @@ local morphDefs = {
 	armllt = {
 		into = 'armllt1',
 		time = 15,
-		metal = 65,
 		xp = 0.50,
 	},
 	corllt = {
 		into = 'corllt1',
 		time = 15,
-		metal = 70,
 		xp = 0.50,
 	},
 	armhlt = {
