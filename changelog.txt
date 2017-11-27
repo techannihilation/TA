@@ -8,7 +8,7 @@
  - TLLGrim (TLL T3 Sniper) : Decrease costand firerate by 20%. Decrease range 1550 -> 1400
  - nsacbehe (Goliath Hover) : Increase HP 6500 -> 8500. Decrease velocity 1.4 -> 1.2
  - tllleatherback (anti submarine turtle) : increase timebuild 6500 -> 9000. Decrease HP 3250 -> 2850
- - Vengence : HP Decrease. Weapons modification but same balance.
+ - Vengence : HP Decrease 38K-> 35K. Weapons modification but same balance.
  - T3 Cons : Increase timebuild 200K -> 300K. Lock them with T3 RC. (to validate)
  - Supreme Commander : Decrease Metal cost by 30KM and 500KE. Decrease time to morh 240s -> 180s
  - T2 Gunship : Increase energy by 20%
