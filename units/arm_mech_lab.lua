@@ -56,9 +56,8 @@ return {
 			[2] = "armeak",
 			[3] = "armpraet",
 			[4] = "armraptor",
-			[5] = "armbanth1",
-			[6] = "exoarm",
-			[7] = "arm_furie1",
+			[5] = "exoarm",
+			[6] = "arm_furie1",
 		},
 		customparams = {
 			buildpic = "arm_mech_lab.png",
