@@ -1,11 +1,11 @@
-﻿3.04.X -> 3.05.0
+﻿3.04.0 -> 3.05.0
  2017-11-27
  
  Bugs Fix Release:
  - Fix Juno lag and damage vs scout
  
  Balance:
- - TLLGrim (TLL T3 Sniper) : Decrease costand firerate by 20%. Decrease range 1550 -> 1400
+ - TLLGrim (TLL T3 Sniper) : Decrease cost and firerate by 20%. Decrease range 1550 -> 1400
  - nsacbehe (Goliath Hover) : Increase HP 6500 -> 8500. Decrease velocity 1.4 -> 1.2
  - tllleatherback (anti submarine turtle) : increase timebuild 6500 -> 9000. Decrease HP 3250 -> 2850
  - Vengence : HP Decrease 38K-> 35K. Weapons modification but same balance.
@@ -14,6 +14,7 @@
  - T2 Gunship : Increase energy by 20%
  - cormort : Decrease HP 850 -> 820 and velocity 1.7 -> 1.5
  - tllom (heavy turtle) : Decrease Cost 7150 -> 6350. Decrease HP 25K -> 20K
+ - Armjugg (T3.5 fast arm kbot) : Decrease range for primary weapon (750 -> 600). Increase velocity 2.5 -> 2.6. HP 42K -> 41K
  
  Improvments:
  - Add Adv Antinuke for T3 TLL construction Kbot
