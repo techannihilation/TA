@@ -13,6 +13,7 @@
  - Supreme Commander : Decrease Metal cost by 30KM and 500KE. Decrease time to morh 240s -> 180s
  - T2 Gunship : Increase energy by 20%
  - cormort : Decrease HP 850 -> 820 and velocity 1.7 -> 1.5
+ - tllom (heavy turtle) : Decrease Cost 7150 -> 6350. Decrease HP 25K -> 20K
  
  Improvments:
  - Add Adv Antinuke for T3 TLL construction Kbot
