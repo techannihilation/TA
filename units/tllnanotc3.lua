@@ -53,7 +53,7 @@ return {
 		unitname = "tllnanotc3",
 		upright = true,
 		usebuildinggrounddecal = true,
-		workertime = 1500,
+		workertime = 1600,
 		customparams = {
 			buildpic = "tllnanotc3.png",
 			faction = "TLL",
