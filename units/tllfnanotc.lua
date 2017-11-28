@@ -2,8 +2,8 @@ return {
 	tllfnanotc = {
 		acceleration = 0,
 		brakerate = 4.5,
-		buildcostenergy = 7467,
-		buildcostmetal = 480,
+		buildcostenergy = 9600,
+		buildcostmetal = 320,
 		builddistance = 450,
 		builder = true,
 		buildpic = "tllfnanotc.dds",
@@ -17,7 +17,7 @@ return {
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		defaultmissiontype = "Standby",
 		description = "Repairs and builds in large radius",
-		energyuse = 30,
+		energyuse = 0,
 		explodeas = "NANOBOOM2T",
 		floater = true,
 		footprintx = 3,
@@ -50,7 +50,7 @@ return {
 		unitname = "tllfnanotc",
 		upright = true,
 		waterline = 1,
-		workertime = 300,
+		workertime = 250,
 		customparams = {
 			buildpic = "CORFNANOTC.png",
 			faction = "TLL",
