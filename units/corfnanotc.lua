@@ -17,7 +17,7 @@ return {
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		defaultmissiontype = "Standby",
 		description = "Repairs and builds in large radius",
-		energyuse = 20,
+		energyuse = 0,
 		explodeas = "NANOBOOM2C",
 		floater = true,
 		footprintx = 3,
@@ -50,7 +50,7 @@ return {
 		unitname = "corfnanotc",
 		upright = true,
 		waterline = 1,
-		workertime = 300,
+		workertime = 250,
 		customparams = {
 			buildpic = "CORFNANOTC.png",
 			faction = "CORE",
