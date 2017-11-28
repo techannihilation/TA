@@ -50,7 +50,7 @@ return {
 		unitname = "corfnanotc3",
 		upright = true,
 		waterline = 1,
-		workertime = 1600,
+		workertime = 2000,
 		customparams = {
 			buildpic = "CORFNANOTC3.png",
 			faction = "CORE",
