@@ -5,6 +5,9 @@ local lups_effects = {
    arm_furie_arm_furie_fire = {
     {class = "Ribbon", options={width=3, size=4, color = {1,0.3,0.3,1}},},
     },
+   arm_furie1_arm_furie_fire = {
+    {class = "Ribbon", options={width=3, size=4, color = {1,0.4,0.2,1}},},
+    },
 }
 local projectile_effects = {}
 
