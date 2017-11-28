@@ -53,7 +53,7 @@ return {
 		unitname = "cornanotc2",
 		upright = true,
 		usebuildinggrounddecal = true,
-		workertime = 1200,
+		workertime = 1000,
 		customparams = {
 			buildpic = "CORNANOTC2.png",
 			faction = "CORE",
