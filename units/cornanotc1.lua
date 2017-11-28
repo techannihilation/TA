@@ -2,7 +2,7 @@ return {
 	cornanotc1 = {
 		acceleration = 0,
 		brakerate = 4.5,
-		buildcostenergy = 21333,
+		buildcostenergy = 20600,
 		buildcostmetal = 725,
 		builddistance = 450,
 		builder = true,
@@ -21,7 +21,7 @@ return {
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		defaultmissiontype = "Standby",
 		description = "Repairs and builds in large radius",
-		energyuse = 50,
+		energyuse = 0,
 		explodeas = "NANOBOOM3C",
 		footprintx = 3,
 		footprintz = 3,
