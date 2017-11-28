@@ -4,7 +4,7 @@ return {
 		brakerate = 4.5,
 		buildcostenergy = 175000,
 		buildcostmetal = 6220,
-		builddistance = 900,
+		builddistance = 1000,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 5,
@@ -53,7 +53,7 @@ return {
 		unitname = "cornanotc3",
 		upright = true,
 		usebuildinggrounddecal = true,
-		workertime = 2400,
+		workertime = 1600,
 		customparams = {
 			buildpic = "CORNANOTC3.png",
 			faction = "CORE",
