@@ -24,7 +24,7 @@ return {
 		collisionvolumetype = "CylY",
 		defaultmissiontype = "Standby",
 		description = "Repairs and builds in large radius",
-		energyuse = 20,
+		energyuse = 0,
 		explodeas = "NANOBOOM2A",
 		footprintx = 3,
 		footprintz = 3,
