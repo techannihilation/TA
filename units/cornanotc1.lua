@@ -4,7 +4,7 @@ return {
 		brakerate = 4.5,
 		buildcostenergy = 20600,
 		buildcostmetal = 720,
-		builddistance = 450,
+		builddistance = 600,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 5,
