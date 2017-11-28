@@ -50,7 +50,7 @@ return {
 		unitname = "tllfnanotc3",
 		upright = true,
 		waterline = 1,
-		workertime = 1600,
+		workertime = 2000,
 		customparams = {
 			buildpic = "TLLFNANOTC3.png",
 			faction = "TLL",
