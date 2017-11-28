@@ -2,8 +2,8 @@ return {
 	armfnanotc1 = {
 		acceleration = 0,
 		brakerate = 4.5,
-		buildcostenergy = 21333,
-		buildcostmetal = 725,
+		buildcostenergy = 20600,
+		buildcostmetal = 720,
 		builddistance = 600,
 		builder = true,
 		buildpic = "armfnanotc1.dds",
@@ -17,7 +17,7 @@ return {
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		defaultmissiontype = "Standby",
 		description = "Repairs and builds in large radius",
-		energyuse = 50,
+		energyuse = 0,
 		explodeas = "NANOBOOM3A",
 		floater = true,
 		footprintx = 3,
@@ -50,7 +50,7 @@ return {
 		unitname = "armfnanotc1",
 		upright = true,
 		waterline = 1,
-		workertime = 400,
+		workertime = 500,
 		customparams = {
 			buildpic = "CORFNANOTC1.png",
 			faction = "ARM",
