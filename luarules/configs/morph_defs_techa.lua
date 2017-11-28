@@ -722,7 +722,7 @@ local morphDefs = {
         	xp = 0.50,
          },
 	aexxec	= {
-     	into = 'akmech',
+     		into = 'akmech',
 		time = 120,
 		xp = 0.75,
 	},
