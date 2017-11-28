@@ -53,7 +53,7 @@ return {
 		unitname = "armnanotc3",
 		upright = true,
 		usebuildinggrounddecal = true,
-		workertime = 1600,
+		workertime = 2000,
 		customparams = {
 			buildpic = "ARMNANOTC3.png",
 			faction = "ARM",
