@@ -17,7 +17,7 @@ return {
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		defaultmissiontype = "Standby",
 		description = "Repairs and builds in large radius",
-		energyuse = 325,
+		energyuse = 0,
 		explodeas = "NANOBOOM5A",
 		floater = true,
 		footprintx = 3,
