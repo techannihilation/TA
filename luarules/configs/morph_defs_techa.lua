@@ -749,7 +749,7 @@ local morphDefs = {
 	corsumo1 = {
 		into = 'helepolis',
 		time = 60,
-		xp = 0.50,
+		xp = 0.75,
 	},
 	helepolis = {
 		into = 'gorg',
