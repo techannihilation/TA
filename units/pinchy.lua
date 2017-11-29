@@ -2,8 +2,8 @@ return {
 	pinchy = {
 		acceleration = 0.12,
 		brakerate = 0.75,
-		buildcostenergy = 275005,
-		buildcostmetal = 15205,
+		buildcostenergy = 295005,
+		buildcostmetal = 16205,
 		builddistance = 300,
 		builder = true,
 		buildpic = "pinchy.dds",
@@ -48,10 +48,10 @@ return {
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 1.98,
-		turnrate = 1210,
+		turnrate = 1000,
 		unitname = "pinchy",
 		upright = true,
-		workertime = 1200,
+		workertime = 800,
 		buildoptions = {
 			[1] = "cfusionplant",
 			[2] = "cormas",
