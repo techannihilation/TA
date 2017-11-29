@@ -58,7 +58,7 @@ return {
 		unitname = "arm_furie1",
 		customparams = {
 			faction = "ARM",
-			requiretech = "Advanced T3 Unit Research Centre",
+			requiretech = "Advanced T4 Unit Research Centre",
 		},
 		featuredefs = {
 			dead = {
