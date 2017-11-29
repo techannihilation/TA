@@ -42,7 +42,7 @@ return {
 		objectname = "pinchy",
 		radaremitheight = 34,
 		seismicsignature = 0,
-		selfdestructas = "BIG_UNIT",
+		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 520,
 		standingmoveorder = 1,
 		steeringmode = 2,
