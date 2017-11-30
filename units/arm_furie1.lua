@@ -67,7 +67,6 @@ return {
 				featuredead = "furie_heap",
 				footprintx = 12,
 				footprintz = 12,
-				metal = 111625,
 				object = "arm_furie_dead1",
 				reclaimable = true,
 			},
@@ -77,7 +76,6 @@ return {
 				description = "Arm Furie Debris",
 				footprintx = 12,
 				footprintz = 12,
-				metal = 55800,
 				object = "5X5C",
 				reclaimable = true,
 			},
@@ -146,7 +144,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 1200,
 				damage = {
-					default = 1150,
+					default = 1075,
 					subs = 5,
 				},
 			},
@@ -182,7 +180,7 @@ return {
 				weaponvelocity = 1500,
 				damage = {
 					commanders = 2400,
-					default = 35000,
+					default = 33000,
 					subs = 5,
 				}
 			},
