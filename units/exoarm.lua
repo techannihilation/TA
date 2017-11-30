@@ -222,7 +222,7 @@ return {
 				rechargedelay = 0,
 				shieldbadcolor = "1 0.2 0.2 0.30",
 				shieldenergyuse = 3500,
-				shieldforce = 5,
+				shieldforce = 7,
 				shieldgoodcolor = "0.1 0.3 0.9 0.30",
 				shieldintercepttype = 5,
 				shieldmaxspeed = 2500,
