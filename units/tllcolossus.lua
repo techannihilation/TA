@@ -32,7 +32,7 @@ return {
 		maxvelocity = 1.2,
 		maxwaterdepth = 21,
 		mobilestandorders = 1,
-		movementclass = "VKBOT9",
+		movementclass = "VKBOT5",
 		name = "Dreadnought",
 		noautofire = false,
 		nochasecategory = "ALL SUB",
