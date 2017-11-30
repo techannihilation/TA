@@ -229,6 +229,16 @@ local moveDatas = {
 		maxwaterslope = 30,
 		allowRawMovement = true,
 	},
+	VKBOT7 = {
+		crushstrength = 5400,
+		depthmod = 0,
+		footprintx = 7,
+		footprintz = 7,
+		maxslope = 24,
+		maxwaterdepth = 9000,
+		maxwaterslope = 30,
+		allowRawMovement = true,
+	},
 	VKBOT9 = {
 		crushstrength = 12400,
 		depthmod = 0,
