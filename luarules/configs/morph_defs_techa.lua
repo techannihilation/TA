@@ -441,6 +441,11 @@ local morphDefs = {
 		time = 60,
 		xp = 0.50,
 	},
+	tlllrpt = {
+		into = 'tlllrpt1',
+		time = 60,
+		xp = 0.50,
+	},
 	armpw = {
 		into = 'armpw1',
 		time = 10,

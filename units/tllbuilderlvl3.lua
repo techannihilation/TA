@@ -1,3 +1,4 @@
+
 return {
 	tllbuilderlvl3 = {
 		acceleration = 0.013,
@@ -60,13 +61,14 @@ return {
 			[4] = "tllmas",
 			[5] = "tllnanotc3",
 			[6] = "tlldmc",
-			[7] = "tlldb",
-			[8] = "tllgate1",
-			[9] = "tllgazelle",
-			[10] = "tllion",
-			[11] = "tllvanya",
-			[12] = "tllprototype",
-			[13] = "tllshipyardlvl3",
+			[7] = "tlllrpt1",
+			[8] = "tlldb",
+			[9] = "tllgate1",
+			[10] = "tllgazelle",
+			[11] = "tllion",
+			[12] = "tllvanya",
+			[13] = "tllprototype",
+			[14] = "tllshipyardlvl3",
 		},
 		customparams = {
 			faction = "TLL",
