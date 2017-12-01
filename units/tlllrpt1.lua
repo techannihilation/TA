@@ -37,6 +37,7 @@ return {
 		nochasecategory = "ALL",
 		objectname = "TLLLRPT1",
 		radaremitheight = 184,
+		script = "tlllrpt.cob",
 		seismicsignature = 0,
 		selfdestructas = "BANTHA_NUKE",
 		sightdistance = 273,
