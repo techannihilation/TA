@@ -28,7 +28,7 @@ return {
 		mass = 650,
 		maxdamage = 2100,
 		maxslope = 14,
-		maxvelocity = 1.5,
+		maxvelocity = 2,
 		maxwaterdepth = 12,
 		mobilestandorders = 1,
 		movementclass = "KBOT3",
@@ -45,7 +45,7 @@ return {
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0.858,
-		turnrate = 999,
+		turnrate = 650,
 		unitname = "coredauber",
 		upright = true,
 		customparams = {
