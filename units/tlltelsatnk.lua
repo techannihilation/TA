@@ -132,7 +132,7 @@ return {
 				rgbcolor = "0.6 0.6 0.9",
 				soundhitdry = "lashit2",
 				soundhitwet = "sizzle",
-				soundhitwetvolume = 0.5,
+				soundhitwetvolume = 0.25,
 				soundstart = "Lghthvy1",
 				sprayangle = 1000,
 				texture1 = "strike",
