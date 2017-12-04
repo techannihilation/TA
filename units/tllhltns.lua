@@ -5,7 +5,7 @@ return {
 		buildcostmetal = 690,
 		builder = false,
 		buildpic = "tllhltns.dds",
-		buildtime = 9705,
+		buildtime = 16000,
 		canattack = true,
 		canguard = true,
 		canstop = 1,
