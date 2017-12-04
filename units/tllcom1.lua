@@ -28,6 +28,7 @@ return {
 		collisionvolumetype = "Ell",
 		commander = true,
 		corpse = "dead",
+		decoyfor = "tllcom",
 		defaultmissiontype = "Standby",
 		description = "Commander",
 		energymake = 100,
