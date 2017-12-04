@@ -447,7 +447,7 @@ function gadget:GameFrame(n)
          
          local airbaseID, padPieceNum = t[1], t[2]
          local px, py, pz = Spring.GetUnitPiecePosDir(airbaseID, padPieceNum)
-         local ux, uy, uz = Spring.GetUnitPosition(unitID)	
+         local ux, uy, uz = Spring.GetUnitPosition(unitID)
          local sqrDist = (ux and px) and (ux-px)^2 + (uy-py)^2 + (uz-pz)^2
          if sqrDist and h<mh then
             -- check if we're close enough, move into tractorPlanes if so
