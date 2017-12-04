@@ -8,7 +8,7 @@ return {
 		buildcostmetal = 595,
 		builder = false,
 		buildpic = "corfhlt.dds",
-		buildtime = 12651,
+		buildtime = 16000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
