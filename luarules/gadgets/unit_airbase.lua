@@ -441,6 +441,7 @@ function gadget:GameFrame(n)
    -- once 'close enough' snap into pads, then move into landedPlanes
    if n%2==0 then
       for unitID, t in pairs(landingPlanes) do
+		if not Spring.ValidUnitID(unitID) then RemoveTractorPlane(unitID) return end
          --Spring.Echo("landing", unitID)
          local h,mh = Spring.GetUnitHealth(unitID)
          if h==mh then toRemove[#toRemove+1] = unitID end
@@ -448,7 +449,7 @@ function gadget:GameFrame(n)
          local airbaseID, padPieceNum = t[1], t[2]
          local px, py, pz = Spring.GetUnitPiecePosDir(airbaseID, padPieceNum)
          local ux, uy, uz = Spring.GetUnitPosition(unitID)
-		 if ux = nil or uy = nil or uz = nil then RemoveTractorPlane(unitID) return end		
+		 --if ux == nil or uy == nil or uz == nil then RemoveTractorPlane(unitID) return end		
          local sqrDist = (ux and px) and (ux-px)^2 + (uy-py)^2 + (uz-pz)^2
          if sqrDist and h<mh then
             -- check if we're close enough, move into tractorPlanes if so
