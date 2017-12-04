@@ -1,11 +1,11 @@
 return {
 	tllhltns = {
 		buildangle = 32768,
-		buildcostenergy = 5800,
-		buildcostmetal = 690,
+		buildcostenergy = 3900,
+		buildcostmetal = 660,
 		builder = false,
 		buildpic = "tllhltns.dds",
-		buildtime = 9705,
+		buildtime = 16000,
 		canattack = true,
 		canguard = true,
 		canstop = 1,
@@ -25,7 +25,7 @@ return {
 		idletime = 1800,
 		losemitheight = 75,
 		mass = 701.66669,
-		maxdamage = 4210,
+		maxdamage = 3710,
 		maxslope = 14,
 		minwaterdepth = 5,
 		name = "NS H.L.T.",
