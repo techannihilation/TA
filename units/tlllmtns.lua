@@ -10,7 +10,7 @@ return {
 		canattack = true,
 		canguard = true,
 		canstop = 1,
-		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON UNDERWATER SURFACE",
 		collisionvolumeoffsets = "0 -5 0",
 		collisionvolumescales = "36 81 36",
 		collisionvolumetype = "CylY",
