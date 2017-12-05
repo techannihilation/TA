@@ -2,8 +2,8 @@ return {
 	armsmc = {
 		acceleration = 0.12,
 		brakerate = 0.75,
-		buildcostenergy = 294055,
-		buildcostmetal = 15845,
+		buildcostenergy = 304055,
+		buildcostmetal = 16845,
 		builddistance = 300,
 		builder = true,
 		buildpic = "armsmc.dds",
@@ -42,7 +42,7 @@ return {
 		objectname = "armsmc",
 		radaremitheight = 34,
 		seismicsignature = 0,
-		selfdestructas = "BIG_UNIT",
+		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 520,
 		standingmoveorder = 1,
 		steeringmode = 2,
@@ -51,7 +51,7 @@ return {
 		turnrate = 1210,
 		unitname = "armsmc",
 		upright = true,
-		workertime = 1200,
+		workertime = 800,
 		buildoptions = {
 			[1] = "afusionplant",
 			[2] = "armmas",
