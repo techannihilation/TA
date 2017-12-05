@@ -1,5 +1,5 @@
 ﻿3.04.0 -> 3.05.0
- 2017-11-27
+ 2017-11-27 
  
  Bugs Fix Release:
  - Fix Juno lag and damage vs scout
