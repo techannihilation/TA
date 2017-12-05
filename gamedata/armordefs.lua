@@ -186,7 +186,8 @@ subs = {
            "tawf009",
            "armacsub",
            "armrecl",
-	 	       "tllsr",
+	   "tllsr",
+	   "tllswordfish",
 },
 experimental_ships = {
            "armtrmph",
@@ -197,8 +198,9 @@ experimental_ships = {
            "cortyrnt",
            "corhcar",
            "corblackhy",
-	         "tllasgard",
-	         "tllhcar",
+	   "tllasgard",
+	   "tllhcar",
+           "tlldest",
 },
 --### LAND ###
 experimental_land = {
@@ -233,6 +235,7 @@ experimental_land = {
            -- arm t3 bots
            "armorco",
            "arm_furie",
+	   "arm_furie1",
            "armbanth",
            "armjag",
            "armjugg",
