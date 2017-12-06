@@ -102,6 +102,7 @@ return {
 				accuracy = 3000,
 				alphadecay = 0.3,
 				areaofeffect = 325,
+				avoidfeature = false,
 				cegtag = "vulcanfx_lowp",
 				craterboost = 0,
 				cratermult = 0,
