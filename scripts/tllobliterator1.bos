@@ -1,0 +1,308 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, flare, barrel, gun, sleeve, s2, pistons,
+       turret, tower, tige, radar, lights, door1, door2, door3;
+
+static-var  restore_delay, Static_Var_2, statechg_DesiredState, statechg_StateChanging;
+
+// Signal definitions
+#define SIG_AIM				2
+
+
+activatescr()
+{
+	move door3 to x-axis [0.000000] speed [2.000000];
+	sleep 200;
+	move door2 to x-axis [0.000000] speed [2.000000];
+	sleep 200;
+	move door1 to x-axis [0.000000] speed [2.000000];
+	sleep 614;
+	move tower to y-axis [0.000000] speed [4.000000];
+	wait-for-move tower along y-axis;
+	move tige to z-axis [0.000000] speed [8.000000];
+	wait-for-move tige along z-axis;
+	spin radar around y-axis speed <100.000000>;
+	move turret to y-axis [0.000000] speed [2.000000];
+	move turret to z-axis [-5.000000] speed [4.000000];
+	turn pistons to x-axis <0.000000> speed <30.000000>;
+	turn s2 to x-axis <0.000000> speed <30.000000>;
+	move sleeve to z-axis [0.000000] speed [4.000000];
+	sleep 1500;
+	move barrel to z-axis [0.000000] speed [10.000000];
+	move gun to z-axis [0.000000] speed [5.000000];
+	sleep 400;
+}
+
+deactivatescr()
+{
+	turn turret to y-axis <0.000000> speed <25.000000>;
+	turn sleeve to x-axis <0.000000> speed <50.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn sleeve around x-axis;
+	move barrel to z-axis [-10.000000] speed [10.000000];
+	move gun to z-axis [-3.000000] speed [5.000000];
+	sleep 400;
+	stop-spin radar around y-axis;
+	turn radar to y-axis <0.000000> speed <150.000000>;
+	wait-for-turn radar around y-axis;
+	move tige to z-axis [-4.000000] speed [10.000000];
+	wait-for-move tige along z-axis;
+	move turret to y-axis [-8.400000] speed [8.000000];
+	move tower to y-axis [-2.500000] speed [4.000000];
+	move turret to z-axis [1.500000] speed [4.000000];
+	turn pistons to x-axis <-75.000000> speed <30.000000>;
+	turn s2 to x-axis <75.000000> speed <30.000000>;
+	move sleeve to z-axis [5.000000] speed [4.000000];
+	sleep 1500;
+	move door1 to x-axis [-3.400000] speed [3.000000];
+	sleep 300;
+	move door2 to x-axis [-3.400000] speed [3.000000];
+	sleep 300;
+	move door3 to x-axis [-3.400000] speed [3.000000];
+	sleep 300;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Go()
+{
+	dont-cache gun;
+	dont-cache barrel;
+	dont-cache door1;
+	dont-cache door2;
+	dont-cache door3;
+	dont-cache lights;
+	dont-cache flare;
+	dont-cache gun;
+	dont-cache radar;
+	dont-cache turret;
+	dont-cache sleeve;
+	dont-cache pistons;
+	dont-cache s2;
+	call-script activatescr();
+	Static_Var_2 = 1;
+	set ARMORED to 0;
+}
+
+Stop()
+{
+	Static_Var_2 = 0;
+	call-script deactivatescr();
+	set ARMORED to 1;
+	cache sleeve;
+	cache barrel;
+	cache gun;
+	cache door1;
+	cache door2;
+	cache door3;
+	cache lights;
+	cache flare;
+	cache radar;
+	cache turret;
+	cache pistons;
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+Create()
+{
+	dont-shade barrel;
+	dont-shade gun;
+	dont-shade sleeve;
+	dont-shade s2;
+	dont-shade tower;
+	dont-shade tige;
+	dont-shade radar;
+	dont-shade turret;
+	dont-shade pistons;
+	dont-shade door1;
+	dont-shade door2;
+	dont-shade door3;
+	dont-shade lights;
+	dont-cache flare;
+	hide flare;
+	call-script InitState();
+	Static_Var_2 = 0;
+	restore_delay = 2000;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 250;
+	}
+	start-script SmokeUnit();
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	signal SIG_AIM;
+	start-script RequestState(1);
+}
+
+SetMaxReloadTime(Func_Var_1)
+{
+	restore_delay = Func_Var_1 * 4;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	while( !Static_Var_2 )
+	{
+		sleep 250;
+	}
+	turn turret to y-axis heading speed <75.000000>;
+	turn sleeve to x-axis <0.000000> - pitch speed <175.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn sleeve around x-axis;
+	return (1);
+}
+
+FirePrimary()
+{
+	show flare;
+	sleep 210;
+	hide flare;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = sleeve;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = flare;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	hide flare;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type NOHEATCLOUD;
+		explode barrel type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		explode door1 type NOHEATCLOUD;
+		explode door2 type NOHEATCLOUD;
+		explode door3 type NOHEATCLOUD;
+		explode flare type NOHEATCLOUD;
+		explode gun type NOHEATCLOUD;
+		explode radar type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode body type NOHEATCLOUD;
+		explode barrel type NOHEATCLOUD | FALL;
+		explode base type NOHEATCLOUD;
+		explode door1 type NOHEATCLOUD | FALL;
+		explode door2 type NOHEATCLOUD | FALL;
+		explode door3 type NOHEATCLOUD | FALL;
+		explode flare type NOHEATCLOUD | FALL;
+		explode gun type NOHEATCLOUD | SHATTER;
+		explode radar type NOHEATCLOUD | FALL;
+		explode turret type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode gun type NOHEATCLOUD;
+		explode barrel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode base type NOHEATCLOUD;
+		explode door1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode door2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode door3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode lights type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode flare type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode gun type NOHEATCLOUD | SHATTER;
+		explode body type NOHEATCLOUD | SHATTER;
+		explode radar type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode turret type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode barrel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode base type NOHEATCLOUD;
+	explode door1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode door2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode door3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lights type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode flare type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode gun type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode radar type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode turret type NOHEATCLOUD;
+	return (corpsetype);
+}
