@@ -3,6 +3,7 @@
  
  Bugs Fix Release:
  - Fix Juno lag and damage vs scout
+ - Fix ArmorDef for HLT TLL, tllswordfish, tlldest
  
  Balance:
  - TLLGrim (TLL T3 Sniper) : Decrease cost and firerate by 20%. Decrease range 1550 -> 1400
@@ -15,11 +16,16 @@
  - cormort : Decrease HP 850 -> 820 and velocity 1.7 -> 1.5
  - tllom (heavy turtle) : Decrease Cost 7150 -> 6350. Decrease HP 25K -> 20K
  - Armjugg (T3.5 fast arm kbot) : Decrease range for primary weapon (750 -> 600). Increase velocity 2.5 -> 2.6. HP 42K -> 41K
+ - tllleatherback (Turtle Anti Sub) : Fix Sonar and decrease HP. Increase  buildtime.
  
  Improvments:
+ - Add Super Furie T4.5 (remplace Bantha T4 into LAb. The T4 bantha could be by get with T3 Bantha morph).
+ - Add Helepolis to morph tree (Sumo -> Sumo1 -> Helepolis -> corjugg)
+ - Add TLLRPT1 to T3 and T4 cons (add morph too for tlllrpt)
  - Add Adv Antinuke for T3 TLL construction Kbot
  - Corak1 morph into corpyro (instead krimi T2.5)
  - armpw1 morph into armfast (instead helldriver T2.5)
+ - Increase size model for Tllcolossus (1.3) and tllhailstorm (1.85)
  
  
 3.03.3 -> 3.04.0
