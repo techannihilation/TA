@@ -17,7 +17,7 @@
  - tllom (heavy turtle) : Decrease Cost 7150 -> 6350. Decrease HP 25K -> 20K
  - Armjugg (T3.5 fast arm kbot) : Decrease range for primary weapon (750 -> 600). Increase velocity 2.5 -> 2.6. HP 42K -> 41K
  - tllleatherback (Turtle Anti Sub) : Fix Sonar and decrease HP. Increase  buildtime.
- 
+ - Coredauber (t2.5 core bot) : increase hp 2100 -> 2815
  Improvments:
  - Add Super Furie T4.5 (remplace Bantha T4 into LAb. The T4 bantha could be by get with T3 Bantha morph).
  - Add Helepolis to morph tree (Sumo -> Sumo1 -> Helepolis -> corjugg)
