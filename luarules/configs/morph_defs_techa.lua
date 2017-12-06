@@ -244,6 +244,11 @@ local morphDefs = {
 		time = 120,
 		xp = 1.07,
 	},
+	tllobliterator = {
+		into = 'tllobliterator1',
+		time = 120,
+		xp = 1.07,
+	},	
 	corflak = {
 		into = 'corpre',
 		time = 120,
