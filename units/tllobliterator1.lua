@@ -40,7 +40,6 @@ return {
 		onoffable = true,
 		radardistance = 1200,
 		radaremitheight = 35,
-		script = "tllobliterator.cob",
 		selfdestructas = "BANTHA_NUKE",
 		sightdistance = 720,
 		standingfireorder = 2,
