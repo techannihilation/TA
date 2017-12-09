@@ -8,7 +8,7 @@ return {
 		builder = false,
 		buildpic = "corshieldgen.dds",
 		buildtime = 30000,
-		canattack = true,
+		canattack = false,
 		canguard = true,
 		canmove = true,
 		canpatrol = true,
