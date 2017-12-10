@@ -126,6 +126,7 @@ return {
 		},
 		weapondefs = {
 			mini_atadr = {
+				accuracy = 200,
 				areaofeffect = 12,
 				beamtime = 1,
 				corethickness = 0.3,
