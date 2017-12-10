@@ -68,7 +68,6 @@ return {
 		customparams = {
 			buildpic = "helepolis.png",
 			faction = "CORE",
-			requiretech = "T2 Factory",
 		},
 		sfxtypes = {
 			explosiongenerators = {
