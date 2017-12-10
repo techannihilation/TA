@@ -52,7 +52,7 @@ return {
 		unitname = "armarpe",
 		usesmoothmesh = 0,
 		customparams = {
-			faction = "CORE",
+			faction = "ARM",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},
 		sfxtypes = {

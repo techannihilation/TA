@@ -51,7 +51,7 @@ return {
 		unitname = "armtys",
 		upright = true,
 		customparams = {
-			faction = "ARM",
+			faction = "CORE",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

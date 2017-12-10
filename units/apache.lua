@@ -52,7 +52,7 @@ return {
 		turnrate = 1024,
 		unitname = "apache",
 		customparams = {
-			faction = "ARM",
+			faction = "CORE",
 		},
 		sfxtypes = {
 			explosiongenerators = {

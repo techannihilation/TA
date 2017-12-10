@@ -50,7 +50,7 @@ return {
 		turnrate = 1600,
 		unitname = "ferret",
 		customparams = {
-			faction = "CORE",
+			faction = "ARM",
 		},
 		sfxtypes = {
 			explosiongenerators = {

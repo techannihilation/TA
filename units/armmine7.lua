@@ -57,7 +57,7 @@ return {
 		usebuildinggrounddecal = true,
 		customparams = {
 			buildpic = "ARMMINE7.png",
-			faction = "CORE",
+			faction = "ARM",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		sfxtypes = {
