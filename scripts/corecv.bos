@@ -135,7 +135,7 @@ Activate()
 	start-script RequestState(0);
 }
 
-Deactivate()
+Desactivate()
 {
 	start-script RequestState(1);
 }
