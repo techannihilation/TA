@@ -42,8 +42,8 @@ deactivatescr()
 	turn sleeve to x-axis <0.000000> speed <50.000000>;
 	wait-for-turn turret around y-axis;
 	wait-for-turn sleeve around x-axis;
-	move barrel to z-axis [-10.000000] speed [10.000000];
-	move gun to z-axis [-3.000000] speed [5.000000];
+	move barrel to z-axis [-20.350000] speed [10.000000];
+	move gun to z-axis [-6.105000] speed [5.000000];
 	sleep 400;
 	stop-spin radar around y-axis;
 	turn radar to y-axis <0.000000> speed <150.000000>;
