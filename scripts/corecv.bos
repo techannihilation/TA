@@ -7,7 +7,7 @@ piece  base, box, canopy, tread1, tread2, armbase1, armbase2, arm1,
        arm2, nano1, nano2, emit1, emit2, door1, door2, armtur1,
        armtur2;
 
-static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4;
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, poo;
 	
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -40,22 +40,22 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 activatescr()
 {
-	turn door1 to z-axis <-89.> speed <100.>;
-	turn door2 to z-axis <89.> speed <100.>;
+	turn door1 to z-axis <-89.000000> speed <100.000000>;
+	turn door2 to z-axis <89.000000> speed <100.000000>;
 	wait-for-turn door1 around z-axis;
 	wait-for-turn door2 around z-axis;
-	move armbase1 to y-axis [1.] speed [3.];
-	move armbase1 to x-axis [3.] speed [10.];
-	move armbase2 to y-axis [1.] speed [3.];
-	move armbase2 to x-axis [-3.] speed [10.];
+	move armbase1 to y-axis [1.000000] speed [3.000000];
+	move armbase1 to x-axis [3.000000] speed [10.000000];
+	move armbase2 to y-axis [1.000000] speed [3.000000];
+	move armbase2 to x-axis [-3.000000] speed [10.000000];
 	wait-for-move armbase1 along y-axis;
 	wait-for-move armbase1 along x-axis;
 	wait-for-move armbase2 along y-axis;
 	wait-for-move armbase2 along x-axis;
-	turn arm1 to x-axis <110.> speed <90.>;
-	turn nano1 to x-axis <-90.> speed <90.>;
-	turn arm2 to x-axis <110.> speed <90.>;
-	turn nano2 to x-axis <-90.> speed <90.>;
+	turn arm1 to x-axis <110.000000> speed <90.000000>;
+	turn nano1 to x-axis <-90.000000> speed <90.000000>;
+	turn arm2 to x-axis <110.000000> speed <90.000000>;
+	turn nano2 to x-axis <-90.000000> speed <90.000000>;
 	wait-for-turn arm1 around x-axis;
 	wait-for-turn nano1 around x-axis;
 	wait-for-turn arm2 around x-axis;
@@ -66,28 +66,28 @@ activatescr()
 deactivatescr()
 {
 	set INBUILDSTANCE to 0;
-	turn armtur1 to y-axis <0.> speed <90.>;
-	turn armtur2 to y-axis <0.> speed <90.>;
+	turn armtur1 to y-axis <0.000000> speed <90.000000>;
+	turn armtur2 to y-axis <0.000000> speed <90.000000>;
 	wait-for-turn armtur1 around y-axis;
 	wait-for-turn armtur2 around y-axis;
-	turn nano1 to x-axis <0.> speed <90.>;
-	turn arm1 to x-axis <0.> speed <90.>;
-	turn nano2 to x-axis <0.> speed <90.>;
-	turn arm2 to x-axis <0.> speed <90.>;
+	turn nano1 to x-axis <0.000000> speed <90.000000>;
+	turn arm1 to x-axis <0.000000> speed <90.000000>;
+	turn nano2 to x-axis <0.000000> speed <90.000000>;
+	turn arm2 to x-axis <0.000000> speed <90.000000>;
 	wait-for-turn nano1 around x-axis;
 	wait-for-turn arm1 around x-axis;
 	wait-for-turn nano2 around x-axis;
 	wait-for-turn arm2 around x-axis;
-	move armbase1 to y-axis [0.] speed [3.];
-	move armbase1 to x-axis [0.] speed [10.];
-	move armbase2 to y-axis [0.] speed [3.];
-	move armbase2 to x-axis [0.] speed [10.];
+	move armbase1 to y-axis [0.000000] speed [3.000000];
+	move armbase1 to x-axis [0.000000] speed [10.000000];
+	move armbase2 to y-axis [0.000000] speed [3.000000];
+	move armbase2 to x-axis [0.000000] speed [10.000000];
 	wait-for-move armbase1 along y-axis;
 	wait-for-move armbase1 along x-axis;
 	wait-for-move armbase2 along x-axis;
 	wait-for-move armbase2 along y-axis;
-	turn door1 to z-axis <0.> speed <100.>;
-	turn door2 to z-axis <0.> speed <100.>;
+	turn door1 to z-axis <0.000000> speed <100.000000>;
+	turn door2 to z-axis <0.000000> speed <100.000000>;
 	wait-for-turn door1 around z-axis;
 	wait-for-turn door2 around z-axis;
 }
@@ -127,6 +127,7 @@ Create()
 	Static_Var_1 = 1;
 	Static_Var_2 = 0;
 	start-script SmokeUnit();
+	poo = 0;
 }
 
 
@@ -169,15 +170,15 @@ StopBuilding()
 
 QueryNanoPiece(piecenum)
 {
-	if( Static_Var_2 == 0 )
+	if( poo == 0 )
 	{
 		piecenum = emit1;
 	}
-	if( Static_Var_2 != 0 )
+	if( poo == 1 )
 	{
 		piecenum = emit2;
 	}
-	Static_Var_2 = !Static_Var_2;
+	poo = !poo;
 }
 
 SweetSpot(piecenum)
