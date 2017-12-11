@@ -28,7 +28,7 @@ return {
 		maxvelocity = 0.75,
 		maxwaterdepth = 12,
 		mobilestandorders = 1,
-		movementclass = "VKBOT7",
+		movementclass = "VKBOT9",
 		name = "Hailstorm",
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
