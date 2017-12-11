@@ -7,7 +7,7 @@ return {
 		buildcostmetal = 2435,
 		builddistance = 0,
 		builder = false,
-		buildpic = "armshieldgen.dds",
+		buildpic = "armshieldgen.png",
 		buildtime = 30000,
 		canattack = false,
 		canguard = true,
@@ -62,7 +62,7 @@ return {
 		unitname = "armshieldgen",
 		upright = true,
 		customparams = {
-			buildpic = "ARMCV.png",
+			buildpic = "armshieldgen.png",
 			faction = "arm",
 		},
 		featuredefs = {
