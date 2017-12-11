@@ -41,7 +41,7 @@ return {
 		radardistance = 1200,
 		radaremitheight = 35,
 		selfdestructas = "BANTHA_NUKE",
-		sightdistance = 720,
+		sightdistance = 850,
 		standingfireorder = 2,
 		unitname = "tllobliterator1",
 		usebuildinggrounddecal = true,
