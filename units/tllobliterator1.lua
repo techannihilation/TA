@@ -29,7 +29,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 35,
-		mass = 5650,
+		mass = 15650,
 		maxdamage = 52685,
 		maxslope = 10,
 		maxwaterdepth = 0,
@@ -45,7 +45,7 @@ return {
 		standingfireorder = 2,
 		unitname = "tllobliterator1",
 		usebuildinggrounddecal = true,
-		yardmap = "ooooo ooooo ooooo ooooo",
+		yardmap = "oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo",
 		customparams = {
 			faction = "TLL",
 		},
