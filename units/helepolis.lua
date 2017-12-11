@@ -53,6 +53,7 @@ return {
 		radardistance = 0,
 		radaremitheight = 32.913,
 		selfdestructas = "BANTHA_NUKE",
+		selfdestructcountdown = 10,
 		shootme = 1,
 		sightdistance = 580,
 		standingfireorder = 2,
