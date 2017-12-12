@@ -49,7 +49,7 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "core_hexapod_lab",
-		usebuildinggrounddecal = true,
+		--usebuildinggrounddecal = true,
 		workertime = 600,
 		yardmap = "ooccccccccccccccccoo ooccccccccccccccccoo ooccccccccccccccccoo ooccccccccccccccccoo ooccccccccccccccccoo ooccccccccccccccccoo ooccccccccccccccccoo ooccccccccccccccccoo ooccccccccccccccccoo ooccccccccccccccccoo ooccccccccccccccccoo ooccccccccccccccccoo",
 		buildoptions = {
