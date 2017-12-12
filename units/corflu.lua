@@ -45,6 +45,7 @@ return {
 		standingfireorder = 2,
 		unitname = "corflu",
 		usebuildinggrounddecal = true,
+		usepiececollisionvolumes = 1,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
 			faction = "CORE",
