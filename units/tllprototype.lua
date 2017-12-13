@@ -53,8 +53,8 @@ return {
 		yardmap = "ooccccccccccoo ooccccccccccoo ooccccccccccoo ooccccccccccoo ooccccccccccoo ooccccccccccoo ooccccccccccoo ooccccccccccoo ooccccccccccoo ooccccccccccoo ooccccccccccoo ooccccccccccoo ooccccccccccoo ooccccccccccoo ",
 		buildoptions = {
 			[1] = "irritator",
-			[2] = "tllhailstorm",
-			[3] = "hyperion",
+			[2] = "hyperion",
+			[3] = "tllhailstorm",
 			[4] = "tllcolossus",
 		},
 		customparams = {
