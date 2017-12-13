@@ -3,7 +3,7 @@ return {
 		acceleration = 0.03,
 		brakerate = 0.27,
 		buildcostenergy = 11900,
-		buildcostmetal = 1645,
+		buildcostmetal = 1575,
 		builder = false,
 		buildpic = "tllroaster.dds",
 		buildtime = 31200,
