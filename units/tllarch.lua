@@ -101,7 +101,7 @@ return {
 				gravityaffected = "true",
 				name = "Rapid Cannon",
 				range = 1450,
-				reloadtime = 0.30,
+				reloadtime = 0.3,
 				rgbcolor = "1 0.6 0.3",
 				soundhitdry = "xplomed2",
 				soundhitwet = "sizzle",

@@ -1,4 +1,3 @@
-
 return {
 	tllbuilderlvl3 = {
 		acceleration = 0.013,

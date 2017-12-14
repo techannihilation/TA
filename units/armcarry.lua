@@ -17,6 +17,7 @@ return {
 		canstop = 1,
 		category = "ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTVTOL WEAPON SURFACE",
 		collisionvolumeoffsets = "-1 -7 4",
+		collisionvolumescales = "64 64 155",
 		collisionvolumescalesm = "64 64 155",
 		collisionvolumetype = "CylZ",
 		corpse = "dead",

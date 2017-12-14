@@ -44,13 +44,13 @@ return {
 		pushresistant = true,
 		radardistance = 0,
 		radaremitheight = 250,
+		script = "arm_furie.cob",
 		selfdestructas = "CRBLMSSL",
 		selfdestructcountdown = 10,
 		sightdistance = 1120,
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
-		script = "arm_furie.cob",
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 1.45,
 		turnrate = 560,
@@ -184,7 +184,7 @@ return {
 					commanders = 2400,
 					default = 33000,
 					subs = 5,
-				}
+				},
 			},
 			arm_furie_rocket = {
 				areaofeffect = 80,

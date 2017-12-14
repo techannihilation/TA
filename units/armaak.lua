@@ -9,6 +9,9 @@ return {
 		buildtime = 8000,
 		canmove = true,
 		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		collisionvolumeoffsets = "0 -1 1",
+		collisionvolumescales = "25 32 16",
+		collisionvolumetype = "Box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Advanced Amphibious Anti-Air Kbot",
@@ -236,7 +239,7 @@ return {
 					flak_resistant = 30,
 					unclassed_air = 30,
 				},
-			},			
+			},
 		},
 		weapons = {
 			[2] = {

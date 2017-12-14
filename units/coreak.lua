@@ -29,11 +29,11 @@ return {
 		radaremitheight = 60,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 390,
+		stealth = true,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0.759,
 		turnrate = 620,
-		stealth = true,
 		unitname = "coreak",
 		upright = true,
 		customparams = {

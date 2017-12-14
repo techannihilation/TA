@@ -33,7 +33,7 @@ return {
 		mass = 214000,
 		maxdamage = 810000,
 		maxslope = 17,
-		maxvelocity = 1.40,
+		maxvelocity = 1.4,
 		maxwaterdepth = 12,
 		mobilestandorders = 1,
 		movementclass = "VKBOT9",

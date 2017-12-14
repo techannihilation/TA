@@ -80,7 +80,7 @@ return {
 		upright = true,
 		workertime = 550,
 		buildoptions = {
-		[1] = "armsolar",
+			[1] = "armsolar",
 			[2] = "armwin",
 			[3] = "armgeo_mini",
 			[4] = "armmstor",
