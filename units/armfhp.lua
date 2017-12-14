@@ -11,7 +11,7 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON PLANT UNDERWATER SURFACE",
-		collisionvolumeoffsets = "nil",
+		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "120 32 106",
 		collisionvolumetype = "Box",
 		corpse = "dead",
