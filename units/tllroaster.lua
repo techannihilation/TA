@@ -196,7 +196,7 @@ return {
 			},
 			[3] = {
 				def = "LIGHTNING",
-				maindir = "-1 0 4",
+				maindir = "-1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "SURFACE",
 			},
