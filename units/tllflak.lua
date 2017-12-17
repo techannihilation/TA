@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "tllflak_aoplane.dds",
 		buildpic = "tllflak.dds",
-		buildtime = 13995,
+		buildtime = 26435,
 		canattack = true,
 		canstop = 1,
 		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
