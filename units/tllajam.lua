@@ -38,6 +38,7 @@ return {
 		sightdistance = 620,
 		stealth = true,
 		unitname = "tllajam",
+		yardmap = "oooo",
 		customparams = {
 			faction = "TLL",
 		},
