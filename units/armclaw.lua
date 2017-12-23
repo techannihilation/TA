@@ -49,6 +49,7 @@ return {
 		unitname = "armclaw",
 		upright = true,
 		usebuildinggrounddecal = true,
+		yardmap = "oooo",
 		customparams = {
 			buildpic = "ARMCLAW.png",
 			faction = "ARM",
