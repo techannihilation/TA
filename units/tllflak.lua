@@ -134,7 +134,7 @@ return {
 					bombers = 541,
 					default = 5,
 					fighters = 541,
-					flak_resistant = 189,
+					flak_resistant = 200,
 					unclassed_air = 541,
 				},
 			},
