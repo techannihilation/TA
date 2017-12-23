@@ -9,7 +9,7 @@ return {
 		brakerate = 0.375,
 		buildcostenergy = 510000,
 		buildcostmetal = 178000,
-		builder = true,
+		builder = false,
 		buildpic = "tllvaliant.dds",
 		buildtime = 1200000,
 		canattack = true,
