@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 11776,
 		buildcostmetal = 659,
 		builddistance = 137,
-		builder = false,
+		builder = true,
 		buildpic = "commando.dds",
 		buildtime = 13178,
 		canassist = false,
