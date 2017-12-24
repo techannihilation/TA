@@ -61,6 +61,7 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "tllmine3",
+		yardmap = "o",
 		customparams = {
 			buildpic = "TLLMINE3.png",
 			faction = "TLL",

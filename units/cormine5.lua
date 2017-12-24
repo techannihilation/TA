@@ -55,6 +55,7 @@ return {
 		turnrate = 0,
 		unitname = "cormine5",
 		usebuildinggrounddecal = true,
+		yardmap = "o",
 		customparams = {
 			buildpic = "CORMINE5.png",
 			faction = "CORE",
