@@ -23,7 +23,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 30,
+		losemitheight = 31,
 		maneuverleashlength = 640,
 		mass = 138.66667,
 		maxdamage = 832,
@@ -49,6 +49,7 @@ return {
 		turnrate = 512,
 		unitname = "tllobscurer",
 		customparams = {
+			buildpic = "tllobscurer.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

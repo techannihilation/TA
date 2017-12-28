@@ -26,7 +26,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 275,
 		maxdamage = 1275,
@@ -53,11 +53,11 @@ return {
 		trackwidth = 30,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.94149,
+		turninplacespeedlimit = 0.924,
 		turnrate = 366.20001,
 		unitname = "corlevlr",
 		customparams = {
-			buildpic = "CORLEVLR.png",
+			buildpic = "corlevlr.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

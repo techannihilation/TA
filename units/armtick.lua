@@ -30,7 +30,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 110,
 		maxdamage = 470,
@@ -44,7 +44,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMTICK",
 		radardistance = 50,
-		radaremitheight = 25,
+		radaremitheight = 22,
 		resurrect = 1,
 		selfdestructas = "BIG_UNITEX",
 		sightdistance = 140,
@@ -58,6 +58,7 @@ return {
 		unitname = "armtick",
 		workertime = 200,
 		customparams = {
+			buildpic = "armtick.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

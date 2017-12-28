@@ -27,6 +27,7 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 12.5,
 		maneuverleashlength = 1280,
 		mass = 320,
 		maxdamage = 1300,
@@ -49,7 +50,7 @@ return {
 		turnrate = 594,
 		unitname = "corape",
 		customparams = {
-			buildpic = "CORAPE.png",
+			buildpic = "corape.dds",
 			faction = "CORE",
 		},
 		sfxtypes = {

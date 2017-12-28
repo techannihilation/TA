@@ -22,9 +22,9 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
-		mass = 303.33334,
+		mass = 310,
 		maxdamage = 1820,
 		maxslope = 10,
 		maxvelocity = 2.6,
@@ -47,6 +47,7 @@ return {
 		turnrate = 625,
 		unitname = "tllariman",
 		customparams = {
+			buildpic = "tllariman.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

@@ -27,7 +27,7 @@ return {
 		footprintz = 5,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 34,
+		losemitheight = 35,
 		maneuverleashlength = 640,
 		mass = 7500,
 		maxdamage = 27500,
@@ -49,10 +49,11 @@ return {
 		steeringmode = 1,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.858,
+		turninplacespeedlimit = 0.792,
 		turnrate = 288,
 		unitname = "armsiege",
 		customparams = {
+			buildpic = "armsiege.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

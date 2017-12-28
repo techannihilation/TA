@@ -22,7 +22,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 34,
+		losemitheight = 35,
 		mass = 195,
 		maxdamage = 355,
 		maxslope = 10,
@@ -42,6 +42,7 @@ return {
 		waterline = 2,
 		yardmap = "oooo",
 		customparams = {
+			buildpic = "tllasonar.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

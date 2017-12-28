@@ -19,7 +19,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		mass = 3893,
 		maxdamage = 3477.6001,
 		maxslope = 10,
@@ -42,7 +42,7 @@ return {
 		waterline = 0,
 		yardmap = "oooooooooooooooo",
 		customparams = {
-			buildpic = "corflosh.png",
+			buildpic = "corflshd.dds",
 			faction = "CORE",
 		},
 		sfxtypes = {

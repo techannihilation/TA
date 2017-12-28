@@ -30,6 +30,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 9.5,
 		maneuverleashlength = 1280,
 		mass = 550,
 		maxdamage = 1870,
@@ -53,6 +54,7 @@ return {
 		turnrate = 452,
 		unitname = "tllseab",
 		customparams = {
+			buildpic = "tllseab.dds",
 			faction = "TLL",
 		},
 		sfxtypes = {

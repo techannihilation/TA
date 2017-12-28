@@ -30,7 +30,7 @@ return {
 		idletime = 1800,
 		losemitheight = 72,
 		maneuverleashlength = 640,
-		mass = 23460,
+		mass = 20460,
 		maxdamage = 11000,
 		maxslope = 20,
 		maxvelocity = 0.75,
@@ -50,11 +50,12 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.528,
+		turninplacespeedlimit = 0.495,
 		turnrate = 1016,
 		unitname = "tllgrim",
 		upright = true,
 		customparams = {
+			buildpic = "tllgrim.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

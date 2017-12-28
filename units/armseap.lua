@@ -30,6 +30,7 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 4.5,
 		maneuverleashlength = 1280,
 		mass = 266.66666,
 		maxdamage = 1600,
@@ -53,7 +54,7 @@ return {
 		turnrate = 597,
 		unitname = "armseap",
 		customparams = {
-			buildpic = "ARMSEAP.png",
+			buildpic = "armseap.dds",
 			faction = "ARM",
 		},
 		sfxtypes = {

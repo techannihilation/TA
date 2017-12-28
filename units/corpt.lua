@@ -28,7 +28,7 @@ return {
 		icontype = "sea",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 1280,
 		mass = 101,
 		maxdamage = 228,
@@ -53,7 +53,7 @@ return {
 		unitname = "corpt",
 		waterline = 1,
 		customparams = {
-			buildpic = "CORPT.png",
+			buildpic = "corpt.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

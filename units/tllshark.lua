@@ -29,7 +29,7 @@ return {
 		idletime = 1800,
 		kamikaze = true,
 		kamikazedistance = 50,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 96,
 		maxdamage = 250,
@@ -55,6 +55,7 @@ return {
 		unitname = "tllshark",
 		waterline = 30,
 		customparams = {
+			buildpic = "tllshark.dds",
 			faction = "TLL",
 		},
 		sfxtypes = {

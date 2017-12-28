@@ -22,7 +22,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 158,
 		maxdamage = 713,
@@ -47,6 +47,7 @@ return {
 		turnrate = 735,
 		unitname = "tllares",
 		customparams = {
+			buildpic = "tllares.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

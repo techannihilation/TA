@@ -28,7 +28,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 52,
+		losemitheight = 53,
 		mass = 23582,
 		maxdamage = 18280,
 		maxslope = 10,
@@ -38,7 +38,7 @@ return {
 		nochasecategory = "ALL",
 		objectname = "CORFMD2",
 		radardistance = 50,
-		radaremitheight = 52,
+		radaremitheight = 53,
 		script = "corfmd.cob",
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -52,7 +52,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooo oooooo oooooo oooooo oooooo oooooo",
 		customparams = {
-			buildpic = "CORFMD.png",
+			buildpic = "corfmd2.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

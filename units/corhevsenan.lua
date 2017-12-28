@@ -25,7 +25,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 380,
 		mass = 319,
 		maxdamage = 600,
@@ -51,7 +51,7 @@ return {
 		waterline = 1,
 		workertime = 300,
 		customparams = {
-			buildpic = "corhevsenan.png",
+			buildpic = "corhevsenan.dds",
 			faction = "CORE",
 		},
 		nanocolor = {

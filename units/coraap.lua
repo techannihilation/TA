@@ -29,7 +29,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 50,
+		losemitheight = 51,
 		mass = 4757,
 		maxdamage = 3520,
 		maxslope = 15,
@@ -66,7 +66,7 @@ return {
 			[9] = "corcrw",
 		},
 		customparams = {
-			buildpic = "CORAAP.png",
+			buildpic = "coraap.dds",
 			faction = "CORE",
 			providetech = "T2 Factory",
 		},

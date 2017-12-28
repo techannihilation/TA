@@ -50,6 +50,7 @@ return {
 		unitname = "tllmixer",
 		waterline = 4,
 		customparams = {
+			buildpic = "tllmixer.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

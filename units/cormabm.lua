@@ -29,7 +29,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 1550,
 		maxdamage = 1580,
@@ -56,11 +56,11 @@ return {
 		trackwidth = 34,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.93522,
+		turninplacespeedlimit = 1.056,
 		turnrate = 520.29999,
 		unitname = "cormabm",
 		customparams = {
-			buildpic = "CORMABM.png",
+			buildpic = "cormabm.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

@@ -31,7 +31,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 78,
+		losemitheight = 79,
 		mass = 4875,
 		maxdamage = 11200,
 		maxslope = 10,
@@ -42,7 +42,7 @@ return {
 		objectname = "CORDOOM",
 		onoffable = true,
 		radardistance = 1200,
-		radaremitheight = 78,
+		radaremitheight = 79,
 		seismicsignature = 0,
 		selfdestructas = "ATOMIC_BLAST",
 		sightdistance = 780,
@@ -54,7 +54,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "yooy oooo oooo yooy",
 		customparams = {
-			buildpic = "CORDOOM.png",
+			buildpic = "cordoom.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

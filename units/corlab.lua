@@ -68,7 +68,7 @@ return {
 			[10] = "gladiator",
 		},
 		customparams = {
-			buildpic = "CORLAB.png",
+			buildpic = "corlab.dds",
 			faction = "CORE",
 			providetech = "T1 Factory",
 		},

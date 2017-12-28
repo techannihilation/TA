@@ -40,6 +40,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo",
 		customparams = {
+			buildpic = "cadvmsto.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

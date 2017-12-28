@@ -25,7 +25,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 30,
+		losemitheight = 31,
 		maneuverleashlength = 640,
 		mass = 970,
 		maxdamage = 2190,
@@ -51,6 +51,7 @@ return {
 		turnrate = 350,
 		unitname = "speeder",
 		customparams = {
+			buildpic = "speeder.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

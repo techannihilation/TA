@@ -26,7 +26,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 172,
 		maxdamage = 995,
@@ -104,7 +104,7 @@ return {
 			[42] = "cortl",
 		},
 		customparams = {
-			buildpic = "CORMUSKRAT.png",
+			buildpic = "cormuskrat.dds",
 			faction = "core",
 		},
 		featuredefs = {

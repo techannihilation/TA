@@ -24,7 +24,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 29,
+		losemitheight = 30,
 		maneuverleashlength = 640,
 		mass = 400,
 		maxdamage = 1650,
@@ -49,6 +49,7 @@ return {
 		unitname = "tllburner",
 		upright = true,
 		customparams = {
+			buildpic = "tllburner.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

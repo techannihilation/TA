@@ -30,7 +30,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 28,
-		mass = 2144,
+		mass = 1950,
 		maxdamage = 2460,
 		maxslope = 10,
 		maxwaterdepth = 0,
@@ -47,6 +47,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooo oooo oooo oooo",
 		customparams = {
+			buildpic = "amortor.dds",
 			faction = "ARM",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},

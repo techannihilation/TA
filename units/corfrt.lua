@@ -47,7 +47,7 @@ return {
 		waterline = 9,
 		yardmap = "wwwwwwwwwwwwwwww",
 		customparams = {
-			buildpic = "CORFRT.png",
+			buildpic = "corfrt.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

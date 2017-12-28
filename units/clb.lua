@@ -26,7 +26,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 24,
 		maneuverleashlength = 640,
 		mass = 4500,
 		maxdamage = 4200,
@@ -58,7 +58,7 @@ return {
 		unitname = "clb",
 		upright = true,
 		customparams = {
-			buildpic = "clb.png",
+			buildpic = "clb.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

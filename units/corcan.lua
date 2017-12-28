@@ -27,7 +27,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 29,
+		losemitheight = 30,
 		maneuverleashlength = 640,
 		mass = 725,
 		maxdamage = 4350,
@@ -53,7 +53,7 @@ return {
 		unitname = "corcan",
 		upright = true,
 		customparams = {
-			buildpic = "CORCAN.png",
+			buildpic = "corcan.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

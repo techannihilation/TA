@@ -27,6 +27,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 13,
 		maneuverleashlength = 2200,
 		mass = 15260,
 		maxdamage = 31500,
@@ -49,7 +50,7 @@ return {
 		unitname = "tllaether",
 		upright = true,
 		customparams = {
-			buildpic = "tllaether.png",
+			buildpic = "tllaether.dds",
 			faction = "TLL",
 		},
 		sfxtypes = {

@@ -52,6 +52,7 @@ return {
 			[5] = "tlltorpcop",
 		},
 		customparams = {
+			buildpic = "tllplat.dds",
 			faction = "TLL",
 			providetech = "T2 Factory",
 		},

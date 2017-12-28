@@ -27,8 +27,9 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 10,
 		maneuverleashlength = 1280,
-		mass = 299,
+		mass = 510,
 		maxdamage = 1020,
 		maxslope = 10,
 		maxvelocity = 9.5,
@@ -44,10 +45,11 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 6.732,
+		turninplacespeedlimit = 6.27,
 		turnrate = 245,
 		unitname = "tllabomber",
 		customparams = {
+			buildpic = "tllabomber.dds",
 			faction = "TLL",
 		},
 		sfxtypes = {

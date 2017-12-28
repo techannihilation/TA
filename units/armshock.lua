@@ -52,7 +52,7 @@ return {
 		turnrate = 231,
 		unitname = "armshock",
 		customparams = {
-			buildpic = "ARMSHOCK.png",
+			buildpic = "armshock.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

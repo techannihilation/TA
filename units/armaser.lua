@@ -54,7 +54,7 @@ return {
 		turnrate = 1045,
 		unitname = "armaser",
 		customparams = {
-			buildpic = "ARMASER.png",
+			buildpic = "armaser.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

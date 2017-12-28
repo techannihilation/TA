@@ -27,9 +27,9 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
-		mass = 66.66666,
+		mass = 82.5,
 		maxdamage = 495,
 		maxslope = 32,
 		maxvelocity = 2.3,
@@ -54,7 +54,7 @@ return {
 		turnrate = 1540,
 		unitname = "armvader",
 		customparams = {
-			buildpic = "ARMVADER.png",
+			buildpic = "armvader.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

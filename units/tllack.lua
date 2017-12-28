@@ -27,7 +27,7 @@ return {
 		idletime = 1800,
 		losemitheight = 36,
 		maneuverleashlength = 640,
-		mass = 1333,
+		mass = 1905,
 		maxdamage = 1115,
 		maxslope = 20,
 		maxvelocity = 0.85,
@@ -73,6 +73,7 @@ return {
 			[18] = "tllhtcp",
 		},
 		customparams = {
+			buildpic = "tllack.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

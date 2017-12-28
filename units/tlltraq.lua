@@ -59,6 +59,7 @@ return {
 		unitname = "tlltraq",
 		upright = true,
 		customparams = {
+			buildpic = "tlltraq.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

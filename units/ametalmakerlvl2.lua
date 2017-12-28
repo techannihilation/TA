@@ -21,7 +21,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 53,
+		losemitheight = 54,
 		mass = 19650,
 		maxdamage = 5000,
 		maxslope = 20,
@@ -38,6 +38,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooo oooo oooo oooo",
 		customparams = {
+			buildpic = "ametalmakerlvl2.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

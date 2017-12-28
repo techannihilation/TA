@@ -24,7 +24,7 @@ return {
 		idletime = 1800,
 		losemitheight = 28,
 		maneuverleashlength = 640,
-		mass = 750,
+		mass = 448.33334,
 		maxdamage = 2690,
 		maxslope = 50,
 		maxvelocity = 1,
@@ -47,7 +47,7 @@ return {
 		turnrate = 1056,
 		unitname = "corechelonian",
 		customparams = {
-			buildpic = "corechelonian.png",
+			buildpic = "corechelonian.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

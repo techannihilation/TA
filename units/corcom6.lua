@@ -74,7 +74,7 @@ return {
 		standingmoveorder = 0,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.188,
+		turninplacespeedlimit = 0.99,
 		turnrate = 1398,
 		unitname = "corcom6",
 		upright = true,
@@ -108,7 +108,7 @@ return {
 			[26] = "corenaa",
 		},
 		customparams = {
-			buildpic = "CORCOM.png",
+			buildpic = "corcom6.dds",
 			canjump = "1",
 			faction = "CORE",
 			iscommander = true,

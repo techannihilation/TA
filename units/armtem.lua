@@ -25,7 +25,7 @@ return {
 		footprintz = 4,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 35,
+		losemitheight = 36,
 		maneuverleashlength = 640,
 		mass = 5725,
 		maxdamage = 16000,
@@ -51,6 +51,7 @@ return {
 		turnrate = 250,
 		unitname = "armtem",
 		customparams = {
+			buildpic = "armtem.dds",
 			faction = "ARM",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},

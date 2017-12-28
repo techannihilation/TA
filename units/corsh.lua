@@ -26,7 +26,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 76,
 		maxdamage = 230,
@@ -52,7 +52,7 @@ return {
 		turnrate = 615,
 		unitname = "corsh",
 		customparams = {
-			buildpic = "CORSH.png",
+			buildpic = "corsh.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

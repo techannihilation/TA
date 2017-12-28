@@ -21,8 +21,8 @@ return {
 		icontype = "building",
 		idleautoheal = 6,
 		idletime = 1800,
-		losemitheight = 32,
-		mass = 81067,
+		losemitheight = 139,
+		mass = 90640,
 		maxdamage = 40000,
 		maxslope = 10,
 		maxwaterdepth = 255,
@@ -43,6 +43,7 @@ return {
 			[1] = "tllbuilderlvl3",
 		},
 		customparams = {
+			buildpic = "tlldevelop.dds",
 			faction = "TLL",
 			providetech = "Advanced T1 Unit Research Centre,Advanced T2 Unit Research Centre,Advanced T3 Unit Research Centre,Advanced T4 Unit Research Centre",
 		},

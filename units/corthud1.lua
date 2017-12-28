@@ -25,7 +25,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 23,
 		maneuverleashlength = 640,
 		mass = 294.66666,
 		maxdamage = 1768,
@@ -52,7 +52,7 @@ return {
 		unitname = "corthud1",
 		upright = true,
 		customparams = {
-			buildpic = "CORTHUD1.png",
+			buildpic = "corthud1.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

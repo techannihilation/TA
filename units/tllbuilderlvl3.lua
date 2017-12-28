@@ -35,7 +35,8 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
-		mass = 25600,
+		losemitheight = 27.5,
+		mass = 36600,
 		maxdamage = 14000,
 		maxslope = 10,
 		maxvelocity = 3.2,
@@ -70,6 +71,7 @@ return {
 			[14] = "tllshipyardlvl3",
 		},
 		customparams = {
+			buildpic = "tllbuilderlvl3.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

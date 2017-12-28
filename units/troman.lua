@@ -49,6 +49,7 @@ return {
 		unitname = "troman",
 		upright = true,
 		customparams = {
+			buildpic = "troman.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

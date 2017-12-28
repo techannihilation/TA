@@ -29,9 +29,9 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		initcloaked = false,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 140,
-		mass = 533.33331,
+		mass = 420,
 		maxdamage = 1850,
 		maxslope = 255,
 		maxvelocity = 1.35,
@@ -58,7 +58,7 @@ return {
 		unitname = "corsktl",
 		upright = true,
 		customparams = {
-			buildpic = "CORSKTL.png",
+			buildpic = "corsktl.dds",
 			faction = "CORE",
 		},
 		sfxtypes = {

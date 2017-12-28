@@ -29,7 +29,7 @@ return {
 		icontype = "sea",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 421,
 		maxdamage = 1680,
@@ -54,7 +54,7 @@ return {
 		unitname = "decade",
 		waterline = 1,
 		customparams = {
-			buildpic = "DECADE.png",
+			buildpic = "decade.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

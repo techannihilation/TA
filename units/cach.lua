@@ -27,9 +27,9 @@ return {
 		footprintz = 4,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
-		mass = 2475,
+		mass = 1675,
 		maxdamage = 1540,
 		maxslope = 16,
 		maxvelocity = 1.6,
@@ -84,6 +84,7 @@ return {
 			[28] = "corflshd",
 		},
 		customparams = {
+			buildpic = "cach.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

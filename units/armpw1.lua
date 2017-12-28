@@ -52,7 +52,7 @@ return {
 		unitname = "armpw1",
 		upright = true,
 		customparams = {
-			buildpic = "ARMPW1.png",
+			buildpic = "armpw1.dds",
 			faction = "ARM",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},

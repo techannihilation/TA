@@ -27,7 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 31,
-		mass = 2091,
+		mass = 1650,
 		maxdamage = 1200,
 		maxslope = 16,
 		maxvelocity = 0,
@@ -47,7 +47,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooooooooooooooooooooo",
 		customparams = {
-			buildpic = "CORUWMMM.png",
+			buildpic = "coruwmmm.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

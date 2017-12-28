@@ -29,6 +29,7 @@ return {
 		hoverattack = true,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 5,
 		maneuverleashlength = 600,
 		mass = 45,
 		maxdamage = 230,
@@ -41,6 +42,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "corhelo",
 		radardistance = 1900,
+		radaremitheight = 5,
 		selfdestructas = "SMALL_UNIT_VTOL",
 		sightdistance = 350,
 		standingfireorder = 2,
@@ -52,6 +54,7 @@ return {
 		unitname = "corhelo",
 		upright = true,
 		customparams = {
+			buildpic = "corhelo.dds",
 			faction = "CORE",
 		},
 		sfxtypes = {

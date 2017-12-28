@@ -28,6 +28,7 @@ return {
 		hoverattack = true,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 16,
 		maneuverleashlength = 1280,
 		mass = 227,
 		maxdamage = 380,
@@ -50,6 +51,7 @@ return {
 		turnrate = 900,
 		unitname = "tllcop1",
 		customparams = {
+			buildpic = "tllcop1.dds",
 			faction = "TLL",
 		},
 		sfxtypes = {

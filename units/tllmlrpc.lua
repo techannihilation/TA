@@ -26,7 +26,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 26,
+		losemitheight = 45,
 		maneuverleashlength = 640,
 		mass = 5500,
 		maxdamage = 4960,
@@ -58,7 +58,7 @@ return {
 		turnrate = 176,
 		unitname = "avtr",
 		customparams = {
-			buildpic = "tllmlrpc.png",
+			buildpic = "tllmlrpc.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

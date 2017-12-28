@@ -59,6 +59,7 @@ return {
 		unitname = "armtrmph",
 		waterline = 7,
 		customparams = {
+			buildpic = "armtrmph.dds",
 			faction = "ARM",
 			requiretech = "Advanced T3 Unit Research Centre",
 		},

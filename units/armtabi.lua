@@ -30,7 +30,7 @@ return {
 		idleautoheal = 2,
 		idletime = 2200,
 		losemitheight = 162,
-		mass = 640000,
+		mass = 840000,
 		maxdamage = 55500,
 		maxslope = 16,
 		maxwaterdepth = 0,
@@ -48,6 +48,7 @@ return {
 		usepiececollisionvolumes = 1,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
+			buildpic = "armtabi.dds",
 			faction = "ARM",
 		},
 		sfxtypes = {

@@ -22,7 +22,7 @@ return {
 		footprintz = 4,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 23,
 		maneuverleashlength = 640,
 		mass = 3350,
 		maxdamage = 3500,
@@ -46,6 +46,7 @@ return {
 		turnrate = 400,
 		unitname = "cortotal",
 		customparams = {
+			buildpic = "cortotal.dds",
 			faction = "CORE",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},

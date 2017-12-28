@@ -26,6 +26,7 @@ return {
 		hoverattack = true,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 8.5,
 		maneuverleashlength = 1024,
 		mass = 1973,
 		maxdamage = 5350,
@@ -50,6 +51,7 @@ return {
 		turnrate = 1024,
 		unitname = "smasher",
 		customparams = {
+			buildpic = "smasher.dds",
 			faction = "ARM",
 		},
 		sfxtypes = {

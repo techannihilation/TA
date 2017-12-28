@@ -55,7 +55,7 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 1600,
 		customparams = {
-			buildpic = "ARMNANOTC3.png",
+			buildpic = "armnanotc3.dds",
 			faction = "ARM",
 		},
 		nanocolor = {

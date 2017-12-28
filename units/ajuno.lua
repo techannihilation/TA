@@ -29,7 +29,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 71,
+		losemitheight = 72,
 		mass = 625,
 		maxdamage = 2120,
 		maxslope = 10,
@@ -52,7 +52,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooooooooooo",
 		customparams = {
-			buildpic = "AJUNO.png",
+			buildpic = "ajuno.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

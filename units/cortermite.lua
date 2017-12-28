@@ -25,7 +25,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 890,
 		maxdamage = 3000,
@@ -50,7 +50,7 @@ return {
 		turnrate = 1056,
 		unitname = "cortermite",
 		customparams = {
-			buildpic = "CORTERMITE.png",
+			buildpic = "cortermite.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

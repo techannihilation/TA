@@ -25,7 +25,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 43,
+		losemitheight = 44,
 		mass = 10560,
 		maxdamage = 8500,
 		maxslope = 20,
@@ -35,7 +35,7 @@ return {
 		nochasecategory = "ALL",
 		objectname = "CORPRE",
 		radardistance = 1000,
-		radaremitheight = 43,
+		radaremitheight = 44,
 		selfdestructas = "MEDIUM_BUILDING",
 		sightdistance = 1050,
 		standingfireorder = 2,
@@ -43,6 +43,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo",
 		customparams = {
+			buildpic = "corpre.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

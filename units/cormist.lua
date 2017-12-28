@@ -57,7 +57,7 @@ return {
 		turnrate = 498,
 		unitname = "cormist",
 		customparams = {
-			buildpic = "CORMIST.png",
+			buildpic = "cormist.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

@@ -17,7 +17,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 57,
+		losemitheight = 58,
 		mass = 382,
 		maxdamage = 1725,
 		maxslope = 20,
@@ -34,6 +34,7 @@ return {
 		unitname = "tlluwmstorage",
 		yardmap = "oooooooooooooooo",
 		customparams = {
+			buildpic = "tlluwmstorage.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

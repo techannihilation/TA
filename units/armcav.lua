@@ -57,6 +57,7 @@ return {
 		unitname = "armcav",
 		upright = true,
 		customparams = {
+			buildpic = "armcav.dds",
 			canjump = "1",
 			faction = "ARM",
 			requiretech = "Advanced T2 Unit Research Centre",

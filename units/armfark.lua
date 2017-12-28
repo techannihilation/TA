@@ -28,9 +28,9 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
-		mass = 213,
+		mass = 225,
 		maxdamage = 640,
 		maxslope = 14,
 		maxvelocity = 2.64,
@@ -83,7 +83,7 @@ return {
 			[23] = "armfido",
 		},
 		customparams = {
-			buildpic = "ARMFARK.png",
+			buildpic = "armfark.dds",
 			faction = "arm",
 		},
 		featuredefs = {

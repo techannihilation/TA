@@ -53,7 +53,7 @@ return {
 		unitname = "shiva",
 		upright = true,
 		customparams = {
-			buildpic = "SHIVA.png",
+			buildpic = "shiva.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

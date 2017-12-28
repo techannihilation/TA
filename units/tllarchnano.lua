@@ -25,9 +25,9 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 320,
-		mass = 381,
+		mass = 480,
 		maxdamage = 890,
 		maxslope = 255,
 		maxvelocity = 1.5,
@@ -46,7 +46,7 @@ return {
 		steeringmode = 1,
 		terraformspeed = 450,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.98,
+		turninplacespeedlimit = 0.99,
 		turnrate = 1020,
 		unitname = "tllarchnano",
 		workertime = 200,
@@ -84,6 +84,7 @@ return {
 			[31] = "tllfflak",
 		},
 		customparams = {
+			buildpic = "tllarchnano.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

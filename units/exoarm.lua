@@ -28,7 +28,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		immunetoparalyzer = 1,
-		losemitheight = 216,
+		losemitheight = 154,
 		maneuverleashlength = 640,
 		mass = 154000,
 		maxdamage = 437031,
@@ -56,6 +56,7 @@ return {
 		unitname = "exoarm",
 		upright = true,
 		customparams = {
+			buildpic = "exoarm.dds",
 			faction = "ARM",
 			requiretech = "Advanced T4 Unit Research Centre",
 		},

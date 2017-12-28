@@ -27,7 +27,7 @@ return {
 		icontype = "sea",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 601,
 		maxdamage = 670,
@@ -53,7 +53,7 @@ return {
 		waterline = 30,
 		workertime = 450,
 		customparams = {
-			buildpic = "TLLSR.png",
+			buildpic = "tllsr.dds",
 			faction = "TLL",
 		},
 		nanocolor = {

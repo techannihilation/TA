@@ -52,7 +52,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooo oooo oooo oooo",
 		customparams = {
-			buildpic = "ARMANNI.png",
+			buildpic = "armanni.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

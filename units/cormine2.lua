@@ -37,8 +37,8 @@ return {
 		idletime = 300,
 		initcloaked = true,
 		levelground = false,
-		losemitheight = 25,
-		mass = 16,
+		losemitheight = 22,
+		mass = 35,
 		maxdamage = 10,
 		maxslope = 40,
 		maxvelocity = 0,
@@ -62,7 +62,7 @@ return {
 		unitname = "cormine2",
 		usebuildinggrounddecal = true,
 		customparams = {
-			buildpic = "CORMINE2.png",
+			buildpic = "cormine2.dds",
 			faction = "CORE",
 		},
 		sfxtypes = {

@@ -26,7 +26,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 650,
 		mass = 205,
 		maxdamage = 1200,
@@ -57,7 +57,7 @@ return {
 		turnrate = 387,
 		unitname = "corgarp",
 		customparams = {
-			buildpic = "CORGARP.png",
+			buildpic = "corgarp.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

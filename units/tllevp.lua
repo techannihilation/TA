@@ -23,7 +23,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 56,
+		losemitheight = 57,
 		mass = 17900,
 		maxdamage = 10500,
 		maxslope = 10,
@@ -53,6 +53,7 @@ return {
 			[6] = "anvil",
 		},
 		customparams = {
+			buildpic = "tllevp.dds",
 			faction = "TLL",
 			providetech = "T3 Factory, T2 Factory",
 		},

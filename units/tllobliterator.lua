@@ -28,7 +28,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 35,
+		losemitheight = 55,
 		mass = 5650,
 		maxdamage = 16685,
 		maxslope = 10,
@@ -39,7 +39,7 @@ return {
 		objectname = "TLLOBLITERATOR",
 		onoffable = true,
 		radardistance = 650,
-		radaremitheight = 35,
+		radaremitheight = 55,
 		selfdestructas = "ATOMIC_BLAST",
 		sightdistance = 680,
 		standingfireorder = 2,
@@ -47,6 +47,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooo ooooo ooooo ooooo",
 		customparams = {
+			buildpic = "tllobliterator.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

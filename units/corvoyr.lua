@@ -27,7 +27,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 99,
 		maxdamage = 350,
@@ -42,7 +42,7 @@ return {
 		objectname = "CORVOYR",
 		onoffable = true,
 		radardistance = 2200,
-		radaremitheight = 25,
+		radaremitheight = 22,
 		script = "corvoyr.lua",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -54,7 +54,7 @@ return {
 		turnrate = 583,
 		unitname = "corvoyr",
 		customparams = {
-			buildpic = "CORVOYR.png",
+			buildpic = "corvoyr.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

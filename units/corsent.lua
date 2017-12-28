@@ -61,7 +61,7 @@ return {
 		unitname = "corsent",
 		upright = false,
 		customparams = {
-			buildpic = "CORSENT.png",
+			buildpic = "corsent.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

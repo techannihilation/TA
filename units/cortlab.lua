@@ -26,7 +26,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 44,
+		losemitheight = 45,
 		mass = 950,
 		maxdamage = 2234,
 		maxslope = 10,
@@ -58,6 +58,7 @@ return {
 			[9] = "core_riptide",
 		},
 		customparams = {
+			buildpic = "cortlab.dds",
 			faction = "CORE",
 			providetech = "T1 Factory",
 		},

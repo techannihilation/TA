@@ -31,7 +31,7 @@ return {
 		immunetoparalyzer = 1,
 		losemitheight = 100,
 		maneuverleashlength = 640,
-		mass = 16533,
+		mass = 17050,
 		maxdamage = 70450,
 		maxslope = 36,
 		maxvelocity = 1.7,
@@ -56,11 +56,12 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.726,
+		turninplacespeedlimit = 1.122,
 		turnrate = 225,
 		unitname = "armpraet",
 		upright = true,
 		customparams = {
+			buildpic = "armpraet.dds",
 			faction = "ARM",
 		},
 		sfxtypes = {

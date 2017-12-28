@@ -48,7 +48,7 @@ return {
 		unitname = "corsumo1",
 		upright = false,
 		customparams = {
-			buildpic = "CORSUMO1.png",
+			buildpic = "corsumo1.dds",
 			faction = "CORE",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},

@@ -21,7 +21,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 25,
-		mass = 2667,
+		mass = 2300,
 		maxdamage = 2750,
 		maxslope = 10,
 		maxvelocity = 0,
@@ -39,7 +39,7 @@ return {
 		unitname = "armuwlightfus",
 		yardmap = "oooo oooo oooo oooo",
 		customparams = {
-			buildpic = "ARMUWLIGHTFUS.png",
+			buildpic = "armuwlightfus.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

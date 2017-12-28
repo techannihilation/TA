@@ -37,6 +37,7 @@ return {
 		waterline = 0,
 		yardmap = "wwww",
 		customparams = {
+			buildpic = "tllsonar.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

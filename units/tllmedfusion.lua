@@ -23,9 +23,9 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 2000,
-		losemitheight = 44,
+		losemitheight = 45,
 		makesmetal = 6,
-		mass = 3680,
+		mass = 3880,
 		maxdamage = 4680,
 		maxslope = 20,
 		maxwaterdepth = 0,
@@ -40,6 +40,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo",
 		customparams = {
+			buildpic = "tllmedfusion.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

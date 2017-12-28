@@ -31,7 +31,8 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
-		mass = 713,
+		losemitheight = 7,
+		mass = 930,
 		maxdamage = 1850,
 		maxslope = 10,
 		maxvelocity = 7,
@@ -45,7 +46,7 @@ return {
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 400,
 		turninplaceanglelimit = 360,
-		turninplacespeedlimit = 5.53014,
+		turninplacespeedlimit = 4.62,
 		turnrate = 380.38,
 		unitname = "tllhtca",
 		workertime = 250,
@@ -66,6 +67,7 @@ return {
 			[14] = "tllfnanotc",
 		},
 		customparams = {
+			buildpic = "tllhtca.dds",
 			faction = "TLL",
 		},
 		nanocolor = {

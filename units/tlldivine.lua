@@ -23,7 +23,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 31,
+		losemitheight = 32,
 		maneuverleashlength = 320,
 		mass = 311,
 		maxdamage = 835,
@@ -38,7 +38,7 @@ return {
 		objectname = "TLLDIVINE",
 		onoffable = true,
 		radardistance = 2200,
-		radaremitheight = 31,
+		radaremitheight = 32,
 		script = "tlldivine.lua",
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 320,
@@ -50,6 +50,7 @@ return {
 		turnrate = 380,
 		unitname = "tlldivine",
 		customparams = {
+			buildpic = "tlldivine.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

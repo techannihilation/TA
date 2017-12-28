@@ -25,7 +25,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 123,
+		losemitheight = 124,
 		mass = 143,
 		maxdamage = 537,
 		maxslope = 10,
@@ -46,7 +46,7 @@ return {
 		windgenerator = 100,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo",
 		customparams = {
-			buildpic = "CORAWIN.png",
+			buildpic = "corawin.dds",
 			energymultiplier = 4,
 			faction = "CORE",
 		},

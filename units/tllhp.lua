@@ -25,7 +25,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		mass = 1250,
 		maxdamage = 3100,
 		maxslope = 10,
@@ -55,6 +55,7 @@ return {
 			[6] = "tllhplasma",
 		},
 		customparams = {
+			buildpic = "tllhp.dds",
 			faction = "TLL",
 			providetech = "T1 Factory",
 		},

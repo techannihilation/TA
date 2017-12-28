@@ -24,7 +24,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 365,
 		maxdamage = 2000,
@@ -55,7 +55,7 @@ return {
 		turnrate = 454,
 		unitname = "armstump1",
 		customparams = {
-			buildpic = "ARMSTUMP1.png",
+			buildpic = "armstump1.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

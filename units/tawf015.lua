@@ -27,6 +27,7 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 11.5,
 		maneuverleashlength = 1280,
 		mass = 1120,
 		maxdamage = 2500,
@@ -51,7 +52,7 @@ return {
 		unitname = "tawf015",
 		wter_badtargetcategory = "NOTAIR",
 		customparams = {
-			buildpic = "TAWF015.png",
+			buildpic = "tawf015.dds",
 			faction = "ARM",
 		},
 		sfxtypes = {

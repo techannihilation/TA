@@ -24,7 +24,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 192,
 		maxdamage = 810,
@@ -50,6 +50,7 @@ return {
 		turnrate = 320,
 		unitname = "tllhovermissile",
 		customparams = {
+			buildpic = "tllhovermissile.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

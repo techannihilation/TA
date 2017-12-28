@@ -26,7 +26,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 126,
 		maxdamage = 693,
@@ -57,7 +57,7 @@ return {
 		turnrate = 484,
 		unitname = "corgator",
 		customparams = {
-			buildpic = "CORGATOR.png",
+			buildpic = "corgator.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

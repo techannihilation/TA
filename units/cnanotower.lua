@@ -30,9 +30,9 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 0,
-		mass = 12000,
+		mass = 9800,
 		maxdamage = 7500,
 		maxslope = 20,
 		maxvelocity = 0,
@@ -65,6 +65,7 @@ return {
 			[7] = "corbuzz2",
 		},
 		customparams = {
+			buildpic = "cnanotower.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

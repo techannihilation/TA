@@ -29,9 +29,9 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
-		mass = 390,
+		mass = 430,
 		maxdamage = 980,
 		maxvelocity = 2.15,
 		metalmake = 0.3,
@@ -73,6 +73,7 @@ return {
 			[14] = "tllcsub",
 		},
 		customparams = {
+			buildpic = "tllcsub.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

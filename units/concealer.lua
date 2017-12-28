@@ -26,7 +26,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 203,
 		maxdamage = 600,
@@ -53,6 +53,7 @@ return {
 		turnrate = 260,
 		unitname = "concealer",
 		customparams = {
+			buildpic = "concealer.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

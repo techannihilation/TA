@@ -31,7 +31,7 @@ return {
 		idletime = 1800,
 		losemitheight = 27,
 		maneuverleashlength = 640,
-		mass = 1035,
+		mass = 1005,
 		maxdamage = 2450,
 		maxvelocity = 2.7,
 		minwaterdepth = 30,
@@ -50,11 +50,11 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.7424,
+		turninplacespeedlimit = 1.782,
 		turnrate = 400,
 		unitname = "corarch",
 		customparams = {
-			buildpic = "CORARCH.png",
+			buildpic = "corarch.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

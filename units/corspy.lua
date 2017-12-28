@@ -27,7 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		immunetoparalyzer = 1,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 166,
 		maxdamage = 340,
@@ -56,7 +56,7 @@ return {
 		unitname = "corspy",
 		upright = true,
 		customparams = {
-			buildpic = "CORSPY.png",
+			buildpic = "corspy.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

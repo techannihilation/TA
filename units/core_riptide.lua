@@ -45,11 +45,12 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.594,
+		turninplacespeedlimit = 0.66,
 		turnrate = 510,
 		unitname = "core_riptide",
 		upright = false,
 		customparams = {
+			buildpic = "core_riptide.dds",
 			faction = "CORE",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},

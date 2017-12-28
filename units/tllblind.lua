@@ -53,6 +53,7 @@ return {
 		unitname = "tllblind",
 		upright = true,
 		customparams = {
+			buildpic = "tllblind.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

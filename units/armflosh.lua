@@ -19,7 +19,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		mass = 3800,
 		maxdamage = 3260,
 		maxslope = 10,
@@ -42,7 +42,7 @@ return {
 		waterline = 2,
 		yardmap = "oooooooooooooooo",
 		customparams = {
-			buildpic = "armflosh.png",
+			buildpic = "armflosh.dds",
 			faction = "ARM",
 		},
 		sfxtypes = {

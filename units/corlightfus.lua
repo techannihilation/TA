@@ -29,7 +29,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 38,
-		mass = 2325,
+		mass = 1910,
 		maxdamage = 2750,
 		maxslope = 10,
 		maxwaterdepth = 1,
@@ -44,7 +44,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooo oooooo oooooo oooooo oooooo oooooo",
 		customparams = {
-			buildpic = "corlightfus.png",
+			buildpic = "corlightfus.dds",
 			faction = "Core",
 		},
 		featuredefs = {

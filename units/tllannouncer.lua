@@ -22,7 +22,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 23,
 		maneuverleashlength = 640,
 		mass = 190,
 		maxdamage = 1100,
@@ -47,6 +47,7 @@ return {
 		turnrate = 625,
 		unitname = "tllannouncer",
 		customparams = {
+			buildpic = "tllannouncer.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

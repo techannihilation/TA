@@ -30,6 +30,7 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 14,
 		maneuverleashlength = 1280,
 		mass = 600,
 		maxdamage = 1800,
@@ -53,7 +54,7 @@ return {
 		turnrate = 828,
 		unitname = "corcut",
 		customparams = {
-			buildpic = "CORCUT.png",
+			buildpic = "corcut.dds",
 			faction = "CORE",
 		},
 		sfxtypes = {

@@ -26,6 +26,7 @@ return {
 		hoverattack = true,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 15,
 		maneuverleashlength = 1280,
 		mass = 3115,
 		maxdamage = 7436,
@@ -48,6 +49,7 @@ return {
 		turnrate = 700,
 		unitname = "corhind",
 		customparams = {
+			buildpic = "corhind.dds",
 			faction = "CORE",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},

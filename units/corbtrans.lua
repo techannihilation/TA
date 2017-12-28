@@ -28,7 +28,7 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 3000,
-		losemitheight = 28.8,
+		losemitheight = 12,
 		maneuverleashlength = 1280,
 		mass = 4375,
 		maxdamage = 26250,
@@ -56,7 +56,7 @@ return {
 		turnrate = 420,
 		unitname = "corbtrans",
 		customparams = {
-			buildpic = "corbtrans.png",
+			buildpic = "corbtrans.dds",
 			faction = "CORE",
 		},
 		sfxtypes = {

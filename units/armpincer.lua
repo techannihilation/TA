@@ -26,7 +26,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 650,
 		mass = 200,
 		maxdamage = 1150,
@@ -57,7 +57,7 @@ return {
 		turnrate = 398,
 		unitname = "armpincer",
 		customparams = {
-			buildpic = "ARMPINCER.png",
+			buildpic = "armpincer.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

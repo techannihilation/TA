@@ -26,7 +26,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 195,
 		maxdamage = 495,
@@ -52,7 +52,7 @@ return {
 		turnrate = 455,
 		unitname = "cormh",
 		customparams = {
-			buildpic = "CORMH.png",
+			buildpic = "cormh.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

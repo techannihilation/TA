@@ -28,6 +28,7 @@ return {
 		hoverattack = true,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 14.5,
 		maneuverleashlength = 1280,
 		mass = 103,
 		maxdamage = 490,
@@ -56,6 +57,7 @@ return {
 		unitname = "armdragf",
 		upright = true,
 		customparams = {
+			buildpic = "armdragf.dds",
 			faction = "ARM",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},

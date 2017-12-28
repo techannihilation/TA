@@ -25,7 +25,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 34,
+		losemitheight = 35,
 		mass = 4400,
 		maxdamage = 4250,
 		maxslope = 10,
@@ -56,6 +56,7 @@ return {
 			[10] = "tllom",
 		},
 		customparams = {
+			buildpic = "tllturtle_lab.dds",
 			faction = "TLL",
 			providetech = "T2 Factory",
 		},

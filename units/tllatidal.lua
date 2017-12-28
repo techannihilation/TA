@@ -36,6 +36,7 @@ return {
 		unitname = "tllatidal",
 		yardmap = "oooo oooo oooo oooo",
 		customparams = {
+			buildpic = "tllatidal.dds",
 			energymultiplier = 2.5,
 			faction = "TLL",
 		},

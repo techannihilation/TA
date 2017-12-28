@@ -25,7 +25,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 38,
+		losemitheight = 39,
 		mass = 39,
 		maxdamage = 224,
 		maxslope = 10,
@@ -43,6 +43,7 @@ return {
 		windgenerator = 120,
 		yardmap = "oooo oooo oooo oooo",
 		customparams = {
+			buildpic = "tllwindtrap.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

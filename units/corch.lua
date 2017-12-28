@@ -27,7 +27,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 223.5,
 		maxdamage = 1341,
@@ -43,7 +43,7 @@ return {
 		nochasecategory = "VTOL",
 		objectname = "CORCH",
 		radardistance = 50,
-		radaremitheight = 25,
+		radaremitheight = 22,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 338,
@@ -105,7 +105,7 @@ return {
 			[46] = "cortl",
 		},
 		customparams = {
-			buildpic = "CORCH.png",
+			buildpic = "corch.dds",
 			faction = "core",
 		},
 		featuredefs = {

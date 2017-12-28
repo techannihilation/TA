@@ -29,7 +29,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 26,
+		losemitheight = 27,
 		maneuverleashlength = 640,
 		mass = 1150,
 		maxdamage = 4250,
@@ -56,6 +56,7 @@ return {
 		turnrate = 250,
 		unitname = "corhover3g",
 		customparams = {
+			buildpic = "corhover3g.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

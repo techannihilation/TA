@@ -28,8 +28,8 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 67,
-		mass = 1813,
+		losemitheight = 68,
+		mass = 1530,
 		maxdamage = 2475,
 		maxslope = 10,
 		maxwaterdepth = 1,
@@ -44,7 +44,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooo oooooo oooooo oooooo oooooo oooooo",
 		customparams = {
-			buildpic = "armlightfus.png",
+			buildpic = "armlightfus.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

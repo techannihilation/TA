@@ -27,7 +27,7 @@ return {
 		footprintz = 4,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 39,
+		losemitheight = 40,
 		maneuverleashlength = 640,
 		mass = 5850,
 		maxdamage = 19500,
@@ -51,6 +51,7 @@ return {
 		turnrate = 256,
 		unitname = "corerex",
 		customparams = {
+			buildpic = "corerex.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

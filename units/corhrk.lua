@@ -25,7 +25,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 26,
 		maneuverleashlength = 640,
 		mass = 590,
 		maxdamage = 860,
@@ -46,12 +46,12 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.188,
+		turninplacespeedlimit = 0.924,
 		turnrate = 1103,
 		unitname = "corhrk",
 		upright = true,
 		customparams = {
-			buildpic = "CORHRK.png",
+			buildpic = "corhrk.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

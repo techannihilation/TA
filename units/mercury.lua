@@ -29,7 +29,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 62,
+		losemitheight = 63,
 		mass = 1650,
 		maxdamage = 4250,
 		maxslope = 20,
@@ -51,7 +51,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooooooooooo",
 		customparams = {
-			buildpic = "MERCURY.png",
+			buildpic = "mercury.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

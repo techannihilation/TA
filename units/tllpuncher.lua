@@ -23,7 +23,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 300,
 		mass = 587,
 		maxdamage = 1650,
@@ -48,6 +48,7 @@ return {
 		turnrate = 550,
 		unitname = "tllpuncher",
 		customparams = {
+			buildpic = "tllpuncher.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

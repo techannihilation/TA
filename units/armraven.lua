@@ -46,12 +46,12 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.056,
+		turninplacespeedlimit = 0.924,
 		turnrate = 979,
 		unitname = "armraven",
 		upright = true,
 		customparams = {
-			buildpic = "ARMRAVEN.png",
+			buildpic = "armraven.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

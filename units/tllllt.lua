@@ -53,7 +53,7 @@ return {
 		unitname = "tllllt",
 		yardmap = "oooo",
 		customparams = {
-			buildpic = "TLLLLT.png",
+			buildpic = "tllllt.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

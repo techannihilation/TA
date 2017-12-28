@@ -28,7 +28,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 31,
+		losemitheight = 32,
 		mass = 1005,
 		maxdamage = 2500,
 		maxslope = 10,
@@ -69,7 +69,7 @@ return {
 			[12] = "corsub",
 		},
 		customparams = {
-			buildpic = "CSUBPEN.png",
+			buildpic = "csubpen.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

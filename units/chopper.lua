@@ -28,6 +28,7 @@ return {
 		hoverattack = true,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 16,
 		maneuverleashlength = 1280,
 		mass = 939,
 		maxdamage = 2420,
@@ -50,6 +51,7 @@ return {
 		turnrate = 700,
 		unitname = "chopper",
 		customparams = {
+			buildpic = "chopper.dds",
 			faction = "ARM",
 		},
 		sfxtypes = {

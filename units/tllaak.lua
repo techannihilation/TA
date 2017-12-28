@@ -23,7 +23,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 320,
 		mass = 800,
 		maxdamage = 1140,
@@ -48,6 +48,7 @@ return {
 		unitname = "tllaak",
 		upright = true,
 		customparams = {
+			buildpic = "tllaak.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

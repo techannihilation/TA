@@ -28,7 +28,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		mass = 16000,
 		maxdamage = 12820,
 		maxslope = 10,
@@ -59,6 +59,7 @@ return {
 			[6] = "nsaagriz",
 		},
 		customparams = {
+			buildpic = "armevp.dds",
 			faction = "ARM",
 			providetech = "T3 Factory",
 		},

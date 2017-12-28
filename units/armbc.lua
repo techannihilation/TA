@@ -49,6 +49,7 @@ return {
 		turnrate = 60,
 		unitname = "armbc",
 		customparams = {
+			buildpic = "armbc.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

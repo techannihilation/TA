@@ -26,7 +26,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 55,
-		mass = 656,
+		mass = 650,
 		maxdamage = 2990,
 		maxvelocity = 0,
 		metalmake = 0.5,
@@ -62,7 +62,7 @@ return {
 			[8] = "armhls",
 		},
 		customparams = {
-			buildpic = "ARMSY.png",
+			buildpic = "armsy.dds",
 			faction = "ARM",
 			providetech = "T1 Factory",
 		},

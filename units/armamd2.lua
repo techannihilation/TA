@@ -28,7 +28,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 62,
+		losemitheight = 63,
 		mass = 23399,
 		maxdamage = 14800,
 		maxslope = 10,
@@ -38,7 +38,7 @@ return {
 		nochasecategory = "ALL",
 		objectname = "ARMAMD2",
 		radardistance = 50,
-		radaremitheight = 62,
+		radaremitheight = 63,
 		script = "armamd.cob",
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -52,7 +52,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooo oooooo oooooo oooooo oooooo oooooo",
 		customparams = {
-			buildpic = "ARMAMD.png",
+			buildpic = "armamd2.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

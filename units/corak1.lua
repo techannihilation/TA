@@ -25,7 +25,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 24,
 		maneuverleashlength = 640,
 		mass = 83.33334,
 		maxdamage = 500,
@@ -51,7 +51,7 @@ return {
 		unitname = "corak1",
 		upright = true,
 		customparams = {
-			buildpic = "CORAK1.png",
+			buildpic = "corak1.dds",
 			faction = "CORE",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},

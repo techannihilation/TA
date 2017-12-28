@@ -29,7 +29,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		initcloaked = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		mass = 241.66667,
 		maxdamage = 1450,
 		maxslope = 20,
@@ -55,7 +55,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooooo",
 		customparams = {
-			buildpic = "ARMAMEX.png",
+			buildpic = "armamex.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

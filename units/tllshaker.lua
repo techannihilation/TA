@@ -24,7 +24,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 650,
 		mass = 245,
 		maxdamage = 605,
@@ -56,7 +56,7 @@ return {
 		turnrate = 466,
 		unitname = "tllshaker",
 		customparams = {
-			buildpic = "TLLSHAKER.png",
+			buildpic = "tllshaker.dds",
 			canareaattack = 1,
 			faction = "TLL",
 		},

@@ -29,8 +29,8 @@ return {
 		icontype = "bigstar",
 		idleautoheal = 2,
 		idletime = 2200,
-		losemitheight = 162,
-		mass = 640000,
+		losemitheight = 175,
+		mass = 952000,
 		maxdamage = 61460,
 		maxslope = 16,
 		maxwaterdepth = 0,
@@ -47,6 +47,7 @@ return {
 		usepiececollisionvolumes = 1,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
+			buildpic = "tllvanya.dds",
 			faction = "TLL",
 		},
 		sfxtypes = {

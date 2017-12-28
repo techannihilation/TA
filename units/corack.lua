@@ -30,7 +30,7 @@ return {
 		idletime = 1800,
 		losemitheight = 28,
 		maneuverleashlength = 640,
-		mass = 2677,
+		mass = 1695,
 		maxdamage = 1550,
 		maxslope = 20,
 		maxvelocity = 1.1,
@@ -85,7 +85,7 @@ return {
 			[24] = "corboucher",
 		},
 		customparams = {
-			buildpic = "CORACK.png",
+			buildpic = "corack.dds",
 			faction = "core",
 		},
 		featuredefs = {

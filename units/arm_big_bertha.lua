@@ -26,7 +26,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		immunetoparalyzer = 1,
-		losemitheight = 66,
+		losemitheight = 67,
 		mass = 4300,
 		maxdamage = 4950,
 		maxslope = 10,
@@ -44,7 +44,7 @@ return {
 		usepiececollisionvolumes = 1,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo",
 		customparams = {
-			buildpic = "arm_big_bertha.png",
+			buildpic = "arm_big_bertha.dds",
 			canareaattack = 1,
 			faction = "Arm",
 		},

@@ -28,7 +28,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 36,
-		mass = 4100,
+		mass = 4090,
 		maxdamage = 12500,
 		maxslope = 10,
 		maxvelocity = 0,
@@ -48,7 +48,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooo ooooo ooGoo ooooo ooooo",
 		customparams = {
-			buildpic = "ARMGMM.png",
+			buildpic = "armgmm.dds",
 			faction = "ARM",
 		},
 		sfxtypes = {

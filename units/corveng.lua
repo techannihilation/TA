@@ -26,6 +26,7 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 7,
 		maneuverleashlength = 1280,
 		mass = 90,
 		maxdamage = 260,
@@ -50,7 +51,7 @@ return {
 		unitname = "corveng",
 		unitrestricted = 200,
 		customparams = {
-			buildpic = "CORVENG.png",
+			buildpic = "corveng.dds",
 			faction = "CORE",
 		},
 		sfxtypes = {

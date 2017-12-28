@@ -30,7 +30,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 67,
-		mass = 15147,
+		mass = 14750,
 		maxdamage = 7250,
 		maxslope = 10,
 		maxvelocity = 0,
@@ -53,7 +53,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
-			buildpic = "CORSILO.png",
+			buildpic = "corsilo1.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

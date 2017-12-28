@@ -50,7 +50,7 @@ return {
 		usepiececollisionvolumes = 1,
 		yardmap = "oooo",
 		customparams = {
-			buildpic = "ARMVEIL.png",
+			buildpic = "armveil.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

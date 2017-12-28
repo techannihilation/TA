@@ -49,6 +49,7 @@ return {
 		turnrate = 400,
 		unitname = "tlldemon",
 		customparams = {
+			buildpic = "tlldemon.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

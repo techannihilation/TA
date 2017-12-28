@@ -26,9 +26,9 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 320,
-		mass = 1952,
+		mass = 2480,
 		maxdamage = 1720,
 		maxslope = 16,
 		maxvelocity = 1.7,
@@ -48,7 +48,7 @@ return {
 		steeringmode = 1,
 		turninplace = 1,
 		turninplaceanglelimit = 60,
-		turninplacespeedlimit = 1.089,
+		turninplacespeedlimit = 1.122,
 		turnrate = 450,
 		unitname = "tllacv",
 		workertime = 320,
@@ -73,6 +73,7 @@ return {
 			[18] = "tllevp",
 		},
 		customparams = {
+			buildpic = "tllacv.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

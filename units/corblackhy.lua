@@ -31,7 +31,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		immunetoparalyzer = 1,
-		losemitheight = 62,
+		losemitheight = 63,
 		maneuverleashlength = 1640,
 		mass = 26400,
 		maxdamage = 70000,
@@ -45,7 +45,7 @@ return {
 		objectname = "CORBLACKHY",
 		pushresistant = true,
 		radardistance = 1500,
-		radaremitheight = 62,
+		radaremitheight = 63,
 		seismicsignature = 0,
 		selfdestructas = "BANTHA_NUKE",
 		selfdestructcountdown = 10,
@@ -59,7 +59,7 @@ return {
 		unitname = "corblackhy",
 		waterline = 5,
 		customparams = {
-			buildpic = "CORBLACKHY.png",
+			buildpic = "corblackhy.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

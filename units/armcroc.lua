@@ -27,7 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 560,
 		maxdamage = 3360,
@@ -58,7 +58,7 @@ return {
 		turnrate = 433,
 		unitname = "armcroc",
 		customparams = {
-			buildpic = "ARMCROC.png",
+			buildpic = "armcroc.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

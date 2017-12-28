@@ -28,7 +28,7 @@ return {
 		idletime = 1800,
 		losemitheight = 63,
 		maneuverleashlength = 640,
-		mass = 3290,
+		mass = 3390,
 		maxdamage = 17500,
 		maxslope = 17,
 		maxvelocity = 1.85,
@@ -51,7 +51,7 @@ return {
 		unitname = "corpyrox1",
 		upright = true,
 		customparams = {
-			buildpic = "corpyrox.png",
+			buildpic = "corpyrox1.dds",
 			faction = "CORE",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},

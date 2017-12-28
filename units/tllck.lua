@@ -25,7 +25,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 26,
+		losemitheight = 27,
 		maneuverleashlength = 640,
 		mass = 150,
 		maxdamage = 780,
@@ -85,6 +85,7 @@ return {
 			[30] = "tllsy",
 		},
 		customparams = {
+			buildpic = "tllck.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

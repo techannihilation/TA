@@ -74,7 +74,7 @@ return {
 			[15] = "corgfbt",
 		},
 		customparams = {
-			buildpic = "CORVP.png",
+			buildpic = "corvp.dds",
 			faction = "CORE",
 			providetech = "T1 Factory",
 		},

@@ -27,7 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		immunetoparalyzer = 1,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 137,
 		maxdamage = 270,
@@ -56,7 +56,7 @@ return {
 		unitname = "armspy",
 		upright = true,
 		customparams = {
-			buildpic = "ARMSPY.png",
+			buildpic = "armspy.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

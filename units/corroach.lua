@@ -26,7 +26,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 93.33334,
 		maxdamage = 560,
@@ -53,7 +53,7 @@ return {
 		turnrate = 1507,
 		unitname = "corroach",
 		customparams = {
-			buildpic = "CORROACH.png",
+			buildpic = "corroach.dds",
 			faction = "CORE",
 		},
 		sfxtypes = {

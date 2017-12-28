@@ -22,7 +22,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		mass = 1150,
 		maxdamage = 1560,
 		maxvelocity = 0,
@@ -43,7 +43,7 @@ return {
 		waterline = 10,
 		yardmap = "ooooooooo",
 		customparams = {
-			buildpic = "CORATL.png",
+			buildpic = "coratl.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

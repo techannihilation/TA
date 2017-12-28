@@ -27,7 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 753.33331,
 		maxdamage = 4520,
@@ -58,6 +58,7 @@ return {
 		turnrate = 375,
 		unitname = "armrottweiler",
 		customparams = {
+			buildpic = "armrottweiler.dds",
 			faction = "ARM",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},

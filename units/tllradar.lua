@@ -20,7 +20,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 34,
+		losemitheight = 35,
 		mass = 80,
 		maxdamage = 93,
 		maxslope = 10,
@@ -31,7 +31,7 @@ return {
 		objectname = "TLLRADAR",
 		onoffable = true,
 		radardistance = 2000,
-		radaremitheight = 34,
+		radaremitheight = 35,
 		script = "tllradar.lua",
 		selfdestructas = "SMALL_BUILDING",
 		sightdistance = 350,
@@ -39,6 +39,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooo",
 		customparams = {
+			buildpic = "tllradar.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

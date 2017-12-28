@@ -26,7 +26,7 @@ return {
 		idletime = 1800,
 		losemitheight = 25,
 		maneuverleashlength = 640,
-		mass = 325,
+		mass = 275,
 		maxdamage = 1650,
 		maxvelocity = 1,
 		maxwaterdepth = 0,
@@ -46,10 +46,11 @@ return {
 		stealth = true,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.8415,
+		turninplacespeedlimit = 0.66,
 		turnrate = 1011,
 		unitname = "corehingeback",
 		customparams = {
+			buildpic = "corehingeback.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

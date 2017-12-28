@@ -25,9 +25,9 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 23,
 		maneuverleashlength = 640,
-		mass = 112,
+		mass = 111.66666,
 		maxdamage = 670,
 		maxslope = 14,
 		maxvelocity = 1.65,
@@ -51,7 +51,7 @@ return {
 		unitname = "corstorm",
 		upright = true,
 		customparams = {
-			buildpic = "CORSTORM.png",
+			buildpic = "corstorm.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

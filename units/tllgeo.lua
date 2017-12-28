@@ -25,7 +25,7 @@ return {
 		idletime = 1800,
 		losemitheight = 49,
 		makesmetal = 6,
-		mass = 1824,
+		mass = 1810,
 		maxdamage = 1950,
 		maxslope = 20,
 		maxwaterdepth = 0,
@@ -42,6 +42,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "GGGGGGGGGGGGGGGG",
 		customparams = {
+			buildpic = "tllgeo.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

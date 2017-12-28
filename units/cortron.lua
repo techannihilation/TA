@@ -30,7 +30,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 42,
+		losemitheight = 43,
 		mass = 1920,
 		maxdamage = 3200,
 		maxslope = 10,
@@ -52,7 +52,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooooooooooo",
 		customparams = {
-			buildpic = "CORTRON.png",
+			buildpic = "cortron.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

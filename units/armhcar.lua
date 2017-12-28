@@ -66,6 +66,7 @@ return {
 		waterline = 2,
 		workertime = 5500,
 		customparams = {
+			buildpic = "armhcar.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

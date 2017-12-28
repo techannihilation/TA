@@ -23,7 +23,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 790,
 		maxdamage = 655,
@@ -44,11 +44,12 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.99,
+		turninplacespeedlimit = 0.792,
 		turnrate = 658,
 		unitname = "tllhrk",
 		upright = false,
 		customparams = {
+			buildpic = "tllhrk.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

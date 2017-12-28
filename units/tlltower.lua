@@ -40,6 +40,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooo",
 		customparams = {
+			buildpic = "tlltower.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

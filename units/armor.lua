@@ -28,7 +28,7 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 3000,
-		losemitheight = 28.8,
+		losemitheight = 10,
 		maneuverleashlength = 1280,
 		mass = 3750,
 		maxdamage = 22500,
@@ -56,7 +56,7 @@ return {
 		turnrate = 420,
 		unitname = "armor",
 		customparams = {
-			buildpic = "armor.png",
+			buildpic = "armor.dds",
 			faction = "ARM",
 		},
 		sfxtypes = {

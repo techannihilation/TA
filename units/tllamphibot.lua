@@ -24,7 +24,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 30,
+		losemitheight = 31,
 		maneuverleashlength = 640,
 		mass = 535,
 		maxdamage = 2200,
@@ -52,6 +52,7 @@ return {
 		upright = true,
 		waterline = 30,
 		customparams = {
+			buildpic = "tllamphibot.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

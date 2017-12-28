@@ -23,7 +23,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 250,
 		maxdamage = 1365,
@@ -54,7 +54,7 @@ return {
 		turnrate = 497,
 		unitname = "armsam1",
 		customparams = {
-			buildpic = "ARMSAM1.png",
+			buildpic = "armsam1.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

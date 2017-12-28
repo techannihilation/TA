@@ -52,7 +52,7 @@ return {
 		unitname = "armfast",
 		upright = true,
 		customparams = {
-			buildpic = "ARMFAST.png",
+			buildpic = "armfast.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

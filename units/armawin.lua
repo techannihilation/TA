@@ -26,7 +26,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 136,
-		mass = 124,
+		mass = 125,
 		maxdamage = 530,
 		maxslope = 10,
 		maxvelocity = 0,
@@ -46,7 +46,7 @@ return {
 		windgenerator = 90,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo",
 		customparams = {
-			buildpic = "armawin.png",
+			buildpic = "armawin.dds",
 			energymultiplier = 4,
 			faction = "ARM",
 		},

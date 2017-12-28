@@ -22,7 +22,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 44,
 		maxdamage = 102,
@@ -47,6 +47,7 @@ return {
 		turnrate = 1050,
 		unitname = "tllgladius",
 		customparams = {
+			buildpic = "tllgladius.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

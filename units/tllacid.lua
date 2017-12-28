@@ -24,7 +24,7 @@ return {
 		footprintz = 4,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 42,
+		losemitheight = 43,
 		maneuverleashlength = 640,
 		mass = 6100,
 		maxdamage = 3450,
@@ -49,6 +49,7 @@ return {
 		turnrate = 380,
 		unitname = "tllacid",
 		customparams = {
+			buildpic = "tllacid.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

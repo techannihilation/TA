@@ -29,7 +29,7 @@ return {
 		idletime = 1800,
 		initcloaked = false,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 226,
 		maxdamage = 950,
@@ -62,7 +62,7 @@ return {
 		turnrate = 701.79999,
 		unitname = "armst",
 		customparams = {
-			buildpic = "ARMST.png",
+			buildpic = "armst.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

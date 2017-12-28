@@ -53,7 +53,7 @@ return {
 		unitname = "marauder",
 		upright = true,
 		customparams = {
-			buildpic = "MARAUDER.png",
+			buildpic = "marauder.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

@@ -33,8 +33,9 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 8,
 		maneuverleashlength = 1280,
-		mass = 2298,
+		mass = 1690,
 		maxdamage = 1350,
 		maxslope = 10,
 		maxvelocity = 8,
@@ -53,7 +54,7 @@ return {
 		steeringmode = 1,
 		terraformspeed = 180,
 		turninplaceanglelimit = 360,
-		turninplacespeedlimit = 5.9202,
+		turninplacespeedlimit = 5.28,
 		turnrate = 148,
 		unitname = "armcsa",
 		workertime = 160,
@@ -89,7 +90,7 @@ return {
 			[29] = "armflosh",
 		},
 		customparams = {
-			buildpic = "ARMCSA.png",
+			buildpic = "armcsa.dds",
 			faction = "arm",
 		},
 		nanocolor = {

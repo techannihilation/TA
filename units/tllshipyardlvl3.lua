@@ -20,8 +20,8 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 101,
-		mass = 106667,
+		losemitheight = 243,
+		mass = 102550,
 		maxdamage = 68000,
 		maxslope = 10,
 		maxwaterdepth = 255,
@@ -41,6 +41,7 @@ return {
 			[1] = "tllvaliant",
 		},
 		customparams = {
+			buildpic = "tllshipyardlvl3.dds",
 			faction = "TLL",
 			providetech = "T4 Factory, T3 Factory, T2 Factory",
 		},

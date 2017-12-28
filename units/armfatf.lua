@@ -23,7 +23,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		istargetingupgrade = true,
-		losemitheight = 32,
+		losemitheight = 33,
 		mass = 806,
 		maxdamage = 1451,
 		maxslope = 10,
@@ -45,7 +45,7 @@ return {
 		waterline = 9,
 		yardmap = "wwwwwwwwwwwwwwww",
 		customparams = {
-			buildpic = "ARMFATF.png",
+			buildpic = "armfatf.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

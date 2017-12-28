@@ -26,7 +26,7 @@ return {
 		footprintz = 6,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 43,
+		losemitheight = 44,
 		maneuverleashlength = 640,
 		mass = 5526,
 		maxdamage = 7210,
@@ -51,6 +51,7 @@ return {
 		unitname = "tllbats2",
 		waterline = 9,
 		customparams = {
+			buildpic = "tllbats2.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

@@ -27,9 +27,9 @@ return {
 		footprintz = 4,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
-		mass = 2549,
+		mass = 1660,
 		maxdamage = 1625,
 		maxslope = 16,
 		maxvelocity = 1.6,
@@ -84,6 +84,7 @@ return {
 			[28] = "armflosh",
 		},
 		customparams = {
+			buildpic = "aach.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

@@ -23,7 +23,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 24,
 		maneuverleashlength = 640,
 		mass = 790,
 		maxdamage = 3380,
@@ -44,10 +44,11 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.594,
+		turninplacespeedlimit = 0.495,
 		turnrate = 465,
 		unitname = "tllloggerhead",
 		customparams = {
+			buildpic = "tllloggerhead.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

@@ -29,7 +29,8 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
-		mass = 373,
+		losemitheight = 7,
+		mass = 370,
 		maxdamage = 945,
 		maxslope = 10,
 		maxvelocity = 10,
@@ -73,6 +74,7 @@ return {
 			[22] = "armhawk",
 		},
 		customparams = {
+			buildpic = "abuilderlvl1.dds",
 			faction = "ARM",
 		},
 		nanocolor = {

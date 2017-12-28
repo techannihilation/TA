@@ -55,6 +55,7 @@ return {
 		unitname = "armiguana",
 		upright = true,
 		customparams = {
+			buildpic = "armiguana.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

@@ -61,7 +61,7 @@ return {
 			[8] = "corasship",
 		},
 		customparams = {
-			buildpic = "CORSY.png",
+			buildpic = "corsy.dds",
 			faction = "CORE",
 			providetech = "T1 Factory",
 		},

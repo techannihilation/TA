@@ -22,9 +22,9 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 34,
+		losemitheight = 35,
 		maneuverleashlength = 640,
-		mass = 3250,
+		mass = 2850,
 		maxdamage = 12900,
 		maxslope = 17,
 		maxvelocity = 0.8,
@@ -47,6 +47,7 @@ return {
 		unitname = "tllbind",
 		upright = true,
 		customparams = {
+			buildpic = "tllbind.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

@@ -28,7 +28,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 146.66667,
 		maxdamage = 880,
@@ -43,7 +43,7 @@ return {
 		objectname = "ARMSEER",
 		onoffable = true,
 		radardistance = 2300,
-		radaremitheight = 25,
+		radaremitheight = 22,
 		script = "armseer.lua",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -61,7 +61,7 @@ return {
 		turnrate = 605,
 		unitname = "armseer",
 		customparams = {
-			buildpic = "ARMSEER.png",
+			buildpic = "armseer.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

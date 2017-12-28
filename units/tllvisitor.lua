@@ -26,7 +26,7 @@ return {
 		idletime = 1800,
 		losemitheight = 36,
 		maneuverleashlength = 640,
-		mass = 2864,
+		mass = 2850,
 		maxdamage = 3100,
 		maxvelocity = 2,
 		minwaterdepth = 12,
@@ -43,11 +43,12 @@ return {
 		standingmoveorder = 0,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.627,
+		turninplacespeedlimit = 1.32,
 		turnrate = 292,
 		unitname = "tllvisitor",
 		waterline = 6,
 		customparams = {
+			buildpic = "tllvisitor.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

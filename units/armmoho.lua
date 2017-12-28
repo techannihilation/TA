@@ -50,7 +50,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooooooooooooooooooooo",
 		customparams = {
-			buildpic = "ARMMOHO.png",
+			buildpic = "armmoho.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

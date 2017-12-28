@@ -22,7 +22,7 @@ return {
 		footprintz = 16,
 		idleautoheal = 6,
 		idletime = 1800,
-		losemitheight = 136,
+		losemitheight = 137,
 		mass = 162624,
 		maxdamage = 15100,
 		maxslope = 10,
@@ -40,6 +40,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo ",
 		customparams = {
+			buildpic = "corfsilo.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

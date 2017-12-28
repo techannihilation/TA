@@ -27,8 +27,8 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 114,
-		mass = 5568,
+		losemitheight = 95,
+		mass = 7550,
 		maxdamage = 18000,
 		maxslope = 20,
 		maxwaterdepth = 9999,
@@ -45,6 +45,7 @@ return {
 		unitname = "tllmas",
 		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo",
 		customparams = {
+			buildpic = "tllmas.dds",
 			faction = "TLL",
 		},
 		sfxtypes = {

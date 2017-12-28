@@ -30,8 +30,8 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 65,
-		mass = 865,
+		losemitheight = 68,
+		mass = 970,
 		maxdamage = 2825,
 		maxslope = 10,
 		maxvelocity = 0,
@@ -51,7 +51,7 @@ return {
 		unitname = "tllvhlt",
 		yardmap = "oooo",
 		customparams = {
-			buildpic = "tllvhlt.png",
+			buildpic = "tllvhlt.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

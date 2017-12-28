@@ -32,8 +32,9 @@ return {
 		hoverattack = true,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 13,
 		maneuverleashlength = 1280,
-		mass = 1280,
+		mass = 1850,
 		maxdamage = 1555,
 		maxslope = 10,
 		maxvelocity = 6,
@@ -50,7 +51,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 360,
-		turninplacespeedlimit = 4.224,
+		turninplacespeedlimit = 3.96,
 		turnrate = 125,
 		unitname = "tllcsa",
 		workertime = 55,
@@ -80,6 +81,7 @@ return {
 			[23] = "tllfgate",
 		},
 		customparams = {
+			buildpic = "tllcsa.dds",
 			faction = "TLL",
 		},
 		nanocolor = {

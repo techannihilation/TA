@@ -28,7 +28,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 92,
 		maxdamage = 510,
@@ -43,7 +43,7 @@ return {
 		objectname = "CORVRAD",
 		onoffable = true,
 		radardistance = 2200,
-		radaremitheight = 25,
+		radaremitheight = 22,
 		script = "corvrad.lua",
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 900,
@@ -61,7 +61,7 @@ return {
 		turnrate = 210,
 		unitname = "corvrad",
 		customparams = {
-			buildpic = "corvrad.png",
+			buildpic = "corvrad.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

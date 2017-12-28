@@ -27,7 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 24,
 		maneuverleashlength = 640,
 		mass = 206.66667,
 		maxdamage = 1240,
@@ -43,7 +43,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMCV",
 		radardistance = 50,
-		radaremitheight = 25,
+		radaremitheight = 24,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 253,
@@ -96,7 +96,7 @@ return {
 			[32] = "armsy",
 		},
 		customparams = {
-			buildpic = "ARMCV.png",
+			buildpic = "armcv.dds",
 			faction = "arm",
 		},
 		featuredefs = {

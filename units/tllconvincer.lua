@@ -22,7 +22,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 320,
 		mass = 1100,
 		maxdamage = 860,
@@ -47,6 +47,7 @@ return {
 		turnrate = 400,
 		unitname = "tllconvincer",
 		customparams = {
+			buildpic = "tllconvincer.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

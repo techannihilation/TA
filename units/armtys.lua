@@ -29,6 +29,7 @@ return {
 		hoverattack = true,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 8.5,
 		maneuverleashlength = 200,
 		mass = 318,
 		maxdamage = 1230,
@@ -51,6 +52,7 @@ return {
 		unitname = "armtys",
 		upright = true,
 		customparams = {
+			buildpic = "armtys.dds",
 			faction = "CORE",
 		},
 		sfxtypes = {

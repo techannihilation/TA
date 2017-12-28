@@ -28,7 +28,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 31,
+		losemitheight = 32,
 		maneuverleashlength = 380,
 		mass = 725,
 		maxdamage = 700,
@@ -55,7 +55,7 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 400,
 		customparams = {
-			buildpic = "ARMNANOTC1.png",
+			buildpic = "armnanotc1.dds",
 			faction = "ARM",
 		},
 		nanocolor = {

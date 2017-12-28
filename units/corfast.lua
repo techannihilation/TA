@@ -29,9 +29,9 @@ return {
 		healtime = 8,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 34,
+		losemitheight = 35,
 		maneuverleashlength = 640,
-		mass = 208,
+		mass = 205,
 		maxdamage = 750,
 		maxslope = 17,
 		maxvelocity = 3,
@@ -85,7 +85,7 @@ return {
 			[24] = "cormort",
 		},
 		customparams = {
-			buildpic = "CORFAST.png",
+			buildpic = "corfast.dds",
 			faction = "core",
 		},
 		featuredefs = {

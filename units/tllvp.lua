@@ -25,7 +25,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 42,
+		losemitheight = 43,
 		mass = 848,
 		maxdamage = 2818,
 		maxslope = 10,
@@ -58,6 +58,7 @@ return {
 			[10] = "tllhoplit",
 		},
 		customparams = {
+			buildpic = "tllvp.dds",
 			faction = "TLL",
 			providetech = "T1 Factory",
 		},

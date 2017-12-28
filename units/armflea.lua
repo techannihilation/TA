@@ -25,7 +25,7 @@ return {
 		footprintz = 1,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 15,
 		maxdamage = 50,
@@ -51,7 +51,7 @@ return {
 		unitname = "armflea",
 		unitrestricted = 150,
 		customparams = {
-			buildpic = "ARMFLEA.png",
+			buildpic = "armflea.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

@@ -52,7 +52,7 @@ return {
 		unitrestricted = 125,
 		upright = true,
 		customparams = {
-			buildpic = "ARMPW.png",
+			buildpic = "armpw.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

@@ -58,7 +58,7 @@ return {
 		turnrate = 169.39999,
 		unitname = "trem",
 		customparams = {
-			buildpic = "TREM.png",
+			buildpic = "trem.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

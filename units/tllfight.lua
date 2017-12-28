@@ -26,6 +26,7 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 9,
 		maneuverleashlength = 1280,
 		mass = 175,
 		maxdamage = 275,
@@ -45,11 +46,12 @@ return {
 		standingmoveorder = 2,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 6.072,
+		turninplacespeedlimit = 6.27,
 		turnrate = 850,
 		unitname = "tllfight",
 		upright = true,
 		customparams = {
+			buildpic = "tllfight.dds",
 			faction = "TLL",
 		},
 		sfxtypes = {

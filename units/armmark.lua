@@ -29,7 +29,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 101,
 		maxdamage = 320,
@@ -44,7 +44,7 @@ return {
 		objectname = "ARMMARK",
 		onoffable = true,
 		radardistance = 2200,
-		radaremitheight = 25,
+		radaremitheight = 22,
 		script = "armmark.lua",
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 900,
@@ -56,7 +56,7 @@ return {
 		turnrate = 505,
 		unitname = "armmark",
 		customparams = {
-			buildpic = "armmark.png",
+			buildpic = "armmark.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

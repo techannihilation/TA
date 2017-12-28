@@ -43,7 +43,7 @@ return {
 		waterline = 0,
 		yardmap = "oooooo oooooo oooooo oooooo",
 		customparams = {
-			buildpic = "tllfgate.png",
+			buildpic = "tllfgate.dds",
 			faction = "TLL",
 		},
 		sfxtypes = {

@@ -49,7 +49,7 @@ return {
 		usepiececollisionvolumes = 1,
 		yardmap = "ooooooooooooooooooooooooo",
 		customparams = {
-			buildpic = "CORINT.png",
+			buildpic = "corint.dds",
 			canareaattack = 1,
 			faction = "CORE",
 		},

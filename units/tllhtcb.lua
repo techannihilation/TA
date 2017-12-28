@@ -25,9 +25,9 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 320,
-		mass = 12500,
+		mass = 890,
 		maxdamage = 3600,
 		maxslope = 16,
 		maxvelocity = 1.5,
@@ -47,7 +47,7 @@ return {
 		steeringmode = 1,
 		turninplace = 1,
 		turninplaceanglelimit = 60,
-		turninplacespeedlimit = 1.089,
+		turninplacespeedlimit = 0.99,
 		turnrate = 550,
 		unitname = "tllhtcb",
 		workertime = 450,
@@ -73,6 +73,7 @@ return {
 			[19] = "tllloki",
 		},
 		customparams = {
+			buildpic = "tllhtcb.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

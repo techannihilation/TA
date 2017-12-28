@@ -27,7 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 10,
 		mass = 560,
 		maxdamage = 1350,
@@ -58,7 +58,7 @@ return {
 		turnrate = 618.20001,
 		unitname = "armyork",
 		customparams = {
-			buildpic = "ARMYORK.png",
+			buildpic = "armyork.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

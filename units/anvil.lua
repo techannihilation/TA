@@ -26,7 +26,7 @@ return {
 		footprintz = 4,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 40,
+		losemitheight = 41,
 		maneuverleashlength = 640,
 		mass = 17550,
 		maxdamage = 15500,
@@ -53,6 +53,7 @@ return {
 		turnrate = 300,
 		unitname = "anvil",
 		customparams = {
+			buildpic = "anvil.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

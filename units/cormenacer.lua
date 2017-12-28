@@ -49,11 +49,12 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.594,
+		turninplacespeedlimit = 0.66,
 		turnrate = 510,
 		unitname = "cormenacer",
 		upright = false,
 		customparams = {
+			buildpic = "cormenacer.dds",
 			faction = "CORE",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},

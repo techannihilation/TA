@@ -52,7 +52,7 @@ return {
 		unitname = "corsumo",
 		upright = false,
 		customparams = {
-			buildpic = "CORSUMO.png",
+			buildpic = "corsumo.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

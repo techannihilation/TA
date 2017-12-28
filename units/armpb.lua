@@ -29,7 +29,7 @@ return {
 		idletime = 1800,
 		initcloaked = false,
 		losemitheight = 48,
-		mass = 930,
+		mass = 1150,
 		maxdamage = 2535,
 		maxslope = 10,
 		maxvelocity = 0,
@@ -51,7 +51,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooooo",
 		customparams = {
-			buildpic = "ARMPB.png",
+			buildpic = "armpb.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

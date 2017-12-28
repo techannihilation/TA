@@ -55,6 +55,7 @@ return {
 		unitname = "macross",
 		upright = true,
 		customparams = {
+			buildpic = "macross.dds",
 			faction = "CORE",
 			requiretech = "Advanced T3 Unit Research Centre",
 		},

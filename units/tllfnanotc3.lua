@@ -52,7 +52,7 @@ return {
 		waterline = 1,
 		workertime = 2400,
 		customparams = {
-			buildpic = "TLLFNANOTC3.png",
+			buildpic = "tllfnanotc3.dds",
 			faction = "TLL",
 		},
 		nanocolor = {

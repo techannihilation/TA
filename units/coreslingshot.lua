@@ -24,7 +24,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 26,
 		maneuverleashlength = 640,
 		mass = 480,
 		maxdamage = 2150,
@@ -44,10 +44,11 @@ return {
 		standingmoveorder = 0,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.792,
+		turninplacespeedlimit = 0.66,
 		turnrate = 1020,
 		unitname = "coreslingshot",
 		customparams = {
+			buildpic = "coreslingshot.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

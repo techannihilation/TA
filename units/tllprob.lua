@@ -23,8 +23,9 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 9,
 		maneuverleashlength = 1280,
-		mass = 38,
+		mass = 40,
 		maxdamage = 100,
 		maxslope = 10,
 		maxvelocity = 12,
@@ -35,6 +36,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "tllprob",
 		radardistance = 900,
+		radaremitheight = 9,
 		selfdestructas = "SMALL_UNIT_VTOL",
 		sightdistance = 750,
 		standingmoveorder = 1,
@@ -44,6 +46,7 @@ return {
 		turnrate = 800,
 		unitname = "tllprob",
 		customparams = {
+			buildpic = "tllprob.dds",
 			faction = "TLL",
 		},
 		sfxtypes = {

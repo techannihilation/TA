@@ -26,7 +26,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 490,
 		mass = 2125,
 		maxdamage = 2350,
@@ -53,6 +53,7 @@ return {
 		unitname = "armcd",
 		upright = true,
 		customparams = {
+			buildpic = "armcd.dds",
 			faction = "ARM",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},

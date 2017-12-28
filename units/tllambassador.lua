@@ -53,6 +53,7 @@ return {
 		unitname = "tllambassador",
 		waterline = 6,
 		customparams = {
+			buildpic = "tllambassador.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

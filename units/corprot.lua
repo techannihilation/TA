@@ -55,6 +55,7 @@ return {
 		unitname = "corprot",
 		upright = true,
 		customparams = {
+			buildpic = "corprot.dds",
 			faction = "CORE",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},

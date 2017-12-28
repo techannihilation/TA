@@ -57,6 +57,7 @@ return {
 		turnrate = 525,
 		unitname = "ahermes",
 		customparams = {
+			buildpic = "ahermes.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

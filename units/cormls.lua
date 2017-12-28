@@ -28,9 +28,9 @@ return {
 		icontype = "sea",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
-		mass = 308,
+		mass = 305,
 		maxdamage = 1400,
 		maxvelocity = 2.1,
 		minwaterdepth = 15,
@@ -71,7 +71,7 @@ return {
 			[16] = "corcrus",
 		},
 		customparams = {
-			buildpic = "CORMLS.png",
+			buildpic = "cormls.dds",
 			faction = "core",
 		},
 		featuredefs = {

@@ -26,7 +26,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 89,
+		losemitheight = 90,
 		mass = 58,
 		maxangledif1 = 1,
 		maxdamage = 81,
@@ -39,7 +39,7 @@ return {
 		objectname = "CORRAD",
 		onoffable = true,
 		radardistance = 2100,
-		radaremitheight = 89,
+		radaremitheight = 90,
 		script = "corrad.lua",
 		seismicsignature = 0,
 		selfdestructas = "SMALL_BUILDING",
@@ -51,7 +51,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooo",
 		customparams = {
-			buildpic = "CORRAD.png",
+			buildpic = "corrad.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

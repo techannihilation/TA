@@ -32,7 +32,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		immunetoparalyzer = 1,
-		losemitheight = 25,
+		losemitheight = 26,
 		maneuverleashlength = 1200,
 		mass = 5280,
 		maxdamage = 28000,
@@ -59,6 +59,7 @@ return {
 		unitname = "champ",
 		upright = false,
 		customparams = {
+			buildpic = "champ.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

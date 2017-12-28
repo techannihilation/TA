@@ -27,7 +27,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 181,
 		maxdamage = 600,
@@ -52,6 +52,7 @@ return {
 		unitname = "tllfirestarter",
 		upright = true,
 		customparams = {
+			buildpic = "tllfirestarter.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

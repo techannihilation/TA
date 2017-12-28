@@ -73,7 +73,7 @@ return {
 		standingmoveorder = 0,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.858,
+		turninplacespeedlimit = 0.792,
 		turnrate = 1148,
 		unitname = "corcom_fusion",
 		upright = true,
@@ -108,7 +108,7 @@ return {
 			[27] = "corfrt",
 		},
 		customparams = {
-			buildpic = "CORCOM.png",
+			buildpic = "corcom1.dds",
 			faction = "CORE",
 			iscommander = true,
 		},

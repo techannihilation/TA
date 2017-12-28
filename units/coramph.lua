@@ -27,7 +27,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 26,
 		maneuverleashlength = 640,
 		mass = 350,
 		maxdamage = 2100,
@@ -40,7 +40,7 @@ return {
 		nochasecategory = "VTOL",
 		objectname = "CORAMPH",
 		radardistance = 300,
-		radaremitheight = 25,
+		radaremitheight = 26,
 		script = "coramph.lua",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -55,7 +55,7 @@ return {
 		unitname = "coramph",
 		upright = true,
 		customparams = {
-			buildpic = "CORAMPH.png",
+			buildpic = "coramph.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

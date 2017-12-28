@@ -19,7 +19,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		isfeature = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		mass = 21,
 		maxdamage = 50,
 		maxslope = 32,
@@ -39,7 +39,7 @@ return {
 		waterline = 10,
 		yardmap = "wwww",
 		customparams = {
-			buildpic = "CORFDRAG.png",
+			buildpic = "corfdrag.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

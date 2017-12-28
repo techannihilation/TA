@@ -32,7 +32,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 61,
 		maxdamage = 155,
@@ -77,7 +77,7 @@ return {
 			[8] = "cormine7",
 		},
 		customparams = {
-			buildpic = "CORMLV.png",
+			buildpic = "cormlv.dds",
 			faction = "core",
 		},
 		featuredefs = {

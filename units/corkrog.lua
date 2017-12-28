@@ -29,7 +29,7 @@ return {
 		immunetoparalyzer = 1,
 		losemitheight = 147,
 		maneuverleashlength = 640,
-		mass = 27416.66602,
+		mass = 29083.33398,
 		maxdamage = 174500,
 		maxslope = 17,
 		maxvelocity = 1.2,
@@ -55,7 +55,7 @@ return {
 		unitname = "corkrog",
 		upright = true,
 		customparams = {
-			buildpic = "CORKROG.png",
+			buildpic = "corkrog.dds",
 			faction = "CORE",
 			requiretech = "Advanced T3 Unit Research Centre",
 		},

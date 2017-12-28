@@ -27,7 +27,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 245,
 		maxdamage = 1008,
@@ -54,7 +54,7 @@ return {
 		turnrate = 470,
 		unitname = "corah",
 		customparams = {
-			buildpic = "CORAH.png",
+			buildpic = "corah.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

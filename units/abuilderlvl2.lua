@@ -31,7 +31,8 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
-		mass = 713,
+		losemitheight = 7,
+		mass = 420,
 		maxdamage = 1150,
 		maxslope = 10,
 		maxvelocity = 9,
@@ -45,7 +46,7 @@ return {
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 400,
 		turninplaceanglelimit = 360,
-		turninplacespeedlimit = 5.53014,
+		turninplacespeedlimit = 5.94,
 		turnrate = 380.38,
 		unitname = "abuilderlvl2",
 		workertime = 200,
@@ -68,6 +69,7 @@ return {
 			[16] = "armroy",
 		},
 		customparams = {
+			buildpic = "abuilderlvl2.dds",
 			faction = "ARM",
 		},
 		nanocolor = {

@@ -40,10 +40,11 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.594,
+		turninplacespeedlimit = 0.495,
 		turnrate = 490,
 		unitname = "tllsnakeneck",
 		customparams = {
+			buildpic = "tllsnakeneck.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

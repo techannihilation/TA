@@ -26,7 +26,7 @@ return {
 		footprintz = 4,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 34,
+		losemitheight = 35,
 		maneuverleashlength = 640,
 		mass = 416,
 		maxdamage = 1700,
@@ -50,6 +50,7 @@ return {
 		unitname = "tllboat2",
 		waterline = 6,
 		customparams = {
+			buildpic = "tllboat2.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

@@ -24,7 +24,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 650,
 		mass = 290,
 		maxdamage = 850,
@@ -56,7 +56,7 @@ return {
 		turnrate = 466,
 		unitname = "corwolv1",
 		customparams = {
-			buildpic = "CORWOLV1.png",
+			buildpic = "corwolv1.dds",
 			canareaattack = 1,
 			faction = "CORE",
 		},

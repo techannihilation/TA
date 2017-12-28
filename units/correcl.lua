@@ -26,7 +26,7 @@ return {
 		icontype = "sea",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 444,
 		maxdamage = 621,
@@ -52,7 +52,7 @@ return {
 		waterline = 30,
 		workertime = 450,
 		customparams = {
-			buildpic = "CORRECL.png",
+			buildpic = "correcl.dds",
 			faction = "CORE",
 		},
 		nanocolor = {

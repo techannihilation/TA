@@ -28,6 +28,7 @@ return {
 		hoverattack = true,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 12.5,
 		maneuverleashlength = 1024,
 		mass = 2107,
 		maxdamage = 4400,
@@ -52,6 +53,7 @@ return {
 		turnrate = 1024,
 		unitname = "apache",
 		customparams = {
+			buildpic = "apache.dds",
 			faction = "CORE",
 		},
 		sfxtypes = {

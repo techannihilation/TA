@@ -28,6 +28,7 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 4,
 		maneuverleashlength = 1280,
 		mass = 160,
 		maxdamage = 600,
@@ -47,11 +48,11 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 6.93,
+		turninplacespeedlimit = 7.26,
 		turnrate = 1625,
 		unitname = "armsfig",
 		customparams = {
-			buildpic = "ARMSFIG.png",
+			buildpic = "armsfig.dds",
 			faction = "ARM",
 		},
 		sfxtypes = {

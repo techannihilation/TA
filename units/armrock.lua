@@ -25,7 +25,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 26,
 		maneuverleashlength = 640,
 		mass = 108.33334,
 		maxdamage = 650,
@@ -46,12 +46,12 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.1484,
+		turninplacespeedlimit = 1.155,
 		turnrate = 1106,
 		unitname = "armrock",
 		upright = true,
 		customparams = {
-			buildpic = "ARMROCK.png",
+			buildpic = "armrock.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

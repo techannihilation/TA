@@ -29,7 +29,7 @@ return {
 		icontype = "sea",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 68,
+		losemitheight = 69,
 		maneuverleashlength = 640,
 		mass = 1903.33337,
 		maxdamage = 11420,
@@ -56,7 +56,7 @@ return {
 		unitname = "cortship",
 		waterline = 2,
 		customparams = {
-			buildpic = "CORTSHIP.png",
+			buildpic = "cortship.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

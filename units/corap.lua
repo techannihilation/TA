@@ -30,7 +30,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 53,
+		losemitheight = 54,
 		mass = 885,
 		maxdamage = 1925,
 		maxslope = 15,
@@ -43,7 +43,7 @@ return {
 		nochasecategory = "ALL",
 		objectname = "CORAP",
 		radardistance = 510,
-		radaremitheight = 53,
+		radaremitheight = 54,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
 		sightdistance = 273,
@@ -69,7 +69,7 @@ return {
 			[10] = "armarpe",
 		},
 		customparams = {
-			buildpic = "CORAP.png",
+			buildpic = "corap.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

@@ -28,7 +28,7 @@ return {
 		idletime = 1800,
 		losemitheight = 27,
 		maneuverleashlength = 640,
-		mass = 270,
+		mass = 310,
 		maxdamage = 1225,
 		maxslope = 14,
 		maxvelocity = 2.3,
@@ -52,7 +52,7 @@ return {
 		unitname = "armfido",
 		upright = false,
 		customparams = {
-			buildpic = "ARMFIDO.png",
+			buildpic = "armfido.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

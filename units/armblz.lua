@@ -27,8 +27,9 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 6,
 		maneuverleashlength = 1080,
-		mass = 318,
+		mass = 245,
 		maxbank = 0.95,
 		maxdamage = 860,
 		maxslope = 10,
@@ -50,6 +51,7 @@ return {
 		turnrate = 420,
 		unitname = "armblz",
 		customparams = {
+			buildpic = "armblz.dds",
 			faction = "ARM",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},

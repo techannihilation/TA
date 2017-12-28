@@ -41,7 +41,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo",
 		customparams = {
-			buildpic = "armrech.png",
+			buildpic = "armrech3.dds",
 			faction = "ARM",
 			providetech = "Advanced T1 Unit Research Centre",
 		},

@@ -24,9 +24,9 @@ return {
 		icontype = "shield",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 59,
+		losemitheight = 60,
 		maneuverleashlength = 640,
-		mass = 2528,
+		mass = 2450,
 		maxdamage = 2255,
 		maxslope = 32,
 		maxvelocity = 0.8,
@@ -49,7 +49,7 @@ return {
 		unitname = "corshieldgen",
 		upright = true,
 		customparams = {
-			buildpic = "corshieldgen.png",
+			buildpic = "corshieldgen.dds",
 			faction = "Core",
 		},
 		featuredefs = {

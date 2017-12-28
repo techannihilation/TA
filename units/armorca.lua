@@ -24,7 +24,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 865,
 		maxdamage = 5190,
@@ -51,6 +51,7 @@ return {
 		turnrate = 350,
 		unitname = "armorca",
 		customparams = {
+			buildpic = "armorca.dds",
 			faction = "ARM",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},

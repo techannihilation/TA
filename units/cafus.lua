@@ -29,7 +29,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 86,
-		mass = 11200,
+		mass = 10850,
 		maxdamage = 11000,
 		maxslope = 13,
 		maxvelocity = 0,
@@ -50,7 +50,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooooooooooooooooooooooooooooooo",
 		customparams = {
-			buildpic = "CAFUS.png",
+			buildpic = "cafus.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

@@ -24,8 +24,8 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 69,
-		mass = 13333,
+		losemitheight = 70,
+		mass = 11500,
 		maxdamage = 8220,
 		maxslope = 10,
 		maxwaterdepth = 0,
@@ -43,6 +43,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo",
 		customparams = {
+			buildpic = "tllsilo.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

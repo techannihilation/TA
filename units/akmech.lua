@@ -55,6 +55,7 @@ return {
 		unitname = "akmech",
 		upright = true,
 		customparams = {
+			buildpic = "akmech.dds",
 			faction = "ARM",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},

@@ -24,7 +24,7 @@ return {
 		idletime = 1800,
 		isfeature = true,
 		levelground = false,
-		losemitheight = 25,
+		losemitheight = 22,
 		mass = 16.66667,
 		maxdamage = 100,
 		maxslope = 64,
@@ -44,7 +44,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ffff",
 		customparams = {
-			buildpic = "ARMDRAG.png",
+			buildpic = "armdrag.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

@@ -39,7 +39,7 @@ return {
 		istargetingupgrade = true,
 		losemitheight = 53,
 		maneuverleashlength = 640,
-		mass = 15000,
+		mass = 15100,
 		maxdamage = 15500,
 		maxvelocity = 1.75,
 		minwaterdepth = 30,
@@ -64,6 +64,7 @@ return {
 		waterline = 2,
 		workertime = 5500,
 		customparams = {
+			buildpic = "corhcar.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

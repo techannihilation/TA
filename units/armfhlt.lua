@@ -27,7 +27,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 43,
+		losemitheight = 44,
 		mass = 641.66669,
 		maxdamage = 3850,
 		maxvelocity = 0,
@@ -48,7 +48,7 @@ return {
 		waterline = 8,
 		yardmap = "wwwwwwwwwwwwwwww",
 		customparams = {
-			buildpic = "ARMFHLT.png",
+			buildpic = "armfhlt.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

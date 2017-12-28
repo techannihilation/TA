@@ -29,7 +29,7 @@ return {
 		icontype = "sea",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 35,
+		losemitheight = 36,
 		maneuverleashlength = 640,
 		mass = 1045,
 		maxdamage = 2575,
@@ -50,12 +50,12 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 2.2044,
+		turninplacespeedlimit = 1.98,
 		turnrate = 199,
 		unitname = "armroy",
 		waterline = 1,
 		customparams = {
-			buildpic = "ARMROY.png",
+			buildpic = "armroy.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

@@ -26,7 +26,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 26,
 		maxdamage = 95,
@@ -58,7 +58,7 @@ return {
 		unitname = "corfav",
 		unitrestricted = 150,
 		customparams = {
-			buildpic = "CORFAV.png",
+			buildpic = "corfav.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

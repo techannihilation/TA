@@ -28,8 +28,8 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 31,
-		mass = 3985,
+		losemitheight = 32,
+		mass = 3585,
 		maxdamage = 3200,
 		maxslope = 10,
 		maxvelocity = 0,
@@ -51,7 +51,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooooooooooo",
 		customparams = {
-			buildpic = "CORGATE.png",
+			buildpic = "corgate.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

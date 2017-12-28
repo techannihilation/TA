@@ -29,9 +29,9 @@ return {
 		footprintz = 4,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 35,
+		losemitheight = 36,
 		maneuverleashlength = 640,
-		mass = 1173,
+		mass = 1205,
 		maxdamage = 2950,
 		maxvelocity = 2.8,
 		minwaterdepth = 12,
@@ -54,6 +54,7 @@ return {
 		unitname = "tllviolator",
 		waterline = 8,
 		customparams = {
+			buildpic = "tllviolator.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

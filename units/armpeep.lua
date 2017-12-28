@@ -24,8 +24,9 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 4,
 		maneuverleashlength = 1280,
-		mass = 32,
+		mass = 35,
 		maxdamage = 80,
 		maxslope = 10,
 		maxvelocity = 13.8,
@@ -36,6 +37,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMPEEP",
 		radardistance = 1000,
+		radaremitheight = 4,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		selfdestructcountdown = 1,
@@ -47,7 +49,7 @@ return {
 		turnrate = 880,
 		unitname = "armpeep",
 		customparams = {
-			buildpic = "ARMPEEP.png",
+			buildpic = "armpeep.dds",
 			faction = "ARM",
 		},
 		sfxtypes = {

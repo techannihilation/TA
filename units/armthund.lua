@@ -28,6 +28,7 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 8,
 		maneuverleashlength = 1380,
 		mass = 155,
 		maxdamage = 560,
@@ -50,7 +51,7 @@ return {
 		turnrate = 829,
 		unitname = "armthund",
 		customparams = {
-			buildpic = "ARMTHUND.png",
+			buildpic = "armthund.dds",
 			faction = "ARM",
 		},
 		sfxtypes = {

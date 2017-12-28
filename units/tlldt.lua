@@ -17,7 +17,7 @@ return {
 		footprintz = 2,
 		isfeature = true,
 		levelground = false,
-		losemitheight = 25,
+		losemitheight = 22,
 		mass = 16.66667,
 		maxdamage = 100,
 		maxslope = 64,
@@ -34,6 +34,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ff ff",
 		customparams = {
+			buildpic = "tlldt.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

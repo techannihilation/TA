@@ -19,8 +19,8 @@ return {
 		footprintz = 8,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 38,
-		mass = 736,
+		losemitheight = 39,
+		mass = 735,
 		maxdamage = 2510,
 		metalmake = 0.5,
 		metalstorage = 100,
@@ -50,6 +50,7 @@ return {
 			[7] = "tllambassador",
 		},
 		customparams = {
+			buildpic = "tllsy.dds",
 			faction = "TLL",
 			providetech = "T1 Factory",
 		},

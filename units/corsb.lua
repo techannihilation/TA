@@ -30,6 +30,7 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 11,
 		maneuverleashlength = 1380,
 		mass = 194,
 		maxdamage = 760,
@@ -53,7 +54,7 @@ return {
 		turnrate = 368,
 		unitname = "corsb",
 		customparams = {
-			buildpic = "CORSB.png",
+			buildpic = "corsb.dds",
 			faction = "CORE",
 		},
 		sfxtypes = {

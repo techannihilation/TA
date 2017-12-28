@@ -25,7 +25,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 39,
+		losemitheight = 40,
 		maneuverleashlength = 640,
 		mass = 65,
 		maxdamage = 350,
@@ -50,6 +50,7 @@ return {
 		unitname = "tllprivate",
 		upright = true,
 		customparams = {
+			buildpic = "tllprivate.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

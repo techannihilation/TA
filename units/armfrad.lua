@@ -22,7 +22,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 52,
+		losemitheight = 53,
 		mass = 135,
 		maxangledif1 = 1,
 		maxdamage = 99,
@@ -35,7 +35,7 @@ return {
 		objectname = "ARMFRAD",
 		onoffable = true,
 		radardistance = 2100,
-		radaremitheight = 52,
+		radaremitheight = 53,
 		script = "armfrad.lua",
 		seismicsignature = 0,
 		selfdestructas = "SMALL_BUILDING",
@@ -47,7 +47,7 @@ return {
 		waterline = 5,
 		yardmap = "wwwwwwwww",
 		customparams = {
-			buildpic = "ARMFRAD.png",
+			buildpic = "armfrad.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

@@ -59,6 +59,7 @@ return {
 		unitname = "cortyrnt",
 		waterline = 6,
 		customparams = {
+			buildpic = "cortyrnt.dds",
 			faction = "CORE",
 			requiretech = "Advanced T3 Unit Research Centre",
 		},

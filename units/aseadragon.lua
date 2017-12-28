@@ -59,7 +59,7 @@ return {
 		unitname = "aseadragon",
 		waterline = 8,
 		customparams = {
-			buildpic = "ASEADRAGON.png",
+			buildpic = "aseadragon.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

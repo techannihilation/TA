@@ -25,7 +25,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 110,
+		losemitheight = 111,
 		mass = 19947,
 		maxdamage = 12000,
 		maxslope = 15,
@@ -54,7 +54,7 @@ return {
 			[5] = "coreclipse",
 		},
 		customparams = {
-			buildpic = "COREAP.png",
+			buildpic = "coreap.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

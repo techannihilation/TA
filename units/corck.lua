@@ -26,7 +26,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 26,
+		losemitheight = 27,
 		maneuverleashlength = 640,
 		mass = 121,
 		maxdamage = 590,
@@ -91,7 +91,7 @@ return {
 			[33] = "corsy",
 		},
 		customparams = {
-			buildpic = "CORCK.png",
+			buildpic = "corck.dds",
 			faction = "core",
 		},
 		featuredefs = {

@@ -51,6 +51,7 @@ return {
 		turnrate = 750,
 		unitname = "tllobserver",
 		customparams = {
+			buildpic = "tllobserver.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

@@ -25,6 +25,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 7,
 		maneuverleashlength = 1280,
 		mass = 310,
 		maxdamage = 562,
@@ -49,6 +50,7 @@ return {
 		unitname = "armcbomb",
 		upright = true,
 		customparams = {
+			buildpic = "armcbomb.dds",
 			faction = "ARM",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},

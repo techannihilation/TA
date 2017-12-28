@@ -32,6 +32,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 8.5,
 		maneuverleashlength = 1280,
 		mass = 81.66666,
 		maxdamage = 490,
@@ -66,7 +67,7 @@ return {
 			[10] = "corfdrag",
 		},
 		customparams = {
-			buildpic = "cormin.png",
+			buildpic = "cormin.dds",
 			customstock = true,
 			faction = "CORE",
 		},

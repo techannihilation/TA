@@ -26,7 +26,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 26,
+		losemitheight = 27,
 		mass = 316.66666,
 		maxdamage = 1900,
 		maxslope = 10,
@@ -42,6 +42,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooo oooooo oooooo oooooo",
 		customparams = {
+			buildpic = "tllestor.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

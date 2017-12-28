@@ -29,8 +29,9 @@ return {
 		hoverattack = true,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 12,
 		maneuverleashlength = 1280,
-		mass = 1376,
+		mass = 1980,
 		maxdamage = 1275,
 		maxslope = 10,
 		maxvelocity = 7.2,
@@ -76,6 +77,7 @@ return {
 			[22] = "tllplat",
 		},
 		customparams = {
+			buildpic = "tllaca.dds",
 			faction = "TLL",
 		},
 		nanocolor = {

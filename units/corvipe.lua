@@ -28,7 +28,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 31,
-		mass = 1045,
+		mass = 1345,
 		maxdamage = 2750,
 		maxslope = 10,
 		maxvelocity = 0,
@@ -50,7 +50,7 @@ return {
 		usepiececollisionvolumes = 1,
 		yardmap = "ooooooooo",
 		customparams = {
-			buildpic = "CORVIPE.png",
+			buildpic = "corvipe.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

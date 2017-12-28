@@ -27,7 +27,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 23,
 		maneuverleashlength = 640,
 		mass = 96,
 		maxdamage = 490,
@@ -42,7 +42,7 @@ return {
 		objectname = "R75V",
 		onoffable = true,
 		radardistance = 1490,
-		radaremitheight = 25,
+		radaremitheight = 23,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 450,
 		sonardistance = 1100,
@@ -56,6 +56,7 @@ return {
 		unitname = "r75v",
 		upright = true,
 		customparams = {
+			buildpic = "r75v.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

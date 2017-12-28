@@ -55,6 +55,7 @@ return {
 		unitname = "tllhtml",
 		upright = true,
 		customparams = {
+			buildpic = "tllhtml.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

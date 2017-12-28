@@ -16,7 +16,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 36,
-		mass = 1100,
+		mass = 1580,
 		maxdamage = 1300,
 		maxslope = 10,
 		minwaterdepth = 15,
@@ -32,6 +32,7 @@ return {
 		waterline = 0,
 		yardmap = "wwwww wwwww wwwww wwwww wwwww",
 		customparams = {
+			buildpic = "tllwmmohoconv.dds",
 			faction = "TLL",
 		},
 		sfxtypes = {

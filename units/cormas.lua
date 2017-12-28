@@ -28,7 +28,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 114,
-		mass = 5568,
+		mass = 5750,
 		maxdamage = 15930,
 		maxslope = 20,
 		maxwaterdepth = 9999,
@@ -46,6 +46,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo",
 		customparams = {
+			buildpic = "cormas.dds",
 			faction = "CORE",
 		},
 		sfxtypes = {

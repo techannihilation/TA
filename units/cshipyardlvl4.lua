@@ -27,8 +27,8 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 97,
-		mass = 117333,
+		losemitheight = 98,
+		mass = 117335,
 		maxdamage = 60000,
 		maxslope = 10,
 		maxwaterdepth = 255,
@@ -48,6 +48,7 @@ return {
 			[1] = "cdevastator",
 		},
 		customparams = {
+			buildpic = "cshipyardlvl4.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

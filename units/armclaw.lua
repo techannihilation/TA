@@ -29,7 +29,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 44,
+		losemitheight = 45,
 		mass = 267,
 		maxdamage = 1200,
 		maxslope = 10,
@@ -51,7 +51,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooo",
 		customparams = {
-			buildpic = "ARMCLAW.png",
+			buildpic = "armclaw.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

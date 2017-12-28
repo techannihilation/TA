@@ -52,7 +52,7 @@ return {
 			[4] = "tllaether",
 		},
 		customparams = {
-			buildpic = "tlleap.png",
+			buildpic = "tlleap.dds",
 			faction = "TLL",
 			providetech = "T3 Factory, T2 Factory",
 		},

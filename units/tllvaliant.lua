@@ -44,7 +44,8 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		immunetoparalyzer = 1,
-		mass = 213000,
+		losemitheight = 37,
+		mass = 178000,
 		maxdamage = 450000,
 		maxvelocity = 1.1,
 		maxwaterdepth = 0,
@@ -69,6 +70,7 @@ return {
 		unitname = "tllvaliant",
 		workertime = 400,
 		customparams = {
+			buildpic = "tllvaliant.dds",
 			faction = "tll",
 		},
 		nanocolor = {

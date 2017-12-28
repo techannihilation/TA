@@ -25,7 +25,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 24,
 		maneuverleashlength = 640,
 		mass = 43.33333,
 		maxdamage = 260,
@@ -52,7 +52,7 @@ return {
 		unitrestricted = 125,
 		upright = true,
 		customparams = {
-			buildpic = "CORAK.png",
+			buildpic = "corak.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

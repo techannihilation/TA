@@ -70,7 +70,7 @@ return {
 			[11] = "armjade",
 		},
 		customparams = {
-			buildpic = "ARMAP.png",
+			buildpic = "armap.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

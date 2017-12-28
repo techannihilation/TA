@@ -25,7 +25,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 187,
 		maxdamage = 1110,
@@ -57,6 +57,7 @@ return {
 		turnrate = 536,
 		unitname = "corjeag",
 		customparams = {
+			buildpic = "corjeag.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

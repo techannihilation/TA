@@ -17,7 +17,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 26,
+		losemitheight = 27,
 		maneuverleashlength = 640,
 		mass = 640,
 		maxdamage = 1280,
@@ -37,7 +37,7 @@ return {
 		unitname = "coraak",
 		upright = true,
 		customparams = {
-			buildpic = "CORAAK.png",
+			buildpic = "coraak.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

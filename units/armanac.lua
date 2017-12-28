@@ -26,7 +26,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 287,
 		maxdamage = 1377,
@@ -52,7 +52,7 @@ return {
 		turnrate = 525,
 		unitname = "armanac",
 		customparams = {
-			buildpic = "ARMANAC.png",
+			buildpic = "armanac.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

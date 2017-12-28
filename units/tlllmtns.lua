@@ -26,7 +26,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 69,
+		losemitheight = 70,
 		mass = 143,
 		maxdamage = 785,
 		maxslope = 14,
@@ -43,6 +43,7 @@ return {
 		waterline = 3,
 		yardmap = "wwwwwwwww",
 		customparams = {
+			buildpic = "tlllmtns.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

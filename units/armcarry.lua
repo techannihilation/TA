@@ -37,7 +37,7 @@ return {
 		isairbase = true,
 		losemitheight = 54,
 		maneuverleashlength = 640,
-		mass = 1650,
+		mass = 3150,
 		maxdamage = 6340,
 		maxvelocity = 2.7,
 		metalstorage = 1500,
@@ -63,7 +63,7 @@ return {
 		unitname = "armcarry",
 		workertime = 4000,
 		customparams = {
-			buildpic = "ARMCARRY.png",
+			buildpic = "armcarry.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

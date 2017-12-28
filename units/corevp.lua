@@ -59,6 +59,7 @@ return {
 			[5] = "corbt",
 		},
 		customparams = {
+			buildpic = "corevp.dds",
 			faction = "CORE",
 			providetech = "T3 Factory",
 		},

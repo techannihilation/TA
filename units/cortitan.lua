@@ -26,6 +26,7 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 9,
 		maneuverleashlength = 1280,
 		mass = 360,
 		maxdamage = 1900,
@@ -49,7 +50,7 @@ return {
 		turnrate = 450,
 		unitname = "cortitan",
 		customparams = {
-			buildpic = "CORTITAN.png",
+			buildpic = "cortitan.dds",
 			faction = "CORE",
 		},
 		sfxtypes = {

@@ -27,7 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 480,
 		maxdamage = 2340,
@@ -58,7 +58,7 @@ return {
 		turnrate = 487,
 		unitname = "corseal",
 		customparams = {
-			buildpic = "CORSEAL.png",
+			buildpic = "corseal.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

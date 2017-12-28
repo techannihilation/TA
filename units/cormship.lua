@@ -30,7 +30,7 @@ return {
 		idletime = 1800,
 		losemitheight = 33,
 		maneuverleashlength = 640,
-		mass = 2755,
+		mass = 2450,
 		maxdamage = 3250,
 		maxvelocity = 2,
 		minwaterdepth = 12,
@@ -49,11 +49,11 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.7424,
+		turninplacespeedlimit = 1.32,
 		turnrate = 341,
 		unitname = "cormship",
 		customparams = {
-			buildpic = "CORMSHIP.png",
+			buildpic = "cormship.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

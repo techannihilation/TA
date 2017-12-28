@@ -26,7 +26,7 @@ return {
 		footprintz = 5,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 30,
+		losemitheight = 31,
 		maneuverleashlength = 640,
 		mass = 18500,
 		maxdamage = 67500,
@@ -50,6 +50,7 @@ return {
 		turnrate = 242,
 		unitname = "corbt",
 		customparams = {
+			buildpic = "corbt.dds",
 			faction = "CORE",
 			requiretech = "Advanced T3 Unit Research Centre",
 		},

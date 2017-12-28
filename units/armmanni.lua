@@ -26,7 +26,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 52,
+		losemitheight = 53,
 		maneuverleashlength = 640,
 		mass = 1200,
 		maxdamage = 2500,
@@ -57,7 +57,7 @@ return {
 		turnrate = 151,
 		unitname = "armmanni",
 		customparams = {
-			buildpic = "ARMMANNI.png",
+			buildpic = "armmanni.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

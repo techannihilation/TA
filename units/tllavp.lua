@@ -58,6 +58,7 @@ return {
 			[10] = "tllobscurer",
 		},
 		customparams = {
+			buildpic = "tllavp.dds",
 			faction = "TLL",
 			providetech = "T2 Factory",
 		},

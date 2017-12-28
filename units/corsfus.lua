@@ -31,7 +31,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 150,
-		mass = 16533,
+		mass = 13900,
 		maxdamage = 14500,
 		maxslope = 10,
 		maxvelocity = 0,
@@ -52,7 +52,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooooo ooooooooo ooooooooo ooooooooo ooooooooo ooooooooo ooooooooo ooooooooo ooooooooo",
 		customparams = {
-			buildpic = "CORSFUS.png",
+			buildpic = "corsfus.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

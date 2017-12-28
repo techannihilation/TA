@@ -31,7 +31,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		immunetoparalyzer = 1,
-		losemitheight = 50,
+		losemitheight = 51,
 		maneuverleashlength = 640,
 		mass = 659,
 		maxdamage = 3000,
@@ -45,7 +45,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "COMMANDO",
 		radardistance = 900,
-		radaremitheight = 50,
+		radaremitheight = 51,
 		seismicsignature = 64,
 		selfdestructas = "SPYBOMBX",
 		sightdistance = 650,
@@ -60,7 +60,7 @@ return {
 		upright = true,
 		workertime = 2000,
 		customparams = {
-			buildpic = "COMMANDO.png",
+			buildpic = "commando.dds",
 			faction = "CORE",
 		},
 		nanocolor = {

@@ -57,7 +57,7 @@ return {
 		turnrate = 220,
 		unitname = "corgol",
 		customparams = {
-			buildpic = "CORGOL.png",
+			buildpic = "corgol.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

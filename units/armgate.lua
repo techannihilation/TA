@@ -29,7 +29,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 33,
-		mass = 3767,
+		mass = 3565,
 		maxdamage = 3050,
 		maxslope = 10,
 		maxvelocity = 0,
@@ -51,7 +51,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooooooooooo",
 		customparams = {
-			buildpic = "ARMGATE.png",
+			buildpic = "armgate.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

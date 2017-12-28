@@ -51,6 +51,7 @@ return {
 		turnrate = 325,
 		unitname = "tlllongshot",
 		customparams = {
+			buildpic = "tlllongshot.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

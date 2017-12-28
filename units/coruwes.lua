@@ -23,7 +23,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 42,
+		losemitheight = 43,
 		mass = 507,
 		maxdamage = 3042,
 		maxslope = 20,
@@ -44,7 +44,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooooooooooo",
 		customparams = {
-			buildpic = "CORUWES.png",
+			buildpic = "coruwes.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

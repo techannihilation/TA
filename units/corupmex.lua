@@ -21,7 +21,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		mass = 1133,
 		maxdamage = 1344,
 		maxslope = 10,
@@ -39,6 +39,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooooo",
 		customparams = {
+			buildpic = "corupmex.dds",
 			faction = "CORE",
 			providetech = "Jumpjet",
 			providetechrange = 2500,

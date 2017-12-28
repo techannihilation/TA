@@ -31,8 +31,8 @@ return {
 		idleautoheal = 10,
 		idletime = 300,
 		initcloaked = true,
-		losemitheight = 25,
-		mass = 27,
+		losemitheight = 22,
+		mass = 90,
 		maxdamage = 10,
 		maxslope = 40,
 		maxvelocity = 0,
@@ -55,7 +55,7 @@ return {
 		unitname = "corfmine3",
 		waterline = 0,
 		customparams = {
-			buildpic = "CORFMINE3.png",
+			buildpic = "corfmine3.dds",
 			faction = "CORE",
 		},
 		sfxtypes = {

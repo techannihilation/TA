@@ -30,7 +30,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 51,
+		losemitheight = 52,
 		mass = 1813,
 		maxdamage = 4355,
 		maxslope = 20,
@@ -53,7 +53,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooooooooooo",
 		customparams = {
-			buildpic = "SCREAMER.png",
+			buildpic = "screamer.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

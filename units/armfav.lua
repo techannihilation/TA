@@ -26,7 +26,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 31,
 		maxdamage = 80,
@@ -58,7 +58,7 @@ return {
 		unitname = "armfav",
 		unitrestricted = 150,
 		customparams = {
-			buildpic = "ARMFAV.png",
+			buildpic = "armfav.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

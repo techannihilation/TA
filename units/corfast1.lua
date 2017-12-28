@@ -24,7 +24,7 @@ return {
 		healtime = 8,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 34,
+		losemitheight = 35,
 		maneuverleashlength = 640,
 		mass = 290,
 		maxdamage = 700,
@@ -63,7 +63,7 @@ return {
 			[8] = "armraven1",
 		},
 		customparams = {
-			buildpic = "CORFAST.png",
+			buildpic = "corfast1.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

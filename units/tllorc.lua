@@ -27,7 +27,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 3733,
 		maxdamage = 3500,
@@ -53,6 +53,7 @@ return {
 		upright = true,
 		waterline = 32,
 		customparams = {
+			buildpic = "tllorc.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

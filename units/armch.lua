@@ -27,7 +27,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 216,
 		maxdamage = 1296,
@@ -43,7 +43,7 @@ return {
 		nochasecategory = "VTOL",
 		objectname = "ARMCH",
 		radardistance = 50,
-		radaremitheight = 25,
+		radaremitheight = 22,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 351,
@@ -105,7 +105,7 @@ return {
 			[46] = "armtl",
 		},
 		customparams = {
-			buildpic = "ARMCH.png",
+			buildpic = "armch.dds",
 			faction = "arm",
 		},
 		featuredefs = {

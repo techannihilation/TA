@@ -24,7 +24,7 @@ return {
 		idletime = 1800,
 		losemitheight = 45,
 		maneuverleashlength = 640,
-		mass = 1010,
+		mass = 960,
 		maxdamage = 2450,
 		maxslope = 16,
 		maxvelocity = 1.75,
@@ -43,11 +43,12 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.122,
+		turninplacespeedlimit = 1.155,
 		turnrate = 512,
 		unitname = "tllartybot",
 		upright = true,
 		customparams = {
+			buildpic = "tllartybot.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

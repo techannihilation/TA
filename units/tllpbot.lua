@@ -26,7 +26,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 40,
+		losemitheight = 41,
 		maneuverleashlength = 640,
 		mass = 208.33333,
 		maxdamage = 1250,
@@ -51,6 +51,7 @@ return {
 		unitname = "tllpbot",
 		upright = true,
 		customparams = {
+			buildpic = "tllpbot.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

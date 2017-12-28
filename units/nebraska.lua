@@ -28,8 +28,8 @@ return {
 		icontype = "building",
 		idleautoheal = 7,
 		idletime = 1800,
-		losemitheight = 66,
-		mass = 20042,
+		losemitheight = 67,
+		mass = 31750,
 		maxdamage = 65000,
 		maxslope = 10,
 		maxwaterdepth = 0,
@@ -46,6 +46,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo",
 		customparams = {
+			buildpic = "nebraska.dds",
 			faction = "ARM",
 			requiretech = "T3 Factory",
 		},

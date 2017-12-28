@@ -55,7 +55,7 @@ return {
 		unitname = "armbanth",
 		upright = true,
 		customparams = {
-			buildpic = "ARMBANTH.png",
+			buildpic = "armbanth.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

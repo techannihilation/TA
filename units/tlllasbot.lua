@@ -29,7 +29,7 @@ return {
 		idletime = 1800,
 		losemitheight = 36,
 		maneuverleashlength = 640,
-		mass = 275,
+		mass = 345,
 		maxdamage = 1100,
 		maxslope = 16,
 		maxvelocity = 2.2,
@@ -53,6 +53,7 @@ return {
 		unitname = "tlllasbot",
 		upright = true,
 		customparams = {
+			buildpic = "tlllasbot.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

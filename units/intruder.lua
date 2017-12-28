@@ -65,7 +65,7 @@ return {
 		unitname = "intruder",
 		unloadspread = 4,
 		customparams = {
-			buildpic = "INTRUDER.png",
+			buildpic = "intruder.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

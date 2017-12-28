@@ -30,6 +30,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 7,
 		maneuverleashlength = 2500,
 		mass = 7840,
 		maxdamage = 14500,
@@ -52,7 +53,7 @@ return {
 		unitname = "armcyclone",
 		upright = true,
 		customparams = {
-			buildpic = "armcyclone.png",
+			buildpic = "armcyclone.dds",
 			faction = "ARM",
 			requiretech = "Advanced T3 Unit Research Centre",
 		},

@@ -28,7 +28,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 31,
+		losemitheight = 32,
 		maneuverleashlength = 380,
 		mass = 725,
 		maxdamage = 700,
@@ -55,7 +55,7 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 600,
 		customparams = {
-			buildpic = "CORNANOTC1.png",
+			buildpic = "cornanotc1.dds",
 			faction = "CORE",
 		},
 		nanocolor = {

@@ -26,6 +26,7 @@ return {
 		hoverattack = true,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 12.5,
 		maneuverleashlength = 1280,
 		mass = 3061,
 		maxdamage = 8120,
@@ -48,6 +49,7 @@ return {
 		turnrate = 700,
 		unitname = "armkamo",
 		customparams = {
+			buildpic = "armkamo.dds",
 			faction = "ARM",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},

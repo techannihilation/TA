@@ -30,7 +30,7 @@ return {
 		idleautoheal = 2,
 		idletime = 2200,
 		losemitheight = 148,
-		mass = 640000,
+		mass = 810000,
 		maxdamage = 56200,
 		maxslope = 26,
 		maxwaterdepth = 0,
@@ -48,6 +48,7 @@ return {
 		usepiececollisionvolumes = 1,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
+			buildpic = "corflu.dds",
 			faction = "CORE",
 		},
 		sfxtypes = {

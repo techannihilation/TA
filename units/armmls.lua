@@ -28,9 +28,9 @@ return {
 		icontype = "sea",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
-		mass = 272,
+		mass = 275,
 		maxdamage = 1310,
 		maxvelocity = 2.4,
 		minwaterdepth = 15,
@@ -71,7 +71,7 @@ return {
 			[16] = "armcrus",
 		},
 		customparams = {
-			buildpic = "ARMMLS.png",
+			buildpic = "armmls.dds",
 			faction = "arm",
 		},
 		featuredefs = {

@@ -23,7 +23,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		istargetingupgrade = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		mass = 799,
 		maxdamage = 1375,
 		maxslope = 10,
@@ -45,7 +45,7 @@ return {
 		waterline = 8,
 		yardmap = "wwwwwwwwwwwwwwww",
 		customparams = {
-			buildpic = "CORFATF.png",
+			buildpic = "corfatf.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

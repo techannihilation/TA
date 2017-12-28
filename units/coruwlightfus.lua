@@ -21,7 +21,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 36,
-		mass = 2720,
+		mass = 2280,
 		maxdamage = 2750,
 		maxslope = 16,
 		maxvelocity = 0,
@@ -39,7 +39,7 @@ return {
 		unitname = "coruwlightfus",
 		yardmap = "ooooo ooooo ooooo ooooo",
 		customparams = {
-			buildpic = "CORUWLIGHTFUS.png",
+			buildpic = "coruwlightfus.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

@@ -61,7 +61,7 @@ return {
 			[3] = "armraptor",
 		},
 		customparams = {
-			buildpic = "ARMSHLTX.png",
+			buildpic = "armshltx1.dds",
 			faction = "ARM",
 			providetech = "T4 Factory",
 		},

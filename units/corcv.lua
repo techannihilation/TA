@@ -27,7 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 215,
 		maxdamage = 1290,
@@ -43,7 +43,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "CORCV",
 		radardistance = 50,
-		radaremitheight = 25,
+		radaremitheight = 22,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 260,
@@ -96,7 +96,7 @@ return {
 			[32] = "corsy",
 		},
 		customparams = {
-			buildpic = "CORCV.png",
+			buildpic = "corcv.dds",
 			faction = "core",
 		},
 		featuredefs = {

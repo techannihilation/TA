@@ -58,7 +58,7 @@ return {
 		turnrate = 176,
 		unitname = "avtr",
 		customparams = {
-			buildpic = "avtr.png",
+			buildpic = "avtr.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

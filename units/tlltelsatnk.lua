@@ -23,7 +23,7 @@ return {
 		footprintz = 4,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 3650,
 		maxdamage = 6300,
@@ -45,10 +45,11 @@ return {
 		steeringmode = 1,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.2144,
+		turninplacespeedlimit = 1.254,
 		turnrate = 495,
 		unitname = "tlltelsatnk",
 		customparams = {
+			buildpic = "tlltelsatnk.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

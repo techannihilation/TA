@@ -26,7 +26,7 @@ return {
 		idletime = 1800,
 		losemitheight = 29,
 		makesmetal = 2,
-		mass = 1710,
+		mass = 610,
 		maxdamage = 800,
 		maxslope = 20,
 		maxwaterdepth = 9999,
@@ -43,7 +43,7 @@ return {
 		unitname = "tllgeo_mini",
 		yardmap = "ooo oGo ooo",
 		customparams = {
-			buildpic = "TLLGEO.png",
+			buildpic = "tllgeo_mini.dds",
 			faction = "TLL",
 		},
 		featuredefs = {
@@ -71,10 +71,12 @@ return {
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
-				[1] = "piecetrail5",
-				[2] = "piecetrail5",
-				[3] = "piecetrail4",
-				[4] = "piecetrail6",
+				[1] = "piecetrail0",
+				[2] = "piecetrail1",
+				[3] = "piecetrail2",
+				[4] = "piecetrail3",
+				[5] = "piecetrail4",
+				[6] = "piecetrail6",
 			},
 		},
 		sounds = {

@@ -34,9 +34,9 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 29,
+		losemitheight = 48,
 		maneuverleashlength = 640,
-		mass = 12000,
+		mass = 10333.33301,
 		maxdamage = 62000,
 		maxslope = 14,
 		maxvelocity = 0.75,
@@ -100,6 +100,14 @@ return {
 		sfxtypes = {
 			explosiongenerators = {
 				[2] = "custom:unitfire",
+			},
+			pieceexplosiongenerators = {
+				[1] = "piecetrail0",
+				[2] = "piecetrail1",
+				[3] = "piecetrail2",
+				[4] = "piecetrail3",
+				[5] = "piecetrail4",
+				[6] = "piecetrail6",
 			},
 		},
 		sounds = {

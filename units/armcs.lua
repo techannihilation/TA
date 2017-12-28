@@ -28,7 +28,7 @@ return {
 		icontype = "sea",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 272,
 		maxdamage = 1105,
@@ -43,7 +43,7 @@ return {
 		nochasecategory = "VTOL",
 		objectname = "ARMCS",
 		radardistance = 50,
-		radaremitheight = 25,
+		radaremitheight = 22,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
 		sightdistance = 291.20001,
@@ -80,7 +80,7 @@ return {
 			[21] = "armfnanotc",
 		},
 		customparams = {
-			buildpic = "ARMCS.png",
+			buildpic = "armcs.dds",
 			faction = "arm",
 		},
 		featuredefs = {

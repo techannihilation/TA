@@ -27,7 +27,7 @@ return {
 		footprintz = 4,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 62,
+		losemitheight = 63,
 		maneuverleashlength = 640,
 		mass = 11950,
 		maxdamage = 46000,
@@ -56,7 +56,7 @@ return {
 		turnrate = 100,
 		unitname = "armcrabe",
 		customparams = {
-			buildpic = "ARMCRABE.png",
+			buildpic = "armcrabe.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

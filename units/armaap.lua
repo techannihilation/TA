@@ -68,7 +68,7 @@ return {
 			[11] = "armcybr",
 		},
 		customparams = {
-			buildpic = "ARMAAP.png",
+			buildpic = "armaap.dds",
 			faction = "ARM",
 			providetech = "T2 Factory",
 		},

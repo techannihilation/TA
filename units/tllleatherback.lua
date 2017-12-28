@@ -24,7 +24,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 650,
 		maxdamage = 2850,
@@ -45,10 +45,11 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.528,
+		turninplacespeedlimit = 0.495,
 		turnrate = 430,
 		unitname = "tllleatherback",
 		customparams = {
+			buildpic = "tllleatherback.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

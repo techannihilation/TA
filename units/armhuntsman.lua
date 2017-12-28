@@ -24,7 +24,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 260,
 		maxdamage = 630,
@@ -49,6 +49,7 @@ return {
 		turnrate = 1020,
 		unitname = "armhuntsman",
 		customparams = {
+			buildpic = "armhuntsman.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

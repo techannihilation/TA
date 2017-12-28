@@ -28,6 +28,7 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 13,
 		maneuverleashlength = 1280,
 		mass = 117,
 		maxdamage = 145,
@@ -42,6 +43,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "CORCA",
 		radardistance = 50,
+		radaremitheight = 13,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 351,
@@ -89,7 +91,7 @@ return {
 			[33] = "corsy",
 		},
 		customparams = {
-			buildpic = "CORCA.png",
+			buildpic = "corca.dds",
 			faction = "core",
 		},
 		nanocolor = {

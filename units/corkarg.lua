@@ -53,7 +53,7 @@ return {
 		unitname = "corkarg",
 		upright = true,
 		customparams = {
-			buildpic = "CORKARG.png",
+			buildpic = "corkarg.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

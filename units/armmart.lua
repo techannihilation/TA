@@ -28,7 +28,7 @@ return {
 		leavetracks = true,
 		losemitheight = 25,
 		maneuverleashlength = 640,
-		mass = 420,
+		mass = 375,
 		maxdamage = 620,
 		maxslope = 12,
 		maxvelocity = 1.75,
@@ -58,7 +58,7 @@ return {
 		turnrate = 402,
 		unitname = "armmart",
 		customparams = {
-			buildpic = "ARMMART.png",
+			buildpic = "armmart.dds",
 			canareaattack = 1,
 			faction = "ARM",
 		},

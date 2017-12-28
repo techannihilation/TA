@@ -23,7 +23,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 190,
 		maxdamage = 450,
@@ -51,6 +51,7 @@ return {
 		unitname = "armarty",
 		upright = true,
 		customparams = {
+			buildpic = "armarty.dds",
 			faction = "ARM",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},

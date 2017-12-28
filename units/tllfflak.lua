@@ -44,7 +44,7 @@ return {
 		waterline = 0,
 		yardmap = "wwww wwww wwww wwww",
 		customparams = {
-			buildpic = "TLLFFLAK.png",
+			buildpic = "tllfflak.dds",
 			faction = "TLL",
 		},
 		featuredefs = {
