@@ -17,85 +17,103 @@
 -- Switch for when we want to save defs into customparams as strings (so as a widget can then write them to file)
 -- The widget to do so can be found in 'etc/Lua/bake_unitdefs_post'
 
-VFS.Include("gamedata/alldefs_config.lua")
-
+--Configs for TA alldefs
+--VFS.Include("gamedata/alldefs_config.lua")
+iswater, WTimeUnits, Nanos, cons, turninplacebots, pplants, unitheight = VFS.Include("gamedata/alldefs_config.lua")
 
 SaveDefsToCustomParams = false
-
+FixUnitStats = false
 -------------------------
 -- DEFS POST PROCESSING
 -------------------------
+
+
+local usable = {}
 
 -- process unitdef
 function UnitDef_Post(name, uDef)
 
 -- Batch Processing of unitdefs leave alone
-
---[[
-	if (not Commanders[uDef.unitname]) then
-		uDef.mass = math.max(uDef.maxdamage / 6.0, uDef.buildcostmetal)
-	end
-	
-	if (uDef.maxvelocity) then 
-		uDef.turninplacespeedlimit = (uDef.maxvelocity*0.66) or 0
-		uDef.turninplaceanglelimit = 140
-	end
-	
-	--todo: build these into the unitdefs
-	if (uDef.hoverattack) then
-		uDef.turninplaceanglelimit = 360
-	end
-	
-	if uDef.movementclass and (uDef.movementclass:find("TANK",1,true) or uDef.movementclass:find("HOVER",1,true)) then
-		--Spring.Echo('tank or hover:',uDef.name,uDef.movementclass)
-		if cons[name] then
-			--Spring.Echo('tank or hover con:',uDef.name,uDef.moveData)
-			uDef.turninplace=1
-			uDef.turninplaceanglelimit=60
-		elseif (uDef.maxvelocity) then 
-			uDef.turninplace = 0
-			uDef.turninplacespeedlimit = (uDef.maxvelocity*0.66) or 0
+	if FixUnitStats == true then
+		--Adjust los/radar emit heights
+		if unitheight[name] then
+			if uDef.canfly and (uDef.radardistance and uDef.radardistance>0) then
+				uDef.radaremitheight = unitheight[name]*0.5
+			elseif (uDef.radardistance and uDef.radardistance>0) then
+				local radarheight = unitheight[name]
+				if radarheight < 25 then radarheight = 25 end
+				uDef.radaremitheight = (math.floor(radarheight*.90))
+			end
+			if uDef.canfly and (uDef.sightdistance and uDef.sightdistance>0) then
+				uDef.losemitheight = unitheight[name]*.5
+			elseif (uDef.sightdistance and uDef.sightdistance>0) then
+				local losheight = unitheight[name]
+				if losheight < 25 then losheight = 25 end
+				uDef.losemitheight = (math.floor(losheight*.90))
+			end
+			Spring.Echo(name,uDef.losemitheight,uDef.radaremitheight,unitheight[name])
 		end
-	elseif uDef.movementclass and (uDef.movementclass:find("KBOT",1,true)) then
-		if turninplacebots[name] then
-			--Spring.Echo('turninplacekbot:',uDef.name)
-			uDef.turninplace=1
-			uDef.turninplaceanglelimit=60
-		elseif (uDef.maxvelocity) then 
+		--Fix unit mass
+		if (not uDef.customparams.iscommander) then
+			uDef.mass = math.max(uDef.maxdamage / 6.0, uDef.buildcostmetal)
+		end
+		--Fix unit movement
+		if (uDef.maxvelocity) then 
+			uDef.turninplacespeedlimit = (uDef.maxvelocity*0.66) or 0
 			uDef.turninplaceanglelimit = 140
 		end
-	end
+			--todo: build these into the unitdefs
+		if (uDef.hoverattack) then
+			uDef.turninplaceanglelimit = 360
+		end
+			if uDef.movementclass and (uDef.movementclass:find("TANK",1,true) or uDef.movementclass:find("HOVER",1,true)) then
+			--Spring.Echo('tank or hover:',uDef.name,uDef.movementclass)
+			if cons[name] then
+				--Spring.Echo('tank or hover con:',uDef.name,uDef.moveData)
+				uDef.turninplace=1
+				uDef.turninplaceanglelimit=60
+			elseif (uDef.maxvelocity) then 
+				uDef.turninplace = 0
+				uDef.turninplacespeedlimit = (uDef.maxvelocity*0.66) or 0
+			end
+		elseif uDef.movementclass and (uDef.movementclass:find("KBOT",1,true)) then
+			if turninplacebots[name] then
+				--Spring.Echo('turninplacekbot:',uDef.name)
+				uDef.turninplace=1
+				uDef.turninplaceanglelimit=60
+			elseif (uDef.maxvelocity) then 
+				uDef.turninplaceanglelimit = 140
+			end
+		end
+		--For unit wiki
+		if uDef.buildpic then
+			uDef.customparams.buildpic = uDef.buildpic
+		end
 
-	-- For unit wiki
-	if uDef.buildpic then
-		uDef.customparams.buildpic = uDef.buildpic
+		-- Processing piece explosions
+		if (uDef.sfxtypes == nil) then
+			uDef.sfxtypes = {}
+		end
+		uDef.sfxtypes["pieceexplosiongenerators"] = {}
+		if (pplants[uDef.unitname]) then
+			--Spring.Echo("energy unit ",uDef.unitname)
+	    	uDef.sfxtypes["pieceexplosiongenerators"][1] = [[piecetrail5]]
+			uDef.sfxtypes["pieceexplosiongenerators"][2] = [[piecetrail5]]
+			uDef.sfxtypes["pieceexplosiongenerators"][3] = [[piecetrail4]]
+			uDef.sfxtypes["pieceexplosiongenerators"][4] = [[piecetrail6]]
+		else
+		    --Spring.Echo("others unit ",uDef.unitname)
+	    	uDef.sfxtypes["pieceexplosiongenerators"][1] = [[piecetrail0]]
+			uDef.sfxtypes["pieceexplosiongenerators"][2] = [[piecetrail1]]
+			uDef.sfxtypes["pieceexplosiongenerators"][3] = [[piecetrail2]]
+			uDef.sfxtypes["pieceexplosiongenerators"][4] = [[piecetrail3]]
+			uDef.sfxtypes["pieceexplosiongenerators"][5] = [[piecetrail4]]
+			uDef.sfxtypes["pieceexplosiongenerators"][6] = [[piecetrail5]]
+			uDef.sfxtypes["pieceexplosiongenerators"][6] = [[piecetrail6]]
+		end
+		--Uncomment to clean pieces
+		--uDef.sfxtypes.pieceexplosiongenerators = nil
 	end
-
-	-- Processing piece explosions
-	if (uDef.sfxtypes == nil) then
-		uDef.sfxtypes = {}
-	end
-	uDef.sfxtypes["pieceexplosiongenerators"] = {}
-	if (pplants[uDef.unitname]) then
-		Spring.Echo("energy unit ",uDef.unitname)
-	    uDef.sfxtypes["pieceexplosiongenerators"][1] = [[piecetrail5]]
-		--uDef.sfxtypes["pieceexplosiongenerators"][2] = [[piecetrail5]]
-		--uDef.sfxtypes["pieceexplosiongenerators"][3] = [[piecetrail4]]
-		--uDef.sfxtypes["pieceexplosiongenerators"][4] = [[piecetrail6]]
-	    --else
-	    --Spring.Echo("others unit ",uDef.unitname)
-	    --uDef.sfxtypes["pieceexplosiongenerators"][1] = [[piecetrail0]]
-		--uDef.sfxtypes["pieceexplosiongenerators"][2] = [[piecetrail1]]
-		--uDef.sfxtypes["pieceexplosiongenerators"][3] = [[piecetrail2]]
-		--uDef.sfxtypes["pieceexplosiongenerators"][4] = [[piecetrail3]]
-		--uDef.sfxtypes["pieceexplosiongenerators"][5] = [[piecetrail4]]
-		--uDef.sfxtypes["pieceexplosiongenerators"][6] = [[piecetrail5]]
-		--uDef.sfxtypes["pieceexplosiongenerators"][6] = [[piecetrail6]]
-	--end
-	--Uncomment to clean pieces
-	--uDef.sfxtypes.pieceexplosiongenerators = nil
-
---]]
 end
 
 -- process weapondef
