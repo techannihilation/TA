@@ -51,6 +51,8 @@ return {
 		customparams = {
 			buildpic = "corshieldgen.dds",
 			faction = "Core",
+			shield_power = 2600,
+			shield_radius = 250,
 		},
 		featuredefs = {
 			dead = {
@@ -107,7 +109,7 @@ return {
 				smartshield = true,
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				visibleshield = true,
+				--visibleshield = true,
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {

@@ -113,6 +113,8 @@ return {
 			faction = "CORE",
 			iscommander = true,
 			providetech = "Battle Commander,Assault Commander,Star Commander",
+			shield_power = 1200,
+			shield_radius = 150,
 		},
 		featuredefs = {
 			dead = {
@@ -287,8 +289,6 @@ return {
 				smartshield = true,
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				visibleshield = true,
-				visibleshieldhitframes = 70,
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {

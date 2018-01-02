@@ -51,6 +51,8 @@ return {
 		customparams = {
 			buildpic = "armgate1.dds",
 			faction = "ARM",
+			shield_power = 77500,
+			shield_radius = 1000,
 		},
 		featuredefs = {
 			dead = {
@@ -129,8 +131,8 @@ return {
 				smartshield = true,
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				visibleshield = true,
-				visibleshieldrepulse = true,
+				--visibleshield = true,
+				--visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {
 					default = 100,

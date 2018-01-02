@@ -51,6 +51,8 @@ return {
 		customparams = {
 			buildpic = "corgate1.dds",
 			faction = "CORE",
+			shield_power = 77500,
+			shield_radius = 1000,
 		},
 		featuredefs = {
 			dead = {

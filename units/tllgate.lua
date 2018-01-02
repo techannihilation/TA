@@ -45,6 +45,8 @@ return {
 		customparams = {
 			buildpic = "tllgate.dds",
 			faction = "TLL",
+			shield_power = 7500,
+			shield_radius = 400,
 		},
 		featuredefs = {
 			heap = {
@@ -121,8 +123,8 @@ return {
 				smartshield = true,
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				visibleshield = true,
-				visibleshieldhitframes = 70,
+				--visibleshield = true,
+				--visibleshieldhitframes = 70,
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {
