@@ -1,4 +1,10 @@
-﻿3.04.0 -> 3.05.0
+﻿3.05.0 -> 3.06.0
+ 2018-01-02
+
+ Visual Improvemnts
+ - Add lups based shields
+ 
+3.04.0 -> 3.05.0
  2017-12-09
  
  Bugs Fix Release:
