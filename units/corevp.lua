@@ -52,11 +52,12 @@ return {
 		workertime = 250,
 		yardmap = "cccccccc cccccccc cccccccc cccccccc cccccccc cccccccc cccccccc cccccccc",
 		buildoptions = {
-			[1] = "clb",
-			[2] = "champ",
-			[3] = "armsiege",
-			[4] = "armtigre2",
-			[5] = "corbt",
+			[1] = "corecv",
+			[2] = "clb",
+			[3] = "champ",
+			[4] = "armsiege",
+			[5] = "armtigre2",
+			[6] = "corbt",
 		},
 		customparams = {
 			buildpic = "corevp.dds",
