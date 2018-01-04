@@ -217,7 +217,7 @@ Killed(severity, corpsetype)
 		explode door2 type NOHEATCLOUD;
 		explode turret1 type NOHEATCLOUD;
 		explode plate type NOHEATCLOUD;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -230,7 +230,7 @@ Killed(severity, corpsetype)
 		explode door2 type NOHEATCLOUD | FALL;
 		explode turret1 type NOHEATCLOUD | FALL;
 		explode plate type NOHEATCLOUD | FALL;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -243,7 +243,7 @@ Killed(severity, corpsetype)
 		explode door2 type NOHEATCLOUD | FALL| SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode turret1 type NOHEATCLOUD | FALL| SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode plate type NOHEATCLOUD | FALL| SMOKE | FIRE | EXPLODE_ON_HIT;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 		explode arm1 type NOHEATCLOUD | FALL| SMOKE | FIRE | EXPLODE_ON_HIT;
@@ -254,5 +254,5 @@ Killed(severity, corpsetype)
 		explode door2 type NOHEATCLOUD | FALL| SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode turret1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode plate type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	return (0);
+		return (corpsetype);
 }
