@@ -315,9 +315,16 @@ local morphDefs = {
 		xp = 0.30,
   	},
 	tllgeo = {
-		into = 'tllmohogeo',
-	  	time = 120,
-	  	tech = 1,
+		{
+			into = 'tllmohogeo',
+			time = 120,
+			tech = 1,
+		},
+		{
+			into = 'tllgeo_armored',
+			time = 90,
+			tech = 1,
+		},
 	},
 	armgate2 = {
 		into = 'armgate',
