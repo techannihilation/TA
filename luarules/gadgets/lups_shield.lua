@@ -155,7 +155,7 @@ function gadget:GameFrame(n)
 		for i = 1, #allUnits do
 			local unitID = allUnits[i]
 			local unitDefID = Spring.GetUnitDefID(unitID)
-			gadget:UnitCreated(unitID, unitDefID)
+			gadget:UnitFinished(unitID, unitDefID)
 		end
 		startup = false
 	end
