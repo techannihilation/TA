@@ -47,11 +47,12 @@ return {
 		workertime = 600,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		buildoptions = {
-			[1] = "airwolf3g",
-			[2] = "armpers",
-			[3] = "armor",
-			[4] = "armorion",
-			[5] = "armcyclone",
+			[1] = "armeca",
+			[2] = "airwolf3g",
+			[3] = "armpers",
+			[4] = "armor",
+			[5] = "armorion",
+			[6] = "armcyclone",
 		},
 		customparams = {
 			buildpic = "armeap.dds",
