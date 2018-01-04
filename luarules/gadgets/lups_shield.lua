@@ -132,7 +132,7 @@ function gadget:UnitDestroyed(unitID, unitDefID, unitTeam)
 	RemoveUnit(unitID)
 end
 
-function gadget:UnitCreated(unitID, unitDefID, unitTeam)
+function gadget:UnitFinished(unitID, unitDefID, unitTeam)
 	if shieldUnitDefs[unitDefID] then
 		AddUnit(unitID, unitDefID)
 	end
