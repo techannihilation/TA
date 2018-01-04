@@ -47,11 +47,12 @@ return {
 		workertime = 600,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		buildoptions = {
-			[1] = "shrike",
-			[2] = "blackdawn",
-			[3] = "corbtrans",
-			[4] = "corsbomb",
-			[5] = "coreclipse",
+			[1] = "coreca",
+			[2] = "shrike",
+			[3] = "blackdawn",
+			[4] = "corbtrans",
+			[5] = "corsbomb",
+			[6] = "coreclipse",
 		},
 		customparams = {
 			buildpic = "coreap.dds",
