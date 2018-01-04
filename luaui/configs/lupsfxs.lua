@@ -93,7 +93,7 @@ shieldBursts100 = {
   colormap   = {{0.2, 1, 0.2, 0.2}, {1, 0.2, 0.2, 0.2}},
   directional= true,
   repeatEffect = true,
-  count      = 6,
+  count      = 4,
 }
 
 shieldBursts150 = {
@@ -110,7 +110,7 @@ shieldBursts150 = {
   colormap   = {{0.2, 1, 0.2, 0.2}, {1, 0.2, 0.2, 0.2}},
   directional= true,
   repeatEffect = true,
-  count      = 8,
+  count      = 6,
 }
 
 shieldBursts200 = {
@@ -127,7 +127,7 @@ shieldBursts200 = {
   colormap   = {{0.2, 1, 0.2, 0.2}, {1, 0.2, 0.2, 0.2}},
   directional= true,
   repeatEffect = true,
-  count      = 10,
+  count      = 8,
 }
 
 shieldBursts250 = {
@@ -144,7 +144,7 @@ shieldBursts250 = {
   colormap   = {{0.2, 1, 0.2, 0.2}, {1, 0.2, 0.2, 0.2}},
   directional= true,
   repeatEffect = true,
-  count      = 14,
+  count      = 10,
 }
 
 shieldBursts340 = {
