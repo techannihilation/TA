@@ -49,7 +49,7 @@ return {
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
 			buildpic = "tllhydre.png",
-			faction = "ARM",
+			faction = "TLL",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +64,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 21525,
-				object = "HYDRE_DEAD",
+				object = "TLLHYDRE_DEAD",
 				reclaimable = true,
 			},
 			heap = {
