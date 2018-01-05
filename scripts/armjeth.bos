@@ -1,4 +1,4 @@
-#define TA			// This is a TA script
+#define TA			// This is a TA script //Edited by skymyj
 
 #include "sfxtype.h"
 #include "exptype.h"
