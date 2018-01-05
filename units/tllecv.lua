@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 19035,
 		builddistance = 350,
 		builder = true,
-		buildpic = "tllecv.png",
+		buildpic = "tllecv.dds",
 		buildtime = 300000,
 		canguard = true,
 		canmove = true,
@@ -78,7 +78,7 @@ return {
 		},
 		customparams = {
 			buildpic = "TLLECV.png",
-			faction = "core",
+			faction = "tll",
 		},
 		featuredefs = {
 			["1_dead"] = {
