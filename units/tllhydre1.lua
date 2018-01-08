@@ -64,7 +64,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 30525,
-				object = "TLLHYDRE_DEAD",
+				object = "TLLHYDRE1_DEAD",
 				reclaimable = true,
 			},
 			heap = {
