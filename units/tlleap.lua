@@ -46,10 +46,11 @@ return {
 		workertime = 600,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		buildoptions = {
-			[1] = "tllshu",
-			[2] = "tllnuada",
-			[3] = "tllanhur",
-			[4] = "tllaether",
+			[1] = "tlleca",
+			[2] = "tllshu",
+			[3] = "tllnuada",
+			[4] = "tllanhur",
+			[5] = "tllaether",
 		},
 		customparams = {
 			buildpic = "tlleap.dds",

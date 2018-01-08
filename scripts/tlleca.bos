@@ -1,0 +1,181 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, lwing, rwing, nano1, nano2, engines, engineA, engineB;
+
+static-var  spray, statechg_DesiredState, statechg_StateChanging;
+
+
+activatescr()
+{
+	if( TRUE )
+	{
+		turn engines to x-axis <0.000000> speed <30.000000>;
+		turn rwing to y-axis <0.000000> speed <30.000000>;
+		turn lwing to y-axis <0.000000> speed <30.000000>;
+		sleep 100;
+	}
+	sleep 40;
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		turn engines to x-axis <-90.000000> speed <30.000000>;
+		turn rwing to y-axis <-90.000000> speed <30.000000>;
+		turn lwing to y-axis <90.000000> speed <30.000000>;
+		sleep 100;
+	}
+	sleep 40;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script activatescr();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script deactivatescr();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+Create()
+{
+	spray = base;
+	turn engines to x-axis <-90.000000> now;
+	turn rwing to y-axis <-90.000000> now;
+	turn lwing to y-axis <90.000000> now;
+	call-script InitState();
+	start-script SmokeUnit();
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+StartBuilding()
+{
+	set INBUILDSTANCE to 1;
+}
+
+StopBuilding()
+{
+	set INBUILDSTANCE to 0;
+}
+
+QueryNanoPiece(piecenum)
+{
+	if( spray == 0 )
+	{
+		piecenum = nano1;
+	}
+	if( spray != 0 )
+	{
+		piecenum = nano2;
+	}
+	spray = !spray;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type NOHEATCLOUD;
+		explode lwing type NOHEATCLOUD;
+		explode rwing type NOHEATCLOUD;
+		explode engineA type NOHEATCLOUD;
+		explode engineB type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode body type NOHEATCLOUD;
+		explode lwing type NOHEATCLOUD;
+		explode rwing type NOHEATCLOUD;
+		explode engineA type NOHEATCLOUD;
+		explode engineB type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode body type NOHEATCLOUD;
+		explode rwing type NOHEATCLOUD;
+		explode lwing type NOHEATCLOUD;
+		explode engineA type NOHEATCLOUD;
+		explode engineB type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode body type NOHEATCLOUD;
+	explode lwing type NOHEATCLOUD;
+	explode rwing type NOHEATCLOUD;
+	explode engineA type NOHEATCLOUD;
+	explode engineB type NOHEATCLOUD;
+	return (corpsetype);
+}
