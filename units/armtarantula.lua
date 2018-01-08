@@ -22,7 +22,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 325,
 		maxdamage = 1050,
@@ -46,7 +46,7 @@ return {
 		turnrate = 1122,
 		unitname = "armtarantula",
 		customparams = {
-			buildpic = "armtarantula.png",
+			buildpic = "armtarantula.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

@@ -34,6 +34,7 @@ return {
 		unitname = "tlluwestorage",
 		yardmap = "oooooooooooooooo",
 		customparams = {
+			buildpic = "tlluwestorage.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

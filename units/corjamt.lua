@@ -15,6 +15,9 @@ return {
 		buildtime = 4577,
 		canattack = false,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		collisionvolumeoffsets = "0 1 0",
+		collisionvolumescales = "30 32 30",
+		collisionvolumetype = "CylY",
 		corpse = "dead",
 		description = "Short-Range Jamming Device",
 		energymake = 0,
@@ -25,7 +28,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 26,
+		losemitheight = 27,
 		mass = 160,
 		maxangledif1 = 1,
 		maxdamage = 960,
@@ -49,7 +52,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooo",
 		customparams = {
-			buildpic = "CORJAMT.png",
+			buildpic = "corjamt.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

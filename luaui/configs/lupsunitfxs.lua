@@ -55,13 +55,92 @@ effectUnitDefs = {
   },
   
   --// SHIELDS //--------------------------
+  
+  armcom5 = {
+    {class='Bursts',options=shieldBursts100},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=100, precision=0, strength   = 0.001, repeatEffect=true}},
+  },
+  corcom5 = {
+    {class='Bursts',options=shieldBursts100},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=100, precision=0, strength   = 0.001, repeatEffect=true}},
+  },
+  tllcom5 = {
+    {class='Bursts',options=shieldBursts100},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=100, precision=0, strength   = 0.001, repeatEffect=true}},
+  },
+  armcom6 = {
+    {class='Bursts',options=shieldBursts150},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=150, precision=0, strength   = 0.001, repeatEffect=true}},
+  },
+  corcom6 = {
+    {class='Bursts',options=shieldBursts150},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=150, precision=0, strength   = 0.001, repeatEffect=true}},
+  },
+  tllcom6 = {
+    {class='Bursts',options=shieldBursts150},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=150, precision=0, strength   = 0.001, repeatEffect=true}},
+  },
+  armcom7 = {
+    {class='Bursts',options=shieldBursts200},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=200, precision=0, strength   = 0.001, repeatEffect=true}},
+  },
+  corcom7 = {
+    {class='Bursts',options=shieldBursts200},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=200, precision=0, strength   = 0.001, repeatEffect=true}},
+  },
+  tllcom7 = {
+    {class='Bursts',options=shieldBursts200},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=200, precision=0, strength   = 0.001, repeatEffect=true}},
+  },
   corshieldgen = {
     {class='ShieldSphere',options=corshieldgenShieldSphere},
-    {class='SimpleParticles2', options=MergeTable({piece="sphere", delay=20, lifeSpread=300},shield)},
-    {class='SimpleParticles2', options=MergeTable({piece="sphere", delay=40, lifeSpread=300},shield)},
-    {class='SimpleParticles2', options=MergeTable({piece="sphere", delay=60, lifeSpread=300},shield)},
+    --{class='SimpleParticles2', options=MergeTable({piece="sphere", delay=20, lifeSpread=30},shield)},
+    --{class='SimpleParticles2', options=MergeTable({piece="sphere", delay=40, lifeSpread=30},shield)},
+    --{class='SimpleParticles2', options=MergeTable({piece="sphere", delay=60, lifeSpread=30},shield)},
+    {class='Bursts',options=shieldBursts250},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=250, precision=0, strength   = 0.001, repeatEffect=true}},
   },
- 
+  armgate2 = {
+    {class='Bursts',options=shieldBursts340},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=340, precision=0, strength   = 0.001, repeatEffect=true}},
+  },
+  corgate2 = {
+    {class='Bursts',options=shieldBursts340},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=340, precision=0, strength   = 0.001, repeatEffect=true}},
+  },
+  tllgate2 = {
+    {class='Bursts',options=shieldBursts340},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=340, precision=0, strength   = 0.001, repeatEffect=true}},
+  },
+  armgate = {
+    {class='Bursts',options=shieldBursts400},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=400, precision=0, strength   = 0.001, repeatEffect=true}},
+  },
+  corgate = {
+    {class='Bursts',options=shieldBursts400},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=400, precision=0, strength   = 0.001, repeatEffect=true}},
+  },
+  tllgate = {
+    {class='Bursts',options=shieldBursts400},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=400, precision=0, strength   = 0.001, repeatEffect=true}},
+  },
+  tllfgate = {
+    {class='Bursts',options=shieldBursts400},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=400, precision=0, strength   = 0.001, repeatEffect=true}},
+  },
+  armgate1 = {
+    {class='Bursts',options=shieldBursts1000},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=1000, precision=0, strength   = 0.001, repeatEffect=true}},
+  },
+  corgate1 = {
+    {class='Bursts',options=shieldBursts1000},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=1000, precision=0, strength   = 0.001, repeatEffect=true}},
+  },
+  tllgate1 = {
+    {class='Bursts',options=shieldBursts1000},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=1000, precision=0, strength   = 0.001, repeatEffect=true}},
+  },
+  
   --// OTHER //--------------------------
  armmex1 = {
     {class='SimpleParticles2', options=MergeTable({pos={-6,15,0}, delay=10, lifeSpread=300},sparks)},
@@ -114,6 +193,7 @@ effectUnitDefs = {
     {class='ShieldSphere',options=tlljunoShieldSphere},
     {class='GroundFlash',options=groundFlashJuno},
   },
+
   --// ENERGY STORAGE //--------------------
   
  corestor = {
@@ -356,6 +436,7 @@ effectUnitDefs = {
 }
 
  --// COMMANDER XMAS HATS //--------------------------
+
  effectUnitDefsXmas = {
  armcom = {
     {class='SantaHat',options={color={1,0.1,0,1}, pos={0,4,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=8, piece="head"}},
@@ -371,12 +452,18 @@ effectUnitDefs = {
   },
  armcom5 = {
     {class='SantaHat',options={color={1,0.1,0,1}, pos={0,4,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=8, piece="head"}},
+    {class='Bursts',options=shieldBursts100},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=100, precision=0, strength   = 0.001, repeatEffect=true}},
   },
  armcom6 = {
     {class='SantaHat',options={color={1,0.1,0,1}, pos={0,4,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=8, piece="head"}},
+    {class='Bursts',options=shieldBursts150},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=150, precision=0, strength   = 0.001, repeatEffect=true}},
   },
  armcom7 = {
     {class='SantaHat',options={color={1,0.1,0,1}, pos={0,4,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=8, piece="head"}},
+    {class='Bursts',options=shieldBursts200},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=200, precision=0, strength   = 0.001, repeatEffect=true}},
   },
  corcom = {
     {class='SantaHat',options={color={1,0.1,0,1}, pos={0,0,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=16, piece="head"}},
@@ -392,12 +479,18 @@ effectUnitDefs = {
   },
  corcom5 = {
     {class='SantaHat',options={color={1,0.1,0,1}, pos={0,0,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=16, piece="head"}},
+    {class='Bursts',options=shieldBursts100},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=100, precision=0, strength   = 0.001, repeatEffect=true}},
   },
  corcom6 = {
     {class='SantaHat',options={color={1,0.1,0,1}, pos={0,0,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=16, piece="head"}},
+    {class='Bursts',options=shieldBursts150},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=150, precision=0, strength   = 0.001, repeatEffect=true}},
   },
  corcom7 = {
     {class='SantaHat',options={color={1,0.1,0,1}, pos={0,0,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=16, piece="head"}},
+    {class='Bursts',options=shieldBursts200},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=200, precision=0, strength   = 0.001, repeatEffect=true}},
   },
  tllcom = {
     {class='SantaHat',options={color={1,0.1,0,1}, pos={0,8.8,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=11, piece="head"}},
@@ -413,11 +506,17 @@ effectUnitDefs = {
   },
  tllcom5 = {
     {class='SantaHat',options={color={1,0.1,0,1}, pos={0,8.8,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=11, piece="head"}},
+    {class='Bursts',options=shieldBursts100},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=100, precision=0, strength   = 0.001, repeatEffect=true}},
   },
  tllcom6 = {
     {class='SantaHat',options={color={1,0.1,0,1}, pos={0,8.8,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=11, piece="head"}},
+    {class='Bursts',options=shieldBursts150},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=150, precision=0, strength   = 0.001, repeatEffect=true}},
   },
  tllcom7 = {
     {class='SantaHat',options={color={1,0.1,0,1}, pos={0,8.8,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=11, piece="head"}},
+    {class='Bursts',options=shieldBursts200},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=200, precision=0, strength   = 0.001, repeatEffect=true}},
   },
 }

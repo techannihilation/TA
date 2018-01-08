@@ -26,7 +26,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 93,
 		maxdamage = 260,
@@ -52,7 +52,7 @@ return {
 		turnrate = 640,
 		unitname = "armsh",
 		customparams = {
-			buildpic = "ARMSH.png",
+			buildpic = "armsh.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

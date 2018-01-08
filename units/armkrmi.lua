@@ -25,7 +25,7 @@ return {
 		idletime = 1800,
 		losemitheight = 59,
 		maneuverleashlength = 640,
-		mass = 1650,
+		mass = 1750,
 		maxdamage = 5500,
 		maxslope = 17,
 		maxvelocity = 3,
@@ -49,6 +49,7 @@ return {
 		unitname = "armkrmi",
 		upright = true,
 		customparams = {
+			buildpic = "armkrmi.dds",
 			canjump = "1",
 			faction = "CORE",
 			requiretech = "Advanced T2 Unit Research Centre",

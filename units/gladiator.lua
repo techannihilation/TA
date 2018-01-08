@@ -28,7 +28,7 @@ return {
 		idletime = 1800,
 		losemitheight = 36,
 		maneuverleashlength = 500,
-		mass = 555,
+		mass = 485,
 		maxdamage = 2350,
 		maxslope = 17,
 		maxvelocity = 1.25,
@@ -52,6 +52,7 @@ return {
 		unitname = "gladiator",
 		upright = true,
 		customparams = {
+			buildpic = "gladiator.dds",
 			faction = "CORE",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},

@@ -28,6 +28,7 @@ return {
 		hoverattack = true,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 11.5,
 		maneuverleashlength = 1280,
 		mass = 229,
 		maxdamage = 1073,
@@ -50,7 +51,8 @@ return {
 		turnrate = 1600,
 		unitname = "ferret",
 		customparams = {
-			faction = "CORE",
+			buildpic = "ferret.dds",
+			faction = "ARM",
 		},
 		sfxtypes = {
 			explosiongenerators = {

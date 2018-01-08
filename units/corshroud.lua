@@ -15,6 +15,9 @@ return {
 		buildtime = 9392,
 		canattack = false,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		collisionvolumeoffsets = "0 0 -2",
+		collisionvolumescales = "32 93 32",
+		collisionvolumetype = "CylY",
 		corpse = "dead",
 		description = "Long-Range Jamming Tower",
 		energymake = 0,
@@ -49,7 +52,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooo",
 		customparams = {
-			buildpic = "CORSHROUD.png",
+			buildpic = "corshroud.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

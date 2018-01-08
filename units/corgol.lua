@@ -13,6 +13,9 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		collisionvolumeoffsets = "0 -10 -1",
+		collisionvolumescales = "50 50 50",
+		collisionvolumetype = "CylZ",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Very Heavy Assault Tank",
@@ -54,7 +57,7 @@ return {
 		turnrate = 220,
 		unitname = "corgol",
 		customparams = {
-			buildpic = "CORGOL.png",
+			buildpic = "corgol.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

@@ -27,7 +27,7 @@ return {
 		icontype = "sea",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 144,
 		maxdamage = 570,
@@ -52,7 +52,7 @@ return {
 		turnrate = 512,
 		unitname = "corsjam",
 		customparams = {
-			buildpic = "CORSJAM.png",
+			buildpic = "corsjam.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

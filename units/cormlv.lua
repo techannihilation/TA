@@ -19,6 +19,9 @@ return {
 		canrestore = false,
 		canstop = 1,
 		category = "ALL CONSTR MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL TINY WEAPON SURFACE",
+		collisionvolumeoffsets = "0 -2 0",
+		collisionvolumescales = "19 10 29",
+		collisionvolumetype = "Box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Stealthy Minelayer/Minesweeper",
@@ -29,7 +32,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 61,
 		maxdamage = 155,
@@ -74,7 +77,7 @@ return {
 			[8] = "cormine7",
 		},
 		customparams = {
-			buildpic = "CORMLV.png",
+			buildpic = "cormlv.dds",
 			faction = "core",
 		},
 		featuredefs = {

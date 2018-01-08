@@ -17,7 +17,7 @@ return {
 		footprintx = 2,
 		footprintz = 2,
 		isfeature = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		mass = 616.66669,
 		maxdamage = 3700,
 		maxslope = 32,
@@ -34,6 +34,7 @@ return {
 		waterline = 11,
 		yardmap = "ww ww",
 		customparams = {
+			buildpic = "tlldtns.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

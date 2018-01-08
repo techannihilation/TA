@@ -20,8 +20,8 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 61,
-		mass = 218,
+		losemitheight = 62,
+		mass = 790,
 		maxdamage = 1425,
 		minwaterdepth = 5,
 		name = "Missile Launcher",
@@ -38,6 +38,7 @@ return {
 		waterline = 0,
 		yardmap = "wwww",
 		customparams = {
+			buildpic = "tlldcsta.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

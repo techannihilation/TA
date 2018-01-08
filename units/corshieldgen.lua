@@ -8,7 +8,7 @@ return {
 		builder = false,
 		buildpic = "corshieldgen.dds",
 		buildtime = 30000,
-		canattack = true,
+		canattack = false,
 		canguard = true,
 		canmove = true,
 		canpatrol = true,
@@ -24,9 +24,9 @@ return {
 		icontype = "shield",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 59,
+		losemitheight = 60,
 		maneuverleashlength = 640,
-		mass = 2528,
+		mass = 2450,
 		maxdamage = 2255,
 		maxslope = 32,
 		maxvelocity = 0.8,
@@ -49,8 +49,10 @@ return {
 		unitname = "corshieldgen",
 		upright = true,
 		customparams = {
-			buildpic = "corshieldgen.png",
+			buildpic = "corshieldgen.dds",
 			faction = "Core",
+			shield_power = 2600,
+			shield_radius = 250,
 		},
 		featuredefs = {
 			dead = {
@@ -107,7 +109,7 @@ return {
 				smartshield = true,
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				visibleshield = true,
+				--visibleshield = true,
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {

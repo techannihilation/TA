@@ -30,7 +30,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 170,
+		losemitheight = 171,
 		mass = 28250,
 		maxdamage = 14960,
 		maxslope = 13,
@@ -52,7 +52,7 @@ return {
 		usepiececollisionvolumes = 1,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
-			buildpic = "CORBUZZ.png",
+			buildpic = "corbuzz.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

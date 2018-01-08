@@ -21,7 +21,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		mass = 1133,
 		maxdamage = 1344,
 		maxslope = 10,
@@ -38,6 +38,7 @@ return {
 		unitname = "armjumpdrive",
 		yardmap = "oooooooooooo",
 		customparams = {
+			buildpic = "armjumpdrive.dds",
 			faction = "ARM",
 			providetech = "Jumpjet",
 			providetechrange = 2500,

@@ -15,6 +15,9 @@ return {
 		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		cloakcost = 75,
 		cloakcostmoving = 200,
+		collisionvolumeoffsets = "0 -1 0",
+		collisionvolumescales = "26 41 16",
+		collisionvolumetype = "Box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Sniper Kbot",
@@ -50,7 +53,7 @@ return {
 		unitname = "armsnipe",
 		upright = true,
 		customparams = {
-			buildpic = "ARMSNIPE.png",
+			buildpic = "armsnipe.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

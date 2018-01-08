@@ -30,6 +30,7 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 7.5,
 		maneuverleashlength = 1280,
 		mass = 127,
 		maxdamage = 520,
@@ -42,6 +43,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMSEHAK",
 		radardistance = 2250,
+		radaremitheight = 7.5,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 1100,
@@ -54,7 +56,7 @@ return {
 		turnrate = 402,
 		unitname = "armsehak",
 		customparams = {
-			buildpic = "ARMSEHAK.png",
+			buildpic = "armsehak.dds",
 			faction = "ARM",
 		},
 		sfxtypes = {

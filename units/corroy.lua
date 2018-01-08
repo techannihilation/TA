@@ -31,7 +31,7 @@ return {
 		idletime = 1800,
 		losemitheight = 25,
 		maneuverleashlength = 640,
-		mass = 1088,
+		mass = 1090,
 		maxdamage = 2800,
 		maxvelocity = 2.9,
 		minwaterdepth = 12,
@@ -50,12 +50,12 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 2.1252,
+		turninplacespeedlimit = 1.914,
 		turnrate = 193,
 		unitname = "corroy",
 		waterline = 1,
 		customparams = {
-			buildpic = "CORROY.png",
+			buildpic = "corroy.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

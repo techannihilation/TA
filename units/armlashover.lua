@@ -26,7 +26,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 360,
 		maxdamage = 825,
@@ -51,6 +51,7 @@ return {
 		turnrate = 520,
 		unitname = "armlashover",
 		customparams = {
+			buildpic = "armlashover.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

@@ -26,7 +26,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 33,
+		losemitheight = 34,
 		maneuverleashlength = 640,
 		mass = 2250,
 		maxdamage = 11000,
@@ -52,7 +52,7 @@ return {
 		unitname = "armfboy1",
 		upright = false,
 		customparams = {
-			buildpic = "ARMFBOY1.png",
+			buildpic = "armfboy1.dds",
 			faction = "ARM",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},

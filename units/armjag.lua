@@ -26,7 +26,7 @@ return {
 		footprintz = 4,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 80,
+		losemitheight = 81,
 		maneuverleashlength = 640,
 		mass = 20050,
 		maxdamage = 66912,
@@ -55,7 +55,7 @@ return {
 		unitname = "armjag",
 		upright = true,
 		customparams = {
-			buildpic = "armjag.png",
+			buildpic = "armjag.dds",
 			faction = "ARM",
 			requiretech = "Advanced T3 Unit Research Centre",
 		},

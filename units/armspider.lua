@@ -22,7 +22,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 180,
 		maxdamage = 750,
@@ -46,7 +46,7 @@ return {
 		turnrate = 1122,
 		unitname = "armspider",
 		customparams = {
-			buildpic = "armspider.png",
+			buildpic = "armspider.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

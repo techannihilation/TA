@@ -12,6 +12,9 @@ return {
 		canattack = true,
 		canstop = 1,
 		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		collisionvolumeoffsets = "0 -15 0",
+		collisionvolumescales = "46 59 46",
+		collisionvolumetype = "CylY",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Floating Heavy Laser Tower",
@@ -24,7 +27,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 43,
+		losemitheight = 44,
 		mass = 641.66669,
 		maxdamage = 3850,
 		maxvelocity = 0,
@@ -45,7 +48,7 @@ return {
 		waterline = 8,
 		yardmap = "wwwwwwwwwwwwwwww",
 		customparams = {
-			buildpic = "ARMFHLT.png",
+			buildpic = "armfhlt.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

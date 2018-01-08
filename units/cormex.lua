@@ -52,7 +52,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooooo",
 		customparams = {
-			buildpic = "CORMEX.png",
+			buildpic = "cormex.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

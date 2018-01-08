@@ -14,6 +14,9 @@ return {
 		canreclamate = 1,
 		canstop = 1,
 		category = "ALL CONSTR MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SMALL SURFACE UNDERWATER",
+		collisionvolumeoffsets = "0 0 0",
+		collisionvolumescales = "34 22 41",
+		collisionvolumetype = "Box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Amphibious Construction Vehicle",
@@ -23,7 +26,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 154.16667,
 		maxdamage = 925,
@@ -101,7 +104,7 @@ return {
 			[42] = "armtl",
 		},
 		customparams = {
-			buildpic = "ARMBEAVER.png",
+			buildpic = "armbeaver.dds",
 			faction = "arm",
 		},
 		featuredefs = {

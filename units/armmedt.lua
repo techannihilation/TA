@@ -22,7 +22,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 561,
 		maxdamage = 3366,
@@ -48,6 +48,7 @@ return {
 		turnrate = 375,
 		unitname = "armmedt",
 		customparams = {
+			buildpic = "armmedt.dds",
 			faction = "ARM",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},

@@ -28,6 +28,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 14,
 		maneuverleashlength = 1280,
 		mass = 161,
 		maxdamage = 484,
@@ -49,6 +50,7 @@ return {
 		turnrate = 455,
 		unitname = "tllsonpl",
 		customparams = {
+			buildpic = "tllsonpl.dds",
 			faction = "TLL",
 		},
 		sfxtypes = {

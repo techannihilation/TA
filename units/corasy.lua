@@ -64,7 +64,7 @@ return {
 			[10] = "corbats",
 		},
 		customparams = {
-			buildpic = "CORASY.png",
+			buildpic = "corasy.dds",
 			faction = "CORE",
 			providetech = "T2 Factory",
 		},

@@ -26,7 +26,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 116,
 		maxdamage = 570,
@@ -57,7 +57,7 @@ return {
 		turnrate = 592,
 		unitname = "armflash",
 		customparams = {
-			buildpic = "ARMFLASH.png",
+			buildpic = "armflash.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

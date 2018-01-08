@@ -59,7 +59,7 @@ return {
 		unitname = "corthovr",
 		waterline = 10,
 		customparams = {
-			buildpic = "CORTHOVR.png",
+			buildpic = "corthovr.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

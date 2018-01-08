@@ -25,7 +25,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 23,
 		maneuverleashlength = 380,
 		mass = 480,
 		maxdamage = 550,
@@ -52,7 +52,7 @@ return {
 		waterline = 1,
 		workertime = 300,
 		customparams = {
-			buildpic = "CORFNANOTC.png",
+			buildpic = "tllfnanotc.dds",
 			faction = "TLL",
 		},
 		nanocolor = {

@@ -19,9 +19,9 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 42,
+		losemitheight = 43,
 		makesmetal = 8,
-		mass = 4870,
+		mass = 4670,
 		maxdamage = 5500,
 		maxslope = 10,
 		maxwaterdepth = 255,
@@ -36,6 +36,7 @@ return {
 		unitname = "tlluwfusion",
 		yardmap = "oooooooooooooooooooooooo",
 		customparams = {
+			buildpic = "tlluwfusion.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

@@ -30,7 +30,7 @@ return {
 		idletime = 1800,
 		losemitheight = 30,
 		maneuverleashlength = 640,
-		mass = 2825,
+		mass = 2525,
 		maxdamage = 3300,
 		maxvelocity = 2,
 		minwaterdepth = 12,
@@ -49,11 +49,11 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.9008,
+		turninplacespeedlimit = 1.32,
 		turnrate = 347,
 		unitname = "armmship",
 		customparams = {
-			buildpic = "ARMMSHIP.png",
+			buildpic = "armmship.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

@@ -7,11 +7,12 @@ piece  pelvis, leftupperleg, leftlowerleg, leftfoot, lefttoea, lefttoeb, lefttoe
        rightlowerleg, rightfoot, righttoea, righttoeb, righttoec, maintorso, leftcannon, rightcannon,
        secfirea, secfireb, terfirea, terfireb, leftflare, rightflare;
 
-static-var  Static_Var_1, gun_2, gun_3, bMoving;
+static-var  Static_Var_1, gun_1, gun_2, gun_3, bMoving;
 
 // Signal definitions
 #define SIG_MOVE			2
-#define SIG_AIM_2			8
+#define SIG_AIM_1			8
+#define SIG_AIM_2			16
 #define SIG_AIM_3			32
 
 
@@ -219,6 +220,53 @@ RestoreAfterDelay()
 	bMoving = TRUE;
 }
 
+AimWeapon1(heading, pitch)
+{
+    signal SIG_AIM_1;
+	set-signal-mask SIG_AIM_1;
+	//Static_Var_2 = 1;
+	turn maintorso to y-axis heading speed <150.0>;
+	//turn sleeve1 to x-axis <0.0> - pitch speed <100.0>;
+	wait-for-turn maintorso around y-axis;
+	//wait-for-turn sleeve1 around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireWeapon1()
+{
+	if( gun_1 == 0 )
+	{
+		emit-sfx 1024 + 0 from leftflare;
+	}
+	if( gun_1 == 1 )
+	{
+		emit-sfx 1024 + 0 from rightflare;
+	}
+    gun_1= gun_1 + 1;
+	if( gun_1 >= 2 )
+	{
+	gun_1=0;	
+    }
+}
+
+AimFromWeapon1(piecenum)
+{
+	piecenum = maintorso;
+}
+
+QueryWeapon1(piecenum)
+{
+	if( gun_1 == 0 )
+	{
+		piecenum = leftflare;
+	}
+        if( gun_1 == 1 )
+	{
+		piecenum = rightflare;
+	}
+}
+
 AimSecondary(heading, pitch)
 {
 	bMoving = FALSE;
@@ -280,7 +328,7 @@ AimTertiary(heading, pitch)
 {
 	signal SIG_AIM_3;
 	set-signal-mask SIG_AIM_3;
-	bMoving = TRUE;
+	//bMoving = TRUE;
 	while( !bMoving )
 	{
 		sleep 300;
@@ -349,7 +397,7 @@ Killed(severity, corpsetype)
 		explode leftflare type NOHEATCLOUD | BITMAPONLY | BITMAP1;
 		explode rightcannon type NOHEATCLOUD | BITMAPONLY | BITMAP2;
 		explode rightflare type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
@@ -372,7 +420,7 @@ Killed(severity, corpsetype)
 		explode leftflare type NOHEATCLOUD | FALL | BITMAP1;
 		explode rightcannon type NOHEATCLOUD | FALL | BITMAP2;
 		explode rightflare type NOHEATCLOUD | FALL | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
@@ -395,7 +443,7 @@ Killed(severity, corpsetype)
 		explode leftflare type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 		explode rightcannon type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 		explode rightflare type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode pelvis type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
@@ -416,4 +464,5 @@ Killed(severity, corpsetype)
 	explode leftflare type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 	explode rightcannon type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 	explode rightflare type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	return (corpsetype);
 }

@@ -10,6 +10,9 @@ return {
 		buildpic = "corfatf.dds",
 		buildtime = 10302,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER SURFACE",
+		collisionvolumeoffsets = "0 -5 -3.5",
+		collisionvolumescales = "60 30 60",
+		collisionvolumetype = "CylY",
 		corpse = "dead",
 		description = "Enhanced Radar Targeting",
 		energyuse = 150,
@@ -20,7 +23,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		istargetingupgrade = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		mass = 799,
 		maxdamage = 1375,
 		maxslope = 10,
@@ -42,7 +45,7 @@ return {
 		waterline = 8,
 		yardmap = "wwwwwwwwwwwwwwww",
 		customparams = {
-			buildpic = "CORFATF.png",
+			buildpic = "corfatf.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

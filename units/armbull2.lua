@@ -22,7 +22,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 2700,
 		maxdamage = 10400,
@@ -48,6 +48,7 @@ return {
 		turnrate = 350,
 		unitname = "armbull2",
 		customparams = {
+			buildpic = "armbull2.dds",
 			faction = "ARM",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},

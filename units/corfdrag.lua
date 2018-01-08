@@ -9,6 +9,9 @@ return {
 		buildpic = "corfdrag.dds",
 		buildtime = 1000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		collisionvolumeoffsets = "0 -28 0",
+		collisionvolumescales = "37 70 37",
+		collisionvolumetype = "Box",
 		corpse = "floatingteeth_core",
 		description = "Perimeter Defense",
 		footprintx = 2,
@@ -16,7 +19,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		isfeature = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		mass = 21,
 		maxdamage = 50,
 		maxslope = 32,
@@ -36,7 +39,7 @@ return {
 		waterline = 10,
 		yardmap = "wwww",
 		customparams = {
-			buildpic = "CORFDRAG.png",
+			buildpic = "corfdrag.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

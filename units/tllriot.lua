@@ -23,9 +23,9 @@ return {
 		icontype = "armtank",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
-		mass = 347,
+		mass = 355,
 		maxdamage = 1350,
 		maxslope = 12,
 		maxvelocity = 1.3,
@@ -49,6 +49,7 @@ return {
 		turnrate = 210,
 		unitname = "tllriot",
 		customparams = {
+			buildpic = "tllriot.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

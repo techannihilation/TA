@@ -23,9 +23,9 @@ return {
 		idletime = 1800,
 		kamikaze = true,
 		kamikazedistance = 42,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
-		mass = 400,
+		mass = 450,
 		maxdamage = 855,
 		maxslope = 32,
 		maxvelocity = 1.8,
@@ -49,6 +49,7 @@ return {
 		turnrate = 512,
 		unitname = "tllcrawlb",
 		customparams = {
+			buildpic = "tllcrawlb.dds",
 			faction = "TLL",
 		},
 		sfxtypes = {

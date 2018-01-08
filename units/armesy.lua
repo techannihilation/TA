@@ -57,6 +57,7 @@ return {
 			[5] = "armtrmph",
 		},
 		customparams = {
+			buildpic = "armesy.dds",
 			faction = "ARM",
 			providetech = "T3 Factory",
 		},

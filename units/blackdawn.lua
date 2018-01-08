@@ -27,6 +27,7 @@ return {
 		hoverattack = true,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 9.5,
 		maneuverleashlength = 2350,
 		mass = 4100,
 		maxdamage = 6590,
@@ -49,7 +50,7 @@ return {
 		turnrate = 590,
 		unitname = "blackdawn",
 		customparams = {
-			buildpic = "blackdawn.png",
+			buildpic = "blackdawn.dds",
 			faction = "CORE",
 		},
 		sfxtypes = {

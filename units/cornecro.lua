@@ -26,7 +26,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 60,
-		losemitheight = 35,
+		losemitheight = 36,
 		maneuverleashlength = 640,
 		mass = 109,
 		maxdamage = 200,
@@ -40,7 +40,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "CORNECRO",
 		radardistance = 50,
-		radaremitheight = 35,
+		radaremitheight = 36,
 		resurrect = 1,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -55,7 +55,7 @@ return {
 		upright = true,
 		workertime = 200,
 		customparams = {
-			buildpic = "CORNECRO.png",
+			buildpic = "cornecro.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

@@ -28,7 +28,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 107,
 		maxdamage = 520,
@@ -60,7 +60,7 @@ return {
 		turnrate = 619.29999,
 		unitname = "coreter",
 		customparams = {
-			buildpic = "CORETER.png",
+			buildpic = "coreter.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

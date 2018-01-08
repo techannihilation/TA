@@ -35,7 +35,8 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
-		mass = 25600,
+		losemitheight = 26,
+		mass = 23250,
 		maxdamage = 12500,
 		maxslope = 10,
 		maxvelocity = 3.2,
@@ -72,6 +73,7 @@ return {
 			[16] = "cshipyardlvl4",
 		},
 		customparams = {
+			buildpic = "cbuilderlvl3.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

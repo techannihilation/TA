@@ -50,6 +50,7 @@ return {
 		turnrate = 825,
 		unitname = "tllconfuser",
 		customparams = {
+			buildpic = "tllconfuser.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

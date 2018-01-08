@@ -29,6 +29,7 @@ return {
 		hoverattack = true,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 13.5,
 		maneuverleashlength = 1280,
 		mass = 133,
 		maxdamage = 305,
@@ -83,6 +84,7 @@ return {
 			[29] = "tllsy",
 		},
 		customparams = {
+			buildpic = "tllca.dds",
 			faction = "TLL",
 		},
 		nanocolor = {

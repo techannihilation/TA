@@ -24,7 +24,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 230,
 		maxdamage = 975,
@@ -80,7 +80,7 @@ return {
 			[22] = "corseal",
 		},
 		customparams = {
-			buildpic = "CORASSIS.png",
+			buildpic = "corassis.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

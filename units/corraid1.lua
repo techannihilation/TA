@@ -23,7 +23,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 391.66666,
 		maxdamage = 2350,
@@ -54,7 +54,7 @@ return {
 		turnrate = 429.79999,
 		unitname = "corraid1",
 		customparams = {
-			buildpic = "CORRAID1.png",
+			buildpic = "corraid1.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

@@ -23,7 +23,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 26,
+		losemitheight = 27,
 		maneuverleashlength = 320,
 		mass = 310,
 		maxdamage = 1450,
@@ -49,6 +49,7 @@ return {
 		turnrate = 650,
 		unitname = "tllsoftshell",
 		customparams = {
+			buildpic = "tllsoftshell.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

@@ -32,9 +32,9 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 28.8,
+		losemitheight = 21,
 		maneuverleashlength = 1280,
-		mass = 683,
+		mass = 1233.33337,
 		maxdamage = 7400,
 		maxslope = 10,
 		maxvelocity = 7,
@@ -66,7 +66,7 @@ return {
 		unitname = "armsl",
 		upright = true,
 		customparams = {
-			buildpic = "ARMSL.png",
+			buildpic = "armsl.dds",
 			faction = "CORE",
 		},
 		sfxtypes = {

@@ -27,6 +27,7 @@ return {
 		hoverattack = true,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 13,
 		maneuverleashlength = 2350,
 		mass = 3550,
 		maxdamage = 5540,
@@ -49,7 +50,7 @@ return {
 		turnrate = 590,
 		unitname = "tllnuada",
 		customparams = {
-			buildpic = "tllnuada.png",
+			buildpic = "tllnuada.dds",
 			faction = "TLL",
 		},
 		sfxtypes = {

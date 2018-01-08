@@ -13,6 +13,9 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		collisionvolumeoffsets = "0 -5 1",
+		collisionvolumescales = "25 31 11",
+		collisionvolumetype = "Box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Fast Raider Kbot",
@@ -49,7 +52,7 @@ return {
 		unitname = "armfast",
 		upright = true,
 		customparams = {
-			buildpic = "ARMFAST.png",
+			buildpic = "armfast.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

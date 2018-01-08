@@ -37,8 +37,8 @@ return {
 		idletime = 300,
 		initcloaked = true,
 		levelground = false,
-		losemitheight = 25,
-		mass = 5,
+		losemitheight = 22,
+		mass = 10,
 		maxdamage = 10,
 		maxslope = 40,
 		maxvelocity = 0,
@@ -62,7 +62,7 @@ return {
 		unitname = "armmine1",
 		usebuildinggrounddecal = true,
 		customparams = {
-			buildpic = "ARMMINE1.png",
+			buildpic = "armmine1.dds",
 			faction = "ARM",
 		},
 		sfxtypes = {

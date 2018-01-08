@@ -42,7 +42,7 @@ return {
 		waterline = 16,
 		yardmap = "wwwwww wwwwww wwwwww wwwwww wwwwww wwwwww",
 		customparams = {
-			buildpic = "CORATIDAL.png",
+			buildpic = "coratidal.dds",
 			energymultiplier = 5,
 			faction = "CORE",
 		},

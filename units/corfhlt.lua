@@ -12,6 +12,9 @@ return {
 		canattack = true,
 		canstop = 1,
 		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		collisionvolumeoffsets = "0 -15 0",
+		collisionvolumescales = "46 70 46",
+		collisionvolumetype = "CylY",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Floating Heavy Laser Tower",
@@ -45,7 +48,7 @@ return {
 		waterline = 8,
 		yardmap = "wwwwwwwww",
 		customparams = {
-			buildpic = "CORFHLT.png",
+			buildpic = "corfhlt.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

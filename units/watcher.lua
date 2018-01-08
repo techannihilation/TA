@@ -26,7 +26,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 96,
 		maxdamage = 510,
@@ -41,7 +41,7 @@ return {
 		objectname = "WATCHER",
 		onoffable = true,
 		radardistance = 1600,
-		radaremitheight = 25,
+		radaremitheight = 22,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 400,
 		sonardistance = 1240,
@@ -54,6 +54,7 @@ return {
 		turnrate = 240,
 		unitname = "watcher",
 		customparams = {
+			buildpic = "watcher.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

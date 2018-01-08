@@ -45,7 +45,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooo oooo oooo oooo",
 		customparams = {
-			buildpic = "core_immolator.png",
+			buildpic = "arm_immolator.dds",
 			canareaattack = 1,
 			faction = "Arm",
 		},

@@ -27,7 +27,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 345,
 		maxdamage = 480,
@@ -42,7 +42,7 @@ return {
 		onoffable = true,
 		radardistance = 100,
 		radardistancejam = 475,
-		radaremitheight = 25,
+		radaremitheight = 22,
 		selfdestructas = "SMALL_UNIT",
 		sightdistance = 150,
 		sonardistance = 120,
@@ -55,6 +55,7 @@ return {
 		upright = true,
 		waterline = 30,
 		customparams = {
+			buildpic = "tllsquid.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

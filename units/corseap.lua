@@ -30,6 +30,7 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 4,
 		maneuverleashlength = 1280,
 		mass = 283.33334,
 		maxdamage = 1700,
@@ -53,7 +54,7 @@ return {
 		turnrate = 575,
 		unitname = "corseap",
 		customparams = {
-			buildpic = "CORSEAP.png",
+			buildpic = "corseap.dds",
 			faction = "CORE",
 		},
 		sfxtypes = {

@@ -13,6 +13,9 @@ return {
 		buildpic = "corfort.dds",
 		buildtime = 810,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		collisionvolumeoffsets = "0 -4 0",
+		collisionvolumescales = "32 52 32",
+		collisionvolumetype = "CylY",
 		corpse = "fortification_core",
 		description = "Perimeter Defense",
 		footprintx = 2,
@@ -21,7 +24,7 @@ return {
 		idletime = 1800,
 		isfeature = true,
 		levelground = false,
-		losemitheight = 53,
+		losemitheight = 54,
 		mass = 25,
 		maxdamage = 100,
 		maxslope = 24,
@@ -41,7 +44,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ffff",
 		customparams = {
-			buildpic = "CORFORT.png",
+			buildpic = "corfort.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

@@ -61,7 +61,7 @@ return {
 		turnrate = 600,
 		unitname = "nsaagriz",
 		customparams = {
-			buildpic = "krypto-blaster.png",
+			buildpic = "nsaagriz.dds",
 			faction = "ARM",
 			requiretech = "Advanced T3 Unit Research Centre",
 		},

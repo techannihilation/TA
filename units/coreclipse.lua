@@ -30,6 +30,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 25,
 		maneuverleashlength = 2200,
 		mass = 7280,
 		maxdamage = 15750,
@@ -52,7 +53,7 @@ return {
 		unitname = "coreclipse",
 		upright = true,
 		customparams = {
-			buildpic = "coreclipse.png",
+			buildpic = "coreclipse.dds",
 			faction = "CORE",
 			requiretech = "Advanced T3 Unit Research Centre",
 		},

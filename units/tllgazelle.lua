@@ -29,7 +29,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 32,
-		mass = 65430,
+		mass = 33430,
 		maxdamage = 18280,
 		maxslope = 10,
 		maxvelocity = 0,
@@ -50,7 +50,7 @@ return {
 		unitrestricted = 8,
 		yardmap = "oooooo oooooo oooooo oooooo oooooo oooooo",
 		customparams = {
-			buildpic = "TLLGAZELLE.png",
+			buildpic = "tllgazelle.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

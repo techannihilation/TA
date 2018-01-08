@@ -25,9 +25,9 @@ return {
 		footprintz = 4,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 26,
+		losemitheight = 27,
 		maneuverleashlength = 640,
-		mass = 1440,
+		mass = 1140,
 		maxdamage = 2400,
 		maxvelocity = 2.9,
 		minwaterdepth = 30,
@@ -48,6 +48,7 @@ return {
 		turnrate = 350,
 		unitname = "tllsting",
 		customparams = {
+			buildpic = "tllsting.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

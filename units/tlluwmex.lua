@@ -19,8 +19,8 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
-		mass = 58,
+		losemitheight = 22,
+		mass = 85,
 		maxdamage = 220,
 		maxslope = 24,
 		metalstorage = 35,
@@ -37,6 +37,7 @@ return {
 		unitname = "tlluwmex",
 		yardmap = "ooooooooo",
 		customparams = {
+			buildpic = "tlluwmex.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

@@ -28,7 +28,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 101,
-		mass = 106667,
+		mass = 106650,
 		maxdamage = 70000,
 		maxslope = 10,
 		maxwaterdepth = 255,
@@ -48,6 +48,7 @@ return {
 			[1] = "abroadside",
 		},
 		customparams = {
+			buildpic = "ashipyardlvl3.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

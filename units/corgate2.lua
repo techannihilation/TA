@@ -25,7 +25,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 24,
 		mass = 1920,
 		maxdamage = 1650,
 		maxslope = 10,
@@ -49,8 +49,10 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooo ooo ooo",
 		customparams = {
-			buildpic = "CORGATE.png",
+			buildpic = "corgate2.dds",
 			faction = "CORE",
+			shield_power = 2900,
+			shield_radius = 340,
 		},
 		featuredefs = {
 			dead = {
@@ -129,7 +131,7 @@ return {
 				smartshield = true,
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				visibleshield = true,
+				--visibleshield = true,
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {

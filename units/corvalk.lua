@@ -31,7 +31,7 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 28.8,
+		losemitheight = 17,
 		maneuverleashlength = 1280,
 		mass = 74,
 		maxdamage = 250,
@@ -61,7 +61,7 @@ return {
 		turnrate = 550,
 		unitname = "corvalk",
 		customparams = {
-			buildpic = "CORVALK.png",
+			buildpic = "corvalk.dds",
 			faction = "CORE",
 		},
 		sfxtypes = {

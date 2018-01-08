@@ -48,7 +48,7 @@ return {
 		usepiececollisionvolumes = 1,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
-			buildpic = "ARMVULC.png",
+			buildpic = "armvulc.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

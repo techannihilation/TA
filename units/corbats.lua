@@ -52,7 +52,7 @@ return {
 		turnrate = 306,
 		unitname = "corbats",
 		customparams = {
-			buildpic = "CORBATS.png",
+			buildpic = "corbats.dds",
 			faction = "CORE",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},

@@ -28,7 +28,7 @@ return {
 		footprintz = 4,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 48,
+		losemitheight = 49,
 		maneuverleashlength = 640,
 		mass = 1450,
 		maxdamage = 2750,
@@ -54,6 +54,7 @@ return {
 		turnrate = 250,
 		unitname = "devastator",
 		customparams = {
+			buildpic = "devastator.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

@@ -13,6 +13,9 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		collisionvolumeoffsets = "0 -11 -3",
+		collisionvolumescales = "27 33 14",
+		collisionvolumetype = "Box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Assault Kbot",
@@ -49,7 +52,7 @@ return {
 		unitname = "armzeus",
 		upright = true,
 		customparams = {
-			buildpic = "ARMZEUS.png",
+			buildpic = "armzeus.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

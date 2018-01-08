@@ -44,11 +44,12 @@ return {
 		steeringmode = 1,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.452,
+		turninplacespeedlimit = 1.518,
 		turnrate = 320,
 		unitname = "tllcoyote",
 		upright = true,
 		customparams = {
+			buildpic = "tllcoyote.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

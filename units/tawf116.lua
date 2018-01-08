@@ -24,7 +24,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 1010,
 		maxdamage = 2500,
@@ -51,6 +51,7 @@ return {
 		turnrate = 330,
 		unitname = "tawf116",
 		customparams = {
+			buildpic = "tawf116.dds",
 			faction = "CORE",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},

@@ -14,6 +14,9 @@ return {
 		buildpic = "cmgeo.dds",
 		buildtime = 132000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		collisionvolumeoffsets = "3 -5 0",
+		collisionvolumescales = "92 43 71",
+		collisionvolumetype = "Box",
 		description = "Hazardous Energy Source",
 		energymake = 3200,
 		energystorage = 3200,
@@ -25,7 +28,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 48,
-		mass = 5100,
+		mass = 5405,
 		maxdamage = 5100,
 		maxslope = 20,
 		maxvelocity = 0,
@@ -45,7 +48,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooo ooooooo oGGoooo oGGoooo ooooooo",
 		customparams = {
-			buildpic = "CMGEO.png",
+			buildpic = "cmgeo.dds",
 			faction = "CORE",
 		},
 		sfxtypes = {

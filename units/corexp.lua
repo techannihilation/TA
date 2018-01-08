@@ -16,6 +16,9 @@ return {
 		canattack = true,
 		canstop = 1,
 		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		collisionvolumeoffsets = "0 -5 0",
+		collisionvolumescales = "40 51 40",
+		collisionvolumetype = "CylY",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Armed Metal Extractor",
@@ -53,7 +56,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooooo",
 		customparams = {
-			buildpic = "COREXP.png",
+			buildpic = "corexp.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

@@ -19,6 +19,9 @@ return {
 		canstop = 1,
 		cantbetransported = true,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		collisionvolumeoffsets = "0 0 0",
+		collisionvolumescales = "31 32 31",
+		collisionvolumetype = "CylY",
 		defaultmissiontype = "Standby",
 		description = "Repairs and builds in large radius",
 		energyuse = 20,
@@ -28,7 +31,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 28,
+		losemitheight = 29,
 		maneuverleashlength = 380,
 		mass = 320,
 		maxdamage = 400,
@@ -54,7 +57,7 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 300,
 		customparams = {
-			buildpic = "CORNANOTC.png",
+			buildpic = "cornanotc.dds",
 			faction = "CORE",
 		},
 		nanocolor = {

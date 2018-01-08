@@ -30,8 +30,8 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
-		mass = 2464,
+		losemitheight = 22,
+		mass = 2610,
 		maxdamage = 3880,
 		maxslope = 10,
 		maxvelocity = 0,
@@ -53,7 +53,7 @@ return {
 		usepiececollisionvolumes = 1,
 		yardmap = "ooooooooo",
 		customparams = {
-			buildpic = "CORTOAST.png",
+			buildpic = "cortoast.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

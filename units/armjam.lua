@@ -14,6 +14,9 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL SMALL WEAPON SURFACE",
+		collisionvolumeoffsets = "0 -3 0",
+		collisionvolumescales = "22.6 22.6 32.6",
+		collisionvolumetype = "CylZ",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Radar Jammer Vehicle",
@@ -25,7 +28,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 107,
 		maxdamage = 460,
@@ -57,7 +60,7 @@ return {
 		turnrate = 505,
 		unitname = "armjam",
 		customparams = {
-			buildpic = "armjam.png",
+			buildpic = "armjam.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

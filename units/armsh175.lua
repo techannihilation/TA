@@ -29,6 +29,7 @@ return {
 		hoverattack = true,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 8,
 		maneuverleashlength = 1024,
 		mass = 45,
 		maxdamage = 235,
@@ -42,6 +43,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMSH175",
 		radardistance = 1850,
+		radaremitheight = 8,
 		selfdestructas = "SMALL_UNIT_VTOL",
 		sightdistance = 400,
 		sonardistance = 0,
@@ -53,6 +55,7 @@ return {
 		turnrate = 1200,
 		unitname = "armsh175",
 		customparams = {
+			buildpic = "armsh175.dds",
 			faction = "ARM",
 		},
 		sfxtypes = {

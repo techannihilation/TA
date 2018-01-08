@@ -14,6 +14,9 @@ return {
 		buildpic = "coruwmmm.dds",
 		buildtime = 44000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER",
+		collisionvolumeoffsets = "0 0 0",
+		collisionvolumescales = "120 120 120",
+		collisionvolumetype = "Ell",
 		corpse = "dead",
 		damagemodifier = 0.275,
 		description = "Converts upto 1280 Energy to Metal",
@@ -24,7 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 31,
-		mass = 2091,
+		mass = 1650,
 		maxdamage = 1200,
 		maxslope = 16,
 		maxvelocity = 0,
@@ -44,7 +47,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooooooooooooooooooooo",
 		customparams = {
-			buildpic = "CORUWMMM.png",
+			buildpic = "coruwmmm.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

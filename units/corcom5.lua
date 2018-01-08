@@ -74,7 +74,7 @@ return {
 		standingmoveorder = 0,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.122,
+		turninplacespeedlimit = 0.924,
 		turnrate = 1348,
 		unitname = "corcom5",
 		upright = true,
@@ -112,11 +112,14 @@ return {
 			[30] = "corfrt",
 		},
 		customparams = {
-			buildpic = "CORCOM.png",
+			buildpic = "corcom5.dds",
 			canjump = "1",
 			faction = "CORE",
 			iscommander = true,
 			providetech = "Battle Commander,Assault Commander",
+			shield_power = 900,
+			shield_radius = 100,
+			shield_emit_height = 10,			
 		},
 		featuredefs = {
 			dead = {
@@ -291,8 +294,6 @@ return {
 				smartshield = true,
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				visibleshield = true,
-				visibleshieldhitframes = 70,
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {

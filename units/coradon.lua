@@ -30,7 +30,7 @@ return {
 		idletime = 1800,
 		losemitheight = 50,
 		maneuverleashlength = 640,
-		mass = 7020,
+		mass = 7100,
 		maxdamage = 23500,
 		maxslope = 16,
 		maxvelocity = 1.3,
@@ -54,6 +54,7 @@ return {
 		unitname = "coradon",
 		waterline = 7,
 		customparams = {
+			buildpic = "coradon.dds",
 			faction = "CORE",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},

@@ -25,7 +25,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 108.33334,
 		maxdamage = 650,
@@ -52,6 +52,7 @@ return {
 		turnrate = 250,
 		unitname = "blotter",
 		customparams = {
+			buildpic = "blotter.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

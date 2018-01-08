@@ -67,7 +67,7 @@ return {
 			[10] = "arm_furie",
 		},
 		customparams = {
-			buildpic = "ARMSHLTX.png",
+			buildpic = "armshltx.dds",
 			faction = "ARM",
 			providetech = "T3 Factory",
 		},

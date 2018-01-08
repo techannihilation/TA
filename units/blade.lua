@@ -29,6 +29,7 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 8.5,
 		maneuverleashlength = 2350,
 		mass = 951,
 		maxdamage = 2400,
@@ -51,7 +52,7 @@ return {
 		turnrate = 720,
 		unitname = "blade",
 		customparams = {
-			buildpic = "BLADE.png",
+			buildpic = "blade.dds",
 			faction = "ARM",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},

@@ -23,7 +23,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 33,
-		mass = 526,
+		mass = 495,
 		maxdamage = 1650,
 		maxslope = 10,
 		maxwaterdepth = 0,
@@ -37,7 +37,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooo ooo ooo",
 		customparams = {
-			buildpic = "CORGEN.png",
+			buildpic = "corgen.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

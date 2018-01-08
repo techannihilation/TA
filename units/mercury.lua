@@ -15,6 +15,9 @@ return {
 		canattack = true,
 		canstop = 1,
 		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		collisionvolumeoffsets = "-1 -1 0",
+		collisionvolumescales = "60 68 60",
+		collisionvolumetype = "CylY",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Long-Range Missile Tower",
@@ -26,7 +29,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 62,
+		losemitheight = 63,
 		mass = 1650,
 		maxdamage = 4250,
 		maxslope = 20,
@@ -48,7 +51,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooooooooooo",
 		customparams = {
-			buildpic = "MERCURY.png",
+			buildpic = "mercury.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

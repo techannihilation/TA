@@ -22,7 +22,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 2650,
 		maxdamage = 10250,
@@ -43,10 +43,11 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.594,
+		turninplacespeedlimit = 0.495,
 		turnrate = 530,
 		unitname = "tllmatamata",
 		customparams = {
+			buildpic = "tllmatamata.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

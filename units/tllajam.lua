@@ -22,7 +22,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 97,
+		losemitheight = 98,
 		mass = 1035,
 		maxdamage = 2980,
 		maxslope = 12,
@@ -38,7 +38,9 @@ return {
 		sightdistance = 620,
 		stealth = true,
 		unitname = "tllajam",
+		yardmap = "oooo",
 		customparams = {
+			buildpic = "tllajam.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

@@ -28,7 +28,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 754.66669,
 		maxdamage = 4528,
@@ -58,6 +58,7 @@ return {
 		turnrate = 400,
 		unitname = "corgfbt",
 		customparams = {
+			buildpic = "corgfbt.dds",
 			faction = "CORE",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},

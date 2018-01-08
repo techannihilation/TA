@@ -29,7 +29,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 71,
+		losemitheight = 72,
 		mass = 650,
 		maxdamage = 1900,
 		maxslope = 10,
@@ -52,7 +52,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooooooooooo",
 		customparams = {
-			buildpic = "CJUNO.png",
+			buildpic = "cjuno.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

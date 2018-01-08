@@ -25,7 +25,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 160,
 		maxdamage = 906,
@@ -38,7 +38,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "armcspider",
 		radardistance = 50,
-		radaremitheight = 25,
+		radaremitheight = 22,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 165,
 		standingmoveorder = 1,
@@ -83,6 +83,7 @@ return {
 			[32] = "armsy",
 		},
 		customparams = {
+			buildpic = "armcspider.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

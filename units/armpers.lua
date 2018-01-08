@@ -25,8 +25,9 @@ return {
 		hoverattack = true,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 5.5,
 		maneuverleashlength = 3000,
-		mass = 4400,
+		mass = 4420,
 		maxdamage = 6840,
 		maxslope = 10,
 		maxvelocity = 5.3,
@@ -47,6 +48,7 @@ return {
 		turnrate = 500,
 		unitname = "armpers",
 		customparams = {
+			buildpic = "armpers.dds",
 			faction = "ARM",
 		},
 		sfxtypes = {

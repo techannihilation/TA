@@ -48,7 +48,7 @@ return {
 		windgenerator = 120,
 		yardmap = "ooooooooo",
 		customparams = {
-			buildpic = "ARMWIN.png",
+			buildpic = "armwin.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

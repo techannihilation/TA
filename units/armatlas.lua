@@ -27,7 +27,7 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 28.8,
+		losemitheight = 14.5,
 		maneuverleashlength = 1280,
 		mass = 68,
 		maxdamage = 240,
@@ -55,7 +55,7 @@ return {
 		turnrate = 550,
 		unitname = "armatlas",
 		customparams = {
-			buildpic = "ARMATLAS.png",
+			buildpic = "armatlas.dds",
 			faction = "ARM",
 		},
 		sfxtypes = {

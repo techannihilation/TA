@@ -15,6 +15,9 @@ return {
 		buildtime = 1800,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		cloakcost = 12,
+		collisionvolumeoffsets = "0 0 0",
+		collisionvolumescales = "49 26 49",
+		collisionvolumetype = "CylY",
 		corpse = "dead",
 		description = "Stealthy Cloakable Metal Extractor",
 		energyuse = 3,
@@ -26,7 +29,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		initcloaked = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		mass = 241.66667,
 		maxdamage = 1450,
 		maxslope = 20,
@@ -52,7 +55,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooooo",
 		customparams = {
-			buildpic = "ARMAMEX.png",
+			buildpic = "armamex.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

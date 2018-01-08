@@ -26,7 +26,7 @@ return {
 		idletime = 1800,
 		losemitheight = 41,
 		maneuverleashlength = 640,
-		mass = 8020,
+		mass = 6350,
 		maxdamage = 20650,
 		maxslope = 10,
 		maxvelocity = 0.75,
@@ -45,11 +45,12 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.528,
+		turninplacespeedlimit = 0.495,
 		turnrate = 510,
 		unitname = "tllom",
 		upright = false,
 		customparams = {
+			buildpic = "tllom.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

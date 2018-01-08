@@ -26,7 +26,7 @@ return {
 		hoverattack = true,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 28.8,
+		losemitheight = 7,
 		maneuverleashlength = 1280,
 		mass = 71,
 		maxdamage = 344,
@@ -53,6 +53,7 @@ return {
 		turnrate = 570,
 		unitname = "tlltplane",
 		customparams = {
+			buildpic = "tlltplane.dds",
 			faction = "TLL",
 		},
 		sfxtypes = {

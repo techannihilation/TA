@@ -22,7 +22,7 @@ return {
 		footprintz = 1,
 		idleautoheal = 5,
 		idletime = 250,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 17,
 		maxdamage = 50,
@@ -49,7 +49,7 @@ return {
 		unitname = "corpunk",
 		wpri_badtargetcategory = "ANTIGATOR",
 		customparams = {
-			buildpic = "CORPUNK.png",
+			buildpic = "corpunk.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

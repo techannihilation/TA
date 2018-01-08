@@ -13,6 +13,9 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE UNDERWATER",
+		collisionvolumeoffsets = "0 0 1",
+		collisionvolumescales = "31 13 31",
+		collisionvolumetype = "Box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Light Amphibious Tank",
@@ -23,7 +26,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 650,
 		mass = 200,
 		maxdamage = 1150,
@@ -54,7 +57,7 @@ return {
 		turnrate = 398,
 		unitname = "armpincer",
 		customparams = {
-			buildpic = "ARMPINCER.png",
+			buildpic = "armpincer.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

@@ -20,7 +20,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 49,
+		losemitheight = 50,
 		mass = 4480,
 		maxdamage = 4500,
 		metalmake = 1,
@@ -54,6 +54,7 @@ return {
 			[10] = "tllmixer",
 		},
 		customparams = {
+			buildpic = "tllasy.dds",
 			faction = "TLL",
 			providetech = "T2 Factory",
 		},

@@ -19,7 +19,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 62,
+		losemitheight = 63,
 		mass = 192,
 		maxdamage = 485,
 		minwaterdepth = 20,
@@ -38,6 +38,7 @@ return {
 		waterline = 8,
 		yardmap = "wwww wwww wwww wwww",
 		customparams = {
+			buildpic = "tllsolarns.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

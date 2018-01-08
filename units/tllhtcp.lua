@@ -29,7 +29,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 26,
 		mass = 19000,
 		maxdamage = 14575,
 		maxslope = 10,
@@ -56,6 +56,7 @@ return {
 			[5] = "tllgrim",
 		},
 		customparams = {
+			buildpic = "tllhtcp.dds",
 			faction = "TLL",
 			providetech = "T3 Factory, T2 Factory",
 		},

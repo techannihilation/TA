@@ -45,7 +45,7 @@ return {
 		upright = false,
 		yardmap = "yyyy",
 		customparams = {
-			buildpic = "levelterra.png",
+			buildpic = "terraunit.dds",
 			faction = "ARM",
 		},
 		sfxtypes = {

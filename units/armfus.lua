@@ -31,7 +31,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 50,
-		mass = 3691,
+		mass = 3460,
 		maxdamage = 5000,
 		maxslope = 10,
 		maxvelocity = 0,
@@ -51,7 +51,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooooooooooooooo",
 		customparams = {
-			buildpic = "ARMFUS.png",
+			buildpic = "armfus.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

@@ -31,8 +31,8 @@ return {
 		hoverattack = true,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 30,
-		mass = 27600,
+		losemitheight = 15,
+		mass = 5000,
 		maxdamage = 10000,
 		maxslope = 10,
 		maxvelocity = 1.2,
@@ -47,10 +47,11 @@ return {
 		selfdestructcountdown = 10,
 		sightdistance = 1000,
 		turninplaceanglelimit = 360,
-		turninplacespeedlimit = 0.65,
+		turninplacespeedlimit = 0.792,
 		turnrate = 200,
 		unitname = "armabad",
 		customparams = {
+			buildpic = "armabad.dds",
 			faction = "ARM",
 		},
 		sfxtypes = {

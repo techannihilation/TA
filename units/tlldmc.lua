@@ -27,7 +27,7 @@ return {
 		idleautoheal = 7,
 		idletime = 1800,
 		losemitheight = 49,
-		mass = 23467,
+		mass = 37190,
 		maxdamage = 80000,
 		maxslope = 10,
 		maxwaterdepth = 0,
@@ -43,7 +43,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo",
 		customparams = {
-			buildpic = "tlldmc.png",
+			buildpic = "tlldmc.dds",
 			canareaattack = 1,
 			faction = "TLL",
 			requiretech = "T3 Factory",

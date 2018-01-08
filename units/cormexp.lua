@@ -16,6 +16,9 @@ return {
 		canattack = true,
 		canstop = 1,
 		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		collisionvolumeoffsets = "0 -3 0",
+		collisionvolumescales = "75 44 75",
+		collisionvolumetype = "CylY",
 		corpse = "dead",
 		damagemodifier = 0.75,
 		description = "Convertible Metal Extractor",
@@ -53,7 +56,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooooooooooooooooooooo",
 		customparams = {
-			buildpic = "CORMEXP.png",
+			buildpic = "cormexp.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

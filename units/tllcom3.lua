@@ -111,7 +111,7 @@ return {
 			[30] = "tlllmtns",
 		},
 		customparams = {
-			buildpic = "tllcom.png",
+			buildpic = "tllcom3.dds",
 			faction = "TLL",
 			iscommander = true,
 			providetech = "Battle Commander",

@@ -13,6 +13,9 @@ return {
 		buildpic = "armfort.dds",
 		buildtime = 965,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		collisionvolumeoffsets = "0 -3 0",
+		collisionvolumescales = "32 50 32",
+		collisionvolumetype = "CylY",
 		corpse = "fortification",
 		description = "Perimeter Defense",
 		footprintx = 2,
@@ -41,7 +44,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ffff",
 		customparams = {
-			buildpic = "ARMFORT.png",
+			buildpic = "armfort.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

@@ -26,9 +26,9 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		immunetoparalyzer = 1,
-		losemitheight = 58,
+		losemitheight = 59,
 		maneuverleashlength = 640,
-		mass = 3810,
+		mass = 3990,
 		maxdamage = 15800,
 		maxslope = 15,
 		maxvelocity = 2.5,
@@ -52,7 +52,7 @@ return {
 		unitname = "armraz",
 		upright = true,
 		customparams = {
-			buildpic = "ARMRAZ.png",
+			buildpic = "armraz.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

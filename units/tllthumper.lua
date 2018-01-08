@@ -43,10 +43,11 @@ return {
 		steeringmode = 1,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.528,
+		turninplacespeedlimit = 0.66,
 		turnrate = 200,
 		unitname = "tllthumper",
 		customparams = {
+			buildpic = "tllthumper.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

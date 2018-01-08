@@ -31,6 +31,7 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 6.5,
 		maneuverleashlength = 1380,
 		mass = 180,
 		maxdamage = 750,
@@ -54,7 +55,7 @@ return {
 		turnrate = 392,
 		unitname = "armsb",
 		customparams = {
-			buildpic = "ARMSB.png",
+			buildpic = "armsb.dds",
 			faction = "ARM",
 		},
 		sfxtypes = {

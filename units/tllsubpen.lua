@@ -62,6 +62,7 @@ return {
 			[12] = "tllshark",
 		},
 		customparams = {
+			buildpic = "tllsubpen.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

@@ -33,8 +33,8 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 27,
-		mass = 368,
+		losemitheight = 10,
+		mass = 365,
 		maxdamage = 705,
 		maxslope = 10,
 		maxvelocity = 8,
@@ -50,7 +50,7 @@ return {
 		selfdestructas = "SMALL_UNIT_VTOL",
 		sightdistance = 370,
 		turninplaceanglelimit = 360,
-		turninplacespeedlimit = 6.6,
+		turninplacespeedlimit = 5.28,
 		turnrate = 353,
 		unitname = "cbuilderlvl1",
 		workertime = 150,
@@ -79,6 +79,7 @@ return {
 			[22] = "corvamp",
 		},
 		customparams = {
+			buildpic = "cbuilderlvl1.dds",
 			faction = "CORE",
 		},
 		nanocolor = {

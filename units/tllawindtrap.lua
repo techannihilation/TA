@@ -21,8 +21,8 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 57,
-		mass = 123,
+		losemitheight = 61,
+		mass = 145,
 		maxdamage = 585,
 		maxslope = 10,
 		maxwaterdepth = 0,
@@ -39,7 +39,7 @@ return {
 		windgenerator = 90,
 		yardmap = "oooooo oooooo oooooo oooooo oooooo oooooo",
 		customparams = {
-			buildpic = "tllwindtrap.png",
+			buildpic = "tllawindtrap.dds",
 			energymultiplier = 4,
 			faction = "TLL",
 		},
@@ -68,10 +68,12 @@ return {
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
-				[1] = "piecetrail5",
-				[2] = "piecetrail5",
-				[3] = "piecetrail4",
-				[4] = "piecetrail6",
+				[1] = "piecetrail0",
+				[2] = "piecetrail1",
+				[3] = "piecetrail2",
+				[4] = "piecetrail3",
+				[5] = "piecetrail4",
+				[6] = "piecetrail6",
 			},
 		},
 		sounds = {

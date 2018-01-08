@@ -23,7 +23,7 @@ return {
 		footprintz = 4,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 320,
 		mass = 1445,
 		maxdamage = 3250,
@@ -48,6 +48,7 @@ return {
 		turnrate = 200,
 		unitname = "tllroaster",
 		customparams = {
+			buildpic = "tllroaster.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

@@ -25,8 +25,8 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 31,
-		mass = 13333,
+		losemitheight = 32,
+		mass = 14150,
 		maxdamage = 7100,
 		maxslope = 10,
 		maxvelocity = 0,
@@ -36,7 +36,7 @@ return {
 		nochasecategory = "ALL",
 		objectname = "ARMSILO",
 		radardistance = 50,
-		radaremitheight = 31,
+		radaremitheight = 32,
 		script = "armsilo.cob",
 		seismicsignature = 0,
 		selfdestructas = "NUCLEAR_MISSILE",
@@ -49,7 +49,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
-			buildpic = "ARMSILO.png",
+			buildpic = "armsilo1.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

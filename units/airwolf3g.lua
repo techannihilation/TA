@@ -25,8 +25,9 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 8.5,
 		maneuverleashlength = 1280,
-		mass = 620,
+		mass = 720,
 		maxdamage = 2450,
 		maxslope = 10,
 		maxvelocity = 15,
@@ -49,6 +50,7 @@ return {
 		unitname = "airwolf3g",
 		unitrestricted = 300,
 		customparams = {
+			buildpic = "airwolf3g.dds",
 			faction = "ARM",
 		},
 		sfxtypes = {

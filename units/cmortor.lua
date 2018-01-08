@@ -26,7 +26,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 29,
-		mass = 2119,
+		mass = 1920,
 		maxdamage = 2415,
 		maxslope = 10,
 		maxwaterdepth = 0,
@@ -43,6 +43,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooo oooo oooo oooo",
 		customparams = {
+			buildpic = "cmortor.dds",
 			faction = "CORE",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},

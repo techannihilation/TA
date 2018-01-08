@@ -25,6 +25,7 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 2,
 		maneuverleashlength = 75,
 		mass = 58,
 		maxdamage = 60,
@@ -49,7 +50,7 @@ return {
 		upright = true,
 		usesmoothmesh = 0,
 		customparams = {
-			buildpic = "BLADEW.png",
+			buildpic = "bladew.dds",
 			faction = "CORE",
 		},
 		sfxtypes = {

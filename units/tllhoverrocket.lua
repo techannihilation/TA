@@ -24,7 +24,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 325,
 		maxdamage = 482,
@@ -50,6 +50,7 @@ return {
 		turnrate = 360,
 		unitname = "tllhoverrocket",
 		customparams = {
+			buildpic = "tllhoverrocket.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

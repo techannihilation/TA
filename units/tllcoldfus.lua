@@ -24,9 +24,9 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 71,
+		losemitheight = 72,
 		makesmetal = 21,
-		mass = 13950,
+		mass = 13250,
 		maxdamage = 8900,
 		maxslope = 10,
 		maxwaterdepth = 0,
@@ -43,6 +43,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo",
 		customparams = {
+			buildpic = "tllcoldfus.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

@@ -14,6 +14,9 @@ return {
 		buildpic = "armmoho.dds",
 		buildtime = 14938,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		collisionvolumeoffsets = "0 0 0",
+		collisionvolumescales = "70 46 70",
+		collisionvolumetype = "CylY",
 		corpse = "dead",
 		description = "Advanced Metal Extractor / Storage",
 		energyuse = 25,
@@ -47,7 +50,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooooooooooooooooooooo",
 		customparams = {
-			buildpic = "ARMMOHO.png",
+			buildpic = "armmoho.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

@@ -28,6 +28,7 @@ return {
 		hoverattack = true,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 13,
 		maneuverleashlength = 1024,
 		mass = 933,
 		maxdamage = 2380,
@@ -52,6 +53,7 @@ return {
 		turnrate = 1024,
 		unitname = "armah256",
 		customparams = {
+			buildpic = "armah256.dds",
 			faction = "ARM",
 		},
 		sfxtypes = {

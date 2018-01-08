@@ -13,6 +13,9 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL TINY WEAPON SURFACE",
+		collisionvolumeoffsets = "0 1 2",
+		collisionvolumescales = "16 17 22",
+		collisionvolumetype = "Box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Fast Scout Kbot",
@@ -22,7 +25,7 @@ return {
 		footprintz = 1,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 15,
 		maxdamage = 50,
@@ -48,7 +51,7 @@ return {
 		unitname = "armflea",
 		unitrestricted = 150,
 		customparams = {
-			buildpic = "ARMFLEA.png",
+			buildpic = "armflea.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

@@ -72,7 +72,7 @@ return {
 		standingmoveorder = 0,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.726,
+		turninplacespeedlimit = 0.792,
 		turnrate = 1148,
 		unitname = "tllcom_fusion",
 		upright = true,
@@ -105,7 +105,7 @@ return {
 			[25] = "tlllmtns",
 		},
 		customparams = {
-			buildpic = "TLLCOM.png",
+			buildpic = "tllcom1.dds",
 			faction = "TLL",
 			iscommander = true,
 		},

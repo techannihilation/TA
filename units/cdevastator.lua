@@ -36,7 +36,7 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 62.5,
 		maneuverleashlength = 500,
 		mass = 303000,
 		maxdamage = 1050000,
@@ -66,6 +66,7 @@ return {
 		unitname = "cdevastator",
 		upright = true,
 		customparams = {
+			buildpic = "cdevastator.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

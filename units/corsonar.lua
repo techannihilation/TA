@@ -15,6 +15,9 @@ return {
 		buildtime = 900,
 		canattack = false,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER",
+		collisionvolumeoffsets = "0 0 0",
+		collisionvolumescales = "30 33 30",
+		collisionvolumetype = "CylY",
 		corpse = "dead",
 		description = "Locates Water Units",
 		explodeas = "SMALL_BUILDINGEX",
@@ -23,7 +26,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 29,
+		losemitheight = 30,
 		mass = 21,
 		maxangledif1 = 1,
 		maxdamage = 52,
@@ -47,7 +50,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooo",
 		customparams = {
-			buildpic = "CORSONAR.png",
+			buildpic = "corsonar.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

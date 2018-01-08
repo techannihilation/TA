@@ -24,7 +24,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 275,
 		maxdamage = 1420,
@@ -50,6 +50,7 @@ return {
 		turnrate = 280,
 		unitname = "tllhovergauss",
 		customparams = {
+			buildpic = "tllhovergauss.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

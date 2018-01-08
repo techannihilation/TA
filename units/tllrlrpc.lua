@@ -28,7 +28,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 92,
-		mass = 34867,
+		mass = 34865,
 		maxdamage = 41980,
 		maxslope = 10,
 		maxwaterdepth = 0,
@@ -45,6 +45,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo",
 		customparams = {
+			buildpic = "tllrlrpc.dds",
 			canareaattack = 1,
 			faction = "TLL",
 		},

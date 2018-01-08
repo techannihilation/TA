@@ -25,8 +25,9 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 10,
 		maneuverleashlength = 1280,
-		mass = 310,
+		mass = 255,
 		maxdamage = 590,
 		maxslope = 10,
 		maxvelocity = 12.8,
@@ -49,6 +50,7 @@ return {
 		unitname = "corfiend",
 		upright = true,
 		customparams = {
+			buildpic = "corfiend.dds",
 			faction = "CORE",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},

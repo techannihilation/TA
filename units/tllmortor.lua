@@ -29,8 +29,8 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 28,
-		mass = 2144,
+		losemitheight = 23,
+		mass = 2260,
 		maxdamage = 2590,
 		maxslope = 10,
 		maxwaterdepth = 0,
@@ -46,6 +46,7 @@ return {
 		unitname = "tllmortor",
 		yardmap = "oooo oooo oooo oooo",
 		customparams = {
+			buildpic = "tllmortor.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

@@ -14,6 +14,9 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE UNDERWATER",
+		collisionvolumeoffsets = "0 -4 -1",
+		collisionvolumescales = "54 45 50",
+		collisionvolumetype = "Ell",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Amphibious Siege Mech",
@@ -50,7 +53,7 @@ return {
 		unitname = "shiva",
 		upright = true,
 		customparams = {
-			buildpic = "SHIVA.png",
+			buildpic = "shiva.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

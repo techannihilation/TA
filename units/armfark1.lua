@@ -23,7 +23,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 310,
 		maxdamage = 740,
@@ -39,7 +39,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMFARK1",
 		radardistance = 50,
-		radaremitheight = 25,
+		radaremitheight = 22,
 		script = "armfark.cob",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -62,7 +62,7 @@ return {
 			[7] = "armshock1",
 		},
 		customparams = {
-			buildpic = "ARMFARK.png",
+			buildpic = "armfark1.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

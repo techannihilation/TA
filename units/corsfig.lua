@@ -28,6 +28,7 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 6.5,
 		maneuverleashlength = 1280,
 		mass = 150,
 		maxdamage = 500,
@@ -47,11 +48,11 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 7.128,
+		turninplacespeedlimit = 7.26,
 		turnrate = 1547,
 		unitname = "corsfig",
 		customparams = {
-			buildpic = "CORSFIG.png",
+			buildpic = "corsfig.dds",
 			faction = "CORE",
 		},
 		sfxtypes = {

@@ -28,8 +28,8 @@ return {
 		icontype = "building",
 		idleautoheal = 7,
 		idletime = 1800,
-		losemitheight = 71,
-		mass = 22123,
+		losemitheight = 72,
+		mass = 34250,
 		maxdamage = 80000,
 		maxslope = 10,
 		maxwaterdepth = 0,
@@ -46,6 +46,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo",
 		customparams = {
+			buildpic = "corboucher.dds",
 			faction = "CORE",
 			requiretech = "T3 Factory",
 		},

@@ -52,7 +52,7 @@ return {
 		unitname = "armpw1",
 		upright = true,
 		customparams = {
-			buildpic = "ARMPW1.png",
+			buildpic = "armpw1.dds",
 			faction = "ARM",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},
@@ -134,7 +134,7 @@ return {
 				name = "peewee",
 				noselfdamage = true,
 				range = 180,
-				reloadtime = 0.30,
+				reloadtime = 0.3,
 				rgbcolor = "0.86 0.62 0",
 				size = 1.8,
 				soundhitwet = "splshbig",

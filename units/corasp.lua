@@ -30,7 +30,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		isairbase = true,
-		losemitheight = 39,
+		losemitheight = 40,
 		mass = 720,
 		maxdamage = 2250,
 		maxslope = 10,
@@ -54,7 +54,7 @@ return {
 		workertime = 3000,
 		yardmap = "ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
-			buildpic = "CORASP.png",
+			buildpic = "corasp.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

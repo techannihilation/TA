@@ -30,7 +30,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 29,
-		mass = 3883,
+		mass = 3885,
 		maxdamage = 4650,
 		maxslope = 15,
 		maxvelocity = 0,
@@ -78,7 +78,7 @@ return {
 			[19] = "cormddm",
 		},
 		customparams = {
-			buildpic = "CORAVP.png",
+			buildpic = "coravp.dds",
 			faction = "CORE",
 			providetech = "T2 Factory",
 		},

@@ -26,9 +26,9 @@ return {
 		footprintz = 4,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 44,
+		losemitheight = 45,
 		maneuverleashlength = 640,
-		mass = 6100,
+		mass = 5900,
 		maxdamage = 18250,
 		maxslope = 12,
 		maxvelocity = 1.1,
@@ -52,6 +52,7 @@ return {
 		turnrate = 340,
 		unitname = "armtigre2",
 		customparams = {
+			buildpic = "armtigre2.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

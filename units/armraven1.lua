@@ -24,7 +24,7 @@ return {
 		idletime = 1800,
 		losemitheight = 36,
 		maneuverleashlength = 640,
-		mass = 1654,
+		mass = 1650,
 		maxdamage = 1985,
 		maxslope = 20,
 		maxvelocity = 1.2,
@@ -44,12 +44,12 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.726,
+		turninplacespeedlimit = 0.792,
 		turnrate = 979,
 		unitname = "armraven1",
 		upright = true,
 		customparams = {
-			buildpic = "ARMRAVEN.png",
+			buildpic = "armraven1.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

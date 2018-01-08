@@ -24,7 +24,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 300,
 		maxdamage = 1100,
@@ -50,6 +50,7 @@ return {
 		turnrate = 260,
 		unitname = "armvisit",
 		customparams = {
+			buildpic = "armvisit.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

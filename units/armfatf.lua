@@ -10,6 +10,9 @@ return {
 		buildpic = "armfatf.dds",
 		buildtime = 9886,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER SURFACE",
+		collisionvolumeoffsets = "0 -10 0",
+		collisionvolumescales = "52 44 52",
+		collisionvolumetype = "CylY",
 		corpse = "dead",
 		description = "Enhanced Radar Targeting",
 		energyuse = 150,
@@ -20,7 +23,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		istargetingupgrade = true,
-		losemitheight = 32,
+		losemitheight = 33,
 		mass = 806,
 		maxdamage = 1451,
 		maxslope = 10,
@@ -42,7 +45,7 @@ return {
 		waterline = 9,
 		yardmap = "wwwwwwwwwwwwwwww",
 		customparams = {
-			buildpic = "ARMFATF.png",
+			buildpic = "armfatf.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

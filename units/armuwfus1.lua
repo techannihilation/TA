@@ -19,8 +19,8 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 60,
-		mass = 17067,
+		losemitheight = 61,
+		mass = 17060,
 		maxdamage = 9800,
 		maxslope = 10,
 		maxvelocity = 0,
@@ -40,7 +40,7 @@ return {
 		unitname = "armuwfus1",
 		yardmap = "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
 		customparams = {
-			buildpic = "ARMUWFUS.png",
+			buildpic = "armuwfus1.dds",
 			faction = "ARM",
 		},
 		sfxtypes = {

@@ -27,7 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 150,
 		maxdamage = 530,
@@ -59,7 +59,7 @@ return {
 		turnrate = 393.79999,
 		unitname = "tawf013",
 		customparams = {
-			buildpic = "TAWF013.png",
+			buildpic = "tawf013.dds",
 			canareaattack = 1,
 			faction = "ARM",
 		},

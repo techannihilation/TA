@@ -28,6 +28,7 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 8,
 		maneuverleashlength = 850,
 		mass = 2900,
 		maxdamage = 4500,
@@ -49,7 +50,7 @@ return {
 		turnrate = 100,
 		unitname = "armorion",
 		customparams = {
-			buildpic = "armorion.png",
+			buildpic = "armorion.dds",
 			faction = "ARM",
 			requiretech = "Advanced T3 Unit Research Centre",
 		},

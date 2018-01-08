@@ -23,9 +23,9 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
-		mass = 497,
+		mass = 490,
 		maxdamage = 1100,
 		maxslope = 10,
 		maxvelocity = 1.9,
@@ -54,7 +54,7 @@ return {
 		turnrate = 338.79999,
 		unitname = "armjanus1",
 		customparams = {
-			buildpic = "ARMJANUS1.png",
+			buildpic = "armjanus1.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

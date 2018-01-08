@@ -11,6 +11,9 @@ return {
 		buildpic = "armuwadvms.dds",
 		buildtime = 20391,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER SURFACE",
+		collisionvolumeoffsets = "0 0 0",
+		collisionvolumescales = "45 48 45",
+		collisionvolumetype = "CylY",
 		corpse = "dead",
 		description = "Increases Metal Storage (10000)",
 		downloadable = 1,
@@ -21,7 +24,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 43,
+		losemitheight = 44,
 		mass = 1550,
 		maxdamage = 9300,
 		maxslope = 20,
@@ -40,7 +43,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooooooooooo",
 		customparams = {
-			buildpic = "ARMUWADVMS.png",
+			buildpic = "armuwadvms.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

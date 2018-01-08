@@ -31,8 +31,9 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 10.5,
 		maneuverleashlength = 1280,
-		mass = 2912,
+		mass = 1690,
 		maxdamage = 1185,
 		maxslope = 10,
 		maxvelocity = 8,
@@ -45,6 +46,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "CORACA",
 		radardistance = 50,
+		radaremitheight = 10.5,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 383,
@@ -84,7 +86,7 @@ return {
 			[26] = "corplat",
 		},
 		customparams = {
-			buildpic = "CORACA.png",
+			buildpic = "coraca.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

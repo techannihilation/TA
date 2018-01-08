@@ -51,6 +51,7 @@ return {
 		turnrate = 700,
 		unitname = "aexxec",
 		customparams = {
+			buildpic = "aexxec.dds",
 			faction = "ARM",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},

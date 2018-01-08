@@ -14,7 +14,7 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE UNDERWATER",
-		corpse = "monkeylord_dead",
+		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Experimental Shield Hexapod",
 		energystorage = 10000,
@@ -26,9 +26,9 @@ return {
 		idleautoheal = 10,
 		idletime = 30,
 		immunetoparalyzer = 1,
-		losemitheight = 76,
+		losemitheight = 88,
 		maneuverleashlength = 1250,
-		mass = 19200,
+		mass = 29200,
 		maxdamage = 157500,
 		maxslope = 36,
 		maxvelocity = 1.2,
@@ -53,18 +53,18 @@ return {
 		steeringmode = 2,
 		threed = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.66,
+		turninplacespeedlimit = 0.792,
 		turnrate = 225,
 		unitname = "monkeylord",
 		upright = true,
 		version = 1,
 		zbuffer = 1,
 		customparams = {
-			buildpic = "ML_Rampage_Wotan.png",
+			buildpic = "monkeylord.dds",
 			faction = "Core",
 		},
 		featuredefs = {
-			monkeylord_dead = {
+			dead = {
 				blocking = false,
 				damage = 33488,
 				description = "Cybran Monkeylord Shielded Mech Wreckage",
@@ -76,7 +76,7 @@ return {
 				object = "MONKEYLORD_DEAD",
 				reclaimable = true,
 			},
-			monkeylord_heap = {
+			heap = {
 				blocking = false,
 				damage = 41860,
 				description = "Cybran Monkeylord Shielded Mech Debris",

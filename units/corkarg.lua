@@ -14,6 +14,9 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		collisionvolumeoffsets = "0.0 -2.0 -1.0",
+		collisionvolumescales = "56.0 60.0 40.0",
+		collisionvolumetype = "Box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "All-Terrain Assault Mech",
@@ -50,7 +53,7 @@ return {
 		unitname = "corkarg",
 		upright = true,
 		customparams = {
-			buildpic = "CORKARG.png",
+			buildpic = "corkarg.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

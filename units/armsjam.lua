@@ -27,7 +27,7 @@ return {
 		icontype = "sea",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 139,
 		maxdamage = 510,
@@ -52,7 +52,7 @@ return {
 		turnrate = 540,
 		unitname = "armsjam",
 		customparams = {
-			buildpic = "ARMSJAM.png",
+			buildpic = "armsjam.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

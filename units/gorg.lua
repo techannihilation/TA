@@ -25,7 +25,7 @@ return {
 		footprintz = 7,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 76,
+		losemitheight = 77,
 		maneuverleashlength = 640,
 		mass = 90000,
 		maxdamage = 540000,
@@ -52,7 +52,7 @@ return {
 		turnrate = 109,
 		unitname = "gorg",
 		customparams = {
-			buildpic = "GORG.png",
+			buildpic = "gorg.dds",
 			faction = "CORE",
 			requiretech = "Advanced T3 Unit Research Centre",
 		},

@@ -23,7 +23,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 44,
+		losemitheight = 45,
 		mass = 421,
 		maxdamage = 1450,
 		maxslope = 10,
@@ -42,6 +42,7 @@ return {
 		windgenerator = 25,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo",
 		customparams = {
+			buildpic = "tlladvsolar.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

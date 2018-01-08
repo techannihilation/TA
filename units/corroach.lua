@@ -14,6 +14,9 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL SMALL WEAPON SURFACE UNDERWATER",
+		collisionvolumeoffsets = "0 3 0",
+		collisionvolumescales = "18 14 18",
+		collisionvolumetype = "CylY",
 		defaultmissiontype = "Standby",
 		description = "Crawling Bomb",
 		explodeas = "CRAWL_BLASTSML",
@@ -23,7 +26,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 93.33334,
 		maxdamage = 560,
@@ -50,7 +53,7 @@ return {
 		turnrate = 1507,
 		unitname = "corroach",
 		customparams = {
-			buildpic = "CORROACH.png",
+			buildpic = "corroach.dds",
 			faction = "CORE",
 		},
 		sfxtypes = {

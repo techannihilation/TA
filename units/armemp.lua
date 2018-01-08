@@ -16,6 +16,9 @@ return {
 		canattack = true,
 		canstop = 1,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		collisionvolumeoffsets = "0 -6 0",
+		collisionvolumescales = "48 28 48",
+		collisionvolumetype = "Box",
 		corpse = "dead",
 		description = "EMP Missile Launcher",
 		energyuse = 0,
@@ -26,7 +29,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 35,
+		losemitheight = 36,
 		mass = 1601,
 		maxdamage = 3000,
 		maxslope = 10,
@@ -48,7 +51,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooooooooooo",
 		customparams = {
-			buildpic = "ARMEMP.png",
+			buildpic = "armemp.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

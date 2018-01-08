@@ -25,8 +25,9 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 16,
 		maneuverleashlength = 1280,
-		mass = 480,
+		mass = 580,
 		maxdamage = 2550,
 		maxslope = 10,
 		maxvelocity = 15,
@@ -49,6 +50,7 @@ return {
 		unitname = "shrike",
 		unitrestricted = 300,
 		customparams = {
+			buildpic = "shrike.dds",
 			faction = "CORE",
 		},
 		sfxtypes = {

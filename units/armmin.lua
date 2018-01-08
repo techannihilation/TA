@@ -32,6 +32,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 10,
 		maneuverleashlength = 1280,
 		mass = 72.5,
 		maxdamage = 435,
@@ -66,7 +67,7 @@ return {
 			[10] = "armfdrag",
 		},
 		customparams = {
-			buildpic = "armmin.png",
+			buildpic = "armmin.dds",
 			customstock = true,
 			faction = "ARM",
 		},

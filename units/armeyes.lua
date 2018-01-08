@@ -49,7 +49,7 @@ return {
 		waterline = 5,
 		yardmap = "o",
 		customparams = {
-			buildpic = "ARMEYES.png",
+			buildpic = "armeyes.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

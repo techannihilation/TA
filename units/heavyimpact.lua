@@ -27,7 +27,7 @@ return {
 		icontype = "mech",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 62,
+		losemitheight = 63,
 		maneuverleashlength = 640,
 		mass = 7450,
 		maxdamage = 18900,
@@ -55,7 +55,7 @@ return {
 		unitname = "heavyimpact",
 		upright = true,
 		customparams = {
-			buildpic = "heavyimpact.png",
+			buildpic = "heavyimpact.dds",
 			canareaattack = 1,
 			faction = "TLL",
 		},

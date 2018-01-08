@@ -30,9 +30,9 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
-		mass = 1350,
+		mass = 2505,
 		maxdamage = 1850,
 		maxvelocity = 2,
 		metalmake = 0.9,
@@ -70,6 +70,7 @@ return {
 			[10] = "tllesy",
 		},
 		customparams = {
+			buildpic = "tllacsub.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

@@ -28,7 +28,7 @@ return {
 		idletime = 1800,
 		losemitheight = 39,
 		maneuverleashlength = 640,
-		mass = 1861,
+		mass = 2160,
 		maxdamage = 4310,
 		maxvelocity = 2.45,
 		minwaterdepth = 30,
@@ -51,6 +51,7 @@ return {
 		unitname = "tllequalizer",
 		waterline = 10,
 		customparams = {
+			buildpic = "tllequalizer.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

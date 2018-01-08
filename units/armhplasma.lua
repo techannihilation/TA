@@ -24,7 +24,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 990,
 		maxdamage = 4200,
@@ -50,6 +50,7 @@ return {
 		turnrate = 300,
 		unitname = "armhplasma",
 		customparams = {
+			buildpic = "armhplasma.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

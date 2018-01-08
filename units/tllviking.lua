@@ -48,6 +48,7 @@ return {
 		unitname = "tllviking",
 		waterline = 8,
 		customparams = {
+			buildpic = "tllviking.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

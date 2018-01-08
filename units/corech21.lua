@@ -23,7 +23,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 79.875,
-		mass = 32000,
+		mass = 31640,
 		maxdamage = 19000,
 		maxslope = 10,
 		maxwaterdepth = 0,
@@ -41,7 +41,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo",
 		customparams = {
-			buildpic = "corech3.png",
+			buildpic = "corech21.dds",
 			faction = "CORE",
 			ismorphingrc = true,
 			providetech = "Advanced T1 Unit Research Centre,Advanced T2 Unit Research Centre,Advanced T3 Unit Research Centre",

@@ -22,7 +22,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 26,
-		mass = 2600,
+		mass = 2720,
 		maxdamage = 3250,
 		maxslope = 14,
 		minwaterdepth = 5,
@@ -39,6 +39,7 @@ return {
 		unitname = "tllkrak",
 		yardmap = "wwww wwww wwww wwww",
 		customparams = {
+			buildpic = "tllkrak.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

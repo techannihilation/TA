@@ -14,6 +14,9 @@ return {
 		buildpic = "armgmm.dds",
 		buildtime = 75000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		collisionvolumeoffsets = "0 6 0",
+		collisionvolumescales = "62 53 62",
+		collisionvolumetype = "CylY",
 		description = "Safe Geothermal Powerplant",
 		digger = 1,
 		energymake = 1600,
@@ -25,7 +28,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 36,
-		mass = 4100,
+		mass = 4090,
 		maxdamage = 12500,
 		maxslope = 10,
 		maxvelocity = 0,
@@ -45,7 +48,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooo ooooo ooGoo ooooo ooooo",
 		customparams = {
-			buildpic = "ARMGMM.png",
+			buildpic = "armgmm.dds",
 			faction = "ARM",
 		},
 		sfxtypes = {

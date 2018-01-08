@@ -23,8 +23,8 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 32,
-		mass = 390,
+		losemitheight = 44,
+		mass = 615,
 		maxdamage = 1590,
 		maxslope = 10,
 		maxwaterdepth = 0,
@@ -38,7 +38,7 @@ return {
 		unitname = "tllgen",
 		yardmap = "ooo ooo ooo",
 		customparams = {
-			buildpic = "tllgen.png",
+			buildpic = "tllgen.dds",
 			faction = "TLL",
 		},
 		featuredefs = {
@@ -58,10 +58,12 @@ return {
 				[1] = "custom:tllgen_spark",
 			},
 			pieceexplosiongenerators = {
-				[1] = "piecetrail5",
-				[2] = "piecetrail5",
-				[3] = "piecetrail4",
-				[4] = "piecetrail6",
+				[1] = "piecetrail0",
+				[2] = "piecetrail1",
+				[3] = "piecetrail2",
+				[4] = "piecetrail3",
+				[5] = "piecetrail4",
+				[6] = "piecetrail6",
 			},
 		},
 		sounds = {

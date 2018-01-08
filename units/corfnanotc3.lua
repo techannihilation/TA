@@ -52,7 +52,7 @@ return {
 		waterline = 1,
 		workertime = 2400,
 		customparams = {
-			buildpic = "CORFNANOTC3.png",
+			buildpic = "corfnanotc3.dds",
 			faction = "CORE",
 		},
 		nanocolor = {

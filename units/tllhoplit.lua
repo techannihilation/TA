@@ -23,9 +23,9 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
-		mass = 181,
+		mass = 180,
 		maxdamage = 900,
 		maxslope = 10,
 		maxvelocity = 2.4,
@@ -48,6 +48,7 @@ return {
 		turnrate = 795,
 		unitname = "tllhoplit",
 		customparams = {
+			buildpic = "tllhoplit.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

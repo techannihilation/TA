@@ -29,7 +29,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 245,
 		maxdamage = 1075,
@@ -87,7 +87,7 @@ return {
 			[22] = "armcroc",
 		},
 		customparams = {
-			buildpic = "CONSUL.png",
+			buildpic = "consul.dds",
 			faction = "arm",
 		},
 		featuredefs = {

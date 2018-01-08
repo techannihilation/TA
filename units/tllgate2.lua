@@ -24,8 +24,8 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
-		mass = 3725,
+		losemitheight = 22,
+		mass = 2260,
 		maxdamage = 1700,
 		maxslope = 10,
 		maxwaterdepth = 0,
@@ -43,7 +43,10 @@ return {
 		unitname = "tllgate2",
 		yardmap = "oo oo oo oo",
 		customparams = {
+			buildpic = "tllgate2.dds",
 			faction = "TLL",
+			shield_power = 2900,
+			shield_radius = 340,
 		},
 		featuredefs = {
 			dead = {
@@ -117,7 +120,7 @@ return {
 				smartshield = true,
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				visibleshield = true,
+				--visibleshield = true,
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {

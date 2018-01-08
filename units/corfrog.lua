@@ -52,6 +52,7 @@ return {
 		unitname = "corfrog",
 		upright = true,
 		customparams = {
+			buildpic = "corfrog.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

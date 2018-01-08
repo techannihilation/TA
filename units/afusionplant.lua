@@ -29,7 +29,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 90,
-		mass = 59733,
+		mass = 59700,
 		maxdamage = 27500,
 		maxslope = 10,
 		maxwaterdepth = 0,
@@ -47,6 +47,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
+			buildpic = "afusionplant.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

@@ -24,7 +24,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 79.875,
-		mass = 5973,
+		mass = 5640,
 		maxdamage = 6000,
 		maxslope = 10,
 		name = "Advanced T2 Research Center",
@@ -41,7 +41,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo",
 		customparams = {
-			buildpic = "armrech.png",
+			buildpic = "armrech18.dds",
 			faction = "ARM",
 			ismorphingrc = true,
 			providetech = "Advanced T1 Unit Research Centre,Advanced T2 Unit Research Centre",

@@ -56,6 +56,7 @@ return {
 		turnrate = 350,
 		unitname = "armscpion",
 		customparams = {
+			buildpic = "armscpion.dds",
 			faction = "ARM",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},

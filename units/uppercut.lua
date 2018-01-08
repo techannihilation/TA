@@ -31,7 +31,7 @@ return {
 		icontype = "sea",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 52,
+		losemitheight = 53,
 		maneuverleashlength = 640,
 		mass = 15500,
 		maxdamage = 3250,
@@ -59,6 +59,7 @@ return {
 		unitname = "uppercut",
 		waterline = 60,
 		customparams = {
+			buildpic = "uppercut.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

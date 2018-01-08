@@ -9,6 +9,9 @@ return {
 		buildpic = "armfdrag.dds",
 		buildtime = 930,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		collisionvolumeoffsets = "0 -35 0",
+		collisionvolumescales = "37 70 37",
+		collisionvolumetype = "Box",
 		corpse = "floatingteeth",
 		description = "Perimeter Defense",
 		footprintx = 2,
@@ -36,7 +39,7 @@ return {
 		waterline = 22,
 		yardmap = "wwww",
 		customparams = {
-			buildpic = "ARMFDRAG.png",
+			buildpic = "armfdrag.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

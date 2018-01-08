@@ -67,7 +67,7 @@ return {
 			[10] = "armsub",
 		},
 		customparams = {
-			buildpic = "ASUBPEN.png",
+			buildpic = "asubpen.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

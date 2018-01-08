@@ -14,6 +14,9 @@ return {
 		buildpic = "armadvsol.dds",
 		buildtime = 7000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		collisionvolumeoffsets = "0 -2 -1",
+		collisionvolumescales = "49 11 49",
+		collisionvolumetype = "CylY",
 		corpse = "dead",
 		damagemodifier = 0.9,
 		description = "Produces Energy",
@@ -26,7 +29,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		mass = 366,
 		maxdamage = 1020,
 		maxslope = 10,
@@ -48,7 +51,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooooooooooo",
 		customparams = {
-			buildpic = "ARMADVSOL.png",
+			buildpic = "armadvsol.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

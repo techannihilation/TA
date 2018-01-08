@@ -22,7 +22,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 23,
 		maneuverleashlength = 640,
 		mass = 455,
 		maxdamage = 650,
@@ -48,6 +48,7 @@ return {
 		turnrate = 350,
 		unitname = "tllloki",
 		customparams = {
+			buildpic = "tllloki.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

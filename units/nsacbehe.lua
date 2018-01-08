@@ -47,10 +47,11 @@ return {
 		steeringmode = 1,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.924,
+		turninplacespeedlimit = 0.792,
 		turnrate = 169,
 		unitname = "nsacbehe",
 		customparams = {
+			buildpic = "nsacbehe.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

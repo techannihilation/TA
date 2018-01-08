@@ -13,6 +13,9 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE UNDERWATER",
+		collisionvolumeoffsets = "0 -2 0",
+		collisionvolumescales = "27 31 40",
+		collisionvolumetype = "Box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Amphibious Assault Mech",
@@ -50,7 +53,7 @@ return {
 		unitname = "marauder",
 		upright = true,
 		customparams = {
-			buildpic = "MARAUDER.png",
+			buildpic = "marauder.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

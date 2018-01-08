@@ -26,7 +26,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 933.33331,
 		maxdamage = 5600,
@@ -57,7 +57,7 @@ return {
 		turnrate = 378,
 		unitname = "armbull",
 		customparams = {
-			buildpic = "ARMBULL.png",
+			buildpic = "armbull.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

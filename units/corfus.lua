@@ -26,8 +26,8 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 52,
-		mass = 5013,
+		losemitheight = 53,
+		mass = 4750,
 		maxdamage = 5600,
 		maxslope = 10,
 		maxvelocity = 0,
@@ -47,7 +47,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooooooooooooooooooooo",
 		customparams = {
-			buildpic = "CORFUS.png",
+			buildpic = "corfus.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

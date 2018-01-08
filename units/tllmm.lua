@@ -20,7 +20,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		mass = 28.66667,
 		maxdamage = 172,
 		maxslope = 10,
@@ -36,6 +36,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooo ooo ooo",
 		customparams = {
+			buildpic = "tllmm.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

@@ -74,7 +74,7 @@ return {
 		standingmoveorder = 0,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.188,
+		turninplacespeedlimit = 0.99,
 		turnrate = 1398,
 		unitname = "armcom6",
 		upright = true,
@@ -108,11 +108,13 @@ return {
 			[26] = "armfflak",
 		},
 		customparams = {
-			buildpic = "ARMCOM.png",
+			buildpic = "armcom6.dds",
 			canjump = "1",
 			faction = "ARM",
 			iscommander = true,
 			providetech = "Battle Commander,Assault Commander,Star Commander",
+			shield_power = 1200,
+			shield_radius = 150,
 		},
 		featuredefs = {
 			armcom5_heap = {
@@ -329,8 +331,6 @@ return {
 				smartshield = true,
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				visibleshield = true,
-				visibleshieldhitframes = 70,
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {

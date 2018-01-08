@@ -51,6 +51,7 @@ return {
 		unitname = "cordem",
 		upright = true,
 		customparams = {
+			buildpic = "cordem.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

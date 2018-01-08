@@ -29,7 +29,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 202,
-		mass = 13310,
+		mass = 18800,
 		maxdamage = 52000,
 		maxslope = 10,
 		maxvelocity = 0,
@@ -51,7 +51,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooo oooooo oooooo oooooo oooooo oooooo",
 		customparams = {
-			buildpic = "CORDOOM.png",
+			buildpic = "cordoom1.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

@@ -20,9 +20,9 @@ return {
 		footprintz = 4,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 38,
+		losemitheight = 75,
 		maneuverleashlength = 640,
-		mass = 20000,
+		mass = 50680,
 		maxdamage = 39875,
 		maxslope = 14,
 		maxvelocity = 0.9,
@@ -40,7 +40,7 @@ return {
 		standingmoveorder = 0,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.66,
+		turninplacespeedlimit = 0.594,
 		turnrate = 210,
 		unitname = "tllhailstorm",
 		upright = true,
@@ -74,6 +74,14 @@ return {
 		sfxtypes = {
 			explosiongenerators = {
 				[1] = "custom:mediumflare",
+			},
+			pieceexplosiongenerators = {
+				[1] = "piecetrail0",
+				[2] = "piecetrail1",
+				[3] = "piecetrail2",
+				[4] = "piecetrail3",
+				[5] = "piecetrail4",
+				[6] = "piecetrail6",
 			},
 		},
 		sounds = {

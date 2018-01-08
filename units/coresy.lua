@@ -56,6 +56,7 @@ return {
 			[4] = "cortyrnt",
 		},
 		customparams = {
+			buildpic = "coresy.dds",
 			faction = "CORE",
 			providetech = "T3 Factory",
 		},

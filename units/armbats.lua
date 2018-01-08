@@ -28,7 +28,7 @@ return {
 		icontype = "sea",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 57,
+		losemitheight = 58,
 		maneuverleashlength = 640,
 		mass = 7000,
 		maxdamage = 15000,
@@ -52,7 +52,7 @@ return {
 		turnrate = 310,
 		unitname = "armbats",
 		customparams = {
-			buildpic = "ARMBATS.png",
+			buildpic = "armbats.dds",
 			faction = "ARM",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},

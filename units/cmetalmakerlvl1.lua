@@ -19,8 +19,8 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 32,
-		mass = 201,
+		losemitheight = 33,
+		mass = 175,
 		maxdamage = 324,
 		maxslope = 10,
 		maxwaterdepth = 255,
@@ -36,6 +36,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "OOOOOOOOOOOO",
 		customparams = {
+			buildpic = "cmetalmakerlvl1.dds",
 			faction = "CORE",
 		},
 		sfxtypes = {

@@ -22,8 +22,8 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 50,
-		mass = 8064,
+		losemitheight = 51,
+		mass = 7680,
 		maxdamage = 12200,
 		maxslope = 10,
 		maxwaterdepth = 0,
@@ -40,6 +40,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo",
 		customparams = {
+			buildpic = "tllemstor.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

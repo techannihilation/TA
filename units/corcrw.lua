@@ -32,7 +32,7 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 28.8,
+		losemitheight = 14,
 		maneuverleashlength = 500,
 		mass = 6400,
 		maxdamage = 15750,
@@ -57,7 +57,7 @@ return {
 		unitname = "corcrw",
 		upright = true,
 		customparams = {
-			buildpic = "CORCRW.png",
+			buildpic = "corcrw.dds",
 			faction = "CORE",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},

@@ -22,7 +22,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 580,
 		maxdamage = 3250,
@@ -47,6 +47,7 @@ return {
 		turnrate = 880,
 		unitname = "tllsalamander",
 		customparams = {
+			buildpic = "tllsalamander.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

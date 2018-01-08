@@ -50,6 +50,7 @@ return {
 		turnrate = 430,
 		unitname = "tllsideneck",
 		customparams = {
+			buildpic = "tllsideneck.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

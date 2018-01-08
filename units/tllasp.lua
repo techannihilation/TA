@@ -43,6 +43,7 @@ return {
 		workertime = 3000,
 		yardmap = "oooo oooo oooo oooo",
 		customparams = {
+			buildpic = "tllasp.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

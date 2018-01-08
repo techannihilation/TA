@@ -55,7 +55,7 @@ return {
 		usebuildinggrounddecal = true,
 		workertime = 2400,
 		customparams = {
-			buildpic = "CORNANOTC3.png",
+			buildpic = "cornanotc3.dds",
 			faction = "CORE",
 		},
 		nanocolor = {

@@ -29,6 +29,7 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 16,
 		maneuverleashlength = 1280,
 		mass = 130,
 		maxdamage = 660,
@@ -42,6 +43,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "CORHUNT",
 		radardistance = 2200,
+		radaremitheight = 16,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 1130,
@@ -54,7 +56,7 @@ return {
 		turnrate = 450,
 		unitname = "corhunt",
 		customparams = {
-			buildpic = "CORHUNT.png",
+			buildpic = "corhunt.dds",
 			faction = "CORE",
 		},
 		sfxtypes = {

@@ -58,6 +58,7 @@ return {
 		unitname = "hyperion",
 		upright = true,
 		customparams = {
+			buildpic = "hyperion.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

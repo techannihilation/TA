@@ -24,7 +24,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 230,
 		maxdamage = 975,
@@ -82,7 +82,7 @@ return {
 			[21] = "corseal",
 		},
 		customparams = {
-			buildpic = "CONSUL.png",
+			buildpic = "consul1.dds",
 			faction = "arm",
 		},
 		featuredefs = {

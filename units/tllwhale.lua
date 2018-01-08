@@ -55,6 +55,7 @@ return {
 		unitname = "tllwhale",
 		waterline = 30,
 		customparams = {
+			buildpic = "tllwhale.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

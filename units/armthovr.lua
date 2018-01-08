@@ -30,7 +30,7 @@ return {
 		icontype = "armthovr",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 50,
+		losemitheight = 51,
 		maneuverleashlength = 640,
 		mass = 860,
 		maxdamage = 5160,
@@ -59,7 +59,7 @@ return {
 		unitname = "armthovr",
 		waterline = 14,
 		customparams = {
-			buildpic = "ARMTHOVR.png",
+			buildpic = "armthovr.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

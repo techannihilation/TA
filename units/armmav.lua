@@ -14,6 +14,9 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		collisionvolumeoffsets = "0 -8 0",
+		collisionvolumescales = "28 37 14",
+		collisionvolumetype = "Box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Skirmish Kbot (Auto-Repair 50)",
@@ -49,7 +52,7 @@ return {
 		unitname = "armmav",
 		upright = true,
 		customparams = {
-			buildpic = "ARMMAV.png",
+			buildpic = "armmav.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

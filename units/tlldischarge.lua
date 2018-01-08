@@ -30,7 +30,7 @@ return {
 		hightrajectory = 1,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 42,
+		losemitheight = 43,
 		maneuverleashlength = 640,
 		mass = 650,
 		maxdamage = 3200,
@@ -56,6 +56,7 @@ return {
 		unitname = "tlldischarge",
 		upright = true,
 		customparams = {
+			buildpic = "tlldischarge.dds",
 			canjump = "1",
 			faction = "TLL",
 		},

@@ -26,7 +26,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 33,
+		losemitheight = 34,
 		maneuverleashlength = 640,
 		mass = 1550,
 		maxdamage = 7000,
@@ -52,7 +52,7 @@ return {
 		unitname = "armfboy",
 		upright = false,
 		customparams = {
-			buildpic = "ARMFBOY.png",
+			buildpic = "armfboy.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

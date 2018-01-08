@@ -14,6 +14,9 @@ return {
 		buildpic = "cafus.dds",
 		buildtime = 185000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		collisionvolumeoffsets = "0 -1 0",
+		collisionvolumescales = "84 95 84",
+		collisionvolumetype = "CylY",
 		corpse = "dead",
 		description = "Enhanced Energy Output / Storage",
 		energymake = 3200,
@@ -26,7 +29,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 86,
-		mass = 11200,
+		mass = 10850,
 		maxdamage = 11000,
 		maxslope = 13,
 		maxvelocity = 0,
@@ -47,7 +50,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooooooooooooooooooooooooooooooo",
 		customparams = {
-			buildpic = "CAFUS.png",
+			buildpic = "cafus.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

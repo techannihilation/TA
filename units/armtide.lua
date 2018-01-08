@@ -10,6 +10,9 @@ return {
 		buildpic = "armtide.dds",
 		buildtime = 2188,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER SURFACE",
+		collisionvolumeoffsets = "0 0 -4",
+		collisionvolumescales = "27 26 39",
+		collisionvolumetype = "Box",
 		corpse = "dead",
 		description = "Produces Energy",
 		energystorage = 50,
@@ -20,7 +23,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		mass = 87,
 		maxdamage = 256,
 		maxslope = 10,
@@ -43,7 +46,7 @@ return {
 		waterline = 7,
 		yardmap = "wwwwwwwww",
 		customparams = {
-			buildpic = "ARMTIDE.png",
+			buildpic = "armtide.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

@@ -28,7 +28,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 907,
 		maxdamage = 2400,
@@ -54,6 +54,7 @@ return {
 		turnrate = 399,
 		unitname = "vaporiser",
 		customparams = {
+			buildpic = "vaporiser.dds",
 			faction = "ARM",
 			requiretech = "Advanced T2 Unit Research Centre",
 		},

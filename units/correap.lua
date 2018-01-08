@@ -26,7 +26,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 958.33331,
 		maxdamage = 5750,
@@ -57,7 +57,7 @@ return {
 		turnrate = 434,
 		unitname = "correap",
 		customparams = {
-			buildpic = "CORREAP.png",
+			buildpic = "correap.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

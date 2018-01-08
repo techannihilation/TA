@@ -40,6 +40,7 @@ return {
 		unitname = "tllhltns",
 		yardmap = "wwwwwwwww",
 		customparams = {
+			buildpic = "tllhltns.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

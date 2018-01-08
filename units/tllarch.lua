@@ -20,6 +20,8 @@ return {
 		firestandorders = 1,
 		footprintx = 4,
 		footprintz = 4,
+		losemitheight = 29,
+		mass = 3950,
 		maxdamage = 5050,
 		maxslope = 10,
 		maxwaterdepth = 0,
@@ -65,6 +67,14 @@ return {
 			explosiongenerators = {
 				[1] = "custom:furie_muzzle",
 			},
+			pieceexplosiongenerators = {
+				[1] = "piecetrail0",
+				[2] = "piecetrail1",
+				[3] = "piecetrail2",
+				[4] = "piecetrail3",
+				[5] = "piecetrail4",
+				[6] = "piecetrail6",
+			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
@@ -101,7 +111,7 @@ return {
 				gravityaffected = "true",
 				name = "Rapid Cannon",
 				range = 1450,
-				reloadtime = 0.30,
+				reloadtime = 0.3,
 				rgbcolor = "1 0.6 0.3",
 				soundhitdry = "xplomed2",
 				soundhitwet = "sizzle",

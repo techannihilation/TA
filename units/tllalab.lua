@@ -25,7 +25,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 26,
 		mass = 4550,
 		maxdamage = 3311,
 		maxslope = 10,
@@ -64,6 +64,7 @@ return {
 			[16] = "tllconfuser",
 		},
 		customparams = {
+			buildpic = "tllalab.dds",
 			faction = "TLL",
 			providetech = "T2 Factory",
 		},

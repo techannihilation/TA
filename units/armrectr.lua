@@ -26,7 +26,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 60,
-		losemitheight = 25,
+		losemitheight = 23,
 		maneuverleashlength = 640,
 		mass = 109,
 		maxdamage = 200,
@@ -40,7 +40,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMRECTR",
 		radardistance = 50,
-		radaremitheight = 25,
+		radaremitheight = 23,
 		resurrect = 1,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -55,7 +55,7 @@ return {
 		upright = true,
 		workertime = 200,
 		customparams = {
-			buildpic = "ARMRECTR.png",
+			buildpic = "armrectr.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

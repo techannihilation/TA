@@ -14,6 +14,9 @@ return {
 		canreclamate = 1,
 		canstop = 1,
 		category = "ALL CONSTR MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE UNDERWATER",
+		collisionvolumeoffsets = "0 -1 5",
+		collisionvolumescales = "22 16 41",
+		collisionvolumetype = "Box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Amphibious Construction Vehicle",
@@ -23,7 +26,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 172,
 		maxdamage = 995,
@@ -101,7 +104,7 @@ return {
 			[42] = "cortl",
 		},
 		customparams = {
-			buildpic = "CORMUSKRAT.png",
+			buildpic = "cormuskrat.dds",
 			faction = "core",
 		},
 		featuredefs = {

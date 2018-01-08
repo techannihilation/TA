@@ -31,7 +31,8 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
-		mass = 26133,
+		losemitheight = 41,
+		mass = 27150,
 		maxdamage = 11000,
 		maxslope = 10,
 		maxvelocity = 3.2,
@@ -68,6 +69,7 @@ return {
 			[16] = "ashipyardlvl3",
 		},
 		customparams = {
+			buildpic = "abuilderlvl3.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

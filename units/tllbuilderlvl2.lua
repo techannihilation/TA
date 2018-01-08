@@ -31,7 +31,8 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
-		mass = 713,
+		losemitheight = 13,
+		mass = 460,
 		maxdamage = 1050,
 		maxslope = 10,
 		maxvelocity = 7,
@@ -45,7 +46,7 @@ return {
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 400,
 		turninplaceanglelimit = 360,
-		turninplacespeedlimit = 5.53014,
+		turninplacespeedlimit = 4.62,
 		turnrate = 380.38,
 		unitname = "tllbuilderlvl2",
 		workertime = 200,
@@ -69,6 +70,7 @@ return {
 			[18] = "tllviolator",
 		},
 		customparams = {
+			buildpic = "tllbuilderlvl2.dds",
 			faction = "TLL",
 		},
 		nanocolor = {

@@ -27,9 +27,9 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		isairbase = true,
-		losemitheight = 71,
+		losemitheight = 72,
 		maneuverleashlength = 1640,
-		mass = 1800,
+		mass = 3750,
 		maxdamage = 6450,
 		maxvelocity = 2.7,
 		minwaterdepth = 30,
@@ -41,7 +41,7 @@ return {
 		objectname = "TLLGIANT",
 		onoffable = true,
 		radardistance = 2950,
-		radaremitheight = 71,
+		radaremitheight = 72,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 1080,
 		sonardistance = 760,
@@ -55,6 +55,7 @@ return {
 		waterline = 7,
 		workertime = 4000,
 		customparams = {
+			buildpic = "tllgiant.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

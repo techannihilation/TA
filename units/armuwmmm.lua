@@ -14,6 +14,9 @@ return {
 		buildpic = "armuwmmm.dds",
 		buildtime = 40000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER",
+		collisionvolumeoffsets = "0 -10 0",
+		collisionvolumescales = "120 120 120",
+		collisionvolumetype = "Ell",
 		corpse = "dead",
 		damagemodifier = 0.3,
 		description = "Converts upto 1000 Energy to Metal",
@@ -24,7 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 27,
-		mass = 1559,
+		mass = 1450,
 		maxdamage = 1100,
 		maxslope = 16,
 		maxvelocity = 0,
@@ -44,7 +47,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooooooooooooooo",
 		customparams = {
-			buildpic = "ARMUWMMM.png",
+			buildpic = "armuwmmm.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

@@ -27,7 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 272,
-		mass = 291000,
+		mass = 422040,
 		maxdamage = 104440,
 		maxslope = 13,
 		maxvelocity = 0,
@@ -49,7 +49,7 @@ return {
 		usepiececollisionvolumes = 1,
 		yardmap = "oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo ",
 		customparams = {
-			buildpic = "ARMVULC.png",
+			buildpic = "armvulc1.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

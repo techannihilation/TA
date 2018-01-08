@@ -32,7 +32,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 30,
-		mass = 1760,
+		mass = 2460,
 		maxdamage = 2800,
 		maxslope = 10,
 		maxwaterdepth = 0,
@@ -49,7 +49,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooo oooo oooo oooo",
 		customparams = {
-			buildpic = "core_immolator.png",
+			buildpic = "core_immolator.dds",
 			canareaattack = 1,
 			faction = "Core",
 		},

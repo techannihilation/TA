@@ -24,9 +24,9 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
-		mass = 770,
+		mass = 810,
 		maxdamage = 2500,
 		maxslope = 12,
 		maxvelocity = 1.8,
@@ -50,6 +50,7 @@ return {
 		turnrate = 280,
 		unitname = "tllhplasma",
 		customparams = {
+			buildpic = "tllhplasma.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

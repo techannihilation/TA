@@ -30,7 +30,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 158,
-		mass = 14200,
+		mass = 18250,
 		maxdamage = 35000,
 		maxslope = 10,
 		maxvelocity = 0,
@@ -52,7 +52,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo",
 		customparams = {
-			buildpic = "ARMANNI.png",
+			buildpic = "armanni1.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

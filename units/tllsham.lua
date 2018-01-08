@@ -56,6 +56,7 @@ return {
 		upright = true,
 		workertime = 218,
 		customparams = {
+			buildpic = "tllsham.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

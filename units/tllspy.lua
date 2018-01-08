@@ -53,7 +53,7 @@ return {
 		unitname = "tllspy",
 		upright = true,
 		customparams = {
-			buildpic = "tllspy.png",
+			buildpic = "tllspy.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

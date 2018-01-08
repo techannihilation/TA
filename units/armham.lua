@@ -25,7 +25,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 26,
+		losemitheight = 27,
 		maneuverleashlength = 640,
 		mass = 135,
 		maxdamage = 810,
@@ -51,7 +51,7 @@ return {
 		unitname = "armham",
 		upright = true,
 		customparams = {
-			buildpic = "ARMHAM.png",
+			buildpic = "armham.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

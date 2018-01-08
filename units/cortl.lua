@@ -21,7 +21,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		mass = 337,
 		maxdamage = 1977,
 		maxslope = 10,
@@ -43,7 +43,7 @@ return {
 		waterline = 11,
 		yardmap = "wwwwwwwww",
 		customparams = {
-			buildpic = "CORTL.png",
+			buildpic = "cortl.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

@@ -23,7 +23,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 40,
+		losemitheight = 41,
 		mass = 1348,
 		maxdamage = 900,
 		maxslope = 10,
@@ -44,7 +44,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooooooooooo",
 		customparams = {
-			buildpic = "CORMMKR.png",
+			buildpic = "cormmkr.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

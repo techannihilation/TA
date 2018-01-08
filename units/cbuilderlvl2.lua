@@ -30,8 +30,8 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 20.7,
-		mass = 698,
+		losemitheight = 5.5,
+		mass = 505,
 		maxdamage = 1450,
 		maxslope = 10,
 		maxvelocity = 8.5,
@@ -46,7 +46,7 @@ return {
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 270,
 		turninplaceanglelimit = 360,
-		turninplacespeedlimit = 4.74012,
+		turninplacespeedlimit = 5.61,
 		turnrate = 353.78,
 		unitname = "cbuilderlvl2",
 		workertime = 220,
@@ -70,6 +70,7 @@ return {
 			[17] = "corroy",
 		},
 		customparams = {
+			buildpic = "cbuilderlvl2.dds",
 			faction = "CORE",
 		},
 		nanocolor = {

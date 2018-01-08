@@ -20,7 +20,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 39,
+		losemitheight = 40,
 		mass = 363,
 		maxdamage = 920,
 		maxslope = 10,
@@ -42,7 +42,7 @@ return {
 		waterline = 16,
 		yardmap = "wwwwww wwwwww wwwwww wwwwww wwwwww wwwwww",
 		customparams = {
-			buildpic = "ARMATIDAL.png",
+			buildpic = "armatidal.dds",
 			energymultiplier = 5,
 			faction = "ARM",
 		},

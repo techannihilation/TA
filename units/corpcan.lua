@@ -23,7 +23,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 70,
+		losemitheight = 71,
 		mass = 960,
 		maxdamage = 4200,
 		maxslope = 12,
@@ -44,7 +44,7 @@ return {
 		unitname = "corpcan",
 		yardmap = "oooooooooooooooo",
 		customparams = {
-			buildpic = "armpcan.png",
+			buildpic = "corpcan.dds",
 			canareaattack = 1,
 			faction = "CORE",
 		},

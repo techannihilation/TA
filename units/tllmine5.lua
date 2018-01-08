@@ -36,8 +36,8 @@ return {
 		idletime = 300,
 		initcloaked = true,
 		levelground = false,
-		losemitheight = 25,
-		mass = 47,
+		losemitheight = 22,
+		mass = 145,
 		maxdamage = 50,
 		maxslope = 40,
 		maxvelocity = 0,
@@ -59,7 +59,7 @@ return {
 		turnrate = 0,
 		unitname = "tllmine5",
 		customparams = {
-			buildpic = "TLLMINE5.png",
+			buildpic = "tllmine5.dds",
 			faction = "TLL",
 		},
 		sfxtypes = {

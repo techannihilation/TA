@@ -27,8 +27,9 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 8,
 		maneuverleashlength = 1280,
-		mass = 182,
+		mass = 180,
 		maxdamage = 605,
 		maxslope = 10,
 		maxvelocity = 8,
@@ -49,6 +50,7 @@ return {
 		turnrate = 925,
 		unitname = "tllbomber",
 		customparams = {
+			buildpic = "tllbomber.dds",
 			faction = "TLL",
 		},
 		sfxtypes = {

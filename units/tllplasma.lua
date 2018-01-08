@@ -27,7 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 25,
-		mass = 2240,
+		mass = 2950,
 		maxdamage = 3790,
 		maxslope = 10,
 		maxwaterdepth = 0,
@@ -43,6 +43,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooo ooo ooo",
 		customparams = {
+			buildpic = "tllplasma.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

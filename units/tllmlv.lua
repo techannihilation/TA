@@ -29,7 +29,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 206,
 		maxdamage = 245,
@@ -74,7 +74,7 @@ return {
 			[8] = "tllmine6",
 		},
 		customparams = {
-			buildpic = "TLLMLV.png",
+			buildpic = "tllmlv.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

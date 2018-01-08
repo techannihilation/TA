@@ -31,9 +31,9 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 0,
-		mass = 12000,
+		mass = 9950,
 		maxdamage = 7500,
 		maxslope = 20,
 		maxvelocity = 0,
@@ -66,6 +66,7 @@ return {
 			[7] = "armvulc2",
 		},
 		customparams = {
+			buildpic = "ananotower.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

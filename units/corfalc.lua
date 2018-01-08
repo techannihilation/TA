@@ -28,6 +28,7 @@ return {
 		hoverattack = true,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 9,
 		maneuverleashlength = 1280,
 		mass = 98,
 		maxdamage = 555,
@@ -56,6 +57,7 @@ return {
 		unitname = "corfalc",
 		upright = true,
 		customparams = {
+			buildpic = "corfalc.dds",
 			faction = "CORE",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},

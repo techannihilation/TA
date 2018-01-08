@@ -30,7 +30,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		immunetoparalyzer = 1,
-		losemitheight = 33,
+		losemitheight = 34,
 		maneuverleashlength = 640,
 		mass = 9600,
 		maxdamage = 52000,
@@ -58,6 +58,7 @@ return {
 		turnrate = 310,
 		unitname = "armmcv",
 		customparams = {
+			buildpic = "armmcv.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

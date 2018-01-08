@@ -14,6 +14,9 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL SMALL WEAPON SURFACE UNDERWATER",
+		collisionvolumeoffsets = "0 -7 -2",
+		collisionvolumescales = "26 48 24",
+		collisionvolumetype = "Box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Radar Jammer Kbot",
@@ -51,7 +54,7 @@ return {
 		turnrate = 1045,
 		unitname = "armaser",
 		customparams = {
-			buildpic = "ARMASER.png",
+			buildpic = "armaser.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

@@ -13,6 +13,9 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		collisionvolumeoffsets = "0 -1 0",
+		collisionvolumescales = "32 16 32",
+		collisionvolumetype = "Box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Medium Assault Tank",
@@ -23,7 +26,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 266.66666,
 		maxdamage = 1600,
@@ -54,7 +57,7 @@ return {
 		turnrate = 459.79999,
 		unitname = "corraid",
 		customparams = {
-			buildpic = "CORRAID.png",
+			buildpic = "corraid.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

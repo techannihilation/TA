@@ -20,7 +20,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 32,
+		losemitheight = 33,
 		mass = 365,
 		maxdamage = 2190,
 		minwaterdepth = 12,
@@ -38,6 +38,7 @@ return {
 		waterline = 0,
 		yardmap = "wwwwwwwww",
 		customparams = {
+			buildpic = "tlltorp.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

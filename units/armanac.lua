@@ -14,6 +14,9 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL HOVER MEDIUM MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		collisionvolumeoffsets = "0 1 0",
+		collisionvolumescales = "40 16 40",
+		collisionvolumetype = "CylY",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Hovertank",
@@ -23,7 +26,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 287,
 		maxdamage = 1377,
@@ -49,7 +52,7 @@ return {
 		turnrate = 525,
 		unitname = "armanac",
 		customparams = {
-			buildpic = "ARMANAC.png",
+			buildpic = "armanac.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

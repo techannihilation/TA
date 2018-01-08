@@ -26,6 +26,7 @@ return {
 		hoverattack = true,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 9.5,
 		maneuverleashlength = 1280,
 		mass = 683,
 		maxdamage = 1875,
@@ -48,6 +49,7 @@ return {
 		turnrate = 720,
 		unitname = "tllcopter",
 		customparams = {
+			buildpic = "tllcopter.dds",
 			faction = "TLL",
 		},
 		sfxtypes = {

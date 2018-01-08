@@ -14,6 +14,9 @@ return {
 		buildpic = "cormoho.dds",
 		buildtime = 14125,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		collisionvolumeoffsets = "0 -1 0",
+		collisionvolumescales = "79 37 79",
+		collisionvolumetype = "CylY",
 		corpse = "dead",
 		damagemodifier = 0.25,
 		description = "Advanced Metal Extractor / Storage",
@@ -25,7 +28,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 32,
+		losemitheight = 33,
 		mass = 638,
 		maxdamage = 3500,
 		maxslope = 20,
@@ -48,7 +51,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooooooooooooooooooooo",
 		customparams = {
-			buildpic = "CORMOHO.png",
+			buildpic = "cormoho.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

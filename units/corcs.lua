@@ -28,7 +28,7 @@ return {
 		icontype = "sea",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 277,
 		maxdamage = 1150,
@@ -43,7 +43,7 @@ return {
 		nochasecategory = "VTOL",
 		objectname = "CORCS",
 		radardistance = 50,
-		radaremitheight = 25,
+		radaremitheight = 22,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
 		sightdistance = 286,
@@ -80,7 +80,7 @@ return {
 			[21] = "corfnanotc",
 		},
 		customparams = {
-			buildpic = "CORCS.png",
+			buildpic = "corcs.dds",
 			faction = "core",
 		},
 		featuredefs = {

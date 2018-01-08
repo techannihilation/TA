@@ -26,6 +26,7 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 5.5,
 		maneuverleashlength = 1280,
 		mass = 140,
 		maxdamage = 650,
@@ -45,12 +46,12 @@ return {
 		stealth = true,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 7.8936,
+		turninplacespeedlimit = 7.92,
 		turnrate = 1425,
 		unitname = "armhawk",
 		unitrestricted = 150,
 		customparams = {
-			buildpic = "ARMHAWK.png",
+			buildpic = "armhawk.dds",
 			faction = "ARM",
 		},
 		sfxtypes = {

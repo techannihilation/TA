@@ -23,7 +23,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 56,
-		mass = 18133,
+		mass = 18100,
 		maxdamage = 10400,
 		minwaterdepth = 15,
 		name = "Advanced Antimater Fusion",
@@ -41,6 +41,7 @@ return {
 		waterline = 10,
 		yardmap = "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
 		customparams = {
+			buildpic = "crnns.dds",
 			faction = "CORE",
 		},
 		sfxtypes = {

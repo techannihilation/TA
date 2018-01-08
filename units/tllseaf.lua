@@ -29,6 +29,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 17,
 		maneuverleashlength = 1280,
 		mass = 350,
 		maxdamage = 500,
@@ -48,10 +49,11 @@ return {
 		standingmoveorder = 2,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 7.59,
+		turninplacespeedlimit = 7.26,
 		turnrate = 512,
 		unitname = "tllseaf",
 		customparams = {
+			buildpic = "tllseaf.dds",
 			faction = "TLL",
 		},
 		sfxtypes = {

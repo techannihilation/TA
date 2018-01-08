@@ -10,6 +10,9 @@ return {
 		buildpic = "cortide.dds",
 		buildtime = 2094,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER SURFACE",
+		collisionvolumeoffsets = "-3 0 -1",
+		collisionvolumescales = "28 26 33",
+		collisionvolumetype = "Box",
 		corpse = "dead",
 		description = "Produces Energy",
 		energystorage = 50,
@@ -20,7 +23,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		mass = 86,
 		maxdamage = 253,
 		maxslope = 10,
@@ -43,7 +46,7 @@ return {
 		waterline = 13,
 		yardmap = "www www www",
 		customparams = {
-			buildpic = "CORTIDE.png",
+			buildpic = "cortide.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

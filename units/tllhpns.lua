@@ -21,7 +21,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		mass = 1300,
 		maxdamage = 3500,
 		metalstorage = 200,
@@ -51,6 +51,7 @@ return {
 			[6] = "tllhplasma",
 		},
 		customparams = {
+			buildpic = "tllhpns.dds",
 			faction = "tll",
 		},
 		featuredefs = {

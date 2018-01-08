@@ -79,7 +79,7 @@ return {
 			[19] = "akmech",
 		},
 		customparams = {
-			buildpic = "ARMALAB.png",
+			buildpic = "armalab.dds",
 			faction = "ARM",
 			providetech = "T2 Factory",
 		},

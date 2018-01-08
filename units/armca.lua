@@ -28,6 +28,7 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 8,
 		maneuverleashlength = 1280,
 		mass = 112,
 		maxdamage = 140,
@@ -89,7 +90,7 @@ return {
 			[34] = "armsy",
 		},
 		customparams = {
-			buildpic = "ARMCA.png",
+			buildpic = "armca.dds",
 			faction = "arm",
 		},
 		nanocolor = {

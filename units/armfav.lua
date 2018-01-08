@@ -13,6 +13,9 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL TINY WEAPON SURFACE",
+		collisionvolumeoffsets = "0 -2 0",
+		collisionvolumescales = "25 18 32",
+		collisionvolumetype = "Box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Light Scout Vehicle",
@@ -23,7 +26,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 31,
 		maxdamage = 80,
@@ -55,7 +58,7 @@ return {
 		unitname = "armfav",
 		unitrestricted = 150,
 		customparams = {
-			buildpic = "ARMFAV.png",
+			buildpic = "armfav.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

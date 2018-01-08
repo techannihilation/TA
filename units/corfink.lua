@@ -23,8 +23,9 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 6,
 		maneuverleashlength = 1280,
-		mass = 28,
+		mass = 30,
 		maxdamage = 90,
 		maxslope = 10,
 		maxvelocity = 12.65,
@@ -35,6 +36,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "CORFINK",
 		radardistance = 900,
+		radaremitheight = 6,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT_VTOL",
 		selfdestructcountdown = 1,
@@ -47,7 +49,7 @@ return {
 		turnrate = 770,
 		unitname = "corfink",
 		customparams = {
-			buildpic = "CORFINK.png",
+			buildpic = "corfink.dds",
 			faction = "CORE",
 		},
 		sfxtypes = {

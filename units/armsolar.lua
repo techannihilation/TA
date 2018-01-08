@@ -15,6 +15,9 @@ return {
 		buildtime = 2045,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		collisionspherescale = 0.5,
+		collisionvolumeoffsets = "0.0 -18.0 1.0",
+		collisionvolumescales = "50.0 76.0 50.0",
+		collisionvolumetype = "Ell",
 		corpse = "dead",
 		damagemodifier = 0.5,
 		description = "Produces Energy",
@@ -26,7 +29,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 34,
+		losemitheight = 35,
 		mass = 155,
 		maxdamage = 306,
 		maxslope = 10,
@@ -48,7 +51,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "yycyy yoooy coooc yoooy yycyy",
 		customparams = {
-			buildpic = "ARMSOLAR.png",
+			buildpic = "armsolar.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

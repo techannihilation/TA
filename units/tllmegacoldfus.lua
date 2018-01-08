@@ -24,7 +24,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 106,
+		losemitheight = 107,
 		makesmetal = 180,
 		mass = 89000,
 		maxdamage = 28900,
@@ -42,6 +42,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo",
 		customparams = {
+			buildpic = "tllmegacoldfus.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

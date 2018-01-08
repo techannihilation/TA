@@ -23,8 +23,8 @@ local morphDefs = {
 			into = 'armcom4',
 			time = 30,
 		
-			metal = 0,
-			energy = 0,
+			--metal = 0,
+			--energy = 0,
 			--Free For Xmas
 		
 		},
@@ -32,8 +32,8 @@ local morphDefs = {
 			into = 'armcom1',
 			time = 30,
 		
-			metal = 0,
-			energy = 0,
+			--metal = 0,
+			--energy = 0,
 			--Free For Xmas
 		},
 	},
@@ -62,8 +62,8 @@ local morphDefs = {
 			into = 'corcom3',
 			time = 30,
 		
-			metal = 0,
-			energy = 0,
+			--metal = 0,
+			--energy = 0,
 			--Free For Xmas
 
 		},
@@ -71,8 +71,8 @@ local morphDefs = {
 			into = 'corcom1',
 			time = 30,
 		
-			metal = 0,
-			energy = 0,
+			--metal = 0,
+			--energy = 0,
 			--Free For Xmas
 			
 		},
@@ -102,8 +102,8 @@ local morphDefs = {
 			into = 'tllcom3',
 			time = 30,
 		
-			metal = 0,
-			energy = 0,
+			--metal = 0,
+			--energy = 0,
 			--Free For Xmas
 		
 		},
@@ -111,8 +111,8 @@ local morphDefs = {
 			into = 'tllcom1',
 			time = 30,
 		
-			metal = 0,
-			energy = 0,
+			--metal = 0,
+			--energy = 0,
 			--Free For Xmas
 		},
 	},
@@ -423,6 +423,11 @@ local morphDefs = {
 	},
 	corbuzz = {
 		into = 'corbuzz2',
+		time = 30,
+		xp = 0.15,
+	},
+	tllhydre = {
+		into = 'tllhydre2',
 		time = 30,
 		xp = 0.15,
 	},
@@ -894,6 +899,13 @@ local morphDefs = {
 		time = 60,
 		metal = 2700,
 		energy = 33000,
+	},
+	tllfnanotc2 = {
+		into = 'tllfnanotc3',
+		tech = 3,
+		time = 120,
+		metal = 3520,
+		energy = 99000,
 	},
 	armamph = {
 		into = 'marauder',

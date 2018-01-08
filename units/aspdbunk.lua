@@ -47,6 +47,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooo",
 		customparams = {
+			buildpic = "aspdbunk.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

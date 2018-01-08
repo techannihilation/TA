@@ -22,7 +22,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 31,
+		losemitheight = 32,
 		mass = 103,
 		maxangledif1 = 1,
 		maxdamage = 103,
@@ -35,7 +35,7 @@ return {
 		objectname = "TLLRADARNS",
 		onoffable = true,
 		radardistance = 2000,
-		radaremitheight = 31,
+		radaremitheight = 32,
 		script = "tllradarns.lua",
 		seismicsignature = 0,
 		selfdestructas = "SMALL_BUILDING",
@@ -47,7 +47,7 @@ return {
 		waterline = 0,
 		yardmap = "wwwwwwwww",
 		customparams = {
-			buildpic = "TLLRADARNS.png",
+			buildpic = "tllradarns.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

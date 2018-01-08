@@ -23,7 +23,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 425,
 		maxdamage = 2550,
@@ -54,6 +54,7 @@ return {
 		turnrate = 400,
 		unitname = "dao",
 		customparams = {
+			buildpic = "dao.dds",
 			faction = "CORE",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},

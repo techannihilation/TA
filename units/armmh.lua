@@ -14,6 +14,9 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL HOVER MEDIUM MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		collisionvolumeoffsets = "0 1 0",
+		collisionvolumescales = "33 12 43",
+		collisionvolumetype = "CylY",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Hovercraft Rocket Launcher",
@@ -23,7 +26,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 174,
 		maxdamage = 477,
@@ -49,7 +52,7 @@ return {
 		turnrate = 470,
 		unitname = "armmh",
 		customparams = {
-			buildpic = "ARMMH.png",
+			buildpic = "armmh.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

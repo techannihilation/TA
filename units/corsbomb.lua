@@ -31,6 +31,7 @@ return {
 		idleautoheal = 1,
 		idletime = 2200,
 		initcloaked = false,
+		losemitheight = 9.5,
 		mass = 3090,
 		maxdamage = 5500,
 		maxslope = 30,
@@ -52,7 +53,7 @@ return {
 		turnrate = 140,
 		unitname = "corsbomb",
 		customparams = {
-			buildpic = "corsbomb.png",
+			buildpic = "corsbomb.dds",
 			faction = "CORE",
 			requiretech = "Advanced T3 Unit Research Centre",
 		},

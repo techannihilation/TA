@@ -25,7 +25,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 42,
+		losemitheight = 43,
 		maneuverleashlength = 640,
 		mass = 1250,
 		maxdamage = 850,
@@ -52,6 +52,7 @@ return {
 		unitname = "tllsniper",
 		upright = true,
 		customparams = {
+			buildpic = "tllsniper.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

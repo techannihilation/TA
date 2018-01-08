@@ -13,6 +13,9 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL SMALL WEAPON SURFACE",
+		collisionvolumeoffsets = "0 -6 1",
+		collisionvolumescales = "34 18 43",
+		collisionvolumetype = "Box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Missile Truck",
@@ -54,7 +57,7 @@ return {
 		turnrate = 498,
 		unitname = "cormist",
 		customparams = {
-			buildpic = "CORMIST.png",
+			buildpic = "cormist.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

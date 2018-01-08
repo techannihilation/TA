@@ -14,6 +14,9 @@ return {
 		canreclamate = 1,
 		canstop = 1,
 		category = "ALL CONSTR LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		collisionvolumeoffsets = "0 -1 0",
+		collisionvolumescales = "22 33 25",
+		collisionvolumetype = "Box",
 		corpse = "1_dead",
 		defaultmissiontype = "Standby",
 		description = "Tech Level 2",
@@ -27,7 +30,7 @@ return {
 		idletime = 1800,
 		losemitheight = 28,
 		maneuverleashlength = 640,
-		mass = 2677,
+		mass = 1695,
 		maxdamage = 1550,
 		maxslope = 20,
 		maxvelocity = 1.1,
@@ -82,7 +85,7 @@ return {
 			[24] = "corboucher",
 		},
 		customparams = {
-			buildpic = "CORACK.png",
+			buildpic = "corack.dds",
 			faction = "core",
 		},
 		featuredefs = {

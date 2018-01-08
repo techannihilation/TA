@@ -14,6 +14,9 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL SMALL WEAPON SURFACE UNDERWATER",
+		collisionvolumeoffsets = "0 0 -2",
+		collisionvolumescales = "24 27 25",
+		collisionvolumetype = "Box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Radar Jammer Kbot",
@@ -24,7 +27,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 75,
 		maxdamage = 310,
@@ -51,7 +54,7 @@ return {
 		unitname = "corspec",
 		upright = true,
 		customparams = {
-			buildpic = "corspec.png",
+			buildpic = "corspec.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

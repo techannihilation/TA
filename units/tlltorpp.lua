@@ -25,6 +25,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 12,
 		maneuverleashlength = 1280,
 		mass = 533,
 		maxdamage = 2381,
@@ -47,6 +48,7 @@ return {
 		turnrate = 590,
 		unitname = "tlltorpp",
 		customparams = {
+			buildpic = "tlltorpp.dds",
 			faction = "TLL",
 		},
 		sfxtypes = {

@@ -31,9 +31,9 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		immunetoparalyzer = 1,
-		losemitheight = 84,
+		losemitheight = 63,
 		maneuverleashlength = 640,
-		mass = 45250,
+		mass = 64250,
 		maxdamage = 93000,
 		maxvelocity = 1.6,
 		minwaterdepth = 30,
@@ -45,7 +45,7 @@ return {
 		objectname = "tlldest",
 		pushresistant = true,
 		radardistance = 2000,
-		radaremitheight = 84,
+		radaremitheight = 63,
 		selfdestructas = "CRBLMSSL",
 		selfdestructcountdown = 10,
 		sightdistance = 750,
@@ -59,6 +59,7 @@ return {
 		unitname = "tlldest",
 		waterline = 6,
 		customparams = {
+			buildpic = "tlldest.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

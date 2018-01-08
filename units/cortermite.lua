@@ -13,6 +13,9 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE UNDERWATER",
+		collisionvolumeoffsets = "0 -14 0",
+		collisionvolumescales = "37 38 56",
+		collisionvolumetype = "Box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "All-Terrain Assault Spider",
@@ -22,7 +25,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 890,
 		maxdamage = 3000,
@@ -47,7 +50,7 @@ return {
 		turnrate = 1056,
 		unitname = "cortermite",
 		customparams = {
-			buildpic = "CORTERMITE.png",
+			buildpic = "cortermite.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

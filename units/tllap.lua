@@ -26,8 +26,8 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 43,
-		mass = 939,
+		losemitheight = 44,
+		mass = 940,
 		maxdamage = 1920,
 		maxslope = 10,
 		maxwaterdepth = 0,
@@ -38,7 +38,7 @@ return {
 		nochasecategory = "ALL",
 		objectname = "TLLAP",
 		radardistance = 550,
-		radaremitheight = 43,
+		radaremitheight = 44,
 		selfdestructas = "LARGE_BUILDING",
 		sightdistance = 200,
 		standingfireorder = 2,
@@ -57,6 +57,7 @@ return {
 			[7] = "tllcop1",
 		},
 		customparams = {
+			buildpic = "tllap.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

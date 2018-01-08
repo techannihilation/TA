@@ -27,7 +27,7 @@ return {
 		icontype = "sea",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 694,
 		maxdamage = 835,
@@ -54,7 +54,7 @@ return {
 		upright = true,
 		waterline = 30,
 		customparams = {
-			buildpic = "ARMSUB.png",
+			buildpic = "armsub.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

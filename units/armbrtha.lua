@@ -48,7 +48,7 @@ return {
 		usepiececollisionvolumes = 1,
 		yardmap = "oooooooooooooooo",
 		customparams = {
-			buildpic = "ARMBRTHA.png",
+			buildpic = "armbrtha.dds",
 			canareaattack = 1,
 			faction = "ARM",
 		},

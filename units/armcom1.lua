@@ -73,7 +73,7 @@ return {
 		standingmoveorder = 0,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.858,
+		turninplacespeedlimit = 0.792,
 		turnrate = 1148,
 		unitname = "armcom1",
 		upright = true,
@@ -109,7 +109,7 @@ return {
 			[28] = "armfrt",
 		},
 		customparams = {
-			buildpic = "ARMCOM.png",
+			buildpic = "armcom1.dds",
 			faction = "ARM",
 			iscommander = true,
 		},

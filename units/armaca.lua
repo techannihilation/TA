@@ -31,8 +31,9 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 7,
 		maneuverleashlength = 1280,
-		mass = 2901,
+		mass = 1710,
 		maxdamage = 2180,
 		maxslope = 10,
 		maxvelocity = 8.4,
@@ -45,6 +46,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMACA",
 		radardistance = 50,
+		radaremitheight = 7,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 383.5,
@@ -85,7 +87,7 @@ return {
 			[26] = "armplat",
 		},
 		customparams = {
-			buildpic = "ARMACA.png",
+			buildpic = "armaca.dds",
 			faction = "arm",
 		},
 		featuredefs = {

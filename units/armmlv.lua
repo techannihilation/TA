@@ -19,6 +19,9 @@ return {
 		canrestore = false,
 		canstop = 1,
 		category = "ALL CONSTR MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL TINY WEAPON SURFACE",
+		collisionvolumeoffsets = "0 -1 0",
+		collisionvolumescales = "15 14 28",
+		collisionvolumetype = "Box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Stealthy Minelayer/Minesweeper",
@@ -29,7 +32,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 57,
 		maxdamage = 155,
@@ -74,7 +77,7 @@ return {
 			[8] = "armmine7",
 		},
 		customparams = {
-			buildpic = "ARMMLV.png",
+			buildpic = "armmlv.dds",
 			faction = "arm",
 		},
 		featuredefs = {

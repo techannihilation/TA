@@ -24,7 +24,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 23,
 		maneuverleashlength = 640,
 		mass = 425,
 		maxdamage = 1050,
@@ -55,6 +55,7 @@ return {
 		turnrate = 220,
 		unitname = "armsonic",
 		customparams = {
+			buildpic = "armsonic.dds",
 			faction = "ARM",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},

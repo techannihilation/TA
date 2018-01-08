@@ -28,7 +28,8 @@ return {
 		idleautoheal = 1,
 		idletime = 2200,
 		initcloaked = false,
-		mass = 4250,
+		losemitheight = 23.5,
+		mass = 4060,
 		maxdamage = 9000,
 		maxslope = 30,
 		maxvelocity = 10,
@@ -44,11 +45,11 @@ return {
 		stealth = true,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 4.29,
+		turninplacespeedlimit = 6.6,
 		turnrate = 140,
 		unitname = "tllanhur",
 		customparams = {
-			buildpic = "tllanhur.png",
+			buildpic = "tllanhur.dds",
 			faction = "TLL",
 		},
 		sfxtypes = {

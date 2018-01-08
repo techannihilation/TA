@@ -14,6 +14,9 @@ return {
 		buildpic = "corsolar.dds",
 		buildtime = 1600,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		collisionvolumeoffsets = "0.0 -35.0 0.0",
+		collisionvolumescales = "77.0 78.0 77.0",
+		collisionvolumetype = "Ell",
 		corpse = "dead",
 		damagemodifier = 0.5,
 		description = "Produces Energy",
@@ -47,7 +50,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ccccc coooc coooc coooc ccccc",
 		customparams = {
-			buildpic = "CORSOLAR.png",
+			buildpic = "corsolar.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

@@ -27,6 +27,7 @@ return {
 		hoverattack = true,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 7,
 		maneuverleashlength = 80,
 		mass = 342,
 		maxdamage = 751,
@@ -49,6 +50,7 @@ return {
 		unitname = "armjade",
 		usesmoothmesh = 0,
 		customparams = {
+			buildpic = "armjade.dds",
 			faction = "ARM",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},

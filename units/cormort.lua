@@ -27,7 +27,7 @@ return {
 		idletime = 1800,
 		losemitheight = 29,
 		maneuverleashlength = 640,
-		mass = 405,
+		mass = 345,
 		maxdamage = 820,
 		maxslope = 14,
 		maxvelocity = 1.5,
@@ -47,12 +47,12 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.122,
+		turninplacespeedlimit = 0.99,
 		turnrate = 1099,
 		unitname = "cormort",
 		upright = true,
 		customparams = {
-			buildpic = "CORMORT.png",
+			buildpic = "cormort.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

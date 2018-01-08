@@ -38,7 +38,9 @@ return {
 		sightdistance = 240,
 		unitname = "tlljam",
 		usebuildinggrounddecal = true,
+		yardmap = "oooo",
 		customparams = {
+			buildpic = "tlljam.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

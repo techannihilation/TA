@@ -13,6 +13,9 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL ANTIFLAME MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		collisionvolumeoffsets = "0 -4 -5",
+		collisionvolumescales = "25 31 25",
+		collisionvolumetype = "CylY",
 		corpse = "heap",
 		defaultmissiontype = "Standby",
 		description = "Fast Assault Kbot",
@@ -22,7 +25,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 33,
+		losemitheight = 34,
 		maneuverleashlength = 640,
 		mass = 205,
 		maxdamage = 1000,
@@ -49,7 +52,7 @@ return {
 		unitname = "corpyro",
 		upright = true,
 		customparams = {
-			buildpic = "CORPYRO.png",
+			buildpic = "corpyro.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

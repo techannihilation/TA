@@ -12,6 +12,9 @@ return {
 		buildpic = "tllamex.dds",
 		buildtime = 14530,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		collisionvolumeoffsets = "0 -1 0",
+		collisionvolumescales = "79 37 79",
+		collisionvolumetype = "CylY",
 		corpse = "dead",
 		description = "Advanced Metal Extractor/ Storage",
 		energyuse = 30,
@@ -22,7 +25,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 44,
+		losemitheight = 45,
 		mass = 592.83331,
 		maxdamage = 3557,
 		maxslope = 10,
@@ -40,6 +43,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooooooooooooooooooooo",
 		customparams = {
+			buildpic = "tllamex.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

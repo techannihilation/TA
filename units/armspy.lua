@@ -16,6 +16,9 @@ return {
 		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE UNDERWATER",
 		cloakcost = 50,
 		cloakcostmoving = 100,
+		collisionvolumeoffsets = "0 0 0",
+		collisionvolumescales = "19 24 26",
+		collisionvolumetype = "Box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Radar-Invisible Spy Kbot",
@@ -24,7 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		immunetoparalyzer = 1,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 137,
 		maxdamage = 270,
@@ -53,7 +56,7 @@ return {
 		unitname = "armspy",
 		upright = true,
 		customparams = {
-			buildpic = "ARMSPY.png",
+			buildpic = "armspy.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

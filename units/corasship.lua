@@ -58,6 +58,7 @@ return {
 		unitname = "corasship",
 		waterline = 2,
 		customparams = {
+			buildpic = "corasship.dds",
 			faction = "CORE",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},

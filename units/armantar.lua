@@ -26,7 +26,7 @@ return {
 		footprintz = 5,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 50,
+		losemitheight = 51,
 		maneuverleashlength = 640,
 		mass = 16580,
 		maxdamage = 56000,
@@ -53,6 +53,7 @@ return {
 		turnrate = 280,
 		unitname = "armantar",
 		customparams = {
+			buildpic = "armantar.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

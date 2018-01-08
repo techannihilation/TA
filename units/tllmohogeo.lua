@@ -23,9 +23,9 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 61,
+		losemitheight = 62,
 		makesmetal = 35,
-		mass = 6200,
+		mass = 6810,
 		maxdamage = 5320,
 		maxslope = 10,
 		maxwaterdepth = 0,
@@ -42,6 +42,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "GGGGGGGGGGGGGGGG",
 		customparams = {
+			buildpic = "tllmohogeo.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

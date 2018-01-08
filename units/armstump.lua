@@ -13,6 +13,9 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		collisionvolumeoffsets = "0 0 0",
+		collisionvolumescales = "29 15 35",
+		collisionvolumetype = "Box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Medium Assault Tank",
@@ -24,7 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 258.33334,
 		maxdamage = 1550,
@@ -55,7 +58,7 @@ return {
 		turnrate = 484,
 		unitname = "armstump",
 		customparams = {
-			buildpic = "ARMSTUMP.png",
+			buildpic = "armstump.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

@@ -27,6 +27,7 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 8,
 		maneuverleashlength = 1280,
 		mass = 300,
 		maxdamage = 1220,
@@ -49,7 +50,7 @@ return {
 		turnrate = 792,
 		unitname = "armbrawl",
 		customparams = {
-			buildpic = "ARMBRAWL.png",
+			buildpic = "armbrawl.dds",
 			faction = "ARM",
 		},
 		sfxtypes = {

@@ -23,7 +23,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 285,
 		maxdamage = 1600,
@@ -54,6 +54,7 @@ return {
 		turnrate = 300,
 		unitname = "armdark",
 		customparams = {
+			buildpic = "armdark.dds",
 			faction = "ARM",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},

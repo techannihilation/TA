@@ -22,7 +22,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 42,
-		mass = 2920,
+		mass = 4750,
 		maxdamage = 13200,
 		maxslope = 14,
 		minwaterdepth = 5,
@@ -39,6 +39,7 @@ return {
 		unitname = "tlltrid",
 		yardmap = "wwww wwww wwww wwww",
 		customparams = {
+			buildpic = "tlltrid.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

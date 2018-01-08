@@ -30,7 +30,7 @@ return {
 		idleautoheal = 6,
 		idletime = 1800,
 		losemitheight = 32,
-		mass = 81067,
+		mass = 81640,
 		maxdamage = 40000,
 		maxslope = 10,
 		maxwaterdepth = 255,
@@ -52,6 +52,7 @@ return {
 			[1] = "cbuilderlvl3",
 		},
 		customparams = {
+			buildpic = "ccovertopscentre.dds",
 			faction = "CORE",
 			providetech = "Advanced T1 Unit Research Centre,Advanced T2 Unit Research Centre,Advanced T3 Unit Research Centre,Advanced T4 Unit Research Centre",
 		},

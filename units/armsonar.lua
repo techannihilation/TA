@@ -15,6 +15,9 @@ return {
 		buildtime = 912,
 		canattack = false,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER",
+		collisionvolumeoffsets = "0 0 0",
+		collisionvolumescales = "28 41 28",
+		collisionvolumetype = "CylY",
 		corpse = "dead",
 		description = "Locates Water Units",
 		explodeas = "SMALL_BUILDINGEX",
@@ -47,7 +50,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooo",
 		customparams = {
-			buildpic = "ARMSONAR.png",
+			buildpic = "armsonar.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

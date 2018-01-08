@@ -29,7 +29,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 33,
-		mass = 3767,
+		mass = 3565,
 		maxdamage = 3050,
 		maxslope = 10,
 		maxvelocity = 0,
@@ -51,8 +51,10 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooooooooooo",
 		customparams = {
-			buildpic = "ARMGATE.png",
+			buildpic = "armgate.dds",
 			faction = "ARM",
+			shield_power = 7500,
+			shield_radius = 400,
 		},
 		featuredefs = {
 			dead = {
@@ -134,8 +136,8 @@ return {
 				smartshield = true,
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				visibleshield = true,
-				visibleshieldhitframes = 70,
+				--visibleshield = true,
+				--visibleshieldhitframes = 70,
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {

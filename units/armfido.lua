@@ -14,6 +14,9 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		collisionvolumeoffsets = "0 0 1",
+		collisionvolumescales = "26 32 28",
+		collisionvolumetype = "Box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Mortar/Skirmish Kbot",
@@ -25,7 +28,7 @@ return {
 		idletime = 1800,
 		losemitheight = 27,
 		maneuverleashlength = 640,
-		mass = 270,
+		mass = 310,
 		maxdamage = 1225,
 		maxslope = 14,
 		maxvelocity = 2.3,
@@ -49,7 +52,7 @@ return {
 		unitname = "armfido",
 		upright = false,
 		customparams = {
-			buildpic = "ARMFIDO.png",
+			buildpic = "armfido.dds",
 			faction = "ARM",
 		},
 		featuredefs = {
