@@ -16,7 +16,7 @@ return {
 		category = "ALL HOVER MEDIUM MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Fast Assault Hovercraft",
+		description = "Very Fast Assault Hovercraft",
 		downloadable = 1,
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
@@ -50,6 +50,7 @@ return {
 		turnrate = 260,
 		unitname = "armvisit",
 		customparams = {
+			buildpic = "armvisit.dds",
 			faction = "ARM",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},
