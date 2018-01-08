@@ -36,7 +36,7 @@ return {
 		nochasecategory = "ALL",
 		objectname = "tllhydre",
 		radaremitheight = 136,
-		script = "tllhydre2.cob",
+		script = "tllhydre.cob",
 		seismicsignature = 0,
 		selfdestructas = "BANTHA_DEATH",
 		sightdistance = 300,
