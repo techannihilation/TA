@@ -75,8 +75,8 @@ return {
 			[9] = "tllgate1",
 			[10] = "tlllrpt1",
 			[11] = "tllhydre2",
-			[10] = "tlldmc",
-			[11] = "tlldb",
+			[12] = "tlldmc",
+			[13] = "tlldb",
 		},
 		customparams = {
 			buildpic = "TLLECV.png",
