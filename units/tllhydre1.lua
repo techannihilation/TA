@@ -58,7 +58,7 @@ return {
 				collisionvolumescales = "169.401870728 123.486465454 147.862945557",
 				collisionvolumetype = "Box",
 				damage = 8861,
-				description = "Rapid-Hydre Wreckage",
+				description = "Super-Hydre Wreckage",
 				energy = 0,
 				featuredead = "heap",
 				footprintx = 7,
@@ -70,7 +70,7 @@ return {
 			heap = {
 				blocking = false,
 				damage = 11076,
-				description = "Rapid-Hydre Debris",
+				description = "Super-Hydre Debris",
 				energy = 0,
 				footprintx = 7,
 				footprintz = 7,
