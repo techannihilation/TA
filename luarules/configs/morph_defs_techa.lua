@@ -890,6 +890,13 @@ local morphDefs = {
 		metal = 2700,
 		energy = 33000,
 	},
+	tllfnanotc2 = {
+		into = 'tllfnanotc3',
+		tech = 3,
+		time = 120,
+		metal = 3520,
+		energy = 99000,
+	},
 	armamph = {
 		into = 'marauder',
 		time = 60,
