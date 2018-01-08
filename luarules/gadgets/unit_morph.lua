@@ -166,6 +166,7 @@ local CMD_STOP = CMD.STOP
 local CMD_SELFD = CMD.SELFD
 
 local MAXunits = tonumber(Spring.GetModOptions().maxunits) or 500
+local morphcostmulti = tonumber(Spring.GetModOptions().mo_morphcostmulti) or 1
 
 local morphPenalty = 1.0
 local MAX_MORPH = 0 --// will increase dynamically
@@ -279,8 +280,8 @@ local function BuildMorphDef(udSrc, morphData)
     newData.into = udDst.id
     newData.time = morphData.time or floor(unitDef.buildTime*7/upgradingBuildSpeed)
     newData.increment = (1 / (30 * newData.time))
-    newData.metal  = morphData.metal  or DefCost('metalCost',  udSrc, udDst)
-    newData.energy = morphData.energy or DefCost('energyCost', udSrc, udDst)
+    newData.metal  = (morphData.metal  or DefCost('metalCost',  udSrc, udDst)) * morphcostmulti
+    newData.energy = (morphData.energy or DefCost('energyCost', udSrc, udDst)) * morphcostmulti
     newData.resTable = {
       m = (newData.increment * newData.metal),
       e = (newData.increment * newData.energy)

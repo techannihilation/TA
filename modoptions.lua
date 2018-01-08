@@ -84,6 +84,17 @@ local options={
 		section= "ta_modes",
     },
     {
+		key    = "mo_morphcostmulti",
+		name   = "Morph Cost Multiplier",
+		desc   = "Changes cost of morphs",
+		type   = "number",
+		def    = 1,
+		min    = 0.4,
+		max    = 3,
+		step   = 0.01,  -- quantization is aligned to the def value
+		section= "ta_modes",
+    },
+    {
 		key    = "mo_noowner",
 		name   = "FFA Mode",
 		desc   = "Units with no player control are instantly removed/destroyed\nAutoHost Usage :- mo_noowner",
