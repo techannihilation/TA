@@ -45,7 +45,7 @@ return {
 		standingfireorder = 2,
 		unitname = "tllobliterator1",
 		usebuildinggrounddecal = true,
-		yardmap = "oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo",
+		yardmap = "ooooooooo ooooooooo ooooooooo ooooooooo ooooooooo ooooooooo ooooooooo",
 		customparams = {
 			faction = "TLL",
 		},
