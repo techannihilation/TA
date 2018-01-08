@@ -421,6 +421,11 @@ local morphDefs = {
 		time = 30,
 		xp = 0.15,
 	},
+	tllhydre = {
+		into = 'tllhydre2',
+		time = 30,
+		xp = 0.15,
+	},
 	arm_immolator = {
 		into = 'armbrtha',
 		time = 30,
