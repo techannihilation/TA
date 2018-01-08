@@ -73,8 +73,10 @@ return {
 			[7] = "tlldevelop",
 			[8] = "tllantinuke1",
 			[9] = "tllgate1",
-			[10] = "tlldmc",
-			[11] = "tlldb",
+			[10] = "tlllrpt1",
+			[11] = "tllhydre2",
+			[12] = "tlldmc",
+			[13] = "tlldb",
 		},
 		customparams = {
 			buildpic = "TLLECV.png",

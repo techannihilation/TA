@@ -62,8 +62,9 @@ return {
 			[8] = "tllantinuke1",
 			[9] = "tllgate1",
 			[10] = "tlllrpt1",
-			[11] = "tlldmc",
-			[12] = "tlldb",
+			[11] = "tllhydre2",
+			[12] = "tlldmc",
+			[13] = "tlldb",
 		},
 		customparams = {
 			faction = "TLL",
