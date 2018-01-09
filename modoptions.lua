@@ -56,7 +56,7 @@ local options={
   {
     key    = "mo_heatmap",
     name   = "HeatMap",
-    desc   = "Attemps to prevents unit paths to cross",
+    desc   = "Attemps to prevents unit paths to cross\nAutoHost Usage :- mo_heatmap",
     type   = "bool",
     def    = true,
     section= "ta_exp",
@@ -104,7 +104,7 @@ local options={
   },
   {
     key    = "mo_morphcostmulti",
-    name   = "Morph Cost Multiplier",
+    name   = "Morph Cost Multiplier\nAutoHost Usage :- mo_morphcostmulti",
     desc   = "Changes cost of morphs",
     type   = "number",
     def    = 1,
