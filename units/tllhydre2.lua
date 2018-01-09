@@ -135,7 +135,7 @@ return {
 				nogap = 1,
 				noselfdamage = true,
 				range = 6400,
-				reloadtime = 0,5,
+				reloadtime = 0.5,
 				rgbcolor = "0.91 0.71 0",
 				separation = 0.45,
 				size = 2.6,
