@@ -196,14 +196,9 @@ Go()
 	Static_Var_2 = 1;
 	if( !Static_Var_3 )
 	{
-		turn luparm to z-axis <0.000000> now;
-		turn luparm to z-axis <-73.016484> speed <212.000000>;
-		turn lloarm to z-axis <0.000000> now;
-		turn lloarm to z-axis <90.016484> speed <260.000000>;
-		turn rloarm to z-axis <0.000000> now;
-		turn rloarm to z-axis <-90.016484> speed <260.000000>;
-		turn ruparm to z-axis <0.000000> now;
-		turn ruparm to z-axis <75.016484> speed <218.000000>;
+		turn luparm to x-axis <-45.000000> speed <125.000000>;
+		turn ruparm to x-axis <-45.000000> speed <125.000000>;
+		
 		sleep 450;
 		Static_Var_3 = 1;
 	}
@@ -214,15 +209,11 @@ Stop()
 	if( Static_Var_3 )
 	{
 		Static_Var_3 = 0;
-		turn luparm to z-axis <-73.478022> now;
-		turn luparm to z-axis <0.000000> speed <67.000000>;
-		turn lloarm to z-axis <90.016484> now;
-		turn lloarm to z-axis <0.000000> speed <82.000000>;
-		turn rloarm to z-axis <-90.016484> now;
-		turn rloarm to z-axis <0.000000> speed <82.000000>;
-		turn ruparm to z-axis <75.593407> now;
-		turn ruparm to z-axis <0.000000> speed <68.000000>;
-		sleep 1097;
+
+		turn luparm to x-axis <0.000000> speed <125.000000>;
+		turn ruparm to x-axis <0.000000> speed <125.000000>;
+
+		sleep 1000;
 	}
 	Static_Var_2 = 0;
 }
@@ -364,7 +355,10 @@ RestoreAfterDelay()
 {
 	sleep restore_delay;
 	set-signal-mask 0;
+	start-script RequestState(1);
+	
 	turn torso to y-axis <0.000000> speed <90.000000>;
+	
 }
 
 AimTertiary(heading, pitch)
