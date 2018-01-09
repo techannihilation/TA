@@ -2,8 +2,8 @@ return {
 	tllroaster = {
 		acceleration = 0.03,
 		brakerate = 0.27,
-		buildcostenergy = 18000,
-		buildcostmetal = 1445,
+		buildcostenergy = 11950,
+		buildcostmetal = 1575,
 		builder = false,
 		buildpic = "tllroaster.dds",
 		buildtime = 31200,
@@ -45,7 +45,7 @@ return {
 		turninplace = 0,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0.99,
-		turnrate = 200,
+		turnrate = 175,
 		unitname = "tllroaster",
 		customparams = {
 			buildpic = "tllroaster.dds",
@@ -187,6 +187,8 @@ return {
 		weapons = {
 			[1] = {
 				def = "TLL_OBLITERATOR",
+				maindir = "0 0 1",
+				maxangledif = 180,
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
