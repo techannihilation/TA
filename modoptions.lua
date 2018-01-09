@@ -104,8 +104,8 @@ local options={
   },
   {
     key    = "mo_morphcostmulti",
-    name   = "Morph Cost Multiplier\nAutoHost Usage :- mo_morphcostmulti",
-    desc   = "Changes cost of morphs",
+    name   = "Morph Cost Multiplier",
+    desc   = "Changes cost of morphs\nAutoHost Usage :- mo_morphcostmulti",
     type   = "number",
     def    = 1,
     min    = 0.4,
