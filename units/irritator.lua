@@ -62,7 +62,7 @@ return {
 		zbuffer = 1,
 		customparams = {
 			buildpic = "irritator.dds",
-			faction = "tll",
+			faction = "TLL",
 		},
 		featuredefs = {
 			irritator_dead = {

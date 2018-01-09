@@ -73,9 +73,9 @@ return {
 		},
 		customparams = {
 			buildpic = "ARMECA.png",
-			faction = "arm",
+			faction = "ARM",
 		},
-		
+
 		nanocolor = {
 			[1] = 0.144,
 			[2] = 0.544,

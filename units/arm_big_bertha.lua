@@ -46,7 +46,7 @@ return {
 		customparams = {
 			buildpic = "arm_big_bertha.dds",
 			canareaattack = 1,
-			faction = "Arm",
+			faction = "ARM",
 		},
 		featuredefs = {
 			armbrtha_dead = {

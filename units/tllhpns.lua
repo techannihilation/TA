@@ -52,7 +52,7 @@ return {
 		},
 		customparams = {
 			buildpic = "tllhpns.dds",
-			faction = "tll",
+			faction = "TLL",
 		},
 		featuredefs = {
 			dead = {

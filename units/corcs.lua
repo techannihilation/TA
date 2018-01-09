@@ -81,7 +81,7 @@ return {
 		},
 		customparams = {
 			buildpic = "corcs.dds",
-			faction = "core",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

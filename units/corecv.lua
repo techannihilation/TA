@@ -82,7 +82,7 @@ return {
 		},
 		customparams = {
 			buildpic = "CORECV.png",
-			faction = "core",
+			faction = "CORE",
 		},
 		featuredefs = {
 			["1_dead"] = {

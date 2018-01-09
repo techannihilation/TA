@@ -61,7 +61,7 @@ return {
 		zbuffer = 1,
 		customparams = {
 			buildpic = "monkeylord.dds",
-			faction = "Core",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

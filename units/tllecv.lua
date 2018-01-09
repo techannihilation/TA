@@ -75,12 +75,12 @@ return {
 			[10] = "tlllrpt1",
 			[11] = "tllhydre2",
 			[12] = "tllobliterator1",
-      			[13] = "tlldmc",
+      		[13] = "tlldmc",
 			[14] = "tlldb",
 		},
 		customparams = {
 			buildpic = "TLLECV.png",
-			faction = "tll",
+			faction = "TLL",
 		},
 		featuredefs = {
 			["1_dead"] = {
@@ -138,5 +138,4 @@ return {
 				[1] = "vcorsel",
 			},
 		},
-	},
-}
+	}
