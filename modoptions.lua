@@ -124,7 +124,7 @@ local options={
   {
     key    = "mo_preventcombomb",
     name   = "Prevent Combombs",
-    desc   = "Commanders survive DGuns and other commanders explosions\nAutoHost USage :- mo_preventcombomb",
+    desc   = "Commanders survive DGuns and other commanders explosions\nAutoHost Usage :- mo_preventcombomb",
     type   = "list",
     section= "ta_modes",
     def    = "off",
@@ -161,7 +161,7 @@ local options={
   {
     key    = "mo_comgate",
     name   = "Commander Teleport Effect",
-    desc   = "Commanders warp in at gamestart with a shiny teleport effect\nAutoHost USage :- mo_comgate",
+    desc   = "Commanders warp in at gamestart with a shiny teleport effect\nAutoHost Usage :- mo_comgate",
     type   = "bool",
     def    = false,
     section= "ta_options",
@@ -177,7 +177,7 @@ local options={
   {
     key    = "mo_ecorace",
     name   = "Announces eco leader",
-    desc   = "Announces player with greatest E/M income every 2 min to all players\nAutoHost USage :- mo_ecorace",
+    desc   = "Announces player with greatest E/M income every 2 min to all players\nAutoHost Usage :- mo_ecorace",
     type   = "bool",
     def    = false,
     section= "ta_options",
@@ -241,7 +241,7 @@ local options={
   {
     key    = "mo_terraforming",
     name   = "Terrain Terraform",
-    desc   = "Enable Terraforming map surface\nAutoHost USage :- mo_terraforming",
+    desc   = "Enable Terraforming map surface\nAutoHost Usage :- mo_terraforming",
     type   = "bool",
     def    = false,
     section= "ta_options",
