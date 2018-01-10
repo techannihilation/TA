@@ -169,6 +169,7 @@ function gadget:GameFrame(n)
 			if Spring.GetUnitIsStunned(unitID) then
 				RemoveUnit(unitID)
 				stunnedUnits[unitID] = Spring.GetUnitDefID(unitID)
+				Spring.SetUnitRulesParam(unitID, "nolups",1)
 			end
 			UpdateVisibility(unitID, unitData, fullview)
 		end
@@ -177,6 +178,7 @@ function gadget:GameFrame(n)
 			if not Spring.GetUnitIsStunned(unitID) then
 				AddUnit(unitID, unitDefID)
 				stunnedUnits[unitID] = nil
+				Spring.SetUnitRulesParam(unitID, "nolups",0)
 			end
 		end
 	end
