@@ -14,7 +14,12 @@ if (not gadgetHandler:IsSyncedCode()) then
   return
 end
 
-local COMMANDO = UnitDefNames["commando"].id
+local paraTroppers={
+ 		[UnitDefNames["commando"].id] = true,
+ 		[UnitDefNames["armmav"].id] = true
+	}
+
+
 
 local fC = 0
 local fallingUnits = {}
@@ -39,7 +44,7 @@ function gadget:GameFrame(n)
 end
 
 function gadget:UnitUnloaded(unitID, unitDefID, _, transID)
-    if unitDefID == COMMANDO or not transID then
+    if paraTropper[unitDefID] or not transID then
         return 
     end
     
