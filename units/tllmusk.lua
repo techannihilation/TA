@@ -67,7 +67,7 @@ return {
 			[10] = "tllantinuke",
 			[11] = "tllsilo",
 			[12] = "tlllrpt",
-			[13] = "tlllhydre",
+			[13] = "tllhydre",
 			[14] = "tllrlrpc",
 			[15] = "tlldmc",
 			[16] = "tlllab",

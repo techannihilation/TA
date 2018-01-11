@@ -15,8 +15,8 @@ if (not gadgetHandler:IsSyncedCode()) then
 end
 
 local paraTroppers={
- 		[UnitDefNames["commando"].id] = true,
- 		[UnitDefNames["armmav"].id] = true
+		[UnitDefNames["commando"].id] = true,
+		[UnitDefNames["armmav"].id] = true
 	}
 
 
