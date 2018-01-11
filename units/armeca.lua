@@ -70,7 +70,7 @@ return {
 			[13] = "armbrtha1",
 			[14] = "armvulc2",
 			[15] = "nebraska",
-			[16] = "armstratus",
+			--[16] = "armstratus",
 		},
 		customparams = {
 			buildpic = "ARMECA.png",
