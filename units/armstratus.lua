@@ -5,7 +5,7 @@ return {
 		bankscale = 1,
 		brakerate = 0.04,
 		buildcostenergy = 440000,
-		buildcostmetal = 13150,
+		buildcostmetal = 11150,
 		builder = false,
 		buildpic = "armstratus.dds",
 		buildtime = 310000,
