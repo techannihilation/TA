@@ -151,7 +151,7 @@ return {
 					subs = 5,
 				},
 			},
-						rave_missile = {
+			rave_missile = {
 				acceleration = 0.3,
 				areaofeffect = 48,
 				avoidfeature = false,
