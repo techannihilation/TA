@@ -7,8 +7,7 @@ piece  flare1a, flare1b, flare1c, flare2a, flare2b, flare2c, base, turret1,
        turret2, wake1, wake2, barrel1a, barrel1b, barrel1c, barrel2a, barrel2b,
        barrel2c, ground;
 
-static-var  bAiming, Static_Var_2, restore_delay, gun_1, gun_2,
-            Static_Var_6;
+static-var  Static_Var_1, Static_Var_2, restore_delay, Static_Var_6;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -79,10 +78,8 @@ Create()
 	hide flare2a;
 	hide flare2b;
 	hide flare2c;
-	bAiming = TRUE;
+	Static_Var_1 = 1;
 	Static_Var_2 = 1;
-	gun_1 = flare1a;
-	gun_2 = flare1a;
 	restore_delay = 3000;
 	start-script SmokeUnit();
 }
@@ -97,7 +94,6 @@ RestorePrimary()
 	sleep restore_delay;
 	turn turret1 to y-axis <0.000000> speed <55.000000>;
 	turn turret1 to x-axis <0.000000> speed <30.000000>;
-	bAiming = TRUE;
 }
 
 RestoreSecondary()
@@ -105,7 +101,6 @@ RestoreSecondary()
 	sleep restore_delay;
 	turn turret2 to y-axis <0.000000> speed <55.000000>;
 	turn turret2 to x-axis <0.000000> speed <30.000000>;
-	Static_Var_2 = 1;
 }
 
 waveSplash()
@@ -125,18 +120,13 @@ StartMoving()
 {
 	signal SIG_MOVE;
 	set-signal-mask SIG_MOVE;
-	var Func_Var_1;
 	start-script waveSplash();
 	while( TRUE )
 	{
 		emit-sfx 2 from wake1;
 		emit-sfx 2 from wake2;
-		Func_Var_1 = get CURRENT_SPEED * 100 / get MAX_SPEED;
-		if( Func_Var_1 < 50 )
-		{
-			Func_Var_1 = 50;
-		}
-		sleep 12000 / Func_Var_1;
+		
+		sleep 250;
 	}
 }
 
@@ -155,14 +145,6 @@ AimPrimary(heading, pitch)
 	turn turret1 to x-axis <0.000000> - pitch speed <30.000000>;
 	wait-for-turn turret1 around y-axis;
 	wait-for-turn turret1 around x-axis;
-	while( gun_1 )
-	{
-		wait-for-move barrel1a along z-axis;
-		wait-for-move barrel1b along z-axis;
-		wait-for-move barrel1c along z-axis;
-		bAiming = TRUE;
-		gun_1 = flare1a;
-	}
 	start-script RestorePrimary();
 	return (1);
 }
@@ -174,47 +156,42 @@ AimSecondary(heading, pitch)
 	turn turret2 to y-axis heading speed <55.000000>;
 	turn turret2 to x-axis <0.000000> - pitch speed <30.000000>;
 	wait-for-turn turret2 around y-axis;
-	wait-for-turn turret2 around x-axis;
-	while( gun_2 )
-	{
-		wait-for-move barrel2a along z-axis;
-		wait-for-move barrel2b along z-axis;
-		wait-for-move barrel2c along z-axis;
-		Static_Var_2 = 1;
-		gun_2 = flare1a;
-	}
+	wait-for-turn turret2 around x-axis;	
 	start-script RestoreSecondary();
 	return (1);
 }
 
 FirePrimary()
 {
-	if( bAiming == 1 )
+	if( Static_Var_1 == 1 )
 	{
 		show flare1a;
 		move barrel1a to z-axis [-2.500000] now;
 		sleep 150;
 		hide flare1a;
-		move barrel1a to z-axis [0.000000] speed [1.000000];
+		move barrel1a to z-axis [0.000000] speed [2.000000];
 	}
-	if( bAiming == 2 )
+	if( Static_Var_1 == 2 )
 	{
 		show flare1b;
 		move barrel1b to z-axis [-2.500000] now;
 		sleep 150;
 		hide flare1b;
-		move barrel1b to z-axis [0.000000] speed [1.000000];
+		move barrel1b to z-axis [0.000000] speed [2.000000];
 	}
-	if( bAiming == 3 )
+	if( Static_Var_1 == 3 )
 	{
-		gun_1 = flare1b;
 		show flare1c;
 		move barrel1c to z-axis [-2.500000] now;
 		sleep 150;
 		hide flare1c;
-		move barrel1c to z-axis [0.000000] speed [1.000000];
+		move barrel1c to z-axis [0.000000] speed [2.000000];
 	}
-	++bAiming;
+	++Static_Var_1 ;
+	if( Static_Var_1 == 4 )
+	{
+		Static_Var_1 = 1;
+	}
 }
 
 FireSecondary()
@@ -225,7 +202,7 @@ FireSecondary()
 		move barrel2a to z-axis [-2.500000] now;
 		sleep 150;
 		hide flare2a;
-		move barrel2a to z-axis [0.000000] speed [1.000000];
+		move barrel2a to z-axis [0.000000] speed [2.000000];
 	}
 	if( Static_Var_2 == 2 )
 	{
@@ -233,18 +210,21 @@ FireSecondary()
 		move barrel2b to z-axis [-2.500000] now;
 		sleep 150;
 		hide flare2b;
-		move barrel2b to z-axis [0.000000] speed [1.000000];
+		move barrel2b to z-axis [0.000000] speed [2.000000];
 	}
 	if( Static_Var_2 == 3 )
 	{
-		gun_2 = flare1b;
 		show flare2c;
 		move barrel2c to z-axis [-2.500000] now;
 		sleep 150;
 		hide flare2c;
-		move barrel2c to z-axis [0.000000] speed [1.000000];
+		move barrel2c to z-axis [0.000000] speed [2.000000];
 	}
 	++Static_Var_2;
+	if( Static_Var_2 == 4 )
+	{
+		Static_Var_2 = 1;
+	}
 }
 
 AimFromPrimary(piecenum)
@@ -254,15 +234,15 @@ AimFromPrimary(piecenum)
 
 QueryPrimary(piecenum)
 {
-	if( bAiming == 1 )
+	if( Static_Var_1 == 1 )
 	{
 		piecenum = flare1a;
 	}
-	if( bAiming == 2 )
+	if( Static_Var_1 == 2 )
 	{
 		piecenum = flare1b;
 	}
-	if( bAiming == 3 )
+	if( Static_Var_1 == 3 )
 	{
 		piecenum = flare1c;
 	}
