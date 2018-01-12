@@ -92,7 +92,7 @@ return {
 		},
 		customparams = {
 			buildpic = "corca.dds",
-			faction = "core",
+			faction = "CORE",
 		},
 		nanocolor = {
 			[1] = 0.044,

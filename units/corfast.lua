@@ -86,7 +86,7 @@ return {
 		},
 		customparams = {
 			buildpic = "corfast.dds",
-			faction = "core",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

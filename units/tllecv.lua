@@ -81,7 +81,7 @@ return {
 		},
 		customparams = {
 			buildpic = "TLLECV.png",
-			faction = "tll",
+			faction = "TLL",
 		},
 		featuredefs = {
 			["1_dead"] = {
@@ -139,5 +139,4 @@ return {
 				[1] = "vcorsel",
 			},
 		},
-	},
-}
+	}

@@ -105,7 +105,7 @@ return {
 		},
 		customparams = {
 			buildpic = "cormuskrat.dds",
-			faction = "core",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

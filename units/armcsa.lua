@@ -91,7 +91,7 @@ return {
 		},
 		customparams = {
 			buildpic = "armcsa.dds",
-			faction = "arm",
+			faction = "ARM",
 		},
 		nanocolor = {
 			[1] = 0.128,

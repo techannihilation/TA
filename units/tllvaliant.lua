@@ -70,7 +70,7 @@ return {
 		workertime = 400,
 		customparams = {
 			buildpic = "tllvaliant.dds",
-			faction = "tll",
+			faction = "TLL",
 		},
 		nanocolor = {
 			[1] = 0.56,
