@@ -14,7 +14,7 @@ if (not gadgetHandler:IsSyncedCode()) then
   return
 end
 
-local paraTroppers={
+local paratroopers = {
 		[UnitDefNames["commando"].id] = true,
 		[UnitDefNames["armmav"].id] = true
 	}
@@ -44,7 +44,7 @@ function gadget:GameFrame(n)
 end
 
 function gadget:UnitUnloaded(unitID, unitDefID, _, transID)
-    if paraTropper[unitDefID] or not transID then
+    if paraTroppers[unitDefID] or not transID then
         return 
     end
     
