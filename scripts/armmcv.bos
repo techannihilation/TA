@@ -5,20 +5,16 @@
 
 
 piece 	flare1a, flare1b, flare1c, flare1d, flare2a, flare2b, flare2c, flare2d, 
-		r1, r2, r3, r4, r5, r6, lflr1a, lflr1b, lflr2a, lflr2b,
-		base, body, sides, front_tracks, back_tracks, tracks_animated, tracks_reverse, tracks_move, 
-		fusion_bits, nuke_dome_1, nuke_dome_2, door1, door2, 
-		turret1, sleeves1, barrel1a, barrel1b, barrel1c, barrel1d, 
-		turret2, sleeves2, barrel2a, barrel2b, barrel2c, barrel2d, 
-		ltur1, lslv1, lbar1a, lbar1b, ltur2, lslv2, lbar2a, lbar2b, 
-		deck, boxes, w1, w2, w3, w4, blast;
+		r1, r2, r3, r4, r5, r6, base, body,	turret1, sleeves1, barrel1a, barrel1b, barrel1c, barrel1d, 
+		turret2, sleeves2, barrel2a, barrel2b, barrel2c, barrel2d, w1, w2, w3, w4, w5, w6, w7, w8, blast;
 		
 
-static-var is_moving, gun_1, gun_2, wait, aimback, brb, amphib, open, dontpop ;
+static-var is_moving, gun_1, gun_2, gun_missile, wait, aimback, brb, amphib, open, dontpop ;
 
 
 #define SIG_AIM 	2
 #define SIG_AIM2 	4
+#define SIG_AIM3 	8
 
 track_tracks()
 {
@@ -46,33 +42,27 @@ track_tracks()
 		dif = pre - now;
 		if(dif > <2>)
 		{
-			hide tracks_reverse;
-			hide tracks_move;
-			show tracks_animated;
-//			turning = 1;
+//			turning = 1;			
 		}
 		if(dif < <-2>)
 		{
-			show tracks_reverse;
-			hide tracks_move;
-			hide tracks_animated;
 //			turning = 1;
 		}
 		if(dif <= <2> && dif >= <-2>)
 		{
-			hide tracks_reverse;
-			show tracks_move;
-			hide tracks_animated;
 //			turning = 0;
 		}
 
-//		if( is_moving )
 		if( is_moving && amphib == 3)
 		{
 			emit-sfx 259 from w1;
 			emit-sfx 259 from w2;
 			emit-sfx 259 from w3;
 			emit-sfx 259 from w4;
+			emit-sfx 259 from w5;
+			emit-sfx 259 from w6;
+			emit-sfx 259 from w7;
+			emit-sfx 259 from w8;
 		}
 		if( is_moving && amphib == 2)
 		{
@@ -80,6 +70,10 @@ track_tracks()
 			emit-sfx 259 from w2;
 			emit-sfx 259 from w3;
 			emit-sfx 259 from w4;
+			emit-sfx 259 from w5;
+			emit-sfx 259 from w6;
+			emit-sfx 259 from w7;
+			emit-sfx 259 from w8;
 		}
 		if( is_moving && amphib == 1)
 		{
@@ -87,6 +81,10 @@ track_tracks()
 			emit-sfx 259 from w2;
 			emit-sfx 259 from w3;
 			emit-sfx 259 from w4;
+			emit-sfx 259 from w5;
+			emit-sfx 259 from w6;
+			emit-sfx 259 from w7;
+			emit-sfx 259 from w8;
 		}
 		ang = get XZ_ATAN(-419);
 		pos = get PIECE_XZ(base);
@@ -100,22 +98,6 @@ track_tracks()
 		if(pos != prepos)
 		{
 			is_moving = 1;
-		}
-		if(is_moving)
-		{
-			dont-cache tracks_animated;
-			dont-cache tracks_reverse;
-			dont-cache tracks_move;
-//			if(amphib == 0)
-//			{
-//				call-script pop_down();
-//			}	
-		}
-		if(!is_moving)
-		{
-			Cache tracks_animated;
-			cache tracks_reverse;
-			cache tracks_move;
 		}
 		sleep 200;
 		prepos = pos;
@@ -166,11 +148,6 @@ Create()
 	hide flare2c;
 	hide flare2d;
 	
-	hide lflr1a;
-	hide lflr1b;
-	hide lflr2a;
-	hide lflr2b;
-	
 	dont-cache flare1a;
 	dont-cache flare1b;
 	dont-cache flare1c;
@@ -179,14 +156,10 @@ Create()
 	dont-cache flare2b;
 	dont-cache flare2c;
 	dont-cache flare2d;
-	
-	dont-cache lflr1a;
-	dont-cache lflr1b;
-	dont-cache lflr2a;
-	dont-cache lflr2b;
-	
+		
 	gun_1 = 0;
 	gun_2 = 0;
+	gun_missile = 0;
 
 	set ACTIVATION to TRUE;
 		
@@ -194,9 +167,6 @@ Create()
 	{
 		sleep 100;
 	}
-	
-	hide tracks_reverse;
-	hide tracks_move;
 
 	start-script SmokeUnit();
 	start-script track_tracks();
@@ -369,6 +339,64 @@ QuerySecondary(piecenum)
 		piecenum = flare2c;
 	}
 }
+
+AimTertiary(heading, pitch)
+{
+	signal SIG_AIM3;
+	set-signal-mask SIG_AIM3;
+	
+	while (amphib == 3)
+	{ 
+		sleep 1000;
+	}	
+
+	return (1);
+}
+
+
+FireTertiary()
+{
+	++gun_missile;
+	if (gun_missile == 6)
+	{
+		gun_missile = 0;
+	}
+}
+
+AimFromTertiary(piecenum)
+{
+	piecenum = base;
+}
+
+
+QueryTertiary(piecenum)
+{
+	if (gun_missile == 1)
+	{
+		piecenum = r1;
+	}
+	if (gun_missile == 2)
+	{
+		piecenum = r2;
+	}
+	if (gun_missile == 3)
+	{
+		piecenum = r3;
+	}
+	if (gun_missile == 4)
+	{
+		piecenum = r4;
+	}
+	if (gun_missile == 5)
+	{
+		piecenum = r5;
+	}
+	if (gun_missile == 6)
+	{
+		piecenum = r6;
+	}
+}
+
 
 SweetSpot(piecenum)
 {
