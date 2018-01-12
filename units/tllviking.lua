@@ -46,7 +46,7 @@ return {
 		turninplacespeedlimit = 1.32,
 		turnrate = 300,
 		unitname = "tllviking",
-		waterline = 8,
+		waterline = 2,
 		customparams = {
 			buildpic = "tllviking.dds",
 			faction = "TLL",
