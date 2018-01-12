@@ -246,36 +246,40 @@ FirePrimary()
 	start-script RockZ(-5,Static_Var_7);
 	if( Static_Var_4 == 0 )
 	{
-		emit-sfx 1024 from flare1a;
+		show flare1a;
 		move barrel1a to z-axis [-1.] speed [500.];
 		sleep 150;
+		hide flare1a;
 		move barrel1a to z-axis [0.] speed [3.];
 		Static_Var_4 = 1;
 		return (0);
 	}
 	if( Static_Var_4 == 1 )
 	{
-		emit-sfx 1024 from flare1b;
+		show flare1b;
 		move barrel1b to z-axis [-1.] speed [500.];
 		sleep 150;
+		hide flare1b;
 		move barrel1b to z-axis [0.] speed [3.];
 		Static_Var_4 = 2;
 		return (0);
 	}
 	if( Static_Var_4 == 2 )
 	{
-		emit-sfx 1024 from flare1c;
+		show flare1c;
 		move barrel1c to z-axis [-1.] speed [500.];
 		sleep 150;
+		hide flare1c;
 		move barrel1c to z-axis [0.] speed [3.];
 		Static_Var_4 = 3;
 		return (0);
 	}
 	if( Static_Var_4 == 3 )
 	{
-		emit-sfx 1024 from flare1d;
+		show flare1d;
 		move barrel1d to z-axis [-1.] speed [500.];
 		sleep 150;
+		hide flare1d;
 		move barrel1d to z-axis [0.] speed [3.];
 		Static_Var_4 = 0;
 		return (0);
@@ -286,18 +290,20 @@ FireSecondary()
 {
 	if( Static_Var_2 == 0 )
 	{
-		emit-sfx 1025 from flare2a;
+		show flare2a;
 		move barrel2a to z-axis [1.] speed [500.];
 		sleep 150;
+		hide flare2a;
 		move barrel2a to z-axis [0.] speed [3.];
 		Static_Var_2 = 1;
 		return (0);
 	}
 	if( Static_Var_2 == 1 )
 	{
-		emit-sfx 1025 from flare2b;
+		show flare2b;
 		move barrel2b to z-axis [1.] speed [500.];
 		sleep 150;
+		hide flare2b;
 		move barrel2b to z-axis [0.] speed [3.];
 		Static_Var_2 = 0;
 		return (0);
@@ -308,18 +314,20 @@ FireWeapon3()
 {
 	if( Static_Var_6 == 0 )
 	{
-		emit-sfx 1025 from flare3a;
+		show flare3a;
 		move barrel3a to z-axis [1.] speed [500.];
 		sleep 150;
+		hide flare3a;
 		move barrel3a to z-axis [0.] speed [3.];
 		Static_Var_6 = 1;
 		return (0);
 	}
 	if( Static_Var_6 == 1 )
 	{
-		emit-sfx 1025 from flare3b;
+		show flare3b;
 		move barrel3b to z-axis [1.] speed [500.];
 		sleep 150;
+		hide flare3b;
 		move barrel3b to z-axis [0.] speed [3.];
 		Static_Var_6 = 0;
 		return (0);
