@@ -232,27 +232,23 @@ FirePrimary()
 	start-script RockZ(-13,bAiming);
 	if( Static_Var_1 == 1 )
 	{
-		show flareb1;
+		emit-sfx 1024 from flareb1;
 		move barrelb1 to z-axis [-2.500000] now;
 		sleep 150;
-		hide flareb1;
 		move barrelb1 to z-axis [0.000000] speed [2.000000];
 	}
 	else if( Static_Var_1 == 2 )
 	{
-		show flareb2;
+		emit-sfx 1024 from flareb2;
 		move barrelb2 to z-axis [-2.500000] now;
 		sleep 150;
-		hide flareb2;
 		move barrelb2 to z-axis [0.000000] speed [2.000000];
 	}
 	else if( Static_Var_1 == 3 )
 	{
-		gun_1 = barrelb1;
-		show flareb3;
+		emit-sfx 1024 from flareb3;
 		move barrelb3 to z-axis [-2.500000] now;
 		sleep 150;
-		hide flareb3;
 		move barrelb3 to z-axis [0.000000] speed [2.000000];
 	}
 	++Static_Var_1;
