@@ -41,6 +41,22 @@ end
 
 local Spring, ipairs, pairs = Spring, ipairs, pairs
 local SetUnitRulesParam, GetUnitRulesParam = Spring.SetUnitRulesParam, Spring.GetUnitRulesParam
+
+local COMMANDER = {
+  --Core
+  [UnitDefNames["corcom5"].id] = true,
+  [UnitDefNames["corcom6"].id] = true,
+  [UnitDefNames["corcom7"].id] = true,
+  --Arm 
+  [UnitDefNames["armcom5"].id] = true,
+  [UnitDefNames["armcom6"].id] = true,
+  [UnitDefNames["armcom7"].id] = true,
+  --The lost legacy
+  [UnitDefNames["tllcom5"].id] = true,
+  [UnitDefNames["tllcom6"].id] = true,
+  [UnitDefNames["tllcom7"].id] = true,
+}
+
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -171,7 +187,14 @@ function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOpt
         Spring.CallCOBScript(unitID, cmd.cob, 0)
       end
     else
-	  Spring.CallCOBScript(unitID, cmd.cob, 0)
+	    Spring.CallCOBScript(unitID, cmd.cob, 0)
+      if COMMANDER[unitDefID] then
+        if cmdParams[1] == 1 then
+         Spring.SetUnitRulesParam(unitID, "nolups",0)
+        else
+          Spring.SetUnitRulesParam(unitID, "nolups",1)
+        end
+      end
     end
     local cmdDescID = Spring.FindUnitCmdDesc(unitID, cmdID)
 	if (cmdDescID and cmd.params) then

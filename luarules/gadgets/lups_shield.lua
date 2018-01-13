@@ -20,7 +20,7 @@ if gadgetHandler:IsSyncedCode() then
 	local spSetUnitRulesParam = Spring.SetUnitRulesParam
 	local INLOS_ACCESS = {inlos = true}
 	local gameFrame = 0
-	
+
 	function gadget:GameFrame(n)
 		gameFrame = n
 	end
@@ -50,8 +50,7 @@ local myAllyTeamID = spGetMyAllyTeamID()
 
 local shieldUnits = IterableMap.New()
 local startup = true
-
-local stunnedUnits = {}
+local disabledShield = {}
 
 local function GetVisibleSearch(x, z, search)
 	if not x then
@@ -132,7 +131,7 @@ end
 
 function gadget:UnitDestroyed(unitID, unitDefID, unitTeam)
 	RemoveUnit(unitID)
-	stunnedUnits[unitID] = nil
+	disabledShield[unitID] = nil
 end
 
 function gadget:UnitFinished(unitID, unitDefID, unitTeam)
@@ -152,6 +151,36 @@ function gadget:PlayerChanged()
 	myAllyTeamID = spGetMyAllyTeamID()
 end
 
+function gadget:CommandNotify(id, params, options)
+	if id >= 34520 and id <= 34540 then
+		local selectedUnit = Spring.GetSelectedUnits()
+		if #selectedUnit == 1 then
+			local cmdunitID = selectedUnit[1]
+			local unitData = shieldUnits.Get(cmdunitID)
+			if unitData then
+				if params[1] == 0 then
+					RemoveUnit(cmdunitID)
+					disabledShield[cmdunitID] = true
+				end
+			end
+			if params[1] == 1 and disabledShield[cmdunitID] then
+				AddUnit(cmdunitID, Spring.GetUnitDefID(cmdunitID))
+			end
+		end
+    end
+end
+
+function gadget:UnitStunned(unitID, unitDefID, unitTeam, stunned)
+  local unitData = shieldUnits.Get(unitID)
+  if unitData then
+    if stunned then
+	  RemoveUnit(unitID)
+    else
+      AddUnit(unitID, unitDefID)
+    end
+  end
+end
+
 function gadget:GameFrame(n)
 	if startup then
 		local allUnits = Spring.GetAllUnits()
@@ -162,25 +191,10 @@ function gadget:GameFrame(n)
 		end
 		startup = false
 	end
-
 	if n%UPDATE_PERIOD == 0 then
 		local _, fullview = spGetSpectatingState()
 		for unitID, unitData in shieldUnits.Iterator() do
-			if Spring.GetUnitIsStunned(unitID) then
-				RemoveUnit(unitID)
-				stunnedUnits[unitID] = Spring.GetUnitDefID(unitID)
-
-			end
 			UpdateVisibility(unitID, unitData, fullview)
 		end
-
-		for unitID, unitDefID in pairs(stunnedUnits) do
-			if not Spring.GetUnitIsStunned(unitID) then
-				AddUnit(unitID, unitDefID)
-				stunnedUnits[unitID] = nil
-
-			end
-		end
 	end
-
 end
