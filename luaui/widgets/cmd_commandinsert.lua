@@ -13,6 +13,15 @@ function widget:GetInfo()
   }
 end
 
+function widget:Initialize()
+  local _, _, spec = Spring.GetPlayerInfo(Spring.GetMyPlayerID())
+  if spec then
+    widgetHandler:RemoveWidget()
+    return false
+  end
+end
+
+
 --[[
 -- use this for debugging:
 function table.val_to_str ( v )

@@ -51,7 +51,7 @@ return {
 		unitname = "tlltorpcop",
 		customparams = {
 			buildpic = "tlltorpcop.dds",
-			faction = "tll",
+			faction = "TLL",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

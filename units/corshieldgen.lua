@@ -50,7 +50,7 @@ return {
 		upright = true,
 		customparams = {
 			buildpic = "corshieldgen.dds",
-			faction = "Core",
+			faction = "CORE",
 			shield_power = 2600,
 			shield_radius = 250,
 		},

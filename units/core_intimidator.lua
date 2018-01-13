@@ -46,7 +46,7 @@ return {
 		customparams = {
 			buildpic = "core_intimidator.dds",
 			canareaattack = 1,
-			faction = "Core",
+			faction = "CORE",
 		},
 		featuredefs = {
 			corint_dead = {
