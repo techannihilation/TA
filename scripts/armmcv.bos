@@ -4,9 +4,9 @@
 #include "exptype.h"
 
 
-piece 	flare1a, flare1b, flare1c, flare1d, flare2a, flare2b, flare2c, flare2d, 
-		r1, r2, r3, r4, r5, r6, base, body,	turret1, sleeves1, barrel1a, barrel1b, barrel1c, barrel1d, 
-		turret2, sleeves2, barrel2a, barrel2b, barrel2c, barrel2d, w1, w2, w3, w4, w5, w6, w7, w8, blast;
+piece 	flare1a, flare1b, flare1c, flare2a, flare2b, flare2c, 
+		r1, r2, r3, r4, r5, r6, base, turret1, sleeves1, barrel1a, barrel1b, barrel1c,  
+		turret2, sleeves2, barrel2a, barrel2b, barrel2c, w1, w2, w3, w4, w5, w6, w7, w8, blast;
 		
 
 static-var is_moving, gun_1, gun_2, gun_missile, wait, aimback, brb, amphib, open, dontpop ;
@@ -142,20 +142,18 @@ Create()
 	hide flare1a;
 	hide flare1b;
 	hide flare1c;
-	hide flare1d;
 	hide flare2a;
 	hide flare2b;
 	hide flare2c;
-	hide flare2d;
+
 	
 	dont-cache flare1a;
 	dont-cache flare1b;
 	dont-cache flare1c;
-	dont-cache flare1d;
 	dont-cache flare2a;
 	dont-cache flare2b;
 	dont-cache flare2c;
-	dont-cache flare2d;
+
 		
 	gun_1 = 0;
 	gun_2 = 0;
@@ -409,11 +407,10 @@ Killed(severity, corpsetype)
 	hide flare1a;
 	hide flare1b;
 	hide flare1c;
-	hide flare1d;
 	hide flare2a;
 	hide flare2b;
 	hide flare2c;
-	hide flare2d;
+
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
