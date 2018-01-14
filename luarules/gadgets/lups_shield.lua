@@ -52,7 +52,7 @@ local shieldUnits = IterableMap.New()
 local startup = true
 local disabledShieldCobOff = {}
 local disabledShieldStun = {}
-local disabledShieldOnOff
+local disabledShieldOnOff = {}
 local function GetVisibleSearch(x, z, search)
 	if not x then
 		return false
