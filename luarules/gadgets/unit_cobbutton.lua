@@ -42,19 +42,32 @@ end
 local Spring, ipairs, pairs = Spring, ipairs, pairs
 local SetUnitRulesParam, GetUnitRulesParam = Spring.SetUnitRulesParam, Spring.GetUnitRulesParam
 
-local COMMANDER = {
+local ShieldUnits = {
   --Core
   [UnitDefNames["corcom5"].id] = true,
   [UnitDefNames["corcom6"].id] = true,
   [UnitDefNames["corcom7"].id] = true,
+  [UnitDefNames["corgate"].id] = true,
+  [UnitDefNames["corgate1"].id] = true,
+  [UnitDefNames["corgate2"].id] = true,
+  [UnitDefNames["corshieldgen"].id] = true,	
   --Arm 
   [UnitDefNames["armcom5"].id] = true,
   [UnitDefNames["armcom6"].id] = true,
   [UnitDefNames["armcom7"].id] = true,
+  [UnitDefNames["armgate"].id] = true,
+  [UnitDefNames["armgate1"].id] = true,
+  [UnitDefNames["armgate2"].id] = true,
+  [UnitDefNames["armpraet"].id] = true,
+  [UnitDefNames["exoarm"].id] = true,
   --The lost legacy
   [UnitDefNames["tllcom5"].id] = true,
   [UnitDefNames["tllcom6"].id] = true,
   [UnitDefNames["tllcom7"].id] = true,
+  [UnitDefNames["tllgate"].id] = true,
+  [UnitDefNames["tllgate1"].id] = true,
+  [UnitDefNames["tllgate2"].id] = true,
+  [UnitDefNames["irritator"].id] = true,
 }
 
 --------------------------------------------------------------------------------
@@ -188,7 +201,7 @@ function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOpt
       end
     else
 	    Spring.CallCOBScript(unitID, cmd.cob, 0)
-      if COMMANDER[unitDefID] then
+      if ShieldUnits[unitDefID] then
         if cmdParams[1] == 1 then
           Spring.SetUnitRulesParam(unitID, "nolups",0)
         else
