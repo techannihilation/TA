@@ -326,7 +326,7 @@ Create()
 	restore_delay = 3000;
 	Static_Var_6 = 1;
 	Static_Var_7 = 0;
-	Static_Var_8 = get MAX_SPEED;
+	Static_Var_8 = 100;
 	Static_Var_9 = 100;
 	start-script SmokeUnit();
 }
