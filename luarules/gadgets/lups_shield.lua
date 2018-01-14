@@ -50,8 +50,9 @@ local myAllyTeamID = spGetMyAllyTeamID()
 
 local shieldUnits = IterableMap.New()
 local startup = true
-local disabledShield = {}
-
+local disabledShieldCobOff = {}
+local disabledShieldStun = {}
+local disabledShieldOnOff
 local function GetVisibleSearch(x, z, search)
 	if not x then
 		return false
@@ -131,7 +132,7 @@ end
 
 function gadget:UnitDestroyed(unitID, unitDefID, unitTeam)
 	RemoveUnit(unitID)
-	disabledShield[unitID] = nil
+	disabledShieldCobOff[unitID] = nil
 end
 
 function gadget:UnitFinished(unitID, unitDefID, unitTeam)
@@ -152,7 +153,7 @@ function gadget:PlayerChanged()
 end
 
 function gadget:CommandNotify(id, params, options)
-	if id >= 34520 and id <= 34540 then
+	if (id >= 34520 and id <= 34540) or id==CMD.ONOFF then
 		local selectedUnit = Spring.GetSelectedUnits()
 		if #selectedUnit == 1 then
 			local cmdunitID = selectedUnit[1]
@@ -160,11 +161,23 @@ function gadget:CommandNotify(id, params, options)
 			if unitData then
 				if params[1] == 0 then
 					RemoveUnit(cmdunitID)
-					disabledShield[cmdunitID] = true
+					if id == CMD.ONOFF then
+						disabledShieldOnOff[cmdunitID] = true
+					else
+						disabledShieldCobOff[cmdunitID] = true
+					end
 				end
 			end
-			if params[1] == 1 and disabledShield[cmdunitID] then
-				AddUnit(cmdunitID, Spring.GetUnitDefID(cmdunitID))
+			if params[1] == 1 and id == CMD.ONOFF then
+				if disabledShieldOnOff[cmdunitID] then 
+					AddUnit(cmdunitID, Spring.GetUnitDefID(cmdunitID))
+					disabledShieldOnOff[cmdunitID] = nil
+				end
+			elseif params[1] == 1 and (id >= 34520 and id <= 34540) then
+				if disabledShieldCobOff[cmdunitID] then 
+					AddUnit(cmdunitID, Spring.GetUnitDefID(cmdunitID))
+					disabledShieldCobOff[cmdunitID] = nil
+				end
 			end
 		end
     end
@@ -172,13 +185,14 @@ end
 
 function gadget:UnitStunned(unitID, unitDefID, unitTeam, stunned)
   local unitData = shieldUnits.Get(unitID)
-  if unitData then
-    if stunned then
+  if stunned then
+    if unitData then
 	  RemoveUnit(unitID)
-    else
-      AddUnit(unitID, unitDefID)
+	  disabledShieldStun[unitID] = true
     end
-  end
+  elseif (not stunned) and disabledShieldStun[unitID] then
+	AddUnit(unitID, unitDefID)
+ end
 end
 
 function gadget:GameFrame(n)
