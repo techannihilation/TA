@@ -63,6 +63,8 @@ return {
 		customparams = {
 			buildpic = "irritator.dds",
 			faction = "TLL",
+			shield_power = 2600,
+			shield_radius = 230,
 		},
 		featuredefs = {
 			irritator_dead = {

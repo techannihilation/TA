@@ -52,7 +52,7 @@ local shieldUnits = IterableMap.New()
 local startup = true
 local disabledShieldCobOff = {}
 local disabledShieldStun = {}
-local disabledShieldOnOff = {}
+
 local function GetVisibleSearch(x, z, search)
 	if not x then
 		return false
@@ -133,6 +133,7 @@ end
 function gadget:UnitDestroyed(unitID, unitDefID, unitTeam)
 	RemoveUnit(unitID)
 	disabledShieldCobOff[unitID] = nil
+	disabledShieldStun[unitID] = nil
 end
 
 function gadget:UnitFinished(unitID, unitDefID, unitTeam)
@@ -153,7 +154,7 @@ function gadget:PlayerChanged()
 end
 
 function gadget:CommandNotify(id, params, options)
-	if (id >= 34520 and id <= 34540) or id==CMD.ONOFF then
+	if (id >= 34520 and id <= 34540) then
 		local selectedUnit = Spring.GetSelectedUnits()
 		if #selectedUnit == 1 then
 			local cmdunitID = selectedUnit[1]
@@ -161,19 +162,10 @@ function gadget:CommandNotify(id, params, options)
 			if unitData then
 				if params[1] == 0 then
 					RemoveUnit(cmdunitID)
-					if id == CMD.ONOFF then
-						disabledShieldOnOff[cmdunitID] = true
-					else
-						disabledShieldCobOff[cmdunitID] = true
-					end
+					disabledShieldCobOff[cmdunitID] = true
 				end
 			end
-			if params[1] == 1 and id == CMD.ONOFF then
-				if disabledShieldOnOff[cmdunitID] then 
-					AddUnit(cmdunitID, Spring.GetUnitDefID(cmdunitID))
-					disabledShieldOnOff[cmdunitID] = nil
-				end
-			elseif params[1] == 1 and (id >= 34520 and id <= 34540) then
+			if params[1] == 1 and (id >= 34520 and id <= 34540) then
 				if disabledShieldCobOff[cmdunitID] then 
 					AddUnit(cmdunitID, Spring.GetUnitDefID(cmdunitID))
 					disabledShieldCobOff[cmdunitID] = nil

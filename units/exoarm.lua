@@ -59,6 +59,8 @@ return {
 			buildpic = "exoarm.dds",
 			faction = "ARM",
 			requiretech = "Advanced T4 Unit Research Centre",
+			shield_power = 9500,
+			shield_radius = 350,
 		},
 		featuredefs = {
 			heap = {
@@ -235,7 +237,7 @@ return {
 				smartshield = true,
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				visibleshield = true,
+				--visibleshield = true,
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {
