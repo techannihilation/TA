@@ -34,7 +34,6 @@ return {
 		nochasecategory = "ALL",
 		norestrict = 1,
 		objectname = "TLLGATE1",
-		onoffable = true,
 		radardistance = 0,
 		radaremitheight = 25,
 		script = "tllgate.cob",
