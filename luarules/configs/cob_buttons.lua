@@ -44,6 +44,51 @@ return {
 		params = {'1', 'Shield Off', 'Shield On'},
 	},
   },
+  armgate = {
+	{
+		name = "shield_ag",
+		cob = "Shield",
+		tooltip = "Toggle shield activation",
+		type = CMDTYPE.ICON_MODE,
+		params = {'1', 'Shield Off', 'Shield On'},
+	},
+  },
+  armgate1 = {
+	{
+		name = "shield_ag1",
+		cob = "Shield",
+		tooltip = "Toggle shield activation",
+		type = CMDTYPE.ICON_MODE,
+		params = {'1', 'Shield Off', 'Shield On'},
+	},
+  },
+  armgate2 = {
+	{
+		name = "shield_ag2",
+		cob = "Shield",
+		tooltip = "Toggle shield activation",
+		type = CMDTYPE.ICON_MODE,
+		params = {'1', 'Shield Off', 'Shield On'},
+	},
+  },
+  armpraet = {
+	{
+		name = "shield_praet",
+		cob = "Shield",
+		tooltip = "Toggle shield activation",
+		type = CMDTYPE.ICON_MODE,
+		params = {'1', 'Shield Off', 'Shield On'},
+	},
+  },
+  exoarm = {
+	{
+		name = "shield_exo",
+		cob = "Shield",
+		tooltip = "Toggle shield activation",
+		type = CMDTYPE.ICON_MODE,
+		params = {'1', 'Shield Off', 'Shield On'},
+	},
+  },
   corcom5 = {
 	{
 		name = "shield_cc5",
@@ -71,6 +116,42 @@ return {
 		params = {'1', 'Shield Off', 'Shield On'},
 	},
   },
+  corgate = {
+	{
+		name = "shield_cg",
+		cob = "Shield",
+		tooltip = "Toggle shield activation",
+		type = CMDTYPE.ICON_MODE,
+		params = {'1', 'Shield Off', 'Shield On'},
+	},
+  },
+  corgate1 = {
+	{
+		name = "shield_cg1",
+		cob = "Shield",
+		tooltip = "Toggle shield activation",
+		type = CMDTYPE.ICON_MODE,
+		params = {'1', 'Shield Off', 'Shield On'},
+	},
+  },
+  corgate2 = {
+	{
+		name = "shield_cg2",
+		cob = "Shield",
+		tooltip = "Toggle shield activation",
+		type = CMDTYPE.ICON_MODE,
+		params = {'1', 'Shield Off', 'Shield On'},
+	},
+  },
+  corshieldgen = {
+	{
+		name = "shield_gen",
+		cob = "Shield",
+		tooltip = "Toggle shield activation",
+		type = CMDTYPE.ICON_MODE,
+		params = {'1', 'Shield Off', 'Shield On'},
+	},
+  },
   tllcom5 = {
 	{
 		name = "shield_tc5",
@@ -92,6 +173,42 @@ return {
   tllcom7 = {
 	{
 		name = "shield_tc7",
+		cob = "Shield",
+		tooltip = "Toggle shield activation",
+		type = CMDTYPE.ICON_MODE,
+		params = {'1', 'Shield Off', 'Shield On'},
+	},
+  },
+  tllgate = {
+	{
+		name = "shield_tg",
+		cob = "Shield",
+		tooltip = "Toggle shield activation",
+		type = CMDTYPE.ICON_MODE,
+		params = {'1', 'Shield Off', 'Shield On'},
+	},
+  },
+  tllgate1 = {
+	{
+		name = "shield_tg1",
+		cob = "Shield",
+		tooltip = "Toggle shield activation",
+		type = CMDTYPE.ICON_MODE,
+		params = {'1', 'Shield Off', 'Shield On'},
+	},
+  },
+  tllgate2 = {
+	{
+		name = "shield_tg2",
+		cob = "Shield",
+		tooltip = "Toggle shield activation",
+		type = CMDTYPE.ICON_MODE,
+		params = {'1', 'Shield Off', 'Shield On'},
+	},
+  },
+  irritator = {
+	{
+		name = "shield_irr",
 		cob = "Shield",
 		tooltip = "Toggle shield activation",
 		type = CMDTYPE.ICON_MODE,

@@ -42,19 +42,32 @@ end
 local Spring, ipairs, pairs = Spring, ipairs, pairs
 local SetUnitRulesParam, GetUnitRulesParam = Spring.SetUnitRulesParam, Spring.GetUnitRulesParam
 
-local COMMANDER = {
+local ShieldUnits = {
   --Core
   [UnitDefNames["corcom5"].id] = true,
   [UnitDefNames["corcom6"].id] = true,
   [UnitDefNames["corcom7"].id] = true,
+  [UnitDefNames["corgate"].id] = true,
+  [UnitDefNames["corgate1"].id] = true,
+  [UnitDefNames["corgate2"].id] = true,
+  [UnitDefNames["corshieldgen"].id] = true, 
   --Arm 
   [UnitDefNames["armcom5"].id] = true,
   [UnitDefNames["armcom6"].id] = true,
   [UnitDefNames["armcom7"].id] = true,
+  [UnitDefNames["armgate"].id] = true,
+  [UnitDefNames["armgate1"].id] = true,
+  [UnitDefNames["armgate2"].id] = true,
+  [UnitDefNames["armpraet"].id] = true,
+  [UnitDefNames["exoarm"].id] = true,
   --The lost legacy
   [UnitDefNames["tllcom5"].id] = true,
   [UnitDefNames["tllcom6"].id] = true,
   [UnitDefNames["tllcom7"].id] = true,
+  [UnitDefNames["tllgate"].id] = true,
+  [UnitDefNames["tllgate1"].id] = true,
+  [UnitDefNames["tllgate2"].id] = true,
+  [UnitDefNames["irritator"].id] = true,
 }
 
 --------------------------------------------------------------------------------
@@ -81,7 +94,7 @@ for unit, cmds in pairs(buttonDefs) do
       type    = cmd.type or CMDTYPE.ICON,
       tooltip = cmd.tooltip,
       params  = cmd.params,
-	  }
+    }
   end
 end
 
@@ -161,7 +174,7 @@ function gadget:GameFrame(n)
             unitButtons[buttonIndex] = nil
           end
           Spring.EditUnitCmdDesc(unitID, cmdDescID, cmdArray)
-		end
+    end
       end
       if (not next(unitButtons)) then
         reloads[unitID] = nil
@@ -180,15 +193,15 @@ end
 function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOptions)
   if (buttons[cmdID] and buttonDefs[UnitDefs[unitDefID].name] and buttons[cmdID].name==buttonDefs[UnitDefs[unitDefID].name][1].name) then
     local cmd = buttons[cmdID]
-	if (cmd.reload) then
+  if (cmd.reload) then
       reloads[unitID] = reloads[unitID] or {}
       if (not reloads[unitID][cmd.buttonIndex]) then
         reloads[unitID][cmd.buttonIndex] = {Spring.GetGameSeconds()}
         Spring.CallCOBScript(unitID, cmd.cob, 0)
       end
     else
-	    Spring.CallCOBScript(unitID, cmd.cob, 0)
-      if COMMANDER[unitDefID] then
+      Spring.CallCOBScript(unitID, cmd.cob, 0)
+      if ShieldUnits[unitDefID] then
         if cmdParams[1] == 1 then
           Spring.SetUnitRulesParam(unitID, "nolups",0)
         else
@@ -197,10 +210,10 @@ function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOpt
       end
     end
     local cmdDescID = Spring.FindUnitCmdDesc(unitID, cmdID)
-	if (cmdDescID and cmd.params) then
-	  cmd.params[1] = cmdParams[1]
-	  Spring.EditUnitCmdDesc(unitID, cmdDescID, {params=cmd.params})
-	end
+  if (cmdDescID and cmd.params) then
+    cmd.params[1] = cmdParams[1]
+    Spring.EditUnitCmdDesc(unitID, cmdDescID, {params=cmd.params})
+  end
     return false  -- command was used
   end
   return true  -- command was not used

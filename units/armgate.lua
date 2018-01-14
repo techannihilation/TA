@@ -39,7 +39,6 @@ return {
 		nochasecategory = "ALL",
 		norestrict = 1,
 		objectname = "ARMGATE",
-		onoffable = true,
 		radaremitheight = 33,
 		seismicsignature = 0,
 		selfdestructas = "MINE_NUKE",
