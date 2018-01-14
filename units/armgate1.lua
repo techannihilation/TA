@@ -36,7 +36,6 @@ return {
 		nochasecategory = "ALL",
 		norestrict = 1,
 		objectname = "ARMGATE1",
-		onoffable = true,
 		radaremitheight = 41,
 		script = "armgate.cob",
 		seismicsignature = 0,
