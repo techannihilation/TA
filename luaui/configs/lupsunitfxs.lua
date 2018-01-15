@@ -102,7 +102,7 @@ effectUnitDefs = {
   },
   exoarm = {
     {class='Bursts',options=exoarmBursts},
-    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=300, precision=0, strength   = 0.001, repeatEffect=true}},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=350, precision=0, strength   = 0.001, repeatEffect=true}},
   },
   armgate2 = {
     {class='Bursts',options=shieldBursts340},
