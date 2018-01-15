@@ -6,7 +6,7 @@
 piece  pelvis, lleg, lfoot, rleg, rfoot, rthigh, lthigh, lcover,
        rcover, lnose, rnose, sphere, ground;
 
-static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging, bMoving, Static_Var_5,
+static-var  shieldonoff, statechg_DesiredState, statechg_StateChanging, bMoving, Static_Var_5,
             Static_Var_6, Static_Var_7, Static_Var_8;
 
 
@@ -369,46 +369,9 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-ShieldOn()
+Shield()
 {
-	Static_Var_1 = 1;
-}
-
-ShieldOff()
-{
-	Static_Var_1 = 0;
-}
-
-InitState()
-{
-	statechg_DesiredState = TRUE;
-	statechg_StateChanging = FALSE;
-}
-
-RequestState(requestedstate, currentstate)
-{
-	if( statechg_StateChanging )
-	{
-		statechg_DesiredState = requestedstate;
-		return (0);
-	}
-	statechg_StateChanging = TRUE;
-	currentstate = statechg_DesiredState;
-	statechg_DesiredState = requestedstate;
-	while( statechg_DesiredState != currentstate )
-	{
-		if( statechg_DesiredState == 0 )
-		{
-			call-script ShieldOn();
-			currentstate = 0;
-		}
-		if( statechg_DesiredState == 1 )
-		{
-			call-script ShieldOff();
-			currentstate = 1;
-		}
-	}
-	statechg_StateChanging = FALSE;
+	shieldonoff = !shieldonoff;
 }
 
 Create()
@@ -420,7 +383,7 @@ Create()
 	hide sphere;
 	hide pelvis;
 	start-script SmokeUnit();
-	call-script InitState();
+	shieldonoff = 1;
 }
 
 StartMoving()
@@ -433,20 +396,9 @@ StopMoving()
 	bMoving = FALSE;
 }
 
-Activate()
-{
-	start-script RequestState(0);
-}
-
-Deactivate()
-{
-	start-script RequestState(1);
-}
-
 AimPrimary(heading, pitch)
 {
-	sleep 100;
-	return (Static_Var_1);
+	return (shieldonoff);
 }
 
 FirePrimary()
