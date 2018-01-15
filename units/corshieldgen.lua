@@ -36,7 +36,6 @@ return {
 		name = "Oust",
 		noautofire = false,
 		objectname = "corshieldgen.3do",
-		onoffable = true,
 		radaremitheight = 59,
 		seismicsignature = 3,
 		selfdestructas = "CRAWL_BLAST",
