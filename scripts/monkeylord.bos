@@ -8,7 +8,7 @@ piece  base, cephalotorax, poupe, berceau, canon, bouche, pattes, ecraseur_epaul
        load_arm, unload_shoulder, unload_arm, goal_shoulder, goal_arm, smoke1, smoke2, smoke3,
        smoke4, smoke5;
 
-static-var  bMoving, bAiming, Static_Var_3, restore_delay, Static_Var_5,
+static-var  shieldonoff, bMoving, bAiming, Static_Var_3, restore_delay, Static_Var_5,
             Static_Var_6, Static_Var_7;
 
 // Signal definitions
@@ -277,6 +277,11 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
+Shield()
+{
+	shieldonoff = !shieldonoff;
+}
+
 Create()
 {
 	bMoving = FALSE;
@@ -293,6 +298,7 @@ Create()
 	start-script SmokeUnit();
 	sleep 1;
 	Static_Var_6 = 1;
+	shieldonoff = 1;
 }
 
 SetMaxReloadTime(Func_Var_1)
@@ -419,13 +425,7 @@ AimFromTertiary(piecenum)
 
 AimTertiary(heading, pitch)
 {
-	signal SIG_AIM_3;
-	set-signal-mask SIG_AIM_3;
-	while( TRUE )
-	{
-		sleep 2000;
-	}
-	return (1);
+	return (shieldonoff);
 }
 
 QueryTertiary(piecenum)
@@ -433,9 +433,8 @@ QueryTertiary(piecenum)
 	piecenum = cephalotorax;
 }
 
-FireTertiary(Func_Var_1)
+FireTertiary()
 {
-	return (Static_Var_5);
 }
 
 SweetSpot(piecenum)
