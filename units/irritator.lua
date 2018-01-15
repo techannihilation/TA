@@ -39,7 +39,6 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "irritator",
-		onoffable = true,
 		pushresistant = true,
 		radardistance = 0,
 		radaremitheight = 130,
