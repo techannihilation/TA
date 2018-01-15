@@ -7,7 +7,7 @@ piece  base, pelvis, body, rarm, larm, rflare, lflare, llowarm,
        rlowarm, lthigh, lleg, lfoot, rthigh, rleg, rfoot, head,
        flare3, rrocket, lrocket, lflarec, rflarec;
 
-static-var  bMoving, bAiming, Static_Var_3, gun_1,isgunone, gun_3, restore_delay;
+static-var  shield_onoff ,bMoving, bAiming, Static_Var_3, gun_1,isgunone, gun_3, restore_delay;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -301,6 +301,11 @@ MotionControl(moving, aiming, justmoved)
 	}
 }
 
+Shield()
+{
+	shield_onoff = !shield_onoff;
+}
+
 Create()
 {
 	hide rflare;
@@ -315,6 +320,7 @@ Create()
 	restore_delay = 3000;
 	start-script MotionControl();
 	start-script SmokeUnit();
+	shield_onoff = 1;
 }
 
 SetMaxReloadTime(Func_Var_1)
@@ -529,7 +535,7 @@ QueryWeapon4(piecenum)
 
 AimWeapon5(heading, pitch)
 {
-	return (1);
+	return (shield_onoff);
 }
 
 FireWeapon5()

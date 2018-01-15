@@ -152,6 +152,15 @@ return {
 		params = {'1', 'Shield Off', 'Shield On'},
 	},
   },
+  monkeylord = {
+	{
+		name = "shield_monkey",
+		cob = "Shield",
+		tooltip = "Toggle shield activation",
+		type = CMDTYPE.ICON_MODE,
+		params = {'1', 'Shield Off', 'Shield On'},
+	},
+  },
   tllcom5 = {
 	{
 		name = "shield_tc5",
