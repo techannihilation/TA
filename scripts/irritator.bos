@@ -9,7 +9,7 @@ piece  RayTurret, raygun, RayMount, RayFocus, LMFront, RMFront, LMBack, RMBack,
        LMBFlare, RMBFlare, MGTurret, MGBarrels, MGFlare, LArm, RArm, Spark_emit,
        Emit1, Emit2, Emit3, Emit4;
 
-static-var  bMoving, bAiming, Static_Var_3, gun_3, Static_Var_5;
+static-var  shieldonoff ,bMoving, bAiming, Static_Var_3, gun_3, Static_Var_5;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -181,6 +181,11 @@ MotionControl()
 	}
 }
 
+Shield()
+{
+	shieldonoff = !shieldonoff;
+}
+
 Create()
 {
 	hide Flare;
@@ -193,6 +198,7 @@ Create()
 	Static_Var_5 = 1;
 	start-script SmokeUnit();
 	start-script Sparks();
+	shieldonoff = 1;
 }
 
 RestoreAfterDelay()
@@ -417,14 +423,7 @@ AimFromWeapon4(piecenum)
 
 AimWeapon4(heading, pitch)
 {
-	if( get ACTIVATION )
-	{
-		return (1);
-	}
-	if( !get ACTIVATION )
-	{
-		return (0);
-	}
+	return(shieldonoff);
 }
 
 QueryWeapon4(piecenum)
