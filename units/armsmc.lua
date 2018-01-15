@@ -73,6 +73,8 @@ return {
 			buildpic = "armsmc.dds",
 			faction = "ARM",
 			providetech = "T3 Factory",
+			shield_power = 2600,
+  			shield_radius = 230,
 		},
 		featuredefs = {
 			dead = {
