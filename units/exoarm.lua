@@ -61,6 +61,8 @@ return {
 			requiretech = "Advanced T4 Unit Research Centre",
 			shield_power = 9500,
 			shield_radius = 350,
+			shield_emit_height = 68.2,
+			shield_color = "{{0.1, 0.45, 1, 0.2}, {1, 0.2, 0.2, 0.2}}",
 		},
 		featuredefs = {
 			heap = {
@@ -232,7 +234,7 @@ return {
 				shieldpower = 9500,
 				shieldpowerregen = 300,
 				shieldpowerregenenergy = 9300,
-				shieldradius = 300,
+				shieldradius = 350,
 				shieldrepulser = true,
 				smartshield = true,
 				soundhitwet = "sizzle",

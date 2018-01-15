@@ -79,6 +79,23 @@ corshieldgenShieldSphere = {
   repeatEffect=true
 }
 
+exoarmBursts = {
+  layer      = -35,
+  life       = math.huge,
+  piece      = "pelvis",
+  rotSpeed   = 0.50,
+  rotSpread  = 0,
+  arc        = 50,
+  arcSpread  = 0,
+  size       = 350,
+  sizeSpread = 50,
+  texture    = "bitmaps/GPL/Lups/shieldbursts5.png",
+  colormap   = {{0.1, 0.55, 1, 0.2}, {1, 0.2, 0.2, 0.2}},
+  directional= true,
+  repeatEffect = true,
+  count      = 18,
+}
+
 shieldBursts100 = {
   layer      = -35,
   life       = math.huge,
