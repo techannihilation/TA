@@ -87,13 +87,13 @@ exoarmBursts = {
   rotSpread  = 0,
   arc        = 50,
   arcSpread  = 0,
-  size       = 350,
+  size       = 300,
   sizeSpread = 50,
   texture    = "bitmaps/GPL/Lups/shieldbursts5.png",
   colormap   = {{0.1, 0.55, 1, 0.2}, {1, 0.2, 0.2, 0.2}},
   directional= true,
   repeatEffect = true,
-  count      = 19,
+  count      = 17,
 }
 
 shieldBursts100 = {
