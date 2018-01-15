@@ -63,7 +63,7 @@ return {
 			buildpic = "armpraet.dds",
 			faction = "ARM",
 			shield_power = 2600,
- +			shield_radius = 230,
+ 			shield_radius = 230,
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
