@@ -93,7 +93,7 @@ exoarmBursts = {
   colormap   = {{0.1, 0.55, 1, 0.2}, {1, 0.2, 0.2, 0.2}},
   directional= true,
   repeatEffect = true,
-  count      = 17,
+  count      = 18,
 }
 
 shieldBursts100 = {
