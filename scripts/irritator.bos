@@ -7,7 +7,7 @@ piece  RayTurret, raygun, RayMount, RayFocus, LMFront, RMFront, LMBack, RMBack,
        RayFire, Flare, Body, rlleg, rfoot, llleg, lfoot, lupleg,
        rupleg, base, LMF, RMF, LMB, RMB, LMFFlare, RMFFlare,
        LMBFlare, RMBFlare, MGTurret, MGBarrels, MGFlare, LArm, RArm, Spark_emit,
-       Emit1, Emit2, Emit3, Emit4;
+       Emit1, Emit2, Emit3, Emit4,shield_pos;
 
 static-var  shieldonoff ,bMoving, bAiming, Static_Var_3, gun_3, Static_Var_5;
 
@@ -418,7 +418,7 @@ AimTertiary(heading, pitch)
 
 AimFromWeapon4(piecenum)
 {
-	piecenum = Body;
+	piecenum = shield_pos;
 }
 
 AimWeapon4(heading, pitch)
@@ -428,7 +428,7 @@ AimWeapon4(heading, pitch)
 
 QueryWeapon4(piecenum)
 {
-	piecenum = Body;
+	piecenum = shield_pos;
 }
 
 FireWeapon4(Func_Var_1)
