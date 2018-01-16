@@ -58,7 +58,6 @@ return {
 			shield_radius = 180,
 			shield_emit_height = 73.4,
 			shield_color1 = "{{0.45, 0.2, 1, 0.2}, {1, 0.2, 0.2, 0.2}}",
-			shield_color2 = "{{0.2, 0.9, 1, 0.2}, {1, 0.9, 0.2, 0.0}}", --its my experimental effect :)
 		},
 		featuredefs = {
 			dead = {
