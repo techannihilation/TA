@@ -53,9 +53,6 @@ local startup = true
 local disabledShieldCobOff = {}
 local disabledShieldStun = {}
 
-local buttonDefs = VFS.Include"LuaRules/Configs/cob_buttons.lua"
-local cobCmdIds = #buttonDefs
-
 local ShieldUnits = {
   --Core
   [UnitDefNames["corcom5"].id] = true,
@@ -188,7 +185,7 @@ function gadget:PlayerChanged()
 end
 
 function gadget:CommandNotify(id, params, options)
-	if (id >= 34520 and id <= (34520+cobCmdIds)) then
+	if (id >= 34520 and id <= (34520+28)) then
 		local selectedUnit = Spring.GetSelectedUnits()
 		if #selectedUnit == 1 then
 			local cmdunitID = selectedUnit[1]
