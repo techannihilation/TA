@@ -5,7 +5,7 @@
 
 piece  base, head, torso, hips, mpack, rgunflare, lgunflare, hflare,
        rmispoint, lmispoint, rleg, rthigh, lthigh, lleg, ltoes, lheel,
-       rtoes, rheel, luparm, ruparm, rarm, larm;
+       rtoes, rheel, luparm, ruparm, rarm, larm, shield_pos;
 
 static-var  shieldonoff ,gun_1, gun_3, bMoving, bAiming, Static_Var_5,
             restore_delay;
@@ -880,7 +880,7 @@ QueryTertiary(piecenum)
 
 AimFromWeapon4(piecenum)
 {
-	piecenum = torso;
+	piecenum = shield_pos;
 }
 
 AimWeapon4(heading, pitch)
@@ -890,7 +890,7 @@ AimWeapon4(heading, pitch)
 
 QueryWeapon4(piecenum)
 {
-	piecenum = torso;
+	piecenum = shield_pos;
 }
 
 FireWeapon4(Func_Var_1)
