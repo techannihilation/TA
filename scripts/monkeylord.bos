@@ -6,7 +6,7 @@
 piece  base, cephalotorax, poupe, berceau, canon, bouche, pattes, ecraseur_epaule,
        ecraseur_bras, leg1, leg2, leg3, leg4, leg5, leg6, load_shoulder,
        load_arm, unload_shoulder, unload_arm, goal_shoulder, goal_arm, smoke1, smoke2, smoke3,
-       smoke4, smoke5;
+       smoke4, smoke5, shield_pos;
 
 static-var  shieldonoff, bMoving, bAiming, Static_Var_3, restore_delay, Static_Var_5,
             Static_Var_6, Static_Var_7;
@@ -420,7 +420,7 @@ FireSecondary(Func_Var_1)
 
 AimFromTertiary(piecenum)
 {
-	piecenum = cephalotorax;
+	piecenum = shield_pos;
 }
 
 AimTertiary(heading, pitch)
@@ -430,7 +430,7 @@ AimTertiary(heading, pitch)
 
 QueryTertiary(piecenum)
 {
-	piecenum = cephalotorax;
+	piecenum = shield_pos;
 }
 
 FireTertiary()
