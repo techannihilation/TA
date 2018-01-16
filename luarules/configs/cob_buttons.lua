@@ -170,6 +170,15 @@ return {
 		params = {'1', 'Shield Off', 'Shield On'},
 	},
   },
+  corsfus = {
+	{
+		name = "shield_corsfus",
+		cob = "Shield",
+		tooltip = "Toggle shield activation",
+		type = CMDTYPE.ICON_MODE,
+		params = {'1', 'Shield Off', 'Shield On'},
+	},
+  },
   tllcom5 = {
 	{
 		name = "shield_tc5",
