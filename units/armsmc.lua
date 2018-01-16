@@ -75,6 +75,7 @@ return {
 			providetech = "T3 Factory",
 			shield_power = 2600,
   			shield_radius = 230,
+			shield_emit_height = 38,
 		},
 		featuredefs = {
 			dead = {

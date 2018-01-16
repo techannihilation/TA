@@ -64,6 +64,7 @@ return {
 			faction = "TLL",
 			shield_power = 2600,
 			shield_radius = 230,
+			shield_emit_height = 83,
 		},
 		featuredefs = {
 			irritator_dead = {
