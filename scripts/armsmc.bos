@@ -4,7 +4,7 @@
 #include "exptype.h"
 
 piece  base, hips, body, jammer, rshoulder, rarm, rlathe, lshoulder,
-       larm, llathe, rthigh, rfoot, lthigh, lfoot, lspray, rspray;
+       larm, llathe, rthigh, rfoot, lthigh, lfoot, lspray, rspray, shield_pos;
 
 static-var  bMoving, Shield_Toggle, Static_Var_2, Static_Var_3;
 
@@ -179,12 +179,12 @@ Create()
 
 AimFromPrimary(piecenum)
 {
-	piecenum = hips;
+	piecenum = shield_pos;
 }
 
 QueryPrimary(piecenum)
 {
-	piecenum = hips;
+	piecenum = shield_pos;
 }
 
 AimPrimary(heading, pitch)
