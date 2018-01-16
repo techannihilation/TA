@@ -104,6 +104,22 @@ effectUnitDefs = {
     {class='Bursts',options=exoarmBursts},
     {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=350, precision=0, strength   = 0.001, repeatEffect=true}},
   },
+ armsmc = {
+    {class='Bursts',options=armsmcBursts},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=230, precision=0, strength   = 0.001, repeatEffect=true}},
+  },
+  armpraet = {
+    {class='Bursts',options=armpraetBursts},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=230, precision=0, strength   = 0.001, repeatEffect=true}},
+  },
+  monkeylord = {
+    {class='Bursts',options=monkeylordBursts},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=230, precision=0, strength   = 0.001, repeatEffect=true}},
+  },
+   irritator = {
+    {class='Bursts',options=irritatorBursts},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=230, precision=0, strength   = 0.001, repeatEffect=true}},
+  },
   armgate2 = {
     {class='Bursts',options=shieldBursts340},
     {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=340, precision=0, strength   = 0.001, repeatEffect=true}},
