@@ -5,7 +5,7 @@
 
 piece  base, pelvis, body, rarm, larm, rflare, lflare, llowarm,
        rlowarm, lthigh, lleg, lfoot, rthigh, rleg, rfoot, head,
-       flare3, rrocket, lrocket, lflarec, rflarec;
+       flare3, rrocket, lrocket, lflarec, rflarec, shield_pos;
 
 static-var  shield_onoff ,bMoving, bAiming, Static_Var_3, gun_1,isgunone, gun_3, restore_delay;
 
@@ -544,12 +544,12 @@ FireWeapon5()
 
 AimFromWeapon5(piecenum)
 {
-	piecenum = pelvis;
+	piecenum = shield_pos;
 }
 
 QueryWeapon5(piecenum)
 {
-	piecenum = pelvis;
+	piecenum = shield_pos;
 }
 
 Killed(severity, corpsetype)

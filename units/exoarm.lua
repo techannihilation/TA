@@ -61,7 +61,7 @@ return {
 			requiretech = "Advanced T4 Unit Research Centre",
 			shield_power = 9500,
 			shield_radius = 350,
-			shield_emit_height = 68.2,
+			shield_emit_height = 68,
 			shield_color1 = "{{0.1, 0.45, 1, 0.2}, {1, 0.2, 0.2, 0.2}}",
 		},
 		featuredefs = {
