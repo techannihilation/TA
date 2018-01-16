@@ -78,7 +78,22 @@ corshieldgenShieldSphere = {
   colormap2 = { {0.89, 0.99, 0, 0.20},{0.99, 0.89, 0, 0.20},{0.89, 0.99, 0, 0.20},{0.99, 0.89, 0, 0.20} },
   repeatEffect=true
 }
-
+corsfusBursts = {
+  layer      = -35,
+  life       = math.huge,
+  piece      = "globetop",
+  rotSpeed   = 0.50,
+  rotSpread  = 0,
+  arc        = 50,
+  arcSpread  = 0,
+  size       = 180,
+  sizeSpread = 50,
+  texture    = "bitmaps/GPL/Lups/shieldbursts5.png",
+  colormap   = {{0.45, 0.2, 1, 0.2}, {1, 0.2, 0.2, 0.2}},
+  directional= true,
+  repeatEffect = true,
+  count      = 7,
+}
 exoarmBursts = {
   layer      = -35,
   life       = math.huge,
