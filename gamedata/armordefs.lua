@@ -12,7 +12,8 @@ return {
         "tlladvfight",
         "tllfight",
         "tllseaf",
-        "tllshu"
+        "tllshu",
+        "armstratus"
     },
     bombers = {
         "armblz",
