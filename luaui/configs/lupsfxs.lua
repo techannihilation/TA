@@ -96,6 +96,74 @@ exoarmBursts = {
   count      = 18,
 }
 
+armsmcBursts = {
+  layer      = -35,
+  life       = math.huge,
+  piece      = "hips",
+  rotSpeed   = 0.50,
+  rotSpread  = 0,
+  arc        = 50,
+  arcSpread  = 0,
+  size       = 230,
+  sizeSpread = 50,
+  texture    = "bitmaps/GPL/Lups/shieldbursts5.png",
+  colormap   = {{0.2, 1, 0.2, 0.2}, {1, 0.2, 0.2, 0.2}},
+  directional= true,
+  repeatEffect = true,
+  count      = 8,
+}
+
+armpraetBursts = {
+  layer      = -35,
+  life       = math.huge,
+  piece      = "torso",
+  rotSpeed   = 0.50,
+  rotSpread  = 0,
+  arc        = 50,
+  arcSpread  = 0,
+  size       = 230,
+  sizeSpread = 50,
+  texture    = "bitmaps/GPL/Lups/shieldbursts5.png",
+  colormap   = {{0.2, 1, 0.2, 0.2}, {1, 0.2, 0.2, 0.2}},
+  directional= true,
+  repeatEffect = true,
+  count      = 8,
+}
+
+monkeylordBursts = {
+  layer      = -35,
+  life       = math.huge,
+  piece      = "cephalotorax",
+  rotSpeed   = 0.50,
+  rotSpread  = 0,
+  arc        = 50,
+  arcSpread  = 0,
+  size       = 230,
+  sizeSpread = 50,
+  texture    = "bitmaps/GPL/Lups/shieldbursts5.png",
+  colormap   = {{0.2, 1, 0.2, 0.2}, {1, 0.2, 0.2, 0.2}},
+  directional= true,
+  repeatEffect = true,
+  count      = 8,
+}
+
+irritatorBursts = {
+  layer      = -35,
+  life       = math.huge,
+  piece      = "shield_pos",
+  rotSpeed   = 0.50,
+  rotSpread  = 0,
+  arc        = 50,
+  arcSpread  = 0,
+  size       = 230,
+  sizeSpread = 50,
+  texture    = "bitmaps/GPL/Lups/shieldbursts5.png",
+  colormap   = {{0.2, 1, 0.2, 0.2}, {1, 0.2, 0.2, 0.2}},
+  directional= true,
+  repeatEffect = true,
+  count      = 8,
+}
+
 shieldBursts100 = {
   layer      = -35,
   life       = math.huge,
