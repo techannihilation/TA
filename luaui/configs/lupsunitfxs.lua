@@ -100,6 +100,10 @@ effectUnitDefs = {
     {class='Bursts',options=shieldBursts250},
     {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=250, precision=0, strength   = 0.001, repeatEffect=true}},
   },
+   corsfus = {
+    {class='Bursts',options=corsfusBursts},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=180, precision=0, strength   = 0.001, repeatEffect=true}},
+  },
   exoarm = {
     {class='Bursts',options=exoarmBursts},
     {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=350, precision=0, strength   = 0.001, repeatEffect=true}},
