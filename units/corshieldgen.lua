@@ -52,7 +52,8 @@ return {
 			faction = "CORE",
 			shield_power = 2600,
 			shield_radius = 250,
-			shield_emit_height = 28,
+			shield_emit_height = 54.8,
+			shield_emit_offset = -9.37,
 		},
 		featuredefs = {
 			dead = {

@@ -4,7 +4,7 @@
 #include "exptype.h"
 
 piece  pelvis, lleg, lfoot, rleg, rfoot, rthigh, lthigh, lcover,
-       rcover, lnose, rnose, sphere, ground;
+       rcover, lnose, rnose, sphere, ground, shield_pos;
 
 static-var  shieldonoff, statechg_DesiredState, statechg_StateChanging, bMoving, Static_Var_5,
             Static_Var_6, Static_Var_7, Static_Var_8;
@@ -409,17 +409,17 @@ FirePrimary()
 
 QueryPrimary(piecenum)
 {
-	piecenum = sphere;
+	piecenum = shield_pos;
 }
 
 AimFromPrimary(piecenum)
 {
-	piecenum = sphere;
+	piecenum = shield_pos;
 }
 
 SweetSpot(piecenum)
 {
-	piecenum = sphere;
+	piecenum = shield_pos;
 }
 
 Killed(severity, corpsetype)
