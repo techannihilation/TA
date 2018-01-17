@@ -108,6 +108,7 @@ unitList["TA"] = {
 [UnitDefNames["armanni1"].id] = 	{["en"]="Adv. Tachyon", ["de"]="", ["fr"]="" },
 [UnitDefNames["cordoom1"].id] = 	{["en"]="Adv. Doomsday", ["de"]="", ["fr"]="" },
 [UnitDefNames["tllobliterator"].id] = 	{["en"]="Obliterator", ["de"]="", ["fr"]="" },
+[UnitDefNames["tllobliterator1"].id] = 	{["en"]="Adv. Obliterator", ["de"]="", ["fr"]="" },
 [UnitDefNames["tllrlrpc"].id] = 	{["en"]="The Barret", ["de"]="", ["fr"]="" },
 
 --Anti Experimental Cannon 
@@ -129,6 +130,10 @@ unitList["TA"] = {
 [UnitDefNames["armvulc1"].id] = 	{["en"]="T3 Vulcan", ["de"]="", ["fr"]="" },
 [UnitDefNames["corbuzz1"].id] = 	{["en"]="T3 Buzzsaw", ["de"]="", ["fr"]="" },
 [UnitDefNames["tlllrpt"].id] = 	{["en"]="LR Plasma", ["de"]="", ["fr"]="" },
+[UnitDefNames["tllhydre"].id] = 	{["en"]="Hydre", ["de"]="", ["fr"]="" },
+[UnitDefNames["tllhydre1"].id] = 	{["en"]="T3 Hydre", ["de"]="", ["fr"]="" },
+[UnitDefNames["tllhydre2"].id] = 	{["en"]="Rapid-Hydre", ["de"]="", ["fr"]="" },
+
 
 --TSAR
 [UnitDefNames["armtabi"].id] = 	{["en"]="TSAR Cannon", ["de"]="", ["fr"]="" },

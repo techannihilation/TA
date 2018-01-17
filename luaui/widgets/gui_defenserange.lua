@@ -157,6 +157,7 @@ modConfig["TA"]["unitList"] =
 								tllhltns = { weapons = { 1 } },
 								tlllrpt = { weapons = { 1 } },
 								tllobliterator = { weapons = { 1 } },
+								tllobliterator1 = { weapons = { 1 } },
 								tllplasma = { weapons = { 1 } },
 								tllpulaser = { weapons = { 1 } },
 								tllrlrpc = { weapons = { 1 } },
@@ -173,6 +174,9 @@ modConfig["TA"]["unitList"] =
 								tllkrak = { weapons = { 1 } },
 								tlljuno = { weapons = { 1 } },
 								tllpcan = { weapons = { 1 } },
+								tllhydre = { weapons = { 1 } },
+								tllhydre1 = { weapons = { 1 } },
+								tllhydre2 = { weapons = { 1 } },
 
 									--Anti-Air--
 								tlllmt = { weapons = { 2 } },
