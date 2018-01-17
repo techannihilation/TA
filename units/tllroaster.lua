@@ -188,7 +188,7 @@ return {
 			[1] = {
 				def = "TLL_OBLITERATOR",
 				maindir = "0 0 1",
-				maxangledif = 180,
+				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
