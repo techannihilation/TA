@@ -1,17 +1,27 @@
-﻿3.05.0 -> 3.06.0
- 2018-01-02
+﻿3.05.0 -> 3.06
+ 2018-01-16
 
- Visual Improvemnts
- - Add lups based shields
- 
+ Visual Improvements:
+ - Add lups based shields, this will greatly improve performance where many shields are in place.
+
+ Balance:
+ - Revert Flaks balance from 3.04.0.
+
+ Improvements:
+ - Add Naval series Flaks.
+ - Add T4 Experimental Air Fortress.
+ - Add T3 Air Cons.
+ - Add "armvisit" (T1.5 Hover)
+ - Add TLL Hydre T3 and T4 (lol Cannon like arm/core).
+
 3.04.0 -> 3.05.0
  2017-12-09
- 
+
  Bugs Fix Release:
  - Fix Juno lag and damage vs scout
  - Fix ArmorDef for HLT TLL, tllswordfish, tlldest
  - Fix armeak script
- 
+
  Balance:
  - Increase Juno Time to 8sec
  - TLLGrim (TLL T3 Sniper) : Decrease cost and firerate by 20%. Decrease range 1550 -> 1400
@@ -26,7 +36,7 @@
  - Armjugg (T3.5 fast arm kbot) : Decrease range for primary weapon (750 -> 600). Increase velocity 2.5 -> 2.6. HP 42K -> 41K
  - tllleatherback (Turtle Anti Sub) : Fix Sonar and decrease HP. Increase  buildtime.
  - Coredauber (t2.5 core bot) : increase hp 2100 -> 2815, reduce speed 1.5 -> 1.4
- 
+
  Improvments:
  - Add Super Furie T4.5 (remplace Bantha T4 into LAb. The T4 bantha could be by get with T3 Bantha morph).
  - Add Helepolis to morph tree (Sumo -> Sumo1 -> Helepolis -> corjugg)
@@ -35,8 +45,8 @@
  - Corak1 morph into corpyro (instead krimi T2.5)
  - armpw1 morph into armfast (instead helldriver T2.5)
  - Increase size model for Tllcolossus (1.3)
- 
- 
+
+
 3.03.3 -> 3.04.0
 2017-11-17
 
@@ -118,7 +128,7 @@ Bugs Fix Release:
 2.49.0 -> 3.01.0
 2017-09-05
 
-   
+
 Improvments:
 - Update to latest engine 104
 
@@ -128,7 +138,7 @@ Improvments:
 
 - First Big change for this release, is fixing units targeting underwater units and well as ground units.
 - We also separated the Tech level in adding the T4.5 and T5 tech. For all faction, the T4.5 could be unlocked with T4    RC. The T5 Tech is the AeroShip Lab T5 (strongers units in the game). For TLL, the RC is the tlldevelop that can produce the T4 cons Ship.
- 
+
  - Finally, all T3 Eco structures can be build easily by T3 constructor (From T3 LAB) or Supreme Commander.ew t4.5 Units for all factions
 
 - This Release we have also focused on some well needed love for tll so we bring you 10+ new units for TLL
@@ -140,22 +150,22 @@ New units for TLL:
 - T3 Cons Ship TLL -- Replace's T3 vehicle con from 3 lab
 - T3 Mex
 - T4 Nano
-- Energy Cannon -- Area damage -- T1.5 tech 
+- Energy Cannon -- Area damage -- T1.5 tech
 - Plamsa Gatling Gun -- T1.5 tech
-- Tll Dwarf Shield 
+- Tll Dwarf Shield
 - Tll gunship -- T1.5 tech
 - T4 Cons Ship TLL -- New tech tree : T1>T2 cons >T3 Lab Kbot> T3 Cons > T4 RC > T4 Cons > T5 Lab or apocalytic weapons
 
 
 New units for ARM:
 - Blastwing -- Air EMP Kamakazi unit
-- Energy Cannon -- Area damage -- T1.5 tech 
-- New T4 AA Kbot 
+- Energy Cannon -- Area damage -- T1.5 tech
+- New T4 AA Kbot
 - T4 Lab
 
 New units for CORE:
 - Surveyor -- Air Strong Laser Gunship
-- New T4 AA Kbot 
+- New T4 AA Kbot
 - T4 Lab
 
 Add morph tree for TLL:
@@ -229,10 +239,10 @@ Balance:
 - Small Shield balance reducion of buildtime
 - Rework tllllt stats now inline with arm/core llt
 - TLLOM => Decrease HP 27K => 25K
-- Balance HLT TLL. Decrease stats to have same than ARM / CORE 
-- Balance Capital mini Gun from Hero (damage / 2) 
-- Explosion balance (Crawl Blast, Bantha Nuke, SelfDestroy from Hero, T4...) We will have a Wiki soon on this subject 
-- Delete explosion after death for Troman (T3 Core sniper) 
+- Balance HLT TLL. Decrease stats to have same than ARM / CORE
+- Balance Capital mini Gun from Hero (damage / 2)
+- Explosion balance (Crawl Blast, Bantha Nuke, SelfDestroy from Hero, T4...) We will have a Wiki soon on this subject
+- Delete explosion after death for Troman (T3 Core sniper)
 - Increase HP for Armsiege 20K => 29K
 - Balance Cost from all carrier and decrese HP (need approval from team)
 - Reduce explosion for cortron (tactical nuke) and increase energycost by 20%
