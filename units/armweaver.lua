@@ -3,7 +3,7 @@ return {
 		acceleration = 0.07629,
 		airsightdistance = 720,
 		brakerate = 0.22887,
-		buildcostenergy = 50500,
+		buildcostenergy = 49500,
 		buildcostmetal = 3350,
 		builder = false,
 		buildpic = "armweaver.dds",
