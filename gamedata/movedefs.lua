@@ -211,10 +211,10 @@ local moveDatas = {
         maxwaterdepth = 22,
         allowRawMovement = true
     },
-    TKBOT5 = {
+    TKBOT4 = {
         crushstrength = 15,
-        footprintx = 5,
-        footprintz = 5,
+        footprintx = 4,
+        footprintz = 4,
         maxwaterdepth = 22,
         allowRawMovement = true
     },
