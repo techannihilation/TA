@@ -89,10 +89,10 @@ corsfusBursts = {
   size       = 180,
   sizeSpread = 50,
   texture    = "bitmaps/GPL/Lups/shieldbursts5.png",
-  colormap   = {{0.45, 0.2, 1, 0.2}, {1, 0.2, 0.2, 0.2}},
+  colormap   = {{0.45, 0.2, 1, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
-  count      = 7,
+  count      = 5,
 }
 exoarmBursts = {
   layer      = -35,
@@ -105,10 +105,10 @@ exoarmBursts = {
   size       = 350,
   sizeSpread = 50,
   texture    = "bitmaps/GPL/Lups/shieldbursts5.png",
-  colormap   = {{0.1, 0.55, 1, 0.2}, {1, 0.2, 0.2, 0.2}},
+  colormap   = {{0.1, 0.55, 1, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
-  count      = 18,
+  count      = 10,
 }
 
 armsmcBursts = {
@@ -122,10 +122,10 @@ armsmcBursts = {
   size       = 230,
   sizeSpread = 50,
   texture    = "bitmaps/GPL/Lups/shieldbursts5.png",
-  colormap   = {{0.2, 1, 0.2, 0.2}, {1, 0.2, 0.2, 0.2}},
+  colormap   = {{0.2, 1, 0.2, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
-  count      = 8,
+  count      = 6,
 }
 
 armpraetBursts = {
@@ -139,10 +139,10 @@ armpraetBursts = {
   size       = 230,
   sizeSpread = 50,
   texture    = "bitmaps/GPL/Lups/shieldbursts5.png",
-  colormap   = {{0.2, 1, 0.2, 0.2}, {1, 0.2, 0.2, 0.2}},
+  colormap   = {{0.2, 1, 0.2, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
-  count      = 8,
+  count      = 6,
 }
 
 monkeylordBursts = {
@@ -156,10 +156,10 @@ monkeylordBursts = {
   size       = 230,
   sizeSpread = 50,
   texture    = "bitmaps/GPL/Lups/shieldbursts5.png",
-  colormap   = {{0.2, 1, 0.2, 0.2}, {1, 0.2, 0.2, 0.2}},
+  colormap   = {{0.2, 1, 0.2, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
-  count      = 8,
+  count      = 6,
 }
 
 irritatorBursts = {
@@ -173,10 +173,10 @@ irritatorBursts = {
   size       = 230,
   sizeSpread = 50,
   texture    = "bitmaps/GPL/Lups/shieldbursts5.png",
-  colormap   = {{0.2, 1, 0.2, 0.2}, {1, 0.2, 0.2, 0.2}},
+  colormap   = {{0.2, 1, 0.2, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
-  count      = 8,
+  count      = 6,
 }
 
 shieldBursts100 = {
@@ -190,10 +190,10 @@ shieldBursts100 = {
   size       = 100,
   sizeSpread = 50,
   texture    = "bitmaps/GPL/Lups/shieldbursts5.png",
-  colormap   = {{0.2, 1, 0.2, 0.2}, {1, 0.2, 0.2, 0.2}},
+  colormap   = {{0.2, 1, 0.2, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
-  count      = 4,
+  count      = 2,
 }
 
 shieldBursts150 = {
@@ -207,10 +207,10 @@ shieldBursts150 = {
   size       = 150,
   sizeSpread = 50,
   texture    = "bitmaps/GPL/Lups/shieldbursts5.png",
-  colormap   = {{0.2, 1, 0.2, 0.2}, {1, 0.2, 0.2, 0.2}},
+  colormap   = {{0.2, 1, 0.2, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
-  count      = 6,
+  count      = 4,
 }
 
 shieldBursts200 = {
@@ -224,10 +224,10 @@ shieldBursts200 = {
   size       = 200,
   sizeSpread = 50,
   texture    = "bitmaps/GPL/Lups/shieldbursts5.png",
-  colormap   = {{0.2, 1, 0.2, 0.2}, {1, 0.2, 0.2, 0.2}},
+  colormap   = {{0.2, 1, 0.2, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
-  count      = 8,
+  count      = 6,
 }
 
 shieldBursts250 = {
@@ -241,10 +241,10 @@ shieldBursts250 = {
   size       = 250,
   sizeSpread = 50,
   texture    = "bitmaps/GPL/Lups/shieldbursts5.png",
-  colormap   = {{0.2, 1, 0.2, 0.2}, {1, 0.2, 0.2, 0.2}},
+  colormap   = {{0.2, 1, 0.2, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
-  count      = 10,
+  count      = 8,
 }
 
 shieldBursts340 = {
@@ -258,10 +258,10 @@ shieldBursts340 = {
   size       = 340,
   sizeSpread = 50,
   texture    = "bitmaps/GPL/Lups/shieldbursts5.png",
-  colormap   = {{0.2, 1, 0.2, 0.2}, {1, 0.2, 0.2, 0.2}},
+  colormap   = {{0.2, 1, 0.2, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
-  count      = 18,
+  count      = 14,
 }
 
 shieldBursts400 = {
@@ -275,10 +275,10 @@ shieldBursts400 = {
   size       = 400,
   sizeSpread = 50,
   texture    = "bitmaps/GPL/Lups/shieldbursts5.png",
-  colormap   = {{0.2, 1, 0.2, 0.2}, {1, 0.2, 0.2, 0.2}},
+  colormap   = {{0.2, 1, 0.2, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
-  count      = 20,
+  count      = 16,
 }
 
 shieldBursts1000 = {
@@ -292,10 +292,10 @@ shieldBursts1000 = {
   size       = 600,
   sizeSpread = 50,
   texture    = "bitmaps/GPL/Lups/shieldbursts5.png",
-  colormap   = {{0.2, 1, 0.2, 0.2}, {1, 0.2, 0.2, 0.2}},
+  colormap   = {{0.2, 1, 0.2, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
-  count      = 30,
+  count      = 20,
 }
 ----------------------------------------------------------------------------
 -- Fusion ------------------------------------------------------------------
