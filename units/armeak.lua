@@ -22,7 +22,7 @@ return {
 		mass = 10250,
 		maxdamage = 15875,
 		maxvelocity = 1.5,
-		movementclass = "TKBOT3",
+		movementclass = "TKBOT5",
 		name = "Retribution",
 		nochasecategory = "ALL SUB",
 		objectname = "ARMEAK",
