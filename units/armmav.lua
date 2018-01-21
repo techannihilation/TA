@@ -19,7 +19,7 @@ return {
 		collisionvolumetype = "Box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Skirmish Kbot (Auto-Repair 50)",
+		description = "Paratrooping Skirmish Kbot (Auto-Repair 50)",
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
 		footprintx = 2,
