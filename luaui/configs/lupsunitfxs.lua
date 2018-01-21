@@ -3,6 +3,12 @@
 
 effectUnitDefs = {
  --// FUSIONS //--------------------------
+ corefus = {
+    {class='SimpleParticles2', options=MergeTable({pos={0,75,0}, delay=0, lifeSpread=30},plasmaball_cafus)},
+    {class='SimpleParticles2', options=MergeTable({pos={0,75,0}, delay=40, lifeSpread=30},plasmaball_cafus)},
+    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,75,0}, size=28, precision=22, repeatEffect=true}},
+    {class='GroundFlash',options=groundFlashBlue},
+  },
  corfus = {
     {class='SimpleParticles2', options=MergeTable({pos={0,50,-5}, delay=0, lifeSpread=30},plasmaball_corfus)},
     {class='SimpleParticles2', options=MergeTable({pos={0,50,-5}, delay=40, lifeSpread=30},plasmaball_corfus)},
