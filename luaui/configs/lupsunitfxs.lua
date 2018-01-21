@@ -59,6 +59,14 @@ effectUnitDefs = {
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={-31,55,-10}, size=12, precision=22, repeatEffect=true}},
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={31,55,-10}, size=12, precision=22, repeatEffect=true}},
   },
+ armefus = {
+    {class='SimpleParticles2', options=MergeTable({pos={-42,70,20}, delay=10, lifeSpread=300},sparks)},
+    {class='SimpleParticles2', options=MergeTable({pos={28,70,20}, delay=10, lifeSpread=300},sparks)},
+	   {class='SimpleParticles2', options=MergeTable({pos={-12,80,-40}, delay=10, lifeSpread=300},sparks)},
+    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={-35,65,20}, size=12, precision=22, repeatEffect=true}},
+    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={35,65,20}, size=12, precision=22, repeatEffect=true}},
+	   {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,65,-40}, size=12, precision=22, repeatEffect=true}},
+  },
   
   --// SHIELDS //--------------------------
   
