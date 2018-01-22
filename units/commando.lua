@@ -23,14 +23,13 @@ return {
 		collisionvolumescales = "24 45 20",
 		collisionvolumetype = "Box",
 		defaultmissiontype = "Standby",
-		description = "Stealthy Capture Kbot",
+		description = "Paratrooping Stealthy Capture Kbot (EMP Immune)",
 		explodeas = "SPYBOMBX",
 		firestandorders = 0,
 		footprintx = 2,
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		immunetoparalyzer = 1,
 		losemitheight = 51,
 		maneuverleashlength = 640,
 		mass = 659,
@@ -62,6 +61,7 @@ return {
 		customparams = {
 			buildpic = "commando.dds",
 			faction = "CORE",
+			paralyzemultiplier = 0,
 		},
 		nanocolor = {
 			[1] = 0.8,
@@ -107,6 +107,8 @@ return {
 			commandolas = {
 				areaofeffect = 192,
 				avoidfeature = false,
+				avoidfriendly = false,
+				collidefeature = false,
 				cegtag = "Trail_cannon",
 				craterareaofeffect = 288,
 				craterboost = 0,
