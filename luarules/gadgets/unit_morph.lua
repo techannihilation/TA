@@ -539,9 +539,9 @@ local function ReAssignAssists(newUnit,oldUnit)
   
   local unitDefID = SpGetUnitDefID(oldUnit)
   local isCommander = UnitDefs[unitDefID].customParams.iscommander or nil
-  local isBuilder = UnitDefs[unitDefID].customParams.isbuilder or nil
+  local isBuilder = UnitDefs[unitDefID].isBuilder or nil
   if isBuilder and not isCommander then 
-	if unitDefID and isBuilder and not nanos[unitDefID] then return end 
+	if unitDefID and not nanos[unitDefID] then return end 
   end
   -- for now only reassign command to nanos
     
