@@ -35,7 +35,7 @@ return {
 		maxvelocity = 1.6,
 		maxwaterdepth = 0,
 		metalmake = 0.5,
-		metalstorage = 100,
+		metalstorage = 105,
 		mobilestandorders = 1,
 		movementclass = "TANKHOVER4",
 		name = "Advanced Construction Hover",
