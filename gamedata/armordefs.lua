@@ -398,4 +398,7 @@ return {
         "tllcom6",
         "tllcom7"
     }
+    emp_resistant = {
+        "commando",
+    }
 }
