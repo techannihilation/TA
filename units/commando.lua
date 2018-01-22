@@ -140,7 +140,7 @@ return {
 					commanders = 125,
 					default = 5000,
 					subs = 5,
-					emp_resistant = 125,
+					emp_resistant = 5,
 				},
 			},
 		},
