@@ -107,7 +107,8 @@ return {
 			commandolas = {
 				areaofeffect = 192,
 				avoidfeature = false,
-				avoidFriendly = false,
+				avoidfriendly = false,
+				collidefeature = false,
 				cegtag = "Trail_cannon",
 				craterareaofeffect = 288,
 				craterboost = 0,
