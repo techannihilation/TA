@@ -30,8 +30,9 @@ end
 if (not gadgetHandler:IsSyncedCode()) then return end
 
 local paraTroppers={
-  		[UnitDefNames["commando"].id] = true,
-  		[UnitDefNames["armmav"].id] = true
+  		[UnitDefNames["corpyro"].id] = true,
+		[UnitDefNames["armmav"].id] = true,
+		[UnitDefNames["tlltraq"].id] = true,
  	}
 
 local crawlingBombs = {
