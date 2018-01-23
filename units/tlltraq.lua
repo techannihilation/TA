@@ -20,7 +20,7 @@ return {
 		collisionvolumetype = "Box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Inflitration Kbot",
+		description = "Paratrooping Inflitration Kbot",
 		downloadable = 1,
 		energystorage = 200,
 		explodeas = "SMALL_UNIT",
