@@ -48,6 +48,14 @@ effectUnitDefs = {
     {class='SimpleParticles2', options=MergeTable({pos={0,62,0}, delay=40, lifeSpread=30},plasmaball_tllcoldfus)},
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,62,0}, size=20, precision=22, repeatEffect=true}},
   },
+tllefus = {
+    {class='SimpleParticles2', options=MergeTable({pos={-38,55,0}, delay=0, lifeSpread=30},plasmaball_tllcoldfus)},
+    {class='SimpleParticles2', options=MergeTable({pos={-38,55,0}, delay=40, lifeSpread=30},plasmaball_tllcoldfus)},
+    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={-40,55,0}, size=20, precision=22, repeatEffect=true}},
+    {class='SimpleParticles2', options=MergeTable({pos={37,55,0}, delay=0, lifeSpread=30},plasmaball_tllcoldfus)},
+    {class='SimpleParticles2', options=MergeTable({pos={37,55,0}, delay=40, lifeSpread=30},plasmaball_tllcoldfus)},
+    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={37,55,0}, size=20, precision=22, repeatEffect=true}},
+  },	
  tllmegacoldfus = {
     {class='SimpleParticles2', options=MergeTable({pos={0,90,0}, delay=0, lifeSpread=30},plasmaball_tllmegacoldfus)},
     {class='SimpleParticles2', options=MergeTable({pos={0,90,0}, delay=40, lifeSpread=30},plasmaball_tllmegacoldfus)},
