@@ -3,7 +3,7 @@ return {
 		acceleration = 0.2,
 		bankscale = 1,
 		brakerate = 0.625,
-		buildcostenergy =8918,
+		buildcostenergy = 8918,
 		buildcostmetal = 585,
 		builder = false,
 		buildpic = "armdfly.dds",
