@@ -34,7 +34,7 @@ return {
 		name = "Enriched Retaliator",
 		noautofire = false,
 		nochasecategory = "ALL",
-		objectname = "ARMSILO",
+		objectname = "ARMSILO1",
 		radardistance = 50,
 		radaremitheight = 32,
 		script = "armsilo.cob",
