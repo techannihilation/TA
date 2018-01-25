@@ -1,0 +1,442 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, shell01, lathe01a, nano01a, lathe01b, nano01b, lathe01c,
+       nano01c, shell02, lathe02a, nano02a, lathe02b, nano02b, lathe02c, nano02c,
+       bits, edge01, edge02, edge03, edge04, target,
+       shell01a, shell02a;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
+            Static_Var_6, Static_Var_7;
+
+
+Detect()
+{
+	sleep Rand( 500, 1500 );
+	var Func_Var_1, Func_Var_2, Func_Var_3, Func_Var_4, Func_Var_5, Func_Var_6, Func_Var_7, Func_Var_8, Func_Var_9, Func_Var_10, Func_Var_11;
+	Func_Var_6 = get MAX_ID;
+	Func_Var_7 = get UNKNOWN_UNIT_VALUE(69);
+	while( TRUE )
+	{
+		Static_Var_5 = 0;
+		Static_Var_7 = 0;
+		Func_Var_11 = 0;
+		Func_Var_2 = Func_Var_7;
+		while( Func_Var_2 <= Func_Var_6 )
+		{
+			if( get UNIT_ALLIED(Func_Var_2) == 1 )
+			{
+				if( get UNIT_HEIGHT(Func_Var_2) == 10485760 )
+				{
+					if( get UNIT_BUILD_PERCENT_LEFT(Func_Var_2) == 0 )
+					{
+						Func_Var_3 = get UNIT_XZ(Func_Var_2) - get PIECE_XZ(base);
+						if( Func_Var_3 < 0 )
+						{
+							Func_Var_3 = 0 - Func_Var_3;
+						}
+						Func_Var_4 = Func_Var_3 / 65536;
+						Func_Var_5 = Func_Var_3 - Func_Var_4 * 65536;
+						if( Func_Var_5 > 32767 )
+						{
+							Func_Var_5 = 65536 - Func_Var_5;
+							Func_Var_4 = Func_Var_4 + ( Func_Var_3 > 0 );
+						}
+						if( 707333111 < get XZ_HYPOT(Func_Var_4 / 2 * 65536 + Func_Var_5 / 2) )
+						{
+							Func_Var_3 = 500333222;
+						}
+						Func_Var_1 = get XZ_HYPOT(Func_Var_3);
+						if( Func_Var_1 <= 16711680 )
+						{
+							Func_Var_11 = 1;
+							++Static_Var_5;
+						}
+					}
+				}
+				if( get UNIT_HEIGHT(Func_Var_2) == 10649600 )
+				{
+					if( get UNIT_BUILD_PERCENT_LEFT(Func_Var_2) >= 1 )
+					{
+						Func_Var_3 = get UNIT_XZ(Func_Var_2) - get PIECE_XZ(base);
+						if( Func_Var_3 < 0 )
+						{
+							Func_Var_3 = 0 - Func_Var_3;
+						}
+						Func_Var_4 = Func_Var_3 / 65536;
+						Func_Var_5 = Func_Var_3 - Func_Var_4 * 65536;
+						if( Func_Var_5 > 32767 )
+						{
+							Func_Var_5 = 65536 - Func_Var_5;
+							Func_Var_4 = Func_Var_4 + ( Func_Var_3 > 0 );
+						}
+						if( 707333111 < get XZ_HYPOT(Func_Var_4 / 2 * 65536 + Func_Var_5 / 2) )
+						{
+							Func_Var_3 = 500333222;
+						}
+						Func_Var_1 = get XZ_HYPOT(Func_Var_3);
+						if( Func_Var_1 <= 16711680 )
+						{
+							Func_Var_11 = 1;
+							--Static_Var_5;
+						}
+					}
+				}
+				if( get UNIT_HEIGHT(Func_Var_2) == 10649600 )
+				{
+					if( get UNIT_BUILD_PERCENT_LEFT(Func_Var_2) == 0 )
+					{
+						Func_Var_3 = get UNIT_XZ(Func_Var_2) - get PIECE_XZ(base);
+						if( Func_Var_3 < 0 )
+						{
+							Func_Var_3 = 0 - Func_Var_3;
+						}
+						Func_Var_4 = Func_Var_3 / 65536;
+						Func_Var_5 = Func_Var_3 - Func_Var_4 * 65536;
+						if( Func_Var_5 > 32767 )
+						{
+							Func_Var_5 = 65536 - Func_Var_5;
+							Func_Var_4 = Func_Var_4 + ( Func_Var_3 > 0 );
+						}
+						if( 707333111 < get XZ_HYPOT(Func_Var_4 / 2 * 65536 + Func_Var_5 / 2) )
+						{
+							Func_Var_3 = 500333222;
+						}
+						Func_Var_1 = get XZ_HYPOT(Func_Var_3);
+						if( Func_Var_1 <= 24576000 )
+						{
+							Func_Var_11 = 1;
+							++Static_Var_7;
+						}
+					}
+				}
+			}
+			++Func_Var_2;
+		}
+		if( Static_Var_5 >= 1 )
+		{
+			if( !Static_Var_4 )
+			{
+				Static_Var_4 = 1;
+				sleep 50;
+				set ARMORED to 1;
+			}
+		}
+		if( Static_Var_5 == 0 )
+		{
+			if( Static_Var_4 )
+			{
+				Static_Var_4 = 0;
+				sleep 50;
+				set ARMORED to 0;
+			}
+		}
+		if( Static_Var_7 >= 1 )
+		{
+			if( !Static_Var_6 )
+			{
+				Static_Var_4 = 1;
+				sleep 50;
+				set ARMORED to 1;
+			}
+		}
+		if( Static_Var_7 == 0 )
+		{
+			if( Static_Var_6 )
+			{
+				Static_Var_6 = 0;
+				sleep 50;
+				set ARMORED to 0;
+			}
+		}
+		sleep Rand( 4000, 6000 );
+		if( !Func_Var_11 )
+		{
+			sleep Rand( 60000, 90000 );
+		}
+	}
+}
+
+activatescr()
+{
+	if( TRUE )
+	{
+		turn shell01 to z-axis <-90.> speed <10.>;
+		turn shell02 to z-axis <90.> speed <10.>;
+		sleep 683;
+	}
+	sleep 34;
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		turn shell01 to z-axis <0.> speed <10.>;
+		turn shell02 to z-axis <0.> speed <10.>;
+		sleep 683;
+	}
+	sleep 34;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	var Func_Var_4;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			Func_Var_4 = Rand( 1, 4 );
+
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+OpenYard()
+{
+	set YARD_OPEN to 1;
+	while( !get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 1;
+	}
+	set BUGGER_OFF to 0;
+}
+
+CloseYard()
+{
+	set YARD_OPEN to 0;
+	while( get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 0;
+	}
+	set BUGGER_OFF to 0;
+}
+
+Go()
+{
+	dont-cache shell01;
+	dont-cache shell01a;
+	dont-cache lathe01a;
+	dont-cache lathe01b;
+	dont-cache lathe01c;
+	dont-cache shell02;
+	dont-cache shell02a;
+	dont-cache lathe02a;
+	dont-cache lathe02b;
+	dont-cache lathe02c;
+	call-script activatescr();
+	call-script OpenYard();
+	set INBUILDSTANCE to 1;
+}
+
+Stop()
+{
+	set INBUILDSTANCE to 0;
+	call-script CloseYard();
+	call-script deactivatescr();
+	cache shell01;
+	cache shell01a;
+	cache lathe01a;
+	cache lathe01b;
+	cache lathe01c;
+	cache shell02;
+	cache shell02a;
+	cache lathe02a;
+	cache lathe02b;
+	cache lathe02c;
+}
+
+InitState()
+{
+	Static_Var_2 = 1;
+	Static_Var_3 = 0;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( Static_Var_3 )
+	{
+		Static_Var_2 = requestedstate;
+		return (0);
+	}
+	Static_Var_3 = 1;
+	currentstate = Static_Var_2;
+	Static_Var_2 = requestedstate;
+	while( Static_Var_2 != currentstate )
+	{
+		if( Static_Var_2 == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( Static_Var_2 == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	Static_Var_3 = 0;
+}
+
+Create()
+{
+	Static_Var_5 = 0;
+	Static_Var_7 = 0;
+	Static_Var_4 = 0;
+	Static_Var_6 = 0;
+	dont-shade shell01;
+	dont-shade shell01a;
+	dont-shade lathe01a;
+	dont-shade lathe01a;
+	dont-shade lathe01b;
+	dont-shade lathe01c;
+	dont-shade shell02;
+	dont-shade shell02a;
+	dont-shade lathe02a;
+	dont-shade lathe02b;
+	dont-shade lathe02c;
+	Static_Var_1 = 1;
+	call-script InitState();
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 1000;
+	}
+	start-script Detect();
+	start-script SmokeUnit();
+}
+
+QueryNanoPiece(piecenum)
+{
+	if( Static_Var_1 == 1 )
+	{
+		piecenum = nano01a;
+	}
+	if( Static_Var_1 == 2 )
+	{
+		piecenum = nano01b;
+	}
+	if( Static_Var_1 == 3 )
+	{
+		piecenum = nano01c;
+	}
+	if( Static_Var_1 == 4 )
+	{
+		piecenum = nano02a;
+	}
+	if( Static_Var_1 == 5 )
+	{
+		piecenum = nano02b;
+	}
+	if( Static_Var_1 == 6 )
+	{
+		piecenum = nano02c;
+	}
+	++Static_Var_1;
+	if( Static_Var_1 == 7 )
+	{
+		Static_Var_1 = 1;
+	}
+}
+
+Activate()
+{
+	signal 2;
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	signal 2;
+	set-signal-mask 2;
+	set-signal-mask 0;
+	start-script RequestState(1);
+}
+
+StartBuilding()
+{
+}
+
+StopBuilding()
+{
+}
+
+QueryBuildInfo(piecenum)
+{
+	piecenum = target;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode body type NOHEATCLOUD ;
+		explode shell01 type NOHEATCLOUD ;
+		explode shell02 type NOHEATCLOUD ;
+		explode edge01 type NOHEATCLOUD ;
+		explode edge03 type NOHEATCLOUD ;
+		explode edge03 type NOHEATCLOUD ;
+		explode edge03 type NOHEATCLOUD ;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode body type NOHEATCLOUD ;
+		explode shell01 type NOHEATCLOUD | FALL;
+		explode shell02 type NOHEATCLOUD | FALL;
+		explode edge01 type NOHEATCLOUD ;
+		explode edge03 type NOHEATCLOUD ;
+		explode edge03 type NOHEATCLOUD ;
+		explode edge03 type NOHEATCLOUD ;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode body type NOHEATCLOUD ;
+		explode shell01 type NOHEATCLOUD | FALL ;
+		explode shell02 type NOHEATCLOUD | FALL ;
+		explode edge01 type NOHEATCLOUD ;
+		explode edge03 type NOHEATCLOUD ;
+		explode edge03 type NOHEATCLOUD ;
+		explode edge03 type NOHEATCLOUD ;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode body type NOHEATCLOUD ;
+	explode shell01 type NOHEATCLOUD | FALL ;
+	explode shell02 type NOHEATCLOUD | FALL ;
+	explode edge01 type NOHEATCLOUD ;
+	explode edge03 type NOHEATCLOUD ;
+	explode edge03 type NOHEATCLOUD ;
+	explode edge03 type NOHEATCLOUD ;
+	return (corpsetype);
+}

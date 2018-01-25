@@ -1,0 +1,159 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, wake1, wake2, tail,
+       sidewake1, sidewake2, aimpoint;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4;
+
+
+BankClerck(Func_Var_1, Func_Var_2, Func_Var_3)
+{
+	while( TRUE )
+	{
+		Func_Var_1 = get PIECE_XZ(base);
+		Func_Var_3 = 0;
+		if( get XZ_HYPOT(Func_Var_1 - Func_Var_2) >= 163840 )
+		{
+			Func_Var_3 = 0 - get XZ_ATAN(Func_Var_2 - Func_Var_1) * 80 / 40;
+		}
+		turn body to z-axis Func_Var_3 speed <30.>;
+		Func_Var_2 = Func_Var_1;
+		sleep 300;
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	healthpercent = get HEALTH;
+	sleeptime = healthpercent * healthpercent;
+	if( healthpercent < 66 )
+	{
+		emit-sfx 256 | 3 from base;
+		sleep sleeptime;
+		emit-sfx 256 | 3 from sidewake2;
+		if( Rand( 1, 66 ) > healthpercent )
+		{
+			emit-sfx 256 | 3 from base;
+			sleep sleeptime;
+			emit-sfx 256 | 3 from sidewake1;
+			sleep sleeptime;
+			emit-sfx 256 | 3 from sidewake2;
+			sleep sleeptime;
+		}
+	}
+	start-script SmokeUnit();
+}
+
+Create()
+{
+	Static_Var_2 = 3000;
+	start-script SmokeUnit();
+	start-script BankClerck();
+	spin tail around z-axis speed <50.>;
+}
+
+SetMaxReloadTime(Func_Var_1)
+{
+	Static_Var_2 = Func_Var_1 * 2;
+}
+
+StartMoving()
+{
+	signal 4;
+	set-signal-mask 4;
+	while( TRUE )
+	{
+		emit-sfx 256 | 3 from wake1;
+		emit-sfx 256 | 3 from wake2;
+
+		sleep 175;
+	}
+}
+
+StopMoving()
+{
+	signal 4;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal 2;
+	set-signal-mask 2;
+	return (1);
+}
+
+FirePrimary()
+{
+	sleep 50;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = aimpoint;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = aimpoint;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		explode wake1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode wake2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode tail type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode sidewake1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode sidewake2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		explode wake1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode wake2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode tail type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode sidewake1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode sidewake2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		explode wake1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode wake2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode tail type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode sidewake1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode sidewake2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type NOHEATCLOUD;
+	explode body type NOHEATCLOUD;
+	explode wake1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode wake2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode tail type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode sidewake1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode sidewake2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
+}

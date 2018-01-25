@@ -1,0 +1,136 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, NP, SP, EP, WP, glow;
+
+static-var  Static_Var_1, Static_Var_2;
+
+
+Go()
+{
+	turn NP to z-axis <180.> speed <100.>;
+	turn SP to z-axis <-180.> speed <100.>;
+	turn EP to x-axis <180.> speed <100.>;
+	turn WP to x-axis <-180.> speed <100.>;
+	Static_Var_2 = 1;
+	sleep 1000;
+	Static_Var_1 = 1;
+	set ACTIVATION to 1;
+}
+
+Stop()
+{
+	turn NP to z-axis <0.> speed <-80.>;
+	turn SP to z-axis <0.> speed <-80.>;
+	turn EP to x-axis <0.> speed <-80.>;
+	turn WP to x-axis <0.> speed <-80.>;
+	Static_Var_2 = 0;
+	Static_Var_1 = 0;
+	set ACTIVATION to 0;
+}
+
+Activate()
+{
+	call-script Go();
+}
+
+Deactivate()
+{
+	call-script Stop();
+}
+
+MMStatus(Func_Var_1)
+{
+	Static_Var_2 = Func_Var_1;
+}
+
+ImAMetalMaker()
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 150;
+	}
+	Static_Var_1 = -1;
+	while( TRUE )
+	{
+		if( Static_Var_2 == 1 )
+		{
+			if( Static_Var_1 != 1 )
+			{
+				call-script Go();
+				Static_Var_1 = 1;
+			}
+		}
+		else if( Static_Var_1 != 0 )
+		{
+			call-script Stop();
+			Static_Var_1 = 0;
+		}
+		sleep 1000;
+	}
+}
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 500;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 258;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 257;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	hide glow;
+	start-script SmokeUnit();
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type NOHEATCLOUD ;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type NOHEATCLOUD  | BITMAP1;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type NOHEATCLOUD  | SHATTER;
+		return (0);
+	}
+	corpsetype = 3;
+	explode base type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | FIRE ;
+}

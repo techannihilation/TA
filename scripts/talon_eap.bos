@@ -1,0 +1,344 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  beam1, beam2, beam3, beam4, base, body, side1, side2,
+       nano1a, nano1b, nano2a, nano2b, pad, top, buildpad, buildpad2,
+       pipe1, pipe2, pipe3, pipe4, pipe5, pipe6, pipe7;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4;
+
+
+RestoreAfterDelay()
+{
+	sleep 5000;
+}
+
+activatescr()
+{
+	if( TRUE )
+	{
+		set ARMORED to 0;
+	}
+	if( TRUE )
+	{
+		dont-cache nano1a;
+		dont-cache nano2a;
+		dont-cache nano1b;
+		dont-cache nano2b;
+		dont-cache top;
+	}
+	if( TRUE )
+	{
+		move side2 to x-axis [12.] speed [3.];
+		move side1 to x-axis [-12.] speed [3.];
+		turn top to x-axis <-90.> speed <8.>;
+		wait-for-move side2 along x-axis;
+	}
+	if( TRUE )
+	{
+		move nano2a to x-axis [-5.] speed [2.];
+		move nano2b to x-axis [-5.] speed [2.];
+		move nano1a to x-axis [5.] speed [2.];
+		move nano1b to x-axis [5.] speed [2.];
+		wait-for-move nano1a along x-axis;
+	}
+	if( TRUE )
+	{
+		cache nano1a;
+		cache nano2a;
+		cache nano1b;
+		cache nano2b;
+		cache top;
+	}
+	if( TRUE )
+	{
+		sleep 300;
+	}
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		dont-cache nano1a;
+		dont-cache nano2a;
+		dont-cache nano1b;
+		dont-cache nano2b;
+		dont-cache top;
+	}
+	if( TRUE )
+	{
+		move nano2a to x-axis [0.] speed [2.];
+		move nano2b to x-axis [0.] speed [2.];
+		move nano1a to x-axis [0.] speed [2.];
+		move nano1b to x-axis [0.] speed [2.];
+		wait-for-move nano1a along x-axis;
+	}
+	if( TRUE )
+	{
+		move side2 to x-axis [0.] speed [2.];
+		move side1 to x-axis [0.] speed [2.];
+		turn top to x-axis <0.> speed <5.>;
+		wait-for-move side2 along x-axis;
+	}
+	if( TRUE )
+	{
+		cache nano1a;
+		cache nano2a;
+		cache nano1b;
+		cache nano2b;
+		cache top;
+	}
+	if( TRUE )
+	{
+		set ARMORED to 1;
+		sleep 300;
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+OpenYard()
+{
+	set YARD_OPEN to 1;
+	while( !get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 1;
+	}
+	set BUGGER_OFF to 0;
+}
+
+CloseYard()
+{
+	set YARD_OPEN to 0;
+	while( get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 0;
+	}
+	set BUGGER_OFF to 0;
+}
+
+Go()
+{
+	call-script activatescr();
+	call-script OpenYard();
+	set INBUILDSTANCE to 1;
+}
+
+Stop()
+{
+	sleep 3000;
+	set INBUILDSTANCE to 0;
+	call-script CloseYard();
+	start-script deactivatescr();
+}
+
+InitState()
+{
+	Static_Var_3 = 1;
+	Static_Var_4 = 0;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( Static_Var_4 )
+	{
+		Static_Var_3 = requestedstate;
+		return (0);
+	}
+	Static_Var_4 = 1;
+	currentstate = Static_Var_3;
+	Static_Var_3 = requestedstate;
+	while( Static_Var_3 != currentstate )
+	{
+		if( Static_Var_3 == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( Static_Var_3 == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	Static_Var_4 = 0;
+}
+
+Create()
+{
+	Static_Var_1 = 1;
+	call-script InitState();
+	start-script SmokeUnit();
+}
+
+QueryNanoPiece(piecenum)
+{
+	if( Static_Var_1 == 1 )
+	{
+		piecenum = beam1;
+	}
+	if( Static_Var_1 == 2 )
+	{
+		piecenum = beam2;
+	}
+	if( Static_Var_1 == 3 )
+	{
+		piecenum = beam3;
+	}
+	if( Static_Var_1 == 4 )
+	{
+		piecenum = beam4;
+	}
+	++Static_Var_1;
+	if( Static_Var_1 == 5 )
+	{
+		Static_Var_1 = 1;
+	}
+}
+
+Activate()
+{
+	signal 2;
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	signal 2;
+	set-signal-mask 2;
+	sleep 1000;
+	set-signal-mask 0;
+	start-script RequestState(1);
+}
+
+QueryBuildInfo(piecenum)
+{
+	piecenum = pad;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode nano1a type NOHEATCLOUD;
+		explode nano2a type NOHEATCLOUD;
+		explode nano1b type NOHEATCLOUD;
+		explode nano2b type NOHEATCLOUD;
+		explode beam1 type NOHEATCLOUD;
+		explode beam2 type NOHEATCLOUD;
+		explode beam3 type NOHEATCLOUD;
+		explode beam4 type NOHEATCLOUD;
+		explode side2 type NOHEATCLOUD;
+		explode side1 type NOHEATCLOUD;
+		explode pipe1 type NOHEATCLOUD;
+		explode pipe2 type NOHEATCLOUD;
+		explode pipe3 type NOHEATCLOUD;
+		explode pipe4 type NOHEATCLOUD;
+		explode pipe5 type NOHEATCLOUD;
+		explode pipe6 type NOHEATCLOUD;
+		explode pipe7 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode nano1a type NOHEATCLOUD | FALL ;
+		explode nano2a type NOHEATCLOUD | FALL ;
+		explode nano1b type NOHEATCLOUD | FALL ;
+		explode nano2b type NOHEATCLOUD | FALL ;
+		explode beam1 type NOHEATCLOUD | FALL ;
+		explode beam2 type NOHEATCLOUD | FALL ;
+		explode beam3 type NOHEATCLOUD | FALL ;
+		explode beam4 type NOHEATCLOUD | FALL ;
+		explode side2 type NOHEATCLOUD | FALL ;
+		explode side1 type NOHEATCLOUD | FALL ;
+		explode pipe1 type NOHEATCLOUD | FALL ;
+		explode pipe2 type NOHEATCLOUD | FALL ;
+		explode pipe3 type NOHEATCLOUD | FALL ;
+		explode pipe4 type NOHEATCLOUD | FALL ;
+		explode pipe5 type NOHEATCLOUD | FALL ;
+		explode pipe6 type NOHEATCLOUD | FALL ;
+		explode pipe7 type NOHEATCLOUD | FALL ;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode nano1a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode nano2a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode nano1b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode nano2b type NOHEATCLOUD | FALL ;
+		explode beam1 type NOHEATCLOUD | FALL ;
+		explode beam2 type NOHEATCLOUD | FALL ;
+		explode beam3 type NOHEATCLOUD | FALL ;
+		explode beam4 type NOHEATCLOUD | FALL ;
+		explode side2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode side1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode pipe1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode pipe2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode pipe3 type NOHEATCLOUD | FALL ;
+		explode pipe4 type NOHEATCLOUD | FALL ;
+		explode pipe5 type NOHEATCLOUD | FALL ;
+		explode pipe6 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode pipe7 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		return (corpsetype);
+		return (0);
+	}
+	corpsetype = 3;
+	explode nano1a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode nano2a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode nano1b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode nano2b type NOHEATCLOUD | FALL ;
+	explode beam1 type NOHEATCLOUD | FALL ;
+	explode beam2 type NOHEATCLOUD | FALL ;
+	explode beam3 type NOHEATCLOUD | FALL ;
+	explode beam4 type NOHEATCLOUD | FALL ;
+	explode side2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode side1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode pipe1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode pipe2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode pipe3 type NOHEATCLOUD | FALL ;
+	explode pipe4 type NOHEATCLOUD | FALL ;
+	explode pipe5 type NOHEATCLOUD | FALL ;
+	explode pipe6 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode pipe7 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}
