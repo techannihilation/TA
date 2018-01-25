@@ -38,7 +38,6 @@ return {
 		selfdestructas = "NUCLEAR_MISSILE",
 		sightdistance = 350,
 		standingfireorder = 0,
-		stealth = true,
 		unitname = "tllsilo",
 		usebuildinggrounddecal = true,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo",
