@@ -36,7 +36,7 @@ changelogFile = changelogFile .. keycolor.."Tidal speed"..separator..valuegreyco
 if Game.windMin == Game.windMax then
 	changelogFile = changelogFile .. keycolor.."Wind speed"..separator..valuegreycolor..(Game.windMin)..valuegreycolor.."\n"
 else
-	changelogFile = changelogFile .. keycolor.."Wind speed"..separator..valuegreycolor..(Game.windMin)..valuegreycolor.."  -  "..valuegreycolor..(Game.windMax*1.5).."\n"
+	changelogFile = changelogFile .. keycolor.."Wind speed"..separator..valuegreycolor..(Game.windMin)..valuegreycolor.."  -  "..valuegreycolor..(Game.windMax).."\n"
 end
 if Game.waterDamage == 0 then 
 	vcolor = valuegreycolor
