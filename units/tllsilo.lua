@@ -110,7 +110,7 @@ return {
 				cegtag = "Trail_Large_Rocket",
 				collidefriendly = false,
 				commandfire = true,
-				craterareaofeffect = 2775,
+				craterareaofeffect = 1920,
 				craterboost = 0.72,
 				cratermult = 0.36,
 				edgeeffectiveness = 0.2,
