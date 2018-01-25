@@ -1,0 +1,143 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  crystal, base, towers, pillars, tubes, GP, rays1, rays2,
+       trueglow, flareglow;
+
+static-var  Static_Var_1, Static_Var_2;
+
+
+CloakControl()
+{
+	while( TRUE )
+	{
+		Static_Var_2 = get CLOAKED;
+		if( Static_Var_2 == 1 )
+		{
+			show crystal;
+			show rays1;
+			show rays2;
+			sleep 100;
+		}
+		else if( Static_Var_2 == 0 )
+		{
+			emit-sfx 1025 from trueglow;
+			hide crystal;
+			hide rays1;
+			hide rays2;
+			sleep 100;
+		}
+	}
+	sleep 100;
+}
+
+sharing()
+{
+	while( TRUE )
+	{
+		move rays1 to y-axis [5.] speed [40.];
+		move rays2 to y-axis [0.] speed [20.];
+		wait-for-move rays1 along y-axis;
+		move rays1 to y-axis [25.] speed [40.];
+		move rays2 to y-axis [-10.] speed [20.];
+		wait-for-move rays1 along y-axis;
+		sleep 100;
+	}
+	sleep 100;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	hide crystal;
+	hide rays1;
+	hide rays2;
+	hide trueglow;
+	hide flareglow;
+	start-script SmokeUnit();
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 1000;
+	}
+	spin crystal around y-axis speed <100.>;
+	start-script CloakControl();
+	start-script sharing();
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode crystal type SHATTER;
+		explode GP type NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
+		explode towers type NOHEATCLOUD;
+		explode pillars type NOHEATCLOUD;
+		explode tubes type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode crystal type SHATTER | EXPLODE_ON_HIT;
+		explode GP type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode base type NOHEATCLOUD;
+		explode towers type NOHEATCLOUD | FALL;
+		explode pillars type NOHEATCLOUD | FALL;
+		explode tubes type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode crystal type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode GP type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
+		explode towers type NOHEATCLOUD | FALL;
+		explode pillars type NOHEATCLOUD;
+		explode tubes type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode crystal type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode GP type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode base type NOHEATCLOUD;
+	explode towers type NOHEATCLOUD | FALL;
+	explode pillars type NOHEATCLOUD;
+	explode tubes type NOHEATCLOUD;
+	return (corpsetype);
+}
