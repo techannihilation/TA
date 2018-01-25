@@ -1,0 +1,345 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, lside, rside, rotary, ltray, rtray, lhold, rhold,
+       nano1, nano2, nano3, nano4, point1, point2, point3, point4;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4;
+
+
+RestoreAfterDelay()
+{
+	sleep 5000;
+}
+
+activatescr()
+{
+	if( TRUE )
+	{
+		dont-cache rtray;
+		dont-cache ltray;
+		dont-cache rhold;
+		dont-cache lhold;
+		dont-cache rotary;
+		dont-cache nano1;
+		dont-cache nano2;
+		dont-cache nano3;
+		dont-cache nano4;
+		set ARMORED to 0;
+	}
+	if( TRUE )
+	{
+		move lside to x-axis [10.] speed [4.];
+		move rside to x-axis [-10.] speed [4.];
+	}
+	if( TRUE )
+	{
+		turn ltray to y-axis <-20.> speed <40.>;
+		turn rtray to y-axis <-20.> speed <40.>;
+		move nano1 to x-axis [-4.] speed [4.];
+		move nano2 to x-axis [-4.] speed [4.];
+		move nano3 to x-axis [4.] speed [4.];
+		move nano4 to x-axis [4.] speed [4.];
+		wait-for-turn ltray around y-axis;
+		wait-for-move nano1 along x-axis;
+	}
+	if( TRUE )
+	{
+		cache rtray;
+		cache ltray;
+		cache rhold;
+		cache lhold;
+		cache nano1;
+		cache nano2;
+		cache nano3;
+		cache nano4;
+	}
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		dont-cache rtray;
+		dont-cache ltray;
+		dont-cache rhold;
+		dont-cache lhold;
+		dont-cache nano1;
+		dont-cache nano2;
+		dont-cache nano3;
+		dont-cache nano4;
+	}
+	if( TRUE )
+	{
+		turn ltray to y-axis <-90.> speed <40.>;
+		turn rtray to y-axis <-90.> speed <40.>;
+		move nano1 to x-axis [0.] speed [4.];
+		move nano2 to x-axis [0.] speed [4.];
+		move nano3 to x-axis [0.] speed [4.];
+		move nano4 to x-axis [0.] speed [4.];
+		wait-for-turn ltray around y-axis;
+		wait-for-move nano1 along x-axis;
+	}
+	if( TRUE )
+	{
+		move lside to x-axis [0.] speed [4.];
+		move rside to x-axis [0.] speed [4.];
+		wait-for-move lside along x-axis;
+	}
+	if( TRUE )
+	{
+		cache rtray;
+		cache ltray;
+		cache rhold;
+		cache lhold;
+		cache nano1;
+		cache nano2;
+		cache nano3;
+		cache nano4;
+		cache rotary;
+		set ARMORED to 1;
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+OpenYard()
+{
+	set YARD_OPEN to 1;
+	while( !get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 1;
+	}
+	set BUGGER_OFF to 0;
+}
+
+CloseYard()
+{
+	set YARD_OPEN to 0;
+	while( get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 0;
+	}
+	set BUGGER_OFF to 0;
+}
+
+Go()
+{
+	call-script activatescr();
+	call-script OpenYard();
+	set INBUILDSTANCE to 1;
+}
+
+Stop()
+{
+	sleep 3000;
+	set INBUILDSTANCE to 0;
+	call-script CloseYard();
+	start-script deactivatescr();
+}
+
+InitState()
+{
+	Static_Var_3 = 1;
+	Static_Var_4 = 0;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( Static_Var_4 )
+	{
+		Static_Var_3 = requestedstate;
+		return (0);
+	}
+	Static_Var_4 = 1;
+	currentstate = Static_Var_3;
+	Static_Var_3 = requestedstate;
+	while( Static_Var_3 != currentstate )
+	{
+		if( Static_Var_3 == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( Static_Var_3 == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	Static_Var_4 = 0;
+}
+
+Create()
+{
+	dont-shade lside;
+	dont-shade rside;
+	dont-shade rtray;
+	dont-shade ltray;
+	dont-shade rhold;
+	dont-shade lhold;
+	dont-shade rotary;
+	dont-shade nano1;
+	dont-shade nano2;
+	dont-shade nano3;
+	dont-shade nano4;
+	turn ltray to y-axis <-90.> now;
+	turn rtray to y-axis <-90.> now;
+	Static_Var_1 = 1;
+	call-script InitState();
+	start-script SmokeUnit();
+}
+
+QueryNanoPiece(piecenum)
+{
+	if( Static_Var_1 == 1 )
+	{
+		piecenum = point1;
+	}
+	if( Static_Var_1 == 2 )
+	{
+		piecenum = point2;
+	}
+	if( Static_Var_1 == 3 )
+	{
+		piecenum = point3;
+	}
+	if( Static_Var_1 == 4 )
+	{
+		piecenum = point4;
+	}
+	++Static_Var_1;
+	if( Static_Var_1 == 5 )
+	{
+		Static_Var_1 = 1;
+	}
+}
+
+Activate()
+{
+	signal 2;
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	signal 2;
+	set-signal-mask 2;
+	set-signal-mask 0;
+	start-script RequestState(1);
+}
+
+StartBuilding()
+{
+}
+
+StopBuilding()
+{
+}
+
+QueryBuildInfo(piecenum)
+{
+	piecenum = rotary;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+	explode nano1 type NOHEATCLOUD;
+	explode nano2 type NOHEATCLOUD;
+	explode nano3 type NOHEATCLOUD;
+	explode nano4 type NOHEATCLOUD;
+	explode base type NOHEATCLOUD;
+	explode lside type NOHEATCLOUD;
+	explode rside type NOHEATCLOUD;
+	explode ltray type NOHEATCLOUD;
+	explode rtray type NOHEATCLOUD;
+	explode lhold type NOHEATCLOUD;
+	explode rhold type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+	explode nano1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode nano2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode nano3 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode nano4 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode base type NOHEATCLOUD;
+	explode lside type NOHEATCLOUD | FALL;
+	explode rside type NOHEATCLOUD | FALL;
+	explode ltray type NOHEATCLOUD | FALL;
+	explode rtray type NOHEATCLOUD | FALL;
+	explode lhold type NOHEATCLOUD | FALL;
+	explode rhold type NOHEATCLOUD | FALL;
+	return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode nano1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode nano2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode nano3 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode nano4 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode base type NOHEATCLOUD;
+		explode lside type NOHEATCLOUD | FALL;
+		explode rside type NOHEATCLOUD | FALL;
+		explode ltray type NOHEATCLOUD | FALL;
+		explode rtray type NOHEATCLOUD | FALL;
+		explode lhold type NOHEATCLOUD | FALL;
+		explode rhold type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode nano1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode nano2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode nano3 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode nano4 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode base type NOHEATCLOUD;
+	explode lside type NOHEATCLOUD | FALL;
+	explode rside type NOHEATCLOUD | FALL;
+	explode ltray type NOHEATCLOUD | FALL;
+	explode rtray type NOHEATCLOUD | FALL;
+	explode lhold type NOHEATCLOUD | FALL;
+	explode rhold type NOHEATCLOUD | FALL;
+	return (corpsetype);
+	
+}
