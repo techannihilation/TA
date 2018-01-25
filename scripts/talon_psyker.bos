@@ -1,0 +1,872 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, torso, Hip, LegUL, LegUR, LegLR, LegLL, ArmUL,
+       ArmUR, Head, ArmLR, HandR, rotate, sweet-spot, ArmLL, HandL,
+       Staff, fp;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
+            Static_Var_6, Static_Var_7;
+
+
+StartMoving()
+{
+	signal 2;
+	set-signal-mask 2;
+	Static_Var_1 = 1;
+	while( TRUE )
+	{
+		turn Hip to z-axis <-5.> speed <200.>;
+		turn torso to x-axis <5.> speed <200.>;
+		turn torso to z-axis <7.> speed <200.>;
+		turn LegUL to x-axis <-2.> speed <200.>;
+		turn LegUL to z-axis <5.> speed <200.>;
+		turn LegUR to x-axis <-10.> speed <200.>;
+		turn LegUR to z-axis <5.> speed <200.>;
+		turn LegLR to x-axis <23.> speed <200.>;
+		turn LegLL to x-axis <-8.> speed <200.>;
+		turn ArmUL to x-axis <-9.> speed <200.>;
+		turn ArmUL to z-axis <-5.> speed <200.>;
+		turn ArmUR to x-axis <-6.> speed <200.>;
+		turn Head to x-axis <-5.> speed <200.>;
+		turn ArmLR to x-axis <-83.> speed <200.>;
+		turn HandR to x-axis <1.> speed <200.>;
+		turn ArmLL to x-axis <-11.> speed <200.>;
+		sleep 48;
+		move Hip to y-axis [-0.] speed [200.];
+		turn Hip to y-axis <1.> speed <200.>;
+		turn Hip to z-axis <-3.> speed <200.>;
+		turn torso to x-axis <0.> speed <200.>;
+		turn torso to y-axis <-3.> speed <200.>;
+		turn torso to z-axis <5.> speed <200.>;
+		turn LegUL to x-axis <4.> speed <200.>;
+		turn LegUL to z-axis <3.> speed <200.>;
+		turn LegUR to x-axis <-20.> speed <200.>;
+		turn LegUR to z-axis <3.> speed <200.>;
+		turn LegLR to x-axis <22.> speed <200.>;
+		turn LegLL to x-axis <-6.> speed <200.>;
+		turn ArmUL to x-axis <-15.> speed <200.>;
+		turn ArmUL to y-axis <-2.> speed <200.>;
+		turn ArmUL to z-axis <-2.> speed <200.>;
+		turn ArmUR to x-axis <-1.> speed <200.>;
+		turn Head to x-axis <0.> speed <200.>;
+		turn Head to y-axis <3.> speed <200.>;
+		turn ArmLR to x-axis <-84.> speed <200.>;
+		turn HandR to x-axis <3.> speed <200.>;
+		turn ArmLL to x-axis <-20.> speed <200.>;
+		sleep 54;
+		move Hip to y-axis [-0.] speed [200.];
+		turn Hip to y-axis <3.> speed <200.>;
+		turn Hip to z-axis <-1.> speed <200.>;
+		turn torso to x-axis <2.> speed <200.>;
+		turn torso to y-axis <-7.> speed <200.>;
+		turn torso to z-axis <2.> speed <200.>;
+		turn LegUL to x-axis <7.> speed <200.>;
+		turn LegUL to z-axis <1.> speed <200.>;
+		turn LegUR to x-axis <-28.> speed <200.>;
+		turn LegUR to z-axis <1.> speed <200.>;
+		turn LegLR to x-axis <23.> speed <200.>;
+		turn LegLL to x-axis <-3.> speed <200.>;
+		turn ArmUL to x-axis <-18.> speed <200.>;
+		turn ArmUL to y-axis <-5.> speed <200.>;
+		turn ArmUL to z-axis <0.> speed <200.>;
+		turn ArmUR to x-axis <2.> speed <200.>;
+		turn Head to x-axis <-2.> speed <200.>;
+		turn Head to y-axis <7.> speed <200.>;
+		turn ArmLR to x-axis <-85.> speed <200.>;
+		turn HandR to x-axis <4.> speed <200.>;
+		turn ArmLL to x-axis <-25.> speed <200.>;
+		sleep 59;
+		move Hip to y-axis [-0.] speed [200.];
+		turn Hip to y-axis <5.> speed <200.>;
+		turn Hip to z-axis <0.> speed <200.>;
+		turn torso to x-axis <7.> speed <200.>;
+		turn torso to y-axis <-10.> speed <200.>;
+		turn torso to z-axis <0.> speed <200.>;
+		turn LegUL to x-axis <10.> speed <200.>;
+		turn LegUL to z-axis <0.> speed <200.>;
+		turn LegUR to x-axis <-25.> speed <200.>;
+		turn LegUR to z-axis <0.> speed <200.>;
+		turn LegLR to x-axis <14.> speed <200.>;
+		turn LegLL to x-axis <1.> speed <200.>;
+		turn ArmUL to x-axis <-20.> speed <200.>;
+		turn ArmUL to y-axis <-10.> speed <200.>;
+		turn ArmUR to x-axis <4.> speed <200.>;
+		turn Head to x-axis <-7.> speed <200.>;
+		turn Head to y-axis <10.> speed <200.>;
+		turn ArmLR to x-axis <-85.> speed <200.>;
+		turn HandR to x-axis <6.> speed <200.>;
+		turn ArmLL to x-axis <-30.> speed <200.>;
+		sleep 59;
+		move Hip to y-axis [-0.] speed [200.];
+		turn Hip to y-axis <3.> speed <200.>;
+		turn Hip to z-axis <1.> speed <200.>;
+		turn torso to x-axis <12.> speed <200.>;
+		turn torso to y-axis <-7.> speed <200.>;
+		turn torso to z-axis <-1.> speed <200.>;
+		turn LegUL to x-axis <4.> speed <200.>;
+		turn LegUL to z-axis <-1.> speed <200.>;
+		turn LegUR to x-axis <-19.> speed <200.>;
+		turn LegUR to z-axis <-1.> speed <200.>;
+		turn LegLR to x-axis <-0.> speed <200.>;
+		turn LegLL to x-axis <12.> speed <200.>;
+		turn ArmUL to x-axis <-18.> speed <200.>;
+		turn ArmUL to y-axis <-5.> speed <200.>;
+		turn ArmUR to x-axis <1.> speed <200.>;
+		turn Head to x-axis <-12.> speed <200.>;
+		turn Head to y-axis <7.> speed <200.>;
+		turn ArmLR to x-axis <-88.> speed <200.>;
+		turn HandR to x-axis <8.> speed <200.>;
+		turn ArmLL to x-axis <-23.> speed <200.>;
+		sleep 60;
+		move Hip to y-axis [-0.] speed [200.];
+		turn Hip to y-axis <1.> speed <200.>;
+		turn Hip to z-axis <3.> speed <200.>;
+		turn torso to x-axis <9.> speed <200.>;
+		turn torso to y-axis <-3.> speed <200.>;
+		turn torso to z-axis <-4.> speed <200.>;
+		turn LegUL to x-axis <-3.> speed <200.>;
+		turn LegUL to z-axis <-3.> speed <200.>;
+		turn LegUR to x-axis <-10.> speed <200.>;
+		turn LegUR to z-axis <-3.> speed <200.>;
+		turn LegLR to x-axis <-15.> speed <200.>;
+		turn LegLL to x-axis <20.> speed <200.>;
+		turn ArmUL to x-axis <-15.> speed <200.>;
+		turn ArmUL to y-axis <-2.> speed <200.>;
+		turn ArmUR to x-axis <-3.> speed <200.>;
+		turn Head to x-axis <-9.> speed <200.>;
+		turn Head to y-axis <3.> speed <200.>;
+		turn ArmLR to x-axis <-90.> speed <200.>;
+		turn HandR to x-axis <9.> speed <200.>;
+		turn ArmLL to x-axis <-17.> speed <200.>;
+		sleep 56;
+		move Hip to y-axis [0.] speed [200.];
+		turn Hip to y-axis <0.> speed <200.>;
+		turn Hip to z-axis <5.> speed <200.>;
+		turn torso to x-axis <5.> speed <200.>;
+		turn torso to y-axis <0.> speed <200.>;
+		turn torso to z-axis <-7.> speed <200.>;
+		turn LegUL to x-axis <-10.> speed <200.>;
+		turn LegUL to z-axis <-5.> speed <200.>;
+		turn LegUR to x-axis <-2.> speed <200.>;
+		turn LegUR to z-axis <-5.> speed <200.>;
+		turn LegLR to x-axis <-8.> speed <200.>;
+		turn LegLL to x-axis <23.> speed <200.>;
+		turn ArmUL to x-axis <-11.> speed <200.>;
+		turn ArmUL to y-axis <0.> speed <200.>;
+		turn ArmUR to x-axis <-11.> speed <200.>;
+		turn Head to x-axis <-5.> speed <200.>;
+		turn Head to y-axis <0.> speed <200.>;
+		turn ArmLR to x-axis <-95.> speed <200.>;
+		turn HandR to x-axis <13.> speed <200.>;
+		turn ArmLL to x-axis <-4.> speed <200.>;
+		sleep 56;
+		move Hip to y-axis [-0.] speed [200.];
+		turn Hip to y-axis <-1.> speed <200.>;
+		turn Hip to z-axis <3.> speed <200.>;
+		turn torso to x-axis <0.> speed <200.>;
+		turn torso to y-axis <3.> speed <200.>;
+		turn torso to z-axis <-5.> speed <200.>;
+		turn LegUL to x-axis <-20.> speed <200.>;
+		turn LegUL to z-axis <-3.> speed <200.>;
+		turn LegUR to x-axis <4.> speed <200.>;
+		turn LegUR to z-axis <-3.> speed <200.>;
+		turn LegLR to x-axis <-6.> speed <200.>;
+		turn LegLL to x-axis <22.> speed <200.>;
+		turn ArmUL to x-axis <-3.> speed <200.>;
+		turn ArmUL to y-axis <2.> speed <200.>;
+		turn ArmUR to x-axis <-18.> speed <200.>;
+		turn Head to x-axis <0.> speed <200.>;
+		turn Head to y-axis <-3.> speed <200.>;
+		turn ArmLR to x-axis <-81.> speed <200.>;
+		turn HandR to x-axis <5.> speed <200.>;
+		turn ArmLL to x-axis <-7.> speed <200.>;
+		sleep 60;
+		move Hip to y-axis [-0.] speed [200.];
+		turn Hip to y-axis <-3.> speed <200.>;
+		turn Hip to z-axis <1.> speed <200.>;
+		turn torso to x-axis <2.> speed <200.>;
+		turn torso to y-axis <7.> speed <200.>;
+		turn torso to z-axis <-2.> speed <200.>;
+		turn LegUL to x-axis <-28.> speed <200.>;
+		turn LegUL to z-axis <-1.> speed <200.>;
+		turn LegUR to x-axis <7.> speed <200.>;
+		turn LegUR to z-axis <-1.> speed <200.>;
+		turn LegLR to x-axis <-3.> speed <200.>;
+		turn LegLL to x-axis <23.> speed <200.>;
+		turn ArmUL to x-axis <1.> speed <200.>;
+		turn ArmUL to y-axis <5.> speed <200.>;
+		turn ArmUR to x-axis <-22.> speed <200.>;
+		turn Head to x-axis <-2.> speed <200.>;
+		turn Head to y-axis <-7.> speed <200.>;
+		turn ArmLR to x-axis <-74.> speed <200.>;
+		turn HandR to x-axis <0.> speed <200.>;
+		turn ArmLL to x-axis <-9.> speed <200.>;
+		sleep 60;
+		move Hip to y-axis [-0.] speed [200.];
+		turn Hip to y-axis <-5.> speed <200.>;
+		turn Hip to z-axis <0.> speed <200.>;
+		turn torso to x-axis <7.> speed <200.>;
+		turn torso to y-axis <10.> speed <200.>;
+		turn torso to z-axis <0.> speed <200.>;
+		turn LegUL to x-axis <-25.> speed <200.>;
+		turn LegUL to z-axis <0.> speed <200.>;
+		turn LegUR to x-axis <10.> speed <200.>;
+		turn LegUR to z-axis <0.> speed <200.>;
+		turn LegLR to x-axis <1.> speed <200.>;
+		turn LegLL to x-axis <14.> speed <200.>;
+		turn ArmUL to x-axis <4.> speed <200.>;
+		turn ArmUL to y-axis <7.> speed <200.>;
+		turn ArmUR to x-axis <-26.> speed <200.>;
+		turn Head to x-axis <-7.> speed <200.>;
+		turn Head to y-axis <-10.> speed <200.>;
+		turn ArmLR to x-axis <-66.> speed <200.>;
+		turn HandR to x-axis <-4.> speed <200.>;
+		turn ArmLL to x-axis <-10.> speed <200.>;
+		sleep 54;
+		move Hip to y-axis [-0.] speed [200.];
+		turn Hip to y-axis <-3.> speed <200.>;
+		turn Hip to z-axis <-1.> speed <200.>;
+		turn torso to x-axis <12.> speed <200.>;
+		turn torso to y-axis <7.> speed <200.>;
+		turn torso to z-axis <1.> speed <200.>;
+		turn LegUL to x-axis <-19.> speed <200.>;
+		turn LegUL to z-axis <1.> speed <200.>;
+		turn LegUR to x-axis <4.> speed <200.>;
+		turn LegUR to z-axis <1.> speed <200.>;
+		turn LegLR to x-axis <12.> speed <200.>;
+		turn LegLL to x-axis <-0.> speed <200.>;
+		turn ArmUL to x-axis <1.> speed <200.>;
+		turn ArmUL to y-axis <5.> speed <200.>;
+		turn ArmUL to z-axis <-1.> speed <200.>;
+		turn ArmUR to x-axis <-21.> speed <200.>;
+		turn Head to x-axis <-12.> speed <200.>;
+		turn Head to y-axis <-7.> speed <200.>;
+		turn ArmLR to x-axis <-71.> speed <200.>;
+		turn HandR to x-axis <-3.> speed <200.>;
+		turn ArmLL to x-axis <-10.> speed <200.>;
+		sleep 60;
+		move Hip to y-axis [-0.] speed [200.];
+		turn Hip to y-axis <-1.> speed <200.>;
+		turn Hip to z-axis <-3.> speed <200.>;
+		turn torso to x-axis <9.> speed <200.>;
+		turn torso to y-axis <3.> speed <200.>;
+		turn torso to z-axis <4.> speed <200.>;
+		turn LegUL to x-axis <-10.> speed <200.>;
+		turn LegUL to z-axis <3.> speed <200.>;
+		turn LegUR to x-axis <-3.> speed <200.>;
+		turn LegUR to z-axis <3.> speed <200.>;
+		turn LegLR to x-axis <20.> speed <200.>;
+		turn LegLL to x-axis <-15.> speed <200.>;
+		turn ArmUL to x-axis <-2.> speed <200.>;
+		turn ArmUL to y-axis <2.> speed <200.>;
+		turn ArmUL to z-axis <-3.> speed <200.>;
+		turn ArmUR to x-axis <-16.> speed <200.>;
+		turn Head to x-axis <-9.> speed <200.>;
+		turn Head to y-axis <-3.> speed <200.>;
+		turn ArmLR to x-axis <-75.> speed <200.>;
+		turn HandR to x-axis <-2.> speed <200.>;
+		turn ArmLL to x-axis <-11.> speed <200.>;
+		sleep 61;
+		move Hip to y-axis [-0.] speed [200.];
+		turn Hip to y-axis <-0.> speed <200.>;
+		turn Hip to z-axis <-5.> speed <200.>;
+		turn torso to x-axis <6.> speed <200.>;
+		turn torso to y-axis <0.> speed <200.>;
+		turn torso to z-axis <7.> speed <200.>;
+		turn LegUL to x-axis <-3.> speed <200.>;
+		turn LegUL to z-axis <5.> speed <200.>;
+		turn LegUR to x-axis <-9.> speed <200.>;
+		turn LegUR to z-axis <5.> speed <200.>;
+		turn LegLR to x-axis <23.> speed <200.>;
+		turn LegLL to x-axis <-9.> speed <200.>;
+		turn ArmUL to x-axis <-8.> speed <200.>;
+		turn ArmUL to y-axis <0.> speed <200.>;
+		turn ArmUL to z-axis <-5.> speed <200.>;
+		turn ArmUR to x-axis <-8.> speed <200.>;
+		turn Head to x-axis <-6.> speed <200.>;
+		turn Head to y-axis <-0.> speed <200.>;
+		turn ArmLR to x-axis <-82.> speed <200.>;
+		turn HandR to x-axis <0.> speed <200.>;
+		turn ArmLL to x-axis <-11.> speed <200.>;
+		sleep 39;
+	}
+}
+
+Restore()
+{
+	move torso to x-axis [0.] speed [50.];
+	turn torso to x-axis <0.> speed <50.>;
+	move torso to y-axis [0.] speed [50.];
+	turn torso to y-axis <0.> speed <50.>;
+	move torso to z-axis [0.] speed [50.];
+	turn torso to z-axis <0.> speed <50.>;
+	move LegUL to x-axis [0.] speed [50.];
+	turn LegUL to x-axis <0.> speed <50.>;
+	move LegUL to y-axis [0.] speed [50.];
+	turn LegUL to y-axis <0.> speed <50.>;
+	move LegUL to z-axis [0.] speed [50.];
+	turn LegUL to z-axis <0.> speed <50.>;
+	move LegUR to x-axis [0.] speed [50.];
+	turn LegUR to x-axis <0.> speed <50.>;
+	move LegUR to y-axis [0.] speed [50.];
+	turn LegUR to y-axis <0.> speed <50.>;
+	move LegUR to z-axis [0.] speed [50.];
+	turn LegUR to z-axis <0.> speed <50.>;
+	move LegLR to x-axis [0.] speed [50.];
+	turn LegLR to x-axis <0.> speed <50.>;
+	move LegLR to y-axis [0.] speed [50.];
+	turn LegLR to y-axis <0.> speed <50.>;
+	move LegLR to z-axis [0.] speed [50.];
+	turn LegLR to z-axis <0.> speed <50.>;
+	move LegLL to x-axis [0.] speed [50.];
+	turn LegLL to x-axis <0.> speed <50.>;
+	move LegLL to y-axis [0.] speed [50.];
+	turn LegLL to y-axis <0.> speed <50.>;
+	move LegLL to z-axis [0.] speed [50.];
+	turn LegLL to z-axis <0.> speed <50.>;
+	move ArmUL to x-axis [0.] speed [50.];
+	turn ArmUL to x-axis <4.> speed <50.>;
+	move ArmUL to y-axis [0.] speed [50.];
+	turn ArmUL to y-axis <7.> speed <50.>;
+	move ArmUL to z-axis [0.] speed [50.];
+	turn ArmUL to z-axis <0.> speed <50.>;
+	move ArmUR to x-axis [0.] speed [50.];
+	turn ArmUR to x-axis <-21.> speed <50.>;
+	move ArmUR to y-axis [0.] speed [50.];
+	turn ArmUR to y-axis <0.> speed <50.>;
+	move ArmUR to z-axis [0.] speed [50.];
+	turn ArmUR to z-axis <0.> speed <50.>;
+	move Head to x-axis [0.] speed [50.];
+	turn Head to x-axis <0.> speed <50.>;
+	move Head to y-axis [0.] speed [50.];
+	turn Head to y-axis <0.> speed <50.>;
+	move Head to z-axis [0.] speed [50.];
+	turn Head to z-axis <0.> speed <50.>;
+	move ArmLR to x-axis [0.] speed [50.];
+	turn ArmLR to x-axis <-39.> speed <50.>;
+	move ArmLR to y-axis [0.] speed [50.];
+	turn ArmLR to y-axis <0.> speed <50.>;
+	move ArmLR to z-axis [0.] speed [50.];
+	turn ArmLR to z-axis <0.> speed <50.>;
+	move HandR to x-axis [0.] speed [50.];
+	turn HandR to x-axis <-41.> speed <50.>;
+	move HandR to y-axis [0.] speed [50.];
+	turn HandR to y-axis <0.> speed <50.>;
+	move HandR to z-axis [0.] speed [50.];
+	turn HandR to z-axis <0.> speed <50.>;
+	move Staff to x-axis [0.] speed [50.];
+	turn Staff to x-axis <10.> speed <50.>;
+	move Staff to y-axis [0.] speed [50.];
+	turn Staff to y-axis <0.> speed <50.>;
+	move Staff to z-axis [0.] speed [50.];
+	turn Staff to z-axis <0.> speed <50.>;
+	move ArmLL to x-axis [0.] speed [50.];
+	turn ArmLL to x-axis <-10.> speed <50.>;
+	move ArmLL to y-axis [0.] speed [50.];
+	turn ArmLL to y-axis <0.> speed <50.>;
+	move ArmLL to z-axis [0.] speed [50.];
+	turn ArmLL to z-axis <0.> speed <50.>;
+	move HandL to x-axis [0.] speed [50.];
+	turn HandL to x-axis <0.> speed <50.>;
+	move HandL to y-axis [0.] speed [50.];
+	turn HandL to y-axis <0.> speed <50.>;
+	move HandL to z-axis [0.] speed [50.];
+	turn HandL to z-axis <0.> speed <50.>;
+}
+
+StopMoving()
+{
+	signal 2;
+	Static_Var_1 = 0;
+	call-script Restore();
+}
+
+Build()
+{
+	if( Static_Var_6 == 1 )
+	{
+		emit-sfx 1026 from fp;
+		sleep 50;
+	}
+	if( Static_Var_6 == 0 )
+	{
+		sleep Rand( 1000, 10000 );
+		emit-sfx 1027 from fp;
+	}
+	start-script Build();
+}
+
+Wave()
+{
+	if( Static_Var_6 == 1 )
+	{
+		turn ArmUL to x-axis <4.> speed <50.>;
+		turn ArmUL to y-axis <7.> speed <50.>;
+		turn ArmUR to x-axis <1.> speed <50.>;
+		turn ArmLR to x-axis <-39.> speed <50.>;
+		turn HandR to x-axis <-41.> speed <50.>;
+		turn ArmLL to x-axis <-10.> speed <50.>;
+		sleep 120;
+		turn torso to x-axis <-3.> speed <50.>;
+		turn torso to y-axis <15.> speed <50.>;
+		turn torso to z-axis <3.> speed <50.>;
+		turn ArmUL to x-axis <16.> speed <50.>;
+		turn ArmUL to y-axis <11.> speed <50.>;
+		turn ArmUL to z-axis <-7.> speed <50.>;
+		turn ArmUR to x-axis <-18.> speed <50.>;
+		turn ArmUR to y-axis <8.> speed <50.>;
+		turn Head to x-axis <3.> speed <50.>;
+		turn Head to y-axis <-14.> speed <50.>;
+		turn ArmLR to x-axis <-38.> speed <50.>;
+		turn ArmLR to y-axis <10.> speed <50.>;
+		turn HandR to x-axis <-28.> speed <50.>;
+		turn HandR to y-axis <-11.> speed <50.>;
+		turn ArmLL to x-axis <-27.> speed <50.>;
+		turn HandL to x-axis <-3.> speed <50.>;
+		sleep 120;
+		turn torso to x-axis <-5.> speed <50.>;
+		turn torso to y-axis <30.> speed <50.>;
+		turn torso to z-axis <5.> speed <50.>;
+		turn ArmUL to x-axis <29.> speed <50.>;
+		turn ArmUL to y-axis <15.> speed <50.>;
+		turn ArmUL to z-axis <-13.> speed <50.>;
+		turn ArmUR to x-axis <-37.> speed <50.>;
+		turn ArmUR to y-axis <17.> speed <50.>;
+		turn Head to x-axis <5.> speed <50.>;
+		turn Head to y-axis <-28.> speed <50.>;
+		turn ArmLR to x-axis <-36.> speed <50.>;
+		turn ArmLR to y-axis <20.> speed <50.>;
+		turn HandR to x-axis <-15.> speed <50.>;
+		turn HandR to y-axis <-22.> speed <50.>;
+		turn ArmLL to x-axis <-44.> speed <50.>;
+		turn HandL to x-axis <-7.> speed <50.>;
+		sleep 120;
+		turn torso to x-axis <-8.> speed <50.>;
+		turn torso to y-axis <45.> speed <50.>;
+		turn torso to z-axis <8.> speed <50.>;
+		turn ArmUL to x-axis <41.> speed <50.>;
+		turn ArmUL to y-axis <19.> speed <50.>;
+		turn ArmUL to z-axis <-20.> speed <50.>;
+		turn ArmUR to x-axis <-57.> speed <50.>;
+		turn ArmUR to y-axis <25.> speed <50.>;
+		turn Head to x-axis <8.> speed <50.>;
+		turn Head to y-axis <-41.> speed <50.>;
+		turn ArmLR to x-axis <-35.> speed <50.>;
+		turn ArmLR to y-axis <31.> speed <50.>;
+		turn HandR to x-axis <-1.> speed <50.>;
+		turn HandR to y-axis <-33.> speed <50.>;
+		turn ArmLL to x-axis <-61.> speed <50.>;
+		turn HandL to x-axis <-10.> speed <50.>;
+		sleep 120;
+		turn torso to x-axis <-10.> speed <50.>;
+		turn torso to y-axis <60.> speed <50.>;
+		turn torso to z-axis <10.> speed <50.>;
+		turn ArmUL to x-axis <53.> speed <50.>;
+		turn ArmUL to y-axis <23.> speed <50.>;
+		turn ArmUL to z-axis <-27.> speed <50.>;
+		turn ArmUR to x-axis <-76.> speed <50.>;
+		turn ArmUR to y-axis <33.> speed <50.>;
+		turn Head to x-axis <10.> speed <50.>;
+		turn Head to y-axis <-55.> speed <50.>;
+		turn ArmLR to x-axis <-34.> speed <50.>;
+		turn ArmLR to y-axis <41.> speed <50.>;
+		turn HandR to x-axis <12.> speed <50.>;
+		turn HandR to y-axis <-44.> speed <50.>;
+		turn ArmLL to x-axis <-78.> speed <50.>;
+		turn HandL to x-axis <-14.> speed <50.>;
+		sleep 100;
+		turn torso to x-axis <-5.> speed <50.>;
+		turn torso to y-axis <45.> speed <50.>;
+		turn torso to z-axis <8.> speed <50.>;
+		turn ArmUL to x-axis <38.> speed <50.>;
+		turn ArmUL to y-axis <14.> speed <50.>;
+		turn ArmUR to y-axis <19.> speed <50.>;
+		turn Head to x-axis <5.> speed <50.>;
+		turn Head to y-axis <-41.> speed <50.>;
+		turn ArmLR to x-axis <-30.> speed <50.>;
+		turn ArmLR to y-axis <37.> speed <50.>;
+		turn HandR to x-axis <22.> speed <50.>;
+		turn HandR to y-axis <-31.> speed <50.>;
+		turn Staff to x-axis <3.> speed <50.>;
+		turn ArmLL to x-axis <-69.> speed <50.>;
+		turn ArmLL to y-axis <5.> speed <50.>;
+		sleep 100;
+		turn torso to x-axis <0.> speed <50.>;
+		turn torso to y-axis <30.> speed <50.>;
+		turn torso to z-axis <5.> speed <50.>;
+		turn ArmUL to x-axis <24.> speed <50.>;
+		turn ArmUL to y-axis <6.> speed <50.>;
+		turn ArmUR to y-axis <5.> speed <50.>;
+		turn Head to x-axis <1.> speed <50.>;
+		turn Head to y-axis <-28.> speed <50.>;
+		turn ArmLR to x-axis <-26.> speed <50.>;
+		turn ArmLR to y-axis <34.> speed <50.>;
+		turn HandR to x-axis <31.> speed <50.>;
+		turn HandR to y-axis <-18.> speed <50.>;
+		turn Staff to x-axis <7.> speed <50.>;
+		turn ArmLL to x-axis <-60.> speed <50.>;
+		turn ArmLL to y-axis <10.> speed <50.>;
+		sleep 100;
+		turn torso to x-axis <5.> speed <50.>;
+		turn torso to y-axis <15.> speed <50.>;
+		turn torso to z-axis <3.> speed <50.>;
+		turn ArmUL to x-axis <9.> speed <50.>;
+		turn ArmUL to y-axis <-3.> speed <50.>;
+		turn ArmUR to y-axis <-10.> speed <50.>;
+		turn Head to x-axis <-4.> speed <50.>;
+		turn Head to y-axis <-14.> speed <50.>;
+		turn ArmLR to x-axis <-22.> speed <50.>;
+		turn ArmLR to y-axis <30.> speed <50.>;
+		turn HandR to x-axis <41.> speed <50.>;
+		turn HandR to y-axis <-4.> speed <50.>;
+		turn Staff to x-axis <10.> speed <50.>;
+		turn ArmLL to x-axis <-51.> speed <50.>;
+		turn ArmLL to y-axis <15.> speed <50.>;
+		sleep 100;
+		turn torso to x-axis <10.> speed <50.>;
+		turn torso to y-axis <0.> speed <50.>;
+		turn torso to z-axis <0.> speed <50.>;
+		turn ArmUL to x-axis <-6.> speed <50.>;
+		turn ArmUL to y-axis <-12.> speed <50.>;
+		turn ArmUR to y-axis <-24.> speed <50.>;
+		turn Head to x-axis <-9.> speed <50.>;
+		turn Head to y-axis <0.> speed <50.>;
+		turn ArmLR to x-axis <-18.> speed <50.>;
+		turn ArmLR to y-axis <27.> speed <50.>;
+		turn HandR to x-axis <50.> speed <50.>;
+		turn HandR to y-axis <9.> speed <50.>;
+		turn Staff to x-axis <14.> speed <50.>;
+		turn ArmLL to x-axis <-43.> speed <50.>;
+		turn ArmLL to y-axis <19.> speed <50.>;
+		sleep 100;
+		turn torso to x-axis <6.> speed <50.>;
+		turn torso to y-axis <-11.> speed <50.>;
+		turn torso to z-axis <-2.> speed <50.>;
+		turn ArmUL to x-axis <-2.> speed <50.>;
+		turn ArmUL to y-axis <-18.> speed <50.>;
+		turn ArmUL to z-axis <-22.> speed <50.>;
+		turn ArmUR to y-axis <-30.> speed <50.>;
+		turn Head to x-axis <-5.> speed <50.>;
+		turn Head to y-axis <10.> speed <50.>;
+		turn ArmLR to x-axis <-24.> speed <50.>;
+		turn ArmLR to y-axis <22.> speed <50.>;
+		turn HandR to x-axis <58.> speed <50.>;
+		turn Staff to x-axis <18.> speed <50.>;
+		turn ArmLL to y-axis <16.> speed <50.>;
+		sleep 100;
+		turn torso to x-axis <2.> speed <50.>;
+		turn torso to y-axis <-23.> speed <50.>;
+		turn torso to z-axis <-4.> speed <50.>;
+		turn ArmUL to x-axis <3.> speed <50.>;
+		turn ArmUL to y-axis <-24.> speed <50.>;
+		turn ArmUL to z-axis <-17.> speed <50.>;
+		turn ArmUR to y-axis <-36.> speed <50.>;
+		turn Head to x-axis <-1.> speed <50.>;
+		turn Head to y-axis <20.> speed <50.>;
+		turn ArmLR to x-axis <-30.> speed <50.>;
+		turn ArmLR to y-axis <18.> speed <50.>;
+		turn HandR to x-axis <65.> speed <50.>;
+		turn Staff to x-axis <21.> speed <50.>;
+		turn ArmLL to y-axis <13.> speed <50.>;
+		sleep 100;
+		turn torso to x-axis <-3.> speed <50.>;
+		turn torso to y-axis <-34.> speed <50.>;
+		turn torso to z-axis <-5.> speed <50.>;
+		turn ArmUL to x-axis <7.> speed <50.>;
+		turn ArmUL to y-axis <-30.> speed <50.>;
+		turn ArmUL to z-axis <-12.> speed <50.>;
+		turn ArmUR to y-axis <-42.> speed <50.>;
+		turn Head to x-axis <3.> speed <50.>;
+		turn Head to y-axis <30.> speed <50.>;
+		turn ArmLR to x-axis <-36.> speed <50.>;
+		turn ArmLR to y-axis <14.> speed <50.>;
+		turn HandR to x-axis <43.> speed <50.>;
+		turn Staff to x-axis <8.> speed <50.>;
+		turn ArmLL to y-axis <10.> speed <50.>;
+		sleep 100;
+		turn torso to x-axis <-7.> speed <50.>;
+		turn torso to y-axis <-45.> speed <50.>;
+		turn torso to z-axis <-7.> speed <50.>;
+		turn ArmUL to x-axis <12.> speed <50.>;
+		turn ArmUL to y-axis <-37.> speed <50.>;
+		turn ArmUL to z-axis <-7.> speed <50.>;
+		turn ArmUR to y-axis <-48.> speed <50.>;
+		turn Head to x-axis <7.> speed <50.>;
+		turn Head to y-axis <40.> speed <50.>;
+		turn ArmLR to x-axis <-42.> speed <50.>;
+		turn ArmLR to y-axis <9.> speed <50.>;
+		turn HandR to x-axis <21.> speed <50.>;
+		turn Staff to x-axis <-5.> speed <50.>;
+		turn ArmLL to y-axis <6.> speed <50.>;
+		sleep 100;
+		turn torso to x-axis <-5.> speed <50.>;
+		turn torso to y-axis <-34.> speed <50.>;
+		turn torso to z-axis <-5.> speed <50.>;
+		turn ArmUL to x-axis <10.> speed <50.>;
+		turn ArmUL to y-axis <-26.> speed <50.>;
+		turn ArmUL to z-axis <-6.> speed <50.>;
+		turn ArmUR to x-axis <-57.> speed <50.>;
+		turn ArmUR to y-axis <-36.> speed <50.>;
+		turn Head to x-axis <5.> speed <50.>;
+		turn Head to y-axis <30.> speed <50.>;
+		turn ArmLR to x-axis <-41.> speed <50.>;
+		turn ArmLR to y-axis <7.> speed <50.>;
+		turn HandR to x-axis <6.> speed <50.>;
+		turn HandR to y-axis <7.> speed <50.>;
+		turn Staff to x-axis <-3.> speed <50.>;
+		turn ArmLL to x-axis <-34.> speed <50.>;
+		turn ArmLL to y-axis <5.> speed <50.>;
+		turn HandL to x-axis <-10.> speed <50.>;
+		sleep 100;
+		turn torso to x-axis <-4.> speed <50.>;
+		turn torso to y-axis <-23.> speed <50.>;
+		turn torso to z-axis <-4.> speed <50.>;
+		turn ArmUL to x-axis <8.> speed <50.>;
+		turn ArmUL to y-axis <-15.> speed <50.>;
+		turn ArmUL to z-axis <-4.> speed <50.>;
+		turn ArmUR to x-axis <-37.> speed <50.>;
+		turn ArmUR to y-axis <-24.> speed <50.>;
+		turn Head to x-axis <4.> speed <50.>;
+		turn Head to y-axis <20.> speed <50.>;
+		turn ArmLR to x-axis <-41.> speed <50.>;
+		turn ArmLR to y-axis <5.> speed <50.>;
+		turn HandR to x-axis <-10.> speed <50.>;
+		turn HandR to y-axis <5.> speed <50.>;
+		turn Staff to x-axis <-2.> speed <50.>;
+		turn ArmLL to x-axis <-26.> speed <50.>;
+		turn ArmLL to y-axis <3.> speed <50.>;
+		turn HandL to x-axis <-7.> speed <50.>;
+		sleep 100;
+		turn torso to x-axis <-2.> speed <50.>;
+		turn torso to y-axis <-11.> speed <50.>;
+		turn torso to z-axis <-2.> speed <50.>;
+		turn ArmUL to x-axis <6.> speed <50.>;
+		turn ArmUL to y-axis <-4.> speed <50.>;
+		turn ArmUL to z-axis <-2.> speed <50.>;
+		turn ArmUR to x-axis <-18.> speed <50.>;
+		turn ArmUR to y-axis <-12.> speed <50.>;
+		turn Head to x-axis <2.> speed <50.>;
+		turn Head to y-axis <10.> speed <50.>;
+		turn ArmLR to x-axis <-40.> speed <50.>;
+		turn ArmLR to y-axis <2.> speed <50.>;
+		turn HandR to x-axis <-26.> speed <50.>;
+		turn HandR to y-axis <2.> speed <50.>;
+		turn Staff to x-axis <-1.> speed <50.>;
+		turn ArmLL to x-axis <-18.> speed <50.>;
+		turn ArmLL to y-axis <2.> speed <50.>;
+		turn HandL to x-axis <-3.> speed <50.>;
+		sleep 100;
+		turn torso to x-axis <0.> speed <50.>;
+		turn torso to y-axis <0.> speed <50.>;
+		turn torso to z-axis <0.> speed <50.>;
+		turn ArmUL to x-axis <4.> speed <50.>;
+		turn ArmUL to y-axis <7.> speed <50.>;
+		turn ArmUL to z-axis <0.> speed <50.>;
+		turn ArmUR to x-axis <1.> speed <50.>;
+		turn ArmUR to y-axis <0.> speed <50.>;
+		turn Head to x-axis <0.> speed <50.>;
+		turn Head to y-axis <0.> speed <50.>;
+		turn ArmLR to x-axis <-39.> speed <50.>;
+		turn ArmLR to y-axis <0.> speed <50.>;
+		turn HandR to x-axis <-41.> speed <50.>;
+		turn HandR to y-axis <0.> speed <50.>;
+		turn Staff to x-axis <0.> speed <50.>;
+		turn ArmLL to x-axis <-10.> speed <50.>;
+		turn ArmLL to y-axis <0.> speed <50.>;
+		turn HandL to x-axis <0.> speed <50.>;
+		sleep 100;
+	}
+	start-script Wave();
+}
+
+Create()
+{
+	start-script StopMoving();
+	start-script Wave();
+	Static_Var_1 = 0;
+	Static_Var_6 = 0;
+	spin rotate around y-axis speed <500.>;
+	move sweet-spot to x-axis [-3277.] now;
+	start-script Build();
+}
+
+delayed_restore()
+{
+	start-script Restore();
+	sleep 3000;
+	move Hip to x-axis [0.] speed [500.];
+	turn Hip to x-axis <0.> speed <500.>;
+	move Hip to y-axis [0.] speed [500.];
+	turn Hip to y-axis <0.> speed <500.>;
+	move Hip to z-axis [0.] speed [500.];
+	turn Hip to z-axis <0.> speed <500.>;
+}
+
+FirePrimary()
+{
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = fp;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = base;
+}
+
+smoke()
+{
+	while( Static_Var_2 == 1 )
+	{
+		sleep 10;
+		if( Rand( 1, 15 ) == 1 )
+		{
+		}
+	}
+}
+
+end()
+{
+	sleep 10000;
+	Static_Var_2 = 0;
+}
+
+restore_db()
+{
+	sleep 2000;
+	Static_Var_2 = 0;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal 4;
+	set-signal-mask 4;
+	Static_Var_2 = 1;
+	Static_Var_6 = 0;
+	start-script smoke();
+	start-script Wave();
+	start-script Build();
+	turn Hip to y-axis heading speed <500.>;
+	sleep Rand( 1, 5000 );
+	start-script restore_db();
+	return (1);
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = sweet-spot;
+}
+
+Go()
+{
+	sleep 200;
+	turn base to y-axis Static_Var_5 speed <160.>;
+	wait-for-turn torso around y-axis;
+	Static_Var_6 = 1;
+	set INBUILDSTANCE to 1;
+}
+
+Stop()
+{
+	Static_Var_6 = 0;
+	set INBUILDSTANCE to 0;
+	turn base to y-axis <0.> speed <320.>;
+	wait-for-turn torso around y-axis;
+	call-script Restore();
+}
+
+InitState()
+{
+	Static_Var_3 = 1;
+	Static_Var_4 = 0;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( Static_Var_4 )
+	{
+		Static_Var_3 = requestedstate;
+		return (0);
+	}
+	Static_Var_4 = 1;
+	currentstate = Static_Var_3;
+	Static_Var_3 = requestedstate;
+	while( Static_Var_3 != currentstate )
+	{
+		if( Static_Var_3 == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( Static_Var_3 == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	Static_Var_4 = 0;
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+StartBuilding(Func_Var_1)
+{
+	Static_Var_5 = Func_Var_1;
+	start-script RequestState(0);
+}
+
+StopBuilding()
+{
+	start-script RequestState(1);
+}
+
+QueryNanoPiece(piecenum)
+{
+	piecenum = fp;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode torso type NOHEATCLOUD;
+		explode Head type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode torso type NOHEATCLOUD | FALL;
+		explode Head type NOHEATCLOUD | FALL;
+
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode torso type NOHEATCLOUD | FALL | SMOKE | FIRE |EXPLODE_ON_HIT;
+		explode Head type NOHEATCLOUD | FALL | SMOKE | FIRE;
+		
+	
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode torso type NOHEATCLOUD | FALL | SMOKE | FIRE |EXPLODE_ON_HIT;
+	explode Head type NOHEATCLOUD | FALL | SMOKE | FIRE;
+	return (corpsetype);
+
+}

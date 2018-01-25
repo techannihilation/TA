@@ -1,0 +1,357 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, pad, nanobar, nano1, nano2, point1, point2,
+       newno, newnoarm, pole;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
+            Static_Var_6, Static_Var_7, Static_Var_8;
+
+
+activatescr()
+{
+	if( TRUE )
+	{
+		dont-cache nanobar;
+		dont-cache nano1;
+		dont-cache nano2;
+		set ARMORED to 0;
+	}
+	if( TRUE )
+	{
+		turn nanobar to z-axis <90.> speed <90.>;
+		move nanobar to x-axis [2.] speed [2.];
+		move nano1 to y-axis [3.] speed [3.];
+		move nano2 to y-axis [3.] speed [3.];
+		wait-for-move nano1 along y-axis;
+	}
+	if( TRUE )
+	{
+		cache nanobar;
+		cache nano1;
+		cache nano2;
+	}
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		dont-cache nanobar;
+		dont-cache nano1;
+		dont-cache nano2;
+	}
+	if( TRUE )
+	{
+		turn nanobar to z-axis <0.> speed <90.>;
+		move nanobar to x-axis [0.] speed [2.];
+		move nano1 to y-axis [0.] speed [3.];
+		move nano2 to y-axis [0.] speed [3.];
+		wait-for-move nano1 along y-axis;
+	}
+	if( TRUE )
+	{
+		cache nanobar;
+		cache nano1;
+		cache nano2;
+		set ARMORED to 1;
+	}
+}
+
+bubble()
+{
+	emit-sfx 256 | 3 from nano1;
+	sleep 200;
+	emit-sfx 256 | 3 from nano2;
+	sleep 200;
+	emit-sfx 256 | 3 from point1;
+	sleep 200;
+	emit-sfx 256 | 3 from point2;
+	sleep 200;
+	emit-sfx 256 | 3 from nanobar;
+	sleep 200;
+	emit-sfx 256 | 3 from body;
+	sleep 200;
+	emit-sfx 256 | 3 from pad;
+	sleep 200;
+	emit-sfx 256 | 3 from base;
+	sleep 200;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	if( Static_Var_5 )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+	if( !Static_Var_5 )
+	{
+		healthpercent = get HEALTH;
+		sleeptime = healthpercent * healthpercent;
+		if( healthpercent < 66 )
+		{
+			emit-sfx 256 | 3 from base;
+			sleep sleeptime;
+			if( Rand( 1, 66 ) > healthpercent )
+			{
+				start-script bubble();
+				sleep sleeptime;
+			}
+		}
+	}
+	start-script SmokeUnit();
+}
+
+OpenYard()
+{
+	set YARD_OPEN to 1;
+	while( !get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 1;
+	}
+	set BUGGER_OFF to 0;
+}
+
+CloseYard()
+{
+	set YARD_OPEN to 0;
+	while( get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 0;
+	}
+	set BUGGER_OFF to 0;
+}
+
+movenano(Func_Var_1)
+{
+	Static_Var_8 = 1;
+	var Func_Var_2, Func_Var_3, Func_Var_4, Func_Var_5;
+	while( get UNIT_BUILD_PERCENT_LEFT(Func_Var_1) )
+	{
+		Func_Var_2 = get PIECE_XZ(base) - get UNIT_XZ(Func_Var_1);
+		if( Func_Var_2 < 0 )
+		{
+			Func_Var_2 = 0 - Func_Var_2;
+		}
+		Func_Var_4 = Func_Var_2 / 65536;
+		Func_Var_3 = Func_Var_2 - Func_Var_4 * 65536;
+		if( Func_Var_3 > 32767 )
+		{
+			Func_Var_3 = 65536 - Func_Var_3;
+			Func_Var_4 = Func_Var_4 + ( Func_Var_2 > 0 );
+		}
+		if( 707333111 < get XZ_HYPOT(Func_Var_4 / 2 * 65536 + Func_Var_3 / 2) )
+		{
+			Func_Var_2 = 500333222;
+		}
+		turn newnoarm to y-axis get XZ_ATAN(get PIECE_XZ(base) - get UNIT_XZ(Func_Var_1)) now;
+		move newno to z-axis get XZ_HYPOT(Func_Var_2) now;
+		move newno to y-axis get UNIT_Y(Func_Var_1) - get PIECE_Y(base) now;
+		sleep 1;
+	}
+	Static_Var_8 = 0;
+}
+
+Go()
+{
+	call-script activatescr();
+	call-script OpenYard();
+	set INBUILDSTANCE to 1;
+}
+
+Stop()
+{
+	sleep 7500;
+	set INBUILDSTANCE to 0;
+	call-script CloseYard();
+	start-script deactivatescr();
+}
+
+InitState()
+{
+	Static_Var_3 = 1;
+	Static_Var_4 = 0;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( Static_Var_4 )
+	{
+		Static_Var_3 = requestedstate;
+		return (0);
+	}
+	Static_Var_4 = 1;
+	currentstate = Static_Var_3;
+	Static_Var_3 = requestedstate;
+	while( Static_Var_3 != currentstate )
+	{
+		if( Static_Var_3 == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( Static_Var_3 == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	Static_Var_4 = 0;
+}
+
+Create()
+{
+	Static_Var_7 = 0;
+	dont-cache pole;
+	dont-shade base;
+	dont-shade pad;
+	dont-shade body;
+	dont-shade nanobar;
+	dont-shade nano1;
+	dont-shade nano2;
+	Static_Var_1 = 1;
+	Static_Var_8 = 0;
+	call-script InitState();
+	start-script SmokeUnit();
+	Static_Var_6 = 0;
+	Static_Var_5 = get PIECE_Y(base);
+
+//	move tower to y-axis [20.] now;
+
+
+}
+
+QueryNanoPiece(piecenum)
+{
+	if( Static_Var_8 == 0 )
+	{
+		if( Static_Var_1 == 1 )
+		{
+			piecenum = point1;
+		}
+		if( Static_Var_1 == 2 )
+		{
+			piecenum = point2;
+		}
+		++Static_Var_1;
+		if( Static_Var_1 == 3 )
+		{
+			Static_Var_1 = 1;
+		}
+	}
+	if( Static_Var_8 == 1 )
+	{
+		piecenum = newno;
+	}
+}
+
+Activate()
+{
+	signal 2;
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	signal 2;
+	set-signal-mask 2;
+	set-signal-mask 0;
+	start-script RequestState(1);
+}
+
+StartBuilding()
+{
+	dont-cache pad;
+	spin pad around y-axis speed <30.>;
+}
+
+StopBuilding()
+{
+	cache pad;
+	stop-spin pad around y-axis;
+	turn pad to y-axis <0.> speed <30.>;
+}
+
+QueryBuildInfo(piecenum)
+{
+	piecenum = pad;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type NOHEATCLOUD ;
+		explode pad type NOHEATCLOUD ;
+		explode nanobar type NOHEATCLOUD ;
+		explode nano1 type NOHEATCLOUD ;
+		explode nano2 type NOHEATCLOUD ;
+		explode point1 type NOHEATCLOUD ;
+		explode point2 type NOHEATCLOUD ;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type FALL | NOHEATCLOUD ;
+		explode pad type FALL | NOHEATCLOUD ;
+		explode nanobar type SHATTER | NOHEATCLOUD ;
+		explode nano1 type SHATTER | NOHEATCLOUD ;
+		explode nano2 type SHATTER | NOHEATCLOUD ;
+		explode point1 type FALL | NOHEATCLOUD ;
+		explode point2 type FALL | NOHEATCLOUD ;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode pad type FALL | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode nanobar type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode nano1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode nano2 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode point1 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode point2 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode pad type FALL | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode nanobar type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode nano1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode nano2 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode point1 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode point2 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	return (corpsetype);
+}

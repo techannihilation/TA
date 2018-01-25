@@ -1,0 +1,279 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  flare1, flare2, body, base, turret, w1, w2, w3,
+       w4, w5, w6, w7, w8, w9, w10, w11,
+       w12, wakes, sleeve1, sleeve2, barrel1, barrel2;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5;
+
+
+WobbleUnit()
+{
+	while( TRUE )
+	{
+		if( Static_Var_5 )
+		{
+			move base to y-axis [1.] speed [3.];
+		}
+		else
+		{
+			move base to y-axis [-1.] speed [3.];
+		}
+		Static_Var_5 = !Static_Var_5;
+		sleep 750;
+	}
+}
+
+BankClerck(Func_Var_1, Func_Var_2, Func_Var_3)
+{
+	while( TRUE )
+	{
+		Func_Var_1 = get PIECE_XZ(base);
+		Func_Var_3 = 0;
+		if( get XZ_HYPOT(Func_Var_1 - Func_Var_2) >= 163840 )
+		{
+			Func_Var_3 = 0 - get XZ_ATAN(Func_Var_2 - Func_Var_1) * 80 / 40;
+		}
+		turn body to z-axis Func_Var_3 speed <60.>;
+		Func_Var_2 = Func_Var_1;
+		sleep 300;
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	start-script WobbleUnit();
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from body;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+RockUnit(anglex, anglez)
+{
+	signal 16;
+	set-signal-mask 16;
+	turn body to x-axis <0.> * anglex speed <50.>;
+	turn body to z-axis <0.> * anglez speed <50.>;
+	wait-for-turn body around z-axis;
+	wait-for-turn body around x-axis;
+	turn body to z-axis <0.> speed <20.>;
+	turn body to x-axis <0.> speed <20.>;
+}
+
+HitByWeapon(anglex, anglez)
+{
+	signal 16;
+	set-signal-mask 16;
+	turn body to z-axis <0.> * anglez speed <105.>;
+	turn body to x-axis <0.> * anglex speed <105.>;
+	wait-for-turn body around z-axis;
+	wait-for-turn body around x-axis;
+	turn body to z-axis <0.> speed <30.>;
+	turn body to x-axis <0.> speed <30.>;
+}
+
+StartMoving()
+{
+	signal 4;
+	set-signal-mask 4;
+}
+
+StopMoving()
+{
+	signal 4;
+}
+
+waking()
+{
+	while( TRUE )
+	{
+		if( Static_Var_1 == 2 OR Static_Var_1 == 1 )
+		{
+			emit-sfx 3 from w1;
+			emit-sfx 3 from w2;
+			emit-sfx 3 from w3;
+			emit-sfx 3 from w4;
+			emit-sfx 3 from w5;
+			emit-sfx 3 from w6;
+			emit-sfx 3 from w7;
+			emit-sfx 3 from w8;
+			emit-sfx 3 from w9;
+			emit-sfx 3 from w10;
+			emit-sfx 3 from w11;
+			emit-sfx 3 from w12;
+			emit-sfx 5 from w1;
+			emit-sfx 5 from w2;
+			emit-sfx 5 from w3;
+			emit-sfx 5 from w4;
+			emit-sfx 5 from w5;
+			emit-sfx 5 from w6;
+			emit-sfx 5 from w7;
+			emit-sfx 5 from w8;
+			emit-sfx 5 from w9;
+			emit-sfx 5 from w10;
+			emit-sfx 5 from w11;
+			emit-sfx 5 from w12;
+		}
+		sleep 225;
+	}
+}
+
+setSFXoccupy(state)
+{
+	Static_Var_1 = state;
+}
+
+Create()
+{
+	start-script waking();
+	hide flare1;
+	dont-cache flare1;
+	hide flare2;
+	dont-cache flare2;
+	Static_Var_2 = 3000;
+	start-script SmokeUnit();
+	Static_Var_3 = 0;
+	Static_Var_4 = 0;
+	start-script BankClerck();
+}
+
+SetMaxReloadTime(Func_Var_1)
+{
+	Static_Var_2 = Func_Var_1 * 2;
+}
+
+RestoreAfterDelay()
+{
+	sleep Static_Var_2;
+	turn turret to y-axis <0.> speed <90.>;
+	turn sleeve1 to x-axis <0.> speed <50.>;
+	turn sleeve2 to x-axis <0.> speed <50.>;
+	Static_Var_3 = 0;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal 2;
+	set-signal-mask 2;
+	turn turret to y-axis heading speed <100.>;
+	turn sleeve1 to x-axis <0.> - pitch speed <80.>;
+	turn sleeve2 to x-axis <0.> - pitch speed <80.>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn sleeve1 around x-axis;
+	while( Static_Var_4 == 1 )
+	{
+		sleep 10;
+	}
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+flarebleh()
+{
+	emit-sfx 1025 from flare1;
+	sleep 150;
+}
+
+FirePrimary()
+{
+	if( Static_Var_3 == 0 )
+	{
+		move barrel1 to z-axis [-1.] now;
+		start-script flarebleh();
+		move barrel1 to z-axis [0.] speed [5.];
+	}
+	if( Static_Var_3 == 1 )
+	{
+		emit-sfx 1025 from flare2;
+		move barrel2 to z-axis [-1.] now;
+		sleep 150;
+		move barrel2 to z-axis [0.] speed [5.];
+	}
+	Static_Var_3 = !Static_Var_3;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = turret;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = Static_Var_3;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	hide flare1;
+	hide flare2;
+if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode body type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		explode sleeve1 type NOHEATCLOUD | FALL;
+		explode sleeve2 type NOHEATCLOUD | FALL;
+		explode barrel1 type NOHEATCLOUD | FALL;
+		explode barrel2 type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode body type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		explode sleeve1 type NOHEATCLOUD | FALL;
+		explode sleeve2 type NOHEATCLOUD | FALL;
+		explode barrel1 type NOHEATCLOUD | FALL;
+		explode barrel2 type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode body type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+			explode sleeve1 type NOHEATCLOUD | FALL;
+		explode sleeve2 type NOHEATCLOUD | FALL;
+		explode barrel1 type NOHEATCLOUD | FALL;
+		explode barrel2 type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode body type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode sleeve1 type NOHEATCLOUD | FALL;
+	explode sleeve2 type NOHEATCLOUD | FALL;
+	explode barrel1 type NOHEATCLOUD | FALL;
+	explode barrel2 type NOHEATCLOUD | FALL;
+	return (corpsetype);
+}
+

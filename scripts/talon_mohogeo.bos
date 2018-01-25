@@ -1,0 +1,118 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  GP, base, nano, tank, steam1, steam2, pipe1;
+
+static-var  Static_Var_1, Static_Var_2;
+
+
+Steam()
+{
+	while( TRUE )
+	{
+		if( Static_Var_1 == 1 )
+		{
+			emit-sfx 257 from steam1;
+			emit-sfx 257 from steam2;
+			sleep 200;
+		}
+		sleep 1;
+	}
+}
+
+Standby()
+{
+
+	while( TRUE )
+	{
+			Static_Var_1 = 1;
+			turn pipe1 to y-axis <-180.000000> speed <30.000000>;
+			wait-for-turn pipe1 around y-axis;
+			
+			sleep 2500;
+			
+			turn pipe1 to y-axis <0.000000> speed <30.000000>;
+			wait-for-turn pipe1 around y-axis;
+			Static_Var_1 = 0;
+			sleep 3670;
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 258;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 257;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	Static_Var_2 = 0;
+	Static_Var_1 = 0;
+	
+	start-script Steam();
+	start-script Standby();
+	start-script SmokeUnit();
+}
+
+Activate()
+{
+	Static_Var_2 = 0;
+}
+
+Deactivate()
+{
+	Static_Var_2 = 1;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type NOHEATCLOUD;
+		explode nano type NOHEATCLOUD;
+		explode pipe1 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type NOHEATCLOUD | FALL;
+		explode nano type NOHEATCLOUD | FALL;
+		explode pipe1 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode nano type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode pipe1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}
