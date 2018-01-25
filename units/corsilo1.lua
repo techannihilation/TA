@@ -38,7 +38,7 @@ return {
 		name = "Enriched Silencer",
 		noautofire = false,
 		nochasecategory = "ALL",
-		objectname = "CORSILO",
+		objectname = "CORSILO1",
 		radardistance = 50,
 		radaremitheight = 67,
 		script = "corsilo.cob",
