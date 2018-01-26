@@ -17,7 +17,7 @@ return {
 		description = "T3 Metal Extractor, Amphibious",
 		energyuse = 150,
 		explodeas = "ATOMIC_BLAST",
-		extractsmetal = 0.014,
+		extractsmetal = 0.015,
 		footprintx = 7,
 		footprintz = 7,
 		icontype = "building",
