@@ -1,0 +1,136 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, turny;
+
+static-var  Static_Var_1, Static_Var_2;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Go()
+{
+	dont-cache turny;
+	spin turny around y-axis speed <60.>;
+}
+
+Stop()
+{
+	cache turny;
+	spin turny around y-axis speed <0.>;
+}
+
+InitState()
+{
+	Static_Var_1 = 1;
+	Static_Var_2 = 0;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( Static_Var_2 )
+	{
+		Static_Var_1 = requestedstate;
+		return (0);
+	}
+	Static_Var_2 = 1;
+	currentstate = Static_Var_1;
+	Static_Var_1 = requestedstate;
+	while( Static_Var_1 != currentstate )
+	{
+		if( Static_Var_1 == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( Static_Var_1 == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	Static_Var_2 = 0;
+}
+
+Create()
+{
+	dont-shade turny;
+	dont-shade body;
+	call-script InitState();
+	start-script SmokeUnit();
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		explode turny type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type NOHEATCLOUD;
+		explode body type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode turny type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type NOHEATCLOUD;
+		explode body type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode turny type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type NOHEATCLOUD;
+	explode body type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode turny type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
+}

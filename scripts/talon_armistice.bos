@@ -1,0 +1,231 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, missile, pylon1, pylon2, pylon3, pylon4, aimpoint;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5;
+
+
+activatescr()
+{
+	if( TRUE )
+	{
+		turn pylon1 to z-axis <30.> speed <40.>;
+		turn pylon2 to x-axis <-30.> speed <40.>;
+		turn pylon3 to z-axis <-30.> speed <40.>;
+		turn pylon4 to x-axis <30.> speed <40.>;
+		sleep 1768;
+	}
+	sleep 3;
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		turn pylon1 to z-axis <0.> speed <15.>;
+		turn pylon2 to x-axis <0.> speed <15.>;
+		turn pylon3 to z-axis <0.> speed <15.>;
+		turn pylon4 to x-axis <0.> speed <15.>;
+		sleep 1762;
+	}
+	sleep 14;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	var Func_Var_4;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 258;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 257;
+			}
+			Func_Var_4 = Rand( 1, 4 );
+			if( Func_Var_4 == 1 )
+			{
+				emit-sfx smoketype from pylon1;
+			}
+			if( Func_Var_4 == 2 )
+			{
+				emit-sfx smoketype from pylon2;
+			}
+			if( Func_Var_4 == 3 )
+			{
+				emit-sfx smoketype from pylon3;
+			}
+			if( Func_Var_4 == 4 )
+			{
+				emit-sfx smoketype from pylon4;
+			}
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+go()
+{
+	call-script activatescr();
+	Static_Var_1 = 1;
+}
+
+stop()
+{
+	Static_Var_1 = 0;
+	call-script deactivatescr();
+}
+
+InitState()
+{
+	Static_Var_4 = 1;
+	Static_Var_5 = 0;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( Static_Var_5 )
+	{
+		Static_Var_4 = requestedstate;
+		return (0);
+	}
+	Static_Var_5 = 1;
+	currentstate = Static_Var_4;
+	Static_Var_4 = requestedstate;
+	while( Static_Var_4 != currentstate )
+	{
+		if( Static_Var_4 == 0 )
+		{
+			call-script go();
+			currentstate = 0;
+		}
+		if( Static_Var_4 == 1 )
+		{
+			call-script stop();
+			currentstate = 1;
+		}
+	}
+	Static_Var_5 = 0;
+}
+
+Create()
+{
+	Static_Var_1 = 0;
+	Static_Var_2 = 25000;
+	call-script InitState();
+	start-script SmokeUnit();
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+RestoreAfterDelay()
+{
+	sleep Static_Var_2;
+	set-signal-mask 0;
+	start-script RequestState(1);
+}
+
+AimPrimary(heading, pitch)
+{
+	start-script RequestState(0);
+	signal 2;
+	set-signal-mask 2;
+	if( !Static_Var_1 )
+	{
+		sleep 500;
+	}
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FirePrimary()
+{
+	hide missile;
+	move missile to y-axis [0.] now;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = aimpoint;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = aimpoint;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		explode missile type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode pylon1 type NOHEATCLOUD;
+		explode pylon2 type NOHEATCLOUD;
+		explode pylon3 type NOHEATCLOUD;
+		explode pylon4 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode body type NOHEATCLOUD;
+		explode missile type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode pylon1 type NOHEATCLOUD;
+		explode pylon2 type NOHEATCLOUD;
+		explode pylon3 type NOHEATCLOUD;
+		explode pylon4 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode body type NOHEATCLOUD;
+		explode missile type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode pylon1 type NOHEATCLOUD;
+		explode pylon2 type NOHEATCLOUD;
+		explode pylon3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode pylon4 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode body type NOHEATCLOUD;
+	explode missile type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode pylon1 type NOHEATCLOUD;
+	explode pylon2 type NOHEATCLOUD;
+	explode pylon3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode pylon4 type NOHEATCLOUD;
+	return (corpsetype);
+}

@@ -1,0 +1,303 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, door, turret, nano1, nano2, nanobits, w1,
+       w2, w3, w4, w5, w6, w7, w8, w9,
+       w10, w11, w12, wakes;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4;
+
+
+RockOnWaves()
+{
+	while( TRUE )
+	{
+		turn base to x-axis <1.> speed <2.>;
+		move base to y-axis [0.] speed [0.];
+		wait-for-turn base around x-axis;
+		turn base to x-axis <-1.> speed <2.>;
+		move base to y-axis [-0.] speed [0.];
+		wait-for-move base along y-axis;
+		move base to y-axis [0.] speed [0.];
+		wait-for-turn base around x-axis;
+		turn base to x-axis <1.> speed <2.>;
+		move base to y-axis [-0.] speed [0.];
+		wait-for-move base along y-axis;
+	}
+}
+
+activatescr()
+{
+	move turret to y-axis [1.400000] speed [8.];
+	wait-for-move turret along y-axis;
+	move nanobits to z-axis [1.200000] speed [8.];
+	wait-for-move nanobits along z-axis;
+	sleep 20;
+}
+
+deactivatescr()
+{
+	move nanobits to z-axis [0.] speed [8.];
+	wait-for-move nanobits along z-axis;
+	move turret to y-axis [0.] speed [8.];
+	wait-for-move turret along y-axis;
+	sleep 20;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+StartMoving()
+{
+	signal 2;
+	set-signal-mask 2;
+	while( TRUE )
+	{
+		emit-sfx 3 from w1;
+		emit-sfx 3 from w2;
+		emit-sfx 3 from w3;
+		emit-sfx 3 from w4;
+		emit-sfx 3 from w5;
+		emit-sfx 3 from w6;
+		emit-sfx 3 from w7;
+		emit-sfx 3 from w8;
+		emit-sfx 3 from w9;
+		emit-sfx 3 from w10;
+		emit-sfx 3 from w11;
+		emit-sfx 3 from w12;
+		emit-sfx 5 from w1;
+		emit-sfx 5 from w2;
+		emit-sfx 5 from w3;
+		emit-sfx 5 from w4;
+		emit-sfx 5 from w5;
+		emit-sfx 5 from w6;
+		emit-sfx 5 from w7;
+		emit-sfx 5 from w8;
+		emit-sfx 5 from w9;
+		emit-sfx 5 from w10;
+		emit-sfx 5 from w11;
+		emit-sfx 5 from w12;
+		sleep 250;
+	}
+}
+
+StopMoving()
+{
+	signal 2;
+}
+
+Go()
+{
+	call-script activatescr();
+	turn turret to y-axis Static_Var_1 speed <160.>;
+	wait-for-turn turret around y-axis;
+	set INBUILDSTANCE to 1;
+}
+
+Stop()
+{
+	set INBUILDSTANCE to 0;
+	turn turret to y-axis <0.> speed <160.>;
+	wait-for-turn turret around y-axis;
+	call-script deactivatescr();
+}
+
+InitState()
+{
+	Static_Var_2 = 1;
+	Static_Var_3 = 0;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( Static_Var_3 )
+	{
+		Static_Var_2 = requestedstate;
+		return (0);
+	}
+	Static_Var_3 = 1;
+	currentstate = Static_Var_2;
+	Static_Var_2 = requestedstate;
+	while( Static_Var_2 != currentstate )
+	{
+		if( Static_Var_2 == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( Static_Var_2 == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	Static_Var_3 = 0;
+}
+
+Create()
+{
+	Static_Var_1 = 0;
+	call-script InitState();
+	start-script SmokeUnit();
+	Static_Var_4 = 1;
+	start-script RockOnWaves();
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+StartBuilding(Func_Var_1)
+{
+	Static_Var_1 = Func_Var_1;
+	start-script RequestState(0);
+}
+
+StopBuilding()
+{
+	start-script RequestState(1);
+}
+
+QueryNanoPiece(piecenum)
+{
+	if( Static_Var_4 == 1 )
+	{
+		piecenum = nano1;
+	}
+	if( Static_Var_4 == 2 )
+	{
+		piecenum = nano2;
+	}
+	++Static_Var_4;
+	if( Static_Var_4 == 3 )
+	{
+		Static_Var_4 = 1;
+	}
+}
+
+TargetHeading(Func_Var_1)
+{
+	Static_Var_1 = 0 - Func_Var_1;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode door type NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
+		explode nanobits type SHATTER;
+		explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode w1 type NOHEATCLOUD;
+		explode w2 type NOHEATCLOUD;
+		explode w3 type NOHEATCLOUD;
+		explode w4 type NOHEATCLOUD;
+		explode w5 type NOHEATCLOUD;
+		explode w6 type NOHEATCLOUD;
+		explode w7 type NOHEATCLOUD;
+		explode w8 type NOHEATCLOUD;
+		explode w9 type NOHEATCLOUD;
+		explode w10 type NOHEATCLOUD;
+		explode w11 type NOHEATCLOUD;
+		explode w12 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode door type NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
+		explode nanobits type SHATTER;
+		explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode w1 type NOHEATCLOUD | FALL;
+		explode w2 type NOHEATCLOUD | FALL;
+		explode w3 type NOHEATCLOUD | FALL;
+		explode w4 type NOHEATCLOUD | FALL;
+		explode w5 type NOHEATCLOUD | FALL;
+		explode w6 type NOHEATCLOUD | FALL;
+		explode w7 type NOHEATCLOUD | FALL;
+		explode w8 type NOHEATCLOUD | FALL;
+		explode w9 type NOHEATCLOUD | FALL;
+		explode w10 type NOHEATCLOUD | FALL;
+		explode w11 type NOHEATCLOUD | FALL;
+		explode w12 type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode door type NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
+		explode nanobits type SHATTER;
+		explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode w1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode w2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode w3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode w4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode w5 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode w6 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode w7 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode w8 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode w9 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode w10 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode w11 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode w12 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode door type NOHEATCLOUD;
+	explode base type NOHEATCLOUD;
+	explode nanobits type SHATTER;
+	explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode w1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode w2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode w3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode w4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode w5 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode w6 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode w7 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode w8 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode w9 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode w10 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode w11 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode w12 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}

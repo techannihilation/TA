@@ -1,0 +1,409 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, lbay, rbay, pad, radar, tower, frontmark,
+       rearmark, lhold, rhold, lnano1, lnano2, rnano1, rnano2, point1,
+       point2, point3, point4;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4;
+
+
+RestoreAfterDelay()
+{
+	sleep 25000;
+}
+
+activatescr()
+{
+	if( TRUE )
+	{
+		dont-cache lbay;
+		dont-cache rbay;
+		dont-cache frontmark;
+		dont-cache rearmark;
+		dont-cache lhold;
+		dont-cache rhold;
+		dont-cache lnano1;
+		dont-cache lnano2;
+		dont-cache rnano1;
+		dont-cache rnano2;
+		set ARMORED to 0;
+	}
+	if( TRUE )
+	{
+		move rearmark to z-axis [-3.] speed [1.];
+		move frontmark to z-axis [3.] speed [1.];
+		turn lbay to z-axis <-90.> speed <20.>;
+		turn rbay to z-axis <90.> speed <20.>;
+	}
+	if( TRUE )
+	{
+		turn lhold to z-axis <-75.> speed <40.>;
+		turn rhold to z-axis <75.> speed <40.>;
+	}
+	if( TRUE )
+	{
+		move lnano1 to x-axis [3.] speed [4.];
+		move lnano2 to x-axis [3.] speed [4.];
+		move rnano1 to x-axis [-3.] speed [4.];
+		move rnano2 to x-axis [-3.] speed [4.];
+		wait-for-move rnano2 along x-axis;
+	}
+	if( TRUE )
+	{
+		cache lbay;
+		cache rbay;
+		cache frontmark;
+		cache rearmark;
+		cache lhold;
+		cache rhold;
+		cache lnano1;
+		cache lnano2;
+		cache rnano1;
+		cache rnano2;
+		sleep 900;
+	}
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		dont-cache lbay;
+		dont-cache rbay;
+		dont-cache frontmark;
+		dont-cache rearmark;
+		dont-cache lhold;
+		dont-cache rhold;
+		dont-cache lnano1;
+		dont-cache lnano2;
+		dont-cache rnano1;
+		dont-cache rnano2;
+	}
+	if( TRUE )
+	{
+		move lnano1 to x-axis [0.] speed [4.];
+		move lnano2 to x-axis [0.] speed [4.];
+		move rnano1 to x-axis [0.] speed [4.];
+		move rnano2 to x-axis [0.] speed [4.];
+	}
+	if( TRUE )
+	{
+		turn lhold to z-axis <0.> speed <40.>;
+		turn rhold to z-axis <0.> speed <40.>;
+	}
+	if( TRUE )
+	{
+		move rearmark to z-axis [0.] speed [1.];
+		move frontmark to z-axis [0.] speed [1.];
+		turn lbay to z-axis <0.> speed <20.>;
+		turn rbay to z-axis <0.> speed <20.>;
+	}
+	if( TRUE )
+	{
+		cache lbay;
+		cache rbay;
+		cache frontmark;
+		cache rearmark;
+		cache lhold;
+		cache rhold;
+		cache lnano1;
+		cache lnano2;
+		cache rnano1;
+		cache rnano2;
+		set ARMORED to 1;
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+OpenYard()
+{
+	set YARD_OPEN to 1;
+	while( !get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 1;
+	}
+	set BUGGER_OFF to 0;
+}
+
+CloseYard()
+{
+	set YARD_OPEN to 0;
+	while( get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 0;
+	}
+	set BUGGER_OFF to 0;
+}
+
+Go()
+{
+	call-script activatescr();
+	call-script OpenYard();
+	set INBUILDSTANCE to 1;
+}
+
+Stop()
+{
+	sleep 3000;
+	set INBUILDSTANCE to 0;
+	call-script CloseYard();
+	start-script deactivatescr();
+}
+
+InitState()
+{
+	Static_Var_3 = 1;
+	Static_Var_4 = 0;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( Static_Var_4 )
+	{
+		Static_Var_3 = requestedstate;
+		return (0);
+	}
+	Static_Var_4 = 1;
+	currentstate = Static_Var_3;
+	Static_Var_3 = requestedstate;
+	while( Static_Var_3 != currentstate )
+	{
+		if( Static_Var_3 == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( Static_Var_3 == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	Static_Var_4 = 0;
+}
+
+Create()
+{
+	dont-cache radar;
+	dont-shade radar;
+	dont-shade lbay;
+	dont-shade rbay;
+	dont-shade tower;
+	dont-shade rhold;
+	dont-shade lhold;
+	dont-shade pad;
+	dont-shade body;
+	dont-shade frontmark;
+	dont-shade rearmark;
+	dont-shade lnano1;
+	dont-shade lnano2;
+	dont-shade rnano1;
+	dont-shade rnano2;
+	dont-cache point1;
+	dont-cache point2;
+	dont-cache point3;
+	dont-cache point4;
+	Static_Var_1 = 1;
+	call-script InitState();
+	start-script SmokeUnit();
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 1000;
+	}
+	spin radar around y-axis speed <100.>;
+}
+
+QueryNanoPiece(piecenum)
+{
+	if( Static_Var_1 == 1 )
+	{
+		piecenum = point1;
+	}
+	if( Static_Var_1 == 2 )
+	{
+		piecenum = point2;
+	}
+	if( Static_Var_1 == 3 )
+	{
+		piecenum = point3;
+	}
+	if( Static_Var_1 == 4 )
+	{
+		piecenum = point4;
+	}
+	++Static_Var_1;
+	if( Static_Var_1 == 5 )
+	{
+		Static_Var_1 = 1;
+	}
+}
+
+Activate()
+{
+	signal 2;
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	signal 2;
+	set-signal-mask 2;
+	set-signal-mask 0;
+	start-script RequestState(1);
+}
+
+StartBuilding()
+{
+	dont-cache pad;
+	spin pad around y-axis speed <30.>;
+}
+
+StopBuilding()
+{
+	cache pad;
+	stop-spin pad around y-axis;
+}
+
+QueryBuildInfo(piecenum)
+{
+	piecenum = pad;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode lnano1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode lnano2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode rnano1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode rnano2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode base type FALL | NOHEATCLOUD;
+		explode lbay type FALL | NOHEATCLOUD;
+		explode rbay type FALL | NOHEATCLOUD;
+		explode radar type FALL | NOHEATCLOUD;
+		explode tower type FALL | NOHEATCLOUD;
+		explode lhold type FALL | NOHEATCLOUD;
+		explode rhold type FALL | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode lnano1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode lnano2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode rnano1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode rnano2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode lnano1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode lnano2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode rnano1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode base type BITMAPONLY | BITMAP5;
+		explode lbay type BITMAPONLY | NOHEATCLOUD;
+		explode rbay type BITMAPONLY | NOHEATCLOUD;
+		explode radar type BITMAPONLY | NOHEATCLOUD;
+		explode tower type BITMAPONLY | NOHEATCLOUD;
+		explode frontmark type BITMAPONLY | NOHEATCLOUD;
+		explode rearmark type BITMAPONLY | NOHEATCLOUD;
+		explode lhold type BITMAPONLY | NOHEATCLOUD;
+		explode rhold type BITMAPONLY | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode lnano1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode lnano2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode rnano1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode rnano2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode lnano1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode lnano2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode rnano1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode rnano2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode lnano1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode lnano2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode rnano1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode rnano2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode lnano1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode lnano2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode rnano1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode rnano2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode base type FALL | NOHEATCLOUD;
+		explode lbay type FALL | NOHEATCLOUD;
+		explode rbay type FALL | NOHEATCLOUD;
+		explode radar type FALL | NOHEATCLOUD;
+		explode tower type FALL | NOHEATCLOUD;
+		explode frontmark type FALL | NOHEATCLOUD;
+		explode rearmark type FALL | NOHEATCLOUD;
+		explode lhold type FALL | NOHEATCLOUD;
+		explode rhold type FALL | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode lnano1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lnano2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rnano1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rnano2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lnano1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lnano2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rnano1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rnano2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lnano1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lnano2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rnano1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rnano2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lnano1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lnano2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rnano1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rnano2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lnano1 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lnano2 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rnano1 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rnano2 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode base type FALL;
+	explode lbay type FALL | NOHEATCLOUD;
+	explode rbay type FALL | NOHEATCLOUD;
+	explode radar type FALL | NOHEATCLOUD;
+	explode frontmark type FALL | NOHEATCLOUD;
+	explode rearmark type FALL | NOHEATCLOUD;
+	explode lhold type FALL | NOHEATCLOUD;
+	explode rhold type FALL | NOHEATCLOUD;
+	return (corpsetype);
+}

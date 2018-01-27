@@ -1,0 +1,272 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, fpmain, fp1boltland, fp2boltland, fp3boltland, fp4boltland, fp5boltland, fp1boltair, fp2boltair,
+       fp3boltair, fp4boltair, ring1, ring5;
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from ring1;
+			emit-sfx smoketype from ring5;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	hide fpmain;
+	hide base;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal 1024;
+	set-signal-mask 1024;
+	return (1);
+}
+
+FirePrimary()
+{
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = fpmain;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = fpmain;
+}
+
+AimWeapon2(heading, pitch)
+{
+	signal 4;
+	set-signal-mask 4;
+	return (1);
+}
+
+FireWeapon2()
+{
+}
+
+AimFromWeapon2(piecenum)
+{
+	piecenum = fp1boltland;
+}
+
+QueryWeapon2(piecenum)
+{
+	piecenum = fp1boltland;
+}
+
+AimWeapon3(heading, pitch)
+{
+	signal 8;
+	set-signal-mask 8;
+	return (1);
+}
+
+FireWeapon3()
+{
+}
+
+AimFromWeapon3(piecenum)
+{
+	piecenum = fp2boltland;
+}
+
+QueryWeapon3(piecenum)
+{
+	piecenum = fp2boltland;
+}
+
+AimWeapon4(heading, pitch)
+{
+	signal 16;
+	set-signal-mask 16;
+	return (1);
+}
+
+FireWeapon4()
+{
+}
+
+AimFromWeapon4(piecenum)
+{
+	piecenum = fp3boltland;
+}
+
+QueryWeapon4(piecenum)
+{
+	piecenum = fp3boltland;
+}
+
+AimWeapon5(heading, pitch)
+{
+	signal 32;
+	set-signal-mask 32;
+	return (1);
+}
+
+FireWeapon5()
+{
+}
+
+AimFromWeapon5(piecenum)
+{
+	piecenum = fp4boltland;
+}
+
+QueryWeapon5(piecenum)
+{
+	piecenum = fp4boltland;
+}
+AimWeapon6(heading, pitch)
+{
+	signal 64;
+	set-signal-mask 64;
+	return (1);
+}
+
+FireWeapon6()
+{
+}
+
+AimFromWeapon6(piecenum)
+{
+	piecenum = fp5boltland;
+}
+
+QueryWeapon6(piecenum)
+{
+	piecenum = fp5boltland;
+}
+
+AimWeapon7(heading, pitch)
+{
+	signal 128;
+	set-signal-mask 128;
+	return (1);
+}
+
+FireWeapon7()
+{
+}
+
+AimFromWeapon7(piecenum)
+{
+	piecenum = fp1boltair;
+}
+
+QueryWeapon7(piecenum)
+{
+	piecenum = fp1boltair;
+}
+
+AimWeapon8(heading, pitch)
+{
+	signal 256;
+	set-signal-mask 256;
+	return (1);
+}
+
+FireWeapon8()
+{
+}
+
+AimFromWeapon8(piecenum)
+{
+	piecenum = fp2boltair;
+}
+
+QueryWeapon8(piecenum)
+{
+	piecenum = fp2boltair;
+}
+
+AimWeapon9(heading, pitch)
+{
+	signal 512;
+	set-signal-mask 512;
+	return (1);
+}
+
+FireWeapon9()
+{
+}
+
+AimFromWeapon9(piecenum)
+{
+	piecenum = fp3boltair;
+}
+
+QueryWeapon9(piecenum)
+{
+	piecenum = fp3boltair;
+}
+
+AimWeapon10(heading, pitch)
+{
+	signal 1024;
+	set-signal-mask 1024;
+	return (1);
+}
+
+FireWeapon10()
+{
+}
+
+AimFromWeapon10(piecenum)
+{
+	piecenum = fp4boltair;
+}
+
+QueryWeapon10(piecenum)
+{
+	piecenum = fp4boltair;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type NOHEATCLOUD;
+		explode ring1 type NOHEATCLOUD;
+		explode ring5 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type NOHEATCLOUD;
+	explode ring1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode ring5 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}

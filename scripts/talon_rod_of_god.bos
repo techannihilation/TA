@@ -1,0 +1,190 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, rocket, aimer, target, cloud_shoulder, cloud_arm, cloud_hand,
+       lightning, towerthing, spinner, smoker1, smoker2, glow;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5;
+
+
+activatescr()
+{
+	if( TRUE )
+	{
+		sleep 1000;
+	}
+	sleep 300;
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		sleep 1000;
+	}
+	sleep 110;
+}
+
+Go()
+{
+	call-script activatescr();
+	Static_Var_1 = 1;
+}
+
+Stop()
+{
+	Static_Var_1 = 0;
+	sleep 10000;
+	call-script deactivatescr();
+}
+
+fum()
+{
+	while( Static_Var_3 == 1 )
+	{
+		emit-sfx 256 | 1 from smoker1;
+		emit-sfx 256 | 1 from smoker2;
+		sleep 250;
+	}
+}
+
+Launchsequence()
+{
+	start-script fum();
+	Static_Var_3 = 1;
+	sleep 500;
+	move rocket to y-axis [1000.] speed [150.];
+	sleep 10000;
+	hide rocket;
+	Static_Var_3 = 0;
+}
+
+InitState()
+{
+	Static_Var_4 = 1;
+	Static_Var_5 = 0;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( Static_Var_5 )
+	{
+		Static_Var_4 = requestedstate;
+		return (0);
+	}
+	Static_Var_5 = 1;
+	currentstate = Static_Var_4;
+	Static_Var_4 = requestedstate;
+	while( Static_Var_4 != currentstate )
+	{
+		if( Static_Var_4 == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( Static_Var_4 == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	Static_Var_5 = 0;
+}
+
+Create()
+{
+	move aimer to y-axis [5000.] now;
+	Static_Var_1 = 0;
+	Static_Var_3 = 1;
+	Static_Var_2 = 3000;
+	call-script InitState();
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 500;
+	}
+	call-script Launchsequence();
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+SetMaxReloadTime(Func_Var_1)
+{
+	Static_Var_2 = Func_Var_1 * 2;
+}
+
+RestoreAfterDelay()
+{
+	sleep Static_Var_2;
+	set-signal-mask 0;
+	start-script RequestState(1);
+}
+
+AimPrimary(heading, pitch)
+{
+	start-script RequestState(0);
+	signal 2;
+	set-signal-mask 2;
+	while( !Static_Var_1 )
+	{
+		sleep 1000;
+		start-script RequestState(0);
+	}
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = aimer;
+}
+
+FirePrimary()
+{
+	Static_Var_1 = 0;
+	sleep 50;
+	start-script RequestState(1);
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = aimer;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode body type BITMAPONLY | BITMAP2;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode body type SHATTER | BITMAP1;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode body type SHATTER | BITMAP1;
+		return (0);
+	}
+	corpsetype = 3;
+	explode body type SHATTER | EXPLODE_ON_HIT | BITMAP1;
+}

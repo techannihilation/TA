@@ -1,0 +1,455 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, Pelvis, Torso, LTarm, LBarm, Flare, RTarm, RBarm,
+       Head, LTleg, LBleg, RTleg, RBleg, Rhand, Rfoot, Lfoot,
+       Torso2, Lrecoil, Rrecoil, gun, trick;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
+            Static_Var_6, Static_Var_7, Static_Var_8, Static_Var_9;
+
+
+walk()
+{
+	if( Static_Var_1 )
+	{
+		turn trick to y-axis <-15.> speed <180.>;
+		turn Torso2 to y-axis <-15.> speed <180.>;
+		turn Head to y-axis <20.> speed <240.>;
+		turn LTleg to x-axis <-40.> speed <240.>;
+		turn LBleg to x-axis <30.> speed <180.>;
+		turn Lfoot to x-axis <0.> speed <270.>;
+		turn RTleg to x-axis <30.> speed <180.>;
+		turn Rfoot to x-axis <45.> speed <270.>;
+		wait-for-turn Torso2 around y-axis;
+	}
+	if( Static_Var_1 )
+	{
+		turn trick to y-axis <-20.> speed <30.>;
+		turn Torso2 to y-axis <-20.> speed <30.>;
+		turn Head to y-axis <25.> speed <30.>;
+		turn LTleg to x-axis <-60.> speed <120.>;
+		turn LBleg to x-axis <10.> speed <120.>;
+		turn RTleg to x-axis <50.> speed <30.>;
+		turn RBleg to x-axis <45.> speed <270.>;
+		turn Rfoot to x-axis <45.> speed <270.>;
+		wait-for-turn Torso2 around y-axis;
+	}
+	if( Static_Var_1 )
+	{
+		turn trick to y-axis <-15.> speed <30.>;
+		turn Torso2 to y-axis <-15.> speed <30.>;
+		turn Head to y-axis <20.> speed <30.>;
+		turn LTleg to x-axis <0.> speed <360.>;
+		turn LBleg to x-axis <0.> speed <60.>;
+		turn Lfoot to x-axis <0.> speed <270.>;
+		turn RTleg to x-axis <0.> speed <300.>;
+		turn RBleg to x-axis <90.> speed <270.>;
+		turn Rfoot to x-axis <90.> speed <270.>;
+		wait-for-turn Torso2 around y-axis;
+	}
+	if( Static_Var_1 )
+	{
+		turn trick to y-axis <15.> speed <180.>;
+		turn Torso2 to y-axis <15.> speed <180.>;
+		turn Head to y-axis <-20.> speed <240.>;
+		turn RTleg to x-axis <-40.> speed <240.>;
+		turn RBleg to x-axis <30.> speed <180.>;
+		turn Rfoot to x-axis <0.> speed <270.>;
+		turn LTleg to x-axis <30.> speed <180.>;
+		turn Lfoot to x-axis <45.> speed <270.>;
+		wait-for-turn Torso2 around y-axis;
+	}
+	if( Static_Var_1 )
+	{
+		turn trick to y-axis <20.> speed <30.>;
+		turn Torso2 to y-axis <20.> speed <30.>;
+		turn Head to y-axis <-25.> speed <30.>;
+		turn RTleg to x-axis <-60.> speed <120.>;
+		turn RBleg to x-axis <10.> speed <120.>;
+		turn LTleg to x-axis <50.> speed <30.>;
+		turn LBleg to x-axis <45.> speed <270.>;
+		turn Lfoot to x-axis <45.> speed <270.>;
+		wait-for-turn Torso2 around y-axis;
+	}
+	if( Static_Var_1 )
+	{
+		turn trick to y-axis <15.> speed <30.>;
+		turn Torso2 to y-axis <15.> speed <30.>;
+		turn Head to y-axis <-20.> speed <30.>;
+		turn RTleg to x-axis <0.> speed <360.>;
+		turn RBleg to x-axis <0.> speed <60.>;
+		turn Rfoot to x-axis <0.> speed <270.>;
+		turn LTleg to x-axis <0.> speed <300.>;
+		turn LBleg to x-axis <90.> speed <270.>;
+		turn Lfoot to x-axis <90.> speed <270.>;
+		wait-for-turn Torso2 around y-axis;
+	}
+}
+
+walklegs()
+{
+	if( Static_Var_1 )
+	{
+		turn Torso2 to y-axis <-15.> speed <180.>;
+		turn LTleg to x-axis <-40.> speed <240.>;
+		turn LBleg to x-axis <30.> speed <180.>;
+		turn Lfoot to x-axis <0.> speed <270.>;
+		turn RTleg to x-axis <30.> speed <180.>;
+		turn Rfoot to x-axis <45.> speed <270.>;
+		wait-for-turn Torso2 around y-axis;
+	}
+	if( Static_Var_1 )
+	{
+		turn Torso2 to y-axis <-20.> speed <30.>;
+		turn LTleg to x-axis <-60.> speed <120.>;
+		turn LBleg to x-axis <10.> speed <120.>;
+		turn RTleg to x-axis <50.> speed <30.>;
+		turn RBleg to x-axis <45.> speed <270.>;
+		turn Rfoot to x-axis <45.> speed <270.>;
+		wait-for-turn Torso2 around y-axis;
+	}
+	if( Static_Var_1 )
+	{
+		turn Torso2 to y-axis <-15.> speed <30.>;
+		turn LTleg to x-axis <0.> speed <360.>;
+		turn LBleg to x-axis <0.> speed <60.>;
+		turn Lfoot to x-axis <0.> speed <270.>;
+		turn RTleg to x-axis <0.> speed <300.>;
+		turn RBleg to x-axis <90.> speed <270.>;
+		turn Rfoot to x-axis <90.> speed <270.>;
+		wait-for-turn Torso2 around y-axis;
+	}
+	if( Static_Var_1 )
+	{
+		turn Torso2 to y-axis <15.> speed <180.>;
+		turn RTleg to x-axis <-40.> speed <240.>;
+		turn RBleg to x-axis <30.> speed <180.>;
+		turn Rfoot to x-axis <0.> speed <270.>;
+		turn LTleg to x-axis <30.> speed <180.>;
+		turn Lfoot to x-axis <45.> speed <270.>;
+		wait-for-turn Torso2 around y-axis;
+	}
+	if( Static_Var_1 )
+	{
+		turn Torso2 to y-axis <20.> speed <30.>;
+		turn RTleg to x-axis <-60.> speed <120.>;
+		turn RBleg to x-axis <10.> speed <120.>;
+		turn LTleg to x-axis <50.> speed <30.>;
+		turn LBleg to x-axis <45.> speed <270.>;
+		turn Lfoot to x-axis <45.> speed <270.>;
+		wait-for-turn Torso2 around y-axis;
+	}
+	if( Static_Var_1 )
+	{
+		turn Torso2 to y-axis <15.> speed <30.>;
+		turn RTleg to x-axis <0.> speed <360.>;
+		turn RBleg to x-axis <0.> speed <60.>;
+		turn Rfoot to x-axis <0.> speed <270.>;
+		turn LTleg to x-axis <0.> speed <300.>;
+		turn LBleg to x-axis <90.> speed <270.>;
+		turn Lfoot to x-axis <90.> speed <270.>;
+		wait-for-turn Torso2 around y-axis;
+	}
+}
+
+MotionControl(moving, aiming, justmoved)
+{
+	justmoved = TRUE;
+	while( TRUE )
+	{
+		moving = Static_Var_1;
+		aiming = Static_Var_2;
+		if( moving )
+		{
+			if( aiming )
+			{
+				Static_Var_3 = 1;
+				call-script walklegs();
+			}
+			if( !aiming )
+			{
+				Static_Var_3 = 0;
+				call-script walk();
+			}
+			justmoved = TRUE;
+		}
+		if( !moving )
+		{
+			Static_Var_3 = 1;
+			if( justmoved )
+			{
+				turn Head to y-axis <0.> speed <300.>;
+				turn RTleg to x-axis <0.> speed <300.>;
+				turn RBleg to x-axis <0.> speed <300.>;
+				turn Rfoot to x-axis <0.> speed <300.>;
+				turn LTleg to x-axis <0.> speed <300.>;
+				turn LBleg to x-axis <0.> speed <300.>;
+				turn Lfoot to x-axis <0.> speed <300.>;
+				turn trick to y-axis <0.> speed <300.>;
+				justmoved = FALSE;
+			}
+			sleep 100;
+		}
+	}
+}
+
+Create()
+{
+	Static_Var_5 = 2000;
+	hide Flare;
+	dont-cache Flare;
+	Static_Var_2 = 0;
+	Static_Var_3 = 1;
+	start-script MotionControl();
+	Static_Var_6 = 0;
+	Static_Var_1 = 0;
+	turn Torso to y-axis <20.> now;
+	Static_Var_8 = 100;
+	Static_Var_9 = 100;
+
+}
+
+SetMaxReloadTime(Func_Var_1)
+{
+	Static_Var_5 = Func_Var_1 * 2;
+}
+
+StopMoving()
+{
+	Static_Var_1 = 0;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = Torso;
+}
+
+RestoreAfterDelay()
+{
+	if( Static_Var_1 == 0 )
+	{
+		sleep Static_Var_5;
+	}
+	if( Static_Var_1 == 1 )
+	{
+		sleep 0;
+	}
+	if( Static_Var_7 > 32760 AND Static_Var_7 < 49322 )
+	{
+		turn Torso to y-axis <270.> speed <180.>;
+		wait-for-turn Torso around y-axis;
+		turn Torso to y-axis <0.> speed <180.>;
+		wait-for-turn Torso around y-axis;
+	}
+	if( Static_Var_7 > 16198 AND Static_Var_7 <= 32760 )
+	{
+		turn Torso to y-axis <90.> speed <180.>;
+		wait-for-turn Torso around y-axis;
+		turn Torso to y-axis <0.> speed <180.>;
+		wait-for-turn Torso around y-axis;
+	}
+	Static_Var_6 = 0;
+	turn Torso to y-axis <20.> speed <180.>;
+	turn LBarm to x-axis <0.> speed <150.>;
+	turn LTarm to x-axis <0.> speed <150.>;
+	turn RBarm to x-axis <0.> speed <150.>;
+	turn RTarm to x-axis <0.> speed <150.>;
+	turn LBarm to y-axis <0.> speed <150.>;
+	turn LTarm to y-axis <0.> speed <150.>;
+	turn RBarm to y-axis <0.> speed <150.>;
+	turn RTarm to y-axis <0.> speed <150.>;
+	turn Lrecoil to x-axis <0.> speed <150.>;
+	turn Lrecoil to x-axis <0.> speed <150.>;
+	turn trick to y-axis <0.> speed <150.>;
+	turn gun to x-axis <0.> speed <150.>;
+	Static_Var_2 = 0;
+}
+
+StartMoving()
+{
+	Static_Var_1 = 1;
+	start-script RestoreAfterDelay();
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = Flare;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = Flare;
+}
+
+FirePrimary()
+{
+	turn Lrecoil to x-axis <-15.> speed <180.>;
+	turn Rrecoil to x-axis <-15.> speed <180.>;
+	emit-sfx 1025 from Flare;
+	sleep 130;
+	turn Lrecoil to x-axis <0.> speed <20.>;
+	turn Rrecoil to x-axis <0.> speed <20.>;
+	wait-for-turn Lrecoil around x-axis;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal 2;
+	set-signal-mask 2;
+	Static_Var_2 = 1;
+	if( Rand( 1, 6 ) == 1 )
+	{
+		turn LTarm to x-axis <10.> speed <20.>;
+		turn LBarm to x-axis <-10.> speed <20.>;
+		wait-for-turn LBarm around x-axis;
+		turn LBarm to x-axis <0.> speed <20.>;
+		turn LTarm to x-axis <0.> speed <20.>;
+	}
+	if( Rand( 1, 6 ) == 1 )
+	{
+		turn Head to y-axis <45.> speed <120.>;
+		wait-for-turn Head around y-axis;
+		sleep 100;
+		turn Head to y-axis <-45.> speed <240.>;
+		wait-for-turn Head around y-axis;
+		sleep 100;
+		turn Head to y-axis <0.> speed <120.>;
+	}
+	if( Rand( 1, 5 ) == 2 )
+	{
+		turn Head to x-axis <45.> speed <120.>;
+		wait-for-turn Head around x-axis;
+		sleep 100;
+		turn Head to x-axis <0.> speed <120.>;
+	}
+	if( Rand( 1, 4 ) == 3 )
+	{
+		turn RBarm to y-axis <20.> speed <90.>;
+		wait-for-turn RBarm around y-axis;
+		turn RBarm to y-axis <-20.> speed <180.>;
+		wait-for-turn RBarm around y-axis;
+		turn RBarm to y-axis <0.> speed <90.>;
+	}
+	if( Static_Var_6 >= 0 AND Static_Var_6 < 16380 )
+	{
+		if( heading >= 32760 AND heading < 49140 )
+		{
+			turn Torso to y-axis <0.> speed <180.>;
+			wait-for-turn Torso around y-axis;
+		}
+		if( heading >= 49140 AND heading < 65520 )
+		{
+			turn Torso to y-axis <0.> speed <180.>;
+			wait-for-turn Torso around y-axis;
+		}
+	}
+	if( Static_Var_6 >= 16380 AND Static_Var_6 < 32760 )
+	{
+		if( heading >= 32760 AND heading < 49140 )
+		{
+			turn Torso to y-axis <90.> speed <180.>;
+			wait-for-turn Torso around y-axis;
+			turn Torso to y-axis <0.> speed <180.>;
+			wait-for-turn Torso around y-axis;
+		}
+		if( heading >= 49140 AND heading < 65520 )
+		{
+			turn Torso to y-axis <90.> speed <180.>;
+			wait-for-turn Torso around y-axis;
+			turn Torso to y-axis <0.> speed <180.>;
+			wait-for-turn Torso around y-axis;
+		}
+	}
+	if( Static_Var_6 >= 32760 AND Static_Var_6 < 49140 )
+	{
+		if( heading >= 0 AND heading < 16380 )
+		{
+			turn Torso to y-axis <270.> speed <180.>;
+			wait-for-turn Torso around y-axis;
+			turn Torso to y-axis <0.> speed <180.>;
+			wait-for-turn Torso around y-axis;
+		}
+		if( heading >= 16380 AND heading < 32760 )
+		{
+			turn Torso to y-axis <270.> speed <180.>;
+			wait-for-turn Torso around y-axis;
+			turn Torso to y-axis <0.> speed <180.>;
+			wait-for-turn Torso around y-axis;
+		}
+	}
+	if( Static_Var_6 >= 49140 AND Static_Var_6 < 65520 )
+	{
+		if( heading >= 0 AND heading < 16380 )
+		{
+			turn Torso to y-axis <0.> speed <180.>;
+			wait-for-turn Torso around y-axis;
+		}
+		if( heading >= 16380 AND heading < 32760 )
+		{
+			turn Torso to y-axis <0.> speed <180.>;
+			wait-for-turn Torso around y-axis;
+		}
+	}
+	Static_Var_7 = Static_Var_6;
+	Static_Var_6 = heading;
+	turn Torso to y-axis heading speed <180.>;
+	turn LBarm to x-axis <-20.> - pitch speed <90.>;
+	turn RTarm to x-axis <-20.> - pitch speed <90.>;
+	turn RTarm to y-axis <20.> speed <90.>;
+	turn gun to x-axis <20.> speed <90.>;
+	wait-for-turn LBarm around x-axis;
+	wait-for-turn Torso around y-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+Killed(severity, corpsetype)
+{
+	hide Flare;
+
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode lfoot type NOHEATCLOUD;
+		explode pelvis type NOHEATCLOUD;
+		explode rfoot type NOHEATCLOUD;
+		explode torso type NOHEATCLOUD;
+		explode Head type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode lfoot type NOHEATCLOUD | FALL;
+		explode pelvis type NOHEATCLOUD | FALL;
+		explode rfoot type NOHEATCLOUD | FALL;
+		explode torso type NOHEATCLOUD | FALL;
+		explode Head type NOHEATCLOUD | FALL;
+
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode lfoot type NOHEATCLOUD | FALL | SMOKE | FIRE;
+		explode pelvis type NOHEATCLOUD | FALL | SMOKE | FIRE;
+		explode rfoot type NOHEATCLOUD | FALL | SMOKE | FIRE;
+		explode torso type NOHEATCLOUD | FALL | SMOKE | FIRE |EXPLODE_ON_HIT;
+		explode Head type NOHEATCLOUD | FALL | SMOKE | FIRE;
+		
+	
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode lfoot type NOHEATCLOUD | FALL | SMOKE | FIRE;
+	explode pelvis type NOHEATCLOUD | FALL | SMOKE | FIRE;
+	explode rfoot type NOHEATCLOUD | FALL | SMOKE | FIRE;
+	explode torso type NOHEATCLOUD | FALL | SMOKE | FIRE |EXPLODE_ON_HIT;
+	explode Head type NOHEATCLOUD | FALL | SMOKE | FIRE;
+	return (corpsetype);
+
+}
+

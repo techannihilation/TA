@@ -1,0 +1,149 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, top, cover, glow;
+
+static-var  Static_Var_1, Static_Var_2;
+
+
+Go()
+{
+	move top to y-axis [10.] speed [5.];
+	Static_Var_2 = 1;
+	Static_Var_1 = 1;
+	set ACTIVATION to 1;
+}
+
+Stop()
+{
+	move top to y-axis [0.] speed [4.];
+	Static_Var_2 = 0;
+	Static_Var_1 = 0;
+	set ACTIVATION to 0;
+}
+
+Activate()
+{
+	call-script Go();
+}
+
+Deactivate()
+{
+	call-script Stop();
+}
+
+ImAMetalMaker()
+{
+	Static_Var_1 = -1;
+	while( TRUE )
+	{
+		if( Static_Var_2 == 1 )
+		{
+			if( Static_Var_1 != 1 )
+			{
+				call-script Go();
+			}
+		}
+		else if( Static_Var_1 != 0 )
+		{
+			call-script Stop();
+		}
+		sleep 1000;
+	}
+}
+
+Standby()
+{
+	while( TRUE )
+	{
+		if( Static_Var_1 == 1 )
+		{
+			emit-sfx 1025 from glow;
+			sleep 200;
+			emit-sfx 1025 from glow;
+			sleep 200;
+			emit-sfx 1026 from glow;
+		}
+		sleep 200;
+	}
+}
+
+MMStatus(Func_Var_1)
+{
+	Static_Var_2 = Func_Var_1;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 500;
+	}
+	start-script ImAMetalMaker();
+	start-script Standby();
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 258;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 257;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	hide cover;
+	hide glow;
+	start-script SmokeUnit();
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type BITMAPONLY | BITMAP1;
+		explode top type BITMAPONLY | BITMAP2;
+		explode body type BITMAPONLY | BITMAPNUKE;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type BITMAPONLY | BITMAP1;
+		explode top type BITMAPONLY | BITMAP2;
+		explode body type BITMAPONLY | BITMAPNUKE;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type BITMAPONLY | BITMAP1;
+		explode top type BITMAPONLY | BITMAP2;
+		explode body type BITMAPONLY | BITMAPNUKE;
+		return (0);
+	}
+	corpsetype = 3;
+	explode base type BITMAPONLY | BITMAP1;
+	explode top type BITMAPONLY | BITMAP2;
+	explode body type BITMAPONLY | BITMAPNUKE;
+}

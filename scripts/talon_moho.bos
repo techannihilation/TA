@@ -1,0 +1,180 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, drill, GP, spinner, smoker, hub1, hub2a, hub2b;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, statechg_DesiredState, statechg_StateChanging;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Activatescr()
+{
+	
+	// impossible to make repetition with move and while
+	//	move drill to y-axis [-11.000000] speed Static_Var_1;
+	//	wait-for-move drill along y-axis;
+	
+	//	move drill to y-axis [0.000000] speed Static_Var_1;
+	//	wait-for-move drill along y-axis;
+	 	
+	spin hub1 around z-axis speed Static_Var_1;
+	spin hub2a around z-axis speed Static_Var_1;
+	spin hub2b around z-axis speed Static_Var_1;
+	spin drill around z-axis speed Static_Var_1;
+	
+}
+
+Deactivatescr()
+{
+	cache drill;
+	turn drill to z-axis <0.000000> speed <75.000000>;
+	turn hub2b to z-axis <0.000000> speed <75.000000>;
+	turn hub2a to z-axis <0.000000> speed <75.000000>;
+	turn hub1 to z-axis <0.000000> speed <75.000000>;
+
+	wait-for-turn hub1 around z-axis;
+	wait-for-turn hub2a around z-axis;
+	wait-for-turn hub2b around z-axis;
+	wait-for-turn drill around z-axis;
+
+	// impossible to make repetition with move and while
+	//move drill to y-axis [0.000000] speed Static_Var_1;
+	//wait-for-move drill along y-axis;
+	
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Activatescr();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Deactivatescr();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+
+Create()
+{
+	dont-shade drill;
+	dont-cache drill;
+
+	Static_Var_1 = 0;
+	Static_Var_2 = 0;
+	call-script InitState();
+	//start-script RequestState(0);
+	start-script SmokeUnit();
+	
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+SetSpeed(Func_Var_1)
+{
+	Static_Var_1 = Func_Var_1 * 10;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode drill type NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
+		explode GP type NOHEATCLOUD;
+		explode spinner type  NOHEATCLOUD;
+		explode smoker type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode drill type BITMAPONLY | FALL;
+		explode base type BITMAPONLY | FALL;
+		explode GP type NOHEATCLOUD | FALL;
+		explode spinner type  NOHEATCLOUD | FALL;
+		explode smoker type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode drill type NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
+		explode GP type NOHEATCLOUD;
+		explode spinner type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode smoker type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+		explode drill type NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
+		explode GP type NOHEATCLOUD;
+		explode spinner type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode smoker type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
+}

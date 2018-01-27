@@ -1,0 +1,215 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  sleeve, barrels, flare, base, body, winga, wingb, spindle,
+       turret;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4;
+
+
+activatescr()
+{
+	if( TRUE )
+	{
+		turn winga to z-axis <0.> speed <62.>;
+		turn wingb to z-axis <0.> speed <62.>;
+		wait-for-turn wingb around z-axis;
+		turn body to z-axis <240.> speed <120.>;
+		wait-for-turn body around z-axis;
+		turn body to z-axis <120.> speed <180.>;
+		wait-for-turn body around z-axis;
+		turn body to z-axis <0.> speed <120.>;
+		sleep 1000;
+	}
+	sleep 23;
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		turn winga to z-axis <-90.> speed <62.>;
+		turn wingb to z-axis <90.> speed <62.>;
+		sleep 1445;
+	}
+	sleep 24;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+InitState()
+{
+	Static_Var_3 = 1;
+	Static_Var_4 = 0;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( Static_Var_4 )
+	{
+		Static_Var_3 = requestedstate;
+		return (0);
+	}
+	Static_Var_4 = 1;
+	currentstate = Static_Var_3;
+	Static_Var_3 = requestedstate;
+	while( Static_Var_3 != currentstate )
+	{
+		if( Static_Var_3 == 0 )
+		{
+			call-script activatescr();
+			currentstate = 0;
+		}
+		if( Static_Var_3 == 1 )
+		{
+			call-script deactivatescr();
+			currentstate = 1;
+		}
+	}
+	Static_Var_4 = 0;
+}
+
+MoveRate2()
+{
+	if( Rand( 1, 10 ) == 1 AND !Static_Var_1 )
+	{
+		Static_Var_1 = 1;
+		turn base to z-axis <240.> speed <120.>;
+		wait-for-turn base around z-axis;
+		turn base to z-axis <120.> speed <180.>;
+		wait-for-turn base around z-axis;
+		turn base to z-axis <0.> speed <120.>;
+		Static_Var_1 = 0;
+	}
+}
+
+Create()
+{
+	spin spindle around z-axis speed <-900.>;
+	hide flare;
+	dont-cache flare;
+	call-script InitState();
+	start-script SmokeUnit();
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+RestoreAfterDelay()
+{
+	sleep 700;
+	turn turret to y-axis <0.> speed <100.>;
+	turn body to x-axis <0.> speed <100.>;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal 2;
+	set-signal-mask 2;
+	turn turret to y-axis heading speed <100.>;
+	turn body to x-axis <0.> - pitch speed <100.>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn body around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FirePrimary()
+{
+	show flare;
+	sleep 100;
+	hide flare;
+	sleep 300;
+	turn barrels to z-axis <120.> speed <300.>;
+	wait-for-turn barrels around z-axis;
+	turn barrels to z-axis <240.> speed <300.>;
+	wait-for-turn barrels around z-axis;
+	turn barrels to z-axis <0.> speed <300.>;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = flare;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type NOHEATCLOUD;
+		explode barrels type NOHEATCLOUD;
+		explode sleeve type NOHEATCLOUD;
+		explode winga type NOHEATCLOUD;
+		explode wingb type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type NOHEATCLOUD;
+		explode barrels type FALL | NOHEATCLOUD;
+		explode sleeve type FALL | NOHEATCLOUD;
+		explode winga type SHATTER | NOHEATCLOUD;
+		explode wingb type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type NOHEATCLOUD;
+		explode barrels type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode sleeve type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode body type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode winga type SHATTER | NOHEATCLOUD;
+		explode wingb type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type NOHEATCLOUD;
+	explode barrels type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode sleeve type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode body type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode winga type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode wingb type NOHEATCLOUD;
+	return (corpsetype);
+}

@@ -1,0 +1,188 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, fpmain, beam1, beam2, beam3, ring, teeth1, teeth2, teeth3;
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from body;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+StartMoving()
+{
+	signal 256;
+	set-signal-mask 256;
+
+}
+
+StopMoving()
+{
+	signal 512;
+	set-signal-mask 512;
+}
+
+
+Create()
+{
+	hide fpmain;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 1000;
+	}
+	//spin base around y-axis speed <3.000000>;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal 2;
+	set-signal-mask 2;
+	return (1);
+}
+
+FirePrimary()
+{
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = body;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = fpmain;
+}
+
+AimWeapon2(heading, pitch)
+{
+	signal 4;
+	set-signal-mask 4;
+	return (1);
+}
+
+FireWeapon2()
+{
+}
+
+AimFromWeapon2(piecenum)
+{
+	piecenum = beam1;
+}
+
+QueryWeapon2(piecenum)
+{
+	piecenum = beam1;
+}
+
+AimWeapon3(heading, pitch)
+{
+	signal 8;
+	set-signal-mask 8;
+	return (1);
+}
+
+FireWeapon3()
+{
+}
+
+AimFromWeapon3(piecenum)
+{
+	piecenum = beam2;
+}
+
+QueryWeapon3(piecenum)
+{
+	piecenum = beam2;
+}
+
+AimWeapon4(heading, pitch)
+{
+	signal 16;
+	set-signal-mask 16;
+	return (1);
+}
+
+FireWeapon4()
+{
+}
+
+AimFromWeapon4(piecenum)
+{
+	piecenum = beam3;
+}
+
+QueryWeapon4(piecenum)
+{
+	piecenum = beam3;
+}
+
+
+SweetSpot(piecenum)
+{
+	piecenum = body;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode teeth1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode teeth2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode teeth3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode base type NOHEATCLOUD ;
+		explode ring type NOHEATCLOUD ;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode teeth1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode teeth2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode teeth3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode base type NOHEATCLOUD ;
+ 		explode ring type NOHEATCLOUD ;		
+ 		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode teeth1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode teeth2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode teeth3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode base type NOHEATCLOUD ;
+		explode ring type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode teeth1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode teeth2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode teeth3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode base type NOHEATCLOUD ;
+	explode ring type NOHEATCLOUD ;
+	return (corpsetype);
+}

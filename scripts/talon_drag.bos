@@ -1,0 +1,9 @@
+#define TAK			// This is a TAK script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+
+Create(Func_Var_1)
+{
+}

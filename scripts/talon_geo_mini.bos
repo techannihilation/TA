@@ -1,0 +1,152 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, smoker, spinner;
+
+static-var  Static_Var_1;
+
+
+Detect()
+{
+	sleep Rand( 500, 5000 );
+	var Func_Var_1, Func_Var_2, Func_Var_3, Func_Var_4, Func_Var_5, Func_Var_6, Func_Var_7, Func_Var_8, Func_Var_9, Func_Var_10;
+	Func_Var_8 = get MAX_ID;
+	Func_Var_9 = get UNKNOWN_UNIT_VALUE(69);
+	while( TRUE )
+	{
+		Func_Var_7 = 0;
+		Func_Var_2 = Func_Var_9;
+		while( Func_Var_2 <= Func_Var_8 )
+		{
+			Func_Var_10 = get UNIT_HEIGHT(Func_Var_2);
+			if( Func_Var_10 == 1412954 OR Func_Var_10 == 1540094 OR Func_Var_10 == 879385 )
+			{
+				if( get UNIT_ALLIED(Func_Var_2) == 0 )
+				{
+					Func_Var_3 = get UNIT_XZ(Func_Var_2) - get PIECE_XZ(base);
+					if( Func_Var_3 < 0 )
+					{
+						Func_Var_3 = 0 - Func_Var_3;
+					}
+					Func_Var_4 = Func_Var_3 / 65536;
+					Func_Var_5 = Func_Var_3 - Func_Var_4 * 65536;
+					if( Func_Var_5 > 32767 )
+					{
+						Func_Var_5 = 65536 - Func_Var_5;
+						Func_Var_4 = Func_Var_4 + ( Func_Var_3 > 0 );
+					}
+					if( 707333111 < get XZ_HYPOT(Func_Var_4 / 2 * 65536 + Func_Var_5 / 2) )
+					{
+						Func_Var_3 = 500333222;
+					}
+					Func_Var_1 = get XZ_HYPOT(Func_Var_3);
+					if( Func_Var_1 <= 16384000 )
+					{
+						++Func_Var_7;
+					}
+				}
+			}
+			++Func_Var_2;
+		}
+		if( Func_Var_7 == 0 )
+		{
+			set ACTIVATION to 0;
+			show base;
+			Static_Var_1 = 1;
+		}
+		if( Func_Var_7 > 0 )
+		{
+			set ACTIVATION to 1;
+			Static_Var_1 = 0;
+			hide base;
+		}
+		sleep 500;
+	}
+}
+
+Smoke()
+{
+	if( Static_Var_1 == 1 )
+	{
+		emit-sfx 256 | 2 from smoker;
+		sleep 10;
+		emit-sfx 256 | 1 from smoker;
+		sleep 10;
+		start-script Smoke();
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	start-script SmokeUnit();
+	spin spinner around y-axis speed <5000.>;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 1000;
+	}
+	Static_Var_1 = 1;
+	start-script Smoke();
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type NOHEATCLOUD;
+		explode smoker type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type NOHEATCLOUD | FALL;
+		explode smoker type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type NOHEATCLOUD | BITMAP1;
+		explode smoker type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type NOHEATCLOUD | BITMAP1;
+	explode smoker type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}
