@@ -42,8 +42,8 @@ activatescr()
 
 deactivatescr()
 {
-	stop-spin rotate1 around y-axis decelerate <-0.500000>;
-	stop-spin rotate2 around y-axis decelerate <0.500000>;
+	stop-spin rotate1 around y-axis decelerate <1.500000>;
+	stop-spin rotate2 around y-axis decelerate <1.500000>;
 	wait-for-turn rotate1 around y-axis;
 	wait-for-turn rotate2 around y-axis;
 }
