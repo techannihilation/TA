@@ -64,7 +64,7 @@ if Spring.GetModOptions() then
   		message = "Nano frames Decay disabled"
   		table.insert(infoMessage, message)
 	end
-	if Spring.GetModOptions().mo_morphcostmulti ~= "1" then
+	if Spring.GetModOptions().mo_morphcostmulti and Spring.GetModOptions().mo_morphcostmulti ~= "1" then
 		morphcost = tostring(math.floor(Spring.GetModOptions().mo_morphcostmulti * 100))
   		message = "All morph costs are set to "..morphcost.."%"
   		table.insert(infoMessage, message)
