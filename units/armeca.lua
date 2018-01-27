@@ -17,7 +17,7 @@ return {
 		canstop = 1,
 		category = "ALL CONSTR MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTWEAPON VTOL",
 		collide = false,
-		cruisealt = 80,
+		cruisealt = 125,
 		defaultmissiontype = "VTOL_standby",
 		description = "Tech Level 3",
 		energymake = 100,
