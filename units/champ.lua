@@ -7,7 +7,7 @@ return {
 		buildcostmetal = 5280,
 		builder = false,
 		buildpic = "champ.dds",
-		buildtime = 26678,
+		buildtime = 35000,
 		canattack = true,
 		canguard = true,
 		canmove = true,
