@@ -113,12 +113,22 @@ function UnitDef_Post(name, uDef)
 		end
 		--Uncomment to clean pieces
 		--uDef.sfxtypes.pieceexplosiongenerators = nil
+
+		--Fix planes blocking
+		if uDef.canfly then
+			uDef.blocking = false
+		end
 	end
 end
 
 -- process weapondef
 function WeaponDef_Post(name, WeaponDefs)
-
+	--Adjust transporter class damage
+	if WeaponDefs.damage.bombers then
+		newdmg = WeaponDefs.damage.bombers
+		WeaponDefs.damage.transporters = newdmg
+		Spring.Echo(name,newdmg)
+	end
 end
 
 
