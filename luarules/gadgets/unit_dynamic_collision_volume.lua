@@ -241,6 +241,9 @@ if (gadgetHandler:IsSyncedCode()) then
 		if popupUnits[unitID] then
 			popupUnits[unitID] = nil
 		end
+		if unitYSizeOffset[unitID] then
+			unitYSizeOffset[unitID] = nil
+		end
 	end
 
 	
