@@ -44,21 +44,21 @@ Create()
 		sleep 1000;
 	}
 	start-script SmokeUnit();
-	while( TRUE )
-	{
-		emit-sfx 1024 + 0 from rblink0;
-		emit-sfx 1024 + 0 from rblink1;
-		emit-sfx 1024 + 0 from rblink2;
-		emit-sfx 1024 + 0 from rblink3;
-		emit-sfx 1024 + 0 from rblink4;
-		emit-sfx 1024 + 0 from rblink5;
-		sleep 7;
-	}
+	//while( TRUE )
+	//{
+		//emit-sfx 1024 + 0 from rblink0;
+		//emit-sfx 1024 + 0 from rblink1;
+		//emit-sfx 1024 + 0 from rblink2;
+		//emit-sfx 1024 + 0 from rblink3;
+		//emit-sfx 1024 + 0 from rblink4;
+		//emit-sfx 1024 + 0 from rblink5;
+		//sleep 7;
+	//}
 }
 
 Activate()
 {
-	//spin mainrotor around y-axis speed <8.000000>;
+	spin mainrotor around y-axis speed <3.500000>;
 	spin ring1 around x-axis speed <10.000000>;
 	spin ring2 around x-axis speed <-10.000000>;
 	
