@@ -48,7 +48,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
-			buildpic = "armemex.png",
+			buildpic = "armemex.dds",
 			faction = "ARM",
 		},
 		sfxtypes = {

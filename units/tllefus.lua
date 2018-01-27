@@ -26,7 +26,7 @@ return {
 		idletime = 1800,
 		losemitheight = 106,
 		makesmetal = 0,
-		mass = 89000,
+		mass = 27450,
 		maxdamage = 28900,
 		maxslope = 10,
 		maxwaterdepth = 0,
@@ -42,6 +42,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo",
 		customparams = {
+			buildpic = "tllefus.dds",
 			faction = "TLL",
 		},
 		featuredefs = {
@@ -72,10 +73,12 @@ return {
 				[1] = "custom:SmallWhiteLight",
 			},
 			pieceexplosiongenerators = {
-				[1] = "piecetrail5",
-				[2] = "piecetrail5",
-				[3] = "piecetrail4",
-				[4] = "piecetrail6",
+				[1] = "piecetrail0",
+				[2] = "piecetrail1",
+				[3] = "piecetrail2",
+				[4] = "piecetrail3",
+				[5] = "piecetrail4",
+				[6] = "piecetrail6",
 			},
 		},
 		sounds = {

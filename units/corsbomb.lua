@@ -1,6 +1,7 @@
 return {
 	corsbomb = {
 		acceleration = 0.03594,
+		blocking = false,
 		brakerate = 0.015,
 		buildcostenergy = 101330,
 		buildcostmetal = 3090,
@@ -124,6 +125,7 @@ return {
 					default = 2000,
 					fighters = 5,
 					flak_resistant = 5,
+					transporters = 5,
 					unclassed_air = 5,
 				},
 			},

@@ -2,6 +2,7 @@ return {
 	tllcop1 = {
 		acceleration = 0.6,
 		bankscale = 1,
+		blocking = false,
 		brakerate = 0.4,
 		buildcostenergy = 2826,
 		buildcostmetal = 227,

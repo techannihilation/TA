@@ -1,5 +1,5 @@
 return {
-	tllemex= {
+	tllemex = {
 		acceleration = 0,
 		activatewhenbuilt = true,
 		brakerate = 0,
@@ -24,7 +24,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 35,
-		mass = 3470,
+		mass = 4025,
 		maxdamage = 4770,
 		maxslope = 20,
 		maxvelocity = 0,
@@ -47,7 +47,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
-			buildpic = "tllemex.png",
+			buildpic = "tllemex.dds",
 			faction = "TLL",
 		},
 		sfxtypes = {

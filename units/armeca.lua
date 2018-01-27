@@ -2,6 +2,7 @@ return {
 	armeca = {
 		acceleration = 0.05,
 		bankscale = 1.5,
+		blocking = false,
 		brakerate = 0.45,
 		buildcostenergy = 603700,
 		buildcostmetal = 11045,
@@ -30,7 +31,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		maneuverleashlength = 1280,
-		mass = 6950,
+		mass = 11045,
 		maxdamage = 9480,
 		maxslope = 10,
 		maxvelocity = 6.2,
@@ -50,7 +51,7 @@ return {
 		steeringmode = 1,
 		terraformspeed = 750,
 		turninplaceanglelimit = 360,
-		turninplacespeedlimit = 5.544,
+		turninplacespeedlimit = 4.092,
 		turnrate = 175,
 		unitname = "armeca",
 		workertime = 650,
@@ -72,10 +73,9 @@ return {
 			[15] = "nebraska",
 		},
 		customparams = {
-			buildpic = "ARMECA.png",
+			buildpic = "armeca.dds",
 			faction = "ARM",
 		},
-
 		nanocolor = {
 			[1] = 0.144,
 			[2] = 0.544,

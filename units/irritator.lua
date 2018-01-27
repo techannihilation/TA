@@ -62,9 +62,9 @@ return {
 		customparams = {
 			buildpic = "irritator.dds",
 			faction = "TLL",
+			shield_emit_height = 83,
 			shield_power = 2600,
 			shield_radius = 230,
-			shield_emit_height = 83,
 		},
 		featuredefs = {
 			irritator_dead = {
@@ -212,7 +212,6 @@ return {
 				smartshield = true,
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				--visibleshield = true,
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {

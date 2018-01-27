@@ -2,6 +2,7 @@ return {
 	armbrawl = {
 		acceleration = 0.24,
 		bankscale = 1,
+		blocking = false,
 		brakerate = 0.441,
 		buildcostenergy = 7950,
 		buildcostmetal = 300,

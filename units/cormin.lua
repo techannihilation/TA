@@ -2,6 +2,7 @@ return {
 	cormin = {
 		acceleration = 0.05,
 		bankscale = 1.5,
+		blocking = false,
 		brakerate = 0.08,
 		buildcostenergy = 1600,
 		buildcostmetal = 43,

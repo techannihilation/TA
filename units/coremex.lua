@@ -23,7 +23,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 45,
-		mass = 5568,
+		mass = 3750,
 		maxdamage = 5930,
 		maxslope = 20,
 		maxwaterdepth = 9999,
@@ -41,6 +41,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo",
 		customparams = {
+			buildpic = "coremex.dds",
 			faction = "CORE",
 		},
 		sfxtypes = {

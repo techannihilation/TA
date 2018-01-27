@@ -2,6 +2,7 @@ return {
 	ferret = {
 		acceleration = 0.2,
 		bankscale = 1,
+		blocking = false,
 		brakerate = 0.5,
 		buildcostenergy = 9113,
 		buildcostmetal = 229,

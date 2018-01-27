@@ -1,6 +1,7 @@
 return {
 	bladew = {
 		acceleration = 0.264,
+		blocking = false,
 		brakerate = 0.55,
 		buildcostenergy = 1280,
 		buildcostmetal = 58,
