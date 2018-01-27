@@ -2,6 +2,7 @@ return {
 	blade = {
 		acceleration = 0.6,
 		bankscale = 1,
+		blocking = false,
 		brakerate = 0.35,
 		buildcostenergy = 17403,
 		buildcostmetal = 951,

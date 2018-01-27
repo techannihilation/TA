@@ -2,6 +2,7 @@ return {
 	armsfig = {
 		acceleration = 0.17249,
 		amphibious = 1,
+		blocking = false,
 		brakerate = 0.1,
 		buildcostenergy = 7500,
 		buildcostmetal = 160,
@@ -125,6 +126,7 @@ return {
 					default = 5,
 					fighters = 140,
 					flak_resistant = 100,
+					transporters = 280,
 					unclassed_air = 100,
 				},
 			},
