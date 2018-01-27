@@ -18,7 +18,6 @@ return {
 		description = "Produces Energy / Storage",
 		energymake = 24000,
 		energystorage = 48000,
-		energyuse = 0,
 		explodeas = "CRBLMSSL",
 		footprintx = 9,
 		footprintz = 9,
