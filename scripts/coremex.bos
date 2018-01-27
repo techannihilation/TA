@@ -1,0 +1,316 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, top, iris,
+       blade1, blade2, blade3, blade4, blade5, blade6, blade7, blade8,
+       blade9, blade10, blade11, blade12, blade13, blade14, blade15, blade16, cap, shell, rotary1, rotary2;
+
+static-var  statechg_DesiredState, statechg_StateChanging, Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4;
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+activatescr()
+{
+	set ARMORED to 0;
+	hide cap;
+	show blade1;
+	show blade2;
+	show blade3;
+	show blade4;
+	show blade5;
+	show blade6;
+	show blade7;
+	show blade8;
+	show blade9;
+	show blade10;
+	show blade11;
+	show blade12;
+	show blade13;
+	show blade14;
+	show blade15;
+	show blade16;
+	dont-cache blade1;
+	dont-cache blade2;
+	dont-cache blade3;
+	dont-cache blade4;
+	dont-cache blade5;
+	dont-cache blade6;
+	dont-cache blade7;
+	dont-cache blade8;
+	dont-cache blade9;
+	dont-cache blade10;
+	dont-cache blade11;
+	dont-cache blade12;
+	dont-cache blade13;
+	dont-cache blade14;
+	dont-cache blade15;
+	dont-cache blade16;
+	show rotary1;
+	show rotary2;
+	dont-cache rotary1;
+	dont-cache rotary2;
+	dont-cache shell;
+	move iris to y-axis [-2.000000] speed [10.000000];
+	wait-for-move iris along y-axis;
+	turn blade1 to y-axis <60.000000> speed <20.000000>;
+	turn blade2 to y-axis <60.000000> speed <20.000000>;
+	turn blade3 to y-axis <60.000000>  speed <20.000000>;
+	turn blade4 to y-axis <60.000000>  speed <20.000000>;
+	turn blade5 to y-axis <60.000000>  speed <20.000000>;
+	turn blade6 to y-axis <60.000000> speed <20.000000>;
+	turn blade7 to y-axis <60.000000>  speed <20.000000>;
+	turn blade8 to y-axis <60.000000>  speed <20.000000>;
+	turn blade9 to y-axis <60.000000>  speed <20.000000>;
+	turn blade10 to y-axis <60.000000>  speed <20.000000>;
+	turn blade11 to y-axis <60.000000>  speed <20.000000>;
+	turn blade12 to y-axis <60.000000>  speed <20.000000>;
+	turn blade13 to y-axis <60.000000>  speed <20.000000>;
+	turn blade14 to y-axis <60.000000>  speed <20.000000>;
+	turn blade15 to y-axis <60.000000>  speed <20.000000>;
+	turn blade16 to y-axis <60.000000>  speed <20.000000>;
+	sleep 2000;
+	move shell to y-axis [5.3500000] speed [2.000000];
+	wait-for-move shell along y-axis;
+	spin rotary1 around y-axis speed Static_Var_1 accelerate Static_Var_2;
+	spin rotary2 around y-axis speed (0 - Static_Var_1) accelerate Static_Var_2;
+
+}
+
+deactivatescr()
+{
+	stop-spin rotary1 around y-axis decelerate Static_Var_3;
+	stop-spin rotary2 around y-axis decelerate Static_Var_3;
+	move shell to y-axis [0] speed [2.000000];
+	wait-for-move shell along y-axis;
+	turn blade1 to y-axis <0.000000> speed <20.000000>;
+	turn blade2 to y-axis <0.000000> speed <20.000000>;
+	turn blade3 to y-axis <0.000000> speed <20.000000>;
+	turn blade4 to y-axis <0.000000> speed <20.000000>;
+	turn blade5 to y-axis <0.000000> speed <20.000000>;
+	turn blade6 to y-axis <0.000000> speed <20.000000>;
+	turn blade7 to y-axis <0.000000> speed <20.000000>;
+	turn blade8 to y-axis <0.000000> speed <20.000000>;
+	turn blade9 to y-axis <0.000000> speed <20.000000>;
+	turn blade10 to y-axis <0.000000> speed <20.000000>;
+	turn blade11 to y-axis <0.000000> speed <20.000000>;
+	turn blade12 to y-axis <0.000000> speed <20.000000>;
+	turn blade13 to y-axis <0.000000> speed <20.000000>;
+	turn blade14 to y-axis <0.000000> speed <20.000000>;
+	turn blade15 to y-axis <0.000000> speed <20.000000>;
+	turn blade16 to y-axis <0.000000> speed <20.000000>;
+	sleep 2650;
+	move iris to y-axis [0.000000] speed [10.000000];
+	wait-for-move iris along y-axis;
+	cache blade1;
+	cache blade2;
+	cache blade3;
+	cache blade4;
+	cache blade5;
+	cache blade6;
+	cache blade7;
+	cache blade8;
+	cache blade9;
+	cache blade10;
+	cache blade11;
+	cache blade12;
+	cache blade13;
+	cache blade14;
+	cache blade15;
+	cache blade16;
+	hide blade1;
+	hide blade2;
+	hide blade3;
+	hide blade4;
+	hide blade5;
+	hide blade6;
+	hide blade7;
+	hide blade8;
+	hide blade9;
+	hide blade10;
+	hide blade11;
+	hide blade12;
+	hide blade13;
+	hide blade14;
+	hide blade15;
+	hide blade16;
+	show cap;
+	sleep 50;
+	set ARMORED to 1;
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script activatescr();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script deactivatescr();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+Create()
+{
+	//Acceleration rotary var1
+	Static_Var_1 = 0;
+	//Acceleration dingle var2
+	Static_Var_2 = 40;
+	//deceleration var3
+	Static_Var_3 = 500;
+/*	hide blade1;
+	hide blade2;
+	hide blade3;
+	hide blade4;
+	hide blade5;
+	hide blade6;
+	hide blade7;
+	hide blade8;
+	hide blade9;
+	hide blade10;
+	hide blade11;
+	hide blade12;
+	hide blade13;
+	hide blade14;
+	hide blade15;
+	hide blade16;
+	dont-shade cap;
+	dont-shade top;
+	dont-shade blade1;
+	dont-shade blade2;
+	dont-shade blade3;
+	dont-shade blade4;
+	dont-shade blade5;
+	dont-shade blade6;
+	dont-shade blade7;
+	dont-shade blade8;
+	dont-shade blade9;
+	dont-shade blade10;
+	dont-shade blade11;
+	dont-shade blade12;
+	dont-shade blade13;
+	dont-shade blade14;
+	dont-shade blade15;
+	dont-shade blade16;
+*/
+	call-script InitState();
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 1000;
+	}
+	start-script SmokeUnit();
+	set ARMORED to 1;
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+SetSpeed(Func_Var_1)
+{
+	Static_Var_1 = Func_Var_1 * 2;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode blade1 type NOHEATCLOUD;
+		explode blade3 type NOHEATCLOUD;
+		explode blade5 type NOHEATCLOUD;
+		explode blade7 type NOHEATCLOUD;
+		explode rotary1 type NOHEATCLOUD;
+		explode rotary2 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode blade1 type NOHEATCLOUD | FALL;
+		explode blade3 type NOHEATCLOUD | FALL;
+		explode blade5 type NOHEATCLOUD | FALL;
+		explode blade7 type NOHEATCLOUD | FALL;
+		explode rotary1 type NOHEATCLOUD | FALL;
+		explode rotary2 type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+	explode blade1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode blade3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode blade5 type  NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode blade7 type  NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rotary1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rotary2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode blade1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode blade3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode blade5 type  NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode blade7 type  NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rotary1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rotary2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}
