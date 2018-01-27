@@ -154,7 +154,6 @@ return {
 					fighters = 500,
 					flak_resistant = 500,
 					subs = 5,
-					transporters = 500,
 					unclassed_air = 500,
 				},
 			},

@@ -2,7 +2,6 @@ return {
 	corca = {
 		acceleration = 0.06,
 		bankscale = 1.5,
-		blocking = false,
 		brakerate = 0.4125,
 		buildcostenergy = 4885,
 		buildcostmetal = 117,

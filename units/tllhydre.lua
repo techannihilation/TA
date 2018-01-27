@@ -27,7 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 136,
-		mass = 30500,
+		mass = 29000,
 		maxdamage = 15890,
 		maxslope = 13,
 		maxvelocity = 0,
@@ -48,7 +48,7 @@ return {
 		usepiececollisionvolumes = 1,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
-			buildpic = "tllhydre.dds",
+			buildpic = "tllhydre.png",
 			faction = "TLL",
 		},
 		featuredefs = {

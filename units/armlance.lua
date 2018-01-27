@@ -2,7 +2,6 @@ return {
 	armlance = {
 		acceleration = 0.08626,
 		bankscale = 1,
-		blocking = false,
 		brakerate = 0.075,
 		buildcostenergy = 7030,
 		buildcostmetal = 340,

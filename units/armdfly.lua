@@ -2,7 +2,6 @@ return {
 	armdfly = {
 		acceleration = 0.2,
 		bankscale = 1,
-		blocking = false,
 		brakerate = 0.625,
 		buildcostenergy = 8918,
 		buildcostmetal = 585,
@@ -34,7 +33,7 @@ return {
 		idletime = 1800,
 		losemitheight = 15,
 		maneuverleashlength = 1280,
-		mass = 585,
+		mass = 675,
 		maxdamage = 3240,
 		maxslope = 15,
 		maxvelocity = 8.1,
@@ -60,7 +59,7 @@ return {
 		transportmaxunits = 1,
 		transportsize = 15,
 		turninplaceanglelimit = 360,
-		turninplacespeedlimit = 5.346,
+		turninplacespeedlimit = 5.94,
 		turnrate = 420,
 		unitname = "armdfly",
 		customparams = {
@@ -135,7 +134,6 @@ return {
 					default = 6400,
 					fighters = 5,
 					flak_resistant = 5,
-					transporters = 5,
 					unclassed_air = 5,
 				},
 			},

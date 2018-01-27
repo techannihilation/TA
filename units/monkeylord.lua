@@ -61,9 +61,9 @@ return {
 		customparams = {
 			buildpic = "monkeylord.dds",
 			faction = "CORE",
-			shield_emit_height = 49.5,
 			shield_power = 2600,
 			shield_radius = 230,
+			shield_emit_height = 49.5,
 		},
 		featuredefs = {
 			dead = {
@@ -182,6 +182,7 @@ return {
 				smartshield = true,
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
+				--visibleshield = true,
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {

@@ -2,7 +2,6 @@ return {
 	smasher = {
 		acceleration = 0.35,
 		bankscale = 1,
-		blocking = false,
 		brakerate = 0.25,
 		buildcostenergy = 13050,
 		buildcostmetal = 1973,

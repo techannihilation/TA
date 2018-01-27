@@ -1,7 +1,6 @@
 return {
 	blastwing = {
 		acceleration = 0.142,
-		blocking = false,
 		brakerate = 0.385,
 		buildcostenergy = 1370,
 		buildcostmetal = 75,

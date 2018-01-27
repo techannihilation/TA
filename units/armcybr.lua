@@ -2,7 +2,6 @@ return {
 	armcybr = {
 		acceleration = 0.1423,
 		bankscale = 1,
-		blocking = false,
 		brakerate = 0.05,
 		buildcostenergy = 48062,
 		buildcostmetal = 3140,
@@ -135,7 +134,6 @@ return {
 					default = 7625,
 					fighters = 200,
 					flak_resistant = 200,
-					transporters = 200,
 					unclassed_air = 200,
 				},
 			},

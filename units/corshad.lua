@@ -3,7 +3,6 @@ return {
 		acceleration = 0.0302,
 		altfromsealevel = 1,
 		attackrunlength = 170,
-		blocking = false,
 		brakerate = 0.055,
 		buildcostenergy = 5960,
 		buildcostmetal = 160,

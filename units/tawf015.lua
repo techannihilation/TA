@@ -2,7 +2,6 @@ return {
 	tawf015 = {
 		acceleration = 0.2,
 		bankscale = 1,
-		blocking = false,
 		brakerate = 0.5,
 		buildcostenergy = 37867,
 		buildcostmetal = 1120,
@@ -128,7 +127,6 @@ return {
 					default = 600,
 					fighters = 400,
 					flak_resistant = 600,
-					transporters = 400,
 					unclassed_air = 600,
 				},
 			},
@@ -172,7 +170,6 @@ return {
 					default = 5,
 					fighters = 200,
 					flak_resistant = 400,
-					transporters = 200,
 					unclassed_air = 400,
 				},
 			},

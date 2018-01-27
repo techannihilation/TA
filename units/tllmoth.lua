@@ -1,7 +1,6 @@
 return {
 	tllmoth = {
 		acceleration = 0.142,
-		blocking = false,
 		brakerate = 0.385,
 		buildcostenergy = 5475,
 		buildcostmetal = 420,

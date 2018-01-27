@@ -73,9 +73,9 @@ return {
 			buildpic = "armsmc.dds",
 			faction = "ARM",
 			providetech = "T3 Factory",
-			shield_emit_height = 38,
 			shield_power = 2600,
-			shield_radius = 230,
+  			shield_radius = 230,
+			shield_emit_height = 38,
 		},
 		featuredefs = {
 			dead = {
@@ -147,6 +147,7 @@ return {
 				smartshield = true,
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
+				--visibleshield = true,
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {

@@ -2,7 +2,6 @@ return {
 	corhind = {
 		acceleration = 0.22,
 		bankscale = 1,
-		blocking = false,
 		brakerate = 0.6,
 		buildcostenergy = 30132,
 		buildcostmetal = 3115,

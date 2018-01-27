@@ -2,7 +2,6 @@ return {
 	armmin = {
 		acceleration = 0.06,
 		bankscale = 1.5,
-		blocking = false,
 		brakerate = 0.07,
 		buildcostenergy = 1600,
 		buildcostmetal = 43,

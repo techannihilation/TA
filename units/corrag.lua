@@ -2,7 +2,6 @@ return {
 	corrag = {
 		acceleration = 0.24,
 		bankscale = 1,
-		blocking = false,
 		brakerate = 0.441,
 		buildcostenergy = 37867,
 		buildcostmetal = 1120,
@@ -106,7 +105,6 @@ return {
 					default = 800,
 					fighters = 400,
 					flak_resistant = 600,
-					transporters = 400,
 					unclassed_air = 600,
 				},
 			},
@@ -145,7 +143,6 @@ return {
 					default = 5,
 					fighters = 150,
 					flak_resistant = 300,
-					transporters = 150,
 					unclassed_air = 300,
 				},
 			},

@@ -1,7 +1,6 @@
 return {
 	armjade = {
 		acceleration = 0.142,
-		blocking = false,
 		brakerate = 0.385,
 		buildcostenergy = 9013,
 		buildcostmetal = 342,

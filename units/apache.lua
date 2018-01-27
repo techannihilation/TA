@@ -2,7 +2,6 @@ return {
 	apache = {
 		acceleration = 0.2,
 		bankscale = 1,
-		blocking = false,
 		brakerate = 0.2,
 		buildcostenergy = 12976,
 		buildcostmetal = 2107,
