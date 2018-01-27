@@ -62,9 +62,9 @@ return {
 		customparams = {
 			buildpic = "armpraet.dds",
 			faction = "ARM",
-			shield_power = 2600,
- 			shield_radius = 230,
 			shield_emit_height = 60.43,
+			shield_power = 2600,
+			shield_radius = 230,
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
