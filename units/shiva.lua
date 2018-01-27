@@ -7,7 +7,7 @@ return {
 		buildcostmetal = 3467,
 		builder = false,
 		buildpic = "shiva.dds",
-		buildtime = 35000,
+		buildtime = 30000,
 		canattack = true,
 		canguard = true,
 		canmove = true,
