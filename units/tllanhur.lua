@@ -2,6 +2,7 @@ return {
 	tllanhur = {
 		acceleration = 0.03594,
 		amphibious = 1,
+		blocking = false,
 		brakerate = 0.015,
 		buildcostenergy = 48000,
 		buildcostmetal = 4060,

@@ -6,6 +6,7 @@ return {
 		airstrafe = false,
 		autoheal = 5,
 		bankscale = 1,
+		blocking = false,
 		brakerate = 0.375,
 		buildcostenergy = 510000,
 		buildcostmetal = 178000,

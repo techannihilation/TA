@@ -2,6 +2,7 @@ return {
 	cbuilderlvl3 = {
 		acceleration = 0.013,
 		airhoverfactor = 0,
+		blocking = false,
 		brakerate = 0.35,
 		buildcostenergy = 623000,
 		buildcostmetal = 23250,

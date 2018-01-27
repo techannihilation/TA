@@ -2,6 +2,7 @@ return {
 	coraca = {
 		acceleration = 0.066,
 		bankscale = 1.5,
+		blocking = false,
 		brakerate = 0.4275,
 		buildcostenergy = 50720,
 		buildcostmetal = 1690,

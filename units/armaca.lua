@@ -2,6 +2,7 @@ return {
 	armaca = {
 		acceleration = 0.08,
 		bankscale = 1.5,
+		blocking = false,
 		brakerate = 0.4275,
 		buildcostenergy = 51000,
 		buildcostmetal = 1710,

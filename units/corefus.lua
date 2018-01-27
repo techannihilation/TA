@@ -1,5 +1,5 @@
 return {
-	corefus  = {
+	corefus = {
 		acceleration = 0,
 		activatewhenbuilt = true,
 		brakerate = 0,
@@ -27,7 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 95,
-		mass = 18000,
+		mass = 24900,
 		maxdamage = 18500,
 		maxslope = 10,
 		maxvelocity = 0,
@@ -46,7 +46,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo",
 		customparams = {
-			buildpic = "COREFUS.png",
+			buildpic = "corefus.dds",
 			faction = "CORE",
 		},
 		featuredefs = {
@@ -76,10 +76,12 @@ return {
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
-				[1] = "piecetrail5",
-				[2] = "piecetrail5",
-				[3] = "piecetrail4",
-				[4] = "piecetrail6",
+				[1] = "piecetrail0",
+				[2] = "piecetrail1",
+				[3] = "piecetrail2",
+				[4] = "piecetrail3",
+				[5] = "piecetrail4",
+				[6] = "piecetrail6",
 			},
 		},
 		sounds = {

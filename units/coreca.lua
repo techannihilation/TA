@@ -2,6 +2,7 @@ return {
 	coreca = {
 		acceleration = 0.025,
 		bankscale = 1.5,
+		blocking = false,
 		brakerate = 0.4275,
 		buildcostenergy = 550720,
 		buildcostmetal = 12345,
@@ -17,7 +18,7 @@ return {
 		canstop = 1,
 		category = "ALL CONSTR MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTWEAPON VTOL",
 		collide = false,
-		cruisealt = 125,
+		cruisealt = 75,
 		defaultmissiontype = "VTOL_Standby",
 		description = "Tech Level 3",
 		energymake = 100,
@@ -31,7 +32,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		maneuverleashlength = 1280,
-		mass = 7610,
+		mass = 12345,
 		maxdamage = 14185,
 		maxslope = 10,
 		maxvelocity = 5,
@@ -50,7 +51,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 360,
-		turninplacespeedlimit = 5.28,
+		turninplacespeedlimit = 3.3,
 		turnrate = 100,
 		unitname = "coreca",
 		workertime = 800,
@@ -72,7 +73,7 @@ return {
 			[15] = "corboucher",
 		},
 		customparams = {
-			buildpic = "CORECA.png",
+			buildpic = "coreca.dds",
 			faction = "CORE",
 		},
 		nanocolor = {

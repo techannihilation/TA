@@ -26,7 +26,7 @@ return {
 		idletime = 1800,
 		losemitheight = 22,
 		maneuverleashlength = 640,
-		mass = 300,
+		mass = 275,
 		maxdamage = 775,
 		maxslope = 16,
 		maxvelocity = 4,
@@ -46,7 +46,7 @@ return {
 		steeringmode = 1,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 2.178,
+		turninplacespeedlimit = 2.64,
 		turnrate = 260,
 		unitname = "armvisit",
 		customparams = {
