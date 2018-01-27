@@ -123,11 +123,9 @@ end
 
 -- process weapondef
 function WeaponDef_Post(name, WeaponDefs)
-	--Adjust transporter class damage
-	if WeaponDefs.damage.bombers then
-		newdmg = WeaponDefs.damage.bombers
-		WeaponDefs.damage.transporters = newdmg
-		Spring.Echo(name,newdmg)
+	if FixUnitStats == true then
+		--Use this Area for WeaponDef changes
+		
 	end
 end
 
