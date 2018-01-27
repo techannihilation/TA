@@ -109,6 +109,7 @@ return {
 			buildpic = "tllcom.dds",
 			faction = "TLL",
 			iscommander = true,
+			paralyzemultiplier = 0.025,
 		},
 		featuredefs = {
 			dead = {

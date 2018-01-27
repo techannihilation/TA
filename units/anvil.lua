@@ -153,7 +153,6 @@ return {
 				weapontype = "BeamLaser",
 				weaponvelocity = 1500,
 				damage = {
-					commanders = 625,
 					default = 25000,
 					experimental_land = 100000,
 					experimental_ships = 100000,

@@ -113,6 +113,7 @@ return {
 			buildpic = "armcom4.dds",
 			faction = "ARM",
 			iscommander = true,
+			paralyzemultiplier = 0.025,
 			providetech = "Battle Commander",
 		},
 		featuredefs = {

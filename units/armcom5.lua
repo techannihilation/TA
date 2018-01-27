@@ -117,6 +117,7 @@ return {
 			canjump = "1",
 			faction = "ARM",
 			iscommander = true,
+			paralyzemultiplier = 0.025,
 			providetech = "Battle Commander,Assault Commander",
 			shield_emit_height = 10,
 			shield_power = 900,

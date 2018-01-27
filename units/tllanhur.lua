@@ -118,7 +118,6 @@ return {
 				weapontype = "AircraftBomb",
 				damage = {
 					bomb_resistant = 1000,
-					commanders = 100,
 					default = 4000,
 					experimental_land = 6000,
 					experimental_ships = 6000,

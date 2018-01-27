@@ -114,6 +114,7 @@ return {
 			buildpic = "tllcom3.dds",
 			faction = "TLL",
 			iscommander = true,
+			paralyzemultiplier = 0.025,
 			providetech = "Battle Commander",
 		},
 		featuredefs = {

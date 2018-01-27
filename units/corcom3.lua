@@ -113,6 +113,7 @@ return {
 			buildpic = "corcom3.dds",
 			faction = "CORE",
 			iscommander = true,
+			paralyzemultiplier = 0.025,
 			providetech = "Battle Commander",
 		},
 		featuredefs = {

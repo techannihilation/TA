@@ -110,6 +110,7 @@ return {
 			buildpic = "armcom.dds",
 			faction = "ARM",
 			iscommander = true,
+			paralyzemultiplier = 0.025,
 		},
 		featuredefs = {
 			["8_dead"] = {

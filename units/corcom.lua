@@ -108,6 +108,7 @@ return {
 			buildpic = "corcom.dds",
 			faction = "CORE",
 			iscommander = true,
+			paralyzemultiplier = 0.025,
 		},
 		featuredefs = {
 			["8_dead"] = {
