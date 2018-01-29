@@ -126,7 +126,7 @@ return {
 				laserflaresize = 12,
 				name = "BeamLaser",
 				noselfdamage = true,
-				range = 480,
+				range = 500,
 				reloadtime = 0.1,
 				rgbcolor = "0 0 1",
 				soundhitdry = "",
