@@ -53,7 +53,7 @@ return {
 			dead = {
 				blocking = true,
 				damage = 8889,
-				description = "Experimental Fusion Reactor Wreckage",
+				description = "Ultimate Fusion Reactor Wreckage",
 				energy = 0,
 				featuredead = "heap",
 				footprintx = 8,
@@ -65,7 +65,7 @@ return {
 			heap = {
 				blocking = false,
 				damage = 11111,
-				description = "Experimental Fusion Reactor Debris",
+				description = "Ultimate Fusion Reactor Debris",
 				energy = 0,
 				footprintx = 5,
 				footprintz = 5,
