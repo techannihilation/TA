@@ -183,6 +183,8 @@ return {
 			},
 			[2] = {
 				def = "BEAM_WEAPON",
+				maindir = "0 0 1",
+				maxangledif = 260,
 				onlytargetcategory = "SURFACE",
 			},
 		},
