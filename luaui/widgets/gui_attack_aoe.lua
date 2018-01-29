@@ -596,7 +596,7 @@ function widget:DrawWorld()
   if not hasSelection then return end
   local _, cmd, _ = GetActiveCommand()
   
-  if (cmd == CMD.MANUALFIRE and dgunUnitDefID) then
+  if (cmd == CMD_MANUALFIRE and dgunUnitDefID) then
     mouseDistance = GetMouseDistance() or 1000
     local tx, ty, tz = GetMouseTargetPosition()
     if (not tx) then return end

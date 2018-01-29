@@ -145,7 +145,7 @@ end
 function widget:GameOver()
     widgetHandler:DeregisterGlobal('SetOpacity_Comblast_DGun_Range', SetOpacity)
     widgetHandler:DeregisterGlobal('DrawManager_combblast', DrawStatus)
-    widgetHandler:RemoveWidget()
+    widgetHandler:RemoveWidget(self)
 end
 
 function checkSpecView()

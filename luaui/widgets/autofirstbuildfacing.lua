@@ -27,9 +27,19 @@ local pairs = pairs
 local abs = math.abs
 
 function widget:Initialize()
-  if Spring.GetSpectatingState() then
-    widgetHandler:RemoveWidget(self)
-  end
+	if Spring.IsReplay() or Spring.GetGameFrame() > 0 then
+	    widget:PlayerChanged()
+  	end
+end
+
+function widget:PlayerChanged(playerID)
+	if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
+		widgetHandler:RemoveWidget(self)
+	end
+end
+
+function widget:GameStart()
+	widget:PlayerChanged()
 end
 
 -- Count all units and calculate their barycenter

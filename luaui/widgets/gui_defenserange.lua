@@ -660,7 +660,7 @@ function DetectMod()
 	
 	if ( modConfig[state["curModID"]] == nil ) then
 		spEcho("<DefenseRange> Unsupported Game, shutting down...")
-		widgetHandler:RemoveWidget()
+		widgetHandler:RemoveWidget(self)
 		return
 	end
 

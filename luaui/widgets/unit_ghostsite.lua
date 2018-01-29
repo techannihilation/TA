@@ -82,6 +82,9 @@ local FPSLimit = 8
 local dontTrackEnemyWrecks = tonumber(Spring.GetModOptions().mo_enemywrecks) or 0
 
 function widget:Initialize()
+	if Spring.IsReplay() or Spring.GetGameFrame() > 0 then
+	    widget:PlayerChanged()
+  	end
 	widgetHandler:RegisterGlobal('DrawManager_ghostsite', DrawStatus)
 end
 
@@ -97,11 +100,7 @@ function widget:Update()
 	if (time % updateInt == 0 and time ~= lastTime) then	
 		lastTime = time
 		--do update stuff:
-		
-		if ( CheckSpecState() == false ) then
-			return false
-		end
-		
+				
 		ScanFeatures()
 		
 		DeleteGhostSites()
@@ -299,7 +298,7 @@ function widget:GameStart()
 		  local version = tonumber(string.match(widget:GetInfo().desc,'%d+%.%d+'))
 		  if version and (version < tonumber("6")) then
 			spEcho("<Ghost Site> Old DefenseRange found! Widget removed.")
-			widgetHandler:RemoveWidget()
+			widgetHandler:RemoveWidget(self)
 		  end
 		end
 	  end
@@ -314,14 +313,12 @@ function ResetGl()
 	glTexture(false)
 end
 
-function CheckSpecState()
-	local playerID = spGetMyPlayerID()
-	local _, _, spec, _, _, _, _, _ = spGetPlayerInfo(playerID)
-		
-	if ( spec == true ) then
-		widgetHandler:RemoveWidget()
-		return false
+function widget:PlayerChanged(playerID)
+	if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
+		widgetHandler:RemoveWidget(self)
 	end
-	
-	return true	
+end
+
+function widget:GameStart()
+	widget:PlayerChanged()
 end

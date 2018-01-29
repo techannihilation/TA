@@ -18,12 +18,12 @@ local isActive = false
 
 function widget:Initialize()
   if not WG.metalSpots then
-    widgetHandler:RemoveWidget()
+    widgetHandler:RemoveWidget(self)
     return
   end
   local metalSpots = WG.metalSpots
   if #metalSpots < 6 then
-    widgetHandler:RemoveWidget()
+    widgetHandler:RemoveWidget(self)
     return
   end
   frame,_ = Spring.GetGameFrame()
@@ -46,7 +46,7 @@ function widget:GameFrame(n)
 	Spring.SendCommands("ShowMetalMap")
       end
     isActive = false
-    widgetHandler:RemoveWidget()
+    widgetHandler:RemoveWidget(self)
     end
   end
 end

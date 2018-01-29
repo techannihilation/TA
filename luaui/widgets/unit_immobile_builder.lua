@@ -63,6 +63,7 @@ local morphednanos = {
 --The lost legacy
   [UnitDefNames["tllnanotc1"].id] = true,
   [UnitDefNames["tllnanotc2"].id] = true,
+  [UnitDefNames["tllnanotc3"].id] = true
 }
 
 
@@ -96,16 +97,16 @@ local function SetupUnit(unitID)
 	end
 end
 
-function widget:PlayerChanged()
-	if spGetSpectatingState() then
-		widgetHandler:RemoveWidget()
-	end
+function widget:PlayerChanged(playerID)
+    if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
+        widgetHandler:RemoveWidget(self)
+    end
 end
 
 function widget:Initialize()
-	if spGetSpectatingState() then
-		widgetHandler:RemoveWidget()
-	end
+    if Spring.IsReplay() or Spring.GetGameFrame() > 0 then
+        widget:PlayerChanged()
+    end
 	for _,unitID in ipairs(spGetTeamUnits(spGetMyTeamID())) do
 		local unitDefID = spGetUnitDefID(unitID)
 		if IsImmobileBuilder(UnitDefs[unitDefID]) then

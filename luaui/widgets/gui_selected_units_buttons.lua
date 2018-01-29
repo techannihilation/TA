@@ -60,6 +60,7 @@ local spSelectUnitArray        = Spring.SelectUnitArray
 local spSelectUnitMap          = Spring.SelectUnitMap
 local spSendCommands           = Spring.SendCommands
 local spIsGUIHidden            = Spring.IsGUIHidden
+local spGetSelectedUnitsCount  = Spring.GetSelectedUnitsCount
 
 
 include("colors.h.lua")
@@ -83,6 +84,7 @@ local countsTable = {}
 local activePress = false
 local mouseIcon = -1
 local currentDef = nil
+local prevUnitCount = spGetSelectedUnitsCounts()
 
 local iconSizeX = 74
 local iconSizeY = 74
@@ -139,8 +141,9 @@ function widget:ViewResize(viewSizeX, viewSizeY)
   iconMargin = usedIconSizeX / 25
   
   if picList then
+    unitCounts = spGetSelectedUnitsCounts()
     gl.DeleteList(picList)
-	picList = gl.CreateList(DrawPicList)
+  	picList = gl.CreateList(DrawPicList)
   end
 end
 

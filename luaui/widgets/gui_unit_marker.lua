@@ -219,13 +219,15 @@ local function GetTeamName(teamID) --need to rewrite this sloppy functionality
 end
 
 function widget:Initialize()
-
+	if Spring.IsReplay() or Spring.GetGameFrame() > 0 then
+	    widget:PlayerChanged()
+  	end
 	myColour = colourNames(Spring.GetMyTeamID())
 	markerLocal = nil --note: this name of this here and on the lua wiki is a misnomer
 	curModID = string.upper(Game.modShortName or "")
 	if ( unitList[curModID] == nil ) then
 		spEcho("<Unit Marker> Unsupported Game, shutting down...")
-		widgetHandler:RemoveWidget()
+		widgetHandler:RemoveWidget(self)
 		return
 	else	
 		curUnitList = unitList[curModID] or {}
@@ -257,7 +259,7 @@ function widget:UnitEnteredLos(unitID, allyTeam)
 	local x, y, z = spGetUnitPosition(unitID)  --x and z on map floor, y is height
 	
 	if udefID and x then
-	  if curUnitList[udefID] then
+	  if curUnitList and curUnitList[udefID] then
 			prevX, prevY, prevZ = prevMarkX[unitID],prevMarkY[unitID],prevMarkZ[unitID]
 			if prevX == nil then
 				prevX, prevY, prevZ = 0,0,0
@@ -284,9 +286,18 @@ function widget:UnitEnteredLos(unitID, allyTeam)
 	end
 end
 	
+function widget:Initialize()
+	if Spring.IsReplay() or Spring.GetGameFrame() > 0 then
+	    widget:PlayerChanged()
+  	end
+end
 
 function widget:PlayerChanged(playerID)
-  if Spring.GetSpectatingState() then
-  	widgetHandler:RemoveWidget()
-  end
+	if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
+		widgetHandler:RemoveWidget(self)
+	end
+end
+
+function widget:GameStart()
+	widget:PlayerChanged()
 end

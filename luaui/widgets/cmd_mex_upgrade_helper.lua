@@ -23,9 +23,22 @@ local GetSelectedUnits = Spring.GetSelectedUnits
 local TraceScreenRay = Spring.TraceScreenRay 
 local GetActiveCommand = Spring.GetActiveCommand 
 
-function widget:Initialize() 
+function widget:Initialize()
+  if Spring.IsReplay() or Spring.GetGameFrame() > 0 then
+    widget:PlayerChanged()
+  end
   widgetHandler:RegisterGlobal('registerUpgradePairs', registerUpgradePairs) 
 end 
+
+function widget:PlayerChanged(playerID)
+  if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
+    widgetHandler:RemoveWidget(self)
+  end
+end
+
+function widget:GameStart()
+  widget:PlayerChanged()
+end
 
 function widget:Shutdown() 
   widgetHandler:DeregisterGlobal('registerUpgradePairs') 

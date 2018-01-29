@@ -200,13 +200,20 @@ end
 -- SPRING CALLINS
 
 function widget:Initialize()
-	local playerID = Spring.GetMyPlayerID()
-	local _, _, spec, _, _, _, _, _ = Spring.GetPlayerInfo(playerID)	
-	if ( spec == true ) then
-		Spring.Echo("<Energy Conversion Info> Spectator mode. Widget removed.")
-		widgetHandler:RemoveWidget()
-	end
+	if Spring.IsReplay() or Spring.GetGameFrame() > 0 then
+	    widget:PlayerChanged()
+  	end
 	defSpeed, defKind, defSize, defRange = GetUnitDefInfo()
+end
+
+function widget:PlayerChanged(playerID)
+	if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
+		widgetHandler:RemoveWidget(self)
+	end
+end
+
+function widget:GameStart()
+	widget:PlayerChanged()
 end
 
 function widget:UnitCommand(unitID, unitDefID, unitTeam, cmdID, cmdOpts, cmdParams, cmdTag)

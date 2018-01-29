@@ -57,16 +57,24 @@ local CMD_INSERT = CMD.INSERT
 local CMD_OPT_ALT = CMD.OPT_ALT
 local spGetMyTeamID = Spring.GetMyTeamID
 local spGiveOrderToUnit = Spring.GiveOrderToUnit
-local spGetSpectatingState = Spring.GetSpectatingState
 
 ----------------------------------------------------------------
 -- Callins
 ----------------------------------------------------------------
 function widget:Initialize()
-	if spGetSpectatingState() then
+	if Spring.IsReplay() or Spring.GetGameFrame() > 0 then
+	    widget:PlayerChanged()
+  	end
+end
+
+function widget:PlayerChanged(playerID)
+	if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
 		widgetHandler:RemoveWidget(self)
-		return
 	end
+end
+
+function widget:GameStart()
+	widget:PlayerChanged()
 end
 
 function widget:UnitCommand(uID, uDefID, uTeam, cmdID, cmdParams, cmdOpts)

@@ -186,13 +186,20 @@ local unitArray = {
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
+function widget:PlayerChanged(playerID)
+  if Spring.GetSpectatingState() then
+    widgetHandler:RemoveWidget(self)
+  end
+end
 
-function widget:Initialize() 
+function widget:Initialize()
+  if Spring.IsReplay() or Spring.GetGameFrame() > 0 then
+    widget:PlayerChanged()
+  end
   for i, v in pairs(unitArray) do
     unitSet[v] = true
   end
 end
-
 
 function widget:UnitFromFactory(unitID, unitDefID, unitTeam)
   local ud = UnitDefs[unitDefID]
@@ -202,7 +209,6 @@ function widget:UnitFromFactory(unitID, unitDefID, unitTeam)
     end 
   end
 end
-
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

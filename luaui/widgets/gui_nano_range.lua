@@ -83,6 +83,6 @@ end
 
 function widget:GameOver() 
     widgetHandler:DeregisterGlobal('SetOpacity_Nanorings', SetOpacity) 
-    widgetHandler:RemoveWidget() 
+    widgetHandler:RemoveWidget(self) 
 end 
  

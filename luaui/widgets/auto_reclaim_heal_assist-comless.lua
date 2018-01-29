@@ -48,15 +48,21 @@ myTeamID=-1;
 
 --Initializer
 function widget:Initialize()
-	--disable widget if I am a spec
-  local _, _, spec = Spring.GetPlayerInfo(Spring.GetMyPlayerID())
-  if spec then
-    widgetHandler:RemoveWidget()
-    return false
-  end
-  myTeamID=Spring.GetMyTeamID()                         --get my team ID
+	if Spring.IsReplay() or Spring.GetGameFrame() > 0 then
+	    widget:PlayerChanged()
+  	end
+  	myTeamID=Spring.GetMyTeamID() --get my team ID
 end
 
+function widget:PlayerChanged(playerID)
+	if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
+		widgetHandler:RemoveWidget(self)
+	end
+end
+
+function widget:GameStart()
+	widget:PlayerChanged()
+end
 
 --Give reclaimers the FIGHT command every second
 function widget:GameFrame()

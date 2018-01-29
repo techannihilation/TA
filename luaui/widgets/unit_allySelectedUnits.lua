@@ -297,7 +297,7 @@ function checkSpecstate()
 	
 	if ( spec == true ) then
 		spEcho("<CoopSelectedUnits> Spectator mode. Widget removed.")
-		widgetHandler:RemoveWidget()
+		widgetHandler:RemoveWidget(self)
 		return false
 	end
 end

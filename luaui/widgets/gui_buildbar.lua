@@ -1,4 +1,4 @@
--- $Id: gui_buildbar.lua 2491 2008-07-17 13:36:51Z det $
+-- $Id$
 
 function widget:GetInfo()
   return {
@@ -8,7 +8,7 @@ function widget:GetInfo()
     date      = "Jul 11, 2007",
     license   = "GNU GPL, v2 or later",
     layer     = 0,
-    enabled   = false  --  loaded by default?
+    enabled   = true  --  loaded by default?
   }
 end
 
@@ -34,7 +34,7 @@ local bar_side         = 1     --left:0,top:2,right:1,bottom:3
 local bar_horizontal   = false --(not saved) if sides==top v bottom -> horizontal:=true  else-> horizontal:=false
 local bar_offset       = 0     --relative offset side middle (i.e., bar_pos := vsx*0.5+bar_offset)
 local bar_align        = 1     --aligns icons to bar_pos: center=0; left/top=+1; right/bottom=-1
-local bar_iconSizeBase = 55    --iconSize o_O
+local bar_iconSizeBase = 28    --iconSize o_O
 local bar_openByClick  = false --needs a click to open the buildmenu or is a hover enough?
 local bar_autoclose    = true  --autoclose buildmenu on mouseleave?
 
@@ -69,15 +69,23 @@ local useBlurShader   = false   -- it has a fallback, if the gfx don't support g
 local blured          = false
 local blurFullscreen  = function() return end
 
+local bgcorner		= "LuaUI/Images/bgcorner.png"
+local repeatPic		= ":n:LuaUI/Images/repeat.png"
+
+local GL_ONE                   = GL.ONE
+local GL_ONE_MINUS_SRC_ALPHA   = GL.ONE_MINUS_SRC_ALPHA
+local GL_SRC_ALPHA             = GL.SRC_ALPHA
+local glBlending               = gl.Blending
+
 -------------------------------------------------------------------------------
 -- SOUNDS
 -------------------------------------------------------------------------------
 
-local sound_waypoint  = LUAUI_DIRNAME .. 'Sounds/buildbar_waypoint.wav'
-local sound_click     = LUAUI_DIRNAME .. 'Sounds/buildbar_click.WAV'
-local sound_hover     = LUAUI_DIRNAME .. 'Sounds/buildbar_hover.wav'
-local sound_queue_add = LUAUI_DIRNAME .. 'Sounds/buildbar_add.wav'
-local sound_queue_rem = LUAUI_DIRNAME .. 'Sounds/buildbar_rem.wav'
+local sound_waypoint  = 'LuaUI/Sounds/buildbar_waypoint.wav'
+local sound_click     = 'LuaUI/Sounds/buildbar_click.wav'
+local sound_hover     = 'LuaUI/Sounds/buildbar_hover.wav'
+local sound_queue_add = 'LuaUI/Sounds/buildbar_add.wav'
+local sound_queue_rem = 'LuaUI/Sounds/buildbar_rem.wav'
 
 -------------------------------------------------------------------------------
 -- SOME THINGS NEEDED IN DRAWINMINIMAP
@@ -99,12 +107,11 @@ end
 -------------------------------------------------------------------------------
 -- SCREENSIZE FUNCTIONS
 -------------------------------------------------------------------------------
-local floor       = math.floor
-
-local iconSizeX  = 65
-local iconSizeY  = floor(iconSizeX * 0.75)
-local repIcoSize = floor(iconSizeY*0.6)   --repeat iconsize
-local fontSize   = iconSizeY * 0.25
+local iconSizeX  = 70
+local iconSizeY  = math.floor(iconSizeX * 0.92)
+local iconImgMult= 0.66
+local repIcoSize = math.floor(iconSizeY*0.6)   --repeat iconsize
+local fontSize   = iconSizeY * 0.31
 local borderSize = 1.5
 local maxVisibleBuilds = 3
 local vsx, vsy   = widgetHandler:GetViewSizes()
@@ -129,10 +136,10 @@ end
 
 
 local function UpdateIconSizes()
-  iconSizeX = floor(bar_iconSizeBase+((vsx-800)/38))
-  iconSizeY = floor(iconSizeX * 0.75)
-  fontSize  = iconSizeY * 0.25
-  repIcoSize = floor(iconSizeY*0.6)
+  iconSizeX = math.floor(bar_iconSizeBase+((vsx-800)/35))
+  iconSizeY = math.floor(iconSizeX * 0.95)
+  fontSize  = iconSizeY * 0.31
+  repIcoSize = math.floor(iconSizeY*0.4)
 end
 
 
@@ -165,27 +172,28 @@ local glTexRect   = gl.TexRect
 local glLineWidth = gl.LineWidth
 local push        = table.insert
 local tan         = math.tan
-local rad         = math.rad
-local abs         = math.abs
-local min         = math.min
-local max         = math.max
+
 
 -------------------------------------------------------------------------------
 -- INITIALIZTION FUNCTIONS
 -------------------------------------------------------------------------------
 function widget:Initialize()
-  --[[blurFullscreen = ((useBlurShader)and(WG['blur_api'])and(WG['blur_api'].Fullscreen))
-  if (useBlurShader)and(blurFullscreen==nil) then
-   Spring.Echo('BuildBar Warning: you deactivated the "blurApi" widget, please reactivate it.')
-  end
-  blurFullscreen = (blurFullscreen)or(function() return end)
---]]
+ -- blurFullscreen = ((useBlurShader)and(WG['blur_api'])and(WG['blur_api'].Fullscreen))
+ -- if (useBlurShader)and(blurFullscreen==nil) then
+ --   Spring.Echo('BuildBar Warning: you deactivated the "blurApi" widget, please reactivate it.')
+ -- end
+--  blurFullscreen = (blurFullscreen)or(function() return end)
+
   myTeamID = Spring.GetMyTeamID()
 
   UpdateFactoryList()
-
+  
   local viewSizeX, viewSizeY = widgetHandler:GetViewSizes()
   self:ViewResize(viewSizeX, viewSizeY)
+
+  if Spring.GetGameFrame() > 0 and Spring.GetSpectatingState() then
+	widgetHandler:RemoveWidget(self)
+  end
 end
 
 function widget:GetConfigData()
@@ -197,7 +205,7 @@ function widget:GetConfigData()
     openByClick  = bar_openByClick,
     autoclose    = bar_autoclose,
 
-    --useBlurShader= useBlurShader
+   -- useBlurShader= useBlurShader
   }
 end
 
@@ -206,12 +214,12 @@ function widget:SetConfigData(data)
   bar_side         = data.side         or 2
   bar_offset       = data.offset       or 0
   bar_align        = data.align        or 0
-  bar_iconSizeBase = data.iconSizeBase or 65
+  bar_iconSizeBase = data.iconSizeBase or 28
   bar_openByClick  = data.openByClick  or false
   bar_autoclose    = data.autoclose    or (not bar_openByClick)
 
-  bar_side         = min( max(bar_side, 0), 3)
-  bar_align        = min( max(bar_align,-1) ,1)
+  bar_side         = math.min( math.max(bar_side, 0), 3)
+  bar_align        = math.min( math.max(bar_align,-1) ,1)
   --SetupNewScreenAlignment()
 
   -- shader
@@ -255,8 +263,34 @@ end
 -------------------------------------------------------------------------------
 local function DrawRect(rect, color)
   glColor(color)
-  glRect(rect[1],rect[2],rect[3],rect[4])
+  --glRect(rect[1],rect[2],rect[3],rect[4])
+  RectRound(rect[1],rect[4],rect[3],rect[2],(rect[3]-rect[1])/9)
   glColor(1,1,1,1)
+end
+
+function RectRound(px,py,sx,sy,cs)
+	
+	local px,py,sx,sy,cs = math.floor(px),math.floor(py),math.floor(sx),math.floor(sy),math.floor(cs)
+	
+	gl.Rect(px+cs, py, sx-cs, sy)
+	gl.Rect(sx-cs, py+cs, sx, sy-cs)
+	gl.Rect(px+cs, py+cs, px, sy-cs)
+	
+	gl.Texture(bgcorner)
+	
+	--if py <= 0 or px <= 0 then gl.Texture(false) else gl.Texture(bgcorner) end
+	gl.TexRect(px, py+cs, px+cs, py)		-- top left
+	
+	--if py <= 0 or sx >= vsx then gl.Texture(false) else gl.Texture(bgcorner) end
+	gl.TexRect(sx, py+cs, sx-cs, py)		-- top right
+	
+	--if sy >= vsy or px <= 0 then gl.Texture(false) else gl.Texture(bgcorner) end
+	gl.TexRect(px, sy-cs, px+cs, sy)		-- bottom left
+	
+	--if sy >= vsy or sx >= vsx then gl.Texture(false) else gl.Texture(bgcorner) end
+	gl.TexRect(sx, sy-cs, sx-cs, sy)		-- bottom right
+	
+	gl.Texture(false)
 end
 
 local function DrawLineRect(rect, color, width)
@@ -270,10 +304,13 @@ local function DrawLineRect(rect, color, width)
   glColor(1,1,1,1)
 end
 
-local function DrawTexRect(rect, texture, alpha)
-  glTexture(true)
+local function DrawTexRect(rect, texture, color)
+  if color ~= nil then
+    glColor(color)
+  else
+    glColor(1,1,1,1)
+  end
   glTexture(texture)
-  glColor(1,1,1, alpha or 1)
   glTexRect(rect[1],rect[4],rect[3],rect[2])
   glColor(1,1,1,1)
   glTexture(false)
@@ -281,12 +318,12 @@ end
 
 local function DrawBuildProgress(left,top,right,bottom, progress, color)
   glColor(color)
-  local xcen = (left+right)*0.5
-  local ycen = (top+bottom)*0.5
+  local xcen = (left+right)/2
+  local ycen = (top+bottom)/2
 
   local alpha = 360*(progress)
-  local alpha_rad = rad(alpha)
-  local beta_rad  = math.pi*0.5 - alpha_rad
+  local alpha_rad = math.rad(alpha)
+  local beta_rad  = math.pi/2 - alpha_rad
   local list = {}
   push(list, {v = { xcen,  ycen }})
   push(list, {v = { xcen,  top }})
@@ -320,11 +357,18 @@ local function DrawBuildProgress(left,top,right,bottom, progress, color)
   end
 
   glShape(GL.TRIANGLE_FAN, list)
+  
+  -- adding additive overlay
+  glColor(color[1],color[2],color[3],color[4]/10)
+  glBlending(GL_SRC_ALPHA, GL_ONE)
+  glShape(GL.TRIANGLE_FAN, list)
+  glBlending(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
+  
   glColor(1,1,1,1)
 end
 
 
-local function DrawButton(rect, unitDefID, options)
+local function DrawButton(rect, unitDefID, options, iconResize, isFac)
   -- options = {pressed,hovered,selected,repeat,hovered_repeat,waypoint,progress,amount,alpha}
 
   if (#rect<4) then
@@ -332,35 +376,63 @@ local function DrawButton(rect, unitDefID, options)
     return
   end
 
-  -- draw icon
-  DrawTexRect(rect, '#'..unitDefID,options.alpha or 1)
-
   -- Progress
   if (options.progress or -1)>-1 then
-    DrawBuildProgress(rect[1],rect[2],rect[3],rect[4], options.progress, { 1, 1, 1, 0.5 })
+    DrawBuildProgress(rect[1],rect[2],rect[3],rect[4], options.progress, { 1, 1, 1, 0.4 })
+  end
+
+  -- hover or pressed?
+  local hoverPadding = 0
+  local iconAlpha = (options.alpha or 1)
+  if (options.pressed) then
+    if options.pressed == 2 then
+      DrawRect(rect, { 1, 0.8, 0.8, 0.5 })  -- pressed
+    else
+      DrawRect(rect, { 1, 1, 1, 0.5 })  -- pressed
+    end
+    hoverPadding = -iconSizeX/20
+    iconAlpha = 1
+  elseif (options.hovered) then
+    --DrawRect(rect, { 1, 1, 1, 0.45})  -- hover
+    hoverPadding = -iconSizeX/15
+    iconAlpha = 1
+  end
+
+  -- draw icon
+  local imgRect = {rect[1]+hoverPadding, rect[2]-hoverPadding, rect[3]-hoverPadding, rect[4]+hoverPadding}
+  if iconResize then
+    --local yPad = (iconSizeY*(1-iconImgMult)) / 2  -- used with transparant uniticons
+    --local xPad = (iconSizeX*(1-iconImgMult)) / 2  -- used with transparant uniticons
+    local yPad = (iconSizeY*(1-iconImgMult)) / 3.3
+    local xPad = (iconSizeX*(1-iconImgMult)) / 3.3
+    imgRect = {imgRect[1]+xPad, imgRect[2]-yPad, imgRect[3]-xPad, imgRect[4]+yPad}
+  	DrawTexRect(imgRect, '#'..unitDefID,{1,1,1,iconAlpha})
+	else
+  	DrawTexRect(imgRect, '#'..unitDefID,{1,1,1,iconAlpha})
   end
 
   -- loop status?
   if options['repeat'] then
-    DrawTexRect({rect[3]-repIcoSize,rect[2],rect[3],rect[2]-repIcoSize}, 'LuaUI/Images/repeat.png', 0.65)
-  end
-
-  -- hover or pressed?
-  if (options.hovered_repeat) then
-    DrawTexRect({rect[3]-repIcoSize,rect[2],rect[3],rect[2]-repIcoSize}, 'LuaUI/Images/repeat.png')
-  elseif (options.pressed) then
-    DrawRect(rect, { 0, 0, 0, 0.35 })  -- pressed
-  elseif (options.hovered) then
-    DrawRect(rect, { 1, 1, 1, 0.35 })  -- hover
+    local color = {1,1,1,0.8}
+    if (options.hovered_repeat) then
+      color = {1,1,1,0.65}
+    end
+    DrawTexRect({imgRect[3]-repIcoSize-4,imgRect[2]-4,imgRect[3]-4,imgRect[2]-repIcoSize-4}, repeatPic, color)
+  elseif isFac then
+    local color = {1,1,1,0.35}
+    if (options.hovered_repeat) then
+      color = {1,1,1,0.5}
+    end
+    DrawTexRect({imgRect[3]-repIcoSize-4,imgRect[2]-4,imgRect[3]-4,imgRect[2]-repIcoSize-4}, repeatPic, color)
   end
 
   -- amount
   if ((options.amount or 0)>0) then
-    glText( options.amount ,rect[1]+2,rect[4]+2,fontSize,"o")
+      glText( options.amount ,rect[1]+((rect[3]-rect[1])*0.22),rect[4]-((rect[4]-rect[2])*0.22),fontSize,"o")
   end
 
   -- draw border
-  if (options.waypoint) then
+  --[[if (options.waypoint) then
     DrawRect(rect, { 0.5,1.0,0.5,0.45 })
     DrawLineRect(rect, { 0, 0, 0, 1 },borderSize+2)
   elseif (options.selected)and(not options.pressed) then
@@ -368,7 +440,7 @@ local function DrawButton(rect, unitDefID, options)
     DrawLineRect(rect, { 0, 0, 0, 1 },borderSize+2)
   else
     DrawLineRect(rect, { 0, 0, 0, 1 })
-  end
+  end]]--
 end
 
 
@@ -377,6 +449,7 @@ end
 -------------------------------------------------------------------------------
 
 function widget:DrawScreen()
+  
   SetupDimensions(#facs)
   SetupSubDimensions()
 
@@ -397,11 +470,13 @@ function widget:DrawScreen()
 
     -- determine options -------------------------------------------------------------------
      -- building?
+     local iconResize = true
       unitBuildID      = GetUnitIsBuilding(facInfo.unitID)
       if unitBuildID then
         unitBuildDefID = GetUnitDefID(unitBuildID)
         _, _, _, _, options.progress = GetUnitHealth(unitBuildID)
         unitDefID      = unitBuildDefID
+        iconResize = true
       elseif (unfinished_facs[facInfo.unitID]) then
         _, _, _, _, options.progress = GetUnitHealth(facInfo.unitID)
         if (options.progress>=1) then 
@@ -418,7 +493,7 @@ function widget:DrawScreen()
       end
      -- hover or pressed?
       if (i==hoveredFac+1) then
-        options.hovered_repeat = IsInRect(mx,my, {fac_rec[3]-repIcoSize,fac_rec[2],fac_rec[3],fac_rec[2]-repIcoSize}) 
+        options.hovered_repeat = IsInRect(mx,my, {fac_rec[3]-repIcoSize,fac_rec[2],fac_rec[3],fac_rec[2]-repIcoSize})
         options.pressed = (lb or mb or rb)or(options.hovered_repeat)
         options.hovered = true
       end
@@ -426,7 +501,7 @@ function widget:DrawScreen()
       options.waypoint = (waypointMode>1)and(i==waypointFac+1)
       options.selected = (i==openedMenu+1)
     -----------------------------------------------------------------------------------------
-    DrawButton(fac_rec,unitDefID,options)
+    DrawButton(fac_rec,unitDefID,options, iconResize, true)
 
     -- draw build list
     if i==openedMenu+1 then
@@ -449,11 +524,18 @@ function widget:DrawScreen()
          -- hover or pressed?
           if (j==hoveredBOpt+1) then
             options.pressed = (lb or mb or rb)
+            if lb then
+              options.pressed = 1
+            elseif rb then
+              options.pressed = 2
+            elseif mb then
+              options.pressed = 3
+            end
             options.hovered = true
           end
-          options.alpha = 0.75
+          options.alpha = 0.85
         -----------------------------------------------------------------------------------------
-        DrawButton(bopt_rec,unitDefID,options)
+        DrawButton(bopt_rec,unitDefID,options, true)
 
         -- setup next icon pos
         OffsetRect(bopt_rec, bopt_inext[1],bopt_inext[2])
@@ -475,8 +557,14 @@ function widget:DrawScreen()
           if (n==1) then count=count-1 end -- cause we show the actual in building unit instead of the factory icon
 
           if (count>0) then
-            DrawTexRect(bopt_rec,"#"..unitBuildDefID,0.55)
-            if (count>1) then glText( count ,bopt_rec[1]+2,bopt_rec[4]+2,fontSize,"o") end
+          
+					  local yPad = (iconSizeY*(1-iconImgMult)) / 2
+					  local xPad = (iconSizeX*(1-iconImgMult)) / 2
+            DrawTexRect({bopt_rec[1]+xPad,bopt_rec[2]-yPad,bopt_rec[3]-xPad,bopt_rec[4]+yPad},"#"..unitBuildDefID,{1,1,1,0.5})
+            if (count>1) then
+              glColor(1,1,1,0.66)
+              glText( count ,bopt_rec[1]+((bopt_rec[3]-bopt_rec[1])*0.22),bopt_rec[4]-((bopt_rec[4]-bopt_rec[2])*0.22),fontSize,"")
+            end
 
             OffsetRect(bopt_rec, bopt_inext[1],bopt_inext[2])
             j = j-1
@@ -492,12 +580,13 @@ function widget:DrawScreen()
   end
 
   -- draw border around factory list
-  if (#facs>0) then DrawLineRect(facRect, { 0, 0, 0, 1 },borderSize+2.5) end
+  --if (#facs>0) then DrawLineRect(facRect, { 0, 0, 0, 1 },borderSize+2) end
 end
 
 
 
 function widget:DrawWorld()
+  
   -- Draw factories command lines
   if waypointMode>1 or openedMenu>=0 then
     local fac
@@ -507,7 +596,6 @@ function widget:DrawWorld()
       fac = facs[openedMenu+1]
     end
     if fac ~= nil then
-
       DrawUnitCommands(fac.unitID)
     end
   end
@@ -515,17 +603,19 @@ end
 
 
 function widget:DrawInMiniMap(sx,sy)
+  
    if (openedMenu>-1) then
      gl.PushMatrix()
-       local pt = min(sx,sy)
+       local pt = math.min(sx,sy)
 
        gl.LoadIdentity()
        gl.Translate(0, 1, 0)
        gl.Scale(1 / msx, -1 / msz, 1)
 
        local r,g,b = GetTeamColor(myTeamID)
-       local alpha = 0.5 + abs((Spring.GetGameSeconds() % 0.25)*4 - 0.5)
+       local alpha = 0.5 + math.abs((Spring.GetGameSeconds() % 0.25)*4 - 0.5)
        local x,_,z = Spring.GetUnitBasePosition(facs[openedMenu+1].unitID)
+
        if x ~= nil then
          gl.PointSize(pt*0.066)
          gl.Color(0, 0, 0)
@@ -549,7 +639,7 @@ local function _clampScreen(mid,half,vsd)
   elseif (mid+half>vsd) then
     return vsd-half*2, vsd 
   else
-    local val = floor(mid - half)
+    local val = math.floor(mid - half)
     return        val, val+half*2
   end
 end
@@ -567,7 +657,7 @@ function SetupDimensions(count)
   else                   -- vertical (left or right bar)
     vsa,iconSizeA,vsb,iconSizeB = vsy,iconSizeY,vsx,iconSizeX
   end
-  length = floor(iconSizeA * count)
+  length = math.floor(iconSizeA * count)
   mid    = vsa * 0.5 + bar_offset
 
   -- setup expanding direction
@@ -597,26 +687,26 @@ function SetupSubDimensions()
   local buildListn = #facs[openedMenu+1].buildList
   if bar_horizontal then --please note the factorylist is horizontal not the buildlist!!!
 
-    boptRect[1]  = floor(facRect[1] + iconSizeX * openedMenu)
+    boptRect[1]  = math.floor(facRect[1] + iconSizeX * openedMenu)
     boptRect[3]  = boptRect[1] + iconSizeX
     if bar_side==2 then --top
       boptRect[2] = vsy - iconSizeY
-      boptRect[4] = boptRect[2] - floor(iconSizeY * buildListn)
+      boptRect[4] = boptRect[2] - math.floor(iconSizeY * buildListn)
     else --bottom
       boptRect[4] = iconSizeY
-      boptRect[2] = iconSizeY + floor(iconSizeY * buildListn)
+      boptRect[2] = iconSizeY + math.floor(iconSizeY * buildListn)
     end
 
   else
 
-    boptRect[2]  = floor(facRect[2] - iconSizeY * openedMenu)
+    boptRect[2]  = math.floor(facRect[2] - iconSizeY * openedMenu)
     boptRect[4]  = boptRect[2] - iconSizeY
     if bar_side==0 then --left
       boptRect[1] = iconSizeX
-      boptRect[3] = iconSizeX + floor(iconSizeX * buildListn)
+      boptRect[3] = iconSizeX + math.floor(iconSizeX * buildListn)
     else --right
       boptRect[3] = vsx - iconSizeX
-      boptRect[1] = boptRect[3] - floor(iconSizeX * buildListn)
+      boptRect[1] = boptRect[3] - math.floor(iconSizeX * buildListn)
     end
 
   end
@@ -710,6 +800,7 @@ function widget:UnitTaken(unitID, unitDefID, unitTeam, newTeam)
 end
 
 function widget:Update()
+  
   if myTeamID~=Spring.GetMyTeamID() then
     myTeamID = Spring.GetMyTeamID()
     UpdateFactoryList()
@@ -717,6 +808,11 @@ function widget:Update()
   inTweak = widgetHandler:InTweakMode()
 end
 
+function widget:PlayerChanged()
+	if Spring.GetSpectatingState() then
+		widgetHandler:RemoveWidget(self)
+	end
+end
 
 
 -------------------------------------------------------------------------------
@@ -731,7 +827,7 @@ function widget:MousePress(x, y, button)
   if (hoveredFac+hoveredBOpt>=-1) then
     if waypointMode>1 then
       Spring.Echo("BuildBar: Exited greedy waypoint mode")
-      Spring.PlaySoundFile(sound_waypoint, 1)
+      Spring.PlaySoundFile(sound_waypoint, 0.9, 'ui')
     end
     waypointFac  = -1
     waypointMode = 0
@@ -749,7 +845,7 @@ function widget:MousePress(x, y, button)
 
     if waypointMode>1 then
       Spring.Echo("BuildBar: Exited greedy waypoint mode")
-      Spring.PlaySoundFile(sound_waypoint, 1)
+      Spring.PlaySoundFile(sound_waypoint, 0.9, 'ui')
     end
     waypointFac  = -1
     waypointMode = 0
@@ -801,15 +897,15 @@ function MenuHandler(x,y,button)
       local onoff  = {1}
       if ustate ~= nil and ustate["repeat"] then onoff = {0} end
       Spring.GiveOrderToUnit(unitID, CMD.REPEAT, onoff, { })
-      Spring.PlaySoundFile(sound_click, 0.97)
+      Spring.PlaySoundFile(sound_click, 0.8, 'ui')
     else--if (bar_openByClick) then
       if (not menuHovered)and(openedMenu == pressedFac) then
         openedMenu = -1
-        Spring.PlaySoundFile(sound_click, 0.9)
+        Spring.PlaySoundFile(sound_click, 0.75, 'ui')
       else
         menuHovered= false
         openedMenu = pressedFac
-        Spring.PlaySoundFile(sound_click, 0.9)
+        Spring.PlaySoundFile(sound_click, 0.75, 'ui')
       end
     end
   elseif button==2 then
@@ -817,13 +913,13 @@ function MenuHandler(x,y,button)
     Spring.SetCameraTarget(x,y,z)
   elseif button==3 then
     Spring.Echo("BuildBar: Entered greedy waypoint mode")
-    Spring.PlaySoundFile(sound_waypoint, 1)
+    Spring.PlaySoundFile(sound_waypoint, 0.9, 'ui')
     waypointMode = 2 -- greedy mode
     waypointFac  = openedMenu
     openedMenu   = -1
     pressedFac   = -1
     hoveredFac   = -1
-    --blurFullscreen(false)
+   -- blurFullscreen(false)
     blured = false
   end
   return
@@ -840,11 +936,11 @@ function BuildHandler(button)
 
   if button==1 then
     Spring.GiveOrderToUnit(facs[openedMenu+1].unitID, -(facs[openedMenu+1].buildList[pressedBOpt+1]),{},opt)
-    Spring.PlaySoundFile(sound_queue_add, 0.95)
+    Spring.PlaySoundFile(sound_queue_add, 0.75, 'ui')
   elseif button==3 then
     push(opt,"right")
     Spring.GiveOrderToUnit(facs[openedMenu+1].unitID, -(facs[openedMenu+1].buildList[pressedBOpt+1]),{},opt)
-    Spring.PlaySoundFile(sound_queue_rem, 0.97)
+    Spring.PlaySoundFile(sound_queue_rem, 0.75, 'ui')
   end
 end
 
@@ -852,7 +948,7 @@ end
 function WaypointHandler(x,y,button)
   if (button==1)or(button>3) then
     Spring.Echo("BuildBar: Exited greedy waypoint mode")
-    Spring.PlaySoundFile(sound_waypoint, 1)
+    Spring.PlaySoundFile(sound_waypoint, 0.9, 'ui')
     menuHovered  = false
     waypointFac  = -1
     waypointMode = 0
@@ -889,9 +985,9 @@ function MouseOverIcon(x, y)
   then
     local icon
     if bar_horizontal then
-      icon = floor((x - facRect[1]) / fac_inext[1])
+      icon = math.floor((x - facRect[1]) / fac_inext[1])
     else
-      icon = floor((y - facRect[2]) / fac_inext[2])
+      icon = math.floor((y - facRect[2]) / fac_inext[2])
     end
 
     if (icon >= #facs) then
@@ -913,13 +1009,13 @@ function MouseOverSubIcon(x,y)
   then
     local icon  
     if bar_side==0 then
-      icon = floor((x - boptRect[1]) / bopt_inext[1])
+      icon = math.floor((x - boptRect[1]) / bopt_inext[1])
     elseif bar_side==2 then
-      icon = floor((y - boptRect[2]) / bopt_inext[2])
+      icon = math.floor((y - boptRect[2]) / bopt_inext[2])
     elseif bar_side==1 then
-      icon = floor((x - boptRect[3]) / bopt_inext[1])
+      icon = math.floor((x - boptRect[3]) / bopt_inext[1])
     else --bar_side==3
-      icon = floor((y - boptRect[4]) / bopt_inext[2])
+      icon = math.floor((y - boptRect[4]) / bopt_inext[2])
     end
 
     if (icon > #facs[openedMenu+1].buildList-1) then
@@ -982,7 +1078,7 @@ function widget:IsAbove(x,y)
       openedMenu = hoveredFac
     end
     if not blured then
-      Spring.PlaySoundFile(sound_hover, 0.95)
+      Spring.PlaySoundFile(sound_hover, 0.8, 'ui')
       --blurFullscreen(true)
       blured = true
     end
@@ -990,7 +1086,7 @@ function widget:IsAbove(x,y)
   elseif (openedMenu>=0) and IsInRect(x,y, boptRect) then
     --buildoption icon
     if not blured then
-      Spring.PlaySoundFile(sound_hover, 0.95)
+      Spring.PlaySoundFile(sound_hover, 0.8, 'ui')
       --blurFullscreen(true)
       blured = true
     end
@@ -1007,7 +1103,7 @@ function widget:IsAbove(x,y)
   end
 
   if blured then
-    Spring.PlaySoundFile(sound_hover, 0.9)
+    Spring.PlaySoundFile(sound_hover, 0.8, 'ui')
     --blurFullscreen(false)
     blured = false
   end
@@ -1037,7 +1133,7 @@ function widget:TweakDrawScreen()
   local rect = {}
   if bar_horizontal then
     if bar_align==0 then         -- centered line
-      rect = {(facRect[1]+facRect[3])*0.5, facRect[2], (facRect[1]+facRect[3])*0.5, facRect[4]}
+      rect = {(facRect[1]+facRect[3])/2, facRect[2], (facRect[1]+facRect[3])/2, facRect[4]}
     elseif (bar_align>0) then    -- left line
       rect = {facRect[1], facRect[2], facRect[1], facRect[4]}
     else --if (bar_align<0) then -- right line
@@ -1045,7 +1141,7 @@ function widget:TweakDrawScreen()
     end
   else
     if bar_align==0 then         -- centered line
-      rect = {facRect[1], (facRect[2]+facRect[4])*0.5, facRect[3], (facRect[2]+facRect[4])*0.5}
+      rect = {facRect[1], (facRect[2]+facRect[4])/2, facRect[3], (facRect[2]+facRect[4])/2}
     elseif (bar_align>0) then    -- bottom line
       rect={facRect[1], facRect[4], facRect[3], facRect[4]}
     else --if (bar_align<0) then -- top line
@@ -1108,8 +1204,8 @@ function widget:TweakMouseMove(x, y, dx, dy, button)
     if bar_horizontal then
       bar_offset = bar_offset + dx
 
-      if abs(TweakPressedPos_Y-y)>100 then
-        local bar_center = (facRect[1] + facRect[3])*0.5
+      if math.abs(TweakPressedPos_Y-y)>100 then
+        local bar_center = (facRect[1] + facRect[3])/2
         if bar_center>0.5*vsx then
           bar_side=1
         else
@@ -1122,8 +1218,8 @@ function widget:TweakMouseMove(x, y, dx, dy, button)
       end
     else
       bar_offset = bar_offset + dy
-      if abs(TweakPressedPos_X-x)>100 then
-        local bar_center = (facRect[2] + facRect[4])*0.5
+      if math.abs(TweakPressedPos_X-x)>100 then
+        local bar_center = (facRect[2] + facRect[4])/2
         if bar_center>0.5*vsy then
           bar_side=3
         else
@@ -1142,9 +1238,9 @@ function widget:TweakMouseWheel(up,value)
   -- you can resize the icons with the mousewheel
   if (hoveredFac+hoveredBOpt>=-1) then
     if up then
-      bar_iconSizeBase = max(bar_iconSizeBase + 3,40)
+      bar_iconSizeBase = math.max(bar_iconSizeBase + 3,40)
     else
-      bar_iconSizeBase = max(bar_iconSizeBase - 3,40)
+      bar_iconSizeBase = math.max(bar_iconSizeBase - 3,40)
     end
 
     UpdateIconSizes()

@@ -11,14 +11,30 @@ function widget:GetInfo()
   }
 end
 
+function widget:Initialize()
+	if Spring.IsReplay() or Spring.GetGameFrame() > 0 then
+	    widget:PlayerChanged()
+  	end
+end
 
-	local function TakeTeam()
-	  Spring.SendCommands({"luarules take2"})
+function widget:PlayerChanged(playerID)
+	if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
+		widgetHandler:RemoveWidget(self)
 	end
-	function widget:Initialize()
-  		widgetHandler:AddAction("take2", TakeTeam, "Take control of units and resouces from inactive players")
-	end
+end
 
-	function widget:Shutdown()
-	  widgetHandler:RemoveAction('take2')
-	end
+function widget:GameStart()
+	widget:PlayerChanged()
+end
+
+local function TakeTeam()
+	Spring.SendCommands({"luarules take2"})
+end
+
+function widget:Initialize()
+	widgetHandler:AddAction("take2", TakeTeam, "Take control of units and resouces from inactive players")
+end
+
+function widget:Shutdown()
+	widgetHandler:RemoveAction('take2')
+end

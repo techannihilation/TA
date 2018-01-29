@@ -580,7 +580,7 @@ function widget:Initialize()
 		
 	else
 		--Spring.Echo("Commands info: couldn't load the commandslist file")
-		widgetHandler:RemoveWidget()
+		widgetHandler:RemoveWidget(self)
 	end
 end
 
