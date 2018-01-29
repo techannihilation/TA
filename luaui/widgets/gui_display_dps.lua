@@ -66,6 +66,7 @@ local changed = false
 local heightList = {}
 local drawTextLists = {}
 
+local TooHigh = true
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -234,6 +235,10 @@ local function DrawUnitFunc(yshift, xshift, damage, textSize, alpha, paralyze)
 end
 
 function widget:DrawWorld()
+  if TooHigh then 
+    return
+  end
+
   local theTime = GetGameSeconds()
   
   if (theTime ~= lastTime) then
@@ -311,7 +316,15 @@ function widget:Shutdown()
   for k,_ in pairs(drawTextLists) do
     gl.DeleteList(drawTextLists[k])
   end
+  widgetHandler:DeregisterGlobal('DrawManager_dps', DrawStatus)
 end
 
+function widget:Initialize()
+    widgetHandler:RegisterGlobal('DrawManager_dps', DrawStatus)
+end
+
+function DrawStatus(toohigh,fps,ping)
+    TooHigh = toohigh
+end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

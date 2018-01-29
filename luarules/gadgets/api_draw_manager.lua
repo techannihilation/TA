@@ -59,8 +59,8 @@ function DrawChecks()
   ScriptLuaUICall("DrawManager_energygui", toohigh,fpscount,IsBehind)
   ScriptLuaUICall("DrawManager_allyrez", toohigh,fpscount,IsBehind)
   ScriptLuaUICall("DrawManager_ghost", toohigh,fpscount,IsBehind)
-  
-  --Gadgets
+  ScriptLuaUICall("DrawManager_dps", toohigh,fpscount,IsBehind)
+    --Gadgets
   ScriptLuaRulesCall("DrawManager_morph", toohigh,fpscount,IsBehind)
 
 end
