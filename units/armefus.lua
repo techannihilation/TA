@@ -30,7 +30,7 @@ return {
 		maxslope = 13,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		name = "Experimental Armored Fusion Reactor",
+		name = "Ultimate Armored Fusion Reactor",
 		noautofire = false,
 		nochasecategory = "ALL",
 		objectname = "armefus",
