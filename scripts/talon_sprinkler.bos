@@ -1,0 +1,307 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, ground, Lpiece_down, Rpiece_down, wall, support, Lflare, Rflare, turret,
+	   Rbarrel, Lbarrel, Lweapon, Rweapon, Lsleeve, Rsleeve, sleeves, aimpoint;
+
+static-var  Static_Var_1, restore_delay, statechg_DesiredState, statechg_StateChanging, Static_Var_5;
+
+
+activatescr()
+{
+	stop-spin turret around y-axis;
+
+	if( TRUE )
+	{
+		move wall to y-axis [0.000000] speed [75.000000];
+		wait-for-move wall along y-axis;
+			
+		turn sleeves to x-axis <0.000000> speed <100.000000>;
+		wait-for-turn sleeves around x-axis;
+	}
+	
+	sleep 25;
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		turn sleeves to x-axis <-90.000000> speed <100.000000>;
+		wait-for-turn sleeves around x-axis;
+		
+		move wall to y-axis [18.000000] speed [75.000000];
+		wait-for-move wall along y-axis;
+	}
+	
+	spin turret around y-axis speed <-20.000000> accelerate <10.000000>;
+	
+	sleep 25;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Go()
+{
+	if( !Static_Var_1 )
+	{
+		call-script activatescr();
+	}
+
+	Static_Var_1 = 1;
+	set ARMORED to 0;
+}
+
+Stop()
+{
+	set ARMORED to 1;
+	Static_Var_1 = 0;
+	call-script deactivatescr();	
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+RestoreAfterDelay()
+{
+	
+	signal 8;
+	set-signal-mask 8;
+	
+	sleep 1000;
+	
+	spin Rbarrel around z-axis speed <0.000000> accelerate <-10.000000>;
+	spin Lbarrel around z-axis speed <0.000000> accelerate <-10.000000>;
+	
+	sleep restore_delay;
+
+	start-script RequestState(1);
+}
+
+Create()
+{
+	hide Rflare;
+	hide Lflare;
+	
+	dont-cache body;
+	dont-cache base;
+	dont-cache sleeves;
+	dont-cache aimpoint;
+	dont-cache Lsleeve;
+	dont-cache Rsleeve;
+	dont-cache Rweapon;
+	dont-cache Lweapon;
+	dont-cache Rbarrel;
+	dont-cache Lbarrel;
+	dont-cache wall;
+
+	Static_Var_1 = 0;
+	restore_delay = 5000;
+	call-script InitState();
+	call-script Stop();
+		
+	start-script SmokeUnit();	
+}
+
+AimWeapon1(heading, pitch)
+{
+	start-script RequestState(0);
+	signal 2;
+	set-signal-mask 2;
+	
+	while ( !Static_Var_1 )
+	{
+		sleep 250;	
+	}
+	
+	
+	turn turret to y-axis heading speed <75.000000>;
+	turn sleeves to x-axis <0.000000> - pitch speed <75.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn sleeves around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireWeapon1()
+{
+	spin Rbarrel around z-axis speed <-450.000000>;	
+	emit-sfx 1025 from Rflare;
+	//move Rsleeve to z-axis [1.] now;
+	//move Rsleeve to z-axis [0.] speed [1.];
+	move Rweapon to z-axis [-1.] now;
+	move Rweapon to z-axis [0.] speed [1.];
+	sleep 150;
+
+}
+
+AimFromWeapon1(piecenum)
+{
+	piecenum = aimpoint;
+}
+
+QueryWeapon1(piecenum)
+{
+	piecenum = Rflare;
+}
+
+AimWeapon2(heading, pitch)
+{
+	signal 4;
+	set-signal-mask 4;
+	
+	while ( !Static_Var_1 )
+	{
+		sleep 250;	
+	}
+	
+	wait-for-turn turret around y-axis;
+	wait-for-turn sleeves around x-axis;
+	return (1);
+}
+
+FireWeapon2()
+{
+	
+	spin Lbarrel around z-axis speed <450.000000>;	
+	emit-sfx 1025 from Lflare;
+	//move Lsleeve to z-axis [1.] now;
+	//move Lsleeve to z-axis [0.] speed [1.];
+	move Lweapon to z-axis [-1.] now;
+	move Lweapon to z-axis [0.] speed [1.];
+	
+	sleep 150;
+}
+
+AimFromWeapon2(piecenum)
+{
+	piecenum = aimpoint;
+}
+
+QueryWeapon2(piecenum)
+{
+	piecenum = Lflare;
+}
+
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	hide rflare;
+	hide lflare;
+	
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode Lsleeve type NOHEATCLOUD;
+		explode Rsleeve type NOHEATCLOUD;
+		explode Rbarrel type NOHEATCLOUD;
+		explode Lbarrel type NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
+		explode sleeves type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		return (corpsetype);
+		
+
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+				explode Lsleeve type NOHEATCLOUD | FALL;
+		explode Rsleeve type NOHEATCLOUD | FALL;
+		explode Rbarrel type NOHEATCLOUD | FALL;
+		explode Lbarrel type NOHEATCLOUD | FALL;
+		explode base type NOHEATCLOUD | FALL;
+		explode sleeves type NOHEATCLOUD | FALL;
+		explode turret type NOHEATCLOUD | FALL;
+		explode body type NOHEATCLOUD | FALL;
+		return (corpsetype);
+
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode Lsleeve type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode Rsleeve type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode Rbarrel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode Lbarrel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode base type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode sleeves type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode body type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode Lsleeve type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode Rsleeve type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode Rbarrel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode Lbarrel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode base type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode sleeves type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode body type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}

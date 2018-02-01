@@ -1,0 +1,316 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  LiftA, LiftB, LiftC, LiftD, beam1, beam2, base, nanoarm1,
+       nanoarm2, smoker, spinner, pad;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5;
+
+
+Smoke()
+{
+	emit-sfx 256 | 2 from smoker;
+	sleep 100;
+	emit-sfx 256 | 1 from smoker;
+	sleep 100;
+	if( Static_Var_5 == 1 )
+	{
+		start-script Smoke();
+	}
+}
+
+RestoreAfterDelay()
+{
+	sleep 5000;
+}
+
+activatescr()
+{
+	if( TRUE )
+	{
+		dont-cache LiftA;
+		dont-cache LiftB;
+		dont-cache LiftC;
+		dont-cache LiftD;
+		dont-cache nanoarm1;
+		dont-cache nanoarm2;
+		set ARMORED to 0;
+	}
+	if( TRUE )
+	{
+		turn LiftA to z-axis <90.> speed <15.>;
+		turn LiftB to z-axis <90.> speed <15.>;
+		turn LIFTC to z-axis <90.> speed <15.>;
+		turn LIFTD to z-axis <90.> speed <15.>;
+		wait-for-turn LiftA around z-axis;
+	}
+	if( TRUE )
+	{
+		turn nanoarm1 to z-axis <90.> speed <50.>;
+		turn nanoarm2 to z-axis <90.> speed <50.>;
+		wait-for-turn nanoarm1 around z-axis;
+	}
+	if( TRUE )
+	{
+		cache LiftA;
+		cache LiftB;
+		cache LiftC;
+		cache LiftD;
+		cache nanoarm1;
+		cache nanoarm2;
+	}
+	sleep 37;
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		dont-cache LiftA;
+		dont-cache LiftB;
+		dont-cache LiftC;
+		dont-cache LiftD;
+		dont-cache nanoarm1;
+		dont-cache nanoarm2;
+	}
+	if( TRUE )
+	{
+		turn nanoarm1 to z-axis <0.> speed <50.>;
+		turn nanoarm2 to z-axis <0.> speed <50.>;
+		wait-for-turn nanoarm1 around z-axis;
+	}
+	if( TRUE )
+	{
+		turn LiftA to z-axis <0.> speed <8.>;
+		turn LiftB to z-axis <0.> speed <8.>;
+		turn LiftC to z-axis <0.> speed <8.>;
+		turn LiftD to z-axis <0.> speed <8.>;
+		wait-for-turn LiftA around z-axis;
+	}
+	if( TRUE )
+	{
+		cache LiftA;
+		cache LiftB;
+		cache LiftC;
+		cache LiftD;
+		cache nanoarm1;
+		cache nanoarm2;
+		set ARMORED to 1;
+	}
+	sleep 37;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+OpenYard()
+{
+	set YARD_OPEN to 1;
+	while( !get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 1;
+	}
+	set BUGGER_OFF to 0;
+	Static_Var_5 = 1;
+	call-script Smoke();
+}
+
+CloseYard()
+{
+	Static_Var_5 = 0;
+	set YARD_OPEN to 0;
+	while( get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 0;
+	}
+	set BUGGER_OFF to 0;
+}
+
+Go()
+{
+	call-script activatescr();
+	call-script OpenYard();
+	set INBUILDSTANCE to 1;
+}
+
+Stop()
+{
+	sleep 20000;
+	set INBUILDSTANCE to 0;
+	call-script CloseYard();
+	start-script deactivatescr();
+}
+
+InitState()
+{
+	Static_Var_3 = 1;
+	Static_Var_4 = 0;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( Static_Var_4 )
+	{
+		Static_Var_3 = requestedstate;
+		return (0);
+	}
+	Static_Var_4 = 1;
+	currentstate = Static_Var_3;
+	Static_Var_3 = requestedstate;
+	while( Static_Var_3 != currentstate )
+	{
+		if( Static_Var_3 == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( Static_Var_3 == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	Static_Var_4 = 0;
+}
+
+Create()
+{
+	dont-shade LiftA;
+	dont-shade LiftB;
+	dont-shade LiftC;
+	dont-shade LiftD;
+	dont-shade base;
+	dont-shade nanoarm1;
+	dont-shade nanoarm2;
+	Static_Var_2 = 0;
+	Static_Var_1 = 0;
+	call-script InitState();
+	start-script SmokeUnit();
+	Static_Var_5 = 0;
+	spin spinner around y-axis speed <5000.>;
+}
+
+QueryNanoPiece(piecenum)
+{
+	if( Static_Var_1 == 0 )
+	{
+		piecenum = beam1;
+	}
+	if( Static_Var_1 != 0 )
+	{
+		piecenum = beam2;
+	}
+	Static_Var_1 = !Static_Var_1;
+}
+
+Demo()
+{
+	Static_Var_2 = 1;
+}
+
+Activate()
+{
+	signal 2;
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	signal 2;
+	set-signal-mask 2;
+	if( !Static_Var_2 )
+	{
+		sleep 5000;
+	}
+	set-signal-mask 0;
+	start-script RequestState(1);
+}
+
+QueryBuildInfo(piecenum)
+{
+	piecenum = pad;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type NOHEATCLOUD;
+		explode nanoarm1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode nanoarm2 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode LiftA type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode LiftB type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode LiftC type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode LiftD type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type NOHEATCLOUD;
+		explode nanoarm1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode nanoarm2 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode LiftA type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode LiftB type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode LiftC type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode LiftD type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type NOHEATCLOUD;
+		explode nanoarm1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode nanoarm2 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode LiftA type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode LiftB type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode LiftC type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode LiftD type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type NOHEATCLOUD;
+	explode nanoarm1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode nanoarm2 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode LiftA type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode LiftB type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode LiftC type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode LiftD type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
+}

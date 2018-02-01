@@ -1,0 +1,277 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  flare_01, flare_02, flare_03, flare_04, flare_05, flare_06, flare_07, flare_08, flare_09, flare_10, flare_11, flare_12,
+	   base, tower, stand, turret, sleeves, glow,
+	   pod_01, pod_02, pod_03, pod_04, pod_05, pod_06, pod_07, pod_08, pod_09, pod_10, pod_11, pod_12;
+
+static-var  gun_1, Static_Var_1, Static_Var_2 ;
+static-var	dome_on, nbr_dome ; 
+
+// Signal definitions
+#define SIG_AIM				2
+#define SIG_AIM_2			4
+#define SIG_AIM_3			6
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	nbr_dome = 0;
+	dome_on = 0;
+	Static_Var_1 = 0;
+	Static_Var_2 = 0;
+	
+	hide flare_01;
+	hide flare_02;
+	hide flare_03;
+	hide flare_04;
+	hide flare_05;
+	hide flare_06;
+	hide flare_07;
+	hide flare_08;
+	hide flare_09;
+	hide flare_10;
+	hide flare_11;
+	hide flare_12;
+	
+	
+	dont-shade stand;
+	dont-shade turret;
+	dont-shade sleeves;
+	dont-shade pod_01;
+	dont-shade pod_02;
+	dont-shade pod_03;
+	dont-shade pod_04;
+	dont-shade pod_05;
+	dont-shade pod_06;
+	dont-shade pod_07;
+	dont-shade pod_08;
+	dont-shade pod_09;
+	dont-shade pod_10;
+	dont-shade pod_11;
+	dont-shade pod_12;
+	
+	dont-shade glow;
+
+			
+	gun_1 = 0;
+	
+	//spin radar around y-axis speed <200.000000> accelerate <25.000000>;
+
+	start-script SmokeUnit();
+}
+
+RestoreAfterDelay()
+{
+	sleep 8000;
+	set-signal-mask 0;
+	turn turret to y-axis <0.000000> speed <180.000000>;
+	turn sleeves to x-axis <0.000000> speed <180.000000>;
+}
+
+/*
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	return (1);
+}
+
+FirePrimary()
+{
+	++Static_Var_1;
+	if( Static_Var_1 == 5 )
+	{
+		Static_Var_1 = 0;
+	}
+
+}
+
+QueryPrimary(piecenum)
+{
+	if( Static_Var_1 == 1 )
+	{
+		piecenum = v1;
+	}
+	if( Static_Var_1 == 2 )
+	{
+		piecenum = v2;
+	}
+	if( Static_Var_1 == 3 )
+	{
+		piecenum = v3;
+	}
+	if( Static_Var_1 == 4 )
+	{
+		piecenum = v4;
+	}
+}
+*/
+
+AimTertiary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	
+	turn turret to y-axis heading speed <360.000000>;
+	turn sleeves to x-axis <0.000000> - pitch speed <360.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn sleeves around x-axis;
+	
+	Start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireTertiary()
+{
+	++gun_1;
+	
+	if( gun_1 == 12 )
+	{
+		gun_1 = 0;
+	}
+}
+
+QueryTertiary(piecenum)
+{
+	if( gun_1 == 0 )
+	{
+		piecenum = flare_01;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = flare_02;
+	}
+	if( gun_1 == 2 )
+	{
+		piecenum = flare_03;
+	}
+	if( gun_1 == 3 )
+	{
+		piecenum = flare_04;
+	}
+	if( gun_1 == 4 )
+	{
+		piecenum = flare_05;
+	}
+	if( gun_1 == 5 )
+	{
+		piecenum = flare_06;
+	}
+	if( gun_1 == 6 )
+	{
+		piecenum = flare_07;
+	}
+	if( gun_1 == 7 )
+	{
+		piecenum = flare_08;
+	}
+	if( gun_1 == 8 )
+	{
+		piecenum = flare_09;
+	}
+	if( gun_1 == 9 )
+	{
+		piecenum = flare_10;
+	}
+	if( gun_1 == 10 )
+	{
+		piecenum = flare_11;
+	}
+	if( gun_1 == 11 )
+	{
+		piecenum = flare_12;
+	}
+}
+
+
+AimFromPrimary(piecenum)
+{
+	piecenum = turret;
+}
+
+AimFromTertiary(piecenum)
+{
+	piecenum = turret;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode sleeves type NOHEATCLOUD | BITMAP1;
+		explode pod_01 type NOHEATCLOUD | BITMAP1;
+		explode pod_04 type NOHEATCLOUD | BITMAP1;
+		explode pod_03 type NOHEATCLOUD | BITMAP1;
+		explode pod_02 type NOHEATCLOUD | BITMAP1;
+		explode turret type NOHEATCLOUD | FALL;
+		explode stand type NOHEATCLOUD | FALL;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode sleeves type NOHEATCLOUD | BITMAP1;
+		explode pod_01 type FALL | BITMAP1;
+		explode pod_04 type FALL | BITMAP1;
+		explode pod_03 type NOHEATCLOUD | BITMAP1;
+		explode pod_02 type NOHEATCLOUD | BITMAP1;
+		explode turret type SHATTER | FALL;
+		explode stand type SHATTER | FALL;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode sleeves type NOHEATCLOUD | BITMAP1;
+		explode pod_01 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode pod_04 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode pod_03 type NOHEATCLOUD | BITMAP1;
+		explode pod_02 type NOHEATCLOUD | BITMAP1;
+		explode turret type SHATTER | FALL;
+		explode stand type SHATTER | FALL;
+		return (0);
+	}
+	corpsetype = 3;
+	explode sleeves type NOHEATCLOUD | BITMAP1;
+	explode pod_01 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode pod_04 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode pod_03 type NOHEATCLOUD | BITMAP1;
+	explode pod_02 type NOHEATCLOUD | BITMAP1;
+	explode turret type SHATTER | EXPLODE_ON_HIT | FALL;
+	explode stand type SHATTER | EXPLODE_ON_HIT | FALL;
+}

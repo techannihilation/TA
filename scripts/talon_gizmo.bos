@@ -1,0 +1,681 @@
+//Core Combat Engineer - 'Combat Engineer'
+#define TA
+
+piece flare, nanopoint, GP, pelvis, torso, lthigh, rthigh, lleg, rleg, ruparm, luparm, nanoarm, laser, barrel;
+
+static-var restore_delay, bMoving, bAiming, inbuildstance;
+
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+#define SIG_AIM	2
+#define SIG_AIM_2	4
+#define SIG_MOVE 8
+
+walk()
+{
+	while (TRUE)
+		{
+		if( TRUE )
+			{
+			move pelvis to y-axis [-0.250000] now;
+			move pelvis to z-axis [-0.600000] now;
+			move rleg to y-axis [0.000000] now;
+			move lleg to y-axis [0.649994] now;
+			turn pelvis to x-axis <10.901099> now;
+			turn lthigh to x-axis <-43.950549> now;
+			turn rthigh to x-axis <4.219780> now;
+			turn rleg to x-axis <19.340659> now;
+			turn lleg to x-axis <43.604396> now;
+			if (bAiming == FALSE)
+				{
+				turn torso to x-axis <5.274725> now;
+				turn luparm to x-axis <-17.230769> now;
+				turn ruparm to x-axis <-9.846154> now;
+				turn laser to x-axis <-9.142857> now;
+				turn nanoarm to x-axis <-36.571429> now;
+				}
+			sleep 90;
+		}
+		if( TRUE )
+		{
+			move pelvis to y-axis [-0.125000] now;
+			move pelvis to z-axis [-0.500000] now;
+			turn lthigh to x-axis <-57.313187> now;
+			turn rthigh to x-axis <10.719780> now;
+			turn rleg to x-axis <21.098901> now;
+			turn lleg to x-axis <43.604396> now;
+			if (bAiming == FALSE)
+				{
+				turn torso to x-axis <2.637363> now;
+				turn luparm to x-axis <-8.609890> now;
+				turn ruparm to x-axis <-11.780220> now;
+				turn laser to x-axis <-14.236264> now;
+				turn nanoarm to x-axis <-24.785714> now;
+				}
+			sleep 60;
+		}
+		if( TRUE )
+		{
+			move pelvis to y-axis [0.000000] now;
+			move pelvis to z-axis [-0.400000] now;
+			turn lthigh to x-axis <-70.675824> now;
+			turn rthigh to x-axis <17.230769> now;
+			turn rleg to x-axis <22.857143> now;
+			turn lleg to x-axis <43.604396> now;
+			if (bAiming == FALSE)
+				{			
+				turn torso to x-axis <0.000000> now;
+				turn luparm to x-axis <0.000000> now;
+				turn ruparm to x-axis <-13.714286> now;
+				turn laser to x-axis <-19.340659> now;
+				turn nanoarm to x-axis <-13.005495> now;
+				}
+			sleep 60;
+		}
+		if( TRUE )
+		{
+			move pelvis to y-axis [0.250000] now;
+			move pelvis to z-axis [-0.200000] now;
+			move lleg to y-axis [0.074994] now;
+			turn lthigh to x-axis <-76.302198> now;
+			turn rthigh to x-axis <18.989011> now;
+			turn rleg to x-axis <25.318681> now;
+			turn lleg to x-axis <37.274725> now;
+			if (bAiming == FALSE)
+				{
+				turn torso to x-axis <-2.637363> now;
+				turn luparm to x-axis <10.895604> now;
+				turn ruparm to x-axis <-14.939560> now;
+				turn laser to x-axis <-29.005495> now;
+				turn nanoarm to x-axis <-12.829670> now;
+				}
+			sleep 60;
+		}
+		if( TRUE )
+		{
+			move pelvis to y-axis [0.500000] now;
+			move pelvis to z-axis [0.000000] now;
+			move lleg to y-axis [-0.500000] now;
+			turn lthigh to x-axis <-81.928571> now;
+			turn rthigh to x-axis <20.747253> now;
+			turn rleg to x-axis <27.780220> now;
+			turn lleg to x-axis <30.945055> now;
+			if (bAiming == FALSE)
+				{
+				turn torso to x-axis <-5.274725> now;
+				turn luparm to x-axis <21.802198> now;
+				turn ruparm to x-axis <-16.175824> now;
+				turn laser to x-axis <-38.681319> now;
+				turn nanoarm to x-axis <-12.659341> now;
+				}
+			sleep 60;
+		}
+		if( TRUE )
+		{
+			move pelvis to y-axis [0.250000] now;
+			move pelvis to z-axis [0.874994] now;
+			move lleg to y-axis [-0.700000] now;
+			turn lthigh to x-axis <-68.390110> now;
+			turn rthigh to x-axis <29.362637> now;
+			turn rleg to x-axis <25.489011> now;
+			turn lleg to x-axis <26.021978> now;
+			if (bAiming == FALSE)
+				{
+				turn torso to x-axis <-2.637363> now;
+				turn luparm to x-axis <34.461538> now;
+				turn ruparm to x-axis <-22.857143> now;
+				turn laser to x-axis <-54.500000> now;
+				turn nanoarm to x-axis <-20.923077> now;
+				}
+			sleep 60;
+		}
+		if( TRUE )
+		{
+			move pelvis to y-axis [0.000000] now;
+			move pelvis to z-axis [1.749994] now;
+			move lleg to y-axis [-0.900000] now;
+			turn lthigh to x-axis <-54.857143> now;
+			turn rthigh to x-axis <37.978022> now;
+			turn rleg to x-axis <23.208791> now;
+			turn lleg to x-axis <21.098901> now;
+			if (bAiming == FALSE)
+				{
+				turn torso to x-axis <0.000000> now;
+				turn luparm to x-axis <47.120879> now;
+				turn ruparm to x-axis <-29.538462> now;
+				turn laser to x-axis <-70.329670> now;
+				turn nanoarm to x-axis <-29.186813> now;
+				}
+			sleep 30;
+		}
+		if( TRUE )
+		{
+			move pelvis to y-axis [-0.474994] now;
+			move pelvis to z-axis [2.075000] now;
+			move rleg to y-axis [0.624994] now;
+			move lleg to y-axis [-0.050000] now;
+			turn pelvis to x-axis <10.901099> now;
+			turn lthigh to x-axis <-43.604396> now;
+			turn rthigh to x-axis <18.109890> now;
+			turn rleg to x-axis <48.175824> now;
+			turn lleg to x-axis <21.269231> now;
+			if (bAiming == FALSE)
+				{
+				turn torso to x-axis <2.637363> now;
+				turn luparm to x-axis <48.873626> now;
+				turn laser to x-axis <-74.192308> now;
+				turn nanoarm to x-axis <-23.736264> now;
+				}
+			sleep 30;
+		}
+		if( TRUE )
+		{
+			move pelvis to y-axis [-0.949994] now;
+			move pelvis to z-axis [2.400000] now;
+			move rleg to y-axis [1.249994] now;
+			move lleg to y-axis [0.800000] now;
+			turn lthigh to x-axis <-32.351648> now;
+			turn rthigh to x-axis <-1.758242> now;
+			turn rleg to x-axis <73.142857> now;
+			turn lleg to x-axis <21.445055> now;
+			if (bAiming == FALSE)
+				{
+				turn torso to x-axis <5.274725> now;
+				turn luparm to x-axis <50.637363> now;
+				turn laser to x-axis <-78.065934> now;
+				turn nanoarm to x-axis <-18.285714> now;
+				}
+			sleep 60;
+		}
+		if( TRUE )
+		{
+			move pelvis to y-axis [-0.774994] now;
+			move pelvis to z-axis [1.625000] now;
+			move rleg to y-axis [1.199994] now;
+			move lleg to y-axis [0.700000] now;
+			turn lthigh to x-axis <-22.153846> now;
+			turn rthigh to x-axis <-5.093407> now;
+			turn rleg to x-axis <58.373626> now;
+			turn lleg to x-axis <11.252747> now;
+			if (bAiming == FALSE)
+				{
+				turn torso to x-axis <7.736264> now;
+				turn luparm to x-axis <30.412088> now;
+				turn ruparm to x-axis <-26.725275> now;
+				turn laser to x-axis <-61.714286> now;
+				turn nanoarm to x-axis <-14.939560> now;
+				}
+			sleep 60;
+		}
+		if( TRUE )
+		{
+			move pelvis to y-axis [-0.599994] now;
+			move pelvis to z-axis [0.850000] now;
+			move rleg to y-axis [1.149994] now;
+			move lleg to y-axis [0.600000] now;
+			turn lthigh to x-axis <-11.956044> now;
+			turn rthigh to x-axis <-8.439560> now;
+			turn rleg to x-axis <43.604396> now;
+			turn lleg to x-axis <1.054945> now;
+			if (bAiming == FALSE)
+				{
+				turn torso to x-axis <10.197802> now;
+				turn luparm to x-axis <10.197802> now;
+				turn ruparm to x-axis <-23.912088> now;
+				turn laser to x-axis <-45.362637> now;
+				turn nanoarm to x-axis <-11.604396> now;
+				}
+			sleep 60;
+		}
+		if( TRUE )
+		{
+			move pelvis to y-axis [-0.424994] now;
+			move pelvis to z-axis [0.125000] now;
+			move rleg to y-axis [0.899994] now;
+			move lleg to y-axis [0.300000] now;
+			turn lthigh to x-axis <-3.862637> now;
+			turn rthigh to x-axis <-26.192308> now;
+			turn lleg to x-axis <10.197802> now;
+			if (bAiming == FALSE)
+				{
+				turn torso to x-axis <7.736264> now;
+				turn luparm to x-axis <4.390110> now;
+				turn ruparm to x-axis <-16.346154> now;
+				turn laser to x-axis <-39.554945> now;
+				turn nanoarm to x-axis <-11.076923> now;
+				}
+			sleep 60;
+		}
+		if( TRUE )
+		{
+			move pelvis to y-axis [-0.250000] now;
+			move pelvis to z-axis [-0.600000] now;
+			move rleg to y-axis [0.649994] now;
+			move lleg to y-axis [0.000000] now;
+			turn pelvis to x-axis <10.901099> now;
+			turn lthigh to x-axis <4.219780> now;
+			turn rthigh to x-axis <-43.956044> now;
+			turn lleg to x-axis <19.340659> now;
+			if (bAiming == FALSE)
+				{
+				turn torso to x-axis <5.269231> now;
+				turn luparm to x-axis <-1.406593> now;
+				turn ruparm to x-axis <-8.791209> now;
+				turn laser to x-axis <-33.758242> now;
+				turn nanoarm to x-axis <-10.549451> now;
+				}
+			sleep 90;
+		}
+		if( TRUE )
+		{
+			move pelvis to y-axis [-0.125000] now;
+			move pelvis to z-axis [-0.500000] now;
+			move rleg to y-axis [0.649994] now;
+			turn lthigh to x-axis <11.956044> now;
+			turn rthigh to x-axis <-57.313187> now;
+			turn lleg to x-axis <21.098901> now;
+			if (bAiming == FALSE)
+				{
+				turn torso to x-axis <2.637363> now;
+				turn luparm to x-axis <-4.219780> now;
+				turn ruparm to x-axis <-4.390110> now;
+				turn laser to x-axis <-23.208791> now;
+				turn nanoarm to x-axis <-16.879121> now;
+				}
+			sleep 60;
+		}
+		if( TRUE )
+		{
+			move pelvis to y-axis [0.000000] now;
+			move pelvis to z-axis [-0.400000] now;
+			move rleg to y-axis [0.649994] now;
+			turn lthigh to x-axis <19.692308> now;
+			turn rthigh to x-axis <-70.675824> now;
+			turn lleg to x-axis <22.857143> now;
+			if (bAiming == FALSE)
+				{
+				turn torso to x-axis <0.000000> now;	
+				turn luparm to x-axis <-7.032967> now;
+				turn ruparm to x-axis <0.000000> now;
+				turn laser to x-axis <-12.659341> now;
+				turn nanoarm to x-axis <-23.208791> now;
+				}
+			sleep 60;
+		}
+		if( TRUE )
+		{
+			move pelvis to y-axis [0.250000] now;
+			move pelvis to z-axis [-0.200000] now;
+			move rleg to y-axis [0.074994] now;
+			move lleg to y-axis [0.000000] now;
+			turn lthigh to x-axis <19.862637> now;
+			turn rthigh to x-axis <-76.302198> now;
+			turn rleg to x-axis <37.274725> now;
+			turn lleg to x-axis <25.318681> now;
+			if (bAiming == FALSE)
+				{ 
+				turn torso to x-axis <-2.637363> now;
+				turn luparm to x-axis <-11.956044> now;
+				turn ruparm to x-axis <7.906593> now;
+				turn laser to x-axis <-12.483516> now;
+				turn nanoarm to x-axis <-24.263736> now;
+				}
+			sleep 60;
+		}
+		if( TRUE )
+		{
+			move pelvis to y-axis [0.500000] now;
+			move pelvis to z-axis [0.000000] now;
+			move rleg to y-axis [-0.500000] now;
+			move lleg to y-axis [0.000000] now;
+			turn lthigh to x-axis <20.043956> now;
+			turn rthigh to x-axis <-81.928571> now;
+			turn rleg to x-axis <30.945055> now;
+			turn lleg to x-axis <27.780220> now;
+			if (bAiming == FALSE)
+				{
+				turn torso to x-axis <-5.274725> now;
+				turn luparm to x-axis <-16.879121> now;
+				turn ruparm to x-axis <15.824176> now;
+				turn laser to x-axis <-12.307692> now;
+				turn nanoarm to x-axis <-25.318681> now;
+				}
+			sleep 60;
+		}
+		if( TRUE )
+		{
+			move pelvis to y-axis [0.250000] now;
+			move pelvis to z-axis [0.875000] now;
+			move rleg to y-axis [-0.700000] now;
+			move lleg to y-axis [0.000000] now;
+			turn pelvis to x-axis <10.901099> now;
+			turn lthigh to x-axis <24.082418> now;
+			turn rthigh to x-axis <-68.390110> now;
+			turn rleg to x-axis <26.021978> now;
+			turn lleg to x-axis <25.489011> now;
+			if (bAiming == FALSE)
+				{	
+				turn torso to x-axis <-2.637363> now;
+				turn luparm to x-axis <-22.505495> now;
+				turn ruparm to x-axis <31.648352> now;
+				turn laser to x-axis <-20.747253> now;
+				turn nanoarm to x-axis <-45.538462> now;
+				}
+			sleep 60;
+		}
+		if( TRUE )
+		{
+			move pelvis to y-axis [0.000000] now;
+			move pelvis to z-axis [1.750000] now;
+			move rleg to y-axis [-0.900000] now;
+			move lleg to y-axis [0.000000] now;
+			turn lthigh to x-axis <28.131868> now;
+			turn rthigh to x-axis <-54.857143> now;
+			turn rleg to x-axis <21.098901> now;
+			turn lleg to x-axis <23.208791> now;
+			if (bAiming == FALSE)
+				{
+				turn torso to x-axis <0.000000> now;
+				turn luparm to x-axis <-28.131868> now;
+				turn ruparm to x-axis <47.467033> now;
+				turn laser to x-axis <-29.186813> now;
+				turn nanoarm to x-axis <-65.758242> now;
+				}
+			sleep 30;
+		}
+		if( TRUE )
+		{
+			move pelvis to y-axis [-0.474994] now;
+			move pelvis to z-axis [2.075000] now;
+			move rleg to y-axis [-0.050000] now;
+			move lleg to y-axis [0.600000] now;
+			turn lthigh to x-axis <13.186813> now;
+			turn rthigh to x-axis <-43.604396> now;
+			turn rleg to x-axis <21.269231> now;
+			turn lleg to x-axis <48.170330> now;
+			if (bAiming == FALSE)
+				{
+				turn torso to x-axis <2.637363> now;
+				turn luparm to x-axis <-27.780220> now;
+				turn ruparm to x-axis <47.824176> now;
+				turn laser to x-axis <-24.082418> now;
+				turn nanoarm to x-axis <-72.791209> now;
+				}
+			sleep 30;
+		}
+		if( TRUE )
+		{
+			move pelvis to y-axis [-0.949994] now;
+			move pelvis to z-axis [2.400000] now;
+			move rleg to y-axis [0.799994] now;
+			move lleg to y-axis [1.200000] now;
+			turn lthigh to x-axis <-1.752747> now;
+			turn rthigh to x-axis <-32.351648> now;
+			turn rleg to x-axis <21.450549> now;
+			turn lleg to x-axis <73.142857> now;
+			if (bAiming == FALSE)
+				{
+				turn torso to x-axis <5.274725> now;
+				turn luparm to x-axis <-27.428571> now;
+				turn ruparm to x-axis <48.170330> now;
+				turn laser to x-axis <-18.989011> now;
+				turn nanoarm to x-axis <-79.818681> now;
+				}
+			sleep 60;
+		}
+		if( TRUE )
+		{
+			move pelvis to y-axis [-0.774994] now;
+			move pelvis to z-axis [1.625000] now;
+			move rleg to y-axis [0.699994] now;
+			move lleg to y-axis [1.350000] now;
+			turn lthigh to x-axis <-5.093407> now;
+			turn rthigh to x-axis <-22.153846> now;
+			turn rleg to x-axis <11.252747> now;
+			turn lleg to x-axis <58.373626> now;
+			if (bAiming == FALSE)
+				{	
+				turn torso to x-axis <7.736264> now;
+				turn luparm to x-axis <-24.967033> now;
+				turn ruparm to x-axis <34.104396> now;
+				turn laser to x-axis <-16.346154> now;
+				turn nanoarm to x-axis <-71.736264> now;
+				}
+			sleep 60;
+		}
+		if( TRUE )
+		{
+			move pelvis to y-axis [-0.599994] now;
+			move pelvis to z-axis [0.850000] now;
+			move rleg to y-axis [0.599994] now;
+			move lleg to y-axis [1.500000] now;
+			turn lthigh to x-axis <-8.439560> now;
+			turn rthigh to x-axis <-11.956044> now;
+			turn rleg to x-axis <1.054945> now;
+			turn lleg to x-axis <43.604396> now;
+			if (bAiming == FALSE)
+				{
+				turn torso to x-axis <10.197802> now;
+				turn luparm to x-axis <-22.505495> now;
+				turn ruparm to x-axis <20.038462> now;
+				turn laser to x-axis <-13.714286> now;
+				turn nanoarm to x-axis <-63.648352> now;
+				}
+			sleep 60;
+		}
+		move pelvis to y-axis [-0.424994] now;
+		move pelvis to z-axis [0.125000] now;
+		move rleg to y-axis [0.299994] now;
+		move lleg to y-axis [1.075000] now;
+		turn lthigh to x-axis <-26.192308> now;
+		turn rthigh to x-axis <-3.868132> now;
+		turn rleg to x-axis <10.197802> now;
+		if (bAiming == FALSE)
+			{
+			turn torso to x-axis <7.736264> now;
+			turn luparm to x-axis <-19.862637> now;
+			turn ruparm to x-axis <5.093407> now;
+			turn laser to x-axis <-11.423077> now;
+			turn nanoarm to x-axis <-50.104396> now;
+			}
+		sleep 60;
+	}
+}
+
+StopWalk()
+	{
+	
+		turn pelvis to y-axis <0> speed <100>;
+		turn pelvis to z-axis <0> speed <100>; 
+		
+		if (bAiming == 0)
+			{
+			turn torso to x-axis <0> speed <100>;
+			turn ruparm to x-axis <0> speed <100>;
+			turn luparm to x-axis <0> speed <100>;
+			turn laser to x-axis <0> speed <100>;
+			turn nanoarm to x-axis <0> speed <100>;
+			}
+			
+		turn rthigh to x-axis <0> now;
+		turn rleg to x-axis <0> now;
+		turn lthigh to x-axis <0> now;
+		turn lleg to x-axis <0> now;
+	
+	}
+	
+StartMoving()
+	{
+	
+		signal SIG_MOVE;
+		set-signal-mask SIG_MOVE;
+		bMoving = TRUE;
+		call-script walk();
+		
+	}
+	
+StopMoving()
+	{
+	
+		signal SIG_MOVE;
+		bMoving = FALSE;
+		call-script StopWalk();
+		
+	}
+	
+Create()
+	{
+		restore_delay = 2000;
+		hide flare;
+		bAiming = 0;
+		bMoving = FALSE;
+				
+	}
+		
+SetMaxReloadTime(time)
+{
+
+	restore_delay = time * 2;
+	
+}
+
+RestoreAfterDelay()
+	{
+	
+		sleep restore_delay;
+	
+		turn torso to y-axis <0> speed <100>;
+		turn luparm to x-axis <0> speed <100>;
+		turn nanoarm to x-axis <0> speed <100>;
+		turn ruparm to x-axis <0> speed <100>;
+		turn laser to x-axis <0> speed <100>;
+		
+		wait-for-turn torso around y-axis;
+		wait-for-turn luparm around x-axis;
+		wait-for-turn nanoarm around x-axis;
+		wait-for-turn ruparm around x-axis;
+		wait-for-turn laser around x-axis;
+		
+		bAiming = 0;
+		
+	}
+	
+SweetSpot(piecenum)
+{
+		piecenum = GP;
+}
+	
+QueryNanoPiece(piecenum)
+{
+	
+		piecenum = nanopoint;
+}
+	
+AimPrimary(heading, pitch)
+{
+		bAiming = 1;
+		signal SIG_AIM_2;
+		set-signal-mask SIG_AIM_2;
+		turn torso to y-axis heading speed <120>;
+		turn ruparm to x-axis <-45.000000> speed <50>;
+		turn laser to x-axis <-45.000000> - pitch speed <50>;
+		wait-for-turn torso around y-axis;   
+		wait-for-turn ruparm around x-axis;
+		wait-for-turn laser around x-axis;
+		start-script RestoreAfterDelay();
+		return (TRUE);
+}
+	
+FirePrimary()
+{
+		show flare;
+		sleep 120;
+		hide flare;
+}
+	
+QueryPrimary(piecenum)
+{
+		piecenum = flare;
+}
+	
+AimFromPrimary(piecenum)
+{	
+		piecenum = torso;
+}
+	
+StartBuilding(heading, pitch)
+{		
+		signal SIG_AIM;
+		set-signal-mask SIG_AIM;
+		
+		bAiming = 1;
+		
+		turn torso to y-axis heading speed <100>;
+		
+		turn luparm to x-axis <-50> speed <100>;
+		turn nanoarm to x-axis <-20> speed <100>;
+		
+		wait-for-turn torso around y-axis;
+		wait-for-turn luparm around x-axis;
+		wait-for-turn luparm around x-axis;
+			
+		set INBUILDSTANCE to TRUE;
+}
+	
+StopBuilding()
+{	
+		set INBUILDSTANCE to FALSE;
+		call-script RestoreAfterDelay();
+}	
+
+Killed(severity, corpsetype)
+{
+	hide flare;
+	if (severity <= 25)
+	{
+		corpsetype = 1;
+		explode torso type NOHEATCLOUD;
+		explode luparm type NOHEATCLOUD;
+		explode nanoarm type NOHEATCLOUD;
+		explode lleg type NOHEATCLOUD;
+		explode laser type NOHEATCLOUD;
+		explode rleg type NOHEATCLOUD;
+		return(corpsetype);
+	}
+
+	if (severity <= 50)
+	{
+		corpsetype = 2;
+		explode torso type NOHEATCLOUD | FALL;
+		explode luparm type NOHEATCLOUD | FALL;
+		explode nanoarm type NOHEATCLOUD | FALL;
+		explode lleg type NOHEATCLOUD | FALL;
+		explode laser type NOHEATCLOUD | FALL;
+		explode rleg type NOHEATCLOUD | FALL;
+		return(corpsetype);
+	}
+
+	if (severity <= 99)
+	{
+		corpsetype = 3;
+		explode torso type NOHEATCLOUD | FALL;
+		explode luparm type NOHEATCLOUD | FALL;
+		explode nanoarm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode lleg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode laser type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode rleg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return(corpsetype);
+	}
+
+	corpsetype = 3;
+	explode torso type NOHEATCLOUD;
+	explode luparm type NOHEATCLOUD;
+	explode nanoarm type NOHEATCLOUD;
+	explode lleg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode laser type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rleg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return(corpsetype);	
+}
+	

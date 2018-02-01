@@ -1,0 +1,353 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, turret, lid1, lid2, nano1, nano2, beam1,
+       beam2, w1, w2, w3, w4, w5, w6, w7,
+       w8, w9, w10, w11, w12, wakes;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
+            Static_Var_6;
+
+
+HitByWeapon(anglex, anglez)
+{
+	signal 4;
+	set-signal-mask 4;
+	turn body to z-axis <0.> * anglez speed <105.>;
+	turn body to x-axis <0.> * anglex speed <105.>;
+	wait-for-turn body around z-axis;
+	wait-for-turn body around x-axis;
+	turn body to z-axis <0.> speed <30.>;
+	turn body to x-axis <0.> speed <30.>;
+}
+
+WobbleUnit()
+{
+	while( TRUE )
+	{
+		if( Static_Var_6 )
+		{
+			move base to y-axis [2.] speed [3.];
+		}
+		else
+		{
+			move base to y-axis [-0.] speed [3.];
+		}
+		Static_Var_6 = !Static_Var_6;
+		sleep 750;
+	}
+}
+
+BankClerck(Func_Var_1, Func_Var_2, Func_Var_3)
+{
+	while( TRUE )
+	{
+		Func_Var_1 = get PIECE_XZ(base);
+		Func_Var_3 = 0;
+		if( get XZ_HYPOT(Func_Var_1 - Func_Var_2) >= 163840 )
+		{
+			Func_Var_3 = 0 - get XZ_ATAN(Func_Var_2 - Func_Var_1) * 80 / 40;
+		}
+		turn body to z-axis Func_Var_3 speed <60.>;
+		Func_Var_2 = Func_Var_1;
+		sleep 300;
+	}
+}
+
+activatescr()
+{
+	if( TRUE )
+	{
+		move lid2 to y-axis [-0.] now;
+		move lid2 to z-axis [-3.] speed [5.];
+		move lid1 to y-axis [-0.] now;
+		move lid1 to z-axis [-3.] speed [5.];
+		wait-for-move lid1 along z-axis;
+	}
+	if( TRUE )
+	{
+		hide lid1;
+		hide lid2;
+	}
+	if( TRUE )
+	{
+		move turret to y-axis [2.] speed [5.];
+		move nano1 to z-axis [2.] speed [5.];
+		move nano2 to z-axis [2.] speed [5.];
+		wait-for-move nano1 along z-axis;
+	}
+	sleep 39;
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		show lid1;
+		show lid2;
+	}
+	if( TRUE )
+	{
+		move turret to y-axis [0.] speed [5.];
+		move nano1 to z-axis [0.] speed [5.];
+		move nano2 to z-axis [0.] speed [5.];
+		wait-for-move nano1 along z-axis;
+	}
+	if( TRUE )
+	{
+		move lid1 to z-axis [0.] speed [5.];
+		move lid2 to z-axis [0.] speed [5.];
+		wait-for-move lid1 along z-axis;
+	}
+	if( TRUE )
+	{
+		move lid1 to y-axis [0.] now;
+		move lid2 to y-axis [0.] now;
+	}
+	sleep 27;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	start-script WobbleUnit();
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Go()
+{
+	call-script activatescr();
+	turn turret to y-axis Static_Var_2 speed <160.>;
+	wait-for-turn turret around y-axis;
+	set INBUILDSTANCE to 1;
+}
+
+Stop()
+{
+	set INBUILDSTANCE to 0;
+	turn turret to y-axis <0.> speed <160.>;
+	wait-for-turn turret around y-axis;
+	call-script deactivatescr();
+}
+
+InitState()
+{
+	Static_Var_3 = 1;
+	Static_Var_4 = 0;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( Static_Var_4 )
+	{
+		Static_Var_3 = requestedstate;
+		return (0);
+	}
+	Static_Var_4 = 1;
+	currentstate = Static_Var_3;
+	Static_Var_3 = requestedstate;
+	while( Static_Var_3 != currentstate )
+	{
+		if( Static_Var_3 == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( Static_Var_3 == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	Static_Var_4 = 0;
+}
+
+StartMoving()
+{
+	signal 2;
+	set-signal-mask 2;
+}
+
+StopMoving()
+{
+	signal 2;
+}
+
+waking()
+{
+	while( TRUE )
+	{
+		if( Static_Var_1 == 2 OR Static_Var_1 == 1 )
+		{
+			emit-sfx 3 from w1;
+			emit-sfx 3 from w2;
+			emit-sfx 3 from w3;
+			emit-sfx 3 from w4;
+			emit-sfx 3 from w5;
+			emit-sfx 3 from w6;
+			emit-sfx 3 from w7;
+			emit-sfx 3 from w8;
+			emit-sfx 3 from w9;
+			emit-sfx 3 from w10;
+			emit-sfx 3 from w11;
+			emit-sfx 3 from w12;
+			emit-sfx 5 from w1;
+			emit-sfx 5 from w2;
+			emit-sfx 5 from w3;
+			emit-sfx 5 from w4;
+			emit-sfx 5 from w5;
+			emit-sfx 5 from w6;
+			emit-sfx 5 from w7;
+			emit-sfx 5 from w8;
+			emit-sfx 5 from w9;
+			emit-sfx 5 from w10;
+			emit-sfx 5 from w11;
+			emit-sfx 5 from w12;
+		}
+		sleep 325;
+	}
+}
+
+setSFXoccupy(state)
+{
+	Static_Var_1 = state;
+}
+
+Create()
+{
+	start-script waking();
+	Static_Var_2 = 0;
+	call-script InitState();
+	start-script SmokeUnit();
+	start-script BankClerck();
+	Static_Var_5 = 1;
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+StartBuilding(Func_Var_1)
+{
+	Static_Var_2 = Func_Var_1;
+	start-script RequestState(0);
+}
+
+StopBuilding()
+{
+	start-script RequestState(1);
+}
+
+QueryNanoPiece(piecenum)
+{
+	if( Static_Var_5 == 1 )
+	{
+		piecenum = beam1;
+	}
+	if( Static_Var_5 == 2 )
+	{
+		piecenum = beam2;
+	}
+	++Static_Var_5;
+	if( Static_Var_5 == 3 )
+	{
+		Static_Var_5 = 1;
+	}
+}
+
+TargetHeading(Func_Var_1)
+{
+	Static_Var_2 = 0 - Func_Var_1;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode beam1 type FALL | FIRE | SMOKE | NOHEATCLOUD;
+		explode beam1 type FALL | FIRE | SMOKE | NOHEATCLOUD;
+		explode base type NOHEATCLOUD ;
+		explode nano1 type FALL | NOHEATCLOUD;
+		explode nano2 type FALL | NOHEATCLOUD;
+		explode lid1 type NOHEATCLOUD;
+		explode lid2 type NOHEATCLOUD;
+		explode turret type SHATTER;
+		explode body type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode beam1 type FALL | FIRE | SMOKE | NOHEATCLOUD;
+		explode beam1 type FALL | FIRE | SMOKE | NOHEATCLOUD;
+		explode base type NOHEATCLOUD ;
+		explode nano1 type FALL | NOHEATCLOUD;
+		explode nano2 type FALL | NOHEATCLOUD;
+		explode lid1 type NOHEATCLOUD;
+		explode lid2 type NOHEATCLOUD;
+		explode turret type SHATTER | FALL;
+		explode body type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode beam1 type FALL | FIRE | SMOKE | NOHEATCLOUD;
+		explode beam1 type FALL | FIRE | SMOKE | NOHEATCLOUD;
+		explode base type NOHEATCLOUD ;
+		explode nano1 type FALL | NOHEATCLOUD;
+		explode nano2 type FALL | NOHEATCLOUD;
+		explode lid1 type NOHEATCLOUD;
+		explode lid2 type NOHEATCLOUD;
+		explode turret type SHATTER | FALL;
+		explode body type NOHEATCLOUD | FALL;
+		return (corpsetype);
+		return (0);
+	}
+	corpsetype = 3;
+	explode beam1 type FALL | FIRE | SMOKE | NOHEATCLOUD;
+	explode beam1 type FALL | FIRE | SMOKE | NOHEATCLOUD;
+	explode base type NOHEATCLOUD ;
+	explode nano1 type FALL | NOHEATCLOUD;
+	explode nano2 type FALL | NOHEATCLOUD;
+	explode lid1 type NOHEATCLOUD;
+	explode lid2 type NOHEATCLOUD;
+	explode turret type SHATTER | FALL;
+	explode body type NOHEATCLOUD | FALL;
+	return (corpsetype);
+}

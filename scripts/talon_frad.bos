@@ -1,0 +1,255 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, stick, leaf1, leaf2, leaf3, leaf4, leaf1b,
+       leaf2b, leaf3b, leaf4b, bodyold;
+
+static-var  Static_Var_1, Static_Var_2;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Go()
+{
+	set ARMORED to 0;
+	dont-cache stick;
+	dont-cache leaf1;
+	dont-cache leaf2;
+	dont-cache leaf3;
+	dont-cache leaf4;
+	move stick to y-axis [13.] speed [5.];
+	wait-for-move stick along y-axis;
+	turn leaf1 to z-axis <-90.> speed <50.>;
+	turn leaf2 to z-axis <90.> speed <50.>;
+	turn leaf3 to x-axis <-90.> speed <50.>;
+	turn leaf4 to x-axis <90.> speed <50.>;
+	wait-for-turn leaf4 around x-axis;
+	show leaf1b;
+	show leaf2b;
+	show leaf3b;
+	show leaf4b;
+	hide leaf1;
+	hide leaf2;
+	hide leaf3;
+	hide leaf4;
+	spin leaf1b around x-axis speed <25.>;
+	spin leaf2b around x-axis speed <-25.>;
+	spin leaf3b around z-axis speed <-25.>;
+	spin leaf4b around z-axis speed <25.>;
+	spin stick around y-axis speed <13.>;
+}
+
+Stop()
+{
+	stop-spin leaf1b around x-axis;
+	stop-spin leaf2b around x-axis;
+	stop-spin leaf3b around z-axis;
+	stop-spin leaf4b around z-axis;
+	turn leaf1b to x-axis <0.> speed <50.>;
+	turn leaf2b to x-axis <0.> speed <50.>;
+	turn leaf3b to z-axis <0.> speed <50.>;
+	turn leaf4b to z-axis <0.> speed <50.>;
+	wait-for-turn leaf4b around z-axis;
+	hide leaf1b;
+	hide leaf2b;
+	hide leaf3b;
+	hide leaf4b;
+	show leaf1;
+	show leaf2;
+	show leaf3;
+	show leaf4;
+	stop-spin stick around y-axis;
+	turn stick to y-axis <0.> speed <50.>;
+	turn leaf1 to z-axis <0.> speed <50.>;
+	turn leaf2 to z-axis <0.> speed <50.>;
+	turn leaf3 to x-axis <0.> speed <50.>;
+	turn leaf4 to x-axis <0.> speed <50.>;
+	wait-for-turn leaf4 around x-axis;
+	move stick to y-axis [0.] speed [5.];
+	wait-for-move stick along y-axis;
+	set ARMORED to 1;
+	cache stick;
+	cache leaf1;
+	cache leaf2;
+	cache leaf3;
+	cache leaf4;
+}
+
+InitState()
+{
+	Static_Var_1 = 1;
+	Static_Var_2 = 0;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( Static_Var_2 )
+	{
+		Static_Var_1 = requestedstate;
+		return (0);
+	}
+	Static_Var_2 = 1;
+	currentstate = Static_Var_1;
+	Static_Var_1 = requestedstate;
+	while( Static_Var_1 != currentstate )
+	{
+		if( Static_Var_1 == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( Static_Var_1 == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	Static_Var_2 = 0;
+}
+
+Create()
+{
+	dont-shade body;
+	dont-shade leaf1;
+	dont-shade leaf2;
+	dont-shade leaf3;
+	dont-shade leaf4;
+	dont-shade stick;
+	dont-cache leaf1b;
+	dont-cache leaf2b;
+	dont-cache leaf3b;
+	dont-cache leaf4b;
+	dont-shade leaf1b;
+	dont-shade leaf2b;
+	dont-shade leaf3b;
+	dont-shade leaf4b;
+	hide leaf4b;
+	hide leaf3b;
+	hide leaf2b;
+	hide leaf1b;
+	call-script InitState();
+	start-script SmokeUnit();
+}
+
+HitByWeapon(anglex, anglez)
+{
+	signal 2;
+	set-signal-mask 2;
+	if( !get BUILD_PERCENT_LEFT )
+	{
+		set ACTIVATION to 0;
+		sleep 8000;
+		set ACTIVATION to 1;
+	}
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+	explode base type NOHEATCLOUD | FALL ;
+	explode bodyold type NOHEATCLOUD;
+	explode body type NOHEATCLOUD | FALL ;
+	explode stick type NOHEATCLOUD | FALL ;
+	explode leaf1 type NOHEATCLOUD | FALL ;
+	explode leaf2 type NOHEATCLOUD | FALL ;
+	explode leaf3 type NOHEATCLOUD | FALL ;
+	explode leaf4 type NOHEATCLOUD | FALL ;
+	explode leaf1b type NOHEATCLOUD | FALL ;
+	explode leaf2b type NOHEATCLOUD | FALL ;
+	explode leaf3b type NOHEATCLOUD | FALL ;
+	explode leaf4b type NOHEATCLOUD | FALL ;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+	explode base type NOHEATCLOUD | FALL ;
+	explode bodyold type NOHEATCLOUD;
+	explode body type NOHEATCLOUD | FALL ;
+	explode stick type NOHEATCLOUD | FALL ;
+	explode leaf1 type NOHEATCLOUD | FALL ;
+	explode leaf2 type NOHEATCLOUD | FALL ;
+	explode leaf3 type NOHEATCLOUD | FALL ;
+	explode leaf4 type NOHEATCLOUD | FALL ;
+	explode leaf1b type NOHEATCLOUD | FALL ;
+	explode leaf2b type NOHEATCLOUD | FALL ;
+	explode leaf3b type NOHEATCLOUD | FALL ;
+	explode leaf4b type NOHEATCLOUD | FALL ;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+	explode base type NOHEATCLOUD | FALL ;
+	explode body type NOHEATCLOUD | FALL ;
+	explode bodyold type NOHEATCLOUD;
+	explode stick type NOHEATCLOUD | FALL ;
+	explode leaf1 type NOHEATCLOUD | FALL ;
+	explode leaf2 type NOHEATCLOUD | FALL ;
+	explode leaf3 type NOHEATCLOUD | FALL ;
+	explode leaf4 type NOHEATCLOUD | FALL ;
+	explode leaf1b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode leaf2b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode leaf3b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode leaf4b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type NOHEATCLOUD | FALL ;
+	explode bodyold type NOHEATCLOUD;
+	explode body type NOHEATCLOUD | FALL ;
+	explode stick type NOHEATCLOUD | FALL ;
+	explode leaf1 type NOHEATCLOUD | FALL ;
+	explode leaf2 type NOHEATCLOUD | FALL ;
+	explode leaf3 type NOHEATCLOUD | FALL ;
+	explode leaf4 type NOHEATCLOUD | FALL ;
+	explode leaf1b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode leaf2b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode leaf3b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode leaf4b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}

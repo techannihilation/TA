@@ -1,0 +1,531 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  Base, Body, Door1, NanoDoors1A, NanoDoors1B, NanoPosts1, NanoGuns1, Spray1A,
+       Spray1B, Door2, NanoDoors2A, NanoDoors2B, NanoPosts2, NanoGuns2, Spray2A, Spray2B,
+       ClampBeam, Clamps1, Clamps2, NanoPad;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
+            Static_Var_6;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from Base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+CloseYard()
+{
+	set YARD_OPEN to 0;
+	while( get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 0;
+	}
+	set BUGGER_OFF to 0;
+}
+
+deactivatescr()
+{
+	if( Static_Var_6 )
+	{
+		turn NanoGuns1 to z-axis <0.> speed <30.>;
+		turn NanoGuns2 to z-axis <0.> speed <30.>;
+		sleep 500;
+	}
+	if( Static_Var_6 )
+	{
+		turn NanoPosts1 to z-axis <0.> speed <80.>;
+		turn NanoPosts2 to z-axis <0.> speed <80.>;
+		wait-for-turn NanoPosts2 around z-axis;
+	}
+	if( Static_Var_6 )
+	{
+		turn NanoDoors2B to z-axis <0.> speed <100.>;
+		turn NanoDoors1B to z-axis <0.> speed <100.>;
+		sleep 600;
+	}
+	if( Static_Var_6 )
+	{
+		turn NanoDoors1A to z-axis <0.> speed <80.>;
+		turn NanoDoors2A to z-axis <0.> speed <80.>;
+		wait-for-turn NanoDoors2A around z-axis;
+	}
+	if( Static_Var_6 )
+	{
+		move Door1 to x-axis [11.] speed [1.];
+		move Door2 to x-axis [-11.] speed [1.];
+		wait-for-move Door2 along x-axis;
+	}
+	if( Static_Var_6 )
+	{
+		move Door1 to x-axis [5.] speed [3.];
+		move Door2 to x-axis [-5.] speed [3.];
+		wait-for-move Door2 along x-axis;
+	}
+	if( Static_Var_6 )
+	{
+		move Door1 to x-axis [1.] speed [4.];
+		move Door2 to x-axis [-1.] speed [4.];
+		wait-for-move Door2 along x-axis;
+	}
+	if( Static_Var_6 )
+	{
+		move Door1 to x-axis [1.] speed [3.];
+		move Door2 to x-axis [-1.] speed [3.];
+		wait-for-move Door2 along x-axis;
+	}
+	if( Static_Var_6 )
+	{
+		move Door1 to x-axis [0.] speed [2.];
+		move Door2 to x-axis [-0.] speed [2.];
+		wait-for-move Door2 along x-axis;
+	}
+	if( Static_Var_6 )
+	{
+		move Door1 to x-axis [0.] speed [1.];
+		move Door2 to x-axis [-0.] speed [1.];
+		wait-for-move Door2 along x-axis;
+	}
+	if( Static_Var_6 )
+	{
+		move Door1 to x-axis [0.] speed [1.];
+		move Door2 to x-axis [-0.] speed [1.];
+		wait-for-move Door2 along x-axis;
+	}
+	if( Static_Var_6 )
+	{
+		move Door1 to x-axis [0.] speed [0.];
+		move Door2 to x-axis [0.] speed [0.];
+		wait-for-move Door2 along x-axis;
+	}
+	if( Static_Var_6 )
+	{
+		turn ClampBeam to x-axis <-85.> speed <7.>;
+		wait-for-turn ClampBeam around x-axis;
+	}
+	if( Static_Var_6 )
+	{
+		turn ClampBeam to x-axis <-75.> speed <14.>;
+		wait-for-turn ClampBeam around x-axis;
+	}
+	if( Static_Var_6 )
+	{
+		turn ClampBeam to x-axis <-55.> speed <24.>;
+		wait-for-turn ClampBeam around x-axis;
+	}
+	if( Static_Var_6 )
+	{
+		turn ClampBeam to x-axis <-30.> speed <38.>;
+		wait-for-turn ClampBeam around x-axis;
+	}
+	if( Static_Var_6 )
+	{
+		turn ClampBeam to x-axis <-20.> speed <25.>;
+		wait-for-turn ClampBeam around x-axis;
+	}
+	if( Static_Var_6 )
+	{
+		turn ClampBeam to x-axis <-10.> speed <15.>;
+		turn Clamps1 to z-axis <20.> speed <30.>;
+		turn Clamps2 to z-axis <-20.> speed <30.>;
+		wait-for-turn ClampBeam around x-axis;
+	}
+	if( Static_Var_6 )
+	{
+		turn ClampBeam to x-axis <-5.> speed <10.>;
+		wait-for-turn ClampBeam around x-axis;
+	}
+	if( Static_Var_6 )
+	{
+		turn ClampBeam to x-axis <-2.> speed <6.>;
+		wait-for-turn ClampBeam around x-axis;
+	}
+	if( Static_Var_6 )
+	{
+		turn ClampBeam to x-axis <0.> speed <4.>;
+		wait-for-turn ClampBeam around x-axis;
+		sleep 250;
+	}
+	if( Static_Var_6 )
+	{
+		turn Clamps1 to z-axis <7.> speed <25.>;
+		turn Clamps2 to z-axis <-7.> speed <25.>;
+		wait-for-turn Clamps2 around z-axis;
+	}
+	if( Static_Var_6 )
+	{
+		turn Clamps1 to z-axis <0.> speed <60.>;
+		turn Clamps2 to z-axis <0.> speed <60.>;
+		wait-for-turn Clamps2 around z-axis;
+		Static_Var_6 = 0;
+	}
+}
+
+Stop()
+{
+	set-signal-mask 2;
+	sleep 15000;
+	set INBUILDSTANCE to 0;
+	Static_Var_6 = 1;
+	Static_Var_5 = 0;
+	set-signal-mask 0;
+	call-script CloseYard();
+	call-script deactivatescr();
+}
+
+activatescr()
+{
+	signal 2;
+	if( Static_Var_4 )
+	{
+		move Clamps1 to x-axis [1.] speed [1.];
+		move Clamps2 to x-axis [-1.] speed [1.];
+		sleep 500;
+	}
+	if( Static_Var_4 )
+	{
+		turn Clamps1 to z-axis <20.> speed <30.>;
+		turn Clamps2 to z-axis <-20.> speed <30.>;
+		turn ClampBeam to x-axis <-20.> speed <20.>;
+		sleep 500;
+	}
+	if( Static_Var_4 )
+	{
+		move Clamps1 to x-axis [0.] speed [1.];
+		move Clamps2 to x-axis [0.] speed [1.];
+		sleep 400;
+	}
+	if( Static_Var_4 )
+	{
+		turn ClampBeam to x-axis <-80.> speed <50.>;
+		turn Clamps1 to z-axis <0.> speed <25.>;
+		turn Clamps2 to z-axis <0.> speed <25.>;
+		wait-for-turn ClampBeam around x-axis;
+	}
+	if( Static_Var_4 )
+	{
+		turn ClampBeam to x-axis <-94.> speed <17.>;
+		wait-for-turn ClampBeam around x-axis;
+	}
+	if( Static_Var_4 )
+	{
+		turn ClampBeam to x-axis <-87.> speed <15.>;
+		wait-for-turn ClampBeam around x-axis;
+	}
+	if( Static_Var_4 )
+	{
+		turn ClampBeam to x-axis <-90.> speed <8.>;
+		wait-for-turn ClampBeam around x-axis;
+		sleep 300;
+	}
+	if( Static_Var_4 )
+	{
+		move Door1 to x-axis [1.] speed [2.];
+		move Door2 to x-axis [-1.] speed [2.];
+		wait-for-move Door2 along x-axis;
+	}
+	if( Static_Var_4 )
+	{
+		move Door1 to x-axis [11.] speed [5.];
+		move Door2 to x-axis [-11.] speed [5.];
+		wait-for-move Door2 along x-axis;
+	}
+	if( Static_Var_4 )
+	{
+		move Door1 to x-axis [11.] speed [1.];
+		move Door2 to x-axis [-11.] speed [1.];
+		wait-for-move Door2 along x-axis;
+	}
+	if( Static_Var_4 )
+	{
+		turn NanoDoors2B to z-axis <50.> speed <90.>;
+		turn NanoDoors1B to z-axis <-50.> speed <90.>;
+		wait-for-turn NanoDoors1B around z-axis;
+	}
+	if( Static_Var_4 )
+	{
+		turn NanoDoors2A to z-axis <120.> speed <140.>;
+		turn NanoDoors1A to z-axis <-120.> speed <140.>;
+		wait-for-turn NanoDoors1A around z-axis;
+	}
+	if( Static_Var_4 )
+	{
+		turn NanoDoors2B to z-axis <-89.> speed <100.>;
+		turn NanoDoors1B to z-axis <89.> speed <100.>;
+		wait-for-turn NanoDoors2B around z-axis;
+	}
+	if( Static_Var_4 )
+	{
+		turn NanoPosts2 to z-axis <60.> speed <70.>;
+		turn NanoPosts1 to z-axis <-60.> speed <70.>;
+		sleep 500;
+	}
+	if( Static_Var_4 )
+	{
+		turn NanoGuns2 to z-axis <-20.> speed <30.>;
+		turn NanoGuns1 to z-axis <20.> speed <30.>;
+		wait-for-turn NanoGuns1 around z-axis;
+		Static_Var_5 = 1;
+		Static_Var_4 = 0;
+		start-script Stop();
+	}
+}
+
+OpenYard()
+{
+	set YARD_OPEN to 1;
+	while( !get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 1;
+	}
+	set BUGGER_OFF to 0;
+}
+
+Go()
+{
+	while( Static_Var_6 )
+	{
+		sleep 1000;
+	}
+	if( !Static_Var_5 )
+	{
+		if( !Static_Var_4 )
+		{
+			Static_Var_4 = 1;
+			call-script activatescr();
+		}
+	}
+	call-script OpenYard();
+	set INBUILDSTANCE to 1;
+}
+
+Create()
+{
+	Static_Var_4 = 0;
+	Static_Var_5 = 0;
+	Static_Var_6 = 0;
+	dont-shade ClampBeam;
+	dont-shade Clamps1;
+	dont-shade Clamps2;
+	dont-shade Body;
+	dont-shade Door1;
+	dont-shade NanoDoors1A;
+	dont-shade NanoDoors1B;
+	dont-shade NanoPosts1;
+	dont-shade NanoGuns1;
+	dont-shade Door2;
+	dont-shade NanoDoors2A;
+	dont-shade NanoDoors2B;
+	dont-shade NanoPosts2;
+	dont-shade NanoGuns2;
+	dont-shade NanoPad;
+	start-script SmokeUnit();
+}
+
+QueryNanoPiece(piecenum)
+{
+	if( Static_Var_1 == 0 )
+	{
+		piecenum = Spray1A;
+	}
+	if( Static_Var_1 == 1 )
+	{
+		piecenum = Spray1B;
+	}
+	if( Static_Var_1 == 2 )
+	{
+		piecenum = Spray2A;
+	}
+	if( Static_Var_1 == 3 )
+	{
+		piecenum = Spray2B;
+	}
+	++Static_Var_1;
+	if( Static_Var_1 > 3 )
+	{
+		Static_Var_1 = 0;
+	}
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( Static_Var_3 )
+	{
+		Static_Var_2 = requestedstate;
+		return (0);
+	}
+	Static_Var_3 = 1;
+	currentstate = Static_Var_2;
+	Static_Var_2 = requestedstate;
+	while( Static_Var_2 != currentstate )
+	{
+		if( Static_Var_2 == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( Static_Var_2 == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	Static_Var_3 = 0;
+}
+
+Activate()
+{
+	signal 2;
+	start-script Go();
+}
+
+StartBuilding()
+{
+	spin NanoPad around y-axis speed <30.>;
+	signal 2;
+}
+
+StopBuilding()
+{
+	stop-spin NanoPad around y-axis;
+	start-script Stop();
+}
+
+QueryBuildInfo(piecenum)
+{
+	piecenum = NanoPad;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = Body;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode Base type NOHEATCLOUD;
+		explode Body type NOHEATCLOUD;
+		explode Door1 type NOHEATCLOUD;
+		explode NanoDoors1A type NOHEATCLOUD;
+		explode NanoDoors1B type NOHEATCLOUD;
+		explode NanoPosts1 type NOHEATCLOUD;
+		explode NanoGuns1 type NOHEATCLOUD;
+		explode Spray1A type NOHEATCLOUD;
+		explode Spray1B type NOHEATCLOUD;
+		explode Door2 type NOHEATCLOUD;
+		explode NanoDoors2A type NOHEATCLOUD;
+		explode NanoDoors2B type NOHEATCLOUD;
+		explode NanoPosts2 type NOHEATCLOUD;
+		explode NanoGuns2 type NOHEATCLOUD;
+		explode Spray2A type NOHEATCLOUD;
+		explode Spray2B type NOHEATCLOUD;
+		explode ClampBeam type NOHEATCLOUD;
+		explode Clamps1 type NOHEATCLOUD;
+		explode Clamps2 type NOHEATCLOUD;
+		explode NanoPad type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode Base type SHATTER | NOHEATCLOUD;
+		explode Body type SHATTER | NOHEATCLOUD;
+		explode Door1 type SHATTER | NOHEATCLOUD;
+		explode NanoDoors1A type SHATTER | NOHEATCLOUD;
+		explode NanoDoors1B type SHATTER | NOHEATCLOUD;
+		explode NanoPosts1 type SHATTER | NOHEATCLOUD;
+		explode NanoGuns1 type SHATTER | NOHEATCLOUD;
+		explode Spray1A type SHATTER | NOHEATCLOUD;
+		explode Spray1B type SHATTER | NOHEATCLOUD;
+		explode Door2 type SHATTER | NOHEATCLOUD;
+		explode NanoDoors2A type SHATTER | NOHEATCLOUD;
+		explode NanoDoors2B type SHATTER | NOHEATCLOUD;
+		explode NanoPosts2 type SHATTER | NOHEATCLOUD;
+		explode NanoGuns2 type SHATTER | NOHEATCLOUD;
+		explode Spray2A type SHATTER | NOHEATCLOUD;
+		explode Spray2B type SHATTER | NOHEATCLOUD;
+		explode ClampBeam type SHATTER | NOHEATCLOUD;
+		explode Clamps1 type SHATTER | NOHEATCLOUD;
+		explode Clamps2 type SHATTER | NOHEATCLOUD;
+		explode NanoPad type SHATTER | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode Base type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode Body type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode Door1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode NanoDoors1A type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode NanoDoors1B type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode NanoPosts1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode NanoGuns1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode Spray1A type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode Spray1B type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode Door2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode NanoDoors2A type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode NanoDoors2B type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode NanoPosts2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode NanoGuns2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode Spray2A type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode Spray2B type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode ClampBeam type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode Clamps1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode Clamps2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode NanoPad type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		
+	}
+	corpsetype = 3;
+	explode Base type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode Body type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode Door1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode NanoDoors1A type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode NanoDoors1B type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode NanoPosts1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode NanoGuns1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode Spray1A type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode Spray1B type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode Door2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode NanoDoors2A type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode NanoDoors2B type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode NanoPosts2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode NanoGuns2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode Spray2A type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode Spray2B type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode ClampBeam type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode Clamps1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode Clamps2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode NanoPad type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
+}

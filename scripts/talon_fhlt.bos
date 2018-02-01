@@ -1,0 +1,186 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  flare1, flare2, flare3, flare4, base, body, turret, sleeve,
+       barrel1, barrel2, barrel3, barrel4;
+
+static-var  Static_Var_1;
+
+
+RockOnWaves()
+{
+	while( TRUE )
+	{
+		turn base to x-axis <1.> speed <2.>;
+		move base to y-axis [0.] speed [0.];
+		wait-for-turn base around x-axis;
+		turn base to x-axis <-1.> speed <2.>;
+		move base to y-axis [-0.] speed [0.];
+		wait-for-move base along y-axis;
+		move base to y-axis [0.] speed [0.];
+		wait-for-turn base around x-axis;
+		turn base to x-axis <1.> speed <2.>;
+		move base to y-axis [-0.] speed [0.];
+		wait-for-move base along y-axis;
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	hide flare1;
+	hide flare3;
+	hide flare2;
+	hide flare4;
+	Static_Var_1 = 0;
+	start-script SmokeUnit();
+	start-script RockOnWaves();
+}
+
+AimPrimary(heading, pitch)
+{
+	signal 2;
+	set-signal-mask 2;
+	turn turret to y-axis heading speed <200.>;
+	turn sleeve to x-axis <0.> - pitch speed <200.>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn sleeve around x-axis;
+	return (1);
+}
+
+FirePrimary()
+{
+	if( Static_Var_1 == 0 )
+	{
+		move barrel1 to z-axis [-3.] now;
+		show flare1;
+		sleep 150;
+		hide flare1;
+		move barrel1 to z-axis [0.] speed [5.];
+	}
+	if( Static_Var_1 == 1 )
+	{
+		move barrel2 to z-axis [-3.] now;
+		show flare2;
+		sleep 150;
+		hide flare2;
+		move barrel2 to z-axis [0.] speed [5.];
+	}
+	if( Static_Var_1 == 2 )
+	{
+		move barrel3 to z-axis [-3.] now;
+		show flare3;
+		sleep 150;
+		hide flare3;
+		move barrel3 to z-axis [0.] speed [5.];
+	}
+	if( Static_Var_1 == 3 )
+	{
+		move barrel4 to z-axis [-3.] now;
+		show flare4;
+		sleep 150;
+		hide flare4;
+		move barrel4 to z-axis [0.] speed [5.];
+	}
+	++Static_Var_1;
+	if( Static_Var_1 == 4 )
+	{
+		Static_Var_1 = 0;
+	}
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = Static_Var_1;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = Static_Var_1;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	hide flare1;
+	hide flare2;
+	hide flare3;
+	hide flare4;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode barrel1 type NOHEATCLOUD;
+		explode barrel3 type NOHEATCLOUD;
+		explode barrel2 type NOHEATCLOUD;
+		explode barrel4 type NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
+		explode sleeve type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode barrel1 type SHATTER | NOHEATCLOUD;
+		explode barrel3 type SHATTER | NOHEATCLOUD;
+		explode barrel2 type FALL | NOHEATCLOUD;
+		explode barrel4 type FALL | NOHEATCLOUD;
+		explode base type NOHEATCLOUD | NOHEATCLOUD;
+		explode sleeve type SHATTER | NOHEATCLOUD;
+		explode turret type SHATTER | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode barrel1 type SHATTER | NOHEATCLOUD;
+		explode barrel3 type SHATTER | NOHEATCLOUD;
+		explode barrel2 type FALL | NOHEATCLOUD;
+		explode barrel4 type FALL | NOHEATCLOUD;
+		explode base type NOHEATCLOUD | NOHEATCLOUD;
+		explode sleeve type SHATTER | NOHEATCLOUD;
+		explode turret type SHATTER | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode barrel1 type SHATTER | NOHEATCLOUD;
+	explode barrel3 type SHATTER | NOHEATCLOUD;
+	explode barrel2 type FALL | NOHEATCLOUD;
+	explode barrel4 type FALL | NOHEATCLOUD;
+	explode base type NOHEATCLOUD | NOHEATCLOUD;
+	explode sleeve type SHATTER | NOHEATCLOUD;
+	explode turret type SHATTER | NOHEATCLOUD;
+	return (corpsetype);
+}
