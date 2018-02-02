@@ -55,7 +55,8 @@ return {
 		buildoptions = {
 			[1] = "talon_sfus",
 			[2] = "talon_metalmakerlvl2",
-			[3] = "talon_covertopscentre",
+			[3] = "talon_gate1",
+			[4] = "talon_covertopscentre",
 		},
 		customparams = {
 			buildpic = "talon_eck.png",

@@ -53,7 +53,9 @@ return {
 		buildoptions = {
 			[1] = "talon_abaddon",
 			[2] = "talon_repentance",
-			[3] = "talon_visitant",
+			[3] = "talon_mrtn",
+			[4] = "talon_visitant",
+
 		},
 		customparams = {
 			faction = "ARM",

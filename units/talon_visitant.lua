@@ -29,7 +29,7 @@ return {
 		mass = 7020,
 		maxdamage = 27500,
 		maxslope = 16,
-		maxvelocity = 1.5,
+		maxvelocity = 1.75,
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		movementclass = "TANKHOVER4",
@@ -51,13 +51,12 @@ return {
 		waterline = 7,
 		customparams = {
 			faction = "CORE",
-			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
 			dead = {
 				blocking = true,
 				damage = 12768,
-				description = "Adonis Wreckage",
+				description = "Visitant Wreckage",
 				featuredead = "heap",
 				footprintx = 4,
 				footprintz = 4,
@@ -68,7 +67,7 @@ return {
 			heap = {
 				blocking = false,
 				damage = 15960,
-				description = "Adonis Debris",
+				description = "Visitant Debris",
 				footprintx = 4,
 				footprintz = 4,
 				metal = 2808,

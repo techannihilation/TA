@@ -82,7 +82,6 @@ return {
 			[20] = "talon_rl",
 			[21] = "talon_cir",
 			[22] = "talon_sy",
-			[23] = "talon_gen",
 		},
 		customparams = {
 			buildpic = "talon_cv.png",

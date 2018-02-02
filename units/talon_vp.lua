@@ -63,8 +63,9 @@ return {
 			[4] = "talon_emerald",
 			[5] = "talon_whinestone",
 			[6] = "talon_quartz",
-			[7] = "talon_obsidian",
-			[8] = "talon_lupa",
+			[7] = "talon_lupa",
+			[8] = "talon_sheatiped",
+			[9] = "talon_obsidian",
 		},
 		customparams = {
 			buildpic = "talon_vp.png",

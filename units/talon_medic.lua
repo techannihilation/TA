@@ -65,7 +65,7 @@ return {
 			[14] = "talon_rl",
 			[15] = "talon_popcorn",
 			[16] = "mercury",
-			[17] = "armmds",
+			[17] = "talon_mds",
 			[19] = "armdl",
 			[20] = "talon_ca",
 			[21] = "talon_echelon",

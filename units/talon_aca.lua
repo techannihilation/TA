@@ -67,12 +67,15 @@ return {
 			[7] = "talon_aap",
 			[8] = "talon_eap",
 			[9] = "talon_gate",
+			[16] = "talon_obelisk",
 			[10] = "talon_damascus",
 			[11] = "talon_armistice",
 			[12] = "talon_silo",
 			[13] = "talon_lrpt",
 			[14] = "talon_fort",
 			[15] = "talon_asp",
+			[16] = "talon_sd",
+			[18] = "talon_veloute",
 				
 		},
 		customparams = {

@@ -52,6 +52,10 @@ return {
 		yardmap = "oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo",
 		buildoptions = {
 			[1] = "talon_hornet",
+			[2] = "talon_pampa",
+			[3] = "talon_handgod",
+
+
 
 		},
 		customparams = {

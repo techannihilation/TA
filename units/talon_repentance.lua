@@ -112,12 +112,12 @@ return {
 		weapondefs = {
 			cannon_siege = {
 				accuracy = 250,
-				areaofeffect = 550,
+				areaofeffect = 650,
 				avoidfeature = false,
 				burst = 1,
 				burstrate = 1.5,
 				cegtag = "Trail_cannon_med",
-				craterareaofeffect = 800,
+				craterareaofeffect = 650,
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 20000,

@@ -55,8 +55,11 @@ return {
 			[2] = "talon_mas",
 			[3] = "talon_metalmakerlvl2",
 			[4] = "talon_talpax",
-			[5] = "talon_rubix",
-			[5] = "talon_covertopscentre",
+			[5] = "talon_bulwark",
+			[6] = "talon_veloute",
+			[7] = "talon_gate1",
+			[8] = "talon_elixir",
+			[9] = "talon_covertopscentre",
 		},
 		customparams = {
 			buildpic = "talon_builderlvl3.dds",
