@@ -58,8 +58,9 @@ return {
 			[5] = "talon_bulwark",
 			[6] = "talon_veloute",
 			[7] = "talon_gate1",
-			[8] = "talon_elixir",
-			[9] = "talon_covertopscentre",
+			[8] = "talon_requiem",
+			[9] = "talon_elixir",
+			[10] = "talon_covertopscentre",
 		},
 		customparams = {
 			buildpic = "talon_builderlvl3.dds",
