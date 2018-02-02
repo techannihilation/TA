@@ -1,0 +1,160 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  flare, turret, base, sleeve, barrel,
+       tracks;
+
+static-var  Static_Var_1;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+HitByWeapon(anglex, anglez)
+{
+	signal 16;
+	set-signal-mask 16;
+	turn base to z-axis anglez speed <105.>;
+	turn base to x-axis anglex speed <105.>;
+	wait-for-turn base around z-axis;
+	wait-for-turn base around x-axis;
+	turn base to z-axis <0.> speed <30.>;
+	turn base to x-axis <0.> speed <30.>;
+}
+
+RockUnit(anglex, anglez)
+{
+	signal 16;
+	set-signal-mask 16;
+	turn base to x-axis anglex speed <50.>;
+	turn base to z-axis anglez speed <50.>;
+	wait-for-turn base around z-axis;
+	wait-for-turn base around x-axis;
+	turn base to z-axis <0.> speed <20.>;
+	turn base to x-axis <0.> speed <20.>;
+}
+
+Create()
+{
+	hide flare;
+	Static_Var_1 = 3000;
+	start-script SmokeUnit();
+
+}
+
+SetMaxReloadTime(Func_Var_1)
+{
+	Static_Var_1 = Func_Var_1 * 2;
+}
+
+RestoreAfterDelay()
+{
+	signal 32;
+	set-signal-mask 32;
+	sleep Static_Var_1;
+	turn turret to y-axis <0.> speed <35.>;
+	turn sleeve to x-axis <0.> speed <35.>;
+}
+
+
+AimTertiary(heading, pitch)
+{
+	signal 4;
+	set-signal-mask 4;
+	turn turret to y-axis heading speed <200.>;
+	turn sleeve to x-axis <0.> - pitch speed <200.>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn sleeve around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+flaret()
+{
+	emit-sfx 1025 from flare;
+	sleep 60;
+}
+
+FireTertiary()
+{
+
+}
+
+QueryTertiary(piecenum)
+{
+	piecenum = flare;
+}
+
+AimFromTertiary(piecenum)
+{
+	piecenum = turret;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	hide flare;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode barrel type NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
+		explode sleeve type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode barrel type FALL | NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
+		explode sleeve type SHATTER | NOHEATCLOUD;
+		explode turret type FALL | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode barrel type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
+		explode sleeve type SHATTER | NOHEATCLOUD;
+		explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode barrel type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode base type NOHEATCLOUD;
+	explode sleeve type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);	
+}

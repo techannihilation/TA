@@ -3,14 +3,12 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, rocket, aimer, cloud_shoulder, cloud_arm, cloud_hand,
-       lightning, towerthing, spinner, glow;
+piece  base, body, ringdevice, ring1, ring2, ring3, ring4,
+       ring5, glow, rocket, aimer, smoke1, smoke2, smoke3, smoke4;
 
 static-var  restore_delay;
 
-// Signal definitions
 #define SIG_AIM				2
-
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -39,11 +37,30 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
+RestoreAfterDelay()
+{
+	sleep restore_delay;
+}
+
 Create()
 {
-	restore_delay = 500;
-	hide rocket;
+	dont-cache glow;
+	dont-shade glow;
+	hide ring1;
+	hide ring2;
+	hide ring3;
+	hide ring4;
+	hide ring5;
 	start-script SmokeUnit();
+    restore_delay = 500;
+	dont-shade base;
+	dont-shade body;
+	dont-shade ring1;
+	dont-shade ring2;
+	dont-shade ring3;
+	dont-shade ring4;
+	dont-shade ring5;
+	
 }
 
 AimPrimary(heading, pitch)
@@ -51,16 +68,13 @@ AimPrimary(heading, pitch)
 	
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-		
 	show rocket;
-
-	if( TRUE )
-	{
-		move rocket to y-axis [20.000000] speed [2.500000];
-		wait-for-move rocket along y-axis;
-		sleep 250;
-	}
-	
+	move rocket to y-axis [60.000000] speed [2.000000];
+	wait-for-move rocket along y-axis;
+	emit-sfx 1024 from smoke1;
+	emit-sfx 1024 from smoke2;
+	emit-sfx 1024 from smoke3;
+	emit-sfx 1024 from smoke4;
 	return (1);
 }
 
@@ -71,7 +85,11 @@ AimFromPrimary(piecenum)
 
 FirePrimary()
 {
-	emit-sfx 1024 from rocket;
+	sleep 100;
+	emit-sfx 1024 from smoke1;
+	emit-sfx 1024 from smoke2;
+	emit-sfx 1024 from smoke3;
+	emit-sfx 1024 from smoke4;
 	hide rocket;	
 	move rocket to y-axis [0.000000] now;
 	sleep restore_delay;
@@ -81,6 +99,7 @@ QueryPrimary(piecenum)
 {
 	piecenum = aimer;
 }
+
 
 SweetSpot(piecenum)
 {
@@ -92,25 +111,24 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode body type NOHEATCLOUD;
-		explode glow type NOHEATCLOUD | SHATTER | FALL;;
-		return (0);
+		explode base type NOHEATCLOUD;
+		explode body type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode body type NOHEATCLOUD | SHATTER ;
-		explode glow type NOHEATCLOUD | SHATTER | FALL;
+		explode base type NOHEATCLOUD;
+		explode body type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
 		return (0);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode body type NOHEATCLOUD | SHATTER | FALL;
-		explode glow type NOHEATCLOUD | EXPLODE_ON_HIT | FIRE | SHATTER | FALL;
+		explode base type NOHEATCLOUD;
+		explode body type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
 		return (0);
 	}
 	corpsetype = 3;
-	explode body type NOHEATCLOUD | SHATTER ;
-	explode glow type NOHEATCLOUD | EXPLODE_ON_HIT | FIRE | SHATTER | FALL;
+	explode base type NOHEATCLOUD;
+	explode body type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
 }

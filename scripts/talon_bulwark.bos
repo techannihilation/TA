@@ -1,0 +1,586 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+
+piece  fp1, fp2, fp3, fp4, base, body, door1, door2, door3, door4, pod1, pod2, pod3, pod4;
+
+static-var  open, restore_delay, statechg_DesiredState, statechg_StateChanging ;
+static-var	shield_on, nbr_shield, dome_on, nbr_dome ; 
+static-var firedelay, salvo1, salvo2, salvo3, salvo4;
+
+// Signal definitions
+#define SIG_AIM				2
+#define SIG_AIM_1			4
+#define SIG_AIM_2			8
+#define SIG_AIM_3			16
+#define SIG_AIM_4			32
+
+activatescr()
+{
+	if( TRUE )
+	{
+		move door1 to y-axis [0.000000] now;
+		move door1 to y-axis [-5] speed [8.000000];
+		move door2 to y-axis [0.000000] now;
+		move door2 to y-axis [-5] speed [8.000000];
+		move door3 to y-axis [0.000000] now;
+		move door3 to y-axis [-5] speed [8.000000];
+		move door4 to y-axis [0.000000] now;
+		move door4 to y-axis [-5] speed [8.000000];
+		turn door1 to x-axis <90.000000> now;
+		turn door1 to x-axis <0.000000> speed <225.000000>;
+		turn door2 to z-axis <-90.000000> now;
+		turn door2 to z-axis <0.000000> speed <225.000000>;
+		turn door3 to x-axis <-90.000000> now;
+		turn door3 to x-axis <0.000000> speed <225.000000>;
+		turn door4 to z-axis <90.000000> now;
+		turn door4 to z-axis <0.000000> speed <225.000000>;
+		sleep 398;
+	}
+	if( TRUE )
+	{
+		move door1 to y-axis [-5] speed [0.000000];
+		move door2 to y-axis [-5] speed [0.000000];
+		move door3 to y-axis [-5] speed [0.000000];
+		move door4 to y-axis [-5] speed [0.000000];
+		sleep 500;
+	}
+	
+	if( TRUE )
+	{
+		move pod1 to y-axis [0] speed [5.000000];
+		move pod2 to y-axis [0] speed [5.000000];
+		move pod3 to y-axis [0] speed [5.000000];
+		move pod4 to y-axis [0] speed [5.000000];
+		sleep 539;
+	}
+	sleep 100;
+
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		move pod1 to y-axis [-3] speed [5.000000];
+		move pod2 to y-axis [-3] speed [5.000000];
+		move pod3 to y-axis [-3] speed [5.000000];
+		move pod4 to y-axis [-3] speed [5.000000];
+		sleep 500;
+	}
+	
+	if( TRUE )
+	{
+		move door1 to y-axis [-5] now;
+		move door1 to y-axis [-5] speed [0.000000];
+		move door2 to y-axis [-5] now;
+		move door2 to y-axis [-5] speed [0.000000];
+		move door3 to y-axis [-5] now;
+		move door3 to y-axis [-5] speed [0.000000];
+		move door4 to y-axis [-5] now;
+		move door4 to y-axis [-5] speed [0.000000];
+		sleep 320;
+	}	
+	if( TRUE )
+	{
+		move door1 to y-axis [0.000000] speed [6.000000];
+		move door2 to y-axis [0.000000] speed [6.000000];
+		move door3 to y-axis [0.000000] speed [6.000000];
+		move door4 to y-axis [0.000000] speed [6.000000];
+		sleep 509;
+	}
+	if( TRUE )
+	{
+		turn door1 to x-axis <90.000000> speed <225.000000>;
+		turn door2 to z-axis <-90.000000> speed <225.000000>;
+		turn door3 to x-axis <-90.000000> speed <225.000000>;
+		turn door4 to z-axis <90.000000> speed <225.000000>;
+		sleep 400;
+	}
+	sleep 17;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Go()
+{
+	dont-cache door1;
+	dont-cache door2;
+	dont-cache door3;
+	dont-cache door4;
+	
+	dont-cache pod1;
+	dont-cache pod2;
+	dont-cache pod3;
+	dont-cache pod4;
+	
+	if( !open )
+	{
+		call-script activatescr();
+	}
+	open = 1;
+	set ARMORED to 0;
+	if (shield_on)
+	{
+		set ARMORED to 1;
+	}
+}
+
+Stop()
+{
+	open = 0;
+	call-script deactivatescr();
+	set ARMORED to 1;
+	cache door1;
+	cache door2;
+	cache door3;
+	cache door4;
+	
+	cache pod1;
+	cache pod2;
+	cache pod3;
+	cache pod4;
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+RestoreAfterDelay()
+{
+	sleep 5000;
+	set-signal-mask 0;
+	start-script RequestState(1);
+}
+
+Create()
+{
+	nbr_shield = 0;
+	nbr_dome = 0;
+
+	shield_on = 0;
+	dome_on = 0;
+	
+	firedelay = 0;
+
+	salvo1 = 0;
+	salvo2 = 0;
+	salvo3 = 0;
+	salvo4 = 0;
+
+	dont-shade base;
+	dont-shade body;
+
+	dont-shade door1;
+	dont-shade door2;
+	dont-shade door3;
+	dont-shade door4;
+
+	dont-shade pod1;
+	dont-shade pod2;
+	dont-shade pod3;
+	dont-shade pod4;
+
+	open = 1;
+	restore_delay = 5000;
+	call-script InitState();
+	start-script RequestState(0);
+
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 1000;
+	}
+
+	start-script SmokeUnit();
+	start-script RestoreAfterDelay();
+}
+
+AimWeapon1(heading, pitch)
+{
+	start-script RequestState(0);
+	signal SIG_AIM_1;
+	set-signal-mask SIG_AIM_1;
+	while( !open )
+	{
+		sleep 250;
+	}
+
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireWeapon1()
+{
+	if( salvo1 == 0 )
+	{
+		turn pod1 to y-axis <120.000000> speed <200.000000>;
+	}
+
+	if( salvo1 == 1 )
+	{
+		turn pod2 to y-axis <120.000000> speed <200.000000>;
+	}
+
+	if( salvo1 == 2 )
+	{
+		turn pod3 to y-axis <120.000000> speed <200.000000>;
+	}
+	if( salvo1 == 3 )
+	{
+		turn pod4 to y-axis <120.000000> speed <200.000000>;
+	}
+
+	if( salvo1 == 4 )
+	{
+		turn pod1 to y-axis <240.000000> speed <200.000000>;
+	}
+
+	if( salvo1 == 5 )
+	{
+		turn pod2 to y-axis <240.000000> speed <200.000000>;
+	}
+	
+	if( salvo1 == 6 )
+	{
+		turn pod3 to y-axis <240.000000> speed <200.000000>;
+	}
+
+	if( salvo1 == 7 )
+	{
+		turn pod4 to y-axis <0.000000> speed <200.000000>;
+	}
+
+	if( salvo1 == 8 )
+	{
+		turn pod1 to y-axis <0.000000> speed <200.000000>;
+	}
+	if( salvo1 == 9)
+	{
+		turn pod2 to y-axis <0.000000> speed <200.000000>;
+	}
+
+	if( salvo1 == 10 )
+	{
+		turn pod3 to y-axis <0.000000> speed <200.000000>;
+	}
+
+	if( salvo1 == 11 )
+	{
+		turn pod4 to y-axis <0.000000> speed <200.000000>;
+	}
+	++salvo1;
+	if( salvo1 == 12 )
+	{
+		salvo1 = 0;
+	}
+}
+
+AimFromWeapon1(piecenum)
+{
+	piecenum = body;
+}
+
+QueryWeapon1(piecenum)
+{
+	if( salvo1 == 0 or salvo1 == 4 or  salvo1 == 8)
+	{
+		piecenum = fp1;
+	}
+	if( salvo1 == 1 or salvo1 == 5 or  salvo1 == 9)
+	{
+		piecenum = fp2;
+	}
+	if( salvo1 == 2 or salvo1 == 6 or  salvo1 == 10)
+	{
+		piecenum = fp3;
+	}
+	if( salvo1 == 3 or salvo1 == 7 or  salvo1 == 11)
+	{
+		piecenum = fp4;
+	}
+
+}
+
+AimWeapon2(heading, pitch)
+{
+	start-script RequestState(0);
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	while( !open )
+	{
+		sleep 250;
+	}
+
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireWeapon2()
+{
+	if( salvo2 == 0 )
+	{
+		turn pod2 to y-axis <120.000000> speed <75.000000>;
+	}
+
+	if( salvo2 == 1 )
+	{
+		turn pod2 to y-axis <240.000000> speed <75.000000>;
+	}
+
+	if( salvo2 == 2 )
+	{
+		turn pod2 to y-axis <0.000000> speed <75.000000>;
+	}
+
+	++salvo2;
+	if( salvo2 == 3 )
+	{
+		salvo2 = 0;
+	}
+}
+
+AimFromWeapon2(piecenum)
+{
+	piecenum = pod2;
+}
+
+QueryWeapon2(piecenum)
+{
+	piecenum = fp2;
+}
+AimWeapon3(heading, pitch)
+{
+	start-script RequestState(0);
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
+	while( !open )
+	{
+		sleep 250;
+	}
+
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireWeapon3()
+{
+
+	if( salvo3 == 0 )
+	{
+		turn pod3 to y-axis <120.000000> speed <75.000000>;
+	}
+
+	if( salvo3 == 1 )
+	{
+		turn pod3 to y-axis <240.000000> speed <75.000000>;
+	}
+
+	if( salvo3 == 2 )
+	{
+		turn pod3 to y-axis <0.000000> speed <75.000000>;
+	}
+
+	++salvo3;
+	if( salvo3 == 3 )
+	{
+		salvo3 = 0;
+	}
+}
+
+AimFromWeapon3(piecenum)
+{
+	piecenum = pod3;
+}
+
+QueryWeapon3(piecenum)
+{
+	piecenum = fp3;
+}
+AimWeapon4(heading, pitch)
+{
+	start-script RequestState(0);
+	signal SIG_AIM_4;
+	set-signal-mask SIG_AIM_4;
+	while( !open )
+	{
+		sleep 250;
+	}
+
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireWeapon4()
+{
+	if( salvo4 == 0 )
+	{
+		turn pod4 to y-axis <120.000000> speed <75.000000>;
+	}
+
+	if( salvo4 == 1 )
+	{
+		turn pod4 to y-axis <240.000000> speed <75.000000>;
+	}
+
+	if( salvo4 == 2 )
+	{
+		turn pod4 to y-axis <0.000000> speed <75.000000>;
+	}
+
+	++salvo4;
+	if( salvo4 == 3 )
+	{
+		salvo4 = 0;
+	}
+}
+
+AimFromWeapon4(piecenum)
+{
+	piecenum = pod4;
+}
+
+QueryWeapon4(piecenum)
+{
+	piecenum = fp4;
+}
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	hide fp1;
+	hide fp2;
+	hide fp3;
+	hide fp4;
+	if( severity <= 25 )
+	{
+		if( open )
+		{
+			corpsetype = 1;
+		}
+		if( !open )
+		{
+			corpsetype = 1;
+		}
+		explode base type NOHEATCLOUD;
+		explode door1 type NOHEATCLOUD;
+		explode door2 type NOHEATCLOUD;
+		explode door3 type NOHEATCLOUD;
+		explode door4 type NOHEATCLOUD;
+		explode pod1 type NOHEATCLOUD;
+		explode pod2 type NOHEATCLOUD;
+		explode pod3 type NOHEATCLOUD;
+		explode pod4 type NOHEATCLOUD;
+		return (corpsetype );
+	}
+	if( severity <= 50 )
+	{
+		if( open )
+		{
+			corpsetype = 2;
+		}
+		if( !open )
+		{
+			corpsetype = 1;
+		}
+		explode base type NOHEATCLOUD;
+		explode door1 type FALL | NOHEATCLOUD ;
+		explode door2 type FALL | NOHEATCLOUD ;
+		explode door3 type FALL | NOHEATCLOUD ;
+		explode door4 type FALL | NOHEATCLOUD ;
+		explode pod1 type FALL | NOHEATCLOUD ;
+		explode pod2 type NOHEATCLOUD ;
+		explode pod3 type NOHEATCLOUD ;
+		explode pod4 type NOHEATCLOUD ;
+		return (corpsetype );
+	}
+	if( severity <= 99 )
+	{
+		if( open )
+		{
+			corpsetype = 3;
+		}
+		if( !open )
+		{
+			corpsetype = 1;
+		}
+explode door1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+explode door2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+explode door3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+explode door4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+explode pod1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+explode pod2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+explode pod3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+explode pod4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype );
+	}
+corpsetype = 3;
+explode base type NOHEATCLOUD;
+explode door1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+explode door2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+explode door3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+explode door4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+explode pod1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+explode pod2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+explode pod3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+explode pod4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+return (corpsetype );
+
+}

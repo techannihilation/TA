@@ -85,8 +85,8 @@ Create()
 	Static_Var_2 = 100;
 	start-script SmokeUnit();
 	Static_Var_3 = 0;
-	turn turret to x-axis <45.> now;
-	turn sleeves to x-axis <-45.> now;
+	turn turret to x-axis <-45.> now;
+	turn sleeves to x-axis <45.> now;
 	Static_Var_5 = 1;
 }
 

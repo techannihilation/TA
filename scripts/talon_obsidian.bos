@@ -66,16 +66,16 @@ SetMaxReloadTime(time)
 RestoreAfterDelay()
 {
 	sleep Static_Var_1;
-	turn turret to y-axis <0.> speed <35.>;
-	turn sleeve to x-axis <0.> speed <15.>;
+	turn turret to y-axis <0.> speed <30.>;
+	turn sleeve to x-axis <0.> speed <20.>;
 }
 
-AimPrimary(Func_Var_1, Func_Var_2)
+AimPrimary(heading, pitch)
 {
 	signal 2;
 	set-signal-mask 2;
-	turn turret to y-axis Func_Var_1 speed <120.>;
-	turn sleeve to x-axis <0.> - Func_Var_2 speed <120.>;
+	turn turret to y-axis heading speed <60.>;
+	turn sleeve to x-axis <0.000000> - pitch speed <40.>;
 	wait-for-turn turret around y-axis;
 	wait-for-turn sleeve around x-axis;
 	start-script RestoreAfterDelay();
@@ -108,9 +108,9 @@ QueryPrimary(Func_Var_1)
 	Func_Var_1 = Static_Var_2;
 }
 
-AimFromPrimary(Func_Var_1)
+AimFromPrimary(piecenum)
 {
-	Func_Var_1 = 15;
+	piecenum = turret;
 }
 
 SweetSpot(piecenum)
