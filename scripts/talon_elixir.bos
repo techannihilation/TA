@@ -3,8 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, ringdevice, ring1, ring2, ring3, ring4,
-       ring5, glow, rocket, aimer, smoke1, smoke2, smoke3, smoke4;
+piece  base, body, glow, rocket, aimer, smoke1, smoke2, smoke3, smoke4;
 
 static-var  restore_delay;
 
@@ -46,21 +45,10 @@ Create()
 {
 	dont-cache glow;
 	dont-shade glow;
-	hide ring1;
-	hide ring2;
-	hide ring3;
-	hide ring4;
-	hide ring5;
 	start-script SmokeUnit();
     restore_delay = 500;
 	dont-shade base;
-	dont-shade body;
-	dont-shade ring1;
-	dont-shade ring2;
-	dont-shade ring3;
-	dont-shade ring4;
-	dont-shade ring5;
-	
+	dont-shade body;	
 }
 
 AimPrimary(heading, pitch)
