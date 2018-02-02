@@ -553,8 +553,8 @@ local morphDefs = {
 	},	
 	armlatnk = {
 		into = 'armchimera',
-		time = 180,
-		xp = 0.75,
+		time = 60,
+		xp = 0.50,
 	},
 	armchimera = {
 		into = 'nsaagriz',
