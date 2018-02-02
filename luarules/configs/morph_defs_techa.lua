@@ -1033,9 +1033,16 @@ local morphDefs = {
 		xp = 0.60,
 	},
 	tllroaster = {
-     	into = 'tlltelsatnk',
-		time = 60,
-		xp = 0.30,
+		{
+			into = 'tlltelsatnk',
+			time = 60,
+			xp = 0.30,
+		},
+		{
+			into = 'tllroaster1',
+			time = 80,
+			xp = 0.50,
+		},
 	},
 	tllpbot = {
      	into = 'tllartybot',
