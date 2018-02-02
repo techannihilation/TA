@@ -136,6 +136,45 @@ local morphDefs = {
 		into = 'tllcom7',
 		time = 180,
 	},
+	talon_com = {
+		{
+			into = 'talon_com4',
+			time = 30,
+		
+			--metal = 0,
+			--energy = 0,
+			--Free For Xmas
+		
+		},
+		{
+			into = 'talon_com1',
+			time = 30,
+		
+			--metal = 0,
+			--energy = 0,
+			--Free For Xmas
+		},
+	},
+	talon_com1 = {
+		into = 'talon_com_fusion',
+        	time = 60,
+	},
+	talon_com_fusion = {
+		into = 'talon_com6',
+        	time = 120,
+	},
+	talon_com4 = {
+		into = 'talon_com5',
+        	time = 60,
+	},
+	talon_com5 = {
+		into = 'talon_com6',
+		time = 120,
+	},
+	talon_com6 = {
+		into = 'talon_com7',
+		time = 180,
+	},
 	corrl = {
 		into = 'corrl1',
 		time = 10,
