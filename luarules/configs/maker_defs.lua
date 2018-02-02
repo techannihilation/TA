@@ -17,6 +17,11 @@ local T4 = 1.42/100
 local T5 = 1.47/100
 --local T6 = 1.53/100
 
+local TAL1 = 1.3/100
+local TAL2 = 1.65/100
+local TAL3 = 1.7/100
+local TAL4 = 1.9/100
+
 
 local convertCapacities = {
 
@@ -53,6 +58,15 @@ local convertCapacities = {
 		--[UnitDefNames.____.id]  = { c = 10000, e = (T6) }, -- Super
 
 		[UnitDefNames.tllgen.id]  = { c = UnitDefNames.tllgen.energyMake, e = (ACZ) }, -- Corgen Combo fusion
+	
+	--TALON
+	[UnitDefNames.talon_makr.id]  = { c = 125, e = (TA1) }, -- Normal
+	[UnitDefNames.talon_fmkr.id]  = { c = 150, e = (TA1) }, -- Floating
+	[UnitDefNames.talon_amaker.id]  = { c = 800, e = (T2) }, -- Moho
+	[UnitDefNames.talon_metalmakerlvl2.id]  = { c = 8000, e = (T2) }, -- Moho t3	
+	[UnitDefNames.talon_metalmakerlvl3.id]  = { c = 80000, e = (T2) }, -- Moho t4
+}
+
     }
 
 
