@@ -8,6 +8,8 @@ local C3 = 1.46/100
 local AC4 = 1.6/100
 local AC5 = 1.7/100
 local AC6 = 1.8/100
+local AC7 = 1.9/100
+
 
 local T0 = 1.08/100
 local T1 = 1.16/100
@@ -28,7 +30,8 @@ local convertCapacities = {
 		[UnitDefNames.armckmakr.id]  = { c = 400, e = (A3) }, -- Cloaked/Hardened
 		[UnitDefNames.armmmkr.id]  = { c = 800, e = (AC4) }, -- Moho
 		[UnitDefNames.armuwmmm.id]  = { c = 1000, e = (AC5) }, -- Underwater
-		[UnitDefNames.ametalmakerlvl2.id]  = { c = 16000, e = (AC6) }, -- Super
+		[UnitDefNames.ametalmakerlvl2.id]  = { c = 16000, e = (AC6) }, -- T3
+		[UnitDefNames.ametalmakerlvl3.id]  = { c = 80000, e = (AC7) }, -- T4
 		
 		[UnitDefNames.armgen.id]  = { c = UnitDefNames.armgen.energyMake, e = (ACZ) }, -- Armgen Combo fusion
 					
@@ -40,7 +43,8 @@ local convertCapacities = {
 		[UnitDefNames.corhmakr.id]  = { c = 3072, e = (C3) }, -- Cloaked/Hardened
 		[UnitDefNames.cormmkr.id]  = { c = 1024, e = (AC4) }, -- Moho
 		[UnitDefNames.coruwmmm.id]  = { c = 1280, e = (AC5) }, -- Underwater
-		[UnitDefNames.cmetalmakerlvl2.id]  = { c =20480, e = (AC6) }, -- Super
+		[UnitDefNames.cmetalmakerlvl2.id]  = { c =20480, e = (AC6) }, -- T3
+		[UnitDefNames.cmetalmakerlvl3.id]  = { c = 90000, e = (AC7) }, -- T4
 
 		[UnitDefNames.corgen.id]  = { c = UnitDefNames.corgen.energyMake, e = (ACZ) }, -- Corgen Combo fusion
 		--TLL
