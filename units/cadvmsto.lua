@@ -41,7 +41,7 @@ return {
 		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo",
 		customparams = {
 			buildpic = "cadvmsto.dds",
-			faction = "CORE",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
