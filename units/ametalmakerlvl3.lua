@@ -25,7 +25,7 @@ return {
 		maxdamage = 35000,
 		maxslope = 20,
 		maxwaterdepth = 0,
-		name = "T3 Metal Maker",
+		name = "T4 Metal Maker",
 		nochasecategory = "ALL",
 		objectname = "aMetalMakerLvl3",
 		radardistance = 0,
