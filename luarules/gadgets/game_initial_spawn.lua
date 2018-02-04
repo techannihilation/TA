@@ -43,12 +43,13 @@ local startUnitParamName = 'startUnit'
 local armcomDefID = UnitDefNames.armcom.id
 local corcomDefID = UnitDefNames.corcom.id
 local tllcomDefID = UnitDefNames.tllcom.id
+local talcomDefID = UnitDefNames.talon_com.id
 
 local validStartUnits = {
     [armcomDefID] = true,
     [corcomDefID] = true,
     [tllcomDefID] = true,
-
+    [talcomDefID] = true
 }
 local spawnTeams = {} -- spawnTeams[teamID] = allyID
 
@@ -186,8 +187,10 @@ function gadget:Initialize()
 				spSetTeamRulesParam(teamID, startUnitParamName, corcomDefID)
 			elseif teamSide == 'tll' then
 				spSetTeamRulesParam(teamID, startUnitParamName, tllcomDefID)
-			else
+			elseif teamSide == "arm"
 				spSetTeamRulesParam(teamID, startUnitParamName, armcomDefID)
+			else
+				spSetTeamRulesParam(teamID, startUnitParamName, talcomDefID)
 			end
 			spawnTeams[teamID] = teamAllyID
 			
