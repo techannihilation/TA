@@ -1,0 +1,93 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, f1, f2, f3, t1, t2, t3, t4, t5, t6, 
+	   p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, top;
+
+static-var	shield_on, nbr_shield, dome_on, nbr_dome ; 
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	start-script SmokeUnit();
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type NOHEATCLOUD;
+		explode t1 type NOHEATCLOUD;
+		explode t2 type NOHEATCLOUD;
+		explode t3 type NOHEATCLOUD;
+		explode t4 type NOHEATCLOUD;
+		explode t5 type NOHEATCLOUD;
+		explode t6 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type NOHEATCLOUD;
+		explode t1 type NOHEATCLOUD | FALL;
+		explode t2 type NOHEATCLOUD;
+		explode t3 type NOHEATCLOUD | FALL;
+		explode t4 type NOHEATCLOUD;
+		explode t5 type NOHEATCLOUD | FALL;
+		explode t6 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type NOHEATCLOUD;
+		explode t1 type NOHEATCLOUD | FALL;
+		explode t2 type NOHEATCLOUD;
+		explode t3 type NOHEATCLOUD | FALL;
+		explode t4 type NOHEATCLOUD;
+		explode t5 type NOHEATCLOUD | FALL;
+		explode t6 type NOHEATCLOUD;
+	}
+	corpsetype = 3;
+	explode base type NOHEATCLOUD;
+	explode t1 type NOHEATCLOUD | FALL;
+	explode t2 type NOHEATCLOUD;
+	explode t3 type NOHEATCLOUD | FALL;
+	explode t4 type NOHEATCLOUD;
+	explode t5 type NOHEATCLOUD | FALL;
+	explode t6 type NOHEATCLOUD;
+}

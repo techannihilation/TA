@@ -60,7 +60,7 @@ return {
 			[2] = "cormas",
 			[3] = "cmetalmakerlvl2",
 			[4] = "corses",
-			[5] = "cadvmsto",
+			[5] = "corsms",
 			[6] = "cornanotc3",
 			[7] = "corgate1",
 			[8] = "corfmd2",
