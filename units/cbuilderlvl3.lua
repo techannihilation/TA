@@ -56,7 +56,7 @@ return {
 		unitname = "cbuilderlvl3",
 		workertime = 2000,
 		buildoptions = {
-			[1] = "cfusionplant",
+			[1] = "corefus",
 			[2] = "cormas",
 			[3] = "cmetalmakerlvl2",
 			[4] = "corses",
