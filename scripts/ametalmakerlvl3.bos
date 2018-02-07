@@ -63,31 +63,6 @@ InitState()
 	statechg_StateChanging = FALSE;
 }
 
-RequestState(requestedstate, currentstate)
-{
-	if( statechg_StateChanging )
-	{
-		statechg_DesiredState = requestedstate;
-	}
-	statechg_StateChanging = TRUE;
-	currentstate = statechg_DesiredState;
-	statechg_DesiredState = requestedstate;
-	while( statechg_DesiredState != currentstate )
-	{
-		if( statechg_DesiredState == 0 )
-		{
-			call-script Go();
-			currentstate = 0;
-		}
-		if( statechg_DesiredState == 1 )
-		{
-			call-script Stop();
-			currentstate = 1;
-		}
-	}
-	statechg_StateChanging = FALSE;
-}
-
 MMStatus(Func_Var_1)
 {
 	Static_Var_1 = Func_Var_1;
@@ -132,12 +107,12 @@ Create()
 
 Activate()
 {
-	start-script RequestState(0);
+	start-script activatescr();
 }
 
 Deactivate()
 {
-	start-script RequestState(1);
+	start-script deactivatescr();
 }
 
 SweetSpot(piecenum)
