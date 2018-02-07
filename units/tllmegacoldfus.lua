@@ -2,7 +2,7 @@ return {
 	tllmegacoldfus = {
 		activatewhenbuilt = true,
 		buildangle = 4096,
-		buildcostenergy = 230000,
+		buildcostenergy = 210000,
 		buildcostmetal = 42500,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
