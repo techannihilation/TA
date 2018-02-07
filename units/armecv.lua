@@ -65,7 +65,7 @@ return {
 		workertime = 1000,
 		buildoptions = {
 			[1] = "afusionplant",
-			[2] = "armmas",
+			[2] = "armemex",
 			[3] = "ametalmakerlvl2",
 			[4] = "armses",
 			[5] = "cadvmsto",
