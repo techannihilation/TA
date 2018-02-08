@@ -204,8 +204,7 @@ Go()
 	call-script activatescr();
 	turn gunturret to y-axis Static_Var_5 speed <160.000000>;
 	wait-for-turn gunturret around y-axis;
-	set INBUILDSTANCE to 1;
-	
+	set INBUILDSTANCE to 1;	
 }
 
 Stop()
