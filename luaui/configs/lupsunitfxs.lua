@@ -397,6 +397,20 @@ tllefus = {
     {class='AirJet',options={color={0.6,0.1,0}, width=7, length=24, piece="rthrust", onActive=true}},
     {class='AirJet',options={color={0.6,0.1,0}, width=7, length=24, piece="lthrust", onActive=true}},
  },
+ armstratus = {
+    {class='AirJet',options={color={0.6,0.4,0}, width=5, length=24, piece="engine_a", onActive=true}},
+    {class='AirJet',options={color={0.6,0.4,0}, width=5, length=24, piece="engine_b", onActive=true}},
+    {class='AirJet',options={color={0.6,0.4,0}, width=5, length=24, piece="engine_c", onActive=true}},
+    {class='AirJet',options={color={0.6,0.4,0}, width=5, length=24, piece="engine_d", onActive=true}},
+    {class='AirJet',options={color={0.6,0.4,0}, width=5, length=24, piece="engine_e", onActive=true}},
+    {class='AirJet',options={color={0.6,0.4,0}, width=5, length=24, piece="engine_f", onActive=true}},
+    {class='AirJet',options={color={0.6,0.4,0}, width=5, length=24, piece="engine_g", onActive=true}},
+    {class='AirJet',options={color={0.6,0.4,0}, width=5, length=24, piece="engine_h", onActive=true}},
+    {class='AirJet',options={color={0.8,0.1,0}, width=8, length=32, piece="engine", onActive=true}},
+    {class='AirJet',options={color={0.8,0.1,0}, width=8, length=32, piece="engine_up", onActive=true}},
+    {class='AirJet',options={color={0.8,0.1,0}, width=8, length=32, piece="engine_down", onActive=true}},
+ },
+	
   armcyclone = {
     {class='AirJet',options={color={0.6,0.1,0}, width=2.3, length=24, piece="rthrust", onActive=true}},
     {class='AirJet',options={color={0.6,0.1,0}, width=2.3, length=24, piece="rrthrust", onActive=true}},
