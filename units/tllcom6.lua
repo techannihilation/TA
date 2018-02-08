@@ -81,7 +81,7 @@ return {
 		workertime = 700,
 		buildoptions = {
 			[1] = "tllgen",
-			[2] = "tllmegacoldfusion",
+			[2] = "tllmegacoldfus",
 			[3] = "tllmohogeo",
 			[4] = "tllammaker",
 			[5] = "tllemstor",
