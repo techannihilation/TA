@@ -1112,6 +1112,11 @@ local morphDefs = {
 	  	time = 30,
 	  	tech = 1,
 	},
+	airwolf3 = {
+		into = 'armstratus',
+	  	time = 60,
+		xp = 0.50,
+	},
 	
 }
 
