@@ -65,7 +65,7 @@ return {
 		workertime = 1400,
 		buildoptions = {
 			[1] = "cfusionplant",
-			[2] = "cormas",
+			[2] = "coremex",
 			[3] = "cmetalmakerlvl2",
 			[4] = "corses",
 			[5] = "cadvmsto",

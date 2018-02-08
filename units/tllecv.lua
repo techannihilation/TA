@@ -65,7 +65,7 @@ return {
 		workertime = 1200,
 		buildoptions = {
 			[1] = "tllmegacoldfus",
-			[2] = "tllmas",
+			[2] = "tllemex",
 			[3] = "tllammaker",
 			[4] = "tllemstor",
 			[5] = "tllnanotc2",
