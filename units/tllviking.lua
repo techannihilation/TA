@@ -121,7 +121,7 @@ return {
 				accuracy = 350,
 				areaofeffect = 96,
 				avoidfeature = false,
-				cegtag = "Trail_cannon_med",
+				cegtag = "Trail_cannon",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
@@ -156,6 +156,7 @@ return {
 			arm_crus = {
 				areaofeffect = 16,
 				avoidfeature = false,
+				cegtag = "Trail_cannon_med",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
