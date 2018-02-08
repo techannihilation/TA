@@ -33,9 +33,9 @@ effectUnitDefs = {
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={-9,26.9,0}, size=29, precision=22, repeatEffect=true}},
   },
  cfusionplant = {
-    {class='SimpleParticles2', options=MergeTable({pos={0,80.9,-10}, delay=0, lifeSpread=30},plasmaball_cfusionplant)},
-    {class='SimpleParticles2', options=MergeTable({pos={0,80.9,-10}, delay=40, lifeSpread=30},plasmaball_cfusionplant)},
-    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,80.9,-10}, size=45.5, precision=22, repeatEffect=true}},
+    {class='SimpleParticles2', options=MergeTable({pos={0,60,0}, delay=0, lifeSpread=30},plasmaball_cfusionplant)},
+    {class='SimpleParticles2', options=MergeTable({pos={0,60,0}, delay=40, lifeSpread=30},plasmaball_cfusionplant)},
+    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,60,0}, size=28, precision=22, repeatEffect=true}},
     {class='GroundFlash',options=groundFlashBigBlue},
   },
  tllmedfusion = {
@@ -67,6 +67,16 @@ tllefus = {
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={-31,55,-10}, size=12, precision=22, repeatEffect=true}},
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={31,55,-10}, size=12, precision=22, repeatEffect=true}},
   },
+  afusionplant = {
+    {class='SimpleParticles2', options=MergeTable({pos={-8,80,35}, delay=10, lifeSpread=400},sparks)},
+    {class='SimpleParticles2', options=MergeTable({pos={-8,80,-35}, delay=70, lifeSpread=400},sparks)},
+    {class='SimpleParticles2', options=MergeTable({pos={48,80,-5}, delay=40, lifeSpread=400},sparks)},
+    {class='SimpleParticles2', options=MergeTable({pos={-70,80,-5}, delay=100, lifeSpread=400},sparks)},
+    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={2,68,37}, size=12, precision=22, repeatEffect=true}},
+    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={2,68,-32}, size=12, precision=22, repeatEffect=true}},
+    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={63,68,0}, size=12, precision=22, repeatEffect=true}},
+    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={-60,68,0}, size=12, precision=22, repeatEffect=true}},
+},
   armefus = {
     {class='SimpleParticles2', options=MergeTable({pos={-67.2,112,32}, delay=10, lifeSpread=300},sparks)},
     {class='SimpleParticles2', options=MergeTable({pos={44.8,112,32}, delay=10, lifeSpread=300},sparks)},

@@ -34,7 +34,7 @@ return {
 		nochasecategory = "ALL",
 		objectname = "CFusionPlant",
 		radardistance = 0,
-		radaremitheight = 94,
+		radaremitheight = 75,
 		seismicsignature = 0,
 		selfdestructas = "NUCLEAR_MISSILE4",
 		sightdistance = 300,

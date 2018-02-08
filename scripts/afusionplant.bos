@@ -3,7 +3,8 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base;
+piece  base, fusion123, fusion4, dome1, dome2, dome3, dome4, ball4, 
+	 glow1, glow2, p, ball1, ball2, ball3 ;
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -35,7 +36,41 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
+	dont-shade ball1;
+	dont-shade ball2;
+	dont-shade ball3;
+	dont-shade ball4;
+	
+	dont-cache ball1;
+	dont-cache ball2;
+	dont-cache ball3;
+	dont-cache ball4;
+	
+	dont-shade glow1;
+	dont-shade glow2;
+	
+	dont-shade dome1;
+	dont-shade dome2;
+	dont-shade dome3;
+	dont-shade dome4;
+		
+	set INBUILDSTANCE to 1;
+	
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 1000;
+	}
+
 	start-script SmokeUnit();
+	
+	spin ball1 around y-axis speed <-30.000000>;
+	spin ball2 around y-axis speed <-30.000000>;
+	spin ball2 around y-axis speed <-30.000000>;
+	spin ball4 around y-axis speed <-30.000000>;
+	spin dome1 around y-axis speed <60.000000>;
+	spin dome2 around y-axis speed <60.000000>;
+	spin dome3 around y-axis speed <60.000000>;
+	spin dome4 around y-axis speed <60.000000>;
 }
 
 SweetSpot(piecenum)
@@ -48,22 +83,38 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD;
+		explode fusion123 type NOHEATCLOUD;
+		explode dome1 type NOHEATCLOUD;
+		explode dome2 type NOHEATCLOUD;
+		explode ball1 type NOHEATCLOUD;
+		explode ball2 type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD;
+		explode fusion123 type NOHEATCLOUD | FALL;
+		explode dome1 type NOHEATCLOUD | FALL;
+		explode dome2 type NOHEATCLOUD | FALL;
+		explode ball1 type NOHEATCLOUD | FALL;
+		explode ball2 type NOHEATCLOUD | FALL;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD;
+		explode fusion123 type NOHEATCLOUD;
+		explode dome1 type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT;
+		explode dome2 type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT;
+		explode ball1 type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT;
+		explode ball2 type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT;
+	explode fusion123 type NOHEATCLOUD;
+	explode dome1 type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT;
+	explode dome2 type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT;
+	explode ball1 type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT;
+	explode ball2 type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT;
 	return (corpsetype);
 }
