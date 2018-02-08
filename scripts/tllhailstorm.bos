@@ -433,7 +433,7 @@ FirePrimary()
 		Static_Var_5 = Static_Var_5 - 60;
 		emit-sfx 1024 + 0 from flare2;
 		sleep 250;
-		turn gun2 to x-axis <1.000000> * Static_Var_4 speed <200.000000>;
+		turn gun2 to x-axis <1.000000> * Static_Var_5 speed <200.000000>;
 		wait-for-turn gun2 around x-axis;
 		sleep 50;
 		gun_1 = base;
