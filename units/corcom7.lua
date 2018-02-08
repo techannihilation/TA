@@ -81,11 +81,11 @@ return {
 		workertime = 900,
 		buildoptions = {
 			[1] = "corfus",
-			[2] = "cfusionplant",
+			[2] = "corefus",
 			[3] = "corbhmth",
 			[4] = "cmetalmakerlvl2",
 			[5] = "corses",
-			[6] = "cadvmsto",
+			[6] = "corsms",
 			[7] = "cormas",
 			[8] = "coralab",
 			[9] = "coravp",
