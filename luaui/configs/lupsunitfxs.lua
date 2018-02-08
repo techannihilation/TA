@@ -33,9 +33,9 @@ effectUnitDefs = {
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={-9,26.9,0}, size=29, precision=22, repeatEffect=true}},
   },
  cfusionplant = {
-    {class='SimpleParticles2', options=MergeTable({pos={0,80.9,-10}, delay=0, lifeSpread=30},plasmaball_cfusionplant)},
-    {class='SimpleParticles2', options=MergeTable({pos={0,80.9,-10}, delay=40, lifeSpread=30},plasmaball_cfusionplant)},
-    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,80.9,-10}, size=45.5, precision=22, repeatEffect=true}},
+    {class='SimpleParticles2', options=MergeTable({pos={0,60,0}, delay=0, lifeSpread=30},plasmaball_cfusionplant)},
+    {class='SimpleParticles2', options=MergeTable({pos={0,60,0}, delay=40, lifeSpread=30},plasmaball_cfusionplant)},
+    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,60,0}, size=28, precision=22, repeatEffect=true}},
     {class='GroundFlash',options=groundFlashBigBlue},
   },
  tllmedfusion = {
