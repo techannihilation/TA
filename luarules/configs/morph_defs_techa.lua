@@ -997,7 +997,7 @@ local morphDefs = {
 	armfast = {
      	into = 'armjugg',
 		time = 120,
-		xp = 0.60,
+		xp = 1.00,
 	},
 	armpincer = {
      	into = 'armcroc',
