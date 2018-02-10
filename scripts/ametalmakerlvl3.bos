@@ -8,7 +8,7 @@ piece  base, body1, doodad1, doodad2, doodad3, doodad4, doodad5, doodad6, doodad
 	   body2, clamp1, clamp2, clamp3, clamp4, clamp5, clamp6, 
 	   glow1, bldg1, bldg2 ;
 
-static-var  Static_Var_1, Static_Var_2, statechg_DesiredState, statechg_StateChanging ;
+static-var  Static_Var_1, Static_Var_2;
 
 activatescr()
 {
