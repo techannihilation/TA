@@ -118,7 +118,7 @@ return {
 		weapondefs = {
 			arm_batsaftx = {
 				accuracy = 350,
-				areaofeffect = 48,
+				areaofeffect = 96,
 				avoidfeature = false,
 				cegtag = "Trail_cannon_med",
 				craterareaofeffect = 0,
@@ -153,7 +153,7 @@ return {
 			},
 			rave_missile = {
 				acceleration = 0.3,
-				areaofeffect = 48,
+				areaofeffect = 96,
 				avoidfeature = false,
 				cegtag = "titan_trail",
 				craterareaofeffect = 0,
