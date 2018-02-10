@@ -193,29 +193,30 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type SHATTER | EXPLODE_ON_HIT | BITMAP4;
-		explode pumpingrotor type SHATTER | EXPLODE_ON_HIT | BITMAP4;
-		explode sphere type SHATTER | EXPLODE_ON_HIT | BITMAP1;
-		return (0);
+		explode base type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode pumpingrotor type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode sphere type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type SHATTER | EXPLODE_ON_HIT | BITMAP4;
-		explode sphere type SHATTER | EXPLODE_ON_HIT | BITMAP4;
-		explode pumpingrotor type SHATTER | EXPLODE_ON_HIT | BITMAP1;
-		return (0);
+		explode base type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode sphere type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode pumpingrotor type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type SHATTER | EXPLODE_ON_HIT | BITMAP4;
-		explode sphere type SHATTER | EXPLODE_ON_HIT | BITMAP4;
-		explode pumpingrotor type SHATTER | EXPLODE_ON_HIT | BITMAP1;
-		return (0);
+		explode base type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode sphere type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode pumpingrotor type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type SHATTER | EXPLODE_ON_HIT | BITMAP4;
-	explode pumpingrotor type SHATTER | EXPLODE_ON_HIT | BITMAP4;
-	explode sphere type SHATTER | EXPLODE_ON_HIT | BITMAP1;
+	explode base type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode pumpingrotor type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode sphere type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
 }
