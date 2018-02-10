@@ -3,10 +3,10 @@ return {
 		acceleration = 0.03,
 		brakerate = 0.09,
 		buildcostenergy = 215360,
-		buildcostmetal = 18500,
+		buildcostmetal = 19500,
 		builder = false,
 		buildpic = "corbt.dds",
-		buildtime = 155530,
+		buildtime = 250000,
 		canattack = true,
 		canguard = true,
 		canmove = true,
@@ -156,6 +156,8 @@ return {
 		weapons = {
 			[1] = {
 				def = "CORBT_CANNON",
+				maindir = "0 0 1",
+				maxangledif = 120,
 				onlytargetcategory = "SURFACE",
 			},
 		},
