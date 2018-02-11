@@ -47,7 +47,7 @@ Create()
 
 Activate()
 {
-	//spin mainrotor around y-axis speed <3.500000>;
+	spin mainrotor around y-axis speed <3.500000>;
 	spin ring1 around x-axis speed <10.000000>;
 	spin ring2 around x-axis speed <-10.000000>;
 	
