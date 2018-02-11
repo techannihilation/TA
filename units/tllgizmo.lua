@@ -63,7 +63,7 @@ return {
 		workertime = 2000,
 		customparams = {
 			buildpic = "tllgizmo.dds",
-			faction = "CORE",
+			faction = "TLL",
 			paralyzemultiplier = 0,
 		},
 		nanocolor = {
