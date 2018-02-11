@@ -25,7 +25,7 @@ return {
 		collisionvolumescales = "24 45 20",
 		collisionvolumetype = "Box",
 		defaultmissiontype = "Standby",
-		description = "Stealthy Capture Kbot (EMP Immune)",
+		description = "Stealthy Capture Kbot",
 		explodeas = "SPYBOMBX",
 		firestandorders = 0,
 		footprintx = 2,
