@@ -3,8 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, mainrotor, arm1, arm2, ring1, ring2,
-	rblink0, rblink1, rblink2, rblink3, rblink4, rblink5;
+piece  base, body, mainrotor, arm1, arm2, ring1, ring2, emit1, emit2;
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -44,16 +43,6 @@ Create()
 		sleep 1000;
 	}
 	start-script SmokeUnit();
-	//while( TRUE )
-	//{
-		//emit-sfx 1024 + 0 from rblink0;
-		//emit-sfx 1024 + 0 from rblink1;
-		//emit-sfx 1024 + 0 from rblink2;
-		//emit-sfx 1024 + 0 from rblink3;
-		//emit-sfx 1024 + 0 from rblink4;
-		//emit-sfx 1024 + 0 from rblink5;
-		//sleep 7;
-	//}
 }
 
 Activate()
