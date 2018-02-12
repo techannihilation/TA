@@ -1,8 +1,8 @@
 return {
 	cmetalmakerlvl2 = {
 		activatewhenbuilt = true,
-		buildcostenergy = 1000000,
-		buildcostmetal = 25500,
+		buildcostenergy = 500000,
+		buildcostmetal = 12250,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,
@@ -13,7 +13,7 @@ return {
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "dead",
 		damagemodifier = 0.25,
-		description = "Converts upto 20480 Energy to Metal",
+		description = "Converts upto 10290 Energy to Metal",
 		explodeas = "nuclear_missile1",
 		floater = false,
 		footprintx = 4,
