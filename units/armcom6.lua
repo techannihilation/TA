@@ -83,7 +83,7 @@ return {
 			[1] = "armgen",
 			[2] = "afusionplant",
 			[3] = "armgmm",
-			[4] = "armmmkr",
+			[4] = "ametalmakerlvl2",
 			[5] = "armuwadves",
 			[6] = "armuwadvms",
 			[7] = "armemex",
