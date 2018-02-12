@@ -2,7 +2,7 @@ return {
 	cmetalmakerlvl3 = {
 		activatewhenbuilt = true,
 		buildcostenergy = 1150000,
-		buildcostmetal = 3450,
+		buildcostmetal = 34500,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,
@@ -25,7 +25,7 @@ return {
 		maxdamage = 31000,
 		maxslope = 20,
 		maxwaterdepth = 0,
-		name = "T4 Metal Maker",
+		name = "Armored T4 Metal Maker",
 		nochasecategory = "ALL",
 		objectname = "cMetalMakerLvl3",
 		radardistance = 0,
