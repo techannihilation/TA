@@ -83,7 +83,7 @@ return {
 			[1] = "corfus",
 			[2] = "corefus",
 			[3] = "corbhmth",
-			[4] = "cmetalmakerlvl2",
+			[4] = "cmetalmakerlvl3",
 			[5] = "corses",
 			[6] = "corsms",
 			[7] = "cormas",
