@@ -83,7 +83,7 @@ return {
 			[1] = "armfus",
 			[2] = "armefus",
 			[3] = "armgmm",
-			[4] = "ametalmakerlvl2",
+			[4] = "ametalmakerlvl3",
 			[5] = "armses",
 			[6] = "cadvmsto",
 			[7] = "armmas",
