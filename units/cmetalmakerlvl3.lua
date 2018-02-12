@@ -2,7 +2,7 @@ return {
 	cmetalmakerlvl3 = {
 		activatewhenbuilt = true,
 		buildcostenergy = 1150000,
-		buildcostmetal = 34500,
+		buildcostmetal = 42500,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,
@@ -12,7 +12,7 @@ return {
 		buildtime = 850000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "heap",
-		description = "Converts upto 90000 Energy to Metal",
+		description = "Converts upto 60000 Energy to Metal",
 		explodeas = "nuclear_missile1",
 		floater = false,
 		footprintx = 8,
