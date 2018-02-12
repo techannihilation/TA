@@ -58,7 +58,7 @@ return {
 		buildoptions = {
 			[1] = "corefus",
 			[2] = "cormas",
-			[3] = "cmetalmakerlvl2",
+			[3] = "cmetalmakerlvl3",
 			[4] = "corses",
 			[5] = "corsms",
 			[6] = "cornanotc3",
