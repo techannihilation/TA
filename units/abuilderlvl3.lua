@@ -54,7 +54,7 @@ return {
 		buildoptions = {
 			[1] = "armefus",
 			[2] = "armmas",
-			[3] = "ametalmakerlvl2",
+			[3] = "ametalmakerlvl3",
 			[4] = "armses",
 			[5] = "cadvmsto",
 			[6] = "armnanotc3",
