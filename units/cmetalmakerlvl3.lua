@@ -1,7 +1,7 @@
 return {
 	cmetalmakerlvl3 = {
 		activatewhenbuilt = true,
-		buildcostenergy = 1150000,
+		buildcostenergy = 1350000,
 		buildcostmetal = 42500,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "ametalmakerlvl2_aoplane.dds",
 		buildpic = "cmetalmakerlvl3.dds",
-		buildtime = 850000,
+		buildtime = 550000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "heap",
 		description = "Converts upto 60000 Energy to Metal",
