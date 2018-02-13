@@ -3,12 +3,12 @@ local ACZ = 1.0/100
 local AC0 = 1.2/100
 local AC1 = 1.3/100
 local AC2 = 1.4/100
-local A3 = 1.50/100
+local A3 = 1.46/100
 local C3 = 1.46/100
-local AC4 = 1.6/100
-local AC5 = 1.7/100
-local AC6 = 1.8/100
-local AC7 = 1.9/100
+local AC4 = 1.50/100
+local AC5 = 1.55/100
+local AC6 = 1.6/100
+local AC7 = 1.7/100
 
 
 local T0 = 1.08/100
@@ -17,7 +17,7 @@ local T1 = 1.16/100
 --local T3 = 1.31/100
 local T4 = 1.42/100
 local T5 = 1.47/100
-local T6 = 1.75/100
+local T6 = 1.6/100
 
 
 local convertCapacities = {
