@@ -80,11 +80,8 @@ end
 function widget:UnitCommand(uID, uDefID, uTeam, cmdID, cmdParams, cmdOpts)
   if cmdID < 0 then return end
 	if (cmdID == CMD_CLOAK) and isCommander[uDefID] and (uTeam == spGetMyTeamID()) then
-        if spGetSpectatingState() then
-            widgetHandler:RemoveWidget(self)
-            return
-        end
-		if cmdParams[1] == 1 then
+    widget:PlayerChanged()
+  	if cmdParams[1] == 1 then
 			spGiveOrderToUnit(uID, CMD_FIRE_STATE, {0}, 0)
             spGiveOrderToUnit(uID, CMD_INSERT, {0, 0, 0}, CMD_OPT_ALT)
 		else
