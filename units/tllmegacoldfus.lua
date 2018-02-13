@@ -27,7 +27,7 @@ return {
 		losemitheight = 107,
 		makesmetal = 90,
 		mass = 42500,
-		maxdamage = 20450,
+		maxdamage = 22450,
 		maxslope = 10,
 		maxwaterdepth = 0,
 		name = "Dark Matter Converter",
