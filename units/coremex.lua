@@ -14,7 +14,7 @@ return {
 		canattack = false,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER SURFACE",
 		description = "T3 Metal extractor, Amphibious",
-		energyuse = 150,
+		energyuse = 175,
 		explodeas = "ATOMIC_BLAST",
 		extractsmetal = 0.016,
 		footprintx = 7,
