@@ -30,7 +30,7 @@ return {
 		idletime = 1800,
 		losemitheight = 110,
 		mass = 50000,
-		maxdamage = 29850,
+		maxdamage = 24850,
 		maxslope = 10,
 		maxwaterdepth = 0,
 		name = "Experimental Fusion Reactor",
