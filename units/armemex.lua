@@ -15,7 +15,7 @@ return {
 		buildtime = 36200,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER SURFACE",
 		description = "T3 Metal Extractor, Amphibious",
-		energyuse = 150,
+		energyuse = 175,
 		explodeas = "ATOMIC_BLAST",
 		extractsmetal = 0.016,
 		footprintx = 7,
