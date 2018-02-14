@@ -19,8 +19,6 @@ return {
 		canrestore = false,
 		canstop = 1,
 		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
-		cloakcost = 120,
-		cloakcostmoving = 360,
 		collisionvolumeoffsets = "0 -6 2",
 		collisionvolumescales = "24 45 20",
 		collisionvolumetype = "Box",
@@ -39,7 +37,6 @@ return {
 		maxslope = 20,
 		maxvelocity = 1.45,
 		maxwaterdepth = 15,
-		mincloakdistance = 65,
 		mobilestandorders = 1,
 		movementclass = "KBOT2",
 		name = "Gizmo",
@@ -64,7 +61,7 @@ return {
 		customparams = {
 			buildpic = "tllgizmo.dds",
 			faction = "TLL",
-			paralyzemultiplier = 0.85,
+			paralyzemultiplier = 0.6,
 		},
 		nanocolor = {
 			[1] = 0.8,
