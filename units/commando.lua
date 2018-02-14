@@ -19,8 +19,6 @@ return {
 		canrestore = false,
 		canstop = 1,
 		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
-		cloakcost = 100,
-		cloakcostmoving = 300,
 		collisionvolumeoffsets = "0 -6 2",
 		collisionvolumescales = "24 45 20",
 		collisionvolumetype = "Box",
@@ -39,7 +37,6 @@ return {
 		maxslope = 20,
 		maxvelocity = 1.7,
 		maxwaterdepth = 15,
-		mincloakdistance = 65,
 		mobilestandorders = 1,
 		movementclass = "KBOT2",
 		name = "Commando",
@@ -64,7 +61,7 @@ return {
 		customparams = {
 			buildpic = "commando.dds",
 			faction = "CORE",
-			paralyzemultiplier = 0.8,
+			paralyzemultiplier = 0.5,
 		},
 		nanocolor = {
 			[1] = 0.8,
