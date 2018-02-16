@@ -192,6 +192,20 @@ IdleCheck(Func_Var_1)
 	}
 }
 
+PilotLight(Func_Var_1)
+{
+	while( TRUE )
+	{
+		while( bAiming )
+		{
+			sleep 100;
+		}
+		emit-sfx 1024 + 1 from lflame;
+		emit-sfx 1024 + 1 from rflame;
+		sleep 150;
+	}
+}
+
 Create()
 {
 	hide rflame;
@@ -206,6 +220,7 @@ Create()
 	}
 	start-script SmokeUnit();
 	start-script IdleCheck();
+	start-script PilotLight();
 }
 
 StartMoving()
