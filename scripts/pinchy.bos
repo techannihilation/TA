@@ -5,7 +5,7 @@
 
 piece  base, carapace, head, lantenna, rantenna, t1, t2, t3,
        t4, tfin, larm, lclaw, lpincer, rarm, rclaw, rpincer,
-       trapdoor, gunturret, gunbarrel, nano1, nano2, leg1, leg2, leg3,
+       trapdoor, trapinside, gunturret, gunbarrel, nano1, nano2, leg1, leg2, leg3,
        leg4, leg5, leg6, firepoint;
 
 static-var  bMoving, restore_delay, Static_Var_4, Static_Var_5,
@@ -30,7 +30,7 @@ activatescr()
 	}
 	if( TRUE )
 	{
-		move gunturret to y-axis [2.000000] speed [5.000000];
+		move trapinside to y-axis [5.200000] speed [5.000000];
 		wait-for-move gunturret along y-axis;
 		sleep 428;
 	}
@@ -54,7 +54,7 @@ deactivatescr()
 	}
 	if( TRUE )
 	{
-		move gunturret to y-axis [0.000000] speed [9.000000];
+		move trapinside to y-axis [0.000000] speed [9.000000];
 		sleep 389;
 	}
 	if( TRUE )
@@ -204,7 +204,7 @@ Go()
 	call-script activatescr();
 	turn gunturret to y-axis Static_Var_5 speed <160.000000>;
 	wait-for-turn gunturret around y-axis;
-	set INBUILDSTANCE to 1;
+	set INBUILDSTANCE to 1;	
 }
 
 Stop()
