@@ -2,6 +2,7 @@ return {
 	corsfig = {
 		acceleration = 0.16388,
 		amphibious = 1,
+		blocking = false,
 		brakerate = 0.075,
 		buildcostenergy = 6000,
 		buildcostmetal = 150,
@@ -124,6 +125,7 @@ return {
 					default = 5,
 					fighters = 140,
 					flak_resistant = 100,
+					transporters = 280,
 					unclassed_air = 100,
 				},
 			},

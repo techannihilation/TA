@@ -29,7 +29,11 @@ end
 
 if (not gadgetHandler:IsSyncedCode()) then return end
 
-local COMMANDO = UnitDefNames["commando"].id
+local paraTroppers={
+  		[UnitDefNames["corpyro"].id] = true,
+		[UnitDefNames["armmav"].id] = true,
+		[UnitDefNames["tlltraq"].id] = true,
+ 	}
 
 local crawlingBombs = {
 	[UnitDefNames.armvader.id] = true,
@@ -49,7 +53,7 @@ function gadget:UnitUnloaded(unitID, unitDefID, teamID, transportID)
 
 	--Spring.Echo ("unloaded " .. unitID .. " (" .. unitDefID .. "), from transport " .. transportID)
 	
-	if (unitDefID ~= COMMANDO) then	
+	if not paraTroppers[unitDefID] then	
 		currentFrame = Spring.GetGameFrame()
 		if (not toKill[currentFrame+1]) then toKill[currentFrame+1] = {} end
 		toKill[currentFrame+1][unitID] = true

@@ -83,10 +83,11 @@ return {
 			[22] = "corsktl",
 			[23] = "corpyro",
 			[24] = "cormort",
+			[25] = "commando",
 		},
 		customparams = {
 			buildpic = "corfast.dds",
-			faction = "core",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

@@ -42,7 +42,7 @@ return {
 		yardmap = "oooooooooooooooo",
 		customparams = {
 			buildpic = "core_wind_generator.png",
-			faction = "Core",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

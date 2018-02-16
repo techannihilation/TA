@@ -3,6 +3,7 @@ return {
 		acceleration = 0.17249,
 		attackrunlength = 180,
 		bankscale = 1,
+		blocking = false,
 		brakerate = 0.04,
 		buildcostenergy = 15400,
 		buildcostmetal = 325,
@@ -120,7 +121,6 @@ return {
 				weapontype = "AircraftBomb",
 				damage = {
 					bomb_resistant = 1000,
-					commanders = 100,
 					default = 4000,
 					subs = 5,
 				},

@@ -99,8 +99,11 @@ local function GuardFactory(unitID, unitDefID, factID, factDefID)
 end
 	
 function widget:Initialize()
-		
-	local cmds = widgetHandler.commands
+	if Spring.IsReplay() or Spring.GetGameFrame() > 0 then
+    widget:PlayerChanged()
+  end
+	
+  local cmds = widgetHandler.commands
 	local n = #(widgetHandler.commands)
 
 	for i=1,n do
@@ -110,6 +113,16 @@ function widget:Initialize()
 	end
 end
 	
+function widget:PlayerChanged(playerID)
+  if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
+    widgetHandler:RemoveWidget(self)
+  end
+end
+
+function widget:GameStart()
+  widget:PlayerChanged()
+end
+
 function widget:ShutDown()
 		
 	local cmds = widgetHandler.commands

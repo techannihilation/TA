@@ -114,6 +114,7 @@ return {
 			buildpic = "tllcom3.dds",
 			faction = "TLL",
 			iscommander = true,
+			paralyzemultiplier = 0.025,
 			providetech = "Battle Commander",
 		},
 		featuredefs = {
@@ -369,6 +370,7 @@ return {
 					fighters = 277.5,
 					flak_resistant = 277.5,
 					subs = 5,
+					transporters = 277.5,
 					unclassed_air = 485.625,
 				},
 			},

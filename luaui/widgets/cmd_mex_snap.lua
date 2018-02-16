@@ -87,11 +87,11 @@ end
 ------------------------------------------------------------
 -- Callins
 ------------------------------------------------------------
+
 function widget:Initialize()
-	if not WG.metalSpots then
-		Spring.Echo("<Snap Mex> This widget requires the 'Metalspot Finder' widget to run.")
-		widgetHandler:RemoveWidget(self)
-	end
+	if Spring.IsReplay() or Spring.GetGameFrame() > 0 then
+	    widget:PlayerChanged()
+  	end
 	
 	for key,value in ipairs(mapBlackList) do
 		if (Game.mapName == value) then
@@ -99,6 +99,16 @@ function widget:Initialize()
 			widgetHandler:RemoveWidget(self)
 		end
 	end
+end
+
+function widget:PlayerChanged(playerID)
+	if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
+		widgetHandler:RemoveWidget(self)
+	end
+end
+
+function widget:GameStart()
+	widget:PlayerChanged()
 end
 
 function widget:GameFrame(n)

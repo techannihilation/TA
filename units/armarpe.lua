@@ -2,6 +2,7 @@ return {
 	armarpe = {
 		acceleration = 0.154,
 		bankscale = 1,
+		blocking = false,
 		brakerate = 3.75,
 		buildcostenergy = 12225,
 		buildcostmetal = 465,
@@ -131,10 +132,10 @@ return {
 				weaponvelocity = 800,
 				damage = {
 					bombers = 5,
-					commanders = 5,
 					default = 200,
 					fighters = 5,
 					flak_resistant = 5,
+					transporters = 5,
 					unclassed_air = 5,
 				},
 			},

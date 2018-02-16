@@ -31,7 +31,7 @@ if (Game.startPosType ~= 2) then
 end
 
 if (Spring.GetGameFrame() > 1) then
-  widgetHandler:RemoveWidget()
+  widgetHandler:RemoveWidget(self)
 end
 
 --------------------------------------------------------------------------------
@@ -214,7 +214,7 @@ end
 function widget:Initialize()
   -- only show at the beginning
   if (Spring.GetGameFrame() > 1) then
-    widgetHandler:RemoveWidget()
+    widgetHandler:RemoveWidget(self)
     return
   end
 
@@ -477,7 +477,7 @@ end
 function widget:DrawInMiniMap(sx, sz)
   -- only show at the beginning
   if (Spring.GetGameFrame() > 1) then
-    widgetHandler:RemoveWidget()
+    widgetHandler:RemoveWidget(self)
   end
 
   local time = Spring.DiffTimers(Spring.GetTimer(), startTimer)

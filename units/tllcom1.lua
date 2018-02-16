@@ -109,6 +109,7 @@ return {
 			buildpic = "tllcom1.dds",
 			faction = "TLL",
 			iscommander = true,
+			paralyzemultiplier = 0.025,
 		},
 		featuredefs = {
 			dead = {
@@ -265,6 +266,7 @@ return {
 					fighters = 300,
 					flak_resistant = 300,
 					subs = 5,
+					transporters = 300,
 					unclassed_air = 525,
 				},
 			},

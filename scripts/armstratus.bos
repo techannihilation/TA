@@ -1,0 +1,368 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, tank1, side1, wing1, fus1, tank2,
+       side2, wing2, fus2, aa1, sleeve1, rotor1, emit1,
+       aa2, sleeve2, rotor2, emit2, bits, t1, t2, t3,
+       t4, t5, t6, t7, t8, flakmis1, launcher1, misa1,
+       misb1, flakmis2, launcher2, misa2, misb2, brawl, gaat, emg1,
+       emg2, bomb1, engine, engine_up, engine_down, engine_a, engine_b, engine_c, engine_d, engine_e, engine_f, engine_g, engine_h ;
+
+static-var  restore_delay, Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5;
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Activatescr()
+{
+	if( TRUE )
+	{
+		move wing1 to x-axis [10.000000] speed [20.000000];
+		move wing2 to x-axis [-10.000000] speed [20.000000];
+	}
+	sleep 20;
+}
+
+Deactivatescr()
+{
+	if( TRUE )
+	{
+		move wing1 to x-axis [0.000000] speed [20.000000];
+		move wing2 to x-axis [0.000000] speed [20.000000];
+	}
+	sleep 20;
+}
+
+InitState()
+{
+	Static_Var_1 = 1;
+	Static_Var_2 = 0;
+	Static_Var_3 = 0;
+	Static_Var_4 = 0;
+	Static_Var_5 = 0;	
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( Static_Var_2 )
+	{
+		Static_Var_1 = requestedstate;
+		return (0);
+	}
+	Static_Var_2 = 1;
+	currentstate = Static_Var_1;
+	Static_Var_1 = requestedstate;
+	while( Static_Var_1 != currentstate )
+	{
+		if( Static_Var_1 == 0 )
+		{
+			call-script Activatescr();
+			currentstate = 0;
+		}
+		if( Static_Var_1 == 1 )
+		{
+			call-script Deactivatescr();
+			currentstate = 1;
+		}
+	}
+	Static_Var_2 = 0;
+}
+
+Create()
+{
+	move wing1 to x-axis [10.000000] now;
+	move wing2 to x-axis [-10.000000] now;
+	call-script InitState();
+	start-script SmokeUnit();
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+RestoreAfterDelay1()
+{
+	sleep restore_delay;
+	turn brawl to y-axis <0.000000> speed <360.000000>;
+	turn gaat to x-axis <0.000000> speed <360.000000>;
+	turn aa1 to y-axis <0.000000> speed <360.000000>;
+	turn sleeve1 to x-axis <0.000000> speed <360.000000>;
+	turn aa2 to y-axis <0.000000> speed <360.000000>;
+	turn sleeve2 to x-axis <0.000000> speed <360.000000>;
+}
+
+RestoreAfterDelay2()
+{
+	sleep restore_delay;
+	turn flakmis1 to y-axis <0.000000> speed <128.000000>;
+	turn launcher1 to x-axis <0.000000> speed <128.000000>;
+	turn flakmis2 to y-axis <0.000000> speed <128.000000>;
+	turn launcher2 to x-axis <0.000000> speed <128.000000>;
+}
+SetMaxReloadTime(Func_Var_1)
+{
+	restore_delay = Func_Var_1 * 5;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal 2;
+	set-signal-mask 2;
+	
+	turn brawl to y-axis heading speed <150.000000>;
+	turn gaat to x-axis <0.000000> - pitch speed <150.000000>;
+	wait-for-turn brawl around y-axis;
+	wait-for-turn gaat around x-axis;
+	start-script RestoreAfterDelay1();
+	return (1);
+}
+
+FirePrimary(Func_Var_1)
+{
+	Func_Var_1 = Static_Var_5;
+	
+	if( Func_Var_1 == 0 )
+	{
+		explode emg1 type NOHEATCLOUD;
+		sleep 25;
+		Static_Var_5 = 1;
+
+	}
+	if( Func_Var_1 == 1 )
+	{
+		explode emg2 type NOHEATCLOUD;
+		sleep 25;
+		Static_Var_5 = 0;
+	}	
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = brawl;
+}
+
+QueryPrimary(piecenum)
+{
+	if( Static_Var_5 == 0 )
+	{
+		piecenum = emg1;
+	}
+	if( Static_Var_5 == 1 )
+	{
+		piecenum = emg2;
+	}
+}
+
+AimSecondary(heading, pitch)
+{
+	signal 4;
+	set-signal-mask 4;
+	
+	turn aa1 to y-axis heading speed <720.000000>;
+	turn sleeve1 to x-axis <0.000000> - pitch speed <720.000000>;
+	wait-for-turn aa1 around y-axis;
+	start-script RestoreAfterDelay1();
+	return (1);
+}
+
+AimTertiary(heading, pitch)
+{
+	signal 4;
+	set-signal-mask 4;
+	turn aa2 to y-axis heading speed <720.000000>;
+	turn sleeve2 to x-axis <0.000000> - pitch speed <720.000000>;
+	wait-for-turn aa2 around y-axis;
+	start-script RestoreAfterDelay1();
+	return (1);
+}
+
+FireSecondary()
+{
+	sleep 150;
+}
+
+FireTertiary()
+{
+	sleep 150;
+}
+
+AimFromSecondary(piecenum)
+{
+	piecenum = base;
+}
+
+AimFromTertiary(piecenum)
+{
+	piecenum = base;
+}
+
+QuerySecondary(piecenum)
+{
+	piecenum = emit1;
+}
+
+QueryTertiary(piecenum)
+{
+	piecenum = emit2;
+}
+
+AimWeapon4(heading, pitch)
+{
+	signal 6;
+	set-signal-mask 6;
+	turn flakmis1 to y-axis heading speed <150.000000>;
+	turn launcher1 to x-axis <0.000000> - pitch speed <50.000000>;
+	wait-for-turn flakmis1 around y-axis;
+	wait-for-turn launcher1 around y-axis;
+	
+	start-script RestoreAfterDelay2();
+	return (1);
+}
+	
+AimWeapon5(heading, pitch)
+{	
+	signal 8;
+	set-signal-mask 8;
+	turn flakmis2 to y-axis heading speed <150.000000>;
+	turn launcher2 to x-axis <0.000000> - pitch speed <50.000000>;
+	wait-for-turn flakmis2 around y-axis;
+	wait-for-turn launcher2 around y-axis;
+	start-script RestoreAfterDelay2();
+	return (1);
+}
+
+AimFromWeapon4(piecenum)
+{
+	piecenum = flakmis1;
+}
+
+AimFromWeapon5(piecenum)
+{
+	piecenum = flakmis2;
+}
+
+QueryWeapon4(piecenum)
+{
+	if( Static_Var_3 == 1 )
+	{
+		piecenum = misa1;
+	}
+	if( Static_Var_3 == 0 )
+	{
+		piecenum = misb1;
+	}
+}
+
+QueryWeapon5(piecenum)
+{
+	if( Static_Var_4 == 1 )
+	{
+		piecenum = misa2;
+	}
+	if( Static_Var_4 == 0 )
+	{
+		piecenum = misb2;
+	}
+}
+
+FireWeapon4(Func_Var_1)
+{
+	Func_Var_1 = Static_Var_3;
+		
+	if( Func_Var_1 == 1 )
+	{
+		Static_Var_3 = 0;
+	}
+	if( Func_Var_1 == 0 )
+	{
+		Static_Var_3 = 1;
+	}	
+}
+
+FireWeapon5(Func_Var_1)
+{
+	
+	Func_Var_1 = Static_Var_4;
+		
+	if( Func_Var_1 == 1 )
+	{
+		Static_Var_4 = 0;
+	}
+	if( Func_Var_1 == 0 )
+	{
+		Static_Var_4 = 1;
+	}
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type NOHEATCLOUD | FALL;
+		explode body type NOHEATCLOUD | FALL;
+		explode wing1 type NOHEATCLOUD | FALL;
+		explode wing2 type NOHEATCLOUD | FALL;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type NOHEATCLOUD | FALL;
+		explode body type NOHEATCLOUD | FALL;
+		explode wing1 type NOHEATCLOUD | FALL;
+		explode wing2 type NOHEATCLOUD | FALL;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode body type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode wing1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode wing2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		return (0);
+	}
+	corpsetype = 3;
+	explode base type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode body type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode wing1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode wing2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+}

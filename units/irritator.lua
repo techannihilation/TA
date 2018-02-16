@@ -39,7 +39,6 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "irritator",
-		onoffable = true,
 		pushresistant = true,
 		radardistance = 0,
 		radaremitheight = 130,
@@ -62,7 +61,10 @@ return {
 		zbuffer = 1,
 		customparams = {
 			buildpic = "irritator.dds",
-			faction = "tll",
+			faction = "TLL",
+			shield_emit_height = 83,
+			shield_power = 2600,
+			shield_radius = 230,
 		},
 		featuredefs = {
 			irritator_dead = {
@@ -210,7 +212,6 @@ return {
 				smartshield = true,
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				visibleshield = true,
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {

@@ -24,7 +24,6 @@ local spGetUnitCommands		= Spring.GetUnitCommands
 local spGetUnitDefID		= Spring.GetUnitDefID
 local spGetUnitPosition		= Spring.GetUnitPosition
 local spGiveOrderToUnit		= Spring.GiveOrderToUnit
-local spGetSpectatingState	= Spring.GetSpectatingState
 
 
 
@@ -37,16 +36,20 @@ local function IsFactory(ud)
 	return ud and ud.isBuilder and ud.isFactory
 end
 
-function widget:PlayerChanged()
-	if spGetSpectatingState() then
-		widgetHandler:RemoveWidget()
+function widget:PlayerChanged(playerID)
+	if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
+		widgetHandler:RemoveWidget(self)
 	end
 end
 
+function widget:GameStart()
+	widget:PlayerChanged()
+end
+
 function widget:Initialize()
-	if spGetSpectatingState() then
-		widgetHandler:RemoveWidget()
-	end
+	if Spring.IsReplay() or Spring.GetGameFrame() > 0 then
+	    widget:PlayerChanged()
+  	end
 	for _,unitID in ipairs(spGetTeamUnits(spGetMyTeamID())) do
 		local unitDefID = spGetUnitDefID(unitID)
 		if IsFactory(UnitDefs[unitDefID]) then

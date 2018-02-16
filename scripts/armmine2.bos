@@ -32,7 +32,7 @@ FireWeapon1()
 
 QueryWeapon1(piecenum)
 {
-	piecenum = base;
+	piecenum = detonation;
 }
 
 AimFromWeapon1(piecenum)

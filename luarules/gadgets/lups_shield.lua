@@ -20,7 +20,7 @@ if gadgetHandler:IsSyncedCode() then
 	local spSetUnitRulesParam = Spring.SetUnitRulesParam
 	local INLOS_ACCESS = {inlos = true}
 	local gameFrame = 0
-	
+
 	function gadget:GameFrame(n)
 		gameFrame = n
 	end
@@ -50,8 +50,39 @@ local myAllyTeamID = spGetMyAllyTeamID()
 
 local shieldUnits = IterableMap.New()
 local startup = true
+local disabledShieldCobOff = {}
+local disabledShieldStun = {}
 
-local stunnedUnits = {}
+local ShieldUnits = {
+  --Core
+  [UnitDefNames["corcom5"].id] = true,
+  [UnitDefNames["corcom6"].id] = true,
+  [UnitDefNames["corcom7"].id] = true,
+  [UnitDefNames["corgate"].id] = true,
+  [UnitDefNames["corgate1"].id] = true,
+  [UnitDefNames["corgate2"].id] = true,
+  [UnitDefNames["corshieldgen"].id] = true,
+  [UnitDefNames["monkeylord"].id] = true, 
+  [UnitDefNames["corsfus"].id] = true, 
+  --Arm 
+  [UnitDefNames["armcom5"].id] = true,
+  [UnitDefNames["armcom6"].id] = true,
+  [UnitDefNames["armcom7"].id] = true,
+  [UnitDefNames["armgate"].id] = true,
+  [UnitDefNames["armgate1"].id] = true,
+  [UnitDefNames["armgate2"].id] = true,
+  [UnitDefNames["armpraet"].id] = true,
+  [UnitDefNames["exoarm"].id] = true,
+  [UnitDefNames["armsmc"].id] = true,
+  --The lost legacy
+  [UnitDefNames["tllcom5"].id] = true,
+  [UnitDefNames["tllcom6"].id] = true,
+  [UnitDefNames["tllcom7"].id] = true,
+  [UnitDefNames["tllgate"].id] = true,
+  [UnitDefNames["tllgate1"].id] = true,
+  [UnitDefNames["tllgate2"].id] = true,
+  [UnitDefNames["irritator"].id] = true,
+}
 
 local function GetVisibleSearch(x, z, search)
 	if not x then
@@ -132,7 +163,8 @@ end
 
 function gadget:UnitDestroyed(unitID, unitDefID, unitTeam)
 	RemoveUnit(unitID)
-	stunnedUnits[unitID] = nil
+	disabledShieldCobOff[unitID] = nil
+	disabledShieldStun[unitID] = nil
 end
 
 function gadget:UnitFinished(unitID, unitDefID, unitTeam)
@@ -152,6 +184,40 @@ function gadget:PlayerChanged()
 	myAllyTeamID = spGetMyAllyTeamID()
 end
 
+function gadget:CommandNotify(id, params, options)
+	if (id >= 34520 and id <= (34520+28)) then
+		local selectedUnit = Spring.GetSelectedUnits()
+		if #selectedUnit == 1 then
+			local cmdunitID = selectedUnit[1]
+			local unitData = shieldUnits.Get(cmdunitID)
+			if unitData and ShieldUnits[cmdunitID] then
+				if params[1] == 0 then
+					RemoveUnit(cmdunitID)
+					disabledShieldCobOff[cmdunitID] = true
+				end
+			end
+			if params[1] == 1 and (id >= 34520 and id <= 34540) and ShieldUnits[cmdunitID] then
+				if disabledShieldCobOff[cmdunitID] then 
+					AddUnit(cmdunitID, Spring.GetUnitDefID(cmdunitID))
+					disabledShieldCobOff[cmdunitID] = nil
+				end
+			end
+		end
+    end
+end
+
+function gadget:UnitStunned(unitID, unitDefID, unitTeam, stunned)
+  local unitData = shieldUnits.Get(unitID)
+  if stunned then
+    if unitData then
+	  RemoveUnit(unitID)
+	  disabledShieldStun[unitID] = true
+    end
+  elseif (not stunned) and disabledShieldStun[unitID] then
+	AddUnit(unitID, unitDefID)
+ end
+end
+
 function gadget:GameFrame(n)
 	if startup then
 		local allUnits = Spring.GetAllUnits()
@@ -162,25 +228,10 @@ function gadget:GameFrame(n)
 		end
 		startup = false
 	end
-
 	if n%UPDATE_PERIOD == 0 then
 		local _, fullview = spGetSpectatingState()
 		for unitID, unitData in shieldUnits.Iterator() do
-			if Spring.GetUnitIsStunned(unitID) then
-				RemoveUnit(unitID)
-				stunnedUnits[unitID] = Spring.GetUnitDefID(unitID)
-
-			end
 			UpdateVisibility(unitID, unitData, fullview)
 		end
-
-		for unitID, unitDefID in pairs(stunnedUnits) do
-			if not Spring.GetUnitIsStunned(unitID) then
-				AddUnit(unitID, unitDefID)
-				stunnedUnits[unitID] = nil
-
-			end
-		end
 	end
-
 end

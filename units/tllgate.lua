@@ -34,7 +34,6 @@ return {
 		nochasecategory = "ALL",
 		norestrict = 1,
 		objectname = "TLLGATE",
-		onoffable = true,
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "MINE_NUKE",
@@ -123,8 +122,6 @@ return {
 				smartshield = true,
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				--visibleshield = true,
-				--visibleshieldhitframes = 70,
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {

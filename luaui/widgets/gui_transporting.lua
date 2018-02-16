@@ -33,7 +33,7 @@ function widget:Initialize()
   if ((Spring.GetUnitDefDimensions == nil) or
       (Spring.GetUnitIsTransporting == nil)) then
     Spring.SendCommands({"echo Transporting widget has been disabled"})
-    widgetHandler:RemoveWidget()
+    widgetHandler:RemoveWidget(self)
   end
 end
 

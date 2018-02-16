@@ -238,6 +238,7 @@ return {
 					default = 5,
 					fighters = 125,
 					flak_resistant = 100,
+					transporters = 125,
 					unclassed_air = 125,
 				},
 			},

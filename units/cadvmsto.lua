@@ -26,7 +26,7 @@ return {
 		maxdamage = 66000,
 		maxslope = 10,
 		maxwaterdepth = 0,
-		metalstorage = 250000,
+		metalstorage = 240000,
 		name = "T3 Metal Storage",
 		noautofire = false,
 		nochasecategory = "ALL",
@@ -41,7 +41,7 @@ return {
 		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo",
 		customparams = {
 			buildpic = "cadvmsto.dds",
-			faction = "CORE",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {

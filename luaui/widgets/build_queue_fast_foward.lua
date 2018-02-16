@@ -56,12 +56,23 @@ local regularizedNegativeEnergy = false
 local metalLevel = 0
 local positiveMMLevel = 0
 
+
 function widget:Initialize()
     if Spring.GetSpectatingState() or Spring.IsReplay() then
-        widgetHandler:RemoveWidget()
+	    widget:PlayerChanged()
     end
 
     registerUnits()
+end
+
+function widget:PlayerChanged(playerID)
+	if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
+		widgetHandler:RemoveWidget(self)
+	end
+end
+
+function widget:GameStart()
+	widget:PlayerChanged()
 end
 
 function registerUnits()

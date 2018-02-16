@@ -1,0 +1,230 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body1, doodad1, doodad2, doodad3, doodad4, doodad5, doodad6, doodad7,
+	   doodad8, doodad9, doodad10, doodad11, doodad12, doodad13, doodad14, 
+	   body2, clamp1, clamp2, clamp3, clamp4, clamp5, clamp6, 
+	   glow1, bldg1, bldg2 ;
+
+static-var  Static_Var_1, Static_Var_2;
+
+activatescr()
+{
+	spin body2 around y-axis speed <2.500000> accelerate <0.500000>;
+}
+
+deactivatescr()
+{
+	spin body2 around y-axis speed <0.000000> accelerate <-0.500000>;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from body1;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Go()
+{
+	call-script activatescr();
+}
+
+Stop()
+{
+	call-script deactivatescr();
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+MMStatus(Func_Var_1)
+{
+	Static_Var_1 = Func_Var_1;
+}
+
+ImAMetalMaker()
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 150;
+	}
+	Static_Var_2 = -1;
+	while( TRUE )
+	{
+		if( Static_Var_1 == 1 )
+		{
+			if( Static_Var_2 != 1 )
+			{
+				call-script Go();
+				Static_Var_2 = 1;
+			}
+		}
+		else if( Static_Var_2 != 0 )
+		{
+			call-script Stop();
+			Static_Var_2 = 0;
+		}
+		sleep 1000;
+	}
+}
+
+Create()
+{
+
+	dont-shade base;
+	dont-shade glow1;
+	dont-cache glow1;
+	call-script InitState();
+	start-script SmokeUnit();
+
+}
+
+Activate()
+{
+	start-script activatescr();
+}
+
+Deactivate()
+{
+	start-script deactivatescr();
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode clamp1 type NOHEATCLOUD;
+		explode clamp2 type NOHEATCLOUD;
+		explode clamp3 type NOHEATCLOUD;
+		explode clamp1 type NOHEATCLOUD;
+		explode clamp2 type NOHEATCLOUD;
+		explode clamp3 type NOHEATCLOUD;
+		explode doodad1 type NOHEATCLOUD;
+		explode doodad2 type NOHEATCLOUD;
+		explode doodad3 type NOHEATCLOUD;
+		explode doodad4 type NOHEATCLOUD;
+		explode doodad5 type NOHEATCLOUD;
+		explode doodad6 type NOHEATCLOUD;
+		explode doodad7 type NOHEATCLOUD;
+		explode doodad8 type NOHEATCLOUD;
+		explode doodad9 type NOHEATCLOUD;
+		explode doodad10 type NOHEATCLOUD;
+		explode doodad11 type NOHEATCLOUD;
+		explode doodad12 type NOHEATCLOUD;
+		explode doodad13 type NOHEATCLOUD;
+		explode doodad14 type NOHEATCLOUD;
+		explode bldg1 type NOHEATCLOUD;
+		explode bldg2 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode clamp1 type NOHEATCLOUD | FALL;
+		explode clamp2 type NOHEATCLOUD | FALL;
+		explode clamp3 type NOHEATCLOUD| FALL;
+		explode clamp1 type NOHEATCLOUD| FALL;
+		explode clamp2 type NOHEATCLOUD| FALL;
+		explode clamp3 type NOHEATCLOUD| FALL;
+		explode doodad1 type NOHEATCLOUD| FALL;
+		explode doodad2 type NOHEATCLOUD| FALL;
+		explode doodad3 type NOHEATCLOUD| FALL;
+		explode doodad4 type NOHEATCLOUD| FALL;
+		explode doodad5 type NOHEATCLOUD| FALL;
+		explode doodad6 type NOHEATCLOUD| FALL;
+		explode doodad7 type NOHEATCLOUD| FALL;
+		explode doodad8 type NOHEATCLOUD| FALL;
+		explode doodad9 type NOHEATCLOUD| FALL;
+		explode doodad10 type NOHEATCLOUD| FALL;
+		explode doodad11 type NOHEATCLOUD| FALL;
+		explode doodad12 type NOHEATCLOUD| FALL;
+		explode doodad13 type NOHEATCLOUD| FALL;
+		explode doodad14 type NOHEATCLOUD| FALL;
+		explode bldg1 type NOHEATCLOUD| FALL;
+		explode bldg2 type NOHEATCLOUD| FALL;
+		return (corpsetype);
+	}
+	if( severity <= 80 )
+	{
+		corpsetype = 3;
+		explode clamp1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode clamp2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode clamp3 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode clamp1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode clamp2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode clamp3 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode doodad1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode doodad2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode doodad3 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode doodad4 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode doodad5 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode doodad6 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode doodad7 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode doodad8 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode doodad9 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode doodad10 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode doodad11 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode doodad12 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode doodad13 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode doodad14 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode bldg1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode bldg2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode clamp1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode clamp2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode clamp3 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode clamp1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode clamp2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode clamp3 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode doodad1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode doodad2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode doodad3 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode doodad4 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode doodad5 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode doodad6 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode doodad7 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode doodad8 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode doodad9 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode doodad10 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode doodad11 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode doodad12 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode doodad13 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode doodad14 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode bldg1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode bldg2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}

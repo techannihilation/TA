@@ -42,8 +42,8 @@ local tackyfont = gl.LoadFont( tackyfontpath, 16 )
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
 function widget:Initialize()
-  if spGetSpectatingState() then
-    widgetHandler:RemoveWidget(self)
+  if Spring.IsReplay() or Spring.GetGameFrame() > 0 then
+    widget:PlayerChanged()
   else
     tackyfont = gl.LoadFont( tackyfontpath, 16 )
     teamID = SpGetMyTeamID()
@@ -54,7 +54,15 @@ function widget:Initialize()
   end
 end
 
+function widget:PlayerChanged(playerID)
+  if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
+    widgetHandler:RemoveWidget(self)
+  end
+end
 
+function widget:GameStart()
+  widget:PlayerChanged()
+end
 
 function widget:ViewResize()
   vsx,vsy = Spring.GetViewGeometry()

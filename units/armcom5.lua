@@ -117,10 +117,11 @@ return {
 			canjump = "1",
 			faction = "ARM",
 			iscommander = true,
+			paralyzemultiplier = 0.025,
 			providetech = "Battle Commander,Assault Commander",
+			shield_emit_height = 10,
 			shield_power = 900,
 			shield_radius = 100,
-			shield_emit_height = 10,
 		},
 		featuredefs = {
 			dead = {
@@ -337,8 +338,6 @@ return {
 				smartshield = true,
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				--visibleshield = true,
-				--visibleshieldhitframes = 70,
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {

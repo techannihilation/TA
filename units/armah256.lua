@@ -2,6 +2,7 @@ return {
 	armah256 = {
 		acceleration = 0.2,
 		bankscale = 1,
+		blocking = false,
 		brakerate = 0.2,
 		buildcostenergy = 12976,
 		buildcostmetal = 933,
@@ -171,6 +172,7 @@ return {
 					fighters = 5,
 					flak_resistant = 5,
 					subs = 5,
+					transporters = 5,
 					unclassed_air = 5,
 				},
 			},

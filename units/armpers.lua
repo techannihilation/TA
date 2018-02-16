@@ -2,6 +2,7 @@ return {
 	armpers = {
 		acceleration = 0.23,
 		bankscale = 1,
+		blocking = false,
 		brakerate = 0.2,
 		buildcostenergy = 31600,
 		buildcostmetal = 4420,

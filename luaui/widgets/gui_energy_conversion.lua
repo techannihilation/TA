@@ -200,7 +200,7 @@ function widget:Initialize()
 		
 	if ( spec == true ) then
 		Spring.Echo("<Energy Conversion Info> Spectator mode. Widget removed.")
-		widgetHandler:RemoveWidget()
+		widgetHandler:RemoveWidget(self)
 	end
 	
 end

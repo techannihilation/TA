@@ -34,12 +34,24 @@ local GetUnitHealth    = Spring.GetUnitHealth
 
 local buildList = {}
 
+function widget:PlayerChanged(playerID)
+  if Spring.GetSpectatingState() then
+    widgetHandler:RemoveWidget(self)
+  end
+end
+
 function widget:Initialize()
-  if Spring.GetSpectatingState() or Spring.IsReplay() then widgetHandler:RemoveWidget() end
+  if Spring.IsReplay() or Spring.GetGameFrame() > 0 then
+    widget:PlayerChanged()
+  end
   for _,unitID in ipairs(Spring.GetTeamUnits(Spring.GetMyTeamID())) do
     local _, _, _, _, buildProgress = GetUnitHealth(unitID)
     if (buildProgress < 1) then widget:UnitCreated(unitID) end    
   end
+end
+
+function widget:GameStart()
+    widget:PlayerChanged()
 end
 
 local function toLocString(posX,posY,posZ)
@@ -67,7 +79,7 @@ function widget:CommandNotify(id, params, options)
       local selUnits = GetSelectedUnits()
       local blockUnits = {}
       for _,unitID in ipairs(selUnits) do
-        local cQueue = GetCommandQueue(unitID, -1)
+        local cQueue = GetCommandQueue(unitID, 1)
         if (#cQueue > 0) then
           if (cQueue[1].id < 0) and (params[1] == buildList[toLocString(cQueue[1].params[1], 0, cQueue[1].params[3])]) then
             blockUnits[unitID] = true
@@ -81,7 +93,7 @@ function widget:CommandNotify(id, params, options)
           if not blockUnits[unitID] then
             GiveOrderToUnit(unitID, id, params, options)
           else
-            local cQueue = GetCommandQueue(unitID,-1)
+            local cQueue = GetCommandQueue(unitID,50)
             for _,v in ipairs(cQueue) do
               if (v.tag ~= cQueue[1].tag) then
                 GiveOrderToUnit(unitID,v.id,v.params,{"shift"})
@@ -97,7 +109,7 @@ function widget:CommandNotify(id, params, options)
       local selUnits = GetSelectedUnits()
       local blockUnits = {}
       for _,unitID in ipairs(selUnits) do
-        local cQueue = GetCommandQueue(unitID,-1)
+        local cQueue = GetCommandQueue(unitID,50)
         if (#cQueue > 0) and (params[1] == cQueue[1].params[1]) then
           blockUnits[unitID] = true
         end
@@ -107,7 +119,7 @@ function widget:CommandNotify(id, params, options)
           if not blockUnits[unitID] then
             GiveOrderToUnit(unitID, id, params, options)
           else
-            local cQueue = GetCommandQueue(unitID,-1)
+            local cQueue = GetCommandQueue(unitID,50)
             for _,v in ipairs(cQueue) do
               if (v.tag ~= cQueue[1].tag) then
                 GiveOrderToUnit(unitID,v.id,v.params,{"shift"})

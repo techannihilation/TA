@@ -45,7 +45,7 @@ return {
 		yardmap = "oooooo oooooo oooooo oooooo oooooo oooooo",
 		customparams = {
 			buildpic = "corlightfus.dds",
-			faction = "Core",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

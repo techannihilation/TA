@@ -81,7 +81,7 @@ return {
 		workertime = 900,
 		buildoptions = {
 			[1] = "tllmedfusion",
-			[2] = "tllmegacoldfus",
+			[2] = "tllefus",
 			[3] = "tllmohogeo",
 			[4] = "tllammaker",
 			[5] = "tllemstor",
@@ -113,6 +113,7 @@ return {
 			canjump = "1",
 			faction = "TLL",
 			iscommander = true,
+			paralyzemultiplier = 0.025,
 			providetech = "Battle Commander,Assault Commander,Star Commander,Supreme Commander",
 			shield_power = 1650,
 			shield_radius = 200,

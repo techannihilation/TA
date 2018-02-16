@@ -265,14 +265,14 @@ function widget:Initialize()
 
 	if  (Spring.GetConfigString("AllowDeferredMapRendering") == '0' or Spring.GetConfigString("AllowDeferredModelRendering")=='0') then
 		Spring.Echo('Deferred Rendering (gfx_deferred_rendering.lua) requires  AllowDeferredMapRendering and AllowDeferredModelRendering to be enabled in springsettings.cfg!') 
-		widgetHandler:RemoveWidget()
+		widgetHandler:RemoveWidget(self)
 		return
 	end
 	if ((not forceNonGLSL) and Spring.GetMiniMapDualScreen()~='left') then --FIXME dualscreen
 		if (not glCreateShader) then
 			spEcho("gfx_deferred_rendering.lua: Shaders not found, removing self.")
 			GLSLRenderer = false
-			widgetHandler:RemoveWidget()
+			widgetHandler:RemoveWidget(self)
 		else
 			fragSrc = VFS.LoadFile("shaders\\deferred_lighting.glsl",VFS.ZIP)
 			--Spring.Echo('gfx_deferred_rendering.lua: Shader code:',fragSrc)
@@ -299,7 +299,7 @@ function widget:Initialize()
 				spEcho(glGetShaderLog())
 				spEcho("gfx_deferred_rendering.lua: Bad depth point shader, removing self.")
 				GLSLRenderer = false
-				widgetHandler:RemoveWidget()
+				widgetHandler:RemoveWidget(self)
 			else
 				lightposlocPoint=glGetUniformLocation(depthPointShader, "lightpos")
 				lightcolorlocPoint=glGetUniformLocation(depthPointShader, "lightcolor")
@@ -330,7 +330,7 @@ function widget:Initialize()
 				spEcho(glGetShaderLog())
 				spEcho("gfx_deferred_rendering.lua: Bad depth beam shader, removing self.")
 				GLSLRenderer = false
-				widgetHandler:RemoveWidget()
+				widgetHandler:RemoveWidget(self)
 			else
 				lightposlocBeam=glGetUniformLocation(depthBeamShader, "lightpos")
 				lightpos2locBeam=glGetUniformLocation(depthBeamShader, "lightpos2")
@@ -494,7 +494,7 @@ function widget:DrawScreenEffects()
 		-- glBlending(false)
 	else
 		Spring.Echo('Removing deferred rendering widget: failed to use GLSL shader')
-		widgetHandler:RemoveWidget()
+		widgetHandler:RemoveWidget(self)
 	end
 end
 

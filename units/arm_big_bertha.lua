@@ -46,7 +46,7 @@ return {
 		customparams = {
 			buildpic = "arm_big_bertha.dds",
 			canareaattack = 1,
-			faction = "Arm",
+			faction = "ARM",
 		},
 		featuredefs = {
 			armbrtha_dead = {
@@ -146,7 +146,6 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 1100,
 				damage = {
-					commanders = 125,
 					default = 5000,
 					subs = 5,
 				},

@@ -2,6 +2,7 @@ return {
 	cortitan = {
 		acceleration = 0.06468,
 		bankscale = 1,
+		blocking = false,
 		brakerate = 0.072,
 		buildcostenergy = 7800,
 		buildcostmetal = 360,

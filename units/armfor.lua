@@ -39,7 +39,7 @@ return {
 		yardmap = "oooo oooo oooo oooo",
 		customparams = {
 			buildpic = "armfor.dds",
-			faction = "arm",
+			faction = "ARM",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

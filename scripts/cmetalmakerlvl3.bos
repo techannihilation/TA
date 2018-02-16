@@ -1,0 +1,186 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, tower, frame, glow, bits, topcap, glowingthing;
+
+static-var  Static_Var_1, Static_Var_2;
+
+
+
+activatescr()
+{
+	if( TRUE )
+	{
+		turn topcap to y-axis <45.005495> speed <169.203297>;
+		sleep 266;
+	}
+	if( TRUE )
+	{
+		move topcap to y-axis [-16.050000] speed [60.112378];
+		sleep 267;
+	}
+	if( TRUE )
+	{
+		turn topcap to z-axis <-180.038462> speed <676.846154>;
+		sleep 266;
+	}
+	if( TRUE )
+	{
+		move topcap to y-axis [-0.700000] speed [57.706769];
+		sleep 266;
+	}
+	sleep 266;
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		move topcap to y-axis [-0.700000] now;
+		move topcap to y-axis [-16.050000] speed [57.924524];
+		turn topcap to y-axis <45.005495> now;
+		turn topcap to z-axis <-180.038462> now;
+		sleep 265;
+	}
+	if( TRUE )
+	{
+		turn topcap to z-axis <0.000000> speed <676.846154>;
+		sleep 266;
+	}
+	if( TRUE )
+	{
+		move topcap to y-axis [0.000000] speed [60.338373];
+		sleep 266;
+	}
+	if( TRUE )
+	{
+		turn topcap to y-axis <0.000000> speed <169.203297>;
+		sleep 266;
+	}
+	
+	sleep 266;
+}
+
+Go()
+{
+	dont-cache topcap;
+	call-script activatescr();
+}
+
+Stop()
+{
+	call-script deactivatescr();
+	cache topcap;
+}
+
+MMStatus(Func_Var_1)
+{
+	Static_Var_1 = Func_Var_1;
+}
+
+ImAMetalMaker()
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 150;
+	}
+	Static_Var_2 = -1;
+	while( TRUE )
+	{
+		if( Static_Var_1 == 1 )
+		{
+			if( Static_Var_2 != 1 )
+			{
+				call-script Go();
+				Static_Var_2 = 1;
+			}
+		}
+		else if( Static_Var_2 != 0 )
+		{
+			call-script Stop();
+			Static_Var_2 = 0;
+		}
+		sleep 1000;
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	start-script ImAMetalMaker();
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	dont-shade glowingthing;
+	dont-cache glowingthing;
+	dont-shade base;
+	dont-shade topcap;
+	start-script SmokeUnit();
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode tower type NOHEATCLOUD;
+		explode glow type NOHEATCLOUD;
+		explode bits type NOHEATCLOUD;
+		explode topcap type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode tower type NOHEATCLOUD;
+		explode glow type NOHEATCLOUD | FALL;
+		explode bits type NOHEATCLOUD | FALL;
+		explode topcap type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode tower type NOHEATCLOUD;
+		explode glow type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode bits type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode topcap type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode tower type NOHEATCLOUD;
+	explode glow type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode bits type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode topcap type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}

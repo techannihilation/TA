@@ -92,7 +92,7 @@ return {
 		},
 		customparams = {
 			buildpic = "corck.dds",
-			faction = "core",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

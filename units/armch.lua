@@ -106,7 +106,7 @@ return {
 		},
 		customparams = {
 			buildpic = "armch.dds",
-			faction = "arm",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {

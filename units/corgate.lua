@@ -39,7 +39,6 @@ return {
 		nochasecategory = "ALL",
 		norestrict = 1,
 		objectname = "CORGATE",
-		onoffable = true,
 		radaremitheight = 31,
 		seismicsignature = 0,
 		selfdestructas = "MINE_NUKE",
@@ -136,8 +135,6 @@ return {
 				smartshield = true,
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				--visibleshield = true,
-				--visibleshieldhitframes = 70,
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {

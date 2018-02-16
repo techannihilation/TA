@@ -3,11 +3,11 @@ return {
 		acceleration = 0.12,
 		activatewhenbuilt = true,
 		brakerate = 2.97,
-		buildcostenergy = 440000,
-		buildcostmetal = 29200,
+		buildcostenergy = 450000,
+		buildcostmetal = 32200,
 		builder = false,
 		buildpic = "monkeylord.dds",
-		buildtime = 340000,
+		buildtime = 400000,
 		canattack = true,
 		canguard = true,
 		canmove = true,
@@ -39,7 +39,6 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "monkeylord",
-		onoffable = true,
 		pushresistant = true,
 		radardistance = 0,
 		radaremitheight = 76,
@@ -61,7 +60,10 @@ return {
 		zbuffer = 1,
 		customparams = {
 			buildpic = "monkeylord.dds",
-			faction = "Core",
+			faction = "CORE",
+			shield_emit_height = 49.5,
+			shield_power = 2600,
+			shield_radius = 230,
 		},
 		featuredefs = {
 			dead = {
@@ -180,7 +182,6 @@ return {
 				smartshield = true,
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				visibleshield = true,
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {

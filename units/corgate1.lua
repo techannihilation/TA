@@ -36,7 +36,6 @@ return {
 		nochasecategory = "ALL",
 		norestrict = 1,
 		objectname = "CORGATE1",
-		onoffable = true,
 		radaremitheight = 39,
 		script = "corgate.cob",
 		seismicsignature = 0,

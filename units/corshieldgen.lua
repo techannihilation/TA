@@ -36,7 +36,6 @@ return {
 		name = "Oust",
 		noautofire = false,
 		objectname = "corshieldgen.3do",
-		onoffable = true,
 		radaremitheight = 59,
 		seismicsignature = 3,
 		selfdestructas = "CRAWL_BLAST",
@@ -50,7 +49,9 @@ return {
 		upright = true,
 		customparams = {
 			buildpic = "corshieldgen.dds",
-			faction = "Core",
+			faction = "CORE",
+			shield_emit_height = 54.8,
+			shield_emit_offset = -9.37,
 			shield_power = 2600,
 			shield_radius = 250,
 		},
@@ -109,7 +110,6 @@ return {
 				smartshield = true,
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				--visibleshield = true,
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {

@@ -113,6 +113,7 @@ return {
 			buildpic = "armcom4.dds",
 			faction = "ARM",
 			iscommander = true,
+			paralyzemultiplier = 0.025,
 			providetech = "Battle Commander",
 		},
 		featuredefs = {
@@ -274,6 +275,7 @@ return {
 					fighters = 202.5,
 					flak_resistant = 202.5,
 					subs = 5,
+					transporters = 202.5,
 					unclassed_air = 354.375,
 				},
 			},

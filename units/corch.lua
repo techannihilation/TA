@@ -106,7 +106,7 @@ return {
 		},
 		customparams = {
 			buildpic = "corch.dds",
-			faction = "core",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

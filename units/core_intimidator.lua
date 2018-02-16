@@ -46,7 +46,7 @@ return {
 		customparams = {
 			buildpic = "core_intimidator.dds",
 			canareaattack = 1,
-			faction = "Core",
+			faction = "CORE",
 		},
 		featuredefs = {
 			corint_dead = {
@@ -144,7 +144,6 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 1100,
 				damage = {
-					commanders = 40,
 					default = 1600,
 					subs = 5,
 				},

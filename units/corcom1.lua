@@ -112,6 +112,7 @@ return {
 			buildpic = "corcom1.dds",
 			faction = "CORE",
 			iscommander = true,
+			paralyzemultiplier = 0.025,
 		},
 		featuredefs = {
 			dead = {
@@ -270,6 +271,7 @@ return {
 					fighters = 112.5,
 					flak_resistant = 112.5,
 					subs = 5,
+					transporters = 112.5,
 					unclassed_air = 196.875,
 				},
 			},

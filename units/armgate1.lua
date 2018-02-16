@@ -36,7 +36,6 @@ return {
 		nochasecategory = "ALL",
 		norestrict = 1,
 		objectname = "ARMGATE1",
-		onoffable = true,
 		radaremitheight = 41,
 		script = "armgate.cob",
 		seismicsignature = 0,
@@ -131,8 +130,6 @@ return {
 				smartshield = true,
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				--visibleshield = true,
-				--visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {
 					default = 100,

@@ -2,6 +2,7 @@ return {
 	cbuilderlvl3 = {
 		acceleration = 0.013,
 		airhoverfactor = 0,
+		blocking = false,
 		brakerate = 0.35,
 		buildcostenergy = 623000,
 		buildcostmetal = 23250,
@@ -55,11 +56,11 @@ return {
 		unitname = "cbuilderlvl3",
 		workertime = 2000,
 		buildoptions = {
-			[1] = "cfusionplant",
+			[1] = "corefus",
 			[2] = "cormas",
 			[3] = "cmetalmakerlvl2",
 			[4] = "corses",
-			[5] = "cadvmsto",
+			[5] = "corsms",
 			[6] = "cornanotc3",
 			[7] = "corgate1",
 			[8] = "corfmd2",

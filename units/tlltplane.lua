@@ -2,6 +2,7 @@ return {
 	tlltplane = {
 		acceleration = 0.09,
 		bankscale = 1,
+		blocking = false,
 		brakerate = 0.29,
 		buildcostenergy = 1378,
 		buildcostmetal = 71,

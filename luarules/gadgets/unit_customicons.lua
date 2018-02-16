@@ -110,7 +110,7 @@ function gadget:Initialize()
       if (ud.name=="armwin") or (ud.name=="corwin") or (ud.name=="tllwindtrap") then
         Spring.SetUnitDefIcon(udid, "e.user")
 -- t1.5 wind/tidals
-      elseif (ud.name=="armawin") or (ud.name=="corawin") or (ud.name=="armatidal") or (ud.name=="coratidal") or  (ud.name=="tllatide") then
+      elseif (ud.name=="armawin") or (ud.name=="corawin") or (ud.name=="armatidal") or (ud.name=="coratidal") or (ud.name=="tllatide") or (ud.name=="tllawindtrap") then 
         Spring.SetUnitDefIcon(udid, "e1.user")
 --fighters
       elseif (ud.name=="armfig") or (ud.name=="corveng") or (ud.name=="tllfight") or (ud.name=="armhawk") or (ud.name=="corvamp") or (ud.name=="tlladvfight") then
@@ -142,7 +142,7 @@ function gadget:Initialize()
 	  elseif (ud.name=="armnanotc3") or (ud.name=="cornanotc3") or (ud.name=="tllnanotc3") or (ud.name=="armfnanotc3") or (ud.name=="corfnanotc3") or (ud.name=="tllfnanotc3") then
           Spring.SetUnitDefIcon(udid, "square_+3.user")
 --armcom
-      elseif (ud.name=="armcom") or (ud.name=="armcom1") or (ud.name=="armcom4") or (ud.name=="armcom_fusion") or (ud.name=="armcom5") or (ud.name=="armcom6") or (ud.name=="armcom7") then
+      elseif (ud.name=="armcom") or (ud.name=="armcom1") or (ud.name=="armcom4") or (ud.name=="armcom_fusion") or (ud.name=="armcom5")or (ud.name=="armcom5") or (ud.name=="armcom6") or (ud.name=="armcom7") then
         Spring.SetUnitDefIcon(udid, "armcom.user")
 --corcom
       elseif (ud.name=="corcom") or (ud.name=="corcom1") or (ud.name=="corcom3") or (ud.name=="corcom_fusion") or (ud.name=="corcom5") or (ud.name=="corcom6") or (ud.name=="corcom7") then

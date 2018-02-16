@@ -756,6 +756,7 @@ local function IsUnitFXVisible(fx)
 	local isIcon = Spring.IsUnitIcon(unitID)
 	local _, specFullView = spGetSpectatingState()
 	local Crashing = Spring.GetUnitRulesParam(unitID, "nolups") or 0
+  local stunned = Spring.GetUnitIsStunned(unitID)
 
 	if fx.onActive then
 		unitActive = spGetUnitIsActive(unitID)
@@ -764,7 +765,7 @@ local function IsUnitFXVisible(fx)
 		end
 	end
 
-	if (isIcon) or Crashing == 1 or FPS() then
+	if (isIcon) or Crashing == 1 or FPS() or stunned then
 		return false
 	elseif (not fx.onActive)or(unitActive) then
 		if fx.alwaysVisible then

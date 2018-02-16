@@ -1,6 +1,7 @@
 return {
 	bladew = {
 		acceleration = 0.264,
+		blocking = false,
 		brakerate = 0.55,
 		buildcostenergy = 1280,
 		buildcostmetal = 58,
@@ -123,7 +124,6 @@ return {
 				weapontype = "BeamLaser",
 				weaponvelocity = 800,
 				damage = {
-					commanders = 10,
 					default = 400,
 					subs = 5,
 				},

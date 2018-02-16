@@ -3,6 +3,12 @@
 
 effectUnitDefs = {
  --// FUSIONS //--------------------------
+ corefus = {
+    {class='SimpleParticles2', options=MergeTable({pos={0,120,0}, delay=0, lifeSpread=30},plasmaball_cafus)},
+    {class='SimpleParticles2', options=MergeTable({pos={0,120,0}, delay=40, lifeSpread=30},plasmaball_cafus)},
+    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,120,0}, size=44, precision=22, repeatEffect=true}},
+    {class='GroundFlash',options=groundFlashBlue},
+  },
  corfus = {
     {class='SimpleParticles2', options=MergeTable({pos={0,50,-5}, delay=0, lifeSpread=30},plasmaball_corfus)},
     {class='SimpleParticles2', options=MergeTable({pos={0,50,-5}, delay=40, lifeSpread=30},plasmaball_corfus)},
@@ -27,9 +33,9 @@ effectUnitDefs = {
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={-9,26.9,0}, size=29, precision=22, repeatEffect=true}},
   },
  cfusionplant = {
-    {class='SimpleParticles2', options=MergeTable({pos={0,80.9,-10}, delay=0, lifeSpread=30},plasmaball_cfusionplant)},
-    {class='SimpleParticles2', options=MergeTable({pos={0,80.9,-10}, delay=40, lifeSpread=30},plasmaball_cfusionplant)},
-    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,80.9,-10}, size=45.5, precision=22, repeatEffect=true}},
+    {class='SimpleParticles2', options=MergeTable({pos={0,60,0}, delay=0, lifeSpread=30},plasmaball_cfusionplant)},
+    {class='SimpleParticles2', options=MergeTable({pos={0,60,0}, delay=40, lifeSpread=30},plasmaball_cfusionplant)},
+    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,60,0}, size=28, precision=22, repeatEffect=true}},
     {class='GroundFlash',options=groundFlashBigBlue},
   },
  tllmedfusion = {
@@ -42,6 +48,14 @@ effectUnitDefs = {
     {class='SimpleParticles2', options=MergeTable({pos={0,62,0}, delay=40, lifeSpread=30},plasmaball_tllcoldfus)},
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,62,0}, size=20, precision=22, repeatEffect=true}},
   },
+tllefus = {
+    {class='SimpleParticles2', options=MergeTable({piece="emit1", delay=0, lifeSpread=30},plasmaball_tllcoldfus)},
+    {class='SimpleParticles2', options=MergeTable({piece="emit1", delay=40, lifeSpread=30},plasmaball_tllcoldfus)},
+    {class='ShieldJitter',options={layer=-16, life=math.huge, piece="emit1", size=60, precision=22, repeatEffect=true}},
+    {class='SimpleParticles2', options=MergeTable({piece="emit2", delay=0, lifeSpread=30},plasmaball_tllcoldfus)},
+    {class='SimpleParticles2', options=MergeTable({piece="emit2", delay=40, lifeSpread=30},plasmaball_tllcoldfus)},
+    {class='ShieldJitter',options={layer=-16, life=math.huge, piece="emit2", size=60, precision=22, repeatEffect=true}},
+  },	
  tllmegacoldfus = {
     {class='SimpleParticles2', options=MergeTable({pos={0,90,0}, delay=0, lifeSpread=30},plasmaball_tllmegacoldfus)},
     {class='SimpleParticles2', options=MergeTable({pos={0,90,0}, delay=40, lifeSpread=30},plasmaball_tllmegacoldfus)},
@@ -52,6 +66,24 @@ effectUnitDefs = {
     {class='SimpleParticles2', options=MergeTable({pos={21,70,-10}, delay=60, lifeSpread=300},sparks)},
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={-31,55,-10}, size=12, precision=22, repeatEffect=true}},
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={31,55,-10}, size=12, precision=22, repeatEffect=true}},
+  },
+  afusionplant = {
+    {class='SimpleParticles2', options=MergeTable({pos={-8,80,35}, delay=10, lifeSpread=400},sparks)},
+    {class='SimpleParticles2', options=MergeTable({pos={-8,80,-35}, delay=70, lifeSpread=400},sparks)},
+    {class='SimpleParticles2', options=MergeTable({pos={48,80,-5}, delay=40, lifeSpread=400},sparks)},
+    {class='SimpleParticles2', options=MergeTable({pos={-70,80,-5}, delay=100, lifeSpread=400},sparks)},
+    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={2,68,37}, size=12, precision=22, repeatEffect=true}},
+    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={2,68,-32}, size=12, precision=22, repeatEffect=true}},
+    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={63,68,0}, size=12, precision=22, repeatEffect=true}},
+    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={-60,68,0}, size=12, precision=22, repeatEffect=true}},
+},
+  armefus = {
+    {class='SimpleParticles2', options=MergeTable({pos={-67.2,112,32}, delay=10, lifeSpread=300},sparks)},
+    {class='SimpleParticles2', options=MergeTable({pos={44.8,112,32}, delay=10, lifeSpread=300},sparks)},
+	{class='SimpleParticles2', options=MergeTable({pos={-19.2,128,-65.28}, delay=10, lifeSpread=300},sparks)},
+    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={-56,104,32}, size=18, precision=22, repeatEffect=true}},
+    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={56,104,32}, size=18, precision=22, repeatEffect=true}},
+	{class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,104,-64}, size=18, precision=22, repeatEffect=true}},
   },
   
   --// SHIELDS //--------------------------
@@ -99,6 +131,30 @@ effectUnitDefs = {
     --{class='SimpleParticles2', options=MergeTable({piece="sphere", delay=60, lifeSpread=30},shield)},
     {class='Bursts',options=shieldBursts250},
     {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=250, precision=0, strength   = 0.001, repeatEffect=true}},
+  },
+   corsfus = {
+    {class='Bursts',options=corsfusBursts},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=180, precision=0, strength   = 0.001, repeatEffect=true}},
+  },
+  exoarm = {
+    {class='Bursts',options=exoarmBursts},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=350, precision=0, strength   = 0.001, repeatEffect=true}},
+  },
+ armsmc = {
+    {class='Bursts',options=armsmcBursts},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=230, precision=0, strength   = 0.001, repeatEffect=true}},
+  },
+  armpraet = {
+    {class='Bursts',options=armpraetBursts},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=230, precision=0, strength   = 0.001, repeatEffect=true}},
+  },
+  monkeylord = {
+    {class='Bursts',options=monkeylordBursts},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=230, precision=0, strength   = 0.001, repeatEffect=true}},
+  },
+   irritator = {
+    {class='Bursts',options=irritatorBursts},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=230, precision=0, strength   = 0.001, repeatEffect=true}},
   },
   armgate2 = {
     {class='Bursts',options=shieldBursts340},

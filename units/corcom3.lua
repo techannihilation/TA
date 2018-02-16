@@ -113,6 +113,7 @@ return {
 			buildpic = "corcom3.dds",
 			faction = "CORE",
 			iscommander = true,
+			paralyzemultiplier = 0.025,
 			providetech = "Battle Commander",
 		},
 		featuredefs = {
@@ -274,6 +275,7 @@ return {
 					fighters = 180,
 					flak_resistant = 180,
 					subs = 5,
+					transporters = 180,
 					unclassed_air = 315,
 				},
 			},

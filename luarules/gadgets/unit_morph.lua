@@ -538,7 +538,11 @@ end
 local function ReAssignAssists(newUnit,oldUnit)
   
   local unitDefID = SpGetUnitDefID(oldUnit)
-  if unitDefID and not nanos[unitDefID] then return end
+  local isCommander = UnitDefs[unitDefID].customParams.iscommander or nil
+  local isBuilder = UnitDefs[unitDefID].isBuilder or nil
+  if isBuilder and not isCommander then 
+	if unitDefID and not nanos[unitDefID] then return end 
+  end
   -- for now only reassign command to nanos
     
   local ally = SpGetUnitAllyTeam(newUnit)

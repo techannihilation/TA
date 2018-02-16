@@ -660,7 +660,7 @@ function widget:Initialize()
 		
 	else
 		Spring.Echo("Changelog: couldn't load the changelog file")
-		widgetHandler:RemoveWidget()
+		widgetHandler:RemoveWidget(self)
 	end
 end
 

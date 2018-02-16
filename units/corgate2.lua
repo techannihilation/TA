@@ -36,7 +36,6 @@ return {
 		nochasecategory = "ALL",
 		norestrict = 1,
 		objectname = "CORGATE2",
-		onoffable = true,
 		radaremitheight = 25,
 		script = "corgate.cob",
 		seismicsignature = 0,
@@ -131,7 +130,6 @@ return {
 				smartshield = true,
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				--visibleshield = true,
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {

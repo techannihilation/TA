@@ -4,6 +4,7 @@ return {
 		altfromsealevel = 1,
 		attackrunlength = 220,
 		bankscale = 1,
+		blocking = false,
 		brakerate = 0.03,
 		buildcostenergy = 10350,
 		buildcostmetal = 510,

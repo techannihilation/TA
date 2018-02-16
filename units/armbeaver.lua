@@ -105,7 +105,7 @@ return {
 		},
 		customparams = {
 			buildpic = "armbeaver.dds",
-			faction = "arm",
+			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {

@@ -54,7 +54,7 @@ return {
 		workertime = 1200,
 		buildoptions = {
 			[1] = "afusionplant",
-			[2] = "armmas",
+			[2] = "armemex",
 			[3] = "ametalmakerlvl2",
 			[4] = "armses",
 			[5] = "cadvmsto",
@@ -73,6 +73,9 @@ return {
 			buildpic = "armsmc.dds",
 			faction = "ARM",
 			providetech = "T3 Factory",
+			shield_emit_height = 38,
+			shield_power = 2600,
+			shield_radius = 230,
 		},
 		featuredefs = {
 			dead = {
@@ -144,7 +147,6 @@ return {
 				smartshield = true,
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				visibleshield = true,
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {

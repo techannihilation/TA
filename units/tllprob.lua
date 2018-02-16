@@ -2,6 +2,7 @@ return {
 	tllprob = {
 		acceleration = 0.17969,
 		bankscale = 1,
+		blocking = false,
 		brakerate = 0.01,
 		buildcostenergy = 800,
 		buildcostmetal = 40,

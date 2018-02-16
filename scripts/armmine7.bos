@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base;
+piece  base, detonation;
 
 
 Create()
@@ -26,12 +26,12 @@ Deactivate()
 FireWeapon1()
 {
 	sleep 500;
-	emit-sfx 4096 + 1 from base;
+	emit-sfx 4096 + 1 from detonation;
 }
 
 QueryWeapon1(piecenum)
 {
-	piecenum = base;
+	piecenum = detonation;
 }
 
 AimFromWeapon1(piecenum)

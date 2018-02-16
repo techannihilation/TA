@@ -4,6 +4,7 @@ return {
 		altfromsealevel = 10,
 		amphibious = 1,
 		attackrunlength = 250,
+		blocking = false,
 		brakerate = 0.1,
 		buildcostenergy = 7900,
 		buildcostmetal = 865,
@@ -51,7 +52,7 @@ return {
 		unitname = "tlltorpcop",
 		customparams = {
 			buildpic = "tlltorpcop.dds",
-			faction = "tll",
+			faction = "TLL",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

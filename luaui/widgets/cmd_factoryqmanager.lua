@@ -162,10 +162,23 @@ function widget:ViewResize(viewSizeX, viewSizeY)
 end
 
 
+function widget:PlayerChanged(playerID)
+    if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
+        widgetHandler:RemoveWidget(self)
+    end
+end
+
 function widget:Initialize()
+    if Spring.IsReplay() or Spring.GetGameFrame() > 0 then
+        widget:PlayerChanged()
+    end
 	widget:ViewResize(_,_)
 	
 	curModId = string.upper(Game.modShortName or "")
+end
+
+function widget:GameStart()
+    widget:PlayerChanged()
 end
 
 -- Included FactoryClear Lua widget

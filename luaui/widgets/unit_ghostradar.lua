@@ -46,6 +46,9 @@ local TooHigh = false
 local HighPing = false
 
 function widget:Initialize()
+	if Spring.IsReplay() or Spring.GetGameFrame() > 0 then
+	    widget:PlayerChanged()
+  	end
 	widgetHandler:RegisterGlobal('DrawManager_ghost', DrawStatus)
 end
 
@@ -134,23 +137,14 @@ function widget:DrawWorld()
  	glColor(1, 1, 1, 1)
 end
 
-function widget:Update()
-	local timef = spGetGameSeconds()
-	local time = floor(timef)
-
-	-- update timers once every <updateInt> seconds
-	if (time % updateInt == 0 and time ~= lastTime) then	
-		lastTime = time
-		--do update stuff:
-		local playerID = spGetMyPlayerID()
-		local _, _, spec, _, _, _, _, _ = spGetPlayerInfo(playerID)
-		
-		if ( spec == true ) then
-			spEcho("<GhostRadar> Spectator mode. Widget removed.")
-			widgetHandler:RemoveWidget()
-			return false
-		end
+function widget:PlayerChanged(playerID)
+	if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
+		widgetHandler:RemoveWidget(self)
 	end
+end
+
+function widget:GameStart()
+	widget:PlayerChanged()
 end
 
 function printDebug( value )

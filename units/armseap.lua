@@ -4,6 +4,7 @@ return {
 		amphibious = 1,
 		attackrunlength = 100,
 		bankscale = 1,
+		blocking = false,
 		brakerate = 0.05,
 		buildcostenergy = 6500,
 		buildcostmetal = 250,

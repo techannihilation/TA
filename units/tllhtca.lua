@@ -2,6 +2,7 @@ return {
 	tllhtca = {
 		acceleration = 0.0266,
 		activatewhenbuilt = true,
+		blocking = false,
 		brakerate = 0.3596,
 		buildcostenergy = 4190,
 		buildcostmetal = 930,

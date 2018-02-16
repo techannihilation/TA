@@ -20,31 +20,28 @@ local GetSelectedUnitsSorted = Spring.GetSelectedUnitsSorted
 local GetUnitStates = Spring.GetUnitStates
 local GetSelectedUnitsCount = Spring.GetSelectedUnitsCount
 local GetPlayerInfo = Spring.GetPlayerInfo
-local myPlayerID = Spring.GetMyPlayerID()
 
 local CMD_MOVE = CMD.MOVE
+
+function widget:PlayerChanged(playerID)
+    if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
+        widgetHandler:RemoveWidget(self)
+    end
+end
+
+function widget:Initialize()
+    if Spring.IsReplay() or Spring.GetGameFrame() > 0 then
+        widget:PlayerChanged()
+    end
+end
+
+function widget:GameStart()
+	widget:PlayerChanged()
+end
 
 local spySelected = false
 local sec = 0
 local lastUpdate = 0
-
-function UnloadIfSpec()
-	local _, _, spec, _, _, _, _, _ = GetPlayerInfo(myPlayerID)
-	if ( spec == true ) then
-		widgetHandler:RemoveWidget()
-		return 
-	end
-	return 
-end
-
-function widget:Initialize()
-	UnloadIfSpec()
-end
-
-function widget:PlayerChanged()
-	UnloadIfSpec()
-end
-
 function widget:Update(dt)
 	sec = sec + dt
 	if sec > lastUpdate + 0.2 then

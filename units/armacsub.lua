@@ -78,7 +78,7 @@ return {
 		},
 		customparams = {
 			buildpic = "armacsub.dds",
-			faction = "arm",
+			faction = "ARM",
 		},
 		featuredefs = {
 			["1_dead"] = {

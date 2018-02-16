@@ -113,12 +113,20 @@ function UnitDef_Post(name, uDef)
 		end
 		--Uncomment to clean pieces
 		--uDef.sfxtypes.pieceexplosiongenerators = nil
+
+		--Fix planes blocking
+		if uDef.canfly then
+			uDef.blocking = false
+		end
 	end
 end
 
 -- process weapondef
 function WeaponDef_Post(name, WeaponDefs)
-
+	if FixUnitStats == true then
+		--Use this Area for WeaponDef changes
+		
+	end
 end
 
 

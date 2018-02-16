@@ -12,7 +12,8 @@ return {
         "tlladvfight",
         "tllfight",
         "tllseaf",
-        "tllshu"
+        "tllshu",
+        "armstratus"
     },
     bombers = {
         "armblz",
@@ -96,17 +97,6 @@ return {
         "tllprob",
         "tllrsplane",
         "tllsonpl",
-        -- transport planes
-        "armatlas",
-        "armdfly",
-        "armdragf",
-        "armsl",
-        "corfalc",
-        "corvalk",
-        "tllrobber",
-        "tlltplane",
-        "armor",
-        "corbtrans",
         -- gunship fighters
         "tawf015",
         "corrag",
@@ -119,6 +109,18 @@ return {
         "tllmoth",
         "blastwing",
         "armarpe"
+    },
+    transporters = {
+        "armatlas",
+        "armdfly",
+        "armdragf",
+        "armsl",
+        "corfalc",
+        "corvalk",
+        "tllrobber",
+        "tlltplane",
+        "armor",
+        "corbtrans",
     },
     --### SEA ###
     ships = {

@@ -154,6 +154,7 @@ return {
 					fighters = 120,
 					flak_resistant = 120,
 					subs = 5,
+					transporters = 120,
 					unclassed_air = 120,
 				},
 			},
@@ -193,7 +194,6 @@ return {
 				weapontype = "LaserCannon",
 				weaponvelocity = 600,
 				damage = {
-					commanders = 7.5,
 					default = 300,
 					raider_resistant = 270,
 					subs = 5,

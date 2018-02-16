@@ -75,21 +75,6 @@ local lower                 = string.lower
 local floor                 = math.floor
 
 -----------------------------------------------------------------------------------
-function widget:Update()
-	local timef = spGetGameSeconds()
-	local time = floor(timef)
-	
-	-- update timers once every <updateInt> seconds
-	if (time % updateInt == 0 and time ~= lastTimeUpdate) then	
-		lastTimeUpdate = time
-		--do update stuff:
-		
-		if ( CheckSpecState() == false ) then
-			return false
-		end
-	end
-end
-
 function widget:DrawWorld()
 	DrawBuildMenuBlastRange()
 	
@@ -303,7 +288,7 @@ function widget:GameStart()
 		  local version = tonumber(string.match(widget:GetInfo().desc,'%d+%.%d+'))
 		  if version and (version < tonumber("6")) then
 			spEcho("<BlastRadius> Old DefenseRange found! Widget removed.")
-			widgetHandler:RemoveWidget()
+			widgetHandler:RemoveWidget(self)
 		  end
 		end
 	  end
@@ -318,17 +303,20 @@ function ResetGl()
 	glTexture(false)
 end
 
-function CheckSpecState()
-	local playerID = spGetMyPlayerID()
-	local _, _, spec, _, _, _, _, _ = spGetPlayerInfo(playerID)
-		
-	if ( spec == true ) then
-		spEcho("<Blast Radius> Spectator mode. Widget removed.")
-		widgetHandler:RemoveWidget()
-		return false
+function widget:Initialize()
+	if Spring.IsReplay() or Spring.GetGameFrame() > 0 then
+	    widget:PlayerChanged()
+  	end
+end
+
+function widget:PlayerChanged(playerID)
+	if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
+		widgetHandler:RemoveWidget(self)
 	end
-	
-	return true	
+end
+
+function widget:GameStart()
+	widget:PlayerChanged()
 end
 
 function printDebug( value )

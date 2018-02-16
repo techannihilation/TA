@@ -23,16 +23,26 @@ local SendCommmands = Spring.SendCommands
 
 local hotKeys = {}
 
+function widget:PlayerChanged(playerID)
+    if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
+        widgetHandler:RemoveWidget(self)
+    end
+end
+
 function widget:Initialize()
-  if Spring.GetSpectatingState() then
-    widgetHandler:RemoveWidget(self)
-  end
+    if Spring.IsReplay() or Spring.GetGameFrame() > 0 then
+        widget:PlayerChanged()
+    end
 	if rebindKeys then
 		for _, keycombo in ipairs(GetActionHotKeys("attack")) do
 			hotKeys[keycombo] = true
 			SendCommmands({"unbind " .. keycombo .. " attack","bind " .. keycombo .. " settarget"})
 		end
 	end
+end
+
+function widget:GameStart()
+	widget:PlayerChanged()
 end
 
 function widget:Shutdown()

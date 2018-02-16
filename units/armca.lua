@@ -2,6 +2,7 @@ return {
 	armca = {
 		acceleration = 0.072,
 		bankscale = 1.5,
+		blocking = false,
 		brakerate = 0.4275,
 		buildcostenergy = 4608,
 		buildcostmetal = 112,
@@ -91,7 +92,7 @@ return {
 		},
 		customparams = {
 			buildpic = "armca.dds",
-			faction = "arm",
+			faction = "ARM",
 		},
 		nanocolor = {
 			[1] = 0.036,

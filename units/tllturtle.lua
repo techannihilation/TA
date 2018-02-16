@@ -141,6 +141,7 @@ return {
 				tolerance = 4000,
 				tracks = true,
 				turnrate = 99000,
+				waterweapon = true,
 				weaponacceleration = 80,
 				weapontimer = 2,
 				weapontype = "StarburstLauncher",

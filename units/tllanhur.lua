@@ -2,6 +2,7 @@ return {
 	tllanhur = {
 		acceleration = 0.03594,
 		amphibious = 1,
+		blocking = false,
 		brakerate = 0.015,
 		buildcostenergy = 48000,
 		buildcostmetal = 4060,
@@ -117,7 +118,6 @@ return {
 				weapontype = "AircraftBomb",
 				damage = {
 					bomb_resistant = 1000,
-					commanders = 100,
 					default = 4000,
 					experimental_land = 6000,
 					experimental_ships = 6000,

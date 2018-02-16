@@ -2,6 +2,7 @@ return {
 	tllaca = {
 		acceleration = 0.075,
 		bankscale = 1.5,
+		blocking = false,
 		brakerate = 0.35,
 		buildcostenergy = 31940,
 		buildcostmetal = 1980,

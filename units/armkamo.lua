@@ -2,6 +2,7 @@ return {
 	armkamo = {
 		acceleration = 0.2,
 		bankscale = 1,
+		blocking = false,
 		brakerate = 0.6,
 		buildcostenergy = 31199,
 		buildcostmetal = 3061,
@@ -127,6 +128,7 @@ return {
 					default = 25,
 					fighters = 5,
 					flak_resistant = 5,
+					transporters = 5,
 					unclassed_air = 5,
 				},
 			},

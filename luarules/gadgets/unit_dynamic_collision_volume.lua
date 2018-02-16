@@ -38,6 +38,10 @@ local spArmor = Spring.GetUnitArmored
 local spActive = Spring.GetUnitIsActive
 local pairs = pairs	
 
+local unitYSizeOffset = {}     -- <unitID,{sizeY,offsetY}>
+local BP_SIZE_LIMIT = 0.8
+local BP_SIZE_MULTIPLIER = 1 / BP_SIZE_LIMIT
+
 if (gadgetHandler:IsSyncedCode()) then
 
 	--Process all initial map features
@@ -55,7 +59,7 @@ if (gadgetHandler:IsSyncedCode()) then
 						spSetFeatureRadiusAndHeight(featID, math.min(p[1], p[3])/2, p[2])
 					elseif featureModel:find(".s3o") then
 						local xs, ys, zs, xo, yo, zo, vtype, htype, axis, _ = spGetFeatureCollisionData(featID)
-						Spring.Echo(featureModel, xs, ys, zs, xo, yo, zo, vtype, htype, axis)
+						--Spring.Echo(featureModel, xs, ys, zs, xo, yo, zo, vtype, htype, axis)
 						if (vtype>=3 and xs==ys and ys==zs) then
 							spSetFeatureCollisionData(featID, xs, ys*0.75, zs,  xo, yo-ys*0.09, zo,  1, htype, 1)
 						end
@@ -165,6 +169,21 @@ if (gadgetHandler:IsSyncedCode()) then
 			--Spring.Echo("Aimpoint Waterline: Set aimpoint of " .. unitID .. " torp ".. ay)
 			Spring.SetUnitMidAndAimPos(unitID,mx,my,mz,ax,2,az)
 		end
+
+		local xs, ys, zs, xo, yo, zo, vtype, htype, axis, _ = spGetUnitCollisionData(unitID)
+		unitYSizeOffset[unitID] = {ys,yo}
+			
+		-- reduce size of unit under construction
+		local _,_,_,_,bp = spGetUnitHealth(unitID)
+		local val  = 1
+		-- only affect units under construction
+		if (bp < BP_SIZE_LIMIT) then
+			val = math.max(bp*BP_SIZE_MULTIPLIER,0.1)
+			ys = ys * val
+			yo = yo * val
+			spSetUnitCollisionData(unitID, xs, ys, zs, xo, yo, zo, vtype, htype, axis)
+			spSetUnitMidAndAimPos(unitID,0, ys*0.5, 0,0, ys*0.5,0,true)
+		end
 	end
 
 
@@ -203,6 +222,17 @@ if (gadgetHandler:IsSyncedCode()) then
 		elseif dynamicPieceCollisionVolume[un] then
 			popupUnits[unitID]={name=un, state=-1, perPiece=true, numPieces = #spGetPieceList(unitID)}
 		end
+		
+		-- set height to expected value for fully built unit
+		if unitYSizeOffset[unitID] then
+			local xs, ys, zs, xo, yo, zo, vtype, htype, axis,_ = spGetUnitCollisionData(unitID)
+			local data = unitYSizeOffset[unitID]
+			ys = data[1]
+			yo = data[2]
+			
+			spSetUnitCollisionData(unitID, xs, ys, zs, xo, yo, zo, vtype, htype, axis)
+			spSetUnitMidAndAimPos(unitID,0, ys*0.5, 0,0, ys*0.5,0,true)
+		end
 	end
 
 
@@ -210,6 +240,9 @@ if (gadgetHandler:IsSyncedCode()) then
 	function gadget:UnitDestroyed(unitID, unitDefID, unitTeam)
 		if popupUnits[unitID] then
 			popupUnits[unitID] = nil
+		end
+		if unitYSizeOffset[unitID] then
+			unitYSizeOffset[unitID] = nil
 		end
 	end
 
@@ -274,6 +307,27 @@ if (gadgetHandler:IsSyncedCode()) then
 				end
 			end			
 		end
-	end
+		-- adjust collision volume height based on build %
+		-- runs 6 times per second
+		if (n%5 == 0) then
+			local xs, ys, zs, xo, yo, zo, vtype, htype, axis, disabled
+			local val = 0
+			for unitID,data in pairs(unitYSizeOffset) do
+				local _,_,_,_,bp = spGetUnitHealth(unitID)
+				
+				-- only affect units under construction
+				-- height grows until build % reaches 60
+				if (bp < BP_SIZE_LIMIT) then
+					xs, ys, zs, xo, yo, zo, vtype, htype, axis,_ = spGetUnitCollisionData(unitID)
 	
+					val = math.max(bp*BP_SIZE_MULTIPLIER,0.1)
+					ys = data[1] * val
+					yo = data[2] * val
+					--Spring.Echo(unitID, xs, ys, zs, xo, yo, zo, vtype, htype, axis)
+					spSetUnitCollisionData(unitID, xs, ys, zs, xo, yo, zo, vtype, htype, axis)
+					spSetUnitMidAndAimPos(unitID,0, ys*0.5, 0,0, ys*0.5,0,true)
+				end
+			end
+		end
+	end
 end

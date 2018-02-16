@@ -2,6 +2,7 @@ return {
 	corhind = {
 		acceleration = 0.22,
 		bankscale = 1,
+		blocking = false,
 		brakerate = 0.6,
 		buildcostenergy = 30132,
 		buildcostmetal = 3115,
@@ -126,7 +127,6 @@ return {
 				weapontype = "BeamLaser",
 				weaponvelocity = 800,
 				damage = {
-					commanders = 10,
 					default = 400,
 					subs = 5,
 				},

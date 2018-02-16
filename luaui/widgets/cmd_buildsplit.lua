@@ -14,7 +14,6 @@ end
 
 local floor = math.floor
 
-local spGetGameFrame = Spring.GetGameFrame
 local spGetSpecState = Spring.GetSpectatingState
 
 local spTestBuildOrder = Spring.TestBuildOrder
@@ -26,24 +25,25 @@ local spGiveOrderToUnit = Spring.GiveOrderToUnit
 local spGiveOrderToUnitArray = Spring.GiveOrderToUnitArray
 
 local uDefs = UnitDefs
-local pairs = pairs
 
 local buildID = 0
 local buildLocs = {}
 local buildCount = 0
 
+function widget:PlayerChanged(playerID)
+    if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
+        widgetHandler:RemoveWidget(self)
+    end
+end
+
 function widget:Initialize()
-	if spGetGameFrame() > 0 then
-		widget:GameStart()
-	end
+    if Spring.IsReplay() or Spring.GetGameFrame() > 0 then
+        widget:PlayerChanged()
+    end
 end
 
 function widget:GameStart()
-	
-	local areSpec = spGetSpecState()
-	if areSpec then
-		widgetHandler:RemoveWidget(self)
-	end
+	widget:PlayerChanged()
 end
 
 function widget:CommandNotify(cmdID, cmdParams, cmdOpts) -- 3 of 3 parameters

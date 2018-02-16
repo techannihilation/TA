@@ -1,6 +1,7 @@
 return {
 	tllbuilderlvl1 = {
 		acceleration = 0.04,
+		blocking = false,
 		brakerate = 0.4,
 		buildcostenergy = 7500,
 		buildcostmetal = 495,

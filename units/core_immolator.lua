@@ -51,7 +51,7 @@ return {
 		customparams = {
 			buildpic = "core_immolator.dds",
 			canareaattack = 1,
-			faction = "Core",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

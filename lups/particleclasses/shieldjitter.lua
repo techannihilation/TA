@@ -8,7 +8,6 @@ ShieldJitter.__index = ShieldJitter
 local warpShader
 local timerUniform,strengthUniform
 local sphereList
-local checkStunned = true
 
 -----------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------
@@ -66,12 +65,6 @@ function ShieldJitter:EndDrawDistortion()
 end
 
 function ShieldJitter:DrawDistortion()
-  if checkStunned then
-    self.stunned = Spring.GetUnitIsStunned(self.unit)
-  end
-  if self.stunned then
-    return
-  end
   local pos  = self.pos
   local size = self.size
   gl.Uniform(strengthUniform,  self.strength )
@@ -96,15 +89,15 @@ function ShieldJitter.Initialize()
       varying float scale;
       varying vec2 texCoord;
 
-	void main()
-	{
+  void main()
+  {
           gl_Position    = ftransform();
           texCoord       = gl_MultiTexCoord0.st + timer;
 
           vec3 normal  = normalize(gl_NormalMatrix * gl_Normal);
           vec3 nvertex = normalize(vec3(gl_ModelViewMatrix * gl_Vertex));
           scale = strength*abs(dot( normal,nvertex ));
-	}
+  }
     ]],
     fragment = [[
       uniform sampler2D noiseMap;
@@ -154,15 +147,7 @@ end
 -----------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------
 
-local time = 0
-function ShieldJitter:Update(dt)
-  time = time + dt
-  if time > 45 then
-    checkStunned = true
-    time = 0
-  else
-    checkStunned = false
-  end
+function ShieldJitter:Update()
 end
 
 -- used if repeatEffect=true;

@@ -81,10 +81,16 @@ local function UpdateUnitsList()
 	end
 end
 
+function widget:PlayerChanged(playerID)
+    if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
+        widgetHandler:RemoveWidget(self)
+    end
+end
+
 function widget:Initialize()
-  if Spring.GetSpectatingState() then
-    widgetHandler:RemoveWidget(self)
-  end
+    if Spring.IsReplay() or Spring.GetGameFrame() > 0 then
+        widget:PlayerChanged()
+    end
 	for i,ud in pairs(UnitDefs) do
 		if bombers[ud.name] then
 			bomber_uds[i]=ud
@@ -103,6 +109,10 @@ function widget:Initialize()
 		end
 	end
 	UpdateUnitsList()
+end
+
+function widget:GameStart()
+    widget:PlayerChanged()
 end
 
 local current_team=1234567
@@ -126,7 +136,7 @@ function widget:Update(dt)
 				bomber_data.reloaded=reloaded
 				bomber_data.reload_frame=reload_frame
 				if did_shot then
-					local commands=GetCommandQueue(bomber_id,-1)
+					local commands=GetCommandQueue(bomber_id,50)
 					if commands and commands[1] and commands[1].id==CMD_ATTACK and commands[2] then
 						local got_next_orders=false
 						for i=2,#commands do
@@ -142,9 +152,6 @@ function widget:Update(dt)
 							if states and (states['repeat']) then
 								GiveOrderToUnit(bomber_id, commands[1].id,commands[1].params,{'shift'})
 							end
-							--- workaround for mantis 1823
-							GiveOrderToUnit(bomber_id, CMD_WAIT,{},{})
-							GiveOrderToUnit(bomber_id, CMD_WAIT,{},{})
 						end
 					end
 				end

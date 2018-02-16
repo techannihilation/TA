@@ -3,8 +3,8 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, globetop, globebottom;
-
+piece  base, globetop, globebottom, shield_pos;
+static-var shieldonoff;
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -33,33 +33,32 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
+Shield()
+{
+ 	shieldonoff = !shieldonoff;
+}
+
 Create()
 {
 	dont-shade globetop;
 	dont-shade globebottom;
 	start-script SmokeUnit();
+	shieldonoff = 1;
 }
 
 AimFromWeapon1(piecenum)
 {
-	piecenum = globetop;
+	piecenum = shield_pos;
 }
 
 AimWeapon1(heading, pitch)
 {
-	if( get ACTIVATION )
-	{
-		return (1);
-	}
-	if( !get ACTIVATION )
-	{
-		return (0);
-	}
+	return(shieldonoff);
 }
 
 QueryWeapon1(piecenum)
 {
-	piecenum = globetop;
+	piecenum = shield_pos;
 }
 
 FireWeapon1(Func_Var_1)

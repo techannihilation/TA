@@ -74,10 +74,20 @@ local alternative_units = {}-- unit def id --> list of alternative unit def ids
 local updateRate = 8/30
 local timeCounter = 0
 
+function widget:PlayerChanged(playerID)
+	if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
+		widgetHandler:RemoveWidget(self)
+	end
+end
+
+function widget:GameStart()
+	widget:PlayerChanged()
+end
+
 function widget:Initialize()
-  if Spring.GetSpectatingState() then
-    widgetHandler:RemoveWidget(self)
-  end
+	if Spring.IsReplay() or Spring.GetGameFrame() > 0 then
+	    widget:PlayerChanged()
+  	end
 	local unitnameToUnitDefID = {}--- unit name or humanName --> unit def id
 	for index,def in ipairs(UnitDefs) do
 		unitnameToUnitDefID[def.name]=index

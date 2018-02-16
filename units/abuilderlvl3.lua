@@ -2,6 +2,7 @@ return {
 	abuilderlvl3 = {
 		acceleration = 0.015,
 		airhoverfactor = 0,
+		blocking = false,
 		brakerate = 0.35,
 		buildcostenergy = 535000,
 		buildcostmetal = 27150,
@@ -51,7 +52,7 @@ return {
 		unitname = "abuilderlvl3",
 		workertime = 2000,
 		buildoptions = {
-			[1] = "afusionplant",
+			[1] = "armefus",
 			[2] = "armmas",
 			[3] = "ametalmakerlvl2",
 			[4] = "armses",

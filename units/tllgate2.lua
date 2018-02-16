@@ -34,7 +34,6 @@ return {
 		nochasecategory = "ALL",
 		norestrict = 1,
 		objectname = "tllgate2",
-		onoffable = true,
 		radardistance = 0,
 		radaremitheight = 25,
 		script = "tllgate.cob",
@@ -120,7 +119,6 @@ return {
 				smartshield = true,
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				--visibleshield = true,
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {
