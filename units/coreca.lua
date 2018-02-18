@@ -60,7 +60,7 @@ return {
 			[2] = "coremex",
 			[3] = "cmetalmakerlvl2",
 			[4] = "corses",
-			[5] = "cadvmsto",
+			[5] = "corsms",
 			[6] = "cornanotc2",
 			[7] = "core_hexapod_lab",
 			[8] = "corfmd1",
