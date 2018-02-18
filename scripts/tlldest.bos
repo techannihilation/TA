@@ -4,7 +4,7 @@
 #include "exptype.h"
 
 piece  base, turret1,  barrel1, flare1, barrel3, flare3, 
-	   barrel4, flare4, turret2, missiles, mis1, mis2,
+       barrel4, flare4, turret2, missiles, mis1, mis2,
        mis3, mis4, mis5, mis6, mis7, mis8, wake1, wake2, turret3, sleeva,
        barrel5, barrel6, flarea, flareb, sleeve2,
        turretaa1, sleeveaa1, barrelaa1, barrelaa2, flareaa2,  flareaa1,
@@ -101,6 +101,10 @@ Create()
 	hide flare4;
 	hide flarea;
 	hide flareb;
+	hide flareaa1;
+	hide flareaa2;
+	hide flareaa3;
+	hide flareaa4;
 	start-script SmokeUnit();
 }
 
