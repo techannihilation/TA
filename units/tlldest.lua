@@ -297,6 +297,8 @@ return {
 			},
 			[2] = {
 				def = "LIGHTNING",
+				maindir = "0 0 1",
+				maxangledif = 300,
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
@@ -305,6 +307,8 @@ return {
 			},
 			[4] = {
 				def = "BSCANNON",
+				maindir = "0 0 1",
+				maxangledif = 300,
 				onlytargetcategory = "SURFACE",
 			},
 			[5] = {
