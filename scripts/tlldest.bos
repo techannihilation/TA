@@ -108,20 +108,13 @@ Create()
 	gun_6 = 0;
 	hide flare1;
 	hide flare3;
-	
 	hide flare4;
-	
 	hide flarea;
-	
 	hide flareb;
-	
 	hide flareaa1;
-	
 	hide flareaa2;
-	
 	hide flareaa3;
-	
-	hide flareaa4;	
+	hide flareaa4;
 	start-script SmokeUnit();
 }
 
