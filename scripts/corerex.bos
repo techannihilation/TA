@@ -3,10 +3,9 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, turret1, sleeve1, gun1, flare1, turret2, sleeve2, barrel1,
-       barrel2, flare2, flare3;
+piece  base, turret1, sleeve1, gun1, flare1, turret2, sleeve2, barrel1, barrel2, flare2;
 
-static-var  restore_delay, gun_2;
+static-var  restore_delay;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -54,8 +53,6 @@ Create()
 {
 	hide flare1;
 	hide flare2;
-	hide flare3;
-	gun_2 = turret1;
 	restore_delay = 3000;
 }
 
@@ -113,39 +110,22 @@ AimSecondary(heading, pitch)
 {
 	signal SIG_AIM_2;
 	set-signal-mask SIG_AIM_2;
-	turn turret2 to y-axis heading speed <80.016484>;
-	turn sleeve2 to x-axis <0.000000> - <0.989011> speed <15.000000>;
-	wait-for-turn turret1 around y-axis;
-	wait-for-turn sleeve1 around x-axis;
+	turn turret2 to y-axis heading speed <500.000000>;
+	turn sleeve2 to x-axis <0.000000> - pitch speed <250.000000>;
+	wait-for-turn turret2 around y-axis;
+	wait-for-turn sleeve2 around x-axis;
 	start-script RestoreAfterDelay2();
 	return (1);
 }
 
 FireSecondary()
 {
-	if( gun_2 == 1 )
-	{
-	}
-	if( gun_2 == 2 )
-	{
-	}
-	++gun_2;
-	if( gun_2 == 3 )
-	{
-		gun_2 = turret1;
-	}
+		
 }
 
 QuerySecondary(piecenum)
 {
-	if( gun_2 == 1 )
-	{
 		piecenum = flare2;
-	}
-	if( gun_2 == 2 )
-	{
-		piecenum = flare3;
-	}
 }
 
 AimFromSecondary(piecenum)
@@ -162,7 +142,7 @@ Killed(severity, corpsetype)
 {
 	hide flare1;
 	hide flare2;
-	hide flare3;
+
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
