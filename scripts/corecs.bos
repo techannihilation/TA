@@ -1,0 +1,259 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, beam, door1, door2, fork, gun, wake1, wake2,
+       turret, body, glow;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3;
+
+
+activatescr()
+{
+	if( TRUE )
+	{
+		turn door1 to z-axis <0.> now;
+		turn door1 to z-axis <-95.> speed <123.>;
+		turn door2 to z-axis <0.> now;
+		turn door2 to z-axis <95.> speed <123.>;
+		sleep 771;
+	}
+	if( TRUE )
+	{
+		turn door1 to z-axis <-190.> speed <157.>;
+		turn door2 to z-axis <190.> speed <157.>;
+		sleep 604;
+	}
+	if( TRUE )
+	{
+		turn door1 to z-axis <-190.> speed <0.>;
+		turn door2 to z-axis <190.> speed <0.>;
+		turn fork to x-axis <77.> speed <128.>;
+		turn gun to x-axis <-71.> speed <118.>;
+		sleep 604;
+	}
+	sleep 13;
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		turn door1 to z-axis <-190.> now;
+		turn door1 to z-axis <-190.> speed <0.>;
+		turn door2 to z-axis <190.> now;
+		turn door2 to z-axis <190.> speed <0.>;
+		turn fork to x-axis <77.> now;
+		turn fork to x-axis <0.> speed <70.>;
+		turn gun to x-axis <-71.> now;
+		turn gun to x-axis <0.> speed <65.>;
+		sleep 1100;
+	}
+	if( TRUE )
+	{
+		turn door1 to z-axis <-95.> speed <209.>;
+		turn door2 to z-axis <95.> speed <209.>;
+		sleep 454;
+	}
+	if( TRUE )
+	{
+		turn door1 to z-axis <0.> speed <210.>;
+		turn door2 to z-axis <0.> speed <209.>;
+		sleep 454;
+	}
+	sleep 15;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+StartMoving()
+{
+	signal 2;
+	set-signal-mask 2;
+	while( TRUE )
+	{
+		emit-sfx 2 from wake1;
+		emit-sfx 4 from wake2;
+		sleep 150;
+	}
+}
+
+StopMoving()
+{
+	signal 2;
+}
+
+Go()
+{
+	set INBUILDSTANCE to 1;
+	call-script activatescr();
+	turn turret to y-axis Static_Var_1 speed <160.>;
+	wait-for-turn turret around y-axis;
+}
+
+Stop()
+{
+	set INBUILDSTANCE to 0;
+	turn turret to y-axis <0.> speed <160.>;
+	wait-for-turn turret around y-axis;
+	call-script deactivatescr();
+}
+
+InitState()
+{
+	Static_Var_2 = 1;
+	Static_Var_3 = 0;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( Static_Var_3 )
+	{
+		Static_Var_2 = requestedstate;
+	}
+	Static_Var_3 = 1;
+	currentstate = Static_Var_2;
+	Static_Var_2 = requestedstate;
+	while( Static_Var_2 != currentstate )
+	{
+		if( Static_Var_2 == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( Static_Var_2 == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	Static_Var_3 = 0;
+}
+
+Create()
+{
+	Static_Var_1 = 0;
+	call-script InitState();
+	start-script SmokeUnit();
+	dont-cache glow;
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+StartBuilding(Func_Var_1)
+{
+	Static_Var_1 = Func_Var_1;
+	sleep Rand( 25, 250 );
+	start-script RequestState(0);
+}
+
+StopBuilding()
+{
+	start-script RequestState(1);
+}
+
+QueryNanoPiece(piecenum)
+{
+	piecenum = beam;
+}
+
+TargetHeading(Func_Var_1)
+{
+	Static_Var_1 = 0 - Func_Var_1;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type NOHEATCLOUD;
+		explode beam type NOHEATCLOUD;
+		explode door1 type NOHEATCLOUD;
+		explode door2 type NOHEATCLOUD;
+		explode fork type NOHEATCLOUD;
+		explode gun type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		explode wake1 type NOHEATCLOUD;
+		explode wake2 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type NOHEATCLOUD;
+		explode beam type NOHEATCLOUD | FALL;
+		explode door1 type NOHEATCLOUD | FALL;
+		explode door2 type NOHEATCLOUD | FALL;
+		explode fork type NOHEATCLOUD | FALL;
+		explode gun type NOHEATCLOUD | FALL;
+		explode turret type NOHEATCLOUD | FALL;
+		explode wake1 type NOHEATCLOUD | FALL;
+		explode wake2 type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type NOHEATCLOUD;
+		explode beam type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode door1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode door2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode fork type SHATTER | NOHEATCLOUD;
+		explode gun type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode wake1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode wake2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type NOHEATCLOUD;
+	explode beam type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode door1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode door2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode fork type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode gun type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode wake1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode wake2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
+}

@@ -50,10 +50,11 @@ return {
 		workertime = 400,
 		yardmap = "wCCCCCCCCCCCCCwcCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCc",
 		buildoptions = {
-			[1] = "uppercut",
-			[2] = "corhcar",
-			[3] = "corblackhy",
-			[4] = "cortyrnt",
+			[1] = "coresy",
+			[2] = "uppercut",
+			[3] = "corhcar",
+			[4] = "corblackhy",
+			[5] = "cortyrnt",
 		},
 		customparams = {
 			buildpic = "coresy.dds",

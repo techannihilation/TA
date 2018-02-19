@@ -49,10 +49,11 @@ return {
 		workertime = 400,
 		yardmap = "wCCCCCCCCCCCCCwcCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCc",
 		buildoptions = {
-			[1] = "tllswordfish",
-			[2] = "tllasgard",
-			[3] = "tllhcar",
-			[4] = "tlldest",
+			[1] = "tllecs",
+			[2] = "tllswordfish",
+			[3] = "tllasgard",
+			[4] = "tllhcar",
+			[5] = "tlldest",
 		},
 		customparams = {
 			buildpic = "tllesy.dds",

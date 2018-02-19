@@ -50,11 +50,12 @@ return {
 		workertime = 400,
 		yardmap = "wCCCCCCCCCCCCCwcCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCc",
 		buildoptions = {
-			[1] = "armbc",
-			[2] = "armmarlin",
-			[3] = "armhcar",
-			[4] = "aseadragon",
-			[5] = "armtrmph",
+			[1] = "armecs",
+			[2] = "armbc",
+			[3] = "armmarlin",
+			[4] = "armhcar",
+			[5] = "aseadragon",
+			[6] = "armtrmph",
 		},
 		customparams = {
 			buildpic = "armesy.dds",
