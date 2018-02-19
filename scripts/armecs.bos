@@ -4,7 +4,7 @@
 #include "exptype.h"
 
 piece  base, beam, plate, arm, nano, door1, door2, wake1,
-       wake2, wake3, turret, body, domer;
+       wake2, wake3, turret, body;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3;
 
