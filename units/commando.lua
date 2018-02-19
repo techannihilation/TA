@@ -64,7 +64,7 @@ return {
 		customparams = {
 			buildpic = "commando.dds",
 			faction = "CORE",
-			paralyzemultiplier = 0.25,
+			paralyzemultiplier = 0.15,
 		},
 		nanocolor = {
 			[1] = 0.8,
