@@ -14,6 +14,7 @@ return {
         "tllseaf",
         "tllshu",
         "armstratus"
+        "corshock",
     },
     bombers = {
         "armblz",
