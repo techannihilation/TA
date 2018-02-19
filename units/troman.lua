@@ -2,8 +2,8 @@ return {
 	troman = {
 		acceleration = 0.17,
 		brakerate = 1.5,
-		buildcostenergy = 90180,
-		buildcostmetal = 4420,
+		buildcostenergy = 92180,
+		buildcostmetal = 4620,
 		builder = false,
 		buildpic = "troman.dds",
 		buildtime = 35000,
