@@ -320,6 +320,10 @@ tllefus = {
   armpnix = {
     {class='AirJet',options={color={0.3,0.5,0}, width=8, length=75, piece="thrust", onActive=true}},
   },
+  corshock = {
+    {class='AirJet',options={color={0.8,0.1,0}, width=10, length=30, piece="engine1", onActive=true}},
+    {class='AirJet',options={color={0.8,0.1,0}, width=10, length=30, piece="engine2", onActive=true}},
+  },	
   corvamp = {
     {class='AirJet',options={color={0.6,0.1,0}, width=3.5, length=65, piece="thrustb", onActive=true}},
   },
