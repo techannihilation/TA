@@ -64,7 +64,7 @@ return {
 		customparams = {
 			buildpic = "tllgizmo.dds",
 			faction = "TLL",
-			paralyzemultiplier = 0.25,
+			paralyzemultiplier = 0.15,
 		},
 		nanocolor = {
 			[1] = 0.8,
