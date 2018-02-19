@@ -1119,14 +1119,17 @@ local morphDefs = {
 	  	time = 30,
 	  	tech = 1,
 	},
-	airwolf3 = {
+	airwolf3g = {
 		into = 'armstratus',
 	  	time = 60,
 		xp = 0.50,
 	},
-	
+	shrike = {
+		into = 'corshock',
+	  	time = 60,
+		xp = 0.50,
+	},
 }
-
 
 --
 -- Here's an example of why active configuration
