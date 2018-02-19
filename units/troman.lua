@@ -15,7 +15,7 @@ return {
 		category = "ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE UNDERWATER",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Experimental Sniper Gaus Kbot",
+		description = "Experimental Gaus Kbot",
 		downloadable = 1,
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
