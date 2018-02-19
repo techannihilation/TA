@@ -4,7 +4,7 @@
 #include "exptype.h"
 
 piece  base, turret1,  barrel1, flare1, barrel3, flare3, 
-       barrel4, flare4, turret2, missiles, mis1, mis2,
+	   barrel4, flare4, turret2, missiles, mis1, mis2,
        mis3, mis4, mis5, mis6, mis7, mis8, wake1, wake2, turret3, sleeva,
        barrel5, barrel6, flarea, flareb, sleeve2,
        turretaa1, sleeveaa1, barrelaa1, barrelaa2, flareaa2,  flareaa1,
@@ -17,8 +17,10 @@ static-var  restore_delay, gun_1, gun_2, gun_3, gun_4, gun_5, gun_6;
 #define SIG_MOVE			2
 #define SIG_AIM				4
 #define SIG_AIM_2			8
-#define SIG_AIM_4			16
-
+#define SIG_AIM_3			16
+#define SIG_AIM_4			32
+#define SIG_AIM_5			64
+#define SIG_AIM_6			128
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -87,6 +89,14 @@ RestoreAfterDelay5()
 	turn turretaa2 to y-axis <0.000000> speed <60.000000>;
 	turn sleeveaa2 to x-axis <-90.000000> speed <75.000000>;
 }
+
+RestoreAfterDelay6()
+{
+	sleep restore_delay;
+	turn turret1 to y-axis <0.000000> speed <20.000000>;
+}
+
+
 Create()
 {
 	restore_delay = 8000;
@@ -183,11 +193,11 @@ AimFromPrimary(piecenum)
 
 QueryPrimary(piecenum)
 {
-	if( gun_3 == 0 )
+	if( gun_1 == 0 )
 	{
 		piecenum = flareb;
 	}
-	if( gun_3 == 1 )
+	if( gun_1 == 1 )
 	{
 		piecenum = flarea;
 	}
@@ -195,11 +205,11 @@ QueryPrimary(piecenum)
 
 AimSecondary(heading, pitch)
 {
-	signal SIG_AIM;
-	set-signal-mask SIG_AIM;
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
 	turn turret1 to y-axis heading speed <50.000000>;
 	wait-for-turn turret1 around y-axis;
-	start-script RestoreAfterDelay();
+	start-script RestoreAfterDelay6();
 	return (1);
 }
 
@@ -218,12 +228,72 @@ QuerySecondary(piecenum)
 	piecenum = flare1;
 }
 
-//
+
+AimFromTertiary(piecenum)
+{
+	piecenum = missiles;
+}
+
+AimTertiary(heading, pitch)
+{
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
+	return (1);
+}
+
+FireTertiary()
+{
+	if( gun_3 == 9 )
+	{
+		gun_3 = turret1;
+	}
+	++gun_3;
+}
+
+QueryTertiary(piecenum)
+{
+	if( gun_3 == 1 )
+	{
+		piecenum = mis1;
+	}
+	if( gun_3 == 2 )
+	{
+		piecenum = mis2;
+	}
+	if( gun_3 == 3 )
+	{
+		piecenum = mis3;
+	}
+	if( gun_3 == 4 )
+	{
+		piecenum = mis4;
+	}
+	if( gun_3 == 5 )
+	{
+		piecenum = mis5;
+	}
+	if( gun_3 == 6 )
+	{
+		piecenum = mis6;
+	}
+	if( gun_3 == 7 )
+	{
+		piecenum = mis7;
+	}
+	if( gun_3 == 8 )
+	{
+		piecenum = mis8;
+	}
+	if( gun_3 == 9 )
+	{
+		piecenum = mis1;
+	}
+}
 
 AimWeapon4(heading, pitch)
 {
-	signal SIG_AIM_2;
-	set-signal-mask SIG_AIM_2;
+	signal SIG_AIM_4;
+	set-signal-mask SIG_AIM_4;
 	turn turret2 to y-axis heading speed <80.000000>;
 	turn sleeve2 to x-axis <0.000000> - pitch speed <55.000000>;
 	wait-for-turn turret2 around y-axis;
@@ -274,6 +344,8 @@ QueryWeapon4(piecenum)
 
 AimWeapon5(heading, pitch)
 {
+	signal SIG_AIM_5;
+	set-signal-mask SIG_AIM_5;
 	turn turretaa1 to y-axis heading speed <300.000000>;
 	turn sleeveaa1 to x-axis <0.000000> - pitch speed <150.000000>;
 	wait-for-turn turretaa1 around y-axis;
@@ -333,6 +405,8 @@ QueryWeapon5(piecenum)
 
 AimWeapon6(heading, pitch)
 {
+	signal SIG_AIM_6;
+	set-signal-mask SIG_AIM_6;
 	turn turretaa2 to y-axis heading speed <300.000000>;
 	turn sleeveaa2 to x-axis <0.000000> - pitch speed <150.000000>;
 	wait-for-turn turretaa2 around y-axis;
@@ -385,65 +459,6 @@ QueryWeapon6(piecenum)
 		piecenum = flareaa4;
 		return (0);
 	}
-}
-
-QueryTertiary(piecenum)
-{
-	if( gun_3 == 1 )
-	{
-		piecenum = mis1;
-	}
-	if( gun_3 == 2 )
-	{
-		piecenum = mis2;
-	}
-	if( gun_3 == 3 )
-	{
-		piecenum = mis3;
-	}
-	if( gun_3 == 4 )
-	{
-		piecenum = mis4;
-	}
-	if( gun_3 == 5 )
-	{
-		piecenum = mis5;
-	}
-	if( gun_3 == 6 )
-	{
-		piecenum = mis6;
-	}
-	if( gun_3 == 7 )
-	{
-		piecenum = mis7;
-	}
-	if( gun_3 == 8 )
-	{
-		piecenum = mis8;
-	}
-	if( gun_3 == 9 )
-	{
-		piecenum = mis1;
-	}
-}
-
-AimFromTertiary(piecenum)
-{
-	piecenum = missiles;
-}
-
-AimTertiary(heading, pitch)
-{
-	return (1);
-}
-
-FireTertiary()
-{
-	if( gun_3 == 9 )
-	{
-		gun_3 = turret1;
-	}
-	++gun_3;
 }
 
 Killed(severity, corpsetype)
