@@ -120,7 +120,7 @@ FirePrimary()
 		sleep 150;
 		hide flare1;
 		wait-for-move barrel1 along z-axis;
-		move barrel1 to z-axis [0.000000] speed [0.375000];
+		move barrel1 to z-axis [0.000000] speed [0.800000];
 	}
 	if( bAiming == 1 )
 	{
@@ -130,7 +130,7 @@ FirePrimary()
 		sleep 150;
 		hide flare2;
 		wait-for-move barrel2 along z-axis;
-		move barrel2 to z-axis [0.000000] speed [0.375000];
+		move barrel2 to z-axis [0.000000] speed [0.800000];
 	}
 	++bAiming;
 }
