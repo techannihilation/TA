@@ -13,8 +13,8 @@ return {
         "tllfight",
         "tllseaf",
         "tllshu",
-        "armstratus"
-        "corshock",
+        "armstratus",
+        "corshock"
     },
     bombers = {
         "armblz",
