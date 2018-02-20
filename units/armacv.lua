@@ -87,7 +87,6 @@ return {
 			[21] = "armvp",
 			[22] = "armavp",
 			[23] = "armevp",
-			[24] = "nebraska",
 		},
 		customparams = {
 			buildpic = "armacv.dds",
