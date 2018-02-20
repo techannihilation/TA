@@ -105,13 +105,13 @@ FirePrimary()
 	if( gun_1 == 1 )
 	{
 		show Flash1;
-		sleep 150;
+		sleep 500;
 		hide Flash1;
 	}
 	if( gun_1 == 0 )
 	{
 		show Flash2;
-		sleep 150;
+		sleep 500;
 		hide Flash2;
 	}
 	gun_1 = !gun_1;
