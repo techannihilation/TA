@@ -1038,17 +1038,20 @@ local morphDefs = {
 		xp = 0.60,
 	},
 	tllroaster = {
-		{
-			into = 'tlltelsatnk',
-			time = 60,
-			xp = 0.30,
-		},
-		{
-			into = 'tllroaster1',
-			time = 80,
-			xp = 0.50,
-		},
+	into = 'tllroaster1',
+		time = 30,
+		xp = 0.25,
 	},
+	tllroaster1 = {
+	into = 'tlltelsatnk',
+		time = 30,
+		xp = 0.25,
+	},
+	armmanni = {
+	into = 'armmanni1',
+		time = 30,
+		xp = 0.25,
+	},	
 	tllpbot = {
      	into = 'tllartybot',
 		time = 30,
