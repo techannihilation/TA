@@ -82,7 +82,6 @@ return {
 			[21] = "corlab",
 			[22] = "coralab",
 			[23] = "corgant",
-			[24] = "corboucher",
 		},
 		customparams = {
 			buildpic = "corack.dds",
