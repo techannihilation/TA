@@ -1,4 +1,42 @@
-﻿3.05.0 -> 3.06
+﻿3.06.0 -> 3.07.0
+ 2018-02-20
+
+ Visual Improvements:
+ - armmcv : Add Missile Starburst for Vehicle Command (t3 ARM). Now there are 2 independant turrets.
+ - armsiege : Deleted the pause after the second shot.
+ - champ : Increase size for Champion (T3 Core vehicle).
+ - troman : Add starburst.
+ - coreavalanche & cordemon : Add flames.
+ - tlldmc : increase size.
+ - batships (arm & core) : the main turret fires in continue (no more pause after the third shoot)
+ 
+
+ Balance:
+ - commando have Cloak. Stealthy feature deleted. Paratrooping feature deleted.
+ - Balance Tllroaster (turret have angle limit now fixed at 220°).
+ - troman : Delete the Sniper weapon and add beam laser. Increase speed and HP.
+ - tlldmc : decrease HP and cost.
+ - monkeylord : increase cost and timebuild. The weapon rotation has been reduced.
+ 
+ Improvements:
+ - Add new T4 Fusion, MEX and MM. 
+ - All T3/T4 Fusion/MM/MEX have been reworking and balancing.
+ - Add New T3 Air, Vehicle, Naval Constructors for each faction.
+ - Add Gizmo for TLL Commando unit.
+ - Add armchimera (T3 Lighting Tank) for Panther morph (ARM).
+ - Add tllroster1 for Roaster morph (TLL).
+ - Add ArmStratus (T4 AIR) for T3 fighter morph.
+ - Add Corshock (T4 AIR) for T3 fighter morph.
+ - Add new T4 Metal storage for Core.
+ - Add new class for air transporter.
+ - Add paratrooper feature for maverick and pyro (after killed the air transporter, units survive at 50% hp).
+ - Remplace the Viking models (T2 Ship TLL).
+ 
+ Bugs Fix Release:
+ - TLLdest : Turret shoot is fixed now. Deleted the flare for Flak.
+ - Valiant : Delete capture button.
+ 
+3.05.0 -> 3.06
  2018-01-16
 
  Visual Improvements:
