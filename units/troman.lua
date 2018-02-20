@@ -222,7 +222,6 @@ return {
 			},
 			[3] = {
 				def = "RAVE_MISSILE",
-				onlytargetcategory = "SURFACE",
 			},
 		},
 	},
