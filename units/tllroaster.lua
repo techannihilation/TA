@@ -16,7 +16,6 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Mobile Energy Weapon",
-		energyuse = 7,
 		explodeas = "ESTOR_BUILDING",
 		firestandorders = 1,
 		footprintx = 4,
