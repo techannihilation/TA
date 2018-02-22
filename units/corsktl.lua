@@ -44,7 +44,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "CORSKTL",
 		radaremitheight = 25,
-		seismicsignature = 64,
+		seismicsignature = 6,
 		selfdestructas = "CORMINE6",
 		selfdestructcountdown = 0,
 		sightdistance = 260,
