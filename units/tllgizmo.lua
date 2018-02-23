@@ -37,7 +37,7 @@ return {
 		mass = 1590,
 		maxdamage = 2300,
 		maxslope = 20,
-		maxvelocity = 1.45,
+		maxvelocity = 1.65,
 		maxwaterdepth = 15,
 		mincloakdistance = 53,
 		mobilestandorders = 1,
@@ -60,7 +60,7 @@ return {
 		turnrate = 1016,
 		unitname = "tllgizmo",
 		upright = true,
-		workertime = 2300,
+		workertime = 3500,
 		customparams = {
 			buildpic = "tllgizmo.dds",
 			faction = "TLL",
