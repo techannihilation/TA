@@ -60,7 +60,7 @@ return {
 		turnrate = 1016,
 		unitname = "tllgizmo",
 		upright = true,
-		workertime = 3500,
+		workertime = 3650,
 		customparams = {
 			buildpic = "tllgizmo.dds",
 			faction = "TLL",
