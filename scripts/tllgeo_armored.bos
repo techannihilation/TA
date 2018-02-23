@@ -1,0 +1,285 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece body, base, tower, turret, tube, tube1, tube2, tail1, tail2, meche1, meche2, meche3, top1, top2, top3, steam1a, steam1b, steam2a, steam2b, steam3a, steam3b, foota, footb, footc, geo1, geo2, geo3 ;
+static-var  gun_1, canShoot;
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from tube1;
+			emit-sfx smoketype from tube2;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+flames1(Func_Var_1)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 500;
+	}
+	while( TRUE )
+	{
+		Func_Var_1 = 200 + Rand( 50, 800 );
+		sleep Func_Var_1;
+		emit-sfx 0 from tail1;
+	}
+}
+flames2(Func_Var_1)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 500;
+	}
+	while( TRUE )
+	{
+		Func_Var_1 = 200 + Rand( 50, 800 );
+		sleep Func_Var_1;
+		emit-sfx 0 from tail2;
+	}
+}
+
+steaming()
+{
+	while(TRUE) {
+		emit-sfx 256 | 1 from steam1a;
+		emit-sfx 256 | 1 from steam1b;
+		emit-sfx 256 | 1 from steam2a;
+		emit-sfx 256 | 1 from steam2b;
+		emit-sfx 256 | 1 from steam3a;
+		emit-sfx 256 | 1 from steam3b;
+		sleep 200;
+	}
+}
+
+Create()
+{
+	gun_1 = 0;
+	canShoot = 0;
+	dont-shade tower;
+	dont-shade turret;
+	dont-shade tube1;
+	dont-shade tube2;
+	dont-shade tail1;
+	dont-shade tail2;
+	hide tail1;
+	hide tail2;
+	cache tower;
+	cache turret;
+	cache tail1;
+	cache tail2;
+	dont-cache tube1;
+	dont-cache tube2;
+	sleep 1000;
+	spin meche1 around y-axis speed <100.000000> accelerate <5.000000>;
+	spin meche2 around y-axis speed <100.000000> accelerate <5.000000>;
+	spin meche3 around y-axis speed <100.000000> accelerate <5.000000>;
+	sleep 1000;
+	move top1 to y-axis [-15.000000] speed [5.000000];
+	move top2 to y-axis [-15.000000] speed [5.000000];
+	move top3 to y-axis [-15.000000] speed [5.000000];
+	start-script steaming();
+	start-script SmokeUnit();
+	start-script flames1();
+	start-script flames2();
+}
+
+AimPrimary(heading, pitch)
+{
+	signal 2;
+	set-signal-mask 2;
+	turn turret to y-axis heading speed <100.000000>;
+	turn tube to x-axis <0.000000> - pitch speed <50.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn tube around x-axis;
+	return (1);
+}
+
+
+FirePrimary() 
+{
+
+}
+
+AimSecondary(heading, pitch)
+{
+	signal 4;
+	set-signal-mask 4;
+	wait-for-turn turret around y-axis;
+	wait-for-turn tube around x-axis;
+	return (1);
+}
+
+FireSecondary() 
+{
+
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = tail1;
+}
+
+QuerySecondary(piecenum)
+{
+	piecenum = tail2;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = tower;
+}
+
+AimFromSecondary(piecenum)
+{
+	piecenum = tower;
+}
+
+
+/*
+FirePrimary()
+{
+	if( gun_1 == 0 )
+	{
+		gun_1 = 1;
+		return (0);
+	}
+	if( gun_1 == 1 )
+	{
+		gun_1 = 0;
+		return (0);
+	}
+}
+
+QueryPrimary(piecenum)
+{
+	if( gun_1 == 0 )
+	{
+		piecenum = tail1;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = tail2;
+	}
+}
+*/
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode tube1 type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		explode tube2 type NOHEATCLOUD;
+		explode tower type NOHEATCLOUD;
+		explode tower type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		explode geo1 type NOHEATCLOUD;
+		explode geo2 type NOHEATCLOUD;
+		explode geo3 type NOHEATCLOUD;
+		explode foota type NOHEATCLOUD;
+		explode footb type NOHEATCLOUD;
+		explode footc type NOHEATCLOUD;
+		explode top1 type NOHEATCLOUD;
+		explode meche1 type NOHEATCLOUD;
+		explode top2 type NOHEATCLOUD;
+		explode meche2 type NOHEATCLOUD;
+		explode top3 type NOHEATCLOUD;
+		explode meche3 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode tube1 type NOHEATCLOUD | FALL;
+		explode turret type NOHEATCLOUD | FALL;
+		explode tube2 type NOHEATCLOUD | FALL;
+		explode tower type NOHEATCLOUD | FALL;
+		explode tower type NOHEATCLOUD | FALL;
+		explode body type NOHEATCLOUD | FALL;
+		explode geo1 type NOHEATCLOUD | FALL;
+		explode geo2 type NOHEATCLOUD | FALL;
+		explode geo3 type NOHEATCLOUD | FALL;
+		explode foota type NOHEATCLOUD | FALL;
+		explode footb type NOHEATCLOUD | FALL;
+		explode footc type NOHEATCLOUD | FALL;
+		explode top1 type NOHEATCLOUD | FALL;
+		explode meche1 type NOHEATCLOUD | FALL;
+		explode top2 type NOHEATCLOUD | FALL;
+		explode meche2 type NOHEATCLOUD | FALL;
+		explode top3 type NOHEATCLOUD | FALL;
+		explode meche3 type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+		if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode tube1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode tube2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode tower type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode tower type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode body type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode geo1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode geo2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode geo3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode foota type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode footb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode footc type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode top1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode meche1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode top2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode meche2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode top3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode meche3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode tube1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode tube2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode tower type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode tower type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode body type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode geo1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode geo2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode geo3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode foota type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode footb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode footc type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode top1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode meche1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode top2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode meche2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode top3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode meche3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}
