@@ -37,7 +37,7 @@ return {
 		mass = 1186,
 		maxdamage = 1870,
 		maxslope = 20,
-		maxvelocity = 1.7,
+		maxvelocity = 1.9,
 		maxwaterdepth = 15,
 		mincloakdistance = 65,
 		mobilestandorders = 1,
@@ -60,7 +60,7 @@ return {
 		turnrate = 1016,
 		unitname = "commando",
 		upright = true,
-		workertime = 2000,
+		workertime = 3000,
 		customparams = {
 			buildpic = "commando.dds",
 			faction = "CORE",
