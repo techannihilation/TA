@@ -48,7 +48,6 @@ return {
 		customparams = {
 			buildpic = "nebraska.dds",
 			faction = "ARM",
-			requiretech = "T3 Factory",
 		},
 		featuredefs = {
 			dead = {

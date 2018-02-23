@@ -48,7 +48,6 @@ return {
 		customparams = {
 			buildpic = "corboucher.dds",
 			faction = "CORE",
-			requiretech = "T3 Factory",
 		},
 		featuredefs = {
 			dead = {

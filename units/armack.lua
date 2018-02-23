@@ -82,7 +82,6 @@ return {
 			[21] = "armlab",
 			[22] = "armalab",
 			[23] = "armshltx",
-			[24] = "nebraska",
 		},
 		customparams = {
 			buildpic = "armack.dds",

@@ -68,10 +68,9 @@ return {
 			[13] = "tlllrpt",
 			[14] = "tllrlrpc",
 			[15] = "tllhydre",
-			[16] = "tlldmc",
-			[17] = "tllvp",
-			[18] = "tllavp",
-			[19] = "tllevp",
+			[16] = "tllvp",
+			[17] = "tllavp",
+			[18] = "tllevp",
 		},
 		customparams = {
 			buildpic = "tllacv.dds",
