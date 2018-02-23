@@ -132,6 +132,11 @@ tllefus = {
     {class='Bursts',options=shieldBursts250},
     {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=250, precision=0, strength   = 0.001, repeatEffect=true}},
   },
+  tllgorgon = {
+    {class='ShieldSphere',options=corshieldgenShieldSphere},
+    {class='Bursts',options=shieldBursts250},
+    {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,22,0.0}, size=300, precision=0, strength   = 0.001, repeatEffect=true}},
+  },
    corsfus = {
     {class='Bursts',options=corsfusBursts},
     {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=180, precision=0, strength   = 0.001, repeatEffect=true}},

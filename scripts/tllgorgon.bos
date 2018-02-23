@@ -1,0 +1,289 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+
+piece  base, body, rupleg1, rupleg2, rupleg3, lupleg1, lupleg2, lupleg3, rfoot1, rfoot2, rfoot3,
+		lfoot1, lfoot2, lfoot3, sphere, firepoint;
+		
+static-var  statechg_DesiredState, statechg_StateChanging, moving, Static_Var_1, Speedmovingleg ;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+walk()
+{
+	if( moving )
+	{
+		TURN rupleg1 to y-axis <0.000000> speed <1.000000> * Speedmovingleg;
+		TURN rupleg1 to z-axis <0.000000> speed <1.000000> * Speedmovingleg;
+		TURN rupleg2 to z-axis <15.000000> speed <1.000000> * Speedmovingleg;
+		TURN rupleg3 to y-axis <16.500000> speed <1.000000> * Speedmovingleg;
+		TURN rupleg3 to z-axis <0.000000> speed <1.000000> * Speedmovingleg;
+		TURN lupleg1 to y-axis <-19.5> speed <1.000000> * Speedmovingleg;
+		TURN lupleg1 to z-axis <0.000000> speed <1.000000> * Speedmovingleg;
+		TURN lupleg2 to y-axis <0.000000> speed <1.000000> * Speedmovingleg;
+		TURN lupleg2 to z-axis <0.000000> speed <1.000000> * Speedmovingleg;
+		TURN lupleg3 to y-axis <-14.500000> speed <1.000000> * Speedmovingleg;
+		TURN lupleg3 to z-axis <-22.500000> speed <1.000000> * Speedmovingleg;
+		SLEEP 120;
+	}
+	if( moving )
+	{
+		TURN rupleg2 to y-axis <16.500000> speed <1.000000> * Speedmovingleg;
+		TURN rupleg2 to z-axis <15.000000> speed <1.000000> * Speedmovingleg;
+		TURN lupleg1 to y-axis <0.000000> speed <1.000000> * Speedmovingleg;
+		TURN lupleg2 to z-axis <-15.000000> speed <1.000000> * Speedmovingleg;
+		TURN lupleg3 to z-axis <1.000000> speed <1.000000> * Speedmovingleg;
+		TURN rupleg1 to z-axis <15.000000> speed <1.000000> * Speedmovingleg;
+		TURN rupleg3 to y-axis <0.000000> speed <1.000000> * Speedmovingleg;
+		TURN rupleg3 to z-axis <0.000000> speed <1.000000> * Speedmovingleg;
+		SLEEP 120;
+	}
+	if( moving )
+	{
+		TURN lupleg2 to y-axis <-15.000000> speed <1.000000> * Speedmovingleg;
+		TURN lupleg2 to z-axis <-15.000000> speed <1.000000> * Speedmovingleg;
+		TURN lupleg3 to y-axis <1.500000> speed <1.000000> * Speedmovingleg;
+		TURN rupleg2 to y-axis <16.500000> speed <1.000000> * Speedmovingleg;
+		TURN rupleg2 to z-axis <0.000000> speed <1.000000> * Speedmovingleg;
+		TURN rupleg3 to z-axis <15.000000> speed <1.000000> * Speedmovingleg;
+		TURN rupleg1 to y-axis <27.000000> speed <1.000000> * Speedmovingleg;
+		TURN rupleg1 to z-axis <15.000000> speed <1.000000> * Speedmovingleg;
+		TURN lupleg1 to y-axis <0.000000> speed <1.000000> * Speedmovingleg;
+		TURN lupleg1 to z-axis <-15.000000> speed <1.000000> * Speedmovingleg;
+		SLEEP 120;
+	}
+	if( moving )
+	{
+		TURN lupleg2 to y-axis <-18.000000> speed <1.000000> * Speedmovingleg;
+		TURN lupleg2 to z-axis <0.000000> speed <1.000000> * Speedmovingleg;
+		TURN lupleg3 to y-axis <0.000000> speed <1.000000> * Speedmovingleg;
+		TURN lupleg3 to z-axis <-22.500000> speed <1.000000> * Speedmovingleg;
+		TURN rupleg2 to y-axis <0.000000> speed <1.000000> * Speedmovingleg;
+		TURN rupleg2 to z-axis <0.000000> speed <1.000000> * Speedmovingleg;
+		TURN rupleg3 to y-axis <16.5> speed <1.000000> * Speedmovingleg;
+		TURN rupleg1 to y-axis <21.000000> speed <1.000000> * Speedmovingleg;
+		TURN rupleg1 to z-axis <0.000000> speed <1.000000> * Speedmovingleg;
+		TURN rupleg3 to z-axis <15.000000> speed <1.000000> * Speedmovingleg;
+		TURN lupleg1 to y-axis <-19.500000> speed <1.000000> * Speedmovingleg;
+		TURN lupleg1 to z-axis <-15.000000> speed <1.000000> * Speedmovingleg;
+		SLEEP 120;
+	}
+}
+
+StartMoving()
+{
+	moving = 1;
+}
+
+StopMoving()
+{
+	moving = 0;
+}
+
+MotionControl(Func_Var_1)
+{
+	while( TRUE )
+	{		
+		Func_Var_1 = moving;
+		if( Func_Var_1 )
+		{
+			call-script walk();
+		}
+		if( !Func_Var_1 )
+		{
+			sleep 100;
+		}
+	}
+}
+
+ShieldOn()
+{
+	Static_Var_1 = 1;
+}
+
+ShieldOff()
+{
+	Static_Var_1 = 0;
+}
+
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script ShieldOn();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script ShieldOff();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+Create()
+{
+	moving = 0;
+	hide sphere;
+	Static_Var_1 = 0;
+	Speedmovingleg = 30;
+	call-script InitState();
+	start-script SmokeUnit();
+	start-script MotionControl();
+}
+
+AimTertiary(heading, pitch)
+{
+	sleep 100;
+	return (Static_Var_1);
+}
+
+FireTertiary()
+{
+	explode sphere type NOHEATCLOUD | FALL;
+	sleep 100;
+}
+
+QueryTertiary(piecenum)
+{
+	piecenum = sphere;
+}
+
+AimFromTertiary(piecenum)
+{
+	piecenum = sphere;
+}
+
+AimPrimary()
+{
+	signal 2;
+	set-signal-mask 2;
+	return(1);
+}
+
+FirePrimary()
+{
+	return(1);
+}
+
+
+QueryPrimary(piecenum)
+{	
+	piecenum = firepoint;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = firepoint;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1 ;
+		explode body type NOHEATCLOUD;
+		explode lupleg1 type NOHEATCLOUD;
+		explode lupleg2 type NOHEATCLOUD;
+		explode lupleg3 type NOHEATCLOUD;
+		explode rupleg1 type NOHEATCLOUD;
+		explode rupleg2 type NOHEATCLOUD;
+		explode rupleg3 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode body type NOHEATCLOUD | FALL;
+		explode lupleg1 type NOHEATCLOUD | FALL;
+		explode lupleg2 type NOHEATCLOUD | FALL;
+		explode lupleg3 type NOHEATCLOUD | FALL;
+		explode rupleg1 type NOHEATCLOUD | FALL;
+		explode rupleg2 type NOHEATCLOUD | FALL;
+		explode rupleg3 type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode body type BITMAPONLY | BITMAP1;
+		explode lupleg1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode lupleg2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode lupleg3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode rupleg1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode rupleg2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode rupleg3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode body type BITMAPONLY | BITMAP1;
+	explode lupleg1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lupleg2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lupleg3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rupleg1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rupleg2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rupleg3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}
+
