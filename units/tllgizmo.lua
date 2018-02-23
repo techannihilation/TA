@@ -37,7 +37,7 @@ return {
 		mass = 1590,
 		maxdamage = 2300,
 		maxslope = 20,
-		maxvelocity = 1.65,
+		maxvelocity = 1.72,
 		maxwaterdepth = 15,
 		mincloakdistance = 53,
 		mobilestandorders = 1,
