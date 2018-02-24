@@ -105,8 +105,9 @@ return {
 			[24] = "armsy",
 			[25] = "armsonar",
 			[26] = "armfdrag",
-			[27] = "armtl",
-			[28] = "armfrt",
+			[27] = "armfllt",
+			[28] = "armtl",
+			[29] = "armfrt",
 		},
 		customparams = {
 			buildpic = "armcom1.dds",
