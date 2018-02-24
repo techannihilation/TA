@@ -75,9 +75,10 @@ return {
 			[16] = "corfdrag",
 			[17] = "corfrt",
 			[18] = "corfhlt",
-			[19] = "cortl",
-			[20] = "corplat",
-			[21] = "corfnanotc",
+			[19] = "corfllt",
+			[20] = "cortl",
+			[21] = "corplat",
+			[22] = "corfnanotc",
 		},
 		customparams = {
 			buildpic = "corcs.dds",
