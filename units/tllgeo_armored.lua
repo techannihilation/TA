@@ -55,7 +55,7 @@ return {
 		yardmap = "oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo ",
 		customparams = {
 			buildpic = "tllgeo_armored.png",
-			faction = "CORE",
+			faction = "TLL",
 		},
 		featuredefs = {
 			dead = {
