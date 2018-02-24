@@ -102,7 +102,8 @@ return {
 			[43] = "corfrad",
 			[44] = "corfhlt",
 			[45] = "corfrt",
-			[46] = "cortl",
+			[46] = "corfllt",
+			[47] = "cortl",
 		},
 		customparams = {
 			buildpic = "corch.dds",
