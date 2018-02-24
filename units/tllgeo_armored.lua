@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "corbhmth_aoplane.dds",
-		buildpic = "corbhmth.dds",
+		buildpic = "tllgeo_armored.dds",
 		buildtime = 60000,
 		canattack = true,
 		canstop = 1,
@@ -54,7 +54,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo ",
 		customparams = {
-			buildpic = "CORBHMTH.png",
+			buildpic = "tllgeo_armored.png",
 			faction = "CORE",
 		},
 		featuredefs = {
