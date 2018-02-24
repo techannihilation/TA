@@ -75,9 +75,10 @@ return {
 			[16] = "armfdrag",
 			[17] = "armfrt",
 			[18] = "armfhlt",
-			[19] = "armtl",
-			[20] = "armplat",
-			[21] = "armfnanotc",
+			[19] = "armfllt",
+			[20] = "armtl",
+			[21] = "armplat",
+			[22] = "armfnanotc",
 		},
 		customparams = {
 			buildpic = "armcs.dds",
