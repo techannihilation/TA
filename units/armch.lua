@@ -100,9 +100,9 @@ return {
 			[41] = "armsonar",
 			[42] = "armfdrag",
 			[43] = "armfrad",
-			[44] = "armfhlt",
-			[45] = "armfrt",
-			[46] = "armfllt",
+			[44] = "armfllt",
+			[45] = "armfhlt",
+			[46] = "armfrt",
 			[47] = "armtl",
 		},
 		customparams = {
