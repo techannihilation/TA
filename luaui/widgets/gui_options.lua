@@ -1244,7 +1244,7 @@ function widget:Initialize()
 		{id='control', name='Control'},
 		{id='ui', name='Interface'},
 		{id='game', name='Game'},
-		{id='dr', name='Defenisve Range'},
+		{id='dr', name='Defensive Range'},
 	}
 	options = {
 		-- PRESET
