@@ -19,7 +19,7 @@ return {
 		collisionvolumetype = "CylZ",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Experimantal Tank - Anti T3/T4",
+		description = "Experimantal Tank",
 		explodeas = "ESTOR_BUILDING",
 		firestandorders = 1,
 		footprintx = 5,
@@ -135,8 +135,6 @@ return {
 				damage = {
 					commanders = 150,
 					default = 375,
-					experimental_land = 500,
-					experimental_ships = 500,
 					subs = 5,
 				},
 			},
