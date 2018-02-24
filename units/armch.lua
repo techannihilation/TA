@@ -102,7 +102,8 @@ return {
 			[43] = "armfrad",
 			[44] = "armfhlt",
 			[45] = "armfrt",
-			[46] = "armtl",
+			[46] = "armfllt",
+			[47] = "armtl",
 		},
 		customparams = {
 			buildpic = "armch.dds",
