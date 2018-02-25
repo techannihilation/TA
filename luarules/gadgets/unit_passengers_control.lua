@@ -29,7 +29,9 @@ end
 
 if (not gadgetHandler:IsSyncedCode()) then return end
 
-local paraTroppers={
+local stunTime = 8
+
+local paraTroopers={
   		[UnitDefNames["corpyro"].id] = true,
 		[UnitDefNames["armmav"].id] = true,
 		[UnitDefNames["tlltraq"].id] = true,
@@ -50,20 +52,13 @@ currentFrame = 0
 
 --when a unit is unloaded, mark it either as a commando or for possible destruction on next frame
 function gadget:UnitUnloaded(unitID, unitDefID, teamID, transportID)
-
 	--Spring.Echo ("unloaded " .. unitID .. " (" .. unitDefID .. "), from transport " .. transportID)
-	
-	if not paraTroppers[unitDefID] then	
-		currentFrame = Spring.GetGameFrame()
-		if (not toKill[currentFrame+1]) then toKill[currentFrame+1] = {} end
-		toKill[currentFrame+1][unitID] = true
-		if (not fromtrans[currentFrame+1]) then fromtrans[currentFrame+1] = {} end
-		fromtrans[currentFrame+1][unitID] = transportID
-		--Spring.Echo("added killing request for " .. unitID .. " on frame " .. currentFrame+1 .. " from transport " .. transportID )
-	else
-		--commandos are given a move order to the location of the ground below where the transport died; remove it
-		Spring.GiveOrderToUnit(unitID, CMD.STOP, {}, {})
-	end
+	currentFrame = Spring.GetGameFrame()
+	if (not toKill[currentFrame+1]) then toKill[currentFrame+1] = {} end
+	toKill[currentFrame+1][unitID] = true
+	if (not fromtrans[currentFrame+1]) then fromtrans[currentFrame+1] = {} end
+	fromtrans[currentFrame+1][unitID] = transportID
+	--Spring.Echo("added killing request for " .. unitID .. " on frame " .. currentFrame+1 .. " from transport " .. transportID )
 end
 
 function gadget:GameFrame (currentFrame) 
@@ -77,6 +72,13 @@ function gadget:GameFrame (currentFrame)
 				if crawlingBombs[Spring.GetUnitDefID(uID)] then
 					Spring.DestroyUnit (uID, false, true) 	
 				else
+					if paraTroopers[Spring.GetUnitDefID(uID)] then
+						--paraTroopers are given a move order to the location of the ground below where the transport died; remove it
+						Spring.GiveOrderToUnit(uID, CMD.STOP, {}, {})
+						_,maxHealth,_,_,_ = Spring.GetUnitHealth(uID)
+    					Spring.SetUnitHealth(uID,{ paralyze = maxHealth + (maxHealth/40)*stunTime })
+						return
+					end
 					Spring.DestroyUnit (uID, true, false)
 				end
 			end
