@@ -7,11 +7,10 @@ piece  base, body, pontoon, turret, neck, rotor, sleeve1, barrel1, gun1,
 	   sleeve2, barrel2, gun2, sleeve3, barrel3, gun3, flare ;
 
 static-var  gun_1, firedelay, firing;
-static-var	shield_on, nbr_shield, dome_on, nbr_dome ; 
 
 // Signal definitions
 #define SIG_AIM				2
-//#define SIG_ROCK			4
+
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -60,12 +59,6 @@ RockUnit(anglex, anglez)
 
 Create()
 {
-	nbr_shield = 0;
-	nbr_dome = 0;
-
-	shield_on = 0;
-	dome_on = 0;
-	
 	hide flare;
 	
 	dont-cache flare;
@@ -80,8 +73,6 @@ Create()
 	dont-cache gun1;
 	dont-cache gun2;
 	dont-cache gun3;
-//	dont-cache body;
-
 	dont-shade flare;
 	dont-shade barrel1;
 	dont-shade barrel2;
