@@ -13,7 +13,7 @@ end
 if (not gadgetHandler:IsSyncedCode()) then
   return
 end
-local stunTime = 8
+
 local paraTroppers = {
 		[UnitDefNames["corpyro"].id] = true,
 		[UnitDefNames["armmav"].id] = true,
@@ -46,11 +46,9 @@ end
 
 function gadget:UnitUnloaded(unitID, unitDefID, _, transID)
     if paraTroppers[unitDefID] or not transID then
-        _,maxHealth,_,_,_ = Spring.GetUnitHealth(unitID)
-        Spring.SetUnitHealth(unitID,{ paralyze = maxHealth + (maxHealth/40)*stunTime })
         return 
     end
-
+    
     local transDefID = Spring.GetUnitDefID(transID)
     if not transDefID or UnitDefs[transDefID].isAirBase then 
         return 
