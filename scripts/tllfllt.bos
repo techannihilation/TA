@@ -82,6 +82,7 @@ Create()
 	}
 
 	start-script SmokeUnit();
+	start-script Tangue();
 }
 
 AimPrimary(heading, pitch)
