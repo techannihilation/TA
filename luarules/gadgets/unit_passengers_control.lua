@@ -1,5 +1,5 @@
 --in TechA "commando" unit always survives being shot down during transport
---when a com dies in mid air the damage done is controlled by unit_combomb_full_damage 
+--when a com dies in mid air the damage done is controlled by unit_combomb_full_damage
 
 --several other ways to code this do not work because:
 --when UnitDestroyed() is called, Spring.GetUnitIsTransporting is already empty -> meh
@@ -13,7 +13,6 @@
 --DestroyUnit(ID, true, true) will trigger self d explosion, won't leave a wreck but won't cause an explosion either
 --DestroyUnit(ID, true, false) won't leave a wreck but won't cause the self d explosion either
 --AddUnitDamage (ID, math.huge) makes a normal death explo but leaves wreck. Calling this for the transportee on the same frame as the trans dies results in a crash.
-
 
 function gadget:GetInfo()
   return {
@@ -32,63 +31,54 @@ if (not gadgetHandler:IsSyncedCode()) then return end
 local stunTime = 8
 
 local paraTroopers={
-  		[UnitDefNames["corpyro"].id] = true,
-		[UnitDefNames["armmav"].id] = true,
-		[UnitDefNames["tlltraq"].id] = true,
- 	}
+  [UnitDefNames["corpyro"].id] = true,
+  [UnitDefNames["armmav"].id] = true,
+  [UnitDefNames["tlltraq"].id] = true,
+}
 
 local crawlingBombs = {
-	[UnitDefNames.armvader.id] = true,
-	[UnitDefNames.corroach.id] = true,
-	[UnitDefNames.corsktl.id] = true,
-	[UnitDefNames.tllcrawlb.id] = true,
-	[UnitDefNames.coretnt.id] = true,
+  [UnitDefNames.armvader.id] = true,
+  [UnitDefNames.corroach.id] = true,
+  [UnitDefNames.corsktl.id] = true,
+  [UnitDefNames.tllcrawlb.id] = true,
+  [UnitDefNames.coretnt.id] = true,
 }
 
 toKill = {} -- [frame][unitID]
 fromtrans = {}
-
 currentFrame = 0
 
 --when a unit is unloaded, mark it either as a commando or for possible destruction on next frame
 function gadget:UnitUnloaded(unitID, unitDefID, teamID, transportID)
-	--Spring.Echo ("unloaded " .. unitID .. " (" .. unitDefID .. "), from transport " .. transportID)
-	currentFrame = Spring.GetGameFrame()
-	if (not toKill[currentFrame+1]) then toKill[currentFrame+1] = {} end
-	toKill[currentFrame+1][unitID] = true
-	if (not fromtrans[currentFrame+1]) then fromtrans[currentFrame+1] = {} end
-	fromtrans[currentFrame+1][unitID] = transportID
-	--Spring.Echo("added killing request for " .. unitID .. " on frame " .. currentFrame+1 .. " from transport " .. transportID )
+  currentFrame = Spring.GetGameFrame()
+  if (not toKill[currentFrame+1]) then toKill[currentFrame+1] = {} end
+  toKill[currentFrame+1][unitID] = true
+  if (not fromtrans[currentFrame+1]) then fromtrans[currentFrame+1] = {} end
+  fromtrans[currentFrame+1][unitID] = transportID
+  --Spring.Echo("added killing request for " .. unitID .. " on frame " .. currentFrame+1 .. " from transport " .. transportID )
 end
 
-function gadget:GameFrame (currentFrame) 
-	if (toKill[currentFrame]) then --kill units as requested from above
-		for uID,_ in pairs (toKill[currentFrame]) do
-			tID = fromtrans[currentFrame][uID]
-			--Spring.Echo ("delayed killing check called for unit " .. uID .. " and trans " .. tID .. ". ")
-			--check that trans is dead/crashing and unit is still alive 
-			if ((not Spring.GetUnitIsDead(uID)) and (Spring.GetUnitIsDead(tID) or (Spring.GetUnitMoveTypeData(tID).aircraftState=="crashing"))) then
-				--Spring.Echo("killing unit " .. uID)
-				if crawlingBombs[Spring.GetUnitDefID(uID)] then
-					Spring.DestroyUnit (uID, false, true) 	
-				else
-					if paraTroopers[Spring.GetUnitDefID(uID)] then
-						--paraTroopers are given a move order to the location of the ground below where the transport died; remove it
-						Spring.GiveOrderToUnit(uID, CMD.STOP, {}, {})
-						_,maxHealth,_,_,_ = Spring.GetUnitHealth(uID)
-    					Spring.SetUnitHealth(uID,{ paralyze = maxHealth + (maxHealth/40)*stunTime })
-						return
-					end
-					Spring.DestroyUnit (uID, true, false)
-				end
-			end
-		end
-	toKill[currentFrame] = nil
-	fromtrans[currentFrame] = nil
-	end
+function gadget:GameFrame (currentFrame)
+  if (toKill[currentFrame]) then --kill units as requested from above
+  for uID,_ in pairs (toKill[currentFrame]) do
+    tID = fromtrans[currentFrame][uID]
+    --check that trans is dead/crashing and unit is still alive
+    if ((not Spring.GetUnitIsDead(uID)) and (Spring.GetUnitIsDead(tID) or (Spring.GetUnitMoveTypeData(tID).aircraftState=="crashing"))) then
+      if crawlingBombs[Spring.GetUnitDefID(uID)] then
+        Spring.DestroyUnit (uID, false, true)
+      else
+        if paraTroopers[Spring.GetUnitDefID(uID)] then
+          --paraTroopers are given a move order to the location of the ground below where the transport died; remove it
+          Spring.GiveOrderToUnit(uID, CMD.STOP, {}, {})
+          _,maxHealth,_,_,_ = Spring.GetUnitHealth(uID)
+          Spring.SetUnitHealth(uID,{ paralyze = maxHealth + (maxHealth/40)*stunTime })
+          return
+        end
+        Spring.DestroyUnit(uID, true, false)
+      end
+    end
+  end
+  toKill[currentFrame] = nil
+  fromtrans[currentFrame] = nil
 end
-
-
-	
-
-
+end
