@@ -35,6 +35,24 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
+RockUnit(anglex, anglez)
+{
+	turn base to x-axis anglex * <0.016484> speed <10.000000>;
+	turn base to z-axis anglez * <0.016484> speed <10.000000>;
+	wait-for-turn base around z-axis;
+	wait-for-turn base around x-axis;
+	turn base to x-axis <0.000000> - anglex speed <10.000000>;
+	turn base to z-axis <0.000000> - anglez speed <10.000000>;
+	wait-for-turn base around z-axis;
+	wait-for-turn base around x-axis;
+	turn base to x-axis anglex / <0.005495> speed <10.000000>;
+	turn base to z-axis anglez / <0.005495> speed <10.000000>;
+	wait-for-turn base around z-axis;
+	wait-for-turn base around x-axis;
+	turn base to x-axis <0.000000> speed <8.000000>;
+	turn base to z-axis <0.000000> speed <8.000000>;
+}
+
 HitByWeapon(anglex, anglez)
 {
 	turn base to z-axis anglez speed <105.000000>;
@@ -44,7 +62,6 @@ HitByWeapon(anglex, anglez)
 	turn base to z-axis <0.000000> speed <30.000000>;
 	turn base to x-axis <0.000000> speed <30.000000>;
 }
-
 
 Create()
 {
