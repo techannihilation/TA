@@ -44,41 +44,48 @@ local crawlingBombs = {
   [UnitDefNames.coretnt.id] = true,
 }
 
-toKill = {} -- [frame][unitID]
-fromtrans = {}
-currentFrame = 0
+local toKill = {}
+local toStun = {}
+local fromtrans = {}
+local currentFrame = 0
 
---when a unit is unloaded, mark it either as a commando or for possible destruction on next frame
 function gadget:UnitUnloaded(unitID, unitDefID, teamID, transportID)
   currentFrame = Spring.GetGameFrame()
   if (not toKill[currentFrame+1]) then toKill[currentFrame+1] = {} end
-  toKill[currentFrame+1][unitID] = true
+  if (not toStun[currentFrame+1]) then toStun[currentFrame+1] = {} end
+  if paraTroopers[Spring.GetUnitDefID(unitID)] then
+    toStun[currentFrame+1][unitID] = true
+  else
+    toKill[currentFrame+1][unitID] = true
+  end
   if (not fromtrans[currentFrame+1]) then fromtrans[currentFrame+1] = {} end
   fromtrans[currentFrame+1][unitID] = transportID
-  --Spring.Echo("added killing request for " .. unitID .. " on frame " .. currentFrame+1 .. " from transport " .. transportID )
 end
 
 function gadget:GameFrame (currentFrame)
-  if (toKill[currentFrame]) then --kill units as requested from above
-  for uID,_ in pairs (toKill[currentFrame]) do
-    tID = fromtrans[currentFrame][uID]
-    --check that trans is dead/crashing and unit is still alive
-    if ((not Spring.GetUnitIsDead(uID)) and (Spring.GetUnitIsDead(tID) or (Spring.GetUnitMoveTypeData(tID).aircraftState=="crashing"))) then
-      if crawlingBombs[Spring.GetUnitDefID(uID)] then
-        Spring.DestroyUnit (uID, false, true)
-      else
-        if paraTroopers[Spring.GetUnitDefID(uID)] then
-          --paraTroopers are given a move order to the location of the ground below where the transport died; remove it
-          Spring.GiveOrderToUnit(uID, CMD.STOP, {}, {})
-          _,maxHealth,_,_,_ = Spring.GetUnitHealth(uID)
-          Spring.SetUnitHealth(uID,{ paralyze = maxHealth + (maxHealth/40)*stunTime })
-          return
-        end
-        Spring.DestroyUnit(uID, true, false)
+  if (toStun[currentFrame]) then
+    for uID,_ in pairs (toStun[currentFrame]) do
+      tID = fromtrans[currentFrame][uID]
+      if ((not Spring.GetUnitIsDead(uID)) and (Spring.GetUnitIsDead(tID) or (Spring.GetUnitMoveTypeData(tID).aircraftState=="crashing"))) then
+        _,maxHealth,_,_,_ = Spring.GetUnitHealth(uID)
+        Spring.SetUnitHealth(uID,{ paralyze = maxHealth + (maxHealth/40)*stunTime })
       end
     end
   end
-  toKill[currentFrame] = nil
-  fromtrans[currentFrame] = nil
-end
+
+  if (toKill[currentFrame]) then
+    for uID,_ in pairs (toKill[currentFrame]) do
+      tID = fromtrans[currentFrame][uID]
+      if ((not Spring.GetUnitIsDead(uID)) and (Spring.GetUnitIsDead(tID) or (Spring.GetUnitMoveTypeData(tID).aircraftState=="crashing"))) then
+        if crawlingBombs[Spring.GetUnitDefID(uID)] then
+          Spring.DestroyUnit(uID, false, true)
+        else
+          Spring.DestroyUnit(uID, true, false)
+        end
+      end
+    end
+    toStun[currentFrame] = nil
+    toKill[currentFrame] = nil
+    fromtrans[currentFrame] = nil
+  end
 end
