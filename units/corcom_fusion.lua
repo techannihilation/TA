@@ -104,8 +104,9 @@ return {
 			[23] = "corsy",
 			[24] = "corsonar",
 			[25] = "corfdrag",
-			[26] = "cortl",
-			[27] = "corfrt",
+			[26] = "corfllt",
+			[27] = "cortl",
+			[28] = "corfrt",
 		},
 		customparams = {
 			buildpic = "corcom1.dds",

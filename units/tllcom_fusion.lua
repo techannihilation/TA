@@ -101,8 +101,9 @@ return {
 			[21] = "tllsy",
 			[22] = "tllsonar",
 			[23] = "tlldtns",
-			[24] = "tlltorp",
-			[25] = "tlllmtns",
+			[24] = "tllfllt",
+			[25] = "tlltorp",
+			[26] = "tlllmtns",
 		},
 		customparams = {
 			buildpic = "tllcom1.dds",

@@ -75,9 +75,10 @@ return {
 			[16] = "tllradarns",
 			[17] = "tlllmtns",
 			[18] = "tllnssam",
-			[19] = "tllhltns",
-			[20] = "tlltorp",
-			[21] = "tlldcsta",
+			[19] = "tllfllt",
+			[20] = "tllhltns",
+			[21] = "tlltorp",
+			[22] = "tlldcsta",
 		},
 		customparams = {
 			buildpic = "tllcs.dds",
