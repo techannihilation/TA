@@ -78,7 +78,6 @@ StopMoving()
 Create()
 {
 	onoff = 0;
-//	onoff = 1;
 	waiting = 0;
 	
 	set ARMORED to 1;
@@ -124,11 +123,6 @@ Create()
 	gun_2 = 0;
 	bmoving=0;
 	
-
-	while(get BUILD_PERCENT_LEFT)
-	{
-		sleep 1000;
-	}
 	start-script SmokeUnit();
 	dont-cache charged;
 }
