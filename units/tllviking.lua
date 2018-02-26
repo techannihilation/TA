@@ -189,10 +189,14 @@ return {
 			},
 			[2] = {
 				def = "ARM_CRUS",
+				maindir = "0 0 1",
+				maxangledif = 300,
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "ARM_CRUS",
+				maindir = "0 0 -1",
+				maxangledif = 300,
 				onlytargetcategory = "SURFACE",
 			},
 		},
