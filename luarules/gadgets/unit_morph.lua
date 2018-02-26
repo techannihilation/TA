@@ -170,6 +170,7 @@ local morphcostmulti = tonumber(Spring.GetModOptions().mo_morphcostmulti) or 1
 
 local morphPenalty = 1.0
 local MAX_MORPH = 0 --// will increase dynamically
+local expMulti = 0 -- new unit xp multiplier
 
 local nanos = {
   --Arm
@@ -713,7 +714,7 @@ local function FinishMorph(unitID, morphData)
         maxXp=xpInto
       end
     end
-    newXp = min( newXp, maxXp*0.9)
+    newXp = min( newXp, maxXp*0.9)*expMulti
   end
   SpSetUnitExperience(newUnit, newXp)
 
