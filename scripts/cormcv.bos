@@ -1,0 +1,668 @@
+#include "sfxtype.h"
+#include "exptype.h"
+#define TA
+
+
+piece base, body, head, lights, charged, turret, spindle, 
+	  pos1, sleeve1, sleeve1a, barrel1, flare1, pos2, sleeve2, sleeve2a, barrel2, flare2,
+	  pos3, sleeve3, sleeve3a, barrel3, flare3, pos4, sleeve4, sleeve4a, barrel4, flare4,
+	  pos5, sleeve5, sleeve5a, barrel5, flare5, pos6, sleeve6, sleeve6a, barrel6, flare6,
+	  cans, s1, s2, s3, s4, blast,
+	  spinner, aimer;
+
+
+static-var  gun_1, gun_2, bmoving, firedelay, firing, firing_2, firedelay_2;			
+static-var  onoff, waiting, next ;			
+
+// Signal definitions:
+
+#define SIG_AIM 		2
+#define SIG_AIM2 		4
+#define SIG_AIM3 		8
+#define SIG_ACTIVATE	16
+#define SIG_MOVE 		32
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	
+	bMoving=1;
+	
+	while(bMoving)
+	{
+		emit-sfx 256 | 2 from s1;
+		emit-sfx 256 | 2 from s2;
+		emit-sfx 256 | 2 from s3;
+		emit-sfx 256 | 2 from s4;	
+		sleep rand(200,300);
+	}
+}
+
+
+StopMoving()
+{
+	signal SIG_MOVE;
+	
+	bMoving=0;
+}
+
+
+Create()
+{
+	onoff = 0;
+	waiting = 0;
+	
+	set ARMORED to 1;
+	
+	firedelay = 150;
+	firedelay_2 = 150;
+	firing = 0;
+	firing_2 = 0;
+		
+	hide blast;
+	
+	hide flare1;
+	hide flare2;
+	hide flare3;
+	hide flare4;
+	hide flare5;
+	hide flare6;
+	
+	dont-cache flare1;
+	dont-cache flare2;
+	dont-cache flare3;
+	dont-cache flare4;
+	dont-cache flare5;
+	dont-cache flare6;
+	
+	hide spinner;
+	hide aimer;
+	
+	hide charged;
+		
+	turn pos2 to y-axis <-60.000000> NOW;
+	turn pos3 to y-axis <-120.000000> NOW;
+	turn pos4 to y-axis <-180.000000> NOW;
+	turn pos5 to y-axis <-240.000000> NOW;
+	turn pos6 to y-axis <-300.000000> NOW;
+	turn sleeve1 to x-axis <-30.000000> NOW;
+	turn sleeve2 to x-axis <-30.000000> NOW;
+	turn sleeve3 to x-axis <-30.000000> NOW;
+	turn sleeve4 to x-axis <-30.000000> NOW;
+	turn sleeve5 to x-axis <-30.000000> NOW;
+	turn sleeve6 to x-axis <-30.000000> NOW;
+	gun_1 = 0;
+	gun_2 = 0;
+	bmoving=0;
+	
+	start-script SmokeUnit();
+	dont-cache charged;
+}
+
+Activate()
+{
+	signal SIG_ACTIVATE;
+	set-signal-mask SIG_ACTIVATE;
+	set-signal-mask 0;
+	
+	onoff = 1;
+	waiting = 1;
+	
+	show charged;
+	
+	sleep 2000;
+	
+	gun_2 = next;
+	
+	turn sleeve1 to x-axis <-45.000000> speed <25.000000>;
+	turn sleeve2 to x-axis <-45.000000> speed <25.000000>;
+	turn sleeve3 to x-axis <-45.000000> speed <25.000000>;
+	turn sleeve4 to x-axis <-45.000000> speed <25.000000>;
+	turn sleeve5 to x-axis <-45.000000> speed <25.000000>;
+	turn sleeve6 to x-axis <-45.000000> speed <25.000000>;
+	
+	wait-for-turn sleeve1 around x-axis;
+	wait-for-turn sleeve2 around x-axis;
+	wait-for-turn sleeve3 around x-axis;
+	wait-for-turn sleeve4 around x-axis;
+	wait-for-turn sleeve5 around x-axis;
+	wait-for-turn sleeve6 around x-axis;
+	
+	sleep 1000;
+	
+	waiting = 0;
+}
+
+Deactivate()
+{
+	signal SIG_ACTIVATE;
+	set-signal-mask SIG_ACTIVATE;
+	set-signal-mask 0;
+	
+	onoff = 0;
+	waiting = 1;
+	
+	hide charged;
+	sleep 2000;
+	
+	gun_1 = next;
+	
+	turn sleeve1 to x-axis <-30.000000> speed <25.000000>;
+	turn sleeve2 to x-axis <-30.000000> speed <25.000000>;
+	turn sleeve3 to x-axis <-30.000000> speed <25.000000>;
+	turn sleeve4 to x-axis <-30.000000> speed <25.000000>;
+	turn sleeve5 to x-axis <-30.000000> speed <25.000000>;
+	turn sleeve6 to x-axis <-30.000000> speed <25.000000>;
+	
+	wait-for-turn sleeve1 around x-axis;
+	wait-for-turn sleeve2 around x-axis;
+	wait-for-turn sleeve3 around x-axis;
+	wait-for-turn sleeve4 around x-axis;
+	wait-for-turn sleeve5 around x-axis;
+	wait-for-turn sleeve6 around x-axis;
+	
+	sleep 1000;
+	
+	waiting = 0;
+}
+
+
+RestoreAll()
+{
+	sleep 16000;
+	set-signal-mask 0;
+	turn turret to y-axis <0.00> speed <25.000000>;
+	gun_1 = 0;
+	gun_2 = 0;
+	
+	if( onoff == 0 )
+	{
+		turn sleeve1 to x-axis <-30.000000> speed <25.000000>;
+		turn sleeve2 to x-axis <-30.000000> speed <25.000000>;
+		turn sleeve3 to x-axis <-30.000000> speed <25.000000>;
+		turn sleeve4 to x-axis <-30.000000> speed <25.000000>;
+		turn sleeve5 to x-axis <-30.000000> speed <25.000000>;
+		turn sleeve6 to x-axis <-30.000000> speed <25.000000>;
+	}
+
+	if( onoff == 1 )
+	{
+		turn sleeve1 to x-axis <-45.000000> speed <25.000000>;
+		turn sleeve2 to x-axis <-45.000000> speed <25.000000>;
+		turn sleeve3 to x-axis <-45.000000> speed <25.000000>;
+		turn sleeve4 to x-axis <-45.000000> speed <25.000000>;
+		turn sleeve5 to x-axis <-45.000000> speed <25.000000>;
+		turn sleeve6 to x-axis <-45.000000> speed <25.000000>;
+	}
+	
+	
+}
+
+
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	
+	while (onoff == 1 OR waiting == 1)
+	{ 
+		sleep 1000;
+	}	
+	
+	turn turret to y-axis heading speed <25.000000>;
+	wait-for-turn turret around y-axis;
+	while( firing )
+	{
+		sleep 200;
+	}
+	
+	if( gun_1 == 0 )
+	{
+		turn sleeve1 to x-axis <0.000000> - pitch speed <50.000000>;
+		wait-for-turn sleeve1 around x-axis;
+	}
+	if( gun_1 == 1 )
+	{
+		turn sleeve2 to x-axis <0.000000> - pitch speed <50.000000>;
+		wait-for-turn sleeve2 around x-axis;
+	}
+	if( gun_1 == 2 )
+	{
+		turn sleeve3 to x-axis <0.000000> - pitch speed <50.000000>;
+		wait-for-turn sleeve3 around x-axis;
+	}
+	if( gun_1 == 3 )
+	{
+		turn sleeve4 to x-axis <0.000000> - pitch speed <50.000000>;
+		wait-for-turn sleeve4 around x-axis;
+	}
+	if( gun_1 == 4 )
+	{
+		turn sleeve5 to x-axis <0.000000> - pitch speed <50.000000>;
+		wait-for-turn sleeve5 around x-axis;
+	}
+	if( gun_1 == 5 )
+	{
+		turn sleeve6 to x-axis <0.000000> - pitch speed <50.000000>;
+		wait-for-turn sleeve6 around x-axis;
+	}
+	if( firing == 0 && onoff == 0)
+	{
+		start-script RestoreAll();
+	}
+	return (1);
+}
+
+FirePrimary()
+{
+	if( gun_1 == 0 )
+	{
+		next = 2;
+		firing = 1;
+		move sleeve1a to z-axis [-4.000000] speed [400.000000];
+		move barrel1 to z-axis [-3.000000] speed [500.000000];
+		//emit-sfx 1024 + 0 from flare1;
+		explode flare1 type NOHEATCLOUD;
+		sleep 150;
+		move sleeve1a to z-axis [0.000000] speed [2.000000];
+		move barrel1 to z-axis [0.000000] speed [3.000000];
+		turn spindle to y-axis <60.000000> speed <200.000000>;
+		sleep firedelay;
+		firing = 0;
+	}
+	if( gun_1 == 1 )
+	{
+		next = 3;
+		firing = 1;
+		move sleeve2a to z-axis [-4.000000] speed [400.000000];
+		move barrel2 to z-axis [-3.000000] speed [500.000000];
+		//emit-sfx 1024 + 0 from flare2;
+		explode flare2 type NOHEATCLOUD;
+		sleep 150;
+		move sleeve2a to z-axis [0.000000] speed [2.000000];
+		move barrel2 to z-axis [0.000000] speed [3.000000];
+		turn spindle to y-axis <120.000000> speed <200.000000>;
+		sleep firedelay;
+		firing = 0;
+	}
+	if( gun_1 == 2 )
+	{
+		next = 4;
+		firing = 1;
+		move sleeve3a to z-axis [-4.000000] speed [400.000000];
+		move barrel3 to z-axis [-3.000000] speed [500.000000];
+		//emit-sfx 1024 + 0 from flare3;
+		explode flare3 type NOHEATCLOUD;
+		sleep 150;
+		move sleeve3a to z-axis [0.000000] speed [2.000000];
+		move barrel3 to z-axis [0.000000] speed [3.000000];
+		turn spindle to y-axis <180.000000> speed <200.000000>;
+		sleep firedelay;
+		firing = 0;
+		}
+	if( gun_1 == 3 )
+	{
+		next = 5;
+		firing = 1;
+		move sleeve4a to z-axis [-4.000000] speed [400.000000];
+		move barrel4 to z-axis [-3.000000] speed [500.000000];
+		//emit-sfx 1024 + 0 from flare4;
+		explode flare4 type NOHEATCLOUD;
+		sleep 150;
+		move sleeve4a to z-axis [0.000000] speed [2.000000];
+		move barrel4 to z-axis [0.000000] speed [3.000000];
+
+		turn spindle to y-axis <240.000000> speed <200.000000>;
+		sleep firedelay;
+		firing = 0;
+	}	
+	if( gun_1 == 4 )
+	{
+		next = 0;
+		firing = 1;
+		move sleeve5a to z-axis [-4.000000] speed [400.000000];
+		move barrel5 to z-axis [-3.000000] speed [500.000000];
+		//emit-sfx 1024 + 0 from flare5;
+		explode flare5 type NOHEATCLOUD;
+		sleep 150;
+		move sleeve5a to z-axis [0.000000] speed [2.000000];
+		move barrel5 to z-axis [0.000000] speed [3.000000];
+		turn spindle to y-axis <300.000000> speed <200.000000>;
+		sleep firedelay;
+		firing = 0;
+	}
+	if( gun_1 == 5 )
+	{
+		next = 1;
+		firing = 1;
+		move sleeve6a to z-axis [-4.000000] speed [400.000000];
+		move barrel6 to z-axis [-3.000000] speed [500.000000];
+		//emit-sfx 1024 + 0 from flare6;
+		explode flare6 type NOHEATCLOUD;
+		sleep 150;
+		move sleeve6a to z-axis [0.000000] speed [2.000000];
+		move barrel6 to z-axis [0.000000] speed [3.000000];
+		turn spindle to y-axis <0.000000> speed <200.000000>;
+		sleep firedelay;
+		firing = 0;
+	}
+	++gun_1;
+	if( gun_1 >= 6 )
+	{
+		gun_1 = 0;
+	}
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = aimer;
+}
+
+QueryPrimary(piecenum)
+{
+	if( gun_1 == 0 )
+	{
+		piecenum = flare1;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = flare2;
+	}
+	if( gun_1 == 2 )
+	{
+		piecenum = flare3;
+	}
+	if( gun_1 == 3 )
+	{
+		piecenum = flare4;
+	}
+	if( gun_1 == 4 )
+	{
+		piecenum = flare5;
+	}
+	if( gun_1 == 5 )
+	{
+		piecenum = flare6;
+	}
+}
+
+QueryTertiary(piecenum)
+{
+	if( gun_2 == 0 )
+	{
+		piecenum = flare1;
+	}
+	if( gun_2 == 1 )
+	{
+		piecenum = flare2;
+	}
+	if( gun_2 == 2 )
+	{
+		piecenum = flare3;
+	}
+	if( gun_2 == 3 )
+	{
+		piecenum = flare4;
+	}
+	if( gun_2 == 4 )
+	{
+		piecenum = flare5;
+	}
+	if( gun_2 == 5 )
+	{
+		piecenum = flare6;
+	}
+}
+AimTertiary(heading, pitch)
+{
+	signal SIG_AIM2;
+	set-signal-mask SIG_AIM2;
+	
+	while (onoff == 0 OR waiting == 1)
+	{ 
+		sleep 1000;
+	}	
+	
+	turn turret to y-axis heading speed <25.000000>;
+	wait-for-turn turret around y-axis;
+	while( firing_2 )
+	{
+		sleep 200;
+	}
+	
+	if( gun_2 == 0 )
+	{
+		turn sleeve1 to x-axis <-75.000000> speed <50.000000>;
+		wait-for-turn sleeve1 around x-axis;
+	}
+	if( gun_2 == 1 )
+	{
+		turn sleeve2 to x-axis <-75.000000> speed <50.000000>;
+		wait-for-turn sleeve2 around x-axis;
+	}
+	if( gun_2 == 2 )
+	{
+		turn sleeve3 to x-axis <-75.000000> speed <50.000000>;
+		wait-for-turn sleeve3 around x-axis;
+	}
+	if( gun_2 == 3 )
+	{
+		turn sleeve4 to x-axis <-75.000000> speed <50.000000>;
+		wait-for-turn sleeve4 around x-axis;
+	}
+	if( gun_2 == 4 )
+	{
+		turn sleeve5 to x-axis <-75.000000> speed <50.000000>;
+		wait-for-turn sleeve5 around x-axis;
+	}
+	if( gun_2 == 5 )
+	{
+		turn sleeve6 to x-axis <-75.000000> speed <50.000000>;
+		wait-for-turn sleeve6 around x-axis;
+	}
+	if( firing_2 == 0 && onoff == 1)
+	{
+		start-script RestoreAll();
+	}
+	return (1);
+}
+
+FireTertiary()
+{
+	if( gun_2 == 0 )
+	{
+		next = 2;
+		firing_2 = 1;
+		move sleeve1a to z-axis [-4.000000] speed [400.000000];
+		move barrel1 to z-axis [-3.000000] speed [500.000000];
+		explode flare1 type NOHEATCLOUD;
+		sleep 150;
+		move sleeve1a to z-axis [0.000000] speed [2.000000];
+		move barrel1 to z-axis [0.000000] speed [3.000000];
+		turn spindle to y-axis <60.030000> speed <200.093407>;
+		sleep firedelay_2;
+		firing_2 = 0;
+		
+	}
+	if( gun_2 == 1 )
+	{
+		next = 3;
+		firing_2 = 1;
+		move sleeve2a to z-axis [-4.000000] speed [400.000000];
+		move barrel2 to z-axis [-3.000000] speed [500.000000];
+		explode flare2 type NOHEATCLOUD;
+		sleep 150;
+		move sleeve2a to z-axis [0.000000] speed [2.000000];
+		move barrel2 to z-axis [0.000000] speed [3.000000];
+		turn spindle to y-axis <120.060000> speed <200.093407>;
+		sleep firedelay_2;
+		firing_2 = 0;
+		
+	}
+	if( gun_2 == 2 )
+	{
+		next = 4;
+		firing_2 = 1;
+		move sleeve3a to z-axis [-4.000000] speed [400.000000];
+		move barrel3 to z-axis [-3.000000] speed [500.000000];
+		explode flare3 type NOHEATCLOUD;
+		sleep 150;
+		move sleeve3a to z-axis [0.000000] speed [2.000000];
+		move barrel3 to z-axis [0.000000] speed [3.000000];
+		turn spindle to y-axis <180.030000> speed <200.093407>;
+		sleep firedelay_2;
+		firing_2 = 0;
+	}
+	if( gun_2 == 3 )
+	{
+		next = 5;
+		firing_2 = 1;
+		move sleeve4a to z-axis [-4.000000] speed [400.000000];
+		move barrel4 to z-axis [-3.000000] speed [500.000000];
+		explode flare4 type NOHEATCLOUD;
+		sleep 150;
+		move sleeve4a to z-axis [0.000000] speed [2.000000];
+		move barrel4 to z-axis [0.000000] speed [3.000000];
+		turn spindle to y-axis <240.060000> speed <200.093407>;
+		sleep firedelay_2;
+		firing_2 = 0;
+	}
+	if( gun_2 == 4 )
+	{
+		next = 0;
+		firing_2 = 1;
+		move sleeve5a to z-axis [-4.000000] speed [400.000000];
+		move barrel5 to z-axis [-3.000000] speed [500.000000];
+		explode flare5 type NOHEATCLOUD;
+		sleep 150;
+		move sleeve5a to z-axis [0.000000] speed [2.000000];
+		move barrel5 to z-axis [0.000000] speed [3.000000];
+		turn spindle to y-axis <300.030000> speed <200.093407>;
+		sleep firedelay_2;
+		firing_2 = 0;
+	}
+	if( gun_2 == 5 )
+	{
+		next = 1;
+		firing_2 = 1;
+		move sleeve6a to z-axis [-4.000000] speed [400.000000];
+		move barrel6 to z-axis [-3.000000] speed [500.000000];
+		explode flare6 type NOHEATCLOUD;
+		sleep 150;
+		move sleeve6a to z-axis [0.000000] speed [2.000000];
+		move barrel6 to z-axis [0.000000] speed [3.000000];
+		turn spindle to y-axis <0.060000> speed <200.093407>;
+		sleep firedelay_2;
+		firing_2 = 0;
+	}
+	++gun_2;
+	if( gun_2 >= 6 )
+	{
+		gun_2 = 0;
+	}
+}
+
+
+AimFromTertiary(piecenum)
+{
+	piecenum = aimer;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	hide flare1;
+	hide flare2;
+	hide flare3;
+	hide flare4;
+	hide flare5;
+	hide flare6;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode sleeve1a type BITMAPONLY | BITMAP1;
+		explode sleeve2a type BITMAPONLY | BITMAP1;
+		explode base type BITMAPONLY | BITMAP1;
+		explode sleeve4 type BITMAPONLY | BITMAP1;
+		explode sleeve4a type BITMAPONLY | BITMAP5;
+		explode sleeve1 type BITMAPONLY | BITMAP1;
+		explode barrel1 type BITMAPONLY | BITMAP1;
+		explode barrel2 type BITMAPONLY | BITMAP1;
+		explode barrel4 type BITMAPONLY | BITMAP1;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode sleeve1a type FALL | BITMAP1;
+		explode sleeve2a type FALL | BITMAP1;
+		explode base type BITMAPONLY | BITMAP1;
+		explode sleeve4 type FALL | BITMAP1;
+		explode sleeve4a type FALL | BITMAP5;
+		explode sleeve1 type SHATTER | BITMAP1;
+		explode barrel1 type FALL | BITMAP1;
+		explode barrel2 type FALL | BITMAP1;
+		explode barrel4 type FALL | BITMAP1;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode sleeve1a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode sleeve2a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode base type BITMAPONLY | BITMAP1;
+		explode sleeve4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode sleeve4a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode sleeve1 type SHATTER | BITMAP1;
+		explode barrel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode barrel2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode barrel4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		return (0);
+	}
+	corpsetype = 3;
+	explode sleeve1a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode sleeve2a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode base type BITMAPONLY | BITMAP1;
+	explode sleeve4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode sleeve4a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode sleeve1 type SHATTER | EXPLODE_ON_HIT | BITMAP1;
+	explode barrel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode barrel2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode barrel4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+}
+
+
+

@@ -1139,6 +1139,11 @@ local morphDefs = {
 	  	time = 60,
 		xp = 0.10,
 	},
+	trem = {
+		into = 'cormcv',
+	  	time = 120,
+		xp = 0.50,
+	},
 }
 
 --
