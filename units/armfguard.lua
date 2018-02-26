@@ -25,7 +25,7 @@ return {
 		maxdamage = 3450,
 		maxslope = 14,
 		minwaterdepth = 5,
-		name = "Triguard",
+		name = "Trident",
 		noautofire = false,
 		nochasecategory = "ALL",
 		noshadow = 1,
