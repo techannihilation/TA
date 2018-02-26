@@ -1132,12 +1132,12 @@ local morphDefs = {
 	airwolf3g = {
 		into = 'armstratus',
 	  	time = 60,
-		xp = 0.50,
+		xp = 0.10,
 	},
 	shrike = {
 		into = 'corshock',
 	  	time = 60,
-		xp = 0.50,
+		xp = 0.10,
 	},
 }
 
