@@ -26,7 +26,7 @@ return {
 		maxdamage = 3050,
 		maxslope = 14,
 		minwaterdepth = 5,
-		name = "Punchy Ball",
+		name = "Lotus",
 		noautofire = false,
 		nochasecategory = "ALL",
 		noshadow = 1,
