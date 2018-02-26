@@ -161,8 +161,7 @@ Create()
 	Static_Var_6 = 0;
 	Static_Var_3 = 3000;
 	Static_Var_9 = 0;
-	turn flare3a to y-axis <180.> speed <100.>;
-	turn flare3b to y-axis <180.> speed <100.>;
+	
 	start-script SmokeUnit();
 	start-script RockOnWaves();
 	start-script FlameControl();
@@ -287,7 +286,7 @@ FireSecondary()
 	if( Static_Var_2 == 0 )
 	{
 		emit-sfx 1024 from flare2a;
-		move barrel2a to z-axis [1.] speed [500.];
+		move barrel2a to z-axis [-1.] speed [500.];
 		sleep 150;
 		move barrel2a to z-axis [0.] speed [3.];
 		Static_Var_2 = 1;
@@ -296,7 +295,7 @@ FireSecondary()
 	if( Static_Var_2 == 1 )
 	{
 		emit-sfx 1024 from flare2b;
-		move barrel2b to z-axis [1.] speed [500.];
+		move barrel2b to z-axis [-1.] speed [500.];
 		sleep 150;
 		move barrel2b to z-axis [0.] speed [3.];
 		Static_Var_2 = 0;
