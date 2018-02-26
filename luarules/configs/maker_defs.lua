@@ -1,7 +1,7 @@
 
 local ACZ = 1.0/100
 local AC0 = 1.1/100
-local AC1 = 1.2/100
+local AC1 = 1.15/100
 local AC2 = 1.3/100
 local A3 = 1.35/100
 local C3 = 1.35/100
