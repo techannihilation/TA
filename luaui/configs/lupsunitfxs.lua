@@ -514,6 +514,19 @@ tllefus = {
  },
 }
 
+-- Hover T3 -- Need to work : appear lupsfx when moving.
+corhcrus = {
+    {class='AirJet',options={color={0,0.4,0.6}, width=5, length=15, piece="reactor1", onActive=false}},
+    {class='AirJet',options={color={0,0.4,0.6}, width=5, length=15, piece="reactor2", onActive=false}},
+    {class='AirJet',options={color={0,0.4,0.6}, width=5, length=15, piece="reactor3", onActive=false}},
+    {class='AirJet',options={color={0,0.4,0.6}, width=5, length=15, piece="reactor4", onActive=false}},
+    {class='AirJet',options={color={0,0.4,0.6}, width=5, length=15, piece="reactor5", onActive=false}},
+    {class='AirJet',options={color={0,0.4,0.6}, width=5, length=15, piece="reactor6", onActive=false}},
+    {class='AirJet',options={color={0,0.4,0.6}, width=5, length=15, piece="reactor7", onActive=false}},
+    {class='AirJet',options={color={0,0.4,0.6}, width=5, length=15, piece="engine_h", onActive=false}},
+    {class='AirJet',options={color={0,0.1,0.6}, width=8, length=15, piece="reactor8", onActive=false}},
+},
+
  --// COMMANDER XMAS HATS //--------------------------
 
  effectUnitDefsXmas = {
