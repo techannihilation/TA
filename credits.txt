@@ -48,3 +48,6 @@ Punkie (T1 Scout KBot) (Flea counterpart)
 Thud MK-II (T3 Artillery Mech)
 VHLT (T2 Laser Turret)
 
+----------------------------------------------------------------------------------
+Parachute Icon that is included in armmav.png, corpyro.png, commando.png, tlltraq.png is made by Joe Looney.
+Parachute Icon is licensed as Creative Commons CCBY, https://creativecommons.org/licenses/by/3.0/us/legalcode
