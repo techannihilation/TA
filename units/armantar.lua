@@ -135,8 +135,8 @@ return {
 				damage = {
 					commanders = 150,
 					default = 375,
-					experimental_land = 500,
-					experimental_ships = 500,
+					experimental_land = 435,
+					experimental_ships = 435,
 					subs = 5,
 				},
 			},
