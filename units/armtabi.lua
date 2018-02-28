@@ -31,7 +31,7 @@ return {
 		idletime = 2200,
 		losemitheight = 162,
 		mass = 1140000,
-		maxdamage = 75500,
+		maxdamage = 125000,
 		maxslope = 16,
 		maxwaterdepth = 0,
 		name = "Tabitha",
