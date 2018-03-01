@@ -131,7 +131,7 @@ return {
 				range = 850,
 				reloadtime = 2,
 				rgbcolor = "0.6 0.6 0.9",
-				soundhitdry = "lashit3",
+				soundhitdry = "lashit2",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.25,
 				soundstart = "Lghthvy1",
