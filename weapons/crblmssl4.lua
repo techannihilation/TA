@@ -1,6 +1,6 @@
 return {
 	crblmssl4 = {
-		areaofeffect = 2000,
+		areaofeffect = 1800,
 		craterboost = 6,
 		cratermult = 3,
 		edgeeffectiveness = 0.25,

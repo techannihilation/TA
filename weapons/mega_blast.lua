@@ -1,6 +1,6 @@
 return {
 	mega_blast = {
-		areaofeffect = 1800,
+		areaofeffect = 1650,
 		craterboost = 6,
 		cratermult = 3,
 		edgeeffectiveness = 0.25,
