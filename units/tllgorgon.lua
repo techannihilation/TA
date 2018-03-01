@@ -61,14 +61,14 @@ return {
 				damage = 33488,
 				description = "Shield Kbot Wreckage",
 				energy = 0,
-				featuredead = "Shield_heap",
+				featuredead = "heap",
 				footprintx = 6,
 				footprintz = 6,
 				metal = 16400,
 				object = "tllgorgon_dead",
 				reclaimable = true,
 			},
-			monkeylord_heap = {
+			heap = {
 				blocking = false,
 				damage = 41860,
 				description = "Shielded Kbot Debris",
