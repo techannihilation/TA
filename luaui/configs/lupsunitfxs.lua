@@ -80,14 +80,16 @@ tllefus = {
   armefus = {
     {class='SimpleParticles2', options=MergeTable({pos={-67.2,112,32}, delay=10, lifeSpread=300},sparks)},
     {class='SimpleParticles2', options=MergeTable({pos={44.8,112,32}, delay=10, lifeSpread=300},sparks)},
-	{class='SimpleParticles2', options=MergeTable({pos={-19.2,128,-65.28}, delay=10, lifeSpread=300},sparks)},
+	  {class='SimpleParticles2', options=MergeTable({pos={-19.2,128,-65.28}, delay=10, lifeSpread=300},sparks)},
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={-56,104,32}, size=18, precision=22, repeatEffect=true}},
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={56,104,32}, size=18, precision=22, repeatEffect=true}},
-	{class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,104,-64}, size=18, precision=22, repeatEffect=true}},
+	  {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,104,-64}, size=18, precision=22, repeatEffect=true}},
   },
   
   --// SHIELDS //--------------------------
-  
+  cmetalmakerlvl3 = {
+    {class='StaticParticles',options=cmetelmakerlvl3Effect},
+  },
   armcom5 = {
     {class='Bursts',options=shieldBursts100},
     {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=100, precision=0, strength   = 0.001, repeatEffect=true}},
