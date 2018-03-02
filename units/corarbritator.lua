@@ -10,6 +10,7 @@ return {
 		buildtime = 450000,
 		canattack = true,
 		canguard = true,
+		canmanualfire = true,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
@@ -156,7 +157,6 @@ return {
 					subs = 5,
 				},
 			},
-
 			atadr = {
 				areaofeffect = 12,
 				beamtime = 1,
@@ -184,7 +184,7 @@ return {
 				targetmoveerror = 0.3,
 				thickness = 5.5,
 				tolerance = 10000,
-				turret = true,
+				--turret = true,
 				weapontype = "BeamLaser",
 				weaponvelocity = 1500,
 				damage = {
@@ -220,7 +220,7 @@ return {
 				soundtrigger = false,
 				sprayangle = 1200,
 				tolerance = 2500,
-				turret = true,
+				--turret = true,
 				weapontimer = 1.5,
 				weapontype = "Flame",
 				weaponvelocity = 265,

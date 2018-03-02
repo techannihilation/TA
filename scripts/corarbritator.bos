@@ -363,7 +363,7 @@ FireSecondary()
 
 lua_FlameShot(Func_Var_1)
 {
-	return 0;
+	return 2;
 }
 
 AimTertiary(heading, pitch)
@@ -416,7 +416,7 @@ QuerySecondary(piecenum)
 
 AimFromTertiary(piecenum)
 {
-	piecenum = flame;
+	piecenum = body;
 }
 
 QueryTertiary(piecenum)
