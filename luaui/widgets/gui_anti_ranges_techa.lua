@@ -311,7 +311,7 @@ function widget:SetConfigData(data)
 end
 
 function widget:TextCommand(command)
-    Spring.Echo(command)
+    --Spring.Echo(command)
     if (string.find(command, "antiranges_fade") == 1  and  string.len(command) == 15) then 
 		fadeOnCloseup = not fadeOnCloseup
 		if fadeOnCloseup then
