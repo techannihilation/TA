@@ -13,72 +13,30 @@
 if (not gadgetHandler:IsSyncedCode()) then
   return
 end
-local GetUnitHealth 	= Spring.GetUnitHealth 
-local random		= math.random 
-local SetUnitCOBValue 	= Spring.SetUnitCOBValue
-local SetUnitNoSelect	= Spring.SetUnitNoSelect
-local SetUnitCosts	= Spring.SetUnitCosts
-local SetUnitSensorRadius = Spring.SetUnitSensorRadius
-local crashing		= {}
-local crashable  ={ --fucking hacky bugfix, strafemovetype cant crash, and sometimes doesnt take the damage it is dealt. 
-	[UnitDefNames["corca"].id] = true,
-	[UnitDefNames["armfig"].id] = true,
-	[UnitDefNames["armawac"].id] = true,
-	[UnitDefNames["armmin"].id] = true,
-	[UnitDefNames["corgripn"].id] = true,
-	[UnitDefNames["armcyclone"].id] = true,
-	[UnitDefNames["corhunt"].id] = true,
-	[UnitDefNames["armhawk"].id] = true,
-	[UnitDefNames["tlltorpp"].id] = true,
-	[UnitDefNames["corshad"].id] = true,
-	[UnitDefNames["armcybr"].id] = true,
-	[UnitDefNames["corhurc"].id] = true,
-	[UnitDefNames["tlladvfight"].id] = true,
-	[UnitDefNames["armsehak"].id] = true,
-	[UnitDefNames["tllseaf"].id] = true,
-	[UnitDefNames["armseap"].id] = true,
-	[UnitDefNames["armorion"].id] = true,
-	[UnitDefNames["tllseab"].id] = true,
-	[UnitDefNames["coreclipse"].id] = true,
-	[UnitDefNames["tllrsplane"].id] = true,
-	[UnitDefNames["tllprob"].id] = true,
-	[UnitDefNames["cbuilderlvl2"].id] = true,
-	[UnitDefNames["abuilderlvl2"].id] = true,
-	[UnitDefNames["cormin"].id] = true,
-	[UnitDefNames["armca"].id] = true,
-	[UnitDefNames["tllbomber"].id] = true,
-	[UnitDefNames["corawac"].id] = true,
-	[UnitDefNames["tllcsa"].id] = true,
-	[UnitDefNames["armsfig"].id] = true,
-	[UnitDefNames["tllca"].id] = true,
-	[UnitDefNames["corfink"].id] = true,
-	[UnitDefNames["tllaca"].id] = true,
-	[UnitDefNames["cortitan"].id] = true,
-	[UnitDefNames["corveng"].id] = true,
-	[UnitDefNames["corvamp"].id] = true,
-	[UnitDefNames["corseap"].id] = true,
-	[UnitDefNames["tllsonpl"].id] = true,
-	[UnitDefNames["armthund"].id] = true,
-	[UnitDefNames["armaca"].id] = true,
-	[UnitDefNames["corsfig"].id] = true,
-	[UnitDefNames["corfiend"].id] = true,
-	[UnitDefNames["corsb"].id] = true,
-	[UnitDefNames["tllabomber"].id] = true,
-	[UnitDefNames["corsbomb"].id] = true,
-	[UnitDefNames["coraca"].id] = true,
-	[UnitDefNames["armlance"].id] = true,
-	[UnitDefNames["armpeep"].id] = true,
-	[UnitDefNames["cbuilderlvl1"].id] = true,
-	[UnitDefNames["shrike"].id] = true,
-	[UnitDefNames["armpnix"].id] = true,
-	[UnitDefNames["armsb"].id] = true,
-	[UnitDefNames["corcsa"].id] = true,
-	[UnitDefNames["tllfight"].id] = true,
-	[UnitDefNames["armcsa"].id] = true,
-	[UnitDefNames["airwolf3g"].id] = true,
-	[UnitDefNames["armblz"].id] = true,
-	[UnitDefNames["abuilderlvl1"].id] = true,
-}
+
+local GetUnitHealth 		= Spring.GetUnitHealth 
+local random				= math.random 
+local SetUnitCOBValue	 	= Spring.SetUnitCOBValue
+local SetUnitNoSelect		= Spring.SetUnitNoSelect
+local SetUnitNoMinimap		= Spring.SetUnitNoMinimap
+local SetUnitSensorRadius	= Spring.SetUnitSensorRadius
+local DestroyUnit			= Spring.DestroyUnit
+local SetUnitWeaponState	= Spring.SetUnitWeaponState
+
+local crashing	= {}
+local crashingCount = 0
+local crashable  ={}
+
+function gadget:Initialize()
+	--set up table to check against
+	for _,UnitDef in pairs(UnitDefs) do
+		if UnitDef.canFly == true and UnitDef.transportSize == 0 and (not UnitDef.hoverattack) then
+			crashable[UnitDef.id] = true
+			--Spring.Echo("Air craft set to crash", UnitDef.name)
+		end
+	end
+	--crashable[UnitDefNames['armliche'].id] = false
+end
 
 function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponDefID, projectileID, attackerID, attackerDefID, attackerTeam)
 	if paralyzer then return damage,1 end --OOPS FORGOT THIS
@@ -88,11 +46,16 @@ function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, w
 	if UnitDefs[unitDefID]["canFly"] == true and (damage>GetUnitHealth(unitID)) and random()<0.33 then
 	--NOTE: strafe airmovetype aircraft DO NOT CRASH, only regular stuff like bombers
 		--Spring.Echo('CRASHING AIRCRAFT',unitID)
+		crashingCount = crashingCount + 1
+		crashing[unitID] = Spring.GetGameFrame() + 300
+		for weaponID, weapon in pairs(UnitDefs[unitDefID].weapons) do
+			SetUnitWeaponState(unitID, weaponID, "reloadTime", 9999)
+		end
 		SetUnitCOBValue(unitID, COB.CRASHING, 1)
 		Spring.SetUnitRulesParam(unitID, "nolups",1)
-		--SetUnitCosts(unitID,{10000,0,0}) this doesnt work either :)
+		SetUnitNoMinimap(unitID,true)
 		SetUnitNoSelect(unitID,true) --cause setting to neutral still allows selection (wtf?)
-		crashing[unitID]=true
+		SetUnitSensorRadius(unitID, "airLos", 0)
 		SetUnitSensorRadius(unitID, "los", 0)
 		SetUnitSensorRadius(unitID, "radar", 0)
 		SetUnitSensorRadius(unitID, "sonar", 0)
@@ -101,8 +64,19 @@ function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, w
 	return damage,1
 end
 
+function gadget:GameFrame(gf)
+	if crashingCount > 0 and gf % 20 == 1 then
+		for unitID,deathGameFrame in pairs(crashing) do
+			if gf >= deathGameFrame then
+				DestroyUnit(unitID, false, false)
+			end
+		end
+	end
+end
+
 function gadget:UnitDestroyed(unitID, unitDefID, teamID, attackerID, attackerDefID, attackerTeamID)
 	if crashing[unitID] then
+		crashingCount = crashingCount - 1
 		--Spring.Echo('CRASHING AIRCRAFT UNITDESTROYED CALLED!',unitID)
 		crashing[unitID]=nil
 	end
