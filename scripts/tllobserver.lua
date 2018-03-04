@@ -260,10 +260,13 @@ local function Deactivate()
 end
 
 function script.Create()
-
-	StartThread(Activate)
 	StartThread(StunnedCheck)
 	StartThread(SmokeUnit)
+	local health_percent = get_health_percent()
+	while (health_percent < 100) do
+		Sleep(250)
+	end
+  	StartThread(Activate)
 end
 
 function script.StartMoving()

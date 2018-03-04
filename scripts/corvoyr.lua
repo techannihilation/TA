@@ -193,9 +193,13 @@ local function holdSpin()
 end
 
 function script.Create()
-	StartThread(SmokeUnit)
 	StartThread(StunnedCheck)
-	--StartThread(spin)
+	StartThread(SmokeUnit)
+	local health_percent = get_health_percent()
+	while (health_percent < 100) do
+		Sleep(250)
+	end
+  	StartThread(spin)
 end
 
 function script.Activate()

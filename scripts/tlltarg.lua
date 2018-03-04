@@ -226,28 +226,14 @@ function script.HitByWeapon(anglex, anglez)
 end
 --]]
 
-
 function script.Create()
---[[
-	dont-shade body
-	dont-shade rdoor
-	dont-shade ldoor
-	dont-shade plate
-	dont-shade light
-	dont-shade arm
-	dont-shade antenne
-	dont-shade pan1
-	dont-shade pan2
-	dont-shade pan3
-	dont-shade pan4
-	dont-shade pan5
-	dont-shade pan6
-	dont-shade pan7
-	dont-shade pan8
-  --]]
-	StartThread( Activate)
 	StartThread(StunnedCheck)
 	StartThread(SmokeUnit)
+	local health_percent = get_health_percent()
+	while (health_percent < 100) do
+		Sleep(250)
+	end
+  	StartThread(Activate)
 end
 
 function script.Activate()

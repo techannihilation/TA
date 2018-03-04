@@ -149,19 +149,13 @@ local function Deactivate()
 end
 
 function script.Create()
---[[
-	dont-shade dish1
-	dont-shade dish2
-	dont-shade dish3
-	dont-shade dish4
-	dont-shade tige1
-	dont-shade tige2
-	dont-shade tige3
-	dont-shade top
-  --]]
-	StartThread( Activate)
 	StartThread(StunnedCheck)
 	StartThread(SmokeUnit)
+	local health_percent = get_health_percent()
+	while (health_percent < 100) do
+		Sleep(250)
+	end
+  	StartThread(Activate)
 end
 
 function script.Activate()

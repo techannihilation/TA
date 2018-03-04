@@ -99,24 +99,13 @@ local function Deactivate()
 end
 
 function script.Create()
-
-	--[[
-        dont-shade turret
-	dont-shade arm1
-	dont-shade arm2
-	dont-shade dish1
-	dont-shade dish2
-	dont-cache turret
-	dont-cache arm1
-	dont-cache arm2
-	dont-cache dish1
-	dont-cache dish2
-	Static_Var_1 = 1
-	Static_Var_2 = 0
-  --]]
-  	StartThread(Activate)
 	StartThread(StunnedCheck)
 	StartThread(SmokeUnit)
+	local health_percent = get_health_percent()
+	while (health_percent < 100) do
+		Sleep(250)
+	end
+  	StartThread(Activate)
 end
 
 function script.Activate()
