@@ -21,7 +21,7 @@ which is the number of samples of the given unit.
 
 local info
 local writeInfo = false
-local STATS_FILE = 'LuaUI/Config/TA_damageStats.lua'
+local STATS_FILE = 'LuaUI/Config/BA_damageStats.lua'
 
 local game = Game.gameShortName .. " " .. Game.gameVersion
 

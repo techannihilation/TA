@@ -25,10 +25,9 @@ function gadget:Initialize()
         return
     end
 
-    local CHICKENS_CONFIG_FILE = "LuaRules/Configs/spawn_defs_chickens.lua"
-    local ROBOTS_CONFIG_FILE = "LuaRules/Configs/spawn_defs_robots.lua"
-    if VFS.FileExists(CHICKENS_CONFIG_FILE) or VFS.FileExists(ROBOTS_CONFIG_FILE) then 
-        gameType = "robot defence"
+    local CHICKENS_CONFIG_FILE = "LuaRules/Configs/spawn_defs.lua"
+    if VFS.FileExists(CHICKENS_CONFIG_FILE) then 
+        gameType = "chicken defence"
         return
     end
     
