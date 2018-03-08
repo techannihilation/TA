@@ -7,7 +7,7 @@ return {
 		buildcostmetal = 187,
 		builder = false,
 		buildpic = "corjeag.dds",
-		buildtime = 5145,
+		buildtime = 2500,
 		canattack = true,
 		canguard = true,
 		canmove = true,
