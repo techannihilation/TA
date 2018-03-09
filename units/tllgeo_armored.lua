@@ -38,7 +38,7 @@ return {
 		maxslope = 10,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		makesmetal = 8,
+		makesmetal = 12,
 		metalstorage = 250,
 		name = "Barbecue",
 		noautofire = false,
