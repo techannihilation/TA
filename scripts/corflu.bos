@@ -65,8 +65,8 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-	move barrel to z-axis [-10.400000] speed [740.000000];
-	move gun to z-axis [-6.400000] speed [740.000000];
+	move barrel to z-axis [-20.800000] speed [740.000000];
+	move gun to z-axis [-12.800000] speed [740.000000];
 	wait-for-move barrel along z-axis;
 	show flare;
 	sleep 250;
