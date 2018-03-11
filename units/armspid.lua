@@ -46,13 +46,13 @@ return {
 		stealth = true,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.716,
+		turninplacespeedlimit = 1.32,
 		turnrate = 250,
 		unitname = "armspid",
 		upright = true,
 		workertime = 5000,
 		customparams = {
-			buildpic = "armspid.png",
+			buildpic = "armspid.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

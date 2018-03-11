@@ -1,9 +1,10 @@
 return {
 	corshock = {
 		acceleration = 0.16,
-		airsightdistance = 1200,
 		activatewhenbuilt = true,
+		airsightdistance = 1200,
 		bankscale = 0.5,
+		blocking = false,
 		brakerate = 0.375,
 		buildcostenergy = 485000,
 		buildcostmetal = 14250,
@@ -35,7 +36,7 @@ return {
 		idletime = 1800,
 		losemitheight = 28,
 		maneuverleashlength = 500,
-		mass = 6400,
+		mass = 14250,
 		maxdamage = 42800,
 		maxslope = 10,
 		maxvelocity = 3.5,
@@ -53,12 +54,12 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 360,
-		turninplacespeedlimit = 2.5,
+		turninplacespeedlimit = 2.31,
 		turnrate = 360,
 		unitname = "corshock",
 		upright = true,
 		customparams = {
-			buildpic = "corshock.png",
+			buildpic = "corshock.dds",
 			faction = "CORE",
 			requiretech = "Advanced T4 Unit Research Centre",
 		},
@@ -128,7 +129,7 @@ return {
 					flak_resistant = 500,
 					unclassed_air = 1250,
 				},
-			},			
+			},
 		},
 		weapons = {
 			[1] = {
@@ -137,7 +138,7 @@ return {
 				maindir = "0 1 0",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
-			},			
+			},
 		},
 	},
 }

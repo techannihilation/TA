@@ -27,7 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 272,
-		mass = 459500,
+		mass = 659512,
 		maxdamage = 110300,
 		maxslope = 13,
 		maxvelocity = 0,
@@ -45,7 +45,7 @@ return {
 		turnrate = 0,
 		unitname = "tllhydre1",
 		usebuildinggrounddecal = true,
-		usepiececollisionvolumes = 1,
+		usepiececollisionvolumes = true,
 		yardmap = "oooooooooooooo oooooooooooooo oooooooooooooo oooooooooooooo oooooooooooooo oooooooooooooo oooooooooooooo oooooooooooooo oooooooooooooo oooooooooooooo oooooooooooooo oooooooooooooo oooooooooooooo oooooooooooooo ",
 		customparams = {
 			buildpic = "tllhydre.dds",

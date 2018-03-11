@@ -43,7 +43,7 @@ return {
 		standingmoveorder = 0,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.32,
+		turninplacespeedlimit = 1.254,
 		turnrate = 300,
 		unitname = "tllviking",
 		waterline = 2,

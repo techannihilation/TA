@@ -53,10 +53,11 @@ return {
 		steeringmode = 1,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.792,
+		turninplacespeedlimit = 0.66,
 		turnrate = 125,
 		unitname = "cormcv",
 		customparams = {
+			buildpic = "cormcv.dds",
 			faction = "ARM",
 		},
 		featuredefs = {
@@ -145,7 +146,7 @@ return {
 				turret = true,
 				weapontype = "Cannon",
 				weaponvelocity = 850,
-				wobble = 2000,				
+				wobble = 2000,
 				damage = {
 					commanders = 350,
 					default = 700,
@@ -154,7 +155,7 @@ return {
 					subs = 5,
 				},
 			},
-		rapid_intimidator_high = {
+			rapid_intimidator_high = {
 				accuracy = 1000,
 				areaofeffect = 250,
 				avoidfeature = false,
@@ -195,17 +196,15 @@ return {
 					subs = 5,
 				},
 			},
-
 		},
 		weapons = {
 			[1] = {
 				def = "RAPID_INTIMIDATOR",
-				onlytargetcategory = "SURFACE",				
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
-
 				def = "RAPID_INTIMIDATOR_HIGH",
-				onlytargetcategory = "SURFACE",			
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

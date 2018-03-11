@@ -56,7 +56,7 @@ return {
 		stealth = false,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.99,
+		turninplacespeedlimit = 1.353,
 		turnrate = 1016,
 		unitname = "commando",
 		upright = true,

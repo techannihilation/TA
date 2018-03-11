@@ -51,7 +51,7 @@ return {
 		turnrate = 0,
 		unitname = "corap",
 		usebuildinggrounddecal = true,
-		usepiececollisionvolumes = 1,
+		usepiececollisionvolumes = true,
 		workertime = 250,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooo",
 		buildoptions = {

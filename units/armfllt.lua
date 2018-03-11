@@ -24,7 +24,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 65,
-		mass = 90,
+		mass = 100,
 		maxdamage = 600,
 		maxvelocity = 0,
 		minwaterdepth = 2,
@@ -44,7 +44,7 @@ return {
 		waterline = 2,
 		yardmap = "wwwwwwwwwwwwwwww",
 		customparams = {
-			buildpic = "armfllt.png",
+			buildpic = "armfllt.dds",
 			faction = "ARM",
 		},
 		featuredefs = {
@@ -74,7 +74,6 @@ return {
 				object = "2X2B",
 				reclaimable = true,
 			},
-
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
@@ -147,7 +146,6 @@ return {
 					subs = 5,
 				},
 			},
-
 		},
 		weapons = {
 			[1] = {

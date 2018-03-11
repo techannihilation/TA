@@ -41,7 +41,7 @@ return {
 		standingfireorder = 2,
 		unitname = "arm_big_bertha",
 		usebuildinggrounddecal = true,
-		usepiececollisionvolumes = 1,
+		usepiececollisionvolumes = true,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo",
 		customparams = {
 			buildpic = "arm_big_bertha.dds",

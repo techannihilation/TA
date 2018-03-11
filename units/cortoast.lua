@@ -50,7 +50,7 @@ return {
 		turnrate = 0,
 		unitname = "cortoast",
 		usebuildinggrounddecal = true,
-		usepiececollisionvolumes = 1,
+		usepiececollisionvolumes = true,
 		yardmap = "ooooooooo",
 		customparams = {
 			buildpic = "cortoast.dds",

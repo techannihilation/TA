@@ -53,7 +53,7 @@ return {
 		turnrate = 0,
 		unitname = "corgant",
 		usebuildinggrounddecal = true,
-		usepiececollisionvolumes = 1,
+		usepiececollisionvolumes = true,
 		workertime = 600,
 		yardmap = "oooooooooooooooooo occccccco occccccco occccccco occccccco occccccco occccccco occccccco",
 		buildoptions = {

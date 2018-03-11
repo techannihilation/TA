@@ -44,6 +44,7 @@ return {
 		turnrate = 0,
 		unitname = "coreap",
 		usebuildinggrounddecal = true,
+		usepiececollisionvolumes = true,
 		workertime = 600,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		buildoptions = {

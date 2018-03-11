@@ -40,6 +40,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooo oooooo oooooo oooooo oooooo oooooo",
 		customparams = {
+			buildpic = "corsms.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

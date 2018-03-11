@@ -49,7 +49,7 @@ return {
 		turnrate = 0,
 		unitname = "coraap",
 		usebuildinggrounddecal = true,
-		usepiececollisionvolumes = 1,
+		usepiececollisionvolumes = true,
 		workertime = 400,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooo",
 		buildoptions = {

@@ -49,7 +49,7 @@ return {
 		turnrate = 0,
 		unitname = "corbuzz2",
 		usebuildinggrounddecal = true,
-		usepiececollisionvolumes = 1,
+		usepiececollisionvolumes = true,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
 			buildpic = "corbuzz2.dds",

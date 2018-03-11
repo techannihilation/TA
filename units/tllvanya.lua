@@ -44,7 +44,7 @@ return {
 		sightdistance = 650,
 		standingfireorder = 2,
 		unitname = "tllvanya",
-		usepiececollisionvolumes = 1,
+		usepiececollisionvolumes = true,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
 			buildpic = "tllvanya.dds",
