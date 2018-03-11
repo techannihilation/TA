@@ -102,7 +102,7 @@ return {
 		weapondefs = {
 			gun = {
 				accuracy = 200,
-				areaofeffect = 32,
+				areaofeffect = 48,
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
