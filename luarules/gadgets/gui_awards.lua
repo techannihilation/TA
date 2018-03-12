@@ -85,6 +85,9 @@ local econUnitDefIDs = { --better to hardcode these since its complicated to pic
 	UnitDefNames.tllsolar.id,
 	UnitDefNames.tllsolarns.id,
 	UnitDefNames.tlladvsolar.id,
+	UnitDefNames.armefus.id,
+	UnitDefNames.corefus.id,
+	UnitDefNames.tllefus.id,
 	--Metal Makers
 	UnitDefNames.armmakr.id,
 	UnitDefNames.armfmkr.id,
@@ -94,6 +97,7 @@ local econUnitDefIDs = { --better to hardcode these since its complicated to pic
 	UnitDefNames.armmmkr.id,
 	UnitDefNames.armuwmmm.id,
 	UnitDefNames.ametalmakerlvl2.id,
+	UnitDefNames.ametalmakerlvl3.id,
 	UnitDefNames.armgen.id,
 	UnitDefNames.cormakr.id,
 	UnitDefNames.corfmkr.id,
@@ -103,12 +107,14 @@ local econUnitDefIDs = { --better to hardcode these since its complicated to pic
 	UnitDefNames.cormmkr.id,
 	UnitDefNames.coruwmmm.id,
 	UnitDefNames.cmetalmakerlvl2.id,
+	UnitDefNames.cmetalmakerlvl3.id,
 	UnitDefNames.corgen.id,
 	UnitDefNames.tllmm.id,
 	UnitDefNames.tllwmconv.id,
 	UnitDefNames.tllammaker.id,
 	UnitDefNames.tllwmmohoconv.id,
 	UnitDefNames.tllgen.id,
+	UnitDefNames.tllmetalmakerlvl3.id
 }
 
 
