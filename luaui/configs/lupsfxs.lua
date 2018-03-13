@@ -106,7 +106,7 @@ corsfusBursts = {
   colormap   = {{0.45, 0.2, 1, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
-  count      = 5,
+  count      = 2,
 }
 exoarmBursts = {
   layer      = -35,
@@ -122,7 +122,7 @@ exoarmBursts = {
   colormap   = {{0.1, 0.55, 1, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
-  count      = 10,
+  count      = 4,
 }
 
 armsmcBursts = {
@@ -139,7 +139,7 @@ armsmcBursts = {
   colormap   = {{0.2, 1, 0.2, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
-  count      = 6,
+  count      = 2,
 }
 
 armpraetBursts = {
@@ -156,7 +156,7 @@ armpraetBursts = {
   colormap   = {{0.2, 1, 0.2, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
-  count      = 6,
+  count      = 2,
 }
 
 monkeylordBursts = {
@@ -173,7 +173,7 @@ monkeylordBursts = {
   colormap   = {{0.2, 1, 0.2, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
-  count      = 6,
+  count      = 2,
 }
 
 irritatorBursts = {
@@ -190,7 +190,7 @@ irritatorBursts = {
   colormap   = {{0.2, 1, 0.2, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
-  count      = 6,
+  count      = 2,
 }
 
 shieldBursts100 = {
@@ -207,7 +207,7 @@ shieldBursts100 = {
   colormap   = {{0.2, 1, 0.2, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
-  count      = 2,
+  count      = 1,
 }
 
 shieldBursts150 = {
@@ -224,7 +224,7 @@ shieldBursts150 = {
   colormap   = {{0.2, 1, 0.2, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
-  count      = 4,
+  count      = 2,
 }
 
 shieldBursts200 = {
@@ -241,7 +241,7 @@ shieldBursts200 = {
   colormap   = {{0.2, 1, 0.2, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
-  count      = 6,
+  count      = 3,
 }
 
 shieldBursts250 = {
@@ -258,7 +258,7 @@ shieldBursts250 = {
   colormap   = {{0.2, 1, 0.2, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
-  count      = 8,
+  count      = 4,
 }
 
 shieldBursts340 = {
@@ -275,7 +275,7 @@ shieldBursts340 = {
   colormap   = {{0.2, 1, 0.2, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
-  count      = 14,
+  count      = 8,
 }
 
 shieldBursts400 = {
@@ -292,7 +292,7 @@ shieldBursts400 = {
   colormap   = {{0.2, 1, 0.2, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
-  count      = 16,
+  count      = 8,
 }
 
 shieldBursts1000 = {
@@ -309,7 +309,7 @@ shieldBursts1000 = {
   colormap   = {{0.2, 1, 0.2, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
-  count      = 20,
+  count      = 10,
 }
 ----------------------------------------------------------------------------
 -- Fusion ------------------------------------------------------------------
