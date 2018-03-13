@@ -42,8 +42,14 @@ function RecieveGameMode(mode)
     
     stats = stats or {}
     stats[game] = stats[game] or {}
+    Spring.Echo(Game.gameVersion,string.sub(Game.gameVersion,2),(Game.gameVersion:find("test",1,true)))
     stats[game].versionNumber = Game.gameVersion ~= "$VERSION" and string.sub(Game.gameVersion,2)
     
+    --[[
+    if (Game.gameVersion:find("test",1,true) then
+        stats[game].versionNumber = 
+    --]]
+
     -- remove any versions that are not the current max version
     local max_version = -1
     for k,_ in pairs(stats) do
