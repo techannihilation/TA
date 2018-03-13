@@ -276,6 +276,12 @@ local morphDefs = {
 		time = 30,
 		xp = 0.15,
 	},
+	tllsilo = {
+		into = 'tllsilo1',
+		tech = 2,
+		time = 30,
+		xp = 0.15,
+	},
 	armcir = {
 		into = 'armcir1',
 		time = 60,
